@@ -6,7 +6,7 @@ date: 2026-04-27
 subfolder: committeeReports
 slug: 2026-04-27-committeeReports
 source_folder: analysis/daily/2026-04-27/committeeReports
-generated_at: 2026-05-17T22:44:40.585Z
+generated_at: 2026-05-18T09:08:37.930Z
 language: en
 layout: article
 ---
@@ -91,6 +91,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1492,13 +1505,760 @@ Admiralty Code applied throughout: B2 primary, B1 single-source flags, C2 contex
 - https://data.riksdagen.se/dokument/HD01CU24
 - https://data.riksdagen.se/dokument/HD01JuU31
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز تنفيذي — تقارير لجان الريكسداغ السويدي، 27 أبريل 2026
+
+**المؤلف**: James Pether Sörling | **التصنيف**: PUBLIC | **درجة الثقة**: HIGH | **التاريخ**: 2026-04-27
+
+### 🎯 BLUF
+
+تُقدِّم تقارير لجان الريكسداغ المؤرَّخة في 24 أبريل 2026 ثلاثة محاور تشريعية ذات أهمية فورية على الصعيدين المالي والجنائي والاجتماعي. توصي لجنة المالية (FiU) بالموافقة على الميزانية التكميلية للحكومة التي تخفِّض ضريبة الوقود وتُقدِّم دعمًا لأسعار الكهرباء والغاز — وهو إجراء توسعي ماليًا تدعمه تحالف تيدو (M, SD, KD, L) لكن يعارضه حزبا V وMP. تُعزِّز لجنة العدل (JuU) أشمل إصلاح لتشريعات الأسلحة النارية منذ عقود، مُطبِّقةً التوافق مع التوجيه الأوروبي ومُشدِّدةً شروط الترخيص — مع معارضة حزب الوسط للأسلحة الصيدية شبه الآلية. تُقرُّ لجنة الشؤون الاجتماعية (SoU) أحكامًا مُعزَّزة لرعاية المسنِّين مع توسيع حقوق الاعتراف بمقدِّمي الرعاية. وتُشير هذه القرارات مجتمعةً إلى تفعيل سياسة تكاليف المعيشة، وتشديد الأمن، والحفاظ على العقد الاجتماعي في الاتجاه نحو انتخابات عام 2026.
+
+### 🔑 القرارات التي يدعمها هذا الموجز
+
+1. **تقييم المخاطر المالية**: هل ينبغي النظر إلى إجراءات تخفيف أعباء الطاقة في الميزانية التكميلية باعتبارها مستدامة أم محفِّزات انتخابية تُفضي إلى مخاطر توحيد على المدى المتوسط؟
+2. **رصد سيادة القانون**: هل يمثِّل قانون الأسلحة الجديد مكسبًا أمنيًا حقيقيًا أم تسويةً تترك ثغرات؟
+3. **رصد العقد الاجتماعي**: هل ستُعيد أحكام رعاية المسنِّين توزيع الدعم لتحالف تيدو بين الشرائح الديموغرافية الرئيسية قبل سبتمبر 2026؟
+
+### ⚡ قراءة استخباراتية في 60 ثانية
+
+- **HD01FiU48** [B2]: الميزانية التكميلية — خفض ضريبة الوقود + دعم أسعار الكهرباء والغاز. أودع حزبا V وMP تحفُّظات مخالِفة. الدفع المالي المُقدَّر: أثر إيجابي على دخل الأسرة يُقابله تراجع في السياسة المناخية. أقرَّت FiU توصية اللجنة.
+- **HD01JuU10** [B2]: قانون أسلحة جديد يحلُّ محلَّ تشريع 1996. يُطبِّق التوجيه الأوروبي 2021/555. تحفُّظات من C (حظر الأسلحة الصيدية شبه الآلية)، وS/V/MP (قواعد انتقالية، تصاريح 5 سنوات، إشراف). وافقت أغلبية JuU.
+- **HD01SoU25** [B2]: أحكام معزَّزة لرعاية المسنِّين ودعم مقدِّمي الرعاية. دعم واسع متعدِّد الأحزاب مع تحفُّظات طفيفة.
+- **HD01FiU23** [B3]: مراجعة عمليات Riksbank عام 2025 — إشراف روتيني، وافقت FiU بشكل عام.
+
+### 🔭 أبرز المُحرِّكات الاستشرافية
+
+**مراقبة**: التصويت في الغرفة على HD01FiU48 (متوقَّع خلال 10 أيام). إذا نالت مقترحات V أو MP دعمًا مُفاجئًا من داخل تحالف تيدو، فهذا مؤشِّر على عدم استقرار الائتلاف قبيل انتخابات سبتمبر 2026.
+
+### توزيع درجة الثقة
+
+| المجال | درجة الثقة | الأساس |
+|--------|-----------|--------|
+| الإجراءات المالية | HIGH | هيكل FiU48 مؤكَّد؛ التحفُّظات موثَّقة |
+| قانون الأسلحة | HIGH | هيكل JuU10 + أحزاب التحفُّظ مؤكَّدة |
+| رعاية المسنِّين | MEDIUM | بيانات وصفية SoU25 فقط؛ لم يُسترجع النص الكامل |
+| إشراف Riksbank | MEDIUM | بيانات وصفية FiU23 فقط |
+
+### Mermaid: أبرز المجموعات التشريعية
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Klassificering**: PUBLIC | **Konfidensgrad**: HIGH | **Dato**: 2026-04-27
+
+### 🎯 BLUF
+
+Riksdagens udvalgsberetninger dateret 24. april 2026 præsenterer tre lovgivningsfronter af umiddelbar fiskal, strafferetlig og social betydning. Finansudvalget (FiU) anbefaler godkendelse af regeringens tillægsbudget med sænket brændstofafgift og støtte til el- og gaspriser — en finansekspansiv foranstaltning støttet af Tidö-koalitionen (M, SD, KD, L), men modsat af V og MP. Justitsudvalget (JuU) fremmer den mest omfattende reform af våbenlovgivningen i årtier, implementerer EU-direktiv og stramning af licensregler — med Centerpartiet som dissidenter vedrørende halvautomatiske jagtrifler. Socialudvalget (SoU) godkender styrkede bestemmelser om ældrepleje med udvidede rettigheder for pårørendepassere. Tilsammen signalerer disse beslut aktivering af leveomkostningspolitik, skærpet sikkerhed og vedligeholdelse af den sociale kontrakt frem mod valget i 2026.
+
+### 🔑 Beslutninger denne oversigt understøtter
+
+1. **Fiskal risikovurdering**: Bør tillægsbudgettets energiafhjælpningsforanstaltninger ses som bæredygtige eller som valårsstimuli, der skaber konsolideringsrisiko på mellemlang sigt?
+2. **Retsstatsovervågning**: Repræsenterer den nye våbenlov en reel sikkerhedsgevinst eller et kompromis, der efterlader huller?
+3. **Social kontraktovervågning**: Vil ældreplejebestemmelserne forskyde støtten til Tidö-koalitionen blandt vigtige demografiske segmenter inden september 2026?
+
+### ⚡ 60-sekunders efterretningslæsning
+
+- **HD01FiU48** [B2]: Tillægsbudget — sænket brændstofafgift + støtte til el- og gaspriser. V og MP indgav afvigende forbehold. Estimeret fiskal impuls: positiv husholdningsindkomsteffekt modvejet af klimapolitisk tilbagegang. FiU godkendte udvalgets anbefaling.
+- **HD01JuU10** [B2]: Ny våbenlov, der erstatter 1996-lovgivningen. Implementerer EU-direktiv 2021/555. Forbehold fra C (halvautomatisk jagtvåbenforbud), S/V/MP (overgangsregler, 5-årstilladelser, tilsyn). JuU-flertallet godkendte.
+- **HD01SoU25** [B2]: Styrkede bestemmelser om ældrepleje og pårørendestøtte. Bred tværpartilig støtte med mindre forbehold.
+- **HD01FiU23** [B3]: Gennemgang af Riksbankens drift 2025 — rutinemæssigt tilsyn, FiU godkendte overordnet.
+
+### 🔭 Øverste fremadrettede udløser
+
+**Følg med**: Afstemning i Kammeret om HD01FiU48 (forventet inden for 10 dage). Hvis V's eller MP's forslag uventet vinder støtte på tværs af Tidö, signalerer det koalitionsinstabilitet inden september 2026-valget.
+
+### Konfidensfordeling
+
+| Domæne | Konfidensgrad | Grundlag |
+|--------|---------------|---------|
+| Finansielle foranstaltninger | HIGH | FiU48-struktur bekræftet; forbehold dokumenteret |
+| Våbenlovgivning | HIGH | JuU10-struktur + reservationspartier bekræftet |
+| Ældrepleje | MEDIUM | Kun SoU25-metadata; ingen fuldtekst hentet |
+| Riksbank-tilsyn | MEDIUM | Kun FiU23-metadata |
+
+### Mermaid: Vigtige lovgivningsklynger
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Klassifizierung**: PUBLIC | **Konfidenzgrad**: HIGH | **Datum**: 2026-04-27
+
+### 🎯 BLUF
+
+Die Ausschussberichte des Riksdag vom 24. April 2026 präsentieren drei legislative Fronten von unmittelbarer fiskalischer, strafrechtlicher und sozialer Bedeutung. Der Finanzausschuss (FiU) empfiehlt die Annahme des Nachtragshaushalts der Regierung mit gesenkter Kraftstoffsteuer und Stützung von Strom- und Gaspreisen — eine fiskalisch expansive Maßnahme, die von der Tidö-Koalition (M, SD, KD, L) unterstützt, von V und MP jedoch abgelehnt wird. Der Justizausschuss (JuU) befördert die umfassendste Reform des schwedischen Waffenrechts seit Jahrzehnten, setzt EU-Richtlinien um und verschärft Lizenzanforderungen — die Zentrumspartei stimmte bezüglich halbautomatischer Jagdwaffen dagegen. Der Sozialausschuss (SoU) billigt gestärkte Altenpflegevorschriften mit erweiterten Pflegenden-Anerkennungsrechten. Diese Entscheidungen signalisieren zusammen die Aktivierung von Lebenshaltungskostenpolitik, Sicherheitsverschärfung und Pflege des sozialen Kontrakts im Vorfeld der Wahl 2026.
+
+### 🔑 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Fiskalische Risikoabschätzung**: Sollten die Energiehilfemaßnahmen des Nachtragshaushalts als nachhaltig oder als Wahljahrsstimulus mit mittelfristigem Konsolidierungsrisiko betrachtet werden?
+2. **Rechtsstaatsverfolgung**: Stellt das neue Waffengesetz einen echten Sicherheitsgewinn dar oder einen Kompromiss, der Lücken hinterlässt?
+3. **Wohlfahrtsvertrag-Monitoring**: Werden die Altenpflegevorschriften die Unterstützung für die Tidö-Koalition unter wichtigen demografischen Segmenten vor September 2026 verschieben?
+
+### ⚡ 60-Sekunden-Nachrichtenüberblick
+
+- **HD01FiU48** [B2]: Nachtragshaushalt — Kraftstoffsteuersenkung + Strom-/Gaspreisunterstützung. V und MP reichten abweichende Vorbehalte ein. Geschätzter fiskalischer Impuls: positiver Haushaltseinkommenseffekt, ausgeglichen durch klimapolitischen Rückschritt. FiU genehmigte Ausschussempfehlung.
+- **HD01JuU10** [B2]: Neues Waffengesetz als Ersatz für die Gesetzgebung von 1996. Setzt EU-Richtlinie 2021/555 um. Vorbehalte von C (Verbot halbautomatischer Jagdwaffen), S/V/MP (Übergangsregeln, 5-Jahres-Genehmigungen, Aufsicht). JuU-Mehrheit stimmte zu.
+- **HD01SoU25** [B2]: Gestärkte Altenpflege- und Pflegenden-Unterstützungsvorschriften. Breite fraktionsübergreifende Unterstützung mit geringfügigen Vorbehalten.
+- **HD01FiU23** [B3]: Überprüfung des Riksbank-Betriebs 2025 — Routineaufsicht, FiU stimmte weitgehend zu.
+
+### 🔭 Wichtigster Vorwärtsauslöser
+
+**Beobachten**: Kammerabstimmung zu HD01FiU48 (innerhalb von 10 Tagen erwartet). Wenn V- oder MP-Vorschläge unerwartet koalitionsübergreifende Unterstützung innerhalb von Tidö erhalten, signalisiert dies Koalitionsinstabilität vor der Septemberwahl 2026.
+
+### Konfidenzverteilung
+
+| Bereich | Konfidenzgrad | Grundlage |
+|---------|---------------|-----------|
+| Fiskalische Maßnahmen | HIGH | FiU48-Struktur bestätigt; Vorbehalte dokumentiert |
+| Waffenrecht | HIGH | JuU10-Struktur + Vorbehaltsparteien bestätigt |
+| Altenpflege | MEDIUM | Nur SoU25-Metadaten; kein Volltext abgerufen |
+| Riksbank-Aufsicht | MEDIUM | Nur FiU23-Metadaten |
+
+### Mermaid: Wichtige Gesetzgebungscluster
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Clasificación**: PUBLIC | **Grado de confianza**: HIGH | **Fecha**: 2026-04-27
+
+### 🎯 BLUF
+
+Los informes de los comités del Riksdag con fecha 24 de abril de 2026 presentan tres frentes legislativos de inmediata importancia fiscal, penal y social. El Comité de Finanzas (FiU) recomienda aprobar el presupuesto suplementario del gobierno que reduce el impuesto sobre los combustibles e introduce apoyo a los precios de la electricidad y el gas — una medida fiscalmente expansiva respaldada por la coalición Tidö (M, SD, KD, L) pero opuesta por V y MP. El Comité de Justicia (JuU) promueve la revisión más completa de la legislación sobre armas de fuego en décadas, implementando la alineación con la directiva de la UE y endureciendo los requisitos de licencia — con el Partido del Centro disintiendo sobre las armas de caza semiautomáticas. El Comité de Asuntos Sociales (SoU) respalda disposiciones reforzadas sobre atención a personas mayores, ampliando los derechos de reconocimiento de los cuidadores. En conjunto, estas decisiones señalan la activación de una política de coste de la vida, el endurecimiento de la seguridad y el mantenimiento del contrato social de cara a las elecciones de 2026.
+
+### 🔑 Decisiones que apoya este informe
+
+1. **Evaluación del riesgo fiscal**: ¿Deben considerarse sostenibles las medidas de alivio energético del presupuesto suplementario o como un estímulo electoral que crea un riesgo de consolidación a medio plazo?
+2. **Seguimiento del Estado de Derecho**: ¿Representa la nueva ley de armas una ganancia de seguridad real o un compromiso que deja lagunas?
+3. **Monitorización del contrato social**: ¿Desplazarán las disposiciones sobre atención a personas mayores el apoyo a la coalición Tidö entre segmentos demográficos clave antes de septiembre de 2026?
+
+### ⚡ Lectura de inteligencia en 60 segundos
+
+- **HD01FiU48** [B2]: Presupuesto suplementario — reducción del impuesto sobre combustibles + apoyo a precios de electricidad/gas. V y MP presentaron reservas disidentes. Impulso fiscal estimado: efecto positivo en los ingresos de los hogares contrarrestado por la regresión de la política climática. FiU aprobó la recomendación del comité.
+- **HD01JuU10** [B2]: Nueva Ley de Armas que reemplaza la legislación de 1996. Implementa la Directiva UE 2021/555. Reservas de C (prohibición de armas de caza semiautomáticas), S/V/MP (normas de transición, permisos de 5 años, supervisión). La mayoría de JuU aprobó.
+- **HD01SoU25** [B2]: Disposiciones reforzadas de atención a personas mayores y apoyo a cuidadores. Amplio apoyo transversal con reservas menores.
+- **HD01FiU23** [B3]: Revisión de las operaciones del Riksbank 2025 — supervisión rutinaria, FiU aprobó en general.
+
+### 🔭 Principal desencadenante prospectivo
+
+**A vigilar**: Votación de la Cámara sobre HD01FiU48 (prevista en 10 días). Si las propuestas de V o MP obtienen un apoyo inesperado dentro de Tidö, señala inestabilidad de la coalición de cara a las elecciones de septiembre de 2026.
+
+### Distribución de confianza
+
+| Dominio | Grado de confianza | Base |
+|---------|-------------------|------|
+| Medidas fiscales | HIGH | Estructura FiU48 confirmada; reservas documentadas |
+| Ley de armas | HIGH | Estructura JuU10 + partidos de reserva confirmados |
+| Atención a personas mayores | MEDIUM | Solo metadatos SoU25; no se recuperó texto completo |
+| Supervisión del Riksbank | MEDIUM | Solo metadatos FiU23 |
+
+### Mermaid: Principales grupos legislativos
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_fi.md -->
+
+**Kirjoittaja**: James Pether Sörling | **Luokitus**: PUBLIC | **Luotettavuusaste**: HIGH | **Päivämäärä**: 2026-04-27
+
+### 🎯 BLUF
+
+Riksdagenin valiokuntamietinnöt, päivätty 24. huhtikuuta 2026, esittävät kolme lainsäädäntörintamaa, joilla on välitöntä finanssi-, rikoslainsäädäntö- ja sosiaalista merkitystä. Valtiovarainvaliokunta (FiU) suosittelee hallituksen lisätalousarvion hyväksymistä polttoaineveron alennuksineen ja sähkö- ja kaasuhintatukea — taloudellisesti ekspansiivinen toimenpide, jota Tidö-koalitio (M, SD, KD, L) tukee, mutta V ja MP vastustavat. Lakivaliokunta (JuU) edistää Ruotsin kattavinta asela­insäädän­töuudistusta vuosikymmeniin toteuttaen EU-direktiivin mukaistamisen ja tiukentamalla lupavaatimuksia — Keskustapuolue esitti eriävän mielipiteen puoliautomaattisten metsästysaseiden osalta. Sosialivaliokunta (SoU) hyväksyy vahvistetut vanhustenhoitomääräykset laajentaen omaishoidon oikeuksia. Nämä päätökset yhdessä merkitsevät elinkustannuspolitiikan aktivointia, turvallisuuden tiukentamista ja sosiaalisen sopimuksen ylläpitoa kohti vuoden 2026 vaaleja.
+
+### 🔑 Päätökset, joita tämä yhteenveto tukee
+
+1. **Finansiriskiarvio**: Tulisiko lisätalousarvion energiahelpotustoimenpiteitä pitää kestävinä vai vaalikauden ärsykkeenä, joka luo keskipitkän aikavälin konsolidointiriskin?
+2. **Oikeusvaltion seuranta**: Edustaako uusi asela­ki todellista turvallisuushyötyä vai kompromissia, joka jättää aukkoja?
+3. **Sosiaalisen sopimuksen seuranta**: Siirtävätkö vanhustenhoitomääräykset tukea Tidö-koalitiolle keskeisten demografisten segmenttien keskuudessa ennen syyskuuta 2026?
+
+### ⚡ 60 sekunnin tiedustelulukeminen
+
+- **HD01FiU48** [B2]: Lisätalousarvio — polttoaineveron alennus + sähkö- ja kaasuhintatuki. V ja MP jättivät eriävät varaumat. Arvioitu finanssi-impulssi: positiivinen kotitalouksien tulovaikutus kompensoituu ilmastopolitiikan taantumisella. FiU hyväksyi valiokuntasuosituksen.
+- **HD01JuU10** [B2]: Uusi asela­ki korvaa vuoden 1996 lainsäädännön. Toteuttaa EU-direktiivin 2021/555. Varaumat C:ltä (puoliautomaattinen metsästysasekielto), S/V/MP (siirtymäsäännöt, 5-vuoden luvat, valvonta). JuU:n enemmistö hyväksyi.
+- **HD01SoU25** [B2]: Vahvistetut vanhustenhoito- ja omaishoidon tukimääräykset. Laaja puoluerajat ylittävä tuki pienin varauksin.
+- **HD01FiU23** [B3]: Riksbankenin toiminnan tarkastelu 2025 — rutiininomainen valvonta, FiU hyväksyi pääosin.
+
+### 🔭 Tärkein eteenpäin katsova laukaisija
+
+**Seuraa**: Täysistuntoäänestys asiasta HD01FiU48 (odotetaan 10 päivän kuluessa). Jos V:n tai MP:n ehdotukset saavat odottamattomasti Tidö-koalition ristikkäistukea, se merkitsee koalition epävakautta ennen syyskuun 2026 vaaleja.
+
+### Luotettavuusjakauma
+
+| Toimiala | Luotettavuusaste | Perusta |
+|----------|-----------------|---------|
+| Finanssitoimenpiteet | HIGH | FiU48-rakenne vahvistettu; varaumat dokumentoitu |
+| Asela­insäädäntö | HIGH | JuU10-rakenne + varauma­puolueet vahvistettu |
+| Vanhustenhoito | MEDIUM | Vain SoU25-metadata; kokotekstiä ei haettu |
+| Riksbank-valvonta | MEDIUM | Vain FiU23-metadata |
+
+### Mermaid: Tärkeimmät lainsäädäntöklusterit
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling | **Classification**: PUBLIC | **Degré de confiance**: HIGH | **Date**: 2026-04-27
+
+### 🎯 BLUF
+
+Les rapports des commissions du Riksdag datés du 24 avril 2026 présentent trois fronts législatifs d'une importance immédiate sur les plans budgétaire, pénal et social. La commission des finances (FiU) recommande l'adoption du budget supplémentaire du gouvernement réduisant la taxe sur les carburants et introduisant un soutien aux prix de l'électricité et du gaz — une mesure budgétairement expansive soutenue par la coalition Tidö (M, SD, KD, L) mais opposée par V et MP. La commission de la justice (JuU) fait avancer la réforme la plus complète de la législation sur les armes à feu depuis des décennies, mettant en œuvre l'alignement sur la directive européenne et resserrant les conditions d'obtention des licences — le Parti du Centre s'opposant aux armes de chasse semi-automatiques. La commission des affaires sociales (SoU) approuve des dispositions renforcées en matière de soins aux personnes âgées, élargissant les droits de reconnaissance des aidants. Ces décisions signalent ensemble l'activation d'une politique sur le coût de la vie, un resserrement de la sécurité et le maintien du contrat social à l'approche des élections de 2026.
+
+### 🔑 Décisions que cette note soutient
+
+1. **Évaluation du risque budgétaire**: Les mesures d'allègement énergétique du budget supplémentaire doivent-elles être considérées comme durables ou comme un stimulus électoral créant un risque de consolidation à moyen terme?
+2. **Suivi de l'état de droit**: La nouvelle loi sur les armes représente-t-elle un vrai gain sécuritaire ou un compromis qui laisse des lacunes?
+3. **Suivi du contrat social**: Les dispositions sur les soins aux personnes âgées vont-elles déplacer le soutien à la coalition Tidö parmi des segments démographiques clés avant septembre 2026?
+
+### ⚡ Lecture des renseignements en 60 secondes
+
+- **HD01FiU48** [B2]: Budget supplémentaire — réduction de la taxe sur les carburants + soutien aux prix de l'électricité/du gaz. V et MP ont déposé des réserves dissidentes. Impulsion budgétaire estimée: effet positif sur les revenus des ménages compensé par une régression de la politique climatique. La FiU a approuvé la recommandation de la commission.
+- **HD01JuU10** [B2]: Nouvelle loi sur les armes remplaçant la législation de 1996. Met en œuvre la Directive UE 2021/555. Réserves de C (interdiction des armes de chasse semi-automatiques), S/V/MP (règles transitoires, permis de 5 ans, supervision). La majorité de la JuU a approuvé.
+- **HD01SoU25** [B2]: Renforcement des dispositions relatives aux soins aux personnes âgées et au soutien aux aidants. Large soutien multipartite avec des réserves mineures.
+- **HD01FiU23** [B3]: Examen du fonctionnement de la Riksbank 2025 — surveillance de routine, la FiU a globalement approuvé.
+
+### 🔭 Principal déclencheur prospectif
+
+**À surveiller**: Vote de la Chambre sur HD01FiU48 (attendu dans les 10 jours). Si les propositions de V ou MP obtiennent un soutien inattendu au sein de Tidö, cela signale une instabilité de la coalition à l'approche des élections de septembre 2026.
+
+### Distribution de confiance
+
+| Domaine | Degré de confiance | Base |
+|---------|--------------------|------|
+| Mesures budgétaires | HIGH | Structure de FiU48 confirmée; réserves documentées |
+| Droit sur les armes | HIGH | Structure de JuU10 + partis de réserve confirmés |
+| Soins aux personnes âgées | MEDIUM | Métadonnées SoU25 uniquement; pas de texte intégral récupéré |
+| Supervision de la Riksbank | MEDIUM | Métadonnées FiU23 uniquement |
+
+### Mermaid: Principaux groupes législatifs
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — דוחות ועדות הריקסדאג השוודי, 27 באפריל 2026
+
+**מחבר**: James Pether Sörling | **סיווג**: PUBLIC | **רמת ביטחון**: HIGH | **תאריך**: 2026-04-27
+
+### 🎯 BLUF
+
+דוחות ועדות הריקסדאג מתאריך 24 באפריל 2026 מציגים שלושה חזיתות חקיקתיות בעלות חשיבות מיידית פיסקלית, פלילית וחברתית. ועדת הכספים (FiU) ממליצה לאשר את תקציב ההשלמה הממשלתי המפחית את מס הדלק ומציג תמיכה במחירי חשמל וגז — צעד פיסקלי מרחיב הנתמך על ידי קואליציית טידו (M, SD, KD, L) אך מתנגדים לו V ו-MP. ועדת המשפטים (JuU) מקדמת את הרפורמה המקיפה ביותר בחקיקת כלי הנשק בעשורים, מיישמת יישור עם ה-EU ומחמירה דרישות רישוי — עם מפלגת המרכז כמתנגדת לנשק ציד חצי-אוטומטי. ועדת ענייני הרווחה (SoU) מאשרת הוראות טיפול בקשישים מחוזקות עם הרחבת זכויות הכרה במטפלים. ביחד, החלטות אלה מסמנות הפעלה של מדיניות יוקר מחיה, חיזוק ביטחון ושמירה על החוזה החברתי לקראת בחירות 2026.
+
+### �� החלטות שתקציר זה תומך בהן
+
+1. **הערכת סיכון פיסקלי**: האם יש לראות בצעדי הקלת האנרגיה בתקציב ההשלמה כבר-קיימא או כגירוי שנת בחירות היוצר סיכון איחוד בטווח הבינוני?
+2. **מעקב שלטון החוק**: האם חוק הנשק החדש מייצג רווח ביטחוני אמיתי או פשרה שמשאירה פרצות?
+3. **מעקב חוזה חברתי**: האם הוראות הטיפול בקשישים ישנו את התמיכה בקואליציית טידו בקרב מגזרים דמוגרפיים מרכזיים לפני ספטמבר 2026?
+
+### ⚡ קריאת מודיעין של 60 שניות
+
+- **HD01FiU48** [B2]: תקציב השלמה — הפחתת מס דלק + תמיכה במחירי חשמל/גז. V ו-MP הגישו הסתייגויות מתנגדות. דחף פיסקלי מוערך: השפעה חיובית על הכנסת משק בית מאוזנת על ידי נסיגה במדיניות האקלים. FiU אישרה את המלצת הוועדה.
+- **HD01JuU10** [B2]: חוק נשק חדש המחליף את חקיקת 1996. מיישם את הנחיית האיחוד האירופי 2021/555. הסתייגויות מ-C (איסור נשק ציד חצי-אוטומטי), S/V/MP (כללי מעבר, אישורים ל-5 שנים, פיקוח). רוב JuU אישר.
+- **HD01SoU25** [B2]: הוראות טיפול בקשישים ותמיכה במטפלים מחוזקות. תמיכה רחבה חוצת-מפלגות עם הסתייגויות קלות.
+- **HD01FiU23** [B3]: סקירת פעילות ה-Riksbank לשנת 2025 — פיקוח שגרתי, FiU אישרה באופן כללי.
+
+### 🔭 הטריגר העתידי המוביל
+
+**למעקב**: הצבעת בית הנבחרים על HD01FiU48 (צפויה תוך 10 ימים). אם הצעות V או MP יזכו בתמיכה בלתי צפויה בתוך טידו, הדבר מסמן חוסר יציבות קואליציוני לפני בחירות ספטמבר 2026.
+
+### התפלגות רמת ביטחון
+
+| תחום | רמת ביטחון | בסיס |
+|------|-----------|-----|
+| צעדים פיסקליים | HIGH | מבנה FiU48 אושר; הסתייגויות מתועדות |
+| חוק נשק | HIGH | מבנה JuU10 + מפלגות הסתייגות אושרו |
+| טיפול בקשישים | MEDIUM | מטא-נתוני SoU25 בלבד; לא אוחזר טקסט מלא |
+| פיקוח Riksbank | MEDIUM | מטא-נתוני FiU23 בלבד |
+
+### Mermaid: אשכולות חקיקה מרכזיים
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling | **分類**: PUBLIC | **信頼度**: HIGH | **日付**: 2026-04-27
+
+### 🎯 BLUF
+
+2026年4月24日付のRiksdagen委員会報告は、財政・刑事司法・社会分野において即時の重要性を持つ三つの立法課題を提示しています。財務委員会（FiU）は、燃料税の引き下げと電気・ガス価格支援を盛り込んだ政府の補正予算の承認を勧告しており、これはTidö連立（M, SD, KD, L）が支持する財政拡張的措置ですが、VとMPが反対しています。司法委員会（JuU）はEUディレクティブに沿った数十年ぶりの包括的な銃器法改革を推進し、許可要件を厳格化しています。半自動猟銃については中央党が反対しています。社会委員会（SoU）は、介護者認定権の拡大を含む高齢者介護規定の強化を承認しています。これらの決定は総じて、生活費政策の発動、安全保障の強化、2026年選挙に向けた社会契約の維持を示しています。
+
+### 🔑 このブリーフが支援する意思決定
+
+1. **財政リスク評価**: 補正予算のエネルギー軽減措置は持続可能な政策として評価すべきか、それとも中期的な財政健全化リスクをもたらす選挙向け景気刺激策として評価すべきか?
+2. **法の支配の追跡**: 新しい銃器法は真の安全保障の向上を表しているか、それとも問題点を残す妥協案か?
+3. **社会契約のモニタリング**: 高齢者介護規定は、2026年9月の選挙前に主要な人口層においてTidö連立への支持を変化させるか?
+
+### ⚡ 60秒インテリジェンスまとめ
+
+- **HD01FiU48** [B2]: 補正予算 — 燃料税引き下げ + 電気・ガス価格支援。VとMPが反対意見の留保を提出。推定財政インパルス: 家計所得へのプラス効果は気候政策の後退で相殺。FiUが委員会勧告を承認。
+- **HD01JuU10** [B2]: 1996年法に代わる新銃器法。EU指令2021/555を実施。C（半自動猟銃禁止）、S/V/MP（移行規則、5年許可証、監督）からの留保。JuU多数が承認。
+- **HD01SoU25** [B2]: 高齢者介護・介護者支援規定の強化。軽微な留保を伴う幅広い超党派支持。
+- **HD01FiU23** [B3]: Riksbank運営2025年レビュー — 定期監督、FiUがおおむね承認。
+
+### 🔭 主要な先行トリガー
+
+**注視**: HD01FiU48に関する本議院採決（10日以内に予定）。VまたはMPの提案がTidö内で予想外に支持を得た場合、2026年9月選挙前の連立不安定を示すシグナルとなります。
+
+### 信頼度分布
+
+| 分野 | 信頼度 | 根拠 |
+|------|--------|------|
+| 財政措置 | HIGH | FiU48の構造確認済み; 留保内容文書化 |
+| 銃器法 | HIGH | JuU10の構造 + 留保政党確認済み |
+| 高齢者介護 | MEDIUM | SoU25メタデータのみ; 全文未取得 |
+| Riksbank監督 | MEDIUM | FiU23メタデータのみ |
+
+### Mermaid: 主要立法クラスター
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **분류**: PUBLIC | **신뢰도**: HIGH | **날짜**: 2026-04-27
+
+### 🎯 BLUF
+
+2026년 4월 24일자 Riksdagen 위원회 보고서는 재정·형사사법·사회 분야에서 즉각적인 중요성을 지닌 세 가지 입법 과제를 제시합니다. 재정위원회(FiU)는 연료세 인하 및 전기·가스 가격 지원이 포함된 정부 추경예산 승인을 권고하며, 이는 Tidö 연립(M, SD, KD, L)이 지지하는 재정 확장적 조치이지만 V와 MP가 반대하고 있습니다. 사법위원회(JuU)는 EU 지침에 맞춰 수십 년 만의 포괄적인 총기법 개혁을 추진하며 면허 요건을 강화합니다. 반자동 사냥용 총기에 대해서는 중앙당이 반대했습니다. 사회위원회(SoU)는 간병인 인정권 확대를 포함한 강화된 노인 돌봄 규정을 승인합니다. 이러한 결정들은 종합적으로 생활비 정책 활성화, 안보 강화, 2026년 선거를 앞두고 사회 계약 유지를 신호합니다.
+
+### 🔑 이 브리핑이 지원하는 결정
+
+1. **재정 위험 평가**: 추경예산의 에너지 완화 조치는 지속 가능한 것으로 보아야 하는가, 아니면 중기적 재정 통합 위험을 초래하는 선거용 경기 부양책으로 보아야 하는가?
+2. **법치주의 추적**: 새로운 총기법은 진정한 안보 이점을 나타내는가, 아니면 허점을 남기는 타협안인가?
+3. **사회 계약 모니터링**: 노인 돌봄 규정은 2026년 9월 선거 전에 핵심 인구 집단에서 Tidö 연립에 대한 지지를 변화시킬 것인가?
+
+### ⚡ 60초 인텔리전스 요약
+
+- **HD01FiU48** [B2]: 추경예산 — 연료세 인하 + 전기/가스 가격 지원. V와 MP가 반대 유보를 제출. 추정 재정 충격: 가계 소득에 긍정적 효과가 기후 정책 후퇴로 상쇄됨. FiU가 위원회 권고를 승인.
+- **HD01JuU10** [B2]: 1996년 법을 대체하는 새 총기법. EU 지침 2021/555 이행. C(반자동 사냥용 총기 금지), S/V/MP(전환 규칙, 5년 허가, 감독)로부터 유보. JuU 다수가 승인.
+- **HD01SoU25** [B2]: 강화된 노인 돌봄 및 간병인 지원 규정. 경미한 유보를 가진 광범위한 초당파적 지지.
+- **HD01FiU23** [B3]: Riksbank 운영 2025년 검토 — 일상적 감독, FiU가 전반적으로 승인.
+
+### 🔭 주요 선행 트리거
+
+**주시**: HD01FiU48에 대한 본회의 표결(10일 이내 예상). V 또는 MP의 제안이 Tidö 내에서 예상치 못한 지지를 받는다면, 2026년 9월 선거 전 연립 불안정을 신호합니다.
+
+### 신뢰도 분포
+
+| 분야 | 신뢰도 | 근거 |
+|------|--------|------|
+| 재정 조치 | HIGH | FiU48 구조 확인; 유보 내용 문서화 |
+| 총기법 | HIGH | JuU10 구조 + 유보 정당 확인 |
+| 노인 돌봄 | MEDIUM | SoU25 메타데이터만; 전문 미수집 |
+| Riksbank 감독 | MEDIUM | FiU23 메타데이터만 |
+
+### Mermaid: 주요 입법 클러스터
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Classificatie**: PUBLIC | **Betrouwbaarheidsgraad**: HIGH | **Datum**: 2026-04-27
+
+### 🎯 BLUF
+
+De commissierapporten van de Riksdag gedateerd 24 april 2026 presenteren drie wetgevende fronten van onmiddellijk fiscaal, strafrechtelijk en sociaal belang. De Financiële Commissie (FiU) beveelt aan de aanvullende begroting van de regering goed te keuren met verlaging van de brandstofbelasting en ondersteuning van elektriciteits- en gasprijzen — een fiscaal expansieve maatregel gesteund door de Tidö-coalitie (M, SD, KD, L) maar tegengesteld door V en MP. De Justitiecommissie (JuU) bevordert de meest uitgebreide hervorming van de vuurwapenwetgeving in decennia, implementeert EU-richtlijnafstemming en verscherpt licentievereisten — met de Centrumpartij als dissident over semi-automatische jachtgeweren. De Sociale Commissie (SoU) keurt versterkte ouderenzorgbepalingen goed met uitgebreide mantelzorgerkennungsrechten. Samen signaleren deze beslissingen de activering van levenskostenbeleid, aanscherping van de veiligheid en onderhoud van het sociaal contract in aanloop naar de verkiezingen van 2026.
+
+### 🔑 Beslissingen die dit overzicht ondersteunt
+
+1. **Fiscale risicobeoordeling**: Moeten de energiesteunmaatregelen van de aanvullende begroting worden gezien als duurzaam of als electorale stimulus die een consolidatierisico op middellange termijn creëert?
+2. **Rechtsstaat-monitoring**: Vertegenwoordigt de nieuwe wapenwet een echte veiligheidswinst of een compromis dat lacunes laat?
+3. **Sociaalcontract-monitoring**: Zullen de ouderenzorgbepalingen de steun voor de Tidö-coalitie verschuiven bij belangrijke demografische segmenten vóór september 2026?
+
+### ⚡ 60-seconden inlichtingenoverzicht
+
+- **HD01FiU48** [B2]: Aanvullende begroting — brandstofbelastingverlaging + elektriciteits-/gassteun. V en MP dienden afwijkende bezwaren in. Geschatte fiscale impuls: positief huishoudinkomeneffect gecompenseerd door klimaatbeleidsregressie. FiU keurde de commissieaanbeveling goed.
+- **HD01JuU10** [B2]: Nieuwe wapenwet ter vervanging van de wetgeving uit 1996. Implementeert EU-Richtlijn 2021/555. Bezwaren van C (verbod op semi-automatische jachtgeweren), S/V/MP (overgangsregels, 5-jarige vergunningen, toezicht). JuU-meerderheid keurde goed.
+- **HD01SoU25** [B2]: Versterkte ouderenzorg- en mantelzorgondersteuningsbepalingen. Brede partijoverschrijdende steun met kleine bezwaren.
+- **HD01FiU23** [B3]: Beoordeling van de Riksbank-activiteiten 2025 — routinetoezicht, FiU keurde grotendeels goed.
+
+### 🔭 Belangrijkste vooruitkijkende trigger
+
+**Let op**: Kamerstemming over HD01FiU48 (verwacht binnen 10 dagen). Als V- of MP-voorstellen onverwacht steun krijgen binnen Tidö, signaleert dat coalitie-instabiliteit voor de verkiezingen van september 2026.
+
+### Betrouwbaarheidsverdeling
+
+| Domein | Betrouwbaarheidsgraad | Basis |
+|--------|-----------------------|-------|
+| Fiscale maatregelen | HIGH | FiU48-structuur bevestigd; bezwaren gedocumenteerd |
+| Wapenwet | HIGH | JuU10-structuur + bezwaarspartijen bevestigd |
+| Ouderenzorg | MEDIUM | Alleen SoU25-metadata; geen volledige tekst opgehaald |
+| Riksbank-toezicht | MEDIUM | Alleen FiU23-metadata |
+
+### Mermaid: Belangrijke wetgevingsclusters
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Klassifisering**: PUBLIC | **Konfidensgrad**: HIGH | **Dato**: 2026-04-27
+
+### 🎯 BLUF
+
+Riksdagens utvalgsrapporter datert 24. april 2026 presenterer tre lovgivningsfronter av umiddelbar fiskal, strafferettslig og sosial betydning. Finanskomiteen (FiU) anbefaler godkjenning av regjeringens tilleggsbudsjett med redusert drivstoffavgift og støtte til strøm- og gasspriser — et finansekspansivt tiltak støttet av Tidö-koalisjonen (M, SD, KD, L), men motarbeidet av V og MP. Justiskomiteen (JuU) fremmer den mest omfattende reformen av våpenlovgivningen på tiår, implementerer EU-direktiv og strammer inn lisenskravene — med Centerpartiet som dissidenter når det gjelder halvautomatiske jaktvåpen. Sosialutvalget (SoU) godkjenner styrkede eldre­omsorgsbestemmelser med utvidede rettigheter for pårørende­omsorgsgivere. Samlet signaliserer disse beslutningene aktivering av levekostnadspolitikk, skjerpet sikkerhet og vedlikehold av den sosiale kontrakten foran valget i 2026.
+
+### 🔑 Beslutninger denne oversikten støtter
+
+1. **Fiskal risikovurdering**: Bør tilleggsbudsjettets energiavlastingstiltak sees som bærekraftige eller som valgårsstimuli som skaper konsolideringsrisiko på mellomlang sikt?
+2. **Rettsstatssporing**: Representerer den nye våpenloven en reell sikkerhetsgevinst eller et kompromiss som etterlater hull?
+3. **Velferdskontraktovervåking**: Vil eldre­omsorgsbestemmelsene forskyve støtten til Tidö-koalisjonen blant viktige demografiske segmenter før september 2026?
+
+### ⚡ 60-sekunders etterretningslesing
+
+- **HD01FiU48** [B2]: Tilleggsbudsjett — redusert drivstoffavgift + støtte til strøm- og gasspriser. V og MP inngav avvikende merknader. Estimert fiskal impuls: positiv husholdningsinntektseffekt motveiet av klimapolitisk tilbakegang. FiU godkjente utvalgets anbefaling.
+- **HD01JuU10** [B2]: Ny våpenlov som erstatter 1996-lovgivningen. Implementerer EU-direktiv 2021/555. Merknader fra C (halvautomatisk jaktvåpenforbud), S/V/MP (overgangsregler, 5-årstillatelser, tilsyn). JuU-flertallet godkjente.
+- **HD01SoU25** [B2]: Styrkede bestemmelser om eldreomsorg og pårørendestøtte. Bred tverrpartilig støtte med mindre merknader.
+- **HD01FiU23** [B3]: Gjennomgang av Riksbankens virksomhet 2025 — rutinemessig tilsyn, FiU godkjente i stor grad.
+
+### 🔭 Viktigste fremoverskuende utløser
+
+**Følg med**: Kammervotering om HD01FiU48 (forventet innen 10 dager). Hvis V's eller MP's forslag uventet vinner støtte på tvers av Tidö, signaliserer det koalisjonsinstabilitet foran september 2026-valget.
+
+### Konfidensfordeling
+
+| Domene | Konfidensgrad | Grunnlag |
+|--------|---------------|---------|
+| Finansielle tiltak | HIGH | FiU48-struktur bekreftet; merknader dokumentert |
+| Våpenlovgivning | HIGH | JuU10-struktur + reservasjonspartier bekreftet |
+| Eldreomsorg | MEDIUM | Kun SoU25-metadata; ingen fulltext hentet |
+| Riksbank-tilsyn | MEDIUM | Kun FiU23-metadata |
+
+### Mermaid: Viktige lovgivningsklynger
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Klassificering**: PUBLIC | **Konfidensgrad**: HIGH | **Datum**: 2026-04-27
+
+### 🎯 BLUF
+
+Riksdagens utskottsbetänkanden daterade den 24 april 2026 presenterar tre lagstiftningsfronter av omedelbar fiskal, straffrättslig och social betydelse. Finansutskottet (FiU) rekommenderar godkännande av regeringens tilläggsbudget med sänkt drivmedelsskatt och stöd för el- och gaspriserna — en finansexpansiv åtgärd som stöds av Tidökoalitionen (M, SD, KD, L) men som möter motstånd från V och MP. Justitieutskottet (JuU) driver igenom den mest omfattande reformen av vapenlagstiftningen på decennier, i linje med EU-direktiv och med skärpta licenskrav — med Centerpartiet som dissidenter i fråga om halvautomatiska jaktvapen. Socialutskottet (SoU) tillstyrker stärkta äldreomsorgsbestämmelser med utökade rättigheter för anhörigvårdare. Sammantaget signalerar dessa beslut aktivering av levnadskostnadspolitik, skärpt säkerhet och underhåll av det sociala kontraktet inför valet 2026.
+
+### 🔑 Beslut som sammanfattningen stöder
+
+1. **Fiskal riskbedömning**: Bör tilläggsbudgetens energiavlastningsåtgärder ses som hållbara eller som en valårsimpuls som skapar konsolideringsrisk på medellång sikt?
+2. **Rättsstatsspårning**: Innebär den nya vapenlagen en verklig säkerhetsvinst eller är det ett kompromissresultat som lämnar luckor?
+3. **Välfärdsmonitoring**: Kommer äldreomsorgsbestämmelserna att förskjuta stödet för Tidökoalitionen bland viktiga demografiska segment inför september 2026?
+
+### ⚡ 60-sekunders underrättelseläsning
+
+- **HD01FiU48** [B2]: Tilläggsbudget — sänkt drivmedelsskatt + stöd för el- och gaspriser. V och MP lämnade avvikande reservationer. Uppskattad fiskal impuls: positiv effekt på hushållsinkomst motvägs av klimatpolitisk tillbakagång. FiU godkände utskottets rekommendation.
+- **HD01JuU10** [B2]: Ny vapenlag som ersätter 1996 års lagstiftning. Implementerar EU-direktiv 2021/555. Reservationer från C (förbud mot halvautomatiska jaktvapen), S/V/MP (övergångsregler, 5-årstillstånd, tillsyn). JuU-majoriteten godkände.
+- **HD01SoU25** [B2]: Stärkta bestämmelser om äldreomsorg och anhörigstöd. Brett partistöd med mindre reservationer.
+- **HD01FiU23** [B3]: Granskning av Riksbankens verksamhet 2025 — rutinmässig tillsyn, FiU tillstyrkte i stort.
+
+### 🔭 Viktigaste framåtriktat trigger
+
+**Bevaka**: Kammarvotering om HD01FiU48 (förväntas inom 10 dagar). Om V:s eller MP:s förslag mot förmodan vinner stöd inom Tidökoalitionen signalerar det koalitionsinstabilitet inför valet i september 2026.
+
+### Konfidensfördelning
+
+| Domän | Konfidensgrad | Underlag |
+|-------|---------------|---------|
+| Finansiella åtgärder | HIGH | FiU48:s struktur bekräftad; reservationer dokumenterade |
+| Vapenlagstiftning | HIGH | JuU10:s struktur + reservationspartier bekräftade |
+| Äldreomsorg | MEDIUM | Enbart SoU25-metadata; inget fulltext hämtat |
+| Riksbankstillsyn | MEDIUM | Enbart FiU23-metadata |
+
+### Mermaid: Viktiga lagstiftningskluster
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling | **分类**：PUBLIC | **可信度**：HIGH | **日期**：2026-04-27
+
+### 🎯 BLUF
+
+日期为2026年4月24日的Riksdagen委员会报告呈现了三个具有直接财政、刑事司法和社会重要性的立法战线。财政委员会（FiU）建议批准政府的补充预算，该预算削减燃油税并对电力和天然气价格提供支持——这是一项得到Tidö联合政府（M, SD, KD, L）支持但受到V和MP反对的财政扩张性措施。司法委员会（JuU）推进数十年来最全面的枪支立法改革，实施欧盟指令协调并严格许可要求——中央党就半自动猎枪问题持异议。社会事务委员会（SoU）批准加强老年护理规定，扩大护理人员认可权利。这些决定综合来看标志着生活成本政策激活、安全收紧以及迈向2026年选举的社会契约维护。
+
+### 🔑 本摘要支持的决策
+
+1. **财政风险评估**：补充预算的能源减负措施应被视为可持续的，还是会带来中期整合风险的选举年刺激措施？
+2. **法治追踪**：新枪支法是否代表真正的安全收益，还是留有漏洞的妥协方案？
+3. **社会契约监测**：老年护理规定是否会在2026年9月选举前改变关键人口群体中Tidö联合政府的支持？
+
+### ⚡ 60秒情报摘要
+
+- **HD01FiU48** [B2]：补充预算——燃油税削减+电力/天然气价格支持。V和MP提交了异议性保留意见。预计财政冲击：家庭收入正效应被气候政策倒退抵消。FiU批准了委员会建议。
+- **HD01JuU10** [B2]：取代1996年立法的新枪支法。实施欧盟指令2021/555。来自C（半自动猎枪禁止）、S/V/MP（过渡规则、5年许可证、监督）的保留意见。JuU多数批准。
+- **HD01SoU25** [B2]：加强老年护理和护理人员支持规定。以轻微保留意见获得广泛跨党派支持。
+- **HD01FiU23** [B3]：Riksbank运营2025年回顾——例行监督，FiU总体批准。
+
+### 🔭 首要前瞻触发因素
+
+**关注**：HD01FiU48议院表决（预计10天内）。若V或MP的提案出乎意料地获得Tidö内部支持，则预示着2026年9月选举前联合政府的不稳定性。
+
+### 可信度分布
+
+| 领域 | 可信度 | 依据 |
+|------|--------|------|
+| 财政措施 | HIGH | FiU48结构已确认；保留意见已记录 |
+| 枪支法 | HIGH | JuU10结构+保留政党已确认 |
+| 老年护理 | MEDIUM | 仅SoU25元数据；未获取全文 |
+| Riksbank监督 | MEDIUM | 仅FiU23元数据 |
+
+### Mermaid：主要立法集群
+
+```mermaid
+graph LR
+    A[HD01FiU48<br/>Extra Budget 2026] --> B[Fuel Tax Cut]
+    A --> C[Electricity/Gas Support]
+    A --> D{Opposition: V, MP}
+    E[HD01JuU10<br/>New Weapons Law] --> F[EU Directive Alignment]
+    E --> G[Semi-Auto Restrictions]
+    E --> H{Dissent: C, S, V, MP}
+    I[HD01SoU25<br/>Elder Care] --> J[Carer Rights Strengthened]
+    K[HD01FiU23<br/>Riksbank Review] --> L[Routine Oversight]
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style E fill:#00d9ff,stroke:#00d9ff,color:#000
+    style I fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style K fill:#4a90e2,stroke:#4a90e2,color:#fff
+    style D fill:#cc0000,stroke:#cc0000,color:#fff
+    style H fill:#cc0000,stroke:#cc0000,color:#fff
+```
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 6 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1540,3 +2300,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_zh.md)

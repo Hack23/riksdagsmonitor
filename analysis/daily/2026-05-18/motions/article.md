@@ -6,7 +6,7 @@ date: 2026-05-18
 subfolder: motions
 slug: 2026-05-18-motions
 source_folder: analysis/daily/2026-05-18/motions
-generated_at: 2026-05-18T08:24:18.772Z
+generated_at: 2026-05-18T09:08:39.048Z
 language: en
 layout: article
 ---
@@ -77,6 +77,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1612,13 +1625,577 @@ Data sourced from 2026-05-15 via lookback fallback — check freshness indicator
 |----------:|---------:|---------:|--------:|---------:|
 | 0 | 0 | 0 | 0 | 0 |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص تنفيذي — اقتراحات المعارضة 2026-05-18
+
+**التصنيف:** عام | **التاريخ:** 2026-05-18 | **المجلد الفرعي:** اقتراحات  
+**نوع المقال:** أخبار-اقتراحات | **معامل DIW:** 1.5× (القرب الانتخابي، 118 يوماً)
+
+---
+
+### عنوان قابل للنشر
+
+**S وC يتحديان قانون الشفافية لتحالف تيدو — دور LO في تمويل الأحزاب محور الجدل قبل 118 يوماً من الانتخابات**
+
+### الخلاصة
+
+قدّم حزبا S وC اقتراحات معارضة (HD024184، HD024151) ضد قانون الشفافية الخاص بتحالف تيدو Prop. 2025/26:258 بشأن التمويل السياسي — وهو قانون يُلزم النقابات العمالية، بما فيها LO، بالإفصاح عن مساهماتها للأحزاب السياسية — وذلك قبل 118 يوماً من انتخابات 13 سبتمبر 2026. يستهدف القانون عملياً الترتيب التاريخي للعضوية الجماعية للحزب التي تربط LO بالديمقراطيين الاجتماعيين، ويهدد بأن يصبح قضية انتخابية حاسمة حول الشرعية الديمقراطية في أكثر حملة انتخابية تنافسية خلال عقد.
+
+### النتائج الرئيسية (ملخص 30 ثانية)
+
+1. قدّم **حزب المركز Centerpartiet (C)** اقتراح لجنة HD024184 (2026-05-15) ضد Prop. 2025/26:258، التي تُلزم النقابات بالإفصاح عن مساهماتها في الأنشطة الحزبية — يعترض الاقتراح على تصميم التشريع، لا على مبدأ الشفافية.
+
+2. قدّمت **الديمقراطيون الاجتماعيون Socialdemokraterna (S)** اقتراح HD024151 (2026-05-13) بشأن الاقتراح ذاته، بحجة معارضة أشمل تستهدف التبعات الدستورية لتنظيم علاقات التمويل بين LO وS.
+
+3. **الأهمية السياسية بالغة**: قبل 118 يوماً من انتخابات 13 سبتمبر 2026، يتعلق هذا الاقتراح بأقدم رابط تمويل استراتيجي في الديمقراطية السويدية — ترتيب العضوية الجماعية للحزب بين LO والديمقراطيين الاجتماعيين.
+
+4. ستعالج **لجنة الدستور (KU)** كلا الاقتراحين. تتمتع قرارات KU بشأن الحوكمة الديمقراطية بأعلى ثقل مؤسسي؛ ستؤطر النتائج هنا حملة انتخابات 2026 حول الشرعية الديمقراطية.
+
+5. **السياق الاقتصادي لصندوق النقد الدولي تراجع** (Datamapper غير متاح)؛ بيانات التوظيف الصادرة عن SCB تُظهر أن سوق العمل السويدي مستقر بمعدل بطالة نحو 8.5% (AKU الربع الأول 2026).
+
+### زوايا القصة
+
+- **الزاوية أ (فورية):** حزبان معارضان يتحديان قانون الشفافية الحكومي باعتباره سياسة انتخابية متنكرة في هيئة إصلاح ديمقراطي
+- **الزاوية ب (هيكلية):** تُعدّ علاقة التمويل بين LO وS القضية الأكثر إثارة للجدل في تمويل الأحزاب في السويد — يحاول تحالف تيدو إعادة تأطيرها كقضية شفافية قبيل انتخابات 2026
+- **الزاوية ج (دستورية):** يستشهد كلا الاقتراحين بمخاوف حرية التجمع (الفصل الثاني من النظام الأساسي)، مما يثير مواجهة دستورية نادرة في KU قبل الانتخابات
+
+### درجة الأهمية
+
+**8.5/10** — أهمية دستورية (KU)، معارضة ثنائية الحزب (C+S)، حساسية انتخابية، رواية تمويل LO-S، معامل القرب الانتخابي مُطبَّق.
+
+---
+
+*حالة التحقق الثاني: منجز بالكامل*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_da.md -->
+
+**Klassifikation:** OFFENTLIG | **Dato:** 2026-05-18 | **Undermappe:** motioner  
+**Artikeltype:** nyheder-motioner | **DIW-multiplikator:** 1,5× (valnærhed, 118 dage)
+
+---
+
+### Publicerbar overskrift
+
+**S og C udfordrer Tidö-koalitionens transparenslov — LO's partifinansieringsrolle i fokus 118 dage før valget**
+
+### BLUF
+
+S og C har indgivet oppositionsmotioner (HD024184, HD024151) mod Tidö-koalitionens transparenslov prop. 2025/26:258 om politisk finansiering — en lov, der kræver, at fagforeninger, herunder LO, oplyser bidrag til politiske partier — med 118 dage til valget den 13. september 2026. Loven sigter i praksis mod LO's historiske partimedlemskabsarrangement med Socialdemokraterne og risikerer at blive et afgørende valgspørgsmål om demokratisk legitimitet i den mest konkurrenceprægede valgkampagne i et årti.
+
+### Vigtigste fund (30 sekunders resumé)
+
+1. **Centerpartiet (C)** indgav Kommittémotion HD024184 (2026-05-15) mod prop. 2025/26:258, som pålægger fagforeninger at oplyse bidrag til partipolitiske aktiviteter — motionen modsætter sig lovens udformning, men ikke transparensprincippet.
+
+2. **Socialdemokraterna (S)** indgav motion HD024151 (2026-05-13) om samme proposition med et bredere oppositionsargument, der retter sig mod de forfatningsmæssige konsekvenser af at regulere LO-S finansieringsrelationerne.
+
+3. **Den politiske betydning er ekstrem**: Med 118 dage til parlamentsvalget den 13. september 2026 vedrører motionen det ældste strategiske finansieringslink i svensk demokrati — LO's kollektive partimedlemskabsarrangement med Socialdemokraterne.
+
+4. **Den forfatningsretlige komité (KU)** vil behandle begge motioner. KU's afgørelser om demokratisk styring har den højeste institutionelle vægt; resultaterne her vil forme 2026-valgkampagnens framing om demokratisk legitimitet.
+
+5. **IMF's økonomiske kontekst forringet** (Datamapper utilgængelig); SCB's beskæftigelsesdata viser, at det svenske arbejdsmarked er stabilt med ca. 8,5 % arbejdsløshed (AKU kv. 1 2026).
+
+### Historievinkler
+
+- **A-vinkel (umiddelbar):** To oppositionspartier udfordrer regeringens transparenslov som valgpolitik forklædt som demokratisk reform
+- **B-vinkel (strukturel):** LO-S finansieringsrelationen er Sveriges mest omstridte partifinansierings­spørgsmål — Tidö-koalitionen forsøger at omformulere det som et transparensspørgsmål før valget 2026
+- **C-vinkel (forfatningsmæssig):** Begge motioner påberåber sig bekymringer om foreningsfrihed (RF kapitel 2), hvilket skaber en sjælden forfatnings­konfrontation i KU forud for valget
+
+### Signifikanspoint
+
+**8,5/10** — forfatningsmæssig betydning (KU), bipartisan opposition (C+S), valgfølsomhed, LO-S-finansieringsfortælling, valnærhedsmultiplikator anvendt.
+
+---
+
+*Pass-2-status: gennemført fuldt ud*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_de.md -->
+
+**Klassifizierung:** ÖFFENTLICH | **Datum:** 2026-05-18 | **Unterordner:** Motionen  
+**Artikeltyp:** Nachrichten-Motionen | **DIW-Multiplikator:** 1,5× (Wahlnähe, 118 Tage)
+
+---
+
+### Veröffentlichungsfähige Überschrift
+
+**S und C fordern das Transparenzgesetz der Tidö-Koalition heraus — LOs Rolle bei der Parteienfinanzierung im Fokus 118 Tage vor der Wahl**
+
+### BLUF
+
+S und C haben Oppositionsmotionen (HD024184, HD024151) gegen das Transparenzgesetz der Tidö-Koalition Prop. 2025/26:258 zur politischen Finanzierung eingereicht — ein Gesetz, das Gewerkschaften, einschließlich LO, verpflichtet, Beiträge an politische Parteien offenzulegen — mit 118 Tagen bis zur Wahl am 13. September 2026. Das Gesetz richtet sich praktisch gegen LOs historische Parteimitgliedschaftsvereinbarung mit den Sozialdemokraten und droht zu einem entscheidenden Wahlthema über demokratische Legitimität im wettbewerbsintensivsten Wahlkampf seit einem Jahrzehnt zu werden.
+
+### Wichtigste Erkenntnisse (30-Sekunden-Zusammenfassung)
+
+1. **Centerpartiet (C)** reichte Kommittémotion HD024184 (2026-05-15) gegen Prop. 2025/26:258 ein, die Gewerkschaften verpflichtet, Beiträge zu parteipolitischen Aktivitäten offenzulegen — die Motion wendet sich gegen das Design des Gesetzes, nicht gegen das Transparenzprinzip.
+
+2. **Socialdemokraterna (S)** reichte Motion HD024151 (2026-05-13) zu derselben Proposition ein, mit einem breiteren Oppositionsargument, das auf die verfassungsrechtlichen Implikationen der Regulierung der LO-S-Finanzierungsbeziehungen abzielt.
+
+3. **Die politische Relevanz ist extrem**: Mit 118 Tagen bis zur Parlamentswahl am 13. September 2026 betrifft die Motion das älteste strategische Finanzierungsglied in der schwedischen Demokratie — LOs kollektive Parteimitgliedschaftsvereinbarung mit den Sozialdemokraten.
+
+4. **Der Verfassungsausschuss (KU)** wird beide Motionen behandeln. KU-Entscheidungen zur demokratischen Governance haben das höchste institutionelle Gewicht; die Ergebnisse werden den Wahlkampf 2026 in Bezug auf demokratische Legitimität prägen.
+
+5. **IWF-Wirtschaftskontext verschlechtert** (Datamapper nicht verfügbar); SCB-Beschäftigungsdaten zeigen, dass der schwedische Arbeitsmarkt mit einer Arbeitslosigkeit von ca. 8,5 % stabil ist (AKU Q1 2026).
+
+### Storywinkeln
+
+- **A-Winkel (unmittelbar):** Zwei Oppositionsparteien fordern das Transparenzgesetz der Regierung als Wahlpolitik im Gewand demokratischer Reformen heraus
+- **B-Winkel (strukturell):** Die LO-S-Finanzierungsbeziehung ist Schwedens umstrittenste Parteienfinanzierungsfrage — die Tidö-Koalition versucht, sie vor der Wahl 2026 als Transparenzfrage umzurahmen
+- **C-Winkel (verfassungsrechtlich):** Beide Motionen berufen sich auf Bedenken zur Vereinigungsfreiheit (RF Kapitel 2), was vor der Wahl eine seltene verfassungsrechtliche Konfrontation im KU erzeugt
+
+### Signifikanzwertung
+
+**8,5/10** — verfassungsrechtliche Bedeutung (KU), überparteiliche Opposition (C+S), Wahlsensibilität, LO-S-Finanzierungsnarrativ, Wahlnähe-Multiplikator angewendet.
+
+---
+
+*Pass-2-Status: vollständig ausgeführt*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_es.md -->
+
+**Clasificación:** PÚBLICO | **Fecha:** 2026-05-18 | **Subcarpeta:** mociones  
+**Tipo de artículo:** noticias-mociones | **Multiplicador DIW:** 1,5× (proximidad electoral, 118 días)
+
+---
+
+### Titular publicable
+
+**S y C desafían la ley de transparencia de la coalición Tidö — el papel de LO en la financiación de partidos en el centro del debate a 118 días de las elecciones**
+
+### BLUF
+
+S y C han presentado mociones de oposición (HD024184, HD024151) contra la ley de transparencia de la coalición Tidö Prop. 2025/26:258 sobre financiación política — una ley que obliga a los sindicatos, incluido LO, a declarar sus contribuciones a los partidos políticos — con 118 días para las elecciones del 13 de septiembre de 2026. La ley apunta en la práctica al histórico acuerdo de afiliación colectiva de LO con los socialdemócratas y corre el riesgo de convertirse en un asunto electoral decisivo sobre legitimidad democrática en la campaña más competida en una década.
+
+### Principales conclusiones (resumen de 30 segundos)
+
+1. **Centerpartiet (C)** presentó la Kommittémotion HD024184 (2026-05-15) contra la Prop. 2025/26:258, que obliga a los sindicatos a declarar sus contribuciones a actividades partidistas — la moción se opone al diseño de la legislación, no al principio de transparencia.
+
+2. **Socialdemokraterna (S)** presentó la moción HD024151 (2026-05-13) sobre la misma proposición, con un argumento de oposición más amplio que apunta a las implicaciones constitucionales de regular las relaciones de financiación LO-S.
+
+3. **La relevancia política es extrema**: Con 118 días para las elecciones parlamentarias del 13 de septiembre de 2026, esta moción concierne al vínculo de financiación estratégica más antiguo de la democracia sueca — el acuerdo de afiliación colectiva de LO con los socialdemócratas.
+
+4. **El comité constitucional (KU)** procesará ambas mociones. Las decisiones de KU sobre gobernanza democrática tienen el mayor peso institucional; los resultados aquí darán forma al encuadre de la campaña electoral de 2026 sobre legitimidad democrática.
+
+5. **Contexto económico del FMI degradado** (Datamapper no disponible); los datos de empleo del SCB muestran que el mercado laboral sueco está estable con aproximadamente un 8,5% de desempleo (AKU T1 2026).
+
+### Ángulos de análisis
+
+- **Ángulo A (inmediato):** Dos partidos de oposición desafían la ley de transparencia del gobierno como política electoral disfrazada de reforma democrática
+- **Ángulo B (estructural):** La relación de financiación LO-S es la cuestión de financiación de partidos más controvertida en Suecia — la coalición Tidö intenta reencuadrarla como una cuestión de transparencia antes de las elecciones de 2026
+- **Ángulo C (constitucional):** Ambas mociones invocan preocupaciones sobre la libertad de asociación (RF Capítulo 2), planteando una rara confrontación constitucional en KU antes de las elecciones
+
+### Puntuación de significancia
+
+**8,5/10** — importancia constitucional (KU), oposición bipartidista (C+S), relevancia electoral, narrativa de financiación LO-S, multiplicador de proximidad electoral aplicado.
+
+---
+
+*Estado Pass-2: ejecutado en su totalidad*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_fi.md -->
+
+**Luokitus:** JULKINEN | **Päivämäärä:** 2026-05-18 | **Alihakemisto:** mootiot  
+**Artikkelityyppi:** uutiset-mootiot | **DIW-kerroin:** 1,5× (vaaliläheisyys, 118 päivää)
+
+---
+
+### Julkaisukelpoinen otsikko
+
+**S ja C haastavat Tidö-koalition läpinäkyvyyslain — LO:n puoluefinansoinnin rooli huomion keskipisteenä 118 päivää ennen vaaleja**
+
+### BLUF
+
+S ja C ovat jättäneet oppositiomootiot (HD024184, HD024151) Tidö-koalition läpinäkyvyyslakia prop. 2025/26:258 vastaan poliittisesta rahoituksesta — laki, joka velvoittaa ammattiliitot, mukaan lukien LO, ilmoittamaan poliittisille puolueille antamansa avustukset — 118 päivää ennen 13. syyskuuta 2026 pidettäviä vaaleja. Laki kohdistuu käytännössä LO:n historialliseen puoluejäsenyysjärjestelyyn sosiaalidemokraattien kanssa ja uhkaa nousta ratkaisevaksi vaaliaiheeksi demokraattisesta legitimiteetistä vuosikymmenen kilpailluimmassa vaalikampanjassa.
+
+### Tärkeimmät havainnot (30 sekunnin tiivistelmä)
+
+1. **Centerpartiet (C)** jätti Kommittémotion HD024184 (2026-05-15) propiecia 2025/26:258 vastaan, joka velvoittaa ammattiliitot ilmoittamaan puoluepoliittiseen toimintaan antamansa avustukset — moottio vastustaa lain rakennetta, mutta ei läpinäkyvyysperiaatetta.
+
+2. **Socialdemokraterna (S)** jätti mootion HD024151 (2026-05-13) samasta esityksestä laajemmalla oppositioargumentilla, joka kohdistuu LO–S-rahoitussuhteiden säätelyn perustuslaillisiin seurauksiin.
+
+3. **Poliittinen merkitys on äärimmäinen**: 118 päivää ennen 13. syyskuuta 2026 parlamenttivaaleja moottio koskee Ruotsin demokratian vanhinta strategista rahoituslinkkiä — LO:n kollektiivista puoluejäsenyysjärjestelyä sosiaalidemokraattien kanssa.
+
+4. **Perustuslakivaliokunta (KU)** käsittelee molemmat mootiot. KU:n päätöksillä demokraattisesta hallinnosta on korkein institutionaalinen paino; tulokset muovaavat vuoden 2026 vaalikampanjan kehystämistä demokraattisesta legitimiteetistä.
+
+5. **IMF:n taloudellinen konteksti heikentynyt** (Datamapper ei saatavilla); SCB:n työllistymistiedot osoittavat Ruotsin työmarkkinoiden olevan vakaita noin 8,5 %:n työttömyydellä (AKU Q1 2026).
+
+### Juttukulmat
+
+- **A-kulma (välitön):** Kaksi oppositiopuoluetta haastaa hallituksen läpinäkyvyyslain vaalipoliitikkana demokraattisen uudistuksen varjolla
+- **B-kulma (rakenteellinen):** LO–S-rahoitussuhde on Ruotsin kiistanalaisin puoluefinansoinnin kysymys — Tidö-koalitio yrittää uudelleenkehystää sen läpinäkyvyyskysymyksenä ennen vuoden 2026 vaaleja
+- **C-kulma (perustuslaillinen):** Molemmat mootiot vetoavat yhdistymisvapauden (RF luku 2) huoliin, mikä luo harvinaisen perustuslaillisen konfrontaation KU:ssa ennen vaaleja
+
+### Merkittävyyspistemäärä
+
+**8,5/10** — perustuslaillinen merkitys (KU), puolueenvälinen oppositio (C+S), vaaliherkkäisyys, LO-S-rahoituskertomus, vaaliläheisyyskerroin sovellettu.
+
+---
+
+*Pass-2-tila: suoritettu kokonaisuudessaan*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_fr.md -->
+
+**Type d'article :** actualités-motions | **Multiplicateur DIW :** 1,5× (proximité électorale, 118 jours)
+
+---
+
+### Titre publiable
+
+**S et C défient la loi sur la transparence de la coalition Tidö — le rôle du LO dans le financement des partis au cœur du débat à 118 jours des élections**
+
+### BLUF
+
+S et C ont déposé des motions d'opposition (HD024184, HD024151) contre la loi sur la transparence de la coalition Tidö Prop. 2025/26:258 sur le financement politique — une loi qui oblige les syndicats, dont le LO, à déclarer leurs contributions aux partis politiques — à 118 jours du scrutin du 13 septembre 2026. La loi vise en pratique l'arrangement historique d'adhésion collective du LO avec les sociaux-démocrates et risque de devenir un enjeu électoral décisif sur la légitimité démocratique dans la campagne la plus disputée depuis une décennie.
+
+### Principales conclusions (résumé en 30 secondes)
+
+1. **Centerpartiet (C)** a déposé la Kommittémotion HD024184 (2026-05-15) contre la Prop. 2025/26:258, qui oblige les syndicats à déclarer leurs contributions aux activités partisanes — la motion s'oppose à la conception de la législation, non au principe de transparence.
+
+2. **Socialdemokraterna (S)** a déposé la motion HD024151 (2026-05-13) sur la même proposition, avec un argument d'opposition plus large ciblant les implications constitutionnelles de la réglementation des relations de financement LO-S.
+
+3. **La saillance politique est extrême** : à 118 jours des élections législatives du 13 septembre 2026, cette motion concerne le lien de financement stratégique le plus ancien de la démocratie suédoise — l'arrangement d'adhésion collective du LO avec les sociaux-démocrates.
+
+4. **Le comité constitutionnel (KU)** traitera les deux motions. Les décisions de KU sur la gouvernance démocratique ont le poids institutionnel le plus élevé ; les résultats ici façonneront le cadrage de la campagne électorale de 2026 sur la légitimité démocratique.
+
+5. **Contexte économique du FMI dégradé** (Datamapper indisponible) ; les données de l'emploi du SCB montrent que le marché du travail suédois est stable à environ 8,5 % de chômage (AKU T1 2026).
+
+### Angles d'analyse
+
+- **Angle A (immédiat) :** Deux partis d'opposition défient la loi sur la transparence du gouvernement comme une politique électorale déguisée en réforme démocratique
+- **Angle B (structurel) :** La relation de financement LO-S est la question de financement des partis la plus contestée en Suède — la coalition Tidö tente de la recadrer comme une question de transparence avant les élections 2026
+- **Angle C (constitutionnel) :** Les deux motions invoquent des préoccupations relatives à la liberté d'association (RF Chapitre 2), soulevant une rare confrontation constitutionnelle au KU avant les élections
+
+### Score de signifiance
+
+**8,5/10** — importance constitutionnelle (KU), opposition bipartisane (C+S), saillance électorale, narrative de financement LO-S, multiplicateur de proximité électorale appliqué.
+
+---
+
+*Statut Pass-2 : exécuté en intégralité*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — הצעות אופוזיציה 2026-05-18
+
+**סיווג:** ציבורי | **תאריך:** 2026-05-18 | **תיקיית משנה:** הצעות  
+**סוג מאמר:** חדשות-הצעות | **מכפיל DIW:** 1.5× (קרבה בחירות, 118 ימים)
+
+---
+
+### כותרת לפרסום
+
+**S ו-C מאתגרות את חוק השקיפות של קואליציית טידו — תפקיד LO במימון המפלגות במוקד הדיון 118 ימים לפני הבחירות**
+
+### BLUF
+
+S ו-C הגישו הצעות אופוזיציה (HD024184, HD024151) נגד חוק השקיפות של קואליציית טידו Prop. 2025/26:258 בנושא מימון פוליטי — חוק המחייב ארגוני עובדים, כולל LO, לדווח על תרומות למפלגות פוליטיות — כ-118 ימים לפני הבחירות ב-13 בספטמבר 2026. החוק מכוון בפועל כלפי הסדר החברות הקולקטיבי ההיסטורי של LO עם הסוציאל-דמוקרטים, ועלול להפוך לנושא בחירות מכריע על לגיטימיות דמוקרטית בקמפיין התחרותי ביותר בעשור.
+
+### ממצאים עיקריים (תקציר 30 שניות)
+
+1. **מפלגת המרכז Centerpartiet (C)** הגישה Kommittémotion HD024184 (2026-05-15) נגד Prop. 2025/26:258, המחייבת ארגוני עובדים לדווח על תרומות לפעילות מפלגתית — ההצעה מתנגדת לעיצוב החקיקה, לא לעיקרון השקיפות.
+
+2. **Socialdemokraterna (S)** הגישה הצעה HD024151 (2026-05-13) על אותה הפרופוזיציה, עם טיעון אופוזיציה רחב יותר המכוון לתוצאות החוקתיות של ויסות יחסי המימון בין LO ל-S.
+
+3. **החשיבות הפוליטית קיצונית**: 118 ימים לפני הבחירות לפרלמנט ב-13 בספטמבר 2026, ההצעה עוסקת בקישור המימון האסטרטגי הוותיק ביותר בדמוקרטיה השוודית — הסדר החברות הקולקטיבי של LO עם הסוציאל-דמוקרטים.
+
+4. **ועדת החוקה (KU)** תעבד את שתי ההצעות. להחלטות KU בנושא ממשל דמוקרטי יש משקל מוסדי הגבוה ביותר; התוצאות כאן יעצבו את המסגור של קמפיין הבחירות של 2026 על לגיטימיות דמוקרטית.
+
+5. **הקשר הכלכלי של קרן המטבע הבינלאומית הורע** (Datamapper אינו זמין); נתוני התעסוקה של SCB מראים שוק עבודה שוודי יציב עם שיעור אבטלה של כ-8.5% (AKU Q1 2026).
+
+### זוויות סיפור
+
+- **זווית A (מיידית):** שתי מפלגות אופוזיציה מאתגרות את חוק השקיפות של הממשלה כפוליטיקה בחירות מחופשת לרפורמה דמוקרטית
+- **זווית B (מבנית):** יחסי המימון בין LO ל-S הם שאלת מימון המפלגות השנויה ביותר במחלוקת בשוודיה — קואליציית טידו מנסה לתמרן אותה כשאלת שקיפות לפני בחירות 2026
+- **זווית C (חוקתית):** שתי ההצעות מצטטות חששות לחופש התאגדות (פרק 2 של RF), ומעוררות עימות חוקתי נדיר ב-KU לפני הבחירות
+
+### ציון חשיבות
+
+**8.5/10** — חשיבות חוקתית (KU), אופוזיציה דו-מפלגתית (C+S), רגישות בחירות, נרטיב מימון LO-S, מכפיל קרבה בחירות מיושם.
+
+---
+
+*סטטוס Pass-2: בוצע במלואו*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_ja.md -->
+
+**分類：** 公開 | **日付：** 2026-05-18 | **サブフォルダ：** 動議  
+**記事種別：** ニュース-動議 | **DIW乗数：** 1.5×（選挙近接、118日）
+
+---
+
+### 公表可能な見出し
+
+**SとCがティドー連立の透明性法に挑戦 — 選挙118日前、LOの政党資金役割が焦点に**
+
+### BLUF
+
+SとCは、政治資金に関するティドー連立の透明性法（Prop. 2025/26:258）に対し、野党動議（HD024184、HD024151）を提出した。同法は、LOを含む労働組合が政党への寄付を開示することを義務付けるもので、2026年9月13日の選挙まで118日となっている。同法は実質的にLOと社会民主党の歴史的な集団党員協定を標的としており、10年間で最も競争の激しい選挙戦において民主的正統性をめぐる決定的な争点となるリスクがある。
+
+### 主要な調査結果（30秒ブリーフ）
+
+1. **中央党 Centerpartiet (C)** は、労働組合に党派活動への寄付開示を義務付ける Prop. 2025/26:258 に対し、Kommittémotion HD024184（2026-05-15）を提出した。動議は透明性の原則ではなく、法律の設計に反対している。
+
+2. **社会民主党 Socialdemokraterna (S)** は、同一の命題に対して動議 HD024151（2026-05-13）を提出し、LO-S資金関係の規制がもたらす憲法上の意味合いを標的にするより広範な反対論を展開した。
+
+3. **政治的顕著性は極めて高い**：2026年9月13日の総選挙まで118日の時点で、この動議はスウェーデン民主主義における最も古い戦略的資金連携、すなわちLOと社会民主党の集団的党員協定に関わるものである。
+
+4. **憲法委員会（KU）** が両動議を審査する。民主的ガバナンスに関するKUの決定は最高の制度的重みを持つ。ここでの結果は、民主的正統性をめぐる2026年選挙キャンペーンの構図を形作る。
+
+5. **IMF経済コンテキスト低下**（データマッパー利用不可）；SCBの雇用データはスウェーデンの労働市場が約8.5%の失業率で安定していることを示している（AKU 2026年第1四半期）。
+
+### 分析角度
+
+- **A角（即時）：** 2つの野党が、政府の透明性法を民主的改革に見せかけた選挙政治として挑戦している
+- **B角（構造的）：** LO-S資金関係はスウェーデンで最も争点となっている政党資金問題 — ティドー連立は2026年選挙前にこれを透明性問題として再定義しようとしている
+- **C角（憲法的）：** 両動議は結社の自由（RF第2章）への懸念を援用しており、選挙前にKUで稀有な憲法的対立を生み出している
+
+### 重要性スコア
+
+**8.5/10** — 憲法的重要性（KU）、二党間野党（C+S）、選挙的顕著性、LO-S資金ナラティブ、選挙近接乗数適用。
+
+---
+
+*Pass-2ステータス：完全に実行済み*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_ko.md -->
+
+**분류:** 공개 | **날짜:** 2026-05-18 | **하위 폴더:** 발의안  
+**기사 유형:** 뉴스-발의안 | **DIW 배율:** 1.5×(선거 근접, 118일)
+
+---
+
+### 게재 가능한 헤드라인
+
+**S와 C, 티도 연립의 투명성 법안에 도전 — 선거 118일 전, LO의 정당 자금 역할이 초점**
+
+### BLUF
+
+S와 C는 정치 자금에 관한 티도 연립의 투명성 법안 Prop. 2025/26:258에 반대하는 야당 발의안(HD024184, HD024151)을 제출했다. 이 법은 LO를 포함한 노동조합이 정당에 대한 기부금을 공개하도록 의무화하는 것으로, 2026년 9월 13일 선거까지 118일이 남았다. 이 법은 사실상 LO와 사회민주당의 역사적인 집단 당원 협약을 겨냥하고 있으며, 10년 만에 가장 경쟁이 치열한 선거에서 민주적 정당성에 관한 결정적인 선거 쟁점이 될 위험이 있다.
+
+### 주요 결과 (30초 요약)
+
+1. **중앙당 Centerpartiet (C)** 은 노동조합이 당파적 활동에 대한 기부금을 공개하도록 의무화하는 Prop. 2025/26:258에 반대하는 Kommittémotion HD024184(2026-05-15)를 제출했다. 이 발의안은 투명성 원칙이 아닌 법률 설계에 반대한다.
+
+2. **사회민주당 Socialdemokraterna (S)** 은 동일한 명제에 대해 발의안 HD024151(2026-05-13)을 제출했으며, LO-S 자금 관계 규제의 헌법적 함의를 겨냥하는 더 광범위한 반대 논거를 제시했다.
+
+3. **정치적 현저성은 매우 높다**: 2026년 9월 13일 총선까지 118일인 현 시점에서, 이 발의안은 스웨덴 민주주의에서 가장 오래된 전략적 자금 연계—LO와 사회민주당의 집단 당원 협약—를 다루고 있다.
+
+4. **헌법위원회(KU)** 가 두 발의안 모두를 처리할 것이다. 민주적 거버넌스에 관한 KU의 결정은 가장 높은 제도적 무게를 가지며, 이곳의 결과는 민주적 정당성에 관한 2026년 선거 캠페인의 프레이밍을 형성할 것이다.
+
+5. **IMF 경제 맥락 저하**(Datamapper 사용 불가); SCB 고용 데이터는 스웨덴 노동 시장이 약 8.5% 실업률로 안정적임을 보여준다(AKU 2026년 1분기).
+
+### 기사 각도
+
+- **A 각도(즉각):** 두 야당이 정부의 투명성 법안을 민주적 개혁으로 위장한 선거 정치로 도전하고 있다
+- **B 각도(구조적):** LO-S 자금 관계는 스웨덴에서 가장 논쟁적인 정당 자금 문제다 — 티도 연립은 2026년 선거 전에 이를 투명성 문제로 재프레이밍하려 하고 있다
+- **C 각도(헌법적):** 두 발의안 모두 결사의 자유(RF 제2장) 우려를 원용하여, 선거 전 KU에서 드문 헌법적 대결을 촉발시키고 있다
+
+### 중요성 점수
+
+**8.5/10** — 헌법적 중요성(KU), 양당 야권(C+S), 선거 민감성, LO-S 자금 내러티브, 선거 근접 배율 적용.
+
+---
+
+*Pass-2 상태: 완전히 실행됨*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_nl.md -->
+
+**Classificatie:** OPENBAAR | **Datum:** 2026-05-18 | **Submap:** moties  
+**Artikeltype:** nieuws-moties | **DIW-vermenigvuldiger:** 1,5× (verkiezingsnabijheid, 118 dagen)
+
+---
+
+### Publiceerbare kop
+
+**S en C dagen de transparantiewet van de Tidö-coalitie uit — LO's rol in de partijfinanciering in het middelpunt van de aandacht 118 dagen voor de verkiezingen**
+
+### BLUF
+
+S en C hebben oppositiemoties (HD024184, HD024151) ingediend tegen de transparantiewet van de Tidö-coalitie Prop. 2025/26:258 over politieke financiering — een wet die vakbonden, waaronder LO, verplicht bijdragen aan politieke partijen te melden — met 118 dagen tot de verkiezingen op 13 september 2026. De wet richt zich in de praktijk op de historische collectieve partijlidmaatschapsregeling van LO met de sociaaldemocraten en dreigt een doorslaggevend verkiezingspunt te worden over democratische legitimiteit in de meest competitieve verkiezingscampagne in een decennium.
+
+### Belangrijkste bevindingen (30 seconden samenvatting)
+
+1. **Centerpartiet (C)** diende Kommittémotion HD024184 (2026-05-15) in tegen Prop. 2025/26:258, die vakbonden verplicht bijdragen aan partijpolitieke activiteiten te melden — de motie verzet zich tegen het ontwerp van de wetgeving, niet tegen het transparantieprincipe.
+
+2. **Socialdemokraterna (S)** diende motie HD024151 (2026-05-13) in over dezelfde propositie, met een breder oppositieargument gericht op de constitutionele implicaties van het reguleren van de LO-S financieringsrelaties.
+
+3. **De politieke relevantie is extreem**: Met 118 dagen tot de parlementsverkiezingen op 13 september 2026 betreft de motie de oudste strategische financieringsband in de Zweedse democratie — de collectieve partijlidmaatschapsregeling van LO met de sociaaldemocraten.
+
+4. **Het Constitutioneel Comité (KU)** zal beide moties behandelen. KU-besluiten over democratisch bestuur hebben het hoogste institutionele gewicht; de uitkomsten zullen de framing van de verkiezingscampagne van 2026 over democratische legitimiteit bepalen.
+
+5. **IMF-economische context verslechterd** (Datamapper niet beschikbaar); SCB-werkgelegenheidsdata toont dat de Zweedse arbeidsmarkt stabiel is met ongeveer 8,5% werkloosheid (AKU Q1 2026).
+
+### Invalshoeken
+
+- **A-hoek (direct):** Twee oppositiepartijen dagen de transparantiewet van de regering uit als verkiezingspolitiek vermomd als democratische hervorming
+- **B-hoek (structureel):** De LO-S financieringsrelatie is Zweden's meest omstreden partijfinancieringsvraagstuk — de Tidö-coalitie probeert het te herkaderen als een transparantievraag voor de verkiezingen van 2026
+- **C-hoek (constitutioneel):** Beide moties beroepen zich op zorgen over de vrijheid van vereniging (RF Hoofdstuk 2), wat een zeldzame constitutionele confrontatie in KU voor de verkiezingen oplevert
+
+### Significantiepuntentelling
+
+**8,5/10** — constitutioneel belang (KU), bipartijdige oppositie (C+S), electorale gevoeligheid, LO-S financieringsnarratief, verkiezingsnabijheid-vermenigvuldiger toegepast.
+
+---
+
+*Pass-2-status: volledig uitgevoerd*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_no.md -->
+
+**Klassifisering:** OFFENTLIG | **Dato:** 2026-05-18 | **Undermappe:** motioner  
+**Artikkeltype:** nyheter-motioner | **DIW-multiplikator:** 1,5× (valnærhet, 118 dager)
+
+---
+
+### Publiserbar overskrift
+
+**S og C utfordrer Tidö-koalisjonens transparenslov — LOs partifinansieringsrolle i fokus 118 dager før valget**
+
+### BLUF
+
+S og C har levert opposisjonsmotioner (HD024184, HD024151) mot Tidö-koalisjonens transparenslov prop. 2025/26:258 om politisk finansiering — en lov som krever at fagforeninger, inkludert LO, opplyser bidrag til politiske partier — med 118 dager til valget 13. september 2026. Loven er i praksis rettet mot LOs historiske partimedlemskapordning med Socialdemokratene og risikerer å bli et avgjørende valgspørsmål om demokratisk legitimitet i den mest konkurransepregede valgkampen på et tiår.
+
+### Viktigste funn (30 sekunders sammendrag)
+
+1. **Centerpartiet (C)** leverte Kommittémotion HD024184 (2026-05-15) mot prop. 2025/26:258, som pålegger fagforeninger å opplyse bidrag til partipolitiske aktiviteter — motionen motsetter seg lovens utforming, men ikke transparensprinsippet.
+
+2. **Socialdemokraterna (S)** leverte motion HD024151 (2026-05-13) om samme proposisjon med et bredere opposisjonsargument rettet mot de konstitusjonelle konsekvensene av å regulere LO-S finansieringsrelasjonene.
+
+3. **Den politiske relevansen er ekstrem**: Med 118 dager til stortingsvalget 13. september 2026 gjelder motionen det eldste strategiske finansieringsbåndet i svensk demokrati — LOs kollektive partimedlemskapordning med Socialdemokratene.
+
+4. **Den konstitusjonelle komitéen (KU)** vil behandle begge motioner. KUs avgjørelser om demokratisk styring har høyest institusjonell vekt; utfallene her vil forme rammen for 2026-valgkampen om demokratisk legitimitet.
+
+5. **IMFs økonomiske kontekst forringet** (Datamapper utilgjengelig); SCBs sysselsettingsdata viser at det svenske arbeidsmarkedet er stabilt med ca. 8,5 % arbeidsledighet (AKU kv. 1 2026).
+
+### Historievinkler
+
+- **A-vinkel (umiddelbar):** To opposisjonspartier utfordrer regjeringens transparenslov som valgpolitikk forkledd som demokratisk reform
+- **B-vinkel (strukturell):** LO-S finansieringsrelasjonen er Sveriges mest omstridte partifinansieringsspørsmål — Tidö-koalisjonen forsøker å omformulere det som et transparensspørsmål før valget 2026
+- **C-vinkel (konstitusjonell):** Begge motioner påberoper seg bekymringer om foreningsfrihet (RF kapittel 2), noe som skaper en sjelden konstitusjonell konfrontasjon i KU foran valget
+
+### Signifikanspoeng
+
+**8,5/10** — konstitusjonell betydning (KU), bipartisan opposisjon (C+S), valgfølsomhet, LO-S-finansieringsnarrativ, valnærhetsmultiplikator anvendt.
+
+---
+
+*Pass-2-status: gjennomført i sin helhet*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_sv.md -->
+
+**Klassificering:** OFFENTLIG | **Datum:** 2026-05-18 | **Undermapp:** motioner  
+**Artikeltyp:** nyheter-motioner | **DIW-multiplikator:** 1,5× (valnärhet, 118 dagar)
+
+---
+
+### Publicerbar rubrik
+
+**S och C utmanar Tidö-koalitionens transparenslag — LO:s partifinansieringsroll i fokus 118 dagar före valet**
+
+### BLUF
+
+S och C har lämnat in oppositionsmotioner (HD024184, HD024151) mot Tidö-koalitionens transparenslag prop. 2025/26:258 för politisk finansiering — en lag som kräver att fackförbund, inklusive LO, redovisar bidrag till politiska partier — med 118 dagar till valet den 13 september 2026. Lagen riktar sig i praktiken mot LO:s historiska partimedlemskapsarrangemang med Socialdemokraterna och riskerar att bli ett avgörande valfråga om demokratisk legitimitet i den mest konkurrensutsatta valkampanjen på ett decennium.
+
+### Viktigaste slutsatser (30 sekunders sammanfattning)
+
+1. **Centerpartiet (C)** lämnade in Kommittémotion HD024184 (2026-05-15) mot prop. 2025/26:258, som ålägger fackförbund att redovisa bidrag till partipolitisk verksamhet — motionen motsätter sig lagstiftningens utformning men inte transparensprincipen i sig.
+
+2. **Socialdemokraterna (S)** lämnade in motion HD024151 (2026-05-13) om samma proposition med ett bredare oppositionsargument som riktar sig mot de konstitutionella konsekvenserna av att reglera LO:s och S:s finansieringsrelationer.
+
+3. **Den politiska relevansen är extrem**: Med 118 dagar till riksdagsvalet den 13 september 2026 rör motionen den äldsta strategiska finansieringsförbindelsen i svensk demokrati — LO:s kollektiva partimedlemskapsarrangemang med Socialdemokraterna.
+
+4. **Konstitutionsutskottet (KU)** ska behandla båda motionerna. KU:s beslut om demokratisk styrning har tyngsta institutionella vikt; utfallen här kommer att forma kampanjramarna för 2026 om demokratisk legitimitet.
+
+5. **IMF:s ekonomiska kontext degraderad** (Datamapper otillgänglig); SCB:s sysselsättningsdata visar att den svenska arbetsmarknaden är stabil med ca 8,5 % arbetslöshet (AKU kv1 2026).
+
+### Historievinklar
+
+- **A-vinkel (omedelbar):** Två oppositionspartier utmanar regeringens transparenslag som förvalspolitik förklädd till demokratisk reform
+- **B-vinkel (strukturell):** LO:s och S:s finansieringsrelation är Sveriges mest omstridda partifinanseringsfråga — Tidö-koalitionen försöker omformulera den som en transparensfråga inför valet 2026
+- **C-vinkel (konstitutionell):** Båda motionerna åberopar oro om föreningsfrihet (RF kapitel 2), vilket skapar en ovanlig konstitutionell konfrontation i KU inför valet
+
+### Signifikanspoäng
+
+**8,5/10** — konstitutionell betydelse (KU), bipartisan opposition (C+S), förvalssaliens, LO-S-finansieringsnarrativ, valnärhetsmultiplikator tillämpad.
+
+---
+
+*Pass-2-status: genomförd i sin helhet*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_zh.md -->
+
+**分类：** 公开 | **日期：** 2026-05-18 | **子文件夹：** 动议  
+**文章类型：** 新闻-动议 | **DIW乘数：** 1.5×（选举近接，118天）
+
+---
+
+### 可发布标题
+
+**S与C挑战蒂德联合政府透明度法案——选举118天前，LO政党资金角色成为焦点**
+
+### BLUF
+
+S与C已提交反对党动议（HD024184、HD024151），反对蒂德联合政府关于政治资金的透明度法案Prop. 2025/26:258——该法案要求工会（包括LO）披露向政党的捐款——距2026年9月13日选举还有118天。该法案实际上针对LO与社会民主党历史悠久的集体党员协议，有可能成为十年来竞争最激烈的选举中关于民主合法性的决定性选举议题。
+
+### 主要发现（30秒简报）
+
+1. **中央党 Centerpartiet (C)** 提交了Kommittémotion HD024184（2026-05-15），反对Prop. 2025/26:258——该法案要求工会披露对党派活动的贡献。动议反对法案设计，而非透明度原则本身。
+
+2. **社会民主党 Socialdemokraterna (S)** 就同一议案提交了动议HD024151（2026-05-13），以更广泛的反对论点针对规范LO-S资金关系的宪法影响。
+
+3. **政治显著性极高**：距2026年9月13日议会选举还有118天，该动议涉及瑞典民主最古老的战略资金纽带——LO与社会民主党的集体党员协议。
+
+4. **宪法委员会（KU）** 将处理两项动议。KU在民主治理方面的决定具有最高制度权重；此处的结果将塑造2026年选举运动关于民主合法性的框架。
+
+5. **IMF经济背景下降**（Datamapper不可用）；SCB就业数据显示瑞典劳动市场稳定，失业率约为8.5%（AKU 2026年第一季度）。
+
+### 报道角度
+
+- **A角度（即时）：** 两个反对党将政府透明度法案定性为披着民主改革外衣的选举政治
+- **B角度（结构性）：** LO-S资金关系是瑞典最具争议的政党资金问题——蒂德联合政府试图在2026年选举前将其重新定性为透明度问题
+- **C角度（宪法性）：** 两项动议均援引结社自由（RF第2章）方面的担忧，在选举前在KU引发罕见的宪法对抗
+
+### 重要性评分
+
+**8.5/10** — 宪法重要性（KU）、两党联合反对（C+S）、选举敏感性、LO-S资金叙事、选举近接乘数已应用。
+
+---
+
+*Pass-2状态：已完整执行*
+<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 1 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
@@ -1655,6 +2232,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

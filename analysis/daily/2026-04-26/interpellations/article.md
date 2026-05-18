@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: interpellations
 slug: 2026-04-26-interpellations
 source_folder: analysis/daily/2026-04-26/interpellations
-generated_at: 2026-05-17T22:44:40.539Z
+generated_at: 2026-05-18T09:08:37.840Z
 language: en
 layout: article
 ---
@@ -63,6 +63,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1792,13 +1805,461 @@ SAT count: **10 techniques** (minimum 10 required per tradecraft standards ✅)
 3. IMF economic data not fetched for this run — labour market and fiscal claims rely on interpellation-cited figures; recommend IMF WEO cross-validation for production
 4. SCB data not independently verified — housing start figures taken from S interpellation citation of municipal forecast
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# استجوابات الريكسداغ السويدي: المعارضة تتحدى الحكومة بشأن السياسة الطاقوية وسوق العمل والرعاية الاجتماعية — أبريل 2026
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-26  
+**نوع المقالة**: استجوابات  
+**التصنيف**: عام — اللائحة الأوروبية لحماية البيانات المادة 9(2)(هـ،ز)  
+**مستوى الثقة**: B2 (مصدر موثوق، صحيح على الأرجح)  
+**معرف التشغيل**: news-interpellations-2026-04-26
+
+---
+
+### ملخص تنفيذي (BLUF)
+
+شهد الأسبوع الأخير من أبريل 2026 موجة مكثفة من الاستجوابات المعارضة ضد حكومة ائتلاف تيدو على خمسة محاور استراتيجية: تضليل معلومات الطاقة (HD10448)، وإساءة استخدام مساهمات أصحاب العمل (HD10444)، وعكس إصلاح الإجازات المرضية (HD10447)، وثغرات القدرة الشرطية في ستوكهولم (HD10439)، وإغراق الخدمات الاجتماعية بين البلديات (HD10443). يمثل حزب العمال الاجتماعي (S) 11 من أصل 20 استجواباً حديثاً، مما يعكس حملة معارضة برلمانية متماسكة ضد وزير المالية سفانتيسون ووزيرة العمل بريتس. يستخدم الديمقراطيون السويديون (SD) الاستجوابات للطعن في الإطار الأيديولوجي لسياسة الطاقة وحرية التعبير. لم تُنشر أي ردود وزارية للإجراءات الخمسة الأخيرة.
+
+### الأحكام الرئيسية
+
+1. **ضغوط سوق العمل تهيمن على جدول الأعمال**: ثلاثة استجوابات قُدِّمت في غضون 48 ساعة تستهدف تخفيف تكاليف أجور أصحاب العمل (استعادة الإجازة المرضية، إساءة استخدام إصلاح مساهمات أصحاب العمل)، مما يشير إلى نية S لتأطير ربيع 2026 كفترة بطالة متصاعدة مرتبطة بحكومة نقلت تكاليف الرعاية الاجتماعية إلى العمال والشركات الصغيرة.
+
+2. **صراع التأطير حول السياسة الطاقوية**: يسعى استجواب SD بشأن "التضليل المعلوماتي" لطاقة الرياح (HD10448) الموجه للوزيرة إيبا بوش إلى إعادة تأطير تقارير المذيع العام باعتبارها دعاية، مما يشير إلى صراع متصاعد في بيئة المعلومات بين الائتلاف الحكومي والإعلام العام حول روايةالطاقة المتجددة.
+
+3. **المساءلة عن السياسة المالية**: يكشف استجوابان لوزير المالية سفانتيسون عن ثغرات في تطبيق خفض مساهمات أصحاب العمل للشباب — تحديداً الشركات التي تنظم ساعات العمل للاستفادة من الدعم دون مكاسب صافية في التوظيف — مما يمثل خطراً على مصداقية الإصلاح الرائد لسوق العمل.
+
+4. **ضغوط الإسكان والمناطق الحضرية**: يعكس استجواب S حول اتجاه تراجع بناء المساكن في ستوكهولم (HD10434) وثغرة حقوق الشفعة البلدية (HD10445) التحدي المستمر الذي يطرحه S على سجل وزير الإسكان كارلسون قبيل دورة ميزانية خريف 2026.
+
+5. **صدوع داخل الائتلاف**: يواجه وزراء حزب KD (فورسميد، بولين، كارلسون، سلوتنر) تدقيقاً معارضاً غير متناسب — بما يتسق مع استراتيجية S المتمثلة في استهداف الشريك الثانوي في الائتلاف المُعتبَر هشاً أيديولوجياً في قضايا الرعاية الاجتماعية والخدمات العامة.
+
+### الأهمية الاستراتيجية
+
+تُشكّل هذه المجموعة من الاستجوابات هجوماً برلمانياً منسقاً مُوقَّتاً مع نافذة مراجعة ميزانية ربيع 2026. تُرسم الموضوعات الرواية الانتخابية الناشئة لحزب S: حكومة قطعت الدعم الاجتماعي دون أن تُسلِّم على صعيد التوظيف والإسكان والأمن العام. تمثل استجوابات SD بشأن الطاقة وحرية التعبير حملة ضغط موازية تهدف إلى تضييق المجال السياسي للائتلاف من الداخل.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-26  
+**Artikeltype**: Interpellationer  
+**Klassificering**: ÅBEN — GDPR Art. 9(2)(e,g)  
+**Konfidens**: B2 (Troværdig kilde, sandsynligvis sand)  
+**Kørsels-ID**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+Den sidste uge af april 2026 bød på en koncentreret bølge af oppositionens interpellationer mod Tidö-koalitionsregeringen på fem strategiske fronter: energidesinformation (HD10448), misbrug af arbejdsgiverbidrag (HD10444), tilbagerulning af sygedagpengereformen (HD10447), mangler i politikapaciteten i Stockholm (HD10439) og social dumping kommuner imellem (HD10443). Socialdemokraterne (S) tegner sig for 11 af de 20 seneste interpellationer, hvilket afspejler en sammenhængende parlamentarisk oppositionskampagne mod finansminister Svantesson og arbejdsmarkedsminister Britz. Sverigedemokraterne (SD) anvender interpellationer til at bestride den ideologiske indramning af energipolitikken og ytringsfriheden. Ingen ministersvar er offentliggjort for de fem seneste indleveringer.
+
+### Centrale vurderinger
+
+1. **Arbejdsmarkedsstress dominerer dagsordenen**: Tre interpellationer indgivet inden for 48 timer er rettet mod arbejdsgivernes lønomkostningslettelse (genoprettelse af sygeløn, misbrug af arbejdsgiverbidragsreform), hvilket signalerer S's hensigt om at indramme foråret 2026 som en periode med stigende arbejdsløshed kombineret med en regering, der har overflyttet velfærdsomkostninger til ansatte og mindre virksomheder.
+
+2. **Strid om energipolitikkens indramning**: SD's interpellation om vindkraftens "desinformation" (HD10448) til minister Ebba Busch søger at omindramme den offentlige udsendelses reportage som fortaler-virksomhed, hvilket indikerer en eskalerende informationsmiljøkonflikt mellem regeringskoalitionen og public service om det vedvarende energi-narrativ.
+
+3. **Ansvarlighed for finanspolitikken**: To interpellationer til finansminister Svantesson afslører implementeringsmangler i nedsættelsen af unges arbejdsgiverbidrag — specifikt virksomheder, der strukturerer arbejdstimer for at udnytte tilskuddet uden nettobeskæftigelsesgevinster — hvilket udgør en troværdighedsrisiko for flagskibs-arbejdsmarkedsreformen.
+
+4. **Bolig- og bystress**: S's interpellation om Stockholms faldende boligbyggeristrend (HD10434) og kommunernes forkøbsretsgab (HD10445) afspejler S's vedvarende udfordring af minister Carlsons boligpolitiske resultater forud for budgetcyklussen efterår 2026.
+
+5. **Koalitionens sprækker**: KD-ministre (Forssmed, Bohlin, Carlson, Slottner) er udsat for uforholdsmæssig oppositionsgranskning — konsistent med S's strategi om at målrette juniorkoalitionspartneren, der opfattes som ideologisk sårbar på velfærds- og offentlige serviceområder.
+
+### Strategisk betydning
+
+Denne klynge af interpellationer udgør en koordineret parlamentarisk offensiv tidsmæssigt tilpasset forårsbrevision 2026-budgetvinduet. Temaerne kortlægger S's fremvoksende valgfortælling: en regering, der skar i velfærdsstøtten uden at levere på beskæftigelse, boliger og offentlig sikkerhed. SD's interpellationer om energi og ytringsfrihed repræsenterer en parallel pressionskampagne rettet mod at begrænse koalitionens politiske rum indefra.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-26  
+**Artikeltyp**: Interpellationen  
+**Klassifizierung**: OFFEN — DSGVO Art. 9(2)(e,g)  
+**Vertrauen**: B2 (Glaubwürdige Quelle, wahrscheinlich wahr)  
+**Lauf-ID**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+Die letzte Aprilwoche 2026 brachte eine konzentrierte Welle oppositioneller Interpellationen gegen die Tidö-Koalitionsregierung auf fünf strategischen Fronten: Energiedesinformation (HD10448), Missbrauch von Arbeitgeberbeiträgen (HD10444), Rücknahme der Lohnfortzahlungsreform (HD10447), Polizeikapazitätslücken in Stockholm (HD10439) und Sozialdumping zwischen Kommunen (HD10443). Die Sozialdemokraten (S) stellen 11 der 20 jüngsten Interpellationen, was eine kohärente parlamentarische Oppositionskampagne gegen Finanzminister Svantesson und Arbeitsmarktministerin Britz widerspiegelt. Die Schwedendemokraten (SD) setzen Interpellationen ein, um die ideologische Rahmung der Energiepolitik und der Meinungsfreiheit zu bestreiten. Für die fünf jüngsten Einreichungen wurden keine Ministerantworten veröffentlicht.
+
+### Zentrale Einschätzungen
+
+1. **Arbeitsmarktstress dominiert die Tagesordnung**: Drei innerhalb von 48 Stunden eingereichte Interpellationen richten sich gegen die Entlastung der Arbeitgeber bei Lohnkosten (Wiederherstellung der Lohnfortzahlung, Missbrauch der Arbeitgeberbeitragsreform), was S's Absicht signalisiert, das Frühjahr 2026 als eine Periode steigender Arbeitslosigkeit in Verbindung mit einer Regierung zu rahmen, die Wohlfahrtskosten auf Arbeitnehmer und kleinere Unternehmen abgewälzt hat.
+
+2. **Wettstreit um die Rahmung der Energiepolitik**: SD's Interpellation zur Windkraft-"Desinformation" (HD10448) an Minister Ebba Busch versucht, die Berichterstattung des öffentlich-rechtlichen Rundfunks als Advocacy umzurahmen, was auf einen eskalierenden Informationsumgebungsstreit zwischen der Regierungskoalition und dem öffentlichen Rundfunk über die Erzählung der erneuerbaren Energie hindeutet.
+
+3. **Haushaltspolitische Rechenschaftspflicht**: Zwei Interpellationen an Finanzminister Svantesson decken Umsetzungslücken bei der Absenkung der Arbeitgeberbeiträge für Jugendliche auf — konkret Unternehmen, die Arbeitsstunden so strukturieren, dass sie die Subvention ohne Netto-Beschäftigungsgewinne nutzen — was ein Glaubwürdigkeitsrisiko für die Flaggschiff-Arbeitsmarktreform darstellt.
+
+4. **Wohnungs- und Stadtdruck**: S's Interpellation zur sinkenden Wohnungsbautrend in Stockholm (HD10434) und zur Lücke im kommunalen Vorkaufsrecht (HD10445) spiegelt S's anhaltende Herausforderung des Wohnungspolitik-Leistungsausweises von Minister Carlson vor dem Budgetzyklus Herbst 2026 wider.
+
+5. **Koalitions-Bruchlinien**: KD-Minister (Forssmed, Bohlin, Carlson, Slottner) sind unverhältnismäßiger oppositioneller Kontrolle ausgesetzt — konsistent mit S's Strategie, den Juniorkoalitionspartner ins Visier zu nehmen, der als ideologisch anfällig bei Sozialwohl- und öffentlichen Dienstleistungsfragen wahrgenommen wird.
+
+### Strategische Bedeutung
+
+Diese Anhäufung von Interpellationen stellt eine koordinierte parlamentarische Offensive dar, die zeitlich auf das Frühjahr-2026-Haushaltsrevisionsfenster abgestimmt ist. Die Themen kartographieren S's aufkommende Wahlkampferzählung: eine Regierung, die Wohlfahrtsunterstützung kürzte, ohne bei Beschäftigung, Wohnungsbau und öffentlicher Sicherheit zu liefern. SD's Interpellationen zu Energie und Meinungsfreiheit repräsentieren eine parallele Druckkampagne, die darauf abzielt, den Politikraum der Koalition von innen zu beschränken.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-26  
+**Tipo de artículo**: Interpelaciones  
+**Clasificación**: ABIERTO — RGPD Art. 9(2)(e,g)  
+**Confianza**: B2 (Fuente creíble, probablemente verdadera)  
+**ID de ejecución**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+La última semana de abril de 2026 fue testigo de una ráfaga concentrada de interpelaciones de la oposición contra el gobierno de la coalición Tidö en cinco frentes estratégicos: desinformación energética (HD10448), abuso de cotizaciones patronales (HD10444), reversión de la reforma de las bajas laborales (HD10447), déficits de capacidad policial en Estocolmo (HD10439) y dumping social entre municipios (HD10443). Los socialdemócratas (S) representan 11 de las 20 interpelaciones más recientes, reflejando una coherente campaña de oposición parlamentaria contra el ministro de Finanzas Svantesson y la ministra de Empleo Britz. Los Demócratas de Suecia (SD) utilizan las interpelaciones para contestar el encuadre ideológico de la política energética y la libertad de expresión. No se han publicado respuestas ministeriales para las cinco presentaciones más recientes.
+
+### Juicios clave
+
+1. **El estrés del mercado laboral domina la agenda**: Tres interpelaciones presentadas en 48 horas se dirigen al alivio de los costes salariales de los empleadores (restauración de las bajas laborales, abuso de la reforma de las cotizaciones patronales), señalando la intención de S de enmarcar la primavera de 2026 como un período de creciente desempleo vinculado a un gobierno que trasladó los costes del bienestar a los trabajadores y a las pequeñas empresas.
+
+2. **Batalla de encuadre sobre la política energética**: La interpelación del SD sobre la "desinformación" de la energía eólica (HD10448) a la ministra Ebba Busch busca reencuadrar la cobertura del emisor público como activismo, indicando un conflicto en escalada en el entorno informativo entre la coalición de gobierno y los medios públicos sobre la narrativa de la energía renovable.
+
+3. **Responsabilidad de la política fiscal**: Dos interpelaciones al ministro de Finanzas Svantesson exponen lagunas en la implementación de la reducción de cotizaciones patronales para jóvenes — concretamente, empresas que estructuran las horas de trabajo para aprovechar el subsidio sin ganancias netas de empleo — representando un riesgo de credibilidad para la reforma estrella del mercado laboral.
+
+4. **Estrés de vivienda y urbano**: La interpelación de S sobre la trayectoria decreciente de la construcción de viviendas en Estocolmo (HD10434) y la brecha en los derechos de adquisición preferente municipales (HD10445) refleja el desafío sostenido de S al historial de política de vivienda del ministro Carlson ante el ciclo presupuestario de otoño de 2026.
+
+5. **Líneas de fractura de la coalición**: Los ministros KD (Forssmed, Bohlin, Carlson, Slottner) se enfrentan a un escrutinio desproporcionado de la oposición — coherente con la estrategia de S de apuntar al socio junior de la coalición percibido como ideológicamente vulnerable en cuestiones de bienestar y servicios públicos.
+
+### Importancia estratégica
+
+Este conjunto de interpelaciones constituye una ofensiva parlamentaria coordinada, sincronizada con la ventana de revisión presupuestaria de primavera de 2026. Los temas cartografían la narrativa de campaña electoral emergente de S: un gobierno que recortó el apoyo al bienestar sin entregar resultados en empleo, vivienda y seguridad pública. Las interpelaciones del SD sobre energía y libertad de expresión representan una campaña de presión paralela destinada a restringir el espacio político de la coalición desde dentro.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-04-26  
+**Artikkelityyppi**: Kyselytunnit  
+**Luokitus**: AVOIN — GDPR Art. 9(2)(e,g)  
+**Luottamus**: B2 (Luotettava lähde, todennäköisesti totta)  
+**Ajoaika**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+Huhtikuun 2026 viimeinen viikko sisälsi tiiviin sarjan opposition kyselytunteja Tidö-hallituskoalitiota vastaan viidellä strategisella rintamalla: energiadisinformaatio (HD10448), työnantajamaksujen väärinkäyttö (HD10444), sairauspäivärahauudistuksen peruuttaminen (HD10447), poliisikapasiteetin puutteet Tukholmassa (HD10439) ja kuntien välinen sosiaalipalvelujen siirtely (HD10443). Sosiaalidemokraatit (S) vastaavat 11:stä 20:stä viimeisimmästä kyselytunnista, mikä kuvastaa johdonmukaista parlamentaarista oppositiokampanjaa valtiovarainministeri Svantessonia ja työmarkkina- ja integrointiministeri Britziä vastaan. Ruotsidemokraatit (SD) käyttävät kyselytunteja energiapolitiikan ja sananvapauden ideologisen kehystämisen kyseenalaistamiseen. Yhdellekään viidestä viimeisimmästä jättöasiasta ei ole julkaistu ministerivastauksia.
+
+### Keskeisimmät arviot
+
+1. **Työmarkkinastressit hallitsevat asialistaa**: Kolme 48 tunnin sisällä jätettyä kyselytuntia kohdistuu työnantajien palkkakustannusten alentamiseen (sairauspäivärahapalautus, työnantajamaksuuudistuksen väärinkäyttö), mikä viestii S:n aikomuksesta kehystää kevät 2026 nousevien työttömyyslukujen kaudeksi yhdistettynä hallitukseen, joka siirsi sosiaaliturvakulut työntekijöille ja pienille yrityksille.
+
+2. **Energiapolitiikan kehystämiskilpailu**: SD:n kyselytunti tuulivoimadisinformaatiosta (HD10448) ministeri Ebba Buschille pyrkii kehystämään uudelleen julkisen palvelun raportoinnin edunvalvonnaksi, mikä osoittaa kiihtyvää informaatioympäristökonfliktiä hallituskoalition ja julkisen yleisradion välillä uusiutuvan energian narratiivista.
+
+3. **Talouspolitiikan vastuuvelvollisuus**: Kaksi kyselytuntia valtiovarainministeri Svantessonille paljastaa nuorten työnantajamaksualennuksen toteutuspuutteet — erityisesti yhtiöt, jotka rakentavat työtunnit hyödyntääkseen tukea ilman nettosuhteessa työllisyysvoittoja — mikä muodostaa uskottavuusriskin lippulaiva-työmarkkina-uudistukselle.
+
+4. **Asunto- ja kaupunkistressit**: S:n kyselytunti Tukholman laskevasta asuntorakentamistrendistä (HD10434) ja kuntien etuosto-oikeusgapista (HD10445) heijastaa S:n jatkuvaa haastetta ministeri Carlsonin asuntopoliittisia saavutuksia kohtaan syksyn 2026 budjettikierroksen alla.
+
+5. **Koalition halkeamat**: KD-ministerit (Forssmed, Bohlin, Carlson, Slottner) kohtaavat suhteettoman opposition valvonnan — johdonmukaisesti S:n strategian kanssa, jossa kohdistetaan junioriliittolaispuolueeseen, joka koetaan ideologisesti haavoittuvaiseksi hyvinvointi- ja julkisten palvelujen asioissa.
+
+### Strateginen merkitys
+
+Tämä kyselytuntirykelmä muodostaa koordinoidun parlamentaarisen hyökkäyksen, joka on ajoitettu kevään 2026 budjettirevisiokehykseen. Teemat kartoittavat S:n kehittyvää vaalinarratiivia: hallitus, joka leikkasi sosiaaliturvatukea toimittamatta työllistymistä, asumista ja turvallisuutta. SD:n kyselytunnit energiasta ja sananvapaudesta edustavat rinnakkaista painostuskampanjaa, jonka tavoitteena on rajoittaa koalition politiikkatilaa sisältä päin.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Type d'article** : Interpellations  
+
+**Confiance** : B2 (Source crédible, probablement vraie)  
+**ID d'exécution** : news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+La dernière semaine d'avril 2026 a connu un afflux concentré d'interpellations de l'opposition contre le gouvernement de la coalition Tidö sur cinq fronts stratégiques : désinformation sur l'énergie (HD10448), abus des cotisations patronales (HD10444), renversement de la réforme des congés maladie (HD10447), lacunes de la capacité policière à Stockholm (HD10439), et dumping social entre communes (HD10443). Les sociaux-démocrates (S) représentent 11 des 20 interpellations les plus récentes, reflétant une campagne d'opposition parlementaire cohérente contre le ministre des Finances Svantesson et la ministre du Travail Britz. Les Démocrates de Suède (SD) utilisent les interpellations pour contester le cadrage idéologique de la politique énergétique et la liberté d'expression. Aucune réponse ministérielle n'a été publiée pour les cinq soumissions les plus récentes.
+
+### Jugements clés
+
+1. **Le stress du marché du travail domine l'agenda** : Trois interpellations déposées en 48 heures ciblent l'allègement des coûts de main-d'œuvre des employeurs (rétablissement des congés maladie, abus de la réforme des cotisations patronales), signalant l'intention de S d'encadrer le printemps 2026 comme une période de chômage croissant associée à un gouvernement qui a transféré les coûts du bien-être aux travailleurs et aux petites entreprises.
+
+2. **Bataille de cadrage sur la politique énergétique** : L'interpellation du SD sur la « désinformation » de l'énergie éolienne (HD10448) adressée à la ministre Ebba Busch cherche à recadrer les reportages du diffuseur public comme du militantisme, indiquant un conflit croissant autour de l'environnement informationnel entre la coalition gouvernementale et les médias publics sur le narratif des énergies renouvelables.
+
+3. **Responsabilité de la politique budgétaire** : Deux interpellations au ministre des Finances Svantesson exposent des lacunes de mise en œuvre dans la réduction des cotisations patronales pour les jeunes — spécifiquement des entreprises structurant les heures de travail pour exploiter la subvention sans gains nets d'emploi — représentant un risque de crédibilité pour la réforme phare du marché du travail.
+
+4. **Stress du logement et de l'urbain** : L'interpellation de S sur la trajectoire déclinante de la construction de logements à Stockholm (HD10434) et la lacune dans les droits de préemption municipaux (HD10445) reflète le défi soutenu de S au bilan de politique du logement du ministre Carlson avant le cycle budgétaire de l'automne 2026.
+
+5. **Lignes de fracture de la coalition** : Les ministres KD (Forssmed, Bohlin, Carlson, Slottner) font face à un contrôle d'opposition disproportionné — cohérent avec la stratégie de S de cibler le partenaire junior de la coalition perçu comme idéologiquement vulnérable sur les questions de bien-être et de services publics.
+
+### Signification stratégique
+
+Ce groupe d'interpellations constitue une offensive parlementaire coordonnée, synchronisée avec la fenêtre de révision budgétaire du printemps 2026. Les thèmes cartographient le narratif de campagne électorale émergent de S : un gouvernement qui a réduit le soutien social sans livrer sur l'emploi, le logement et la sécurité publique. Les interpellations du SD sur l'énergie et la liberté d'expression représentent une campagne de pression parallèle visant à contraindre l'espace politique de la coalition de l'intérieur.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# שאילתות בריקסדאג השבדי: האופוזיציה מאתגרת את הממשלה בנושא מדיניות אנרגיה, שוק העבודה ורווחה חברתית — אפריל 2026
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-26  
+**סוג מאמר**: שאילתות  
+**סיווג**: פתוח — GDPR סעיף 9(2)(ה,ז)  
+**אמינות**: B2 (מקור אמין, כנראה אמת)  
+**מזהה הרצה**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+השבוע האחרון של אפריל 2026 הביא גל מרוכז של שאילתות אופוזיציה נגד ממשלת קואליציית טידו על חמישה חזיתות אסטרטגיות: דיסאינפורמציה אנרגטית (HD10448), ניצול לרעה של דמי מעסיקים (HD10444), ביטול רפורמת דמי מחלה (HD10447), פערים בכוח המשטרה בסטוקהולם (HD10439), ו-"dumping" שירותים חברתיים בין עיריות (HD10443). המפלגה הסוציאל-דמוקרטית (S) אחראית ל-11 מתוך 20 השאילתות האחרונות, המשקפות קמפיין אופוזיציה פרלמנטרי עקבי נגד שר האוצר סוונטסון ושרת העבודה בריץ. הדמוקרטים השבדים (SD) משתמשים בשאילתות לאתגר את המסגור האידיאולוגי של מדיניות האנרגיה וחופש הביטוי. לא פורסמו תשובות מינסטריאליות לחמש ההגשות האחרונות.
+
+### שיפוטים מרכזיים
+
+1. **לחץ שוק העבודה שולט בסדר היום**: שלוש שאילתות שהוגשו תוך 48 שעות מכוונות להקלת עלויות שכר עבור מעסיקים (שחזור דמי מחלה, ניצול לרעה של רפורמת דמי מעסיקים), המאותתות על כוונת S למסגר את אביב 2026 כתקופה של אבטלה גוברת בשילוב ממשלה שהעבירה עלויות רווחה לעובדים ולעסקים קטנים.
+
+2. **מאבק מסגור על מדיניות האנרגיה**: שאילתת SD על "הדיסאינפורמציה" של אנרגיית הרוח (HD10448) לשרה אבה בוש מבקשת למסגר מחדש את הסיקור של שידור הציבורי כהסברה, המצביעה על סכסוך גובר בסביבת המידע בין קואליציית השלטון ותקשורת הציבורית סביב נרטיב האנרגיה המתחדשת.
+
+3. **אחריות על המדיניות הפיסקלית**: שתי שאילתות לשר האוצר סוונטסון חושפות פערים ביישום הפחתת דמי המעסיקים לצעירים — ספציפית חברות המבנות שעות עבודה לניצול הסובסידיה ללא רווחי תעסוקה נטו — המייצגות סיכון אמינות לרפורמת שוק העבודה הדגל.
+
+4. **לחץ דיור ועירוני**: שאילתת S על מגמת הבנייה הירידה בסטוקהולם (HD10434) ופער זכויות הקדימה העירוניות (HD10445) משקפת את האתגר המתמשך של S לרשומת מדיניות הדיור של שר קרלסון לפני מחזור התקציב בסתיו 2026.
+
+5. **קווי שבר בקואליציה**: שרי KD (פורסמד, בוהלין, קרלסון, סלוטנר) מתמודדים עם בדיקת אופוזיציה לא פרופורציונלית — בהתאם לאסטרטגיית S לכוון את השותף הזוטר בקואליציה הנתפס כפגיע אידיאולוגית בנושאי רווחה ושירותי ציבור.
+
+### חשיבות אסטרטגית
+
+אשכול שאילתות זה מהווה מתקפה פרלמנטרית מתואמת המתוזמנת לחלון סקירת התקציב של אביב 2026. הנושאים ממפים את הנרטיב העולה של קמפיין הבחירות של S: ממשלה שקיצצה בתמיכת הרווחה מבלי לספק תוצאות בתעסוקה, דיור ובטחון ציבורי. שאילתות SD על אנרגיה וחופש ביטוי מייצגות קמפיין לחץ מקביל שמטרתו להגביל את מרחב המדיניות של הקואליציה מבפנים.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-04-26  
+**記事タイプ**: 質問（インタープレーション）  
+**分類**: 公開 — GDPR第9条第2項(e,g)  
+**信頼度**: B2（信頼できる情報源、おそらく真実）  
+**実行ID**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+2026年4月最終週、5つの戦略的正面においてティードー（Tidö）連立政権に対する野党の質問（インタープレーション）が集中して提出されました：エネルギー虚偽情報（HD10448）、使用者拠出金の濫用（HD10444）、傷病手当改革の撤回（HD10447）、ストックホルムの警察力不足（HD10439）、および自治体間の社会サービスのダンピング（HD10443）。社会民主党（S）が最新の20件中11件を占め、財務大臣スヴァンテッソンと雇用大臣ブリッツに対する一貫した議会野党キャンペーンを反映しています。スウェーデン民主党（SD）は、エネルギー政策と表現の自由のイデオロギー的枠組みに異議を唱えるために質問を活用しています。直近5件の提出に対する大臣回答は未発表です。
+
+### 主要判断
+
+1. **労働市場のストレスが議題を支配**: 48時間以内に提出された3件の質問が雇用主の人件費軽減（傷病手当の回復、使用者拠出金改革の濫用）を標的とし、S側が春2026年を労働者と中小企業に福祉コストを転嫁した政府下での失業増加の時期として枠組む意図を示しています。
+
+2. **エネルギー政策の枠組みをめぐる争い**: SDのエビア・ブッシュ大臣宛の風力「虚偽情報」に関する質問（HD10448）は、公共放送の報道をアドボカシーとして再枠組みしようとするものであり、再生可能エネルギーの物語をめぐる連立政権と公共メディアの間の情報環境紛争の激化を示しています。
+
+3. **財政政策の説明責任**: 財務大臣スヴァンテッソンへの2件の質問は、若者の使用者拠出金引き下げの実施不全を明らかにしています — 具体的には、純雇用増なしに補助金を利用するために労働時間を設計する企業 — これは主要労働市場改革の信頼性リスクを表しています。
+
+4. **住宅・都市のストレス**: ストックホルムの住宅建設軌跡の低下（HD10434）と自治体先買権の空白（HD10445）に関するSの質問は、2026年秋予算サイクルを前にカールソン大臣の住宅政策実績に対するSの持続的な挑戦を反映しています。
+
+5. **連立内の断層線**: KD大臣たち（フォルスメド、ボーリン、カールソン、スロットナー）が不釣り合いな野党の監視に直面しており、これはS側が福祉と公共サービス問題でイデオロギー的に脆弱と見られる連立の少数パートナーを標的にする戦略と一致しています。
+
+### 戦略的意義
+
+この質問群は2026年春の予算改定ウィンドウに合わせて時宜を得た協調的な議会攻撃を構成しています。テーマはSの新興選挙キャンペーン物語を描写しています：雇用・住宅・公共安全を実現することなく福祉支援を削減した政府。エネルギーと表現の自由に関するSDの質問は、連立の政策空間を内部から制約することを目指す並行的な圧力キャンペーンを表しています。
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-26  
+**기사 유형**: 인터펠라시온(질의)  
+**분류**: 공개 — GDPR 제9조 제2항(e,g)  
+**신뢰도**: B2 (신뢰할 수 있는 출처, 아마도 사실)  
+**실행 ID**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+2026년 4월 마지막 주, 티데(Tidö) 연립정부에 대한 야당 질의가 다섯 가지 전략적 전선에서 집중적으로 쏟아졌습니다: 에너지 허위정보(HD10448), 고용주 기여금 남용(HD10444), 상병급여 개혁 철회(HD10447), 스톡홀름 경찰 역량 부족(HD10439), 지자체 간 사회서비스 덤핑(HD10443). 사회민주당(S)이 최신 20건 중 11건을 차지하며, 재무장관 스반테손과 노동장관 브리츠에 대한 일관된 의회 야당 캠페인을 반영합니다. 스웨덴 민주당(SD)은 에너지 정책과 표현의 자유의 이념적 프레임에 이의를 제기하기 위해 질의를 활용합니다. 최근 5건의 제출에 대한 장관 답변은 발표되지 않았습니다.
+
+### 핵심 판단
+
+1. **노동시장 스트레스가 의제를 지배**: 48시간 이내 제출된 3건의 질의가 고용주의 임금비용 경감(상병수당 복원, 고용주기여금 개혁 남용)을 겨냥하며, S측이 2026년 봄을 복지 비용을 노동자와 중소기업에 전가한 정부 아래 실업률 상승 기간으로 프레임하려는 의도를 보여줍니다.
+
+2. **에너지 정책 프레임 전쟁**: SD의 에비아 부시 장관에 대한 풍력 "허위정보" 질의(HD10448)는 공영방송의 보도를 옹호 활동으로 재프레임하려는 시도로, 재생에너지 내러티브를 둘러싼 연립정부와 공영 미디어 간의 정보 환경 분쟁이 고조되고 있음을 나타냅니다.
+
+3. **재정정책 책임**: 재무장관 스반테손에 대한 두 건의 질의는 청년 고용주기여금 인하의 이행 공백을 드러냅니다 — 순고용 증가 없이 보조금을 활용하기 위해 근무 시간을 구조화하는 기업들 — 이는 주력 노동시장 개혁에 신뢰성 위험을 초래합니다.
+
+4. **주택·도시 스트레스**: 스톡홀름의 주택건설 감소 추세(HD10434)와 지자체 우선매수권 공백(HD10445)에 관한 S의 질의는 2026년 가을 예산 주기를 앞두고 칼슨 장관의 주택정책 실적에 대한 S의 지속적인 도전을 반영합니다.
+
+5. **연립 균열선**: KD 장관들(포르스메드, 보흘린, 칼슨, 슬로트네르)이 불균형적인 야당 감시를 받고 있으며, 이는 복지와 공공서비스 문제에서 이념적으로 취약하다고 인식되는 연립 내 소수 파트너를 표적으로 삼는 S의 전략과 일치합니다.
+
+### 전략적 의의
+
+이 질의 클러스터는 2026년 봄 예산 수정 기간에 맞춰 조율된 의회 공세를 구성합니다. 주제들은 S의 부상하는 선거 캠페인 내러티브를 그려냅니다: 고용·주택·공공 안전에서 결과를 내지 못하면서 복지 지원을 삭감한 정부. 에너지와 표현의 자유에 관한 SD의 질의는 연립의 정책 공간을 내부에서 제약하려는 병행적 압박 캠페인을 나타냅니다.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-26  
+**Artikeltype**: Interpellaties  
+**Classificatie**: OPEN — AVG Art. 9(2)(e,g)  
+**Betrouwbaarheid**: B2 (Betrouwbare bron, waarschijnlijk waar)  
+**Run-ID**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+De laatste week van april 2026 bracht een geconcentreerde uitbarsting van oppositionele interpellaties tegen de Tidö-coaltieregering op vijf strategische fronten: energiedesinformatie (HD10448), misbruik van werkgeversbijdragen (HD10444), terugdraaien van de ziekteloonhervorming (HD10447), politiecapaciteitsgebrekken in Stockholm (HD10439), en sociale dumping tussen gemeenten (HD10443). De Sociaaldemocraten (S) zijn goed voor 11 van de 20 meest recente interpellaties, wat een coherente parlementaire oppositiekampagne tegen Minister van Financiën Svantesson en Minister van Arbeid Britz weerspiegelt. De Zweedse Democraten (SD) zetten interpellaties in om de ideologische inkadering van het energiebeleid en de vrijheid van meningsuiting te betwisten. Voor de vijf meest recente indieningen zijn geen ministeriële antwoorden gepubliceerd.
+
+### Sleuteloordelen
+
+1. **Arbeidsmarktstress domineert de agenda**: Drie interpellaties binnen 48 uur ingediend richten zich op de verlaging van loonkosten voor werkgevers (herstel ziektegeld, misbruik werkgeversbijdragenhervorming), wat S's intentie signaleert om het voorjaar 2026 in te kaderen als een periode van stijgende werkloosheid gekoppeld aan een regering die welzijnskosten afwentelde op werknemers en kleinere bedrijven.
+
+2. **Strijd om inkadering van het energiebeleid**: SD's interpellatie over windenergie-"desinformatie" (HD10448) aan minister Ebba Busch probeert de berichtgeving van de publieke omroep te herkaderen als belangenbehartiging, wat wijst op een escalerend informatieomgevingsconflict tussen de regerende coalitie en de publieke media over het hernieuwbare energie-narratief.
+
+3. **Verantwoordelijkheid voor begrotingsbeleid**: Twee interpellaties aan minister van Financiën Svantesson onthullen implementatiehiaten in de verlaging van werkgeversbijdragen voor jongeren — specifiek bedrijven die werkuren structureren om de subsidie te benutten zonder netto-werkgelegenheidswinst — wat een geloofwaardigheidsrisico vormt voor de vlaggenschip-arbeidsmarkthervorming.
+
+4. **Woning- en stadsstress**: S's interpellatie over Stockholms dalende woningbouwtrend (HD10434) en het gemeentelijke voorkooprechtenkloof (HD10445) weerspiegelt S's aanhoudende uitdaging van minister Carlsons woningbeleidsresultaten voor de begrotingscyclus herfst 2026.
+
+5. **Breuklijnen in de coalitie**: KD-ministers (Forssmed, Bohlin, Carlson, Slottner) worden geconfronteerd met disproportionele oppositionele controle — consistent met S's strategie om de juniorcoalitiegenoot te targeten die wordt gezien als ideologisch kwetsbaar op thema's van welzijn en publieke dienstverlening.
+
+### Strategische betekenis
+
+Deze interpellatiecluster vormt een gecoördineerde parlementaire offensief, synchroon met het voorjaar-2026 budgetrevisievenster. De thema's brengen S's opkomende verkiezingscampagnenarratiefin kaart: een regering die welzijnssteun keurde zonder te leveren op werkgelegenheid, huisvesting en openbare veiligheid. SD's interpellaties over energie en vrijheid van meningsuiting vertegenwoordigen een parallelle drukken campagne gericht op het beperken van de beleidsruimte van de coalitie van binnenuit.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-26  
+**Artikkeltype**: Interpellasjoner  
+**Klassifisering**: ÅPEN — GDPR Art. 9(2)(e,g)  
+**Konfidens**: B2 (Troverdig kilde, sannsynligvis sant)  
+**Kjøre-ID**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+Den siste uken av april 2026 inneholdt en konsentrert bølge av opposisjonens interpellasjoner mot Tidö-koalisjonsregjeringen på fem strategiske fronter: energidesinformasjon (HD10448), misbruk av arbeidsgiveravgifter (HD10444), reversering av sykelønnsreformen (HD10447), mangler i politikapasiteten i Stockholm (HD10439) og sosial dumping mellom kommuner (HD10443). Sosialdemokratene (S) står for 11 av de 20 seneste interpellasjonene, noe som gjenspeiler en sammenhengende parlamentarisk opposisjonskampanje mot finansminister Svantesson og arbeidsmarkedsminister Britz. Sverigedemokratene (SD) bruker interpellasjoner til å bestride den ideologiske innrammingen av energipolitikken og ytringsfriheten. Ingen ministersvar er publisert for de fem seneste innleveringene.
+
+### Sentrale vurderinger
+
+1. **Arbeidsmarkedsstress dominerer dagsorden**: Tre interpellasjoner innlevert innen 48 timer er rettet mot arbeidsgivernes lønnskostnadsavlastning (gjenoppretting av sykelønn, misbruk av arbeidsgiveravgiftsreform), noe som signaliserer S's intensjon om å ramme inn våren 2026 som en periode med stigende arbeidsledighet kombinert med en regjering som overflyttet velferdsutgifter til ansatte og mindre bedrifter.
+
+2. **Strid om energipolitikkens innramming**: SD's interpellasjon om vindkraftens "desinformasjon" (HD10448) til minister Ebba Busch søker å omramme NRK-rapporteringen som advokatvirksomhet, noe som indikerer en eskalerende informasjonsmiljøkonflikt mellom regjeringskoalisjonen og allmennkringkastingen om det fornybare energi-narrativet.
+
+3. **Ansvarlighet for finanspolitikken**: To interpellasjoner til finansminister Svantesson avdekker gjennomføringsgap i ungdoms-arbeidsgiveravgiftsnedsettelsen — spesifikt bedrifter som strukturerer arbeidstimer for å utnytte subsidiet uten netto sysselsettingsgevinster — noe som utgjør en troverdighetsrisiko for flaggskip-arbeidsmarkedsreformen.
+
+4. **Bolig- og bystress**: S's interpellasjon om Stockholms synkende boligbyggingstrend (HD10434) og kommunenes forkjøpsrettsgap (HD10445) gjenspeiler S's vedvarende utfordring av minister Carlsons boligpolitiske resultater foran budsjettrundehosten 2026.
+
+5. **Koalisjonens sprekker**: KD-ministre (Forssmed, Bohlin, Carlson, Slottner) utsettes for uforholdsmessig opposisjonsgranskning — konsistent med S's strategi om å målrette juniorkoalisjonspartneren som oppfattes som ideologisk sårbar i velferd og offentlig tjeneste.
+
+### Strategisk betydning
+
+Denne klyngen av interpellasjoner utgjør en koordinert parlamentarisk offensiv tidsmessig tilpasset vårens 2026 budsjettrevisjonsvindu. Temaene kartlegger S's fremvoksende valgnarrativ: en regjering som kuttet i velferdsstøtten uten å levere på sysselsetting, boliger og offentlig sikkerhet. SD's interpellasjoner om energi og ytringsfrihet representerer en parallell pressionskampanje rettet mot å begrense koalisjonens politiske rom innenfra.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-26  
+**Artikeltyp**: Interpellationer  
+**Klassificering**: ÖPPEN — GDPR Art. 9(2)(e,g)  
+**Konfidens**: B2 (Trovärdig källa, sannolikt sant)  
+**Körnings-ID**: news-interpellations-2026-04-26
+
+---
+
+### BLUF
+
+Den sista veckan i april 2026 inrymde en koncentrerad rad av oppositionens interpellationer mot Tidökoalitionens regering på fem strategiska fronter: energidesinformation (HD10448), missbruk av arbetsgivaravgifter (HD10444), vändning av sjuklönereformen (HD10447), brister i poliskapaciteten i Stockholm (HD10439) och social dumpning kommuner emellan (HD10443). Socialdemokraterna (S) svarar för 11 av de 20 senaste interpellationerna, vilket speglar en sammanhållen parlamentarisk oppositionskampanj mot finansminister Svantesson och arbetsmarknadsminister Britz. Sverigedemokraterna (SD) använder interpellationer för att bestrida den ideologiska inramningen av energipolitiken och yttrandefriheten. Inga ministersvar har publicerats för de fem senaste inlämningarna.
+
+### Centrala bedömningar
+
+1. **Arbetsmarknadsstress dominerar dagordningen**: Tre interpellationer inlämnade inom 48 timmar riktar sig mot arbetsgivarnas lönekostnadsavlastning (återställning av sjuklöner, missbruk av arbetsgivaravgiftsreform), vilket signalerar S:s avsikt att rama in våren 2026 som en period av stigande arbetslöshet kopplad till en regering som vältrat välfärdskostnader på anställda och mindre företag.
+
+2. **Strid om energipolitikens inramning**: SD:s interpellation om vindkraftens "desinformation" (HD10448) till minister Ebba Busch syftar till att omrama public service-rapportering som opinionsbildning, vilket indikerar en eskalerande informationsmiljökonflikt mellan regeringskoalitionen och public service om den förnybara energins narrativ.
+
+3. **Ansvarsskyldighet för finanspolitiken**: Två interpellationer till finansminister Svantesson exponerar genomförandebrister i ungdomars nedsatta arbetsgivaravgift — specifikt företag som strukturerar arbetstid för att utnyttja subventionen utan nettosysselsättningsvinster — vilket utgör en trovärdighetsrisk för den flaggskepps-arbetsmarknadsreformen.
+
+4. **Bostads- och stadsstress**: S:s interpellation om Stockholms sjunkande bostadsbyggnadstrend (HD10434) och luckan i kommunernas förköpsrätt (HD10445) speglar S:s fortsatta utmaning mot minister Carlsons bostadspolitiska meritlista inför budgetcykeln höst 2026.
+
+5. **Koalitionens sprickor**: KD-ministrar (Forssmed, Bohlin, Carlson, Slottner) utsätts för oproportionerlig oppositionsgranskning — konsekvent med S:s strategi att sikta på den juniorkoalitionspartnern som uppfattas som ideologiskt sårbar i frågor om välfärd och offentlig service.
+
+### Strategisk betydelse
+
+Detta kluster av interpellationer utgör en samordnad parlamentarisk offensiv tidsmässigt anpassad till våren 2026 budgetrevisionsfönster. Temana kartlägger S:s framväxande valberättelse: en regering som skurit ned i välfärdsstöd utan att leverera vad gäller sysselsättning, bostäder och säkerhet. SD:s interpellationer om energi och yttrandefrihet representerar en parallell tryckkampanj som syftar till att begränsa koalitionens politiska utrymme inifrån.
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-04-26  
+**文章类型**：质询  
+**分类**：公开 — GDPR第9条第2款(e,g)  
+**可信度**：B2（可信来源，可能属实）  
+**运行ID**：news-interpellations-2026-04-26
+
+---
+
+### 核心结论（BLUF）
+
+2026年4月最后一周，在五个战略方向上爆发了集中的反对党质询浪潮，矛头指向蒂杜（Tidö）联合政府：能源虚假信息（HD10448）、滥用雇主缴费（HD10444）、撤销病假工资改革（HD10447）、斯德哥尔摩警察能力不足（HD10439）以及市级间社会服务转移（HD10443）。社会民主党（S）在最新20件质询中占11件，反映出一场针对财政部长斯万特松和劳工部长布里茨的连贯议会反对派运动。瑞典民主党（SD）利用质询争议能源政策和言论自由的意识形态框架。五项最新提交均未发布部长答复。
+
+### 关键判断
+
+1. **劳动市场压力主导议程**：48小时内提交的三项质询针对雇主劳动力成本减免（病假工资恢复、雇主缴费改革滥用），表明S方有意将2026年春定性为失业率上升时期，并与一个将福利成本转嫁给工人和中小企业的政府相关联。
+
+2. **能源政策框架之争**：SD就风力发电"虚假信息"（HD10448）向部长埃巴·布什提出的质询，旨在将公共广播的报道重新框架为倡导活动，表明联合政府与公共媒体之间围绕可再生能源叙事的信息环境争议正在升级。
+
+3. **财政政策问责**：向财政部长斯万特松提交的两项质询揭示了青年雇主缴费削减的实施缺陷 — 具体是企业安排工时以利用补贴而不产生净就业增长 — 这构成旗舰性劳动力市场改革的公信力风险。
+
+4. **住房和城市压力**：S关于斯德哥尔摩住宅建设下滑趋势（HD10434）及市级优先购买权空缺（HD10445）的质询，反映了S在2026年秋季预算周期前对住房部长卡尔松政策记录的持续挑战。
+
+5. **联盟内部断层线**：KD部长们（福斯梅德、博林、卡尔松、斯洛特纳）面临不成比例的反对派审查 — 与S针对被视为在福利和公共服务问题上意识形态脆弱的联盟次要伙伴的策略一致。
+
+### 战略意义
+
+这批质询构成一场协调一致的议会攻势，时机精准选择在2026年春季预算修订窗口期。这些议题勾勒出S正在形成的选举竞选叙事：一个在就业、住房和公共安全方面无所作为的同时削减福利支持的政府。SD关于能源和言论自由的质询代表着一场平行的施压运动，旨在从内部约束联盟的政策空间。
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1839,3 +2300,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/executive-brief_zh.md)

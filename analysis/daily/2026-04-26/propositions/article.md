@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: propositions
 slug: 2026-04-26-propositions
 source_folder: analysis/daily/2026-04-26/propositions
-generated_at: 2026-05-17T22:44:40.562Z
+generated_at: 2026-05-18T09:08:37.882Z
 language: en
 layout: article
 ---
@@ -94,6 +94,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1998,13 +2011,851 @@ pie title ICD 203 Standards Compliance
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-04-23 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# حزمة البنوك الأوروبية + قيود الرعاية الاجتماعية: مقترحات الحكومة السويدية في 23 أبريل 2026
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-26  
+**معرّف التشغيل**: 24963297569  
+**التصنيف**: UNCLASSIFIED // PUBLIC SOURCE  
+**مستوى الثقة**: عالٍ [B2] — أربعة مقترحات/مراسلات حكومية رسمية، riksdag-regering MCP، واجهة برمجة Riksdagen
+
+---
+
+### BLUF
+
+قدّمت حكومة كريسترسون أربعة بنود تشريعية مهمة في 23 أبريل 2026: تطبيق حزمة البنوك الأوروبية (HD03253، CRD6/CRR3) التي تمثّل أشمل إعادة تنظيم للقطاع المصرفي السويدي منذ بازل III؛ وتقييد مزايا الرعاية الاجتماعية للسجناء في مساكن الإقامة الخاضعة للرقابة (HD03252)؛ وتدابير لردع التلاعب في عدّادات الوقود (HD03256)؛ وتقييم رسمي لإدارة الدين العام للفترة 2021–2025 (HD03104). تُعدّ حزمة البنوك الأوروبية العنصر المحوري — إذ تُلزم البنوك السويدية بمعايير رأس المال وفق بازل IV، وتعزّز صلاحيات الرقابة لدى Finansinspektionen، وتُوحّد الإطار التنظيمي السويدي مع قواعد الاتحاد الأوروبي. ستُركّز المعارضة على عبء الامتثال على صغار البنوك.
+
+### القرارات التي تدعمها هذه الملاحظة
+
+- **Finansutskottet (FiU)**: التحضير للتصويت على HD03253 (حزمة البنوك الأوروبية) وHD03104 (تقييم إدارة الدين) — كلاهما أُحيل إلى FiU.
+- **Socialförsäkringsutskottet (SfU)**: التحضير للتصويت على HD03252 (مزايا التأمين الاجتماعي).
+- **Trafikutskottet (TU)**: التحضير للتصويت على HD03256 (عدّادات الوقود).
+- **استراتيجية الاتصالات الحكومية**: إدارة سردية التوافق مع اللوائح الأوروبية في مقابل عبء صغار البنوك.
+- **التموضع لانتخابات 2026**: يمكن لـ SD/M الاستناد إلى التصلّب ضد الجريمة في HD03252؛ فيما سيطعن S/MP في مبدأ التناسب.
+
+### نقاط استخباراتية في 60 ثانية
+
+- 🏦 **HD03253 (حزمة البنوك الأوروبية)**: تطبيق CRD6/CRR3 — أرضيات رأس المال وفق بازل IV، تعزيز متطلبات الكفاءة والملاءمة لمديري البنوك، قواعد جديدة لمخاطر السوق. Niklas Wykman (Finansdepartementet). اللجنة: FiU. الأثر: نظامي. [B2]
+- 🔒 **HD03252 (مزايا التأمين الاجتماعي)**: إلغاء حق استحقاق تعويض المرض/بدل النشاط/معاش الشيخوخة للمحبوسين في إقامة خاضعة للرقابة (*kontrollerat boende*) أو الاحتجاز الأمني (*säkerhetsförvaring*). Gunnar Strömmer (Justitiedepartementet). اللجنة: SfU. [B2]
+- 🚛 **HD03256 (عدّادات الوقود)**: تجريم التلاعب في عدّادات الوقود الرقمية؛ تشديد العقوبات. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). اللجنة: TU. تطبيق توجيه أوروبي. [A2]
+- 📊 **HD03104 (مراسلة إدارة الدين)**: تقييم رسمي لاستراتيجية اقتراض Riksgälden للفترة 2021–2025؛ خلصت الحكومة إلى أن العمليات جرت ضمن حدود الصلاحيات. Niklas Wykman (Finansdepartementet). اللجنة: FiU. [A1]
+
+### المحفّز الاستشرافي الرئيسي
+
+**خلال 2–4 أسابيع**: ستحدّد جلسة استماع لجنة FiU حول HD03253 ما إذا كان لوبي صغار البنوك سيُحقق استثناءً أكثر مرونة في مبدأ التناسب. وإذا اقترحت FiU تعديلات تُؤخّر أحكاماً فرعية في CRD6، فهذا يُشير إلى شقّ في السردية الأوروبية للتحالف الحكومي.
+
+### تصنيف الثقة
+
+**عالٍ بشكل عام** — جميع الوثائق الأربع مقترحات/مراسلات حكومية رسمية مُؤكَّدة عبر riksdag-regering MCP (`get_propositioner`, rm 2025/26). الأساس التشريعي الأوروبي لـ CRD6/CRR3 قابل للتحقق بصورة مستقلة. لم تُرصد ثغرات استخباراتية في الجولة الأولى؛ تفاصيل تطبيق HD03252 تستلزم إثراءً في الجولة الثانية حول نطاق تعريف *kontrollerat boende*.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-26  
+**Kørings-ID**: 24963297569  
+**Klassifikation**: UNCLASSIFIED // PUBLIC SOURCE  
+**Konfidensgrad**: HØJ [B2] — fire officielle regeringspropositioner/skrivelse, riksdag-regering MCP, Riksdagen API
+
+---
+
+### BLUF
+
+Sveriges Kristerssonregering fremlagde fire vigtige lovgivningspunkter den 23. april 2026: implementering af EU's bankpakke (HD03253, CRD6/CRR3), der repræsenterer den mest vidtgående omregulering af svensk banklovgivning siden Basel III; en velfærdsbegrænsning af ydelser til indsatte i kontrolleret bolig (HD03252); tiltag mod manipulation med fartskrivere (HD03256); og en formel evaluering af statsgældsforvaltningen 2021–2025 (HD03104). EU's bankpakke er det dominerende punkt — den binder svenske banker til Basel IV-kapitalstandarder, styrker Finansinspektionens tilsynsbeføjelser og tilpasser Sverige til EU's fælles regelsæt. Oppositionen vil fokusere på efterlevnelsesbyrden for mindre banker.
+
+### Beslutninger dette underlag understøtter
+
+- **Finansutskottet (FiU)**: Forberedelse af afstemning om HD03253 (EU bankpakke) og HD03104 (evaluering af gældsforvaltning) — begge henvist til FiU.
+- **Socialförsäkringsutskottet (SfU)**: Forberedelse af afstemning om HD03252 (socialforsikringsydelser).
+- **Trafikutskottet (TU)**: Forberedelse af afstemning om HD03256 (fartskrivere).
+- **Regeringens kommunikationsstrategi**: Håndtering af EU-regelverks-narrativet over for byrden for mindre banker.
+- **Valg 2026-positionering**: SD/M kan hævde kriminalitetshårdhed ved HD03252; S/MP vil bestride proportionaliteten.
+
+### 60-sekunders efterretningspunkter
+
+- 🏦 **HD03253 (EU bankpakke)**: CRD6/CRR3-implementering — Basel IV-kapitalgulve, styrket egnethedskontrol for bankdirektører, nye markedsrisikregler. Niklas Wykman (Finansdepartementet). Udvalg: FiU. Konsekvens: systemisk. [B2]
+- 🔒 **HD03252 (Socialforsikringsydelser)**: Fjerner retten til sygedagpenge/aktivitetsydelse/alderspension for indsatte i kontrolleret bolig (*kontrollerat boende*) eller sikkerhedsforvaring (*säkerhetsförvaring*). Gunnar Strömmer (Justitiedepartementet). Udvalg: SfU. [B2]
+- 🚛 **HD03256 (Fartskrivere)**: Kriminaliserer manipulation med digitale fartskrivere; styrker sanktioner. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). Udvalg: TU. EU-direktivimplementering. [A2]
+- 📊 **HD03104 (Gældsforvaltning skrivelse)**: Formel evaluering af Riksgäldens lånestrategi 2021–2025; regeringen konkluderer, at driften lå klart inden for mandatets rammer. Niklas Wykman (Finansdepartementet). Udvalg: FiU. [A1]
+
+### Vigtigste fremtidige trigger
+
+**Inden for 2–4 uger**: FiU's udvalgshøring om HD03253 afgør, om lobbyister for mindre banker opnår en blødere proportionalitetsundtagelse. Hvis FiU foreslår ændringer, der forsinker CRD6-delbestemmelser, signalerer dette brud i regeringskoalitionens EU-efterlevelsesnarrativ.
+
+### Konfidensetiket
+
+**HØJ overordnet** — alle fire dokumenter er officielle regeringspropositioner/skrivelse bekræftet via riksdag-regering MCP (`get_propositioner`, rm 2025/26). CRD6/CRR3 EU-lovgivningsgrundlag kan bekræftes uafhængigt. Ingen efterretningsgab identificeret for Pass 1; implementeringsdetaljer for HD03252 kræver Pass 2-berigelse om definitionen af *kontrollerat boende*.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-26  
+**Ausführungs-ID**: 24963297569  
+**Einstufung**: UNCLASSIFIED // PUBLIC SOURCE  
+**Konfidenzniveau**: HOCH [B2] — vier offizielle Regierungsproposionen/Skrivelse, riksdag-regering MCP, Riksdagen API
+
+---
+
+### BLUF
+
+Die schwedische Kristerssonregierung legte am 23. April 2026 vier bedeutende Gesetzgebungsvorhaben vor: die Umsetzung des EU-Bankenpakets (HD03253, CRD6/CRR3), die die weitreichendste Neuregulierung des schwedischen Bankwesens seit Basel III darstellt; eine Einschränkung von Sozialleistungen für Strafgefangene in kontrollierter Unterbringung (HD03252); Maßnahmen zur Abschreckung von Tachographenbetrug (HD03256); und eine formelle Bewertung der Staatsschuldenverwaltung 2021–2025 (HD03104). Das EU-Bankenpaket ist das dominierende Element — es verpflichtet schwedische Banken zu Basel-IV-Kapitalstandards, stärkt die Aufsichtsbefugnisse der Finansinspektion und passt Schweden an das einheitliche EU-Regelwerk an. Die Opposition wird sich auf den Erfüllungsaufwand für kleinere Banken konzentrieren.
+
+### Entscheidungen, die diese Zusammenfassung unterstützt
+
+- **Finansutskottet (FiU)**: Abstimmungsvorbereitung für HD03253 (EU-Bankenpaket) und HD03104 (Bewertung der Schuldenverwaltung) — beide an FiU verwiesen.
+- **Socialförsäkringsutskottet (SfU)**: Abstimmungsvorbereitung für HD03252 (Sozialversicherungsleistungen).
+- **Trafikutskottet (TU)**: Abstimmungsvorbereitung für HD03256 (Fahrtenschreiber).
+- **Regierungskommunikationsstrategie**: Steuerung des EU-Regelwerksnarrativs gegenüber der Belastung kleinerer Banken.
+- **Wahlpositionierung 2026**: SD/M können bei HD03252 auf Kriminalitätshärte verweisen; S/MP werden die Verhältnismäßigkeit anfechten.
+
+### 60-Sekunden-Geheimdienstpunkte
+
+- 🏦 **HD03253 (EU-Bankenpaket)**: CRD6/CRR3-Umsetzung — Basel-IV-Kapitalböden, verbesserte Eignungsanforderungen für Bankvorstände, neue Marktrisikoregelungen. Niklas Wykman (Finansdepartementet). Ausschuss: FiU. Wirkung: systemisch. [B2]
+- 🔒 **HD03252 (Sozialversicherungsleistungen)**: Entzug des Anspruchs auf Krankengeld/Aktivitätsersatz/Altersrente für Strafgefangene in kontrollierter Unterbringung (*kontrollerat boende*) oder Sicherungsverwahrung (*säkerhetsförvaring*). Gunnar Strömmer (Justitiedepartementet). Ausschuss: SfU. [B2]
+- 🚛 **HD03256 (Fahrtenschreiber)**: Kriminalisierung der Manipulation digitaler Fahrtenschreiber; Verschärfung der Sanktionen. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). Ausschuss: TU. EU-Richtlinienumsetzung. [A2]
+- 📊 **HD03104 (Schuldenverwaltung Skrivelse)**: Formelle Bewertung der Kreditstrategie der Riksgälden 2021–2025; die Regierung stellt fest, dass der Betrieb klar im Rahmen des Mandats blieb. Niklas Wykman (Finansdepartementet). Ausschuss: FiU. [A1]
+
+### Wichtigster Zukunftsauslöser
+
+**Innerhalb von 2–4 Wochen**: Die FiU-Ausschussanhörung zu HD03253 wird entscheiden, ob die Lobbyisten kleinerer Banken eine weichere Verhältnismäßigkeitsausnahme durchsetzen. Schlägt FiU Änderungen vor, die CRD6-Teilbestimmungen verzögern, signalisiert dies Risse im EU-Compliance-Narrativ der Regierungskoalition.
+
+### Konfidenzkennzeichnung
+
+**HOCH insgesamt** — alle vier Dokumente sind offizielle Regierungsproposionen/Skrivelse, bestätigt über riksdag-regering MCP (`get_propositioner`, rm 2025/26). Die CRD6/CRR3 EU-Gesetzgebungsgrundlage ist unabhängig verifizierbar. Für Pass 1 keine Nachrichten­lücken identifiziert; Umsetzungsdetails von HD03252 erfordern Pass-2-Anreicherung zur Definition von *kontrollerat boende*.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-26  
+**ID de ejecución**: 24963297569  
+**Clasificación**: UNCLASSIFIED // PUBLIC SOURCE  
+**Nivel de confianza**: ALTO [B2] — cuatro proposiciones/skrivelse oficiales del gobierno, riksdag-regering MCP, API del Riksdagen
+
+---
+
+### BLUF
+
+El gobierno Kristersson presentó cuatro medidas legislativas significativas el 23 de abril de 2026: la implementación del paquete bancario de la UE (HD03253, CRD6/CRR3), que representa la revisión más profunda de la regulación bancaria sueca desde Basilea III; una restricción de prestaciones sociales para reclusos en alojamiento controlado (HD03252); medidas disuasorias contra el fraude del tacógrafo (HD03256); y una evaluación formal de la gestión de la deuda pública 2021–2025 (HD03104). El paquete bancario es el elemento dominante — vincula a los bancos suecos con los estándares de capital de Basilea IV, refuerza las facultades de supervisión de la Finansinspektion y alinea a Suecia con el reglamento único de la UE. La oposición se centrará en la carga de cumplimiento para los bancos más pequeños.
+
+### Decisiones que apoya esta nota
+
+- **Finansutskottet (FiU)**: Preparación de la votación sobre HD03253 (paquete bancario UE) y HD03104 (evaluación de gestión de deuda) — ambos remitidos al FiU.
+- **Socialförsäkringsutskottet (SfU)**: Preparación de la votación sobre HD03252 (prestaciones del seguro social).
+- **Trafikutskottet (TU)**: Preparación de la votación sobre HD03256 (tacógrafos).
+- **Estrategia de comunicación gubernamental**: Gestionar el narrativo de cumplimiento del reglamento único de la UE frente a la carga para los bancos pequeños.
+- **Posicionamiento para las elecciones de 2026**: SD/M pueden invocar la dureza contra el crimen en HD03252; S/MP impugnarán la proporcionalidad.
+
+### Puntos de inteligencia de 60 segundos
+
+- 🏦 **HD03253 (Paquete bancario UE)**: Implementación CRD6/CRR3 — suelos de capital de Basilea IV, requisitos de idoneidad reforzados para directivos bancarios, nuevas reglas de riesgo de mercado. Niklas Wykman (Finansdepartementet). Comisión: FiU. Impacto: sistémico. [B2]
+- 🔒 **HD03252 (Prestaciones del seguro social)**: Suprime el derecho a prestación por incapacidad/subsidio de actividad/pensión de jubilación para reclusos en alojamiento controlado (*kontrollerat boende*) o custodia de seguridad (*säkerhetsförvaring*). Gunnar Strömmer (Justitiedepartementet). Comisión: SfU. [B2]
+- 🚛 **HD03256 (Tacógrafos)**: Criminaliza la manipulación de tacógrafos digitales; refuerza las sanciones. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). Comisión: TU. Transposición de directiva UE. [A2]
+- 📊 **HD03104 (Skrivelse gestión de deuda)**: Evaluación formal de la estrategia de endeudamiento de la Riksgälden 2021–2025; el gobierno concluye que las operaciones se mantuvieron claramente dentro del mandato. Niklas Wykman (Finansdepartementet). Comisión: FiU. [A1]
+
+### Principal desencadenante prospectivo
+
+**En 2–4 semanas**: La audiencia del FiU sobre HD03253 determinará si el lobby de los bancos pequeños logra una exención de proporcionalidad más flexible. Si el FiU propone enmiendas que retrasen subdisposiciones de CRD6, señala fractura en el narrativo de cumplimiento UE de la coalición gubernamental.
+
+### Etiqueta de confianza
+
+**ALTO en general** — los cuatro documentos son proposiciones/skrivelse oficiales del gobierno confirmadas a través de riksdag-regering MCP (`get_propositioner`, rm 2025/26). La base legislativa de la UE CRD6/CRR3 es verificable de forma independiente. No se identificaron lagunas de inteligencia para el Pass 1; los detalles de implementación de HD03252 requieren enriquecimiento en el Pass 2 sobre el alcance de la definición de *kontrollerat boende*.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-04-26  
+**Ajotunn.: 24963297569  
+**Luokittelu**: UNCLASSIFIED // PUBLIC SOURCE  
+**Luottamusaste**: KORKEA [B2] — neljä virallista hallituksen propositiota/skrivelse, riksdag-regering MCP, Riksdagen API
+
+---
+
+### BLUF
+
+Ruotsin Kristerssonin hallitus esitti neljä merkittävää lainsäädäntökohdetta 23. huhtikuuta 2026: EU:n pankkipaketin implementointi (HD03253, CRD6/CRR3), joka edustaa perusteellisinta ruotsalaisen pankkisääntelyn uudistusta sitten Basel III:n; hyvinvointirajoitus valvotun asumisen vangeille myönnettävistä etuuksista (HD03252); ajopiirturitypetosten torjuntatoimet (HD03256); ja valtion velanhoidon 2021–2025 virallinen arviointi (HD03104). EU:n pankkipaketti on hallitseva kohde — se sitoo ruotsalaiset pankit Basel IV:n pääomastandardeihin, vahvistaa Finansinspektionenin valvontavaltuuksia ja yhdenmukaistaa Ruotsin EU:n yhteisen sääntökirjan kanssa. Oppositio keskittyy pienten pankkien noudattamistaan.
+
+### Päätökset, joita tämä katsaus tukee
+
+- **Finansutskottet (FiU)**: Äänestyksen valmistelu HD03253:lle (EU:n pankkipaketti) ja HD03104:lle (velanhoidon arviointi) — molemmat siirretty FiU:lle.
+- **Socialförsäkringsutskottet (SfU)**: Äänestyksen valmistelu HD03252:lle (sosiaalivakuutusetuudet).
+- **Trafikutskottet (TU)**: Äänestyksen valmistelu HD03256:lle (ajopiirturit).
+- **Hallituksen viestintästrategia**: EU:n yhteisen sääntökirjan noudattamistaan narraavin hallinta vs. pienille pankeille aiheutuva taakka.
+- **Vaalien 2026 asemointi**: SD/M voi vedota rikostorjuntaan HD03252:ssa; S/MP kiistää suhteellisuusperiaatteen.
+
+### 60 sekunnin tiedustelukohdat
+
+- 🏦 **HD03253 (EU:n pankkipaketti)**: CRD6/CRR3-implementointi — Basel IV:n pääomapohjat, pankkijohtajien soveltuvuusvaatimusten vahvistaminen, uudet markkinariskisäännöt. Niklas Wykman (Finansdepartementet). Valiokunta: FiU. Vaikutus: systeeminen. [B2]
+- 🔒 **HD03252 (Sosiaalivakuutusetuudet)**: Poistaa oikeuden sairauspäivärahaan/toimintakorvaukseen/vanhuuseläkkeeseen valvotussa asumisessa (*kontrollerat boende*) tai turvasäilytyksessä (*säkerhetsförvaring*) olevilta vangeilta. Gunnar Strömmer (Justitiedepartementet). Valiokunta: SfU. [B2]
+- 🚛 **HD03256 (Ajopiirturit)**: Kriminalisoi digitaalisten ajopiirturien manipuloinnin; tiukentaa seuraamuksia. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). Valiokunta: TU. EU-direktiivin toimeenpano. [A2]
+- 📊 **HD03104 (Velanhoidon skrivelse)**: Riksgäldenin lainausstrategian 2021–2025 virallinen arviointi; hallitus toteaa toiminnan pysyneen selvästi toimeksiannon rajoissa. Niklas Wykman (Finansdepartementet). Valiokunta: FiU. [A1]
+
+### Tärkein tuleva laukaisija
+
+**2–4 viikon sisällä**: FiU:n valiokuntakuuleminen HD03253:sta ratkaisee, saako pienpankkilobbaus pehmeämmän suhteellisuuspoikkeuksen. Jos FiU ehdottaa muutoksia, jotka viivästyttävät CRD6:n alasäännöksiä, se merkitsee halkeilua hallituskoalition EU-noudattamisnarraavin osalta.
+
+### Luottamusmerkki
+
+**KORKEA kokonaisuutena** — kaikki neljä asiakirjaa ovat virallisia hallituksen propositioita/skrivelse, vahvistettu riksdag-regering MCP:n kautta (`get_propositioner`, rm 2025/26). CRD6/CRR3 EU:n lainsäädäntöpohja on vahvistettavissa itsenäisesti. Pass 1:lle ei tunnistettu tiedustelupuutteita; HD03252:n implementointitiedot edellyttävät Pass 2 -rikastamista *kontrollerat boende* -määritelmän osalta.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**ID d'exécution** : 24963297569  
+
+**Niveau de confiance** : ÉLEVÉ [B2] — quatre propositions/skrivelse officielles du gouvernement, riksdag-regering MCP, API Riksdagen
+
+---
+
+### BLUF
+
+Le gouvernement Kristersson a soumis quatre mesures législatives importantes le 23 avril 2026 : la mise en œuvre du paquet bancaire européen (HD03253, CRD6/CRR3), qui représente la révision la plus profonde de la réglementation bancaire suédoise depuis Bâle III ; une restriction des prestations sociales pour les détenus en hébergement contrôlé (HD03252) ; des mesures de dissuasion contre la fraude au tachygraphe (HD03256) ; et une évaluation formelle de la gestion de la dette publique 2021–2025 (HD03104). Le paquet bancaire est l'élément dominant — il soumet les banques suédoises aux normes de fonds propres de Bâle IV, renforce les pouvoirs de surveillance de la Finansinspektion et aligne la Suède sur le règlement uniforme de l'UE. L'opposition se concentrera sur la charge de conformité pour les petites banques.
+
+### Décisions soutenues par cette note
+
+- **Finansutskottet (FiU)** : Préparation du vote sur HD03253 (paquet bancaire UE) et HD03104 (évaluation de la gestion de la dette) — tous deux renvoyés au FiU.
+- **Socialförsäkringsutskottet (SfU)** : Préparation du vote sur HD03252 (prestations d'assurance sociale).
+- **Trafikutskottet (TU)** : Préparation du vote sur HD03256 (tachygraphes).
+- **Stratégie de communication gouvernementale** : Gérer le narratif du règlement uniforme UE face à la charge pour les petites banques.
+- **Positionnement pour les élections 2026** : SD/M peuvent invoquer la sévérité anti-crime sur HD03252 ; S/MP contesteront la proportionnalité.
+
+### Bulletins de renseignement en 60 secondes
+
+- 🏦 **HD03253 (Paquet bancaire UE)** : Mise en œuvre CRD6/CRR3 — planchers de fonds propres Bâle IV, exigences d'aptitude renforcées pour les dirigeants de banques, nouvelles règles de risque de marché. Niklas Wykman (Finansdepartementet). Commission : FiU. Impact : systémique. [B2]
+- 🔒 **HD03252 (Prestations d'assurance sociale)** : Suppression du droit aux indemnités maladie/allocation d'activité/retraite vieillesse pour les détenus en hébergement contrôlé (*kontrollerat boende*) ou en détention de sécurité (*säkerhetsförvaring*). Gunnar Strömmer (Justitiedepartementet). Commission : SfU. [B2]
+- 🚛 **HD03256 (Tachygraphes)** : Pénalisation de la manipulation des tachygraphes numériques ; renforcement des sanctions. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). Commission : TU. Transposition de directive UE. [A2]
+- 📊 **HD03104 (Skrivelse gestion de la dette)** : Évaluation formelle de la stratégie d'emprunt de la Riksgälden 2021–2025 ; le gouvernement conclut que les opérations sont restées clairement dans le cadre du mandat. Niklas Wykman (Finansdepartementet). Commission : FiU. [A1]
+
+### Principal déclencheur prospectif
+
+**Dans 2 à 4 semaines** : L'audition du FiU sur HD03253 déterminera si le lobbying des petites banques obtient une dérogation de proportionnalité assouplie. Si le FiU propose des amendements retardant des sous-dispositions de CRD6, cela signale une fracture dans le narratif de conformité UE de la coalition gouvernementale.
+
+### Étiquette de confiance
+
+**ÉLEVÉ dans l'ensemble** — les quatre documents sont des propositions/skrivelse officielles du gouvernement confirmées via riksdag-regering MCP (`get_propositioner`, rm 2025/26). La base législative UE CRD6/CRR3 est vérifiable indépendamment. Aucune lacune de renseignement identifiée pour le Pass 1 ; les détails de mise en œuvre de HD03252 nécessitent un enrichissement Pass 2 sur la portée de la définition de *kontrollerat boende*.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# חבילת הבנקים האירופית + הגבלות בקצבאות הרווחה: הצעות החוק הממשלתיות השוודיות מ-23 באפריל 2026
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-26  
+**מזהה ריצה**: 24963297569  
+**סיווג**: UNCLASSIFIED // PUBLIC SOURCE  
+**רמת אמינות**: גבוהה [B2] — ארבע הצעות/מכתבי ממשל רשמיים, riksdag-regering MCP, ממשק ה-API של Riksdagen
+
+---
+
+### BLUF
+
+ממשלת קריסטרסון הגישה ארבעה פריטי חקיקה משמעותיים ב-23 באפריל 2026: יישום חבילת הבנקים האירופית (HD03253, CRD6/CRR3), המייצגת את הרגולציה המקיפה ביותר בתחום הבנקאות השוודית מאז בזל III; הגבלה על קצבאות רווחה לאסירים בדיור מפוקח (HD03252); אמצעים להרתעה מפני מניפולציה בטכוגרפים (HD03256); והערכה רשמית של ניהול החוב הממלכתי לשנים 2021–2025 (HD03104). חבילת הבנקים האירופית היא הפריט המרכזי — היא מחייבת את הבנקים השוודיים בסטנדרטים הוניים של בזל IV, מחזקת את סמכויות הפיקוח של Finansinspektionen ומיישרת את שוודיה עם ה-single rulebook של האיחוד האירופי. האופוזיציה תתמקד בנטל הציות על הבנקים הקטנים.
+
+### החלטות שמסמך זה תומך בהן
+
+- **Finansutskottet (FiU)**: הכנה להצבעה על HD03253 (חבילת הבנקים האירופית) ו-HD03104 (הערכת ניהול חוב) — שניהם הופנו ל-FiU.
+- **Socialförsäkringsutskottet (SfU)**: הכנה להצבעה על HD03252 (קצבאות ביטוח לאומי).
+- **Trafikutskottet (TU)**: הכנה להצבעה על HD03256 (טכוגרפים).
+- **אסטרטגיית תקשורת ממשלתית**: ניהול הנרטיב של ציות לרגולציה האירופית לעומת הנטל על הבנקים הקטנים.
+- **מיצוב לבחירות 2026**: SD/M יכולים לטעון לנוקשות בנושא הפשיעה ב-HD03252; S/MP יערערו על המידתיות.
+
+### נקודות מודיעיניות ב-60 שניות
+
+- 🏦 **HD03253 (חבילת הבנקים האירופית)**: יישום CRD6/CRR3 — רצפות הון בזל IV, חיזוק דרישות כשירות למנהלי בנקים, כללי סיכוני שוק חדשים. Niklas Wykman (Finansdepartementet). ועדה: FiU. השפעה: מערכתית. [B2]
+- 🔒 **HD03252 (קצבאות ביטוח לאומי)**: ביטול הזכאות לדמי מחלה/תגמול פעילות/קצבת זקנה לאסירים בדיור מפוקח (*kontrollerat boende*) או במעצר ביטחוני (*säkerhetsförvaring*). Gunnar Strömmer (Justitiedepartementet). ועדה: SfU. [B2]
+- 🚛 **HD03256 (טכוגרפים)**: עיצור מניפולציה בטכוגרפים דיגיטליים; הידוק עונשים. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). ועדה: TU. יישום הנחיה אירופית. [A2]
+- 📊 **HD03104 (מכתב ניהול חוב)**: הערכה רשמית של אסטרטגיית ההלוואות של Riksgälden לשנים 2021–2025; הממשלה מסכמת כי הפעילות נשמרה בבירור בגבולות הסמכות. Niklas Wykman (Finansdepartementet). ועדה: FiU. [A1]
+
+### הגורם המפעיל המרכזי לעתיד
+
+**בתוך 2–4 שבועות**: שימוע ועדת FiU על HD03253 יקבע אם לוביסטים של הבנקים הקטנים ישיגו פטור מידתיות מקל יותר. אם FiU יציע תיקונים המעכבים תתי-סעיפים של CRD6, הדבר מסמן סדק בנרטיב הציות האירופי של קואליציית הממשלה.
+
+### תווית אמינות
+
+**גבוהה בסך הכל** — ארבעת המסמכים הם הצעות/מכתבי ממשל רשמיים שאושרו דרך riksdag-regering MCP (`get_propositioner`, rm 2025/26). הבסיס החקיקתי האירופי של CRD6/CRR3 ניתן לאימות עצמאי. לא זוהו פערי מודיעין ב-Pass 1; פרטי היישום של HD03252 דורשים העשרה ב-Pass 2 לגבי הגדרת *kontrollerat boende*.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-04-26  
+**実行ID**: 24963297569  
+**分類**: UNCLASSIFIED // PUBLIC SOURCE  
+**信頼度**: 高 [B2] — 4件の政府公式法案/スクリヴェルセ、riksdag-regering MCP、Riksdagen API
+
+---
+
+### BLUF
+
+スウェーデンのクリスターソン政府は2026年4月23日、4件の重要な立法案を提出した。EU銀行パッケージ（HD03253、CRD6/CRR3）の実施はバーゼルIII以来最大規模のスウェーデン銀行規制の抜本改革を意味し、管理下住居に収容された受刑者への社会給付制限（HD03252）、デジタルタコグラフ不正防止措置（HD03256）、2021–2025年の国家債務管理の正式評価（HD03104）も盛り込まれた。EU銀行パッケージが主要項目であり、スウェーデンの銀行をバーゼルIV資本基準に拘束し、Finansinspektionenの監督権限を強化し、スウェーデンをEUシングルルールブックに合致させる。野党は中小銀行へのコンプライアンス負担に焦点を当てる見込みである。
+
+### 本報告書が支援する意思決定
+
+- **Finansutskottet (FiU)**: HD03253（EU銀行パッケージ）とHD03104（債務管理評価）の採決準備 — 両案ともFiUへ付託。
+- **Socialförsäkringsutskottet (SfU)**: HD03252（社会保険給付）の採決準備。
+- **Trafikutskottet (TU)**: HD03256（タコグラフ）の採決準備。
+- **政府のコミュニケーション戦略**: EU規制統一ナラティブ対中小銀行への負担に関するメッセージ管理。
+- **2026年選挙へのポジショニング**: SD/MはHD03252で犯罪への強硬姿勢を主張できる；S/MPは比例原則を争う。
+
+### 60秒インテリジェンス・ポイント
+
+- 🏦 **HD03253（EU銀行パッケージ）**: CRD6/CRR3実施 — バーゼルIV資本フロア、銀行幹部の適格性要件強化、新たな市場リスク規制。Niklas Wykman（Finansdepartementet）。委員会: FiU。影響: システミック。[B2]
+- 🔒 **HD03252（社会保険給付）**: 管理下住居（*kontrollerat boende*）または保安拘禁（*säkerhetsförvaring*）の受刑者に対する傷病手当/活動補償/老齢年金の受給権を撤廃。Gunnar Strömmer（Justitiedepartementet）。委員会: SfU。[B2]
+- 🚛 **HD03256（タコグラフ）**: デジタルタコグラフ改ざんの刑事罰化；制裁強化。Andreas Carlson（Landsbygds- och infrastrukturdepartementet）。委員会: TU。EU指令の国内法化。[A2]
+- 📊 **HD03104（債務管理スクリヴェルセ）**: Riksgäldenの2021–2025年借入戦略の正式評価；政府は業務が権限範囲内に明確に収まっていたと結論付け。Niklas Wykman（Finansdepartementet）。委員会: FiU。[A1]
+
+### 最重要の将来トリガー
+
+**2〜4週間以内**: FiU委員会のHD03253に関する公聴会が、中小銀行ロビーが柔らかな比例原則適用除外を勝ち取るかどうかを決する。FiUがCRD6の下位条項を遅延させる修正案を提案した場合、政府連立のEUコンプライアンス・ナラティブに亀裂が生じる兆候となる。
+
+### 信頼度ラベル
+
+**総じて高い** — 4件の文書はすべてriksdags-regering MCP（`get_propositioner`、rm 2025/26）を通じて確認された政府公式法案/スクリヴェルセ。CRD6/CRR3のEU立法根拠は独立して検証可能。Pass 1でインテリジェンス・ギャップは確認されず；HD03252の実施詳細については*kontrollerat boende*の定義範囲に関してPass 2の充実が必要。
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-26  
+**실행 ID**: 24963297569  
+**분류**: UNCLASSIFIED // PUBLIC SOURCE  
+**신뢰도**: 높음 [B2] — 4건의 공식 정부 법안/스크리벨세, riksdag-regering MCP, Riksdagen API
+
+---
+
+### BLUF
+
+스웨덴 크리스터손 정부는 2026년 4월 23일 4건의 중요한 입법안을 제출했습니다. EU 은행 패키지 구현(HD03253, CRD6/CRR3)은 바젤 III 이후 스웨덴 은행 규제의 가장 포괄적인 개편을 의미하며, 통제 시설 수용 수감자에 대한 복지 급여 제한(HD03252), 디지털 운행 기록계 조작 방지 조치(HD03256), 2021–2025년 국가 채무 관리에 대한 공식 평가(HD03104)도 포함되었습니다. EU 은행 패키지가 핵심 항목으로, 스웨덴 은행을 바젤 IV 자본 기준에 구속하고 Finansinspektionen의 감독 권한을 강화하며 스웨덴을 EU 단일 규정집과 일치시킵니다. 야당은 중소 은행의 준수 부담에 초점을 맞출 것입니다.
+
+### 본 보고서가 지원하는 결정 사항
+
+- **Finansutskottet (FiU)**: HD03253 (EU 은행 패키지) 및 HD03104 (채무 관리 평가) 표결 준비 — 모두 FiU로 회부됨.
+- **Socialförsäkringsutskottet (SfU)**: HD03252 (사회보험 급여) 표결 준비.
+- **Trafikutskottet (TU)**: HD03256 (운행 기록계) 표결 준비.
+- **정부 소통 전략**: EU 단일 규정집 준수 서사 대 중소 은행 부담 관리.
+- **2026년 선거 포지셔닝**: SD/M은 HD03252에서 범죄 강경 대응을 주장할 수 있음; S/MP는 비례성을 다툴 것.
+
+### 60초 인텔리전스 포인트
+
+- 🏦 **HD03253 (EU 은행 패키지)**: CRD6/CRR3 이행 — 바젤 IV 자기자본 하한, 은행 임원 적합성 요건 강화, 새로운 시장 위험 규정. Niklas Wykman (Finansdepartementet). 위원회: FiU. 영향: 시스템적. [B2]
+- 🔒 **HD03252 (사회보험 급여)**: 통제 시설(*kontrollerat boende*) 또는 보안 구금(*säkerhetsförvaring*) 수감자에 대한 상병급여/활동보상/노령연금 수급권 박탈. Gunnar Strömmer (Justitiedepartementet). 위원회: SfU. [B2]
+- 🚛 **HD03256 (운행 기록계)**: 디지털 운행 기록계 조작 형사 처벌; 제재 강화. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). 위원회: TU. EU 지침 이행. [A2]
+- 📊 **HD03104 (채무 관리 스크리벨세)**: Riksgälden의 2021–2025년 차입 전략 공식 평가; 정부는 운영이 권한 범위 내에 있었음을 확인. Niklas Wykman (Finansdepartementet). 위원회: FiU. [A1]
+
+### 주요 미래 트리거
+
+**2–4주 이내**: FiU 위원회 청문회 결과에 따라 중소 은행 로비가 완화된 비례성 적용 예외를 얻을 수 있는지 결정됩니다. FiU가 CRD6 세부 조항을 지연시키는 수정안을 제안하면 정부 연립의 EU 준수 서사에 균열이 생길 조짐입니다.
+
+### 신뢰도 레이블
+
+**전반적으로 높음** — 4건의 문서 모두 riksdag-regering MCP(`get_propositioner`, rm 2025/26)를 통해 확인된 공식 정부 법안/스크리벨세입니다. CRD6/CRR3 EU 입법 근거는 독립적으로 확인 가능합니다. Pass 1에서 인텔리전스 공백 없음 확인; HD03252 이행 세부 사항은 *kontrollerat boende* 정의 범위에 대한 Pass 2 보강이 필요합니다.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-26  
+**Uitvoerings-ID**: 24963297569  
+**Classificatie**: UNCLASSIFIED // PUBLIC SOURCE  
+**Betrouwbaarheidsniveau**: HOOG [B2] — vier officiële regerings­proposities/skrivelse, riksdag-regering MCP, Riksdagen API
+
+---
+
+### BLUF
+
+De Zweedse regering-Kristersson diende op 23 april 2026 vier belangrijke wetgevings­voorstellen in: implementatie van het EU-bankenpakket (HD03253, CRD6/CRR3), de meest ingrijpende herregulering van de Zweedse bankregelgeving sinds Bazel III; een beperking van sociale uitkeringen voor gevangenen in gecontroleerde huisvesting (HD03252); maatregelen ter afschrikking van tachograaf­fraude (HD03256); en een formele evaluatie van het staatsschuld­beheer 2021–2025 (HD03104). Het EU-bankenpakket is het dominante onderdeel — het verplicht Zweedse banken tot Bazel-IV-kapitaalstandaarden, versterkt de toezicht­bevoegdheden van de Finansinspektion en brengt Zweden in lijn met het EU-single rulebook. De oppositie zal zich richten op de nalevings­last voor kleinere banken.
+
+### Besluiten die dit overzicht ondersteunen
+
+- **Finansutskottet (FiU)**: Stemvoorbereiding voor HD03253 (EU-bankenpakket) en HD03104 (evaluatie schuld­beheer) — beide verwezen naar FiU.
+- **Socialförsäkringsutskottet (SfU)**: Stemvoorbereiding voor HD03252 (sociale verzekerings­uitkeringen).
+- **Trafikutskottet (TU)**: Stemvoorbereiding voor HD03256 (tachografen).
+- **Communicatie­strategie van de regering**: Beheer van het EU-single-rulebook-narratief tegenover de last voor kleinere banken.
+- **Verkiezingspositionering 2026**: SD/M kunnen bij HD03252 de misdaadaanpak benadrukken; S/MP zullen de evenredigheid betwisten.
+
+### 60-seconden inlichtingen­punten
+
+- 🏦 **HD03253 (EU-bankenpakket)**: CRD6/CRR3-implementatie — Bazel-IV-kapitaal­vloeren, versterkte geschiktheidseisen voor bank­bestuurders, nieuwe markt­risicoregels. Niklas Wykman (Finansdepartementet). Commissie: FiU. Impact: systemisch. [B2]
+- 🔒 **HD03252 (Sociale verzekerings­uitkeringen)**: Verwijdering van het recht op ziekte­uitkering/activiteits­vergoeding/ouderdoms­pensioen voor gevangenen in gecontroleerde huisvesting (*kontrollerat boende*) of beveiligings­bewaring (*säkerhetsförvaring*). Gunnar Strömmer (Justitiedepartementet). Commissie: SfU. [B2]
+- 🚛 **HD03256 (Tachografen)**: Strafbaar­stelling van manipulatie van digitale tachografen; verzwaring van sancties. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). Commissie: TU. Implementatie EU-richtlijn. [A2]
+- 📊 **HD03104 (Schuld­beheer skrivelse)**: Formele evaluatie van de leenstrategie van Riksgälden 2021–2025; de regering concludeert dat de activiteiten duidelijk binnen het mandaat bleven. Niklas Wykman (Finansdepartementet). Commissie: FiU. [A1]
+
+### Belangrijkste toekomstige trigger
+
+**Binnen 2–4 weken**: De FiU-commissie­hoorzitting over HD03253 zal bepalen of lobbyisten van kleinere banken een soepelere evenredigheids­uitzondering winnen. Als FiU wijzigingen voorstelt die CRD6-deelbepalingen vertragen, signaleert dit een breuk in het EU-nalevings­narratief van de regerings­coalitie.
+
+### Betrouwbaarheidslabel
+
+**HOOG overall** — alle vier documenten zijn officiële regerings­proposities/skrivelse bevestigd via riksdag-regering MCP (`get_propositioner`, rm 2025/26). De CRD6/CRR3 EU-wetgevings­basis is onafhankelijk verifieerbaar. Geen inlichtingen­lacunes geïdentificeerd voor Pass 1; implementatie­details van HD03252 vereisen Pass-2-verrijking over de definitie van *kontrollerat boende*.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-26  
+**Kjørings-ID**: 24963297569  
+**Klassifisering**: UNCLASSIFIED // PUBLIC SOURCE  
+**Konfidensnivå**: HØY [B2] — fire offisielle regjeringsproposisjoner/skrivelse, riksdag-regering MCP, Riksdagen API
+
+---
+
+### BLUF
+
+Sveriges Kristerssonregjering la frem fire viktige lovgivningssaker 23. april 2026: implementering av EUs bankpakke (HD03253, CRD6/CRR3) som representerer den mest vidtrekkende omreguleringen av svensk banklovgivning siden Basel III; en velferdsbegrensning på ytelser for innsatte i kontrollert bolig (HD03252); tiltak mot manipulering av fartsskrivere (HD03256); og en formell evaluering av statsgjeldforvaltningen 2021–2025 (HD03104). EUs bankpakke er det dominerende punktet — det binder svenske banker til Basel IV kapitalstandarder, styrker Finansinspeksjonens tilsynsmyndigheter og tilpasser Sverige til EUs felles regelverk. Opposisjonen vil fokusere på etterlevningsbyrden for mindre banker.
+
+### Beslutninger dette underlaget støtter
+
+- **Finansutskottet (FiU)**: Forberedelse av avstemning om HD03253 (EU bankpakke) og HD03104 (evaluering av gjeldforvaltning) — begge henvist til FiU.
+- **Socialförsäkringsutskottet (SfU)**: Forberedelse av avstemning om HD03252 (trygdeytelser).
+- **Trafikutskottet (TU)**: Forberedelse av avstemning om HD03256 (fartsskrivere).
+- **Regjeringens kommunikasjonsstrategi**: Håndtere EUs regelverksnarrativ kontra byrden for mindre banker.
+- **Valg 2026-posisjonering**: SD/M kan hevde kriminalitetshardhet ved HD03252; S/MP vil bestride proporsjonaliteten.
+
+### 60-sekunders etterretningspunkter
+
+- 🏦 **HD03253 (EU bankpakke)**: CRD6/CRR3-implementering — Basel IV kapitaltak, styrket skikkethetskontroll for bankdirektører, nye markedsrisikregler. Niklas Wykman (Finansdepartementet). Utvalg: FiU. Konsekvens: systemisk. [B2]
+- 🔒 **HD03252 (Trygdeytelser)**: Fjerner retten til sykepenger/aktivitetserstatning/alderspensjon for innsatte i kontrollert bolig (*kontrollerat boende*) eller sikkerhetsforvaring (*säkerhetsförvaring*). Gunnar Strömmer (Justitiedepartementet). Utvalg: SfU. [B2]
+- 🚛 **HD03256 (Fartsskrivere)**: Kriminaliserer manipulering av digitale fartsskrivere; styrker sanksjoner. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). Utvalg: TU. EU-direktiv-implementering. [A2]
+- 📊 **HD03104 (Gjeldforvaltning skrivelse)**: Formell evaluering av Riksgäldens lånestrategi 2021–2025; regjeringen konkluderer med at driften lå klart innenfor mandatets rammer. Niklas Wykman (Finansdepartementet). Utvalg: FiU. [A1]
+
+### Viktigste fremtidige trigger
+
+**Innen 2–4 uker**: FiUs utvalgsforhør om HD03253 avgjør om lobbyister for mindre banker oppnår et mykere proporsjonalitetsunntak. Dersom FiU foreslår endringer som forsinker CRD6-delbestemmelser, signalerer dette sprekk i regjeringskoalisjonens EU-etterlevelsesnarrativ.
+
+### Konfidensetikett
+
+**HØY totalt sett** — alle fire dokumenter er offisielle regjeringsproposisjoner/skrivelse bekreftet via riksdag-regering MCP (`get_propositioner`, rm 2025/26). CRD6/CRR3 EU-lovgivningsgrunnlag kan bekreftes uavhengig. Ingen etterretningsgap identifisert for Pass 1; implementeringsdetaljer for HD03252 krever Pass 2-berikelse om definisjonen av *kontrollerat boende*.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-26  
+**Körning ID**: 24963297569  
+**Klassificering**: UNCLASSIFIED // PUBLIC SOURCE  
+**Konfidensgrad**: HÖG [B2] — fyra officiella regeringspropositioner/skrivelse, riksdag-regering MCP, Riksdagen API
+
+---
+
+### BLUF
+
+Sveriges Kristerssonregering lade fram fyra viktiga lagstiftningsärenden den 23 april 2026: implementering av EU:s bankpaket (HD03253, CRD6/CRR3) som representerar den mest genomgripande omregleringen av svensk banklagstiftning sedan Basel III; en välfärdsbegränsning av förmåner för intagna i kontrollerat boende (HD03252); åtgärder mot färdskrivarbedrägeri (HD03256); och en formell utvärdering av statsskuldsförvaltningen 2021–2025 (HD03104). EU:s bankpaket är det dominerande ärendet — det binder svenska banker till Basel IV kapitalstandarder, stärker Finansinspektionens tillsynsbefogenheter och anpassar Sverige till EU:s gemensamma regelverk. Oppositionen kommer att fokusera på efterlevnadsbördan för mindre banker.
+
+### Beslut som detta underlag stöder
+
+- **Finansutskottet (FiU)**: Röstförberedelse för HD03253 (EU bankpaket) och HD03104 (skuld­förvaltningsutvärdering) — båda remitterade till FiU.
+- **Socialförsäkringsutskottet (SfU)**: Röstförberedelse för HD03252 (socialförsäkringsförmåner).
+- **Trafikutskottet (TU)**: Röstförberedelse för HD03256 (färdskrivare).
+- **Regeringens kommunikationsstrategi**: Hantera EU:s regelverksnarrativ kontra bördan för mindre banker.
+- **Val 2026-positionering**: SD/M kan hävda kriminalhärdning vid HD03252; S/MP kommer att bestrida proportionaliteten.
+
+### 60-sekunders underrättelsepunkter
+
+- 🏦 **HD03253 (EU bankpaket)**: CRD6/CRR3-implementering — Basel IV kapitaltak, förstärkta lämplighetskrav för bankdirektörer, nya marknadsriskbestämmelser. Niklas Wykman (Finansdepartementet). Utskott: FiU. Konsekvens: systemisk. [B2]
+- 🔒 **HD03252 (Socialförsäkringsförmåner)**: Upphäver rätten till sjukpenning/aktivitetsersättning/ålderspension för intagna i kontrollerat boende (*kontrollerat boende*) eller säkerhetsförvaring (*säkerhetsförvaring*). Gunnar Strömmer (Justitiedepartementet). Utskott: SfU. [B2]
+- 🚛 **HD03256 (Färdskrivare)**: Kriminaliserar manipulation av digitala färdskrivare; skärper sanktioner. Andreas Carlson (Landsbygds- och infrastrukturdepartementet). Utskott: TU. EU-direktivimplementering. [A2]
+- 📊 **HD03104 (Skuldförvaltning skrivelse)**: Formell utvärdering av Riksgäldens lånestrategi 2021–2025; regeringen konstaterar att verksamheten välhölls inom mandatets ramar. Niklas Wykman (Finansdepartementet). Utskott: FiU. [A1]
+
+### Viktigaste framtida trigger
+
+**Inom 2–4 veckor**: FiU:s utskottsutfrågning om HD03253 avgör om lobbyister för mindre banker lyckas få igenom ett mjukare proportionalitetsundantag. Om FiU föreslår ändringar som fördröjer CRD6-delparagrafer signalerar det en spricka i regeringskoalitionens EU-efterlevnadsnarrativ.
+
+### Konfidensetikett
+
+**HÖG totalt sett** — alla fyra dokument är officiella regeringspropositioner/skrivelse bekräftade via riksdag-regering MCP (`get_propositioner`, rm 2025/26). CRD6/CRR3 EU-lagstiftningsbas kan bekräftas oberoende. Inga underrättelseluckor identifierade för Pass 1; HD03252-implementeringsdetaljer kräver Pass 2-berikning kring definitionen av *kontrollerat boende*.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-04-26  
+**运行编号**：24963297569  
+**分类**：UNCLASSIFIED // PUBLIC SOURCE  
+**置信度**：高 [B2] — 四项官方政府提案/skrivelse，riksdag-regering MCP，Riksdagen API
+
+---
+
+### BLUF
+
+瑞典克里斯特松政府于2026年4月23日提交了四项重要立法事项：落实欧盟银行一揽子方案（HD03253，CRD6/CRR3），这是自巴塞尔III以来对瑞典银行监管最全面的修订；限制受控住宿囚犯的福利待遇（HD03252）；防止数字行驶记录仪舞弊的威慑措施（HD03256）；以及对2021–2025年国家债务管理的正式评估（HD03104）。欧盟银行一揽子方案是核心内容——它将瑞典银行纳入巴塞尔IV资本标准，强化Finansinspektionen的监管权力，并使瑞典与欧盟单一规则手册保持一致。反对党将聚焦于中小银行的合规负担。
+
+### 本报告支持的决策
+
+- **Finansutskottet (FiU)**：HD03253（欧盟银行方案）和HD03104（债务管理评估）的投票准备——两者均提交FiU审议。
+- **Socialförsäkringsutskottet (SfU)**：HD03252（社会保险福利）的投票准备。
+- **Trafikutskottet (TU)**：HD03256（行驶记录仪）的投票准备。
+- **政府传播战略**：管理欧盟单一规则手册合规叙事与中小银行负担之间的张力。
+- **2026年选举定位**：SD/M可在HD03252上宣扬打击犯罪的强硬立场；S/MP将对比例原则提出异议。
+
+### 60秒情报要点
+
+- 🏦 **HD03253（欧盟银行方案）**：CRD6/CRR3落实——巴塞尔IV资本底线、强化银行高管适任要求、新市场风险规则。Niklas Wykman（Finansdepartementet）。委员会：FiU。影响：系统性。[B2]
+- 🔒 **HD03252（社会保险福利）**：取消受控住宿（*kontrollerat boende*）或安全羁押（*säkerhetsförvaring*）囚犯领取病假津贴/活动补偿/退休金的权利。Gunnar Strömmer（Justitiedepartementet）。委员会：SfU。[B2]
+- 🚛 **HD03256（行驶记录仪）**：将篡改数字行驶记录仪入罪；加重制裁。Andreas Carlson（Landsbygds- och infrastrukturdepartementet）。委员会：TU。欧盟指令转化。[A2]
+- 📊 **HD03104（债务管理skrivelse）**：对Riksgälden 2021–2025年借贷战略的正式评估；政府认定运营明确在授权范围内。Niklas Wykman（Finansdepartementet）。委员会：FiU。[A1]
+
+### 最重要的前瞻性触发因素
+
+**2–4周内**：FiU委员会关于HD03253的听证将决定中小银行游说是否赢得更宽松的比例原则豁免。若FiU提议推迟CRD6部分条款，则预示执政联盟欧盟合规叙事出现裂痕。
+
+### 置信度标签
+
+**总体高置信度** — 四份文件均为官方政府提案/skrivelse，已通过riksdag-regering MCP（`get_propositioner`，rm 2025/26）确认。CRD6/CRR3欧盟立法依据可独立核实。Pass 1未发现情报缺口；HD03252实施细节需Pass 2进一步补充*kontrollerat boende*定义范围。
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A["🏛️ Riksdag 2026-04-23"] --> B["HD03253\nEU Bankpaket\nFiU — HIGH"]
+    A --> C["HD03252\nSocialförs.\nSfU — MEDIUM"]
+    A --> D["HD03256\nFärdskrivare\nTU — LOW"]
+    A --> E["HD03104\nSkuldförvaltning\nFiU — MEDIUM"]
+    B --> F["Basel IV\nCapital Floors"]
+    B --> G["CRD6/CRR3\nSingle Rulebook"]
+    C --> H["Welfare\nRestriction"]
+    E --> I["Riksgälden\n2021–2025 Eval"]
+
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#000
+    style D fill:#00d9ff,color:#000
+    style E fill:#ffbe0b,color:#000
+    style F fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: d5f8b60b264b8ddd80e77be173232b6571d24c12 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 4 | Linked in Article Sources, not expanded inline |
 
@@ -2044,6 +2895,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

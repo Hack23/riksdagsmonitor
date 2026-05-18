@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: weekly-review
 slug: 2026-04-26-weekly-review
 source_folder: analysis/daily/2026-04-26/weekly-review
-generated_at: 2026-05-17T22:44:40.580Z
+generated_at: 2026-05-18T09:08:37.920Z
 language: en
 layout: article
 ---
@@ -123,6 +123,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Cross Session Intelligence](#rm-cross-session-intelligence) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Session Baseline](#rm-session-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -2041,6 +2054,1204 @@ Full artifact sequence as listed in README.md (estimated 45–60 min).
 
 This is the inaugural weekly-review session. No verified prior-cycle data from previous weekly-review runs. PIR-A/B/C are carried forward from analytical inference, not from confirmed prior artifacts. Future sessions should check `analysis/daily/*/weekly-review/` for direct precedent artifacts.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+---
+title: "سويدن سبرينت تشريعي أمني: إعادة هيكلة الدفاع المدني، تعدين اليورانيوم وارتفاع البطالة"
+
+---
+
+# سويدن سبرينت تشريعي أمني: إعادة هيكلة الدفاع المدني، تعدين اليورانيوم وارتفاع البطالة
+
+**المؤلف**: James Pether Sörling
+**رقم التشغيل**: 24961123457
+**التاريخ**: 2026-04-26
+**التصنيف**: PUBLIC — اللائحة الأوروبية للبيانات (GDPR) المادة 9(2)(ه)(و)
+**الثقة**: HIGH [B2] — واجهة برمجة السلطة؛ وثائق الاقتراح الرسمية
+
+---
+
+### الملخص التنفيذي
+
+اختتمت السويد دورة Riksmöte 2024/25 ببرنامج تشريعي مكثف يركز على الأمن: أعادت حكومة Kristersson تسمية MSB إلى «Myndigheten för civilt försvar» (HC03205)، وقدمت إلى البرلمان (Riksdag) أول تدقيق لحوكمة الدفاع المدني من قِبل Riksrevision (HC03206)، واقترحت رفع الحظر على التعدين المعدني لليورانيوم (HC03203) — كل هذا خلال سبرينت واحد في سبتمبر 2025. تشير هذه الإجراءات إلى تحول حاسم من الحفاظ على دولة الرفاهية إلى الاستثمار في الأمن الصلب. يتمحور الضغط البرلماني للمعارضة حول معدل البطالة المرتفع باستمرار في السويد (~500,000 شخص)، مما يهدد مصداقية التحالف الحاكم في ما يتعلق بهدفه المُعلن المتمثل في «خط العمل».
+
+### القرارات التي تدعمها هذه الاستخبارات
+
+1. **أصحاب المصلحة في السياسة الأمنية السويدية**: تقييم ما إذا كانت إعادة التسمية MSB→MfcF تمثل إصلاحاً جوهرياً للوكالة أم مجرد إعادة تسمية شكلية؛ يوفر تقرير Riksrevision (HC03206) أساس التدقيق.
+2. **محللو السياسة الطاقوية**: تقييم الانعكاسات التنظيمية والسياسية والعلاقات الشمالية لتعدين اليورانيوم بعد HC03203.
+3. **رصد سوق العمل**: متابعة ما إذا كانت خطابات حكومة خط العمل تُنتج نتائج قابلة للقياس في مواجهة نسبة بطالة تبلغ 8.5% (الاستجوابات HC10744–HC10746).
+4. **محللو المالية/السياسة النقدية**: وضع تقييم FiU لسياسة Riksbank النقدية لعام 2024 (HC01FiU24) والتوجيهات الاقتصادية الربيعية (HC01FiU20) في سياق توقعات صندوق النقد الدولي.
+
+### قراءة 60 ثانية
+
+- 🛡️ **إعادة هيكلة الدفاع المدني**: أُعيدت تسمية MSB إلى Myndigheten för civilt försvar (المقترح HC03205)؛ كشف تدقيق Riksrevision عن ثغرات في الحوكمة (HC03206)؛ رُصد التنسيق البلدي للدفاع المدني بوصفه غير كافٍ (الاستجواب HC10752).
+- ⚛️ **رفع حظر تعدين اليورانيوم**: يرفع المقترح HC03203 الحظر الذي دام 30 عاماً؛ يدعمه SD وM، يعارضه V/MP/S بشدة؛ لا توجد رواسب معروفة للإنتاج.
+- 👔 **التوسع الجنائي**: تجريم موسّع لأسرار التجارة (HC03208)، حظر موسّع على الأعمال (HC03201)، مراقبة إلكترونية لأحكام السجن (HC03202).
+- 📉 **أزمة البطالة**: أكثر من 500,000 عاطل؛ بطالة الشباب وذوي الإعاقة عند أعلى مستوياتها في الاتحاد الأوروبي؛ التحالف الحاكم يواجه استجوابات على الأبعاد الثلاثة (HC10744–HC10746).
+- 💰 **اعتماد Vårproposition**: تم اعتماد التوجيهات الاقتصادية (HC01FiU20) مع توقعات نمو منخفضة؛ إعادة رسملة APL بمقدار 700 مليون كرونة سويدية لتأمين الإمدادات الدوائية (HC01FiU33).
+- ⚖️ **السياسة النقدية لـ Riksbank**: يُقيّم تقرير FiU (HC01FiU24) تنفيذ السياسة النقدية بأنه كافٍ رغم تخفيضات أسعار الفائدة الأبطأ من المثلى؛ توقعات التضخم راسخة.
+
+### المحفز الرئيسي للمستقبل
+
+**اختبار قدرة الدفاع المدني (72 ساعة)**: ستُحدد الجلسة البرلمانية الكاملة الأولى في إطار تفويض MfcF الجديد ما إذا كانت إعادة تسمية الوكالة تُفضي إلى بناء قدرات فعلية. تابع رد وزير الدولة Bohlin على البرلمان (Riksdag) بشأن الاستعداد البلدي (انتهاء مهلة الرد على الاستجواب HC10752).
+
+### المؤشرات الرئيسية — الأيام السبعة القادمة
+
+| المؤشر | الأفق الزمني | اتجاه الإشارة |
+|-----------|---------|-----------------|
+| العرض البرلماني لـ MfcF | 72 ساعة | القدرة مقابل الشكليات |
+| استشارة تعدين اليورانيوم | أسبوع | ردود الشركاء الشماليين |
+| إحصاءات البطالة (SCB AKU Q2) | أسبوع | ضغط على التحالف الحاكم |
+| جلسة استماع متابعة FiU لـ Riksbank | أسبوع | المصداقية النقدية |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Løbenummer**: 24961123457
+**Dato**: 2026-04-26
+**Klassifikation**: PUBLIC — GDPR Art 9(2)(e)(g)
+**Konfidens**: HIGH [B2] — Myndigheds-API; officielle propositionsdokumenter
+
+---
+
+### BLUF
+
+Sverige afsluttede riksmöte 2024/25 med en koncentreret sikkerhedsfokuseret lovgivningsdagsorden: Kristersson-regeringen omdøbte MSB til "Myndigheten för civilt försvar" (HC03205), forelagde den første Riksrevisionens civile forsvarsrevision til Riksdagen (HC03206) og foreslog at ophæve forbuddet mod uranminedrift (HC03203) — alt inden for en enkelt september 2025-sprint. Disse skridt signalerer et afgørende skifte fra opretholdelse af velfærdsstaten til investeringer i hård sikkerhed. Oppositionens parlamentariske pres centrerer sig om Sveriges vedvarende høje arbejdsløshed (~500.000 personer), som truer den styrende koalitions troværdighed i forhold til sit eget erklærede "arbejdslinjes"-mål.
+
+### Beslutninger Dette Underlag Understøtter
+
+1. **Svenske sikkerhedspolitiske** interessenter: Vurder om MSB→MfcF-omdøbningen repræsenterer substantiel myndighedsreform eller kosmetisk ommærkning; Riksrevisionens rapport (HC03206) udgør revisionsbasisen.
+2. **Energipolitiske** analytikere: Vurder uranminedriftens regulatoriske, politiske og nordiske relationsimplikationer efter HC03203.
+3. **Arbejdsmarkedsovervågere**: Følg om regeringens arbejdslinjeretorlik giver målbare resultater mod en baggrund af 8,5 % arbejdsløshed (forespørgslerne HC10744–HC10746).
+4. **Finans-/pengepolitiske** analytikere: Kontekstualisér FiU's evaluering af Riksbankens pengepolitik 2024 (HC01FiU24) og forårets økonomiske retningslinjer (HC01FiU20) i forhold til IMF-projektioner.
+
+### 60-Sekunders Læsning
+
+- 🛡️ **Civil forsvarsomlægning**: MSB omdøbt til Myndigheten för civilt försvar (prop HC03205); Riksrevisionens revision afslører styringsgab (HC03206); kommunal civilt forsvarskoordinering markeret som utilstrækkelig (forespørgsel HC10752).
+- ⚛️ **Uranminedriftforbud ophævet**: Prop HC03203 ophæver 30-årsforbuddet; SD og M støtter, V/MP/S kraftigt imod; ingen kendte uranforekomster i produktionsklar form.
+- 👔 **Strafferetlig ekspansion**: Udvidet kriminalisering af forretningshemmeligheder (HC03208), udvidede erhvervsforbud (HC03201), elektronisk overvågning for fængselsstraffe (HC03202).
+- 📉 **Arbejdsløshedskrise**: 500.000+ arbejdsløse; ungdoms- og handicaparbejdsløshed på EU-høje niveauer; den styrende koalition forespørges på alle tre dimensioner (HC10744–HC10746).
+- 💰 **Forårsproposition godkendt**: Økonomiske retningslinjer vedtaget (HC01FiU20) med nedjusteret vækstperspektiv; APL rekapitaliseret SEK 700M til lægemiddelforsyningssikkerhed (HC01FiU33).
+- ⚖️ **Riksbankens pengepolitik**: FiU-evaluering (HC01FiU24) finder pengepolitikkens gennemførelse tilstrækkelig trods langsommere-end-optimale rentenedsættelser; inflationsforventninger forankrede.
+
+### Vigtigste Fremtidstrigger
+
+**Civil forsvar kapacitetstest (72 timer)**: Den første fulde parlamentssession under det nye MfcF-mandat vil afgøre, om omdøbningen af agenturen medfører reel kapacitetsopbygning. Følg statsråd Bohlins svar til Riksdagen om kommunal beredskab (svar på forespørgsel HC10752 forfalder).
+
+### Nøgleindikatorer — Næste 7 Dage
+
+| Indikator | Horisont | Signalretning |
+|-----------|---------|-----------------|
+| MfcF parlamentspræsentation | 72 t | Kapacitet vs. kosmetik |
+| Uranminedrift konsultation | 1 uge | Nordiske partnerreaktioner |
+| Arbejdsløshedsstatistik (SCB AKU Q2) | 1 uge | Styrende koalitionspres |
+| FiU Riksbankens opfølgningshøring | 1 uge | Monetær troværdighed |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Lauf-ID**: 24961123457
+**Datum**: 2026-04-26
+**Klassifikation**: PUBLIC — DSGVO Art 9(2)(e)(g)
+**Vertrauen**: HIGH [B2] — Behörden-API; offizielle Propositionsdokumente
+
+---
+
+### BLUF
+
+Schweden beendete die Riksmöte 2024/25 mit einem konzentrierten sicherheitsorientierten Gesetzgebungsprogramm: Die Regierung Kristersson benannte MSB in „Myndigheten för civilt försvar" um (HC03205), legte dem Riksdag den ersten Riksrevisionsbericht zur Zivilschutzgovernance vor (HC03206) und schlug die Aufhebung des Uranabbauverbots vor (HC03203) — alles innerhalb eines einzigen Sprints im September 2025. Diese Maßnahmen signalisieren eine entscheidende Verschiebung von der Wohlfahrtsstaatspflege zu harten Sicherheitsinvestitionen. Der parlamentarische Druck der Opposition konzentriert sich auf Schwedens anhaltend hohe Arbeitslosigkeit (~500.000 Personen), die die Glaubwürdigkeit der Regierungskoalition im Hinblick auf ihr erklärtes „Arbeitslinie"-Ziel gefährdet.
+
+### Entscheidungen, die dieser Erkenntnisstand Unterstützt
+
+1. **Schwedische Sicherheitspolitik**-Akteure: Beurteilen Sie, ob die MSB→MfcF-Umbenennung eine substanzielle Behördenreform oder kosmetisches Rebranding darstellt; der Riksrevisionsbericht (HC03206) liefert die Revisionsbasis.
+2. **Energiepolitische** Analysten: Bewerten Sie die regulatorischen, politischen und nordischen Beziehungsimplikationen des Uranabbaus nach HC03203.
+3. **Arbeitsmarktbeobachtung**: Verfolgen Sie, ob die Arbeitslinie-Rhetorik der Regierung messbare Ergebnisse vor dem Hintergrund von 8,5 % Arbeitslosigkeit liefert (Interpellationen HC10744–HC10746).
+4. **Finanz-/Geldpolitik**-Analysten: Kontextualisieren Sie FiU's Bewertung der Geldpolitik der Riksbank 2024 (HC01FiU24) und die Frühjahrs-Wirtschaftsrichtlinien (HC01FiU20) vor IMF-Prognosen.
+
+### 60-Sekunden-Lektüre
+
+- 🛡️ **Umbau des Zivilschutzes**: MSB in Myndigheten för civilt försvar umbenannt (Prop HC03205); Riksrevisions-Prüfung deckt Governance-Lücken auf (HC03206); kommunale Zivilschutzkoordination als unzureichend markiert (Interpellation HC10752).
+- ⚛️ **Uranabbauverbot aufgehoben**: Prop HC03203 hebt das 30-jährige Verbot auf; SD und M unterstützen, V/MP/S stark dagegen; keine bekannten Uranvorkommen in produktionsbereiter Form.
+- 👔 **Strafrechtliche Erweiterung**: Ausgeweitete Kriminalisierung von Geschäftsgeheimnissen (HC03208), erweiterte Berufsverbote (HC03201), elektronische Überwachung für Gefängnisstrafen (HC03202).
+- 📉 **Arbeitslosigkeitskrise**: 500.000+ Arbeitslose; Jugend- und Behinderungsarbeitslosigkeit auf EU-Höchstniveau; die Regierungskoalition wird in allen drei Dimensionen interpelliert (HC10744–HC10746).
+- 💰 **Vårproposition genehmigt**: Wirtschaftsrichtlinien beschlossen (HC01FiU20) mit gesenkten Wachstumsaussichten; APL mit SEK 700M für Arzneimittelversorgungssicherheit rekapitalisiert (HC01FiU33).
+- ⚖️ **Geldpolitik der Riksbank**: FiU-Bewertung (HC01FiU24) findet die Durchführung der Geldpolitik trotz langsamerer als optimaler Zinssenkungen ausreichend; Inflationserwartungen verankert.
+
+### Wichtigster Zukunftsauslöser
+
+**Zivilschutz-Kapazitätstest (72 Stunden)**: Die erste vollständige Parlamentssitzung unter dem neuen MfcF-Mandat wird entscheiden, ob die Umbenennung der Behörde zu einem echten Kapazitätsaufbau führt. Verfolgen Sie die Antwort von Staatsminister Bohlin auf den Riksdag bezüglich kommunaler Bereitschaft (Antwort auf Interpellation HC10752 fällig).
+
+### Schlüsselindikatoren — Nächste 7 Tage
+
+| Indikator | Horizont | Signalrichtung |
+|-----------|---------|-----------------|
+| MfcF-Parlamentspräsentation | 72 h | Kapazität vs. Kosmetik |
+| Uranabbau-Konsultation | 1 Woche | Nordische Partnerreaktionen |
+| Arbeitslosigkeitsstatistik (SCB AKU Q2) | 1 Woche | Regierungskoalitionsdruck |
+| FiU Riksbank-Nachfolgehörung | 1 Woche | Monetäre Glaubwürdigkeit |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**ID de ejecución**: 24961123457
+**Fecha**: 2026-04-26
+**Clasificación**: PUBLIC — RGPD Art 9(2)(e)(g)
+**Confianza**: HIGH [B2] — API de autoridad; documentos de proposición oficiales
+
+---
+
+### BLUF
+
+Suecia cerró la Riksmöte 2024/25 con una agenda legislativa concentrada centrada en la seguridad: el gobierno Kristersson renombró MSB como «Myndigheten för civilt försvar» (HC03205), presentó al Riksdag la primera auditoría de gobernanza de la defensa civil de la Riksrevision (HC03206) y propuso la derogación de la prohibición de la minería de uranio (HC03203), todo dentro de un único sprint en septiembre de 2025. Estas acciones señalan un cambio decisivo del mantenimiento del estado de bienestar a las inversiones en seguridad dura. La presión parlamentaria de la oposición se centra en el persistentemente alto desempleo de Suecia (~500.000 personas), que amenaza la credibilidad de la coalición gobernante respecto a su objetivo declarado de «línea de trabajo».
+
+### Decisiones Apoyadas por este Informe de Inteligencia
+
+1. **Partes interesadas en la política de seguridad sueca**: Evaluar si el renombrado MSB→MfcF representa una reforma sustancial de agencia o un rebranding cosmético; el informe de la Riksrevision (HC03206) proporciona la base de auditoría.
+2. **Analistas de política energética**: Evaluar las implicaciones regulatorias, políticas y de relaciones nórdicas de la minería de uranio tras HC03203.
+3. **Vigilancia del mercado laboral**: Seguir si la retórica de la línea de trabajo del gobierno produce resultados medibles ante un desempleo del 8,5 % (interpelaciones HC10744–HC10746).
+4. **Analistas de finanzas/política monetaria**: Contextualizar la evaluación FiU de la política monetaria del Riksbank 2024 (HC01FiU24) y las orientaciones económicas de primavera (HC01FiU20) frente a las previsiones del FMI.
+
+### Lectura de 60 Segundos
+
+- 🛡️ **Reforma de la defensa civil**: MSB renombrado Myndigheten för civilt försvar (prop HC03205); la auditoría de la Riksrevision revela brechas de gobernanza (HC03206); coordinación municipal de la defensa civil señalada como insuficiente (interpelación HC10752).
+- ⚛️ **Prohibición de minería de uranio derogada**: La prop HC03203 deroga la prohibición de 30 años; SD y M apoyan, V/MP/S fuertemente en contra; ningún depósito de uranio conocido en forma lista para producción.
+- 👔 **Expansión penal**: Criminalización ampliada de secretos comerciales (HC03208), prohibiciones empresariales extendidas (HC03201), vigilancia electrónica para penas de prisión (HC03202).
+- 📉 **Crisis de desempleo**: 500.000+ desempleados; desempleo juvenil y de discapacitados en niveles máximos de la UE; la coalición gobernante es interpelada en las tres dimensiones (HC10744–HC10746).
+- 💰 **Vårproposition aprobado**: Orientaciones económicas adoptadas (HC01FiU20) con perspectivas de crecimiento rebajadas; APL recapitalizado con 700 millones de SEK para la seguridad del suministro farmacéutico (HC01FiU33).
+- ⚖️ **Política monetaria del Riksbank**: La evaluación FiU (HC01FiU24) considera la conducción de la política monetaria adecuada a pesar de recortes de tipos más lentos que los óptimos; expectativas de inflación ancladas.
+
+### Activador Clave del Futuro
+
+**Prueba de capacidad de defensa civil (72 horas)**: La primera sesión parlamentaria completa bajo el nuevo mandato MfcF determinará si el renombrado de la agencia conduce a una verdadera acumulación de capacidades. Seguir la respuesta del Consejero de Estado Bohlin al Riksdag sobre la preparación municipal (respuesta a la interpelación HC10752 vencida).
+
+### Indicadores Clave — Próximos 7 Días
+
+| Indicador | Horizonte | Dirección de señal |
+|-----------|---------|-----------------|
+| Presentación parlamentaria MfcF | 72 h | Capacidad vs. cosmética |
+| Consulta minería de uranio | 1 semana | Reacciones de socios nórdicos |
+| Estadísticas de desempleo (SCB AKU Q2) | 1 semana | Presión coalición gobernante |
+| Audiencia de seguimiento FiU Riksbank | 1 semana | Credibilidad monetaria |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling
+**Tunnus**: 24961123457
+**Päivämäärä**: 2026-04-26
+**Luokittelu**: PUBLIC — GDPR Art 9(2)(e)(g)
+**Luottamus**: HIGH [B2] — Viranomaisen API; viralliset propositioniasiakirjat
+
+---
+
+### BLUF
+
+Ruotsi päätti riksmöte 2024/25:n tiivistetyllä turvallisuuspainotteisella lainsäädäntöohjelmalla: Kristersson-hallitus nimesi MSB:n uudelleen nimellä "Myndigheten för civilt försvar" (HC03205), esitti Riksrevisionin ensimmäisen siviilipuolustuksen hallintoauditoinnin parlamentille (HC03206) ja ehdotti uraanikaivostoiminnan kiellon poistamista (HC03203) — kaikki yhden syyskuun 2025 sprintin aikana. Nämä toimet merkitsevät ratkaisevaa siirtymää hyvinvointivaltion ylläpidosta kovaan turvallisuusinvestointiin. Opposition parlamentaarinen paine keskittyy Ruotsin jatkuvaan korkeaan työttömyyteen (~500 000 henkilöä), joka uhkaa hallituskoalition uskottavuutta suhteessa sen omaan julistettuun "työlinja"-tavoitteeseen.
+
+### Päätökset, Joita Tiedustelutieto Tukee
+
+1. **Ruotsin turvallisuuspolitiikan** sidosryhmät: Arvioi, edustako MSB→MfcF-uudelleennimeäminen merkittävää virastouudistusta vai kosmeettista uudelleenbrändäystä; Riksrevisionin raportti (HC03206) tarjoaa auditoinnin perustan.
+2. **Energiapolitiikan** analyytikot: Arvioi uraanikaivostoiminnan sääntely-, poliittiset ja Pohjoismaiset suhdeoimplikaatiot HC03203:n jälkeen.
+3. **Työmarkkinaseuranta**: Seuraa, tuottaako hallituksen työlinjaretorikka mitattavia tuloksia 8,5 %:n työttömyyden taustaa vasten (interpellaatiot HC10744–HC10746).
+4. **Finanssi-/rahapolitiikan** analyytikot: Kontekstualisoi FiU:n arviointi Riksbankenin rahapolitiikasta 2024 (HC01FiU24) ja kevään taloudelliset suuntaviivat (HC01FiU20) suhteessa IMF:n ennusteisiin.
+
+### 60 Sekunnin Katsaus
+
+- 🛡️ **Siviilipuolustuksen uudistus**: MSB nimetty uudelleen nimellä Myndigheten för civilt försvar (prop HC03205); Riksrevisionin auditointi paljastaa hallintopuutteet (HC03206); kunnallinen siviilipuolustuskoordinaatio merkitty riittämättömäksi (interpellaatio HC10752).
+- ⚛️ **Uraanikaivostoiminnan kielto poistettu**: Prop HC03203 poistaa 30-vuotisen kiellon; SD ja M tukevat, V/MP/S voimakkaasti vastaan; ei tunnettuja uraaniesiintymiä tuotantovalmiissa muodossa.
+- 👔 **Rikosoikeudellinen laajentuminen**: Laajennettu liikesalaisuuksien kriminalisointi (HC03208), laajennetut liiketoimintakiellot (HC03201), sähköinen valvonta vankilatuomioille (HC03202).
+- 📉 **Työttömyyskriisi**: 500 000+ työtöntä; nuoriso- ja vammaistyöttömyys EU:n korkeimmalla tasolla; hallituskoalitiota interpelloidaan kaikilla kolmella ulottuvuudella (HC10744–HC10746).
+- 💰 **Vårproposition hyväksytty**: Taloudelliset suuntaviivat hyväksytty (HC01FiU20) lasketuin kasvunäkymin; APL rekapitalisoitu SEK 700M lääkkeiden toimitusturvallisuuden vuoksi (HC01FiU33).
+- ⚖️ **Riksbankenin rahapolitiikka**: FiU:n arviointi (HC01FiU24) löytää rahapolitiikan toteutuksen riittäväksi hitaammista-kuin-optimaalisista koronlaskuista huolimatta; inflaatio-odotukset ankkuroituneet.
+
+### Tärkein Tulevaisuuslaukaisin
+
+**Siviilipuolustuksen kapasiteettitesti (72 tuntia)**: Ensimmäinen täysi parlamenttisessio uuden MfcF-mandaatin alla ratkaisee, johtaako virastonimen vaihtuminen todelliseen kapasiteetin kasvuun. Seuraa valtioneuvoston jäsen Bohlinin vastausta Riksdagenille kunnallisesta valmiudesta (vastaus interpellaatioon HC10752 erääntyy).
+
+### Avainilmaisimet — Seuraavat 7 Päivää
+
+| Ilmaisin | Horisontti | Signaalin suunta |
+|-----------|---------|-----------------|
+| MfcF:n parlamenttiesitys | 72 h | Kapasiteetti vs. kosmetiikka |
+| Uraanikaivostoiminnan konsultaatio | 1 viikko | Pohjoismaiset kumppanireaktiot |
+| Työttömyystilasto (SCB AKU Q2) | 1 viikko | Hallituskoalition paine |
+| FiU Riksbankenin seurantakuuleminen | 1 viikko | Rahapolitiikan uskottavuus |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+**Identifiant** : 24961123457
+
+**Confiance** : HIGH [B2] — API d'autorité ; documents de proposition officiels
+
+---
+
+### BLUF
+
+La Suède a conclu la Riksmöte 2024/25 avec un programme législatif axé sur la sécurité : le gouvernement Kristersson a renommé MSB en « Myndigheten för civilt försvar » (HC03205), présenté au Riksdag le premier audit de gouvernance de la défense civile par la Riksrevision (HC03206) et proposé la levée de l'interdiction de l'exploitation minière d'uranium (HC03203) — le tout lors d'un seul sprint en septembre 2025. Ces actions signalent un changement décisif de l'entretien de l'État-providence vers des investissements de sécurité durs. La pression parlementaire de l'opposition se concentre sur le chômage élevé persistant de la Suède (~500 000 personnes), qui menace la crédibilité de la coalition gouvernementale par rapport à son objectif déclaré de « ligne de travail ».
+
+### Décisions Soutenues par ce Renseignement
+
+1. **Parties prenantes de la politique de sécurité suédoise** : Évaluer si le renommage MSB→MfcF représente une réforme substantielle d'agence ou un rebranding cosmétique ; le rapport de la Riksrevision (HC03206) fournit la base d'audit.
+2. **Analystes de la politique énergétique** : Évaluer les implications réglementaires, politiques et des relations nordiques de l'exploitation d'uranium après HC03203.
+3. **Surveillance du marché du travail** : Suivre si la rhétorique de la ligne de travail du gouvernement produit des résultats mesurables face à un chômage de 8,5 % (interpellations HC10744–HC10746).
+4. **Analystes finances/politique monétaire** : Contextualiser l'évaluation par FiU de la politique monétaire de la Riksbank 2024 (HC01FiU24) et les orientations économiques du printemps (HC01FiU20) par rapport aux prévisions du FMI.
+
+### Lecture en 60 Secondes
+
+- 🛡️ **Réforme de la défense civile** : MSB renommé Myndigheten för civilt försvar (prop HC03205) ; l'audit de la Riksrevision révèle des lacunes de gouvernance (HC03206) ; la coordination communale de la défense civile signalée comme insuffisante (interpellation HC10752).
+- ⚛️ **Interdiction de l'exploitation d'uranium levée** : La prop HC03203 lève l'interdiction de 30 ans ; SD et M soutiennent, V/MP/S fortement opposés ; aucun gisement d'uranium connu en état de production.
+- 👔 **Expansion pénale** : Criminalisation étendue des secrets commerciaux (HC03208), interdictions professionnelles élargies (HC03201), surveillance électronique pour les peines d'emprisonnement (HC03202).
+- 📉 **Crise du chômage** : 500 000+ chômeurs ; chômage des jeunes et des personnes handicapées aux niveaux les plus élevés de l'UE ; la coalition gouvernementale est interpellée sur les trois dimensions (HC10744–HC10746).
+- 💰 **Vårproposition approuvée** : Orientations économiques adoptées (HC01FiU20) avec des perspectives de croissance abaissées ; APL recapitalisé de 700 millions SEK pour la sécurité d'approvisionnement pharmaceutique (HC01FiU33).
+- ⚖️ **Politique monétaire de la Riksbank** : L'évaluation FiU (HC01FiU24) juge la conduite de la politique monétaire adéquate malgré des baisses de taux plus lentes qu'optimales ; anticipations d'inflation ancrées.
+
+### Déclencheur Futur Clé
+
+**Test de capacité de la défense civile (72 heures)** : La première session parlementaire complète sous le nouveau mandat MfcF déterminera si le renommage de l'agence conduit à une véritable montée en capacité. Suivre la réponse du ministre d'État Bohlin au Riksdag sur la préparation municipale (réponse à l'interpellation HC10752 à échéance).
+
+### Indicateurs Clés — 7 Prochains Jours
+
+| Indicateur | Horizon | Direction du signal |
+|-----------|---------|-----------------|
+| Présentation parlementaire MfcF | 72 h | Capacité vs. cosmétique |
+| Consultation exploitation d'uranium | 1 semaine | Réactions des partenaires nordiques |
+| Statistiques chômage (SCB AKU Q2) | 1 semaine | Pression coalition gouvernementale |
+| Audition de suivi FiU Riksbank | 1 semaine | Crédibilité monétaire |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+---
+title: "שבדיה — ספרינט חקיקה בטחוני: שיקום ההגנה האזרחית, כרייה גרעינית ועלייה באבטלה"
+
+---
+
+# שבדיה — ספרינט חקיקה בטחוני: שיקום ההגנה האזרחית, כרייה גרעינית ועלייה באבטלה
+
+**מחבר**: James Pether Sörling
+**מזהה ריצה**: 24961123457
+**תאריך**: 2026-04-26
+**סיווג**: PUBLIC — GDPR סעיף 9(2)(ה)(ו)
+**רמת ביטחון**: HIGH [B2] — API רשמי; מסמכי הצעה רשמיים
+
+---
+
+### תקציר מנהלים
+
+שבדיה סיימה את Riksmöte 2024/25 עם אג'נדה חקיקתית מרוכזת הממוקדת בביטחון: ממשלת Kristersson שינתה את שם MSB ל«Myndigheten för civilt försvar» (HC03205), הגישה לבית המחוקקים (Riksdag) את הביקורת הראשונה של Riksrevision על ממשל ההגנה האזרחית (HC03206), והציעה לבטל את האיסור על כרייה גרעינית (HC03203) — הכל במהלך ספרינט בודד בספטמבר 2025. צעדים אלה מסמנים מעבר מכריע מתחזוקת מדינת הרווחה להשקעות ביטחון קשות. הלחץ הפרלמנטרי של האופוזיציה מתמקד בשיעור האבטלה הגבוה המתמשך של שבדיה (~500,000 אנשים), המאיים על אמינות הקואליציה השלטת ביחס למטרתה המוצהרת של «קו העבודה».
+
+### החלטות הנתמכות על ידי מידע מודיעיני זה
+
+1. **בעלי עניין במדיניות ביטחון שבדית**: להעריך האם שינוי השם MSB→MfcF מייצג רפורמה מהותית בסוכנות או מיתוג-מחדש קוסמטי; דוח Riksrevision (HC03206) מספק בסיס הביקורת.
+2. **אנליסטים של מדיניות אנרגיה**: להעריך את ההשלכות הרגולטוריות, הפוליטיות והיחסים הנורדיים של כריית יורניום לאחר HC03203.
+3. **ניטור שוק העבודה**: לעקוב האם הרטוריקה של ממשלת קו העבודה מניבה תוצאות מדידות מול אבטלה של 8.5% (שאילתות HC10744–HC10746).
+4. **אנליסטים של פיננסים/מדיניות מוניטרית**: להקשיר את הערכת FiU של המדיניות המוניטרית של Riksbank ל-2024 (HC01FiU24) ואת קווי ההנחיה הכלכליים לאביב (HC01FiU20) לחזאיות קרן המטבע הבינלאומית.
+
+### קריאה של 60 שניות
+
+- 🛡️ **שיקום ההגנה האזרחית**: MSB שונה שמו ל-Myndigheten för civilt försvar (הצעה HC03205); ביקורת Riksrevision חושפת פערים בממשל (HC03206); תיאום הגנה אזרחית עירוני סומן כבלתי מספיק (שאילתה HC10752).
+- ⚛️ **ביטול איסור כרייה גרעינית**: הצעה HC03203 מבטלת את האיסור בן 30 השנה; SD ו-M תומכים, V/MP/S מתנגדים בחריפות; אין מרבצי אורניום ידועים בצורה מוכנה לייצור.
+- 👔 **התרחבות פלילית**: הרחבת פלילת סודות מסחריים (HC03208), איסורי עסקים מורחבים (HC03201), מעקב אלקטרוני לעונשי מאסר (HC03202).
+- 📉 **משבר האבטלה**: 500,000+ מובטלים; אבטלת נוער ונכים ברמות גבוהות באיחוד האירופי; הקואליציה השלטת נדרשת לשאלות בשלוש הממדים (HC10744–HC10746).
+- 💰 **Vårproposition אושר**: קווי הנחיה כלכליים אומצו (HC01FiU20) עם תחזיות צמיחה מוקטנות; APL עוּדן מחדש ב-700 מיליון כרון שבדי לאבטחת אספקה תרופתית (HC01FiU33).
+- ⚖️ **מדיניות מוניטרית של Riksbank**: הערכת FiU (HC01FiU24) מוצאת את ביצוע המדיניות המוניטרית מספיק למרות הפחתות ריבית איטיות מהאופטימלי; ציפיות אינפלציה מעוגנות.
+
+### מפעיל עתידי מרכזי
+
+**מבחן כשירות הגנה אזרחית (72 שעות)**: המושב הפרלמנטרי המלא הראשון תחת המנדט החדש של MfcF יקבע האם שינוי שם הסוכנות מוביל לבניית כשירות אמיתית. עקוב אחר תשובת שר המדינה Bohlin לבית המחוקקים (Riksdag) בנושא מוכנות עירונית (תשובה לשאילתה HC10752 פגה).
+
+### מדדים מרכזיים — 7 הימים הבאים
+
+| מדד | אופק | כיוון האות |
+|-----------|---------|-----------------|
+| הצגה פרלמנטרית של MfcF | 72 שעות | כשירות לעומת קוסמטיקה |
+| היוועצות כרייה גרעינית | שבוע | תגובות שותפים נורדיים |
+| סטטיסטיקת אבטלה (SCB AKU Q2) | שבוע | לחץ על הקואליציה השלטת |
+| דיון המשך של FiU Riksbank | שבוע | אמינות מוניטרית |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling
+**実行ID**: 24961123457
+**日付**: 2026-04-26
+**分類**: PUBLIC — GDPR 第9条(2)(e)(g)
+**信頼度**: HIGH [B2] — 行政機関API；公式提案文書
+
+---
+
+### 概要
+
+スウェーデンはRiksmöte 2024/25を安全保障重視の集中的な立法アジェンダで締めくくった。Kristersson政権はMSBを「Myndigheten för civilt försvar」（HC03205）に改名し、市民防衛ガバナンスに関するRiksrevisionの初の監査をRiksdagに提出し（HC03206）、ウラン採掘禁止の撤廃を提案した（HC03203）— いずれも2025年9月の一つのスプリント内で実施された。これらの措置は福祉国家の維持からハードな安全保障投資への決定的な転換を示している。野党の議会圧力はスウェーデンの持続的に高い失業率（約50万人）に集中しており、政権連立の「雇用路線」という宣言目標への信頼性を脅かしている。
+
+### この情報が支援する意思決定
+
+1. **スウェーデンの安全保障政策**関係者：MSB→MfcF改名が実質的な機関改革なのか見かけ上の再ブランディングなのかを評価する。Riksrevision報告書（HC03206）が監査基盤を提供する。
+2. **エネルギー政策**アナリスト：HC03203後のウラン採掘の規制・政治・北欧関係への影響を評価する。
+3. **労働市場監視**：政府の雇用路線レトリックが失業率8.5%の中で測定可能な成果を生み出しているかを追跡する（質問HC10744–HC10746）。
+4. **金融・金融政策**アナリスト：FiUの2024年Riksbankの金融政策評価（HC01FiU24）と春の経済指針（HC01FiU20）をIMF予測と照らし合わせて文脈化する。
+
+### 60秒解説
+
+- 🛡️ **市民防衛再編**：MSBをMyndigheten för civilt försvarに改名（提案HC03205）；Riksrevision監査がガバナンスの欠陥を露わにする（HC03206）；市民防衛の地方調整が不十分と指摘（質問HC10752）。
+- ⚛️ **ウラン採掘禁止撤廃**：提案HC03203は30年間の禁止を撤廃；SDとMが支持、V/MP/Sは強く反対；生産準備の整ったウラン鉱床は確認されていない。
+- 👔 **刑事法拡大**：営業秘密の犯罪化を拡大（HC03208）、営業禁止の拡大（HC03201）、懲役刑への電子監視（HC03202）。
+- 📉 **失業危機**：失業者50万人以上；若年・障害者失業率はEUで最高水準；政権連立は三つの次元すべてで質問を受ける（HC10744–HC10746）。
+- 💰 **Vårproposition承認**：経済指針が採択（HC01FiU20）し成長見通しが引き下げられた；APLが医薬品供給安全のため7億SEKで再資本化（HC01FiU33）。
+- ⚖️ **Riksbankの金融政策**：FiU評価（HC01FiU24）は最適より遅い利下げにもかかわらず金融政策の実施は適切と判断；インフレ期待は安定。
+
+### 最重要な将来のトリガー
+
+**市民防衛能力テスト（72時間）**：新MfcF委任の下での最初の完全な議会会議が機関改名から実際の能力構築につながるかを決定する。地方の準備に関するBohlin国務大臣のRiksdagへの回答を追跡（質問HC10752への回答期日が到来）。
+
+### 主要指標 — 今後7日間
+
+| 指標 | 期間 | シグナル方向 |
+|-----------|---------|-----------------|
+| MfcF議会発表 | 72時間 | 能力対見かけ |
+| ウラン採掘協議 | 1週間 | 北欧パートナーの反応 |
+| 失業統計（SCB AKU Q2） | 1週間 | 政権連立への圧力 |
+| FiU Riksbankフォローアップ公聴会 | 1週間 | 金融信頼性 |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**실행 ID**: 24961123457
+**날짜**: 2026-04-26
+**분류**: PUBLIC — GDPR 제9조(2)(e)(g)
+**신뢰도**: HIGH [B2] — 행정기관 API; 공식 제안 문서
+
+---
+
+### 요약
+
+스웨덴은 안보 중심의 집중적인 입법 의제로 Riksmöte 2024/25를 마무리했다. Kristersson 정권은 MSB를 «Myndigheten för civilt försvar»(HC03205)로 개명하고, Riksdag에 Riksrevision의 최초 민방위 거버넌스 감사를 제출했으며(HC03206), 우라늄 채굴 금지 해제를 제안했다(HC03203) — 모두 2025년 9월 한 번의 스프린트 내에서 이루어졌다. 이러한 조치들은 복지국가 유지에서 강성 안보 투자로의 결정적인 전환을 의미한다. 야당의 의회 압력은 스웨덴의 지속적으로 높은 실업률(~50만 명)에 집중되어 있으며, 이는 집권 연립의 자신들이 선언한 «노동 노선» 목표에 대한 신뢰성을 위협하고 있다.
+
+### 이 정보가 지원하는 의사결정
+
+1. **스웨덴 안보 정책** 이해관계자: MSB→MfcF 개명이 실질적인 기관 개혁인지 표면적인 리브랜딩인지 평가. Riksrevision 보고서(HC03206)가 감사 기반을 제공.
+2. **에너지 정책** 분석가: HC03203 이후 우라늄 채굴의 규제적, 정치적, 북유럽 관계 함의를 평가.
+3. **노동시장 모니터링**: 정부의 노동 노선 수사학이 8.5% 실업률 배경 속에서 측정 가능한 성과를 내는지 추적(질의 HC10744–HC10746).
+4. **재정/통화 정책** 분석가: FiU의 2024 Riksbank 통화정책 평가(HC01FiU24)와 봄 경제 지침(HC01FiU20)을 IMF 전망치와 맥락화.
+
+### 60초 요약
+
+- 🛡️ **민방위 재편**: MSB를 Myndigheten för civilt försvar로 개명(제안 HC03205); Riksrevision 감사에서 거버넌스 격차 드러남(HC03206); 지방 민방위 조정 부족으로 표시(질의 HC10752).
+- ⚛️ **우라늄 채굴 금지 해제**: 제안 HC03203으로 30년 금지 해제; SD와 M 지지, V/MP/S 강력 반대; 생산 준비된 우라늄 매장지 없음.
+- 👔 **형사 확장**: 영업 비밀 범죄화 확대(HC03208), 영업 금지 확대(HC03201), 징역형 전자 감시(HC03202).
+- 📉 **실업 위기**: 50만명 이상 실업; 청년·장애인 실업 EU 최고 수준; 집권 연립 세 차원 모두에서 질의받음(HC10744–HC10746).
+- 💰 **Vårproposition 승인**: 경제 지침 채택(HC01FiU20) 성장 전망 하향 조정; APL 의약품 공급 안보를 위해 7억 SEK 재자본화(HC01FiU33).
+- ⚖️ **Riksbank 통화정책**: FiU 평가(HC01FiU24)에서 최적보다 느린 금리 인하에도 불구하고 통화정책 수행이 적절하다고 판단; 인플레이션 기대치 고정.
+
+### 핵심 미래 트리거
+
+**민방위 역량 테스트 (72시간)**: 새 MfcF 위임 하에서 첫 완전한 의회 회기가 기관명 변경이 실질적인 역량 구축으로 이어지는지 결정할 것이다. Riksdag에 지방 준비 태세에 대한 Bohlin 국무장관의 답변 추적(질의 HC10752에 대한 답변 만료).
+
+### 핵심 지표 — 향후 7일
+
+| 지표 | 기간 | 신호 방향 |
+|-----------|---------|-----------------|
+| MfcF 의회 발표 | 72시간 | 역량 대 형식 |
+| 우라늄 채굴 협의 | 1주 | 북유럽 파트너 반응 |
+| 실업 통계 (SCB AKU Q2) | 1주 | 집권 연립 압박 |
+| FiU Riksbank 후속 청문회 | 1주 | 통화 신뢰성 |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Run-ID**: 24961123457
+**Datum**: 2026-04-26
+**Classificatie**: PUBLIC — AVG Art 9(2)(e)(g)
+**Vertrouwen**: HIGH [B2] — Overheids-API; officiële propositiedocumenten
+
+---
+
+### BLUF
+
+Zweden sloot de Riksmöte 2024/25 af met een geconcentreerde veiligheidsgericht wetgevingsagenda: de regering-Kristersson hernoemde MSB naar «Myndigheten för civilt försvar» (HC03205), legde de eerste Riksrevision civiele defensie-governanceaudit voor aan de Riksdag (HC03206) en stelde de opheffing van het verbod op uraniumwinning voor (HC03203) — alles binnen één sprint in september 2025. Deze acties signaleren een beslissende verschuiving van het onderhoud van de verzorgingsstaat naar harde veiligheidsinvesteringen. De parlementaire druk van de oppositie richt zich op Zwedens aanhoudend hoge werkloosheid (~500.000 personen), die de geloofwaardigheid van de regeringscoalitie bedreigt ten aanzien van haar verklaarde «arbeidslijn»-doelstelling.
+
+### Beslissingen die deze Inlichtingen Ondersteunen
+
+1. **Zweedse veiligheidsbeleid**-belanghebbenden: Beoordeel of de hernoeming MSB→MfcF een substantiële agentschapshervorm of cosmetische rebranding vertegenwoordigt; het Riksrevision-rapport (HC03206) levert de auditbasis.
+2. **Energiebeleid**-analisten: Beoordeel de regelgevende, politieke en Noordse relatie-implicaties van uraniumwinning na HC03203.
+3. **Arbeidsmarktmonitoring**: Volg of de arbeidslijn-retoriek van de regering meetbare resultaten oplevert bij een werkloosheid van 8,5 % (interpellaties HC10744–HC10746).
+4. **Financiën/monetair beleid**-analisten: Contextualiseer FiU's evaluatie van het monetair beleid van de Riksbank 2024 (HC01FiU24) en de economische lentelijnen (HC01FiU20) ten opzichte van IMF-prognoses.
+
+### 60-Seconden Lezing
+
+- 🛡️ **Herbouw civiele defensie**: MSB hernoemd Myndigheten för civilt försvar (prop HC03205); Riksrevision-audit onthult governance-lacunes (HC03206); gemeentelijke civiele defensiecoördinatie aangemerkt als onvoldoende (interpellatie HC10752).
+- ⚛️ **Verbod op uraniumwinning opgeheven**: Prop HC03203 heft het 30-jarige verbod op; SD en M steunen, V/MP/S sterk tegen; geen bekende uraniumvondsten in productiegerede vorm.
+- 👔 **Strafrechtelijke uitbreiding**: Uitgebreide criminalisering van handelsgeheimen (HC03208), uitgebreide beroepsverboden (HC03201), elektronisch toezicht voor gevangenisstraffen (HC03202).
+- 📉 **Werkloosheidscrisis**: 500.000+ werklozen; jeugd- en arbeidsongeschiktheidswerkloosheid op EU-hoge niveaus; de regeringscoalitie wordt op alle drie dimensies geïnterpelleerd (HC10744–HC10746).
+- 💰 **Vårproposition goedgekeurd**: Economische richtlijnen aangenomen (HC01FiU20) met verlaagde groeivooruitzichten; APL geherkapitaliseerd met SEK 700M voor geneesmiddelenleveringszekerheid (HC01FiU33).
+- ⚖️ **Monetair beleid Riksbank**: FiU-evaluatie (HC01FiU24) vindt de uitvoering van het monetair beleid ondanks langzamere-dan-optimale renteverlagingen toereikend; inflatieverwachtingen verankerd.
+
+### Belangrijkste Toekomstige Trigger
+
+**Civiele defensie capaciteitstest (72 uur)**: De eerste volledige parlementszitting onder het nieuwe MfcF-mandaat zal bepalen of de hernoeming van het agentschap leidt tot echte capaciteitsopbouw. Volg het antwoord van Staatssecretaris Bohlin aan de Riksdag over gemeentelijke paraatheid (antwoord op interpellatie HC10752 vervallen).
+
+### Kerngegevens — Komende 7 Dagen
+
+| Indicator | Horizon | Signaalrichting |
+|-----------|---------|-----------------|
+| MfcF parlementaire presentatie | 72 h | Capaciteit vs. cosmetica |
+| Uraniumwinning consultatie | 1 week | Noordse partnerreacties |
+| Werkloosheidsstatistiek (SCB AKU Q2) | 1 week | Druk regeringscoalitie |
+| FiU Riksbank vervolghoorzitting | 1 week | Monetaire geloofwaardigheid |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Løpenummer**: 24961123457
+**Dato**: 2026-04-26
+**Klassifikasjon**: PUBLIC — GDPR Art 9(2)(e)(g)
+**Konfidens**: HIGH [B2] — Myndighets-API; offisielle proposisjonsdokumenter
+
+---
+
+### BLUF
+
+Sverige avsluttet riksmöte 2024/25 med en konsentrert sikkerhetsfokusert lovgivningsagenda: Kristersson-regjeringen omdøpte MSB til "Myndigheten för civilt försvar" (HC03205), fremla den første Riksrevisjonens sivile forsvarsrevisjon for Riksdagen (HC03206) og foreslo å oppheve forbudet mot uranbrytning (HC03203) — alt innenfor en enkelt sprint i september 2025. Disse tiltakene signaliserer et avgjørende skifte fra velferdsstatens vedlikehold til investeringer i hard sikkerhet. Opposisjonens parlamentariske press sentrerer seg om Sveriges vedvarende høye arbeidsledighet (~500.000 personer), som truer den styrende koalisionens troverdighet knyttet til dens erklærte "arbeidslinje"-mål.
+
+### Beslutninger Dette Grunnlaget Støtter
+
+1. **Svenske sikkerhetspolitiske** interessenter: Vurder om MSB→MfcF-omdøpingen representerer substantiell etatsreform eller kosmetisk ommerkevare; Riksrevisjonens rapport (HC03206) gir revisjonsbasisen.
+2. **Energipolitiske** analytikere: Vurder uranbrytningens regulatoriske, politiske og nordiske relasjonsimplikasjoner etter HC03203.
+3. **Arbeidsmarkedsovervåkere**: Følg om regjeringens arbeidslinjeretorikk gir målbare resultater mot en bakgrunn av 8,5 % arbeidsledighet (interpellasjonene HC10744–HC10746).
+4. **Finans-/pengepolitiske** analytikere: Kontekstualisér FiUs evaluering av Riksbankens pengepolitikk 2024 (HC01FiU24) og vårens økonomiske retningslinjer (HC01FiU20) mot IMFs prognoser.
+
+### 60-Sekunders Lesning
+
+- 🛡️ **Sivilforsvarets ombygging**: MSB omdøpt til Myndigheten för civilt försvar (prop HC03205); Riksrevisjonens revisjon avslører styringsgap (HC03206); kommunal sivilforsvarkoordinering flagget som utilstrekkelig (interpellasjon HC10752).
+- ⚛️ **Uranbrytningsforbud opphevet**: Prop HC03203 opphever 30-årsforbudet; SD og M støtter, V/MP/S sterkt imot; ingen kjente uranforekomster i produksjonsklar form.
+- 👔 **Strafferettslig ekspansjon**: Utvidet kriminalisering av forretningshemmeligheter (HC03208), utvidede næringsforbud (HC03201), elektronisk overvåkning for fengselsstraffer (HC03202).
+- 📉 **Arbeidsledighetskrise**: 500.000+ arbeidsledige; ungdoms- og funksjonshemmingsarbeidsledighet på EU-høye nivåer; den styrende koalisjonen interpelleres på alle tre dimensjoner (HC10744–HC10746).
+- 💰 **Vårproposisjon godkjent**: Økonomiske retningslinjer vedtatt (HC01FiU20) med nedjustert vekstutsikt; APL rekapitalisert SEK 700M for legemiddelforsyningssikkerhet (HC01FiU33).
+- ⚖️ **Riksbankens pengepolitikk**: FiU-evaluering (HC01FiU24) finner pengepolitikkens gjennomføring tilstrekkelig til tross for langsommere-enn-optimale rentekutt; inflasjonsforventninger forankret.
+
+### Viktigste Fremtidstrigger
+
+**Sivilforsvarets kapasitetstest (72 timer)**: Den første fullstendige parlamentssesjonen under det nye MfcF-mandatet vil avgjøre om etatsnavnendringen gir faktisk kapasitetsoppbygging. Følg statsråd Bohlins svar til Riksdagen om kommunal beredskap (svar på interpellasjon HC10752 forfaller).
+
+### Nøkkelindikatorer — Neste 7 Dager
+
+| Indikator | Horisont | Signalretning |
+|-----------|---------|-----------------|
+| MfcF parlamentspresentasjon | 72 t | Kapasitet vs. kosmetikk |
+| Uranbrytning konsultasjon | 1 uke | Nordiske partnerreaksjoner |
+| Arbeidsledighetstatistikk (SCB AKU Q2) | 1 uke | Styrende koalisjonspress |
+| FiU Riksbankens oppfølgingshøring | 1 uke | Monetær troverdighet |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Löpnummer**: 24961123457
+**Datum**: 2026-04-26
+**Klassificering**: PUBLIC — GDPR Art 9(2)(e)(g)
+**Konfidens**: HIGH [B2] — Myndighetens API; officiella propositionsdokument
+
+---
+
+### BLUF
+
+Sverige avslutade riksmöte 2024/25 med en koncentrerad säkerhets-fokuserad lagstiftningsagenda: Kristersson-regeringen bytte namn på MSB till "Myndigheten för civilt försvar" (HC03205), lämnade den första Riksrevisionens granskning av civilt försvar till riksdagen (HC03206) och föreslog att hävd förbudet mot uranbrytning (HC03203) — allt under en enda sprint i september 2025. Dessa åtgärder signalerar en avgörande förskjutning från välfärdsstatens underhåll till hård säkerhetsinvestering. Oppositionens parlamentariska tryck fokuserar på Sveriges ihållande höga arbetslöshet (~500 000 personer), som hotar den styrande koalitionens trovärdighet gällande det egna deklarerade "arbetslinjen"-målet.
+
+### Beslut Som Underlaget Stödjer
+
+1. **Svenska säkerhetspolitiska** intressenter: Utvärdera huruvida namnbytet MSB→MfcF representerar substantiell myndighetsreform eller kosmetisk omprofilering; Riksrevisionens rapport (HC03206) ger granskningsbasen.
+2. **Energipolitiska** analytiker: Bedöm uranbrytningens regulatoriska, politiska och nordiska relationsimplikationer efter HC03203.
+3. **Arbetsmarknadsövervakare**: Följ om regeringens arbetslinjeretorlik ger mätbara resultat mot bakgrunden av 8,5 % arbetslöshet (interpellationerna HC10744–HC10746).
+4. **Finans-/monetärpolitiska** analytiker: Kontextualisera FiU:s utvärdering av Riksbankens penningpolitik 2024 (HC01FiU24) och vårens ekonomiska riktlinjer (HC01FiU20) mot IMF:s projektioner.
+
+### 60-Sekunders Läsning
+
+- 🛡️ **Civil försvarsöversyn**: MSB byter namn till Myndigheten för civilt försvar (prop HC03205); Riksrevisionens granskning blottlägger styrningsluckor (HC03206); kommunal civilförsvarsamordning flaggas som otillräcklig (interpellation HC10752).
+- ⚛️ **Uranbrytningsförbudet hävs**: Prop HC03203 lyfter 30-årsförbudet; SD och M stöder, V/MP/S starkt emot; inga kända uranförekomster i produktionsklart skick.
+- 👔 **Straffrättslig expansion**: Utökad kriminalisering av företagshemligheter (HC03208), utökade näringsförbud (HC03201), elektronisk fotboja för fängelsestraff (HC03202).
+- 📉 **Arbetslöshetskris**: 500 000+ arbetslösa; ungdoms- och funktionsnedsättningsarbetslöshet på EU-höga nivåer; den styrande koalitionen interpelleras på alla tre dimensioner (HC10744–HC10746).
+- 💰 **Vårpropositionen godkänd**: Ekonomiska riktlinjer antagna (HC01FiU20) med nedgradering av tillväxtutsikterna; APL rekapitaliserades SEK 700M för läkemedelsförsörjningssäkerhet (HC01FiU33).
+- ⚖️ **Riksbankens penningpolitik**: FiU:s utvärdering (HC01FiU24) finner penningpolitikens genomförande adekvat trots långsammare-än-optimala räntesänkningar; inflationsförväntningar förankrade.
+
+### Viktigaste Framåttrigger
+
+**Civilförsvarets kapacitetstest (72 timmar)**: Den första fullständiga riksdagssessionen under det nya MfcF-mandatet avgör om namnbytet omsätts i faktisk kapacitetsuppbyggnad. Följ statsrådet Bohlins svar till riksdagen om kommunal beredskap (svar på interpellation HC10752 förfaller).
+
+### Nyckelindikatorer — Kommande 7 Dagar
+
+| Indikator | Horisont | Signalriktning |
+|-----------|---------|-----------------|
+| MfcF:s parlamentspresentation | 72 h | Förmåga vs. kosmetik |
+| Uranbrytningens samråd | 1 vecka | Nordiska partnerreaktioner |
+| Arbetslöshetsstatistik (SCB AKU Q2) | 1 vecka | Styrande koalitionstryck |
+| FiU Riksbankens uppföljningshearing | 1 vecka | Monetär trovärdighet |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling
+**运行编号**: 24961123457
+**日期**: 2026-04-26
+**分类**: PUBLIC — GDPR 第9条(2)(e)(g)
+**置信度**: HIGH [B2] — 政府机构API；官方提案文件
+
+---
+
+### 执行摘要
+
+瑞典以集中的安全聚焦立法议程结束了Riksmöte 2024/25：Kristersson政府将MSB更名为«Myndigheten för civilt försvar»（HC03205），向Riksdag提交了Riksrevision首次民防治理审计（HC03206），并提议废除铀矿开采禁令（HC03203）——所有这些均在2025年9月的单一冲刺内完成。这些举措标志着从福利国家维护到硬安全投资的决定性转变。反对派的议会压力集中于瑞典持续高企的失业率（约50万人），这威胁到执政联盟就其宣称的"工作路线"目标的可信度。
+
+### 本情报支持的决策
+
+1. **瑞典安全政策**利益相关者：评估MSB→MfcF更名是否代表实质性机构改革或表面重塑；Riksrevision报告（HC03206）提供审计基础。
+2. **能源政策**分析师：评估HC03203后铀矿开采的监管、政治及北欧关系影响。
+3. **劳动力市场监控**：追踪政府工作路线修辞是否在8.5%失业率背景下产生可量化成果（质询HC10744–HC10746）。
+4. **财政/货币政策**分析师：将FiU对2024年Riksbank货币政策的评估（HC01FiU24）和春季经济指导方针（HC01FiU20）与IMF预测进行背景关联。
+
+### 60秒阅读
+
+- 🛡️ **民防重组**：MSB更名为Myndigheten för civilt försvar（提案HC03205）；Riksrevision审计揭示治理缺口（HC03206）；地方民防协调被标记为不足（质询HC10752）。
+- ⚛️ **铀矿开采禁令废除**：提案HC03203废除30年禁令；SD与M支持，V/MP/S强烈反对；无已知可投入生产的铀矿藏。
+- 👔 **刑事扩展**：扩大商业秘密犯罪化（HC03208）、扩展营业禁令（HC03201）、监禁刑罚的电子监控（HC03202）。
+- 📉 **失业危机**：逾50万人失业；青年及残障人士失业率处于欧盟最高水平；执政联盟在三个维度上均受到质询（HC10744–HC10746）。
+- 💰 **Vårproposition获批**：经济指导方针通过（HC01FiU20），增长预测下调；APL为药品供应安全重新资本化7亿瑞典克朗（HC01FiU33）。
+- ⚖️ **Riksbank货币政策**：FiU评估（HC01FiU24）认为尽管利率下调速度慢于最优，货币政策实施仍属充分；通胀预期稳定。
+
+### 最重要的未来触发因素
+
+**民防能力测试（72小时）**：首次在新MfcF任务下召开的完整议会会议将决定机构更名是否带来实质能力建设。跟踪Bohlin国务大臣向Riksdag就地方备灾情况的回复（质询HC10752的回复期限届满）。
+
+### 关键指标 — 未来7天
+
+| 指标 | 时限 | 信号方向 |
+|-----------|---------|-----------------|
+| MfcF议会报告 | 72小时 | 能力对比表面 |
+| 铀矿开采磋商 | 1周 | 北欧伙伴反应 |
+| 失业统计（SCB AKU Q2） | 1周 | 执政联盟压力 |
+| FiU Riksbank后续听证 | 1周 | 货币可信度 |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27', 'gridColor': '#00d9ff', 'titleColor': '#00d9ff'}}}%%
+quadrantChart
+    title Weekly Legislative Priority Matrix
+    x-axis Low Political Salience --> High Political Salience
+    y-axis Low Security Impact --> High Security Impact
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Critical Watch"
+    quadrant-3 "Routine"
+    quadrant-4 "Political Battleground"
+    HC03205 MSB-rename: [0.7, 0.9]
+    HC03206 Civil defence audit: [0.6, 0.95]
+    HC03203 Uranium mining: [0.85, 0.6]
+    HC01FiU20 Economic policy: [0.8, 0.3]
+    Unemployment interpellations: [0.95, 0.2]
+    HC01FiU24 Riksbanken eval: [0.55, 0.25]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d'}}}%%
+timeline
+    title Riksmöte 2024/25 — Key Legislative Milestones
+    section Spring 2025
+        HC01FiU20 Vårproposition approved
+        HC01FiU24 Riksbanken evaluation
+        HC01SoU29 Fritidskort enacted
+        HC01CU18 New bankruptcy procedure
+    section August 2025
+        HC03202 Electronic monitoring expanded
+        HC03201 Business bans expanded
+        HC03203 Uranium ban lifted (proposed)
+        Unemployment interpellations filed
+    section September 2025
+        HC03205 MSB → MfcF rename
+        HC03206 Riksrevisionen civil defence audit
+        HC03208 Trade secrets criminalisation
+        HC10752 Municipal civil defence interpellation
+```
+
+style HC03205 fill:#ff006e,stroke:#00d9ff
+style HC03206 fill:#ff006e,stroke:#00d9ff
+style HC03203 fill:#ffbe0b,stroke:#0a0e27
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
 ## Mcp Reliability Audit
 <!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/mcp-reliability-audit.md -->
 
@@ -2201,7 +3412,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 41 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2241,6 +3452,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/data-download-manifest.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/analysis-index.md)
 - [`cross-session-intelligence.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/cross-session-intelligence.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_zh.md)
 - [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/reference-analysis-quality.md)
 - [`session-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/session-baseline.md)

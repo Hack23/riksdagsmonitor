@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-05-17T22:44:40.556Z
+generated_at: 2026-05-18T09:08:37.872Z
 language: en
 layout: article
 ---
@@ -89,6 +89,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1755,13 +1768,717 @@ Per political-style-guide.md §Source Diversity Rule: P0/P1 claims require ≥3 
 - All documents from official Riksdagen API via riksdag-regering-mcp
 - S documents dominate due to party's active parliamentary scrutiny role as main opposition
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز تنفيذي — النشاط البرلماني للمعارضة، 2026-04-24
+
+**التصنيف**: عام | **مرحلة F3EAD**: النشر
+**المؤلف**: James Pether Sörling | **التاريخ**: 2026-04-26
+
+---
+
+### الموجز (BLUF)
+
+يستهدف نواب المعارضة السويديون ثلاثة ثغرات متميزة في المساءلة الحكومية: أماكن العمل الخطرة التي تتلقى دعماً للأجور للعمال ذوي الإعاقة، والأطفال المحتجزون الذين يفتقرون إلى ضمانات قانونية للتعليم، ومواطن سويدي محتجز في بوروندي. في الوقت ذاته، يتحدى حزب SD السرد المتعلق بالتضليل في مجال الطاقة الذي تستخدمه صناعة الاتحاد الأوروبي والمذيعون العامون لتشكيك في شرعية انتقاد طاقة الرياح.
+
+---
+
+### أهم 3 قرارات تواجهها الحكومة
+
+| # | القرار | الموعد النهائي | المخاطر |
+|---|--------|---------------|---------|
+| 1 | يجب على **Britz (L)** الرد على Haraldsson (S) بشأن إشراف Arbetsförmedlingen على توظيفات lönebidrag في أماكن العمل الخطرة | 2026-05-06 | ثقة النقابات + مصداقية حقوق ذوي الإعاقة |
+| 2 | يجب على **Mohamsson (L)** الالتزام بجدول زمني للإطار القانوني للتعليم في وحدات احتجاز الأحداث الجديدة | 2026-05-06 | الحقوق الدستورية للأطفال + شرعية التنفيذ |
+| 3 | يجب على **Malmer Stenergard (M)** إظهار مشاركة قنصلية نشطة لـ Christophe Sahabo في بوروندي | 2026-05-06 | مصداقية السويد في حقوق الإنسان في السياقات الاستبدادية |
+
+---
+
+### نقطة الاستخبارات في 60 ثانية
+
+أودع ثلاثة من برلمانيي Socialdemokraterna أسئلة مكتوبة في 2026-04-24 موجهة إلى ثلاثة وزراء L/M بشأن إخفاقات حوكمة متميزة لكنها مرتبطة موضوعياً: تسأل Johanna Haraldsson وزير العمل Britz لماذا تواصل Arbetsförmedlingen توظيفات الدعم الأجري في شركة بمنطقة سكانيا حيث حذر IF Metall مراراً من التعرض للمواد الكيميائية السامة؛ وتسأل Anna Wallentheim وزير التعليم Mohamsson كيف سيتلقى الأطفال في السجون الجديدة للأحداث تعليماً متكافئاً مضموناً دستورياً قبل وجود التشريع المُمَكِّن؛ ويسأل Olle Thorell وزير الخارجية Malmer Stenergard عن الإجراءات النشطة الجارية لتحرير المواطن السويدي Christophe Sahabo المحتجز في دولة بوروندي الاستبدادية المتردية. قدّم Josef Fransson من SD بشكل منفصل استجواباً لوزير الطاقة Busch حول ما إذا كان ينبغي إعادة النظر في سياسة السويد للطاقة في ضوء تقرير صناعي يصف الأسئلة النقدية حول طاقة الرياح بأنها تضليل روسي. كما تقدمت أربعة تقارير لجان: قانون أسلحة ناري جديد (JuU10 موافق عليه)، وتقييم للإصلاح الفاشل لعام 2015 للشرطة (JuU31)، ومقترح كفاءة لعملية البناء (CU24)، وتعزيز رعاية المسنين (SoU25).
+
+الموضوع الاستخباراتي السائد: **المعارضة تنجح في تحديد ثغرات التنفيذ والرقابة** في أجندة الإصلاح للحكومة الحالية، مما يخلق ضغطاً على المساءلة في اتجاه دورة انتخابات 2026.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_da.md -->
+
+**Klassifikation**: Offentlig | **F3EAD-fase**: DISSEMINER
+**Forfatter**: James Pether Sörling | **Dato**: 2026-04-26
+
+---
+
+### BLUF
+
+Svenske oppositionspolitikere retter sig mod tre distinkte statslige ansvarsgab: farlige arbejdspladser, der modtager lønsubsidier for handicappede arbejdere, fængslede børn uden juridisk uddannelsesbeskyttelse, og en tilbageholdt svensk statsborger i Burundi. Desuden udfordrer SD energidesinformationsnarrativen, der bruges af EU-industrien og public service til at delegitimere vindkraftkritik.
+
+---
+
+### Top-3 beslutninger, som regeringen skal træffe
+
+| # | Beslutning | Deadline | Indsats |
+|---|------------|----------|---------|
+| 1 | **Britz (L)** skal svare Haraldsson (S) om Arbetsförmedlingens tilsyn med lönebidrag-placeringer på farlige arbejdspladser | 2026-05-06 | Faglig tillid + troværdighed i handicaprettigheder |
+| 2 | **Mohamsson (L)** skal forpligte sig til en tidsplan for den juridiske ramme for uddannelse i nye ungdomsfængsler | 2026-05-06 | Børns forfatningsmæssige rettigheder + implementeringslegitimitet |
+| 3 | **Malmer Stenergard (M)** skal vise aktivt konsulært engagement for Christophe Sahabo i Burundi | 2026-05-06 | Sveriges troværdighed i menneskerettigheder i autoritære kontekster |
+
+---
+
+### 60-sekunders intelligens
+
+Tre Socialdemokraterna-parlemetarikere indsendte skriftlige spørgsmål den 2026-04-24 rettet mod tre L/M-ministre vedrørende distinkte, men tematisk forbundne styringsfejl: Johanna Haraldsson spørger arbejdsmarkedsminister Britz, hvorfor Arbetsförmedlingen fortsætter lønsubsidieringssplaceringer hos en skånsk virksomhed, hvor IF Metall gentagne gange har advaret om toksisk kemisk eksponering; Anna Wallentheim spørger uddannelsesminister Mohamsson, hvordan børn i de nye ungdomsfængsler vil modtage forfatningsmæssigt garanteret ligeværdig uddannelse, inden muliggørende lovgivning eksisterer; Olle Thorell spørger udenrigsminister Malmer Stenergard, hvilke aktive foranstaltninger der er i gang for at frigive den svenske statsborger Christophe Sahabo, der tilbageholdes i Burundis forværrede autoritære stat. SDs Josef Fransson indsendte separat en interpellation til energiminister Busch om, hvorvidt Sveriges energipolitik bør genovervejesi lyset af en brancherapport, der betegner kritiske spørgsmål om vindenergi som russisk desinformation. Fire udvalgsrapporter gik også videre: en ny skydevabenlov (JuU10 godkendt), en vurdering af den mislykkede 2015-politireform (JuU31), et effektivitetsforslag til byggeprocessen (CU24) og styrkelse af ældrepleje (SoU25).
+
+Det dominerende intelligensetema: **oppositionen formår at identificere implementerings- og tilsynsgab** i den nuværende regerings reformdagsorden, hvilket skaber ansvarspres frem mod valgcyklussen 2026.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_de.md -->
+
+**Klassifizierung**: Öffentlich | **F3EAD-Phase**: VERBREITEN
+**Autor**: James Pether Sörling | **Datum**: 2026-04-26
+
+---
+
+### BLUF
+
+Schwedische Oppositionsabgeordnete zielen auf drei unterschiedliche staatliche Rechenschaftslücken ab: gefährliche Arbeitsplätze, die Lohnzuschüsse für behinderte Arbeitnehmer erhalten, inhaftierte Kinder ohne rechtliche Bildungsschutzmaßnahmen und ein inhaftierter schwedischer Staatsbürger in Burundi. Gleichzeitig hinterfragt die SD die Energiedesinformationserzählung, die von der EU-Industrie und öffentlich-rechtlichen Sendern verwendet wird, um Windenergie-Kritik zu delegitimieren.
+
+---
+
+### Top-3-Entscheidungen für die Regierung
+
+| # | Entscheidung | Frist | Einsätze |
+|---|--------------|-------|----------|
+| 1 | **Britz (L)** muss Haraldsson (S) auf die Frage zur Aufsicht der Arbetsförmedlingen über lönebidrag-Vermittlungen an gefährlichen Arbeitsplätzen antworten | 2026-05-06 | Gewerkschaftliches Vertrauen + Glaubwürdigkeit in Behindertenrechten |
+| 2 | **Mohamsson (L)** muss sich zu einem Zeitplan für den Rechtsrahmen für Bildung in neuen Jugendstrafeinrichtungen verpflichten | 2026-05-06 | Verfassungsrechte von Kindern + Implementierungslegitimität |
+| 3 | **Malmer Stenergard (M)** muss aktives konsularisches Engagement für Christophe Sahabo in Burundi zeigen | 2026-05-06 | Schwedens Menschenrechtsglaubwürdigkeit in autoritären Kontexten |
+
+---
+
+### 60-Sekunden-Geheimdienstbericht
+
+Drei Socialdemokraterna-Abgeordnete reichten am 2026-04-24 schriftliche Anfragen ein, die sich an drei L/M-Minister wegen unterschiedlicher, aber thematisch verbundener Regierungsversagen richten: Johanna Haraldsson fragt Arbeitsminister Britz, warum die Arbetsförmedlingen weiterhin Lohnsubventionsvermittlungen bei einem schonischen Unternehmen fortsetzt, wo IF Metall wiederholt vor toxischer Chemikalienexposition gewarnt hat; Anna Wallentheim fragt Bildungsminister Mohamsson, wie Kinder in den neuen Jugendgefängnissen verfassungsrechtlich garantierte Bildungsgleichheit erhalten sollen, bevor die entsprechende Gesetzgebung existiert; Olle Thorell fragt Außenminister Malmer Stenergard, welche aktiven Maßnahmen ergriffen werden, um den schwedischen Staatsbürger Christophe Sahabo zu befreien, der im sich verschlechternden autoritären Burundi inhaftiert ist. SDs Josef Fransson reichte separat eine Interpellation bei Energieminister Busch ein, ob Schwedens Energiepolitik angesichts eines Branchenberichts überdacht werden sollte, der kritische Fragen zur Windenergie als russische Desinformation bezeichnet. Vier Ausschussberichte wurden ebenfalls vorangebracht: ein neues Waffengesetz (JuU10 genehmigt), eine Bewertung der gescheiterten Polizeireform 2015 (JuU31), ein Effizienzvorschlag für Bauprozesse (CU24) und die Stärkung der Altenpflege (SoU25).
+
+Das dominante Geheimdienstthema: **Die Opposition identifiziert erfolgreich Implementations- und Aufsichtslücken** in der Reformagenda der aktuellen Regierung und schafft Rechenschaftsdruck im Vorfeld des Wahlzyklus 2026.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_es.md -->
+
+**Clasificación**: Público | **Fase F3EAD**: DIFUNDIR
+**Autor**: James Pether Sörling | **Fecha**: 2026-04-26
+
+---
+
+### BLUF
+
+Diputados de la oposición sueca apuntan a tres brechas distintas en la rendición de cuentas del gobierno: lugares de trabajo peligrosos que reciben subsidios salariales para trabajadores con discapacidad, niños detenidos sin garantías legales de educación y un ciudadano sueco detenido en Burundi. Simultáneamente, el SD cuestiona la narrativa de desinformación energética utilizada por la industria de la UE y los radiodifusores públicos para deslegitimar las críticas a la energía eólica.
+
+---
+
+### Las 3 decisiones prioritarias del gobierno
+
+| # | Decisión | Plazo | Apuestas |
+|---|----------|-------|----------|
+| 1 | **Britz (L)** debe responder a Haraldsson (S) sobre la supervisión de Arbetsförmedlingen de las colocaciones de lönebidrag en lugares de trabajo peligrosos | 2026-05-06 | Confianza sindical + credibilidad en derechos de personas con discapacidad |
+| 2 | **Mohamsson (L)** debe comprometerse con un calendario para el marco legal de educación en los nuevos centros de internamiento juvenil | 2026-05-06 | Derechos constitucionales de los niños + legitimidad de implementación |
+| 3 | **Malmer Stenergard (M)** debe mostrar un compromiso consular activo con Christophe Sahabo en Burundi | 2026-05-06 | Credibilidad de Suecia en derechos humanos en contextos autoritarios |
+
+---
+
+### Punto de inteligencia de 60 segundos
+
+Tres parlamentarios de Socialdemokraterna presentaron preguntas escritas el 2026-04-24 dirigidas a tres ministros L/M sobre fallas de gobernanza distintas pero temáticamente vinculadas: Johanna Haraldsson pregunta al ministro de Trabajo Britz por qué Arbetsförmedlingen continúa las colocaciones con subsidio salarial en una empresa de Escania donde IF Metall ha advertido repetidamente sobre exposición química tóxica; Anna Wallentheim pregunta al ministro de Educación Mohamsson cómo los niños en las nuevas prisiones juveniles recibirán educación igualitaria garantizada constitucionalmente antes de que exista la legislación habilitante; Olle Thorell pregunta al ministro de Asuntos Exteriores Malmer Stenergard qué medidas activas están en curso para liberar al ciudadano sueco Christophe Sahabo detenido en el deteriorado estado autoritario de Burundi. Josef Fransson del SD presentó por separado una interpelación al ministro de Energía Busch preguntando si la política energética sueca debería reconsiderarse a la luz de un informe industrial que califica las preguntas críticas sobre la energía eólica como desinformación rusa. Cuatro informes de comité también avanzaron: una nueva ley de armas de fuego (JuU10 aprobada), una evaluación de la fallida reforma policial de 2015 (JuU31), un proyecto de eficiencia para el proceso de construcción (CU24) y el fortalecimiento del cuidado de personas mayores (SoU25).
+
+El tema de inteligencia dominante: **la oposición está identificando exitosamente las brechas de implementación y supervisión** en la agenda de reforma del gobierno actual, creando presión de responsabilidad de cara al ciclo electoral 2026.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_fi.md -->
+
+**Luokittelu**: Julkinen | **F3EAD-vaihe**: LEVITÄ
+**Tekijä**: James Pether Sörling | **Päiväys**: 2026-04-26
+
+---
+
+### BLUF
+
+Ruotsalaiset oppositiokansanedustajat kohdistavat kritiikkinsä kolmeen erilliseen hallituksen vastuuaukkoon: vaarallisiin työpaikkoihin, jotka saavat palkkatukia vammaisille työntekijöille, vankilassa oleviin lapsiin ilman koulutuksen oikeudellisia suojauksia, ja pidätettyyn ruotsalaiseen kansalaiseen Burundissa. SD kyseenalaistaa samanaikaisesti EU-teollisuuden ja julkisen palvelun käyttämän energiadesinformaationarratiivin tuulienergiakritiikkiä vastaan.
+
+---
+
+### Hallituksen kolme tärkeintä päätöstä
+
+| # | Päätös | Määräaika | Panokset |
+|---|--------|-----------|----------|
+| 1 | **Britz (L)** on vastattava Haraldssonin (S) kysymykseen Arbetsförmedlingenin valvonnasta lönebidrag-sijoituksissa vaarallisille työpaikoille | 2026-05-06 | Ammattiliittojen luottamus + vammaisten oikeuksien uskottavuus |
+| 2 | **Mohamsson (L)** on sitouduttava aikataluun oikeudelliselle kehykselle koulutuksesta uusissa nuorisovankiloissa | 2026-05-06 | Lasten perustuslailliset oikeudet + toimeenpanon legitimiteetti |
+| 3 | **Malmer Stenergard (M)** on osoitettava aktiivinen konsulaarinen sitoutuminen Christophe Sahabo'n asiaan Burundissa | 2026-05-06 | Ruotsin ihmisoikeususkottavuus autoritaarisissa konteksteissa |
+
+---
+
+### 60 sekunnin tiedustelu
+
+Kolme Socialdemokraterna-kansanedustajaa jätti kirjallisia kysymyksiä 2026-04-24 kolmelle L/M-ministerille erillisistä mutta temaattisesti yhteenliitetyistä hallinnon epäonnistumisista: Johanna Haraldsson kysyy työministeri Britziltä, miksi Arbetsförmedlingen jatkaa palkkatukisijoituksia skånelaisessa yrityksessä, jossa IF Metall on toistuvasti varoittanut myrkyllisestä kemiallisesta altistuksesta; Anna Wallentheim kysyy opetusministeri Mohamssonilta, kuinka uusien nuorisovankiloiden lapset saavat perustuslaillisesti taatun tasa-arvoisen koulutuksen ennen mahdollistavan lainsäädännön olemassaoloa; Olle Thorell kysyy ulkoministeri Malmer Stenergardilta, mitä aktiivisia toimenpiteitä on käynnissä ruotsalaisen kansalaisen Christophe Sahabo'n vapauttamiseksi Burundin heikentyneestä autoritaarisesta valtiosta. SD:n Josef Fransson jätti erikseen interpellaation energiministeri Buschille siitä, pitäisikö Ruotsin energiapolitiikka harkita uudelleen alan raportin valossa, joka leimaa kriittiset tuulienergiakysymykset venäläiseksi disinformaatioksi. Neljä valiokuntaraporttia eteni myös: uusi ampuma-aselaki (JuU10 hyväksytty), arviointi epäonnistuneesta 2015 poliisiuudistuksesta (JuU31), rakennusprosessin tehokkuusehdotus (CU24) ja vanhustenhuollon vahvistaminen (SoU25).
+
+Hallitseva tiedusteluteema: **oppositio onnistuu tunnistamaan toimeenpano- ja valvontaaukkoja** nykyisen hallituksen uudistusagendassa, luoden vastuuvelvollisuuspainetta vuoden 2026 vaalikierroksen lähestyessä.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling | **Date**: 2026-04-26
+
+---
+
+### BLUF
+
+Des parlementaires de l'opposition suédoise ciblent trois lacunes distinctes dans la responsabilité gouvernementale : des lieux de travail dangereux recevant des subventions salariales pour les travailleurs handicapés, des enfants détenus sans garanties légales en matière d'éducation et un citoyen suédois détenu au Burundi. Simultanément, le SD remet en question le récit sur la désinformation énergétique utilisé par l'industrie européenne et les diffuseurs publics pour délégitimer la critique de l'énergie éolienne.
+
+---
+
+### Les 3 décisions prioritaires du gouvernement
+
+| # | Décision | Échéance | Enjeux |
+|---|----------|----------|--------|
+| 1 | **Britz (L)** doit répondre à Haraldsson (S) sur la supervision par l'Arbetsförmedlingen des placements lönebidrag dans des lieux de travail dangereux | 2026-05-06 | Confiance syndicale + crédibilité en matière de droits des personnes handicapées |
+| 2 | **Mohamsson (L)** doit s'engager sur un calendrier pour le cadre juridique de l'éducation dans les nouveaux établissements d'incarcération pour mineurs | 2026-05-06 | Droits constitutionnels des enfants + légitimité de la mise en œuvre |
+| 3 | **Malmer Stenergard (M)** doit montrer un engagement consulaire actif pour Christophe Sahabo au Burundi | 2026-05-06 | Crédibilité de la Suède en matière de droits de l'homme dans des contextes autoritaires |
+
+---
+
+### Point de renseignement en 60 secondes
+
+Trois parlementaires Socialdemokraterna ont déposé des questions écrites le 2026-04-24 ciblant trois ministres L/M sur des défaillances de gouvernance distinctes mais thématiquement liées : Johanna Haraldsson demande au ministre du Travail Britz pourquoi l'Arbetsförmedlingen continue les placements subventionnés dans une entreprise de Scanie où IF Metall a répété des avertissements sur l'exposition à des produits chimiques toxiques ; Anna Wallentheim demande au ministre de l'Éducation Mohamsson comment les enfants dans les nouvelles prisons pour mineurs recevront une éducation égale garantie par la constitution avant que la législation habilitante existe ; Olle Thorell demande au ministre des Affaires étrangères Malmer Stenergard quelles mesures actives sont en cours pour libérer le citoyen suédois Christophe Sahabo détenu dans l'État autoritaire en détérioration du Burundi. Josef Fransson du SD a séparément déposé une interpellation auprès du ministre de l'Énergie Busch demandant si la politique énergétique suédoise devrait être reconsidérée à la lumière d'un rapport industriel qui qualifie les questions critiques sur l'énergie éolienne de désinformation russe. Quatre rapports de commission ont également progressé : une nouvelle loi sur les armes à feu (JuU10 approuvée), une évaluation de la réforme policière ratée de 2015 (JuU31), un projet d'efficacité pour le processus de construction (CU24) et le renforcement des soins aux personnes âgées (SoU25).
+
+Le thème de renseignement dominant : **l'opposition identifie avec succès les lacunes d'implémentation et de supervision** dans l'agenda de réforme du gouvernement actuel, créant une pression de responsabilité à l'approche du cycle électoral 2026.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — פעילות פרלמנטרית של האופוזיציה, 2026-04-24
+
+**סיווג**: ציבורי | **שלב F3EAD**: הפצה
+**מחבר**: James Pether Sörling | **תאריך**: 2026-04-26
+
+---
+
+### תמצית (BLUF)
+
+חברי כנסת שוודים מהאופוזיציה מכוונים לשלושה פערי אחריות ממשלתיים נבדלים: מקומות עבודה מסוכנים המקבלים סובסידיות שכר לעובדים עם מוגבלויות, ילדים עצורים הנעדרים הגנות משפטיות לחינוך, ואזרח שוודי עצור בבורונדי. במקביל, SD מאתגר את נרטיב דיסאינפורמציה האנרגיה שמשתמשת בו תעשיית האיחוד האירופי ומשדרים ציבוריים לדה-לגיטימציה של ביקורת על אנרגיית הרוח.
+
+---
+
+### 3 ההחלטות המובילות של הממשלה
+
+| # | החלטה | דדליין | נסיבות |
+|---|-------|--------|--------|
+| 1 | **Britz (L)** חייב להשיב לHaraldsson (S) על פיקוח Arbetsförmedlingen על השמות lönebidrag במקומות עבודה מסוכנים | 2026-05-06 | אמון האיגודים + אמינות זכויות מוגבלויות |
+| 2 | **Mohamsson (L)** חייב להתחייב לציר זמן מסגרת משפטית לחינוך ביחידות כליאת קטינים חדשות | 2026-05-06 | זכויות חוקתיות של ילדים + לגיטימציית יישום |
+| 3 | **Malmer Stenergard (M)** חייב להראות מעורבות קונסולרית פעילה עבור Christophe Sahabo בבורונדי | 2026-05-06 | אמינות שוודיה בזכויות אדם בהקשרים סמכותניים |
+
+---
+
+### נקודת מודיעין של 60 שניות
+
+שלושה חברי כנסת של Socialdemokraterna הגישו שאלות כתובות ב-2026-04-24 המכוונות לשלושה שרים L/M על כשלי ממשל נבדלים אך קשורים נושאית: Johanna Haraldsson שואלת את שר העבודה Britz מדוע Arbetsförmedlingen ממשיכה בהשמות סובסידיות שכר בחברה בסקאניה שבה IF Metall הזהיר שוב ושוב מחשיפה לכימיקלים רעילים; Anna Wallentheim שואלת את שר החינוך Mohamsson כיצד ילדים בבתי הכלא החדשים לנוער יקבלו חינוך שוויוני המובטח חוקתית לפני שהחקיקה המאפשרת קיימת; Olle Thorell שואל את שר החוץ Malmer Stenergard אילו צעדים פעילים נמצאים בתהליך לשחרור האזרח השוודי Christophe Sahabo העצור במדינה הסמכותנית המתדרדרת של בורונדי. Josef Fransson מSD הגיש בנפרד שאילתה לשר האנרגיה Busch האם יש לשקול מחדש את מדיניות האנרגיה של שוודיה לאור דוח תעשייה המכנה שאלות ביקורתיות על אנרגיית הרוח כדיסאינפורמציה רוסית. ארבעה דוחות ועדה גם התקדמו: חוק נשק חדש (JuU10 אושר), הערכת הרפורמה הכושלת במשטרה משנת 2015 (JuU31), הצעת יעילות לתהליך הבנייה (CU24), וחיזוק טיפול בקשישים (SoU25).
+
+נושא המודיעין הדומיננטי: **האופוזיציה מזהה בהצלחה פערי יישום ופיקוח** בסדר יום הרפורמה של הממשלה הנוכחית, ויוצרת לחץ אחריות לקראת מחזור הבחירות 2026.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling | **日付**：2026-04-26
+
+---
+
+### 要旨（BLUF）
+
+スウェーデンの野党議員たちは政府の3つの異なる説明責任の欠落を標的としている：障害のある労働者への賃金補助を受けている危険な職場、法的教育保護を欠く収監された子供たち、そしてブルンジで拘留されているスウェーデン市民。同時に、SDは風力エネルギー批判を不当化するためにEU産業と公共放送局が使用するエネルギー偽情報のナラティブに異議を唱えている。
+
+---
+
+### 政府が直面する重要決定トップ3
+
+| # | 決定 | 期限 | 関係するもの |
+|---|------|------|------------|
+| 1 | **Britz (L)** はHaraldsson (S) に対し、危険な職場でのlönebidrag配置に関するArbetsförmedlingenの監督について回答しなければならない | 2026-05-06 | 組合の信頼 + 障害者の権利の信頼性 |
+| 2 | **Mohamsson (L)** は新しい少年収監施設での教育のための法的枠組みの時間軸にコミットしなければならない | 2026-05-06 | 子供の憲法上の権利 + 実施の正当性 |
+| 3 | **Malmer Stenergard (M)** はブルンジでのChristophe Sahaboのために積極的な領事関与を示さなければならない | 2026-05-06 | 権威主義的文脈におけるスウェーデンの人権信頼性 |
+
+---
+
+### 60秒インテリジェンスポイント
+
+3人のSocialdemokraterna議員が2026-04-24に、異なるが主題的に結びついた統治の失敗について3人のL/M大臣に対する書面による質問を提出した：Johanna HaraldssonはIF Metallが繰り返し毒性化学物質への暴露を警告したスコーネの企業での賃金補助配置をArbetsförmedlingenが継続している理由を労働大臣Britzに質問；Anna Wallentheim は教育大臣Mohamssonに、可能にする法律が存在する前に新しい少年刑務所の子供たちがどのように憲法で保障された平等な教育を受けるかを質問；Olle Thorell は外務大臣Malmer Stenergardに、ブルンジの悪化する権威主義国家で拘留されているスウェーデン市民Christophe Sahaboを解放するためにどのような積極的な措置が進行中かを質問した。SDのJosef Fransson は別途、風力エネルギーに関する批判的な質問をロシアの偽情報と呼ぶ業界報告書を踏まえてスウェーデンのエネルギー政策を見直すべきかどうかをエネルギー大臣Buschに問う質問主意書を提出した。4つの委員会報告書も進展した：新しい銃器法（JuU10承認）、2015年の失敗した警察改革の評価（JuU31）、建設プロセス効率化法案（CU24）、高齢者ケア強化（SoU25）。
+
+支配的なインテリジェンステーマ：**野党は現政権の改革アジェンダにおける実施と監督のギャップを特定することに成功しており**、2026年選挙サイクルに向けた説明責任の圧力を生み出している。
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **날짜**: 2026-04-26
+
+---
+
+### 핵심 요약(BLUF)
+
+스웨덴 야당 의원들은 세 가지 명확히 구분되는 정부 책임 공백을 겨냥하고 있다: 장애 근로자를 위한 임금 보조금을 받는 위험한 직장, 법적 교육 보호 장치가 없는 수감된 아이들, 그리고 부룬디에 억류된 스웨덴 시민. 동시에 SD는 풍력 에너지 비판을 불법화하기 위해 EU 산업계와 공영 방송사들이 사용하는 에너지 허위 정보 서사에 도전한다.
+
+---
+
+### 정부가 직면한 최우선 결정 3가지
+
+| # | 결정 | 기한 | 이해관계 |
+|---|------|------|---------|
+| 1 | **Britz (L)** 는 위험한 직장에서의 lönebidrag 배치에 대한 Arbetsförmedlingen 감독에 관해 Haraldsson (S) 에게 답변해야 한다 | 2026-05-06 | 노조 신뢰 + 장애인 권리 신뢰성 |
+| 2 | **Mohamsson (L)** 는 새로운 소년 구금 시설의 교육을 위한 법적 프레임워크 일정에 헌신해야 한다 | 2026-05-06 | 아동의 헌법적 권리 + 이행 정당성 |
+| 3 | **Malmer Stenergard (M)** 는 부룬디의 Christophe Sahabo를 위한 적극적인 영사 참여를 보여야 한다 | 2026-05-06 | 권위주의 맥락에서의 스웨덴 인권 신뢰성 |
+
+---
+
+### 60초 인텔리전스
+
+세 명의 Socialdemokraterna 의원들이 2026-04-24에 세 명의 L/M 장관들을 대상으로 별개이지만 주제적으로 연관된 거버넌스 실패에 관한 서면 질문을 제출했다: Johanna Haraldsson은 IF Metall이 반복적으로 독성 화학물질 노출에 대해 경고한 스코네 기업에서 Arbetsförmedlingen이 임금 보조 배치를 계속하는 이유를 노동부 장관 Britz에게 질문; Anna Wallentheim은 가능화 법안이 존재하기 전에 새로운 청소년 교도소의 아이들이 헌법으로 보장된 평등한 교육을 어떻게 받을 것인지를 교육부 장관 Mohamsson에게 질문; Olle Thorell은 부룬디의 악화되는 권위주의 국가에 억류된 스웨덴 시민 Christophe Sahabo를 석방하기 위한 적극적인 조치가 어떻게 진행되고 있는지를 외무부 장관 Malmer Stenergard에게 질문했다. SD의 Josef Fransson은 별도로 풍력 에너지에 관한 비판적 질문을 러시아 허위정보로 규정한 업계 보고서에 비추어 스웨덴의 에너지 정책을 재고해야 하는지 에너지부 장관 Busch에게 질의서를 제출했다. 네 개의 위원회 보고서도 진행되었다: 새로운 총기법(JuU10 승인), 2015년 실패한 경찰 개혁 평가(JuU31), 건설 프로세스 효율성 법안(CU24), 노인 돌봄 강화(SoU25).
+
+지배적인 인텔리전스 주제: **야당은 현 정부 개혁 의제에서 이행 및 감독 공백을 성공적으로 식별하고 있으며**, 2026년 선거 주기를 앞두고 책임 압력을 조성하고 있다.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_nl.md -->
+
+**Classificatie**: Openbaar | **F3EAD-fase**: VERSPREIDEN
+**Auteur**: James Pether Sörling | **Datum**: 2026-04-26
+
+---
+
+### BLUF
+
+Zweedse oppositieparlementariërs richten zich op drie afzonderlijke hiaten in de overheidsverantwoording: gevaarlijke werkplekken die loonsubsidies ontvangen voor gehandicapte werknemers, gedetineerde kinderen zonder wettelijke onderwijsbescherming en een gedetineerde Zweedse staatsburger in Burundi. Tegelijkertijd daagt de SD het energiedesinformatieverhaal uit dat door de EU-industrie en publieke omroepen wordt gebruikt om windenergie-kritiek te delegitimeren.
+
+---
+
+### Top-3 beslissingen voor de regering
+
+| # | Beslissing | Deadline | Inzet |
+|---|------------|----------|-------|
+| 1 | **Britz (L)** moet Haraldsson (S) antwoorden over het toezicht van Arbetsförmedlingen op lönebidrag-plaatsingen op gevaarlijke werkplekken | 2026-05-06 | Vakbondsvertrouwen + geloofwaardigheid handicaprechten |
+| 2 | **Mohamsson (L)** moet zich verbinden aan een tijdlijn voor het wettelijk kader voor onderwijs in nieuwe jeugddetentie-eenheden | 2026-05-06 | Grondwettelijke rechten van kinderen + implementatielegitimiteit |
+| 3 | **Malmer Stenergard (M)** moet actieve consulaire betrokkenheid tonen voor Christophe Sahabo in Burundi | 2026-05-06 | Zweedse geloofwaardigheid op het gebied van mensenrechten in autoritaire contexten |
+
+---
+
+### 60-seconden inlichtingenrapport
+
+Drie Socialdemokraterna-parlementariërs dienden op 2026-04-24 schriftelijke vragen in gericht aan drie L/M-ministers over afzonderlijke maar thematisch verbonden bestuursfalen: Johanna Haraldsson vraagt arbeidsminister Britz waarom Arbetsförmedlingen loonsubsidieplaatsingen voortzet bij een Schanens bedrijf waar IF Metall herhaaldelijk gewaarschuwd heeft voor toxische chemische blootstelling; Anna Wallentheim vraagt onderwijsminister Mohamsson hoe kinderen in de nieuwe jeugdgevangenissen grondwettelijk gegarandeerd gelijk onderwijs zullen ontvangen voordat de benodigde wetgeving bestaat; Olle Thorell vraagt buitenlandminister Malmer Stenergard welke actieve maatregelen worden genomen om de Zweedse burger Christophe Sahabo te bevrijden die wordt vastgehouden in Burundi's verslechterende autoritaire staat. SDs Josef Fransson diende afzonderlijk een interpellatie in bij energieminister Busch over of Zweden's energiebeleid heroverwogen moet worden in het licht van een industrierapport dat kritische vragen over windenergie bestempelt als Russische desinformatie. Vier commissierapporten zijn ook gevorderd: een nieuwe vuurwapenwet (JuU10 goedgekeurd), een beoordeling van de mislukte politiehervorming van 2015 (JuU31), een efficiëntievoorstel voor het bouwproces (CU24) en versterking van de ouderenzorg (SoU25).
+
+Het dominante inlichtingenthema: **de oppositie identificeert succesvol implementatie- en toezichtshiaten** in de huidige regeringshervormagenda, waardoor verantwoordingsdruk wordt gecreëerd in aanloop naar de verkiezingscyclus 2026.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_no.md -->
+
+**Klassifisering**: Offentlig | **F3EAD-fase**: FORMIDLE
+**Forfatter**: James Pether Sörling | **Dato**: 2026-04-26
+
+---
+
+### BLUF
+
+Svenske opposisjonspolitikere retter seg mot tre distinkte statlige ansvarsgap: farlige arbeidsplasser som mottar lønnstilskudd for funksjonshemmede arbeidere, fengslede barn uten juridiske utdanningsbeskyttelser, og en tilbakeholdt svensk statsborger i Burundi. Samtidig utfordrer SD energidesinformasjonsnarrativen som brukes av EU-industrien og kringkasterne for å delegitimere vindkraftkritikk.
+
+---
+
+### Topp-3 beslutninger regjeringen må ta
+
+| # | Beslutning | Frist | Innsats |
+|---|------------|-------|---------|
+| 1 | **Britz (L)** må svare Haraldsson (S) om Arbetsförmedlingens tilsyn med lönebidrag-plasseringer på farlige arbeidsplasser | 2026-05-06 | Faglig tillit + troverdighet i funksjonshemmedes rettigheter |
+| 2 | **Mohamsson (L)** må forplikte seg til en tidslinje for det juridiske rammeverket for utdanning i nye ungdomsfengsel | 2026-05-06 | Barns konstitusjonelle rettigheter + gjennomføringslegitimitet |
+| 3 | **Malmer Stenergard (M)** må vise aktivt konsulært engasjement for Christophe Sahabo i Burundi | 2026-05-06 | Sveriges troverdighet i menneskerettigheter i autoritære kontekster |
+
+---
+
+### 60-sekunders etterretning
+
+Tre Socialdemokraterna-representanter innleverte skriftlige spørsmål 2026-04-24 rettet mot tre L/M-ministre om distinkte, men tematisk sammenkoblede styringssvikt: Johanna Haraldsson spør arbeidsminister Britz hvorfor Arbetsförmedlingen fortsetter lønnstilskuddsplasseringer hos et skånsk firma der IF Metall gjentatte ganger har advart om toksisk kjemisk eksponering; Anna Wallentheim spør utdanningsminister Mohamsson hvordan barn i de nye ungdomsfengslene vil motta konstitusjonelt garantert likeverdig utdanning før muliggjørende lovgivning eksisterer; Olle Thorell spør utenriksminister Malmer Stenergard hvilke aktive tiltak som er iverksatt for å frigi den svenske borgeren Christophe Sahabo som holdes tilbake i Burundis forverrede autoritære stat. SDs Josef Fransson innleverte separat en interpellasjon til energiminister Busch om Sveriges energipolitikk bør revurderes i lys av en bransjeraport som stempler kritiske spørsmål om vindkraft som russisk desinformasjon. Fire utvalgsrapporter gikk også videre: en ny skytevåpenlov (JuU10 godkjent), en vurdering av den mislykkede 2015-politireformen (JuU31), et effektivitetsforslag for byggeprosessen (CU24) og styrking av eldreomsorg (SoU25).
+
+Det dominerende etretningstemet: **opposisjonen lykkes med å identifisere implementerings- og tilsynsgap** i den sittende regjeringens reformagenda, som skaper ansvarstrykk inn mot valgomgangen 2026.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_sv.md -->
+
+**Klassificering**: Offentlig | **F3EAD-fas**: DISSEMINERA
+**Författare**: James Pether Sörling | **Datum**: 2026-04-26
+
+---
+
+### BLUF
+
+Svenska oppositionsledamöter riktar in sig på tre distinkta ansvarsluckor i regeringen: farliga arbetsplatser som tar emot lönebidrag för funktionsnedsatta, frihetsberövade barn som saknar rättsliga utbildningsskydd, och en frihetsberövad svensk medborgare i Burundi. Samtidigt ifrågasätter SD energidesinformationsnarrativet som används av EU-industrin och public service för att delegitimisera vindkraftskritik.
+
+---
+
+### Topp-3 beslut som regeringen måste fatta
+
+| # | Beslut | Deadline | Insatser |
+|---|--------|----------|----------|
+| 1 | **Britz (L)** måste svara Haraldsson (S) om Arbetsförmedlingens tillsyn av lönebidragsplaceringar på farliga arbetsplatser | 2026-05-06 | Facklig tillit + trovärdighet i funktionshinderfrågor |
+| 2 | **Mohamsson (L)** måste åta sig en tidsplan för regelverket kring utbildning i nya ungdomsfängelser | 2026-05-06 | Barns konstitutionella rättigheter + genomförandelegitimitet |
+| 3 | **Malmer Stenergard (M)** måste visa aktivt konsulärt engagemang för Christophe Sahabo i Burundi | 2026-05-06 | Sveriges trovärdighet i mänskliga rättigheter i auktoritära kontexter |
+
+---
+
+### 60-sekundersintelligens
+
+Tre socialdemokratiska riksdagsledamöter lämnade skriftliga frågor 2026-04-24 riktade mot tre L/M-ministrar om distinkta men tematiskt sammankopplade styrningsbrister: Johanna Haraldsson frågar arbetsmarknadsminister Britz varför Arbetsförmedlingen fortsätter lönebidragsplaceringar hos ett skånskt företag där IF Metall upprepade gånger varnat för toxisk kemisk exponering; Anna Wallentheim frågar utbildningsminister Mohamsson hur barn i de nya ungdomsfängelserna ska få konstitutionellt garanterad likvärdig utbildning innan möjliggörande lagstiftning finns; Olle Thorell frågar utrikesminister Malmer Stenergard vilka aktiva åtgärder som vidtas för att frigöra den svenske medborgaren Christophe Sahabo som hålls frihetsberövad i Burundis försämrade auktoritära stat. SDs Josef Fransson lämnade separat en interpellation till energiminister Busch om huruvida Sveriges energipolitik bör omprövas mot bakgrund av en branschrapport som stämplar kritiska frågor om vindkraft som rysk desinformation. Fyra utskottsbetänkanden gick också vidare: ny vapenlagi (JuU10 godkänd), en utvärdering av den misslyckade 2015 polisreformen (JuU31), ett effektiviseringsförslag för byggprocessen (CU24) och stärkt äldreomsorg (SoU25).
+
+Det dominerande intelligenstemat: **oppositionen lyckas identifiera implementerings- och tillsynsluckor** i den nuvarande regeringens reformagenda, vilket skapar ansvarstryck inför 2026 års valcykel.
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling | **日期**：2026-04-26
+
+---
+
+### 核心摘要（BLUF）
+
+瑞典反对党议员针对三个不同的政府问责缺口：接受残障工人工资补贴的危险工作场所、缺乏法律教育保障的被关押儿童，以及一名被扣留在布隆迪的瑞典公民。与此同时，SD质疑欧盟工业界和公共广播公司用来使风能批评去合法化的能源虚假信息叙事。
+
+---
+
+### 政府面临的三大优先决定
+
+| # | 决定 | 截止日期 | 利害关系 |
+|---|------|----------|---------|
+| 1 | **Britz (L)** 必须就Arbetsförmedlingen对危险工作场所lönebidrag安置的监督问题回复Haraldsson (S) | 2026-05-06 | 工会信任 + 残障权利可信度 |
+| 2 | **Mohamsson (L)** 必须承诺新少年羁押机构教育法律框架的时间表 | 2026-05-06 | 儿童宪法权利 + 实施合法性 |
+| 3 | **Malmer Stenergard (M)** 必须就布隆迪的Christophe Sahabo展现积极的领事参与 | 2026-05-06 | 瑞典在威权主义背景下的人权可信度 |
+
+---
+
+### 60秒情报简报
+
+三名Socialdemokraterna议员于2026-04-24提交书面问题，针对三位L/M部长就不同但主题相关的治理失败：Johanna Haraldsson询问劳工部长Britz，为何Arbetsförmedlingen继续在一家斯科讷企业进行工资补贴安置，该企业曾多次收到IF Metall关于有毒化学品暴露的警告；Anna Wallentheim询问教育部长Mohamsson，在授权立法存在之前，新少年监狱的儿童如何获得宪法保障的平等教育；Olle Thorell询问外交部长Malmer Stenergard，正在采取哪些积极措施释放被布隆迪日益恶化的威权国家关押的瑞典公民Christophe Sahabo。SD的Josef Fransson单独向能源部长Busch提交了一份质询书，询问鉴于一份将风能批评性问题定性为俄罗斯虚假信息的行业报告，是否应重新考虑瑞典的能源政策。四份委员会报告也有所进展：新枪支法（JuU10获批）、对2015年失败警察改革的评估（JuU31）、建筑流程效率法案（CU24）和老年护理强化（SoU25）。
+
+主导情报主题：**反对党正在成功识别**现任政府改革议程中的实施和监督缺口，在2026年选举周期临近之际制造问责压力。
+
+---
+
+```mermaid
+graph LR
+    A["Opposition 2026-04-24"] --> B1["S: Lönestöd + farlig\narbetsmiljö HD11747"]
+    A --> B2["S: Barn i kriminalvård\nutbildning HD11749"]
+    A --> B3["S: Sahabo i\nBurundi HD11748"]
+    A --> B4["SD: Vindkraft\ndesinformation HD10448"]
+    B1 --> C["Britz/L\n(svar 2026-05-06)"]
+    B2 --> D["Mohamsson/L\n(svar 2026-05-06)"]
+    B3 --> E["Malmer Stenergard/M\n(svar 2026-05-06)"]
+    B4 --> F["Busch/KD\n(svar 2026-05-08)"]
+
+    style A fill:#1565C0,color:#FFFFFF
+    style B1 fill:#E53935,color:#FFFFFF
+    style B2 fill:#E53935,color:#FFFFFF
+    style B3 fill:#E53935,color:#FFFFFF
+    style B4 fill:#1E88E5,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+```
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1805,3 +2522,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_zh.md)

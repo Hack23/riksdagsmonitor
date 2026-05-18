@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: month-ahead
 slug: 2026-04-26-month-ahead
 source_folder: analysis/daily/2026-04-26/month-ahead
-generated_at: 2026-05-17T22:44:40.545Z
+generated_at: 2026-05-18T09:08:37.850Z
 language: en
 layout: article
 ---
@@ -103,6 +103,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1629,13 +1642,941 @@ Sibling folders checked:
 - analysis/daily/2026-04-26/committeeReports/ — not present
 - analysis/daily/2026-04-26/monthly-review/ — present (checked for PIR continuity)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الاستخبارات السياسية السويدية: التوقعات الشهرية — مايو–يونيو 2026
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-26  
+**التصنيف**: عام — تطبيق المادة 9(2)(e,g) من اللائحة الأوروبية لحماية البيانات  
+**مستوى الثقة**: B2 (مصدر موثوق، صحيح على الأرجح)  
+**عمق التحليل**: معياري  
+
+---
+
+### 🎯 الموجز التنفيذي
+
+يدخل الريكسداج في مايو–يونيو 2026 مرحلة التسارع التشريعي الأخيرة قبل **الانتخابات العامة في سبتمبر 2026**، حيث تدفع حكومة تيدو (M-SD-KD-L) بحزمة كثيفة في مجالات الأمن والعدالة والمالية. تهيمن على هذه الفترة: (1) قانون أسلحة جديد يحظر البنادق شبه الأوتوماتيكية (HD01JuU10)؛ (2) تشديد قانون العقوبات من خلال إصلاح أحكام الأحداث (HD03246) وقيود الإعانات الاجتماعية للسجناء (HD03252)؛ (3) تنفيذ الحزمة المصرفية الأوروبية (HD03253)؛ و(4) تحديات المعارضة الحادة بشأن خفض ضرائب الوقود، التوظيف الشرطي، وتراجع الرعاية الاجتماعية. **الخطر الرئيسي هو الإجهاد التشريعي مقترناً بتعبئة المعارضة الانتخابية ضد روايات الأمن "الصارمة لكن الجوفاء" قبيل سبتمبر 2026.**
+
+---
+
+### 🧭 ثلاثة قرارات يدعمها هذا الإحاطة
+
+1. **أولوية المراقبة**: متابعة جميع مشاريع قوانين Justitieutskottet (JuU) الأربعة — HD01JuU10 (قانون الأسلحة الجديد)، HD01JuU31 (إصلاح الشرطة)، HD03246 (جرائم الأحداث)، وHD03252 (مزايا السجناء) — باعتبارها أوضح مؤشرات على قدرة الائتلاف في توصيل رسالة القانون والنظام قبل موسم الانتخابات.
+
+2. **تقييم المخاطر**: يشير تصاعد استجوابات المعارضة بقيادة حزب S حول تخفيضات اشتراكات أصحاب العمل (HD10444) وتكاليف الإجازات المرضية (HD10447) والإعلانات الخاطئة عن الوفاة (HD10446) إلى حملة انتخابية مسبقة منسقة من قِبل الاشتراكيين الديمقراطيين تستهدف الإخفاقات الإدارية والاجتماعية. رصد الأضرار السياسية المحتملة لوزيرة المالية Svantesson.
+
+3. **مراقبة الائتلاف**: يواجه ميزانية التعديل الإضافية (الاقتراح 2025/26:236 — خفض ضريبة الوقود) معارضة نشطة من MP وV (HD024098، HD024092). الخلاف المالي عبر الأحزاب بين KD/L (المخاوف البيئية) وSD/M (أولوية تكاليف المعيشة) يُنشئ اختباراً محتملاً لتماسك الائتلاف.
+
+---
+
+### القراءة الاستخباراتية في 60 ثانية
+
+- **4 تقارير لجنة JuU كبرى** تم تمريرها أو قيد الانتظار في أبريل 2026 — أكبر تجمع لإصلاحات العدالة في هذا الريكسموته
+- **276 اقتراحاً** مقدماً في 2025/26 (الأعلى في التاريخ البرلماني الحديث)
+- **448 استجواباً** — المعارضة نشطة إلى أقصى حد، 90 % من S وV قبل الانتخابات
+- **ميزانية تعديل إضافية** لعام 2026 (ضريبة الوقود) تُشعل ائتلاف معارضة واسع (MP+V+C+S)
+- يحظر قانون الأسلحة الجديد بعض بنادق الصيد شبه الأوتوماتيكية — أول قيد من هذا النوع منذ التسعينيات، حساس سياسياً
+- مراجعة إصلاح الشرطة (Riksrevisionen): الإصلاح **لم يحقق** مكاسب الكفاءة المستهدفة — ضار سياسياً للائتلاف
+- توقعات الانتخابات: سبتمبر 2026، استطلاعات الرأي تظهر S+MP+V+C في تعادل تقريبي مع M+SD+KD+L؛ نتيجة الائتلاف غير مؤكدة للغاية
+
+---
+
+### ⚡ المحفز الاستباقي الرئيسي
+
+**تاريخ المراقبة 2026-05-06**: نقاش الجلسة العامة للريكسداج حول ميزانية التعديل الإضافية (ضريبة الوقود، الاقتراح 2025/26:236). إذا خرق حزب SD الانضباط الحزبي في التصويت، فإن ائتلاف تيدو يواجه أشد انشقاقاته الداخلية منذ تأسيس الحكومة.
+
+---
+
+### 🔮 مستويات الثقة
+
+| المجال | الثقة | المبرر |
+|--------|-----------|-----------|
+| التقويم التشريعي | A1 — موثوق جداً، مؤكد | جدول الريكسداج المنشور |
+| استراتيجية المعارضة | B2 — موثوق، صحيح على الأرجح | تحليل أنماط الاستجوابات |
+| توقعات الانتخابات | C3 — موثوق نسبياً، ربما صحيح | بيانات استطلاعات مع عدم يقين منهجي |
+| تماسك الائتلاف | B3 — موثوق، ربما صحيح | تحليل التصويتات عبر الأحزاب |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-26  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g) anvendt  
+**Konfidensniveau**: B2 (pålidelig kilde, sandsynligvis sandt)  
+**Analysedybde**: standard  
+
+---
+
+### 🎯 BLUF
+
+Sveriges Riksdag træder ind i maj–juni 2026 i den endelige lovgivningsaccelerationsfase inden **valget i september 2026**, hvor Tidö-koalitionen (M-SD-KD-L) presser en tæt sikkerheds-, retsvæsens- og finanspakke igennem. Perioden domineres af: (1) en ny våbenlov med forbud mod halvautomatiske rifler (HD01JuU10); (2) strafferskærpelse via reform af ungdomsdomme (HD03246) og begrænsning af sociale ydelser til fanger (HD03252); (3) implementering af EU's bankpakke (HD03253); og (4) heftig oppositionskritik om brændstofafgiftslettelser, politibemanding og velfærdsnedskæringer. **Den overordnede risiko er lovgivningstæthed kombineret med oppositionens valgmobilisering mod opfattede "hårde men hule" sikkerhedsfortællinger frem mod september 2026.**
+
+---
+
+### 🧭 3 Beslutninger dette notat understøtter
+
+1. **Overvågningsprioritet**: Følg alle fire Justitieutskottet (JuU) lovforslag — HD01JuU10 (ny våbenlov), HD01JuU31 (politireform), HD03246 (ungdomskriminalitet) og HD03252 (fangers ydelser) — som de klareste indikatorer for koalitionens kommunikationsevne vedrørende lov og orden inden valgsæsonen.
+
+2. **Risikovurdering**: Eskalerende S-oppositions interpellationer om arbejdsgiverbidragslettelser (HD10444), sygedagpengeomkostninger (HD10447) og fejlagtige dødserklæringer (HD10446) signalerer en koordineret socialdemokratisk forvalgskampagne mod administrative fejl og velfærdsmangler. Hold øje med politiske skader for finansminister Svantesson.
+
+3. **Koalitionsovervågning**: Den ekstra ændringsbudget (prop. 2025/26:236 — brændstofafgiftssænkning) møder aktiv opposition fra MP og V (HD024098, HD024092). Tværpolitisk finansiel uenighed mellem KD/L (miljøhensyn) og SD/M (leveomkostningsprioritet) skaber en potentiel koalitionskohærenstest.
+
+---
+
+### 60-sekunders efterretningslæsning
+
+- **4 store JuU-betænkninger** vedtaget eller verserende i april 2026 — det største retsreformcluster i dette riksmöte
+- **276 propositioner** indgivet i 2025/26 (højeste i nyere parlamentshistorie)
+- **448 interpellationer** — oppositionen maksimalt aktiv, 90 % fra S og V forud for valget
+- **Ekstra ændringsbudget** for 2026 (brændstofafgift) udløser tværoppositionel koalition (MP+V+C+S)
+- Ny våbenlov forbyder visse halvautomatiske jagtrifler — første sådanne begrænsning siden 1990'erne, politisk følsom
+- Politireformgennemgang (Riksrevisionen): reformen opnåede **ikke** de tilsigtede effektivitetsforbedringer — politisk skadeligt for koalitionen
+- Valgprognose: september 2026, meningsmålinger viser S+MP+V+C i grov paritet med M+SD+KD+L; koalitionsresultat meget usikkert
+
+---
+
+### ⚡ Ledende fremadrettede trigger
+
+**Overvågningsdato 2026-05-06**: Riksdag-kammersdebat om ekstra ændringsbudget (brændstofafgift, prop. 2025/26:236). Hvis SD bryder partidisciplinen i afstemningen, står Tidö-koalitionen over for sin mest alvorlige interne brud siden regeringsdannelsen.
+
+---
+
+### 🔮 Konfidensniveauer
+
+| Domæne | Konfidens | Begrundelse |
+|--------|-----------|-----------|
+| Lovgivningskalender | A1 — meget pålidelig, bekræftet | Offentliggjort Riksdag-program |
+| Oppositionsstrategi | B2 — pålidelig, sandsynligvis sandt | Interpellationsmønsteranalyse |
+| Valgprognose | C3 — rimeligt pålidelig, muligvis sandt | Meningsmålingsdata med systematisk usikkerhed |
+| Koalitionskohæsion | B3 — pålidelig, muligvis sandt | Tværpartiafstemningsanalyse |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-26  
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e,g) angewandt  
+**Vertrauensgrad**: B2 (zuverlässige Quelle, wahrscheinlich wahr)  
+**Analysetiefe**: Standard  
+
+---
+
+### 🎯 BLUF
+
+Der Riksdag tritt im Mai–Juni 2026 in die abschließende Gesetzgebungsbeschleunigung vor der **Reichstagswahl im September 2026** ein, wobei die Tidö-Koalition (M-SD-KD-L) ein dichtes Sicherheits-, Justiz- und Finanzpaket durchsetzt. Die Periode wird dominiert von: (1) einem neuen Waffengesetz mit Verbot halbautomatischer Gewehre (HD01JuU10); (2) strafrechtlicher Verschärfung durch Jugendstrafenreform (HD03246) und Einschränkung von Sozialleistungen für Inhaftierte (HD03252); (3) Umsetzung des EU-Bankpakets (HD03253); und (4) heftigen Oppositionsherausforderungen zu Kraftstoffsteuersenkungen, Polizeipersonalbesetzung und Sozialabbau. **Das übergreifende Risiko ist gesetzgeberische Erschöpfung kombiniert mit der Wahlmobilisierung der Opposition gegen vermeintlich "harte aber hohle" Sicherheitsnarrative vor dem September 2026.**
+
+---
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Überwachungspriorität**: Verfolgen Sie alle vier Justitieutskottet (JuU) Gesetzentwürfe — HD01JuU10 (neues Waffengesetz), HD01JuU31 (Polizeireform), HD03246 (Jugendkriminalität) und HD03252 (Gefangenenleistungen) — als deutlichste Indikatoren für die Botschaftskapazität der Koalition zu Recht und Ordnung vor der Wahlsaison.
+
+2. **Risikobewertung**: Eskalierende S-Oppositionsinterpellationen zu Arbeitgeberbeitragssenkungen (HD10444), Krankheitskosten (HD10447) und fehlerhaften Todeserklärungen (HD10446) signalisieren eine koordinierte sozialdemokratische Vorwahlkampagne gegen administrative und wohlfahrtsbezogene Versäumnisse. Überwachen Sie mögliche politische Schäden für Finanzministerin Svantesson.
+
+3. **Koalitionsbeobachtung**: Der Zusatz-Änderungshaushalt (Prop. 2025/26:236 — Kraftstoffsteuersenkung) trifft auf aktiven MP- und V-Widerstand (HD024098, HD024092). Parteienübergreifende fiskalpolitische Meinungsverschiedenheiten zwischen KD/L (Umweltbedenken) und SD/M (Lebenshaltungskostenprioritäten) schaffen einen potenziellen Koalitionskohärenztest.
+
+---
+
+### 60-Sekunden-Nachrichtenlage
+
+- **4 wichtige JuU-Ausschussberichte** verabschiedet oder ausstehend im April 2026 — das größte Justizreformcluster dieser Riksmöte
+- **276 Regierungsvorlagen** eingereicht 2025/26 (höchste in neuerer Parlamentsgeschichte)
+- **448 Interpellationen** — Opposition maximal aktiv, 90 % von S und V vor der Wahl
+- **Zusatz-Änderungshaushalt** für 2026 (Kraftstoffsteuer) löst eine breit aufgestellte Oppositionskoalition aus (MP+V+C+S)
+- Neues Waffengesetz verbietet bestimmte halbautomatische Jagdgewehre — erste derartige Beschränkung seit den 1990er Jahren, politisch heikel
+- Polizeireform-Überprüfung (Riksrevisionen): Reform erzielte **keine** beabsichtigten Effizienzgewinne — politisch schädlich für die Koalition
+- Wahlprognose: September 2026, Umfragen zeigen S+MP+V+C in etwa gleichauf mit M+SD+KD+L; Koalitionsergebnis höchst ungewiss
+
+---
+
+### ⚡ Wichtigster Zukunfts-Auslöser
+
+**Beobachtungsdatum 2026-05-06**: Reichstagsplenum zur Debatte über den Zusatz-Änderungshaushalt (Kraftstoffsteuer, Prop. 2025/26:236). Wenn SD bei der Abstimmung die Fraktionsdisziplin bricht, steht die Tidö-Koalition vor ihrer schwersten internen Spaltung seit der Regierungsbildung.
+
+---
+
+### 🔮 Vertrauensgrade
+
+| Bereich | Vertrauen | Begründung |
+|--------|-----------|-----------|
+| Gesetzgebungskalender | A1 — sehr zuverlässig, bestätigt | Veröffentlichter Reichstagsplan |
+| Oppositionsstrategie | B2 — zuverlässig, wahrscheinlich wahr | Interpellationsmusteranalyse |
+| Wahlprognose | C3 — ziemlich zuverlässig, möglicherweise wahr | Umfragedaten mit systematischer Unsicherheit |
+| Koalitionskohäsion | B3 — zuverlässig, möglicherweise wahr | Parteiübergreifende Abstimmungsanalyse |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-26  
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e,g) aplicado  
+**Nivel de confianza**: B2 (fuente fiable, probablemente cierto)  
+**Profundidad de análisis**: estándar  
+
+---
+
+### 🎯 BLUF
+
+El Riksdag entra en mayo–junio de 2026 en la aceleración legislativa final antes de las **elecciones generales de septiembre de 2026**, con la coalición Tidö (M-SD-KD-L) impulsando un denso paquete de seguridad, justicia y finanzas. El período está dominado por: (1) una nueva ley de armas que crea prohibiciones de rifles semiautomáticos (HD01JuU10); (2) endurecimiento de la justicia penal mediante la reforma de sentencias juveniles (HD03246) y restricciones de beneficios sociales para presos (HD03252); (3) implementación del paquete bancario de la UE (HD03253); y (4) acalorados desafíos de la oposición sobre recortes de impuestos al combustible, dotación policial y retrocesos en el bienestar social. **El riesgo principal es el agotamiento legislativo combinado con la movilización electoral de la oposición contra narrativas de seguridad percibidas como "duras pero huecas" de cara a septiembre de 2026.**
+
+---
+
+### 🧭 3 Decisiones que apoya este informe
+
+1. **Prioridad de seguimiento**: Rastrear los cuatro proyectos de ley del Justitieutskottet (JuU) — HD01JuU10 (nueva ley de armas), HD01JuU31 (reforma policial), HD03246 (criminalidad juvenil) y HD03252 (beneficios de presos) — como los indicadores más claros de la capacidad de mensajería de la coalición sobre ley y orden antes de la temporada electoral.
+
+2. **Evaluación de riesgos**: Las interpelaciones escaladas de la oposición S sobre recortes en las cotizaciones empresariales (HD10444), costes de bajas por enfermedad (HD10447) y declaraciones de defunción erróneas (HD10446) señalan una campaña preelectoral coordinada socialdemócrata que apunta a fallos administrativos y de bienestar. Supervisar posibles daños políticos para la ministra de Finanzas Svantesson.
+
+3. **Vigilancia de la coalición**: El presupuesto suplementario de modificación (prop. 2025/26:236 — reducción del impuesto al combustible) enfrenta oposición activa de MP y V (HD024098, HD024092). El desacuerdo fiscal transpartidista entre KD/L (preocupación medioambiental) y SD/M (prioridad coste de vida) crea una prueba potencial de cohesión de la coalición.
+
+---
+
+### Informe de inteligencia en 60 segundos
+
+- **4 grandes informes de la comisión JuU** aprobados o pendientes en abril de 2026 — el mayor grupo de reformas judiciales de este riksmöte
+- **276 proposiciones** presentadas en 2025/26 (la más alta en la historia parlamentaria reciente)
+- **448 interpelaciones** — oposición maximamente activa, 90 % de S y V antes de las elecciones
+- **Presupuesto suplementario** para 2026 (impuesto al combustible) desencadena una coalición opositora amplia (MP+V+C+S)
+- La nueva ley de armas prohíbe ciertos rifles de caza semiautomáticos — primera restricción de este tipo desde los años 90, políticamente delicada
+- Revisión de la reforma policial (Riksrevisionen): la reforma **no** logró las ganancias de eficiencia previstas — políticamente dañino para la coalición
+- Pronóstico electoral: septiembre de 2026, las encuestas muestran S+MP+V+C en paridad aproximada con M+SD+KD+L; resultado de coalición muy incierto
+
+---
+
+### ⚡ Detonante anticipatorio principal
+
+**Fecha de vigilancia 2026-05-06**: Debate en el pleno del Riksdag sobre el presupuesto suplementario (impuesto al combustible, prop. 2025/26:236). Si SD rompe la disciplina de partido en la votación, la coalición Tidö se enfrenta a su fractura interna más grave desde la formación del gobierno.
+
+---
+
+### 🔮 Niveles de confianza
+
+| Dominio | Confianza | Justificación |
+|--------|-----------|-----------|
+| Calendario legislativo | A1 — muy fiable, confirmado | Programa publicado del Riksdag |
+| Estrategia de la oposición | B2 — fiable, probablemente cierto | Análisis de patrones de interpelaciones |
+| Pronóstico electoral | C3 — bastante fiable, posiblemente cierto | Datos de encuestas con incertidumbre sistémica |
+| Cohesión de la coalición | B3 — fiable, posiblemente cierto | Análisis de votaciones transpartidistas |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-04-26  
+**Luokitus**: JULKINEN — GDPR Art. 9(2)(e,g) sovellettu  
+**Luotettavuus**: B2 (luotettava lähde, todennäköisesti totta)  
+**Analyysin syvyys**: standardi  
+
+---
+
+### 🎯 BLUF
+
+Ruotsin Riksdag siirtyy touko–kesäkuussa 2026 **syyskuun 2026 parlamenttivaalit** edeltävään lakiasäätämisen loppuvauhditusvaiheeseen, jossa Tidö-koalitio (M-SD-KD-L) ajaa läpi tiivistä turvallisuus-, oikeus- ja rahoituspakettia. Kausi hallitsevat: (1) uusi aselelaki, joka kieltää puoliautomaattiset kiväärit (HD01JuU10); (2) rikosoikeuden tiukennus nuorisoseuraamusuudistuksen (HD03246) ja vankilassa olevien sosiaaliturvan leikkausten (HD03252) kautta; (3) EU:n pankkipaketin toimeenpano (HD03253); ja (4) kiivaat oppositiohaasteet polttoaineveron leikkauksista, poliisin miehityksestä ja hyvinvoinnin supistuksista. **Suurin riski on lainsäädäntöväsymys yhdistettynä opposition vaaliaktivoitumiseen koalitiota vastaan, jonka turvallisuuskertomukset nähdään "kovana mutta onttoina" syyskuun 2026 edellä.**
+
+---
+
+### 🧭 3 Päätöstä, joita tämä tiedote tukee
+
+1. **Seurantaprioriteetti**: Seuraa kaikkia neljää Justitieutskottet (JuU) lakiesitystä — HD01JuU10 (uusi aselelaki), HD01JuU31 (poliisiuudistus), HD03246 (nuorisorikollisuus) ja HD03252 (vankien etuudet) — selvimpinä indikaattoreina koalition lakijärjestysviestintäkyvystä ennen vaalikautta.
+
+2. **Riskiarvio**: S-opposition kiihtyvät interpellaatiot työnantajamaksujen leikkauksista (HD10444), sairauspoissaolokustannuksista (HD10447) ja virheellisistä kuolinilmoituksista (HD10446) viestivät koordinoidusta sosiaalidemokraattisesta ennakkokampanjasta hallinnollisia hyvinvointivikoja vastaan. Seuraa mahdollisia poliittisia vahinkoja valtiovarainministeri Svantessonille.
+
+3. **Koalitiomonitorointi**: Lisämuutosbudjetti (prop. 2025/26:236 — polttoaineveron alennus) kohtaa aktiivisen MP- ja V-opposition (HD024098, HD024092). Puolueiden välinen finanssipoliittinen erimielisyys KD/L:n (ympäristöhuoli) ja SD/M:n (elinkustannusprioriteetti) välillä luo potentiaalisen koalition yhteenkuuluvuustestin.
+
+---
+
+### 60 sekunnin tiedusteluraportti
+
+- **4 suurta JuU-mietintöä** hyväksytty tai vireillä huhtikuussa 2026 — suurin oikeusreformiklusteri tässä riksmötessä
+- **276 hallituksen esitystä** jätetty 2025/26 (korkein uudemman parlamentaarisen historian aikana)
+- **448 interpellaatiota** — oppositio maksimaalisen aktiivinen, 90 % S:ltä ja V:ltä ennen vaaleja
+- **Lisämuutosbudjetti** vuodelle 2026 (polttoainevero) laukaisee monioppositiokokouksen (MP+V+C+S)
+- Uusi aselelaki kieltää tiettyjä puoliautomaattisia metsästyskiväärejä — ensimmäinen tällainen rajoitus sitten 1990-luvun, poliittisesti herkkä
+- Poliisiuudistuksen arviointi (Riksrevisionen): uudistus **ei** saavuttanut tavoiteltuja tehokkuushyötyjä — poliittisesti vahingollinen koalitiolle
+- Vaaliennuste: syyskuu 2026, mielipidemittaukset osoittavat S+MP+V+C suunnilleen tasavertaisessa asemassa M+SD+KD+L:n kanssa; koalition tulos erittäin epävarma
+
+---
+
+### ⚡ Johtava tulevaisuuslaukaisin
+
+**Seurantapäivämäärä 2026-05-06**: Riksdagin täysistuntokeskustelu lisämuutosbudjetista (polttoainevero, prop. 2025/26:236). Jos SD rikkoo puoluedisipliinikurin äänestyksessä, Tidö-koalitio kohtaa vakavimman sisäisen halkeamansa hallituksen muodostamisen jälkeen.
+
+---
+
+### 🔮 Luotettavuus
+
+| Alue | Luotettavuus | Perustelu |
+|--------|-----------|-----------|
+| Lainsäädäntökalenteri | A1 — erittäin luotettava, vahvistettu | Julkaistu Riksdag-ohjelma |
+| Opposition strategia | B2 — luotettava, todennäköisesti totta | Interpellaatiomallien analyysi |
+| Vaaliennuste | C3 — kohtuullisen luotettava, mahdollisesti totta | Mielipidemittausdata systemaattisella epävarmuudella |
+| Koalition yhteenkuuluvuus | B3 — luotettava, mahdollisesti totta | Puolueiden välisten äänestystulosten analyysi |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Niveau de confiance** : B2 (source fiable, probablement vrai)  
+**Profondeur d'analyse** : standard  
+
+---
+
+### 🎯 BLUF
+
+Le Riksdag entre en mai–juin 2026 dans la phase finale d'accélération législative avant les **élections générales de septembre 2026**, la coalition Tidö (M-SD-KD-L) faisant adopter un dense paquet sécuritaire, judiciaire et financier. La période est dominée par : (1) une nouvelle loi sur les armes instaurant l'interdiction des fusils semi-automatiques (HD01JuU10) ; (2) un durcissement de la justice pénale via la réforme des peines pour mineurs (HD03246) et la restriction des aides sociales aux détenus (HD03252) ; (3) la mise en œuvre du paquet bancaire européen (HD03253) ; et (4) de vives contestations de l'opposition sur les baisses de taxe carburant, les effectifs policiers et les coupes dans les aides sociales. **Le risque principal est la fatigue législative combinée à la mobilisation électorale de l'opposition contre des narratifs sécuritaires perçus comme "durs mais creux" à l'approche de septembre 2026.**
+
+---
+
+### 🧭 3 Décisions soutenues par ce briefing
+
+1. **Priorité de surveillance** : Suivre les quatre propositions du Justitieutskottet (JuU) — HD01JuU10 (nouvelle loi sur les armes), HD01JuU31 (réforme policière), HD03246 (criminalité juvénile) et HD03252 (aides aux détenus) — comme indicateurs les plus clairs de la capacité de la coalition à porter un message loi-et-ordre avant la saison électorale.
+
+2. **Évaluation des risques** : L'escalade des interpellations de l'opposition S sur les cotisations patronales (HD10444), les coûts des arrêts maladie (HD10447) et les déclarations de décès erronées (HD10446) signale une campagne présélectorale coordonnée des sociaux-démocrates ciblant les défaillances administratives et sociales. Surveiller les dommages politiques potentiels pour la ministre des Finances Svantesson.
+
+3. **Surveillance de la coalition** : Le budget rectificatif supplémentaire (prop. 2025/26:236 — réduction de la taxe carburant) fait face à une opposition active des partis MP et V (HD024098, HD024092). Le désaccord fiscal transpartisan entre KD/L (préoccupations environnementales) et SD/M (priorité coût de la vie) crée un test potentiel de cohésion de la coalition.
+
+---
+
+### Lecture de renseignement en 60 secondes
+
+- **4 grands rapports de commission JuU** adoptés ou en attente en avril 2026 — plus grand cluster de réformes judiciaires de cette session parlementaire
+- **276 propositions gouvernementales** déposées en 2025/26 (le plus élevé de l'histoire parlementaire récente)
+- **448 interpellations** — opposition au maximum de son activité, 90 % de S et V avant les élections
+- **Budget rectificatif supplémentaire** pour 2026 (taxe carburant) déclenche une coalition d'opposition élargie (MP+V+C+S)
+- La nouvelle loi sur les armes interdit certains fusils de chasse semi-automatiques — première restriction de ce type depuis les années 1990, politiquement sensible
+- Examen de la réforme policière (Riksrevisionen) : la réforme **n'a pas** atteint les gains d'efficacité prévus — politiquement dommageable pour la coalition
+- Prévision électorale : septembre 2026, les sondages montrent S+MP+V+C à quasi-parité avec M+SD+KD+L ; résultat de la coalition très incertain
+
+---
+
+### ⚡ Principal déclencheur prévisionnel
+
+**Date de surveillance 2026-05-06** : Débat en séance plénière du Riksdag sur le budget rectificatif supplémentaire (taxe carburant, prop. 2025/26:236). Si SD rompt la discipline de vote, la coalition Tidö sera confrontée à sa plus grave fracture interne depuis la formation du gouvernement.
+
+---
+
+### 🔮 Niveaux de confiance
+
+| Domaine | Confiance | Justification |
+|--------|-----------|-----------|
+| Calendrier législatif | A1 — très fiable, confirmé | Programme du Riksdag publié |
+| Stratégie de l'opposition | B2 — fiable, probablement vrai | Analyse des schémas d'interpellations |
+| Prévision électorale | C3 — assez fiable, possiblement vrai | Données de sondage avec incertitude systémique |
+| Cohésion de la coalition | B3 — fiable, possiblement vrai | Analyse des votes transpartisans |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# מודיעין פוליטי שוודי: תחזית חודשית — מאי–יוני 2026
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-26  
+**סיווג**: ציבורי — GDPR סעיף 9(2)(e,g) מיושם  
+**רמת אמינות**: B2 (מקור אמין, סביר שנכון)  
+**עומק הניתוח**: סטנדרטי  
+
+---
+
+### 🎯 תמצית מנהלים
+
+הריקסדאג נכנס במאי–יוני 2026 לשלב ההאצה החקיקתית האחרונה לפני **הבחירות הכלליות בספטמבר 2026**, כשקואליציית טידו (M-SD-KD-L) מקדמת חבילה צפופה בתחומי הביטחון, המשפט והכלכלה. התקופה מאופיינת על ידי: (1) חוק נשק חדש האוסר רובים חצי-אוטומטיים (HD01JuU10); (2) הקשחת דיני הפלילים באמצעות רפורמת עונשי הקטינים (HD03246) והגבלת קצבאות חברתיות לאסירים (HD03252); (3) יישום חבילת הבנקאות האירופית (HD03253); ו-(4) אתגרים חריפים מהאופוזיציה בנושא קיצוצי מס דלק, כוח אדם במשטרה ורסטרוקטורציה של הרווחה. **הסיכון המרכזי הוא עייפות חקיקתית בשילוב גיוס בחירות של האופוזיציה כנגד נרטיבים ביטחוניים הנתפסים כ"קשים אך חלולים" לקראת ספטמבר 2026.**
+
+---
+
+### 🧭 3 החלטות שתדריך זה תומך בהן
+
+1. **עדיפות מעקב**: מעקב אחר ארבעת הצעות החוק של Justitieutskottet (JuU) — HD01JuU10 (חוק נשק חדש), HD01JuU31 (רפורמת המשטרה), HD03246 (עבריינות נוער), ו-HD03252 (קצבאות אסירים) — כמדדים הברורים ביותר לכושר הקואליציה להעביר מסרי חוק וסדר לקראת עונת הבחירות.
+
+2. **הערכת סיכונים**: שאלות הבהרה מתגברות מהאופוזיציה S בנושא הורדת דמי ביטוח לאומי (HD10444), עלויות חופשת מחלה (HD10447) והצהרות פטירה שגויות (HD10446) מסמלות מסע קמפיין ספטמבר מתואם מצד הסוציאל-דמוקרטים המכוון לכשלים מינהליים ורווחתיים. מעקב אחר נזקים פוליטיים אפשריים לשרת האוצר סוואנטסון.
+
+3. **מעקב אחר הקואליציה**: תקציב השינוי הנוסף (הצעה 2025/26:236 — הפחתת מס דלק) נתקל בהתנגדות פעילה מMP ו-V (HD024098, HD024092). חוסר הסכמה פיסקלית בין-מפלגתי בין KD/L (חששות סביבתיים) ל-SD/M (עדיפות יוקר המחיה) יוצרת מבחן פוטנציאלי לאחדות הקואליציה.
+
+---
+
+### קריאת מודיעין של 60 שניות
+
+- **4 דוחות ועדה גדולים של JuU** אושרו או ממתינים באפריל 2026 — האשכול הגדול ביותר של רפורמות משפטיות בריקסמוטה הזה
+- **276 הצעות חוק** הוגשו ב-2025/26 (גבוה ביותר בהיסטוריה הפרלמנטרית האחרונה)
+- **448 שאלות הבהרה** — האופוזיציה פעילה ברמה מקסימלית, 90% מS ו-V לפני הבחירות
+- **תקציב שינוי נוסף** ל-2026 (מס דלק) מעורר קואליציה רחבה של אופוזיציה (MP+V+C+S)
+- חוק הנשק החדש אוסר ציידי רובים חצי-אוטומטיים מסוימים — ההגבלה הראשונה מסוג זה מאז שנות ה-90, רגישה פוליטית
+- סקירת רפורמת המשטרה (Riksrevisionen): הרפורמה **לא** השיגה רווחי יעילות מכוונים — מזיק פוליטית לקואליציה
+- תחזית בחירות: ספטמבר 2026, סקרים מראים S+MP+V+C בשוויון גס עם M+SD+KD+L; תוצאת קואליציה אינה ודאית ביותר
+
+---
+
+### ⚡ הטריגר המוביל לעתיד
+
+**תאריך מעקב 2026-05-06**: דיון המליאה בריקסדאג על תקציב השינוי הנוסף (מס דלק, הצעה 2025/26:236). אם SD תשבור את המשמעת המפלגתית בהצבעה, קואליציית טידו תתמודד עם השסע הפנימי החמור ביותר שלה מאז הרכבת הממשלה.
+
+---
+
+### 🔮 רמות אמינות
+
+| תחום | אמינות | הסבר |
+|--------|-----------|-----------|
+| לוח זמנים חקיקתי | A1 — אמין מאוד, מאושר | לוח זמנים מפורסם של הריקסדאג |
+| אסטרטגיית האופוזיציה | B2 — אמין, סביר שנכון | ניתוח דפוסי שאלות ההבהרה |
+| תחזית בחירות | C3 — סביר לאמינות, אפשרי שנכון | נתוני סקרים עם אי-ודאות שיטתית |
+| אחדות הקואליציה | B3 — אמין, אפשרי שנכון | ניתוח הצבעות בין-מפלגתיות |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling  
+**日付**：2026-04-26  
+**分類**：公開 — GDPR第9条(2)(e,g)適用  
+**信頼度**：B2（信頼できる情報源、おそらく真実）  
+**分析の深さ**：標準  
+
+---
+
+### 🎯 要旨（BLUF）
+
+リクスダーグ（スウェーデン国会）は2026年5月〜6月、**2026年9月の総選挙**を前に最終的な立法加速段階に入る。ティドー連立政権（M-SD-KD-L）は安全保障・司法・財政に関する密度の高いパッケージを推し進めている。この時期の主な焦点は：(1) 半自動小銃禁止を含む新武器法（HD01JuU10）；(2) 少年犯罪判決改革（HD03246）と受刑者の社会的給付制限（HD03252）による刑事司法の強化；(3) EU銀行規制パッケージの実施（HD03253）；(4) 燃料税減税・警察人員配置・社会保障縮小に関する激しい野党の挑戦。**最大のリスクは、2026年9月を前に「厳しいが中身の薄い」安全保障ナラティブに対する野党の選挙動員と組み合わさった立法疲弊である。**
+
+---
+
+### 🧭 このブリーフィングが支援する3つの意思決定
+
+1. **優先監視事項**：Justitieutskottet（JuU）の4つの法案 — HD01JuU10（新武器法）、HD01JuU31（警察改革）、HD03246（少年犯罪）、HD03252（受刑者給付）— を、選挙シーズンに向けた連立政権の治安メッセージ力を示す最も明確な指標として追跡する。
+
+2. **リスク評価**：雇用者拠出金減税（HD10444）・病欠費用（HD10447）・誤った死亡宣告（HD10446）に関するS党野党の質問状の増加は、行政と福祉の欠陥を標的にした社会民主党の組織的な選挙前キャンペーンを示唆している。財務大臣スヴァンテッソンへの政治的損害を注視すること。
+
+3. **連立監視**：追加補正予算（提案2025/26:236 — 燃料税引き下げ）はMP・Vから積極的な反対に直面している（HD024098、HD024092）。KD/L（環境懸念）とSD/M（生活費優先）の財政的意見対立は連立結束の試練となりうる。
+
+---
+
+### 60秒インテリジェンス要約
+
+- **JuU委員会報告4件**が2026年4月に採択または審査中 — 本議会会期最大の司法改革クラスター
+- **276件の政府提案**が2025/26会期に提出（近代議会史上最多）
+- **448件の質問状** — 野党は最大限活動的、選挙前のS・Vからが90%
+- 2026年補正予算（燃料税）が広範な野党連合（MP+V+C+S）を引き起こす
+- 新武器法は特定の半自動ハンティングライフルを禁止 — 1990年代以来初の規制、政治的に敏感
+- 警察改革の評価（Riksrevisionen）：改革は意図した効率化を**達成しなかった** — 連立政権に政治的打撃
+- 選挙予測：2026年9月、世論調査ではS+MP+V+CとM+SD+KD+Lがほぼ拮抗；連立の結果は非常に不確実
+
+---
+
+### ⚡ 主要な先行トリガー
+
+**監視日2026-05-06**：リクスダーグ本会議での補正予算（燃料税、提案2025/26:236）審議。SDが投票で党規律を破れば、ティドー連立は政権発足以来最も深刻な内部亀裂に直面する。
+
+---
+
+### 🔮 信頼度評価
+
+| 分野 | 信頼度 | 根拠 |
+|--------|-----------|-----------|
+| 立法日程 | A1 — 非常に信頼性が高い、確認済み | リクスダーグの公式スケジュール |
+| 野党戦略 | B2 — 信頼性が高い、おそらく真実 | 質問状パターン分析 |
+| 選挙予測 | C3 — ある程度信頼性が高い、おそらく真実 | 体系的不確実性を含む世論調査データ |
+| 連立結束 | B3 — 信頼性が高い、おそらく真実 | 政党横断投票分析 |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-26  
+**분류**: 공개 — GDPR 제9조(2)(e,g) 적용  
+**신뢰도**: B2 (신뢰할 수 있는 출처, 아마도 사실)  
+**분석 깊이**: 표준  
+
+---
+
+### 🎯 핵심 요약(BLUF)
+
+릭스다그(스웨덴 국회)는 2026년 5월–6월 **2026년 9월 총선** 전 최종 입법 가속 단계에 들어선다. 티도 연립정부(M-SD-KD-L)는 안보, 사법, 재정 분야의 조밀한 패키지를 밀어붙이고 있다. 이 기간은 다음으로 지배된다: (1) 반자동 소총 금지를 도입하는 새로운 무기법(HD01JuU10); (2) 청소년 형량 개혁(HD03246)과 수감자 사회급여 제한(HD03252)을 통한 형사사법 강화; (3) EU 은행 패키지 시행(HD03253); (4) 연료세 감면, 경찰 인력 배치, 복지 축소에 대한 격렬한 야당 도전. **핵심 리스크는 2026년 9월을 앞두고 "강경하지만 공허한" 안보 내러티브에 대한 야당의 선거 동원과 결합된 입법 피로감이다.**
+
+---
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **감시 우선순위**: Justitieutskottet(JuU)의 4개 법안 — HD01JuU10(새 무기법), HD01JuU31(경찰 개혁), HD03246(청소년 범죄), HD03252(수감자 급여) — 을 선거 시즌을 앞두고 연립의 법질서 메시징 역량의 가장 명확한 지표로 추적한다.
+
+2. **위험 평가**: 고용주 분담금 삭감(HD10444), 병가 비용(HD10447), 잘못된 사망 신고(HD10446)에 관한 S당 야당 질문의 증가는 행정 및 복지 실패를 표적으로 한 사민당의 조직적인 선거 전 캠페인을 시사한다. 재무장관 스반테손에 대한 정치적 피해를 모니터링할 것.
+
+3. **연립 감시**: 추가 변경 예산안(제안 2025/26:236 — 연료세 인하)이 MP와 V의 적극적인 반대에 직면해 있다(HD024098, HD024092). KD/L(환경 우려)과 SD/M(생활비 우선순위) 간의 교차 정당 재정 불일치는 연립 결속의 잠재적 시험이다.
+
+---
+
+### 60초 인텔리전스 브리핑
+
+- 2026년 4월 **JuU 위원회 보고서 4건** 채택 또는 심사 중 — 이번 릭스모테 최대 사법 개혁 클러스터
+- 2025/26 회기 **276건의 정부 제안** 제출(근대 의회 역사상 최다)
+- **448건의 질문** — 야당 최대한 활발, 선거 전 S와 V가 90%
+- 2026년 보충 예산(연료세)이 광범위한 야당 연합 촉발(MP+V+C+S)
+- 새로운 무기법은 특정 반자동 사냥 소총 금지 — 1990년대 이후 첫 규제, 정치적으로 민감
+- 경찰 개혁 검토(Riksrevisionen): 개혁이 의도한 효율성 향상 **달성하지 못함** — 연립에 정치적으로 불리
+- 선거 전망: 2026년 9월, 여론조사에서 S+MP+V+C가 M+SD+KD+L과 대략 동등; 연립 결과 매우 불확실
+
+---
+
+### ⚡ 주요 선행 트리거
+
+**감시일 2026-05-06**: 보충 예산(연료세, 제안 2025/26:236)에 대한 릭스다그 본회의 토론. SD가 투표에서 당 규율을 어기면 티도 연립은 정부 출범 이후 가장 심각한 내부 균열에 직면한다.
+
+---
+
+### 🔮 신뢰도 수준
+
+| 영역 | 신뢰도 | 근거 |
+|--------|-----------|-----------|
+| 입법 일정 | A1 — 매우 신뢰, 확인됨 | 공개된 릭스다그 일정 |
+| 야당 전략 | B2 — 신뢰, 아마도 사실 | 질의 패턴 분석 |
+| 선거 전망 | C3 — 상당히 신뢰, 가능성 있음 | 체계적 불확실성이 있는 여론조사 데이터 |
+| 연립 결속 | B3 — 신뢰, 가능성 있음 | 교차 정당 투표 분석 |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-26  
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e,g) toegepast  
+**Betrouwbaarheidsniveau**: B2 (betrouwbare bron, waarschijnlijk waar)  
+**Analysediepte**: standaard  
+
+---
+
+### 🎯 BLUF
+
+De Riksdag treedt in mei–juni 2026 de laatste wetgevingsversnelling in voor de **Zweedse verkiezingen in september 2026**, waarbij de Tidö-coalitie (M-SD-KD-L) een dicht pakket op het gebied van veiligheid, justitie en financiën doordruk. De periode wordt gedomineerd door: (1) een nieuwe wapenwet die halffabricatische geweerverboden creëert (HD01JuU10); (2) aanscherping van het strafrecht via hervorming van jeugdstraffen (HD03246) en beperking van sociale uitkeringen aan gevangenen (HD03252); (3) implementatie van het EU-bankenpakket (HD03253); en (4) verhitte oppositie-uitdagingen over bezuinigingen op brandstofheffingen, politiebezetting en welzijnsafbouw. **Het overkoepelende risico is wetgevingsmoeheid gecombineerd met electorale mobilisatie van de oppositie tegen vermeend "hard maar hol" veiligheidsnarratief richting september 2026.**
+
+---
+
+### 🧭 3 Beslissingen die dit briefing ondersteunt
+
+1. **Monitoringsprioriteit**: Volg alle vier Justitieutskottet (JuU) wetsvoorstellen — HD01JuU10 (nieuwe wapenwet), HD01JuU31 (politiehervorming), HD03246 (jeugdcriminaliteit) en HD03252 (gevangenisuitkeringen) — als duidelijkste indicatoren voor de berichtgevingscapaciteit van de coalitie inzake wet en orde vóór het electorale seizoen.
+
+2. **Risicobeoordeling**: Escalerende S-oppositie-interpellaties over werkgeverslasten (HD10444), ziekteverzuimkosten (HD10447) en onjuiste overlijdensverklaringen (HD10446) duiden op een gecoördineerde socialdemocratische voorverkiezingscampagne gericht op administratieve en welzijnsfouten. Monitor mogelijke politieke schade voor minister van Financiën Svantesson.
+
+3. **Coalitietoezicht**: De aanvullende begroting (prop. 2025/26:236 — brandstofbelastingverlaging) krijgt actieve weerstand van MP en V (HD024098, HD024092). Partijoverschrijdende fiscale onenigheid tussen KD/L (milieuzorgen) en SD/M (levenshoudingkostenpriorititeit) creëert een potentiële coalitiecohesietest.
+
+---
+
+### 60 seconden inlichtingenlezing
+
+- **4 grote JuU-commissierapporten** aangenomen of in behandeling in april 2026 — grootste justitiehervormingscluster in deze riksmöte
+- **276 regeeringsvoorstellen** ingediend in 2025/26 (hoogste in recente parlementaire geschiedenis)
+- **448 interpellaties** — oppositie maximaal actief, 90 % van S en V vóór de verkiezingen
+- **Aanvullende begroting** voor 2026 (brandstofheffing) veroorzaakt brede oppositiecoalitie (MP+V+C+S)
+- Nieuwe wapenwet verbiedt bepaalde halffabricatische jachtgeweren — eerste dergelijke beperking sinds de jaren '90, politiek gevoelig
+- Beoordeling politiehervorming (Riksrevisionen): hervorming bereikte **niet** de beoogde efficiëntiewinsten — politiek schadelijk voor de coalitie
+- Verkiezingsprognose: september 2026, peilingen tonen S+MP+V+C in globale pariteit met M+SD+KD+L; coalitieresultaat hoogst onzeker
+
+---
+
+### ⚡ Leidende toekomstige trigger
+
+**Toezichtdatum 2026-05-06**: Plenair debat Riksdag over de aanvullende begroting (brandstofheffing, prop. 2025/26:236). Als SD de fractiediscipline bij de stemming breekt, staat de Tidö-coalitie voor zijn meest ernstige interne breuk seit de regeringsvorming.
+
+---
+
+### 🔮 Betrouwbaarheidsniveaus
+
+| Domein | Betrouwbaarheid | Onderbouwing |
+|--------|-----------|-----------|
+| Wetgevingskalender | A1 — zeer betrouwbaar, bevestigd | Gepubliceerd Riksdag-programma |
+| Oppositiestrategie | B2 — betrouwbaar, waarschijnlijk waar | Analyse van interpellatiepatronen |
+| Verkiezingsprognose | C3 — redelijk betrouwbaar, mogelijk waar | Peillingsdata met systemische onzekerheid |
+| Coalitiecohesie | B3 — betrouwbaar, mogelijk waar | Analyse van partijoverschrijdende stemmingen |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-26  
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g) anvendt  
+**Konfidensnivå**: B2 (pålitelig kilde, sannsynligvis sant)  
+**Analysedybde**: standard  
+
+---
+
+### 🎯 BLUF
+
+Sveriges Riksdag går inn i mai–juni 2026 i en endelig lovgivningsakselerasjon før **stortingsvalget i september 2026**, der Tidö-koalisjonen (M-SD-KD-L) presser gjennom en tett sikkerhets-, justis- og finanspakke. Perioden domineres av: (1) en ny våpenlov som innfører forbud mot halvautomatiske rifler (HD01JuU10); (2) strafferettslig innstramming via reform av ungdomsstraff (HD03246) og begrensning av trygdeytelser til innsatte (HD03252); (3) implementering av EUs bankpakke (HD03253); og (4) heftig opposisjonskritikk om drivstoffavgiftkutt, politibemanning og velferdsnedskjæringer. **Den overordnede risikoen er lovgivningstretthet kombinert med opposisjonens valgmobilisering mot oppfattede "tøffe men hule" sikkerhetsfortellinger foran september 2026.**
+
+---
+
+### 🧭 3 Beslutninger dette notatet støtter
+
+1. **Overvåkingsprioritet**: Følg alle fire Justitieutskottet (JuU) lovforslag — HD01JuU10 (ny våpenlov), HD01JuU31 (politireform), HD03246 (ungdomskriminalitet) og HD03252 (innsattes ytelser) — som de tydeligste indikatorene på koalisjonens kommunikasjonskapasitet om lov og orden inn mot valgsesongen.
+
+2. **Risikovurdering**: Eskalerende S-opposisjonens interpellasjoner om arbeidsgiveravgiftslettelser (HD10444), sykelønnskostnader (HD10447) og feilaktige dødserklæringer (HD10446) signalerer en koordinert sosialdemokratisk forvalgskampanje mot administrative velferdssvikt. Overvåk mulig politisk skade for finansminister Svantesson.
+
+3. **Koalisjonsovervåking**: Den ekstra endringsbudsjettet (prop. 2025/26:236 — drivstoffavgiftskutt) møter aktiv opposisjon fra MP og V (HD024098, HD024092). Tverrpolitisk finansiell uenighet mellom KD/L (miljøhensyn) og SD/M (levekostnadsprioritet) skaper en potensiell koalisjonskohesjonstest.
+
+---
+
+### 60-sekunders etterretningslesning
+
+- **4 store JuU-innstillinger** vedtatt eller under behandling i april 2026 — det største justisreformklyngen i dette riksmöte
+- **276 proposisjoner** levert 2025/26 (høyeste i nyere parlamentshistorie)
+- **448 interpellasjoner** — opposisjonen maksimalt aktiv, 90 % fra S og V foran valget
+- **Ekstra endringsbudsjett** for 2026 (drivstoffavgift) utløser tverroppossionel koalisjon (MP+V+C+S)
+- Ny våpenlov forbyr visse halvautomatiske jaktvåpen — første slik begrensning siden 1990-tallet, politisk følsom
+- Gjennomgang av politireformen (Riksrevisionen): reformen oppnådde **ikke** de tiltenkte effektivitetsgevinstene — politisk skadelig for koalisjonen
+- Valgprognose: september 2026, meningsmålinger viser S+MP+V+C i grovt paritet med M+SD+KD+L; koalisjonsutfall meget usikkert
+
+---
+
+### ⚡ Ledende fremtidsrettet trigger
+
+**Overvåkingsdato 2026-05-06**: Riksdag-kammerdebatt om ekstra endringsbudsjett (drivstoffavgift, prop. 2025/26:236). Hvis SD bryter partidisiplinen i avstemningen, står Tidö-koalisjonen overfor sin mest alvorlige interne sprekk siden regjeringsdannelsen.
+
+---
+
+### 🔮 Konfidensnivåer
+
+| Domene | Konfidens | Begrunnelse |
+|--------|-----------|-----------|
+| Lovgivningskalender | A1 — svært pålitelig, bekreftet | Publisert Riksdag-program |
+| Opposisjonsstrategi | B2 — pålitelig, sannsynligvis sant | Interpellasjonsmønsteranalyse |
+| Valgprognose | C3 — rimelig pålitelig, muligens sant | Meningsmålingsdata med systematisk usikkerhet |
+| Koalisjonskohesjons | B3 — pålitelig, muligens sant | Tverrpartiavstemningsanalyse |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-26  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g) tillämpat  
+**Konfidensgrad**: B2 (tillförlitlig källa, troligen sant)  
+**Analysdjup**: standard  
+
+---
+
+### 🎯 BLUF
+
+Sveriges riksdag träder in i maj–juni 2026 i ett slutskede av lagstiftningsarbete inför **riksdagsvalet i september 2026**, där Tidökoalitionen (M-SD-KD-L) driver igenom ett tätt säkerhets-, rättsväsende- och finanspaket. Perioden domineras av: (1) en ny vapenlags om inför förbud mot halvautomatiska gevär (HD01JuU10); (2) skärpt straffrätt via reform av ungdomspåföljder (HD03246) och begränsning av sociala förmåner för fångvårdade (HD03252); (3) implementering av EU:s bankpaket (HD03253); och (4) skarp oppositionskritik om bränsleskattesänkningar, polisbemanningen och nedskärningar i välfärden. **Den övergripande risken är lagstiftningströtthet kombinerat med oppositionens valrörelseaktivism mot upplevda "tuffa men ihåliga" säkerhetsnarrativ inför september 2026.**
+
+---
+
+### 🧭 3 Beslut som detta underlag stöder
+
+1. **Prioritering av policybevakn ing**: Bevaka samtliga fyra Justitieutskottet (JuU) lagstiftningsärenden — HD01JuU10 (ny vapenlag), HD01JuU31 (polisreform), HD03246 (ungdomsbrott) och HD03252 (fångars förmåner) — som de tydligaste indikatorerna på koalitionens budskapskapacitet om lag och ordning inför valperioden.
+
+2. **Riskbedömning**: Eskalerande interpellationer från S-oppositionen om arbetsgivaravgiftssänkningar (HD10444), sjukskrivningskostnader (HD10447) och felaktiga dödsförklaringar (HD10446) signalerar en samordnad socialdemokratisk förvalskampanj mot administrativa välfärdsbrister. Bevaka eventuella politiska skador för finansminister Svantesson.
+
+3. **Koalitionsbevakning**: Den extra ändringsbudgeten (prop. 2025/26:236 — bränsleskattesänkning) möter aktivt motstånd från MP och V (HD024098, HD024092). Tvärpolitisk finansiell oenighet mellan KD/L (miljöhänsyn) och SD/M (levnadskostnadsprioritet) skapar ett potentiellt koalitionskohesionstest.
+
+---
+
+### 60-sekundersinformation
+
+- **4 stora JuU-betänkanden** antagna eller under behandling i april 2026 — det största rättsreformklustret under detta riksmöte
+- **276 propositioner** inlämnade 2025/26 (flest i modern parlamentshistoria)
+- **448 interpellationer** — oppositionen maximalt aktiv, 90 % från S och V inför valet
+- **Extra ändringsbudget** för 2026 (bränsleskatt) utlöser en tväroppositionell koalition (MP+V+C+S)
+- Ny vapenlag förbjuder vissa halvautomatiska jaktvapen — första sådana begränsningen sedan 1990-talet, politiskt känslig
+- Granskning av polisreformen (Riksrevisionen): reformen uppnådde **inte** avsedda effektivitetsvinster — politiskt skadligt för koalitionen
+- Valprognos: september 2026, opinionsundersökningar visar S+MP+V+C i ungefär samma läge som M+SD+KD+L; koalitionsutfall mycket osäkert
+
+---
+
+### ⚡ Ledande framåtblickande trigger
+
+**Bevakningsdatum 2026-05-06**: Riksdagsdebatt om extra ändringsbudget (bränsleskatt, prop. 2025/26:236). Om SD bryter partidisciplinen i voteringen ställs Tidökoalitionen inför sin allvarligaste interna spricka sedan regeringsbildningen.
+
+---
+
+### 🔮 Konfidensgrad
+
+| Domän | Konfidensgrad | Motivering |
+|--------|-----------|-----------|
+| Lagstiftningskalender | A1 — mycket tillförlitlig, bekräftad | Publicerat riksdagsschema |
+| Oppositionsstrategi | B2 — tillförlitlig, troligen sant | Interpellationsmönsteranalys |
+| Valprognos | C3 — ganska tillförlitlig, möjligen sant | Opinionsdata med systematisk osäkerhet |
+| Koalitionskohesion | B3 — tillförlitlig, möjligen sant | Tvärsektoriell röstningsanalys |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-04-26  
+**分类**：公开 — GDPR第9条(2)(e,g)适用  
+**可信度**：B2（可靠来源，可能属实）  
+**分析深度**：标准  
+
+---
+
+### 🎯 核心摘要（BLUF）
+
+瑞典国会（Riksdag）在2026年5月至6月进入**2026年9月大选**前的最终立法加速阶段，蒂多联合政府（M-SD-KD-L）正在推动涵盖安全、司法和财政的密集法案包。该时期主要由以下内容主导：(1) 新武器法创建半自动步枪禁令（HD01JuU10）；(2) 通过青少年刑事改革（HD03246）和限制囚犯社会福利（HD03252）强化刑事司法；(3) 欧盟银行业一揽子方案的实施（HD03253）；(4) 反对党就燃油税削减、警察人力及社会福利退缩发出激烈挑战。**主要风险是立法疲劳与反对党选举动员相叠加，针对2026年9月前被认为"强硬但空洞"的安全叙事。**
+
+---
+
+### 🧭 本简报支持的三个决策
+
+1. **监测优先事项**：追踪司法委员会（JuU）四项法案——HD01JuU10（新武器法）、HD01JuU31（警察改革）、HD03246（青少年犯罪）和HD03252（囚犯福利）——作为联合政府在选举季前传递法律和秩序信息能力的最明确指标。
+
+2. **风险评估**：S党反对派就雇主缴款削减（HD10444）、病假费用（HD10447）和错误死亡声明（HD10446）不断升级的质询，预示着社会民主党针对行政和福利失误协调进行的选前施压活动。监测财政部长斯万特松可能遭受的政治损害。
+
+3. **联合监测**：额外修正预算案（提案2025/26:236——燃油税降低）面临MP和V的积极反对（HD024098、HD024092）。KD/L（环境关切）与SD/M（生活成本优先）之间跨党派财政分歧构成联合凝聚力的潜在考验。
+
+---
+
+### 60秒情报速览
+
+- 2026年4月**4份重大JuU委员会报告**通过或待审——本届议会最大的司法改革群
+- 2025/26会期提交**276份政府提案**（近代议会史上最多）
+- **448项质询**——反对党活动达到最大强度，选前90%来自S党和V党
+- 2026年补充预算（燃油税）引发广泛反对派联盟（MP+V+C+S）
+- 新武器法禁止某些半自动狩猎步枪——1990年代以来首次此类限制，政治敏感
+- 警察改革审查（Riksrevisionen）：改革**未能**实现预期效率提升——对联合政府政治上有损
+- 选举预测：2026年9月，民调显示S+MP+V+C与M+SD+KD+L基本持平；联合结果高度不确定
+
+---
+
+### ⚡ 主要前瞻触发点
+
+**监测日期2026-05-06**：国会全体会议就额外修正预算（燃油税，提案2025/26:236）举行辩论。若SD在投票中打破党纪，蒂多联合政府将面临组建政府以来最严峻的内部裂痕。
+
+---
+
+### 🔮 可信度
+
+| 领域 | 可信度 | 依据 |
+|--------|-----------|-----------|
+| 立法日程 | A1——非常可靠，已确认 | 已公布的国会日程 |
+| 反对党策略 | B2——可靠，可能属实 | 质询模式分析 |
+| 选举预测 | C3——较可靠，或许属实 | 存在系统性不确定性的民调数据 |
+| 联合凝聚力 | B3——可靠，或许属实 | 跨党派投票分析 |
+
+```mermaid
+graph TD
+    A[April 2026 Legislative Cluster] --> B[Security & Justice\nHD01JuU10 · HD03246 · HD03252]
+    A --> C[Finance & Economy\nHD03253 · HD03104 · Extra budget]
+    A --> D[Social Policy\nHD01SoU25 · HD01AU15]
+    B --> E{September 2026\nElection}
+    C --> E
+    D --> E
+    E --> F[Coalition outcome\nunknown — rough parity]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#2d0a3e,stroke:#ff006e,color:#e0e0e0
+    style F fill:#2d0a3e,stroke:#ffbe0b,color:#e0e0e0
+```
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1679,3 +2620,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/month-ahead/executive-brief_zh.md)

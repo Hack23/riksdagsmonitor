@@ -6,7 +6,7 @@ date: 2026-05-13
 subfolder: committeeReports
 slug: 2026-05-13-committeeReports
 source_folder: analysis/daily/2026-05-13/committeeReports
-generated_at: 2026-05-17T22:44:41.213Z
+generated_at: 2026-05-18T09:08:38.770Z
 language: en
 layout: article
 ---
@@ -83,6 +83,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1395,13 +1408,652 @@ This analysis is produced from publicly available Riksdag API data supplemented 
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-05-12 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+---
+title: "إعادة هيكلة السياسة الريفية السويدية وإعادة توجيه كفاءة الطاقة: تقريران للجنة يشيران إلى سباق تشريعي قبل الانتخابات"
+
+pass: 2
+
+subfolder: committeeReports
+---
+
+# إعادة هيكلة السياسة الريفية السويدية وإعادة توجيه كفاءة الطاقة: تقريران للجنة يشيران إلى سباق تشريعي قبل الانتخابات
+
+**الخلاصة**: في 12 مايو 2026، تلقى البرلمان السويدي (Riksdag) betänkandanين ذوي أهمية سياسية عالية: Betänkande 2025/26:NU21 بشأن السياسة الريفية الشاملة (prop. 2025/26:158) و Betänkande 2025/26:CU30 بشأن هدف جديد لكفاءة الطاقة يحل محل الهدف الكمي لعام 2030 (prop. 2025/26:159). يكشف كلا التقريرين أن الكتلة الحاكمة (M, SD, KD, L) تمضي قدماً في برنامجها التشريعي قبل الانتخابات في مواجهة معارضة مستمرة (S, V, C, MP) تقدم تحفظات متعددة النقاط لكنها تفتقر إلى الأرقام البرلمانية اللازمة لعرقلة المقترحات. تقرير الطاقة مؤثر بشكل خاص: تتخلى السويد عن هدف كمي لكفاءة الطاقة بنسبة 50٪ لصالح هدف نوعي يستوعب صراحةً توسيع الطاقة النووية والكهربة — تحول جذري في حوكمة الطاقة قبيل انتخابات سبتمبر 2026.
+
+### القرارات الرئيسية المدعومة
+
+1. **التصويت على HD01NU21**: من المرجح أن يتبنى Riksdagen مع تحفظات من S, V, C, MP — تملك الائتلاف الحاكم الأغلبية
+2. **التصويت على HD01CU30**: سيتم إقرار الهدف النوعي الجديد لكفاءة الطاقة؛ المعارضة الحادة من S/V/MP تشير إلى موضوع حملة انتخابية قوي
+3. **ديناميكيات الانتخابات في سبتمبر 2026**: السياسة الريفية والتحول الطاقوي كلاهما موضوع تعبئة من الدرجة الأولى لجميع الأحزاب الكبرى
+
+### نقاط استخباراتية في 60 ثانية
+
+- **HD01NU21** ينفذ تعديلاً قانونياً على Lagen om regionalt utvecklingsansvar (2010:630): يجب على المناطق التشاور مع منظمات المجتمع المدني ومؤسسات التعليم العالي الخاصة؛ وافق Lagrådet دون اعتراضات؛ تاريخ النفاذ TBC
+- **HD01CU30** يستبدل هدف كفاءة الطاقة السويدي البالغ 50٪ بحلول 2030 بهدف نوعي يؤكد على المرونة والقدرة على تحمل التكاليف والكهربة والاستيعاب النووي؛ ينفذ توجيه EU EPBD المُعاد صياغته عبر تعديلات على Lagen (2006:985) om energideklaration för byggnader و Plan- och bygglagen (2010:900)
+- **كتلة المعارضة** (S, V, MP) قدمت 12 تحفظاً على NU21 و5 تحفظات على CU30 — كثافة عالية من التحفظات تشير إلى خلاف برنامجي عميق
+- **مضاعف ما قبل الانتخابات نشط** (≤ 6 أشهر حتى سبتمبر 2026): درجات DIW تصاعدت بمقدار 1.5×؛ كلا التقريرين في الأولوية L2+
+- **Andreas Lennkvist Manriquez (V)** يترأس CU مع التصويت ضد هدف الطاقة الحكومي — إشارة متناقضة مؤسسياً؛ إجراءات اللجنة صالحة رسمياً وفق القواعد البرلمانية
+
+### المحفز الأمامي الرئيسي
+
+**يوم التصويت على CU30** (~أواخر مايو 2026): إذا حافظت SD, M, KD, L على الانضباط الائتلافي يُقرّ الهدف النوعي للطاقة — لكن إن انشق حزب ما (لا سيما KD أو L تحت ضغط تأطير الطاقة النووية)، يكون التأخير الإجرائي محتملاً. مراقبة المنسقين الحزبيين.
+
+### تقييم الثقة
+
+**HIGH [B2]** — استناداً إلى الوثائق الأولية لـ Riksdag (dok_id HD01NU21, HD01CU30)، واقتباس مباشر من نص اللجنة، وتوزيع المقاعد البرلمانية المعروف (أغلبية Tidökoalitionen)، وyttrande لـ Lagrådet (لا اعتراضات على NU21)، والسياق الاقتصادي الكلي IMF WEO أبريل 2026.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nالسياسة الريفية\nL2+ أولوية [B2]"]
+    CU30["HD01CU30\nهدف كفاءة الطاقة\nL2+ أولوية [B2]"]
+    GOV["الكتلة الحاكمة\nM, SD, KD, L\n173+ مقعداً"]
+    OPP["المعارضة\nS, V, C, MP\n176 مقعداً"]
+    
+    GOV -->|"تدعم"| NU21
+    GOV -->|"تدعم"| CU30
+    OPP -->|"12 تحفظاً"| NU21
+    OPP -->|"5 تحفظات"| CU30
+```
+
+</div>
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_da.md -->
+
+**BLUF**: Den 12. maj 2026 modtog Sveriges Riksdag to politisk vigtige betänkanden: Betänkande 2025/26:NU21 om omfattende landdistriktspolitik (prop. 2025/26:158) og Betänkande 2025/26:CU30 om et nyt energieffektivitetsmål, der afløser det kvantitative 2030-mål (prop. 2025/26:159). Begge rapporter afslører, at det styrende blok (M, SD, KD, L) fremrykker sit valgprogramme mod en vedholdende opposition (S, V, C, MP), der indgiver flerepunktsreservationer men mangler parlamentarisk flertal til at blokere forslagene. Energirapporten er særlig betydningsfuld: Sverige opgiver et 50% kvantitativt energieffektivitetsmål til fordel for et kvalitativt mål, der eksplicit rummer kernekraftudvidelse og elektrificering — et seismisk skift i energistyring inden valget i september 2026.
+
+### Understøttede nøglebeslutninger
+
+1. **Afstemning om HD01NU21**: Riksdagen ventes at vedtage med reservation fra S, V, C, MP — den styrende koalition har flertal
+2. **Afstemning om HD01CU30**: Nyt kvalitativt energieffektivitetsmål vil blive vedtaget; skarp S/V/MP-opposition signalerer et stærkt valgkampstema
+3. **Valgdynamik september 2026**: Landdistriktspolitik og energiomstilling er begge topprioritet-mobiliseringsspørgsmål for alle store partier
+
+### 60-sekunders efterretningspunkter
+
+- **HD01NU21** gennemfører lovændring i Lagen om regionalt utvecklingsansvar (2010:630): regioner skal høre civilsamfundsorganisationer og private videregående uddannelsesinstitutioner; Lagrådet godkendte uden indvendinger; ikrafttrædelsesdato TBC
+- **HD01CU30** erstatter Sveriges 50%-energieffektivitetsmål for 2030 med et kvalitativt mål, der betoner fleksibilitet, overkommelighed, elektrificering og kernekraftaccommodering; gennemfører EU's EPBD-genbehandlede direktiv via ændringer i Lagen (2006:985) om energideklaration för byggnader og Plan- och bygglagen (2010:900)
+- **Oppositionsblokken** (S, V, MP) indgav 12 reservationer på NU21 og 5 reservationer på CU30 — høj reservationstæthed signalerer dyb programmatisk uenighed
+- **Forvalgsmultiplikator aktiv** (≤ 6 måneder til september 2026): DIW-scorer eskaleret med 1,5×; begge rapporter er L2+-prioritet
+- **Andreas Lennkvist Manriquez (V)** leder CU, mens han stemmer imod regeringens energimål — institutionelt paradokst signal; udvalgets procedure er formelt gyldig i henhold til parlamentariske regler
+
+### Vigtigste fremadrettede udløser
+
+**CU30-afstemningsdag** (~slutningen af maj 2026): Hvis SD, M, KD, L opretholder koalitionsdisciplin, vedtages det kvalitative energimål — men hvis et parti defekterer (særligt KD eller L under pres om kernekraftsframing), er en proceduremæssig forsinkelse mulig. Overvåg partipisker.
+
+### Konfidensvurdering
+
+**HIGH [B2]** — baseret på primære Riksdag-dokumenter (dok_id HD01NU21, HD01CU30), direkte citat fra udvalgtekst, kendt parlamentarisk mandatfordeling (Tidökoalitionens flertal), Lagrådets yttrande (ingen indvendinger til NU21) og IMF WEO april 2026 makroøkonomisk kontekst.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nLanddistriktspolitik\nL2+ Prioritet [B2]"]
+    CU30["HD01CU30\nEnergieffektivitetsmål\nL2+ Prioritet [B2]"]
+    GOV["Styrende blok\nM, SD, KD, L\n173+ mandater"]
+    OPP["Opposition\nS, V, C, MP\n176 mandater"]
+    
+    GOV -->|"støtter"| NU21
+    GOV -->|"støtter"| CU30
+    OPP -->|"12 reservationer"| NU21
+    OPP -->|"5 reservationer"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_de.md -->
+
+**BLUF**: Am 12. Mai 2026 erhielt Schwedens Riksdag zwei politisch bedeutende Betänkanden: Betänkande 2025/26:NU21 zur umfassenden ländlichen Politik (prop. 2025/26:158) und Betänkande 2025/26:CU30 zu einem neuen Energieeffizienzziel, das das quantitative 2030-Ziel ersetzt (prop. 2025/26:159). Beide Berichte zeigen, dass der regierende Block (M, SD, KD, L) sein Vorwahlgesetzgebungsprogramm gegen eine anhaltende Opposition (S, V, C, MP) vorantreibt, die Mehrpunkte-Vorbehalte einlegt, aber die parlamentarische Arithmetik fehlt, um die Vorschläge zu blockieren. Der Energiebericht ist besonders folgenreich: Schweden gibt ein quantitatives Energieeffizienzziel von 50% zugunsten eines qualitativen Ziels auf, das Kernkraftausbau und Elektrifizierung explizit berücksichtigt — ein tektonischer Wandel in der Energiesteuerung vor der Wahl im September 2026.
+
+### Unterstützte Schlüsselentscheidungen
+
+1. **Abstimmung über HD01NU21**: Riksdagen wird voraussichtlich mit Vorbehalt von S, V, C, MP verabschiedet — die regierende Koalition hat die Mehrheit
+2. **Abstimmung über HD01CU30**: Neues qualitatives Energieeffizienzziel wird verabschiedet; scharfe S/V/MP-Opposition signalisiert ein starkes Wahlkampfthema
+3. **Wahldynamik September 2026**: Ländliche Politik und Energiewende sind für alle großen Parteien erstrangige Mobilisierungsthemen
+
+### 60-Sekunden-Geheimdienstpunkte
+
+- **HD01NU21** setzt Gesetzesänderung in Lagen om regionalt utvecklingsansvar (2010:630) um: Regionen müssen Zivilgesellschaftsorganisationen und private Hochschulen konsultieren; Lagrådet genehmigte ohne Einwände; Inkrafttretungsdatum TBC
+- **HD01CU30** ersetzt Schwedens 50%-Energieeffizienzziel bis 2030 durch ein qualitatives Ziel, das Flexibilität, Erschwinglichkeit, Elektrifizierung und Kernkraftkompatibilität betont; setzt EU-EPBD-Neubearbeitung durch Änderungen an Lagen (2006:985) om energideklaration för byggnader und Plan- och bygglagen (2010:900) um
+- **Oppositionsblock** (S, V, MP) legte 12 Vorbehalte bei NU21 und 5 Vorbehalte bei CU30 ein — hohe Vorbehaltsdichte signalisiert tiefe programmatische Meinungsverschiedenheit
+- **Vorwahl-Multiplikator aktiv** (≤ 6 Monate bis September 2026): DIW-Punkte um 1,5× eskaliert; beide Berichte sind L2+-Priorität
+- **Andreas Lennkvist Manriquez (V)** leitet CU und stimmt gleichzeitig gegen das Energieziel der Regierung — institutionell paradoxes Signal; das Ausschussverfahren ist nach parlamentarischen Regeln formal gültig
+
+### Wichtigster Vorwärts-Auslöser
+
+**CU30-Abstimmungstag** (~Ende Mai 2026): Wenn SD, M, KD, L Koalitionsdisziplin wahren, wird das qualitative Energieziel verabschiedet — falls jedoch eine Partei abtrünnig wird (insbesondere KD oder L unter Kernkraft-Framingdruck), ist eine Verfahrensverzögerung möglich. Parteibeauftragten beobachten.
+
+### Konfidenzbewertung
+
+**HIGH [B2]** — basiert auf primären Riksdag-Dokumenten (dok_id HD01NU21, HD01CU30), direktem Zitat aus dem Ausschusstext, bekannter parlamentarischer Mandatsverteilung (Mehrheit der Tidökoalition), Lagrådets yttrande (keine Einwände zu NU21) und IMF WEO April 2026 makroökonomischer Kontext.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nLändliche Politik\nL2+ Priorität [B2]"]
+    CU30["HD01CU30\nEnergieeffizienzziel\nL2+ Priorität [B2]"]
+    GOV["Regierungsblock\nM, SD, KD, L\n173+ Sitze"]
+    OPP["Opposition\nS, V, C, MP\n176 Sitze"]
+    
+    GOV -->|"unterstützt"| NU21
+    GOV -->|"unterstützt"| CU30
+    OPP -->|"12 Vorbehalte"| NU21
+    OPP -->|"5 Vorbehalte"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_es.md -->
+
+**BLUF**: El 12 de mayo de 2026, el Riksdag sueco recibió dos betänkanden de alta relevancia política: el Betänkande 2025/26:NU21 sobre política rural integral (prop. 2025/26:158) y el Betänkande 2025/26:CU30 sobre un nuevo objetivo de eficiencia energética que reemplaza el objetivo cuantitativo de 2030 (prop. 2025/26:159). Ambos informes revelan que el bloque gobernante (M, SD, KD, L) avanza su programa legislativo preelectoral contra una oposición persistente (S, V, C, MP) que presenta reservas multipunto pero carece de la aritmética parlamentaria para bloquear las propuestas. El informe energético es especialmente trascendente: Suecia abandona un objetivo cuantitativo de eficiencia energética del 50% en favor de un objetivo cualitativo que acomoda explícitamente la expansión nuclear y la electrificación — un cambio sísmico en la gobernanza energética antes de las elecciones de septiembre de 2026.
+
+### Decisiones clave respaldadas
+
+1. **Votación sobre HD01NU21**: Es probable que el Riksdagen adopte con reserva de S, V, C, MP — la coalición gobernante tiene mayoría
+2. **Votación sobre HD01CU30**: El nuevo objetivo cualitativo de eficiencia energética será aprobado; la fuerte oposición de S/V/MP señala un tema de campaña significativo
+3. **Dinámica electoral septiembre 2026**: La política rural y la transición energética son ambas temas de movilización de primer nivel para todos los partidos principales
+
+### Puntos de inteligencia en 60 segundos
+
+- **HD01NU21** implementa cambio legislativo en la Lagen om regionalt utvecklingsansvar (2010:630): las regiones deben consultar a organizaciones de la sociedad civil e instituciones privadas de educación superior; Lagrådet aprobó sin objeciones; fecha de entrada en vigor TBC
+- **HD01CU30** reemplaza el objetivo sueco de eficiencia energética del 50% para 2030 con un objetivo cualitativo que enfatiza flexibilidad, asequibilidad, electrificación y acomodación nuclear; implementa la directiva EPBD revisada de la UE mediante enmiendas a la Lagen (2006:985) om energideklaration för byggnader y la Plan- och bygglagen (2010:900)
+- **Bloque de oposición** (S, V, MP) presentó 12 reservas sobre NU21 y 5 reservas sobre CU30 — alta densidad de reservas señala profundo desacuerdo programático
+- **Multiplicador preelectoral activo** (≤ 6 meses hasta septiembre de 2026): puntuaciones DIW escaladas 1,5×; ambos informes son prioridad L2+
+- **Andreas Lennkvist Manriquez (V)** preside la CU mientras vota en contra del objetivo energético del gobierno — señal institucionalmente paradójica; el procedimiento del comité es formalmente válido según las reglas parlamentarias
+
+### Principal desencadenante prospectivo
+
+**Día de votación de CU30** (~finales de mayo de 2026): Si SD, M, KD, L mantienen la disciplina de coalición, el objetivo energético cualitativo es aprobado — pero si algún partido deserta (especialmente KD o L bajo presión de encuadre nuclear), es posible un retraso procedimental. Vigilar los coordinadores de partido.
+
+### Evaluación de confianza
+
+**HIGH [B2]** — basado en documentos primarios del Riksdag (dok_id HD01NU21, HD01CU30), cita directa del texto del comité, distribución conocida de mandatos parlamentarios (mayoría de la Tidökoalitionen), yttrande del Lagrådet (sin objeciones sobre NU21) y contexto macroeconómico IMF WEO abril de 2026.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nPolítica rural\nL2+ Prioridad [B2]"]
+    CU30["HD01CU30\nObjetivo eficiencia energética\nL2+ Prioridad [B2]"]
+    GOV["Bloque gobernante\nM, SD, KD, L\n173+ escaños"]
+    OPP["Oposición\nS, V, C, MP\n176 escaños"]
+    
+    GOV -->|"apoya"| NU21
+    GOV -->|"apoya"| CU30
+    OPP -->|"12 reservas"| NU21
+    OPP -->|"5 reservas"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_fi.md -->
+
+**BLUF**: Ruotsin Riksdag vastaanotti 12. toukokuuta 2026 kaksi poliittisesti merkittävää betänkandea: Betänkande 2025/26:NU21 kattavasta maaseutupolitiikasta (prop. 2025/26:158) ja Betänkande 2025/26:CU30 uudesta energiatehokkuustavoitteesta, joka korvaa kvantitatiivisen 2030-tavoitteen (prop. 2025/26:159). Molemmat raportit paljastavat, että hallitusblokki (M, SD, KD, L) edistää esivaaliohjelmaansa vahvaa oppositiota (S, V, C, MP) vastaan, joka tekee monipisteiset varaumat mutta joilta puuttuu parlamentaarinen enemmistö estää esitykset. Energiaraportti on erityisen merkittävä: Ruotsi luopuu 50%:n kvantitatiivisesta energiatehokkuustavoitteesta laadullisen tavoitteen hyväksi, joka nimenomaisesti sallii ydinvoimakapasiteetin laajentamisen ja sähköistymisen — maanjäristyksenomainen muutos energiahallinnossa ennen syyskuun 2026 vaaleja.
+
+### Tuetut avainpäätökset
+
+1. **Äänestys HD01NU21:stä**: Riksdagen hyväksyy todennäköisesti varauksilla S, V, C, MP:ltä — hallituskoalitiolla on enemmistö
+2. **Äänestys HD01CU30:stä**: Uusi laadullinen energiatehokkuustavoite hyväksytään; terävä S/V/MP-vastustus merkitsee voimakasta vaalikampanjateemaa
+3. **Vaaliajan dynamiikka syyskuussa 2026**: Maaseutupolitiikka ja energiasiirtymä ovat molemmille kaikille suurille puolueille huipputason mobilisaatiokysymyksiä
+
+### 60 sekunnin tiedustelupisteet
+
+- **HD01NU21** toteuttaa lakimuutoksen Lagen om regionalt utvecklingsansvar (2010:630): alueiden on kuultava kansalaisyhteiskunnan järjestöjä ja yksityisiä korkeakouluja; Lagrådet hyväksyi ilman huomautuksia; voimaantulopäivä TBC
+- **HD01CU30** korvaa Ruotsin 50% energiatehokkuustavoitteen vuoteen 2030 laadullisella tavoitteella, joka korostaa joustavuutta, kohtuuhintaisuutta, sähköistymistä ja ydinvoimamahdollisuutta; toteuttaa EU:n uudistetun EPBD-direktiivin muutosten kautta Lagen (2006:985) om energideklaration för byggnader ja Plan- och bygglagen (2010:900)
+- **Oppositioblokki** (S, V, MP) teki 12 varausta NU21:een ja 5 varausta CU30:een — korkea varaumatiheys merkitsee syvää ohjelmalista erimielisyyttä
+- **Esivaalimultiplier aktiivinen** (≤ 6 kuukautta syyskuuhun 2026): DIW-pisteet eskaloitu 1,5-kertaiseksi; molemmat raportit ovat L2+-prioriteetti
+- **Andreas Lennkvist Manriquez (V)** johtaa CU:ta äänestäen hallituksen energiatavoitetta vastaan — institutionaalisesti paradoksaalinen signaali; valiokunnan menettely on muodollisesti pätevä parlamentaaristen sääntöjen mukaisesti
+
+### Tärkein tulevaisuuden laukaisija
+
+**CU30:n äänestyspäivä** (~toukokuun loppu 2026): Jos SD, M, KD, L ylläpitävät koalitiokuria, laadullinen energiatavoite hyväksytään — mutta jos jokin puolue luopuu (erityisesti KD tai L ydinvoimakehystämispaineen alaisena), menettelyllinen viive on mahdollinen. Seuraa puoluepisteitä.
+
+### Luottamuksellisuusarvio
+
+**HIGH [B2]** — perustuu ensisijaisiin Riksdag-asiakirjoihin (dok_id HD01NU21, HD01CU30), suoraan lainaukseen valiokuntien teksteistä, tunnettuun parlamentaariseen mandaattijakaumaan (Tidökoalitionin enemmistö), Lagrådets yttranden (ei huomautuksia NU21:een) ja IMF WEO huhtikuu 2026 makrotaloudelliseen kontekstiin.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nMaaseutupolitiikka\nL2+ Prioriteetti [B2]"]
+    CU30["HD01CU30\nEnergiatehokkuustavoite\nL2+ Prioriteetti [B2]"]
+    GOV["Hallitusblokki\nM, SD, KD, L\n173+ mandaatit"]
+    OPP["Oppositio\nS, V, C, MP\n176 mandaatit"]
+    
+    GOV -->|"tukee"| NU21
+    GOV -->|"tukee"| CU30
+    OPP -->|"12 varausta"| NU21
+    OPP -->|"5 varausta"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_fr.md -->
+
+**BLUF** : Le 12 mai 2026, le Riksdag suédois a reçu deux betänkanden d'importance politique majeure : le Betänkande 2025/26:NU21 sur la politique rurale globale (prop. 2025/26:158) et le Betänkande 2025/26:CU30 sur un nouvel objectif d'efficacité énergétique remplaçant l'objectif quantitatif 2030 (prop. 2025/26:159). Les deux rapports révèlent un bloc gouvernemental (M, SD, KD, L) faisant avancer son programme législatif pré-électoral contre une opposition persistante (S, V, C, MP) qui dépose des réserves à points multiples mais manque de l'arithmétique parlementaire pour bloquer les propositions. Le rapport sur l'énergie est particulièrement conséquent : la Suède abandonne un objectif quantitatif d'efficacité énergétique de 50% au profit d'un objectif qualitatif qui accommode explicitement l'expansion nucléaire et l'électrification — un changement sismique dans la gouvernance énergétique avant les élections de septembre 2026.
+
+### Décisions clés soutenues
+
+1. **Vote sur HD01NU21** : Le Riksdagen devrait adopter avec réserve de S, V, C, MP — la coalition au pouvoir dispose de la majorité
+2. **Vote sur HD01CU30** : Le nouvel objectif qualitatif d'efficacité énergétique sera adopté ; la vive opposition S/V/MP signale un thème de campagne fort
+3. **Dynamique électorale septembre 2026** : La politique rurale et la transition énergétique sont toutes deux des enjeux de mobilisation de premier plan pour tous les grands partis
+
+### Points de renseignement en 60 secondes
+
+- **HD01NU21** met en œuvre une modification législative de la Lagen om regionalt utvecklingsansvar (2010:630) : les régions doivent consulter les organisations de la société civile et les établissements d'enseignement supérieur privés ; Lagrådet a approuvé sans objections ; date d'entrée en vigueur TBC
+- **HD01CU30** remplace l'objectif suédois d'efficacité énergétique de 50% d'ici 2030 par un objectif qualitatif soulignant la flexibilité, l'accessibilité financière, l'électrification et l'accommodation nucléaire ; met en œuvre la directive EPBD refondue de l'UE par des modifications à la Lagen (2006:985) om energideklaration för byggnader et la Plan- och bygglagen (2010:900)
+- **Le bloc d'opposition** (S, V, MP) a déposé 12 réserves sur NU21 et 5 réserves sur CU30 — haute densité de réserves signalant un désaccord programmatique profond
+- **Multiplicateur pré-électoral actif** (≤ 6 mois jusqu'en septembre 2026) : scores DIW escaladés de 1,5× ; les deux rapports sont de priorité L2+
+- **Andreas Lennkvist Manriquez (V)** préside la CU tout en votant contre l'objectif énergétique du gouvernement — signal institutionnellement paradoxal ; la procédure du comité est formellement valide selon les règles parlementaires
+
+### Principal déclencheur prospectif
+
+**Jour du vote CU30** (~fin mai 2026) : Si SD, M, KD, L maintiennent la discipline de coalition, l'objectif énergétique qualitatif est adopté — mais si un parti fait défection (en particulier KD ou L sous pression de cadrage nucléaire), un retard procédural est possible. Surveiller les chefs de groupe.
+
+### Évaluation de la confiance
+
+**HIGH [B2]** — basé sur les documents primaires du Riksdag (dok_id HD01NU21, HD01CU30), citation directe du texte de commission, répartition connue des mandats parlementaires (majorité de la Tidökoalitionen), yttrande du Lagrådet (pas d'objections sur NU21) et contexte macroéconomique IMF WEO avril 2026.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nPolitique rurale\nL2+ Priorité [B2]"]
+    CU30["HD01CU30\nObjectif efficacité énergétique\nL2+ Priorité [B2]"]
+    GOV["Bloc gouvernemental\nM, SD, KD, L\n173+ sièges"]
+    OPP["Opposition\nS, V, C, MP\n176 sièges"]
+    
+    GOV -->|"soutient"| NU21
+    GOV -->|"soutient"| CU30
+    OPP -->|"12 réserves"| NU21
+    OPP -->|"5 réserves"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_he.md -->
+
+<div dir="rtl">
+
+---
+title: "שיפוץ מדיניות הכפר השוודית וכיוון מחדש של יעילות האנרגיה: שני דוחות ועדה מסמנים ספרינט חקיקתי לקראת הבחירות"
+
+pass: 2
+
+subfolder: committeeReports
+---
+
+# שיפוץ מדיניות הכפר השוודית וכיוון מחדש של יעילות האנרגיה: שני דוחות ועדה מסמנים ספרינט חקיקתי לקראת הבחירות
+
+**תמצית**: ב-12 במאי 2026, קיבל הפרלמנט השוודי (Riksdag) שני betänkanden בעלי משמעות פוליטית גבוהה: Betänkande 2025/26:NU21 בנושא מדיניות כפר מקיפה (prop. 2025/26:158) ו-Betänkande 2025/26:CU30 בנושא יעד חדש ליעילות אנרגיה שמחליף את היעד הכמותי ל-2030 (prop. 2025/26:159). שני הדוחות מגלים שגוש השלטון (M, SD, KD, L) מקדם את תכנית החקיקה הפרה-בחירותית שלו מול אופוזיציה מתמשכת (S, V, C, MP) המגישה הסתייגויות רב-נקודתיות אך חסרה את האריתמטיקה הפרלמנטרית לחסימת ההצעות. דוח האנרגיה מעורר השלכות מיוחדות: שוודיה נוטשת יעד כמותי של 50% ליעילות אנרגיה לטובת יעד איכותי המאפשר במפורש הרחבה גרעינית ואלקטריפיקציה — שינוי סייסמי בממשל האנרגיה לקראת בחירות ספטמבר 2026.
+
+### החלטות מפתח נתמכות
+
+1. **הצבעה על HD01NU21**: סביר שה-Riksdagen יאמץ עם הסתייגות מ-S, V, C, MP — לקואליציה השלטת יש רוב
+2. **הצבעה על HD01CU30**: יעד יעילות אנרגיה איכותי חדש יאושר; אופוזיציה חדה מ-S/V/MP מסמנת נושא קמפיין בחירות חזק
+3. **דינמיקות בחירות ספטמבר 2026**: מדיניות כפר ומעבר אנרגיה הם שניהם נושאי גיוס ברמה עליונה עבור כל המפלגות הגדולות
+
+### נקודות מודיעין ב-60 שניות
+
+- **HD01NU21** מיישם שינוי חוקי ב-Lagen om regionalt utvecklingsansvar (2010:630): אזורים חייבים להתייעץ עם ארגוני החברה האזרחית ומוסדות השכלה גבוהה פרטיים; Lagrådet אישר ללא הסתייגויות; תאריך כניסה לתוקף TBC
+- **HD01CU30** מחליף את יעד יעילות האנרגיה השוודי של 50% עד 2030 ביעד איכותי המדגיש גמישות, נגישות כלכלית, אלקטריפיקציה ואירוח גרעיני; מיישם את ההנחיה המעודכנת EPBD של האיחוד האירופי באמצעות תיקונים ל-Lagen (2006:985) om energideklaration för byggnader ו-Plan- och bygglagen (2010:900)
+- **גוש האופוזיציה** (S, V, MP) הגיש 12 הסתייגויות על NU21 ו-5 הסתייגויות על CU30 — צפיפות הסתייגויות גבוהה מסמנת מחלוקת תכנית עמוקה
+- **מכפיל פרה-בחירות פעיל** (≤ 6 חודשים עד ספטמבר 2026): ציוני DIW הוסלמו פי 1.5; שני הדוחות הם עדיפות L2+
+- **Andreas Lennkvist Manriquez (V)** מוביל את CU תוך הצבעה נגד יעד האנרגיה של הממשלה — אות מוסדי פרדוקסלי; הליך הוועדה תקף פורמלית לפי כללים פרלמנטריים
+
+### הטריגר העתידי המרכזי
+
+**יום הצבעת CU30** (~סוף מאי 2026): אם SD, M, KD, L שומרות על משמעת קואליציה, היעד האיכותי לאנרגיה עובר — אך אם מפלגה כלשהי עוזבת (במיוחד KD או L תחת לחץ ניסוח גרעיני), עיכוב פרוצדורלי אפשרי. לעקוב אחר מפקחי מפלגות.
+
+### הערכת ביטחון
+
+**HIGH [B2]** — מבוסס על מסמכים ראשיים של Riksdag (dok_id HD01NU21, HD01CU30), ציטוט ישיר מטקסט הוועדה, התפלגות מנדטים פרלמנטרית ידועה (רוב ה-Tidökoalitionen), yttrande של Lagrådet (אין הסתייגויות ל-NU21) והקשר מאקרו-כלכלי IMF WEO אפריל 2026.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nמדיניות כפר\nL2+ עדיפות [B2]"]
+    CU30["HD01CU30\nיעד יעילות אנרגיה\nL2+ עדיפות [B2]"]
+    GOV["גוש שלטון\nM, SD, KD, L\n173+ מנדטים"]
+    OPP["אופוזיציה\nS, V, C, MP\n176 מנדטים"]
+    
+    GOV -->|"תומך"| NU21
+    GOV -->|"תומך"| CU30
+    OPP -->|"12 הסתייגויות"| NU21
+    OPP -->|"5 הסתייגויות"| CU30
+```
+
+</div>
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_ja.md -->
+
+**要約**: 2026年5月12日、スウェーデンのRiksdagは政治的に重要な2つのbetänkandanを受理した：農村政策に関する包括的なBetänkande 2025/26:NU21（prop. 2025/26:158）と、2030年の定量的目標に代わる新たなエネルギー効率目標に関するBetänkande 2025/26:CU30（prop. 2025/26:159）である。両報告書は、与党ブロック（M, SD, KD, L）が複数の留保事項を提出しながらも議会で阻止するだけの多数派を持たない野党（S, V, C, MP）に対し、選挙前の立法プログラムを推進していることを示している。エネルギー報告書は特に重大だ：スウェーデンは50%の定量的エネルギー効率目標を放棄し、核エネルギーの拡大と電化を明示的に受け入れる定性的目標を採用する——2026年9月の選挙を前にしたエネルギーガバナンスにおける地殻変動的な転換だ。
+
+### 支持された主要決定
+
+1. **HD01NU21の採決**: RiksdagenはS、V、C、MPの留保付きで採択見込み——与党連合が多数派を占める
+2. **HD01CU30の採決**: 新たな定性的エネルギー効率目標が可決される見込み；S/V/MPの鋭い反対は強力な選挙キャンペーンテーマを示す
+3. **2026年9月選挙の力学**: 農村政策とエネルギー転換はいずれも全主要政党にとって最優先の動員テーマ
+
+### 60秒のインテリジェンスポイント
+
+- **HD01NU21** はLagen om regionalt utvecklingsansvar（2010:630）の法改正を実施：地域は市民社会組織および私立高等教育機関と協議する必要がある；Lagrådは異議なく承認；施行日はTBC
+- **HD01CU30** はスウェーデンの2030年エネルギー効率50%目標を、柔軟性・手頃な価格・電化・核エネルギー受容を強調した定性的目標に置き換える；Lagen（2006:985）om energideklaration för byggnaderおよびPlan- och bygglagen（2010:900）の改正を通じてEU EPBD改定指令を実施
+- **野党ブロック**（S, V, MP）はNU21に12の留保、CU30に5の留保を提出——高い留保密度は深い政策的意見の相違を示す
+- **選挙前乗数が有効**（2026年9月まで≤6か月）：DIWスコアが1.5倍に上昇；両報告書はL2+優先レベル
+- **Andreas Lennkvist Manriquez（V）** は政府のエネルギー目標に反対票を投じながらCUを率いる——制度的に逆説的なシグナル；委員会手続きは議会規則上形式的に有効
+
+### 主要な先行トリガー
+
+**CU30の採決日**（2026年5月下旬頃）：SD、M、KD、Lが連立の規律を維持すれば定性的エネルギー目標が可決される——しかし何らかの党が離脱した場合（特に核エネルギーのフレーミング圧力下でKDまたはL）、手続き上の遅延が起きる可能性がある。党のホイップを監視すること。
+
+### 信頼度評価
+
+**HIGH [B2]** — 一次Riksdag文書（dok_id HD01NU21, HD01CU30）、委員会テキストからの直接引用、既知の議会議席配分（Tidökoalitionenの過半数）、Lagrådets yttrande（NU21に異議なし）、およびIMF WEO 2026年4月のマクロ経済的文脈に基づく。
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\n農村政策\nL2+ 優先度 [B2]"]
+    CU30["HD01CU30\nエネルギー効率目標\nL2+ 優先度 [B2]"]
+    GOV["与党ブロック\nM, SD, KD, L\n173+議席"]
+    OPP["野党\nS, V, C, MP\n176議席"]
+    
+    GOV -->|"支持"| NU21
+    GOV -->|"支持"| CU30
+    OPP -->|"12の留保"| NU21
+    OPP -->|"5の留保"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_ko.md -->
+
+**요약**: 2026년 5월 12일, 스웨덴 Riksdag는 정치적으로 중요한 두 개의 betänkandan을 접수했다: 농촌 정책에 관한 포괄적 Betänkande 2025/26:NU21(prop. 2025/26:158)과 2030년 정량적 목표를 대체하는 새로운 에너지 효율 목표에 관한 Betänkande 2025/26:CU30(prop. 2025/26:159). 두 보고서는 집권 블록(M, SD, KD, L)이 다점 유보를 제출하지만 제안을 막을 의회 과반수가 없는 야당(S, V, C, MP)에 맞서 선거 전 입법 프로그램을 밀어붙이고 있음을 보여준다. 에너지 보고서는 특히 중대하다: 스웨덴은 50% 정량적 에너지 효율 목표를 포기하고 원전 확대와 전기화를 명시적으로 수용하는 정성적 목표를 채택한다 — 2026년 9월 선거를 앞두고 에너지 거버넌스에서의 지각 변동적 전환.
+
+### 지지된 핵심 결정
+
+1. **HD01NU21 표결**: Riksdagen이 S, V, C, MP의 유보와 함께 채택할 가능성 높음 — 집권 연립이 과반수 보유
+2. **HD01CU30 표결**: 새로운 정성적 에너지 효율 목표 통과; 날카로운 S/V/MP 반대는 강력한 선거 캠페인 이슈를 시사
+3. **2026년 9월 선거 역학**: 농촌 정책과 에너지 전환은 모든 주요 정당에게 최우선 동원 이슈
+
+### 60초 인텔리전스 포인트
+
+- **HD01NU21**은 Lagen om regionalt utvecklingsansvar(2010:630) 법 개정 시행: 지역은 시민사회 단체 및 사립 고등교육기관과 협의해야 함; Lagrådet 이의 없이 승인; 시행일 TBC
+- **HD01CU30**은 스웨덴의 2030년 50% 에너지 효율 목표를 유연성, 저렴성, 전기화 및 원전 수용을 강조하는 정성적 목표로 대체; Lagen(2006:985) om energideklaration för byggnader 및 Plan- och bygglagen(2010:900) 개정을 통해 EU EPBD 개정 지침 시행
+- **야당 블록**(S, V, MP)은 NU21에 12개, CU30에 5개 유보 제출 — 높은 유보 밀도는 깊은 정책적 불일치 시사
+- **선거 전 승수 활성화**(2026년 9월까지 ≤6개월): DIW 점수 1.5배 상승; 두 보고서 모두 L2+ 우선순위
+- **Andreas Lennkvist Manriquez(V)**는 정부 에너지 목표에 반대표를 던지면서 CU를 이끔 — 제도적으로 역설적 신호; 위원회 절차는 의회 규칙상 형식적으로 유효
+
+### 주요 미래 촉발 요인
+
+**CU30 표결일**(2026년 5월 말경): SD, M, KD, L이 연립 규율을 유지하면 정성적 에너지 목표 통과 — 하지만 어느 당이 이탈할 경우(특히 원전 프레이밍 압박 하의 KD 또는 L), 절차적 지연 가능. 정당 원내총무 모니터링.
+
+### 신뢰도 평가
+
+**HIGH [B2]** — 1차 Riksdag 문서(dok_id HD01NU21, HD01CU30), 위원회 텍스트에서의 직접 인용, 알려진 의회 의석 배분(Tidökoalitionen 과반수), Lagrådets yttrande(NU21 이의 없음), 그리고 IMF WEO 2026년 4월 거시경제 맥락에 기반.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\n농촌 정책\nL2+ 우선순위 [B2]"]
+    CU30["HD01CU30\n에너지 효율 목표\nL2+ 우선순위 [B2]"]
+    GOV["집권 블록\nM, SD, KD, L\n173+석"]
+    OPP["야당\nS, V, C, MP\n176석"]
+    
+    GOV -->|"지지"| NU21
+    GOV -->|"지지"| CU30
+    OPP -->|"12 유보"| NU21
+    OPP -->|"5 유보"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_nl.md -->
+
+**BLUF**: Op 12 mei 2026 ontving het Zweedse Riksdag twee politiek significante betänkanden: Betänkande 2025/26:NU21 over uitgebreid plattelandsbeleid (prop. 2025/26:158) en Betänkande 2025/26:CU30 over een nieuw energieëfficiëntiedoel ter vervanging van het kwantitatieve 2030-doel (prop. 2025/26:159). Beide rapporten onthullen een regeringsblok (M, SD, KD, L) dat zijn pre-electorale wetgevingsprogramma voortdrijft tegen een aanhoudende oppositie (S, V, C, MP) die meerpuntsvoorbehouden indient maar de parlementaire rekenkunde mist om de voorstellen te blokkeren. Het energierapport is bijzonder verstrekkend: Zweden verlaat een kwantitatief energieëfficiëntiedoel van 50% ten gunste van een kwalitatief doel dat kernenergie-uitbreiding en elektrificatie expliciet accommodeert — een seismische verschuiving in energiegovernance voor de verkiezingen van september 2026.
+
+### Ondersteunde kernbeslissingen
+
+1. **Stemming over HD01NU21**: Riksdagen zal naar verwachting aannemen met voorbehoud van S, V, C, MP — de regerende coalitie heeft de meerderheid
+2. **Stemming over HD01CU30**: Nieuw kwalitatief energieëfficiëntiedoel wordt aangenomen; scherpe S/V/MP-oppositie signaleert een sterk verkiezingsthema
+3. **Verkiezingsdynamiek september 2026**: Plattelandsbeleid en energietransitie zijn beide topprioriteit mobilisatiethema's voor alle grote partijen
+
+### 60-seconden inlichtingenpunten
+
+- **HD01NU21** implementeert wetswijziging in Lagen om regionalt utvecklingsansvar (2010:630): regio's moeten maatschappelijke organisaties en private hogeronderwijsinstellingen raadplegen; Lagrådet keurde goed zonder bezwaren; inwerkingtreding datum TBC
+- **HD01CU30** vervangt Zweden's 50%-energieëfficiëntiedoel voor 2030 door een kwalitatief doel met nadruk op flexibiliteit, betaalbaarheid, elektrificatie en kernenergieaccommodatie; implementeert herschreven EU EPBD-richtlijn via wijzigingen aan Lagen (2006:985) om energideklaration för byggnader en Plan- och bygglagen (2010:900)
+- **Oppositieblok** (S, V, MP) diende 12 voorbehouden in over NU21 en 5 voorbehouden over CU30 — hoge voorbehoudsdichtheid signaleert diep programmatisch meningsverschil
+- **Pre-electorale multiplicator actief** (≤ 6 maanden tot september 2026): DIW-scores geëscaleerd met 1,5×; beide rapporten zijn L2+-prioriteit
+- **Andreas Lennkvist Manriquez (V)** voorzit CU terwijl hij tegen het energiedoel van de regering stemt — institutioneel paradoxaal signaal; de commissieprocedure is formeel geldig onder parlementaire regels
+
+### Belangrijkste toekomstige trigger
+
+**CU30-stemdag** (~einde mei 2026): Als SD, M, KD, L coalitiediscipline handhaven, wordt het kwalitatieve energiedoel aangenomen — maar als een partij afvallig wordt (met name KD of L onder kernenergieframingdruk), is een procedurele vertraging mogelijk. Partijwhips volgen.
+
+### Betrouwbaarheidsbeoordeling
+
+**HIGH [B2]** — gebaseerd op primaire Riksdag-documenten (dok_id HD01NU21, HD01CU30), directe aanhalingstekens uit commissietekst, bekende parlementaire mandaatverdeling (meerderheid Tidökoalitionen), yttrande van Lagrådet (geen bezwaren op NU21) en IMF WEO april 2026 macro-economische context.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nPlattelandsbeleid\nL2+ Prioriteit [B2]"]
+    CU30["HD01CU30\nEnergie efficiëntiedoel\nL2+ Prioriteit [B2]"]
+    GOV["Regeringsblok\nM, SD, KD, L\n173+ zetels"]
+    OPP["Oppositie\nS, V, C, MP\n176 zetels"]
+    
+    GOV -->|"ondersteunt"| NU21
+    GOV -->|"ondersteunt"| CU30
+    OPP -->|"12 voorbehouden"| NU21
+    OPP -->|"5 voorbehouden"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_no.md -->
+
+**BLUF**: Den 12. mai 2026 mottok Sveriges Riksdag to politisk viktige betänkanden: Betänkande 2025/26:NU21 om helhetlig distriktspolitikk (prop. 2025/26:158) og Betänkande 2025/26:CU30 om et nytt energieffektivitetsmål som erstatter det kvantitative 2030-målet (prop. 2025/26:159). Begge rapporter avslører at den styrende blokken (M, SD, KD, L) fremmer sin valgprogramfremgang mot en vedvarende opposisjon (S, V, C, MP) som leverer flerpoengsforbeholder men mangler parlamentarisk flertall til å blokkere forslagene. Energirapporten er særlig viktig: Sverige forlater et 50% kvantitativt energieffektivitetsmål til fordel for et kvalitativt mål som eksplisitt rommer kjernekraftutvidelse og elektrifisering — et seismisk skifte i energistyring foran valget i september 2026.
+
+### Støttede nøkkelbeslutninger
+
+1. **Avstemning om HD01NU21**: Riksdagen vil trolig vedta med forbehold fra S, V, C, MP — den styrende koalisjonen har flertall
+2. **Avstemning om HD01CU30**: Nytt kvalitativt energieffektivitetsmål vil vedtas; skarp S/V/MP-opposisjon signalerer en sterk valgkampsak
+3. **Valgdynamikk september 2026**: Distriktspolitikk og energiomstilling er begge toppnivå mobiliseringsspørsmål for alle store partier
+
+### 60-sekunders etterretningspunkter
+
+- **HD01NU21** gjennomfører lovendring i Lagen om regionalt utvecklingsansvar (2010:630): regioner må konsultere sivilsamfunnsorganisasjoner og private høyskoler; Lagrådet godkjente uten innvendinger; ikrafttredelsesdato TBC
+- **HD01CU30** erstatter Sveriges 50%-energieffektivitetsmål for 2030 med et kvalitativt mål som vektlegger fleksibilitet, rimelig pris, elektrifisering og kjernekraftaccommodering; gjennomfører EUs omarbeidede EPBD-direktiv via endringer i Lagen (2006:985) om energideklaration för byggnader og Plan- och bygglagen (2010:900)
+- **Opposisjonsblokken** (S, V, MP) leverte 12 forbehold på NU21 og 5 forbehold på CU30 — høy forbeholdstetthet signalerer dyp programmatisk uenighet
+- **Forvalsmultiplikator aktiv** (≤ 6 måneder til september 2026): DIW-scorer eskalert med 1,5×; begge rapporter er L2+-prioritet
+- **Andreas Lennkvist Manriquez (V)** leder CU mens han stemmer mot regjeringens energimål — institusjonelt paradoksalt signal; komitéprosedyren er formelt gyldig i henhold til parlamentariske regler
+
+### Viktigste fremtidige utløser
+
+**CU30-avstemningsdag** (~slutten av mai 2026): Hvis SD, M, KD, L opprettholder koalisjondisiplin vedtas det kvalitative energimålet — men hvis et parti defekterer (spesielt KD eller L under kjernekrafts-innrammingspress), er en prosedyremessig forsinkelse mulig. Følg med på partipisker.
+
+### Konfidensvurdering
+
+**HIGH [B2]** — basert på primære Riksdag-dokumenter (dok_id HD01NU21, HD01CU30), direkte sitat fra komitétext, kjent parlamentarisk mandatfordeling (Tidökoalitionens flertall), Lagrådets yttrande (ingen innvendinger til NU21) og IMF WEO april 2026 makroøkonomisk kontekst.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nDistriktspolitikk\nL2+ Prioritet [B2]"]
+    CU30["HD01CU30\nEnergieffektivitetsmål\nL2+ Prioritet [B2]"]
+    GOV["Styrende blokk\nM, SD, KD, L\n173+ mandater"]
+    OPP["Opposisjon\nS, V, C, MP\n176 mandater"]
+    
+    GOV -->|"støtter"| NU21
+    GOV -->|"støtter"| CU30
+    OPP -->|"12 forbehold"| NU21
+    OPP -->|"5 forbehold"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_sv.md -->
+
+**BLUF**: Den 12 maj 2026 mottog Sveriges riksdag två politiskt viktiga betänkanden: Betänkande 2025/26:NU21 om övergripande landsbygdspolitik (prop. 2025/26:158) och Betänkande 2025/26:CU30 om ett nytt energieffektivitetsmål som ersätter det kvantitativa 2030-målet (prop. 2025/26:159). Båda betänkandena visar att det styrande blocket (M, SD, KD, L) driver sitt valrörelseprogram mot ett ihållande motstånd (S, V, C, MP) som lämnar reservationer med flera punkter men saknar parlamentarisk majoritet för att blockera förslagen. Energirapporten är särskilt viktig: Sverige överger ett 50-procentigt kvantitativt energieffektivitetsmål till förmån för ett kvalitativt mål som uttryckligen rymmer kärnkraftsexpansion och elektrifiering — ett omvälvande skifte i energistyrning inför valet i september 2026.
+
+### Stödda nyckelbeslut
+
+1. **Omröstning om HD01NU21**: Riksdagen väntas anta med reservation från S, V, C, MP — den styrande koalitionen har majoritet
+2. **Omröstning om HD01CU30**: Nytt kvalitativt energieffektivitetsmål kommer att antas; skarp opposition från S/V/MP signalerar en stark valfråga
+3. **Valdynamik september 2026**: Landsbygdspolitik och energiomställning är båda toppfrågor för mobilisering bland alla stora partier
+
+### 60-sekunders underrättelsekulor
+
+- **HD01NU21** genomför lagändring i Lagen om regionalt utvecklingsansvar (2010:630): regioner måste samråda med civilsamhällesorganisationer och privata högskolor; Lagrådet godkände utan anmärkningar; ikraftträdandedatum TBC
+- **HD01CU30** ersätter Sveriges 50%-mål för energieffektivitet till 2030 med ett kvalitativt mål som betonar flexibilitet, prisvärdhet, elektrifiering och kärnkraftsutrymme; genomför EU:s EPBD-omarbetade direktiv via ändringar i Lagen (2006:985) om energideklaration för byggnader och Plan- och bygglagen (2010:900)
+- **Oppositionsblocket** (S, V, MP) lämnade 12 reservationer på NU21 och 5 reservationer på CU30 — hög reservationstäthet signalerar djup programmatisk oenighet
+- **Förvalsmultiplikator aktiv** (≤ 6 månader till september 2026): DIW-poäng eskalerade med 1,5×; båda betänkandena är L2+-prioritet
+- **Andreas Lennkvist Manriquez (V)** leder CU men röstar mot regeringens energimål — institutionellt paradoxalt signal; utskottsförfarandet är formellt giltigt enligt parlamentariska regler
+
+### Viktigaste framåtblickande trigger
+
+**CU30:s omröstningsdag** (~slutet av maj 2026): Om SD, M, KD, L upprätthåller koalitionsdisciplin antas det kvalitativa energimålet — men om något parti defekterar (särskilt KD eller L under kärnkrafts-framningstryck) är en procedurell försening möjlig. Bevaka partipiskor.
+
+### Konfidensbedömning
+
+**HIGH [B2]** — baserat på primära riksdagsdokument (dok_id HD01NU21, HD01CU30), direkt citat från utskottstext, känd parlamentarisk mandatfördelning (Tidökoalitionens majoritet), Lagrådets yttrande (inga anmärkningar på NU21) och IMF WEO april 2026 makroekonomisk kontext.
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\nLandsbygdspolitik\nL2+ Prioritet [B2]"]
+    CU30["HD01CU30\nEnergieffektivitetsmål\nL2+ Prioritet [B2]"]
+    GOV["Styrande block\nM, SD, KD, L\n173+ mandat"]
+    OPP["Opposition\nS, V, C, MP\n176 mandat"]
+    
+    GOV -->|"stöder"| NU21
+    GOV -->|"stöder"| CU30
+    OPP -->|"12 reservationer"| NU21
+    OPP -->|"5 reservationer"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_zh.md -->
+
+**摘要**：2026年5月12日，瑞典Riksdag收到两份具有重要政治意义的betänkandan：关于全面农村政策的Betänkande 2025/26:NU21（prop. 2025/26:158）和关于取代2030年量化目标的新能源效率目标的Betänkande 2025/26:CU30（prop. 2025/26:159）。两份报告均显示，执政联盟（M, SD, KD, L）正在推进其选前立法议程，面对提出多点保留意见但缺乏阻止提案的议会多数的持续反对党（S, V, C, MP）。能源报告尤为重要：瑞典正在放弃50%的量化能源效率目标，转而采用明确容纳核能扩张和电气化的定性目标——这是2026年9月选举前能源治理中的地震性转变。
+
+### 支持的关键决策
+
+1. **HD01NU21表决**：Riksdagen可能在S、V、C、MP的保留下通过——执政联盟拥有多数
+2. **HD01CU30表决**：新的定性能源效率目标将获通过；S/V/MP的强烈反对预示着强大的竞选议题
+3. **2026年9月选举动态**：农村政策和能源转型都是所有主要政党的顶级动员议题
+
+### 60秒情报要点
+
+- **HD01NU21**实施Lagen om regionalt utvecklingsansvar（2010:630）法律修订：各地区必须与公民社会组织和私立高等教育机构协商；Lagrådet无异议通过；生效日期TBC
+- **HD01CU30**用强调灵活性、可负担性、电气化和核能适应的定性目标取代瑞典2030年50%能源效率目标；通过对Lagen（2006:985）om energideklaration för byggnader和Plan- och bygglagen（2010:900）的修订实施欧盟EPBD修订指令
+- **反对派集团**（S, V, MP）对NU21提出12项保留，对CU30提出5项保留——高密度保留意见表明深层政策分歧
+- **选前倍增系数激活**（距2026年9月≤6个月）：DIW分数上升1.5倍；两份报告均为L2+优先级
+- **Andreas Lennkvist Manriquez（V）**在投票反对政府能源目标的同时领导CU——制度上自相矛盾的信号；委员会程序在议会规则下形式上有效
+
+### 主要前瞻触发因素
+
+**CU30表决日**（2026年5月底）：如果SD、M、KD、L维持联合纪律，定性能源目标通过——但若有政党离脱（尤其是核能框架压力下的KD或L），程序性延迟成为可能。监视政党督导人。
+
+### 置信度评估
+
+**HIGH [B2]** — 基于Riksdag主要文件（dok_id HD01NU21, HD01CU30）、委员会文本的直接引用、已知议会席位分配（Tidökoalitionen多数）、Lagrådets yttrande（对NU21无异议）和IMF WEO 2026年4月宏观经济背景。
+
+```mermaid
+graph LR
+    style NU21 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style CU30 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style GOV fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style OPP fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    
+    NU21["HD01NU21\n农村政策\nL2+ 优先级 [B2]"]
+    CU30["HD01CU30\n能源效率目标\nL2+ 优先级 [B2]"]
+    GOV["执政联盟\nM, SD, KD, L\n173+席位"]
+    OPP["反对党\nS, V, C, MP\n176席位"]
+    
+    GOV -->|"支持"| NU21
+    GOV -->|"支持"| CU30
+    OPP -->|"12项保留"| NU21
+    OPP -->|"5项保留"| CU30
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
@@ -1439,6 +2091,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

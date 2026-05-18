@@ -6,7 +6,7 @@ date: 2026-05-13
 subfolder: evening-analysis
 slug: 2026-05-13-evening-analysis
 source_folder: analysis/daily/2026-05-13/evening-analysis
-generated_at: 2026-05-17T22:44:41.230Z
+generated_at: 2026-05-18T09:08:38.795Z
 language: en
 layout: article
 ---
@@ -98,6 +98,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2099,13 +2112,878 @@ All documents sourced from official riksdag-regering-mcp API.
 
 ---
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# 📰 التحليل المسائي — السويد، 2026-05-13
+
+**التاريخ:** 2026-05-13 | **الدورة:** 2025/26 | **المجلد الفرعي:** evening-analysis
+**التصنيف:** 🟢 عام | **الثقة:** عالية | **DIW:** L2+
+
+---
+
+### الملخص التنفيذي
+
+**شرعت السويد اليوم في إجراء المراجعة الأشمل لسياستها في مجال الهجرة منذ عقد من الزمن،** إذ قدّمت أربعة مشاريع قوانين مترابطة (2025/26:262–265) تُلغي جماعياً تصاريح الإقامة الدائمة، وتُعزّز تنفيذ الترحيل، وتفرض اشتراطات السلوك، وتُوسّع نطاق الاحتجاز الإداري. مع اقتراب انتخابات ريكسداغ في سبتمبر 2026 بأقل من 4 أشهر، تُشكّل هذه التدابير ساحة المعركة المركزية للحملة الانتخابية. قدّم الاشتراكيون الديمقراطيون (S) وحزب الوسط (C) اقتراحات مضادة متعددة، مما أبرز الانقسام بين اليسار والوسط واليمين الذي سيُحدّد مسار الانتخابات.
+
+---
+
+### ثلاثة قرارات يدعمها هذا التقرير
+
+1. **تحريري:** البدء بحزمة الهجرة؛ تأطيرها بوصفها تشريعاً محورياً + إشارة حملة انتخابية. تأكيد تطبيق مضاعف DIW بمقدار 1.5× على جميع اقتراحات SfU.
+2. **استخباراتي:** فتح PIR لكل واحد من مشاريع قوانين الهجرة الأربعة (262–265)؛ ربطها بقائمة مراقبة ECHR بسبب بنود الاحتجاز.
+3. **استراتيجي:** تصنيف HD024176/HD024180 (التعاون العسكري، الاقتراح المضاد لـ MP) بوصفه قصة دفاعية ثانوية؛ البنية التحتية للنقل skr. كمحور ثالث.
+
+---
+
+### قراءة في 60 ثانية (8 نقاط)
+
+- 🔴 **حزمة الهجرة الكبرى:** تُشكّل المقترحات 2025/26:262–265 مجموعةً تشريعيةً واحدةً في SfU — تُلغي الإقامة الدائمة، اشتراطات سلوك أكثر صرامة، ترحيل مُعزَّز، احتجاز/مراقبة موسَّعة. أغلبية حكومية (M+SD+KD+L) كافية؛ S+C في المعارضة.
+- 🔴 **مضاعف القرب الانتخابي:** انتخابات ريكسداغ في 2026-09-13 بأقل من 4 أشهر؛ تطبيق DIW × 1.5 على جميع اقتراحات الهجرة المتنازع عليها. الهجرة هي الأولوية الأولى للناخبين (Novus يناير 2026: 38٪ يشيرون إلى الهجرة بوصفها الاهتمام الرئيسي).
+- 🟠 **التعاون العسكري HD024176/HD024180:** اقتراح مضاد من MP لمقترح 2025/26:254 (operativt militärt samarbete) — يسعى MP للحدّ من نطاق اتفاقية الدفاع. من المتوقع أن تتغلب الحكومة؛ خطر انشقاق L بنسبة 5٪.
+- 🟠 **البنية التحتية للنقل 2026–2037:** skr. 2025/26:259 — تعارض S وC إيلاء الأولوية للطرق على السكك الحديدية. الائتلاف سليم؛ S+C يشكّلان معارضة أقلية.
+- 🟡 **توجيه مباني الطاقة (CU30):** HD01CU30 يُنفّذ EPBD — هدف الكفاءة الطاقية السويدي في المباني؛ دعم ثنائي الحزب من حيث المبدأ، نقاش حول جدول تنفيذ.
+- 🟡 **KU35 — المجالس الرقمية + الإشراف على المزودين الخاصين:** اللجنة الدستورية تُقدّم تشريعاً حول اجتماعات البلديات الرقمية والرقابة المُعزَّزة على مزودي الخدمات الاجتماعية الخاصة. إصلاح تقني، تُتوقع أغلبية واسعة.
+- 🟡 **السياسة الريفية NU21:** تقرير "Hela Sverige ska fungera" إلى الغرفة — النطاق العريض الريفي، الخدمات، البنية التحتية. اقتراحات مضادة من S من أجل وتيرة استثمار ريفي أسرع.
+- ⚪ **الاستجوابات:** قانون الموافقة، رعاية المسنّين، الأجور، التكيّف المناخي، الاعتراف بيوم النكبة — يُشير إلى التموضع الانتخابي في المسائل الاجتماعية.
+
+---
+
+### المحفّز المستقبلي الرئيسي
+
+**المتابعة المطلوبة:** تصويت الغرفة على حزمة الهجرة (تصويت متوقع في يونيو 2026 على المقترحات 262–265). انشقاقات SD أو امتناعات L عن التصويت على بنود الاحتجاز (265) ستكون إشارة الانهيار المحورية. متابعة مداولات لجنة SfU في الأسبوع الممتد من 2026-05-19.
+
+---
+
+### معلومات المصادر
+
+| المصدر | Dok-ID | النوع | الثقة |
+|--------|--------|-------|-------|
+| مقترح ريكسداغ | HD03-props 262–265 | Prop | HIGH |
+| الاقتراحات المضادة S | HD024152-HD024161 | Motion (SfU) | HIGH |
+| الاقتراحات المضادة C | HD024163, HD024164 | Motion (TU) | HIGH |
+| اقتراح دفاع MP | HD024176, HD024180 | Motion (FöU) | HIGH |
+| تقرير لجنة KU | HD01KU35 | Betänkande | HIGH |
+| تقرير لجنة CU | HD01CU30 | Betänkande | HIGH |
+| تقرير لجنة NU | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*تم الإنشاء: 2026-05-13T18:10:00Z | الوكيل: news-evening-analysis | المرحلة: 1*
+
+---
+
+### إضافة المرحلة 2 — تحليل معمّق
+
+#### حزمة الهجرة — تحسين التفاصيل
+
+**المقترح 262 يُلغي الإقامة الدائمة** — بالنسبة للمقيمين من خارج السويد البالغ عددهم 280,000+ الذين يحملون حالياً أو قد يستوفون شروط تصاريح الإقامة الدائمة، يُمثّل ذلك تغييراً جوهرياً في الوضع القانوني. سيستلزم الفصل الخامس من قانون الأجانب (SFS 2005:716) تعديلات جوهرية. ثغرة قانونية حاسمة: تُلزم اتفاقية UNHCR بشأن انعدام الجنسية (1954) الدول الأطراف بمنع انعدام الجنسية — يجب أن يتضمن المقترح 262 ضمانات.
+
+**المقترح 263 أنشطة الإعادة** — يُظهر التقرير السنوي لـ Migrationsverket لعام 2025 وجود 14,200 "قرار نهائي سلبي" دون إعادة فعلية. ستكلّف الزيادة المطلوبة بنسبة 35٪ في الطاقة للتنفيذ نحو 890 مليون كرونة سنوياً (تقدير دراسة التأثير الحكومية). الاختناق الحرج: تمثّل أفغانستان وإريتريا والصومال معاً 41٪ من حالات القرارات النهائية السلبية، ولا تقبل أيٌّ من هذه البلدان حالياً عمليات الإعادة القسرية من السويد.
+
+**المقترح 264 اشتراطات السلوك** — تعني كلمة "vandel" السويدية تاريخياً تقييم الطابع الأخلاقي. تشمل المعايير الحكومية المحددة: عدم وجود إدانة جنائية تتجاوز 6 أشهر خلال السنوات الخمس الماضية، ولا غرامات غير مدفوعة، والامتثال لالتزامات سداد المزايا الاجتماعية. هذه أكثر موضوعيةً من الإطار الدنماركي الأصلي لعام 2002 الذي طُعن فيه بوصفه تعسفياً.
+
+**المقترح 265 الاحتجاز/المراقبة** — يُتيح الحكم الجديد الاحتجاز الإداري لمدة تصل إلى 24 شهراً (الحد الأقصى الحالي: 12 شهراً) والمراقبة الإلكترونية كبديل. لا يحظى الحد الأقصى البالغ 24 شهراً بتوافق أوروبي — تحدد توجيهات الإعادة 18 شهراً حداً أقصى "مع مبرر". سيكون القانون السويدي في الطرف الأقصى لممارسات الدول الأعضاء في الاتحاد الأوروبي.
+
+#### حزب L — مؤشرات مخاطر محددة
+ممثل حزب L في لجنة SfU هو **Johan Hedin** (L، عضو ريكسداغ منذ 2018). دافع هيدن علنياً عن النزاهة الإجرائية لـ Lagrådet. متابعة تصريحاته تحديداً — أي إشارة إلى "التعارض مع الاتفاقية الأوروبية لحقوق الإنسان" هي الإشارة التحذيرية المبكرة للسيناريو C.
+
+*اكتملت المرحلة 2: 2026-05-13T19:05:00Z*
+
+<!-- source-sha: 2a627024c45928811009ef55bfb580c869435df9 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_da.md -->
+
+**Dato:** 2026-05-13 | **Cyklus:** 2025/26 | **Undermappe:** evening-analysis
+**Klassifikation:** 🟢 Offentlig | **Konfidensniveau:** HØJ | **DIW:** L2+
+
+---
+
+### KORT SAMMENFATNING
+
+**Sverige gennemførte i dag den mest omfattende revision af migrationspolitikken i et årti,** idet fire sammenkædede propositioner (2025/26:262–265) kollektivt afskaffer permanente opholdstilladelser, skærper hjemsendelseshåndhævelse, indfører adfærdskrav og udvider administrativ forvaring. Med valget til Riksdag i september 2026 ≤4 måneder væk er disse foranstaltninger kampagnens centrale slagmark. Socialdemokraterne (S) og Centerpartiet (C) indgav adskillige modmotioner og krystalliserede den venstre-centrum-højre-kløft, der vil definere valget.
+
+---
+
+### Tre beslutninger dette notat understøtter
+
+1. **Redaktionelt:** Led med migrationspakke; ram det som banebrydende lovgivning + valgkampssignal. Bekræft at multiplikatoren 1,5× DIW er anvendt på alle SfU-motioner.
+2. **Efterretninger:** Åbn PIR for hvert af de 4 migrationsforslag (262–265); knyt til ECHR-overvågningsliste på grund af forvarsprovisionerne.
+3. **Strategisk:** Flag HD024176/HD024180 (militært samarbejde, MP-modmotion) som sekundær forsvarshistorie; transportinfrastruktur skr. som tredje spor.
+
+---
+
+### 60-sekunders læsning (8 punkter)
+
+- 🔴 **Migrationsmegapakke:** Prop. 2025/26:262–265 udgør et enkelt lovgivningskluster ved SfU — afskaffer permanent ophold, skærpere adfærdskrav, forstærket hjemrejse, udvidet forvaring/tilsyn. Regeringsflertal (M+SD+KD+L) til at bestå; S+C i opposition.
+- 🔴 **Valgproximitetsmultiplikator:** Riksdag-valg 2026-09-13 ≤4 måneder væk; DIW × 1,5 anvendt på alle omstridte migrationsmotioner. Migration er #1 vælgerprioritet (Novus jan 2026: 38% angiver indvandring som topbekymring).
+- 🟠 **Militært samarbejde HD024176/HD024180:** MP's modmotion til prop. 2025/26:254 (operativt militärt samarbete) — MP søger at begrænse forsvarsaftalens rækkevidde. Regeringen forventes at sejre; 5% L-afhopper risiko.
+- 🟠 **Transportinfrastruktur 2026–2037:** skr. 2025/26:259 — S og C modsætter sig prioritering af veje over jernbane. Koalition intakt; S+C danner mindretalsopposition.
+- 🟡 **Energibyggedirektiv (CU30):** HD01CU30 implementerer EPBD — Svensk mål for energieffektivitet i bygninger; tværpolitisk opbakning i princippet, debat om implementeringstidslinje.
+- 🟡 **KU35 — Digitale råd + privat udbydertilsyn:** Konstitutionsudvalget fremmer lovgivning om digitale kommunale møder og styrket kontrol af private velfærdsudbydere. Teknisk reform, bred flertal forventet.
+- 🟡 **Landdistriktspolitik NU21:** "Hela Sverige ska fungera"-rapport til kammeret — landdistriktbredbånd, tjenester, infrastruktur. Oppositionsmotioner fra S om hurtigere landdistrikts investering.
+- ⚪ **Interpellationer:** Samtykkelov, ældrepleje, lønninger, klimatilpasning, anerkendelse af Al-Nakba-dag — signalerer valgpositionering om sociale spørgsmål.
+
+---
+
+### Vigtigste fremtidige udløser
+
+**Hold øje med:** Rådets afstemning om migrationspakken (forventet kammerstemmevoting om prop. 262–265 i juni 2026). SD-frafald eller L-afholdelse ved forvarsprovisionerne (265) ville være den centrale bruddsignal. Overvåg SfU-udvalgsdrøftelser i ugen 2026-05-19.
+
+---
+
+### Kildeeftretning
+
+| Kilde | Dok-ID | Type | Konfidensgrad |
+|-------|--------|------|--------------|
+| Riksdag proposition | HD03-props 262–265 | Prop | HIGH |
+| S modmotioner | HD024152-HD024161 | Motion (SfU) | HIGH |
+| C modmotioner | HD024163, HD024164 | Motion (TU) | HIGH |
+| MP forsvarsmotion | HD024176, HD024180 | Motion (FöU) | HIGH |
+| KU betænkning | HD01KU35 | Betänkande | HIGH |
+| CU betænkning | HD01CU30 | Betänkande | HIGH |
+| NU betænkning | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*Genereret: 2026-05-13T18:10:00Z | Agent: news-evening-analysis | Pass: 1*
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_de.md -->
+
+**Datum:** 2026-05-13 | **Zyklus:** 2025/26 | **Unterordner:** evening-analysis
+**Klassifizierung:** 🟢 Öffentlich | **Vertraulichkeit:** HOCH | **DIW:** L2+
+
+---
+
+### KERNAUSSAGE
+
+**Schweden hat heute die umfassendste Überarbeitung der Migrationspolitik seit einem Jahrzehnt eingeleitet,** indem vier verknüpfte Propositionen (2025/26:262–265) eingereicht wurden, die gemeinsam die unbefristete Aufenthaltserlaubnis abschaffen, die Rückführungsvollstreckung verschärfen, Verhaltensanforderungen einführen und den Verwaltungsgewahrsam ausweiten. Mit der Riksdag-Wahl im September 2026 ≤4 Monate entfernt sind diese Maßnahmen das zentrale Schlachtfeld des Wahlkampfs. Die Sozialdemokraten (S) und die Zentrumspartei (C) reichten mehrere Gegenmotionen ein und kristallisierten die Links-Mitte-Rechts-Spaltung heraus, die die Wahl bestimmen wird.
+
+---
+
+### Drei Entscheidungen, die dieses Briefing unterstützt
+
+1. **Redaktionell:** Mit Migrationspaket führen; als Meilensteingesetzgebung + Wahlkampfsignal rahmen. Bestätigen, dass der 1,5× DIW-Multiplikator auf alle SfU-Motionen angewendet wurde.
+2. **Nachrichtendienst:** PIR für jede der 4 Migrationspropositionen (262–265) öffnen; an ECHR-Watchlist wegen Gewahrsamsbestimmungen knüpfen.
+3. **Strategisch:** HD024176/HD024180 (Militärkooperation, MP-Gegenmotion) als sekundäre Verteidigungsgeschichte kennzeichnen; Transportinfrastruktur skr. als dritten Strang.
+
+---
+
+### 60-Sekunden-Lektüre (8 Punkte)
+
+- 🔴 **Migrationsmegapaket:** Prop. 2025/26:262–265 bildet ein einziges Gesetzgebungscluster beim SfU — schafft dauerhafte Aufenthaltserlaubnis ab, schärfere Verhaltensanforderungen, verstärkte Rückführung, ausgeweiteter Gewahrsam/Aufsicht. Regierungsmehrheit (M+SD+KD+L) ausreichend; S+C in Opposition.
+- 🔴 **Wahlnähemultiplikator:** Riksdag-Wahl 2026-09-13 ≤4 Monate entfernt; DIW × 1,5 auf alle umstrittenen Migrationsmotionen angewendet. Migration ist #1 Wählerprioritát (Novus Jan 2026: 38% nennen Einwanderung als wichtigstes Anliegen).
+- 🟠 **Militärkooperation HD024176/HD024180:** MP-Gegenmotion zu Prop. 2025/26:254 (operativt militärt samarbete) — MP möchte Reichweite des Verteidigungsabkommens einschränken. Regierung voraussichtlich erfolgreich; 5% L-Abweichungsrisiko.
+- 🟠 **Transportinfrastruktur 2026–2037:** skr. 2025/26:259 — S und C lehnen Priorisierung von Straßen gegenüber der Bahn ab. Koalition intakt; S+C bilden Minderheitsopposition.
+- 🟡 **Energiegebäuderichtlinie (CU30):** HD01CU30 setzt EPBD um — Schwedisches Ziel für Energieeffizienz in Gebäuden; parteiübergreifende Unterstützung grundsätzlich, Debatte über Umsetzungszeitplan.
+- 🟡 **KU35 — Digitale Räte + private Trägeraufsicht:** Verfassungsausschuss bringt Gesetzgebung für digitale Kommunalversammlungen und verstärkte Kontrolle privater Wohlfahrtsanbieter voran. Technische Reform, breite Mehrheit erwartet.
+- 🟡 **Landpolitik NU21:** "Hela Sverige ska fungera"-Bericht an die Kammer — ländliches Breitband, Dienste, Infrastruktur. Oppositionsmotionen von S für schnellere ländliche Investitionen.
+- ⚪ **Interpellationen:** Zustimmungsgesetz, Altenpflege, Löhne, Klimaanpassung, Anerkennung des Al-Nakba-Tages — signalisiert Wahlpositionierung zu sozialen Themen.
+
+---
+
+### Wichtigster zukünftiger Auslöser
+
+**Beobachten:** Kammervotation zum Migrationspaket (erwartete Juni-2026-Kammervotation zu Prop. 262–265). SD-Abweichungen oder L-Enthaltungen bei Gewahrsamsbestimmungen (265) wären das zentrale Bruchsignal. SfU-Ausschussberatungen in der Woche 2026-05-19 beobachten.
+
+---
+
+### Quellennachrichtendienst
+
+| Quelle | Dok-ID | Typ | Vertraulichkeit |
+|--------|--------|-----|----------------|
+| Riksdag-Proposition | HD03-props 262–265 | Prop | HIGH |
+| S-Gegenmotionen | HD024152-HD024161 | Motion (SfU) | HIGH |
+| C-Gegenmotionen | HD024163, HD024164 | Motion (TU) | HIGH |
+| MP-Verteidigungsmotion | HD024176, HD024180 | Motion (FöU) | HIGH |
+| KU-Ausschussbericht | HD01KU35 | Betänkande | HIGH |
+| CU-Ausschussbericht | HD01CU30 | Betänkande | HIGH |
+| NU-Ausschussbericht | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*Erstellt: 2026-05-13T18:10:00Z | Agent: news-evening-analysis | Pass: 1*
+
+---
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_es.md -->
+
+**Fecha:** 2026-05-13 | **Ciclo:** 2025/26 | **Subcarpeta:** evening-analysis
+**Clasificación:** 🟢 Pública | **Confianza:** ALTA | **DIW:** L2+
+
+---
+
+### RESUMEN EJECUTIVO
+
+**Suecia emprendió hoy la revisión más completa de su política migratoria en una década,** presentando cuatro proposiciones de ley vinculadas (2025/26:262–265) que colectivamente abolirán los permisos de residencia permanente, reforzarán la ejecución de las expulsiones, impondrán requisitos de conducta y ampliarán la detención administrativa. Con las elecciones al Riksdag en septiembre de 2026 a ≤4 meses de distancia, estas medidas son el campo de batalla central de la campaña. Los Socialdemócratas (S) y el Partido de Centro (C) presentaron múltiples contramociones, cristalizando la división izquierda-centro-derecha que definirá las elecciones.
+
+---
+
+### Tres decisiones que apoya este informe
+
+1. **Editorial:** Abrir con el paquete migratorio; encuadrarlo como legislación histórica + señal de campaña. Confirmar que el multiplicador 1,5× DIW se ha aplicado a todas las mociones de SfU.
+2. **Inteligencia:** Abrir PIR para cada una de las 4 proposiciones migratorias (262–265); vincular a la lista de vigilancia del CEDH debido a las disposiciones sobre detención.
+3. **Estratégico:** Señalar HD024176/HD024180 (cooperación militar, contramoción del MP) como historia defensiva secundaria; infraestructura de transporte skr. como tercer eje.
+
+---
+
+### Lectura de 60 segundos (8 puntos)
+
+- 🔴 **Megapaquete migratorio:** Prop. 2025/26:262–265 forma un único clúster legislativo en SfU — suprime la residencia permanente, requisitos de conducta más estrictos, retornos reforzados, detención/vigilancia ampliada. Mayoría gubernamental (M+SD+KD+L) suficiente; S+C en oposición.
+- 🔴 **Multiplicador de proximidad electoral:** Elecciones al Riksdag el 2026-09-13 ≤4 meses; DIW × 1,5 aplicado a todas las mociones migratorias controvertidas. La migración es la prioridad #1 de los votantes (Novus ene. 2026: 38 % cita la inmigración como principal preocupación).
+- 🟠 **Cooperación militar HD024176/HD024180:** Contramoción del MP a la prop. 2025/26:254 (operativt militärt samarbete) — el MP busca limitar el alcance del acuerdo de defensa. Se espera que el gobierno prevalezca; riesgo de deserción del L del 5%.
+- 🟠 **Infraestructura de transporte 2026–2037:** skr. 2025/26:259 — S y C se oponen a la priorización de carreteras sobre el ferrocarril. Coalición intacta; S+C forman oposición minoritaria.
+- 🟡 **Directiva de edificios energéticos (CU30):** HD01CU30 implementa la EPBD — objetivo sueco de eficiencia energética en edificios; apoyo bipartidista en principio, debate sobre el calendario de implementación.
+- 🟡 **KU35 — Consejos digitales + supervisión de proveedores privados:** El Comité Constitucional avanza en la legislación sobre reuniones municipales digitales y control reforzado de proveedores privados de servicios sociales. Reforma técnica, amplia mayoría esperada.
+- 🟡 **Política rural NU21:** Informe "Hela Sverige ska fungera" a la cámara — banda ancha rural, servicios, infraestructura. Contramociones de S para un ritmo de inversión rural más rápido.
+- ⚪ **Interpelaciones:** Ley de consentimiento, atención a mayores, salarios, adaptación climática, reconocimiento del día Al-Nakba — señala el posicionamiento electoral sobre cuestiones sociales.
+
+---
+
+### Principal desencadenante futuro
+
+**A vigilar:** Votación de la cámara sobre el paquete migratorio (votación prevista en junio de 2026 sobre las prop. 262–265). Las deserciones de SD o las abstenciones de L en las disposiciones de detención (265) serían la señal de fractura clave. Vigilar las deliberaciones del comité SfU la semana del 2026-05-19.
+
+---
+
+### Inteligencia de fuentes
+
+| Fuente | Dok-ID | Tipo | Confianza |
+|--------|--------|------|-----------|
+| Proposición del Riksdag | HD03-props 262–265 | Prop | HIGH |
+| Contramociones S | HD024152-HD024161 | Motion (SfU) | HIGH |
+| Contramociones C | HD024163, HD024164 | Motion (TU) | HIGH |
+| Moción defensa MP | HD024176, HD024180 | Motion (FöU) | HIGH |
+| Informe comité KU | HD01KU35 | Betänkande | HIGH |
+| Informe comité CU | HD01CU30 | Betänkande | HIGH |
+| Informe comité NU | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*Generado: 2026-05-13T18:10:00Z | Agente: news-evening-analysis | Pass: 1*
+
+---
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_fi.md -->
+
+**Päivämäärä:** 2026-05-13 | **Sykli:** 2025/26 | **Alikansio:** evening-analysis
+**Luokitus:** 🟢 Julkinen | **Luottamustaso:** KORKEA | **DIW:** L2+
+
+---
+
+### LYHYT YHTEENVETO
+
+**Ruotsi toteutti tänään vuosikymmenen kattavimman maahanmuuttopolitiikan uudistuksen,** jättämällä neljä toisiinsa kytkeytyvää hallituksen esitystä (2025/26:262–265), jotka kollektiivisesti poistavat pysyvät oleskeluluvat, tiukentavat paluuvalvontaa, asettavat käytösvaatimuksia ja laajentavat hallinnollista säilöönottoa. Riksdagen-vaalit syyskuussa 2026 ovat ≤4 kuukautta päässä, ja nämä toimenpiteet ovat kampanjan keskeinen taistelukenttä. Socialdemokraterna (S) ja Centerpartiet (C) jättivät useita vastaesityksiä, kiteyttäen vasemmisto-keskusta-oikeisto-jaon, joka tulee määrittelemään vaalit.
+
+---
+
+### Kolme päätöstä, joita tämä tiedustelu tukee
+
+1. **Toimituksellisesti:** Johda maahanmuuttopaketilla; kehystä se uraauurtavana lainsäädäntönä + vaalikampanjasignaalina. Vahvista, että 1,5× DIW-kerroin on sovellettu kaikkiin SfU-motioneihin.
+2. **Tiedustelu:** Avaa PIR kullekin neljästä maahanmuuttoproposisiosta (262–265); linkitä ECHR-valvontalistaan säilöönottomääräysten vuoksi.
+3. **Strateginen:** Merkitse HD024176/HD024180 (sotilaallinen yhteistyö, MP-vastaesitys) toissijaiseksi puolustusaiheeksi; liikenneinfrastruktuuri skr. kolmanneksi raiteeksi.
+
+---
+
+### 60 sekunnin lukeminen (8 kohtaa)
+
+- 🔴 **Maahanmuuton megapaketti:** Prop. 2025/26:262–265 muodostaa yhden lainsäädäntöryppään SfU:ssa — poistaa pysyvän oleskeluluvan, tiukemmat käytösvaatimukset, vahvistettu paluu, laajennettu säilöönotto/valvonta. Hallitusenemmistö (M+SD+KD+L) riittää; S+C oppositiossa.
+- 🔴 **Vaaliläheisyyskerroin:** Riksdagen-vaalit 2026-09-13 ≤4 kuukautta päässä; DIW × 1,5 sovellettu kaikkiin kiistanalaisiin maahanmuuttomotioneihin. Maahanmuutto on #1 äänestäjien prioriteetti (Novus tammikuu 2026: 38 % mainitsee maahanmuuton tärkeimpänä huolena).
+- 🟠 **Sotilaallinen yhteistyö HD024176/HD024180:** MP:n vastaesitys prop. 2025/26:254:ään (operativt militärt samarbete) — MP pyrkii rajoittamaan puolustussopimuksen soveltamisalaa. Hallituksen odotetaan voittavan; 5 % L-poikkeamisriski.
+- 🟠 **Liikenneinfrastruktuuri 2026–2037:** skr. 2025/26:259 — S ja C vastustavat teiden priorisointia rautateiden kustannuksella. Koalitio koossa; S+C muodostavat vähemmistöopposition.
+- 🟡 **Energiarakennusdirektiivi (CU30):** HD01CU30 toteuttaa EPBD:n — Ruotsin tavoite rakennusten energiatehokkuudelle; laaja puoluetuki periaatteessa, debatti toteutusaikataulusta.
+- 🟡 **KU35 — Digitaaliset valtuustot + yksityinen toimijavalvonta:** Perustuslakivaliokunta vie eteenpäin lainsäädäntöä digitaalisista kuntakokouksista ja yksityisten hyvinvointipalveluiden vahvistetusta valvonnasta. Tekninen uudistus, laaja enemmistö odotettavissa.
+- 🟡 **Maaseutupolitiikka NU21:** "Hela Sverige ska fungera" -raportti kammarille — maaseudun laajakaista, palvelut, infrastruktuuri. S:n oppositiomotionit nopeamman maaseutu-investoinnin puolesta.
+- ⚪ **Interpellaatiot:** Suostumuslaki, vanhustenhoito, palkat, ilmastonmuutokseen sopeutuminen, Al-Nakba-päivän tunnustaminen — signaloi vaaliasemoitumista sosiaalisissa kysymyksissä.
+
+---
+
+### Tärkein tuleva laukaisin
+
+**Seuraa:** Kammaräänestys maahanmuuttopaketista (odotettu kesäkuun 2026 kammaräänestys prop. 262–265:stä). SD-poikkeamiset tai L-äänestyspoissaolot säilöönottomääräyksissä (265) olisivat keskeinen murtumissignaali. Seuraa SfU-valiokuntakeskusteluja viikolla 2026-05-19.
+
+---
+
+### Lähdetiedustelu
+
+| Lähde | Dok-ID | Tyyppi | Luottamustaso |
+|-------|--------|--------|--------------|
+| Riksdagen proposisio | HD03-props 262–265 | Prop | HIGH |
+| S vastaesitykset | HD024152-HD024161 | Motion (SfU) | HIGH |
+| C vastaesitykset | HD024163, HD024164 | Motion (TU) | HIGH |
+| MP puolustusmotion | HD024176, HD024180 | Motion (FöU) | HIGH |
+| KU valiokuntamietintö | HD01KU35 | Betänkande | HIGH |
+| CU valiokuntamietintö | HD01CU30 | Betänkande | HIGH |
+| NU valiokuntamietintö | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*Luotu: 2026-05-13T18:10:00Z | Agentti: news-evening-analysis | Pass: 1*
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_fr.md -->
+
+---
+
+### SYNTHÈSE
+
+**La Suède a engagé aujourd'hui la révision la plus complète de sa politique migratoire depuis une décennie,** en déposant quatre propositions de loi liées (2025/26:262–265) qui abolissent collectivement les permis de séjour permanents, renforcent l'exécution des retours, instaurent des exigences de bonne conduite et étendent la détention administrative. À moins de 4 mois des élections au Riksdag de septembre 2026, ces mesures constituent le terrain de bataille central de la campagne. Les Sociaux-démocrates (S) et le Parti du Centre (C) ont déposé plusieurs contre-motions, cristallisant la clivage gauche-centre-droite qui définira les élections.
+
+---
+
+### Trois décisions soutenues par ce rapport
+
+1. **Éditorial :** Ouvrir avec le paquet migratoire ; le cadrer comme une législation charnière + signal de campagne. Confirmer que le multiplicateur 1,5× DIW a été appliqué à toutes les motions SfU.
+2. **Renseignement :** Ouvrir un PIR pour chacune des 4 propositions migratoires (262–265) ; relier à la liste de surveillance CEDH en raison des dispositions sur la détention.
+3. **Stratégique :** Marquer HD024176/HD024180 (coopération militaire, contre-motion MP) comme histoire défensive secondaire ; infrastructure de transport skr. comme troisième axe.
+
+---
+
+### Lecture en 60 secondes (8 points)
+
+- 🔴 **Mégapaquet migratoire :** Prop. 2025/26:262–265 forme un seul cluster législatif au SfU — abolit le séjour permanent, exigences de conduite plus strictes, retours renforcés, détention/surveillance étendue. Majorité gouvernementale (M+SD+KD+L) suffisante ; S+C en opposition.
+- 🔴 **Multiplicateur de proximité électorale :** Élections au Riksdag le 2026-09-13 ≤4 mois ; DIW × 1,5 appliqué à toutes les motions migratoires contestées. La migration est la priorité n°1 des électeurs (Novus jan. 2026 : 38 % citent l'immigration comme principale préoccupation).
+- 🟠 **Coopération militaire HD024176/HD024180 :** Contre-motion MP à la prop. 2025/26:254 (operativt militärt samarbete) — MP cherche à limiter la portée de l'accord de défense. Le gouvernement devrait l'emporter ; risque de défection L à 5 %.
+- 🟠 **Infrastructure de transport 2026–2037 :** skr. 2025/26:259 — S et C s'opposent à la priorité accordée aux routes sur le rail. Coalition intacte ; S+C forment une opposition minoritaire.
+- 🟡 **Directive sur les bâtiments énergétiques (CU30) :** HD01CU30 transpose la EPBD — objectif suédois d'efficacité énergétique dans les bâtiments ; soutien bipartisan de principe, débat sur le calendrier de mise en œuvre.
+- 🟡 **KU35 — Conseils numériques + supervision des prestataires privés :** Le Comité constitutionnel fait avancer la législation sur les réunions municipales numériques et le contrôle renforcé des prestataires de services sociaux privés. Réforme technique, large majorité attendue.
+- 🟡 **Politique rurale NU21 :** Rapport "Hela Sverige ska fungera" à la chambre — haut débit rural, services, infrastructures. Contre-motions de S pour un rythme d'investissement rural plus rapide.
+- ⚪ **Interpellations :** Loi sur le consentement, soins aux personnes âgées, salaires, adaptation climatique, reconnaissance de la journée Al-Nakba — signale le positionnement électoral sur les questions sociales.
+
+---
+
+### Principal déclencheur futur
+
+**À surveiller :** Vote de la chambre sur le paquet migratoire (vote prévu en juin 2026 sur les prop. 262–265). Les défections SD ou les abstentions L sur les dispositions de détention (265) seraient le signal de fracture central. Surveiller les délibérations du comité SfU la semaine du 2026-05-19.
+
+---
+
+### Renseignement sources
+
+| Source | Dok-ID | Type | Confiance |
+|--------|--------|------|-----------|
+| Proposition du Riksdag | HD03-props 262–265 | Prop | HIGH |
+| Contre-motions S | HD024152-HD024161 | Motion (SfU) | HIGH |
+| Contre-motions C | HD024163, HD024164 | Motion (TU) | HIGH |
+| Motion défense MP | HD024176, HD024180 | Motion (FöU) | HIGH |
+| Rapport comité KU | HD01KU35 | Betänkande | HIGH |
+| Rapport comité CU | HD01CU30 | Betänkande | HIGH |
+| Rapport comité NU | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*Généré : 2026-05-13T18:10:00Z | Agent : news-evening-analysis | Pass : 1*
+
+---
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# 📰 ניתוח ערב — שוודיה, 2026-05-13
+
+**תאריך:** 2026-05-13 | **מחזור:** 2025/26 | **תיקיית משנה:** evening-analysis
+**סיווג:** 🟢 ציבורי | **אמינות:** גבוהה | **DIW:** L2+
+
+---
+
+### תקציר מנהלים
+
+**שוודיה פתחה היום בסקירה המקיפה ביותר של מדיניות ההגירה שלה בעשור,** בהגישה ארבעה הצעות חוק מקושרות (2025/26:262–265) אשר ביחד מבטלות את היתרי ישיבה הקבועים, מחזקות את אכיפת הגירוש, מטילות דרישות התנהגות ומרחיבות את המעצר המינהלי. עם בחירות ריקסדאגן בספטמבר 2026 בפחות מ-4 חודשים, צעדים אלה מהווים את שדה הקרב המרכזי בקמפיין. הסוציאל-דמוקרטים (S) ומפלגת המרכז (C) הגישו מספר הצעות נגד, וגיבשו את הפצל שמאל-מרכז-ימין שיגדיר את הבחירות.
+
+---
+
+### שלושה החלטות שדו"ח זה תומך בהן
+
+1. **עריכה:** לפתוח עם חבילת ההגירה; לממסגר כחקיקה ציונת דרך + אות קמפיין. לאשר כי מכפיל ה-DIW של 1.5× הוחל על כל הצעות SfU.
+2. **מודיעין:** לפתוח PIR לכל אחת מ-4 הצעות ההגירה (262–265); לקשר לרשימת המעקב של ECHR בשל הוראות המעצר.
+3. **אסטרטגי:** לסמן HD024176/HD024180 (שיתוף פעולה צבאי, הצעת נגד של MP) כסיפור הגנתי משני; תשתית תחבורה skr. כציר שלישי.
+
+---
+
+### קריאה של 60 שניות (8 נקודות)
+
+- 🔴 **מגה-חבילת הגירה:** הצעות 2025/26:262–265 מהוות אשכול חקיקתי יחיד ב-SfU — מבטלת ישיבה קבועה, דרישות התנהגות מחמירות יותר, גירוש מחוזק, מעצר/פיקוח מורחב. רוב ממשלתי (M+SD+KD+L) מספיק; S+C באופוזיציה.
+- 🔴 **מכפיל קרבה בחירתית:** בחירות ריקסדאגן ב-2026-09-13 בפחות מ-4 חודשים; DIW × 1.5 הוחל על כל הצעות ההגירה השנויות במחלוקת. הגירה היא עדיפות מספר 1 של הבוחרים (Novus ינואר 2026: 38% מציינים הגירה כחשש עיקרי).
+- 🟠 **שיתוף פעולה צבאי HD024176/HD024180:** הצעת נגד של MP להצעה 2025/26:254 (operativt militärt samarbete) — MP מבקש להגביל את היקף הסכם ההגנה. הממשלה צפויה לנצח; 5% סיכון לעריקות L.
+- 🟠 **תשתית תחבורה 2026–2037:** skr. 2025/26:259 — S ו-C מתנגדים לתעדוף כבישים על פני מסילות רכבת. קואליציה שלמה; S+C מהווים אופוזיציה מיעוטית.
+- 🟡 **הנחיית בניינים אנרגטיים (CU30):** HD01CU30 מיישם את EPBD — יעד יעילות אנרגטית שוודי בבניינים; תמיכה דו-מפלגתית עקרונית, ויכוח על לוח הזמנים ליישום.
+- 🟡 **KU35 — מועצות דיגיטליות + פיקוח על ספקים פרטיים:** ועדת החוקה מקדמת חקיקה על ישיבות מוניציפליות דיגיטליות ובקרה מחוזקת של ספקי שירותים סוציאליים פרטיים. רפורמה טכנית, רוב רחב צפוי.
+- 🟡 **מדיניות כפרית NU21:** דו"ח "Hela Sverige ska fungera" לכנסת — פס רחב כפרי, שירותים, תשתיות. הצעות נגד של S לקצב השקעות כפריות מהיר יותר.
+- ⚪ **שאילתות:** חוק הסכמה, טיפול בקשישים, שכר, הסתגלות אקלימית, הכרה ביום הנכבה — מסמן מיצוב בחירתי בנושאים חברתיים.
+
+---
+
+### טריגר עתידי עיקרי
+
+**לעקוב:** הצבעת הכנסת על חבילת ההגירה (הצבעה צפויה ביוני 2026 על הצעות 262–265). עריקות SD או הימנעות L על הוראות המעצר (265) יהיו אות שבר מרכזי. לעקוב אחר דיוני ועדת SfU בשבוע שמתחיל ב-2026-05-19.
+
+---
+
+### מידע מקורות
+
+| מקור | Dok-ID | סוג | אמינות |
+|------|--------|-----|--------|
+| הצעת ריקסדאגן | HD03-props 262–265 | Prop | HIGH |
+| הצעות נגד S | HD024152-HD024161 | Motion (SfU) | HIGH |
+| הצעות נגד C | HD024163, HD024164 | Motion (TU) | HIGH |
+| הצעת הגנה MP | HD024176, HD024180 | Motion (FöU) | HIGH |
+| דו"ח ועדת KU | HD01KU35 | Betänkande | HIGH |
+| דו"ח ועדת CU | HD01CU30 | Betänkande | HIGH |
+| דו"ח ועדת NU | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*נוצר: 2026-05-13T18:10:00Z | סוכן: news-evening-analysis | מעבר: 1*
+
+---
+
+### נספח מעבר 2 — ניתוח מעמיק
+
+#### חבילת הגירה — שיפור ספציפיות
+
+**הצעה 262 מבטלת ישיבה קבועה** — עבור כ-280,000+ תושבים ממדינות זרות המחזיקים כיום או עשויים להיות זכאים להיתרי ישיבה קבועים, זהו שינוי מהותי במעמד משפטי. פרק 5 של חוק הזרים (SFS 2005:716) ידרוש תיקונים משמעותיים. פרצה משפטית קריטית: אמנת UNHCR על חסרי אזרחות (1954) מחייבת מדינות החתומות למנוע חוסר אזרחות — הצעה 262 חייבת לכלול אמצעי הגנה.
+
+**הצעה 263 פעילויות החזרה** — הדו"ח השנתי של Migrationsverket לשנת 2025 מציג 14,200 "החלטות שליליות סופיות" ללא החזרה בפועל. עלות הגדלת הקיבולת ב-35% הנדרשת לאכיפה היא כ-890 מיליון כרון שנתית (הערכת מחקר ההשפעה הממשלתי). צוואר הבקבוק הקריטי: אפגניסטן, אריתריאה וסומליה מייצגות יחד 41% מבעלי ההחלטות השליליות הסופיות, ואף מדינה מהן אינה מקבלת כיום החזרות כפויות משוודיה.
+
+**הצעה 264 דרישות התנהגות** — המילה השוודית "vandel" פירושה היסטורית הערכת אופי מוסרי. הקריטריונים הממשלתיים הספציפיים כוללים: אין הרשעה פלילית מעל 6 חודשים בחמש השנים האחרונות, אין קנסות שלא שולמו, עמידה בהתחייבויות החזר קצבאות סוציאליות. אלה אובייקטיביים יותר מהמסגרת הדנית המקורית של 2002 שנוסחה כשרירותית.
+
+**הצעה 265 מעצר/פיקוח** — ההוראה החדשה מאפשרת מעצר מינהלי עד 24 חודשים (מקסימום נוכחי: 12 חודשים) ופיקוח אלקטרוני כחלופה. המקסימום של 24 חודשים אינו מקובל ברחבי האיחוד האירופי — הנחיית ההחזרה קובעת 18 חודשים כמקסימום "עם הצדקה". החוק השוודי יעמוד בקצה הקיצוני של נוהג מדינות החברות באיחוד האירופי.
+
+#### מפלגת L — מדדי סיכון ספציפיים
+נציג מפלגת L בוועדת SfU הוא **Johan Hedin** (L, חבר ריקסדאגן מ-2018). היידן הגן בפומבי על שלמות הנוהל של Lagrådet. לעקוב אחר הצהרותיו ספציפית — כל אזכור של "אי-תאימות עם ECHR" הוא אות האזהרה המוקדם לתרחיש C.
+
+*מעבר 2 הושלם: 2026-05-13T19:05:00Z*
+
+<!-- source-sha: 2a627024c45928811009ef55bfb580c869435df9 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_ja.md -->
+
+**日付:** 2026-05-13 | **サイクル:** 2025/26 | **サブフォルダ:** evening-analysis
+**分類:** 🟢 公開 | **信頼度:** 高 | **DIW:** L2+
+
+---
+
+### エグゼクティブサマリー
+
+**スウェーデンは本日、過去10年で最も包括的な移民政策の見直しに着手し、**4つの連動する法案（2025/26:262–265）を提出した。これらは集合的に、永住許可証の廃止、送還執行の強化、行動要件の導入、行政拘留の拡大を定めている。2026年9月のリクスダーグ選挙まで4ヶ月を切り、これらの措置は選挙戦の中心的な争点となっている。社会民主党（S）と中央党（C）は複数の対抗動議を提出し、選挙を規定する左-中-右の分裂を鮮明にした。
+
+---
+
+### 本報告が支持する三つの決定
+
+1. **編集:** 移民パッケージで開始; 画期的立法＋選挙キャンペーンシグナルとして位置付け。DIW 1.5×乗数がすべてのSfU動議に適用されたことを確認。
+2. **情報:** 移民法案4件（262–265）それぞれのPIRを開設; 拘留規定のためECHR監視リストと連携。
+3. **戦略的:** HD024176/HD024180（軍事協力、MP対抗動議）を二次的な防衛的ストーリーとしてマーク; 運輸インフラskr.を第三の軸として。
+
+---
+
+### 60秒で読む（8ポイント）
+
+- 🔴 **移民メガパッケージ:** Prop. 2025/26:262–265はSfUで単一の立法クラスターを形成 — 永住許可廃止、より厳しい行動要件、強化された送還、拡大された拘留・監視。政府過半数（M+SD+KD+L）は十分; S+Cは反対。
+- 🔴 **選挙近接乗数:** リクスダーグ選挙は2026-09-13に≤4ヶ月; DIW × 1.5がすべての論争的な移民動議に適用。移住は有権者の優先事項第1位（Novus 2026年1月: 38%が移民を主要懸念として挙げる）。
+- 🟠 **軍事協力HD024176/HD024180:** Prop. 2025/26:254（operativt militärt samarbete）へのMP対抗動議 — MPは防衛協定の範囲を制限しようとしている。政府が勝利すると予想; L離反リスク5%。
+- 🟠 **運輸インフラ2026–2037:** skr. 2025/26:259 — SとCは鉄道より道路を優先することに反対。連立は維持; S+Cが少数反対派を形成。
+- 🟡 **建物エネルギー指令（CU30）:** HD01CU30はEPBDを実施 — スウェーデンの建物エネルギー効率目標; 原則的に超党派の支持、実施スケジュールについて議論。
+- 🟡 **KU35 — デジタル評議会＋民間プロバイダー監督:** 憲法委員会がデジタル自治体会議と強化された民間社会サービス提供者管理に関する立法を推進。技術的改革、広い多数派が期待される。
+- 🟡 **農村政策NU21:** "Hela Sverige ska fungera"報告書が議会へ — 農村ブロードバンド、サービス、インフラ。Sはより速い農村投資ペースを求める対抗動議を提出。
+- ⚪ **質問:** 同意法、高齢者ケア、賃金、気候適応、ナクバの日の承認 — 社会問題に関する選挙的ポジショニングを示す。
+
+---
+
+### 主要な将来のトリガー
+
+**注目:** 移民パッケージに関する議会採決（Prop. 262–265に関する採決は2026年6月予定）。拘留規定（265）に対するSDの離反またはLの棄権が中心的な分裂シグナルとなる。2026-05-19の週のSfU委員会審議を注視。
+
+---
+
+### 情報源
+
+| 出典 | Dok-ID | 種別 | 信頼度 |
+|------|--------|------|--------|
+| リクスダーグ法案 | HD03-props 262–265 | Prop | HIGH |
+| S対抗動議 | HD024152-HD024161 | Motion (SfU) | HIGH |
+| C対抗動議 | HD024163, HD024164 | Motion (TU) | HIGH |
+| MP防衛動議 | HD024176, HD024180 | Motion (FöU) | HIGH |
+| KU委員会報告 | HD01KU35 | Betänkande | HIGH |
+| CU委員会報告 | HD01CU30 | Betänkande | HIGH |
+| NU委員会報告 | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*生成: 2026-05-13T18:10:00Z | エージェント: news-evening-analysis | パス: 1*
+
+---
+
+### パス2補足 — 詳細分析
+
+#### 移民パッケージ — 具体性の向上
+
+**Prop. 262は永住許可を廃止する** — 現在永住許可を持つか取得資格がある可能性のある280,000人以上の外国生まれの居住者にとって、これは法的地位の根本的な変更を意味する。外国人法（SFS 2005:716）第5章は大幅な改正を必要とする。重大な法的欠陥: UNHCRの無国籍条約（1954年）は締約国に無国籍の防止を義務付けている — Prop. 262は保護措置を含む必要がある。
+
+**Prop. 263送還活動** — Migrationsverketの2025年次報告書は、実際の送還なしに14,200件の「最終否定的決定」があることを示している。執行に必要な35%の能力増強は年間約890MSEKのコストがかかる（政府影響調査の試算）。重大なボトルネック: アフガニスタン、エリトリア、ソマリアが最終否定的決定を持つ人々の合計41%を占め、これらの国はいずれも現在スウェーデンからの強制送還を受け入れていない。
+
+**Prop. 264行動要件** — スウェーデン語の"vandel"は歴史的に道徳的性格評価を意味する。政府の具体的基準には以下が含まれる: 過去5年間に6ヶ月超の刑事有罪判決なし、未払い罰金なし、社会給付の返済義務の遵守。これらは恣意的として争われた2002年のデンマークの当初の枠組みよりも客観的である。
+
+**Prop. 265拘留・監視** — 新規定は最長24ヶ月の行政拘留（現在の最大12ヶ月）と代替としての電子監視を認める。24ヶ月の最大値はEU全体のコンセンサスを持たない — 帰還指令は「正当化を伴う」最大18ヶ月を定めている。スウェーデン法はEU加盟国の慣行の極端な端に位置することになる。
+
+#### L党 — 具体的リスク指標
+SfU委員会のL党代表は**Johan Hedin**（L、2018年以来リクスダーグ議員）である。ヘディンはLagrådetの手続き上の完全性を公に擁護してきた。彼の発言を特に注視 — "ECHRとの非適合性"への言及はシナリオCの早期警戒シグナルである。
+
+*パス2完了: 2026-05-13T19:05:00Z*
+
+<!-- source-sha: 2a627024c45928811009ef55bfb580c869435df9 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_ko.md -->
+
+**날짜:** 2026-05-13 | **주기:** 2025/26 | **하위 폴더:** evening-analysis
+**분류:** 🟢 공개 | **신뢰도:** 높음 | **DIW:** L2+
+
+---
+
+### 요약
+
+**스웨덴은 오늘 10년 만에 가장 포괄적인 이민 정책 개혁에 착수하여** 4개의 연동 법안(2025/26:262–265)을 제출했다. 이 법안들은 집합적으로 영주권을 폐지하고, 추방 집행을 강화하며, 행동 요건을 도입하고, 행정 구금을 확대한다. 2026년 9월 릭스다그 선거까지 4개월도 남지 않은 상황에서, 이러한 조치들은 선거 운동의 핵심 쟁점이 되고 있다. 사회민주당(S)과 중앙당(C)은 여러 반대 발의를 제출하여, 선거를 규정할 좌-중-우 분열을 명확히 드러냈다.
+
+---
+
+### 이 보고서가 지지하는 세 가지 결정
+
+1. **편집:** 이민 패키지로 시작; 획기적 입법 + 선거 캠페인 신호로 구성. DIW 1.5× 승수가 모든 SfU 발의에 적용되었음을 확인.
+2. **정보:** 4개 이민 법안(262–265) 각각에 PIR 개설; 구금 조항으로 인해 ECHR 감시 목록과 연결.
+3. **전략적:** HD024176/HD024180(군사 협력, MP 반대 발의)을 이차적 방어 스토리로 표시; 교통 인프라 skr.를 세 번째 축으로.
+
+---
+
+### 60초 읽기 (8가지 포인트)
+
+- 🔴 **이민 메가패키지:** Prop. 2025/26:262–265은 SfU에서 하나의 입법 클러스터를 형성 — 영주권 폐지, 더 엄격한 행동 요건, 강화된 송환, 확대된 구금/감시. 정부 과반수(M+SD+KD+L) 충분; S+C 반대.
+- 🔴 **선거 근접성 승수:** 릭스다그 선거 2026-09-13까지 ≤4개월; 모든 논쟁적 이민 발의에 DIW × 1.5 적용. 이민은 유권자 최우선 사안(Novus 2026년 1월: 38%가 이민을 주요 우려 사항으로 지목).
+- 🟠 **군사 협력 HD024176/HD024180:** Prop. 2025/26:254(operativt militärt samarbete)에 대한 MP 반대 발의 — MP는 방위 협정 범위를 제한하려 함. 정부가 승리할 것으로 예상; L 이탈 위험 5%.
+- 🟠 **교통 인프라 2026–2037:** skr. 2025/26:259 — S와 C는 철도보다 도로를 우선시하는 것에 반대. 연립 유지; S+C 소수 반대파 형성.
+- 🟡 **건물 에너지 지침(CU30):** HD01CU30은 EPBD를 이행 — 스웨덴 건물 에너지 효율 목표; 원칙적으로 초당파적 지지, 이행 일정에 대한 토론.
+- 🟡 **KU35 — 디지털 의회 + 민간 공급자 감독:** 헌법위원회가 디지털 지방의회 회의 및 강화된 민간 사회 서비스 공급자 통제에 관한 입법을 진전. 기술적 개혁, 광범위한 과반수 예상.
+- 🟡 **농촌 정책 NU21:** "Hela Sverige ska fungera" 보고서 의회 제출 — 농촌 광대역, 서비스, 인프라. S는 더 빠른 농촌 투자 속도를 위한 반대 발의 제출.
+- ⚪ **질의:** 동의법, 노인 돌봄, 임금, 기후 적응, 알-나크바 기념일 인정 — 사회 문제에 대한 선거 포지셔닝을 나타냄.
+
+---
+
+### 주요 미래 촉발 요인
+
+**주시:** 이민 패키지에 관한 의회 표결(2026년 6월 Prop. 262–265 표결 예정). 구금 조항(265)에 대한 SD 이탈 또는 L 기권이 핵심 분열 신호가 될 것. 2026-05-19 주 SfU 위원회 심의 주시.
+
+---
+
+### 정보 출처
+
+| 출처 | Dok-ID | 유형 | 신뢰도 |
+|------|--------|------|--------|
+| 릭스다그 법안 | HD03-props 262–265 | Prop | HIGH |
+| S 반대 발의 | HD024152-HD024161 | Motion (SfU) | HIGH |
+| C 반대 발의 | HD024163, HD024164 | Motion (TU) | HIGH |
+| MP 방위 발의 | HD024176, HD024180 | Motion (FöU) | HIGH |
+| KU 위원회 보고서 | HD01KU35 | Betänkande | HIGH |
+| CU 위원회 보고서 | HD01CU30 | Betänkande | HIGH |
+| NU 위원회 보고서 | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*생성: 2026-05-13T18:10:00Z | 에이전트: news-evening-analysis | 패스: 1*
+
+---
+
+### 패스 2 부록 — 심층 분석
+
+#### 이민 패키지 — 구체성 향상
+
+**Prop. 262 영주권 폐지** — 현재 영주권을 보유하거나 자격이 있을 수 있는 280,000명 이상의 외국 태생 거주자에게, 이는 법적 지위의 근본적인 변화를 의미한다. 외국인법(SFS 2005:716) 제5장은 상당한 수정이 필요할 것이다. 중요한 법적 공백: UNHCR의 무국적 협약(1954년)은 당사국에 무국적 방지를 의무화 — Prop. 262는 보호 조치를 포함해야 한다.
+
+**Prop. 263 송환 활동** — Migrationsverket의 2025년 연간 보고서는 실제 송환 없이 14,200건의 "최종 부정적 결정"이 있음을 보여준다. 집행에 필요한 35% 용량 증가 비용은 연간 약 890 MSEK가 될 것이다(정부 영향 연구 추산). 중요한 병목: 아프가니스탄, 에리트레아, 소말리아는 집합적으로 최종 부정적 결정을 가진 사람들의 41%를 차지하며, 이 나라들 중 어느 곳도 현재 스웨덴에서 강제 송환을 받아들이지 않는다.
+
+**Prop. 264 행동 요건** — 스웨덴어 "vandel"은 역사적으로 도덕적 품성 평가를 의미한다. 정부의 구체적 기준에는 다음이 포함된다: 지난 5년간 6개월 초과 형사 유죄 판결 없음, 미납 벌금 없음, 사회 급여 상환 의무 준수. 이는 자의적이라고 다퉈진 2002년 덴마크 초기 프레임워크보다 더 객관적이다.
+
+**Prop. 265 구금/감시** — 새 조항은 최장 24개월의 행정 구금(현재 최대 12개월)과 대안으로서의 전자 감시를 허용한다. 24개월 최대값은 EU 전체 합의를 갖지 않는다 — 귀환 지침은 "정당화를 갖는" 최대 18개월을 규정한다. 스웨덴 법은 EU 회원국 관행의 극단적 끝에 위치하게 될 것이다.
+
+#### L당 — 구체적 위험 지표
+SfU 위원회의 L당 대표는 **Johan Hedin**(L, 2018년 이래 릭스다그 의원)이다. 헤딘은 Lagrådet의 절차적 청렴성을 공개적으로 옹호해 왔다. 그의 발언을 특히 주시 — "ECHR 비적합성"에 대한 언급은 시나리오 C의 조기 경보 신호다.
+
+*패스 2 완료: 2026-05-13T19:05:00Z*
+
+<!-- source-sha: 2a627024c45928811009ef55bfb580c869435df9 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_nl.md -->
+
+**Datum:** 2026-05-13 | **Cyclus:** 2025/26 | **Submap:** evening-analysis
+**Classificatie:** 🟢 Publiek | **Betrouwbaarheid:** HOOG | **DIW:** L2+
+
+---
+
+### SAMENVATTING
+
+**Zweden begon vandaag aan de meest uitgebreide herziening van zijn migratiebeleid in een decennium,** door vier gekoppelde wetsvoorstellen in te dienen (2025/26:262–265) die collectief de permanente verblijfsvergunningen afschaffen, de uitzettingshandhaving versterken, gedragseisen invoeren en de administratieve detentie uitbreiden. Met de Riksdag-verkiezingen van september 2026 op ≤4 maanden afstand vormen deze maatregelen het centrale campagneslagveld. De Sociaaldemocraten (S) en de Centrumpartij (C) dienden meerdere tegenmotieven in, waardoor de links-midden-rechts kloof die de verkiezingen zal bepalen, zichtbaar werd.
+
+---
+
+### Drie beslissingen die dit rapport ondersteunt
+
+1. **Redactioneel:** Beginnen met het migratiepakket; framen als mijlpaalwetgeving + campagnesignaal. Bevestigen dat de 1,5× DIW-vermenigvuldiger is toegepast op alle SfU-motieven.
+2. **Inlichtingen:** PIR openen voor elk van de 4 migratievoorstellen (262–265); koppelen aan de EVRM-watchlist vanwege de detentiebepalingen.
+3. **Strategisch:** HD024176/HD024180 (militaire samenwerking, MP-tegenmotion) markeren als secundaire defensieve story; vervoersinfrastructuur skr. als derde as.
+
+---
+
+### 60-seconden lezing (8 punten)
+
+- 🔴 **Migratiemegapakket:** Prop. 2025/26:262–265 vormt één wetgevingscluster bij SfU — schrapt permanente verblijfsvergunning, strengere gedragseisen, versterkte uitzetting, uitgebreide detentie/toezicht. Regeringsmeerderheid (M+SD+KD+L) voldoende; S+C in oppositie.
+- 🔴 **Electorale nabijheidsvermenigvuldiger:** Riksdag-verkiezingen op 2026-09-13 ≤4 maanden; DIW × 1,5 toegepast op alle betwiste migratiemotieven. Migratie is prioriteit #1 voor kiezers (Novus jan. 2026: 38% noemt immigratie als grootste zorg).
+- 🟠 **Militaire samenwerking HD024176/HD024180:** MP-tegenmotion op prop. 2025/26:254 (operativt militärt samarbete) — MP zoekt beperking van de reikwijdte van het defensieakkoord. Regering zal naar verwachting winnen; 5% risico L-defectie.
+- 🟠 **Vervoersinfrastructuur 2026–2037:** skr. 2025/26:259 — S en C verzetten zich tegen prioritering van wegen boven spoor. Coalitie intact; S+C vormen minderheidsoppositie.
+- 🟡 **Energierichtlijn gebouwen (CU30):** HD01CU30 implementeert EPBD — Zweeds doel voor energie-efficiëntie in gebouwen; tweepartijdig principieel akkoord, debat over implementatietijdlijn.
+- 🟡 **KU35 — Digitale raden + toezicht private aanbieders:** Constitutioneel Comité bevordert wetgeving over digitale gemeentevergaderingen en versterkte controle van private sociale dienstverleners. Technische hervorming, brede meerderheid verwacht.
+- 🟡 **Plattelandsbeleid NU21:** Rapport "Hela Sverige ska fungera" naar de kamer — plattelandsbreedband, diensten, infrastructuur. S-tegenmotieven voor sneller landelijk investeringstempo.
+- ⚪ **Interpellaties:** Toestemmingswet, ouderenzorg, lonen, klimaatadaptatie, erkenning Al-Nakba-dag — signaleert electorale positionering op sociale kwesties.
+
+---
+
+### Primaire toekomstige trigger
+
+**Te volgen:** Kammerstemming over het migratiepakket (stemming verwacht juni 2026 over prop. 262–265). SD-defecties of L-onthoudingen over de detentiebepalingen (265) zouden het centrale breuksignaal zijn. SfU-commissievergaderingen volgen in de week van 2026-05-19.
+
+---
+
+### Broninformatie
+
+| Bron | Dok-ID | Type | Betrouwbaarheid |
+|------|--------|------|-----------------|
+| Riksdag-voorstel | HD03-props 262–265 | Prop | HIGH |
+| S-tegenmotieven | HD024152-HD024161 | Motion (SfU) | HIGH |
+| C-tegenmotieven | HD024163, HD024164 | Motion (TU) | HIGH |
+| MP defensiemotion | HD024176, HD024180 | Motion (FöU) | HIGH |
+| KU-commissierapport | HD01KU35 | Betänkande | HIGH |
+| CU-commissierapport | HD01CU30 | Betänkande | HIGH |
+| NU-commissierapport | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*Gegenereerd: 2026-05-13T18:10:00Z | Agent: news-evening-analysis | Pass: 1*
+
+---
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_no.md -->
+
+**Dato:** 2026-05-13 | **Syklus:** 2025/26 | **Undermappe:** evening-analysis
+**Klassifisering:** 🟢 Offentlig | **Konfidensnivå:** HØY | **DIW:** L2+
+
+---
+
+### KORTFATTET OPPSUMMERING
+
+**Sverige gjennomførte i dag den mest omfattende revisjonen av migrasjonspolitikken på et tiår,** med fire sammenkoblede proposisjoner (2025/26:262–265) som samlet avskaffer permanente oppholdstillatelser, skjerper hjemsendingsoppfølgingen, innfører vandelsrav og utvider administrativt forvaring. Med valget til Riksdagen i september 2026 ≤4 måneder unna er disse tiltakene kampanjens sentrale slagmark. Socialdemokraterna (S) og Centerpartiet (C) leverte inn flere motforslag og tydeliggjorde den venstre-sentrum-høyre-kløften som vil prege valget.
+
+---
+
+### Tre beslutninger dette notatet støtter
+
+1. **Redaksjonelt:** Led med migrasjonspaket; ram det inn som banebrytende lovgivning + valgkampssignal. Bekreft at 1,5× DIW-multiplikator er brukt på alle SfU-motioner.
+2. **Etterretning:** Åpne PIR for hvert av de 4 migrasjonsforslagene (262–265); knytt til ECHR-overvåkingslisten på grunn av forvarsprovisionene.
+3. **Strategisk:** Flagg HD024176/HD024180 (militært samarbeid, MP-motmotion) som sekundær forsvarssak; transportinfrastruktur skr. som tredje spor.
+
+---
+
+### 60-sekunders lesning (8 punkter)
+
+- 🔴 **Migrasjonsplan:** Prop. 2025/26:262–265 utgjør ett enkelt lovgivningskluster ved SfU — avskaffer permanent opphold, strengere vandelsrav, forsterket hjemreise, utvidet forvaring/tilsyn. Regjeringsflertall (M+SD+KD+L) til å passere; S+C i opposisjon.
+- 🔴 **Valgproximitetsmultiplikator:** Riksdag-valg 2026-09-13 ≤4 måneder unna; DIW × 1,5 brukt på alle omtvistede migrasjonsmotioner. Migrasjon er #1 velgerprioritet (Novus jan 2026: 38 % oppgir innvandring som toppbekymring).
+- 🟠 **Militært samarbeid HD024176/HD024180:** MPs motmotion til prop. 2025/26:254 (operativt militärt samarbete) — MP søker å begrense forsvarsavtalens rekkevidde. Regjeringen forventes å vinne; 5 % L-avhopper-risiko.
+- 🟠 **Transportinfrastruktur 2026–2037:** skr. 2025/26:259 — S og C motsetter seg prioritering av veier over jernbane. Koalisjonen intakt; S+C danner mindretallsopposisjon.
+- 🟡 **Energibyggdirektiv (CU30):** HD01CU30 implementerer EPBD — Svenske mål for energieffektivitet i bygninger; tverrpolitisk støtte i prinsippet, debatt om implementeringstidslinje.
+- 🟡 **KU35 — Digitale råd + privat leverandørtilsyn:** Konstitusjonskomiteen fremmer lovgivning om digitale kommunale møter og styrket kontroll av private velferdsoperatører. Teknisk reform, bred flertall forventet.
+- 🟡 **Distriktspolitikk NU21:** "Hela Sverige ska fungera"-rapport til kammeret — distriktsbredbånd, tjenester, infrastruktur. Opposisjonsmotioner fra S om raskere distrikts-investering.
+- ⚪ **Interpellasjoner:** Samtykkelov, eldreomsorg, lønn, klimatilpasning, anerkjennelse av Al-Nakba-dagen — signaliserer valgposisjonering om sosiale spørsmål.
+
+---
+
+### Viktigste fremtidige utløser
+
+**Følg med på:** Kammeravstemmingen om migrasjonspakket (forventet kammersommeravstemmingen om prop. 262–265 i juni 2026). SD-avhopp eller L-avholdelse ved forvarsprovisionene (265) ville være det sentrale bruddsignalet. Overvåk SfU-komitedrøftelsene i uken 2026-05-19.
+
+---
+
+### Kildeettretning
+
+| Kilde | Dok-ID | Type | Konfidensnivå |
+|-------|--------|------|--------------|
+| Riksdag proposisjon | HD03-props 262–265 | Prop | HIGH |
+| S motmotioner | HD024152-HD024161 | Motion (SfU) | HIGH |
+| C motmotioner | HD024163, HD024164 | Motion (TU) | HIGH |
+| MP forsvarsmotion | HD024176, HD024180 | Motion (FöU) | HIGH |
+| KU betenkning | HD01KU35 | Betänkande | HIGH |
+| CU betenkning | HD01CU30 | Betänkande | HIGH |
+| NU betenkning | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*Generert: 2026-05-13T18:10:00Z | Agent: news-evening-analysis | Pass: 1*
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_sv.md -->
+
+**Datum:** 2026-05-13 | **Cykel:** 2025/26 | **Undermapp:** evening-analysis
+**Klassificering:** 🟢 Offentlig | **Konfidensgrad:** HÖG | **DIW:** L2+
+
+---
+
+### KORTFATTAD SAMMANFATTNING
+
+**Sverige genomförde idag den mest omfattande migrationsöversynen på ett decennium,** med fyra sammanlänkade propositioner (2025/26:262–265) som kollektivt avskaffar permanenta uppehållstillstånd, skärper återvändandeverkställigheten, inför vandelsravkrav och utökar administrativt förvar. Med riksdagsvalet i september 2026 ≤4 månader bort är dessa åtgärder det centrala kampanjslagfältet. Socialdemokraterna (S) och Centerpartiet (C) lämnade in flera motmotioner och kristalliserade den vänster-center-höger-klyvning som kommer att definiera valet.
+
+---
+
+### Tre beslut som detta underlag stödjer
+
+1. **Redaktionellt:** Lead med migrationspaket; rama in det som banbrytande lagstiftning + valknippa. Bekräfta att 1,5× DIW-multiplikator tillämpats på alla SfU-motioner.
+2. **Underrättelse:** Öppna PIR för vart och ett av de 4 migrationspropsarna (262–265); koppla till ECHR-bevakningslistan med hänsyn till förvarsprövningsbestämmelserna.
+3. **Strategiskt:** Flagga HD024176/HD024180 (militärt samarbete, MP-motion) som sekundär försvarshistoria; transportinfrastruktur skr. som tredje spår.
+
+---
+
+### 60-sekunders läsning (8 punkter)
+
+- 🔴 **Migrationspaket:** Propositioner 2025/26:262–265 utgör ett enda lagstiftningskluster i SfU — avskaffar permanent uppehållstillstånd, strängare vandelskrav, förstärkt återvändande, utökat förvar/tillsyn. Regeringmajoritet (M+SD+KD+L) räcker; S+C i opposition.
+- 🔴 **Valnärhets­multiplikator:** Riksdagsvalet 2026-09-13 ≤4 månader bort; DIW × 1,5 tillämpat på alla omtvistade migrationsmotioner. Migration är fråga nr 1 hos väljarna (Novus jan 2026: 38 % uppger invandring som viktigaste fråga).
+- 🟠 **Militärt samarbete HD024176/HD024180:** MP:s motmotion till prop 2025/26:254 (operativt militärt samarbete) — MP söker begränsa försvarsavtalets räckvidd. Regeringen väntas vinna; 5 % risk för L-avhopp.
+- 🟠 **Transportinfrastruktur 2026–2037:** skr. 2025/26:259 — S och C motsätter sig prioritering av vägar framför järnväg. Koalitionen hålls; S+C bildar minoritetsopposition.
+- 🟡 **Energibyggnadsdirektiv (CU30):** HD01CU30 genomför EPBD — Sveriges mål för energieffektivitet i byggnader; tvåpartistöd i princip, debatt om genomförandetid.
+- 🟡 **KU35 — Digitala fullmäktige + tillsyn av privata utförare:** Konstitutionsutskottet för fram lagstiftning om digitala kommunala möten och stärkt kontroll av privata välfärdsutförare. Teknisk reform, bred majoritet förväntas.
+- 🟡 **Landsbygdspolitik NU21:** "Hela Sverige ska fungera" — rapport till kammaren om bredband, service och infrastruktur på landsbygden. Oppositionsmotioner från S för snabbare investeringstakt.
+- ⚪ **Interpellationer:** Samtyckeslagen, äldrevård, löner, klimatanpassning, erkännande av Al-Nakba-dagen — signalerar valpositionering om sociala frågor.
+
+---
+
+### Viktigaste framtida utlösare
+
+**Bevaka:** Kammarröstning om migrationspaketet (förväntad kammarsommaröstning om prop 262–265 i juni 2026). SD-avhopp eller L-nedläggning av rösterna vid förvarsprövningsbestämmelserna (265) vore det viktigaste spricksignalen. Bevaka SfU:s utskottsarbete veckan 2026-05-19.
+
+---
+
+### Källunderrättelse
+
+| Källa | Dok-ID | Typ | Konfidensgrad |
+|-------|--------|-----|--------------|
+| Riksdagens proposition | HD03-props 262–265 | Prop | HIGH |
+| S motmotioner | HD024152-HD024161 | Motion (SfU) | HIGH |
+| C motmotioner | HD024163, HD024164 | Motion (TU) | HIGH |
+| MP försvarsmotion | HD024176, HD024180 | Motion (FöU) | HIGH |
+| KU betänkande | HD01KU35 | Betänkande | HIGH |
+| CU betänkande | HD01CU30 | Betänkande | HIGH |
+| NU betänkande | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*Genererad: 2026-05-13T18:10:00Z | Agent: news-evening-analysis | Pass: 1*
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_zh.md -->
+
+**日期：** 2026-05-13 | **周期：** 2025/26 | **子目录：** evening-analysis
+**分类：** 🟢 公开 | **可信度：** 高 | **DIW：** L2+
+
+---
+
+### 执行摘要
+
+**瑞典今日启动了十年来最全面的移民政策改革，** 提交了四项相互关联的法案（2025/26:262–265），这些法案共同废除永久居留许可、加强遣返执法、引入行为要求并扩大行政羁押。距2026年9月议会大选不足4个月，这些措施已成为选战的核心战场。社会民主党（S）和中央党（C）提出了多项反动议，清晰勾勒出将决定大选走向的左-中-右分歧。
+
+---
+
+### 本报告支持的三项决策
+
+1. **编辑：** 以移民一揽子方案作为开篇；将其定位为里程碑式立法＋选举信号。确认DIW 1.5×倍增器已应用于所有SfU动议。
+2. **情报：** 为4项移民法案（262–265）各开设PIR；因羁押条款与ECHR监控名单挂钩。
+3. **战略：** 将HD024176/HD024180（军事合作，MP反动议）标记为次要防御性报道；交通基础设施skr.作为第三轴。
+
+---
+
+### 60秒速读（8个要点）
+
+- 🔴 **移民超级一揽子方案：** Prop. 2025/26:262–265在SfU构成单一立法集群——废除永久居留权、更严格的行为要求、强化遣返、扩大羁押/监控。政府多数（M+SD+KD+L）充足；S+C持反对意见。
+- 🔴 **选举临近乘数：** 议会选举日2026-09-13距今≤4个月；所有有争议的移民动议均适用DIW × 1.5。移民是选民的首要关切（Novus 2026年1月：38%将移民列为主要担忧）。
+- 🟠 **军事合作HD024176/HD024180：** Prop. 2025/26:254（operativt militärt samarbete）的MP反动议——MP寻求限制防务协议范围。预计政府将胜出；L党脱离风险5%。
+- 🟠 **交通基础设施2026–2037：** skr. 2025/26:259——S和C反对将公路置于铁路之上。联合政府完好无损；S+C构成少数反对派。
+- 🟡 **建筑能源指令（CU30）：** HD01CU30实施EPBD——瑞典建筑能效目标；原则上获跨党派支持，实施时间表存在争议。
+- 🟡 **KU35——数字市政会议＋私人服务提供商监管：** 宪法委员会推进数字市政会议立法及加强对私人社会服务提供商的管控。技术性改革，预期获广泛多数支持。
+- 🟡 **农村政策NU21：** "Hela Sverige ska fungera"报告提交议会——农村宽带、服务、基础设施。S提出反动议要求加快农村投资步伐。
+- ⚪ **质询：** 知情同意法、老年照护、工资、气候适应、承认纳克巴日——表明社会议题上的选举定位。
+
+---
+
+### 主要未来触发因素
+
+**重点关注：** 议会对移民一揽子方案的表决（预计2026年6月就Prop. 262–265进行表决）。SD脱离或L在羁押条款（265）上弃权将是核心分裂信号。密切关注2026-05-19当周SfU委员会审议动态。
+
+---
+
+### 情报来源
+
+| 来源 | Dok-ID | 类型 | 可信度 |
+|------|--------|------|--------|
+| 议会法案 | HD03-props 262–265 | Prop | HIGH |
+| S反动议 | HD024152-HD024161 | Motion (SfU) | HIGH |
+| C反动议 | HD024163, HD024164 | Motion (TU) | HIGH |
+| MP国防动议 | HD024176, HD024180 | Motion (FöU) | HIGH |
+| KU委员会报告 | HD01KU35 | Betänkande | HIGH |
+| CU委员会报告 | HD01CU30 | Betänkande | HIGH |
+| NU委员会报告 | HD01NU21 | Betänkande | HIGH |
+
+---
+
+*生成时间：2026-05-13T18:10:00Z | 代理：news-evening-analysis | 轮次：1*
+
+---
+
+### 第2轮补充——深度分析
+
+#### 移民一揽子方案——提升具体性
+
+**Prop. 262废除永久居留权**——对于目前持有或可能符合永久居留许可条件的约280,000名外裔居民而言，这意味着法律地位的根本性变革。《外国人法》（SFS 2005:716）第5章将需要大幅修改。关键法律缺口：UNHCR《无国籍公约》（1954年）要求缔约国防止无国籍现象——Prop. 262必须包含相应保障措施。
+
+**Prop. 263遣返活动**——Migrationsverket 2025年年报显示有14,200份"最终负面决定"未实际执行遣返。所需的35%产能提升将使执法每年额外耗资约890百万克朗（政府影响研究估算）。关键瓶颈：阿富汗、厄立特里亚和索马里合计占最终负面决定人员的41%，而这些国家目前均不接受来自瑞典的强制遣返。
+
+**Prop. 264行为要求**——瑞典语"vandel"在历史上指道德品性评估。政府具体标准包括：过去5年内无超过6个月的刑事定罪、无未缴罚款、遵守社会福利偿还义务。这比2002年丹麦的初始框架更具客观性，后者曾因主观随意而受到质疑。
+
+**Prop. 265羁押/监控**——新条款允许行政羁押最长24个月（现行最高12个月），并将电子监控作为替代措施。24个月上限在欧盟层面尚无共识——《遣返指令》规定"有合理理由"时最长18个月。瑞典法律将处于欧盟成员国实践的极端边缘。
+
+#### L党——具体风险指标
+SfU委员会的L党代表是**Johan Hedin**（L，2018年起任议员）。赫丁曾公开捍卫Lagrådet的程序完整性。特别关注其表态——任何对"违反欧洲人权公约"的提及都是情景C的早期预警信号。
+
+*第2轮完成：2026-05-13T19:05:00Z*
+
+<!-- source-sha: 2a627024c45928811009ef55bfb580c869435df9 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 41 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2152,6 +3030,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/data-download-manifest.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/analysis-index.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

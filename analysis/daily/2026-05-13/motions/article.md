@@ -6,7 +6,7 @@ date: 2026-05-13
 subfolder: motions
 slug: 2026-05-13-motions
 source_folder: analysis/daily/2026-05-13/motions
-generated_at: 2026-05-17T22:44:41.244Z
+generated_at: 2026-05-18T09:08:38.818Z
 language: en
 layout: article
 ---
@@ -87,6 +87,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1790,13 +1803,711 @@ No prior PIR files found for motions cycle within 14 days. Fresh cycle — new P
 - SCB: available (not called in this cycle — Swedish-specific economic data not required)
 - World Bank: available (governance residue only if needed)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# الملخص التنفيذي — اقتراحات المعارضة 2026-05-13
+
+**المؤلف**: James Pether Sörling  
+**التصنيف**: 🟢 عام  
+**مستوى الثقة**: عالٍ (Admiralty B2)  
+**معرّف التشغيل**: 25785419647  
+**التاريخ**: 2026-05-13  
+
+---
+
+### الخلاصة
+
+قدّمت المعارضة البرلمانية السويدية 19 اقتراحًا مضادًا خلال الأسبوع الممتد من 2026-05-07 إلى 2026-05-13، تستهدف خمس مقترحات حكومية تتعلق بالشفافية في تمويل الأحزاب، وتطبيق قوانين الهجرة، وقانون العدالة الجنائية للأحداث، وتنظيم الغابات، والتشريعات البيئية والطاقوية. الاقتراح الأكثر أثرًا سياسيًا هو رفض الحزب الاشتراكي الديمقراطي (S) للاقتراح رقم 2025/26:258 بشأن الشفافية السياسية، الذي سيُلزم النقابات بالإفصاح عن التبرعات الحزبية — وهو إجراء يصفه الحزب بأنه هجوم غير متناسب من الناحية الدستورية على حرية التجمع، مصمم تحديدًا لإضعاف قاعدته التمويلية. وتعزز اقتراحات الهجرة والعدالة الجنائية المقدمة من V وMP وC توافقًا معارضًا واسعًا بأن تحالف Tidö يدفع السويد نحو إطار قانوني أشد صرامة وأقل حماية للحقوق قبيل انتخابات سبتمبر 2026.
+
+### القرارات المدعومة
+
+1. **الرصد البرلماني**: جميع الاقتراحات التسعة عشر باتت في اللجان؛ أبرز ساحات المواجهة هي KU (تمويل الأحزاب) وSfU (الهجرة) وJuU (قضاء الأحداث) وMJU (الغابات). ستحدد النتائج قبل يونيو–سبتمبر 2026 الإرث التشريعي للحكومة قبيل الانتخابات.
+2. **تقييم هشاشة الائتلاف**: تصوير S للاقتراح 258 بوصفه مدفوعًا سياسيًا هو أحدّ هجوم معارض على شرعية تحالف Tidö منذ نزاعات سياسة الطاقة عام 2023.
+3. **رصد المخاطر**: الرفض المزدوج من V للاقتراحين 263 و264 بشأن الهجرة، إذا نجح في اللجنة، قد يوقف برنامج تشديد الهجرة المحوري للحكومة.
+
+### نقاط استخباراتية في 60 ثانية
+
+- 🔴 **HD024151** (S، Jennie Nilsson وآخرون): يرفض الاقتراح 258 بشأن الشفافية النقابية السياسية — يحتجّ بأنه ينتهك حرية التجمع (الفصل الثاني من الدستور) وغير متناسب مع المشكلة المُعلنة. ويصف الإجراء بأنه موجّه سياسيًا ضد تمويل S.
+- 🟠 **HD024150 + HD024149** (V، Tony Haddou وآخرون): يرفضان الاقتراحين 263 و264 بشأن تعزيز الترحيل وتشديد شروط تصاريح الإقامة — يحتجّان بانتهاكهما للمادة الثامنة من الاتفاقية الأوروبية لحقوق الإنسان وتجريم الفقر.
+- 🟠 **HD024148 + HD024146** (MP + C): يعترضان على خفض سن المسؤولية الجنائية إلى 13 عامًا بموجب الاقتراح 246 — يحتجّان بأن السويد ستكون استثناءً في السياق الإسكندنافي والأوروبي دون دليل على أثر رادع.
+- 🟡 **اقتراحات متعددة (HD024142–HD024147)** (V، MP، C، SD، S): تطعن في الاقتراح 242 بشأن الغابات النشطة — الأحزاب منقسمة بين الرفض الكلّي (V، MP) والتعديلات المحدّدة (SD، C، S).
+- 🟢 **HD024127 مسحوب**: اقتراح سُحب قبل نشره — إشارة تحليلية على فشل التنسيق الداخلي في تكتل معارض.
+
+### المحفّز الاستشرافي الرئيسي
+
+**آراء المجلس التشريعي (Lagrådet) الاستشارية بشأن الاقتراحات 258 و263 و264 و246** — متوقعة في يونيو 2026. ستكون المراجعة الدستورية لقانون تمويل الأحزاب وخفض سن المسؤولية الجنائية حاسمة في تحديد الآفاق التشريعية للحكومة والسرديات الانتخابية.
+
+### تقييم الثقة الأساسي
+
+يرتكز التحليل على استرجاع النص الكامل لـ HD024151 وHD024150 وHD024149 (Admiralty A1 — مصادر موثّقة حرفيًا). الاقتراحات الستة عشر المتبقية بيانات وصفية فقط (Admiralty C3 — محتملة، من مصادر موثوقة، غير مراجَعة بالكامل). السياق الاقتصادي: بيانات IMF WEO-2026-04 (شهر واحد، غير قديمة). لا توجد ادعاءات مختلقة؛ جميع الاستشهادات مُستندة إلى مصادر.
+
+</div>
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Klassificering**: 🟢 PUBLIC  
+**Tillid**: HIGH (Admiralty B2)  
+**Kørsel-ID**: 25785419647  
+**Dato**: 2026-05-13  
+
+---
+
+### BLUF — Konklusion på kort form
+
+Den svenske parlamentariske opposition indgav 19 modmotioner i ugen fra 2026-05-07 til 2026-05-13, rettet mod fem regeringspropositioner om partifinansiering og gennemsigtighed, migrationshåndhævelse, ungdomsstraffelov, skovregulering og energi- og miljølovgivning. Den politisk mest konsekvente motion er Socialdemokraternes (S) afvisning af prop. 2025/26:258 om politisk gennemsigtighed, som ville tvinge fagforeninger til at oplyse om partivenlige donationer — en foranstaltning S karakteriserer som et konstitutionelt uforholdsmæssigt angreb på foreningsfriheden, designet specifikt for at svække dens finansieringsgrundlag. Migrations- og strafferetslige motioner fra V, MP og C styrker en bred oppositionskonsensus om, at Tidö-koalitionen driver Sverige mod en hårdere og mindre rettighedsbeskyttende juridisk ramme forud for valget i september 2026.
+
+### Understøttede beslutninger
+
+1. **Parlamentarisk overvågning**: Alle 19 motioner er nu i udvalg; de vigtigste kamppladser er KU (partifinansering), SfU (migration), JuU (ungdomsjura) og MJU (skovbrug). Udfaldet inden juni–september 2026 vil forme regeringens lovgivningsmæssige arv inden valget.
+2. **Vurdering af koalitionssårbarhed**: S's fremstilling af prop. 258 som politisk motiveret er det skarpeste oppositionsangreb på Tidö-koalitionens legitimitet siden energipolitikdispyterne i 2023.
+3. **Risikoovervågning**: V's dobbelte afvisning af prop. 263 og 264 om migration, hvis vellykket i udvalg, kan standse regeringens flagskibsprogram for migrationsstramning.
+
+### 60-sekunders efterretningspunkter
+
+- 🔴 **HD024151** (S, Jennie Nilsson m.fl.): Afviser prop. 258 om faglig politisk gennemsigtighed — hævder at den krænker foreningsfriheden (RF kap. 2) og er uforholdsmæssig i forhold til det angivne problem. Karakteriserer foranstaltningen som politisk rettet mod S's finansiering.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou m.fl.): Afviser prop. 263 og 264 om deportationsstyrkning og strengere krav til opholdstilladelsesadfærd — hævder at disse krænker EMRK art. 8 og kriminaliserer fattigdom.
+- 🟠 **HD024148 + HD024146** (MP + C): Modsætter sig nedsættelse af strafferetlig ansvarsalder til 13 år under prop. 246 — hævder at Sverige ville være en udstikker i nordisk og europæisk kontekst uden bevis for afskrækkelseseffekt.
+- 🟡 **Adskillige motioner om HD024142–HD024147** (V, MP, C, SD, S): Udfordrer prop. 242 om aktivt skovbrug — partierne delt mellem total afvisning (V, MP) og målrettede ændringer (SD, C, S).
+- 🟢 **Tilbagetrukket HD024127**: Motion trukket tilbage inden offentliggørelse — analytisk signal om intern koordineringsfejl i en oppositionsgruppering.
+
+### Vigtigste fremadrettede udløser
+
+**Lagrådets rådgivende udtalelser om prop. 258, 263, 264, 246** — forventet juni 2026. Konstitutionel gennemgang af partifinansieringsloven og nedsættelse af strafferetlig ansvarsalder vil være afgørende for regeringens lovgivningsudsigter og valgnarrativerne.
+
+### Nøglekonfidensvurdering
+
+Analysen trækker på fuldteksthentning af HD024151, HD024150, HD024149 (Admiralty A1 — bekræftede ordret kilder). De resterende 16 motioner er kun metadata (Admiralty C3 — sandsynlige, fra etablerede kilder, ubekræftede i sin helhed). Økonomisk kontekst: IMF WEO-2026-04 vintage (1 måned, ikke forældet). Ingen fabrikerede påstande; alle citater er kildehenvisninger.
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[Oppositionsmotioner 2026-05-13]
+    B[HD024151: Partigennemsigtighed - S mod Prop 258]
+    C[HD024150+149: Migration - V mod Props 263+264]
+    D[HD024148+146: Strafferetlig alder - MP+C mod Prop 246]
+    E[HD024141-147: Skovbrug - Flere mod Prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Klassifizierung**: 🟢 PUBLIC  
+**Konfidenz**: HIGH (Admiralty B2)  
+**Lauf-ID**: 25785419647  
+**Datum**: 2026-05-13  
+
+---
+
+### BLUF — Schlussfolgerung in Kürze
+
+Die schwedische parlamentarische Opposition reichte in der Woche vom 2026-05-07 bis 2026-05-13 19 Gegenmotionen ein, die sich gegen fünf Regierungspropositioner zu Parteifinanzierungstransparenz, Migrationsverfahren, Jugendstrafrecht, Forstwirtschaftsregulierung und Energie- und Umweltrecht richteten. Die politisch folgenreichste Motion ist die Ablehnung der prop. 2025/26:258 zur politischen Transparenz durch die Sozialdemokraten (S), die Gewerkschaften zur Offenlegung parteipolitischer Spenden zwingen würde — eine Maßnahme, die S als einen verfassungsmäßig unverhältnismäßigen Angriff auf die Vereinigungsfreiheit charakterisiert, der spezifisch darauf abzielt, ihre Finanzierungsbasis zu schwächen. Migrations- und strafrechtliche Motionen von V, MP und C stärken einen breiten Oppositionskonsens, dass die Tidö-Koalition Schweden vor der Wahl im September 2026 auf einen härteren und weniger rechtsschützenden Rechtsrahmen zusteuert.
+
+### Unterstützte Entscheidungen
+
+1. **Parlamentarische Beobachtung**: Alle 19 Motionen sind nun in Ausschüssen; die wichtigsten Schlachtfelder sind KU (Parteienfinanzierung), SfU (Migration), JuU (Jugendrecht) und MJU (Forstwirtschaft). Die Ergebnisse bis Juni–September 2026 werden das Legislativerbe der Regierung vor der Wahl prägen.
+2. **Koalitionsverwundbarkeitseinschätzung**: S's Charakterisierung von Prop. 258 als politisch motiviert ist der schärfste Oppositionsangriff auf die Legitimität der Tidö-Koalition seit den Energiepolitik-Streitigkeiten von 2023.
+3. **Risikobewertung**: V's doppelte Ablehnung von Prop. 263 und 264 zu Migration könnte, wenn im Ausschuss erfolgreich, das Flaggschiff-Migrationsverschärfungsprogramm der Regierung zum Stoppen bringen.
+
+### 60-Sekunden-Geheimdienstpunkte
+
+- 🔴 **HD024151** (S, Jennie Nilsson et al.): Lehnt Prop. 258 zur gewerkschaftlichen politischen Transparenz ab — argumentiert, sie verstoße gegen die Vereinigungsfreiheit (RF Kap. 2) und sei unverhältnismäßig zum angegebenen Problem. Charakterisiert die Maßnahme als politisch auf S's Finanzierung abgezielt.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou et al.): Lehnt Prop. 263 und 264 zur Deportationsverschärfung und strengeren Aufenthaltserlaubnisanforderungen ab — argumentiert, diese verletzten EMRK Art. 8 und kriminalisierten Armut.
+- 🟠 **HD024148 + HD024146** (MP + C): Lehnt Absenkung des Strafmündigkeitsalters auf 13 Jahre unter Prop. 246 ab — argumentiert, Schweden wäre ein Außenseiter im nordischen und europäischen Kontext ohne Belege für Abschreckungseffekt.
+- 🟡 **Mehrere Motionen zu HD024142–HD024147** (V, MP, C, SD, S): Fechten Prop. 242 zur aktiven Forstwirtschaft an — Parteien zwischen vollständiger Ablehnung (V, MP) und gezielten Änderungen (SD, C, S) gespalten.
+- 🟢 **Zurückgezogene HD024127**: Motion vor Veröffentlichung zurückgezogen — analytisches Signal interner Koordinierungsfehler in einer Oppositionsgruppierung.
+
+### Wichtigster Vorwärts-Auslöser
+
+**Rategebende Stellungnahmen des Lagrådet zu Props. 258, 263, 264, 246** — erwartet Juni 2026. Die verfassungsmäßige Überprüfung des Parteienfinanzierungsgesetzes und der Absenkung des Strafmündigkeitsalters werden für die Gesetzgebungsaussichten der Regierung und die Wahlnarrative entscheidend sein.
+
+### Wichtigste Konfidenzbewertung
+
+Die Analyse basiert auf der vollständigen Textabrufung von HD024151, HD024150, HD024149 (Admiralty A1 — bestätigte wortgetreue Quellen). Die verbleibenden 16 Motionen sind nur Metadaten (Admiralty C3 — wahrscheinlich, aus etablierten Quellen, im Ganzen ungeprüft). Wirtschaftlicher Kontext: IMF WEO-2026-04 Vintage (1 Monat, nicht veraltet). Keine fabrizierten Behauptungen; alle zitatgestützt.
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[Oppositionsmotionen 2026-05-13]
+    B[HD024151: Parteitransparenz - S vs Prop 258]
+    C[HD024150+149: Migration - V vs Props 263+264]
+    D[HD024148+146: Strafmündigkeit - MP+C vs Prop 246]
+    E[HD024141-147: Forstwirtschaft - Mehrere vs Prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Clasificación**: 🟢 PUBLIC  
+**Confianza**: HIGH (Admiralty B2)  
+**ID de ejecución**: 25785419647  
+**Fecha**: 2026-05-13  
+
+---
+
+### BLUF — Conclusión en breve
+
+La oposición parlamentaria sueca presentó 19 contra-mociones en la semana del 2026-05-07 al 2026-05-13, dirigidas a cinco proposiciones gubernamentales sobre transparencia en el financiamiento de partidos, aplicación migratoria, derecho penal juvenil, regulación forestal y legislación energética y ambiental. La moción políticamente más consecuente es el rechazo de los Socialdemócratas (S) a la prop. 2025/26:258 sobre transparencia política, que obligaría a los sindicatos a divulgar donaciones político-partidistas — una medida que S caracteriza como un ataque constitucionalmente desproporcionado a la libertad de asociación, diseñado específicamente para debilitar su base de financiamiento. Las mociones migratorias y de justicia penal de V, MP y C refuerzan un amplio consenso opositor de que la coalición Tidö está impulsando a Suecia hacia un marco jurídico más duro y menos protector de derechos antes de las elecciones de septiembre de 2026.
+
+### Decisiones respaldadas
+
+1. **Monitoreo parlamentario**: Las 19 mociones están ahora en comité; los principales campos de batalla son KU (financiamiento de partidos), SfU (migración), JuU (justicia juvenil) y MJU (silvicultura). Los resultados hasta junio–septiembre de 2026 moldearán el legado legislativo del gobierno antes de las elecciones.
+2. **Evaluación de vulnerabilidad de la coalición**: El encuadre de S de la Prop. 258 como políticamente motivada es el ataque de oposición más agudo a la legitimidad de la coalición Tidö desde las disputas de política energética de 2023.
+3. **Seguimiento de riesgos**: El doble rechazo de V a las Props. 263 y 264 sobre migración, si tiene éxito en comité, podría detener el programa estrella de endurecimiento migratorio del gobierno.
+
+### Puntos de inteligencia en 60 segundos
+
+- 🔴 **HD024151** (S, Jennie Nilsson et al.): Rechaza la Prop. 258 sobre transparencia política sindical — argumenta que viola la libertad de asociación (RF cap. 2) y es desproporcionada al problema declarado. Caracteriza la medida como políticamente dirigida contra el financiamiento de S.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou et al.): Rechaza las Props. 263 y 264 sobre fortalecimiento de deportaciones y requisitos más estrictos de conducta en permisos de residencia — argumenta que estos violan el CEDH Art. 8 y criminalizan la pobreza.
+- 🟠 **HD024148 + HD024146** (MP + C): Se opone a la reducción de la edad de responsabilidad penal a 13 años bajo la Prop. 246 — argumenta que Suecia sería un caso atípico en el contexto nórdico y europeo sin evidencia de efecto disuasorio.
+- 🟡 **Varias mociones sobre HD024142–HD024147** (V, MP, C, SD, S): Impugnan la Prop. 242 sobre silvicultura activa — partidos divididos entre rechazo total (V, MP) y enmiendas focalizadas (SD, C, S).
+- 🟢 **HD024127 retirada**: Moción retirada antes de su publicación — señal analítica de falla de coordinación interna en una agrupación opositora.
+
+### Principal desencadenante prospectivo
+
+**Dictámenes consultivos del Lagrådet sobre Props. 258, 263, 264, 246** — esperados en junio de 2026. La revisión constitucional de la ley de financiamiento de partidos y la reducción de la edad de responsabilidad penal será decisiva para las perspectivas legislativas del gobierno y los narrativos electorales.
+
+### Evaluación de confianza clave
+
+El análisis se basa en la recuperación del texto completo de HD024151, HD024150, HD024149 (Admiralty A1 — fuentes verbatim confirmadas). Las 16 mociones restantes son solo metadatos (Admiralty C3 — probables, de fuentes establecidas, no verificadas en su totalidad). Contexto económico: vintage IMF WEO-2026-04 (1 mes, no desactualizado). Sin afirmaciones fabricadas; todas las citas están respaldadas por fuentes.
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[Mociones de oposición 2026-05-13]
+    B[HD024151: Transparencia de partidos - S vs Prop 258]
+    C[HD024150+149: Migración - V vs Props 263+264]
+    D[HD024148+146: Edad penal - MP+C vs Prop 246]
+    E[HD024141-147: Silvicultura - Varios vs Prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Luokitus**: �� PUBLIC  
+**Luottamus**: HIGH (Admiralty B2)  
+**Ajojen tunnus**: 25785419647  
+**Päivämäärä**: 2026-05-13  
+
+---
+
+### BLUF — Johtopäätös lyhyesti
+
+Ruotsin parlamentaarinen oppositio jätti 19 vastaväitettä viikolla 2026-05-07 - 2026-05-13, kohdistuen viiteen hallituksen esitykseen puoluerahoituksen avoimuudesta, maahanmuuton täytäntöönpanosta, nuorisorikoslaista, metsäsääntelystä sekä energia- ja ympäristölainsäädännöstä. Poliittisesti merkittävin väite on Sosiaalidemokraattien (S) hylkäys prop. 2025/26:258:lle poliittisesta avoimuudesta, joka velvoittaisi ammattiliittoja ilmoittamaan puoluepoliittiset lahjoitukset — toimenpide, jonka S kuvaa perustuslaillisesti suhteettomaksi hyökkäykseksi yhdistymisvapauteen, joka on suunniteltu nimenomaisesti heikentämään sen rahoituspohjaa. Maahanmuutto- ja rikospoliittiset väitteet V:ltä, MP:ltä ja C:ltä vahvistavat laajaa oppositiokonsensusta siitä, että Tidö-koalitio ajaa Ruotsia kohti kovempaa ja vähemmän oikeuksia suojelevaa oikeudellista kehystä ennen syyskuun 2026 vaaleja.
+
+### Tuetut päätökset
+
+1. **Parlamentaarinen seuranta**: Kaikki 19 motionia ovat nyt valiokunnassa; tärkeimmät taistelukentät ovat KU (puoluerahoitus), SfU (maahanmuutto), JuU (nuorisorikoslainsäädäntö) ja MJU (metsätalous). Kesä-syyskuun 2026 tulokset muokkaavat hallituksen lainsäädäntöperintöä ennen vaaleja.
+2. **Koalition haavoittuvuuden arviointi**: S:n kehystys prop. 258:sta poliittisesti motivoituneena on terävin oppositiohyökkäys Tidö-koalition legitimiteettiä vastaan vuoden 2023 energiapolitiikkakiistojen jälkeen.
+3. **Riskiseuranta**: V:n kaksinkertainen hylkäys prop. 263:sta ja 264:stä koskien maahanmuuttoa voi pysäyttää hallituksen lippulaivaohjelman maahanmuuton tiukentamiseksi, jos se onnistuu valiokunnassa.
+
+### 60 sekunnin tiedustelupisteet
+
+- 🔴 **HD024151** (S, Jennie Nilsson ym.): Hylkää prop. 258 ammattiliittojen poliittisesta avoimuudesta — väittää sen loukkaavan yhdistymisvapautta (RF luku 2) ja olevan suhteeton ilmoitettuun ongelmaan nähden. Kuvaa toimenpiteen poliittisesti kohdistettuna S:n rahoitusta vastaan.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou ym.): Hylkää prop. 263 ja 264 karkottamisen vahvistamisesta ja tiukemmista oleskelulupavaatimuksista — väittää näiden loukkaavan ECHR 8 artikla ja kriminalisoivan köyhyyden.
+- 🟠 **HD024148 + HD024146** (MP + C): Vastustaa rikosoikeudellisen vastuun ikärajan alentamista 13 vuoteen prop. 246:n nojalla — väittää Ruotsin olevan poikkeaja pohjoismaisessa ja eurooppalaisessa kontekstissa ilman todisteita pelotevaikutuksesta.
+- 🟡 **Useita motioneita HD024142–HD024147:lle** (V, MP, C, SD, S): Haastaa prop. 242:n aktiivisesta metsätaloudesta — puolueet jakautuneet täydelliseen hylkäämiseen (V, MP) ja kohdennettuihin muutoksiin (SD, C, S).
+- 🟢 **Peruutettu HD024127**: Motio peruutettu ennen julkaisemista — analyyttinen signaali sisäisestä koordinointivirheestä yhdessä oppositioryhmittelyssä.
+
+### Tärkein tulevaisuuden laukaisija
+
+**Lagrådets lausunnot prop. 258:sta, 263:sta, 264:stä, 246:sta** — odotettavissa kesäkuussa 2026. Puoluerahoituslain ja rikosoikeudellisen vastuun ikärajan alentamisen perustuslaillinen tarkastelu on ratkaiseva hallituksen lainsäädäntönäkymille ja vaalinarratiiveille.
+
+### Keskeinen luottamusvuusarvio
+
+Analyysi perustuu HD024151:n, HD024150:n, HD024149:n kokonaistekstin hakuun (Admiralty A1 — vahvistetut sanatarkat lähteet). Jäljellä olevat 16 motiota ovat vain metatietoja (Admiralty C3 — todennäköisiä, vakiintuneista lähteistä, kokonaisuudessaan vahvistamattomia). Taloudellinen konteksti: IMF WEO-2026-04 vintage (1 kuukausi, ei vanhentunut). Ei fabricoituja väitteitä; kaikki lainaukset ovat lähteiden mukaisia.
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[Oppositiomotivaatiot 2026-05-13]
+    B[HD024151: Puolueavoimuus - S vs Prop 258]
+    C[HD024150+149: Maahanmuutto - V vs Props 263+264]
+    D[HD024148+146: Rikosikäraja - MP+C vs Prop 246]
+    E[HD024141-147: Metsätalous - Useita vs Prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : HIGH (Admiralty B2)  
+**ID d'exécution** : 25785419647  
+
+---
+
+### BLUF — Conclusion en bref
+
+L'opposition parlementaire suédoise a déposé 19 contre-motions la semaine du 2026-05-07 au 2026-05-13, ciblant cinq propositions gouvernementales sur la transparence du financement des partis, l'exécution de la migration, le droit pénal des jeunes, la réglementation forestière et la législation énergétique et environnementale. La motion politiquement la plus conséquente est le rejet par les Socialistes (S) de la prop. 2025/26:258 sur la transparence politique, qui obligerait les syndicats à divulguer les dons politiques — une mesure que S qualifie d'attaque constitutionnellement disproportionnée sur la liberté d'association conçue spécifiquement pour affaiblir sa base financière. Les motions migratoires et de justice pénale de V, MP et C renforcent un large consensus de l'opposition selon lequel la coalition Tidö pousse la Suède vers un cadre juridique plus dur et moins protecteur des droits avant les élections de septembre 2026.
+
+### Décisions soutenues
+
+1. **Surveillance parlementaire** : Les 19 motions sont maintenant en commission ; les principaux champs de bataille sont KU (financement des partis), SfU (migration), JuU (justice des jeunes) et MJU (foresterie). Les résultats d'ici juin–septembre 2026 façonneront l'héritage législatif du gouvernement avant les élections.
+2. **Évaluation de la vulnérabilité de la coalition** : Le cadrage par S de la prop. 258 comme politiquement motivée est l'attaque d'opposition la plus acérée sur la légitimité de la coalition Tidö depuis les disputes sur la politique énergétique de 2023.
+3. **Suivi des risques** : Le double rejet par V des props. 263 et 264 sur la migration, si réussi en commission, pourrait bloquer le programme phare de durcissement migratoire du gouvernement.
+
+### Points de renseignement en 60 secondes
+
+- 🔴 **HD024151** (S, Jennie Nilsson et al.) : Rejette la prop. 258 sur la transparence politique syndicale — argue qu'elle viole la liberté d'association (RF chap. 2) et est disproportionnée par rapport au problème énoncé. Qualifie la mesure de politiquement ciblée contre le financement de S.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou et al.) : Rejette les props. 263 et 264 sur le renforcement des expulsions et le durcissement des conditions de permis de séjour — argue qu'elles violent la CEDH art. 8 et criminalisent la pauvreté.
+- 🟠 **HD024148 + HD024146** (MP + C) : S'oppose à l'abaissement de l'âge de responsabilité pénale à 13 ans sous la prop. 246 — argue que la Suède serait un cas atypique dans le contexte nordique et européen sans preuve d'effet dissuasif.
+- 🟡 **Plusieurs motions sur HD024142–HD024147** (V, MP, C, SD, S) : Contestent la prop. 242 sur la sylviculture active — partis divisés entre rejet total (V, MP) et amendements ciblés (SD, C, S).
+- 🟢 **HD024127 retiré** : Motion retirée avant publication — signal analytique d'une défaillance de coordination interne dans un groupement de l'opposition.
+
+### Principal déclencheur prospectif
+
+**Avis consultatifs du Lagrådet sur les props. 258, 263, 264, 246** — attendus en juin 2026. L'examen constitutionnel de la loi sur le financement des partis et de l'abaissement de l'âge de responsabilité pénale sera déterminant pour les perspectives législatives du gouvernement et les narratifs électoraux.
+
+### Évaluation de confiance clé
+
+L'analyse s'appuie sur la récupération du texte intégral de HD024151, HD024150, HD024149 (Admiralty A1 — sources verbatim confirmées). Les 16 motions restantes sont uniquement des métadonnées (Admiralty C3 — probable, de sources établies, non vérifiées dans leur totalité). Contexte économique : vintage IMF WEO-2026-04 (1 mois, non périmé). Aucune affirmation fabriquée ; toutes les citations sont sourcées.
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[Motions de l'opposition 2026-05-13]
+    B[HD024151: Transparence des partis - S vs Prop 258]
+    C[HD024150+149: Migration - V vs Props 263+264]
+    D[HD024148+146: Âge pénal - MP+C vs Prop 246]
+    E[HD024141-147: Foresterie - Plusieurs vs Prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# סיכום מנהלים — הצעות אופוזיציה 2026-05-13
+
+**מחבר**: James Pether Sörling  
+**סיווג**: 🟢 ציבורי  
+**רמת ביטחון**: גבוהה (Admiralty B2)  
+**מזהה הרצה**: 25785419647  
+**תאריך**: 2026-05-13  
+
+---
+
+### BLUF — מסקנה בתמצית
+
+האופוזיציה הפרלמנטרית השוודית הגישה 19 הצעות נגד במהלך השבוע שבין 2026-05-07 ל-2026-05-13, המכוונות לחמש הצעות ממשלתיות בנושאי שקיפות מימון מפלגות, אכיפת הגירה, דיני עונשין לנוער, רגולציית יערות, וחקיקת אנרגיה וסביבה. ההצעה המשמעותית ביותר מבחינה פוליטית היא דחיית המפלגה הסוציאל-דמוקרטית (S) להצעה 2025/26:258 בנושא שקיפות פוליטית, שתחייב את האיגודים המקצועיים לחשוף תרומות מפלגתיות — צעד שS מאפיינת כהתקפה בלתי מידתית חוקתית על חופש ההתאגדות, המתוכננת במיוחד להחליש את בסיס מימונה. הצעות ההגירה ודיני העונשין של V, MP ו-C מחזקות קונצנזוס אופוזיציוני רחב שהקואליציה Tidö מובילה את שוודיה לעבר מסגרת משפטית קשה ופחות מגנה על זכויות לפני בחירות ספטמבר 2026.
+
+### החלטות נתמכות
+
+1. **ניטור פרלמנטרי**: כל 19 ההצעות נמצאות כעת בוועדות; שדות הקרב המרכזיים הם KU (מימון מפלגות), SfU (הגירה), JuU (עונשין נוער) ו-MJU (יערנות). התוצאות עד יוני–ספטמבר 2026 יעצבו את הירושה החקיקתית של הממשלה לפני הבחירות.
+2. **הערכת פגיעות הקואליציה**: מסגורO של S את הצעה 258 כמונע פוליטית הוא ההתקפה האופוזיציונית החדה ביותר על לגיטימיות קואליציית Tidö מאז סכסוכי מדיניות האנרגיה של 2023.
+3. **ניטור סיכונים**: הדחייה הכפולה של V להצעות 263 ו-264 בנושא הגירה, אם תצליח בוועדה, עלולה לעצור את תוכנית הידוק ההגירה המרכזית של הממשלה.
+
+### נקודות מודיעין ב-60 שניות
+
+- 🔴 **HD024151** (S, Jennie Nilsson ואח'): דוחה הצעה 258 בנושא שקיפות פוליטית של איגודים — טוען שהיא מפרה את חופש ההתאגדות (פרק 2 לחוקה) ואינה מידתית לבעיה המוצהרת. מאפיין את הצעד כמכוון פוליטית נגד מימון S.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou ואח'): דוחים הצעות 263 ו-264 בנושא חיזוק גירושים ודרישות מחמירות לרישיונות שהייה — טוענים שאלה מפרים את סעיף 8 ל-ECHR ומפלילים עוני.
+- 🟠 **HD024148 + HD024146** (MP + C): מתנגדים להורדת גיל האחריות הפלילית ל-13 תחת הצעה 246 — טוענים שוודיה תהיה חריגה בהקשר הנורדי והאירופי ללא ראיות לאפקט הרתעה.
+- 🟡 **הצעות מרובות על HD024142–HD024147** (V, MP, C, SD, S): חולקות על הצעה 242 בנושא יערנות פעילה — מפלגות מחולקות בין דחייה מוחלטת (V, MP) לתיקונים ממוקדים (SD, C, S).
+- 🟢 **HD024127 נשלף**: הצעה נשלפה לפני פרסום — אות ניתוחי לכשל תיאום פנימי בקבוצת אופוזיציה.
+
+### הגורם הצופה המרכזי
+
+**חוות דעת מייעצות של Lagrådet על הצעות 258, 263, 264, 246** — צפויות ביוני 2026. הסקירה החוקתית של חוק מימון המפלגות והורדת גיל האחריות הפלילית תהיה מכרעת לסיכויי החקיקה של הממשלה ולנרטיבים הבחירתיים.
+
+### הערכת ביטחון מרכזית
+
+הניתוח מסתמך על שליפת הטקסט המלא של HD024151, HD024150, HD024149 (Admiralty A1 — מקורות מאושרים מילה במילה). 16 ההצעות הנותרות הן מטא-דאטה בלבד (Admiralty C3 — סבירות, ממקורות מוכרים, לא אומתו במלואן). הקשר כלכלי: vintage IMF WEO-2026-04 (חודש אחד, לא מיושן). אין טענות מומצאות; כל הציטוטים מגובים במקורות.
+
+</div>
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**分類**: 🟢 PUBLIC  
+**信頼度**: 高 (Admiralty B2)  
+**実行ID**: 25785419647  
+**日付**: 2026-05-13  
+
+---
+
+### BLUF — 結論の要約
+
+スウェーデン議会の野党は、2026年5月7日から5月13日の週に、政党資金の透明性、移民執行、少年刑事司法、森林規制、エネルギー・環境法制に関する5つの政府提案に対して19本の対案動議を提出した。政治的に最も重大な動議は、社会民主党（S）による政治的透明性に関する2025/26:258号提案の否決であり、これは労働組合に党政治的寄付を開示することを義務付けるものである。Sはこの措置を結社の自由（憲法第2章）に対する憲法上不均衡な攻撃であり、自党の資金基盤を弱体化させるために特別に設計されたものと批判している。V、MP、Cによる移民および刑事司法動議は、Tidö連立政権が2026年9月選挙前にスウェーデンをより厳格で権利保護の少ない法的枠組みへと押し進めているという幅広い野党合意を強化している。
+
+### 支援される意思決定
+
+1. **議会監視**: 19本の動議はすべて委員会に付託された。主要な論点はKU（政党資金）、SfU（移民）、JuU（少年司法）、MJU（林業）。2026年6月から9月までの結果が選挙前の政府の立法的遺産を形成する。
+2. **連立政権脆弱性評価**: S による258号提案を政治的動機によるものとするフレーミングは、2023年のエネルギー政策論争以来、Tidö連立政権の正統性に対する最も鋭い野党攻撃である。
+3. **リスク監視**: Vによる263号および264号提案の二重否決が委員会で成功すれば、政府の看板政策である移民強化プログラムを停止させる可能性がある。
+
+### 60秒インテリジェンスポイント
+
+- 🔴 **HD024151**（S、Jennie Nilsson他）: 労働組合の政治的透明性に関する258号提案を否決 — 結社の自由（憲法第2章）に違反し、述べられた問題に対して不均衡であると主張。Sの資金調達に政治的に向けられた措置と特徴づけている。
+- 🟠 **HD024150 + HD024149**（V、Tony Haddou他）: 国外追放強化と居住許可要件の厳格化に関する263号および264号提案を否決 — ECHR第8条に違反し、貧困を犯罪化すると主張。
+- 🟠 **HD024148 + HD024146**（MP + C）: 246号提案に基づく刑事責任年齢の13歳への引き下げに反対 — 抑止効果の証拠なしにスウェーデンが北欧・欧州の文脈で例外となると主張。
+- 🟡 **HD024142–HD024147に関する複数動議**（V、MP、C、SD、S）: 積極的林業に関する242号提案を争う — 全面否決（V、MP）と焦点を絞った修正案（SD、C、S）に分かれている。
+- 🟢 **HD024127撤回**: 公表前に動議が撤回 — 野党グループ内部の調整失敗を示す分析的シグナル。
+
+### 主要な将来のトリガー
+
+**258号、263号、264号、246号提案に関するLagrådets諮問意見** — 2026年6月予定。政党資金法と刑事責任年齢引き下げの違憲審査が政府の立法見通しと選挙ナラティブを左右する。
+
+### 主要信頼度評価
+
+分析はHD024151、HD024150、HD024149の全文取得（Admiralty A1 — 逐語確認済みソース）に基づく。残り16本の動議はメタデータのみ（Admiralty C3 — 可能性あり、確立されたソースからの未完全確認）。経済的文脈: IMF WEO-2026-04ビンテージ（1ヶ月、非陳腐化）。捏造された主張なし。すべての引用はソース付き。
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[野党動議 2026-05-13]
+    B[HD024151: 政党透明性 - S vs Prop 258]
+    C[HD024150+149: 移民 - V vs Props 263+264]
+    D[HD024148+146: 刑事責任年齢 - MP+C vs Prop 246]
+    E[HD024141-147: 林業 - 複数 vs Prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**분류**: 🟢 공개  
+**신뢰도**: 높음 (Admiralty B2)  
+**실행 ID**: 25785419647  
+**날짜**: 2026-05-13  
+
+---
+
+### BLUF — 핵심 결론
+
+스웨덴 의회 야당은 2026년 5월 7일부터 5월 13일 사이에 정당 자금 투명성, 이민 집행, 청소년 형사 사법, 삼림 규제, 에너지·환경 법제에 관한 정부 5개 제안서에 대해 19건의 반대 동의안을 제출했다. 정치적으로 가장 중요한 동의안은 사회민주당(S)이 정치적 투명성에 관한 2025/26:258호 제안서를 거부한 것으로, 이는 노동조합이 정당 정치적 기부금을 공개하도록 의무화한다. S는 이 조치를 결사의 자유(헌법 제2장)에 대한 헌법적으로 불균형한 공격이며 자당의 자금 기반을 약화시키기 위해 특별히 설계된 것이라고 비판한다. V, MP, C의 이민 및 형사 사법 동의안들은 Tidö 연립 정부가 2026년 9월 선거 전에 스웨덴을 더 엄격하고 권리 보호가 약한 법적 틀로 몰아가고 있다는 폭넓은 야당 공감대를 강화하고 있다.
+
+### 지원되는 의사결정
+
+1. **의회 모니터링**: 19개 동의안이 모두 위원회에 회부됐다. 주요 전선은 KU(정당 자금), SfU(이민), JuU(청소년 사법), MJU(임업). 2026년 6월~9월 이전 결과가 선거 전 정부의 입법적 유산을 결정한다.
+2. **연립 정부 취약성 평가**: S의 258호 제안을 정치적으로 동기화된 것으로 프레이밍하는 것은 2023년 에너지 정책 분쟁 이후 Tidö 연립 정부의 정당성에 대한 가장 날카로운 야당 공격이다.
+3. **위험 모니터링**: V의 263호 및 264호 제안에 대한 이중 거부가 위원회에서 성공하면 정부의 주요 이민 강화 프로그램이 중단될 수 있다.
+
+### 60초 인텔리전스 포인트
+
+- 🔴 **HD024151** (S, Jennie Nilsson 외): 노동조합 정치적 투명성에 관한 258호 제안 거부 — 결사의 자유(헌법 제2장)를 침해하고 명시된 문제에 비해 불균형하다고 주장. 이 조치를 S의 자금 조달을 겨냥한 정치적 목적으로 규정.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou 외): 강제 추방 강화 및 거주 허가 요건 강화에 관한 263호·264호 제안 거부 — ECHR 제8조를 위반하고 빈곤을 범죄화한다고 주장.
+- 🟠 **HD024148 + HD024146** (MP + C): 246호 제안에 따른 형사 책임 연령 13세로의 하향에 반대 — 억지 효과의 증거 없이 스웨덴이 북유럽·유럽 맥락에서 예외적 사례가 된다고 주장.
+- 🟡 **HD024142–HD024147에 관한 복수 동의안** (V, MP, C, SD, S): 적극적 임업에 관한 242호 제안을 다툼 — 전면 거부(V, MP)와 초점을 맞춘 수정안(SD, C, S)으로 분열.
+- 🟢 **HD024127 철회**: 공표 전 동의안 철회 — 야당 그룹의 내부 조정 실패를 나타내는 분석적 신호.
+
+### 주요 미래 트리거
+
+**258호, 263호, 264호, 246호 제안에 관한 Lagrådet의 자문 의견** — 2026년 6월 예정. 정당 자금법과 형사 책임 연령 인하에 대한 헌법 심사가 정부의 입법 전망과 선거 내러티브를 결정할 것이다.
+
+### 핵심 신뢰도 평가
+
+분석은 HD024151, HD024150, HD024149의 전문 검색(Admiralty A1 — 확인된 원문 소스)에 기반한다. 나머지 16개 동의안은 메타데이터만(Admiralty C3 — 가능성 있음, 확립된 소스의 미완전 확인). 경제적 맥락: IMF WEO-2026-04 빈티지(1개월, 구식 아님). 조작된 주장 없음. 모든 인용은 출처가 있음.
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Classificatie**: 🟢 PUBLIC  
+**Vertrouwen**: HIGH (Admiralty B2)  
+**Run-ID**: 25785419647  
+**Datum**: 2026-05-13  
+
+---
+
+### BLUF — Conclusie in het kort
+
+De Zweedse parlementaire oppositie diende in de week van 2026-05-07 tot 2026-05-13 19 tegenmotieven in, gericht op vijf regeringspropositioner over transparantie bij partijfinanciering, migratiehandhaving, jeugdstrafrecht, bosregelgeving en energie- en milieuwetgeving. De politiek meest ingrijpende motie is de verwerping door de Sociaaldemocra (S) van prop. 2025/26:258 over politieke transparantie, die vakbonden zou verplichten partijpolitieke donaties openbaar te maken — een maatregel die S omschrijft als een constitutioneel onevenredige aanval op de vrijheid van vereniging, specifiek ontworpen om haar financieringsbasis te verzwakken. Migratie- en strafrechterlijke motieven van V, MP en C versterken een breed oppositieconsensus dat de Tidö-coalitie Zweden voor de verkiezingen van september 2026 naar een harder en minder rechtenprotecterend rechtskader drijft.
+
+### Ondersteunde beslissingen
+
+1. **Parlementaire monitoring**: Alle 19 motieven zijn nu in commissie; de belangrijkste strijdtonelen zijn KU (partijfinanciering), SfU (migratie), JuU (jeugdrecht) en MJU (bosbouw). De uitkomsten vóór juni–september 2026 zullen het wetgevende erfgoed van de regering voor de verkiezingen bepalen.
+2. **Beoordeling van coalitiekwetsbaarheid**: S's framing van Prop. 258 als politiek gemotiveerd is de scherpste oppositieaanval op de legitimiteit van de Tidö-coalitie sinds de energiebeleidsdisputen van 2023.
+3. **Risicomonitoring**: V's dubbele verwerping van Props. 263 en 264 over migratie, indien succesvol in commissie, kan het vlaggenschip-migratieverscherpingsprogramma van de regering tot stilstand brengen.
+
+### 60-seconden inlichtingenpunten
+
+- 🔴 **HD024151** (S, Jennie Nilsson et al.): Verwerpt Prop. 258 over vakbondspolitieke transparantie — betoogt dat het de vrijheid van vereniging schendt (RF hoofdst. 2) en onevenredig is aan het genoemde probleem. Karakteriseert de maatregel als politiek gericht op S's financiering.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou et al.): Verwerpt Props. 263 en 264 over versterking van deportaties en strengere verblijfsvergunningvereisten — betoogt dat deze EVRM art. 8 schenden en armoede criminaliseren.
+- 🟠 **HD024148 + HD024146** (MP + C): Verzet zich tegen verlaging van strafrechtelijke aansprakelijkheidsleeftijd naar 13 jaar onder Prop. 246 — betoogt dat Zweden een buitenbeentje zou zijn in Noordse en Europese context zonder bewijs van afschrikkingseffect.
+- 🟡 **Meerdere motieven over HD024142–HD024147** (V, MP, C, SD, S): Betwisten Prop. 242 over actieve bosbouw — partijen verdeeld tussen totale verwerping (V, MP) en gerichte amendementen (SD, C, S).
+- 🟢 **Teruggetrokken HD024127**: Motie vóór publicatie teruggetrokken — analytisch signaal van interne coördinatiefout in een oppositiegroepering.
+
+### Belangrijkste toekomstige trigger
+
+**Adviesopinies van het Lagrådet over Props. 258, 263, 264, 246** — verwacht juni 2026. Constitutionele toetsing van de partijfinancieringswet en verlaging van de strafrechtelijke aansprakelijkheidsleeftijd zal bepalend zijn voor de wetgevingsvooruitzichten van de regering en de verkiezingsnarratieven.
+
+### Kernvertrouwensbeoordeling
+
+De analyse steunt op volledige tekstopvraging van HD024151, HD024150, HD024149 (Admiralty A1 — bevestigde woordelijke bronnen). De resterende 16 motieven zijn alleen metadata (Admiralty C3 — waarschijnlijk, van gevestigde bronnen, niet in zijn geheel geverifieerd). Economische context: IMF WEO-2026-04 vintage (1 maand, niet verouderd). Geen verzonnen beweringen; alle citaten zijn bronverwezen.
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[Oppositionsmotieven 2026-05-13]
+    B[HD024151: Partijentransparantie - S vs Prop 258]
+    C[HD024150+149: Migratie - V vs Props 263+264]
+    D[HD024148+146: Strafrechtleeftijd - MP+C vs Prop 246]
+    E[HD024141-147: Bosbouw - Meerdere vs Prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Klassifisering**: 🟢 PUBLIC  
+**Tillit**: HIGH (Admiralty B2)  
+**Kjøring-ID**: 25785419647  
+**Dato**: 2026-05-13  
+
+---
+
+### BLUF — Konklusjon
+
+Sveriges parlamentariske opposisjon leverte 19 motmotioner i uken fra 2026-05-07 til 2026-05-13, rettet mot fem regjeringsproposisjoner om partifinansering og åpenhet, migrasjonshåndhevelse, ungdomsstrafferett, skogregulering og energi- og miljølovgivning. Den politisk mest konsekvente motionen er Sosialdemokratenes (S) avvisning av prop. 2025/26:258 om politisk åpenhet, som ville tvinge fagforeninger til å offentliggjøre partipolitiske donasjoner — et tiltak S karakteriserer som et konstitusjonelt uforholdsmessig angrep på foreningsfriheten designet spesifikt for å svekke dens finansieringsbase. Migrasjons- og strafferettslige motioner fra V, MP og C forsterker en bred opposisjonskonsensus om at Tidö-koalisjonen driver Sverige mot et hardere og mindre rettighetsverndende juridisk rammeverk foran valget i september 2026.
+
+### Støttede beslutninger
+
+1. **Parlamentarisk overvåking**: Alle 19 motioner er nå i komité; de viktigste kampsonene er KU (partifinansering), SfU (migrasjon), JuU (ungdomsjuss) og MJU (skogbruk). Utfallene innen juni–september 2026 vil forme regjeringens lovgivningsarv foran valget.
+2. **Vurdering av koalisjonssårbarhet**: S sin framing av prop. 258 som politisk motivert er det skarpeste opposisjonangrepet på Tidö-koalisjonens legitimitet siden energipolitikkdisputene i 2023.
+3. **Risikoovervåking**: V sin doble avvisning av prop. 263 og 264 om migrasjon, hvis vellykket i komité, kan stanse regjeringens flaggskipsprogram for migrasjonsstramning.
+
+### 60-sekunders etterretningspunkter
+
+- 🔴 **HD024151** (S, Jennie Nilsson m.fl.): Avviser prop. 258 om faglig politisk åpenhet — hevder den krenker foreningsfrihet (RF kap. 2) og er uforholdsmessig i forhold til det angitte problemet. Karakteriserer tiltaket som politisk rettet mot S sin finansiering.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou m.fl.): Avviser prop. 263 og 264 om deportasjonstyrking og strengere krav til oppholdstillatelsesadferd — hevder disse bryter EMK art. 8 og kriminaliserer fattigdom.
+- 🟠 **HD024148 + HD024146** (MP + C): Motsetter seg senking av strafferettslig lavalder til 13 år under prop. 246 — hevder Sverige ville være en avviker i nordisk og europeisk kontekst uten bevis for avskrekkingseffekt.
+- 🟡 **Flere motioner om HD024142–HD024147** (V, MP, C, SD, S): Utfordrer prop. 242 om aktivt skogbruk — partiene delt mellom total avvisning (V, MP) og målrettede endringer (SD, C, S).
+- 🟢 **Tilbaketrukket HD024127**: Mosjon trukket tilbake før publisering — analytisk signal om intern koordineringsfeil i en opposisjonsgruppert.
+
+### Viktigste fremtidige utløser
+
+**Lagrådets rådgivende uttalelser om prop. 258, 263, 264, 246** — forventet juni 2026. Konstitusjonell gjennomgang av partifinansieringsloven og senking av strafferettslig lavalder vil være avgjørende for regjeringens lovgivningsutsikter og valgnarrativene.
+
+### Nøkkeltillitsvurdering
+
+Analysen bygger på fullteksthenting av HD024151, HD024150, HD024149 (Admiralty A1 — bekreftede ordrett kilder). De resterende 16 motionene er kun metadata (Admiralty C3 — sannsynlige, fra etablerte kilder, ubekreftede i sin helhet). Økonomisk kontekst: IMF WEO-2026-04 vintage (1 måned, ikke utdatert). Ingen fabrikerte påstander; alle sitater er kildehenvisninger.
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[Opposisjonsmotioner 2026-05-13]
+    B[HD024151: Partiåpenhet - S mot Prop 258]
+    C[HD024150+149: Migrasjon - V mot Props 263+264]
+    D[HD024148+146: Strafferettslig alder - MP+C mot Prop 246]
+    E[HD024141-147: Skogbruk - Flere mot Prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Klassificering**: 🟢 PUBLIC  
+**Konfidens**: HIGH (Admiralty B2)  
+**Kör-ID**: 25785419647  
+**Datum**: 2026-05-13  
+
+---
+
+### BLUF — Slutsats i korthet
+
+Sveriges parlamentariska opposition lämnade 19 motmotioner under veckan 2026-05-07 till 2026-05-13, inriktade på fem regeringspropositioner om partifinansiering och öppenhet, migrationsverkställighet, ungdomsbrottsrätt, skogsreglering och energi- och miljölagstiftning. Den politiskt mest konsekventa motionen är Socialdemokraternas (S) avvisande av prop. 2025/26:258 om politisk öppenhet, som skulle tvinga fackföreningar att redovisa partianhängiga donationer — en åtgärd S karakteriserar som ett konstitutionellt oproportionerligt angrepp på föreningsfriheten utformat specifikt för att försvaga dess finansieringsbas. Migrations- och straffrättsmotioner från V, MP och C förstärker en bred oppositionskonsensus om att Tidökoalitionen driver Sverige mot ett hårdare och mindre rättsskyddande rättsramverk inför valet i september 2026.
+
+### Stödda beslut
+
+1. **Parlamentarisk bevakning**: Alla 19 motioner är nu i utskott; de viktigaste stridsfälten är KU (partifinansering), SfU (migration), JuU (ungdomsrätt) och MJU (skogsbruk). Utfallen fram till juni–september 2026 kommer att forma regeringens lagstiftningsarv inför valet.
+2. **Bedömning av koalitionssårbarhet**: S:s framställning av prop. 258 som politiskt motiverad är det skarpaste oppositionsangreppet på Tidökoalitionens legitimitet sedan energipolitikdispyterna 2023.
+3. **Riskspårning**: V:s dubbla avvisning av prop. 263 och 264 om migration, om framgångsrik i utskott, kan bromsa regeringens flaggskepp för migrationsåtstramning.
+
+### 60-sekunders underrättelsekulor
+
+- 🔴 **HD024151** (S, Jennie Nilsson m.fl.): Avvisar prop. 258 om facklig politisk öppenhet — hävdar att den bryter mot föreningsfriheten (RF kap. 2) och är oproportionerlig mot det angivna problemet. Karakteriserar åtgärden som politiskt riktad mot S:s finansiering.
+- 🟠 **HD024150 + HD024149** (V, Tony Haddou m.fl.): Avvisar prop. 263 och 264 om deportationsstärkning och striktare krav på uppehållstillstånds uppförande — hävdar att dessa bryter mot ECHR art. 8 och kriminaliserar fattigdom.
+- 🟠 **HD024148 + HD024146** (MP + C): Motsätter sig sänkning av straffbarhetsåldern till 13 år under prop. 246 — hävdar att Sverige skulle vara en avvikare i nordisk och europeisk kontext utan bevis för avskräckningseffekt.
+- 🟡 **Flera motioner om HD024142–HD024147** (V, MP, C, SD, S): Utmanar prop. 242 om aktivt skogsbruk — partierna delade mellan fullständigt avvisande (V, MP) och riktade ändringar (SD, C, S).
+- 🟢 **Tillbakadragen HD024127**: Motion tillbakadragen innan publicering — analytisk signal om intern koordineringsfel i en oppositionsgruppering.
+
+### Viktigaste framåtblickande trigger
+
+**Lagrådets rådgivande yttranden om prop. 258, 263, 264, 246** — förväntat juni 2026. Konstitutionell granskning av partifinansieringslagen och sänkning av straffbarhetsåldern kommer att vara avgörande för regeringens lagstiftningsutsikter och valnarrativen.
+
+### Nyckelkonfidensbedömning
+
+Analysen bygger på fullständig texthämtning av HD024151, HD024150, HD024149 (Admiralty A1 — bekräftade ordagranna källhänvisningar). Återstående 16 motioner är enbart metadata (Admiralty C3 — troliga, från etablerade källor, overifierade i sin helhet). Ekonomisk kontext: IMF WEO-2026-04-vintage (1 månad, ej inaktuell). Inga fabricerade påståenden; alla citat är källhänvisade.
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[Oppositionsmotioner 2026-05-13]
+    B[HD024151: Partitransparens - S mot prop 258]
+    C[HD024150+149: Migration - V mot prop 263+264]
+    D[HD024148+146: Straffbarhetsålder - MP+C mot prop 246]
+    E[HD024141-147: Skogsbruk - Flera mot prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**分类**: 🟢 公开  
+**置信度**: 高 (Admiralty B2)  
+**运行ID**: 25785419647  
+**日期**: 2026-05-13  
+
+---
+
+### BLUF — 核心结论
+
+2026年5月7日至13日这周，瑞典议会反对党提交了19项反对动议，针对政府关于政党资金透明度、移民执法、青少年刑事司法、森林法规以及能源与环境立法的五项提案。政治上最具影响力的动议是社会民主党（S）否决关于政治透明度的2025/26:258号提案——该提案将强制要求工会披露政党政治捐款。S将此措施定性为对结社自由（宪法第二章）的宪法上不相称的攻击，专门设计用于削弱其资金基础。V、MP和C的移民和刑事司法动议强化了一个广泛的反对党共识：Tidö联合政府正在2026年9月大选前将瑞典推向更严苛、对权利保护更弱的法律框架。
+
+### 支持的决策
+
+1. **议会监测**：19项动议均已提交委员会；主要战线为KU（政党资金）、SfU（移民）、JuU（青少年司法）和MJU（林业）。2026年6月至9月之前的结果将塑造政府大选前的立法遗产。
+2. **联合政府脆弱性评估**：S将258号提案定性为政治驱动，是自2023年能源政策争端以来对Tidö联合政府合法性最尖锐的反对党攻击。
+3. **风险监测**：V对263号和264号移民提案的双重否决若在委员会成功，可能使政府的标志性移民强化计划陷入停滞。
+
+### 60秒情报要点
+
+- 🔴 **HD024151**（S，Jennie Nilsson等）：否决关于工会政治透明度的258号提案——主张该提案违反结社自由（宪法第二章），且与所述问题不相称。将该措施定性为政治上针对S资金来源。
+- 🟠 **HD024150 + HD024149**（V，Tony Haddou等）：否决关于加强驱逐出境和严格居留许可要求的263号和264号提案——主张这些提案违反《欧洲人权公约》第8条并将贫困犯罪化。
+- 🟠 **HD024148 + HD024146**（MP + C）：反对根据246号提案将刑事责任年龄降至13岁——主张在没有威慑效果证据的情况下，瑞典将成为北欧和欧洲背景下的例外。
+- 🟡 **HD024142–HD024147相关多项动议**（V、MP、C、SD、S）：质疑关于积极林业的242号提案——各党派分为全面否决（V、MP）和有针对性的修正案（SD、C、S）。
+- 🟢 **HD024127撤回**：动议在发布前被撤回——反对党团体内部协调失败的分析信号。
+
+### 主要前瞻性触发因素
+
+**Lagrådet关于258号、263号、264号、246号提案的咨询意见** — 预计2026年6月。政党资金法和刑事责任年龄下调的违宪审查将对政府的立法前景和选举叙事具有决定性影响。
+
+### 核心置信度评估
+
+分析基于HD024151、HD024150、HD024149的全文检索（Admiralty A1 — 确认的逐字来源）。其余16项动议仅为元数据（Admiralty C3 — 可能，来自既定来源，未完全核实）。经济背景：IMF WEO-2026-04年份（1个月，未过时）。无捏造声明；所有引用均有来源。
+
+```mermaid
+graph TD
+    style A fill:#00d9ff,stroke:#0a0e27,color:#0a0e27
+    style B fill:#ff006e,stroke:#0a0e27,color:#fff
+    style C fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style D fill:#ff006e,stroke:#0a0e27,color:#fff
+    style E fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    A[反对党动议 2026-05-13]
+    B[HD024151: 政党透明度 - S vs Prop 258]
+    C[HD024150+149: 移民 - V vs Props 263+264]
+    D[HD024148+146: 刑事责任年龄 - MP+C vs Prop 246]
+    E[HD024141-147: 林业 - 多党 vs Prop 242]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+```
+
+<!-- source-sha: 024711d152b3357ca699b043a50b4b7600683400 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1835,3 +2546,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_zh.md)

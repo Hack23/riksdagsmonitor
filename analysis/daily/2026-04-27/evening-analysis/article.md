@@ -6,7 +6,7 @@ date: 2026-04-27
 subfolder: evening-analysis
 slug: 2026-04-27-evening-analysis
 source_folder: analysis/daily/2026-04-27/evening-analysis
-generated_at: 2026-05-17T22:44:40.590Z
+generated_at: 2026-05-18T09:08:37.940Z
 language: en
 layout: article
 ---
@@ -138,6 +138,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1967,13 +1980,1430 @@ Implementation-feasibility.md includes a Statskontoret relevance row for HD03252
 **IMF Economic Context** (WEO Apr-2026): NGDP_RPCH=+2.1%, GGXWDG_NGDP=~31%, BCA_NGDPD=+5.5% — fetched 2026-04-27.
 **Statskontoret**: Relevant for HD01JuU10 (weapons law), HD01FiU48 (fuel tax administration), police reform audit (HD01JuU31). URL: https://www.statskontoret.se — no directly relevant new report for 2026-04-27 but prior reports on police reform and regulatory burden apply.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# 📋 الملخص التنفيذي — أخبار السياسة السويدية: تحليل المساء 2026-04-27
+
+**المؤلف**: James Pether Sörling
+**التاريخ**: 2026-04-27
+**فترة التحليل**: 27 أبريل 2026 — تجميع Tier-C الكامل
+**مستوى الثقة**: مرتفع [B2]
+**التصنيف**: عام — المادة 9(2)(e,g) من اللائحة الأوروبية للبيانات
+**معرف التشغيل**: 25012662853
+
+---
+
+### 🎯 الملخص
+
+يتشكّل المشهد السياسي السويدي في 27 أبريل 2026 من خلال ثلاثة متجهات متزامنة تتقارب قبيل انتخابات سبتمبر 2026: الاستراتيجية الانتخابية العدوانية لتحالف تيدو في القضايا المالية والأمنية (ميزانية تكميلية مع تخفيض ضريبة الوقود، قانون الأسلحة، تنظيم البنوك)، وحملة محاسبة اشتراكية ديمقراطية منسقة تستهدف أربعة وزراء عبر الاستجوابات، وشقاق داخل التحالف بين SD وKD في سياسة الطاقة يكشف حدود تماسك التحالف الحاكم. يبقى الوضع المالي السويدي متيناً — نمو الناتج المحلي الإجمالي **+2.1 %** (صندوق النقد الدولي WEO أبريل 2026، NGDP_RPCH)، الدين العام **~31 % من الناتج المحلي الإجمالي** (GGXWDG_NGDP) — مما يمنح دعم الطاقة في الميزانية التكميلية هامشاً دون إثارة مخاوف مالية. غير أن الصورة الانتخابية هي أن الحكومة تشتري الأصوات على حساب الاتساق المناخي.
+
+**المصدر الاقتصادي** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=أبريل-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 قرارات يدعمها هذا التقرير
+
+1. **ريكسداغ / FiU**: يستلزم حزمة البنوك الأوروبية (HD03253، Prop. 2025/26:253) قراراً بشأن ما إذا كانت Finansinspektionen السويدية ستمارس صلاحياتها التقديرية بموجب أحكام CRD6 المتعلقة بالإشراف على الأعضاء من خارج منطقة اليورو — قرار له تداعيات سياسية EUR/SEK.
+2. **الأحزاب السياسية**: تكشف حملة الاستجوابات المنسقة من S والتقارير الأربعة للجان التي تتقدم في آنٍ واحد عن أجندة ما قبل الانتخابات — يجب على الأحزاب اتخاذ موقف قبل جلسة FiU في 5 مايو بشأن الميزانية التكميلية HD01FiU48.
+3. **محللو الأمن**: تشير HD11752 (سحب حقوق التحليق فوق روسيا) وHD11753 (طلب حظر تأشيرات الاتحاد الأوروبي للجنود الروس) إلى أن الريكسداغ يسعى بنشاط إلى زيادة الضغط على روسيا بما يتجاوز التزامات الناتو.
+
+---
+
+### 📊 نقاط الأخبار في 60 ثانية
+
+- **شقاق داخل التحالف** [B2 مرتفع]: استجوب SD (Josef Fransson) وزيرة الطاقة KD Ebba Busch (HD10448) مستنداً إلى التضليل الروسي — الحدث الأكثر استثنائية سياسياً في اليوم. شركاء التحالف الذين يستخدمون أدوات المعارضة ضد بعضهم أمر نادر ذو دلالة انتخابية.
+- **حزمة البنوك الأوروبية HD03253** [B2 مرتفع]: أكبر إصلاح مالي في السويد منذ بازل الثالث. أرضية الإنتاج بنسبة 72.5% من النهج القياسي تؤثر على Swedbank وSEB وHandelsbanken وNordea. تبدأ معالجة لجنة FiU في مايو 2026.
+- **الميزانية التكميلية HD01FiU48** [B2 مرتفع]: تمت الموافقة على تخفيض ضريبة الوقود في FiU. قدّمت V وMP تحفظات. يعكس مسار الضريبة الخضراء — تثليث انتخابي نحو الناخبين الريفيين وذوي الحساسية تجاه تكاليف المعيشة.
+- **قانون الأسلحة HD01JuU10** [B2 مرتفع]: أول مراجعة رئيسية للأسلحة النارية منذ 30 عاماً. الامتثال لتوجيه الاتحاد الأوروبي 2021/555. تحفظ حزب الوسط على أسلحة الصيد شبه الأوتوماتيكية.
+- **حملة استجوابات S** [B2 متوسط]: خمسة استجوابات S ضد Tenje (M) وBusch (KD) وJonson (M) وSvantesson (M) — خطة محاسبة منسقة في البنية التحتية والتأمين الاجتماعي والطاقة والمالية.
+- **مقترحات أمن روسيا** [B2 متوسط]: تطالب HD11752 وHD11753 بسحب حقوق التحليق ووقف تأشيرات الاتحاد الأوروبي للأفراد العسكريين الروس — ضغط المعارضة على سياسة أوكرانيا/روسيا.
+- **الرعاية الاجتماعية للسجناء HD03252** [B2 مرتفع]: تقييد المزايا للسجناء في الإسكان الخاضع للرقابة. توفير مالي بقيمة 200–300 مليون كرونة سويدية سنوياً. متوقع طعن في التناسب من V وMP.
+
+---
+
+### 🔭 أبرز المحفزات المستقبلية
+
+**5 مايو 2026**: تفتح FiU معالجة حزمة البنوك (HD03253) وتعالج آراء حول الميزانية التكميلية (HD01FiU48) — جلسة مزدوجة للجنة المالية تكشف عما إذا كان الريكسداغ سيعدّل أياً منهما. هذا هو الحدث البرلماني الأكثر تأثيراً في أفق الأسبوعين.
+
+---
+
+### ميرميد: خريطة الأخبار السياسية اليومية
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### المصدر الاقتصادي
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**ملاحظة Pass 2**: تمت إعادة تقييم KJ-1 (طاقة SD-KD) في مقابل فرضية محامي الشيطان بأنه اتصال برلماني روتيني. تم الإبقاء على تصنيف HIGH بناءً على: (أ) الطاقة مستثناة صراحةً من غموض اتفاق تيدو، (ب) تقديم HD10448 في نفس يوم HD01FiU48 — SD يُظهر الدعم والاستياء في آنٍ واحد، (ج) دور بوش كوزيرة رئيسية في KD يجعل هذا أكثر خطورة من استجواب روتيني.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-04-27
+**Analyseperiode**: 27. april 2026 — fuld Tier-C-aggregation
+**Konfidensgrad**: HIGH [B2]
+**Klassificering**: PUBLIC — GDPR Art. 9(2)(e,g)
+
+---
+
+### 🎯 BLUF
+
+Det svenske politiske landskab den 27. april 2026 er defineret af tre samtidige vektorer, der konvergerer forud for parlamentsvalget i september 2026: Tidö-koalitionens aggressive forvalgsdagsorden inden for finans og sikkerhed (tillægsbudget brændstofafgiftsnedsættelse, våbenlov, bankregulering), en koordineret socialdemokratisk ansvarlighedskampagne mod fire ministermål via interpellationer, og en intrakoalitionær SD-KD-brud i energipolitikken, der eksponerer grænserne for den styrende alliances sammenhæng. Sveriges finansielle stilling forbliver solid — BNP-vækst på **+2,1 %** (IMF WEO Apr-2026, NGDP_RPCH), statsgæld på **~31 % af BNP** (GGXWDG_NGDP) — hvilket giver råderum for tillægsbudgettets husholdningsenergihjælp uden at udløse finansiel bekymring, men det valgpolitiske billede er, at regeringen køber stemmer på bekostning af klimakonsistens.
+
+**Økonomisk proveniens** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=April-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 beslutninger, som dette sammendrag understøtter
+
+1. **Riksdagen / FiU**: EU-bankpakken (HD03253, prop. 2025/26:253) kræver en beslutning om, hvorvidt Sveriges Finansinspektionen vil udøve skøn under CRD6's bestemmelser om tilsyn med lande uden for eurozonen — en beslutning med EUR/SEK-politiske implikationer.
+2. **Politiske partier**: S's koordinerede interpellationskampagne og de fire udvalgsrapporter, der fremskydes samtidigt, afslører en forvalgsdagsorden — partierne skal tage stilling til HD01FiU48-tillægsbudgettet inden FiU-sessionen den 5. maj.
+3. **Sikkerhedsanalytikere**: HD11752 (tilbagetrækning af overflyvningsrettigheder for Rusland) og HD11753 (forbud mod EU-visa for russiske soldater) signalerer, at det svenske Riksdag aktivt søger at eskalere presset på Rusland ud over NATO-forpligtelserne.
+
+---
+
+### 📊 60-sekunders efterretningsbullets
+
+- **Intrakoalitionær brud** [B2 HIGH]: SD (Josef Fransson) interpellerede KD-energiminister Ebba Busch (HD10448) med russisk desinformationshenvisning — dagens mest politisk usædvanlige begivenhed. Koalitionspartnere, der bruger oppositionsinstrumenter mod hinanden, er sjælden og valgstrategisk signifikant.
+- **EU-bankpakken HD03253** [B2 HIGH]: Sveriges mest konsekvente finansreform siden Basel III. Outputgulv på 72,5 % af standardmetoden påvirker Swedbank, SEB, Handelsbanken, Nordea. FiU-behandling begynder maj 2026.
+- **Tillægsbudget HD01FiU48** [B2 HIGH]: Brændstofafgiftsnedsættelse godkendt i FiU. V og MP indgav forbehold. Vender grøn skattetrajektion — elektoral triangulering mod landdistrikt og leveomkostningsvælgere.
+- **Våbenloven HD01JuU10** [B2 HIGH]: Første store våbenoversyn i 30 år. Opfyldelse af EU-direktiv 2021/555. Centrumspartiets forbehold om halvautomatiske jagtvåben.
+- **S's interpellationskampagne** [B2 MEDIUM]: Fem S-interpellationer mod Tenje (M), Busch (KD), Jonson (M), Svantesson (M) — koordineret ansvarlighedsplaybook inden for infrastruktur, socialforsikring, energi og finans.
+- **Ruslands sikkerhedsmotioner** [B2 MEDIUM]: HD11752 og HD11753 kræver tilbagetrækning af overflyvningsrettigheder og EU-visumstopp for russisk militærpersonel — oppositionspres på Ukraine/Ruslands-politikken.
+- **Frihedsberøvedes socialforsikring HD03252** [B2 HIGH]: Velfærdsbegrænsning for indsatte i kontrolleret bolig. SEK 200–300 M/år i fiskal besparelse. Proportionalitetsudfordring forventes fra V og MP.
+
+---
+
+### 🔭 Vigtigste fremadrettede udløser
+
+**5. maj 2026**: FiU åbner behandling af bankpakken (HD03253) OG behandler tillægsbudgettets (HD01FiU48) ytringer — dobbelt finansudvalgssession afslører, om Riksdagen vil ændre nogen af dem. Dette er den mest impaktfulde parlamentariske begivenhed i tohorisonten.
+
+---
+
+### Mermaid: Dagligt politisk efterretningskort
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### Økonomisk proveniens
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Pass 2-note**: KJ-1 (SD-KD energi) genovervejet mod djævelens advokat-hypotese om, at dette er rutinemæssig parlamentarisk kommunikation. HIGH-konfidensklassificering opretholdt baseret på: (a) energi specifikt ekskluderet fra Tidö-aftalens tvetydighed, (b) HD10448 indgivet samme dag som HD01FiU48 — SD demonstrerer både støtte og utilfredshed simultant, (c) Buschs rolle som senior KD-minister gør dette mere risikofyldt end en rutineinterpellation.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Datum**: 2026-04-27
+**Analysezeitraum**: 27. April 2026 — vollständige Tier-C-Aggregation
+**Konfidenzgrad**: HIGH [B2]
+**Klassifizierung**: PUBLIC — GDPR Art. 9(2)(e,g)
+
+---
+
+### 🎯 BLUF
+
+Die schwedische politische Landschaft am 27. April 2026 wird durch drei gleichzeitige Vektoren definiert, die vor der Parlamentswahl im September 2026 konvergieren: die aggressive Vorwahlstrategie der Tidö-Koalition in Finanz- und Sicherheitsfragen (Nachtragshaushalt mit Kraftstoffsteuersenkung, Waffengesetz, Bankenregulierung), eine koordinierte sozialdemokratische Verantwortlichkeitskampagne gegen vier Ministerziele durch Interpellationen sowie ein intrakoalitionärer SD-KD-Bruch in der Energiepolitik, der die Grenzen des Zusammenhalts der regierenden Allianz aufzeigt. Schwedens Finanzlage bleibt stabil — BIP-Wachstum von **+2,1 %** (IMF WEO Apr-2026, NGDP_RPCH), Staatsverschuldung von **~31 % des BIP** (GGXWDG_NGDP) — was der Energiehilfe des Nachtragshaushalts Spielraum bietet, ohne finanzielle Bedenken auszulösen. Das Wahlbild ist jedoch, dass die Regierung Stimmen auf Kosten der Klimakonsistenz kauft.
+
+**Wirtschaftliche Herkunft** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=April-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Riksdag / FiU**: Das EU-Bankenpaket (HD03253, Prop. 2025/26:253) erfordert eine Entscheidung darüber, ob die schwedische Finansinspektionen ihr Ermessen unter den CRD6-Bestimmungen zur Aufsicht über Nicht-Eurozone-Mitglieder ausüben wird — eine Entscheidung mit EUR/SEK-politischen Implikationen.
+2. **Politische Parteien**: Die koordinierte Interpellationskampagne der S und die vier gleichzeitig voranschreitenden Ausschussberichte enthüllen eine Vorwahl-Agenda — die Parteien müssen vor der FiU-Sitzung am 5. Mai zum Nachtragshaushalt HD01FiU48 Stellung nehmen.
+3. **Sicherheitsanalytiker**: HD11752 (Entzug der Überflugrechte für Russland) und HD11753 (Antrag zum EU-Visaverbot für russische Soldaten) signalisieren, dass der Riksdag aktiv versucht, den Druck auf Russland über die NATO-Verpflichtungen hinaus zu erhöhen.
+
+---
+
+### 📊 60-Sekunden-Nachrichtenpunkte
+
+- **Intrakoalitionärer Bruch** [B2 HIGH]: SD (Josef Fransson) interpellierte KD-Energieminister Ebba Busch (HD10448) unter Bezugnahme auf russische Desinformation — das politisch ungewöhnlichste Ereignis des Tages. Koalitionspartner, die Oppositionsinstrumente gegeneinander einsetzen, sind selten und wahlstrategisch bedeutsam.
+- **EU-Bankenpaket HD03253** [B2 HIGH]: Schwedens folgenreichste Finanzreform seit Basel III. Ausgabenboden von 72,5 % des Standardansatzes betrifft Swedbank, SEB, Handelsbanken, Nordea. FiU-Ausschussbearbeitung beginnt Mai 2026.
+- **Nachtragshaushalt HD01FiU48** [B2 HIGH]: Kraftstoffsteuersenkung im FiU genehmigt. V und MP reichten Vorbehalte ein. Kehrt die grüne Steuertrajektion um — wahlstrategische Triangulation zu Wählern in ländlichen Gebieten und mit Lebenshaltungskosten.
+- **Waffengesetz HD01JuU10** [B2 HIGH]: Erste größere Waffenüberprüfung seit 30 Jahren. Einhaltung der EU-Richtlinie 2021/555. Vorbehalt der Zentrumspartei bei halbautomatischen Jagdwaffen.
+- **Interpellationskampagne der S** [B2 MEDIUM]: Fünf S-Interpellationen gegen Tenje (M), Busch (KD), Jonson (M), Svantesson (M) — koordiniertes Verantwortlichkeits-Playbook in Infrastruktur, Sozialversicherung, Energie und Finanzen.
+- **Russland-Sicherheitsmotionen** [B2 MEDIUM]: HD11752 und HD11753 fordern Entzug der Überflugrechte und EU-Visumstopp für russisches Militärpersonal — Oppositionsdruck auf die Ukraine/Russland-Politik.
+- **Sozialversicherung Inhaftierter HD03252** [B2 HIGH]: Wohlfahrtsbeschränkung für kontrolliert untergebrachte Inhaftierte. SEK 200–300 Mio./Jahr Fiskal­ersparnis. Verhältnismäßigkeitsherausforderung durch V und MP erwartet.
+
+---
+
+### 🔭 Wichtigster vorausschauender Auslöser
+
+**5. Mai 2026**: FiU eröffnet Behandlung des Bankenpakets (HD03253) UND behandelt Stellungnahmen zum Nachtragshaushalt (HD01FiU48) — doppelte Finanzausschusssitzung offenbart, ob der Riksdag eines von beiden ändern wird. Dies ist das einflussreichste parlamentarische Ereignis im Zwei-Wochen-Horizont.
+
+---
+
+### Mermaid: Tägliche politische Nachrichtenkarte
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### Wirtschaftliche Herkunft
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Pass-2-Anmerkung**: KJ-1 (SD-KD Energie) wurde gegen die Advocatus-Diaboli-Hypothese neu bewertet, dass es sich um routinemäßige parlamentarische Kommunikation handelt. Die HIGH-Konfidenzklassifizierung wurde aufrechterhalten basierend auf: (a) Energie explizit von der Ambiguität des Tidö-Abkommens ausgenommen, (b) HD10448 am selben Tag wie HD01FiU48 eingereicht — SD demonstriert gleichzeitig sowohl Unterstützung als auch Unzufriedenheit, (c) Buschs Rolle als leitende KD-Ministerin macht dies risikoreicher als eine Routine-Interpellation.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Fecha**: 2026-04-27
+**Período de análisis**: 27 de abril de 2026 — agregación Tier-C completa
+**Nivel de confianza**: HIGH [B2]
+**Clasificación**: PUBLIC — RGPD Art. 9(2)(e,g)
+**ID de ejecución**: 25012662853
+
+---
+
+### 🎯 BLUF
+
+El panorama político sueco del 27 de abril de 2026 está definido por tres vectores simultáneos que convergen antes de las elecciones de septiembre de 2026: la estrategia preelectoral agresiva de la coalición Tidö en asuntos fiscales y de seguridad (presupuesto suplementario con reducción del impuesto al combustible, ley de armas, regulación bancaria), una campaña de rendición de cuentas coordinada de los socialdemócratas contra cuatro objetivos ministeriales mediante interpelaciones, y una fractura intracoalicionaria SD-KD en política energética que revela los límites de la cohesión de la alianza gobernante. La posición fiscal de Suecia sigue siendo sólida — crecimiento del PIB de **+2,1 %** (FMI WEO Abr-2026, NGDP_RPCH), deuda pública de **~31 % del PIB** (GGXWDG_NGDP) — lo que da margen a las ayudas energéticas del presupuesto suplementario sin generar preocupaciones fiscales. Sin embargo, la imagen electoral es la de un gobierno comprando votos a costa de la coherencia climática.
+
+**Procedencia económica** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=Abril-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **Riksdag / FiU**: El paquete bancario europeo (HD03253, Prop. 2025/26:253) requiere una decisión sobre si la Finansinspektionen sueca ejercerá su discrecionalidad bajo las disposiciones CRD6 sobre supervisión de miembros fuera de la zona euro — una decisión con implicaciones políticas EUR/SEK.
+2. **Partidos políticos**: La campaña coordinada de interpelaciones del S y los cuatro informes de comisión que avanzan simultáneamente revelan una agenda preelectoral — los partidos deben posicionarse antes de la sesión del FiU del 5 de mayo sobre el presupuesto suplementario HD01FiU48.
+3. **Analistas de seguridad**: HD11752 (revocación de derechos de sobrevuelo a Rusia) y HD11753 (solicitud de prohibición de visados UE a soldados rusos) señalan que el Riksdag busca activamente aumentar la presión sobre Rusia más allá de los compromisos de la OTAN.
+
+---
+
+### 📊 Puntos de actualidad en 60 segundos
+
+- **Fractura intracoalicionaria** [B2 HIGH]: SD (Josef Fransson) interpeló a la ministra de energía KD Ebba Busch (HD10448) invocando la desinformación rusa — el evento políticamente más inusual del día. Los socios de coalición que usan instrumentos de oposición entre sí son raros y electoralmente significativos.
+- **Paquete bancario UE HD03253** [B2 HIGH]: La reforma financiera más importante de Suecia desde Basilea III. El suelo de producción del 72,5 % del enfoque estándar afecta a Swedbank, SEB, Handelsbanken, Nordea. El tratamiento en el comité FiU comienza en mayo de 2026.
+- **Presupuesto suplementario HD01FiU48** [B2 HIGH]: Reducción del impuesto al combustible aprobada en FiU. V y MP presentaron reservas. Invierte la trayectoria fiscal verde — triangulación electoral hacia votantes rurales y sensibles al costo de vida.
+- **Ley de armas HD01JuU10** [B2 HIGH]: Primera revisión mayor de armas de fuego en 30 años. Cumplimiento de la directiva UE 2021/555. Reserva del Partido del Centro sobre armas de caza semiautomáticas.
+- **Campaña de interpelaciones S** [B2 MEDIUM]: Cinco interpelaciones S contra Tenje (M), Busch (KD), Jonson (M), Svantesson (M) — programa coordinado de rendición de cuentas en infraestructura, seguridad social, energía y finanzas.
+- **Mociones de seguridad sobre Rusia** [B2 MEDIUM]: HD11752 y HD11753 exigen la revocación de derechos de sobrevuelo y la detención de visados UE al personal militar ruso — presión de la oposición sobre la política Ucrania/Rusia.
+- **Bienestar social de presos HD03252** [B2 HIGH]: Restricción de prestaciones para presos en alojamiento controlado. Ahorro fiscal de 200–300 millones SEK/año. Se espera impugnación de proporcionalidad de V y MP.
+
+---
+
+### 🔭 Disparador prospectivo principal
+
+**5 de mayo de 2026**: El FiU abre el tratamiento del paquete bancario (HD03253) Y trata los dictámenes sobre el presupuesto suplementario (HD01FiU48) — doble sesión del comité financiero que revelará si el Riksdag modificará alguno de ellos. Este es el evento parlamentario más influyente en el horizonte de dos semanas.
+
+---
+
+### Mermaid: Mapa diario de noticias políticas
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### Procedencia económica
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Nota Pass 2**: KJ-1 (energía SD-KD) fue reevaluado frente a la hipótesis del abogado del diablo de que se trata de comunicación parlamentaria rutinaria. La clasificación HIGH se mantuvo basándose en: (a) la energía explícitamente excluida de la ambigüedad del acuerdo Tidö, (b) HD10448 presentado el mismo día que HD01FiU48 — SD demostrando simultáneamente apoyo e insatisfacción, (c) el papel de Busch como ministra principal del KD hace esto más arriesgado que una interpelación rutinaria.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_fi.md -->
+
+**Kirjoittaja**: James Pether Sörling
+**Päivämäärä**: 2026-04-27
+**Analyysiajanjakso**: 27. huhtikuuta 2026 — täydellinen Tier-C-aggregointi
+**Luotettavuusaste**: HIGH [B2]
+**Luokitus**: PUBLIC — GDPR Art. 9(2)(e,g)
+
+---
+
+### 🎯 BLUF
+
+Ruotsin poliittinen kenttä 27. huhtikuuta 2026 määrittyy kolmella samanaikaisella vektorilla, jotka konvergoivat syyskuun 2026 parlamenttivaaleja kohti: Tidö-koalition aggressiivinen vaaliohjelma finanssi- ja turvallisuuslinjalla (lisätalousarvio polttoaineveronalennuksineen, asela­ki, pankkisääntely), koordinoitu sosiaalidemokraattinen vastuukampanja neljää ministerikohdetta vastaan interpellaatioiden kautta, sekä intrakoalitiollinen SD-KD-halkeama energiapolitiikassa, joka paljastaa hallitsevan liiton koheesion rajat. Ruotsin finanssipositio pysyy vakaana — BKT:n kasvu **+2,1 %** (IMF WEO Apr-2026, NGDP_RPCH), valtion velka **~31 % BKT:sta** (GGXWDG_NGDP) — mikä antaa liikkumavaraa lisätalousarvion kotitalouksien energiahelpotukselle aiheuttamatta taloushuolia, mutta vaalitaktinen kuva on, että hallitus ostaa ääniä ilmastoyhtenäisyyden kustannuksella.
+
+**Taloudellinen provenanssi** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=April-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 päätöstä, joita tämä yhteenveto tukee
+
+1. **Riksdagen / FiU**: EU:n pankkipaketti (HD03253, prop. 2025/26:253) vaatii päätöksen siitä, käyttääkö Ruotsin Finansinspektionen harkintavaltaa CRD6:n euroalueen ulkopuolisten maiden valvontasäännösten nojalla — päätöksellä on EUR/SEK-poliittisia vaikutuksia.
+2. **Poliittiset puolueet**: S:n koordinoitu interpellaatiokampanja ja neljä samanaikaisesti etenevää valiokuntamietintöä paljastavat vaalipäätöksenteon — puolueiden on otettava kantaa HD01FiU48-lisätalousarvioon ennen FiU:n kokousta 5. toukokuuta.
+3. **Turvallisuusanalyytikot**: HD11752 (Venäjän ylilentooikeuksien peruuttaminen) ja HD11753 (venäläisten sotilaiden EU-viisumikielto) merkitsevät, että Riksdagen hakee aktiivisesti painetta Venäjää kohtaan NATO-sitoumusten ohella.
+
+---
+
+### 📊 60 sekunnin tiedustelusummat
+
+- **Intrakoalitiollinen halkeama** [B2 HIGH]: SD (Josef Fransson) interpelloi KD:n energiaministeri Ebba Buschia (HD10448) viitaten venäläiseen disinformaatioon — päivän poliittisesti epätavallisin tapahtuma. Koalitiokumppaneiden käyttäessä oppositiovälineitä toisiaan vastaan on harvinaista ja vaalitaktisesti merkittävää.
+- **EU:n pankkipaketti HD03253** [B2 HIGH]: Ruotsin merkittävin rahoitusuudistus sitten Basel III:n. 72,5 %:n tuotantogulv standardimenetelmästä vaikuttaa Swedbankiin, SEBiin, Handelsbankeniiin, Nordeaan. FiU:n käsittely alkaa toukokuussa 2026.
+- **Lisätalousarvio HD01FiU48** [B2 HIGH]: Polttoaineveronalennon hyväksyy FiU. V ja MP jättivät varaumat. Kääntää vihreän verotrajektorin — vaalikolmio maaseutu- ja elinkustannusäänestäjille.
+- **Asela­ki HD01JuU10** [B2 HIGH]: Ensimmäinen suuri asekatsaus 30 vuoteen. EU-direktiivin 2021/555 noudattaminen. Keskustapuolueen varauma puoliautomaattisista metsästysaseista.
+- **S:n interpellaatiokampanja** [B2 MEDIUM]: Viisi S:n interpellaatiota Tenjea (M), Buschia (KD), Jonsonia (M), Svantessonía (M) vastaan — koordinoitu vastuupelikirja infrastruktuurin, sosiaalivakuutuksen, energian ja rahoituksen alueilla.
+- **Venäjän turvallisuusmotiot** [B2 MEDIUM]: HD11752 ja HD11753 vaativat ylilentooikeuksien peruuttamista ja EU-viisumikieltoa venäläiselle sotilashenkilöstölle — oppositiopaine Ukraina/Venäjä-politiikassa.
+- **Vapausrangaistuksen alaisten sosiaalivakuutus HD03252** [B2 HIGH]: Hyvinvointirajoitus kontrolloituun asumiseen sijoitetuille. SEK 200–300 M/vuosi fiskaalisäästö. V ja MP odotettavasti haastavat suhteellisuusperiaatteella.
+
+---
+
+### 🔭 Tärkein eteenpäin katsova laukaisija
+
+**5. toukokuuta 2026**: FiU avaa pankkipaketinkäsittelyn (HD03253) JA käsittelee lisätalousarvion (HD01FiU48) lausunnot — kaksoistalousvaliokunnan istunto paljastaa, muuttaako Riksdagen kumpaakaan. Tämä on vaikuttavin parlamentaarinen tapahtuma kahden viikon horisontissa.
+
+---
+
+### Mermaid: Päivittäinen poliittinen tiedustelukartta
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### Taloudellinen provenanssi
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Pass 2 -huomio**: KJ-1 (SD-KD energia) uudelleenarvioitu vastaan devil's advocate -hypoteesi, että kyseessä on rutiininomainen parlamentaarinen viestintä. HIGH-luotettavuusluokitus säilytettiin perustuen: (a) energia nimenomaisesti suljettu pois Tidö-sopimuksen epäselvyydestä, (b) HD10448 jätettiin samana päivänä kuin HD01FiU48 — SD osoittaa sekä tukea että tyytymättömyyttä samanaikaisesti, (c) Buschin rooli seniorina KD-ministerinä tekee tästä riskialttiimpaa kuin rutiininomainen interpellaatio.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+
+**Période d'analyse** : 27 avril 2026 — agrégation Tier-C complète
+**Niveau de confiance** : HIGH [B2]
+
+**ID d'exécution** : 25012662853
+
+---
+
+### 🎯 BLUF
+
+Le paysage politique suédois du 27 avril 2026 est structuré par trois vecteurs simultanés convergeant avant les élections de septembre 2026 : la stratégie pré-électorale agressive de la coalition Tidö sur les questions fiscales et sécuritaires (budget supplémentaire avec réduction de la taxe carburant, loi sur les armes, régulation bancaire), une campagne de responsabilisation coordonnée des sociaux-démocrates ciblant quatre ministres par interpellations, et une fracture intracoalitionnelle SD-KD sur la politique énergétique révélant les limites de la cohésion de l'alliance gouvernante. La position fiscale de la Suède reste solide — croissance du PIB de **+2,1 %** (FMI WEO Avr-2026, NGDP_RPCH), dette publique à **~31 % du PIB** (GGXWDG_NGDP) — ce qui donne une marge de manœuvre aux aides énergétiques du budget supplémentaire sans déclencher d'inquiétudes budgétaires. L'image électorale est néanmoins celle d'un gouvernement achetant des voix au détriment de la cohérence climatique.
+
+**Provenance économique** (`economicProvenance`) : provider=imf, dataflow=WEO, vintage=Avril-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 décisions que ce rapport soutient
+
+1. **Riksdag / FiU** : Le paquet bancaire européen (HD03253, Prop. 2025/26:253) exige une décision sur l'exercice par la Finansinspektionen de son pouvoir discrétionnaire au titre des dispositions CRD6 sur la surveillance des membres hors zone euro — une décision à implications politiques EUR/SEK.
+2. **Partis politiques** : La campagne d'interpellations coordonnée du S et les quatre rapports de commission simultanément avancés révèlent un programme pré-électoral — les partis doivent se positionner avant la session du FiU du 5 mai sur le budget supplémentaire HD01FiU48.
+3. **Analystes de sécurité** : HD11752 (retrait des droits de survol de la Russie) et HD11753 (demande d'interdiction de visa UE pour les soldats russes) signalent que le Riksdag cherche activement à augmenter la pression sur la Russie au-delà des engagements OTAN.
+
+---
+
+### 📊 Points d'actualité en 60 secondes
+
+- **Fracture intracoalitionnelle** [B2 HIGH] : Le SD (Josef Fransson) a interpellé la ministre de l'énergie KD Ebba Busch (HD10448) en invoquant la désinformation russe — l'événement politiquement le plus inhabituel de la journée. Des partenaires de coalition utilisant des instruments d'opposition les uns contre les autres sont rares et électoralement significatifs.
+- **Paquet bancaire UE HD03253** [B2 HIGH] : La réforme financière la plus conséquente de la Suède depuis Bâle III. Plancher de production à 72,5 % de l'approche standard affecte Swedbank, SEB, Handelsbanken, Nordea. Traitement en commission FiU à partir de mai 2026.
+- **Budget supplémentaire HD01FiU48** [B2 HIGH] : Réduction de la taxe carburant approuvée en FiU. V et MP ont déposé des réserves. Inverse la trajectoire fiscale verte — triangulation électorale vers les électeurs ruraux et sensibles au coût de la vie.
+- **Loi sur les armes HD01JuU10** [B2 HIGH] : Première révision majeure des armes à feu depuis 30 ans. Conformité à la directive UE 2021/555. Réserve du Parti du Centre sur les armes de chasse semi-automatiques.
+- **Campagne d'interpellations S** [B2 MEDIUM] : Cinq interpellations S contre Tenje (M), Busch (KD), Jonson (M), Svantesson (M) — programme coordonné de responsabilisation en infrastructure, assurance sociale, énergie et finances.
+- **Motions sécurité Russie** [B2 MEDIUM] : HD11752 et HD11753 demandent le retrait des droits de survol et l'arrêt des visas UE pour le personnel militaire russe — pression de l'opposition sur la politique Ukraine/Russie.
+- **Protection sociale des détenus HD03252** [B2 HIGH] : Restriction des prestations pour les détenus en placement contrôlé. Économie fiscale de 200–300 millions SEK/an. Contestation de proportionnalité attendue de V et MP.
+
+---
+
+### 🔭 Déclencheur prospectif principal
+
+**5 mai 2026** : Le FiU ouvre le traitement du paquet bancaire (HD03253) ET traite les avis sur le budget supplémentaire (HD01FiU48) — double session du comité des finances révélant si le Riksdag modifiera l'un ou l'autre. C'est l'événement parlementaire le plus influent dans l'horizon de deux semaines.
+
+---
+
+### Mermaid : Carte quotidienne de l'actualité politique
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### Provenance économique
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Note Pass 2** : KJ-1 (énergie SD-KD) a été réévalué par rapport à l'hypothèse de l'avocat du diable selon laquelle il s'agirait d'une communication parlementaire de routine. La classification HIGH a été maintenue sur la base de : (a) l'énergie explicitement exclue de l'ambiguïté de l'accord Tidö, (b) HD10448 déposé le même jour que HD01FiU48 — SD démontrant simultanément soutien et mécontentement, (c) le rôle de Busch en tant que ministre principale du KD rendant cela plus risqué qu'une interpellation de routine.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# 📋 סיכום מנהלים — חדשות פוליטיות שוודיות: ניתוח ערב 2026-04-27
+
+**מחבר**: James Pether Sörling
+**תאריך**: 2026-04-27
+**תקופת ניתוח**: 27 באפריל 2026 — אגרגציית Tier-C מלאה
+**רמת ביטחון**: גבוהה [B2]
+**סיווג**: ציבורי — GDPR סעיף 9(2)(e,g)
+**מזהה ריצה**: 25012662853
+
+---
+
+### 🎯 BLUF
+
+הנוף הפוליטי השוודי של 27 באפריל 2026 מוגדר על ידי שלושה וקטורים בו-זמניים המתכנסים לפני בחירות ספטמבר 2026: האסטרטגיה הטרום-בחירותית האגרסיבית של קואליציית טידו בנושאים פיסקליים וביטחוניים (תקציב משלים עם הפחתת מס דלק, חוק נשק, רגולציה בנקאית), קמפיין אחריות מתואם של הסוציאל-דמוקרטים נגד ארבעה יעדים מיניסטריאליים דרך שאילתות, ושבר קואליציוני פנימי SD-KD במדיניות האנרגיה החושף את גבולות לכידות הברית השלטת. עמדתה הפיסקלית של שוודיה נותרת יציבה — צמיחת תמ"ג של **+2.1%** (קרן המטבע הבינלאומית WEO אפריל-2026, NGDP_RPCH), חוב ממשלתי **~31% מהתמ"ג** (GGXWDG_NGDP) — מה שמעניק לסיוע האנרגיה בתקציב המשלים מרחב ללא עורר חששות פיסקליים. עם זאת, התמונה הבחירותית היא שהממשלה קונה קולות על חשבון עקביות אקלימית.
+
+**מקור כלכלי** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=אפריל-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 החלטות שדוח זה תומך בהן
+
+1. **ריקסדאג / FiU**: חבילת הבנקים האירופית (HD03253, Prop. 2025/26:253) מחייבת החלטה האם הפינאנסינספקטיונן השוודית תפעיל את שיקול דעתה תחת הוראות CRD6 על פיקוח על חברים מחוץ לאיזור האירו — החלטה עם השלכות מדיניות EUR/SEK.
+2. **מפלגות פוליטיות**: קמפיין השאילתות המתואם של S וארבעת דוחות הוועדה המתקדמים בו-זמנית חושפים אג'נדה טרום-בחירותית — מפלגות חייבות לקחת עמדה לפני ישיבת FiU ב-5 במאי בנוגע לתקציב המשלים HD01FiU48.
+3. **אנליסטי ביטחון**: HD11752 (ביטול זכויות תעופה מעל רוסיה) ו-HD11753 (בקשה לאיסור ויזות האיחוד האירופי לחיילים רוסים) מאותתים שהריקסדאג מבקש באופן פעיל להגביר את הלחץ על רוסיה מעבר להתחייבויות נאט"ו.
+
+---
+
+### 📊 נקודות חדשות ב-60 שניות
+
+- **שבר קואליציוני פנימי** [B2 גבוה]: SD (Josef Fransson) שאל את שרת האנרגיה KD Ebba Busch (HD10448) בהתייחסות לדיסאינפורמציה רוסית — האירוע הפוליטי הבלתי-שגרתי ביותר ביום זה. שותפי קואליציה המשתמשים בכלי אופוזיציה זה כנגד זה נדירים ומשמעותיים בחירותית.
+- **חבילת בנקים אירופית HD03253** [B2 גבוה]: הרפורמה הפיננסית המשמעותית ביותר של שוודיה מאז בזל III. רצפת תפוקה של 72.5% מהגישה הסטנדרטית משפיעה על Swedbank, SEB, Handelsbanken, Nordea. טיפול ועדת FiU מתחיל במאי 2026.
+- **תקציב משלים HD01FiU48** [B2 גבוה]: הפחתת מס דלק אושרה ב-FiU. V ו-MP הגישו הסתייגויות. הופך את מסלול המס הירוק — תלת-קיטוב בחירותי לעבר בוחרים כפריים ורגישי עלות מחיה.
+- **חוק נשק HD01JuU10** [B2 גבוה]: סקירת נשק מרכזית ראשונה מזה 30 שנה. עמידה בהנחיית האיחוד האירופי 2021/555. הסתייגות מפלגת המרכז לנשק ציד חצי-אוטומטי.
+- **קמפיין שאילתות S** [B2 בינוני]: חמש שאילתות S נגד Tenje (M), Busch (KD), Jonson (M), Svantesson (M) — ספר משחק אחריות מתואם בתשתיות, ביטוח לאומי, אנרגיה ומימון.
+- **הצעות ביטחון רוסיה** [B2 בינוני]: HD11752 ו-HD11753 דורשות ביטול זכויות תעופה ועצירת ויזות האיחוד האירופי לצבאיים רוסים — לחץ אופוזיציה על מדיניות אוקראינה/רוסיה.
+- **רווחה חברתית של אסירים HD03252** [B2 גבוה]: הגבלת קצבאות לאסירים בדיור מפוקח. חיסכון פיסקלי של 200–300 מיליון SEK לשנה. ערעור מידתיות צפוי מ-V ו-MP.
+
+---
+
+### 🔭 הטריגר הצופה-פני-עתיד העיקרי
+
+**5 במאי 2026**: FiU פותחת טיפול בחבילת הבנקים (HD03253) ומטפלת בחוות דעת על התקציב המשלים (HD01FiU48) — ישיבה כפולה של ועדת האוצר שתחשוף האם הריקסדאג ישנה אחד מהם. זהו האירוע הפרלמנטרי המשפיע ביותר באופק של שבועיים.
+
+---
+
+### מרמייד: מפת חדשות פוליטיות יומית
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### מקור כלכלי
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**הערת Pass 2**: KJ-1 (אנרגיה SD-KD) הוערך מחדש מול ההיפותזה של עורך דין השטן שמדובר בתקשורת פרלמנטרית שגרתית. הסיווג HIGH נשמר על בסיס: (א) אנרגיה מוחרגת במפורש מהעמימות של הסכם טידו, (ב) HD10448 הוגש באותו יום כמו HD01FiU48 — SD מדגים בו-זמנית תמיכה ואי-שביעות רצון, (ג) תפקידה של בוש כשרה מרכזית של KD הופך זאת למסוכן יותר משאילתה שגרתית.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling
+**日付**：2026-04-27
+**分析期間**：2026年4月27日 — Tier-C完全集計
+**信頼水準**：HIGH [B2]
+**分類**：公開 — GDPR第9条(2)(e,g)
+**実行ID**：25012662853
+
+---
+
+### 🎯 要約（BLUF）
+
+2026年4月27日のスウェーデン政治状況は、2026年9月総選挙前に収束しつつある3つの同時ベクターによって定義される：財政・安全保障問題におけるティドー連立の積極的な選挙前戦略（燃料税減税を含む補正予算、武器法、銀行規制）、4つの大臣目標に対する社会民主党の協調的説明責任キャンペーン（質問主意書）、およびエネルギー政策における連立内SD-KD亀裂（与党連合の結束の限界を露呈）。スウェーデンの財政状況は依然として堅固 — GDP成長率**+2.1%**（IMF WEO 2026年4月版、NGDP_RPCH）、政府債務**GDP比約31%**（GGXWDG_NGDP）— 補正予算のエネルギー補助に財政的懸念を招かずに余地を与えている。しかし選挙的イメージは、政府が気候一貫性を犠牲にして票を買っているというものである。
+
+**経済的出所**（`economicProvenance`）：provider=imf, dataflow=WEO, vintage=2026年4月版, retrieved_at=2026-04-27。
+
+---
+
+### 🧭 本報告書が支援する3つの決定
+
+1. **リクスダーグ / FiU**：EU銀行パッケージ（HD03253、Prop. 2025/26:253）は、スウェーデンのFinansinspektionenがユーロ圏外加盟国の監督に関するCRD6規定の下で裁量権を行使するかどうかの決定を求める — EUR/SEK政策的含意を持つ決定。
+2. **政党**：Sの協調的質問主意書キャンペーンと4つの委員会報告書の同時進行は、選挙前アジェンダを露呈する — 政党は5月5日のFiU会議前に補正予算HD01FiU48について立場を表明する必要がある。
+3. **安全保障アナリスト**：HD11752（ロシアの飛行禁止）とHD11753（ロシア兵へのEUビザ禁止要求）は、リクスダーグがNATO公約を超えてロシアへの圧力を積極的に高めようとしていることを示す。
+
+---
+
+### 📊 60秒ニュースポイント
+
+- **連立内亀裂** [B2 HIGH]：SD（Josef Fransson）がロシアの偽情報を引用してKDエネルギー大臣Ebba Busch（HD10448）に質問 — その日の最も政治的に異例な出来事。連立パートナー同士が反対派の手段を互いに使用することは稀で、選挙的に重要。
+- **EU銀行パッケージHD03253** [B2 HIGH]：バーゼルIII以来のスウェーデン最大の金融改革。標準アプローチの72.5%のアウトプットフロアがSwedbank、SEB、Handelsbanken、Nordeaに影響。FiU委員会審議は2026年5月から開始。
+- **補正予算HD01FiU48** [B2 HIGH]：FiUで燃料税減税が承認。VとMPが留保を提出。緑の財政軌跡を逆転 — 地方の有権者と生活費意識の高い有権者への選挙的三角測量。
+- **武器法HD01JuU10** [B2 HIGH]：30年ぶりの主要な銃器見直し。EU指令2021/555への準拠。中央党による半自動猟銃への留保。
+- **S質問主意書キャンペーン** [B2 MEDIUM]：Tenje（M）、Busch（KD）、Jonson（M）、Svantesson（M）へのSの5つの質問主意書 — インフラ、社会保険、エネルギー、財政における協調的説明責任プレイブック。
+- **ロシア安全保障動議** [B2 MEDIUM]：HD11752とHD11753はロシアの飛行禁止とEUのロシア軍人ビザ停止を要求 — ウクライナ/ロシア政策への反対党圧力。
+- **受刑者の社会保障HD03252** [B2 HIGH]：管理収容受刑者への給付制限。年間2〜3億SEKの財政節約。VとMPによる比例性異議申し立て予想。
+
+---
+
+### 🔭 主要な将来的トリガー
+
+**2026年5月5日**：FiUが銀行パッケージ（HD03253）の審議を開始し、補正予算（HD01FiU48）に関する意見を処理 — リクスダーグがいずれかを修正するかどうかを明らかにする財政委員会の二重会議。2週間の視野における最も影響力のある議会イベント。
+
+---
+
+### マーメイド：日次政治ニュースマップ
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### 経済的出所
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Pass 2注記**：KJ-1（SD-KDエネルギー）は、通常の議会的コミュニケーションであるという悪魔の代弁者仮説に対して再評価された。HIGH分類は以下に基づいて維持された：(a) エネルギーはティドー合意の曖昧さから明示的に除外、(b) HD10448はHD01FiU48と同日に提出 — SDが支持と不満を同時に示す、(c) BuschのKD首席大臣としての役割が、これを通常の質問より危険なものにしている。
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**날짜**: 2026-04-27
+**분석 기간**: 2026년 4월 27일 — 완전한 Tier-C 집계
+**신뢰 수준**: 높음 [B2]
+**분류**: 공개 — GDPR 제9조(2)(e,g)
+**실행 ID**: 25012662853
+
+---
+
+### 🎯 핵심 요약(BLUF)
+
+2026년 4월 27일 스웨덴 정치 상황은 2026년 9월 선거 전에 수렴하는 세 가지 동시 벡터로 정의된다: 재정 및 안보 문제에 대한 티도 연립의 적극적인 선거 전 전략(연료세 감면이 포함된 추경 예산, 무기법, 은행 규제), 질문서를 통해 4개 장관 목표를 겨냥한 사회민주당의 조율된 책임 캠페인, 집권 연합의 결속 한계를 드러내는 연립 내 SD-KD 에너지 정책 균열. 스웨덴의 재정 상태는 여전히 견고하다 — GDP 성장률 **+2.1%**(IMF WEO 2026년 4월, NGDP_RPCH), 정부 부채 **GDP의 약 31%**(GGXWDG_NGDP) — 추경 예산의 에너지 지원이 재정 우려 없이 여지를 갖는다. 그러나 선거적 이미지는 정부가 기후 일관성을 희생하여 표를 사고 있다는 것이다.
+
+**경제적 출처**(`economicProvenance`): provider=imf, dataflow=WEO, vintage=2026년 4월, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 이 보고서가 지원하는 3가지 결정
+
+1. **릭스다그 / FiU**: EU 은행 패키지(HD03253, Prop. 2025/26:253)는 스웨덴 Finansinspektionen이 비유로존 회원 감독에 관한 CRD6 조항 하에 재량권을 행사할지 여부에 대한 결정이 필요하다 — EUR/SEK 정책적 함의가 있는 결정.
+2. **정당**: S의 조율된 질문서 캠페인과 동시에 진행되는 4개의 위원회 보고서는 선거 전 의제를 드러낸다 — 정당들은 5월 5일 FiU 회의 전에 추경 예산 HD01FiU48에 대한 입장을 취해야 한다.
+3. **안보 분석가**: HD11752(러시아 상공 비행권 철회)와 HD11753(러시아 군인에 대한 EU 비자 금지 요청)은 릭스다그가 NATO 공약을 넘어 러시아에 대한 압박을 적극적으로 강화하려 한다는 것을 시사한다.
+
+---
+
+### 📊 60초 뉴스 포인트
+
+- **연립 내 균열** [B2 높음]: SD(Josef Fransson)가 러시아 허위정보를 인용하여 KD 에너지 장관 Ebba Busch(HD10448)에게 질문 — 그날 정치적으로 가장 이례적인 사건. 연립 파트너가 서로에게 반대 수단을 사용하는 것은 드물며 선거적으로 중요하다.
+- **EU 은행 패키지 HD03253** [B2 높음]: 바젤 III 이후 스웨덴 최대의 금융 개혁. 표준 접근법의 72.5% 산출 하한이 Swedbank, SEB, Handelsbanken, Nordea에 영향. FiU 위원회 처리는 2026년 5월에 시작.
+- **추경 예산 HD01FiU48** [B2 높음]: FiU에서 연료세 감면 승인. V와 MP가 유보 제출. 녹색 재정 궤도를 역전 — 농촌 유권자와 생활비 민감 유권자를 향한 선거적 삼각측량.
+- **무기법 HD01JuU10** [B2 높음]: 30년 만의 주요 총기 검토. EU 지침 2021/555 준수. 반자동 사냥 무기에 대한 중앙당 유보.
+- **S 질문서 캠페인** [B2 보통]: Tenje(M), Busch(KD), Jonson(M), Svantesson(M)에 대한 S의 5개 질문서 — 인프라, 사회보험, 에너지, 재정에 대한 조율된 책임 플레이북.
+- **러시아 안보 동의안** [B2 보통]: HD11752와 HD11753은 상공 비행권 철회와 러시아 군인에 대한 EU 비자 중단을 요구 — 우크라이나/러시아 정책에 대한 야당 압박.
+- **수감자 사회복지 HD03252** [B2 높음]: 통제 수용 수감자에 대한 급여 제한. 연간 2~3억 SEK 재정 절약. V와 MP의 비례성 이의 제기 예상.
+
+---
+
+### 🔭 주요 전향적 트리거
+
+**2026년 5월 5일**: FiU가 은행 패키지(HD03253) 처리를 시작하고 추경 예산(HD01FiU48)에 대한 의견을 처리 — 릭스다그가 어느 것이든 수정할지를 드러내는 재정 위원회 이중 회의. 2주 시야에서 가장 영향력 있는 의회 이벤트.
+
+---
+
+### 머메이드: 일일 정치 뉴스 맵
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### 경제적 출처
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Pass 2 참고**: KJ-1(SD-KD 에너지)은 일상적인 의회 커뮤니케이션이라는 악마의 변호인 가설에 대해 재평가되었다. HIGH 분류는 다음을 기반으로 유지되었다: (a) 에너지가 티도 협약의 모호성에서 명시적으로 제외됨, (b) HD10448이 HD01FiU48과 같은 날 제출 — SD가 지지와 불만을 동시에 표명, (c) Busch의 KD 수석 장관 역할이 이것을 일상적인 질문보다 더 위험하게 만든다.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Datum**: 2026-04-27
+**Analyseperiode**: 27 april 2026 — volledige Tier-C-aggregatie
+**Vertrouwensniveau**: HIGH [B2]
+**Classificatie**: PUBLIC — AVG Art. 9(2)(e,g)
+
+---
+
+### 🎯 BLUF
+
+Het Zweedse politieke landschap van 27 april 2026 wordt bepaald door drie gelijktijdige vectoren die convergeren vóór de verkiezingen van september 2026: de agressieve pre-electorale strategie van de Tidö-coalitie op fiscaal en veiligheidsgebied (aanvullende begroting met brandstofbelastingverlaging, wapenwet, bankregulering), een gecoördineerde sociaaldemocratische verantwoordingscampagne gericht op vier ministeriële doelwitten via interpellaties, en een intracoalitionele SD-KD-breuk in het energiebeleid die de grenzen van de samenhang van de regerende alliantie blootlegt. De fiscale positie van Zweden blijft solide — bbp-groei van **+2,1 %** (IMF WEO Apr-2026, NGDP_RPCH), staatsschuld van **~31 % van het bbp** (GGXWDG_NGDP) — wat de energiesubsidies van de aanvullende begroting ruimte geeft zonder fiscale zorgen te wekken. Het electorale beeld is echter dat de regering stemmen koopt ten koste van klimaatconsistentie.
+
+**Economische herkomst** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=April-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 beslissingen die dit rapport ondersteunt
+
+1. **Riksdag / FiU**: Het EU-bankenpakket (HD03253, Prop. 2025/26:253) vereist een beslissing over of de Zweedse Finansinspektionen haar discretionaire bevoegdheid zal uitoefenen onder de CRD6-bepalingen over toezicht op niet-eurozoneleden — een beslissing met EUR/SEK-politieke implicaties.
+2. **Politieke partijen**: De gecoördineerde interpellatiecampagne van S en de vier gelijktijdig vorderende commissierapporten onthullen een pre-electorale agenda — partijen moeten vóór de FiU-vergadering van 5 mei stelling nemen over de aanvullende begroting HD01FiU48.
+3. **Veiligheidsanalisten**: HD11752 (intrekking overrechten Rusland) en HD11753 (verzoek om EU-visumverbod voor Russische soldaten) signaleren dat de Riksdag actief probeert de druk op Rusland te verhogen buiten de NAVO-verplichtingen.
+
+---
+
+### 📊 Nieuwspunten in 60 seconden
+
+- **Intracoalitionele breuk** [B2 HIGH]: SD (Josef Fransson) interpelleerde KD-energieminister Ebba Busch (HD10448) met verwijzing naar Russische desinformatie — het politiek meest ongebruikelijke evenement van de dag. Coalitiegenoten die oppositie-instrumenten tegen elkaar inzetten zijn zeldzaam en electoraal significant.
+- **EU-bankenpakket HD03253** [B2 HIGH]: Zweden's meest ingrijpende financiële hervorming sinds Bazel III. Outputvloer van 72,5 % van de standaardbenadering beïnvloedt Swedbank, SEB, Handelsbanken, Nordea. FiU-commissiebehandeling begint mei 2026.
+- **Aanvullende begroting HD01FiU48** [B2 HIGH]: Brandstofbelastingverlaging goedgekeurd in FiU. V en MP dienden voorbehouden in. Keert de groene fiscale traject om — electorale triangulatie naar kiezers in landelijke gebieden en met hoge kosten van levensonderhoud.
+- **Wapenwet HD01JuU10** [B2 HIGH]: Eerste grote vuurwapensherzieining in 30 jaar. Naleving van EU-richtlijn 2021/555. Voorbehoud van de Centrumpartij over semi-automatische jachtwapens.
+- **S interpellatiecampagne** [B2 MEDIUM]: Vijf S-interpellaties tegen Tenje (M), Busch (KD), Jonson (M), Svantesson (M) — gecoördineerd verantwoordingsplaybook in infrastructuur, sociale verzekering, energie en financiën.
+- **Rusland-veiligheidsmotie** [B2 MEDIUM]: HD11752 en HD11753 eisen intrekking van overrechten en stop van EU-visa voor Russisch militair personeel — oppositiedruk op het Oekraïne/Rusland-beleid.
+- **Sociale zekerheid gedetineerden HD03252** [B2 HIGH]: Uitkeringsbeperking voor gedetineerden in gecontroleerde huisvesting. Fiscale besparing van SEK 200–300 mln/jaar. Proportionaliteitsbetwisting van V en MP verwacht.
+
+---
+
+### 🔭 Voornaamste prospectieve trigger
+
+**5 mei 2026**: FiU opent behandeling van het bankenpakket (HD03253) EN behandelt adviezen over de aanvullende begroting (HD01FiU48) — dubbele vergadering van de financiële commissie die onthult of de Riksdag een van beide zal wijzigen. Dit is het meest invloedrijke parlementaire evenement in de horizon van twee weken.
+
+---
+
+### Mermaid: Dagelijkse politieke nieuwskaart
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### Economische herkomst
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Pass 2-noot**: KJ-1 (SD-KD energie) werd opnieuw beoordeeld tegen de advocaat-van-de-duivel-hypothese dat het routinematige parlementaire communicatie betreft. De HIGH-classificatie werd gehandhaafd op basis van: (a) energie expliciet uitgesloten van de ambiguïteit van het Tidö-akkoord, (b) HD10448 ingediend op dezelfde dag als HD01FiU48 — SD demonstreert tegelijkertijd steun en ontevredenheid, (c) Buschs rol als hoofdminister van KD maakt dit risicovoller dan een routineinterpellatie.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-04-27
+**Analyseperiode**: 27. april 2026 — fullstendig Tier-C-aggregering
+**Konfidensgrad**: HIGH [B2]
+**Klassifisering**: PUBLIC — GDPR Art. 9(2)(e,g)
+
+---
+
+### 🎯 BLUF
+
+Det svenske politiske landskapet 27. april 2026 er definert av tre samtidige vektorer som konvergerer foran parlamentsvalget i september 2026: Tidö-koalisjonens aggressive forvalgsdagsordenspunkt innen finans og sikkerhet (tilleggsbudsjett drivstoffavgiftsreduksjon, våpenlov, bankregulering), en koordinert sosialdemokratisk ansvarlighetskampanje mot fire ministermål via interpellasjoner, og en intrakoalisjons SD-KD-brekk i energipolitikken som eksponerer grensene for den styrende alliansens sammenhengskraft. Sveriges finansielle posisjon forblir solid — BNP-vekst på **+2,1 %** (IMF WEO Apr-2026, NGDP_RPCH), statsgjeld på **~31 % av BNP** (GGXWDG_NGDP) — noe som gir handlingsrom for tilleggsbudsjettets husholdningsenergihjelp uten å utløse finansiell bekymring, men det valgpolitiske bildet er at regjeringen kjøper stemmer på bekostning av klimakonsistens.
+
+**Økonomisk proveniens** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=April-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 beslutninger som dette sammendraget støtter
+
+1. **Riksdagen / FiU**: EU-bankpakken (HD03253, prop. 2025/26:253) krever en beslutning om hvorvidt Sveriges Finansinspektionen vil utøve skjønn under CRD6s bestemmelser om tilsyn med land utenfor eurosonen — en beslutning med EUR/SEK-politiske implikasjoner.
+2. **Politiske partier**: S's koordinerte interpellasjonskampanje og de fire utvalgsrapportene som avanserer samtidig, avslører en forvalgsdagsordenpunkt — partiene må ta stilling til HD01FiU48-tilleggsbudsjettet innen FiU-sesjonen 5. mai.
+3. **Sikkerhetsanalytikere**: HD11752 (tilbaketrekking av overflyvningsrettigheter for Russland) og HD11753 (forbud mot EU-visum for russiske soldater) signaliserer at riksdagen aktivt søker å eskalere presset på Russland utover NATO-forpliktelsene.
+
+---
+
+### 📊 60-sekunders etterretningsbullets
+
+- **Intrakoalisjons brekk** [B2 HIGH]: SD (Josef Fransson) interpellerte KD-energiminister Ebba Busch (HD10448) med russisk desinformasjonsreferanse — dagens mest politisk uvanlige hendelse. Koalisjonspartnere som bruker opposisjonsinstrumenter mot hverandre er sjeldent og valgstrategisk signifikant.
+- **EU-bankpakken HD03253** [B2 HIGH]: Sveriges mest konsekvente finansreform siden Basel III. Outputgulv på 72,5 % av standardmetoden påvirker Swedbank, SEB, Handelsbanken, Nordea. FiU-behandling begynner mai 2026.
+- **Tilleggsbudsjett HD01FiU48** [B2 HIGH]: Drivstoffavgiftsreduksjon godkjent i FiU. V og MP inngav merknader. Vender grønn skattetrajektori — elektoral triangulering mot landsbygd og levekostnadsvotere.
+- **Vapenloven HD01JuU10** [B2 HIGH]: Første store vapenoversyn på 30 år. Oppfyllelse av EU-direktiv 2021/555. Senterpartiets merknad om halvautomatiske jaktvåpen.
+- **S's interpellasjonskampanje** [B2 MEDIUM]: Fem S-interpellasjoner mot Tenje (M), Busch (KD), Jonson (M), Svantesson (M) — koordinert ansvarlighetsplaybook innen infrastruktur, trygd, energi og finans.
+- **Russlands sikkerhetsmotioner** [B2 MEDIUM]: HD11752 og HD11753 krever tilbaketrekking av overflyvningsrettigheter og EU-visumstopp for russisk militærpersonell — opposisjonspress på Ukraina/Russland-politikken.
+- **Frihetsberøvedes trygd HD03252** [B2 HIGH]: Velferdsbegrensning for innsatte i kontrollert bolig. SEK 200–300 M/år i fiskal sparing. Proporsjonalitetsutfordring forventes fra V og MP.
+
+---
+
+### 🔭 Viktigste fremoverskuende utløser
+
+**5. mai 2026**: FiU åpner behandling av bankpakken (HD03253) OG behandler tilleggsbudsjettets (HD01FiU48) uttalelser — dobbel finanskomitésesjon avslører om Riksdagen vil endre noen av dem. Dette er den mest impaktfulle parlamentariske hendelsen i to-ukershorisonen.
+
+---
+
+### Mermaid: Daglig politisk etterretningskart
+
+```mermaid
+graph TD
+    A["��️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### Økonomisk proveniens
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Pass 2-merknad**: KJ-1 (SD-KD energi) revurdert mot djevelens advokat-hypotese om at dette er rutinemessig parlamentarisk kommunikasjon. HIGH-konfidensklassifisering opprettholdt basert på: (a) energi spesifikt ekskludert fra Tidö-avtalens tvetydighet, (b) HD10448 inngitt samme dag som HD01FiU48 — SD demonstrerer både støtte og misnøye simultant, (c) Buschs rolle som senior KD-minister gjør dette mer risikofylt enn en rutineinterpellasjon.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Datum**: 2026-04-27
+**Analysperiod**: 27 april 2026 — fullständig Tier-C-aggregation
+**Konfidensgrad**: HIGH [B2]
+**Klassificering**: PUBLIC — GDPR Art. 9(2)(e,g)
+
+---
+
+### 🎯 BLUF
+
+Det svenska politiska landskapet den 27 april 2026 definieras av tre samtida vektorer som konvergerar inför riksdagsvalet i september 2026: Tidökoalitionens aggressiva förvalsagenda inom finans och säkerhet (tilläggsbudgetens drivmedelsskattesänkning, vapenlagen, bankreglering), en samordnad socialdemokratisk ansvarskampanj mot fyra ministersmål via interpellationer, och en intrakoalitionär SD-KD-spricka i energipolitiken som exponerar gränserna för den styrande alliansens sammanhållning. Sveriges finansiella ställning förblir stabil — BNP-tillväxt på **+2,1 %** (IMF WEO Apr-2026, NGDP_RPCH), statsskuld på **~31 % av BNP** (GGXWDG_NGDP) — vilket ger utrymme för tilläggsbudgetens hushållsenergihjälp utan att utlösa finansiell oro, men den valtekniska bilden är att regeringen köper röster på bekostnad av klimatkonsekvens.
+
+**Ekonomisk proveniens** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=April-2026, retrieved_at=2026-04-27.
+
+---
+
+### 🧭 3 beslut som detta sammandrag stöder
+
+1. **Riksdagen / FiU**: EU-bankpaketet (HD03253, prop. 2025/26:253) kräver ett beslut om huruvida Sveriges Finansinspektionen ska utöva diskretion under CRD6:s bestämmelser om tillsyn av länder utanför eurozon — ett beslut med EUR/SEK-politiska implikationer.
+2. **Politiska partier**: S:s samordnade interpellationskampanj och de fyra utskottsbetänkandena som avancerar samtidigt avslöjar en förvalsagenda — partierna måste ta ställning till HD01FiU48-tilläggsbudgeten inför FiU-sessionen den 5 maj.
+3. **Säkerhetsanalytiker**: HD11752 (återkallande av överflygningstillstånd för Ryssland) och HD11753 (förbud mot EU-visum för ryska soldater) signalerar att riksdagen aktivt söker eskalera trycket på Ryssland utöver NATO-åtaganden.
+
+---
+
+### 📊 60-sekunders underrättelsekulor
+
+- **Intrakoalitionär spricka** [B2 HIGH]: SD (Josef Fransson) interpellerade KD-energiminister Ebba Busch (HD10448) med rysk desinformationsreferens — dagens politiskt mest ovanliga händelse. Att koalitionspartner använder oppositionsinstrument mot varandra är sällsynt och valstrategiskt signifikant.
+- **EU-bankpaketet HD03253** [B2 HIGH]: Sveriges mest konsekventa finansreform sedan Basel III. Kapitalgolv på 72,5 % av standardmetoden påverkar Swedbank, SEB, Handelsbanken, Nordea. FiU-behandling inleds maj 2026.
+- **Tilläggsbudget HD01FiU48** [B2 HIGH]: Drivmedelsskattesänkning godkänd i FiU. V och MP lämnade reservationer. Vänder grön skattetrajektor — elektoral triangulering mot landsbygds- och levnadskostnadsväljare.
+- **Vapenlagen HD01JuU10** [B2 HIGH]: Första stora vapenoversyn på 30 år. Uppfyllnad av EU-direktiv 2021/555. Centerpartiets reservation om halvautomatiska jaktvapen.
+- **S:s interpellationskampanj** [B2 MEDIUM]: Fem S-interpellationer mot Tenje (M), Busch (KD), Jonson (M), Svantesson (M) — samordnat ansvarsspelbok inom infrastruktur, socialförsäkring, energi och finans.
+- **Rysslands säkerhetsmotioner** [B2 MEDIUM]: HD11752 och HD11753 kräver återkallande av överflygningstillstånd och EU-visumstopp för rysk militärpersonal — oppositionstryck på Ukraine/Rysslandspolitiken.
+- **Frihetsberövades socialförsäkring HD03252** [B2 HIGH]: Välfärdsbegränsning för intagna i kontrollerat boende. SEK 200–300 M/år i fiskal besparing. Proportionalitetsutmaning förväntas från V och MP.
+
+---
+
+### 🔭 Viktigaste framåtriktat trigger
+
+**5 maj 2026**: FiU öppnar behandling av bankpaketet (HD03253) OCH behandlar tilläggsbudgetens (HD01FiU48) yttranden — dubbel finansutskottssession avslöjar om riksdagen kommer att ändra någotdera. Detta är den mest impaktfulla parlamentariska händelsen i tvåveckorshoristonten.
+
+---
+
+### Mermaid: Daglig politisk underrättelsekarta
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### Ekonomisk proveniens
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Pass 2-anteckning**: KJ-1 (SD-KD energi) omvärderades mot djävulens advokathypotes att detta är rutin parlamentarisk kommunikation. HIGH-konfidensklassificering upprätthölls baserat på: (a) energi specifikt utesluten från Tidöavtalets tvetydighet, (b) HD10448 inlämnades samma dag som HD01FiU48 — SD demonstrerar både stöd och missnöje simultant, (c) Busch's roll som senior KD-minister gör detta mer riskfyllt än en rutininterpellation.
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling
+**日期**：2026-04-27
+**分析期间**：2026年4月27日 — 完整 Tier-C 汇总
+**置信水平**：高 [B2]
+**分类**：公开 — GDPR 第9条(2)(e,g)
+**运行ID**：25012662853
+
+---
+
+### 🎯 核心摘要（BLUF）
+
+2026年4月27日瑞典政治格局由三个同时收敛的向量定义，在2026年9月大选前汇聚：蒂德联合政府在财政和安全问题上的激进预选战略（含燃油税削减的补充预算、武器法、银行监管）、社会民主党通过质询针对四个部长目标的协调问责运动，以及暴露执政联盟凝聚力极限的SD-KD能源政策联合内部裂痕。瑞典财政状况依然稳健 — GDP增长率**+2.1%**（IMF WEO 2026年4月，NGDP_RPCH），政府债务**GDP约31%**（GGXWDG_NGDP）— 为补充预算中的能源补贴提供了空间，无需引发财政担忧。然而选举形象是，政府以气候一致性为代价购买选票。
+
+**经济来源**（`economicProvenance`）：provider=imf, dataflow=WEO, vintage=2026年4月，retrieved_at=2026-04-27。
+
+---
+
+### 🧭 本报告支持的3项决策
+
+1. **议会 / FiU**：欧盟银行业法案（HD03253，Prop. 2025/26:253）需要决定瑞典金融监管局（Finansinspektionen）是否将在CRD6关于非欧元区成员监管的条款下行使自由裁量权 — 这一决定具有EUR/SEK政策影响。
+2. **政党**：S的协调质询运动和同时推进的四份委员会报告揭示了预选议程 — 各政党必须在5月5日FiU会议前就补充预算HD01FiU48表态。
+3. **安全分析人士**：HD11752（取消俄罗斯过境飞行权）和HD11753（要求对俄罗斯士兵实施欧盟签证禁令）表明议会正积极寻求超越北约承诺对俄罗斯施加更大压力。
+
+---
+
+### 📊 60秒新闻要点
+
+- **联合内部裂痕** [B2 高]：SD（Josef Fransson）援引俄罗斯虚假信息质询KD能源部长Ebba Busch（HD10448）— 当天政治上最不寻常的事件。联合伙伴互相使用反对派手段极为罕见，具有重大选举意义。
+- **欧盟银行业法案HD03253** [B2 高]：瑞典自巴塞尔III以来最重要的金融改革。标准法下72.5%的输出底限影响Swedbank、SEB、Handelsbanken、Nordea。FiU委员会审议从2026年5月开始。
+- **补充预算HD01FiU48** [B2 高]：FiU批准燃油税削减。V和MP提交保留意见。逆转绿色税收轨迹 — 向农村选民和生活成本敏感选民的选举三角策略。
+- **武器法HD01JuU10** [B2 高]：30年来首次重大枪支审查。符合欧盟指令2021/555。中央党对半自动猎枪提出保留意见。
+- **S质询运动** [B2 中]：五份S质询分别针对Tenje（M）、Busch（KD）、Jonson（M）、Svantesson（M）— 涵盖基础设施、社会保险、能源和财政的协调问责战略手册。
+- **俄罗斯安全动议** [B2 中]：HD11752和HD11753要求取消俄罗斯过境飞行权并停止对俄军事人员发放欧盟签证 — 反对党对乌克兰/俄罗斯政策施压。
+- **囚犯社会福利HD03252** [B2 高]：限制受控安置囚犯的福利。每年财政节省2-3亿瑞典克朗。预计V和MP提出比例性异议。
+
+---
+
+### 🔭 主要前瞻性触发点
+
+**2026年5月5日**：FiU开始审议银行业法案（HD03253）并处理补充预算（HD01FiU48）意见 — 双重财政委员会会议，揭示议会是否将修改其中任何一项。这是两周时间范围内最具影响力的议会事件。
+
+---
+
+### Mermaid：日常政治新闻图
+
+```mermaid
+graph TD
+    A["🏛️ 27 April 2026<br/>Evening Analysis"] --> B["💰 Fiscal Vector"]
+    A --> C["🔒 Security Vector"]
+    A --> D["⚡ Coalition Stress"]
+    A --> E["📋 S Accountability Campaign"]
+
+    B --> B1["HD03253: EU Banking Package<br/>[B2 HIGH] FiU"]
+    B --> B2["HD01FiU48: Extra Budget Fuel Tax<br/>[B2 HIGH] V+MP opposition"]
+    B --> B3["HD03252: Prisoner welfare cut<br/>SEK 200-300M saving"]
+
+    C --> C1["HD01JuU10: New Weapons Law<br/>EU 2021/555 compliance"]
+    C --> C2["HD11752: Russia overflying ban<br/>UU motion"]
+    C --> C3["HD11753: Russian visa ban EU<br/>UU motion"]
+
+    D --> D1["HD10448: SD-KD energy clash<br/>Coalition fracture signal"]
+    D --> D2["C party reservation<br/>Semi-auto hunting weapons"]
+
+    E --> E1["HD10449: Södra stambanan<br/>Infrastructure accountability"]
+    E --> E2["HD10450: Sjukförsäkring dag 180<br/>Social insurance challenge"]
+
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a2040,color:#ffbe0b
+    style C fill:#0a2040,color:#ff006e
+    style D fill:#2d0a2d,color:#ff006e
+    style E fill:#0a2040,color:#00d9ff
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style C1 fill:#1a1e3d,color:#e0e0e0
+    style C2 fill:#1a1e3d,color:#e0e0e0
+    style C3 fill:#1a1e3d,color:#e0e0e0
+    style D1 fill:#3d0a1a,color:#ff006e
+    style D2 fill:#3d0a1a,color:#e0e0e0
+    style E1 fill:#1a1e3d,color:#e0e0e0
+    style E2 fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### 经济来源
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-04-27T18:00:00Z",
+    "value": "+2.1%",
+    "note": "Sweden GDP growth forecast 2026"
+  }
+}
+```
+
+**Pass 2注记**：KJ-1（SD-KD能源）已根据这是例行议会通讯的"魔鬼代言人"假设重新评估。HIGH分类基于以下理由得以维持：(a) 能源明确排除在蒂德协议模糊性之外，(b) HD10448与HD01FiU48同日提交 — SD同时表达支持与不满，(c) Busch作为KD首席部长的角色使其比例行质询风险更高。
+
+<!-- source-sha: aaa1f5305a47d8833d5b335e4d7ccd94784487c6 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 12 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2021,6 +3451,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

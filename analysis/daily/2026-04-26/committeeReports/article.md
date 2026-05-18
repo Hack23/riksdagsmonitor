@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: committeeReports
 slug: 2026-04-26-committeeReports
 source_folder: analysis/daily/2026-04-26/committeeReports
-generated_at: 2026-05-17T22:44:40.528Z
+generated_at: 2026-05-18T09:08:37.821Z
 language: en
 layout: article
 ---
@@ -119,6 +119,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2309,13 +2322,1110 @@ The analysis covers all 12 documents in scope, applies evidence-based significan
 - All document summaries retrieved successfully
 - Full text not fetched for all documents due to time constraints; key summaries sufficient for L1–L2 depth
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+---
+title: "ريكسداغ يوافق على خفض ضريبة الوقود وقانون أسلحة جديد ومسار سريع لتوسيع السجون"
+
+run_id: 24965504707
+---
+
+# ريكسداغ يوافق على خفض ضريبة الوقود وقانون أسلحة جديد ومسار سريع لتوسيع السجون
+
+### 🎯 الخلاصة التنفيذية
+
+وافق الريكسداغ السويدي على ميزانية تكميلية استثنائية تخفض ضرائب الوقود بمقدار 82 أورة/لتر (بنزين) و319 كرونة سويدية/م³ (ديزل) من مايو حتى سبتمبر 2026، إلى جانب حزمة دعم طاقة بقيمة 2.4 مليار كرونة سويدية — تخفيفاً مالياً مجمعاً قدره 4.1 مليار كرونة سويدية مدفوعاً بالنزاع في الشرق الأوسط وارتفاع أسعار الطاقة في يناير–فبراير. وفي الوقت ذاته، اعتمدت السويد قانوناً شاملاً جديداً للأسلحة يحظر بنادق الصيد شبه الأوتوماتيكية، وأجازت تصاريح التخطيط المتسارعة للسجون وسط أزمة في الطاقة الاستيعابية. احتفظ الريكسبنك بكامل أرباحه البالغة 5.297 مليار كرونة سويدية دون توزيع أرباح على الخزانة. تشير هذه الحزمة من القرارات إلى أجندة تشريعية متزايدة التركيز على الأمن وتكلفة المعيشة من قِبَل تحالف تيدو في مرحلة ما قبل الانتخابات.
+
+### 🧭 3 قرارات يدعمها هذا التقرير
+
+1. **المتنبئون الماليون والصحفيون** — تقييم الآثار التضخمية والانتخابية لحزمة الطوارئ البالغة 4.1 مليار كرونة سويدية لتخفيف أعباء الوقود والطاقة (HD01FiU48) على القوة الشرائية للأسر والهدف السويدي لتحقيق فائض مالي.
+2. **محللو السياسة الأمنية** — تقييم تماسك تقييد الأسلحة السويدي المتزامن (HD01JuU10) وحزمة توسيع العدالة الجنائية (HD01CU25) بوصفها رواية موحدة للأمن العام.
+3. **مراقبو البنك المركزي والسياسة النقدية** — تفسير موافقة الريكسداغ على نتيجة ريكسبنك بدون أرباح (HD01FiU23، 5.297 مليار كرونة سويدية محتجزة) بوصفها إشارة إلى الحذر المؤسسي في ظل استمرار حالة عدم اليقين الاقتصادي.
+
+### قراءة في 60 ثانية
+
+- **تخفيف أعباء الوقود والطاقة**: 1.56 مليار كرونة سويدية تخفيض ضريبي + 2.4 مليار كرونة سويدية دعم كهرباء/غاز = 4.1 مليار كرونة سويدية تأثير مالي إجمالي (HD01FiU48، FiU، 2026-04-21) [B2]
+- **قانون الأسلحة الجديد**: حظر بنادق الصيد شبه الأوتوماتيكية، توضيح قواعد الحيازة، إعادة هيكلة قانون العقوبات — يسري اعتباراً من 1 يونيو 2026 (HD01JuU10، JuU، 2026-04-24) [A2]
+- **حالة طوارئ السعة السجنية**: مسار سريع للتصاريح الإنشائية المؤقتة للسجون/مراكز الاحتجاز السابق للمحاكمة + صلاحية حكومية لتجاوز قانون التخطيط والبناء (HD01CU25، CU، 2026-04-23) [A2]
+- **ماليات الريكسبنك**: 5.297 مليار كرونة سويدية أرباح محتجزة؛ صفر توزيعات أرباح حكومية؛ قرار الإبراء الإداري الكامل معتمد (HD01FiU23، FiU، 2026-04-23) [A1]
+- **تعزيز رعاية كبار السن**: وافق SoU25 على حزم دعم أوسع لكبار السن ومقدمي الرعاية من الأسرة (HD01SoU25، SoU، 2026-04-24) [A2]
+- **انتقاد إصلاح الشرطة**: وجد الريكسرييزيونن أن الشرطة الوطنية (Polismyndigheten) لم تبلغ أهداف إصلاح 2015؛ أغلقت لجنة القضاء (JuU) الملف برفض 18 اقتراحاً (HD01JuU31، JuU، 2026-04-24) [A1]
+- **قواعد تأشيرات الباحثين**: إقامة دائمة مُعجَّلة للباحثين وطلاب الدكتوراه؛ تشديد القيود على تصاريح عمل الطلاب (HD01SfU23، SfU، 2026-04-23) [A2]
+
+### ⚡ أهم محفز استشرافي
+
+مراقبة مشروع الميزانية الخريفية 2026 للحكومة السويدية لمعرفة ما إذا كان الخفض المؤقت لضريبة الوقود (الذي ينتهي في 30 سبتمبر 2026) سيصبح دائماً — وهو ما سيختبر الانضباط المالي لتحالف تيدو في مقابل التموضع الشعبوي حول تكلفة المعيشة قبيل انتخابات سبتمبر 2026.
+
+### تقييم الثقة
+
+**مستوى الثقة الإجمالي: مرتفع [B2]**
+- الوثائق مستقاة من البيانات الأولية لـ riksdagen.se (مقياس الأميرالية A1–B2)
+- الأرقام المالية من betänkanden البرلمانية الرسمية (قابلة للتحقق)
+- لا توجد ادعاءات من مصدر واحد للتأكيدات ذات الأهمية العالية (استيفاء عتبة P0/P1)
+
+### المخطط الرئيسي — مشهد الأولويات
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*تحسين الجولة الثانية (2026-04-26): تعزيز الخلاصة التنفيذية بمبالغ مالية محددة؛ إضافة سياق مخاطر الائتلاف لـ HD01JuU31؛ تحديث أوزان الأهمية لتعكس الجدة الدستورية لـ HD01CU25.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_da.md -->
+
+### 🎯 BLUF
+
+Den svenske Riksdag godkendte et ekstraordinært tillægsbudget, der skærer brændstofafgifter med 82 øre/liter (benzin) og 319 SEK/m³ (diesel) fra maj–september 2026 sammen med en energistøttepakke på 2,4 mia. SEK — en samlet finanspolitisk lempelse på 4,1 mia. SEK drevet af Mellemøsten-konflikten og energiprisstigning i januar–februar. Samtidig vedtog Sverige en omfattende ny våbenlov, der forbyder halvautomatiske rifler til jagt, og bemyndigede hurtigsporstilladelser til fængsler midt i en kapacitetskrise. Riksbanken beholdt sit fulde overskud på 5,297 mia. SEK med nulududbytte til statskassen. Denne beslutningsklynge signalerer en stadig mere sikkerheds- og leveomkostningsfokuseret lovgivningsdagsorden fra Tidö-koalitionen op til en førvalgperiode.
+
+### 🧭 3 beslutninger dette PM understøtter
+
+1. **Finansielle prognostikere og journalister** — vurder de inflationsmæssige og valgrelaterede implikationer af nødpakken på 4,1 mia. SEK til brændstof og energilempelse (HD01FiU48) for husholdningernes købekraft og Sveriges finanspolitiske overskudsmål.
+2. **Sikkerhedspolitiske analytikere** — evaluer sammenhængen i Sveriges samtidige våbenbegrænsning (HD01JuU10) og strafferetlige udvidelsespakke (HD01CU25) som en samlet fortælling om offentlig sikkerhed.
+3. **Centralbank- og pengepolitiske observatører** — fortolk Riksdagens godkendelse af et nulududbytte-Riksbank-resultat (HD01FiU23, 5,297 mia. SEK tilbageholdt) som et signal om institutionel forsigtighed midt i fortsatt økonomisk usikkerhed.
+
+### 60-sekunders læsning
+
+- **Brændstof- og energilempelse**: 1,56 mia. SEK skattelettelse + 2,4 mia. SEK el/gasstøtte = 4,1 mia. SEK samlet finanspolitisk virkning (HD01FiU48, FiU, 2026-04-21) [B2]
+- **Ny våbenlov**: Halvautomatiske jagt rifler forbudt, besiddelsesregler præciseret, straffelov omstruktureret — træder i kraft 1. juni 2026 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **Fængselskapacitetsnødsituation**: Hurtigspor for midlertidige bygningstilladelser til fængsler/varetægtsfængsler + regjeringens beføjelse til at tilsidesætte plan- og byggeloven (HD01CU25, CU, 2026-04-23) [A2]
+- **Riksbankens økonomi**: 5,297 mia. SEK overskud tilbageholdt; nul statsudbytte; fuld bestyrelsesansvarsbeslutning godkendt (HD01FiU23, FiU, 2026-04-23) [A1]
+- **Ældrepleje styrket**: SoU25 godkendte bredere støttepakker til ældre og pårørendeplejer (HD01SoU25, SoU, 2026-04-24) [A2]
+- **Politireformkritik**: Riksrevisionen fandt, at Polismyndigheten ikke nåede 2015-reformens mål; JuU lukkede sagen med 18 afviste motioner (HD01JuU31, JuU, 2026-04-24) [A1]
+- **Forskervisumregler**: Hurtigere permanent opholdstilladelse for forskere og ph.d.-studerende; begrænsninger for studerendes arbejdstilladelse strammes (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ Vigtigste fremadrettede udløsende faktor
+
+Følg den svenske regerings efterårsbudgetproposition 2026 for at se, om den midlertidige brændstofskattenedsættelse (udløber 30. september 2026) gøres permanent — dette tester Tidö-koalitionens finansdisciplin over for populistisk leveomkostningspositionering op til valget i september 2026.
+
+### Konfidensvurdering
+
+**Samlet konfidensgrad: HØJ [B2]**
+- Dokumenter hentet fra riksdagen.se primærdata (Admiralty A1–B2)
+- Regnskabstal fra officielle parlamentariske betænkninger (verificerbare)
+- Ingen enkeltkildeafgørelser for påstande med høj signifikans (P0/P1-tærskel opfyldt)
+
+### Nøglediagram — prioritetslandskab
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*Pass 2-forbedring (2026-04-26): Styrket BLUF med specifikke regnskabsbeløb; tilføjet koalitionsrisikokontekst for HD01JuU31; opdaterede signifikansvægte for at afspejle HD01CU25 konstitutionelle nyhed.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_de.md -->
+
+### 🎯 BLUF
+
+Der schwedische Riksdag bewilligte einen außerordentlichen Nachtragshaushalt, der die Kraftstoffsteuer um 82 Öre/Liter (Benzin) und 319 SEK/m³ (Diesel) von Mai bis September 2026 senkt, zusammen mit einem Energieunterstützungspaket von 2,4 Mrd. SEK — eine kombinierte fiskalische Entlastung von 4,1 Mrd. SEK, angetrieben durch den Nahost-Konflikt und die Energiepreisanstiege im Januar–Februar. Gleichzeitig verabschiedete Schweden ein umfassendes neues Waffengesetz, das halbautomatische Jagdgewehre verbietet, und erteilte Schnellspurgenehmigungen für Gefängnisse inmitten einer Kapazitätskrise. Die Riksbank behielt ihren vollen Gewinn von 5,297 Mrd. SEK mit null Dividende an den Staatshaushalt. Dieses Entscheidungsbündel signalisiert eine zunehmend sicherheits- und lebenshaltungskostenfokussierte Gesetzgebungsagenda der Tidö-Koalition im Vorfeld der Vorwahlperiode.
+
+### 🧭 3 Entscheidungen, die dieses PM unterstützt
+
+1. **Finanzielle Prognostiker und Journalisten** — beurteilen Sie die inflationären und wahlbezogenen Implikationen des Notfallpakets von 4,1 Mrd. SEK für Kraftstoff und Energieentlastung (HD01FiU48) auf die Kaufkraft der Haushalte und Schwedens fiskalisches Überschussziel.
+2. **Sicherheitspolitische Analysten** — bewerten Sie die Kohärenz von Schwedens gleichzeitiger Waffenbeschränkung (HD01JuU10) und dem strafrechtlichen Erweiterungspaket (HD01CU25) als einheitliche öffentliche Sicherheitserzählung.
+3. **Zentralbank- und geldpolitische Beobachter** — interpretieren Sie die Genehmigung des Riksdag für ein nulldividende Riksbank-Ergebnis (HD01FiU23, 5,297 Mrd. SEK einbehalten) als Signal institutioneller Vorsicht inmitten anhaltender wirtschaftlicher Unsicherheit.
+
+### 60-Sekunden-Lektüre
+
+- **Kraftstoff- und Energieentlastung**: 1,56 Mrd. SEK Steuersenkung + 2,4 Mrd. SEK Strom-/Gasunterstützung = 4,1 Mrd. SEK fiskalische Gesamtwirkung (HD01FiU48, FiU, 2026-04-21) [B2]
+- **Neues Waffengesetz**: Halbautomatische Jagdgewehre verboten, Besitzregeln klargestellt, Strafgesetzbuch umstrukturiert — in Kraft ab 1. Juni 2026 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **Gefängniskapazitätsnotstand**: Schnellspur für vorübergehende Baugenehmigungen für Gefängnisse/Untersuchungshafthäuser + Regierungsbefugnis zur Außerkraftsetzung des Bau- und Planungsgesetzes (HD01CU25, CU, 2026-04-23) [A2]
+- **Riksbank-Finanzen**: 5,297 Mrd. SEK Gewinn einbehalten; null Staatsdividende; vollständige Verwaltungsentlastungsentscheidung genehmigt (HD01FiU23, FiU, 2026-04-23) [A1]
+- **Altenpflege gestärkt**: SoU25 genehmigte breitere Unterstützungspakete für ältere Menschen und pflegende Angehörige (HD01SoU25, SoU, 2026-04-24) [A2]
+- **Polizeireformkritik**: Riksrevisionen stellte fest, dass die Polismyndigheten die Ziele der Reform von 2015 nicht erreicht hat; JuU schloss die Angelegenheit mit 18 abgelehnten Motionen (HD01JuU31, JuU, 2026-04-24) [A1]
+- **Forschervisumregeln**: Schnelleres dauerhaftes Aufenthaltsrecht für Forscher und Doktoranden; Beschränkungen für Studentenarbeitsgenehmigungen werden verschärft (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ Wichtigster vorausschauender Auslöser
+
+Beobachten Sie den schwedischen Regierungshaushalt für den Herbst 2026, ob die vorübergehende Kraftstoffsteuersenkung (läuft am 30. September 2026 aus) dauerhaft wird — dies testet die Haushaltsdisziplin der Tidö-Koalition gegenüber populistischer Lebenshaltungskostenpositionierung vor der Wahl im September 2026.
+
+### Vertrauensbewertung
+
+**Gesamtvertrauensgrad: HOCH [B2]**
+- Dokumente aus riksdagen.se-Primärdaten bezogen (Admiralty A1–B2)
+- Finanzzahlen aus offiziellen parlamentarischen Ausschussberichten (verifizierbar)
+- Keine Einzelquellenentscheidungen für Aussagen mit hoher Bedeutung (P0/P1-Schwelle erfüllt)
+
+### Schlüsseldiagramm — Prioritätslandschaft
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*Pass-2-Verbesserung (2026-04-26): BLUF mit spezifischen Finanzzahlen gestärkt; Koalitionsrisikokontekt für HD01JuU31 hinzugefügt; Bedeutungsgewichte aktualisiert, um die verfassungsrechtliche Neuheit von HD01CU25 widerzuspiegeln.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_es.md -->
+
+### 🎯 BLUF
+
+El Riksdag sueco aprobó un presupuesto suplementario extraordinario que recorta los impuestos sobre el combustible en 82 öre/litro (gasolina) y 319 SEK/m³ (diésel) de mayo a septiembre de 2026, junto con un paquete de apoyo energético de 2.400 millones de SEK — un relajamiento fiscal combinado de 4.100 millones de SEK impulsado por el conflicto en Oriente Medio y los picos de precios energéticos de enero–febrero. Simultáneamente, Suecia adoptó una nueva ley integral de armas que prohíbe los rifles de caza semiautomáticos y autorizó permisos de planificación rápidos para prisiones en medio de una crisis de capacidad. El Riksbank retuvo la totalidad de su beneficio de 5.297 millones de SEK con dividendo cero al Tesoro. Este conjunto de decisiones señala una agenda legislativa cada vez más centrada en la seguridad y el coste de la vida por parte de la coalición Tidö de cara a un período preelectoral.
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **Pronosticadores financieros y periodistas** — evaluar las implicaciones inflacionarias y electorales del paquete de emergencia de 4.100 millones de SEK para el alivio de combustible y energía (HD01FiU48) sobre el poder adquisitivo de los hogares y el objetivo de superávit fiscal de Suecia.
+2. **Analistas de política de seguridad** — evaluar la coherencia de la simultánea restricción de armas en Suecia (HD01JuU10) y el paquete de expansión de justicia penal (HD01CU25) como una narrativa unificada de seguridad pública.
+3. **Observadores de banca central y política monetaria** — interpretar la aprobación del Riksdag de un resultado Riksbank con dividendo cero (HD01FiU23, 5.297 millones de SEK retenidos) como una señal de cautela institucional en medio de la persistente incertidumbre económica.
+
+### Lectura en 60 segundos
+
+- **Alivio de combustible y energía**: 1.560 millones de SEK reducción fiscal + 2.400 millones de SEK ayuda electricidad/gas = 4.100 millones de SEK impacto fiscal total (HD01FiU48, FiU, 2026-04-21) [B2]
+- **Nueva ley de armas**: Rifles de caza semiautomáticos prohibidos, normas de posesión aclaradas, código penal reestructurado — vigente desde el 1 de junio de 2026 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **Emergencia de capacidad penitenciaria**: Vía rápida para permisos de construcción temporal para prisiones/centros de prisión preventiva + potestad gubernamental para anular la Ley de Planificación y Construcción (HD01CU25, CU, 2026-04-23) [A2]
+- **Finanzas del Riksbank**: 5.297 millones de SEK de beneficio retenido; dividendo estatal cero; decisión de descargo de gestión completa aprobada (HD01FiU23, FiU, 2026-04-23) [A1]
+- **Atención a personas mayores reforzada**: SoU25 aprobó paquetes de apoyo más amplios para personas mayores y cuidadores informales (HD01SoU25, SoU, 2026-04-24) [A2]
+- **Crítica de la reforma policial**: El Riksrevisionen halló que la Polismyndigheten no había alcanzado los objetivos de la reforma de 2015; JuU cerró el asunto con 18 mociones rechazadas (HD01JuU31, JuU, 2026-04-24) [A1]
+- **Normas de visado para investigadores**: Residencia permanente acelerada para investigadores y doctorandos; restricciones para permisos de trabajo de estudiantes se endurecen (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ Principal factor desencadenante prospectivo
+
+Observar el proyecto de ley de presupuestos de otoño de 2026 del gobierno sueco para ver si la reducción temporal del impuesto sobre el combustible (que expira el 30 de septiembre de 2026) se convierte en permanente — esto pondrá a prueba la disciplina fiscal de la coalición Tidö frente al posicionamiento populista sobre el coste de la vida de cara a las elecciones de septiembre de 2026.
+
+### Evaluación de confianza
+
+**Confianza general: ALTA [B2]**
+- Documentos obtenidos de los datos primarios de riksdagen.se (Admiralty A1–B2)
+- Cifras fiscales de betänkanden parlamentarios oficiales (verificables)
+- No hay afirmaciones de fuente única para aserciones de alta significación (umbral P0/P1 cumplido)
+
+### Diagrama clave — panorama de prioridades
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*Mejora del Paso 2 (2026-04-26): BLUF reforzado con importes fiscales específicos; contexto de riesgo para la coalición añadido para HD01JuU31; ponderaciones de significación actualizadas para reflejar la novedad constitucional de HD01CU25.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_fi.md -->
+
+### 🎯 BLUF
+
+Ruotsin Riksdag hyväksyi ylimääräisen lisätalousarvion, joka alentaa polttoaineveroja 82 äyriä/litra (bensiini) ja 319 SEK/m³ (diesel) toukokuusta syyskuuhun 2026, sekä 2,4 miljardin SEK energiatukipaketin — yhteensä 4,1 miljardin SEK finanssipoliittinen kevennys, jonka taustalla ovat Lähi-idän konflikti ja tammi–helmikuun energiahintojen nousu. Samalla Ruotsi hyväksyi kattavan uuden aselain, joka kieltää puoliautomaattiset metsästyskiväärit, ja valtuutti pikakaista-rakennusluvat vankiloille kapasiteettikriisin keskellä. Riksbank pidätti koko 5,297 miljardin SEK voittonsa ilman osinkoa valtiovarainministeriölle. Tämä päätösklusteri viestii yhä enemmän turvallisuus- ja elinkustannuslähtöisestä lainsäädäntöagendasta Tidö-koalitiolta ennen vaalijaksoa.
+
+### 🧭 3 päätöstä, joita tämä tiedote tukee
+
+1. **Taloudelliset ennustajat ja toimittajat** — arvioi 4,1 miljardin SEK hätäpaketin (HD01FiU48) inflaatio- ja vaali-implikaatioita kotitalouksien ostovoimalle ja Ruotsin finanssipoliittiselle ylijäämätavoitteelle.
+2. **Turvallisuuspoliittiset analyytikot** — arvioi Ruotsin samanaikaisen aseen rajoittamisen (HD01JuU10) ja rikosasioiden laajentamispaketin (HD01CU25) koherenssia yhtenäisenä yleisen turvallisuuden narratiivina.
+3. **Keskuspankki- ja rahapolitiikan tarkkailijat** — tulkitse Riksdagin hyväksyntä nollaosinko-Riksbank-tulokselle (HD01FiU23, 5,297 miljardia SEK pidätetty) institutionaalisen varovaisuuden merkkinä jatkuvan taloudellisen epävarmuuden keskellä.
+
+### 60 sekunnin lukeminen
+
+- **Polttoaine- ja energiahuojennus**: 1,56 miljardia SEK verohelpotus + 2,4 miljardia SEK sähkö/kaasutuki = 4,1 miljardia SEK kokonaisvaikutus (HD01FiU48, FiU, 2026-04-21) [B2]
+- **Uusi aselaki**: Puoliautomaattiset metsästyskiväärit kielletty, hallussapitosäännöt selvennetty, rikoslaki uudelleen jäsennetty — voimaan 1. kesäkuuta 2026 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **Vankilakapasiteetin hätätilanne**: Pikakaista väliaikaisille rakennusluvalle vankiloille/tutkintovankeustiloille + hallituksen valtuudet ohittaa maankäyttö- ja rakennuslaki (HD01CU25, CU, 2026-04-23) [A2]
+- **Riksbankin talous**: 5,297 miljardia SEK voitto pidätetty; nolla valtion osinkoa; täysi hallinnon vastuuvapauspäätös hyväksytty (HD01FiU23, FiU, 2026-04-23) [A1]
+- **Vanhustenhoito vahvistettu**: SoU25 hyväksyi laajemmat tukipaketit ikääntyneille ja omaishoitajille (HD01SoU25, SoU, 2026-04-24) [A2]
+- **Poliisiuudistuksen kritiikki**: Riksrevisionen havaitsi, että Polismyndigheten ei saavuttanut vuoden 2015 uudistuksen tavoitteita; JuU sulki asian 18 hylätyllä motiolla (HD01JuU31, JuU, 2026-04-24) [A1]
+- **Tutkijaviisumisäännöt**: Nopeampi pysyvä oleskelulupa tutkijoille ja tohtorikoulutettaville; opiskelijoiden työlupien rajoituksia tiukennetaan (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ Tärkein ennakoiva laukaiseva tekijä
+
+Seuraa Ruotsin hallituksen syysbudjettiesitystä 2026, onko väliaikainen polttoaineverovähennys (päättyy 30. syyskuuta 2026) muuttumassa pysyväksi — tämä testaa Tidö-koalition finanssikuria populistista elinkustannusasettelua vastaan ennen syyskuun 2026 vaalia.
+
+### Luottamusarviointi
+
+**Kokonaisluottamusaste: KORKEA [B2]**
+- Asiakirjat hankittu riksdagen.se-primääridatasta (Admiralty A1–B2)
+- Talousluvut virallisista parlamentaarisista mietinnöistä (todennettavissa)
+- Ei yksittäislähdepäätöksiä korkean merkittävyyden väittämille (P0/P1-kynnys täyttyy)
+
+### Avainkaavio — prioriteettimaasto
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*Kierros 2 parannus (2026-04-26): Vahvistettu BLUF tietyillä talousarvoluvuilla; lisätty koalitioriskikonteksti HD01JuU31:lle; päivitetyt merkittävyyspainot heijastamaan HD01CU25 perustuslaillista uutuutta.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_fr.md -->
+
+### 🎯 BLUF
+
+Le Riksdag suédois a approuvé un budget supplémentaire extraordinaire réduisant les taxes sur les carburants de 82 öre/litre (essence) et 319 SEK/m³ (diesel) de mai à septembre 2026, accompagné d'un package de soutien énergétique de 2,4 milliards de SEK — un assouplissement fiscal combiné de 4,1 milliards de SEK motivé par le conflit au Moyen-Orient et les pics de prix de l'énergie de janvier–février. Parallèlement, la Suède a adopté une nouvelle loi complète sur les armes interdisant les fusils de chasse semi-automatiques et autorisé des permis de planification accélérés pour les prisons au beau milieu d'une crise de capacité. La Riksbank a conservé l'intégralité de son bénéfice de 5,297 milliards de SEK sans dividende au Trésor. Cette grappe de décisions signale un agenda législatif de plus en plus axé sur la sécurité et le coût de la vie de la coalition Tidö à l'approche d'une période pré-électorale.
+
+### 🧭 3 décisions que ce PM soutient
+
+1. **Prévisionnistes financiers et journalistes** — évaluer les implications inflationnistes et électorales du package d'urgence de 4,1 milliards de SEK pour le carburant et l'allégement énergétique (HD01FiU48) sur le pouvoir d'achat des ménages et l'objectif d'excédent fiscal de la Suède.
+2. **Analystes de politique de sécurité** — évaluer la cohérence de la restriction simultanée des armes en Suède (HD01JuU10) et du package d'expansion judiciaire pénale (HD01CU25) comme un récit de sécurité publique unifié.
+3. **Observateurs de la banque centrale et de la politique monétaire** — interpréter l'approbation par le Riksdag d'un résultat Riksbank à dividende zéro (HD01FiU23, 5,297 milliards de SEK retenus) comme un signal de prudence institutionnelle dans un contexte d'incertitude économique persistante.
+
+### Lecture en 60 secondes
+
+- **Allégement sur les carburants et l'énergie**: 1,56 milliard de SEK de réduction fiscale + 2,4 milliards de SEK d'aide électricité/gaz = 4,1 milliards de SEK d'impact fiscal total (HD01FiU48, FiU, 2026-04-21) [B2]
+- **Nouvelle loi sur les armes**: Fusils de chasse semi-automatiques interdits, règles de possession précisées, code pénal restructuré — entrée en vigueur le 1er juin 2026 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **Urgence de capacité pénitentiaire**: Voie rapide pour les permis de construction temporaires pour les prisons/centres de détention provisoire + pouvoir gouvernemental de déroger à la loi sur l'aménagement du territoire et la construction (HD01CU25, CU, 2026-04-23) [A2]
+- **Finances de la Riksbank**: 5,297 milliards de SEK de bénéfice retenu ; dividende d'État nul ; décharge complète de la gestion approuvée (HD01FiU23, FiU, 2026-04-23) [A1]
+- **Soins aux personnes âgées renforcés**: SoU25 a approuvé des packages de soutien plus larges pour les personnes âgées et les aidants informels (HD01SoU25, SoU, 2026-04-24) [A2]
+- **Critique de la réforme policière**: Le Riksrevisionen a constaté que la Polismyndigheten n'avait pas atteint les objectifs de la réforme de 2015 ; JuU a clôturé l'affaire avec 18 motions rejetées (HD01JuU31, JuU, 2026-04-24) [A1]
+- **Règles relatives aux visas pour chercheurs**: Résidence permanente accélérée pour les chercheurs et doctorants ; les restrictions sur les permis de travail pour étudiants se durcissent (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ Principal déclencheur prospectif
+
+Surveiller le projet de loi de finances d'automne 2026 du gouvernement suédois pour voir si la réduction temporaire de la taxe sur les carburants (expirant le 30 septembre 2026) devient permanente — cela testera la discipline budgétaire de la coalition Tidö face à un positionnement populiste sur le coût de la vie avant les élections de septembre 2026.
+
+### Évaluation de confiance
+
+**Confiance globale : ÉLEVÉE [B2]**
+- Documents provenant des données primaires de riksdagen.se (Admiralty A1–B2)
+- Chiffres fiscaux issus des betänkanden parlementaires officiels (vérifiables)
+- Aucune affirmation provenant d'une source unique pour les assertions à haute signification (seuil P0/P1 atteint)
+
+### Diagramme clé — paysage de priorités
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*Amélioration Pass 2 (2026-04-26) : BLUF renforcé avec des montants fiscaux spécifiques ; contexte de risque pour la coalition ajouté pour HD01JuU31 ; pondérations de signification mises à jour pour refléter la nouveauté constitutionnelle de HD01CU25.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+---
+title: "הריקסדאג מאשר קיצוץ במס דלק, חוק נשק חדש ומסלול מהיר להרחבת בתי הסוהר"
+
+run_id: 24965504707
+---
+
+# הריקסדאג מאשר קיצוץ במס דלק, חוק נשק חדש ומסלול מהיר להרחבת בתי הסוהר
+
+### 🎯 סיכום מנהלים
+
+הריקסדאג השוודי אישר תקציב משלים יוצא דופן המקצץ את מסי הדלק ב-82 אורה/ליטר (בנזין) ו-319 SEK/מ"ק (דיזל) ממאי עד ספטמבר 2026, לצד חבילת תמיכה באנרגיה בהיקף 2.4 מיליארד SEK — הקלה פיסקלית משולבת של 4.1 מיליארד SEK הנובעת מסכסוך המזרח התיכון וקפיצות מחירי האנרגיה בינואר–פברואר. בו בזמן, אימצה שוודיה חוק נשק חדש ומקיף האוסר על רובי ציד חצי-אוטומטיים, והסמיכה היתרי תכנון מזורזים לבתי סוהר בעיצומה של משבר קיבולת. הריקסבנק שמר על כלל רווחיו — 5.297 מיליארד SEK — ללא דיווידנד לאוצר. מקבץ החלטות זה משדר אג'נדה חקיקתית המתמקדת יותר ויותר בביטחון ובעלות המחייה מטעם קואליציית טידו לקראת תקופת טרום-בחירות.
+
+### 🧭 3 החלטות שתקציר זה תומך בהן
+
+1. **חוזאים פיננסיים ועיתונאים** — הערכת ההשלכות האינפלציוניות והבחירתיות של חבילת החירום בהיקף 4.1 מיליארד SEK לסיוע בדלק ואנרגיה (HD01FiU48) על כוח הקנייה של משקי בית ועל יעד עודף הגירעון הפיסקלי של שוודיה.
+2. **אנליסטי מדיניות ביטחון** — הערכת הקוהרנטיות של הגבלת הנשק הסימולטנית של שוודיה (HD01JuU10) וחבילת ההרחבה הפלילית (HD01CU25) כנרטיב ביטחון ציבורי מאוחד.
+3. **צופים בבנק המרכזי ובמדיניות המוניטרית** — פרשנות לאישור הריקסדאג לתוצאת ריקסבנק עם דיווידנד אפס (HD01FiU23, 5.297 מיליארד SEK שמור) כאות לזהירות מוסדית על רקע אי-ודאות כלכלית מתמשכת.
+
+### קריאה של 60 שניות
+
+- **הקלה בדלק ואנרגיה**: 1.56 מיליארד SEK הפחתת מס + 2.4 מיליארד SEK תמיכה בחשמל/גז = 4.1 מיליארד SEK השפעה פיסקלית כוללת (HD01FiU48, FiU, 2026-04-21) [B2]
+- **חוק נשק חדש**: רובי ציד חצי-אוטומטיים אסורים, כללי החזקה הובהרו, קוד העונשין מובנה מחדש — בתוקף מ-1 ביוני 2026 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **חירום קיבולת בתי סוהר**: מסלול מהיר להיתרי בנייה זמניים לבתי סוהר/מעצר + סמכות ממשלתית לעקוף את חוק התכנון והבנייה (HD01CU25, CU, 2026-04-23) [A2]
+- **כספי הריקסבנק**: 5.297 מיליארד SEK רווח שמור; אפס דיווידנד מדינתי; החלטת פטור ניהולי מלא אושרה (HD01FiU23, FiU, 2026-04-23) [A1]
+- **טיפול בקשישים חוזק**: SoU25 אישר חבילות תמיכה רחבות יותר לקשישים ולמטפלים משפחתיים (HD01SoU25, SoU, 2026-04-24) [A2]
+- **ביקורת על רפורמת המשטרה**: הריקסרבייזיונן מצא שמשטרת שוודיה (Polismyndigheten) לא עמדה ביעדי רפורמת 2015; ועדת המשפט (JuU) סגרה את הנושא עם 18 הצעות שנדחו (HD01JuU31, JuU, 2026-04-24) [A1]
+- **כללי ויזה לחוקרים**: מגורים קבועים מהירים יותר לחוקרים וסטודנטים לדוקטורט; הגבלות על אישורי עבודה לסטודנטים מחמירות (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ גורם ההפעלה המרכזי לעתיד
+
+לעקוב אחר הצעת חוק התקציב לסתיו 2026 של הממשלה השוודית כדי לבדוק אם הפחתת מס הדלק הזמנית (פגה ב-30 בספטמבר 2026) הופכת לקבועה — זה יבחן את המשמעת הפיסקלית של קואליציית טידו מול עמדה פופוליסטית בנושא עלות המחייה לקראת בחירות ספטמבר 2026.
+
+### הערכת רמת הביטחון
+
+**רמת ביטחון כוללת: גבוהה [B2]**
+- מסמכים שהגיעו מנתוני ראשוניים של riksdagen.se (סולם האדמירליה A1–B2)
+- נתונים פיסקליים מתוך betänkanden פרלמנטריים רשמיים (ניתנים לאימות)
+- אין טענות ממקור יחיד לטיעונים בעלי חשיבות גבוהה (עמידה בסף P0/P1)
+
+### תרשים מפתח — נוף עדיפויות
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*שיפור מעבר 2 (2026-04-26): BLUF חוזק עם סכומים פיסקליים ספציפיים; הוסף הקשר סיכון הקואליציה עבור HD01JuU31; עדכון משקלי החשיבות לשקף את החדשנות החוקתית של HD01CU25.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_ja.md -->
+
+### 🎯 要旨
+
+スウェーデンのリクスダーグ（議会）は、2026年5月から9月にかけてガソリン82オーレ/リットル、ディーゼル319 SEK/m³の燃料税を引き下げる臨時補正予算と、24億 SEK のエネルギー支援パッケージを承認した。これは中東紛争と1〜2月のエネルギー価格高騰に対応するもので、財政上の総緩和額は41億 SEKに達する。同時に、スウェーデンは半自動式狩猟ライフルを禁止する包括的な新銃器法を採択し、受刑者収容能力危機を受けて刑務所への優先許可を付与した。リクスバンクは52億9700万 SEK の利益を全額留保し、国庫への配当はゼロとした。この一連の決定は、選挙前の時期に向けてティドー連立政権の安全保障・生活費重視の立法姿勢が強まっていることを示している。
+
+### 🧭 本レポートが支援する3つの意思決定
+
+1. **財務予測担当者・ジャーナリスト** — 41億 SEK の燃料・エネルギー緊急パッケージ（HD01FiU48）が家計の購買力とスウェーデンの財政黒字目標にもたらすインフレ・選挙への影響を評価する。
+2. **安全保障政策アナリスト** — スウェーデンの銃器規制（HD01JuU10）と刑事司法拡大パッケージ（HD01CU25）の同時実施が、統一された公共安全の物語として整合しているかを評価する。
+3. **中央銀行・金融政策ウォッチャー** — リクスダーグがリクスバンクの配当ゼロ結果（HD01FiU23、52億9700万 SEK 留保）を承認したことを、持続する経済的不確実性の中での制度的慎重姿勢のシグナルとして解釈する。
+
+### 60秒サマリー
+
+- **燃料・エネルギー支援**: 15億6000万 SEK 減税 + 24億 SEK 電気/ガス補助 = 41億 SEK 財政への総影響 (HD01FiU48, FiU, 2026-04-21) [B2]
+- **新銃器法**: 半自動式狩猟ライフルを禁止、所持規則を明確化、刑法を再編 — 2026年6月1日施行 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **刑務所収容能力の緊急事態**: 刑務所/拘置所への仮設建設許可の優先ルート + 計画建設法を回避する政府権限 (HD01CU25, CU, 2026-04-23) [A2]
+- **リクスバンクの財務**: 52億9700万 SEK の利益を留保；国庫配当ゼロ；全経営免責決議を承認 (HD01FiU23, FiU, 2026-04-23) [A1]
+- **高齢者介護の強化**: SoU25 が高齢者とインフォーマルケアラーへの幅広い支援パッケージを承認 (HD01SoU25, SoU, 2026-04-24) [A2]
+- **警察改革への批判**: リクスレビーズィオネンが警察（Polismyndigheten）は2015年改革目標を達成していないと判断；JuU は18件の動議否決でこの問題を終結 (HD01JuU31, JuU, 2026-04-24) [A1]
+- **研究者ビザ規則**: 研究者・博士課程学生への永住許可を迅速化；学生の就労許可制限を強化 (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ 最重要な将来トリガー
+
+スウェーデン政府の2026年秋の予算案において、2026年9月30日に期限切れとなる燃料税の一時減税が恒久化されるかどうかを注視すること — これがティドー連立の財政規律と2026年9月選挙前の生活費ポピュリズム的なポジショニングの均衡を試すことになる。
+
+### 信頼度評価
+
+**総合信頼度：高 [B2]**
+- riksdagen.se 一次データから取得した文書（アドミラルティ A1〜B2）
+- 公式議会 betänkanden に基づく財政数値（検証可能）
+- 重要性の高い主張に対する単一ソースの主張なし（P0/P1 閾値充足）
+
+### 主要図表 — 優先度マトリックス
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*パス2改善 (2026-04-26): 具体的な財政額でBLUFを強化；HD01JuU31の連立リスクの文脈を追加；HD01CU25の憲法上の新規性を反映して重要性の重みを更新。*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_ko.md -->
+
+### 🎯 핵심 요약
+
+스웨덴 릭스다그(의회)는 2026년 5월부터 9월까지 휘발유 82 오레/리터, 경유 319 SEK/m³의 연료세를 인하하는 임시 추경예산과 24억 SEK의 에너지 지원 패키지를 승인했다. 이는 중동 분쟁과 1∼2월 에너지 가격 급등에 대응하는 것으로, 재정 완화 총액은 41억 SEK에 달한다. 동시에 스웨덴은 반자동 사냥 소총을 금지하는 포괄적 신규 총기법을 채택하고, 수용 능력 위기 속에 교도소에 대한 신속 허가를 부여했다. 릭스방크는 52억 9,700만 SEK의 이익을 전액 유보하며 국고 배당을 제로로 유지했다. 이 일련의 결정들은 선거전 기간을 앞두고 티도 연립정부의 안보 및 생활비 중심 입법 의제가 강화되고 있음을 시사한다.
+
+### 🧭 본 보고서가 지원하는 3가지 의사결정
+
+1. **재무 예측가 및 언론인** — 41억 SEK의 연료·에너지 긴급 패키지(HD01FiU48)가 가계 구매력과 스웨덴의 재정 흑자 목표에 미치는 인플레이션·선거 영향을 평가한다.
+2. **안보정책 분석가** — 스웨덴의 동시적 총기 규제(HD01JuU10)와 형사사법 확대 패키지(HD01CU25)가 통합된 공공 안전 서사로서 일관성이 있는지 평가한다.
+3. **중앙은행·통화정책 관찰자** — 릭스다그가 릭스방크의 배당금 제로 결과(HD01FiU23, 52억 9,700만 SEK 유보)를 승인한 것을, 지속적인 경제적 불확실성 속에서의 제도적 신중함 신호로 해석한다.
+
+### 60초 요약
+
+- **연료·에너지 완화**: 15억 6,000만 SEK 세금 감면 + 24억 SEK 전기/가스 지원 = 41억 SEK 재정 총영향 (HD01FiU48, FiU, 2026-04-21) [B2]
+- **신규 총기법**: 반자동 사냥 소총 금지, 소지 규정 명확화, 형법 재편 — 2026년 6월 1일 발효 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **교도소 수용 능력 비상사태**: 교도소/구치소 임시 건설 허가 신속 경로 + 계획건설법 우회 정부 권한 (HD01CU25, CU, 2026-04-23) [A2]
+- **릭스방크 재정**: 52억 9,700만 SEK 이익 유보; 국고 배당 제로; 전체 경영 면책 의결 승인 (HD01FiU23, FiU, 2026-04-23) [A1]
+- **노인 돌봄 강화**: SoU25, 노인 및 비공식 간병인을 위한 광범위한 지원 패키지 승인 (HD01SoU25, SoU, 2026-04-24) [A2]
+- **경찰 개혁 비판**: 릭스레비시오넨, 경찰청(Polismyndigheten)이 2015년 개혁 목표를 달성하지 못했다고 판단; 법무위원회(JuU), 18건의 동의안 부결로 사안 종결 (HD01JuU31, JuU, 2026-04-24) [A1]
+- **연구자 비자 규정**: 연구자·박사과정생 영구 거주 허가 신속화; 학생 취업 허가 제한 강화 (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ 최우선 미래 트리거
+
+2026년 9월 30일 만료되는 임시 연료세 인하가 영구화될지 여부를 스웨덴 정부 2026년 가을 예산안에서 주시할 것 — 이는 2026년 9월 선거를 앞두고 티도 연립의 재정 규율과 생활비 포퓰리즘적 포지셔닝 간의 균형을 시험하게 된다.
+
+### 신뢰도 평가
+
+**전반적 신뢰 수준: 높음 [B2]**
+- riksdagen.se 1차 데이터에서 수집한 문서 (Admiralty A1–B2)
+- 공식 의회 betänkanden의 재정 수치 (검증 가능)
+- 고중요도 주장에 대한 단일 출처 없음 (P0/P1 임계값 충족)
+
+### 핵심 다이어그램 — 우선순위 지형
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*패스 2 개선 (2026-04-26): 구체적인 재정 금액으로 핵심 요약 강화; HD01JuU31에 대한 연립 위험 맥락 추가; HD01CU25의 헌법적 신규성을 반영하여 중요도 가중치 업데이트.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_nl.md -->
+
+### 🎯 BLUF
+
+De Zweedse Riksdag keurde een buitengewone aanvullende begroting goed die brandstofbelastingen verlaagt met 82 öre/liter (benzine) en 319 SEK/m³ (diesel) van mei tot september 2026, samen met een energiesteunpakket van 2,4 miljard SEK — een gecombineerde fiscale versoepeling van 4,1 miljard SEK gedreven door het Midden-Oostenconflict en de energieprijspieken in januari–februari. Tegelijkertijd nam Zweden een uitgebreide nieuwe wapenwet aan die halfautomatische jachtgeweren verbiedt en verleende spoedvergunningen voor gevangenissen temidden van een capaciteitscrisis. De Riksbank behield haar volledige winst van 5,297 miljard SEK met nuldividend aan de schatkist. Dit besluitencluster signaleert een steeds veiligheidsen levensduurtegericht wetgevingsagenda van de Tidö-coalitie richting een voorverkiezingsperiode.
+
+### 🧭 3 beslissingen die dit PM ondersteunt
+
+1. **Financiële prognosemakers en journalisten** — beoordeel de inflationele en electorale implicaties van het noodpakket van 4,1 miljard SEK voor brandstof- en energieverlichting (HD01FiU48) op de koopkracht van huishoudens en Zwedens fiscale overschotsdoelstelling.
+2. **Veiligheidsbeleidsanalisten** — evalueer de coherentie van Zwedens gelijktijdige wapenbegrenzing (HD01JuU10) en het strafrechtelijke uitbreidingspakket (HD01CU25) als een uniforme openbare veiligheidsnarratief.
+3. **Centrale bank- en monetairbeleidswaarnemmers** — interpreteer de goedkeuring van de Riksdag voor een nuldividend Riksbank-resultaat (HD01FiU23, 5,297 miljard SEK ingehouden) als een signaal van institutionele voorzichtigheid te midden van aanhoudende economische onzekerheid.
+
+### 60-secondenlezing
+
+- **Brandstof- en energieverlichting**: 1,56 miljard SEK belastingverlaging + 2,4 miljard SEK elektriciteit/gassteun = 4,1 miljard SEK totale fiscale impact (HD01FiU48, FiU, 2026-04-21) [B2]
+- **Nieuwe wapenwet**: Halfautomatische jachtgeweren verboden, bezitsregels verduidelijkt, wetboek van strafrecht geherstructureerd — van kracht per 1 juni 2026 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **Gevangeniscapaciteitsnoodgeval**: Snelspoor voor tijdelijke bouwvergunningen voor gevangenissen/voorlopige hechtenis + regeringsbevoegdheid om de Ruimtelijke Ordenings- en Bouwwet te overrulen (HD01CU25, CU, 2026-04-23) [A2]
+- **Riksbank-financiën**: 5,297 miljard SEK winst ingehouden; nul staatsdividend; volledige kwijting van het bestuur goedgekeurd (HD01FiU23, FiU, 2026-04-23) [A1]
+- **Ouderenzorg versterkt**: SoU25 keurde bredere steunpakketten goed voor ouderen en mantelzorgers (HD01SoU25, SoU, 2026-04-24) [A2]
+- **Politiehervormingskritiek**: Riksrevisionen constateerde dat de Polismyndigheten de doelen van de 2015-hervorming niet had bereikt; JuU sloot de zaak met 18 verworpen moties (HD01JuU31, JuU, 2026-04-24) [A1]
+- **Onderzoekersvisumregels**: Snellere vaste verblijfsvergunning voor onderzoekers en promovendi; beperkingen op werkvergunningen voor studenten worden aangescherpt (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ Belangrijkste vooruitblikkende trigger
+
+Volg de Zweedse regeringsautumnbegroting 2026 om te zien of de tijdelijke brandstofbelastingverlaging (verloopt op 30 september 2026) permanent wordt — dit test de begrotingsdiscipline van de Tidö-coalitie versus een populistische levensduurtepositie richting de verkiezingen van september 2026.
+
+### Betrouwbaarheidsbeoordeling
+
+**Algehele betrouwbaarheidsgraad: HOOG [B2]**
+- Documenten afkomstig van riksdagen.se primaire gegevens (Admiralty A1–B2)
+- Fiscale cijfers uit officiële parlementaire betänkanden (verifieerbaar)
+- Geen enkele-bronbeweringen voor beweringen met hoge betekenis (P0/P1-drempel gehaald)
+
+### Sleuteldiagram — prioriteitslandschap
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*Pass 2-verbetering (2026-04-26): BLUF versterkt met specifieke fiscale bedragen; coalitierisicocontext toegevoegd voor HD01JuU31; betekenisgewichten bijgewerkt om de constitutionele nieuwheid van HD01CU25 te weerspiegelen.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_no.md -->
+
+### 🎯 BLUF
+
+Den svenske Riksdag godkjente et ekstraordinært tilleggsbudsjett som kutter drivstoffavgifter med 82 øre/liter (bensin) og 319 SEK/m³ (diesel) fra mai–september 2026, sammen med en energistøttepakke på 2,4 mrd. SEK — en samlet finanspolitisk lettelse på 4,1 mrd. SEK drevet av Midtøsten-konflikten og energipristopper i januar–februar. Samtidig vedtok Sverige en helhetlig ny våpenlov som forbyr halvautomatiske jaktrifler og bemyndiget hurtigsporstillatelser for fengsler midt i en kapasitetskrise. Riksbanken beholdt sitt fulle overskudd på 5,297 mrd. SEK med nullutbytte til statskassen. Denne beslutningsklyngen signalerer en stadig mer sikkerhets- og levekostnadsfokusert lovgivningsagenda fra Tidö-koalisjonen inn i en forvalgperiode.
+
+### 🧭 3 beslutninger dette PM støtter
+
+1. **Finansielle prognosemakere og journalister** — vurder de inflasjonsmessige og valgrelaterte implikasjonene av den 4,1 mrd. SEK store nødpakken for drivstoff og energi (HD01FiU48) for husholdningenes kjøpekraft og Sveriges finanspolitiske overskuddsmål.
+2. **Sikkerhetspolitiske analytikere** — evaluer sammenhengen i Sveriges parallelle våpenbegrensning (HD01JuU10) og strafferettslige utvidelsespakke (HD01CU25) som en enhetlig fortelling om offentlig sikkerhet.
+3. **Sentralbank- og pengepolitiske observatører** — fortolk Riksdagens godkjenning av et nullutbytte-Riksbank-resultat (HD01FiU23, 5,297 mrd. SEK beholdt) som et signal om institusjonell forsiktighet midt i fortsatt økonomisk usikkerhet.
+
+### 60-sekunders lesning
+
+- **Drivstoff- og energilettelse**: 1,56 mrd. SEK skattelettelse + 2,4 mrd. SEK el/gassstøtte = 4,1 mrd. SEK samlet finanspolitisk effekt (HD01FiU48, FiU, 2026-04-21) [B2]
+- **Ny våpenlov**: Halvautomatiske jaktrifler forbudt, besittelsesregler klarlagt, straffeloven omstrukturert — trer i kraft 1. juni 2026 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **Fengselskapasitetsnødsituasjon**: Hurtigspor for midlertidige byggetillatelser for fengsler/varetektsfengsler + regjeringens myndighet til å overstyre plan- og bygningsloven (HD01CU25, CU, 2026-04-23) [A2]
+- **Riksbankens økonomi**: 5,297 mrd. SEK overskudd beholdt; nullt statsutbytte; fullstendig forvaltningsansvarsbeslutning godkjent (HD01FiU23, FiU, 2026-04-23) [A1]
+- **Eldreomsorg styrket**: SoU25 godkjente bredere støttepakker for eldre og pårørendeomsorgsgivere (HD01SoU25, SoU, 2026-04-24) [A2]
+- **Politireformkritikk**: Riksrevisionen fant at Polismyndigheten ikke nådde 2015-reformens mål; JuU lukket saken med 18 avslåtte motioner (HD01JuU31, JuU, 2026-04-24) [A1]
+- **Forskervisumregler**: Raskere permanent oppholdstillatelse for forskere og doktorgradsstudenter; begrensninger for studenters arbeidstillatelse strammes inn (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ Viktigste fremoverskuende utløsende faktor
+
+Følg den svenske regjeringens høstbudsjettproposisjon 2026 for å se om den midlertidige drivstoffskattereduksjonen (utløper 30. september 2026) gjøres permanent — dette tester Tidö-koalisjonens finansdisiplin mot populistisk levekostnadsposisjonering foran valget i september 2026.
+
+### Konfidensvurdering
+
+**Samlet konfidensgrad: HØY [B2]**
+- Dokumenter hentet fra riksdagen.se primærdata (Admiralty A1–B2)
+- Regnskapstall fra offisielle parlamentariske betenkninger (verifiserbare)
+- Ingen enkeltkildebestemmelser for påstander med høy signifikans (P0/P1-terskel oppfylt)
+
+### Nøkkeldiagram — prioritetslandskap
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*Pass 2-forbedring (2026-04-26): Styrket BLUF med spesifikke regnskapsbeløp; lagt til koalisjonsrisikokontekst for HD01JuU31; oppdaterte signifikansvekter for å gjenspeile HD01CU25 konstitusjonelle nyhet.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_sv.md -->
+
+### 🎯 BLUF
+
+Svenska Riksdagen godkände en extraordinär tilläggsbudget som sänker bränsleskatter med 82 öre/liter (bensin) och 319 SEK/m³ (diesel) från maj–september 2026 jämte ett energistödpaket på 2,4 miljarder SEK — en kombinerad finanspolitisk lättnad på 4,1 miljarder SEK driven av konflikten i Mellanöstern och energiprisstegringar i januari–februari. Samtidigt antog Sverige en heltäckande ny vapenlag som förbjuder halvautomatiska gevär för jakt och bemyndigade snabbspårsbeviljande av planlovstillstånd för fängelser mitt i en kapacitetskris. Riksbanken behöll sin fullständiga vinst på 5,297 miljarder SEK med nolldividend till statskassan. Det här beslutsklustret signalerar en alltmer säkerhets- och levnadskostnadsfokuserad lagstiftningsagenda från Tidökoalitionen inför en förvalsperiod.
+
+### 🧭 3 beslut som detta PM stöder
+
+1. **Finansiella prognosmakare och journalister** — bedöm de inflationsmässiga och valrelaterade implikationerna av nödpaket för bränsle och energi på 4,1 miljarder SEK (HD01FiU48) för hushållens köpkraft och Sveriges finanspolitiska överskottsmål.
+2. **Säkerhetspolitiska analytiker** — utvärdera koherensen i Sveriges parallella vapenbegränsning (HD01JuU10) och straffrättsliga expansionspaket (HD01CU25) som en enhetlig folksäkerhetsberättelse.
+3. **Centralbanks- och penningpolitiska observatörer** — tolka Riksdagens godkännande av ett nolldividend-Riksbanksresultat (HD01FiU23, 5,297 miljarder SEK behållet) som en signal om institutionell försiktighet mitt i fortsatt ekonomisk osäkerhet.
+
+### 60-sekunders läsning
+
+- **Bränsle- och energilättnad**: 1,56 miljarder SEK skattereduktion + 2,4 miljarder SEK el/gasstöd = 4,1 miljarder SEK total finanspolitisk effekt (HD01FiU48, FiU, 2026-04-21) [B2]
+- **Ny vapenlag**: Halvautomatiska jaktgevär förbjuds, innehavsregler klarläggs, straffkoden omstruktureras — träder i kraft 1 juni 2026 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **Fängelsekapacitetsnödläge**: Snabbspår för tillfälliga bygglov för fängelser/häkten + regeringsmakt att åsidosätta plan- och bygglagen (HD01CU25, CU, 2026-04-23) [A2]
+- **Riksbankens finanser**: 5,297 miljarder SEK vinst behållen; noll statsdividend; fullständigt förvaltningsansvarsbeslut godkänt (HD01FiU23, FiU, 2026-04-23) [A1]
+- **Äldreomsorg stärkt**: SoU25 godkände bredare stödpaket för äldre och anhörigvårdare (HD01SoU25, SoU, 2026-04-24) [A2]
+- **Polisreformkritik**: Riksrevisionen fann att Polismyndigheten inte uppnådde 2015 års reformmål; JuU stängde ärendet med 18 avslagna motioner (HD01JuU31, JuU, 2026-04-24) [A1]
+- **Forskarvisumregler**: Snabbare permanent uppehållstillstånd för forskare och doktorander; restriktioner för studenters arbetstillstånd skärps (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ Viktigaste framåtriktat utlösande faktor
+
+Bevaka svenska regeringens höstbudgetproposition 2026 för att se om den tillfälliga bränsleskatteminskningen (upphör 30 september 2026) görs permanent — detta testar Tidökoalitionens finansdisciplin kontra populistisk levnadskostnadspositionering inför valet i september 2026.
+
+### Konfidensutlåtande
+
+**Övergripande konfidensgrad: HÖG [B2]**
+- Dokument hämtade från riksdagen.se primärdata (Amiralskvadrant A1–B2)
+- Räkenskapstal från officiella parlamentariska betänkanden (verifierbara)
+- Inga enpåståendekällor för påståenden av hög signifikans (P0/P1-tröskel uppfylld)
+
+### Nyckeldiagram — prioritetslandskap
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*Pass 2-förbättring (2026-04-26): Stärkt BLUF med specifika räkenskapsbelopp; lagt till koalitionsriskkontext för HD01JuU31; uppdaterade signifikansvikter för att spegla HD01CU25 konstitutionella nyhet.*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_zh.md -->
+
+### 🎯 核心摘要
+
+瑞典议会（Riksdag）批准了一项特别补充预算，将2026年5月至9月期间的燃油税削减82奥尔/升（汽油）和319瑞典克朗/立方米（柴油），同时配套24亿瑞典克朗的能源支持方案——受中东冲突及1至2月能源价格上涨驱动，合计财政宽松额度达41亿瑞典克朗。与此同时，瑞典通过了一项全面新武器法，禁止半自动猎枪，并在监狱容量危机中授权为监狱建设开辟快速审批通道。瑞典央行（Riksbank）保留全部52.97亿瑞典克朗利润，向国库零分红。这一系列决定表明，提多联合政府在进入选前阶段时，立法议程日益聚焦于安全与生活成本。
+
+### 🧭 本简报支持的3项决策
+
+1. **财务预测人员与记者** — 评估41亿瑞典克朗燃油和能源紧急救助方案（HD01FiU48）对家庭购买力及瑞典财政盈余目标的通胀与选举影响。
+2. **安全政策分析人员** — 评估瑞典同步推进武器限制（HD01JuU10）与刑事司法扩张方案（HD01CU25）作为统一公共安全叙事的内在一致性。
+3. **央行与货币政策观察人士** — 将议会批准瑞典央行零分红结果（HD01FiU23，52.97亿瑞典克朗留存）解读为在持续经济不确定性背景下的机构审慎信号。
+
+### 60秒速读
+
+- **燃油与能源减负**：15.6亿瑞典克朗减税 + 24亿瑞典克朗电/气补贴 = 41亿瑞典克朗财政总影响 (HD01FiU48, FiU, 2026-04-21) [B2]
+- **新武器法**：半自动猎枪被禁止，持有规则得到明确，刑法典重新整合——2026年6月1日起生效 (HD01JuU10, JuU, 2026-04-24) [A2]
+- **监狱容量紧急状态**：为监狱/拘留所建设临时许可开辟快速通道 + 政府获权绕过规划建设法 (HD01CU25, CU, 2026-04-23) [A2]
+- **瑞典央行财务**：52.97亿瑞典克朗利润留存；国库分红为零；全面经营免责决议获批 (HD01FiU23, FiU, 2026-04-23) [A1]
+- **老年护理加强**：SoU25批准为老年人及非正式照护者提供更广泛的支持方案 (HD01SoU25, SoU, 2026-04-24) [A2]
+- **警察改革批评**：瑞典国家审计署（Riksrevisionen）发现警察局（Polismyndigheten）未能达成2015年改革目标；司法委员会（JuU）以否决18项动议终结该议题 (HD01JuU31, JuU, 2026-04-24) [A1]
+- **研究人员签证规则**：为研究人员和博士生加速办理永久居留；学生工作许可限制收紧 (HD01SfU23, SfU, 2026-04-23) [A2]
+
+### ⚡ 最重要前瞻性触发因素
+
+关注瑞典政府2026年秋季预算法案，看临时燃油税减税（2026年9月30日到期）是否将成为永久措施——这将考验提多联合政府在2026年9月大选前财政纪律与生活成本民粹主义定位之间的平衡。
+
+### 可信度评估
+
+**总体可信度：高 [B2]**
+- 文件来源于 riksdagen.se 一手数据（海军上将评分 A1–B2）
+- 财政数据来自官方议会 betänkanden（可核实）
+- 无单一来源主张用于高重要性断言（已满足 P0/P1 阈值）
+
+### 关键图表——优先事项全景
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Committee Reports Priority Matrix — April 2026
+    x-axis Low Legislative Impact --> High Legislative Impact
+    y-axis Low Political Salience --> High Political Salience
+    quadrant-1 Monitor Closely
+    quadrant-2 Top Priority
+    quadrant-3 Low Priority
+    quadrant-4 Operational Focus
+    HD01FiU48 Fuel/Energy Budget: [0.90, 0.92]
+    HD01JuU10 Weapons Law: [0.82, 0.78]
+    HD01CU25 Prison Expansion: [0.75, 0.70]
+    HD01FiU23 Riksbank: [0.65, 0.50]
+    HD01JuU31 Police Reform: [0.40, 0.55]
+    HD01SoU25 Elder Care: [0.55, 0.45]
+    HD01SfU23 Researcher Visa: [0.35, 0.35]
+    HD01MJU21 Agri Climate: [0.30, 0.40]
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b'}}}%%
+timeline
+    title Key April 2026 Committee Report Milestones
+    section Approved Legislation
+        2026-04-20 : HD01FiU48 Extra Budget Fuel Tax Cut
+        2026-04-21 : HD01TU16 Driving Intro Requirement Removed
+        2026-04-23 : HD01FiU23 Riksbank Zero Dividend
+        2026-04-23 : HD01CU25 Fast-Track Prison Permits
+        2026-04-23 : HD01SfU23 Researcher Visa Reform
+        2026-04-24 : HD01JuU10 New Weapons Law
+        2026-04-24 : HD01SoU25 Elder Care Strengthened
+    section Forward Triggers
+        2026-05-01 : Fuel tax cut enters force
+        2026-06-01 : New weapons law effective
+        2026-09-30 : Fuel tax cut expires — budget test
+```
+
+style HD01FiU48 fill:#ff006e,color:#ffffff
+style HD01JuU10 fill:#ff006e,color:#ffffff
+style HD01CU25 fill:#ffbe0b,color:#000000
+
+---
+*第二轮改进 (2026-04-26)：以具体财政金额强化核心摘要；为 HD01JuU31 添加联合政府风险背景；更新重要性权重以反映 HD01CU25 的宪法新颖性。*
+
+<!-- source-sha: 9fd293b31653729b9dd55ee38bb3cdef951f2eb9 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 12 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2363,3 +3473,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/executive-brief_zh.md)

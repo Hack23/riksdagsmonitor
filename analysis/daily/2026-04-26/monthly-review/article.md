@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: monthly-review
 slug: 2026-04-26-monthly-review
 source_folder: analysis/daily/2026-04-26/monthly-review
-generated_at: 2026-05-17T22:44:40.551Z
+generated_at: 2026-05-18T09:08:37.861Z
 language: en
 layout: article
 ---
@@ -109,6 +109,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2181,13 +2194,939 @@ graph LR
 | 2026-04-22 | committeeReports | ✅ referenced (HD01FiU48) | — |
 | 2026-04-13 | propositions | ✅ referenced (HD03100, HD03240) | — |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص تنفيذي — المراجعة الشهرية 2026-04-26
+
+**المؤلف**: James Pether Sörling | **التاريخ**: 2026-04-26
+**الفترة**: 2026-03-27 → 2026-04-26 (30 يومًا) | **دورة الريكسداج**: 2025/26
+**مستوى الثقة**: مرتفع (A1) | **نطاق الأدميرالية**: A1–C3 | **أيام حتى الانتخابات**: 140
+
+### 🎯 الموجز التنفيذي
+
+يمثل نافذة الـ 30 يومًا 2026-03-27 → 2026-04-26 **المرحلة التشريعية الختامية** لمحفظة ائتلاف تيدو 2025/26. تُغلق أربعة تقارير لجنة من 24 أبريل (HD01JuU10 قانون الأسلحة، HD01JuU31 متابعة إصلاح الشرطة، HD01SoU25 رعاية المسنين، HD01CU24 عملية البناء) السجل التنظيمي. ثلاث مقترحات حكومية من 23 أبريل (HD03252، HD03253، HD03256) تُشير إلى استمرار النشاط التنفيذي حتى الأسابيع الختامية. تقف السويد الآن على بُعد **140 يومًا من الانتخابات** مع تحول المحور السياسي من *التشريع* إلى *مخاطر التنفيذ* و*تأطير الحملة*.
+
+### 🧭 3 قرارات يدعمها هذا الإحاطة
+
+1. **متابعة المحفظة**: تعهّد ائتلاف تيدو بالكامل ببرنامجه المُعلن للفترة 2025/26 — يمكن لصانعي القرار الآن التحول إلى مراقبة التنفيذ بدلاً من خط أنابيب التشريع.
+2. **معايرة استراتيجية المعارضة**: بنية إسفين المسارات الثلاثة للأحزاب S/V/MP (مالي، معلومات بيئية، حقوقي) ثابتة هيكليًا؛ ينبغي لصانعي القرار معاملة HD10448 وHD11747–49 كقوالب تأطير لأشهر مايو–أغسطس.
+3. **مدخلات التوقع الانتخابي**: PIR-A (ديموسكوب ≥ 44% لـ M+KD+L بحلول 2026-07-01) يبقى المؤشر الأكثر أهمية في صنع القرار.
+
+### نقاط المعلومات في 60 ثانية
+
+- **السجل التشريعي مُغلق**: اجتازت جميع التقارير الأربعة من دُفعة 24 أبريل (HD01JuU10، HD01JuU31، HD01SoU25، HD01CU24) اللجنة وهي على المسار لتصويتات مايو–يونيو.
+- **مقترحات 23 أبريل تمدد السجل**: HD03252 وHD03253 وHD03256 تُضيف ثلاثة مخرجات إضافية للمتابعة.
+- **مرساة مالية**: HD03104 يؤكد أن إدارة الدين السويدية حافظت على معايير قياسية مُعدَّلة للمخاطر.
+- **انضباط SD محافظ عليه**: 19+ يوم جلسة متتالية دون مقترحات مضادة على مشاريع القوانين الحكومية.
+- **عنق زجاجة التنفيذ**: RiR 2026:6 يُحدد 9 توصيات مفتوحة من Polismyndigheten — لم يُغلق أي منها بعد.
+- **تأطير ما قبل الانتخابات**: ينشئ HD10448 وHD11747–49 الرباعي السردي للمعارضة.
+
+### المحفز الأول الاستباقي
+
+**2026-05-08 — أول قراءة استطلاع رأي ديموسكوب بعد النافذة.** هذا هو أقرب اختبار سوقي لما إذا كانت تخفيضات ضريبة الوقود HD01FiU48 قد أُترجمت إلى ارتفاع دائم في الاستطلاعات (PIR-A).
+
+### مستوى الثقة
+
+الإجمالي: **مرتفع (A1)** للصورة الهيكلية للإنجاز. **متوسط (B2)** للديناميكيات الانتخابية المستقبلية. **منخفض (C3)** للجدول الزمني لتنفيذ HD03252/HD03253.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 السياق المهني
+
+**جمع المعلومات**: واجهة برمجة تطبيقات بيانات الريكسداج المفتوحة (riksdag-regering-mcp)  
+**المنهج**: تحليل استخباراتي سياسي منظم باستخدام تقييم DIW وACH وSWOT ولغة الاحتمالات WEP  
+**حد الثقة**: جميع الادعاءات الواقعية مُقيَّمة بـ ≥ C3  
+**القيود**: بيانات IMF الاقتصادية غير متاحة (خطأ في الاتصال). عمر استطلاعات الرأي: 31 يومًا (ديموسكوب 2026-03-26).  
+**المعايير**: ICD 203؛ AI FIRST (حد أدنى تكرارين)  
+**الدورة القادمة**: مراجعة شهرية 2026-05-26
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_da.md -->
+
+**Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
+
+### 🎯 BLUF
+30-dages vinduet 2026-03-27 → 2026-04-26 markerer **den lovgivningsmæssige afslutningsfase** af Tidö-koalitionens 2025/26-portefølje. Fire april-24-betænkninger (HD01JuU10 våbenlov, HD01JuU31 Politireform-opfølgning, HD01SoU25 ældrepleje, HD01CU24 byggeproces) lukker det regulatoriske regnskab. Tre april-23-propositioner (HD03252, HD03253, HD03256) signalerer fortsat udøvende aktivitet ind i de afsluttende uger. Sverige er nu **140 dage fra valget** med den politiske akse skiftende fra *lovgivning* til *implementeringsrisiko* og *kampagneindramning*.
+
+### 🧭 3 Decisions This Brief Supports
+
+1. **Portfolio tracking**: The Tidö coalition has fully committed its declared 2025/26 programme — decision-makers can now pivot to monitoring implementation rather than legislative pipeline.
+2. **Opposition strategy calibration**: S/V/MP three-track wedge architecture (fiscal, environmental-information, rights-based) is structurally set; decision-makers assessing opposition capacity should treat HD10448 and HD11747–49 as the framing templates for May–August.
+3. **Election forecast inputs**: PIR-A (Demoskop ≥ 44% for M+KD+L by 2026-07-01) remains the single most decision-relevant indicator — it determines Scenario A (coalition renewal) vs Scenario B (S-led minority).
+
+### 60-Second Intelligence Bullets
+
+- **Legislative ledger closed**: All four committee reports from the April-24 batch (HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24) passed committee and are on track for May–June chamber votes.
+- **April-23 propositions extend the ledger**: HD03252 (detainee benefit restriction), HD03253 (EU bankpaket CRR3/BRRD3), HD03256 (färdskrivare manipulation) add three more deliverables to track.
+- **Fiscal anchor**: HD03104 (statens upplåning 2021–2025) confirms Sweden's debt management maintained risk-adjusted benchmarks across the five-year cycle — a pre-election positive for the government.
+- **SD discipline sustained**: 19+ consecutive sitting days without counter-motions on government bills; PIR-C (does discipline survive manifesto launch ~2026-08-15) remains open.
+- **Implementation bottleneck**: RiR 2026:6 (HD01JuU31) identifies 9 open Polismyndigheten recommendations — none closed yet.
+- **Pre-election framing**: Wind-power disinformation (HD10448), labour-environment (HD11747), consular-rights (HD11748), prison-schooling (HD11749) form the opposition's narrative quad entering the 18-week pre-campaign.
+
+### Top Forward Trigger
+
+**2026-05-08 — First post-window Demoskop polling reading.** This is the earliest market-test of whether HD01FiU48 fuel-tax relief translated to durable polling lift (PIR-A). A Tidö-bloc reading ≥ 44% strongly supports Scenario A renewal; < 40% triggers Scenario B analysis.
+
+### Confidence label
+
+Overall: **HIGH (A1)** for structural completion picture. **MEDIUM (B2)** for forward electoral dynamics. **LOW (C3)** for HD03252/HD03253 implementation timeline.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Tradecraft Context
+
+**Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
+**Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
+
+**Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
+**Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
+**Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_de.md -->
+
+**Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
+
+### 🎯 BLUF
+Das 30-Tages-Fenster 2026-03-27 → 2026-04-26 markiert die **gesetzgeberische Abschlussphase** des 2025/26-Portfolios der Tidö-Koalition. Vier Ausschussberichte vom 24. April (HD01JuU10 Waffengesetz, HD01JuU31 Polizeireform-Folgebericht, HD01SoU25 Altenpflege, HD01CU24 Bauprozess) schließen das Regulierungsregister. Drei Regierungsvorlagen vom 23. April (HD03252, HD03253, HD03256) signalisieren fortgesetzte Regierungsaktivität in den Abschlusswochen. Schweden ist jetzt **140 Tage vor der Wahl** mit der politischen Achse, die sich von *Gesetzgebung* zu *Umsetzungsrisiko* und *Kampagnenframing* verschiebt.
+
+### 🧭 3 Decisions This Brief Supports
+
+1. **Portfolio tracking**: The Tidö coalition has fully committed its declared 2025/26 programme — decision-makers can now pivot to monitoring implementation rather than legislative pipeline.
+2. **Opposition strategy calibration**: S/V/MP three-track wedge architecture (fiscal, environmental-information, rights-based) is structurally set; decision-makers assessing opposition capacity should treat HD10448 and HD11747–49 as the framing templates for May–August.
+3. **Election forecast inputs**: PIR-A (Demoskop ≥ 44% for M+KD+L by 2026-07-01) remains the single most decision-relevant indicator — it determines Scenario A (coalition renewal) vs Scenario B (S-led minority).
+
+### 60-Second Intelligence Bullets
+
+- **Legislative ledger closed**: All four committee reports from the April-24 batch (HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24) passed committee and are on track for May–June chamber votes.
+- **April-23 propositions extend the ledger**: HD03252 (detainee benefit restriction), HD03253 (EU bankpaket CRR3/BRRD3), HD03256 (färdskrivare manipulation) add three more deliverables to track.
+- **Fiscal anchor**: HD03104 (statens upplåning 2021–2025) confirms Sweden's debt management maintained risk-adjusted benchmarks across the five-year cycle — a pre-election positive for the government.
+- **SD discipline sustained**: 19+ consecutive sitting days without counter-motions on government bills; PIR-C (does discipline survive manifesto launch ~2026-08-15) remains open.
+- **Implementation bottleneck**: RiR 2026:6 (HD01JuU31) identifies 9 open Polismyndigheten recommendations — none closed yet.
+- **Pre-election framing**: Wind-power disinformation (HD10448), labour-environment (HD11747), consular-rights (HD11748), prison-schooling (HD11749) form the opposition's narrative quad entering the 18-week pre-campaign.
+
+### Top Forward Trigger
+
+**2026-05-08 — First post-window Demoskop polling reading.** This is the earliest market-test of whether HD01FiU48 fuel-tax relief translated to durable polling lift (PIR-A). A Tidö-bloc reading ≥ 44% strongly supports Scenario A renewal; < 40% triggers Scenario B analysis.
+
+### Confidence label
+
+Overall: **HIGH (A1)** for structural completion picture. **MEDIUM (B2)** for forward electoral dynamics. **LOW (C3)** for HD03252/HD03253 implementation timeline.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Tradecraft Context
+
+**Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
+**Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
+
+**Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
+**Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
+**Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_es.md -->
+
+**Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
+
+### 🎯 BLUF
+La ventana de 30 días 2026-03-27 → 2026-04-26 marca la **fase de cierre legislativo** de la cartera 2025/26 de la coalición Tidö. Cuatro informes de comisión del 24 de abril (HD01JuU10 ley de armas, HD01JuU31 seguimiento reforma policial, HD01SoU25 atención a personas mayores, HD01CU24 proceso de construcción) cierran el libro de contabilidad regulatorio. Tres propuestas gubernamentales del 23 de abril (HD03252, HD03253, HD03256) señalan actividad ejecutiva continuada en las semanas finales. Suecia está ahora a **140 días de las elecciones**, con el eje político pasando de la *legislación* al *riesgo de implementación* y el *encuadre de campaña*.
+
+### 🧭 3 Decisions This Brief Supports
+
+1. **Portfolio tracking**: The Tidö coalition has fully committed its declared 2025/26 programme — decision-makers can now pivot to monitoring implementation rather than legislative pipeline.
+2. **Opposition strategy calibration**: S/V/MP three-track wedge architecture (fiscal, environmental-information, rights-based) is structurally set; decision-makers assessing opposition capacity should treat HD10448 and HD11747–49 as the framing templates for May–August.
+3. **Election forecast inputs**: PIR-A (Demoskop ≥ 44% for M+KD+L by 2026-07-01) remains the single most decision-relevant indicator — it determines Scenario A (coalition renewal) vs Scenario B (S-led minority).
+
+### 60-Second Intelligence Bullets
+
+- **Legislative ledger closed**: All four committee reports from the April-24 batch (HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24) passed committee and are on track for May–June chamber votes.
+- **April-23 propositions extend the ledger**: HD03252 (detainee benefit restriction), HD03253 (EU bankpaket CRR3/BRRD3), HD03256 (färdskrivare manipulation) add three more deliverables to track.
+- **Fiscal anchor**: HD03104 (statens upplåning 2021–2025) confirms Sweden's debt management maintained risk-adjusted benchmarks across the five-year cycle — a pre-election positive for the government.
+- **SD discipline sustained**: 19+ consecutive sitting days without counter-motions on government bills; PIR-C (does discipline survive manifesto launch ~2026-08-15) remains open.
+- **Implementation bottleneck**: RiR 2026:6 (HD01JuU31) identifies 9 open Polismyndigheten recommendations — none closed yet.
+- **Pre-election framing**: Wind-power disinformation (HD10448), labour-environment (HD11747), consular-rights (HD11748), prison-schooling (HD11749) form the opposition's narrative quad entering the 18-week pre-campaign.
+
+### Top Forward Trigger
+
+**2026-05-08 — First post-window Demoskop polling reading.** This is the earliest market-test of whether HD01FiU48 fuel-tax relief translated to durable polling lift (PIR-A). A Tidö-bloc reading ≥ 44% strongly supports Scenario A renewal; < 40% triggers Scenario B analysis.
+
+### Confidence label
+
+Overall: **HIGH (A1)** for structural completion picture. **MEDIUM (B2)** for forward electoral dynamics. **LOW (C3)** for HD03252/HD03253 implementation timeline.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Tradecraft Context
+
+**Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
+**Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
+
+**Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
+**Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
+**Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_fi.md -->
+
+**Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
+
+### 🎯 BLUF
+30 päivän ikkuna 2026-03-27 → 2026-04-26 merkitsee **Tidö-koalition 2025/26 portfolion lainsäädännöllisiä loppuvaihetta**. Neljä huhtikuun 24. mietintöä (HD01JuU10 aselelaki, HD01JuU31 poliisiuudistusseuranta, HD01SoU25 vanhustenhoito, HD01CU24 rakennusprosessi) sulkevat sääntelytilinpäätöksen. Kolme huhtikuun 23. ehdotusta (HD03252, HD03253, HD03256) viestivät jatkuvasta toimeenpanoaktiivisuudesta loppuviikoille. Ruotsi on nyt **140 päivää vaalista** poliittisen akselin siirtyessä *lainsäädännöstä* *toimeenpanoriskiin* ja *kampanjatarinointiin*.
+
+### 🧭 3 Decisions This Brief Supports
+
+1. **Portfolio tracking**: The Tidö coalition has fully committed its declared 2025/26 programme — decision-makers can now pivot to monitoring implementation rather than legislative pipeline.
+2. **Opposition strategy calibration**: S/V/MP three-track wedge architecture (fiscal, environmental-information, rights-based) is structurally set; decision-makers assessing opposition capacity should treat HD10448 and HD11747–49 as the framing templates for May–August.
+3. **Election forecast inputs**: PIR-A (Demoskop ≥ 44% for M+KD+L by 2026-07-01) remains the single most decision-relevant indicator — it determines Scenario A (coalition renewal) vs Scenario B (S-led minority).
+
+### 60-Second Intelligence Bullets
+
+- **Legislative ledger closed**: All four committee reports from the April-24 batch (HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24) passed committee and are on track for May–June chamber votes.
+- **April-23 propositions extend the ledger**: HD03252 (detainee benefit restriction), HD03253 (EU bankpaket CRR3/BRRD3), HD03256 (färdskrivare manipulation) add three more deliverables to track.
+- **Fiscal anchor**: HD03104 (statens upplåning 2021–2025) confirms Sweden's debt management maintained risk-adjusted benchmarks across the five-year cycle — a pre-election positive for the government.
+- **SD discipline sustained**: 19+ consecutive sitting days without counter-motions on government bills; PIR-C (does discipline survive manifesto launch ~2026-08-15) remains open.
+- **Implementation bottleneck**: RiR 2026:6 (HD01JuU31) identifies 9 open Polismyndigheten recommendations — none closed yet.
+- **Pre-election framing**: Wind-power disinformation (HD10448), labour-environment (HD11747), consular-rights (HD11748), prison-schooling (HD11749) form the opposition's narrative quad entering the 18-week pre-campaign.
+
+### Top Forward Trigger
+
+**2026-05-08 — First post-window Demoskop polling reading.** This is the earliest market-test of whether HD01FiU48 fuel-tax relief translated to durable polling lift (PIR-A). A Tidö-bloc reading ≥ 44% strongly supports Scenario A renewal; < 40% triggers Scenario B analysis.
+
+### Confidence label
+
+Overall: **HIGH (A1)** for structural completion picture. **MEDIUM (B2)** for forward electoral dynamics. **LOW (C3)** for HD03252/HD03253 implementation timeline.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Tradecraft Context
+
+**Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
+**Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
+
+**Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
+**Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
+**Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_fr.md -->
+
+**Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
+
+### 🎯 BLUF
+La fenêtre de 30 jours 2026-03-27 → 2026-04-26 marque la **phase de clôture législative** du portefeuille 2025/26 de la coalition Tidö. Quatre rapports de commissions du 24 avril (HD01JuU10 loi sur les armes, HD01JuU31 suivi réforme policière, HD01SoU25 soins aux personnes âgées, HD01CU24 processus de construction) ferment le bilan réglementaire. Trois propositions gouvernementales du 23 avril (HD03252, HD03253, HD03256) signalent une activité exécutive soutenue jusqu'aux dernières semaines. La Suède est maintenant à **140 jours des élections**, l'axe politique basculant de la *législation* vers le *risque d'implémentation* et le *cadrage de campagne*.
+
+### 🧭 3 Decisions This Brief Supports
+
+1. **Portfolio tracking**: The Tidö coalition has fully committed its declared 2025/26 programme — decision-makers can now pivot to monitoring implementation rather than legislative pipeline.
+2. **Opposition strategy calibration**: S/V/MP three-track wedge architecture (fiscal, environmental-information, rights-based) is structurally set; decision-makers assessing opposition capacity should treat HD10448 and HD11747–49 as the framing templates for May–August.
+3. **Election forecast inputs**: PIR-A (Demoskop ≥ 44% for M+KD+L by 2026-07-01) remains the single most decision-relevant indicator — it determines Scenario A (coalition renewal) vs Scenario B (S-led minority).
+
+### 60-Second Intelligence Bullets
+
+- **Legislative ledger closed**: All four committee reports from the April-24 batch (HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24) passed committee and are on track for May–June chamber votes.
+- **April-23 propositions extend the ledger**: HD03252 (detainee benefit restriction), HD03253 (EU bankpaket CRR3/BRRD3), HD03256 (färdskrivare manipulation) add three more deliverables to track.
+- **Fiscal anchor**: HD03104 (statens upplåning 2021–2025) confirms Sweden's debt management maintained risk-adjusted benchmarks across the five-year cycle — a pre-election positive for the government.
+- **SD discipline sustained**: 19+ consecutive sitting days without counter-motions on government bills; PIR-C (does discipline survive manifesto launch ~2026-08-15) remains open.
+- **Implementation bottleneck**: RiR 2026:6 (HD01JuU31) identifies 9 open Polismyndigheten recommendations — none closed yet.
+- **Pre-election framing**: Wind-power disinformation (HD10448), labour-environment (HD11747), consular-rights (HD11748), prison-schooling (HD11749) form the opposition's narrative quad entering the 18-week pre-campaign.
+
+### Top Forward Trigger
+
+**2026-05-08 — First post-window Demoskop polling reading.** This is the earliest market-test of whether HD01FiU48 fuel-tax relief translated to durable polling lift (PIR-A). A Tidö-bloc reading ≥ 44% strongly supports Scenario A renewal; < 40% triggers Scenario B analysis.
+
+### Confidence label
+
+Overall: **HIGH (A1)** for structural completion picture. **MEDIUM (B2)** for forward electoral dynamics. **LOW (C3)** for HD03252/HD03253 implementation timeline.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Tradecraft Context
+
+**Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
+**Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
+
+**Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
+**Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
+**Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תמצית מנהלים — סקירה חודשית 2026-04-26
+
+**מחבר**: James Pether Sörling | **תאריך**: 2026-04-26
+**חלון**: 2026-03-27 → 2026-04-26 (30 ימים) | **ריקסמוטה**: 2025/26
+**רמת אמינות**: גבוהה (A1) | **טווח אדמירליות**: A1–C3 | **ימים לבחירות**: 140
+
+### 🎯 תמצית
+
+חלון 30 הימים 2026-03-27 → 2026-04-26 מסמן את **שלב הסיום החקיקתי** של תיק קואליציית טידו 2025/26. ארבעה דוחות ועדה מ-24 באפריל (HD01JuU10 חוק נשק, HD01JuU31 מעקב רפורמת המשטרה, HD01SoU25 טיפול בקשישים, HD01CU24 תהליך הבנייה) סוגרים את פנקס הרגולציה. שלוש הצעות ממשלתיות מ-23 באפריל (HD03252, HD03253, HD03256) מסמנות פעילות ממשלתית מתמשכת עד השבועות האחרונים. שוודיה נמצאת כעת **140 ימים לפני הבחירות** עם הציר הפוליטי שעובר מ*חקיקה* ל*סיכון ביצוע* ו*מסגור קמפיין*.
+
+### 🧭 3 החלטות שתדריך זה תומך בהן
+
+1. **מעקב תיק**: קואליציית טידו הייתה מחויבת לכל תוכניתה המוצהרת 2025/26 — מקבלי החלטות יכולים כעת לעבור לניטור יישום במקום צינור חקיקה.
+2. **כיול אסטרטגיית האופוזיציה**: ארכיטקטורת הטריז בשלושה מסלולים של S/V/MP (פיסקלי, מידע סביבתי, מבוסס זכויות) מוגדרת מבנית.
+3. **נתוני תחזית בחירות**: PIR-A (דמוסקופ ≥ 44% עבור M+KD+L עד 2026-07-01) נשאר המדד החשוב ביותר.
+
+### נקודות מידע של 60 שניות
+
+- **פנקס חקיקתי סגור**: כל ארבעת הדוחות מאצוות 24 באפריל עברו ועדה ונמצאים על המסלול להצבעות מאי–יוני.
+- **הצעות 23 באפריל מרחיבות את הפנקס**: HD03252, HD03253, HD03256 מוסיפות עוד שלושה פריטים לעקוב אחריהם.
+- **עוגן פיסקלי**: HD03104 מאשר שניהול החוב של שוודיה שמר על מדדים מותאמי סיכון.
+- **משמעת SD נשמרת**: 19+ ימי ישיבה רצופים ללא הצעות נגד על חוקי הממשלה.
+- **צוואר בקבוק יישום**: RiR 2026:6 מזהה 9 המלצות פתוחות — אף לא אחת נסגרה עדיין.
+- **מסגור טרום-בחירות**: HD10448 ו-HD11747–49 מהווים הרביעייה הנרטיבית של האופוזיציה.
+
+### טריגר מוביל לעתיד
+
+**2026-05-08 — קריאת סקר דמוסקופ ראשונה לאחר החלון.** זהו המבחן השוקי המוקדם ביותר.
+
+### רמת אמינות
+
+כוללת: **גבוהה (A1)** לתמונת הסיום המבנית. **בינונית (B2)** לדינמיקות בחירות עתידיות. **נמוכה (C3)** ללוח הזמנים של יישום HD03252/HD03253.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### �� הקשר מקצועי
+
+**איסוף**: ממשק API פתוח של הריקסדאג (riksdag-regering-mcp)  
+**שיטה**: ניתוח מודיעין פוליטי מובנה עם ציון DIW, ACH, SWOT ושפת הסתברות WEP  
+**מגבלות**: נתוני IMF אינם זמינים. גיל נתוני סקרים: 31 ימים (דמוסקופ 2026-03-26).  
+**מחזור הבא**: סקירה חודשית 2026-05-26
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling | **日付**：2026-04-26
+**期間**：2026-03-27 → 2026-04-26 (30日間) | **リクスモテ**：2025/26
+**信頼度**：高 (A1) | **提督符号範囲**：A1–C3 | **選挙まであと**：140日
+
+### 🎯 要旨（BLUF）
+
+2026-03-27 → 2026-04-26の30日間ウィンドウは、ティドー連立政権2025/26ポートフォリオの**立法的完了段階**を示す。4月24日の4件の委員会報告（HD01JuU10 武器法、HD01JuU31 警察改革フォローアップ、HD01SoU25 高齢者ケア、HD01CU24 建築プロセス）が規制台帳を閉じる。4月23日の3件の政府提案（HD03252、HD03253、HD03256）は最終週まで継続的な行政活動を示唆する。スウェーデンは今**選挙まで140日**、政治軸が*立法*から*実施リスク*と*キャンペーンの枠組み*へと移行している。
+
+### 🧭 このブリーフィングが支援する3つの決定
+
+1. **ポートフォリオ追跡**: ティドー連立は宣言した2025/26プログラムを完全に実行した — 意思決定者は立法パイプラインではなく実施の監視に軸足を移せる。
+2. **野党戦略の調整**: S/V/MPの3本柱のくさび構造（財政、環境情報、権利ベース）は構造的に確立されている。
+3. **選挙予測インプット**: PIR-A (デモスコップ M+KD+L ≥ 44% 2026-07-01まで) が最も重要な指標である。
+
+### 60秒インテリジェンスポイント
+
+- **立法台帳完了**: 4月24日の4件の委員会報告はすべて委員会を通過し、5月〜6月の本会議投票に向けて準備中。
+- **4月23日の提案が台帳を延長**: HD03252、HD03253、HD03256がさらに3件の追跡事項を追加。
+- **財政的アンカー**: HD03104がスウェーデンの債務管理が5年サイクルにわたりリスク調整基準を維持したことを確認。
+- **SDの規律維持**: 政府法案への対抗動議なしの連続19+会期日。
+- **実施のボトルネック**: RiR 2026:6が9件の未解決のPolismyndigheten勧告を特定。
+- **選挙前の枠組み**: HD10448とHD11747–49が野党の18週間プレキャンペーンの物語的四重奏を形成。
+
+### 主要な先行トリガー
+
+**2026-05-08 — ウィンドウ後初のデモスコップ世論調査結果。** PIR-Aの最初の市場テスト。
+
+### 信頼度
+
+全体: **高 (A1)** 構造的完了の全体像。**中 (B2)** 前向きの選挙ダイナミクス。**低 (C3)** HD03252/HD03253の実施スケジュール。
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 トレードクラフトコンテキスト
+
+**収集**: Riksdag Open Data API (riksdag-regering-mcp); ルックバックフォールバック 2026-04-24まで  
+**方法**: DIWスコアリング、ACH、SWOT、WEP確率言語を用いた構造的政治インテリジェンス分析  
+**制限**: IMF経済データ不利用 (接続エラー). 世論調査の精度: 31日 (デモスコップ 2026-03-26).  
+**次のサイクル**: 月次レビュー 2026-05-26
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **날짜**: 2026-04-26
+**기간**: 2026-03-27 → 2026-04-26 (30일) | **릭스모테**: 2025/26
+**신뢰도**: 높음 (A1) | **제독 범위**: A1–C3 | **선거까지 남은 일수**: 140
+
+### 🎯 핵심 요약(BLUF)
+
+2026-03-27 → 2026-04-26의 30일 기간은 티도 연립정부 2025/26 포트폴리오의 **입법 완성 단계**를 표시한다. 4월 24일의 4개 위원회 보고서(HD01JuU10 무기법, HD01JuU31 경찰 개혁 후속, HD01SoU25 노인 복지, HD01CU24 건축 과정)가 규제 원장을 마감한다. 4월 23일의 3개 제안(HD03252, HD03253, HD03256)은 마감 주까지 계속되는 행정 활동을 시사한다. 스웨덴은 이제 **선거까지 140일** 남은 상황에서 정치 축이 *입법*에서 *이행 위험*과 *선거 캠페인 프레이밍*으로 이동하고 있다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **포트폴리오 추적**: 티도 연립은 선언된 2025/26 프로그램을 완전히 실행했다 — 의사결정자들은 입법 파이프라인 대신 이행 모니터링에 집중할 수 있다.
+2. **야당 전략 보정**: S/V/MP의 3트랙 쐐기 구조(재정, 환경 정보, 권리 기반)는 구조적으로 확정되었다.
+3. **선거 예측 입력**: PIR-A(데모스코프 M+KD+L ≥ 44% 2026-07-01까지)가 가장 중요한 단일 의사결정 지표이다.
+
+### 60초 인텔리전스 포인트
+
+- **입법 원장 마감**: 4월 24일 배치의 4개 보고서 모두 위원회를 통과하고 5월~6월 본회의 투표 궤도에 있음.
+- **4월 23일 제안들이 원장 확장**: HD03252, HD03253, HD03256이 추가로 3개 항목을 추적 목록에 추가.
+- **재정적 닻**: HD03104가 스웨덴의 부채 관리가 5년 주기에 걸쳐 위험 조정 기준을 유지했음을 확인.
+- **SD 규율 유지**: 정부 법안에 대한 대항 발의 없이 19+ 연속 회의일.
+- **이행 병목**: RiR 2026:6이 미해결 Polismyndigheten 권고 9개 확인 — 아직 하나도 해결되지 않음.
+- **선거 전 프레이밍**: HD10448과 HD11747–49가 18주 사전 캠페인 진입 시 야당의 서술적 사중주 형성.
+
+### 주요 선행 트리거
+
+**2026-05-08 — 기간 후 첫 번째 데모스코프 여론조사 결과.** PIR-A의 첫 번째 시장 테스트.
+
+### 신뢰도
+
+전체: **높음 (A1)** 구조적 완성 그림. **중간 (B2)** 미래 선거 역학. **낮음 (C3)** HD03252/HD03253 이행 일정.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 전문 맥락
+
+**수집**: Riksdag 개방 데이터 API (riksdag-regering-mcp); 2026-04-24까지 소급 예비  
+**방법**: DIW 점수, ACH, SWOT 및 WEP 확률 언어를 사용한 구조화된 정치 인텔리전스 분석  
+**제한**: IMF 경제 데이터 미사용 (연결 오류). 여론조사 데이터 기간: 31일 (데모스코프 2026-03-26).  
+**다음 주기**: 월간 리뷰 2026-05-26
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_nl.md -->
+
+**Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
+
+### 🎯 BLUF
+Het 30-dagenvenster 2026-03-27 → 2026-04-26 markeert de **wetgevende afrondingsfase** van de 2025/26-portefeuille van de Tidö-coalitie. Vier commissierapporten van 24 april (HD01JuU10 wapenwet, HD01JuU31 politiehervorming-follow-up, HD01SoU25 ouderenzorg, HD01CU24 bouwproces) sluiten het regulatoire grootboek. Drie wetsvoorstellen van 23 april (HD03252, HD03253, HD03256) signaleren voortgezette uitvoerende activiteit in de slotweek. Zweden is nu **140 dagen voor de verkiezingen**, met de politieke as die verschuift van *wetgeving* naar *implementatierisico* en *campagnekader*.
+
+### 🧭 3 Decisions This Brief Supports
+
+1. **Portfolio tracking**: The Tidö coalition has fully committed its declared 2025/26 programme — decision-makers can now pivot to monitoring implementation rather than legislative pipeline.
+2. **Opposition strategy calibration**: S/V/MP three-track wedge architecture (fiscal, environmental-information, rights-based) is structurally set; decision-makers assessing opposition capacity should treat HD10448 and HD11747–49 as the framing templates for May–August.
+3. **Election forecast inputs**: PIR-A (Demoskop ≥ 44% for M+KD+L by 2026-07-01) remains the single most decision-relevant indicator — it determines Scenario A (coalition renewal) vs Scenario B (S-led minority).
+
+### 60-Second Intelligence Bullets
+
+- **Legislative ledger closed**: All four committee reports from the April-24 batch (HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24) passed committee and are on track for May–June chamber votes.
+- **April-23 propositions extend the ledger**: HD03252 (detainee benefit restriction), HD03253 (EU bankpaket CRR3/BRRD3), HD03256 (färdskrivare manipulation) add three more deliverables to track.
+- **Fiscal anchor**: HD03104 (statens upplåning 2021–2025) confirms Sweden's debt management maintained risk-adjusted benchmarks across the five-year cycle — a pre-election positive for the government.
+- **SD discipline sustained**: 19+ consecutive sitting days without counter-motions on government bills; PIR-C (does discipline survive manifesto launch ~2026-08-15) remains open.
+- **Implementation bottleneck**: RiR 2026:6 (HD01JuU31) identifies 9 open Polismyndigheten recommendations — none closed yet.
+- **Pre-election framing**: Wind-power disinformation (HD10448), labour-environment (HD11747), consular-rights (HD11748), prison-schooling (HD11749) form the opposition's narrative quad entering the 18-week pre-campaign.
+
+### Top Forward Trigger
+
+**2026-05-08 — First post-window Demoskop polling reading.** This is the earliest market-test of whether HD01FiU48 fuel-tax relief translated to durable polling lift (PIR-A). A Tidö-bloc reading ≥ 44% strongly supports Scenario A renewal; < 40% triggers Scenario B analysis.
+
+### Confidence label
+
+Overall: **HIGH (A1)** for structural completion picture. **MEDIUM (B2)** for forward electoral dynamics. **LOW (C3)** for HD03252/HD03253 implementation timeline.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Tradecraft Context
+
+**Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
+**Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
+
+**Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
+**Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
+**Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_no.md -->
+
+**Window**: 2026-03-27 → 2026-04-26 (30 days) | **Riksmöte**: 2025/26
+
+### 🎯 BLUF
+30-dagersvinduet 2026-03-27 → 2026-04-26 markerer **den lovgivningsmessige avslutningsfasen** av Tidö-koalisjonens 2025/26-portefølje. Fire april-24-innstillinger (HD01JuU10 våpenlov, HD01JuU31 politireform-oppfølging, HD01SoU25 eldreomsorg, HD01CU24 byggesektor) lukker det regulatoriske regnskapet. Tre april-23-proposisjoner (HD03252, HD03253, HD03256) signaliserer fortsatt utøvende aktivitet inn i de avsluttende ukene. Sverige er nå **140 dager fra valget** med den politiske aksen som skifter fra *lovgivning* til *gjennomføringsrisiko* og *kampanjeinnramning*.
+
+### 🧭 3 Decisions This Brief Supports
+
+1. **Portfolio tracking**: The Tidö coalition has fully committed its declared 2025/26 programme — decision-makers can now pivot to monitoring implementation rather than legislative pipeline.
+2. **Opposition strategy calibration**: S/V/MP three-track wedge architecture (fiscal, environmental-information, rights-based) is structurally set; decision-makers assessing opposition capacity should treat HD10448 and HD11747–49 as the framing templates for May–August.
+3. **Election forecast inputs**: PIR-A (Demoskop ≥ 44% for M+KD+L by 2026-07-01) remains the single most decision-relevant indicator — it determines Scenario A (coalition renewal) vs Scenario B (S-led minority).
+
+### 60-Second Intelligence Bullets
+
+- **Legislative ledger closed**: All four committee reports from the April-24 batch (HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24) passed committee and are on track for May–June chamber votes.
+- **April-23 propositions extend the ledger**: HD03252 (detainee benefit restriction), HD03253 (EU bankpaket CRR3/BRRD3), HD03256 (färdskrivare manipulation) add three more deliverables to track.
+- **Fiscal anchor**: HD03104 (statens upplåning 2021–2025) confirms Sweden's debt management maintained risk-adjusted benchmarks across the five-year cycle — a pre-election positive for the government.
+- **SD discipline sustained**: 19+ consecutive sitting days without counter-motions on government bills; PIR-C (does discipline survive manifesto launch ~2026-08-15) remains open.
+- **Implementation bottleneck**: RiR 2026:6 (HD01JuU31) identifies 9 open Polismyndigheten recommendations — none closed yet.
+- **Pre-election framing**: Wind-power disinformation (HD10448), labour-environment (HD11747), consular-rights (HD11748), prison-schooling (HD11749) form the opposition's narrative quad entering the 18-week pre-campaign.
+
+### Top Forward Trigger
+
+**2026-05-08 — First post-window Demoskop polling reading.** This is the earliest market-test of whether HD01FiU48 fuel-tax relief translated to durable polling lift (PIR-A). A Tidö-bloc reading ≥ 44% strongly supports Scenario A renewal; < 40% triggers Scenario B analysis.
+
+### Confidence label
+
+Overall: **HIGH (A1)** for structural completion picture. **MEDIUM (B2)** for forward electoral dynamics. **LOW (C3)** for HD03252/HD03253 implementation timeline.
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Tradecraft Context
+
+**Collection**: Riksdag Open Data API (riksdag-regering-mcp); lookback fallback to 2026-04-24  
+**Method**: Structured political intelligence analysis using DIW scoring, ACH, SWOT, and WEP probability language  
+
+**Limitations**: IMF economic data unavailable (connection error this run; Riksbank minutes substituted). Polling vintage: 31 days (Demoskop 2026-03-26). No direct media monitoring — frames inferred from document language.  
+**Standards**: ICD 203 (alternative hypotheses, probability language); AI FIRST (minimum 2 iterations)  
+**Next cycle**: Monthly Review 2026-05-26 — should include updated Demoskop reading and SD congress monitoring
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-04-26
+**Fönster**: 2026-03-27 → 2026-04-26 (30 dagar) | **Riksmöte**: 2025/26
+**Konfidensgrad**: HÖG (A1) | **Admiralitetsintervall**: A1–C3 | **Dagar till val**: 140
+
+### 🎯 BLUF
+
+30-dagarsfönstret 2026-03-27 → 2026-04-26 markerar **den lagstiftande slutfasen** av Tidökoalitionens 2025/26-portfolio. Fyra april-24-betänkanden (HD01JuU10 vapenlag, HD01JuU31 Polisreformen-uppföljning, HD01SoU25 äldreomsorg, HD01CU24 byggprocess) stänger det regulatoriska räkenskapsbladet. Tre april-23-propositioner (HD03252, HD03253, HD03256) signalerar fortsatt exekutiv aktivitet in i avslutningsveckorna. Sverige är nu **140 dagar från valet** med den politiska axeln som skiftar från *lagstiftning* till *genomföranderisk* och *kampanjinramning*.
+
+### 🧭 3 Beslut detta underlag stöder
+
+1. **Portföljspårning**: Tidökoalitionen har fullt åtagit sig sitt deklarerade 2025/26-program — beslutsfattare kan nu pivotera mot att övervaka implementering snarare än lagstiftningspipeline.
+2. **Kalibering av oppositionsstrategi**: S/V/MPs tre-spårs kilarkitektur (fiskal, miljöinformation, rättighetsbaserad) är strukturellt inlåst; beslutsfattare som bedömer oppositionskapacitet bör behandla HD10448 och HD11747–49 som inramningsmallar för maj–augusti.
+3. **Valprognos**: PIR-A (Demoskop ≥ 44 % för M+KD+L senast 2026-07-01) förblir den enskilt mest beslutskritiska indikatorn — den avgör Scenario A (koalitionsförnyelse) mot Scenario B (S-ledd minoritet).
+
+### 60-Sekunders Nyhetspunkter
+
+- **Lagstiftningsregistret stängt**: Alla fyra betänkanden från april-24-batchen (HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24) passerade utskottet och är på banan för maj–junivoteringer.
+- **April-23-propositioner utvidgar registret**: HD03252 (anhållningsbegränsning av förmåner), HD03253 (EU bankpaket CRR3/BRRD3), HD03256 (färdskrivare manipulation) lägger till ytterligare tre leveranser att spåra.
+- **Fiskalankar**: HD03104 (statens upplåning 2021–2025) bekräftar att Sveriges skuldförvaltning upprätthöll riskjusterade riktmärken under femårscykeln — ett pre-elektions-positivt för regeringen.
+- **SD-disciplin bibehållen**: 19+ konsekutiva sammanträdarsdagar utan motioner mot regeringens lagförslag (övertaget från april-24-syskonet); PIR-C (överlever disciplinen manifestlanseringen ~2026-08-15) förblir öppen.
+- **Genomförandeflaskhals**: RiR 2026:6 (HD01JuU31) identifierar 9 öppna Polismyndigheten-rekommendationer — ingen stängd ännu. Detta är den största strukturella exekutionsrisken i portföljen.
+- **Pre-elektionsrinramning**: Vind-desinformation (HD10448), arbets-miljö (HD11747), konsulatsrättigheter (HD11748), fångskolgång (HD11749) utgör oppositionens narrativa kvartett inför de 18 veckors pre-kampanj.
+
+### Ledande Framåtblickande Trigger
+
+**2026-05-08 — Första Demoskop-opinionsundersökning efter fönstret.** Detta är den tidigaste marknadstestet av om HD01FiU48 bränsleskattelättnad översatte till bestående opinionslift (PIR-A). En Tidöblocksläsning ≥ 44 % stöder starkt Scenario A-förnyelse; < 40 % aktiverar Scenario B-analys.
+
+### Konfidensgrad
+
+Övergripande: **HÖG (A1)** för strukturell slutförandebilden. **MEDEL (B2)** för framåtriktat valodynamik (opinionseftersläpning, anpassning av oppositionsstrategi). **LÅG (C3)** för HD03252/HD03253 genomförandetidslinje (utskottspassage osäker).
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Hantverkskontext
+
+**Insamling**: Riksdagens Öppna Data-API (riksdag-regering-mcp); återblicksreserv till 2026-04-24  
+**Metod**: Strukturerad politisk underrättelseanalys med DIW-poängsättning, ACH, SWOT och WEP-sannolikhetsspråk  
+**Konfidensminimum**: Alla faktapåståenden bedömda ≥ C3 (trolig) per Admiralitetssystemet; strukturella bedömningar ≥ B2  
+**Begränsningar**: IMF ekonomisk data ej tillgänglig (anslutningsfel denna körning; Riksbankens protokoll substitut). Opinionsunderlag: 31 dagar (Demoskop 2026-03-26). Ingen direkt medieövervakning — ramar härledda från dokumentspråk.  
+**Standarder**: ICD 203 (alternativa hypoteser, sannolikhetsspråk); AI FIRST (minst 2 iterationer)  
+**Nästa cykel**: Månadsrapport 2026-05-26 — bör inkludera uppdaterade Demoskop-siffror och SD-kongressövervakning
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling | **日期**：2026-04-26
+**窗口期**：2026-03-27 → 2026-04-26（30天）| **议会届次**：2025/26
+**可信度**：高（A1）| **海军上将范围**：A1–C3 | **距大选天数**：140
+
+### 🎯 核心摘要（BLUF）
+
+2026-03-27 → 2026-04-26的30天窗口期标志着蒂多联合政府2025/26立法组合的**完结阶段**。4月24日的四份委员会报告（HD01JuU10武器法、HD01JuU31警察改革后续、HD01SoU25老年护理、HD01CU24建筑流程）关闭了监管账目。4月23日的三份政府提案（HD03252、HD03253、HD03256）表明行政活动持续至最后几周。瑞典现在距大选还有**140天**，政治轴心从*立法*转向*实施风险*和*竞选框架*。
+
+### 🧭 本简报支持的三个决策
+
+1. **组合追踪**：蒂多联合政府已完全兑现其公布的2025/26计划 — 决策者现在可以转向监测实施而非立法管线。
+2. **反对党战略校准**：S/V/MP三轨楔形架构（财政、环境信息、权利导向）已结构性确定。
+3. **选举预测输入**：PIR-A（到2026-07-01民调M+KD+L ≥ 44%）是最关键的单一决策指标。
+
+### 60秒要点
+
+- **立法账目完结**：4月24日批次的全部四份报告通过委员会，正在轨道上进行5月–6月全体投票。
+- **4月23日提案延伸账目**：HD03252、HD03253、HD03256增加三个追踪目标。
+- **财政锚**：HD03104确认瑞典债务管理在五年周期内保持风险调整基准。
+- **SD纪律维持**：连续19+会期日无对抗政府法案的反动议。
+- **实施瓶颈**：RiR 2026:6确定9项未解决的Polismyndigheten建议 — 尚无关闭。
+- **选前框架**：HD10448和HD11747–49构成进入18周预选活动的反对党叙事四重奏。
+
+### 主要先行触发因素
+
+**2026-05-08 — 窗口后首个德莫斯科普民调读数。** PIR-A的最早市场检验。
+
+### 可信度
+
+总体：**高（A1）**结构性完成全貌。**中（B2）**前瞻性选举动态。**低（C3）**HD03252/HD03253实施时间表。
+
+```mermaid
+flowchart TB
+  subgraph Closed["Legislative Ledger — CLOSED"]
+    L1[HD01JuU10 Vapenlag]:::done
+    L2[HD01JuU31 Polisreform-uppföljning]:::done
+    L3[HD01SoU25 Äldreomsorg]:::done
+    L4[HD01CU24 Byggprocess]:::done
+    L5[HD01FiU48 Bränsle supermajoritet]:::done
+    L6[HD03100 Vårproposition]:::done
+  end
+  subgraph Open["Active Pipeline — OPEN"]
+    A1[HD03252 Socialförsäkring detainee]:::active
+    A2[HD03253 EU bankpaket]:::active
+    A3[HD03256 Färdskrivare]:::active
+    A4[HD03237 Betald polisutbildning]:::active
+  end
+  subgraph Election["Pre-Campaign 140 days"]
+    E1[2026-05-08 Demoskop PIR-A]:::trigger
+    E2[2026-06-01 Vårriksdagens slut]:::trigger
+    E3[2026-09-13 Val]:::election
+  end
+  Closed --> Open
+  Open --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef active fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 情报工作背景
+
+**采集**：Riksdag开放数据API（riksdag-regering-mcp）；回溯至2026-04-24  
+**方法**：使用DIW评分、ACH、SWOT和WEP概率语言的结构化政治情报分析  
+**局限性**：IMF经济数据不可用（连接错误）。民调数据时效：31天（德莫斯科普2026-03-26）。  
+**下一周期**：月度回顾2026-05-26
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2231,3 +3170,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/monthly-review/executive-brief_zh.md)

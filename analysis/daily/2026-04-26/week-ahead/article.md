@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: week-ahead
 slug: 2026-04-26-week-ahead
 source_folder: analysis/daily/2026-04-26/week-ahead
-generated_at: 2026-05-17T22:44:40.574Z
+generated_at: 2026-05-18T09:08:37.906Z
 language: en
 layout: article
 ---
@@ -115,6 +115,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1486,13 +1499,1082 @@ For HD01JuU10 (vapenlag), cross-reference search_voteringar from past weapons-re
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-04-24 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+---
+title: "السويد الأسبوع القادم: موجة إصلاح العدالة والتضامن مع أوكرانيا وتعديلات الرعاية الاجتماعية — 2026-04-27 إلى 2026-05-03"
+
+---
+
+# السويد الأسبوع القادم: موجة إصلاح العدالة والتضامن مع أوكرانيا وتعديلات الرعاية الاجتماعية
+
+**المؤلف**: James Pether Sörling | **التاريخ**: 2026-04-26 | **الفترة**: 2026-04-27 إلى 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+يدخل الريكسداغ المرحلة الأخيرة من الدورة البرلمانية riksmöte 2025/26 بجدول أعمال تشريعي مكثف يهيمن عليه برنامج إصلاح العدالة لتحالف تيدو. يتسم الأسبوع الممتد من 27 أبريل حتى 3 مايو 2026 باعتماد قانون أسلحة جديد (HD01JuU10، يسري اعتباراً من 1 يونيو 2026)، ومعالجة التقييم النقدي لهيئة المراجعة Riksrevisionen لإصلاح الشرطة 2015 (HD01JuU31)، وانضمام السويد الرسمي إلى أداتَين لتحديد المسؤولية عن الحرب الأوكرانية (HD03231، HD03232). في الوقت ذاته، يشنّ الاشتراكيون الديمقراطيون حملة ضغط برلمانية مستدامة عبر استجوابات متعددة تستهدف تقليصات الرعاية الاجتماعية وسياسات سوق العمل — اختباراً لتماسك الرواية الحكومية قبيل انتخابات سبتمبر 2026. **درجة الثقة: HIGH [B2]**
+
+### 🧭 3 قرارات يدعمها هذا التقرير
+
+1. **التخطيط الإعلامي والتحليلي**: منح الأولوية لنقاش قانون الأسلحة الجديد (HD01JuU10) وتقرير إصلاح الشرطة (HD01JuU31) باعتبارهما أبرز الأحداث التشريعية في الأسبوع — كلاهما يجمع الأهمية السياسية بتغيير ملموس في السياسة العامة.
+2. **رصد المعارضة**: مراقبة استراتيجية الاستجواب لدى الاشتراكيين الديمقراطيين (HD10447، HD10444، HD10443، HD10446) كمؤشر مبكر على محاور الهجوم الانتخابي لحزب S ضد الحكومة.
+3. **المراقبة الجيوسياسية**: يُشير انضمام السويد إلى المحكمة الأوكرانية (HD03231) ولجنة التعويضات (HD03232) إلى تعميق التزامات المساءلة في زمن الحرب — متابعة التصريحات الوزارية لـ Maria Malmer Stenergard (UD).
+
+### ⚡ استخبارات في 60 ثانية
+
+- 🔫 **قانون الأسلحة الجديد** (HD01JuU10): توصي JuU بالموافقة على مشروع القانون الحكومي الذي يحظر تصاريح جديدة لبعض بنادق الصيد شبه الأوتوماتيكية. يسري اعتباراً من 1 يونيو 2026. جمعيات الصيادين معترضة؛ SD وM يصوتان لصالح القانون.
+- 👮 **مراجعة إصلاح الشرطة 2015** (HD01JuU31): تعالج JuU استنتاج Riksrevisionen بأن Polismyndigheten **لم تعمل بكفاءة كافية** لتحقيق أهداف الإصلاح. تقترح JuU حفظ التقرير دون منح الحكومة ولاية جديدة — حلٌّ مريح سياسياً لأحزاب تيدو.
+- 🏗️ **طاقة السجون** (HD01CU25): توافق CU على تراخيص بناء مؤقتة للسجون وأماكن الاحتجاز السابق للمحاكمة لمعالجة النقص الهيكلي الناجم عن إصلاحات العقوبات. يسري اعتباراً من 1 يوليو 2026.
+- 🇺🇦 **مساءلة أوكرانيا** (HD03231 + HD03232): اقتراحان بشأن انضمام السويد إلى المحكمة الخاصة للعدوان ولجنة التعويضات الدولية — تعزيز التموضع الأطلسي لما بعد الناتو.
+- 👴 **رعاية المسنين** (HD01SoU25): تقرير لجنة حول تعزيز التدابير للمسنين ومقدمي الرعاية غير الرسميين — حساس سياسياً قبيل انتخابات 2026.
+- 🏦 **حزمة الاتحاد الأوروبي البنكية** (HD03253): اقتراح لتطبيق متطلبات كفاية رأس المال في الاتحاد الأوروبي — تقني لكنه ذو أثر على الاستقرار المصرفي السويدي.
+- ⚡ **ضغط الاستجوابات**: يقدم حزب S خمسة استجوابات في أسبوع واحد (HD10447، HD10444–HD10446، HD10443) تتعلق بتكاليف التوظيف وحقوق السكن والرعاية الاجتماعية والرعاية الصحية.
+
+### 🔭 المحفز الأهم للمستقبل
+
+**توقيت التصويت على قانون الأسلحة** — يقترح تقرير لجنة JuU10 نفاذ قانون الأسلحة الجديد vapenlag في 1 يونيو 2026. إذا حاولت المعارضة (C، MP، V) تقديم مقترحات تأجيل في الجلسة العامة، يصبح هذا بؤرة توتر الأسبوع. متابعة جدول أعمال المجلس لتحديد مواعيد التصويت.
+
+### 📊 تصنيف الأهمية (DIW)
+
+| الترتيب | الوثيقة | درجة DIW | الأفق الزمني |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | أسبوع |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | أسبوع |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 يوماً |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | شهر |
+| 5 | HD01SoU25 — Äldrevård | L2 | انتخابات |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-04-26 | **Periode**: 2026-04-27 til 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+Riksdagen går ind i slutspurten af riksmöte 2025/26 med en tæt lovgivningsdagsorden domineret af Tidö-koalitionens retfærdighedsreformprogram. Ugen 27. april–3. maj 2026 er præget af den forestående vedtagelse af en ny våbenlov (HD01JuU10, ikrafttrædelse 1. juni 2026), parlamentsbehandlingen af Riksrevisionens kritiske vurdering af Politireformen 2015 (HD01JuU31) og Sveriges formelle tiltrædelse af to Ukraine-krigsansvarsordninger (HD03231, HD03232). Samtidig fører Socialdemokraterne en vedvarende parlamentarisk pressekampagne via flere forespørgsler rettet mod sociale velfærdsnedskæringer og arbejdsmarkedspolitik — en test af regeringens narrativkohæsion forud for valget i september 2026. **Konfidens: HIGH [B2]**
+
+### 🧭 3 Beslutninger Dette Underlag Understøtter
+
+1. **Medie-/analytisk planlægning**: Prioritér debatten om den nye våbenlov (HD01JuU10) og politireformrapporten (HD01JuU31) som ugens vigtigste lovgivningsmomenter — begge kombinerer politisk relevans med konkret politikændring.
+2. **Oppositionsovervågning**: Følg Socialdemokraternes forespørgselsstrategi (HD10447, HD10444, HD10443, HD10446) som ledende indikator for S-partiets pre-valgangrebsvektorer mod regeringen.
+3. **Geopolitisk overvågning**: Sveriges tiltrædelse af Ukraine-tribunalen (HD03231) og erstatningskommissionen (HD03232) signalerer dybere krigsansvarsforpligtelser — følg ministerudtalelser fra Maria Malmer Stenergard (UD).
+
+### ⚡ 60-Sekunders Efterretning
+
+- 🔫 **Ny våbenlov** (HD01JuU10): JuU foreslår ja til regeringsforslaget om forbud mod nye tilladelser til visse halvautomatiske jagtgevær. Ikrafttrædelse 1. juni 2026. Jægerorganisationer imod; SD og M stemmer for.
+- 👮 **Politireform 2015-gennemgang** (HD01JuU31): JuU behandler Riksrevisionens konstatering om, at Polismyndigheten **ikke har arbejdet tilstrækkeligt effektivt** for at opfylde reformintentionerne. JuU foreslår at lægge rapporten til side uden nyt regeringsmandat — et politisk bekvemt udfald for Tidö-partierne.
+- 🏗️ **Fængselskapacitet** (HD01CU25): CU siger ja til midlertidige byggetilladelser til fængsler og arresthuse for at imødegå den strukturelle mangel drevet af strafskærpelser. Ikrafttrædelse 1. juli 2026.
+- 🇺🇦 **Ukraine-ansvar** (HD03231 + HD03232): To forslag om Sveriges tiltrædelse af den Særlige Domstol for aggression og den Internationale Erstatningskommission — befæster Sveriges post-NATO transatlantiske positionering.
+- 👴 **Ældrepleje** (HD01SoU25): Udvalgsrapport om styrkede foranstaltninger for ældre og uformelle plejere — politisk følsomt forud for valget i 2026.
+- 🏦 **EU-bankpakke** (HD03253): Forslag om gennemførelse af EU's kapitalkrav — teknisk men materielt for dansk bankstabilitet.
+- ⚡ **Forespørgselspres**: S-partiet indgiver fem forespørgsler på én uge (HD10447, HD10444–HD10446, HD10443) om ansættelsesomkostninger, boligrettigheder, social velfærd og sundhedspleje.
+
+### 🔭 Vigtigste Fremtidstrigger
+
+**Tidspunkt for afstemning om våbenloven** — JuU10-udvalgsrapporten foreslår den nye vapenlag med ikrafttrædelse 1. juni 2026. Hvis oppositionen (C, MP, V) forsøger forsinkelsesforslag i plenum, bliver dette ugens brændpunkt. Følg kammarets dagsorden for afstemningsplan.
+
+### 📊 Signifikansranking (DIW)
+
+| Rang | Dokument | DIW-score | Horisont |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | Uge |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | Uge |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 dage |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | Måned |
+| 5 | HD01SoU25 — Äldrevård | L2 | Valg |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-04-26 | **Zeitraum**: 2026-04-27 bis 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+Der Riksdag tritt in die Schlussphase des riksmöte 2025/26 mit einer dichten Gesetzgebungsagenda ein, die vom Justizreformprogramm der Tidö-Koalition dominiert wird. Die Woche vom 27. April bis 3. Mai 2026 ist geprägt von der bevorstehenden Verabschiedung eines neuen Waffengesetzes (HD01JuU10, Inkrafttreten 1. Juni 2026), der parlamentarischen Behandlung der kritischen Bewertung der Polizeireform 2015 durch Riksrevisionen (HD01JuU31) sowie dem formellen Beitritt Schwedens zu zwei ukrainischen Kriegsverantwortungsinstrumenten (HD03231, HD03232). Gleichzeitig führen die Sozialdemokraten eine anhaltende parlamentarische Druckkampagne durch mehrere Interpellationen zu sozialen Wohlfahrtskürzungen und Arbeitsmarktpolitik — ein Test der narrativen Kohäsion der Regierung vor der Parlamentswahl im September 2026. **Konfidenz: HIGH [B2]**
+
+### 🧭 3 Entscheidungen, die dieser Bericht Unterstützt
+
+1. **Medien-/Analyseplanung**: Priorisieren Sie die Debatte über das neue Waffengesetz (HD01JuU10) und den Polizeireformbericht (HD01JuU31) als die wichtigsten Gesetzgebungsmomente der Woche — beide verbinden politische Relevanz mit konkreter Politikänderung.
+2. **Oppositionsbeobachtung**: Beobachten Sie die Interpellationsstrategie der Sozialdemokraten (HD10447, HD10444, HD10443, HD10446) als Frühindikator für die Angriffsvektoren der S-Partei gegen die Regierung im Vorfeld der Wahl.
+3. **Geopolitische Beobachtung**: Schwedens Beitritt zum Ukraine-Tribunal (HD03231) und der Reparationskommission (HD03232) signalisiert vertiefte Kriegsverantwortungsverpflichtungen — verfolgen Sie Ministeraussagen von Maria Malmer Stenergard (UD).
+
+### ⚡ 60-Sekunden-Nachrichtendienst
+
+- 🔫 **Neues Waffengesetz** (HD01JuU10): JuU empfiehlt Ja zum Regierungsgesetzentwurf, der neue Genehmigungen für bestimmte halbautomatische Jagdgewehre verbietet. Inkrafttreten 1. Juni 2026. Jägerverbände dagegen; SD und M stimmen dafür.
+- 👮 **Überprüfung der Polizeireform 2015** (HD01JuU31): JuU behandelt den Befund von Riksrevisionen, dass die Polismyndigheten **nicht ausreichend effektiv gearbeitet** hat, um die Reformziele zu erfüllen. JuU empfiehlt Archivierung des Berichts ohne neues Regierungsmandat — ein politisch bequemes Ergebnis für die Tidö-Parteien.
+- 🏗️ **Gefängniskapazität** (HD01CU25): CU stimmt für vorübergehende Baugenehmigungen für Gefängnisse und Untersuchungshaftanstalten zur Behebung des strukturellen Mangels durch Strafverschärfungen. Inkrafttreten 1. Juli 2026.
+- 🇺🇦 **Ukraine-Verantwortung** (HD03231 + HD03232): Zwei Vorlagen über Schwedens Beitritt zum Sondergerichtshof für Aggression und zur Internationalen Reparationskommission — festigt Schwedens post-NATO-transatlantische Positionierung.
+- 👴 **Altenpflege** (HD01SoU25): Ausschussbericht über verstärkte Maßnahmen für ältere Menschen und informelle Pflegende — politisch sensibel vor der Wahl 2026.
+- 🏦 **EU-Bankenpaket** (HD03253): Gesetzentwurf zur Umsetzung der EU-Kapitaladäquanzanforderungen — technisch, aber wesentlich für die Stabilität des schwedischen Bankensektors.
+- ⚡ **Interpellationsdruck**: Die S-Partei stellt in einer Woche fünf Interpellationen (HD10447, HD10444–HD10446, HD10443) zu Beschäftigungskosten, Wohnrechten, sozialer Wohlfahrt und Gesundheitsversorgung.
+
+### 🔭 Wichtigster Zukunftsauslöser
+
+**Abstimmungszeitpunkt zum Waffengesetz** — der JuU10-Ausschussbericht schlägt das neue Vapenlag zum 1. Juni 2026 vor. Wenn die Opposition (C, MP, V) Verzögerungsanträge im Plenum stellt, wird dies zum Brennpunkt der Woche. Verfolgen Sie die Tagesordnung des Riksdag für die Abstimmungsplanung.
+
+### 📊 Signifikanzranking (DIW)
+
+| Rang | Dokument | DIW-Wert | Horizont |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | Woche |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | Woche |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 Tage |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | Monat |
+| 5 | HD01SoU25 — Äldrevård | L2 | Wahl |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-04-26 | **Período**: 2026-04-27 al 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+El Riksdag entra en la recta final del riksmöte 2025/26 con una densa agenda legislativa dominada por el programa de reforma judicial de la coalición Tidö. La semana del 27 de abril al 3 de mayo de 2026 está marcada por la inminente adopción de una nueva ley de armas (HD01JuU10, entrada en vigor el 1 de junio de 2026), el trámite parlamentario de la evaluación crítica de la Riksrevisionen sobre la reforma policial de 2015 (HD01JuU31) y la adhesión formal de Suecia a dos instrumentos de responsabilidad por la guerra de Ucrania (HD03231, HD03232). Al mismo tiempo, los Socialdemócratas llevan a cabo una sostenida campaña de presión parlamentaria a través de varias interpelaciones dirigidas a los recortes en las prestaciones sociales y la política del mercado laboral — una prueba de la cohesión narrativa del gobierno antes de las elecciones de septiembre de 2026. **Confianza: HIGH [B2]**
+
+### 🧭 3 Decisiones que este Informe Apoya
+
+1. **Planificación mediática/analítica**: Dar prioridad al debate sobre la nueva ley de armas (HD01JuU10) y el informe sobre la reforma policial (HD01JuU31) como los momentos legislativos más importantes de la semana — ambos combinan relevancia política con cambio de política concreto.
+2. **Seguimiento de la oposición**: Vigilar la estrategia de interpelación de los Socialdemócratas (HD10447, HD10444, HD10443, HD10446) como indicador adelantado de los vectores de ataque preelectoral del partido S contra el gobierno.
+3. **Vigilancia geopolítica**: La adhesión de Suecia al tribunal de Ucrania (HD03231) y a la comisión de reparaciones (HD03232) señala compromisos más profundos en materia de responsabilidad bélica — seguir las declaraciones ministeriales de Maria Malmer Stenergard (UD).
+
+### ⚡ Inteligencia en 60 Segundos
+
+- 🔫 **Nueva ley de armas** (HD01JuU10): JuU recomienda aprobar el proyecto de ley del gobierno que prohíbe nuevos permisos para ciertos rifles de caza semiautomáticos. Entrada en vigor el 1 de junio de 2026. Asociaciones de cazadores en contra; SD y M votan a favor.
+- 👮 **Revisión de la reforma policial 2015** (HD01JuU31): JuU trata la conclusión de la Riksrevisionen de que la Polismyndigheten **no ha trabajado de manera suficientemente eficaz** para cumplir los objetivos de la reforma. JuU propone archivar el informe sin nuevo mandato gubernamental — una resolución políticamente conveniente para los partidos Tidö.
+- 🏗️ **Capacidad penitenciaria** (HD01CU25): CU aprueba permisos de construcción temporales para prisiones y centros de detención preventiva para abordar la escasez estructural generada por las reformas penales. Entrada en vigor el 1 de julio de 2026.
+- 🇺🇦 **Responsabilidad hacia Ucrania** (HD03231 + HD03232): Dos proposiciones sobre la adhesión de Suecia al Tribunal Especial para la agresión y a la Comisión Internacional de Reparaciones — consolidando el posicionamiento transatlántico post-OTAN de Suecia.
+- 👴 **Atención a la tercera edad** (HD01SoU25): Informe de comisión sobre medidas reforzadas para personas mayores y cuidadores informales — políticamente sensible antes de las elecciones de 2026.
+- 🏦 **Paquete bancario de la UE** (HD03253): Proposición que implementa los requisitos de adecuación de capital de la UE — técnico pero relevante para la estabilidad bancaria sueca.
+- ⚡ **Presión de interpelaciones**: El partido S presenta cinco interpelaciones en una semana (HD10447, HD10444–HD10446, HD10443) sobre costes laborales, derechos de vivienda, bienestar social y atención sanitaria.
+
+### 🔭 Principal Catalizador Futuro
+
+**Calendario de votación sobre la ley de armas** — el informe del comité JuU10 propone la nueva vapenlag en vigor el 1 de junio de 2026. Si la oposición (C, MP, V) intenta mociones de retraso en el pleno, este será el punto de ignición de la semana. Consultar el orden del día de la cámara para la programación de votaciones.
+
+### 📊 Clasificación por Relevancia (DIW)
+
+| Rango | Documento | Puntuación DIW | Horizonte |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | Semana |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | Semana |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 días |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | Mes |
+| 5 | HD01SoU25 — Äldrevård | L2 | Elección |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-04-26 | **Kausi**: 2026-04-27–2026-05-03
+
+---
+
+### 🎯 BLUF
+
+Riksdagen siirtyy riksmöte 2025/26:n loppusuoralle tiiviillä lainsäädäntöohjelmalla, jota hallitsee Tidö-koalition oikeusreformiohjelma. Viikko 27. huhtikuuta–3. toukokuuta 2026 on leimattu uuden aselain (HD01JuU10, voimaan 1.6.2026) odottavasta hyväksymisestä, Riksrevisionin kriittisen arvion parlamenttikäsittelystä Poliisin uudistuksesta 2015 (HD01JuU31) sekä Ruotsin virallisesta liittymisestä kahteen Ukrainan sotavastuuseen liittyvään instrumenttiin (HD03231, HD03232). Samaan aikaan Sosiaalidemokraatit harjoittavat jatkuvaa parlamentaarista painostuskampanjaa useiden interpellaatioiden kautta, jotka kohdistuvat sosiaalietuuksien leikkauksiin ja työmarkkinapolitiikkaan — testi hallituksen narratiivikohesiosta syyskuun 2026 vaalien alla. **Luottamus: HIGH [B2]**
+
+### 🧭 3 Päätöstä, Joita Tämä Tiedustelutieto Tukee
+
+1. **Media-/analyyttinen suunnittelu**: Aseta etusijalle uuden aselain (HD01JuU10) ja poliisireformiraportin (HD01JuU31) debatit viikon tärkeimpinä lainsäädäntöhetkinä — molemmat yhdistävät poliittisen merkittävyyden konkreettiseen politiikkamuutokseen.
+2. **Oppositioseuranta**: Seuraa Sosiaalidemokraattien interpellaatiostrategiaa (HD10447, HD10444, HD10443, HD10446) johtavana indikaattorina S-puolueen ennakkovaalikampanjasta hallitusta vastaan.
+3. **Geopoliittinen seuranta**: Ruotsin liittyminen Ukraina-tuomioistuimeen (HD03231) ja hyvityskomissioon (HD03232) merkitsee syvenevää sotavastuusitoutumista — seuraa ministereiden lausuntoja Maria Malmer Stenergardilta (UD).
+
+### ⚡ 60 Sekunnin Tiedustelukatsaus
+
+- 🔫 **Uusi aselaki** (HD01JuU10): JuU ehdottaa kyllä hallituksen lakiesitykselle, joka kieltää uudet luvat tietyille puoliautomaattisille metsästysaseille. Voimaan 1.6.2026. Metsästäjäjärjestöt vastaan; SD ja M äänestävät puolesta.
+- 👮 **Poliisireformi 2015 -arviointi** (HD01JuU31): JuU käsittelee Riksrevisionin löydöksen, jonka mukaan Polismyndigheten **ei ole työskennellyt riittävän tehokkaasti** uudistustavoitteiden saavuttamiseksi. JuU ehdottaa raportin arkistoimista ilman uutta hallitusmandaattia — poliittisesti mukava ratkaisu Tidö-puolueille.
+- 🏗️ **Vankilakapasiteetti** (HD01CU25): CU sanoo kyllä väliaikaisille rakennusluvalle vankiloille ja tutkintovankiloille rakenteellisen puutteen korjaamiseksi, jonka synnyttivät rangaistuksen tiukennukset. Voimaan 1.7.2026.
+- 🇺🇦 **Ukraina-vastuu** (HD03231 + HD03232): Kaksi ehdotusta Ruotsin liittymisestä Aggression erityistuomioistuimeen ja Kansainväliseen hyvityskomissioon — vahvistaa Ruotsin post-NATO transatlanttista asemoitumista.
+- 👴 **Vanhustenhoito** (HD01SoU25): Valiokuntaraportti vahvistetuista toimenpiteistä iäkkäille ja omaishoitajille — poliittisesti herkkä ennen vuoden 2026 vaaleja.
+- 🏦 **EU-pankkipaketti** (HD03253): Ehdotus EU:n vakavaraisuusvaatimusten täytäntöönpanosta — tekninen mutta olennainen Ruotsin pankkivakauden kannalta.
+- ⚡ **Interpellaatiopaine**: S-puolue jättää viisi interpellaatiota yhden viikon aikana (HD10447, HD10444–HD10446, HD10443) koskien työnantajakustannuksia, asumistukea, sosiaalietuuksia ja terveydenhuoltoa.
+
+### 🔭 Tärkein Tulevaisuuslaukaisin
+
+**Aselajiäänestyksen ajoitus** — JuU10-valiokuntaraportti ehdottaa uutta aselakia voimaan 1.6.2026. Jos oppositio (C, MP, V) yrittää viivästyttää täysistunnossa, tästä tulee viikon räjähdyspiste. Seuraa kammarens föredragningslista -asialistan äänestysaikataulua.
+
+### 📊 Merkittävyysluokitus (DIW)
+
+| Sija | Asiakirja | DIW-pisteet | Horisontti |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | Viikko |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | Viikko |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 päivää |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | Kuukausi |
+| 5 | HD01SoU25 — Äldrevård | L2 | Vaali |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **Date** : 2026-04-26 | **Période** : 2026-04-27 au 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+Le Riksdag entre dans la dernière ligne droite du riksmöte 2025/26 avec un agenda législatif dense dominé par le programme de réforme judiciaire de la coalition Tidö. La semaine du 27 avril au 3 mai 2026 est marquée par l'adoption prochaine d'une nouvelle loi sur les armes (HD01JuU10, entrée en vigueur le 1er juin 2026), le traitement parlementaire de l'évaluation critique de la Riksrevisionen sur la réforme de la police de 2015 (HD01JuU31) et l'adhésion formelle de la Suède à deux instruments de responsabilité pour la guerre en Ukraine (HD03231, HD03232). Parallèlement, les Sociaux-démocrates mènent une campagne de pression parlementaire soutenue par plusieurs interpellations ciblant les réductions des prestations sociales et la politique du marché du travail — un test de la cohérence narrative du gouvernement avant les élections de septembre 2026. **Confiance : HIGH [B2]**
+
+### 🧭 3 Décisions que ce Rapport Soutient
+
+1. **Planification médiatique/analytique** : Prioriser le débat sur la nouvelle loi sur les armes (HD01JuU10) et le rapport sur la réforme de la police (HD01JuU31) comme les moments législatifs les plus importants de la semaine — les deux combinent pertinence politique et changement de politique concret.
+2. **Suivi de l'opposition** : Surveiller la stratégie d'interpellation des Sociaux-démocrates (HD10447, HD10444, HD10443, HD10446) comme indicateur avancé des vecteurs d'attaque pré-électoraux du parti S contre le gouvernement.
+3. **Surveillance géopolitique** : L'adhésion de la Suède au tribunal ukrainien (HD03231) et à la commission des réparations (HD03232) signale un engagement renforcé en matière de responsabilité de guerre — suivre les déclarations ministérielles de Maria Malmer Stenergard (UD).
+
+### ⚡ Renseignement en 60 Secondes
+
+- 🔫 **Nouvelle loi sur les armes** (HD01JuU10) : JuU recommande d'approuver le projet de loi gouvernemental interdisant les nouveaux permis pour certains fusils de chasse semi-automatiques. Entrée en vigueur le 1er juin 2026. Associations de chasseurs opposées ; SD et M votent pour.
+- 👮 **Révision de la réforme de la police 2015** (HD01JuU31) : JuU traite le constat de Riksrevisionen selon lequel la Polismyndigheten **n'a pas travaillé de manière suffisamment efficace** pour répondre aux intentions de la réforme. JuU propose d'archiver le rapport sans nouveau mandat gouvernemental — une résolution politiquement commode pour les partis Tidö.
+- 🏗️ **Capacité pénitentiaire** (HD01CU25) : CU approuve les permis de construire temporaires pour les prisons et les maisons d'arrêt afin de remédier à la pénurie structurelle générée par les réformes des peines. Entrée en vigueur le 1er juillet 2026.
+- 🇺🇦 **Responsabilité envers l'Ukraine** (HD03231 + HD03232) : Deux propositions sur l'adhésion de la Suède au Tribunal spécial pour agression et à la Commission internationale des réparations — consolidant le positionnement transatlantique post-OTAN de la Suède.
+- 👴 **Soins aux personnes âgées** (HD01SoU25) : Rapport de commission sur les mesures renforcées pour les personnes âgées et les aidants informels — politiquement sensible avant les élections de 2026.
+- 🏦 **Paquet bancaire de l'UE** (HD03253) : Proposition mettant en œuvre les exigences en matière d'adéquation des fonds propres de l'UE — technique mais important pour la stabilité bancaire suédoise.
+- ⚡ **Pression des interpellations** : Le parti S dépose cinq interpellations en une semaine (HD10447, HD10444–HD10446, HD10443) sur les coûts d'emploi, les droits au logement, le bien-être social et les soins de santé.
+
+### 🔭 Principal Déclencheur à Venir
+
+**Calendrier du vote sur la loi sur les armes** — le rapport du comité JuU10 propose la nouvelle vapenlag en vigueur le 1er juin 2026. Si l'opposition (C, MP, V) tente des motions de retard en séance plénière, cela deviendra le point d'éclair de la semaine. Suivre l'ordre du jour de la chambre pour la planification du vote.
+
+### 📊 Classement par Importance (DIW)
+
+| Rang | Document | Score DIW | Horizon |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | Semaine |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | Semaine |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 jours |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | Mois |
+| 5 | HD01SoU25 — Äldrevård | L2 | Élection |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+---
+title: "שבדיה — השבוע הקרוב: גל רפורמת המשפט, סולידריות עם אוקראינה והתאמות ברווחה החברתית — 2026-04-27 עד 2026-05-03"
+
+---
+
+# שבדיה — השבוע הקרוב: גל רפורמת המשפט, סולידריות עם אוקראינה והתאמות ברווחה החברתית
+
+**מחבר**: James Pether Sörling | **תאריך**: 2026-04-26 | **תקופה**: 2026-04-27 עד 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+הריקסדאג נכנס לספרינט הסיומי של riksmöte 2025/26 עם סדר יום חקיקתי צפוף הנשלט על ידי תכנית רפורמת המשפט של קואליציית טידו. השבוע שבין 27 באפריל ל-3 במאי 2026 מתאפיין באימוץ הקרוב של חוק נשק חדש (HD01JuU10, ייכנס לתוקף ב-1 ביוני 2026), בטיפול הפרלמנטרי בהערכה הביקורתית של Riksrevisionen לרפורמת המשטרה 2015 (HD01JuU31), ובהצטרפותה הרשמית של שבדיה לשני כלים לאחריות מלחמת אוקראינה (HD03231, HD03232). במקביל מנהלים הסוציאל-דמוקרטים קמפיין לחץ פרלמנטרי מתמשך דרך שאילתות רבות המכוונות נגד קיצוצי הרווחה ומדיניות שוק העבודה — מבחן לאחידות הנרטיב הממשלתי לקראת בחירות ספטמבר 2026. **רמת ביטחון: HIGH [B2]**
+
+### 🧭 3 החלטות שדוח זה תומך בהן
+
+1. **תכנון תקשורתי/אנליטי**: לתת עדיפות לוויכוח על חוק הנשק החדש (HD01JuU10) ודוח רפורמת המשטרה (HD01JuU31) כרגעי החקיקה החשובים ביותר של השבוע — שניהם משלבים רלוונטיות פוליטית עם שינוי מדיניות קונקרטי.
+2. **מעקב אחר האופוזיציה**: לעקוב אחר אסטרטגיית השאילתות של הסוציאל-דמוקרטים (HD10447, HD10444, HD10443, HD10446) כאינדיקטור מוביל לווקטורי ההתקפה הקדם-בחירתיים של מפלגת S נגד הממשלה.
+3. **מעקב גיאופוליטי**: הצטרפות שבדיה לבית הדין האוקראיני (HD03231) ולוועדת הפיצויים (HD03232) מסמנת התעמקות בהתחייבויות אחריות המלחמה — לעקוב אחר הצהרות שרים של Maria Malmer Stenergard (UD).
+
+### ⚡ מודיעין של 60 שניות
+
+- 🔫 **חוק נשק חדש** (HD01JuU10): JuU ממליצה בעד הצעת החוק הממשלתית האוסרת רישיונות חדשים לרובי ציד חצי-אוטומטיים מסוימים. ייכנס לתוקף ב-1 ביוני 2026. ארגוני ציידים מתנגדים; SD ו-M מצביעים בעד.
+- 👮 **סקירת רפורמת המשטרה 2015** (HD01JuU31): JuU מטפלת בממצא של Riksrevisionen לפיו Polismyndigheten **לא עבדה ביעילות מספקת** כדי לעמוד ביעדי הרפורמה. JuU מציעה לארכב את הדוח ללא מנדט ממשלתי חדש — פתרון נוח פוליטית למפלגות טידו.
+- 🏗️ **כושר כלא** (HD01CU25): CU אומרת כן להיתרי בנייה זמניים לכלאות ומעצרים לטיפול במחסור המבני בעקבות חמרת עונשים. ייכנס לתוקף ב-1 ביולי 2026.
+- 🇺🇦 **אחריות כלפי אוקראינה** (HD03231 + HD03232): שני הצעות חוק על הצטרפות שבדיה לבית הדין המיוחד לתוקפנות ולוועדת הפיצויים הבינלאומית — מחזקת את מיצוב שבדיה הטרנס-אטלנטי שלאחר נאט"ו.
+- 👴 **טיפול בקשישים** (HD01SoU25): דוח ועדה על אמצעים מחוזקים לקשישים ולמטפלים בלתי-פורמליים — רגיש פוליטית לקראת בחירות 2026.
+- 🏦 **חבילת הבנקים של האיחוד האירופי** (HD03253): הצעת חוק ליישום דרישות הלימות ההון של האיחוד האירופי — טכנית אך חשובה ליציבות הבנקאות השבדית.
+- ⚡ **לחץ שאילתות**: מפלגת S מגישה חמש שאילתות בשבוע אחד (HD10447, HD10444–HD10446, HD10443) בנושא עלויות תעסוקה, זכויות דיור, רווחה חברתית ושירותי בריאות.
+
+### 🔭 המניע החשוב ביותר לעתיד
+
+**עיתוי ההצבעה על חוק הנשק** — דוח ועדת JuU10 מציע לחוק הנשק החדש vapenlag להיכנס לתוקף ב-1 ביוני 2026. אם האופוזיציה (C, MP, V) תנסה להגיש הצעות דחייה במליאה, זה יהפוך לנקודת ההצתה של השבוע. לעקוב אחר סדר היום של הקמרה לתזמון ההצבעה.
+
+### 📊 דירוג חשיבות (DIW)
+
+| דירוג | מסמך | ניקוד DIW | אופק |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | שבוע |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | שבוע |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 ימים |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | חודש |
+| 5 | HD01SoU25 — Äldrevård | L2 | בחירות |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling | **日付**：2026-04-26 | **期間**：2026-04-27〜2026-05-03
+
+---
+
+### 🎯 BLUF
+
+リクスダーグ（Riksdag）はriksmöte 2025/26の最終スパートに入り、ティドー連立政権の司法改革プログラムを中心とした密度の高い立法スケジュールが展開される。2026年4月27日〜5月3日の週は、新武器法（HD01JuU10、2026年6月1日施行）の採択、2015年警察改革に関するRiksrevisionenの批判的評価の国会審議（HD01JuU31）、そしてウクライナ戦争責任に関する2つの国際文書へのスウェーデンの正式加盟（HD03231、HD03232）に彩られる。同時に社会民主党は、社会福祉削減や労働市場政策を標的とした複数の質問主意書を通じて議会圧力キャンペーンを展開し、2026年9月選挙を前に政府の政策一貫性を試している。**信頼度：HIGH [B2]**
+
+### 🧭 このブリーフが支援する3つの意思決定
+
+1. **メディア・分析計画**：新武器法（HD01JuU10）と警察改革報告（HD01JuU31）の審議を、今週最重要の立法イベントとして優先する——いずれも政治的重要性と具体的な政策変更を兼ね備えている。
+2. **野党動向追跡**：社会民主党の質問主意書戦略（HD10447、HD10444、HD10443、HD10446）を、選挙前のS党対政府攻撃ベクターの先行指標として注視する。
+3. **地政学的監視**：スウェーデンのウクライナ特別法廷（HD03231）および賠償委員会（HD03232）への加盟は、深化する戦争責任コミットメントを示す——Maria Malmer Stenergard（UD）外務大臣の発言を追跡する。
+
+### ⚡ 60秒インテリジェンス
+
+- 🔫 **新武器法**（HD01JuU10）：JuUは特定の半自動猟銃への新規許可を禁止する政府法案への賛成を勧告。2026年6月1日施行。猟師団体は反対；SDとMは賛成票。
+- 👮 **2015年警察改革レビュー**（HD01JuU31）：JuUはPolismyndigheten（スウェーデン警察庁）が**改革目標達成に向けて十分に効果的に機能してこなかった**とするRiksrevisionenの指摘を審議。JuUは新たな政府指令なしに報告書の棚上げを提案——ティドー各党にとって政治的に都合の良い解決策。
+- 🏗️ **刑務所収容能力**（HD01CU25）：CUは量刑厳格化による構造的不足に対処するため、刑務所・拘置所への臨時建設許可に賛成。2026年7月1日施行。
+- 🇺🇦 **ウクライナ責任**（HD03231 + HD03232）：侵略犯罪特別法廷と国際賠償委員会へのスウェーデン加盟に関する2法案——スウェーデンのNATO後の大西洋横断的位置づけを強化。
+- 👴 **高齢者ケア**（HD01SoU25）：高齢者および非公式介護者への強化措置に関する委員会報告——2026年選挙前に政治的に敏感な課題。
+- 🏦 **EUバンキングパッケージ**（HD03253）：EUの自己資本比率規制を実施する法案——技術的だがスウェーデンの銀行安定に実質的影響。
+- ⚡ **質問主意書攻勢**：S党は1週間に5件の質問主意書（HD10447、HD10444–HD10446、HD10443）を提出——雇用コスト、住宅権、社会福祉、医療をテーマに。
+
+### 🔭 最重要トリガー
+
+**武器法採決タイミング**——JuU10委員会報告は新vapenlagの2026年6月1日施行を提案。野党（C、MP、V）が本会議で遅延動議を試みた場合、これが今週の発火点となる。本会議の議事日程で採決スケジュールを確認のこと。
+
+### 📊 重要度ランキング（DIW）
+
+| 順位 | 文書 | DIWスコア | 時間軸 |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | 週 |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | 週 |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30日 |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | 月 |
+| 5 | HD01SoU25 — Äldrevård | L2 | 選挙 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **날짜**: 2026-04-26 | **기간**: 2026-04-27~2026-05-03
+
+---
+
+### 🎯 BLUF
+
+리크스다겐(Riksdag)은 riksmöte 2025/26의 마지막 스퍼트에 접어들며, 티도 연립정권의 사법 개혁 프로그램을 중심으로 한 밀도 높은 입법 일정이 펼쳐진다. 2026년 4월 27일~5월 3일 주는 새 총기법(HD01JuU10, 2026년 6월 1일 시행)의 채택, 2015년 경찰 개혁에 대한 Riksrevisionen의 비판적 평가 의회 처리(HD01JuU31), 그리고 우크라이나 전쟁 책임 관련 두 가지 국제 문서에 스웨덴의 공식 가입(HD03231, HD03232)으로 특징지어진다. 동시에 사회민주당은 사회복지 삭감과 노동시장 정책을 겨냥한 복수의 대정부 질문을 통해 지속적인 의회 압박 캠페인을 전개하며 2026년 9월 선거를 앞둔 정부의 정책 일관성을 시험하고 있다. **신뢰도: HIGH [B2]**
+
+### 🧭 이 브리핑이 지원하는 3가지 의사결정
+
+1. **미디어·분석 계획**: 새 총기법(HD01JuU10) 토론과 경찰 개혁 보고서(HD01JuU31)를 이번 주 가장 중요한 입법 이벤트로 우선시한다 — 두 가지 모두 정치적 중요성과 구체적 정책 변화를 결합하고 있다.
+2. **야당 동향 추적**: 사회민주당의 대정부 질문 전략(HD10447, HD10444, HD10443, HD10446)을 S당의 선거 전 대정부 공세 벡터의 선행 지표로 주시한다.
+3. **지정학적 감시**: 스웨덴의 우크라이나 특별 법원(HD03231)과 배상 위원회(HD03232) 가입은 심화된 전쟁 책임 공약을 나타낸다 — Maria Malmer Stenergard(UD) 외교부 장관의 발언을 추적한다.
+
+### ⚡ 60초 인텔리전스
+
+- 🔫 **새 총기법** (HD01JuU10): JuU는 특정 반자동 사냥총에 대한 신규 허가를 금지하는 정부 법안에 찬성 권고. 2026년 6월 1일 시행. 사냥 단체 반대; SD와 M 찬성.
+- 👮 **2015년 경찰 개혁 검토** (HD01JuU31): JuU는 Polismyndigheten이 **개혁 목표 달성에 충분히 효과적으로 기능하지 않았다**는 Riksrevisionen의 지적을 처리. JuU는 신규 정부 지시 없이 보고서 보류를 제안 — 티도 연립 각 당에 정치적으로 편리한 해결책.
+- 🏗️ **교도소 수용 능력** (HD01CU25): CU는 양형 강화로 인한 구조적 부족을 해소하기 위한 교도소·구치소 임시 건설 허가에 찬성. 2026년 7월 1일 시행.
+- 🇺🇦 **우크라이나 책임** (HD03231 + HD03232): 침략 범죄 특별 법원 및 국제 배상 위원회에 스웨덴 가입에 관한 두 법안 — 나토 이후 스웨덴의 대서양 횡단적 위상 강화.
+- 👴 **노인 돌봄** (HD01SoU25): 노인 및 비공식 돌봄 제공자를 위한 강화 조치에 관한 위원회 보고서 — 2026년 선거 전 정치적으로 민감한 사안.
+- 🏦 **EU 은행 패키지** (HD03253): EU 자기자본 적정성 요건 이행 법안 — 기술적이지만 스웨덴 은행 안정성에 실질적 영향.
+- ⚡ **대정부 질문 공세**: S당, 1주일 동안 고용 비용·주거권·사회복지·의료를 주제로 5건의 대정부 질문(HD10447, HD10444–HD10446, HD10443) 제출.
+
+### 🔭 가장 중요한 미래 촉발 요인
+
+**총기법 표결 시기** — JuU10 위원회 보고서는 새 vapenlag의 2026년 6월 1일 시행을 제안. 야당(C, MP, V)이 본회의에서 지연 동의를 시도할 경우 이번 주의 뇌관이 된다. 표결 일정은 의회 의사 일정을 확인할 것.
+
+### 📊 중요도 순위 (DIW)
+
+| 순위 | 문서 | DIW 점수 | 시간 범위 |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | 주간 |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | 주간 |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30일 |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | 월간 |
+| 5 | HD01SoU25 — Äldrevård | L2 | 선거 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-04-26 | **Periode**: 2026-04-27 tot 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+De Riksdag treedt de eindsprint in van het riksmöte 2025/26 met een drukke wetgevingsagenda die wordt gedomineerd door het justitiehervormprogramma van de Tidö-coalitie. De week van 27 april tot 3 mei 2026 wordt gekenmerkt door de aanstaande aanneming van een nieuwe wapenwet (HD01JuU10, van kracht per 1 juni 2026), de parlementaire behandeling van de kritische beoordeling door de Riksrevisionen van de Politiehervorming 2015 (HD01JuU31) en de formele toetreding van Zweden tot twee Oekraïense oorlogsverantwoordingsinstrumenten (HD03231, HD03232). Tegelijkertijd voeren de Sociaal-democraten een aanhoudende parlementaire drukkcampagne via meerdere interpellaties gericht op bezuinigingen op sociale uitkeringen en arbeidsmarktbeleid — een test van de narratieve samenhang van de regering voor de verkiezingen van september 2026. **Vertrouwen: HIGH [B2]**
+
+### 🧭 3 Beslissingen die dit Rapport Ondersteunt
+
+1. **Media-/analytische planning**: Prioriteer het debat over de nieuwe wapenwet (HD01JuU10) en het rapport over de politiehervorming (HD01JuU31) als de belangrijkste wetgevingsmomenten van de week — beide combineren politieke relevantie met concrete beleidswijziging.
+2. **Oppositievolging**: Bewaak de interpellatiestrategie van de Sociaal-democraten (HD10447, HD10444, HD10443, HD10446) als vroege indicator voor de pre-verkiezingsaanvalsvectoren van de S-partij tegen de regering.
+3. **Geopolitieke observatie**: Zwedens toetreding tot het Oekraïne-tribunaal (HD03231) en de herstelcommissie (HD03232) signaleert diepere oorlogsverantwoordingsverplichtingen — volg ministeriele verklaringen van Maria Malmer Stenergard (UD).
+
+### ⚡ 60-Seconden Inlichtingen
+
+- 🔫 **Nieuwe wapenwet** (HD01JuU10): JuU adviseert ja op het regeringswetsvoorstel dat nieuwe vergunningen verbiedt voor bepaalde semi-automatische jachtgeweren. Van kracht per 1 juni 2026. Jagerorganisaties tegenstander; SD en M stemmen voor.
+- 👮 **Evaluatie politiehervorming 2015** (HD01JuU31): JuU behandelt de bevinding van de Riksrevisionen dat de Polismyndigheten **niet voldoende effectief heeft gewerkt** om de hervormingsdoelen te bereiken. JuU stelt voor het rapport te archiveren zonder nieuw regeringsmandaat — een politiek handig resultaat voor de Tidö-partijen.
+- 🏗️ **Gevangeniscapaciteit** (HD01CU25): CU stemt in met tijdelijke bouwvergunningen voor gevangenissen en huizen van bewaring om het structurele tekort aan te pakken veroorzaakt door strafverzwaringen. Van kracht per 1 juli 2026.
+- 🇺🇦 **Oekraïne-verantwoording** (HD03231 + HD03232): Twee voorstellen over Zwedens toetreding tot het Speciaal Tribunaal voor Agressie en de Internationale Herstelcommissie — bevestigt Zwedens post-NAVO transatlantische positionering.
+- 👴 **Ouderenzorg** (HD01SoU25): Commissierapport over versterkte maatregelen voor ouderen en mantelzorgers — politiek gevoelig voor de verkiezingen van 2026.
+- 🏦 **EU-bankenpakket** (HD03253): Voorstel ter implementatie van de EU-kapitaaltoereikendheidseisen — technisch maar relevant voor de stabiliteit van de Zweedse banksector.
+- ⚡ **Interpellatiedruk**: De S-partij dient vijf interpellaties in één week in (HD10447, HD10444–HD10446, HD10443) over werkgelegenheidskosten, woonrechten, sociale uitkeringen en gezondheidszorg.
+
+### 🔭 Belangrijkste Toekomstige Trigger
+
+**Stemtijdstip voor de wapenwet** — het JuU10-commissierapport stelt de nieuwe vapenlag voor per 1 juni 2026. Als de oppositie (C, MP, V) vertragingsmotties indient in de plenaire vergadering, wordt dit het brandpunt van de week. Volg de agenda van de Riksdag voor de stemmingsplanning.
+
+### 📊 Significantieranking (DIW)
+
+| Rang | Document | DIW-score | Horizon |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | Week |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | Week |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 dagen |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | Maand |
+| 5 | HD01SoU25 — Äldrevård | L2 | Verkiezing |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-04-26 | **Periode**: 2026-04-27 til 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+Riksdagen går inn i sluttspurten av riksmöte 2025/26 med en tett lovgivningsagenda dominert av Tidö-koalisjonens rettferdighetsreformprogram. Uken 27. april–3. mai 2026 er preget av den forestående vedtakelsen av en ny våpenlov (HD01JuU10, ikrafttredelse 1. juni 2026), parlamentsbehandlingen av Riksrevisjonens kritiske vurdering av Politireformen 2015 (HD01JuU31) og Sveriges formelle tilslutning til to ukrainske krigsansvarsordninger (HD03231, HD03232). Samtidig fører Sosialdemokratene en vedvarende parlamentarisk pressekampanje gjennom flere interpellasjoner rettet mot sosiale velferdskutt og arbeidsmarkedspolitikk — en test av regjeringens narrativkohesjon foran valget i september 2026. **Konfidens: HIGH [B2]**
+
+### 🧭 3 Beslutninger Dette Grunnlaget Støtter
+
+1. **Medie-/analytisk planlegging**: Prioriter debatten om den nye våpenloven (HD01JuU10) og politireformrapporten (HD01JuU31) som ukens viktigste lovgivningsmomenter — begge kombinerer politisk relevans med konkret politikkendring.
+2. **Opposisjonsovervåkning**: Følg Sosialdemokratenes interpellasjonsstrategi (HD10447, HD10444, HD10443, HD10446) som ledende indikator for S-partiets pre-valg-angrepsvektorer mot regjeringen.
+3. **Geopolitisk overvåkning**: Sveriges tilslutning til Ukraina-tribunalen (HD03231) og erstatningskommisjonen (HD03232) signaliserer dypere krigsansvarsforpliktelser — følg ministeruttalelser fra Maria Malmer Stenergard (UD).
+
+### ⚡ 60-Sekunders Etterretning
+
+- 🔫 **Ny våpenlov** (HD01JuU10): JuU foreslår ja til regjeringspropositionen som forbyr nye tillatelser for visse halvautomatiske jaktvåpen. Ikrafttredelse 1. juni 2026. Jegerorganisasjoner imot; SD og M stemmer for.
+- 👮 **Politireform 2015-gjennomgang** (HD01JuU31): JuU behandler Riksrevisjonens funn om at Polismyndigheten **ikke har arbeidet tilstrekkelig effektivt** for å oppfylle reformintensjonene. JuU foreslår å arkivere rapporten uten nytt regjeringsmandat — et politisk bekvemt utfall for Tidö-partiene.
+- 🏗️ **Fengselskapasitet** (HD01CU25): CU sier ja til midlertidige byggetillatelser for fengsler og arresthus for å håndtere den strukturelle mangelen drevet av straffskjerpelser. Ikrafttredelse 1. juli 2026.
+- 🇺🇦 **Ukraina-ansvar** (HD03231 + HD03232): To proposisjoner om Sveriges tilslutning til Spesialtribunalet for aggresjon og Den internasjonale erstatningskommisjonen — befester Sveriges post-NATO transatlantiske posisjonering.
+- 👴 **Eldreomsorg** (HD01SoU25): Utvalgsrapport om styrkede tiltak for eldre og uformelle omsorgsgivere — politisk følsomt foran valget i 2026.
+- 🏦 **EU-bankpakke** (HD03253): Proposisjon om gjennomføring av EUs kapitaldekningskrav — teknisk men materielt for norsk bankstabilitet.
+- ⚡ **Interpellasjonspress**: S-partiet leverer fem interpellasjoner på én uke (HD10447, HD10444–HD10446, HD10443) om ansettelseskostnader, boligrettigheter, sosial velferd og helsevesen.
+
+### 🔭 Viktigste Fremtidstrigger
+
+**Tidspunkt for våpenlovsavstemning** — JuU10-utvalgsrapporten foreslår den nye vapenlag med ikrafttredelse 1. juni 2026. Hvis opposisjonen (C, MP, V) forsøker forsinskelsesforslag i plenum, blir dette ukens brennpunkt. Følg kammarets dagsorden for avstemningsplan.
+
+### 📊 Signifikansrangering (DIW)
+
+| Rang | Dokument | DIW-poeng | Horisont |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | Uke |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | Uke |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 dager |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | Måned |
+| 5 | HD01SoU25 — Äldrevård | L2 | Valg |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-04-26 | **Period**: 2026-04-27 till 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+Riksdagen går in i slutspurten av riksmöte 2025/26 med en intensiv lagstiftningsagenda dominerad av Tidökoalitionens rättviseformprogram. Veckan 27 april–3 maj 2026 präglas av det förestående antagandet av en ny vapenlags (HD01JuU10, träder i kraft 1 juni 2026), riksdagsbehandlingen av Riksrevisionens kritiska granskning av Polisreformen 2015 (HD01JuU31) och Sveriges formella anslutning till två ukrainska krigsansvarsindtrument (HD03231, HD03232). Samtidigt bedriver Socialdemokraterna en intensiv parlamentarisk tryckkampanj genom flera interpellationer riktade mot sociala välfärdsreduktioner och arbetsmarknadspolitik — ett test av regeringens narrativkohesion inför valet i september 2026. **Konfidens: HIGH [B2]**
+
+### 🧭 3 Beslut Som Detta Underlag Stödjer
+
+1. **Medie-/analytisk planering**: Prioritera debatten om nya vapenlagen (HD01JuU10) och polisreformrapporten (HD01JuU31) som veckans viktigaste lagstiftningsmoment — båda kombinerar politisk relevans med konkret policyförändring.
+2. **Oppositionsbevakning**: Bevaka Socialdemokraternas interpellationsstrategi (HD10447, HD10444, HD10443, HD10446) som ledande indikator på S-partiets förvalangsfronter mot regeringen.
+3. **Geopolitisk bevakning**: Sveriges anslutning till Ukrainatribunalen (HD03231) och skadeståndkommissionen (HD03232) signalerar fördjupade krigsansvarsåtaganden — följ ministerstatements från Maria Malmer Stenergard (UD).
+
+### ⚡ 60-Sekundersintelligens
+
+- 🔫 **Ny vapenlags** (HD01JuU10): JuU föreslår ja till regeringspropositionen som förbjuder nya tillstånd för vissa halvautomatiska jaktvapen. Träder i kraft 1 juni 2026. Jägarorganisationer mot; SD och M röstar för.
+- 👮 **Polisreform 2015-granskning** (HD01JuU31): JuU behandlar Riksrevisionens slutsats att Polismyndigheten **inte arbetat tillräckligt effektivt** för att uppfylla reformintentionerna. JuU föreslår att lägga rapporten till handlingarna utan nytt regeringsuppdrag — ett politiskt bekvämt utfall för Tidöpartierna.
+- 🏗️ **Fängelsekapacitet** (HD01CU25): CU säger ja till tillfälliga bygglov för fängelser och häkten för att hantera strukturbristen driven av straffskärpningar. Träder i kraft 1 juli 2026.
+- 🇺🇦 **Ukrainaansvar** (HD03231 + HD03232): Två propositioner om Sveriges anslutning till den Särskilda tribunalen för aggression och den Internationella skadeståndkommissionen — befäster Sveriges post-NATO-transatlantiska positionering.
+- 👴 **Äldreomsorg** (HD01SoU25): Betänkande om stärkta åtgärder för äldre och anhörigvårdare — politiskt känsligt inför 2026 års val.
+- 🏦 **EU-bankpaket** (HD03253): Proposition om genomförandet av EU:s kapitaltäckningskrav — tekniskt men materiellt för svensk bankstabilitet.
+- ⚡ **Interpellationstryck**: S-partiet lämnar in fem interpellationer under en vecka (HD10447, HD10444–HD10446, HD10443) om anställningskostnader, bostadsrättigheter, social välfärd och sjukvård.
+
+### 🔭 Viktigaste Framåttrigger
+
+**Tidpunkt för vapenlagens omröstning** — JuU10-betänkandet föreslår den nya vapenlagen träda i kraft 1 juni 2026. Om oppositionen (C, MP, V) försöker förseningsyrkanden i kammaren, blir detta veckans explosionspunkt. Följ kammarens föredragningslista för rösttidpunkter.
+
+### 📊 Signifikansranking (DIW)
+
+| Rang | Dokument | DIW-poäng | Horisont |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | Vecka |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | Vecka |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30 dagar |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | Månad |
+| 5 | HD01SoU25 — Äldrevård | L2 | Val |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling | **日期**：2026-04-26 | **时段**：2026-04-27 至 2026-05-03
+
+---
+
+### 🎯 BLUF
+
+瑞典议会（Riksdag）进入riksmöte 2025/26的最后冲刺阶段，以蒂多联合政府司法改革计划为主导的密集立法议程全面展开。2026年4月27日至5月3日当周以新武器法（HD01JuU10，2026年6月1日生效）的即将通过、议会对Riksrevisionen关于2015年警察改革批评性评估的审理（HD01JuU31），以及瑞典正式加入两项乌克兰战争责任工具（HD03231、HD03232）为特征。与此同时，社会民主党通过多份质询，持续就社会福利削减和劳动力市场政策对政府施压，在2026年9月选举前检验政府政策叙事的一致性。**置信度：HIGH [B2]**
+
+### 🧭 本简报支持的3项决策
+
+1. **媒体/分析规划**：将新武器法（HD01JuU10）辩论与警察改革报告（HD01JuU31）列为本周最重要的立法事项——两者均将政治显著性与具体政策变化融为一体。
+2. **反对党追踪**：关注社会民主党的质询策略（HD10447、HD10444、HD10443、HD10446），将其作为S党选前对政府攻势方向的领先指标。
+3. **地缘政治监测**：瑞典加入乌克兰特别法庭（HD03231）与赔偿委员会（HD03232），标志着深化的战争问责承诺——追踪外交部长Maria Malmer Stenergard（UD）的部长声明。
+
+### ⚡ 60秒情报速览
+
+- 🔫 **新武器法**（HD01JuU10）：JuU建议支持政府法案，禁止对特定半自动猎枪发放新许可证。2026年6月1日生效。猎人协会反对；SD与M投票支持。
+- 👮 **2015年警察改革评审**（HD01JuU31）：JuU审议Riksrevisionen关于Polismyndigheten**未能以足够高效的方式**实现改革目标的认定。JuU提议将报告存档而不赋予政府新任务——对蒂多各党而言是政治上便利的处理方式。
+- 🏗️ **监狱容量**（HD01CU25）：CU同意为监狱和拘留所颁发临时建筑许可，以应对量刑改革带来的结构性短缺。2026年7月1日生效。
+- 🇺🇦 **乌克兰问责**（HD03231 + HD03232）：两份关于瑞典加入侵略罪特别法庭与国际赔偿委员会的提案——巩固瑞典后北约时代的跨大西洋定位。
+- 👴 **老年护理**（HD01SoU25）：有关加强老年人及非正式照护者措施的委员会报告——在2026年大选前政治敏感度高。
+- 🏦 **欧盟银行业一揽子计划**（HD03253）：实施欧盟资本充足率要求的提案——专业性强，但对瑞典银行稳定性具有实质影响。
+- ⚡ **质询攻势**：S党一周内提交五份质询（HD10447、HD10444–HD10446、HD10443），涉及就业成本、住房权、社会福利和医疗保健。
+
+### 🔭 最重要的未来触发因素
+
+**武器法表决时机**——JuU10委员会报告提议新vapenlag于2026年6月1日生效。如果反对党（C、MP、V）在全体会议上尝试提出拖延动议，这将成为本周的引爆点。请关注议会议程以了解投票安排。
+
+### 📊 重要性排名（DIW）
+
+| 排名 | 文件 | DIW评分 | 时间范围 |
+|------|----------|-----------|---------|
+| 1 | HD01JuU10 — Ny vapenlag | L2+ | 周 |
+| 2 | HD01JuU31 — Polisreformen 2015 | L2+ | 周 |
+| 3 | HD03231+HD03232 — Ukrainaansvar | L2 | 30天 |
+| 4 | HD01CU25 — Kriminalvård fastigheter | L2 | 月 |
+| 5 | HD01SoU25 — Äldrevård | L2 | 选举 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'edgeLabelBackground': '#0a0e27'}}}%%
+quadrantChart
+    title Week Ahead Significance Matrix (Impact vs Urgency)
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Impact --> High Impact
+    quadrant-1 Act Immediately
+    quadrant-2 Plan Ahead
+    quadrant-3 Monitor
+    quadrant-4 Respond Fast
+    HD01JuU10 Ny vapenlag: [0.85, 0.80]
+    HD01JuU31 Polisreform: [0.80, 0.75]
+    HD03231-232 Ukraine: [0.60, 0.85]
+    HD01CU25 Kriminalvård: [0.70, 0.65]
+    HD01SoU25 Äldrevård: [0.55, 0.70]
+    HD03253 EU Bank: [0.40, 0.60]
+    Interpellations S: [0.75, 0.50]
+```
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+timeline
+    title Week Ahead Legislative Calendar
+    section 2026-04-27 (Mon)
+        Chamber plenary : Debate scheduling
+    section 2026-04-28 (Tue)
+        JuU10 vapenlag : Expected plenary vote
+        CU25 kriminalvård : Expected processing
+    section 2026-04-29 (Wed)
+        Interpellations : Multiple S→govt questions
+        SoU25 äldrevård : Committee output
+    section 2026-04-30 (Thu)
+        JuU31 Polisreform : Expected plenary
+        Ukraine propositions : HD03231+HD03232
+    section 2026-05-01 (Fri)
+        Valborgshelg : Chamber closed
+```
+
+<!-- source-sha: e799f2cf3c9c7f3ec4f6e9c9b91e6ad40f91af79 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1536,3 +2618,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_zh.md)
