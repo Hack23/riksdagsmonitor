@@ -326,25 +326,42 @@ jobs:
           path: dist/
 
       - name: Run Cypress (${{ matrix.shard.name }} shard)
-        uses: cypress-io/github-action@dace029018fcdf86e0df89a31bc3cfa5b32570d8 # v7.3.0
-        with:
-          start: npm run preview
-          wait-on: "http://localhost:4173"
-          wait-on-timeout: 60
-          browser: chrome
-          spec: ${{ matrix.shard.specs }}
-          config: video=false
-          quiet: true
-          install: false # Already ran `npm ci`
+        # Mirror the original `npm run e2e` semantics exactly:
+        #   start-server-and-test preview http://localhost:4173 cypress:run
+        # where cypress:run = `cypress run --config video=false` (default
+        # Electron browser). We capture stdout via `tee` so the existing
+        # `scripts/generate-e2e-results-html.cjs` can rebuild the
+        # docs/cypress/index.html report from the log.
+        shell: bash
+        env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
+          CYPRESS_VIDEO: "false"
+        run: |
+          mkdir -p builds/cypress
+          set -o pipefail
+          npx start-server-and-test preview http://localhost:4173 \
+            "npx cypress run --config video=false --spec '${{ matrix.shard.specs }}'" \
+            2>&1 | tee "builds/cypress/e2e-output-${{ matrix.shard.name }}.log"
+          TEST_EXIT_CODE=${PIPESTATUS[0]}
+          # Per-shard screenshot snapshot (only present on failure)
+          if [ -d cypress/screenshots ]; then
+            mkdir -p "builds/cypress/screenshots"
+            cp -r cypress/screenshots/. "builds/cypress/screenshots/" || true
+          fi
+          exit ${TEST_EXIT_CODE}
 
-      - name: Archive screenshots on failure
-        if: failure()
+      # Upload per-shard cypress artifacts (log + any screenshots). The
+      # deploy-docs job downloads ALL shards and merges them into a single
+      # builds/cypress/ so the existing report generator + screenshot
+      # gallery work identically to the pre-refactor pipeline.
+      - name: Upload cypress artifacts
+        if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: cypress-screenshots-${{ matrix.shard.name }}
-          path: cypress/screenshots/
+          name: cypress-artifacts-${{ matrix.shard.name }}
+          path: builds/cypress/
           retention-days: 7
-          if-no-files-found: ignore
+          if-no-files-found: warn
 
   # --------------------------------------------------------------------------
   # 6. package — SBOM + SLSA attestations (≤5 min)
@@ -447,6 +464,35 @@ jobs:
         with:
           name: unit-test-reports
           path: builds/
+
+      # Download EVERY e2e shard artifact and merge into builds/cypress/.
+      # `merge-multiple: true` flattens cypress-artifacts-critical/...,
+      # cypress-artifacts-news/... etc. into the same builds/cypress/
+      # tree, so per-shard logs + screenshots all land in one folder.
+      - name: Download e2e (cypress) artifacts
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          pattern: cypress-artifacts-*
+          path: builds/cypress/
+          merge-multiple: true
+
+      # The HTML generator (scripts/generate-e2e-results-html.cjs) reads a
+      # single `e2e-output.log`. Concatenate the per-shard logs in a
+      # deterministic order so the rendered report covers every shard.
+      - name: Aggregate cypress shard logs
+        shell: bash
+        run: |
+          mkdir -p builds/cypress
+          if compgen -G "builds/cypress/e2e-output-*.log" > /dev/null; then
+            for f in $(ls builds/cypress/e2e-output-*.log | sort); do
+              echo "===== $(basename "$f") ====="
+              cat "$f"
+              echo
+            done > builds/cypress/e2e-output.log
+            echo "✅ Aggregated $(ls builds/cypress/e2e-output-*.log | wc -l) shard log(s) → builds/cypress/e2e-output.log"
+          else
+            echo "⚠️ No shard logs found — index.html will be a placeholder."
+          fi
 
       - name: Download TypeDoc
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
