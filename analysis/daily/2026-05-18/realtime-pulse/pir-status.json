@@ -1,47 +1,64 @@
 {
-  "schema_version": "1.0",
   "article_date": "2026-05-18",
+  "article_type": "realtime-pulse",
   "subfolder": "realtime-pulse",
-  "generated_at": "2026-05-18T11:05:00Z",
-  "pirs": [
+  "generated_at": "2026-05-18T12:00:00Z",
+  "improvement_mode": false,
+  "pass_count": 2,
+  "pir_list": [
     {
-      "pir_id": "PIR-2026-01",
-      "title": "Tidö coalition energy coherence",
-      "description": "Will SD's persistent wind-power and energy-grid interpellations fracture coalition discipline with KD before the September 2026 election?",
-      "status": "active",
-      "priority": "medium",
-      "wep": "LIKELY managed; coalition holds",
-      "horizon": "month",
-      "evidence_docs": ["Interp:453", "Interp:448"],
-      "last_updated": "2026-05-18",
-      "carry_forward": true,
-      "carry_to": "weekly-review"
+      "id": "PIR-1",
+      "title": "Government composition and PM transition timing",
+      "priority": "HIGH",
+      "status": "gap",
+      "collection_method": "Fetch regeringen.se government composition page",
+      "required_for": ["political-landscape.md", "scenario-analysis.md"],
+      "notes": "Ebba Busch confirmed as PM from proposition signatures; transition cause/date unknown"
     },
     {
-      "pir_id": "PIR-2026-02",
-      "title": "Russian military threat posture",
-      "description": "How does Russia's Duma law on expanded military authority affect Sweden's threat environment and Nordic defence coordination?",
-      "status": "escalated",
-      "priority": "high",
-      "wep": "HIGHLY LIKELY Russian threat environment deteriorated; Swedish response expected within 30 days",
-      "horizon": "month",
-      "evidence_docs": ["HD11813", "HD11812"],
-      "last_updated": "2026-05-18",
-      "carry_forward": true,
-      "carry_to": "security-briefing"
+      "id": "PIR-2",
+      "title": "IMF WEO Sweden 2026 GDP projections",
+      "priority": "MEDIUM",
+      "status": "gap",
+      "collection_method": "npx tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 5 --persist",
+      "required_for": ["economic-context.md"],
+      "notes": "Current data vintage 2025-04 from parliamentary sources; 12 months outdated"
     },
     {
-      "pir_id": "PIR-2026-03",
-      "title": "Northern Sweden industrial infrastructure corridor",
-      "description": "Will E4 Förbifart Skellefteå PPP financing proceed or delay, affecting the northern Sweden industrial/battery corridor electoral credibility?",
-      "status": "active",
-      "priority": "high",
-      "wep": "ROUGHLY EVEN on PPP success; LIKELY S will amplify as campaign theme",
-      "horizon": "week",
-      "evidence_docs": ["HD11814"],
-      "last_updated": "2026-05-18",
-      "carry_forward": true,
-      "carry_to": "weekly-review"
+      "id": "PIR-3",
+      "title": "Migrationsverket operational capacity assessment",
+      "priority": "MEDIUM",
+      "status": "gap",
+      "collection_method": "Migrationsverket årsredovisning 2025; IT system WILMA documentation",
+      "required_for": ["risk-indicators.md", "policy-impact.md"],
+      "notes": "Risk-2 assessment based on structural inference, not direct capacity data"
+    },
+    {
+      "id": "PIR-4",
+      "title": "SfU committee hearings and reservation filing",
+      "priority": "LOW",
+      "status": "pending",
+      "collection_method": "Monitor data.riksdagen.se/utskott/SfU",
+      "required_for": ["legislative-tracker.md", "committee-tracker.md"],
+      "notes": "Hearings not yet public; bills in early referral phase"
+    },
+    {
+      "id": "PIR-5",
+      "title": "KD internal party position on abortion rights",
+      "priority": "LOW",
+      "status": "gap",
+      "collection_method": "KD party congress proceedings, KD press statements",
+      "required_for": ["political-landscape.md", "voting-analysis.md"],
+      "notes": "Internal KD dynamics not captured in Riksdag open data"
     }
-  ]
+  ],
+  "rollforward": {
+    "next_analysis_date": "2026-05-19",
+    "priority_actions": [
+      "Confirm KU34 chamber vote result",
+      "Fetch IMF WEO Sweden data",
+      "Confirm PM Busch government composition",
+      "Check SfU hearing schedule"
+    ]
+  }
 }
