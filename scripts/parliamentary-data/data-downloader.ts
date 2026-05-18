@@ -23,6 +23,7 @@ import path from 'node:path';
 import type { RawDocument } from '../data-transformers/types.js';
 import { isPersonProfileText } from '../data-transformers/helpers.js';
 import type { MCPClient } from '../mcp-client/client.js';
+import { classifyDocumentErrorAsNotIndexed } from '../mcp-client/error-classification/not-indexed.js';
 import type { MCPToolInvocationDiagnostic } from '../types/mcp.js';
 import {
   attachCoverageMetadata,
@@ -167,27 +168,16 @@ function annotateDocumentsWithCoverage(
  * Decide whether an upstream error message indicates a document-level
  * indexing gap (`not_indexed`) versus an operational failure (`fetch_error`).
  *
- * Bare `404` and bare `not found` are intentionally NOT treated as indexing
- * lag because they also occur for transport-level failures (e.g.
- * `MCP server error: 404 Not Found` from a wrong endpoint or unavailable
- * route). We require either an explicit indexing phrase, an explicit
- * document-not-found phrase, or that the error message mentions the
- * dok_id (which only happens in document-level errors from the upstream
- * MCP tool, never in transport-level outages).
+ * Thin re-export wrapper around
+ * {@link classifyDocumentErrorAsNotIndexed} from
+ * `scripts/mcp-client/error-classification/not-indexed.ts` — the single
+ * authoritative source for not-indexed pattern matching. Keeping the
+ * `isDocumentNotIndexedError` name preserves the public test API
+ * (`tests/auto-full-text-top-n.test.ts`) and lets any future
+ * pattern/regex change land in exactly one file.
  */
 export function isDocumentNotIndexedError(message: string, dokId?: string): boolean {
-  const text = message ?? '';
-  if (!text) return false;
-  const transportLike = /(mcp server error|transport error|server error|endpoint|econnrefused|etimedout|fetch failed|network|gateway|\b50[023]\b)/i.test(text);
-  if (transportLike) return false;
-  const lower = text.toLowerCase();
-  if (lower.includes('not indexed')) return true;
-  if (lower.includes('no document')) return true;
-  if (/document\s+not\s+found/.test(lower)) return true;
-  if (/dok[_\s]?id\s+not\s+found/.test(lower)) return true;
-  // "not found" only counts when paired with the specific dok_id we asked for
-  if (dokId && lower.includes(dokId.toLowerCase()) && lower.includes('not found')) return true;
-  return false;
+  return classifyDocumentErrorAsNotIndexed(message ?? '', dokId);
 }
 
 /**
