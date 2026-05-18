@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "cycle": "motions",
+  "date": "2026-05-18",
+  "subfolder": "motions",
+  "generated_at": "2026-05-18T10:00:00Z",
+  "inherited_from": null,
+  "pirs": [
+    {
+      "pir_id": "PIR-MOT-2026-05-18-001",
+      "statement": "Will Lagrådet issue a constitutional opinion finding prop. 2025/26:258 non-compliant with RF Chapter 2 (freedom of association)?",
+      "trigger": "Lagrådet opinion publication at www.lagradet.se mentioning proportionalitet or föreningsfrihet in context of prop. 2025/26:258",
+      "status": "open",
+      "confidence": "unknown",
+      "answer_summary": "Lagrådet opinion not reviewed for this analysis run. This PIR remains open and is the single highest-value intelligence gap.",
+      "evidence_refs": ["intelligence-assessment.md#KIJ-2", "risk-assessment.md#Risk-1"],
+      "horizon": "T+30",
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-18-002",
+      "statement": "Will KU committee vote to adopt, amend, or reject prop. 2025/26:258?",
+      "trigger": "KU committee report (betänkande) published by riksdagen.se",
+      "status": "open",
+      "confidence": "likely-adopt",
+      "answer_summary": "KU has a Tidö majority (~9-10 of 17 seats). We assess with HIGH confidence KU will recommend adoption. A minority report (reservationsyttrande) from S, C, and V/MP is highly probable.",
+      "evidence_refs": ["coalition-mathematics.md#KU-Committee-Arithmetic", "intelligence-assessment.md#KIJ-1"],
+      "horizon": "T+30",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-18-003",
+      "statement": "Will LO announce preemptive restructuring of collective party membership contributions for compliance with prop. 2025/26:258?",
+      "trigger": "LO press release or congress decision on political contribution restructuring",
+      "status": "open",
+      "confidence": "possible",
+      "answer_summary": "LO has strong incentive to maintain S support through any mechanism. Preemptive restructuring (rather than fighting the law) has historically been LO's pragmatic approach. Probability assessed at ~30% before election.",
+      "evidence_refs": ["intelligence-assessment.md#KIJ-4", "forward-indicators.md#FI-3"],
+      "horizon": "T+90",
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-MOT-2026-05-18-004",
+      "statement": "Will C (Centerpartiet) maintain its constitutional opposition to prop. 2025/26:258 through the September 2026 election campaign?",
+      "trigger": "C public statement or party platform release endorsing or withdrawing the HD024184 constitutional argument",
+      "status": "open",
+      "confidence": "likely",
+      "answer_summary": "C has strategic interest in maintaining this position as a coalition signal. No contrary indicators observed. PIR status: LIKELY C holds its position.",
+      "evidence_refs": ["coalition-mathematics.md#C-as-Kingmaker", "voter-segmentation.md#Segment-3"],
+      "horizon": "T+118",
+      "admiralty_grade": "B2"
+    }
+  ]
+}
