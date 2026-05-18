@@ -1,4 +1,4 @@
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"6b14d5c0b24b9fc8e4088a32464787a07aa14e62a964ac0d032de5c07faf07b5","compiler_version":"v0.74.4","agent_id":"copilot","agent_model":"claude-sonnet-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"4396d5535cc95a0b1a855d2edaff0be56c16d0119d91f84e1a6562be54a62015","compiler_version":"v0.74.4","agent_id":"copilot","agent_model":"claude-sonnet-4.6"}
 # gh-aw-manifest: {"version":1,"secrets":["COPILOT_GITHUB_TOKEN","GH_AW_CI_TRIGGER_TOKEN","GH_AW_GITHUB_MCP_SERVER_TOKEN","GH_AW_GITHUB_TOKEN","GITHUB_TOKEN","IMF_SDMX_SUBSCRIPTION_KEY"],"actions":[{"repo":"actions/cache/restore","sha":"27d5ce7f107fe9357f9df03efb73ab90386fccae","version":"v5.0.5"},{"repo":"actions/cache/save","sha":"27d5ce7f107fe9357f9df03efb73ab90386fccae","version":"v5.0.5"},{"repo":"actions/checkout","sha":"de0fac2e4500dabe0009e67214ff5f5447ce83dd","version":"v6.0.2"},{"repo":"actions/download-artifact","sha":"3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c","version":"v8.0.1"},{"repo":"actions/github-script","sha":"3a2844b7e9c422d3c10d287c895573f7108da1b3","version":"v9.0.0"},{"repo":"actions/setup-node","sha":"48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e","version":"v6.4.0"},{"repo":"actions/upload-artifact","sha":"043fb46d1a93c77aae656e7c1c64a875d1fc6a0a","version":"v7.0.1"},{"repo":"github/gh-aw-actions/setup","sha":"d3abfe96a194bce3a523ed2093ddedd5704cdf62","version":"v0.74.4"}],"containers":[{"image":"alpine:latest","digest":"sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11","pinned_image":"alpine:latest@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11"},{"image":"ghcr.io/github/gh-aw-firewall/agent:0.25.46","digest":"sha256:11c8c313d8ac37746223800ecf70962230feb12564692681e1dd57c234ee4ac1","pinned_image":"ghcr.io/github/gh-aw-firewall/agent:0.25.46@sha256:11c8c313d8ac37746223800ecf70962230feb12564692681e1dd57c234ee4ac1"},{"image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.25.46","digest":"sha256:d62d7d60883f748bd2ec6349829c3662c2533eb896328962735ee7f87cce2175","pinned_image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.25.46@sha256:d62d7d60883f748bd2ec6349829c3662c2533eb896328962735ee7f87cce2175"},{"image":"ghcr.io/github/gh-aw-firewall/squid:0.25.46","digest":"sha256:70c5b1ae3e73c0d689ca7bd4f4f8aee9e1b332206a5240629d21669824f93089","pinned_image":"ghcr.io/github/gh-aw-firewall/squid:0.25.46@sha256:70c5b1ae3e73c0d689ca7bd4f4f8aee9e1b332206a5240629d21669824f93089"},{"image":"ghcr.io/github/gh-aw-mcpg:v0.3.9","digest":"sha256:64828b42a4482f58fab16509d7f8f495a6d97c972a98a68aff20543531ac0388","pinned_image":"ghcr.io/github/gh-aw-mcpg:v0.3.9@sha256:64828b42a4482f58fab16509d7f8f495a6d97c972a98a68aff20543531ac0388"},{"image":"ghcr.io/github/github-mcp-server:v1.0.4","digest":"sha256:e3816a476a977cfb836e7d221510011436c654d11861db66ecfd826601aba6a4","pinned_image":"ghcr.io/github/github-mcp-server:v1.0.4@sha256:e3816a476a977cfb836e7d221510011436c654d11861db66ecfd826601aba6a4"},{"image":"node:26-alpine","digest":"sha256:30f5a66e7265ef70aac56b4753ffa7905e54eca1084bc25503893ad8e9273f05","pinned_image":"node:26-alpine@sha256:30f5a66e7265ef70aac56b4753ffa7905e54eca1084bc25503893ad8e9273f05"},{"image":"node:lts-alpine","digest":"sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f","pinned_image":"node:lts-alpine@sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f"}]}
 #    ___                   _   _      
 #   / _ \                 | | (_)     
@@ -22,7 +22,7 @@
 #
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
-# Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 3) sources per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract.
+# Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 2) sources per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources. The default was lowered from 3 to 2 after run [#26008347629](https://github.com/Hack23/riksdagsmonitor/actions/runs/26008347629) hit Timer A (60-min job timeout) before issuing the PR — see `07-commit-and-pr.md §Deadline enforcement`. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract.
 #
 # Resolved workflow manifest:
 #   Imports:
@@ -89,8 +89,8 @@ on:
         description: "Target languages (comma list of `sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh` | `nordic-extra` | `eu-extra` | `cjk` | `rtl` | `all-extra`). Default: all-extra (all 13 non-English languages)."
         required: false
       max_briefs:
-        default: "3"
-        description: "Maximum number of source executive-brief.md files to translate this run (range 1–7; default 3). Hard cap: 7 (keeps under safe-outputs 100-file ceiling with 13 languages = 91 files)."
+        default: "2"
+        description: "Maximum number of source executive-brief.md files to translate this run (range 1–7; default 2). Hard cap: 7 (keeps under safe-outputs 100-file ceiling with 13 languages = 91 files). Lowered from 3 to 2 after run #26008347629 hit Timer A before issuing the PR — keep this default unless you have evidence the agent is finishing well before agent minute 40."
         required: false
       subfolder:
         description: Restrict the scan to a single document type (propositions, motions, committee-reports, interpellations, evening-analysis, week-ahead, month-ahead, quarter-ahead, year-ahead, election-cycle, weekly-review, monthly-review, realtime-pulse, …). Leave empty to scan all.
@@ -223,25 +223,25 @@ jobs:
         run: |
           bash "${RUNNER_TEMP}/gh-aw/actions/create_prompt_first.sh"
           {
-          cat << 'GH_AW_PROMPT_746ab0daa55bc225_EOF'
+          cat << 'GH_AW_PROMPT_b05a9b2d79aa8717_EOF'
           <system>
-          GH_AW_PROMPT_746ab0daa55bc225_EOF
+          GH_AW_PROMPT_b05a9b2d79aa8717_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/xpia.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/temp_folder_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/markdown.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/agentic_workflows_guide.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/cache_memory_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_prompt.md"
-          cat << 'GH_AW_PROMPT_746ab0daa55bc225_EOF'
+          cat << 'GH_AW_PROMPT_b05a9b2d79aa8717_EOF'
           <safe-output-tools>
           Tools: add_comment, create_pull_request, missing_tool, missing_data, noop
-          GH_AW_PROMPT_746ab0daa55bc225_EOF
+          GH_AW_PROMPT_b05a9b2d79aa8717_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_create_pull_request.md"
-          cat << 'GH_AW_PROMPT_746ab0daa55bc225_EOF'
+          cat << 'GH_AW_PROMPT_b05a9b2d79aa8717_EOF'
           </safe-output-tools>
-          GH_AW_PROMPT_746ab0daa55bc225_EOF
+          GH_AW_PROMPT_b05a9b2d79aa8717_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/mcp_cli_tools_prompt.md"
-          cat << 'GH_AW_PROMPT_746ab0daa55bc225_EOF'
+          cat << 'GH_AW_PROMPT_b05a9b2d79aa8717_EOF'
           <github-context>
           The following GitHub context information is available for this workflow:
           {{#if github.actor}}
@@ -270,16 +270,16 @@ jobs:
           {{/if}}
           </github-context>
           
-          GH_AW_PROMPT_746ab0daa55bc225_EOF
+          GH_AW_PROMPT_b05a9b2d79aa8717_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/github_mcp_tools_with_safeoutputs_prompt.md"
-          cat << 'GH_AW_PROMPT_746ab0daa55bc225_EOF'
+          cat << 'GH_AW_PROMPT_b05a9b2d79aa8717_EOF'
           </system>
           {{#runtime-import .github/prompts/00-base-contract.md}}
           {{#runtime-import .github/prompts/01-bash-and-shell-safety.md}}
           {{#runtime-import .github/prompts/02-mcp-access.md}}
           {{#runtime-import .github/prompts/07-commit-and-pr.md}}
           {{#runtime-import .github/workflows/news-translate.md}}
-          GH_AW_PROMPT_746ab0daa55bc225_EOF
+          GH_AW_PROMPT_b05a9b2d79aa8717_EOF
           } > "$GH_AW_PROMPT"
       - name: Interpolate variables and render templates
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
@@ -443,7 +443,7 @@ jobs:
           SUBFOLDER_INPUT: ${{ github.event.inputs.subfolder }}
         id: worklist
         name: Build executive-brief translation work list
-        run: "set -euo pipefail\n# Resolve target languages.\nLANGUAGES_RAW=\"${LANGUAGES_INPUT:-all-extra}\"\ncase \"$LANGUAGES_RAW\" in\n  all-extra) LANGS=\"sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh\" ;;\n  nordic-extra) LANGS=\"sv,da,no,fi\" ;;\n  eu-extra) LANGS=\"de,fr,es,nl\" ;;\n  cjk) LANGS=\"ja,ko,zh\" ;;\n  rtl) LANGS=\"ar,he\" ;;\n  *) LANGS=\"$LANGUAGES_RAW\" ;;\nesac\necho \"Target languages: $LANGS\"\n\n# Resolve batch cap (1–7 hard range).\nMAX_BRIEFS=\"${MAX_BRIEFS_INPUT:-3}\"\nif ! [[ \"$MAX_BRIEFS\" =~ ^[1-7]$ ]]; then\n  echo \"::warning::max_briefs '$MAX_BRIEFS' out of range; clamping to 3\"\n  MAX_BRIEFS=3\nfi\necho \"Max source briefs this run: $MAX_BRIEFS\"\n\n# Discover candidate sources.\nROOT=\"analysis/daily\"\nif [ ! -d \"$ROOT\" ]; then\n  echo \"TRANSLATION_WORKLIST=\" >> \"$GITHUB_OUTPUT\"\n  echo \"No $ROOT directory — nothing to translate.\"\n  exit 0\nfi\n\nif [ -n \"${ARTICLE_DATE_INPUT:-}\" ] && [ -n \"${SUBFOLDER_INPUT:-}\" ]; then\n  SCAN_PATTERN=\"$ROOT/$ARTICLE_DATE_INPUT/$SUBFOLDER_INPUT\"\nelif [ -n \"${ARTICLE_DATE_INPUT:-}\" ]; then\n  SCAN_PATTERN=\"$ROOT/$ARTICLE_DATE_INPUT\"\nelse\n  SCAN_PATTERN=\"$ROOT\"\nfi\n\n# Build list of (date, source-path) tuples, oldest date first.\nCANDIDATES=$(find \"$SCAN_PATTERN\" -type f -name 'executive-brief.md' 2>/dev/null \\\n  | sort)\n\nif [ -z \"$CANDIDATES\" ]; then\n  echo \"TRANSLATION_WORKLIST=\" >> \"$GITHUB_OUTPUT\"\n  echo \"No executive-brief.md sources found under $SCAN_PATTERN.\"\n  exit 0\nfi\n\n# For each source, classify it as MISSING (≥1 requested language file absent\n# or empty) or DRIFT (every requested language file present but ≥1 has a\n# stale `<!-- source-sha: ... -->` trailer relative to the current source\n# commit SHA). When `force_retranslate=true`, every source with at least\n# one existing target file is reclassified as DRIFT (forces a re-pass);\n# sources missing any target stay in MISSING.\n#\n# Selection policy (greenfield-first):\n#   1. Fill `MAX_BRIEFS` batch slots with MISSING sources, oldest date first\n#      (159-source backlog is drained before any drift-fix work).\n#   2. Only if MISSING is empty after the scan, fill remaining slots with\n#      DRIFT sources, oldest date first.\n# This guarantees runs never \"redo already-translated briefs\" while the\n# untranslated backlog still has work — see PR description for context.\nMISSING=()\nDRIFT=()\nIFS=',' read -ra LANG_LIST <<< \"$LANGS\"\nwhile IFS= read -r SRC; do\n  [ -n \"$SRC\" ] || continue\n  DIR=$(dirname \"$SRC\")\n  SRC_SHA=$(git log -1 --format=%H -- \"$SRC\" 2>/dev/null || echo \"\")\n  HAS_MISSING=0\n  HAS_DRIFT=0\n  for L in \"${LANG_LIST[@]}\"; do\n    TGT=\"$DIR/executive-brief_${L}.md\"\n    if [ ! -s \"$TGT\" ]; then\n      HAS_MISSING=1\n      continue\n    fi\n    if [ -n \"$SRC_SHA\" ] && ! grep -q \"<!-- source-sha: $SRC_SHA -->\" \"$TGT\" 2>/dev/null; then\n      HAS_DRIFT=1\n    fi\n  done\n  if [ \"$HAS_MISSING\" -eq 1 ]; then\n    MISSING+=(\"$SRC\")\n  elif [ \"${FORCE_RETRANSLATE:-false}\" = \"true\" ] || [ \"$HAS_DRIFT\" -eq 1 ]; then\n    DRIFT+=(\"$SRC\")\n  fi\ndone <<< \"$CANDIDATES\"\n\nMISSING_COUNT=\"${#MISSING[@]}\"\nDRIFT_COUNT=\"${#DRIFT[@]}\"\necho \"Backlog classification: MISSING=$MISSING_COUNT  DRIFT=$DRIFT_COUNT\"\n\n# Fill batch: MISSING first (greenfield), DRIFT only if capacity remains.\nWORK=()\nfor SRC in \"${MISSING[@]}\"; do\n  WORK+=(\"$SRC\")\n  if [ \"${#WORK[@]}\" -ge \"$MAX_BRIEFS\" ]; then break; fi\ndone\nif [ \"${#WORK[@]}\" -lt \"$MAX_BRIEFS\" ]; then\n  for SRC in \"${DRIFT[@]}\"; do\n    WORK+=(\"$SRC\")\n    if [ \"${#WORK[@]}\" -ge \"$MAX_BRIEFS\" ]; then break; fi\n  done\nfi\n\nif [ \"${#WORK[@]}\" -eq 0 ]; then\n  echo \"TRANSLATION_WORKLIST=\" >> \"$GITHUB_OUTPUT\"\n  echo \"MISSING_COUNT=$MISSING_COUNT\" >> \"$GITHUB_OUTPUT\"\n  echo \"DRIFT_COUNT=$DRIFT_COUNT\" >> \"$GITHUB_OUTPUT\"\n  echo \"All discovered sources are up to date for the requested languages.\"\n  exit 0\nfi\n\n# Categorise the chosen batch for the log line: how many slots were filled\n# with greenfield (MISSING) vs drift-fix (DRIFT) work.\nWORK_MISSING=0\nWORK_DRIFT=0\nfor SRC in \"${WORK[@]}\"; do\n  for M in \"${MISSING[@]:-}\"; do\n    if [ \"$M\" = \"$SRC\" ]; then WORK_MISSING=$((WORK_MISSING+1)); continue 2; fi\n  done\n  WORK_DRIFT=$((WORK_DRIFT+1))\ndone\n\nprintf '%s\\n' \"${WORK[@]}\" > /tmp/exec-brief-worklist.txt\nWORKLIST_JOINED=$(printf '%s\\n' \"${WORK[@]}\" | paste -sd ',' -)\necho \"TRANSLATION_WORKLIST=$WORKLIST_JOINED\" >> \"$GITHUB_OUTPUT\"\necho \"TRANSLATION_LANGS=$LANGS\" >> \"$GITHUB_OUTPUT\"\necho \"MAX_BRIEFS=$MAX_BRIEFS\" >> \"$GITHUB_OUTPUT\"\necho \"MISSING_COUNT=$MISSING_COUNT\" >> \"$GITHUB_OUTPUT\"\necho \"DRIFT_COUNT=$DRIFT_COUNT\" >> \"$GITHUB_OUTPUT\"\necho \"✅ Selected ${#WORK[@]} source brief(s) for translation into [$LANGS]\"\necho \"   (greenfield=$WORK_MISSING / drift-fix=$WORK_DRIFT;  total backlog: MISSING=$MISSING_COUNT DRIFT=$DRIFT_COUNT)\"\nprintf '   %s\\n' \"${WORK[@]}\"\n"
+        run: "set -euo pipefail\n# Resolve target languages.\nLANGUAGES_RAW=\"${LANGUAGES_INPUT:-all-extra}\"\ncase \"$LANGUAGES_RAW\" in\n  all-extra) LANGS=\"sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh\" ;;\n  nordic-extra) LANGS=\"sv,da,no,fi\" ;;\n  eu-extra) LANGS=\"de,fr,es,nl\" ;;\n  cjk) LANGS=\"ja,ko,zh\" ;;\n  rtl) LANGS=\"ar,he\" ;;\n  *) LANGS=\"$LANGUAGES_RAW\" ;;\nesac\necho \"Target languages: $LANGS\"\n\n# Resolve batch cap (1–7 hard range).\nMAX_BRIEFS=\"${MAX_BRIEFS_INPUT:-2}\"\nif ! [[ \"$MAX_BRIEFS\" =~ ^[1-7]$ ]]; then\n  echo \"::warning::max_briefs '$MAX_BRIEFS' out of range; clamping to 2\"\n  MAX_BRIEFS=2\nfi\necho \"Max source briefs this run: $MAX_BRIEFS\"\n\n# Discover candidate sources.\nROOT=\"analysis/daily\"\nif [ ! -d \"$ROOT\" ]; then\n  echo \"TRANSLATION_WORKLIST=\" >> \"$GITHUB_OUTPUT\"\n  echo \"No $ROOT directory — nothing to translate.\"\n  exit 0\nfi\n\nif [ -n \"${ARTICLE_DATE_INPUT:-}\" ] && [ -n \"${SUBFOLDER_INPUT:-}\" ]; then\n  SCAN_PATTERN=\"$ROOT/$ARTICLE_DATE_INPUT/$SUBFOLDER_INPUT\"\nelif [ -n \"${ARTICLE_DATE_INPUT:-}\" ]; then\n  SCAN_PATTERN=\"$ROOT/$ARTICLE_DATE_INPUT\"\nelse\n  SCAN_PATTERN=\"$ROOT\"\nfi\n\n# Build list of (date, source-path) tuples, oldest date first.\nCANDIDATES=$(find \"$SCAN_PATTERN\" -type f -name 'executive-brief.md' 2>/dev/null \\\n  | sort)\n\nif [ -z \"$CANDIDATES\" ]; then\n  echo \"TRANSLATION_WORKLIST=\" >> \"$GITHUB_OUTPUT\"\n  echo \"No executive-brief.md sources found under $SCAN_PATTERN.\"\n  exit 0\nfi\n\n# For each source, classify it as MISSING (≥1 requested language file absent\n# or empty) or DRIFT (every requested language file present but ≥1 has a\n# stale `<!-- source-sha: ... -->` trailer relative to the current source\n# commit SHA). When `force_retranslate=true`, every source with at least\n# one existing target file is reclassified as DRIFT (forces a re-pass);\n# sources missing any target stay in MISSING.\n#\n# Selection policy (greenfield-first):\n#   1. Fill `MAX_BRIEFS` batch slots with MISSING sources, oldest date first\n#      (159-source backlog is drained before any drift-fix work).\n#   2. Only if MISSING is empty after the scan, fill remaining slots with\n#      DRIFT sources, oldest date first.\n# This guarantees runs never \"redo already-translated briefs\" while the\n# untranslated backlog still has work — see PR description for context.\nMISSING=()\nDRIFT=()\nIFS=',' read -ra LANG_LIST <<< \"$LANGS\"\nwhile IFS= read -r SRC; do\n  [ -n \"$SRC\" ] || continue\n  DIR=$(dirname \"$SRC\")\n  SRC_SHA=$(git log -1 --format=%H -- \"$SRC\" 2>/dev/null || echo \"\")\n  HAS_MISSING=0\n  HAS_DRIFT=0\n  for L in \"${LANG_LIST[@]}\"; do\n    TGT=\"$DIR/executive-brief_${L}.md\"\n    if [ ! -s \"$TGT\" ]; then\n      HAS_MISSING=1\n      continue\n    fi\n    if [ -n \"$SRC_SHA\" ] && ! grep -q \"<!-- source-sha: $SRC_SHA -->\" \"$TGT\" 2>/dev/null; then\n      HAS_DRIFT=1\n    fi\n  done\n  if [ \"$HAS_MISSING\" -eq 1 ]; then\n    MISSING+=(\"$SRC\")\n  elif [ \"${FORCE_RETRANSLATE:-false}\" = \"true\" ] || [ \"$HAS_DRIFT\" -eq 1 ]; then\n    DRIFT+=(\"$SRC\")\n  fi\ndone <<< \"$CANDIDATES\"\n\nMISSING_COUNT=\"${#MISSING[@]}\"\nDRIFT_COUNT=\"${#DRIFT[@]}\"\necho \"Backlog classification: MISSING=$MISSING_COUNT  DRIFT=$DRIFT_COUNT\"\n\n# Fill batch: MISSING first (greenfield), DRIFT only if capacity remains.\nWORK=()\nfor SRC in \"${MISSING[@]}\"; do\n  WORK+=(\"$SRC\")\n  if [ \"${#WORK[@]}\" -ge \"$MAX_BRIEFS\" ]; then break; fi\ndone\nif [ \"${#WORK[@]}\" -lt \"$MAX_BRIEFS\" ]; then\n  for SRC in \"${DRIFT[@]}\"; do\n    WORK+=(\"$SRC\")\n    if [ \"${#WORK[@]}\" -ge \"$MAX_BRIEFS\" ]; then break; fi\n  done\nfi\n\nif [ \"${#WORK[@]}\" -eq 0 ]; then\n  echo \"TRANSLATION_WORKLIST=\" >> \"$GITHUB_OUTPUT\"\n  echo \"MISSING_COUNT=$MISSING_COUNT\" >> \"$GITHUB_OUTPUT\"\n  echo \"DRIFT_COUNT=$DRIFT_COUNT\" >> \"$GITHUB_OUTPUT\"\n  echo \"All discovered sources are up to date for the requested languages.\"\n  exit 0\nfi\n\n# Categorise the chosen batch for the log line: how many slots were filled\n# with greenfield (MISSING) vs drift-fix (DRIFT) work.\nWORK_MISSING=0\nWORK_DRIFT=0\nfor SRC in \"${WORK[@]}\"; do\n  for M in \"${MISSING[@]:-}\"; do\n    if [ \"$M\" = \"$SRC\" ]; then WORK_MISSING=$((WORK_MISSING+1)); continue 2; fi\n  done\n  WORK_DRIFT=$((WORK_DRIFT+1))\ndone\n\nprintf '%s\\n' \"${WORK[@]}\" > /tmp/exec-brief-worklist.txt\nWORKLIST_JOINED=$(printf '%s\\n' \"${WORK[@]}\" | paste -sd ',' -)\necho \"TRANSLATION_WORKLIST=$WORKLIST_JOINED\" >> \"$GITHUB_OUTPUT\"\necho \"TRANSLATION_LANGS=$LANGS\" >> \"$GITHUB_OUTPUT\"\necho \"MAX_BRIEFS=$MAX_BRIEFS\" >> \"$GITHUB_OUTPUT\"\necho \"MISSING_COUNT=$MISSING_COUNT\" >> \"$GITHUB_OUTPUT\"\necho \"DRIFT_COUNT=$DRIFT_COUNT\" >> \"$GITHUB_OUTPUT\"\necho \"✅ Selected ${#WORK[@]} source brief(s) for translation into [$LANGS]\"\necho \"   (greenfield=$WORK_MISSING / drift-fix=$WORK_DRIFT;  total backlog: MISSING=$MISSING_COUNT DRIFT=$DRIFT_COUNT)\"\nprintf '   %s\\n' \"${WORK[@]}\"\n"
 
       # Cache memory file share configuration from frontmatter processed below
       - name: Create cache-memory directory
@@ -554,9 +554,9 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/gh-aw/safeoutputs"
           mkdir -p /tmp/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/mcp-logs/safeoutputs
-          cat > "${RUNNER_TEMP}/gh-aw/safeoutputs/config.json" << 'GH_AW_SAFE_OUTPUTS_CONFIG_8588129071a96785_EOF'
+          cat > "${RUNNER_TEMP}/gh-aw/safeoutputs/config.json" << 'GH_AW_SAFE_OUTPUTS_CONFIG_a6b3395dc7ec9b64_EOF'
           {"add_comment":{"max":1},"create_pull_request":{"draft":false,"expires":336,"fallback_as_issue":true,"if_no_changes":"warn","labels":["agentic-news","translation","executive-brief"],"max":1,"max_patch_files":100,"max_patch_size":10240,"protect_top_level_dot_folders":true,"protected_files":["package.json","bun.lockb","bunfig.toml","deno.json","deno.jsonc","deno.lock","global.json","NuGet.Config","Directory.Packages.props","mix.exs","mix.lock","go.mod","go.sum","stack.yaml","stack.yaml.lock","pom.xml","build.gradle","build.gradle.kts","settings.gradle","settings.gradle.kts","gradle.properties","package-lock.json","yarn.lock","pnpm-lock.yaml","npm-shrinkwrap.json","requirements.txt","Pipfile","Pipfile.lock","pyproject.toml","setup.py","setup.cfg","Gemfile","Gemfile.lock","uv.lock","CODEOWNERS","DESIGN.md","README.md","CONTRIBUTING.md","CHANGELOG.md","SECURITY.md","CODE_OF_CONDUCT.md","AGENTS.md","CLAUDE.md","GEMINI.md"],"protected_files_policy":"allowed"},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"true"},"report_incomplete":{}}
-          GH_AW_SAFE_OUTPUTS_CONFIG_8588129071a96785_EOF
+          GH_AW_SAFE_OUTPUTS_CONFIG_a6b3395dc7ec9b64_EOF
       - name: Generate Safe Outputs Tools
         env:
           GH_AW_TOOLS_META_JSON: |
@@ -793,7 +793,7 @@ jobs:
           
           mkdir -p /home/runner/.copilot
           GH_AW_NODE=$(which node 2>/dev/null || command -v node 2>/dev/null || echo node)
-          cat << GH_AW_MCP_CONFIG_da1085fcba507d9d_EOF | "$GH_AW_NODE" "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.cjs"
+          cat << GH_AW_MCP_CONFIG_e23d7e6e01ca9557_EOF | "$GH_AW_NODE" "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.cjs"
           {
             "mcpServers": {
               "agenticworkflows": {
@@ -909,7 +909,7 @@ jobs:
               "payloadDir": "${MCP_GATEWAY_PAYLOAD_DIR}"
             }
           }
-          GH_AW_MCP_CONFIG_da1085fcba507d9d_EOF
+          GH_AW_MCP_CONFIG_e23d7e6e01ca9557_EOF
       - name: Mount MCP servers as CLIs
         id: mount-mcp-clis
         continue-on-error: true
@@ -1396,7 +1396,7 @@ jobs:
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
           WORKFLOW_NAME: "News: Translate Executive Briefs"
-          WORKFLOW_DESCRIPTION: "Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 3) sources per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract."
+          WORKFLOW_DESCRIPTION: "Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 2) sources per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources. The default was lowered from 3 to 2 after run [#26008347629](https://github.com/Hack23/riksdagsmonitor/actions/runs/26008347629) hit Timer A (60-min job timeout) before issuing the PR — see `07-commit-and-pr.md §Deadline enforcement`. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract."
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |
