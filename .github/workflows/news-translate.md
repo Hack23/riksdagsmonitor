@@ -1,6 +1,6 @@
 ---
 name: "News: Translate Executive Briefs"
-description: Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 3) sources per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract.
+description: Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 2) sources per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources. The default was lowered from 3 to 2 after run [#26008347629](https://github.com/Hack23/riksdagsmonitor/actions/runs/26008347629) hit Timer A (60-min job timeout) before issuing the PR — see `07-commit-and-pr.md §Deadline enforcement`. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -26,9 +26,9 @@ on:
         required: false
         default: all-extra
       max_briefs:
-        description: 'Maximum number of source executive-brief.md files to translate this run (range 1–7; default 3). Hard cap: 7 (keeps under safe-outputs 100-file ceiling with 13 languages = 91 files).'
+        description: 'Maximum number of source executive-brief.md files to translate this run (range 1–7; default 2). Hard cap: 7 (keeps under safe-outputs 100-file ceiling with 13 languages = 91 files). Lowered from 3 to 2 after run #26008347629 hit Timer A before issuing the PR — keep this default unless you have evidence the agent is finishing well before agent minute 40.'
         required: false
-        default: '3'
+        default: '2'
       force_retranslate:
         description: 'When true, ignore the `<!-- source-sha: ... -->` drift check and re-translate every matching source. Use sparingly — drains the safe-outputs file budget fast.'
         required: false
@@ -303,10 +303,10 @@ steps:
       echo "Target languages: $LANGS"
 
       # Resolve batch cap (1–7 hard range).
-      MAX_BRIEFS="${MAX_BRIEFS_INPUT:-3}"
+      MAX_BRIEFS="${MAX_BRIEFS_INPUT:-2}"
       if ! [[ "$MAX_BRIEFS" =~ ^[1-7]$ ]]; then
-        echo "::warning::max_briefs '$MAX_BRIEFS' out of range; clamping to 3"
-        MAX_BRIEFS=3
+        echo "::warning::max_briefs '$MAX_BRIEFS' out of range; clamping to 2"
+        MAX_BRIEFS=2
       fi
       echo "Max source briefs this run: $MAX_BRIEFS"
 
@@ -436,21 +436,23 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 
 ## Pipeline
 
-1. The `Build executive-brief translation work list` pre-flight step has already populated `steps.worklist.outputs.TRANSLATION_WORKLIST` (comma-separated repo-relative paths), `TRANSLATION_LANGS` (comma-separated language codes), `MAX_BRIEFS` (1–7), and the audit counters `MISSING_COUNT` / `DRIFT_COUNT`. The selector is **greenfield-first**: sources with one or more missing target files (`MISSING`) always win the `max_briefs` batch slots over sources that only need drift-fixes (`DRIFT`); `DRIFT` is only consulted when `MISSING` is empty. If `TRANSLATION_WORKLIST` is empty (so `MISSING_COUNT=0` **and** `DRIFT_COUNT=0`), nothing is pending — proceed to improvement-mode (re-validate every existing translation against the current `<!-- source-sha: ... -->` trailer and fix any drift the validator flags). If still nothing changes after improvement-mode, follow `07-commit-and-pr.md §No-op policy`.
-2. For each source path in `TRANSLATION_WORKLIST`:
+1. **Wall-clock checkpoint (mandatory)** — as the **very first bash call** in this run, record `JOB_START=$(date +%s)` and export it. After every source completes Pass 2, re-read `NOW=$(date +%s)` and compute `ELAPSED_MIN=$(( (NOW - JOB_START) / 60 ))`; print it. If `ELAPSED_MIN >= 35`, stop selecting new sources and proceed directly to the validate → stage → commit → `safeoutputs___create_pull_request` flow regardless of remaining `TRANSLATION_WORKLIST` entries. If `ELAPSED_MIN >= 42`, **halt all translation work immediately** and execute the [`07-commit-and-pr.md §Emergency deadline order of operations`](../prompts/07-commit-and-pr.md) bash block to ship a partial PR before Timer A (60-min job `timeout-minutes`) and Timer B (~60-min Copilot API session) fire. A partial PR is always better than zero output — see the run-#26008347629 incident that lowered the default `max_briefs` from 3 to 2.
+2. The `Build executive-brief translation work list` pre-flight step has already populated `steps.worklist.outputs.TRANSLATION_WORKLIST` (comma-separated repo-relative paths), `TRANSLATION_LANGS` (comma-separated language codes), `MAX_BRIEFS` (1–7), and the audit counters `MISSING_COUNT` / `DRIFT_COUNT`. The selector is **greenfield-first**: sources with one or more missing target files (`MISSING`) always win the `max_briefs` batch slots over sources that only need drift-fixes (`DRIFT`); `DRIFT` is only consulted when `MISSING` is empty. If `TRANSLATION_WORKLIST` is empty (so `MISSING_COUNT=0` **and** `DRIFT_COUNT=0`), nothing is pending — proceed to improvement-mode (re-validate every existing translation against the current `<!-- source-sha: ... -->` trailer and fix any drift the validator flags). If still nothing changes after improvement-mode, follow `07-commit-and-pr.md §No-op policy`.
+3. For each source path in `TRANSLATION_WORKLIST`:
    1. **Pass 1 — translate**: Read the source `executive-brief.md` in full. For every language in `TRANSLATION_LANGS`, produce `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` following the TRANSLATION_GUIDE rules. Preserve every verbatim block (YAML, HTML comments except `source-sha`, `dok_id` codes, Mermaid DSL bodies, code fences, URLs, file paths, evidence-anchor canonical column values). Translate every always-translate block (prose, headings, list items, table cell text, image alt-text, BLUF, decisions, link text).
    2. **Pass 2 — read-back & refine**: Read every translation back in full. Verify structural parity (heading / fence / table / Mermaid counts match source ±0). Verify dok_id and URL set equality. Verify no banned English phrases remain in non-English files (`Executive Brief`, `Decisions`, `Confidence`, `BLUF`, …). Tighten tone register for the target language using the per-language guidance in TRANSLATION_GUIDE. For `ar` and `he`, ensure the file starts with `<!-- dir: rtl -->`.
    3. **Append the source-revision marker**: compute `SRC_SHA=$(git log -1 --format=%H -- <source>)` in the runtime shell. Append `<!-- source-sha: $SRC_SHA -->` as the last non-empty line of every translation file. This is the drift signal future runs use to decide whether to retranslate.
    4. **Validate**: run `npx tsx scripts/validate-executive-brief-translations.ts --source <source>` (when available) or fall back to the structural sanity checks listed in TRANSLATION_GUIDE §Acceptance checklist. Fix any failures by re-translating the offending language; do not commit a file that fails validation.
-3. Stage every newly written / refreshed `executive-brief_<lang>.md` file. **Do not** touch `executive-brief.md` itself, any HTML under `news/`, any file under `analysis/daily/*/article.md`, or any non-translation file.
-4. Call `safeoutputs___create_pull_request` **exactly once** covering the whole batch. The branch prefix `news/translate/briefs/` is enforced by the safe-outputs config (`07-commit-and-pr.md`).
+   5. **Re-evaluate the wall-clock checkpoint** (from step 1) before starting the next source. Never start a new source after `ELAPSED_MIN >= 35`.
+4. Stage every newly written / refreshed `executive-brief_<lang>.md` file. **Do not** touch `executive-brief.md` itself, any HTML under `news/`, any file under `analysis/daily/*/article.md`, or any non-translation file.
+5. Call `safeoutputs___create_pull_request` **exactly once** covering the whole batch, **by agent minute 42 at the latest** (hard deadline 45 per `07-commit-and-pr.md §Deadline enforcement`). The branch prefix `news/translate/briefs/` is enforced by the safe-outputs config (`07-commit-and-pr.md`).
 
 ## Inputs
 
 - `article_date` — optional. Restrict scanning to a single date folder.
 - `subfolder` — optional. Restrict scanning to a single document type folder.
 - `languages` — default `all-extra` (= `sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh`). Aliases: `nordic-extra`, `eu-extra`, `cjk`, `rtl`, `all-extra`. Comma list also accepted.
-- `max_briefs` — default `3`, range `1–7`. Caps the number of **source** files processed in this run; total file output = `max_briefs × |languages|` (≤ 91 for the default 13-language target, safely under the 100-file safe-outputs cap).
+- `max_briefs` — default `2`, range `1–7`. Caps the number of **source** files processed in this run; total file output = `max_briefs × |languages|` (≤ 91 for the default 13-language target, safely under the 100-file safe-outputs cap). The default was lowered from 3 to 2 after run #26008347629 hit Timer A before issuing the PR.
 - `force_retranslate` — default `false`. When `true`, every requested language is rewritten even if the `<!-- source-sha: -->` marker matches.
 - `analysis_depth` — default `standard`. Echoed into the validator output for parity with content workflows; does not change translation behaviour.
 
@@ -461,19 +463,19 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 | Average source size | ~650 words (range 232–2040) | `wc -w` over `analysis/daily/**/executive-brief.md` |
 | Per-language Pass 1 + Pass 2 wall time | ~60–90 s | Sonnet-class translation budget |
 | Per-source wall time (13 languages, sequential) | ~13–20 min | derived |
-| Default `max_briefs` | 3 sources | fits 35-min translation window + 5-min validation + 5-min commit/PR |
-| Per-run file output | 3 × 13 = **39 files** | well under safe-outputs `max-patch-files: 100` |
-| Daily throughput (3 runs) | up to 9 sources / **117 files** | matches steady-state production by per-type workflows |
-| Current backlog drain (≥159 untranslated sources) | ~18 days at default settings, greenfield-first | linear |
+| Default `max_briefs` | 2 sources | fits ~32-min translation window + 4-min validation + 4-min commit/PR within agent minute 42 PR deadline |
+| Per-run file output | 2 × 13 = **26 files** | well under safe-outputs `max-patch-files: 100` |
+| Daily throughput (3 runs) | up to 6 sources / **78 files** | matches steady-state production by per-type workflows |
+| Current backlog drain (≥159 untranslated sources) | ~27 days at default settings, greenfield-first | linear |
 
-If a run is behind schedule at agent minute 30 with translations still pending, the agent MUST trim `max_briefs` downward (drop the last selected source) rather than skip Pass 2 — quality over completeness. A partial PR is always better than missing Timer A (job `timeout-minutes: 60`).
+If a run is behind schedule at agent minute 30 with translations still pending, the agent MUST trim `max_briefs` downward (drop the last selected source) rather than skip Pass 2 — quality over completeness. A partial PR is always better than missing Timer A (job `timeout-minutes: 60`). The default `max_briefs=2` was set after run [#26008347629](https://github.com/Hack23/riksdagsmonitor/actions/runs/26008347629) timed out at exactly minute 60 with `max_briefs=3` before ever calling `safeoutputs___create_pull_request`.
 
 ## Rules specific to this workflow
 
 - **Never** generate original analysis or write files outside `analysis/daily/**/executive-brief_<lang>.md`.
 - **Never** modify the English source `executive-brief.md` — it is owned by per-type news workflows.
 - **Validate every translation** with `scripts/validate-executive-brief-translations.ts` before commit. Re-translate (do not commit) any file that fails.
-- Keep the PR under the safe-outputs 100-file cap. The default `max_briefs=3` × 13 languages = 39 files leaves ample headroom; the hard cap `max_briefs=7` × 13 = 91 stays under 100.
+- Keep the PR under the safe-outputs 100-file cap. The default `max_briefs=2` × 13 languages = 26 files leaves ample headroom; the hard cap `max_briefs=7` × 13 = 91 stays under 100. The previous default of 3 was reduced after run [#26008347629](https://github.com/Hack23/riksdagsmonitor/actions/runs/26008347629) hit Timer A (60-min job timeout) before the PR call.
 - **Per-language idempotency, not workflow-level no-op**:
   - The pre-flight selector is **greenfield-first**: it classifies every candidate source as `MISSING` (≥1 requested language file absent or empty) or `DRIFT` (every requested language file present but ≥1 has a stale `<!-- source-sha: -->` trailer), then fills the `max_briefs` batch slots with `MISSING` sources oldest-first and only falls back to `DRIFT` once `MISSING` is empty. Drift-fix work **never** displaces an untranslated brief while the backlog still has missing files.
   - A target language is skipped *for that language only* when **all three** hold:
@@ -485,17 +487,17 @@ If a run is behind schedule at agent minute 30 with translations still pending, 
 
 ## Time budget
 
-> 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. The operative constraint is Timer A (job `timeout-minutes: 60`) and Timer B (~60-min Copilot API session). See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`.
+> 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. The operative constraint is Timer A (job `timeout-minutes: 60`) and Timer B (~60-min Copilot API session). See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`. The default `max_briefs=2` is sized so the run finishes Pass 2 with margin to spare — exceeding it risks repeating run #26008347629 (Timer A expiry at exactly minute 60, no PR).
 
-**Single run** (target ~40 agent minutes in a 60-min job, hard deadline 45 agent minutes for the PR call):
+**Single run** (target ~36–40 agent minutes in a 60-min job, hard deadline 45 agent minutes for the PR call):
 
 | Minutes | Phase |
 |---------|-------|
-| 0–3 | MCP pre-warm; work-list resolved from `steps.worklist.outputs.TRANSLATION_WORKLIST` |
+| 0–3 | MCP pre-warm; work-list resolved from `steps.worklist.outputs.TRANSLATION_WORKLIST`; record `JOB_START=$(date +%s)` |
 | 3–5 | Read TRANSLATION_GUIDE §Executive Brief Markdown Translations + selected sources |
-| 5–32 | Pass 1 + Pass 2 translation × `max_briefs` sources × all requested languages |
+| 5–32 | Pass 1 + Pass 2 translation × `max_briefs` sources × all requested languages; re-evaluate `ELAPSED_MIN` after every source and stop selecting new sources once `ELAPSED_MIN >= 35` |
 | 32–38 | Final validation with `scripts/validate-executive-brief-translations.ts`; append `<!-- source-sha: -->` trailers; stage scoped files |
-| 38–42 | **One** `safeoutputs___create_pull_request` call — **HARD DEADLINE agent minute 45** |
+| 38–42 | **One** `safeoutputs___create_pull_request` call — **HARD DEADLINE agent minute 45**; if `ELAPSED_MIN >= 42` at any point, switch to the `07-commit-and-pr.md §Emergency deadline order of operations` bash block immediately |
 
 If the batch cannot finish under this budget, commit the translations completed so far and call `safeoutputs___create_pull_request` with label `partial`; the next scheduled run picks up the remaining work. A partial PR is always better than losing the whole batch to Timer A.
 
