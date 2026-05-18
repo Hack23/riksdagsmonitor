@@ -31,7 +31,9 @@ jobs:
   build:
     name: Build for News Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # Bumped from 10 → 15 after a 10m cancellation on this PR
+    # (Test News build job in run #26052744369).
+    timeout-minutes: 15
     
     steps:
       - name: Harden Runner
@@ -52,7 +54,7 @@ jobs:
             .github/workflows/test-news.yml
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit --no-fund
       
       - name: Build with Vite
         # The static-pages-emit plugin (scripts/vite-plugin-static-
@@ -82,14 +84,10 @@ jobs:
     container:
       image: cypress/browsers:latest
       options: --user root
-    strategy:
-      fail-fast: true # Stop immediately on failure
-      matrix:
-        spec:
-          - 'cypress/e2e/news-page.cy.js'
-          - 'cypress/e2e/news-articles.cy.js'
-          - 'cypress/e2e/sitemap.cy.js'
-    
+
+    # All three news/sitemap specs run in a single Cypress invocation
+    # (was a 3-way matrix). See test-dashboard.yml for rationale.
+
     steps:
       # NOTE: step-security/harden-runner is host-level and is not
       # compatible with container jobs, so this job runs WITHOUT
@@ -97,10 +95,10 @@ jobs:
       # version determinism. The harden-runner build job above still
       # gates the artifacts this job consumes, but does not enforce
       # outbound restrictions for this job at runtime.
-      
+
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
@@ -109,37 +107,38 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             .github/workflows/test-news.yml
-      
+
       - name: Install dependencies
-        run: npm ci
-      
+        run: npm ci --prefer-offline --no-audit --no-fund
+
       - name: Download build artifacts
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: news-build
           path: dist/
-      
-      - name: Run Cypress tests
+
+      - name: Run Cypress tests (news + sitemap)
         uses: cypress-io/github-action@dace029018fcdf86e0df89a31bc3cfa5b32570d8 # v7.3.0
         with:
           start: npm run preview
           wait-on: 'http://localhost:4173'
           wait-on-timeout: 30
           browser: chrome
-          spec: ${{ matrix.spec }}
+          spec: 'cypress/e2e/news-page.cy.js,cypress/e2e/news-articles.cy.js,cypress/e2e/sitemap.cy.js'
           config: video=false
           quiet: true
           # Skip the action's bundled `npm install` — we already ran
           # `npm ci` above and the container ships browsers preinstalled.
           install: false
-      
+
       - name: Archive screenshots
         if: failure()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: news-screenshots-${{ strategy.job-index }}
+          name: news-screenshots
           path: cypress/screenshots/
           retention-days: 7
+          if-no-files-found: ignore
   
   summary:
     name: News Test Summary

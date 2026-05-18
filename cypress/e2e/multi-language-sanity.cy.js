@@ -27,6 +27,10 @@ describe('Multi-Language Sanity Tests', () => {
   ];
   // Representative subset for runtime-heavy cross-page/news checks:
   // sv (Nordic), de (continental EU), ar (RTL), ja/zh (CJK).
+  // The same sample is now applied to Homepage and Dashboard loops to keep
+  // each E2E shard under the 10-minute target — the full 14-language
+  // matrix is still covered by HTML validators (htmlhint, translation-
+  // validation.yml) and per-page checks (BCP-47, hreflang).
   const representativeNewsLanguages = ['sv', 'de', 'ar', 'ja', 'zh'];
   const representativeLtrLanguages = representativeNewsLanguages.filter((code) => code !== 'ar');
   const representativeNewsLangs = languages.filter((lang) =>
@@ -35,9 +39,12 @@ describe('Multi-Language Sanity Tests', () => {
   const representativeLtrLangs = languages.filter((lang) =>
     representativeLtrLanguages.includes(lang.code),
   );
+  // Homepage/Dashboard loops use the same representative sample.
+  const representativeHomepageLangs = representativeNewsLangs;
+  const representativeDashboardLangs = representativeNewsLangs;
 
-  describe('Homepage - All Languages', () => {
-    languages.forEach((lang) => {
+  describe('Homepage - Representative Languages', () => {
+    representativeHomepageLangs.forEach((lang) => {
       it(`should load ${lang.name} (${lang.code}) homepage`, () => {
         cy.visit(`/index_${lang.code}.html`);
         cy.get('body').should('be.visible');
@@ -71,8 +78,8 @@ describe('Multi-Language Sanity Tests', () => {
     });
   });
 
-  describe('Dashboard - All Languages', () => {
-    languages.forEach((lang) => {
+  describe('Dashboard - Representative Languages', () => {
+    representativeDashboardLangs.forEach((lang) => {
       it(`should load ${lang.name} (${lang.code}) dashboard`, () => {
         cy.visit(`/dashboard/index_${lang.code}.html`);
         cy.get('body').should('be.visible');

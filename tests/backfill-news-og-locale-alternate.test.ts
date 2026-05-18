@@ -17,7 +17,7 @@ import {
   OG_LOCALE,
   backfillHtml,
   type Language,
-} from '../scripts/backfill-news-og-locale-alternate.ts';
+} from '../scripts/backfill-news-og-locale-alternate';
 
 const HEAD_BEFORE = `<!DOCTYPE html>
 <html lang="LANG">
