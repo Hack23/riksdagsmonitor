@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: election-cycle
 slug: 2026-05-04-election-cycle
 source_folder: analysis/daily/2026-05-04/election-cycle
-generated_at: 2026-05-18T18:05:51.575Z
+generated_at: 2026-05-18T15:34:47.962Z
 language: en
 layout: article
 ---
