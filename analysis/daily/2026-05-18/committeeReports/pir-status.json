@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-18T12:00:00Z",
+  "article_date": "2026-05-18",
+  "article_type": "committee-reports",
+  "subfolder": "committeeReports",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Legislative Tracking",
+      "question": "What committee reports are advancing to plenary, and what legislative change do they propose?",
+      "status": "ANSWERED",
+      "confidence": "HIGH",
+      "answer_summary": "HD01KU35 (KU) advances Proposition 2025/26:164 unanimously — amends Kommunallagen for digital meeting chairperson verification and private operator annual oversight reporting; effective 1 July 2026",
+      "collection_method": "riksdag-regering MCP: get_betankanden + get_dokument_innehall",
+      "key_judgments": ["KJ-1"],
+      "forward_indicator": "FI-01 (plenary vote)"
+    },
+    {
+      "id": "PIR-2",
+      "title": "Voting Patterns",
+      "question": "Were there party divisions or reservations in committee?",
+      "status": "ANSWERED",
+      "confidence": "HIGH",
+      "answer_summary": "Unanimous all-party support in KU (all 8 parties). No reservations filed. No votes yet in plenary — expected week of 2026-05-18",
+      "collection_method": "riksdag-regering MCP: search_voteringar (no results yet)",
+      "key_judgments": ["KJ-1"],
+      "forward_indicator": "FI-01"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Welfare State / Fraud Prevention",
+      "question": "What committee actions address welfare fraud or social service accountability?",
+      "status": "ANSWERED",
+      "confidence": "MEDIUM",
+      "answer_summary": "KU35 Track 2 establishes first systematic municipal oversight reporting chain for private welfare operators; annual board-to-council reporting mandated; directly addresses välfärdsbrott (welfare fraud)",
+      "collection_method": "riksdag-regering MCP: get_dokument_innehall (full text analysis)",
+      "key_judgments": ["KJ-3"],
+      "forward_indicator": "FI-10"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Election 2026 Significance",
+      "question": "How do this week's committee reports affect election 2026 party positioning?",
+      "status": "ASSESSED",
+      "confidence": "MEDIUM",
+      "answer_summary": "KU35 is pre-election politically neutral; no party gains asymmetric advantage at plenary; long-term election salience depends on what annual welfare fraud reports reveal; SD may benefit from welfare fraud framing if reports are damaging",
+      "collection_method": "Political analysis synthesis",
+      "key_judgments": [],
+      "forward_indicator": "FI-12"
+    },
+    {
+      "id": "PIR-5",
+      "title": "Local Democracy",
+      "question": "What legislative developments affect local government structure and democratic participation?",
+      "status": "ANSWERED",
+      "confidence": "HIGH",
+      "answer_summary": "KU35 Track 1 directly improves local democracy by clarifying remote participation standards; ~7,700 elected municipal officials benefit from clearer legal framework; rural representation strengthened",
+      "collection_method": "riksdag-regering MCP: get_dokument_innehall + comparative analysis",
+      "key_judgments": ["KJ-2", "KJ-4"],
+      "forward_indicator": "FI-03"
+    }
+  ],
+  "collection_gaps": [
+    "IMF WEO data unavailable (timeout) — macro context limited to cached Apr-2026",
+    "No primary HUMINT sources available",
+    "Plenary vote not yet taken — KJ-1 is predictive, not confirmed"
+  ],
+  "coverage_completeness": 0.90
+}
