@@ -1,0 +1,56 @@
+{
+  "articleDate": "2026-05-18",
+  "subfolder": "propositions",
+  "runId": "26018065908",
+  "generatedAt": "2026-05-18T00:00:00Z",
+  "activePIRs": [
+    {
+      "pirId": "PIR-2025-MIGRATION",
+      "status": "TRIGGERED",
+      "satisfaction": "HIGH",
+      "propositions": ["HD03262", "HD03264", "HD03265"],
+      "carryForward": true
+    },
+    {
+      "pirId": "PIR-2025-SECURITY",
+      "status": "TRIGGERED",
+      "satisfaction": "MEDIUM-HIGH",
+      "propositions": ["HD03267", "HD03265"],
+      "carryForward": true
+    },
+    {
+      "pirId": "PIR-2025-DIGITAL",
+      "status": "TRIGGERED",
+      "satisfaction": "HIGH",
+      "propositions": ["HD03250"],
+      "carryForward": true
+    },
+    {
+      "pirId": "PIR-2025-DEFENCE",
+      "status": "TRIGGERED",
+      "satisfaction": "HIGH",
+      "propositions": ["HD03254"],
+      "carryForward": true
+    },
+    {
+      "pirId": "PIR-2025-TRANSPARENCY",
+      "status": "TRIGGERED",
+      "satisfaction": "MEDIUM",
+      "propositions": ["HD03258"],
+      "carryForward": true
+    }
+  ],
+  "electionProximity": {
+    "electionDate": "2026-09-13",
+    "daysUntilElection": 118,
+    "multiplierActive": true,
+    "multiplier": 1.5
+  },
+  "imfContext": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "WEO-2026-04",
+    "vintageAgeMonths": 1.4,
+    "status": "ok"
+  }
+}
