@@ -6,7 +6,7 @@ date: 2026-04-27
 subfolder: interpellations
 slug: 2026-04-27-interpellations
 source_folder: analysis/daily/2026-04-27/interpellations
-generated_at: 2026-05-18T09:08:37.950Z
+generated_at: 2026-05-18T13:28:10.966Z
 language: en
 layout: article
 ---
@@ -95,6 +95,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2229,13 +2242,792 @@ This analysis is part of the Riksdagsmonitor continuous monitoring mission: trac
 - No MCP failures or partial responses
 - Lookback: not required — documents found for target date
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# المعارضة تشن تحدياً على جبهات متعددة: السكك الحديدية وتأمين المرض وتضليل الطاقة
+
+---
+
+### 🎯 ملخص تنفيذي
+
+في 27 أبريل 2026، تلقى الريكسداغ السويدي استجوابين جديدين — بشأن التأخيرات في استثمارات السكك الحديدية وإصلاح تأمين المرض — في حين تضمنت الاستجوابات المُعلنة مسبقاً للمناقشة هجوماً سياسياً مشحوناً من حزب SD على وزيرة الطاقة إيبا بوش (KD) بشأن "التضليل" المتعلق بطاقة الرياح. النمط السائد هو حملة محاسبة اشتراكية ديمقراطية تستهدف مصداقية تحالف تيدو في الاستثمارات البنية التحتية والتوظيف وسياسة الطاقة، مع خط صدع غير مألوف داخل التحالف كشفه استجواب SD لسياسة الطاقة لـ KD بالسخرية والاستفزاز. تواجه الحكومة ضغطاً زمنياً على جبهات متعددة قبيل انتخابات 2026.
+
+### 🧭 3 قرارات يدعم هذا الموجز
+
+1. **ترتيب أولويات التغطية الإعلامية**: استجواب SD بشأن طاقة الرياح/التضليل (HD10448) هو القصة الرئيسية — إنه الأكثر انفجاراً سياسياً، إذ يجمع بين سياسة الطاقة وإطار حرب المعلومات وديناميكيات محتملة تُثقل كاهل التحالف بين SD وKD.
+2. **رصد انتخابي**: يستخدم الاشتراكيون الديمقراطيون الاستجوابات كأداة محاسبة قبل الانتخابات — خمسة من سبعة هذا الأسبوع موجهة لوزراء بمطالب محددة لتغيير السياسات.
+3. **تقييم ثقة المستثمرين**: يجسّد استجواب HD10449 بشأن Södra stambanan فجوة أوسع في مصداقية البنية التحتية قد تؤثر على قرارات الاستثمار التجاري في جنوب السويد (Kronoberg/Skåne) قبيل الانتخابات.
+
+### ⚡ ملخص استخباراتي في 60 ثانية
+
+- **HD10448 (SD → KD)**: يستخدم يوزف فرانسون (SD) تقرير Windeurope "Wind Energy Dis- and Misinformation" — الذي يدّعي أن مجموعات سويدية مؤيدة للوقود الأحفوري تنشر معلومات مضللة مدعومة روسياً — أساساً للتشكيك بسخرية فيما إذا كانت وزيرة الطاقة بوش نفسها ضحية أو ناقلة للتضليل، متحدياً إياها لمراجعة قراراتها في السياسة الطاقوية. **الأهمية**: L2+ أولوية — يكشف الاحتكاك في تحالف SD-KD حول الطاقة؛ تضخيم إعلامي عبر Sveriges Radio حدث بالفعل.
+- **HD10449 (S → KD)**: يتحدى روبرت أولسن (S) وزير البنية التحتية كارلسون بشأن حذف استثمارات Södra stambanan شمال Hässleholm والمسار المزدوج Alvesta–Växjö من الخطة الجديدة لـ Trafikverket، مستشهداً بانهيار التزامات التنمية الإقليمية. **الأهمية**: L2 استراتيجي — 3 ملايين ساكن متأثر في جنوب السويد.
+- **HD10450 (S → M)**: تتساءل جيسيكا رودين (S) عن وزيرة التأمين الاجتماعي آنا تنيه بشأن الإلغاء المحتمل لاستثناء اليوم 180 في تأمين المرض (ما يُعرف بـ"الاستثناء S" الذي يتيح العودة إلى صاحب العمل الأصلي)، مستشهدةً بأدلة Riksrevisionen على فاعليته. **الأهمية**: L2 استراتيجي — سردية إصلاح دولة الرفاه.
+- **HD10447 (S → KD)**: يضغط باتريك لوندكفيست (S) على بوش بشأن إلغاء التعويض المرتفع عن تكاليف الإجازة المرضية (أُلغي 2024)، محتجاً بأنه يُعيق توظيف الشركات الصغيرة والمتوسطة ونمو الناتج المحلي الإجمالي السويدي المتأخر.
+
+### 🔭 أبرز محفز مستقبلي
+
+راقب رد إيبا بوش على HD10448 — إذا تعاملت مع استفزاز SD بوصفه سؤالاً سياسياً جدياً، فهذا يشير إلى انضباط التحالف؛ أما إذا رفضته، فقد يُبلور انشقاقاً علنياً بين SD وKD حول سياسة الطاقة قبيل ميزانية يونيو.
+
+### 📊 ترتيب الأهمية
+
+| الترتيب | dok_id | القضية | وزن DIW |
+|---------|--------|--------|---------|
+| 1 | HD10448 | طاقة الرياح/التضليل/التحالف | L2+ أولوية |
+| 2 | HD10449 | Södra stambanan/بنية تحتية | L2 استراتيجي |
+| 3 | HD10450 | تأمين مرض يوم 180 | L2 استراتيجي |
+| 4 | HD10447 | تكاليف الإجازة المرضية/الشركات الصغيرة | L2 |
+| 5 | HD10446 | شهادات وفاة خاطئة | L1 |
+| 6 | HD10444 | مساهمات صاحب العمل/الشباب | L1 |
+| 7 | HD10443 | الإغراق الاجتماعي البلديات | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27 أبريل 2026<br/>استجوابات"] --> B["HD10448<br/>SD→KD: رياح/تضليل<br/>⭐ القصة الرئيسية"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>فجوة بنية تحتية"]
+    A --> D["HD10450<br/>S→M: تأمين مرض يوم 180<br/>إصلاح رفاه"]
+    A --> E["HD10447<br/>S→KD: تكاليف مرضية<br/>عبء الشركات الصغيرة"]
+    B --> F["احتكاك التحالف<br/>SD vs KD الطاقة"]
+    C --> G["استثمارات جنوب السويد<br/>أزمة مصداقية"]
+    D --> H["انتخابات 2026<br/>سردية الرفاه"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+</div>
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_da.md -->
+
+---
+
+### 🎯 BLUF
+
+Den 27. april 2026 modtog det svenske Riksdag to nye interpellationer – om forsinkede jernbaneinvesteringer og reform af sygesikringen – mens allerede annoncerede interpellationer til debat inkluderer et politisk ladet SD-angreb på energiminister Ebba Busch (KD) om vindenergi-"desinformation". Det dominerende mønster er en socialdemokratisk ansvarlighedskampagne rettet mod Tidö-koalitionens troværdighed på infrastrukturinvesteringer, beskæftigelse og energipolitik, med en usædvanlig intra-koalitionssprække eksponeret af SDs interpellation om KDs energipolitik med ironi og provokation. Regeringen er under tidspres på flere fronter forud for valget 2026.
+
+### 🧭 3 Beslutninger dette briefing understøtter
+
+1. **Prioritering af mediedækning**: SD-interpellationen om vindenergi/desinformation (HD10448) er den ledende historie – den er den mest politisk eksplosive, der kombinerer energipolitik med informationskrigsramme og potentielt koalitionsbelastende dynamik mellem SD og KD.
+2. **Valgbevakning**: Socialdemokraterne bruger interpellationer som et førvalgsinstrument til ansvarliggørelse – fem ud af syv denne uge retter sig mod ministre med konkrete krav om politiske kursskifter.
+3. **Vurdering af investeringstillid**: HD10449-interpellationen om Södra stambanan tydeliggør et bredere infrastruktur-troværdighedsgab, der kan påvirke erhvervsinvesteringsbeslutninger i det sydlige Sverige (Kronoberg/Skåne) forud for valget.
+
+### ⚡ 60-sekunders efterretningsoversigt
+
+- **HD10448 (SD → KD)**: Josef Fransson (SD) bruger Windeuropes rapport "Wind Energy Dis- and Misinformation" – der hævder, at svenske pro-fossile grupper spreder russiststøttet desinformation – som grundlag for sarkastisk at stille spørgsmålstegn ved, om energiminister Busch selv er offer eller spreder af desinformation, og udfordrer hende til at gennemgå energipolitiske beslutninger. **Betydning**: L2+ Prioritet – afslører SD-KD-koalitionsgnidninger om energi; medieforstærkning via Sveriges Radio er allerede sket.
+- **HD10449 (S → KD)**: Robert Olesen (S) udfordrer infrastrukturminister Carlson om fjernelsen af Södra stambanans investeringer nord for Hässleholm og Alvesta–Växjö dobbeltsporet fra Trafikverkets nye plan med reference til sammenbruddet af regionale udviklingsforpligtelser. **Betydning**: L2 Strategisk – 3 millioner berørte borgere i Sydsverige.
+- **HD10450 (S → M)**: Jessica Rodén (S) spørger socialforsikringsminister Anna Tenje om potentiel fjernelse af dag-180-undtagelsen i sygesikringen (det såkaldte "S-undtagelse", der muliggør tilbagevenden til egen arbejdsgiver) og citerer Riksrevisionens bevis for, at det virker. **Betydning**: L2 Strategisk – velfærdsreformfortælling.
+- **HD10447 (S → KD)**: Patrik Lundqvist (S) presser Busch om afskaffet høj kompensation for sygelønsomkostninger (fjernet 2024) og argumenterer for, at det begrænser SMV-beskæftigelse og Sveriges efterslæbende BNP-vækst.
+
+### 🔭 Vigtigste fremadrettede trigger
+
+Hold øje med Ebba Buschs svar på HD10448 – hvis hun behandler SD-provokationen som et seriøst politisk spørgsmål, signalerer det koalitionsdisciplin; hvis hun afviser det, kan det krystallisere en offentlig SD-KD-splid om energipolitik forud for juni-budgettet.
+
+### 📊 Signifikansrangering
+
+| Rang | dok_id | Emne | DIW-vægt |
+|------|--------|------|----------|
+| 1 | HD10448 | Vindenergi/desinformation/koalition | L2+ Prioritet |
+| 2 | HD10449 | Södra stambanan/infrastruktur | L2 Strategisk |
+| 3 | HD10450 | Sygesikring dag 180 | L2 Strategisk |
+| 4 | HD10447 | Sygelønsomkostninger/SMV | L2 |
+| 5 | HD10446 | Fejlagtige dødserklæringer | L1 |
+| 6 | HD10444 | Arbejdsgiverbidrag/unge | L1 |
+| 7 | HD10443 | Social dumping kommuner | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27 April 2026<br/>Interpellationer"] --> B["HD10448<br/>SD→KD: Vind/Desinformation<br/>⭐ LEDENDE HISTORIA"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>Infrastrukturglapp"]
+    A --> D["HD10450<br/>S→M: Sjukförsäkring dag 180<br/>Välfärdsreform"]
+    A --> E["HD10447<br/>S→KD: Sjuklönekostnader<br/>SME-börda"]
+    B --> F["Koalitionsfriktioner<br/>SD vs KD energipolitik"]
+    C --> G["Sydsverige-investeringar<br/>trovärdhetskris"]
+    D --> H["Val 2026<br/>välfärdsberättelse"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_de.md -->
+
+---
+
+### 🎯 BLUF
+
+Am 27. April 2026 erhielt der schwedische Riksdag zwei neue Interpellationen – zur Verzögerung von Eisenbahninvestitionen und zur Reform der Krankenversicherung – während bereits angekündigte Interpellationen zur Debatte einen politisch aufgeladenen SD-Angriff auf Energieministerin Ebba Busch (KD) wegen Windenergie-„Desinformation" beinhalten. Das vorherrschende Muster ist eine sozialdemokratische Rechenschaftskampagne gegen die Glaubwürdigkeit der Tidö-Koalition bei Infrastrukturinvestitionen, Beschäftigung und Energiepolitik, wobei eine ungewöhnliche innerkoalitionäre Bruchlinie durch die SD-Interpellation zu KDs Energiepolitik mit Ironie und Provokation offengelegt wird. Die Regierung steht auf mehreren Fronten unter Zeitdruck vor den Wahlen 2026.
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Prioritisierung der Medienberichterstattung**: Die SD-Interpellation zur Windenergie/Desinformation (HD10448) ist die Leitgeschichte – sie ist politisch am explosivsten, verbindet Energiepolitik mit einem Informationskriegsrahmen und potenziell koalitionsbelastender Dynamik zwischen SD und KD.
+2. **Wahlbeobachtung**: Die Sozialdemokraten setzen Interpellationen als Vorwahl-Rechenschaftsinstrument ein – fünf von sieben in dieser Woche richten sich an Minister mit konkreten Forderungen nach politischen Kehrtwenden.
+3. **Bewertung des Investitionsklimas**: Die HD10449-Interpellation zur Södra stambanan verdeutlicht eine tiefergehende Infrastruktur-Glaubwürdigkeitslücke, die Unternehmensinvestitionsentscheidungen in Südschweden (Kronoberg/Skåne) vor den Wahlen beeinflussen könnte.
+
+### ⚡ 60-Sekunden-Geheimdienstzusammenfassung
+
+- **HD10448 (SD → KD)**: Josef Fransson (SD) nutzt Windeuropes Bericht „Wind Energy Dis- and Misinformation" – der behauptet, schwedische pro-fossile Gruppen verbreiteten russisch gestützte Desinformation – als Grundlage, um ironisch in Frage zu stellen, ob Energieministerin Busch selbst Opfer oder Verbreiter von Desinformation ist, und fordert sie auf, energiepolitische Entscheidungen zu überprüfen. **Bedeutung**: L2+ Priorität – legt SD-KD-Koalitionsreibungen zu Energie offen; Medienverstärkung über Sveriges Radio ist bereits erfolgt.
+- **HD10449 (S → KD)**: Robert Olesen (S) fordert Infrastrukturminister Carlson wegen der Streichung der Södra-stambanan-Investitionen nördlich von Hässleholm und des Alvesta–Växjö-Doppelgleises aus Trafikverkets neuem Plan heraus und verweist auf den Zusammenbruch regionaler Entwicklungsverpflichtungen. **Bedeutung**: L2 Strategisch – 3 Millionen betroffene Einwohner in Südschweden.
+- **HD10450 (S → M)**: Jessica Rodén (S) befragt Sozialversicherungsministerin Anna Tenje zur möglichen Abschaffung der Krankenversicherungs-Ausnahmeregelung zum Tag 180 (die sogenannte „S-Ausnahme", die die Rückkehr zum eigenen Arbeitgeber ermöglicht) und zitiert Riksrevisionens Belege für deren Wirksamkeit. **Bedeutung**: L2 Strategisch – Wohlfahrtsstaatsreformnarrativ.
+- **HD10447 (S → KD)**: Patrik Lundqvist (S) drängt Busch wegen der abgeschafften hohen Erstattung für Krankheitskosten (2024 abgeschafft) und argumentiert, dass dies KMU-Beschäftigung und Schwedens rückständiges BIP-Wachstum hemmt.
+
+### 🔭 Wichtigster Vorwärtstrigger
+
+Beobachten Sie Ebba Buschs Reaktion auf HD10448 – wenn sie die SD-Provokation als ernste politische Frage behandelt, signalisiert das Koalitionsdisziplin; wenn sie sie ablehnt, könnte das einen öffentlichen SD-KD-Riss zur Energiepolitik vor dem Junihaushalt kristallisieren.
+
+### 📊 Signifikanzranking
+
+| Rang | dok_id | Thema | DIW-Gewicht |
+|------|--------|-------|-------------|
+| 1 | HD10448 | Windenergie/Desinformation/Koalition | L2+ Priorität |
+| 2 | HD10449 | Södra stambanan/Infrastruktur | L2 Strategisch |
+| 3 | HD10450 | Krankenversicherung Tag 180 | L2 Strategisch |
+| 4 | HD10447 | Krankheitskosten/KMU | L2 |
+| 5 | HD10446 | Fehlerhafte Todeserklärungen | L1 |
+| 6 | HD10444 | Arbeitgeberbeiträge/Jugend | L1 |
+| 7 | HD10443 | Sozialdumping Kommunen | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27. April 2026<br/>Interpellationen"] --> B["HD10448<br/>SD→KD: Wind/Desinformation<br/>⭐ LEITGESCHICHTE"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>Infrastrukturlücke"]
+    A --> D["HD10450<br/>S→M: Krankenversicherung Tag 180<br/>Wohlfahrtsreform"]
+    A --> E["HD10447<br/>S→KD: Krankheitskosten<br/>KMU-Belastung"]
+    B --> F["Koalitionsreibungen<br/>SD vs KD Energiepolitik"]
+    C --> G["Südschweden-Investitionen<br/>Glaubwürdigkeitskrise"]
+    D --> H["Wahlen 2026<br/>Wohlfahrtsnarrativ"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_es.md -->
+
+---
+
+### 🎯 BLUF
+
+El 27 de abril de 2026, el Riksdag sueco recibió dos nuevas interpelaciones — sobre retrasos en inversiones ferroviarias y la reforma del seguro de enfermedad — mientras que las interpelaciones ya anunciadas para debate incluyen un políticamente cargado ataque de SD contra la ministra de Energía Ebba Busch (KD) sobre la "desinformación" eólica. El patrón dominante es una campaña socialdemócrata de rendición de cuentas dirigida a la credibilidad de la coalición Tidö en inversiones en infraestructuras, empleo y política energética, con una inusual línea de fractura intracoalicionaria expuesta por la interpelación de SD sobre la política energética de KD con ironía y provocación. El gobierno enfrenta presión de plazos en varios frentes antes de las elecciones de 2026.
+
+### 🧭 3 Decisiones que apoya este informe
+
+1. **Priorización de la cobertura mediática**: La interpelación de SD sobre energía eólica/desinformación (HD10448) es la noticia principal — es la más políticamente explosiva, combinando política energética con un marco de guerra informacional y una dinámica potencialmente dañina para la coalición entre SD y KD.
+2. **Seguimiento electoral**: Los socialdemócratas utilizan las interpelaciones como instrumento de rendición de cuentas preelectoral — cinco de siete esta semana se dirigen a ministros con demandas concretas de giros políticos.
+3. **Evaluación de la confianza inversora**: La interpelación HD10449 sobre Södra stambanan cristaliza una brecha más amplia de credibilidad en infraestructuras que podría afectar las decisiones de inversión empresarial en el sur de Suecia (Kronoberg/Skåne) antes de las elecciones.
+
+### ⚡ Resumen de inteligencia en 60 segundos
+
+- **HD10448 (SD → KD)**: Josef Fransson (SD) utiliza el informe de Windeurope "Wind Energy Dis- and Misinformation" — que afirma que grupos pro-fósiles suecos difunden desinformación respaldada por Rusia — como base para cuestionar sarcásticamente si la ministra de Energía Busch es ella misma víctima o vector de desinformación, desafiándola a revisar sus decisiones de política energética. **Importancia**: L2+ Prioritario — expone fricciones en la coalición SD-KD sobre energía; la amplificación mediática a través de Sveriges Radio ya ha tenido lugar.
+- **HD10449 (S → KD)**: Robert Olesen (S) desafía al ministro de Infraestructuras Carlson por la eliminación de las inversiones de Södra stambanan al norte de Hässleholm y la doble vía Alvesta–Växjö del nuevo plan de Trafikverket, citando el colapso de los compromisos de desarrollo regional. **Importancia**: L2 Estratégico — 3 millones de residentes afectados en el sur de Suecia.
+- **HD10450 (S → M)**: Jessica Rodén (S) cuestiona a la ministra de Seguridad Social Anna Tenje sobre la posible eliminación de la excepción del día 180 del seguro de enfermedad (la llamada "excepción S" que permite el retorno al propio empleador), citando evidencia de Riksrevisionen de su eficacia. **Importancia**: L2 Estratégico — narrativa de reforma del Estado de bienestar.
+- **HD10447 (S → KD)**: Patrik Lundqvist (S) presiona a Busch sobre la eliminada alta compensación por costes de bajas laborales (suprimida en 2024), argumentando que limita el empleo en PYMES y el rezagado crecimiento del PIB sueco.
+
+### 🔭 Principal disparador prospectivo
+
+Vigilar la respuesta de Ebba Busch a HD10448 — si trata la provocación de SD como una cuestión política seria, señala disciplina de coalición; si la rechaza, podría cristalizar una ruptura pública SD-KD sobre política energética antes del presupuesto de junio.
+
+### 📊 Ranking de significado
+
+| Rango | dok_id | Asunto | Peso DIW |
+|-------|--------|--------|----------|
+| 1 | HD10448 | Energía eólica/desinformación/coalición | L2+ Prioritario |
+| 2 | HD10449 | Södra stambanan/infraestructura | L2 Estratégico |
+| 3 | HD10450 | Seguro de enfermedad día 180 | L2 Estratégico |
+| 4 | HD10447 | Costes enfermedad/PYMES | L2 |
+| 5 | HD10446 | Declaraciones erróneas de fallecimiento | L1 |
+| 6 | HD10444 | Cotizaciones patronales/juventud | L1 |
+| 7 | HD10443 | Dumping social municipios | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27 abril 2026<br/>Interpelaciones"] --> B["HD10448<br/>SD→KD: Eólica/Desinformación<br/>⭐ NOTICIA PRINCIPAL"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>Brecha infraestructural"]
+    A --> D["HD10450<br/>S→M: Seguro enfermedad día 180<br/>Reforma social"]
+    A --> E["HD10447<br/>S→KD: Costes enfermedad<br/>Carga PYMES"]
+    B --> F["Fricciones coalición<br/>SD vs KD energía"]
+    C --> G["Inversiones sur de Suecia<br/>crisis de credibilidad"]
+    D --> H["Elecciones 2026<br/>narrativa bienestar"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_fi.md -->
+
+---
+
+### 🎯 BLUF
+
+Ruotsin riksdag sai 27. huhtikuuta 2026 kaksi uutta interpellaatiota – rautatieinvestointien viivästymisestä ja sairausvakuutusuudistuksesta – samaan aikaan kun jo ilmoitettuihin debatointikelpoisiin interpellaatioihin sisältyy SD:n poliittisesti latautunut hyökkäys energiaministeri Ebba Buschia (KD) vastaan tuulivoimadisinformaatiosta. Hallitseva kaava on sosiaalidemokraattinen vastuullisuuskampanja, joka kohdistuu Tidö-koalition uskottavuuteen infrastruktuuri-investoinneissa, työllistymisessä ja energiapolitiikassa, ja SD:n KD:n energiapolitiikkaan kohdistuva interpellaatio ironian ja provokaation keinoin paljastaa koalition sisäisen epätavallisen rintamalinjan. Hallitus kohtaa aikapaineita useilla rintamilla ennen vuoden 2026 vaaleja.
+
+### 🧭 3 Päätöstä, joita tämä tiedote tukee
+
+1. **Mediakattavuuden priorisointi**: SD:n tuulienergia/desinformaatio-interpellaatio (HD10448) on johtava uutinen – se on poliittisesti räjähdysherkin, yhdistäen energiapolitiikan informaatiosodankäynnin kehykseen ja potentiaalisesti koalitiota rasittavaan dynamiikkaan SD:n ja KD:n välillä.
+2. **Vaalien seuranta**: Sosiaalidemokraatit käyttävät interpellaatioita ennakkovaalien vastuullisuusvälineenä – viisi seitsemästä tällä viikolla kohdistuu ministereille konkreettisilla vaatimuksilla politiikan muuttamiseksi.
+3. **Investointitunnelman arviointi**: HD10449-interpellaatio Södra stambanasta kiteyttää laajemman infrastruktuuri-uskottavuusvajeen, joka voi vaikuttaa yritysinvesterointipäätöksiin Etelä-Ruotsissa (Kronoberg/Skåne) ennen vaaleja.
+
+### ⚡ 60 sekunnin tiedusteluyhteenveto
+
+- **HD10448 (SD → KD)**: Josef Fransson (SD) käyttää Windeuropen raporttia "Wind Energy Dis- and Misinformation" – joka väittää ruotsalaisten fossiili-ystävällisten ryhmien levittävän Venäjän tukemaa disinformaatiota – perusteena sarkastisesti kyseenalaistaa, onko energiaministeri Busch itse disinformaation uhri vai välittäjä, haastaen hänet tarkastelemaan energiapoliittisia päätöksiä. **Merkitys**: L2+ Prioriteetti – paljastaa SD-KD-koalitiokitkan energiasta; median vahvistuminen Sveriges Radion kautta on jo tapahtunut.
+- **HD10449 (S → KD)**: Robert Olesen (S) haastaa infrastruktuuriministeri Carlsonin Södra stambanaan investointien poistamisesta Hässleholmin pohjoispuolelta ja Alvesta–Växjö-kaksoisraiteesta Trafikverketin uudesta suunnitelmasta vedoten alueellisten kehityssitoumusten romahtamiseen. **Merkitys**: L2 Strateginen – 3 miljoonaa asukasta Etelä-Ruotsissa.
+- **HD10450 (S → M)**: Jessica Rodén (S) kyseenalaistaa sosiaaliturvaministeri Anna Tenjen mahdollisesta sairausvakuutuksen 180. päivän poikkeuksen poistamisesta (ns. "S-poikkeus", joka mahdollistaa paluun omalle työnantajalle) viitaten Riksrevisionenin näyttöön sen toimivuudesta. **Merkitys**: L2 Strateginen – hyvinvointivaltio-uudistusnarratiivi.
+- **HD10447 (S → KD)**: Patrik Lundqvist (S) painostaa Buschia lakkautetusta korkeasta sairauspalkkakulukorvauksesta (poistettu 2024) väittäen sen rajoittavan pk-yritysten työllistymistä ja Ruotsin jälkeenjäänyttä BKT-kasvua.
+
+### 🔭 Tärkein tulevaisuuden laukaisin
+
+Seuraa Ebba Buschin vastausta HD10448:aan – jos hän käsittelee SD:n provokaatiota vakavana poliittisena kysymyksenä, se viestii koalition kurinalaisuudesta; jos hän torjuu sen, se voi kiteyttää julkisen SD-KD-riidan energiapolitiikasta ennen kesäbudjetin käsittelyä.
+
+### 📊 Merkittävyysluokitus
+
+| Sija | dok_id | Aihe | DIW-paino |
+|------|--------|------|-----------|
+| 1 | HD10448 | Tuulienergia/disinformaatio/koalitio | L2+ Prioriteetti |
+| 2 | HD10449 | Södra stambanan/infrastruktuuri | L2 Strateginen |
+| 3 | HD10450 | Sairausvakuutus päivä 180 | L2 Strateginen |
+| 4 | HD10447 | Sairauspalkkakulut/pk-yritykset | L2 |
+| 5 | HD10446 | Virheelliset kuolemanselvitykset | L1 |
+| 6 | HD10444 | Työnantajamaksut/nuoret | L1 |
+| 7 | HD10443 | Sosiaalinen dumppaus kunnat | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27. huhtikuuta 2026<br/>Interpellaatiot"] --> B["HD10448<br/>SD→KD: Tuuli/Disinformaatio<br/>⭐ JOHTAVA UUTINEN"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>Infrastruktuurivaje"]
+    A --> D["HD10450<br/>S→M: Sairausvakuutus päivä 180<br/>Hyvinvointiuudistus"]
+    A --> E["HD10447<br/>S→KD: Sairauspalkkakulut<br/>Pk-yritysrasitus"]
+    B --> F["Koalitiokitka<br/>SD vs KD energiapolitiikka"]
+    C --> G["Etelä-Ruotsi-investoinnit<br/>uskottavuuskriisi"]
+    D --> H["Vaalit 2026<br/>hyvinvointinarratiivi"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_fr.md -->
+
+---
+
+### 🎯 BLUF
+
+Le 27 avril 2026, le Riksdag suédois a reçu deux nouvelles interpellations – sur les retards des investissements ferroviaires et la réforme de l'assurance maladie – tandis que les interpellations déjà annoncées pour débat comprennent une attaque politiquement chargée du SD contre la ministre de l'Énergie Ebba Busch (KD) sur la « désinformation » éolienne. Le schéma dominant est une campagne social-démocrate de responsabilisation ciblant la crédibilité de la coalition Tidö en matière d'investissements infrastructurels, d'emploi et de politique énergétique, avec une fracture intra-coalitionnelle inhabituelle exposée par l'interpellation du SD sur la politique énergétique de KD avec ironie et provocation. Le gouvernement est sous pression temporelle sur plusieurs fronts avant les élections de 2026.
+
+### 🧭 3 Décisions que ce briefing soutient
+
+1. **Priorisation de la couverture médiatique** : L'interpellation du SD sur l'énergie éolienne/désinformation (HD10448) est le sujet principal — c'est le plus politiquement explosif, combinant la politique énergétique avec un cadre de guerre informationnelle et une dynamique potentiellement dommageable pour la coalition entre SD et KD.
+2. **Suivi électoral** : Les sociaux-démocrates utilisent les interpellations comme instrument de responsabilisation pré-électorale — cinq sur sept cette semaine s'adressent à des ministres avec des demandes concrètes de revirements politiques.
+3. **Évaluation de la confiance des investisseurs** : L'interpellation HD10449 sur Södra stambanan cristallise un fossé plus large de crédibilité infrastructurelle susceptible d'affecter les décisions d'investissement des entreprises dans le sud de la Suède (Kronoberg/Skåne) avant les élections.
+
+### ⚡ Résumé de renseignement en 60 secondes
+
+- **HD10448 (SD → KD)** : Josef Fransson (SD) utilise le rapport de Windeurope « Wind Energy Dis- and Misinformation » — qui affirme que des groupes suédois pro-fossiles diffusent de la désinformation soutenue par la Russie — comme base pour questionner sarcastiquement si la ministre de l'Énergie Busch est elle-même victime ou vecteur de désinformation, la défiant de réviser ses décisions de politique énergétique. **Importance** : L2+ Priorité — expose les frictions au sein de la coalition SD-KD sur l'énergie ; l'amplification médiatique via Sveriges Radio a déjà eu lieu.
+- **HD10449 (S → KD)** : Robert Olesen (S) interpelle le ministre des Infrastructures Carlson sur le retrait des investissements de Södra stambanan au nord de Hässleholm et de la double voie Alvesta–Växjö du nouveau plan de Trafikverket, citant l'effondrement des engagements de développement régional. **Importance** : L2 Stratégique — 3 millions d'habitants touchés dans le sud de la Suède.
+- **HD10450 (S → M)** : Jessica Rodén (S) interroge la ministre de l'Assurance sociale Anna Tenje sur la suppression potentielle de l'exception au jour 180 de l'assurance maladie (la dite « exception S » permettant le retour chez son propre employeur), citant les preuves de Riksrevisionen de son efficacité. **Importance** : L2 Stratégique — récit de réforme de l'État-providence.
+- **HD10447 (S → KD)** : Patrik Lundqvist (S) presse Busch sur la suppression de la compensation élevée des coûts de congé maladie (supprimée en 2024), arguant qu'elle freine l'emploi dans les PME et la croissance du PIB suédois à la traîne.
+
+### 🔭 Principal déclencheur prospectif
+
+Surveiller la réponse d'Ebba Busch à HD10448 — si elle traite la provocation du SD comme une question politique sérieuse, cela signale la discipline de coalition ; si elle la rejette, cela pourrait cristalliser une rupture publique SD-KD sur la politique énergétique avant le budget de juin.
+
+### 📊 Classement de signification
+
+| Rang | dok_id | Sujet | Poids DIW |
+|------|--------|-------|-----------|
+| 1 | HD10448 | Énergie éolienne/désinformation/coalition | L2+ Priorité |
+| 2 | HD10449 | Södra stambanan/infrastructure | L2 Stratégique |
+| 3 | HD10450 | Assurance maladie jour 180 | L2 Stratégique |
+| 4 | HD10447 | Coûts maladie/PME | L2 |
+| 5 | HD10446 | Fausses déclarations de décès | L1 |
+| 6 | HD10444 | Cotisations patronales/jeunesse | L1 |
+| 7 | HD10443 | Dumping social communes | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27 avril 2026<br/>Interpellations"] --> B["HD10448<br/>SD→KD: Éolien/Désinformation<br/>⭐ SUJET PRINCIPAL"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>Fossé infrastructurel"]
+    A --> D["HD10450<br/>S→M: Assurance maladie jour 180<br/>Réforme sociale"]
+    A --> E["HD10447<br/>S→KD: Coûts maladie<br/>Charge PME"]
+    B --> F["Frictions au sein coalition<br/>SD vs KD énergie"]
+    C --> G["Investissements Suède du Sud<br/>crise de crédibilité"]
+    D --> H["Élections 2026<br/>récit social"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# האופוזיציה מציבה אתגר רב-חזיתי: רכבות, ביטוח מחלה ודיסאינפורמציה בתחום האנרגיה
+
+---
+
+### 🎯 תמצית מנהלים
+
+ב-27 באפריל 2026 קיבל הריקסדאג השבדי שתי שאילתות חדשות — על עיכובים בהשקעות ברכבות ורפורמה בביטוח המחלה — בעוד שאילתות שכבר הוכרזו לדיון כוללות מתקפה פוליטית טעונה של SD על שרת האנרגיה אבה בוש (KD) בנוגע ל"דיסאינפורמציה" בתחום הרוח. הדפוס השולט הוא מסע ה"חשבון" של הסוציאל-דמוקרטים כנגד אמינות קואליציית טידו בהשקעות תשתיות, תעסוקה ומדיניות אנרגיה, כאשר קו שבר יוצא דופן בתוך הקואליציה נחשף דרך שאילתת SD על מדיניות האנרגיה של KD באמצעות אירוניה ופרובוקציה. הממשלה עומדת בפני לחץ לוחות זמנים על מספר חזיתות לקראת בחירות 2026.
+
+### 🧭 3 החלטות שמוזכר זה תומך בהן
+
+1. **תעדוף כיסוי תקשורתי**: שאילתת SD על אנרגיית רוח/דיסאינפורמציה (HD10448) היא הכתבה המובילה — היא פוליטית המתפוצצת ביותר, משלבת מדיניות אנרגיה עם מסגרת מלחמת מידע ודינמיקה שעלולה לפגוע בקואליציה בין SD לKD.
+2. **מעקב בחירות**: הסוציאל-דמוקרטים משתמשים בשאילתות ככלי אחריות לפני בחירות — חמישה מתוך שבעה השבוע מופנים לשרים עם דרישות קונקרטיות להיפוך מדיניות.
+3. **הערכת אמון משקיעים**: שאילתת HD10449 על Södra stambanan מגלמת פער רחב יותר באמינות התשתיות שעלול להשפיע על החלטות השקעה עסקיות בדרום שבדיה (Kronoberg/Skåne) לפני הבחירות.
+
+### ⚡ סיכום מודיעיני ב-60 שניות
+
+- **HD10448 (SD → KD)**: יוזף פרנסון (SD) משתמש בדוח Windeurope "Wind Energy Dis- and Misinformation" — הטוען שקבוצות שבדיות הסברה לפחמן מפיצות דיסאינפורמציה בגיבוי רוסי — כבסיס לתהייה סרקסטית האם שרת האנרגיה בוש היא עצמה קורבן או נשא של דיסאינפורמציה, ומאתגר אותה לבחון מחדש את החלטות מדיניות האנרגיה. **חשיבות**: L2+ עדיפות — חושפת חיכוכים בקואליציה SD-KD בנושא אנרגיה; הגברה תקשורתית דרך Sveriges Radio כבר התרחשה.
+- **HD10449 (S → KD)**: רוברט אולסן (S) מאתגר את שר התשתיות קרלסון על הסרת השקעות Södra stambanan צפונית לHässleholm ומסלול הכפול Alvesta–Växjö מתוכנית Trafikverket החדשה, מצטט את קריסת התחייבויות הפיתוח האזורי. **חשיבות**: L2 אסטרטגי — 3 מיליון תושבים מושפעים בדרום שבדיה.
+- **HD10450 (S → M)**: ג'סיקה רודן (S) מטילה ספק בשרת הביטוח הסוציאלי אנה טניה לגבי ביטול פוטנציאלי של חריג יום 180 בביטוח מחלה (ה"חריג S" המאפשר חזרה למעסיק עצמו), תוך ציטוט ראיות של Riksrevisionen ליעילותו. **חשיבות**: L2 אסטרטגי — נרטיב רפורמת מדינת הרווחה.
+- **HD10447 (S → KD)**: פטריק לונדקוויסט (S) לוחץ על בוש לגבי ביטול הפיצוי הגבוה לעלויות דמי מחלה (בוטל 2024), בטענה שהוא מגביל תעסוקה בעסקים קטנים ובינוניים ואת צמיחת התמ"ג השבדי הפגורה.
+
+### 🔭 הטריגר המוביל לעתיד
+
+עקוב אחר תגובת אבה בוש לHD10448 — אם תטפל בפרובוקציה של SD כשאלת מדיניות רצינית, זה מסמן משמעת קואלנציה; אם תדחה אותה, עשוי להתגבש פיצול SD-KD פומבי על מדיניות אנרגיה לפני תקציב יוני.
+
+### 📊 דירוג חשיבות
+
+| דירוג | dok_id | נושא | משקל DIW |
+|--------|--------|------|----------|
+| 1 | HD10448 | אנרגיית רוח/דיסאינפורמציה/קואליציה | L2+ עדיפות |
+| 2 | HD10449 | Södra stambanan/תשתיות | L2 אסטרטגי |
+| 3 | HD10450 | ביטוח מחלה יום 180 | L2 אסטרטגי |
+| 4 | HD10447 | עלויות מחלה/עסקים קטנים | L2 |
+| 5 | HD10446 | תעודות פטירה שגויות | L1 |
+| 6 | HD10444 | דמי מעביד/נוער | L1 |
+| 7 | HD10443 | השפלה חברתית עיריות | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27 אפריל 2026<br/>שאילתות"] --> B["HD10448<br/>SD→KD: רוח/דיסאינפורמציה<br/>⭐ כתבה מובילה"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>פער תשתיות"]
+    A --> D["HD10450<br/>S→M: ביטוח מחלה יום 180<br/>רפורמת רווחה"]
+    A --> E["HD10447<br/>S→KD: עלויות מחלה<br/>עול עסקים קטנים"]
+    B --> F["חיכוך בקואליציה<br/>SD vs KD אנרגיה"]
+    C --> G["השקעות דרום שבדיה<br/>משבר אמינות"]
+    D --> H["בחירות 2026<br/>נרטיב רווחה"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+</div>
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_ja.md -->
+
+---
+
+### 🎯 要約
+
+2026年4月27日、スウェーデン国会（リクスダーグ）は2件の新たな質問書を受理した。鉄道投資の遅延と疾病保険改革に関するものである。また、既に告知された討議対象の質問書には、エネルギー大臣エッバ・ブッシュ（KD）の風力エネルギー「虚偽情報」に対するSDの政治的に重大な攻撃が含まれている。主要なパターンはインフラ投資、雇用、エネルギー政策におけるティドー連立政権の信頼性を標的とした社会民主党による説明責任キャンペーンであり、皮肉と挑発を用いたSDによるKDのエネルギー政策への質問書が連立内の異例の断層線を露わにしている。政府は2026年選挙を前に複数の面で期限的プレッシャーに直面している。
+
+### 🧭 このブリーフィングが支援する3つの決定
+
+1. **メディア報道の優先順位付け**：SD風力エネルギー/虚偽情報質問書（HD10448）が主要ニュースである。エネルギー政策と情報戦フレームおよびSDとKDの間の潜在的連立負荷ダイナミクスを組み合わせた最も政治的に爆発的な案件。
+2. **選挙追跡**：社会民主党は事前選挙説明責任ツールとして質問書を活用している。今週の7件中5件が具体的な政策転換要求とともに大臣に向けられている。
+3. **投資信頼評価**：HD10449のSödra stambananに関する質問書は、選挙前に南スウェーデン（クロノベリ/スコーネ）の企業投資決定に影響を与えかねないより広範なインフラ信頼性ギャップを明確化している。
+
+### ⚡ 60秒インテリジェンスサマリー
+
+- **HD10448 (SD → KD)**：ヨーゼフ・フランソン（SD）はWindeurope報告書「Wind Energy Dis- and Misinformation」を利用する。この報告書はスウェーデンの化石燃料支持グループがロシア支援の虚偽情報を拡散していると主張している。エネルギー大臣ブッシュ自身が虚偽情報の被害者なのか伝播者なのかを皮肉を込めて問い、エネルギー政策決定の見直しを迫る。**重要度**：L2+ 優先 — エネルギーに関するSD-KD連立摩擦を露呈；Sveriges Radioを通じたメディア増幅は既に発生済み。
+- **HD10449 (S → KD)**：ロベルト・オレセン（S）はTrafikverketの新計画からHässleholm以北のSödra stambanan投資とAlvesta-Växjö複線が削除されたことについて、地域発展コミットメントの崩壊を引用しつつインフラ大臣カールソンに挑戦。**重要度**：L2 戦略的 — 南スウェーデンで300万人が影響を受ける。
+- **HD10450 (S → M)**：ジェシカ・ロデン（S）は疾病保険180日目例外（自分の雇用主への復帰を可能にする「S例外」）の廃止可能性についてアンナ・テニェ社会保険大臣に問い、その有効性についてのRiksrevisionenの証拠を引用。**重要度**：L2 戦略的 — 福祉国家改革の物語。
+- **HD10447 (S → KD)**：パトリック・ルンドクビスト（S）は廃止された高額傷病手当費用補償（2024年廃止）についてブッシュを追及し、中小企業雇用とスウェーデンの低迷するGDP成長を抑制すると主張。
+
+### 🔭 主要な将来のトリガー
+
+HD10448に対するエッバ・ブッシュの反応を監視する。SDの挑発を真剣な政策問題として扱えば連立規律を示す。拒否すれば6月予算前のSD-KDエネルギー政策をめぐる公的な亀裂を結晶化させる可能性がある。
+
+### 📊 重要度ランキング
+
+| 順位 | dok_id | 問題 | DIW重み |
+|------|--------|------|---------|
+| 1 | HD10448 | 風力エネルギー/虚偽情報/連立 | L2+ 優先 |
+| 2 | HD10449 | Södra stambanan/インフラ | L2 戦略的 |
+| 3 | HD10450 | 疾病保険180日 | L2 戦略的 |
+| 4 | HD10447 | 傷病費用/中小企業 | L2 |
+| 5 | HD10446 | 誤った死亡診断 | L1 |
+| 6 | HD10444 | 雇用者拠出/青少年 | L1 |
+| 7 | HD10443 | 社会的ダンピング自治体 | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 2026年4月27日<br/>質問書"] --> B["HD10448<br/>SD→KD: 風力/虚偽情報<br/>⭐ 主要ニュース"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>インフラギャップ"]
+    A --> D["HD10450<br/>S→M: 疾病保険180日<br/>福祉改革"]
+    A --> E["HD10447<br/>S→KD: 傷病費用<br/>中小企業負担"]
+    B --> F["連立摩擦<br/>SD vs KD エネルギー"]
+    C --> G["南スウェーデン投資<br/>信頼性危機"]
+    D --> H["2026年選挙<br/>福祉の物語"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_ko.md -->
+
+---
+
+### 🎯 요약
+
+2026년 4월 27일 스웨덴 릭스다그는 철도 투자 지연과 질병보험 개혁에 관한 두 건의 새로운 질의서를 접수했다. 또한 이미 토론 예고된 질의서에는 에너지 장관 에바 부시(KD)에 대한 풍력 에너지 "허위정보"를 둘러싼 SD의 정치적으로 격한 공격이 포함되어 있다. 주요 패턴은 인프라 투자, 고용, 에너지 정책에서 티데 연립 정부의 신뢰성을 겨냥한 사회민주당의 책임 캠페인으로, 아이러니와 도발을 이용한 SD의 KD 에너지 정책 질의서가 연립 내 이례적인 균열선을 드러냈다. 정부는 2026년 선거를 앞두고 여러 전선에서 시간적 압박을 받고 있다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **언론 보도 우선순위**: SD 풍력에너지/허위정보 질의서(HD10448)가 주요 기사다. 에너지 정책과 정보전 프레임, 그리고 SD와 KD 간 잠재적으로 연립을 부담시키는 역학을 결합한 가장 정치적으로 폭발적인 사안이다.
+2. **선거 추적**: 사회민주당은 사전선거 책임 도구로 질의서를 활용하고 있다. 이번 주 7건 중 5건이 구체적인 정책 전환 요구와 함께 장관들을 향하고 있다.
+3. **투자 신뢰 평가**: HD10449 Södra stambanan 질의서는 선거 전 남부 스웨덴(크로노베리/스코네)의 기업 투자 결정에 영향을 미칠 수 있는 더 광범위한 인프라 신뢰 격차를 구체화한다.
+
+### ⚡ 60초 인텔리전스 요약
+
+- **HD10448 (SD → KD)**: 요제프 프란손(SD)은 스웨덴 친화석 그룹들이 러시아 지원 허위정보를 유포한다고 주장하는 Windeurope 보고서 "Wind Energy Dis- and Misinformation"을 이용해 에너지 장관 부시가 허위정보의 피해자인지 전달자인지를 냉소적으로 의문시하며 에너지 정책 결정 재검토를 촉구했다. **중요도**: L2+ 우선 — 에너지에 관한 SD-KD 연립 마찰을 드러냄; Sveriges Radio를 통한 언론 증폭이 이미 발생했다.
+- **HD10449 (S → KD)**: 로베르트 올레센(S)은 Trafikverket의 새 계획에서 Hässleholm 북쪽의 Södra stambanan 투자와 Alvesta-Växjö 복선 제거에 대해 지역 개발 약속 붕괴를 인용하며 인프라 장관 칼손에게 도전했다. **중요도**: L2 전략적 — 남부 스웨덴 300만 명 영향.
+- **HD10450 (S → M)**: 제시카 로덴(S)은 질병보험 180일 예외(자신의 고용주로 복귀를 가능하게 하는 "S 예외") 폐지 가능성에 대해 안나 테니에 사회보험 장관에게 Riksrevisionen의 효과 증거를 인용하며 질문했다. **중요도**: L2 전략적 — 복지국가 개혁 서사.
+- **HD10447 (S → KD)**: 파트리크 룬드크비스트(S)는 폐지된 높은 병가 비용 보상(2024년 폐지)에 대해 부시를 압박하며 중소기업 고용과 스웨덴의 뒤처진 GDP 성장을 제약한다고 주장했다.
+
+### 🔭 주요 미래 촉발 요인
+
+HD10448에 대한 에바 부시의 반응을 주시하라. SD의 도발을 진지한 정책 문제로 다루면 연립 규율을 의미하고, 거부하면 6월 예산 전 에너지 정책을 둘러싼 SD-KD 공개 균열을 결정화시킬 수 있다.
+
+### 📊 중요도 순위
+
+| 순위 | dok_id | 사안 | DIW 가중치 |
+|------|--------|------|-----------|
+| 1 | HD10448 | 풍력에너지/허위정보/연립 | L2+ 우선 |
+| 2 | HD10449 | Södra stambanan/인프라 | L2 전략적 |
+| 3 | HD10450 | 질병보험 180일 | L2 전략적 |
+| 4 | HD10447 | 병가 비용/중소기업 | L2 |
+| 5 | HD10446 | 오류 사망 진단 | L1 |
+| 6 | HD10444 | 고용주 기여/청년 | L1 |
+| 7 | HD10443 | 사회적 덤핑 지방자치체 | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 2026년 4월 27일<br/>질의서"] --> B["HD10448<br/>SD→KD: 풍력/허위정보<br/>⭐ 주요 기사"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>인프라 격차"]
+    A --> D["HD10450<br/>S→M: 질병보험 180일<br/>복지 개혁"]
+    A --> E["HD10447<br/>S→KD: 병가 비용<br/>중소기업 부담"]
+    B --> F["연립 마찰<br/>SD vs KD 에너지"]
+    C --> G["남부 스웨덴 투자<br/>신뢰 위기"]
+    D --> H["2026년 선거<br/>복지 서사"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_nl.md -->
+
+---
+
+### 🎯 BLUF
+
+Op 27 april 2026 ontving het Zweedse Riksdag twee nieuwe interpellaties – over vertragingen in spoorweginvesteringen en hervorming van de ziekteverzekering – terwijl al aangekondigde interpellaties voor debat een politiek geladen SD-aanval op energieminister Ebba Busch (KD) over windenergie-"desinformatie" bevatten. Het dominante patroon is een sociaaldemocrataische verantwoordingscampagne gericht op de geloofwaardigheid van de Tidö-coalitie op het gebied van infrastructuurinvesteringen, werkgelegenheid en energiebeleid, met een ongebruikelijke intracoalitionaire breuklijn blootgelegd door de SD-interpellatie over KD's energiebeleid met ironie en provocatie. De regering staat voor tijdsdruk op meerdere fronten voor de verkiezingen van 2026.
+
+### 🧭 3 Beslissingen die dit briefing ondersteunt
+
+1. **Prioritering van mediadekking**: De SD-interpellatie over windenergie/desinformatie (HD10448) is het hoofdverhaal – het is politiek het meest explosief, combineert energiebeleid met een informatieoorlogs-kader en potentieel coalitiebelastende dynamiek tussen SD en KD.
+2. **Verkiezingsmonitoring**: Sociaaldemocraten gebruiken interpellaties als pre-verkiezings-verantwoordingsinstrument – vijf van de zeven deze week zijn gericht aan ministers met concrete eisen voor beleidsomkeringen.
+3. **Beoordeling van investeringsvertrouwen**: De HD10449-interpellatie over Södra stambanan kristalliseert een bredere infrastructuur-geloofwaardigheidslacune die investeringsbeslissingen van bedrijven in Zuid-Zweden (Kronoberg/Skåne) voor de verkiezingen kan beïnvloeden.
+
+### ⚡ 60-secondensamenvattingen voor inlichtingen
+
+- **HD10448 (SD → KD)**: Josef Fransson (SD) gebruikt het Windeurope-rapport "Wind Energy Dis- and Misinformation" — dat beweert dat Zweedse pro-fossiele groepen door Rusland gesteunde desinformatie verspreiden — als basis om sarcastisch te betwijfelen of energieminister Busch zelf slachtoffer of verspreider van desinformatie is, en daagt haar uit om energiebeleidsbesluiten te herzien. **Betekenis**: L2+ Prioriteit — legt SD-KD-coalitiewrijving over energie bloot; mediaversterking via Sveriges Radio heeft al plaatsgevonden.
+- **HD10449 (S → KD)**: Robert Olesen (S) daagt infrastructuurminister Carlson uit over het verwijderen van de Södra stambanan-investeringen ten noorden van Hässleholm en het Alvesta–Växjö-dubbelspoor uit Trafikverkets nieuwe plan, verwijzend naar het ineenstorten van regionale ontwikkelingsverplichtingen. **Betekenis**: L2 Strategisch — 3 miljoen getroffen inwoners in Zuid-Zweden.
+- **HD10450 (S → M)**: Jessica Rodén (S) ondervraagt minister van Sociale Verzekering Anna Tenje over de mogelijke afschaffing van de ziekteverzekerings-dag-180-uitzondering (de zogenaamde "S-uitzondering" die terugkeer naar de eigen werkgever mogelijk maakt), citerend bewijs van Riksrevisionen dat het werkt. **Betekenis**: L2 Strategisch — hervorming verzorgingsstaat-narratief.
+- **HD10447 (S → KD)**: Patrik Lundqvist (S) dringt bij Busch aan op de afgeschafte hoge ziektekostenkostenvergoeding (afgeschaft 2024) en stelt dat dit MKB-werkgelegenheid en Zweden's achtergebleven BBP-groei belemmert.
+
+### 🔭 Belangrijkste voorwaartse trigger
+
+Let op Ebba Buschs reactie op HD10448 – als ze de SD-provocatie als een serieuze beleidskwestie behandelt, signaleert dat coalitiediscipline; als ze het afwijst, kan dat een publieke SD-KD-breuklijn over energiebeleid voor het junibudget kristalliseren.
+
+### 📊 Significantieranking
+
+| Rang | dok_id | Onderwerp | DIW-gewicht |
+|------|--------|-----------|-------------|
+| 1 | HD10448 | Windenergie/desinformatie/coalitie | L2+ Prioriteit |
+| 2 | HD10449 | Södra stambanan/infrastructuur | L2 Strategisch |
+| 3 | HD10450 | Ziekteverzekering dag 180 | L2 Strategisch |
+| 4 | HD10447 | Ziektekostenkosten/MKB | L2 |
+| 5 | HD10446 | Foutieve overlijdensverklaringen | L1 |
+| 6 | HD10444 | Werkgeversbijdragen/jeugd | L1 |
+| 7 | HD10443 | Sociale dumping gemeenten | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27 april 2026<br/>Interpellaties"] --> B["HD10448<br/>SD→KD: Wind/Desinformatie<br/>⭐ HOOFDVERHAAL"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>Infrastructuurlacune"]
+    A --> D["HD10450<br/>S→M: Ziekteverzekering dag 180<br/>Welvaartshervorming"]
+    A --> E["HD10447<br/>S→KD: Ziektekostenkosten<br/>MKB-last"]
+    B --> F["Coalitiewrijving<br/>SD vs KD energiebeleid"]
+    C --> G["Zuid-Zweden-investeringen<br/>geloofwaardigheidscrisis"]
+    D --> H["Verkiezingen 2026<br/>welvaartsverhaal"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_no.md -->
+
+---
+
+### 🎯 BLUF
+
+Den 27. april 2026 mottok det svenske Riksdag to nye interpellasjoner – om forsinkede jernbaneinvesteringer og reform av sykeforsikringen – mens allerede kunngjorte interpellasjoner til debatt inkluderer et politisk ladet SD-angrep på energiminister Ebba Busch (KD) om vindkraft-"desinformasjon". Det dominerende mønsteret er en sosialdemokratisk ansvarskampanje rettet mot Tidö-koalisjonens troverdighet på infrastrukturinvesteringer, sysselsetting og energipolitikk, med en uvanlig intra-koalisjonsbrytning eksponert av SDs interpellasjon om KDs energipolitikk med ironi og provokasjon. Regjeringen er under tidspress på flere fronter foran valget i 2026.
+
+### 🧭 3 Beslutninger dette briefet støtter
+
+1. **Prioritering av mediedekning**: SD-interpellasjonen om vindenergi/desinformasjon (HD10448) er ledersaken – den er den mest politisk eksplosive, som kombinerer energipolitikk med et informasjonskrigsnøkkelperspektiv og potensielt koalisjonsbelastende dynamikk mellom SD og KD.
+2. **Valgoppfølging**: Sosialdemokratene bruker interpellasjoner som et forvalgsinstrument for ansvarlighet – fem av syv denne uken retter seg mot statsråder med konkrete krav om politiske omvendinger.
+3. **Vurdering av investeringstillit**: HD10449-interpellasjonen om Södra stambanan tydeliggjør et bredere infrastruktur-troverdighetsgap som kan påvirke næringsinvesteringsbeslutninger i Sør-Sverige (Kronoberg/Skåne) foran valget.
+
+### ⚡ 60-sekunders etterretningssammendrag
+
+- **HD10448 (SD → KD)**: Josef Fransson (SD) bruker Windeuropes rapport "Wind Energy Dis- and Misinformation" – som hevder at svenske pro-fossile grupper sprer russiskstøttet desinformasjon – som grunnlag for sarkastisk å stille spørsmål ved om energiminister Busch selv er offer eller formidler av desinformasjon, og utfordrer henne til å gjennomgå energipolitiske beslutninger. **Betydning**: L2+ Prioritet – avslører SD-KD-koalisjonsgnisninger om energi; medieforsterkelse via Sveriges Radio har allerede skjedd.
+- **HD10449 (S → KD)**: Robert Olesen (S) utfordrer infrastrukturminister Carlson om fjerningen av Södra stambanans investeringer nord for Hässleholm og Alvesta–Växjö dobbeltsporet fra Trafikverkets nye plan, med referanse til sammenbruddet av regionale utviklingsforpliktelser. **Betydning**: L2 Strategisk – 3 millioner berørte innbyggere i Syd-Sverige.
+- **HD10450 (S → M)**: Jessica Rodén (S) stiller spørsmål til sosialforsikringsminister Anna Tenje om potensiell fjerning av dag-180-unntaket i sykeforsikringen (det såkalte "S-unntaket" som muliggjør retur til egen arbeidsgiver), og viser til Riksrevisjonens bevis for at det fungerer. **Betydning**: L2 Strategisk – velferdsstatsreformfortelling.
+- **HD10447 (S → KD)**: Patrik Lundqvist (S) presser Busch om avskaffet høy sykelønnskostnadserkstatning (fjernet 2024) og argumenterer for at det begrenser SMB-sysselsetting og Sveriges etterslepende BNP-vekst.
+
+### 🔭 Viktigste fremadrettede trigger
+
+Følg med på Ebba Buschs svar på HD10448 – hvis hun behandler SD-provokasjonen som et seriøst politisk spørsmål, signaliserer det koalisjonsdisiplin; hvis hun avviser den, kan det krystallisere en offentlig SD-KD-splid om energipolitikk foran junibudsjettet.
+
+### 📊 Signifikanskrangering
+
+| Rang | dok_id | Sak | DIW-vekt |
+|------|--------|-----|----------|
+| 1 | HD10448 | Vindenergi/desinformasjon/koalisjon | L2+ Prioritet |
+| 2 | HD10449 | Södra stambanan/infrastruktur | L2 Strategisk |
+| 3 | HD10450 | Sykeforsikring dag 180 | L2 Strategisk |
+| 4 | HD10447 | Sykelønnskostnader/SMB | L2 |
+| 5 | HD10446 | Feilaktige dødserklæringer | L1 |
+| 6 | HD10444 | Arbeidsgiveravgift/ungdom | L1 |
+| 7 | HD10443 | Sosial dumping kommuner | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27 April 2026<br/>Interpellasjoner"] --> B["HD10448<br/>SD→KD: Vind/Desinformasjon<br/>⭐ LEDERSAKEN"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>Infrastrukturglapp"]
+    A --> D["HD10450<br/>S→M: Sykeforsikring dag 180<br/>Velferdsreform"]
+    A --> E["HD10447<br/>S→KD: Sykelønnskostnader<br/>SMB-byrde"]
+    B --> F["Koalisjonsgnisninger<br/>SD vs KD energipolitikk"]
+    C --> G["Syd-Sverige-investeringer<br/>troverdhetskrise"]
+    D --> H["Valg 2026<br/>velferdsfortelling"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_sv.md -->
+
+---
+
+### 🎯 BLUF
+
+Den 27 april 2026 fick svenska riksdagen in två nya interpellationer – om försenade järnvägsinvesteringar och reform av sjukförsäkringen – medan redan aviserade interpellationer inför debatt inkluderar en politiskt laddad attack från SD mot energiminister Ebba Busch (KD) om vindkraftens "desinformation". Det dominerande mönstret är en socialdemokratisk ansvarskampanj riktad mot Tidökoalitionens trovärdighet i frågor om infrastrukturinvesteringar, sysselsättning och energipolitik, med en ovanlig spricka inom koalitionen som exponeras av SDs interpellation om KDs energipolitik med ironi och provokation. Regeringen möter tidspressen på flera fronter inför valet 2026.
+
+### 🧭 3 Beslut som detta briefing stöder
+
+1. **Prioritering av medierapportering**: SDs interpellation om vindenergi/desinformation (HD10448) är den ledande historien – den är den mest politiskt explosiva och kombinerar energipolitik med ett informationskrigsramverk och potentiellt koalitionsstörande dynamik mellan SD och KD.
+2. **Valbevakning**: Socialdemokraterna använder interpellationer som ett förelektionsansvarighetsinstrument – fem av sju denna vecka riktar sig mot statsråd med begäran om konkreta politikomvändningar.
+3. **Bedömning av investeringsklimat**: Interpellationen om Södra stambanan (HD10449) tydliggör ett bredare infrastrukturkredibilitetsglapp som kan påverka affärsinvesteringsbeslut i södra Sverige (Kronoberg/Skåne) inför valet.
+
+### ⚡ 60-sekunders underrättelsesammanfattning
+
+- **HD10448 (SD → KD)**: Josef Fransson (SD) använder Windeuropes rapport "Wind Energy Dis- and Misinformation" – som hävdar att svenska pro-fossila grupper sprider ryskstödd desinformation – som grund för att sarkastiskt ifrågasätta om energiminister Busch själv är offer eller spridare av desinformation och utmanar henne att se över energipolitiska beslut. **Betydelse**: L2+ Prioritet – exponerar SD-KD-koalitionsfriktioner om energi; medieförstärkning via Sveriges Radio har redan skett.
+- **HD10449 (S → KD)**: Robert Olesen (S) utmanar infrastrukturminister Carlson om borttagningen av Södra stambanans investeringar norr om Hässleholm och Alvesta–Växjö dubbelspår från Trafikverkets nya plan, med hänvisning till kollapsen av regionala utvecklingsåtaganden. **Betydelse**: L2 Strategisk – 3 miljoner berörda invånare i Sydsverige.
+- **HD10450 (S → M)**: Jessica Rodén (S) ifrågasätter socialförsäkringsminister Anna Tenje om potentiellt borttagande av sjukförsäkringens dag 180-undantag (det s.k. "S-undantaget" som möjliggör återgång till egen arbetsgivare), med hänvisning till Riksrevisionens bevis att det fungerar. **Betydelse**: L2 Strategisk – välfärdsreformberättelse.
+- **HD10447 (S → KD)**: Patrik Lundqvist (S) pressar Busch om avskaffad hög sjuklönekostnadsersättning (borttagen 2024), och argumenterar att det begränsar SME-sysselsättning och Sveriges eftersläpande BNP-tillväxt.
+
+### 🔭 Viktigaste framåtblickande trigger
+
+Bevaka Ebba Buschs svar på HD10448 – om hon behandlar SDs provokation som en seriös policyfråga signalerar det koalitionsdisciplin; om hon avvisar den kan det kristallisera en offentlig SD-KD-spricka om energipolitik inför junibud geten.
+
+### 📊 Signifikansranking
+
+| Ranking | dok_id | Fråga | DIW-vikt |
+|---------|--------|-------|-----------|
+| 1 | HD10448 | Vindenergi/desinformation/koalition | L2+ Prioritet |
+| 2 | HD10449 | Södra stambanan/infrastruktur | L2 Strategisk |
+| 3 | HD10450 | Sjukförsäkring dag 180 | L2 Strategisk |
+| 4 | HD10447 | Sjuklönekostnader/SME | L2 |
+| 5 | HD10446 | Felaktiga dödförklaringar | L1 |
+| 6 | HD10444 | Arbetsgivaravgifter/ungdomar | L1 |
+| 7 | HD10443 | Social dumpning kommuner | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 27 April 2026<br/>Interpellationer"] --> B["HD10448<br/>SD→KD: Vind/Desinformation<br/>⭐ LEDANDE HISTORIA"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>Infrastrukturglapp"]
+    A --> D["HD10450<br/>S→M: Sjukförsäkring dag 180<br/>Välfärdsreform"]
+    A --> E["HD10447<br/>S→KD: Sjuklönekostnader<br/>SME-börda"]
+    B --> F["Koalitionsfriktioner<br/>SD vs KD energipolitik"]
+    C --> G["Sydsverige-investeringar<br/>trovärdhetskris"]
+    D --> H["Val 2026<br/>välfärdsberättelse"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_zh.md -->
+
+---
+
+### 🎯 简报摘要
+
+2026年4月27日，瑞典议会（Riksdag）收到两份新的质询——关于铁路投资延误和疾病保险改革——同时，已宣布待辩的质询中包括SD对能源部长埃巴·布什（KD）就风力发电"虚假信息"发起的政治上充满火药味的攻击。主导模式是社会民主党针对提德联合政府在基础设施投资、就业和能源政策上的可信度发起的追责运动，SD就KD能源政策提出的质询以讽刺和挑衅的方式揭示了联合政府内部不寻常的裂痕。政府在2026年大选前在多个方面面临时间压力。
+
+### 🧭 本简报支持的3项决策
+
+1. **媒体报道优先级**：SD关于风力能源/虚假信息的质询（HD10448）是主要报道——它是政治上最具爆炸性的，将能源政策与信息战框架以及SD与KD之间潜在的联合政府压力动态结合起来。
+2. **选举追踪**：社会民主党将质询用作选前追责工具——本周七份中的五份针对政府大臣，提出具体的政策转向要求。
+3. **投资信心评估**：HD10449关于Södra stambanan的质询具体体现了更广泛的基础设施可信度缺口，可能在选举前影响瑞典南部（Kronoberg/Skåne）的企业投资决策。
+
+### ⚡ 60秒情报摘要
+
+- **HD10448 (SD → KD)**：约瑟夫·弗兰森（SD）利用Windeurope报告"Wind Energy Dis- and Misinformation"——该报告声称瑞典亲化石燃料团体正在传播俄罗斯支持的虚假信息——作为讽刺性地质疑能源部长布什自己是否是虚假信息的受害者或传播者的依据，挑战她审查能源政策决定。**重要性**：L2+ 优先——揭示SD-KD联合政府在能源方面的摩擦；通过Sveriges Radio的媒体放大已经发生。
+- **HD10449 (S → KD)**：罗伯特·奥莱森（S）就Trafikverket新计划中删除Hässleholm以北的Södra stambanan投资和Alvesta–Växjö双线挑战基础设施部长卡尔森，引用区域发展承诺的崩溃。**重要性**：L2 战略性——瑞典南部300万居民受影响。
+- **HD10450 (S → M)**：杰西卡·罗登（S）就可能废除疾病保险第180天例外（允许返回原雇主的"S例外"）向社会保险部长安娜·特尼叶质询，援引Riksrevisionen关于其有效性的证据。**重要性**：L2 战略性——福利国家改革叙事。
+- **HD10447 (S → KD)**：帕特里克·伦德克维斯特（S）就废除的高病假费用补偿（2024年废除）向布什施压，认为这抑制了中小企业就业和瑞典落后的GDP增长。
+
+### 🔭 主要前瞻触发因素
+
+关注埃巴·布什对HD10448的回应——如果她将SD的挑衅视为严肃的政策问题，这表明联合政府纪律；如果她拒绝，可能在六月预算前将SD-KD关于能源政策的公开裂痕具体化。
+
+### 📊 重要性排名
+
+| 排名 | dok_id | 议题 | DIW权重 |
+|------|--------|------|--------|
+| 1 | HD10448 | 风力能源/虚假信息/联合政府 | L2+ 优先 |
+| 2 | HD10449 | Södra stambanan/基础设施 | L2 战略性 |
+| 3 | HD10450 | 疾病保险第180天 | L2 战略性 |
+| 4 | HD10447 | 病假费用/中小企业 | L2 |
+| 5 | HD10446 | 错误死亡声明 | L1 |
+| 6 | HD10444 | 雇主缴费/青年 | L1 |
+| 7 | HD10443 | 地方政府社会倾销 | L1 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+graph TD
+    A["🗓️ 2026年4月27日<br/>质询"] --> B["HD10448<br/>SD→KD: 风力/虚假信息<br/>⭐ 主要报道"]
+    A --> C["HD10449<br/>S→KD: Södra stambanan<br/>基础设施缺口"]
+    A --> D["HD10450<br/>S→M: 疾病保险第180天<br/>福利改革"]
+    A --> E["HD10447<br/>S→KD: 病假费用<br/>中小企业负担"]
+    B --> F["联合政府摩擦<br/>SD vs KD 能源"]
+    C --> G["瑞典南部投资<br/>可信度危机"]
+    D --> H["2026年选举<br/>福利叙事"]
+    E --> H
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#fff
+    style G fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2275,3 +3067,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/executive-brief_zh.md)

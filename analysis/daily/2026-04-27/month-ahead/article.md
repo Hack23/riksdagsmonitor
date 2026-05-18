@@ -6,7 +6,7 @@ date: 2026-04-27
 subfolder: month-ahead
 slug: 2026-04-27-month-ahead
 source_folder: analysis/daily/2026-04-27/month-ahead
-generated_at: 2026-05-18T09:08:37.959Z
+generated_at: 2026-05-18T13:28:10.978Z
 language: en
 layout: article
 ---
@@ -88,6 +88,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1659,13 +1672,731 @@ This analysis applied all 9 ICD 203 standards. Compliance assessment:
 - analysis/daily/2026-04-24/committeeReports/ (if exists)
 - Prior April 2026 interpellations (HD10443–HD10451 series)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# مايو 2026 – نظرة شهرية على البرلمان السويدي: الأمن والعدالة والبنية التحتية في المقدمة
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-27  
+**التصنيف**: غير سري // عام  
+**الثقة**: عالية [B2]  
+**عمق التحليل**: قياسي (Tier-C Month-Ahead)
+
+### 🎯 الخلاصة التنفيذية
+
+يدخل البرلمان السويدي (Riksdag) شهر مايو 2026 بجدول تشريعي تهيمن عليه توسعة منظومة العدالة الجنائية، ونزاعات استثمار البنية التحتية، والضغط لإصلاح التأمين الاجتماعي. تواجه حكومة كريسترسون ضغوطاً متزامنة من استجوابات الاشتراكيين الديمقراطيين حول ثغرات استثمار السكك الحديدية وإصلاح إجازة المرض، فيما تقترب عدة تقارير لجان بشأن التشريعات الجنائية وتنظيم الأسلحة والطاقة الاستيعابية للسجون من تصويتات نهائية في البرلمان. يتصاعد البعد الجيوسياسي الأمني مع تشريعات المساءلة الأوكرانية ومقترحات السياسة الخارجية المرتبطة بروسيا.
+
+### 🧭 القرارات التي يدعمها هذا الإحاطة
+
+1. **متابعة تصويت JuU على قانون الأسلحة** (HD01JuU10): يدخل قانون الأسلحة الجديد (vapenlag) حيز التنفيذ في 1 يونيو 2026 — يجب على متابعي تشريعات قطاع الأمن رصد موعد التصويت النهائي وأي تعديلات في اللحظة الأخيرة (الثقة: عالية [A2]).
+
+2. **رصد إصلاح SfU للباحثين المهاجرين** (HD01SfU23): تدخل قواعد الباحثين الأجانب والدارسين في الدكتوراه حيز التنفيذ في 11 يونيو 2026 وتؤثر على تنافسية سوق العمل في مجال الابتكار — ذات صلة بالجهات العاملة في التعليم العالي والبحث والتطوير (الثقة: عالية [A2]).
+
+3. **تقييم إشارات فجوة استثمار البنية التحتية**: يكشف استجواب HD10449 حول Södra stambanan عن توتر هيكلي بين خطة البنية التحتية للنقل الحكومية وأولويات التنمية الإقليمية — مؤشرات على احتكاك ائتلافي محتمل مع KD (الثقة: متوسطة [B2]).
+
+### ⚡ تقرير الموقف في 60 ثانية
+
+- **العدالة الجنائية**: قانون الأسلحة الجديد (HD01JuU10، JuU)، بناء سجون مسرّع (HD01CU25، CU)، قواعد مشددة للجانحين الشباب (HD03246) — يهيمن سرد الأمن الحكومي في مايو.
+- **تأمين المرض**: تشير استجوابات S بشأن استثناء اليوم 180 من تأمين المرض (HD10450) إلى تموضع ما قبل الانتخابات حول دولة الرفاه؛ يُتوقع رد وزاري من Anna Tenje (M).
+- **البنية التحتية**: يغيب مسار Södra stambanan المزدوج بين Alvesta وVäxjö عن الخطة الوطنية للبنية التحتية — يضغط S على Andreas Carlson (KD) للالتزام؛ حساسية ائتلافية إقليمية.
+- **الشؤون الخارجية/الأمن**: مقترح تقييد التأشيرات الروسية (HD11753)، إلغاء حقوق التحليق (HD11752)، التصديق على محكمة جرائم الحرب الأوكرانية (HD03231/232) — يتمسك التوافق البرلماني الأمني لكن S يضغط لمواقف أشد.
+- **الطاقة**: مقترح حول أعمدة خطوط الكهرباء (أعمدة خشبية)، نقاش حول معلومات مضللة بشأن الرياح (HD10448، SD) — تتحول طاقة التحول إلى ساحة حرب ثقافية قبيل انتخابات 2026.
+
+### 🏛️ أبرز الأحداث التشريعية: مايو 2026
+
+```mermaid
+gantt
+    title أبرز الأحداث التشريعية مايو 2026
+    dateFormat  YYYY-MM-DD
+    section العدالة
+    تصويت JuU قانون الأسلحة (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section المدني
+    معيار شحن السيارات الكهربائية يدخل حيز التنفيذ :milestone, 2026-05-29, 0d
+    section البنية التحتية
+    جلسة استماع CU40 lantmäteri               :active, 2026-05-19, 10d
+    section الميزانية
+    تصويت إبراء ذمة Riksbank (FiU23)           :milestone, 2026-05-07, 0d
+    style العدالة fill:#ff006e,stroke:#ff006e
+    style المدني fill:#00d9ff,stroke:#00d9ff
+    style البنية fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 المحفز المستقبلي الرئيسي
+
+**حزمة التصويتات القضائية (مايو 2026)**: يخلق مزيج HD01JuU10 (قانون الأسلحة)، وHD01JuU31 (تقييم إصلاح الشرطة)، وHD01CU25 (بناء السجون)، وHD03237 (مقترح تدريب الشرطة المدفوع) لحظة تشريعية مركّزة للقطاع القضائي ستختبر تلاحم الحكومة وSD، وستتيح لـS أقصى قدر من الظهور المعارض. ما يجب مراقبته: تعديلات SD، ومقترحات S المضادة، والإطار الإعلامي حول معدلات الجريمة.
+
+### تقييم الثقة
+
+الثقة التحليلية الإجمالية: **عالية** — مستندة إلى وثائق برلمانية مؤكدة قائمة على MCP وبيتانكاندن (betänkanden) حديثة. البيانات الاقتصادية لصندوق النقد الدولي غير متوفرة في هذه التشغيلة (خطأ شبكي)؛ السياق الاقتصادي مستخلص من إصدار WEO أبريل 2026 السابق (NGDP_RPCH: SWE ~2.1%).
+
+</div>
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_da.md -->
+
+### 🎯 BLUF
+
+Sveriges Riksdag træder ind i maj 2026 med en lovgivningsmæssig dagsorden domineret af udvidelse af strafferetsplejen, investeringskonflikter inden for infrastruktur og pres for social­forsikringsreformer. Kristersson-regeringen møder samtidige pres fra Socialdemokraternes interpellationer om jernbaneinvesteringsgab og sygelønsreform, mens adskillige udvalgsrapporter om strafferetlig lovgivning, våbenregulering og fængselskapacitet nærmer sig endelige Riksdag-afstemninger. Den sikkerhedspolitisk-geopolitiske dimension intensiveres med ukrainsk ansvarighedslovgivning og Ruslands-relaterede udenrigspolitiske motioner.
+
+### 🧭 Beslutninger dette briefing understøtter
+
+1. **Følg JuU-afstemningen om våbenloven** (HD01JuU10): Den nye vapenlag træder i kraft 1. juni 2026 — efterretningsforbrugere, der sporer sikkerhedssektorlovgivning, skal overvåge tidspunktet for den endelige afstemning og eventuelle ændringer i sidste øjeblik (konfidens: HØJ [A2]).
+
+2. **Overvåg SfU-migrationsreform for forskere** (HD01SfU23): Regler for udenlandske forskere og ph.d.-studerende træder i kraft 11. juni 2026 og påvirker innovationsarbejdsmarkedets konkurrenceevne — relevant for aktører inden for videregående uddannelse og FoU (konfidens: HØJ [A2]).
+
+3. **Vurder infrastrukturinvesteringsgabsignaler**: HD10449-interpellationen om Södra stambanan afslører en strukturel spænding mellem regeringens transportinfrastrukturplan og regionale udviklingsprioriteter — indikatorer for potentielle koalitionsgnidninger med KD (konfidens: MEDIUM [B2]).
+
+### ⚡ 60-sekunders situationsoversigt
+
+- **Strafferet**: Ny våbenlov (HD01JuU10, JuU), accelereret fængselsbyggeri (HD01CU25, CU), skærpede regler for unge lovovertrædere (HD03246) — regeringens sikkerhedsfortælling er dominerende i maj.
+- **Sygesikring**: S-partiets interpellationer om sygesikringsdag-180-undtagelsen (HD10450) signalerer forvalgpositionering om velfærdsstaten; forvent ministersvar fra Anna Tenje (M).
+- **Infrastruktur**: Södra stambanans dobbeltspor Alvesta–Växjö mangler i den nationale infrastrukturplan — S-partiet presser Andreas Carlson (KD) for forpligtelse; regional koalitionsfølsomhed.
+- **Udenrigs/Sikkerhed**: Russisk visumrestriktionsmotion (HD11753), tilbagekaldelse af overflyvning (HD11752), ratificering af Ukraines krigsforbrydertribunal (HD03231/232) — parlamentarisk sikkerhedskonsensus holder, men S presser for stærkere positioner.
+- **Energi**: Elnætspæle (træpæle i elnettet) motion, vindenergi-desinformationsdebat (HD10448, SD) — energiomstillingen er ved at blive kulturkrigsterritorium forud for valget 2026.
+
+### 🏛️ Vigtigste lovgivningsbegivenheder: maj 2026
+
+```mermaid
+gantt
+    title Vigtigste lovgivningshændelser maj 2026
+    dateFormat  YYYY-MM-DD
+    section Retfærdighed
+    JuU Vapenlag-afstemning (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section Civil
+    EV-ladestandard træder i kraft               :milestone, 2026-05-29, 0d
+    section Infrastruktur
+    CU40 lantmäteri-høring                       :active, 2026-05-19, 10d
+    section Budget
+    Riksbank-decharge-afstemning (FiU23)         :milestone, 2026-05-07, 0d
+    style JuU fill:#ff006e,stroke:#ff006e
+    style EV-ladestandard fill:#00d9ff,stroke:#00d9ff
+    style CU40 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 Vigtigste fremadrettede trigger
+
+**Strafferetsafstemningsklynge (maj 2026)**: Kombinationen af HD01JuU10 (våbenlov), HD01JuU31 (politireformevaluering), HD01CU25 (fængselsbyggeri) og HD03237 (lønnet politiuddannelseproposition) skaber et koncentreret lovgivningsøjeblik for retssektoren, der vil teste regerings- og SD-tilpasning og give S maksimal oppositionssynlighed. Overvåg: SD-ændringsforslag, S-modmotioner, medieindramning om kriminalitetsrater.
+
+### Konfidensanalyse
+
+Overordnet analytisk konfidens: **HØJ** — baseret på bekræftede MCP-baserede parlamentariske dokumenter og nylige betænkninger. IMF-økonomiske data ikke tilgængelige i dette kørslen (netværksproblem); økonomisk kontekst hentet fra tidligere WEO apr-2026-vintage (NGDP_RPCH: SWE ~2,1%).
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_de.md -->
+
+### 🎯 BLUF
+
+Schwedens Riksdag tritt in den Mai 2026 mit einer Gesetzgebungsagenda ein, die von der Ausweitung des Strafjustizsystems, Investitionskonflikten im Infrastrukturbereich und dem Druck auf Sozialversicherungsreformen dominiert wird. Die Kristersson-Regierung steht gleichzeitig unter Druck durch die Interpellationen der Sozialdemokraten zu Eisenbahninvestitionslücken und zur Krankengeldreform, während mehrere Ausschussberichte zur Strafgesetzgebung, Waffenregulierung und Gefängniskapazität auf abschließende Riksdag-Abstimmungen zusteuern. Die sicherheitspolitisch-geopolitische Dimension intensiviert sich mit ukrainischer Rechenschaftspflichtgesetzgebung und russlandbezogenen außenpolitischen Motionen.
+
+### 🧭 Entscheidungen, die dieses Briefing unterstützt
+
+1. **JuU-Abstimmung zum Waffengesetz verfolgen** (HD01JuU10): Das neue vapenlag tritt am 1. Juni 2026 in Kraft — Geheimdienstverbraucher, die Sicherheitssektorgesetzgebung verfolgen, müssen den Zeitpunkt der abschließenden Abstimmung und eventuelle Änderungen in letzter Minute überwachen (Konfidens: HOCH [A2]).
+
+2. **SfU-Migrationsreform für Forscher überwachen** (HD01SfU23): Regeln für ausländische Forscher und Doktoranden treten am 11. Juni 2026 in Kraft und beeinflussen die Wettbewerbsfähigkeit des Innovationsarbeitsmarkts — relevant für Akteure in Hochschulbildung und F&E (Konfidens: HOCH [A2]).
+
+3. **Infrastrukturinvestitionslückensignale bewerten**: Die HD10449-Interpellation zu Södra stambanan offenbart eine strukturelle Spannung zwischen dem Verkehrsinfrastrukturplan der Regierung und regionalen Entwicklungsprioritäten — Indikatoren potenzieller Koalitionsreibungen mit KD (Konfidens: MITTEL [B2]).
+
+### ⚡ 60-Sekunden-Lagebericht
+
+- **Strafrecht**: Neues Waffengesetz (HD01JuU10, JuU), beschleunigte Gefängnisbauten (HD01CU25, CU), verschärfte Regeln für jugendliche Straftäter (HD03246) — das Sicherheitsnarrativ der Regierung dominiert im Mai.
+- **Krankenversicherung**: Die S-Partei-Interpellationen zur Krankenversicherungs-Tag-180-Ausnahme (HD10450) signalisieren wahlkampfvorbereitende Positionierung zum Wohlfahrtsstaat; Ministerantwort von Anna Tenje (M) erwartet.
+- **Infrastruktur**: Södra stambanans Doppelgleis Alvesta–Växjö fehlt im nationalen Infrastrukturplan — die S-Partei drängt Andreas Carlson (KD) zur Verpflichtung; regionale Koalitionssensitivität.
+- **Außen-/Sicherheit**: Russische Visumrestriktionsmotion (HD11753), Widerruf des Überflugs (HD11752), Ratifizierung des ukrainischen Kriegsverbrechertribunals (HD03231/232) — parlamentarischer Sicherheitskonsens hält, aber S drängt auf stärkere Positionen.
+- **Energie**: Strommasten (Holzmasten) Motion, Windenergie-Desinformationsdebatte (HD10448, SD) — die Energiewende wird im Vorfeld der Wahl 2026 zum Kulturkampfterrain.
+
+### 🏛️ Wichtigste Gesetzgebungsereignisse: Mai 2026
+
+```mermaid
+gantt
+    title Wichtige Gesetzgebungsereignisse Mai 2026
+    dateFormat  YYYY-MM-DD
+    section Justiz
+    JuU Waffengesetz-Abstimmung (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section Zivilrecht
+    EV-Ladestandard tritt in Kraft                  :milestone, 2026-05-29, 0d
+    section Infrastruktur
+    CU40 lantmäteri-Anhörung                        :active, 2026-05-19, 10d
+    section Haushalt
+    Riksbank-Entlastungsabstimmung (FiU23)          :milestone, 2026-05-07, 0d
+    style JuU fill:#ff006e,stroke:#ff006e
+    style EV-Ladestandard fill:#00d9ff,stroke:#00d9ff
+    style CU40 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 Wichtigster Vorwärtstrigger
+
+**Strafrechts-Abstimmungscluster (Mai 2026)**: Die Kombination aus HD01JuU10 (Waffengesetz), HD01JuU31 (Polizeireformbewertung), HD01CU25 (Gefängnisbau) und HD03237 (bezahlte Polizeiausbildungsproposition) schafft einen konzentrierten Gesetzgebungsmoment für den Justizsektor, der die Ausrichtung von Regierung und SD testen und S maximale Oppositionssichtbarkeit verschaffen wird. Beobachten: SD-Änderungsanträge, S-Gegenmotionen, Medienrahmung um Kriminalitätsraten.
+
+### Konfidenzanalyse
+
+Gesamtanalytische Konfidenz: **HOCH** — basierend auf bestätigten MCP-basierten Parlamentsdokumenten und aktuellen Ausschussberichten. IMF-Wirtschaftsdaten in diesem Lauf nicht verfügbar (Netzwerkfehler); wirtschaftlicher Kontext aus früherem WEO Apr-2026-Vintage entnommen (NGDP_RPCH: SWE ~2,1%).
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_es.md -->
+
+### 🎯 BLUF
+
+El Riksdag sueco entra en mayo de 2026 con una agenda legislativa dominada por la expansión del sistema de justicia penal, los conflictos de inversión en infraestructuras y la presión por las reformas del seguro social. El gobierno Kristersson enfrenta presiones simultáneas de las interpelaciones socialdemócratas sobre brechas de inversión ferroviaria y la reforma del subsidio de enfermedad, mientras varios informes de comisión sobre legislación penal, regulación de armas y capacidad penitenciaria se acercan a las votaciones finales del Riksdag. La dimensión de seguridad geopolítica se intensifica con legislación sobre responsabilidad ucraniana y mociones de política exterior relacionadas con Rusia.
+
+### 🧭 Decisiones que este briefing apoya
+
+1. **Seguir la votación de JuU sobre la ley de armas** (HD01JuU10): La nueva vapenlag entra en vigor el 1 de junio de 2026 — los consumidores de inteligencia que siguen la legislación del sector de seguridad deben monitorear el calendario de la votación final y los posibles cambios de último momento (confianza: ALTA [A2]).
+
+2. **Monitorear la reforma migratoria SfU para investigadores** (HD01SfU23): Las reglas para investigadores extranjeros y doctorandos entran en vigor el 11 de junio de 2026 y afectan la competitividad del mercado laboral de innovación — relevante para actores en educación superior e I+D (confianza: ALTA [A2]).
+
+3. **Evaluar señales de brecha de inversión en infraestructuras**: La interpelación HD10449 sobre Södra stambanan revela una tensión estructural entre el plan de infraestructura de transporte del gobierno y las prioridades de desarrollo regional — indicadores de posibles fricciones de coalición con KD (confianza: MEDIA [B2]).
+
+### ⚡ Situación en 60 segundos
+
+- **Justicia penal**: Nueva ley de armas (HD01JuU10, JuU), construcción de prisiones acelerada (HD01CU25, CU), reglas endurecidas para jóvenes infractores (HD03246) — el relato de seguridad del gobierno domina en mayo.
+- **Seguro de enfermedad**: Las interpelaciones de S sobre la excepción del día 180 del seguro de enfermedad (HD10450) señalan un posicionamiento preelectoral sobre el Estado de bienestar; se espera respuesta ministerial de Anna Tenje (M).
+- **Infraestructuras**: La doble vía de Södra stambanan Alvesta–Växjö está ausente del plan nacional de infraestructura — S presiona a Andreas Carlson (KD) para un compromiso; sensibilidad coalicionaria regional.
+- **Asuntos exteriores/Seguridad**: Moción de restricción de visados rusos (HD11753), revocación de sobrevuelos (HD11752), ratificación del tribunal por crímenes de guerra de Ucrania (HD03231/232) — consenso parlamentario de seguridad manteniéndose pero S presiona por posiciones más firmes.
+- **Energía**: Moción sobre postes de líneas eléctricas (postes de madera), debate sobre desinformación eólica (HD10448, SD) — la transición energética se convierte en terreno de guerra cultural ante las elecciones 2026.
+
+### 🏛️ Principales eventos legislativos: Mayo 2026
+
+```mermaid
+gantt
+    title Principales eventos legislativos mayo 2026
+    dateFormat  YYYY-MM-DD
+    section Justicia
+    Votación JuU ley armas (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section Civil
+    Norma carga VE entra en vigor              :milestone, 2026-05-29, 0d
+    section Infraestructuras
+    Audiencia CU40 lantmäteri                  :active, 2026-05-19, 10d
+    section Presupuesto
+    Votación descargo Riksbank (FiU23)         :milestone, 2026-05-07, 0d
+    style JuU fill:#ff006e,stroke:#ff006e
+    style Norma fill:#00d9ff,stroke:#00d9ff
+    style CU40 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 Principal disparador prospectivo
+
+**Clúster de votaciones judiciales (mayo 2026)**: La combinación de HD01JuU10 (ley de armas), HD01JuU31 (evaluación de reforma policial), HD01CU25 (construcción de prisiones) y HD03237 (proposición de formación policial remunerada) crea un momento legislativo concentrado para el sector judicial que pondrá a prueba la alineación del gobierno y SD, y dará a S visibilidad de oposición máxima. Vigilar: enmiendas SD, contramociones de S, encuadre mediático sobre tasas de criminalidad.
+
+### Evaluación de confianza
+
+Confianza analítica general: **ALTA** — basada en documentos parlamentarios confirmados basados en MCP y recientes betänkanden. Datos económicos del FMI no disponibles en esta ejecución (error de red); contexto económico extraído del vintage anterior WEO abr-2026 (NGDP_RPCH: SWE ~2,1%).
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_fi.md -->
+
+### 🎯 BLUF
+
+Ruotsin riksdag astuu toukokuuhun 2026 lainsäädäntöagendalla, jota hallitsevat rikosoikeuden laajentaminen, infrastruktuuri-investointien ristiriidat ja sosiaalivakuutusuudistuksen paine. Kristersson-hallitus kohtaa samanaikaiset paineet sosiaalidemokraattien interpellaatioista rautatieinvestointipuutteista ja sairauspalkkaisten uudistuksesta, samalla kun useat valiokuntakertomukset rikosoikeudellisesta lainsäädännöstä, asevalvonnasta ja vankilakapasiteetista lähestyvät lopullisia riksdagin äänestyksiä. Turvallisuuspoliittis-geopoliittinen ulottuvuus voimistuu ukrainalaisen vastuullisuuslainsäädännön ja Venäjä-aiheisten ulkopoliittisten liikehdusten myötä.
+
+### 🧭 Päätökset, joita tämä tiedote tukee
+
+1. **Seuraa JuU:n aselakiläänestystä** (HD01JuU10): Uusi vapenlag astuu voimaan 1. kesäkuuta 2026 — turvallisuussektorin lainsäädäntöä seuraavien tiedustelukuluttajien on seurattava lopullisen äänestyksen ajoitusta ja mahdollisia viime hetken muutoksia (konfidens: KORKEA [A2]).
+
+2. **Seuraa SfU:n maahanmuuttajaturkijoiden uudistusta** (HD01SfU23): Ulkomaalaisten tutkijoiden ja väitöskirjatutkijoiden säännöt astuvat voimaan 11. kesäkuuta 2026 ja vaikuttavat innovaatiotyömarkkinoiden kilpailukykyyn — relevantti korkeakoulutuksen ja T&K-toimijoille (konfidens: KORKEA [A2]).
+
+3. **Arvioi infrastruktuuri-investointipuuttesignaaleja**: HD10449-interpellaatio Södra stambanasta paljastaa rakenteellisen jännitteen hallituksen liikennettä infrastruktuurisuunnitelman ja alueellisten kehitysprioriteettien välillä — indikaattorit potentiaalisista koalitiohankauksista KD:n kanssa (konfidens: KOHTALAINEN [B2]).
+
+### ⚡ 60 sekunnin tilannekatsaus
+
+- **Rikosoikeus**: Uusi asesäädös (HD01JuU10, JuU), nopeutettu vankilarakentaminen (HD01CU25, CU), tiukennetut säännöt nuorille rikollisille (HD03246) — hallituksen turvallisuusnarratiivi hallitsee toukokuussa.
+- **Sairausvakuutus**: S-puolueen interpellaatiot sairausvakuutuksen 180. päivän poikkeuksesta (HD10450) ennakoivat vaaliasemointia hyvinvointivaltiokysymyksessä; odota ministerivastaus Anna Tenjeltä (M).
+- **Infrastruktuuri**: Södra stambanaan kaksoisraide Alvesta–Växjö puuttuu kansallisesta infrastruktuurisuunnitelmasta — S-puolue painostaa Andreas Carlsonia (KD) sitoumukseen; alueellinen koalitioherkkä.
+- **Ulkopolitiikka/Turvallisuus**: Venäläinen viisumirajoitusliike (HD11753), ylilento-oikeuden peruuttaminen (HD11752), Ukrainan sotarikostribunaaliratifiointi (HD03231/232) — parlamentaarinen turvallisuuskonsensus pitää, mutta S painostaa vahvempiin kannanottoihin.
+- **Energia**: Sähköverkon tolppat (puutolppat) liike, tuulienergian disinformaatiokeskustelu (HD10448, SD) — energiasiirtymä on muuttumassa kulttuurisotaterritoriumiksi vuoden 2026 vaalien alla.
+
+### 🏛️ Tärkeimmät lainsäädäntötapahtumat: toukokuu 2026
+
+```mermaid
+gantt
+    title Toukokuun 2026 tärkeimmät lainsäädäntötapahtumat
+    dateFormat  YYYY-MM-DD
+    section Oikeusturva
+    JuU Vapenlag-äänestys (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section Siviili
+    EV-latauspisteiden sääntely astuu voimaan :milestone, 2026-05-29, 0d
+    section Infrastruktuuri
+    CU40 lantmäteri-kuuleminen               :active, 2026-05-19, 10d
+    section Budjetti
+    Riksbankenin vastuuvapaus (FiU23)         :milestone, 2026-05-07, 0d
+    style JuU fill:#ff006e,stroke:#ff006e
+    style EV-latauspisteiden fill:#00d9ff,stroke:#00d9ff
+    style CU40 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 Tärkein tulevaisuuden laukaisin
+
+**Rikosoikeusäänestysrypäs (toukokuu 2026)**: HD01JuU10 (asesäädös), HD01JuU31 (poliisiuudistuksen arviointi), HD01CU25 (vankilarakentaminen) ja HD03237 (palkattu poliisikoulutuspropositio) yhdistelmä luo tiiviin oikeussektori-lainsäädäntöhetken, joka testaa hallituksen ja SD:n yhdenmukaistumista ja antaa S:lle maksimaalisen oppositionnäkyvyyden. Seuraa: SD-muutosehdotuksia, S-vastaliikkeitä, mediakehystämistä rikollisuuslukujen ympärillä.
+
+### Konfidenssi-analyysi
+
+Kokonaisanalyyttinen konfidens: **KORKEA** — perustuu vahvistettuihin MCP-pohjaisiin parlamentaarisiin asiakirjoihin ja viimeaikaisiin valiokuntakertomuksiin. IMF-taloudelliset tiedot eivät olleet saatavilla tässä ajossa (verkko-ongelma); taloudellinen konteksti haettu aiemmasta WEO huhtikuu-2026-vintagesta (NGDP_RPCH: SWE ~2,1%).
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_fr.md -->
+
+### 🎯 BLUF
+
+Le Riksdag suédois entre dans le mois de mai 2026 avec un programme législatif dominé par l'élargissement du système judiciaire pénal, les conflits d'investissements dans les infrastructures et la pression pour des réformes de l'assurance sociale. Le gouvernement Kristersson fait simultanément face aux pressions des interpellations sociales-démocrates sur les lacunes d'investissements ferroviaires et la réforme du congé maladie, tandis que plusieurs rapports de commissions sur la législation pénale, la réglementation des armes et les capacités pénitentiaires s'approchent des votes finaux au Riksdag. La dimension sécuritaire-géopolitique s'intensifie avec la législation sur la responsabilisation ukrainienne et les motions de politique étrangère liées à la Russie.
+
+### 🧭 Décisions que ce briefing soutient
+
+1. **Suivre le vote JuU sur la loi sur les armes** (HD01JuU10) : La nouvelle vapenlag entre en vigueur le 1er juin 2026 — les consommateurs de renseignements suivant la législation du secteur de la sécurité doivent surveiller le calendrier du vote final et les amendements de dernière minute (confiance : HAUTE [A2]).
+
+2. **Surveiller la réforme SfU pour les chercheurs migrants** (HD01SfU23) : Les règles pour les chercheurs étrangers et les doctorants entrent en vigueur le 11 juin 2026 et affectent la compétitivité du marché du travail de l'innovation — pertinent pour les acteurs de l'enseignement supérieur et de la R&D (confiance : HAUTE [A2]).
+
+3. **Évaluer les signaux d'écart d'investissement infrastructurel** : L'interpellation HD10449 sur Södra stambanan révèle une tension structurelle entre le plan d'infrastructure de transport du gouvernement et les priorités de développement régional — indicateurs de frictions potentielles au sein de la coalition avec KD (confiance : MOYEN [B2]).
+
+### ⚡ Rapport de situation en 60 secondes
+
+- **Justice pénale** : Nouvelle loi sur les armes (HD01JuU10, JuU), construction de prisons accélérée (HD01CU25, CU), règles renforcées pour les jeunes délinquants (HD03246) — le récit sécuritaire du gouvernement est dominant en mai.
+- **Assurance maladie** : Les interpellations de S sur l'exception au jour 180 de l'assurance maladie (HD10450) signalent un positionnement pré-électoral sur l'État-providence ; réponse ministérielle d'Anna Tenje (M) attendue.
+- **Infrastructures** : La double voie Södra stambanan Alvesta–Växjö est absente du plan national d'infrastructure — S presse Andreas Carlson (KD) pour un engagement ; sensibilité coalitionnelle régionale.
+- **Affaires étrangères/Sécurité** : Motion de restriction des visas russes (HD11753), révocation des survols (HD11752), ratification du tribunal ukrainien pour crimes de guerre (HD03231/232) — consensus parlementaire sur la sécurité maintenu mais S presse pour des positions plus fermes.
+- **Énergie** : Motion sur les poteaux de lignes électriques (poteaux en bois), débat sur la désinformation éolienne (HD10448, SD) — la transition énergétique devient un terrain de guerre culturelle avant les élections 2026.
+
+### 🏛️ Principaux événements législatifs : Mai 2026
+
+```mermaid
+gantt
+    title Principaux événements législatifs mai 2026
+    dateFormat  YYYY-MM-DD
+    section Justice
+    Vote JuU loi sur les armes (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section Civil
+    Norme recharge VE entre en vigueur             :milestone, 2026-05-29, 0d
+    section Infrastructures
+    Audition CU40 lantmäteri                       :active, 2026-05-19, 10d
+    section Budget
+    Vote décharge Riksbank (FiU23)                 :milestone, 2026-05-07, 0d
+    style JuU fill:#ff006e,stroke:#ff006e
+    style Norme fill:#00d9ff,stroke:#00d9ff
+    style CU40 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 Principal déclencheur prospectif
+
+**Cluster de votes judiciaires (mai 2026)** : La combinaison de HD01JuU10 (loi sur les armes), HD01JuU31 (évaluation de la réforme policière), HD01CU25 (construction de prisons) et HD03237 (proposition de formation policière rémunérée) crée un moment législatif concentré pour le secteur judiciaire qui testera l'alignement du gouvernement et de SD, et donnera à S une visibilité maximale pour l'opposition. Surveiller : les amendements SD, les contre-motions de S, le cadrage médiatique autour des taux de criminalité.
+
+### Évaluation de la confiance
+
+Confiance analytique globale : **HAUTE** — basée sur des documents parlementaires MCP confirmés et des rapports de commissions récents. Données économiques FMI non disponibles pour cette exécution (erreur réseau) ; contexte économique tiré du vintage WEO avr-2026 antérieur (NGDP_RPCH : SWE ~2,1%).
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# מאי 2026 – סקירה חודשית של הריקסדאג השוודי: ביטחון, משפט ותשתיות במוקד
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-27  
+**סיווג**: לא מסווג // ציבורי  
+**ביטחון**: גבוה [B2]  
+**עומק ניתוח**: סטנדרטי (Tier-C Month-Ahead)
+
+### 🎯 תקציר מנהלים
+
+הריקסדאג השוודי נכנס למאי 2026 עם סדר יום חקיקתי שהוא שולט בהרחבת מערכת המשפט הפלילי, מחלוקות השקעה בתשתיות ולחץ לרפורמות ביטוח סוציאלי. ממשלת קריסטרסון עומדת בו-זמנית בפני לחצים מהשאילתות הסוציאל-דמוקרטיות על פערי השקעה ברכבת ורפורמת דמי המחלה, בעוד מספר דוחות ועדות בנושא חקיקה פלילית, רגולציית נשק וקיבולת בתי-סוהר מתקרבים להצבעות סופיות בריקסדאג. הממד הגיאו-פוליטי הביטחוני מתגבר עם חקיקת אחריות אוקראינית והצעות מדיניות חוץ הקשורות לרוסיה.
+
+### 🧭 החלטות שהסיקור הזה תומך בהן
+
+1. **מעקב אחר הצבעת JuU על חוק הנשק** (HD01JuU10): חוק הנשק החדש (vapenlag) נכנס לתוקף ב-1 ביוני 2026 — צרכני מודיעין העוקבים אחר חקיקת ענף הביטחון צריכים לנטר את לוח הזמנים של ההצבעה הסופית ושינויים אפשריים ברגע האחרון (ביטחון: גבוה [A2]).
+
+2. **ניטור רפורמת SfU להגירת חוקרים** (HD01SfU23): כללים לחוקרים זרים ולדוקטורנטים נכנסים לתוקף ב-11 ביוני 2026 ומשפיעים על תחרותיות שוק העבודה בחדשנות — רלוונטי לגורמים בהשכלה גבוהה ו-R&D (ביטחון: גבוה [A2]).
+
+3. **הערכת אותות פערי השקעה בתשתיות**: השאילתה HD10449 בנושא Södra stambanan חושפת מתח מבני בין תוכנית תשתיות התחבורה של הממשלה ובין סדרי עדיפויות פיתוח אזוריים — מדדים לחיכוך קואליציוני אפשרי עם KD (ביטחון: בינוני [B2]).
+
+### ⚡ דוח מצב ב-60 שניות
+
+- **משפט פלילי**: חוק נשק חדש (HD01JuU10, JuU), בנייה מואצת של בתי-סוהר (HD01CU25, CU), כללים מחמירים לעבריינים צעירים (HD03246) — הנרטיב הביטחוני של הממשלה שולט במאי.
+- **ביטוח מחלה**: השאילתות של S על פטור יום 180 בביטוח המחלה (HD10450) מסמנות מיצוב טרום-בחירות על מדינת הרווחה; תגובת שר Anna Tenje (M) צפויה.
+- **תשתיות**: המסלול הכפול של Södra stambanan בין Alvesta לVäxjö נעדר מהתוכנית הלאומית לתשתיות — S מפעיל לחץ על Andreas Carlson (KD) להתחייב; רגישות קואליציונית אזורית.
+- **ענייני חוץ/ביטחון**: הצעה להגבלת ויזות רוסיות (HD11753), ביטול זכויות מעבר (HD11752), אשרור בית-הדין לפשעי מלחמה באוקראינה (HD03231/232) — הקונצנזוס הפרלמנטרי הביטחוני מוחזק אך S לוחץ לעמדות נחרצות יותר.
+- **אנרגיה**: הצעה בנושא עמודי קווי חשמל (עמודי עץ), דיון על מידע מוטעה בנושא אנרגיית רוח (HD10448, SD) — מעבר האנרגיה הופך לשדה קרב תרבותי לקראת בחירות 2026.
+
+### 🏛️ אירועי חקיקה מרכזיים: מאי 2026
+
+```mermaid
+gantt
+    title אירועי חקיקה מרכזיים מאי 2026
+    dateFormat  YYYY-MM-DD
+    section משפט
+    הצבעת JuU חוק נשק (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section אזרחי
+    תקן טעינת EV נכנס לתוקף               :milestone, 2026-05-29, 0d
+    section תשתיות
+    דיון CU40 lantmäteri                   :active, 2026-05-19, 10d
+    section תקציב
+    הצבעת הפטור Riksbank (FiU23)           :milestone, 2026-05-07, 0d
+    style משפט fill:#ff006e,stroke:#ff006e
+    style אזרחי fill:#00d9ff,stroke:#00d9ff
+    style תשתיות fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 מניע מרכזי לעתיד
+
+**אשכול הצבעות שיפוטיות (מאי 2026)**: שילוב HD01JuU10 (חוק נשק), HD01JuU31 (הערכת רפורמת משטרה), HD01CU25 (בנייה בתי-סוהר) ו-HD03237 (הצעת הכשרת משטרה בתשלום) יוצר רגע חקיקתי ממוקד לענף השיפוטי שיבחן את ההיישור בין הממשלה ל-SD ויעניק ל-S נראות אופוזיציה מירבית. לעקוב: תיקוני SD, הצעות-נגד של S, מסגור תקשורתי סביב שיעורי פשיעה.
+
+### הערכת ביטחון
+
+ביטחון אנליטי כולל: **גבוה** — מבוסס על מסמכים פרלמנטריים מאומתים על בסיס MCP ו-betänkanden עדכניים. נתוני IMF הכלכליים לא זמינים בריצה זו (שגיאת רשת); ההקשר הכלכלי שאוב מ-WEO אפריל 2026 הקודם (NGDP_RPCH: SWE ~2.1%).
+
+</div>
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-04-27  
+**分類**: 非機密 // 公開  
+**信頼度**: 高 [B2]  
+**分析深度**: 標準 (Tier-C Month-Ahead)
+
+### 🎯 要旨
+
+スウェーデン議会（Riksdag）は2026年5月を迎え、刑事司法制度の拡充、インフラ投資をめぐる対立、社会保険改革への圧力が立法課題を支配している。クリステション政権は同時に、鉄道投資ギャップと疾病保険改革に関する社会民主党の質問主意書（interpellation）から圧力を受けており、刑事立法・武器規制・刑務所収容力に関する複数の委員会報告が議会最終採決に近づいている。ウクライナ責任立法とロシア関連外交政策動議により、地政学的安全保障の側面が強まっている。
+
+### 🧭 このブリーフィングが支援する意思決定
+
+1. **JuUの武器法採決を追跡する**（HD01JuU10）：新たなvapenlagは2026年6月1日に施行される——安全保障セクター立法を追う情報消費者は最終採決のスケジュールと土壇場の修正案を監視する必要がある（信頼度：高 [A2]）。
+
+2. **SfUの研究者移民改革を監視する**（HD01SfU23）：外国人研究者・博士課程生向けの規則が2026年6月11日に発効し、イノベーション労働市場の競争力に影響する——高等教育・研究開発関係者に関連（信頼度：高 [A2]）。
+
+3. **インフラ投資ギャップのシグナルを評価する**：HD10449 Södra stambanan質問主意書は政府の交通インフラ計画と地域開発優先事項の間の構造的緊張を明らかにしている——KDとの連立内摩擦の可能性の指標（信頼度：中 [B2]）。
+
+### ⚡ 60秒状況報告
+
+- **刑事司法**：新武器法（HD01JuU10、JuU）、刑務所建設加速（HD01CU25、CU）、若年犯罪者に対する厳格化規則（HD03246）——政府の安全保障ナレーティブが5月は支配的。
+- **疾病保険**：疾病保険180日目例外に関するSの質問主意書（HD10450）は、福祉国家をめぐる選挙前の布石を示す；Anna Tenje大臣（M）の回答が待たれる。
+- **インフラ**：Södra stambanan Alvesta–Växjö間の複線化が国家インフラ計画に欠如——SはAndreas Carlson大臣（KD）にコミットメントを求めて圧力；地域連立感応度。
+- **外交・安全保障**：ロシアビザ制限動議（HD11753）、上空飛行取消（HD11752）、ウクライナ戦争犯罪法廷批准（HD03231/232）——議会安全保障コンセンサスは維持されているがSはより強い立場を求めて圧力。
+- **エネルギー**：送電線柱（木製柱）に関する動議、風力エネルギー偽情報議論（HD10448、SD）——エネルギー転換が2026年選挙前の文化戦争の場となっている。
+
+### 🏛️ 主要立法イベント：2026年5月
+
+```mermaid
+gantt
+    title 主要立法イベント 2026年5月
+    dateFormat  YYYY-MM-DD
+    section 司法
+    JuU武器法採決 (HD01JuU10)          :milestone, 2026-05-05, 0d
+    section 民事
+    EV充電規格施行                      :milestone, 2026-05-29, 0d
+    section インフラ
+    CU40 lantmäteri公聴会              :active, 2026-05-19, 10d
+    section 予算
+    Riksbank免責採決 (FiU23)            :milestone, 2026-05-07, 0d
+    style 司法 fill:#ff006e,stroke:#ff006e
+    style 民事 fill:#00d9ff,stroke:#00d9ff
+    style インフラ fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 主要な将来トリガー
+
+**司法採決クラスター（2026年5月）**：HD01JuU10（武器法）、HD01JuU31（警察改革評価）、HD01CU25（刑務所建設）、HD03237（有給警察訓練提案）の組み合わせが司法セクターにとって集中した立法的瞬間を生み出し、政府とSDの連携をテストし、Sに最大限の野党露出を与える。注目点：SDの修正案、Sの対抗動議、犯罪率をめぐるメディアの組み立て方。
+
+### 信頼度評価
+
+総合分析信頼度：**高**——MCP準拠の確認済み議会文書と最近のbetänkandenに基づく。IMF経済データはこの実行では利用不可（ネットワークエラー）；経済的文脈は前回のWEO2026年4月ビンテージから取得（NGDP_RPCH：SWE ~2.1%）。
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-27  
+**분류**: 비기밀 // 공개  
+**신뢰도**: 높음 [B2]  
+**분석 심도**: 표준 (Tier-C Month-Ahead)
+
+### 🎯 핵심 요약
+
+스웨덴 의회(Riksdag)는 2026년 5월에 형사사법제도 확대, 인프라 투자 갈등, 사회보험 개혁 압박이 입법 의제를 지배하는 가운데 들어선다. 크리스터손 정부는 동시에 철도 투자 격차와 병가 보험 개혁에 관한 사회민주당의 서면 질의(interpellation) 압박을 받고 있으며, 형사 입법, 무기 규제, 교도소 수용 능력에 관한 여러 위원회 보고서가 의회 최종 표결에 가까워지고 있다. 우크라이나 책임법과 러시아 관련 외교정책 동의안으로 지정학적 안보 차원이 심화되고 있다.
+
+### 🧭 이 브리핑이 지원하는 결정
+
+1. **JuU 무기법 표결 추적** (HD01JuU10): 새로운 vapenlag는 2026년 6월 1일에 발효된다 — 안보 분야 입법을 추적하는 정보 소비자들은 최종 표결 일정과 마지막 순간의 수정안을 모니터링해야 한다(신뢰도: 높음 [A2]).
+
+2. **SfU 연구자 이민 개혁 모니터링** (HD01SfU23): 외국인 연구자 및 박사과정 학생 규정이 2026년 6월 11일에 발효되어 혁신 노동시장 경쟁력에 영향을 미친다 — 고등교육 및 R&D 관계자들과 관련(신뢰도: 높음 [A2]).
+
+3. **인프라 투자 격차 신호 평가**: HD10449 Södra stambanan 질의서는 정부 교통 인프라 계획과 지역 발전 우선순위 간의 구조적 긴장을 드러낸다 — KD와의 연립 내 마찰 가능성 지표(신뢰도: 중간 [B2]).
+
+### ⚡ 60초 상황 보고
+
+- **형사사법**: 새 무기법(HD01JuU10, JuU), 교도소 건설 가속(HD01CU25, CU), 청소년 범죄자 규정 강화(HD03246) — 정부의 안보 서사가 5월을 주도.
+- **병가 보험**: 병가 보험 180일 예외에 관한 S의 질의서(HD10450)는 복지국가를 둘러싼 선거 전 포지셔닝을 신호한다; Anna Tenje 장관(M)의 답변 예상.
+- **인프라**: Södra stambanan Alvesta–Växjö 복선화가 국가 인프라 계획에서 누락 — S가 Andreas Carlson 장관(KD)에게 약속을 촉구; 지역 연립 민감성.
+- **외교/안보**: 러시아 비자 제한 동의안(HD11753), 영공 통과권 취소(HD11752), 우크라이나 전쟁범죄 재판소 비준(HD03231/232) — 의회 안보 컨센서스 유지 중이나 S는 더 강한 입장 요구.
+- **에너지**: 전선 기둥(목재 기둥) 동의안, 풍력에너지 허위정보 논쟁(HD10448, SD) — 에너지 전환이 2026년 선거를 앞두고 문화전쟁터로 변화.
+
+### 🏛️ 주요 입법 일정: 2026년 5월
+
+```mermaid
+gantt
+    title 주요 입법 일정 2026년 5월
+    dateFormat  YYYY-MM-DD
+    section 법무
+    JuU 무기법 표결 (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section 민사
+    전기차 충전 표준 발효                :milestone, 2026-05-29, 0d
+    section 인프라
+    CU40 lantmäteri 청문회              :active, 2026-05-19, 10d
+    section 예산
+    Riksbank 면책 표결 (FiU23)          :milestone, 2026-05-07, 0d
+    style 법무 fill:#ff006e,stroke:#ff006e
+    style 민사 fill:#00d9ff,stroke:#00d9ff
+    style 인프라 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 주요 미래 촉발 요인
+
+**사법 표결 클러스터 (2026년 5월)**: HD01JuU10(무기법), HD01JuU31(경찰 개혁 평가), HD01CU25(교도소 건설), HD03237(유급 경찰 훈련 제안)의 조합이 사법 분야에 집중된 입법적 순간을 만들어 정부-SD 연합을 테스트하고 S에게 최대한의 야당 가시성을 제공한다. 주목 사항: SD 수정안, S 반대 동의안, 범죄율을 둘러싼 언론 프레이밍.
+
+### 신뢰도 평가
+
+전반적 분석 신뢰도: **높음** — MCP 기반 확인된 의회 문서 및 최근 betänkanden에 근거. IMF 경제 데이터는 이번 실행에서 사용 불가(네트워크 오류); 경제 맥락은 이전 WEO 2026년 4월 빈티지에서 추출(NGDP_RPCH: SWE ~2.1%).
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_nl.md -->
+
+### 🎯 BLUF
+
+Zweden's Riksdag treedt mei 2026 in met een wetgevingsagenda gedomineerd door uitbreiding van het strafrechtssysteem, investeringsconflicten in infrastructuur en druk op sociale verzekeringshervormen. De regering-Kristersson staat tegelijkertijd onder druk van interpellaties van de sociaaldemocraten over spoorweginvesteringstekorten en hervorming van het ziektegeld, terwijl meerdere commissierapporten over strafwetgeving, wapenregulering en gevangeniscapaciteit op weg zijn naar definitieve Riksdag-stemmingen. De beveiligingsgeopolitische dimensie intensiveert met Oekraïense verantwoordingswetgeving en Rusland-gerelateerde buitenlandse beleidsmotions.
+
+### 🧭 Beslissingen die dit briefing ondersteunt
+
+1. **JuU-stemming over de Wapenwet bijhouden** (HD01JuU10): De nieuwe vapenlag treedt op 1 juni 2026 in werking — inlichtingenconsumenten die veiligheidssectorwetgeving volgen, moeten het tijdstip van de definitieve stemming en eventuele wijzigingen in de laatste minuten monitoren (betrouwbaarheid: HOOG [A2]).
+
+2. **SfU-migratiehervormingen voor onderzoekers monitoren** (HD01SfU23): Regels voor buitenlandse onderzoekers en promovendi treden in werking op 11 juni 2026 en beïnvloeden de concurrentiekracht van de innovatiearbeidsmarkt — relevant voor actoren in hoger onderwijs en O&O (betrouwbaarheid: HOOG [A2]).
+
+3. **Infrastructuurinvesteringstekortssignalen beoordelen**: De HD10449-interpellatie over Södra stambanan onthult een structurele spanning tussen het transportinfrastructuurplan van de regering en regionale ontwikkelingsprioriteiten — indicatoren voor potentiële coalitiewrijving met KD (betrouwbaarheid: MIDDEL [B2]).
+
+### ⚡ 60-secondensituatierapport
+
+- **Strafrecht**: Nieuwe wapenwet (HD01JuU10, JuU), versnelde gevangenisbouw (HD01CU25, CU), aangescherpte regels voor jonge overtreders (HD03246) — het veiligheidsverhaal van de regering domineert in mei.
+- **Ziekteverzekering**: De S-interpellaties over de dag-180-uitzondering van de ziekteverzekering (HD10450) signaleren pre-electorale positionering over de verzorgingsstaat; ministerieel antwoord van Anna Tenje (M) verwacht.
+- **Infrastructuur**: Södra stambanans dubbelspoor Alvesta–Växjö ontbreekt in het nationaal infrastructuurplan — S dringt bij Andreas Carlson (KD) aan op een toezegging; regionale coalitiegevoeligheid.
+- **Buitenland/Veiligheid**: Russische visumrestrictiesmotion (HD11753), intrekking van overvluchten (HD11752), ratificatie van het Oekraïense oorlogsmisdadentribunaal (HD03231/232) — parlementaire veiligheidsconsensus houdt stand maar S dringt aan op sterkere posities.
+- **Energie**: Motion over stroommasten (houten masten), debat over windenergie-desinformatie (HD10448, SD) — de energietransitie wordt cultureel-oorlogsterrein voor de verkiezingen 2026.
+
+### 🏛️ Belangrijkste wetgevingsevenementen: Mei 2026
+
+```mermaid
+gantt
+    title Belangrijkste wetgevingsevenementen mei 2026
+    dateFormat  YYYY-MM-DD
+    section Justitie
+    JuU Wapenwet-stemming (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section Civiel
+    EV-laadnorm treedt in werking             :milestone, 2026-05-29, 0d
+    section Infrastructuur
+    CU40 lantmäteri-hoorzitting               :active, 2026-05-19, 10d
+    section Begroting
+    Riksbank-decharge-stemming (FiU23)        :milestone, 2026-05-07, 0d
+    style JuU fill:#ff006e,stroke:#ff006e
+    style EV-laadnorm fill:#00d9ff,stroke:#00d9ff
+    style CU40 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 Belangrijkste voorwaartse trigger
+
+**Strafrechtelijk stemcluster (mei 2026)**: De combinatie van HD01JuU10 (wapenwet), HD01JuU31 (evaluatie politiehervorming), HD01CU25 (gevangenisbouw) en HD03237 (bezaalde politieopleiding-propositie) creëert een geconcentreerd wetgevingsmoment voor de rechtssector dat de afstemming van de regering en SD zal testen en S maximale oppositiezichtbaarheid geeft. Volg: SD-amendementen, S-tegenmotions, mediacoverage rondom criminaliteitscijfers.
+
+### Betrouwbaarheidsanalyse
+
+Algehele analytische betrouwbaarheid: **HOOG** — gebaseerd op bevestigde MCP-gebaseerde parlementaire documenten en recente betänkanden. IMF-economische gegevens niet beschikbaar in deze run (netwerkfout); economische context ontleend aan eerdere WEO apr-2026-vintage (NGDP_RPCH: SWE ~2,1%).
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_no.md -->
+
+### 🎯 BLUF
+
+Sveriges Riksdag går inn i mai 2026 med en lovgivningsagenda dominert av utvidelse av strafferettspleien, investeringskonflikter innen infrastruktur og press for trygdereformer. Kristersson-regjeringen møter samtidige presser fra Sosialdemokratenes interpellasjoner om jernbaneinvesteringsgap og sykelønnsreform, mens flere komiterapporter om strafferettslovgivning, våpenregulering og fengselskapasitet nærmer seg endelige riksdagsavstemninger. Den sikkerhetspolitisk-geopolitiske dimensjonen intensiveres med ukrainsk ansvarliggjøringslovgivning og Russland-relaterte utenrikspolitiske motioner.
+
+### 🧭 Beslutninger dette briefet støtter
+
+1. **Følg JuU-voteringen om våpenloven** (HD01JuU10): Den nye vapenlag trer i kraft 1. juni 2026 — etterretningskonsumenter som sporer sikkerhetssektorlovgivning, må overvåke tidspunktet for den endelige avstemningen og eventuelle siste-øyeblikk-endringer (konfidens: HØY [A2]).
+
+2. **Overvåk SfU-migrasjonsreform for forskere** (HD01SfU23): Regler for utenlandske forskere og doktorgradsstudenter trer i kraft 11. juni 2026 og påvirker innovasjonsarbeidsmarkedets konkurranseevne — relevant for aktører innen høyere utdanning og FoU (konfidens: HØY [A2]).
+
+3. **Vurder infrastrukturinvesteringsgapsignaler**: HD10449-interpellasjonen om Södra stambanan avslører en strukturell spenning mellom regjeringens transportinfrastrukturplan og regionale utviklingsprioriteringer — indikatorer for potensielle koalisjonsgnisninger med KD (konfidens: MIDDELS [B2]).
+
+### ⚡ 60-sekunders situasjonsrapport
+
+- **Strafferett**: Ny våpenlov (HD01JuU10, JuU), akselerert fengselsbygging (HD01CU25, CU), skjerpede regler for unge lovbrytere (HD03246) — regjeringens sikkerhetsnarrativ dominerer i mai.
+- **Sykeforsikring**: S-partiets interpellasjoner om sykeforsikringsdag-180-unntaket (HD10450) signaliserer forvalgposisjonering om velferdsstaten; forvent ministersvar fra Anna Tenje (M).
+- **Infrastruktur**: Södra stambanans dobbelspor Alvesta–Växjö mangler i den nasjonale infrastrukturplanen — S-partiet presser Andreas Carlson (KD) for forpliktelse; regional koalisjonssensitivitet.
+- **Utenriks/Sikkerhet**: Russisk visumsrestriksjonsmosjon (HD11753), tilbakekalling av overflyvning (HD11752), ratifisering av Ukrainas krigsforbrytelsestribunal (HD03231/232) — parlamentarisk sikkerhetskonsensus holder, men S presser for sterkere posisjoner.
+- **Energi**: Elnettsstolper (trebaserte kraftledningsstolper) mosjon, vindenergi-desinformasjonsdebatt (HD10448, SD) — energiomstillingen er i ferd med å bli kulturkrigsterritorium foran valget 2026.
+
+### 🏛️ Viktigste lovgivningshendelser: mai 2026
+
+```mermaid
+gantt
+    title Viktigste lovgivningshendelser mai 2026
+    dateFormat  YYYY-MM-DD
+    section Rettferdighet
+    JuU Vapenlag-votering (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section Sivilt
+    EV-ladestandard trer i kraft              :milestone, 2026-05-29, 0d
+    section Infrastruktur
+    CU40 lantmäteri-høring                    :active, 2026-05-19, 10d
+    section Budsjett
+    Riksbankens ansvarsfrihet (FiU23)         :milestone, 2026-05-07, 0d
+    style JuU fill:#ff006e,stroke:#ff006e
+    style EV-ladestandard fill:#00d9ff,stroke:#00d9ff
+    style CU40 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 Viktigste fremadrettede trigger
+
+**Strafferettsvoteringsklyng (mai 2026)**: Kombinasjonen av HD01JuU10 (våpenlov), HD01JuU31 (politireformevaluering), HD01CU25 (fengselsbygging) og HD03237 (lønnet politiutdanningsproposis jon) skaper et konsentrert lovgivningsøyeblikk for rettsektoren som vil teste regjeringens og SDs tilpasning og gi S maksimal opposisjonssynlighet. Overvåk: SD-endringsforslag, S-motmotioner, medieinnramming rundt kriminalitetsrater.
+
+### Konfidensanalyse
+
+Overordnet analytisk konfidens: **HØY** — basert på bekreftede MCP-baserte parlamentariske dokumenter og nylige betenkninger. IMF-økonomiske data ikke tilgjengelige i dette kjøringen (nettverksproblem); økonomisk kontekst hentet fra tidligere WEO apr-2026-vintage (NGDP_RPCH: SWE ~2,1%).
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_sv.md -->
+
+### 🎯 BLUF
+
+Riksdagen går in i maj 2026 med en lagstiftningsagenda dominerad av utvidgning av straffrättsväsendet, investeringskonflikter inom infrastruktur och trycket på social­försäkringsreformer. Kristerssons regering möter samtidiga påtryckningar från Socialdemokraternas interpellationer om järnvägsinvesteringsluckor och sjuklönereform, medan flera utskottsbetänkanden om straffrättslig lagstiftning, vapenreglering och fängelsekapacitet närmar sig slutliga riksdagsomröstningar. Den säkerhetspolitisk-geopolitiska dimensionen intensifieras med ukrainsk ansvarighetslagstiftning och Rysslandsrelaterade utrikespolitiska motioner.
+
+### 🧭 Beslut som denna briefing stöder
+
+1. **Följ omröstningen om JuU vapenlagar** (HD01JuU10): Den nya vapenlagen träder i kraft 1 juni 2026 — underrättelsebevakning av säkerhetssektorns lagstiftning måste följa tidpunkten för slutomröstning och eventuella sista-minuten-ändringar (konfidens: HÖG [A2]).
+
+2. **Bevaka SfU-reformen för migrationsforskare** (HD01SfU23): Regler för utländska forskare och doktorander träder i kraft 11 juni 2026 och påverkar innovationsarbetsmarknadens konkurrenskraft — relevant för aktörer inom högre utbildning och FoU (konfidens: HÖG [A2]).
+
+3. **Bedöm infrastrukturinvesteringsgapets signaler**: HD10449-interpellationen om Södra stambanan avslöjar en strukturell spänning mellan regeringens transportinfrastrukturplan och regionala utvecklingsprioriteringar — indikatorer på potentiell koalitionsfriktioner med KD (konfidens: MEDEL [B2]).
+
+### ⚡ 60-sekunders lägesrapport
+
+- **Straffrätt**: Ny vapenlags (HD01JuU10, JuU), påskyndad fängelsebyggnation (HD01CU25, CU), skärpta regler för unga lagöverträdare (HD03246) — regeringens säkerhetsberättelse dominerar i maj.
+- **Sjukförsäkring**: S-partiets interpellationer om sjukförsäkringens dag-180-undantag (HD10450) signalerar valförberedande positionering kring välfärdsstaten; vänta på ministersvar från Anna Tenje (M).
+- **Infrastruktur**: Södra stambanans dubbelspår Alvesta–Växjö saknas i nationell infrastrukturplan — S-partiet pressar Andreas Carlson (KD) om åtaganden; regional koalitionskänslighet.
+- **Utrikes/Säkerhet**: Motion om ryska visumrestriktioner (HD11753), återkallelse av överflygningstillstånd (HD11752), ratificering av Ukrainas krigsförbrytartribunal (HD03231/232) — parlamentarisk säkerhetskonsensus håller men S pressar för starkare positioner.
+- **Energi**: Motion om elnätsstolpar (träpålar i elnätet), debatt om energidesinformation (HD10448, SD) — energiomställningen håller på att bli kulturkrigsterritorium inför 2026 års val.
+
+### 🏛️ Viktiga lagstiftningshändelser: maj 2026
+
+```mermaid
+gantt
+    title Viktiga lagstiftningshändelser maj 2026
+    dateFormat  YYYY-MM-DD
+    section Rättsväsende
+    JuU omröstning vapenlagar (HD01JuU10)        :milestone, 2026-05-05, 0d
+    section Civilt
+    EV-laddningsregler träder i kraft             :milestone, 2026-05-29, 0d
+    section Infrastruktur
+    CU40 lantmäteriutfrågning                     :active, 2026-05-19, 10d
+    section Budget
+    Riksbankens ansvarsfrihet (FiU23)             :milestone, 2026-05-07, 0d
+    style JuU fill:#ff006e,stroke:#ff006e
+    style EV-laddningsregler fill:#00d9ff,stroke:#00d9ff
+    style CU40 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 Viktigaste framåtblickande trigger
+
+**Straffrättsligt omröstningskluster (maj 2026)**: Kombinationen av HD01JuU10 (vapenlagar), HD01JuU31 (utvärdering av polisreform), HD01CU25 (fängelsebyggnation) och HD03237 (proposition om betald polisutbildning) skapar ett koncentrerat lagstiftningstillfälle för rättsväsendet som kommer att testa regeringens och SDs anpassning och ge S maximal oppositionssynlighet. Bevaka: SD-ändringsförslag, S-motmotioner, medieinramning kring brottslighetsstatistik.
+
+### Konfidensanalys
+
+Övergripande analytisk konfidens: **HÖG** — baserad på bekräftade MCP-baserade riksdagsdokument och aktuella betänkanden. IMF-ekonomiska data inte tillgängliga i denna körning (nätverksproblem); ekonomisk kontext hämtad från tidigare WEO apr-2026-årgång (NGDP_RPCH: SWE ~2,1%).
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**日期**: 2026-04-27  
+**分类**: 非机密 // 公开  
+**置信度**: 高 [B2]  
+**分析深度**: 标准 (Tier-C Month-Ahead)
+
+### 🎯 核心摘要
+
+瑞典议会（Riksdag）进入2026年5月，立法议程由刑事司法制度扩展、基础设施投资冲突以及社会保险改革压力主导。克里斯特松政府同时面临社会民主党就铁路投资缺口和病假保险改革提出的质询（interpellation）压力，而多份关于刑事立法、武器监管和监狱容量的委员会报告正接近议会最终投票。随着乌克兰问责立法和与俄罗斯相关的外交政策议案，地缘政治安全维度持续升温。
+
+### 🧭 本简报支持的决策
+
+1. **跟踪JuU武器法投票**（HD01JuU10）：新vapenlag于2026年6月1日生效——追踪安全部门立法的情报消费者需监测最终投票时间表和最后时刻的修正案（置信度：高 [A2]）。
+
+2. **监测SfU研究人员移民改革**（HD01SfU23）：外国研究人员和博士生规则于2026年6月11日生效，影响创新劳动力市场竞争力——与高等教育和研发领域相关（置信度：高 [A2]）。
+
+3. **评估基础设施投资缺口信号**：HD10449关于Södra stambanan的质询揭示了政府交通基础设施计划与地区发展优先事项之间的结构性张力——联合政府内与KD潜在摩擦的指标（置信度：中 [B2]）。
+
+### ⚡ 60秒态势报告
+
+- **刑事司法**：新武器法（HD01JuU10，JuU）、监狱建设加速（HD01CU25，CU）、青少年犯罪者规则强化（HD03246）——政府安全叙事在五月占主导。
+- **病假保险**：S关于病假保险第180天豁免的质询（HD10450）预示着福利国家问题上的选前定位；预计Anna Tenje部长（M）做出答复。
+- **基础设施**：Södra stambanan Alvesta–Växjö段复线化在国家基础设施计划中缺失——S向Andreas Carlson部长（KD）施压要求承诺；地区联合政治敏感性。
+- **外交/安全**：俄罗斯签证限制议案（HD11753）、取消过境飞行权（HD11752）、批准乌克兰战争罪法庭（HD03231/232）——议会安全共识维持，但S施压寻求更强硬立场。
+- **能源**：输电线路电线杆（木制电线杆）议案、风能虚假信息辩论（HD10448，SD）——能源转型在2026年选举前成为文化战争战场。
+
+### 🏛️ 主要立法事件：2026年5月
+
+```mermaid
+gantt
+    title 主要立法事件 2026年5月
+    dateFormat  YYYY-MM-DD
+    section 司法
+    JuU武器法投票 (HD01JuU10)          :milestone, 2026-05-05, 0d
+    section 民事
+    电动汽车充电标准生效                 :milestone, 2026-05-29, 0d
+    section 基础设施
+    CU40 lantmäteri听证会              :active, 2026-05-19, 10d
+    section 预算
+    Riksbank免责投票 (FiU23)           :milestone, 2026-05-07, 0d
+    style 司法 fill:#ff006e,stroke:#ff006e
+    style 民事 fill:#00d9ff,stroke:#00d9ff
+    style 基础设施 fill:#ffbe0b,stroke:#ffbe0b
+```
+
+### 🔭 主要前瞻触发因素
+
+**司法投票集群（2026年5月）**：HD01JuU10（武器法）、HD01JuU31（警察改革评估）、HD01CU25（监狱建设）和HD03237（带薪警察培训提案）的组合为司法部门创造了一个集中的立法时刻，将测试政府与SD的协调，并为S提供最大反对党曝光度。关注：SD修正案、S反对议案、犯罪率相关媒体框架。
+
+### 置信度评估
+
+总体分析置信度：**高**——基于MCP确认的议会文件和近期betänkanden。本次运行IMF经济数据不可用（网络错误）；经济背景取自此前WEO 2026年4月数据（NGDP_RPCH：SWE ~2.1%）。
+
+<!-- source-sha: 0d5ca67103600cd49fb8373d7e028558be2d04d5 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 16 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1717,6 +2448,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

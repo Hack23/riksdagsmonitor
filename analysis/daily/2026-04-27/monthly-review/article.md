@@ -6,7 +6,7 @@ date: 2026-04-27
 subfolder: monthly-review
 slug: 2026-04-27-monthly-review
 source_folder: analysis/daily/2026-04-27/monthly-review
-generated_at: 2026-05-18T09:08:37.966Z
+generated_at: 2026-05-18T13:28:10.991Z
 language: en
 layout: article
 ---
@@ -116,6 +116,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Cross Session Intelligence](#rm-cross-session-intelligence) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Session Baseline](#rm-session-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -1482,6 +1495,1116 @@ New intelligence this cycle:
 - **HD03253**: CRD6/CRR3 transposition creates PIR-E (SIB capital adequacy monitoring)
 - **S five-interpellation cluster**: HD10447–HD10450 upgrades S campaign momentum assessment
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز استخباراتي — المراجعة الشهرية 2026-04-27
+
+**المؤلف**: James Pether Sörling | **التاريخ**: 2026-04-27
+**الفترة**: 2026-03-28 → 2026-04-27 (30 يوماً) | **Riksmöte**: 2025/26
+**مستوى الثقة**: HIGH (A1) | **نطاق أدميرالتي**: A1–C3 | **أيام حتى الانتخابات**: 139
+
+### 🎯 ملخص تنفيذي
+
+تُختتم فترة الثلاثين يوماً 2026-03-28 → 2026-04-27 محفظة التشريعات التي أنجزها ائتلاف تيدو خلال دورة البرلمان 2025/26، وتكشف في الوقت ذاته عن خطَّي صدع جديدَين: **توتر داخلي بين SD وKD حول سياسة الطاقة** (HD10448)، و**حملة استجواب اشتراكية ديمقراطية منسقة** تستهدف أربع وزارات. تقف السويد الآن على بُعد **139 يوماً من الانتخابات**، وقد تحوّل المحور السياسي بالكامل من التشريع إلى مخاطر التنفيذ والمساءلة والتموضع الانتخابي.
+
+### 🧭 3 قرارات يدعمها هذا الموجز
+
+1. **رصد تماسك الائتلاف**: يُعدّ الاستجواب HD10448 بين SD وKD (Fransson في مواجهة Busch بشأن التضليل المتعلق بطاقة الرياح) أوضح خط صدع داخلي في الائتلاف منذ اتفاق تيدو — على صانعي القرار التعامل مع سياسة الطاقة بوصفها نقطة ضعف فاعلة لا بنداً محسوماً.
+2. **معايرة استراتيجية المعارضة**: يُشير نمط حزب S في تقديم خمسة استجوابات في أسبوع واحد (HD10447–10450 + اقتراحات منسقة) إلى التحوّل من المعارضة السياسية إلى حملة المساءلة الانتخابية — تحديث استخبارات استراتيجية المعارضة وفق ذلك.
+3. **محفظة مخاطر التنفيذ**: ثلاثة مسارات تنفيذية مفتوحة: Polismyndigheten (9 توصيات RiR مفتوحة، HD01JuU31)، تحويل حزمة الاتحاد الأوروبي المصرفية (HD03253 — بنية تحتية كبيرة للامتثال)، وتعيين مدير رعاية المسنين HD01SoU25. يجب على صانعي القرار في القطاعات المتأثرة رسم خريطة تعرضهم الآن.
+
+### نقاط الاستخبارات في 60 ثانية
+
+- **خط الصدع الائتلافي الداخلي مؤكد**: HD10448 — يستجوب Fransson من SD وزيرة KD Busch بشأن التضليل المتعلق بطاقة الرياح، مما يُجبر انشقاق الطاقة الائتلافي على الظهور في السجل العام لأول مرة في دورة 2025/26.
+- **حملة المساءلة الاشتراكية الديمقراطية مُطلقة**: خمسة استجوابات في أسبوع (HD10447–HD10450 + اقتراحات) موجهة لأربعة وزراء في البنية التحتية والتأمين الاجتماعي والطاقة والاقتصاد — هذا تصعيد انتخابي لا رقابة روتينية.
+- **حزمة الاتحاد الأوروبي المصرفية تتقدم**: HD03253 يمر عبر FiU — سيُقيّد الحد الأدنى للناتج البالغ 72.5% البنوك السويدية ذات التعرض المرتفع للرهن العقاري (Swedbank, SEB, Handelsbanken, Nordea)؛ تحتفظ Finansinspektionen بالأولوية الرقابية لكن تتزايد تعقيدات التنسيق مع EBA.
+- **تحفيز مالي عبر ضريبة الوقود**: أعاد HD01FiU48 (ميزانية تعديلية إضافية) توجيه مسار الضريبة الخضراء السابق؛ جرى تقديم الحسابات الانتخابية على الاتساق المناخي؛ قدّم V وMP تحفظات.
+- **تطبيق قيود استحقاقات السجناء**: يُقيّد HD03252 التأمين الاجتماعي للأشخاص في نظام kontrollerat boende/säkerhetsförvaring — يُتوقع طعن في التناسب بموجب المادة 8 من الاتفاقية الأوروبية لحقوق الإنسان.
+- **مخاطر إصلاح الشرطة**: يؤكد HD01JuU31 (Riksrevisionen) وجود 9 توصيات مفتوحة لـ Polismyndigheten من RiR 2026:6 — أكبر عائق تنفيذي هيكلي في محفظة الحكومة.
+- **المرساة الاقتصادية لصندوق النقد الدولي**: نمو الناتج المحلي الإجمالي السويدي +2.1%، الدين ~31% من الناتج المحلي الإجمالي، الحساب الجاري +5.5% من الناتج المحلي الإجمالي (WEO Apr-2026) — يظل الوضع الهيكلي قوياً قُبيل الدورة الانتخابية.
+
+### أفضل محفز استشرافي
+
+**2026-05-08 — أول قياس ديموسكوب بعد الفترة.** يختبر ما إذا كان إعفاء ضريبة الوقود HD01FiU48 قد أنتج ارتفاعاً مستداماً في استطلاعات الرأي (PIR-A). كتلة تيدو ≥ 44% → السيناريو أ (تجديد الائتلاف)؛ < 40% → السيناريو ب (أقلية بقيادة S). قد يُثبّط توتر الطاقة بين SD وKD قاعدة KD قليلاً — مراقبة التحولات الخاصة بـ KD.
+
+### تقييم الثقة
+
+إجمالاً: **HIGH (A1)** للصورة الختامية الهيكلية وتحديد خط صدع SD-KD. **MEDIUM (B2)** للديناميكيات الانتخابية المستقبلية (تأخر استطلاعات الرأي، تكيف استراتيجية المعارضة، انضباط SD بعد أغسطس). **LOW (C3)** لجداول تنفيذ HD03252/HD03253 وتأثير مؤتمر SD.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 السياق المنهجي
+
+**الجمع**: واجهة برمجة البيانات المفتوحة للريكسداغ (riksdag-regering-mcp)؛ تركيب تحليل 30 يوماً  
+**المنهج**: تسجيل DIW، ACH، SWOT، لغة الاحتمالية WEP، ترميز أدميرالتي  
+**الحد الأدنى للثقة**: جميع الادعاءات الواقعية ≥ C3؛ التقييمات الهيكلية ≥ B2  
+**المصدر الاقتصادي**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD)، تاريخ الاسترداد 2026-04-27  
+**المعايير**: ICD 203 (الفرضيات البديلة، لغة الاحتمالية)؛ AI FIRST (حدٌّ أدنى من تكرارين)  
+**الدورة القادمة**: المراجعة الشهرية 2026-05-27 — ينبغي أن تشمل قياس ديموسكوب (PIR-A)، قرار سعر الفائدة لـ Riksbank (I-4)، نتائج مؤتمر SD
+
+---
+### إضافة الجولة الثانية — تعمّق سياق الطاقة SD-KD
+
+**لماذا يعني HD10448 أكثر من مجرد استجواب**: تشكيكية SD الموثقة في طاقة الرياح (HD10448) ليست حدثاً معزولاً. فهي تتبع تموضع SD المتسق منذ 2022 ضد التفويضات المتعلقة بالطاقة المتجددة. ستُرصد استجابة Busch لمعرفة ما إذا كانت KD ستتنازل عن أرضية سياسية (مؤشر السيناريو ب) أم ستقدم إجابة دبلوماسية حابسة للأنفاس (مؤشر السيناريو أ). **نص قرار فصل الطاقة في مؤتمر SD (المتوقع في 20 مايو 2026) هو المؤشر الاستشرافي الأهم بالمطلق لاستقرار الائتلاف.**
+
+**ملاحظة الاقتصاد الكلي لصندوق النقد الدولي**: نمو الناتج المحلي الإجمالي السويدي +2.1% (IMF WEO Apr-2026) يمنح الائتلاف مساحة للمناورة — في اقتصاد ضعيف، ستتصاعد التوترات من نوع HD10448 بشكل أسرع. الظروف الاقتصادية الكلية الراهنة تُرجّح قليلاً السيناريو أ (استمرار الائتلاف).
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-04-27
+**Periode**: 2026-03-28 → 2026-04-27 (30 dage) | **Riksmöte**: 2025/26
+**Konfidensgrad**: HIGH (A1) | **Admiralty-interval**: A1–C3 | **Dage til valg**: 139
+
+### 🎯 Kortfattet situationsvurdering
+
+30-dagesperioden 2026-03-28 → 2026-04-27 afslutter Tidø-koalitionens lovgivningsportefølje for riksmöte 2025/26 og eksponerer samtidig to nye brudzoner: **intrakoalitions SD-KD energipolitisk spænding** (HD10448) og en **koordineret socialdemokratisk interpellationskampagne** på tværs af fire ministerier. Sverige er nu **139 dage fra valget** med den politiske akse fuldt skiftet fra lovgivning til implementeringsrisici, ansvarsudkrævning og kampagnenarrativisering.
+
+### 🧭 3 Beslutninger denne briefing understøtter
+
+1. **Koalitionssammenholdsovervågning**: HD10448-interpellationen SD-KD (Fransson mod Busch om vindkraftsinformation) er den tydeligste intrakoalitions brudszone siden Tidø-aftalen — beslutningstagere bør behandle energipolitik som en aktiv sårbarhed, ikke som et afgjort dagsordenspunkt.
+2. **Kalibrering af oppositionsstrategi**: S' fem-interpellationer-på-en-uge-mønster (HD10447–10450 + koordinerede motioner) signalerer overgang fra politisk opposition til valgansvarskampagne — opdater oppositionsstrategiintelligens derefter.
+3. **Implementeringsrisikoporetefølje**: Tre implementeringsporte er åbne: Polismyndigheten (9 åbne RiR-anbefalinger, HD01JuU31), EU's bankpakkettransponering (HD03253 — større overholdelsesinfrastruktur), og HD01SoU25 ældreomsorgsdirektøransættelse. Beslutningstagere i berørte sektorer bør kortlægge deres eksponering nu.
+
+### 60-sekunders efterretningspunkter
+
+- **Intrakoalitions brudlinje bekræftet**: HD10448 — SD's Fransson interpellerer KD-minister Busch om vindkraftsinformation, og tvinger for første gang i riksmöte 2025/26 koalitionens energi-underfraktion ind i det offentlige referat.
+- **S' ansvarskampagne lanceret**: Fem interpellationer på en uge (HD10447–HD10450 + motioner) rettet mod fire ministre på tværs af infrastruktur, socialforsikring, energi og erhvervsliv — dette er valeskalering, ikke rutinekontrol.
+- **EU's bankpakke avanceret**: HD03253 avancerer gennem FiU — outputgulv på 72,5% vil begrænse svenske realkrediteksponerede SIFI'er (Swedbank, SEB, Handelsbanken, Nordea); Finansinspektionen bevarer tilsynsprimat, men EBA-koordinationskompleksiteten øges.
+- **Finanspolitisk stimulus via brændstofafgift**: HD01FiU48 (ekstra ændringsbudget) vendte den tidligere grønne skattetrajektori; valgkalkule prioriteredes over klimatkonsistens; V og MP indsendte reservationer.
+- **Fangydelsesrestriktion gennemført**: HD03252 begrænser socialforsikring for dem i kontrollerat boende/säkerhetsförvaring — proportionalitetsudfordring under ECHR Art. 8 forventes.
+- **Politireformrisiko**: HD01JuU31 (Riksrevisionen) bekræfter 9 åbne Polismyndigheten-anbefalinger fra RiR 2026:6 — den største strukturelle gennemførelsesbegrænsning i regeringens portefølje.
+- **IMF's økonomiske anker**: Sveriges BNP-vækst +2,1%, gæld ~31% af BNP, betalingsbalance +5,5% af BNP (WEO Apr-2026) — den strukturelle position forbliver stærk op til valgcyklussen.
+
+### Bedste fremadrettede udløser
+
+**2026-05-08 — Første post-periodes Demoskop-måling.** Tester om HD01FiU48 brændstofskattenedsættelsen producerede varig opinionsløft (PIR-A). Tidø-blok ≥ 44% → Scenario A (koalitionsfornyelse); < 40% → Scenario B (S-ledet mindretal). SD-KD's energispænding kan svagt reducere KD-basen — hold øje med KD-specifik drift.
+
+### Konfidensgradering
+
+Samlet: **HIGH (A1)** for det strukturelle afslutningsbillede og SD-KD brudlinje-identifikation. **MEDIUM (B2)** for fremtidige valgdynamikker (opinionsefterslæb, oppositionsstrategitilpasning, SD-disciplin efter august). **LOW (C3)** for HD03252/HD03253 implementeringstidslinjer og SD-kongresindflydelse.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Metodologisk kontekst
+
+**Indsamling**: Riksdagens åbne data-API (riksdag-regering-mcp); 30-dages søskendeanalysesyntese  
+**Metode**: DIW-scoring, ACH, SWOT, WEP-sandsynlighedssprog, Admiralty-kodning  
+**Konfidensundergræns**: Alle faktuelle påstande ≥ C3; strukturelle vurderinger ≥ B2  
+**Økonomisk oprindelse**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), hentet 2026-04-27  
+**Standarder**: ICD 203 (alternative hypoteser, sandsynlighedssprog); AI FIRST (minimum 2 iterationer)  
+**Næste cyklus**: Månedsoversigt 2026-05-27 — bør inkludere Demoskop-måling (PIR-A), Riksbankens rentebeslutning (I-4), SD-kongresudkom
+
+---
+### Tilføjelse fra pas 2 — SD-KD's energikontekst uddybet
+
+**Hvorfor HD10448 betyder mere end interpellationen**: SD's dokumenterede vindkraftsskepsis (HD10448) er ikke en isoleret begivenhed. Det følger SD's konsekvent positionering siden 2022 mod VE-mandater. Buschs svar vil blive fulgt nøje for om KD indrømmer politikplads (Scenario B-indikator) eller giver et diplomatisk-holdende svar (Scenario A-indikator). **Teksten i SD-kongressens energikapitelresolution (forventet 20. maj 2026) er den enkeltstående vigtigste fremadrettede indikator for koalitionsstabilitet.**
+
+**IMF makronotat**: Sveriges +2,1% BNP-vækst (IMF WEO Apr-2026) giver koalitionen råderum — i en svækkende økonomi ville HD10448-typen af spændinger eskalere hurtigere. Nuværende makroforhold favoriserer svagt Scenario A (koalitionens udholdenhed).
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-04-27
+**Zeitraum**: 2026-03-28 → 2026-04-27 (30 Tage) | **Riksmöte**: 2025/26
+**Konfidenzniveau**: HIGH (A1) | **Admiralty-Bereich**: A1–C3 | **Tage bis zur Wahl**: 139
+
+### 🎯 Kurzfassung
+
+Der 30-Tages-Zeitraum 2026-03-28 → 2026-04-27 schließt das Gesetzgebungsportfolio der Tidö-Koalition für Riksmöte 2025/26 und legt gleichzeitig zwei neue Spannungslinien offen: **innerkoalitionäre SD-KD-Spannungen in der Energiepolitik** (HD10448) und eine **koordinierte sozialdemokratische Interpellationskampagne** gegen vier Ministerien. Schweden befindet sich nun **139 Tage vor der Wahl**, wobei die politische Achse vollständig von Gesetzgebung zu Umsetzungsrisiken, Rechenschaftspflicht und Wahlkampfpositionierung verschoben hat.
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Überwachung des Koalitionszusammenhalts**: Die HD10448-Interpellation SD-KD (Fransson gegen Busch zu Windkraft-Desinformation) ist die deutlichste innerkoalitionäre Bruchlinie seit dem Tidö-Abkommen — Entscheidungsträger sollten Energiepolitik als aktive Schwachstelle behandeln, nicht als erledigtes Tagesordnungspunkt.
+2. **Kalibrierung der Oppositionsstrategie**: Das S-Muster von fünf Interpellationen in einer Woche (HD10447–10450 + koordinierte Motionen) signalisiert den Übergang von politischer Opposition zu Wahlkampf-Rechenschaftspflicht — Oppositionsstrategie-Nachrichtendienst entsprechend aktualisieren.
+3. **Umsetzungsrisikoortfolio**: Drei Umsetzungstore sind offen: Polismyndigheten (9 offene RiR-Empfehlungen, HD01JuU31), EU-Bankenpaket-Transposition (HD03253 — bedeutende Compliance-Infrastruktur), und HD01SoU25 Pflegedirektor-Ernennung. Entscheidungsträger in betroffenen Sektoren sollten jetzt ihr Risikoprofil kartieren.
+
+### 60-Sekunden-Nachrichtenpunkte
+
+- **Innerkoalitionäre Bruchlinie bestätigt**: HD10448 — SD's Fransson interpelliert KD-Ministerin Busch zu Windkraft-Desinformation und zwingt zum ersten Mal in Riksmöte 2025/26 die Energiespaltung der Koalition in das öffentliche Protokoll.
+- **S-Rechenschaftskampagne gestartet**: Fünf Interpellationen in einer Woche (HD10447–HD10450 + Motionen) gegen vier Minister in Infrastruktur, Sozialversicherung, Energie und Wirtschaft — dies ist Wahleskalation, keine Routinekontrolle.
+- **EU-Bankenpaket vorangeschritten**: HD03253 läuft durch FiU — Ausgangspunkt von 72,5% wird hypothekenbelastete schwedische SIBs einschränken (Swedbank, SEB, Handelsbanken, Nordea); Finansinspektionen behält den Aufsichtsprimat, aber die EBA-Koordinationskomplexität steigt.
+- **Fiskalpolitischer Stimulus durch Kraftstoffsteuer**: HD01FiU48 (Zusatznachtragshaushalt) kehrte die bisherige grüne Steuertrajektorie um; Wahlkalkül wurde über Klimakonsistenz gestellt; V und MP reichten Vorbehalte ein.
+- **Gefängnisleistungsbeschränkung umgesetzt**: HD03252 schränkt Sozialversicherung für Personen in kontrollerat boende/säkerhetsförvaring ein — Verhältnismäßigkeitsherausforderung nach ECHR Art. 8 wird erwartet.
+- **Polizeireformrisiko**: HD01JuU31 (Riksrevisionen) bestätigt 9 offene Polismyndigheten-Empfehlungen aus RiR 2026:6 — der größte strukturelle Umsetzungsengpass im Regierungsportfolio.
+- **IMF-Wirtschaftsanker**: Schwedens BIP-Wachstum +2,1%, Schulden ~31% des BIP, Leistungsbilanz +5,5% des BIP (WEO Apr-2026) — die strukturelle Position bleibt stark vor dem Wahlzyklus.
+
+### Bester Vorwärtsauslöser
+
+**2026-05-08 — Erste Demoskop-Messung nach dem Zeitraum.** Testet, ob die HD01FiU48-Kraftstoffsteuererleichterung nachhaltige Umfragegewinne erbracht hat (PIR-A). Tidö-Block ≥ 44% → Szenario A (Koalitionserneuerung); < 40% → Szenario B (S-geführte Minderheit). SD-KD-Energiespannung könnte die KD-Basis leicht dämpfen — auf KD-spezifische Drift achten.
+
+### Konfidenzbewertung
+
+Gesamt: **HIGH (A1)** für das strukturelle Abschlussbild und die SD-KD-Bruchlinie-Identifizierung. **MEDIUM (B2)** für künftige Wahldynamik (Meinungsumfrageverzögerung, Oppositionsstrategieanpassung, SD-Disziplin nach August). **LOW (C3)** für HD03252/HD03253-Umsetzungszeitpläne und SD-Parteitagseinfluss.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Methodologischer Kontext
+
+**Erfassung**: Riksdag Open Data API (riksdag-regering-mcp); 30-Tages-Geschwisteranalyse-Synthese  
+**Methode**: DIW-Bewertung, ACH, SWOT, WEP-Wahrscheinlichkeitssprache, Admiralty-Kodierung  
+**Konfidenzuntergrenze**: Alle Tatsachenbehauptungen ≥ C3; strukturelle Einschätzungen ≥ B2  
+**Wirtschaftliche Herkunft**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), abgerufen 2026-04-27  
+**Standards**: ICD 203 (alternative Hypothesen, Wahrscheinlichkeitssprache); AI FIRST (mindestens 2 Iterationen)  
+**Nächster Zyklus**: Monatsrückblick 2026-05-27 — sollte Demoskop-Messung (PIR-A), Riksbank-Zinsentscheidung (I-4), SD-Parteitagsergebnis einschließen
+
+---
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-04-27
+**Período**: 2026-03-28 → 2026-04-27 (30 días) | **Riksmöte**: 2025/26
+**Nivel de confianza**: HIGH (A1) | **Rango Admiralty**: A1–C3 | **Días para las elecciones**: 139
+
+### 🎯 Resumen ejecutivo operacional
+
+El período de 30 días 2026-03-28 → 2026-04-27 cierra el portafolio legislativo de la coalición Tidö para el Riksmöte 2025/26 y expone simultáneamente dos nuevas líneas de fractura: **tensión intracoalición SD-KD en política energética** (HD10448) y una **campaña de interpelaciones socialdemócrata coordinada** dirigida a cuatro ministerios. Suecia se encuentra ahora a **139 días de las elecciones**, con el eje político completamente desplazado de la legislación hacia riesgos de implementación, presión de rendición de cuentas y posicionamiento narrativo electoral.
+
+### 🧭 3 Decisiones que apoya este informe
+
+1. **Monitoreo de la cohesión de la coalición**: La interpelación HD10448 SD-KD (Fransson frente a Busch sobre desinformación eólica) es la línea de fractura intracoalición más clara desde el acuerdo Tidö — los responsables de la toma de decisiones deben tratar la política energética como una vulnerabilidad activa, no como un punto de agenda resuelto.
+2. **Calibración de la estrategia de oposición**: El patrón del S de cinco interpelaciones en una semana (HD10447–10450 + mociones coordinadas) señala la transición de la oposición política a la campaña de responsabilidad electoral — actualizar la inteligencia sobre estrategia de oposición en consecuencia.
+3. **Portafolio de riesgos de implementación**: Tres puertas de implementación están abiertas: Polismyndigheten (9 recomendaciones RiR abiertas, HD01JuU31), transposición del paquete bancario europeo (HD03253 — infraestructura de cumplimiento importante), y nombramiento del director de atención a mayores HD01SoU25. Los responsables en los sectores afectados deben mapear su exposición ahora.
+
+### Puntos de inteligencia en 60 segundos
+
+- **Línea de fractura intracoalición confirmada**: HD10448 — Fransson del SD interpela a la ministra KD Busch sobre desinformación eólica, forzando por primera vez en el Riksmöte 2025/26 la fractura energética de la coalición hacia el registro público.
+- **Campaña de responsabilidad del S lanzada**: Cinco interpelaciones en una semana (HD10447–HD10450 + mociones) dirigidas a cuatro ministros en infraestructura, seguro social, energía y economía — se trata de una escalada electoral, no de un control rutinario.
+- **Paquete bancario europeo avanzado**: HD03253 avanza por el FiU — el suelo de producción del 72,5% limitará a los bancos sistémicos suecos con alta exposición hipotecaria (Swedbank, SEB, Handelsbanken, Nordea); Finansinspektionen mantiene la primacía supervisora pero la complejidad de coordinación EBA aumenta.
+- **Estímulo fiscal mediante impuesto al combustible**: HD01FiU48 (presupuesto modificativo adicional) invirtió la trayectoria fiscal verde anterior; el cálculo electoral se priorizó sobre la coherencia climática; V y MP presentaron reservas.
+- **Restricción de beneficios penitenciarios implementada**: HD03252 restringe el seguro social para quienes están en kontrollerat boende/säkerhetsförvaring — se espera un desafío de proporcionalidad bajo el artículo 8 del CEDH.
+- **Riesgo de reforma policial**: HD01JuU31 (Riksrevisionen) confirma 9 recomendaciones abiertas de Polismyndigheten del RiR 2026:6 — el mayor cuello de botella estructural de ejecución en el portafolio gubernamental.
+- **Ancla económica del FMI**: Crecimiento del PIB sueco +2,1%, deuda ~31% del PIB, balanza por cuenta corriente +5,5% del PIB (WEO Apr-2026) — la posición estructural se mantiene sólida de cara al ciclo electoral.
+
+### Mejor detonante prospectivo
+
+**2026-05-08 — Primera medición Demoskop tras el período.** Prueba si la reducción del impuesto al combustible HD01FiU48 generó ganancia sostenida en encuestas (PIR-A). Bloque Tidö ≥ 44% → Escenario A (renovación de la coalición); < 40% → Escenario B (minoría liderada por S). La tensión energética SD-KD podría deprimir ligeramente la base de KD — vigilar la deriva específica de KD.
+
+### Evaluación de la confianza
+
+Global: **HIGH (A1)** para el panorama estructural de cierre e identificación de la línea de fractura SD-KD. **MEDIUM (B2)** para la dinámica electoral futura (retraso en encuestas, adaptación estratégica de la oposición, disciplina del SD tras agosto). **LOW (C3)** para los plazos de implementación de HD03252/HD03253 e impacto del congreso del SD.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Contexto metodológico
+
+**Recopilación**: API de datos abiertos del Riksdag (riksdag-regering-mcp); síntesis de análisis paralelo de 30 días  
+**Método**: Puntuación DIW, ACH, SWOT, lenguaje de probabilidad WEP, codificación Admiralty  
+**Umbral de confianza**: Todas las afirmaciones factuales ≥ C3; evaluaciones estructurales ≥ B2  
+**Procedencia económica**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), recuperado el 2026-04-27  
+**Normas**: ICD 203 (hipótesis alternativas, lenguaje de probabilidad); AI FIRST (mínimo 2 iteraciones)  
+**Próximo ciclo**: Revisión mensual 2026-05-27 — debe incluir medición Demoskop (PIR-A), decisión de tasas del Riksbank (I-4), resultado del congreso del SD
+
+---
+### Adición del paso 2 — Contexto energético SD-KD profundizado
+
+**Por qué HD10448 importa más allá de la interpelación**: El escepticismo documentado del SD hacia la energía eólica (HD10448) no es un evento aislado. Sigue el posicionamiento consistente del SD desde 2022 contra los mandatos de energías renovables. La respuesta de Busch será vigilada para ver si KD cede terreno político (indicador del Escenario B) o da una respuesta diplomáticamente sostenida (indicador del Escenario A). **El texto de la resolución del capítulo energético del congreso SD (esperado el 20 de mayo de 2026) es el indicador anticipado más importante para la estabilidad de la coalición.**
+
+**Nota macro del FMI**: El crecimiento del PIB sueco de +2,1% (IMF WEO Apr-2026) da margen de maniobra a la coalición — en una economía debilitada, las tensiones tipo HD10448 escalarían más rápidamente. Las condiciones macro actuales favorecen ligeramente el Escenario A (perduración de la coalición).
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Päiväys**: 2026-04-27
+**Ajanjakso**: 2026-03-28 → 2026-04-27 (30 päivää) | **Riksmöte**: 2025/26
+**Luottamustaso**: HIGH (A1) | **Admiralty-väli**: A1–C3 | **Päiviä vaaleihin**: 139
+
+### 🎯 Lyhyt tilannearvio
+
+30 päivän ajanjakso 2026-03-28 → 2026-04-27 päättää Tidö-koalition lainsäädäntösalkun riksmötelle 2025/26 ja paljastaa samalla kaksi uutta jännitystä: **koalition sisäinen SD-KD energiapolitiikan kiista** (HD10448) ja **koordinoitu sosiaalidemokraattinen kysymyskampanja** neljää ministeriötä vastaan. Ruotsi on nyt **139 päivää vaaleista**, poliittisen akselin siirtyneen täysin lainsäädännöstä toimeenpanoriskeihin, vastuullisuuspaineisiin ja vaalikampanjanarratiivin muokkaukseen.
+
+### 🧭 3 Päätöstä, joita tämä tiivistelmä tukee
+
+1. **Koalitiokokouman seuranta**: HD10448-kysymys SD-KD (Fransson vs. Busch tuulivoimadisinformaatiosta) on selkein koalition sisäinen rajalinja Tidö-sopimuksen jälkeen — päätöksentekijöiden tulee käsitellä energiapolitiikkaa aktiivisena haavoittuvuutena, ei ratkaistuneena asiana.
+2. **Oppositiostrategian kalibrointi**: S:n viisi-kysymystä-viikossa-malli (HD10447–10450 + koordinoidut aloitteet) viestii siirtymisestä poliittisesta oppositiosta vaalivastuukampanjaan — päivitä oppositiostrategiatieto vastaavasti.
+3. **Toimeenpanoriskisalkku**: Kolme toimeenpanoaluetta on auki: Polismyndigheten (9 avointa RiR-suositusta, HD01JuU31), EU:n pankkipaketin transponointi (HD03253 — merkittävä vaatimustenmukaisuusinfrastruktuuri), ja HD01SoU25 vanhustenhuollon johtajan nimitys. Asianomaisilla toimialoilla työskentelevien päätöksentekijöiden tulee kartoittaa altistumisensa nyt.
+
+### 60 sekunnin tiedustelutiivistelmä
+
+- **Koalition sisäinen rajalinja vahvistettu**: HD10448 — SD:n Fransson kyselee KD-ministeri Buschilta tuulivoimadisinformaatiosta, pakottaen ensimmäistä kertaa riksmöten 2025/26 aikana koalition energiakiistan julkiseen pöytäkirjaan.
+- **S:n vastuukampanja käynnistetty**: Viisi kysymystä viikossa (HD10447–HD10450 + aloitteet) neljää ministeriä vastaan infrastruktuurin, sosiaalivakuutuksen, energian ja elinkeinoelämän aloilla — kyseessä on vaaliuhka, ei rutiinitarkastelu.
+- **EU:n pankkipaketti edistynyt**: HD03253 etenee FiU:ssa — 72,5%:n tuotospohjainen lattia rajoittaa ruotsalaisia asuntolainapainotteisia järjestelmällisesti merkittäviä pankkeja (Swedbank, SEB, Handelsbanken, Nordea); Finansinspektionen säilyttää valvontaprioriteettinsa, mutta EBA-koordinaation monimutkaisuus kasvaa.
+- **Finanssipoliittinen elvytys polttoaineveron kautta**: HD01FiU48 (lisämuutosbudjetti) käänsi aiemman vihreiden verosuunnan; vaalilogiikka priorisoitiin ilmastojohdonmukaisuuden edelle; V ja MP jättivät varaumat.
+- **Vankilaetuuksien rajoitus toteutettu**: HD03252 rajoittaa sosiaalivakuutusta henkilöille kontrollerat boende/säkerhetsförvaring-olosuhteissa — suhteellisuushaaste ECHR Art. 8:n mukaan on odotettavissa.
+- **Poliisiuudistusriski**: HD01JuU31 (Riksrevisionen) vahvistaa 9 avointa Polismyndigheten-suositusta RiR 2026:6:sta — hallituksen salkun suurin rakenteellinen toimeenpanoeste.
+- **IMF:n taloudellinen ankkuri**: Ruotsin BKT-kasvu +2,1%, velka ~31% BKT:sta, vaihtotase +5,5% BKT:sta (WEO Apr-2026) — rakenteellinen asema pysyy vahvana vaalikiertoon mentäessä.
+
+### Paras ennakoiva laukaisin
+
+**2026-05-08 — Ensimmäinen jakson jälkeinen Demoskop-mittaus.** Testaa, tuottiko HD01FiU48 polttoaineverohelpotus pysyvää kannatuskasvua (PIR-A). Tidö-blokki ≥ 44% → Skenaario A (koalition uusinta); < 40% → Skenaario B (S:n johtama vähemmistö). SD-KD:n energiajännite voi hieman vähentää KD:n kannatuspohjaa — seuraa KD-kohtaista kehitystä.
+
+### Luottamusarviointi
+
+Kokonaisuudessaan: **HIGH (A1)** rakenteellisesta loppukuvasta ja SD-KD-rajalinjan tunnistamisesta. **MEDIUM (B2)** tulevasta validynamiikasta (kannatusviive, oppositiostrategian sopeutuminen, SD:n kuri elokuun jälkeen). **LOW (C3)** HD03252/HD03253 toimeenpanoaikajanoille ja SD-puoluekokouksen vaikutukselle.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Menetelmäkonteksti
+
+**Keruu**: Riksdagenin avoin data-API (riksdag-regering-mcp); 30 päivän sisaranalyysisynteesi  
+**Menetelmä**: DIW-pisteytyss, ACH, SWOT, WEP-todennäköisyyskieli, Admiralty-koodaus  
+**Luottamuksen alaraja**: Kaikki faktuaaliset väitteet ≥ C3; rakenteelliset arviot ≥ B2  
+**Taloudellinen alkuperä**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), haettu 2026-04-27  
+**Standardit**: ICD 203 (vaihtoehtoiset hypoteesit, todennäköisyyskieli); AI FIRST (vähintään 2 kierrosta)  
+**Seuraava sykli**: Kuukausikatsaus 2026-05-27 — tulisi sisältää Demoskop-mittaus (PIR-A), Riksbankenin korkopäätös (I-4), SD:n puoluekokouksen tulos
+
+---
+### Lisäys kierros 2:sta — SD-KD:n energiakonteksti syvennetty
+
+**Miksi HD10448 merkitsee enemmän kuin kysymys**: SD:n dokumentoitu tuulivoimaskeptisyys (HD10448) ei ole yksittäinen tapahtuma. Se seuraa SD:n johdonmukaista asemoitumista vuodesta 2022 uusiutuvan energian mandaatteja vastaan. Buschin vastausta seurataan tarkasti: myöntääkö KD poliittista tilaa (Skenaario B -indikaattori) vai antaako se diplomaattisesti pidättyvän vastauksen (Skenaario A -indikaattori). **SD:n puoluekokouksen energialuvun resoluution teksti (odotetaan 20. toukokuuta 2026) on yksittäisesti tärkein ennakoiva indikaattori koalition vakaudelle.**
+
+**IMF makrohavainto**: Ruotsin +2,1% BKT-kasvu (IMF WEO Apr-2026) antaa koalitiolle liikkumavaraa — heikkenevässä taloudessa HD10448-tyyppiset jännitteet kärjistyisivät nopeammin. Nykyiset makroehdot suosivat hieman Skenaario A:ta (koalition kestävyys).
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling | **Date**: 2026-04-27
+**Période**: 2026-03-28 → 2026-04-27 (30 jours) | **Riksmöte**: 2025/26
+**Niveau de confiance**: HIGH (A1) | **Plage Admiralty**: A1–C3 | **Jours avant les élections**: 139
+
+### 🎯 Résumé opérationnel
+
+La période de 30 jours 2026-03-28 → 2026-04-27 clôture le portefeuille législatif de la coalition Tidö pour le Riksmöte 2025/26 tout en exposant deux nouvelles lignes de fracture : **tensions intracoalition SD-KD sur la politique énergétique** (HD10448) et une **campagne d'interpellations socialiste coordonnée** visant quatre ministères. La Suède se trouve maintenant à **139 jours des élections**, l'axe politique ayant pleinement basculé de la législation vers la gestion des risques d'implémentation, les pressions de responsabilité et le positionnement narratif électoral.
+
+### 🧭 3 Décisions que cette note soutient
+
+1. **Surveillance de la cohésion de la coalition** : L'interpellation HD10448 SD-KD (Fransson contre Busch sur la désinformation éolienne) est la ligne de fracture intracoalition la plus claire depuis l'accord Tidö — les décideurs doivent traiter la politique énergétique comme une vulnérabilité active, et non comme un point d'agenda réglé.
+2. **Calibrage de la stratégie de l'opposition** : Le schéma des cinq interpellations en une semaine du S (HD10447–10450 + motions coordonnées) signale la transition d'une opposition politique vers une campagne de responsabilité électorale — mettre à jour le renseignement sur la stratégie d'opposition en conséquence.
+3. **Portefeuille de risques d'implémentation** : Trois portes d'implémentation restent ouvertes : Polismyndigheten (9 recommandations RiR ouvertes, HD01JuU31), transposition du paquet bancaire européen (HD03253 — infrastructure de conformité importante), et nomination du directeur de services aux personnes âgées HD01SoU25. Les décideurs des secteurs concernés doivent cartographier leur exposition dès maintenant.
+
+### Points de renseignement en 60 secondes
+
+- **Ligne de fracture intracoalition confirmée** : HD10448 — Fransson du SD interpelle la ministre KD Busch sur la désinformation éolienne, forçant pour la première fois lors du Riksmöte 2025/26 la fracture énergétique de la coalition dans le registre public.
+- **Campagne de responsabilité du S lancée** : Cinq interpellations en une semaine (HD10447–HD10450 + motions) ciblant quatre ministres en infrastructure, assurance sociale, énergie et économie — il s'agit d'une escalade électorale, non d'un contrôle de routine.
+- **Paquet bancaire européen avancé** : HD03253 progresse à travers le FiU — le plancher de production de 72,5% limitera les SIBs suédois fortement exposés aux prêts hypothécaires (Swedbank, SEB, Handelsbanken, Nordea) ; la Finansinspektionen maintient la primauté de supervision mais la complexité de coordination EBA augmente.
+- **Stimulus budgétaire par taxe sur le carburant** : HD01FiU48 (budget rectificatif supplémentaire) a inversé la trajectoire fiscale verte précédente ; le calcul électoral a été prioritaire sur la cohérence climatique ; V et MP ont déposé des réserves.
+- **Restriction des prestations pénitentiaires mise en œuvre** : HD03252 restreint l'assurance sociale pour ceux en kontrollerat boende/säkerhetsförvaring — défi de proportionnalité au titre de l'article 8 ECHR attendu.
+- **Risque de réforme policière** : HD01JuU31 (Riksrevisionen) confirme 9 recommandations Polismyndigheten ouvertes issues de RiR 2026:6 — le plus grand goulot d'étranglement structurel d'exécution dans le portefeuille gouvernemental.
+- **Ancre économique du FMI** : Croissance du PIB suédois +2,1%, dette ~31% du PIB, solde courant +5,5% du PIB (WEO Apr-2026) — la position structurelle demeure solide à l'approche du cycle électoral.
+
+### Meilleur déclencheur prospectif
+
+**2026-05-08 — Première mesure Demoskop post-période.** Teste si l'allègement de la taxe sur le carburant HD01FiU48 a produit une progression durable dans les sondages (PIR-A). Bloc Tidö ≥ 44% → Scénario A (renouvellement de la coalition) ; < 40% → Scénario B (minorité menée par S). La tension énergétique SD-KD pourrait légèrement déprimer la base KD — surveiller la dérive spécifique à KD.
+
+### Évaluation de la confiance
+
+Global : **HIGH (A1)** pour le tableau de clôture structurel et l'identification de la ligne de fracture SD-KD. **MEDIUM (B2)** pour la dynamique électorale future (décalage des sondages, adaptation stratégique de l'opposition, discipline du SD après août). **LOW (C3)** pour les délais d'implémentation HD03252/HD03253 et l'impact du congrès SD.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Contexte méthodologique
+
+**Collecte** : API de données ouvertes du Riksdag (riksdag-regering-mcp) ; synthèse d'analyse sur 30 jours  
+**Méthode** : Scoring DIW, ACH, SWOT, langage de probabilité WEP, codage Admiralty  
+**Seuil de confiance** : Toutes les affirmations factuelles ≥ C3 ; évaluations structurelles ≥ B2  
+**Provenance économique** : IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), récupéré le 2026-04-27  
+**Normes** : ICD 203 (hypothèses alternatives, langage de probabilité) ; AI FIRST (minimum 2 itérations)  
+**Prochain cycle** : Revue mensuelle 2026-05-27 — devrait inclure la mesure Demoskop (PIR-A), la décision de taux de la Riksbank (I-4), le résultat du congrès SD
+
+---
+### Ajout du passage 2 — Contexte énergétique SD-KD approfondi
+
+**Pourquoi HD10448 compte au-delà de l'interpellation** : Le scepticisme documenté du SD envers l'éolien (HD10448) n'est pas un événement isolé. Il suit le positionnement constant du SD depuis 2022 contre les mandats d'énergie renouvelable. La réponse de Busch sera surveillée pour savoir si KD concède du terrain politique (indicateur du Scénario B) ou donne une réponse diplomatique de maintien (indicateur du Scénario A). **Le texte de la résolution du chapitre énergétique du congrès SD (attendu le 20 mai 2026) est l'indicateur avancé le plus important pour la stabilité de la coalition.**
+
+**Note macro du FMI** : La croissance du PIB suédois de +2,1% (IMF WEO Apr-2026) donne de la marge de manœuvre à la coalition — dans une économie en affaiblissement, les tensions de type HD10448 s'escaladeraient plus rapidement. Les conditions macro actuelles favorisent légèrement le Scénario A (pérennité de la coalition).
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תדריך מודיעין — סקירה חודשית 2026-04-27
+
+**מחבר**: James Pether Sörling | **תאריך**: 2026-04-27
+**תקופה**: 2026-03-28 → 2026-04-27 (30 ימים) | **Riksmöte**: 2025/26
+**רמת ביטחון**: HIGH (A1) | **טווח אדמירלטי**: A1–C3 | **ימים לבחירות**: 139
+
+### 🎯 סיכום מבצעי
+
+תקופת 30 הימים 2026-03-28 → 2026-04-27 סוגרת את תיק החקיקה של קואליציית תידו לדורת הריקסמוטה 2025/26, ובמקביל חושפת שני קווי שבר חדשים: **מתח פנים-קואליציוני בין SD ל-KD בנושא מדיניות האנרגיה** (HD10448) ו**מסע מדוקדק של שאלות פרלמנטריות סוציאל-דמוקרטיות** לעבר ארבעה משרדים. שבדיה נמצאת כעת במרחק **139 ימים מהבחירות**, כשהציר הפוליטי עבר לחלוטין מחקיקה לסיכוני יישום, לחץ אחריות ופוזיציונינג נרטיבי בחירותי.
+
+### 🧭 3 החלטות שתדריך זה תומך בהן
+
+1. **ניטור לכידות הקואליציה**: שאלת HD10448 בין SD ל-KD (Fransson מול Busch בנושא דיסאינפורמציה בתחום טורבינות הרוח) היא קו השבר הפנים-קואליציוני הברור ביותר מאז הסכם תידו — על מקבלי ההחלטות לראות במדיניות האנרגיה נקודת תורפה פעילה, לא נושא שסגור.
+2. **כיול אסטרטגיית האופוזיציה**: הדפוס של חמש שאלות פרלמנטריות בשבוע אחד של S (HD10447–10450 + הצעות מתואמות) מסמן מעבר מאופוזיציה פוליטית למסע אחריות בחירותי — לעדכן את מודיעין אסטרטגיית האופוזיציה בהתאם.
+3. **תיק סיכוני יישום**: שלושה שערי יישום פתוחים: Polismyndigheten (9 המלצות RiR פתוחות, HD01JuU31), טרנספוזיציה של חבילת הבנקאות של האיחוד האירופי (HD03253 — תשתית ציות משמעותית), ומינוי מנהל שירותי קשישים HD01SoU25. על מקבלי החלטות במגזרים הנוגעים בדבר למפות את חשיפתם עכשיו.
+
+### נקודות מודיעין ב-60 שניות
+
+- **קו שבר פנים-קואליציוני מאושר**: HD10448 — Fransson מ-SD מפנה שאלה לשרת KD Busch בנושא דיסאינפורמציה בתחום טורבינות הרוח, ומכריח לראשונה בריקסמוטה 2025/26 את הפיצול באנרגיה לצאת לתיעוד הציבורי.
+- **מסע האחריות של S הושק**: חמש שאלות פרלמנטריות בשבוע (HD10447–HD10450 + הצעות) המכוונות לארבעה שרים בתחומי תשתיות, ביטוח סוציאלי, אנרגיה וכלכלה — זוהי הסלמה בחירותית, לא ביקורת שגרתית.
+- **חבילת הבנקאות האירופית מתקדמת**: HD03253 מתקדם דרך ה-FiU — רצפת תפוקה של 72.5% תגביל בנקים שיטתיים שוודיים ממונפי משכנתאות (Swedbank, SEB, Handelsbanken, Nordea); Finansinspektionen שומרת על עדיפות הפיקוח אך מורכבות הקואורדינציה עם EBA גדלה.
+- **גירוי פיסקלי דרך מס דלק**: HD01FiU48 (תקציב שינוי נוסף) היפך את מסלול המס הירוק הקודם; החשבון הבחירותי הוקדם לפני העקביות האקלימית; V ו-MP הגישו הסתייגויות.
+- **הגבלת קצבאות אסירים יושמה**: HD03252 מגביל ביטוח סוציאלי לנמצאים ב-kontrollerat boende/säkerhetsförvaring — אתגר מידתיות לפי סעיף 8 ל-ECHR צפוי.
+- **סיכון רפורמת המשטרה**: HD01JuU31 (Riksrevisionen) מאשר 9 המלצות פתוחות של Polismyndigheten מ-RiR 2026:6 — הצוואר הבקבוק המבני הגדול ביותר בתיק הממשלה.
+- **עוגן כלכלי של קרן המטבע**: צמיחת התמ"ג השוודי +2.1%, חוב ~31% מהתמ"ג, חשבון שוטף +5.5% מהתמ"ג (WEO Apr-2026) — המצב המבני נשאר חזק לקראת מחזור הבחירות.
+
+### הטריגר הצופה הטוב ביותר
+
+**2026-05-08 — סקר הדמוסקופ הראשון לאחר התקופה.** בודק האם הקלת מס הדלק HD01FiU48 ייצרה עלייה מתמשכת בסקרים (PIR-A). בלוק תידו ≥ 44% → תרחיש א (חידוש הקואליציה); < 40% → תרחיש ב (מיעוט בראשות S). המתח של SD-KD באנרגיה עשוי לדכא מעט את בסיס KD — לעקוב אחר סטייה ספציפית ל-KD.
+
+### הערכת ביטחון
+
+בסך הכול: **HIGH (A1)** לתמונת הסגירה המבנית וזיהוי קו השבר SD-KD. **MEDIUM (B2)** לדינמיקות בחירות עתידיות (פיגור סקרים, הסתגלות אסטרטגיית אופוזיציה, משמעת SD לאחר אוגוסט). **LOW (C3)** לציר הזמן של יישום HD03252/HD03253 והשפעת ועידת SD.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 הקשר מתודולוגי
+
+**איסוף**: ממשק API פתוח של הריקסדאג (riksdag-regering-mcp); סינתזת ניתוח 30 ימים  
+**שיטה**: ניקוד DIW, ACH, SWOT, שפת הסתברות WEP, קידוד אדמירלטי  
+**רצפת ביטחון**: כל הטענות העובדתיות ≥ C3; הערכות מבניות ≥ B2  
+**מקור כלכלי**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), אוחזר ב-2026-04-27  
+**תקנים**: ICD 203 (השערות חלופיות, שפת הסתברות); AI FIRST (מינימום 2 איטרציות)  
+**מחזור הבא**: סקירה חודשית 2026-05-27 — צריכה לכלול מדידת דמוסקופ (PIR-A), החלטת הריבית של Riksbank (I-4), תוצאות ועידת SD
+
+---
+### תוספת ממעבר 2 — הקשר האנרגיה של SD-KD הועמק
+
+**מדוע HD10448 חשוב מעבר לשאלה הפרלמנטרית**: הספקנות המתועדת של SD כלפי טורבינות הרוח (HD10448) אינה אירוע מבודד. זאת מיקום עקבי של SD מאז 2022 נגד מנדטים לאנרגיה מתחדשת. תשובת Busch תעקב מקרוב: האם KD תוותר על שטח פוליטי (מחוון תרחיש ב) או תספק תשובה דיפלומטית-מחזיקה (מחוון תרחיש א). **נוסח ההחלטה של פרק האנרגיה בוועידת SD (צפוי ב-20 במאי 2026) הוא המדד הצופה החשוב ביותר ליציבות הקואליציה.**
+
+**הערת מאקרו של קרן המטבע**: צמיחת התמ"ג השוודית +2.1% (IMF WEO Apr-2026) מעניקה לקואליציה מרחב תמרון — בכלכלה מתדרדרת, המתחים מסוג HD10448 היו מסלימים מהר יותר. התנאים המאקרו-כלכליים הנוכחיים מעדיפים במעט את תרחיש א (עמידות הקואליציה).
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling | **日付**: 2026-04-27
+**対象期間**: 2026-03-28 → 2026-04-27（30日間）| **Riksmöte**: 2025/26
+**信頼度**: HIGH (A1) | **提督評価**: A1–C3 | **選挙まで**: 139日
+
+### 🎯 結論優先の要約
+
+2026-03-28から2026-04-27までの30日間は、ティドー連立の2025/26リクスモーテの立法帳簿を締め、同時に2つの新たな断層を明らかにした：**エネルギー政策に関するSD対KDの連立内部の緊張**（HD10448）と**四省庁を標的とした社会民主党（S）による国会質問キャンペーン**。スウェーデンは現在**選挙まで139日**の地点にあり、政治の焦点は立法から実施リスク・説明責任の圧力・選挙ナラティブの構築へと完全にシフトしている。
+
+### 🧭 この概要が支援する3つの意思決定
+
+1. **連立結束の監視**: HD10448でのSD対KD（Franssonによる風力タービン偽情報に関するBuschへの質問）は、ティドー協定以来最も明確な連立内部の断層線であり、意思決定者はエネルギー政策を解決済みの問題ではなく、活発な脆弱性として扱うべきである。
+2. **野党戦略の調整**: S党による1週間での5件の国会質問パターン（HD10447–10450と協調提案）は、政策批判から選挙説明責任キャンペーンへの転換を示す — 野党戦略インテリジェンスを相応に更新すること。
+3. **実施リスクファイル**: 3つの未解決実施ゲート：Polismyndigheten（9件のRiR推薦未解決、HD01JuU31）、EUバンキングパッケージの転換（HD03253 — 重要なコンプライアンスインフラ）、HD01SoU25の高齢者ケア管理者任命。関係セクターの意思決定者は今すぐ露出をマッピングすること。
+
+### 60秒のインテリジェンス要点
+
+- **連立内部断層線確認済み**: HD10448 — SDのFranssonがKD大臣Buschに風力タービン偽情報について質問し、2025/26リクスモーテで初めてエネルギー分裂が公式記録に残る。
+- **S党の説明責任キャンペーン開始**: 1週間で5件の質問（HD10447–HD10450+提案）が4大臣（インフラ・社会保険・エネルギー・経済）を標的 — これは通常の批判ではなく選挙エスカレーションである。
+- **EUバンキングパッケージ前進**: HD03253がFiUを通過中 — 72.5%のアウトプットフロアが住宅ローン主導のスウェーデン系統的銀行（Swedbank、SEB、Handelsbanken、Nordea）を制約；Finansinspektionenが監督優先権を維持するが、EBAとの調整複雑性が増大。
+- **燃料税による財政刺激**: HD01FiU48（補正予算）が以前の環境税軌道を逆転；選挙上の配慮が気候一貫性より優先；VとMPが反対意見を提出。
+- **受刑者給付制限実施済み**: HD03252が kontrollerát boende/säkerhetsförvaring収容者の社会保険を制限 — ECHR第8条によるプロポーショナリティ異議が予想される。
+- **警察改革リスク**: HD01JuU31（Riksrevisionen）がRiR 2026:6からPolismundigheten9件の未解決推薦を確認 — 政府ポートフォリオ最大の構造的ボトルネック。
+- **IMFマクロ基盤**: スウェーデンGDP成長率+2.1%、債務～31%GDP、経常収支+5.5%GDP（WEO Apr-2026）— 構造的見通しは選挙サイクルに向けて堅固。
+
+### 最良の先行指標
+
+**2026-05-08 — 対象期間後初のデモスコップ世論調査**。燃料税軽減HD01FiU48が持続的な支持率上昇をもたらしたかを検証（PIR-A）。ティドーブロック≥44% → シナリオA（連立更新）；<40% → シナリオB（S主導の少数政権）。SD-KDエネルギー緊張がKDの支持基盤をわずかに抑制する可能性 — KD固有の偏差を追跡すること。
+
+### 信頼度評価
+
+総合: 構造的帳簿の締めとSD-KD断層線の特定については**HIGH (A1)**。将来の選挙ダイナミクス（世論調査遅延・野党戦略適応・8月以降のSD規律）については**MEDIUM (B2)**。HD03252/HD03253実施タイムラインとSD党大会影響については**LOW (C3)**。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 方法論的文脈
+
+**収集**: Riksdag公開API（riksdag-regering-mcp）；30日間分析合成  
+**方法**: DIWスコアリング、ACH、SWOT、WEP確率言語、提督コーディング  
+**信頼度基準**: すべての事実的主張≥C3；構造的評価≥B2  
+**経済源**: IMF WEO Apr-2026（NGDP_RPCH、GGXWDG_NGDP、BCA_NGDPD）、2026-04-27取得  
+**標準**: ICD 203（代替仮説、確率言語）；AI FIRST（最低2回の反復）  
+**次回サイクル**: 月次レビュー2026-05-27 — デモスコップ測定（PIR-A）、Riksbankの金利決定（I-4）、SD党大会結果を含める必要あり
+
+---
+### パス2補足 — SD-KDエネルギー文脈の深化
+
+**HD10448が単なる国会質問を超えて重要な理由**: SDによる風力タービン懐疑論の記録（HD10448）は孤立した出来事ではない。これは2022年以来の再生可能エネルギー義務に対するSDの一貫した立場である。Buschの回答は注視される：KDが政治的地歩を譲るか（シナリオBの指標）、あるいは外交的な現状維持の回答をするか（シナリオAの指標）。**SD党大会エネルギー章の決議文言（2026年5月20日予定）は、連立安定性の最も重要な先行指標となる。**
+
+**IMFマクロ注記**: スウェーデンGDP成長率+2.1%（IMF WEO Apr-2026）は連立に操作の余地を与えている — 経済が悪化した場合、HD10448のような緊張はより速くエスカレートしていただろう。現在のマクロ経済状況はシナリオA（連立の回復力）をわずかに支持している。
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **날짜**: 2026-04-27
+**대상 기간**: 2026-03-28 → 2026-04-27（30일）| **Riksmöte**: 2025/26
+**신뢰도**: HIGH (A1) | **제독 코드**: A1–C3 | **선거까지**: 139일
+
+### 🎯 결론 우선 요약
+
+2026-03-28부터 2026-04-27까지 30일 동안은 티도 연립의 2025/26 릭스모테 입법 원장을 마감하면서 두 가지 새로운 단층선을 드러냈다: **에너지 정책에 관한 SD 대 KD의 연립 내부 긴장**(HD10448)과 **4개 부처를 겨냥한 사회민주당(S)의 집중적인 질문 캠페인**. 스웨덴은 현재 **선거까지 139일** 지점에 있으며, 정치의 초점은 입법에서 이행 위험, 책임 압박, 선거 서사 구축으로 완전히 이동했다.
+
+### 🧭 이 개요가 지원하는 3가지 의사결정
+
+1. **연립 결속 모니터링**: HD10448에서의 SD 대 KD(Fransson이 풍력 터빈 허위정보 문제로 Busch에게 질문)는 티도 협정 이래 가장 명확한 연립 내부 단층선이다 — 의사결정자들은 에너지 정책을 해결된 문제가 아닌 현재 진행 중인 취약점으로 취급해야 한다.
+2. **야당 전략 조정**: S당이 1주일 만에 5건의 국회 질문(HD10447–10450과 협조 제안)을 제출한 패턴은 정책 비판에서 선거 책임 캠페인으로의 전환을 시사한다 — 야당 전략 인텔리전스를 그에 맞게 업데이트할 것.
+3. **이행 위험 파일**: 3개의 미해결 이행 관문: Polismyndigheten(9개의 미해결 RiR 권고, HD01JuU31), EU 은행 패키지 전환(HD03253 — 중요한 컴플라이언스 인프라), HD01SoU25 노인 돌봄 관리자 임명. 관련 부문 의사결정자들은 지금 당장 노출을 파악해야 한다.
+
+### 60초 인텔리전스 핵심
+
+- **연립 내부 단층선 확인**: HD10448 — SD의 Fransson이 KD 장관 Busch에게 풍력 터빈 허위정보에 대해 질문하여, 2025/26 릭스모테에서 처음으로 에너지 분열이 공식 기록에 남게 됨.
+- **S당 책임 캠페인 시작**: 1주일간 5건의 질문(HD10447–HD10450+제안)이 4명의 장관(인프라·사회보험·에너지·경제)을 표적으로 — 이는 일상적인 비판이 아닌 선거 에스컬레이션이다.
+- **EU 은행 패키지 진행 중**: HD03253이 FiU 통과 중 — 72.5% 산출 기준이 주택담보대출 중심의 스웨덴 시스템 은행(Swedbank, SEB, Handelsbanken, Nordea)을 제약; Finansinspektionen이 감독 우선권 유지하나 EBA와의 조정 복잡성 증가.
+- **연료세를 통한 재정 자극**: HD01FiU48(추가 예산)이 이전의 녹색세 궤도를 역전; 선거 고려사항이 기후 일관성보다 우선; V와 MP가 반대 의견 제출.
+- **수감자 급여 제한 시행**: HD03252가 kontrollerát boende/säkerhetsförvaring 수용자에 대한 사회보험을 제한 — ECHR 제8조 비례성 이의제기 예상.
+- **경찰 개혁 위험**: HD01JuU31(Riksrevisionen)이 RiR 2026:6에서 Polismundigheten의 9개 미해결 권고를 확인 — 정부 포트폴리오의 가장 큰 구조적 병목.
+- **IMF 거시 토대**: 스웨덴 GDP 성장 +2.1%, 부채 ~31% GDP, 경상수지 +5.5% GDP(WEO Apr-2026) — 구조적 전망은 선거 사이클에 향해 견고.
+
+### 최상의 선행 지표
+
+**2026-05-08 — 대상 기간 이후 첫 데모스코프 여론조사**. 연료세 완화 HD01FiU48이 지속적인 지지율 상승을 가져왔는지 검증(PIR-A). 티도 블록 ≥44% → 시나리오 A(연립 갱신); <40% → 시나리오 B(S 주도 소수 정권). SD-KD 에너지 긴장이 KD 지지 기반을 소폭 억제할 가능성 — KD 고유 편차를 추적할 것.
+
+### 신뢰도 평가
+
+전반: 구조적 원장 마감과 SD-KD 단층선 파악에 대해 **HIGH (A1)**. 향후 선거 역학(여론조사 지연·야당 전략 적응·8월 이후 SD 규율)에 대해 **MEDIUM (B2)**. HD03252/HD03253 이행 타임라인과 SD 당대회 영향에 대해 **LOW (C3)**.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 방법론적 맥락
+
+**수집**: 릭스다그 공개 API(riksdag-regering-mcp); 30일 분석 합성  
+**방법**: DIW 스코어링, ACH, SWOT, WEP 확률 언어, 제독 코딩  
+**신뢰도 기준**: 모든 사실적 주장 ≥C3; 구조적 평가 ≥B2  
+**경제 출처**: IMF WEO Apr-2026(NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), 2026-04-27 취득  
+**표준**: ICD 203(대안 가설, 확률 언어); AI FIRST(최소 2회 반복)  
+**다음 사이클**: 월간 리뷰 2026-05-27 — 데모스코프 측정(PIR-A), Riksbank 금리 결정(I-4), SD 당대회 결과 포함 필요
+
+---
+### 패스 2 추가 — SD-KD 에너지 맥락 심화
+
+**HD10448이 단순한 국회 질문을 넘어 중요한 이유**: 풍력 터빈에 대한 SD의 기록된 회의주의(HD10448)는 고립된 사건이 아니다. 이는 2022년 이래 재생에너지 의무에 반대하는 SD의 일관된 입장이다. Busch의 답변이 주목된다: KD가 정치적 지반을 양보하는지(시나리오 B의 지표) 아니면 외교적인 현상 유지 답변을 하는지(시나리오 A의 지표). **SD 당대회 에너지 장의 결의 문구(2026년 5월 20일 예정)가 연립 안정성의 가장 중요한 선행 지표가 될 것이다.**
+
+**IMF 거시 주석**: 스웨덴 GDP 성장 +2.1%(IMF WEO Apr-2026)는 연립에 조작 여지를 부여한다 — 경제가 악화되었다면 HD10448 같은 긴장은 더 빨리 에스컬레이션되었을 것이다. 현재의 거시경제 상황은 시나리오 A(연립 회복력)를 소폭 지지한다.
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-04-27
+**Periode**: 2026-03-28 → 2026-04-27 (30 dagen) | **Riksmöte**: 2025/26
+**Betrouwbaarheidsniveau**: HIGH (A1) | **Admiralty-bereik**: A1–C3 | **Dagen tot verkiezingen**: 139
+
+### 🎯 Operationele samenvatting
+
+De 30-dagenperiode 2026-03-28 → 2026-04-27 sluit het wetgevingsportfolio van de Tidö-coalitie voor Riksmöte 2025/26 terwijl twee nieuwe breuklijnen zichtbaar worden: **intracoalitie SD-KD-spanning over energiebeleid** (HD10448) en een **gecoördineerde sociaaldemocratische interpellationscampagne** gericht op vier ministeries. Zweden bevindt zich nu op **139 dagen van de verkiezingen**, met de politieke as volledig verschoven van wetgeving naar implementatierisico's, verantwoording en electorale narratieve positionering.
+
+### 🧭 3 Beslissingen die deze briefing ondersteunen
+
+1. **Bewaking van coalitiecohesie**: De HD10448-interpellatie SD-KD (Fransson tegen Busch over windenergie-desinformatie) is de duidelijkste intracoalitie breukijn sinds het Tidö-akkoord — besluitvormers moeten energiebeleid als een actieve kwetsbaarheid behandelen, niet als een afgehandeld agendapunt.
+2. **Kalibratie van de oppositiestrategie**: Het patroon van vijf interpellaties in één week van de S (HD10447–10450 + gecoördineerde moties) signaleert de transitie van politieke oppositie naar electorale verantwoordingscampagne — oppositiestrategie-inlichtingen dienovereenkomstig bijwerken.
+3. **Implementatierisicoortfolio**: Drie implementatiepoorten staan open: Polismyndigheten (9 open RiR-aanbevelingen, HD01JuU31), EU-bankenpakket-transpositi (HD03253 — aanzienlijke compliance-infrastructuur), en HD01SoU25 benoeming directeur ouderenzorg. Besluitvormers in betrokken sectoren moeten hun blootstelling nu in kaart brengen.
+
+### 60-seconden inlichtingenpunten
+
+- **Intracoalitie breukijn bevestigd**: HD10448 — SD's Fransson interpelleert KD-minister Busch over windenergie-desinformatie en dwingt voor het eerst in Riksmöte 2025/26 de energiesplitsing van de coalitie in het openbare protocol.
+- **S-verantwoordingscampagne gelanceerd**: Vijf interpellaties in één week (HD10447–HD10450 + moties) gericht op vier ministers in infrastructuur, sociale verzekering, energie en economie — dit is electorale escalatie, geen routinecontrole.
+- **EU-bankenpakket gevorderd**: HD03253 gaat door het FiU — outputbodem van 72,5% zal zwaar op hypotheekleningen gerichte Zweedse SIB's beperken (Swedbank, SEB, Handelsbanken, Nordea); Finansinspektionen behoudt het toezichtsprimaat maar de EBA-coördinatiecomplexiteit neemt toe.
+- **Fiscale stimulans via brandstofbelasting**: HD01FiU48 (aanvullende wijzigingsbegroting) keerde de eerdere groene belastingtrajectorie; electorale calculus werd geprioriteerd boven klimaatconsistentie; V en MP dienden voorbehouden in.
+- **Beperking gevangenisuitkeringen doorgevoerd**: HD03252 beperkt sociale verzekering voor personen in kontrollerat boende/säkerhetsförvaring — proportionaliteitsuitdaging onder ECHR Art. 8 wordt verwacht.
+- **Politiehervormingrisk**: HD01JuU31 (Riksrevisionen) bevestigt 9 open aanbevelingen van Polismyndigheten uit RiR 2026:6 — het grootste structurele uitvoeringsbottleneck in het overheidsportfolio.
+- **IMF-economisch anker**: Zweedse bbp-groei +2,1%, schuld ~31% van het bbp, lopende rekening +5,5% van het bbp (WEO Apr-2026) — de structurele positie blijft sterk in aanloop naar de verkiezingscyclus.
+
+### Beste vooruitblikkende trigger
+
+**2026-05-08 — Eerste Demoskop-meting na de periode.** Test of de brandstofbelastingverlaging HD01FiU48 een duurzame opiniestijging heeft opgeleverd (PIR-A). Tidö-blok ≥ 44% → Scenario A (coalitiehernieuwing); < 40% → Scenario B (S-geleide minderheid). SD-KD-energiespanning kan de KD-basis licht verlagen — let op KD-specifieke drift.
+
+### Betrouwbaarheidsbeoordeling
+
+Algeheel: **HIGH (A1)** voor het structurele afsluitingsbeeld en SD-KD breukijn-identificatie. **MEDIUM (B2)** voor toekomstige electorale dynamiek (opiniepeilingvertraging, aanpassing oppositiestrategie, SD-discipline na augustus). **LOW (C3)** voor HD03252/HD03253 implementatietijdlijnen en invloed van het SD-congres.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Methodologische context
+
+**Verzameling**: Open data-API van de Riksdag (riksdag-regering-mcp); 30-daagse zusteranalyse-synthese  
+**Methode**: DIW-scoring, ACH, SWOT, WEP-kansontaal, Admiralty-codering  
+**Betrouwbaarheidsondergrens**: Alle feitelijke beweringen ≥ C3; structurele beoordelingen ≥ B2  
+**Economische herkomst**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), opgehaald op 2026-04-27  
+**Normen**: ICD 203 (alternatieve hypothesen, kansontaal); AI FIRST (minimaal 2 iteraties)  
+**Volgende cyclus**: Maandelijkse evaluatie 2026-05-27 — moet Demoskop-meting (PIR-A), rentebesluit Riksbank (I-4), SD-congresuitslag bevatten
+
+---
+### Toevoeging uit doorgang 2 — SD-KD energiecontext uitgediept
+
+**Waarom HD10448 meer betekent dan de interpellatie**: SD's gedocumenteerde windenergieskepsis (HD10448) is geen geïsoleerde gebeurtenis. Het volgt SD's consistente positionering sinds 2022 tegen hernieuwbare energiemandaten. Buschs antwoord zal nauwlettend worden gevolgd voor de vraag of KD politiek terrein toegeeft (Scenario B-indicator) of een diplomatisch-houdend antwoord geeft (Scenario A-indicator). **De tekst van de resolutie van het energiehoofdstuk van het SD-congres (verwacht op 20 mei 2026) is de veruit belangrijkste vooruitblikkende indicator voor de coalitie-stabiliteit.**
+
+**IMF macro-noot**: Zweden's +2,1% bbp-groei (IMF WEO Apr-2026) geeft de coalitie speelruimte — in een verzwakkende economie zouden HD10448-type spanningen sneller escaleren. De huidige macro-omstandigheden begunstigen licht Scenario A (bestendigheid van de coalitie).
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-04-27
+**Periode**: 2026-03-28 → 2026-04-27 (30 dager) | **Riksmöte**: 2025/26
+**Konfidensnivå**: HIGH (A1) | **Admiralty-intervall**: A1–C3 | **Dager til valg**: 139
+
+### 🎯 Kortfattet situasjonsvurdering
+
+30-dagersperioden 2026-03-28 → 2026-04-27 avslutter Tidø-koalisjonens lovgivningsportefølje for riksmöte 2025/26 og eksponerer samtidig to nye bruddlinjer: **intrakoalisjons SD-KD energipolitisk spenning** (HD10448) og en **koordinert sosialdemokratisk interpellasjonskampanje** rettet mot fire departementer. Sverige er nå **139 dager fra valget** med den politiske aksen fullstendig skiftet fra lovgivning til implementeringsrisikoer, ansvarsutkrevning og valgkampposisjonering.
+
+### 🧭 3 Beslutninger denne briefingen støtter
+
+1. **Koalisjonssammenholdovervåking**: HD10448-interpellasjonen SD-KD (Fransson mot Busch om vindkraftsinformasjon) er den tydeligste intrakoalisjons bruddlinjen siden Tidø-avtalen — beslutningstakere bør behandle energipolitikk som en aktiv sårbarhet, ikke som et avgjort dagsordenspunkt.
+2. **Kalibrering av opposisjonsstrategi**: S' fem-interpellasjoner-på-en-uke-mønster (HD10447–10450 + koordinerte motioner) signaliserer overgang fra politisk opposisjon til valgansvarskampanje — oppdater opposisjonsstrategietterforskning deretter.
+3. **Implementeringsrisikoporetefølje**: Tre implementeringsporter er åpne: Polismyndigheten (9 åpne RiR-anbefalinger, HD01JuU31), EU-bankpakketetransponeringen (HD03253 — større etterlevelsesinfrastruktur), og HD01SoU25 eldreomsorgsdirekturoppnevning. Beslutningstakere i berørte sektorer bør kartlegge sin eksponering nå.
+
+### 60-sekunders etterretningspunkter
+
+- **Intrakoalisjons bruddlinje bekreftet**: HD10448 — SD's Fransson interpellerer KD-minister Busch om vindkraftsinformasjon, og tvinger for første gang i riksmöte 2025/26 koalisjonens energi-underfraktur inn i den offentlige protokollen.
+- **S' ansvarskampanje lansert**: Fem interpellasjoner på en uke (HD10447–HD10450 + motioner) rettet mot fire ministre innen infrastruktur, trygd, energi og næringsliv — dette er valeskalering, ikke rutinekontroll.
+- **EU-bankpakken avansert**: HD03253 avanserer gjennom FiU — utgangsgulv på 72,5% vil begrense svenske boliglåntunge SIFI-er (Swedbank, SEB, Handelsbanken, Nordea); Finansinspektionen beholder tilsynsprimat men EBA-koordinasjonskompleksiteten økes.
+- **Finanspolitisk stimulans via drivstoffavgift**: HD01FiU48 (ekstra endringsbudsjett) snudde den tidligere grønne skattebanen; valgkalkyle ble prioritert over klimatkonsistens; V og MP innsendte reservasjoner.
+- **Fengselsytelsesrestriksjon gjennomført**: HD03252 begrenser trygdeytelser for dem i kontrollerat boende/säkerhetsförvaring — proporsjonalitetsutfordring under ECHR Art. 8 forventes.
+- **Politireformrisiko**: HD01JuU31 (Riksrevisionen) bekrefter 9 åpne Polismyndigheten-anbefalinger fra RiR 2026:6 — den største strukturelle gjennomføringsbegrensningen i regjeringens portefølje.
+- **IMFs økonomiske anker**: Sveriges BNP-vekst +2,1%, gjeld ~31% av BNP, driftsbalanse +5,5% av BNP (WEO Apr-2026) — den strukturelle posisjonen forblir sterk inn i valgperioden.
+
+### Beste fremadrettede utløser
+
+**2026-05-08 — Første post-periode Demoskop-måling.** Tester om HD01FiU48 drivstoffskattereduksjonen ga varig opinionsløft (PIR-A). Tidø-blokk ≥ 44% → Scenario A (koalisjonsfornyelse); < 40% → Scenario B (S-ledet mindretall). SD-KD's energispenning kan svakt redusere KD-basen — følg med på KD-spesifikk drift.
+
+### Konfidensvurdering
+
+Samlet: **HIGH (A1)** for det strukturelle avslutningsbildet og SD-KD bruddlinje-identifikasjon. **MEDIUM (B2)** for fremtidige valgdynamikker (opinionsetterstøy, opposisjonsstrategitilpasning, SD-disiplin etter august). **LOW (C3)** for HD03252/HD03253 implementeringstidslinjer og SD-kongressinnflytelse.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Metodologisk kontekst
+
+**Innsamling**: Riksdagens åpne data-API (riksdag-regering-mcp); 30-dagers søskendeanalysesyntese  
+**Metode**: DIW-scoring, ACH, SWOT, WEP-sannsynlighetsspråk, Admiralty-koding  
+**Konfidensundergense**: Alle faktapåstander ≥ C3; strukturelle vurderinger ≥ B2  
+**Økonomisk opprinnelse**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), hentet 2026-04-27  
+**Standarder**: ICD 203 (alternative hypoteser, sannsynlighetsspråk); AI FIRST (minimum 2 iterasjoner)  
+**Neste syklus**: Månedsoversikt 2026-05-27 — bør inkludere Demoskop-måling (PIR-A), Riksbankens rentebeslutning (I-4), SD-kongress-utfall
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-04-27
+**Period**: 2026-03-28 → 2026-04-27 (30 dagar) | **Riksmöte**: 2025/26
+**Konfidensgrad**: HIGH (A1) | **Admiralty-intervall**: A1–C3 | **Dagar till val**: 139
+
+### 🎯 Kortfattad lägesbedömning
+
+30-dagarsperioden 2026-03-28 → 2026-04-27 avslutar Tidökoalitionens lagstiftningsportfölj för riksmöte 2025/26 och exponerar samtidigt två nya spänningslinjer: **inre koalitionsspänning SD-KD i energipolitiken** (HD10448) och en **samordnad socialdemokratisk interpellationskampanj** riktad mot fyra ministerier. Sverige befinner sig nu **139 dagar från valet** med den politiska axeln fullständigt förskjuten från lagstiftning till implementeringsrisker, ansvarsgranskning och kampanjnarrativpositionering.
+
+### 🧭 3 Beslut som denna briefing stödjer
+
+1. **Koalitionskohesionsövervakning**: HD10448-interpellationen SD-KD (Fransson mot Busch om vindkraftsinformation) är den tydligaste inre koalitionssprickan sedan Tidöavtalet — beslutsfattare bör behandla energipolitiken som en aktiv sårbarhet, inte som en avgjord dagordningspunkt.
+2. **Kalibrering av oppositionsstrategi**: S:s fem-interpellationer-på-en-vecka-mönster (HD10447–10450 + koordinerade motioner) signalerar övergång från policyopposition till valansvarskampanj — uppdatera oppositionsstrategiintelligens därefter.
+3. **Implementeringsriskportfölj**: Tre implementeringsportar är öppna: Polismyndigheten (9 öppna RiR-rekommendationer, HD01JuU31), EU:s bankpakettransponering (HD03253 — stor efterlevnadsinfrastruktur), och HD01SoU25 äldreomsorgsföreståndartillsättning. Beslutsfattare i berörda sektorer bör kartlägga sin exponering nu.
+
+### 60-sekunders underrättelseläge
+
+- **Inre koalitionsspänningslinje bekräftad**: HD10448 — SD:s Fransson interpellerar KD-minister Busch om vindkraftsinformation, vilket för första gången under riksmöte 2025/26 tvingar in koalitionens energi-underbristning i det offentliga protokollet.
+- **S:s ansvarskampanj lanserad**: Fem interpellationer på en vecka (HD10447–HD10450 + motioner) riktade mot fyra ministrar inom infrastruktur, socialförsäkring, energi och näringsliv — detta är valupptrappning, inte rutingranskning.
+- **EU:s bankpaket avancerat**: HD03253 avancerar genom FiU — utdatagolv på 72,5% kommer att begränsa svenska bolångtunga SIB:er (Swedbank, SEB, Handelsbanken, Nordea); Finansinspektionen behåller tillsynsprimat men EBA-koordinationskomplexiteten ökar.
+- **Finanspolitisk stimulus via drivmedelsskatt**: HD01FiU48 (extra ändringsbudget) vände den tidigare gröna skattetrajektorin; valkalkyl prioriterades över klimatkonsistens; V och MP lämnade reservationer.
+- **Begränsning av fångelsebidrag genomförd**: HD03252 begränsar socialförsäkring för de i kontrollerat boende/säkerhetsförvaring — proportionalitetsutmaning enligt ECHR Art. 8 förväntas.
+- **Polisreformrisk**: HD01JuU31 (Riksrevisionen) bekräftar 9 öppna Polismyndigheten-rekommendationer från RiR 2026:6 — det största strukturella genomförandehindret i regeringens portfölj.
+- **IMF:s ekonomiska ankare**: Sveriges BNP-tillväxt +2,1%, skuld ~31% av BNP, bytesbalans +5,5% av BNP (WEO Apr-2026) — den strukturella positionen förblir stark inför valcykeln.
+
+### Bästa framåtblickande utlösare
+
+**2026-05-08 — Första post-period Demoskop-mätning.** Testar om HD01FiU48 drivmedelsskattelättnaden gav varaktigt opinionslyft (PIR-A). Tidöblocket ≥ 44% → Scenario A (koalitionsförnyelse); < 40% → Scenario B (S-ledd minoritet). SD-KD:s energispänning kan minska KD-basen något — bevaka KD-specifik drift.
+
+### Konfidensgradering
+
+Övergripande: **HIGH (A1)** för strukturell avslutningsbild och identifiering av SD-KD-spänningslinje. **MEDIUM (B2)** för framtida valdynamik (opinionsefterläsning, oppositionsstrategianpassning, SD-disciplin efter augusti). **LOW (C3)** för HD03252/HD03253 implementeringstidslinjer och SD-kongresspåverkan.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 Metodologisk kontext
+
+**Insamling**: Riksdagens öppna data-API (riksdag-regering-mcp); 30-dagars syskonanalyssyntes  
+**Metod**: DIW-poängsättning, ACH, SWOT, WEP-sannolikhetsspråk, Admiralty-kodning  
+**Konfidensundergräns**: Alla faktauppgifter ≥ C3; strukturella bedömningar ≥ B2  
+**Ekonomiskt ursprung**: IMF WEO Apr-2026 (NGDP_RPCH, GGXWDG_NGDP, BCA_NGDPD), hämtat 2026-04-27  
+**Standarder**: ICD 203 (alternativa hypoteser, sannolikhetsspråk); AI FIRST (minst 2 iterationer)  
+**Nästa cykel**: Månadsöversikt 2026-05-27 — bör inkludera Demoskop-mätning (PIR-A), Riksbankens räntebeslut (I-4), SD-kongressutfall
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling | **日期**: 2026-04-27
+**报告期**: 2026-03-28 → 2026-04-27（30天）| **Riksmöte**: 2025/26
+**置信度**: HIGH (A1) | **海军准将评级**: A1–C3 | **距选举**: 139天
+
+### 🎯 结论优先摘要
+
+2026-03-28至2026-04-27这30天关闭了蒂多联合政府2025/26届议会立法账簿，同时揭示了两条新断层线：**能源政策上SD对KD的联盟内部紧张**（HD10448）以及**社会民主党（S）针对四个部门发起的集中质询攻势**。瑞典目前处于**距选举139天**的节点，政治重心已完全从立法转向执行风险、问责压力和选举叙事构建。
+
+### 🧭 本概要支持的3项决策
+
+1. **监测联盟凝聚力**: HD10448中的SD对KD（Fransson就风力涡轮机虚假信息质询Busch）是自蒂多协议以来最明显的联盟内部断层——决策者应将能源政策视为持续存在的脆弱点，而非已解决的议题。
+2. **校准反对党策略**: S党一周内提出5项质询（HD10447–10450及协调动议）的模式表明从政策批评转向选举问责运动——相应更新反对党策略情报。
+3. **执行风险档案**: 三个未解决的执行关口：Polismyndigheten（9项未结RiR建议，HD01JuU31）、欧盟银行套餐转化（HD03253——关键合规基础设施）、HD01SoU25养老护理主任任命。相关行业决策者应立即评估暴露程度。
+
+### 60秒情报要点
+
+- **联盟内部断层线已确认**: HD10448 — SD的Fransson向KD部长Busch质询风力涡轮机虚假信息，2025/26届议会首次将能源分歧载入公开记录。
+- **S党问责运动启动**: 一周5项质询（HD10447–HD10450+动议）针对4位部长（基础设施、社会保险、能源、经济）——这是选举升级，非常规批评。
+- **欧盟银行套餐推进中**: HD03253通过FiU审查 — 72.5%产出底线将约束以住房抵押贷款为主的瑞典系统性银行（Swedbank、SEB、Handelsbanken、Nordea）；Finansinspektionen保留监管优先权，但与EBA的协调复杂性增加。
+- **燃油税财政刺激**: HD01FiU48（追加预算）逆转了此前的绿色税收轨迹；选举考量优先于气候一致性；V和MP提出保留意见。
+- **囚犯福利限制已实施**: HD03252限制kontrollerát boende/säkerhetsförvaring收押人员的社会保险 — 预计将面临《欧洲人权公约》第8条比例原则挑战。
+- **警察改革风险**: HD01JuU31（Riksrevisionen）确认RiR 2026:6中Polismundigheten的9项未结建议 — 政府工作组合中最大的结构性瓶颈。
+- **国际货币基金宏观基础**: 瑞典GDP增长+2.1%，债务约31%GDP，经常账户+5.5%GDP（WEO Apr-2026）——结构性前景向选举周期保持稳健。
+
+### 最佳前瞻指标
+
+**2026-05-08 — 报告期后首次Demoskop民调**。检验燃油税减免HD01FiU48是否带来持续的民调提升（PIR-A）。蒂多集团≥44% → 情景A（联盟续期）；<40% → 情景B（S主导少数政府）。SD-KD能源紧张可能小幅压低KD支持基础——追踪KD特有的偏差。
+
+### 置信度评估
+
+总体：结构性账簿关闭和SD-KD断层线识别**HIGH (A1)**。未来选举动态（民调滞后、反对党策略适应、8月后SD纪律）**MEDIUM (B2)**。HD03252/HD03253执行时间线和SD党代会影响**LOW (C3)**。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TB
+  subgraph Completed["Legislative Ledger — COMPLETED"]
+    L1["HD01JuU10\nVapenlag"]:::done
+    L2["HD01JuU31\nPolisreform-uppföljning"]:::done
+    L3["HD01SoU25\nÄldreomsorg"]:::done
+    L4["HD01CU24\nByggprocess"]:::done
+    L5["HD01FiU48\nBränsle-supermajoritet"]:::done
+    L6["HD03253\nEU bankpaket"]:::done
+    L7["HD03252\nSocialförsäkring"]:::done
+  end
+  subgraph FaultLines["New Fault Lines"]
+    F1["HD10448\nSD-KD Energi\n⚠️ Intra-coalition"]:::fault
+    F2["HD10449-10450\nS Accountability\nCampaign"]:::threat
+    F3["HD10447\nSME/Sick-pay\nChallenge"]:::threat
+  end
+  subgraph Election["Pre-Campaign — 139 Days"]
+    E1["2026-05-08\nDemoskop PIR-A"]:::trigger
+    E2["2026-06-01\nVårriksdagens slut"]:::trigger
+    E3["2026-09-13\nVAL"]:::election
+  end
+  Completed --> FaultLines
+  FaultLines --> Election
+  classDef done fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef fault fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef trigger fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+  classDef election fill:#0a0e27,stroke:#ff006e,color:#ff006e,font-weight:bold
+  style E3 stroke-width:3px
+```
+
+### 🔄 方法论背景
+
+**收集**: 瑞典议会公开API（riksdag-regering-mcp）；30天分析综合  
+**方法**: DIW评分、ACH、SWOT、WEP概率语言、海军准将编码  
+**置信度基准**: 所有事实性主张≥C3；结构性评估≥B2  
+**经济来源**: IMF WEO Apr-2026（NGDP_RPCH、GGXWDG_NGDP、BCA_NGDPD），2026-04-27获取  
+**标准**: ICD 203（替代假设、概率语言）；AI FIRST（最少2次迭代）  
+**下一周期**: 月度回顾2026-05-27 — 需纳入Demoskop测量（PIR-A）、Riksbank利率决定（I-4）、SD党代会结果
+
+---
+### 第二遍补充 — SD-KD能源背景深化
+
+**HD10448为何超越单纯质询的重要性**: SD对风力涡轮机的有记录怀疑论（HD10448）并非孤立事件。这是SD自2022年以来反对可再生能源强制配额的一贯立场。Busch的回应将受到密切关注：KD是否让步政治阵地（情景B指标），抑或给出外交性的维持现状回应（情景A指标）。**SD党代会能源章节的决议措辞（预计2026年5月20日）将成为联盟稳定性最重要的前瞻指标。**
+
+**国际货币基金宏观注记**: 瑞典GDP增长+2.1%（IMF WEO Apr-2026）为联合政府提供了操作空间——若经济恶化，HD10448类的紧张局面会更快升级。当前宏观经济状况略微支持情景A（联盟韧性）。
+
+*economicProvenance: provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
 ## Mcp Reliability Audit
 <!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/mcp-reliability-audit.md -->
 
@@ -1621,7 +2744,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 41 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1667,6 +2790,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/data-download-manifest.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/analysis-index.md)
 - [`cross-session-intelligence.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/cross-session-intelligence.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/executive-brief_zh.md)
 - [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/reference-analysis-quality.md)
 - [`session-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/session-baseline.md)

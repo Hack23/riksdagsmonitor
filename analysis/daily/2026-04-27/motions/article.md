@@ -6,7 +6,7 @@ date: 2026-04-27
 subfolder: motions
 slug: 2026-04-27-motions
 source_folder: analysis/daily/2026-04-27/motions
-generated_at: 2026-05-18T09:08:37.973Z
+generated_at: 2026-05-18T13:28:11.003Z
 language: en
 layout: article
 ---
@@ -119,6 +119,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1939,13 +1952,1162 @@ Zero documents found for 2026-04-27. Applied 7-day lookback covering 2026-04-07�
 
 All 29 documents are official Riksdag committee motions (kommittémotioner and partimotioner) from riksmöte 2025/26. Source: data.riksdagen.se via riksdag-regering MCP. Party affiliations confirmed via snippet text where available (V = Vänsterpartiet, MP = Miljöpartiet, S = Socialdemokraterna based on committee motion structure).
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# إحاطة استخباراتية — اقتراحات المعارضة السويدية ربيع 2026
+
+**التاريخ**: 2026-04-27
+**المؤلف**: James Pether Sörling
+**التصنيف**: عام
+**الحالة**: المرور 2 (تحسين تكراري AI FIRST)
+
+---
+
+### 🎯 الملخص التنفيذي
+
+تسعة وعشرون اقتراحاً من المعارضة قدّمتها V وMP وS بين 7 و17 أبريل 2026 (ريكسموتيه 2025/26) تستهدف البرنامج التشريعي الربيعي لحكومة تيدو بشأن الترحيل الجنائي وتكامل الإسكان والسياسة المالية. **ستفشل جميع الاقتراحات تشريعياً — تمتلك تحالف تيدو أغلبية 200/349 مقعداً بدعم SD.** غرضها الاستراتيجي هو تحديد المواقع الانتخابية قبيل الانتخابات العامة في سبتمبر 2026. يمثّل مجموعة حقوق الهجرة (8 اقتراحات، 28%) أعلى أولوية استخباراتية: طعن V في حقوق الترحيل (HD024090 riksdagen.se) يتضمن حججاً جوهرية في قانون الاتحاد الأوروبي قد تستمر في المحاكم الإدارية حتى بعد الهزيمة البرلمانية.
+
+---
+
+### 🧭 3 قرارات
+
+**القرار 1 (ق1): مراقبة تصويت لجنة SfU على HD024090**
+يُعدّ تصويت لجنتَي المالية والضمان الاجتماعي على HD024090 (riksdagen.se، prop. 2025/26:235) والاقتراحات المتعلقة بالترحيل المحرّك الاستخباراتي الأكثر أهمية على المدى القريب. أي تحفظات من KD أو L في اللجنة تشير إلى تباعد ما قبل الانتخابات عن سياسة الترحيل المتشددة — مؤشر محتمل على تصدّع التحالف.
+
+**القرار 2 (ق2): تتبع التوظيف الانتخابي لـ V/MP**
+قدّمت كلٌّ من V وMP اقتراحات ذات محتوى فني جوهري مصمّمة للتحوّل إلى مواد حملة انتخابية. مراقبة بيانات الصحافة الحزبية بحثاً عن إشارات إلى dok_ids محددة (HD024090، HD024086 riksdagen.se) كدليل على التوظيف.
+
+**القرار 3 (ق3): تقييم المسار القانوني للاتحاد الأوروبي بشأن HD024090**
+يتمتع طعن V في توافق الترحيل الجنائي مع قانون الاتحاد الأوروبي (HD024090 riksdagen.se) بنسبة 15-20% لتوليد إحالة مسبقة من Migrationsöverdomstolen إلى محكمة العدل الأوروبية خلال عامين. بدء مراقبة قائمة قضايا Migrationsöverdomstolen للقضايا ذات الصلة.
+
+---
+
+### إحصائيات ملخصة
+
+| البُعد | القيمة |
+|-----------|-------|
+| إجمالي الاقتراحات | 29 |
+| الأحزاب المقدِّمة | 3 (V, MP, S) |
+| اللجان المشاركة | 10 |
+| الاقتراحات المستهدَفة | 8 |
+| مجموعة الهجرة | 8 اقتراحات (28%) |
+| المجموعة المالية | 5 اقتراحات (17%) |
+| الإسكان/التكامل | 4 اقتراحات (14%) |
+| أيام حتى الانتخابات | ~139 (13 سبتمبر 2026) |
+
+---
+
+### خريطة الاستخبارات
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### توزيع مواضيع الاقتراحات
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_da.md -->
+
+**Dato**: 2026-04-27
+**Forfatter**: James Pether Sörling
+**Klassifikation**: ÅBEN
+**Status**: Pass 2 (AI FIRST iterativ forbedring)
+
+---
+
+### 🎯 Kortfattet konklusion
+
+Ni og tyve oppositionsmotioner indgivet af V, MP og S mellem 7.–17. april 2026 (riksmöte 2025/26) retter sig mod Tidö-regeringens lovgivningsprogram for kriminel udvisning, boligintegration og finanspolitik. **Alle motioner vil falde lovgivningsmæssigt — Tidö-koalitionen har et flertal på 200/349 mandater med SD's støtte.** Deres strategiske formål er valgpositionering forud for parlamentsvalget i september 2026. Immigrationsrettigheds-klyngen (8 motioner, 28%) repræsenterer den højeste efterretningsprioritet: V's udvisningsrettighedsudfordring (HD024090 riksdagen.se) indeholder substantielle EU-retlige argumenter, der kan bestå i forvaltningsdomstolene selv efter parlamentarisk nederlag.
+
+---
+
+### 🧭 3 Beslutninger
+
+**Beslutning 1 (B1): Overvåg SfU-udvalgets afstemning om HD024090**
+Finans- og socialudvalgets afstemning om HD024090 (riksdagen.se, prop. 2025/26:235) og relaterede udvisningsmotioner er den vigtigste efterretningsgivende udløser på kort sigt. Eventuelle reservationer fra KD eller L i udvalget signalerer forudvalgsdistancering fra hårdhændet udvisningspolitik — en potentiel koalitionsbrudindikator.
+
+**Beslutning 2 (B2): Følg V's/MP's valoperationalisering**
+Både V og MP har indgivet teknisk substantielle motioner designet til at overgå til kampagnemateriale. Overvåg partiernes pressemeddelelser for henvisninger til specifikke dok-id'er (HD024090, HD024086 riksdagen.se) som bevis på operationalisering.
+
+**Beslutning 3 (B3): Vurder EU-retlig sti for HD024090**
+V's EU-kompatibilitetsudfordring til kriminel udvisning (HD024090 riksdagen.se) har 15–20% sandsynlighed for at generere en forelæggelse fra Migrationsöverdomstolen til EF-Domstolen inden for 2 år. Igangsæt overvågning af Migrationsöverdomstolens sagsliste for relaterede sager.
+
+---
+
+### Sammenfatningsstatistik
+
+| Dimension | Værdi |
+|-----------|-------|
+| Motioner i alt | 29 |
+| Partier der indgiver | 3 (V, MP, S) |
+| Involverede udvalg | 10 |
+| Målrettede propositioner | 8 |
+| Immigrationsklynge | 8 motioner (28%) |
+| Finansklynge | 5 motioner (17%) |
+| Bolig/integration | 4 motioner (14%) |
+| Dage til valg | ~139 (13. sep 2026) |
+
+---
+
+### Efterretningskort
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### Fordeling af motionernes temaer
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_de.md -->
+
+**Datum**: 2026-04-27
+**Autor**: James Pether Sörling
+**Einstufung**: ÖFFENTLICH
+**Status**: Pass 2 (AI FIRST iterative Verbesserung)
+
+---
+
+### 🎯 Kurzfassung
+
+Neunundzwanzig Oppositionsmotionen von V, MP und S zwischen dem 7.–17. April 2026 (Riksmöte 2025/26) zielen auf das Frühjahrsgesetzgebungsprogramm der Tidö-Regierung zu krimineller Ausweisung, Wohnraumintegration und Finanzpolitik ab. **Alle Motionen werden legislativ scheitern — die Tidö-Koalition hält eine Mehrheit von 200/349 Mandaten mit SD-Unterstützung.** Ihr strategischer Zweck ist die Wahlpositionierung vor der Reichstagswahl im September 2026. Das Einwanderungsrechts-Cluster (8 Motionen, 28%) stellt die höchste Nachrichtendienstpriorität dar: V's Abschiebungsrechts-Herausforderung (HD024090 riksdagen.se) enthält substanzielle EU-rechtliche Argumente, die auch nach parlamentarischer Niederlage in Verwaltungsgerichten Bestand haben könnten.
+
+---
+
+### 🧭 3 Entscheidungen
+
+**Entscheidung 1 (E1): SfU-Ausschussabstimmung zu HD024090 überwachen**
+Die Abstimmung des Finanz- und Sozialversicherungsausschusses über HD024090 (riksdagen.se, Prop. 2025/26:235) und verwandte Ausweisungsmotionen ist der wichtigste kurzfristige Nachrichtendienstauslöser. Vorbehalte von KD oder L im Ausschuss signalisieren vorwahlbedingte Distanzierung von einer harten Ausweisungspolitik — ein potenzieller Koalitionsbruch-Indikator.
+
+**Entscheidung 2 (E2): V's/MP's Wahloperationalisierung verfolgen**
+Sowohl V als auch MP haben technisch substanzielle Motionen eingereicht, die als Kampagnenmaterial dienen sollen. Parteipressemitteilungen auf Verweise auf spezifische Dok-IDs (HD024090, HD024086 riksdagen.se) als Beweis der Operationalisierung überwachen.
+
+**Entscheidung 3 (E3): EU-rechtlichen Pfad für HD024090 bewerten**
+V's EU-Kompatibilitäts-Herausforderung zur kriminellen Ausweisung (HD024090 riksdagen.se) hat eine 15–20%ige Wahrscheinlichkeit, innerhalb von 2 Jahren eine Vorabentscheidungsvorlage des Migrationsöverdomstolen an den EuGH zu erzeugen. Überwachung des Rollenspiels des Migrationsöverdomstolen für verwandte Fälle einleiten.
+
+---
+
+### Zusammenfassende Statistiken
+
+| Dimension | Wert |
+|-----------|-------|
+| Motionen gesamt | 29 |
+| Einreichende Parteien | 3 (V, MP, S) |
+| Beteiligte Ausschüsse | 10 |
+| Adressierte Propositionen | 8 |
+| Einwanderungs-Cluster | 8 Motionen (28%) |
+| Finanz-Cluster | 5 Motionen (17%) |
+| Wohnen/Integration | 4 Motionen (14%) |
+| Tage bis zur Wahl | ~139 (13. Sep 2026) |
+
+---
+
+### Nachrichtendienstliche Mindmap
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### Verteilung der Motionsthemen
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_es.md -->
+
+**Fecha**: 2026-04-27
+**Autor**: James Pether Sörling
+**Clasificación**: PÚBLICO
+**Estado**: Pasada 2 (mejora iterativa AI FIRST)
+
+---
+
+### 🎯 Resumen ejecutivo
+
+Veintinueve mociones de la oposición presentadas por V, MP y S entre el 7 y el 17 de abril de 2026 (riksmöte 2025/26) se dirigen al programa legislativo de primavera del gobierno Tidö sobre deportación criminal, integración habitacional y política fiscal. **Todas las mociones fracasarán legislativamente — la coalición Tidö tiene una mayoría de 200/349 escaños con el apoyo del SD.** Su propósito estratégico es el posicionamiento electoral de cara a las elecciones generales de septiembre de 2026. El grupo de derechos migratorios (8 mociones, 28%) representa la mayor prioridad de inteligencia: el desafío de derechos de deportación de V (HD024090 riksdagen.se) contiene argumentos sustanciales de derecho de la UE que podrían persistir en los tribunales administrativos incluso después de una derrota parlamentaria.
+
+---
+
+### 🧭 3 Decisiones
+
+**Decisión 1 (D1): Supervisar la votación del comité SfU sobre HD024090**
+La votación de los comités de finanzas y asuntos sociales sobre HD024090 (riksdagen.se, prop. 2025/26:235) y las mociones de deportación relacionadas es el disparador de inteligencia más crítico a corto plazo. Cualquier reserva de KD o L en comité señala un alejamiento preelectoral de la política de deportación dura — indicador potencial de fractura de la coalición.
+
+**Decisión 2 (D2): Rastrear la operacionalización electoral de V/MP**
+Tanto V como MP han presentado mociones técnicamente sustanciales diseñadas para convertirse en material de campaña. Supervisar los comunicados de prensa de los partidos para referencias a dok_ids específicos (HD024090, HD024086 riksdagen.se) como prueba de operacionalización.
+
+**Decisión 3 (D3): Evaluar la vía del derecho de la UE para HD024090**
+El desafío de compatibilidad con el derecho de la UE de V sobre deportación criminal (HD024090 riksdagen.se) tiene una probabilidad del 15–20% de generar una remisión prejudicial del Migrationsöverdomstolen al TJUE dentro de 2 años. Iniciar el seguimiento del expediente del Migrationsöverdomstolen para casos relacionados.
+
+---
+
+### Estadísticas de resumen
+
+| Dimensión | Valor |
+|-----------|-------|
+| Total de mociones | 29 |
+| Partidos presentadores | 3 (V, MP, S) |
+| Comités involucrados | 10 |
+| Proposiciones dirigidas | 8 |
+| Grupo de inmigración | 8 mociones (28%) |
+| Grupo fiscal | 5 mociones (17%) |
+| Vivienda/integración | 4 mociones (14%) |
+| Días hasta las elecciones | ~139 (13 sep. 2026) |
+
+---
+
+### Mapa de inteligencia
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### Distribución de temas de las mociones
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_fi.md -->
+
+**Päiväys**: 2026-04-27
+**Kirjoittaja**: James Pether Sörling
+**Luokitus**: AVOIN
+**Tila**: Pass 2 (AI FIRST iteratiivinen parannus)
+
+---
+
+### 🎯 Lyhyt yhteenveto
+
+Kaksikymmentäyhdeksän V:n, MP:n ja S:n 7.–17. huhtikuuta 2026 jättämää oppositiomootion (riksmöte 2025/26) kohdistavat Tidö-hallituksen kevään lainsäädäntöohjelman rikosperusteisiin käännytyksiin, asumisintegraatioon ja finanssipolitiikkaan. **Kaikki moottiot kaatuvat lainsäädännöllisesti — Tidö-koalitio hallitsee 200/349 paikkaa SD:n tuella.** Niiden strateginen tarkoitus on vaaliasemoituminen syyskuun 2026 yleisten vaalien edellä. Maahanmuuttooikeusryväs (8 mootion, 28%) edustaa korkeinta tiedusteluprioriteettia: V:n karkotusperusteinen oikeushakopetos (HD024090 riksdagen.se) sisältää substansiaalisia EU-oikeudellisia argumentteja, jotka voivat säilyä hallinto-oikeuksissa parlamentaarisen tappion jälkeenkin.
+
+---
+
+### 🧭 3 Päätöstä
+
+**Päätös 1 (P1): Seuraa SfU-valiokunnan äänestystä HD024090:stä**
+Talous- ja sosiaaliturvavaliokunnan äänestys HD024090:stä (riksdagen.se, prop. 2025/26:235) ja siihen liittyvistä karkotusmoottioista on tärkein lähiajan tiedusteluliipaisin. Mahdolliset KD:n tai L:n varaumat valiokunnassa signaloivat etäisyydenottoa ennen vaaleja kovaa käännytyspolitiikkaa kohtaan — mahdollinen koalitiohajoamisen indikaattori.
+
+**Päätös 2 (P2): Seuraa V:n/MP:n vaalioperationalisointia**
+Sekä V että MP ovat jättäneet teknisesti substantiaalisia moottioita, jotka on suunniteltu siirtymään kampanjamateriaaliksi. Seuraa puolueiden lehdistötiedotteita viittauksille tiettyihin dok-id:ihin (HD024090, HD024086 riksdagen.se) operationalisoinnin todisteena.
+
+**Päätös 3 (P3): Arvioi EU-oikeudellinen polku HD024090:lle**
+V:n EU-yhteensopivuushaaste rikosperusteiseen käännytykseen (HD024090 riksdagen.se) tuottaa 15–20% todennäköisyydellä Migrationsöverdomstolista EY-tuomioistuimelle tehtävän ennakkoratkaisupyynnön 2 vuoden sisällä. Käynnistä Migrationsöverdomstolens asialistaseuranta aiheeseen liittyviä tapauksia varten.
+
+---
+
+### Yhteenvetotilastot
+
+| Ulottuvuus | Arvo |
+|-----------|-------|
+| Moottioita yhteensä | 29 |
+| Jättävät puolueet | 3 (V, MP, S) |
+| Mukana olevat valiokunnat | 10 |
+| Kohdepropositiot | 8 |
+| Maahanmuuttoryväs | 8 mootion (28%) |
+| Rahoitusryväs | 5 mootion (17%) |
+| Asuminen/integraatio | 4 mootion (14%) |
+| Päiviä vaaleihin | ~139 (13. syysk. 2026) |
+
+---
+
+### Tiedustelukartta
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### Moottioteemojen jakauma
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling
+
+**Statut**: Pass 2 (amélioration itérative AI FIRST)
+
+---
+
+### 🎯 Synthèse
+
+Vingt-neuf motions d'opposition déposées par V, MP et S entre le 7 et le 17 avril 2026 (riksmöte 2025/26) ciblent le programme législatif du printemps du gouvernement Tidö sur l'expulsion criminelle, l'intégration par le logement et la politique fiscale. **Toutes les motions échoueront législativement — la coalition Tidö détient une majorité de 200/349 sièges avec le soutien du SD.** Leur objectif stratégique est le positionnement électoral à l'approche des élections législatives de septembre 2026. Le groupe droits migratoires (8 motions, 28 %) représente la priorité de renseignement la plus élevée : le défi sur les droits d'expulsion de V (HD024090 riksdagen.se) contient des arguments de droit européen substantiels qui pourraient persister devant les tribunaux administratifs même après une défaite parlementaire.
+
+---
+
+### 🧭 3 Décisions
+
+**Décision 1 (D1): Surveiller le vote du comité SfU sur HD024090**
+Le vote des comités des finances et des affaires sociales sur HD024090 (riksdagen.se, prop. 2025/26:235) et les motions d'expulsion connexes est le déclencheur de renseignement le plus critique à court terme. Toute réserve de KD ou L en comité signale une distanciation préélectorale d'une politique d'expulsion sévère — indicateur potentiel de fracture de la coalition.
+
+**Décision 2 (D2): Suivre l'opérationnalisation électorale de V/MP**
+V et MP ont tous deux déposé des motions techniquement substantielles destinées à se transformer en matériaux de campagne. Surveiller les communiqués de presse des partis pour des références à des dok_ids spécifiques (HD024090, HD024086 riksdagen.se) comme preuve d'opérationnalisation.
+
+**Décision 3 (D3): Évaluer la voie du droit de l'UE pour HD024090**
+Le défi de compatibilité avec le droit de l'UE de V sur l'expulsion criminelle (HD024090 riksdagen.se) a une probabilité de 15 à 20% de générer un renvoi préjudiciel du Migrationsöverdomstolen à la CJUE dans les 2 ans. Initier une surveillance du rôle du Migrationsöverdomstolen pour les affaires connexes.
+
+---
+
+### Statistiques récapitulatives
+
+| Dimension | Valeur |
+|-----------|-------|
+| Motions totales | 29 |
+| Partis déposants | 3 (V, MP, S) |
+| Comités impliqués | 10 |
+| Propositions ciblées | 8 |
+| Groupe immigration | 8 motions (28%) |
+| Groupe fiscal | 5 motions (17%) |
+| Logement/intégration | 4 motions (14%) |
+| Jours avant l'élection | ~139 (13 sept. 2026) |
+
+---
+
+### Carte de renseignement
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### Répartition des thèmes des motions
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מודיעין — הצעות המתנגדים השוודיים אביב 2026
+
+**תאריך**: 2026-04-27
+**מחבר**: James Pether Sörling
+**סיווג**: ציבורי
+**מצב**: מעבר 2 (שיפור איטרטיבי AI FIRST)
+
+---
+
+### 🎯 סיכום עיקרי
+
+עשרים ותשע הצעות אופוזיציה שהגישו V, MP ו-S בין 7–17 באפריל 2026 (ריקסמוטה 2025/26) מכוונות לתכנית החקיקתית של ממשלת תידו לאביב בנושא גירוש פלילי, שילוב דיור ומדיניות פיסקלית. **כל ההצעות ייכשלו חקיקתית — קואליציית תידו מחזיקה ב-200/349 מנדטים עם תמיכת SD.** מטרתן האסטרטגית היא מיצוב בחירותי לקראת הבחירות הכלליות בספטמבר 2026. אשכול זכויות ההגירה (8 הצעות, 28%) מייצג את עדיפות המודיעין הגבוהה ביותר: אתגר זכויות הגירוש של V (HD024090 riksdagen.se) מכיל טיעוני משפט האיחוד האירופי מהותיים שעשויים להישמר בבתי המשפט המנהליים גם לאחר תבוסה פרלמנטרית.
+
+---
+
+### 🧭 3 החלטות
+
+**החלטה 1 (ח1): ניטור הצבעת ועדת SfU על HD024090**
+הצבעת ועדות האוצר והביטוח הסוציאלי על HD024090 (riksdagen.se, prop. 2025/26:235) וההצעות הקשורות לגירוש הן הטריגר המודיעיני הקריטי ביותר בטווח הקרוב. כל הסתייגויות של KD או L בוועדה מסמנות ריחוק טרום-בחירות ממדיניות גירוש קשוחה — אינדיקטור פוטנציאלי לסדק בקואליציה.
+
+**החלטה 2 (ח2): מעקב אחר אופרציונליזציה בחירותית של V/MP**
+גם V וגם MP הגישו הצעות בעלות תוכן טכני מהותי המיועדות להפוך לחומר קמפיין. לנטר הודעות לעיתונות מפלגתיות לאיתור הפניות ל-dok_ids ספציפיים (HD024090, HD024086 riksdagen.se) כעדות לאופרציונליזציה.
+
+**החלטה 3 (ח3): הערכת נתיב משפט האיחוד האירופי עבור HD024090**
+לאתגר התאימות לחוק האיחוד האירופי של V לגירוש פלילי (HD024090 riksdagen.se) יש הסתברות של 15–20% לייצר הפניה מקדמית מ-Migrationsöverdomstolen לבית הדין האירופי לצדק תוך 2 שנים. להתחיל מעקב אחר תיק Migrationsöverdomstolen בנושאים קשורים.
+
+---
+
+### סטטיסטיקת סיכום
+
+| מימד | ערך |
+|-----------|-------|
+| סך הצעות | 29 |
+| מפלגות מגישות | 3 (V, MP, S) |
+| ועדות מעורבות | 10 |
+| הצעות חוק ממוקדות | 8 |
+| אשכול הגירה | 8 הצעות (28%) |
+| אשכול פיסקלי | 5 הצעות (17%) |
+| דיור/שילוב | 4 הצעות (14%) |
+| ימים לבחירות | ~139 (13 ספטמבר 2026) |
+
+---
+
+### מפת מודיעין
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### התפלגות נושאי ההצעות
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_ja.md -->
+
+**日付**: 2026-04-27
+**著者**: James Pether Sörling
+**分類**: 公開
+**状態**: パス2（AI FIRST反復改善）
+
+---
+
+### 🎯 要点
+
+V、MP、Sが2026年4月7日から17日の間（riksmöte 2025/26）に提出した29件の野党動議は、ティドー政府の春季立法プログラム（刑事追放、住宅統合、財政政策）を標的としている。**すべての動議は立法的に失敗する — ティドー連立はSDの支持により200/349議席の過半数を保持している。** その戦略的目的は2026年9月の総選挙に向けた選挙ポジショニングである。移民権クラスター（8動議、28%）が最高の情報優先度を示す：Vの追放権への挑戦（HD024090 riksdagen.se）は、議会での敗北後も行政裁判所で持続する可能性のある実質的なEU法の論拠を含んでいる。
+
+---
+
+### 🧭 3つの意思決定
+
+**意思決定1（D1）：HD024090に関するSfU委員会の投票を監視**
+HD024090（riksdagen.se、prop. 2025/26:235）および関連する追放動議に関する財務・社会保険委員会の投票は、最も重要な近期の情報トリガーである。委員会でのKDまたはLの留保は、強硬な追放政策からの選挙前の距離を取りを示す — 連立亀裂の可能性指標。
+
+**意思決定2（D2）：V/MPの選挙的操作化を追跡**
+VとMPの両方が、選挙運動材料に移行するよう設計された技術的に実質的な動議を提出している。特定のdok_id（HD024090、HD024086 riksdagen.se）への参照を操作化の証拠として政党のプレスリリースを監視すること。
+
+**意思決定3（D3）：HD024090のEU法経路を評価**
+刑事追放に対するVのEU適合性への挑戦（HD024090 riksdagen.se）は、2年以内にMigrationsöverdomstolenからECJへの先決裁定申請を生成する確率が15〜20%ある。関連事件について移住最高裁判所のドケットの監視を開始すること。
+
+---
+
+### サマリー統計
+
+| 項目 | 値 |
+|-----------|-------|
+| 動議総数 | 29 |
+| 提出政党 | 3（V、MP、S）|
+| 関係委員会 | 10 |
+| 標的命題 | 8 |
+| 移民クラスター | 8動議（28%）|
+| 財政クラスター | 5動議（17%）|
+| 住宅/統合 | 4動議（14%）|
+| 選挙まで | 約139日（2026年9月13日）|
+
+---
+
+### インテリジェンス・マインドマップ
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### 動議テーマ分布
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_ko.md -->
+
+**날짜**: 2026-04-27
+**저자**: James Pether Sörling
+**분류**: 공개
+**상태**: 패스 2（AI FIRST 반복 개선）
+
+---
+
+### 🎯 핵심 요약
+
+V, MP, S가 2026년 4월 7일~17일 사이(riksmöte 2025/26)에 제출한 29건의 야당 발의는 티도 정부의 봄 입법 프로그램(형사 추방, 주거 통합, 재정 정책)을 겨냥하고 있다. **모든 발의는 입법적으로 실패할 것이다 — 티도 연립은 SD의 지원으로 200/349 의석 과반수를 보유하고 있다.** 전략적 목적은 2026년 9월 총선을 앞둔 선거 포지셔닝이다. 이민 권리 클러스터(8건 발의, 28%)가 최고 정보 우선순위를 나타낸다: V의 추방 권리 도전(HD024090 riksdagen.se)은 의회 패배 후에도 행정법원에서 지속될 수 있는 실질적인 EU법 논거를 포함하고 있다.
+
+---
+
+### 🧭 3가지 의사결정
+
+**의사결정 1 (D1): HD024090에 관한 SfU위원회 투표 모니터링**
+HD024090(riksdagen.se, prop. 2025/26:235)과 관련 추방 발의에 대한 재정·사회보험위원회의 투표는 단기적으로 가장 중요한 정보 트리거이다. 위원회에서 KD나 L의 유보는 강경한 추방 정책으로부터의 선거 전 거리두기를 신호한다 — 잠재적 연립 균열 지표.
+
+**의사결정 2 (D2): V/MP의 선거적 운용화 추적**
+V와 MP 모두 캠페인 자료로 전환하도록 설계된 기술적으로 실질적인 발의를 제출했다. 운용화의 증거로 특정 dok_id(HD024090, HD024086 riksdagen.se)에 대한 참조를 위해 정당 보도자료를 모니터링할 것.
+
+**의사결정 3 (D3): HD024090의 EU법 경로 평가**
+형사 추방에 대한 V의 EU 적합성 도전(HD024090 riksdagen.se)은 2년 내 Migrationsöverdomstolen에서 ECJ로의 선결적 판결 신청을 생성할 확률이 15~20%이다. 관련 사건에 대한 이민 최고법원 사건목록 모니터링을 시작할 것.
+
+---
+
+### 요약 통계
+
+| 항목 | 값 |
+|-----------|-------|
+| 총 발의 | 29건 |
+| 제출 정당 | 3개 (V, MP, S) |
+| 관련 위원회 | 10개 |
+| 표적 발의안 | 8개 |
+| 이민 클러스터 | 8건 (28%) |
+| 재정 클러스터 | 5건 (17%) |
+| 주거/통합 | 4건 (14%) |
+| 선거까지 | 약 139일 (2026년 9월 13일) |
+
+---
+
+### 인텔리전스 마인드맵
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### 발의 주제 분포
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_nl.md -->
+
+**Datum**: 2026-04-27
+**Auteur**: James Pether Sörling
+**Classificatie**: OPENBAAR
+**Status**: Pass 2 (AI FIRST iteratieve verbetering)
+
+---
+
+### 🎯 Beknopte samenvatting
+
+Negenentwintig oppositiemoties ingediend door V, MP en S tussen 7–17 april 2026 (riksmöte 2025/26) richten zich op het voorjaarswetgevingsprogramma van de Tidö-regering inzake criminele uitzetting, woonintegratie en begrotingsbeleid. **Alle moties zullen wetgevend falen — de Tidö-coalitie heeft een meerderheid van 200/349 zetels met SD-steun.** Hun strategisch doel is electorale positionering voorafgaand aan de verkiezingen van september 2026. De cluster migratierechten (8 moties, 28%) vormt de hoogste inlichtingenprioriteit: V's aanvechting van uitzettingsrechten (HD024090 riksdagen.se) bevat substantiële EU-rechtelijke argumenten die ook na parlementaire nederlaag bij bestuursrechters kunnen standhouden.
+
+---
+
+### 🧭 3 Beslissingen
+
+**Beslissing 1 (B1): Stem SfU-commissie over HD024090 volgen**
+De stemming van de financiën- en sociale zekerheidcommissies over HD024090 (riksdagen.se, prop. 2025/26:235) en aanverwante uitzettingsmoties is de belangrijkste kortetermijn inlichtingenuitlöser. Eventuele voorbehouden van KD of L in de commissie signaleren pre-electorale distantiëring van een harde uitzettingspolitiek — een potentiële coalitiebreuk-indicator.
+
+**Beslissing 2 (B2): V's/MP's electorale operationalisering volgen**
+Zowel V als MP hebben technisch substantiële moties ingediend die zijn ontworpen om campagnemateriaal te worden. Partijpersberichten monitoren op verwijzingen naar specifieke dok-id's (HD024090, HD024086 riksdagen.se) als bewijs van operationalisering.
+
+**Beslissing 3 (B3): EU-rechtelijk pad voor HD024090 beoordelen**
+V's EU-compatibiliteitschallenge voor criminele uitzetting (HD024090 riksdagen.se) heeft een kans van 15–20% om binnen 2 jaar een prejudiciële verwijzing van het Migrationsöverdomstolen naar het HvJ-EU te genereren. Monitoring van de rol van het Migrationsöverdomstolen voor verwante zaken initiëren.
+
+---
+
+### Samenvattende statistieken
+
+| Dimensie | Waarde |
+|-----------|-------|
+| Totale moties | 29 |
+| Indiende partijen | 3 (V, MP, S) |
+| Betrokken commissies | 10 |
+| Gerichte proposities | 8 |
+| Immigratiecluster | 8 moties (28%) |
+| Financieel cluster | 5 moties (17%) |
+| Wonen/integratie | 4 moties (14%) |
+| Dagen tot verkiezingen | ~139 (13 sep. 2026) |
+
+---
+
+### Inlichtingenkaart
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### Verdeling van motieonderwerpen
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_no.md -->
+
+**Dato**: 2026-04-27
+**Forfatter**: James Pether Sörling
+**Klassifisering**: ÅPEN
+**Status**: Pass 2 (AI FIRST iterativ forbedring)
+
+---
+
+### 🎯 Kortfattet konklusjon
+
+Tjueni opposisjonsmotioner innlevert av V, MP og S mellom 7.–17. april 2026 (riksmöte 2025/26) retter seg mot Tidö-regjeringens lovgivningsprogram for kriminell utvisning, boligintegrering og finanspolitikk. **Alle motioner vil falle lovgivningsmessig — Tidö-koalisjonen har et flertall på 200/349 mandater med SD-støtte.** Deres strategiske formål er valgposisjonering foran stortingsvalget i september 2026. Innvandringsrettighetsklyngen (8 motioner, 28%) representerer den høyeste etterretningsprioriteten: V's utvisningsrettighetsutfordring (HD024090 riksdagen.se) inneholder substansielle EU-rettslige argumenter som kan bestå i forvaltningsdomstolene selv etter parlamentarisk nederlag.
+
+---
+
+### 🧭 3 Beslutninger
+
+**Beslutning 1 (B1): Overvåk SfU-komiteens avstemning om HD024090**
+Finans- og sosialkomiteens avstemning om HD024090 (riksdagen.se, prop. 2025/26:235) og relaterte utvisningsmosjoner er den viktigste etterretningsgivende utløseren på kort sikt. Eventuelle reservasjoner fra KD eller L i komiteen signaliserer forhåndsvalgsavstandtagen fra hardhendt utvisningspolitikk — en potensiell koalisjonsbrukkindikator.
+
+**Beslutning 2 (B2): Følg V's/MP's valgoperasjonalisering**
+Både V og MP har levert inn teknisk substansielle motioner designet til å gå over til kampanjemateriell. Overvåk partienes pressemeldinger for referanser til spesifikke dok-id'er (HD024090, HD024086 riksdagen.se) som bevis på operasjonalisering.
+
+**Beslutning 3 (B3): Vurder EU-rettslig sti for HD024090**
+V's EU-kompatibilitetsutfordring til kriminell utvisning (HD024090 riksdagen.se) har 15–20% sannsynlighet for å generere en forhåndsbeslutning fra Migrationsöverdomstolen til EU-domstolen innen 2 år. Igangsett overvåking av Migrationsöverdomstolens saksliste for relaterte saker.
+
+---
+
+### Oppsummeringsstatistikk
+
+| Dimensjon | Verdi |
+|-----------|-------|
+| Totalt antall motioner | 29 |
+| Innleverende partier | 3 (V, MP, S) |
+| Involverte komiteer | 10 |
+| Målrettede proposisjoner | 8 |
+| Innvandringsklynge | 8 motioner (28%) |
+| Finansklynge | 5 motioner (17%) |
+| Bolig/integrering | 4 motioner (14%) |
+| Dager til valg | ~139 (13. sep 2026) |
+
+---
+
+### Etterretningskart
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### Fordeling av mosjonstemaer
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_sv.md -->
+
+**Datum**: 2026-04-27
+**Författare**: James Pether Sörling
+**Klassificering**: ÖPPEN
+**Status**: Pass 2 (AI FIRST iterativ förbättring)
+
+---
+
+### 🎯 Kortfattad slutsats
+
+Tjugonio oppositionsmotioner inlämnade av V, MP och S mellan den 7–17 april 2026 (riksmötet 2025/26) riktar sig mot Tidöregeringens lagstiftningsprogram för brottsutvisning, bostadsintegration och finanspolitik. **Alla motioner kommer att falla legislativt — Tidökoalitionen innehar en majoritet på 200/349 mandat med SD:s stöd.** Deras strategiska syfte är valpositionering inför riksdagsvalet i september 2026. Migrationsrättighetsklustret (8 motioner, 28%) representerar den högsta underrättelseprioriteten: V:s utvisningsrättsutmaning (HD024090 riksdagen.se) innehåller substantiella EU-rättsliga argument som kan bestå i förvaltningsdomstolarna även efter parlamentariskt nederlag.
+
+---
+
+### 🧭 3 Beslut
+
+**Beslut 1 (B1): Övervaka SfU-utskottets omröstning om HD024090**
+Finans- och socialförsäkringsutskottets omröstning om HD024090 (riksdagen.se, prop. 2025/26:235) och relaterade utvisningsmotioner är den viktigaste underrättelsegivande triggern på kort sikt. Eventuella reservationer från KD eller L i utskottet signalerar distansering inför valet från hårdfört utvisningspolitik — ett potentiellt indikation på koalitionsspricka.
+
+**Beslut 2 (B2): Följ V:s/MP:s valopererande**
+Både V och MP har lämnat in tekniskt substantiella motioner avsedda att övergå till kampanjmaterial. Bevaka partiernas pressmeddelanden för hänvisningar till specifika dok-id (HD024090, HD024086 riksdagen.se) som bevis på operationalisering.
+
+**Beslut 3 (B3): Bedöm EU-rättslig väg för HD024090**
+V:s EU-kompatibilitetsutmaning mot brottsutvisning (HD024090 riksdagen.se) har 15–20% sannolikhet att generera en hänskjutning från Migrationsöverdomstolen till EG-domstolen inom 2 år. Initiera bevakning av Migrationsöverdomstolens docket för relaterade mål.
+
+---
+
+### Sammanfattande statistik
+
+| Dimension | Värde |
+|-----------|-------|
+| Totalt antal motioner | 29 |
+| Inlämnande partier | 3 (V, MP, S) |
+| Berörda utskott | 10 |
+| Riktade propositioner | 8 |
+| Migrationskluster | 8 motioner (28%) |
+| Finanskluster | 5 motioner (17%) |
+| Bostad/integration | 4 motioner (14%) |
+| Dagar till valet | ~139 (13 sep 2026) |
+
+---
+
+### Underrättelsekarta
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### Fördelning av motionsteman
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_zh.md -->
+
+**日期**: 2026-04-27
+**作者**: James Pether Sörling
+**分类**: 公开
+**状态**: 第2遍（AI FIRST迭代改进）
+
+---
+
+### 🎯 核心结论
+
+V、MP和S于2026年4月7日至17日（riksmöte 2025/26）提交的二十九份反对派动议针对蒂多政府春季立法议程中的刑事驱逐、住房融合和财政政策。**所有动议将在立法层面失败——蒂多联合政府凭借SD支持掌握200/349席位的多数。** 其战略目的是为2026年9月大选进行竞选定位。移民权利集群（8份动议，28%）代表最高情报优先级：V对驱逐权利的挑战（HD024090 riksdagen.se）包含实质性欧盟法律论点，即使在议会失败后也可能在行政法院持续发酵。
+
+---
+
+### 🧭 3项决策
+
+**决策1（D1）：监测SfU委员会对HD024090的投票**
+财政和社会保险委员会对HD024090（riksdagen.se，prop. 2025/26:235）及相关驱逐动议的投票是最关键的近期情报触发器。委员会中KD或L的任何保留意见标志着选前与强硬驱逐政策的距离——潜在联盟裂痕指标。
+
+**决策2（D2）：追踪V/MP的选举运作化**
+V和MP均提交了技术上实质性的动议，旨在转化为竞选材料。监测党派新闻稿中对特定dok_id（HD024090、HD024086 riksdagen.se）的引用，作为运作化的证据。
+
+**决策3（D3）：评估HD024090的欧盟法律路径**
+V对刑事驱逐的欧盟兼容性挑战（HD024090 riksdagen.se）在2年内引发Migrationsöverdomstolen向欧洲法院提出先决裁决申请的概率为15–20%。启动对移民最高法院相关案件档案的监测。
+
+---
+
+### 摘要统计
+
+| 维度 | 值 |
+|-----------|-------|
+| 动议总数 | 29 |
+| 提交政党 | 3个（V、MP、S）|
+| 涉及委员会 | 10 |
+| 针对提案 | 8 |
+| 移民集群 | 8份（28%）|
+| 财政集群 | 5份（17%）|
+| 住房/融合 | 4份（14%）|
+| 距选举天数 | 约139天（2026年9月13日）|
+
+---
+
+### 情报思维导图
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+mindmap
+  root((Opposition Motions\nSpring 2026))
+    Immigration Rights Cluster
+      HD024090 riksdagen.se V deportation
+      HD024076 riksdagen.se V reception
+      HD024080-087-089 reception alternatives
+      HD024095-097 deportation complements
+    Fiscal Policy Cluster
+      HD024092 riksdagen.se V fuel tax
+      HD024082-098 budget alternatives
+    Housing Integration
+      HD024086 riksdagen.se MP bosättning
+      HD024074 S alternative
+    Cybersecurity
+      HD024093 riksdagen.se V NIS2
+    Electoral Intelligence
+      Sept 2026 election context
+      H1 electoral positioning HIGH CONF
+      V rights-base framing
+      MP climate-integration framing
+```
+
+---
+
+### 动议主题分布
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+pie title Opposition Motion Themes
+    "Immigration/Reception (SfU)" : 8
+    "Fiscal/Budget (FiU)" : 5
+    "Housing/Integration (AU)" : 4
+    "Healthcare/Social (SoU)" : 4
+    "Defence/Security (FöU)" : 3
+    "Transport/Other (TU/MJU)" : 3
+    "Other committees" : 2
+```
+
+<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 29 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2010,3 +3172,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_zh.md)

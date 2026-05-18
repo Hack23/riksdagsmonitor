@@ -6,7 +6,7 @@ date: 2026-05-18
 subfolder: propositions
 slug: 2026-05-18-propositions
 source_folder: analysis/daily/2026-05-18/propositions
-generated_at: 2026-05-18T09:08:39.058Z
+generated_at: 2026-05-18T13:28:12.236Z
 language: en
 layout: article
 ---
@@ -942,266 +942,299 @@ See also: electoral-analysis.md for detailed scenario tree
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_ar.md -->
 
-<!-- dir: rtl -->
-# ملخص تنفيذي: إصلاح الهجرة السويدي ومحور الهوية الرقمية
+<div dir="rtl">
+
+# موجز تنفيذي: إصلاح منظومة الهجرة السويدية والتحول نحو الهوية الرقمية
 
 **تاريخ المقال**: 2026-05-18  
-**المجلد الفرعي**: المقترحات التشريعية  
-**أدميرالتي**: B2
+**المجلد الفرعي**: propositions  
+**تصنيف الأميرالية**: B2
 
-### BLUF
+### الملخص التنفيذي (BLUF)
 
-قدّمت حكومة كريسترسون الأقلية إلى الريكسداغ ثمانية مقترحات تشريعية كبرى في سباق تشريعي واحد قبيل الانتخابات، من بينها مشروع قانون بارز (HD03262 / Prop. 2025/26:262) يُلغي تصاريح الإقامة الدائمة ويُوائم قانون الهجرة السويدي مع نظام اللجوء الأوروبي المشترك الجديد — وهو التغيير الهيكلي الأكثر أهمية منذ قانون اللجوء عام 2016. مع اقتراب موعد انتخابات 13 سبتمبر 2026 بـ118 يوماً، تُمثّل حزمة القوانين الخمس للهجرة، ومشروع قانون الهوية الإلكترونية الحكومية (HD03250)، وقانون التعاون العسكري (HD03254)، وإجراء الشفافية السياسية (HD03258) مجتمعةً تسليم الحكومة لكامل برنامجها. تُشكّل الأصوات الستة عشر لحزب الليبراليين الهامش الائتلافي الحاسم؛ فإن تماسكت نجح إصلاح الهجرة، وإن انشقّت لأسباب تتعلق بالاتفاقية الأوروبية لحقوق الإنسان (ولا سيما توسيع الاحتجاز بموجب HD03265)، تعثّرت قوانين رئيسية وأصبحت محاور مركزية في الحملة الانتخابية.
+قدّمت حكومة كريسترسون الأقلية في السويد ثمانية مشاريع قوانين رئيسية إلى البرلمان (ريكسداغ) في سباق تشريعي واحد قبيل الانتخابات، بما في ذلك مشروع قانون تاريخي (HD03262 / Prop. 2025/26:262) يُلغي تصاريح الإقامة الدائمة ويُوائم قانون الهجرة السويدي مع نظام اللجوء الأوروبي المشترك الجديد للاتحاد الأوروبي — وهو أكثر التغييرات الهيكلية أهمية منذ قانون اللجوء عام 2016. مع مرور 118 يومًا على الانتخابات البرلمانية المزمع إجراؤها في 13 سبتمبر 2026، يمثّل مجموع خمسة قوانين الهجرة، واقتراح الهوية الإلكترونية الحكومية (HD03250)، واقتراح التعاون العسكري (HD03254)، وإجراء الشفافية السياسية (HD03258) مجتمعةً العرضَ الحكومي الكامل لتسليم البرنامج. تُشكّل أصوات الليبراليين الستة عشر الهامش الائتلافي الحاسم؛ إن صمدوا، مرّ الإصلاح، وإن انشقوا بسبب اعتبارات الاتفاقية الأوروبية لحقوق الإنسان (ولا سيما توسيع الاحتجاز في HD03265)، توقفت القوانين الرئيسية وأصبحت ساحات معركة انتخابية مركزية.
 
 ### الأحكام الرئيسية (ثقة عالية — B2)
 
-1. **[KJ-1]** قدّمت حكومة كريسترسون مجموعة غير مسبوقة من خمسة مقترحات للهجرة والأمن في سباق تشريعي واحد، ما يُشير إلى استراتيجية متعمّدة لتشديد التطبيق قبيل الانتخابات تستهدف ناخبي الديمقراطيين السويديين والمحافظين المعتدلين. الاحتمالية: عالية (0.82).
+1. **[KJ-1]** قدّمت حكومة كريسترسون مجموعة غير مسبوقة من خمسة مشاريع قوانين للهجرة والأمن في سباق تشريعي واحد، مما يدل على استراتيجية متعمدة قبيل الانتخابات تستهدف ديمقراطيي السويد والناخبين المحافظين المعتدلين. الاحتمال: مرتفع (0.82).
 
-2. **[KJ-2]** يُمثّل إلغاء تصاريح الإقامة الدائمة (HD03262) — تكييفاً للقانون السويدي مع ميثاق الهجرة واللجوء الأوروبي — أهم تغيير هيكلي في قانون الهجرة السويدي منذ قانون اللجوء عام 2016. وإن أُقرّ، يُلغي الديمومة القانونية لنحو 120,000 حامل تصريح سنوياً ويُنشئ دورة مراجعة متواصلة. الاحتمالية: عالية (0.85).
+2. **[KJ-2]** يمثّل إلغاء تصاريح الإقامة الدائمة (HD03262) — تكييف القانون السويدي مع ميثاق الهجرة واللجوء للاتحاد الأوروبي — أكثر التغييرات الهيكلية أهمية في قانون الهجرة السويدي منذ قانون اللجوء 2016. وفي حال تبنّيه، يُلغي الدوام القانوني لنحو 120,000 حامل تصريح سنوي ويُنشئ دورة مراجعة متجددة. الاحتمال: مرتفع (0.85).
 
-3. **[KJ-3]** يحلّ مشروع الهوية الإلكترونية الحكومية (HD03250) جموداً في السيادة الرقمية امتدّ عقداً من الزمن: إذ اعتمدت السويد سابقاً حصراً على بطاقة BankID الصادرة عن البنوك، ما أفضى إلى ربط بالمورّدين. ويُجري البديل الحكومي اصطفافاً مع ألمانيا وإستونيا والدنمارك، ويحظى بدعم واسع عبر الحدود الحزبية. احتمالية الإقرار: عالية جداً (0.91).
+3. **[KJ-3]** يحل اقتراح الهوية الإلكترونية الحكومية (HD03250) حالة الجمود في السيادة الرقمية على مدى عقد كامل: اعتمدت السويد سابقًا بصورة حصرية على بطاقة هوية BankID الصادرة عن البنوك، مما أوجد اعتمادًا على المورّد. يُوائم البديل الحكومي السويد مع ألمانيا وإستونيا والدنمارك ويحظى بدعم واسع عبر أطياف الأحزاب. احتمال الإقرار: مرتفع جدًا (0.91).
 
-4. **[KJ-4]** يُسرّع مشروع قانون التعاون العسكري (HD03254) التكامل التشغيلي مع حلف الناتو في أقل من 24 شهراً من انضمام السويد. ويُشير إلى التزام الحكومة بالتشغيل البيني الهيكلي الكامل، لا مجرد العضوية الرسمية. احتمالية الإقرار: عالية (0.88).
+4. **[KJ-4]** يُعجّل اقتراح التعاون العسكري (HD03254) الاندماج التشغيلي في حلف شمال الأطلسي في غضون أقل من 24 شهرًا من انضمام السويد، مُجسّدًا التزام الحكومة بالتشغيل البيني الهيكلي الكامل لا مجرد العضوية الرسمية. احتمال الإقرار: مرتفع (0.88).
 
-5. **[KJ-5]** يُمثّل مقترح الشفافية (HD03258) — تقديم حكومة جالسة اقتراحاً برفع الرقابة على تمويل الأحزاب السياسية — إشارة مصداقية استراتيجية موجّهة للناخبين المعنيين بالنفوذ الشعبوي، يُرجَّح أن تدفعها خلافات داخلية حديثة في حزب ديمقراطيي السويد. الاحتمالية: متوسطة (0.65).
+5. **[KJ-5]** يمثّل اقتراح الشفافية (HD03258) — إقرار الحكومة بمزيد من الرقابة على تمويل الأحزاب السياسية وعملياتها — إشارة مصداقية استراتيجية موجّهة إلى الناخبين القلقين من النفوذ الشعبوي، مدفوعةً على الأرجح بالخلافات الداخلية الأخيرة لحزب الديمقراطيين السويديين. الاحتمال: متوسط (0.65).
 
 ### القصة الرئيسية
-في سباق تشريعي غير مسبوق قبل 118 يوماً من انتخابات الريكسداغ في 13 سبتمبر 2026، قدّمت حكومة كريسترسون الأقلية (M-KD-L، بدعم من SD) ثمانية مقترحات كبرى تتعلق بالهجرة والهوية الرقمية والدفاع والشفافية السياسية. وتُشكّل Prop. 2025/26:262 (HD03262) الحجر الأساس؛ إذ تُلغي فئة تصريح الإقامة الدائمة (PUT) وتُوائم القانون السويدي مع نظام اللجوء الأوروبي المشترك (CEAS)، ما يضع السويد جنباً إلى جنب مع الدنمارك (2019) وألمانيا وهولندا بوصفها من المعتمدين الأوائل لأنظمة التصاريح المحددة المدة فقط. وفي الوقت ذاته، تُنشئ Prop. 2025/26:250 (HD03250) أول هوية إلكترونية سويدية صادرة عن الدولة وتُنهي احتكار كونسورتيوم BankID المصرفي الخاص الممتد 20 عاماً، في حين تُزيل Prop. 2025/26:254 (HD03254) الحواجز القانونية المحلية أمام التعاون العسكري التشغيلي مع الناتو، في أقل من 26 شهراً على الانضمام الرسمي.
 
-تُمثّل حزمة القوانين الخمس للهجرة (HD03262, HD03264, HD03265, HD03267 والسابق HD03263) السباق التشريعي النهائي لاتفاقية تيدو. وزير العدل يوهان فورسيل (M) والموقّع المشارك غونار ستريمر (M) هما الوزيران المسؤولان. وقّعت نائبة رئيسة الوزراء إيبا بوش (KD) مقترحات 7 مايو بالنيابة عن رئيس الوزراء. تُسيطر الحكومة على 176 مقعداً — أغلبية بمقعد واحد — ما يجعل الأصوات الستة عشر لليبراليين محورية رياضياً، لا سيما لأحكام توسيع الاحتجاز في HD03265 التي خفّفتها الليبراليين تاريخياً لأسباب تتعلق بالاتفاقية الأوروبية.
+في سباق تشريعي غير مسبوق قبل 118 يومًا من الانتخابات البرلمانية السويدية في 13 سبتمبر 2026، قدّمت حكومة كريسترسون الأقلية (M–KD–L، بدعم من SD) ثمانية مقترحات رئيسية إلى ريكسداغ تغطي الهجرة والهوية الرقمية والدفاع والشفافية السياسية. الركيزة الأساسية — Prop. 2025/26:262 (HD03262) — تُلغي فئة تصريح الإقامة الدائمة (PUT) وتُوائم القانون السويدي مع النظام الأوروبي المشترك للجوء (CEAS)، مُضعة السويد جنبًا إلى جنب مع الدنمارك (2019) وألمانيا وهولندا كمعتمدين مبكرين لأنظمة التصاريح المؤقتة حصرًا. في الوقت ذاته، تُنشئ Prop. 2025/26:250 (HD03250) أول هوية إلكترونية صادرة عن الدولة السويدية على الإطلاق، مُنهيةً احتكارًا خاصًا امتد عشرين عامًا من قِبل اتحاد مصارف BankID، فيما تُزيل Prop. 2025/26:254 (HD03254) العقبات القانونية المحلية أمام التعاون العسكري التشغيلي مع حلف الناتو، بعد أقل من 26 شهرًا من الانضمام الرسمي للسويد.
+
+تُمثّل قوانين الهجرة الخمسة (HD03262، HD03264، HD03265، HD03267 والسابق HD03263) السباق التشريعي الختامي لاتفاق تيدو. الوزير يوهان فورسل (M) والموقّع المشارك غونار ستروممر (M) هما الوزيران المسؤولان. وقّعت نائبة رئيس الوزراء إيبا بوش (KD) مقترحات 7 مايو بصفة رئيسة وزراء بالنيابة. تسيطر الحكومة على 176 مقعدًا — أغلبية بمقعد واحد — مما يعني أن أصوات الليبراليين الستة عشر حاسمة رياضيًا، لا سيما بالنسبة لتوسيع الاحتجاز في HD03265، الذي اعتدله تاريخيًا L لاعتبارات الاتفاقية الأوروبية لحقوق الإنسان.
 
 ### الزوايا الثانوية
-- **ثورة الهوية الرقمية**: HD03250 (Prop. 2025/26:250) يُنشئ سلطة هوية إلكترونية حكومية، ويُنهي الموقع الحصري لـBankID، ويُطبّق متطلبات eIDAS 2.0 الأوروبية. احتمالية الإقرار متعدد الأحزاب: 0.91.
-- **التكامل التشغيلي للناتو**: HD03254 (Prop. 2025/26:254) يُمكّن عمليات القيادة المشتركة دون موافقة مسبقة؛ يُحاكي تشريع قابلية التشغيل البيني الفنلندي لعام 2024. احتمالية الإقرار: 0.88.
-- **مناورة الشفافية**: HD03258 (Prop. 2025/26:258) يرفع متطلبات الإفصاح عن تمويل الأحزاب السياسية — وهو بصورة غير اعتيادية إجراء شفافية يقترحه الحكومة الجالسة قبيل انتخابات. اللجنة: KU (يرأسها عضو المعارضة من S إيدا كاركيايمن).
-- **توسيع صلاحيات Skatteverket**: HD03261 (Prop. 2025/26:261) يوسّع صلاحيات التحقيق في التسجيل لدى Skatteverket — مقترناً بـHD03250 يُنشئ بنية تحتية للهوية الرقمية الحكومية الموسّعة.
 
-### مؤشرات الخطر
-- **هشاشة الائتلاف**: انشقاق الليبراليين في قضية احتجاز HD03265 (WEP 0.20) ← تعثّر القوانين أو سقوطها؛ أزمة حكومية
-- **توقيت المفوضية الأوروبية**: يجب تزامن HD03262 مع سريان لائحة CEAS (2026-ربع السنة الثالث)؛ التنفيذ المبكر يُخاطر بإجراء انتهاك
-- **تحدي الاتفاقية الأوروبية**: توسيع الاحتجاز في HD03265 وعتبة الأمن في HD03267 يواجهان تدقيق المادتين 5 و3؛ رأي Lagrådet حاسم
-- **ضغط الجدول الزمني قبيل الانتخابات**: تقارير لجنتَي SfU/JuU تستحق في أغسطس 2026 — جدول زمني بالغ الضيق؛ خطر إحالة HD03262 بعد الانتخابات
+- **ثورة الهوية الرقمية**: HD03250 (Prop. 2025/26:250) يُنشئ سلطة هوية إلكترونية حكومية وينهي الوضع الحصري لـ BankID مع تنفيذ متطلبات eIDAS 2.0 الأوروبية. احتمال الإقرار عبر الأحزاب: 0.91.
+- **الاندماج التشغيلي للناتو**: HD03254 (Prop. 2025/26:254) يُتيح عمليات القيادة المشتركة دون موافقة مسبقة؛ يُرافق تشريع التشغيل البيني الفنلندي 2024. احتمال الإقرار: 0.88.
+- **مناورة الشفافية**: HD03258 (Prop. 2025/26:258) يرفع متطلبات الإفصاح عن تمويل الأحزاب السياسية — وهو أمر غير معتاد، إجراء شفافية تقترحه الحكومة الحالية قبيل الانتخابات. اللجنة: KU (برئاسة عضو معارضة S إيدا كاركيينن).
+- **توسيع Skatteverket**: HD03261 (Prop. 2025/26:261) يُوسّع صلاحيات تحقيق دائرة الضرائب السويدية في التسجيل — بالاقتران مع HD03250 يُنشأ بنية تحتية موسّعة للهوية الرقمية الحكومية.
+
+### مؤشرات المخاطر
+
+- **هشاشة الائتلاف**: انشقاق L على HD03265 الاحتجاز (WEP 0.20) ← توقّف القوانين أو سقوطها؛ أزمة حكومية
+- **توقيت المفوضية الأوروبية**: يجب مزامنة HD03262 مع بدء سريان لائحة CEAS (الربع الثالث 2026)؛ التنفيذ المبكر يُخاطر بإجراء انتهاك
+- **التحدي بموجب الاتفاقية الأوروبية لحقوق الإنسان**: تمديد الاحتجاز في HD03265 وعتبة الأمن في HD03267 تخضعان لفحص المادتين 5 و3؛ رأي Lagrådet بالغ الأهمية
+- **ضغط الوقت في استراحة الانتخابات**: تقارير لجان SfU/JuU مستحقة في أغسطس 2026 — جدول زمني بالغ الضيق؛ خطر الإحالة ما بعد الانتخابات بالنسبة لـ HD03262
 
 ### السياق الاقتصادي
-- يتوقع صندوق النقد الدولي WEO-2026-04 نمو الناتج المحلي الإجمالي السويدي 2026: ~2.1٪ (معتدل)
-- تتوفر مقارنات نوردية للدين إلى الناتج المحلي؛ تظل السويد محافظة مالياً مقارنةً بمتوسط الاتحاد الأوروبي
-- تأثيرات سوق العمل من تغييرات قانون الهجرة: على المدى المتوسط، ليس فورياً
 
-### الآفاق المستقبلية
-- **T+72h**: مؤتمرات صحفية متوقعة من المعارضة S و MP؛ تعليقات خبراء قانونيين
-- **T+7d**: تأكيد إحالة لجنة (SfU, JuU, KU)؛ أولى ردود الفعل من أصحاب المصلحة
-- **T+30d**: جلسة استماع علنية لـSfU بشأن HD03262 على الأرجح؛ أول رأي من Lagrådet
-- **T+90d**: تقارير اللجان؛ القراءة النهائية إن اختير المسار السريع قبل الاستراحة الانتخابية
-- **T+انتخابات**: HD03262 كنقطة صراع انتخابية مركزية إن لم يُقرّ؛ S على الأرجح ستُدير حملة للتراجع عنه
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- يتوقع صندوق النقد الدولي (WEO-2026-04) نمو الناتج المحلي الإجمالي السويدي 2026: ~2.1% (معتدل)
+- بيانات مقارنة نوردية للدين/الناتج المحلي الإجمالي متاحة؛ تبقى السويد محافظة ماليًا مقارنة بمتوسط الاتحاد الأوروبي
+- تأثيرات سوق العمل من تغييرات قانون الهجرة: متوسطة الأمد، غير آنية
+
+### آفاق المستقبل
+
+- **T+72h**: مؤتمرات صحفية متوقعة من المعارضة S وMP؛ تعليقات خبراء قانونيين
+- **T+7d**: تُقر اللجان (SfU, JuU, KU) الإحالة؛ أولى ردود الفعل من أصحاب المصلحة
+- **T+30d**: جلسة استماع عامة في SfU حول HD03262 محتملة؛ أول رأي من Lagrådet
+- **T+90d**: تقارير اللجان؛ قراءة نهائية في حال الإجراء الطارئ قبل استراحة الانتخابات
+- **T+الانتخابات**: HD03262 كقضية محورية في الحملة الانتخابية إن لم يُقرّ؛ S تسعى على الأرجح للتراجع عنه
+
+</div>
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_da.md -->
 
 **Artikeldato**: 2026-05-18  
-**Undermappe**: propositioner  
+**Undermappe**: propositions  
 
 ### BLUF
 
-Kristerssons mindretalsregering fremlagde otte store lovforslag for Riksdagen i ét forudvalgs-lovgivningssprint, herunder et banebrydende lovforslag (HD03262 / Prop. 2025/26:262), der afskaffer permanente opholdstilladelser og tilpasser svensk migrationslovgivning til EU's nye fælles europæiske asylsystem — den mest strukturelt betydningsfulde ændring siden asylloven i 2016. Med 118 dage til det svenske valg den 13. september 2026 udgør den femdobbelte migrationsklynge, et statsligt e-ID-lovforslag (HD03250), et militært samarbejdslovforslag (HD03254) og en politisk transparensforanstaltning (HD03258) tilsammen regeringens fulde programleverance. Liberalernas 16 stemmer udgør den kritiske koalitionsmargin; holder de, passerer migrationsreformen; bryder de på ECHR-grunde (særligt HD03265 om udvidet tilbageholdelse), blokeres nøglelovgivning og bliver centrale valgkampsemner.
+Sveriges Kristersson-mindretalsregering indsendte otte større lovforslag til Riksdagen i en enkelt præ-valgslovgivningssprint, herunder et skelsættende lovforslag (HD03262 / Prop. 2025/26:262), der afskaffer permanente opholdstilladelser og bringer svensk migrationslovgivning i overensstemmelse med EU's nye fælles europæiske asylsystem — den mest strukturelt betydningsfulde ændring siden asylloven i 2016. Med 118 dage til valget den 13. september 2026 udgør de fem migrationslove, et forslag om statens e-legitimation (HD03250), et forslag om militært samarbejde (HD03254) og en politisk transparensforanstaltning (HD03258) tilsammen regeringens fulde programleveringsbud. Liberalernes 16 mandater udgør den afgørende koalitionsmargin; hvis de holder, vedtages migrationsreformen; hvis de splintres på ECHR-grunde (navnlig HD03265 om udvidet frihedsberøvelse), stilles nøgleforslagene i bero og bliver centrale valgkampsspørgsmål.
 
-### Centrale vurderinger (Høj tillid — B2)
+### Nøglevurderinger (Høj tillid — B2)
 
-1. **[KJ-1]** Kristersson-regeringen har fremlagt en hidtil uset klynge af fem migrations-/sikkerhedslovforslag i ét lovgivningssprint, hvilket signalerer en bevidst forvalgsstrategi for hårdere håndhævelse rettet mod Sverige-Demokrater og moderat-konservative vælgere. Sandsynlighed: HØJ (0,82).
+1. **[KJ-1]** Kristersson-regeringen har indsendt en hidtil uset klynge på fem migrations- og sikkerhedsforslag i én enkelt lovgivningssprint, hvilket signalerer en bevidst præ-valgsstrategi rettet mod Sverigedemokraterne og moderat-konservative vælgere. Sandsynlighed: HØJ (0,82).
 
-2. **[KJ-2]** Afskaffelsen af permanente opholdstilladelser (HD03262) — der tilpasser svensk lovgivning til EU's migrations- og asylpagt — repræsenterer den mest betydningsfulde strukturelle ændring af svensk migrationsret siden asylloven i 2016. Hvis vedtaget eliminerer den juridisk permanens for ca. 120.000 tilladelsesindehavere om året og skaber en løbende revisionscyklus. Sandsynlighed: HØJ (0,85).
+2. **[KJ-2]** Afskaffelsen af permanente opholdstilladelser (HD03262) — en tilpasning af svensk ret til EU's migrations- og asylpagt — repræsenterer den mest signifikante strukturelle ændring af svensk migrationslovgivning siden asylloven 2016. Hvis vedtaget elimineres retslig permanens for ca. 120.000 årlige tilladelsesindehavere og der indføres en løbende gennemgangscyklus. Sandsynlighed: HØJ (0,85).
 
-3. **[KJ-3]** Det statslige e-ID-lovforslag (HD03250) løser en tiår lang digital suverænitetsblokering: Sverige stolede tidligere udelukkende på bankudstedt BankID, hvilket skabte leverandørlåsning. Et statsligt alternativ bringer Sverige på linje med Tyskland, Estland og Danmark og støttes bredt på tværs af partiskel. Vedtagelsessandsynlighed: MEGET HØJ (0,91).
+3. **[KJ-3]** Forslaget om statens e-legitimation (HD03250) løser en årtilang digital suverænitetsdødvande: Sverige havde hidtil udelukkende benyttet bankudstedt BankID, hvilket skabte leverandørafhængighed. Et statsligt alternativ bringer Sverige på niveau med Tyskland, Estland og Danmark og støttes bredt på tværs af partierne. Vedtagelsessandsynlighed: MEGET HØJ (0,91).
 
-4. **[KJ-4]** Lovforslaget om militært samarbejde (HD03254) accelererer NATO's operative integration mindre end 24 måneder efter Sveriges tilslutning. Det signalerer regeringens engagement for fuld strukturel interoperabilitet, ikke bare formelt medlemskab. Vedtagelsessandsynlighed: HØJ (0,88).
+4. **[KJ-4]** Forslaget om militært samarbejde (HD03254) accelererer NATO's operationelle integration mindre end 24 måneder efter Sveriges tiltrædelse. Det signalerer regeringens engagement i fuld strukturel interoperabilitet, ikke blot formelt medlemskab. Vedtagelsessandsynlighed: HØJ (0,88).
 
-5. **[KJ-5]** Transparenslovforslaget (HD03258) — en siddende regering, der foreslår øget kontrol med politiske partiers finansiering — er et strategisk troværdighedssignal rettet mod vælgere, der er bekymret for populistisk indflydelse, sandsynligvis drevet af nylige SD-interne kontroverser. Sandsynlighed: MIDDEL (0,65).
+5. **[KJ-5]** Transparensforslaget (HD03258) — regering der foreslår øget kontrol med politiske partiers finansiering og processer — er et strategisk troværdighedssignal rettet mod vælgere bekymrede over populistisk indflydelse, sandsynligvis drevet af SD's interne kontroverser. Sandsynlighed: MEDIUM (0,65).
 
 ### Hovedhistorie
-I et hidtil uset lovgivningssprint 118 dage før Riksdagsvalget den 13. september 2026 fremlagde Kristersson-mindretalsregeringen (M-KD-L, støttet af SD) otte store lovforslag for Riksdagen om migration, digital identitet, forsvar og politisk transparens. Omdrejningspunktet — Prop. 2025/26:262 (HD03262) — afskaffer kategorien permanent opholdstilladelse (PUT) og tilpasser svensk lovgivning til EU's nye fælles europæiske asylsystem (CEAS), hvilket placerer Sverige ved siden af Danmark (2019), Tyskland og Nederlandene som tidlige tilpassere af systemer med kun tidsbegrænsede tilladelser. Samtidig opretter Prop. 2025/26:250 (HD03250) Sveriges første statsudstedte e-ID og afslutter BankID-bankkonsortiet 20-årige private monopol, mens Prop. 2025/26:254 (HD03254) fjerner indenlandske juridiske barrierer for operativt NATO-militært samarbejde, mindre end 26 måneder efter Sveriges formelle tiltrædelse.
 
-Den femdobbelte migrationsklynge (HD03262, HD03264, HD03265, HD03267 og tidligere HD03263) repræsenterer Tidöavtalets endelige lovgivningssprint. Justitsminister Johan Forssell (M) og medsignatar Gunnar Strömmer (M) er ansvarlige ministre. Vicestatsminister Ebba Busch (KD) underskrev 7. maj-lovforslagene som statsminister pro tempore. Regeringen kontrollerer 176 mandater — én stemmes flertal — hvilket betyder, at Liberalernas 16 stemmer er matematisk afgørende, særligt for HD03265's udvidede tilbageholdelsesbestemmelser, som L historisk set har modereret på ECHR-grunde.
+I en hidtil uset lovgivningssprint 118 dage før det svenske valg den 13. september 2026 indsendte Kristersson-mindretalsregeringen (M–KD–L, støttet af SD) otte store forslag til Riksdagen om migration, digital identitet, forsvar og politisk transparens. Hjørnestenen — Prop. 2025/26:262 (HD03262) — afskaffer kategorien permanent opholdstilladelse (PUT) og bringer svensk ret i overensstemmelse med EU's nye fælles europæiske asylsystem (CEAS), og placerer Sverige ved siden af Danmark (2019), Tyskland og Holland som tidlige vedtagere af regimer med kun tidsbegrænsede tilladelser. Samtidig skaber Prop. 2025/26:250 (HD03250) Sveriges første nogensinde statsudstedte e-legitimation og afslutter et 20-årigt privat monopol fra BankID-bankkonsortiet, mens Prop. 2025/26:254 (HD03254) fjerner indenlandske juridiske hindringer for operationelt NATO-militærsamarbejde, knap 26 måneder efter Sveriges formelle tiltrædelse.
+
+De fem migrationslove (HD03262, HD03264, HD03265, HD03267 og det tidligere HD03263) repræsenterer Tidöaftalets endelige lovgivningssprint. Justitsminister Johan Forssell (M) og medsignatar Gunnar Strömmer (M) er ansvarlige ministre. Vicestatsminister Ebba Busch (KD) underskrev forslagene af 7. maj som fungerende statsminister. Regeringen kontrollerer 176 mandater — et enkelt-mandats-flertal — hvilket betyder at Liberalernes 16 mandater er matematisk afgørende, særlig for HD03265's frihedsberøvelsesudvidelse, som L historisk har modereret på ECHR-grunde.
 
 ### Sekundære vinkler
-- **Digital identitetsrevolution**: HD03250 (Prop. 2025/26:250) opretter en statslig e-ID-myndighed, afslutter BankID's eksklusive position og implementerer EU's eIDAS 2.0-krav. Tværpartisk vedtagelsessandsynlighed: 0,91.
-- **NATO's operative integration**: HD03254 (Prop. 2025/26:254) muliggør fælles kommandooperationer uden forhåndsgodkendelse; afspejler Finlands interoperabilitetslovgivning fra 2024. Vedtagelsessandsynlighed: 0,88.
-- **Transparensspil**: HD03258 (Prop. 2025/26:258) øger oplysningskravene til politiske partiers finansiering — usædvanligt nok en transparensforanstaltning foreslået af den siddende regering inden et valg. Udvalg: KU (ledet af S-oppositionsmedlem Ida Karkiainen).
-- **Skatteverkets udvidelse**: HD03261 (Prop. 2025/26:261) udvider Skatteverkets undersøgelsesbeføjelser for registreringer — kombineret med HD03250 skabes en udvidet statslig digital identitetsinfrastruktur.
+
+- **Digital identitetsrevolution**: HD03250 (Prop. 2025/26:250) opretter en statslig e-legitimationsmyndighed og afslutter BankID's eksklusive position og implementerer EU's eIDAS 2.0-krav. Tværpolitisk vedtagelsessandsynlighed: 0,91.
+- **NATO's operationelle integration**: HD03254 (Prop. 2025/26:254) muliggør fælles kommandooperationer uden forudgående godkendelse; spejler Finlands 2024 interoperabilitetslovgivning. Vedtagelsessandsynlighed: 0,88.
+- **Transparensmanøvre**: HD03258 (Prop. 2025/26:258) øger kravene til offentliggørelse af politiske partiers finansiering — usædvanligt nok, en transparensforanstaltning foreslået af den siddende regering inden et valg. Udvalg: KU (ledet af S-oppositionsmedlemmet Ida Karkiainen).
+- **Skatteverkets udvidelse**: HD03261 (Prop. 2025/26:261) udvider Sveriges skattemyndigheds undersøgelsesbeføjelser for registrering — kombineret med HD03250 skabes udvidet statslig digital identitetsinfrastruktur.
 
 ### Risikoindikatorer
-- **Koalitionsskrøbelighed**: L-afhopp på HD03265-tilbageholdelse (WEP 0,20) → lovforslag blokeres eller falder; regeringskrises
-- **EU-Kommissionens timing**: HD03262 skal synkroniseres med CEAS-forordningens ikrafttræden (2026-Q3); for tidlig implementering risikerer overtrædelsessag
-- **ECHR-udfordring**: HD03265's tilbageholdelsesudvidelse og HD03267's sikkerhedstærskel møder Art 5/Art 3-prøvelse; Lagrådets udtalelse kritisk
-- **Valrecess-pres**: SfU/JuU-udvalgsrapporter forfalder i august 2026 — ekstremt tidspres; risiko for viderehenvisning efter valget for HD03262
+
+- **Koalitionsskrøbelighed**: L-frafald på HD03265 frihedsberøvelse (WEP 0,20) → forslag stoppes eller falder; regeringskrise
+- **EU-Kommissionens timing**: HD03262 skal synkroniseres med CEAS-forordningens ikrafttræden (2026-Q3); for tidlig gennemførelse risikerer traktatbrudssag
+- **ECHR-udfordring**: HD03265 frihedsberøvelsesudvidelse og HD03267 sikkerhedstærskel møder Art. 5/Art. 3-prøvelse; Lagrådets udtalelse er afgørende
+- **Valperiodetidspres**: SfU/JuU-udvalgsrapporter forfalder august 2026 — ekstrem tidsplan; risiko for post-valgshenvisning for HD03262
 
 ### Økonomisk kontekst
-- IMF WEO-2026-04 forudsiger Sveriges BNP-vækst 2026: ~2,1 % (moderat)
-- Nordiske sammenligninger om gæld/BNP tilgængelige; Sverige forbliver finanspolitisk konservativt vs. EU-gennemsnittet
-- Arbejdsmarkedseffekter af migrationslovændringerne: mellemlang sigt, ikke umiddelbare
 
-### Fremtidsudsigter
-- **T+72h**: Forventede pressemøder fra oppositionen S og MP; juridiske eksperters kommentarer
-- **T+7d**: Udvalgshenvisning (SfU, JuU, KU) bekræftet; første reaktioner fra interessenter
-- **T+30d**: SfU's offentlige høring om HD03262 sandsynlig; første Lagrådet-udtalelse
-- **T+90d**: Udvalgsrapporter; endelig behandling ved hurtigt spor inden valgrecess
-- **T+valg**: HD03262 som central valgkampskonflikt, hvis ikke vedtaget; S sandsynligvis kampagne for ophævelse
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- IMF WEO-2026-04 forudsiger Sveriges BNP-vækst 2026: ~2,1 % (moderat)
+- Nordiske sammenligningstall for gæld/BNP tilgængelige; Sverige forbliver finanspolitisk konservativt vs. EU-gennemsnit
+- Arbejdsmarkedseffekter af ændringer i migrationslovgivning: mellemlang sigt, ikke umiddelbar
+
+### Horisontudsigt
+
+- **T+72t**: Opposition S og MP pressekonferencer forventet; juridisk ekspertkommentar
+- **T+7d**: Udvalg (SfU, JuU, KU) bekræfter henvisning; første interessentreaktioner
+- **T+30d**: SfU's offentlige høring om HD03262 sandsynlig; første Lagrådets udtalelse
+- **T+90d**: Udvalgsbetænkninger; endelig behandling hvis fremskyndet inden valgets suspension
+- **T+valg**: HD03262 som centralt kampagnekonfliktemne hvis ikke vedtaget; S sandsynligvis kampagne for ophævelse
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_de.md -->
 
 **Artikeldatum**: 2026-05-18  
-**Unterordner**: Gesetzesinitiativen  
+**Unterordner**: propositions  
 
 ### BLUF
 
-Die Minderheitsregierung Kristersson legte dem Riksdag acht wichtige Gesetzesinitiativen in einem einzigen Vorwahl-Legislativsprint vor, darunter ein wegweisendes Gesetz (HD03262 / Prop. 2025/26:262), das unbefristete Aufenthaltserlaubnisse abschafft und das schwedische Migrationsrecht am neuen Gemeinsamen Europäischen Asylsystem der EU ausrichtet — die strukturell bedeutendste Änderung seit dem Asylgesetz von 2016. 118 Tage vor dem schwedischen Reichstagswahltermin am 13. September 2026 bilden das Fünf-Gesetze-Migrationspaket, ein Gesetzentwurf für einen staatlichen E-Ausweis (HD03250), ein Gesetz zur militärischen Zusammenarbeit (HD03254) und eine Maßnahme zur politischen Transparenz (HD03258) zusammen das vollständige Programmlieferungsvorhaben der Regierung. Die 16 Stimmen der Liberalerna bilden die entscheidende Koalitionsmarge; halten sie stand, wird die Migrationsreform verabschiedet; brechen sie aus EMRK-Gründen weg (insbesondere bei HD03265 zur Ausweitung der Inhaftierung), stocken Schlüsselgesetze und werden zum zentralen Wahlkampfthema.
+Schwedens Minderheitsregierung unter Kristersson legte in einem einzigen Vorwahlgesetzgebungssprint acht umfangreiche Gesetzentwürfe dem Riksdag vor, darunter ein wegweisendes Gesetz (HD03262 / Prop. 2025/26:262), das den unbefristeten Aufenthaltstitel abschafft und das schwedische Migrationsrecht mit dem neuen Gemeinsamen Europäischen Asylsystem der EU in Einklang bringt — die bedeutendste strukturelle Änderung seit dem Asylgesetz 2016. Mit 118 Tagen bis zur Parlamentswahl am 13. September 2026 stellen das Fünf-Gesetze-Migrationspaket, ein Gesetzentwurf zur staatlichen E-ID (HD03250), ein Militärkooperationsgesetz (HD03254) und eine politische Transparenzmaßnahme (HD03258) gemeinsam das vollständige Programmliefer-Angebot der Regierung dar. Die 16 Mandate der Liberalen bilden den entscheidenden Koalitionsrahmen; halten sie, wird die Migrationsreform verabschiedet; brechen sie wegen EGMR-Bedenken (insbesondere HD03265 zur Abschiebehaftverlängerung) weg, stagnieren Schlüsselgesetze und werden zu zentralen Wahlkampfthemen.
 
-### Kernurteile (Hohe Verlässlichkeit — B2)
+### Schlüsselurteile (Hohe Konfidenz — B2)
 
-1. **[KJ-1]** Die Kristersson-Regierung hat ein beispielloses Paket aus fünf Migrations-/Sicherheitsgesetzen in einem einzigen Legislativsprint eingereicht, was eine bewusste Vorwahl-Strategie zur Verhärtung der Strafverfolgung gegen Schwedendemokraten- und gemäßigt-konservative Wähler signalisiert. Wahrscheinlichkeit: HOCH (0,82).
+1. **[KJ-1]** Die Kristersson-Regierung hat ein noch nie dagewesenes Paket aus fünf Migrations- und Sicherheitsgesetzentwürfen in einem einzigen Gesetzgebungssprint vorgelegt, was eine bewusste Vorwahlstrategie signalisiert, die auf die Schwedendemokraten und moderat-konservative Wähler abzielt. Wahrscheinlichkeit: HOCH (0,82).
 
-2. **[KJ-2]** Die Abschaffung unbefristeter Aufenthaltserlaubnisse (HD03262) — die das schwedische Recht am EU-Migrations- und Asylpakt ausrichtet — stellt die strukturell bedeutendste Änderung des schwedischen Migrationsrechts seit dem Asylgesetz 2016 dar. Im Falle der Verabschiedung entfällt der Rechtsstatus der Permanenz für ca. 120.000 jährliche Erlaubnisinhaber und es entsteht ein fortlaufender Überprüfungszyklus. Wahrscheinlichkeit: HOCH (0,85).
+2. **[KJ-2]** Die Abschaffung des unbefristeten Aufenthaltstitels (HD03262) — eine Anpassung des schwedischen Rechts an den EU-Migrations- und Asylpakt — stellt die bedeutendste strukturelle Änderung im schwedischen Migrationsrecht seit dem Asylgesetz 2016 dar. Bei Inkrafttreten entfällt die rechtliche Dauerhaftigkeit für rund 120.000 jährliche Genehmigungsinhaber und es wird ein laufender Überprüfungszyklus eingeführt. Wahrscheinlichkeit: HOCH (0,85).
 
-3. **[KJ-3]** Der Gesetzentwurf für einen staatlichen E-Ausweis (HD03250) löst eine jahrzehntelange digitale Souveränitätssackgasse: Schweden war bisher ausschließlich auf das bankausgestellte BankID angewiesen, was zu einer Anbieterbindung führte. Eine staatliche Alternative bringt Schweden auf eine Linie mit Deutschland, Estland und Dänemark und findet parteiübergreifend breite Unterstützung. Verabschiedungswahrscheinlichkeit: SEHR HOCH (0,91).
+3. **[KJ-3]** Der Gesetzentwurf zur staatlichen E-ID (HD03250) löst ein jahrzehntelanges digitales Souveränitätspatt: Schweden verließ sich bisher ausschließlich auf das bankausgegebene BankID und schuf damit eine Anbieterbindung. Eine staatliche Alternative bringt Schweden auf eine Linie mit Deutschland, Estland und Dänemark und erhält parteiübergreifend breite Unterstützung. Verabschiedungswahrscheinlichkeit: SEHR HOCH (0,91).
 
-4. **[KJ-4]** Das Gesetz zur militärischen Zusammenarbeit (HD03254) beschleunigt die operative NATO-Integration weniger als 24 Monate nach Schwedens Beitritt. Es signalisiert das Bekenntnis der Regierung zur vollständigen strukturellen Interoperabilität und nicht nur zur formalen Mitgliedschaft. Verabschiedungswahrscheinlichkeit: HOCH (0,88).
+4. **[KJ-4]** Der Gesetzentwurf zur Militärkooperation (HD03254) beschleunigt die operative NATO-Integration weniger als 24 Monate nach Schwedens Beitritt. Er signalisiert das Engagement der Regierung für vollständige strukturelle Interoperabilität, nicht nur formale Mitgliedschaft. Verabschiedungswahrscheinlichkeit: HOCH (0,88).
 
-5. **[KJ-5]** Das Transparenzgesetz (HD03258) — eine amtierende Regierung schlägt eine verstärkte Kontrolle der politischen Parteienfinanzierung vor — ist ein strategisches Glaubwürdigkeitssignal an Wähler, die Populismuseinfluss befürchten, wahrscheinlich ausgelöst durch jüngste SD-interne Kontroversen. Wahrscheinlichkeit: MITTEL (0,65).
+5. **[KJ-5]** Der Transparenzgesetzentwurf (HD03258) — Regierung schlägt verstärkte Kontrolle von Parteifinanzierung und -prozessen vor — ist ein strategisches Glaubwürdigkeitssignal an Wähler, die über populistischen Einfluss besorgt sind, wahrscheinlich angetrieben von jüngsten SD-internen Kontroversen. Wahrscheinlichkeit: MITTEL (0,65).
 
-### Hauptgeschichte
-In einem beispiellosen Legislativsprint 118 Tage vor der Riksdagswahl am 13. September 2026 legte die Minderheitsregierung Kristersson (M-KD-L, unterstützt von SD) dem Riksdag acht wichtige Gesetzesinitiativen zu Migration, digitaler Identität, Verteidigung und politischer Transparenz vor. Das Kernstück — Prop. 2025/26:262 (HD03262) — schafft die Kategorie der unbefristeten Aufenthaltserlaubnis (PUT) ab und passt das schwedische Recht an das neue Gemeinsame Europäische Asylsystem der EU (CEAS) an, womit Schweden neben Dänemark (2019), Deutschland und den Niederlanden zu den frühen Übernehmern von Systemen mit ausschließlich befristeten Erlaubnissen tritt. Gleichzeitig schafft Prop. 2025/26:250 (HD03250) Schwedens ersten staatlich ausgestellten E-Ausweis und beendet das 20-jährige Privatmonopol des BankID-Bankkonsortiums, während Prop. 2025/26:254 (HD03254) inländische Rechtsbarrieren für die operative NATO-Militärzusammenarbeit beseitigt, weniger als 26 Monate nach Schwedens formalem Beitritt.
+### Hauptstory
 
-Das Fünf-Gesetze-Migrationspaket (HD03262, HD03264, HD03265, HD03267 und früheres HD03263) stellt den abschließenden Legislativsprint des Tidöavtalets dar. Justizminister Johan Forssell (M) und Mitunterzeichner Gunnar Strömmer (M) sind die zuständigen Minister. Vizepremierministerin Ebba Busch (KD) unterzeichnete die Gesetzesinitiativen vom 7. Mai als Premierministerin pro tempore. Die Regierung kontrolliert 176 Mandate — eine Ein-Mandat-Mehrheit — was bedeutet, dass die 16 Stimmen der Liberalerna mathematisch entscheidend sind, insbesondere für die erweiterten Inhaftierungsbestimmungen von HD03265, die L aus EMRK-Gründen historisch abgemildert hat.
+In einem noch nie dagewesenen Gesetzgebungssprint 118 Tage vor der schwedischen Parlamentswahl am 13. September 2026 legte die Kristersson-Minderheitsregierung (M–KD–L, unterstützt von SD) acht umfangreiche Gesetzentwürfe dem Riksdag vor, die Migration, digitale Identität, Verteidigung und politische Transparenz abdecken. Das Kernstück — Prop. 2025/26:262 (HD03262) — schafft die Kategorie des unbefristeten Aufenthaltstitels (PUT) ab und bringt das schwedische Recht mit dem neuen Gemeinsamen Europäischen Asylsystem (GEAS) der EU in Einklang, womit Schweden neben Dänemark (2019), Deutschland und den Niederlanden als Frühadopter von Regimes mit ausschließlich befristeten Titeln steht. Gleichzeitig schafft Prop. 2025/26:250 (HD03250) Schwedens erste jemals staatlich ausgestellte E-ID und beendet das 20-jährige private Monopol des BankID-Bankenkonsortiums, während Prop. 2025/26:254 (HD03254) innerstaatliche rechtliche Hürden für die operative NATO-Militärkooperation beseitigt, weniger als 26 Monate nach Schwedens formalem Beitritt.
+
+Das Fünf-Gesetze-Migrationspaket (HD03262, HD03264, HD03265, HD03267 und das frühere HD03263) stellt den abschließenden Gesetzgebungssprint des Tidöavtals dar. Justizminister Johan Forssell (M) und Mitunterzeichner Gunnar Strömmer (M) sind die verantwortlichen Minister. Vizepremierministerin Ebba Busch (KD) unterzeichnete die Gesetzentwürfe vom 7. Mai als amtierende Premierministerin. Die Regierung kontrolliert 176 Sitze — eine Einzel-Sitz-Mehrheit — was bedeutet, dass die 16 Sitze der Liberalen mathematisch entscheidend sind, besonders für die Abschiebehaftverlängerung in HD03265, die L historisch aus EGMR-Gründen abgemildert hat.
 
 ### Sekundäre Aspekte
-- **Digitale Identitätsrevolution**: HD03250 (Prop. 2025/26:250) schafft eine staatliche E-Ausweis-Behörde, beendet BankIDs Exklusivstellung und setzt EU-eIDAS-2.0-Anforderungen um. Parteiübergreifende Verabschiedungswahrscheinlichkeit: 0,91.
-- **NATOs operative Integration**: HD03254 (Prop. 2025/26:254) ermöglicht gemeinsame Kommandooperationen ohne Vorabgenehmigung; spiegelt Finnlands Interoperabilitätsgesetzgebung von 2024 wider. Verabschiedungswahrscheinlichkeit: 0,88.
-- **Transparenzzug**: HD03258 (Prop. 2025/26:258) erhöht die Offenlegungspflichten für die Parteienfinanzierung — ungewöhnlich ein Transparenzgesetz, das von der amtierenden Regierung vor einer Wahl vorgeschlagen wird. Ausschuss: KU (geleitet vom S-Oppositionsmitglied Ida Karkiainen).
-- **Skatteverkets Erweiterung**: HD03261 (Prop. 2025/26:261) erweitert das Ermittlungsmandat von Skatteverket bei Registrierungen — kombiniert mit HD03250 entsteht eine erweiterte staatliche digitale Identitätsinfrastruktur.
+
+- **Digitale Identitätsrevolution**: HD03250 (Prop. 2025/26:250) schafft eine staatliche E-ID-Behörde und beendet BankIDs exklusive Stellung sowie setzt EU eIDAS 2.0-Anforderungen um. Parteiübergreifende Verabschiedungswahrscheinlichkeit: 0,91.
+- **NATOs operative Integration**: HD03254 (Prop. 2025/26:254) ermöglicht gemeinsame Kommandooperationen ohne Vorabgenehmigung; spiegelt Finnlands Interoperabilitätsgesetzgebung 2024 wider. Verabschiedungswahrscheinlichkeit: 0,88.
+- **Transparenzmanöver**: HD03258 (Prop. 2025/26:258) erhöht die Offenlegungspflichten für Parteifinanzierungen — ungewöhnlicherweise eine Transparenzmaßnahme, die von der amtierenden Regierung vor einer Wahl vorgeschlagen wird. Ausschuss: KU (geleitet von S-Oppositionsmitglied Ida Karkiainen).
+- **Skatteverket-Erweiterung**: HD03261 (Prop. 2025/26:261) erweitert die Ermittlungsbefugnisse der schwedischen Steuerbehörde für Registrierungen — kombiniert mit HD03250 entsteht eine erweiterte staatliche digitale Identitätsinfrastruktur.
 
 ### Risikoindikatoren
-- **Koalitionszerbrechlichkeit**: L-Abfall bei HD03265-Inhaftierung (WEP 0,20) → Gesetze stocken oder fallen; Regierungskrise
-- **EU-Kommission-Timing**: HD03262 muss mit dem Inkrafttreten der CEAS-Verordnung (2026-Q3) synchronisiert werden; vorzeitige Umsetzung riskiert Vertragsverletzungsverfahren
-- **EMRK-Herausforderung**: HD03265 Inhaftierungsausweitung und HD03267 Sicherheitsschwelle sehen sich Art. 5/Art. 3 Überprüfung gegenüber; Lagrådet-Stellungnahme kritisch
-- **Wahlpausendruck**: SfU/JuU-Ausschussberichte fällig im August 2026 — extremer Zeitdruck; Risiko der Nachwahlüberweisung für HD03262
+
+- **Koalitionszerbrechlichkeit**: L-Abfall bei HD03265 Abschiebehaft (WEP 0,20) → Gesetze stagnieren oder scheitern; Regierungskrise
+- **EU-Kommissions-Timing**: HD03262 muss mit dem Inkrafttreten der GEAS-Verordnung synchronisiert werden (2026-Q3); vorzeitige Umsetzung riskiert Vertragsverletzungsverfahren
+- **EGMR-Herausforderung**: HD03265 Abschiebehaftverlängerung und HD03267 Sicherheitsschwelle begegnen Art.-5-/Art.-3-Prüfung; Lagrådets Stellungnahme ist kritisch
+- **Wahlpause-Zeitdruck**: SfU/JuU-Ausschussberichte fällig August 2026 — extremer Zeitplan; Risiko einer Nachwahlverweisung für HD03262
 
 ### Wirtschaftlicher Kontext
-- IMF WEO-2026-04 projiziert Schwedens BIP-Wachstum 2026: ~2,1 % (moderat)
-- Nordische Vergleiche zu Schulden/BIP verfügbar; Schweden bleibt haushaltspolitisch konservativ ggü. EU-Durchschnitt
-- Arbeitsmarktauswirkungen der Migrationsrechtsänderungen: mittelfristig, nicht sofortig
 
-### Ausblick
-- **T+72h**: Erwartete Pressekonferenzen von Oppositions-S und MP; rechtliche Expertenkommentare
-- **T+7d**: Ausschussüberweisung (SfU, JuU, KU) bestätigt; erste Stakeholder-Reaktionen
+- IWF WEO-2026-04 prognostiziert Schwedens BIP-Wachstum 2026: ~2,1 % (moderat)
+- Nordische Vergleichsdaten für Schulden/BIP verfügbar; Schweden bleibt fiskalpolitisch konservativ gegenüber dem EU-Durchschnitt
+- Arbeitsmarktauswirkungen von Änderungen im Migrationsrecht: mittelfristig, nicht unmittelbar
+
+### Zeithorizont
+
+- **T+72h**: Opposition S und MP erwartete Pressekonferenzen; rechtliche Expertenkommentare
+- **T+7d**: Ausschüsse (SfU, JuU, KU) bestätigen Überweisung; erste Stakeholder-Reaktionen
 - **T+30d**: SfU öffentliche Anhörung zu HD03262 wahrscheinlich; erste Lagrådet-Stellungnahme
-- **T+90d**: Ausschussberichte; abschließende Lesung bei Wahl des Schnellverfahrens vor Wahlpause
-- **T+Wahl**: HD03262 als zentrales Wahlkampf-Streitthema, falls nicht verabschiedet; S voraussichtlich mit Umkehrungs-Wahlkampf
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- **T+90d**: Ausschussberichte; abschließende Lesung bei Expressbehandlung vor Wahlpause
+- **T+Wahl**: HD03262 als zentrales Wahlkampfkonfliktthema falls nicht verabschiedet; S wahrscheinlich Kampagne für Rücknahme
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_es.md -->
 
 **Fecha del artículo**: 2026-05-18  
-**Subcarpeta**: proposiciones  
+**Subcarpeta**: propositions  
 
 ### BLUF
 
-El gobierno minoritario de Kristersson presentó al Riksdag ocho grandes proposiciones legislativas en un único sprint legislativo previo a las elecciones, incluyendo un proyecto de ley histórico (HD03262 / Prop. 2025/26:262) que elimina los permisos de residencia permanente y alinea la legislación sueca de inmigración con el nuevo Sistema Europeo Común de Asilo de la UE — el cambio estructuralmente más significativo desde la ley de asilo de 2016. A 118 días de las elecciones del 13 de septiembre de 2026, el paquete de cinco leyes migratorias, una proposición de e-ID estatal (HD03250), un proyecto de ley de cooperación militar (HD03254) y una medida de transparencia política (HD03258) representan conjuntamente la plena entrega del programa del gobierno. Los 16 votos de Liberalerna constituyen el margen de coalición crítico; si se mantienen, la reforma migratoria es aprobada; si se fragmentan por motivos del CEDH (en particular la ampliación de la detención de HD03265), leyes clave se paralizan y se convierten en puntos centrales de la campaña electoral.
+El gobierno minoritario de Kristersson en Suecia presentó ocho grandes proposiciones al Riksdag en un único sprint legislativo preelectoral, incluyendo un proyecto de ley histórico (HD03262 / Prop. 2025/26:262) que elimina los permisos de residencia permanente y alinea el derecho migratorio sueco con el nuevo Sistema Europeo Común de Asilo de la UE — el cambio estructural más significativo desde la Ley de Asilo de 2016. A 118 días de las elecciones generales del 13 de septiembre de 2026, el racimo de cinco leyes de migración, una propuesta de e-ID estatal (HD03250), una propuesta de cooperación militar (HD03254) y una medida de transparencia política (HD03258) representan conjuntamente la oferta completa de entrega del programa del gobierno. Los 16 votos de los Liberales forman el margen crítico de la coalición; si se mantienen, la reforma migratoria se aprueba; si se fracturan por motivos del CEDH (especialmente la extensión de la detención en HD03265), los proyectos clave se paralizan y se convierten en campos de batalla electorales.
 
 ### Juicios clave (Alta confianza — B2)
 
-1. **[KJ-1]** El gobierno Kristersson ha presentado un cluster sin precedentes de cinco proposiciones de migración/seguridad en un único sprint legislativo, señalando una estrategia deliberada de endurecimiento previo a las elecciones dirigida a los votantes de los Demócratas de Suecia y los conservadores moderados. Probabilidad: ALTA (0,82).
+1. **[KJ-1]** El gobierno de Kristersson ha presentado un racimo sin precedentes de cinco proyectos de ley de migración/seguridad en un único sprint legislativo, señalando una estrategia preelectoral deliberada dirigida a los Demócratas de Suecia y a votantes moderado-conservadores. Probabilidad: ALTA (0,82).
 
-2. **[KJ-2]** La eliminación de los permisos de residencia permanente (HD03262) — adaptando la legislación sueca al Pacto Europeo sobre Migración y Asilo — representa el cambio estructural más significativo en la legislación migratoria sueca desde la ley de asilo de 2016. Si se aprueba, elimina la permanencia jurídica de aproximadamente 120.000 titulares anuales de permisos y crea un ciclo de revisión continuo. Probabilidad: ALTA (0,85).
+2. **[KJ-2]** La eliminación de los permisos de residencia permanente (HD03262) — adaptación del derecho sueco al Pacto Europeo de Migración y Asilo — representa el cambio estructural más significativo en el derecho migratorio sueco desde la Ley de Asilo de 2016. Si se aprueba, elimina la permanencia legal para aproximadamente 120.000 titulares de permisos anuales y crea un ciclo de revisión continua. Probabilidad: ALTA (0,85).
 
-3. **[KJ-3]** La proposición del e-ID estatal (HD03250) resuelve un punto muerto de soberanía digital de una década: Suecia dependía anteriormente exclusivamente del BankID emitido por los bancos, creando una dependencia de proveedores. Una alternativa estatal alinea a Suecia con Alemania, Estonia y Dinamarca y cuenta con un amplio apoyo entre los partidos. Probabilidad de aprobación: MUY ALTA (0,91).
+3. **[KJ-3]** La propuesta de e-ID estatal (HD03250) resuelve un punto muerto de una década en soberanía digital: Suecia dependía anteriormente exclusivamente del BankID emitido por bancos, creando dependencia de proveedor. Una alternativa estatal alinea a Suecia con Alemania, Estonia y Dinamarca y cuenta con amplio apoyo transpartidista. Probabilidad de aprobación: MUY ALTA (0,91).
 
-4. **[KJ-4]** La proposición de cooperación militar (HD03254) acelera la integración operativa de la OTAN menos de 24 meses después de la adhesión de Suecia. Señala el compromiso del gobierno con la plena interoperabilidad estructural, no sólo con la membresía formal. Probabilidad de aprobación: ALTA (0,88).
+4. **[KJ-4]** La propuesta de cooperación militar (HD03254) acelera la integración operativa de la OTAN menos de 24 meses después de la adhesión de Suecia. Señala el compromiso del gobierno con la plena interoperabilidad estructural, no solo la membresía formal. Probabilidad de aprobación: ALTA (0,88).
 
-5. **[KJ-5]** La proposición de transparencia (HD03258) — un gobierno en ejercicio que propone aumentar el escrutinio de la financiación de los partidos políticos — es una señal estratégica de credibilidad dirigida a los votantes preocupados por la influencia populista, probablemente impulsada por recientes controversias internas del SD. Probabilidad: MEDIA (0,65).
+5. **[KJ-5]** La propuesta de transparencia (HD03258) — gobierno proponiendo mayor escrutinio de la financiación y procesos de partidos políticos — es una señal estratégica de credibilidad dirigida a votantes preocupados por la influencia populista, probablemente impulsada por las recientes controversias internas del SD. Probabilidad: MEDIA (0,65).
 
 ### Historia principal
-En un sprint legislativo sin precedentes a 118 días de las elecciones del Riksdag del 13 de septiembre de 2026, el gobierno minoritario Kristersson (M-KD-L, apoyado por SD) presentó al Riksdag ocho grandes proposiciones sobre migración, identidad digital, defensa y transparencia política. La pieza central — Prop. 2025/26:262 (HD03262) — elimina la categoría del permiso de residencia permanente (PUT) y alinea la legislación sueca con el nuevo Sistema Europeo Común de Asilo (SECA) de la UE, situando a Suecia junto a Dinamarca (2019), Alemania y los Países Bajos como primeros adoptantes de regímenes de permisos solo temporales. Simultáneamente, Prop. 2025/26:250 (HD03250) crea el primer e-ID emitido por el Estado sueco, poniendo fin al monopolio privado de 20 años del consorcio bancario BankID, mientras que Prop. 2025/26:254 (HD03254) elimina las barreras jurídicas internas a la cooperación militar operativa de la OTAN, menos de 26 meses después de la adhesión formal de Suecia.
 
-El paquete de cinco leyes migratorias (HD03262, HD03264, HD03265, HD03267 y el anterior HD03263) representa el sprint legislativo final del Tidöavtal. El ministro de Justicia Johan Forssell (M) y el cofirmante Gunnar Strömmer (M) son los ministros responsables. La viceprimera ministra Ebba Busch (KD) firmó las proposiciones del 7 de mayo como primera ministra en funciones. El gobierno controla 176 escaños — una mayoría de un solo escaño — lo que significa que los 16 votos de Liberalerna son matemáticamente decisivos, en particular para las disposiciones de ampliación de la detención de HD03265, que L ha moderado históricamente por razones del CEDH.
+En un sprint legislativo sin precedentes 118 días antes de las elecciones generales suecas del 13 de septiembre de 2026, el gobierno minoritario de Kristersson (M–KD–L, apoyado por SD) presentó ocho grandes proposiciones al Riksdag sobre migración, identidad digital, defensa y transparencia política. La pieza central — Prop. 2025/26:262 (HD03262) — elimina la categoría de permiso de residencia permanente (PUT) y alinea el derecho sueco con el nuevo Sistema Europeo Común de Asilo (SECA) de la UE, colocando a Suecia junto a Dinamarca (2019), Alemania y los Países Bajos como adoptantes tempranos de regímenes de permisos solo temporales. Simultáneamente, Prop. 2025/26:250 (HD03250) crea la primera e-ID jamás emitida por el Estado sueco, poniendo fin a un monopolio privado de 20 años del consorcio bancario BankID, mientras que Prop. 2025/26:254 (HD03254) elimina los obstáculos jurídicos nacionales para la cooperación militar operativa de la OTAN, menos de 26 meses después de la adhesión formal de Suecia.
+
+Las cinco leyes de migración (HD03262, HD03264, HD03265, HD03267 y la anterior HD03263) representan el sprint legislativo final del Tidöavtal. El ministro de Justicia Johan Forssell (M) y el cofirmante Gunnar Strömmer (M) son los ministros responsables. La viceprimera ministra Ebba Busch (KD) firmó las proposiciones del 7 de mayo como primera ministra en funciones. El gobierno controla 176 escaños — una mayoría de un solo escaño — lo que significa que los 16 votos de los Liberales son matemáticamente decisivos, especialmente para la extensión de la detención en HD03265, que L ha moderado históricamente por motivos del CEDH.
 
 ### Ángulos secundarios
-- **Revolución de la identidad digital**: HD03250 (Prop. 2025/26:250) crea una autoridad estatal de e-ID, pone fin a la posición exclusiva de BankID e implementa los requisitos eIDAS 2.0 de la UE. Probabilidad de aprobación multipartidista: 0,91.
-- **Integración operativa de la OTAN**: HD03254 (Prop. 2025/26:254) permite operaciones de mando conjunto sin aprobación previa; refleja la legislación de interoperabilidad finlandesa de 2024. Probabilidad de aprobación: 0,88.
-- **Jugada de transparencia**: HD03258 (Prop. 2025/26:258) aumenta los requisitos de divulgación de la financiación de partidos políticos — inusualmente, una medida de transparencia propuesta por el gobierno en ejercicio antes de una elección. Comisión: KU (presidida por el miembro de la oposición S Ida Karkiainen).
-- **Expansión de Skatteverket**: HD03261 (Prop. 2025/26:261) amplía los poderes de investigación de registro del Skatteverket — combinado con HD03250, crea una infraestructura de identidad digital estatal ampliada.
+
+- **Revolución de identidad digital**: HD03250 (Prop. 2025/26:250) crea una autoridad de e-ID estatal y pone fin a la posición exclusiva de BankID implementando los requisitos eIDAS 2.0 de la UE. Probabilidad de aprobación transpartidista: 0,91.
+- **Integración operativa de la OTAN**: HD03254 (Prop. 2025/26:254) permite operaciones de mando conjuntas sin aprobación previa; refleja la legislación de interoperabilidad finlandesa de 2024. Probabilidad de aprobación: 0,88.
+- **Maniobra de transparencia**: HD03258 (Prop. 2025/26:258) aumenta los requisitos de divulgación de financiación de partidos políticos — inusualmente, una medida de transparencia propuesta por el gobierno en funciones antes de unas elecciones. Comisión: KU (presidida por el miembro de oposición S Ida Karkiainen).
+- **Extensión del Skatteverket**: HD03261 (Prop. 2025/26:261) amplía las facultades de investigación del Skatteverket para el registro — combinado con HD03250 se crea una infraestructura digital de identidad estatal ampliada.
 
 ### Indicadores de riesgo
-- **Fragilidad de la coalición**: deserción de L en la detención de HD03265 (WEP 0,20) → las leyes se paralizan o caen; crisis gubernamental
+
+- **Fragilidad de la coalición**: Defección de L en HD03265 detención (WEP 0,20) → proyectos bloqueados o caídos; crisis gubernamental
 - **Calendario de la Comisión Europea**: HD03262 debe sincronizarse con la entrada en vigor del Reglamento SECA (2026-T3); la implementación prematura arriesga un procedimiento de infracción
-- **Desafío del CEDH**: la ampliación de la detención de HD03265 y el umbral de seguridad de HD03267 se enfrentan al escrutinio del Art. 5/Art. 3; dictamen del Lagrådet crítico
-- **Presión del calendario del receso electoral**: los informes de las comisiones SfU/JuU vencen en agosto de 2026 — plazo extremo; riesgo de remisión post-electoral para HD03262
+- **Desafío del CEDH**: HD03265 extensión de detención y HD03267 umbral de seguridad se enfrentan al escrutinio del Art. 5/Art. 3; el dictamen del Lagrådet es crítico
+- **Presión temporal de la suspensión electoral**: Informes de los comités SfU/JuU con vencimiento en agosto de 2026 — calendario extremo; riesgo de remisión post-electoral para HD03262
 
 ### Contexto económico
-- El FMI WEO-2026-04 proyecta el crecimiento del PIB de Suecia en 2026: ~2,1% (moderado)
-- Comparaciones nórdicas de deuda/PIB disponibles; Suecia sigue siendo presupuestariamente conservadora frente a la media de la UE
-- Impactos en el mercado laboral de los cambios en la ley de inmigración: a medio plazo, no inmediatos
+
+- El FMI WEO-2026-04 proyecta crecimiento del PIB de Suecia en 2026: ~2,1% (moderado)
+- Comparativas nórdicas sobre deuda/PIB disponibles; Suecia sigue siendo fiscalmente conservadora frente al promedio de la UE
+- Impactos en el mercado laboral de los cambios en la legislación migratoria: a medio plazo, no inmediato
 
 ### Perspectivas
-- **T+72h**: Esperadas conferencias de prensa de la oposición S y MP; comentarios de expertos jurídicos
-- **T+7d**: Derivación a comisión (SfU, JuU, KU) confirmada; primeras reacciones de las partes interesadas
-- **T+30d**: Audiencia pública de SfU sobre HD03262 probable; primer dictamen del Lagrådet
-- **T+90d**: Informes de las comisiones; lectura final si se elige el procedimiento acelerado antes del receso electoral
-- **T+elecciones**: HD03262 como punto central de discordia electoral si no se aprueba; probable campaña de S para su reversión
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+
+- **T+72h**: Ruedas de prensa esperadas de la oposición S y MP; comentarios de expertos jurídicos
+- **T+7d**: Comisiones (SfU, JuU, KU) confirman la remisión; primeras reacciones de las partes interesadas
+- **T+30d**: Audiencia pública del SfU sobre HD03262 probable; primer dictamen del Lagrådet
+- **T+90d**: Informes de comisiones; lectura final si se aplica el procedimiento de urgencia antes de la suspensión electoral
+- **T+elecciones**: HD03262 como tema central de confrontación electoral si no se aprueba; S probablemente en campaña para su derogación
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_fi.md -->
 
 **Artikkelin päivämäärä**: 2026-05-18  
-**Alikansio**: esitykset  
+**Alikansio**: propositions  
 
 ### BLUF
 
-Kristerssons vähemmistöhallitus jätti kahdeksan suurta hallituksen esitystä riksdagille yhdessä vaalit edeltävässä lainsäädäntösprintissä, mukaan lukien merkittävä lakiesitys (HD03262 / Prop. 2025/26:262), joka poistaa pysyvät oleskeluluvat ja sovittaa Ruotsin maahanmuuttolainsäädännön EU:n uuden yhteisen eurooppalaisen turvapaikkajärjestelmän kanssa — rakenteellisesti merkittävin muutos vuoden 2016 turvapaikkalain jälkeen. 118 päivää ennen 13. syyskuuta 2026 pidettäviä vaaleja viiden lain maahanmuuttopaketti, valtion sähköistä henkilöllisyystodistusta koskeva esitys (HD03250), sotilaallista yhteistyötä koskeva esitys (HD03254) ja poliittinen läpinäkyvyystoimenpide (HD03258) edustavat yhdessä hallituksen koko ohjelman toteuttamista. Liberalernas 16 ääntä muodostavat kriittisen koalitiomarginaalin; jos ne pitävät, muuttoliikeuudistus hyväksytään; jos ne hajoavat EIS-perusteella (erityisesti HD03265 säilöönoton laajentamisesta), keskeinen lainsäädäntö pysähtyy ja niistä tulee keskeisiä vaalikampanjakysymyksiä.
+Ruotsin Kristerssonin vähemmistöhallitus esitti kahdeksan merkittävää lakiehdotusta Riksdagille yhdessä ennen vaaleja käydyssä lainsäädäntösprintissä, mukaan lukien historiallinen lakiehdotus (HD03262 / Prop. 2025/26:262), joka poistaa pysyvät oleskeluluvat ja sovittaa Ruotsin maahanmuuttolainsäädännön EU:n uuteen yhteiseen eurooppalaiseen turvapaikkajärjestelmään — merkittävin rakenteellinen muutos vuoden 2016 turvapaikkalain jälkeen. 118 päivää ennen 13. syyskuuta 2026 pidettäviä parlamenttivaaleja viisi maahanmuuttolakia, valtion sähköistä henkilöllisyyskorttia koskeva ehdotus (HD03250), puolustusvoimien yhteistyötä koskeva ehdotus (HD03254) ja poliittista avoimuutta koskeva toimenpide (HD03258) muodostavat yhdessä hallituksen täydellisen ohjelmatoimitustarjouksen. Liberaalien 16 kansanedustajapaikkaa muodostavat kriittisen koalitiomarginaalin; jos he pitävät, maahanmuuttouudistus hyväksytään; jos se hajoaa ECHR-perustein (erityisesti HD03265 säilöönpidon laajennus), keskeisiä lakiehdotuksia pysäytetään ja niistä tulee keskeisiä vaalikauden taistelukysymyksiä.
 
-### Keskeiset arviot (Korkea luotettavuus — B2)
+### Keskeiset arvioinnit (Korkea luotettavuus — B2)
 
-1. **[KJ-1]** Kristerssons hallitus on jättänyt ennennäkemättömän nipun viidestä maahanmuutto-/turvallisuuslakiesityksestä yhdessä lainsäädäntösprintissä, mikä viestii tarkoituksellisesta vaalit edeltävästä tiukemman täytäntöönpanon strategiasta, joka kohdistuu ruotsidemokraattiäänestäjiin ja maltillisiin konservatiiveihin. Todennäköisyys: KORKEA (0,82).
+1. **[KJ-1]** Kristerssonin hallitus on esittänyt ennennäkemättömän viiden maahanmuutto- ja turvallisuuslakiehdotuksen klusterin yhdessä lainsäädäntösprintissä, mikä viestii tietoisesta ennen vaaleja tehtävästä strategiasta, joka on suunnattu Ruotsidemokraateille ja maltilliskonservatiivisille äänestäjille. Todennäköisyys: KORKEA (0,82).
 
-2. **[KJ-2]** Pysyvien oleskelulupien poistaminen (HD03262) — joka sovittaa Ruotsin lainsäädännön EU:n muuttoliike- ja turvapaikkapaktiin — edustaa rakenteellisesti merkittävintä muutosta Ruotsin maahanmuuttolainsäädäntöön vuoden 2016 turvapaikkalain jälkeen. Hyväksyttäessä se poistaa oikeudellisen pysyvyyden noin 120 000 vuosittaiselta luvan haltijalta ja luo jatkuvan tarkistussyklin. Todennäköisyys: KORKEA (0,85).
+2. **[KJ-2]** Pysyvien oleskelulupien poistaminen (HD03262) — Ruotsin lainsäädännön sovittaminen EU:n muuttoliike- ja turvapaikkapaktiin — edustaa merkittävintä rakenteellista muutosta Ruotsin maahanmuuttolainsäädännössä vuoden 2016 turvapaikkalain jälkeen. Jos hyväksytään, se poistaa oikeudellisen pysyvyyden noin 120 000 vuosittaiselta lupainhaltijalta ja luo jatkuvan tarkistussyklin. Todennäköisyys: KORKEA (0,85).
 
-3. **[KJ-3]** Valtion sähköistä henkilöllisyystodistusta koskeva esitys (HD03250) ratkaisee kymmenen vuotta kestäneen digitaalisen suvereniteettikujoutuman: Ruotsi nojautui aiemmin yksinomaan pankkien myöntämään BankID:hen, mikä loi toimittajalukon. Valtiollinen vaihtoehto saattaa Ruotsin linjaan Saksan, Viron ja Tanskan kanssa ja saa laajaa tukea puoluerajojen yli. Hyväksymistodennäköisyys: ERITTÄIN KORKEA (0,91).
+3. **[KJ-3]** Valtion sähköistä henkilöllisyyskorttia koskeva ehdotus (HD03250) ratkaisee vuosikymmenen kestäneen digitaalisen suvereniteetin pattitilanteen: Ruotsi on aiemmin luottanut yksinomaan pankkien myöntämään BankID:hen, mikä on luonut toimittajariippuvuuden. Valtion vaihtoehto sovittaa Ruotsin yhteen Saksan, Viron ja Tanskan kanssa ja saa laajan tuen puoluerajat ylittäen. Hyväksymistodennäköisyys: HYVIN KORKEA (0,91).
 
-4. **[KJ-4]** Sotilaallista yhteistyötä koskeva esitys (HD03254) nopeuttaa NATOn operatiivista integraatiota alle 24 kuukautta Ruotsin liittymisen jälkeen. Se viestii hallituksen sitoutumisesta täydelliseen rakenteelliseen yhteentoimivuuteen eikä pelkkään muodolliseen jäsenyyteen. Hyväksymistodennäköisyys: KORKEA (0,88).
+4. **[KJ-4]** Puolustusvoimien yhteistyötä koskeva ehdotus (HD03254) nopeuttaa NATOn operatiivista integraatiota alle 24 kuukautta Ruotsin liittymisen jälkeen. Se viestii hallituksen sitoutumisesta täydelliseen rakenteelliseen yhteentoimivuuteen, ei pelkästään muodolliseen jäsenyyteen. Hyväksymistodennäköisyys: KORKEA (0,88).
 
-5. **[KJ-5]** Läpinäkyvyysesitys (HD03258) — hallitus ehdottaa lisääntynyttä poliittisten puolueiden rahoituksen valvontaa — on strateginen uskottavuussignaali äänestäjille, jotka ovat huolissaan populistisesta vaikutuksesta, todennäköisesti SD:n sisäisten kiistojen ajamana. Todennäköisyys: KESKITASO (0,65).
+5. **[KJ-5]** Avoimuusehdotus (HD03258) — hallitus ehdottaa poliittisten puolueiden rahoituksen ja prosessien lisääntyvää valvontaa — on strateginen uskottavuussignaali äänestäjille, jotka ovat huolissaan populistisesta vaikutuksesta, todennäköisesti SD:n sisäisten kiistojen ajamana. Todennäköisyys: KESKITASO (0,65).
 
 ### Pääuutinen
-Ennennäkemättömässä lainsäädäntösprintissä 118 päivää ennen 13. syyskuuta 2026 pidettäviä riksdagvaaleja Kristerssons vähemmistöhallitus (M-KD-L, SD:n tukema) jätti riksdagille kahdeksan suurta hallituksen esitystä maahanmuutosta, digitaalisesta henkilöllisyydestä, puolustuksesta ja poliittisesta läpinäkyvyydestä. Kulmakivi — Prop. 2025/26:262 (HD03262) — poistaa pysyvän oleskeluluvan (PUT) kategorian ja sovittaa Ruotsin lainsäädännön EU:n uuteen yhteiseen eurooppalaiseen turvapaikkajärjestelmään (CEAS), mikä asettaa Ruotsin Tanskan (2019), Saksan ja Alankomaiden rinnalle aikaisten omaksujien joukkoon määräaikaistulupajärjestelmissä. Samaan aikaan Prop. 2025/26:250 (HD03250) luo Ruotsin ensimmäisen valtionmyöntämän sähköisen henkilöllisyystodistuksen ja lopettaa BankID-pankkikonsortion 20 vuoden yksityismonopolin, kun taas Prop. 2025/26:254 (HD03254) poistaa kotimaiset oikeudelliset esteet operatiiviselta NATO-sotilaalliselta yhteistyöltä alle 26 kuukautta Ruotsin virallisen liittymisen jälkeen.
 
-Viiden lain maahanmuuttopaketti (HD03262, HD03264, HD03265, HD03267 ja aiempi HD03263) edustaa Tidöavtalin viimeistä lainsäädäntösprinttiä. Oikeusministeri Johan Forssell (M) ja toinen allekirjoittaja Gunnar Strömmer (M) ovat vastuuministerit. Varapääministeri Ebba Busch (KD) allekirjoitti 7. toukokuuta esitykset pääministerin sijaisena. Hallitus hallitsee 176 paikkaa — yhden paikan enemmistö — mikä tarkoittaa, että Liberalernas 16 ääntä ovat matemaattisesti ratkaisevia, erityisesti HD03265:n laajennettujen säilöönottomääräysten kohdalla, joita L on historiallisesti lieventänyt EIS-perusteella.
+Ennennäkemättömässä lainsäädäntösprintissä 118 päivää ennen Ruotsin parlamenttivaaleja 13. syyskuuta 2026 Kristerssonin vähemmistöhallitus (M–KD–L, SD:n tukema) esitti kahdeksan merkittävää ehdotusta Riksdagille koskien maahanmuuttoa, digitaalista identiteettiä, puolustusta ja poliittista avoimuutta. Kulmakivi — Prop. 2025/26:262 (HD03262) — poistaa pysyvän oleskeluluvan (PUT) luokan ja sovittaa Ruotsin lainsäädännön EU:n uuteen yhteiseen eurooppalaiseen turvapaikkajärjestelmään (CEAS), sijoittaen Ruotsin Tanskan (2019), Saksan ja Alankomaiden rinnalle vain määräaikaisiin lupajärjestelmiin varhain siirtyneiden joukkoon. Samaan aikaan Prop. 2025/26:250 (HD03250) luo Ruotsin ensimmäisen koskaan valtion myöntämän sähköisen henkilöllisyystodistuksen, päättäen BankID-pankkikonsortion 20-vuotisen yksityisen monopolin, kun taas Prop. 2025/26:254 (HD03254) poistaa kotimaiset oikeudelliset esteet operatiiviselle NATO-sotilasyhteistyölle, alle 26 kuukautta Ruotsin virallisen liittymisen jälkeen.
+
+Viisi maahanmuuttolakia (HD03262, HD03264, HD03265, HD03267 ja aiempi HD03263) edustavat Tidöavtalin viimeistä lainsäädäntösprinttiä. Oikeusministeri Johan Forssell (M) ja kanssaallekirjoittaja Gunnar Strömmer (M) ovat vastuussa olevat ministerit. Varapääministeri Ebba Busch (KD) allekirjoitti 7. toukokuuta ehdotukset vt. pääministerinä. Hallitus hallitsee 176 paikkaa — yhden paikan enemmistö — mikä tarkoittaa, että Liberaalien 16 paikkaa ovat matemaattisesti ratkaisevia, erityisesti HD03265:n säilöönpidon laajennukselle, jota L on historiallisesti hillinnyt ECHR-perustein.
 
 ### Toissijaiset näkökulmat
-- **Digitaalinen henkilöllisyysrevoluutio**: HD03250 (Prop. 2025/26:250) luo valtiollisen sähköisen henkilöllisyystodistusviranomaisen, lopettaa BankID:n yksinoikeudellisen aseman ja toteuttaa EU:n eIDAS 2.0 -vaatimukset. Puoluerajat ylittävä hyväksymistodennäköisyys: 0,91.
-- **NATOn operatiivinen integraatio**: HD03254 (Prop. 2025/26:254) mahdollistaa yhteiset komentotoiminnot ilman ennakkohyväksyntää; heijastaa Suomen vuoden 2024 yhteentoimivuuslainsäädäntöä. Hyväksymistodennäköisyys: 0,88.
-- **Läpinäkyvyyskortti**: HD03258 (Prop. 2025/26:258) lisää poliittisten puolueiden rahoituksen ilmoitusvaatimuksia — poikkeuksellisesti istuvan hallituksen ennen vaaleja ehdottama läpinäkyvyystoimenpide. Valiokunta: KU (S:n oppositiokasmonen Ida Karkiainen johtaa).
-- **Skatteverketin laajentuminen**: HD03261 (Prop. 2025/26:261) laajentaa Skatteverketin rekisteröintitutkintavaltuuksia — yhdistettynä HD03250:een luodaan laajennettu valtiollinen digitaalinen henkilöllisyysinfrastruktuuri.
+
+- **Digitaalinen identiteettirevoluutio**: HD03250 (Prop. 2025/26:250) luo valtion sähköisen henkilöllisyystodistuksen viranomaisen ja päättää BankID:n eksklusiivisen aseman sekä toteuttaa EU:n eIDAS 2.0 -vaatimukset. Puoluerajat ylittävä hyväksymistodennäköisyys: 0,91.
+- **NATOn operatiivinen integraatio**: HD03254 (Prop. 2025/26:254) mahdollistaa yhteisoperaatiot ilman ennakkohyväksyntää; vastaa Suomen 2024 yhteentoimivuuslainsäädäntöä. Hyväksymistodennäköisyys: 0,88.
+- **Avoimuusliike**: HD03258 (Prop. 2025/26:258) lisää poliittisten puolueiden rahoituksen julkistamisvaatimuksia — poikkeuksellisesti, istuvan hallituksen ennen vaalia ehdottama avoimuustoimenpide. Valiokunta: KU (puheenjohtajana S-oppositiojäsen Ida Karkiainen).
+- **Skatteverketin laajennus**: HD03261 (Prop. 2025/26:261) laajentaa Verohallinnon rekisteröintitutkintavaltuuksia — yhdistettynä HD03250:een luodaan laajennettu valtion digitaalinen henkilöllisyysinfrastruktuuri.
 
 ### Riskiindikaattorit
-- **Koalition haurasuus**: L:n pakeneminen HD03265-säilöönottoon (WEP 0,20) → lakiesitykset pysähtyvät tai kaatuvat; hallituskriisi
-- **EU-komission ajoitus**: HD03262 on synkronoitava CEAS-asetuksen voimaantulon (2026-Q3) kanssa; ennenaikainen täytäntöönpano voi johtaa rikkomusmenettelyyn
-- **EIS-haaste**: HD03265:n säilöönoton laajennus ja HD03267:n turvallisuuskynnys kohtaavat 5 art./3 art. arvioinnin; Lagrådets lausunto kriittinen
-- **Vaalilevon aikapaine**: SfU/JuU-valiokuntaraportit erääntyvät elokuussa 2026 — äärimmäinen aikataulu; riski HD03262:n siirtämisestä vaalien jälkeen
+
+- **Koalition hauraudes**: L:n irtautuminen HD03265 säilöönpidosta (WEP 0,20) → lakiehdotukset pysähtyvät tai kaatuvat; hallituskriisi
+- **EU-komission ajoitus**: HD03262:n on synkronoitava CEAS-asetuksen voimaantulon kanssa (2026-Q3); ennenaikainen täytäntöönpano riskeeraa rikkomusmenettelyn
+- **ECHR-haaste**: HD03265 säilöönpidon laajennus ja HD03267 turvallisuuskynnys kohtaavat Art. 5/Art. 3 -tarkastelun; Lagrådets lausunto on kriittinen
+- **Vaalitauon aikapaine**: SfU/JuU -valiokuntien raportit erääntyvät elokuussa 2026 — äärimmäinen aikataulu; riski HD03262:n vaalien jälkeiselle lähetykselle
 
 ### Taloudellinen konteksti
-- IMF WEO-2026-04 ennustaa Ruotsin BKT-kasvun 2026: ~2,1 % (maltillinen)
-- Pohjoismaiset vertailut velka/BKT-suhteesta saatavilla; Ruotsi pysyy finanssipoliittisesti konservatiivisena vs. EU-keskiarvo
-- Maahanmuuttolain muutosten työmarkkinavaikutukset: keskipitkällä aikavälillä, ei välittömästi
 
-### Tulevaisuuden näkymät
-- **T+72h**: Odotettavissa lehdistötilaisuudet opposition S:ltä ja MP:ltä; oikeudellisten asiantuntijoiden kommentit
-- **T+7d**: Valiokuntalähetekeskustelu (SfU, JuU, KU) vahvistettu; ensimmäiset sidosryhmien reaktiot
+- IMF WEO-2026-04 ennustaa Ruotsin BKT-kasvun 2026: ~2,1 % (kohtalainen)
+- Pohjoismaiset vertailuluvut velka/BKT:lle saatavilla; Ruotsi pysyy finanssipoliittisesti konservatiivisena vs. EU:n keskiarvo
+- Maahanmuuttolainsäädännön muutosten työmarkkinavaikutukset: keskipitkä aikaväli, ei välitön
+
+### Horisonttinäkymä
+
+- **T+72h**: Oppositioryhmät S ja MP odotettavissa pitämään lehdistötilaisuuksia; oikeudellinen asiantuntijakommentti
+- **T+7d**: Valiokunta (SfU, JuU, KU) vahvistaa lähetyksen; ensimmäiset sidosryhmäreaktiot
 - **T+30d**: SfU:n julkinen kuuleminen HD03262:sta todennäköinen; ensimmäinen Lagrådets lausunto
-- **T+90d**: Valiokuntaraportit; lopullinen käsittely pikakaistaa valittaessa ennen vaalilevoa
-- **T+vaali**: HD03262 keskeinen vaalikampanjaristiriita jos ei hyväksytty; S todennäköisesti kampanjoi kumoamisen puolesta
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- **T+90d**: Valiokunnan raportit; lopullinen käsittely jos kiireellisenä ennen vaalitaukoa
+- **T+vaalit**: HD03262 keskeisenä vaalikampanjakiistakysymyksenä jos ei hyväksytä; S todennäköisesti kampanjoi kumoamisen puolesta
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_fr.md -->
@@ -1211,418 +1244,471 @@ Viiden lain maahanmuuttopaketti (HD03262, HD03264, HD03265, HD03267 ja aiempi HD
 
 ### BLUF
 
-Le gouvernement minoritaire Kristersson a soumis au Riksdag huit propositions législatives majeures en un seul sprint législatif pré-électoral, dont un projet de loi phare (HD03262 / Prop. 2025/26:262) qui supprime les titres de séjour permanents et aligne le droit suédois de l'immigration sur le nouveau Système européen commun d'asile — la modification structurelle la plus significative depuis la loi sur l'asile de 2016. À 118 jours du scrutin du 13 septembre 2026, le paquet de cinq lois sur la migration, une proposition pour un e-ID d'État (HD03250), un projet de loi sur la coopération militaire (HD03254) et une mesure de transparence politique (HD03258) représentent ensemble le bilan programmatique complet du gouvernement. Les 16 voix des Libéraux constituent la marge de coalition critique ; si elles se maintiennent, la réforme migratoire est adoptée ; si elles se fractionnent pour des raisons liées à la CEDH (notamment l'extension de la détention prévue par HD03265), des lois clés sont bloquées et deviennent des enjeux centraux de la campagne électorale.
+Le gouvernement minoritaire de Kristersson en Suède a soumis huit propositions législatives majeures au Riksdag dans un seul sprint législatif pré-électoral, incluant un projet de loi historique (HD03262 / Prop. 2025/26:262) supprimant les titres de séjour permanents et alignant le droit suédois de l'immigration sur le nouveau Régime d'asile européen commun de l'UE — le changement structurel le plus significatif depuis la loi sur l'asile de 2016. À 118 jours des élections législatives du 13 septembre 2026, le groupe de cinq textes migratoires, une proposition d'e-ID d'État (HD03250), un texte sur la coopération militaire (HD03254) et une mesure de transparence politique (HD03258) représentent ensemble l'offre complète du gouvernement en matière de livraison de programme. Les 16 votes des Libéraux constituent la marge de coalition critique ; s'ils tiennent, la refonte migratoire est adoptée ; s'ils se fracturent sur des motifs CEDH (notamment la prolongation de la rétention dans HD03265), les textes clés sont bloqués et deviennent des champs de bataille centraux pour la période électorale.
 
-### Jugements clés (Haute confiance — B2)
+### Jugements clés (Confiance élevée — B2)
 
-1. **[KJ-1]** Le gouvernement Kristersson a soumis un ensemble sans précédent de cinq propositions de loi sur la migration et la sécurité en un seul sprint législatif, signalant une stratégie délibérée de durcissement pré-électoral ciblant les électeurs des Démocrates de Suède et les conservateurs modérés. Probabilité : ÉLEVÉE (0,82).
+1. **[KJ-1]** Le gouvernement Kristersson a soumis un ensemble sans précédent de cinq projets de loi migration/sécurité en un seul sprint législatif, signalant une stratégie pré-électorale délibérée ciblant les Démocrates de Suède et les électeurs modérés-conservateurs. Probabilité : ÉLEVÉE (0,82).
 
-2. **[KJ-2]** La suppression des titres de séjour permanents (HD03262) — adaptant le droit suédois au Pacte européen sur la migration et l'asile — représente la modification structurelle la plus significative du droit migratoire suédois depuis la loi sur l'asile de 2016. Si adoptée, elle supprime la permanence juridique pour environ 120 000 titulaires annuels et crée un cycle de révision permanent. Probabilité : ÉLEVÉE (0,85).
+2. **[KJ-2]** La suppression des titres de séjour permanents (HD03262) — adaptation du droit suédois au Pacte européen sur la migration et l'asile — représente le changement structurel le plus significatif au droit suédois de l'immigration depuis la loi sur l'asile de 2016. Si adoptée, elle élimine la permanence juridique pour environ 120 000 détenteurs annuels de permis et crée un cycle de révision continue. Probabilité : ÉLEVÉE (0,85).
 
-3. **[KJ-3]** La proposition sur l'e-ID d'État (HD03250) résout une impasse souverainiste numérique vieille d'une décennie : la Suède reposait auparavant exclusivement sur le BankID bancaire, créant une dépendance vis-à-vis d'un fournisseur. Une alternative étatique aligne la Suède sur l'Allemagne, l'Estonie et le Danemark et bénéficie d'un large soutien toutes tendances confondues. Probabilité d'adoption : TRÈS ÉLEVÉE (0,91).
+3. **[KJ-3]** La proposition d'e-ID d'État (HD03250) résout une impasse décennale sur la souveraineté numérique : la Suède s'appuyait auparavant exclusivement sur le BankID bancaire, créant une dépendance au fournisseur. Une alternative étatique aligne la Suède avec l'Allemagne, l'Estonie et le Danemark et bénéficie d'un soutien général toutes tendances confondues. Probabilité d'adoption : TRÈS ÉLEVÉE (0,91).
 
-4. **[KJ-4]** La proposition sur la coopération militaire (HD03254) accélère l'intégration opérationnelle de l'OTAN moins de 24 mois après l'adhésion de la Suède. Elle signale l'engagement du gouvernement en faveur d'une interopérabilité structurelle complète, et non pas seulement d'une adhésion formelle. Probabilité d'adoption : ÉLEVÉE (0,88).
+4. **[KJ-4]** La proposition sur la coopération militaire (HD03254) accélère l'intégration opérationnelle de l'OTAN moins de 24 mois après l'adhésion de la Suède. Elle signale l'engagement du gouvernement en faveur d'une pleine interopérabilité structurelle, pas seulement d'une adhésion formelle. Probabilité d'adoption : ÉLEVÉE (0,88).
 
-5. **[KJ-5]** La proposition de transparence (HD03258) — un gouvernement en exercice proposant d'accroître le contrôle du financement des partis politiques — est un signal de crédibilité stratégique visant les électeurs préoccupés par l'influence populiste, probablement motivé par de récentes controverses internes au SD. Probabilité : MOYENNE (0,65).
+5. **[KJ-5]** La proposition de transparence (HD03258) — le gouvernement proposant d'accroître le contrôle du financement et des processus des partis politiques — est un signal stratégique de crédibilité ciblant les électeurs préoccupés par l'influence populiste, probablement motivé par les récentes controverses internes du SD. Probabilité : MOYENNE (0,65).
 
-### Histoire principale
-Dans un sprint législatif sans précédent à 118 jours du scrutin du Riksdag du 13 septembre 2026, le gouvernement minoritaire Kristersson (M-KD-L, soutenu par SD) a soumis au Riksdag huit propositions majeures couvrant la migration, l'identité numérique, la défense et la transparence politique. La pièce maîtresse — Prop. 2025/26:262 (HD03262) — supprime la catégorie du titre de séjour permanent (PUT) et aligne le droit suédois sur le nouveau Système européen commun d'asile (SECA), plaçant la Suède aux côtés du Danemark (2019), de l'Allemagne et des Pays-Bas comme premiers adoptants des régimes à durée limitée exclusivement. Simultanément, Prop. 2025/26:250 (HD03250) crée le premier e-ID émis par l'État suédois, mettant fin au monopole privé de 20 ans du consortium bancaire BankID, tandis que Prop. 2025/26:254 (HD03254) supprime les barrières juridiques internes à la coopération militaire opérationnelle de l'OTAN, moins de 26 mois après l'adhésion formelle de la Suède.
+### Article principal
 
-Le paquet de cinq lois migratoires (HD03262, HD03264, HD03265, HD03267 et l'antérieur HD03263) représente le dernier sprint législatif du Tidöavtal. Le ministre de la Justice Johan Forssell (M) et co-signataire Gunnar Strömmer (M) sont les ministres responsables. La vice-Premier ministre Ebba Busch (KD) a signé les propositions du 7 mai en tant que Premier ministre par intérim. Le gouvernement contrôle 176 mandats — une majorité d'un seul siège — ce qui signifie que les 16 voix des Libéraux sont mathématiquement décisives, en particulier pour les dispositions d'élargissement de la détention de HD03265, que L a historiquement atténuées pour des raisons liées à la CEDH.
+Dans un sprint législatif sans précédent 118 jours avant les élections législatives suédoises du 13 septembre 2026, le gouvernement minoritaire de Kristersson (M–KD–L, soutenu par le SD) a soumis huit importantes propositions au Riksdag couvrant la migration, l'identité numérique, la défense et la transparence politique. La pièce maîtresse — Prop. 2025/26:262 (HD03262) — supprime la catégorie du titre de séjour permanent (PUT) et aligne le droit suédois sur le nouveau Régime d'asile européen commun (RAEC) de l'UE, plaçant la Suède aux côtés du Danemark (2019), de l'Allemagne et des Pays-Bas comme adoptants précoces des régimes à titres uniquement temporaires. Simultanément, Prop. 2025/26:250 (HD03250) crée la première e-ID jamais émise par l'État suédois, mettant fin à un monopole privé de 20 ans du consortium bancaire BankID, tandis que Prop. 2025/26:254 (HD03254) supprime les obstacles juridiques internes à la coopération militaire opérationnelle avec l'OTAN, moins de 26 mois après l'adhésion formelle de la Suède.
+
+Les cinq textes migratoires (HD03262, HD03264, HD03265, HD03267 et le précédent HD03263) représentent le dernier sprint législatif du Tidöavtal. Le ministre de la Justice Johan Forssell (M) et le cosignataire Gunnar Strömmer (M) sont les ministres responsables. La Vice-Première ministre Ebba Busch (KD) a signé les propositions du 7 mai en tant que Premier ministre par intérim. Le gouvernement contrôle 176 sièges — une majorité d'un siège — ce qui signifie que les 16 votes des Libéraux sont mathématiquement décisifs, notamment pour l'extension de la rétention dans HD03265, que le L a historiquement modérée pour des raisons de CEDH.
 
 ### Angles secondaires
-- **Révolution de l'identité numérique** : HD03250 (Prop. 2025/26:250) crée une autorité étatique de l'e-ID, met fin à la position exclusive de BankID et met en œuvre les exigences eIDAS 2.0 de l'UE. Probabilité d'adoption tous partis confondus : 0,91.
-- **Intégration opérationnelle de l'OTAN** : HD03254 (Prop. 2025/26:254) permet des opérations de commandement conjoint sans approbation préalable ; fait écho à la législation finlandaise sur l'interopérabilité de 2024. Probabilité d'adoption : 0,88.
-- **Coup de transparence** : HD03258 (Prop. 2025/26:258) renforce les exigences de déclaration du financement des partis politiques — mesure de transparence inhabituellement proposée par le gouvernement sortant avant une élection. Commission : KU (présidée par le membre de l'opposition S Ida Karkiainen).
-- **Expansion du Skatteverket** : HD03261 (Prop. 2025/26:261) étend les pouvoirs d'enquête en matière d'immatriculation du Skatteverket — combiné à HD03250, crée une infrastructure numérique d'identité d'État élargie.
+
+- **Révolution de l'identité numérique** : HD03250 (Prop. 2025/26:250) crée une autorité d'e-ID d'État et met fin à la position exclusive de BankID tout en mettant en œuvre les exigences de l'UE eIDAS 2.0. Probabilité d'adoption transpartisane : 0,91.
+- **Intégration opérationnelle de l'OTAN** : HD03254 (Prop. 2025/26:254) permet des opérations de commandement communes sans approbation préalable ; reflète la législation d'interopérabilité finlandaise de 2024. Probabilité d'adoption : 0,88.
+- **Manœuvre de transparence** : HD03258 (Prop. 2025/26:258) augmente les exigences de divulgation du financement des partis politiques — exceptionnellement, une mesure de transparence proposée par le gouvernement en place avant des élections. Commission : KU (présidée par le membre de l'opposition S Ida Karkiainen).
+- **Extension du Skatteverket** : HD03261 (Prop. 2025/26:261) étend les pouvoirs d'enquête de l'Agence fiscale suédoise pour l'enregistrement — combiné avec HD03250, une infrastructure numérique d'identité étatique étendue est créée.
 
 ### Indicateurs de risque
-- **Fragilité de la coalition** : défection de L sur la détention HD03265 (WEP 0,20) → les lois sont bloquées ou tombent ; crise gouvernementale
-- **Calendrier de la Commission européenne** : HD03262 doit être synchronisé avec l'entrée en vigueur du règlement SECA (2026-T3) ; une mise en œuvre prématurée risque une procédure d'infraction
-- **Défi CEDH** : l'extension de la détention HD03265 et le seuil de sécurité HD03267 font face à un examen de l'Art 5/Art 3 ; avis du Lagrådet critique
-- **Pression du calendrier de la session électorale** : les rapports des commissions SfU/JuU attendus en août 2026 — délai extrêmement serré ; risque de renvoi post-électoral pour HD03262
+
+- **Fragilité de la coalition** : Défection de L sur HD03265 rétention (WEP 0,20) → textes bloqués ou tombés ; crise gouvernementale
+- **Calendrier de la Commission européenne** : HD03262 doit être synchronisé avec l'entrée en vigueur du règlement RAEC (2026-T3) ; mise en œuvre prématurée risquant une procédure d'infraction
+- **Défi CEDH** : HD03265 extension de la rétention et HD03267 seuil de sécurité soumis à l'examen art. 5/art. 3 ; avis du Lagrådet critique
+- **Pression temporelle de la suspension électorale** : Rapports des commissions SfU/JuU exigibles en août 2026 — calendrier extrême ; risque de renvoi post-électoral pour HD03262
 
 ### Contexte économique
-- Le FMI WEO-2026-04 projette une croissance du PIB suédois en 2026 : ~2,1 % (modérée)
-- Comparaisons nordiques sur la dette/PIB disponibles ; la Suède reste budgétairement conservatrice par rapport à la moyenne européenne
-- Impacts sur le marché du travail des modifications de la loi sur l'immigration : à moyen terme, pas immédiats
+
+- Le FMI WEO-2026-04 prévoit une croissance du PIB suédois en 2026 : ~2,1 % (modérée)
+- Comparaisons nordiques sur dette/PIB disponibles ; la Suède reste budgétairement prudente par rapport à la moyenne UE
+- Effets sur le marché du travail des changements législatifs migratoires : à moyen terme, non immédiat
 
 ### Perspectives
+
 - **T+72h** : Conférences de presse attendues de l'opposition S et MP ; commentaires d'experts juridiques
-- **T+7j** : Renvoi en commission (SfU, JuU, KU) confirmé ; premières réactions des parties prenantes
-- **T+30j** : Audition publique de SfU sur HD03262 probable ; premier avis du Lagrådet
-- **T+90j** : Rapports des commissions ; lecture finale si la procédure accélérée est choisie avant la suspension électorale
-- **T+élection** : HD03262 comme sujet de discorde central dans la campagne électorale s'il n'est pas adopté ; S susceptible de mener campagne pour une annulation
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- **T+7j** : Commissions (SfU, JuU, KU) confirment la saisine ; premières réactions des parties prenantes
+- **T+30j** : Audition publique du SfU sur HD03262 probable ; premier avis du Lagrådet
+- **T+90j** : Rapports des commissions ; lecture finale si procédure d'urgence avant la suspension électorale
+- **T+élection** : HD03262 comme thème central de campagne si non adopté ; S probablement en campagne pour l'abrogation
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_he.md -->
 
-<!-- dir: rtl -->
-# סיכום מנהלים: רפורמת ההגירה של שוודיה וציר הזהות הדיגיטלית
+<div dir="rtl">
+
+# תקציר מנהלים: רפורמת ההגירה של שוודיה ועיצוב מחדש של זהות דיגיטלית
 
 **תאריך המאמר**: 2026-05-18  
-**תת-תיקייה**: הצעות חוק  
+**תיקיית משנה**: propositions  
+**אדמירליות**: B2
 
-### BLUF
+### תמצית (BLUF)
 
-ממשלת המיעוט של קריסטרסון הגישה לריקסדאג שמונה הצעות חוק מרכזיות בסבב חקיקתי אחד לפני הבחירות, כולל הצעת חוק פורצת דרך (HD03262 / Prop. 2025/26:262) המבטלת רישיונות שהייה קבועים ומתאימה את חוק ההגירה השוודי למערכת המקלט האירופית המשותפת החדשה של האיחוד האירופי — השינוי המבני המשמעותי ביותר מאז חוק המקלט של 2016. עם 118 ימים לבחירות ה-13 בספטמבר 2026, חבילת חמשת חוקי ההגירה, הצעת החוק לזהות דיגיטלית ממלכתית (HD03250), הצעת חוק לשיתוף פעולה צבאי (HD03254) ומדד שקיפות פוליטית (HD03258) מייצגות יחדיו את מלוא מימוש תוכנית הממשלה. 16 הקולות של ליברלרנה מהווים את שולי הקואליציה הקריטיים; אם ישמרו עמדתם, רפורמת ההגירה תעבור; אם יתפצלו מטעמי אמנת זכויות האדם (ובמיוחד הרחבת המעצר ב-HD03265), חוקים מרכזיים יתקעו ויהפכו לנושאי מחלוקת מרכזיים בקמפיין הבחירות.
+ממשלת המיעוט של קריסטרסון בשוודיה הגישה שמונה הצעות חוק מרכזיות לריקסדאג בספרינט חקיקתי אחד לפני הבחירות, כולל הצעת חוק היסטורית (HD03262 / Prop. 2025/26:262) שמבטלת היתרי שהייה קבועים ומיישרת את חוק ההגירה השוודי עם מערכת המקלט האירופית המשותפת החדשה של האיחוד האירופי — השינוי המבני המשמעותי ביותר מאז חוק המקלט של 2016. עם 118 ימים עד לבחירות הכלליות ב-13 ספטמבר 2026, מייצגים אשכול חמישה חוקי הגירה, הצעה לתעודת זהות דיגיטלית ממשלתית (HD03250), הצעה לשיתוף פעולה צבאי (HD03254) ואמצעי שקיפות פוליטית (HD03258) יחד את הצעת המסירה המלאה של תוכנית הממשלה. 16 הקולות של הליברלים מהווים את שוליי הקואליציה הקריטיים; אם יישארו, הרפורמה תועבר; אם יתפלגו מטעמי ECHR (ובמיוחד הרחבת המעצר ב-HD03265), חוקי המפתח ייתקעו ויהפכו לזירות קרב מרכזיות בתקופת הבחירות.
 
 ### שיפוטים מרכזיים (אמינות גבוהה — B2)
 
-1. **[KJ-1]** ממשלת קריסטרסון הגישה אשכול חסר תקדים של חמש הצעות חוק הגירה/ביטחון בסבב חקיקתי אחד, המאותת על אסטרטגיה מכוונת לפני הבחירות לאכיפה מחמירה יותר, המכוונת לבוחרי הדמוקרטים השוודים ולשמרנים מתונים. סבירות: גבוהה (0.82).
+1. **[KJ-1]** ממשלת קריסטרסון הגישה אשכול חסר תקדים של חמישה הצעות חוק הגירה/ביטחון בספרינט חקיקתי אחד, המסמן אסטרטגיה מכוונת לפני הבחירות שמכוונת לדמוקרטים השוודים ולבוחרים שמרנים-מתונים. הסתברות: גבוהה (0.82).
 
-2. **[KJ-2]** ביטול רישיונות השהייה הקבועים (HD03262) — המתאים את החוק השוודי לאמנת ההגירה והמקלט של האיחוד האירופי — מייצג את השינוי המבני המשמעותי ביותר בדיני ההגירה השוודיים מאז חוק המקלט של 2016. אם יאושר, הוא מבטל קביעות משפטית עבור כ-120,000 בעלי רישיון שנתי ויוצר מחזור סקירה שוטף. סבירות: גבוהה (0.85).
+2. **[KJ-2]** ביטול היתרי השהייה הקבועים (HD03262) — התאמת החוק השוודי לאמנת ההגירה והמקלט של האיחוד האירופי — מייצג את השינוי המבני המשמעותי ביותר בחוק ההגירה השוודי מאז חוק המקלט של 2016. אם יאומץ, הוא יבטל את הקביעות המשפטית עבור כ-120,000 בעלי היתרים שנתיים ויצור מחזור בדיקה שוטף. הסתברות: גבוהה (0.85).
 
-3. **[KJ-3]** הצעת החוק לזהות דיגיטלית ממלכתית (HD03250) פותרת מבוי סתום של ריבונות דיגיטלית שנמשך עשור: שוודיה הסתמכה בעבר אך ורק על BankID שהונפק על ידי בנקים, מה שיצר תלות בספק. חלופה ממלכתית מיישרת קו עם גרמניה, אסטוניה ודנמרק ומוצאת תמיכה רחבה בין המפלגות. סבירות אישור: גבוהה מאוד (0.91).
+3. **[KJ-3]** הצעת תעודת הזהות הדיגיטלית הממשלתית (HD03250) פותרת מבוי סתום של עשור בריבונות דיגיטלית: שוודיה הסתמכה בעבר אך ורק על BankID שהונפק על ידי בנקים, מה שיצר תלות בספק. חלופה ממשלתית מיישרת את שוודיה עם גרמניה, אסטוניה ודנמרק ומקבלת תמיכה רחבה מעל קווי המפלגות. הסתברות אימוץ: גבוהה מאוד (0.91).
 
-4. **[KJ-4]** הצעת החוק לשיתוף פעולה צבאי (HD03254) מאיצה את השילוב המבצעי של נאט"ו פחות מ-24 חודשים לאחר הצטרפות שוודיה. היא מאותתת על מחויבות הממשלה לאינטראופרביליות מבנית מלאה, לא רק לחברות פורמלית. סבירות אישור: גבוהה (0.88).
+4. **[KJ-4]** הצעת שיתוף הפעולה הצבאי (HD03254) מאיצה את האינטגרציה המבצעית של נאט"ו פחות מ-24 חודשים לאחר הצטרפות שוודיה, ומסמנת את מחויבות הממשלה לאינטרופרביליות מבנית מלאה. הסתברות אימוץ: גבוהה (0.88).
 
-5. **[KJ-5]** הצעת החוק לשקיפות (HD03258) — ממשלה מכהנת המציעה להגביר את הפיקוח על מימון מפלגות פוליטיות — היא אות אמינות אסטרטגי המכוון לבוחרים החוששים מהשפעה פופוליסטית, ככל הנראה מונע מוויכוחים פנימיים אחרונים ב-SD. סבירות: בינונית (0.65).
+5. **[KJ-5]** הצעת השקיפות (HD03258) — הממשלה מציעה פיקוח מוגבר על מימון מפלגות פוליטיות — היא אות מהימנות אסטרטגי המכוון לבוחרים החוששים מהשפעה פופוליסטית, כנראה על רקע המחלוקות הפנימיות האחרונות של SD. הסתברות: בינונית (0.65).
 
-### הסיפור המרכזי
-בסבב חקיקתי חסר תקדים 118 ימים לפני בחירות הריקסדאג ב-13 בספטמבר 2026, הגישה ממשלת המיעוט של קריסטרסון (M-KD-L, בתמיכת SD) לריקסדאג שמונה הצעות חוק מרכזיות בנושאי הגירה, זהות דיגיטלית, הגנה ושקיפות פוליטית. העיקרית — Prop. 2025/26:262 (HD03262) — מבטלת את קטגוריית רישיון השהייה הקבוע (PUT) ומתאימה את החוק השוודי למערכת המקלט האירופית המשותפת החדשה (CEAS), ומציבה את שוודיה לצד דנמרק (2019), גרמניה והולנד כמאמצות מוקדמות של מערכות רישיונות מוגבלות בזמן בלבד. בו בזמן, Prop. 2025/26:250 (HD03250) יוצרת את ה-e-ID הממלכתי הראשון שהונפק על ידי המדינה ומסיימת את המונופול הפרטי של 20 שנה של קונסורציום BankID, בעוד Prop. 2025/26:254 (HD03254) מסירה מחסומים משפטיים מקומיים לשיתוף פעולה צבאי מבצעי עם נאט"ו, פחות מ-26 חודשים לאחר ההצטרפות הרשמית של שוודיה.
+### הסיפור הראשי
 
-חבילת חמשת חוקי ההגירה (HD03262, HD03264, HD03265, HD03267 וה-HD03263 הקודם) מייצגת את הסבב החקיקתי הסופי של הסכם טידו. שר המשפטים יוהאן פורסל (M) ושותפו לחתימה גונר סטרומר (M) הם השרים האחראים. סגנית ראש הממשלה אבה בוש (KD) חתמה על הצעות ה-7 במאי כראש ממשלה בפועל. הממשלה שולטת ב-176 מנדטים — רוב של מנדט אחד — כלומר 16 הקולות של ליברלרנה מכריעים מבחינה מתמטית, במיוחד עבור הוראות הרחבת המעצר של HD03265, שה-L מיתנה אותן היסטורית מטעמי אמנת זכויות האדם.
+בספרינט חקיקתי חסר תקדים 118 יום לפני הבחירות הכלליות השוודיות ב-13 ספטמבר 2026, הגישה ממשלת המיעוט של קריסטרסון (M–KD–L, בתמיכת SD) שמונה הצעות מרכזיות לריקסדאג המכסות הגירה, זהות דיגיטלית, ביטחון ושקיפות פוליטית. אבן הפינה — Prop. 2025/26:262 (HD03262) — מבטלת את קטגוריית היתר השהייה הקבוע (PUT) ומיישרת את החוק השוודי עם מערכת המקלט האירופית המשותפת (CEAS) של האיחוד האירופי, ומציבה את שוודיה לצד דנמרק (2019), גרמניה והולנד כמאמצים מוקדמים של מערכות היתרים זמניים בלבד. בו זמנית, Prop. 2025/26:250 (HD03250) יוצרת את תעודת הזהות הדיגיטלית הממשלתית הראשונה אי פעם של שוודיה ומסיימת מונופול פרטי של 20 שנה של קונסורציום BankID, בעוד ש-Prop. 2025/26:254 (HD03254) מסירה מכשולים משפטיים מקומיים לשיתוף פעולה צבאי מבצעי עם נאט"ו, פחות מ-26 חודשים לאחר ההצטרפות הרשמית של שוודיה.
+
+חמשת חוקי ההגירה (HD03262, HD03264, HD03265, HD03267 וה-HD03263 הקודם) מייצגים את הספרינט החקיקתי הסופי של Tidöavtal. שר המשפטים יוהאן פורסל (M) והחותם המשותף גונאר סטרוממר (M) הם השרים האחראים. סגנית ראש הממשלה אבה בוש (KD) חתמה על הצעות 7 במאי כראש ממשלה בפועל. הממשלה שולטת ב-176 מושבים — רוב של מושב אחד — מה שאומר ש-16 הקולות של הליברלים הם מכריעים מתמטית, בייחוד להרחבת המעצר ב-HD03265, שה-L ריכך אותה היסטורית מסיבות ECHR.
 
 ### זוויות משניות
-- **מהפכת הזהות הדיגיטלית**: HD03250 (Prop. 2025/26:250) יוצר רשות ממלכתית לזהות דיגיטלית, מסיים את מעמדה הבלעדי של BankID ומיישם את דרישות eIDAS 2.0 של האיחוד האירופי. סבירות אישור בין-מפלגתי: 0.91.
-- **שילוב מבצעי של נאט"ו**: HD03254 (Prop. 2025/26:254) מאפשר פעולות פיקוד משותפות ללא אישור מוקדם; משקף את חקיקת האינטראופרביליות הפינית של 2024. סבירות אישור: 0.88.
-- **מהלך השקיפות**: HD03258 (Prop. 2025/26:258) מגביר את דרישות הגילוי של מימון מפלגות פוליטיות — מדד שקיפות שמוצע בצורה יוצאת דופן על ידי הממשלה המכהנת לפני בחירות. ועדה: KU (בניהול חברת האופוזיציה S אידה קארקיאיינן).
-- **הרחבת Skatteverket**: HD03261 (Prop. 2025/26:261) מרחיב את סמכויות חקירת הרישום של Skatteverket — בשילוב עם HD03250 יוצר תשתית זהות דיגיטלית ממלכתית מורחבת.
+
+- **מהפכת הזהות הדיגיטלית**: HD03250 (Prop. 2025/26:250) יוצר רשות תעודת זהות דיגיטלית ממשלתית ומסיים את מעמדה הבלעדי של BankID תוך יישום דרישות eIDAS 2.0 של האיחוד האירופי. הסתברות אימוץ רב-מפלגתי: 0.91.
+- **אינטגרציה מבצעית של נאט"ו**: HD03254 (Prop. 2025/26:254) מאפשר פעולות פיקוד משותפות ללא אישור מוקדם; משקף את חקיקת האינטרופרביליות הפינלנדית ב-2024. הסתברות אימוץ: 0.88.
+- **תמרון שקיפות**: HD03258 (Prop. 2025/26:258) מגביר את דרישות הגילוי של מימון מפלגות פוליטיות — באופן חריג, אמצעי שקיפות שהממשלה הנוכחית מציעה לפני בחירות. ועדה: KU (בנשיאות חברת האופוזיציה של S, אידה קרקיינן).
+- **הרחבת Skatteverket**: HD03261 (Prop. 2025/26:261) מרחיב את סמכויות החקירה של רשות המיסים השוודית לרישום — בשילוב עם HD03250 נוצרת תשתית זהות דיגיטלית ממשלתית מורחבת.
 
 ### מחווני סיכון
-- **שבירות הקואליציה**: נטישת L בעניין מעצר HD03265 (WEP 0.20) ← חוקים נתקעים או נופלים; משבר ממשלתי
-- **עיתוי הנציבות האירופית**: HD03262 חייב להיות מסונכרן עם כניסת תקנת CEAS לתוקף (2026-רבעון 3); יישום מוקדם מסכן הליך הפרה
-- **אתגר אמנת זכויות האדם**: הרחבת המעצר ב-HD03265 וסף הביטחון ב-HD03267 עומדים בפני ביקורת סעיפים 5 ו-3; חוות דעת Lagrådet קריטית
-- **לחץ לוח הזמנים של המושב הבחירות**: דוחות ועדות SfU/JuU מגיעים לפקיעה באוגוסט 2026 — לוח זמנים קיצוני; סיכון להפנייה לאחר הבחירות עבור HD03262
+
+- **שבריריות הקואליציה**: עריקת L על HD03265 מעצר (WEP 0.20) → חוקים נעצרים או נופלים; משבר ממשלתי
+- **תזמון הנציבות האירופית**: HD03262 חייב להיות מסונכרן עם כניסת תקנת CEAS לתוקף (רבעון 3 2026); יישום מוקדם מדי מסכן הליך הפרה
+- **אתגר ECHR**: הרחבת המעצר ב-HD03265 וסף האבטחה ב-HD03267 מתמודדים עם בחינה לפי ס' 5/ס' 3; חוות דעת Lagrådet קריטית
+- **לחץ זמן הפסקת הבחירות**: דוחות ועדות SfU/JuU מוגשים עד אוגוסט 2026 — לוח זמנים קיצוני; סיכון להפניה לאחר הבחירות עבור HD03262
 
 ### הקשר כלכלי
-- קרן המטבע הבינלאומית WEO-2026-04 מתחזה לצמיחת התוצר המקומי הגולמי של שוודיה 2026: ~2.1٪ (מתון)
-- זמינות השוואות נורדיות לחוב/תוצר; שוודיה נשארת שמרנית פיסקלית לעומת ממוצע האיחוד האירופי
-- השפעות שוק העבודה של שינויי חוק ההגירה: לטווח הבינוני, לא מיידי
 
-### תחזית עתידית
-- **T+72h**: מסיבות עיתונאים צפויות מהאופוזיציה S ו-MP; הערות מומחים משפטיים
-- **T+7d**: אישור הפניית ועדה (SfU, JuU, KU); תגובות ראשוניות מבעלי עניין
-- **T+30d**: שימוע ציבורי של SfU על HD03262 ככל הנראה; חוות הדעת הראשונה של Lagrådet
-- **T+90d**: דוחות ועדות; קריאה סופית אם נבחר המסלול המהיר לפני הפסקת הבחירות
-- **T+בחירות**: HD03262 כנקודת מחלוקת מרכזית בקמפיין אם לא אושר; S ככל הנראה תנהל קמפיין לביטולו
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- קרן המטבע הבינלאומית (WEO-2026-04) מחזה צמיחת תוצר שוודית ב-2026: ~2.1% (מתון)
+- נתוני השוואה נורדיים על חוב/תוצר זמינים; שוודיה נשארת שמרנית תקציבית לעומת ממוצע האיחוד האירופי
+- השפעות שוק העבודה משינויי חוקי ההגירה: טווח בינוני, לא מיידי
+
+### תחזית לאופק
+
+- **T+72h**: ועידות עיתונאים צפויות של האופוזיציה S ו-MP; הערות מומחים משפטיים
+- **T+7d**: ועדות (SfU, JuU, KU) מאשרות הפניה; ראשוני תגובות מחזיקי עניין
+- **T+30d**: ועידת ציבורית של SfU על HD03262 סביר; חוות הדעת הראשונה של Lagrådet
+- **T+90d**: דוחות ועדות; קריאה סופית אם מוחשת לפני הפסקת הבחירות
+- **T+בחירות**: HD03262 כנושא מרכזי בקמפיין אם לא יאומץ; S כנראה בקמפיין לביטולו
+
+</div>
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_ja.md -->
 
-**記事日付**：2026-05-18  
-**サブフォルダ**：法案  
-**アドミラルティ**：B2
+**記事日**: 2026-05-18  
+**サブフォルダ**: propositions  
+**アドミラルティ評価**: B2
 
-### BLUF
+### BLUF（要旨）
 
-クリステションの少数与党政府は、選挙前の単一立法スプリントで8件の主要法案を議会（リクスダーゲン）に提出しました。その中核は、永住許可証を廃止し、スウェーデンの移民法をEUの新しい共通欧州庇護制度（CEAS）に合わせる画期的な法案（HD03262 / Prop. 2025/26:262）であり、これは2016年の庇護法以来最も構造的に重要な変更です。2026年9月13日の総選挙まで118日という状況で、5件の移民関連法案、国家e-ID法案（HD03250）、軍事協力法案（HD03254）、政治的透明性措置（HD03258）を合わせると、政府の全プログラム履行となります。Liberalerna（自由党）の16票が連立の決定的な票差を形成しており、維持されれば移民改革は可決され、ECHR（欧州人権条約）上の問題（特にHD03265の拘留拡大）で分裂すれば、主要法案は頓挫し選挙運動の争点となります。
+スウェーデンのクリスタションン少数派政府は、1回の選挙前立法スプリントで8件の主要法案をリクスダーグに提出した。その中には、永住許可を廃止し、スウェーデンの移民法をEUの新たな共通欧州庇護制度（CEAS）に合わせる画期的な法案（HD03262 / Prop. 2025/26:262）が含まれ、2016年の庇護法以来最も構造的に重要な変更となる。2026年9月13日の総選挙まで118日の時点で、5件の移民法案のクラスター、国家電子IDの提案（HD03250）、軍事協力に関する提案（HD03254）、政治的透明性措置（HD03258）が合わせて政府の完全なプログラム実現案を示している。自由党の16票が連立の重要なマージンを形成しており、維持されれば移民改革が成立し、ECHR問題（特にHD03265の拘禁拡大）で分裂すれば、主要法案は停滞し、選挙期間中の中心的争点となる。
 
-### 主要判断（高信頼度 — B2）
+### 主要判断（高信頼性 — B2）
 
-1. **[KJ-1]** クリステション政府は、5件の移民・治安法案の前例のない集中提出という単一立法スプリントにより、スウェーデン民主党支持者や穏健保守派の有権者を対象とした意図的な選挙前強化執行戦略を示しています。確率：高（0.82）。
+1. **[KJ-1]** クリスタションン政権は、1回の立法スプリントで5件の移民・安全保障法案という前例のないクラスターを提出し、スウェーデン民主党および穏健保守派の有権者を標的にした意図的な選挙前戦略を示している。確率：高（0.82）。
 
-2. **[KJ-2]** 永住許可証の廃止（HD03262）— スウェーデン法をEU移民庇護協定に適合させる — は2016年庇護法以来、スウェーデン移民法において最も重要な構造的変更です。承認されれば、年間約12万人の許可証保持者の法的永続性を廃止し、継続的な審査サイクルを生み出します。確率：高（0.85）。
+2. **[KJ-2]** 永住許可の廃止（HD03262）—スウェーデン法のEU移民・庇護条約への適合—は、2016年庇護法以来のスウェーデン移民法における最も重要な構造的変更を示す。採択されれば、年間約12万人の許可保持者の法的永続性が消滅し、継続的な審査サイクルが設けられる。確率：高（0.85）。
 
-3. **[KJ-3]** 国家e-ID法案（HD03250）は、10年間続いたデジタル主権の行き詰まりを解消します。スウェーデンはこれまで銀行発行のBankIDのみに依存しており、ベンダーロックインが生じていました。国家的な代替手段により、スウェーデンはドイツ、エストニア、デンマークと足並みを揃え、党派を超えた広い支持を集めています。可決確率：非常に高（0.91）。
+3. **[KJ-3]** 国家電子IDの提案（HD03250）は、10年にわたるデジタル主権の行き詰まりを解消する。スウェーデンはこれまで銀行発行のBankIDのみに依存しており、ベンダーロックインが生じていた。国家の代替案により、スウェーデンはドイツ、エストニア、デンマークと足並みをそろえ、幅広い党派を超えた支持を得ている。採択確率：非常に高（0.91）。
 
-4. **[KJ-4]** 軍事協力法案（HD03254）は、スウェーデン加盟から24か月未満でNATO作戦統合を加速させます。正式な加盟のみならず、完全な構造的相互運用性への政府のコミットメントを示しています。可決確率：高（0.88）。
+4. **[KJ-4]** 軍事協力の提案（HD03254）は、スウェーデンのNATO加盟から24か月未満でNATOの運用統合を加速させる。これは形式的な加盟ではなく、完全な構造的相互運用性に対する政府のコミットメントを示す。採択確率：高（0.88）。
 
-5. **[KJ-5]** 透明性法案（HD03258）— 現役政府が政党資金のより厳しい審査を提案 — は、ポピュリスト的影響力を懸念する有権者に向けた戦略的信頼性シグナルです。SDの最近の内部スキャンダルに動機付けられた可能性が高いです。確率：中（0.65）。
+5. **[KJ-5]** 透明性提案（HD03258）—政府が政党の資金調達と手続きに対する監視強化を提案—は、ポピュリスト的影響を懸念する有権者を標的にした戦略的信頼性シグナルで、SDの最近の内部論争に起因する可能性が高い。確率：中（0.65）。
 
-### 主要記事
-2026年9月13日のリクスダーゲン選挙まで118日という前例のない立法スプリントで、クリステション少数与党政府（M-KD-L、SDの支持を受け）は移民、デジタルアイデンティティ、防衛、政治的透明性に関する8件の主要法案を提出しました。中心となる Prop. 2025/26:262（HD03262）は永住許可証（PUT）カテゴリを廃止し、スウェーデン法をEUの新しい共通欧州庇護制度（CEAS）に適合させ、スウェーデンをデンマーク（2019）、ドイツ、オランダとともに期間限定許可証のみの制度を採用した先行国として位置づけます。同時に、Prop. 2025/26:250（HD03250）はスウェーデン初の国家発行e-IDを創設し、BankIDコンソーシアムの20年間の私的独占に終止符を打ちます。また、Prop. 2025/26:254（HD03254）はスウェーデンの正式加盟から26か月未満で、NATO軍事作戦協力への国内法的障壁を撤廃します。
+### リードストーリー
 
-5件の移民法パッケージ（HD03262、HD03264、HD03265、HD03267、および先行のHD03263）はティドー協定の最終立法スプリントです。法務大臣ヨハン・フォルセル（M）と共同署名者グンナー・ストレマー（M）が担当大臣です。副首相エバ・ブッシュ（KD）は5月7日の法案に首相代行として署名しました。政府は176議席を支配 — 1議席の過半数 — つまりLiberalerna の16票が数学的に決定的で、特にHD03265の拘留拡大規定に関しては、LがECHR上の理由から歴史的に緩和してきた部分に関わります。
+2026年9月13日のスウェーデン総選挙まで118日という前例のない立法スプリントで、クリスタションン少数派政権（M–KD–L、SDの支援）は移民、デジタルアイデンティティ、防衛、政治的透明性をカバーする8件の主要提案をリクスダーグに提出した。中心的な提案—Prop. 2025/26:262 (HD03262)—は永住許可（PUT）の廃止とスウェーデン法のEUの新共通欧州庇護制度（CEAS）への適合を図り、デンマーク（2019年）、ドイツ、オランダとともに時限許可のみの制度の早期採択者としてスウェーデンを位置づける。同時に、Prop. 2025/26:250 (HD03250)はスウェーデン初の国家発行電子IDを創設し、BankID銀行コンソーシアムの20年にわたる私的独占を終わらせ、Prop. 2025/26:254 (HD03254)はスウェーデンのNATO正式加盟から26か月未満で、NATOとの運用的軍事協力に対する国内法上の障壁を取り除く。
+
+5件の移民法（HD03262, HD03264, HD03265, HD03267および従来のHD03263）は、ティードー合意の最終立法スプリントを示す。法務大臣ヨハン・フォルセル（M）と共同署名者グンナル・ストロメル（M）が担当大臣。副首相エバ・ブッシュ（KD）が5月7日の提案に首相代行として署名した。政府は176議席—1議席の過半数—を掌握しており、自由党の16議席が数学的に決定的で、特にHD03265の拘禁延長についてはLがECHR上の理由から歴史的に和らげてきた。
 
 ### 二次的角度
-- **デジタルアイデンティティ革命**：HD03250（Prop. 2025/26:250）は国家e-ID当局を設立し、BankIDの独占的地位を終わらせ、EU eIDAS 2.0要件を実施します。党派を超えた可決確率：0.91。
-- **NATOの作戦統合**：HD03254（Prop. 2025/26:254）は事前承認なしの共同指揮作戦を可能にします。フィンランドの2024年相互運用性立法を反映しています。可決確率：0.88。
-- **透明性の賭け**：HD03258（Prop. 2025/26:258）は政党資金の開示要件を強化します — 異例にも、政権交代前に現職政府が提案する透明性措置です。委員会：KU（S野党議員イダ・カルキアイネン委員長）。
-- **スカッテヴェルケットの拡大**：HD03261（Prop. 2025/26:261）はスカッテヴェルケットの登録調査権限を拡大し、HD03250と組み合わせることで拡大された国家デジタルアイデンティティインフラを構築します。
+
+- **デジタルアイデンティティ革命**: HD03250 (Prop. 2025/26:250)は国家電子ID機関を設立し、BankIDの独占的地位を終わらせ、EU eIDAS 2.0要件を実施する。超党派採択確率：0.91。
+- **NATOの運用統合**: HD03254 (Prop. 2025/26:254)は事前承認なしの合同指揮作戦を可能にする；フィンランドの2024年相互運用性立法を反映。採択確率：0.88。
+- **透明性策略**: HD03258 (Prop. 2025/26:258)は政党資金の開示要件を引き上げる—珍しいことに、現政権が選挙前に提案する透明性措置。委員会：KU（S野党議員イーダ・カルキアイネン委員長）。
+- **Skatteverketの拡張**: HD03261 (Prop. 2025/26:261)はスウェーデン税務署の登録調査権限を拡大—HD03250との組み合わせで拡張された国家デジタルアイデンティティインフラが構築される。
 
 ### リスク指標
-- **連立の脆弱性**：HD03265拘留問題でのL離脱（WEP 0.20）→法案頓挫または否決；政府危機
-- **EU委員会のタイミング**：HD03262はCEAS規則の発効（2026年第3四半期）と同期する必要がある；早期実施は違反手続きのリスクがある
-- **ECHR上の挑戦**：HD03265拘留拡大とHD03267安全基準は第5条・第3条審査に直面；Lagrådetの意見が重要
-- **選挙休会タイムラインの緊迫**：SfU/JuU委員会報告は2026年8月に期限が来る — 極めて厳しいスケジュール；HD03262の選挙後送りのリスク
+
+- **連立の脆弱性**: HD03265拘禁でのL離脱（WEP 0.20）→法案停滞または否決；政府危機
+- **EU委員会のタイミング**: HD03262はCEAS規則の発効（2026-Q3）と同期する必要がある；早期実施は違反手続きのリスクあり
+- **ECHRの挑戦**: HD03265拘禁延長とHD03267のセキュリティ閾値が第5条/第3条審査に直面；ラグロードの意見が決定的
+- **選挙休暇の時間的プレッシャー**: SfU/JuUの委員会報告書が2026年8月締切—極端なスケジュール；HD03262の選挙後回付リスク
 
 ### 経済的背景
-- IMF WEO-2026-04はスウェーデンのGDP成長率2026を~2.1%（穏やか）と予測
-- 北欧諸国の債務/GDP比較が利用可能；スウェーデンはEU平均に比べて財政的に保守的
-- 移民法変更の労働市場への影響：中期的、即時的ではない
 
-### 今後の展望
-- **T+72h**：野党SとMPの記者会見が予想される；法律専門家のコメント
-- **T+7d**：委員会（SfU、JuU、KU）への付託確認；最初のステークホルダー反応
-- **T+30d**：HD03262に関するSfU公聴会；最初のLagrådet意見
-- **T+90d**：委員会報告；選挙休会前に迅速手続きが選択された場合の最終読会
-- **T+選挙**：可決されなければHD03262が選挙の中心的争点に；Sが撤廃キャンペーンを展開する可能性
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- IMF WEO-2026-04はスウェーデンの2026年GDP成長率を予測：約2.1%（穏やか）
+- 北欧諸国の債務/GDP比較データあり；スウェーデンはEU平均と比べて財政保守的
+- 移民法改正の労働市場への影響：中期的、即時ではない
+
+### 時間的展望
+
+- **T+72h**: 野党S・MPの記者会見が予想される；法律専門家のコメント
+- **T+7d**: 委員会（SfU, JuU, KU）が委託確認；最初のステークホルダー反応
+- **T+30d**: SfUのHD03262に関する公聴会が予想される；最初のラグロード意見
+- **T+90d**: 委員会報告書；選挙休暇前の緊急審議なら最終審議
+- **T+選挙**: HD03262が成立しなければ中央選挙対立争点；Sは廃止を公約にする可能性が高い
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_ko.md -->
 
 **기사 날짜**: 2026-05-18  
-**하위 폴더**: 법안  
+**하위 폴더**: propositions  
+**제독 코드**: B2
 
-### BLUF
+### BLUF (핵심 요약)
 
-크리스테르손 소수 정부는 선거 전 단일 입법 스프린트에서 8개의 주요 법안을 릭스다겐에 제출했습니다. 그 중심에는 영주 거주 허가를 폐지하고 스웨덴 이민법을 EU의 새로운 공동 유럽 망명 시스템(CEAS)에 맞추는 획기적인 법안(HD03262 / Prop. 2025/26:262)이 있으며, 이는 2016년 망명법 이후 구조적으로 가장 중요한 변화입니다. 2026년 9월 13일 총선을 118일 앞둔 시점에서 5개의 이민 관련 법안, 국가 전자신분증 법안(HD03250), 군사 협력 법안(HD03254), 정치적 투명성 조치(HD03258)는 정부의 전체 프로그램 이행을 나타냅니다. Liberalerna의 16표가 연립의 결정적인 표차를 형성하며, 유지되면 이민 개혁이 통과되고, 유럽인권협약 이유(특히 HD03265의 구금 확대)로 분열하면 핵심 법안이 교착 상태에 빠져 선거 운동의 핵심 쟁점이 됩니다.
+스웨덴 크리스테르손 소수 정부는 단 하나의 선거 전 입법 스프린트에서 8개의 주요 법안을 릭스다그에 제출했다. 여기에는 영주 거주 허가를 폐지하고 스웨덴 이민법을 EU의 새로운 공동 유럽 망명 시스템(CEAS)에 맞추는 역사적인 법안(HD03262 / Prop. 2025/26:262)이 포함됐는데, 이는 2016년 망명법 이후 가장 구조적으로 중요한 변화다. 2026년 9월 13일 총선까지 118일이 남은 시점에서 5개의 이민 법안 클러스터, 국가 전자 신분증 제안(HD03250), 군사 협력 제안(HD03254), 정치적 투명성 조치(HD03258)는 함께 정부의 완전한 프로그램 이행 제안을 나타낸다. 자유당의 16표가 연립의 핵심 마진을 형성한다. 유지되면 이민 개혁이 통과되고, ECHR 문제(특히 HD03265의 구금 확대)로 분열되면 핵심 법안들이 중단되어 선거 기간 동안 중심 쟁점이 된다.
 
-### 핵심 판단 (높은 신뢰도 — B2)
+### 주요 판단 (높은 신뢰도 — B2)
 
-1. **[KJ-1]** 크리스테르손 정부는 단일 입법 스프린트에서 전례 없는 5개의 이민/안보 법안 묶음을 제출했으며, 이는 스웨덴 민주당 지지자들과 중도 보수 유권자들을 겨냥한 의도적인 선거 전 강화 집행 전략을 시사합니다. 확률: 높음 (0.82).
+1. **[KJ-1]** 크리스테르손 정부는 하나의 입법 스프린트에서 5개의 이민/안보 법안이라는 전례 없는 클러스터를 제출했는데, 이는 스웨덴 민주당과 온건 보수 유권자를 겨냥한 의도적인 선거 전 전략을 보여준다. 확률: 높음(0.82).
 
-2. **[KJ-2]** 영주 거주 허가 폐지(HD03262) — 스웨덴 법을 EU 이민 망명 조약에 맞추는 — 는 2016년 망명법 이후 스웨덴 이민법에서 가장 중요한 구조적 변화입니다. 승인되면 연간 약 12만 명의 허가증 소지자의 법적 영구성이 폐지되고 지속적인 검토 주기가 생성됩니다. 확률: 높음 (0.85).
+2. **[KJ-2]** 영주 거주 허가 폐지(HD03262) — EU 이민·망명 협약에 스웨덴법을 적응시킴 — 는 2016년 망명법 이후 스웨덴 이민법에서 가장 중요한 구조적 변화를 나타낸다. 채택되면 연간 약 12만 명의 허가 소지자에 대한 법적 영구성이 제거되고 지속적인 검토 주기가 생성된다. 확률: 높음(0.85).
 
-3. **[KJ-3]** 국가 전자신분증 법안(HD03250)은 10년간 지속된 디지털 주권 교착 상태를 해결합니다. 스웨덴은 이전에 은행이 발행한 BankID에만 의존하여 공급업체 종속성을 야기했습니다. 국가 대안은 스웨덴을 독일, 에스토니아, 덴마크와 같은 노선에 두며 당파를 초월한 광범위한 지지를 받고 있습니다. 통과 확률: 매우 높음 (0.91).
+3. **[KJ-3]** 국가 전자 신분증 제안(HD03250)은 10년간의 디지털 주권 교착 상태를 해결한다: 스웨덴은 이전에 은행에서 발급한 BankID에만 독점적으로 의존해 공급업체 종속이 발생했다. 국가 대안은 스웨덴을 독일, 에스토니아, 덴마크와 나란히 위치시키며 정당을 초월한 광범위한 지지를 받는다. 통과 확률: 매우 높음(0.91).
 
-4. **[KJ-4]** 군사 협력 법안(HD03254)은 스웨덴 가입 24개월 미만으로 NATO 작전 통합을 가속화합니다. 공식 회원국 지위만이 아닌 완전한 구조적 상호운용성에 대한 정부의 의지를 시사합니다. 통과 확률: 높음 (0.88).
+4. **[KJ-4]** 군사 협력 제안(HD03254)은 스웨덴의 NATO 가입 24개월 미만 만에 NATO 운용 통합을 가속화한다. 형식적인 회원이 아닌 완전한 구조적 상호 운용성에 대한 정부의 공약을 나타낸다. 통과 확률: 높음(0.88).
 
-5. **[KJ-5]** 투명성 법안(HD03258) — 현 정부가 정당 자금에 대한 더 많은 감시를 제안 — 은 포퓰리스트적 영향력을 우려하는 유권자들을 대상으로 한 전략적 신뢰성 신호이며, SD의 최근 내부 논란에 의해 추진된 것으로 보입니다. 확률: 중간 (0.65).
+5. **[KJ-5]** 투명성 제안(HD03258) — 정부가 정당 자금 조달 및 프로세스에 대한 감독 강화 제안 — 은 포퓰리스트 영향을 우려하는 유권자를 대상으로 한 전략적 신뢰성 신호로, SD의 최근 내부 논란에 의해 주도될 가능성이 높다. 확률: 중간(0.65).
 
 ### 주요 기사
-2026년 9월 13일 릭스다겐 선거를 118일 앞두고 전례 없는 입법 스프린트에서 크리스테르손 소수 정부(M-KD-L, SD 지지)는 이민, 디지털 신원, 국방 및 정치적 투명성에 관한 8개의 주요 법안을 릭스다겐에 제출했습니다. 핵심인 Prop. 2025/26:262(HD03262)는 영주 거주 허가증(PUT) 카테고리를 폐지하고 스웨덴 법을 EU의 새로운 공동 유럽 망명 시스템(CEAS)에 맞추어 스웨덴을 덴마크(2019), 독일, 네덜란드와 함께 기간 한정 허가만을 채택한 초기 수용국 대열에 합류시킵니다. 동시에 Prop. 2025/26:250(HD03250)은 스웨덴 최초의 국가 발행 전자신분증을 만들어 BankID 은행 컨소시엄의 20년 민간 독점을 끝내며, Prop. 2025/26:254(HD03254)는 스웨덴의 공식 가입 26개월 미만으로 NATO 군사 작전 협력에 대한 국내 법적 장벽을 제거합니다.
 
-5개의 이민법 패키지(HD03262, HD03264, HD03265, HD03267 및 이전 HD03263)는 Tidöavtal의 최종 입법 스프린트를 나타냅니다. 법무장관 요한 포르셀(M)과 공동 서명자 구나르 스트뢰머(M)가 담당 장관입니다. 부총리 에바 부시(KD)는 대리 총리로서 5월 7일 법안에 서명했습니다. 정부는 176석을 지배 — 1석 다수 — 즉 Liberalerna의 16표가 수학적으로 결정적이며, 특히 L이 유럽인권협약 이유로 역사적으로 완화해온 HD03265의 확대된 구금 조항에 관해서 그렇습니다.
+2026년 9월 13일 스웨덴 총선까지 118일을 앞두고 크리스테르손 소수 정부(M–KD–L, SD 지지)는 이민, 디지털 신원, 국방, 정치적 투명성을 다루는 8개의 주요 제안을 릭스다그에 제출했다. 핵심 — Prop. 2025/26:262 (HD03262) — 은 영주 거주 허가(PUT) 범주를 폐지하고 스웨덴법을 EU의 새로운 공동 유럽 망명 시스템(CEAS)에 맞추어, 덴마크(2019년), 독일, 네덜란드와 함께 기한부 허가 전용 체계의 초기 도입국으로 스웨덴을 자리매김한다. 동시에 Prop. 2025/26:250 (HD03250)은 스웨덴 최초의 국가 발급 전자 신분증을 창설하여 BankID 은행 컨소시엄의 20년 독점을 종식시키고, Prop. 2025/26:254 (HD03254)는 스웨덴의 공식 NATO 가입 후 26개월 미만 만에 NATO와의 운용적 군사 협력에 대한 국내 법적 장벽을 제거한다.
+
+5개의 이민 법안(HD03262, HD03264, HD03265, HD03267 및 이전 HD03263)은 티데 협약의 최종 입법 스프린트를 나타낸다. 법무부 장관 요한 포르셀(M)과 공동 서명자 군나르 스트로메르(M)가 책임 장관이다. 부총리 에바 부시(KD)가 수상 권한대행으로 5월 7일 제안에 서명했다. 정부는 176석 — 한 석 과반 — 을 장악하고 있으며, 자유당의 16석이 수학적으로 결정적이다. 특히 ECHR 이유로 역사적으로 L이 완화해온 HD03265의 구금 확대에 있어서 그러하다.
 
 ### 부차적 각도
-- **디지털 신원 혁명**: HD03250(Prop. 2025/26:250)은 국가 전자신분증 당국을 설립하고, BankID의 독점적 지위를 끝내며 EU eIDAS 2.0 요건을 이행합니다. 초당파적 통과 확률: 0.91.
-- **NATO 작전 통합**: HD03254(Prop. 2025/26:254)는 사전 승인 없이 공동 지휘 작전을 가능하게 합니다. 핀란드의 2024년 상호운용성 입법을 반영합니다. 통과 확률: 0.88.
-- **투명성 도박**: HD03258(Prop. 2025/26:258)은 정당 자금 공개 요건을 강화합니다 — 이례적으로 선거 전에 현 정부가 제안하는 투명성 조치입니다. 위원회: KU(S 야당 의원 이다 카르키아이넨 위원장).
-- **Skatteverket 확장**: HD03261(Prop. 2025/26:261)은 Skatteverket의 등록 조사 권한을 확장합니다 — HD03250과 결합하여 확대된 국가 디지털 신원 인프라를 구축합니다.
 
-### 리스크 지표
-- **연립의 취약성**: HD03265 구금 문제에서 L 이탈(WEP 0.20) → 법안 교착 또는 부결; 정부 위기
-- **EU 집행위원회 타이밍**: HD03262는 CEAS 규정 발효(2026년 3분기)와 동기화되어야 함; 조기 시행은 위반 절차 위험
-- **유럽인권협약 도전**: HD03265 구금 확대와 HD03267 안보 기준은 제5조/제3조 심사에 직면; Lagrådet 의견이 중요
-- **선거 휴회 타임라인 압박**: SfU/JuU 위원회 보고서는 2026년 8월 만기 — 극도로 촉박한 일정; HD03262의 선거 후 이월 위험
+- **디지털 신원 혁명**: HD03250 (Prop. 2025/26:250)은 국가 전자 신분증 기관을 설립하고 BankID의 독점적 지위를 종식시키며 EU eIDAS 2.0 요건을 이행한다. 초당적 통과 확률: 0.91.
+- **NATO 운용 통합**: HD03254 (Prop. 2025/26:254)는 사전 승인 없이 합동 지휘 작전을 가능하게 한다; 핀란드의 2024년 상호 운용성 법안을 반영한다. 통과 확률: 0.88.
+- **투명성 전략**: HD03258 (Prop. 2025/26:258)은 정치 정당 자금 공개 요건을 높인다 — 이례적으로, 선거 전에 현 정부가 제안하는 투명성 조치. 위원회: KU(S 야당 의원 이다 카르키아이넨 의장).
+- **Skatteverket 확대**: HD03261 (Prop. 2025/26:261)은 스웨덴 세무청의 등록 조사 권한을 확대한다 — HD03250과 결합하면 확장된 국가 디지털 신원 인프라가 구축된다.
+
+### 위험 지표
+
+- **연립 취약성**: HD03265 구금에서의 L 이탈(WEP 0.20) → 법안 중단 또는 부결; 정부 위기
+- **EU 집행위원회 타이밍**: HD03262는 CEAS 규정 발효(2026-Q3)와 동기화해야 한다; 조기 이행은 위반 절차 위험
+- **ECHR 도전**: HD03265 구금 확대와 HD03267 안보 기준이 5조/3조 심사에 직면; 라그로드 의견 결정적
+- **선거 휴회 시간 압박**: SfU/JuU 위원회 보고서 2026년 8월 마감 — 극도로 촉박한 일정; HD03262의 선거 후 회부 위험
 
 ### 경제적 맥락
-- IMF WEO-2026-04는 스웨덴 GDP 성장률 2026년: ~2.1%(완만)로 예측
-- 북유럽 채무/GDP 비교 가능; 스웨덴은 EU 평균 대비 재정적으로 보수적
-- 이민법 변경의 노동 시장 영향: 중기적, 즉각적이지 않음
 
-### 미래 전망
-- **T+72h**: 야당 S 및 MP의 기자 회견 예상; 법률 전문가 논평
-- **T+7d**: 위원회(SfU, JuU, KU) 회부 확인; 이해관계자 초기 반응
-- **T+30d**: HD03262에 관한 SfU 공청회 예상; 첫 번째 Lagrådet 의견
-- **T+90d**: 위원회 보고서; 선거 휴회 전 신속 절차 선택 시 최종 독회
-- **T+선거**: 통과되지 않으면 HD03262가 선거의 핵심 쟁점으로; S가 철회 캠페인을 벌일 가능성
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- IMF WEO-2026-04는 스웨덴의 2026년 GDP 성장률을 예측: 약 2.1%(보통)
+- 북유럽 국가들의 부채/GDP 비교 데이터 이용 가능; 스웨덴은 EU 평균 대비 재정적으로 보수적
+- 이민법 변화의 노동 시장 영향: 중기적, 즉각적이지 않음
+
+### 시간적 전망
+
+- **T+72h**: 야당 S와 MP의 기자 회견 예상; 법률 전문가 논평
+- **T+7d**: 위원회(SfU, JuU, KU)가 회부 확인; 첫 이해관계자 반응
+- **T+30d**: HD03262에 대한 SfU의 공청회 가능성; 첫 번째 라그로드 의견
+- **T+90d**: 위원회 보고서; 선거 휴회 전 긴급 처리 시 최종 심의
+- **T+선거**: 통과되지 않으면 HD03262가 핵심 선거 갈등 사안; S는 폐지 공약 가능성 높음
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_nl.md -->
 
 **Artikeldatum**: 2026-05-18  
-**Submap**: proposities  
+**Submap**: propositions  
 
 ### BLUF
 
-De minderheidsregering Kristersson diende acht grote wetgevende voorstellen in bij de Riksdag in één pre-verkiezings wetgevingssprint, waaronder een baanbrekend wetsvoorstel (HD03262 / Prop. 2025/26:262) dat permanente verblijfsvergunningen afschaft en het Zweedse migratierecht in lijn brengt met het nieuwe Gemeenschappelijk Europees Asielstelsel van de EU — de structureel meest ingrijpende wijziging sinds de asielwet van 2016. Met 118 dagen tot aan de verkiezingen van 13 september 2026 vertegenwoordigen het vijfwettenpakket voor migratie, een voorstel voor een staatse e-ID (HD03250), een wetsvoorstel voor militaire samenwerking (HD03254) en een politieke transparantiemaatregel (HD03258) gezamenlijk de volledige programmalevering van de regering. De 16 stemmen van Liberalerna vormen de kritieke coalitiedecisiviteit; houden ze stand, dan wordt de migratiereform aangenomen; breken ze af op EVRM-gronden (in het bijzonder de uitbreiding van de bewaring in HD03265), dan stagneren sleutelwetten en worden ze centrale verkiezingsstrijdpunten.
+De Zweedse minderheidsregering van Kristersson diende acht grote wetsvoorstellen in bij de Riksdag in één pre-verkiezingswetgevingssprint, waaronder een baanbrekend wetsvoorstel (HD03262 / Prop. 2025/26:262) dat permanente verblijfsvergunningen afschaft en het Zweedse migratierecht in lijn brengt met het nieuwe Gemeenschappelijk Europees Asielstelsel van de EU — de meest structureel significante wijziging sinds de Asielwet van 2016. Met 118 dagen tot de verkiezingen van 13 september 2026 vertegenwoordigen het cluster van vijf migratiewetten, een voorstel voor een staats-e-ID (HD03250), een voorstel voor militaire samenwerking (HD03254) en een maatregel voor politieke transparantie (HD03258) samen het volledige programmaleveringsbod van de regering. De 16 stemmen van de Liberalen vormen de kritieke coalitiemarge; als die standhouden, wordt de migratiehervorming aangenomen; als ze breken op EVRM-gronden (met name de uitbreiding van bewaring in HD03265), stagneren sleutelwetten en worden ze centrale kiesslagvelden.
 
-### Kernoordelen (Hoge betrouwbaarheid — B2)
+### Sleuteloordelen (Hoge betrouwbaarheid — B2)
 
-1. **[KJ-1]** De regering Kristersson heeft een ongekend cluster van vijf migratie-/veiligheidswetsvoorstellen in één wetgevingssprint ingediend, wat een bewuste pre-verkiezingsstrategie voor strenger handhaven signaleert, gericht op Zweden-Democraten- en gematigd-conservatieve kiezers. Waarschijnlijkheid: HOOG (0,82).
+1. **[KJ-1]** De regering-Kristersson heeft een ongekend cluster van vijf migratie/veiligheidsvoorstellen ingediend in één wetgevingssprint, wat een bewuste pre-verkiezingsstrategie signaleert gericht op de Zweedse Democraten en matig-conservatieve kiezers. Waarschijnlijkheid: HOOG (0,82).
 
-2. **[KJ-2]** De afschaffing van permanente verblijfsvergunningen (HD03262) — waarbij het Zweedse recht aansluit bij het EU-migratie- en asielpact — vertegenwoordigt de meest structureel significante wijziging van het Zweedse migratierecht sinds de asielwet van 2016. Indien aangenomen elimineert het de juridische permanentie voor ongeveer 120.000 jaarlijkse vergunninghouders en creëert het een doorlopende beoordelingscyclus. Waarschijnlijkheid: HOOG (0,85).
+2. **[KJ-2]** De afschaffing van permanente verblijfsvergunningen (HD03262) — aanpassing van het Zweedse recht aan het EU-Migratie- en Asylpact — vertegenwoordigt de meest significante structurele wijziging in het Zweedse migratierecht sinds de Asielwet 2016. Als aangenomen, elimineert dit de juridische permanentie voor ongeveer 120.000 jaarlijkse vergunninghouders en creëert een doorlopende beoordelingscyclus. Waarschijnlijkheid: HOOG (0,85).
 
-3. **[KJ-3]** Het voorstel voor een staatse e-ID (HD03250) lost een decennialange digitale soevereiniteitspat op: Zweden was voorheen uitsluitend afhankelijk van bankuitgegeven BankID, waardoor leveranciersgebondenheid ontstond. Een staatelijk alternatief brengt Zweden op één lijn met Duitsland, Estland en Denemarken en vindt brede steun over partijgrenzen heen. Aannameswaarschijnlijkheid: ZEER HOOG (0,91).
+3. **[KJ-3]** Het voorstel voor een staats-e-ID (HD03250) lost een decennialang digitaal soevereiniteitsimpasse op: Zweden vertrouwde eerder uitsluitend op bankuitgegeven BankID, waardoor afhankelijkheid van de leverancier ontstond. Een staatsalternatief brengt Zweden op één lijn met Duitsland, Estland en Denemarken en krijgt brede partijoverstijgende steun. Aannamekans: ZEER HOOG (0,91).
 
-4. **[KJ-4]** Het wetsvoorstel voor militaire samenwerking (HD03254) versnelt de operationele NAVO-integratie minder dan 24 maanden na de toetreding van Zweden. Het signaleert het engagement van de regering voor volledige structurele interoperabiliteit, niet alleen formeel lidmaatschap. Aannameswaarschijnlijkheid: HOOG (0,88).
+4. **[KJ-4]** Het voorstel voor militaire samenwerking (HD03254) versnelt de operationele NAVO-integratie minder dan 24 maanden na de toetreding van Zweden. Het signaleert de toewijding van de regering aan volledige structurele interoperabiliteit, niet alleen formeel lidmaatschap. Aannamekans: HOOG (0,88).
 
-5. **[KJ-5]** Het transparentievoorstel (HD03258) — een zittende regering die verhoogd toezicht op de financiering van politieke partijen voorstelt — is een strategisch geloofwaardighedssignaal gericht aan kiezers die bezorgd zijn over populistische invloed, waarschijnlijk gedreven door recente interne SD-controverses. Waarschijnlijkheid: GEMIDDELD (0,65).
+5. **[KJ-5]** Het transparantievoorstel (HD03258) — de regering die meer controle op politieke partijfinanciering en -processen voorstelt — is een strategisch geloofwaardigheidssignaal gericht op kiezers bezorgd over populistische invloed, waarschijnlijk gedreven door recente interne SD-controverses. Waarschijnlijkheid: GEMIDDELD (0,65).
 
 ### Hoofdverhaal
-In een ongekende wetgevingssprint 118 dagen vóór de Riksdag-verkiezingen van 13 september 2026 diende de minderheidsregering Kristersson (M-KD-L, gesteund door SD) acht grote voorstellen in bij de Riksdag over migratie, digitale identiteit, defensie en politieke transparantie. Het middelpunt — Prop. 2025/26:262 (HD03262) — schaft de categorie van de permanente verblijfsvergunning (PUT) af en brengt het Zweedse recht in lijn met het nieuwe Gemeenschappelijk Europees Asielstelsel (GEAS) van de EU, waarmee Zweden naast Denemarken (2019), Duitsland en Nederland terechtkomt als vroege overnemers van systemen met uitsluitend tijdgebonden vergunningen. Tegelijkertijd creëert Prop. 2025/26:250 (HD03250) het eerste door de staat uitgegeven Zweedse e-ID en maakt het een einde aan het 20-jarige privémonopolie van het BankID-bankconsortium, terwijl Prop. 2025/26:254 (HD03254) binnenlandse juridische belemmeringen voor operationele NAVO-militaire samenwerking wegneemt, minder dan 26 maanden na de formele toetreding van Zweden.
 
-Het vijfwettenpakket voor migratie (HD03262, HD03264, HD03265, HD03267 en het eerdere HD03263) vertegenwoordigt de definitieve wetgevingssprint van het Tidöavtal. Minister van Justitie Johan Forssell (M) en medeondertekenaar Gunnar Strömmer (M) zijn de verantwoordelijke ministers. Viceminister-president Ebba Busch (KD) ondertekende de voorstellen van 7 mei als minister-president ad interim. De regering controleert 176 zetels — een meerderheid van één zetel — wat betekent dat de 16 stemmen van Liberalerna wiskundig doorslaggevend zijn, in het bijzonder voor de uitgebreide bewaaringsbepalingen van HD03265, die L historisch gezien heeft afgezwakt op EVRM-gronden.
+In een ongekende wetgevingssprint 118 dagen voor de Zweedse verkiezingen van 13 september 2026 diende de minderheidsregering-Kristersson (M–KD–L, gesteund door SD) acht grote voorstellen in bij de Riksdag over migratie, digitale identiteit, defensie en politieke transparantie. Het middelpunt — Prop. 2025/26:262 (HD03262) — schrapt de categorie permanente verblijfsvergunning (PUT) en brengt het Zweedse recht in overeenstemming met het nieuwe Gemeenschappelijk Europees Asielstelsel (GEAS) van de EU, waarmee Zweden naast Denemarken (2019), Duitsland en Nederland staat als vroeg adoptant van stelsels met alleen tijdelijke vergunningen. Tegelijkertijd creëert Prop. 2025/26:250 (HD03250) de eerste ooit door de Zweedse staat uitgereikte e-ID, waarmee een 20-jarig privémonopolie van het BankID-bankconsortium wordt beëindigd, terwijl Prop. 2025/26:254 (HD03254) binnenlandse juridische belemmeringen voor operationele NAVO-militaire samenwerking wegneemt, minder dan 26 maanden na de formele toetreding van Zweden.
+
+De vijf migratiewetten (HD03262, HD03264, HD03265, HD03267 en het eerdere HD03263) vertegenwoordigen de laatste wetgevingssprint van het Tidöavtal. Minister van Justitie Johan Forssell (M) en medeondertekenaar Gunnar Strömmer (M) zijn de verantwoordelijke ministers. Vice-premier Ebba Busch (KD) ondertekende de voorstellen van 7 mei als waarnemend premier. De regering controleert 176 zetels — een meerderheid van één zetel — wat betekent dat de 16 zetels van de Liberalen wiskundig doorslaggevend zijn, met name voor de bewaringsuitbreiding in HD03265, die L historisch gematigd heeft op EVRM-gronden.
 
 ### Secundaire invalshoeken
-- **Digitale identiteitsrevolutie**: HD03250 (Prop. 2025/26:250) creëert een staatse e-ID-autoriteit, maakt een einde aan de exclusieve positie van BankID en implementeert de EU eIDAS 2.0-vereisten. Partijoverschrijdende aannameswaarschijnlijkheid: 0,91.
-- **Operationele NAVO-integratie**: HD03254 (Prop. 2025/26:254) maakt gezamenlijke commandooperaties zonder voorafgaande goedkeuring mogelijk; weerspiegelt de Finse interoperabiliteitswetgeving van 2024. Aannameswaarschijnlijkheid: 0,88.
-- **Transparantiezet**: HD03258 (Prop. 2025/26:258) verhoogt de openbaarmakingsvereisten voor de financiering van politieke partijen — ongebruikelijk een transparantiemaatregel voorgesteld door de zittende regering vóór verkiezingen. Commissie: KU (voorgezeten door S-oppositielid Ida Karkiainen).
-- **Uitbreiding Skatteverket**: HD03261 (Prop. 2025/26:261) vergroot de onderzoeksbevoegdheden van Skatteverket voor registraties — gecombineerd met HD03250 creëert het een uitgebreide staatse digitale identiteitsinfrastructuur.
+
+- **Digitale identiteitsrevolutie**: HD03250 (Prop. 2025/26:250) creëert een staatsautoriteit voor e-ID en beëindigt de exclusieve positie van BankID en implementeert EU eIDAS 2.0-vereisten. Partijoverstijgende aannamekans: 0,91.
+- **Operationele NAVO-integratie**: HD03254 (Prop. 2025/26:254) maakt gezamenlijke commandooperaties zonder voorafgaande goedkeuring mogelijk; weerspiegelt de Finse interoperabiliteitswetgeving van 2024. Aannamekans: 0,88.
+- **Transparantiemanoeuvre**: HD03258 (Prop. 2025/26:258) verhoogt de openbaarmakingsvereisten voor partijfinanciering — uitzonderlijk, een transparantiemaatregel voorgesteld door de zittende regering vóór verkiezingen. Commissie: KU (voorgezeten door S-oppositielid Ida Karkiainen).
+- **Uitbreiding Skatteverket**: HD03261 (Prop. 2025/26:261) breidt de onderzoeksbevoegdheden van de Zweedse Belastingdienst voor registratie uit — gecombineerd met HD03250 wordt uitgebreide staatse digitale identiteitsinfrastructuur gecreëerd.
 
 ### Risico-indicatoren
-- **Coalitiebreusgevoeligheid**: L-afdaling bij HD03265-bewaring (WEP 0,20) → wetten stagneren of vallen; regeringscrisis
-- **EU-Commissie-timing**: HD03262 moet gesynchroniseerd worden met de inwerkingtreding van de GEAS-verordening (2026-K3); voortijdige implementatie riskeert een inbreukprocedure
-- **EVRM-uitdaging**: HD03265 bewaaringsuitbreiding en HD03267 veiligheidsdrempel worden geconfronteerd met Art. 5/Art. 3 toetsing; Lagrådet-advies kritisch
-- **Recessiedruk verkiezingssessie**: SfU/JuU-commissierapporten vervallen in augustus 2026 — extreem tijdgebrek; risico op post-verkiezingsverwijzing voor HD03262
+
+- **Coalitiebroosheid**: L-defectie bij HD03265 bewaring (WEP 0,20) → wetten stagneren of vallen; regeringscrisis
+- **Timing Europese Commissie**: HD03262 moet worden gesynchroniseerd met de inwerkingtreding van de GEAS-verordening (2026-K3); vroegtijdige implementatie riskeert een inbreukprocedure
+- **EVRM-uitdaging**: HD03265 bewaringsuitbreiding en HD03267 veiligheidsdrempel worden geconfronteerd met Art. 5/Art. 3-toetsing; advies van het Lagrådet is kritiek
+- **Tijdsdruk verkiezingspauze**: Rapporten van SfU/JuU-commissies verschuldigd augustus 2026 — extreem tijdschema; risico van post-verkiezingsverwijzing voor HD03262
 
 ### Economische context
-- IMF WEO-2026-04 projecteert de Zweedse BBP-groei in 2026: ~2,1% (gematigd)
-- Nordische vergelijkingen voor schuld/BBP beschikbaar; Zweden blijft begrotingsconservatief t.o.v. het EU-gemiddelde
-- Arbeidsmarkteffecten van wijzigingen in de immigratiewet: op middellange termijn, niet onmiddellijk
 
-### Toekomstperspectief
-- **T+72u**: Verwachte persconferenties van oppositie S en MP; commentaar van juridische experts
-- **T+7d**: Commissieverwijzing (SfU, JuU, KU) bevestigd; eerste reacties van belanghebbenden
-- **T+30d**: SfU openbare hoorzitting over HD03262 waarschijnlijk; eerste Lagrådet-advies
-- **T+90d**: Commissierapporten; eindbehandeling bij keuze voor snelverloop vóór verkiezingsreces
-- **T+verkiezingen**: HD03262 als centraal verkiezingsconflictpunt indien niet aangenomen; S waarschijnlijk met campagne voor terugdraaien
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- IMF WEO-2026-04 projecteert Zweedse bbp-groei 2026: ~2,1% (gematigd)
+- Noordse vergelijkingsdata voor schuld/bbp beschikbaar; Zweden blijft begrotingsconservatief ten opzichte van het EU-gemiddelde
+- Effecten op de arbeidsmarkt van wijzigingen in migratiewetgeving: middellange termijn, niet onmiddellijk
+
+### Vooruitblik
+
+- **T+72u**: Persconferenties verwacht van oppositie S en MP; juridische deskundigencommentaren
+- **T+7d**: Commissies (SfU, JuU, KU) bevestigen doorverwijzing; eerste reacties van belanghebbenden
+- **T+30d**: Publieke hoorzitting SfU over HD03262 waarschijnlijk; eerste advies Lagrådet
+- **T+90d**: Commissierapporten; eindbehaling bij spoedprocedure vóór verkiezingspauze
+- **T+verkiezingen**: HD03262 als centraal verkiezingsconflictthema als niet aangenomen; S waarschijnlijk campagne voor intrekking
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_no.md -->
 
 **Artikkeldato**: 2026-05-18  
-**Undermappe**: proposisjoner  
+**Undermappe**: propositions  
 
 ### BLUF
 
-Kristerssons mindretallsregjering la frem åtte store proposisjoner for Riksdagen i én forhåndsvalgs-lovgivningssprint, inkludert et banebrytende lovforslag (HD03262 / Prop. 2025/26:262) som avvikler permanente oppholdstillatelser og tilpasser svensk migrasjonslovgivning til EUs nye felles europeiske asylsystem — den mest strukturelt betydningsfulle endringen siden asylloven i 2016. Med 118 dager til det svenske valget 13. september 2026 representerer den fem-lovsforslagspakken for migrasjon, et statlig e-ID-forslag (HD03250), et militært samarbeidsforslag (HD03254) og et politisk transparenstiltak (HD03258) til sammen regjeringens fullstendige programleveranse. Liberalernas 16 stemmer utgjør den kritiske koalisjonsmarginalen; holder de, passerer migrasjonsreformen; bryter de på ECHR-grunnlag (særlig HD03265 om utvidet forvaring), stanser nøkkellovforslag og blir sentrale valgkampsaker.
+Sveriges Kristersson-mindretallsregjering leverte åtte store proposisjoner til Riksdagen i en enkelt forhåndsvalgslovgivningssprint, inkludert et historisk lovforslag (HD03262 / Prop. 2025/26:262) som avskaffet permanente oppholdstillatelser og bringer svensk migrasjonslovgivning i tråd med EUs nye felles europeiske asylsystem — den mest strukturelt betydningsfulle endringen siden asylloven i 2016. Med 118 dager til valget 13. september 2026 utgjør de fem migrasjonslovene, et forslag om statlig e-ID (HD03250), et forslag om militært samarbeid (HD03254) og et politisk transparenstiltak (HD03258) til sammen regjeringens fullstendige programleveringsbud. Liberalernes 16 mandater utgjør den avgjørende koalisjonsmargin; hvis de holder, vedtas migrasjonsreformen; hvis de sprekker på ECHR-grunnlag (særlig HD03265 om utvidet frihetsberøvelse), stanser nøkkelforslag og blir sentrale valgkamptemaer.
 
-### Sentrale vurderinger (Høy tillit — B2)
+### Nøkkelvurderinger (Høy tillit — B2)
 
-1. **[KJ-1]** Kristersson-regjeringen har lagt frem en enestående klynge av fem migrasjons-/sikkerhetsproposisjoner i én lovgivningssprint, noe som signaliserer en bevisst forhåndsvalgsstrategi for strengere håndhevelse rettet mot Sverige-demokrater og moderat-konservative velgere. Sannsynlighet: HØY (0,82).
+1. **[KJ-1]** Kristersson-regjeringen har levert en aldri tidligere sett klynge på fem migrasjons- og sikkerhetsforslag i én enkelt lovgivningssprint, noe som signaliserer en bevisst forhåndsvalsstrategi rettet mot Sverigedemokratene og moderat-konservative velgere. Sannsynlighet: HØY (0,82).
 
-2. **[KJ-2]** Avviklingen av permanente oppholdstillatelser (HD03262) — som tilpasser svensk lovgivning til EUs migrasjons- og asylpakt — representerer den mest betydningsfulle strukturelle endringen i svensk migrasjonsrett siden asylloven 2016. Hvis vedtatt eliminerer det juridisk permanens for ca. 120 000 tillatelsesinnehavere per år og skaper en løpende gjennomgangssyklus. Sannsynlighet: HØY (0,85).
+2. **[KJ-2]** Avskaffelsen av permanente oppholdstillatelser (HD03262) — en tilpasning av svensk rett til EUs migrasjons- og asylpakt — representerer den mest betydningsfulle strukturelle endringen i svensk migrasjonslovgivning siden asylloven 2016. Hvis vedtatt elimineres rettslig permanens for ca. 120 000 årlige tillatelsesinnehavere og det innføres en løpende gjennomgangssyklus. Sannsynlighet: HØY (0,85).
 
-3. **[KJ-3]** Det statlige e-ID-forslaget (HD03250) løser et tiår langt digitalt suverenitetsdødpunkt: Sverige var tidligere utelukkende avhengig av bankutstedt BankID, noe som skapte leverandørlåsing. Et statlig alternativ bringer Sverige på linje med Tyskland, Estland og Danmark og støttes bredt på tvers av partiskiller. Vedtakelsessannsynlighet: SVÆRT HØY (0,91).
+3. **[KJ-3]** Forslaget om statlig e-ID (HD03250) løser en tiårig digital suverenitetsdødvande: Sverige var tidligere utelukkende avhengig av bankutstedt BankID, noe som skapte leverandøravhengighet. Et statlig alternativ bringer Sverige på linje med Tyskland, Estland og Danmark og støttes bredt på tvers av partigrensene. Vedtakelsessannsynlighet: SVÆRT HØY (0,91).
 
-4. **[KJ-4]** Proposisjonen om militært samarbeid (HD03254) akselererer NATOs operative integrasjon mindre enn 24 måneder etter Sveriges tilslutning. Den signaliserer regjeringens forpliktelse til full strukturell interoperabilitet, ikke bare formelt medlemskap. Vedtakelsessannsynlighet: HØY (0,88).
+4. **[KJ-4]** Forslaget om militært samarbeid (HD03254) akselererer NATOs operasjonelle integrasjon mindre enn 24 måneder etter Sveriges tilslutning. Det signaliserer regjeringens forpliktelse til full strukturell interoperabilitet, ikke bare formelt medlemskap. Vedtakelsessannsynlighet: HØY (0,88).
 
-5. **[KJ-5]** Transparensproposisjonen (HD03258) — en sittende regjering som foreslår økt kontroll med politiske partiers finansiering — er et strategisk troverdighetsssignal rettet mot velgere som er bekymret for populistisk innflytelse, trolig drevet av nylige SD-interne kontroverser. Sannsynlighet: MIDDELS (0,65).
+5. **[KJ-5]** Transparensforslaget (HD03258) — regjering som foreslår økt kontroll av politiske partiers finansiering og prosesser — er et strategisk troverdighetsignal rettet mot velgere bekymret for populistisk innflytelse, sannsynligvis drevet av SD:s interne kontroverser. Sannsynlighet: MEDIUM (0,65).
 
 ### Hovedhistorie
-I en enestående lovgivningssprint 118 dager før riksdagsvalget 13. september 2026 la Kristerssons mindretallsregjering (M-KD-L, støttet av SD) frem åtte store proposisjoner for Riksdagen om migrasjon, digital identitet, forsvar og politisk transparens. Kjernen — Prop. 2025/26:262 (HD03262) — avvikler kategorien permanent oppholdstillatelse (PUT) og tilpasser svensk lovgivning til EUs nye felles europeiske asylsystem (CEAS), noe som plasserer Sverige ved siden av Danmark (2019), Tyskland og Nederland som tidlige tilpassere av systemer med kun tidsbegrensede tillatelser. Samtidig oppretter Prop. 2025/26:250 (HD03250) Sveriges første statlig utstedte e-ID og avslutter BankID-bankkonsortiets 20 år lange private monopol, mens Prop. 2025/26:254 (HD03254) fjerner innenlandske juridiske barrierer for operativt NATO-militært samarbeid, mindre enn 26 måneder etter Sveriges formelle tiltredelse.
 
-Den fem-lovsforslagspakken for migrasjon (HD03262, HD03264, HD03265, HD03267 og tidligere HD03263) representerer Tidöavtalets endelige lovgivningssprint. Justisminister Johan Forssell (M) og medsignatar Gunnar Strömmer (M) er ansvarlige statsråder. Visestatssminister Ebba Busch (KD) underskrev 7. mai-proposisjonene som statsminister pro tempore. Regjeringen kontrollerer 176 mandater — et enkelt mandats flertall — noe som betyr at Liberalernas 16 stemmer er matematisk avgjørende, særlig for HD03265s utvidede forvaringsbestemmelser, som L historisk sett har moderert på ECHR-grunnlag.
+I en aldri tidligere sett lovgivningssprint 118 dager før det svenske valget 13. september 2026 leverte Kristersson-mindretallsregjering (M–KD–L, støttet av SD) åtte store forslag til Riksdagen om migrasjon, digital identitet, forsvar og politisk transparens. Hjørnesteinen — Prop. 2025/26:262 (HD03262) — avskaffet kategorien permanent oppholdstillatelse (PUT) og bringer svensk rett i tråd med EUs nye felles europeiske asylsystem (CEAS), og plasserer Sverige ved siden av Danmark (2019), Tyskland og Nederland som tidlige adoptere av regimer med kun tidsbegrensede tillatelser. Samtidig skaper Prop. 2025/26:250 (HD03250) Sveriges første noensinne statsutstedte e-ID og avslutter et 20-årig privat monopol fra BankID-bankkonsortiet, mens Prop. 2025/26:254 (HD03254) fjerner innenlandske juridiske hindringer for operasjonelt NATO-militærsamarbeid, knapt 26 måneder etter Sveriges formelle tilslutning.
+
+De fem migrasjonslovene (HD03262, HD03264, HD03265, HD03267 og det tidligere HD03263) representerer Tidöavtalets siste lovgivningssprint. Justisminister Johan Forssell (M) og medsignatar Gunnar Strömmer (M) er ansvarlige statsråder. Visestatsminister Ebba Busch (KD) undertegnet forslagene av 7. mai som fungerende statsminister. Regjeringen kontrollerer 176 mandater — et enkelt-mandats-flertall — noe som betyr at Liberalernes 16 mandater er matematisk avgjørende, særlig for HD03265:s frihetsberøvelsesutvidelse, som L historisk har moderert på ECHR-grunnlag.
 
 ### Sekundære vinkler
-- **Digital identitetsrevolusjon**: HD03250 (Prop. 2025/26:250) oppretter en statlig e-ID-myndighet, avslutter BankIDs eksklusive posisjon og implementerer EUs eIDAS 2.0-krav. Tverr-partisk vedtakelsessannsynlighet: 0,91.
-- **NATOs operative integrasjon**: HD03254 (Prop. 2025/26:254) muliggjør felles kommandooperasjoner uten forhåndsgodkjenning; gjenspeiler Finlands interoperabilitetslovgivning fra 2024. Vedtakelsessannsynlighet: 0,88.
-- **Transparensspill**: HD03258 (Prop. 2025/26:258) øker opplysningskravene til politiske partiers finansiering — uvanlig nok et transparenstiltak foreslått av den sittende regjeringen før et valg. Utvalg: KU (ledet av S-opposisjonsmedlem Ida Karkiainen).
-- **Skatteverkets utvidelse**: HD03261 (Prop. 2025/26:261) utvider Skatteverkets undersøkelsesmandat for registreringer — kombinert med HD03250 skapes en utvidet statlig digital identitetsinfrastruktur.
+
+- **Digital identitetsrevolusjon**: HD03250 (Prop. 2025/26:250) oppretter en statlig e-ID-myndighet og avslutter BankID:s eksklusive posisjon og implementerer EUs eIDAS 2.0-krav. Tverrpolitisk vedtakelsessannsynlighet: 0,91.
+- **NATOs operasjonelle integrasjon**: HD03254 (Prop. 2025/26:254) muliggjør felles kommandooperasjoner uten forhåndsgodkjenning; speiler Finlands 2024 interoperabilitetslovgivning. Vedtakelsessannsynlighet: 0,88.
+- **Transparensmanøver**: HD03258 (Prop. 2025/26:258) øker kravene til offentliggjøring av politiske partiers finansiering — uvanlig nok, et transparenstiltak foreslått av sittende regjering før et valg. Utvalg: KU (ledet av S-opposisjonsmedlem Ida Karkiainen).
+- **Skatteverkets utvidelse**: HD03261 (Prop. 2025/26:261) utvider Skatteverkets undersøkelsesfullmakter for registrering — kombinert med HD03250 skapes utvidet statlig digital identitetsinfrastruktur.
 
 ### Risikoindikatorer
-- **Koalisjonssprøhet**: L-avhopp på HD03265-forvaring (WEP 0,20) → lovforslag stanser eller faller; regjeringskrise
-- **EU-kommisjonens timing**: HD03262 må synkroniseres med CEAS-forordningens ikrafttredelse (2026-Q3); for tidlig implementering risikerer overtredelsessak
-- **ECHR-utfordring**: HD03265 utvidede forvaring og HD03267 sikkerhetsterskel møter Art 5/Art 3-prøvelse; Lagrådets uttalelse kritisk
-- **Valgoppholds-press**: SfU/JuU-utvalgsrapporter forfaller i august 2026 — ekstremt tidspress; risiko for viderehenvisning etter valget for HD03262
+
+- **Koalisjonssvakhet**: L-frafall på HD03265 frihetsberøvelse (WEP 0,20) → forslag stanser eller faller; regjeringskrise
+- **EU-Kommisjonens timing**: HD03262 må synkroniseres med CEAS-forordningens ikrafttredelse (2026-Q3); for tidlig gjennomføring risikerer traktatbruddssøksmål
+- **ECHR-utfordring**: HD03265 frihetsberøvelsesutvidelse og HD03267 sikkerhetsterskel møter Art. 5/Art. 3-prøving; Lagrådets uttalelse er kritisk
+- **Valgperiodetidspress**: SfU/JuU-utvalgsrapporter forfaller august 2026 — ekstrem tidsplan; risiko for post-valgshenvisning for HD03262
 
 ### Økonomisk kontekst
-- IMF WEO-2026-04 anslår Sveriges BNP-vekst 2026: ~2,1 % (moderat)
-- Nordiske sammenligninger om gjeld/BNP tilgjengelige; Sverige forblir finanspolitisk konservativt vs. EU-gjennomsnittet
-- Arbeidsmarkedseffekter av migrasjonslovsendringene: mellomlang sikt, ikke umiddelbare
 
-### Fremtidsutsikter
-- **T+72h**: Forventede pressekonferanser fra opposisjonen S og MP; juridiske eksperters kommentarer
-- **T+7d**: Utvalgshenvisning (SfU, JuU, KU) bekreftet; første reaksjoner fra interessenter
-- **T+30d**: SfU offentlig høring om HD03262 sannsynlig; første Lagrådet-uttalelse
-- **T+90d**: Utvalgsrapporter; sluttbehandling ved hurtigsport valgt før valgopphold
-- **T+valg**: HD03262 som sentral valgkampskonflikt hvis ikke vedtatt; S sannsynligvis kampanje for tilbaketrekking
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- IMF WEO-2026-04 anslår Sveriges BNP-vekst 2026: ~2,1 % (moderat)
+- Nordiske sammenligningsdata for gjeld/BNP tilgjengelig; Sverige forblir finanspolitisk konservativt vs. EU-gjennomsnittet
+- Arbeidsmarkedseffekter av endringer i migrasjonslovgivning: mellomlang sikt, ikke umiddelbar
+
+### Horisont
+
+- **T+72t**: Opposisjonspartiene S og MP forventes å holde pressekonferanse; juridisk ekspertkommentar
+- **T+7d**: Utvalg (SfU, JuU, KU) bekrefter henvisning; første interessentreaksjoner
+- **T+30d**: SfU:s offentlige høring om HD03262 sannsynlig; første Lagrådets uttalelse
+- **T+90d**: Utvalgsinnstillinger; endelig behandling hvis fremskyndet før valgopphold
+- **T+valg**: HD03262 som sentralt valgkampkonflikttema hvis ikke vedtatt; S sannsynligvis kampanje for opphevelse
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_sv.md -->
 
 **Artikeldatum**: 2026-05-18  
-**Undermapp**: propositioner  
+**Undermapp**: propositions  
 
 ### BLUF
 
-Kristerssons minoritetsregering lämnade in åtta stora propositioner till riksdagen i en enda lagstiftningssprint inför valet, inklusive ett banbrytande lagförslag (HD03262 / Prop. 2025/26:262) som avskaffar permanenta uppehållstillstånd och anpassar svensk migrationslagstiftning till EU:s nya gemensamma europeiska asylsystem — den mest strukturellt betydelsefulla förändringen sedan asyllagen 2016. Med 118 dagar kvar till riksdagsvalet den 13 september 2026 utgör de fem migrationsrelaterade lagförslagen, en statlig e-legitimationsproposition (HD03250), ett militärt samarbetsavtal (HD03254) och en politisk transparensåtgärd (HD03258) sammantaget regeringens fullständiga programleverans. Liberalernas 16 röster utgör den avgörande koalitionsmarginalen; håller de samman passerar migrationsreformen, faller de på ECHR-grunder (särskilt HD03265 om utökad förvar) stannar nyckellagstiftning och blir centrala valkampanjsfrågor.
+Sveriges Kristerssonska minoritetsregering lämnade in åtta stora propositioner till riksdagen i en enda lagstiftningssprint inför valet, inklusive ett historiskt lagförslag (HD03262 / Prop. 2025/26:262) som avskaffar permanenta uppehållstillstånd och anpassar svensk migrationslagstiftning till EU:s nya gemensamma europeiska asylsystem — den mest strukturellt betydelsefulla förändringen sedan asyllagen 2016. Med 118 dagar kvar till riksdagsvalet den 13 september 2026 utgör det femtedeliga migrationsklustret, en proposition om statlig e-legitimation (HD03250), en proposition om militärt samarbete (HD03254) och en transparensåtgärd för politiken (HD03258) sammantaget regeringens fullständiga programleveransbud. Liberalernas 16 mandat utgör det avgörande koalitionsmarginalen; om de håller går migrationsomvandlingen igenom; om de spricker av ECHR-skäl (särskilt HD03265 om utökad förvar) riskerar nyckelpropositionerna att stanna och bli centrala valfrågor.
 
-### Centrala bedömningar (Hög tillförlitlighet — B2)
+### Nyckelbedömningar (Hög säkerhet — B2)
 
-1. **[KJ-1]** Kristerssons regering har lämnat in ett enastående kluster av fem migrations-/säkerhetspropositioner i en enda lagstiftningssprint, vilket signalerar en medveten strategi för hårdare gränskontroll inför valet riktad mot Sverige-demokrater och moderata konservativa väljare. Sannolikhet: HÖG (0,82).
+1. **[KJ-1]** Kristerssonregeringen har lämnat in ett aldrig tidigare skådat kluster på fem migrations- och säkerhetspropositioner i en enda lagstiftningssprint, vilket signalerar en medveten valstrategi riktad mot Sverigedemokraterna och moderat-konservativa väljare. Sannolikhet: HÖG (0,82).
 
-2. **[KJ-2]** Avskaffandet av permanenta uppehållstillstånd (HD03262) — som anpassar svensk lagstiftning till EU:s migrations- och asylpakt — representerar den mest betydelsefulla strukturella förändringen av svensk migrationsrätt sedan asyllagen 2016. Om det antas eliminerar det permanent legal status för cirka 120 000 tillståndsinnehavare per år och skapar en löpande granskningscykel. Sannolikhet: HÖG (0,85).
+2. **[KJ-2]** Avskaffandet av permanenta uppehållstillstånd (HD03262) — en anpassning av svensk rätt till EU:s migrations- och asylpakt — utgör den mest signifikanta strukturella förändringen av svensk migrationslagstiftning sedan asyllagen 2016. Om lagen antas elimineras rättslig permanens för ungefär 120 000 årliga tillståndsinnehavare och ett rullande granskningscykel inrättas. Sannolikhet: HÖG (0,85).
 
-3. **[KJ-3]** Propositionen om statlig e-legitimation (HD03250) löser ett decennium långt digitalt suveränitetsdödläge: Sverige förlitade sig tidigare enbart på bankutfärdad BankID, vilket skapade leverantörsberoende. Ett statligt alternativ anpassar Sverige till Tyskland, Estland och Danmark och stöds brett över partigränserna. Sannolikhet för bifall: MYCKET HÖG (0,91).
+3. **[KJ-3]** Propositionen om statlig e-legitimation (HD03250) löser ett decenniumslångt dödläge kring digital suveränitet: Sverige förlitade sig tidigare enbart på bankutfärdad BankID, vilket skapade leverantörsberoende. Ett statligt alternativ anpassar Sverige till Tyskland, Estland och Danmark och stöds brett över partigränserna. Genomgångsannolikhet: MYCKET HÖG (0,91).
 
-4. **[KJ-4]** Propositionen om militärt samarbete (HD03254) accelererar NATO:s operativa integration mindre än 24 månader efter Sveriges anslutning. Den signalerar regeringens engagemang för full strukturell interoperabilitet, inte bara formellt medlemskap. Sannolikhet för bifall: HÖG (0,88).
+4. **[KJ-4]** Propositionen om militärt samarbete (HD03254) påskyndar NATO:s operativa integration mindre än 24 månader efter Sveriges anslutning. Den signalerar regeringens åtagande om fullständig strukturell interoperabilitet, inte bara formellt medlemskap. Genomgångsannolikhet: HÖG (0,88).
 
-5. **[KJ-5]** Transparenspropositionen (HD03258) — den sittande regeringen föreslår utökad granskning av politiska partiers finansiering — är en strategisk trovärdighetssignal riktad mot väljare som är oroliga för populistiskt inflytande, troligen driven av nyligen uppmärksammade SD-interna kontroverser. Sannolikhet: MEDEL (0,65).
+5. **[KJ-5]** Transparenspropositionen (HD03258) — en åtgärd föreslagen av den sittande regeringen för att öka granskningen av politiska partiers finansiering — är en strategisk trovärdighetssignal riktad mot väljare som oroar sig för populistiska inslag, troligen drivet av SD:s interna kontroverser. Sannolikhet: MEDEL (0,65).
 
-### Huvudnyhet
-I en enastående lagstiftningssprint 118 dagar före riksdagsvalet den 13 september 2026 lämnade Kristerssons minoritetsregering (M-KD-L, stödd av SD) in åtta stora propositioner till riksdagen inom migration, digital identitet, försvar och politisk transparens. Kärnan — Prop. 2025/26:262 (HD03262) — avskaffar kategorin permanent uppehållstillstånd (PUT) och anpassar svensk lagstiftning till EU:s nya gemensamma europeiska asylsystem (CEAS), vilket placerar Sverige bredvid Danmark (2019), Tyskland och Nederländerna som tidiga antagare av system med enbart tidsbegränsade tillstånd. Simultaneously skapar Prop. 2025/26:250 (HD03250) Sveriges första statliga e-legitimation och avslutar BankID-bankkonsortiets 20-åriga privata monopol, medan Prop. 2025/26:254 (HD03254) avlägsnar inhemska juridiska hinder för operativt NATO-militärt samarbete, mindre än 26 månader efter Sveriges formella anslutning.
+### Ledarartikel
 
-Det femdelade migrationsklustret (HD03262, HD03264, HD03265, HD03267 och tidigare HD03263) representerar Tidöavtalets sista lagstiftningssprint. Justitieminister Johan Forssell (M) och medsignatur Gunnar Strömmer (M) är ansvariga ministrar. Vice statsminister Ebba Busch (KD) undertecknade den 7 maj-propositionerna som statsminister pro tempore. Regeringen kontrollerar 176 mandat — en enmandats majoritet — vilket innebär att Liberalernas 16 röster är matematiskt avgörande, särskilt för HD03265:s utökade förvarsbestämmelser, som L historiskt sett har tonat ned på ECHR-grunder.
+I en aldrig tidigare skådad lagstiftningssprint 118 dagar före riksdagsvalet den 13 september 2026 lämnade Kristerssonregeringen (M–KD–L, med stöd av SD) in åtta stora propositioner till riksdagen om migration, digital identitet, försvar och politisk transparens. Hörnstenen — Prop. 2025/26:262 (HD03262) — avskaffar kategorin permanent uppehållstillstånd (PUT) och anpassar svensk rätt till EU:s nya gemensamma europeiska asylsystem (CEAS), och placerar Sverige vid sidan av Danmark (2019), Tyskland och Nederländerna som tidiga adoptörer av regimer med enbart tidsbegränsade tillstånd. Samtidigt skapar Prop. 2025/26:250 (HD03250) Sveriges första statligt utfärdade e-legitimation och bryter ett 20-årigt privat monopol för BankID-bankkonsortiets räkning, medan Prop. 2025/26:254 (HD03254) undanröjer inhemska rättsliga hinder för operativt NATO-militärsamarbete, knappt 26 månader efter Sveriges formella anslutning.
+
+Det femtedeliga migrationklustret (HD03262, HD03264, HD03265, HD03267 och det tidigare HD03263) utgör Tidöavtalets sista lagstiftningssprint. Justitieminister Johan Forssell (M) och medundertecknare Gunnar Strömmer (M) är ansvariga ministrar. Vice statsminister Ebba Busch (KD) undertecknade den 7 maj-propositionerna som tillförordnad statsminister. Regeringen kontrollerar 176 mandat — en enmandsmajoritet — vilket innebär att Liberalernas 16 mandat är matematiskt avgörande, särskilt för HD03265:s förvarsutvidgning, som L historiskt har modererat av ECHR-skäl.
 
 ### Sekundära vinklar
-- **Digital identitetsrevolution**: HD03250 (Prop. 2025/26:250) skapar en statlig e-legitimationsmyndighet och avslutar BankID:s exklusiva position samt implementerar EU:s eIDAS 2.0-krav. Sannolikhet för partöverskridande bifall: 0,91.
-- **NATO:s operativa integration**: HD03254 (Prop. 2025/26:254) möjliggör gemensamma kommandooperationer utan förhandsgodkännande; speglar Finlands interoperabilitetslagstiftning 2024. Sannolikhet för bifall: 0,88.
-- **Transparenssatsning**: HD03258 (Prop. 2025/26:258) ökar redovisningskraven för politiska partiers finansiering — ovanligt nog en transparensåtgärd som föreslås av den sittande regeringen inför ett val. Utskott: KU (lett av S-oppositionsledamoten Ida Karkiainen).
-- **Skatteverkets utvidgning**: HD03261 (Prop. 2025/26:261) utökar Skatteverkets registreringsundersökningsmandat — kombinerat med HD03250 skapar det en utvidgad statlig digital identitetsinfrastruktur.
 
-### Riskindikationer
-- **Koalitionssprödhet**: L-avhopp om HD03265-förvaret (WEP 0,20) → lagförslag fastnar eller faller; regeringskris
-- **EU-kommissionens timing**: HD03262 måste synkroniseras med CEAS-förordningens ikraftträdande (2026-Q3); för tidig implementering riskerar överträdelseförfarande
-- **ECHR-utmaning**: HD03265:s utökade förvar och HD03267:s säkerhetströskel möter Art 5/Art 3-prövning; Lagrådets yttrande kritiskt
-- **Valuppehållets tidsnöd**: SfU/JuU-utskottsbetänkanden förfaller i augusti 2026 — extremt tidsschema; risk för remiss efter valet för HD03262
+- **Digital identitetsrevolution**: HD03250 (Prop. 2025/26:250) skapar en statlig e-legitimationsmyndighet och avslutar BankID:s exklusiva ställning samt genomför EU:s eIDAS 2.0-krav. Genomgång över partigränserna: 0,91.
+- **NATO:s operativa integration**: HD03254 (Prop. 2025/26:254) möjliggör gemensamma insatsoperationer utan förhandsgodkännande; speglar Finlands 2024 interoperabilitetslagstiftning. Genomgångsannolikhet: 0,88.
+- **Transparenssatsning**: HD03258 (Prop. 2025/26:258) ökar kraven på redovisning av politiska partiers finansiering — ovanligt nog en transparensåtgärd föreslagen av den sittande regeringen inför ett val. Utskott: KU (leds av S-oppositionsledamoten Ida Karkiainen).
+- **Skatteverkets utvidgning**: HD03261 (Prop. 2025/26:261) utökar Skatteverkets utredningsbefogenheter för registrering — kombinerat med HD03250 skapas en utvidgad statlig digital identitetsinfrastruktur.
 
-### Ekonomiskt sammanhang
-- IMF WEO-2026-04 projicerar Sveriges BNP-tillväxt 2026: ~2,1 % (måttlig)
-- Nordiska jämförelser om skuld/BNP tillgängliga; Sverige förblir finanspolitiskt konservativt jämfört med EU-genomsnittet
-- Arbetsmarknadseffekter av migrationslagsändringarna: medellång sikt, inte omedelbara
+### Riskindikatorer
 
-### Framtidsutsikter
-- **T+72h**: Förväntade presskonferenser från oppositionen S och MP; juridiska experters kommentarer
-- **T+7d**: Utskottsremiss (SfU, JuU, KU) bekräftad; första reaktioner från intressenter
-- **T+30d**: SfU:s offentlig utfrågning om HD03262 trolig; Lagrådets första yttrande
-- **T+90d**: Utskottsbetänkanden; slutbehandling om snabbspår väljs före valuppehållet
-- **T+val**: HD03262 som central valstridsfråga om den inte antagits; S tänkbart att campaigna för återtagning
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- **Koalitionsskörhet**: L-avhopp på HD03265 förvarsarrangemang (WEP 0,20) → propositioner stoppas eller faller; regeringskris
+- **EU-kommissionens timing**: HD03262 måste synkroniseras med CEAS-förordningens ikraftträdande (2026-Q3); för tidig genomförande riskerar överträdelseförfarande
+- **ECHR-utmaning**: HD03265 förvarsutvidgning och HD03267 säkerhetströskel möter Art 5/Art 3-granskning; Lagrådets yttrande är kritiskt
+- **Valuppehåll-tidspress**: SfU/JuU-utskottens betänkanden förfaller till augusti 2026 — extrem tidsplan; risk för remiss efter valet för HD03262
+
+### Ekonomisk kontext
+
+- IMF WEO-2026-04 prognostiserar Sveriges BNP-tillväxt 2026: ~2,1 % (måttlig)
+- Nordiska jämförelsetal avseende statsskuld/BNP tillgängliga; Sverige förblir finanspolitiskt konservativt jämfört med EU-genomsnittet
+- Arbetsmarknadseffekter av ändringar i migrationslagstiftning: medellång sikt, inte omedelbar
+
+### Framtidshorisont
+
+- **T+72h**: Oppositionspartierna S och MP förväntar sig presskonferenser; juridisk expertkommentar
+- **T+7d**: Utskott (SfU, JuU, KU) bekräftar remiss; första intressentreaktioner
+- **T+30d**: SfU:s offentliga utfrågning om HD03262 troligen; första Lagrådets yttrande
+- **T+90d**: Utskottsbetänkanden; slutlig behandling om snabbhandläggning sker före valuppehåll
+- **T+val**: HD03262 som central valkonfliktsfrga om den inte antas; S troligen kampanjar för återkallelse
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/executive-brief_zh.md -->
 
 **文章日期**：2026-05-18  
-**子文件夹**：提案  
-**海军评级**：B2
+**子文件夹**：propositions  
+**海军上将评级**：B2
 
-### BLUF
+### BLUF（核心摘要）
 
-克里斯特松少数政府在一次选前立法冲刺中向议会（里克斯达根）提交了八项重大法案，其中包括一项里程碑式法案（HD03262 / Prop. 2025/26:262），该法案取消永久居留许可，并使瑞典移民法与欧盟新的共同欧洲庇护制度（CEAS）接轨——这是自2016年庇护法以来结构性最重大的变化。距2026年9月13日大选还有118天，五项移民法案组合、国家电子身份证提案（HD03250）、军事合作法案（HD03254）和政治透明度措施（HD03258）共同代表政府完整的施政纲领落实。自由党（Liberalerna）的16票构成关键联合执政票差；若维持，移民改革获批；若因欧洲人权公约问题（尤其是HD03265的扩大拘留）分裂，关键法案将陷入僵局，成为竞选核心争议焦点。
+瑞典克里斯特森少数派政府在一次选前立法冲刺中向议会（Riksdag）提交了八项重要法案，其中包括一项具有里程碑意义的法案（HD03262 / Prop. 2025/26:262），该法案废除了永久居留许可，使瑞典移民法与欧盟新的共同欧洲庇护体系（CEAS）保持一致——这是自2016年庇护法以来最具结构性意义的变革。距2026年9月13日大选还有118天，五项移民法案组合、国家电子身份证提案（HD03250）、军事合作提案（HD03254）和政治透明度措施（HD03258）共同构成政府完整的施政纲领兑现方案。自由党的16票构成关键联合阵线；若维持稳定，移民改革将获通过；若因《欧洲人权公约》（ECHR）问题（尤其是HD03265的拘留扩展）而分裂，核心法案将陷入僵局并成为选举期间的核心争议焦点。
 
-### 核心判断（高置信度 — B2）
+### 关键判断（高置信度 — B2）
 
-1. **[KJ-1]** 克里斯特松政府在单次立法冲刺中提交了前所未有的五项移民/安全法案组合，表明这是一项蓄意为之的选前强化执法战略，针对瑞典民主党支持者和温和保守派选民。概率：高（0.82）。
+1. **[KJ-1]** 克里斯特森政府在一次立法冲刺中提交了前所未有的五项移民/安全法案组合，显示出针对瑞典民主党和温和保守选民的蓄意选前策略。概率：高（0.82）。
 
-2. **[KJ-2]** 取消永久居留许可（HD03262）——使瑞典法律与欧盟移民庇护协议接轨——代表自2016年庇护法以来瑞典移民法最重要的结构性变革。若获批，将消除约12万名年度许可证持有者的法律永久地位，并建立滚动审核周期。概率：高（0.85）。
+2. **[KJ-2]** 废除永久居留许可（HD03262）——使瑞典法律适应欧盟移民与庇护公约——代表自2016年庇护法以来瑞典移民法领域最重大的结构性变化。若获通过，将消除每年约12万名许可持有人的法律永久性，并建立持续审查周期。概率：高（0.85）。
 
-3. **[KJ-3]** 国家电子身份证提案（HD03250）解决了长达十年的数字主权僵局：瑞典此前完全依赖银行发行的BankID，形成供应商锁定。国家替代方案使瑞典与德国、爱沙尼亚和丹麦接轨，并获得跨党派广泛支持。通过概率：极高（0.91）。
+3. **[KJ-3]** 国家电子身份证提案（HD03250）解决了长达十年的数字主权僵局：瑞典此前完全依赖银行发行的BankID，造成供应商锁定。国家替代方案使瑞典与德国、爱沙尼亚和丹麦并肩，获得跨党派广泛支持。通过概率：非常高（0.91）。
 
-4. **[KJ-4]** 军事合作法案（HD03254）在瑞典加入北约不足24个月后加速了北约作战整合。表明政府致力于实现完整的结构性互操作性，而非仅仅是正式成员资格。通过概率：高（0.88）。
+4. **[KJ-4]** 军事合作提案（HD03254）在瑞典加入北约不到24个月内加快了北约的操作融合，体现了政府对全面结构性互操作性而非仅仅正式成员资格的承诺。通过概率：高（0.88）。
 
-5. **[KJ-5]** 透明度提案（HD03258）——执政政府提议加强对政党资金的审查——是针对担忧民粹主义影响的选民发出的战略可信度信号，可能源于近期瑞典民主党内部争议。概率：中等（0.65）。
+5. **[KJ-5]** 透明度提案（HD03258）——政府提议加强对政党资金和流程的监督——是针对担忧民粹主义影响的选民发出的战略公信力信号，可能由近期SD党内争议推动。概率：中等（0.65）。
 
 ### 主要报道
-在距2026年9月13日议会选举还有118天的前所未有的立法冲刺中，克里斯特松少数政府（M-KD-L，获SD支持）向里克斯达根提交了涉及移民、数字身份、国防和政治透明度的八项重大提案。核心法案——Prop. 2025/26:262（HD03262）——取消永久居留许可（PUT）类别，并使瑞典法律与欧盟新的共同欧洲庇护制度（CEAS）接轨，将瑞典与丹麦（2019年）、德国和荷兰并列为仅采用有期限许可证制度的先行国。与此同时，Prop. 2025/26:250（HD03250）设立瑞典首个国家发行的电子身份证，终结BankID银行联合体长达20年的私人垄断；Prop. 2025/26:254（HD03254）则在瑞典正式加入北约不足26个月后，消除了北约军事作战合作的国内法律障碍。
 
-五项移民法案组合（HD03262、HD03264、HD03265、HD03267及早先的HD03263）代表蒂德协议的最终立法冲刺。司法部长约翰·福塞尔（M）和共同签署人古纳尔·斯特勒默尔（M）是主管部长。副总理埃巴·布什（KD）以代理总理身份签署了5月7日的提案。政府控制176席——以一席之差的多数——这意味着自由党的16票在数学上举足轻重，尤其是关于HD03265扩大拘留条款，自由党历来出于欧洲人权公约理由对此持温和立场。
+在2026年9月13日瑞典大选前118天，克里斯特森少数派政府（M–KD–L，获SD支持）向议会提交了八项涵盖移民、数字身份、国防和政治透明度的重要提案。核心法案——Prop. 2025/26:262 (HD03262)——废除永久居留许可（PUT）类别，使瑞典法律与欧盟新共同欧洲庇护体系（CEAS）保持一致，使瑞典与丹麦（2019年）、德国和荷兰并列为仅提供临时许可体制的早期采用者。与此同时，Prop. 2025/26:250 (HD03250)创建瑞典有史以来第一张国家颁发的电子身份证，结束了BankID银行联合体长达20年的私人垄断；而Prop. 2025/26:254 (HD03254)则在瑞典正式入约不到26个月后，消除了与北约开展作战军事合作的国内法律障碍。
+
+五项移民法案（HD03262、HD03264、HD03265、HD03267及早前的HD03263）代表了Tidöavtal协议的最终立法冲刺。司法部长约翰·福尔塞尔（M）和联署人贡纳尔·斯特罗默（M）为责任部长。副首相埃巴·布什（KD）以代理首相身份签署了5月7日的提案。政府掌控176席——一席多数——这意味着自由党的16席具有决定性的数学意义，尤其是针对HD03265的拘留延长，L出于ECHR理由历史上一直对此持温和态度。
 
 ### 次要角度
-- **数字身份革命**：HD03250（Prop. 2025/26:250）设立国家电子身份证机构，终结BankID的独家地位，落实欧盟eIDAS 2.0要求。跨党派通过概率：0.91。
-- **北约作战整合**：HD03254（Prop. 2025/26:254）允许无需事先批准的联合指挥作战；反映了芬兰2024年互操作性立法。通过概率：0.88。
-- **透明度筹码**：HD03258（Prop. 2025/26:258）提高了政党资金披露要求——罕见地由执政政府在选举前提出透明度措施。委员会：KU（由社民党反对党议员伊达·卡尔基亚宁主持）。
-- **税务机关（Skatteverket）扩张**：HD03261（Prop. 2025/26:261）扩大了Skatteverket的注册调查权限——与HD03250相结合，形成扩展的国家数字身份基础设施。
+
+- **数字身份革命**：HD03250 (Prop. 2025/26:250)创建国家电子身份证机构，终结BankID的独家地位并落实欧盟eIDAS 2.0要求。跨党派通过概率：0.91。
+- **北约作战融合**：HD03254 (Prop. 2025/26:254)允许无需事先批准的联合指挥行动；映射芬兰2024年互操作性立法。通过概率：0.88。
+- **透明度操弄**：HD03258 (Prop. 2025/26:258)提高政党资金公开要求——不寻常地，现届政府在选举前提议的透明度措施。委员会：KU（由S党反对派议员伊达·卡尔基艾宁主持）。
+- **Skatteverket扩张**：HD03261 (Prop. 2025/26:261)扩展瑞典税务局的注册调查权限——与HD03250结合，创建扩展的国家数字身份基础设施。
 
 ### 风险指标
-- **联盟脆弱性**：自由党在HD03265拘留问题上的脱离（WEP 0.20）→法案搁置或被否决；政府危机
-- **欧盟委员会时机**：HD03262需与CEAS条例生效时间（2026年第三季度）同步；过早实施有被提起违规程序的风险
-- **欧洲人权公约挑战**：HD03265拘留扩大和HD03267安全门槛面临第5条/第3条审查；拉格拉德咨询意见关键
-- **选举休会时间压力**：SfU/JuU委员会报告于2026年8月到期——时间极度紧迫；HD03262存在选举后转介风险
+
+- **联合脆弱性**：L在HD03265拘留问题上倒戈（WEP 0.20）→ 法案停滞或倒台；政府危机
+- **欧盟委员会时间节点**：HD03262必须与CEAS条例生效（2026年Q3）同步；提前实施存在违规程序风险
+- **ECHR挑战**：HD03265拘留延长和HD03267安全门槛面临第5条/第3条审查；拉格罗德意见至关重要
+- **选举休会时间压力**：SfU/JuU委员会报告2026年8月到期——时间表极为紧张；HD03262存在选后提交风险
 
 ### 经济背景
-- IMF WEO-2026-04预测瑞典2026年GDP增长：约2.1%（温和）
-- 北欧债务/GDP比较数据可用；瑞典财政立场相对欧盟平均水平保守
-- 移民法律变化对劳动力市场的影响：中期，非即时
 
-### 未来展望
+- IMF WEO-2026-04预测瑞典2026年GDP增长：约2.1%（温和）
+- 北欧国家债务/GDP比较数据可用；瑞典相对于欧盟平均水平保持财政保守
+- 移民法变化对劳动力市场的影响：中期，非即时
+
+### 时间展望
+
 - **T+72小时**：预计反对党S和MP举行新闻发布会；法律专家评论
-- **T+7天**：委员会（SfU、JuU、KU）转介确认；各利益相关方首批回应
-- **T+30天**：SfU就HD03262举行公开听证会的可能性；拉格拉德首份意见
-- **T+90天**：委员会报告；如在选举休会前选择快速程序则进行最终读会
-- **T+选举**：若未获通过，HD03262将成为竞选核心争议点；S可能开展撤销运动
-<!-- source-sha: e76edad6f4d7eda2398ea36735cd3285edb55476 -->
+- **T+7天**：委员会（SfU, JuU, KU）确认提交；利益相关方首次反应
+- **T+30天**：SfU就HD03262举行公开听证会可能性高；拉格罗德首次意见
+- **T+90天**：委员会报告；若在选举休会前完成紧急审议则进行最终表决
+- **T+大选**：若未通过，HD03262将成为核心竞选争议议题；S可能主张废除
+
+<!-- source-sha: 0cf4609bc529d722a2498436e06eb7be2603794b -->
 
 ## Geopolitical Context
 <!-- source: geopolitical-context.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/propositions/geopolitical-context.md -->
