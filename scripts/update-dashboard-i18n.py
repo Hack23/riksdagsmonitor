@@ -27,8 +27,12 @@ LANGUAGES = {
     'zh': {'locale': 'zh_CN', 'hreflang_code': 'zh'}
 }
 
-# Enhanced font import with CJK support
-ENHANCED_FONTS = '''<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Sans+Hebrew:wght@400;500;700&display=swap" rel="stylesheet">'''
+# Fonts removed (2026-05-19): we no longer load Google Fonts on any page.
+# The site uses a system-ui font stack (San Francisco / Segoe UI / Roboto)
+# defined in styles.css, which renders well on every platform with zero
+# network cost and zero font-swap CLS. CJK / RTL languages fall back to
+# the user's locally installed CJK/RTL fonts.
+ENHANCED_FONTS = ''
 
 def update_file(lang_code):
     """Update a single dashboard file for the given language."""

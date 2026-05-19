@@ -216,11 +216,10 @@ export function generateIndexHTML(
 
   const jsonLd: unknown[] = [organizationLd, websiteLd, itemListLd, breadcrumbLd];
 
-  const extraHead = `    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap"></noscript>`;
+  // No third-party font CDN — styles.css uses a system-ui font stack
+  // (San Francisco / Segoe UI / Roboto) so every platform renders in its
+  // native UI font with zero network cost and zero font-swap CLS.
+  const extraHead = '';
 
   const extraStyle = isRTL ? `
     /* RTL-specific overrides for Arabic and Hebrew */

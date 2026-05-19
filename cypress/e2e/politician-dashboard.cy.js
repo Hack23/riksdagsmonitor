@@ -272,8 +272,11 @@ describe('Politician Dashboard', () => {
   });
 
   describe('CSS and Styling', () => {
-    it('should load external fonts', () => {
-      cy.get('link[href*="fonts.googleapis.com"]').should('exist');
+    it('should not load any third-party font CDN (system-ui font stack)', () => {
+      // Removed May 2026: Google Fonts no longer used on any page (system
+      // fonts render faster, with zero font-swap CLS and a tighter CSP).
+      cy.get('link[href*="fonts.googleapis.com"]').should('not.exist');
+      cy.get('link[href*="fonts.gstatic.com"]').should('not.exist');
     });
 
     it('should have custom styling loaded', () => {
