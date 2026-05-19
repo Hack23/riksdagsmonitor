@@ -12,7 +12,7 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { initLazyDashboards, CHART_SKELETON_CLASS, DEFAULT_ROOT_MARGIN, DEFAULT_THRESHOLD, parseRootMarginPx } from '../src/browser/lazy-loader.js';
+import { initLazyDashboards, CHART_SKELETON_CLASS, DEFAULT_ROOT_MARGIN, DEFAULT_THRESHOLD, HOMEPAGE_ROOT_MARGIN, parseRootMarginPx } from '../src/browser/lazy-loader.js';
 
 // ─── IntersectionObserver mock ────────────────────────────────────────────────
 
@@ -424,6 +424,26 @@ describe('DEFAULT_ROOT_MARGIN regression contract', () => {
     expect(observerOptions).not.toBeNull();
     expect(observerOptions.rootMargin).toBe(DEFAULT_ROOT_MARGIN);
     expect(observerOptions.threshold).toBe(DEFAULT_THRESHOLD);
+  });
+
+  // ─── Homepage contract: index*.html must NOT pre-fetch 6 MiB of CSV ──
+  // The narrow HOMEPAGE_ROOT_MARGIN is selected from main.ts when the
+  // current pathname is not a single-dashboard "deep link" — keep this
+  // constant smaller than 2 viewport heights so #coalition-status only
+  // loads when the user actually scrolls toward it.  Production
+  // Lighthouse run (19 May 2026) showed Performance=4 with the previous
+  // 2000 px default eagerly pre-fetching coalition-loader on the
+  // homepage.
+  it('exports HOMEPAGE_ROOT_MARGIN = "300px"', () => {
+    expect(HOMEPAGE_ROOT_MARGIN).toBe('300px');
+  });
+
+  it('parses HOMEPAGE_ROOT_MARGIN to a positive sub-viewport pixel count', () => {
+    const px = parseRootMarginPx(HOMEPAGE_ROOT_MARGIN);
+    expect(px).toBeGreaterThan(0);
+    // Must be substantially smaller than two viewport heights (≈ 2 × 720)
+    // so multi-section pages don't eagerly pre-fetch below-fold content.
+    expect(px).toBeLessThan(1000);
   });
 });
 
