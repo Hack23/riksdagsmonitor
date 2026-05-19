@@ -122,6 +122,35 @@ export default defineConfig({
         'scripts/validate-against-cia-schemas.ts',
         'scripts/validate-translations.ts',
         'scripts/validate-news-translations.ts',
+        // Bounded-context modules split out of the `validate-news-translations.ts`
+        // CLI shim above (21-line entry now re-exports from a per-concern
+        // subtree). Exercised end-to-end by `npm run validate-news` in
+        // workflow `news-link-and-translations-validation.yml`, not by unit
+        // tests. Mirrors the `scripts/download-parliamentary-data/**` and
+        // `scripts/imf-fetch/**` precedents above (refactored 2026-05;
+        // see PR #2593, Refactor 7/8).
+        'scripts/validators/news-translations/**',
+        // Refactor 7/8 (PR #2593) split shims: `scripts/validate-article.ts`
+        // and `scripts/validate-executive-brief-translations.ts` are now
+        // ≤ 26-line CLI shims re-exporting the per-rule subtree. The rule
+        // leaves under `scripts/validators/article/rules/**` and
+        // `scripts/validators/executive-brief-translations/{counters,extractors,rules,strippers,types,validate-translation-content}.ts`
+        // remain inside the gate (unit-tested by `tests/validate-article.test.ts`,
+        // `tests/validate-executive-brief-translations.test.ts`, and the new
+        // `tests/validators-article-rules.test.ts`). The CLI / orchestrator /
+        // walker / file-I/O files (process.argv parsing + fs walk on import,
+        // exercised by `exec-brief-translation-checks.yml` and the per-type
+        // news workflows) are excluded with the same rationale as the
+        // `scripts/download-parliamentary-data/**` precedent above.
+        'scripts/validate-executive-brief-translations.ts',
+        'scripts/validators/article/cli.ts',
+        'scripts/validators/article/index.ts',
+        'scripts/validators/article/walker.ts',
+        'scripts/validators/article/source-mermaid.ts',
+        'scripts/validators/article/rules/required-artifacts.ts',
+        'scripts/validators/executive-brief-translations/cli.ts',
+        'scripts/validators/executive-brief-translations/index.ts',
+        'scripts/validators/executive-brief-translations/render-report.ts',
         'scripts/validate-file-ownership.ts',
         'scripts/validate-mcp-reliability.ts',
         'scripts/validate-methodology-reflection.ts',

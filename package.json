@@ -74,7 +74,7 @@
     "check:analysis-language": "tsx scripts/check-analysis-language.ts",
     "generate-types": "npx tsx scripts/generate-types-from-cia-schemas.ts",
     "validate-translations": "npx tsx scripts/validate-translations.ts",
-    "validate-news": "node scripts/validate-news-translations.ts",
+    "validate-news": "npx tsx scripts/validate-news-translations.ts",
     "validate-exec-brief-translations": "npx tsx scripts/validate-executive-brief-translations.ts",
     "validate-article": "npx tsx scripts/validate-article.ts",
     "validate-all": "npm run htmlhint && npm run validate-translations && npm run validate-news && npm run validate-article",
