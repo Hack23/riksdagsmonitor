@@ -25,9 +25,15 @@ export interface FetchWithRetryOptions {
  * GET `url` with exponential back-off retry on 429 / 5xx / network
  * errors. Throws {@link ImfHttpError} on non-OK responses.
  *
- * The `extraHeaders` map is the auth boundary — Datamapper transport
- * MUST pass `{}` (defensive: rejects `Ocp-Apim-Subscription-Key`),
- * SDMX transport injects the subscription key here.
+ * The `extraHeaders` map is the auth boundary: Datamapper transport
+ * passes `{}` (no subscription key) and SDMX transport injects the
+ * `Ocp-Apim-Subscription-Key` header here. This helper itself does
+ * NOT validate the contents of `extraHeaders` — the
+ * "Datamapper transport never carries an SDMX subscription key"
+ * convention is enforced at the call sites (see
+ * `scripts/imf/transport/datamapper.ts`) and asserted by the
+ * "IMF SDMX subscription key auth boundary" static-source scan in
+ * `tests/imf/refactor-invariants.test.ts`.
  */
 export async function fetchWithRetry(
   url: string,

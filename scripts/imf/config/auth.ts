@@ -2,11 +2,17 @@
  * @module imf/config/auth
  * @description IMF Data SDMX subscription key resolver.
  *
- * **This file is the sole reader of `IMF_SDMX_SUBSCRIPTION_KEY` and
- * `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY` in the codebase.** Any other
- * module that needs the key MUST call {@link resolveSdmxSubscriptionKey}
- * — never read `process.env` directly. Enforced by the unit test in
- * `tests/imf/auth-isolation.test.ts`.
+ * **This file is the sole reader of `IMF_SDMX_SUBSCRIPTION_KEY` in
+ * the codebase.** Any other module that needs the key MUST call
+ * {@link resolveSdmxSubscriptionKey} — never read `process.env`
+ * directly. Enforced by the static-source scan in
+ * `tests/imf/refactor-invariants.test.ts` ("IMF SDMX subscription key
+ * auth boundary").
+ *
+ * `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY` is intentionally **not** read
+ * by any code in this repository — it is the cold rotation key,
+ * stored only (see `analysis/imf/agentic-integration.md §"Pre-warm
+ * gate" → "Key rotation"`).
  *
  * Rationale: keeps the auth surface minimal per the
  * `Authentication-and-Credentials-for-Agentic-Workflows` skill, and

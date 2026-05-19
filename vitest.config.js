@@ -139,6 +139,19 @@ export default defineConfig({
         'scripts/fetch-calendar.ts',
         'scripts/fetch-voting-records.ts',
         'scripts/imf-fetch.ts',
+        // Bounded-context CLI subcommands split out of the `imf-fetch.ts`
+        // shim above (44-line entry now re-exports from a per-concern
+        // subtree). Each subcommand is a thin argv-router → fetch → write
+        // wrapper around the unit-tested `scripts/imf/**` library, exercised
+        // end-to-end by the 14 `news-*.lock.yml` workflows via
+        // `tsx scripts/imf-fetch.ts <subcommand> …`. Excluding the whole
+        // subtree keeps the coverage gate aligned with the parent CLI's
+        // historic exclusion (refactored 2026-05; mirrors the
+        // `scripts/download-parliamentary-data/**` precedent above).
+        'scripts/imf-fetch/**',
+        // Pure-type module for the IMF client (interfaces + type aliases).
+        // No runtime code, therefore no runtime coverage to measure.
+        'scripts/imf/types.ts',
         'scripts/statskontoret-fetch.ts',
         // CLI fetch scripts that exec at module load (process.argv parsing
         // + top-level file I/O), exercised by integration smoke tests
