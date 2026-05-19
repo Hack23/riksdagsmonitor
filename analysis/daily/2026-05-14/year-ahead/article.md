@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: year-ahead
 slug: 2026-05-14-year-ahead
 source_folder: analysis/daily/2026-05-14/year-ahead
-generated_at: 2026-05-19T16:18:04.985Z
+generated_at: 2026-05-19T19:04:02.515Z
 language: en
 layout: article
 ---
