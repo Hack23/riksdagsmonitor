@@ -585,6 +585,59 @@ describe('manifest full-text outcomes integration contract', () => {
     expect(diagRow).toContain('at fetch (line 1)');
     expect(diagRow).toContain('at next (line 2)');
   });
+
+  it('escapes backslashes before pipes so escaped-pipe sentinels are unambiguous', () => {
+    // CodeQL `js/incomplete-sanitization` regression guard. Input that
+    // already contains a literal backslash (e.g. a Windows path fragment
+    // or a serialised regex) must not be allowed to combine with the
+    // subsequent `\|` insertion to look like an escaped backslash + raw
+    // pipe — which would re-open a new table column in the markdown
+    // renderer. Backslash escaping happens FIRST so every `\|` in the
+    // output is the sanitizer's own sentinel, never the caller's data.
+    const manifest = serializeDataManifest(
+      '2026-05-15',
+      '2026-05-15 00:00 UTC',
+      ['search_dokument'],
+      { motions: 0 },
+      0,
+      null,
+      [
+        {
+          tool: 'search_dokument',
+          query: { path: 'C:\\Users\\runner|admin' },
+          resultCount: 0,
+          coverageState: 'fetch_error',
+          provenance: {
+            provider: 'riksdag-regering',
+            endpoint: 'https://riksdag-regering-ai.onrender.com/mcp',
+            tool: 'search_dokument',
+            query: { path: 'C:\\Users\\runner|admin' },
+            resultCount: 0,
+            coverageState: 'fetch_error',
+            retrieval: 'live',
+            retrievedAt: '2026-05-15T00:00:00.000Z',
+          },
+          notes: 'path \\\\ contains | pipe',
+        },
+      ],
+      [],
+      { processed: 0, resolved: 0, retained: 0, expired: 0, enqueued: 0 },
+    );
+
+    const diagRow = manifest
+      .split('\n')
+      .find(line => line.includes('search_dokument') && line.includes('fetch_error'));
+    expect(diagRow).toBeDefined();
+    // Each caller-supplied `\` becomes `\\` and each caller-supplied `|`
+    // becomes `\|`. The notes payload `path \\ contains | pipe` therefore
+    // becomes `path \\\\ contains \| pipe` in the rendered cell — i.e. four
+    // literal backslashes before ` contains `, and an unambiguous escaped
+    // pipe before ` pipe`. Critically, the backslash pass MUST run before
+    // the pipe pass, otherwise the trailing `\` in the input could combine
+    // with the sanitizer's own `\|` and look like an escaped-backslash +
+    // raw-pipe sequence (re-opening a markdown table column).
+    expect(diagRow).toContain('path \\\\\\\\ contains \\| pipe');
+  });
 });
 
 describe('isDocumentNotIndexedError (transport vs document-level disambiguation)', () => {

@@ -29,11 +29,18 @@ export function formatTimestampForMarkdown(date: Date = new Date()): string {
  * and backticks — all of which corrupt the table layout. We collapse
  * whitespace and escape pipes so each diagnostic row remains a single,
  * parseable row.
+ *
+ * **Escape ordering matters**: backslashes are doubled first so that any
+ * subsequent `\|` insertion remains an unambiguous escaped pipe (an input
+ * like `foo\` followed by `|bar` must not be misread as a literal pipe
+ * preceded by an escaped backslash). This is the canonical fix flagged by
+ * CodeQL `js/incomplete-sanitization`.
  */
 export function escapeMarkdownCell(value: unknown): string {
   if (value === null || value === undefined) return '';
   const str = typeof value === 'string' ? value : String(value);
   return str
+    .replace(/\\/g, '\\\\')
     .replace(/\r\n?/g, ' ')
     .replace(/\n/g, ' ')
     .replace(/\t/g, ' ')

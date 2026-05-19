@@ -127,6 +127,13 @@ export default defineConfig({
         'scripts/validate-methodology-reflection.ts',
         'scripts/catalog-downloaded-data.ts',
         'scripts/download-parliamentary-data.ts',
+        // Bounded-context modules split out of the CLI shim above (44-line
+        // entry now re-exports from a per-concern subtree). Each leaf is
+        // still only reachable through the CLI `main()` and is exercised
+        // by the same news-workflow integration smoke tests, not by unit
+        // tests. Excluding the whole subtree keeps the gate aligned with
+        // the parent CLI's exclusion (refactored 2026-05; see PR #2589).
+        'scripts/download-parliamentary-data/**',
         'scripts/fetch-rir-followups.ts',
         'scripts/fetch-calendar.ts',
         'scripts/fetch-voting-records.ts',
@@ -239,6 +246,22 @@ export default defineConfig({
         // dedicated tests for the remaining branches tracked as follow-up.
         'scripts/mcp-client/client.ts',
         'scripts/parliamentary-data/data-downloader.ts',
+        // Bounded-context modules split out of `data-downloader.ts` (242-line
+        // orchestrator now re-exports from a per-concern subtree). The
+        // per-doctype fetch tasks, full-text enrichment, not-indexed error
+        // wrapper, and date/RM helpers are all network-client-adjacent
+        // surfaces tested via mocks alongside the parent; dedicated unit
+        // tests for the remaining branches are tracked as follow-up
+        // (refactored 2026-05; see PR #2589).
+        'scripts/parliamentary-data/fetch-tasks/**',
+        'scripts/parliamentary-data/enrichment/**',
+        'scripts/parliamentary-data/errors/**',
+        'scripts/parliamentary-data/helpers/**',
+        // Pure-barrel router for the persistence subsystem (re-exports
+        // from `./persistence/*`, no executable branching). Each leaf is
+        // individually gated and unit-tested via `tests/data-persistence.test.ts`
+        // and `tests/parliamentary-data/persistence/meta-sidecar.test.ts`.
+        'scripts/parliamentary-data/data-persistence.ts',
         // CLI dispatchers (shebang + process.argv inside the index entry).
         'scripts/generate-rss.ts',
         'scripts/generate-news-indexes/index.ts',
