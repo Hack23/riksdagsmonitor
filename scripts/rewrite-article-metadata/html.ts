@@ -26,23 +26,33 @@ export function htmlEscape(s: string): string {
 }
 
 export function htmlUnescape(s: string): string {
+  // NOTE: `&amp;` MUST be unescaped LAST to avoid double-unescape bugs.
+  // E.g. the input `&amp;lt;` was originally `&lt;` escaped once; decoding
+  // `&amp;` first would yield `&lt;` → `<` (wrong). Decoding the other
+  // named entities first and `&amp;` last yields the correct `&lt;`.
+  // (CodeQL js/double-escaping)
   return s
-    .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&apos;/g, "'")
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
-    .replace(/&nbsp;/g, ' ');
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&');
 }
 
 /** Strip inline HTML tags and collapse whitespace to produce plain prose. */
 export function stripTagsToText(fragment: string): string {
-  return fragment
-    .replace(/<br\s*\/?>/gi, ' ')
-    .replace(/<[^>]+>/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+  // Loop the tag-strip until the string stabilises so nested or malformed
+  // tag-like constructs (e.g. `<a<b>c>`) are fully removed rather than
+  // leaving an unmatched residue. (CodeQL js/incomplete-multi-character-sanitization)
+  let prev: string;
+  let out = fragment.replace(/<br\s*\/?>/gi, ' ');
+  do {
+    prev = out;
+    out = out.replace(/<[^>]*>/g, '');
+  } while (out !== prev);
+  return out.replace(/\s+/g, ' ').trim();
 }
 
 /** Decode common HTML entities used in our articles (numeric + named). */
