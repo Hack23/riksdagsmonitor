@@ -111,6 +111,13 @@ describe('persistence sidecar discipline — writeDocumentAndMeta', () => {
     expect((doc as Record<string, unknown>)['mcpSignals']).toBeDefined();
   });
 
+  it('throws if baseFilename does not end with .json', () => {
+    const dir = mktmp();
+    expect(() =>
+      writeDocumentAndMeta(dir, 'H901FiU1.txt', SAMPLE_DOC, METADATA),
+    ).toThrow("must end with '.json'");
+  });
+
   it('creates the output directory if it does not exist', () => {
     const dir = path.join(mktmp(), 'nested', 'deeper');
     expect(fs.existsSync(dir)).toBe(false);

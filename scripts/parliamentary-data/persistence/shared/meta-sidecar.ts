@@ -132,6 +132,11 @@ export function writeDocumentAndMeta(
   doc: RawDocument,
   metadata: PersistenceMetadata,
 ): void {
+  if (!baseFilename.endsWith('.json')) {
+    throw new Error(
+      `writeDocumentAndMeta: baseFilename must end with '.json', got '${baseFilename}'`,
+    );
+  }
   ensureDir(dir);
   const persistable = stripInMemoryCoverageMetadata(doc);
   fs.writeFileSync(

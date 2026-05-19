@@ -14,7 +14,8 @@ import { DATA_ROOT, ensureDir } from './shared/meta-sidecar.js';
 
 /**
  * Persist World Bank API response data.
- * Stored under `analysis/data/worldbank/{indicator}/{country}.json`
+ * Stored under `analysis/data/worldbank/{sanitized-indicator}/{sanitized-country}.json`
+ * where both segments are sanitized via `sanitizeDokId` (path traversal prevention).
  *
  * @param indicator  - World Bank indicator ID (e.g. 'NY.GDP.MKTP.CD')
  * @param country    - Country code (e.g. 'SWE')

@@ -98,11 +98,15 @@ export function runWeeklyAggregation(weekLabel: string): void {
         }
       }
 
-      if (fs.existsSync(dayDir) && fs.statSync(dayDir).isDirectory()) {
+      // When no unscoped manifest exists, sum counts from ALL scoped
+      // sub-manifests (per doc-type). When the unscoped manifest IS present
+      // it is authoritative and sub-manifests are skipped to avoid
+      // double-counting.
+      if (!dayHasData && fs.existsSync(dayDir) && fs.statSync(dayDir).isDirectory()) {
         for (const sub of fs.readdirSync(dayDir).sort()) {
           if (!KNOWN_DOC_TYPES.has(sub)) continue;
           const subManifest = path.join(dayDir, sub, 'data-download-manifest.md');
-          if (fs.existsSync(subManifest) && !dayHasData) {
+          if (fs.existsSync(subManifest)) {
             dayHasData = true;
             const content = fs.readFileSync(subManifest, 'utf8');
             const docsMatch =
