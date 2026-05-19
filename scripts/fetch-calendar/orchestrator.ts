@@ -8,7 +8,7 @@
  *    page there is no point retrying.
  * 2. **Web fallback**: scrape `riksdagen.se/sv/kalendarium/` instead.
  *
- * Decision lives in **one** function ≤ 80 lines, per the refactor brief.
+ * Decision lives in **one** function ≤ 90 lines, per the refactor brief.
  *
  * @author Hack23 AB
  * @license Apache-2.0

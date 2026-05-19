@@ -87,7 +87,6 @@ export async function fetchWebCalendar(
 
     html = await response.text();
   } catch (err) {
-    clearTimeout(tid);
     const msg = err instanceof Error ? err.message : String(err);
     throw new Error(`Riksdag web calendar fetch failed: ${msg}`, { cause: err });
   } finally {

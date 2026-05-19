@@ -86,7 +86,6 @@ export async function callMcpCalendarEvents(
       );
     }
   } catch (err) {
-    clearTimeout(tid);
     if (err instanceof CalendarMcpError) throw err;
     const msg = err instanceof Error ? err.message : String(err);
     throw new CalendarMcpError(`MCP fetch failed: ${msg}`, 'network');
