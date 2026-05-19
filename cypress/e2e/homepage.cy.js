@@ -52,8 +52,12 @@ describe('Riksdagsmonitor Homepage', () => {
     cy.get('a[href*="index_sv.html"], a[href*="index_da.html"]').should('exist');
   });
   
-  it('should load external fonts', () => {
-    cy.get('link[href*="fonts.googleapis.com"]').should('exist');
+  it('should use system-ui font stack (no third-party font CDN)', () => {
+    // As of May 2026, index*.html no longer loads Google Fonts — text
+    // renders in each platform's native UI font (San Francisco /
+    // Segoe UI / Roboto) for fastest paint and zero font-swap CLS.
+    cy.get('link[href*="fonts.googleapis.com"]').should('not.exist');
+    cy.get('link[href*="fonts.gstatic.com"]').should('not.exist');
   });
   
   it('should have proper meta tags', () => {

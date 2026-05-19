@@ -9,34 +9,23 @@
 @import './styles/themes/article-types.css';
 
 /* ==================================================
-   FONT FALLBACK METRICS — prevents CLS while web fonts load
-   size-adjust/ascent-override/descent-override approximate
-   each web font's metrics so that the fallback glyphs occupy
-   the same space, minimising layout shift on font-swap.
+   FONTS — system-ui stack only
+   No third-party web fonts are loaded by index*.html (Google Fonts was
+   removed in May 2026 to fix the catastrophic CLS=1.337 / +250 ms
+   render-blocking regression caused by font-swap).  All text now renders
+   in the native UI font of each platform (San Francisco on Apple,
+   Segoe UI on Windows, Roboto on Android/Linux), which is uniformly
+   high-quality, ships with the OS, and eliminates layout shift on
+   font-swap by design (there is no swap).
+   The historical `Inter Fallback` / `Orbitron Fallback` @font-face
+   declarations and their `size-adjust` corrections have been removed:
+   any `font-family: 'Inter', 'Inter Fallback', -apple-system, …` chain
+   in the rules below now falls through cleanly to `-apple-system` and
+   friends.  News/dashboard pages that still load Google Fonts via their
+   own `<link>` tag continue to work — `'Inter'` resolves to the loaded
+   web font there, and `'Inter Fallback'` (no longer a defined family)
+   is silently skipped before the system stack is used.
    ================================================== */
-@font-face {
-  font-family: 'Inter Fallback';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  size-adjust: 107%;
-  ascent-override: 90%;
-  descent-override: 22%;
-  line-gap-override: 0%;
-  src: local('Arial'), local('Liberation Sans'), local('Helvetica Neue'), local('Helvetica');
-}
-
-@font-face {
-  font-family: 'Orbitron Fallback';
-  font-style: normal;
-  font-weight: 500 700;
-  font-display: swap;
-  size-adjust: 94%;
-  ascent-override: 85%;
-  descent-override: 15%;
-  line-gap-override: 0%;
-  src: local('Arial Black'), local('Impact'), local('Century Gothic'), local('Trebuchet MS');
-}
 
 /* ==================================================
    CROSS-BROWSER COMPATIBILITY NOTES
@@ -115,10 +104,26 @@
   --accessible-youtube-red: #CC0000; /* White on #CC0000: 5.10:1 - WCAG AA compliant */
   --accessible-aws-orange: #CC7A00; /* White on #CC7A00: 4.54:1 - WCAG AA compliant */
   
-  --font-main: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  /* System-font stacks — no third-party web fonts.
+   * --font-main:    body text — uses each OS's native UI font.
+   * --font-heading: headings  — same stack (weight + size do the work).
+   * --font-mono:    code / data tables — system monospace.
+   * --font-accent:  small accent labels — same as main; kept for
+   *                 backwards-compat with rules referencing it.
+   * The 'Inter' / 'Orbitron' / 'Share Tech Mono' names at the head of
+   * the chains in many hard-coded rules below stay in place so news /
+   * dashboard pages that still load Google Fonts continue to use Inter;
+   * on index*.html (which no longer loads Google Fonts) those names
+   * are skipped and the system stack renders directly.
+   */
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-accent: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, sans-serif;
-  --font-accent: "Inter", "Inter Fallback", system-ui, -apple-system, sans-serif;
-  --font-mono: "Share Tech Mono", monospace;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
   --border-radius: 8px;
   --border-radius-sm: 4px;
   --border-radius-lg: 12px;
@@ -228,7 +233,8 @@
     --confidentiality-color: #bd93f9;
     --integrity-color: #50fa7b;
     --availability-color: #8be9fd;
-    --font-accent: "Orbitron", "Orbitron Fallback", sans-serif;
+    --font-accent: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif;
 
     /* Dark-mode focus token (high contrast on dark backgrounds) */
     --focus-color: #00d9ff;  /* primary-cyan – 7.8:1 on #001a1a  */
