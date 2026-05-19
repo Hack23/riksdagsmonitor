@@ -6,7 +6,7 @@ date: 2026-05-12
 subfolder: interpellations
 slug: 2026-05-12-interpellations
 source_folder: analysis/daily/2026-05-12/interpellations
-generated_at: 2026-05-19T16:13:44.414Z
+generated_at: 2026-05-19T16:18:04.808Z
 language: en
 layout: article
 ---

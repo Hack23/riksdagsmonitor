@@ -197,7 +197,7 @@ describe('Specialised dashboard pages — structural contract', () => {
           /function inject\(src,\s*isModule\)/,
         );
         expect(html, `${filename} bootstrap inject() calls missing/reordered`).toMatch(
-          /inject\((["'])\/js\/lib\/mermaid-init\.mjs\1,\s*true\);\s*inject\((["'])\/js\/back-to-top\.js\2,\s*true\);\s*inject\((["'])\/js\/theme-toggle\.js\3,\s*false\);/s,
+          /(?:if \(document\.querySelector\((["'])pre\.mermaid\1\)\) )?inject\((["'])\/js\/lib\/mermaid-init\.mjs\2,\s*true\);\s*inject\((["'])\/js\/back-to-top\.js\3,\s*true\);\s*inject\((["'])\/js\/theme-toggle\.js\4,\s*false\);/s,
         );
       });
     });

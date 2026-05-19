@@ -51,6 +51,25 @@ export const DEFAULT_ROOT_MARGIN = '2000px';
 export const DEFAULT_THRESHOLD = 0.01;
 
 /**
+ * Narrow `IntersectionObserver` `rootMargin` to use on pages that are NOT
+ * a single-dashboard "deep link" (`/dashboards/<slug>.html`,
+ * `/politician-dashboard*.html`).  Multi-section pages such as `index*.html`
+ * have several below-the-fold sections — `#coalition-status` typically sits
+ * 600–1400 px below the fold — and the 2000 px {@link DEFAULT_ROOT_MARGIN}
+ * would pre-fetch them eagerly, defeating the entire point of lazy loading.
+ *
+ * The previous behaviour caused the homepage to download
+ * `view_riksdagen_politician_experience_summary_sample.csv` (≈ 5.8 MiB) and
+ * `view_riksdagen_politician_sample.csv` (≈ 542 KiB) on initial render via
+ * `coalition-loader`, driving Lighthouse Performance to 4 (LCP 5.3 s, TBT
+ * 5,330 ms).  A 300 px margin still pre-fetches a touch before the section
+ * scrolls into view (smooth UX) without forcing the download on page load.
+ *
+ * Tests assert this exact value to lock the contract.
+ */
+export const HOMEPAGE_ROOT_MARGIN = '300px';
+
+/**
  * Parse the first component of an `IntersectionObserver` `rootMargin` string
  * (e.g. `"2000px"`, `"100px 50px"`) into a pixel number. Returns `0` when the
  * value is missing, percentage-based, or otherwise unparseable — this is
