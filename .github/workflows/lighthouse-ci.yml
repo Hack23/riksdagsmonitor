@@ -147,7 +147,7 @@ jobs:
             
             echo "" >> $GITHUB_STEP_SUMMARY
             
-            # Performance targets (from budget.json — post-purge + minify)
+            # Performance targets (from budget.json — minified styles.css served from S3)
             echo "### 🎯 Core Web Vitals Targets" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "- **First Contentful Paint (FCP)**: < 3.0s (mobile budget); measured ~1.1s desktop" >> $GITHUB_STEP_SUMMARY
@@ -155,7 +155,7 @@ jobs:
             echo "- **Time to Interactive (TTI)**: < 3.8s" >> $GITHUB_STEP_SUMMARY
             echo "- **Cumulative Layout Shift (CLS)**: < 0.1 (measured 0.007)" >> $GITHUB_STEP_SUMMARY
             echo "- **Total Blocking Time (TBT)**: < 200ms (measured 0ms)" >> $GITHUB_STEP_SUMMARY
-            echo "- **Stylesheet budget**: ≤ 80 KiB (post-purge + minify target ≤ 60 KiB)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Stylesheet budget**: ≤ 80 KiB raw / ≤ 25 KiB gzip on the wire" >> $GITHUB_STEP_SUMMARY
             echo "- **Document budget**: ≤ 70 KiB (post HTML minify)" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             
@@ -233,8 +233,9 @@ jobs:
           A11Y=$(echo "${{ steps.parse.outputs.accessibility }} * 100" | bc | cut -d. -f1)
           
           echo "📊 Checking performance thresholds..."
-          # Tightened from 70 → 90 after the deploy-s3 CSS purge + minify
-          # pipeline (scripts/purge-css.ts + scripts/minify-dist.ts) —
+          # Tightened from 70 → 90 after the deploy-s3 minify pipeline
+          # (scripts/minify-dist.ts) and the source-level styles.css
+          # clean-up —
           # Lighthouse desktop already reports 93/96/100/100, so the 'good'
           # band (≥ 90) is the new floor.
           echo "Performance: $PERF/100 (target: 90+)"
@@ -242,7 +243,7 @@ jobs:
           
           if [ $PERF -lt 90 ]; then
             echo "⚠️ Performance score below threshold (90 — Google 'good' band)"
-            echo "Consider tightening CSS purge safelist, optimising images, or further reducing JS."
+            echo "Consider trimming unused CSS rules from the source styles.css, optimising images, or further reducing JS."
             # Don't fail for now - just warn (still rolling out budget changes)
             # exit 1
           fi

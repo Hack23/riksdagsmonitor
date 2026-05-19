@@ -278,28 +278,19 @@ jobs:
       - name: Bake CIA stats into start-page HTML
         run: npx tsx scripts/bake-stats-html.ts dist cia-data/extraction_summary_report.csv
 
-      # ── CSS purging ──────────────────────────────────────────────
-      # Strip selectors that no built page (HTML, hashed JS bundle,
-      # source TS) actually references. Targets the canonical CSS
-      # bundle (`dist/assets/styles.css`, stable non-hashed URL — see
-      # vite.config.js) and any legacy fallback (`dist/styles.css`),
-      # so all <link> hrefs continue to
-      # resolve unchanged.  Lighthouse flagged ~266 KiB of unused CSS
-      # on the homepage — the purge typically recovers ≥80% of that
-      # before the minify pass shrinks the rest.
-      #
-      # Runs AFTER the docs/ and js/ copy so the purger sees every
-      # script that may reference a class name dynamically (e.g.
-      # /js/theme-toggle.js toggling `dark-mode`/`light-mode`).
-      - name: Purge unused CSS
-        run: npx tsx scripts/purge-css.ts dist
-
       # ── HTML / CSS / JS minification ─────────────────────────────
       # Run the `minify` (coderaiser/minify) package directly on the
       # runner host — no Docker, no apt-get, no workspace staging.
       # Minifies every .html / .css / .js / .mjs under dist/ in place.
       # Filenames are preserved so CloudFront origin paths and per-page
       # <link>/<script> references all keep working unchanged.
+      #
+      # Note: this pipeline used to include a `Purge unused CSS` step
+      # (PurgeCSS against `dist/assets/styles.css`). That was removed
+      # — the source `styles.css` is now the single source of truth
+      # and is kept free of dead selectors at commit time. Adding the
+      # deploy-time purger back would mask new dead CSS rather than
+      # surface it in code review.
       #
       # No SRI re-stamping step follows: `vite-plugin-sri-gen` was
       # removed (vite.config.js) and `vite-plugin-static-pages.js`
