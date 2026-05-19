@@ -4065,7 +4065,7 @@ Data sourced from 2026-04-30 via lookback fallback — check freshness indicator
           s.src = src;
           document.head.appendChild(s);
         }
-        inject('/js/lib/mermaid-init.mjs', true);
+        if (document.querySelector('pre.mermaid')) inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
       })();

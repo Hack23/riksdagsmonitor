@@ -9671,6 +9671,19 @@ body.news-page {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
+  /*
+   * Reserve vertical space for the 8 party cards that drop in after the
+   * coalition-loader CSV fetch resolves.  Without a min-height the grid
+   * collapses to a single text line ("Loading…"), then jumps to ~600 px
+   * once the cards render — Lighthouse measured CLS = 1.337 on the
+   * homepage (19 May 2026) almost entirely from this shift.  The value
+   * matches "two rows of 200 px cards + gap" so the layout holds steady
+   * regardless of viewport width (1-column mobile → 4-column desktop).
+   *
+   * `min-height` (not `height`) lets the container still grow if a
+   * future card variant exceeds the reservation.
+   */
+  min-height: 420px;
 }
 
 #coalition-status .card {

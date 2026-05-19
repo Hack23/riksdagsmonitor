@@ -22,7 +22,7 @@ import { initBackToTop } from './ui/back-to-top.js';
 import { init as initStats } from './dashboards/stats-loader.js';
 
 // ─── Lazy Loading ─────────────────────────────────────────────────────────────
-import { initLazyDashboards } from './lazy-loader.js';
+import { initLazyDashboards, DEFAULT_ROOT_MARGIN, DEFAULT_THRESHOLD, HOMEPAGE_ROOT_MARGIN } from './lazy-loader.js';
 import type { LazyDashboard } from './lazy-loader.js';
 
 import { logger } from './shared/logger.js';
@@ -100,7 +100,27 @@ async function initAll(): Promise<void> {
 
   initBackToTop();
 
-  _lazyObserver = initLazyDashboards(LAZY_DASHBOARDS);
+  // Pages dedicated to a single dashboard (`/dashboards/<slug>.html`,
+  // `/politician-dashboard*.html`) need the generous 2000 px pre-fetch
+  // margin so the lone below-fold container always intersects without
+  // user scroll.  Multi-section pages such as `index*.html` must NOT
+  // use that margin — `#coalition-status` would otherwise pre-fetch
+  // ≈ 6 MiB of CSV on every visit, driving Lighthouse Performance to 4.
+  // See {@link HOMEPAGE_ROOT_MARGIN} for the full root-cause analysis.
+  const pathname =
+    typeof window !== 'undefined' && window.location
+      ? window.location.pathname
+      : '';
+  const isSingleDashboardPage =
+    /^\/(dashboards\/|politician-dashboard)/.test(pathname);
+  const rootMargin = isSingleDashboardPage
+    ? DEFAULT_ROOT_MARGIN
+    : HOMEPAGE_ROOT_MARGIN;
+
+  _lazyObserver = initLazyDashboards(LAZY_DASHBOARDS, {
+    rootMargin,
+    threshold: DEFAULT_THRESHOLD,
+  });
   void _lazyObserver;
 
   try {

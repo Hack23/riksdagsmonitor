@@ -6725,7 +6725,7 @@ The Riksdagsmonitor year-ahead workflow is the first of its kind in this analysi
           s.src = src;
           document.head.appendChild(s);
         }
-        inject('/js/lib/mermaid-init.mjs', true);
+        if (document.querySelector('pre.mermaid')) inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
       })();

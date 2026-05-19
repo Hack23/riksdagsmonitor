@@ -6591,7 +6591,7 @@ Additional context: HD0399, HD03240, HD03239, HD03242, HD03241, HD03101, HD03220
           s.src = src;
           document.head.appendChild(s);
         }
-        inject('/js/lib/mermaid-init.mjs', true);
+        if (document.querySelector('pre.mermaid')) inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
       })();

@@ -3763,7 +3763,7 @@ Scenario probabilities sum to 100% (scenario-analysis.md: A=65%, B=20%, C=10%, D
           s.src = src;
           document.head.appendChild(s);
         }
-        inject('/js/lib/mermaid-init.mjs', true);
+        if (document.querySelector('pre.mermaid')) inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
       })();

@@ -10464,7 +10464,7 @@ Per-document depth tiers: KU33 (L3), KU32 (L2+), HD03231+HD03232 (L2+), CU28 (L2
           s.src = src;
           document.head.appendChild(s);
         }
-        inject('/js/lib/mermaid-init.mjs', true);
+        if (document.querySelector('pre.mermaid')) inject('/js/lib/mermaid-init.mjs', true);
         inject('/js/back-to-top.js', true);
         inject('/js/theme-toggle.js', false);
       })();
