@@ -206,7 +206,7 @@
     "remark-rehype": "^11.1.2",
     "sharp": "^0.34.5",
     "start-server-and-test": "3.0.5",
-    "tsx": "4.22.2",
+    "tsx": "4.22.3",
     "typedoc": "0.28.19",
     "typedoc-plugin-mdn-links": "5.1.1",
     "typescript": "6.0.3",
