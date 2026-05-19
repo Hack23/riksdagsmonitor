@@ -207,13 +207,45 @@ export default defineConfig({
         'scripts/backfill-translated-chrome.ts',
         'scripts/copy-vendor-mermaid.ts',
         'scripts/normalize-static-html-chrome.ts',
+        // Bounded-context modules split out of the `normalize-static-html-chrome.ts`
+        // CLI shim above (27-line entry now re-exports from a per-concern
+        // subtree). File-I/O / CLI dispatch on import — exercised end-to-end
+        // by the `prebuild`/`postbuild` pipeline, not by unit tests.
+        // Mirrors the `scripts/download-parliamentary-data/**` and
+        // `scripts/imf-fetch/**` precedents above (refactored 2026-05;
+        // see PR #2595, Refactor 8/8).
+        'scripts/normalize-static-html-chrome/**',
         'scripts/validate-article.ts',
         'scripts/audits/inventory-headers-footers.ts',
         'scripts/mcp-query-cli.ts',
         'scripts/extract-news-metadata.ts',
         'scripts/rewrite-article-metadata.ts',
+        // Bounded-context modules split out of the `rewrite-article-metadata.ts`
+        // CLI shim above (15-line entry now re-exports from a per-concern
+        // subtree). HTML rewriting + file-I/O CLI exercised end-to-end by the
+        // article-validator workflows, not by unit tests. Same precedent as
+        // the `scripts/normalize-static-html-chrome/**` block above
+        // (refactored 2026-05; see PR #2595, Refactor 8/8).
+        'scripts/rewrite-article-metadata/**',
         'scripts/backfill-article-metadata.ts',
         'scripts/analysis-reader.ts',
+        // Bounded-context modules split out of the `analysis-reader.ts`
+        // CLI shim above (81-line entry now re-exports from a per-concern
+        // subtree of types + helpers + parsers). The shim is excluded per
+        // its scoped-deprecation comment ("Analysis in md files should not
+        // ever be parsed") — the parsers exist only to support the legacy
+        // `deriveArticleClassificationMeta()` path. Same precedent as
+        // `scripts/download-parliamentary-data/**` (refactored 2026-05;
+        // see PR #2595, Refactor 8/8).
+        'scripts/analysis-reader/**',
+        // CLI shim for the split roll-forward-pirs subtree below. The shim
+        // entry (`#!/usr/bin/env tsx` + `process.argv` parsing + top-level
+        // `isMainModule` dispatch) is exercised by the news workflows
+        // (`tsx scripts/roll-forward-pirs.ts …`), not by unit tests. The
+        // implementation under `scripts/roll-forward-pirs/**` remains
+        // inside the gate (95%+ covered via `tests/pir-status-contract.test.ts`
+        // and `tests/roll-forward-pirs.rollforward-md.test.ts`).
+        'scripts/roll-forward-pirs.ts',
         'scripts/analysis-references.ts',
         'scripts/statistical-claims-detector.ts',
         'scripts/populate-analysis-data.ts',
