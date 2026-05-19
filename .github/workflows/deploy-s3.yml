@@ -262,6 +262,22 @@ jobs:
             echo "⚠️  No js/ directory found — skipping"
           fi
 
+      # ── Bake CIA stats into start-page HTML ───────────────────────
+      # Replaces every `<span data-stat-id="stat-…">PLACEHOLDER</span>`
+      # in `dist/index*.html` with the real value parsed from
+      # `cia-data/extraction_summary_report.csv`. This eliminates the
+      # runtime CSV fetch + DOM rewrite that `src/browser/main.ts`
+      # would otherwise perform on every navigation to the start page
+      # (saves ≈ 15 KiB CSV + parse + N DOM writes — directly improves
+      # TBT and lets the browser focus on FCP/LCP of the hero banner).
+      #
+      # Runs AFTER docs/ and js/ copy so dist is otherwise complete,
+      # and BEFORE PurgeCSS so PurgeCSS does not need to keep selectors
+      # that only existed for the runtime path. Idempotent — pages
+      # whose placeholders are already concrete numbers are no-ops.
+      - name: Bake CIA stats into start-page HTML
+        run: npx tsx scripts/bake-stats-html.ts dist cia-data/extraction_summary_report.csv
+
       # ── CSS purging ──────────────────────────────────────────────
       # Strip selectors that no built page (HTML, hashed JS bundle,
       # source TS) actually references. Targets the canonical CSS
