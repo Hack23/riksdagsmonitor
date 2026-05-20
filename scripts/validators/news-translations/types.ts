@@ -41,6 +41,18 @@ export interface FailedFileRecord {
   readonly samples: string[];
 }
 
+/**
+ * Record for files containing unresolved `AI_MUST_REPLACE` markers in
+ * HTML comments. Restored from the pre-#2582 monolith (commit
+ * `52f9743f78~1`); the refactor split accidentally dropped this rule.
+ */
+export interface AIMarkerFileRecord {
+  readonly filename: string;
+  readonly lang: string;
+  readonly markerCount: number;
+  readonly samples: string[];
+}
+
 /** Record for files with untranslated body content (English or Swedish leakage) */
 export interface ContentLeakageRecord {
   readonly filename: string;

@@ -19,10 +19,11 @@ import { basename } from 'path';
 
 import { colors } from './colors.js';
 import { getLanguageCode, NON_SWEDISH_LANGS } from './language.js';
+import { checkFileForAIMustReplaceMarkers } from './rules/ai-must-replace.js';
 import { validateBCP47Consistency } from './rules/bcp47.js';
 import { checkBodyContentLeakage } from './rules/body-leakage.js';
 import { checkFileForUntranslatedContent } from './rules/untranslated.js';
-import type { ContentLeakageRecord, FailedFileRecord } from './types.js';
+import type { AIMarkerFileRecord, ContentLeakageRecord, FailedFileRecord } from './types.js';
 import { deriveEnSourcePath, getAllHtmlFiles } from './walker.js';
 
 /**
@@ -47,8 +48,10 @@ export function validateNewsTranslations(directory: string = 'news'): number {
   let totalErrors = 0;
   let totalBCP47Errors = 0;
   let totalContentLeakage = 0;
+  let totalAIMarkers = 0;
   const failedFiles: FailedFileRecord[] = [];
   const leakageFiles: ContentLeakageRecord[] = [];
+  const aiMarkerFiles: AIMarkerFileRecord[] = [];
 
   for (const filepath of nonSwedishFiles) {
     const filename = basename(filepath);
@@ -62,6 +65,18 @@ export function validateNewsTranslations(directory: string = 'news'): number {
       for (const err of bcp47Errors) {
         console.log(`  ${colors.yellow}${err.field}: expected "${err.expected}", got "${err.actual}"${colors.reset}`);
       }
+    }
+
+    // AI_MUST_REPLACE marker check — unresolved placeholders in HTML
+    // comments are a hard failure (restored from pre-#2582 behaviour).
+    const aiMarkerRecord = checkFileForAIMustReplaceMarkers(filepath);
+    if (aiMarkerRecord) {
+      aiMarkerFiles.push(aiMarkerRecord);
+      totalAIMarkers += aiMarkerRecord.markerCount;
+      const sampleStr = aiMarkerRecord.samples.length > 0
+        ? ` [${aiMarkerRecord.samples.join(', ')}]`
+        : '';
+      console.log(`${colors.red}✗ AI_MUST_REPLACE: ${filename} — ${aiMarkerRecord.markerCount} unresolved marker(s)${sampleStr}${colors.reset}`);
     }
 
     let fileLeakage: ContentLeakageRecord | null = null;
@@ -89,9 +104,13 @@ export function validateNewsTranslations(directory: string = 'news'): number {
       console.log(`  ${colors.red}${result.error}${colors.reset}\n`);
       totalErrors++;
     } else if (result.passed) {
-      console.log(`${colors.green}✓ ${filename} (${(lang ?? '').toUpperCase()})${colors.reset}`);
-      totalPassed++;
-      if (fileLeakage) {
+      // Files with AI_MUST_REPLACE markers are NOT counted as passed —
+      // they are reported separately as a hard failure.
+      if (!aiMarkerRecord) {
+        console.log(`${colors.green}✓ ${filename} (${(lang ?? '').toUpperCase()})${colors.reset}`);
+        totalPassed++;
+      }
+      if (fileLeakage && !aiMarkerRecord) {
         totalContentLeakage++;
       }
     } else {
@@ -143,11 +162,15 @@ export function validateNewsTranslations(directory: string = 'news'): number {
     console.log(`${colors.red}✗ BCP-47 inconsistencies: ${totalBCP47Errors}${colors.reset}`);
   }
 
+  if (totalAIMarkers > 0) {
+    console.log(`${colors.red}✗ Unresolved AI_MUST_REPLACE markers: ${totalAIMarkers} in ${aiMarkerFiles.length} article(s)${colors.reset}`);
+  }
+
   if (totalContentLeakage > 0) {
     console.log(`${colors.yellow}⚠ Articles with EN/SV body content leakage: ${totalContentLeakage}${colors.reset}`);
   }
 
-  const hasHardFailures = totalFailed > 0 || totalBCP47Errors > 0;
+  const hasHardFailures = totalFailed > 0 || totalBCP47Errors > 0 || aiMarkerFiles.length > 0;
 
   if (hasHardFailures) {
     console.log(`\n${colors.bold}${colors.red}❌ VALIDATION FAILED${colors.reset}`);
@@ -172,6 +195,21 @@ export function validateNewsTranslations(directory: string = 'news'): number {
       console.log(`\n${colors.yellow}BCP-47 Action Required:${colors.reset}`);
       console.log(`Ensure html[lang], og:locale, and inLanguage are consistent per article.`);
       console.log(`Norwegian articles must use lang="nb", og:locale="nb_NO", inLanguage="nb".\n`);
+    }
+
+    if (aiMarkerFiles.length > 0) {
+      console.log(`\n${colors.yellow}AI_MUST_REPLACE Action Required:${colors.reset}`);
+      console.log(`The following articles contain unresolved AI_MUST_REPLACE placeholders in HTML comments.`);
+      console.log(`The AI translation agent MUST replace these with genuine content in the target language:\n`);
+      aiMarkerFiles.forEach(({ filename, markerCount, samples }) => {
+        const sampleStr = samples.length > 0 ? ` [${samples.join(', ')}]` : '';
+        console.log(`  ${colors.red}✗${colors.reset} ${filename} - ${markerCount} marker(s)${sampleStr}`);
+      });
+      console.log(`\n${colors.yellow}Fix:${colors.reset}`);
+      console.log(`1. Open the source EN article and the translated article`);
+      console.log(`2. Find every <!-- AI_MUST_REPLACE: ... --> comment`);
+      console.log(`3. Replace the entire comment with genuine analysis in the target language`);
+      console.log(`4. Re-run the translation workflow with updated prompts\n`);
     }
 
     return 1;
@@ -206,8 +244,9 @@ export function validateNewsTranslations(directory: string = 'news'): number {
 
 // Public surface re-exports — consumed by the CLI shim and tests.
 export { BCP47_TAG, NON_SWEDISH_LANGS, OG_LOCALE_EXPECTED, getLanguageCode } from './language.js';
+export { checkFileForAIMustReplaceMarkers } from './rules/ai-must-replace.js';
 export { validateBCP47Consistency, type BCP47Error } from './rules/bcp47.js';
 export { checkBodyContentLeakage, extractBodyParagraphs } from './rules/body-leakage.js';
 export { checkFileForUntranslatedContent } from './rules/untranslated.js';
 export { deriveEnSourcePath, getAllHtmlFiles } from './walker.js';
-export type { CheckResult, ContentLeakageRecord, FailedFileRecord } from './types.js';
+export type { AIMarkerFileRecord, CheckResult, ContentLeakageRecord, FailedFileRecord } from './types.js';
