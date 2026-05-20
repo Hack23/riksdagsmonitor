@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "cycle": "motions",
+  "date": "2026-05-20",
+  "subfolder": "motions",
+  "generated_at": "2026-05-20T00:00:00Z",
+  "inherited_from": null,
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "statement": "Will the KU committee pass Prop. 2025/26:258 including the labor organizations contributions law unchanged?",
+      "trigger": "KU betänkande published with committee recommendation on Prop. 2025/26:258",
+      "status": "open",
+      "confidence": "HIGH",
+      "evidence_refs": ["HD024184"],
+      "horizon": "2026-06-15",
+      "admiralty_grade": "A2"
+    },
+    {
+      "pir_id": "PIR-2",
+      "statement": "Will Liberalerna (L) publicly dissent on the labor org contributions section, potentially changing the vote arithmetic?",
+      "trigger": "L public statement or committee reservation opposing the labor org contributions law",
+      "status": "open",
+      "confidence": "LOW",
+      "evidence_refs": ["HD024184"],
+      "horizon": "2026-06-01",
+      "admiralty_grade": "B4"
+    },
+    {
+      "pir_id": "PIR-3",
+      "statement": "Will other opposition parties (S, V, MP) file their own motions on Prop. 2025/26:258?",
+      "trigger": "New motions filed citing Prop. 2025/26:258 in riksdag-regering",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": ["HD024184"],
+      "horizon": "2026-05-31",
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-4",
+      "statement": "Will the government respond to Lagrådet's 'bräckligt' criticism with amendments before the KU vote?",
+      "trigger": "Government press release or supplementary proposition amending the labor org contributions section",
+      "status": "open",
+      "confidence": "LOW",
+      "evidence_refs": ["HD024184"],
+      "horizon": "2026-06-01",
+      "admiralty_grade": "B4"
+    }
+  ]
+}
