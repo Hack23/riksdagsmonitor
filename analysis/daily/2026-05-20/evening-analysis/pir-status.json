@@ -1,0 +1,129 @@
+{
+  "schema": "pir-status/v1.0",
+  "generatedAt": "2026-05-20T19:45:00Z",
+  "articleDate": "2026-05-20",
+  "subfolder": "evening-analysis",
+  "pirCycle": "2025/26 → val 2026",
+  "pirs": [
+    {
+      "id": "PIR-1-EVE",
+      "question": "SD:s formella röstposition på KU34 föreningsfrihet/medborgar-klausulen?",
+      "source": "Realtime-pulse sibling confirms SD supported KU34 in full",
+      "priority": "KRITISK",
+      "status": "CLOSED",
+      "closedDate": "2026-05-20",
+      "resolution": "SD voted YES on KU34 including föreningsfrihet and medborgarskap components",
+      "horizon": "T+72h",
+      "rollForwardFrom": "committeeReports/pir-status.json PIR-1"
+    },
+    {
+      "id": "PIR-2-EVE",
+      "question": "L:s officiella position på KU34 föreningsfrihet-klausulen?",
+      "source": "Realtime-pulse sibling; L supported KU34 without reservations",
+      "priority": "KRITISK",
+      "status": "CLOSED",
+      "closedDate": "2026-05-20",
+      "resolution": "L voted YES on KU34 in full",
+      "horizon": "T+72h",
+      "rollForwardFrom": "ny - IG-1"
+    },
+    {
+      "id": "PIR-3-EVE",
+      "question": "Lagrådets yttranden om HD03262 (PUT) och HD03267 (säkerhetshot)?",
+      "source": "Propositions sibling (indirect reference)",
+      "priority": "HÖG",
+      "status": "OPEN",
+      "horizon": "T+30d",
+      "rollForwardFrom": "propositions/pir-status.json PIR-2"
+    },
+    {
+      "id": "PIR-4-EVE",
+      "question": "Migrationsverkets officiella implementationsplan för PUT-konvertering?",
+      "source": "No new evidence today",
+      "priority": "HÖG",
+      "status": "OPEN",
+      "horizon": "T+30d",
+      "rollForwardFrom": "propositions/pir-status.json PIR-5"
+    },
+    {
+      "id": "PIR-5-EVE",
+      "question": "Aurora 26-övningens resultat + drönarkrig-kapacitetsbedömning?",
+      "source": "UU4 context; Aurora 26 concludes 2026-05-23",
+      "priority": "MEDEL",
+      "status": "OPEN",
+      "horizon": "T+7d",
+      "rollForwardFrom": "ny"
+    },
+    {
+      "id": "PIR-6-EVE",
+      "question": "Dousa:s svar på V:s biståndsfrȧgor HD10492/HD10493?",
+      "source": "UU3 context; interpellations debate 2026-06-02",
+      "priority": "MEDEL",
+      "status": "OPEN",
+      "horizon": "T+30d",
+      "rollForwardFrom": "interpellations/pir-status.json"
+    },
+    {
+      "id": "PIR-7-EVE",
+      "question": "C:s opinionsundersökningar efter migrationspaktskoordination med S?",
+      "source": "No direct polling data",
+      "priority": "MEDEL",
+      "status": "OPEN",
+      "horizon": "T+30d",
+      "rollForwardFrom": "ny"
+    },
+    {
+      "id": "PIR-8-EVE",
+      "question": "EU-kommissionens CEAS-granskning av HD03262?",
+      "source": "No new evidence",
+      "priority": "MEDEL",
+      "status": "OPEN",
+      "horizon": "T+365d",
+      "rollForwardFrom": "propositions/pir-status.json PIR-3"
+    },
+    {
+      "id": "PIR-9-EVE",
+      "question": "SD:s interna basreaktion på KU34-stödet för abortkonstitutionalisering?",
+      "source": "New PIR — post-vote monitoring required",
+      "priority": "KRITISK",
+      "status": "OPEN",
+      "horizon": "T+72h",
+      "rollForwardFrom": "ny"
+    },
+    {
+      "id": "PIR-10-EVE",
+      "question": "SKR:s formella bulletin om SoU30 kommunal implementeringsberedskap?",
+      "source": "New PIR — implementation monitoring",
+      "priority": "HÖG",
+      "status": "OPEN",
+      "horizon": "T+7d",
+      "rollForwardFrom": "ny"
+    },
+    {
+      "id": "PIR-11-EVE",
+      "question": "S:s valplattform — fullständig återkallning eller modifiering av SoU30?",
+      "source": "New PIR — electoral positioning monitoring",
+      "priority": "HÖG",
+      "status": "OPEN",
+      "horizon": "T+30d",
+      "rollForwardFrom": "ny"
+    },
+    {
+      "id": "PIR-12-EVE",
+      "question": "Friskolernas rättsliga utmaningar mot UbU30 — vilka operatörer och på vilka grunder?",
+      "source": "New PIR — sector litigation monitoring",
+      "priority": "MEDEL",
+      "status": "OPEN",
+      "horizon": "T+90d",
+      "rollForwardFrom": "ny"
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "closed": 2,
+    "open": 10,
+    "kritisk": 3,
+    "hog": 4,
+    "medel": 5
+  }
+}
