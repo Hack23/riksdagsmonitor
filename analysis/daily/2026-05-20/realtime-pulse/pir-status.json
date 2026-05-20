@@ -1,109 +1,106 @@
 {
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
   "date": "2026-05-20",
   "subfolder": "realtime-pulse",
-  "generated": "2026-05-20T11:30:00Z",
+  "generated_at": "2026-05-20T14:00:00Z",
   "pirs": [
     {
       "id": "PIR-RT-1",
       "description": "Will all parties commit to KU34 second reading YES pre-election?",
-      "status": "OPEN",
-      "priority": "HIGH",
+      "status": "open",
+      "confidence": "MEDIUM",
       "source": "realtime-pulse",
-      "notes": "Constitutional abortion right requires second reading post-election. S committed. V/MP/C have reservations on some aspects."
+      "notes": "Constitutional abortion right requires second reading post-election. S committed. V/MP/C have reservations on some aspects. See forward-indicators.md FI-09."
     },
     {
       "id": "PIR-RT-2",
       "description": "How will S campaign on SoU30 — full reversal or modification?",
-      "status": "OPEN",
-      "priority": "HIGH",
+      "status": "open",
+      "confidence": "HIGH",
       "source": "realtime-pulse",
-      "notes": "S filed Reservation 1 (full welfare law opposition) and Reservation 4 (fraud). Campaign positioning TBD."
+      "notes": "S filed Reservation 1 (full welfare law opposition) and Reservation 4 (fraud). Campaign positioning TBD. See election-2026-analysis.md."
     },
     {
       "id": "PIR-RT-3",
       "description": "SD internal reaction to constitutional abortion support",
-      "status": "OPEN",
-      "priority": "MEDIUM",
+      "status": "open",
+      "confidence": "MEDIUM",
       "source": "realtime-pulse",
       "notes": "SD voted for constitutional abortion right. Internal base reaction unknown. Watch SD party communications post-vote."
     },
     {
       "id": "PIR-RT-4",
       "description": "Municipal implementation readiness for July 1, 2026 medical certificate requirement (SoU30)",
-      "status": "OPEN",
-      "priority": "MEDIUM",
+      "status": "open",
+      "confidence": "LOW",
       "source": "realtime-pulse",
-      "notes": "42 days to implementation. SKR bulletin expected. Major cities: Stockholm, Gothenburg, Malmö readiness critical."
+      "notes": "42 days to implementation. SKR bulletin expected. Major cities: Stockholm, Gothenburg, Malmö readiness critical. See implementation-feasibility.md."
     },
     {
       "id": "PIR-RT-5",
       "description": "Legal challenges to legal-residency welfare restriction in SoU30",
-      "status": "OPEN",
-      "priority": "LOW",
+      "status": "open",
+      "confidence": "MEDIUM",
       "source": "realtime-pulse",
-      "notes": "NGOs (Red Cross Sweden, UNHCR) may challenge CESCR/European Social Charter compatibility."
+      "notes": "C reservation R5 cited EU law concerns. ECHR Art. 3/8 risk if destitution cases emerge. First challenges likely Q3 2026. See threat-analysis.md T3."
     },
     {
       "id": "PIR-PROP-1",
       "description": "Lagrådet language on HD03267 (security threat foreigners)",
-      "status": "OPEN",
-      "priority": "HIGH",
+      "status": "open",
+      "confidence": "MEDIUM",
       "source": "propositions",
-      "carryForward": true,
       "notes": "Carried from propositions analysis. No new data today."
     },
     {
       "id": "PIR-PROP-2",
       "description": "Centerpartiet position on HD03267",
-      "status": "PARTIALLY_UPDATED",
-      "priority": "MEDIUM",
+      "status": "answered",
+      "confidence": "MEDIUM",
       "source": "propositions",
-      "carryForward": true,
-      "notes": "C's multiple KU34 reservations suggest cautious/skeptical approach to migration-security legislation. Pattern consistent."
+      "notes": "C's multiple KU34 reservations (R3, R5 in SoU30; föreningsfrihet in KU34) confirm cautious/skeptical approach to migration-security legislation. Pattern consistent with C's EU-law-focused positioning."
     },
     {
       "id": "PIR-PROP-3",
       "description": "IMY opinion on HD03261",
-      "status": "OPEN",
-      "priority": "LOW",
+      "status": "open",
+      "confidence": "LOW",
       "source": "propositions",
-      "carryForward": true,
       "notes": "No new data today."
     },
     {
       "id": "PIR-MOT-1",
       "description": "Will government pass full labor organization law?",
-      "status": "PARTIALLY_CLOSED",
-      "priority": "MEDIUM",
+      "status": "answered",
+      "confidence": "HIGH",
       "source": "motions",
-      "carryForward": true,
-      "notes": "KU34 provides constitutional authority for föreningsfrihet restrictions. Statutory law expected 2027. Constitutional base secured."
+      "notes": "KU34 provides constitutional authority for föreningsfrihet restrictions. Statutory law expected 2027. Constitutional base secured via today's vilande adoption."
     },
     {
       "id": "PIR-MOT-3",
       "description": "L internal position on freedom of association",
-      "status": "PARTIALLY_CLOSED",
-      "priority": "LOW",
+      "status": "answered",
+      "confidence": "HIGH",
       "source": "motions",
-      "carryForward": true,
-      "notes": "L (Jakob Olofsgård) on SoU committee, L supports KU34 package including föreningsfrihet provisions. No internal L objection evident."
+      "notes": "L supports KU34 package including föreningsfrihet provisions. No internal L objection evident. See stakeholder-perspectives.md."
     },
     {
       "id": "PIR-INTERP-RUSSIA",
       "description": "Russia/Ichkeria security nexus (HD10494)",
-      "status": "OPEN",
-      "priority": "MEDIUM",
+      "status": "open",
+      "confidence": "MEDIUM",
       "source": "interpellations",
-      "carryForward": true,
       "notes": "Citizenship revocation in KU34 provides potential legislative tool. Russia/Ichkeria threat remains under parliamentary scrutiny."
     }
   ],
   "summary": {
     "total": 11,
-    "open": 8,
-    "partially_closed": 2,
-    "partially_updated": 1,
-    "closed": 0,
+    "open": 7,
+    "answered": 3,
+    "superseded": 0,
+    "deferred": 0,
+    "cancelled": 0,
     "new_today": 5,
     "carried_forward": 6
   }

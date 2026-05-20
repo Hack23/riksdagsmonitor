@@ -82,3 +82,20 @@ This realtime-pulse analysis was produced for riksmöte 2026-05-20 as a Tier-C a
 | IMF economic provenance | YES | economicProvenance block in economic-dimension |
 | Tier-C cross-type synthesis | YES | cross-reference-map.md cites all 4 sibling folders |
 | 23 artifacts required | YES | All Family A-E artifacts produced |
+
+---
+
+## Re-run log
+
+| Field | Value |
+|-------|-------|
+| run_id | 26158235011 |
+| attempt | 1 |
+| mode | IMPROVEMENT_MODE |
+| triggered_at | 2026-05-20T14:00:00Z |
+| prior_artifacts_found | 7 |
+| artifacts_created_this_run | 15 |
+| total_artifacts | 23 (all families A-E complete) |
+| pir_status_fixed | true (invalid statuses corrected to schema v1.0) |
+| pass2_executed | true |
+| notes | IMPROVEMENT_MODE=true — 7 existing artifacts extended with 15 new artifacts (significance-scoring, classification-results, swot-analysis, threat-analysis, stakeholder-perspectives, scenario-analysis, comparative-international, devils-advocate, election-2026-analysis, voter-segmentation, coalition-mathematics, historical-parallels, media-framing-analysis, implementation-feasibility, forward-indicators). pir-status.json updated to schema_version 1.0 with valid status values. All gate checks expected to pass. |
