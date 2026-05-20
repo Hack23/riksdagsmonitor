@@ -6,7 +6,7 @@ date: 2026-04-27
 subfolder: propositions
 slug: 2026-04-27-propositions
 source_folder: analysis/daily/2026-04-27/propositions
-generated_at: 2026-05-20T01:10:29.404Z
+generated_at: 2026-05-20T10:12:19.615Z
 language: en
 layout: article
 ---
@@ -107,6 +107,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2128,13 +2141,1033 @@ The output-floor impact assessment lacks specific data on Swedish banks' average
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-04-23 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# 📋 موجز استخباراتي — مقترحات الحكومة السويدية 2026-04-27
+
+**المؤلف**: James Pether Sörling
+**التاريخ**: 2026-04-27
+**فترة التحليل**: 2026-04-23 (آخر يوم برلماني)
+**الثقة**: عالية [B2]
+**التصنيف**: عام — المادة 9(2)(ه,ز) من اللائحة العامة لحماية البيانات
+**المراجعة 2**: 2026-04-27T06:38Z — تحسين المصدر الاقتصادي، تعزيز الرسالة الجوهرية، إضافة تفاصيل السياق السويدي
+
+---
+
+### 🎯 الرسالة الجوهرية
+
+قدّمت حكومة كريسترسون أربعة أدوات تشريعية مهمة في 23 أبريل 2026، بقيادة حزمة الاتحاد الأوروبي المصرفية (Prop. 2025/26:253) — التحويل التنظيمي المالي الأكثر أهمية في السويد خلال عقد — إلى جانب قيود على التأمين الاجتماعي للمحتجزين (Prop. 2025/26:252)، وتقييم لإدارة الدين العام 2021–2025 (Skr. 2025/26:104)، وقواعد مشددة لمكافحة التلاعب بالمسجّلات (Prop. 2025/26:256). الحزمة المصرفية هي العنصر الرئيسي: إذ تدرج CRR3/CRD6 الأوروبي في القانون السويدي، مما يعزز احتياطيات رأس المال تحت `Finansdepartementet` وتُحال إلى `FiU` (لجنة المالية). تبقى نسبة الدين العام السويدي منخفضة وفق المعايير الأوروبية عند **~31% من الناتج المحلي الإجمالي** (صندوق النقد الدولي، آفاق الاقتصاد العالمي أبريل 2026، مؤشر GGXWDG_NGDP، استُرجع في 2026-04-27)، مما يوفر مجالاً مالياً بينما يشدد المنظمون الماليون الإطار. نمو الناتج المحلي الإجمالي بنسبة **+2.1%** (NGDP_RPCH، المصدر ذاته) يدعم انتقالاً منضبطاً نحو متطلبات رأس المال الأعلى. يؤكد فائض الحساب الجاري السويدي البالغ **+5.5% من الناتج المحلي الإجمالي** (BCA_NGDPD، المصدر ذاته) القوة الخارجية بينما تتكيف البنوك مع الحد الأدنى للناتج.
+
+**المصدر الاقتصادي** (`economicProvenance`): provider=imf، dataflow=WEO، vintage=أبريل 2026، retrieved_at=2026-04-27.
+
+### 🧭 3 قرارات يدعمها هذا الموجز
+
+1. **الريكسداغ (FiU)**: هل يُوافَق على الحزمة المصرفية الأوروبية بالكامل أم تُطلَب تعديلات؟ — أمر بالغ الأهمية نظراً للقطاع المصرفي السويدي الضخم (≈400% من الناتج المحلي الإجمالي في أصول) ووضعه خارج منطقة اليورو.
+2. **الريكسداغ (SfU)**: هل تجتاز قيود التأمين الاجتماعي للسجناء (HD03252) الاختبار الدستوري للتناسب؟ — الوفورات المالية (~200–300 مليون كرونة سويدية/سنة) مقابل مخاطر إعادة التأهيل.
+3. **المحللون السياسيون / المستثمرون**: تقييم استراتيجية الدين العام في ضوء التقييم (HD03104) الذي يُظهر تحقيق Riksgälden لأهداف إطار 2021–2025.
+
+---
+
+### 📊 نقاط استخباراتية في 60 ثانية
+
+- **الحزمة المصرفية الأوروبية (HD03253)** [B2 عالية]: تنقل CRR3/CRD6؛ تُدخل حداً أدنى للناتج بنسبة 72.5% للحدّ من تخفيف رأس المال بالنماذج الداخلية؛ تؤثر على Swedbank وSEB وHandelsbanken وNordea (السويد). إحالة إلى FiU.
+- **قيود التأمين الاجتماعي للمحتجزين (HD03252)** [B2 عالية]: تسحب مخصصات المرض والوالدين والمرض من المحتجزين في `مسكن خاضع للرقابة` أو الاحتجاز الأمني. Justitiedepartementet، إحالة SfU. من المرجح اعتراض تناسبية من V وMP.
+- **تقييم إدارة الدين العام (HD03104)** [A2 عالية جداً]: التقييم الذاتي لـ Riksgälden 2021–2025 — تحقيق هدف الاقتراض الصافي لمدة 3 من أصل 5 سنوات؛ استراتيجية المدة ضمن الولاية. Finansdepartementet، إحالة FiU. مخاطر تشريعية منخفضة؛ معلوماتي.
+- **التلاعب بالمسجّلات (HD03256)** [B2 متوسطة]: يشدد العقوبات الجنائية والإدارية للتلاعب بالمسجّلات؛ يتوافق مع لائحة الاتحاد الأوروبي 2018/1022. إحالة TU. تكلفة امتثال القطاع.
+
+---
+
+### 🔑 أهم محفّز مستقبلي
+
+**أسبوع 5 مايو 2026**: يفتح FiU استشارة عامة حول HD03253 — تُتوقع مرئيات لوبي البنوك. أي طلب تعديل جوهري يُشير إلى مقاومة سويدية للتقارب الرقابي الأوروبي، مع انعكاسات على سياسة EUR/SEK.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-04-27
+**Analyseperiode**: 2026-04-23 (seneste parlamentariske dag)
+**Konfidens**: HØJ [B2]
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Gennemgang 2**: 2026-04-27T06:38Z — Forbedret økonomisk oprindelse, styrket BLUF, tilføjede svenske kontekstdetaljer
+
+---
+
+### 🎯 Kernebudskab
+
+Kristersson-regeringen fremlagde fire betydelige lovgivningsinstrumenter den 23. april 2026, anført af EU-bankpakken (Prop. 2025/26:253) — Sveriges mest konsekvensrige finansregulatoriske transponering i et årti — sammen med restriktioner på socialforsikring for fængslede (Prop. 2025/26:252), en evaluering af statsgældsforvaltningen 2021–2025 (Skr. 2025/26:104) og skærpede regler mod fartskriversvindel (Prop. 2025/26:256). Bankpakken er det centrale element: det skriver EU's CRR3/CRD6 ind i svensk lov, styrker kapitalbuffere under `Finansdepartementet` og sendes til `FiU` (Finansudvalget). Sveriges statsgældskvote forbliver lav efter EU-standarder på **~31% af BNP** (IMF WEO apr-2026, indikator GGXWDG_NGDP, hentet 2026-04-27), hvilket giver finanspolitisk råderum, mens finansielle regulatorer strammes. BNP-vækst på **+2,1%** (NGDP_RPCH, samme kilde) støtter en kontrolleret overgang til højere kapitalkrav. Sveriges løbende konto-overskud på **+5,5% af BNP** (BCA_NGDPD, samme kilde) bekræfter ekstern styrke, mens banker tilpasser sig gulvkravet.
+
+**Økonomisk oprindelse** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=april 2026, retrieved_at=2026-04-27.
+
+### 🧭 3 Beslutninger Denne Oversigt Støtter
+
+1. **Riksdagen (FiU)**: Hvorvidt EU-bankpakken godkendes fuldt ud eller ændringsforslag kræves — afgørende i betragtning af Sveriges overstigende banksektor (≈400% af BNP i aktiver) og position uden for euroområdet.
+2. **Riksdagen (SfU)**: Hvorvidt socialforsikringsrestriktionerne for fængslede (HD03252) består en forfatningsretlig proportionalitetsprøvelse — forslagets besparelser (~200–300 MSEK/år) mod rehabiliteringsrisikoen.
+3. **Politiske analytikere / investorer**: Vurder statsgældsstrategien i lyset af evalueringen (HD03104), som viser, at Riksgälden opfyldte 2021–2025-ramværksmålene.
+
+---
+
+### 📊 60-Sekunders Efterretningspunkter
+
+- **EU-bankpakken (HD03253)** [B2 HØJ]: Gennemfører CRR3/CRD6; indfører et outputgulv på 72,5% for at begrænse interne modellers kapitallettelse; berører Swedbank, SEB, Handelsbanken, Nordea (Sverige). FiU-høring.
+- **Socialforsikringsrestriktion for fængslede (HD03252)** [B2 HØJ]: Fratrækker sygedagpenge, barselsdagpenge og sygeydelse for dem, der afsoner straf i `kontrolleret boende` eller `säkerhetsförvaring`. Justitiedepartementet, SfU-høring. Proportionalitetsindsigelse fra V og MP sandsynlig.
+- **Evaluering af statsgældsforvaltning (HD03104)** [A2 MEGET HØJ]: Riksgäldens selvevaluering 2021–2025 — nettolånsmål opfyldt 3 ud af 5 år; durations-strategi inden for mandatet. Finansdepartementet, FiU-høring. Lav lovgivningsmæssig risiko; informativ.
+- **Fartskriversvindel (HD03256)** [B2 MIDDEL]: Skærper straf og administrative sanktioner for fartskriversvindel; tilpasses EU-forordning 2018/1022. TU-høring. Brancheomkostning ved overholdelse.
+
+---
+
+### 🔑 Vigtigste Fremtidige Trigger
+
+**Uge 5. maj 2026**: FiU åbner offentlig høring om HD03253 — banksektorens indlæg forventes. Eventuelle væsentlige ændringsforslag signalerer svensk modstand mod EU's tilsynskonvergens, med implikationer for EUR/SEK-politikken.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Datum**: 2026-04-27
+**Analysezeitraum**: 2026-04-23 (letzter parlamentarischer Tag)
+**Konfidenz**: HOCH [B2]
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e,g)
+**Durchgang 2**: 2026-04-27T06:38Z — Verbesserte wirtschaftliche Herkunft, verstärkte Kernaussage, schwedische Kontextdetails ergänzt
+
+---
+
+### 🎯 Kernaussage
+
+Die Kristersson-Regierung legte am 23. April 2026 vier bedeutende Gesetzgebungsinstrumente vor, angeführt vom EU-Bankenpaket (Prop. 2025/26:253) — Schwedens folgenreichste Finanztransposition seit einem Jahrzehnt — sowie Einschränkungen der Sozialversicherung für Inhaftierte (Prop. 2025/26:252), einer Evaluierung der Staatsschuldenverwaltung 2021–2025 (Skr. 2025/26:104) und verschärften Regeln gegen Tachographenbetrug (Prop. 2025/26:256). Das Bankenpaket ist das Hauptthema: Es schreibt EU-CRR3/CRD6 in schwedisches Recht, stärkt Kapitalpuffer unter dem `Finansdepartementet` und wird dem `FiU` (Finanzausschuss) zugewiesen. Schwedens Staatsverschuldungsquote bleibt mit **~31% des BIP** nach EU-Maßstäben niedrig (IWF WEO Apr-2026, Indikator GGXWDG_NGDP, abgerufen 2026-04-27), was fiskalischen Spielraum bietet, während Finanzregulatoren das Rahmenwerk verschärfen. Das BIP-Wachstum von **+2,1%** (NGDP_RPCH, gleiche Quelle) unterstützt einen kontrollierten Übergang zu höheren Kapitalanforderungen. Schwedens Leistungsbilanzüberschuss von **+5,5% des BIP** (BCA_NGDPD, gleiche Quelle) bestätigt externe Stärke, während sich Banken an den Outputboden anpassen.
+
+**Wirtschaftliche Herkunft** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=April 2026, retrieved_at=2026-04-27.
+
+### 🧭 3 Entscheidungen, die dieser Bericht Unterstützt
+
+1. **der Riksdag (FiU)**: Ob das EU-Bankenpaket vollständig gebilligt oder Änderungsanträge gestellt werden — entscheidend angesichts Schwedens überdimensioniertem Bankensektor (≈400% des BIP an Vermögenswerten) und Nicht-Eurozone-Status.
+2. **der Riksdag (SfU)**: Ob die Sozialversicherungsbeschränkungen für Gefangene (HD03252) die verfassungsrechtliche Verhältnismäßigkeitsprüfung bestehen — fiskalische Einsparungen (~200–300 MSEK/J) gegen das Resozialisierungsrisiko.
+3. **Politische Analysten / Investoren**: Bewertung der Staatsschuldenstrategie vor dem Hintergrund der Evaluierung (HD03104), die zeigt, dass die Riksgälden ihre 2021–2025-Rahmenziele erfüllte.
+
+---
+
+### 📊 60-Sekunden-Geheimdienstpunkte
+
+- **EU-Bankenpaket (HD03253)** [B2 HOCH]: Transponiert CRR3/CRD6; führt Outputboden von 72,5% ein, um interne Modell-Kapitalentlastungen zu begrenzen; betrifft Swedbank, SEB, Handelsbanken, Nordea (Schweden). FiU-Ausschussüberweisung.
+- **Sozialversicherungsbeschränkung für Inhaftierte (HD03252)** [B2 HOCH]: Entzieht Krankengeld, Elterngeld und Krankheitsleistungen für Personen in `kontrolliertem Wohnen` oder Sicherheitsverwahrung. Justitiedepartementet, SfU-Überweisung. Verhältnismäßigkeitseinwand von V und MP wahrscheinlich.
+- **Staatsschulden-Evaluierung (HD03104)** [A2 SEHR HOCH]: Riksgäldens Selbstevaluierung 2021–2025 — Nettoanleihe-Ziel 3 von 5 Jahren erfüllt; Durations-Strategie im Rahmen des Mandats. Finansdepartementet, FiU-Überweisung. Geringes Gesetzgebungsrisiko; informativ.
+- **Tachographenbetrug (HD03256)** [B2 MITTEL]: Verschärft Straf- und Verwaltungssanktionen für Tachographenbetrug; entspricht EU-Verordnung 2018/1022. TU-Überweisung. Branchenkonformitätskosten.
+
+---
+
+### 🔑 Wichtigster Zukünftiger Auslöser
+
+**Woche 5. Mai 2026**: FiU eröffnet öffentliche Anhörung zu HD03253 — Eingaben der Bankenlobby erwartet. Wesentliche Änderungsanträge signalisieren schwedischen Widerstand gegen EU-Aufsichtskonvergenz, mit Implikationen für die EUR/SEK-Politik.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Fecha**: 2026-04-27
+**Período de análisis**: 2026-04-23 (último día parlamentario)
+**Confianza**: ALTA [B2]
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e,g)
+**Revisión 2**: 2026-04-27T06:38Z — Procedencia económica mejorada, mensaje central fortalecido, detalles contextuales suecos añadidos
+
+---
+
+### 🎯 Mensaje Central
+
+El gobierno Kristersson presentó cuatro instrumentos legislativos significativos el 23 de abril de 2026, encabezados por el paquete bancario de la UE (Prop. 2025/26:253) — la transposición de regulación financiera más relevante de Suecia en una década — junto con restricciones al seguro social para personas encarceladas (Prop. 2025/26:252), una evaluación de la gestión de deuda pública 2021–2025 (Skr. 2025/26:104) y reglas más estrictas contra el fraude de tacógrafos (Prop. 2025/26:256). El paquete bancario es el elemento central: escribe CRR3/CRD6 de la UE en la ley sueca, reforzando los colchones de capital bajo el `Finansdepartementet` y derivado al `FiU` (Comisión de Finanzas). El ratio de deuda pública de Suecia se mantiene bajo en comparación europea en **~31% del PIB** (FMI WEO abr-2026, indicador GGXWDG_NGDP, recuperado el 2026-04-27), proporcionando margen fiscal mientras los reguladores financieros endurecen el marco. El crecimiento del PIB en **+2,1%** (NGDP_RPCH, misma fuente) apoya una transición controlada hacia mayores requisitos de capital. El superávit de cuenta corriente sueca de **+5,5% del PIB** (BCA_NGDPD, misma fuente) confirma la solidez externa mientras los bancos se adaptan al suelo de producción.
+
+**Procedencia económica** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=abril 2026, retrieved_at=2026-04-27.
+
+### 🧭 3 Decisiones Que Este Informe Apoya
+
+1. **El Riksdag (FiU)**: Si aprobar el paquete bancario de la UE en su totalidad o solicitar enmiendas — crucial dado el sobredimensionado sector bancario de Suecia (≈400% del PIB en activos) y su estatus fuera de la zona euro.
+2. **El Riksdag (SfU)**: Si las restricciones de seguro social para prisioneros (HD03252) superan el examen constitucional de proporcionalidad — ahorros fiscales (~200–300 MSEK/año) versus riesgo de reinserción.
+3. **Analistas políticos / inversores**: Evaluar la estrategia de deuda pública a la luz de la evaluación (HD03104) que muestra que la Riksgälden cumplió sus objetivos-marco 2021–2025.
+
+---
+
+### 📊 Puntos de Inteligencia en 60 Segundos
+
+- **Paquete bancario UE (HD03253)** [B2 ALTA]: Transpone CRR3/CRD6; introduce un suelo de producción del 72,5% para limitar el alivio de capital de los modelos internos; afecta a Swedbank, SEB, Handelsbanken, Nordea (Suecia). Derivación al FiU.
+- **Restricción de seguro social para presos (HD03252)** [B2 ALTA]: Retira subsidio por enfermedad, prestación por maternidad/paternidad y prestación por incapacidad para quienes cumplen condena en `alojamiento controlado` o custodia de seguridad. Justitiedepartementet, derivación SfU. Probable objeción de proporcionalidad de V y MP.
+- **Evaluación de gestión de deuda pública (HD03104)** [A2 MUY ALTA]: Autoevaluación de la Riksgälden 2021–2025 — objetivo de endeudamiento neto cumplido 3 de 5 años; estrategia de duración dentro del mandato. Finansdepartementet, derivación FiU. Bajo riesgo legislativo; informativo.
+- **Fraude de tacógrafos (HD03256)** [B2 MEDIO]: Refuerza sanciones penales y administrativas para el fraude de tacógrafos; se alinea con el Reglamento UE 2018/1022. Derivación TU. Coste de cumplimiento sectorial.
+
+---
+
+### 🔑 Principal Disparador Futuro
+
+**Semana del 5 de mayo de 2026**: El FiU abre consulta pública sobre HD03253 — se esperan presentaciones del lobby bancario. Cualquier solicitud de enmienda sustancial señala resistencia sueca a la convergencia supervisora europea, con implicaciones para la política EUR/SEK.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling
+**Päivämäärä**: 2026-04-27
+**Analysijakso**: 2026-04-23 (viimeisin parlamentaarinen päivä)
+**Luottamus**: KORKEA [B2]
+**Luokitus**: JULKINEN — GDPR Art. 9(2)(e,g)
+**Tarkistus 2**: 2026-04-27T06:38Z — Parannettu taloudellinen alkuperä, vahvistettu ydinviesti, lisätty ruotsalaisia taustatietoja
+
+---
+
+### 🎯 Ydinviesti
+
+Kristersson-hallitus toi esille neljä merkittävää lainsäädäntöinstrumenttia 23. huhtikuuta 2026, joista tärkeimpänä EU:n pankkipaketti (Prop. 2025/26:253) — Ruotsin merkittävin finanssisääntelyn toimeenpano vuosikymmeneen — sekä vankilassa olevien sosiaaliturvarajoitukset (Prop. 2025/26:252), valtion velanhoidon arviointi 2021–2025 (Skr. 2025/26:104) ja tiukennetut säännöt ajopiirturityripeistä (Prop. 2025/26:256). Pankkipaketti on pääaihe: se kirjoittaa EU:n CRR3/CRD6:n ruotsalaiseen lakiin, vahvistaa pääomapuskureita `Finansdepartementet`-alaisuudessa ja ohjataan `FiU` (Finansutskottet)-valiokuntaan. Ruotsin valtionvelkasuhde pysyy alhaisena EU-vertailussa **~31% BKT:sta** (IMF WEO huhtikuu-2026, indikaattori GGXWDG_NGDP, haettu 2026-04-27), mikä antaa finanssipoliittista liikkumavaraa sääntelytiukentuessa. BKT-kasvu **+2,1%** (NGDP_RPCH, sama lähde) tukee hallittua siirtymistä tiukempiin pääomavaatimuksiin. Ruotsin vaihtotaseylijäämä **+5,5% BKT:sta** (BCA_NGDPD, sama lähde) vahvistaa ulkoisen tasapainon pankkien sopeutuessa tuotosgulviin.
+
+**Taloudellinen alkuperä** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=huhtikuu 2026, retrieved_at=2026-04-27.
+
+### 🧭 3 Päätöstä Jota Tämä Katsaus Tukee
+
+1. **Riksdagen (FiU)**: Hyväksytäänkö EU:n pankkipaketti kokonaisuudessaan vai pyydetäänkö muutoksia — kriittistä Ruotsin ylisuuren pankkisektorin (≈400% BKT:sta varoissa) ja euroalueen ulkopuolisen aseman vuoksi.
+2. **Riksdagen (SfU)**: Läpäiseekö vankien sosiaaliturvarajoitus (HD03252) perustuslaillisen suhteellisuusarvioinnin — ehdotuksen säästöt (~200–300 MSEK/v) vs. kuntoutusriski.
+3. **Poliittiset analyytikot / sijoittajat**: Arvioi valtion velkastrategiaa arvioinnin (HD03104) valossa, joka osoittaa Riksgäldenin täyttäneen 2021–2025-kehyksen tavoitteet.
+
+---
+
+### 📊 60 Sekunnin Tiedustelupisteet
+
+- **EU:n pankkipaketti (HD03253)** [B2 KORKEA]: Toimeenpanee CRR3/CRD6; ottaa käyttöön 72,5%:n tuotosgulvin rajoittamaan sisäisten mallien pääomahelpotusta; koskee Swedbankia, SEBiä, Handelsbankenia, Nordeaa (Ruotsi). FiU-kuuleminen.
+- **Vankien sosiaaliturvarajoitus (HD03252)** [B2 KORKEA]: Peruuttaa sairauspäivärahan, vanhempainpäivärahan ja sairaustuen niiltä, jotka suorittavat rangaistusta valvotussa asumisessa tai turvallisuussäilössä. Justitiedepartementet, SfU-kuuleminen. V:n ja MP:n suhteellisuusvastaväite todennäköinen.
+- **Valtion velanhoidon arviointi (HD03104)** [A2 HYVIN KORKEA]: Riksgäldenin itsearviointi 2021–2025 — nettolainanottotavoite saavutettu 3 vuonna 5:stä; duraatiostrategia toimeksiannon puitteissa. Finansdepartementet, FiU-kuuleminen. Alhainen lainsäädäntöriski; informatiivinen.
+- **Ajopiirturityripeily (HD03256)** [B2 KESKITASO]: Tiukentaa rangaistuksia ja hallinnollisia seuraamuksia ajopiirturityripeistä; sopusoinnussa EU-asetuksen 2018/1022 kanssa. TU-kuuleminen. Alan vaatimustenmukaisuuskustannus.
+
+---
+
+### 🔑 Tärkein Tuleva Laukaisija
+
+**Viikko 5. toukokuuta 2026**: FiU avaa julkisen kuulemisen HD03253:sta — pankkisektorin lausunnot odotettavissa. Mahdolliset oleelliset muutosehdotukset signaloivat ruotsalaista vastustusta EU:n valvontakonvergenssia kohtaan, EUR/SEK-politiikalle.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling
+
+**Période d'analyse**: 2026-04-23 (dernier jour parlementaire)
+**Confiance**: ÉLEVÉE [B2]
+
+**Passage 2**: 2026-04-27T06:38Z — Provenance économique améliorée, message central renforcé, détails contextuels suédois ajoutés
+
+---
+
+### 🎯 Message Central
+
+Le gouvernement Kristersson a présenté quatre instruments législatifs significatifs le 23 avril 2026, menés par le paquet bancaire UE (Prop. 2025/26:253) — la transposition réglementaire financière la plus conséquente de la Suède en une décennie — aux côtés de restrictions sur l'assurance sociale pour les personnes incarcérées (Prop. 2025/26:252), d'une évaluation de la gestion de la dette publique 2021–2025 (Skr. 2025/26:104) et de règles renforcées contre la fraude aux tachygraphes (Prop. 2025/26:256). Le paquet bancaire est l'élément central : il inscrit le CRR3/CRD6 de l'UE dans le droit suédois, renforçant les coussins de fonds propres sous le `Finansdepartementet` et renvoyé au `FiU` (Commission des finances). Le ratio d'endettement public suédois reste faible aux normes européennes à **~31% du PIB** (FMI WEO avr-2026, indicateur GGXWDG_NGDP, récupéré le 2026-04-27), offrant une marge budgétaire alors que les régulateurs financiers durcissent le cadre. La croissance du PIB à **+2,1%** (NGDP_RPCH, même source) soutient une transition maîtrisée vers des exigences de fonds propres plus élevées. L'excédent du compte courant suédois de **+5,5% du PIB** (BCA_NGDPD, même source) confirme la solidité externe alors que les banques s'adaptent au plancher de résultat.
+
+**Provenance économique** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=avril 2026, retrieved_at=2026-04-27.
+
+### 🧭 3 Décisions Que Cette Note Soutient
+
+1. **Le Riksdag (FiU)**: Approuver intégralement le paquet bancaire UE ou demander des amendements — crucial compte tenu du secteur bancaire surdimensionné de la Suède (≈400% du PIB en actifs) et de son statut hors zone euro.
+2. **Le Riksdag (SfU)**: Les restrictions d'assurance sociale pour les détenus (HD03252) passeront-elles l'examen constitutionnel de proportionnalité — économies budgétaires (~200–300 MSEK/an) contre risque de réinsertion.
+3. **Analystes politiques / investisseurs**: Évaluer la stratégie d'endettement public à la lumière de l'évaluation (HD03104) montrant que la Riksgälden a respecté ses objectifs-cadre 2021–2025.
+
+---
+
+### 📊 Points de Renseignement en 60 Secondes
+
+- **Paquet bancaire UE (HD03253)** [B2 ÉLEVÉE]: Transpose CRR3/CRD6 ; introduit un plancher de résultat de 72,5% pour limiter les allègements en capital des modèles internes ; concerne Swedbank, SEB, Handelsbanken, Nordea (Suède). Renvoi FiU.
+- **Restriction d'assurance sociale pour détenus (HD03252)** [B2 ÉLEVÉE]: Supprime les indemnités de maladie, congés parentaux et allocations d'invalidité pour les personnes en `logement contrôlé` ou détention de sécurité. Justitiedepartementet, renvoi SfU. Contestation de proportionnalité probable de V et MP.
+- **Évaluation de la gestion de la dette publique (HD03104)** [A2 TRÈS ÉLEVÉE]: Autoévaluation de la Riksgälden 2021–2025 — objectif d'emprunt net atteint 3 ans sur 5 ; stratégie de duration dans le mandat. Finansdepartementet, renvoi FiU. Faible risque législatif ; informatif.
+- **Fraude aux tachygraphes (HD03256)** [B2 MOYEN]: Renforce les sanctions pénales et administratives pour fraude aux tachygraphes ; aligne sur le règlement UE 2018/1022. Renvoi TU. Coût de conformité sectoriel.
+
+---
+
+### 🔑 Principal Déclencheur Futur
+
+**Semaine du 5 mai 2026**: Le FiU ouvre la consultation publique sur HD03253 — soumissions du lobby bancaire attendues. Toute demande d'amendement substantielle signale une résistance suédoise à la convergence de supervision européenne, avec des implications pour la politique EUR/SEK.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# 📋 תמצית מודיעינית — הצעות ממשלת שוודיה 2026-04-27
+
+**מחבר**: James Pether Sörling
+**תאריך**: 2026-04-27
+**תקופת ניתוח**: 2026-04-23 (יום פרלמנטרי אחרון)
+**רמת ביטחון**: גבוהה [B2]
+**סיווג**: ציבורי — תקנות GDPR סעיף 9(2)(ה,ז)
+**סבב 2**: 2026-04-27T06:38Z — שיפור מקור כלכלי, חיזוק המסר המרכזי, הוספת פרטי הקשר שוודיים
+
+---
+
+### 🎯 המסר המרכזי
+
+ממשלת קריסטרסון הגישה ארבעה כלי חקיקה משמעותיים ב-23 באפריל 2026, בראשם חבילת הבנקאות האירופאית (Prop. 2025/26:253) — ההעברה הרגולטורית הפיננסית החשובה ביותר של שוודיה בעשור — לצד הגבלות על ביטוח סוציאלי לכלואים (Prop. 2025/26:252), הערכת ניהול חוב המדינה 2021–2025 (Skr. 2025/26:104) וכללים מחמירים נגד זיוף טכוגרפים (Prop. 2025/26:256). חבילת הבנקאות היא הנושא המרכזי: היא כותבת את CRR3/CRD6 האירופאי לחוק השוודי, מחזקת כריות הון תחת `Finansdepartementet` ומופנית ל-`FiU` (ועדת הכספים). יחס החוב הממשלתי של שוודיה נשאר נמוך לפי סטנדרטים אירופאיים — **~31% מהתוצר הגולמי** (קרן המטבע הבינלאומית, WEO אפריל 2026, מדד GGXWDG_NGDP, נשלף 2026-04-27) — מה שמספק מרחב פיסקלי בעת שהרגולטורים הפיננסיים מחמירים את המסגרת. צמיחת תוצר של **+2.1%** (NGDP_RPCH, אותו מקור) תומכת במעבר מבוקר לדרישות הון גבוהות יותר. עודף החשבון השוטף של שוודיה — **+5.5% מהתוצר** (BCA_NGDPD, אותו מקור) — מאשר איתנות חיצונית כאשר הבנקים מסתגלים לרצפת התפוקה.
+
+**מקור כלכלי** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=אפריל 2026, retrieved_at=2026-04-27.
+
+### 🧭 3 החלטות שתמצית זו תומכת בהן
+
+1. **הריקסדאג (FiU)**: האם לאשר את חבילת הבנקאות האירופאית במלואה או לבקש תיקונים — קריטי לאור המגזר הבנקאי הגדול מאוד של שוודיה (≈400% מהתוצר בנכסים) ומעמדה מחוץ לאיחוד המוניטרי.
+2. **הריקסדאג (SfU)**: האם הגבלות ביטוח סוציאלי לאסירים (HD03252) עוברות ביקורת חוקתית של מידתיות — חיסכון פיסקלי (~200–300 מיליון כתר שוודי/שנה) מול סיכון שיקום.
+3. **אנליסטים פוליטיים / משקיעים**: הערכת אסטרטגיית החוב הממשלתי לאור ההערכה (HD03104) שמראה שה-Riksgälden עמדה ביעדי מסגרת 2021–2025.
+
+---
+
+### 📊 נקודות מודיעין ב-60 שניות
+
+- **חבילת הבנקאות האירופאית (HD03253)** [B2 גבוהה]: מעבירה CRR3/CRD6; מציגה רצפת תפוקה של 72.5% להגבלת הקלה בהון מדגמים פנימיים; משפיעה על Swedbank, SEB, Handelsbanken, Nordea (שוודיה). הפניה ל-FiU.
+- **הגבלת ביטוח סוציאלי לכלואים (HD03252)** [B2 גבוהה]: מסירה דמי מחלה, קצבת הורים וקצבת נכות מכלואים ב`דיור מבוקר` או מעצר ביטחוני. Justitiedepartementet, הפניה SfU. סביר שיישמע ערעור מידתיות מ-V וMP.
+- **הערכת ניהול חוב המדינה (HD03104)** [A2 גבוהה מאוד]: הערכה עצמית של Riksgälden 2021–2025 — יעד הלוואה נטו הושג 3 מתוך 5 שנים; אסטרטגיית משך בגדר הסמכות. Finansdepartementet, הפניה FiU. סיכון חקיקתי נמוך; אינפורמטיבי.
+- **זיוף טכוגרפים (HD03256)** [B2 בינוני]: מחמיר עונשים פליליים ואדמיניסטרטיביים לזיוף טכוגרפים; מתאים לתקנת האיחוד האירופאי 2018/1022. הפניה TU. עלות ציות ענפית.
+
+---
+
+### 🔑 הגורם המניע המרכזי הבא
+
+**שבוע 5 במאי 2026**: FiU פותח ייעוץ ציבורי על HD03253 — ציפייה להגשות מלובי הבנקים. כל בקשת תיקון מהותית מסמנת התנגדות שוודית להתכנסות פיקוחית אירופאית, עם השלכות על מדיניות EUR/SEK.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling
+**日付**: 2026-04-27
+**分析期間**: 2026-04-23（直近の議会日）
+**信頼度**: 高 [B2]
+**分類**: 公開 — GDPR第9条(2)(e,g)
+**第2パス**: 2026-04-27T06:38Z — 経済的出所改善、核心メッセージ強化、スウェーデンの文脈詳細追加
+
+---
+
+### 🎯 核心メッセージ
+
+クリスタション政権は2026年4月23日に4つの重要な立法措置を提出しました。その筆頭はEU銀行パッケージ（Prop. 2025/26:253）— スウェーデンにとって10年で最も重要な金融規制の転換 — であり、収監者に対する社会保険の制限（Prop. 2025/26:252）、2021–2025年の国債管理評価（Skr. 2025/26:104）、タコグラフ不正操作に対する規制強化（Prop. 2025/26:256）が続きます。銀行パッケージが主要テーマです：EUのCRR3/CRD6をスウェーデン法に組み込み、`Finansdepartementet`の下で自己資本バッファーを強化し、`FiU`（財政委員会）に付託されます。スウェーデンの公的債務比率はEU基準で低水準を維持し、**GDP比約31%**（IMF世界経済見通し2026年4月、指標GGXWDG_NGDP、2026-04-27取得）、金融規制当局がフレームワークを強化する中で財政的な余地を提供しています。GDP成長率**+2.1%**（NGDP_RPCH、同一出所）は、より高い自己資本要求への管理された移行を支えます。スウェーデンの経常収支黒字**+5.5%**（BCA_NGDPD、同一出所）は、銀行がアウトプット・フロアに適応する中での対外的な強さを確認します。
+
+**経済的出所**（`economicProvenance`）: provider=imf, dataflow=WEO, vintage=2026年4月, retrieved_at=2026-04-27.
+
+### 🧭 このブリーフィングが支援する3つの決定
+
+1. **Riksdag（FiU）**: EU銀行パッケージを全面承認するか修正を求めるか — スウェーデンの過大な銀行部門（資産でGDP比≈400%）と非ユーロ圏の地位を踏まえ極めて重要。
+2. **Riksdag（SfU）**: 受刑者への社会保険制限（HD03252）が憲法上の比例性審査を通過するか — 財政節約効果（年間約200–300百万スウェーデン・クローナ）対リハビリのリスク。
+3. **政策アナリスト/投資家**: Riksgäldenが2021–2025年の枠組み目標を達成したことを示す評価（HD03104）を背景に国債戦略を評価する。
+
+---
+
+### 📊 60秒インテリジェンス要点
+
+- **EU銀行パッケージ（HD03253）** [B2 高]: CRR3/CRD6を転換；内部モデルの資本軽減を制限するため72.5%のアウトプット・フロアを導入；Swedbank、SEB、Handelsbanken、Nordea（スウェーデン）に影響。FiU委員会付託。
+- **受刑者への社会保険制限（HD03252）** [B2 高]: `管理された居住`または保安拘禁での服役者から疾病給付、育児休業給付、傷病給付を撤回。Justitiedepartementet、SfU付託。VとMPからの比例性への異議申し立て可能性大。
+- **国債管理評価（HD03104）** [A2 非常に高]: Riksgälden自己評価2021–2025 — 純借入目標5年中3年達成；デュレーション戦略は委任内。Finansdepartementet、FiU付託。低い立法リスク；情報提供的。
+- **タコグラフ不正（HD03256）** [B2 中]: タコグラフ不正に対する刑事・行政制裁を強化；EU規則2018/1022に整合。TU付託。業界コンプライアンスコスト。
+
+---
+
+### 🔑 最重要の将来のトリガー
+
+**2026年5月5日の週**: FiUがHD03253に関する公開協議を開始 — 銀行ロビーからの意見書が予想される。いかなる実質的修正要求もEU監督収斂に対するスウェーデンの抵抗を示し、EUR/SEK政策への含意がある。
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**날짜**: 2026-04-27
+**분석 기간**: 2026-04-23 (최근 의회 개회일)
+**신뢰도**: 높음 [B2]
+**분류**: 공개 — GDPR 제9조 제2항 (e,g)
+**2차 검토**: 2026-04-27T06:38Z — 경제적 출처 개선, 핵심 메시지 강화, 스웨덴 배경 세부사항 추가
+
+---
+
+### 🎯 핵심 메시지
+
+크리스테르손 정부는 2026년 4월 23일 네 가지 중요한 입법 수단을 제출했습니다. EU 은행 패키지(Prop. 2025/26:253)가 선두로, 이는 스웨덴 역사상 10년 만에 가장 중요한 금융 규제 전환입니다. 여기에 수감자에 대한 사회보험 제한(Prop. 2025/26:252), 2021–2025년 국가 채무 관리 평가(Skr. 2025/26:104), 운행기록계 조작에 대한 규제 강화(Prop. 2025/26:256)가 뒤따릅니다. 은행 패키지가 핵심 주제입니다: EU CRR3/CRD6을 스웨덴 법률에 반영하여 `Finansdepartementet` 아래 자본 완충재를 강화하고 `FiU`(재정위원회)에 회부됩니다. 스웨덴의 국가 부채 비율은 EU 기준에서 낮은 수준인 **GDP의 약 31%**로 유지됩니다(IMF 세계경제전망 2026년 4월, 지표 GGXWDG_NGDP, 2026-04-27 조회). GDP 성장률 **+2.1%**(NGDP_RPCH, 동일 출처)는 높은 자본 요건으로의 통제된 전환을 뒷받침합니다. 스웨덴의 경상수지 흑자 **GDP의 +5.5%**(BCA_NGDPD, 동일 출처)는 은행이 산출 하한선에 적응하는 동안 대외 건전성을 확인합니다.
+
+**경제적 출처**(`economicProvenance`): provider=imf, dataflow=WEO, vintage=2026년 4월, retrieved_at=2026-04-27.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **릭스다겐(FiU)**: EU 은행 패키지를 전체적으로 승인하거나 수정안을 요청할지 여부 — 스웨덴의 과도한 은행 부문(자산 기준 GDP의 ≈400%)과 비유로존 지위를 고려할 때 중요합니다.
+2. **릭스다겐(SfU)**: 수감자에 대한 사회보험 제한(HD03252)이 헌법상 비례성 심사를 통과하는지 — 재정 절감 효과(연간 약 2–3억 스웨덴 크로나) 대 재활 위험.
+3. **정책 분석가 / 투자자**: 릭스갈덴이 2021–2025년 틀 목표를 달성했음을 보여주는 평가(HD03104)를 배경으로 국가 채무 전략을 평가합니다.
+
+---
+
+### 📊 60초 정보 요점
+
+- **EU 은행 패키지(HD03253)** [B2 높음]: CRR3/CRD6 전환; 내부 모델 자본 경감을 제한하기 위한 72.5% 산출 하한선 도입; Swedbank, SEB, Handelsbanken, Nordea(스웨덴)에 영향. FiU 위원회 회부.
+- **수감자 사회보험 제한(HD03252)** [B2 높음]: `통제된 주거` 또는 보안 구금에서 복역 중인 사람들의 상병급여, 육아휴직급여, 장해급여 철회. Justitiedepartementet, SfU 회부. V와 MP의 비례성 이의 제기 가능성 높음.
+- **국가 채무 관리 평가(HD03104)** [A2 매우 높음]: 릭스갈덴 자체 평가 2021–2025 — 순 차입 목표 5년 중 3년 달성; 듀레이션 전략이 위임 범위 내. Finansdepartementet, FiU 회부. 낮은 입법 위험; 정보 제공.
+- **운행기록계 조작(HD03256)** [B2 보통]: 운행기록계 조작에 대한 형사 및 행정 제재 강화; EU 규정 2018/1022에 맞춤. TU 회부. 업계 준수 비용.
+
+---
+
+### 🔑 가장 중요한 미래 촉발 요인
+
+**2026년 5월 5일 주**: FiU가 HD03253에 대한 공개 협의 개시 — 은행 로비 제출 예상. 실질적인 수정 요청은 EU 감독 수렴에 대한 스웨덴의 저항을 신호하며 EUR/SEK 정책에 영향을 미칩니다.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Datum**: 2026-04-27
+**Analyseperiode**: 2026-04-23 (laatste parlementaire dag)
+**Betrouwbaarheid**: HOOG [B2]
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e,g)
+**Ronde 2**: 2026-04-27T06:38Z — Verbeterde economische herkomst, versterkte kernboodschap, Zweedse contextdetails toegevoegd
+
+---
+
+### 🎯 Kernboodschap
+
+De Kristersson-regering presenteerde op 23 april 2026 vier significante wetgevingsinstrumenten, aangevoerd door het EU-bankenpakket (Prop. 2025/26:253) — Zweden's meest ingrijpende financiële regelgevingstransponering in een decennium — samen met beperkingen op sociale verzekeringen voor gedetineerden (Prop. 2025/26:252), een evaluatie van het staatsvermogensbeheer 2021–2025 (Skr. 2025/26:104) en aangescherpte regels tegen tachograaffraude (Prop. 2025/26:256). Het bankenpakket is het hoofdonderwerp: het schrijft EU CRR3/CRD6 in de Zweedse wet, versterkt kapitaalbuffers onder het `Finansdepartementet` en wordt doorverwezen naar `FiU` (Financiëncommissie). Zweden's staatsschuldquote blijft laag naar EU-maatstaven op **~31% van het BBP** (IMF WEO apr-2026, indicator GGXWDG_NGDP, opgehaald 2026-04-27), wat begrotingsruimte biedt terwijl financiële toezichthouders het kader aanscherpen. BBP-groei van **+2,1%** (NGDP_RPCH, zelfde bron) ondersteunt een beheerste overgang naar hogere kapitaalvereisten. Het Zweedse overschot op de lopende rekening van **+5,5% van het BBP** (BCA_NGDPD, zelfde bron) bevestigt externe kracht terwijl banken zich aanpassen aan de outputbodem.
+
+**Economische herkomst** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=april 2026, retrieved_at=2026-04-27.
+
+### 🧭 3 Beslissingen Die Deze Briefing Ondersteunt
+
+1. **De Riksdag (FiU)**: Of het EU-bankenpakket volledig wordt goedgekeurd of wijzigingen worden gevraagd — cruciaal gezien Zweden's oversized bankensector (≈400% van het BBP aan activa) en niet-eurozonelidmaatschap.
+2. **De Riksdag (SfU)**: Of de sociale-verzekeringsbeperkingen voor gevangenen (HD03252) de grondwettelijke evenredigheidstoets doorstaan — fiscale besparingen (~200–300 MSEK/j) tegen het reïntegratierisico.
+3. **Politieke analisten / investeerders**: Beoordeel de staatsschuldstrategie in het licht van de evaluatie (HD03104) waaruit blijkt dat de Riksgälden haar 2021–2025-kadersdoelen heeft behaald.
+
+---
+
+### 📊 60-Seconden Inlichtingenpunten
+
+- **EU-bankenpakket (HD03253)** [B2 HOOG]: Transponeert CRR3/CRD6; introduceert een outputbodem van 72,5% om kapitaalverlichting van interne modellen te beperken; betreft Swedbank, SEB, Handelsbanken, Nordea (Zweden). FiU-doorverwijzing.
+- **Sociale-verzekeringsbeperking voor gedetineerden (HD03252)** [B2 HOOG]: Trekt ziektegeld, ouderschapsverlof en arbeidsongeschiktheidsuitkeringen in voor personen die straf uitzitten in `gecontroleerde woonsituatie` of beveiligingsbewaring. Justitiedepartementet, SfU-doorverwijzing. Evenredigheidsbetwisting door V en MP waarschijnlijk.
+- **Evaluatie staatsschuldbeheer (HD03104)** [A2 ZEER HOOG]: Riksgäldens zelfevaluatie 2021–2025 — nettoleningsdoel 3 van 5 jaar behaald; duratiestrategie binnen het mandaat. Finansdepartementet, FiU-doorverwijzing. Laag wetgevingsrisico; informatief.
+- **Tachograaffraude (HD03256)** [B2 MIDDEL]: Verscherpt strafrechtelijke en administratieve sancties voor tachograaffraude; sluit aan op EU-verordening 2018/1022. TU-doorverwijzing. Sectornaleefkosten.
+
+---
+
+### 🔑 Belangrijkste Toekomstige Trigger
+
+**Week 5 mei 2026**: FiU opent publieke consultatie over HD03253 — inzendingen van de banklobby verwacht. Substantiële wijzigingsverzoeken signaleren Zweedse weerstand tegen EU-toezichtconvergentie, met implicaties voor EUR/SEK-beleid.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-04-27
+**Analyseperiode**: 2026-04-23 (siste parlamentariske dag)
+**Konfidens**: HØY [B2]
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Gjennomgang 2**: 2026-04-27T06:38Z — Forbedret økonomisk opphav, styrket kjernepunkt, lagt til svenske kontekstdetaljer
+
+---
+
+### 🎯 Kjernepunkt
+
+Kristersson-regjeringen la frem fire betydelige lovgivningsinstrumenter 23. april 2026, ledet av EU-bankpakken (Prop. 2025/26:253) — Sveriges mest konsekvensrike finansregulatoriske transponering på et tiår — sammen med restriksjoner på trygdeytelser for innsatte (Prop. 2025/26:252), en evaluering av statsgjeldsforvaltningen 2021–2025 (Skr. 2025/26:104) og skjerpede regler mot fartsskriversvindel (Prop. 2025/26:256). Bankpakken er hovednummeret: den skriver EU's CRR3/CRD6 inn i svensk lov, styrker kapitalbuffere under `Finansdepartementet` og sendes til `FiU` (Finanskomiteen). Sveriges statsgjeldskvote forblir lav etter EU-standarder på **~31% av BNP** (IMF WEO apr-2026, indikator GGXWDG_NGDP, hentet 2026-04-27), noe som gir finanspolitisk handlingsrom mens finansregulatorer strammer til. BNP-vekst på **+2,1%** (NGDP_RPCH, samme kilde) støtter en styrt overgang til høyere kapitalkrav. Sveriges bytesbalansoverskudd på **+5,5% av BNP** (BCA_NGDPD, samme kilde) bekrefter ekstern styrke når banker tilpasser seg gulvkravet.
+
+**Økonomisk opphav** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=april 2026, retrieved_at=2026-04-27.
+
+### 🧭 3 Beslutninger Denne Oversikten Støtter
+
+1. **Riksdagen (FiU)**: Hvorvidt EU-bankpakken godkjennes i sin helhet eller endringsforslag kreves — avgjørende gitt Sveriges overstørre banksektor (≈400% av BNP i eiendeler) og posisjon utenfor euroområdet.
+2. **Riksdagen (SfU)**: Hvorvidt trygderestriksjonene for innsatte (HD03252) passerer konstitusjonell forholdsmessighetsprøving — forslagets besparelser (~200–300 MSEK/år) mot rehabiliteringsrisikoen.
+3. **Politiske analytikere / investorer**: Vurder statsgjeldsstrategien i lys av evalueringen (HD03104) som viser at Riksgälden møtte 2021–2025-rammemålene.
+
+---
+
+### 📊 60-Sekunders Etterretningspunkter
+
+- **EU-bankpakken (HD03253)** [B2 HØY]: Gjennomfører CRR3/CRD6; innfører et outputgulv på 72,5% for å begrense interne modellers kapitallettelse; berører Swedbank, SEB, Handelsbanken, Nordea (Sverige). FiU-høring.
+- **Trygderestriksjon for innsatte (HD03252)** [B2 HØY]: Trekker tilbake sykepenger, foreldrepenger og sykerstønad for dem som soner i `kontrollert bosted` eller `säkerhetsförvaring`. Justitiedepartementet, SfU-høring. Forholdsmessighetsinnsigelse fra V og MP sannsynlig.
+- **Evaluering av statsgjeldsforvaltning (HD03104)** [A2 MEGET HØY]: Riksgäldens selveval. 2021–2025 — nettolånsmål oppfylt 3 av 5 år; durasjonsstrategi innenfor mandatet. Finansdepartementet, FiU-høring. Lav lovgivningsrisiko; informativ.
+- **Fartsskriversvindel (HD03256)** [B2 MIDDELS]: Skjerper straff og administrative sanksjoner for fartsskriversvindel; tilpasses EU-forordning 2018/1022. TU-høring. Bransjekostnad ved overholdelse.
+
+---
+
+### 🔑 Viktigste Fremtidige Utløser
+
+**Uke 5. mai 2026**: FiU åpner offentlig høring om HD03253 — banksektorens innspill forventes. Eventuelle vesentlige endringsforslag signaliserer norsk/svensk motstand mot EU's tilsynskonvergens, med implikasjoner for EUR/SEK-politikken.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Datum**: 2026-04-27
+**Analysperiod**: 2026-04-23 (senaste parlamentariska dag)
+**Konfidens**: HÖG [B2]
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Genomgång 2**: 2026-04-27T06:38Z — Förbättrad ekonomisk proveniens, stärkt BLUF, tillagda svenska kontextdetaljer
+
+---
+
+### 🎯 Kärna
+
+Kristerssons regering lade fram fyra betydande lagstiftningsinstrument den 23 april 2026, lett av EU:s bankpaket (Prop. 2025/26:253) — Sveriges mest konsekvensrika transponering av finansreglering på ett decennium — tillsammans med begränsningar av socialförsäkring för intagna (Prop. 2025/26:252), en utvärdering av statsskuldsförvaltningen 2021–2025 (Skr. 2025/26:104) och skärpta regler mot färdskrivarbedrägeri (Prop. 2025/26:256). Bankpaketet är huvudnumret: det infogar EU:s CRR3/CRD6 i svensk rätt, stärker kapitalbuffertar under `Finansdepartementet` och remitteras till `FiU` (Finansutskottet). Sveriges statsskuldkvot förblir låg i ett EU-perspektiv på **~31% av BNP** (IMF WEO apr-2026, indikator GGXWDG_NGDP, hämtad 2026-04-27), vilket skapar finansiellt utrymme när finansreglerare stramar åt ramverket. BNP-tillväxt på **+2,1%** (NGDP_RPCH, samma källa) stöder en kontrollerad övergång till högre kapitalkrav. Sveriges bytesbalansöverskott på **+5,5% av BNP** (BCA_NGDPD, samma källa) bekräftar den externa styrkan när banker anpassar sig till golvkravet.
+
+**Ekonomisk proveniens** (`economicProvenance`): provider=imf, dataflow=WEO, vintage=april 2026, retrieved_at=2026-04-27.
+
+### 🧭 3 Beslut Som Denna Översikt Stöder
+
+1. **Riksdagen (FiU)**: Huruvida EU:s bankpaket godkänns i sin helhet eller om ändringar begärs — avgörande givet Sveriges överdimensionerade banksektor (≈400% av BNP i tillgångar) och ställning utanför euroområdet.
+2. **Riksdagen (SfU)**: Huruvida begränsningarna av socialförsäkring för fångar (HD03252) klarar konstitutionell proportionalitetsgranskning — förslagets beräknade besparingar (~200–300 MSEK/år) mot rehabiliteringsrisken.
+3. **Politiska analytiker / investerare**: Bedöm statsskuldstrategin mot bakgrund av utvärderingen (HD03104) som visar att Riksgälden uppfyllde 2021–2025-ramverksmålen.
+
+---
+
+### 📊 60-Sekunders Underrättelsepunkter
+
+- **EU:s bankpaket (HD03253)** [B2 HÖG]: Genomför CRR3/CRD6; inför ett golvkrav på 72,5% för att begränsa interna modellers kapitallättnad; berör Swedbank, SEB, Handelsbanken, Nordea (Sverige). FiU-remiss.
+- **Begränsning av socialförsäkring för intagna (HD03252)** [B2 HÖG]: Drar in sjukpenning, föräldrapenning och sjukersättning för dem som avtjänar straff i kontrollerat boende eller säkerhetsförvaring. Justitiedepartementet, SfU-remiss. Proportionalitetsinvändning från V och MP sannolikt.
+- **Utvärdering av statsskuldsförvaltningen (HD03104)** [A2 MYCKET HÖG]: Riksgäldens självutvärdering 2021–2025 — nettolångemålet uppfylldes 3 av 5 år; durationsstrategin inom mandatet. Finansdepartementet, FiU-remiss. Låg lagstiftningsrisk; informativ.
+- **Färdskrivarbedrägeri (HD03256)** [B2 MEDEL]: Skärper straff och administrativa sanktioner för färdskrivarbedrägeri; anpassar sig till EU-förordning 2018/1022. TU-remiss. Branschkostnad för efterlevnad.
+
+---
+
+### 🔑 Viktigaste Framtida Trigger
+
+**Vecka 5 maj 2026**: FiU öppnar offentlig remiss på HD03253 — banksektorns inlagor förväntas. Eventuella substantiella ändringsyrkanden signalerar svenskt motstånd mot EU:s tillsynskonvergens, med implikationer för EUR/SEK-politiken.
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling
+**日期**: 2026-04-27
+**分析期间**: 2026-04-23（最近一个议会日）
+**可信度**: 高 [B2]
+**分类**: 公开 — 《通用数据保护条例》第9条第2款(e,g)项
+**第二轮审查**: 2026-04-27T06:38Z — 完善经济来源，强化核心信息，补充瑞典背景细节
+
+---
+
+### 🎯 核心信息
+
+克里斯特松政府于2026年4月23日提交了四项重要立法文件，其中以欧盟银行业一揽子方案（Prop. 2025/26:253）为首，这是瑞典十年来最重要的金融法规转化——同时还包括对在押人员社会保险的限制（Prop. 2025/26:252）、2021–2025年国家债务管理评估（Skr. 2025/26:104），以及针对行驶记录仪欺诈行为的更严格规定（Prop. 2025/26:256）。银行业一揽子方案是核心议题：它将欧盟CRR3/CRD6纳入瑞典法律，在`Finansdepartementet`主导下强化资本缓冲，并提交`FiU`（财政委员会）审议。按欧盟标准，瑞典政府债务率维持在较低水平，约为**GDP的31%**（国际货币基金组织，2026年4月世界经济展望，指标GGXWDG_NGDP，提取时间：2026-04-27），在金融监管机构收紧框架之际提供了财政空间。GDP增速**+2.1%**（NGDP_RPCH，同一来源）支持银行业向更高资本要求的有序过渡。瑞典经常账户盈余**+5.5%的GDP**（BCA_NGDPD，同一来源）确认了银行适应产出下限期间的对外稳健性。
+
+**经济来源**（`economicProvenance`）: provider=imf, dataflow=WEO, vintage=2026年4月, retrieved_at=2026-04-27.
+
+### 🧭 本简报支持的3项决策
+
+1. **Riksdag（FiU）**: 是否全面批准欧盟银行业一揽子方案或要求修订——鉴于瑞典规模庞大的银行业（资产约为GDP的400%）及其非欧元区地位，这一决定至关重要。
+2. **Riksdag（SfU）**: 针对囚犯的社会保险限制（HD03252）能否通过宪法比例原则审查——财政节约（约每年2–3亿瑞典克朗）与康复风险的权衡。
+3. **政策分析师/投资者**: 结合显示Riksgälden完成2021–2025年框架目标的评估（HD03104），对国家债务战略进行评估。
+
+---
+
+### 📊 60秒情报要点
+
+- **欧盟银行业一揽子方案（HD03253）** [B2 高]: 转化CRR3/CRD6；引入72.5%的产出下限，以限制内部模型的资本减免；涉及Swedbank、SEB、Handelsbanken、Nordea（瑞典）。提交FiU审议。
+- **囚犯社会保险限制（HD03252）** [B2 高]: 撤销在`管控居所`或安全拘留中服刑者的疾病津贴、育儿假和伤残福利。Justitiedepartementet，提交SfU审议。V和MP的比例原则异议可能性较高。
+- **国家债务管理评估（HD03104）** [A2 非常高]: Riksgälden 2021–2025年自我评估——净借款目标5年中3年达标；久期策略在授权范围内。Finansdepartementet，提交FiU审议。立法风险低；信息性内容。
+- **行驶记录仪欺诈（HD03256）** [B2 中]: 强化针对行驶记录仪欺诈的刑事和行政处罚；与欧盟法规2018/1022对齐。提交TU审议。行业合规成本。
+
+---
+
+### 🔑 最重要的未来触发因素
+
+**2026年5月5日一周**: FiU就HD03253开启公众咨询——预计将收到银行游说团体提交的意见。任何实质性修正请求均表明瑞典对欧盟监管趋同的抵制，并对EUR/SEK政策产生影响。
+
+---
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+    title Proposition Significance vs Legislative Risk (2026-04-23)
+    x-axis Low Risk --> High Risk
+    y-axis Low Significance --> High Significance
+    quadrant-1 "Monitor Closely"
+    quadrant-2 "Priority Action"
+    quadrant-3 "Routine"
+    quadrant-4 "Watch"
+    HD03253: [0.6, 0.9]
+    HD03252: [0.7, 0.75]
+    HD03104: [0.2, 0.55]
+    HD03256: [0.35, 0.4]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    subgraph Finance
+        HD03253["HD03253\nEU Banking Package\nFiU"]
+        HD03104["HD03104\nDebt Mgmt Eval\nFiU"]
+    end
+    subgraph Justice_Welfare
+        HD03252["HD03252\nPrisoner Benefits\nSfU"]
+    end
+    subgraph Transport
+        HD03256["HD03256\nTachograph Rules\nTU"]
+    end
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#000
+    style HD03104 fill:#00d9ff,color:#000
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 7156ec83294bd3d7360cfe9849ab2c3c69f409dc -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 4 | Linked in Article Sources, not expanded inline |
 
@@ -2174,6 +3207,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

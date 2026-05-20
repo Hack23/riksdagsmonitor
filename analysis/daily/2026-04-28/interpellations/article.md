@@ -6,7 +6,7 @@ date: 2026-04-28
 subfolder: interpellations
 slug: 2026-04-28-interpellations
 source_folder: analysis/daily/2026-04-28/interpellations
-generated_at: 2026-05-20T01:10:29.422Z
+generated_at: 2026-05-20T10:12:19.646Z
 language: en
 layout: article
 ---
@@ -98,6 +98,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1816,13 +1829,887 @@ xychart-beta
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-04-27 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_ar.md -->
+
+&#x200F;# المعارضة تستهدف ثغرات البنية التحتية والرعاية الاجتماعية وجرائم الشركات في أحدث الاستجوابات
+
+**التاريخ**: 2026-04-28  
+**المؤلف**: James Pether Sörling  
+**التصنيف**: عام — اللائحة الأوروبية لحماية البيانات المادة 9(2)(هـ,و)  
+**الثقة**: متوسطة–عالية [B2]
+
+### 🎯 الخلاصة التنفيذية
+
+قدّم ثلاثة نوّاب اشتراكيين ديمقراطيين في الريكسداج استجوابات (HD10449, HD10450, HD10451) بتاريخ 2026-04-27، يتحدّون فيها حكومة تحالف تيدو على ثلاثة مجالات محتقنة سياسياً: عجز الاستثمارات في البنية التحتية للسكك الحديدية، ومخاطر إصلاح التأمين الصحي، وفاعلية التدابير المتخذة ضد جرائم الشركات. والاستجوابات الثلاثة موجّهة إلى وزراء في تحالف تيدو (KD, M, M)، وتُجسّد استراتيجية S في المساءلة قبيل الانتخابات في مجالات ذات صلة عالية بالناخبين.
+
+### القرارات المدعومة
+
+1. **المتابعة السياسية**: رصد ما إذا كان الوزير Carlson يلتزم بأي جدول زمني لخط سكك حديد Alvesta–Växjö — إنجاز ملموس قد يؤثر على ثقة الناخبين الإقليميين في Sydsverige.
+2. **مراقبة إصلاح الرفاه الاجتماعي**: متابعة ما إذا كان استثناء اليوم 180 في التأمين الصحي سيبقى سليماً؛ إذ يستبق استجواب Jessica Rodén (HD10450) إصلاحاً محتملاً ويختبر نوايا الحكومة علناً.
+3. **إنفاذ الجرائم الاقتصادية**: تقييم ما إذا كان وزير العدل Strömmer سيعلن عن تدابير إضافية تتجاوز قانون 2025-01-01، في ضوء التقدير الصارخ لـ ESO باقتصاد إجرامي بقيمة 352 مليار كرونة.
+
+### قراءة في 60 ثانية
+
+- **HD10449 (السكك الحديدية/البنية التحتية)**: تستهدف S الخطة المُعدَّلة لـ Trafikverket التي تُلغي الاستثمارات على خط Södra stambanan شمال Hässleholm وازدواج المسار Alvesta–Växjö. يواجه الوزير Andreas Carlson (KD) أسئلة عن الجدول الزمني والالتزام. صلة عالية بالناخبين في Kronoberg وSkåne.
+- **HD10450 (التأمين الصحي)**: تدافع S عن استثناء اليوم 180 الذي أدخلته حكومة S السابقة مستندةً إلى أدلة Riksrevision على أنه يرفع معدلات العودة للعمل. لم تُشِر الوزيرة Anna Tenje (M) إلى أي نية؛ تسعى المعارضة إلى التزام علني.
+- **HD10451 (جرائم الشركات)**: تستشهد S بنتائج Brå لعام 2025 بأن 1 من كل 5 مجرمي شبكات عمل عبر شركات (23,000 شركة؛ 11.5 مليار كرونة ضرائب متأخرة) وتقدير ESO بأن الاقتصاد الإجرامي يمثّل 352 مليار كرونة / 5.5% من الناتج المحلي الإجمالي. يُسأل الوزير Gunnar Strömmer (M) عن إجراءات إضافية تتجاوز قانون يناير 2025.
+
+### أهم مؤشر استشرافي
+
+**2026-05-18**: الموعد المشترك للرد على HD10449 وHD10450 وHD10451. ومن المرجح جدولة مناقشات الاستجوابات بُعيده — حدث إعلامي بارز.
+
+### تقييم الثقة
+
+[B2] — المصادر هي مصادر أولية رسمية (API الريكسداج)؛ يستند التحليل إلى نصوص الاستجوابات المقدَّمة. الردود الوزارية غير متاحة بعد. تُقدَّر درجة عدم اليقين حول نوايا الحكومة بـ متوسطة.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*المراجعة الثانية: رُوجعت تصنيفات DIW بالإسناد الإضافي مع significance-scoring.md — تم تأكيد HD10451 عند 9.0، متسقاً مع أدلة Brå/ESO المزدوجة. يُقيّد النطاق الإقليمي لـ HD10449 درجة العنوان. مخططات Mermaid تم التحقق منها. تواريخ الجدول الزمني مُتقاطَعة مع مواعيد الرد على الاستجوابات.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_da.md -->
+
+**Dato**: 2026-04-28  
+**Forfatter**: James Pether Sörling  
+**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e,g)  
+**Konfidens**: MEDIUM–HØJ [B2]
+
+### 🎯 Kernevurdering
+
+Tre socialdemokratiske riksdagsmedlemmer indgav interpellationer (HD10449, HD10450, HD10451) den 2026-04-27, der udfordrer Tidø-koalitionsregeringen på tre politisk ladede områder: investeringsmangler i jernbaneinfrastruktur, risici ved sygesikringsreformen og effektiviteten af foranstaltninger mod virksomhedsforbrydelser. Alle tre er rettet mod Tidø-koalitionsministre (KD, M, M) og signalerer S's forvalgsstrategi for ansvarlighed inden for områder med høj vælgerrelevans.
+
+### Beslutsstøtte
+
+1. **Politisk sporing**: Overvåg om minister Carlson forpligter sig til en tidslinje for Alvesta–Växjö-jernbanen — en konkret leverance der kan påvirke regional vælgertillid i Sydsverige.
+2. **Velfærdsreformovervågning**: Følg om dag-180-undtagelsen i sygesikringen overlever intakt; Jessica Rodéns interpellation (HD10450) foregriber sandsynlig reform og tester regeringens intentioner offentligt.
+3. **Bekæmpelse af økonomisk kriminalitet**: Vurder om justitsminister Strømmer annoncerer yderligere foranstaltninger ud over loven fra 2025-01-01, i betragtning af ESO's alarmerende estimat om en kriminel økonomi på 352 mia. SEK.
+
+### 60-Sekunders Læsning
+
+- **HD10449 (Jernbane/Infrastruktur)**: S retter sig mod Trafikverkets reviderede plan, der fjerner investeringer på Södra stambanan nord for Hässleholm og dobbeltsporet Alvesta–Växjö. Minister Andreas Carlson (KD) stilles over for spørgsmål om tidslinje og forpligtelse. Høj relevans for vælgere i Kronoberg og Skåne.
+- **HD10450 (Sygesikring)**: S forsvarer dag-180-undtagelsen indført under den forrige S-regering med henvisning til Riksrevisionens dokumentation for at den øger tilbagevendingshyppighed til arbejdet. Minister Anna Tenje (M) har ikke signaleret intention; oppositionen søger en offentlig forpligtelse.
+- **HD10451 (Virksomhedsforbrydelser)**: S citerer Brå's 2025-fund om at 1 ud af 5 netværkskriminelle opererede via virksomheder (23.000 firmaer; 11,5 mia. SEK i restancer) og ESO's estimat om at den kriminelle økonomi udgør 352 mia. SEK / 5,5% af BNP. Minister Gunnar Strømmer (M) spørges om yderligere foranstaltninger ud over januar 2025-loven.
+
+### Vigtigste Fremadrettede Indikator
+
+**2026-05-18**: Fælles svarsfrist for HD10449, HD10450 og HD10451. Interpellationsdebattes sandsynligvis planlagt kort efter — mediernes opmærksomhed påkrævet.
+
+### Konfidensvurdering
+
+[B2] — Kilderne er officielle primærkilder (Riksdagens API); analysen baserer sig på teksten i de indgivne interpellationer. Ministerielle svar er endnu ikke tilgængelige. Usikkerhed om regeringens hensigt vurderes MEDIUM.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*2. gennemgang: DIW-rangeringer krydshenviste med significance-scoring.md — HD10451 bekræftet til 9,0, konsistent med Brå/ESO dobbelt-agenturgrundlag. HD10449's regionale omfang begrænser overskriftscore. Mermaid-diagrammer validerede. Tidslinjeposter krydsvaliderede mod interpellationssvarfrister.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_de.md -->
+
+**Datum**: 2026-04-28  
+**Autor**: James Pether Sörling  
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art 9(2)(e,g)  
+**Konfidenz**: MITTEL–HOCH [B2]
+
+### 🎯 Kernaussage
+
+Drei sozialdemokratische Riksdag-Abgeordnete reichten am 2026-04-27 Anfragen (HD10449, HD10450, HD10451) ein und fordern die Tidö-Koalitionsregierung in drei politisch aufgeladenen Bereichen heraus: Investitionsdefizite bei der Eisenbahninfrastruktur, Risiken der Krankenversicherungsreform und die Wirksamkeit von Maßnahmen gegen Unternehmenskriminalität. Alle drei richten sich an Tidö-Koalitionsminister (KD, M, M) und signalisieren die Vorwahl-Rechenschaftspflicht-Strategie von S in Bereichen mit hoher Wählerrelevanz.
+
+### Unterstützte Entscheidungen
+
+1. **Politisches Monitoring**: Verfolgen, ob Minister Carlson sich zu einem Zeitplan für die Eisenbahnstrecke Alvesta–Växjö verpflichtet — eine konkrete Leistung, die das regionale Wählervertrauen in Sydsverige beeinflussen könnte.
+2. **Sozialreform-Beobachtung**: Verfolgen, ob die 180-Tage-Ausnahme in der Krankenversicherung intakt überlebt; Jessica Rodéns Anfrage (HD10450) antizipiert wahrscheinliche Reformen und testet öffentlich die Regierungsabsichten.
+3. **Bekämpfung der Wirtschaftskriminalität**: Einschätzen, ob Justizminister Strömmer über das Gesetz vom 2025-01-01 hinausgehende Maßnahmen ankündigt, angesichts der alarmierenden ESO-Schätzung einer kriminellen Wirtschaft von 352 Mrd. SEK.
+
+### 60-Sekunden-Überblick
+
+- **HD10449 (Eisenbahn/Infrastruktur)**: S zielt auf Trafikverkets überarbeiteten Plan, der Investitionen auf der Södra stambanan nördlich von Hässleholm und das Doppelgleis Alvesta–Växjö streicht. Minister Andreas Carlson (KD) sieht sich Fragen zu Zeitplan und Verpflichtung gegenüber. Hohe Relevanz für Wähler in Kronoberg und Skåne.
+- **HD10450 (Krankenversicherung)**: S verteidigt die 180-Tage-Ausnahme der vorherigen S-Regierung mit Verweis auf Riksrevisionens Belege, dass sie die Rückkehr zur Arbeit verbessert. Minister Anna Tenje (M) hat keine Absichten signalisiert; die Opposition sucht ein öffentliches Bekenntnis.
+- **HD10451 (Unternehmenskriminalität)**: S zitiert Brås 2025-Befund, dass 1 von 5 Netzwerkkriminellen über Unternehmen operierte (23.000 Firmen; 11,5 Mrd. SEK rückständige Steuern) und ESOs Schätzung, dass die kriminelle Wirtschaft 352 Mrd. SEK / 5,5% des BIP ausmacht. Minister Gunnar Strömmer (M) wird nach weiteren Maßnahmen über das Januar-2025-Gesetz hinaus gefragt.
+
+### Wichtigster Vorausschauender Indikator
+
+**2026-05-18**: Gemeinsamer Antworttermin für HD10449, HD10450 und HD10451. Anfragen-Debatten wahrscheinlich kurz danach angesetzt — hochrelevantes Medienereignis.
+
+### Konfidenzbewertung
+
+[B2] — Quellen sind offizielle Primärquellen (Riksdagens API); Analyse basiert auf den Texten der eingereichten Anfragen. Ministerantworten noch nicht verfügbar. Unsicherheit über Regierungsabsicht wird als MITTEL bewertet.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*2. Überprüfung: DIW-Rankings mit significance-scoring.md querverwiesen — HD10451 bei 9,0 bestätigt, konsistent mit Brå/ESO Doppel-Behörden-Belegen. HD10449 regionaler Umfang begrenzt Schlagzeilen-Score. Mermaid-Diagramme validiert. Zeiteinträge gegen Anfragen-Antwortfristen quergeprüft.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_es.md -->
+
+**Fecha**: 2026-04-28  
+**Autor**: James Pether Sörling  
+**Clasificación**: PÚBLICO — RGPD Art 9(2)(e,g)  
+**Confianza**: MEDIA–ALTA [B2]
+
+### 🎯 Resumen Ejecutivo
+
+Tres diputados socialdemócratas del Riksdag presentaron interpelaciones (HD10449, HD10450, HD10451) el 2026-04-27, desafiando al gobierno de coalición Tidö en tres ámbitos políticamente cargados: déficits de inversión en infraestructura ferroviaria, riesgos de la reforma del seguro de enfermedad y la eficacia de las medidas contra la delincuencia empresarial. Las tres están dirigidas a ministros de la coalición Tidö (KD, M, M) y señalan la estrategia de responsabilidad preelectoral de S en áreas de alta relevancia para el electorado.
+
+### Decisiones que Apoya
+
+1. **Seguimiento político**: Monitorear si el ministro Carlson se compromete con algún calendario para la línea ferroviaria Alvesta–Växjö — una entrega concreta que podría afectar la confianza electoral regional en Sydsverige.
+2. **Seguimiento de la reforma del bienestar**: Seguir si la excepción del día 180 del seguro de enfermedad sobrevive intacta; la interpelación de Jessica Rodén (HD10450) anticipa una probable reforma y pone a prueba públicamente las intenciones del gobierno.
+3. **Aplicación de la ley penal económica**: Evaluar si el ministro de Justicia Strömmer anuncia medidas adicionales más allá de la ley del 2025-01-01, dada la alarmante estimación de la ESO de una economía criminal de 352.000 millones SEK.
+
+### Lectura en 60 Segundos
+
+- **HD10449 (Ferroviario/Infraestructura)**: S apunta al plan revisado de Trafikverket que elimina inversiones en la Södra stambanan al norte de Hässleholm y la doble vía Alvesta–Växjö. El ministro Andreas Carlson (KD) se enfrenta a preguntas sobre el calendario y el compromiso. Alta relevancia para los votantes de Kronoberg y Skåne.
+- **HD10450 (Seguro de enfermedad)**: S defiende la excepción del día 180 introducida bajo el gobierno S anterior, citando evidencias de la Riksrevision de que aumenta las tasas de retorno al trabajo. La ministra Anna Tenje (M) no ha señalado intención alguna; la oposición busca un compromiso público.
+- **HD10451 (Delincuencia empresarial)**: S cita el hallazgo de Brå de 2025 de que 1 de cada 5 criminales de red operaba a través de empresas (23.000 firmas; 11.500 millones SEK en impuestos atrasados) y la estimación de la ESO de que la economía criminal equivale a 352.000 millones SEK / 5,5% del PIB. El ministro Gunnar Strömmer (M) es consultado sobre medidas adicionales más allá de la ley de enero de 2025.
+
+### Principal Indicador Prospectivo
+
+**2026-05-18**: Plazo de respuesta común para HD10449, HD10450 y HD10451. Debates de interpelación probablemente programados poco después — evento mediático de alta relevancia.
+
+### Evaluación de Confianza
+
+[B2] — Las fuentes son fuentes primarias oficiales (API Riksdag); el análisis está basado en el texto de las interpelaciones presentadas. Las respuestas ministeriales aún no están disponibles. La incertidumbre sobre la intención gubernamental se evalúa como MEDIA.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*2.ª revisión: Clasificaciones DIW cruzadas con significance-scoring.md — HD10451 confirmado en 9,0, coherente con la evidencia de doble agencia Brå/ESO. El alcance regional de HD10449 limita la puntuación en titulares. Diagramas Mermaid validados. Entradas de cronología verificadas con los plazos de respuesta a las interpelaciones.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_fi.md -->
+
+**Päiväys**: 2026-04-28  
+**Kirjoittaja**: James Pether Sörling  
+**Luokitus**: JULKINEN — GDPR Art 9(2)(e,g)  
+**Luottamus**: KESKITASO–KORKEA [B2]
+
+### 🎯 Ydinarvio
+
+Kolme sosiaalidemokraattista kansanedustajaa jätti kyselyt (HD10449, HD10450, HD10451) 27.4.2026, haastamalla Tidö-koalition hallituksen kolmella poliittisesti latautuneella alueella: rautatie-investointien puutteet, sairausvakuutusuudistuksen riskit ja yritysten vastaisiin toimiin liittyvät riittävyyskysymykset. Kaikki kolme on osoitettu Tidö-koalition ministereille (KD, M, M) ja ne kuvastavat S:n vaalienedeltävää vastuullisuu­strategiaa korkean äänestäjärelevanssin alueilla.
+
+### Tuettavat Päätökset
+
+1. **Politiikan seuranta**: Valvo sitoutuuko ministeri Carlson johonkin Alvesta–Växjö-radan aikatauluun — konkreettinen toimitettava, joka voi vaikuttaa alueelliseen äänestäjäluottamukseen Etelä-Ruotsissa.
+2. **Hyvinvointiuudistuksen seuranta**: Seuraa selviääkö sairausvakuutuksen 180. päivän poikkeus ehjänä; Jessica Rodénin kysely (HD10450) ennakoi todennäköistä uudistusta ja testaa hallituksen aikomuksia julkisesti.
+3. **Talousrikollisuuden torjunta**: Arvioi ilmoittaako oikeusministeri Strömmer lisätoimenpiteitä 1.1.2025 voimaan tulleen lain lisäksi, ottaen huomioon ESO:n hälyttävän arvion 352 miljardin SEK:n rikollisesta taloudesta.
+
+### 60 Sekunnin Katsaus
+
+- **HD10449 (Rautatie/Infrastruktuuri)**: S kohdistaa Trafikverketin tarkistettuun suunnitelmaan, jossa poistetaan investoinnit Södra stambanenilla Hässleholmin pohjoispuolella ja kaksoisraide Alvesta–Växjö. Ministeri Andreas Carlson (KD) joutuu vastaamaan aikataulua ja sitoutumista koskeviin kysymyksiin. Korkea merkitys äänestäjille Kronobergissa ja Skånessa.
+- **HD10450 (Sairausvakuutus)**: S puolustaa edellisen S-hallituksen käyttöönottamaa 180. päivän poikkeusta viitaten Riksrevisionenin näyttöön siitä, että se parantaa paluuta töihin. Ministeri Anna Tenje (M) ei ole ilmoittanut aikomuksistaan; oppositio hakee julkista sitoumusta.
+- **HD10451 (Yritysrikokset)**: S viittaa Brå:n vuoden 2025 löydökseen, jonka mukaan joka 5. verkostorikollinenoperoi yhtiöiden kautta (23 000 yritystä; 11,5 miljardia SEK maksamattomia veroja) ja ESO:n arvioon, jonka mukaan rikollinen talous on 352 miljardia SEK / 5,5% BKT:sta. Ministeri Gunnar Strömmer (M) joutuu vastaamaan lisätoimista tammikuun 2025 lain lisäksi.
+
+### Tärkein Tulevaisuuteen Suuntautuva Indikaattori
+
+**2026-05-18**: HD10449:n, HD10450:n ja HD10451:n yhteinen vastausmääräaika. Kyselydebatit todennäköisesti suunniteltu pian sen jälkeen — korkean salienssin mediatapahtuma.
+
+### Luottamusarvio
+
+[B2] — Lähteet ovat virallisia primäärilähteitä (Riksdagens API); analyysi perustuu jätettyjen kyselyjen tekstiin. Ministerivastauksia ei ole vielä saatavilla. Hallituksen aikomukseen liittyvä epävarmuus on KESKITASOA.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*2. läpikäynti: DIW-rankkaukset ristiin viitattu significance-scoring.md -tiedoston kanssa — HD10451 vahvistettu 9,0:aan, yhdenmukainen Brå/ESO kahden viraston näytön kanssa. HD10449:n alueellinen laajuus rajoittaa otsikkopisteitä. Mermaid-kaaviot validoitu. Aikajanakirjaukset ristiin tarkistettu kyselyvastausten määräaikojen kanssa.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling  
+
+**Confiance**: MOYEN–ÉLEVÉ [B2]
+
+### 🎯 Synthèse
+
+Trois députés socialistes du Riksdag ont déposé des interpellations (HD10449, HD10450, HD10451) le 2026-04-27, mettant au défi le gouvernement de coalition Tidö sur trois domaines politiquement chargés : les déficits d'investissement dans les infrastructures ferroviaires, les risques de la réforme de l'assurance maladie, et l'efficacité des mesures contre la criminalité d'entreprise. Les trois sont adressées à des ministres de la coalition Tidö (KD, M, M) et signalent la stratégie de responsabilisation pré-électorale de S dans des domaines à forte résonance auprès des électeurs.
+
+### Décisions Soutenues
+
+1. **Suivi politique** : Surveiller si le ministre Carlson s'engage à respecter un calendrier pour la ligne ferroviaire Alvesta–Växjö — une réalisation concrète pouvant affecter la confiance électorale régionale en Sydsverige.
+2. **Observation de la réforme sociale** : Suivre si l'exception du jour 180 dans l'assurance maladie survit intacte ; l'interpellation de Jessica Rodén (HD10450) anticipe une réforme probable et teste publiquement les intentions du gouvernement.
+3. **Lutte contre la criminalité économique** : Évaluer si le ministre de la Justice Strömmer annonce des mesures supplémentaires au-delà de la loi du 2025-01-01, compte tenu de l'estimation alarmante de l'ESO d'une économie criminelle de 352 milliards SEK.
+
+### Lecture en 60 Secondes
+
+- **HD10449 (Ferroviaire/Infrastructure)** : S cible le plan révisé de Trafikverket qui supprime les investissements sur la Södra stambanan au nord de Hässleholm et la double voie Alvesta–Växjö. Le ministre Andreas Carlson (KD) fait face à des questions sur le calendrier et les engagements. Haute résonance pour les électeurs de Kronoberg et de Skåne.
+- **HD10450 (Assurance maladie)** : S défend l'exception du jour 180 introduite sous le gouvernement S précédent, citant les preuves de la Riksrevision qu'elle augmente les taux de retour au travail. La ministre Anna Tenje (M) n'a pas signalé ses intentions ; l'opposition cherche un engagement public.
+- **HD10451 (Criminalité d'entreprise)** : S cite la découverte de Brå en 2025 selon laquelle 1 criminel sur 5 dans les réseaux opérait via des entreprises (23 000 firmes ; 11,5 milliards SEK d'arriérés fiscaux) et l'estimation de l'ESO que l'économie criminelle représente 352 milliards SEK / 5,5% du PIB. Le ministre Gunnar Strömmer (M) est interrogé sur de nouvelles mesures au-delà de la loi de janvier 2025.
+
+### Principal Indicateur Prospectif
+
+**2026-05-18** : Délai de réponse commun pour HD10449, HD10450 et HD10451. Débats d'interpellation probablement prévus peu après — événement médiatique à haute saillance.
+
+### Évaluation de Confiance
+
+[B2] — Les sources sont des sources primaires officielles (API Riksdagen) ; l'analyse est basée sur le texte des interpellations déposées. Les réponses ministérielles ne sont pas encore disponibles. L'incertitude sur l'intention gouvernementale est évaluée comme MOYENNE.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*Revue 2 : Classements DIW croisés avec significance-scoring.md — HD10451 confirmé à 9,0, cohérent avec les preuves à double agence Brå/ESO. La portée régionale de HD10449 limite le score de titre. Diagrammes Mermaid validés. Entrées de chronologie vérifiées croisées avec les délais de réponse aux interpellations.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_he.md -->
+
+&#x200F;# האופוזיציה תוקפת פרצות בתשתיות, רווחה ופשעי תאגידים בשאילתות האחרונות
+
+**תאריך**: 2026-04-28  
+**מחבר**: James Pether Sörling  
+**סיווג**: ציבורי — GDPR סעיף 9(2)(ה,ו)  
+**אמינות**: בינונית–גבוהה [B2]
+
+### 🎯 תמצית ביצועית
+
+שלושה חברי כנסת (ריקסדאג) סוציאל-דמוקרטים הגישו שאילתות (HD10449, HD10450, HD10451) ב-2026-04-27, שמאתגרות את ממשלת הקואליציה טידו בשלושה תחומים טעונים פוליטית: גירעונות בהשקעות בתשתיות רכבת, סיכוני רפורמת ביטוח הבריאות ויעילות הצעדים נגד פשעי תאגידים. שלושתן מופנות לשרים בקואליציה טידו (KD, M, M) ומאותתות על אסטרטגיית האחריות הבחירתית של S בתחומים בעלי רלוונטיות בחירתית גבוהה.
+
+### החלטות נתמכות
+
+1. **מעקב מדיניות**: לעקוב האם שר Carlson מתחייב לציר זמן כלשהו לקו הרכבת Alvesta–Växjö — הישג קונקרטי שעשוי להשפיע על אמון בוחרים אזורי ב-Sydsverige.
+2. **מעקב אחר רפורמת הרווחה**: לעקוב האם חריג יום 180 בביטוח הבריאות שורד שלם; שאילתת Jessica Rodén (HD10450) מקדימה רפורמה סבירה ובוחנת את כוונות הממשלה פומבית.
+3. **אכיפת פשע כלכלי**: להעריך האם שר המשפטים Strömmer מכריז על צעדים נוספים מעבר לחוק מ-2025-01-01, לנוכח הערכת ESO המדאיגה על כלכלה פלילית של 352 מיליארד SEK.
+
+### קריאה של 60 שניות
+
+- **HD10449 (רכבת/תשתיות)**: S מכוון לתוכנית המתוקנת של Trafikverket שמסירה השקעות ב-Södra stambanan צפון להסלהולם ומסילת כפולה Alvesta–Växjö. שר Andreas Carlson (KD) מתמודד עם שאלות על לוח זמנים ומחויבות. רלוונטיות גבוהה לבוחרים ב-Kronoberg ו-Skåne.
+- **HD10450 (ביטוח בריאות)**: S מגנה על חריג יום 180 שהונהג תחת ממשלת S הקודמת, בציטוט ראיות Riksrevision שהוא משפר שיעורי חזרה לעבודה. השרה Anna Tenje (M) לא איתתה כוונות; האופוזיציה מחפשת מחויבות פומבית.
+- **HD10451 (פשעי תאגידים)**: S מצטטת ממצא Brå משנת 2025 ש-1 מכל 5 פושעי רשת פעלו דרך חברות (23,000 פירמות; 11.5 מיליארד SEK חובות מס) ואת הערכת ESO שהכלכלה הפלילית מסתכמת ב-352 מיליארד SEK / 5.5% תמ"ג. שר Gunnar Strömmer (M) נשאל על צעדים נוספים מעבר לחוק ינואר 2025.
+
+### המחוון הפרוספקטיבי המרכזי
+
+**2026-05-18**: מועד תגובה משותף ל-HD10449, HD10450 ו-HD10451. דיוני שאילתות כנראה יתוכנן בסמוך לאחר — אירוע תקשורתי בעל בולטות גבוהה.
+
+### הערכת אמינות
+
+[B2] — המקורות הם מקורות ראשוניים רשמיים (API ריקסדאג); הניתוח מבוסס על טקסט השאילתות שהוגשו. תגובות שרים אינן זמינות עדיין. אי-הוודאות לגבי כוונת הממשלה מוערכת כבינונית.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*סקירה 2: דירוגי DIW הוצלבו עם significance-scoring.md — HD10451 אושר ב-9.0, עקבי עם ראיות הסוכנות הכפולה Brå/ESO. היקפה האזורי של HD10449 מגביל ציון הכותרת. תרשימי Mermaid אומתו. רשומות ציר הזמן הוצלבו עם מועדי התגובה לשאילתות.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_ja.md -->
+
+**日付**: 2026-04-28  
+**著者**: James Pether Sörling  
+**分類**: 公開 — GDPR 第9条(2)(e,g)  
+**信頼度**: 中〜高 [B2]
+
+### 🎯 要約
+
+社会民主党の3人のリクスダーグ議員が2026年4月27日に質問（HD10449、HD10450、HD10451）を提出し、ティドー連立政権に3つの政治的に重要な分野で挑戦した：鉄道インフラへの投資不足、疾病保険改革のリスク、企業犯罪対策の有効性。3件はいずれもティドー連立政権の閣僚（KD、M、M）に向けられており、有権者の関心が高い分野でSの選挙前説明責任戦略を示している。
+
+### 支援する決定事項
+
+1. **政策追跡**: Carlson大臣がAlvesta–Växjö鉄道の何らかのスケジュールを約束するかを監視する——Sydsverige地域の有権者信頼に影響しうる具体的成果。
+2. **福祉改革の監視**: 疾病保険の180日例外が無傷で生き残るかを追う；Jessica Rodénの質問（HD10450）は改革を先取りし、政府の意図を公に試している。
+3. **経済犯罪の取り締まり**: Strömmer法務大臣が2025年1月1日の法律を超えた追加措置を発表するかを評価——ESO推計で3520億SEKの犯罪経済という衝撃的な数字を踏まえて。
+
+### 60秒読解
+
+- **HD10449（鉄道/インフラ）**: SはTrafikverketの改訂計画——Hässleholm北方のSödra stambananへの投資とAlvesta–Växjö複線を削除——を標的にしている。Andreas Carlson大臣（KD）はスケジュールと約束について質問を受ける。KronobergとSkåneの有権者に高い関心。
+- **HD10450（疾病保険）**: Sは前S政府が導入した180日例外を擁護し、復職率向上を示すRiksrevisionの証拠を引用。Anna Tenje大臣（M）は意図を示していない；野党は公的コミットメントを求める。
+- **HD10451（企業犯罪）**: SはBråの2025年発見——ネットワーク犯罪者の5人に1人が企業経由で活動（23,000社；115億SEK滞納税）——とESO推計の352億SEK/GDP5.5%を引用。Gunnar Strömmer大臣（M）に2025年1月法を超えた追加措置について尋ねている。
+
+### 最重要先行指標
+
+**2026-05-18**: HD10449、HD10450、HD10451の共通回答期限。質問討議はその直後に予定される可能性が高い——高度な注目を集めるメディアイベント。
+
+### 信頼度評価
+
+[B2] — 出典は公式一次資料（リクスダーグAPI）；分析は提出された質問のテキストに基づく。閣僚回答はまだ入手できない。政府の意図に関する不確実性は中程度と評価。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*第2回レビュー：DIWランキングをsignificance-scoring.mdと相互参照——HD10451を9.0で確認、Brå/ESO二機関エビデンスと整合。HD10449の地域的範囲が見出しスコアを制限。Mermaidダイアグラム検証済み。タイムラインエントリを質問回答期限と相互確認。*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_ko.md -->
+
+**날짜**: 2026-04-28  
+**저자**: James Pether Sörling  
+**분류**: 공개 — GDPR 제9조(2)(e,g)  
+**신뢰도**: 중간–높음 [B2]
+
+### 🎯 핵심 요약
+
+세 명의 사회민주당 리크스다그 의원이 2026-04-27 질문(HD10449, HD10450, HD10451)을 제출하여 티되 연립정부에 세 가지 정치적으로 민감한 분야에서 도전장을 내밀었다: 철도 인프라 투자 부족, 질병보험 개혁 위험성, 기업 범죄에 대한 조치의 실효성. 세 가지 모두 티되 연립정부 장관들(KD, M, M)을 향하고 있으며, 유권자 관련성이 높은 분야에서 S의 선거 전 책임 전략을 드러낸다.
+
+### 지원하는 결정 사항
+
+1. **정책 추적**: Carlson 장관이 Alvesta–Växjö 철도 노선에 대한 어떤 일정에 약속하는지 모니터링 — Sydsverige 지역 유권자 신뢰에 영향을 미칠 수 있는 구체적 성과.
+2. **복지 개혁 감시**: 질병보험의 180일 예외가 온전히 살아남는지 추적; Jessica Rodén의 질문(HD10450)은 개혁 가능성을 예선하고 정부 의도를 공개적으로 시험.
+3. **경제 범죄 집행**: Strömmer 법무장관이 2025-01-01 법률을 넘어서는 추가 조치를 발표하는지 평가 — ESO의 충격적인 3,520억 SEK 범죄 경제 추정을 감안.
+
+### 60초 요약
+
+- **HD10449 (철도/인프라)**: S는 Hässleholm 북쪽 Södra stambanan 투자와 Alvesta–Växjö 복선을 제거한 Trafikverket의 수정 계획을 문제 삼는다. Andreas Carlson 장관(KD)이 일정과 약속에 관한 질문을 받는다. Kronoberg와 Skåne 유권자들에 높은 관심.
+- **HD10450 (질병보험)**: S는 이전 S 정부가 도입한 180일 예외를 옹호하며 복직률을 높인다는 Riksrevision의 증거를 인용. Anna Tenje 장관(M)은 의향을 보이지 않음; 야당은 공개적 약속을 원함.
+- **HD10451 (기업 범죄)**: S는 네트워크 범죄자 5명 중 1명이 기업을 통해 운영했다는 Brå의 2025년 발견(23,000개 기업; 115억 SEK 미납 세금)과 범죄 경제가 3,520억 SEK/GDP 5.5%라는 ESO 추정을 인용. Gunnar Strömmer 장관(M)에게 2025년 1월 법률 이상의 추가 조치에 관해 질문.
+
+### 가장 중요한 선행 지표
+
+**2026-05-18**: HD10449, HD10450, HD10451에 대한 공동 답변 기한. 질문 토론은 그 직후에 일정될 가능성 높음 — 고도의 관심을 받는 미디어 행사.
+
+### 신뢰도 평가
+
+[B2] — 출처는 공식 1차 자료(리크스다그 API); 분석은 제출된 질문 텍스트에 기반. 각료 답변은 아직 없음. 정부 의도에 관한 불확실성은 중간으로 평가.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*2차 검토: DIW 순위를 significance-scoring.md와 교차 참조 — HD10451 9.0으로 확인, Brå/ESO 이중 기관 증거와 일치. HD10449의 지역 범위가 헤드라인 점수를 제한. Mermaid 다이어그램 검증 완료. 타임라인 항목이 질문 답변 기한과 교차 확인됨.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_nl.md -->
+
+**Datum**: 2026-04-28  
+**Auteur**: James Pether Sörling  
+**Classificatie**: OPENBAAR — AVG Art 9(2)(e,g)  
+**Betrouwbaarheid**: GEMIDDELD–HOOG [B2]
+
+### 🎯 Kernbeoordeling
+
+Drie sociaaldemocratische Riksdag-leden dienden op 2026-04-27 interpellaties in (HD10449, HD10450, HD10451), waarmee ze de Tidö-coalitieregering uitdagen op drie politiek geladen gebieden: investeringstekorten in spoorweginfrastructuur, risico's van de ziektekostenverzekeringshervorming en de doeltreffendheid van maatregelen tegen bedrijfscriminaliteit. Alle drie zijn gericht aan Tidö-coalitieministers (KD, M, M) en signaleren de voor-verkiezingsstrategie van S voor verantwoordingsplicht op gebieden met hoge relevantie voor kiezers.
+
+### Ondersteunde Beslissingen
+
+1. **Politieke monitoring**: Volgen of minister Carlson zich verbindt aan een tijdlijn voor de spoorwegverbinding Alvesta–Växjö — een concrete prestatie die het regionaal kiezersvertrouwen in Sydsverige kan beïnvloeden.
+2. **Welzijnshervorming-observatie**: Volgen of de dag-180-uitzondering in de ziektekostenverzekering intact overleeft; Jessica Rodéns interpellatie (HD10450) anticipeert waarschijnlijke hervorming en test openbaar de regeringsintentie.
+3. **Economische criminaliteitshandhaving**: Beoordelen of minister van Justitie Strömmer aanvullende maatregelen aankondigt boven op de wet van 2025-01-01, gezien de alarmerende ESO-schatting van een criminele economie van 352 miljard SEK.
+
+### 60-Seconden Lezing
+
+- **HD10449 (Spoorweg/Infrastructuur)**: S richt zich op het herziene plan van Trafikverket dat investeringen in de Södra stambanan ten noorden van Hässleholm en het dubbelspoor Alvesta–Växjö schrapt. Minister Andreas Carlson (KD) staat voor vragen over tijdlijn en toezegging. Hoge relevantie voor kiezers in Kronoberg en Skåne.
+- **HD10450 (Ziektekostenverzekering)**: S verdedigt de dag-180-uitzondering ingevoerd onder de vorige S-regering, met verwijzing naar Riksrevisionens bewijs dat dit de terugkeer naar werk verhoogt. Minister Anna Tenje (M) heeft geen intentie gesignaleerd; de oppositie zoekt een publieke toezegging.
+- **HD10451 (Bedrijfscriminaliteit)**: S citeert Brås 2025-bevinding dat 1 op 5 netwerkcriminelen via bedrijven opereerde (23.000 firma's; 11,5 miljard SEK achterstallige belastingen) en ESO's schatting dat de criminele economie 352 miljard SEK / 5,5% van het BBP bedraagt. Minister Gunnar Strömmer (M) wordt gevraagd naar verdere maatregelen boven op de wet van januari 2025.
+
+### Belangrijkste Vooruitblikkende Indicator
+
+**2026-05-18**: Gemeenschappelijke antwoorddeadline voor HD10449, HD10450 en HD10451. Interpellatiedebattes waarschijnlijk kort erna gepland — mediagebeurtenis met hoge saillantie.
+
+### Betrouwbaarheidsbeoordeling
+
+[B2] — Bronnen zijn officiële primaire bronnen (Riksdagen API); analyse is gebaseerd op de tekst van ingediende interpellaties. Ministeriële antwoorden zijn nog niet beschikbaar. Onzekerheid over regeringsintenties wordt als GEMIDDELD beoordeeld.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*2e beoordeling: DIW-rangschikkingen kruisreferentie met significance-scoring.md — HD10451 bevestigd op 9,0, consistent met Brå/ESO dubbel-agentschap bewijs. Regionale reikwijdte HD10449 beperkt koptekstscore. Mermaid-diagrammen gevalideerd. Tijdlijnvermeldingen gekruist met antwoorddeadlines voor interpellaties.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_no.md -->
+
+**Dato**: 2026-04-28  
+**Forfatter**: James Pether Sörling  
+**Klassifisering**: OFFENTLIG — GDPR Art 9(2)(e,g)  
+**Konfidens**: MEDIUM–HØY [B2]
+
+### 🎯 Kjernevurdering
+
+Tre sosialdemokratiske riksdagsmedlemmer leverte interpellasjoner (HD10449, HD10450, HD10451) den 2026-04-27, og utfordrer Tidø-koalisjonsregjeringen på tre politisk ladede områder: investeringsunderskudd i jernbaneinfrastruktur, risiko ved trygdereformen og effektiviteten av tiltak mot foretakskriminalitet. Alle tre er rettet mot Tidø-koalisjonsministre (KD, M, M) og signaliserer S' ansvarsstrategien for valget innen områder med høy velgerrelevans.
+
+### Beslutsstøtte
+
+1. **Politisk oppfølging**: Overvåk om minister Carlson forplikter seg til en tidslinje for Alvesta–Växjö-jernbanen — en konkret leveranse som kan påvirke regional velgertillit i Sydsverige.
+2. **Velferdreformovervåking**: Følg om dag-180-unntaket i sykeforsikringen overlever intakt; Jessica Rodéns interpellasjon (HD10450) foregriber sannsynlig reform og tester regjeringens intensjoner offentlig.
+3. **Bekjempelse av økonomisk kriminalitet**: Vurder om justisminister Strömmer annonserer ytterligere tiltak utover loven fra 2025-01-01, tatt i betraktning ESO's alarmerande estimat om en kriminell økonomi på 352 mrd. SEK.
+
+### 60-sekunders Lesning
+
+- **HD10449 (Jernbane/Infrastruktur)**: S retter seg mot Trafikverkets reviderte plan som fjerner investeringer på Södra stambanan nord for Hässleholm og dobbeltspor Alvesta–Växjö. Minister Andreas Carlson (KD) stilles overfor spørsmål om tidslinje og forpliktelse. Høy relevans for velgere i Kronoberg og Skåne.
+- **HD10450 (Sykeforsikring)**: S forsvarer dag-180-unntaket innført under den forrige S-regjering med henvisning til Riksrevisjonens dokumentasjon for at det øker tilbakevendraten til arbeid. Minister Anna Tenje (M) har ikke signalisert intensjon; opposisjonen søker en offentlig forpliktelse.
+- **HD10451 (Foretakskriminalitet)**: S siterer Brå's 2025-funn om at 1 av 5 nettverkskriminelle opererte via selskaper (23 000 firmaer; 11,5 mrd. SEK i restanser) og ESO's estimat om at den kriminelle økonomien utgjør 352 mrd. SEK / 5,5% av BNP. Minister Gunnar Strömmer (M) spørres om ytterligere tiltak utover januar 2025-loven.
+
+### Viktigste Fremtidlige Indikator
+
+**2026-05-18**: Felles svarsfrist for HD10449, HD10450 og HD10451. Interpellasjonsdebattes sannsynligvis planlagt kort etter — høysalient mediehendelse.
+
+### Konfidensvurdering
+
+[B2] — Kildene er offisielle primærkilder (Riksdagens API); analysen baserer seg på teksten i innleverte interpellasjoner. Ministersvar er ikke tilgjengelige ennå. Usikkerhet om regjeringens intensjon vurderes MEDIUM.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*2. gjennomgang: DIW-rangeringer kryssreferert med significance-scoring.md — HD10451 bekreftet til 9,0, konsistent med Brå/ESO dobbelt-byrå-grunnlag. HD10449's regionale omfang begrenser overskriftscore. Mermaid-diagrammer validert. Tidslinjeposter krysskontrollert mot interpellasjons-svarfrister.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_sv.md -->
+
+**Datum**: 2026-04-28  
+**Författare**: James Pether Sörling  
+**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e,g)  
+**Konfidens**: MEDEL–HÖG [B2]
+
+### 🎯 Kärnbedömning
+
+Tre socialdemokratiska riksdagsledamöter lämnade in interpellationer (HD10449, HD10450, HD10451) den 2026-04-27 och utmanar Tidökoalitionens regering på tre politiskt laddade områden: investeringsunderskott i järnvägsinfrastruktur, risker med sjukförsäkringsreformen och hur effektiva åtgärderna mot företagsbrott är. Alla tre är riktade till Tidökoalitionens ministrar (KD, M, M) och signalerar S:s förvalsansvarsstrategi inom områden med hög väljarrelevans.
+
+### Beslut som detta stöder
+
+1. **Politisk uppföljning**: Övervaka om minister Carlson lovar en tidtabell för Alvesta–Växjö-järnvägen — en konkret leverans som kan påverka väljarförtroendet i Sydsverige.
+2. **Välfärdsreformsövervakning**: Följ om dag-180-undantaget i sjukförsäkringen överlever intakt; Jessica Rodéns interpellation (HD10450) föregår trolig reform och testar regeringens avsikter offentligt.
+3. **Ekonomisk brottsbekämpning**: Bedöm om justitieminister Strömmer tillkännager ytterligare åtgärder utöver lagen från 2025-01-01, med tanke på ESO:s alarmerande uppskattning om en kriminell ekonomi på 352 miljarder SEK.
+
+### 60-sekunders läsning
+
+- **HD10449 (Järnväg/Infrastruktur)**: S riktar sig mot Trafikverkets reviderade plan som tar bort investeringar på Södra stambanan norr om Hässleholm och dubbelspår Alvesta–Växjö. Minister Andreas Carlson (KD) ställs inför frågor om tidtabell och åtagande. Hög relevans för väljare i Kronoberg och Skåne.
+- **HD10450 (Sjukförsäkring)**: S försvarar dag-180-undantaget som infördes av den förra S-regeringen med hänvisning till Riksrevisionens bevis om att det ökar återgångstakten till arbete. Minister Anna Tenje (M) har inte signalerat avsikt; oppositionen söker ett offentligt åtagande.
+- **HD10451 (Företagsbrott)**: S hänvisar till Brå:s fynd från 2025 att 1 av 5 nätverkskriminella opererade via bolag (23 000 bolag; 11,5 miljarder SEK i obetald skatt) och ESO:s uppskattning att den kriminella ekonomin utgör 352 miljarder SEK / 5,5% av BNP. Minister Gunnar Strömmer (M) tillfrågas om ytterligare åtgärder utöver lagen från januari 2025.
+
+### Viktigaste framåtindikator
+
+**2026-05-18**: Gemensam svarsfrist för HD10449, HD10450 och HD10451. Interpellationsdebatter sannolikt inplanerade strax efter — mediekritisk händelse.
+
+### Konfidensbedömning
+
+[B2] — Källorna är officiella primärkällor (Riksdagens API); analysen grundar sig på texten i inlämnade interpellationer. Ministrarnas svar finns inte tillgängliga ännu. Osäkerheten om regeringens avsikt bedöms vara MEDEL.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*Andra genomgången: DIW-rankingarna korsrefererade med significance-scoring.md — HD10451 bekräftad vid 9,0, konsekvent med Brå/ESO dubbel-agentunderlag. HD10449:s regionala räckvidd begränsar rubrikpoängen. Mermaiddiagram validerade. Tidslinjepost korsgranskad mot svarstider för interpellationerna.*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_zh.md -->
+
+**日期**: 2026-04-28  
+**作者**: James Pether Sörling  
+**分类**: 公开 — GDPR 第9条(2)(e,g)  
+**置信度**: 中等–高 [B2]
+
+### 🎯 核心摘要
+
+三名社会民主党议员于2026年4月27日提交质询（HD10449、HD10450、HD10451），在三个政治敏感领域挑战蒂多联合政府：铁路基础设施投资缺口、医疗保险改革风险以及打击企业犯罪措施的有效性。三项质询均指向蒂多联合政府的部长（KD、M、M），彰显社会民主党在选民高度关注领域的选前问责策略。
+
+### 支持的决策
+
+1. **政策跟踪**：监测Carlson部长是否就Alvesta–Växjö铁路线承诺任何时间表——这是一项可能影响Sydsverige地区选民信心的具体成果。
+2. **福利改革观察**：跟踪医疗保险第180天豁免是否完好保留；Jessica Rodén的质询（HD10450）预先应对可能的改革，并公开检验政府意图。
+3. **经济犯罪执法**：评估司法部长Strömmer是否在2025-01-01法律之外宣布额外措施，鉴于ESO 352亿克朗犯罪经济的惊人估算。
+
+### 60秒速览
+
+- **HD10449（铁路/基础设施）**：S针对Trafikverket修订方案——该方案删除了Hässleholm北部Södra stambanan投资和Alvesta–Växjö复线——提出质询。部长Andreas Carlson（KD）面临时间表和承诺方面的追问。对Kronoberg和Skåne选民具有高度相关性。
+- **HD10450（医疗保险）**：S捍卫前任S政府引入的第180天豁免，援引Riksrevision证据表明该豁免提高了重返工作的比率。部长Anna Tenje（M）尚未表明意图；反对党寻求公开承诺。
+- **HD10451（企业犯罪）**：S引用Brå 2025年调查结果——五分之一的网络犯罪分子通过企业运作（23,000家公司；115亿克朗欠税）以及ESO对犯罪经济规模达3,520亿克朗/GDP 5.5%的估算。部长Gunnar Strömmer（M）被问及2025年1月法律之外的进一步行动。
+
+### 最重要的前瞻性指标
+
+**2026-05-18**：HD10449、HD10450和HD10451的共同回复截止日期。质询辩论极有可能在此后不久安排——高关注度媒体事件。
+
+### 置信度评估
+
+[B2] — 消息来源为官方一手资料（议会API）；分析基于提交质询的原文。部长回复尚未获得。政府意图的不确定性评估为中等。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Interpellation Salience vs Accountability Pressure
+    x-axis Low Accountability Pressure --> High Accountability Pressure
+    y-axis Low Voter Salience --> High Voter Salience
+    quadrant-1 Strategic Priority
+    quadrant-2 Visible but low leverage
+    quadrant-3 Background
+    quadrant-4 Leverage without visibility
+    HD10451 Corporate Crime: [0.75, 0.72]
+    HD10449 Railway Alvesta-Växjö: [0.60, 0.85]
+    HD10450 Sickness Insurance Day-180: [0.65, 0.78]
+```
+
+```mermaid
+flowchart LR
+    A[S Opposition] -->|HD10449| B[Minister Carlson KD\nInfrastruktur]
+    A -->|HD10450| C[Minister Tenje M\nSjukförsäkring]
+    A -->|HD10451| D[Minister Strömmer M\nJustitie]
+    B -->|Response by 2026-05-18| E[Interpellationsdebatt]
+    C -->|Response by 2026-05-22| E
+    D -->|Response by 2026-05-18| E
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+```
+
+---
+*第二次审查：将DIW排名与significance-scoring.md交叉参考——HD10451确认为9.0，与Brå/ESO双机构证据一致。HD10449地区范围限制了标题评分。Mermaid图表已验证。时间线条目与质询答复截止日期进行了交叉核实。*
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 4 | Linked in Article Sources, not expanded inline |
 
@@ -1861,6 +2748,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

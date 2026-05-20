@@ -6,7 +6,7 @@ date: 2026-04-28
 subfolder: evening-analysis
 slug: 2026-04-28-evening-analysis
 source_folder: analysis/daily/2026-04-28/evening-analysis
-generated_at: 2026-05-20T01:10:29.415Z
+generated_at: 2026-05-20T10:12:19.636Z
 language: en
 layout: article
 ---
@@ -71,6 +71,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1709,13 +1722,549 @@ Statskontoret: no directly relevant source found for the specific legislative do
 - IMF WEO Apr-2026: SWE GDP growth 1.9% (2025 forecast) confirmed via pre-warm call
 - IMF context applied to fiscal-bill and banking-package analysis
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_ar.md -->
+
+&#x200F;# سباق تشريعي ما قبل الانتخابات لتحالف تيدو: الأمن والمال وإصلاحات الرفاه تحدد المشهد السياسي السويدي 2026
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-28  
+**التصنيف**: عام — اللائحة الأوروبية لحماية البيانات المادة 9(2)(ه)(و)  
+**الثقة**: عالية [B2]  
+**نوع المقال**: تحليل مسائي  
+
+---
+
+### 🎯 الخلاصة التنفيذية
+
+يُمثّل 28 أبريل 2026 الذروة التشريعية لدورة riksmöte 2025/26: دفع تحالف تيدو في آنٍ واحد الحزمة المصرفية الأوروبية (HD03253)، وعقوبات الرفاه للسجناء، وتشديد قانون الجنسية (HD01SfU28)، وقانون CER لمرونة البنية التحتية الحيوية (HD01FöU20)، وإطار التعاون العسكري (HD01FöU14)، فيما أودع أربعة أحزاب معارضة تحفظات منسقة على توقعات نمو الناتج المحلي الإجمالي البالغة 1.9% في مشروع ميزانية الربيع وسط حالة عدم اليقين بشأن الرسوم الجمركية الأمريكية. وشكّل الديمقراطيون الاشتراكيون أقوى تحدٍّ تشريعي لهم خلال العام بهجوم مباشر على اقتراح الحكومة لمكافحة الفساد (HD024099)، فيما استهدفت ثلاثة استجوابات منسقة البنية التحتية للسكك الحديدية ومخاطر إصلاح التأمين الصحي والثغرات في مكافحة جرائم الشركات. يكشف محفظة التشريعات اليوم عن تحالف أقلية يعمل على جميع الجبهات — الأمن والاقتصاد والرفاه والقانون الجنائي — لتعزيز روايته قبيل انتخابات سبتمبر 2026.
+
+### 🧭 3 قرارات مدعومة
+
+1. **قابلية استمرار التحالف**: هل يستطيع تحالف تيدو (M, SD, KD, L) الحفاظ على برنامجه التشريعي طوال الدورة الربيعية في ظل ضغط المعارضة المتعدد الجبهات على ملفات المالية والرفاه والأمن ومكافحة الفساد في آنٍ واحد؟
+2. **معايرة المخاطر الاقتصادية**: هل ينبغي للمستثمرين وصانعي السياسات اعتبار موافقة لجنة المالية على نمو الناتج المحلي الإجمالي بنسبة 1.9% أمراً موثوقاً في ظل حالة عدم اليقين المتعلقة بالرسوم الجمركية الأمريكية — أم تُلمّح تحفظات S/V/C/MP إلى الحاجة لمراجعة نحو الأدنى؟
+3. **صياغة الرواية الانتخابية 2026**: أيٌّ من المخرجات التشريعية اليوم — الجنسية أم البنوك أم مكافحة الفساد أم البنية التحتية — سيكون الأكثر حسماً انتخابياً لكل من الأحزاب الثمانية في الريكسداج؟
+
+### ⚡ قراءة في 60 ثانية
+
+- **الحزمة المصرفية الأوروبية (HD03253)** [B2 عالية]: تطبيق بازل III/CRR3/CRD6؛ تواجه البنوك السويدية حدوداً دنيا منقحة لأوزان المخاطر (حد مخرجات IRB 72.5% للرهون العقارية). تأثير كفاية رأس المال متوسط لكنه مهم لـ Nordea وSEB وHandelsbanken وSwedbank. قيد المعالجة في لجنة المالية.
+- **قانون الميزانية الربيعية (HC01FiU20)** [A2 عالية]: الناتج المحلي الإجمالي 1.9% (2025)، البطالة 8.7% تمت الموافقة عليهما من FiU. تحفظات S وV وC وMP مُودَعة. مخاطر الرسوم الجمركية الأمريكية غير مُقدَّرة في سيناريو الحكومة. السياسة النقدية للـ Riksbank لعام 2024 (HC01FiU24) مُقَرَّة — KPIF 1.9% — مع ملاحظة المقيّمين الخارجيين إمكانية خفض أسرع للفائدة.
+- **تشديد الجنسية (HD01SfU28)** [B2 عالية]: متطلبات أكثر صرامة للغة والدخل والإقامة للحصول على الجنسية السويدية بدفع من SD. انشقاق محتمل داخل التحالف مع L؛ S/V/C/MP في المعارضة.
+- **توجيه CER + العسكري (HD01FöU20, HD01FöU14)** [A2 عالية]: مرونة البنية التحتية الحيوية وإطار التعاون العملياتي لحلف الناتو يتقدمان على مسار موازٍ. تصويت يونيو 2026.
+- **تحدي مكافحة الفساد (HD024099)** [A2 عالية]: S ترفض جريمة "missbruk av offentlig ställning" في مشروع الحكومة بوصفها تُخطئ الهدف؛ تطالب بإصلاح أشمل للفصل العاشر من BrB. قيد المعالجة في JuU؛ موقف SD محوري.
+- **استجوابات البنية التحتية (HD10449–HD10451)** [B2 متوسطة]: S تطعن في خطة السكك الحديدية لـ Trafikverket (حُذف مقطع Alvesta–Växjö)، واستثناء اليوم 180 في التأمين الصحي، والثغرات في ملاحقة جرائم الشركات (352 مليار كرونة اقتصاداً إجرامياً وفق تقدير ESO).
+- **ميزانية الربيع للمعارضة (HD024100)** [A2 عالية]: دوافع مضادة من S وV وC وMP لاقتراح 2025/26:99/100 — الحكومة تواجه ضغطاً ميزانياً في الشوط الأخير من الجلسة العامة.
+
+### 🔭 أهم مؤشر استشرافي
+
+**متابعة: التصويت في الجلسة العامة للريكسداج على FiU20 (توجيهات الميزانية الربيعية) — 2026-06-17**. إذا نسّقت S وV وC وMP رفضاً موحداً للتوجيهات المالية، فإن حكومة تيدو الأقلية ستواجه أشد هزائمها البرلمانية خطورةً قبيل انتخابات سبتمبر 2026. يُعدّ هذا التصويت الأعظم أثراً ضمن ما تبقى من جلسات riksmöte 2025/26.
+
+### تقييم الثقة
+
+[B2] عالية — جميع الادعاءات مستندة إلى وثائق رسمية من واجهة API للريكسداج (dok_id قابلة للتتبع)، وتقارير اللجان، ونصوص الاستجوابات. الأرقام الاقتصادية مأخوذة من مداولات لجنة FiU20/FiU24 ومن تقرير IMF WEO أبريل 2026 للسياق الكلي. المواقف الوزارية غير محسومة ريثما تصدر ردود الاستجوابات (درجة عدم اليقين متوسطة فيما يخص نوايا الحكومة).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-28  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
+**Konfidens**: HØJ [B2]  
+**Artikeltype**: Aftensanalyse  
+
+---
+
+### 🎯 Kernevurdering
+
+Den 28. april 2026 markerer riksmöte 2025/26's lovgivningsmæssige højdepunkt: Tidø-koalitionen fremrykkede EU-bankpakken (HD03253), velfærdssanktioner for fanger, strammet statsborgerskabslovgivning (HD01SfU28), CER-loven om kritisk infrastruktur (HD01FöU20) og en militær samarbejdsramme (HD01FöU14) simultant, mens fire oppositionspartier indgav koordinerede forbehold mod forårsbudgettets BNP-prognose på 1,9% vækst midt i USA's toldusikkerhed. Socialdemokraterne iværksatte årets mest substantielle lovgivningsmæssige udfordring med et direkte angreb på regeringens antikorruptionsproposition (HD024099), og tre koordinerede interpellationer målrettede jernbaneinfrastruktur, risici ved sygesikringsreformen og huller i bekæmpelse af virksomhedsforbrydelser. Dagens lovgivningsportefølje afslører en mindretalskoalition der agerer på alle fronter — sikkerhed, økonomi, velfærd og strafferet — for at konsolidere sin forvalgsbeskrivelse frem mod september 2026.
+
+### 🧭 3 Beslutsstøtte
+
+1. **Koalitionsdygtighed**: Kan Tidø-koalitionen (M, SD, KD, L) opretholde sit lovgivningsprogram i forårssamlingen under den flerfrontede oppositionspres mod finansielle, velfærds-, sikkerheds- og antikorruptionssager?
+2. **Økonomisk risikokalibrering**: Bør investorer og beslutningstagere betragte finansudvalgets godkendelse af 1,9% BNP-vækst som troværdigt under USA's toldusikkerhed — eller signalerer S/V/C/MP's forbehold et behov for nedjustering i den økonomiske planlægning?
+3. **Valgnarrativ 2026**: Hvilke lovgivningsresultater fra i dag — statsborgerskab, bank, antikorruption eller infrastruktur — vil vise sig mest valgmæssigt afgørende for hvert af de otte Riksdag-partier?
+
+### ⚡ 60-Sekunders Læsning
+
+- **EU-bankpakken (HD03253)** [B2 HØJ]: Basel III/CRR3/CRD6-implementering; svenske banker møder reviderede risikovægtsgulve (IRB-output floor 72,5% for boliglån). Kapitaldækningseffekt moderat men betydelig for Nordea, SEB, Handelsbanken, Swedbank. Finansudvalget behandler.
+- **Forårsskatteplanen (HC01FiU20)** [A2 HØJ]: BNP 1,9% (2025), arbejdsløshed 8,7% godkendt af FiU. S, V, C, MP-forbehold indgivet. USA-toldrisiko ikke kvantificeret i regeringens scenarie. Riksbankens pengepolitik 2024 (HC01FiU24) godkendt — KPIF 1,9% — med eksterne evaluatorer der bemærker at hurtigere rentenedsættelser var mulige.
+- **Strammet statsborgerskab (HD01SfU28)** [B2 HØJ]: SD-drevet strengere krav til sprog/indkomst/opholdstid for svensk statsborgerskab. Potentielt koalitionssplittende med L; S/V/C/MP i opposition.
+- **CER-direktiv + Militært (HD01FöU20, HD01FöU14)** [A2 HØJ]: Kritisk infrastrukturresiliens og Natos operative samarbejdsramme skrider frem på parallelt spor. Afstemning juni 2026.
+- **Antikorruptionsudfordring (HD024099)** [A2 HØJ]: S afviser regeringens "missbruk av offentlig ställning"-forbrydelse som rammer ved siden af; kræver bredere reform af BrB kapitel 10. JuU behandler; SD's position er afgørende.
+- **Infrastrukturinterpellationer (HD10449–HD10451)** [B2 MEDIUM]: S udfordrer Trafikverkets jernbaneplan (Alvesta–Växjö fjernet), sygesikringens dag-180-undtagelse og huller i bekæmpelse af virksomhedsforbrydelser (352 mia. kr. kriminel økonomi ifølge ESO-estimat).
+- **Oppositionens forårbudget (HD024100)** [A2 HØJ]: S, V, C, MP-følgemotioner til prop. 2025/26:99/100 — regeringen møder budgetpres i slutningen af plenarsessionen.
+
+### 🔭 Vigtigste Fremadrettede Indikator
+
+**Følg: Riksdagens plenums afstemning om FiU20 (Forårets finansielle retningslinjer) — 2026-06-17**. Hvis S, V, C og MP koordinerer en samlet afvisning af finansielle retningslinjer, møder Tidøs mindretalsregering sit mest alvorlige parlamentariske nederlag inden september 2026-valget. Dette er den enkelt mest konsekvenstunge resterende afstemning i riksmöte 2025/26.
+
+### Konfidensvurdering
+
+[B2] HØJ — Alle påstande baseres på officielle Riksdagens API-dokumenter (dok_id sporbare), udvalgsrapporter og interpellationstekster. Økonomiske tal fra FiU20/FiU24 udvalgsforhandlinger og IMF WEO apr-2026 for makrokontekst. Ministerielle positioner usikre afventende interpellationssvar (MEDIUM usikkerhed om regeringens hensigt).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-28  
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e)(g)  
+**Konfidenz**: HOCH [B2]  
+**Artikeltyp**: Abendanalyse  
+
+---
+
+### 🎯 Kernaussage
+
+Der 28. April 2026 markiert den legislativen Höhepunkt des riksmöte 2025/26: Die Tidö-Koalition trieb gleichzeitig das EU-Bankenpaket (HD03253), Sozialleistungssanktionen für Gefangene, verschärfte Staatsbürgerschaftsgesetze (HD01SfU28), das CER-Gesetz zur kritischen Infrastrukturresilienz (HD01FöU20) und einen militärischen Kooperationsrahmen (HD01FöU14) voran, während vier Oppositionsparteien koordinierte Vorbehalte gegen die BIP-Prognose des Frühlings-Haushaltsgesetzes von 1,9% Wachstum inmitten der US-Zollunsicherheit einreichten. Die Sozialdemokraten unternahmen ihre substantiellste Gesetzgebungsherausforderung des Jahres mit einem direkten Angriff auf die Antikorruptionsproposition der Regierung (HD024099), und drei koordinierte Anfragen richteten sich gegen Eisenbahninfrastruktur, Risiken der Krankenversicherungsreform und Lücken bei der Unternehmenskriminalität. Das legislative Portfolio des Tages enthüllt eine Minderheitskoalition, die an allen Fronten agiert — Sicherheit, Wirtschaft, Soziales und Strafrecht — um ihre Vorwahlerzählung vor September 2026 zu festigen.
+
+### 🧭 3 Unterstützte Entscheidungen
+
+1. **Koalitionsfähigkeit**: Kann die Tidö-Koalition (M, SD, KD, L) ihr Gesetzgebungsprogramm durch die Frühjahrssitzung angesichts des mehrfrontigen Oppositionsdrucks auf Finanz-, Sozial-, Sicherheits- und Antikorruptionsdateien gleichzeitig aufrechterhalten?
+2. **Wirtschaftliche Risikoeinschätzung**: Sollten Investoren und politische Entscheidungsträger die Billigung von 1,9% BIP-Wachstum durch den Finanzausschuss als glaubwürdig betrachten — oder signalisieren die Vorbehalte von S/V/C/MP den Bedarf einer Abwärtsrevision?
+3. **Wahlerzählung 2026**: Welche Gesetzgebungsergebnisse von heute — Staatsbürgerschaft, Bankwesen, Antikorruption oder Infrastruktur — werden sich als am stärksten wahlentscheidend für jede der acht Riksdag-Parteien erweisen?
+
+### ⚡ 60-Sekunden-Überblick
+
+- **EU-Bankenpaket (HD03253)** [B2 HOCH]: Basel III/CRR3/CRD6-Umsetzung; schwedische Banken begegnen revidierten Risikogewichts-Untergrenzen (IRB-Output-Floor 72,5% für Hypotheken). Kapitaladäquanzauswirkung moderat aber bedeutend für Nordea, SEB, Handelsbanken, Swedbank. Finanzausschuss in Bearbeitung.
+- **Frühjahrs-Finanzgesetz (HC01FiU20)** [A2 HOCH]: BIP 1,9% (2025), Arbeitslosigkeit 8,7% durch FiU gebilligt. S, V, C, MP-Vorbehalte eingereicht. US-Zollrisiko in Regierungsszenario nicht quantifiziert. Riksbanks Geldpolitik 2024 (HC01FiU24) gebilligt — KPIF 1,9% — externe Bewerter merken an, dass schnellere Zinssenkungen möglich gewesen wären.
+- **Verschärfte Staatsbürgerschaft (HD01SfU28)** [B2 HOCH]: SD-getriebene strengere Sprach-/Einkommens-/Aufenthaltsanforderungen für die schwedische Staatsbürgerschaft. Potenzielle Koalitionsspaltung mit L; S/V/C/MP in Opposition.
+- **CER-Richtlinie + Militär (HD01FöU20, HD01FöU14)** [A2 HOCH]: Kritische Infrastrukturresilienz und Natos operativer Kooperationsrahmen schreiten auf paralleler Bahn voran. Abstimmung Juni 2026.
+- **Antikorruptionsherausforderung (HD024099)** [A2 HOCH]: S lehnt das "missbruk av offentlig ställning"-Verbrechen der Regierung als verfehlt ab; fordert umfassendere Reform von BrB Kapitel 10. JuU in Bearbeitung; SD-Position ist entscheidend.
+- **Infrastrukturanfragen (HD10449–HD10451)** [B2 MITTEL]: S fordert Trafikverkets Eisenbahnplan heraus (Alvesta–Växjö entfernt), 180-Tage-Ausnahme bei Krankenversicherung und Lücken bei Unternehmenskriminalitätsbekämpfung (352 Mrd. SEK kriminelle Wirtschaft laut ESO-Schätzung).
+- **Oppositions-Frühjahrshaushalt (HD024100)** [A2 HOCH]: S, V, C, MP-Folgemotionen zu prop. 2025/26:99/100 — Regierung begegnet Haushaltsdruck im finalen Plenarspurt.
+
+### 🔭 Wichtigster Vorausschauender Indikator
+
+**Beobachten: Riksdag-Plenums-Abstimmung über FiU20 (Frühjahrs-Finanzrichtlinien) — 2026-06-17**. Wenn S, V, C und MP eine einheitliche Ablehnung der Finanzrichtlinien koordinieren, begegnet Tidøs Minderheitsregierung ihrer gravierendsten parlamentarischen Niederlage vor den Wahlen im September 2026. Dies ist die einzeln folgenreichste verbleibende Abstimmung im riksmöte 2025/26.
+
+### Konfidenzbewertung
+
+[B2] HOCH — Alle Behauptungen basieren auf offiziellen Riksdagens API-Dokumenten (dok_id nachvollziehbar), Ausschussberichten und Anfragetexten. Wirtschaftliche Zahlen aus FiU20/FiU24-Ausschussverhandlungen und IMF WEO Apr-2026 für Makrokontext. Ministerialpositionen unsicher bis zur Beantwortung der Anfragen (MITTEL Unsicherheit über Regierungsabsicht).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-28  
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e)(g)  
+**Confianza**: ALTA [B2]  
+**Tipo de artículo**: Análisis vespertino  
+
+---
+
+### 🎯 Resumen Ejecutivo
+
+El 28 de abril de 2026 marca el pico legislativo del riksmöte 2025/26: la coalición Tidö hizo avanzar simultáneamente el paquete bancario de la UE (HD03253), sanciones de bienestar para presos, legislación de ciudadanía más estricta (HD01SfU28), la ley CER de resiliencia de infraestructura crítica (HD01FöU20) y un marco de cooperación militar (HD01FöU14), mientras cuatro partidos de oposición presentaron reservas coordinadas contra la previsión de crecimiento del PIB del 1,9% del proyecto de ley de presupuestos de primavera en medio de la incertidumbre arancelaria estadounidense. Los socialdemócratas plantearon su desafío legislativo más sustancial del año con un ataque directo contra la proposición anticorrupción del gobierno (HD024099), y tres interpelaciones coordinadas apuntaron a la infraestructura ferroviaria, los riesgos de la reforma del seguro de enfermedad y las lagunas en la lucha contra la delincuencia empresarial. La cartera legislativa del día revela una coalición minoritaria que actúa en todos los frentes — seguridad, economía, bienestar y derecho penal — para consolidar su narrativa preelectoral antes de septiembre de 2026.
+
+### 🧭 3 Decisiones que Apoya este Informe
+
+1. **Viabilidad de la coalición**: ¿Puede la coalición Tidö (M, SD, KD, L) mantener su programa legislativo durante la sesión de primavera ante la presión de la oposición en múltiples frentes —finanzas, bienestar, seguridad y anticorrupción— simultáneamente?
+2. **Calibración del riesgo económico**: ¿Deben los inversores y responsables políticos considerar la aprobación del 1,9% de crecimiento del PIB por la comisión de finanzas como creíble ante la incertidumbre arancelaria estadounidense — o las reservas de S/V/C/MP señalan la necesidad de una revisión a la baja?
+3. **Narrativa electoral 2026**: ¿Qué resultados legislativos de hoy — ciudadanía, banca, anticorrupción o infraestructura — resultarán más electoralmente decisivos para cada uno de los ocho partidos del Riksdag?
+
+### ⚡ Lectura en 60 Segundos
+
+- **Paquete bancario de la UE (HD03253)** [B2 ALTO]: Implementación Basilea III/CRR3/CRD6; los bancos suecos enfrentan suelos revisados de ponderación de riesgo (suelo de salida IRB 72,5% para hipotecas). Impacto en la adecuación de capital moderado pero significativo para Nordea, SEB, Handelsbanken, Swedbank. En tramitación en la comisión de finanzas.
+- **Ley de presupuestos de primavera (HC01FiU20)** [A2 ALTO]: PIB 1,9% (2025), desempleo 8,7% aprobados por FiU. Reservas de S, V, C, MP presentadas. Riesgo arancelario de EE.UU. no cuantificado en el escenario gubernamental. Política monetaria 2024 del Riksbank (HC01FiU24) aprobada — KPIF 1,9% — evaluadores externos señalando que recortes de tipos más rápidos eran posibles.
+- **Ciudadanía más estricta (HD01SfU28)** [B2 ALTO]: Requisitos de idioma/ingresos/residencia más estrictos para la ciudadanía sueca impulsados por SD. Potencial divisor de coalición con L; S/V/C/MP en oposición.
+- **Directiva CER + Militar (HD01FöU20, HD01FöU14)** [A2 ALTO]: La resiliencia de infraestructuras críticas y el marco de cooperación operativa de la OTAN avanzan en pista paralela. Votación junio 2026.
+- **Desafío anticorrupción (HD024099)** [A2 ALTO]: S rechaza el delito de "missbruk av offentlig ställning" del gobierno por errar el objetivo; exige una reforma más amplia del capítulo 10 del BrB. En tramitación en JuU; la posición de SD es fundamental.
+- **Interpelaciones sobre infraestructura (HD10449–HD10451)** [B2 MEDIO]: S cuestiona el plan ferroviario de Trafikverket (Alvesta–Växjö eliminado), la excepción del día 180 del seguro de enfermedad y las lagunas en la lucha contra la delincuencia empresarial (352.000 millones SEK de economía criminal según estimación ESO).
+- **Presupuesto de primavera de la oposición (HD024100)** [A2 ALTO]: Contramociones de S, V, C, MP a la prop. 2025/26:99/100 — el gobierno enfrenta presión presupuestaria en el tramo final de la sesión plenaria.
+
+### 🔭 Principal Indicador Prospectivo
+
+**Seguimiento: votación en sesión plenaria del Riksdag sobre FiU20 (Orientaciones financieras de primavera) — 2026-06-17**. Si S, V, C y MP coordinan un rechazo unificado de las orientaciones financieras, el gobierno minoritario Tidö enfrenta su derrota parlamentaria más grave antes de las elecciones de septiembre de 2026. Esta es la votación de mayor trascendencia que queda en el riksmöte 2025/26.
+
+### Evaluación de Confianza
+
+[B2] ALTA — Todas las afirmaciones se basan en documentos oficiales de la API del Riksdag (dok_id rastreables), informes de comisión y textos de interpelación. Cifras económicas de las deliberaciones de la comisión FiU20/FiU24 y del FMI WEO abr-2026 para contexto macro. Posiciones ministeriales inciertas pendientes de respuestas a interpelaciones (incertidumbre MEDIA sobre la intención gubernamental).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_fi.md -->
+
+**Kirjoittaja**: James Pether Sörling  
+**Päiväys**: 2026-04-28  
+**Luokitus**: JULKINEN — GDPR Art. 9(2)(e)(g)  
+**Luottamus**: KORKEA [B2]  
+**Artikkelityyppi**: Ilta-analyysi  
+
+---
+
+### 🎯 Ydinarvio
+
+28. huhtikuuta 2026 merkitsee riksmöte 2025/26:n lainsäädäntöhuippua: Tidö-koalitio eteni samanaikaisesti EU:n pankkipaketin (HD03253), vangeille kohdistuvien hyvinvointisanktioiden, tiukennetun kansalaisuuslainsäädännön (HD01SfU28), kriittisen infrastruktuurin CER-direktiivin (HD01FöU20) ja sotilaallisen yhteistyökehyksen (HD01FöU14) kanssa, samalla kun neljä oppositiopuoluetta jätti koordinoituja varaumia kevätbudjettiin kuuluvan 1,9%:n BNP-kasvuennusteen suhteen USA:n tullien epävarmuuden keskellä. Sosiaalidemokraatit esittivät vuoden merkittävimmän lainsäädäntöhaasteen hyökkäämällä suoraan hallituksen korruptionvastaista esitystä (HD024099) vastaan, ja kolme koordinoitua kyselyä kohdistettiin rautatiein infrastruktuuriin, sairausvakuutusuudistuksen riskeihin sekä yritysrikoksia koskeviin puutteisiin. Päivän lainsäädäntösalkku paljastaa vähemmistökoalition, joka toimii kaikilla rintamilla — turvallisuus, talous, hyvinvointi ja rikosoikeus — konsolidoidakseen vaalienarratiivinsa ennen syyskuuta 2026.
+
+### 🧭 3 Tuettavaa Päätöstä
+
+1. **Koalition toimintakyky**: Voiko Tidö-koalitio (M, SD, KD, L) ylläpitää lainsäädäntöohjelmaansa kevätistunnon ajan, kun oppositio painostaa samanaikaisesti finanssi-, hyvinvointi-, turvallisuus- ja korruptionvastaisten tiedostojen suhteen?
+2. **Taloudellisen riskin kalibrointi**: Tulisiko sijoittajien ja päättäjien pitää finanssivaliokunnan hyväksymää 1,9%:n BNP-kasvua uskottavana USA:n tullien epävarmuuden vallitessa — vai signaalivatko S/V/C/MP:n varaumat alaspäin tarkistamisen tarvetta taloussuunnittelussa?
+3. **Vaalinarratiivin muotoilu 2026**: Mitkä tämänpäiväisistä lainsäädäntötuloksista — kansalaisuus, pankkiala, korruptionvastaisuus tai infrastruktuuri — osoittautuvat vaaliratkaisevimmiksi kullekin kahdeksalle riksdagpuolueelle?
+
+### ⚡ 60 Sekunnin Katsaus
+
+- **EU:n pankkipaketti (HD03253)** [B2 KORKEA]: Basel III/CRR3/CRD6-täytäntöönpano; ruotsalaiset pankit kohtaavat tarkistettuja riskipainojen alarajoja (IRB-output floor 72,5% asuntolainoille). Vakavaraisuusvaikutus kohtalainen mutta merkittävä Nordealle, SEB:lle, Handelsbankille, Swedbankille. Finanssivaliokunta käsittelee.
+- **Kevätbudjetti (HC01FiU20)** [A2 KORKEA]: BNP 1,9% (2025), työttömyys 8,7% FiU:n hyväksymänä. S, V, C, MP-varaumat jätetty. USA:n tulliriski ei kvantifioitu hallituksen skenaariossa. Riksbankin rahapolitiikka 2024 (HC01FiU24) hyväksytty — KPIF 1,9% — ulkopuolisten arvioijien huomautessa, että nopeammat koronlaskut olivat mahdollisia.
+- **Tiukennettu kansalaisuus (HD01SfU28)** [B2 KORKEA]: SD-ajama tiukempi kieli/tulo/asumisaikavaatimus Ruotsin kansalaisuudelle. Mahdollinen koalitiokiistakivi L:n kanssa; S/V/C/MP oppositiossa.
+- **CER-direktiivi + Sotilaallinen (HD01FöU20, HD01FöU14)** [A2 KORKEA]: Kriittisen infrastruktuurin resilienssi ja Naton operatiivinen yhteistyökehys etenevät rinnakkaisella raiteella. Äänestys kesäkuussa 2026.
+- **Korruptionvastaishaaste (HD024099)** [A2 KORKEA]: S hylkää hallituksen "missbruk av offentlig ställning" -rikoksen epäonnistuneena; vaatii laajempaa BrB:n luvun 10 uudistusta. JuU käsittelee; SD:n kanta on ratkaiseva.
+- **Infrastrukturikyselyt (HD10449–HD10451)** [B2 KESKITASO]: S haastaa Trafikverketin rautatieohjelman (Alvesta–Växjö poistettu), sairausvakuutuksen 180. päivän poikkeuksen ja yritysrikostorjunnan puutteet (352 miljardia SEK rikollista taloutta ESO:n arvion mukaan).
+- **Opposition kevätbudjetti (HD024100)** [A2 KORKEA]: S, V, C, MP:n vastamotiot ehdotukseen 2025/26:99/100 — hallitus kohtaa budjettipaineen täysistunnon loppumetreillä.
+
+### 🔭 Tärkein Tulevaisuuteen Suuntautuva Indikaattori
+
+**Seuraa: Riksdagin täysistuntoäänestys FiU20:stä (Kevätbudjettiraamit) — 2026-06-17**. Jos S, V, C ja MP koordinoivat yhdistetyn hylkäyksen budjettiraameja vastaan, Tidön vähemmistöhallitus kohtaa merkittävimmän parlamentaarisen tappiansa ennen syyskuun 2026 vaaleja. Tämä on riksmöte 2025/26:n yksittäisesti merkittävin jäljellä oleva äänestys.
+
+### Luottamusarvio
+
+[B2] KORKEA — Kaikki väitteet perustuvat virallisiin Riksdagens API-dokumentteihin (dok_id jäljitettävissä), valiokuntaraportteihin ja kyselyteksteihin. Taloudelliset luvut FiU20/FiU24 valiokunnan käsittelystä ja IMF WEO huhtikuu-2026 makrokontekstia varten. Ministereiden kannat epävarmoja kyselyvastausten odottamisen aikana (KESKITASO epävarmuus hallituksen aikomuksista).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling  
+
+**Confiance**: ÉLEVÉE [B2]  
+**Type d'article**: Analyse du soir  
+
+---
+
+### 🎯 Synthèse
+
+Le 28 avril 2026 marque le pic législatif du riksmöte 2025/26 : la coalition Tidö a simultanément fait avancer le paquet bancaire européen (HD03253), des sanctions sociales pour les détenus, un resserrement de la législation sur la nationalité (HD01SfU28), la loi CER sur la résilience des infrastructures critiques (HD01FöU20) et un cadre de coopération militaire (HD01FöU14), tandis que quatre partis d'opposition ont déposé des réserves coordonnées contre la prévision de croissance du PIB de 1,9% du projet de loi de finances de printemps au milieu de l'incertitude sur les droits de douane américains. Les sociaux-démocrates ont lancé leur défi législatif le plus substantiel de l'année avec une attaque directe contre la proposition anticorruption du gouvernement (HD024099), et trois interpellations coordonnées ont ciblé les infrastructures ferroviaires, les risques de la réforme de l'assurance maladie et les lacunes dans la lutte contre la criminalité d'entreprise. Le portefeuille législatif du jour révèle une coalition minoritaire agissant sur tous les fronts — sécurité, économie, protection sociale et droit pénal — pour consolider son récit pré-électoral avant septembre 2026.
+
+### 🧭 3 Décisions Soutenues
+
+1. **Viabilité de la coalition** : La coalition Tidö (M, SD, KD, L) peut-elle maintenir son programme législatif tout au long de la session de printemps compte tenu de la pression d'opposition sur plusieurs fronts — finance, protection sociale, sécurité et anticorruption simultanément ?
+2. **Calibrage du risque économique** : Les investisseurs et les décideurs politiques doivent-ils considérer l'approbation de 1,9% de croissance du PIB par la commission des finances comme crédible face à l'incertitude douanière américaine — ou les réserves de S/V/C/MP signalent-elles un besoin de révision à la baisse ?
+3. **Narration électorale 2026** : Quels résultats législatifs d'aujourd'hui — nationalité, banque, anticorruption ou infrastructure — s'avéreront les plus déterminants sur le plan électoral pour chacun des huit partis du Riksdag ?
+
+### ⚡ Lecture en 60 Secondes
+
+- **Paquet bancaire européen (HD03253)** [B2 ÉLEVÉ] : Mise en œuvre Bâle III/CRR3/CRD6 ; les banques suédoises font face à des planchers révisés de pondération des risques (plancher de sortie IRB 72,5% pour les prêts hypothécaires). Impact sur l'adéquation des fonds propres modéré mais significatif pour Nordea, SEB, Handelsbanken, Swedbank. Traitement par la commission des finances.
+- **Loi de finances de printemps (HC01FiU20)** [A2 ÉLEVÉ] : PIB 1,9% (2025), chômage 8,7% approuvé par FiU. Réserves de S, V, C, MP déposées. Risque douanier américain non quantifié dans le scénario gouvernemental. Politique monétaire 2024 de la Riksbank (HC01FiU24) approuvée — KPIF 1,9% — les évaluateurs externes notant que des baisses de taux plus rapides étaient possibles.
+- **Resserrement de la nationalité (HD01SfU28)** [B2 ÉLEVÉ] : Exigences plus strictes de langue/revenu/résidence pour la nationalité suédoise portées par SD. Fracture potentielle de la coalition avec L ; S/V/C/MP dans l'opposition.
+- **Directive CER + Militaire (HD01FöU20, HD01FöU14)** [A2 ÉLEVÉ] : La résilience des infrastructures critiques et le cadre de coopération opérationnelle de l'OTAN progressent sur une voie parallèle. Vote juin 2026.
+- **Défi anticorruption (HD024099)** [A2 ÉLEVÉ] : S rejette le crime de "missbruk av offentlig ställning" du gouvernement comme manquant sa cible ; exige une réforme plus large du chapitre 10 du BrB. Traitement par JuU ; la position de SD est décisive.
+- **Interpellations sur les infrastructures (HD10449–HD10451)** [B2 MOYEN] : S conteste le plan ferroviaire de Trafikverket (Alvesta–Växjö supprimé), l'exception de jour 180 de l'assurance maladie et les lacunes dans la lutte contre la criminalité d'entreprise (352 milliards SEK d'économie criminelle selon l'estimation ESO).
+- **Budget de printemps de l'opposition (HD024100)** [A2 ÉLEVÉ] : Contre-motions de S, V, C, MP à la prop. 2025/26:99/100 — le gouvernement fait face à une pression budgétaire dans le sprint final en séance plénière.
+
+### 🔭 Principal Indicateur Prospectif
+
+**À surveiller : vote en séance plénière du Riksdag sur FiU20 (Orientations financières de printemps) — 2026-06-17**. Si S, V, C et MP coordonnent un rejet unifié des orientations financières, le gouvernement minoritaire Tidö fait face à sa défaite parlementaire la plus grave avant les élections de septembre 2026. C'est le vote aux conséquences les plus lourdes restant dans le riksmöte 2025/26.
+
+### Évaluation de Confiance
+
+[B2] ÉLEVÉE — Toutes les affirmations sont basées sur des documents officiels de l'API Riksdagen (dok_id traçables), des rapports de commission et des textes d'interpellation. Chiffres économiques issus des délibérations de la commission FiU20/FiU24 et du FMI WEO avr-2026 pour le contexte macro. Positions ministérielles incertaines en attente de réponses aux interpellations (incertitude MOYENNE sur l'intention gouvernementale).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_he.md -->
+
+&#x200F;# ספרינט חקיקתי לפני הבחירות של קואליציית טידו: ביטחון, פיננסים ורפורמות רווחה מגדירים את הנוף הפוליטי של שוודיה 2026
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-28  
+**סיווג**: ציבורי — GDPR סעיף 9(2)(ה)(ו)  
+**אמינות**: גבוהה [B2]  
+**סוג מאמר**: ניתוח ערב  
+
+---
+
+### 🎯 תמצית ביצועית
+
+28 באפריל 2026 מסמן את שיא החקיקה של riksmöte 2025/26: קואליציית טידו קידמה בו-זמנית את חבילת הבנקאות של האיחוד האירופי (HD03253), סנקציות רווחה לאסירים, הידוק חקיקת האזרחות (HD01SfU28), חוק CER לחוסן תשתיות קריטיות (HD01FöU20) ומסגרת שיתוף הפעולה הצבאי (HD01FöU14), בעוד ארבעה מפלגות אופוזיציה הגישו הסתייגויות מתואמות נגד תחזית צמיחת התמ"ג של 1.9% בחוק התקציב האביבי על רקע אי-הוודאות בנוגע לתעריפי סחר אמריקאיים. הסוציאל-דמוקרטים יצאו לאתגרם החקיקתי המשמעותי ביותר השנה עם תקיפה ישירה של הצעת הממשלה למאבק בשחיתות (HD024099), ושלוש שאילתות מתואמות כוונו נגד תשתיות הרכבת, סיכוני רפורמת ביטוח הבריאות ופרצות באכיפת פשעי תאגידים. תיק החקיקה של היום חושף קואליציית מיעוט הפועלת בכל החזיתות — ביטחון, כלכלה, רווחה ומשפט פלילי — כדי לגבש את נרטיב הבחירות שלה לקראת ספטמבר 2026.
+
+### 🧭 3 החלטות נתמכות
+
+1. **כדאיות הקואליציה**: האם קואליציית טידו (M, SD, KD, L) יכולה לקיים את תוכנית החקיקה שלה לאורך מושב האביב לנוכח לחץ האופוזיציה הרב-חזיתי בנושאי פיננסים, רווחה, ביטחון ומאבק בשחיתות בו-זמנית?
+2. **כיול הסיכון הכלכלי**: האם על משקיעים ומקבלי מדיניות לראות באישור ועדת הכספים לצמיחה של 1.9% תמ"ג כאמין לנוכח אי-הוודאות בתעריפי הסחר האמריקאיים — או שמא הסתייגויות S/V/C/MP מאותתות על צורך בתיקון כלפי מטה?
+3. **עיצוב נרטיב הבחירות 2026**: אילו תוצאות חקיקתיות מהיום — אזרחות, בנקאות, מאבק בשחיתות או תשתיות — יתבררו כמכריעות ביותר מבחינה בחירתית עבור כל אחת משמונה מפלגות הריקסדאג?
+
+### ⚡ קריאה של 60 שניות
+
+- **חבילת הבנקאות של האיחוד האירופי (HD03253)** [B2 גבוה]: יישום Basel III/CRR3/CRD6; הבנקים השוודיים מתמודדים עם רצפות מתוקנות לפי משקל סיכון (רצפת פלט IRB 72.5% למשכנתאות). השפעת מספיקות הון מתונה אך משמעותית ל-Nordea, SEB, Handelsbanken, Swedbank. ועדת הכספים מטפלת.
+- **חוק התקציב האביבי (HC01FiU20)** [A2 גבוה]: תמ"ג 1.9% (2025), אבטלה 8.7% אושרו ב-FiU. הסתייגויות S, V, C, MP הוגשו. סיכון התעריפים האמריקאי לא נכמת בתרחיש הממשלה. מדיניות המוניטרית 2024 של Riksbank (HC01FiU24) אושרה — KPIF 1.9% — מעריכים חיצוניים ציינו שהורדות ריבית מהירות יותר היו אפשריות.
+- **הידוק האזרחות (HD01SfU28)** [B2 גבוה]: דרישות שפה/הכנסה/שהייה מחמירות לאזרחות שוודית בדחיפת SD. פוטנציאל לפילוג בקואליציה עם L; S/V/C/MP באופוזיציה.
+- **הוראת CER + צבאי (HD01FöU20, HD01FöU14)** [A2 גבוה]: חוסן תשתיות קריטיות ומסגרת שיתוף הפעולה המבצעי של נאט"ו מתקדמים על מסלול מקביל. הצבעה יוני 2026.
+- **אתגר המאבק בשחיתות (HD024099)** [A2 גבוה]: S דוחה את עבירת "missbruk av offentlig ställning" של הממשלה כמחטיאה יעד; דורשת רפורמה רחבה יותר בפרק 10 של BrB. JuU מטפלת; עמדת SD מכרעת.
+- **שאילתות תשתיות (HD10449–HD10451)** [B2 בינוני]: S מערערת על תוכנית הרכבת של Trafikverket (Alvesta–Växjö הוסרה), חריג יום 180 בביטוח בריאות ופרצות באכיפת פשעי תאגידים (352 מיליארד SEK כלכלה פלילית לפי הערכת ESO).
+- **תקציב אביב של האופוזיציה (HD024100)** [A2 גבוה]: הצעות נגד מ-S, V, C, MP להצעה 2025/26:99/100 — הממשלה מתמודדת עם לחץ תקציבי בספרינט הסיומי של המליאה.
+
+### 🔭 המחוון הפרוספקטיבי המרכזי
+
+**מעקב: הצבעת מליאה בריקסדאג על FiU20 (הנחיות פיננסיות של האביב) — 2026-06-17**. אם S, V, C ו-MP מתאמות דחייה מאוחדת של ההנחיות הפיננסיות, ממשלת המיעוט של טידו מתמודדת עם תבוסתה הפרלמנטרית החמורה ביותר לפני בחירות ספטמבר 2026. זוהי ההצבעה בעלת ההשלכות המשמעותיות ביותר שנותרה ב-riksmöte 2025/26.
+
+### הערכת אמינות
+
+[B2] גבוהה — כל הטענות מבוססות על מסמכים רשמיים מ-API של הריקסדאג (dok_id ניתנים למעקב), דוחות ועדות וטקסטי שאילתות. נתונים כלכליים מדיוני ועדת FiU20/FiU24 ומ-IMF WEO אפריל-2026 להקשר מאקרו. עמדות שרים אינן ברורות בהמתנה לתשובות לשאילתות (אי-וודאות בינונית לגבי כוונת הממשלה).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-04-28  
+**分類**: 公開 — GDPR 第9条(2)(e)(g)  
+**信頼度**: 高 [B2]  
+**記事種別**: 夕刻分析  
+
+---
+
+### 🎯 要約
+
+2026年4月28日は、riksmöte 2025/26の立法ピークとなった。ティドー連立政権はEU銀行パッケージ（HD03253）、受刑者への福祉制裁、国籍法の厳格化（HD01SfU28）、重要インフラ強靭化CER指令（HD01FöU20）、軍事協力枠組み（HD01FöU14）を同時に推進し、一方で4つの野党が米国関税を巡る不確実性の中、春季財政法案のGDP成長率1.9%予測に対して協調的な留保意見を提出した。社会民主党は政府の汚職防止提案（HD024099）への直接攻撃という年間最大の立法上の挑戦に臨み、3件の協調的質問が鉄道インフラ、疾病保険改革リスク、企業犯罪対策の欠陥に向けられた。本日の立法ポートフォリオは、9月2026年選挙に向けて選挙前の自党の語りを固めるため、安全保障・経済・福祉・刑事司法のあらゆる面で行動する少数連立政権の姿を露わにした。
+
+### 🧭 支援する決定事項（3点）
+
+1. **連立の持続可能性**: ティドー連立（M, SD, KD, L）は、財政・福祉・安全保障・汚職防止の複数ファイルへの野党の同時多面的圧力を受けながら、春季会期中に立法プログラムを維持できるか？
+2. **経済リスクの評価**: 米国関税の不確実性を考慮した場合、投資家や政策立案者は財政委員会によるGDP成長率1.9%の承認を信頼できるものとみなすべきか——それともS/V/C/MPの留保意見は経済計画における下方修正の必要性を示唆するか？
+3. **2026年選挙ナラティブ形成**: 本日の立法成果——国籍、銀行、汚職防止、インフラ——のうち、リクスダーグの8つの政党それぞれにとって最も選挙上決定的なものはどれか？
+
+### ⚡ 60秒読解
+
+- **EU銀行パッケージ（HD03253）** [B2 高]: バーゼルIII/CRR3/CRD6の実施；スウェーデン銀行はリスクウェート下限の見直し（IRBアウトプットフロア72.5%（住宅ローン））に直面。Nordea、SEB、Handelsbanken、Swedbankへの自己資本影響は中程度だが重要。財政委員会で審議中。
+- **春季財政ガイドライン（HC01FiU20）** [A2 高]: GDP1.9%（2025年）、失業率8.7%をFiUが承認。S、V、C、MPが留保意見提出。米国関税リスクは政府シナリオで定量化されず。リクスバンクの2024年金融政策（HC01FiU24）承認 — KPIF1.9% — 外部評価者はより速い利下げが可能だったと指摘。
+- **国籍法の厳格化（HD01SfU28）** [B2 高]: SDが主導する語学・収入・居住要件の厳格化。Lとの連立分裂の可能性；S/V/C/MPは反対。
+- **CER指令＋軍事（HD01FöU20, HD01FöU14）** [A2 高]: 重要インフラ強靭化とNATOの運用協力枠組みが並行して進展。採決は2026年6月。
+- **汚職防止への挑戦（HD024099）** [A2 高]: Sは政府の「missbruk av offentlig ställning」犯罪が目的を外していると否定；BrB第10章のより広い改革を要求。JuUで審議；SDの立場が鍵。
+- **インフラ質問（HD10449–HD10451）** [B2 中]: SはTrafikverketの鉄道計画（Alvesta–Växjö削除）、疾病保険180日例外、企業犯罪対策の欠陥（ESO推計で3520億SEKの犯罪経済）を問題視。
+- **野党の春季予算（HD024100）** [A2 高]: S、V、C、MPが提案2025/26:99/100への対抗動議——政府は本会議最終スプリントで予算圧力に直面。
+
+### 🔭 最重要先行指標
+
+**注目：リクスダーグ本会議によるFiU20（春季財政ガイドライン）の採決 — 2026-06-17**。S、V、C、MPが財政ガイドラインへの統一した拒否を調整した場合、ティドー少数政権は2026年9月選挙前に最重大の議会敗北に直面する。これはriksmöte 2025/26に残る単独で最も影響の大きい採決である。
+
+### 信頼度評価
+
+[B2] 高 — すべての主張は公式リクスダーグAPIドキュメント（dok_id追跡可能）、委員会報告書、質問テキストに基づく。経済数値はFiU20/FiU24委員会審議およびIMF WEO 2026年4月（マクロコンテキスト）から引用。閣僚の立場は質問への回答を待って不確か（政府の意図に関する不確実性は中程度）。
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-28  
+**분류**: 공개 — GDPR 제9조(2)(e)(g)  
+**신뢰도**: 높음 [B2]  
+**기사 유형**: 저녁 분석  
+
+---
+
+### 🎯 핵심 요약
+
+2026년 4월 28일은 riksmöte 2025/26의 입법 절정을 기록했다. 티되 연립정부는 EU 은행 패키지(HD03253), 수감자에 대한 복지 제재, 시민권법 강화(HD01SfU28), 핵심 인프라 복원력 CER 지침(HD01FöU20), 군사 협력 프레임워크(HD01FöU14)를 동시에 추진했으며, 야당 4개 정당은 미국 관세 불확실성 속에서 봄철 재정법안의 GDP 성장률 1.9% 전망에 협조적 유보 의견을 제출했다. 사회민주당은 정부의 부패방지 제안(HD024099)에 대한 직접 공격으로 올해 가장 실질적인 입법 도전을 감행했으며, 세 건의 협조적 질문이 철도 인프라, 질병보험 개혁 위험성, 기업 범죄 대응의 허점을 겨냥했다. 오늘의 입법 포트폴리오는 2026년 9월 선거를 앞두고 선거 전 서사를 공고히 하기 위해 안보·경제·복지·형사법 전 분야에서 행동하는 소수 연립정부의 모습을 드러낸다.
+
+### 🧭 지원하는 결정 사항 3가지
+
+1. **연립 지속 가능성**: 티되 연립(M, SD, KD, L)은 재정·복지·안보·부패방지 다중 전선에서 야당의 동시 압박을 받으면서 봄 회기 동안 입법 프로그램을 유지할 수 있는가?
+2. **경제 리스크 평가**: 미국 관세 불확실성을 고려할 때 투자자와 정책 입안자들은 재정위원회의 GDP 성장률 1.9% 승인을 신뢰할 수 있는 것으로 봐야 하는가 — 아니면 S/V/C/MP의 유보 의견이 경제 계획의 하향 수정 필요성을 시사하는가?
+3. **2026년 선거 서사 구성**: 오늘의 입법 결과 중 — 시민권, 은행, 부패방지, 인프라 — 리크스다그 8개 정당 각각에 선거적으로 가장 결정적인 것은 무엇인가?
+
+### ⚡ 60초 요약
+
+- **EU 은행 패키지 (HD03253)** [B2 높음]: 바젤 III/CRR3/CRD6 시행; 스웨덴 은행들이 수정된 위험가중치 하한(주택담보대출 IRB 아웃풋 플로어 72.5%)에 직면. Nordea, SEB, Handelsbanken, Swedbank에 대한 자본 적정성 영향은 중간이나 상당. 재정위원회 심의 중.
+- **봄철 재정지침법 (HC01FiU20)** [A2 높음]: GDP 1.9%(2025년), 실업률 8.7%를 FiU가 승인. S, V, C, MP 유보 의견 제출. 미국 관세 리스크는 정부 시나리오에서 정량화되지 않음. Riksbank 2024년 통화정책(HC01FiU24) 승인 — KPIF 1.9% — 외부 평가자들은 더 빠른 금리 인하가 가능했다고 지적.
+- **시민권 강화 (HD01SfU28)** [B2 높음]: SD 주도 언어·소득·거주 요건 강화. L과의 연립 분열 가능성; S/V/C/MP 반대.
+- **CER 지침 + 군사 (HD01FöU20, HD01FöU14)** [A2 높음]: 핵심 인프라 복원력과 NATO 운용 협력 프레임워크가 병행 진행. 2026년 6월 표결.
+- **부패방지 도전 (HD024099)** [A2 높음]: S는 정부의 "missbruk av offentlig ställning" 범죄가 목표를 벗어났다고 거부; BrB 제10장의 더 넓은 개혁 요구. JuU 심의 중; SD 입장이 핵심.
+- **인프라 질문 (HD10449–HD10451)** [B2 중간]: S는 Trafikverket의 철도 계획(Alvesta–Växjö 제거), 질병보험 180일 예외, ESO 추정 3,520억 SEK 범죄 경제 등 기업범죄 대응 허점에 이의 제기.
+- **야당 봄 예산 (HD024100)** [A2 높음]: S, V, C, MP의 제안 2025/26:99/100에 대한 대안 동의 — 정부는 본회의 최종 스프린트에서 예산 압박에 직면.
+
+### 🔭 가장 중요한 선행 지표
+
+**주시: 리크스다그 본회의의 FiU20(봄철 재정지침) 표결 — 2026-06-17**. S, V, C, MP가 재정지침에 대한 통일된 거부를 조율한다면, 티되 소수정부는 2026년 9월 선거 전에 가장 심각한 의회 패배에 직면하게 된다. 이것은 riksmöte 2025/26에 남은 단일 최고 영향력의 표결이다.
+
+### 신뢰도 평가
+
+[B2] 높음 — 모든 주장은 공식 리크스다그 API 문서(dok_id 추적 가능), 위원회 보고서, 질문 텍스트에 기반. 경제 수치는 FiU20/FiU24 위원회 심의 및 IMF WEO 2026년 4월(거시 맥락)에서 인용. 각료 입장은 질문에 대한 답변 대기 중으로 불확실(정부 의도에 관한 불확실성 중간).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-28  
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e)(g)  
+**Betrouwbaarheid**: HOOG [B2]  
+**Artikeltype**: Avondanalyse  
+
+---
+
+### 🎯 Kernbeoordeling
+
+28 april 2026 markeert het wetgevende hoogtepunt van riksmöte 2025/26: de Tidö-coalitie bracht tegelijkertijd het EU-bankenpakket (HD03253), welzijnssancties voor gevangenen, aangescherpte nationaliteitswetgeving (HD01SfU28), de CER-wet voor kritieke infrastructuurweerbaarheid (HD01FöU20) en een militair samenwerkingskader (HD01FöU14) vooruit, terwijl vier oppositiepartijen gecoördineerde voorbehouden indienden tegen de bbp-groeiprognose van 1,9% in de voorjaarsbegroting te midden van de onzekerheid over Amerikaanse handelstarieven. De sociaaldemocraten brachten hun meest substantiële wetgevingsuitdaging van het jaar met een directe aanval op het antikorruptieproposit van de regering (HD024099), en drie gecoördineerde interpellaties richtten zich op spoorweginfrastructuur, risico's van de ziektekostenverzekeringshervorming en hiaten in de aanpak van bedrijfscriminaliteit. Het wetgevende portfolio van de dag onthult een minderheidscoalitie die op alle fronten handelt — veiligheid, economie, welzijn en strafrecht — om haar verkiezingsverhaal voor september 2026 te consolideren.
+
+### 🧭 3 Ondersteunde Beslissingen
+
+1. **Levensvatbaarheid coalitie**: Kan de Tidö-coalitie (M, SD, KD, L) haar wetgevingsprogramma door de voorjaarszitting heen handhaven gezien de meervoudige oppositiedruk op financiële, welzijns-, veiligheids- en antikorruptiedossiers tegelijkertijd?
+2. **Economische risicokalibratie**: Moeten investeerders en beleidsmakers de goedkeuring van 1,9% bbp-groei door de financiële commissie als geloofwaardig beschouwen gezien de Amerikaanse tariefonzekerheid — of signaleren de voorbehouden van S/V/C/MP de behoefte aan een neerwaartse revisie?
+3. **Verkiezingsnarratief 2026**: Welke wetgevingsresultaten van vandaag — nationaliteit, bankwezen, antikorruptie of infrastructuur — zullen het meest electoraal doorslaggevend blijken voor elk van de acht Riksdag-partijen?
+
+### ⚡ 60-Seconden Lezing
+
+- **EU-bankenpakket (HD03253)** [B2 HOOG]: Implementatie Bazel III/CRR3/CRD6; Zweedse banken staan voor herziene risicogewichtsondergrenzen (IRB-outputvloer 72,5% voor hypotheken). Kapitaaltoereikendheidsgevolg matig maar significant voor Nordea, SEB, Handelsbanken, Swedbank. In behandeling bij de financiële commissie.
+- **Voorjaarsbegrotingswet (HC01FiU20)** [A2 HOOG]: Bbp 1,9% (2025), werkloosheid 8,7% goedgekeurd door FiU. Voorbehouden van S, V, C, MP ingediend. Amerikaans tariefrisico niet gekwantificeerd in het regeringsscenario. Riksbanks monetair beleid 2024 (HC01FiU24) goedgekeurd — KPIF 1,9% — externe evaluatoren merkten op dat snellere renteverlagingen mogelijk waren geweest.
+- **Aangescherpte nationaliteit (HD01SfU28)** [B2 HOOG]: Door SD aangedreven strengere taal-/inkomen-/verblijfsvereisten voor de Zweedse nationaliteit. Mogelijke coalitiesplitsing met L; S/V/C/MP in oppositie.
+- **CER-richtlijn + Militair (HD01FöU20, HD01FöU14)** [A2 HOOG]: Kritieke infrastructuurweerbaarheid en NAVO's operationele samenwerkingskader vorderen op parallelle koers. Stemming juni 2026.
+- **Antikorruptie-uitdaging (HD024099)** [A2 HOOG]: S verwerpt het "missbruk av offentlig ställning"-misdrijf van de regering als missende doel; eist bredere hervorming van BrB hoofdstuk 10. In behandeling bij JuU; positie van SD is doorslaggevend.
+- **Infrastructuurinterpellaties (HD10449–HD10451)** [B2 GEMIDDELD]: S betwist Trafikverkets spoorwegplan (Alvesta–Växjö verwijderd), de dag-180-uitzondering in de ziektekostenverzekering en hiaten in de aanpak van bedrijfscriminaliteit (352 miljard SEK criminele economie per ESO-schatting).
+- **Oppositionele voorjaarsbegroting (HD024100)** [A2 HOOG]: Tegenmotie van S, V, C, MP op prop. 2025/26:99/100 — regering staat voor begrotingsdruk in de finale plenaire sprint.
+
+### 🔭 Belangrijkste Vooruitblikkende Indicator
+
+**Volgen: plenaire stemming van de Riksdag over FiU20 (Financiële voorjaarsrichtsnoeren) — 2026-06-17**. Als S, V, C en MP een gezamenlijke afwijzing van de financiële richtsnoeren coördineren, staat de minderheidregering Tidö voor haar meest ernstige parlementaire nederlaag vóór de verkiezingen van september 2026. Dit is de afzonderlijk meest consequentierijke resterende stemming in riksmöte 2025/26.
+
+### Betrouwbaarheidsbeoordeling
+
+[B2] HOOG — Alle beweringen zijn gebaseerd op officiële Riksdag API-documenten (dok_id traceerbaar), commissierapporten en interpellatieteksten. Economische cijfers uit FiU20/FiU24 commissieberaadslagingen en IMF WEO apr-2026 voor macrocontext. Ministeriële standpunten onzeker in afwachting van antwoorden op interpellaties (GEMIDDELDE onzekerheid over regeringsintenties).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-28  
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
+**Konfidens**: HØY [B2]  
+**Artikkeltype**: Kveldsanalyse  
+
+---
+
+### 🎯 Kjernevurdering
+
+28. april 2026 markerer riksmöte 2025/26's lovgivningsmessige topp: Tidø-koalisjonen fremmet EU-bankpakken (HD03253), velferdssanksjoner for fanger, strammet statsborgerlovgivning (HD01SfU28), CER-loven om kritisk infrastruktur (HD01FöU20) og en militær samarbeidsramme (HD01FöU14) simultant, mens fire oppositionspartier leverte koordinerte forbehold mot vårbudsjettets BNP-prognose på 1,9% vekst midt i USA's tollusikkerhet. Socialdemokratene gjennomførte årets mest substantielle lovgivningsutfordring med et direkte angrep på regjeringens antikorrupsjonsproposisjon (HD024099), og tre koordinerte interpellasjoner rettet mot jernbaneinfrastruktur, risikoen ved trygdereformen og hull i bekjempelsen av foretaksforbrytelser. Dagens lovgivningsportefølje avslører en mindretallskoalisjon som handler på alle fronter — sikkerhet, økonomi, velferd og strafferett — for å konsolidere sin forvalgsbeskrivelse foran september 2026.
+
+### 🧭 3 Beslutsstøtte
+
+1. **Koalisjonsevne**: Kan Tidø-koalisjonen (M, SD, KD, L) opprettholde sitt lovgivningsprogram gjennom vårsessionen gitt flerfronte opposisjonspress mot finansielle, velferds-, sikkerhets- og antikorrupsjonssakene?
+2. **Økonomisk risikokalibrering**: Bør investorer og beslutningstakere betrakte finanskomiteens godkjenning av 1,9% BNP-vekst som troverdig under USA's tollusikkerhet — eller signaliserer S/V/C/MP's forbehold et behov for nedjustering?
+3. **Valgnarrativ 2026**: Hvilke lovgivningsresultater fra i dag — statsborgerskap, bank, antikorrupsjon eller infrastruktur — vil vise seg mest valgmessig avgjørende for hvert av de åtte Riksdag-partiene?
+
+### ⚡ 60-sekunders Lesning
+
+- **EU-bankpakken (HD03253)** [B2 HØY]: Basel III/CRR3/CRD6-implementering; svenske banker møter reviderte risikovektsgulv (IRB-output floor 72,5% for boliglån). Kapitaldekningseffekt moderat men betydelig for Nordea, SEB, Handelsbanken, Swedbank. Finanskomiteen behandler.
+- **Vårbudsjettet (HC01FiU20)** [A2 HØY]: BNP 1,9% (2025), arbeidsledighet 8,7% godkjent av FiU. S, V, C, MP-forbehold innlevert. USA-tollrisiko ikke kvantifisert i regjeringens scenario. Riksbankens pengepolitikk 2024 (HC01FiU24) godkjent — KPIF 1,9% — med eksterne evaluatorer som bemerker at raskere rentekutt var mulige.
+- **Strammet statsborgerskap (HD01SfU28)** [B2 HØY]: SD-drevet strengere krav til språk/inntekt/botid for svensk statsborgerskap. Potensielt koalisjonsdelende med L; S/V/C/MP i opposisjon.
+- **CER-direktiv + Militært (HD01FöU20, HD01FöU14)** [A2 HØY]: Kritisk infrastrukturresiliens og Natos operative samarbeidsramme skrider frem på parallelt spor. Votering juni 2026.
+- **Antikorrupsjonsutfordring (HD024099)** [A2 HØY]: S avviser regjeringens "missbruk av offentlig ställning"-forbrytelse som bommer; krever bredere reform av BrB kapittel 10. JuU behandler; SD's posisjon er avgjørende.
+- **Infrastrukturinterpellasjoner (HD10449–HD10451)** [B2 MEDIUM]: S utfordrer Trafikverkets jernbaneplan (Alvesta–Växjö fjernet), trygdens dag-180-unntak og hull i bekjempelse av foretaksforbrytelser (352 mrd. kr kriminell økonomi per ESO-estimat).
+- **Opposisjonens vårbudsjett (HD024100)** [A2 HØY]: S, V, C, MP-følgemotsjoner til prop. 2025/26:99/100 — regjeringen møter budsjettpress i slutten av plenarsessionen.
+
+### 🔭 Viktigste Fremtidlige Indikator
+
+**Følg: Riksdagens plenumsvoteringen om FiU20 (Vårens finansielle retningslinjer) — 2026-06-17**. Hvis S, V, C og MP koordinerer en samlet avvisning av finansielle retningslinjer, møter Tidøs mindretallsregjering sitt mest alvorlige parlamentariske nederlag foran september 2026-valget. Dette er den enkelt mest konsekvensrike gjenværende voteringen i riksmöte 2025/26.
+
+### Konfidensvurdering
+
+[B2] HØY — Alle påstander baseres på offisielle Riksdagens API-dokumenter (dok_id sporbare), komiteerapporter og interpellasjonstekster. Økonomiske tall fra FiU20/FiU24 komitéforhandlinger og IMF WEO apr-2026 for makrokontekst. Ministerielles posisjoner usikre i påvente av interpellasjonssvar (MEDIUM usikkerhet om regjeringens intensjon).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-28  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
+**Konfidens**: HÖG [B2]  
+**Artikeltyp**: Kvällsanalys  
+
+---
+
+### 🎯 Kärnbedömning
+
+Den 28 april 2026 markerar riksmötet 2025/26:s lagstiftningstopp: Tidökoalitionen drev samtidigt igenom EU:s bankpaket (HD03253), välfärdssanktioner för intagna, skärpt medborgarskapslagstiftning (HD01SfU28), CER-lagen om kritisk infrastruktur (HD01FöU20) och ett militärt samarbetsramverk (HD01FöU14), medan fyra oppositionspartier lämnade samordnade reservationer mot vårbudgetens BNP-prognos på 1,9% tillväxt mitt i USA:s tullorosäkerhet. Socialdemokraterna monterade sin mest substantiella lagstiftningsutmaning under året med en direkt attack mot regeringens antikorruptionsproposition (HD024099), och tre samordnade interpellationer riktades mot järnvägsinfrastruktur, riskerna med sjukförsäkringsreformen och luckor i bekämpningen av företagsbrott. Dagens lagstiftningsportfölj avslöjar en minoritetskoalition som agerar på alla fronter — säkerhet, ekonomi, välfärd och straffrätt — för att konsolidera sin förvalsberättelse inför september 2026.
+
+### 🧭 3 Beslut som detta stöder
+
+1. **Koalitionsförmåga**: Kan Tidökoalitionen (M, SD, KD, L) upprätthålla sitt lagstiftningsprogram under vårsessionen givet oppositionens flerfrontiga tryck på finansiella, välfärds-, säkerhets- och antikorruptionsfiler samtidigt?
+2. **Ekonomisk riskkalibrering**: Bör investerare och beslutsfattare betrakta finansutskottets godkännande av 1,9% BNP-tillväxt som trovärdigt givet USA:s tulloosäkerhet — eller signalerar S/V/C/MPs reservationer ett behov av nedrevidering i ekonomisk planering?
+3. **Valets narrativformning 2026**: Vilka lagstiftningsresultat från idag — medborgarskap, bank, antikorruption eller infrastruktur — kommer att visa sig mest electoralt avgörande för vart och ett av de åtta riksdagspartierna?
+
+### ⚡ 60-sekunders läsning
+
+- **EU:s bankpaket (HD03253)** [B2 HÖG]: Basel III/CRR3/CRD6-implementering; svenska banker möter reviderade riskvikstsundergränser (IRB-output floor 72,5% för bolån). Kapitaltäckningspåverkan måttlig men betydande för Nordea, SEB, Handelsbanken, Swedbank. Finansutskottet behandlar ärendet.
+- **Vårbudgeten (HC01FiU20)** [A2 HÖG]: BNP 1,9% (2025), arbetslöshet 8,7% godkänt av FiU. S, V, C, MP-reservationer inlämnade. USA-tullrisk inte kvantifierad i regeringens scenario. Riksbankens penningpolitik 2024 (HC01FiU24) godkänd — KPIF 1,9% — med externa utvärderare som noterar att snabbare räntesänkningar var möjliga.
+- **Skärpt medborgarskap (HD01SfU28)** [B2 HÖG]: SD-drivet strängare krav på språk/inkomst/vistelsetid för svenskt medborgarskap. Potentiellt koalitionssplittrande med L; S/V/C/MP i opposition.
+- **CER-direktiv + Militärt (HD01FöU20, HD01FöU14)** [A2 HÖG]: Kritisk infrastrukturresiliens och Natos operativa samarbetsramverk avancerar på parallellt spår. Omröstning juni 2026.
+- **Antikorruptionsutmaning (HD024099)** [A2 HÖG]: S avvisar regeringens "missbruk av offentlig ställning"-brott som missar målet; kräver bredare reform av BrB kapitel 10. JuU behandlar; SD:s position är avgörande.
+- **Infrastrukturinterpellationer (HD10449–HD10451)** [B2 MEDIUM]: S utmanar Trafikverkets järnvägsplan (Alvesta–Växjö borttagen), sjukförsäkringens dag-180-undantag och luckor i bekämpning av företagsbrott (352 miljarder kr kriminell ekonomi enligt ESO-uppskattning).
+- **Oppositionens vårbudget (HD024100)** [A2 HÖG]: S, V, C, MP-följdmotioner till prop. 2025/26:99/100 — regeringen möter budgetstryck i slutet av plenarsessionen.
+
+### 🔭 Viktigaste framåtindikator
+
+**Bevaka: Riksdagens plenarvotning om FiU20 (Vårens finansiella riktlinjer) — 2026-06-17**. Om S, V, C och MP samordnar ett gemensamt avvisande av finansiella riktlinjer möter Tidös minoritetsregering sitt allvarligaste parlamentariska nederlag inför valet i september 2026. Detta är den enskilt mest konsekvensrika återstående omröstningen i riksmötet 2025/26.
+
+### Konfidensbedömning
+
+[B2] HÖG — Alla påståenden baseras på officiella Riksdagens API-dokument (dok_id spårbara), utskottsbetänkanden och interpellationstexter. Ekonomiska siffror från FiU20/FiU24 utskottsprotokoll och IMF WEO apr-2026 för makrokontext. Ministeriella positioner osäkra i avvaktan på interpellationssvar (MEDEL osäkerhet om regeringens avsikt).
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**日期**: 2026-04-28  
+**分类**: 公开 — GDPR 第9条(2)(e)(g)  
+**置信度**: 高 [B2]  
+**文章类型**: 晚间分析  
+
+---
+
+### 🎯 核心摘要
+
+2026年4月28日标志着riksmöte 2025/26的立法顶峰：蒂多联合政府同时推进欧盟银行业一揽子计划（HD03253）、对囚犯的福利制裁、公民权资格收紧立法（HD01SfU28）、关键基础设施韧性CER法律（HD01FöU20）和军事合作框架（HD01FöU14），与此同时四个反对党在美国关税不确定性背景下，就春季财政预算案1.9%的GDP增长预测提交协调一致的保留意见。社会民主党就政府反腐提案（HD024099）发起年度最重大的立法挑战，三项协调质询聚焦铁路基础设施、医疗保险改革风险和企业犯罪应对漏洞。今日立法组合揭示出一个在安全、经济、福利和刑事司法各个战线同时行动的少数联合政府，正在巩固其2026年9月大选前的政治叙事。
+
+### 🧭 支持的决策（3项）
+
+1. **联合政府的持续性**：面对反对党在财政、福利、安全和反腐等多个战线的同时施压，蒂多联合政府（M, SD, KD, L）能否在春季会期维持其立法议程？
+2. **经济风险校准**：在美国关税不确定性背景下，投资者和政策制定者是否应将财政委员会批准的1.9%GDP增长视为可信——还是S/V/C/MP的保留意见预示着需要在经济规划中下调？
+3. **2026年选举叙事塑造**：今日立法成果中——公民权、银行业、反腐还是基础设施——对于议会八个政党各自而言，哪一项将在选举上最具决定性意义？
+
+### ⚡ 60秒速览
+
+- **欧盟银行业一揽子计划（HD03253）** [B2 高]：Basel III/CRR3/CRD6实施；瑞典银行面临修订后的风险权重下限（IRB产出底线，按揭贷款72.5%）。北欧银行、北欧斯安银行、北欧联合银行、瑞典商业银行的资本充足率影响中等但显著。财政委员会审议中。
+- **春季财政准则法案（HC01FiU20）** [A2 高]：GDP1.9%（2025年）、失业率8.7%经FiU批准。S、V、C、MP提交保留意见。美国关税风险在政府情景中未量化。Riksbank 2024年货币政策（HC01FiU24）获批——KPIF 1.9%——外部评估员指出更快的降息本是可能的。
+- **公民权收紧（HD01SfU28）** [B2 高]：SD主导的更严格语言/收入/居住要求。与L之间潜在的联合政府分裂点；S/V/C/MP反对。
+- **CER指令+军事（HD01FöU20, HD01FöU14）** [A2 高]：关键基础设施韧性和北约作战合作框架在并行轨道上推进。2026年6月表决。
+- **反腐挑战（HD024099）** [A2 高]：S否定政府"missbruk av offentlig ställning"罪行，认为未能切中要害；要求对BrB第10章进行更全面改革。JuU审议中；SD立场举足轻重。
+- **基础设施质询（HD10449–HD10451）** [B2 中]：S就Trafikverket铁路计划（Alvesta–Växjö被删除）、疾病保险第180天豁免及企业犯罪执法漏洞（按ESO估算，犯罪经济规模达3520亿克朗）提出质疑。
+- **反对党春季预算（HD024100）** [A2 高]：S、V、C、MP就提案2025/26:99/100提出对抗性动议——政府在全体会议最终冲刺阶段面临预算压力。
+
+### 🔭 最重要的前瞻性指标
+
+**关注：议会全体会议就FiU20（春季财政指导方针）表决 — 2026-06-17**。若S、V、C和MP协调统一拒绝财政指导方针，蒂多少数政府将在2026年9月大选前遭遇最严重的议会失败。这是riksmöte 2025/26剩余会期中影响最为深远的单项表决。
+
+### 置信度评估
+
+[B2] 高 — 所有声明均基于议会API官方文件（dok_id可追溯）、委员会报告和质询原文。经济数据来源于FiU20/FiU24委员会审议及IMF WEO 2026年4月（宏观背景）。各部长立场在待质询回复期间尚不确定（政府意图的不确定性为中等水平）。
+
+<!-- source-sha: 30afa623bd8cdaea004460df4ddec17fcf0b7644 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1754,6 +2303,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
