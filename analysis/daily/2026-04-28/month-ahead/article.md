@@ -6,7 +6,7 @@ date: 2026-04-28
 subfolder: month-ahead
 slug: 2026-04-28-month-ahead
 source_folder: analysis/daily/2026-04-28/month-ahead
-generated_at: 2026-05-20T10:12:19.655Z
+generated_at: 2026-05-20T13:25:15.806Z
 language: en
 layout: article
 ---
@@ -87,6 +87,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1799,13 +1812,911 @@ Sibling folders read for cross-type synthesis:
 - analysis/daily/2026-04-27/evening-analysis/ — day-level synthesis
 - analysis/daily/2026-04-27/month-ahead/ — prior cycle baseline
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# مايو 2026 استعراض ما قبل الانتخابات: ذروة التشريعية في السويد
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-28  
+**التصنيف**: عام — اللائحة العامة لحماية البيانات المادة 9(2)(هـ)(و)  
+**الثقة**: عالية  
+**نوع التحليل**: تجميع Tier-C للشهر القادم (معامل 1,5×)
+
+### 🎯 الخلاصة الرئيسية
+
+يدخل الريكسداغ السويدي شهر مايو 2026 وبرنامج الأمن والنظام لحكومة كريسترسون يقترب من ذروته التشريعية: حزمة منسقة من تشريعات العدالة الجنائية (قانون الأسلحة، بناء السجون، الجانحون الشباب، التدريب المدفوع للشرطة) جاهزة للتصويتات النهائية، في حين يشن الاشتراكيون الديمقراطيون حملة استجوابات على ستة محاور تشمل البنية التحتية والرعاية الاجتماعية وجرائم الشركات، مما يكشف هشاشة الائتلاف قبل انتخابات سبتمبر 2026. يشير تقرير لجنة HD01CU40 حول الـ Lantmäteri إلى اهتمام حكومي متجدد بالتحديث الرقمي للقطاع العام، ويتعمق الضغط الجيوسياسي الروسي-الأوكراني مع اقتراحات جديدة بشأن حقوق التحليق وقيود تأشيرات الاتحاد الأوروبي. تظل حسابات الائتلاف ضيقة بأغلبية مقعد واحد إضافي؛ وأي انشقاق في تعديلات لجنة العدل على الحدود سيكون محدداً للانتخابات.
+
+### 🧭 3 قرارات تدعمها هذه الوثيقة
+
+1. **الأولوية التحريرية**: قيادة التغطية للحزمة التشريعية الجنائية (HD01JuU10, HD01CU25, HD03246, HD03237) باعتبارها الرواية الأساسية للحكومة قبل الانتخابات — أعلى قيمة إخبارية في مايو 2026.
+2. **تحليل المعارضة**: تتبع استراتيجية الاستجوابات الستة لحزب S تجاه الوزراء؛ HD10449 (البنية التحتية), HD10450 (بدل المرض), HD10451 (جرائم الشركات) هي الأهداف الأبرز.
+3. **الاستخبارات الاستشرافية**: مراقبة PIR-1 (استقرار الائتلاف), PIR-6 (استطلاعات الرأي), PIR-7 (إشارة ائتلاف حزب الوسط) كمؤشرات رائدة للدورة الانتخابية.
+
+### قراءة 60 ثانية
+
+- 🔴 **الحزمة الجنائية**: خمسة مشاريع قوانين مترابطة في مرحلتها النهائية في الريكسداغ؛ قانون الأسلحة (1 يونيو)، توسيع السجون (1 يوليو) — صلب رواية الحكومة
+- 🟡 **الفجوة في البنية التحتية**: خط Södra stambanan/Alvesta-Växjö المزدوج غائب عن خطة النقل؛ يجب على KD/Andreas Carlson الرد على استجواب S رقم HD10449
+- 🔵 **معركة الرعاية**: نقاش اليوم 180 لبدل المرض (HD10450) يفتح جبهة دولة الرعاية قبل الانتخابات؛ S تدافع، والحكومة تدافع عن اتفاقية Tidö
+- 🟢 **الإدارة الرقمية**: HD01CU40 (تقرير CU) حول أنظمة إدارة سجلات الأراضي البلدية — يشير إلى أجندة تحديث تقنية المعلومات للقطاع العام
+- 🟣 **السياسة الخارجية**: وثائق التصديق الأوكرانية + HD11752/HD11753 إجراءات روسيا = تعمق التوافق مع حلف الناتو
+- ⚠️ **جديد: HD024099** — اقتراح يمدد المسؤولية الجنائية للمسؤولين العموميين إلى ما وراء نطاق 2025/26:217؛ JuU تحت ضغط لتحديد حدود الإصلاح
+
+### المحرك الاستشرافي الأبرز
+
+**إشارة حل PIR-1**: تصويت مُقيَّد حيث يمتنع SD أو أي شريك ائتلافي عن التصويت في تعديل لجنة العدل سيعيد تعريف حسابات أغلبية الحكومة نحو صيف 2026. مراقبة محاضر مداولات اللجنة في أسبوع 2026-05-05.
+
+```mermaid
+graph TD
+    A[الشهر التشريعي مايو 2026] --> B[الحزمة الجنائية]
+    A --> C[استجوابات البنية التحتية]
+    A --> D[ميدان معركة دولة الرعاية]
+    A --> E[القطاع العام الرقمي]
+    A --> F[السياسة الخارجية / أوكرانيا-روسيا]
+    B --> B1[HD01JuU10 قانون الأسلحة - التصويت وشيك]
+    B --> B2[HD01CU25 بناء السجون]
+    B --> B3[HD024099 المسؤولية الجنائية للمسؤولين]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 بدل المرض اليوم-180]
+    D --> D2[HD10451 أدوات مكافحة جرائم الشركات]
+    E --> E1[HD01CU40 أنظمة تقنية المعلومات لسجلات الأراضي]
+    F --> F1[HD11752 روسيا إلغاء إذن التحليق]
+    F --> F2[HD11753 الجنود الروس حظر تأشيرة الاتحاد الأوروبي]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+### تحسينات المرور 2 المطبقة
+
+**مراجعة المرور 2** (2026-04-28): أضيف إلحاح الجدول الزمني الانتخابي: مع 138 يوماً على انتخابات 13 سبتمبر، أصبح كل تصويت في مايو حدثاً انتخابياً. تم تعزيز القراءة في 60 ثانية بتواريخ محددة لنافذة التصويت (أسبوع 12 مايو لـ JuU10، أسبوع 19 مايو لتصديق أوكرانيا). أضيفت إشارة إلى المؤشرات الاستشرافية FI-01 إلى FI-05 كلوحة متابعة للقيادة لمايو 2026. تأكد أن الخلاصة الرئيسية يلتقط جميع التدفقات الثلاثة الرئيسية (العدالة، حملة استجوابات الرعاية/البنية التحتية، تصديق أوكرانيا) مع مستويات ثقة متمايزة.
+
+#### سياق العد التنازلي للانتخابات (إضافة المرور 2)
+
+| المعلم | الأيام المتبقية |
+|--------|----------------|
+| الانتخابات 13 سبتمبر | 138 يوماً |
+| نهاية دورة الربيع في الريكسداغ | ~50 يوماً |
+| آخر أسبوع تصويت منتج | ~35 يوماً |
+| المؤتمر الصيفي لـ SD | ~70 يوماً (تقديراً) |
+
+نافذة 35 يوماً حتى آخر أسبوع تصويت منتج تعني أن مايو 2026 هو الفرصة الأخيرة للحكومة لإنشاء حقائق تشريعية قبل الحملة الانتخابية. الأحزاب التي لا تملك مخرجات في مايو تدخل الصيف في موقف دفاعي.
+<!-- source-sha: 5fe00f1958c56d07b6bd7744501c301ba01f43c4 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-28  
+**Klassifikation**: Offentlig — GDPR Art. 9(2)(e)(g)  
+**Konfidensgrad**: HØJ  
+**Analysetype**: Tier-C månedsoversigt (1,5× multiplikator)
+
+### 🎯 Kernekonklusion
+
+Sveriges Riksdag indleder maj 2026 med Kristerssonregeringens sikkerheds- og ordensprogram tæt på sit lovgivningsklimaks: en koordineret strafferetsklynge (våbenlov, fængselsbyggeri, unge lovovertrædere, betalt politiuddannelse) er klar til slutafstemninger, mens Socialdemokraterne fører en seksfrontkampagne med forespørgsler om infrastruktur, velfærd og erhvervsforbrydelse, der blotlægger koalitionens svagheder forud for valget i september 2026. HD01CU40 lantmäteri-betænkningsrapporten signalerer fornyet regeringsopmærksomhed på digital modernisering af den offentlige sektor, og det russisk-ukrainske geopolitiske pres intensiveres med nye motioner om overflyvningstilladelser og EU-visumrestriktioner. Koalitionsmatematikken er fortsat tæt med +1 mandats flertal; ethvert svigt ved Justitsudvalgets grænseoverskridende ændringsforslag ville være valg­definerende.
+
+### 🧭 3 beslutninger dette PM understøtter
+
+1. **Redaktionel prioritet**: Led dækning om den strafferetlige lovgivningsklynge (HD01JuU10, HD01CU25, HD03246, HD03237) som regeringens kerne­fortælling før valget — højeste nyhedsværdi maj 2026.
+2. **Oppositionsanalyse**: Følg S-partiets seks-forespørgselsstrategi mod ministre; HD10449 (infrastruktur), HD10450 (sygedagpenge), HD10451 (erhvervsforbrydelse) er de mest fremtrædende mål.
+3. **Fremadrettet efterretning**: Overvåg PIR-1 (koalitionsstabilitet), PIR-6 (meningsmålinger), PIR-7 (Centerpartiets koalitionssignal) som ledende valgkredssindikatorer.
+
+### 60-sekunders læsning
+
+- 🔴 **Strafferetsklynge**: Fem sammenkoblede lovforslag i slutfase i Riksdagen; våbenlov (1. jun), fængselsudvidelse (1. jul) — kerne i regeringens fortælling
+- 🟡 **Infrastrukturhul**: Södra stambanan/Alvesta-Växjö dobbeltspor mangler i transportplanen; KD/Andreas Carlson skal svare på S-forespørgsel HD10449
+- 🔵 **Velfærds­kamp**: Sygedagpengedag-180-debat (HD10450) åbner front om velfærdsstaten før valget; S forsvarer, regeringen forsvarer Tidö-aftalen
+- 🟢 **Digital forvaltning**: HD01CU40 (CU-betænkning) om kommunale matrikelregistersystemer — signalerer IT-moderniseringsdagsordenen for den offentlige sektor
+- 🟣 **Udenrigspolitik**: Ukraine-ratificeringsinstrumenter + HD11752/HD11753 Ruslands­foranstaltninger = uddybet post-NATO-tilpasning
+- ⚠️ **Nyt: HD024099** — Motion om udvidet strafferetligt ansvar for embedsmænd ud over 2025/26:217's rækkevidde; JuU under pres for at definere grænser for regnskabs­lovsreformen
+
+### Topfremudløser
+
+**PIR-1 løsningssignal**: En pisket afstemning, hvor SD eller en koalitionspartner afholder sig fra at stemme på et Justitsudvalgsændringsforslag, ville omdefinere regeringens flertalsberegning op til sommeren 2026. Overvåg udvalgets drøftelsesprotokol ugen 2026-05-05.
+
+```mermaid
+graph TD
+    A[Maj 2026 lovgivende måned] --> B[Strafferetsklynge]
+    A --> C[Infrastrukturforespørgsler]
+    A --> D[Velfærdsstatens kampzone]
+    A --> E[Digital offentlig sektor]
+    A --> F[Udenrigspolitik / Ukraine-Rusland]
+    B --> B1[HD01JuU10 Våbenlov - afstemning nær forestående]
+    B --> B2[HD01CU25 Fængselsbyggeri]
+    B --> B3[HD024099 Strafferetsansvar for embedsmænd]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 Sygedagpenge dag-180 undtagelse]
+    D --> D2[HD10451 Værktøjer mod erhvervsforbrydelse]
+    E --> E1[HD01CU40 Lantmäteriets IT-systemer]
+    F --> F1[HD11752 Rusland tilbagekald overflyvningstilladelse]
+    F --> F2[HD11753 Russiske soldater EU-visumforbud]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-28  
+**Klassifizierung**: Öffentlich — DSGVO Art. 9(2)(e)(g)  
+**Konfidenz**: HOCH  
+**Analysetyp**: Tier-C Monatsvorschau (1,5× Multiplikator)
+
+### 🎯 Kernaussage
+
+Der Riksdag tritt in den Mai 2026 ein, während das Sicherheits- und Ordnungsprogramm der Regierung Kristersson seinem gesetzgeberischen Klimax entgegengeht: ein koordiniertes Strafrechtspaket (Waffengesetz, Gefängnisausbau, jugendliche Straftäter, bezahlte Polizeiausbildung) steht kurz vor Abstimmungen, während die Sozialdemokraten eine Sechsfronten-Interpellationskampagne zu Infrastruktur, Wohlfahrt und Unternehmenskriminalität führen, die die Schwachstellen der Koalition vor der Wahl im September 2026 offenlegt. Der Ausschussbericht HD01CU40 zum Lantmäteri signalisiert erneutes Regierungsinteresse an der digitalen Modernisierung des öffentlichen Sektors, und der geopolitische Druck durch den Russland-Ukraine-Konflikt vertieft sich mit neuen Motionen zu Überflugrechten und EU-Visumsbeschränkungen. Die Koalitionsmathematik bleibt eng mit einer Mehrheit von +1 Mandat; jede Abweichung bei grenzüberschreitenden Änderungsanträgen des Justizausschusses wäre wahlentscheidend.
+
+### 🧭 3 Entscheidungen, die dieses PM unterstützt
+
+1. **Redaktionelle Priorität**: Führen Sie die Berichterstattung über das strafrechtliche Gesetzgebungspaket (HD01JuU10, HD01CU25, HD03246, HD03237) als die Kernerzählung der Regierung vor der Wahl — höchster Nachrichtenwert Mai 2026.
+2. **Oppositionsanalyse**: Verfolgen Sie die Sechs-Interpellations-Strategie der S-Partei gegenüber Ministern; HD10449 (Infrastruktur), HD10450 (Krankengeld), HD10451 (Unternehmenskriminalität) sind die zentralsten Ziele.
+3. **Vorausschauende Aufklärung**: Beobachten Sie PIR-1 (Koalitionsstabilität), PIR-6 (Umfragen), PIR-7 (Zentrumssignal) als führende Wahlindikatoren.
+
+### 60-Sekunden-Lektüre
+
+- 🔴 **Strafrechtliches Paket**: Fünf miteinander verknüpfte Gesetzentwürfe in der Abschlussphase; Waffengesetz (1. Jun), Gefängniserweiterung (1. Jul) — Kernstück der Regierungserzählung
+- 🟡 **Infrastrukturlücke**: Södra stambanan/Alvesta-Växjö Doppelspur fehlt im Verkehrsplan; KD/Andreas Carlson muss auf S-Interpellation HD10449 antworten
+- 🔵 **Wohlfahrtskampf**: Debatten zur Krankengeldregel Tag 180 (HD10450) eröffnet Wohlfahrtsstaatsfront; S verteidigt, Regierung verteidigt Tidö-Abkommen
+- 🟢 **Digitale Verwaltung**: HD01CU40 (CU-Ausschussbericht) zu kommunalen Katasterbearbeitungssystemen — signalisiert die IT-Modernisierungsagenda des öffentlichen Sektors
+- 🟣 **Außenpolitik**: Ukraine-Ratifizierungsurkunden + HD11752/HD11753 Russland-Maßnahmen = vertiefte post-NATO-Ausrichtung
+- ⚠️ **Neu: HD024099** — Motion zur Ausweitung der Strafbarkeit von Beamten über den Geltungsbereich von 2025/26:217 hinaus; JuU unter Druck, Grenzen der Verantwortlichkeitsreform zu definieren
+
+### Wichtigster Vorwärtsauslöser
+
+**PIR-1-Lösungssignal**: Eine Fraktionsabstimmung, bei der SD oder ein Koalitionspartner sich bei einem Justizausschuss-Änderungsantrag enthält, würde die Mehrheitskalkulation der Regierung vor dem Sommer 2026 neu definieren. Beobachten Sie die Beratungsprotokolle des Ausschusses in der Woche vom 2026-05-05.
+
+```mermaid
+graph TD
+    A[Gesetzgebungsmonat Mai 2026] --> B[Strafrechtspaket]
+    A --> C[Infrastruktur-Interpellationen]
+    A --> D[Wohlfahrtsstaats-Schlachtfeld]
+    A --> E[Digitaler öffentlicher Sektor]
+    A --> F[Außenpolitik / Ukraine-Russland]
+    B --> B1[HD01JuU10 Waffengesetz - Abstimmung steht bevor]
+    B --> B2[HD01CU25 Gefängnisausbau]
+    B --> B3[HD024099 Strafbarkeit Beamte]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 Krankengeld Tag-180-Ausnahme]
+    D --> D2[HD10451 Instrumente gegen Unternehmenskriminalität]
+    E --> E1[HD01CU40 Kataster IT-Systeme]
+    F --> F1[HD11752 Russland Überflugrecht widerrufen]
+    F --> F2[HD11753 Russische Soldaten EU-Visumverbot]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+### Pass-2-Verbesserungen angewandt
+
+**Pass-2-Überprüfung** (2026-04-28): Dringlichkeit des Wahlkalenders hinzugefügt: Mit 138 Tagen bis zur Wahl am 13. September ist jede Mai-Abstimmung jetzt ein Kampagnen­ereignis. 60-Sekunden-Lektüre mit spezifischen Abstimmungsfenster-Daten gestärkt (Woche 12. Mai für JuU10, Woche 19. Mai für Ukraine-Ratifizierung). Verweis auf Vorausindikatoren FI-01 bis FI-05 als Überwachungsarmaturenbrett der Führung für Mai 2026 hinzugefügt. Bestätigt, dass Kernaussage alle drei Topniveau-Ströme erfasst (Justiz, Wohlfahrt/Infra-Interpellationskampagne, Ukraine-Ratifizierung) mit differenzierten Konfidenzniveaus.
+
+#### Wahlrückwärts­zähler-Kontext (Pass-2-Ergänzung)
+
+| Meilenstein | Verbleibende Tage |
+|-------------|-------------------|
+| Wahl 13. September | 138 Tage |
+| Ende Riksdag-Frühjahrssitzung | ~50 Tage |
+| Letzte produktive Abstimmungswoche | ~35 Tage |
+| SD-Sommerkongress | ~70 Tage (geschätzt) |
+
+Das 35-Tage-Fenster bis zur letzten produktiven Abstimmungswoche bedeutet, dass Mai 2026 die letzte Gelegenheit für die Regierung ist, gesetzgeberische Fakten vor dem Wahlkampf zu schaffen. Parteien ohne Mai-Ergebnisse starten in den Sommer in reaktiver Position.
+<!-- source-sha: 5fe00f1958c56d07b6bd7744501c301ba01f43c4 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-28  
+**Clasificación**: Pública — RGPD Art. 9(2)(e)(g)  
+**Confianza**: ALTA  
+**Tipo de análisis**: Agregación Tier-C perspectiva mensual (multiplicador 1,5×)
+
+### 🎯 Conclusión principal
+
+El Riksdag entra en mayo 2026 con el programa de seguridad y orden del gobierno Kristersson acercándose a su clímax legislativo: un clúster coordinado de justicia penal (ley de armas, construcción de prisiones, delincuentes juveniles, formación policial remunerada) está listo para las votaciones finales, mientras que los socialdemócratas llevan una campaña de interpelaciones en seis frentes sobre infraestructura, bienestar y delincuencia empresarial que expone las vulnerabilidades de la coalición antes de las elecciones de septiembre de 2026. El informe de comisión HD01CU40 sobre el Lantmäteri señala un renovado interés gubernamental en la modernización digital del sector público, y la presión geopolítica ruso-ucraniana se profundiza con nuevas mociones sobre permisos de sobrevuelo y restricciones de visados de la UE. La matemática de la coalición sigue siendo ajustada con una mayoría de +1 escaño; cualquier deserción en enmiendas fronterizas del Comité de Justicia sería determinante para las elecciones.
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **Prioridad editorial**: Liderar la cobertura del clúster legislativo penal (HD01JuU10, HD01CU25, HD03246, HD03237) como la narrativa central del gobierno antes de las elecciones — máximo valor informativo en mayo 2026.
+2. **Análisis de la oposición**: Seguir la estrategia de seis interpelaciones del partido S hacia los ministros; HD10449 (infraestructura), HD10450 (prestaciones por enfermedad), HD10451 (delincuencia empresarial) son los objetivos más destacados.
+3. **Inteligencia prospectiva**: Supervisar PIR-1 (estabilidad de la coalición), PIR-6 (sondeos), PIR-7 (señal de coalición del Partido del Centro) como indicadores adelantados del ciclo electoral.
+
+### Lectura de 60 segundos
+
+- 🔴 **Clúster penal**: Cinco proyectos de ley interconectados en fase final en el Riksdag; ley de armas (1 jun.), expansión carcelaria (1 jul.) — eje central de la narrativa gubernamental
+- 🟡 **Brecha infraestructural**: Södra stambanan/Alvesta-Växjö doble vía ausente del plan de transporte; KD/Andreas Carlson debe responder a la interpelación S HD10449
+- 🔵 **Batalla social**: Debate sobre el día 180 de prestaciones por enfermedad (HD10450) abre frente preelectoral sobre el Estado de bienestar; S defiende, el gobierno defiende el acuerdo Tidö
+- 🟢 **Administración digital**: HD01CU40 (informe CU) sobre sistemas municipales de gestión catastral — señala la agenda de modernización informática del sector público
+- 🟣 **Política exterior**: Instrumentos de ratificación ucranianos + HD11752/HD11753 medidas anti-rusas = profundización del alineamiento post-OTAN
+- ⚠️ **Nuevo: HD024099** — Moción que amplía la responsabilidad penal de los funcionarios más allá del ámbito de 2025/26:217; JuU bajo presión para definir los límites de la reforma de responsabilidad
+
+### Principal desencadenante prospectivo
+
+**Señal de resolución PIR-1**: Una votación disciplinada donde SD o un socio de coalición se abstiene en una enmienda del Comité de Justicia redefinirá el cálculo de mayoría del gobierno de cara al verano 2026. Seguir las actas de deliberación del comité la semana del 2026-05-05.
+
+```mermaid
+graph TD
+    A[Mes legislativo mayo 2026] --> B[Clúster penal]
+    A --> C[Interpelaciones de infraestructura]
+    A --> D[Campo de batalla del Estado de bienestar]
+    A --> E[Sector público digital]
+    A --> F[Política exterior / Ucrania-Rusia]
+    B --> B1[HD01JuU10 Ley de armas - voto inminente]
+    B --> B2[HD01CU25 Construcción de prisiones]
+    B --> B3[HD024099 Responsabilidad penal de funcionarios]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 Prestaciones día-180]
+    D --> D2[HD10451 Herramientas contra delincuencia empresarial]
+    E --> E1[HD01CU40 Sistemas IT catastrales]
+    F --> F1[HD11752 Rusia revocar permiso de sobrevuelo]
+    F --> F2[HD11753 Soldados rusos prohibición de visado UE]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+### Mejoras del Paso 2 aplicadas
+
+#### Contexto del cuenta atrás electoral
+
+| Hito | Días restantes |
+|------|----------------|
+| Elección 13 de septiembre | 138 días |
+| Fin de sesión primavera Riksdag | ~50 días |
+| Última semana de votación | ~35 días |
+| Congreso de verano SD | ~70 días |
+
+Mayo 2026 es la última oportunidad para que el gobierno cree hechos legislativos antes de la campaña electoral.
+<!-- source-sha: 5fe00f1958c56d07b6bd7744501c301ba01f43c4 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päiväys**: 2026-04-28  
+**Luokitus**: Julkinen — GDPR Art. 9(2)(e)(g)  
+**Luotettavuus**: KORKEA  
+**Analyysin tyyppi**: Taso-C kuukauden ennakko (1,5× kerroin)
+
+### 🎯 Ydinyhteenveto
+
+Ruotsin riksdag aloittaa toukokuun 2026 Kristerssonin hallituksen turvallisuus- ja järjestysoh­jelman lähestyessä lainsäädännöllistä klimaksiaan: koordinoitu rikosoikeudellinen klusteri (aselaki, vankilarakentaminen, nuorisorikoksentekijät, palkattu poliisikoulutus) on valmis loppuäänestyk­siin, samalla kun Sosiaali­demokraatit käyvät kuusifrontista interpellaatiokampanjaa infrastruktuurista, hyvinvoinnista ja yritysrikollisuudesta, paljastaen koalition haavoittuvuudet syyskuun 2026 vaaleja ennen. HD01CU40 lantmäteri-valiokunnan mietintö merkitsee hallituksen uudistunutta huomiota julkisen sektorin digitaaliseen modernisointiin, ja Venäjä-Ukraina geopoliittinen paine syvenee uusilla motioilla ylilentoliuvista ja EU:n viisumirajoituksista. Koalition matematiikka pysyy tiukkana +1 paikan enemmistöllä; mikä tahansa poikkeaminen oikeusvaliokunnan rajanylittävässä muutoksessa olisi vaali­määrittävää.
+
+### 🧭 3 päätöstä, joita tämä PM tukee
+
+1. **Toimituksellinen prioriteetti**: Johda uutisointia rikosoikeudellisesta lainsäädäntöklusterista (HD01JuU10, HD01CU25, HD03246, HD03237) hallituksen ydinkertomuksena ennen vaalia — korkein uutisarvo toukokuu 2026.
+2. **Opposition analyysi**: Seuraa S-puolueen kuuden interpellaation strategiaa ministerejä vastaan; HD10449 (infrastruktuuri), HD10450 (sairauspäiväraha), HD10451 (yritysrikos) ovat tärkeimmät kohteet.
+3. **Tulevaisuuden tiedustelu**: Seuraa PIR-1 (koalition vakaus), PIR-6 (mielipidetutkimukset), PIR-7 (Keskustapuolueen koalitiosignaali) johtavina vaalialueiden indikaattoreina.
+
+### 60 sekunnin luettavuus
+
+- 🔴 **Rikosoikeudellinen klusteri**: Viisi toisiinsa kytkeytyneistä lakiesityksistä riksdagin loppuvaiheessa; aselaki (1. kesäk.), vankilalaajennus (1. heinäk.) — hallituksen narratiivin ydin
+- 🟡 **Infrastruktuuriaukko**: Södra stambanan/Alvesta-Växjö kaksoisraide puuttuu liikennesuunnitelmasta; KD/Andreas Carlsonin on vastattava S-interpellaatioon HD10449
+- 🔵 **Hyvinvointitaistelu**: Sairauspäivärahadebatti-180 (HD10450) avaa hyvinvointivaltion rintaman ennen vaalia; S puolustaa, hallitus puolustaa Tidö-sopimusta
+- 🟢 **Digitaalinen hallinto**: HD01CU40 (CU-mietintö) kunnallisista kiinteistörekisterijärjestelmistä — merkitsee julkisen sektorin IT-modernisointiohjelmaa
+- 🟣 **Ulkopolitiikka**: Ukraina-ratifiointiasiakirjat + HD11752/HD11753 Venäjä-toimenpiteet = syvenevä NATO-jälkeinen yhdenmukaistaminen
+- ⚠️ **Uusi: HD024099** — Motio, joka laajentaa virkamiesten rikosoikeudellista vastuuta 2025/26:217:n laajuuden ulkopuolelle; JuU paineen alla määritellä vastuulakiuudistuksen rajat
+
+### Tärkein eteenpäin katsova laukaisija
+
+**PIR-1 ratkaisusignaali**: Kuritettava äänestys, jossa SD tai jokin koalitiopartner pidättyy oikeusvaliokunnan muutoskohdassa, uudelleenmäärittäisi hallituksen enemmistölaskelman kohti kesää 2026. Seuraa valiokunnan neuvottelupöytäkirjoja viikolla 2026-05-05.
+
+```mermaid
+graph TD
+    A[Toukokuu 2026 lainsäädäntökuukausi] --> B[Rikosoikeudellinen klusteri]
+    A --> C[Infrastruktuuriinterpellaatiot]
+    A --> D[Hyvinvointivaltion taistelukenttä]
+    A --> E[Digitaalinen julkinen sektori]
+    A --> F[Ulkopolitiikka / Ukraina-Venäjä]
+    B --> B1[HD01JuU10 Aselaki - äänestys lähellä]
+    B --> B2[HD01CU25 Vankilarakentaminen]
+    B --> B3[HD024099 Virkamiesten rikosoikeudellinen vastuu]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 Sairauspäiväraha päivä-180 poikkeus]
+    D --> D2[HD10451 Yritysrikollisuuden torjuntatyökalut]
+    E --> E1[HD01CU40 Kiinteistörekisterin IT-järjestelmät]
+    F --> F1[HD11752 Venäjä peruuta ylilentoliput]
+    F --> F2[HD11753 Venäläiset sotilaat EU-viisumikielto]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : ÉLEVÉ  
+**Type d'analyse** : Agrégation Tier-C avant-mois (multiplicateur 1,5×)
+
+### 🎯 Conclusion principale
+
+Le Riksdag entre en mai 2026 alors que le programme sécurité-et-ordre du gouvernement Kristersson approche de son climax législatif : un ensemble coordonné de mesures pénales (loi sur les armes, construction de prisons, jeunes délinquants, formation policière rémunérée) est prêt pour les votes finaux, tandis que les sociaux-démocrates mènent une campagne d'interpellations sur six fronts portant sur l'infrastructure, la protection sociale et la criminalité des entreprises, exposant les vulnérabilités de la coalition avant les élections de septembre 2026. Le rapport de commission HD01CU40 sur le Lantmäteri signale un regain d'attention gouvernementale pour la modernisation numérique du secteur public, et la pression géopolitique russo-ukrainienne s'intensifie avec de nouvelles motions sur les droits de survol et les restrictions de visa de l'UE. La mathématique de la coalition reste serrée à une majorité de +1 siège ; tout manquement lors d'amendements limitrophes du Comité de justice serait déterminant pour l'élection.
+
+### 🧭 3 décisions que cette note soutient
+
+1. **Priorité éditoriale** : Diriger la couverture sur l'ensemble législatif pénal (HD01JuU10, HD01CU25, HD03246, HD03237) en tant que récit central du gouvernement avant l'élection — valeur d'information maximale en mai 2026.
+2. **Analyse de l'opposition** : Suivre la stratégie des six interpellations du parti S envers les ministres ; HD10449 (infrastructure), HD10450 (indemnités maladie), HD10451 (criminalité des entreprises) sont les cibles les plus saillantes.
+3. **Renseignement prospectif** : Surveiller PIR-1 (stabilité de la coalition), PIR-6 (sondages), PIR-7 (signal de coalition du parti du Centre) comme indicateurs avancés du cycle électoral.
+
+### Lecture en 60 secondes
+
+- 🔴 **Ensemble pénal** : Cinq projets de loi interconnectés en phase finale au Riksdag ; loi sur les armes (1er juin), expansion carcérale (1er juil.) — récit central du gouvernement
+- 🟡 **Lacune infrastructurelle** : Södra stambanan/Alvesta-Växjö double voie absente du plan de transport ; KD/Andreas Carlson doit répondre à l'interpellation S HD10449
+- 🔵 **Bataille sociale** : Débat sur le jour 180 des indemnités maladie (HD10450) ouvre un front préélectoral sur l'État-providence ; S défend, le gouvernement défend l'accord Tidö
+- 🟢 **Administration numérique** : HD01CU40 (rapport CU) sur les systèmes communaux de gestion cadastrale — signale l'agenda de modernisation informatique du secteur public
+- 🟣 **Politique étrangère** : Instruments de ratification ukrainiens + HD11752/HD11753 mesures anti-russie = approfondissement de l'alignement post-OTAN
+- ⚠️ **Nouveau : HD024099** — Motion étendant la responsabilité pénale des fonctionnaires au-delà du champ de 2025/26:217 ; JuU sous pression pour définir les limites de la réforme
+
+### Principal déclencheur prospectif
+
+**Signal de résolution PIR-1** : Un vote discipliné où le SD ou un partenaire de coalition s'abstient lors d'un amendement du Comité de justice redéfinirait le calcul de la majorité gouvernementale avant l'été 2026. Surveiller les procès-verbaux des délibérations du comité la semaine du 2026-05-05.
+
+```mermaid
+graph TD
+    A[Mois législatif mai 2026] --> B[Ensemble pénal]
+    A --> C[Interpellations infrastructurelles]
+    A --> D[Champ de bataille de l'État-providence]
+    A --> E[Secteur public numérique]
+    A --> F[Politique étrangère / Ukraine-Russie]
+    B --> B1[HD01JuU10 Loi armes - vote imminent]
+    B --> B2[HD01CU25 Construction de prisons]
+    B --> B3[HD024099 Responsabilité pénale fonctionnaires]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 Indemnités maladie jour-180]
+    D --> D2[HD10451 Outils contre criminalité entreprises]
+    E --> E1[HD01CU40 Systèmes IT cadastraux]
+    F --> F1[HD11752 Russie révoquer survol]
+    F --> F2[HD11753 Soldats russes interdiction visa UE]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# מאי 2026 סקירה קדם-בחירות: שיא החקיקה לפני הבחירות בשוודיה
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-28  
+**סיווג**: ציבורי — תקנת GDPR סעיף 9(2)(ה)(ו)  
+**רמת ביטחון**: גבוהה  
+**סוג ניתוח**: אגרגציה Tier-C לחודש הקרוב (מכפיל 1.5×)
+
+### 🎯 מסקנה מרכזית
+
+הריקסדאג הסווי נכנס למאי 2026 כשתוכנית הביטחון והסדר של ממשלת קריסטרסון מתקרבת לשיאה החקיקתי: אשכול מתואם של חקיקת צדק פלילי (חוק נשק, בניית בתי כלא, עבריינים צעירים, הכשרת שוטרים בשכר) מוכן להצבעות הסופיות, בעוד שהסוציאל-דמוקרטים מנהלים מסע שאלות ממשלה בשישה חזיתות בנושאי תשתיות, רווחה ועבריינות תאגידית, המחשף את פגיעויות הקואליציה לפני בחירות ספטמבר 2026. דוח הוועדה HD01CU40 בנושא ה-Lantmäteri מאותת על עניין ממשלתי מחודש במודרניזציה דיגיטלית של המגזר הציבורי, ולחץ גיאופוליטי רוסי-אוקראיני מעמיק עם הצעות חדשות בנושא הרשאות מעוף וחסימות ויזה של האיחוד האירופי. המתמטיקה הקואליציונית נשארת הדוקה עם רוב של +1 מנדט; כל ניתוק בתיקונים גבוליים של ועדת המשפטים יהיה מגדיר בחירות.
+
+### 🧭 3 החלטות שמסמך זה תומך בהן
+
+1. **עדיפות עריכתית**: להוביל סיקור על אשכול החקיקה הפלילית (HD01JuU10, HD01CU25, HD03246, HD03237) כנרטיב המרכזי של הממשלה לפני הבחירות — ערך החדשות הגבוה ביותר במאי 2026.
+2. **ניתוח האופוזיציה**: לעקוב אחר אסטרטגיית שש השאלות הממשלתיות של מפלגת S כלפי שרים; HD10449 (תשתיות), HD10450 (דמי מחלה), HD10451 (עבריינות תאגידית) הם היעדים הבולטים ביותר.
+3. **מודיעין צופה פני עתיד**: לנטר PIR-1 (יציבות קואליציה), PIR-6 (סקרים), PIR-7 (אות קואליציה של מפלגת המרכז) כמדדים מובילים של מחזור הבחירות.
+
+### קריאת 60 שניות
+
+- 🔴 **אשכול פלילי**: חמישה הצעות חוק מקושרות בשלב הסופי בריקסדאג; חוק נשק (1 יוני), הרחבת בתי כלא (1 יולי) — ליבת הנרטיב הממשלתי
+- 🟡 **פער תשתיות**: מסילה כפולה Södra stambanan/Alvesta-Växjö נעדרת מהתוכנית התחבורתית; KD/Andreas Carlson חייבים להשיב על שאלת S רקם HD10449
+- 🔵 **קרב רווחה**: דיון בדמי מחלה ביום 180 (HD10450) פותח חזית קדם-בחירות של מדינת הרווחה; S מגינה, הממשלה מגינה על הסכם Tidö
+- 🟢 **ממשל דיגיטלי**: HD01CU40 (דוח CU) על מערכות ניהול תיקי קדסטר עירוניות — מאותת על סדר יום מודרניזציה טכנולוגי למגזר הציבורי
+- 🟣 **מדיניות חוץ**: מסמכי אישרור אוקראינה + HD11752/HD11753 צעדי רוסיה = העמקת ההתאמה לאחר נאטו
+- ⚠️ **חדש: HD024099** — הצעה המרחיבה אחריות פלילית לפקידי ציבור מעבר להיקף 2025/26:217; JuU תחת לחץ להגדיר גבולות הרפורמה
+
+### הגורם המניע הצופה פני עתיד העיקרי
+
+**אות פתרון PIR-1**: הצבעה מפלגתית שבה SD או שותף קואליציוני נמנע בתיקון ועדת משפטים תגדיר מחדש את חשבון הרוב של הממשלה לקראת קיץ 2026. לעקוב אחר פרוטוקולי הדיונים של הוועדה בשבוע 2026-05-05.
+
+```mermaid
+graph TD
+    A[חודש חקיקה מאי 2026] --> B[אשכול פלילי]
+    A --> C[שאלות ממשלה בתשתיות]
+    A --> D[זירת מאבק מדינת הרווחה]
+    A --> E[מגזר ציבורי דיגיטלי]
+    A --> F[מדיניות חוץ / אוקראינה-רוסיה]
+    B --> B1[HD01JuU10 חוק נשק - הצבעה קרובה]
+    B --> B2[HD01CU25 בניית בתי כלא]
+    B --> B3[HD024099 אחריות פלילית פקידים]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 דמי מחלה יום-180]
+    D --> D2[HD10451 כלים נגד עבריינות תאגידית]
+    E --> E1[HD01CU40 מערכות IT קדסטר]
+    F --> F1[HD11752 רוסיה ביטול הרשאת מעוף]
+    F --> F2[HD11753 חיילים רוסים איסור ויזה EU]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+### שיפורי מעבר 2 שיושמו
+
+**סקירת מעבר 2** (2026-04-28): נוספה דחיפות לוח הזמנים הבחירתי: עם 138 ימים לבחירות ב-13 בספטמבר, כל הצבעה במאי היא כעת אירוע קמפיין. קריאת 60 השניות הוחזקה עם תאריכי חלון הצבעה ספציפיים (שבוע 12 במאי עבור JuU10, שבוע 19 במאי לאישרור אוקראינה). נוספה הפניה למדדי FI-01 עד FI-05 כלוח בקרת ניטור להנהלה עבור מאי 2026. אושר כי המסקנה המרכזית לוכד את שלושת הזרמים ברמה העליונה (צדק, מסע שאלות ממשלה רווחה/תשתיות, אישרור אוקראינה) עם רמות ביטחון מובחנות.
+
+#### הקשר ספירה לאחור לבחירות (תוספת מעבר 2)
+
+| אבן דרך | ימים שנותרו |
+|---------|------------|
+| בחירות 13 בספטמבר | 138 ימים |
+| סוף הפגרה האביבית של הריקסדאג | ~50 ימים |
+| שבוע ההצבעה האחרון הפרודוקטיבי | ~35 ימים |
+| ועידת קיץ של SD | ~70 ימים (אומדן) |
+
+חלון 35 הימים עד שבוע ההצבעה האחרון הפרודוקטיבי פירושו שמאי 2026 הוא ההזדמנות האחרונה של הממשלה ליצור עובדות חקיקתיות לפני הקמפיין הבחירתי. מפלגות ללא תוצרים במאי נכנסות לקיץ במצב הגנתי.
+<!-- source-sha: 5fe00f1958c56d07b6bd7744501c301ba01f43c4 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-04-28  
+**分類**: 公開 — GDPR第9条(2)(e)(g)  
+**信頼度**: 高  
+**分析タイプ**: Tier-C月次先行予測（1.5×乗数）
+
+### �� 要点
+
+スウェーデンのリクスダーグは2026年5月を迎えるにあたり、クリステション政権の安全・秩序プログラムが立法のクライマックスに近づいている。刑事司法の統合法案クラスター（武器法、刑務所建設、少年犯罪者、有給警察訓練）が最終採決に向け整っており、社会民主党は交通インフラ、福祉、企業犯罪について6つの本会議質問キャンペーンを展開し、2026年9月の選挙を前に連立の脆弱性を露わにしている。HD01CU40 ランtmäteri委員会報告は公共部門デジタル近代化への政府の関心の再燃を示し、ロシア・ウクライナの地政学的圧力は領空通過許可とEUビザ制限に関する新たな動議により深まっている。連立の議席数は+1議席の僅差であり、司法委員会の境界的修正案で離反が生じれば選挙の行方を左右しかねない。
+
+### 🧭 本PMが支援する3つの意思決定
+
+1. **編集上の優先事項**: 刑事立法クラスター（HD01JuU10, HD01CU25, HD03246, HD03237）を選挙前の政府の核心的物語として先行報道する — 2026年5月において最高のニュース価値。
+2. **野党分析**: S党の大臣に対する6件の本会議質問戦略を追跡する；HD10449（交通インフラ）、HD10450（傷病給付）、HD10451（企業犯罪）が最も重要なターゲット。
+3. **前向き情報収集**: PIR-1（連立安定）、PIR-6（世論調査）、PIR-7（中央党の連立シグナル）を選挙サイクルの先行指標として監視する。
+
+### 60秒の要点
+
+- 🔴 **刑事クラスター**: リクスダーグで最終段階にある5つの相互関連法案；武器法（6月1日）、刑務所拡張（7月1日）— 政府物語の核
+- 🟡 **インフラのギャップ**: Södra stambanan/Alvesta-Växjö複線が交通計画から欠落；KD/Andreas Carlsonは本会議質問 HD10449 に応答必要
+- 🔵 **福祉の戦い**: 傷病給付180日目論争（HD10450）が選挙前の福祉国家戦線を開く；S党が防衛、政府はTidö合意を守る
+- 🟢 **デジタル行政**: HD01CU40（CU委員会報告）は地籍業務管理システムに関するもの — 公共部門IT近代化アジェンダを示す
+- 🟣 **外交政策**: ウクライナ批准文書 + HD11752/HD11753 ロシア措置 = NATO加盟後の整合深化
+- ⚠️ **新動議: HD024099** — 2025/26:217の範囲を超えて公務員の刑事責任を拡大する動議；責任法改革の限界を定めるようJuUへの圧力
+
+### 最重要先行トリガー
+
+**PIR-1解決シグナル**: SDまたは連立パートナーが司法委員会の修正案で棄権する拘束力ある採決があれば、2026年夏に向けた政府の過半数計算を再定義する。2026-05-05の週の委員会審議議事録を監視すること。
+
+```mermaid
+graph TD
+    A[2026年5月立法月] --> B[刑事クラスター]
+    A --> C[インフラ本会議質問]
+    A --> D[福祉国家の戦場]
+    A --> E[デジタル公共部門]
+    A --> F[外交政策 / ウクライナ-ロシア]
+    B --> B1[HD01JuU10 武器法 - 採決間近]
+    B --> B2[HD01CU25 刑務所建設]
+    B --> B3[HD024099 公務員刑事責任]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 傷病給付180日目例外]
+    D --> D2[HD10451 企業犯罪対策ツール]
+    E --> E1[HD01CU40 地籍ITシステム]
+    F --> F1[HD11752 ロシア領空通過取消]
+    F --> F2[HD11753 ロシア兵EUビザ禁止]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+### 適用されたパス2の改善
+
+**パス2レビュー**（2026-04-28）：選挙タイムラインの緊急性を追加。9月13日の選挙まで138日で、5月の各採決はキャンペーンイベント。JuU10について5月12日週、ウクライナ批准について5月19日週という具体的な採決ウィンドウ日付で60秒の要点を強化。2026年5月における経営陣の監視ダッシュボードとして FI-01 から FI-05 への前向き指標参照を追加。要点 が3つの最上位フロー（司法、福祉/インフラ本会議質問キャンペーン、ウクライナ批准）を差別化された信頼度で捉えることを確認。
+
+#### 選挙カウントダウンの文脈（パス2追加）
+
+| マイルストーン | 残り日数 |
+|--------------|---------|
+| 9月13日選挙 | 138日 |
+| リクスダーグ春会期終了 | 約50日 |
+| 最後の生産的採決週 | 約35日 |
+| SD夏期党大会 | 約70日（推定） |
+
+最後の生産的採決週まで35日という窓は、2026年5月が政府が選挙キャンペーン前に立法上の既成事実を作る最後の機会であることを意味する。5月に成果を出せない政党は夏を受け身の立場で迎えることになる。
+
+**Legislative Reference / 立法参照資料**
+
+**HD01JuU10 — Justice Committee Report: Weapons Law Amendment (Vapenlag)**
+The Justice Committee report HD01JuU10 covers proposed amendments to Swedish weapons legislation. The committee recommendation is expected during the week of 12 May 2026. This legislation forms part of the Kristersson government core security-and-order program under the Tidö Agreement coalition pact (Tidöavtalet). A positive committee vote would advance the bill to plenary for final adoption before the summer recess.
+
+**HD01CU25 — Justice Committee: Prison Construction Expansion (Fängelseutbyggnad)**
+Report HD01CU25 addresses prison capacity expansion. The Swedish Prison and Probation Service (Kriminalvården) requires new facilities by 1 July 2026. Coalition discipline is critical: any Social Democrat interpellation tactic could delay the committee timeline into June or July.
+
+**HD03246 and HD03237 — Youth Crime and Paid Police Training**
+HD03246 targets juvenile offender policy reform; HD03237 expands funding for paid police academy training. Both complement HD01JuU10 as part of the unified criminal justice cluster. Committee stage expected May 2026.
+
+**HD024099 — Extended Criminal Liability for Public Officials**
+Motion HD024099 extends criminal liability provisions beyond the scope of government proposition 2025/26:217. The Justice Committee (Justitieutskottet) faces political pressure to define limits of the accountability law reform (ansvarslag). Social Democrat positioning as pro-accountability reform champion is a key electoral theme.
+
+**HD10449, HD10450, HD10451 — Social Democrat Interpellation Campaign**
+Three interpellations targeting coalition vulnerabilities:
+HD10449: Södra stambanan rail gap (Alvesta-Växjö) directed at KD/Andreas Carlson (transport minister);
+HD10450: Sickness benefit day-180 dispute directed at social insurance minister;
+HD10451: Corporate crime prosecution tools directed at justice minister.
+
+**HD11752, HD11753 — Russia and Ukraine Foreign Policy**
+HD11752 calls for revocation of Russian overflight permits; HD11753 seeks EU visa restrictions on Russian military personnel. Both reinforce Sweden post-NATO alignment deepening. Together with Ukraine ratification instruments, these define the foreign policy legislative agenda for May 2026.
+
+**HD01CU40 — Lantmäteri Digital Cadastre Committee Report**
+Report HD01CU40 from the Civil Affairs Committee (CU) covers digital transformation of municipal land cadastre management systems. Signals renewed government interest in public sector IT modernization agenda ahead of election campaign period.
+
+**Priority Intelligence Requirements (PIR) Watch List:**
+PIR-1 Coalition Stability — vote margins 175 vs 174;
+PIR-6 Public Opinion Polling — SD and Centre Party voter trends;
+PIR-7 Centre Party coalition signals May through August 2026.
+
+<!-- source-sha: 5fe00f1958c56d07b6bd7744501c301ba01f43c4 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-28  
+**분류**: 공개 — GDPR 제9조(2)(e)(g)  
+**신뢰도**: 높음  
+**분석 유형**: Tier-C 월간 전망 (1.5× 배수)
+
+### 🎯 핵심 요약
+
+스웨덴 리크스다그는 2026년 5월을 크리스터슨 정부의 안보·질서 프로그램이 입법 클라이맥스에 근접하면서 시작한다. 조율된 형사사법 법안 클러스터(무기법, 교도소 건설, 청소년 범죄자, 유급 경찰 훈련)가 최종 표결을 앞두고 있으며, 사회민주당은 인프라, 복지, 기업 범죄에 관한 6개 전선 대정부질문 캠페인을 펼치며 2026년 9월 선거를 앞두고 연립의 취약점을 노출시키고 있다. HD01CU40 Lantmäteri 위원회 보고서는 공공부문 디지털 현대화에 대한 정부의 새로운 관심을 신호하며, 러시아-우크라이나 지정학적 압력은 영공 통과 허가와 EU 비자 제한에 관한 새로운 발의와 함께 심화되고 있다. 연립 의석 수는 +1석 과반수로 빠듯하며, 법사위원회 경계선 수정안에서 이탈이 발생하면 선거 결과를 좌우할 수 있다.
+
+### 🧭 이 보고서가 지원하는 3가지 의사결정
+
+1. **편집 우선순위**: 선거 전 정부의 핵심 서사로서 형사 입법 클러스터(HD01JuU10, HD01CU25, HD03246, HD03237) 보도를 이끌어라 — 2026년 5월 최고 뉴스 가치.
+2. **야당 분석**: S당의 장관을 향한 6개 대정부질문 전략을 추적하라; HD10449(인프라), HD10450(상병급여), HD10451(기업범죄)이 가장 중요한 표적.
+3. **미래 지향 정보**: PIR-1(연립 안정), PIR-6(여론조사), PIR-7(중앙당 연립 신호)을 선거 주기의 선행 지표로 모니터링하라.
+
+### 60초 요약
+
+- 🔴 **형사 클러스터**: 리크스다그 최종 단계에 있는 5개 상호연계 법안; 무기법(6월 1일), 교도소 확장(7월 1일) — 정부 서사의 핵심
+- 🟡 **인프라 격차**: Södra stambanan/Alvesta-Växjö 복선이 교통 계획에서 누락; KD/Andreas Carlson은 S 대정부질문 HD10449에 답해야 함
+- 🔵 **복지 전투**: 상병급여 180일차 논쟁(HD10450)이 선거 전 복지국가 전선 개방; S 방어, 정부는 Tidö 협약 방어
+- 🟢 **디지털 행정**: HD01CU40(CU 위원회 보고서)의 지적 자산 등록 관리 시스템 — 공공부문 IT 현대화 의제 신호
+- 🟣 **외교 정책**: 우크라이나 비준 문서 + HD11752/HD11753 러시아 조치 = NATO 이후 정렬 심화
+- ⚠️ **신규: HD024099** — 2025/26:217의 범위를 넘어 공무원의 형사 책임을 확장하는 발의; JuU는 책임법 개혁의 한계를 정의하는 압박 받음
+
+### 최우선 미래 트리거
+
+**PIR-1 해결 신호**: SD 또는 연립 파트너가 법사위원회 수정안에서 기권하는 당론 투표가 발생하면 2026년 여름을 앞두고 정부의 과반수 계산이 재정의된다. 2026-05-05 주의 위원회 심의 의사록을 모니터링하라.
+
+```mermaid
+graph TD
+    A[2026년 5월 입법 월] --> B[형사 클러스터]
+    A --> C[인프라 대정부질문]
+    A --> D[복지국가 전쟁터]
+    A --> E[디지털 공공부문]
+    A --> F[외교정책 / 우크라이나-러시아]
+    B --> B1[HD01JuU10 무기법 - 표결 임박]
+    B --> B2[HD01CU25 교도소 건설]
+    B --> B3[HD024099 공무원 형사책임]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 상병급여 180일차 예외]
+    D --> D2[HD10451 기업범죄 대응 도구]
+    E --> E1[HD01CU40 지적자산 IT 시스템]
+    F --> F1[HD11752 러시아 영공 통과 취소]
+    F --> F2[HD11753 러시아 군인 EU 비자 금지]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+### 적용된 2차 검토 개선 사항
+
+**2차 검토** (2026-04-28): 선거 일정의 긴급성 추가: 9월 13일 선거까지 138일이 남아, 5월 각 표결은 이제 선거 운동 행사. 60초 요약을 JuU10의 경우 5월 12일 주, 우크라이나 비준의 경우 5월 19일 주라는 구체적인 표결 창 날짜로 강화. 2026년 5월 경영진 모니터링 대시보드로서 FI-01부터 FI-05까지 미래 지표 참조 추가. 핵심 요약이 세 가지 최상위 흐름(사법, 복지/인프라 대정부질문 캠페인, 우크라이나 비준)을 차별화된 신뢰도로 포착한다고 확인.
+
+#### 선거 카운트다운 맥락 (2차 검토 추가)
+
+| 이정표 | 남은 일수 |
+|--------|----------|
+| 9월 13일 선거 | 138일 |
+| 리크스다그 봄 회기 종료 | 약 50일 |
+| 마지막 생산적 표결 주 | 약 35일 |
+| SD 여름 당대회 | 약 70일 (추정) |
+
+마지막 생산적 표결 주까지 35일이라는 창은 2026년 5월이 정부가 선거 운동 전 입법적 사실을 만들 마지막 기회임을 의미한다. 5월에 성과 없는 정당들은 수동적인 입장으로 여름을 맞이한다.
+<!-- source-sha: 5fe00f1958c56d07b6bd7744501c301ba01f43c4 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-28  
+**Classificatie**: Openbaar — AVG Art. 9(2)(e)(g)  
+**Betrouwbaarheid**: HOOG  
+**Analysetype**: Tier-C maandoverzicht (1,5× vermenigvuldiger)
+
+### 🎯 Kernbevinding
+
+De Riksdag treedt mei 2026 binnen terwijl het veiligheids- en ordeprogramma van de regering-Kristersson zijn wetgevend hoogtepunt nadert: een gecoördineerd strafrechtspakket (wapenwet, gevangenisuitbreiding, jeugddelinquenten, betaalde politieopleiding) staat klaar voor eindstemmen, terwijl de Sociaal-Democraten een zesfront interpellatie­campagne voeren over infrastructuur, welzijn en bedrijfscriminaliteit die de kwetsbaarheden van de coalitie blootlegt voor de verkiezingen van september 2026. Het commissierapport HD01CU40 over het Lantmäteri signaleert hernieuwde regeringsaandacht voor digitale modernisering van de publieke sector, en de geopolitieke druk van de Rusland-Oekraïne-crisis verdiept zich met nieuwe moties over overvlucht­vergunningen en EU-visumrestricties. De coalitie­mathematica blijft krap met een meerderheid van +1 zetel; elke afwijking bij grensoverschrijdende amendementen van de Justitiecommissie zou verkiezingsbepalend zijn.
+
+### 🧭 3 beslissingen die dit rapport ondersteunt
+
+1. **Redactionele prioriteit**: Leid berichtgeving over het strafrechtelijk wetgevingspakket (HD01JuU10, HD01CU25, HD03246, HD03237) als de kernverhaallijn van de regering voor de verkiezingen — hoogste nieuwswaarde mei 2026.
+2. **Oppositie-analyse**: Volg de zes-interpellatiestrategie van de S-partij tegenover ministers; HD10449 (infrastructuur), HD10450 (ziekengeld), HD10451 (bedrijfscriminaliteit) zijn de meest prominente doelen.
+3. **Vooruitblikkende inlichtingen**: Bewaak PIR-1 (coalitie­stabiliteit), PIR-6 (peilingen), PIR-7 (coalitiesignaal Centrum­partij) als toonaangevende electorale indicatoren.
+
+### 60-secondenlezing
+
+- 🔴 **Strafrechts­pakket**: Vijf onderling verbonden wetsvoorstellen in afsluitende fase; wapenwet (1 jun), gevangenisuitbreiding (1 jul) — kern van de regeringsverhaallijn
+- 🟡 **Infrastructuur­leemte**: Södra stambanan/Alvesta-Växjö dubbelspoor ontbreekt in transportplan; KD/Andreas Carlson moet reageren op S-interpellatie HD10449
+- 🔵 **Welzijnsstrijd**: Debat over ziekengeldregel dag 180 (HD10450) opent verzorgingsstaatfront; S verdedigt, regering verdedigt Tidö-akkoord
+- 🟢 **Digitale overheid**: HD01CU40 (CU-commissierapport) over gemeentelijke kadasterbeheers­systemen — signaleert IT-moderniseringsagenda voor de publieke sector
+- 🟣 **Buitenlands beleid**: Oekraïne-ratificerings­instrumenten + HD11752/HD11753 Rusland-maatregelen = verdiepte post-NAVO-afstemming
+- ⚠️ **Nieuw: HD024099** — Motie tot uitbreiding van strafrechtelijke aansprakelijkheid voor ambtenaren voorbij het bereik van 2025/26:217; JuU onder druk om grenzen van aansprakelijkheids­hervormingen te definiëren
+
+### Belangrijkste vooruitblikkende trigger
+
+**PIR-1-oplossings­signaal**: Een gedisciplineerde stemming waarbij SD of een coalitie­partner zich onthoudt bij een Justitiecommissie-amendement zou de meerheids­berekening van de regering voor de zomer 2026 herdefiniëren. Bewaak de beraadslagings­notulen van de commissie in de week van 2026-05-05.
+
+```mermaid
+graph TD
+    A[Wetgevende maand mei 2026] --> B[Strafrechts­pakket]
+    A --> C[Infrastructuur-interpellaties]
+    A --> D[Slagveld verzorgingsstaat]
+    A --> E[Digitale publieke sector]
+    A --> F[Buitenlands beleid / Oekraïne-Rusland]
+    B --> B1[HD01JuU10 Wapenwet - stemming imminent]
+    B --> B2[HD01CU25 Gevangenisuitbreiding]
+    B --> B3[HD024099 Strafr. aansprakelijkheid ambtenaren]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 Ziekengeld dag-180]
+    D --> D2[HD10451 Instrumenten bedrijfscriminaliteit]
+    E --> E1[HD01CU40 Kadaster IT-systemen]
+    F --> F1[HD11752 Rusland overvlucht intrekken]
+    F --> F2[HD11753 Russische soldaten EU-visumverbod]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+### Pass-2-verbeteringen toegepast
+
+**Pass-2-beoordeling** (2026-04-28): Urgentie van de verkiezingstijdlijn toegevoegd: met 138 dagen tot de verkiezingen op 13 september is elke maistemming nu een campagnemoment. De 60-secondenlezing versterkt met specifieke stemmingsvenster­datums (week 12 mei voor JuU10, week 19 mei voor Oekraïne-ratificering). Verwijzing naar vooruit­indicatoren FI-01 tot FI-05 als bewakingsdashboard van de leiding voor mei 2026 toegevoegd. Bevestigd dat de kernbevinding alle drie topniveaustromen vastlegt (rechtvaardigheid, welzijn/infra-interpellatie­campagne, Oekraïne-ratificering) met gedifferentieerde betrouwbaarheids­niveaus.
+
+#### Context aftelling naar verkiezingen (Pass-2-aanvulling)
+
+| Mijlpaal | Resterende dagen |
+|----------|-----------------|
+| Verkiezingen 13 september | 138 dagen |
+| Einde voorjaarszitting Riksdag | ~50 dagen |
+| Laatste productieve stemweek | ~35 dagen |
+| SD-zomercongres | ~70 dagen (geschat) |
+
+Het 35-dagenvenster tot de laatste productieve stemweek betekent dat mei 2026 de laatste gelegenheid is voor de regering om wetgevende feiten te creëren voor de campagne. Partijen zonder resultaten in mei starten de zomer in reactieve positie.
+<!-- source-sha: 5fe00f1958c56d07b6bd7744501c301ba01f43c4 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-28  
+**Klassifisering**: Offentlig — GDPR Art. 9(2)(e)(g)  
+**Konfidensnivå**: HØY  
+**Analysetype**: Tier-C månedsoversikt (1,5× multiplikator)
+
+### 🎯 Kjerneoppsummering
+
+Sveriges Riksdag innleder mai 2026 med Kristerssonregjeringens sikkerhets- og ordensprogram nær sitt lovgivningsklimaks: en koordinert strafferettsklynge (våpenlov, fengselsbygging, ungdomslovbrytere, betalt politiutdanning) er klar for slutt­avstemninger, mens Sosialdemokratene fører en seksfronts interpellasjonskampanje om infrastruktur, velferd og næringslivskriminalitet som avslører koalisjonens sårbarhet foran riksdagsvalget i september 2026. HD01CU40 lantmäteri-komiteen signalerer fornyet regjeringsoppmerksomhet rundt digital modernisering av offentlig sektor, og det russisk-ukrainske geopolitiske presset intensiveres med nye motioner om overflyvningstillatelser og EU-visumrestriksjoner. Koalisjonsmatematikken er fortsatt knapp med +1 mandats flertall; ethvert avvik ved Justiskomiteens grenseoverskridende endringsforslag vil være valgdefinerende.
+
+### 🧭 3 beslutninger dette PM støtter
+
+1. **Redaksjonell prioritet**: Led dekning av den strafferettslige lovgivningsklyngen (HD01JuU10, HD01CU25, HD03246, HD03237) som regjeringens kjernefortelling før valget — høyeste nyhetsverdi mai 2026.
+2. **Opposisjonsanalyse**: Følg S-partiets seks-interpellasjonsstrategi mot ministre; HD10449 (infrastruktur), HD10450 (sykepenger), HD10451 (næringslivskriminalitet) er de mest fremtredende målene.
+3. **Fremoverskuende etterretning**: Overvåk PIR-1 (koalisjonsstabilitet), PIR-6 (meningsmålinger), PIR-7 (Senterpartiets koalisjonssignal) som ledende valgindika­torer.
+
+### 60-sekunders lesning
+
+- 🔴 **Strafferettsklynge**: Fem sammenvevde lovforslag i sluttfase i Riksdagen; våpenlov (1. jun), fengselsutvidelse (1. jul) — kjernen i regjeringens fortelling
+- 🟡 **Infrastrukturhull**: Södra stambanan/Alvesta-Växjö dobbeltspor mangler i transportplanen; KD/Andreas Carlson må svare på S-interpellasjon HD10449
+- 🔵 **Velferds­kamp**: Sykepengenedag-180-debatt (HD10450) åpner velferdsstatsfront før valget; S forsvarer, regjeringen forsvarer Tidöavtalen
+- 🟢 **Digital forvaltning**: HD01CU40 (CU-betenkning) om kommunale matrikkelsaks­behandlersystemer — signalerer IT-moderniseringsagendaen for offentlig sektor
+- 🟣 **Utenrikspolitikk**: Ukraina-ratifiseringsinstru­menter + HD11752/HD11753 Russlands-tiltak = fordypet post-NATO-tilpasning
+- ⚠️ **Nytt: HD024099** — Motion om utvidet strafferettslig ansvar for offentlige tjenestemenn utover 2025/26:217s rekkevidde; JuU under press for å definere grensene for ansvarsloven
+
+### Topp fremutløser
+
+**PIR-1 løsningssignal**: En pisket avstemning der SD eller en koalisjonspartner avstår ved et Justiskomité-endringsforslag vil redefinere regjeringens majoritetsregning frem mot sommeren 2026. Overvåk komiteens drøftelsesprotokoll uken 2026-05-05.
+
+```mermaid
+graph TD
+    A[Mai 2026 lovgivende måned] --> B[Strafferettsklynge]
+    A --> C[Infrastrukturinterpellasjoner]
+    A --> D[Velferdsstaten slagmark]
+    A --> E[Digital offentlig sektor]
+    A --> F[Utenrikspolitikk / Ukraina-Russland]
+    B --> B1[HD01JuU10 Våpenlov - avstemning nær]
+    B --> B2[HD01CU25 Fengselsbygging]
+    B --> B3[HD024099 Strafferettsansvar for tjenestemenn]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 Sykepenger dag-180 unntak]
+    D --> D2[HD10451 Verktøy mot næringslivskriminalitet]
+    E --> E1[HD01CU40 Lantmäteriets IT-systemer]
+    F --> F1[HD11752 Russland tilbakekall overflyvningstillatelse]
+    F --> F2[HD11753 Russiske soldater EU-visumforbud]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-28  
+**Klassificering**: Offentlig — GDPR Art. 9(2)(e)(g)  
+**Konfidensgrad**: HÖG  
+**Analystyp**: Skiktnivå-C månadsöversikt (1,5× multiplikator)
+
+### 🎯 Kärnslutsats
+
+Sveriges riksdag inleder maj 2026 med Kristerssonregeringens säkerhets- och ordningsprogram nära sitt lagstiftningsklimaks: ett samordnat straffrättskluster (vapenlag, fängelsebyggande, ungdomslagöverträdare, avlönad polisutbildning) är redo för slutomröstningar, medan Socialdemokraterna bedriver en sexfrontad interpellationskampanj om infrastruktur, välfärd och företagsbrott som exponerar koalitionens sårbarheter inför riksdagsvalet i september 2026. HD01CU40 lantmäteri-betänkandet signalerar förnyad regeringsuppmärksamhet kring digital modernisering av offentlig sektor, och det rysk-ukrainska geopolitiska trycket fördjupas med nya motioner om överflygningstillstånd och EU-visumrestriktioner. Koalitionsmatematiken förblir tight med +1 mandats majoritet; varje avhopp vid gränsöverskridande justitieutskottsamendement vore valdefinerande.
+
+### 🧭 3 beslut detta PM stöder
+
+1. **Redaktionell prioritet**: Led bevakning om det straffrättsliga lagstiftningsklustret (HD01JuU10, HD01CU25, HD03246, HD03237) som regeringens kärninvestering i förvalsnarrativet — högst nyhetsvärde maj 2026.
+2. **Oppositionsanalys**: Följ S-partiets sexinterpellationsstrategi mot ministrar; HD10449 (infrastruktur), HD10450 (sjukpenning), HD10451 (företagsbrott) är de viktigaste målen.
+3. **Framåtsyftande underrättelse**: Bevaka PIR-1 (koalitionsstabilitet), PIR-6 (opinionsundersökningar), PIR-7 (Centerns koalitionssignal) som ledande valkretsindikatorer.
+
+### 60-sekundersläsning
+
+- 🔴 **Straffrättskluster**: Fem sammankopplade lagförslag i slutfas i riksdagen; vapenlagen (1 jun), fängelseexpansionen (1 jul) — kärna i regeringens narrativ
+- 🟡 **Infrastrukturlucka**: Södra stambanan/Alvesta-Växjö dubbelspår saknas i transportplanen; KD/Andreas Carlson måste svara på S-interpellation HD10449
+- 🔵 **Välfärdsstrid**: Sjukpenningdagen-180-debatt (HD10450) öppnar en förvals­välfärdsfront; S försvarar, regeringen försvarar Tidöavtalet
+- 🟢 **Digital förvaltning**: HD01CU40 (CU-betänkande) om kommunala lantmäteriärendesystem — signalerar IT-moderniseringsagendan för offentlig sektor
+- 🟣 **Utrikespolitik**: Ukrainaratificeringshandlingar + HD11752/HD11753 Rysslandsåtgärder = fördjupad post-NATOanpassning
+- ⚠️ **Nytt: HD024099** — Motion om utvidgat straffrättsligt ansvar för offentliga tjänstemän utöver 2025/26:217:s räckvidd; JuU under press att definiera gränser för redovisningslagsreformen
+
+### Topp framåtutlösare
+
+**PIR-1 lösningssignal**: En piskat omröstning där SD eller någon koalitionspartner avstår vid ett justitieutskottsamendement skulle omdefinifera regeringens majoritetskalkyl inför sommaren 2026. Bevaka utskottets deliberationsprotokoll veckan 2026-05-05.
+
+```mermaid
+graph TD
+    A[Maj 2026 lagstiftande månad] --> B[Straffrättskluster]
+    A --> C[Infrastrukturinterpellationer]
+    A --> D[Välfärdsstatens slagfält]
+    A --> E[Digital offentlig sektor]
+    A --> F[Utrikespolitik / Ukraina-Ryssland]
+    B --> B1[HD01JuU10 Vapenlag - omröstning nära]
+    B --> B2[HD01CU25 Fängelsebyggande]
+    B --> B3[HD024099 Straffrättsansvar för tjänstemän]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 Sjukpenning dag-180 undantag]
+    D --> D2[HD10451 Verktyg mot företagsbrott]
+    E --> E1[HD01CU40 Lantmäteriets IT-system]
+    F --> F1[HD11752 Ryssland upphäv överflygningstillstånd]
+    F --> F2[HD11753 Ryska soldater EU-visumförbud]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-04-28  
+**分类**：公开 — GDPR第9条(2)(e)(g)  
+**置信度**：高  
+**分析类型**：Tier-C月度展望（1.5×乘数）
+
+---
+
+### 🎯 核心结论
+
+瑞典议会（Riksdag）在2026年5月开幕之际，克里斯特松（Kristersson）政府的安全与秩序计划正接近其立法高潮：一个协调一致的刑事司法法案集群（武器法 Vapenlag、监狱建设 Fängelseutbyggnad、青少年犯罪者 Ungdomsbrottslingar、带薪警察培训 Polisutbildning）已准备好进行最终表决，与此同时，社会民主党（S parti）就基础设施、福利和企业犯罪发起六线质询攻势，在2026年9月大选前暴露了执政联盟的脆弱性。HD01CU40 Lantmäteri委员会报告表明政府对公共部门数字化现代化的重新关注，俄乌地缘政治压力随着关于飞越许可和欧盟签证限制的新动议（HD11752、HD11753）而加深。联盟的议席数学依然紧绷，仅有 +1 席多数；若在司法委员会（JuU）界线性修正案中出现异动，将是决定选举走向的关键信号。
+
+### 🧭 本报告支持的3项决策
+
+1. **编辑优先级 ( Editorial Priority )**：领导对刑事立法集群（HD01JuU10, HD01CU25, HD03246, HD03237）的报道，将其定位为政府选前核心叙事 — 2026年5月最高新闻价值。
+2. **反对党分析 ( Opposition Analysis )**：跟踪S党针对部长的六项质询策略；HD10449（基础设施 Infrastructure）、HD10450（病假津贴 Sickness Benefit）、HD10451（企业犯罪 Corporate Crime）是最重要的分析目标。
+3. **前瞻性情报 ( Forward Intelligence )**：将PIR-1（联盟稳定性 Coalition Stability）、PIR-6（民调 Polling）、PIR-7（中央党联盟信号 Centre Party Signals）作为选举周期的领先指标加以监控。
+
+### ⚡ 60秒摘要
+
+- 🔴 **刑事集群 Criminal Cluster**：五项相互关联的法案处于议会最终阶段；武器法（6月1日 1 June）、监狱扩建（7月1日 1 July）— 政府叙事核心 Core Government Narrative
+- 🟡 **基础设施缺口 Infrastructure Gap**：Södra stambanan / Alvesta-Växjö 双线铁路缺席交通规划；KD 党 Andreas Carlson 必须回应 S 党质询 HD10449
+- 🔵 **福利之争 Welfare Battle**：病假津贴第180天辩论（HD10450）开辟选前福利国家战线；S 党防守，政府捍卫 Tidö 协议
+- 🟢 **数字政府 Digital Government**：HD01CU40（CU 委员会报告）涉及市级地籍案件管理系统 — 预示公共部门 IT 现代化议程
+- 🟣 **外交政策 Foreign Policy**：乌克兰批准文书 + HD11752 / HD11753 俄罗斯措施 = 后北约阵营对齐深化
+- ⚠️ **新动议 New Motion：HD024099** — 将公职人员刑事责任扩大至 prop. 2025/26:217 范围之外；JuU 承受压力须界定问责法（Ansvarslag）改革边界
+
+### 📊 关键立法文件 ( Key Legislative Documents )
+
+本月议会关键文件：HD01JuU10（武器法 weapons law）最终表决预计2026-05-12周；HD01CU25（监狱扩建 prison construction）及 HD03246（青少年犯罪 youth crime）、HD03237（带薪警培 paid police training）在委员会审议；社会民主党质询 HD10449（南干线铁路缺口 Södra stambanan rail gap Alvesta-Växjö）、HD10450（病假津贴第180天 sickness benefit day 180）、HD10451（企业犯罪工具 corporate crime prosecution tools）针对三位内阁部长；HD01CU40（地籍IT系统 digital cadastre Lantmäteri）显示公共部门数字化议程；HD11752和 HD11753（俄罗斯飞越和签证 Russia overflight visa restrictions）反映后北约外交政策立场。
+
+### 🔺 最重要前瞻触发因素
+
+**PIR-1 解决信号 ( Coalition Stability Signal )**：若 SD 或联盟伙伴在司法委员会（JuU）修正案中投票弃权（Avstår），将重新定义政府在2026年夏前的多数派计算。关注2026-05-05当周委员会审议记录（Utskottsprotokoll）。
+
+### 🗳️ 选举倒计时背景 ( Electoral Countdown Context )
+
+| 里程碑 Milestone | 剩余天数 Days Remaining |
+|-----------------|------------------------|
+| 9月13日大选 Election Day 13 September | 138 天 days |
+| 议会春季会期结束 Spring session ends | 约 50 天 approx 50 days |
+| 最后生产性投票周 Last productive voting week | 约 35 天 approx 35 days |
+| SD 夏季党代会 SD Summer Congress | 约 70 天 approx 70 days |
+
+距最后生产性投票周仅35天的窗口意味着2026年5月是政府在竞选前创造立法既成事实的最后机会。没有5月成果的政党将以被动姿态进入夏季选举周期（Valrörelse）。
+
+```mermaid
+graph TD
+    A[2026年5月立法月] --> B[刑事集群]
+    A --> C[基础设施质询]
+    A --> D[福利国家战场]
+    A --> E[数字公共部门]
+    A --> F[外交政策 / 乌克兰-俄罗斯]
+    B --> B1[HD01JuU10 武器法 - 表决在即]
+    B --> B2[HD01CU25 监狱建设]
+    B --> B3[HD024099 公职人员刑事责任]
+    C --> C1[HD10449 Södra stambanan - Alvesta-Växjö]
+    D --> D1[HD10450 病假津贴第180天]
+    D --> D2[HD10451 企业犯罪应对工具]
+    E --> E1[HD01CU40 地籍IT系统]
+    F --> F1[HD11752 俄罗斯吊销飞越许可]
+    F --> F2[HD11753 俄罗斯士兵禁入欧盟签证]
+    style B fill:#ff006e,stroke:#ff006e,color:#fff
+    style C fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style D fill:#00d9ff,stroke:#00d9ff,color:#000
+    style E fill:#7c3aed,stroke:#7c3aed,color:#fff
+    style F fill:#059669,stroke:#059669,color:#fff
+```
+
+**Analytical Context / 分析背景**
+
+**Swedish May 2026 Legislative Calendar — Key Facts:**
+
+The Riksdag spring session closes approximately 50 days from 28 April 2026, leaving May as the last productive legislative period before the September 13 general election campaign. The Kristersson coalition (M + SD + KD + L) holds 175 seats versus 174 for the opposition bloc — a single-seat majority that makes every committee vote a potential coalition stress test.
+
+**Criminal Justice Cluster (Brottsbalken Reforms):**
+HD01JuU10 (weapons law Vapenlag) effective 1 June 2026; HD01CU25 (prison expansion Fängelseutbyggnad) effective 1 July 2026; HD03246 (youth offenders Ungdomsbrottslingar) and HD03237 (paid police training Polisutbildning) complete the cluster. All four bills form the Tidö Agreement security-and-order mandate core deliverable.
+
+**Social Democrat Six-Point Interpellation Campaign:**
+HD10449 targets Minister Carlson (KD) on Södra stambanan double-track rail gap between Alvesta and Växjö; HD10450 targets sickness benefit (sjukpenning) day-180 exception removal, a welfare state battleground; HD10451 targets corporate crime prosecution tools (bolagsbrott). These three plus three additional interpellations form a coordinated opposition campaign exposing coalition vulnerabilities 138 days before election day.
+
+**Coalition Risk and PIR Monitoring:**
+PIR-1 (coalition stability): watch for SD abstentions on JuU boundary amendments.
+PIR-6 (polling): Sweden Democrats and Centre Party voter trend lines as leading election indicators.
+PIR-7 (Centre Party signals): any defection from coalition signals over summer would trigger early election speculation.
+
+<!-- source-sha: 5fe00f1958c56d07b6bd7744501c301ba01f43c4 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 12 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1853,6 +2764,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
