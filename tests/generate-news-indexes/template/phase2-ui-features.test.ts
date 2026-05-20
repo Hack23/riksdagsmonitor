@@ -15,6 +15,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const NEWS_DIR = path.join(__dirname, '..', '..', '..', 'news');
 
+/** Shape of the dynamically imported module (mirrors orchestrator-integration). */
+interface GenerateNewsIndexesModule {
+  readonly generateAllIndexes: () => unknown;
+}
+
     describe('Phase 2 UI features', () => {
       let enContent: string;
       let svContent: string;

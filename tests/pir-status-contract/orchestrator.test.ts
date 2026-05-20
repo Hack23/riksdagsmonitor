@@ -21,8 +21,9 @@ import { fileURLToPath } from 'node:url';
 
 import {
   type PirStatusFile,
+  type Confidence,
+  type CycleType,
   findLatestSource,
-  runMain,
 } from '../../scripts/roll-forward-pirs';
 
 import { validFixture, runMainSafe } from './_shared.js';

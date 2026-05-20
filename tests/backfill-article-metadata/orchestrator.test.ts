@@ -18,11 +18,11 @@ import {
   CSV_COLUMNS,
   __test__ as writerTest,
 } from '../../scripts/backfill-lib/report-writer.js';
-import type { ContractResult } from '../../scripts/backfill-lib/contract-checker.js';
 import { checkAgainstContract } from '../../scripts/backfill-lib/contract-checker.js';
-import {
-  parseArticleFilename,
-  classify,
+import { parseArticleFilename } from '../../scripts/backfill-lib/classifier.js';
+import type {
+  Tier,
+  ClassificationResult,
 } from '../../scripts/backfill-lib/classifier.js';
 import { __test__ as cliTest } from '../../scripts/backfill-article-metadata.js';
 

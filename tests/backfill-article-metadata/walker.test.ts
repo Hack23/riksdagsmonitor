@@ -5,7 +5,7 @@
  * `tests/backfill-article-metadata.test.ts` (725 lines).
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -18,10 +18,10 @@ import {
   __test__ as classifierTest,
 } from '../../scripts/backfill-lib/classifier.js';
 import type {
-  Tier,
   ClassificationResult,
 } from '../../scripts/backfill-lib/classifier.js';
 import { checkAgainstContract } from '../../scripts/backfill-lib/contract-checker.js';
+import type { ContractResult } from '../../scripts/backfill-lib/contract-checker.js';
 
 describe('classifier: parseArticleFilename', () => {
   it('parses a canonical date-slug-lang filename', () => {
@@ -200,27 +200,7 @@ describe('classifier: tier assignment', () => {
 });
 
 // ---------------------------------------------------------------------------
-// html-inspector
+// (html-inspector tests live in tests/backfill-article-metadata/rules/hreflang.test.ts;
+// no orphan fixture is kept here.)
 // ---------------------------------------------------------------------------
-
-const SAMPLE_HTML = `<!DOCTYPE html>
-<html lang="sv">
-<head>
-  <title>Regeringen godkänner vårbudget — Riksdagsmonitor</title>
-  <meta name="description" content="Sveriges regering godkände i dag vårbudgeten efter tre månaders förhandling.">
-  <meta property="og:title" content="OG Title Example">
-  <meta property="og:description" content="OG description example.">
-  <meta name="twitter:title" content="Twitter Title Example">
-  <meta name="twitter:description" content="Twitter description example.">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"NewsArticle","headline":"JSON-LD Headline","alternativeHeadline":"JSON-LD Alt Headline","description":"JSON-LD Description"}
-  </script>
-</head>
-<body>
-  <article>
-    <h1>Regeringen godkänner vårbudget</h1>
-    <p>Sveriges regering godkände i dag vårbudgeten efter tre månaders förhandling.</p>
-  </article>
-</body>
-</html>`;
 

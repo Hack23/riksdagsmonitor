@@ -8,8 +8,8 @@
 import { describe, expect, it } from 'vitest';
 
 import {
-  type Confidence,
-  type PirStatusFile,
+  type CycleType,
+  type PirEntry,
   validateSource,
 } from '../../scripts/roll-forward-pirs';
 

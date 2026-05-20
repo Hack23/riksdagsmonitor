@@ -112,7 +112,8 @@ describe('generate-news-indexes/template — generateLanguageNotice', () => {
 // SEO uplift: news-index template generates FAQ + collapsible archive list
 // ---------------------------------------------------------------------------
 
-import { generateIndexHTML } from '../scripts/generate-news-indexes/template.js';
+// (note: generateIndexHTML is exercised in orchestrator-integration.test.ts;
+// not re-imported here to avoid an unused-locals lint failure.)
 
 // ---------------------------------------------------------------------------
 // Single-source 14-language list contract (per Hack23/riksdagsmonitor#2624)

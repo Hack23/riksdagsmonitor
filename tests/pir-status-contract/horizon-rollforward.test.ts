@@ -7,27 +7,17 @@
  * `tests/pir-status-contract.test.ts` (889 lines).
  */
 
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import {
-  existsSync,
-  mkdirSync,
-  mkdtempSync,
-  readFileSync,
-  rmSync,
-  writeFileSync,
-} from 'node:fs';
+import { describe, expect, it } from 'vitest';
 import os from 'node:os';
 import { join } from 'node:path';
 
 import {
   type CliArgs,
   type Confidence,
-  type PirStatusFile,
   degrade,
   parseArgs,
   rollForward,
   subtractDays,
-  validateSource,
 } from '../../scripts/roll-forward-pirs';
 
 import { validFixture } from './_shared.js';

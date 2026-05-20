@@ -5,7 +5,7 @@
  * source-line mapping table.
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -49,12 +49,6 @@ interface GenerateNewsIndexesModule {
 import { beforeAll } from 'vitest';
 
 describe('generateAllIndexes', () => {
-  let module: GenerateNewsIndexesModule;
-
-  beforeEach(async () => {
-    module = await import('../../scripts/generate-news-indexes.js') as unknown as GenerateNewsIndexesModule;
-  });
-
   afterEach(() => {
     vi.clearAllMocks();
   });

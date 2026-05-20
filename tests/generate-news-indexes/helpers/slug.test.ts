@@ -9,8 +9,8 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import type { Language } from '../../scripts/types/language.js';
-import type { ArticleCategory } from '../../scripts/types/article.js';
+import type { Language } from '../../../scripts/types/language.js';
+import type { ArticleCategory } from '../../../scripts/types/article.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
