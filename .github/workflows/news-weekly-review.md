@@ -59,10 +59,8 @@ network:
     - github
     - defaults
     # ── Container registries (node:26-alpine pulls for SCB + WB MCP) ─────────
-    - docker.io
-    - registry-1.docker.io
-    - auth.docker.io
-    - production.cloudflare.docker.com
+    # `containers` ecosystem covers ghcr.io + *.docker.io + Docker Hub auth/CDN endpoints.
+    - containers
     # ── Riksdag / Regering MCP server + Swedish parliament + government ──────
     - riksdag-regering-ai.onrender.com
     - data.riksdagen.se
@@ -138,8 +136,8 @@ network:
     - www.ciacompliancemanager.com
     - blacktrigram.com
     - www.blacktrigram.com
-    # ── GitHub raw content (covered by `github` ecosystem; pinned for safe-outputs subset rule)
-    - raw.githubusercontent.com
+    # ── GitHub raw content is covered by the `github` ecosystem identifier above.
+    # Pinned FQDN remains in `safe-outputs.allowed-domains` below (only FQDNs allowed there).
 
 mcp-servers:
   riksdag-regering:

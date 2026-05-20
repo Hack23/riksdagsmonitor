@@ -6,14 +6,22 @@ name: Compile Agentic Workflows
 on:
   workflow_dispatch:
 
+# Only one compile run at a time. Cancelling in-flight runs is unsafe because
+# they may have already pushed to main, so wait instead.
+concurrency:
+  group: compile-agentic-workflows
+  cancel-in-progress: false
+
 permissions:
   contents: write
-  actions: write
 
 jobs:
   compile:
     name: Compile Agentic Workflows
     runs-on: ubuntu-latest
+    # Bounded budget: gh-aw install + compile of 14 workflows + validation
+    # consistently runs under 6 minutes; 15 leaves slack for action-pin refresh.
+    timeout-minutes: 15
 
     steps:
       - name: Harden Runner
@@ -42,11 +50,18 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
-      - name: Delete existing lock files
-        run: find .github/workflows -name "*.lock.yml" -type f -delete
+      - name: Apply gh-aw auto-fix codemods
+        # Runs deprecation codemods before compile so workflows always converge
+        # on the latest gh-aw schema without manual intervention. No-op when
+        # nothing needs fixing (exits 0 with "✓ No fixes needed").
+        run: gh aw fix --write
+        env:
+          GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
-      - name: Compile all workflows
-        run: gh aw compile
+      - name: Compile all workflows (with --purge of stale lock files)
+        # --purge deletes any .lock.yml whose source .md no longer exists,
+        # replacing the previous separate `find ... -delete` step.
+        run: gh aw compile --purge
         env:
           GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
