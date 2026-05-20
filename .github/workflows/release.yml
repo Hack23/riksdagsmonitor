@@ -17,7 +17,7 @@ name: Release with Attestations
 #   └── typedoc              → API docs (parallel)
 #       ├── e2e (matrix)     → cypress shards (parallel; needs build)
 #       ├── package          → SBOM + attestations (needs build)
-#       │   └── release      → GitHub Release (needs package, deploy-docs)
+#       │   └── release      → GitHub Release (needs prepare, build, package, unit-tests, e2e)
 #       ├── deploy-docs      → docs/ → GitHub Pages (needs build, tests, typedoc)
 #       └── npm-publish      → build:lib + publish (runs LAST; only if every
 #                              upstream job succeeded)
