@@ -6,7 +6,7 @@ date: 2026-04-28
 subfolder: propositions
 slug: 2026-04-28-propositions
 source_folder: analysis/daily/2026-04-28/propositions
-generated_at: 2026-05-20T16:18:47.396Z
+generated_at: 2026-05-20T20:11:09.054Z
 language: en
 layout: article
 ---
@@ -82,6 +82,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1919,13 +1932,687 @@ flowchart TD
 All documents sourced from official riksdag-regering-mcp API (riksdagen.se + regeringen.se).
 Data sourced from 2026-04-23 via lookback fallback — all 4 documents have full text available.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# مقترحات الحكومة السويدية تُشير إلى إصلاح مصرفي وعقوبات على الرعاية الاجتماعية
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-28  
+**التصنيف**: عام | مستوى الثقة: مرتفع [B2]  
+**معرّف التشغيل**: 25037283767  
+
+---
+
+### 🎯 الخلاصة التنفيذية
+
+قدّمت حكومة Tidö أربعة مقترحات في 23 أبريل 2026، تقودها تطبيق حزمة البنوك الأوروبية (HD03253) — أشمل تنظيم مالي منذ عام 2014 — إلى جانب قيد مشحون سياسياً على استحقاقات الرعاية الاجتماعية للمسجونين (HD03252)، وتقييم إدارة الديون لخمس سنوات (HD03104)، وتطبيق مكافحة تزوير المسجّلات (HD03256). تُشير هذه المقترحات مجتمعةً إلى حكومة تُنفّذ أجندتها التشريعية وفق الجدول الزمني رغم كونها ائتلافاً أقلياً، إذ تمثّل حزمة البنوك الأوروبية انسجام السويد مع إصلاحات رأس المال وفق اتفاقية بازل الثالثة، التي ستُعيد رسم هيكل رأس المال في القطاع المصرفي السويدي مباشرةً.
+
+### 🧭 القرارات التي يدعمها هذا الملخص
+
+1. **الاستراتيجية البرلمانية**: تتولّى لجنة FiU مقترحَين ماليَّين (HD03103، HD03253)؛ وتتولّى SfU مقترحاً واحداً (HD03252)؛ وتتولّى TU مقترحاً واحداً (HD03256) — على أحزاب المعارضة أن تقرّر ما إذا كانت ستطعن في تطبيق أوزان المخاطر في الحزمة المصرفية أو تقبل التحويل الأوروبي باعتباره غير قابل للتفاوض.
+2. **التموضع الانتخابي**: يمنح HD03252 (الصلة بين الرعاية الاجتماعية والجريمة) ائتلاف Tidö إشارة مسبقة بشأن سياسة القانون والنظام الاجتماعية، في حين يمكن لـ S وMP وV تأطيره باعتباره وصماً لبرامج إعادة التأهيل. يجب على الأحزاب معايرة موقفها قبيل انتخابات خريف 2026.
+3. **تقييم المخاطر**: قد ترفع التغييرات في متطلبات رأس المال للحزمة المصرفية الأوروبية تكاليف تمويل البنوك السويدية بمقدار 10–15 نقطة أساس (ثقة مرتفعة)، مما يُولّد ضغطاً استثارياً على Bankföreningen وقراراً سياسياً على FiU.
+
+### ⚡ قراءة في 60 ثانية
+
+- **حزمة البنوك الأوروبية (HD03253)** [B2 مرتفع]: تطبيق CRR3/CRD6 يُشدّد حدود رأس المال الدنيا للبنوك السويدية. تواجه Nordea وSEB وHandelsbanken وSwedbank حدوداً دنيا مُعدَّلة لأوزان المخاطر للقروض العقارية السكنية (حدّ إنتاج IRB 72.5%). الأثر التنظيمي المتوقع على رأس المال: ارتفاع معتدل في متطلبات الشريحة الأولى [riksdagen.se].
+- **إصلاح الرعاية الاجتماعية والجريمة (HD03252)** [C2 متوسط]: يُقيّد socialförsäkringsförmåner للأشخاص الموجودين في kontrollerat boende أو säkerhetsförvaring. أولوية سياسية لـ SD؛ يعارضها S وV لأسباب تتعلق بإعادة التأهيل [riksdagen.se].
+- **تقييم إدارة الديون (HD03104)** [B3 متوسط]: حقّقت Riksgälden أهداف مرساة الديون 2021–2025؛ انخفضت الديون الحكومية المركزية من ~24% إلى ~19% من الناتج المحلي الإجمالي. تُشير skrivelse الحكومية إلى ثقة في الإطار الحالي؛ لا حاجة لإجراء برلماني [riksdagen.se].
+- **تطبيق المسجّلات (HD03256)** [B3 متوسط]: عقوبات أشدّ وصلاحيات تطبيق معزّزة لمكافحة تزوير المسجّلات. تطبيق للوائح الأوروبية 2020/1054. شبكات الاحتيال العابرة للحدود هي الهدف [riksdagen.se].
+
+### 🔭 أبرز إشارة مستقبلية
+
+**راقب**: جلسة استماع لجنة FiU بشأن HD03253 (حزمة البنوك الأوروبية) في مايو 2026. إذا قدّمت Bankföreningen أو Riksbanken آراء سلبية بشأن حدود أوزان المخاطر، فقد يُفضي ذلك إلى تعديلات وتأخير التطبيق — وهو الحدث التنظيمي المالي الفردي الأكثر أهمية في هذه الدورة.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+</div>
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-28  
+**Klassifikation**: OFFENTLIG | Konfidensniveau: HØJ [B2]  
+**Kørsels-ID**: 25037283767  
+
+---
+
+### 🎯 BLUF
+
+Tidö-regeringen fremlagde fire propositioner den 23. april 2026, anført af implementeringen af EU-bankpakken (HD03253) — den mest gennemgribende finansielle regulering siden 2014 — sammen med en politisk ladet velfærdsbegrænsning for frihedsberøvede (HD03252), femårsevalueringen af gældsforvaltningen (HD03104) og kontrollen med takografsvig (HD03256). Samlet set signalerer disse en regering, der gennemfører sin lovgivningsmæssige dagsorden på skema trods en mindretalskoalition, hvor EU-bankpakken repræsenterer Sveriges tilpasning til Basel III's kapitalreformer, der direkte vil omforme den svenske banksektor kapitalstruktur.
+
+### 🧭 Beslutninger dette notat understøtter
+
+1. **Parlamentarisk strategi**: FiU behandler to finansudvalgspropositioner (HD03103, HD03253); SfU behandler én (HD03252); TU behandler én (HD03256) — oppositionspartierne skal beslutte, om de vil anfægte bankpakkens implementering af risikovægte eller acceptere EU-transposition som ikke-forhandlingsbar.
+2. **Valgpositionering**: HD03252 (velfærd–kriminalitetsneksus) giver Tidö-koalitionen et forhåndssignal om lov-og-orden velfærdspolitik, mens S, MP og V kan fremstille det som stigmatisering af rehabiliteringsprogrammer. Partierne skal kalibrere deres position inden efterårsvalget 2026.
+3. **Risikovurdering**: EU-bankpakkens ændrede kapitalkrav kan øge svenske bankers finansieringsomkostninger med 10–15 basispoint (HØJ konfidensniveau), hvilket skaber et lobbyistisk pres for Bankföreningen og en politisk beslutning for FiU.
+
+### ⚡ 60-sekunders læsning
+
+- **EU-bankpakke (HD03253)** [B2 HØJ]: CRR3/CRD6-implementering stramme kapitalgulve for svenske banker. Nordea, SEB, Handelsbanken, Swedbank møder reviderede risikovægtsgulve for boliglån (IRB-outputgulv 72,5 %). Beregnet regulatorisk kapitalindvirkning: moderat stigning i Tier 1-krav [riksdagen.se].
+- **Velfærd–kriminalitetsreform (HD03252)** [C2 MEDIUM]: Begrænser socialförsäkringsförmåner for personer i kontrollerat boende eller säkerhetsförvaring. SD's politiske prioritet; modsat af S og V med rehabiliteringsargumenter [riksdagen.se].
+- **Gældsforvaltningsevaluering (HD03104)** [B3 MEDIUM]: Riksgälden opfyldte gældsankermål 2021–2025; statslig gæld faldt fra ~24 % til ~19 % af BNP. Regeringsskrivelse signalerer tillid til nuværende ramme; ingen parlamentarisk handling påkrævet [riksdagen.se].
+- **Takograftilsyn (HD03256)** [B3 MEDIUM]: Højere sanktioner og styrkede tilsynsbeføjelser for takografsvig. Implementerer EU-forordning 2020/1054. Grænseoverskridende organiserede svignetværk er målet [riksdagen.se].
+
+### 🔭 Vigtigste fremtidssignal
+
+**Følg med**: FiU's udvalgsbehandling af HD03253 (EU-bankpakken) i maj 2026. Hvis Bankföreningen eller Riksbanken indgiver negative høringssvar om risikovægtsgulvene, kan det udløse ændringer og forsinke implementeringen — den vigtigste enkeltbegivenhed inden for finansiel regulering i denne samling.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-28  
+**Klassifikation**: ÖFFENTLICH | Konfidenzniveau: HOCH [B2]  
+**Ausführungs-ID**: 25037283767  
+
+---
+
+### 🎯 BLUF
+
+Die Tidö-Regierung legte am 23. April 2026 vier Gesetzentwürfe vor, angeführt von der Umsetzung des EU-Bankenpakets (HD03253) — der weitreichendsten Finanzregulierung seit 2014 — sowie einer politisch aufgeladenen Wohlfahrtsbeschränkung für Inhaftierte (HD03252), der fünfjährigen Schuldenverwaltungsevaluierung (HD03104) und der Durchsetzung von Tachographenbetrug (HD03256). Zusammen signalisieren diese eine Regierung, die ihre Gesetzgebungsagenda trotz einer Minderheitskoalition planmäßig umsetzt, wobei das EU-Bankenpaket Schwedens Ausrichtung an den Basel-III-Kapitalreformen darstellt, die die Kapitalstruktur des schwedischen Bankensektors direkt umgestalten werden.
+
+### 🧭 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Parlamentarische Strategie**: FiU befasst sich mit zwei Finanzausschussvorlagen (HD03103, HD03253); SfU mit einer (HD03252); TU mit einer (HD03256) — Oppositionsparteien müssen entscheiden, ob sie die Risikogewichtsimplementierung des Bankenpakets anfechten oder die EU-Transposition als nicht verhandelbar akzeptieren.
+2. **Wahlpositionierung**: HD03252 (Wohlfahrt–Kriminalitätsnexus) gibt der Tidö-Koalition ein Vorabsignal zur Recht-und-Ordnung-Wohlfahrtspolitik, während S, MP und V es als Stigmatisierung von Rehabilitierungsprogrammen rahmen können. Parteien müssen ihre Position vor der Herbstwahl 2026 kalibrieren.
+3. **Risikobewertung**: Die geänderten Kapitalanforderungen des EU-Bankenpakets könnten die Finanzierungskosten schwedischer Banken um 10–15 Basispunkte erhöhen (HOHE Konfidenz), was einen Lobbydruck für Bankföreningen und eine politische Entscheidung für FiU schafft.
+
+### ⚡ 60-Sekunden-Lektüre
+
+- **EU-Bankenpaket (HD03253)** [B2 HOCH]: CRR3/CRD6-Implementierung verschärft Kapitaluntergrenzen für schwedische Banken. Nordea, SEB, Handelsbanken, Swedbank sehen sich revidierten Risikogewichtsuntergrenzen für Wohnungshypotheken gegenüber (IRB-Ausgabeuntergrenze 72,5 %). Voraussichtliche regulatorische Kapitalauswirkung: moderater Anstieg der Tier-1-Anforderungen [riksdagen.se].
+- **Wohlfahrt–Kriminalitätsreform (HD03252)** [C2 MITTEL]: Beschränkt socialförsäkringsförmåner für Personen in kontrollerat boende oder säkerhetsförvaring. SD-politische Priorität; von S und V aus Rehabilitierungsgründen abgelehnt [riksdagen.se].
+- **Schuldenverwaltungsevaluierung (HD03104)** [B3 MITTEL]: Riksgälden erfüllte Schuldenanker-Ziele 2021–2025; Staatsschuld sank von ~24 % auf ~19 % des BIP. Regierungsschreiben signalisiert Vertrauen in den bestehenden Rahmen; kein parlamentarisches Handeln erforderlich [riksdagen.se].
+- **Tachographendurchsetzung (HD03256)** [B3 MITTEL]: Höhere Strafen und verstärkte Durchsetzungsbefugnisse bei Tachographenbetrug. Setzt EU-Verordnung 2020/1054 um. Grenzüberschreitende organisierte Betrugsnetzwerke werden ins Visier genommen [riksdagen.se].
+
+### 🔭 Wichtigstes Zukunftssignal
+
+**Beachten**: FiU-Ausschussanhörung zu HD03253 (EU-Bankenpaket) im Mai 2026. Wenn Bankföreningen oder Riksbanken negative Stellungnahmen zu Risikogewichtsuntergrenzen einreichen, könnte dies Änderungen auslösen und die Umsetzung verzögern — das bedeutendste einzelne Finanzregulierungsereignis dieser Legislaturperiode.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-28  
+**Clasificación**: PÚBLICO | Nivel de confianza: ALTO [B2]  
+**ID de ejecución**: 25037283767  
+
+---
+
+### 🎯 BLUF
+
+El gobierno Tidö presentó cuatro propuestas el 23 de abril de 2026, lideradas por la implementación del paquete bancario de la UE (HD03253) — la reforma regulatoria financiera más significativa desde 2014 — junto con una restrictiva políticamente cargada sobre prestaciones sociales para personas encarceladas (HD03252), la evaluación quinquenal de la gestión de la deuda (HD03104) y la aplicación contra el fraude con tacógrafos (HD03256). En conjunto, estas señalan un gobierno que ejecuta su agenda legislativa según lo previsto a pesar de una coalición minoritaria, siendo el paquete bancario de la UE la alineación de Suecia con las reformas de capital de Basilea III que remodelarán directamente la estructura de capital del sector bancario sueco.
+
+### 🧭 Decisiones que apoya este documento
+
+1. **Estrategia parlamentaria**: FiU trata dos propuestas de la comisión de finanzas (HD03103, HD03253); SfU trata una (HD03252); TU trata una (HD03256) — los partidos de oposición deben decidir si desafían la implementación de ponderaciones de riesgo del paquete bancario o aceptan la transposición de la UE como no negociable.
+2. **Posicionamiento electoral**: HD03252 (nexo bienestar–crimen) da a la coalición Tidö una señal previa a las elecciones sobre política de bienestar de ley y orden, mientras que S, MP y V pueden enmarcarlo como estigmatización de programas de rehabilitación. Los partidos deben calibrar su posición antes de las elecciones de otoño de 2026.
+3. **Evaluación de riesgos**: Los cambios en los requisitos de capital del paquete bancario de la UE podrían aumentar los costos de financiamiento de los bancos suecos entre 10 y 15 puntos básicos (confianza ALTA), creando presión de cabildeo para Bankföreningen y una decisión política para FiU.
+
+### ⚡ Lectura de 60 segundos
+
+- **Paquete bancario UE (HD03253)** [B2 ALTO]: La implementación de CRR3/CRD6 endurece los suelos de capital para los bancos suecos. Nordea, SEB, Handelsbanken, Swedbank enfrentan suelos de ponderación de riesgo revisados para hipotecas residenciales (suelo de producción IRB 72,5 %). Impacto de capital regulatorio proyectado: aumento moderado de los requisitos de Tier 1 [riksdagen.se].
+- **Reforma bienestar–crimen (HD03252)** [C2 MEDIO]: Restringe las socialförsäkringsförmåner para personas en kontrollerat boende o säkerhetsförvaring. Prioridad política de SD; rechazada por S y V por razones de rehabilitación [riksdagen.se].
+- **Evaluación de gestión de deuda (HD03104)** [B3 MEDIO]: Riksgälden cumplió los objetivos de anclaje de deuda 2021–2025; la deuda pública cayó de ~24 % a ~19 % del PIB. La skrivelse gubernamental señala confianza en el marco actual; no se requiere acción parlamentaria [riksdagen.se].
+- **Aplicación tacógrafo (HD03256)** [B3 MEDIO]: Sanciones más altas y poderes de aplicación mejorados para el fraude con tacógrafos. Implementa el Reglamento UE 2020/1054. Redes organizadas transfronterizas de fraude son el objetivo [riksdagen.se].
+
+### 🔭 Principal señal de futuro
+
+**A vigilar**: Audiencia de la comisión FiU sobre HD03253 (paquete bancario de la UE) en mayo de 2026. Si Bankföreningen o Riksbanken presentan opiniones negativas sobre los suelos de ponderación de riesgo, podría desencadenar enmiendas y retrasar la implementación — el evento regulatorio financiero individual más significativo de esta sesión.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_fi.md -->
+
+**Kirjoittaja**: James Pether Sörling  
+**Päivämäärä**: 2026-04-28  
+**Luokitus**: JULKINEN | Luottamustaso: KORKEA [B2]  
+**Ajo-ID**: 25037283767  
+
+---
+
+### 🎯 BLUF
+
+Tidö-hallitus esitti neljä esitystä 23. huhtikuuta 2026, joista merkittävin on EU:n pankkipaketin (HD03253) täytäntöönpano — merkittävin rahoitussääntely vuoden 2014 jälkeen — sekä poliittisesti latautunut vapaudenmenetystä koskeva sosiaalietuuksien rajoitus (HD03252), viisivuotinen velanhallinta-arviointi (HD03104) ja ajopiirturipetoksen valvonta (HD03256). Nämä esitykset osoittavat yhteensä hallituksen toteuttavan lainsäädäntöohjelmaansa aikataulussa vähemmistökoalitiosta huolimatta, ja EU:n pankkipaketti edustaa Ruotsin sopeutumista Basel III:n pääomauudistuksiin, jotka muokkaavat suoraan ruotsalaisen pankkisektorin pääomarakennetta.
+
+### 🧭 Päätökset, joita tämä tiedote tukee
+
+1. **Parlamentaarinen strategia**: FiU käsittelee kahta valtiovarainvaliokunnan esitystä (HD03103, HD03253); SfU käsittelee yhden (HD03252); TU käsittelee yhden (HD03256) — oppositiopuolueiden on päätettävä, haluavatko ne haastaa pankkipaketin riskipainototeutuksen vai hyväksyä EU:n transponoinnin neuvottelukelvottomana.
+2. **Vaalipositiointi**: HD03252 (hyvinvointi–rikoskytkös) antaa Tidö-koalitiolle ennakoivan signaalin laki-ja-järjestys-hyvinvointipolitiikasta, kun taas S, MP ja V voivat kehystää sen kuntoutusohjelmat stigmatisoivana. Puolueiden on kalibroitava kantansa ennen syksyn 2026 vaaleja.
+3. **Riskinarviointi**: EU:n pankkipaketin muutetut pääomavaatimukset voivat nostaa ruotsalaisten pankkien rahoituskustannuksia 10–15 peruspistettä (KORKEA luottamustaso), mikä luo lobbausvaikutuksen Bankföreningenille ja politiikkapäätöksen FiU:lle.
+
+### ⚡ 60 sekunnin tiivistelmä
+
+- **EU:n pankkipaketti (HD03253)** [B2 KORKEA]: CRR3/CRD6-täytäntöönpano tiukentaa pääomalattioja ruotsalaisille pankeille. Nordea, SEB, Handelsbanken, Swedbank kohtaavat tarkistetut riskipainolattiait asuntolainoille (IRB-tuotosgolvi 72,5 %). Arvioitu sääntelypääomavaikutus: Tier 1 -vaatimusten maltillinen kasvu [riksdagen.se].
+- **Hyvinvointi–rikosreformi (HD03252)** [C2 KESKITASO]: Rajoittaa socialförsäkringsförmåner henkilöille, jotka asuvat kontrollerat boende- tai säkerhetsförvaring-tiloissa. SD:n poliittinen prioriteetti; S ja V vastustavat kuntoutusperustein [riksdagen.se].
+- **Velanhallinta-arviointi (HD03104)** [B3 KESKITASO]: Riksgälden saavutti velkaankkuritavoitteet 2021–2025; valtion velka laski ~24 %:sta ~19 %:iin BKT:sta. Hallituksen kirjelmä osoittaa luottamuksen nykyiseen kehykseen; parlamentaarisia toimia ei tarvita [riksdagen.se].
+- **Ajopiirturien valvonta (HD03256)** [B3 KESKITASO]: Korkeammat rangaistukset ja tehostetut valvontavaltuudet ajopiirturipetokselle. Panee täytäntöön EU:n asetuksen 2020/1054. Rajat ylittävät organisoidut petosverkostot ovat kohteena [riksdagen.se].
+
+### 🔭 Tärkein tulevaisuuden signaali
+
+**Seuraa**: FiU:n valiokunnan kuuleminen HD03253:sta (EU:n pankkipaketti) toukokuussa 2026. Jos Bankföreningen tai Riksbanken jättävät kielteisiä lausuntoja riskipainolattiaoista, tämä saattaa laukaista muutoksia ja viivästyttää täytäntöönpanoa — merkittävin yksittäinen rahoitussääntelytapahtuma tällä vaalikaudella.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**ID d'exécution** : 25037283767  
+
+---
+
+### 🎯 BLUF
+
+Le gouvernement Tidö a déposé quatre propositions le 23 avril 2026, menées par la mise en œuvre du paquet bancaire européen (HD03253) — la réforme réglementaire financière la plus conséquente depuis 2014 — accompagnée d'une restriction de prestations sociales politiquement chargée pour les personnes incarcérées (HD03252), de l'évaluation quinquennale de la gestion de la dette (HD03104) et de l'application contre la fraude au tachygraphe (HD03256). Ensemble, ces mesures signalent un gouvernement qui exécute son programme législatif dans les délais malgré une coalition minoritaire, le paquet bancaire européen représentant l'alignement de la Suède sur les réformes de fonds propres de Bâle III qui remodèleront directement la structure du capital du secteur bancaire suédois.
+
+### 🧭 Décisions que ce document soutient
+
+1. **Stratégie parlementaire** : FiU traite deux propositions de la commission des finances (HD03103, HD03253) ; SfU traite une (HD03252) ; TU traite une (HD03256) — les partis d'opposition doivent décider s'ils contestent la mise en œuvre des pondérations de risque du paquet bancaire ou acceptent la transposition européenne comme non négociable.
+2. **Positionnement électoral** : HD03252 (nexus bien-être–criminalité) donne à la coalition Tidö un signal avant l'élection sur la politique sociale en matière de loi et d'ordre, tandis que S, MP et V peuvent le cadrer comme une stigmatisation des programmes de réhabilitation. Les partis doivent calibrer leur position avant les élections d'automne 2026.
+3. **Évaluation des risques** : Les modifications des exigences de fonds propres du paquet bancaire européen pourraient augmenter les coûts de financement des banques suédoises de 10 à 15 points de base (confiance ÉLEVÉE), créant une pression de lobbying pour Bankföreningen et une décision politique pour FiU.
+
+### ⚡ Lecture en 60 secondes
+
+- **Paquet bancaire UE (HD03253)** [B2 ÉLEVÉ] : La mise en œuvre de CRR3/CRD6 resserre les planchers de fonds propres pour les banques suédoises. Nordea, SEB, Handelsbanken, Swedbank font face à des planchers de pondération de risque révisés pour les prêts hypothécaires résidentiels (plancher de sortie IRB 72,5 %). Impact réglementaire prévu sur les fonds propres : augmentation modérée des exigences Tier 1 [riksdagen.se].
+- **Réforme bien-être–criminalité (HD03252)** [C2 MOYEN] : Restreint les socialförsäkringsförmåner pour les personnes en kontrollerat boende ou säkerhetsförvaring. Priorité politique de SD ; opposé par S et V pour des raisons de réhabilitation [riksdagen.se].
+- **Évaluation de la gestion de la dette (HD03104)** [B3 MOYEN] : Riksgälden a atteint les objectifs d'ancre de la dette 2021–2025 ; la dette publique est tombée de ~24 % à ~19 % du PIB. La skrivelse gouvernementale signale la confiance dans le cadre actuel ; aucune action parlementaire requise [riksdagen.se].
+- **Application tachygraphe (HD03256)** [B3 MOYEN] : Sanctions plus élevées et pouvoirs d'application renforcés pour la fraude au tachygraphe. Met en œuvre le règlement UE 2020/1054. Des réseaux organisés de fraude transfrontaliers sont ciblés [riksdagen.se].
+
+### 🔭 Principal signal prospectif
+
+**À surveiller** : Audition de la commission FiU sur HD03253 (paquet bancaire européen) en mai 2026. Si Bankföreningen ou Riksbanken soumettent des avis négatifs sur les planchers de pondération de risque, cela pourrait déclencher des amendements et retarder la mise en œuvre — l'événement réglementaire financier unique le plus significatif de cette session.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# הצעות ממשלת שוודיה מאותתות על רפורמה בנקאית וסנקציות רווחה
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-28  
+**סיווג**: ציבורי | רמת ביטחון: גבוהה [B2]  
+**מזהה הרצה**: 25037283767  
+
+---
+
+### 🎯 תמצית מנהלים
+
+ממשלת Tidö הגישה ארבע הצעות ב-23 באפריל 2026, שעיקרן יישום חבילת הבנקאות האירופית (HD03253) — הרגולציה הפיננסית המקיפה ביותר מאז 2014 — לצד הגבלת הטבות רווחה רגישה פוליטית לאסירים (HD03252), הערכת ניהול חוב לחמש שנים (HD03104), ואכיפת מניעת הונאת טכוגרף (HD03256). ביחד, הצעות אלו מאותתות על ממשלה המבצעת את סדר יומה החקיקתי לפי תוכנית למרות קואליציה מיעוטית, כאשר חבילת הבנקאות מייצגת את התאמת שוודיה לרפורמות ההון של באזל III שיעצבו מחדש את מבנה ההון של מגזר הבנקאות השוודי.
+
+### 🧭 החלטות שמסמך זה תומך בהן
+
+1. **אסטרטגיה פרלמנטרית**: FiU מטפלת בשתי הצעות ועדת האוצר (HD03103, HD03253); SfU מטפלת באחת (HD03252); TU מטפלת באחת (HD03256) — מפלגות האופוזיציה חייבות להחליט האם לערוך על יישום משקולות הסיכון של חבילת הבנקאות או לקבל את הטרנספוזיציה האירופית כלא ניתנת למשא ומתן.
+2. **מיצוב בחירות**: HD03252 (קשר רווחה–פשע) מעניק לקואליציית Tidö איתות מוקדם על מדיניות רווחה של חוק וסדר, בעוד S, MP ו-V יכולים למסגר אותה כסטיגמטיזציה של תוכניות שיקום. מפלגות חייבות לכייל עמדתן לפני בחירות סתיו 2026.
+3. **הערכת סיכונים**: שינויי דרישות ההון של חבילת הבנקאות האירופית עלולים להעלות עלויות מימון בנקים שוודיים ב-10–15 נקודות בסיס (ביטחון גבוה), מה שיוצר לחץ לובינג עבור Bankföreningen והחלטת מדיניות עבור FiU.
+
+### ⚡ קריאה של 60 שניות
+
+- **חבילת בנקאות אירופית (HD03253)** [B2 גבוה]: יישום CRR3/CRD6 מחמיר רצפות הון לבנקים שוודיים. Nordea, SEB, Handelsbanken, Swedbank מתמודדים עם רצפות משקל סיכון מתוקנות למשכנתאות מגורים (רצפת פלט IRB 72.5%). השפעת הון רגולטורית צפויה: עלייה מתונה בדרישות Tier 1 [riksdagen.se].
+- **רפורמת רווחה–פשע (HD03252)** [C2 בינוני]: מגביל socialförsäkringsförmåner לאנשים ב-kontrollerat boende או säkerhetsförvaring. עדיפות פוליטית של SD; מתנגדים לו S ו-V על בסיס שיקום [riksdagen.se].
+- **הערכת ניהול חוב (HD03104)** [B3 בינוני]: Riksgälden עמדה ביעדי עוגן חוב 2021–2025; חוב ממשלתי מרכזי ירד מ-~24% ל-~19% מהתמ"ג. skrivelse ממשלתית מאותת על אמון במסגרת הנוכחית; לא נדרשת פעולה פרלמנטרית [riksdagen.se].
+- **אכיפת טכוגרף (HD03256)** [B3 בינוני]: עונשים גבוהים יותר וסמכויות אכיפה מחוזקות להונאת טכוגרף. מיישם תקנת EU 2020/1054. רשתות הונאה מאורגנות חוצות גבולות הן היעד [riksdagen.se].
+
+### 🔭 האיתות קדימה העיקרי
+
+**עקוב**: שימוע ועדת FiU על HD03253 (חבילת בנקאות אירופית) במאי 2026. אם Bankföreningen או Riksbanken יגישו עמדות שליליות על רצפות משקל סיכון, זה עלול לעורר תיקונים ולעכב את היישום — האירוע הרגולטורי הפיננסי הבודד המשמעותי ביותר של מושב זה.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+</div>
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-04-28  
+**分類**: 公開 | 信頼度: 高 [B2]  
+**実行ID**: 25037283767  
+
+---
+
+### 🎯 要約
+
+Tidö政権は2026年4月23日に4件の法案を提出しました。その中心はEU銀行パッケージ（HD03253）の実施——2014年以来最も重要な金融規制改革——に加え、収監者への社会給付制限（HD03252）、5年間の債務管理評価（HD03104）、タコグラフ不正の執行強化（HD03256）です。これらの法案は、少数連立政権にもかかわらず、政府が立法議題を計画通り実行していることを示しています。EU銀行パッケージは、スウェーデンの銀行セクターの資本構造を直接的に再編するバーゼルIII資本改革への整合を意味します。
+
+### 🧭 この文書が支援する決定
+
+1. **議会戦略**: FiUは財政委員会の2つの法案（HD03103、HD03253）を扱い、SfUは1件（HD03252）、TUは1件（HD03256）を扱います。野党は銀行パッケージのリスクウェイト実施に異議を唱えるか、EU転換を交渉の余地なしとして受け入れるかを決定する必要があります。
+2. **選挙戦略**: HD03252（福祉と犯罪の関係）はTidö連立に対し法と秩序に関する福祉政策の事前シグナルを与え、一方でS、MP、Vはこれを更生プログラムの烙印付けとして枠組みすることができます。各党は2026年秋の選挙前に立場を調整する必要があります。
+3. **リスク評価**: EU銀行パッケージの自己資本要件変更により、スウェーデンの銀行の資金調達コストが10〜15ベーシスポイント上昇する可能性があります（高い信頼度）。これはBankföreningenへのロビー圧力とFiUへの政策決定を生み出します。
+
+### ⚡ 60秒で読む
+
+- **EU銀行パッケージ（HD03253）** [B2 高]: CRR3/CRD6の実施がスウェーデンの銀行の資本フロアを引き締めます。Nordea、SEB、Handelsbanken、Swedbankは住宅ローンに対するリスクウェイトフロアの改定（IRBアウトプットフロア72.5%）に直面します。予想される規制上の資本への影響：Tier 1要件の緩やかな増加 [riksdagen.se]。
+- **福祉・犯罪改革（HD03252）** [C2 中]: kontrollerat boendeまたはsäkerhetsförvaringの施設内にいる者のsocialförsäkringsförmånerを制限します。SDの政治的優先事項。SとVは更生を理由に反対しています [riksdagen.se]。
+- **債務管理評価（HD03104）** [B3 中]: Riksgäldenは2021〜2025年の債務アンカー目標を達成し、中央政府の債務はGDPの〜24%から〜19%に減少しました。政府のskriveleは現行の枠組みへの信頼を示しています。議会での対応は不要 [riksdagen.se]。
+- **タコグラフ執行（HD03256）** [B3 中]: タコグラフ不正に対するより高い罰則と強化された執行権限。EU規則2020/1054を実施します。国境を越えた組織的な不正ネットワークが対象です [riksdagen.se]。
+
+### 🔭 主な今後のシグナル
+
+**注目**: 2026年5月のHD03253（EU銀行パッケージ）に関するFiU委員会の公聴会。Bankföreningenまたはリクスバンクがリスクウェイトフロアに関して否定的な意見を提出した場合、修正案が生じ実施が遅延する可能性があります——今会期で最も重要な単独の金融規制イベントです。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-28  
+**분류**: 공개 | 신뢰도: 높음 [B2]  
+**실행 ID**: 25037283767  
+
+---
+
+### 🎯 핵심 요약
+
+Tidö 정부는 2026년 4월 23일 4건의 법안을 제출했습니다. 주요 내용은 EU 은행 패키지(HD03253) 이행——2014년 이후 가장 포괄적인 금융 규제 개혁——과 함께 수감자 사회급여 제한(HD03252), 5년간 부채 관리 평가(HD03104), 타코그래프 사기 집행 강화(HD03256)입니다. 이들 법안은 소수 연립 정부임에도 불구하고 입법 의제를 일정대로 추진하는 정부를 보여주며, EU 은행 패키지는 스웨덴 은행 부문의 자본 구조를 직접 재편할 바젤 III 자본 개혁에 대한 스웨덴의 정렬을 나타냅니다.
+
+### 🧭 이 문서가 지원하는 결정
+
+1. **의회 전략**: FiU는 재정위원회 법안 2건(HD03103, HD03253)을 다루고, SfU는 1건(HD03252), TU는 1건(HD03256)을 다룹니다. 야당은 은행 패키지의 위험 가중치 이행에 이의를 제기할지 아니면 EU 전환을 협상 불가로 수용할지 결정해야 합니다.
+2. **선거 포지셔닝**: HD03252(복지–범죄 연계)는 Tidö 연립에 법과 질서 복지 정책에 관한 사전 신호를 제공하는 반면, S, MP, V는 이를 재활 프로그램에 대한 낙인으로 규정할 수 있습니다. 각 당은 2026년 가을 선거 전에 입장을 조율해야 합니다.
+3. **위험 평가**: EU 은행 패키지의 자본 요건 변경으로 스웨덴 은행의 자금 조달 비용이 10~15 베이시스 포인트 상승할 수 있으며(높은 신뢰도), 이는 Bankföreningen에 대한 로비 압력과 FiU에 대한 정책 결정을 초래합니다.
+
+### ⚡ 60초 요약
+
+- **EU 은행 패키지(HD03253)** [B2 높음]: CRR3/CRD6 이행으로 스웨덴 은행의 자본 하한선이 강화됩니다. Nordea, SEB, Handelsbanken, Swedbank는 주택 담보 대출에 대한 위험 가중치 하한선 개정(IRB 출력 하한 72.5%)에 직면합니다. 예상 규제 자본 영향: Tier 1 요건 완만한 증가 [riksdagen.se].
+- **복지·범죄 개혁(HD03252)** [C2 중간]: kontrollerat boende 또는 säkerhetsförvaring에 있는 자의 socialförsäkringsförmåner를 제한합니다. SD의 정치적 우선순위. S와 V는 재활을 근거로 반대합니다 [riksdagen.se].
+- **부채 관리 평가(HD03104)** [B3 중간]: Riksgälden은 2021~2025년 부채 앵커 목표를 달성했으며, 중앙 정부 부채는 GDP의 ~24%에서 ~19%로 감소했습니다. 정부 skrivelse는 현재 체계에 대한 신뢰를 나타냅니다. 의회 조치 불필요 [riksdagen.se].
+- **타코그래프 집행(HD03256)** [B3 중간]: 타코그래프 사기에 대한 더 높은 처벌과 강화된 집행 권한. EU 규정 2020/1054 이행. 국경을 초월한 조직적 사기 네트워크가 대상 [riksdagen.se].
+
+### 🔭 주요 미래 신호
+
+**주목**: 2026년 5월 HD03253(EU 은행 패키지)에 관한 FiU 위원회 청문회. Bankföreningen 또는 Riksbanken이 위험 가중치 하한선에 관해 부정적 의견을 제출하면 개정이 촉발되고 이행이 지연될 수 있습니다——이번 회기의 가장 중요한 단일 금융 규제 이벤트입니다.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-28  
+**Classificatie**: OPENBAAR | Betrouwbaarheidsniveau: HOOG [B2]  
+**Uitvoerings-ID**: 25037283767  
+
+---
+
+### 🎯 BLUF
+
+De Tidö-regering diende op 23 april 2026 vier voorstellen in, aangevoerd door de implementatie van het EU-bankenpakket (HD03253) — de meest ingrijpende financiële regulering sinds 2014 — samen met een politiek geladen welzijnsbeperking voor gedetineerden (HD03252), de vijfjaarlijkse evaluatie van schuldbeheer (HD03104) en handhaving van tachograaffraudue (HD03256). Samen signaleren deze een regering die haar wetgevingsagenda tijdig uitvoert ondanks een minderheidskabinet, waarbij het EU-bankenpakket de afstemming van Zweden op de Basel III-kapitaalhervormingen vertegenwoordigt die de kapitaalstructuur van de Zweedse bankensector direct zullen hervormen.
+
+### 🧭 Beslissingen die dit document ondersteunt
+
+1. **Parlementaire strategie**: FiU behandelt twee financiëncommissievoorstellen (HD03103, HD03253); SfU behandelt één (HD03252); TU behandelt één (HD03256) — oppositiepartijen moeten beslissen of ze de implementatie van risicogewichten van het bankenpakket betwisten of EU-transposition als niet-onderhandelbaar accepteren.
+2. **Electorale positionering**: HD03252 (welzijn–misdaad nexus) geeft de Tidö-coalitie een vooruitlopend signaal over wet-en-ordebeleid, terwijl S, MP en V het kunnen framen als stigmatisering van rehabilitatieprogramma's. Partijen moeten hun positie kalibreren voor de verkiezingen van najaar 2026.
+3. **Risicobeoordeling**: De gewijzigde kapitaalvereisten van het EU-bankenpakket kunnen de financieringskosten van Zweedse banken verhogen met 10–15 basispunten (HOGE betrouwbaarheid), wat lobbydruk creëert voor Bankföreningen en een beleidsbeslissing voor FiU.
+
+### ⚡ 60-seconden lezing
+
+- **EU-bankenpakket (HD03253)** [B2 HOOG]: CRR3/CRD6-implementatie verstrakt kapitaalvloeren voor Zweedse banken. Nordea, SEB, Handelsbanken, Swedbank worden geconfronteerd met herziene risicogewichtsvloeren voor woninghypotheken (IRB-outputvloer 72,5 %). Verwacht regulatoir kapitaaleffect: matige stijging van Tier 1-vereisten [riksdagen.se].
+- **Welzijn–misdaadhervorming (HD03252)** [C2 GEMIDDELD]: Beperkt socialförsäkringsförmåner voor personen in kontrollerat boende of säkerhetsförvaring. SD-politieke prioriteit; tegengewerkt door S en V op rehabilitatiegronden [riksdagen.se].
+- **Schuldbeheer evaluatie (HD03104)** [B3 GEMIDDELD]: Riksgälden behaalde schuldanker-doelstellingen 2021–2025; staatsschuld daalde van ~24 % naar ~19 % van het BBP. Regeringsskrivelse signaleert vertrouwen in het huidige kader; geen parlementaire actie vereist [riksdagen.se].
+- **Tachograafhandhaving (HD03256)** [B3 GEMIDDELD]: Hogere straffen en versterkte handhavingsbevoegdheden voor tachograaffraude. Implementeert EU-verordening 2020/1054. Grensoverschrijdende georganiseerde fraudenetwerken zijn het doelwit [riksdagen.se].
+
+### 🔭 Belangrijkste toekomstsignaal
+
+**Volg**: FiU-commissievergadering over HD03253 (EU-bankenpakket) in mei 2026. Als Bankföreningen of Riksbanken negatieve adviezen indienen over risicogewichtsvloeren, kan dit wijzigingen teweegbrengen en de implementatie vertragen — de meest significante financiële reguleringsgebeurtenis van deze zitting.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-28  
+**Klassifisering**: OFFENTLIG | Konfidensnivå: HØY [B2]  
+**Kjørings-ID**: 25037283767  
+
+---
+
+### 🎯 BLUF
+
+Tidö-regjeringen la frem fire proposisjoner den 23. april 2026, ledet av implementeringen av EU-bankpakken (HD03253) — den mest gjennomgripende finansielle reguleringen siden 2014 — sammen med en politisk ladet velferdsrestriksjon for frihetsberøvede (HD03252), femårsevalueringen av gjeldsforvaltningen (HD03104) og håndhevelse av fartsskriversvindel (HD03256). Samlet signaliserer disse en regjering som gjennomfører sin lovgivningsagenda etter planen til tross for en mindretallskoalisjon, der EU-bankpakken representerer Sveriges tilpasning til Basel III-kapitalreformene som direkte vil omforme den svenske banksektorens kapitalstruktur.
+
+### 🧭 Beslutninger dette notatet støtter
+
+1. **Parlamentarisk strategi**: FiU behandler to finanskomiteen-proposisjoner (HD03103, HD03253); SfU behandler én (HD03252); TU behandler én (HD03256) — opposisjonspartiene må bestemme seg for om de vil utfordre bankpakkens implementering av risikovekter eller akseptere EU-transposisjon som ikke-forhandlingsbart.
+2. **Valgposisjonering**: HD03252 (velferd–kriminalitetsneksus) gir Tidö-koalisjonen et forhåndssignal om lov-og-orden velferdspolitikk, mens S, MP og V kan fremstille det som stigmatisering av rehabiliteringsprogrammer. Partiene må kalibrere sin posisjon foran høstvalget 2026.
+3. **Risikovurdering**: EU-bankpakkens endrede kapitalkrav kan øke svenske bankers finansieringskostnader med 10–15 basispunkter (HØY konfidensnivå), noe som skaper et lobbypress for Bankföreningen og en politisk beslutning for FiU.
+
+### ⚡ 60-sekunders lesing
+
+- **EU-bankpakke (HD03253)** [B2 HØY]: CRR3/CRD6-implementering strammer kapitalgulv for svenske banker. Nordea, SEB, Handelsbanken, Swedbank møter reviderte risikovektsgulv for boliglån (IRB-outputgulv 72,5 %). Beregnet regulatorisk kapitaleffekt: moderat økning i Tier 1-krav [riksdagen.se].
+- **Velferd–kriminalitetsreform (HD03252)** [C2 MIDDELS]: Begrenser socialförsäkringsförmåner for personer i kontrollerat boende eller säkerhetsförvaring. SDs politiske prioritering; motarbeidet av S og V på rehabiliteringsgrunnlag [riksdagen.se].
+- **Gjeldsforvaltningsevaluering (HD03104)** [B3 MIDDELS]: Riksgälden oppfylte gjeldsmålanker 2021–2025; statslig gjeld falt fra ~24 % til ~19 % av BNP. Regjeringsskrivelse signaliserer tillit til nåværende rammeverk; ingen parlamentarisk handling kreves [riksdagen.se].
+- **Fartsskriverhåndhevelse (HD03256)** [B3 MIDDELS]: Høyere straffer og styrket håndhevelsesmyndighet for fartsskriversvindel. Implementerer EU-forordning 2020/1054. Grenseoverskridende organiserte svindelnettverk er målet [riksdagen.se].
+
+### 🔭 Viktigste fremtidssignal
+
+**Følg med**: FiU-komiteens høring om HD03253 (EU-bankpakken) i mai 2026. Dersom Bankföreningen eller Riksbanken sender inn negative høringssvar om risikovektsgulvene, kan dette utløse endringer og forsinke implementeringen — den viktigste enkeltbegivenheten innen finansiell regulering i inneværende sesjon.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-28  
+**Klassificering**: OFFENTLIG | Konfidensgrad: HÖG [B2]  
+**Körnings-ID**: 25037283767  
+
+---
+
+### 🎯 BLUF
+
+Tidö-regeringen lade fram fyra propositioner den 23 april 2026, anförda av implementeringen av EU:s bankpaket (HD03253) — den mest genomgripande finansiella regleringen sedan 2014 — tillsammans med en politiskt laddad välfärdsbegränsning för frihetsberövade (HD03252), femårsutvärderingen av skuldförvaltningen (HD03104) och tillsyn av fardskrivarbedrägeri (HD03256). Sammantaget signalerar dessa en regering som genomför sitt lagstiftningsarbete enligt plan trots en minoritetskoalition, där EU:s bankpaket representerar Sveriges anpassning till Basel III:s kapitalreformer som direkt kommer att omforma den svenska banksektorns kapitalstruktur.
+
+### 🧭 Beslut detta PM stöder
+
+1. **Parlamentarisk strategi**: FiU hanterar två finansutskottspropositioner (HD03103, HD03253); SfU hanterar en (HD03252); TU hanterar en (HD03256) — oppositionspartierna måste besluta om de ska ifrågasätta bankpaketets implementering av riskvikter eller acceptera EU-transposition som icke-förhandlingsbart.
+2. **Valpositionering**: HD03252 (välfärd–brottslingsnexus) ger Tidö-koalitionen en signal om lag-och-ordnings välfärdspolitik inför valet, medan S, MP och V kan rama in det som stigmatisering av rehabiliteringsprogram. Partierna måste kalibrera sin position inför höstvalet 2026.
+3. **Riskbedömning**: EU-bankpaketets ändrade kapitalkrav kan höja svenska bankers finansieringskostnader med 10–15 baspunkter (HÖG konfidensgrad), vilket skapar ett lobbytryck för Bankföreningen och ett policybeslut för FiU.
+
+### ⚡ 60-sekunders läsning
+
+- **EU-bankpaket (HD03253)** [B2 HÖG]: CRR3/CRD6-implementering skärper kapitalgolven för svenska banker. Nordea, SEB, Handelsbanken, Swedbank möter reviderade riskviktsgolv för bostadslån (IRB-outputgolv 72,5 %). Beräknad regulatorisk kapitaleffekt: måttlig ökning av Tier 1-krav [riksdagen.se].
+- **Välfärd–brottsreform (HD03252)** [C2 MEDIUM]: Begränsar socialförsäkringsförmåner för personer i kontrollerat boende eller säkerhetsförvaring. SD:s politiska prioritering; motarbetas av S och V på rehabiliteringsgrunder [riksdagen.se].
+- **Skuldförvaltningsutvärdering (HD03104)** [B3 MEDIUM]: Riksgälden uppfyllde skuldankarmål 2021–2025; statsskulden sjönk från ~24 % till ~19 % av BNP. Regeringsskrivelse signalerar förtroende för nuvarande ramverk; inget parlamentariskt agerande krävs [riksdagen.se].
+- **Fardskrivartillsyn (HD03256)** [B3 MEDIUM]: Höjda påföljder och förstärkta tillsynsbefogenheter för fardskrivarbedrägeri. Implementerar EU-förordning 2020/1054. Gränsöverskridande organiserade bedrägerinettverk är målet [riksdagen.se].
+
+### 🔭 Viktigaste framåtsignalen
+
+**Bevaka**: FiU:s utskottshearing om HD03253 (EU-bankpaketet) i maj 2026. Om Bankföreningen eller Riksbanken lämnar negativa remissvar om riskviktsgolven kan det utlösa ändringar och fördröja implementeringen — den viktigaste enskilda finansiella regleringshändelsen under innevarande session.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-04-28  
+**分类**：公开 | 置信度：高 [B2]  
+**运行ID**：25037283767  
+
+---
+
+### 🎯 执行摘要
+
+Tidö政府于2026年4月23日提出四项议案，由欧盟银行一揽子计划（HD03253）的实施牵头——自2014年以来最重要的金融监管改革——以及对在押人员的福利限制措施（HD03252）、五年债务管理评估（HD03104）和打击行驶记录仪欺诈（HD03256）。这些议案总体上表明，政府尽管是少数派联合政府，仍在按计划推进立法议程。欧盟银行一揽子计划代表着瑞典与巴塞尔III资本改革的接轨，将直接重塑瑞典银行业的资本结构。
+
+### 🧭 本文件支持的决策
+
+1. **议会策略**：FiU负责处理两项财政委员会提案（HD03103、HD03253）；SfU处理一项（HD03252）；TU处理一项（HD03256）——反对党必须决定是否挑战银行一揽子计划的风险权重实施，或将欧盟转化视为不可谈判接受。
+2. **选举定位**：HD03252（福利与犯罪关联）为Tidö联盟提供了法律与秩序福利政策的预选信号，而S、MP和V可将其定性为对康复项目的污名化。各党需在2026年秋季大选前校准各自立场。
+3. **风险评估**：欧盟银行一揽子计划的资本要求变动可能使瑞典银行融资成本提高10至15个基点（高置信度），为Bankföreningen带来游说压力，也为FiU带来政策决策。
+
+### ⚡ 60秒速读
+
+- **欧盟银行一揽子计划（HD03253）** [B2 高]：CRR3/CRD6实施收紧了瑞典银行的资本下限。Nordea、SEB、Handelsbanken、Swedbank面临住房抵押贷款风险权重下限修订（IRB产出下限72.5%）。预计监管资本影响：一级资本要求适度上升 [riksdagen.se]。
+- **福利与犯罪改革（HD03252）** [C2 中]：限制处于kontrollerat boende或säkerhetsförvaring中人员的socialförsäkringsförmåner。SD的政治优先事项；S和V以康复理由反对 [riksdagen.se]。
+- **债务管理评估（HD03104）** [B3 中]：Riksgälden完成了2021至2025年的债务锚定目标；中央政府债务从约占GDP 24%降至19%。政府skrivelse表明对现行框架的信心；无需议会采取行动 [riksdagen.se]。
+- **行驶记录仪执法（HD03256）** [B3 中]：对行驶记录仪欺诈实施更高处罚和强化执法权限。执行欧盟法规2020/1054。跨境有组织欺诈网络为打击对象 [riksdagen.se]。
+
+### 🔭 主要前瞻信号
+
+**关注**：2026年5月FiU委员会关于HD03253（欧盟银行一揽子计划）的听证会。若Bankföreningen或Riksbanken就风险权重下限提交否定意见，可能引发修订并推迟实施——这是本届议会最重要的单一金融监管事件。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    HD03253["🏦 EU Banking Package\nHD03253 — FiU\nHIGH significance"] --> CAP["Capital Floors\n72.5% output floor\nIRB banks impact"]
+    HD03252["⚖️ Welfare–Crime\nHD03252 — SfU\nMEDIUM significance"] --> POL["Election 2026\nLaw-and-order signal\nSD priority"]
+    HD03104["📊 Debt Mgmt Eval\nHD03104 — FiU\nLOW-MEDIUM significance"] --> RG["Riksgälden\nTargets met\nNo action req"]
+    HD03256["🚛 Tachograph Fraud\nHD03256 — TU\nLOW significance"] --> ENF["Enforcement\nEU Reg. 2020/1054\nTransportstyrelsen"]
+
+    style HD03253 fill:#ff006e,color:#fff
+    style HD03252 fill:#ffbe0b,color:#0a0e27
+    style HD03104 fill:#00d9ff,color:#0a0e27
+    style HD03256 fill:#1a1e3d,color:#e0e0e0
+    style CAP fill:#1a1e3d,color:#00d9ff
+    style POL fill:#1a1e3d,color:#ffbe0b
+    style RG fill:#1a1e3d,color:#e0e0e0
+    style ENF fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 5 | Linked in Article Sources, not expanded inline |
 
@@ -1965,6 +2652,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

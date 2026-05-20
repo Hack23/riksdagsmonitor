@@ -6,7 +6,7 @@ date: 2026-04-28
 subfolder: realtime-pulse
 slug: 2026-04-28-realtime-pulse
 source_folder: analysis/daily/2026-04-28/realtime-pulse
-generated_at: 2026-05-20T16:18:47.410Z
+generated_at: 2026-05-20T20:11:09.064Z
 language: en
 layout: article
 ---
@@ -89,6 +89,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1394,13 +1407,804 @@ This analysis was produced with a minimum of two passes (Pass 1: initial artifac
 
 - Statskontoret: Relevant for critical infrastructure implementation (FöU20/CER Directive) and vocational college reform (UbU17). Search conducted; specific reports not directly fetched due to time constraints. `Statskontoret: no directly relevant source found` for citizenship and constitutional topics.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# نبضة الوقت الفعلي لريكسداغن — 28 أبريل 2026
+
+**المؤلف**: جيمس بيتر سورلينغ
+**المراجعة**: 2 (تمت المراجعة النقدية والتحسين في 2026-04-28)
+**التاريخ**: 2026-04-28
+**التصنيف**: عام — اللائحة العامة لحماية البيانات المادة 9(2)(ه)(ز) بيانات سياسية منشورة
+**مستوى الثقة**: عالٍ [B2]
+**عمق التحليل**: معياري
+
+---
+
+### 🎯 الملخص التنفيذي
+
+بدأ ريكسداغن في 28 أبريل 2026 فترة الاندفاع المكثف تاريخياً قبيل الانتخابات: تقدّم ائتلاف تيدو في تشديد متطلبات الجنسية (HD01SfU28)، وقانون جديد لمرونة البنية التحتية الحيوية ينقل توجيه CER الأوروبي (HD01FöU20)، وإطار محسّن للتعاون العسكري العملياتي (HD01FöU14)، وحزمة ميزانية الربيع 2026 — فيما قدّمت المعارضة (S, V, C, MP) مقترحات مضادة منسّقة للاقتراح الاقتصادي الربيعي. كشف استجواب دستوري (HD10452) من إلسا ويدينغ عن مزيد من الشقوق حول معايير الإجراءات الديمقراطية قبيل انتخابات سبتمبر 2026. يمثّل تقاطع التشريعات الأمنية والمالية وسياسة الهوية في يوم واحد ذروة الضغط التشريعي في دورة ريكسموتيه 2025/26.
+
+### 🧭 3 قرارات يدعمها هذا الملخص
+
+1. **تقييم استقرار الائتلاف**: تحديد ما إذا كان ائتلاف تيدو (M, SD, KD, L) قادراً على تمرير حزمته الكاملة خلال دورة الربيع دون انشقاقات، في ظل ضغط المعارضة على فارودبدجيت وإصلاح الدستور.
+2. **تتبع تقارب التشريعات الأمنية**: تقييم ما إذا كان الإقرار المتزامن للتعاون العسكري (FöU14) ومرونة CER (FöU20) وتشريعات ضريبة القيمة المضافة/الجرائم الضريبية (SkU21, SkU22) يمثّل توسعاً متماسكاً لدولة الأمن أم تنفيذاً مجزأً للتفويضات الأوروبية.
+3. **رصد التموضع الانتخابي 2026**: قياس كيف تعمل تشديدات الجنسية (SfU28) وتشريعات الجرائم (مضاعفة العقوبات لجرائم العصابات، اقتراح 2025/26:218) طُعماً انتخابياً لناخبي SD وM.
+
+### ⚡ قراءة 60 ثانية
+
+- **الجنسية (HD01SfU28)**: تناقش لجنة SfU متطلبات أكثر صرامة — اللغة والدخل والإقامة. تقوده SD؛ M داعمة. S/V/C تعارض الأحكام الرئيسية. مقرر للتصويت في اللجنة 2026-05-xx.
+- **البنية التحتية الحيوية (HD01FöU20)**: قانون جديد ينقل توجيه CER يمنح الوكالات القريبة من Försvarsmakten تفويضات مرونة معزّزة. تصويت ريكسداغن المقرر 2026-06-15.
+- **التعاون العسكري (HD01FöU14)**: بيتانكاندي يتيح تعاوناً عملياتياً أعمق ضمن إطار حلف الناتو. التصويت مقرر 2026-06-15.
+- **مقترحات مضادة لميزانية الربيع**: قدّمت S (HD024100), SD, V, C, MP مقترحات مضادة لاقتراح 2025/26:99 واقتراح 2025/26:100، الاقتراح الاقتصادي الربيعي — يشير إلى هشاشة مالية لحكومة أقلية.
+- **التعديل الدستوري (HD10452)**: تُعارض ويدينغ (مستقلة) وزير العدل ستروميروفي شرط الأغلبية الثلثين المقرر لتغييرات الدستور، مدّعيةً أنه يمنح الأقليات سلطة تعطيل الأغلبيات الديمقراطية.
+- **احتيال ضريبة القيمة المضافة / الجرائم الضريبية (SkU21, SkU22)**: اثنان من بيتانكاندي لجنة الضرائب حول المسؤولية الضريبية التمثيلية ومكافحة احتيال ضريبة القيمة المضافة — تقودهما الاتحاد الأوروبي.
+- **خطة النقل (HD03259)**: الخطة الوطنية للبنية التحتية للنقل 2026–2037 التي استجوبها MP.
+
+### 🔭 أهم إشارة مستقبلية
+
+**بحلول 2026-05-19**: يجب على وزير العدل ستروميروف الرد على الاستجواب الدستوري (HD10452). سيشير الرد إلى مدى استعداد الحكومة لمناقشة حجج الشرعية الديمقراطية قبيل الانتخابات.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+</div>
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Gennemgang**: 2 (kritisk gennemgået og forbedret 2026-04-28)
+**Dato**: 2026-04-28
+**Klassifikation**: OFFENTLIG — GDPR Art. 9(2)(e)(g) offentliggjorte politiske data
+**Konfidensniveau**: HØJ [B2]
+**Analysedybde**: standard
+
+---
+
+### 🎯 BLUF
+
+Sveriges Riksdag indledte sin historisk intensive pre-valssprint den 28. april 2026: Tidö-koalitionen fremrykkede skærpede statsborgerskabskrav (HD01SfU28), en ny lov om kritisk infrastrukturresiliens, der transponerer EU CER-direktivet (HD01FöU20), en forbedret ramme for operativt militært samarbejde (HD01FöU14) og Forårsbudgetpakken 2026 — mens oppositionen (S, V, C, MP) indgav koordinerede modforslag mod den økonomiske forårspropositionen. En grundlovsinterpelatlon (HD10452) fra Elsa Widding signalerede yderligere splittelser om demokratiske procedurenormer forud for valget i september 2026. Konvergensen af sikkerheds-, finans- og identitetspolitisk lovgivning på en enkelt dag markerer toppen af lovgivningstrykket i riksmöte 2025/26.
+
+### 🧭 3 beslutninger dette notat understøtter
+
+1. **Vurder koalitionsstabilitet**: Afgør om Tidö-koalitionen (M, SD, KD, L) kan vedtage hele sin pakke i forårssamlingen uden defektioner, givet oppositionspres på Forårsbudgettet og grundlovsreformen.
+2. **Spor sikkerhedslovgivningens konvergens**: Vurder om den samtidige vedtagelse af militært samarbejde (FöU14), CER-resiliens (FöU20) og moms-/skattebrottslovgivning (SkU21, SkU22) udgør en sammenhængende sikkerhedsstatlig ekspansion eller stykkevis EU-mandatopfyldelse.
+3. **Overvåg valgpositionering 2026**: Kvantificer, hvordan strammet statsborgerskab (SfU28) og kriminalitetslovgivning (dobbelte straffe for bandekriminalitet, prop. 2025/26:218) fungerer som valgbudskaber for SDs og Ms vælgere.
+
+### ⚡ 60-sekunders læsning
+
+- **Statsborgerskab (HD01SfU28)**: SfU debatterer skærpede krav — sprog, indkomst, bopæl. SD-drevet; M støttende. S/V/C modsætter sig nøglebestemmelser. Planlagt til udvalgsafstemning 2026-05-xx.
+- **Kritisk infrastruktur (HD01FöU20)**: Ny lov om CER-direktivtransposition, der giver Försvarsmakten-nærstående myndigheder styrket resiliensmandater. Planlagt Riksdag-afstemning 2026-06-15.
+- **Militært samarbejde (HD01FöU14)**: Betänkande der muliggør dybere operativt samarbejde inden for NATO-rammen. Afstemning planlagt 2026-06-15.
+- **Forårsbudgetmotioner**: S (HD024100), SD, V, C, MP indgav modforslag til prop. 2025/26:99 og prop. 2025/26:100, den økonomiske forårspropositionen — signalerer fiskal sårbarhed for en mindretalsregering.
+- **Grundlovsændring (HD10452)**: Widding (uafhængig) udfordrer justitsminister Strömmer om det planlagte 2/3-flertalskrav til grundlovsændringer, idet hun hævder, at det giver mindretal magt til at blokere demokratiske flertal.
+- **Momssvig / Skattebrott (SkU21, SkU22)**: To skatteudvalgs betänkanden om repræsentativt skatteansvar og modforanstaltninger mod momssvig — EU-drevne.
+- **Transportplan (HD03259)**: National transportinfrastrukturplan 2026–2037 sat spørgsmålstegn ved MP.
+
+### 🔭 Vigtigste fremtidssignal
+
+**Inden 2026-05-19**: Justitsminister Strömmer skal besvare grundlovsinterpelatlon (HD10452). Svaret signalerer regeringens vilje til at debattere argumenter om demokratisk legitimitet inden valget.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Überprüfung**: 2 (kritisch überprüft und verbessert 2026-04-28)
+**Datum**: 2026-04-28
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e)(g) veröffentlichte politische Daten
+**Konfidenzniveau**: HOCH [B2]
+**Analysetiefe**: Standard
+
+---
+
+### 🎯 BLUF
+
+Der Riksdagen begann seinen historisch dichten Vorwahlspurt am 28. April 2026: Die Tidö-Koalition schritt bei strengeren Staatsbürgerschaftsanforderungen (HD01SfU28), einem neuen Gesetz zur Resilienz kritischer Infrastrukturen zur Umsetzung der EU-CER-Richtlinie (HD01FöU20), einem verbesserten Rahmen für militärische Zusammenarbeit (HD01FöU14) und dem Frühjahrsbudgetpaket 2026 voran — während die Opposition (S, V, C, MP) koordinierte Gegenanträge zur wirtschaftlichen Frühjahrsproposition einreichte. Eine Verfassungsinterpellation (HD10452) von Elsa Widding signalisierte weitere Risse bei demokratischen Verfahrensnormen vor den Wahlen im September 2026. Die Konvergenz von Sicherheits-, Finanz- und Identitätspolitik-Gesetzgebung an einem einzigen Tag markiert den Höhepunkt des Gesetzgebungsdrucks in der Riksmöte 2025/26.
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Koalitionsstabilität beurteilen**: Feststellen, ob die Tidö-Koalition (M, SD, KD, L) ihr gesamtes Paket durch die Frühjahrssitzung ohne Abtrünnige verabschieden kann, angesichts des Oppositionsdrucks auf das Vårbudget und die Verfassungsreform.
+2. **Konvergenz der Sicherheitsgesetzgebung verfolgen**: Bewerten, ob die gleichzeitige Verabschiedung von militärischer Zusammenarbeit (FöU14), CER-Resilienz (FöU20) und MWST-/Steuerrechtsverstößen (SkU21, SkU22) eine kohärente Sicherheitsstaatsexpansion oder stückweise EU-Mandatserfüllung darstellt.
+3. **Wahlpositionierung 2026 überwachen**: Quantifizieren, wie verschärfte Staatsbürgerschaft (SfU28) und Kriminalitätsgesetzgebung (doppelte Strafen für Bandenverbrechen, prop. 2025/26:218) als Wahlköder für SDs und Ms Wähler dienen.
+
+### ⚡ 60-Sekunden-Lektüre
+
+- **Staatsbürgerschaft (HD01SfU28)**: SfU debattiert strengere Anforderungen — Sprache, Einkommen, Wohnsitz. SD-getrieben; M unterstützend. S/V/C bekämpfen Schlüsselbestimmungen. Für Ausschussabstimmung geplant 2026-05-xx.
+- **Kritische Infrastruktur (HD01FöU20)**: Neues Gesetz zur CER-Richtlinienumsetzung, das Försvarsmakten-nahen Behörden gestärkte Resilienzmandate gibt. Geplante Riksdag-Abstimmung 2026-06-15.
+- **Militärische Zusammenarbeit (HD01FöU14)**: Betänkande, das tiefere operative Zusammenarbeit im NATO-Rahmen ermöglicht. Abstimmung geplant 2026-06-15.
+- **Frühjahrsbudget-Gegenanträge**: S (HD024100), SD, V, C, MP reichten Gegenanträge zu prop. 2025/26:99 und prop. 2025/26:100 ein, der wirtschaftlichen Frühjahrsproposition — signalisiert fiskalische Anfälligkeit für eine Minderheitsregierung.
+- **Verfassungsänderung (HD10452)**: Widding (unabhängig) fordert Justizminister Strömmer zur geplanten 2/3-Mehrheitsanforderung für Verfassungsänderungen heraus und behauptet, sie gebe Minderheiten Macht, demokratische Mehrheiten zu blockieren.
+- **MWST-Betrug / Steuervergehen (SkU21, SkU22)**: Zwei Steuerausschuss-Betänkanden zu repräsentativer Steuerhaftung und Bekämpfung von MWST-Betrug — EU-getrieben.
+- **Verkehrsplan (HD03259)**: Nationaler Verkehrsinfrastrukturplan 2026–2037, hinterfragt von MP.
+
+### 🔭 Wichtigstes Zukunftssignal
+
+**Bis 2026-05-19**: Justizminister Strömmer muss auf die Verfassungsinterpellation (HD10452) antworten. Die Antwort wird signalisieren, inwieweit die Regierung bereit ist, demokratische Legitimitätsargumentationen vor der Wahl zu debattieren.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Revisión**: 2 (revisado críticamente y mejorado el 2026-04-28)
+**Fecha**: 2026-04-28
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e)(g) datos políticos publicados
+**Nivel de confianza**: ALTO [B2]
+**Profundidad de análisis**: estándar
+
+---
+
+### 🎯 BLUF
+
+El Riksdagen inició su período de sprint preelectoral históricamente denso el 28 de abril de 2026: la coalición Tidö avanzó en el endurecimiento de los requisitos de ciudadanía (HD01SfU28), una nueva ley de resiliencia de infraestructuras críticas que transpone la directiva UE CER (HD01FöU20), un marco mejorado de cooperación militar operativa (HD01FöU14) y el paquete de presupuesto de primavera 2026 — mientras la oposición (S, V, C, MP) presentaba contraporposiciones coordinadas a la propuesta económica de primavera. Una interpelación constitucional (HD10452) de Elsa Widding señaló más fracturas sobre las normas de procedimiento democrático antes de las elecciones de septiembre de 2026. La convergencia de legislación de seguridad, financiera y de identidad en un solo día marca el pico de presión legislativa del riksmöte 2025/26.
+
+### 🧭 3 decisiones que este resumen apoya
+
+1. **Evaluar la estabilidad de la coalición**: Determinar si la coalición Tidö (M, SD, KD, L) puede aprobar su paquete completo durante la sesión de primavera sin deserciones, dada la presión opositora sobre el Vårbudget y la reforma constitucional.
+2. **Rastrear la convergencia de la legislación de seguridad**: Evaluar si la aprobación simultánea de cooperación militar (FöU14), resiliencia CER (FöU20) y legislación de IVA/delitos fiscales (SkU21, SkU22) constituye una expansión coherente del Estado de seguridad o una ejecución fragmentada de los mandatos UE.
+3. **Monitorear el posicionamiento electoral de 2026**: Cuantificar cómo el endurecimiento de la ciudadanía (SfU28) y la legislación criminal (penas dobles por crímenes de pandillas, prop. 2025/26:218) sirven como cebo electoral para los votantes de SD y M.
+
+### ⚡ Lectura de 60 segundos
+
+- **Ciudadanía (HD01SfU28)**: SfU debate requisitos más estrictos — idioma, ingresos, residencia. Impulsado por SD; M apoyando. S/V/C combaten disposiciones clave. Previsto para votación en comité 2026-05-xx.
+- **Infraestructura crítica (HD01FöU20)**: Nueva ley que transpone la directiva CER dando a agencias cercanas a Försvarsmakten mandatos de resiliencia reforzados. Votación prevista en Riksdag el 2026-06-15.
+- **Cooperación militar (HD01FöU14)**: Betänkande que permite una cooperación operativa más profunda dentro del marco OTAN. Votación prevista el 2026-06-15.
+- **Contramociones del presupuesto de primavera**: S (HD024100), SD, V, C, MP presentaron contramociones a prop. 2025/26:99 y prop. 2025/26:100, la propuesta económica de primavera — señala vulnerabilidad fiscal para un gobierno minoritario.
+- **Enmienda constitucional (HD10452)**: Widding (independiente) desafía al ministro de Justicia Strömmer sobre el requisito previsto de mayoría de 2/3 para cambios constitucionales, afirmando que da a las minorías poder para bloquear mayorías democráticas.
+- **Fraude de IVA / Delitos fiscales (SkU21, SkU22)**: Dos betänkanden de comité fiscal sobre responsabilidad fiscal representativa y lucha contra el fraude de IVA — impulsados por la UE.
+- **Plan de transporte (HD03259)**: Plan nacional de infraestructura de transporte 2026–2037 cuestionado por MP.
+
+### 🔭 Principal señal futura
+
+**Antes del 2026-05-19**: El ministro de Justicia Strömmer debe responder a la interpelación constitucional (HD10452). La respuesta señalará la disposición del gobierno a debatir argumentos de legitimidad democrática antes de las elecciones.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_fi.md -->
+
+**Kirjoittaja**: James Pether Sörling
+**Läpikäynti**: 2 (kriittisesti tarkistettu ja parannettu 2026-04-28)
+**Päivämäärä**: 2026-04-28
+**Luokitus**: JULKINEN — GDPR Art. 9(2)(e)(g) julkisesti esitettyä poliittista tietoa
+**Luottamustaso**: KORKEA [B2]
+**Analyysin syvyys**: standardi
+
+---
+
+### 🎯 BLUF
+
+Ruotsin Riksdagen aloitti historiallisen tiheän vaaleja edeltävän kiirehuippunsa 28. huhtikuuta 2026: Tidö-koalitio eteni tiukentamalla kansalaisuusvaatimuksia (HD01SfU28), uudella kriittisen infrastruktuurin selviytymislailla, joka transponoi EU:n CER-direktiivin (HD01FöU20), parannetulla puolustusvoimien operatiivisen yhteistyön kehyksellä (HD01FöU14) ja kevään 2026 budjettipaketilla — kun oppositio (S, V, C, MP) jätti koordinoituja vastaesityksiä taloudellista kevätpropositionsa vastaan. Elsa Widdingin perustuslain muutosta koskeva interpellaatio (HD10452) merkitsi lisää repeämiä demokratiaprosessin normeissa ennen syyskuun 2026 vaaleja. Turvallisuus-, talous- ja identiteettipolitiikan lainsäädännön yhtyminen yhdessä päivässä merkitsi riksmöte 2025/26:n lainsäädäntöpaineen huippua.
+
+### 🧭 3 päätöstä, joita tämä tiedote tukee
+
+1. **Koalition vakauden arviointi**: Selvitä, voiko Tidö-koalitio (M, SD, KD, L) hyväksyä koko pakettinsa kevätistunnossa ilman hajaannusta ottaen huomioon oppositiopaineenpuolueen Vårbudgeten ja perustuslakiuudistuksen suhteen.
+2. **Turvallisuuslainsäädännön konvergenssin seuranta**: Arvioi, muodostaako samanaikainen sotilasyhteistyön (FöU14), CER-resilienssin (FöU20) ja ALV-/verorikos- (SkU21, SkU22) lainsäädännön hyväksyminen johdonmukaisen turvallisuusvaltion laajentumisen vai paloittaisen EU-velvoitteiden täyttämisen.
+3. **Vuoden 2026 vaalipositioinnin seuranta**: Kvantifioi, kuinka kansalaisuustiukennukset (SfU28) ja rikoslainsäädäntö (kaksinkertaiset rangaistukset jengirikoksista, prop. 2025/26:218) toimivat SD:n ja M:n äänestäjäkunnalle suunnattuina vaalivisteina.
+
+### ⚡ 60 sekunnin tiivistelmä
+
+- **Kansalaisuus (HD01SfU28)**: SfU debatoi tiukennetuista vaatimuksista — kieli, tulot, asuinpaikka. SD-vetoinen; M tukeva. S/V/C vastustavat keskeisiä säännöksiä. Aikataulutettu valiokunnan äänestettäväksi 2026-05-xx.
+- **Kriittinen infrastruktuuri (HD01FöU20)**: Uusi CER-direktiivin transponoiva laki, joka antaa Försvarsmakten-läheiisille virastoille tehostettuja resilienssimandaatteja. Suunniteltu Riksdagen-äänestys 2026-06-15.
+- **Sotilasyhteistyö (HD01FöU14)**: Betänkande joka mahdollistaa syvemmän operatiivisen yhteistyön NATO-kehyksessä. Äänestys suunniteltu 2026-06-15.
+- **Kevätbudjettiesitykset**: S (HD024100), SD, V, C, MP jättivät vastaesityksiä prop. 2025/26:99:lle ja prop. 2025/26:100:lle, taloudelliselle kevätpropositionsa — signaloi fiskaalista haavoittuvuutta vähemmistöhallitukselle.
+- **Perustuslain muutos (HD10452)**: Widding (riippumaton) haastaa oikeusministeri Strömmerin kaavaillun 2/3-enemmistövaatimuksen perustuslain muutoksille, väittäen sen antavan vähemmistöille vallan estää demokraattiset enemmistöt.
+- **ALV-petos / Verorikos (SkU21, SkU22)**: Kaksi verokomitean betänkandea edustuksellisesta verotilinpidostosta ja ALV-petoksen torjuntatoimenpiteistä — EU-vetoisia.
+- **Liikennesuunnitelma (HD03259)**: Kansallinen liikenneinfrastruktuurisuunnitelma 2026–2037, jonka MP kyseenalaisti.
+
+### 🔭 Tärkein tulevaisuuden signaali
+
+**Viimeistään 2026-05-19**: Oikeusministeri Strömmerin on vastattava perustuslain muutosta koskevaan interpellaatioon (HD10452). Vastaus signaloi hallituksen halukkuutta debatata demokraattisen legitimiteetin argumenteista ennen vaaleja.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+**Révision** : 2 (révisé de manière critique et amélioré le 2026-04-28)
+
+**Niveau de confiance** : ÉLEVÉ [B2]
+**Profondeur d'analyse** : standard
+
+---
+
+### 🎯 BLUF
+
+Le Riksdagen a entamé sa période de sprint pré-électoral historiquement dense le 28 avril 2026 : la coalition Tidö a avancé sur le renforcement des exigences de citoyenneté (HD01SfU28), une nouvelle loi sur la résilience des infrastructures critiques transposant la directive UE CER (HD01FöU20), un cadre amélioré de coopération militaire opérationnelle (HD01FöU14) et le paquet de budget de printemps 2026 — tandis que l'opposition (S, V, C, MP) déposait des contre-propositions coordonnées à la proposition de printemps économique. Une interpellation constitutionnelle (HD10452) d'Elsa Widding a signalé de nouvelles fractures sur les normes de procédure démocratique avant les élections de septembre 2026. La convergence des législations de sécurité, financière et d'identité en une seule journée marque le pic de la pression législative dans le riksmöte 2025/26.
+
+### 🧭 3 décisions que cette note soutient
+
+1. **Évaluer la stabilité de la coalition** : Déterminer si la coalition Tidö (M, SD, KD, L) peut adopter son paquet complet lors de la session de printemps sans défections, compte tenu de la pression de l'opposition sur le Vårbudget et la réforme constitutionnelle.
+2. **Suivre la convergence de la législation sécuritaire** : Évaluer si l'adoption simultanée de la coopération militaire (FöU14), de la résilience CER (FöU20) et de la législation TVA/infractions fiscales (SkU21, SkU22) constitue une expansion cohérente de l'État sécuritaire ou une exécution morcelée des mandats UE.
+3. **Surveiller le positionnement électoral 2026** : Quantifier comment la citoyenneté renforcée (SfU28) et la législation criminelle (doubles peines pour crimes de gangs, prop. 2025/26:218) servent d'appâts électoraux aux électeurs de SD et M.
+
+### ⚡ Lecture en 60 secondes
+
+- **Citoyenneté (HD01SfU28)** : SfU débat des exigences renforcées — langue, revenu, résidence. Conduit par SD ; M soutenant. S/V/C combattent les dispositions clés. Prévu pour vote en commission 2026-05-xx.
+- **Infrastructure critique (HD01FöU20)** : Nouvelle loi transposant la directive CER donnant aux agences proches de Försvarsmakten des mandats de résilience renforcés. Vote au Riksdag prévu le 2026-06-15.
+- **Coopération militaire (HD01FöU14)** : Betänkande permettant une coopération opérationnelle plus profonde dans le cadre OTAN. Vote prévu le 2026-06-15.
+- **Contre-motions du budget de printemps** : S (HD024100), SD, V, C, MP ont déposé des contre-motions à prop. 2025/26:99 et prop. 2025/26:100, la proposition économique de printemps — signale une vulnérabilité fiscale pour un gouvernement minoritaire.
+- **Amendement constitutionnel (HD10452)** : Widding (indépendant) challenge le ministre de la justice Strömmer sur la condition prévue des 2/3 de majorité pour les changements constitutionnels, affirmant qu'elle donne aux minorités le pouvoir de bloquer les majorités démocratiques.
+- **Fraude TVA / Infractions fiscales (SkU21, SkU22)** : Deux betänkanden de comité fiscal sur la responsabilité fiscale représentative et la lutte contre la fraude TVA — conduits par l'UE.
+- **Plan de transport (HD03259)** : Plan national d'infrastructure de transport 2026–2037 remis en question par MP.
+
+### 🔭 Principal signal futur
+
+**D'ici le 2026-05-19** : Le ministre de la justice Strömmer devra répondre à l'interpellation constitutionnelle (HD10452). La réponse signalera la volonté du gouvernement de débattre des arguments de légitimité démocratique avant les élections.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# דופק הריקסדאגן בזמן אמת — 28 באפריל 2026
+
+**מחבר**: ג'יימס פיתר סורלינג
+**סקירה**: 2 (נבדק באופן ביקורתי ושופר ב-2026-04-28)
+**תאריך**: 2026-04-28
+**סיווג**: ציבורי — תקנת הגנת המידע הכללית סעיף 9(2)(ה)(ז) נתונים פוליטיים שפורסמו
+**רמת אמינות**: גבוהה [B2]
+**עומק ניתוח**: סטנדרטי
+
+---
+
+### 🎯 תמצית
+
+הריקסדאגן פתח את תקופת הספרינט הצפוף היסטורית שלפני הבחירות ב-28 באפריל 2026: קואליציית טידו התקדמה בהחמרת דרישות האזרחות (HD01SfU28), חוק חדש לחוסן תשתיות קריטיות המשנה את הנחיית CER האירופאית (HD01FöU20), מסגרת משופרת לשיתוף פעולה צבאי מבצעי (HD01FöU14) וחבילת תקציב האביב 2026 — בעוד האופוזיציה (S, V, C, MP) הגישה הצעות נגד מתואמות להצעת האביב הכלכלית. הפנייה החוקתית (HD10452) של אלסה וידינג איתתה על סדקים נוספים בנורמות הפרוצדורה הדמוקרטית לפני בחירות ספטמבר 2026. התכנסות חקיקת הביטחון, הפיננסים ומדיניות הזהות ביום אחד מסמנת את שיא הלחץ החקיקתי בריקסמוטה 2025/26.
+
+### 🧭 3 החלטות שתדריך זה תומך בהן
+
+1. **הערכת יציבות הקואליציה**: לקבוע האם קואליציית טידו (M, SD, KD, L) מסוגלת לאשר את החבילה המלאה שלה בהפגרת האביב ללא עריקות, בהינתן לחץ האופוזיציה על וורבודג'ט ורפורמת החוקה.
+2. **מעקב אחר התכנסות חקיקת הביטחון**: להעריך האם האישור הסימולטני של שיתוף פעולה צבאי (FöU14), חוסן CER (FöU20) וחקיקת מע"מ/עבירות מס (SkU21, SkU22) מהווה הרחבה קוהרנטית של מדינת הביטחון או מילוי מאולץ של מנדטים אירופאיים.
+3. **מעקב אחר מיצוב לקראת בחירות 2026**: לכמת כיצד האחזה באזרחות (SfU28) וחקיקת הפשע (עונשים כפולים לפשע כנופיות, הצעה 2025/26:218) משמשים כפתיון בחירות לבוחרי SD ו-M.
+
+### ⚡ קריאה ב-60 שניות
+
+- **אזרחות (HD01SfU28)**: ועדת SfU דנה בדרישות מחמירות יותר — שפה, הכנסה, מגורים. מונע על ידי SD; M תומך. S/V/C נאבקות נגד הוראות מרכזיות. מתוכנן להצבעה בוועדה 2026-05-xx.
+- **תשתית קריטית (HD01FöU20)**: חוק חדש המשנה את הנחיית CER המעניק לסוכנויות הקרובות ל-Försvarsmakten מנדטי חוסן מחוזקים. הצבעת ריקסדאגן מתוכננת ל-2026-06-15.
+- **שיתוף פעולה צבאי (HD01FöU14)**: בטנקנדה המאפשר שיתוף פעולה מבצעי עמוק יותר במסגרת נאט"ו. הצבעה מתוכננת ל-2026-06-15.
+- **הצעות נגד לתקציב האביב**: S (HD024100), SD, V, C, MP הגישו הצעות נגד להצעה 2025/26:99 ולהצעה 2025/26:100, הצעת האביב הכלכלית — מאותת על פגיעות פיסקלית לממשלת מיעוט.
+- **תיקון חוקתי (HD10452)**: וידינג (עצמאית) מאתגרת את שר המשפטים סטרומר על דרישת הרוב של 2/3 המתוכננת לשינויים חוקתיים, בטענה שהיא מעניקה למיעוטים כוח לחסום רוב דמוקרטי.
+- **הונאת מע"מ / עבירות מס (SkU21, SkU22)**: שני בטנקנדות של ועדת המס על אחריות מס ייצוגית ומאבק בהונאת מע"מ — מונע על ידי האיחוד האירופאי.
+- **תוכנית תחבורה (HD03259)**: תוכנית תשתית תחבורה לאומית 2026–2037 שנשאלה על ידי MP.
+
+### 🔭 אות העתיד המרכזי
+
+**עד 2026-05-19**: שר המשפטים סטרומר חייב להשיב על הפנייה החוקתית (HD10452). התגובה תאותת על נכונות הממשלה לדון בטיעוני הלגיטימיות הדמוקרטית לפני הבחירות.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+</div>
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_ja.md -->
+
+**著者**: ジェームズ・ペター・ソルリング
+**レビュー**: 2（2026-04-28に批判的に見直し・改善済み）
+**日付**: 2026-04-28
+**分類**: 公開 — GDPR第9条(2)(e)(g) 公開された政治データ
+**信頼レベル**: 高 [B2]
+**分析深度**: 標準
+
+---
+
+### 🎯 要点
+
+リクスダーゲンは2026年4月28日、歴史的に密度の高い選挙前スプリント期間を開始した：ティドー連立政権は市民権要件の厳格化（HD01SfU28）、EU CER指令を国内法化する重要インフラ強靭化法（HD01FöU20）、改善された作戦的軍事協力枠組み（HD01FöU14）および2026年春季予算パッケージを推進した。一方で野党（S、V、C、MP）は経済春季予算提案に対して協調した対案を提出した。エルサ・ヴィッディングによる憲法質問（HD10452）は、2026年9月選挙を前に民主的手続き規範についてのさらなる亀裂を示した。1日での安全保障・財政・アイデンティティ政策立法の収斂は、リクスモーテ2025/26における立法圧力のピークを示している。
+
+### 🧭 このブリーフィングが支援する3つの意思決定
+
+1. **連立の安定性評価**: ヴォールブジェットと憲法改革に対する野党の圧力を考慮した上で、ティドー連立（M、SD、KD、L）が春季会期を通じて完全なパッケージを離反者なく可決できるかを判断する。
+2. **安全保障立法の収斂を追跡**: 軍事協力（FöU14）、CER強靭化（FöU20）、付加価値税・税務犯罪立法（SkU21、SkU22）の同時採択が、連立した安全保障国家の拡大を構成するのか、それとも断片的なEU義務履行なのかを評価する。
+3. **2026年選挙ポジショニングの監視**: 市民権の厳格化（SfU28）と犯罪立法（組織犯罪への倍増罰則、提案2025/26:218）がSDとMの有権者への選挙アピールとして機能する程度を定量化する。
+
+### ⚡ 60秒まとめ
+
+- **市民権（HD01SfU28）**: SfUが厳格化された要件を討議中 — 言語、収入、居住。SD主導；M支持。S/V/Cは主要条項に反対。2026-05-xx委員会投票予定。
+- **重要インフラ（HD01FöU20）**: フェルスヴァルスマクテン関連機関に強化された強靭性権限を与えるCER指令国内法化新法。リクスダーゲン投票予定2026-06-15。
+- **軍事協力（HD01FöU14）**: NATOの枠組み内でより深い作戦的協力を可能にするベタンカンデ。投票予定2026-06-15。
+- **春季予算対案**: S（HD024100）、SD、V、C、MPが提案2025/26:99および提案2025/26:100（経済春季提案）に対案を提出 — 少数派政府の財政的脆弱性を示唆。
+- **憲法改正（HD10452）**: ヴィッディング（無所属）が憲法変更の3分の2多数要件についてストロメル司法大臣に問い、少数派に民主的多数派を阻止する権限を与えると主張。
+- **付加価値税詐欺・税務犯罪（SkU21、SkU22）**: 代表的な税務責任と付加価値税詐欺対策に関する2つの税委員会ベタンカンデ — EU主導。
+- **交通計画（HD03259）**: 国家交通インフラ計画2026–2037についてMPが質問。
+
+### 🔭 最重要の将来シグナル
+
+**2026-05-19まで**: ストロメル司法大臣は憲法質問（HD10452）に回答しなければならない。回答は、政府が選挙前に民主的正当性の議論をどこまで交わす意志があるかを示す。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_ko.md -->
+
+**저자**: 제임스 페터 솔링
+**검토**: 2 (2026-04-28 비판적 검토 및 개선 완료)
+**날짜**: 2026-04-28
+**분류**: 공개 — GDPR 제9조(2)(e)(g) 공개된 정치 데이터
+**신뢰 수준**: 높음 [B2]
+**분석 깊이**: 표준
+
+---
+
+### 🎯 핵심 요약
+
+릭스다겐은 2026년 4월 28일 역사적으로 밀도 높은 선거 전 스프린트 기간을 시작했다: 티도 연립 정권은 시민권 요건 강화(HD01SfU28), EU CER 지침을 국내법으로 전환하는 새로운 중요 인프라 탄력성 법(HD01FöU20), 개선된 작전적 군사 협력 프레임워크(HD01FöU14), 2026년 춘계 예산 패키지를 추진했다. 반면 야권(S, V, C, MP)은 경제 춘계 제안서에 대한 협조된 대안을 제출했다. 엘사 비딩의 헌법 질의(HD10452)는 2026년 9월 선거를 앞두고 민주적 절차 규범에서 추가적인 균열을 알렸다. 하루에 안보·재정·정체성 정책 입법이 수렴된 것은 릭스모테 2025/26에서 입법 압력의 정점을 나타낸다.
+
+### 🧭 이 브리핑이 지원하는 3가지 의사결정
+
+1. **연립의 안정성 평가**: 봐르뷔제트와 헌법 개혁에 대한 야당의 압력을 고려하여 티도 연립(M, SD, KD, L)이 탈당자 없이 춘계 회기 전체 패키지를 통과시킬 수 있는지 판단한다.
+2. **안보 입법 수렴 추적**: 군사 협력(FöU14), CER 탄력성(FöU20), 부가가치세/세금 범죄 입법(SkU21, SkU22)의 동시 채택이 일관된 안보 국가 확장을 구성하는지, 단편적인 EU 의무 이행인지 평가한다.
+3. **2026년 선거 포지셔닝 모니터링**: 시민권 강화(SfU28)와 범죄 입법(조직 범죄 이중 처벌, 제안 2025/26:218)이 SD와 M 유권자들을 위한 선거 미끼로 얼마나 기능하는지 정량화한다.
+
+### ⚡ 60초 요약
+
+- **시민권(HD01SfU28)**: SfU가 강화된 요건 토론 중 — 언어, 소득, 거주. SD 주도; M 지지. S/V/C는 핵심 조항에 반대. 2026-05-xx 위원회 표결 예정.
+- **중요 인프라(HD01FöU20)**: 페르스바르스마크텐 관련 기관에 강화된 탄력성 권한을 부여하는 CER 지침 전환 신법. 릭스다겐 표결 예정 2026-06-15.
+- **군사 협력(HD01FöU14)**: NATO 프레임워크 내 더 깊은 작전적 협력을 가능하게 하는 베탄칸데. 표결 예정 2026-06-15.
+- **춘계 예산 대안**: S(HD024100), SD, V, C, MP가 제안 2025/26:99와 제안 2025/26:100(경제 춘계 제안)에 대안 제출 — 소수 정부의 재정 취약성 시사.
+- **헌법 개정(HD10452)**: 비딩(무소속)이 헌법 변경 3분의 2 다수 요건에 대해 스트뢰메르 법무장관에 도전, 소수파에게 민주적 다수를 막을 권한을 준다고 주장.
+- **부가가치세 사기/세금 범죄(SkU21, SkU22)**: 대표적 세금 책임과 부가가치세 사기 대응에 관한 세금 위원회 베탄칸데 2건 — EU 주도.
+- **교통 계획(HD03259)**: 국가 교통 인프라 계획 2026–2037에 대해 MP가 질의.
+
+### 🔭 가장 중요한 미래 신호
+
+**2026-05-19까지**: 스트뢰메르 법무장관은 헌법 질의(HD10452)에 답해야 한다. 답변은 정부가 선거 전 민주적 정당성 논거를 어디까지 토론할 의지가 있는지 나타낼 것이다.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Beoordeling**: 2 (kritisch beoordeeld en verbeterd op 2026-04-28)
+**Datum**: 2026-04-28
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e)(g) openbaar gemaakte politieke gegevens
+**Betrouwbaarheidsniveau**: HOOG [B2]
+**Analysediepte**: standaard
+
+---
+
+### 🎯 BLUF
+
+De Riksdagen begon zijn historisch drukke pre-verkiezingsspurt op 28 april 2026: de Tidö-coalitie boekte vooruitgang bij het aanscherpen van staatsburgerschapseisen (HD01SfU28), een nieuwe wet inzake veerkracht van kritieke infrastructuur die de EU CER-richtlijn omzet (HD01FöU20), een verbeterd kader voor operationele militaire samenwerking (HD01FöU14) en het voorjaarsbegrotingspakket 2026 — terwijl de oppositie (S, V, C, MP) gecoördineerde amendementen indiende bij de economische voorjaarsproposie. Een constitutionele interpellatie (HD10452) van Elsa Widding signaleerde verdere breuken over democratische procedurenormen vóór de verkiezingen van september 2026. De convergentie van veiligheids-, financieel en identiteitsbeleid-wetgeving op één enkele dag markeert het hoogtepunt van de wetgevingsdruk in de riksmöte 2025/26.
+
+### 🧭 3 beslissingen die deze briefing ondersteunt
+
+1. **Coalitie-stabiliteit beoordelen**: Bepalen of de Tidö-coalitie (M, SD, KD, L) haar volledig pakket door de voorjaarszitting kan loodsen zonder afvallers, gezien de oppositiedruk op het Vårbudget en de grondwetshervorming.
+2. **Convergentie van veiligheidswetgeving volgen**: Beoordelen of de gelijktijdige aanneming van militaire samenwerking (FöU14), CER-veerkracht (FöU20) en BTW-/belastingdelicten-wetgeving (SkU21, SkU22) een coherente uitbreiding van de veiligheidsstaat of een stukgewijze EU-mandaatvervulling vormt.
+3. **Verkiezingspositionering 2026 monitoren**: Kwantificeren hoe aangescherpt burgerschap (SfU28) en criminele wetgeving (dubbele straffen voor bendecriminaliteit, prop. 2025/26:218) als verkiezingslokaas voor SD- en M-kiezers dienen.
+
+### ⚡ Lezen in 60 seconden
+
+- **Staatsburgerschap (HD01SfU28)**: SfU debatteert over strengere eisen — taal, inkomen, verblijfplaats. SD-gedreven; M ondersteunend. S/V/C bestrijden sleuteldeterminanten. Gepland voor commissiestemming 2026-05-xx.
+- **Kritieke infrastructuur (HD01FöU20)**: Nieuwe wet ter omzetting van de CER-richtlijn die aan Försvarsmakten-gerelateerde agentschappen versterkte veerkrachtmandaten geeft. Geplande Riksdag-stemming 2026-06-15.
+- **Militaire samenwerking (HD01FöU14)**: Betänkande dat diepere operationele samenwerking binnen het NAVO-kader mogelijk maakt. Stemming gepland op 2026-06-15.
+- **Voorjaarsbegroting-amendementen**: S (HD024100), SD, V, C, MP dienden amendementen in op prop. 2025/26:99 en prop. 2025/26:100, de economische voorjaarsproposie — signaleert fiscale kwetsbaarheid voor een minderheidsregering.
+- **Grondwetswijziging (HD10452)**: Widding (onafhankelijk) daagt minister van Justitie Strömmer uit over de geplande 2/3-meerderheidsvereiste voor grondwetswijzigingen, bewerend dat het minderheden de macht geeft democratische meerderheden te blokkeren.
+- **BTW-fraude / Belastingdelicten (SkU21, SkU22)**: Twee belastingcommissie-betänkanden over representatieve belastingaansprakelijkheid en bestrijding van BTW-fraude — EU-gedreven.
+- **Transportplan (HD03259)**: Nationaal transportinfrastructuurplan 2026–2037 in vraag gesteld door MP.
+
+### 🔭 Belangrijkste toekomstige signaal
+
+**Vóór 2026-05-19**: Minister van Justitie Strömmer moet reageren op de constitutionele interpellatie (HD10452). Het antwoord zal signaleren in hoeverre de regering bereid is om democratische legitimiteitsargumenten te debatteren vóór de verkiezingen.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Gjennomgang**: 2 (kritisk gjennomgått og forbedret 2026-04-28)
+**Dato**: 2026-04-28
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e)(g) offentliggjorte politiske data
+**Konfidensnivå**: HØY [B2]
+**Analysedybde**: standard
+
+---
+
+### 🎯 BLUF
+
+Riksdagen startet sin historisk tette pre-valsspurt 28. april 2026: Tidö-koalisjonen fremmet strengere statsborgerskapskrav (HD01SfU28), en ny lov om kritisk infrastrukturresiliens som transponerer EU CER-direktivet (HD01FöU20), et forbedret rammeverk for operativt militært samarbeid (HD01FöU14) og Vårbudsjettspakken 2026 — mens opposisjonen (S, V, C, MP) innga koordinerte motforslag til den økonomiske vårproposisjonen. En grunnlovsinterpellasjon (HD10452) fra Elsa Widding signaliserte ytterligere brudd om demokratiske prosedyrenormer foran valget i september 2026. Konvergensen av sikkerhets-, finans- og identitetspolitisk lovgivning på én enkelt dag markerer toppen av lovgivningspresset i riksmøte 2025/26.
+
+### 🧭 3 beslutninger dette notatet støtter
+
+1. **Vurder koalisjonsstabilitet**: Avgjør om Tidö-koalisjonen (M, SD, KD, L) kan vedta sin fulle pakke gjennom vårsesjonen uten defeksjoner, gitt opposisjonspress på Vårbudsjettet og grunnlovsreformen.
+2. **Spor sikkerhetslovgivningens konvergens**: Vurder om den samtidige vedtakelsen av militært samarbeid (FöU14), CER-resiliens (FöU20) og moms-/skattelovgivning (SkU21, SkU22) utgjør en sammenhengende sikkerhetsstatlig ekspansjon eller stykkevis EU-mandatoppfyllelse.
+3. **Overvåk valgposisjonering 2026**: Kvantifiser hvordan skjerpet statsborgerskap (SfU28) og kriminalitetslovgivning (doble straffer for gjengkriminalitet, prop. 2025/26:218) fungerer som valgbudskap for SDs og Ms velgere.
+
+### ⚡ 60-sekunders lesing
+
+- **Statsborgerskap (HD01SfU28)**: SfU debatterer strengere krav — språk, inntekt, botid. SD-drevet; M støttende. S/V/C motarbeider nøkkelbestemmelser. Planlagt for komitéavstemning 2026-05-xx.
+- **Kritisk infrastruktur (HD01FöU20)**: Ny lov om CER-direktivtransposisjon som gir Försvarsmakten-nærstående etater styrket resiliensmandater. Planlagt Riksdag-avstemning 2026-06-15.
+- **Militært samarbeid (HD01FöU14)**: Betänkande som muliggjør dypere operativt samarbeid innenfor NATO-rammen. Avstemning planlagt 2026-06-15.
+- **Vårbudsjetmotsjoner**: S (HD024100), SD, V, C, MP innga motforslag til prop. 2025/26:99 og prop. 2025/26:100, den økonomiske vårproposisjonen — signaliserer fiskal sårbarhet for en mindretallsregjering.
+- **Grunnlovsendring (HD10452)**: Widding (uavhengig) utfordrer justisminister Strömmer om det planlagte 2/3-flertallskravet for grunnlovsendringer, og hevder det gir minoriteter makt til å blokkere demokratiske flertall.
+- **Momssvik / Skattebrott (SkU21, SkU22)**: To skattekomiteers betänkanden om representativt skatteansvar og motvirkning av momssvik — EU-drevne.
+- **Transportplan (HD03259)**: Nasjonal transportinfrastrukturplan 2026–2037 stilt spørsmål ved MP.
+
+### 🔭 Viktigste fremtidssignal
+
+**Innen 2026-05-19**: Justisminister Strömmer må svare på grunnlovsinterpellasjonen (HD10452). Svaret vil signalisere regjeringens vilje til å debattere demokratisk legitimitetsargumentasjon foran valget.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Pass**: 2 (kritiskt granskad och förbättrad 2026-04-28)
+**Datum**: 2026-04-28
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e)(g) offentliggjorda politiska uppgifter
+**Konfidensgrad**: HÖG [B2]
+**Analysnivå**: standard
+
+---
+
+### 🎯 BLUF
+
+Sveriges riksdag inledde sin historiskt täta pre-valspurt den 28 april 2026: Tidö-koalitionen drev fram skarpare medborgarskapsregler (HD01SfU28), en ny lag om kritisk infrastrukturresiliens baserad på EU CER-direktivet (HD01FöU20), ett förbättrat ramverk för militärt operativt samarbete (HD01FöU14) och Vårbudgetpaketet 2026 — medan oppositionen (S, V, C, MP) lämnade samordnade motioner mot den ekonomiska vårpropositionen. En interpellation om grundlagsändring (HD10452) av Elsa Widding signalerade ytterligare sprickor kring demokratiska processnormer inför valet i september 2026. Sammanflödet av säkerhets-, finans- och identitetspolitisk lagstiftning på en enda dag markerar riksmötets 2025/26 toppläge av lagstiftningsintensitet.
+
+### 🧭 3 beslut detta PM stöder
+
+1. **Bedöm koalitionsstabilitet**: Avgör om Tidö-koalitionen (M, SD, KD, L) kan driva igenom sitt fullständiga paket under vårriksmötet utan defektioner, givet oppositionstryck mot Vårbudgeten och grundlagsreformen.
+2. **Följ säkerhetslagstiftningens konvergens**: Bedöm huruvida det samtida antagandet av militärt samarbete (FöU14), CER-resiliens (FöU20) och moms-/skattebrott (SkU21, SkU22) utgör en sammanhängande säkerhetsstatlig expansion eller styckevis EU-mandatuppfyllelse.
+3. **Övervaka valpositionering 2026**: Kvantifiera hur skärpta medborgarskapsregler (SfU28) och brottslagstiftning (dubbla straff för gängbrott, prop. 2025/26:218) fungerar som valbudskap för SDs och Ms väljare.
+
+### ⚡ 60-sekunders läsning
+
+- **Medborgarskap (HD01SfU28)**: SfU debatterar skarpare krav — språk, inkomst, bosättning. SD-drivet; M stödjer. S/V/C motsätter sig nyckelbestämmelser. Schemalagt för utskottsomröstning 2026-05-xx.
+- **Kritisk infrastruktur (HD01FöU20)**: Ny lag om CER-direktivtransposition som ger Försvarsmakten-närstående myndigheter förstärkta resiliens-mandat. Planerad riksdagsomröstning 2026-06-15.
+- **Militärt samarbete (HD01FöU14)**: Betänkande som möjliggör fördjupat operativt samarbete inom NATO-ramen. Omröstning planerad 2026-06-15.
+- **Vårbudgetmotioner**: S (HD024100), SD, V, C, MP lämnade kontramotioner till prop. 2025/26:99 och prop. 2025/26:100, den ekonomiska vårpropositionen — signalerar fiskal sårbarhet för en minoritetsregering.
+- **Grundlagsändring (HD10452)**: Widding (oberoende) utmanar justitieminister Strömmer om det planerade 2/3-majoritetskravet för grundlagsändringar och hävdar att det ger minoriteter makt att blockera demokratiska majoriteter.
+- **Momsbedrägeri / Skattebrott (SkU21, SkU22)**: Två skattekommittéers betänkanden om representativt skatteansvar och motåtgärder mot momsbedrägeri — EU-drivna.
+- **Transportplan (HD03259)**: Nationell transportinfrastrukturplan 2026–2037 ifrågasatt av MP.
+
+### 🔭 Viktigaste framåtsignalen
+
+**Före 2026-05-19**: Justitieminister Strömmer måste svara på interpellationen om grundlagsändring (HD10452). Svaret signalerar regeringens beredskap att debattera demokratisk legitimitetsargumentation inför valet.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_zh.md -->
+
+**作者**: 詹姆斯·彼得·索林
+**审阅**: 2（2026-04-28批判性审阅并改进）
+**日期**: 2026-04-28
+**分类**: 公开 — GDPR第9条(2)(e)(g) 已公开的政治数据
+**置信级别**: 高 [B2]
+**分析深度**: 标准
+
+---
+
+### 🎯 核心摘要
+
+瑞典议会于2026年4月28日开启了历史上最密集的选前冲刺期：蒂多联合政府在强化公民身份要求（HD01SfU28）、转化欧盟CER指令的关键基础设施韧性新法（HD01FöU20）、改进的军事作战合作框架（HD01FöU14）和2026年春季预算方案上取得进展——而反对党（S、V、C、MP）对经济春季提案提交了协调一致的修正案。埃尔萨·维丁的宪法质询（HD10452）在2026年9月大选前进一步揭示民主程序规范上的裂痕。安全、财政与身份政策立法在一天内汇聚，标志着2025/26议会届次立法压力的顶峰。
+
+### 🧭 本简报支持的3项决策
+
+1. **评估联合政府稳定性**: 鉴于反对党对春季预算和宪法改革施加的压力，判断蒂多联合政府（M、SD、KD、L）能否在春季会期内无叛离地通过全套方案。
+2. **追踪安全立法汇聚**: 评估军事合作（FöU14）、CER韧性（FöU20）与增值税/税务犯罪立法（SkU21、SkU22）同时获批，是否构成连贯的安全国家扩张，还是零散的欧盟义务履行。
+3. **监测2026年选举定位**: 量化强化公民资格（SfU28）和犯罪立法（针对团伙犯罪的双重刑罚，提案2025/26:218）作为针对SD和M选民的选举诱饵所起的作用。
+
+### ⚡ 60秒摘要
+
+- **公民资格（HD01SfU28）**: SfU辩论更严格的要求——语言、收入、居住地。由SD推动；M支持。S/V/C反对关键条款。预计2026-05-xx委员会投票。
+- **关键基础设施（HD01FöU20）**: 转化CER指令的新法，赋予与Försvarsmakten相邻机构强化的韧性权限。瑞典议会投票预计2026-06-15。
+- **军事合作（HD01FöU14）**: 使北约框架内更深入作战合作成为可能的베탄칸데。投票预计2026-06-15。
+- **春季预算修正案**: S（HD024100）、SD、V、C、MP对提案2025/26:99和提案2025/26:100（经济春季提案）提交修正案——显示少数派政府的财政脆弱性。
+- **宪法修正（HD10452）**: 维丁（无党派）就宪法变更2/3多数要求挑战司法部长斯特罗姆，声称该要求赋予少数派阻止民主多数的权力。
+- **增值税欺诈/税务犯罪（SkU21、SkU22）**: 税务委员会两项关于代表性税务责任和打击增值税欺诈的베탄칸데——由欧盟推动。
+- **交通计划（HD03259）**: 2026–2037年国家交通基础设施计划受到MP质疑。
+
+### 🔭 最重要的未来信号
+
+**2026-05-19前**: 司法部长斯特罗姆必须回应宪法质询（HD10452）。回应将表明政府在选举前愿意在多大程度上辩论民主合法性论点。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+    A["🏛️ Riksdag 28 Apr"] --> B["Citizenship Reform\n(SfU28)"]
+    A --> C["CER Resilience Law\n(FöU20)"]
+    A --> D["Military Cooperation\n(FöU14)"]
+    A --> E["Spring Budget\nOpposition"]
+    A --> F["Constitutional\nAmendment (ip452)"]
+    B --> G["🗳️ Election 2026"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+    style A fill:#00d9ff,color:#000
+    style G fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 85156e01acda6f6589295f5a1f9197b815c84bc8 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1439,6 +2243,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
