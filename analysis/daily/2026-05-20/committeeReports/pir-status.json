@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-20T05:12:00Z",
+  "date": "2026-05-20",
+  "subfolder": "committeeReports",
+  "pir_coverage": [
+    { "pir": "PIR-NAT-01", "title": "Total-defence legislative pipeline", "status": "COVERED", "documents": ["HD01JuU36", "HD01MJU25"] },
+    { "pir": "PIR-SOC-03", "title": "Housing policy and affordability", "status": "COVERED", "documents": ["HD01CU32"] },
+    { "pir": "PIR-SOC-07", "title": "Social insurance reform", "status": "COVERED", "documents": ["HD01SfU26"] },
+    { "pir": "PIR-EDU-02", "title": "School sector safeguarding", "status": "COVERED", "documents": ["HD01UbU29"] }
+  ],
+  "pass": "PASS",
+  "iteration": "pass2"
+}

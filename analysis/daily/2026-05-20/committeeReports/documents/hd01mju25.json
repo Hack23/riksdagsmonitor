@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD01MJU25",
+  "titel": "Beredskapslager i livsmedelskedjan",
+  "datum": "2026-05-19",
+  "rm": "2025/26",
+  "organ": "MJU",
+  "summary": "",
+  "url": "https://data.riksdagen.se/dokument/HD01MJU25.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_betankanden",
+    "query": {
+      "limit": 20,
+      "rm": "2025/26"
+    },
+    "resultCount": 20,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-20T05:00:31.581Z"
+  }
+}
