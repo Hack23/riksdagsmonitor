@@ -17,10 +17,10 @@ name: Release with Attestations
 #   └── typedoc              → API docs (parallel)
 #       ├── e2e (matrix)     → cypress shards (parallel; needs build)
 #       ├── package          → SBOM + attestations (needs build)
-#       │   ├── release      → GitHub Release (needs package, deploy-docs)
-#       │   └── deploy-s3    → AWS S3 + CloudFront (needs package)
+#       │   └── release      → GitHub Release (needs prepare, build, package, unit-tests, e2e)
 #       ├── deploy-docs      → docs/ → GitHub Pages (needs build, tests, typedoc)
-#       └── npm-publish      → build:lib + publish (needs unit-tests; no rebuild)
+#       └── npm-publish      → build:lib + publish (runs LAST; only if every
+#                              upstream job succeeded)
 #
 # Wall-clock target: ~25 min critical path; every individual job ≤ 10 min.
 # ----------------------------------------------------------------------------
@@ -750,88 +750,17 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   # --------------------------------------------------------------------------
-  # 9. deploy-s3 — AWS S3 + CloudFront invalidation (≤10 min)
-  # --------------------------------------------------------------------------
-  deploy-s3:
-    name: Deploy to S3 + CloudFront
-    needs: [prepare, build, package, unit-tests, e2e]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      id-token: write # Required for OIDC/AWS
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
-        with:
-          egress-policy: audit
-
-      - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          # deploy-s3.sh lives in scripts/; pin to the release SHA so the
-          # deploy script matches the build.
-          ref: ${{ needs.prepare.outputs.release_sha }}
-
-      - name: Download release zip
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
-        with:
-          name: release-zip
-          path: artifacts/build
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@d979d5b3a71173a29b74b5b88418bfda9437d885 # v6.1.1
-        with:
-          role-to-assume: arn:aws:iam::172017021075:role/GithubWorkFlowRole
-          role-session-name: githubworkflowrolesession-release
-          aws-region: us-east-1
-
-      - name: Extract build to repository root
-        run: |
-          echo "📦 Extracting release build to repository root..."
-          find . -maxdepth 1 -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.json" \) ! -name "package*.json" -delete
-          rm -rf styles/ js/ dashboard/ api/ || true
-          unzip -o artifacts/build/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip -d .
-          echo "Version ${{ needs.prepare.outputs.version }} deployed at $(date)" > version.txt
-
-      - name: Deploy to S3 with cache headers
-        run: bash scripts/deploy-s3.sh . "s3://riksdagsmonitor-frontend-us-east-1-172017021075"
-
-      - name: Invalidate CloudFront
-        run: |
-          echo "🔍 Discovering CloudFront distribution ID..."
-          CloudFrontDistId=$(aws cloudformation describe-stacks \
-            --stack-name riksdagsmonitor-frontend \
-            --query "Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue" \
-            --output text 2>/dev/null || echo "")
-
-          if [ -z "$CloudFrontDistId" ]; then
-            echo "⚠️  Warning: CloudFront distribution ID not found in stack outputs"
-            CloudFrontDistId=$(aws cloudfront list-distributions \
-              --output json 2>/dev/null | \
-              jq -r ".DistributionList.Items[] | select(.Origins.Items[].DomainName | contains(\"riksdagsmonitor-frontend\")) | .Id" | \
-              head -n 1 || echo "")
-          fi
-
-          if [ -z "$CloudFrontDistId" ] || [ "$CloudFrontDistId" = "None" ]; then
-            echo "❌ Error: Could not discover CloudFront distribution ID"
-            exit 1
-          fi
-
-          echo "✅ Found CloudFront distribution: $CloudFrontDistId"
-          aws cloudfront create-invalidation \
-            --distribution-id $CloudFrontDistId \
-            --paths "/*"
-
-  # --------------------------------------------------------------------------
-  # 10. npm-publish — build:lib + publish (≤5 min)
+  # 9. npm-publish — build:lib + publish (≤5 min) — RUNS LAST
+  #     Only executes after every upstream job (build, unit-tests, typedoc,
+  #     e2e, package, deploy-docs, release) has succeeded, so a broken
+  #     build / failing tests / failed deployment never leak a tag onto npm.
   #     Skips the heavy `npm run build` (that's only needed for the website,
   #     not the library package) AND the duplicate `npm test` (already
   #     passed in unit-tests).
   # --------------------------------------------------------------------------
   npm-publish:
     name: Publish to npm
-    needs: [prepare, unit-tests]
+    needs: [prepare, build, unit-tests, typedoc, e2e, package, deploy-docs, release]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -889,11 +818,11 @@ jobs:
           echo "🔗 npm URL: https://www.npmjs.com/package/riksdagsmonitor"
 
   # --------------------------------------------------------------------------
-  # 11. summary — fan-in status job (≤1 min)
+  # 10. summary — fan-in status job (≤1 min)
   # --------------------------------------------------------------------------
   summary:
     name: Deployment Summary
-    needs: [prepare, release, deploy-s3, deploy-docs, npm-publish]
+    needs: [prepare, release, deploy-docs, npm-publish]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -904,13 +833,11 @@ jobs:
           echo ""
           echo "Job results:"
           echo "  - release:       ${{ needs.release.result }}"
-          echo "  - deploy-s3:     ${{ needs.deploy-s3.result }}"
           echo "  - deploy-docs:   ${{ needs.deploy-docs.result }}"
           echo "  - npm-publish:   ${{ needs.npm-publish.result }}"
           echo ""
           echo "📍 Deployments:"
-          echo "  - Primary: https://riksdagsmonitor.com (S3/CloudFront)"
-          echo "  - Backup:  GitHub Pages (main branch)"
+          echo "  - GitHub Pages (main branch)"
           echo ""
           echo "📚 Documentation:"
           echo "  - https://riksdagsmonitor.com/docs/"

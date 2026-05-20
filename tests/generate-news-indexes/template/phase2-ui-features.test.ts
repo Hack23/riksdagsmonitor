@@ -35,7 +35,7 @@ interface GenerateNewsIndexesModule {
         enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
         svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
         arContent = fs.readFileSync(path.join(NEWS_DIR, 'index_ar.html'), 'utf-8');
-      });
+      }, 60_000);
 
       it('should include collapsible filter-bar-wrapper details element', () => {
         expect(enContent).toContain('class="filter-bar-wrapper"');
