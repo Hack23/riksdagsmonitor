@@ -10,9 +10,12 @@ imports:
 on:
   schedule:
     # Three runs every day (7 days/week): morning, midday, evening UTC.
-    - cron: "0 9 * * *"
-    - cron: "0 14 * * *"
-    - cron: "0 19 * * *"
+    # Intentional day-of-week range notation (`0-6`) instead of `*`: avoids the
+    # gh-aw fixed-daily-time schedule warning (same pattern as
+    # news-evening-analysis.md `'0 16 * * 6-6'`). Do not simplify to `*`.
+    - cron: "0 9 * * 0-6"
+    - cron: "0 14 * * 0-6"
+    - cron: "0 19 * * 0-6"
   workflow_dispatch:
     inputs:
       article_date:
@@ -69,10 +72,8 @@ network:
     - github
     - defaults
     # ── Container registries (node:26-alpine pulls for SCB + WB MCP) ─────────
-    - docker.io
-    - registry-1.docker.io
-    - auth.docker.io
-    - production.cloudflare.docker.com
+    # `containers` ecosystem covers ghcr.io + *.docker.io + Docker Hub auth/CDN endpoints.
+    - containers
     # ── Riksdag / Regering MCP server + Swedish parliament + government ──────
     - riksdag-regering-ai.onrender.com
     - data.riksdagen.se
@@ -148,8 +149,8 @@ network:
     - www.ciacompliancemanager.com
     - blacktrigram.com
     - www.blacktrigram.com
-    # ── GitHub raw content (covered by `github` ecosystem; pinned for safe-outputs subset rule)
-    - raw.githubusercontent.com
+    # ── GitHub raw content is covered by the `github` ecosystem identifier above.
+    # Pinned FQDN remains in `safe-outputs.allowed-domains` below (only FQDNs allowed there).
 
 mcp-servers:
   riksdag-regering:

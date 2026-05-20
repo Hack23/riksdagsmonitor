@@ -54,6 +54,8 @@ Rules:
 
 ## Health gate (in-prompt)
 
+> ⏱  **Time-budget anchor.** This is typically the **first** agent bash call of the run, so it is also where the time-budget anchor in `01-bash-and-shell-safety.md §Time-budget self-monitoring` is established. Always emit the `agent_minute=N  remaining_to_pr_deadline=M` line at the **end** of the health gate so subsequent phases (download, Pass 1, gate, render) can compare against the phase budget in `00-base-contract.md §Session timing → Phase budget`. Target `agent_minute ≤ 5` at end-of-health-gate.
+
 Run once at workflow start, then proceed — do not loop forever.
 
 1. Call `get_sync_status({})`. Retry up to **3 times**, 20 s apart. Server is pre-warmed by the CI `steps:` block.

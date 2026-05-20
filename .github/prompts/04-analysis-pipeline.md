@@ -123,6 +123,8 @@ Produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. The output set is **stab
 5. **Pass 2 — Improve**: read every Pass-1 file back in full and strengthen evidence, diagrams, cross-references, stakeholder coverage, uncertainty disclosure, Admiralty annotations, WEP language, PIR/EEI tags. Minimum 10 minutes.
 6. **Pass-2 declaration (mandatory, fail-loud contract)** — append/update `methodology-reflection.md` with a single canonical status line before running the gate: `Pass-2 status: executed in full`. If Pass 2 cannot be completed in full by the minute-42 PR window, do **not** proceed as a normal success path; treat it as an explicit gate failure and document the failure in the same file (no silent "not executed in full" acceptance).
 
+> ⏱  **Time-budget self-check at every step transition.** Before starting steps 3, 5 and 6 (and again before the aggregate+render in `06-article-generation.md`), run the `agent_minute` helper from `01-bash-and-shell-safety.md §Time-budget self-monitoring` and compare against the phase budget in `00-base-contract.md §Session timing → Phase budget`. If a phase is running past its budget, **adapt** (drop to depth floor, trim Pass 2 polish, render fewer languages last) rather than skipping; if `agent_minute ≥ 42`, follow `07-commit-and-pr.md §Emergency deadline order of operations`.
+
 Pass 2 is mandatory. Completing earlier is a quality failure. `methodology-reflection.md` is the self-audit of Pass 2 — skipping it breaks the self-correction loop.
 
 ### Family parallelisation guidance (within dependency limits)

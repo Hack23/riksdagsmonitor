@@ -84,6 +84,51 @@ EXISTING_HTML_COUNT=$(find "$NEWS_DIR" -maxdepth 1 -type f -name "$ARTICLE_DATE-
 echo "IMPROVEMENT_MODE=$IMPROVEMENT_MODE  (required artifacts: $PRESENT present of $EXPECTED checked, all-present: $ALL_PRESENT, first missing: ${FIRST_MISSING:-none}, existing news/*.html: $EXISTING_HTML_COUNT)"
 ```
 
+## Early-scaffold marker (resilience — write **immediately** after pre-flight)
+
+> 🛟 **Closes the "MCP unreachable from start + no prior analysis" no-op hole.**
+> By writing a tracked-on-disk file *before* the first MCP call, the run is
+> guaranteed to have a non-empty diff to commit even when every MCP attempt
+> fails — turning what was previously a `safeoutputs___noop` into a partial
+> `safeoutputs___create_pull_request` with the failure documented.
+
+Run this **once**, immediately after the pre-flight block above and **before**
+the first `download-parliamentary-data.ts` invocation:
+
+```bash
+set -euo pipefail
+mkdir -p "$ANALYSIS_DIR"
+SCAFFOLD="$ANALYSIS_DIR/data-download-manifest.md"
+if [ ! -s "$SCAFFOLD" ]; then
+  AGENT_START_EPOCH="$(cat /tmp/gh-aw/agent-start.epoch 2>/dev/null || date -u +%s)"
+  cat > "$SCAFFOLD" <<EOF
+# Data download manifest — scaffold
+
+**Workflow**: ${GITHUB_WORKFLOW:-unknown}
+**Run**: ${GITHUB_RUN_ID:-unknown} attempt ${GITHUB_RUN_ATTEMPT:-1}
+**Started (UTC)**: $(date -u -d "@$AGENT_START_EPOCH" '+%Y-%m-%dT%H:%M:%SZ')
+**Requested date**: $ARTICLE_DATE
+**Subfolder**: $SUBFOLDER
+**Improvement mode**: $IMPROVEMENT_MODE
+**Status**: scaffold — populated as the pipeline progresses.
+
+> This file is written before any MCP call so even a fully-failed run
+> produces a non-empty diff and a partial PR rather than a silent no-op.
+
+## MCP attempts
+_(populated by 02-mcp-access.md §Three-attempt connect protocol)_
+
+## Per-document table
+_(populated by the download step)_
+EOF
+  echo "✅ scaffold marker written: $SCAFFOLD"
+fi
+```
+
+The download step appends to this file (it does **not** overwrite — see
+§Provenance manifest below). If MCP is unreachable from start, the per-document
+table simply remains empty and the MCP-attempts section explains why.
+
 | `IMPROVEMENT_MODE` | Behaviour |
 |--------------------|-----------|
 | `false` | First generation for this `$ARTICLE_DATE` + `$SUBFOLDER` (the full 23 required artifacts are **not** all present **and** no `synthesis-summary.md` baseline exists). Some required artifacts may still already be on disk from a partial prior run; that still remains first-generation unless either all 23 artifacts are present **or** `synthesis-summary.md` exists. Continue with the full pipeline below → `04-analysis-pipeline.md` (Pass 1 + Pass 2) → `05-analysis-gate.md` → `06-article-generation.md` (aggregate + render) → `07-commit-and-pr.md`. |
