@@ -65,6 +65,52 @@ These rules apply equally to inline bash in prompts AND to bash commands the age
 - All committed files must be native UTF-8 (`ö`, `ä`, `å`). Never substitute HTML entities (`&ouml;`) for Swedish characters.
 - Set `LC_ALL=C.UTF-8 LANG=C.UTF-8` on any bash step that edits markdown or HTML.
 
+## Time-budget self-monitoring (mandatory)
+
+The agent has **no built-in clock**. To be adaptive about the two ~60 min timers
+(see `00-base-contract.md §Session timing`) you **must** anchor a start
+timestamp on first contact with the runner and consult it before each major
+phase transition.
+
+### Anchor (run **once**, in the **very first** `bash` call of the run)
+
+```bash
+mkdir -p /tmp/gh-aw
+# Idempotent: if a prior call already anchored a start time, keep it.
+[ -s /tmp/gh-aw/agent-start.epoch ] || date -u +%s > /tmp/gh-aw/agent-start.epoch
+AGENT_START_EPOCH="$(cat /tmp/gh-aw/agent-start.epoch)"
+echo "AGENT_START_EPOCH=$AGENT_START_EPOCH ($(date -u -d "@$AGENT_START_EPOCH" '+%Y-%m-%dT%H:%M:%SZ'))"
+```
+
+### Check elapsed minutes (run before each phase + before the PR call)
+
+```bash
+AGENT_START_EPOCH="$(cat /tmp/gh-aw/agent-start.epoch 2>/dev/null || date -u +%s)"
+NOW_EPOCH="$(date -u +%s)"
+ELAPSED_MIN=$(( (NOW_EPOCH - AGENT_START_EPOCH) / 60 ))
+REMAINING_MIN=$(( 45 - ELAPSED_MIN ))   # 45 = hard PR deadline; 60 = job kill
+echo "⏱  agent_minute=$ELAPSED_MIN  remaining_to_pr_deadline=$REMAINING_MIN min"
+```
+
+`agent_minute` is the operational clock used throughout the prompt modules
+("by agent minute 40", "hard deadline agent minute 45"). The agent **must**
+print this telemetry before each phase transition in `04-analysis-pipeline.md`
+and immediately before the `safeoutputs___create_pull_request` call.
+
+### Adaptive thresholds (use to scale scope, not skip work)
+
+| `agent_minute` | Adaptive action |
+|---:|---|
+| **0–25** | Full Pass 1: every artifact at the depth floor in `reference-quality-thresholds.json`. |
+| **26–35** | Full Pass 2 read-back + improvements on every artifact. |
+| **36–40** | Aggregate + render. Trim Pass 2 polish (not Pass 2 coverage) if needed. |
+| **41–42** | **Stop iterating.** Commit + create PR now. |
+| **≥ 43** | Emergency deadline (see `07-commit-and-pr.md §Emergency deadline order of operations`) — stage what exists, commit `[early-pr]`, PR immediately. |
+
+Never let `agent_minute ≥ 45` arrive without `safeoutputs___create_pull_request`
+having been called — Timer A and Timer B both fire at ~60 min from job start,
+which leaves no slack for the safe-outputs runner job.
+
 ## Self-check (before issuing a `bash` call)
 
 1. Both `command` and `description` are present and non-empty.

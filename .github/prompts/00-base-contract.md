@@ -62,6 +62,18 @@ Stage analysis + article.md + news/*.html → Commit → ONE create_pull_request
 
 **Plan the run so the PR is created within 35–42 minutes (hard deadline 45 minutes) of agent start**, while also leaving margin before the 60-minute job timeout that began during setup. Use the budget for AI-FIRST iteration (minimum 2 complete passes per `.github/copilot-instructions.md §AI FIRST Quality Principle`); do **not** finish early with shallow output. See `07-commit-and-pr.md §Deadline enforcement` for the authoritative PR-timing procedure.
 
+### Phase budget (target `agent_minute` ranges)
+
+The agent **must** consult `agent_minute` (anchored + computed via the helper in `01-bash-and-shell-safety.md §Time-budget self-monitoring`) before every phase transition and print the telemetry. Adapt scope to fit the budget; never finish early with shallow output, never let `agent_minute ≥ 45` arrive without the PR call.
+
+| Phase | Target `agent_minute` | Adaptive guidance |
+|-------|----------------------:|-------------------|
+| MCP pre-warm + pre-flight scaffold + download | **0 – 12** | If MCP unreachable after three attempts, still write the early-scaffold manifest (see `03-data-download.md §Pre-flight`) so the run has a non-empty diff to commit. |
+| Read methodology + templates + Pass 1 (all 23 artifacts) | **12 – 28** | If `agent_minute ≥ 25` and Pass 1 incomplete, drop to depth floor in `reference-quality-thresholds.json` rather than skipping artifacts. |
+| Pass 2 read-back + improvements + analysis gate | **28 – 36** | Pass 2 is non-negotiable; trim *depth* of improvements, never *coverage*. |
+| Aggregate + render (all 14 languages) | **36 – 40** | Renderer is fast; if blocked at minute 40, commit unrendered analysis-only and PR anyway. |
+| Stage + commit + sandbox handoff + create PR | **40 – 42** | Hard deadline **agent minute 45**. |
+
 Do not add per-phase checkpoint PRs or repo-memory push steps.
 
 ## Output contract
