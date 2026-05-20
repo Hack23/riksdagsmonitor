@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "cycle": "propositions",
+  "date": "2026-05-20",
+  "subfolder": "propositions",
+  "generated_at": "2026-05-20T08:30:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "priority": "HIGH",
+      "question": "What language does Lagrådet use in its yttrande on HD03267?",
+      "trigger_event": "Lagrådet yttrande publication (estimated 2026-06-01 to 2026-07-15)",
+      "decision_supported": "Scenario 1 vs Scenario 2 (full enactment vs constitutional trimming)",
+      "status": "open",
+      "carry_forward": false
+    },
+    {
+      "id": "PIR-2",
+      "priority": "HIGH",
+      "question": "What position does Centerpartiet take on HD03267 during JuU committee hearings?",
+      "trigger_event": "JuU committee hearing (June–August 2026)",
+      "decision_supported": "Government majority risk assessment for security cluster",
+      "status": "open",
+      "carry_forward": false
+    },
+    {
+      "id": "PIR-3",
+      "priority": "MEDIUM",
+      "question": "Does IMY issue a formal opinion on HD03261 before the SkU committee vote?",
+      "trigger_event": "IMY opinion publication (expected June–August 2026)",
+      "decision_supported": "GDPR risk assessment for digital surveillance stack",
+      "status": "open",
+      "carry_forward": false
+    },
+    {
+      "id": "PIR-4",
+      "priority": "MEDIUM",
+      "question": "What is the delivery timeline and cost estimate in Digg's official response to HD03250?",
+      "trigger_event": "Digg remissvar (expected within 30 days of proposition)",
+      "decision_supported": "HD03250 implementation feasibility; eIDAS 2 compliance timeline",
+      "status": "open",
+      "carry_forward": false
+    },
+    {
+      "id": "PIR-5",
+      "priority": "MEDIUM",
+      "question": "Does SD publicly claim credit for HD03267/HD03263 in their election campaign materials?",
+      "trigger_event": "SD campaign launch (expected July 2026)",
+      "decision_supported": "Coalition stability and SD appetite for further escalation",
+      "status": "open",
+      "carry_forward": false
+    }
+  ]
+}
