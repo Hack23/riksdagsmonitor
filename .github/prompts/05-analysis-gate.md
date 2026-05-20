@@ -1,15 +1,10 @@
 # 05 — Analysis Gate (single blocking gate)
-
 This is the **only** gate separating analysis from article generation. If it fails, fix the analysis and re-run it. Never bypass.
-
 ## Inputs
-
 - `$ANALYSIS_DIR = analysis/daily/$ARTICLE_DATE/$SUBFOLDER`
 - 23 required artifacts (Families A + B + C + D from `04-analysis-pipeline.md`) + per-document Family E.
 - Authoritative references: [`artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md) (source of truth), [`per-artifact-methodologies.md`](../../analysis/methodologies/per-artifact-methodologies.md) (Inputs / Analytic moves / Evidence rules / Anti-patterns), [`reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json) (line floors + tradecraft signals).
-
 ## Checks (all must pass)
-
 1. **Artifact existence** — every Family A (9), B (2), C (5), D (7) artifact is present and non-empty. Catalogue: [`analysis/methodologies/artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md).
 2. **Per-document coverage (Family E)** — `$ANALYSIS_DIR/documents/` contains one `.md` per `dok_id` listed in `data-download-manifest.md` (metadata-only documents are tagged, not skipped).
 3. **No stubs** — zero occurrences of `AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:`, or `Lorem ipsum` across all artifacts.
@@ -23,9 +18,7 @@ This is the **only** gate separating analysis from article generation. If it fai
 11. **Supplementary artifacts** — see §Supplementary checks (blocking for aggregation/Tier-C/multi-run).
 12. **Editorial QA gate** — after aggregation, run `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` (enforces banned-phrase scan, citation density per `reference-quality-thresholds.json → aiFirst.citationDensity.perArticle`, and `economicProvenance` ≤ 6-month vintage unless wrapped in `<!-- stale-vintage: reason -->`). See `validate-article.ts` checks 7–9.
 13. **Analysis language** — all analysis artifacts (excluding `executive-brief_<lang>.md`) must be authored in English. Run `npx tsx scripts/check-analysis-language.ts $ANALYSIS_DIR`; fails when Swedish-marker density > 5 % AND ≥ 5 markers.
-
 ## Implementation
-
 > ⏱  **Time-budget telemetry (mandatory).** Print `agent_minute` before the gate begins so an over-budget run can be detected immediately. Target `agent_minute ≤ 36` at gate start (see `00-base-contract.md §Session timing → Phase budget`). If `agent_minute ≥ 40` at this point, prioritise: run the gate, accept first-pass result, proceed straight to aggregate+render+PR — do **not** loop on gate fixes past minute 40.
 >
 > ```bash
@@ -33,9 +26,7 @@ This is the **only** gate separating analysis from article generation. If it fai
 > ELAPSED_MIN=$(( ($(date -u +%s) - AGENT_START_EPOCH) / 60 ))
 > echo "⏱  gate-entry agent_minute=$ELAPSED_MIN  remaining_to_pr_deadline=$(( 45 - ELAPSED_MIN )) min"
 > ```
-
 No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–13, plus conditional check 9b where applicable). Check 12 invokes `scripts/validate-article.ts` when `article.md` is already present (after aggregation); Check 13 invokes `scripts/check-analysis-language.ts`:
-
 ```bash
 set -Eeuo pipefail
 : "${ARTICLE_DATE:?ARTICLE_DATE must be set}"
