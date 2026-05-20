@@ -302,11 +302,15 @@ describe('Multi-Language Sanity Tests', () => {
 
       testLanguages.forEach((langCode) => {
         cy.visit('/');
-        cy.get(`nav.rm-lang-bar a[href*="index_${langCode}.html"]`).then(($links) => {
-          const $visible = $links.filter(':visible');
-          expect($visible, `visible language bar link for ${langCode}`).to.have.length.greaterThan(0);
-          cy.wrap($visible.first()).click();
-        });
+        // The .rm-lang-bar may render below the initial 720px viewport fold
+        // depending on header/hero height — scroll it into view before
+        // asserting visibility & clicking (Cypress's :visible filter treats
+        // elements clipped by the body's computed overflow as hidden).
+        cy.get(`nav.rm-lang-bar a[href*="index_${langCode}.html"]`)
+          .first()
+          .scrollIntoView()
+          .should('be.visible')
+          .click();
         cy.url().should('include', `index_${langCode}.html`);
         cy.get('body').should('be.visible');
       });
