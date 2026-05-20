@@ -1,7 +1,7 @@
 [
   {
     "path": "/*",
-    "comment": "Performance budgets tightened after the CSS purge + minify pipeline (scripts/purge-css.ts + scripts/minify-dist.ts) added in deploy-s3.yml. Lighthouse desktop run on 2026-05-12 reported FCP 1.1s / LCP 1.1s / TBT 0ms / CLS 0.007 with 266 KiB unused CSS still on the wire — purge removes ≥80% of that, minify shrinks the rest. These budgets reserve mobile-throttled headroom so a regression > ~25% above measured baseline fails CI.",
+    "comment": "Performance budgets for riksdagsmonitor. The source styles.css is kept lean by hand (no PurgeCSS in the pipeline — see deploy-s3.yml), then the deploy minify step (scripts/minify-dist.ts) shrinks HTML/CSS/JS in dist/. These budgets reserve mobile-throttled headroom so a regression > ~25% above measured baseline fails CI.",
     "timings": [
       {
         "metric": "first-contentful-paint",
@@ -43,7 +43,7 @@
       {
         "resourceType": "stylesheet",
         "budget": 80,
-        "comment": "Pre-purge baseline 313 KiB. Post-purge ≤ 60 KiB; budget 80 KiB headroom for new components added between releases."
+        "comment": "Stylesheet budget: source styles.css kept lean by hand, then minified at deploy. Target ≤ 80 KiB raw / ≤ 25 KiB gzip on the wire."
       },
       {
         "resourceType": "image",
@@ -58,7 +58,7 @@
       {
         "resourceType": "total",
         "budget": 900,
-        "comment": "Tightened from 1200 KiB after CSS purge + JS/CSS/HTML minify."
+        "comment": "Tightened after CSS source clean-up + JS/CSS/HTML minify."
       }
     ],
     "resourceCounts": [

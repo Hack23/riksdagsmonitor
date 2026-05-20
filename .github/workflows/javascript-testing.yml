@@ -144,6 +144,14 @@ jobs:
           name: build-dist
           path: dist/
           retention-days: 30
+          # dist/ has ~5 700 files including 14 × 4.4 MB political-intelligence_*.html
+          # bundles (~62 MB) plus 5 200+ news/*.html pages. At the default
+          # compression-level=6 the upload phase took ~13 min on a hosted runner
+          # in run #26134023344 and was killed mid-upload by a runner shutdown
+          # signal. Level 1 (Z_BEST_SPEED) cuts the wall-clock by ~70 % on
+          # highly-compressible HTML at a marginal size cost, shrinking the
+          # window in which infra cancellation can hit.
+          compression-level: 1
   
   # Multi-Language Sanity Tests
   # (Other E2E tests moved to separate workflows: test-homepage.yml, test-dashboard.yml, test-news.yml)

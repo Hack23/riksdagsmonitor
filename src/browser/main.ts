@@ -123,11 +123,25 @@ async function initAll(): Promise<void> {
   });
   void _lazyObserver;
 
-  try {
-    await initStats();
-    logger.debug('✓ stats initialized');
-  } catch (error) {
-    logger.error('✗ stats failed:', error);
+  // Start pages (`/`, `/index.html`, `/index_<lang>.html`) have their
+  // `data-stat-id="…"` placeholders baked at deploy time by
+  // `scripts/bake-stats-html.ts`, so the runtime CSV fetch is pure
+  // wasted work there — it would re-fetch ≈ 15 KiB, re-parse, and
+  // overwrite DOM nodes with the identical value. Skip it on those
+  // pages to cut TBT/LCP on the homepage. Every other page (notably
+  // `/dashboards/*.html`, which also embed `data-stat-id` markers but
+  // are NOT in the bake scope) still runs the original runtime path.
+  const isBakedStartPage = /^\/(index(_[a-z]{2,3})?\.html)?$/i.test(pathname);
+
+  if (!isBakedStartPage) {
+    try {
+      await initStats();
+      logger.debug('✓ stats initialized');
+    } catch (error) {
+      logger.error('✗ stats failed:', error);
+    }
+  } else {
+    logger.debug('✓ stats baked at deploy time — runtime fetch skipped');
   }
 
   const elapsed = (performance.now() - start).toFixed(0);
