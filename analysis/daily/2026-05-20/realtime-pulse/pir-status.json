@@ -1,110 +1,164 @@
 {
+  "schema_version": "1.0",
   "date": "2026-05-20",
   "subfolder": "realtime-pulse",
-  "generated": "2026-05-20T11:30:00Z",
+  "cycle": "realtime-pulse",
+  "generated_at": "2026-05-20T13:00:00Z",
+  "article_type": "realtime-pulse",
+  "workflow": "news-realtime-monitor",
+  "run_id": "26158127935",
   "pirs": [
     {
-      "id": "PIR-RT-1",
-      "description": "Will all parties commit to KU34 second reading YES pre-election?",
-      "status": "OPEN",
+      "pir_id": "PIR-RT-1",
+      "statement": "Will all parties commit to KU34 second reading YES post-election?",
+      "status": "open",
+      "confidence": "HIGH",
       "priority": "HIGH",
       "source": "realtime-pulse",
-      "notes": "Constitutional abortion right requires second reading post-election. S committed. V/MP/C have reservations on some aspects."
+      "notes": "Constitutional abortion right requires second reading post-election. Today all 8 parties voted YES at first reading. Second reading confidence: HIGH. Monitor: party statements, SD conservative base reaction."
     },
     {
-      "id": "PIR-RT-2",
-      "description": "How will S campaign on SoU30 — full reversal or modification?",
-      "status": "OPEN",
+      "pir_id": "PIR-RT-2",
+      "statement": "How will S campaign on SoU30 — full reversal or modification?",
+      "status": "open",
+      "confidence": "MEDIUM",
       "priority": "HIGH",
       "source": "realtime-pulse",
-      "notes": "S filed Reservation 1 (full welfare law opposition) and Reservation 4 (fraud). Campaign positioning TBD."
+      "notes": "S filed Reservation 1 (full welfare law opposition) and Reservation 4 (fraud). Campaign positioning TBD. Monitor S party manifesto preview August 2026."
     },
     {
-      "id": "PIR-RT-3",
-      "description": "SD internal reaction to constitutional abortion support",
-      "status": "OPEN",
+      "pir_id": "PIR-RT-3",
+      "statement": "SD internal reaction to constitutional abortion support",
+      "status": "open",
+      "confidence": "MEDIUM",
       "priority": "MEDIUM",
       "source": "realtime-pulse",
-      "notes": "SD voted for constitutional abortion right. Internal base reaction unknown. Watch SD party communications post-vote."
+      "notes": "SD voted for constitutional abortion right. Internal base reaction unknown. Watch SD party communications post-vote. See FI-03 and FI-25."
     },
     {
-      "id": "PIR-RT-4",
-      "description": "Municipal implementation readiness for July 1, 2026 medical certificate requirement (SoU30)",
-      "status": "OPEN",
+      "pir_id": "PIR-RT-4",
+      "statement": "Municipal implementation readiness for July 1, 2026 SoU30 medical certificate requirement",
+      "status": "open",
+      "confidence": "LOW",
+      "priority": "HIGH",
+      "source": "realtime-pulse",
+      "notes": "42 days to implementation. SKR guidance not yet published. HIGH risk of implementation failure in smaller municipalities. Critical date: SKR guidance by June 1. See implementation-feasibility.md."
+    },
+    {
+      "pir_id": "PIR-RT-5",
+      "statement": "Legal challenges to legal-residency welfare restriction in SoU30",
+      "status": "open",
+      "confidence": "MEDIUM",
       "priority": "MEDIUM",
       "source": "realtime-pulse",
-      "notes": "42 days to implementation. SKR bulletin expected. Major cities: Stockholm, Gothenburg, Malmö readiness critical."
+      "notes": "NGOs (Red Cross Sweden, UNHCR) may challenge CESCR/European Social Charter compatibility. Risk primarily political/reputational, not judicial (Swedish courts lack power to strike legislation). Monitor FI-12."
     },
     {
-      "id": "PIR-RT-5",
-      "description": "Legal challenges to legal-residency welfare restriction in SoU30",
-      "status": "OPEN",
-      "priority": "LOW",
-      "source": "realtime-pulse",
-      "notes": "NGOs (Red Cross Sweden, UNHCR) may challenge CESCR/European Social Charter compatibility."
-    },
-    {
-      "id": "PIR-PROP-1",
-      "description": "Lagrådet language on HD03267 (security threat foreigners)",
-      "status": "OPEN",
+      "pir_id": "PIR-PROP-1",
+      "statement": "Lagrådet language on HD03267 (security threat foreigners) — scope and compatibility with ECHR",
+      "status": "open",
+      "confidence": "MEDIUM",
       "priority": "HIGH",
       "source": "propositions",
-      "carryForward": true,
-      "notes": "Carried from propositions analysis. No new data today."
+      "carry_forward": true,
+      "notes": "Carried from propositions analysis. No new data today. Expected JuU committee referral. See FI-05 and FI-23."
     },
     {
-      "id": "PIR-PROP-2",
-      "description": "Centerpartiet position on HD03267",
-      "status": "PARTIALLY_UPDATED",
+      "pir_id": "PIR-PROP-2",
+      "statement": "Centerpartiet position on HD03267",
+      "status": "open",
+      "confidence": "MEDIUM",
       "priority": "MEDIUM",
       "source": "propositions",
-      "carryForward": true,
+      "carry_forward": true,
       "notes": "C's multiple KU34 reservations suggest cautious/skeptical approach to migration-security legislation. Pattern consistent."
     },
     {
-      "id": "PIR-PROP-3",
-      "description": "IMY opinion on HD03261",
-      "status": "OPEN",
+      "pir_id": "PIR-PROP-3",
+      "statement": "IMY opinion on HD03261 (Skatteverket population registry)",
+      "status": "open",
+      "confidence": "LOW",
       "priority": "LOW",
       "source": "propositions",
-      "carryForward": true,
+      "carry_forward": true,
       "notes": "No new data today."
     },
     {
-      "id": "PIR-MOT-1",
-      "description": "Will government pass full labor organization law?",
-      "status": "PARTIALLY_CLOSED",
+      "pir_id": "PIR-MOT-1",
+      "statement": "Will government pass full criminal organization (gang crime) law under KU34 constitutional authority?",
+      "status": "answered",
+      "confidence": "HIGH",
       "priority": "MEDIUM",
       "source": "motions",
-      "carryForward": true,
-      "notes": "KU34 provides constitutional authority for föreningsfrihet restrictions. Statutory law expected 2027. Constitutional base secured."
+      "carry_forward": true,
+      "notes": "PARTIALLY ANSWERED: KU34 provides constitutional authority for föreningsfrihet restrictions. Statutory criminal organization law expected in 2026/27 riksmöte. Constitutional base secured today. Statutory law still PIR for 2027."
     },
     {
-      "id": "PIR-MOT-3",
-      "description": "L internal position on freedom of association",
-      "status": "PARTIALLY_CLOSED",
+      "pir_id": "PIR-MOT-3",
+      "statement": "L internal position on freedom of association restrictions",
+      "status": "answered",
+      "confidence": "HIGH",
       "priority": "LOW",
       "source": "motions",
-      "carryForward": true,
-      "notes": "L (Jakob Olofsgård) on SoU committee, L supports KU34 package including föreningsfrihet provisions. No internal L objection evident."
+      "carry_forward": true,
+      "notes": "ANSWERED: L (Jakob Olofsgård) on SoU committee, L supports KU34 package including föreningsfrihet provisions. No internal L objection evident. L voted YES on KU34."
     },
     {
-      "id": "PIR-INTERP-RUSSIA",
-      "description": "Russia/Ichkeria security nexus (HD10494)",
-      "status": "OPEN",
+      "pir_id": "PIR-INTERP-RUSSIA",
+      "statement": "Russia/Ichkeria security nexus (HD10494) — legislative response",
+      "status": "open",
+      "confidence": "LOW",
       "priority": "MEDIUM",
       "source": "interpellations",
-      "carryForward": true,
-      "notes": "Citizenship revocation in KU34 provides potential legislative tool. Russia/Ichkeria threat remains under parliamentary scrutiny."
+      "carry_forward": true,
+      "notes": "Citizenship revocation in KU34 provides potential legislative tool. Russia/Ichkeria threat remains under parliamentary scrutiny. No direct legislative action today."
+    },
+    {
+      "pir_id": "PIR-ELECT-01",
+      "statement": "Which party messaging on KU34 second reading generates greatest voter mobilization?",
+      "status": "open",
+      "confidence": "LOW",
+      "priority": "HIGH",
+      "source": "realtime-pulse",
+      "notes": "NEW PIR from 2026-05-20 run. Monitor polling + party messaging July-August 2026."
+    },
+    {
+      "pir_id": "PIR-ELECT-02",
+      "statement": "Can S frame SoU30 as welfare attack without alienating moderate voters?",
+      "status": "open",
+      "confidence": "LOW",
+      "priority": "HIGH",
+      "source": "realtime-pulse",
+      "notes": "NEW PIR from 2026-05-20 run. Monitor S manifesto preview and focus group research."
+    },
+    {
+      "pir_id": "PIR-ELECT-03",
+      "statement": "Will Liberalerna cross the 4% threshold in September 2026?",
+      "status": "open",
+      "confidence": "LOW",
+      "priority": "HIGH",
+      "source": "realtime-pulse",
+      "notes": "NEW PIR from 2026-05-20 run. L currently at ~4.1-4.5%. Existential for Tidö majority. See FI-14."
+    },
+    {
+      "pir_id": "PIR-ELECT-04",
+      "statement": "SD conservative base reaction to abortion constitutional support — impact on vote share",
+      "status": "open",
+      "confidence": "LOW",
+      "priority": "MEDIUM",
+      "source": "realtime-pulse",
+      "notes": "NEW PIR from 2026-05-20 run. Monitor SD social media, Samtiden, Åkesson communications July 2026."
     }
   ],
   "summary": {
-    "total": 11,
-    "open": 8,
-    "partially_closed": 2,
-    "partially_updated": 1,
-    "closed": 0,
-    "new_today": 5,
-    "carried_forward": 6
+    "total": 15,
+    "open": 13,
+    "answered": 2,
+    "superseded": 0,
+    "deferred": 0,
+    "cancelled": 0,
+    "new_today": 6,
+    "carried_forward": 6,
+    "closed_today": 0
   }
 }
