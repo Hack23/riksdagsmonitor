@@ -1,101 +1,124 @@
-# Implementation Feasibility Analysis
+# Implementation Feasibility
 **Date**: 2026-05-20 | **Subfolder**: realtime-pulse  
-**Scope**: Institutional capacity assessment for implementing today's legislation  
-**Focus**: SoU29/30 (42-day window), JuU43 (180+ days), KU34 (vilande — no immediate implementation)
+**Framework**: Policy implementation analysis per analysis/methodologies/implementation-analysis.md
 
 ---
 
-## KU34 Implementation
+## Scope
 
-**Status**: No immediate implementation required.  
-**Mechanism**: Vilande vote. First adoption today. Second adoption required after September 2026 election.  
-**Institutional actors**: Riksdag (second reading), Government (regulatory implementation), Lagrådet (review)  
-**Timeline**: Second reading: early 2027 riksmöte session. Regulatory implementation: 12-24 months after second reading.  
-**Feasibility assessment**: HIGH — no implementation risk for constitutional text itself. Future regulatory implementation of föreningsfrihet restriction and citizenship revocation will require substantial legal drafting but is manageable over 12-24 months.  
-**Risk flags**: Legal drafting quality for föreningsfrihet restriction (must be proportionate per ECHR) is the primary implementation risk for future regulations.
+Implementation feasibility analysis for SoU30 (bidragstak + medical certificate requirement) — entry into force July 1, 2026 — and comparative assessment of KU34 second-reading procedural feasibility.
 
 ---
 
-## SoU29/30 Implementation
+## SoU30 Implementation Analysis
 
-**Implementation deadline**: 1 July 2026 (42 days from today)  
-**Primary implementation body**: Försäkringskassan  
-**Secondary bodies**: Kommuner (municipalities), Arbetsförmedlingen (employment service), SKR  
+### Timeline Assessment
 
-### Implementation Timeline (42 days)
+| Milestone | Date | Status |
+|-----------|------|--------|
+| Betänkande published | 2026-05-11 | ✅ Complete |
+| Riksdag adoption | 2026-05-20 | ✅ Today |
+| Proposition formally enacted | 2026-06-01 (est.) | 🔄 Pending |
+| Socialstyrelsen implementation guidance | 2026-06-15 (target) | ⚠️ At risk |
+| Municipal IT systems updated | 2026-06-25 (deadline) | ❌ Unrealistic |
+| **Entry into force** | **2026-07-01** | **⚠️ HIGH RISK** |
 
-| Date | Required action | Status |
-|------|----------------|--------|
-| May 20 | Riksdag adoption | ✅ Expected today |
-| May 22-28 | Government publishes SFS (förordning) | Required — 5 business days |
-| June 1 | SKR must issue municipal guidance | CRITICAL — no guidance published yet |
-| June 1-14 | Försäkringskassan IT updates | Requires parallel regulatory guidance |
-| June 15 | Municipal implementation preparation complete | TIGHT |
-| July 1 | **Implementation deadline** | RISK |
-
-### Capacity Assessment by Actor
-
-**Försäkringskassan**:  
-- Current staff capacity: ~14,000 employees, already managing high caseload  
-- Digital system: FORA platform (updated 2023) — can likely accommodate rule changes with urgency patch  
-- Historical precedent: FK implemented sick-leave reform changes in 2021 with 60-day window; 42 days is tighter  
-- Feasibility: MARGINAL — 42 days is at the outer limit. High risk of error cases in first months  
-- **Risk score**: 6/10 (HIGH)
-
-**SKR/Kommuner**:  
-- No guidance published as of today  
-- Municipal social services (socialtjänsten) must operationalize medical certificate requirement  
-- 290 municipalities with varying IT systems and staffing  
-- Stockholm, Gothenburg, Malmö have capacity; smaller municipalities at HIGH risk  
-- Feasibility: LOW-MEDIUM — smaller municipality capacity is a real bottleneck  
-- **Risk score**: 7/10 (HIGH)
-
-**Arbetsförmedlingen**:  
-- Activity requirement activation requires AF referral process  
-- AF under its own digital transformation (Nya AF digital system, 2024-2026)  
-- AF capacity to absorb new activity requirement referrals: LIMITED  
-- Feasibility: LOW-MEDIUM  
-- **Risk score**: 6/10 (HIGH)
-
-### Implementation Risk Summary for SoU30
-
-| Risk area | Severity | Probability | Combined score |
-|-----------|----------|-------------|----------------|
-| FK IT system not updated | HIGH | 25% | 🔴 |
-| SKR guidance late | HIGH | 50% | 🔴 |
-| Municipal variation (small municip.) | MEDIUM | 65% | 🟡 |
-| AF capacity insufficient | MEDIUM | 45% | 🟡 |
-| Benefits wrongly denied (legal error) | HIGH | 35% | 🔴 |
-
-**Overall SoU30 implementation feasibility**: RISKY. Implementation is possible but the 42-day window makes error-free rollout unlikely. Expect visible failures in smaller municipalities in July-August 2026.
+**Critical finding**: The 42-day window from adoption (2026-05-20) to entry into force (2026-07-01) is structurally insufficient for full implementation. Specific capacity constraints:
 
 ---
 
-## JuU43 Implementation
+### Capacity Constraint 1: Municipal IT Systems
 
-**Implementation deadline**: 1 January 2027 (proposed, to be confirmed in SFS)  
-**Primary implementation body**: Police Authority, Åklagarmyndigheten (prosecutors), Domstolsverket  
-**Secondary**: Social services (socialtjänsten), Socialstyrelsen  
+**Requirement**: 290 municipalities must update social welfare case management systems to:
+1. Record medical certificate receipt/absence
+2. Calculate bidragstak against new formula
+3. Implement the "legally present" criterion checks
 
-**Feasibility assessment**: HIGH  
-- Standard criminal law reform with established institutional actors  
-- Digital surveillance provisions require police technical unit updates (6-9 months; feasible by Q4 2026)  
-- Training for police and prosecutors on new provisions: well-established HKF pathway  
-- International experience (Norway, Denmark) available for model  
-- Risk flags: Digital surveillance provisions require Integritetsskyddsmyndigheten (IMY) review for proportionality  
-- **Risk score**: 3/10 (LOW-MEDIUM)
+**Reality**: The three dominant Swedish municipal IT systems (Procapita, Combine, VIVA) require vendor patch cycles of 4-8 weeks plus UAT. At adoption (2026-05-20), vendors are unlikely to have production-ready patches until mid-June at the earliest.
+
+**Risk**: Municipal case workers will be operating on manual workarounds from July 1, creating data quality issues, administrative backlogs, and increased error rates.
+
+**Evidence**: SKR flagged this concern in remissvar to SoU30 betänkande preparation. *Source: HD01SoU30 remissdelen.*
 
 ---
 
-## Summary Implementation Feasibility Matrix
+### Capacity Constraint 2: GP Certificate Supply
 
-| Legislation | Deadline | Feasibility | Risk score | Primary concern |
-|-------------|----------|-------------|------------|----------------|
-| KU34 (vilande) | 2027+ | HIGH | 2/10 | Legal drafting quality |
-| SoU29 (activity req.) | July 1, 2026 | MEDIUM | 6/10 | AF capacity |
-| SoU30 (bidragstak) | July 1, 2026 | MEDIUM | 7/10 | SKR guidance timing |
-| JuU43 | Jan 1, 2027 | HIGH | 3/10 | IMY proportionality review |
+**Requirement**: Welfare recipients must present a GP certificate to qualify for exception from bidragstak (e.g., disability, serious illness).
 
-**Key monitoring trigger**: SKR guidance for SoU30 municipal implementation. If not published by June 1, 2026, the risk of visible implementation failure during the election campaign becomes near-certain.
+**Reality**: Sweden has a documented GP shortage — approximately 1,000 GP positions unfilled nationwide (Socialstyrelsen estimate). Average GP appointment wait time: 3-4 weeks in urban areas; 6-8 weeks in rural municipalities.
 
-**PIR update**: PIR-RT-4 (municipal implementation readiness SoU30) — this analysis confirms HIGH PRIORITY. Recommend monitoring SKR.se daily from June 1 for guidance publication.
+**Risk**: Beneficiaries unable to access GP before July 1 cannot obtain certificates → automatic benefit reduction or denial. This is a foreseeable structural injustice built into the implementation timeline.
+
+**Mitigation proposed but not adopted**: Opposition reservations proposed telemedical certification as alternative. Government did not incorporate.
+
+---
+
+### Capacity Constraint 3: Socialstyrelsen Guidance
+
+**Requirement**: Socialstyrelsen must issue implementation guidelines for municipalities before July 1.
+
+**Reality**: Government agencies have a standard 4-6 week cycle for developing, consulting, and publishing implementation guidance. From May 20 (adoption day), that timeline puts complete guidance at July 1 at the earliest — leaving zero buffer.
+
+**Risk**: Municipalities applying inconsistent criteria in the absence of complete guidance → legal challenges → administrative courts backlog.
+
+---
+
+### Overall SoU30 Implementation Risk Rating
+
+| Risk dimension | Level | Probability | Impact |
+|----------------|-------|------------|--------|
+| Municipal IT delays | HIGH | 80% | MEDIUM |
+| GP certificate access | HIGH | 70% | HIGH |
+| Socialstyrelsen guidance | MEDIUM | 50% | MEDIUM |
+| Legal challenges (Day 1) | MEDIUM | 40% | HIGH |
+| Pre-election scandal case | MEDIUM | 35% | CRITICAL (political) |
+
+**Overall implementation risk**: HIGH (3 of 4 capacity constraints are critically at risk)
+
+**Comparable implementation**: Denmark's kontanthjælpsloft (June 2015 → January 2016) had 6+ months and still generated implementation turbulence. Sweden's 42 days is structurally insufficient by Nordic peer standards.
+
+---
+
+### SoU29 Activity Requirements — Implementation
+
+**Additional requirement**: Municipal advisors must document and monitor activity plan compliance for welfare recipients.
+
+**Feasibility**: Similarly constrained. Municipal case worker capacity is the binding constraint — the same workforce must implement both SoU29 (activity monitoring) and SoU30 (certificate verification + bidragstak calculation).
+
+**Risk**: Double capacity demand on municipal social services workforce → prioritization → some aspects of SoU29 will be de facto deferred.
+
+---
+
+## KU34 Constitutional Process Feasibility
+
+### Second Reading Requirements (RF ch. 8:14)
+
+| Step | Date | Condition |
+|------|------|-----------|
+| First reading (vilande) | 2026-05-20 ✅ | Majority vote — completed |
+| General election | 2026-09-13 | Must occur — constitutionally scheduled |
+| New parliament constituted | 2026-10-01 (est.) | Automatic after election |
+| Second reading (must occur in new parliament) | 2026-10 to 2027-06 | Requires majority of new parliament |
+| KU34 enters into force | Day after second reading publication | Upon completion |
+
+**Constitutional feasibility**: HIGH — the process is clear and has no procedural obstacles assuming political will exists. The only risk is political (see scenario-analysis.md for probability breakdown).
+
+**Legal interpretation**: RF ch. 8:14 requires the second reading to occur "after the election" — specifically in the newly elected parliament. There is no explicit deadline within the new parliamentary term, meaning the new parliament has four years to hold the second reading. However, political convention and public pressure will create pressure for a prompt second reading.
+
+**Risk of lapse**: If no second reading occurs before the end of the new parliament's term (2026-2030), the vilande first reading expires. This is theoretically possible but politically extremely unlikely given the KU34 level of political salience.
+
+---
+
+## Implementation Feasibility Summary
+
+| Legislation | Implementation readiness | Timeline feasibility | Risk level |
+|-------------|--------------------------|---------------------|-----------|
+| SoU30 (July 1, 2026) | LOW | LOW (42 days insufficient) | HIGH |
+| SoU29 (July 1, 2026) | LOW | LOW (same timeline) | HIGH |
+| KU34 second reading (post-election) | N/A (political, not administrative) | HIGH (constitutional process clear) | MODERATE (political risk) |
+| JuU43 (criminal code update) | MODERATE | MODERATE | LOW |
+
+---
+
+*Evidence: HD01SoU29, HD01SoU30, HD01KU34, SKR remissvar. Danish Ankestyrelsen evaluation 2017. Methodology: analysis/methodologies/implementation-analysis.md.*

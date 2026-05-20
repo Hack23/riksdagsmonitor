@@ -1,75 +1,135 @@
 # Threat Analysis
 **Date**: 2026-05-20 | **Subfolder**: realtime-pulse  
-**Framework**: STRIDE (Spoofing / Tampering / Repudiation / Information Disclosure / Denial of Service / Escalation of Privilege) applied to democratic institutions  
-**Classification**: 🟢 PUBLIC  
-**Confidence**: HIGH [B2] based on legislative texts and established threat taxonomy
+**Framework**: STRIDE + DISARM (political threats) per THREAT_MODEL.md
 
-## Institutional Threat Landscape
+---
 
-### STRATEGIC THREATS
+## Analytical Scope
 
-**THREAT-ST-01: Constitutional instrument weaponization**  
-*Type*: Escalation of Privilege  
-*Likelihood*: MEDIUM | *Impact*: VERY HIGH  
-*Description*: The föreningsfrihet restriction and citizenship revocation provisions in KU34 represent constitutional-level tools that future governments could apply with expanded scope. The constitutional text establishes a precedent that the right to organize and citizenship itself are conditional rather than absolute. Post-election governments with different majority compositions could activate these provisions against lawful organizations.  
-*Mitigation*: Riksdag legal unit review (already completed, documented in KU34 betänkande). Constitutional court (Lagrådet) review process. EU Charter of Fundamental Rights compatibility check (ongoing).
+Political threat analysis of the risks arising from the May 20, 2026 legislative session. Includes constitutional fragility threats, implementation threats, information-environment threats, and electoral threats.
 
-**THREAT-ST-02: Second-reading coalition instability**  
-*Type*: Denial of Service (to constitutional reform)  
-*Likelihood*: LOW-MEDIUM | *Impact*: HIGH  
-*Description*: If the September 2026 election produces an unstable majority without clear commitment to KU34 second reading, the constitutional abortion right could fail at final confirmation stage. This would be a democratic legitimacy crisis — the first vilande vote majority was historic, failure at second reading would be unprecedented in modern Swedish constitutional history.  
-*Mitigation*: All major parties have made public commitments. Vilande mechanism publicizes the vote, creating accountability.
+---
 
-**THREAT-ST-03: Welfare reform backlash fueling political extremism**  
-*Type*: Escalation of Privilege  
-*Likelihood*: MEDIUM | *Impact*: MEDIUM-HIGH  
-*Description*: SoU29/30 activity requirements disproportionately affect specific population segments. If implementation creates visible hardship cases (individuals losing benefits, families without support), far-right and far-left political actors gain concrete mobilization material. Combined with election proximity, this creates optimal conditions for extremist narrative amplification.  
-*Mitigation*: Government's own comms on exceptions/grace periods. Opposition monitoring and rapid response.
+## STRIDE-Adapted Framework (Political Context)
 
-### OPERATIONAL THREATS
+| STRIDE category | Political equivalent |
+|----------------|---------------------|
+| Spoofing | Identity/mandate fraud — claims of electoral mandate for policies not voted on |
+| Tampering | Constitutional process manipulation — bundling of unrelated provisions |
+| Repudiation | Deniability claims on policy outcomes |
+| Information disclosure | Selective framing of vote outcomes |
+| Denial of service | Parliamentary obstruction; municipal non-compliance |
+| Elevation of privilege | Constitutional entrenchment to prevent reversal |
 
-**THREAT-OP-01: Administrative implementation failure**  
-*Type*: Denial of Service (to welfare recipients)  
-*Likelihood*: MEDIUM (50%) | *Impact*: HIGH  
-*Description*: SoU30 requires Försäkringskassan to implement medical certificate requirement and bidragstak by 1 July 2026. 42-day lead time with no published SKR guidance creates real rollout risk. Past Swedish welfare IT implementation failures (Migrationsverket 2015-16, Försäkringskassan digital backlog 2021) provide precedent.  
-*Trigger*: SKR guidance absent by June 1, 2026.  
-*Monitoring*: Check SKR.se for municipal implementation bulletins.
+---
 
-**THREAT-OP-02: Legal challenges blocking implementation**  
-*Type*: Denial of Service (to government reform program)  
-*Likelihood*: MEDIUM-HIGH | *Impact*: MEDIUM  
-*Description*: NGOs (Red Cross Sweden, UNHCR, Civil Rights Defenders) have signaled potential challenges to SoU30's legal-residency welfare restriction. European Social Charter Article 12/13 may be invoked. While Swedish constitutional review is post-hoc, European mechanisms could trigger political embarrassment during election campaign.  
-*Timeline*: First challenges likely within 12-18 months of implementation.
+## T1 — Constitutional Fragility (KU34 Vilande)
 
-**THREAT-OP-03: SD internal incoherence**  
-*Type*: Repudiation  
-*Likelihood*: LOW-MEDIUM | *Impact*: MEDIUM  
-*Description*: SD's vote for constitutional abortion right contradicts its traditional social-conservative profile. If SD leadership faces significant backbench or grassroots opposition, they may attempt to distance from the vote or signal openness to modifying second reading. Any SD wavering on KU34 second reading would dominate political coverage during the election campaign.  
-*Monitoring indicators*: SD party communications (sverigedemokraterna.se), leadership statements on KU34.
+**Threat class**: Process integrity — Repudiation + Elevation of privilege  
+**Probability**: MODERATE (35%)  
+**Impact**: CRITICAL  
+**Actor**: Post-election parliamentary arithmetic
 
-### INFORMATION ENVIRONMENT THREATS
+**Description**: The vilande mechanism creates a 4-month constitutional window. The September 2026 election could alter the parliamentary balance sufficiently to:
+1. Prevent a second reading if the new majority disagrees with the bundled provisions (föreningsfrihet + citizenship revocation alongside abortion)
+2. Force renegotiation of non-abortion provisions, delaying final adoption
+3. Generate constitutional controversy if the second reading fails
 
-**THREAT-IE-01: Disinformation on constitutional abortion implications**  
-*Type*: Spoofing / Information Disclosure  
-*Likelihood*: HIGH | *Impact*: MEDIUM  
-*Description*: Social media environment likely to generate misleading content about KU34's abortion provisions — either exaggerating its scope (claiming it creates "abortion on demand with no limits") or understating it (claiming it changes nothing). Cross-cutting KU34 vilande mechanism is complex and easily misrepresented.  
-*Monitoring*: FRAPW (Folkbildningsrådet + MSB) election integrity monitoring. Jämförelsefunktionen i Riksdagen.
+**Trigger conditions**: V or C gaining seats + S forming government with conditions to re-examine KU34 provisions  
+**Mitigation available**: Early agreement between S and M+KD on the abortion component as separable from other provisions before election  
+**Residual risk**: MODERATE — KU34 is popular but its bundled provisions are contested
 
-**THREAT-IE-02: Foreign interference amplification**  
-*Type*: Spoofing  
-*Likelihood*: MEDIUM | *Impact*: MEDIUM-HIGH  
-*Description*: Sweden's constitutional abortion reform + election timing = high-value target for foreign (Russia, state-aligned actors) disinformation campaigns. Historical precedent: Russian attempts to influence 2018 Swedish election via social media. Constitutional reform vote provides natural disinformation hook.  
-*Monitoring*: SÄPO threat assessments, EU Hybrid Threat Centre alerts, Swedish Civil Contingencies Agency (MSB) election tracking.
+---
 
-## Risk Priority Matrix
+## T2 — Implementation Failure (SoU30 Medical Certificates)
 
-| Threat ID | Category | Likelihood | Impact | Priority |
-|-----------|----------|-----------|--------|----------|
-| THREAT-OP-01 | Administrative | MEDIUM | HIGH | 🔴 HIGH |
-| THREAT-ST-01 | Constitutional | MEDIUM | VERY HIGH | 🔴 HIGH |
-| THREAT-IE-01 | Information | HIGH | MEDIUM | 🟡 MEDIUM |
-| THREAT-ST-02 | Constitutional | LOW-MEDIUM | HIGH | 🟡 MEDIUM |
-| THREAT-OP-02 | Legal | MEDIUM-HIGH | MEDIUM | 🟡 MEDIUM |
-| THREAT-ST-03 | Social | MEDIUM | MEDIUM-HIGH | 🟡 MEDIUM |
-| THREAT-IE-02 | Information | MEDIUM | MEDIUM-HIGH | 🟡 MEDIUM |
-| THREAT-OP-03 | Political | LOW-MEDIUM | MEDIUM | 🟢 LOW-MEDIUM |
+**Threat class**: Operational — Denial of service (municipal capacity)  
+**Probability**: HIGH (55%)  
+**Impact**: HIGH  
+**Actor**: Municipal administrations, NGOs, affected beneficiaries
+
+**Description**: The July 1, 2026 mandatory medical certificate requirement creates a 42-day implementation window (adoption → entry into force). Threats:
+1. Municipal IT systems unprepared → manual processing → delays/denials
+2. GP shortage → beneficiaries cannot obtain required certificates → benefits interrupted
+3. Pre-election social media amplification of individual denial cases
+4. Legal challenges filed immediately post-adoption (administrative law courts)
+
+**Evidence for HIGH probability**: Similar reforms in Denmark (2016 bidragsloft) generated 6–12 months of implementation turbulence. Swedish municipalities have flagged capacity concerns. Source: HD01SoU30 reservations, municipal associations' position.  
+**Mitigation available**: Government could issue implementation guidance; allow grace period; increase GP remuneration for certificate consultations  
+**Residual risk**: HIGH — timeline is structurally insufficient
+
+---
+
+## T3 — Legal Challenge (SoU30 EU/ECHR Compliance)
+
+**Threat class**: Legal — Tampering (retroactive policy reversal via courts)  
+**Probability**: MODERATE (40%)  
+**Impact**: MODERATE-HIGH  
+**Actor**: Legal aid organizations, opposition parties, EU Commission
+
+**Description**: SoU30's restriction of försörjningsstöd to "legally present" persons faces challenges under:
+- ECHR Art. 3 (inhuman or degrading treatment — if destitution results)
+- EU Charter Art. 1 (human dignity)
+- EU Social Security Regulation 883/2004
+
+**Trigger conditions**: Cases reaching ECHR within 12–18 months; EU Commission infringement proceedings  
+**Evidence**: HD01SoU30 reservation R5 (C) explicitly flags EU law concerns. Source: HD01SoU30.  
+**Mitigation available**: Government seeks ECHR advisory opinion proactively  
+**Residual risk**: MODERATE — risk of prolonged legal uncertainty
+
+---
+
+## T4 — Information Environment Threats (DISARM)
+
+**Threat class**: Information — Spoofing + Information disclosure  
+**Probability**: HIGH (elections context)  
+**Impact**: MODERATE (narrative contestation)  
+**Actor**: Domestic political operators, social media amplifiers
+
+**DISARM TTPs observed or anticipated**:
+
+| TTP | Description | Evidence |
+|-----|-------------|---------|
+| T0023 — Competing narratives | Government frames KU34 as "rights expansion"; opposition frames welfare as "stigmatizing the poor" | Party press releases (anticipated) |
+| T0046 — Seed distortions | KU34 provisions on citizenship revocation being described as "anti-rights" by V/MP | HD01KU34 V reservation |
+| T0049 — Flooding the zone | Simultaneous KU34 + SoU30 complexity → media oversimplification | Structural risk from multi-topic sitting |
+| T0059 — Exploit tragedies | Individual benefit denial cases amplified pre-election | SoU30 implementation risk |
+
+**Mitigation**: Riksdagsmonitor provides accurate primary-source analysis to counter DISARM TTPs. This article's specificity (exact vote counts, named reservations, constitutional mechanism) is the primary counter-TTP.
+
+---
+
+## T5 — Electoral Threat (Constitutional Uncertainty as Campaign Issue)
+
+**Threat class**: Electoral — Elevation of privilege  
+**Probability**: HIGH (110 days is 100% certainty of electoral impact)  
+**Impact**: HIGH  
+**Actor**: All parties — KU34 becomes the defining election issue
+
+**Description**: The vilande mechanism transforms the September 2026 election into a simultaneous:
+1. Choice of government (routine electoral function)
+2. Constitutional ratification referendum (extraordinary function — implicit)
+
+Voters may not fully understand that their vote influences whether the constitutional abortion right becomes permanent. If this mechanism is not clearly communicated, post-election claims of mandate ambiguity are likely.
+
+**Risk scenarios**:
+- V voters unaware their anti-KU34-provisions stance risks the abortion right itself
+- L voters conflicted between government support and rights concerns
+- International attention on Swedish "abortion rights at stake in election"
+
+**Mitigation available**: Clear public communication from Riksdag and KU committee on the vilande mechanism  
+**Residual risk**: HIGH — mechanistic complexity will not be fully communicated at scale
+
+---
+
+## Threat Summary Matrix
+
+| Threat | Probability | Impact | Priority |
+|--------|------------|--------|----------|
+| T1 — Constitutional fragility | MODERATE | CRITICAL | P1 |
+| T2 — SoU30 implementation failure | HIGH | HIGH | P1 |
+| T3 — Legal challenges | MODERATE | MODERATE-HIGH | P2 |
+| T4 — Information environment | HIGH | MODERATE | P2 |
+| T5 — Electoral confusion on vilande | HIGH | HIGH | P1 |
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43. Methodology: THREAT_MODEL.md; DISARM TTPs v1.4.*

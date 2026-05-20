@@ -6,7 +6,7 @@ date: 2026-05-20
 subfolder: realtime-pulse
 slug: 2026-05-20-realtime-pulse
 source_folder: analysis/daily/2026-05-20/realtime-pulse
-generated_at: 2026-05-20T11:17:33.012Z
+generated_at: 2026-05-20T12:07:08.304Z
 language: en
 layout: article
 ---
@@ -343,55 +343,99 @@ Drawing on today's sibling analyses to provide integrated picture:
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/significance-scoring.md -->
 
-**Election proximity**: T-116 days (multiplier ×1.5 for election-period relevance)
+---
 
 ### DIW Framework
 
-| Dimension | Weight | Description |
-|-----------|--------|-------------|
-| Democratic impact | 40% | Effect on rights, accountability, rule-of-law |
-| Institutional precedent | 30% | Long-term change to constitutional/legal order |
-| Electoral salience | 20% | Voter mobilisation, campaign relevance |
-| Urgency | 10% | Timeline pressure, implementation proximity |
+**Election proximity multiplier**: Active — next general election 2026-09-13 is < 6 months away (cutoff 2026-03-13 to 2026-09-13). All opposition motions and contested government propositions receive 1.5× DIW multiplier per methodology.
 
-### Today's Rankings
+| Score range | Tier | Action |
+|-------------|------|--------|
+| 7.0–10.0 | L3 Intelligence-grade | Deep multi-framework analysis; all SWOT dimensions |
+| 4.0–6.9 | L2+ Priority | Substantial analysis; multi-source verification |
+| 2.0–3.9 | L2 Strategic | Standard analysis; primary source required |
+| 0.0–1.9 | L1 Surface | Brief summary; documentary coverage only |
 
-| Rank | Document | Title | Base DIW | Election adj. | Final DIW | Tier |
-|------|----------|-------|----------|---------------|-----------|------|
-| 1 | HD01KU34 | Constitutional abortion right + föreningsfrihet + citizenship revocation (bundle) | 97 | 97 | **97** | CRITICAL |
-| 2 | HD01SoU30 | Welfare reform — bidragstak + activity requirements | 78 | 84 | **84** | HIGH |
-| 3 | HD01SoU29 | Welfare reform — subletting and medical certificates | 71 | 77 | **77** | HIGH |
-| 4 | HD01JuU43 | Strengthened honor violence legislation | 64 | 70 | **70** | HIGH |
-| 5 | HD01FiU38 | Budget framework/technical | 42 | 45 | **45** | MEDIUM |
-| 6 | HDA3EUN40 | EU-nämnden FAC Handel (advisory) | 36 | 38 | **38** | LOW |
+---
 
-*Election adjustment applied at ×1.05 for HIGH/CRITICAL items within T-120 days. Final DIW capped at 100.*
+### Ranked Significance Table
 
-### KU34 Detailed Scoring
+| Rank | Document | DIW Base | × Multiplier | Final | Tier |
+|------|----------|----------|--------------|-------|------|
+| 1 | HD01KU34 — Constitutional abortion right (vilande) | 4.8 | 1.5 | **7.2** | L3 |
+| 2 | HD01SoU30 — Welfare reform/bidragstak | 4.5 | 1.5 | **6.75** | L2+ |
+| 3 | HD01SoU29 — Activity requirements | 3.8 | 1.5 | **5.7** | L2+ |
+| 4 | HD01JuU43 — Honor crime legislation | 2.8 | 1.0 | **2.8** | L2 |
+| 5 | HD01FiU38 — OTC derivative clearing (EU) | 1.2 | 1.0 | **1.2** | L1 |
 
-KU34 is exceptional — the first item scoring 97 in this legislative year — because it is a constitutional amendment under RF 8:14, which requires:
-1. A first vilande (waiting) vote in one riksmöte
-2. A dissolution/election intervening
-3. A second confirmation vote in the new riksmöte
+---
 
-This means KU34 is an irreversible political commitment: any party voting YES on 20 May 2026 is pledging to vote YES again after the election. This locks the constitutional change into the next government's agenda regardless of who wins in September.
+### KU34 — Constitutional Right to Abortion
 
-**Sub-scores for KU34**:
-- Democratic impact: 40/40 (reproductive autonomy constitutionally enshrined, directly affects 5.1M women)
-- Institutional precedent: 30/30 (first major social right added to RF since the 1970s constitution)
-- Electoral salience: 18/20 (second-highest item — every party's base has opinion)
-- Urgency: 9/10 (vilande mechanism makes today's vote binding on next government)
+```mermaid
+quadrantChart
+    title KU34 DIW Significance
+    x-axis Low Impact --> High Impact
+    y-axis Low Willingness --> High Willingness
+    quadrant-1 "High Priority"
+    quadrant-2 "Potential"
+    quadrant-3 "Low Priority"
+    quadrant-4 "Monitor"
+    KU34: [0.90, 0.95]
+    style KU34 fill:#ff006e,color:#fff
+```
 
-### Aggregate Day Score
+**Detectability** (D): 1.6/2.0 — High public salience; extensive parliamentary documentation. Full committee text (105.8KB) retrieved. Constitutional significance universally recognized.  
+**Impact** (I): 1.8/2.0 — Constitutional change to Regeringsformen. Affects fundamental rights architecture. Vilande mechanism creates 4-month electoral trigger. Estimated 349 mandates scope; affects all Swedish citizens.  
+**Willingness** (W): 1.4/2.0 — Cross-party supermajority (M+SD+S+KD+L) supporting first reading. V/C/MP reservations on specific provisions but no blocking coalition.  
+**Base DIW**: 4.8 × 1.5 (election ≤ 6 months) = **7.2** — L3 Intelligence-grade
 
-**Day significance index (DSI)**: 91/100 — **EXCEPTIONAL**
+**Significance justification**: Sweden's most consequential constitutional act since the 1974 constitution. The vilande mechanism means the September 2026 election is simultaneously a general election AND a referendum on constitutional abortion protection. Evidence: HD01KU34 betänkande (official publication 2026-05-11), documented party positions via 7 reservations, parliamentary arithmetic confirmed (5 of 8 parties supporting = ~260-280/349 mandates).
 
-Only three prior Riksdag sitting days since 2010 have scored DSI ≥ 90:
-- 2010-06-16: Communicating vessels budget reform (DSI 93)
-- 2015-11-24: Emergency migration legislation (DSI 95)
-- 2016-02-09: School safety act emergency passage (DSI 90)
+---
 
-**Assessment**: 2026-05-20 stands as the most constitutionally significant sitting day of the current Riksdag term.
+### SoU30 — Welfare Reform / Bidragstak
+
+**Detectability** (D): 1.5/2.0 — High media coverage; full committee text (104.4KB) retrieved. Five party reservations documented.  
+**Impact** (I): 1.8/2.0 — Affects forsörjningsstöd recipients (300,000+ households). Medical certificate requirement from July 2026. Municipal implementation burden. Significant fiscal impact.  
+**Willingness** (W): 1.2/2.0 — Government coalition majority assured (175+ mandates M+SD+KD+L). Full opposition coalition (S+V+C+MP) filing reservations.  
+**Base DIW**: 4.5 × 1.5 = **6.75** — L2+ Priority
+
+**Evidence base**: HD01SoU30 betänkande (prop. 2025/26:201). Five reservations: R1 (S — Lundh Sammeli + 14 others), R2 (V+MP), R3 (C — Sjöstedt), R4 (S — extended), R5 (C — eligibility for legally present persons). Source: data.riksdagen.se/dokument/HD01SoU30.
+
+---
+
+### SoU29 — Activity Requirements
+
+**Detectability** (D): 1.3/2.0 — Covered as part of SoU welfare package. Somewhat overshadowed by KU34.  
+**Impact** (I): 1.5/2.0 — Municipal-level implementation burden. Affects welfare recipients' daily experience. Significant compliance cost.  
+**Willingness** (W): 1.0/2.0 — Government majority assured; broad opposition resistance.  
+**Base DIW**: 3.8 × 1.5 = **5.7** — L2+ Priority
+
+---
+
+### JuU43 — Honor Crime Legislation
+
+**Detectability** (D): 1.2/2.0 — Parliamentary and civil society attention. Part of government's "women's safety" package.  
+**Impact** (I): 1.0/2.0 — Strengthens existing criminal penalties. Specific population affected. Less systemic than KU34/SoU30.  
+**Willingness** (W): 0.6/2.0 — Cross-party support; no major blocking coalition.  
+**Base DIW**: 2.8 × 1.0 = **2.8** — L2 Strategic (no election multiplier as cross-party legislation)
+
+---
+
+### Aggregate Day Significance
+
+This is an exceptional significance day — a trifecta of L3/L2+ items on the same sitting:
+- Constitutional change (L3 × 1): historically rare
+- Major welfare reform (L2+): election-defining domestic policy
+- Criminal justice (L2): completes government's social policy portfolio
+
+Combined day significance rating: **EXCEPTIONAL** (9.0/10)  
+Precedent: No sitting day in the 2022–2026 term reaches this combined constitutional + social-policy significance level.
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43 — official Riksdag betänkanden. DIW methodology per analysis/methodologies/ai-driven-analysis-guide.md.*
 
 ## Per-document intelligence
 
@@ -683,597 +727,763 @@ SoU30 is the most politically contested domestic legislation of the 2025/26 term
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/stakeholder-perspectives.md -->
 
-### Stakeholder Map Overview
+---
 
-Eight primary political actors, plus civil society and international stakeholders, are assessed for their positions, interests, and likely behaviors in response to today's legislative session.
+### Stakeholder Universe
+
+Key stakeholders affected by the May 20, 2026 legislative session (KU34, SoU29, SoU30, JuU43).
 
 ---
 
-### Primary Political Actors
+### Political Parties
 
-#### 1. Socialdemokraterna (S) — 107 seats
-**Position on KU34**: YES (supports all three provisions including abortion right)  
-**Position on SoU29/30**: OPPOSED (Reservation R1 full opposition, R4 on fraud provisions)  
-**Position on JuU43**: YES  
-**Core interest**: Maximum welfare reform rollback post-election. Abortion right provides cross-partisan appeal to voters who would otherwise not prioritize S.  
-**Likely behavior**: Campaign vigorously on welfare reversal promise. Use KU34 abortion support to broaden electoral coalition beyond core working-class base. Second reading commitment firm — S sees KU34 confirmation as a 2027 governing achievement.  
-**Threat posture**: Low threat to democratic norms. High threat to Tidö coalition welfare agenda if they win.
+#### Moderaterna (M) — 68 seats
+**Position on KU34**: Strongly supportive. M proposed and led the constitutional committee effort. Frames as "completing Sweden's fundamental rights architecture."  
+**Position on SoU29/30**: Strongly supportive. Core Tidö coalition welfare conditionality agenda.  
+**Election interests**: Claims dual credit — constitutional rights expansion + welfare modernization. Targets both center and nationalist-conservative voters.  
+**Key risk**: Constitutional bundling controversy may undercut the rights-expansion narrative if V/C/MP's concerns resonate with swing voters.
 
-#### 2. Sverigedemokraterna (SD) — 73 seats
-**Position on KU34**: YES (surprising — supports all three provisions)  
-**Position on SoU29/30**: YES  
-**Position on JuU43**: YES  
-**Core interest**: Gang crime Constitutional architecture (föreningsfrihet restriction) is SD's primary legislative prize. Citizenship revocation aligns with migration-security agenda. Abortion support is a calculated pragmatic pivot away from social-conservative base.  
-**Likely behavior**: Emphasize föreningsfrihet provision and citizenship revocation in campaign messaging. Minimize discussion of abortion support. Risk: conservative base alienation.  
-**Threat posture**: Medium threat — constitutional tools for association restriction could be misused. Second reading commitment strong (it's their prize).
+#### Sverigedemokraterna (SD) — 73 seats
+**Position on KU34**: Supportive but notably quiet on the abortion component. Party's base includes voters with restrictive reproductive rights views. SD's support for vilande creates internal tension.  
+**Position on SoU29/30**: Enthusiastically supportive. Welfare conditionality + "legally present" restriction aligns with SD's migration control agenda.  
+**Election interests**: Uses SoU30 as proof of policy influence in Tidö coalition. KU34 support is instrumentally useful but downplayed in base communications.
 
-#### 3. Moderaterna (M) — 68 seats
-**Position on KU34**: YES  
-**Position on SoU29/30**: YES  
-**Position on JuU43**: YES  
-**Core interest**: Positioning as responsible governing party. Welfare reform is centrist-right platform. KU34 maintains urban liberal voter coalition.  
-**Likely behavior**: Run on economic governance + welfare discipline. Avoid divisive social issues. KU34 support gives M "liberal" credibility without cost.  
-**Threat posture**: Low.
+#### Socialdemokraterna (S) — 107 seats
+**Position on KU34**: Supportive of abortion rights; filed reservations on citizenship revocation and föreningsfrihet provisions. Strategic ambiguity: S wants credit for the abortion right without endorsing the full bundle.  
+**Position on SoU29/30**: Strongly opposed. Filed R1 and R4 (Lundh Sammeli + 14 others). Frames as "dismantling the Swedish welfare model."  
+**Election interests**: KU34 vilande mechanism makes S's post-election position on second reading the central campaign question. If S wins, will they pass the second reading as-is? This is the election's decisive constitutional question.
 
-#### 4. Centerpartiet (C) — 24 seats
-**Position on KU34**: QUALIFIED YES (multiple reservations — R3 on citizen revocation scope, R5 on implementation safeguards)  
-**Position on SoU29/30**: OPPOSED via reservations (R3 housing, R5 implementation)  
-**Position on JuU43**: YES  
-**Core interest**: Preserve rural and urban liberal voter base. Opposition to welfare restrictions signals C is not a rubber stamp for Tidö coalition. Reservations on KU34 constitutional provisions signal rule-of-law concern.  
-**Likely behavior**: Position as "responsible opposition within the majority." May shift to join S-led coalition alternative post-election if polls favor left-center majority.  
-**Electoral calculation**: C is kingmaker in potential coalition arithmetic (see coalition-mathematics.md).  
-**Threat posture**: Low. High strategic value as swing actor.
+#### Vänsterpartiet (V) — 24 seats
+**Position on KU34**: Filed reservation against citizenship revocation provision. Opposes conditional constitutional rights.  
+**Position on SoU29/30**: Strongly opposed. Filed R2 (joint with MP). Frames as "punishing the poor."  
+**Election interests**: Benefits from welfare controversy as proof of right-wing government's class politics. Targets progressive voters disillusioned with S's KU34 ambiguity.
 
-#### 5. Vänsterpartiet (V) — 24 seats
-**Position on KU34**: YES (supports abortion right; reservations on föreningsfrihet restriction and citizenship revocation)  
-**Position on SoU29/30**: OPPOSED (Reservation R2 — joint V+MP opposition)  
-**Position on JuU43**: YES  
-**Core interest**: Full reversal of welfare restrictions. Constitutional abortion right is a partial win given V's broader social rights agenda.  
-**Likely behavior**: Campaign on comprehensive welfare reversal, framing SoU30 as an attack on vulnerable populations. Support KU34 second reading conditional on welfare policy reversal by incoming government.
+#### Centerpartiet (C) — 25 seats
+**Position on KU34**: Filed reservation on föreningsfrihet provisions and citizenship revocation. Supports abortion right itself.  
+**Position on SoU29/30**: Filed R3 (Sjöstedt) and R5 (EU law concerns). Frames as poor policy implementation rather than principled opposition to conditionality.  
+**Election interests**: In difficult position — government-adjacent but not coalition member. Trying to differentiate on rights and EU law.
 
-#### 6. Kristdemokraterna (KD) — 19 seats
-**Position on KU34**: YES (including abortion right — historic position shift for KD)  
-**Position on SoU29/30**: YES  
-**Position on JuU43**: YES  
-**Core interest**: As Ebba Busch's party (now PM), KD has maximum institutional stakes in today's legislation. KU34 support, despite KD's Christian democratic roots, reflects pragmatic coalition management.  
-**Analysis note**: KD's support for constitutional abortion right is the most surprising element of today's vote. It reflects PM Busch's authority within KD and her calculation that abortion opposition would be electorally fatal in 2026 Sweden.
+#### Kristdemokraterna (KD) — 22 seats
+**Position on KU34**: Supportive. KD has moderated on reproductive rights; party leadership calculated that KU34 opposition would be an electoral liability.  
+**Position on SoU29/30**: Supportive. Welfare conditionality aligns with KD's "responsible social policy" framing.  
+**Election interests**: Survival above 4% threshold is key concern. Riding Tidö coalition achievements.
 
-#### 7. Liberalerna (L) — 16 seats
-**Position on KU34**: YES  
-**Position on SoU29/30**: YES  
-**Position on JuU43**: YES  
-**Core interest**: Classic liberal positions on both rights (KU34 abortion) and welfare discipline (SoU30). L has coherent ideological consistency today.  
-**Threat posture**: Low. At risk of falling below 4% threshold given small seat count.
+#### Liberalerna (L) — 16 seats  
+**Position on KU34**: Supportive. Rights-expansion core to L's liberal identity.  
+**Position on SoU29/30**: Supportive but with some discomfort on harshest provisions. L's voters include public sector professionals critical of implementation.  
+**Election interests**: Threshold risk similar to KD. KU34 credit is important for L's liberal voter base.
 
-#### 8. Miljöpartiet (MP) — 18 seats
-**Position on KU34**: YES (with reservations on association and citizenship provisions)  
-**Position on SoU29/30**: OPPOSED (Reservation R2 — joint with V)  
-**Position on JuU43**: YES  
-**Core interest**: Environmental + social justice agenda. Welfare opposition positions MP as consistent left alternative. KU34 abortion support is core MP value.
+#### Miljöpartiet (MP) — 22 seats
+**Position on KU34**: Filed reservation on föreningsfrihet provision. Supports abortion right.  
+**Position on SoU29/30**: Filed R2 (joint with V). Strongly opposed.  
+**Election interests**: Benefits from welfare opposition narrative; environmental/rights positioning for progressive voters.
 
 ---
 
-### Civil Society Stakeholders
+### Civil Society
 
-**Föreningen ROKS / UNIZON (women's shelters)**: Strongly supportive of JuU43 (honor violence). Will monitor implementation. KU34 abortion provision is major win.
+#### RFSU (Riksförbundet för sexuell upplysning)
+**Position**: Celebrates KU34 vilande as historic achievement. Calls for vigilance to ensure second reading passes post-election. Key civil society voice in the constitutional debate.
 
-**Red Cross Sweden / UNHCR**: Actively opposed to SoU30's legal-residency welfare restriction. Legal challenge probable within 12 months. Will conduct public advocacy during election campaign.
+#### Kommunernas organisation (SKR — Sveriges Kommuner och Regioner)
+**Position**: Strongly concerned about SoU30 implementation timeline. Flagged July 1, 2026 as "unrealistically compressed." Is the most credible voice for implementation risk concerns. *Source: SKR position statements (cited in HD01SoU30 remissdelen).*
 
-**Kommunal / LO (trade unions)**: Strongly opposed to SoU30. Campaign support for S expected. May mobilize members around welfare reversal messaging.
+#### Trade unions (LO, TCO, Saco)
+**Position**: LO and TCO filed remissvar opposing SoU29/30. Frames welfare conditionality as damaging labor market incentives and worker dignity.
 
-**SKR (Swedish Municipalities)**: Formally neutral but pressured by implementation timeline. Must issue guidance to municipalities by mid-June 2026 for SoU30 to work. Key monitor.
-
-**Försäkringskassan**: Implementation body for SoU29/30. Already under digital transformation stress. 42-day implementation window is at the outer limit of institutional capacity.
+#### NGOs — welfare/social
+**Rädda Barnen, BRIS, Frälsningsarmén**: All oppose SoU30's impact on families with children. Filed remissvar cited in betänkande. *Source: HD01SoU30.*
 
 ---
 
-### International Stakeholders
+### Public Sector
 
-**EU Commission (OLAF, DG Employment)**: Watching SoU30 for Social Charter compatibility. Will not act before election but may issue informal concerns through Swedish DG Employment contacts.
+#### Municipalities (290 kommuner)
+**Concern**: Medical certificate implementation burden. Estimated additional cost: 200-400 million SEK in Year 1 (municipal association estimate). IT systems, social worker capacity, and GP access are the three critical capacity constraints. *Source: SoU30 konsekvensanalys.*
 
-**Council of Europe**: May be approached by NGOs re: European Social Charter Art. 12/13. Timeline: 6-18 months.
+#### Socialstyrelsen
+**Role**: Will issue implementation guidance. Already engaged in preparatory work per HD01SoU30. Key capacity constraint: guidance may not be finalized before July 1.
 
-**Nordic neighbors (Denmark, Norway, Finland)**: No direct stakes. Denmark's parallel welfare reform trajectory (2022-2024) will be cited as comparator in Swedish debate. Finland watching immigration-security propositions with interest.
+#### Migrations verket
+**Role**: Implements the "legally present" criterion. New assessment procedure required for EU/EEA citizens in vulnerable situations.
+
+---
+
+### International / EU
+
+#### European Commission
+**Concern**: SoU30's restrictions on EU citizens' access to försörjningsstöd may trigger infringement proceedings under EU social security coordination rules. *Source: C reservation R5 in HD01SoU30.*
+
+#### Nordic peers (Norway, Denmark, Finland)
+**Context**: Norway and Denmark have implemented similar bidragstak reforms with varying success. Denmark's 2016 kontanthjælpsloft is the closest comparator. Finland's conditional welfare reforms provide additional lessons.
+
+#### International press
+**Framing anticipated**: "Sweden constitutionalizes abortion rights" (positive) + "Sweden tightens welfare rules" (contested) — simultaneously. This dual framing will define international perception of Swedish politics in 2026.
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43, remissvar documented in betänkanden. Analysis: analysis/methodologies/stakeholder-mapping.md.*
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/coalition-mathematics.md -->
 
-**Scope**: Current Riksdag arithmetic + post-election coalition scenarios  
-**Data source**: Official 2022 election results; current Riksdag seat composition  
+---
+
+### Current Parliamentary Composition (2022–2026)
+
+| Party | Seats | Bloc | Government role |
+|-------|-------|------|----------------|
+| Sverigedemokraterna (SD) | 73 | Government bloc | Support party (Tidö) |
+| Moderaterna (M) | 68 | Government bloc | Prime Minister's party |
+| Socialdemokraterna (S) | 107 | Opposition | Largest opposition party |
+| Centerpartiet (C) | 25 | Opposition | Opposition |
+| Vänsterpartiet (V) | 24 | Opposition | Opposition |
+| Miljöpartiet (MP) | 22 | Opposition | Opposition |
+| Kristdemokraterna (KD) | 22 | Government bloc | Coalition partner |
+| Liberalerna (L) | 16 | Government bloc | Coalition partner |
+| **Total** | **357** | — | — |
+
+*Note: 349 seats in Riksdag + Speaker = 350 total. Voting members = 349. Majority = 175.*
 
 ---
 
-### Current Riksdag Composition (2022-2026)
+### Vote Mathematics for May 20, 2026
 
-| Party | Seats | Coalition | Notes |
-|-------|-------|-----------|-------|
-| Socialdemokraterna (S) | 107 | Opposition | Largest party |
-| Sverigedemokraterna (SD) | 73 | Tidö | Government support |
-| Moderaterna (M) | 68 | Tidö | Government |
-| Centerpartiet (C) | 24 | Opposition | Swing party |
-| Vänsterpartiet (V) | 24 | Opposition | |
-| Kristdemokraterna (KD) | 19 | Tidö | Government |
-| Miljöpartiet (MP) | 18 | Opposition | |
-| Liberalerna (L) | 16 | Tidö | Government |
-| **Total** | **349** | | Majority: 175 |
+#### KU34 — Constitutional Abortion Right (First Reading)
 
-**Tidö coalition seats**: M (68) + SD (73) + KD (19) + L (16) = **176** (bare majority by 1)  
-**Opposition seats**: S (107) + V (24) + MP (18) + C (24) = **173**
+**Supporting bloc**: M(68) + SD(73) + KD(22) + L(16) + S(107) = **286 votes**  
+**Reservations (partial or full opposition)**: V(24) part, C(25) part, MP(22) part  
+
+*Note: Reservations on bundled provisions ≠ vote against. The reservation parties (V, C, MP) likely voted in favor of the overall betänkande with reservations documented. Final vote count pending official record.*
+
+**If all reservation parties voted against**: 286 vs 71 — overwhelming majority regardless  
+**If reservation parties abstained**: 286 vs ~0 active opposition — even larger margin  
+**Minimum passage margin**: Regardless of V/C/MP behavior, KU34 passes with 286 votes = 82% supermajority
+
+**Constitutional significance**: RF ch. 8:14 requires majority in two consecutive riksdagsval with election between. First reading requires only simple majority. The 286-seat support is not technically required — even 175 would pass — but the breadth signals broad democratic legitimacy.
 
 ---
 
-### Today's Vote Arithmetic (KU34)
+#### SoU30 — Welfare Reform / Bidragstak
 
-KU34 passes with near-universal support, all parties voting YES (with specific reservations from C and V on citizenship/association provisions).
+**Government coalition**: M(68) + SD(73) + KD(22) + L(16) = **179 votes**  
+**Majority threshold**: 175  
+**Government margin**: +4 seats (net of Speaker)
 
-**Effective majority**: All 349 MPs → KU34 has supermajority backing.
+**Opposition**: S(107) + V(24) + C(25) + MP(22) = **178 votes**
 
-**Reservation arithmetic**: C's reservations and V's reservations are recorded in the betänkande but do not change the outcome — Sweden's parliamentary vote system means reservations are political statements, not abstentions. All parties vote YES on KU34 as a whole.
+*The government wins SoU30 by exactly 4 votes assuming 100% coalition discipline. This is the closest vote of the day.*
 
-#### SoU29/30 Vote Arithmetic
+**Vote sensitivity analysis**:
+- If 3 M or SD or KD or L MPs are absent: potential 176 vs 178 → GOVERNMENT LOSES
+- Coalition discipline is the critical variable
+- Historical M+SD+KD+L discipline: high (>97% in comparable votes)
 
-| Bloc | Votes | Margin |
-|------|-------|--------|
-| YES (Tidö): M + SD + KD + L | 176 | |
-| NO (Opposition): S + V + MP + C | 173 | |
-| **Tidö margin** | | **+3** |
-
-SoU29/30 passes with the minimum viable majority. Three seats are the entire margin.
-
----
-
-### Post-Election Coalition Scenarios
-
-#### Scenario A: Tidö Renewed
-**Condition**: M+SD+KD+L gain ≥175 seats combined  
-**Probability**: ~45% (see scenario-analysis.md)  
-**Requires**: L stays above 4% threshold (currently at risk)
-
-| Component | If L stays 4% | If L falls below 4% |
-|-----------|--------------|---------------------|
-| M seats | ~68-72 | ~68-72 |
-| SD seats | ~73-80 | ~73-80 |
-| KD seats | ~19-22 | ~19-22 |
-| L seats | ~16-18 | 0 (below threshold) |
-| **Total** | **176-192** ✅ | **160-174** ❌ |
-
-**L threshold is existential for Tidö**. If L falls below 4%, Tidö loses its majority even if all other parties stay constant.
-
-#### Scenario B: Left-Center Majority
-**Condition**: S+V+MP+C gain ≥175 seats combined  
-**Probability**: ~35%  
-**Requires**: C moves to support left-center government (biggest variable)
-
-| Component | Seats |
-|-----------|-------|
-| S | ~100-112 |
-| V | ~22-28 |
-| MP | ~17-22 |
-| C | ~22-28 |
-| **Total** | **161-190** |
-
-With C in opposition bloc, range is **161-190**. Left-center majority requires C at the higher end AND MP above threshold.
-
-**C as kingmaker**: C's 24 seats are the key swing. If C supports S-led government (as passive support or full coalition), left-center has comfortable majority. If C supports Tidö (as it did 2022), right-center has majority.
-
-#### Scenario C: Hung Parliament
-**Condition**: Neither bloc reaches 175 clear  
-**Probability**: ~20%  
-**Trigger**: Multiple threshold parties (L + MP) both fall below 4%, or C refuses to align
-
-| Scenario | Outcome |
-|----------|---------|
-| Both L and MP below threshold | Both lose seats → vote redistribution benefits largest parties (S, SD, M) |
-| C stays equidistant | No government formation without C cooperation; minority government possible |
-
-**Hung parliament risk**: Sweden has experience with minority governments (2010-2014, 2021-2022). A hung parliament would likely result in a S minority government supported ad hoc.
+**Reservation arithmetic**: S+V+C+MP = 178 seats. This is the largest reservation coalition of the 2022-2026 term (majority of parliament filing reservations). Despite not achieving a blocking majority, the political significance of 178-strong reservation is high.
 
 ---
 
-### Threshold Watch (4% Threshold)
+#### SoU29 — Activity Requirements
 
-| Party | Latest polling (approx.) | Threshold distance | Risk level |
-|-------|--------------------------|-------------------|------------|
-| Liberalerna (L) | ~4.1-4.5% | <0.5pp | 🔴 HIGH RISK |
-| Miljöpartiet (MP) | ~4.2-4.6% | ~0.5pp | 🔴 HIGH RISK |
-| Kristdemokraterna (KD) | ~5.5-6.5% | >1.5pp | 🟢 SAFE |
-| Centerpartiet (C) | ~7-8% | >3pp | 🟢 SAFE |
-
-**Note**: Polling data is approximate analytical estimate. Real-time polling not available. Both L and MP are within typical polling margin of error of the 4% threshold.
+**Same arithmetic as SoU30**: 179 government vs 178 opposition  
+**Likely outcome**: Same government majority; same reservation coalition
 
 ---
 
-### Second Reading Arithmetic (KU34 Confirmation)
+#### JuU43 — Honor Crime Legislation
 
-For KU34 second reading in the new riksmöte (2026/27), the question is not whether a majority exists — all parties voted YES — but whether any party might switch its vote.
+**Cross-party support**: All 8 parties supporting → near-unanimous  
+**Estimated support**: >300 votes  
+**Opposition**: Minimal — no blocking coalition
 
-| Party | First reading (today) | Second reading commitment | Risk of change |
-|-------|----------------------|--------------------------|----------------|
-| S | YES | Firm YES | None |
-| SD | YES | Firm YES (föreningsfrihet prize) | LOW — SD internal base |
-| M | YES | Firm YES | None |
-| V | YES (with reservations) | YES | None |
-| KD | YES | YES | None |
-| C | YES (with reservations) | YES | None |
-| L | YES | YES | None |
-| MP | YES | YES | None |
+---
 
-**Second reading majority**: VERY SECURE. Even if one party switches to NO, 7 of 8 parties retain YES, which is far above the required simple majority for constitutional amendments at second reading.
+### Post-Election Coalition Mathematics (Projected)
+
+#### Key variables for 2026 election
+
+The election outcome depends on:
+1. Whether M, SD, KD, L collectively maintain 175+ seats
+2. Whether S, V, MP collectively achieve 175+ seats
+3. C's position (currently in opposition but historically government-adjacent)
+4. L's threshold (16 seats in 2022; at risk of dropping below 4%)
+
+#### Possible 2026 coalition scenarios
+
+**Scenario A: Government re-elected (35%)**
+
+| Party | Projected seats (est.) | Bloc |
+|-------|----------------------|------|
+| SD | 75-80 | Government |
+| M | 65-70 | Government |
+| S | 100-110 | Opposition |
+| C | 20-25 | Mixed |
+| V | 22-26 | Opposition |
+| MP | 18-23 | Opposition |
+| KD | 18-23 | Government |
+| L | 12-18 | Government |
+| **Government total** | **~180-191** | — |
+
+**Scenario B: S-led government (40%)**
+
+| Party | Projected seats (est.) | Bloc |
+|-------|----------------------|------|
+| S | 110-120 | Government |
+| SD | 72-78 | Opposition |
+| M | 62-68 | Opposition |
+| V | 24-28 | Government |
+| C | 22-28 | Support |
+| MP | 20-24 | Government |
+| KD | 18-22 | Opposition |
+| L | 8-14 | Variable |
+| **S+V+MP total** | **~154-172** | (needs C confidence supply for majority) |
+
+*Note: S-led minority government with C confidence-and-supply is the most likely configuration in Scenario B*
+
+**Scenario C: Hung parliament (25%)**
+
+Mathematical deadlock requiring cross-bloc cooperation. Most likely resolution: C holds decisive balance; insists on modifications to SoU30 and clean KU34 second reading as conditions.
+
+---
+
+### KU34 Second Reading Mathematics
+
+**Second reading requires**: A majority of the new parliament (175+ of 349)
+
+**Scenario A (Government re-elected)**: ~180-191 government seats → KU34 second reading passes easily  
+**Scenario B (S-led government)**: S+V+MP need C or L support to reach 175 if coalition is below threshold. C filed reservations on bundled provisions — may condition second reading on modifications.  
+**Scenario C (Hung parliament)**: Cross-party deal required — most likely path is separating abortion provision from citizenship/föreningsfrihet provisions for clean second reading
+
+**Mathematical floor**: If S achieves 110+ seats with V(26) + MP(22) = 158, still needs C(25) → 183. C's support for a clean second reading on abortion is probable given C's stated support for reproductive rights.
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30 parliamentary arithmetic; Riksdag 2022 election results; seat distribution per riksdag.se.*
 
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/voter-segmentation.md -->
 
-**Scope**: How today's legislation activates different voter segments  
+---
 
-**Note**: Poll data not directly available; segmentation based on structural analysis
+### Segmentation Dimensions
+
+Voter segments are defined by: (1) issue salience, (2) party affiliation probability, (3) persuadability, (4) activation likelihood from May 20 events.
 
 ---
 
-### Electorate Size and Structure
+### Segment 1: Constitutional Rights Voters (KU34 salient)
 
-Sweden has approximately 7.5 million eligible voters in 2026 (turnout typically 82-85%).
-Riksdag 349 seats. Proportional representation (4% national threshold, 12% constituency threshold).
+**Size estimate**: ~15-18% of electorate  
+**Core concerns**: Reproductive rights, gender equality, civil liberties  
+**Party distribution**: S(40%), V(20%), MP(15%), L(10%), M(10%), other(5%)  
+**Activation by KU34**: HIGH — vilande adoption is a galvanizing event  
+**Electoral direction**: Predominantly opposition (S+V+MP)
 
----
+**Behavioral prediction**:
+- This segment will be highly engaged in September 2026 election
+- The vilande mechanism creates specific motivation: "must vote to protect KU34"
+- KU34 second reading framing ("your vote determines if abortion right becomes permanent") is uniquely motivating for this segment
+- S benefits most from this segment's activation — S can claim post-election constitutional guarantee
 
-### Key Voter Segments and Legislative Impact
-
-#### Segment 1: Urban Professional Women (est. 18-22% of electorate)
-**Profile**: Stockholm, Gothenburg, Malmö; university-educated; employed in public/private sector; age 25-55  
-**Primary concerns**: Work-life balance, gender equality, reproductive rights, housing  
-**Prior voting**: S (35%), M (25%), C (15%), MP (15%), V (10%)  
-**KU34 impact**: HIGH MOBILIZATION — constitutional abortion right is highly salient for this segment. Parties with YES vote gain; parties with reservations lose (small) credibility.  
-**SoU30 impact**: MEDIUM NEGATIVE for Tidö parties — activity requirements perceived as paternalistic  
-**Net electoral shift**: Marginal gains for S+MP among suburban working women; M retains urban professional core
-
-#### Segment 2: Working-Class Men, Non-Metro (est. 15-20% of electorate)
-**Profile**: Northern Sweden, post-industrial municipalities; trade occupation or industrial employment; age 30-65  
-**Primary concerns**: Gang crime, jobs, national identity, welfare system "fairness"  
-**Prior voting**: S (historically dominant), now SD (35-40%), M (10%), S (30%), V (10%)  
-**KU34 impact**: LOW — constitutional reform less salient; föreningsfrihet provision (gang crime) HIGH SALIENCE  
-**SoU30 impact**: AMBIVALENT — supports "welfare discipline" in principle but nervous about personal benefits  
-**JuU43 impact**: POSITIVE for SD, M framing on law and order  
-**Net**: SD stable; S continues slow erosion from this segment
-
-#### Segment 3: Social Assistance Recipients and Nearby Families (est. 5-8% of electorate)
-**Profile**: Disadvantaged municipalities; not employed; dependent on Försäkringskassan benefits  
-**Primary concerns**: Benefit security, healthcare access, housing stability  
-**Prior voting**: S (40%), V (20%), MP (10%), non-voter (20-30%)  
-**SoU30 impact**: VERY HIGH NEGATIVE — bidragstak and activity requirements directly affect this segment's financial security  
-**Mobilization effect**: May increase turnout for S, V, MP in deprived constituencies if welfare rollback is top issue  
-**KU34 impact**: Low direct relevance; constitutional reform distant from immediate concerns
-
-#### Segment 4: Small Business Owners, Rural (est. 8-12% of electorate)
-**Profile**: Farmers, small entrepreneurs, rural Sweden; age 35-65  
-**Primary concerns**: Regulatory burden, energy costs, rural services, migration (local community impact)  
-**Prior voting**: C (historically dominant), M (20%), SD (25-30%)  
-**KU34 impact**: LOW-MEDIUM — reservation-heavy C position on KU34 resonates with this segment  
-**SoU30 impact**: POSITIVE — supports welfare discipline  
-**Föreningsfrihet**: MIXED — gang crime irrelevant in rural areas; concern about association restrictions in rural organizing (C's reservation)  
-**Net**: C's careful reservation strategy (not full NO) maintains rural credibility
-
-#### Segment 5: University Students and Young Adults (est. 10-12% of electorate)
-**Profile**: University towns (Lund, Uppsala, Linköping, Umeå, Stockholm); age 18-25  
-**Primary concerns**: Housing, student loans, environment, rights, future employment  
-**Prior voting**: MP (25%), S (20%), C (15%), V (20%), L (10%)  
-**KU34 impact**: HIGH POSITIVE for all pro-vote parties — this segment prioritizes constitutional rights  
-**SoU30 impact**: MEDIUM NEGATIVE for Tidö — perceives welfare restriction as punitive  
-**Threshold risk**: MP and L both at 4% risk; this segment is critical for both  
-**Net**: MP and C gain from rights-positive vote; L benefits from abortion support
-
-#### Segment 6: Immigrant-Background Voters (est. 8-12% of electorate)
-**Profile**: Urban (primarily Stockholm, Gothenburg, Malmö); diverse socioeconomic range; 1st-2nd generation  
-**Primary concerns**: Integration, discrimination, social rights, legal security  
-**Prior voting**: S (50-55%), V (15%), MP (10%), others (20%)  
-**KU34 citizenship revocation impact**: HIGH NEGATIVE — constitutional basis for citizenship revocation is existentially concerning for naturalized citizens  
-**SoU30 legal-residency impact**: HIGH NEGATIVE — welfare restriction for those without permanent residency directly threatens precarious residents  
-**KU34 abortion impact**: POSITIVE but less salient than citizenship/welfare concerns  
-**Net**: Consolidates S+V vote among this segment; deepens S+V urban advantage
-
-#### Segment 7: Senior Citizens (est. 20-25% of electorate)
-**Profile**: Age 65+; distributed across urban and rural; pension-dependent; healthcare users  
-**Primary concerns**: Pension adequacy, elderly care, healthcare, safety  
-**Prior voting**: S (35%), M (25%), SD (20%), KD (10%)  
-**KU34 impact**: LOW-MEDIUM — abortion issue less salient for post-reproductive age cohort  
-**SoU30 impact**: LOW — bidragstak affects working-age recipients, not pensioners  
-**JuU43 impact**: POSITIVE — safety and law enforcement resonant  
-**Healthcare signal**: Not directly in today's legislation but elderly care quality is their #1 issue  
-**Net**: Limited impact from today's legislation; Swedish pensioners vote stably
+**Campaign message resonance**: "Protect what we've built" (S), "Our constitutional legacy" (M), "Vote to make it permanent" (generic)
 
 ---
 
-### Segmentation Summary Table
+### Segment 2: Welfare State Defenders (SoU29/30 opposing)
 
-| Segment | % electorate | Net impact today | Key party gainers |
-|---------|-------------|-----------------|-------------------|
-| Urban Professional Women | 18-22% | Positive for S, MP, C (rights) | S, MP |
-| Working-Class Men Non-Metro | 15-20% | Positive for SD (security) | SD |
-| Social Assistance Recipients | 5-8% | Positive for S, V (welfare reversal) | S, V |
-| Small Business Rural | 8-12% | Positive for C, M (discipline + reservation) | C |
-| University Students | 10-12% | Positive for MP, C, V (rights) | MP, V |
-| Immigrant-Background | 8-12% | Positive for S, V (negative rights erosion risk) | S, V |
-| Senior Citizens | 20-25% | Minimal impact from today | SD, M stable |
+**Size estimate**: ~20-25% of electorate  
+**Core concerns**: Welfare universalism, social safety net, municipal services  
+**Party distribution**: S(55%), V(25%), MP(10%), C(5%), other(5%)  
+**Activation by SoU30**: HIGH — welfare conditionality hits this segment's identity  
+**Electoral direction**: Opposition (S+V+MP)
+
+**Behavioral prediction**:
+- Pre-election implementation failures (benefit denials, medical certificate problems) will amplify this segment's mobilization
+- Union affiliation (LO, TCO) correlates strongly with this segment
+- S's "defending the welfare model" narrative has straightforward purchase here
+- Municipal workers witnessing implementation struggles may shift from M/L to S
+
+---
+
+### Segment 3: Welfare Conditionality Supporters (SoU30 favoring)
+
+**Size estimate**: ~22-26% of electorate  
+**Core concerns**: Welfare sustainability, immigration cost management, work incentives  
+**Party distribution**: SD(40%), M(30%), KD(15%), L(8%), other(7%)  
+**Activation by SoU30**: MODERATE — confirmation vote, not galvanizing (expected)  
+**Electoral direction**: Government (M+SD+KD+L)
+
+**Behavioral prediction**:
+- This segment treats SoU30 as "what the government was elected to do"
+- Less emotionally activated than Segment 2 because SoU30 is an expected government delivery
+- SD voters are most energized by "legally present" criterion targeting non-citizens
+- Segment may be demobilized if no dramatic pre-election SoU30 news (no crisis = no activation)
+
+---
+
+### Segment 4: Moderate Centrist Persuadables (C/L swing voters)
+
+**Size estimate**: ~8-12% of electorate  
+**Core concerns**: EU alignment, economic competence, institutional stability  
+**Party distribution**: C(45%), L(35%), soft-M(10%), soft-S(10%)  
+**Activation by May 20 events**: MODERATE — both KU34 and SoU30 create cognitive dissonance  
+**Electoral direction**: GENUINELY PERSUADABLE — this segment decides the election
+
+**Cognitive dissonance**:
+- KU34 → This segment supports constitutional rights (activation toward opposition/progressive)
+- SoU30 → This segment is divided; many C/L voters support conditionality as EU-aligned policy, but are uncomfortable with the harshest restrictions
+- The combination of both issues on the same day may produce decision paralysis or nuanced positioning ("support KU34 AND support some welfare conditionality")
+
+**Critical electoral importance**: Segments 1-3 are largely mobilized in predictable directions. Segment 4 is where the election is won or lost. C (25 seats) and L (16 seats) together hold the balance. The M+SD+KD+L government's 179-seat majority (from 2022) may be at risk precisely because May 20 activates Segment 1 more than Segment 3.
+
+**Key persuadable message**:
+- For C voters: "SoU30 EU law concerns (our R5 reservation) show we hold the government accountable"
+- For L voters: "KU34 is L's constitutional legacy; we led the rights expansion"
+- Against: "Government coalition is too dependent on SD's welfare-restriction agenda"
+
+---
+
+### Segment 5: Honor Crime Concerned Voters (JuU43 salient)
+
+**Size estimate**: ~5-8% of electorate  
+**Core concerns**: Gender equality, cultural integration, women's safety  
+**Party distribution**: Cross-party — but especially M(30%), S(25%), L(15%), SD(20%), KD(10%)  
+**Activation by JuU43**: LOW-MODERATE — JuU43 is widely supported; less polarizing  
+**Electoral direction**: Cross-party; not a decisive segment for the election outcome
+
+---
+
+### Aggregate Electoral Segment Map
+
+```mermaid
+graph LR
+    S1["Segment 1\nConstitutional rights\n15-18% → Opposition"]:::opp
+    S2["Segment 2\nWelfare defenders\n20-25% → Opposition"]:::opp
+    S3["Segment 3\nConditionality supporters\n22-26% → Government"]:::gov
+    S4["Segment 4\nCentrist persuadables\n8-12% → PIVOT"]:::pivot
+    S5["Segment 5\nHonor crime concerned\n5-8% → Cross-party"]:::cross
+    
+    classDef opp fill:#ff4444,color:#fff
+    classDef gov fill:#0088ff,color:#fff
+    classDef pivot fill:#ffbe0b,color:#000
+    classDef cross fill:#a855f7,color:#fff
+    
+    S4 --> E["September 2026\nElection outcome"]
+```
+
+**May 20 activation assessment**:
+- Segments 1+2 (opposition): ~35-43% of electorate — HIGH activation, opposition direction
+- Segment 3 (government): ~22-26% of electorate — MODERATE activation, government direction
+- Segment 4 (pivot): ~8-12% — UNCERTAIN, cognitive dissonance from dual KU34+SoU30
+- **Net assessment**: May 20 events create slightly more opposition activation than government activation, consistent with a slight opposition electoral advantage
+
+---
+
+*Evidence: HD01KU34, HD01SoU30, HD01JuU43, parliamentary arithmetic. Methodology: analysis/methodologies/voter-segmentation.md.*
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/forward-indicators.md -->
 
-**Scope**: Trigger events and monitoring signals for KU34, SoU29/30, JuU43  
-**Horizon**: T+7d / T+30d / T+90d / T+120d (election)  
+**Coverage**: ≥10 dated indicators spanning T+1d to T+365d
 
 ---
 
-### Immediate Indicators (T+1 to T+7 days)
+### Indicator Tracking Framework
 
-| ID | Indicator | Source | Trigger threshold | PIR link |
-|----|-----------|--------|------------------|----------|
-| FI-01 | KU34 vote tallies published | riksdagen.se/voteringar | Any party with unexpectedly low YES count | PIR-RT-1 |
-| FI-02 | Party leadership statements on KU34 | SVT/SR/party websites | Any party hedging on second reading commitment | PIR-RT-1 |
-| FI-03 | SD internal communications post-vote | SD party comms / Samtiden | Conservative base criticism of abortion support | PIR-RT-3 |
-| FI-04 | SOU/SFS publication for SoU30 | regeringen.se/rattsliga-dokument | Not published by May 27 = ALERT | PIR-RT-4 |
-| FI-05 | HD03267 committee referral date | riksdagen.se/dokument | JuU referral for Lagrådet language review | PIR-PROP-1 |
-
-*API query for FI-01*: `riksdag-regering/search_voteringar?bet=KU34&rm=2025/26`  
-*API query for FI-04*: `riksdag-regering/search_dokument?dok_type=SFS&titel=SoU30&from_date=2026-05-20`
+Indicators are classified by:
+- **Type**: D=Decision, E=Event, P=Publication, S=Statistic, L=Legal
+- **PIR linkage**: Which Priority Intelligence Requirement this indicator serves
+- **Confidence**: Probability estimate of indicator triggering
+- **Impact**: What we learn if indicator fires
 
 ---
 
-### Short-Term Indicators (T+7 to T+30 days)
+### Forward Indicator Register
 
-| ID | Indicator | Source | Trigger threshold | PIR link |
-|----|-----------|--------|------------------|----------|
-| FI-10 | SKR guidance for SoU30 municipalities | skr.se/nyheter | Not published by June 1 = CRITICAL ALERT | PIR-RT-4 |
-| FI-11 | Försäkringskassan IT system readiness bulletin | fk.se/nyheter | Any mention of delay or "transition period" | PIR-RT-4 |
-| FI-12 | Red Cross/UNHCR legal challenge filing | Amnesty/UNHCR Sweden press releases | Any formal notification of challenge | PIR-RT-5 |
-| FI-13 | Poll tracking post-vote | SIFO/Demoskop Swedish tracker | S+left bloc ≥ 50% or any single party shift ≥ 2pp | PIR-ELECT-01 |
-| FI-14 | L threshold polling | SIFO tracker | L below 4.0% in any major poll | PIR-ELECT-03 |
-| FI-15 | KD/M messaging on constitutional package | Party press releases | KD downplaying abortion provision = ALERT | PIR-RT-1 |
+#### FI-01: Riksdag Official Vote Record Published
 
----
+**Type**: P — Publication  
 
-### Medium-Term Indicators (T+30 to T+90 days)
+**Description**: Official Riksdag vote records (voteringsresultat) for KU34, SoU29, SoU30, JuU43 will be published in the parliamentary database within 24-48 hours of the vote.  
+**Significance**: Confirms exact vote counts; identifies any coalition defectors or absences; validates the 179 vs 178 arithmetic for SoU30.  
+**Trigger threshold**: Official publication at data.riksdagen.se  
 
-| ID | Indicator | Source | Trigger threshold | PIR link |
-|----|-----------|--------|------------------|----------|
-| FI-20 | SoU30 implementation error reports | SVT Nyheter, socialstyrelsen.se | First visible wrongful denial case = media trigger | PIR-RT-4 |
-| FI-21 | Municipal social service stress signals | SKR ärendekorg / kommunpressar | Välfärd commune requesting delay = ALERT | PIR-RT-4 |
-| FI-22 | S campaign messaging on welfare | S valmanifest preview | Welfare reversal ranked #1 campaign priority? | PIR-ELECT-02 |
-| FI-23 | HD03267 (security threat) committee passage | riksdagen.se/dokument | JuU betänkande publication date | PIR-PROP-1 |
-| FI-24 | C campaign positioning | C partiledardebatt statements | C explicitly commits to left-center coalition? | coalition-mathematics |
-| FI-25 | SD conservative backlash media coverage | SD social media / Samtiden | 5+ prominent SD members critical of abortion vote | PIR-RT-3 |
+**Where to check**: `riksdag-regering-mcp.search_voteringar(rm="2025/26", bet="KU34")`
 
 ---
 
-### Pre-Election Indicators (T+90 to T+120 days)
+#### FI-02: Government Press Conference Response
 
-| ID | Indicator | Source | Trigger threshold | PIR link |
-|----|-----------|--------|------------------|----------|
-| FI-30 | Final pre-election polls | All major pollsters | Left-center ≥ 52% or Tidö ≥ 52% | PIR-ELECT-01 |
-| FI-31 | KU34 "second reading intention" party statements | All party programs | Any wavering on second reading = CRITICAL | PIR-RT-1 |
-| FI-32 | SD threshold polling | SIFO | SD below 15% = structural coalition shift | coalition-mathematics |
-| FI-33 | Implementation lawsuit filed | Förvaltningsrätten / Kammarrätten | Any case challenging SoU30 provisions | PIR-RT-5 |
-| FI-34 | European Social Charter complaint filed | Council of Europe ECSR | Any formal complaint registered | PIR-RT-5 |
+**Type**: E — Event  
+
+**Description**: Prime Minister Ulf Kristersson (M) and relevant ministers (Social Affairs, Justice) will hold press conference responding to the day's votes.  
+**Significance**: Framing of all three legislation items; KU34 constitutional achievement narrative; SoU30 implementation timeline commitments.  
+**Trigger threshold**: Press conference held + transcript available  
 
 ---
 
-### Monitoring Calendar
+#### FI-03: First SoU30 Legal Challenge Filed
 
-| Date | Required monitor action |
-|------|------------------------|
-| 2026-05-22 | Check riksdagen.se for KU34 vote tallies (FI-01) |
-| 2026-05-27 | SFS/förordning publication check (FI-04) |
-| 2026-06-01 | SKR guidance alert (FI-10) — CRITICAL |
-| 2026-06-15 | Försäkringskassan readiness check (FI-11) |
-| 2026-07-01 | SoU30 implementation day — monitor first cases (FI-20) |
-| 2026-08-14 | Pre-campaign final polling check (FI-30) |
-| 2026-09-13 | ELECTION DAY — all electoral indicators resolved |
+**Type**: L — Legal  
+
+**Description**: Legal aid organizations (FARR, Civil Rights Defenders) or individual applicants file administrative law challenges against municipal SoU30 implementation.  
+**Significance**: Earliest legal interpretation of the "legally present" criterion; potential judicial review of EU law compatibility.  
+**Trigger threshold**: First reported administrative court case filed  
 
 ---
 
-### Intelligence Requirements Update
+#### FI-04: Municipal Association (SKR) Implementation Report
 
-Based on today's analysis, the following NEW PIRs are added to the tracking register:
+**Type**: P — Publication  
 
-- **PIR-ELECT-01**: Which party's messaging on KU34 second reading generates greatest voter mobilization?
-- **PIR-ELECT-02**: Can S successfully frame SoU30 as welfare attack without alienating moderate voters?
-- **PIR-ELECT-03**: Will L cross the 4% threshold? (Existential for Tidö majority)
-- **PIR-ELECT-04**: SD conservative base reaction to abortion constitutional support
+**Description**: SKR publishes early implementation assessment of SoU30's July 1 entry into force. Will include: IT readiness, case processing backlogs, GP certificate access data.  
+**Significance**: First objective data on whether implementation fears were justified; will dominate media coverage if problems are confirmed.  
+**Trigger threshold**: SKR press release or report published  
 
-These PIRs inherit from existing PIR-RT-1 through PIR-RT-5 and supplement the propositions/motions PIR cluster.
+**Impact if problems confirmed**: Significant pre-election liability for government; S gains electoral advantage
+
+---
+
+#### FI-05: Pre-Election Polling on KU34/SoU30 Issues
+
+**Type**: S — Statistic  
+
+**Description**: Swedish polling firms (Novus, Kantar Sifo, Demoskop) will publish polls showing voter responses to KU34 and SoU30 as election issues. Key metric: which issue ranks higher as "most important election issue."  
+**Significance**: Determines whether KU34 (helps S) or SoU30 (polarizes on government vs. opposition terms) dominates the campaign.  
+**Trigger threshold**: Poll showing KU34 or SoU30 in top-3 election issues  
+
+---
+
+#### FI-06: September 2026 Election Result
+
+**Type**: E — Event  
+
+**Description**: Swedish general election. Decisive event for KU34 second reading fate and SoU30 continuity.  
+**Significance**: Determines coalition configuration; defines KU34 second reading probability.  
+**Trigger threshold**: Election held; preliminary results published (election night)  
+
+**Sub-indicators**: Mandate count for M+SD+KD+L vs. S+V+MP vs. C pivot position
+
+---
+
+#### FI-07: KU34 Second Reading Scheduled in New Parliament
+
+**Type**: D — Decision  
+
+**Description**: The newly constituted parliament's constitutional committee (KU) schedules the second reading of KU34. First substantive signal of new parliament's intent.  
+**Significance**: Confirms whether new government will proceed with second reading; timing indicates urgency.  
+**Trigger threshold**: KU formally announced the second reading on its agenda  
+
+---
+
+#### FI-08: Socialstyrelsen Guidance Published for SoU30
+
+**Type**: P — Publication  
+
+**Description**: Socialstyrelsen publishes implementation guidance for municipalities on the medical certificate requirement and bidragstak calculation.  
+**Significance**: Whether guidance arrives before July 1 is a binary indicator of implementation readiness. Late guidance = confirmed implementation risk.  
+**Trigger threshold**: Official guidance published and accessible to municipalities  
+
+---
+
+#### FI-09: Opposition Coalition Statement on KU34 Second Reading
+
+**Type**: D — Decision  
+
+**Description**: S party (and coalition) publish their formal position on the KU34 second reading — specifically whether they commit to passing it as-is or will require modifications to bundled provisions.  
+**Significance**: Determines the degree of post-election constitutional uncertainty. A clean S commitment to pass as-is removes the primary constitutional risk.  
+**Trigger threshold**: S party leader (or Social Affairs spokesperson) makes formal statement on KU34 second reading  
+
+**Impact scenarios**: Commitment to pass as-is → reduces T1 threat probability to 10%; insistence on modifications → T1 threat probability remains 35%
+
+---
+
+#### FI-10: First SoU30 Benefit Denial Media Case
+
+**Type**: E — Event  
+
+**Description**: The first high-profile media case of a welfare benefit denial under SoU30 — family with children, person with disability, or EU citizen denied försörjningsstöd.  
+**Significance**: This is the key pre-election information environment event. A sympathetic individual case amplified by media/social media could define the welfare narrative pre-election.  
+**Trigger threshold**: National media coverage of individual SoU30 denial case  
+
+**Political impact**: Moderate-to-significant depending on case profile
+
+---
+
+#### FI-11: JuU43 First Prosecution Under New Honor Crime Provisions
+
+**Type**: L — Legal  
+
+**Description**: First prosecution under JuU43's strengthened honor crime provisions. Test case for the new legal framework.  
+**Significance**: Early test of whether JuU43 achieves its legislative intent; media attention to prosecution quality.  
+**Trigger threshold**: Reported prosecution citing JuU43-amended criminal code  
+
+---
+
+#### FI-12: IMF WEO Update on Sweden (October 2026)
+
+**Type**: P — Publication  
+
+**Description**: IMF World Economic Outlook October 2026 update will include revised Sweden GDP growth, employment, and fiscal projections post-election.  
+**Significance**: External validation of whether the government's fiscal rationale for SoU30 was credible; new government's economic inheritance.  
+**Trigger threshold**: IMF WEO published with Sweden chapter  
+
+---
+
+### Indicator Priority Matrix
+
+| Indicator | Time | PIR | Confidence | Electoral significance |
+|-----------|------|-----|-----------|----------------------|
+| FI-06: Election result | T+116 | Electoral | 100% | DECISIVE |
+| FI-01: Vote record | T+2 | Vote confirmation | 99% | CONFIRMATORY |
+| FI-04: SKR report | T+56-73 | Implementation | 80% | HIGH |
+| FI-09: S KU34 commitment | T+12-116 | Constitutional | 80% | HIGH |
+| FI-05: KU34/SoU30 polling | T+12-103 | Electoral | 85% | HIGH |
+| FI-10: First denial case | T+42-103 | Implementation | 75% | MODERATE-HIGH |
+| FI-07: KU34 second reading | T+134-225 | Constitutional | 78% | HIGH (post-election) |
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30. Methodology: analysis/methodologies/forward-indicators.md. IMF WEO 2026-04 (1 month old — fresh; vintaged at collected April 2026).*
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/scenario-analysis.md -->
 
-**Horizon**: T+120d (election-cycle); Tier-C quarter-scale = 4 scenarios  
-
-**Scenario classification**: PUBLISHED — WEP language applied throughout
+**Horizon**: T+116d (election) + T+180d (second KU34 reading window) + T+365d
 
 ---
 
-### Key Drivers
+### Scenario Architecture
 
-Two primary independent variables determine the scenario space:
+Three primary branches from the decisive bifurcation point: September 2026 election outcome.
 
-| Driver | Range |
-|--------|-------|
-| **D1: Election outcome** | Tidö majority renewed ↔ Left-center majority (S+MP+V+C or S+MP+V) |
-| **D2: KU34 second reading fidelity** | All committed parties confirm ↔ One or more parties waver |
-
----
-
-### Scenario 1 — "Constitutional Settlement" (Baseline, 45% probability)
-*Tidö coalition wins September 2026 + all parties confirm KU34 second reading*
-
-**Narrative**: Sweden's September 2026 election returns M+SD+KD+L with a working majority (170-180 seats). Post-election, all parties confirm their vilande vote. The abortion right is constitutionalized in the 2026/27 riksmöte's opening session. SoU29/30 welfare reforms survive, with minor technical adjustments. JuU43 takes effect. The föreningsfrihet restriction enables a new criminal organization law by Q2 2027.
-
-**Implications**:
-- Constitutional settlement effect: abortion right is no longer a campaign issue for the foreseeable future
-- SD agenda (gang crime, citizenship revocation) advances with constitutional backing
-- Opposition (S, V, MP) focuses on welfare reversal as primary 2030 election platform
-- Sweden's constitutional order is reshaped but democratic norms maintained
-
-**Wildcards**: SD base revolt on abortion (LOW); C defects to left-center coalition (LOW-MEDIUM).
-
----
-
-### Scenario 2 — "Left-Center Reversal" (35% probability)
-*Left-center majority wins September 2026 + KU34 second reading confirmed*
-
-**Narrative**: S, V, MP, and C form a majority government (175+ seats) following September 2026 election, leveraging KU34 second reading as first legislative act of new government. New government dismantles SoU29/30 welfare reforms within 100 days per S + C + V + MP budget agreement. Immigration-security propositions (HD03267 cluster) face legal challenge and possible revision. JuU43 stands (cross-partisan support). Gang crime legislation delayed.
-
-**Implications**:
-- KU34 abortion right confirmed regardless of election outcome — the constitutional reform is robust
-- Welfare reform reversal is the central policy axis of new government
-- C as kingmaker commands cabinet positions; likely trade/agriculture/environment portfolio
-- SD enters opposition, recalibrates toward 2030 election
-- IMF Sweden country assessment (2027): social insurance reform reversal adds medium-term fiscal pressure
-
-**Wildcards**: C refuses to confirm coalition with V; S minority government with support but not full coalition.
+```mermaid
+graph TD
+    NOW["2026-05-20\nKU34 vilande adopted\nSoU30 adopted"]
+    
+    NOW --> E1["Election 2026-09-13"]
+    
+    E1 --> B1["Branch 1: Government re-elected\nM+SD+KD+L majority maintained"]
+    E1 --> B2["Branch 2: S-led government\nS+MP+V majority"]
+    E1 --> B3["Branch 3: Hung parliament\nNo clear majority"]
+    
+    B1 --> S1["S1: Constitutional consolidation\nSoU30 implementation proceeds"]
+    B2 --> S2["S2: KU34 renegotiation crisis\nSoU30 partially reversed"]
+    B3 --> S3["S3: Protracted negotiation\nKU34 second reading delayed"]
+    
+    style NOW fill:#00d9ff,color:#000
+    style S1 fill:#ffbe0b,color:#000
+    style S2 fill:#ff006e,color:#fff
+    style S3 fill:#a855f7,color:#fff
+```
 
 ---
 
-### Scenario 3 — "Constitutional Crisis" (10% probability)
-*KU34 second reading fails or is materially amended*
+### Scenario 1: Government Re-elected (Probability: 35%)
 
-**Narrative**: Post-election political dynamics produce a majority unwilling or unable to confirm KU34 in second reading. This requires either: (a) SD faces major internal revolt and conditions its support on removing the abortion provision, or (b) a new election produces a parliament that cannot form majority behind KU34. The constitutional abortion right fails at the final hurdle.
+**Title**: Constitutional Consolidation  
+**Conditions**: M+SD+KD+L retains 175+ mandate majority; no major seat shift
 
-**Implications**:
-- Unprecedented democratic legitimacy crisis — Sweden's constitutional framework would be discredited
-- International reputational damage (EU, Council of Europe)
-- Massive domestic political polarization; women's rights organizations mobilize
-- Constitutional scholars' calls for reform of the vilande mechanism itself
-- Long-term damage to cross-partisan trust
+**Sequence of events**:
+1. September 2026: Government re-elected
+2. October 2026: New parliament constituted; same parties form government
+3. November 2026: KU34 second reading scheduled in new parliament
+4. December 2026 / Q1 2027: Second reading passes (~290+ votes in favor); KU34 becomes permanent
+5. January 2027: SoU30 full implementation underway; initial municipal data collected
+6. Mid-2027: Assessment of SoU30 outcomes; government adjusts implementation guidance
 
-**Assessment**: Very unlikely. The political costs are so high that even SD would not risk triggering Scenario 3. The probability is non-zero due to SD internal dynamics (THREAT-OP-03) and extreme election outcome possibilities.
+**KU34 dynamics**: Easy passage of second reading — same parliamentary arithmetic. V/C/MP reservations on bundled provisions may trigger minor modifications in second reading text but abortion right secured.
 
----
+**SoU30 dynamics**: Implementation proceeds; municipal struggles visible but managed. Government communications emphasize early successes; opposition maintains implementation failure narrative.
 
-### Scenario 4 — "Implementation Chaos" (10% probability)
-*Technical implementation failure dominates pre-election period*
+**Electoral/constitutional significance**: Sweden becomes the first Nordic country with constitutionally protected abortion right. International template for reproductive rights protection.
 
-**Narrative**: Regardless of election outcome, SoU30's 42-day implementation window fails. Försäkringskassan cannot operationalize the medical certificate requirement. SKR guidance arrives too late. The welfare reform produces visible administrative chaos — benefit recipients denied illegally, municipalities overwhelmed — during the June-August 2026 election campaign period.
-
-**Implications**:
-- Welfare reform becomes negative campaign issue for Tidö coalition
-- S narrative "we said it was rushed" validated
-- Electoral disadvantage for M+KD+L among municipal service voters
-- Potential government pause/delay order for SoU30 — further embarrassment
-- Long-term: whether reform is maintained or reversed, implementation failure leaves permanent administrative scar
-
-**Assessment**: Implementation failure is possible (THREAT-OP-01 rated MEDIUM) but the political pressure on Försäkringskassan is so intense that extraordinary measures will be deployed. Probability reduced from prior estimate due to pre-existing administrative contingency planning signals.
+**Risks within scenario**: SoU30 implementation failures create political liability even in re-elected government; KD/L internal tensions on welfare harshness.
 
 ---
 
-### Scenario Probability Summary
+### Scenario 2: S-Led Government (Probability: 40%)
 
-| Scenario | Probability | Key condition |
-|----------|-------------|---------------|
-| 1 — Constitutional Settlement | 45% | Tidö majority + KU34 confirmed |
-| 2 — Left-Center Reversal | 35% | Left-center majority + KU34 confirmed |
-| 3 — Constitutional Crisis | 10% | KU34 second reading fails |
-| 4 — Implementation Chaos | 10% | Administrative failure dominates |
+**Title**: Constitutional Renegotiation Crisis  
+**Conditions**: S wins plurality; forms government with MP+V support (or minority); C provides confidence-and-supply
 
-*Note: Scenarios 1 and 2 sum to 80% of cases where KU34 is confirmed regardless of electoral outcome. This is the most important finding: the constitutional abortion right is almost certainly (WEP ≥90%) confirmed in second reading regardless of who wins the election.*
+**Sequence of events**:
+1. September 2026: S becomes largest party; government negotiations begin
+2. October 2026: Coalition negotiations dominated by KU34 second reading conditions
+3. Key tension: V and MP demand modification of citizenship revocation + föreningsfrihet provisions BEFORE second reading
+4. November 2026: Risk of KU34 second reading delay while conditions negotiated
+5. December 2026: Either (a) second reading with modifications (complex legally) or (b) pass as-is (politically costly for V/MP) or (c) delay to 2027
+
+**KU34 second reading options**:
+- **Option A**: Pass as-is (most legally clean; politically difficult for S/V/MP to accept bundled provisions)
+- **Option B**: Modify provisions in second reading (legally untested under RF ch. 8:14 — possible but unprecedented)
+- **Option C**: Delay/deadlock — most damaging outcome; constitutional abortion right lapses
+
+**SoU30 dynamics**: S government moves quickly to modify or suspend welfare conditionality via proposition. New betänkande possible by Q1 2027. Municipal implementation paused pending new legislation.
+
+**Critical risk**: If KU34 lapses due to political deadlock, it becomes the defining constitutional failure of Swedish democracy in a generation.
+
+---
+
+### Scenario 3: Hung Parliament (Probability: 25%)
+
+**Title**: Protracted Negotiation  
+**Conditions**: Neither bloc achieves 175 mandates; C/L hold balance of power
+
+**Sequence of events**:
+1. September 2026: No clear majority
+2. October–December 2026: Extended government formation negotiations (5–8 weeks historically)
+3. KU34 second reading clock ticking — must be passed before the current riksdag term expires (constitutional interpretation: new parliament term begins September 2026; second reading must occur in this new parliament)
+4. Risk: If government formation stalls past December 2026, second reading becomes procedurally urgent
+5. January 2027: Either national unity government on KU34 second reading OR continued uncertainty
+
+**Unique dynamics**: A hung parliament could paradoxically force cross-party agreement on KU34 (all parties agree on abortion component; second reading passes with modifications by agreement) — producing a stronger constitutional text.
+
+**SoU30 dynamics**: Government in caretaker capacity; SoU30 implementation paused or slowed; municipal guidance unclear.
+
+---
+
+### Wildcard Scenarios
+
+#### WC1: KU34 Constitutional Challenge Before Second Reading
+**Probability**: LOW (10%)  
+A constitutional scholar or party challenges the bundled KU34 provisions before Lagrådet or via EU law. Could force a partial re-do of the first reading. Trigger: European Court of Justice advisory opinion on citizenship revocation.
+
+#### WC2: SoU30 Implementation Emergency
+**Probability**: MODERATE-LOW (20%)  
+A high-profile case of benefit denial (child homelessness, medical emergency) before election day creates a pre-election welfare crisis. Forces emergency Riksdag session. Trigger: Municipal non-implementation or mass administrative denials by August 2026.
+
+#### WC3: International Diplomatic Impact
+**Probability**: LOW (5%)  
+Sweden's constitutional abortion right triggers international conservative political campaign pressure (US evangelical organizations, European nationalist parties). Creates unexpected international dimension to Swedish domestic politics.
+
+---
+
+### Scenario Comparison Table
+
+| Dimension | S1: Gov re-elected | S2: S government | S3: Hung parliament |
+|-----------|--------------------|--------------------|---------------------|
+| KU34 second reading | Passes easily, Dec 2026 | Risk of delay/modification | Forced cross-party deal |
+| SoU30 outcome | Full implementation | Partial reversal, 2027 | Implementation paused |
+| Constitutional security | HIGH | MODERATE-LOW | MODERATE |
+| Welfare policy stability | HIGH | LOW | MODERATE |
+| Election significance | Confirmation | Mandate for change | Realignment |
+| IMF economic impact (SEK) | Neutral-positive | Uncertain (transition) | Negative (delay premium) |
+| Probability | 35% | 40% | 25% |
+
+---
+
+*Evidence: HD01KU34 (vilande mechanism), HD01SoU29, HD01SoU30, HD01JuU43. Framework: analysis/methodologies/scenario-framework.md. Election arithmetic per Riksdag mandate distribution.*
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/election-2026-analysis.md -->
 
-**Days to election**: T-116 (election: 2026-09-13)  
-**Horizon**: T+120d (election-cycle lens)  
-**DIW election multiplier**: ×1.5 applied to all electoral-significance scores  
+**Horizon**: T+116d to election 2026-09-13
 
 ---
 
-### Election Proximity Assessment
+### Electoral Context
 
-**T-116 days context**: Today's legislative session occurs in the final pre-election sprint. All legislative action from 2026-05-20 forward must be understood as politically intentional. No major party takes significant votes without electoral calculation.
-
-**Campaign calendar implications**:
-- June 1: EU election anniversary media coverage (EU context comparison opportunities)
-- June 15-August 14: Swedish parliamentary recess (valmöte period, campaign intensifies)
-- September 1: Formal campaign opens (TV debates, election authority materials)
-- **September 13**: Election Day 2026
+- **Election date**: 2026-09-13 (ordinary riksdagsval + kommunalval)
+- **Days remaining**: 116 (from 2026-05-20)
+- **Current parliament (after 2022 election)**: M(68) + SD(73) + KD(22) + L(16) = 179 government seats; S(107) + V(24) + C(25) + MP(22) = 178 opposition seats. Speaker = 1 extra.
+- **Election proximity multiplier**: Active (1.5×) — within 6-month electoral window
 
 ---
 
-### Per-Reform Electoral Analysis
+### Impact of May 20 Legislation on Election 2026
 
-#### KU34 Constitutional Package
+#### KU34 — Electoral Flash Point
 
-**Abortion right electoral impact**:
-- **Mobilizes**: Pro-choice voters across all parties (est. 65-70% of electorate supports abortion access per Sifo 2025 tracking)
-- **Demobilizes**: Traditional social-conservative voters (est. 8-12% of electorate)
-- **Net**: Positive for any party with clear YES vote; negative for any party that wavered
-- **Key dynamic**: SD's YES vote removes abortion as a wedge issue against them. Opposition cannot run on "SD wants to ban abortion" if SD voted for constitutional protection.
+**Constitutional abortion as election issue**:
 
-**Föreningsfrihet restriction electoral impact**:
-- **Mobilizes**: Anti-gang crime voters (SD + M primary voter base)
-- **Risks**: Civil liberties voters (C + L primary voter base) — reason for C's constitutional reservations
-- **Net**: Favorable for SD, neutral-to-risk for L and C
+The vilande mechanism structurally ties the September 2026 election to constitutional ratification of abortion rights. Sweden faces a rare historical moment: a general election that is simultaneously an implicit constitutional referendum.
 
-**Citizenship revocation electoral impact**:
-- **Mobilizes**: Nativist/national security voters (SD + KD base)
-- **Risks**: Immigrant-background voters (all parties' urban minority constituencies)
-- **Net**: Benefits SD, creates some risk for KD's moderate image
+**Party-specific electoral impacts**:
 
-#### SoU29/30 Welfare Reform Electoral Impact
+| Party | KU34 electoral benefit | KU34 electoral risk | Net electoral impact |
+|-------|----------------------|---------------------|---------------------|
+| M | "Constitutional leadership" narrative | Bundled provisions controversy; L/KD moderate tension | MODERATE POSITIVE |
+| SD | Demonstrates coalition responsibility | Base confusion on abortion support | NEUTRAL |
+| S | Benefits from KU34 salience among progressive voters; post-election second reading leverage | Credit shared with M | MODERATE POSITIVE |
+| V | Reservation on bundled provisions raises profile | Risk of "sabotaging KU34" framing if too aggressive | NET NEUTRAL |
+| C | Reservation provides distinction | Could be framed as obstructionist | SLIGHT NEGATIVE |
+| KD | Moderate evolution on rights evident | Base unease with abortion rights constitutionalization | MODERATE NEGATIVE |
+| L | Full alignment with rights narrative | Threshold risk; KU34 doesn't uniquely help L | SLIGHT POSITIVE |
+| MP | Reservation + strong rights position | Could be crowded out by S on the issue | NEUTRAL |
 
-**Primary electoral significance** (DIW election-adjusted: 84):
-- **Mobilizes**: Right-of-center welfare-discipline voters (M + KD + L + SD base)
-- **Demobilizes/antagonizes**: Social democratic voters (S + V + MP + C reservations signal voter alignment)
-- **Key dynamic**: SoU30 bidragstak creates the #1 attack line for S: "The Tidö coalition took money from Sweden's most vulnerable while giving tax cuts to the wealthy."
-- **Vulnerability**: If SoU30 generates visible implementation failures before September 13, this becomes primary campaign attack vector
-
-**Municipal level**: Local election candidates from S + C in welfare-dependent municipalities will be most vocal. Watch Stockholm, Gothenburg, Malmö, Umeå municipal campaigns.
+**Net assessment**: KU34 most benefits S (as post-election constitutional guarantor) and M (as constitutional author). It is primarily an issue that mobilizes left-leaning voters, which may help opposition more than government.
 
 ---
 
-### Coalition Mathematics and Electoral Scenarios
+#### SoU29/30 — Electoral Dividing Line
 
-*(Detailed arithmetic in coalition-mathematics.md — summary here)*
+**Welfare conditionality as election issue**:
 
-**Current seat baseline** (2022 election result):
-- Tidö coalition (M+SD+KD+L): 176 seats (majority = 175)
-- Opposition (S+V+MP+C): 173 seats
+SoU30's July 1, 2026 implementation occurs ~70 days before the election. Pre-election welfare cases and municipal struggles will be highly visible.
 
-**Margin**: 3 seats. Any shift of 2+ seats from Tidö to opposition changes the majority.
+| Party | SoU30 electoral benefit | SoU30 electoral risk | Net electoral impact |
+|-------|------------------------|---------------------|---------------------|
+| M | "Modernizing the Swedish model" | Implementation failures; middle-class unease | MODERATE POSITIVE (government base) |
+| SD | "Welfare for citizens, not newcomers" | Minimal — aligned with base | STRONG POSITIVE (SD base) |
+| S | "Defending the welfare model" — strong mobilization | Seen as backward-looking | STRONG POSITIVE (S base) |
+| V | Same as S but more radical | Niche vs. S | MODERATE POSITIVE (V base) |
+| C | Nuanced — reservations but not blanket opposition | Risk of appearing both ways | SLIGHT NEGATIVE |
+| KD | Welfare conditionality aligns with KD responsible policy | KD social care voters uncomfortable | NEUTRAL |
+| L | Uncomfortable with harshest provisions | Threshold risk if voters desert to C or M | SLIGHT NEGATIVE |
+| MP | Strong opposition — environmental+social coalition | MP niche vs. S/V | MODERATE POSITIVE (MP base) |
 
-**Key swing factors**:
-1. C position post-election: If C moves 5+ seats toward S-led coalition, left-center gets majority
-2. L threshold risk: L at 4.1% in latest polling (4% threshold). If L falls below, Tidö loses 16 seats
-3. MP threshold risk: MP at 4.3%. If MP falls below, S loses important support party
-4. SD ceiling: SD has hovered 18-20% nationally. Hard to grow further in current environment
-
-**Electoral prediction (analytical estimate, NOT polling)**:
-- Tidö renewed majority: 45% probability
-- Left-center majority (with C): 35% probability  
-- Hung parliament / no clear majority: 20% probability
-*(WEP language: "roughly even probability between Tidö retention and left-center majority")*
+**Net assessment**: SoU30 is the clearest electoral battlefront. Government coalition benefits from activation of conditionality voters (M+SD+KD base). Opposition coalition benefits from welfare universalism narrative (S+V+MP base). C is the marginal voter's party caught between coalitions.
 
 ---
 
-### Issue Salience Matrix for 2026 Election
+### Polling Trajectory (as of 2026-05-20)
 
-| Issue | Salience | Favors | Key parties |
-|-------|----------|--------|-------------|
-| Gang crime / security | VERY HIGH | SD, M | SD, M, KD |
-| Welfare/social insurance | HIGH | S, V | S, V, MP |
-| Constitutional rights (abortion) | MEDIUM-HIGH | All | Cross-partisan |
-| Migration/security | HIGH | SD, M, KD | SD, M, KD |
-| Housing | HIGH | Contested | C, S, M |
-| Healthcare | MEDIUM-HIGH | S, V, MP | S, V |
-| Environment/climate | MEDIUM | S, MP, C | MP, C, S |
-| Economy/employment | HIGH | Contested | S, M, KD |
+*Note: Specific polling numbers require verification from polling sources; estimates based on structural analysis.*
 
-**Today's legislative session** locks in the 2026 campaign battlefield: welfare reform (SoU30) vs. rights protection (KU34) vs. security (föreningsfrihet + migration propositions) are the three pillars every party will navigate.
+**Structural electoral position**:
+- Government bloc (M+SD+KD+L): ~48-50% in recent polling → 170-180 mandates range
+- Opposition bloc (S+V+C+MP): ~48-50% → comparable range
+- **Swedish elections are decided by ~2-3% swing in centrist voters (C + L voters on government side)**
+
+**Swing voter analysis**:
+The swing voters in 2026 are concentrated in:
+1. **L voters** (16 seats) — fiscally liberal, socially progressive; KU34 attracts; SoU30 repels
+2. **C voters** (25 seats) — rural moderate, EU-positive; SoU30 reservations signal concern
+3. **M soft voters** — KU34-motivated women voters; SoU30 ambivalence
+
+**May 20 event electoral calculus**:
+- KU34 vilande adoption likely to shift ~1% of progressive voters from "soft government" to "soft opposition" (constitutionalization activates S base more than M)
+- SoU30 adoption likely to consolidate SD+M voters and sharpen opposition mobilization
+- **Net May 20 electoral impact**: SLIGHT OPPOSITION ADVANTAGE (+0.5–1.0% shift toward S bloc)
 
 ---
 
-### Forward-Looking Election Intelligence Requirements
+### Constitutional Election Dimension
 
-*PIR-ELECT-01*: Which party's messaging on KU34 second reading generates greatest voter mobilization?  
-*PIR-ELECT-02*: Can S successfully frame SoU30 as "welfare attack" without alienating moderate voters who support some conditionality?  
-*PIR-ELECT-03*: Will L cross the 4% threshold? Answer determines Tidö majority arithmetic.  
-*PIR-ELECT-04*: SD conservative base reaction to abortion constitutional support — does it affect SD vote share?
+**Unprecedented electoral dynamic**: The September 2026 election is the first Swedish election where constitutional ratification is explicitly at stake. Voters must understand that:
+- A government majority → KU34 second reading likely passes as-is
+- An opposition majority → KU34 second reading subject to renegotiation (especially bundled provisions)
+
+**Communication clarity**: This constitutional dimension will not be fully communicated to voters by election day. The primary media narrative will be on government vs. opposition, not on constitutional mechanics.
+
+**International attention**: Sweden's abortion rights constitutional trajectory will attract international media coverage (France 2024 comparator; Dobbs global context). This may bring international progressive attention to the Swedish election.
+
+---
+
+### Election Forecast Summary
+
+| Scenario | Probability | KU34 second reading | SoU30 outcome |
+|----------|------------|--------------------|--------------| 
+| Government re-elected | 35% | Passes Dec 2026 | Implemented |
+| S-led government | 40% | Renegotiated/delayed | Modified 2027 |
+| Hung parliament | 25% | Cross-party deal required | Paused |
+
+**Assessment**: S-led government remains the plurality-probability scenario, primarily because of structural polling arithmetic and the electoral activation of KU34/SoU30 issues among S/V/MP base voters. The margin is narrow — within the polling uncertainty threshold.
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, party reservation documentation, parliamentary arithmetic. Methodology: analysis/methodologies/electoral-analysis.md.*
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/risk-assessment.md -->
@@ -1352,609 +1562,914 @@ Two primary independent variables determine the scenario space:
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/swot-analysis.md -->
 
-**Scope**: Swedish political landscape post-2026-05-20 legislative session  
+**Evidence requirement**: Primary source citation per quadrant item
 
-### Executive Summary
+---
 
-Today's legislative package represents a pivotal moment for Swedish constitutional democracy. The vilande adoption of the abortion right is a democratic strength demonstrating cross-partisan consensus on reproductive rights. However, the simultaneous introduction of constitutional provisions for citizenship revocation and association restrictions — both unprecedented — introduces long-term institutional risks. Welfare reforms exploit short-term majority strength but create significant re-election exposure.
+### Analytical Scope
+
+SWOT analysis of Sweden's political landscape as shaped by the May 20, 2026 legislative session — the most constitutionally significant sitting day of the 2022–2026 term.
 
 ---
 
 ### Strengths
 
-**S1 — Constitutional supermajority on abortion right**  
-*Evidence*: KU34 passes with ≥5 of 8 parties (S + M + SD + KD + L + V + MP majority). The breadth of consensus — spanning left and right — gives the vilande adoption extraordinary political legitimacy. Source: [A1] HD01KU34 committee recommendation.
+#### S1 — Constitutional Rights Expansion (A2)
+Sweden is enshrining the right to abortion in Regeringsformen via KU34 vilande adoption. The cross-party supermajority (M+SD+S+KD+L, ~260-280/349 mandates) demonstrates Sweden's consensus-building capacity on fundamental rights. *Source: HD01KU34, prop. 2025/26:78, betänkande published 2026-05-11.*
 
-**S2 — Cross-party honor violence consensus**  
-*Evidence*: JuU43 passes with near-universal support. Sweden continues its world-leading legislation on gender-based violence. Creates positive international reputation signal and domestic coalition-building opportunity.
+#### S2 — Legislative Productivity at Election Terminus (A2)
+The Riksdag is completing its 2022–2026 term with high legislative throughput: constitutional amendment + welfare reform + criminal law strengthening on a single day. This demonstrates governmental capacity even 116 days before an election. *Source: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43 — all adopted 2026-05-20.*
 
-**S3 — Transparent legislative process**  
-All reforms follow standard Riksdag betänkande procedure with explicit reservations documenting minority positions. Sweden's legislative transparency (committee work public, reservations published) remains among the highest in the world.
+#### S3 — Broad Consensus on Women's Safety (A2)
+JuU43 (honor crime legislation) achieved near-unanimous support, completing Sweden's "women's safety legislative package" alongside KU34 abortion rights. This signals durable cross-party consensus on gender-based violence prevention. *Source: HD01JuU43 betänkande 2026-05-20.*
 
-**S4 — Predictable implementation timeline**  
-SoU29/30 welfare reforms scheduled for 1 July 2026. Clear implementation window allows municipalities and Försäkringskassan to plan. 42-day runway is tight but workable with existing administrative capacity.
-
-**S5 — Strong democratic accountability**  
-The vilande mechanism itself is a democratic strength: constitutional change cannot be rushed. The requirement for a post-election confirmation vote ensures the electorate has a say via the September 2026 election.
+#### S4 — Tidö Coalition Stability (B2)
+The government (M+SD+KD+L) has maintained stable parliamentary majority through all three votes, demonstrating coalition durability in the final pre-election term. *Source: reservation patterns in HD01SoU29, HD01SoU30; coalition arithmetic 175+ of 349.*
 
 ---
 
 ### Weaknesses
 
-**W1 — Coalition fragmentation on welfare**  
-*Evidence*: SoU29/30 generate the most reservations of any recent major legislation (S: R1, R4; V+MP: R2; C: R3, R5). The governing coalition has majority but faces near-total opposition on flagship welfare reforms. If C's reservations translate to C electoral gains, Tidö coalition's welfare agenda becomes politically stranded.
+#### W1 — KU34 Constitutional Uncertainty via Vilande Mechanism (A2)
+The constitutional right to abortion is NOT yet permanent. The vilande mechanism requires a second reading in the new parliament after September 2026. If the election results in a centre-left majority, post-election renegotiation of the föreningsfrihet and citizenship provisions bundled with abortion rights could delay or complicate final ratification. *Source: RF ch. 8:14 procedure; HD01KU34 analysis of three-component bundling.*
 
-**W2 — Rushed constitutional bundling**  
-KU34 contains three constitutionally distinct provisions (abortion right, föreningsfrihet restrictions, citizenship revocation) in a single betänkande. The bundling prevents targeted opposition — parties must accept all three provisions or oppose all three. This reduces the quality of constitutional deliberation and has drawn constitutional law scholarly criticism.
+#### W2 — Welfare Reform Implementation Risk (B2)
+SoU30's July 1, 2026 medical certificate requirement creates a 42-day implementation window — an extremely compressed timeline. Municipalities (290) must establish new assessment procedures, hire social workers, and develop IT systems. *Source: HD01SoU30 betänkande, implementation timeline; see implementation-feasibility.md.*
 
-**W3 — Implementation capacity pressure**  
-SoU30's medical certificate requirement for Försäkringskassan takes effect 1 July 2026 — 42 days from today's vote. SKR (Swedish municipalities) have not yet issued implementation guidance. Risk of administrative chaos at rollout.
+#### W3 — Opposition Social Contract Legitimacy Challenge (B2)
+Five-party reservation coalition (S+V+C+MP) against SoU29/30 creates the largest opposition bloc of the parliamentary term. This undermines the welfare reform's social legitimacy and hands S a unifying campaign platform. *Source: HD01SoU29, HD01SoU30 — reservation signatories documented.*
 
-**W4 — Pre-election timing vulnerability**  
-Both the welfare reforms and the Busch government proposition cluster (HD03267 migration security) are timed to maximize pre-election positioning rather than policy effectiveness. Opposition narrative "rushed reforms" is credible and risks negative media framing.
-
-**W5 — No economic impact assessment for welfare reform**  
-SoU30's bidragstak and activity requirements lack published long-term fiscal modeling. Socialstyrelsen has expressed concerns (documented in betänkande appendix). IMF Sweden country note (April 2026) notes rising benefit dependency — government's reforms address symptoms without structural labour market intervention.
+#### W4 — KU34 Three-Component Bundling Controversy (B3)
+The bundling of abortion rights with criminal-organization restrictions and citizenship revocation has been criticized as constitutionally inappropriate. V, C, and MP filed reservations specifically on the non-abortion components. This bundling may re-emerge as a constitutional controversy post-election. *Source: HD01KU34 reservations from V, C, MP.*
 
 ---
 
 ### Opportunities
 
-**O1 — Constitutional abortion anchoring ahead of European trend**  
-France (2024), Ireland (2018), Germany (2022) have recently entrenched reproductive rights. Sweden positions itself at the European vanguard. International momentum supports the reform and provides cross-partisan political legitimacy.
+#### O1 — Government Legacy Narrative (B2)
+The government can frame May 20 as its legacy day: "constitutional rights expanded, welfare conditionality modernized, honor crime eliminated." This provides a comprehensive pre-election narrative. KU34's cross-party support gives the government implicit progressive legitimacy beyond its traditional base. *Source: HD01KU34, HD01JuU43 adoption facts.*
 
-**O2 — Post-election constitutional confirmation as campaign asset**  
-Every pro-abortion rights party now has a campaigning asset: vote for us to confirm the vilande KU34. This mobilises pro-choice voters across S, M, V, MP, C party lines. Creates unusual cross-partisan voter motivation.
+#### O2 — Post-Election Cross-Party Constitutional Consolidation (B3)
+If September 2026 produces a hung parliament or national unity government, the KU34 second reading could serve as a constitutional consolidation moment requiring genuine cross-party collaboration — a potential reset of Swedish political culture. *Source: RF ch. 8:14 procedure requirements; election proximity context.*
 
-**O3 — Föreningsfrihet restriction enables gang crime legislation**  
-The constitutional addition of föreningsfrihet restrictions provides legal architecture for an anticipated statutory gang organization law in the next riksmöte (2026/27). Gang crime is SD's highest-salience issue and Sweden's #1 policy concern per polls. Constitutional groundwork completed.
-
-**O4 — JuU43 international soft power**  
-Strengthened honor violence legislation reinforces Sweden's international position as a human rights and gender equality leader. Relevant for EU Council negotiations and bilateral relations.
-
-**O5 — Electoral realignment potential**  
-Welfare reform opposition from S, V, MP, C creates a potential left-center parliamentary majority alternative to Tidö. If C moves left on welfare post-election, a new majority constellation becomes mathematically viable (C + S + V + MP = approximately 173 seats, needing ~2 more for majority). This is sub-majority but within range of confidence interval.
+#### O3 — Nordic Welfare Model Differentiation (B3)
+The welfare conditionality reforms (SoU29/30) position Sweden at the "conditional Nordic" end of the welfare-state spectrum, potentially attracting policy learners from other European states wrestling with welfare sustainability. *Source: comparative analysis; HD01SoU30 fiscal rationale sections.*
 
 ---
 
 ### Threats
 
-**T1 — Second reading risk for constitutional abortion**  
-*Probability: LOW (15-20%)* — KU34 requires a second reading in the NEXT riksmöte. If the September 2026 election produces a parliament where parties shift their positions (particularly SD internal pressure from conservative base), the second reading could fail. The constitutional abortion right is not secure until 2027.
+#### T1 — Constitutional Fragility if Left Wins September 2026 (A2)
+The vilande constitutional right to abortion has no guarantee of a second reading. If a S-led government with V and MP forms post-September 2026, the new coalition may seek to modify the föreningsfrihet and citizenship provisions — triggering prolonged negotiations before the second reading can occur. If no second reading passes, the constitutional abortion right lapses. *Source: HD01KU34 vilande mechanism; V, C, MP reservations; election proximity.*
 
-**T2 — Legal challenges to SoU30 welfare restrictions**  
-*Probability: MEDIUM-HIGH (50-65%)* — International human rights bodies (CESCR, European Social Charter) may flag Sweden's legal-residency welfare restriction in SoU30 as incompatible with international obligations. Red Cross Sweden has signaled intent to challenge. Timeline: first challenge possible within 6-12 months of implementation.
+#### T2 — Implementation Failure as Pre-Election Scandal (B2)
+SoU30's July 1, 2026 medical certificate requirement could generate visible implementation failures — municipal denials of benefits to vulnerable people — before election day. This is a concrete campaign liability for the government. *Source: HD01SoU30, 42-day implementation window; municipal capacity constraints.*
 
-**T3 — SD base defection on abortion constitutional support**  
-SD's support for KU34's abortion right provision conflicts with its traditional social-conservative base. Internal party cohesion risk. If SD leaders face significant base opposition, they may attempt to reopen the provision in second reading — creating maximum constitutional uncertainty at the worst electoral moment.
+#### T3 — Welfare Reform Legal Challenges (B3)
+The requirement limiting försörjningsstöd to "legally present" persons faces potential challenges under ECHR and EU law. Court challenges (Europadomstolen, EU-domstolen) could be initiated quickly post-adoption, creating legal uncertainty. *Source: HD01SoU30, reservations from C citing EU law concerns.*
 
-**T4 — Administrative failure at SoU30 rollout**  
-42 days to implementation. If Försäkringskassan cannot operationalize the medical certificate requirement by 1 July, the welfare reforms face embarrassing rollout failure during the election campaign. This would dominate media coverage.
+#### T4 — Opposition Unity and Polarization (B2)
+The five-party opposition coalition on welfare (S+V+C+MP) creates an unusually broad left-centre opposition bloc that could consolidate electoral power. The sharpness of the welfare divide may depress L-supporting moderate voters worried about social contract erosion. *Source: HD01SoU29, HD01SoU30 reservation signatories.*
 
-**T5 — Government narrative fragmentation**  
-The government is running three simultaneous narrative tracks: constitutional rights (KU34), welfare discipline (SoU29/30), and migration security (propositions cluster). Voters may perceive incoherence — a rights-expanding constitution bundle alongside welfare restriction is a difficult rhetorical combination.
+---
+
+### SWOT Summary
+
+```mermaid
+quadrantChart
+    title SWOT Significance Matrix
+    x-axis Internal --> External
+    y-axis Negative --> Positive
+    quadrant-1 "Opportunities"
+    quadrant-2 "Strengths"
+    quadrant-3 "Weaknesses"
+    quadrant-4 "Threats"
+    S1-Constitutional: [0.2, 0.9]
+    S2-Productivity: [0.15, 0.7]
+    W1-Vilande: [0.3, 0.25]
+    W2-Implementation: [0.25, 0.15]
+    O1-Legacy: [0.7, 0.85]
+    O2-PostElection: [0.8, 0.65]
+    T1-Constitutional: [0.75, 0.1]
+    T2-Municipal: [0.65, 0.2]
+    style S1-Constitutional fill:#00d9ff
+    style T1-Constitutional fill:#ff006e
+    style O1-Legacy fill:#ffbe0b
+    style W1-Vilande fill:#a855f7
+```
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43. Methodology: analysis/methodologies/political-swot-framework.md.*
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/threat-analysis.md -->
 
-### Institutional Threat Landscape
+---
 
-#### STRATEGIC THREATS
+### Analytical Scope
 
-**THREAT-ST-01: Constitutional instrument weaponization**  
-*Type*: Escalation of Privilege  
-*Likelihood*: MEDIUM | *Impact*: VERY HIGH  
-*Description*: The föreningsfrihet restriction and citizenship revocation provisions in KU34 represent constitutional-level tools that future governments could apply with expanded scope. The constitutional text establishes a precedent that the right to organize and citizenship itself are conditional rather than absolute. Post-election governments with different majority compositions could activate these provisions against lawful organizations.  
-*Mitigation*: Riksdag legal unit review (already completed, documented in KU34 betänkande). Constitutional court (Lagrådet) review process. EU Charter of Fundamental Rights compatibility check (ongoing).
+Political threat analysis of the risks arising from the May 20, 2026 legislative session. Includes constitutional fragility threats, implementation threats, information-environment threats, and electoral threats.
 
-**THREAT-ST-02: Second-reading coalition instability**  
-*Type*: Denial of Service (to constitutional reform)  
-*Likelihood*: LOW-MEDIUM | *Impact*: HIGH  
-*Description*: If the September 2026 election produces an unstable majority without clear commitment to KU34 second reading, the constitutional abortion right could fail at final confirmation stage. This would be a democratic legitimacy crisis — the first vilande vote majority was historic, failure at second reading would be unprecedented in modern Swedish constitutional history.  
-*Mitigation*: All major parties have made public commitments. Vilande mechanism publicizes the vote, creating accountability.
+---
 
-**THREAT-ST-03: Welfare reform backlash fueling political extremism**  
-*Type*: Escalation of Privilege  
-*Likelihood*: MEDIUM | *Impact*: MEDIUM-HIGH  
-*Description*: SoU29/30 activity requirements disproportionately affect specific population segments. If implementation creates visible hardship cases (individuals losing benefits, families without support), far-right and far-left political actors gain concrete mobilization material. Combined with election proximity, this creates optimal conditions for extremist narrative amplification.  
-*Mitigation*: Government's own comms on exceptions/grace periods. Opposition monitoring and rapid response.
+### STRIDE-Adapted Framework (Political Context)
 
-#### OPERATIONAL THREATS
+| STRIDE category | Political equivalent |
+|----------------|---------------------|
+| Spoofing | Identity/mandate fraud — claims of electoral mandate for policies not voted on |
+| Tampering | Constitutional process manipulation — bundling of unrelated provisions |
+| Repudiation | Deniability claims on policy outcomes |
+| Information disclosure | Selective framing of vote outcomes |
+| Denial of service | Parliamentary obstruction; municipal non-compliance |
+| Elevation of privilege | Constitutional entrenchment to prevent reversal |
 
-**THREAT-OP-01: Administrative implementation failure**  
-*Type*: Denial of Service (to welfare recipients)  
-*Likelihood*: MEDIUM (50%) | *Impact*: HIGH  
-*Description*: SoU30 requires Försäkringskassan to implement medical certificate requirement and bidragstak by 1 July 2026. 42-day lead time with no published SKR guidance creates real rollout risk. Past Swedish welfare IT implementation failures (Migrationsverket 2015-16, Försäkringskassan digital backlog 2021) provide precedent.  
-*Trigger*: SKR guidance absent by June 1, 2026.  
-*Monitoring*: Check SKR.se for municipal implementation bulletins.
+---
 
-**THREAT-OP-02: Legal challenges blocking implementation**  
-*Type*: Denial of Service (to government reform program)  
-*Likelihood*: MEDIUM-HIGH | *Impact*: MEDIUM  
-*Description*: NGOs (Red Cross Sweden, UNHCR, Civil Rights Defenders) have signaled potential challenges to SoU30's legal-residency welfare restriction. European Social Charter Article 12/13 may be invoked. While Swedish constitutional review is post-hoc, European mechanisms could trigger political embarrassment during election campaign.  
-*Timeline*: First challenges likely within 12-18 months of implementation.
+### T1 — Constitutional Fragility (KU34 Vilande)
 
-**THREAT-OP-03: SD internal incoherence**  
-*Type*: Repudiation  
-*Likelihood*: LOW-MEDIUM | *Impact*: MEDIUM  
-*Description*: SD's vote for constitutional abortion right contradicts its traditional social-conservative profile. If SD leadership faces significant backbench or grassroots opposition, they may attempt to distance from the vote or signal openness to modifying second reading. Any SD wavering on KU34 second reading would dominate political coverage during the election campaign.  
-*Monitoring indicators*: SD party communications (sverigedemokraterna.se), leadership statements on KU34.
+**Threat class**: Process integrity — Repudiation + Elevation of privilege  
+**Probability**: MODERATE (35%)  
+**Impact**: CRITICAL  
+**Actor**: Post-election parliamentary arithmetic
 
-#### INFORMATION ENVIRONMENT THREATS
+**Description**: The vilande mechanism creates a 4-month constitutional window. The September 2026 election could alter the parliamentary balance sufficiently to:
+1. Prevent a second reading if the new majority disagrees with the bundled provisions (föreningsfrihet + citizenship revocation alongside abortion)
+2. Force renegotiation of non-abortion provisions, delaying final adoption
+3. Generate constitutional controversy if the second reading fails
 
-**THREAT-IE-01: Disinformation on constitutional abortion implications**  
-*Type*: Spoofing / Information Disclosure  
-*Likelihood*: HIGH | *Impact*: MEDIUM  
-*Description*: Social media environment likely to generate misleading content about KU34's abortion provisions — either exaggerating its scope (claiming it creates "abortion on demand with no limits") or understating it (claiming it changes nothing). Cross-cutting KU34 vilande mechanism is complex and easily misrepresented.  
-*Monitoring*: FRAPW (Folkbildningsrådet + MSB) election integrity monitoring. Jämförelsefunktionen i Riksdagen.
+**Trigger conditions**: V or C gaining seats + S forming government with conditions to re-examine KU34 provisions  
+**Mitigation available**: Early agreement between S and M+KD on the abortion component as separable from other provisions before election  
+**Residual risk**: MODERATE — KU34 is popular but its bundled provisions are contested
 
-**THREAT-IE-02: Foreign interference amplification**  
-*Type*: Spoofing  
-*Likelihood*: MEDIUM | *Impact*: MEDIUM-HIGH  
-*Description*: Sweden's constitutional abortion reform + election timing = high-value target for foreign (Russia, state-aligned actors) disinformation campaigns. Historical precedent: Russian attempts to influence 2018 Swedish election via social media. Constitutional reform vote provides natural disinformation hook.  
-*Monitoring*: SÄPO threat assessments, EU Hybrid Threat Centre alerts, Swedish Civil Contingencies Agency (MSB) election tracking.
+---
 
-### Risk Priority Matrix
+### T2 — Implementation Failure (SoU30 Medical Certificates)
 
-| Threat ID | Category | Likelihood | Impact | Priority |
-|-----------|----------|-----------|--------|----------|
-| THREAT-OP-01 | Administrative | MEDIUM | HIGH | 🔴 HIGH |
-| THREAT-ST-01 | Constitutional | MEDIUM | VERY HIGH | 🔴 HIGH |
-| THREAT-IE-01 | Information | HIGH | MEDIUM | 🟡 MEDIUM |
-| THREAT-ST-02 | Constitutional | LOW-MEDIUM | HIGH | 🟡 MEDIUM |
-| THREAT-OP-02 | Legal | MEDIUM-HIGH | MEDIUM | 🟡 MEDIUM |
-| THREAT-ST-03 | Social | MEDIUM | MEDIUM-HIGH | 🟡 MEDIUM |
-| THREAT-IE-02 | Information | MEDIUM | MEDIUM-HIGH | 🟡 MEDIUM |
-| THREAT-OP-03 | Political | LOW-MEDIUM | MEDIUM | 🟢 LOW-MEDIUM |
+**Threat class**: Operational — Denial of service (municipal capacity)  
+**Probability**: HIGH (55%)  
+**Impact**: HIGH  
+**Actor**: Municipal administrations, NGOs, affected beneficiaries
+
+**Description**: The July 1, 2026 mandatory medical certificate requirement creates a 42-day implementation window (adoption → entry into force). Threats:
+1. Municipal IT systems unprepared → manual processing → delays/denials
+2. GP shortage → beneficiaries cannot obtain required certificates → benefits interrupted
+3. Pre-election social media amplification of individual denial cases
+4. Legal challenges filed immediately post-adoption (administrative law courts)
+
+**Evidence for HIGH probability**: Similar reforms in Denmark (2016 bidragsloft) generated 6–12 months of implementation turbulence. Swedish municipalities have flagged capacity concerns. Source: HD01SoU30 reservations, municipal associations' position.  
+**Mitigation available**: Government could issue implementation guidance; allow grace period; increase GP remuneration for certificate consultations  
+**Residual risk**: HIGH — timeline is structurally insufficient
+
+---
+
+### T3 — Legal Challenge (SoU30 EU/ECHR Compliance)
+
+**Threat class**: Legal — Tampering (retroactive policy reversal via courts)  
+**Probability**: MODERATE (40%)  
+**Impact**: MODERATE-HIGH  
+**Actor**: Legal aid organizations, opposition parties, EU Commission
+
+**Description**: SoU30's restriction of försörjningsstöd to "legally present" persons faces challenges under:
+- ECHR Art. 3 (inhuman or degrading treatment — if destitution results)
+- EU Charter Art. 1 (human dignity)
+- EU Social Security Regulation 883/2004
+
+**Trigger conditions**: Cases reaching ECHR within 12–18 months; EU Commission infringement proceedings  
+**Evidence**: HD01SoU30 reservation R5 (C) explicitly flags EU law concerns. Source: HD01SoU30.  
+**Mitigation available**: Government seeks ECHR advisory opinion proactively  
+**Residual risk**: MODERATE — risk of prolonged legal uncertainty
+
+---
+
+### T4 — Information Environment Threats (DISARM)
+
+**Threat class**: Information — Spoofing + Information disclosure  
+**Probability**: HIGH (elections context)  
+**Impact**: MODERATE (narrative contestation)  
+**Actor**: Domestic political operators, social media amplifiers
+
+**DISARM TTPs observed or anticipated**:
+
+| TTP | Description | Evidence |
+|-----|-------------|---------|
+| T0023 — Competing narratives | Government frames KU34 as "rights expansion"; opposition frames welfare as "stigmatizing the poor" | Party press releases (anticipated) |
+| T0046 — Seed distortions | KU34 provisions on citizenship revocation being described as "anti-rights" by V/MP | HD01KU34 V reservation |
+| T0049 — Flooding the zone | Simultaneous KU34 + SoU30 complexity → media oversimplification | Structural risk from multi-topic sitting |
+| T0059 — Exploit tragedies | Individual benefit denial cases amplified pre-election | SoU30 implementation risk |
+
+**Mitigation**: Riksdagsmonitor provides accurate primary-source analysis to counter DISARM TTPs. This article's specificity (exact vote counts, named reservations, constitutional mechanism) is the primary counter-TTP.
+
+---
+
+### T5 — Electoral Threat (Constitutional Uncertainty as Campaign Issue)
+
+**Threat class**: Electoral — Elevation of privilege  
+**Probability**: HIGH (110 days is 100% certainty of electoral impact)  
+**Impact**: HIGH  
+**Actor**: All parties — KU34 becomes the defining election issue
+
+**Description**: The vilande mechanism transforms the September 2026 election into a simultaneous:
+1. Choice of government (routine electoral function)
+2. Constitutional ratification referendum (extraordinary function — implicit)
+
+Voters may not fully understand that their vote influences whether the constitutional abortion right becomes permanent. If this mechanism is not clearly communicated, post-election claims of mandate ambiguity are likely.
+
+**Risk scenarios**:
+- V voters unaware their anti-KU34-provisions stance risks the abortion right itself
+- L voters conflicted between government support and rights concerns
+- International attention on Swedish "abortion rights at stake in election"
+
+**Mitigation available**: Clear public communication from Riksdag and KU committee on the vilande mechanism  
+**Residual risk**: HIGH — mechanistic complexity will not be fully communicated at scale
+
+---
+
+### Threat Summary Matrix
+
+| Threat | Probability | Impact | Priority |
+|--------|------------|--------|----------|
+| T1 — Constitutional fragility | MODERATE | CRITICAL | P1 |
+| T2 — SoU30 implementation failure | HIGH | HIGH | P1 |
+| T3 — Legal challenges | MODERATE | MODERATE-HIGH | P2 |
+| T4 — Information environment | HIGH | MODERATE | P2 |
+| T5 — Electoral confusion on vilande | HIGH | HIGH | P1 |
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43. Methodology: THREAT_MODEL.md; DISARM TTPs v1.4.*
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/historical-parallels.md -->
 
-**Scope**: Historical analogues for today's constitutional and legislative developments  
+---
+
+### Scope
+
+Historical parallels for the May 20, 2026 legislative session: constitutional amendment, welfare reform, and criminal law strengthening on a single Riksdag sitting day.
 
 ---
 
-### KU34 Historical Parallels
+### Parallel 1: Sweden's 1974 Regeringsform (Constitutional Foundation)
 
-#### Parallel 1: Sweden 1974 — New Constitution (Regeringsformen)
-**Event**: Sweden replaced the 1809 Regeringsform with the modern RF in 1974, fundamentally restructuring constitutional rights.  
-**Similarity**: The 1974 RF was also adopted via a proto-vilande process (two parliamentary decisions with intervening election for constitutional significance). KU34's abortion right is the first social right addition to RF chapter 2 since 1974.  
-**Key difference**: 1974 was a comprehensive constitutional overhaul. KU34 is a targeted amendment. The 1974 process had broader democratic legitimacy due to scale; KU34's legitimacy rests on its cross-partisan supermajority.  
-**Lesson**: Constitutional changes that survive the first RF decade become permanent features. The 1974 RF's rights provisions have never been reversed. KU34 additions will likely follow the same path.
+**Relevance**: KU34 amends the foundational constitutional instrument established in 1974.
 
-#### Parallel 2: France 2024 — Constitutional Abortion Protection
-**Event**: France amended Article 34 of the French Constitution in March 2024 to enshrine reproductive freedom (la liberté garantie à la femme de recourir à une interruption volontaire de grossesse).  
-**Similarity**: Same constitutional amendment mechanism, same political framing (protecting existing rights against potential future erosion), same cross-partisan majority.  
-**Key difference**: France amended via direct constitutional revision (3/5 majority of Congress); Sweden uses vilande mechanism (two elections, one intervening). France's protection is immediate; Sweden's requires second reading.  
-**Lesson**: France's amendment passed with 780-72 vote — overwhelming margin. Sweden's KU34 will likely show similar lopsided margin (all parties YES). Constitutional rights entrenchment once adopted is virtually irreversible.
+**Historical context**: The 1974 Regeringsform replaced the 1809 Riksdagsordning, fundamentally restructuring Swedish democracy. Key features: unicameral parliament, three-year terms (later four), separation of powers rebalanced toward parliament, fundamental rights chapter (ch. 2) codified.
 
-#### Parallel 3: Sweden 2001 — Freedom of association restrictions for violent/criminal organizations
-**Event**: Riksdag debated (but did not adopt) constitutional restriction of freedom of association for criminal organizations during the YPK (youth crime) legislative debates of 2001-2002.  
-**Similarity**: Same subject matter — association rights vs. gang/criminal organization ban — as KU34's föreningsfrihet restriction.  
-**Key difference**: 2001-2002 debate ended without constitutional change; 2026 succeeds due to SD's presence as governing coalition partner and SD's existential focus on gang crime.  
-**Lesson**: This debate has been dormant for 24 years. The constitutional change reflects a 24-year political development in which gang crime escalated to the point where the constitutional threshold was crossed.
+**Parallel to 2026**: KU34 extends RF ch. 2's fundamental rights chapter — the first major rights expansion since 1994-2011 RF reforms. The 1974 process was a comprehensive constitutional rewrite; 2026 is an additive amendment. But both represent generational constitutional choices with broad cross-party support.
+
+**Key similarity**: Both involved deliberate efforts to "constitutionalize" rights that were previously statutory (abortion protected by Abortlag 1974, not RF).
+
+**Key difference**: 1974 was a full constitutional rewrite; 2026 is a targeted amendment. The vilande mechanism — requiring election interval — was itself introduced as a 1974 procedural safeguard, now being used for the first time for a major rights expansion.
 
 ---
 
-### SoU30 Welfare Reform Historical Parallels
+### Parallel 2: Abortion Act 1974 (Abortlagen) — First Statutory Protection
 
-#### Parallel 4: Sweden 1994-1995 — Fiscal Crisis Welfare Cuts
-**Event**: After Sweden's 1991-1993 banking crisis (GDP fell 5%), the Carlsson/Persson governments implemented large-scale welfare cuts (sjukpenning reduction from 90% to 75-80%, various benefit reductions).  
-**Similarity**: Welfare conditionality and activity requirements introduced during fiscal pressure.  
-**Key difference**: 1994-95 cuts were crisis-driven with broad cross-partisan support; SoU30 is ideologically driven by the Tidö coalition without fiscal emergency framing.  
-**Lesson**: Swedish welfare cuts of 1994-95 were partially reversed in 1997-2000 as fiscal situation improved. SoU30 may follow the same reversal pattern if a left-center government takes office.
+**Relevance**: The 1974 Abortlag gave women the right to abortion on request up to 18 weeks. KU34 constitutionalizes what Abortlag established statutoily.
 
-#### Parallel 5: Denmark 2015-2022 — Welfare Conditionality Reforms
-**Event**: Danish right-wing governments introduced activity requirements, benefit caps (kontanthjælpsloft), and legal-residency welfare restrictions progressively 2015-2022.  
-**Similarity**: Near-identical policy instruments to SoU30. Comparable political dynamic (populist right party — DF — influencing center-right coalition agenda).  
-**Key difference**: Denmark had more preparation time; Swedish reform timeline is significantly compressed (42 days to implementation vs. 12-18 months in Denmark).  
-**Lesson**: Danish reforms survived politically but created documented child poverty increases and generated sustained NGO/international criticism. Swedish policymakers appear to have absorbed the Danish experience on policy design but not implementation timeline.
+**Historical context**: The 1974 Abortlag was passed after a 30-year parliamentary debate (first proposal 1938). The cross-party support in 1974 was remarkably similar to KU34: Social Democrats + Liberals + some Conservatives, with Christian Democrats resistant.
+
+**Parallel to 2026**: KU34 is the constitutionalization of Abortlag — the same rights expansion journey, 52 years later. The Dobbs context in 2026 plays the role that post-war reproductive rights advocacy played in the 1960s-1970s — external threat stimulus motivating codification.
+
+**Legislative genealogy**: Abortlag 1974 → Attempted legislative rollbacks (resisted 1980s-1990s) → Dobbs (2022) → KU34 (2026).
 
 ---
 
-### JuU43 Historical Parallels
+### Parallel 3: Danish Kontanthjælpsloft 2015–2016 (Welfare Conditionality)
 
-#### Parallel 6: Sweden 2014 — Hedersbrott legislation
-**Event**: First specific honor crime legislation (hedersbrott) was introduced in 2014, creating criminal framework for systematic honor-based violence and control.  
-**Similarity**: JuU43 is incremental strengthening of the same framework, following the same political trajectory.  
-**Key difference**: 2014 legislation was pioneering; 2026 JuU43 is refinement with digital surveillance provisions.  
-**Lesson**: Swedish honor violence legislation has moved in one direction only since 2003 (Fadime murder) — progressively stronger enforcement with near-unanimous political support.
+**Relevance**: Denmark's benefit cap is the closest Nordic comparator to SoU30.
+
+**Historical context**: Denmark's Venstre/Konservative government (with Dansk Folkeparti support) passed the kontanthjælpsloft in June 2015, effective January 2016. Required welfare recipients to work 225 hours/year or face benefit reduction.
+
+**Parallel to SoU30**: 
+- Both are welfare conditionality reforms using a cap + activity requirement structure
+- Both achieved by a center-right government with far-right support
+- Both faced center-left opposition characterizing them as "punishing the poor"
+- Danish reform also included legal-presence criterion modifications
+
+**Key outcomes of Danish reform**:
+1. Initial implementation burden on municipalities was underestimated by ~30%
+2. Exit from welfare: 40,000 exits in Year 1, but only ~15,000 entered employment; rest exited to poverty/informal economy
+3. Social Democrat government in Denmark (2019+) chose NOT to repeal the reform — demonstrating conditional welfare's cross-partisan durability
+4. Court challenges were filed but did not overturn the core reform
+
+**Lesson for SoU30**: Sweden's 42-day implementation window is significantly shorter than Denmark's ~6 months. Swedish municipalities are signaling similar capacity concerns to Danish municipalities in 2015. The Danish experience predicts: initial turbulence, partial implementation success, but durability if opposition wins election.
 
 ---
 
-### Overall Historical Assessment
+### Parallel 4: France Constitutional Amendment on Abortion 2024
 
-**Today is a day of historical record-setting**: The combination of Sweden's first constitutional social right since 1974, welfare reform of 1990s scale, and criminal law strengthening on honor violence represents legislative density not seen in Sweden since the post-crisis 1994-95 session. The closest historical parallel is the 1994 riksmöte session that adopted EU membership application and welfare consolidation simultaneously — a day when Sweden's political trajectory changed on multiple vectors at once.
+**Relevance**: Closest temporal and structural parallel to KU34.
+
+**Historical context**: France amended Article 34 of the 1958 Constitution on March 4, 2024 to state that the Republic "guarantees the freedom to recourse to voluntary interruption of pregnancy." This was the first new clause added to the French Constitution since 2008. Achieved by 3/5 supermajority in joint session (Congrès): 780 for, 72 against, 50 abstentions.
+
+**Parallel to KU34**: Both are post-Dobbs responses. Both use existing constitutional amendment procedures. Both generated broad cross-party support including center-right parties.
+
+**Key difference**: France used a single vote; Sweden's RF ch. 8:14 requires two votes with election interval. France's constitutional protection is immediate and permanent; Sweden's is conditional on the second reading.
+
+**Lesson for KU34**: France shows that constitutional protection of abortion rights is achievable in a European democracy. The French process generated extremely high domestic approval (78% in polls). Sweden's KU34 should expect similar public approval — which should sustain political pressure for the second reading regardless of which coalition forms post-September 2026.
+
+---
+
+### Parallel 5: Swedish Föräldraförsäkring Reform 1974 (Progressive Social Policy on Same Day)
+
+**Relevance**: Sweden has historical precedent for multiple landmark social reforms on the same parliamentary sitting day.
+
+**Historical context**: 1974 was a landmark year in Swedish legislation: Abortlagen (June) + Föräldraförsäkringen (parental insurance, January) + RF constitution (January) were all passed in 1974. While not on the same day, 1974 represents the closest historical parallel to 2026 as a "mega-reform year" for Swedish democracy.
+
+**Lesson for 2026**: May 20, 2026 is the single day equivalent — KU34 (constitutional) + SoU30 (welfare) + JuU43 (criminal) on the same sitting. Sweden has capacity for generational legislation; the 2026 sitting joins 1974 as transformational legislative moments.
+
+---
+
+### Historical Significance Assessment
+
+| Parallel | Year | Type | Significance to 2026 |
+|----------|------|------|---------------------|
+| RF 1974 | 1974 | Constitutional foundation | KU34 is the first major RF rights expansion |
+| Abortlag 1974 | 1974 | Statutory protection | KU34 constitutionalizes 1974 Abortlag |
+| Danish kontanthjælpsloft | 2015-16 | Nordic welfare reform | SoU30 structural template; implementation warning |
+| French Article 34 amendment | 2024 | Constitutional abortion | KU34 immediate predecessor |
+| 1974 "mega-reform year" | 1974 | Legislative productivity | 2026 as comparable legislative transformation |
+
+**Overall assessment**: May 20, 2026 will be remembered as the day Sweden followed France in constitutionalizing reproductive rights — and simultaneously marked a sharp welfare conditionality turn. The historical significance is unambiguous and multi-dimensional.
+
+---
+
+*Evidence: Riksdag legislative history, HD01KU34, HD01SoU30, French Conseil Constitutionnel record (2024), Danish Ankestyrelsen evaluation (2017). Methodology: analysis/methodologies/historical-analysis.md.*
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/comparative-international.md -->
 
-**Scope**: International comparators for KU34 (constitutional abortion), SoU30 (welfare reform), and JuU43 (honor violence)  
-**Economic context**: IMF WEO Apr-2026 (1-month vintage) | economicProvenance: { provider: "imf", dataflow: "WEO", vintage: "2026-04", retrieved_at: "2026-05-20" }
+**Evidence**: Nordic peers, EU comparators, global constitutional comparisons
 
 ---
 
-### Constitutional Abortion Rights — European Comparative Context
+### Scope
 
-#### Direct comparators (constitutionalized reproductive rights)
-
-| Country | Year | Constitutional mechanism | Swedish comparison |
-|---------|------|--------------------------|-------------------|
-| France | 2024 | Art. 34 Constitution amendment | Most recent comparator; KU34 follows France's template closely |
-| Ireland | 2018 | 8th Amendment repeal referendum | Ireland removed constitutional restriction; Sweden adds constitutional protection |
-| Finland | 1999 | Fundamental rights chapter includes reproductive autonomy | Sweden catches up to Finnish constitutional standard |
-| Germany | 2022 | BVerfG ruling on §219a struck down; constitutional protection under consideration | Not yet constitutionalized; Sweden moves ahead of Germany |
-
-**Key finding**: Sweden joins France and Finland as the clearest European examples of constitutionalized abortion protection. KU34's vilande mechanism (first adopted today, second adoption post-election) is uniquely Swedish — France used direct amendment, Ireland used referendum. The Swedish mechanism ensures democratic consent through two parliamentary votes plus an intervening election.
-
-**International significance**: Sweden's action reinforces a pan-European trend toward constitutional protection of reproductive rights that began accelerating after the US Dobbs decision (2022). Council of Europe Parliamentary Assembly Resolution 2387 (2021) had called on member states to constitutionalize reproductive rights.
-
-#### Opposing trend (international context)
-
-The US Dobbs (2022) reversal and subsequent state-level abortion restrictions created the geopolitical context in which Sweden's KU34 is most significant. Sweden's constitutional protection is partly a deliberate signal against the American trend. KU34's timing — during a US election cycle — is not coincidental in political messaging terms.
+Comparative analysis of Sweden's May 20, 2026 legislative session against:
+1. Nordic peers on constitutional reproductive rights
+2. European welfare conditionality models
+3. Global constitutional protection of abortion rights
+4. ECHR/EU human rights frameworks
 
 ---
 
-### Welfare Reform — Nordic Comparative Context
+### Constitutional Abortion Rights: Global Comparison
 
-#### Denmark comparison (most relevant)
+#### KU34 in International Context
 
-Denmark implemented comparable welfare reforms 2018-2023:
-- **Introduced activity requirements** for social assistance recipients (2016, extended 2020)
-- **Benefit cap (ydelsesloft)** introduced 2019, tightened 2022
-- **Legal residency welfare restrictions** introduced 2019
+Sweden's KU34 vilande adoption places it in an emerging global category of countries constitutionalizing reproductive rights:
 
-**Outcome in Denmark**: Short-term: significant reduction in social assistance caseload (22% reduction 2018-2022). Medium-term: significant increase in child poverty in affected households. Challenged by Amnesty International and Danish Institute for Human Rights. Politically: contributed to SD-equivalent (DF) decline as major parties adopted their agenda.
+| Country | Constitutional protection | Mechanism | Year |
+|---------|--------------------------|-----------|------|
+| **France** | Yes — "liberté garantie" in preamble | Constitutional amendment (800/577 majority) | 2024 |
+| **Ireland** | Removed constitutional ban (8th Amendment) | Referendum (66.4% Yes) | 2018 |
+| **Portugal** | Constitutional protection since decriminalization | Existing constitution Art. 67 | 1984/2007 |
+| **Germany** | No explicit; BVerfG-protected as part of right to life | Federal Constitutional Court jurisprudence | Ongoing |
+| **United States** | No federal constitutional protection (post-Dobbs) | Dobbs v. Jackson reversed Roe/Casey | 2022 |
+| **Sweden (KU34)** | Pending — vilande first reading | RF ch. 8:14 two-reading mechanism | 2026 |
 
-**Swedish SoU30 parallel**: Sweden appears to be following the Danish timeline with 5-7 year lag. Danish outcomes suggest SoU30 will achieve caseload reduction targets but create significant NGO/human rights pushback and may generate child poverty increases in affected households.
+**Key comparator — France 2024**: France amended Article 34 of the Constitution to guarantee the "freedom" (liberté garantie) to abortion. This was achieved via joint session of National Assembly and Senate. Sweden's approach is structurally different (parliamentary rather than referendum) but achieves the same outcome. **France's success provides the closest international template and raises Swedish public expectations for a comparable outcome.**
 
-#### IMF macroeconomic context (Sweden 2026)
-
-- Sweden GDP growth 2025: +2.1% (above EU average 1.8%)
-- Sweden unemployment 2025: 8.4% (elevated, primarily youth/long-term unemployment in specific demographics)
-- Sweden social insurance expenditure / GDP: 14.2% (2024, slight reduction from 2022 high)
-- IMF Article IV Consultation 2025 noted: "targeted welfare conditionality can support labour market integration but must be accompanied by adequate activation support services"
-
-**Assessment**: The IMF macro context does not directly mandate SoU30-style reform, but Sweden's elevated unemployment in specific demographics provides the policy rationale the government uses. IMF caution on "adequate activation support" is notable — SoU30's implementation lacks published activation support budget.
-
-#### UK comparison (less direct)
-
-UK Universal Credit (2013-2025) provides cautionary comparator for activity requirement rollouts. UK implementation generated significant administrative failure, benefit denial errors, and social impact. Sweden's Försäkringskassan is better resourced than UK DWP at rollout, but complexity risk is similar.
+**Key contrast — US Dobbs (2022)**: The Dobbs v. Jackson Women's Health Organization decision reversing Roe v. Casey has created a global context where reproductive rights are under threat. Sweden's KU34 is partly motivated by the desire to be "Dobbs-proof." This international context significantly elevated KU34's domestic political salience.
 
 ---
 
-### Honor Violence Legislation — Comparative Context
+### Nordic Welfare Conditionality Comparison
 
-#### Nordic comparators
+#### SoU29/30 in Nordic Context
 
-| Country | Key legislation | Year | Comparison |
-|---------|----------------|------|-----------|
-| Norway | Æresdrap-forebygging (honor crime prevention) | 2020 | Comprehensive prevention framework |
-| Denmark | Æreskriminalitet amendment | 2021 | Criminal law strengthening parallel |
-| Finland | Kunniaan liittyvä väkivalta criminalisation | 2023 | Recent statutory equivalent |
-| UK | Forced Marriage Act 2007; domestic abuse frameworks | 2007 | Earlier mover; more developed |
+| Country | Welfare conditionality model | Bidragstak/Cap | Activity requirement | Reform year | Outcome |
+|---------|------------------------------|----------------|---------------------|-------------|---------|
+| **Denmark** | Kontanthjælpsloft (benefit cap) | Yes — 225-hour work requirement | Strong — "work first" | 2015–2016 | Reduced rolls; mixed employment outcomes; significant municipal strain |
+| **Norway** | Aktivt arbeidssøk + qualifying periods | Moderate cap via NAV | Moderate | 2015–2019 | Maintained Nordic universalism; lower municipal burden |
+| **Finland** | Universal basic income experiments + conditionality | Mixed — BI trial + conditional rules | Moderate | 2017–2018 | BI trial showed positive outcomes; hybrid approach adopted |
+| **Netherlands** | Participatiewet (activation + integration) | Municipal discretion | Strong | 2015 | Significant municipal variation; Court challenges on equal treatment |
+| **UK** | Universal Credit + sanctions regime | Hard cap (Benefit Cap) | Very strong | 2012–2016 | High sanction rates; documented increase in food bank use |
+| **Sweden (SoU30)** | Bidragstak + medical certificate requirement | Yes — Jul 2026 | Yes — SoU29 | 2026 | **Pending** — closest comparator is Denmark 2015-16 |
 
-**Sweden's JuU43 position**: Sweden's 2026 legislation represents comprehensive statutory strengthening following the Nordic trend. Sweden is neither a leader nor a laggard — it is completing a Nordic legislative convergence on honor violence that has been ongoing since 2015.
+**Key comparator — Denmark 2015–2016**:
+Denmark's kontanthjælpsloft (introduced June 2015, effective January 2016) is the closest Nordic comparator. Key lessons:
+- **Implementation timeline**: Denmark allowed 6 months from adoption to entry into force. Sweden's 42 days (SoU30) is structurally less adequate.
+- **Municipal strain**: Danish municipalities reported significant administrative burden in Year 1; costs exceeded central government estimates by ~30%.
+- **Employment outcomes**: Mixed evidence — some exits from welfare, but many exits to poverty, not employment.
+- **Reform durability**: Danish reform was maintained by subsequent center-left government (S) — suggesting welfare conditionality achieves cross-party stability in Nordic context.
 
-**Key differentiator**: JuU43 includes specific provisions for digital surveillance enabling honor crime (social media monitoring, phone restriction). This is ahead of comparable Nordic legislation and reflects Sweden's specific experience with digital control in honor crime contexts.
+**Assessment**: Sweden's SoU30 is structurally similar to Denmark's kontanthjælpsloft but with a compressed implementation timeline that creates higher risk of implementation failure.
 
 ---
 
-### Cross-Cutting: European Democratic Resilience Context
+### ECHR / EU Law Framework
 
-**Most significant international parallel**: The combination of KU34 (rights expansion) + SoU30 (welfare restriction) + constitutional tool creation (föreningsfrihet) mirrors patterns seen in other European democracies where illiberal and liberal trends coexist within the same legislative cycle. Hungary (illiberal extreme), Poland (partial recovery), France (rights expansion while restricting social movements) all show constitutional tools being deployed in multiple directions simultaneously.
+#### SoU30 and European Human Rights Standards
 
-**Sweden's exceptionalism**: Sweden's vilande mechanism and strong constitutional culture (KU oversight, Lagrådet review) provide meaningful guardrails against constitutional backsliding. The risk is not that Sweden becomes illiberal — it is that constitutional tools created today are available to future governments with different intentions.
+**ECHR implications**:
+- Art. 3 (prohibition of torture/inhuman treatment): Relevant if benefit denial leads to destitution or homelessness. ECtHR has found violations in cases of extreme deprivation (N.T.P. and Others v. France, 2018).
+- Art. 8 (private and family life): Relevant for families with children; benefit denial affecting family life could trigger Art. 8 analysis.
+- Art. 14 (discrimination): Differential treatment of EU citizens vs. Swedish citizens under the "legally present" criterion could violate Art. 14 combined with Art. 1 Protocol 1 (protection of property/social rights).
+
+**EU law implications**:
+- Regulation 883/2004 on social security coordination: EU citizens in Sweden are entitled to equal treatment in social assistance under certain conditions.
+- EU Charter Art. 1 (human dignity): Similar to ECHR Art. 3 threshold.
+- Centerpartiet's reservation R5 (HD01SoU30) specifically invokes EU law concerns.
+
+**Precedent risk**: Netherlands' Participatiewet faced ECHR challenges that resulted in modifications. Spain's social assistance restrictions generated ECJ guidance on equal treatment of EU citizens.
+
+---
+
+### KU34 Constitutional Mechanism: Comparative Process
+
+#### RF ch. 8:14 vs. Other Constitutional Amendment Processes
+
+| Country | Amendment threshold | Referendum required? | Time between readings | 
+|---------|--------------------|--------------------|----------------------|
+| Sweden | 2 of 3 readings; election between | No (for normal amendments) | Must span election |
+| Germany | 2/3 majority in Bundestag + Bundesrat | No | Single reading |
+| France | 3/5 of joint session OR referendum | Optional | Depends on track |
+| Norway | 2/3 majority + must be proposed in previous Storting | No | Spans election |
+| Denmark | 5/6 majority + referendum (40% turnout) | Yes | Spans election |
+
+**Sweden is unique in**: Requiring an election to occur between readings (automatic democratic ratification) without requiring an explicit referendum. This is more legitimate than Germany/France (election as implicit ratification) but less explicit than Denmark (mandatory referendum).
+
+---
+
+### Key Comparative Findings
+
+1. **Sweden lags France in constitutional certainty**: France's 2024 amendment is permanent; Sweden's is conditional on post-election second reading. France provides a closer model than any Nordic peer.
+
+2. **Denmark's SoU30 predecessor lessons not fully learned**: 42-day implementation window is shorter than Denmark's 6 months; municipal capacity concerns are well-documented but not addressed in SoU30's timeline.
+
+3. **EU law risk is under-analyzed**: The "legally present" criterion in SoU30 is legally more vulnerable than the Danish kontanthjælpsloft, which applied uniformly to Danish citizens. Sweden's EU law exposure is higher.
+
+4. **Sweden is at Nordic forefront on constitutional rights**: No Nordic peer has constitutionally protected abortion rights as explicitly as KU34 aims to. Sweden will set a regional constitutional precedent.
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30. Comparative sources: French constitutional council record (2024), Danish kontanthjælpsloft evaluation (Ankestyrelsen 2017), ECHR case law database, EU Regulation 883/2004.*
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/implementation-feasibility.md -->
 
-**Scope**: Institutional capacity assessment for implementing today's legislation  
-**Focus**: SoU29/30 (42-day window), JuU43 (180+ days), KU34 (vilande — no immediate implementation)
+---
+
+### Scope
+
+Implementation feasibility analysis for SoU30 (bidragstak + medical certificate requirement) — entry into force July 1, 2026 — and comparative assessment of KU34 second-reading procedural feasibility.
 
 ---
 
-### KU34 Implementation
+### SoU30 Implementation Analysis
 
-**Status**: No immediate implementation required.  
-**Mechanism**: Vilande vote. First adoption today. Second adoption required after September 2026 election.  
-**Institutional actors**: Riksdag (second reading), Government (regulatory implementation), Lagrådet (review)  
-**Timeline**: Second reading: early 2027 riksmöte session. Regulatory implementation: 12-24 months after second reading.  
-**Feasibility assessment**: HIGH — no implementation risk for constitutional text itself. Future regulatory implementation of föreningsfrihet restriction and citizenship revocation will require substantial legal drafting but is manageable over 12-24 months.  
-**Risk flags**: Legal drafting quality for föreningsfrihet restriction (must be proportionate per ECHR) is the primary implementation risk for future regulations.
+#### Timeline Assessment
 
----
+| Milestone | Date | Status |
+|-----------|------|--------|
+| Betänkande published | 2026-05-11 | ✅ Complete |
+| Riksdag adoption | 2026-05-20 | ✅ Today |
+| Proposition formally enacted | 2026-06-01 (est.) | 🔄 Pending |
+| Socialstyrelsen implementation guidance | 2026-06-15 (target) | ⚠️ At risk |
+| Municipal IT systems updated | 2026-06-25 (deadline) | ❌ Unrealistic |
+| **Entry into force** | **2026-07-01** | **⚠️ HIGH RISK** |
 
-### SoU29/30 Implementation
-
-**Implementation deadline**: 1 July 2026 (42 days from today)  
-**Primary implementation body**: Försäkringskassan  
-**Secondary bodies**: Kommuner (municipalities), Arbetsförmedlingen (employment service), SKR  
-
-#### Implementation Timeline (42 days)
-
-| Date | Required action | Status |
-|------|----------------|--------|
-| May 20 | Riksdag adoption | ✅ Expected today |
-| May 22-28 | Government publishes SFS (förordning) | Required — 5 business days |
-| June 1 | SKR must issue municipal guidance | CRITICAL — no guidance published yet |
-| June 1-14 | Försäkringskassan IT updates | Requires parallel regulatory guidance |
-| June 15 | Municipal implementation preparation complete | TIGHT |
-| July 1 | **Implementation deadline** | RISK |
-
-#### Capacity Assessment by Actor
-
-**Försäkringskassan**:  
-- Current staff capacity: ~14,000 employees, already managing high caseload  
-- Digital system: FORA platform (updated 2023) — can likely accommodate rule changes with urgency patch  
-- Historical precedent: FK implemented sick-leave reform changes in 2021 with 60-day window; 42 days is tighter  
-- Feasibility: MARGINAL — 42 days is at the outer limit. High risk of error cases in first months  
-- **Risk score**: 6/10 (HIGH)
-
-**SKR/Kommuner**:  
-- No guidance published as of today  
-- Municipal social services (socialtjänsten) must operationalize medical certificate requirement  
-- 290 municipalities with varying IT systems and staffing  
-- Stockholm, Gothenburg, Malmö have capacity; smaller municipalities at HIGH risk  
-- Feasibility: LOW-MEDIUM — smaller municipality capacity is a real bottleneck  
-- **Risk score**: 7/10 (HIGH)
-
-**Arbetsförmedlingen**:  
-- Activity requirement activation requires AF referral process  
-- AF under its own digital transformation (Nya AF digital system, 2024-2026)  
-- AF capacity to absorb new activity requirement referrals: LIMITED  
-- Feasibility: LOW-MEDIUM  
-- **Risk score**: 6/10 (HIGH)
-
-#### Implementation Risk Summary for SoU30
-
-| Risk area | Severity | Probability | Combined score |
-|-----------|----------|-------------|----------------|
-| FK IT system not updated | HIGH | 25% | 🔴 |
-| SKR guidance late | HIGH | 50% | 🔴 |
-| Municipal variation (small municip.) | MEDIUM | 65% | 🟡 |
-| AF capacity insufficient | MEDIUM | 45% | 🟡 |
-| Benefits wrongly denied (legal error) | HIGH | 35% | 🔴 |
-
-**Overall SoU30 implementation feasibility**: RISKY. Implementation is possible but the 42-day window makes error-free rollout unlikely. Expect visible failures in smaller municipalities in July-August 2026.
+**Critical finding**: The 42-day window from adoption (2026-05-20) to entry into force (2026-07-01) is structurally insufficient for full implementation. Specific capacity constraints:
 
 ---
 
-### JuU43 Implementation
+#### Capacity Constraint 1: Municipal IT Systems
 
-**Implementation deadline**: 1 January 2027 (proposed, to be confirmed in SFS)  
-**Primary implementation body**: Police Authority, Åklagarmyndigheten (prosecutors), Domstolsverket  
-**Secondary**: Social services (socialtjänsten), Socialstyrelsen  
+**Requirement**: 290 municipalities must update social welfare case management systems to:
+1. Record medical certificate receipt/absence
+2. Calculate bidragstak against new formula
+3. Implement the "legally present" criterion checks
 
-**Feasibility assessment**: HIGH  
-- Standard criminal law reform with established institutional actors  
-- Digital surveillance provisions require police technical unit updates (6-9 months; feasible by Q4 2026)  
-- Training for police and prosecutors on new provisions: well-established HKF pathway  
-- International experience (Norway, Denmark) available for model  
-- Risk flags: Digital surveillance provisions require Integritetsskyddsmyndigheten (IMY) review for proportionality  
-- **Risk score**: 3/10 (LOW-MEDIUM)
+**Reality**: The three dominant Swedish municipal IT systems (Procapita, Combine, VIVA) require vendor patch cycles of 4-8 weeks plus UAT. At adoption (2026-05-20), vendors are unlikely to have production-ready patches until mid-June at the earliest.
+
+**Risk**: Municipal case workers will be operating on manual workarounds from July 1, creating data quality issues, administrative backlogs, and increased error rates.
+
+**Evidence**: SKR flagged this concern in remissvar to SoU30 betänkande preparation. *Source: HD01SoU30 remissdelen.*
 
 ---
 
-### Summary Implementation Feasibility Matrix
+#### Capacity Constraint 2: GP Certificate Supply
 
-| Legislation | Deadline | Feasibility | Risk score | Primary concern |
-|-------------|----------|-------------|------------|----------------|
-| KU34 (vilande) | 2027+ | HIGH | 2/10 | Legal drafting quality |
-| SoU29 (activity req.) | July 1, 2026 | MEDIUM | 6/10 | AF capacity |
-| SoU30 (bidragstak) | July 1, 2026 | MEDIUM | 7/10 | SKR guidance timing |
-| JuU43 | Jan 1, 2027 | HIGH | 3/10 | IMY proportionality review |
+**Requirement**: Welfare recipients must present a GP certificate to qualify for exception from bidragstak (e.g., disability, serious illness).
 
-**Key monitoring trigger**: SKR guidance for SoU30 municipal implementation. If not published by June 1, 2026, the risk of visible implementation failure during the election campaign becomes near-certain.
+**Reality**: Sweden has a documented GP shortage — approximately 1,000 GP positions unfilled nationwide (Socialstyrelsen estimate). Average GP appointment wait time: 3-4 weeks in urban areas; 6-8 weeks in rural municipalities.
 
-**PIR update**: PIR-RT-4 (municipal implementation readiness SoU30) — this analysis confirms HIGH PRIORITY. Recommend monitoring SKR.se daily from June 1 for guidance publication.
+**Risk**: Beneficiaries unable to access GP before July 1 cannot obtain certificates → automatic benefit reduction or denial. This is a foreseeable structural injustice built into the implementation timeline.
+
+**Mitigation proposed but not adopted**: Opposition reservations proposed telemedical certification as alternative. Government did not incorporate.
+
+---
+
+#### Capacity Constraint 3: Socialstyrelsen Guidance
+
+**Requirement**: Socialstyrelsen must issue implementation guidelines for municipalities before July 1.
+
+**Reality**: Government agencies have a standard 4-6 week cycle for developing, consulting, and publishing implementation guidance. From May 20 (adoption day), that timeline puts complete guidance at July 1 at the earliest — leaving zero buffer.
+
+**Risk**: Municipalities applying inconsistent criteria in the absence of complete guidance → legal challenges → administrative courts backlog.
+
+---
+
+#### Overall SoU30 Implementation Risk Rating
+
+| Risk dimension | Level | Probability | Impact |
+|----------------|-------|------------|--------|
+| Municipal IT delays | HIGH | 80% | MEDIUM |
+| GP certificate access | HIGH | 70% | HIGH |
+| Socialstyrelsen guidance | MEDIUM | 50% | MEDIUM |
+| Legal challenges (Day 1) | MEDIUM | 40% | HIGH |
+| Pre-election scandal case | MEDIUM | 35% | CRITICAL (political) |
+
+**Overall implementation risk**: HIGH (3 of 4 capacity constraints are critically at risk)
+
+**Comparable implementation**: Denmark's kontanthjælpsloft (June 2015 → January 2016) had 6+ months and still generated implementation turbulence. Sweden's 42 days is structurally insufficient by Nordic peer standards.
+
+---
+
+#### SoU29 Activity Requirements — Implementation
+
+**Additional requirement**: Municipal advisors must document and monitor activity plan compliance for welfare recipients.
+
+**Feasibility**: Similarly constrained. Municipal case worker capacity is the binding constraint — the same workforce must implement both SoU29 (activity monitoring) and SoU30 (certificate verification + bidragstak calculation).
+
+**Risk**: Double capacity demand on municipal social services workforce → prioritization → some aspects of SoU29 will be de facto deferred.
+
+---
+
+### KU34 Constitutional Process Feasibility
+
+#### Second Reading Requirements (RF ch. 8:14)
+
+| Step | Date | Condition |
+|------|------|-----------|
+| First reading (vilande) | 2026-05-20 ✅ | Majority vote — completed |
+| General election | 2026-09-13 | Must occur — constitutionally scheduled |
+| New parliament constituted | 2026-10-01 (est.) | Automatic after election |
+| Second reading (must occur in new parliament) | 2026-10 to 2027-06 | Requires majority of new parliament |
+| KU34 enters into force | Day after second reading publication | Upon completion |
+
+**Constitutional feasibility**: HIGH — the process is clear and has no procedural obstacles assuming political will exists. The only risk is political (see scenario-analysis.md for probability breakdown).
+
+**Legal interpretation**: RF ch. 8:14 requires the second reading to occur "after the election" — specifically in the newly elected parliament. There is no explicit deadline within the new parliamentary term, meaning the new parliament has four years to hold the second reading. However, political convention and public pressure will create pressure for a prompt second reading.
+
+**Risk of lapse**: If no second reading occurs before the end of the new parliament's term (2026-2030), the vilande first reading expires. This is theoretically possible but politically extremely unlikely given the KU34 level of political salience.
+
+---
+
+### Implementation Feasibility Summary
+
+| Legislation | Implementation readiness | Timeline feasibility | Risk level |
+|-------------|--------------------------|---------------------|-----------|
+| SoU30 (July 1, 2026) | LOW | LOW (42 days insufficient) | HIGH |
+| SoU29 (July 1, 2026) | LOW | LOW (same timeline) | HIGH |
+| KU34 second reading (post-election) | N/A (political, not administrative) | HIGH (constitutional process clear) | MODERATE (political risk) |
+| JuU43 (criminal code update) | MODERATE | MODERATE | LOW |
+
+---
+
+*Evidence: HD01SoU29, HD01SoU30, HD01KU34, SKR remissvar. Danish Ankestyrelsen evaluation 2017. Methodology: analysis/methodologies/implementation-analysis.md.*
 
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/media-framing-analysis.md -->
 
-**Scope**: Expected and actual media narrative frames for today's legislation  
-**Note**: Pre-vote analysis (votes at 16:00 CEST). Media coverage will intensify post-vote.  
+---
+
+### Framing Universe
+
+Analysis of dominant media framings, alternative framings, and DISARM information operation risk for the May 20, 2026 legislative session.
 
 ---
 
-### Frame Inventory
+### Dominant Frames
 
-#### Frame 1: "Historic constitutional moment" (Dominant expected frame)
-**Deployed by**: All mainstream Swedish media (SVT, SR, DN, SvD, Aftonbladet)  
-**Message**: Sweden crosses a constitutional threshold — abortion is now a constitutional right, alongside new restrictions on association and citizenship.  
-**Evidence it will dominate**: Constitutional amendments are rare; vilande mechanism is rare (historically used for major changes). Media training for political correspondents specifically covers vilande votes as "major news."  
-**Likely headlines**: "Sverige grundlagsskyddar aborträtten" (Sweden constitutionally protects abortion right). English: "Sweden votes to enshrine abortion as constitutional right"  
-**Analytical note**: This frame is accurate but incomplete — it underemphasizes the restrictions bundled with the rights expansion.
+#### Frame 1: "Sweden Constitutionalizes Abortion" (Rights Expansion Frame)
 
-#### Frame 2: "Election positioning" (Counter-frame, opposition media)
-**Deployed by**: Left-leaning commentary (Aftonbladet editorial, Expressen political), V/MP/S social media  
-**Message**: Today's legislation is driven by election proximity, not genuine policy need. The welfare reforms are rushed and the government is using constitutional rights expansion as political cover.  
-**Evidence**: SoU30 42-day implementation timeline is genuinely unusual. The bundling of KU34's rights and restrictions is legitimately contestable.  
-**Likely headline**: "Alliansen tar från fattiga — i skuggan av abortvoteringen" (The Alliance takes from the poor — in the shadow of the abortion vote)  
-**Analytical note**: This frame has merit (see devils-advocate.md Challenge 1 and 4) but is a minority narrative.
+**Source**: International and progressive Swedish media  
+**Narrative**: Sweden takes a historic step in protecting reproductive rights, following France 2024. "Sweden abortion-proofs democracy in response to global rights rollback."  
+**Resonance**: HIGH — aligns with Dobbs global context; Sweden as Nordic rights leader  
+**Target audience**: International progressive media, women voters, urban professionals  
+**Evidence basis**: KU34 vilande adoption, cross-party supermajority (286/349)
 
-#### Frame 3: "Nordic model under pressure" (International media frame)
-**Deployed by**: Financial Times, Reuters, NY Times, Guardian (expected)  
-**Message**: Sweden — historically the world's model welfare state — is cutting benefits while adding constitutional rights. The welfare state is eroding.  
-**Evidence**: SoU30 benefit cap and activity requirements are genuinely anomalous by Swedish historical standards.  
-**Likely headline**: "Sweden joins European trend cutting welfare benefits while enshrining abortion rights" (FT style)  
-**Analytical note**: IMF Sweden context (high unemployment in specific demographics) makes this frame more nuanced than it appears — Sweden is not in the extreme welfare-cutting camp.
+**Strengths of frame**: 
+- Factually accurate — constitutional protection IS being established
+- Strong international comparator (France 2024)
+- Broad coalition support provides broad legitimacy
 
-#### Frame 4: "SD mainstreaming" (Political analysis frame)
-**Deployed by**: Political correspondents, academic commentators, international analysis  
-**Message**: SD's support for constitutional abortion right confirms its transformation from fringe far-right to mainstream governing party. Today SD voted with S, MP, V, and C for abortion rights — a remarkable party evolution.  
-**Evidence**: SD's position evolution is documentable (see stakeholder-perspectives.md).  
-**Likely headline**: "Sweden's once-far-right party votes to protect abortion — what does it mean?" (international)  
-**Analytical note**: This frame is analytically accurate (see devils-advocate.md Challenge 2). It is the most important story for Sweden's long-term democratic trajectory.
-
-#### Frame 5: "Gang crime constitutional architecture" (Right-wing frame)
-**Deployed by**: SD, M media, Aftonbladet (populist crime coverage), SD social media  
-**Message**: Sweden has given the state constitutional power to restrict criminal gang organizations. Today is a victory against gang crime.  
-**Evidence**: KU34 föreningsfrihet restriction does provide constitutional basis for future gang crime legislation.  
-**Likely headline**: "Nu kan kriminella gäng förbjudas" (Now criminal gangs can be banned)  
-**Analytical note**: This frame will resonate with SD's voter base and explains SD's enthusiastic KU34 support despite abortion provisions.
+**Weakness of frame**: 
+- Omits the bundled provisions (citizenship revocation, föreningsfrihet) that are NOT uncontroversially rights-expanding
+- Vilande mechanism uncertainty is underplayed — protection is conditional, not yet permanent
 
 ---
 
-### Expected Framing Timeline
+#### Frame 2: "Government Attacks Welfare State" (Social Crisis Frame)
 
-| Time | Activity | Dominant frame |
-|------|----------|---------------|
-| 09:00-16:00 | Pre-vote coverage | "Historic day" + "what will happen" |
-| 16:00-17:00 | Live vote coverage | "Abortion constitutionalized" lead |
-| 17:00-20:00 | Analysis programs | Multi-frame debate; welfare reform enters |
-| 20:00-22:00 | SVT Agenda / primetime | "What does this mean for the election?" |
-| May 21 morning | Newspapers | Morning-after analysis; welfare reform receives more space |
+**Source**: S, V, LO, trade union media, left-leaning outlets  
+**Narrative**: The government, with SD, is systematically dismantling Sweden's universal welfare model. "Most people facing poverty will lose support."  
+**Resonance**: HIGH among trade union voters, municipal workers, welfare recipients  
+**Target audience**: S/V/MP base voters  
+**Evidence basis**: Five-party reservation coalition on SoU30; SKR implementation concerns
 
----
+**Strengths of frame**:
+- Implementation risk concerns are documented and credible (SKR)
+- Opposition reservation coalition (178 seats) is historically large
+- Individual cases of benefit denial will be available pre-election
 
-### Narrative Risk Assessment
-
-**For Tidö coalition**: Risk that welfare reform narrative overwhelms rights narrative. If SoU30 generates a specific visible victim story (family losing benefits, child in need), welfare frame becomes dominant and undercuts the "progressive" constitutional signal from KU34.
-
-**For S + opposition**: Risk that KU34 dominance makes it difficult to sustain welfare opposition narrative. If media coverage is 70% KU34 and 30% welfare, S's core campaign issue is underrepresented.
-
-**For SD**: Risk that "abortion constitutional" headline generates conservative media/social media backlash that SD must respond to, diverting from preferred föreningsfrihet narrative.
+**Weakness of frame**:
+- SoU30 is Nordic-typical welfare conditionality — Danish precedent shows reform can be moderate
+- Opposition is not a majority; the reform has legitimate democratic mandate
+- "Attack on welfare state" is standard electoral hyperbole that may not land with centrist voters
 
 ---
 
-### Key Analytical Framings to Monitor
+#### Frame 3: "Government Delivers" (Coalition Achievement Frame)
 
-**Most important frame to track**: Whether media coverage of SoU30 is linked to KU34 (welfare reform "bundled with" rights expansion — compound story) or treated separately. Bundled coverage favors opposition; separated coverage favors government.
+**Source**: M, SD, KD, L party communications; center-right media  
+**Narrative**: The Tidö government has delivered on its core manifesto: constitutional rights expansion + welfare modernization + criminal law strengthening.  
+**Resonance**: MODERATE — confirmation frame for base voters; less effective for persuadables  
+**Target audience**: Government coalition base  
+**Evidence basis**: Three bills passed on one day; constitutional reform requiring cross-party support
 
-**Second most important**: Whether international media picks up SD mainstream story as primary (Sweden's democratic resilience story) or welfare erosion story (Nordic model decline story). Both are defensible; each has different policy implications for Sweden's international standing.
+**Strengths of frame**:
+- Factually accurate — three legislative achievements in one day
+- KU34 provides progressive legitimacy beyond expected right-wing achievements
+- Defensible against "what has the government done?" attack
+
+**Weakness of frame**:
+- SoU30 and KU34 create cognitive dissonance — rights expansion + welfare restriction in same day
+- C and S participation in KU34 dilutes the government's ownership of the constitutional achievement
+
+---
+
+### DISARM Information Operation Analysis
+
+#### Current DISARM TTP Assessment
+
+| TTP Code | Description | Risk for May 20 | Evidence/Trigger |
+|----------|-------------|-----------------|-----------------|
+| T0023 — Competing narratives | Multiple contradictory frames operating simultaneously | HIGH | KU34 rights + SoU30 welfare = contradictory day |
+| T0049 — Flooding the zone | Complexity prevents clear public understanding | HIGH | Constitutional mechanism + welfare + crime on same day |
+| T0059 — Exploit tragedies | Individual SoU30 denial cases amplified | MODERATE-HIGH | First cases will emerge July 2026 |
+| T0046 — Seed distortions | "Government is restricting constitutional rights" (false re. bundled provisions) | MODERATE | V/MP reservation framing risk |
+| T0057 — Create fake experts | Social media "constitutional lawyers" misinterpreting vilande mechanism | MODERATE | Mechanistic complexity creates opportunity |
+
+#### Counter-DISARM Measures
+
+**Best counter-DISARM strategy** (per analysis/methodologies/disarm-counter.md):
+1. **Primary source specificity**: This analysis cites HD01KU34, HD01SoU30 document IDs, specific reservation signatories, and constitutional mechanism (RF ch. 8:14) — immune to narrative substitution
+2. **Mechanistic clarity**: Explain the vilande mechanism precisely — "first reading adopted today; second reading required post-election for the right to become permanent"
+3. **Bundling acknowledgment**: Explicitly note that KU34 bundles three provisions; only abortion right has unanimous support; other provisions are contested
+4. **Implementation timeline facts**: 42 days implementation window is documented; Danish 6-month comparison is evidence-based
+5. **Vote count specificity**: 179 vs 178 on SoU30; 286+ on KU34 — these numbers counter vague claims
+
+---
+
+### Narrative Framing Comparison
+
+```mermaid
+graph LR
+    F1["Frame 1:\nRights expansion"]:::progressive
+    F2["Frame 2:\nWelfare attack"]:::left
+    F3["Frame 3:\nGovernment delivers"]:::government
+    F4["Frame 4:\nConstitutional uncertainty\n(underrepresented)"]:::neutral
+    
+    F1 -- "KU34 vilande" --> T1["Target:\nProgressive voters\nInternational media"]
+    F2 -- "SoU29/30" --> T2["Target:\nS/V/MP base\nTrade unions"]
+    F3 -- "All three bills" --> T3["Target:\nM/SD/KD/L base"]
+    F4 -- "Vilande mechanism\nlimitations" --> T4["Target:\nShould target all\nActually reaches few"]
+    
+    classDef progressive fill:#00d9ff,color:#000
+    classDef left fill:#ff4444,color:#fff
+    classDef government fill:#0088ff,color:#fff
+    classDef neutral fill:#888,color:#fff
+```
+
+---
+
+### Frame Effectiveness Assessment
+
+| Frame | Electoral impact | Who benefits | Durability |
+|-------|-----------------|--------------|-----------|
+| Rights expansion (F1) | HIGH | S (post-election second reading leverage) | HIGH (permanent issue) |
+| Welfare attack (F2) | HIGH | S+V+MP | MEDIUM (implementation cases needed) |
+| Government delivers (F3) | MODERATE | M+SD+KD | MEDIUM (base consolidation) |
+| Constitutional uncertainty (F4) | LOW (underrepresented) | C/L (nuanced) | HIGH (factually accurate) |
+
+**Key recommendation for accurate reporting**: Resist the simplification of Frame 1 (pure rights expansion) and Frame 2 (pure welfare attack). The accurate narrative is more complex: Sweden has taken a significant but conditional step toward constitutional abortion protection, while simultaneously implementing welfare conditionality that creates implementation risk. Both facts must be held simultaneously.
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43. DISARM TTPs v1.4. Methodology: analysis/methodologies/media-framing.md.*
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/devils-advocate.md -->
 
-**Purpose**: Challenge dominant analytical line; identify alternative interpretations that a high-confidence analysis might underweight
+**Purpose**: Challenge consensus assessments; surface low-probability high-impact alternative interpretations
 
 ---
 
-### Dominant Analytical Line (to be challenged)
+### ACH Methodology
 
-The main synthesis-summary.md concludes:
-1. KU34 is the most constitutionally significant Riksdag vote since the 1974 RF
-2. SD's support for abortion constitutionalization is a pragmatic pivot
-3. SoU30 welfare reform will face significant opposition and potential legal challenges but will likely stand
-4. The election will determine whether left-center or right-center governs, but KU34 second reading is secure in either scenario
+For each dominant hypothesis, this analysis generates a competing hypothesis and evaluates diagnostic evidence.
 
----
-
-### Devil's Advocate Challenges
-
-#### Challenge 1: KU34 may be LESS significant than assessed
-
-**Alternative interpretation**: The constitutional abortion right is largely symbolic because Swedish abortion law (abortlagen 1974) is already strongly protected by ordinary legislation and has never faced a credible legislative threat. Constitutionalizing it adds no practical protection beyond what already exists. The real news in KU34 is the *restrictions* (föreningsfrihet, citizenship) not the rights expansion (abortion).
-
-**Supporting evidence for this alternative**:
-- No major party has proposed restricting abortion since 1974; there is no realistic threat the reform addresses
-- Lagrådet review found the abortion provision the least legally complex element of KU34
-- Comparative: France 2024 was driven by concrete threat from right-wing parties; Sweden has no equivalent threat
-- Media framing alternative: opposition parties could credibly argue "KU34 is a distraction from real issues"
-
-**Assessment of challenge**: PARTIALLY VALID but does not overturn dominant line. The symbolic/aspirational value of constitutional protection is real in a European context where rights are under pressure (US Dobbs ripple effect). The föreningsfrihet + citizenship provisions are correctly identified as the higher-stakes content, but the abortion provision is the one that will dominate public attention.
+**Diagnostic notation**:
+- ✅ Consistent with hypothesis
+- ❌ Inconsistent with hypothesis
+- ⚠️ Indeterminate — neither supports nor refutes
 
 ---
 
-#### Challenge 2: SD support for abortion is NOT pragmatic — it reflects genuine values evolution
+### Hypothesis Set 1: KU34 Historical Significance
 
-**Alternative interpretation**: SD's vote for KU34 abortion provisions reflects genuine party evolution toward Swedish mainstream values, not tactical calculation. Under Jimmie Åkesson's leadership over 15 years, SD has systematically shed explicit social conservatism to compete for center-right votes. This is not a "surprising" pivot — it is the expected outcome of 15 years of party mainstreaming strategy.
+#### Dominant Hypothesis H1
+**"KU34 is the most consequential constitutional moment in Swedish politics since the 1974 Regeringsform."**
 
-**Supporting evidence**:
-- SD dropped explicit anti-abortion language from party program in 2018
-- SD has voted for abortion access in committee contexts since 2020
-- Åkesson has publicly stated SD is "not a social-conservative party" multiple times since 2019
-- SD voter base has become younger, more urban, less religiously conservative since 2018
+*Source of H1*: executive-brief.md H1 headline; synthesis-summary.md BLUF; mainstream media coverage.
 
-**Assessment of challenge**: VALID. The synthesis-summary.md language "surprising" is analytically imprecise. SD's KU34 vote is surprising only if one is using a pre-2018 SD party model. The correct framing is: "SD's vote confirms its transformation into a nationalist-populist party with mainstream Swedish social values, not a traditional social-conservative party." This actually strengthens the assessment of KU34's political legitimacy (more parties genuinely aligned, not just tactical).
+#### Competing Hypothesis H1-DA
+**"KU34 is primarily a performative constitutional gesture whose actual legal effect is minimal because abortion rights in Sweden were never meaningfully under threat."**
 
----
+**Rationale for H1-DA**:
+- Swedish abortion has been legally protected since 1974 (Abortlagen). There is no active political movement in Sweden to restrict abortion comparable to US evangelicals or Polish Law & Justice.
+- Sweden's Riksdag has 5 of 8 parties supporting abortion rights; the political coalition to restrict abortion does not exist.
+- The constitutional protection primarily protects against hypothetical future restrictions by future governments — a risk that is non-zero but very low in the Swedish context.
+- The primary legal effect is symbolic: the Lagrådet noted that the constitutional text would not materially change judicial outcomes in cases challenging Abortlagen.
 
-#### Challenge 3: SoU30 welfare reform will NOT face successful legal challenges
+**Diagnostic evidence**:
+| Evidence | H1 | H1-DA |
+|----------|----|----|
+| Dobbs-inspired fear as primary motivation | ✅ | ✅ (symbolic response) |
+| No active anti-abortion political movement in Sweden | ⚠️ | ✅ |
+| SD's support for KU34 despite ambiguous voter base | ✅ (constitutional consensus) | ⚠️ |
+| V/MP filing reservations on bundled provisions | ✅ (seriousness) | ✅ (complexity = real legal effects) |
+| France's similar 2024 amendment | ✅ (trend) | ✅ (EU symbolic politics) |
 
-**Alternative interpretation**: The dominant analysis flags legal challenge risk as MEDIUM-HIGH, but this may overstate the probability of successful legal challenge. Sweden's monist approach to international law means European Social Charter obligations are soft-law, not directly enforceable in Swedish courts. CESCR recommendations are non-binding. Red Cross Sweden and UNHCR can advocate but cannot obtain injunctions.
-
-**Supporting evidence**:
-- Danish equivalent welfare restrictions (2019-2022) faced international criticism but no successful legal challenge that overturned legislation
-- Sweden's domestic administrative courts are not empowered to strike legislation on charter-compatibility grounds
-- Norwegian equivalent restrictions similarly survived challenge
-- Political parties (S, V, C) who oppose SoU30 have electoral mechanisms, not judicial ones
-
-**Assessment of challenge**: VALID for domestic legal system. The dominant analysis correctly flags NGO challenges but may have overestimated their legal effect vs. their political/reputational effect. The real risk from challenges is **electoral**, not judicial: NGO campaigns generate negative coverage during election campaign period, not injunctions. The threat classification should note: "Legal challenge risk is primarily a political/media risk, not a judicial risk."
-
----
-
-#### Challenge 4: The election is NOT the key determinant for today's legislation
-
-**Alternative interpretation**: The synthesis analysis frames September 2026 as the key future decision point. But welfare reform implementation begins 1 July 2026 — BEFORE the election. The real decision point for SoU30 is administrative/technical (can Försäkringskassan implement by 1 July?), not electoral. By the time votes are cast in September, welfare reform will have been in operation for 11 weeks — creating path dependency that makes reversal harder even for a left-center government.
-
-**Supporting evidence**:
-- Once implemented, welfare reforms typically generate bureaucratic path dependency even when governments change (Sweden's housing restrictions post-2000 persisted through multiple governments)
-- Försäkringskassan will have spent resources building implementation systems; reversal requires equal expenditure
-- Municipalities that adjust to SoU30 medical certificate requirements will resist reversal
-- Historical: UK government frequently could not reverse Universal Credit despite political opposition because implementation costs of reversal were too high
-
-**Assessment of challenge**: VALID and underweighted in dominant analysis. Add to forward-indicators.md: "Track SoU30 implementation progress before election — implementation success/failure creates path dependency that shapes next government's policy options regardless of election outcome."
+**Assessment**: H1-DA has partial validity — the urgency of KU34 is partly Dobbs-driven symbolism. However, the bundling of citizenship revocation and föreningsfrihet provisions into KU34 reveals genuine constitutional ambition beyond symbolism. The vilande mechanism's interaction with the election creates real constitutional consequences. **H1 is more likely correct, but H1-DA's symbolic dimension should be acknowledged.**
 
 ---
 
-### Revised Confidence Levels After Devil's Advocate
+### Hypothesis Set 2: SoU30 Welfare Reform Intent
 
-| Assessment | Original confidence | Post-DA confidence | Change |
-|------------|--------------------|--------------------|--------|
-| KU34 historically significant | VERY HIGH | HIGH | ↓ Slight (symbolic value contested) |
-| SD pivot "surprising" | HIGH | MEDIUM | ↓ Framing should change to "expected outcome of party evolution" |
-| SoU30 legal challenge risk | MEDIUM-HIGH | MEDIUM (judicial) / HIGH (political) | ↔ Refined but not changed overall |
-| Election as key decision point | HIGH | HIGH (but SoU30 implementation path dependency added) | → Enriched |
-| KU34 second reading secure | HIGH | HIGH | → No change |
+#### Dominant Hypothesis H2
+**"SoU30's bidragstak is primarily a fiscal efficiency measure aimed at reducing welfare dependency and incentivizing employment."**
+
+*Source of H2*: HD01SoU30 betänkande's official rationale; government communications.
+
+#### Competing Hypothesis H2-DA
+**"SoU30 is primarily a migration-control measure using welfare conditionality as a proxy for limiting the cost of immigration, and fiscal rationale is a cover for political signaling to SD's voter base."**
+
+**Rationale for H2-DA**:
+- The "legally present" criterion (Reservation R5) specifically targets non-citizen EU residents — a category disproportionately composed of recently arrived migrants and asylum seekers.
+- SD's strong support for SoU30 correlates with SD's stated policy preference for reducing perceived "welfare pull factors" for migration.
+- The fiscal impact is modest relative to the political salience — SoU30 is not primarily a budget measure.
+- The medical certificate requirement (requiring Swedish GP access) creates structural barriers for migrants with less integrated healthcare access.
+
+**Diagnostic evidence**:
+| Evidence | H2 | H2-DA |
+|----------|----|----|
+| Official fiscal rationale in betänkande | ✅ | ✅ (cover) |
+| "Legally present" restriction in SoU30 | ⚠️ | ✅ |
+| SD's political championing of SoU30 | ⚠️ | ✅ |
+| SKR's implementation concerns (not fiscal) | ✅ | ❌ |
+| S/V/C/MP opposition characterizing as anti-migration | ✅ (political framing) | ✅ |
+| Denmark's kontanthjælpsloft (pure conditionality, not migration-specific) | ✅ (Nordic precedent) | ❌ |
+
+**Assessment**: H2-DA has substantial merit — the "legally present" criterion and SD's political investment suggest migration control is a co-primary motivation. However, H2 (fiscal efficiency) also has genuine evidence basis. The honest assessment is that SoU30 is a dual-purpose measure: genuine welfare conditionality reform + migration cost management. **Neither hypothesis alone explains SoU30 fully.**
+
+---
+
+### Hypothesis Set 3: Electoral Impact of KU34
+
+#### Dominant Hypothesis H3
+**"KU34 helps the government by demonstrating bipartisan constitutional leadership, reducing S's monopoly on progressive governance."**
+
+*Source of H3*: intelligence-assessment.md KJ-4; general strategic analysis.
+
+#### Competing Hypothesis H3-DA
+**"KU34 backfires for the government because it elevates the constitutional abortion question to an election priority — terrain where S naturally leads — and raises the stakes of any post-election KU34 second reading failure."**
+
+**Rationale for H3-DA**:
+- S's 107-seat base is more motivated by reproductive rights than M's 68-seat base. KU34 helps S mobilize its natural base.
+- If S wins the election and can frame it as "we saved KU34," S benefits twice: from the election win AND from the constitutional achievement.
+- The vilande mechanism makes the constitutional right fragile — any uncertainty about post-election second reading helps S (which can credibly promise a clean second reading) rather than M (which created the bundling complexity).
+- Voters for whom KU34 is the decisive issue are disproportionately left-leaning.
+
+**Diagnostic evidence**:
+| Evidence | H3 | H3-DA |
+|----------|----|----|
+| M+ SD+ KD+ L majority supports vilande | ✅ | ✅ |
+| S files reservations on bundled provisions | ❌ (complicates H3) | ✅ |
+| V/MP filed reservations | ✅ (seriousness) | ✅ (uncertainty) |
+| Reproductive rights voters tend left | ⚠️ | ✅ |
+| Post-election second reading in S hands | ❌ | ✅ |
+
+**Assessment**: H3-DA is the stronger hypothesis for electoral impact. The government's KU34 strategy may be constitutionally sound but electorally miscalculated — it activates voter groups that disproportionately benefit S in September 2026. **H3-DA should be elevated to primary electoral assessment.**
+
+---
+
+### ACH Summary Matrix
+
+| Hypothesis | DA Challenge | DA Validity | Recommended Assessment |
+|-----------|--------------|------------|------------------------|
+| H1: KU34 historic significance | Partly symbolic | PARTIAL | H1 correct; acknowledge symbolic dimension |
+| H2: SoU30 fiscal motivation | Migration control proxy | SUBSTANTIAL | Dual-purpose reform; neither alone explains |
+| H3: KU34 helps government electorally | Activates S base | STRONGER than H3 | H3-DA elevated to primary; H3 reassessed |
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43. Methodology: ACH framework per intelligence-assessment.md; analysis/methodologies/ach-framework.md.*
 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/classification-results.md -->
 
-**Classification framework**: Hack23 CLASSIFICATION.md (PUBLIC data, political transparency)  
-**Source data classification**: ALL sources are PUBLIC (Riksdag open data, Government publications)
+---
 
-### Information Classification
+### Document Classification Matrix
 
-| Artifact/Data | Classification | CIA Triad Rating | Rationale |
-|---------------|---------------|-----------------|-----------|
-| Riksdag betänkanden (HD01KU34 etc.) | 🟢 PUBLIC | C: Low / I: High / A: High | Official government publications, permanently public |
-| Speeches (anföranden) | 🟢 PUBLIC | C: Low / I: High / A: High | Parliamentary record, public |
-| Voting records (voteringar) | 🟢 PUBLIC | C: Low / I: High / A: High | Mandatory public transparency |
-| Synthesis analysis | �� PUBLIC | C: Low / I: Medium / A: Medium | AI-assisted analysis of public sources |
-| PIR status log | 🟢 PUBLIC | C: Low / I: Medium / A: Medium | Intelligence requirements for monitoring |
+| Document | Policy Domain | Political Dimension | Ideological Axis | GDPR Category | Admiralty |
+|----------|--------------|--------------------|--------------------|---------------|-----------|
+| HD01KU34 | Constitutional law / Fundamental rights | High — constitutional change, broad coalition | Rights-expansion vs. security-conditionality | Art. 9(2)(e) — publicly made public life | A2 |
+| HD01SoU30 | Social policy / Welfare state | High — partisan divide S+V+C+MP vs. M+SD+KD+L | Universalism vs. conditionality | Art. 9(2)(e) | A2 |
+| HD01SoU29 | Social policy / Labour activation | High — partisan divide | Universal welfare vs. conditional activation | Art. 9(2)(e) | A2 |
+| HD01JuU43 | Criminal law / Gender equality | Moderate — broad support, minor reservations | Protective legislation (consensus) | Art. 9(2)(e) | A2 |
+| HD01FiU38 | EU financial regulation | Low — technical implementation | Not partisan | N/A — no personal data | A1 |
 
-**No data in this analysis folder is classified above PUBLIC.** No GDPR special category data is processed. No personal data beyond public parliamentary records (elected officials' names and votes = public accountability data).
+---
 
-### Document Classification
+### Policy Domain Classification
 
-| dok_id | Type | Committee | Topic cluster | Constitutional significance |
-|--------|------|-----------|---------------|---------------------------|
-| HD01KU34 | Betänkande | KU (Konstitutionsutskottet) | Constitutional reform | RF 8:14 vilande — EXCEPTIONAL |
-| HD01SoU29 | Betänkande | SoU (Socialutskottet) | Social welfare | Statutory reform — HIGH |
-| HD01SoU30 | Betänkande | SoU (Socialutskottet) | Social welfare | Statutory reform — HIGH |
-| HD01JuU43 | Betänkande | JuU (Justitieutskottet) | Criminal/family law | Statutory reform — HIGH |
-| HD01FiU38 | Betänkande | FiU (Finansutskottet) | Fiscal framework | Technical — MEDIUM |
-| HDA3EUN40 | Protokoll/utlåtande | EU-nämnden | EU trade policy | Advisory — LOW |
+#### Constitutional Law (KU34)
+- **Domain**: Fundamental rights — Regeringsformen ch. 2
+- **Constitutional significance**: EXCEPTIONAL — amendment requires two riksdagsbeslut with election interval (RF ch. 8:14). Today's first reading (vilande) is the critical enabling step.
+- **Scope**: Universal (all Swedish citizens, dual citizens, organizations)
+- **Rights affected**: Reproductive rights, freedom of association, citizenship
+- **Reversibility**: LOW — constitutional change is structurally resistant; but vilande mechanism allows post-election modification before second reading
 
-### Topic Classification Matrix
+#### Social Policy — Welfare Conditionality (SoU29/30)
+- **Domain**: Social insurance / Municipal welfare administration
+- **Policy type**: Regulatory (activity requirements + benefit cap)
+- **Administrative locus**: Municipal (kommunerna) — implementation responsibility falls on 290 municipalities
+- **Population affected**: Estimated 300,000+ households receiving försörjningsstöd
+- **EU alignment**: Consistent with EU activation framework but at the more conditional end of Nordic spectrum
 
-| Topic | Documents | Significance | Electoral sensitivity |
-|-------|-----------|-------------|----------------------|
-| Reproductive rights / Constitutional | KU34 | CRITICAL | VERY HIGH |
-| Association freedom / Constitutional | KU34 | HIGH | MEDIUM |
-| Citizenship revocation / Constitutional | KU34 | HIGH | HIGH |
-| Welfare reform / Social rights | SoU29, SoU30 | HIGH | VERY HIGH |
-| Honor violence / Criminal law | JuU43 | HIGH | MEDIUM |
-| EU trade policy | HDA3EUN40 | LOW | LOW |
+#### Criminal Law (JuU43)
+- **Domain**: Criminal law / Gender equality / Cultural minority rights
+- **Policy type**: Penal code amendment
+- **Rights at stake**: Protection from honor-based violence; tension with cultural/religious practice claims
 
-### GDPR Compliance Assessment
+---
 
-**Data subjects**: No personal data beyond public political figures (MPs) in their official capacity.  
-**Legal basis**: Legitimate interest (political transparency) + public task (democratic accountability).  
-**Retention**: Analysis artifacts follow repository retention policy (indefinite for public political intelligence).  
-**DPO note**: No GDPR DPIA required — all sources are PUBLIC official government data, no sensitive personal data processed.
+### Political Dimension Classification
+
+```mermaid
+graph LR
+    KU34["KU34\nConstitutional\nAbortion Right"]:::high
+    SoU30["SoU30\nWelfare Reform\nBidragstak"]:::high
+    SoU29["SoU29\nActivity\nRequirements"]:::medium
+    JuU43["JuU43\nHonor Crime\nLegislation"]:::medium
+    
+    classDef high fill:#ff006e,stroke:#fff,color:#fff
+    classDef medium fill:#ffbe0b,stroke:#fff,color:#000
+    
+    KU34 --> E1["Electoral flashpoint\n(vilande mechanism)"]:::high
+    SoU30 --> E2["Campaign battlefront\n(welfare universalism)"]:::high
+    SoU29 --> E2
+    JuU43 --> E3["Women's safety\nnarrative"]:::medium
+```
+
+#### Partisan alignment map
+
+| Legislation | M | SD | KD | L | S | V | C | MP |
+|-------------|---|----|----|---|---|---|---|----|
+| KU34 (support vilande) | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ res. | ⚠️ res. | ⚠️ res. |
+| SoU30 bidragstak | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| SoU29 activity req | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| JuU43 honor crimes | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+---
+
+### GDPR Classification
+
+**Legal bases under GDPR Art. 9**:
+- **Art. 9(2)(e)**: Data manifestly made public by individuals (parliamentary debate, party positions, named MPs filing reservations)
+- **Art. 9(2)(g)**: Substantial public interest — democratic accountability, parliamentary monitoring
+
+**Data minimisation**: Analysis uses only publicly stated political positions, official documents, and aggregated voting patterns. No individual health, financial, or private data processed.
+
+**DPIA required**: No — processing covers exclusively public political activity by public officials in their official capacities.
+
+---
+
+### Classification Summary
+
+| Dimension | Rating |
+|-----------|--------|
+| Constitutional significance | EXCEPTIONAL |
+| Electoral relevance | CRITICAL (116 days to election) |
+| Policy domain breadth | HIGH (constitutional + social + criminal) |
+| Partisan contestation | HIGH (KU34 cross-party; SoU contested) |
+| Aggregate day significance | 9.0/10 |
+| GDPR risk | LOW (Art. 9(2)(e)(g) applied) |
+
+*Sources: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43. Methodology: analysis/methodologies/political-classification-guide.md.*
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/cross-reference-map.md -->

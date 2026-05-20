@@ -1,96 +1,100 @@
 # Stakeholder Perspectives
 **Date**: 2026-05-20 | **Subfolder**: realtime-pulse  
-**Methodology**: Actor analysis per intelligence-analysis-techniques.md  
-**Classification**: 🟢 PUBLIC
-
-## Stakeholder Map Overview
-
-Eight primary political actors, plus civil society and international stakeholders, are assessed for their positions, interests, and likely behaviors in response to today's legislative session.
+**Framework**: Multi-stakeholder analysis per analysis/methodologies/stakeholder-mapping.md
 
 ---
 
-## Primary Political Actors
+## Stakeholder Universe
 
-### 1. Socialdemokraterna (S) — 107 seats
-**Position on KU34**: YES (supports all three provisions including abortion right)  
-**Position on SoU29/30**: OPPOSED (Reservation R1 full opposition, R4 on fraud provisions)  
-**Position on JuU43**: YES  
-**Core interest**: Maximum welfare reform rollback post-election. Abortion right provides cross-partisan appeal to voters who would otherwise not prioritize S.  
-**Likely behavior**: Campaign vigorously on welfare reversal promise. Use KU34 abortion support to broaden electoral coalition beyond core working-class base. Second reading commitment firm — S sees KU34 confirmation as a 2027 governing achievement.  
-**Threat posture**: Low threat to democratic norms. High threat to Tidö coalition welfare agenda if they win.
-
-### 2. Sverigedemokraterna (SD) — 73 seats
-**Position on KU34**: YES (surprising — supports all three provisions)  
-**Position on SoU29/30**: YES  
-**Position on JuU43**: YES  
-**Core interest**: Gang crime Constitutional architecture (föreningsfrihet restriction) is SD's primary legislative prize. Citizenship revocation aligns with migration-security agenda. Abortion support is a calculated pragmatic pivot away from social-conservative base.  
-**Likely behavior**: Emphasize föreningsfrihet provision and citizenship revocation in campaign messaging. Minimize discussion of abortion support. Risk: conservative base alienation.  
-**Threat posture**: Medium threat — constitutional tools for association restriction could be misused. Second reading commitment strong (it's their prize).
-
-### 3. Moderaterna (M) — 68 seats
-**Position on KU34**: YES  
-**Position on SoU29/30**: YES  
-**Position on JuU43**: YES  
-**Core interest**: Positioning as responsible governing party. Welfare reform is centrist-right platform. KU34 maintains urban liberal voter coalition.  
-**Likely behavior**: Run on economic governance + welfare discipline. Avoid divisive social issues. KU34 support gives M "liberal" credibility without cost.  
-**Threat posture**: Low.
-
-### 4. Centerpartiet (C) — 24 seats
-**Position on KU34**: QUALIFIED YES (multiple reservations — R3 on citizen revocation scope, R5 on implementation safeguards)  
-**Position on SoU29/30**: OPPOSED via reservations (R3 housing, R5 implementation)  
-**Position on JuU43**: YES  
-**Core interest**: Preserve rural and urban liberal voter base. Opposition to welfare restrictions signals C is not a rubber stamp for Tidö coalition. Reservations on KU34 constitutional provisions signal rule-of-law concern.  
-**Likely behavior**: Position as "responsible opposition within the majority." May shift to join S-led coalition alternative post-election if polls favor left-center majority.  
-**Electoral calculation**: C is kingmaker in potential coalition arithmetic (see coalition-mathematics.md).  
-**Threat posture**: Low. High strategic value as swing actor.
-
-### 5. Vänsterpartiet (V) — 24 seats
-**Position on KU34**: YES (supports abortion right; reservations on föreningsfrihet restriction and citizenship revocation)  
-**Position on SoU29/30**: OPPOSED (Reservation R2 — joint V+MP opposition)  
-**Position on JuU43**: YES  
-**Core interest**: Full reversal of welfare restrictions. Constitutional abortion right is a partial win given V's broader social rights agenda.  
-**Likely behavior**: Campaign on comprehensive welfare reversal, framing SoU30 as an attack on vulnerable populations. Support KU34 second reading conditional on welfare policy reversal by incoming government.
-
-### 6. Kristdemokraterna (KD) — 19 seats
-**Position on KU34**: YES (including abortion right — historic position shift for KD)  
-**Position on SoU29/30**: YES  
-**Position on JuU43**: YES  
-**Core interest**: As Ebba Busch's party (now PM), KD has maximum institutional stakes in today's legislation. KU34 support, despite KD's Christian democratic roots, reflects pragmatic coalition management.  
-**Analysis note**: KD's support for constitutional abortion right is the most surprising element of today's vote. It reflects PM Busch's authority within KD and her calculation that abortion opposition would be electorally fatal in 2026 Sweden.
-
-### 7. Liberalerna (L) — 16 seats
-**Position on KU34**: YES  
-**Position on SoU29/30**: YES  
-**Position on JuU43**: YES  
-**Core interest**: Classic liberal positions on both rights (KU34 abortion) and welfare discipline (SoU30). L has coherent ideological consistency today.  
-**Threat posture**: Low. At risk of falling below 4% threshold given small seat count.
-
-### 8. Miljöpartiet (MP) — 18 seats
-**Position on KU34**: YES (with reservations on association and citizenship provisions)  
-**Position on SoU29/30**: OPPOSED (Reservation R2 — joint with V)  
-**Position on JuU43**: YES  
-**Core interest**: Environmental + social justice agenda. Welfare opposition positions MP as consistent left alternative. KU34 abortion support is core MP value.
+Key stakeholders affected by the May 20, 2026 legislative session (KU34, SoU29, SoU30, JuU43).
 
 ---
 
-## Civil Society Stakeholders
+## Political Parties
 
-**Föreningen ROKS / UNIZON (women's shelters)**: Strongly supportive of JuU43 (honor violence). Will monitor implementation. KU34 abortion provision is major win.
+### Moderaterna (M) — 68 seats
+**Position on KU34**: Strongly supportive. M proposed and led the constitutional committee effort. Frames as "completing Sweden's fundamental rights architecture."  
+**Position on SoU29/30**: Strongly supportive. Core Tidö coalition welfare conditionality agenda.  
+**Election interests**: Claims dual credit — constitutional rights expansion + welfare modernization. Targets both center and nationalist-conservative voters.  
+**Key risk**: Constitutional bundling controversy may undercut the rights-expansion narrative if V/C/MP's concerns resonate with swing voters.
 
-**Red Cross Sweden / UNHCR**: Actively opposed to SoU30's legal-residency welfare restriction. Legal challenge probable within 12 months. Will conduct public advocacy during election campaign.
+### Sverigedemokraterna (SD) — 73 seats
+**Position on KU34**: Supportive but notably quiet on the abortion component. Party's base includes voters with restrictive reproductive rights views. SD's support for vilande creates internal tension.  
+**Position on SoU29/30**: Enthusiastically supportive. Welfare conditionality + "legally present" restriction aligns with SD's migration control agenda.  
+**Election interests**: Uses SoU30 as proof of policy influence in Tidö coalition. KU34 support is instrumentally useful but downplayed in base communications.
 
-**Kommunal / LO (trade unions)**: Strongly opposed to SoU30. Campaign support for S expected. May mobilize members around welfare reversal messaging.
+### Socialdemokraterna (S) — 107 seats
+**Position on KU34**: Supportive of abortion rights; filed reservations on citizenship revocation and föreningsfrihet provisions. Strategic ambiguity: S wants credit for the abortion right without endorsing the full bundle.  
+**Position on SoU29/30**: Strongly opposed. Filed R1 and R4 (Lundh Sammeli + 14 others). Frames as "dismantling the Swedish welfare model."  
+**Election interests**: KU34 vilande mechanism makes S's post-election position on second reading the central campaign question. If S wins, will they pass the second reading as-is? This is the election's decisive constitutional question.
 
-**SKR (Swedish Municipalities)**: Formally neutral but pressured by implementation timeline. Must issue guidance to municipalities by mid-June 2026 for SoU30 to work. Key monitor.
+### Vänsterpartiet (V) — 24 seats
+**Position on KU34**: Filed reservation against citizenship revocation provision. Opposes conditional constitutional rights.  
+**Position on SoU29/30**: Strongly opposed. Filed R2 (joint with MP). Frames as "punishing the poor."  
+**Election interests**: Benefits from welfare controversy as proof of right-wing government's class politics. Targets progressive voters disillusioned with S's KU34 ambiguity.
 
-**Försäkringskassan**: Implementation body for SoU29/30. Already under digital transformation stress. 42-day implementation window is at the outer limit of institutional capacity.
+### Centerpartiet (C) — 25 seats
+**Position on KU34**: Filed reservation on föreningsfrihet provisions and citizenship revocation. Supports abortion right itself.  
+**Position on SoU29/30**: Filed R3 (Sjöstedt) and R5 (EU law concerns). Frames as poor policy implementation rather than principled opposition to conditionality.  
+**Election interests**: In difficult position — government-adjacent but not coalition member. Trying to differentiate on rights and EU law.
+
+### Kristdemokraterna (KD) — 22 seats
+**Position on KU34**: Supportive. KD has moderated on reproductive rights; party leadership calculated that KU34 opposition would be an electoral liability.  
+**Position on SoU29/30**: Supportive. Welfare conditionality aligns with KD's "responsible social policy" framing.  
+**Election interests**: Survival above 4% threshold is key concern. Riding Tidö coalition achievements.
+
+### Liberalerna (L) — 16 seats  
+**Position on KU34**: Supportive. Rights-expansion core to L's liberal identity.  
+**Position on SoU29/30**: Supportive but with some discomfort on harshest provisions. L's voters include public sector professionals critical of implementation.  
+**Election interests**: Threshold risk similar to KD. KU34 credit is important for L's liberal voter base.
+
+### Miljöpartiet (MP) — 22 seats
+**Position on KU34**: Filed reservation on föreningsfrihet provision. Supports abortion right.  
+**Position on SoU29/30**: Filed R2 (joint with V). Strongly opposed.  
+**Election interests**: Benefits from welfare opposition narrative; environmental/rights positioning for progressive voters.
 
 ---
 
-## International Stakeholders
+## Civil Society
 
-**EU Commission (OLAF, DG Employment)**: Watching SoU30 for Social Charter compatibility. Will not act before election but may issue informal concerns through Swedish DG Employment contacts.
+### RFSU (Riksförbundet för sexuell upplysning)
+**Position**: Celebrates KU34 vilande as historic achievement. Calls for vigilance to ensure second reading passes post-election. Key civil society voice in the constitutional debate.
 
-**Council of Europe**: May be approached by NGOs re: European Social Charter Art. 12/13. Timeline: 6-18 months.
+### Kommunernas organisation (SKR — Sveriges Kommuner och Regioner)
+**Position**: Strongly concerned about SoU30 implementation timeline. Flagged July 1, 2026 as "unrealistically compressed." Is the most credible voice for implementation risk concerns. *Source: SKR position statements (cited in HD01SoU30 remissdelen).*
 
-**Nordic neighbors (Denmark, Norway, Finland)**: No direct stakes. Denmark's parallel welfare reform trajectory (2022-2024) will be cited as comparator in Swedish debate. Finland watching immigration-security propositions with interest.
+### Trade unions (LO, TCO, Saco)
+**Position**: LO and TCO filed remissvar opposing SoU29/30. Frames welfare conditionality as damaging labor market incentives and worker dignity.
+
+### NGOs — welfare/social
+**Rädda Barnen, BRIS, Frälsningsarmén**: All oppose SoU30's impact on families with children. Filed remissvar cited in betänkande. *Source: HD01SoU30.*
+
+---
+
+## Public Sector
+
+### Municipalities (290 kommuner)
+**Concern**: Medical certificate implementation burden. Estimated additional cost: 200-400 million SEK in Year 1 (municipal association estimate). IT systems, social worker capacity, and GP access are the three critical capacity constraints. *Source: SoU30 konsekvensanalys.*
+
+### Socialstyrelsen
+**Role**: Will issue implementation guidance. Already engaged in preparatory work per HD01SoU30. Key capacity constraint: guidance may not be finalized before July 1.
+
+### Migrations verket
+**Role**: Implements the "legally present" criterion. New assessment procedure required for EU/EEA citizens in vulnerable situations.
+
+---
+
+## International / EU
+
+### European Commission
+**Concern**: SoU30's restrictions on EU citizens' access to försörjningsstöd may trigger infringement proceedings under EU social security coordination rules. *Source: C reservation R5 in HD01SoU30.*
+
+### Nordic peers (Norway, Denmark, Finland)
+**Context**: Norway and Denmark have implemented similar bidragstak reforms with varying success. Denmark's 2016 kontanthjælpsloft is the closest comparator. Finland's conditional welfare reforms provide additional lessons.
+
+### International press
+**Framing anticipated**: "Sweden constitutionalizes abortion rights" (positive) + "Sweden tightens welfare rules" (contested) — simultaneously. This dual framing will define international perception of Swedish politics in 2026.
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43, remissvar documented in betänkanden. Analysis: analysis/methodologies/stakeholder-mapping.md.*

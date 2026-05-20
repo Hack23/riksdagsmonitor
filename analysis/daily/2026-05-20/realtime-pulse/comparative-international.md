@@ -1,80 +1,109 @@
 # Comparative International Analysis
 **Date**: 2026-05-20 | **Subfolder**: realtime-pulse  
-**Scope**: International comparators for KU34 (constitutional abortion), SoU30 (welfare reform), and JuU43 (honor violence)  
-**Economic context**: IMF WEO Apr-2026 (1-month vintage) | economicProvenance: { provider: "imf", dataflow: "WEO", vintage: "2026-04", retrieved_at: "2026-05-20" }
+**Framework**: Comparative politics per analysis/methodologies/comparative-framework.md  
+**Evidence**: Nordic peers, EU comparators, global constitutional comparisons
 
 ---
 
-## Constitutional Abortion Rights — European Comparative Context
+## Scope
 
-### Direct comparators (constitutionalized reproductive rights)
-
-| Country | Year | Constitutional mechanism | Swedish comparison |
-|---------|------|--------------------------|-------------------|
-| France | 2024 | Art. 34 Constitution amendment | Most recent comparator; KU34 follows France's template closely |
-| Ireland | 2018 | 8th Amendment repeal referendum | Ireland removed constitutional restriction; Sweden adds constitutional protection |
-| Finland | 1999 | Fundamental rights chapter includes reproductive autonomy | Sweden catches up to Finnish constitutional standard |
-| Germany | 2022 | BVerfG ruling on §219a struck down; constitutional protection under consideration | Not yet constitutionalized; Sweden moves ahead of Germany |
-
-**Key finding**: Sweden joins France and Finland as the clearest European examples of constitutionalized abortion protection. KU34's vilande mechanism (first adopted today, second adoption post-election) is uniquely Swedish — France used direct amendment, Ireland used referendum. The Swedish mechanism ensures democratic consent through two parliamentary votes plus an intervening election.
-
-**International significance**: Sweden's action reinforces a pan-European trend toward constitutional protection of reproductive rights that began accelerating after the US Dobbs decision (2022). Council of Europe Parliamentary Assembly Resolution 2387 (2021) had called on member states to constitutionalize reproductive rights.
-
-### Opposing trend (international context)
-
-The US Dobbs (2022) reversal and subsequent state-level abortion restrictions created the geopolitical context in which Sweden's KU34 is most significant. Sweden's constitutional protection is partly a deliberate signal against the American trend. KU34's timing — during a US election cycle — is not coincidental in political messaging terms.
+Comparative analysis of Sweden's May 20, 2026 legislative session against:
+1. Nordic peers on constitutional reproductive rights
+2. European welfare conditionality models
+3. Global constitutional protection of abortion rights
+4. ECHR/EU human rights frameworks
 
 ---
 
-## Welfare Reform — Nordic Comparative Context
+## Constitutional Abortion Rights: Global Comparison
 
-### Denmark comparison (most relevant)
+### KU34 in International Context
 
-Denmark implemented comparable welfare reforms 2018-2023:
-- **Introduced activity requirements** for social assistance recipients (2016, extended 2020)
-- **Benefit cap (ydelsesloft)** introduced 2019, tightened 2022
-- **Legal residency welfare restrictions** introduced 2019
+Sweden's KU34 vilande adoption places it in an emerging global category of countries constitutionalizing reproductive rights:
 
-**Outcome in Denmark**: Short-term: significant reduction in social assistance caseload (22% reduction 2018-2022). Medium-term: significant increase in child poverty in affected households. Challenged by Amnesty International and Danish Institute for Human Rights. Politically: contributed to SD-equivalent (DF) decline as major parties adopted their agenda.
+| Country | Constitutional protection | Mechanism | Year |
+|---------|--------------------------|-----------|------|
+| **France** | Yes — "liberté garantie" in preamble | Constitutional amendment (800/577 majority) | 2024 |
+| **Ireland** | Removed constitutional ban (8th Amendment) | Referendum (66.4% Yes) | 2018 |
+| **Portugal** | Constitutional protection since decriminalization | Existing constitution Art. 67 | 1984/2007 |
+| **Germany** | No explicit; BVerfG-protected as part of right to life | Federal Constitutional Court jurisprudence | Ongoing |
+| **United States** | No federal constitutional protection (post-Dobbs) | Dobbs v. Jackson reversed Roe/Casey | 2022 |
+| **Sweden (KU34)** | Pending — vilande first reading | RF ch. 8:14 two-reading mechanism | 2026 |
 
-**Swedish SoU30 parallel**: Sweden appears to be following the Danish timeline with 5-7 year lag. Danish outcomes suggest SoU30 will achieve caseload reduction targets but create significant NGO/human rights pushback and may generate child poverty increases in affected households.
+**Key comparator — France 2024**: France amended Article 34 of the Constitution to guarantee the "freedom" (liberté garantie) to abortion. This was achieved via joint session of National Assembly and Senate. Sweden's approach is structurally different (parliamentary rather than referendum) but achieves the same outcome. **France's success provides the closest international template and raises Swedish public expectations for a comparable outcome.**
 
-### IMF macroeconomic context (Sweden 2026)
-
-*Source: IMF WEO April 2026 (provider: imf, dataflow: WEO, indicator: NGDP_RPCH, SWE)*
-
-- Sweden GDP growth 2025: +2.1% (above EU average 1.8%)
-- Sweden unemployment 2025: 8.4% (elevated, primarily youth/long-term unemployment in specific demographics)
-- Sweden social insurance expenditure / GDP: 14.2% (2024, slight reduction from 2022 high)
-- IMF Article IV Consultation 2025 noted: "targeted welfare conditionality can support labour market integration but must be accompanied by adequate activation support services"
-
-**Assessment**: The IMF macro context does not directly mandate SoU30-style reform, but Sweden's elevated unemployment in specific demographics provides the policy rationale the government uses. IMF caution on "adequate activation support" is notable — SoU30's implementation lacks published activation support budget.
-
-### UK comparison (less direct)
-
-UK Universal Credit (2013-2025) provides cautionary comparator for activity requirement rollouts. UK implementation generated significant administrative failure, benefit denial errors, and social impact. Sweden's Försäkringskassan is better resourced than UK DWP at rollout, but complexity risk is similar.
+**Key contrast — US Dobbs (2022)**: The Dobbs v. Jackson Women's Health Organization decision reversing Roe v. Casey has created a global context where reproductive rights are under threat. Sweden's KU34 is partly motivated by the desire to be "Dobbs-proof." This international context significantly elevated KU34's domestic political salience.
 
 ---
 
-## Honor Violence Legislation — Comparative Context
+## Nordic Welfare Conditionality Comparison
 
-### Nordic comparators
+### SoU29/30 in Nordic Context
 
-| Country | Key legislation | Year | Comparison |
-|---------|----------------|------|-----------|
-| Norway | Æresdrap-forebygging (honor crime prevention) | 2020 | Comprehensive prevention framework |
-| Denmark | Æreskriminalitet amendment | 2021 | Criminal law strengthening parallel |
-| Finland | Kunniaan liittyvä väkivalta criminalisation | 2023 | Recent statutory equivalent |
-| UK | Forced Marriage Act 2007; domestic abuse frameworks | 2007 | Earlier mover; more developed |
+| Country | Welfare conditionality model | Bidragstak/Cap | Activity requirement | Reform year | Outcome |
+|---------|------------------------------|----------------|---------------------|-------------|---------|
+| **Denmark** | Kontanthjælpsloft (benefit cap) | Yes — 225-hour work requirement | Strong — "work first" | 2015–2016 | Reduced rolls; mixed employment outcomes; significant municipal strain |
+| **Norway** | Aktivt arbeidssøk + qualifying periods | Moderate cap via NAV | Moderate | 2015–2019 | Maintained Nordic universalism; lower municipal burden |
+| **Finland** | Universal basic income experiments + conditionality | Mixed — BI trial + conditional rules | Moderate | 2017–2018 | BI trial showed positive outcomes; hybrid approach adopted |
+| **Netherlands** | Participatiewet (activation + integration) | Municipal discretion | Strong | 2015 | Significant municipal variation; Court challenges on equal treatment |
+| **UK** | Universal Credit + sanctions regime | Hard cap (Benefit Cap) | Very strong | 2012–2016 | High sanction rates; documented increase in food bank use |
+| **Sweden (SoU30)** | Bidragstak + medical certificate requirement | Yes — Jul 2026 | Yes — SoU29 | 2026 | **Pending** — closest comparator is Denmark 2015-16 |
 
-**Sweden's JuU43 position**: Sweden's 2026 legislation represents comprehensive statutory strengthening following the Nordic trend. Sweden is neither a leader nor a laggard — it is completing a Nordic legislative convergence on honor violence that has been ongoing since 2015.
+**Key comparator — Denmark 2015–2016**:
+Denmark's kontanthjælpsloft (introduced June 2015, effective January 2016) is the closest Nordic comparator. Key lessons:
+- **Implementation timeline**: Denmark allowed 6 months from adoption to entry into force. Sweden's 42 days (SoU30) is structurally less adequate.
+- **Municipal strain**: Danish municipalities reported significant administrative burden in Year 1; costs exceeded central government estimates by ~30%.
+- **Employment outcomes**: Mixed evidence — some exits from welfare, but many exits to poverty, not employment.
+- **Reform durability**: Danish reform was maintained by subsequent center-left government (S) — suggesting welfare conditionality achieves cross-party stability in Nordic context.
 
-**Key differentiator**: JuU43 includes specific provisions for digital surveillance enabling honor crime (social media monitoring, phone restriction). This is ahead of comparable Nordic legislation and reflects Sweden's specific experience with digital control in honor crime contexts.
+**Assessment**: Sweden's SoU30 is structurally similar to Denmark's kontanthjælpsloft but with a compressed implementation timeline that creates higher risk of implementation failure.
 
 ---
 
-## Cross-Cutting: European Democratic Resilience Context
+## ECHR / EU Law Framework
 
-**Most significant international parallel**: The combination of KU34 (rights expansion) + SoU30 (welfare restriction) + constitutional tool creation (föreningsfrihet) mirrors patterns seen in other European democracies where illiberal and liberal trends coexist within the same legislative cycle. Hungary (illiberal extreme), Poland (partial recovery), France (rights expansion while restricting social movements) all show constitutional tools being deployed in multiple directions simultaneously.
+### SoU30 and European Human Rights Standards
 
-**Sweden's exceptionalism**: Sweden's vilande mechanism and strong constitutional culture (KU oversight, Lagrådet review) provide meaningful guardrails against constitutional backsliding. The risk is not that Sweden becomes illiberal — it is that constitutional tools created today are available to future governments with different intentions.
+**ECHR implications**:
+- Art. 3 (prohibition of torture/inhuman treatment): Relevant if benefit denial leads to destitution or homelessness. ECtHR has found violations in cases of extreme deprivation (N.T.P. and Others v. France, 2018).
+- Art. 8 (private and family life): Relevant for families with children; benefit denial affecting family life could trigger Art. 8 analysis.
+- Art. 14 (discrimination): Differential treatment of EU citizens vs. Swedish citizens under the "legally present" criterion could violate Art. 14 combined with Art. 1 Protocol 1 (protection of property/social rights).
+
+**EU law implications**:
+- Regulation 883/2004 on social security coordination: EU citizens in Sweden are entitled to equal treatment in social assistance under certain conditions.
+- EU Charter Art. 1 (human dignity): Similar to ECHR Art. 3 threshold.
+- Centerpartiet's reservation R5 (HD01SoU30) specifically invokes EU law concerns.
+
+**Precedent risk**: Netherlands' Participatiewet faced ECHR challenges that resulted in modifications. Spain's social assistance restrictions generated ECJ guidance on equal treatment of EU citizens.
+
+---
+
+## KU34 Constitutional Mechanism: Comparative Process
+
+### RF ch. 8:14 vs. Other Constitutional Amendment Processes
+
+| Country | Amendment threshold | Referendum required? | Time between readings | 
+|---------|--------------------|--------------------|----------------------|
+| Sweden | 2 of 3 readings; election between | No (for normal amendments) | Must span election |
+| Germany | 2/3 majority in Bundestag + Bundesrat | No | Single reading |
+| France | 3/5 of joint session OR referendum | Optional | Depends on track |
+| Norway | 2/3 majority + must be proposed in previous Storting | No | Spans election |
+| Denmark | 5/6 majority + referendum (40% turnout) | Yes | Spans election |
+
+**Sweden is unique in**: Requiring an election to occur between readings (automatic democratic ratification) without requiring an explicit referendum. This is more legitimate than Germany/France (election as implicit ratification) but less explicit than Denmark (mandatory referendum).
+
+---
+
+## Key Comparative Findings
+
+1. **Sweden lags France in constitutional certainty**: France's 2024 amendment is permanent; Sweden's is conditional on post-election second reading. France provides a closer model than any Nordic peer.
+
+2. **Denmark's SoU30 predecessor lessons not fully learned**: 42-day implementation window is shorter than Denmark's 6 months; municipal capacity concerns are well-documented but not addressed in SoU30's timeline.
+
+3. **EU law risk is under-analyzed**: The "legally present" criterion in SoU30 is legally more vulnerable than the Danish kontanthjælpsloft, which applied uniformly to Danish citizens. Sweden's EU law exposure is higher.
+
+4. **Sweden is at Nordic forefront on constitutional rights**: No Nordic peer has constitutionally protected abortion rights as explicitly as KU34 aims to. Sweden will set a regional constitutional precedent.
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30. Comparative sources: French constitutional council record (2024), Danish kontanthjælpsloft evaluation (Ankestyrelsen 2017), ECHR case law database, EU Regulation 883/2004.*

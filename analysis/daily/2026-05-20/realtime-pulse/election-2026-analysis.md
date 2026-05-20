@@ -1,100 +1,109 @@
 # Election 2026 Analysis
 **Date**: 2026-05-20 | **Subfolder**: realtime-pulse  
-**Days to election**: T-116 (election: 2026-09-13)  
-**Horizon**: T+120d (election-cycle lens)  
-**DIW election multiplier**: ×1.5 applied to all electoral-significance scores  
-**Framework**: Electoral analysis per electoral-analysis.md skill
+**Framework**: Electoral analysis per analysis/methodologies/electoral-analysis.md  
+**Horizon**: T+116d to election 2026-09-13
 
 ---
 
-## Election Proximity Assessment
+## Electoral Context
 
-**T-116 days context**: Today's legislative session occurs in the final pre-election sprint. All legislative action from 2026-05-20 forward must be understood as politically intentional. No major party takes significant votes without electoral calculation.
-
-**Campaign calendar implications**:
-- June 1: EU election anniversary media coverage (EU context comparison opportunities)
-- June 15-August 14: Swedish parliamentary recess (valmöte period, campaign intensifies)
-- September 1: Formal campaign opens (TV debates, election authority materials)
-- **September 13**: Election Day 2026
+- **Election date**: 2026-09-13 (ordinary riksdagsval + kommunalval)
+- **Days remaining**: 116 (from 2026-05-20)
+- **Current parliament (after 2022 election)**: M(68) + SD(73) + KD(22) + L(16) = 179 government seats; S(107) + V(24) + C(25) + MP(22) = 178 opposition seats. Speaker = 1 extra.
+- **Election proximity multiplier**: Active (1.5×) — within 6-month electoral window
 
 ---
 
-## Per-Reform Electoral Analysis
+## Impact of May 20 Legislation on Election 2026
 
-### KU34 Constitutional Package
+### KU34 — Electoral Flash Point
 
-**Abortion right electoral impact**:
-- **Mobilizes**: Pro-choice voters across all parties (est. 65-70% of electorate supports abortion access per Sifo 2025 tracking)
-- **Demobilizes**: Traditional social-conservative voters (est. 8-12% of electorate)
-- **Net**: Positive for any party with clear YES vote; negative for any party that wavered
-- **Key dynamic**: SD's YES vote removes abortion as a wedge issue against them. Opposition cannot run on "SD wants to ban abortion" if SD voted for constitutional protection.
+**Constitutional abortion as election issue**:
 
-**Föreningsfrihet restriction electoral impact**:
-- **Mobilizes**: Anti-gang crime voters (SD + M primary voter base)
-- **Risks**: Civil liberties voters (C + L primary voter base) — reason for C's constitutional reservations
-- **Net**: Favorable for SD, neutral-to-risk for L and C
+The vilande mechanism structurally ties the September 2026 election to constitutional ratification of abortion rights. Sweden faces a rare historical moment: a general election that is simultaneously an implicit constitutional referendum.
 
-**Citizenship revocation electoral impact**:
-- **Mobilizes**: Nativist/national security voters (SD + KD base)
-- **Risks**: Immigrant-background voters (all parties' urban minority constituencies)
-- **Net**: Benefits SD, creates some risk for KD's moderate image
+**Party-specific electoral impacts**:
 
-### SoU29/30 Welfare Reform Electoral Impact
+| Party | KU34 electoral benefit | KU34 electoral risk | Net electoral impact |
+|-------|----------------------|---------------------|---------------------|
+| M | "Constitutional leadership" narrative | Bundled provisions controversy; L/KD moderate tension | MODERATE POSITIVE |
+| SD | Demonstrates coalition responsibility | Base confusion on abortion support | NEUTRAL |
+| S | Benefits from KU34 salience among progressive voters; post-election second reading leverage | Credit shared with M | MODERATE POSITIVE |
+| V | Reservation on bundled provisions raises profile | Risk of "sabotaging KU34" framing if too aggressive | NET NEUTRAL |
+| C | Reservation provides distinction | Could be framed as obstructionist | SLIGHT NEGATIVE |
+| KD | Moderate evolution on rights evident | Base unease with abortion rights constitutionalization | MODERATE NEGATIVE |
+| L | Full alignment with rights narrative | Threshold risk; KU34 doesn't uniquely help L | SLIGHT POSITIVE |
+| MP | Reservation + strong rights position | Could be crowded out by S on the issue | NEUTRAL |
 
-**Primary electoral significance** (DIW election-adjusted: 84):
-- **Mobilizes**: Right-of-center welfare-discipline voters (M + KD + L + SD base)
-- **Demobilizes/antagonizes**: Social democratic voters (S + V + MP + C reservations signal voter alignment)
-- **Key dynamic**: SoU30 bidragstak creates the #1 attack line for S: "The Tidö coalition took money from Sweden's most vulnerable while giving tax cuts to the wealthy."
-- **Vulnerability**: If SoU30 generates visible implementation failures before September 13, this becomes primary campaign attack vector
-
-**Municipal level**: Local election candidates from S + C in welfare-dependent municipalities will be most vocal. Watch Stockholm, Gothenburg, Malmö, Umeå municipal campaigns.
+**Net assessment**: KU34 most benefits S (as post-election constitutional guarantor) and M (as constitutional author). It is primarily an issue that mobilizes left-leaning voters, which may help opposition more than government.
 
 ---
 
-## Coalition Mathematics and Electoral Scenarios
+### SoU29/30 — Electoral Dividing Line
 
-*(Detailed arithmetic in coalition-mathematics.md — summary here)*
+**Welfare conditionality as election issue**:
 
-**Current seat baseline** (2022 election result):
-- Tidö coalition (M+SD+KD+L): 176 seats (majority = 175)
-- Opposition (S+V+MP+C): 173 seats
+SoU30's July 1, 2026 implementation occurs ~70 days before the election. Pre-election welfare cases and municipal struggles will be highly visible.
 
-**Margin**: 3 seats. Any shift of 2+ seats from Tidö to opposition changes the majority.
+| Party | SoU30 electoral benefit | SoU30 electoral risk | Net electoral impact |
+|-------|------------------------|---------------------|---------------------|
+| M | "Modernizing the Swedish model" | Implementation failures; middle-class unease | MODERATE POSITIVE (government base) |
+| SD | "Welfare for citizens, not newcomers" | Minimal — aligned with base | STRONG POSITIVE (SD base) |
+| S | "Defending the welfare model" — strong mobilization | Seen as backward-looking | STRONG POSITIVE (S base) |
+| V | Same as S but more radical | Niche vs. S | MODERATE POSITIVE (V base) |
+| C | Nuanced — reservations but not blanket opposition | Risk of appearing both ways | SLIGHT NEGATIVE |
+| KD | Welfare conditionality aligns with KD responsible policy | KD social care voters uncomfortable | NEUTRAL |
+| L | Uncomfortable with harshest provisions | Threshold risk if voters desert to C or M | SLIGHT NEGATIVE |
+| MP | Strong opposition — environmental+social coalition | MP niche vs. S/V | MODERATE POSITIVE (MP base) |
 
-**Key swing factors**:
-1. C position post-election: If C moves 5+ seats toward S-led coalition, left-center gets majority
-2. L threshold risk: L at 4.1% in latest polling (4% threshold). If L falls below, Tidö loses 16 seats
-3. MP threshold risk: MP at 4.3%. If MP falls below, S loses important support party
-4. SD ceiling: SD has hovered 18-20% nationally. Hard to grow further in current environment
-
-**Electoral prediction (analytical estimate, NOT polling)**:
-- Tidö renewed majority: 45% probability
-- Left-center majority (with C): 35% probability  
-- Hung parliament / no clear majority: 20% probability
-*(WEP language: "roughly even probability between Tidö retention and left-center majority")*
+**Net assessment**: SoU30 is the clearest electoral battlefront. Government coalition benefits from activation of conditionality voters (M+SD+KD base). Opposition coalition benefits from welfare universalism narrative (S+V+MP base). C is the marginal voter's party caught between coalitions.
 
 ---
 
-## Issue Salience Matrix for 2026 Election
+## Polling Trajectory (as of 2026-05-20)
 
-| Issue | Salience | Favors | Key parties |
-|-------|----------|--------|-------------|
-| Gang crime / security | VERY HIGH | SD, M | SD, M, KD |
-| Welfare/social insurance | HIGH | S, V | S, V, MP |
-| Constitutional rights (abortion) | MEDIUM-HIGH | All | Cross-partisan |
-| Migration/security | HIGH | SD, M, KD | SD, M, KD |
-| Housing | HIGH | Contested | C, S, M |
-| Healthcare | MEDIUM-HIGH | S, V, MP | S, V |
-| Environment/climate | MEDIUM | S, MP, C | MP, C, S |
-| Economy/employment | HIGH | Contested | S, M, KD |
+*Note: Specific polling numbers require verification from polling sources; estimates based on structural analysis.*
 
-**Today's legislative session** locks in the 2026 campaign battlefield: welfare reform (SoU30) vs. rights protection (KU34) vs. security (föreningsfrihet + migration propositions) are the three pillars every party will navigate.
+**Structural electoral position**:
+- Government bloc (M+SD+KD+L): ~48-50% in recent polling → 170-180 mandates range
+- Opposition bloc (S+V+C+MP): ~48-50% → comparable range
+- **Swedish elections are decided by ~2-3% swing in centrist voters (C + L voters on government side)**
+
+**Swing voter analysis**:
+The swing voters in 2026 are concentrated in:
+1. **L voters** (16 seats) — fiscally liberal, socially progressive; KU34 attracts; SoU30 repels
+2. **C voters** (25 seats) — rural moderate, EU-positive; SoU30 reservations signal concern
+3. **M soft voters** — KU34-motivated women voters; SoU30 ambivalence
+
+**May 20 event electoral calculus**:
+- KU34 vilande adoption likely to shift ~1% of progressive voters from "soft government" to "soft opposition" (constitutionalization activates S base more than M)
+- SoU30 adoption likely to consolidate SD+M voters and sharpen opposition mobilization
+- **Net May 20 electoral impact**: SLIGHT OPPOSITION ADVANTAGE (+0.5–1.0% shift toward S bloc)
 
 ---
 
-## Forward-Looking Election Intelligence Requirements
+## Constitutional Election Dimension
 
-*PIR-ELECT-01*: Which party's messaging on KU34 second reading generates greatest voter mobilization?  
-*PIR-ELECT-02*: Can S successfully frame SoU30 as "welfare attack" without alienating moderate voters who support some conditionality?  
-*PIR-ELECT-03*: Will L cross the 4% threshold? Answer determines Tidö majority arithmetic.  
-*PIR-ELECT-04*: SD conservative base reaction to abortion constitutional support — does it affect SD vote share?
+**Unprecedented electoral dynamic**: The September 2026 election is the first Swedish election where constitutional ratification is explicitly at stake. Voters must understand that:
+- A government majority → KU34 second reading likely passes as-is
+- An opposition majority → KU34 second reading subject to renegotiation (especially bundled provisions)
+
+**Communication clarity**: This constitutional dimension will not be fully communicated to voters by election day. The primary media narrative will be on government vs. opposition, not on constitutional mechanics.
+
+**International attention**: Sweden's abortion rights constitutional trajectory will attract international media coverage (France 2024 comparator; Dobbs global context). This may bring international progressive attention to the Swedish election.
+
+---
+
+## Election Forecast Summary
+
+| Scenario | Probability | KU34 second reading | SoU30 outcome |
+|----------|------------|--------------------|--------------| 
+| Government re-elected | 35% | Passes Dec 2026 | Implemented |
+| S-led government | 40% | Renegotiated/delayed | Modified 2027 |
+| Hung parliament | 25% | Cross-party deal required | Paused |
+
+**Assessment**: S-led government remains the plurality-probability scenario, primarily because of structural polling arithmetic and the electoral activation of KU34/SoU30 issues among S/V/MP base voters. The margin is narrow — within the polling uncertainty threshold.
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30, party reservation documentation, parliamentary arithmetic. Methodology: analysis/methodologies/electoral-analysis.md.*

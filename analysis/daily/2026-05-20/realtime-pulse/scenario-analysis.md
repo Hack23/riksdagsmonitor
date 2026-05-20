@@ -1,92 +1,128 @@
 # Scenario Analysis
 **Date**: 2026-05-20 | **Subfolder**: realtime-pulse  
-**Horizon**: T+120d (election-cycle); Tier-C quarter-scale = 4 scenarios  
-**Framework**: Alternative futures analysis per intelligence-analysis-techniques.md §Scenario Planning  
-**Scenario classification**: PUBLISHED — WEP language applied throughout
+**Framework**: Scenario planning per analysis/methodologies/scenario-framework.md  
+**Horizon**: T+116d (election) + T+180d (second KU34 reading window) + T+365d
 
 ---
 
-## Key Drivers
+## Scenario Architecture
 
-Two primary independent variables determine the scenario space:
+Three primary branches from the decisive bifurcation point: September 2026 election outcome.
 
-| Driver | Range |
-|--------|-------|
-| **D1: Election outcome** | Tidö majority renewed ↔ Left-center majority (S+MP+V+C or S+MP+V) |
-| **D2: KU34 second reading fidelity** | All committed parties confirm ↔ One or more parties waver |
-
----
-
-## Scenario 1 — "Constitutional Settlement" (Baseline, 45% probability)
-*Tidö coalition wins September 2026 + all parties confirm KU34 second reading*
-
-**Narrative**: Sweden's September 2026 election returns M+SD+KD+L with a working majority (170-180 seats). Post-election, all parties confirm their vilande vote. The abortion right is constitutionalized in the 2026/27 riksmöte's opening session. SoU29/30 welfare reforms survive, with minor technical adjustments. JuU43 takes effect. The föreningsfrihet restriction enables a new criminal organization law by Q2 2027.
-
-**Implications**:
-- Constitutional settlement effect: abortion right is no longer a campaign issue for the foreseeable future
-- SD agenda (gang crime, citizenship revocation) advances with constitutional backing
-- Opposition (S, V, MP) focuses on welfare reversal as primary 2030 election platform
-- Sweden's constitutional order is reshaped but democratic norms maintained
-
-**Wildcards**: SD base revolt on abortion (LOW); C defects to left-center coalition (LOW-MEDIUM).
-
----
-
-## Scenario 2 — "Left-Center Reversal" (35% probability)
-*Left-center majority wins September 2026 + KU34 second reading confirmed*
-
-**Narrative**: S, V, MP, and C form a majority government (175+ seats) following September 2026 election, leveraging KU34 second reading as first legislative act of new government. New government dismantles SoU29/30 welfare reforms within 100 days per S + C + V + MP budget agreement. Immigration-security propositions (HD03267 cluster) face legal challenge and possible revision. JuU43 stands (cross-partisan support). Gang crime legislation delayed.
-
-**Implications**:
-- KU34 abortion right confirmed regardless of election outcome — the constitutional reform is robust
-- Welfare reform reversal is the central policy axis of new government
-- C as kingmaker commands cabinet positions; likely trade/agriculture/environment portfolio
-- SD enters opposition, recalibrates toward 2030 election
-- IMF Sweden country assessment (2027): social insurance reform reversal adds medium-term fiscal pressure
-
-**Wildcards**: C refuses to confirm coalition with V; S minority government with support but not full coalition.
+```mermaid
+graph TD
+    NOW["2026-05-20\nKU34 vilande adopted\nSoU30 adopted"]
+    
+    NOW --> E1["Election 2026-09-13"]
+    
+    E1 --> B1["Branch 1: Government re-elected\nM+SD+KD+L majority maintained"]
+    E1 --> B2["Branch 2: S-led government\nS+MP+V majority"]
+    E1 --> B3["Branch 3: Hung parliament\nNo clear majority"]
+    
+    B1 --> S1["S1: Constitutional consolidation\nSoU30 implementation proceeds"]
+    B2 --> S2["S2: KU34 renegotiation crisis\nSoU30 partially reversed"]
+    B3 --> S3["S3: Protracted negotiation\nKU34 second reading delayed"]
+    
+    style NOW fill:#00d9ff,color:#000
+    style S1 fill:#ffbe0b,color:#000
+    style S2 fill:#ff006e,color:#fff
+    style S3 fill:#a855f7,color:#fff
+```
 
 ---
 
-## Scenario 3 — "Constitutional Crisis" (10% probability)
-*KU34 second reading fails or is materially amended*
+## Scenario 1: Government Re-elected (Probability: 35%)
 
-**Narrative**: Post-election political dynamics produce a majority unwilling or unable to confirm KU34 in second reading. This requires either: (a) SD faces major internal revolt and conditions its support on removing the abortion provision, or (b) a new election produces a parliament that cannot form majority behind KU34. The constitutional abortion right fails at the final hurdle.
+**Title**: Constitutional Consolidation  
+**Conditions**: M+SD+KD+L retains 175+ mandate majority; no major seat shift
 
-**Implications**:
-- Unprecedented democratic legitimacy crisis — Sweden's constitutional framework would be discredited
-- International reputational damage (EU, Council of Europe)
-- Massive domestic political polarization; women's rights organizations mobilize
-- Constitutional scholars' calls for reform of the vilande mechanism itself
-- Long-term damage to cross-partisan trust
+**Sequence of events**:
+1. September 2026: Government re-elected
+2. October 2026: New parliament constituted; same parties form government
+3. November 2026: KU34 second reading scheduled in new parliament
+4. December 2026 / Q1 2027: Second reading passes (~290+ votes in favor); KU34 becomes permanent
+5. January 2027: SoU30 full implementation underway; initial municipal data collected
+6. Mid-2027: Assessment of SoU30 outcomes; government adjusts implementation guidance
 
-**Assessment**: Very unlikely. The political costs are so high that even SD would not risk triggering Scenario 3. The probability is non-zero due to SD internal dynamics (THREAT-OP-03) and extreme election outcome possibilities.
+**KU34 dynamics**: Easy passage of second reading — same parliamentary arithmetic. V/C/MP reservations on bundled provisions may trigger minor modifications in second reading text but abortion right secured.
 
----
+**SoU30 dynamics**: Implementation proceeds; municipal struggles visible but managed. Government communications emphasize early successes; opposition maintains implementation failure narrative.
 
-## Scenario 4 — "Implementation Chaos" (10% probability)
-*Technical implementation failure dominates pre-election period*
+**Electoral/constitutional significance**: Sweden becomes the first Nordic country with constitutionally protected abortion right. International template for reproductive rights protection.
 
-**Narrative**: Regardless of election outcome, SoU30's 42-day implementation window fails. Försäkringskassan cannot operationalize the medical certificate requirement. SKR guidance arrives too late. The welfare reform produces visible administrative chaos — benefit recipients denied illegally, municipalities overwhelmed — during the June-August 2026 election campaign period.
-
-**Implications**:
-- Welfare reform becomes negative campaign issue for Tidö coalition
-- S narrative "we said it was rushed" validated
-- Electoral disadvantage for M+KD+L among municipal service voters
-- Potential government pause/delay order for SoU30 — further embarrassment
-- Long-term: whether reform is maintained or reversed, implementation failure leaves permanent administrative scar
-
-**Assessment**: Implementation failure is possible (THREAT-OP-01 rated MEDIUM) but the political pressure on Försäkringskassan is so intense that extraordinary measures will be deployed. Probability reduced from prior estimate due to pre-existing administrative contingency planning signals.
+**Risks within scenario**: SoU30 implementation failures create political liability even in re-elected government; KD/L internal tensions on welfare harshness.
 
 ---
 
-## Scenario Probability Summary
+## Scenario 2: S-Led Government (Probability: 40%)
 
-| Scenario | Probability | Key condition |
-|----------|-------------|---------------|
-| 1 — Constitutional Settlement | 45% | Tidö majority + KU34 confirmed |
-| 2 — Left-Center Reversal | 35% | Left-center majority + KU34 confirmed |
-| 3 — Constitutional Crisis | 10% | KU34 second reading fails |
-| 4 — Implementation Chaos | 10% | Administrative failure dominates |
+**Title**: Constitutional Renegotiation Crisis  
+**Conditions**: S wins plurality; forms government with MP+V support (or minority); C provides confidence-and-supply
 
-*Note: Scenarios 1 and 2 sum to 80% of cases where KU34 is confirmed regardless of electoral outcome. This is the most important finding: the constitutional abortion right is almost certainly (WEP ≥90%) confirmed in second reading regardless of who wins the election.*
+**Sequence of events**:
+1. September 2026: S becomes largest party; government negotiations begin
+2. October 2026: Coalition negotiations dominated by KU34 second reading conditions
+3. Key tension: V and MP demand modification of citizenship revocation + föreningsfrihet provisions BEFORE second reading
+4. November 2026: Risk of KU34 second reading delay while conditions negotiated
+5. December 2026: Either (a) second reading with modifications (complex legally) or (b) pass as-is (politically costly for V/MP) or (c) delay to 2027
+
+**KU34 second reading options**:
+- **Option A**: Pass as-is (most legally clean; politically difficult for S/V/MP to accept bundled provisions)
+- **Option B**: Modify provisions in second reading (legally untested under RF ch. 8:14 — possible but unprecedented)
+- **Option C**: Delay/deadlock — most damaging outcome; constitutional abortion right lapses
+
+**SoU30 dynamics**: S government moves quickly to modify or suspend welfare conditionality via proposition. New betänkande possible by Q1 2027. Municipal implementation paused pending new legislation.
+
+**Critical risk**: If KU34 lapses due to political deadlock, it becomes the defining constitutional failure of Swedish democracy in a generation.
+
+---
+
+## Scenario 3: Hung Parliament (Probability: 25%)
+
+**Title**: Protracted Negotiation  
+**Conditions**: Neither bloc achieves 175 mandates; C/L hold balance of power
+
+**Sequence of events**:
+1. September 2026: No clear majority
+2. October–December 2026: Extended government formation negotiations (5–8 weeks historically)
+3. KU34 second reading clock ticking — must be passed before the current riksdag term expires (constitutional interpretation: new parliament term begins September 2026; second reading must occur in this new parliament)
+4. Risk: If government formation stalls past December 2026, second reading becomes procedurally urgent
+5. January 2027: Either national unity government on KU34 second reading OR continued uncertainty
+
+**Unique dynamics**: A hung parliament could paradoxically force cross-party agreement on KU34 (all parties agree on abortion component; second reading passes with modifications by agreement) — producing a stronger constitutional text.
+
+**SoU30 dynamics**: Government in caretaker capacity; SoU30 implementation paused or slowed; municipal guidance unclear.
+
+---
+
+## Wildcard Scenarios
+
+### WC1: KU34 Constitutional Challenge Before Second Reading
+**Probability**: LOW (10%)  
+A constitutional scholar or party challenges the bundled KU34 provisions before Lagrådet or via EU law. Could force a partial re-do of the first reading. Trigger: European Court of Justice advisory opinion on citizenship revocation.
+
+### WC2: SoU30 Implementation Emergency
+**Probability**: MODERATE-LOW (20%)  
+A high-profile case of benefit denial (child homelessness, medical emergency) before election day creates a pre-election welfare crisis. Forces emergency Riksdag session. Trigger: Municipal non-implementation or mass administrative denials by August 2026.
+
+### WC3: International Diplomatic Impact
+**Probability**: LOW (5%)  
+Sweden's constitutional abortion right triggers international conservative political campaign pressure (US evangelical organizations, European nationalist parties). Creates unexpected international dimension to Swedish domestic politics.
+
+---
+
+## Scenario Comparison Table
+
+| Dimension | S1: Gov re-elected | S2: S government | S3: Hung parliament |
+|-----------|--------------------|--------------------|---------------------|
+| KU34 second reading | Passes easily, Dec 2026 | Risk of delay/modification | Forced cross-party deal |
+| SoU30 outcome | Full implementation | Partial reversal, 2027 | Implementation paused |
+| Constitutional security | HIGH | MODERATE-LOW | MODERATE |
+| Welfare policy stability | HIGH | LOW | MODERATE |
+| Election significance | Confirmation | Mandate for change | Realignment |
+| IMF economic impact (SEK) | Neutral-positive | Uncertain (transition) | Negative (delay premium) |
+| Probability | 35% | 40% | 25% |
+
+---
+
+*Evidence: HD01KU34 (vilande mechanism), HD01SoU29, HD01SoU30, HD01JuU43. Framework: analysis/methodologies/scenario-framework.md. Election arithmetic per Riksdag mandate distribution.*

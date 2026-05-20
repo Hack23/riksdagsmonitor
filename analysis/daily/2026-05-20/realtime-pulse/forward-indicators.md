@@ -1,85 +1,171 @@
 # Forward Indicators
 **Date**: 2026-05-20 | **Subfolder**: realtime-pulse  
-**Scope**: Trigger events and monitoring signals for KU34, SoU29/30, JuU43  
-**Horizon**: T+7d / T+30d / T+90d / T+120d (election)  
-**Framework**: Signal intelligence per monitoring-indicators.md + intelligence-assessment.md PIRs
+**Framework**: PIR-linked forward indicator tracking per analysis/methodologies/forward-indicators.md  
+**Coverage**: ≥10 dated indicators spanning T+1d to T+365d
 
 ---
 
-## Immediate Indicators (T+1 to T+7 days)
+## Indicator Tracking Framework
 
-| ID | Indicator | Source | Trigger threshold | PIR link |
-|----|-----------|--------|------------------|----------|
-| FI-01 | KU34 vote tallies published | riksdagen.se/voteringar | Any party with unexpectedly low YES count | PIR-RT-1 |
-| FI-02 | Party leadership statements on KU34 | SVT/SR/party websites | Any party hedging on second reading commitment | PIR-RT-1 |
-| FI-03 | SD internal communications post-vote | SD party comms / Samtiden | Conservative base criticism of abortion support | PIR-RT-3 |
-| FI-04 | SOU/SFS publication for SoU30 | regeringen.se/rattsliga-dokument | Not published by May 27 = ALERT | PIR-RT-4 |
-| FI-05 | HD03267 committee referral date | riksdagen.se/dokument | JuU referral for Lagrådet language review | PIR-PROP-1 |
-
-*API query for FI-01*: `riksdag-regering/search_voteringar?bet=KU34&rm=2025/26`  
-*API query for FI-04*: `riksdag-regering/search_dokument?dok_type=SFS&titel=SoU30&from_date=2026-05-20`
+Indicators are classified by:
+- **Type**: D=Decision, E=Event, P=Publication, S=Statistic, L=Legal
+- **PIR linkage**: Which Priority Intelligence Requirement this indicator serves
+- **Confidence**: Probability estimate of indicator triggering
+- **Impact**: What we learn if indicator fires
 
 ---
 
-## Short-Term Indicators (T+7 to T+30 days)
+## Forward Indicator Register
 
-| ID | Indicator | Source | Trigger threshold | PIR link |
-|----|-----------|--------|------------------|----------|
-| FI-10 | SKR guidance for SoU30 municipalities | skr.se/nyheter | Not published by June 1 = CRITICAL ALERT | PIR-RT-4 |
-| FI-11 | Försäkringskassan IT system readiness bulletin | fk.se/nyheter | Any mention of delay or "transition period" | PIR-RT-4 |
-| FI-12 | Red Cross/UNHCR legal challenge filing | Amnesty/UNHCR Sweden press releases | Any formal notification of challenge | PIR-RT-5 |
-| FI-13 | Poll tracking post-vote | SIFO/Demoskop Swedish tracker | S+left bloc ≥ 50% or any single party shift ≥ 2pp | PIR-ELECT-01 |
-| FI-14 | L threshold polling | SIFO tracker | L below 4.0% in any major poll | PIR-ELECT-03 |
-| FI-15 | KD/M messaging on constitutional package | Party press releases | KD downplaying abortion provision = ALERT | PIR-RT-1 |
-
----
-
-## Medium-Term Indicators (T+30 to T+90 days)
-
-| ID | Indicator | Source | Trigger threshold | PIR link |
-|----|-----------|--------|------------------|----------|
-| FI-20 | SoU30 implementation error reports | SVT Nyheter, socialstyrelsen.se | First visible wrongful denial case = media trigger | PIR-RT-4 |
-| FI-21 | Municipal social service stress signals | SKR ärendekorg / kommunpressar | Välfärd commune requesting delay = ALERT | PIR-RT-4 |
-| FI-22 | S campaign messaging on welfare | S valmanifest preview | Welfare reversal ranked #1 campaign priority? | PIR-ELECT-02 |
-| FI-23 | HD03267 (security threat) committee passage | riksdagen.se/dokument | JuU betänkande publication date | PIR-PROP-1 |
-| FI-24 | C campaign positioning | C partiledardebatt statements | C explicitly commits to left-center coalition? | coalition-mathematics |
-| FI-25 | SD conservative backlash media coverage | SD social media / Samtiden | 5+ prominent SD members critical of abortion vote | PIR-RT-3 |
+### FI-01: Riksdag Official Vote Record Published
+**Date**: 2026-05-20 to 2026-05-22 (T+0 to T+2)  
+**Type**: P — Publication  
+**PIR**: PIR-VOTE-KU34, PIR-VOTE-SOU30  
+**Description**: Official Riksdag vote records (voteringsresultat) for KU34, SoU29, SoU30, JuU43 will be published in the parliamentary database within 24-48 hours of the vote.  
+**Significance**: Confirms exact vote counts; identifies any coalition defectors or absences; validates the 179 vs 178 arithmetic for SoU30.  
+**Trigger threshold**: Official publication at data.riksdagen.se  
+**Confidence**: VERY HIGH (99%)  
+**Where to check**: `riksdag-regering-mcp.search_voteringar(rm="2025/26", bet="KU34")`
 
 ---
 
-## Pre-Election Indicators (T+90 to T+120 days)
-
-| ID | Indicator | Source | Trigger threshold | PIR link |
-|----|-----------|--------|------------------|----------|
-| FI-30 | Final pre-election polls | All major pollsters | Left-center ≥ 52% or Tidö ≥ 52% | PIR-ELECT-01 |
-| FI-31 | KU34 "second reading intention" party statements | All party programs | Any wavering on second reading = CRITICAL | PIR-RT-1 |
-| FI-32 | SD threshold polling | SIFO | SD below 15% = structural coalition shift | coalition-mathematics |
-| FI-33 | Implementation lawsuit filed | Förvaltningsrätten / Kammarrätten | Any case challenging SoU30 provisions | PIR-RT-5 |
-| FI-34 | European Social Charter complaint filed | Council of Europe ECSR | Any formal complaint registered | PIR-RT-5 |
-
----
-
-## Monitoring Calendar
-
-| Date | Required monitor action |
-|------|------------------------|
-| 2026-05-22 | Check riksdagen.se for KU34 vote tallies (FI-01) |
-| 2026-05-27 | SFS/förordning publication check (FI-04) |
-| 2026-06-01 | SKR guidance alert (FI-10) — CRITICAL |
-| 2026-06-15 | Försäkringskassan readiness check (FI-11) |
-| 2026-07-01 | SoU30 implementation day — monitor first cases (FI-20) |
-| 2026-08-14 | Pre-campaign final polling check (FI-30) |
-| 2026-09-13 | ELECTION DAY — all electoral indicators resolved |
+### FI-02: Government Press Conference Response
+**Date**: 2026-05-20 (today, T+0)  
+**Type**: E — Event  
+**PIR**: PIR-GOVT-COMM  
+**Description**: Prime Minister Ulf Kristersson (M) and relevant ministers (Social Affairs, Justice) will hold press conference responding to the day's votes.  
+**Significance**: Framing of all three legislation items; KU34 constitutional achievement narrative; SoU30 implementation timeline commitments.  
+**Trigger threshold**: Press conference held + transcript available  
+**Confidence**: VERY HIGH (95%)
 
 ---
 
-## Intelligence Requirements Update
+### FI-03: First SoU30 Legal Challenge Filed
+**Date**: 2026-06-01 to 2026-08-15 (T+12 to T+87)  
+**Type**: L — Legal  
+**PIR**: PIR-SOU30-LEGAL  
+**Description**: Legal aid organizations (FARR, Civil Rights Defenders) or individual applicants file administrative law challenges against municipal SoU30 implementation.  
+**Significance**: Earliest legal interpretation of the "legally present" criterion; potential judicial review of EU law compatibility.  
+**Trigger threshold**: First reported administrative court case filed  
+**Confidence**: MODERATE-HIGH (65%)
 
-Based on today's analysis, the following NEW PIRs are added to the tracking register:
+---
 
-- **PIR-ELECT-01**: Which party's messaging on KU34 second reading generates greatest voter mobilization?
-- **PIR-ELECT-02**: Can S successfully frame SoU30 as welfare attack without alienating moderate voters?
-- **PIR-ELECT-03**: Will L cross the 4% threshold? (Existential for Tidö majority)
-- **PIR-ELECT-04**: SD conservative base reaction to abortion constitutional support
+### FI-04: Municipal Association (SKR) Implementation Report
+**Date**: 2026-07-15 to 2026-08-01 (T+56 to T+73)  
+**Type**: P — Publication  
+**PIR**: PIR-SOU30-IMPLEMENT  
+**Description**: SKR publishes early implementation assessment of SoU30's July 1 entry into force. Will include: IT readiness, case processing backlogs, GP certificate access data.  
+**Significance**: First objective data on whether implementation fears were justified; will dominate media coverage if problems are confirmed.  
+**Trigger threshold**: SKR press release or report published  
+**Confidence**: HIGH (80%)  
+**Impact if problems confirmed**: Significant pre-election liability for government; S gains electoral advantage
 
-These PIRs inherit from existing PIR-RT-1 through PIR-RT-5 and supplement the propositions/motions PIR cluster.
+---
+
+### FI-05: Pre-Election Polling on KU34/SoU30 Issues
+**Date**: 2026-06-01 to 2026-08-31 (T+12 to T+103)  
+**Type**: S — Statistic  
+**PIR**: PIR-ELECTORAL  
+**Description**: Swedish polling firms (Novus, Kantar Sifo, Demoskop) will publish polls showing voter responses to KU34 and SoU30 as election issues. Key metric: which issue ranks higher as "most important election issue."  
+**Significance**: Determines whether KU34 (helps S) or SoU30 (polarizes on government vs. opposition terms) dominates the campaign.  
+**Trigger threshold**: Poll showing KU34 or SoU30 in top-3 election issues  
+**Confidence**: HIGH (85%)
+
+---
+
+### FI-06: September 2026 Election Result
+**Date**: 2026-09-13 (T+116)  
+**Type**: E — Event  
+**PIR**: PIR-ELECTORAL  
+**Description**: Swedish general election. Decisive event for KU34 second reading fate and SoU30 continuity.  
+**Significance**: Determines coalition configuration; defines KU34 second reading probability.  
+**Trigger threshold**: Election held; preliminary results published (election night)  
+**Confidence**: CERTAIN (100%)  
+**Sub-indicators**: Mandate count for M+SD+KD+L vs. S+V+MP vs. C pivot position
+
+---
+
+### FI-07: KU34 Second Reading Scheduled in New Parliament
+**Date**: 2026-10-01 to 2026-12-31 (T+134 to T+225)  
+**Type**: D — Decision  
+**PIR**: PIR-KU34-SECOND  
+**Description**: The newly constituted parliament's constitutional committee (KU) schedules the second reading of KU34. First substantive signal of new parliament's intent.  
+**Significance**: Confirms whether new government will proceed with second reading; timing indicates urgency.  
+**Trigger threshold**: KU formally announced the second reading on its agenda  
+**Confidence**: HIGH (78%) — conditional on election producing a government
+
+---
+
+### FI-08: Socialstyrelsen Guidance Published for SoU30
+**Date**: 2026-06-10 to 2026-06-30 (T+21 to T+41)  
+**Type**: P — Publication  
+**PIR**: PIR-SOU30-IMPLEMENT  
+**Description**: Socialstyrelsen publishes implementation guidance for municipalities on the medical certificate requirement and bidragstak calculation.  
+**Significance**: Whether guidance arrives before July 1 is a binary indicator of implementation readiness. Late guidance = confirmed implementation risk.  
+**Trigger threshold**: Official guidance published and accessible to municipalities  
+**Confidence**: MODERATE (55%) — arriving on time; HIGH (85%) that it's published before July 15
+
+---
+
+### FI-09: Opposition Coalition Statement on KU34 Second Reading
+**Date**: 2026-06-01 to 2026-09-13 (T+12 to T+116)  
+**Type**: D — Decision  
+**PIR**: PIR-KU34-SECOND  
+**Description**: S party (and coalition) publish their formal position on the KU34 second reading — specifically whether they commit to passing it as-is or will require modifications to bundled provisions.  
+**Significance**: Determines the degree of post-election constitutional uncertainty. A clean S commitment to pass as-is removes the primary constitutional risk.  
+**Trigger threshold**: S party leader (or Social Affairs spokesperson) makes formal statement on KU34 second reading  
+**Confidence**: HIGH (80%)  
+**Impact scenarios**: Commitment to pass as-is → reduces T1 threat probability to 10%; insistence on modifications → T1 threat probability remains 35%
+
+---
+
+### FI-10: First SoU30 Benefit Denial Media Case
+**Date**: 2026-07-01 to 2026-08-31 (T+42 to T+103)  
+**Type**: E — Event  
+**PIR**: PIR-SOU30-IMPLEMENT  
+**Description**: The first high-profile media case of a welfare benefit denial under SoU30 — family with children, person with disability, or EU citizen denied försörjningsstöd.  
+**Significance**: This is the key pre-election information environment event. A sympathetic individual case amplified by media/social media could define the welfare narrative pre-election.  
+**Trigger threshold**: National media coverage of individual SoU30 denial case  
+**Confidence**: HIGH (75%) — the structural conditions guarantee cases will occur; media coverage likelihood is also high given election context  
+**Political impact**: Moderate-to-significant depending on case profile
+
+---
+
+### FI-11: JuU43 First Prosecution Under New Honor Crime Provisions
+**Date**: 2026-07-01 to 2027-06-30 (T+42 to T+376)  
+**Type**: L — Legal  
+**PIR**: PIR-JUU43-IMPLEMENT  
+**Description**: First prosecution under JuU43's strengthened honor crime provisions. Test case for the new legal framework.  
+**Significance**: Early test of whether JuU43 achieves its legislative intent; media attention to prosecution quality.  
+**Trigger threshold**: Reported prosecution citing JuU43-amended criminal code  
+**Confidence**: MODERATE (50%) within 12 months
+
+---
+
+### FI-12: IMF WEO Update on Sweden (October 2026)
+**Date**: 2026-10-01 to 2026-10-15 (T+134 to T+148)  
+**Type**: P — Publication  
+**PIR**: PIR-ECONOMIC  
+**Description**: IMF World Economic Outlook October 2026 update will include revised Sweden GDP growth, employment, and fiscal projections post-election.  
+**Significance**: External validation of whether the government's fiscal rationale for SoU30 was credible; new government's economic inheritance.  
+**Trigger threshold**: IMF WEO published with Sweden chapter  
+**Confidence**: CERTAIN (99%)
+
+---
+
+## Indicator Priority Matrix
+
+| Indicator | Time | PIR | Confidence | Electoral significance |
+|-----------|------|-----|-----------|----------------------|
+| FI-06: Election result | T+116 | Electoral | 100% | DECISIVE |
+| FI-01: Vote record | T+2 | Vote confirmation | 99% | CONFIRMATORY |
+| FI-04: SKR report | T+56-73 | Implementation | 80% | HIGH |
+| FI-09: S KU34 commitment | T+12-116 | Constitutional | 80% | HIGH |
+| FI-05: KU34/SoU30 polling | T+12-103 | Electoral | 85% | HIGH |
+| FI-10: First denial case | T+42-103 | Implementation | 75% | MODERATE-HIGH |
+| FI-07: KU34 second reading | T+134-225 | Constitutional | 78% | HIGH (post-election) |
+
+---
+
+*Evidence: HD01KU34, HD01SoU29, HD01SoU30. Methodology: analysis/methodologies/forward-indicators.md. IMF WEO 2026-04 (1 month old — fresh; vintaged at collected April 2026).*
