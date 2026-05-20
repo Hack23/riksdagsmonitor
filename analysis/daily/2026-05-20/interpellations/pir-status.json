@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "cycle": "interpellations",
+  "date": "2026-05-20",
+  "subfolder": "interpellations",
+  "pirs": [
+    {
+      "id": "PIR-RUSSIA-EXTRAT-MILITARY",
+      "title": "Russian extraterritorial military doctrine and Swedish response",
+      "status": "ACTIVE",
+      "opened": "2026-05-08",
+      "last_updated": "2026-05-20",
+      "trigger_documents": ["HD10494"],
+      "collection_notes": "Lithuanian Seimas recognition of Ichkeria (April 2026) provides new diplomatic precedent. FM Malmer Stenergard has not responded as of 2026-05-20. Swedish position increasingly an outlier in Baltic-Nordic context.",
+      "close_criteria": "Swedish government issues formal position on Ichkeria recognition OR FM provides substantive diplomatic response",
+      "next_review": "2026-06-02"
+    },
+    {
+      "id": "PIR-SWEDEN-RECOG-OCCUPIED",
+      "title": "Sweden's policy on recognizing Russian-occupied territories",
+      "status": "ACTIVE",
+      "opened": "2026-05-08",
+      "last_updated": "2026-05-20",
+      "trigger_documents": ["HD10494"],
+      "collection_notes": "HD10494 is the primary collection document for this cycle. Questions posed by SD's Strandman are on the record. Three direct questions to FM on consistency with Ukraine recognition policy.",
+      "close_criteria": "Government announces review of occupied-territory recognition framework OR explicitly maintains current policy with stated rationale",
+      "next_review": "2026-06-02"
+    },
+    {
+      "id": "PIR-ELECTION-FOREIGN-POLICY",
+      "title": "SD-M foreign policy differentiation dynamics in 2026 election campaign",
+      "status": "ACTIVE",
+      "opened": "2026-05-08",
+      "last_updated": "2026-05-20",
+      "trigger_documents": ["HD10494"],
+      "collection_notes": "Pattern confirmed: SD is using consecutive interpellation cycles to accumulate Russia-policy differentiation from M. HD10494 is the fourth consecutive cycle with Russia-adjacent interpellation. The dual-track SD strategy (foreign policy vs. KD economic pressure) is coherent and pre-election.",
+      "close_criteria": "Election 2026-09-13 (closes automatically); or SD withdraws from Tidö cooperation",
+      "next_review": "2026-05-27"
+    },
+    {
+      "id": "PIR-ELDERLY-CARE-DIGNITY",
+      "title": "Implementation failure on care recipient gender-choice right",
+      "status": "NEW",
+      "opened": "2026-05-20",
+      "last_updated": "2026-05-20",
+      "trigger_documents": ["HD10496"],
+      "collection_notes": "Court ruling found no enforceable right to gender choice for intimate care. 2022 Riksdag tillkännagivande to government not implemented. S's Isak From has now formally questioned minister. This is a new PIR opened this cycle.",
+      "close_criteria": "Government introduces legislative initiative on care gender choice; or issue moves to committee for formal inquiry",
+      "next_review": "2026-06-02"
+    }
+  ],
+  "generated_at": "2026-05-20T08:00:00Z"
+}

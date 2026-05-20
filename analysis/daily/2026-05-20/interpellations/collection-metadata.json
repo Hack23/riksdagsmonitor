@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "workflow": "news-interpellations",
+  "article_date": "2026-05-20",
+  "subfolder": "interpellations",
+  "collected_at": "2026-05-20T08:10:00Z",
+  "documents": [
+    {
+      "dok_id": "HD10497",
+      "dok_typ": "ip",
+      "rm": "2025/26",
+      "datum": "2026-05-19",
+      "fulltext_available": true,
+      "parti": "SD",
+      "intressent": "Rashid Farivar",
+      "organ": "NäringsU",
+      "titel": "Långa betaltider och svenska företags konkurrenskraft"
+    },
+    {
+      "dok_id": "HD10496",
+      "dok_typ": "ip",
+      "rm": "2025/26",
+      "datum": "2026-05-19",
+      "fulltext_available": true,
+      "parti": "S",
+      "intressent": "Isak From",
+      "organ": "SoU",
+      "titel": "Rätten att välja kön på personal"
+    },
+    {
+      "dok_id": "HD10495",
+      "dok_typ": "ip",
+      "rm": "2025/26",
+      "datum": "2026-05-19",
+      "fulltext_available": true,
+      "parti": "S",
+      "intressent": "Matilda Ernkrans",
+      "organ": "MJU",
+      "titel": "Regler för ideellt arbete på landsbygden"
+    },
+    {
+      "dok_id": "HD10494",
+      "dok_typ": "ip",
+      "rm": "2025/26",
+      "datum": "2026-05-15",
+      "fulltext_available": true,
+      "parti": "SD",
+      "intressent": "Mikael Strandman",
+      "organ": "UU",
+      "titel": "Erkännande av tjetjenska republiken Itjkerien som ockuperad stat"
+    },
+    {
+      "dok_id": "HD10493",
+      "dok_typ": "ip",
+      "rm": "2025/26",
+      "datum": "2026-05-14",
+      "fulltext_available": true,
+      "parti": "V",
+      "intressent": "Håkan Svenneling",
+      "organ": "UU",
+      "titel": "Konsekvenserna av nedlagda biståndsstrategier"
+    }
+  ],
+  "fulltext_floor_met": true,
+  "fulltext_count": 5,
+  "minimum_required": 3,
+  "pir_carry_forward": ["PIR-RUSSIA-EXTRAT-MILITARY", "PIR-SWEDEN-RECOG-OCCUPIED", "PIR-ELECTION-FOREIGN-POLICY"],
+  "new_pirs_opened": ["PIR-ELDERLY-CARE-DIGNITY"],
+  "mcp_server_status": "live",
+  "mcp_generated_at": "2026-05-20T07:44:05Z"
+}
