@@ -26,6 +26,14 @@ This is the **only** gate separating analysis from article generation. If it fai
 
 ## Implementation
 
+> ⏱  **Time-budget telemetry (mandatory).** Print `agent_minute` before the gate begins so an over-budget run can be detected immediately. Target `agent_minute ≤ 36` at gate start (see `00-base-contract.md §Session timing → Phase budget`). If `agent_minute ≥ 40` at this point, prioritise: run the gate, accept first-pass result, proceed straight to aggregate+render+PR — do **not** loop on gate fixes past minute 40.
+>
+> ```bash
+> AGENT_START_EPOCH="$(cat /tmp/gh-aw/agent-start.epoch 2>/dev/null || date -u +%s)"
+> ELAPSED_MIN=$(( ($(date -u +%s) - AGENT_START_EPOCH) / 60 ))
+> echo "⏱  gate-entry agent_minute=$ELAPSED_MIN  remaining_to_pr_deadline=$(( 45 - ELAPSED_MIN )) min"
+> ```
+
 No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–13, plus conditional check 9b where applicable). Check 12 invokes `scripts/validate-article.ts` when `article.md` is already present (after aggregation); Check 13 invokes `scripts/check-analysis-language.ts`:
 
 ```bash

@@ -9,6 +9,14 @@ Articles are **100 % rendered from the analysis artifacts** produced in module `
 
 ## Generation steps (exactly three)
 
+> ⏱  **Time-budget telemetry (mandatory).** Print `agent_minute` before aggregation starts. Target `agent_minute ≤ 38` at this point (see `00-base-contract.md §Session timing → Phase budget`). If `agent_minute ≥ 40`, the renderer is fast but the safe-outputs runner still needs ~3 min — proceed immediately and commit whatever exists; do not loop on render fixes past minute 41.
+>
+> ```bash
+> AGENT_START_EPOCH="$(cat /tmp/gh-aw/agent-start.epoch 2>/dev/null || date -u +%s)"
+> ELAPSED_MIN=$(( ($(date -u +%s) - AGENT_START_EPOCH) / 60 ))
+> echo "⏱  render-entry agent_minute=$ELAPSED_MIN  remaining_to_pr_deadline=$(( 45 - ELAPSED_MIN )) min"
+> ```
+
 ### Step 1 — Aggregate
 
 ```bash
