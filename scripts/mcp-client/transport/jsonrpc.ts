@@ -2,16 +2,17 @@
  * @module mcp-client/transport/jsonrpc
  * @description JSON-RPC 2.0 transport base class for the MCP client stack.
  *
- * `MCPTransportClient` owns the wire-level concerns:
+ * `MCPTransportClient` owns the wire-level orchestration:
  *   - HTTP POST via `performPost` (fetch + Node.js fallback)
- *   - JSON-RPC 2.0 request framing + `tools/call` envelope
- *   - Exponential-backoff retry on transient transport errors
- *   - Lazy session re-init on session-init / rate-limit errors
+ *   - JSON-RPC 2.0 `tools/call` envelope (built in `./request-builder.ts`)
+ *   - Response parsing + gateway payload dereferencing (`./response-parser.ts`)
+ *   - JSON-RPC error envelope classification (`./error-envelope.ts`)
+ *   - Exponential-backoff retry on transient transport errors (`./retry.ts`)
+ *   - Lazy session re-init on session-init / rate-limit errors (`./session.ts`)
  *   - Statistics tracking (`requests`, `errors`, `successRate`)
  *
- * Session bootstrap + SSE parsing live in `./session.ts`; retry primitives
- * live in `./retry.ts`. The orchestrating `MCPClient` in `../client.ts`
- * extends this base and wires per-domain method wrappers on top.
+ * The orchestrating `MCPClient` in `../client.ts` extends this base and wires
+ * per-domain method wrappers on top.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -20,7 +21,6 @@
 import type {
   MCPClientConfig,
   MCPStats,
-  JsonRpcRequest,
   JsonRpcResponse,
 } from '../../types/mcp.js';
 import { performPost } from '../transport.js';
@@ -28,9 +28,14 @@ import { DEFAULT_MAX_RETRIES, DEFAULT_MCP_SERVER_URL, getDefaultTimeout } from '
 import { DEFAULT_MCP_AUTH_TOKEN } from '../config/auth.js';
 import { calculateRetryDelay, isRetryableNetworkError } from './retry.js';
 import { initializeSession, parseSSEResponse, type SessionInitContext } from './session.js';
-
-/** Module-scoped JSON-RPC id counter — monotonically increasing across instances. */
-let jsonRpcId = 1;
+import {
+  assertValidToolName,
+  buildJsonRpcRequest,
+  buildRequestHeaders,
+  nextJsonRpcId,
+} from './request-builder.js';
+import { parseJsonRpcEnvelope, resolveResultContent } from './response-parser.js';
+import { classifyJsonRpcError, formatRequestFailure } from './error-envelope.js';
 
 /**
  * Wire-level MCP transport. Domain-agnostic JSON-RPC 2.0 client with
@@ -69,7 +74,7 @@ export class MCPTransportClient implements SessionInitContext {
 
   /** SessionInitContext glue — returns the next monotonic JSON-RPC id. */
   nextJsonRpcId(): number {
-    return jsonRpcId++;
+    return nextJsonRpcId();
   }
 
   // -----------------------------------------------------------------------
@@ -82,11 +87,7 @@ export class MCPTransportClient implements SessionInitContext {
     retryCount = 0,
     _skipPrefix = false,
   ): Promise<Record<string, unknown>> {
-    if (!tool || typeof tool !== 'string' || !/^[a-zA-Z0-9_-]+$/.test(tool)) {
-      throw new Error(
-        `Invalid tool name: ${tool}. Tool names must contain only alphanumeric characters, hyphens, and underscores.`,
-      );
-    }
+    assertValidToolName(tool);
 
     if (retryCount === 0) {
       this.requestCount++;
@@ -96,12 +97,7 @@ export class MCPTransportClient implements SessionInitContext {
     const timeoutId = setTimeout(() => controller.abort(), this.timeout);
 
     try {
-      const jsonRpcRequest: JsonRpcRequest = {
-        jsonrpc: '2.0',
-        id: jsonRpcId++,
-        method: 'tools/call',
-        params: { name: tool, arguments: params },
-      };
+      const jsonRpcRequest = buildJsonRpcRequest(tool, params);
 
       if (this.authToken && !this.sessionId) {
         try {
@@ -111,13 +107,7 @@ export class MCPTransportClient implements SessionInitContext {
         }
       }
 
-      const headers: Record<string, string> = {
-        'Content-Type': 'application/json',
-        Accept: 'application/json, text/event-stream',
-        ...this.customHeaders,
-      };
-      if (this.authToken) headers['Authorization'] = this.authToken;
-      if (this.sessionId) headers['Mcp-Session-Id'] = this.sessionId;
+      const headers = buildRequestHeaders(this.customHeaders, this.authToken, this.sessionId);
 
       const response = await performPost(
         this.baseURL,
@@ -128,74 +118,31 @@ export class MCPTransportClient implements SessionInitContext {
 
       if (!response.ok) {
         let errorBody = '';
-        try {
-          errorBody = await response.text();
-        } catch {
-          // ignore
-        }
+        try { errorBody = await response.text(); } catch { /* ignore */ }
         throw new Error(
           `MCP server error: ${response.status} ${response.statusText}${errorBody ? ' - ' + errorBody : ''}`,
         );
       }
 
-      const contentType: string =
-        response.headers && typeof response.headers.get === 'function'
-          ? (response.headers.get('content-type') ?? '')
-          : '';
+      const jsonRpcResponse: JsonRpcResponse = await parseJsonRpcEnvelope(response);
+      const errorOutcome = classifyJsonRpcError(jsonRpcResponse);
 
-      let jsonRpcResponse: JsonRpcResponse;
-      if (contentType.includes('text/event-stream')) {
-        const text = await response.text();
-        jsonRpcResponse = this.parseSSEResponse(text);
-      } else {
-        jsonRpcResponse = (await response.json()) as JsonRpcResponse;
+      if (errorOutcome.kind === 'session_init' && retryCount < 2) {
+        this.sessionId = null;
+        const delay = (retryCount + 1) * 2000;
+        console.warn(`⚠️ Session error, re-initializing after ${delay}ms...`);
+        await this.sleep(delay);
+        await this.initializeSession();
+        return this.request(tool, params, retryCount + 1);
       }
-
-      if (jsonRpcResponse.error) {
-        const errorMsg = jsonRpcResponse.error.message || JSON.stringify(jsonRpcResponse.error);
-
-        if (errorMsg.includes('session initialization') || errorMsg.includes('Too Many Requests')) {
-          this.sessionId = null;
-          if (retryCount < 2) {
-            const delay = (retryCount + 1) * 2000;
-            console.warn(`⚠️ Session error, re-initializing after ${delay}ms...`);
-            await new Promise<void>((r) => setTimeout(r, delay));
-            await this.initializeSession();
-            return this.request(tool, params, retryCount + 1);
-          }
-        }
-
-        throw new Error(`MCP tool error: ${errorMsg}`);
+      if (errorOutcome.kind !== 'none') {
+        throw new Error(errorOutcome.message);
       }
 
       const result = (jsonRpcResponse.result ?? {}) as Record<string, unknown>;
-      const content = result['content'] as Array<{ text?: string }> | undefined;
-      if (Array.isArray(content) && content[0]?.text) {
-        try {
-          const parsed = JSON.parse(content[0].text) as Record<string, unknown>;
-          if (parsed['payloadPath']) {
-            const payloadRaw = await this.readGatewayPayload(parsed['payloadPath'] as string);
-            if (!payloadRaw) return parsed;
-            const payloadContent = payloadRaw['content'] as Array<{ text?: string }> | undefined;
-            const payloadText = payloadContent?.[0]?.text;
-            if (payloadText) {
-              try {
-                return JSON.parse(payloadText) as Record<string, unknown>;
-              } catch {
-                return { text: payloadText };
-              }
-            }
-            return payloadRaw;
-          }
-          return parsed;
-        } catch {
-          return { text: content[0].text };
-        }
-      }
-      return result;
+      return resolveResultContent(result);
     } catch (error: unknown) {
       const err = error as Error;
-      const errorMsg = (err.message ?? '').toLowerCase();
 
       if (retryCount < this.maxRetries - 1 && isRetryableNetworkError(err)) {
         const delay = calculateRetryDelay(retryCount);
@@ -208,90 +155,10 @@ export class MCPTransportClient implements SessionInitContext {
       }
 
       this.errorCount++;
-      throw new Error(this.formatRequestFailure(err, errorMsg), { cause: error });
+      throw new Error(formatRequestFailure(err, this.baseURL), { cause: error });
     } finally {
       clearTimeout(timeoutId);
     }
-  }
-
-  /**
-   * Read a large MCP gateway response from a side-channel `payloadPath`.
-   *
-   * The MCP gateway returns oversized JSON-RPC results via a file path
-   * pointer (`{ "payloadPath": "/tmp/.../mcp-payload-….json" }`) instead of
-   * inlining megabytes of text in the JSON-RPC envelope. That path is
-   * controlled by the MCP gateway, so a compromised or buggy gateway could
-   * direct us at arbitrary local files (e.g. `/etc/passwd`,
-   * `~/.copilot/mcp-config.json`) and exfiltrate their contents back into
-   * `RawDocument` records.
-   *
-   * Defence-in-depth — the path is accepted only when ALL of the following
-   * hold:
-   *   - it is a non-empty string;
-   *   - it ends in `.json`;
-   *   - it contains no NUL byte;
-   *   - it resolves (after `path.resolve`) inside an allowed temp root —
-   *     either `os.tmpdir()` or `/tmp`.
-   *
-   * On any policy violation, `null` is returned and the original inline
-   * `parsed` object is surfaced to the caller as a graceful degradation.
-   */
-  private async readGatewayPayload(
-    rawPath: string,
-  ): Promise<Record<string, unknown> | null> {
-    if (typeof rawPath !== 'string' || rawPath.length === 0) return null;
-    if (rawPath.includes('\0')) return null;
-    if (!rawPath.toLowerCase().endsWith('.json')) return null;
-
-    const [pathMod, fsMod, osMod] = await Promise.all([
-      import('path'),
-      import('fs'),
-      import('os'),
-    ]);
-    const resolved = pathMod.resolve(rawPath);
-    const allowedRoots = [pathMod.resolve(osMod.tmpdir()), pathMod.resolve('/tmp')];
-    const inAllowedRoot = allowedRoots.some((root) => {
-      const rootWithSep = root.endsWith(pathMod.sep) ? root : root + pathMod.sep;
-      return resolved === root || resolved.startsWith(rootWithSep);
-    });
-    if (!inAllowedRoot) {
-      console.warn(
-        `⚠️ Refusing to read MCP gateway payload outside allowed temp roots: ${resolved}`,
-      );
-      return null;
-    }
-
-    try {
-      return JSON.parse(fsMod.readFileSync(resolved, 'utf8')) as Record<string, unknown>;
-    } catch (err) {
-      console.warn(
-        `⚠️ Could not read MCP gateway payload ${resolved}: ${(err as Error).message}`,
-      );
-      return null;
-    }
-  }
-
-  /** Compose the `MCP request failed: …` message with troubleshooting tips. */
-  private formatRequestFailure(err: Error, errorMsg: string): string {
-    let message = `MCP request failed: ${err.message}`;
-    if (err.name === 'AbortError' || errorMsg.includes('timeout')) {
-      message += `\n\n💡 Troubleshooting tips:
-  - The MCP server may be cold starting (Render.com free tier)
-  - Try increasing timeout or waiting a few minutes
-  - Server URL: ${this.baseURL}
-  - Consider running workflow again in 5-10 minutes`;
-    } else if (
-      errorMsg.includes('network') ||
-      errorMsg.includes('econnrefused') ||
-      errorMsg.includes('fetch failed')
-    ) {
-      message += `\n\n💡 Troubleshooting tips:
-  - Check if MCP server is accessible: ${this.baseURL}
-  - Verify network connectivity
-  - The server may be temporarily unavailable
-  - Try manual workflow dispatch with force_generation=true`;
-    }
-    return message;
   }
 
   // -----------------------------------------------------------------------
