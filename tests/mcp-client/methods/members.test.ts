@@ -34,11 +34,12 @@ describe('methods/members — fetchMPs', () => {
     global.fetch = vi.fn(() =>
       Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { ledamoter: [] } }),
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { mps: [] } }),
       }),
     ) as unknown as typeof global.fetch;
 
-    await client.fetchMPs({});
+    const result = await client.fetchMPs({});
+    expect(result).toEqual([]);
     const fetchSpy = global.fetch as unknown as ReturnType<typeof vi.fn>;
     const body: JsonRpcBody = JSON.parse(
       (fetchSpy.mock.calls[0] as [string, RequestInit])[1].body as string,
@@ -50,7 +51,7 @@ describe('methods/members — fetchMPs', () => {
     global.fetch = vi.fn(() =>
       Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { ledamoter: [] } }),
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { mps: [] } }),
       }),
     ) as unknown as typeof global.fetch;
 

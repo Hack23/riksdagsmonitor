@@ -6,7 +6,7 @@
  * retry policy (`RETRY_AFTER_CAP_MS`-equivalent) and the news Timer A
  * budget depend on (see Hack23/riksdagsmonitor#2578 §Security/ISMS).
  *
- * New file for Hack23/riksdagsmonitor#2616 follow-up.
+ * New file for Hack23/riksdagsmonitor#2578 follow-up.
  */
 
 import { describe, it, expect, vi, afterEach } from 'vitest';
