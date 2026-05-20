@@ -6,7 +6,7 @@ date: 2026-05-20
 subfolder: realtime-pulse
 slug: 2026-05-20-realtime-pulse
 source_folder: analysis/daily/2026-05-20/realtime-pulse
-generated_at: 2026-05-20T11:46:56.851Z
+generated_at: 2026-05-20T12:07:08.304Z
 language: en
 layout: article
 ---
@@ -324,6 +324,21 @@ Drawing on today's sibling analyses to provide integrated picture:
 | KU34 electorally decisive | MODERATE | B2 | Likely |
 | Welfare as election battlefront | MODERATE | B3 | Likely |
 | SD mainstreaming accelerated | MOD-LOW | B3 | Probably |
+
+---
+
+### PRIORITY INTELLIGENCE REQUIREMENTS (PIR) STATUS
+
+| PIR | Statement | Status | Updated |
+|-----|-----------|--------|---------|
+| PIR-RT-1 | All parties commit to KU34 second reading YES | open — HIGH confidence first reading secured | 2026-05-20 |
+| PIR-RT-2 | S campaign position on SoU30 reversal | open — S reservations documented; campaign TBD | 2026-05-20 |
+| PIR-RT-3 | SD internal reaction to abortion support | open — monitor post-vote | 2026-05-20 |
+| PIR-RT-4 | Municipal SoU30 implementation readiness | open — CRITICAL; SKR guidance needed by June 1 | 2026-05-20 |
+| PIR-RT-5 | Legal challenges to legal-residency welfare restriction | open — NGO challenge probable; judicial effect limited | 2026-05-20 |
+| PIR-ELECT-03 | Will L cross 4% threshold in September 2026? | open — L at ~4.1-4.5%; existential for Tidö | 2026-05-20 |
+
+*Full PIR register: pir-status.json*
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/significance-scoring.md -->
