@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.41% </span>
+                <span class="strong">91.37% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>113/116</span>
+                <span class='fraction'>106/116</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>34/40</span>
+                <span class='fraction'>32/40</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">95.83% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>24/24</span>
+                <span class='fraction'>23/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">99.05% </span>
+                <span class="strong">92.45% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>105/106</span>
+                <span class='fraction'>98/106</span>
             </div>
         
             
@@ -436,8 +436,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
@@ -639,12 +639,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">19712x</span>
-<span class="cline-any cline-yes">19712x</span>
-<span class="cline-any cline-yes">19712x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -736,9 +736,9 @@ export function generateSitemap(): string {
   xml += generateUrlEntry('politician-dashboard.html', politicianDashboardMtime, 'weekly', '0.8');
 &nbsp;
   const rssPath = path.join(ROOT_DIR, 'rss.xml');
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (fs.existsSync(rssPath)) {
-    const rssMtime = getFileModTime(rssPath);
-    xml += generateUrlEntry('rss.xml', rssMtime, 'daily', '0.5');
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (fs.existsSync(rssPath)) {
+    const <span class="cstat-no" title="statement not covered" >rssMtime = getFileModTime(rssPath);</span>
+<span class="cstat-no" title="statement not covered" >    xml += generateUrlEntry('rss.xml', rssMtime, 'daily', '0.5');</span>
   }
 &nbsp;
   const dashboardAlternates: HreflangAlternate[] = [
@@ -939,13 +939,13 @@ export function generateSitemap(): string {
   });
 &nbsp;
   const apiDocs = getApiDocs();
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (apiDocs.length &gt; 0) {
-    console.log(`  Processing ${apiDocs.length} API documentation files...`);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (apiDocs.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >    console.log(`  Processing ${apiDocs.length} API documentation files...`);</span>
 &nbsp;
-    apiDocs.forEach((doc) =&gt; {
-      const loc = `api/${doc.file}`;
-      const priority = doc.file === 'index.html' ? '0.7' : '0.5';
-      xml += generateUrlEntry(loc, doc.lastmod, 'weekly', priority);
+<span class="cstat-no" title="statement not covered" >    apiDocs.<span class="fstat-no" title="function not covered" >forEach((d</span>oc) =&gt; {</span>
+      const loc = <span class="cstat-no" title="statement not covered" >`api/${doc.file}`;</span>
+      const priority = <span class="cstat-no" title="statement not covered" >doc.file === 'index.html' ? '0.7' : '0.5';</span>
+<span class="cstat-no" title="statement not covered" >      xml += generateUrlEntry(loc, doc.lastmod, 'weekly', priority);</span>
     });
   }
 &nbsp;
@@ -973,7 +973,7 @@ export function generateSitemap(): string {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-18T15:47:26.777Z
+                at 2026-05-20T01:28:18.841Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
