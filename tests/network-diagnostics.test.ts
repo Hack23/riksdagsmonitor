@@ -77,6 +77,57 @@ const ALL_NEWS_WORKFLOWS: readonly string[] = [
   'news-year-ahead.md',
 ];
 
+/**
+ * Ecosystem identifiers in `network.allowed` are gh-aw shorthand for a set of
+ * upstream FQDNs (see gh-aw v0.74.7 `network.md`). The subset assertion below
+ * (`safe-output domains should be a subset of network.allowed domains`) needs
+ * to know what each identifier expands to so it can recognise that, e.g.,
+ * `raw.githubusercontent.com` listed in `safe-outputs.allowed-domains` is
+ * already covered by the `github` ecosystem identifier in `network.allowed`
+ * — even though no literal `raw.githubusercontent.com` appears there.
+ *
+ * Source: https://github.com/github/gh-aw/blob/v0.74.7/.github/aw/network.md
+ *
+ * Only the FQDNs we actually use in `safe-outputs.allowed-domains` need to be
+ * listed here; the map is opt-in and conservative.
+ */
+const ECOSYSTEM_DOMAIN_COVERAGE: Record<string, readonly string[]> = {
+  github: [
+    'github.com',
+    'api.github.com',
+    'raw.githubusercontent.com',
+    'codeload.github.com',
+    'objects.githubusercontent.com',
+    'uploads.github.com',
+    'gist.githubusercontent.com',
+  ],
+  node: [
+    'registry.npmjs.org',
+    'registry.yarnpkg.com',
+  ],
+  containers: [
+    'docker.io',
+    'registry-1.docker.io',
+    'auth.docker.io',
+    'production.cloudflare.docker.com',
+    'ghcr.io',
+  ],
+};
+
+/**
+ * Returns true if `fqdn` is either literally in `networkDomains` or is
+ * covered by an ecosystem identifier present in `networkDomains`.
+ */
+function isCoveredByNetwork(fqdn: string, networkDomains: readonly string[]): boolean {
+  if (networkDomains.includes(fqdn)) return true;
+  for (const [ecosystem, covered] of Object.entries(ECOSYSTEM_DOMAIN_COVERAGE)) {
+    if (networkDomains.includes(ecosystem) && covered.includes(fqdn)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 /** Core MCP and data service domains that must be in every workflow */
 const REQUIRED_MCP_DOMAINS: readonly string[] = [
   'riksdag-regering-ai.onrender.com',
@@ -414,7 +465,7 @@ describe('Network Diagnostics Configuration', () => {
       });
     });
 
-    it('safe-output domains should be a subset of network.allowed domains', () => {
+    it('safe-output domains should be a subset of network.allowed domains (literal or via ecosystem identifier)', () => {
       ALL_NEWS_WORKFLOWS.forEach(workflow => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = fs.readFileSync(filepath, 'utf-8');
@@ -424,9 +475,11 @@ describe('Network Diagnostics Configuration', () => {
 
         safeOutputDomains.forEach(domain => {
           expect(
-            networkDomains,
-            `${workflow} safe-output domain "${domain}" not in network.allowed`
-          ).toContain(domain);
+            isCoveredByNetwork(domain, networkDomains),
+            `${workflow} safe-output domain "${domain}" not covered by network.allowed ` +
+              `(neither as a literal entry nor via an ecosystem identifier such as ` +
+              `'github', 'node', or 'containers')`
+          ).toBe(true);
         });
       });
     });
