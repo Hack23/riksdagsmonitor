@@ -474,6 +474,11 @@ flowchart LR
 
 Each module owns exactly one gate rule with its own regex constants and helpers, mirroring the bash gate steps one-to-one. The orchestrator file stays at ~125 lines so reviewers can audit the aggregation logic without touching individual rules.
 
+### Test module map
+
+Test coverage mirrors the production layout one-to-one: every gate-check module has a dedicated test file under [`tests/agentic/gate-checks/`](tests/agentic/gate-checks/), and the shared helpers are tested independently under [`tests/agentic/gate-shared/`](tests/agentic/gate-shared/). The end-to-end `validateAnalysisGate()` scenarios and the `artifact-inventory` invariants live in [`tests/agentic/analysis-gate-integration.test.ts`](tests/agentic/analysis-gate-integration.test.ts). The shared `createMinimalValidAnalysis()` seed in [`tests/agentic/gate-shared/fixtures.ts`](tests/agentic/gate-shared/fixtures.ts) keeps a story-oriented H1 (memory invariant: not bare *Executive Brief*, *REPLACE THIS H1*, *Executive Brief Template*, *AI_MUST_REPLACE*, or *AI-generated political intelligence*).
+
+
 ### Why the gate is before article generation
 
 The HTML article is a pure projection. If the analysis is weak, the article will be weak. The gate therefore enforces quality at the source of truth: the analysis artifacts.

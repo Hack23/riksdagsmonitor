@@ -22,7 +22,7 @@
 
 > **🆕 What changed since last review (v2.4 → v2.5, 2026-05-06):**
 > - 📦 Aligned to **package v0.8.76**: TypeScript 6.0.3, **Vite 8.0.10**, **Vitest 4.1.5**, Node.js ≥26 baseline, `"type": "module"`. Subpath exports (`./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`) and explicit `sideEffects` (browser CIA entry + register-globals) documented in the Tech Stack and Container views.
-> - 🧠 Surfaced two new **bounded contexts** in Container/Component views: `scripts/political-intelligence/` (catalog + daily-streams + i18n + render leaves) and `scripts/agentic/` (analysis-gate checks 1–9b, typed `ArtifactDefinition` inventory of **23 artifacts** across Families A–E, with 76 vitest tests in `tests/agentic-analysis-gate.test.ts`).
+> - 🧠 Surfaced two new **bounded contexts** in Container/Component views: `scripts/political-intelligence/` (catalog + daily-streams + i18n + render leaves) and `scripts/agentic/` (analysis-gate checks 1–9b, typed `ArtifactDefinition` inventory of **23 artifacts** across Families A–E, with vitest coverage split across `tests/agentic/gate-checks/`, `tests/agentic/gate-shared/`, and `tests/agentic/analysis-gate-integration.test.ts`).
 > - 🧩 Expanded **render-lib component breakdown** to its true sub-tree: `aggregator/` (incl. `cleaning/`, `seo/`, frontmatter/per-document/sources-appendix/order/pipeline), `chrome/` (head/header/footer/helpers/types façade), `markdown/` (mermaid canonical theme + preprocess, sanitize-schema, rehype-slug-prefixed, rehype-wrap-tables, pipeline).
 > - 🌍 Consolidated the **economic + administrative TypeScript-client landscape**: IMF (`scripts/imf-*.ts`), SCB (`scripts/scb-*.ts`), World Bank (`scripts/world-bank-*.ts`), Riksbank (`scripts/riksbank-fetch.ts`), Statskontoret (`scripts/statskontoret-*.ts` + `scripts/fetch-statskontoret.ts`), RiR (`scripts/rir-followups-client.ts` + `scripts/fetch-rir-followups.ts`), parliamentary-data (`scripts/parliamentary-data/` with data-downloader/data-persistence/pdf-converter and `scripts/download-parliamentary-data.ts` / `fetch-voting-records.ts` / `fetch-calendar.ts`).
 > - 📚 Added **"## 🧠 Political Intelligence Architecture"** section: 18-methodology framework (`analysis/methodologies/`), 39-template catalog (`analysis/templates/`), 7-band horizon stratification (T+72h … T+1460d / election) as an architectural pattern, AI-FIRST 2-pass iteration as a quality constraint, OSINT tradecraft, classification/SWOT/threat/PESTLE/scenario template roles, election-cycle and coalition-mathematics templates.
@@ -1407,7 +1407,7 @@ graph TD
     style AgenticIdx fill:#5e35b1,color:#ffffff
 ```
 
-Test surface: `tests/agentic-analysis-gate.test.ts` (vitest, 76 tests). Optional standalone driver: `npx tsx scripts/validate-methodology-reflection.ts` for ICD-203 audit of `methodology-reflection.md`.
+Test surface: `tests/agentic/gate-checks/*.test.ts` (one suite per production check module), `tests/agentic/gate-shared/*.test.ts` (markdown helpers, file walkers), and `tests/agentic/analysis-gate-integration.test.ts` (orchestrator + `artifact-inventory` invariants). Optional standalone driver: `npx tsx scripts/validate-methodology-reflection.ts` for ICD-203 audit of `methodology-reflection.md`.
 
 ---
 
