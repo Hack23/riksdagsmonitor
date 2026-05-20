@@ -1446,7 +1446,7 @@ The inline bash validation logic embedded in `.github/prompts/05-analysis-gate.m
 **Design principles:**
 - Zero `any` types — explicit interfaces for all data structures
 - Gate module factored for readability (single-responsibility check functions)
-- Co-located tests: `tests/agentic-analysis-gate.test.ts` (76 tests)
+- Co-located tests: `tests/agentic/gate-checks/*.test.ts` (one suite per production check module), `tests/agentic/gate-shared/*.test.ts` (markdown helpers, file walkers), and `tests/agentic/analysis-gate-integration.test.ts` (end-to-end orchestrator scenarios)
 - ESLint clean with zero warnings
 - No circular dependencies (barrel imports only)
 

@@ -3180,7 +3180,7 @@ The analysis gate is a **fail-closed structural-integrity control** that validat
 | 9 | PIR status sidecar | Priority Intelligence Requirements file present | JSON schema check |
 | 9b | Statskontoret evidence | Implementation-feasibility references Statskontoret | `RECOGNISED_AGENCIES` list (12 entries) |
 
-**Test coverage:** 76 tests in [`tests/agentic-analysis-gate.test.ts`](tests/agentic-analysis-gate.test.ts).
+**Test coverage:** Per-check suites in [`tests/agentic/gate-checks/`](tests/agentic/gate-checks/), shared-helper suites in [`tests/agentic/gate-shared/`](tests/agentic/gate-shared/), and orchestrator scenarios in [`tests/agentic/analysis-gate-integration.test.ts`](tests/agentic/analysis-gate-integration.test.ts).
 
 **Failure mode:** If any check fails, the entire workflow run fails — no article is generated and no PR is created. This prevents partial or manipulated output from reaching the human-review gate.
 
