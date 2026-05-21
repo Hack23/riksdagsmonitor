@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "cycle": "motions",
+  "subfolder": "motions",
+  "article_date": "2026-05-21",
+  "generated_at": "2026-05-21T08:20:00Z",
+  "run_id": "26213423573",
+  "open_pirs": [
+    {
+      "id": "PIR-MOT-2026-05-21-001",
+      "question": "Will KU schedule a public hearing on prop 2025/26:258 before June 15?",
+      "trigger": "C motion HD024184 referred to KU 2026-05-20",
+      "horizon": "T+30d",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "created": "2026-05-21",
+      "watch_indicators": ["KU calendar announcements", "Riksdag KU page scheduling"]
+    },
+    {
+      "id": "PIR-MOT-2026-05-21-002",
+      "question": "Will S motion HD024185 on prop 255 gain additional party support?",
+      "trigger": "Two opposing FiU motions filed 2026-05-20",
+      "horizon": "T+14d",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "created": "2026-05-21",
+      "watch_indicators": ["FiU scheduling", "Party spokesperson statements on prop 255"]
+    },
+    {
+      "id": "PIR-MOT-2026-05-21-003",
+      "question": "Will Liberalerna signal support or concern on ECHR risk in prop 2025/26:258?",
+      "trigger": "L is kingmaker for prop 258 floor vote",
+      "horizon": "T+21d",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "created": "2026-05-21",
+      "watch_indicators": ["L parliamentary group statements", "L spokesperson on prop 258"]
+    },
+    {
+      "id": "PIR-MOT-2026-05-21-004",
+      "question": "Will government spokesperson directly address C's Lagrådet 'bräckligt' argument?",
+      "trigger": "C motion referred 2026-05-20; Lagrådet criticism of record",
+      "horizon": "T+7d",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "created": "2026-05-21",
+      "watch_indicators": ["Government press conferences", "Justice Minister statements"]
+    },
+    {
+      "id": "PIR-MOT-2026-05-21-005",
+      "question": "What is the SfU scheduled vote date for migration props 262-265?",
+      "trigger": "V and MP motions filed May 13; S joined on three of four props",
+      "horizon": "T+14d",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "created": "2026-05-21",
+      "watch_indicators": ["SfU calendar", "Riksdag scheduling page for migration committee"]
+    }
+  ],
+  "answered_pirs": [
+    {
+      "id": "PIR-MOT-2026-05-20-PIR-3",
+      "question": "Will S/V/MP file motions on prop 2025/26:258?",
+      "answer": "PARTIALLY ANSWERED: S and MP filed on prop 255 (not 258). V and MP did not file on prop 258. C is sole prop 258 KU motion filer.",
+      "answered_date": "2026-05-21",
+      "source": ["HD024185", "HD024186", "HD024184"]
+    },
+    {
+      "id": "PIR-MOT-2026-05-18-001",
+      "question": "Lagrådet opinion on prop 2025/26:258 RF Ch.2 compliance",
+      "answer": "ANSWERED: Lagrådet opinion 2026-03-24 confirms 'bräckligt' verdict on labor-org section. No new opinion expected.",
+      "answered_date": "2026-05-21",
+      "source": ["HD024184 text", "prior PIR records"]
+    }
+  ],
+  "carry_forward_pirs": [
+    {
+      "id": "PIR-MOT-2026-05-18-002",
+      "question": "KU committee vote date on prop 2025/26:258",
+      "status": "STILL OPEN",
+      "priority": "HIGH",
+      "carried_from": "2026-05-18"
+    },
+    {
+      "id": "PIR-MOT-2026-05-20-PIR-1",
+      "question": "Will KU committee pass prop 2025/26:258 unchanged?",
+      "status": "STILL OPEN",
+      "priority": "HIGH",
+      "carried_from": "2026-05-20"
+    },
+    {
+      "id": "PIR-MOT-2026-05-20-PIR-2",
+      "question": "Will L dissent on labor-org contributions section?",
+      "status": "STILL OPEN",
+      "priority": "HIGH",
+      "carried_from": "2026-05-20"
+    },
+    {
+      "id": "PIR-MOT-2026-05-20-PIR-4",
+      "question": "Will government add amendments responding to Lagrådet's 'bräckligt' criticism?",
+      "status": "STILL OPEN",
+      "priority": "MEDIUM",
+      "carried_from": "2026-05-20"
+    }
+  ]
+}
