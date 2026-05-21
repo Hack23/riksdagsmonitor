@@ -50,11 +50,13 @@ These rules apply equally to inline bash in prompts AND to bash commands the age
 
 ## File creation & overwrite strategy
 
+> **ALWAYS** use the `edit` tool. **NEVER** use `python3` (or any other interpreter) to write repository files. `cat <<'QUOTED_EOF'` is a **fallback only**, not a substitute.
+
 When the agent needs to write or replace a repository file (any artifact under `analysis/**`, `news/**`, `executive-brief*.md`, JSON sidecars, etc.), follow this strict hierarchy. **Do not skip tiers.**
 
-### Tier 1 — `edit` tool (default, always-acceptable)
+### Tier 1 — `edit` tool (default — MUST use)
 
-The `edit` tool is enabled on every agentic workflow in this repo (`tools: { edit: }`) and runs inside the AWF sandbox. **Prefer it for every file create or overwrite.** Use one `edit` call per file.
+The `edit` tool is enabled on every agentic workflow in this repo (`tools: { edit: }`) and runs inside the AWF sandbox. **Every file create or overwrite MUST go through `edit`.** Use one `edit` call per file.
 
 | Why | Detail |
 |-----|--------|
@@ -65,12 +67,15 @@ The `edit` tool is enabled on every agentic workflow in this repo (`tools: { edi
 
 Use `edit` for **all** of these (non-exhaustive): translated `executive-brief_<lang>.md` files, every `analysis/daily/**/*.md` artifact, `pir-status.json` and other JSON sidecars, methodology-reflection notes, anything ≥ 200 bytes, anything containing any non-ASCII byte or any of `` ` $ \ ' " EOF ``, anything with a code fence or Mermaid block.
 
-### Tier 2 — `cat <<'QUOTED_EOF' > file` (fallback, when `edit` is unavailable)
+### Tier 2 — `cat <<'QUOTED_EOF' > file` (fallback ONLY)
 
-Acceptable as a fallback **only** when:
-1. The `edit` tool returns a hard error (not a content-shape error — retry the `edit` call first), **and**
-2. The content is ASCII-only, **and**
-3. The content contains no triple-backtick code fence, no Mermaid block, no literal `EOF` marker, no `$`, no `\`, no backticks.
+Acceptable as a fallback **only** when **all four** of the following are true:
+1. The `edit` tool has been retried once and returned a hard error unrelated to content shape, **and**
+2. The content is **ASCII-only** (no `ö ä å`, no RTL, no CJK, no emoji), **and**
+3. The content contains **no** triple-backtick code fence, **no** Mermaid block, **no** literal `EOF` marker, **no** `$`, **no** `\`, **no** backticks, **and**
+4. The file is `< 200` lines.
+
+Any non-ASCII content, any code fence, any Mermaid block, any RTL/CJK character → **back to Tier 1**, retry `edit` (do not fall through to a Python script, do not switch to `sed`, do not pipe a string through `tee`).
 
 ```bash
 LC_ALL=C.UTF-8 LANG=C.UTF-8 cat > "$TARGET" <<'EOF_RAW'
@@ -87,15 +92,16 @@ EOF_RAW
 
 For short ASCII writes (< 200 bytes, no special characters): `printf '%s\n' "$CONTENT" > "$TARGET"` is also acceptable. `echo "$CONTENT" > file` is **not** — `echo` mangles backslashes and lines starting with `-`.
 
-### Banned for file writes
+### Banned for file writes (NEVER)
 
 | Pattern | Why banned |
 |---------|------------|
-| `python3 -c "open('file','w').write(...)"` / `python3 - <<'PY' … PY` writing repository content | This is a TypeScript project. Python in the file-write critical path obscures intent, doubles transcript token cost vs. `edit`, and is the failure mode that triggered the run-#26248543749 token-budget cancellation (10.4 M effective tokens in 13 min). `python3` is allowed **only** for read-only JSON validation in `05-analysis-gate.md`. |
+| **`python3` for any file write** — `python3 -c "open('file','w').write(...)"`, `python3 - <<'PY' … PY`, `python -c …`, or any other interpreter (`node -e`, `perl -e`, `ruby -e`) writing repository content | **NEVER.** This is a TypeScript project; Python in the file-write critical path obscures intent, doubles transcript token cost vs. `edit`, and is the failure mode that triggered the run-[#26248543749](https://github.com/Hack23/riksdagsmonitor/actions/runs/26248543749) token-budget cancellation (10.4 M effective tokens in 13 min). **The only allowed `python3` invocation in this repo is the read-only JSON validator in `05-analysis-gate.md:339`** (it never writes a file — it parses one and exits non-zero on schema failure). |
 | `sed -i 's/…/…/' file` on Markdown | Byte-oriented and locale-sensitive — corrupts `ö ä å`, RTL marks, and CJK characters. Use `edit` with str-replace. |
-| `echo "$LONG_CONTENT" > file` | `echo` interprets backslashes and `-` flags, silently mangles content. Use `printf '%s\n'` or `edit`. |
-| Unquoted heredoc `<<EOF` (no quotes around delimiter) | Performs `$VAR` and `$(…)` expansion in the body — corrupts any text containing `$`. |
+| `echo "$LONG_CONTENT" > file` | `echo` interprets backslashes and `-` flags, silently mangles content. Use `printf '%s\n'` for short ASCII or `edit` for everything else. |
+| Unquoted heredoc `<<EOF` for content-bearing writes | Performs `$VAR` and `$(…)` expansion in the body — corrupts any text containing `$` (URLs, dok-ids, Mermaid). The **only** allowed unquoted-heredoc in any prompt is the env-var-only pre-flight scaffold in `03-data-download.md` (≤ 20 lines, body is exclusively `$ENV_VAR` references and short literals — no agent-generated content). |
 | Stacking multiple file writes inside one Python or Node `-e` invocation | Even if individual writes work, the whole tool-call message (with every file body inline) gets replayed on the next transcript turn — O(n²) token blowup. One `edit` call per file is cheaper. |
+| `tee "$FILE"` for content-bearing writes | Same hazards as `cat >` plus stdout duplication that bloats the agent transcript. `tee` is fine for log capture (`… 2>&1 | tee /tmp/pipeline.log`) but never for repository-file writes. |
 
 ### Self-check before any file-write `bash` call
 

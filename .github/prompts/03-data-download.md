@@ -101,12 +101,19 @@ mkdir -p "$ANALYSIS_DIR"
 SCAFFOLD="$ANALYSIS_DIR/data-download-manifest.md"
 if [ ! -s "$SCAFFOLD" ]; then
   AGENT_START_EPOCH="$(cat /tmp/gh-aw/agent-start.epoch 2>/dev/null || date -u +%s)"
+  AGENT_START_ISO="$(date -u -d "@$AGENT_START_EPOCH" '+%Y-%m-%dT%H:%M:%SZ')"
+  # NOTE: this is the **only** allowed unquoted-heredoc file-write in this prompt
+  # set — body is exclusively `$ENV_VAR` references + short literals, no agent
+  # content, ≤ 20 lines. See `01-bash-and-shell-safety.md §Banned for file writes`.
+  # For all subsequent artifacts (per-document analyses, executive-brief.md,
+  # methodology-reflection.md, JSON sidecars, …) **MUST use the `edit` tool**
+  # per `01-bash-and-shell-safety.md §File creation & overwrite strategy`.
   cat > "$SCAFFOLD" <<EOF
 # Data download manifest — scaffold
 
 **Workflow**: ${GITHUB_WORKFLOW:-unknown}
 **Run**: ${GITHUB_RUN_ID:-unknown} attempt ${GITHUB_RUN_ATTEMPT:-1}
-**Started (UTC)**: $(date -u -d "@$AGENT_START_EPOCH" '+%Y-%m-%dT%H:%M:%SZ')
+**Started (UTC)**: $AGENT_START_ISO
 **Requested date**: $ARTICLE_DATE
 **Subfolder**: $SUBFOLDER
 **Improvement mode**: $IMPROVEMENT_MODE
@@ -119,15 +126,19 @@ if [ ! -s "$SCAFFOLD" ]; then
 _(populated by 02-mcp-access.md §Three-attempt connect protocol)_
 
 ## Per-document table
-_(populated by the download step)_
+_(populated by the download step via the \`edit\` tool — never \`cat >>\` and never \`python3\`)_
 EOF
   echo "✅ scaffold marker written: $SCAFFOLD"
 fi
 ```
 
 The download step appends to this file (it does **not** overwrite — see
-§Provenance manifest below). If MCP is unreachable from start, the per-document
-table simply remains empty and the MCP-attempts section explains why.
+§Provenance manifest below). **All appends MUST go through the `edit` tool**
+(str-replace at the section anchor, or insert before the EOF marker line) —
+never `cat >>`, never `echo … >>`, never `sed -i`, never `python3`. See
+`01-bash-and-shell-safety.md §File creation & overwrite strategy`. If MCP
+is unreachable from start, the per-document table simply remains empty and
+the MCP-attempts section explains why.
 
 | `IMPROVEMENT_MODE` | Behaviour |
 |--------------------|-----------|
