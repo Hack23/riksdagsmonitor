@@ -1,0 +1,70 @@
+{
+  "analysis_date": "2026-05-21",
+  "subfolder": "committee-reports",
+  "generated_at": "2026-05-21T05:10:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Lagrådet yttrande on JuU43 (honour-violence legislation)",
+      "source": "www.lagradet.se",
+      "horizon": "T+14d",
+      "priority": "HIGH",
+      "status": "OPEN",
+      "current_state": "No yttrande published as of 2026-05-21T05:06 UTC",
+      "trigger_condition": "Adverse yttrande → legal setback scenario",
+      "expected_window": "14-30 days from referral (referral date unknown)"
+    },
+    {
+      "id": "PIR-2",
+      "title": "Plenary vote dates for SoU38/SoU39",
+      "source": "riksdagen.se/sv/kalender",
+      "horizon": "T+14d",
+      "priority": "HIGH",
+      "status": "OPEN",
+      "current_state": "Documents in 'Debatt om förslag' stage; plenary date not yet confirmed",
+      "trigger_condition": "Pre-summer June vote → on track; autumn → implementation risk"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Centre Party position on SoU29/SoU30",
+      "source": "riksdagen.se + C party communications",
+      "horizon": "T+21d",
+      "priority": "HIGH",
+      "status": "OPEN",
+      "current_state": "Ambiguous; C leader signalled conditional support in April 2026",
+      "trigger_condition": "C against → 174-171 government majority; C abstains → passes"
+    },
+    {
+      "id": "PIR-4",
+      "title": "SKR response to SoU38/SoU39 implementation",
+      "source": "www.skr.se",
+      "horizon": "T+30d",
+      "priority": "MEDIUM-HIGH",
+      "status": "OPEN",
+      "current_state": "No formal statement published",
+      "trigger_condition": "Formal funding demand → political complication"
+    },
+    {
+      "id": "PIR-5",
+      "title": "Post-session polling reaction",
+      "source": "Demoskop, Sifo, Ipsos Sverige",
+      "horizon": "T+14d",
+      "priority": "HIGH",
+      "status": "OPEN",
+      "current_state": "Not yet available (session concluded 2026-05-20)",
+      "trigger_condition": "M/SD gain → scenario 1; S/V/MP gain → opposition momentum"
+    },
+    {
+      "id": "PIR-6",
+      "title": "Centre Party polling — 4% threshold",
+      "source": "pollofpolls.se (weekly aggregate)",
+      "horizon": "Continuous",
+      "priority": "CRITICAL",
+      "status": "OPEN",
+      "current_state": "3.9% (April 2026 Demoskop)",
+      "trigger_condition": "Below 3.8% sustained → redistribution scenario; above 4.5% → coalition pivot"
+    }
+  ],
+  "closed_pirs": [],
+  "next_review": "2026-05-28"
+}
