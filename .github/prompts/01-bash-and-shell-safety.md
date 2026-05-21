@@ -48,6 +48,64 @@ The execution sandbox **rejects** commands containing any of the following patte
 
 These rules apply equally to inline bash in prompts AND to bash commands the agent composes at runtime. The sandbox rejects matching commands before they run. **If a command is blocked, do not retry the exact pattern — rewrite using the safe equivalent on the first retry.** Observed cost: each retry burns ~30–60 s of agent wall time, which can push the run past the safeoutputs MCP idle-session window (`07-commit-and-pr.md §Deadline enforcement`).
 
+## File creation & overwrite strategy
+
+When the agent needs to write or replace a repository file (any artifact under `analysis/**`, `news/**`, `executive-brief*.md`, JSON sidecars, etc.), follow this strict hierarchy. **Do not skip tiers.**
+
+### Tier 1 — `edit` tool (default, always-acceptable)
+
+The `edit` tool is enabled on every agentic workflow in this repo (`tools: { edit: }`) and runs inside the AWF sandbox. **Prefer it for every file create or overwrite.** Use one `edit` call per file.
+
+| Why | Detail |
+|-----|--------|
+| No shell quoting hazards | Content is JSON-encoded in the tool call — backticks, `$`, `\`, `EOF`, RTL marks, CJK, code fences, Mermaid blocks all pass through unchanged. |
+| Atomic | Partial writes don't leave half-baked files in the worktree. |
+| Token-efficient | Structured tool calls are summarized in transcripts, not re-echoed verbatim like bash heredoc bodies — keeps you under the Copilot per-session token budget. |
+| Auditable | The PR-side diff reads as a single intent ("create file X"), not as bash that *produced* file X. |
+
+Use `edit` for **all** of these (non-exhaustive): translated `executive-brief_<lang>.md` files, every `analysis/daily/**/*.md` artifact, `pir-status.json` and other JSON sidecars, methodology-reflection notes, anything ≥ 200 bytes, anything containing any non-ASCII byte or any of `` ` $ \ ' " EOF ``, anything with a code fence or Mermaid block.
+
+### Tier 2 — `cat <<'QUOTED_EOF' > file` (fallback, when `edit` is unavailable)
+
+Acceptable as a fallback **only** when:
+1. The `edit` tool returns a hard error (not a content-shape error — retry the `edit` call first), **and**
+2. The content is ASCII-only, **and**
+3. The content contains no triple-backtick code fence, no Mermaid block, no literal `EOF` marker, no `$`, no `\`, no backticks.
+
+```bash
+LC_ALL=C.UTF-8 LANG=C.UTF-8 cat > "$TARGET" <<'EOF_RAW'
+…ASCII content here…
+EOF_RAW
+```
+
+| Rule | Detail |
+|------|--------|
+| Quote the delimiter | Always `<<'EOF_RAW'` (single-quoted) — unquoted heredocs expand `$VAR` and `$(…)` inside the body, which corrupts URLs, dok-ids, and any text containing `$`. |
+| Pick a delimiter that is **not** in the content | If the body might contain the token `EOF`, use a more specific delimiter like `END_BRIEF_2026_05_21`. |
+| One file per heredoc | Do not chain multiple heredocs in one `bash` call — each retry then re-emits the whole batch. |
+| UTF-8 locale required | Set `LC_ALL=C.UTF-8 LANG=C.UTF-8` so multi-byte characters survive (per the UTF-8 section). |
+
+For short ASCII writes (< 200 bytes, no special characters): `printf '%s\n' "$CONTENT" > "$TARGET"` is also acceptable. `echo "$CONTENT" > file` is **not** — `echo` mangles backslashes and lines starting with `-`.
+
+### Banned for file writes
+
+| Pattern | Why banned |
+|---------|------------|
+| `python3 -c "open('file','w').write(...)"` / `python3 - <<'PY' … PY` writing repository content | This is a TypeScript project. Python in the file-write critical path obscures intent, doubles transcript token cost vs. `edit`, and is the failure mode that triggered the run-#26248543749 token-budget cancellation (10.4 M effective tokens in 13 min). `python3` is allowed **only** for read-only JSON validation in `05-analysis-gate.md`. |
+| `sed -i 's/…/…/' file` on Markdown | Byte-oriented and locale-sensitive — corrupts `ö ä å`, RTL marks, and CJK characters. Use `edit` with str-replace. |
+| `echo "$LONG_CONTENT" > file` | `echo` interprets backslashes and `-` flags, silently mangles content. Use `printf '%s\n'` or `edit`. |
+| Unquoted heredoc `<<EOF` (no quotes around delimiter) | Performs `$VAR` and `$(…)` expansion in the body — corrupts any text containing `$`. |
+| Stacking multiple file writes inside one Python or Node `-e` invocation | Even if individual writes work, the whole tool-call message (with every file body inline) gets replayed on the next transcript turn — O(n²) token blowup. One `edit` call per file is cheaper. |
+
+### Self-check before any file-write `bash` call
+
+If your `bash` command contains any of `>`, `>>`, `<<`, `<<<`, `tee`, `python3`, `sed -i`, or `dd`, **stop and ask**:
+
+1. Am I writing to a path under the repo working tree (anything other than `/tmp/…`)?
+2. Could this be expressed as a single `edit` tool call instead?
+
+If both are "yes", switch to `edit`. The Tier-2 heredoc fallback is for the rare case when an `edit` call has demonstrably failed for reasons unrelated to content shape.
+
 ## Secret safety
 
 - Never pass secrets through `$(…)` into a log-visible command — echoing `curl -H "Authorization: $(…)"` will leak if the step is rerun in debug.
@@ -118,3 +176,4 @@ which leaves no slack for the safe-outputs runner job.
 3. No backticks, no `<(…)` process substitution.
 4. Any file path is absolute or clearly rooted at `$GITHUB_WORKSPACE`.
 5. Output redirection (`>`, `| tee`) writes to `/tmp/`, not the repo root.
+6. **If this call writes or overwrites a file under the repo working tree, did I reach for the `edit` tool first?** (See `## File creation & overwrite strategy` — Tier-1 `edit`, Tier-2 quoted heredoc, no `python3` for file writes.)
