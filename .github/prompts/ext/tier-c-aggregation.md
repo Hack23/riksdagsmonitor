@@ -14,6 +14,8 @@ Import this **in addition to** the 8 core modules for aggregation / reference-gr
 
 These are the flagship editorial surfaces of Riksdagsmonitor. Tier-C rules are **additive**, not replacements — all 23 Family A/B/C/D artifacts from `04-analysis-pipeline.md` are already mandatory for every workflow. Tier-C adds depth multipliers, cross-type synthesis, sibling-citation requirements and a higher article-output floor.
 
+> 🛠 **File-write contract**: every aggregation artifact, every cross-type extension to `cross-reference-map.md`, every depth-multiplier expansion of Family A/B/C/D files MUST be written with the `edit` tool. **Never** use `python3`, `node -e`, `sed -i`, `echo … > file`, `tee file`, or unquoted heredocs (`<<EOF`). See [`01-bash-and-shell-safety.md` §File creation & overwrite strategy](../01-bash-and-shell-safety.md).
+
 ## Artifact count — identical to single-type workflows
 
 All aggregation workflows produce the same **23 always-on artifacts** (Family A 9 + Family B 2 + Family C 5 + Family D 7) defined in [`04-analysis-pipeline.md`](../04-analysis-pipeline.md#23-required-artifacts-every-workflow-every-run). No extra files are added at the Tier-C level. What changes is:

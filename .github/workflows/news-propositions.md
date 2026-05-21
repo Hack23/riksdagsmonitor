@@ -295,9 +295,9 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 
 > 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`.
 >
-> **AI-FIRST within the setup-aware 40-minute agent target**: Pass 2 is still mandatory. Target completing all agent-phase analysis/rendering work by agent minute 40 so the PR can be opened before the hard agent-minute-45 cutoff. Prefer **scope compression over iteration skipping** when needed — reduce the **download/manifest scope** (use `--limit 10` max for document-type workflows to stay well under the **100-file PR cap** given that 14 HTML consume 14 file slots), but maintain **1:1 per-document coverage** for every `dok_id` that remains in the manifest (required by `05-analysis-gate.md` check 2) and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `deep` (default); reserve `comprehensive` for manual `workflow_dispatch` backfills.
+> **AI-FIRST target**: Pass 2 is mandatory. Complete agent-phase analysis/rendering by agent minute 40 so the PR opens before the agent-minute-45 cutoff. Compress scope before skipping iterations — keep `--limit 10` for document-type workflows (well under the 100-file PR cap given 14 HTML take 14 slots) while keeping 1:1 per-document coverage for every `dok_id` in the manifest (`05-analysis-gate.md` check 2). Scheduled runs use `analysis_depth=deep`; reserve `comprehensive` for manual `workflow_dispatch` backfills.
 >
-> ⚠️ **HARD FILE LIMIT (100 files)**: The safe-outputs handler hard-rejects PRs with > 100 files (E003). You **MUST** run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README + article.md  + ≤ 10 per-document analyses + 14 HTML + pir-status.json ≈ 50 files max. Never download more than 10 documents when all 14 languages are rendered. If staged count exceeds 90, unstage `documents/` then JSON files until under budget.
+> ⚠️ **HARD FILE LIMIT (100 files)**: the safe-outputs handler hard-rejects PRs with > 100 files (E003). Run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README + article.md + ≤ 10 per-document analyses + 14 HTML + pir-status.json ≈ 50 files. Cap downloads at 10 documents when rendering all 14 languages. When staged > 90, unstage `documents/` first then JSON files until under budget.
 
 **Single run** (produces all 23 analysis artifacts + aggregated article.md + 14 HTML files, target ~42 agent minutes in a 60-min job):
 
@@ -312,7 +312,7 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 | 40–42 | `scripts/render-articles.ts --lang all` → **all 14** HTML files | 06 |
 | 42–43 | Stage analysis + `article.md` + `news/*.html`, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 
-Use the full budget for AI-FIRST iteration; do **not** finish early with shallow output (see `.github/copilot-instructions.md §AI FIRST Quality Principle`). Never open a second PR within a run — there is no second PR. **If you reach agent minute 42 without staging, stop all remaining work, run the aggregator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing the run to Timer A. Translation under-coverage is acceptable as a partial state: non-English HTML is rendered via the localized executive-brief cascade, and the renderer composes English article.md body with executive-brief_<lang>.md overlay.
+Use the full budget for AI-FIRST iteration (see `.github/copilot-instructions.md §AI FIRST Quality Principle`). One PR per run. If agent minute 42 arrives without staging, stop remaining work, run the aggregator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` — a partial PR beats losing the run to Timer A. Translation under-coverage is acceptable: the renderer composes English article.md body with the localized executive-brief overlay.
 
 ## Inputs
 
@@ -327,8 +327,12 @@ Use the full budget for AI-FIRST iteration; do **not** finish early with shallow
 At the start of every run, the pre-flight check in `03-data-download.md` detects whether `analysis/daily/$ARTICLE_DATE/propositions/` already contains all **23 required artifacts** (Families A+B+C+D):
 
 - **No analysis found** → run the full pipeline (download → Pass 1 → Pass 2 → gate → aggregate → render → PR).
-- **Analysis found** → skip download / Pass 1 / Pass 2 / gate, re-load the analysis into context, run aggregate + render, and open the PR. The single-run rule still applies — one PR per invocation.
+- **Analysis found** → enter improvement-mode (see `04-analysis-pipeline.md §Improvement-mode path`); extend existing artifacts, run Pass 2 + gate, then aggregate + render + PR. The single-run rule still applies — one PR per invocation.
 
 Repeated runs for the same `$ARTICLE_DATE` always use the same analysis folder when `force_generation=false`.
+
+## File-write contract
+
+> 🛠 **Write every analysis artifact (`analysis/daily/$DATE/$SUB/*.md`, `documents/*.md`, JSON sidecars, `methodology-reflection.md` re-run deltas) with the `edit` tool.** `cat <<'QUOTED_EOF' > file` is a Tier-2 fallback only — ASCII-only, no code fences / Mermaid / `$` / backticks / `EOF` markers, < 200 lines, and only after `edit` has failed for a non-content reason. Banned for `analysis/daily/**` writes: `python3`, `node -e`, `sed -i`, `echo … > file`, `tee file`, unquoted heredocs (`<<EOF`) — sole exception: the pre-flight scaffold in [`03-data-download.md`](../prompts/03-data-download.md) (env-var refs and short literals only, no agent-generated content). The aggregator (`scripts/aggregate-analysis.ts`) and renderer (`scripts/render-articles.ts`) are the only writers for `article.md` and `news/*.html`. See [`01-bash-and-shell-safety.md` §File creation & overwrite strategy](../prompts/01-bash-and-shell-safety.md).
 
 All other rules (bash format, AWF shell safety, MCP access, download pipeline, analysis methodology & gate, aggregate + render, commit & PR policy) live in the imported modules.

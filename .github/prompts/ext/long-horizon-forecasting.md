@@ -10,6 +10,8 @@ This module exists because forward-looking analysis at horizons ≥ 90 days has 
 - Cross-horizon citation prevents the analysis from drifting away from its own recent shorter-horizon work.
 - IMF projection-year stamps (T+1, T+2, T+5) become first-class metadata, not a footnote.
 
+> 🛠 **File-write contract**: every horizon-tagged artifact extension (`synthesis-summary.md`, `intelligence-assessment.md`, `scenario-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `forward-indicators.md`, `cross-reference-map.md`, supplementary `cycle-trajectory.md` / `parliamentary-season.md` / `horizon-pir-rollforward.md`) MUST be written with the `edit` tool. **Never** use `python3`, `node -e`, `sed -i`, `echo … > file`, `tee file`, or unquoted heredocs (`<<EOF`). See [`01-bash-and-shell-safety.md` §File creation & overwrite strategy](../01-bash-and-shell-safety.md).
+
 The single source of truth for which workflows trigger which rules is **`analysis/article-types.json`** (consumed via `scripts/horizon-context.ts`).
 
 ---
