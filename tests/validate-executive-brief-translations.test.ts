@@ -317,4 +317,21 @@ describe('validateTranslationContent end-to-end', () => {
     });
     expect(checks.find((c) => c.check === 'word-count-drift')?.passed).toBe(false);
   });
+
+  it('skips word-count-drift for CJK scripts (ja, zh) — whitespace tokeniser systematically undercounts', () => {
+    // Tiny CJK body that would fail the ±25% drift gate if not skipped.
+    const tinyCjk = `# 簡短\n\n## 短\n\n## 短\n\n## 短\n\n字。\n\n| a | b |\n|---|---|\n| c | d |\n| e | f |\n\n\`\`\`mermaid\nflowchart LR\n  A --> B\n\`\`\`\n\n<!-- source-sha: ${sourceSha} -->\n`;
+    for (const lang of ['ja', 'zh'] as const) {
+      const checks = validateTranslationContent({
+        sourceContent: SOURCE,
+        translationContent: tinyCjk,
+        translationPath: `x_${lang}.md`,
+        lang,
+        sourceSha,
+      });
+      const wc = checks.find((c) => c.check === 'word-count-drift');
+      expect(wc?.passed).toBe(true);
+      expect(wc?.detail).toMatch(/skipped/i);
+    }
+  });
 });

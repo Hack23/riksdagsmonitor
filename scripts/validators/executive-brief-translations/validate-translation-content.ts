@@ -159,20 +159,33 @@ export function validateTranslationContent(opts: ValidateTranslationOptions): Ch
     detail: banned.length === 0 ? 'clean' : `found: ${banned.join(', ')}`,
   });
 
-  // 10. Word-count drift (±25%)
-  const srcWords = countWords(sourceContent);
-  const tgtWords = countWords(translationContent);
-  const tolerance = 0.25;
-  const lowerBound = Math.floor(srcWords * (1 - tolerance));
-  const upperBound = Math.ceil(srcWords * (1 + tolerance));
-  const inBounds = tgtWords >= lowerBound && tgtWords <= upperBound;
-  checks.push({
-    check: 'word-count-drift',
-    passed: inBounds,
-    detail: inBounds
-      ? `${tgtWords} words (source=${srcWords})`
-      : `${tgtWords} words outside [${lowerBound}, ${upperBound}] (source=${srcWords})`,
-  });
+  // 10. Word-count drift (±25%) — skipped for CJK scripts (Japanese, Chinese)
+  // because they do not use whitespace word boundaries and the whitespace
+  // tokeniser systematically undercounts them by ~4–6×. Structural parity
+  // (headings, table rows, code fences, mermaid blocks, dok_id and URL sets)
+  // still guarantees the translation is not truncated or padded.
+  const NON_WORDSPACE_LANGS: ReadonlyArray<TranslationLang> = ['ja', 'zh'];
+  if (NON_WORDSPACE_LANGS.includes(lang)) {
+    checks.push({
+      check: 'word-count-drift',
+      passed: true,
+      detail: 'skipped (CJK script — no whitespace word boundaries)',
+    });
+  } else {
+    const srcWords = countWords(sourceContent);
+    const tgtWords = countWords(translationContent);
+    const tolerance = 0.25;
+    const lowerBound = Math.floor(srcWords * (1 - tolerance));
+    const upperBound = Math.ceil(srcWords * (1 + tolerance));
+    const inBounds = tgtWords >= lowerBound && tgtWords <= upperBound;
+    checks.push({
+      check: 'word-count-drift',
+      passed: inBounds,
+      detail: inBounds
+        ? `${tgtWords} words (source=${srcWords})`
+        : `${tgtWords} words outside [${lowerBound}, ${upperBound}] (source=${srcWords})`,
+    });
+  }
 
   return checks;
 }
