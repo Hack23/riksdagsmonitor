@@ -6,7 +6,7 @@ date: 2026-05-20
 subfolder: realtime-pulse
 slug: 2026-05-20-realtime-pulse
 source_folder: analysis/daily/2026-05-20/realtime-pulse
-generated_at: 2026-05-20T20:11:10.225Z
+generated_at: 2026-05-21T02:19:51.811Z
 language: en
 layout: article
 ---
@@ -108,6 +108,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Economic Dimension](#rm-economic-dimension) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Implications](#rm-electoral-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Timeline](#rm-electoral-timeline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [International Context](#rm-international-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Key Developments](#rm-key-developments) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Legislative Status Tracker](#rm-legislative-status-tracker) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -2984,6 +2997,921 @@ Every party's electoral positioning between today and September 2026 will be sha
 
 The closest electoral analogue in Swedish history: **1980 nuclear power referendum** and **1994 EU membership referendum** — both cases where constitutional/transformational decisions were made through democratic processes that defined party alignments for a generation. The 2026 election has the same potential defining quality: constitutional abortion rights + welfare reform as dual battlefronts that will determine Swedish political alignment for the 2030s.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# السويد تصوت لإدراج حق الإجهاض في الدستور — أكثر أيام الريكسداج حسمًا في عام 2026
+
+**تاريخ المقال**: 2026-05-20  
+**نوع المقال**: realtime-pulse  
+**دورة البرلمان**: 2025/26  
+**مستوى الثقة**: A2 (ثقة عالية، دليل وثائقي مباشر؛ التصويت معلق حتى الساعة 16:00)  
+**التصنيف**: عام  
+
+---
+
+### 🎯 BLUF
+
+يصوت الريكسداج السويدي اليوم على أهم تشريع دستوري في الفترة 2022-2026: تعديل دستوري ثلاثي المكونات (bet HD01KU34، KU، prop 2025/26:78) يُرسّخ حق الإجهاض في Regeringsformen — بدعم من M وSD وS وKD وL في أغلبية فائقة نادرة تتجاوز الكتل الحزبية. في الفترة ذاتها من اليوم، يتبنى الريكسداج أكثر الإصلاحات الداخلية إثارةً للجدل: سقف المزايا الاجتماعية (bidragstak) ومتطلبات النشاط (SoU29/30، props 2025/26:200-201) في مواجهة معارضة كاملة من S وV وC وMP. مع مرور 116 يومًا على انتخابات 13 سبتمبر 2026، تحدد تصويتات اليوم إرث الحكومة وخطوط المعركة الانتخابية. [الثقة: A2 · وثائق اللجان مؤكدة؛ نتائج التصويت معلقة]
+
+**ثلاثة قرارات يدعمها هذا التقرير**:
+1. **قرار تحريري**: الافتتاح بحق الإجهاض الدستوري KU34 كعنوان رئيسي — فهو الأهم تاريخيًا، ويحظى بأوسع دعم ائتلافي وسيهيمن على التغطية الإعلامية. آلية *vilande* (تتطلب قراءة ثانية بعد انتخابات سبتمبر) تمنح القضية بُعدًا انتخابيًا متأصلًا.
+2. **مراقبة المخاطر**: متابعة التنفيذ البلدي لـSoU30 bidragstak — اشتراط الشهادة الطبية اعتبارًا من 1 يوليو 2026 (42 يومًا) يخلق جدولًا زمنيًا بالغ الضيق قد يُفرز إخفاقات في التنفيذ قبل يوم الانتخابات.
+3. **محفز استشرافي**: مراقبة تصريحات الأحزاب عقب التصويت بشأن التعهدات للقراءة الثانية لـKU34 — تعهد كل حزب بنعم أو لا يصبح موقفًا انتخابيًا محوريًا.
+
+---
+
+### المستجدات الرئيسية
+
+20 مايو 2026 هو أكثر أيام جلسات الريكسداج حسمًا خلال الدورة البرلمانية. في الفترة ذاتها من المساء الساعة 16:00، تقوم السويد بـ:
+
+1. **التصويت لتكريس حق الإجهاض دستوريًا** — التصويت الأول من اثنين مطلوبَين (vilande) لإدراج حق الإنجاب في Regeringsformen، بدعم من أغلبية استثنائية M+SD+S+KD+L (~260-280 من 349 نائبًا). لا يمكن إجراء التصديق الثاني والنهائي إلا بعد انتخابات سبتمبر 2026، مما يجعل نتيجة اليوم اللحظة الدستورية المحورية قبل الانتخابات.
+
+2. **اعتماد أكثر الإصلاحات الداخلية إثارةً للجدل منذ سنوات** — سقف المزايا الاجتماعية ومتطلبات النشاط لمتلقي المعونة الاجتماعية (SoU29/30) تُعتمد رغم المعارضة الموحدة من S وV وC وMP (خمسة تحفظات صريحة). تحصر الإصلاحاتُ إعانات الإعالة بالمقيمين قانونيًا، وتشترط شهادة طبية ابتداءً من يوليو، وتضع سقفًا للأسر الأكبر حجمًا.
+
+3. **تعزيز تشريعات جرائم الشرف** — يُعتمد JuU43 بدعم واسع عابر للكتل الحزبية، مُتمِّمًا "حزمة أمان المرأة" (إلى جانب حق الإجهاض KU34) التي ستوظفها الحكومة في سرديتها الانتخابية.
+
+**البنية الدستورية**: يجمع التصميم ثلاثي المكونات لـKU34 حق الإجهاض مع قيود حرية تنظيم المنظمات الإجرامية وسحب الجنسية من مزدوجي الجنسية المحكوم عليهم بجرائم ضد المصالح الحيوية للسويد. هذه الحزمة أمّنت دعم SD المتحمس لحماية حق الإجهاض دستوريًا — خطوة تطبيع تاريخية — مع إدراج متطلبات SD الأمنية الجوهرية في النص الدستوري. قدّمت V وC وMP تحفظات على المكونات غير المتعلقة بالإجهاض.
+
+**الرهانات الانتخابية**: 116 يومًا حتى 13 سبتمبر 2026. تصويتات اليوم ترسم خطوط الحملة: الحكومة تؤكد "حقوق موسعة دستوريًا + إصلاح اجتماعي"؛ المعارضة ترد "تقليصات اجتماعية قاسية"؛ وآلية vilande تجعل تعهد كل حزب بالقراءة الثانية سؤالًا انتخابيًا حاسمًا.
+
+---
+
+### المستجدات ذات الأولوية
+
+1. **تصويت vilande على KU34** — الحق الدستوري في الإجهاض، القراءة الأولى. أغلبية عابرة للكتل (M+SD+S+KD+L). *مرحلة تاريخية*.
+2. **اعتماد SoU30 bidragstak** — خمسة تحفظات من S وV وC وMP. أكثر التشريعات الداخلية إثارةً للجدل.
+3. **اعتماد SoU29 متطلبات النشاط** — التزامات تفعيل لمتلقي إعانات الإعالة. معارضة موحدة.
+4. **JuU43 جرائم الشرف** — تعزيز عابر للكتل لتشريعات جرائم الشرف.
+5. **لجنة الاتحاد الأوروبي FAC تجارة** (09:00) — Dousa حول الأثر التجاري للشرق الأوسط.
+
+---
+
+### السياق الانتخابي (116 يومًا حتى 2026-09-13)
+
+تحوّل آلية *vilande* سبتمبر 2026 إلى استفتاء دستوري مدمج في الانتخابات: "هل ستصوت لصالح القراءة الثانية للحق الدستوري السويدي في الإجهاض؟" كل حزب يواجه هذا السؤال. S ملتزم بنعم. V وMP يتحفظان على مكونات حرية الجمعيات والجنسية — مما يخلق ضغطًا محتملًا لإعادة التفاوض بعد الانتخابات إن تشكلت حكومة يسارية.
+
+يضيف الإصلاح الاجتماعي سؤالًا انتخابيًا ثانيًا محوريًا: bidragstak ومتطلبات النشاط يصنعان خيارًا صريحًا للعقد الاجتماعي — نموذج الرعاية الشاملة الشمال أوروبي مقابل نموذج التفعيل الشمال أوروبي. ستُحسن S على استعادة المزايا؛ وستدافع الحكومة عن ذلك بوصفه سياسة تفعيل مسؤولة.
+
+---
+
+### أساس المصادر
+
+- **HD01KU34** (النص الكامل، 105.8 كيلوبايت): تقرير لجنة الدستور حول prop 2025/26:78 — توصية كاملة من اللجنة، مواقف الأحزاب، 7 تحفظات، جميع الاقتراحات معالجة
+- **HD01SoU30** (النص الكامل، 104.4 كيلوبايت): تقرير اللجنة الاجتماعية حول prop 2025/26:201 — تفاصيل كاملة للإصلاح الاجتماعي، 5 تحفظات
+- **HD01SoU29, HD01JuU43, HD01FiU38**: البيانات الوصفية مؤكدة
+- **التحليلات الموازية**: المقترحات، تقارير اللجان، الاقتراحات، الاستجوابات (جميعها بتاريخ 2026-05-20)
+- **النبض السابق**: analysis/daily/2026-05-18/realtime-pulse/ (سياق الاستمرارية)
+- **سياق صندوق النقد الدولي**: WEO-2026-04 (عمره شهر واحد، حديث)
+
+*الموثوقية: A2 — أعلى مستوى ممكن من الموثوقية (منشورات رسمية للريكسداج، قبل التصويت)*  
+*القيد: نتائج التصويت الفعلية عند الساعة 16:00 معلقة — يتنبأ التحليل بالنتيجة استنادًا إلى مواقف الأحزاب الموثقة وتوصيات اللجان*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_da.md -->
+
+**Artikeldato**: 2026-05-20  
+**Artikeltype**: realtime-pulse  
+**Riksmøde**: 2025/26  
+**Konfidensniveau**: A2 (høj tillid, direkte dokumentarbevis; afstemning afventer kl. 16:00)  
+**Klassifikation**: OFFENTLIG  
+
+---
+
+### 🎯 BLUF
+
+Sveriges Riksdag stemmer i dag om den forfatningsmæssigt mest betydningsfulde lovgivning i perioden 2022–2026: en tredelt grundlovsændring (bet HD01KU34, KU, prop 2025/26:78), der indfører retten til abort i Regeringsformen — støttet af M, SD, S, KD og L i et usædvanligt tværblokflertal. Samme eftermiddag vedtager Riksdagen regeringens mest omstridte indenrigspolitiske reform: et velfærdsydelsesloft (bidragstak) og aktivitetskrav (SoU29/30, props 2025/26:200-201) mod samlet opposition fra S, V, C og MP. Med 116 dage til valget den 13. september 2026 definerer dagens afstemninger både regeringens arv og kampagnens fronter. [Konfidens: A2 · udvalgsdokumentation sikker; afstemningsresultater afventer]
+
+**Tre beslutninger dette briefing understøtter**:
+1. **Redaktionel beslutning**: Indled med KU34 grundlovssikret aborträtt som overskrift — det er historisk mest betydningsfuldt, har bredest koalitionsstøtte og vil dominere mediedækningen. *Vilandeordningen* (anden behandling kræves efter septembervalget) giver historien en indbygget valgsvinkel.
+2. **Risikoovervågning**: Følg SoU30 bidragstak kommunal implementering — kravet om lægeattest fra 1. juli 2026 (42 dage) skaber en ekstremt presset tidsplan, der kan generere implementeringsfejl inden valgdagen.
+3. **Fremadrettet udløser**: Overvåg partiernes udtalelser efter afstemningen om forpligtelser vedrørende anden behandling af KU34 — hvert partis ja/nej-forpligtelse bliver et definerende valstandpunkt.
+
+---
+
+### Centrale begivenheder
+
+Den 20. maj 2026 er Riksdagens mest afgørende mødedag i parlamentsperioden. Samme eftermiddag klokken 16:00 er Sverige:
+
+1. **Ved at grundlovssikre abortretten** — den første af to påkrævede afstemninger (vilande) for at indskrive reproduktionsretten i Regeringsformen, støttet af et ekstraordinært M+SD+S+KD+L-flertal (~260–280 af 349 mandater). Den anden og endelige ratifikation kan kun finde sted efter valget i september 2026, hvilket gør dagens resultat til det afgørende forfatningsmæssige moment inden valget.
+
+2. **Ved at vedtage den mest omstridte indenrigspolitiske reform i årevis** — velfærdsydelsesloft og aktivitetskrav for bistandsmodtagere (SoU29/30) vedtages mod samlet opposition fra S, V, C og MP (fem udtrykkelige reservationer). Reformerne begrænser forsørgelsesydelse til lovligt ophold, kræver lægeattest fra 1. juli og sætter loft for større husstande.
+
+3. **Ved at styrke æresforbrydelseslovgivningen** — JuU43 vedtages med bred tværblokket støtte og fuldender en "kvindetryghedspakke" (sammen med KU34:s aborträtt), som regeringen vil bruge i sin valgkampagne.
+
+**Den forfatningsmæssige arkitektur**: KU34:s tredelte design samler abortretten MED begrænsninger af kriminelle organisationers foreningsret OG tilbagekaldelse af statsborgerskab for dobbeltstatsborgere dømt for forbrydelser mod Sveriges vitale interesser. Denne pakke sikrede SD:s begejstrede støtte til grundlovssikret aborträtt — et historisk normaliseringsskridt — mens SD:s kernesikkerhedskrav blev indskrevet i grundlovsteksten. V, C og MP indgav reservationer mod de ikke-abortrelaterede komponenter.
+
+**Valgindstatserne**: 116 dage til den 13. september 2026. Dagens afstemninger trækker kampagnelinjerne op: regeringen hævder "grundlovsudvidede rettigheder + velfærdsreform"; oppositionen kontrer "grusomme velfærdsbesparelser"; vilandeordningen gør hvert partis forpligtelse til anden behandling til et definerende valgspørgsmål.
+
+---
+
+### Prioriterede udviklinger
+
+1. **KU34 vilandeafstemning** — grundlovssikret aborträtt, første behandling. Tværblokflertal (M+SD+S+KD+L). *Historisk milepæl*.
+2. **SoU30 bidragstak vedtaget** — fem reservationer fra S, V, C, MP. Den mest omstridte indenrigslovgivning.
+3. **SoU29 aktivitetskrav vedtaget** — aktivitetskrav for bistandsmodtagere. Samlet opposition.
+4. **JuU43 æresforbrydelse** — tværblokket styrkelse af æresforbrydelseslovgivningen.
+5. **EU-nämnd FAC Handel** (09:00) — Dousa om Mellemøstens handelskonsekvenser.
+
+---
+
+### Valgsammenhæng (116 dage til 2026-09-13)
+
+*Vilandeordningen* forvandler september 2026 til en forfatningsmæssig folkeafstemning indlejret i valget: "Stemmer du for anden behandling af Sveriges grundlovssikrede aborträtt?" Hvert parti står over for dette spørgsmål. S er bundet til JA. V og MP har reservationer mod foreningsfriheds- og statsborgerkomponenterne — hvilket skaber potentielt forhandlingspres efter valget, hvis en venstreleds regering dannes.
+
+Velfærdsreformen tilføjer endnu et definerende valgkampspørgsmål: bidragstak og aktivitetskrav skaber et klart socialkontrakt-valg — nordisk universel velfærd over for nordisk aktiveringsmodel. S vil kampagnere for genoprettelse af velfærden; regeringen vil forsvare det som ansvarlig aktiveringspolitik.
+
+---
+
+### Kildeunderlag
+
+- **HD01KU34** (fuldtekst, 105,8 kB): Konstitutionsudvalgets betænkning om prop 2025/26:78 — fuldstændig udvalgsindstilling, partipositioner, 7 reservationer, alle motioner behandlet
+- **HD01SoU30** (fuldtekst, 104,4 kB): Socialudvalgets betænkning om prop 2025/26:201 — fuldstændige oplysninger om velfærdsreformen, 5 reservationer
+- **HD01SoU29, HD01JuU43, HD01FiU38**: Metadata bekræftet
+- **Parallelle analyser**: propositioner, udvalgsbetænkninger, motioner, interpellationer (alle 2026-05-20)
+- **Tidligere puls**: analysis/daily/2026-05-18/realtime-pulse/ (kontinuitetskontekst)
+- **IMF-kontekst**: WEO-2026-04 (1 måneds alder, aktuel)
+
+*Pålidelighed: A2 — højeste mulige pålidelighed (officielle Riksdag-publikationer, før afstemning)*  
+*Begrænsning: Faktiske afstemningsresultater kl. 16:00 afventer — analysen forudsiger udfald baseret på dokumenterede partipositioner og udvalgsrekommendationer*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_de.md -->
+
+**Artikeldatum**: 2026-05-20  
+**Artikeltyp**: realtime-pulse  
+**Reichstagssitzung**: 2025/26  
+**Konfidenzniveau**: A2 (hohe Sicherheit, direkter Dokumentennachweis; Abstimmung ausstehend 16:00 Uhr)  
+**Einstufung**: ÖFFENTLICH  
+
+---
+
+### 🎯 BLUF
+
+Der schwedische Riksdag stimmt heute über die verfassungsrechtlich bedeutsamste Gesetzgebung der Legislaturperiode 2022–2026 ab: eine dreigliedrige Verfassungsänderung (bet HD01KU34, KU, prop 2025/26:78), die das Recht auf Abtreibung in der Regeringsformen verankert — getragen von M, SD, S, KD und L in einer ungewöhnlichen parteienübergreifenden Supermehrheit. Am selben Nachmittag verabschiedet der Riksdag die umstrittenste Inlandspolitik der Regierung: eine Sozialleistungsobergrenze (bidragstak) und Aktivierungsanforderungen (SoU29/30, props 2025/26:200-201) gegen den geschlossenen Widerstand von S, V, C und MP. Mit 116 Tagen bis zur Wahl am 13. September 2026 definieren die heutigen Abstimmungen sowohl das Erbe der Regierung als auch die Kampflinien des Wahlkampfs. [Konfidenz: A2 · Ausschussdokumentation sicher; Abstimmungsergebnisse ausstehend]
+
+**Drei Entscheidungen, die dieses Briefing unterstützt**:
+1. **Redaktionelle Entscheidung**: Mit KU34 verfassungsrechtlich gesichertem Abtreibungsrecht als Aufmacher beginnen — es ist historisch am bedeutsamsten, hat die breiteste Koalitionsunterstützung und wird die Medienberichterstattung dominieren. Der *Vilande-Mechanismus* (zweite Lesung nach der Septemberwahl erforderlich) verleiht der Geschichte eine eingebaute Wahldimension.
+2. **Risikoüberwachung**: SoU30 bidragstak kommunale Umsetzung verfolgen — die Anforderung eines ärztlichen Attests ab dem 1. Juli 2026 (42 Tage) schafft einen extrem engen Zeitplan, der vor dem Wahltag zu Umsetzungsfehlern führen kann.
+3. **Vorausschauender Auslöser**: Parteierklärungen nach der Abstimmung über Verpflichtungen zur zweiten Lesung des KU34 beobachten — das Ja/Nein-Bekenntnis jeder Partei wird zu einem definierenden Wahlstandpunkt.
+
+---
+
+### Schlüsselentwicklungen
+
+Der 20. Mai 2026 ist der folgenreichste Sitzungstag des Riksdag in der Legislaturperiode. Am selben Nachmittag um 16:00 Uhr ist Schweden:
+
+1. **Dabei, das Abtreibungsrecht zu verankern** — die erste von zwei erforderlichen Abstimmungen (vilande), um das Reproduktionsrecht in die Regeringsformen aufzunehmen, getragen von einer außerordentlichen M+SD+S+KD+L-Mehrheit (~260–280 von 349 Mandaten). Die zweite und endgültige Ratifizierung kann erst nach der Wahl im September 2026 erfolgen, was das heutige Ergebnis zum entscheidenden verfassungsrechtlichen Moment vor der Wahl macht.
+
+2. **Dabei, die umstrittenste Inlandspolitik seit Jahren zu verabschieden** — Sozialleistungsobergrenze und Aktivierungsanforderungen (SoU29/30) werden gegen den geschlossenen Widerstand von S, V, C und MP (fünf ausdrückliche Vorbehalte) verabschiedet. Die Reformen beschränken Sozialhilfe auf legal Anwesende, verlangen ab Juli ein ärztliches Attest und begrenzen Leistungen für größere Haushalte.
+
+3. **Dabei, die Ehrverbrechengesetzgebung zu stärken** — JuU43 wird mit breiter parteienübergreifender Unterstützung angenommen und vervollständigt ein „Sicherheitspaket für Frauen" (zusammen mit KU34:s Abtreibungsrecht), das die Regierung in ihrer Wahlkampagne einsetzen wird.
+
+**Die verfassungsrechtliche Architektur**: Das dreigliedrige Design von KU34 bündelt das Abtreibungsrecht MIT Beschränkungen der Vereinigungsfreiheit krimineller Organisationen UND der Ausbürgerung für Doppelstaatler, die wegen Verbrechen gegen Schwedens vitale Interessen verurteilt wurden. Diese Bündelung sicherte SDs enthusiastische Unterstützung für den verfassungsrechtlichen Schutz des Abtreibungsrechts — ein historischer Normalisierungsschritt — während SDs Kernsicherheitsforderungen im Verfassungstext verankert wurden. V, C und MP haben Vorbehalte zu den nicht-abortionsbezogenen Komponenten angemeldet.
+
+**Die Wahleinsätze**: 116 Tage bis zum 13. September 2026. Die heutigen Abstimmungen ziehen die Kampflinien: Die Regierung behauptet „verfassungsrechtlich erweiterte Rechte + Sozialreform"; die Opposition kontert mit „grausamen Sozialkürzungen"; der Vilande-Mechanismus macht das Bekenntnis jeder Partei zur zweiten Lesung zu einer definierenden Wahlfrage.
+
+---
+
+### Priorisierte Entwicklungen
+
+1. **KU34 Vilande-Abstimmung** — verfassungsrechtliches Abtreibungsrecht, erste Lesung. Parteienübergreifende Mehrheit (M+SD+S+KD+L). *Historischer Meilenstein*.
+2. **SoU30 bidragstak verabschiedet** — fünf Vorbehalte von S, V, C, MP. Umstrittenste Inlandsgesetzgebung.
+3. **SoU29 Aktivierungsanforderungen verabschiedet** — Aktivierungspflichten für Sozialhilfeempfänger. Geschlossene Opposition.
+4. **JuU43 Ehrendelikt** — parteienübergreifende Stärkung der Ehrverbrechengesetzgebung.
+5. **EU-Ausschuss FAC Handel** (09:00) — Dousa über Handelsauswirkungen im Nahen Osten.
+
+---
+
+### Wahlkontext (116 Tage bis 2026-09-13)
+
+Der *Vilande-Mechanismus* verwandelt den September 2026 in ein verfassungsrechtliches Referendum innerhalb der Wahl: „Stimmen Sie für die zweite Lesung des verfassungsrechtlich verankerten schwedischen Abtreibungsrechts?" Jede Partei steht vor dieser Frage. S ist zu JA verpflichtet. V und MP haben Vorbehalte zu den Vereinigungsfreiheits- und Staatsbürgerschaftskomponenten — was potenziellen Neuverhandlungsdruck nach der Wahl schafft, wenn eine linksgeführte Regierung gebildet wird.
+
+Die Sozialreform fügt eine zweite definierende Wahlfrage hinzu: bidragstak und Aktivierungsanforderungen schaffen eine klare Sozialvertragswahl — nordisches universelles Wohlfahrtsmodell versus nordisches Aktivierungsmodell. S wird für die Wiederherstellung von Sozialleistungen werben; die Regierung verteidigt es als verantwortungsvolle Aktivierungspolitik.
+
+---
+
+### Quellengrundlage
+
+- **HD01KU34** (Volltext, 105,8 kB): Verfassungsausschuss-Bericht zu prop 2025/26:78 — vollständige Ausschussempfehlung, Parteipositionen, 7 Vorbehalte, alle Anträge behandelt
+- **HD01SoU30** (Volltext, 104,4 kB): Sozialausschuss-Bericht zu prop 2025/26:201 — vollständige Details der Sozialreform, 5 Vorbehalte
+- **HD01SoU29, HD01JuU43, HD01FiU38**: Metadaten bestätigt
+- **Parallelanalysen**: Regierungsvorlagen, Ausschussberichte, Anträge, Interpellationen (alle 2026-05-20)
+- **Vorheriger Puls**: analysis/daily/2026-05-18/realtime-pulse/ (Kontinuitätskontext)
+- **IMF-Kontext**: WEO-2026-04 (1 Monat alt, aktuell)
+
+*Zuverlässigkeit: A2 — höchstmögliche Zuverlässigkeit (offizielle Riksdag-Publikationen, vor Abstimmung)*  
+*Einschränkung: Tatsächliche Abstimmungsergebnisse um 16:00 Uhr ausstehend — Analyse prognostiziert Ergebnis auf Basis dokumentierter Parteipositionen und Ausschussempfehlungen*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_es.md -->
+
+**Fecha del artículo**: 2026-05-20  
+**Tipo de artículo**: realtime-pulse  
+**Sesión parlamentaria**: 2025/26  
+**Nivel de confianza**: A2 (alta confianza, evidencia documental directa; votación pendiente a las 16:00)  
+**Clasificación**: PÚBLICO  
+
+---
+
+### 🎯 BLUF
+
+El Riksdag sueco vota hoy sobre la legislación constitucionalmente más significativa del período 2022-2026: una enmienda constitucional de tres componentes (bet HD01KU34, KU, prop 2025/26:78) que consagra el derecho al aborto en la Regeringsformen — respaldada por M, SD, S, KD y L en una supermayoría transpartidista inusual. La misma tarde, el Riksdag adopta la reforma interna más controvertida del gobierno: un tope de prestaciones sociales (bidragstak) y requisitos de actividad (SoU29/30, props 2025/26:200-201) contra la oposición total de S, V, C y MP. Con 116 días para las elecciones del 13 de septiembre de 2026, las votaciones de hoy definen tanto el legado del gobierno como los frentes de batalla de la campaña. [Confianza: A2 · documentación del comité segura; resultados de la votación pendientes]
+
+**Tres decisiones que respalda este informe**:
+1. **Decisión editorial**: Abrir con KU34 derecho al aborto constitucional como titular — es históricamente más significativo, tiene el apoyo de coalición más amplio y dominará la cobertura mediática. El *mecanismo vilande* (segunda lectura requerida después de las elecciones de septiembre) da a la historia una dimensión electoral incorporada.
+2. **Vigilancia de riesgos**: Seguir la implementación municipal del bidragstak SoU30 — el requisito de certificado médico a partir del 1 de julio de 2026 (42 días) crea un cronograma extremadamente ajustado que podría generar fallos de implementación antes del día de las elecciones.
+3. **Disparador prospectivo**: Monitorear las declaraciones de los partidos tras la votación sobre compromisos para la segunda lectura del KU34 — el compromiso sí/no de cada partido se convierte en una posición electoral definitoria.
+
+---
+
+### Desarrollos clave
+
+El 20 de mayo de 2026 es el día de sesión más decisivo del Riksdag durante el período parlamentario. La misma tarde a las 16:00, Suecia:
+
+1. **Vota para constitucionalizar el derecho al aborto** — la primera de dos votaciones requeridas (vilande) para inscribir el derecho reproductivo en la Regeringsformen, respaldada por una extraordinaria mayoría M+SD+S+KD+L (~260-280 de los 349 mandatos). La segunda ratificación final solo puede tener lugar después de las elecciones de septiembre de 2026, convirtiendo el resultado de hoy en el momento constitucional central antes de las elecciones.
+
+2. **Adopta la reforma interna más controvertida en años** — tope de prestaciones sociales y requisitos de actividad para receptores de asistencia social (SoU29/30) se adoptan contra la oposición unida de S, V, C y MP (cinco reservas explícitas). Las reformas limitan la asistencia social a personas con estancia legal, exigen certificados médicos desde julio y establecen límites para hogares más numerosos.
+
+3. **Fortalece la legislación sobre delitos de honor** — JuU43 se adopta con amplio apoyo transpartidista, completando un "paquete de seguridad para la mujer" (junto con el derecho al aborto KU34) que el gobierno desplegará en su campaña preelectoral.
+
+**La arquitectura constitucional**: El diseño de tres componentes de KU34 agrupa el derecho al aborto CON las restricciones a la libertad de asociación de organizaciones criminales Y la revocación de la ciudadanía para ciudadanos con doble nacionalidad condenados por delitos contra los intereses vitales de Suecia. Esta agrupación aseguró el apoyo entusiasta del SD para la protección constitucional del derecho al aborto — un paso histórico de normalización — mientras se incorporaron las demandas de seguridad básicas del SD en el texto constitucional. V, C y MP presentaron reservas sobre los componentes no relacionados con el aborto.
+
+**Las apuestas electorales**: 116 días hasta el 13 de septiembre de 2026. Las votaciones de hoy trazan las líneas de campaña: el gobierno afirma "derechos constitucionales ampliados + reforma social"; la oposición responde "recortes sociales crueles"; el mecanismo vilande hace del compromiso de cada partido con la segunda lectura una pregunta electoral definitoria.
+
+---
+
+### Desarrollos prioritarios
+
+1. **Votación vilande KU34** — derecho constitucional al aborto, primera lectura. Mayoría transpartidista (M+SD+S+KD+L). *Hito histórico*.
+2. **SoU30 bidragstak adoptado** — cinco reservas de S, V, C, MP. La legislación interna más controvertida.
+3. **SoU29 requisitos de actividad adoptados** — obligaciones de activación para beneficiarios de asistencia social. Oposición unida.
+4. **JuU43 delitos de honor** — fortalecimiento transpartidista de la legislación sobre delitos de honor.
+5. **Comité de la UE FAC Comercio** (09:00) — Dousa sobre el impacto comercial en Oriente Medio.
+
+---
+
+### Contexto electoral (116 días hasta 2026-09-13)
+
+El *mecanismo vilande* transforma septiembre de 2026 en un referéndum constitucional dentro de las elecciones: "¿Votaría a favor de la segunda lectura del derecho constitucional sueco al aborto?" Cada partido se enfrenta a esta pregunta. S está comprometido con el SÍ. V y MP tienen reservas sobre los componentes de libertad de asociación y ciudadanía — creando potencial presión de renegociación tras las elecciones si se forma un gobierno de izquierda.
+
+La reforma social añade una segunda pregunta electoral definitoria: bidragstak y requisitos de actividad crean una elección clara de contrato social — modelo nórdico de bienestar universal versus modelo nórdico de activación. S hará campaña por la restauración de prestaciones; el gobierno defenderá una política de activación responsable.
+
+---
+
+### Base documental
+
+- **HD01KU34** (texto completo, 105,8 kB): Informe del Comité Constitucional sobre prop 2025/26:78 — recomendación completa del comité, posiciones de los partidos, 7 reservas, todas las mociones tratadas
+- **HD01SoU30** (texto completo, 104,4 kB): Informe del Comité Social sobre prop 2025/26:201 — detalles completos de la reforma social, 5 reservas
+- **HD01SoU29, HD01JuU43, HD01FiU38**: Metadatos confirmados
+- **Análisis paralelos**: proposiciones, informes de comités, mociones, interpelaciones (todas del 2026-05-20)
+- **Pulso anterior**: analysis/daily/2026-05-18/realtime-pulse/ (contexto de continuidad)
+- **Contexto FMI**: WEO-2026-04 (1 mes de antigüedad, actual)
+
+*Fiabilidad: A2 — máxima fiabilidad posible (publicaciones oficiales del Riksdag, antes de la votación)*  
+*Limitación: Resultados reales de la votación a las 16:00 pendientes — el análisis predice el resultado basándose en posiciones documentadas de los partidos y recomendaciones de los comités*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_fi.md -->
+
+**Artikkelipäivä**: 2026-05-20  
+**Artikkelityyppi**: realtime-pulse  
+**Valtiopäiväistunto**: 2025/26  
+**Luottamustaso**: A2 (korkea luottamus, suora asiakirjanäyttö; äänestys odottaa klo 16:00)  
+**Luokittelu**: JULKINEN  
+
+---
+
+### 🎯 BLUF
+
+Ruotsin riksdag äänestää tänään vuosien 2022–2026 vaalikauden perustuslaillisesti merkittävimmästä lainsäädännöstä: kolmiosaisesta perustuslainmuutoksesta (bet HD01KU34, KU, prop 2025/26:78), joka kirjaa aborttioikeuden hallitusmuotoon (Regeringsformen) — M:n, SD:n, S:n, KD:n ja L:n tukemana harvinaisena yli puoluerajojen ulottuvana enemmistönä. Samana iltapäivänä riksdag hyväksyy hallituksen kiistanalaisimman sisäpoliittisen uudistuksen: sosiaaliturvakatot (bidragstak) ja aktivointivelvoitteet (SoU29/30, props 2025/26:200-201) S:n, V:n, C:n ja MP:n täyttä vastustusta vastaan. Syyskuun 13. päivän 2026 vaaleihin on 116 päivää, ja tämänpäiväiset äänestykset määrittävät sekä hallituksen perinnön että vaalikampanjan taistelukenttien. [Luottamus: A2 · valiokunta-asiakirjat varmoja; äänestystulokset odottavat]
+
+**Kolme päätöstä, joita tämä tiedote tukee**:
+1. **Toimituksellinen päätös**: Avaa KU34 perustuslaillinen aborttioikeus otsikkona — se on historiallisesti merkittävin, koalitioltaan laajin ja hallitsee mediahuomiota. *Lepäävä-mekanismi* (toinen käsittely vaaditaan syyskuun vaalien jälkeen) antaa tarinalle sisäänrakennetun vaaliulottuvuuden.
+2. **Riskin seuranta**: Seuraa SoU30 bidragstak kunnallista toimeenpanoa — 1. heinäkuuta 2026 voimaan tuleva lääkärintodistusvaatimus (42 päivää) luo erittäin tiukan aikataulun, joka voi synnyttää toimeenpanon epäonnistumisia ennen vaalipäivää.
+3. **Eteenpäin katsova laukaisu**: Seuraa puolueiden lausuntoja äänestyksen jälkeen KU34:n toisen käsittelyn sitoumuksista — jokaisen puolueen kyllä/ei-sitoumus muodostuu määrittäväksi vaalikannaksi.
+
+---
+
+### Keskeinen kehitys
+
+20. toukokuuta 2026 on riksdagin vaalikauden merkittävin istuntopäivä. Samana iltapäivänä kello 16:00 Ruotsi:
+
+1. **Äänestää aborttioikeuden perustuslaillisesta suojasta** — ensimmäinen kahdesta pakollisesta äänestyksestä (vilande) lisätäkseen lisääntymistoikeuden hallitusmuotoon, M+SD+S+KD+L-enemmistön (~260–280/349 mandaattia) tukemana. Toinen ja lopullinen ratifiointi voi tapahtua vasta syyskuun 2026 vaalien jälkeen, mikä tekee tämänpäiväisestä tuloksesta ratkaisevimman perustuslaillisen hetken ennen vaaleja.
+
+2. **Hyväksyy kiistanalaisimman sisäpoliittisen uudistuksen vuosiin** — toimeentulotukilaki ja aktivointivelvoitteet (SoU29/30) hyväksytään S:n, V:n, C:n ja MP:n (viisi nimenomaista varaumaa) yhtenäistä vastustusta vastaan. Uudistukset rajoittavat toimeentulotuen laillisesti maassa oleskeleville, vaativat lääkärintodistusta heinäkuusta alkaen ja asettavat kattoluvun suuremmille kotitalouksille.
+
+3. **Vahvistaa kunniarikoslainsäädäntöä** — JuU43 hyväksytään laajalla yli puoluerajojen ulottuvalla tuella ja täydentää "naisten turvallisuuspaketin" (yhdessä KU34:n aborttioikeuden kanssa), jota hallitus käyttää vaalistrategiassaan.
+
+**Perustuslaillinen arkkitehtuuri**: KU34:n kolmiosainen rakenne yhdistää aborttioikeuden rikollisorganisaatioiden järjestäytymisvapauden rajoituksiin JA kaksoiskansalaisten kansalaisuuden peruuttamiseen Ruotsin keskeisiä etuja vastaan tehdyistä rikoksista tuomituille. Tämä paketointi varmisti SD:n innostuneen tuen perustuslailliselle aborttioikeudelle — historiallinen normalisoitumisaskel — samalla kun SD:n turvallisuuden ydinkysymykset kirjattiin perustuslakitekstiin. V, C ja MP jättivät varaumia ei-aborttikomponenteista.
+
+**Vaaliasetelmat**: 116 päivää 13. syyskuuta 2026. Tämänpäiväiset äänestykset piirtävät kampanjarajat: hallitus väittää "perustuslaillisesti laajennetut oikeudet + hyvinvointiuudistus"; oppositio vastaa "julmilla hyvinvointileikkauksilla"; lepäävä-mekanismi tekee jokaisen puolueen toiseen käsittelyyn sitoutumisesta määrittävän vaalikysymyksen.
+
+---
+
+### Etusijajärjestyksessä kehityskulut
+
+1. **KU34 lepäävä-äänestys** — perustuslaillinen aborttioikeus, ensimmäinen käsittely. Yli puoluerajojen ulottuva enemmistö (M+SD+S+KD+L). *Historiallinen virstanpylväs*.
+2. **SoU30 bidragstak hyväksytty** — viisi varaumaa S:ltä, V:ltä, C:ltä, MP:ltä. Kiistanalaisin sisäinen lainsäädäntö.
+3. **SoU29 aktivointivelvoitteet hyväksytty** — aktivointivelvoitteet toimeentulotuen saajille. Yhtenäinen oppositio.
+4. **JuU43 kunniarikos** — yli puoluerajojen ulottuva kunniarikoslainsäädännön vahvistaminen.
+5. **EU-nämnden FAC Handel** (09:00) — Dousa Lähi-idän kauppavaikutuksista.
+
+---
+
+### Vaalikonteksti (116 päivää 2026-09-13)
+
+*Lepäävä-mekanismi* muuttaa syyskuun 2026 perustuslailliseksi kansanäänestykseksi vaalien sisällä: "Äänestätkö Ruotsin perustuslaillisen aborttioikeuden toisen käsittelyn puolesta?" Jokainen puolue kohtaa tämän kysymyksen. S on sitoutunut KYLLÄ:ään. V:llä ja MP:llä on varaumia järjestäytymisvapauden ja kansalaisuuskomponenteista — mikä luo potentiaalista neuvottelupainetta vaalien jälkeen, jos vasemmistojohtoinen hallitus muodostetaan.
+
+Hyvinvointiuudistus lisää toisen määrittävän vaaliongelman: bidragstak ja aktivointivelvoitteet luovat selkeän sosiaalisopimusvalinnan — pohjoismainen universaali hyvinvointi vastaan pohjoismainen aktivointimalli. S kampanjoi hyvinvoinnin palauttamisen puolesta; hallitus puolustaa sitä vastuullisena aktivointipolitiikkana.
+
+---
+
+### Lähdeperusta
+
+- **HD01KU34** (täysteksti, 105,8 kt): Perustuslakivaliokunnan mietintö prop 2025/26:78:sta — täydellinen valiokunnan suositus, puoluekanta, 7 varaumaa, kaikki motiot käsitelty
+- **HD01SoU30** (täysteksti, 104,4 kt): Sosialivaliokunta mietintö prop 2025/26:201:stä — täydelliset hyvinvointiuudistuksen yksityiskohdat, 5 varaumaa
+- **HD01SoU29, HD01JuU43, HD01FiU38**: Metatieto vahvistettu
+- **Rinnakkaisanalyysit**: propositiot, valiokunnan mietinnöt, motiot, interpellaatiot (kaikki 2026-05-20)
+- **Edellinen pulssi**: analysis/daily/2026-05-18/realtime-pulse/ (jatkuvuuskonteksti)
+- **IMF-konteksti**: WEO-2026-04 (1 kuukauden ikäinen, ajantasainen)
+
+*Luotettavuus: A2 — korkein mahdollinen luotettavuus (viralliset Riksdag-julkaisut, ennen äänestystä)*  
+*Rajoitus: Todelliset klo 16:00 äänestystulokset odottavat — analyysi ennustaa tulosta dokumentoitujen puoluekantauksien ja valiokunnan suositusten perusteella*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_fr.md -->
+
+**Date de l'article** : 2026-05-20  
+**Type d'article** : realtime-pulse  
+**Session parlementaire** : 2025/26  
+**Niveau de confiance** : A2 (haute confiance, preuve documentaire directe ; vote en attente à 16h00)  
+
+---
+
+### 🎯 BLUF
+
+Le Riksdag suédois vote aujourd'hui sur la législation la plus importante sur le plan constitutionnel de la période 2022-2026 : un amendement constitutionnel en trois volets (bet HD01KU34, KU, prop 2025/26:78) inscrivant le droit à l'avortement dans la Regeringsformen — soutenu par M, SD, S, KD et L dans une supermajorité transpartisane inhabituelle. Le même après-midi, le Riksdag adopte la réforme intérieure la plus contestée du gouvernement : un plafond d'allocations sociales (bidragstak) et des exigences d'activité (SoU29/30, props 2025/26:200-201) face à l'opposition totale de S, V, C et MP. Avec 116 jours avant l'élection du 13 septembre 2026, les votes d'aujourd'hui définissent à la fois l'héritage du gouvernement et les lignes de bataille de la campagne. [Confiance : A2 · documentation du comité certaine ; résultats du vote en attente]
+
+**Trois décisions que ce bref soutient** :
+1. **Décision éditoriale** : Ouvrir avec KU34 droit à l'avortement constitutionnel en titre — c'est historiquement le plus significatif, avec la plus large coalition et dominera la couverture médiatique. Le *mécanisme vilande* (deuxième lecture requise après l'élection de septembre) donne à l'histoire une dimension électorale intrinsèque.
+2. **Veille des risques** : Suivre la mise en œuvre municipale du bidragstak SoU30 — l'exigence de certificat médical à partir du 1er juillet 2026 (42 jours) crée un calendrier extrêmement serré pouvant générer des défaillances de mise en œuvre avant le jour de l'élection.
+3. **Déclencheur prospectif** : Surveiller les déclarations des partis après le vote sur les engagements pour la deuxième lecture du KU34 — l'engagement oui/non de chaque parti devient une position électorale déterminante.
+
+---
+
+### Développements clés
+
+Le 20 mai 2026 est la journée de séance la plus décisive du Riksdag lors de la période parlementaire. Le même après-midi à 16h00, la Suède :
+
+1. **Vote pour constitutionnaliser le droit à l'avortement** — le premier des deux votes requis (vilande) pour inscrire le droit reproductif dans la Regeringsformen, soutenu par une majorité extraordinaire M+SD+S+KD+L (~260-280 des 349 mandats). La deuxième ratification finale ne peut avoir lieu qu'après l'élection de septembre 2026, faisant du résultat d'aujourd'hui le moment constitutionnel central avant l'élection.
+
+2. **Adopte la réforme intérieure la plus contestée depuis des années** — plafond d'allocations et exigences d'activité pour les allocataires (SoU29/30) adoptés contre l'opposition unie de S, V, C et MP (cinq réserves explicites). Les réformes limitent l'aide sociale aux personnes en séjour légal, exigent un certificat médical à partir de juillet et plafonnent les allocations pour les ménages nombreux.
+
+3. **Renforce la législation sur les crimes d'honneur** — JuU43 adopté avec un large soutien transpartisan, complétant un « paquet de sécurité pour les femmes » (avec le droit à l'avortement KU34) que le gouvernement déploiera dans sa campagne préélectorale.
+
+**L'architecture constitutionnelle** : Le design en trois volets de KU34 regroupe le droit à l'avortement AVEC les restrictions à la liberté d'association des organisations criminelles ET la révocation de la nationalité pour les ressortissants à double nationalité condamnés pour crimes contre les intérêts vitaux de la Suède. Ce regroupement a assuré le soutien enthousiaste du SD pour la protection constitutionnelle du droit à l'avortement — une étape de normalisation historique — tout en intégrant les exigences sécuritaires fondamentales du SD dans le texte constitutionnel. V, C et MP ont formulé des réserves sur les composantes non liées à l'avortement.
+
+**Les enjeux électoraux** : 116 jours avant le 13 septembre 2026. Les votes d'aujourd'hui tracent les lignes de campagne : le gouvernement revendique « droits constitutionnellement élargis + réforme sociale » ; l'opposition répond « coupes sociales cruelles » ; le mécanisme vilande fait de l'engagement de chaque parti pour la deuxième lecture une question électorale déterminante.
+
+---
+
+### Développements prioritaires
+
+1. **Vote vilande KU34** — droit à l'avortement constitutionnel, première lecture. Majorité transpartisane (M+SD+S+KD+L). *Étape historique*.
+2. **SoU30 bidragstak adopté** — cinq réserves de S, V, C, MP. Législation intérieure la plus controversée.
+3. **SoU29 exigences d'activité adoptées** — obligations d'activation pour les allocataires. Opposition unie.
+4. **JuU43 crimes d'honneur** — renforcement transpartisan de la législation sur les crimes d'honneur.
+5. **Comité EU FAC Commerce** (09:00) — Dousa sur l'impact commercial au Moyen-Orient.
+
+---
+
+### Contexte électoral (116 jours avant 2026-09-13)
+
+Le *mécanisme vilande* transforme septembre 2026 en référendum constitutionnel enchâssé dans l'élection : « Voteriez-vous pour la deuxième lecture du droit constitutionnel suédois à l'avortement ? » Chaque parti fait face à cette question. S est engagé pour OUI. V et MP ont des réserves sur les composantes liberté d'association et nationalité — créant une pression de renégociation potentielle après l'élection si un gouvernement de gauche se forme.
+
+La réforme sociale ajoute une deuxième question électorale déterminante : bidragstak et exigences d'activité créent un choix net de contrat social — modèle nordique de protection sociale universelle versus modèle nordique d'activation. S fera campagne pour la restauration des allocations ; le gouvernement défendra une politique d'activation responsable.
+
+---
+
+### Base documentaire
+
+- **HD01KU34** (texte intégral, 105,8 ko) : Rapport du comité constitutionnel sur prop 2025/26:78 — recommandation complète du comité, positions des partis, 7 réserves, toutes les motions traitées
+- **HD01SoU30** (texte intégral, 104,4 ko) : Rapport du comité social sur prop 2025/26:201 — détails complets de la réforme sociale, 5 réserves
+- **HD01SoU29, HD01JuU43, HD01FiU38** : Métadonnées confirmées
+- **Analyses parallèles** : propositions, rapports de comités, motions, interpellations (toutes du 2026-05-20)
+- **Puls précédent** : analysis/daily/2026-05-18/realtime-pulse/ (contexte de continuité)
+- **Contexte FMI** : WEO-2026-04 (1 mois d'ancienneté, à jour)
+
+*Fiabilité : A2 — fiabilité maximale (publications officielles du Riksdag, avant le vote)*  
+*Limitation : Résultats réels du vote à 16h00 en attente — l'analyse prédit le résultat sur la base des positions documentées des partis et des recommandations des comités*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# שוודיה מצביעה על עיגון זכות ההפלה בחוקה — היום המכריע ביותר ברייקסדאג ב-2026
+
+**תאריך המאמר**: 2026-05-20  
+**סוג המאמר**: realtime-pulse  
+**מושב הפרלמנט**: 2025/26  
+**רמת אמינות**: A2 (אמינות גבוהה, עדות תיעודית ישירה; הצבעה ממתינה לשעה 16:00)  
+**סיווג**: ציבורי  
+
+---
+
+### 🎯 BLUF
+
+הרייקסדאג השוודי מצביע היום על החקיקה החשובה ביותר מבחינה חוקתית של הכהונה 2022–2026: תיקון חוקתי בן שלושה מרכיבים (bet HD01KU34, KU, prop 2025/26:78) המעגן את זכות ההפלה ב-Regeringsformen — בתמיכת M, SD, S, KD ו-L ברוב-על חוצה-מפלגות יוצא דופן. באותו אחר-צהריים, הרייקסדאג מאמץ את הרפורמה הפנים-מדינית השנויה ביותר במחלוקת: תקרת הגמלאות (bidragstak) ודרישות פעילות (SoU29/30, props 2025/26:200-201) כנגד התנגדות מלאה של S, V, C ו-MP. עם 116 ימים לבחירות של 13 בספטמבר 2026, הצבעות היום מגדירות את מורשת הממשלה ואת חזיתות הקמפיין. [אמינות: A2 · תיעוד ועדה ודאי; תוצאות הצבעה ממתינות]
+
+**שלושה החלטות שתדריך זה תומך בהן**:
+1. **החלטה עריכתית**: לפתוח עם KU34 זכות הפלה חוקתית ככותרת — זו ההחלטה החשובה ביותר היסטורית, בעלת תמיכת הקואליציה הרחבה ביותר ותשלוט בסיקור התקשורתי. מנגנון ה*vilande* (קריאה שנייה נדרשת לאחר בחירות ספטמבר) מקנה לסיפור ממד בחירות מובנה.
+2. **מעקב סיכונים**: לעקוב אחר יישום עירוני של SoU30 bidragstak — דרישת תעודה רפואית מ-1 ביולי 2026 (42 יום) יוצרת לוח זמנים הדוק במיוחד שעלול ליצור כשלי יישום לפני יום הבחירות.
+3. **טריגר עתידי**: לעקוב אחר הצהרות מפלגות לאחר ההצבעה על התחייבויות לקריאה השנייה של KU34 — ההתחייבות של כל מפלגה לכן/לא הופכת לעמדה בחירות מכוננת.
+
+---
+
+### התפתחויות מרכזיות
+
+20 במאי 2026 הוא יום הישיבה המכריע ביותר של הרייקסדאג במהלך הכהונה הפרלמנטרית. באותו אחר-צהריים בשעה 16:00, שוודיה:
+
+1. **מצביעה לעגן את זכות ההפלה בחוקה** — ההצבעה הראשונה מתוך שתיים נדרשות (vilande) לשם הכנסת הזכות לפרייה ל-Regeringsformen, בתמיכת רוב M+SD+S+KD+L יוצא דופן (~260–280 מתוך 349 מנדטים). האשרור השני והסופי יוכל להתקיים רק לאחר בחירות ספטמבר 2026, מה שהופך את תוצאת היום לרגע החוקתי המכריע לפני הבחירות.
+
+2. **מאמצת את הרפורמה הפנים-מדינית השנויה במחלוקת ביותר בשנים** — תקרת הגמלאות ודרישות הפעילות למקבלי קצבת פרנסה (SoU29/30) מאומצות כנגד ההתנגדות המאוחדת של S, V, C ו-MP (חמישה סייגים מפורשים). הרפורמות מגבילות את קצבת הפרנסה לשוהים חוקית, מחייבות תעודה רפואית מיולי ומגבילות קצבאות למשפחות גדולות יותר.
+
+3. **מחזקת את חקיקת פשעי הכבוד** — JuU43 מאומץ בתמיכה רחבה חוצת-מפלגות ומשלים "חבילת ביטחון לנשים" (לצד זכות ההפלה KU34) שהממשלה תפרוס בסיפור הקדם-בחירותי שלה.
+
+**האדריכלות החוקתית**: העיצוב התלת-מרכיבי של KU34 מאגד את זכות ההפלה עם הגבלות חופש ההתאגדות של ארגוני פשע ושלילת האזרחות מאזרחים כפולים שהורשעו בפשעים כנגד האינטרסים החיוניים של שוודיה. אגד זה הבטיח את תמיכתו ההתלהבותית של SD להגנה חוקתית על זכות ההפלה — צעד נורמליזציה היסטורי — בעוד שדרישות הליבה הביטחוניות של SD עוגנו בנוסח החוקתי. V, C ו-MP הגישו סייגים על המרכיבים שאינם קשורים להפלה.
+
+**ההימורים הבחירותיים**: 116 ימים עד 13 בספטמבר 2026. הצבעות היום מסרטטות את קווי הקמפיין: הממשלה טוענת "זכויות חוקתית מורחבות + רפורמה חברתית"; האופוזיציה מגיבה "קיצוצים חברתיים אכזריים"; מנגנון ה-vilande הופך את התחייבות כל מפלגה לקריאה השנייה לשאלה בחירות מכוננת.
+
+---
+
+### התפתחויות בסדר עדיפות
+
+1. **הצבעת vilande על KU34** — זכות הפלה חוקתית, קריאה ראשונה. רוב חוצה-מפלגות (M+SD+S+KD+L). *אבן דרך היסטורית*.
+2. **SoU30 bidragstak מאומץ** — חמישה סייגים מ-S, V, C, MP. החקיקה הפנים-מדינית השנויה ביותר במחלוקת.
+3. **SoU29 דרישות פעילות מאומצות** — חובות הפעלה למקבלי קצבת פרנסה. התנגדות מאוחדת.
+4. **JuU43 פשעי כבוד** — חיזוק חוצה-מפלגות של חקיקת פשעי הכבוד.
+5. **ועדת האיחוד האירופי FAC מסחר** (09:00) — Dousa על השפעות מסחריות בזירה המזרח-תיכונית.
+
+---
+
+### הקשר בחירות (116 ימים עד 2026-09-13)
+
+מנגנון ה*vilande* הופך את ספטמבר 2026 לעצרת חוקתית משובצת בבחירות: "האם תצביע בעד הקריאה השנייה של זכות ההפלה החוקתית השוודית?" כל מפלגה ניצבת מול שאלה זו. S מחויב לכן. ל-V ו-MP יש סייגים על מרכיבי חופש ההתאגדות והאזרחות — מה שיוצר לחץ פוטנציאלי לחוזה מחדש לאחר הבחירות אם תיווצר ממשלה שמאלית.
+
+הרפורמה החברתית מוסיפה שאלת בחירות מכוננת שנייה: bidragstak ודרישות פעילות יוצרים בחירת חוזה חברתי ברורה — מודל הרווחה הכוללנית הסקנדינבי מול מודל ההפעלה הסקנדינבי. S יפנה לבוחרים על שיקום קצבאות; הממשלה תגן עליה כמדיניות הפעלה אחראית.
+
+---
+
+### בסיס המקורות
+
+- **HD01KU34** (טקסט מלא, 105.8 קB): דוח ועדת החוקה על prop 2025/26:78 — המלצת ועדה מלאה, עמדות מפלגות, 7 סייגים, כל ההצעות מטופלות
+- **HD01SoU30** (טקסט מלא, 104.4 קB): דוח ועדת הרווחה על prop 2025/26:201 — פרטים מלאים של רפורמת הרווחה, 5 סייגים
+- **HD01SoU29, HD01JuU43, HD01FiU38**: מטא-נתונים מאומתים
+- **ניתוחים מקבילים**: הצעות חוק, דוחות ועדה, הצעות, שאילתות (כולן 2026-05-20)
+- **דופק קודם**: analysis/daily/2026-05-18/realtime-pulse/ (הקשר רציפות)
+- **הקשר קרן המטבע הבינלאומית**: WEO-2026-04 (ישן חודש אחד, עדכני)
+
+*אמינות: A2 — אמינות גבוהה ביותר (פרסומים רשמיים של הרייקסדאג, לפני הצבעה)*  
+*מגבלה: תוצאות הצבעה בפועל בשעה 16:00 ממתינות — הניתוח מנבא תוצאה על בסיס עמדות מפלגות מתועדות והמלצות ועדה*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_ja.md -->
+
+**記事日付**: 2026-05-20  
+**記事タイプ**: realtime-pulse  
+**議会会期**: 2025/26  
+**信頼度レベル**: A2（高信頼、直接文書証拠；投票は16:00待ち）  
+**分類**: 公開  
+
+---
+
+### 🎯 BLUF
+
+スウェーデンのリクスダーグは本日、2022年〜2026年任期において最も憲法的に重大な立法について投票を行います。三要素憲法改正（bet HD01KU34、KU、prop 2025/26:78）は中絶権を統治形式（Regeringsformen）に明記するものであり、M、SD、S、KD、Lが異例の超党派超多数で支持しています。同じ午後、リクスダーグは政府の最も論争的な内政改革を採択します：福祉給付上限（bidragstak）と活動要件（SoU29/30、props 2025/26:200-201）で、S、V、C、MPは全面反対しています。2026年9月13日の選挙まで116日という状況で、本日の採決は政府の遺産とキャンペーンの戦線を決定づけます。[信頼度：A2 · 委員会文書確実；投票結果待ち]
+
+**このブリーフィングが支援する三つの決定**:
+1. **編集上の決定**: KU34憲法的中絶権を見出しとして始める — これは最も歴史的に重大であり、最も広い連立支持があり、メディア報道を支配するでしょう。*vilande*メカニズム（9月選挙後の第2読会が必要）はこの話に組み込まれた選挙的側面を与えます。
+2. **リスク監視**: SoU30 bidragstakの自治体実施を追跡する — 2026年7月1日から(42日間)の医師証明書要件は極めてタイトなスケジュールを生み出し、選挙日前に実施失敗を引き起こす可能性があります。
+3. **前向き起点**: KU34憲法的中絶権の第2読会についての各政党の投票後声明を監視する — 各政党の賛否の公約は決定的な選挙立場となります。
+
+---
+
+### 主要動向
+
+2026年5月20日は議会任期中のリクスダーグで最も重大な本会議日です。同日午後16:00、スウェーデンは：
+
+1. **中絶権を憲法に明記するための投票** — 生殖権をRegeringsformenに組み込むための2回必要な投票（vilande）の第1回目で、異例のM+SD+S+KD+L多数（349議席中〜260〜280）に支持されています。第2回最終批准は2026年9月選挙後にのみ可能で、本日の結果を選挙前の重要な憲法的瞬間とします。
+
+2. **数年来最も論争的な内政改革の採択** — 生活保護受給者への福祉給付上限と活動要件（SoU29/30）がS、V、C、MPの一致した反対（5つの明示的留保）を押し切って採択されます。改革は合法的在留者に生活扶助を限定し、7月からの医師証明書を要求し、大家族向けの給付に上限を設けます。
+
+3. **名誉犯罪立法の強化** — JuU43が広い超党派支持を得て採択され、「女性安全パッケージ」（KU34の中絶権とともに）を完成させます。政府は選挙前の物語でこれを活用するでしょう。
+
+**憲法的構造**: KU34の三要素設計は中絶権と犯罪組織の結社の自由の制限と、スウェーデンの重要な利益に対する罪で有罪とされた二重国籍者の国籍剥奪を組み合わせています。このパッケージングはSDの憲法的中絶権保護への熱心な支持を確保しました — 歴史的正常化の一歩 — 一方でSDの核となる安全保障要求を憲法文に組み込みました。V、C、MPは中絶以外の要素に留保を申し立てました。
+
+**選挙的賭け**: 2026年9月13日まで116日。本日の投票はキャンペーンラインを引きます：政府は「憲法的に拡大された権利＋福祉改革」と主張し；野党は「残酷な福祉削減」と反論し；viladeメカニズムは各政党の第2読会への公約を決定的な選挙問題にします。
+
+---
+
+### 優先度別動向
+
+1. **KU34 vilande投票** — 憲法的中絶権、第1読会。超党派多数（M+SD+S+KD+L）。*歴史的節目*。
+2. **SoU30 bidragstak採択** — S、V、C、MPから5つの留保。最も論争的な内政立法。
+3. **SoU29活動要件採択** — 生活保護受給者への活動義務。一致した野党。
+4. **JuU43名誉犯罪** — 名誉犯罪立法の超党派強化。
+5. **EU委員会FAC貿易**（09:00）— 中東貿易への影響についてのDousa。
+
+---
+
+### 選挙文脈（2026-09-13まで116日）
+
+*vilande*メカニズムは2026年9月を選挙の中に埋め込まれた憲法的国民投票に変えます：「スウェーデンの憲法的中絶権の第2読会に賛成投票しますか？」すべての政党がこの問いに直面します。Sはイエスに公約しています。VとMPは結社の自由と国籍の要素に留保があります — 左翼主導の政府が形成される場合、選挙後に再交渉圧力の可能性を生み出します。
+
+福祉改革は2番目の決定的な選挙問題を加えます：bidragstakと活動要件は明確な社会契約の選択を生み出します — 北欧普遍的福祉対北欧活動化モデル。Sは福祉の回復を訴えてキャンペーンを行うでしょう；政府は責任ある活動化政策として擁護するでしょう。
+
+---
+
+### 情報源の根拠
+
+- **HD01KU34**（全文、105.8KB）：prop 2025/26:78に関する憲法委員会報告 — 完全な委員会勧告、政党立場、7つの留保、すべての動議処理
+- **HD01SoU30**（全文、104.4KB）：prop 2025/26:201に関する社会委員会報告 — 福祉改革の完全詳細、5つの留保
+- **HD01SoU29、HD01JuU43、HD01FiU38**：メタデータ確認済み
+- **並行分析**: 提案、委員会報告、動議、質問（すべて2026-05-20）
+- **前回パルス**: analysis/daily/2026-05-18/realtime-pulse/（継続性文脈）
+- **IMF文脈**: WEO-2026-04（1ヶ月前、最新）
+
+*信頼性: A2 — 最高の信頼性（公式リクスダーグ出版物、投票前）*  
+*限界: 実際の16:00投票結果待ち — 分析は文書化された政党立場と委員会勧告に基づく結果を予測*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_ko.md -->
+
+**기사 날짜**: 2026-05-20  
+**기사 유형**: realtime-pulse  
+**의회 회기**: 2025/26  
+**신뢰 수준**: A2 (높은 신뢰, 직접 문서 증거; 투표 16:00 대기)  
+**분류**: 공개  
+
+---
+
+### 🎯 BLUF
+
+스웨덴 릭스다그는 오늘 2022-2026 임기 중 헌법적으로 가장 중요한 입법에 대해 투표합니다. 세 가지 요소로 구성된 헌법 개정안(bet HD01KU34, KU, prop 2025/26:78)은 낙태권을 통치 형식(Regeringsformen)에 명기하며, M, SD, S, KD, L이 이례적인 초당파 초다수로 지지하고 있습니다. 같은 오후, 릭스다그는 정부의 가장 논란 많은 국내 개혁을 채택합니다: S, V, C, MP의 전면 반대에 맞선 복지 급여 상한(bidragstak)과 활동 요건(SoU29/30, props 2025/26:200-201). 2026년 9월 13일 선거까지 116일이 남은 가운데, 오늘의 투표는 정부의 유산과 선거 캠페인의 전선을 규정합니다. [신뢰도: A2 · 위원회 문서 확실; 투표 결과 대기]
+
+**이 브리핑이 지원하는 세 가지 결정**:
+1. **편집 결정**: KU34 헌법적 낙태권을 헤드라인으로 시작 — 역사적으로 가장 중요하고, 연립 지지가 가장 넓으며, 언론 보도를 지배할 것입니다. *vilande* 메커니즘(9월 선거 후 2차 독회 필요)은 이 이야기에 내재된 선거 차원을 부여합니다.
+2. **위험 모니터링**: SoU30 bidragstak 지자체 시행 추적 — 2026년 7월 1일부터 의사 진단서 요건(42일)은 선거일 전 시행 실패를 초래할 수 있는 극도로 촉박한 일정을 만듭니다.
+3. **전향적 트리거**: KU34 헌법적 낙태권 2차 독회에 대한 투표 후 정당 성명 모니터링 — 각 정당의 찬반 공약이 결정적인 선거 입장이 됩니다.
+
+---
+
+### 주요 동향
+
+2026년 5월 20일은 의회 임기 중 릭스다그의 가장 결정적인 본회의 날입니다. 같은 날 오후 16:00, 스웨덴은:
+
+1. **낙태권 헌법 명기 투표** — 생식권을 Regeringsformen에 편입하기 위한 두 번의 필수 투표(vilande) 중 첫 번째로, 이례적인 M+SD+S+KD+L 다수(349석 중 ~260-280)의 지지를 받습니다. 두 번째 최종 비준은 2026년 9월 선거 이후에만 가능하며, 오늘의 결과를 선거 전 핵심 헌법적 순간으로 만듭니다.
+
+2. **수년간 가장 논란 많은 국내 개혁 채택** — 사회 부조 수급자에 대한 복지 급여 상한과 활동 요건(SoU29/30)이 S, V, C, MP의 공동 반대(5개의 명시적 유보)를 극복하고 채택됩니다. 개혁은 생계급여를 합법적 체류자로 제한하고, 7월부터 의사 진단서를 요구하며, 대가족 급여에 상한을 둡니다.
+
+3. **명예 범죄 입법 강화** — JuU43이 광범위한 초당파 지지로 채택되어 "여성 안전 패키지"(KU34 낙태권 포함)를 완성하며, 정부는 선거 전 서사에서 이를 활용할 것입니다.
+
+**헌법적 구조**: KU34의 3요소 설계는 낙태권을 범죄 조직의 결사의 자유 제한 및 스웨덴의 핵심 이익에 반하는 범죄로 유죄 판결을 받은 이중 국적자의 국적 박탈과 묶었습니다. 이 패키징은 SD의 헌법적 낙태권 보호에 대한 열정적 지지를 확보했습니다 — 역사적 정상화 단계 — SD의 핵심 안보 요구가 헌법 문에 반영되었습니다. V, C, MP는 낙태 이외 요소에 유보를 제출했습니다.
+
+**선거적 이해관계**: 2026년 9월 13일까지 116일. 오늘의 투표는 캠페인 라인을 그립니다: 정부는 "헌법적으로 확대된 권리 + 복지 개혁"을 주장하고; 야당은 "잔인한 복지 삭감"으로 반격하며; vilande 메커니즘은 각 정당의 2차 독회에 대한 공약을 결정적인 선거 문제로 만듭니다.
+
+---
+
+### 우선 순위 동향
+
+1. **KU34 vilande 투표** — 헌법적 낙태권, 1차 독회. 초당파 다수(M+SD+S+KD+L). *역사적 이정표*.
+2. **SoU30 bidragstak 채택** — S, V, C, MP에서 5개 유보. 가장 논란 많은 국내 입법.
+3. **SoU29 활동 요건 채택** — 생계급여 수급자 활동 의무. 공동 반대.
+4. **JuU43 명예 범죄** — 명예 범죄 입법 초당파 강화.
+5. **EU 위원회 FAC 무역**(09:00) — 중동 무역 영향에 관한 Dousa.
+
+---
+
+### 선거 맥락 (2026-09-13까지 116일)
+
+*vilande* 메커니즘은 2026년 9월을 선거 안에 내재된 헌법적 국민투표로 변환합니다: "스웨덴 헌법적 낙태권의 2차 독회에 찬성 투표하시겠습니까?" 모든 정당이 이 질문에 직면합니다. S는 예스에 공약되었습니다. V와 MP는 결사의 자유와 국적 요소에 유보가 있습니다 — 좌파 주도 정부가 형성될 경우 선거 후 재협상 압력이 발생할 가능성이 있습니다.
+
+복지 개혁은 두 번째 결정적 선거 문제를 추가합니다: bidragstak과 활동 요건은 명확한 사회 계약 선택을 만듭니다 — 북유럽 보편적 복지 대 북유럽 활성화 모델. S는 복지 회복을 위해 선거 운동을 벌일 것입니다; 정부는 책임 있는 활성화 정책으로 옹호할 것입니다.
+
+---
+
+### 출처 근거
+
+- **HD01KU34** (전문, 105.8kB): prop 2025/26:78에 관한 헌법위원회 보고서 — 완전한 위원회 권고, 정당 입장, 7개 유보, 모든 동의 처리
+- **HD01SoU30** (전문, 104.4kB): prop 2025/26:201에 관한 사회위원회 보고서 — 복지 개혁 완전 세부사항, 5개 유보
+- **HD01SoU29, HD01JuU43, HD01FiU38**: 메타데이터 확인
+- **병행 분석**: 제안, 위원회 보고서, 동의, 질의(모두 2026-05-20)
+- **이전 펄스**: analysis/daily/2026-05-18/realtime-pulse/ (연속성 맥락)
+- **IMF 맥락**: WEO-2026-04 (1개월 경과, 최신)
+
+*신뢰성: A2 — 최고 신뢰성(공식 릭스다그 출판물, 투표 전)*  
+*한계: 실제 16:00 투표 결과 대기 — 분석은 문서화된 정당 입장과 위원회 권고에 기반한 결과 예측*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_nl.md -->
+
+**Artikeldatum**: 2026-05-20  
+**Artikeltype**: realtime-pulse  
+**Rijksdagsessie**: 2025/26  
+**Vertrouwensniveau**: A2 (hoog vertrouwen, direct documentair bewijs; stemming verwacht om 16:00)  
+**Classificatie**: OPENBAAR  
+
+---
+
+### 🎯 BLUF
+
+De Zweedse Riksdag stemt vandaag over de constitutioneel meest significante wetgeving van de periode 2022-2026: een driedelig grondwettelijk amendement (bet HD01KU34, KU, prop 2025/26:78) dat het recht op abortus verankert in de Regeringsformen — gesteund door M, SD, S, KD en L in een ongebruikelijke transpartijdige supermeerderheid. Diezelfde middag neemt de Riksdag de meest betwiste binnenlandse hervorming van de regering aan: een uitkeringsplafond (bidragstak) en activiteitsverplichtingen (SoU29/30, props 2025/26:200-201) tegen de volledige oppositie van S, V, C en MP. Met 116 dagen tot de verkiezingen van 13 september 2026 bepalen de stemmingen van vandaag zowel het erfgoed van de regering als de campagnefronten. [Vertrouwen: A2 · commissiedocumentatie zeker; stemresultaten verwacht]
+
+**Drie beslissingen die dit briefing ondersteunt**:
+1. **Redactionele beslissing**: Openen met KU34 grondwettelijk abortusrecht als kop — het is historisch het meest significant, heeft de breedste coalitiesteun en zal de mediadekking domineren. Het *vilande-mechanisme* (tweede lezing vereist na de septemberverkiezingen) geeft het verhaal een ingebouwde verkiezingsdimensie.
+2. **Risicomonitoring**: SoU30 bidragstak gemeentelijke implementatie volgen — de eis van een medisch attest vanaf 1 juli 2026 (42 dagen) creëert een extreem krap tijdschema dat implementatiefouten vóór de verkiezingsdag kan veroorzaken.
+3. **Vooruitblikkende trigger**: Partijverklaringen na de stemming over toezeggingen voor de tweede lezing van KU34 monitoren — het ja/nee-engagement van elke partij wordt een bepalend verkiezingsstandpunt.
+
+---
+
+### Kernhoogtepunten
+
+20 mei 2026 is de meest bepalende zittingsdag van de Riksdag tijdens de parlementaire periode. Diezelfde middag om 16:00 uur is Zweden:
+
+1. **Bezig met het grondwettelijk verankeren van het abortusrecht** — de eerste van twee vereiste stemmingen (vilande) om het reproductieve recht op te nemen in de Regeringsformen, gesteund door een buitengewone M+SD+S+KD+L-meerderheid (~260-280 van de 349 mandaten). De tweede en definitieve ratificatie kan pas plaatsvinden na de verkiezingen van september 2026, waardoor het resultaat van vandaag het beslissende constitutionele moment vóór de verkiezingen is.
+
+2. **Bezig met het aannemen van de meest betwiste binnenlandse hervorming in jaren** — uitkeringsplafond en activiteitsverplichtingen voor uitkeringsgerechtigden (SoU29/30) worden aangenomen tegen de verenigde oppositie van S, V, C en MP (vijf expliciete voorbehouden). De hervormingen beperken bijstandsuitkeringen tot legaal verblijvenden, vereisen medische attesten vanaf juli en beperken uitkeringen voor grotere huishoudens.
+
+3. **Bezig met het versterken van de eerschendewetgeving** — JuU43 wordt aangenomen met brede transpartijdige steun, wat een "vrouwenveiligheidspakket" voltooit (naast het abortusrecht KU34) dat de regering zal inzetten in haar pre-electorale narratief.
+
+**De constitutionele architectuur**: Het driedelige ontwerp van KU34 bundelt het abortusrecht MET beperkingen op de vrijheid van vereniging van criminele organisaties EN de intrekking van het staatsburgerschap voor personen met een dubbele nationaliteit die zijn veroordeeld voor misdaden tegen Zwedens vitale belangen. Deze bundeling verzekerde SDs enthousiaste steun voor de grondwettelijke bescherming van het abortusrecht — een historische normalisatiestap — terwijl SDs kernsecurityeisen in de constitutionele tekst werden verankerd. V, C en MP dienden voorbehouden in op de niet-abortus-gerelateerde componenten.
+
+**De verkiezingsinzetten**: 116 dagen tot 13 september 2026. De stemmingen van vandaag trekken campagnegrenzen: de regering beweert "grondwettelijk uitgebreide rechten + sociale hervorming"; de oppositie pareert met "wrede sociale bezuinigingen"; het vilande-mechanisme maakt het engagement van elke partij voor de tweede lezing tot een bepalende verkiezingsvraag.
+
+---
+
+### Geprioriseerde ontwikkelingen
+
+1. **KU34 vilande-stemming** — grondwettelijk abortusrecht, eerste lezing. Transpartijdige meerderheid (M+SD+S+KD+L). *Historische mijlpaal*.
+2. **SoU30 bidragstak aangenomen** — vijf voorbehouden van S, V, C, MP. Meest betwiste binnenlandse wetgeving.
+3. **SoU29 activiteitsverplichtingen aangenomen** — activeringsplichten voor uitkeringsgerechtigden. verenigde oppositie.
+4. **JuU43 eerschende** — transpartijdige versterking van de eerschendewetgeving.
+5. **EU-commissie FAC Handel** (09:00) — Dousa over handelsimpact in het Midden-Oosten.
+
+---
+
+### Verkiezingscontext (116 dagen tot 2026-09-13)
+
+Het *vilande-mechanisme* transformeert september 2026 in een constitutioneel referendum ingebed in de verkiezingen: "Stemt u voor de tweede lezing van het Zweedse grondwettelijke abortusrecht?" Elke partij wordt met deze vraag geconfronteerd. S is gebonden aan JA. V en MP hebben voorbehouden bij de vrijheid-van-vereniging- en staatsburgerschapscomponenten — wat potentiële heronderhandelingsdruk na de verkiezingen creëert als er een links-geleid kabinet wordt gevormd.
+
+De sociale hervorming voegt een tweede bepalende verkiezingsvraag toe: bidragstak en activiteitsverplichtingen creëren een duidelijke socialecontractkeuze — het Noordse universele welzijnsmodel versus het Noordse activeringsmodel. S zal campagnevoeren voor het herstel van uitkeringen; de regering verdedigt het als verantwoord activeringsbeleid.
+
+---
+
+### Documentatiesbasis
+
+- **HD01KU34** (volledige tekst, 105,8 kB): Rapport Constitutioneel Comité over prop 2025/26:78 — volledige commissieaanbeveling, partijposities, 7 voorbehouden, alle moties behandeld
+- **HD01SoU30** (volledige tekst, 104,4 kB): Rapport Sociaal Comité over prop 2025/26:201 — volledige details van de sociale hervorming, 5 voorbehouden
+- **HD01SoU29, HD01JuU43, HD01FiU38**: Metadata bevestigd
+- **Parallelle analyses**: proposities, commissierapporten, moties, interpellaties (alle van 2026-05-20)
+- **Vorige puls**: analysis/daily/2026-05-18/realtime-pulse/ (continuiteitcontext)
+- **IMF-context**: WEO-2026-04 (1 maand oud, actueel)
+
+*Betrouwbaarheid: A2 — hoogst mogelijke betrouwbaarheid (officiële Riksdag-publicaties, vóór stemming)*  
+*Beperking: Werkelijke stemresultaten om 16:00 nog in afwachting — de analyse voorspelt de uitkomst op basis van gedocumenteerde partijposities en commissieaanbevelingen*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_no.md -->
+
+**Artikkeldato**: 2026-05-20  
+**Artikkeltype**: realtime-pulse  
+**Riksmøte**: 2025/26  
+**Konfidensnivå**: A2 (høy tillit, direkte dokumentarbevis; avstemning avventes kl. 16:00)  
+**Klassifisering**: OFFENTLIG  
+
+---
+
+### 🎯 BLUF
+
+Sveriges Riksdag stemmer i dag over den forfatningsmessig mest betydningsfulle lovgivningen i perioden 2022–2026: en trekomponents grunnlovsendring (bet HD01KU34, KU, prop 2025/26:78) som grunnlovsfester retten til abort i Regeringsformen — støttet av M, SD, S, KD og L i et uvanlig tverrblokkflertall. Samme ettermiddag vedtar Riksdagen regjeringens mest omstridte innenrikspolitiske reform: et velferdsstønadstak (bidragstak) og aktivitetskrav (SoU29/30, props 2025/26:200-201) mot samlet opposisjon fra S, V, C og MP. Med 116 dager til valget 13. september 2026 definerer dagens votering både regjeringens arv og kampanjens frontlinjer. [Konfidens: A2 · utvalgsunderlag sikkert; voteringsresultater avventes]
+
+**Tre beslutninger dette brifingen støtter**:
+1. **Redaksjonell beslutning**: Åpne med KU34 grunnlovssikret aborträtt som overskrift — det er historisk mest betydningsfullt, har bredest koalisjonsoppslutning og vil dominere mediedekningen. *Hvilende-ordningen* (andre gangs behandling kreves etter septembervalget) gir saken en innebygd valgdimensjon.
+2. **Risikoovervåking**: Følg SoU30 bidragstak kommunal implementering — kravet om legeattest fra 1. juli 2026 (42 dager) skaper en ekstremt presset tidsplan som kan generere implementeringsfeil før valgdagen.
+3. **Fremadrettet utløser**: Overvåk partiers uttalelser etter votering om forpliktelser vedrørende andre gangs behandling av KU34 — hvert partis ja/nei-forpliktelse blir et definerende valstandpunkt.
+
+---
+
+### Sentrale hendelser
+
+20. mai 2026 er Riksdagens mest avgjørende møtedag i parlamentsperioden. Samme ettermiddag klokken 16:00:
+
+1. **Grunnlovsfester abortrettigheten** — den første av to påkrevde voteringer (vilande) for å innskrives reproduksjonsretten i Regeringsformen, støttet av et ekstraordinært M+SD+S+KD+L-flertall (~260–280 av 349 mandater). Den andre og endelige ratifiseringen kan bare finne sted etter valget i september 2026, noe som gjør dagens resultat til det avgjørende forfatningsmessige øyeblikket før valget.
+
+2. **Vedtar den mest omstridte innenrikspolitiske reformen på mange år** — velferdsstønadstak og aktivitetskrav for sosialhjelpmottakere (SoU29/30) vedtas mot samlet opposisjon fra S, V, C og MP (fem uttrykkelige reservasjoner). Reformene begrenser forsørgingsstøtten til lovlig opphold, krever legeattest fra 1. juli og setter tak for større husholdninger.
+
+3. **Styrker æresforbrytelseslovgivningen** — JuU43 vedtas med bred tverrblokkstøtte og fullfører en "trygghetspakke for kvinner" (sammen med KU34:s aborträtt) som regjeringen vil benytte i sin valgkampanje.
+
+**Den forfatningsmessige arkitekturen**: KU34:s tredelte design kombinerer abortrettigheten MED begrensninger av kriminelle organisasjoners organisasjonsfrihet OG tilbakekalling av statsborgerskap for dobbelt statsborgere dømt for forbrytelser mot Sveriges vitale interesser. Denne pakken sikret SDs entusiastiske støtte til grunnlovssikret aborträtt — et historisk normaliseringsgrep — mens SDs kjernesikkerhetskrav ble nedfelt i grunnlovsteksten. V, C og MP innga reservasjoner mot de ikke-abortrelaterte komponentene.
+
+**Valgstakene**: 116 dager til 13. september 2026. Dagens voteringer trekker opp kampanjelinjene: regjeringen hevder "grunnlovsutvidede rettigheter + velferdsreform"; opposisjonen svarer "grusomme velferdskutt"; hvilende-ordningen gjør hvert partis forpliktelse til andre gangs behandling til et definerende valgspørsmål.
+
+---
+
+### Prioriterte utviklinger
+
+1. **KU34 hvilende-votering** — grunnlovssikret aborträtt, første behandling. Tverrblokkflertall (M+SD+S+KD+L). *Historisk milepæl*.
+2. **SoU30 bidragstak vedtatt** — fem reservasjoner fra S, V, C, MP. Den mest omstridte innenrikslovgivningen.
+3. **SoU29 aktivitetskrav vedtatt** — aktivitetskrav for sosialhjelpmottakere. Samlet opposisjon.
+4. **JuU43 æresforbrytelse** — tverrblokkstyrking av æresforbrytelseslovgivningen.
+5. **EU-nämnden FAC Handel** (09:00) — Dousa om Midtøstens handelskonsekvenser.
+
+---
+
+### Valgkontekst (116 dager til 2026-09-13)
+
+*Hvilende-ordningen* forvandler september 2026 til en forfatningsmessig folkeavstemning innebygd i valget: "Stemmer du for andre gangs behandling av Sveriges grunnlovssikrede aborträtt?" Hvert parti møter dette spørsmålet. S er forpliktet til JA. V og MP har reservasjoner mot organisasjonsfrihets- og statsborgerkomponentene — noe som skaper potensielt forhandlingspress etter valget dersom en venstreorientert regjering dannes.
+
+Velferdsreformen legger til et annet definerende valgspørsmål: bidragstak og aktivitetskrav skaper et tydelig sosialkontrakt-valg — nordisk universell velferd mot nordisk aktiveringsmodell. S vil kampanjere for å gjenopprette velferd; regjeringen forsvarer det som ansvarlig aktiveringspolitikk.
+
+---
+
+### Kildeunderlag
+
+- **HD01KU34** (fulltekst, 105,8 kB): Konstitusjonskomiteen betenkninig om prop 2025/26:78 — fullstendig komitéinnstilling, partiposisjoner, 7 reservasjoner, alle motioner behandlet
+- **HD01SoU30** (fulltekst, 104,4 kB): Sosialkomiteens betenkning om prop 2025/26:201 — fullstendige detaljer om velferdsreformen, 5 reservasjoner
+- **HD01SoU29, HD01JuU43, HD01FiU38**: Metadata bekreftet
+- **Parallelle analyser**: proposisjoner, komitébetenkninger, motioner, interpellasjoner (alle 2026-05-20)
+- **Tidligere puls**: analysis/daily/2026-05-18/realtime-pulse/ (kontinuitetskontekst)
+- **IMF-kontekst**: WEO-2026-04 (1 måneds alder, aktuell)
+
+*Pålitelighet: A2 — høyest mulig pålitelighet (offisielle Riksdag-publikasjoner, før votering)*  
+*Begrensning: Faktiske voteringsresultater kl. 16:00 avventes — analysen forutsier utfall basert på dokumenterte partiposisjoner og komitéinnstillinger*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_sv.md -->
+
+**Artikeldatum**: 2026-05-20  
+**Artikeltyp**: realtime-pulse  
+
+**Konfidensnivå**: A2 (hög säkerhet, direkt dokumentationsbevis; votering avvaktas 16:00)  
+**Klassificering**: OFFENTLIG  
+
+---
+
+### 🎯 BLUF
+
+Sveriges riksdag röstar idag om den konstitutionellt mest betydelsefulla lagstiftningen under mandatperioden 2022–2026: en trekomponents grundlagsändring (bet HD01KU34, KU, prop 2025/26:78) som inskrivet aborträtten i Regeringsformen — stödd av M, SD, S, KD och L i en ovanlig tvärblockmajoritet. Samma eftermiddag antar Riksdagen regeringens mest omtvistade inrikespolitiska reform: ett bidragstak och aktivitetskrav (SoU29/30, props 2025/26:200-201) mot full opposition från S, V, C och MP. Med 116 dagar kvar till valet den 13 september 2026 sätter dagens omröstningar ramen för både regeringens arv och kampanjens slagfält. [Konfidensgrad: A2 · utskottsdokumentation säker; röstresultat avvaktas]
+
+**Tre beslut som detta briefing stöder**:
+1. **Redaktionellt beslut**: Inled med KU34 grundlagsreglerad aborträtt som rubrik — det är historiskt mest betydelsefullt, har bredast koalitionsstöd och kommer att dominera mediebevakningen. *Vilandeinstitutet* (andra läsning krävs efter septembervalet) ger historien en inbyggd valkomponent.
+2. **Riskbevakning**: Följ SoU30 bidragstak kommunal implementering — kravet på läkarintyg från den 1 juli 2026 (42 dagar) skapar en extremt pressad tidsplan som kan generera implementeringsfel före valdagen.
+3. **Framåtutlösare**: Bevaka partiers uttalanden efter omröstningen om åtaganden rörande andra läsningen av KU34 grundlagsreglerad aborträtt — varje partis ja/nej-åtagande blir en definierande valståndpunkt.
+
+---
+
+### Underrättelsedokumentation
+
+Den 20 maj 2026 är Riksdagens mest avgörande sammanträdesdag under parlamentsperioden. Samma eftermiddag klockan 16:00 är Sverige:
+
+1. **På väg att grundlagsskydda aborträtten** — den första av två obligatoriska omröstningar (vilande) för att skriva in reproduktionsrätten i Regeringsformen, stödd av en extraordinär M+SD+S+KD+L-majoritet (~260–280 av 349 mandat). Den andra och slutgiltiga ratificeringen kan endast äga rum efter valet i september 2026, vilket gör dagens resultat till det avgörande konstitutionella momentet inför valet.
+
+2. **På väg att anta den mest kontroversiella inrikespolitiska reformen på år** — bidrags­tak och aktivitetskrav för försörjningsstödsmottagare (SoU29/30) antas mot samlad opposition från S, V, C och MP (fem uttryckliga reservationer). Reformerna begränsar försörjningsstödet till lagligen vistande personer, kräver läkarintyg från och med den 1 juli och sätter ett tak för hushåll med fler barn.
+
+3. **På väg att stärka hedersbrottslagstiftningen** — JuU43 antas med brett tvärblockat stöd, vilket fullbordar ett "trygghetspaket för kvinnor" (tillsammans med KU34:s aborträtt) som regeringen kommer att använda i sin valrörelseberättelse.
+
+**Den konstitutionella arkitekturen**: KU34:s trekompomentkonstruktion samlar aborträtten MED begränsningar av kriminella organisationers möjlighet till samröre OCH medborgarskapsåterkallelse för dubbla medborgare dömda för brott mot Sveriges vitala intressen. Denna paketering säkrade SD:s entusiastiska stöd för konstitutionellt grundlagsskyddad aborträtt — ett historiskt normaliseringssteg — samtidigt som SD:s kärnkrav på säkerhetslagstiftning inarbetades i grundlagstexten. V, C och MP lämnade reservationer mot de icke-abortrelaterade komponenterna.
+
+**Valinsatserna**: 116 dagar återstår till den 13 september 2026. Dagens omröstningar drar upp kampanjlinjerna: regeringen hävdar "grundlagsutvidgade rättigheter + välfärdsreform"; oppositionen kontrar "grymma välfärds­skärningar"; vilandeinstitutet gör varje partis åtagande om andra läsningen till en definierande valfråga.
+
+---
+
+### Prioriterade händelser
+
+1. **KU34 vilandeomröstning** — grundlagsreglerad aborträtt, första läsningen. Tvärblockmajoritet (M+SD+S+KD+L). *Historisk milstolpe*.
+2. **SoU30 bidragstak antaget** — fem reservationer från S, V, C, MP. Den mest omtvistade inrikespolitiska lagstiftningen.
+3. **SoU29 aktivitetskrav antaget** — krav på aktivitet för försörjningsstödsmottagare. Samlad opposition.
+4. **JuU43 hedersbrott** — tvärblockad stärkning av hedersbrottslagstiftningen.
+5. **EU-nämnden FAC Handel** (09:00) — Dousa om Mellanösterns handelskonsekvenser.
+
+---
+
+### Valkontext (116 dagar till 2026-09-13)
+
+*Vilandeinstitutet* förvandlar september 2026 till ett konstitutionellt referendum inbäddat i valet: "Röstar du för andra läsningen av Sveriges grundlagsreglerade aborträtt?" Varje parti möter denna fråga. S är bundet till JA. V och MP har reservationer mot föreningsfrihets- och medborgarskapskomponenterna — vilket skapar potentiella omförhandlingstryck efter valet om en vänsterledd regering bildas.
+
+Välfärdsreformen tillför en andra definierande valfråga: bidrags­tak och aktivitetskrav skapar ett tydligt socialkontrakt­val — nordisk universell välfärd kontra nordisk aktiveringsmodell. S kommer att driva på återställning av välfärden; regeringen försvarar det som ansvarsfull aktiveringspolitik.
+
+---
+
+### Källunderlag
+
+- **HD01KU34** (fulltext, 105,8 kB): Konstitutionsutskottets betänkande om prop 2025/26:78 — fullständig utskottsrekommendation, partipositioner, 7 reservationer, samtliga motioner behandlade
+- **HD01SoU30** (fulltext, 104,4 kB): Socialutskottets betänkande om prop 2025/26:201 — fullständiga uppgifter om välfärdsreformen, 5 reservationer
+- **HD01SoU29, HD01JuU43, HD01FiU38**: Metadata bekräftad
+- **Parallella analyser**: propositioner, utskottsbetänkanden, motioner, interpellationer (alla 2026-05-20)
+- **Föregående puls**: analysis/daily/2026-05-18/realtime-pulse/ (kontinuitetskontext)
+- **IMF-kontext**: WEO-2026-04 (1 månads ålder, aktuell)
+
+*Tillförlitlighet: A2 — högsta möjliga tillförlitlighet (officiella riksdagspublikationer, före omröstning)*  
+*Begränsning: Faktiska röstresultat kl. 16:00 avvaktas — analysen förutsäger utfall utifrån dokumenterade partipositioner och utskottsrekommendationer*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_zh.md -->
+
+**文章日期**：2026-05-20  
+**文章类型**：realtime-pulse  
+**议会会期**：2025/26  
+**置信级别**：A2（高置信度，直接文件证据；投票待定至16:00）  
+**分类**：公开  
+
+---
+
+### 🎯 BLUF
+
+瑞典议会（Riksdag）今日就2022-2026届任期内宪法意义最为重大的立法进行投票：一项三要素宪法修正案（bet HD01KU34，KU，prop 2025/26:78），将堕胎权载入《政府形式法》（Regeringsformen）——由M、SD、S、KD和L组成的罕见跨党派超级多数联合支持。同日下午，议会通过政府最具争议的国内改革：福利待遇上限（bidragstak）和活动要求（SoU29/30，props 2025/26:200-201），遭到S、V、C和MP的全面反对。距2026年9月13日大选还有116天，今日投票将决定政府的历史遗产和竞选战线。[置信度：A2 · 委员会文件确定；投票结果待定]
+
+**本简报支持的三项决策**：
+1. **编辑决策**：以KU34宪法性堕胎权作为标题——这在历史上最具意义，联合支持最广泛，将主导媒体报道。*vilande*机制（9月选举后需要第二次投票）赋予这一报道内在的选举维度。
+2. **风险监测**：跟踪SoU30 bidragstak的市政实施——2026年7月1日起的医疗证明要求（42天）造成极为紧迫的时间表，可能在选举日前引发实施失败。
+3. **前瞻性触发因素**：监测投票后各党就KU34第二次投票承诺的声明——每个政党的是/否承诺将成为决定性的选举立场。
+
+---
+
+### 关键动态
+
+2026年5月20日是议会任期内议会最具决定性的会议日。同日下午16:00，瑞典：
+
+1. **投票将堕胎权写入宪法**——将生育权纳入Regeringsformen所需两次投票（vilande）的第一次，获得M+SD+S+KD+L异常多数支持（349个议席中约260-280个）。第二次也是最终批准只能在2026年9月选举后进行，使今天的结果成为选举前最关键的宪法时刻。
+
+2. **通过多年来最具争议的国内改革**——社会救助受领者的福利待遇上限和活动要求（SoU29/30）在S、V、C和MP联合反对下（五项明确保留意见）获得通过。改革将生活补助限于合法居留者，要求7月起提供医疗证明，并为大家庭设置上限。
+
+3. **强化荣誉犯罪立法**——JuU43获得广泛跨党派支持通过，完成"妇女安全套餐"（与KU34堕胎权一起），政府将在选前叙事中加以部署。
+
+**宪法架构**：KU34的三要素设计将堕胎权与限制犯罪组织结社自由以及对被判犯有危害瑞典重大利益罪行的双重国籍者撤销国籍捆绑在一起。这一捆绑确保了SD对堕胎权宪法保护的热情支持——历史性的正常化步骤——同时将SD的核心安全要求嵌入宪法文本。V、C和MP对非堕胎相关条款提出了保留意见。
+
+**选举利益**：距2026年9月13日还有116天。今日投票划定竞选界线：政府声称"宪法上扩大的权利+福利改革"；反对党反驳"残酷的福利削减"；vilande机制使每个政党对第二次投票的承诺成为决定性的选举问题。
+
+---
+
+### 优先动态
+
+1. **KU34 vilande投票**——宪法性堕胎权，第一次投票。跨党派多数（M+SD+S+KD+L）。*历史性里程碑*。
+2. **SoU30 bidragstak通过**——S、V、C、MP提出5项保留意见。最具争议的国内立法。
+3. **SoU29活动要求通过**——对社会救助受领者的活动义务。联合反对。
+4. **JuU43荣誉犯罪**——跨党派加强荣誉犯罪立法。
+5. **欧盟委员会FAC贸易**（09:00）——Dousa就中东贸易影响发言。
+
+---
+
+### 选举背景（距2026-09-13还有116天）
+
+*vilande*机制将2026年9月变成嵌入选举中的宪法性公民投票："你会投票支持瑞典宪法性堕胎权的第二次投票吗？"每个政党都面临这个问题。S承诺投赞成票。V和MP对结社自由和国籍条款有保留——如果左翼领导的政府组成，可能在选举后产生重新谈判压力。
+
+福利改革增加了第二个决定性选举问题：bidragstak和活动要求创造了明确的社会契约选择——北欧普遍福利模式与北欧活动化模式之间的抉择。S将以恢复福利为竞选主题；政府将其辩护为负责任的活动化政策。
+
+---
+
+### 来源依据
+
+- **HD01KU34**（全文，105.8kB）：关于prop 2025/26:78的宪法委员会报告——完整委员会建议、政党立场、7项保留意见、所有动议已处理
+- **HD01SoU30**（全文，104.4kB）：关于prop 2025/26:201的社会委员会报告——福利改革完整细节，5项保留意见
+- **HD01SoU29、HD01JuU43、HD01FiU38**：元数据已确认
+- **并行分析**：提案、委员会报告、动议、质询（均为2026-05-20）
+- **前期脉搏**：analysis/daily/2026-05-18/realtime-pulse/（延续性背景）
+- **IMF背景**：WEO-2026-04（1个月旧，最新）
+
+*可靠性：A2——最高可能可靠性（议会官方出版物，投票前）*  
+*限制：实际16:00投票结果待定——分析基于各党记录在案的立场和委员会建议预测结果*
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
 ## International Context
 <!-- source: international-context.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/international-context.md -->
 
@@ -4067,7 +4995,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 38 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 51 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -4111,6 +5039,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`economic-dimension.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/economic-dimension.md)
 - [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/electoral-implications.md)
 - [`electoral-timeline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/electoral-timeline.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/executive-brief_zh.md)
 - [`international-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/international-context.md)
 - [`key-developments.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/key-developments.md)
 - [`legislative-status-tracker.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/realtime-pulse/legislative-status-tracker.md)

@@ -6,7 +6,7 @@ date: 2026-04-29
 subfolder: evening-analysis
 slug: 2026-04-29-evening-analysis
 source_folder: analysis/daily/2026-04-29/evening-analysis
-generated_at: 2026-05-20T20:11:09.078Z
+generated_at: 2026-05-21T02:19:50.666Z
 language: en
 layout: article
 ---
@@ -102,6 +102,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -1858,13 +1871,758 @@ Sibling analyses from 2026-04-29 ingested:
 - analysis/daily/2026-04-29/interpellations/ — crime-governance nexus dominant
 - analysis/daily/2026-04-29/realtime-pulse/ — live votes confirmed (JuU10, SfU28)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# استخبارات المساء — 29 أبريل 2026: الديمقراطية تحت الضغط
+
+**المؤلف**: جيمس بيثر سورلينغ  
+**التاريخ**: 2026-04-29  
+**التصنيف**: عام — اللائحة العامة لحماية البيانات المادة 9(2)(ه،ز)  
+**الثقة**: عالية [B2]
+
+---
+
+### 🎯 الملخص التنفيذي
+
+أنتجت جلسة Riksdag بتاريخ 29 أبريل 2026 ثلاث إشارات تأكيدية ستشكّل حملة الانتخابات قبل سبتمبر 2026: (1) كسر Centerpartiet مع شركائه الطبيعيين في الائتلاف في تصويت قانون الأسلحة JuU10 — إعادة تمركز سياسي متعمّد قبل خمسة أشهر من الانتخابات؛ (2) اعتُمد قانون الجنسية بدعم الاشتراكيين الديمقراطيين؛ (3) كشفت الاستجوابات عن تغلغل الجريمة المنظمة في مؤسسات الرعاية الاجتماعية.
+
+### قراءة استخباراتية في 60 ثانية
+
+- **JuU10 (قانون الأسلحة الجديد) اعتُمد 16:13**: أصوات الرفض العشرون المتفقة لـ C هي أهم فعل سياسي في اليوم [HDC120260429ap]
+- **SfU28 (الجنسية) اعتُمد 16:21**: صوّتت S بنعم مع كتلة Tidö [HD01SfU28]
+- **الشبكات الإجرامية**: تسلل HVB (HD10454) + اقتصاد إجرامي بـ 352 مليار كرونة (HD10451)
+- **تقارب مخاطر الصين**: ثلاث أدوات برلمانية حول التهديدات الصينية اليوم
+
+### أهم إشارة مستقبلية
+
+رفض C لقانون الأسلحة: تمييز متعمّد أم انحراف لمرة واحدة؟ المراقبة بثقة متوسطة [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[29 أبريل 2026\nتغييرات سياسية رئيسية] --> B[C لا — JuU10\nخروج الكتلة]
+    A --> C[S نعم — SfU28\nانتقال يميني]
+    A --> D[جريمة-دولة\nHVB + 352مليار]
+    A --> E[خطر الصين\n3 أدوات]
+    B --> F[انتخابات 2026\nM+SD يستغلان]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**السياق الاقتصادي (صندوق النقد الدولي WEO أبريل 2026)**: نمو الناتج المحلي الإجمالي +1.8%، الدين العام 34.3% من الناتج المحلي الإجمالي.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+</div>
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-29  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
+**Tillid**: HØJ [B2]
+
+---
+
+### 🎯 Kortfattet resumé
+
+Riksdagens session den 29. april 2026 sendte tre bekræftelsessignaler der vil forme valgkampen op mod september 2026: (1) Centerpartiet brød med sine naturlige koalitionspartnere i vågnafstemningen JuU10, hvilket markerer en bevidst politisk ompositionering fem måneder inden valget; (2) statsborgerskabsloven blev vedtaget med Socialdemokraternes støtte; (3) organiseret kriminalitets infiltration af velfærdsinstitutioner blev afsløret i forespørgsler og underminerer Tidö-koalitionens kernenarrativ om lov og orden.
+
+### 60-sekunders underretningslæsning
+
+- **JuU10 (Ny våbenlov) VEDTAGET 16:13**: Cs 20 enstemmige NEJ-stemmer er dagens mest konsekvensrige politiske handling [HDC120260429ap]
+- **SfU28 (Statsborgerskab) VEDTAGET 16:21**: S stemte JA med Tidö-blokken [HD01SfU28]
+- **Kriminelt netværksafsløring**: HVB-infiltration (HD10454) + 352 mia. SEK kriminel økonomi (HD10451)
+- **Kinarisikokonvergens**: Tre parlamentariske instrumenter om kinesiske trusler i dag
+
+### Vigtigste fremadskuende signal
+
+C's NEJ på våbenlovgivning: bevidst differentiering eller engangsafvigelse? Bevagt med middel konfidens [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[29. april 2026\nVigtige politiske ændringer] --> B[C NEJ — JuU10\nBlokudgang]
+    A --> C[S JA — SfU28\nHøjreflytning]
+    A --> D[Kriminalitet-stat\nHVB + 352mia SEK]
+    A --> E[Kinarisiko\n3 instrumenter]
+    B --> F[Valg 2026\nM+SD udnytter]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**Økonomisk kontekst (IMF WEO april 2026)**: BNP-vækst +1,8%, statsgæld 34,3% af BNP.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-29  
+**Einstufung**: ÖFFENTLICH — DSGVO Art. 9(2)(e,g)  
+**Vertrauen**: HOCH [B2]
+
+---
+
+### 🎯 Kurzzusammenfassung
+
+Die Sitzung des Riksdag am 29. April 2026 lieferte drei Bestätigungssignale, die den Wahlkampf vor September 2026 prägen werden: (1) Centerpartiet brach mit seinen natürlichen Koalitionspartnern bei der Waffengesetzabstimmung JuU10 — bewusste Neupositionierung fünf Monate vor den Wahlen; (2) das Staatsbürgerschaftsgesetz wurde mit Unterstützung der Sozialdemokraten verabschiedet; (3) die Durchdringung von Wohlfahrtsinstitutionen durch organisierte Kriminalität wurde in Interpellationen aufgedeckt.
+
+### 60-Sekunden-Aufklärungslektüre
+
+- **JuU10 (Neues Waffengesetz) VERABSCHIEDET 16:13**: Cs 20 einstimmige NEIN-Stimmen sind die folgenreichste politische Handlung des Tages [HDC120260429ap]
+- **SfU28 (Staatsbürgerschaft) VERABSCHIEDET 16:21**: S stimmte JA mit dem Tidö-Block [HD01SfU28]
+- **Kriminelle Netzwerke**: HVB-Infiltration (HD10454) + 352 Mrd. SEK Kriminalwirtschaft (HD10451)
+- **China-Risikokonvergenz**: Drei parlamentarische Instrumente zu chinesischen Bedrohungen heute
+
+### Wichtigstes Vorwärtssignal
+
+Cs NEIN beim Waffengesetz: bewusste Differenzierung oder einmalige Abweichung? Beobachtung mit mittlerer Konfidenz [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[29. April 2026\nPolitische Schlüsseländerungen] --> B[C NEIN — JuU10\nBlockaustritt]
+    A --> C[S JA — SfU28\nRechtsverschiebung]
+    A --> D[Kriminalität-Staat\nHVB + 352Mrd SEK]
+    A --> E[China-Risiko\n3 Instrumente]
+    B --> F[Wahl 2026\nM+SD nutzen]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**Wirtschaftlicher Kontext (IWF WEO April 2026)**: BIP-Wachstum +1,8%, Staatsschulden 34,3% des BIP.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-29  
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e,g)  
+**Confianza**: ALTA [B2]
+
+---
+
+### 🎯 Resumen ejecutivo
+
+La sesión del Riksdag del 29 de abril de 2026 produjo tres señales de confirmación que darán forma a la campaña electoral de cara a septiembre de 2026: (1) Centerpartiet rompió con sus socios de coalición naturales en la votación de la ley de armas JuU10 — reposicionamiento político deliberado cinco meses antes de las elecciones; (2) la ley de ciudadanía fue aprobada con el apoyo de los socialdemócratas; (3) la infiltración de instituciones de bienestar social por parte de la delincuencia organizada quedó al descubierto en interpelaciones.
+
+### Lectura de inteligencia en 60 segundos
+
+- **JuU10 (Nueva ley de armas) APROBADA 16:13**: Los 20 votos NO unánimes de C son la acción política más trascendente del día [HDC120260429ap]
+- **SfU28 (Ciudadanía) APROBADA 16:21**: S votó SÍ con el bloque Tidö [HD01SfU28]
+- **Redes criminales**: Infiltración HVB (HD10454) + economía criminal de 352 mil millones SEK (HD10451)
+- **Convergencia del riesgo China**: Tres instrumentos parlamentarios sobre amenazas chinas hoy
+
+### Principal señal prospectiva
+
+El NO de C en la ley de armas: ¿diferenciación deliberada o desviación puntual? Seguimiento con confianza media [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[29 abril 2026\nCambios políticos clave] --> B[C NO — JuU10\nSalida del bloque]
+    A --> C[S SÍ — SfU28\nMigración derecha]
+    A --> D[Crimen-Estado\nHVB + 352mil mSEK]
+    A --> E[Riesgo China\n3 instrumentos]
+    B --> F[Elecciones 2026\nM+SD explotan]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**Contexto económico (FMI WEO abril 2026)**: Crecimiento PIB +1,8%, deuda pública 34,3% del PIB.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-04-29  
+**Luokittelu**: JULKINEN — GDPR Art. 9(2)(e,g)  
+**Luotettavuus**: KORKEA [B2]
+
+---
+
+### 🎯 Lyhyt yhteenveto
+
+Riksdagenin istunto 29. huhtikuuta 2026 tuotti kolme vahvistussignaalia, jotka muovaavat syyskuun 2026 vaalikampanjaa: (1) Centerpartiet erosi luontaisista koaliopartnereistaan JuU10-äänessä — tarkoituksellinen poliittinen uudelleenpositiointi viisi kuukautta ennen vaaleja; (2) kansalaisuuslaki hyväksyttiin Socialdemokraternin tuella; (3) järjestäytyneen rikollisuuden tunkeutuminen hyvinvointilaitoksiin paljastui interpellaatioissa.
+
+### 60 sekunnin tiedustelutiivistelmä
+
+- **JuU10 (Uusi aselaki) HYVÄKSYTTY 16:13**: C:n 20 yksimielistä EI-ääntä on päivän merkittävin poliittinen teko [HDC120260429ap]
+- **SfU28 (Kansalaisuus) HYVÄKSYTTY 16:21**: S äänesti KYLLÄ Tidö-blokin kanssa [HD01SfU28]
+- **Rikollisverkoston paljastuminen**: HVB-läpitunkeutuminen (HD10454) + 352 mrd. SEK rikollinen talous (HD10451)
+- **Kiina-riskikonvergenssi**: Kolme parlamentaarista välinettä Kiinan uhkista tänään
+
+### Tärkein eteenpäin katsova signaali
+
+C:n EI aselaissa: tarkoituksellinen erilaistuminen vai kertaluonteinen poikkeama? Seurataan keskitason luotettavuudella [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[29. huhtikuuta 2026\nTärkeät poliittiset muutokset] --> B[C EI — JuU10\nBlokkipoistuminen]
+    A --> C[S KYLLÄ — SfU28\nOikealle siirtyminen]
+    A --> D[Rikollisuus-valtio\nHVB + 352mrd SEK]
+    A --> E[Kiina-riski\n3 välinettä]
+    B --> F[Vaalit 2026\nM+SD hyödyntää]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**Taloudellinen konteksti (IMF WEO huhtikuu 2026)**: BKT-kasvu +1,8%, valtionvelka 34,3% BKT:sta.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : ÉLEVÉE [B2]
+
+---
+
+### 🎯 Résumé exécutif
+
+La session du Riksdag du 29 avril 2026 a produit trois signaux de confirmation qui façonneront la campagne électorale avant septembre 2026 : (1) Centerpartiet a rompu avec ses partenaires de coalition naturels lors du vote sur la loi sur les armes JuU10 — repositionnement politique délibéré cinq mois avant les élections ; (2) la loi sur la citoyenneté a été adoptée avec le soutien des sociaux-démocrates ; (3) l'infiltration des institutions de protection sociale par la criminalité organisée a été révélée dans des interpellations.
+
+### Lecture de renseignement en 60 secondes
+
+- **JuU10 (Nouvelle loi sur les armes) ADOPTÉE 16h13** : Les 20 votes NON unanimes de C sont l'acte politique le plus conséquent de la journée [HDC120260429ap]
+- **SfU28 (Citoyenneté) ADOPTÉE 16h21** : S a voté OUI avec le bloc Tidö [HD01SfU28]
+- **Réseaux criminels** : Infiltration HVB (HD10454) + économie criminelle de 352 Mrd SEK (HD10451)
+- **Convergence du risque Chine** : Trois instruments parlementaires sur les menaces chinoises aujourd'hui
+
+### Signal prospectif principal
+
+Le NON de C sur la loi sur les armes : différenciation délibérée ou déviation ponctuelle ? Suivi avec confiance moyenne [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[29 avril 2026\nChangements politiques clés] --> B[C NON — JuU10\nSortie du bloc]
+    A --> C[S OUI — SfU28\nMigration droite]
+    A --> D[Crime-État\nHVB + 352Mrd SEK]
+    A --> E[Risque Chine\n3 instruments]
+    B --> F[Élections 2026\nM+SD exploitent]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**Contexte économique (FMI PEM avril 2026)** : Croissance du PIB +1,8%, dette publique 34,3% du PIB.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# מודיעין ערב — 29 באפריל 2026: דמוקרטיה תחת לחץ
+
+**מחבר**: ג'יימס פת'ר סורלינג  
+**תאריך**: 2026-04-29  
+**סיווג**: ציבורי — GDPR סעיף 9(2)(ה,ז)  
+**אמינות**: גבוהה [B2]
+
+---
+
+### 🎯 תמצית מנהלים
+
+הישיבה של Riksdag ב-29 באפריל 2026 הניבה שלושה אותות אישור שיעצבו את מסע הבחירות לקראת ספטמבר 2026: (1) Centerpartiet פרץ עם שותפיו הטבעיים בקואליציה בהצבעה על חוק הנשק JuU10 — מיצוב פוליטי מכוון מחדש חמישה חודשים לפני הבחירות; (2) חוק האזרחות אושר בתמיכת הסוציאל-דמוקרטים; (3) חדירת הפשע המאורגן למוסדות הרווחה התגלתה בהצהרות ביניים.
+
+### קריאת מודיעין ב-60 שניות
+
+- **JuU10 (חוק נשק חדש) אושר 16:13**: 20 הצבעות הלא הפה-אחד של C הן הפעולה הפוליטית המשמעותית ביותר של היום [HDC120260429ap]
+- **SfU28 (אזרחות) אושר 16:21**: S הצביע בעד עם גוש Tidö [HD01SfU28]
+- **רשתות פשע**: חדירת HVB (HD10454) + כלכלה פלילית של 352 מיליארד כתר (HD10451)
+- **התכנסות סיכון סין**: שלושה כלים פרלמנטריים בנושא איומים סיניים היום
+
+### האות הצופה הקריטי ביותר
+
+ה-לא של C בחוק הנשק: בידול מכוון או סטייה חד-פעמית? מעקב באמינות בינונית [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[29 אפריל 2026\nשינויים פוליטיים מרכזיים] --> B[C לא — JuU10\nיציאת גוש]
+    A --> C[S כן — SfU28\nנדידה ימינה]
+    A --> D[פשע-מדינה\nHVB + 352מיליארד]
+    A --> E[סיכון סין\n3 כלים]
+    B --> F[בחירות 2026\nM+SD מנצלים]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**הקשר כלכלי (קרן המטבע הבינלאומית WEO אפריל 2026)**: צמיחת תוצר +1.8%, חוב ציבורי 34.3% מהתוצר.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+</div>
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling  
+**日付**：2026-04-29  
+**分類**：公開 — GDPR第9条(2)(e,g)  
+**信頼度**：高 [B2]
+
+---
+
+### 🎯 エグゼクティブサマリー
+
+2026年4月29日のRiksdagの会議は、2026年9月の選挙戦を形成する3つの確認シグナルを生み出した：(1) CenterpartietはJuU10銃器法の投票で自然な連立パートナーから離脱 — 選挙5ヶ月前の意図的な政治的再ポジショニング；(2) 国籍法が社会民主党の支持で可決；(3) 組織犯罪による福祉機関への浸透が質問主意書で明らかになった。
+
+### 60秒インテリジェンス要点
+
+- **JuU10（新銃器法）可決 16:13**：Cの20票の全会一致の反対は本日最も重大な政治的行動 [HDC120260429ap]
+- **SfU28（国籍）可決 16:21**：SはTidöブロックとともに賛成投票 [HD01SfU28]
+- **犯罪ネットワーク**：HVB施設への浸透（HD10454）+ 3,520億クローナの犯罪経済（HD10451）
+- **中国リスク収束**：本日、中国の脅威に関する3つの議会文書
+
+### 最重要先行シグナル
+
+銃器法に対するCの反対：意図的な差別化か一時的逸脱か？中程度の信頼度で監視 [B3]。
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[2026年4月29日\n主要政治的変化] --> B[C 反対 — JuU10\nブロック離脱]
+    A --> C[S 賛成 — SfU28\n右傾移動]
+    A --> D[犯罪-国家\nHVB + 3520億]
+    A --> E[中国リスク\n3文書]
+    B --> F[2026年選挙\nM+SD活用]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**経済的文脈（IMF WEO 2026年4月）**：GDP成長率+1.8%、政府債務GDP比34.3%。
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-29  
+**분류**: 공개 — GDPR 9조(2)(e,g)  
+**신뢰도**: 높음 [B2]
+
+---
+
+### 🎯 요약
+
+2026년 4월 29일 Riksdag 회의는 2026년 9월 선거운동을 형성할 세 가지 확인 신호를 생성했습니다: (1) Centerpartiet가 JuU10 무기법 투표에서 자연스러운 연립 파트너들과 결별 — 선거 5개월 전 의도적인 정치적 재포지셔닝; (2) 사회민주당의 지지로 시민권법이 가결; (3) 조직범죄의 복지기관 침투가 질문에서 폭로.
+
+### 60초 정보 요점
+
+- **JuU10 (새 무기법) 가결 16:13**: C의 20표 만장일치 반대가 오늘 가장 중요한 정치적 행동 [HDC120260429ap]
+- **SfU28 (시민권) 가결 16:21**: S는 Tidö 블록과 함께 찬성 투표 [HD01SfU28]
+- **범죄 네트워크**: HVB 침투 (HD10454) + 3,520억 크로나 범죄 경제 (HD10451)
+- **중국 리스크 수렴**: 오늘 중국 위협에 관한 3개의 의회 문서
+
+### 최우선 선행 신호
+
+무기법에 대한 C의 반대: 의도적 차별화 아니면 일회성 이탈? 중간 신뢰도로 모니터링 [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[2026년 4월 29일\n주요 정치 변화] --> B[C 반대 — JuU10\n블록 이탈]
+    A --> C[S 찬성 — SfU28\n우측 이동]
+    A --> D[범죄-국가\nHVB + 3520억]
+    A --> E[중국 리스크\n3 문서]
+    B --> F[2026년 선거\nM+SD 활용]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**경제 맥락 (IMF WEO 2026년 4월)**: GDP 성장률 +1.8%, 국가 부채 GDP 대비 34.3%.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-29  
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e,g)  
+**Vertrouwen**: HOOG [B2]
+
+---
+
+### 🎯 Uitvoerende samenvatting
+
+De zitting van de Riksdag op 29 april 2026 leverde drie bevestigingssignalen op die de verkiezingscampagne voor september 2026 zullen bepalen: (1) Centerpartiet brak met zijn natuurlijke coalitepartners bij de stemming over de wapenwet JuU10 — bewuste politieke herpositionering vijf maanden voor de verkiezingen; (2) de staatsburgerlijkheidsvet werd aangenomen met steun van de sociaaldemocraten; (3) de infiltratie van welzijnsinstellingen door de georganiseerde misdaad werd onthuld in interpellaties.
+
+### 60-seconden inlichtingenlectuur
+
+- **JuU10 (Nieuwe wapenwet) AANGENOMEN 16:13**: De 20 unanieme NEE-stemmen van C zijn de meest ingrijpende politieke handeling van de dag [HDC120260429ap]
+- **SfU28 (Staatsburgerlijkheid) AANGENOMEN 16:21**: S stemde JA met het Tidö-blok [HD01SfU28]
+- **Criminele netwerken**: HVB-infiltratie (HD10454) + 352 mrd. SEK criminele economie (HD10451)
+- **China-risicoconvergentie**: Drie parlementaire instrumenten over Chinese dreigingen vandaag
+
+### Belangrijkste vooruitblikkend signaal
+
+Cs NEE bij de wapenwet: bewuste differentiatie of eenmalige afwijking? Bewaking met gemiddeld vertrouwen [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[29 april 2026\nBelangrijke politieke wijzigingen] --> B[C NEE — JuU10\nBlokuitgang]
+    A --> C[S JA — SfU28\nRechtsverschuiving]
+    A --> D[Misdaad-staat\nHVB + 352mrd SEK]
+    A --> E[China-risico\n3 instrumenten]
+    B --> F[Verkiezingen 2026\nM+SD benutten]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**Economische context (IMF WEO april 2026)**: BBP-groei +1,8%, staatsschuld 34,3% van het BBP.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-29  
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
+**Konfidens**: HØY [B2]
+
+---
+
+### 🎯 Kortfattet sammendrag
+
+Riksdagens sesjon 29. april 2026 leverte tre bekreftelsessignaler som vil forme valgkampen mot september 2026: (1) Centerpartiet brøt med sine naturlige koalisjonspartnere i JuU10 våpenloven — bevisst politisk omposisjonering fem måneder før valget; (2) statsborgerskapsloven ble vedtatt med Socialdemokraternas støtte; (3) organisert kriminalitets infiltrasjon av velferdsinstitusjoner ble avdekket i interpellasjoner.
+
+### 60-sekunders underretningslesing
+
+- **JuU10 (Ny våpenlov) VEDTATT 16:13**: Cs 20 enstemmige NEI-stemmer er dagens mest konsekvensrike politiske handling [HDC120260429ap]
+- **SfU28 (Statsborgerskap) VEDTATT 16:21**: S stemte JA med Tidö-blokken [HD01SfU28]
+- **Kriminelt nettverksavsløring**: HVB-infiltrasjon (HD10454) + 352 mrd. SEK kriminell økonomi (HD10451)
+- **Kinarisikokonvergens**: Tre parlamentariske instrumenter om kinesiske trusler i dag
+
+### Viktigste fremadskuende signal
+
+Cs NEI om våpenloven: bevisst differensiering eller engangsavvik? Overvåkes med middels konfidens [B3].
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[29. april 2026\nViktige politiske endringer] --> B[C NEI — JuU10\nBlokkutgang]
+    A --> C[S JA — SfU28\nHøyreforflytning]
+    A --> D[Kriminalitet-stat\nHVB + 352mrd SEK]
+    A --> E[Kinarisiko\n3 instrumenter]
+    B --> F[Valg 2026\nM+SD utnytter]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**Økonomisk kontekst (IMF WEO april 2026)**: BNP-vekst +1,8%, statsgjeld 34,3% av BNP.
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-29  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
+**Konfidens**: HÖG [B2]  
+**Körnings-ID**: 25121285494
+
+---
+
+### 🎯 Kortfattad sammanfattning
+
+Riksdagens session den 29 april 2026 levererade tre bekräftelsesignaler som kommer att forma valrörelsen inför september 2026: (1) Centerpartiet bröt med sina naturliga koalitionspartners och oppositionen i vapenlagsvoteringen, vilket markerar en avsiktlig politisk ompositionering fem månader före valet; (2) medborgarskaplagen antogs med Socialdemokraternas stöd, vilket bekräftar S:s förflyttning mot det politiska mitten på identitetspolitik; (3) organiserad brottslighets genomträngning av välfärdsinstitutioner blottlades i interpellationer, vilket underminerar Tidökoalitionens kärna i lag och ordning-berättelsen. Under dessa politiska linjer formas en konvergerande Kina-riskberättelse över partilinjerna — den första flerdokuments parlamentariska dagen om kinesiska säkerhetshot sedan 2023.
+
+### 🧭 3 beslut som detta underlag stöder
+
+1. **Redaktionellt prioritetsbeslut**: Rama in Centerpartiets NEJ i vapenlagsfrågan som huvudhistoria — det är det mest bestående politiska signalet från dagen och kommer att utnyttjas i 2026 års valrörelse av SD och M.
+2. **Täckningsarkitekturbeslut**: Koppla ihop HVB-brottshistorien, den kriminella ekonomin-interpellationen (352 miljarder SEK) och välfärdsreformmotionerna för att skapa en sammanhängande "Tidö-trovärdighetsgap"-berättelse.
+3. **Framåt underrättelsebeslut**: Öppna PIR om huruvida S:s högerröstning om medborgarskap (SfU28) representerar en permanent strategisk förflyttning eller taktisk positionering — PIR-EA-01.
+
+### 60-sekunders underrättelseläsning
+
+- **JuU10 (Ny vapenlag) ANTAGEN 16:13**: C:s 20 enhälliga NEJ-röster är dagens mest konsekvensrika politiska handling — avsiktlig differentiering från Tidöblocket fem månader före valet [HDC120260429ap]
+- **SfU28 (Medborgarskap) ANTAGEN 16:21**: S röstade JA med Tidöblocket om medborgarskapsskärpning; Annika Strandhäll ensam S-disssident — bekräftar S:s förflyttning mot höger på identitetspolitik [HD01SfU28]
+- **HD03259 Transport 875 Mdr kr**: Infrastrukturplan dominerar propositioner — real BNP-påverkan 1,0% av BNP per år (IMF WEO apr-2026, NGDP_RPCH SWE +1,8%)
+- **Kriminellt nätverksavslöjande**: HVB-hem-infiltration (HD10454) + 352 miljarder SEK kriminell ekonomi (HD10451) angriper direkt Tidökoalitionens lag och ordning-trovärdighet
+- **Kina-riskkonvergens**: Tre parlamentariska instrument om kinesiska hot idag (HD12744, HD12746, HD10456) — säkerhetskonsensus formas över partilinjerna
+- **Koalitionsintern spricka**: SD:s Josef Fransson kräver gasbrygga (HD10453) kontra KD:s energiminister Busch — diskret men beständig spänning
+- **Ytterligare eftermiddagsomröstningar (re-run)**: 8 ytterligare kam-vo beslut antagna 16:00–16:21 — civilt skydd [FöU12, S NEJ punkt 2], fängelseexpansion [CU25, nära konsensus], EV-laddning [CU29], avfallsreform [MJU19], klimatrapporter [MJU20/21], Riksbanksöversyn [FiU23], forskarmigrering [SfU23]
+
+### Viktigaste framåtblickande signal
+
+**PIR-EA-01** (ÖPPEN): Kommer C:s NEJ om vapenlagen att kvarstå som en kampanjdifferentierande position, eller är det en engångsavvikelse? Bevaka C:s positioner i NU, JuU och partimanifest.
+
+**Konfidens**: MEDEL [B3] — enstaka datapunkt men konsistent med Annie Lööfs ompositioneringsstrategi sedan 2024.
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+flowchart TD
+    A[29 April 2026\nKey Political Shifts] --> B[C NEJ — JuU10\nDeliberate bloc exit]
+    A --> C[S JA — SfU28\nRightward migration]
+    A --> D[Crime-State Nexus\nHVB + 352bn SEK]
+    A --> E[China Risk\n3 instruments today]
+    B --> F[2026 Election\nM+SD exploit C split]
+    C --> G[Opposition Unity\nFurther fragmented]
+    D --> H[Tidö Credibility\nLaw-order narrative at risk]
+    E --> I[Security Consensus\nCross-party forming]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#0a0e27
+```
+
+---
+
+### Ekonomisk kontext (IMF WEO april 2026)
+
+Sveriges BNP-tillväxt: +1,8% (2026e), +2,3% (2027e). Statsskuld: 34,3% av BNP. KPI: 2,9%. Finanspolitiskt utrymme finns för 875 miljarder transportplan om fasindelat. Nordisk jämförelse: SE underpresterar DK (+2,2%) men överpresterar FI (+1,1%).
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-04-29  
+**分类**：公开 — GDPR第9条(2)(e,g)  
+**置信度**：高 [B2]
+
+---
+
+### 🎯 执行摘要
+
+2026年4月29日Riksdag会议产生了三个确认信号，将塑造2026年9月的选举运动：(1) Centerpartiet在JuU10武器法投票中与其自然联合伙伴决裂 — 选举前五个月的蓄意政治重新定位；(2) 公民身份法以社会民主党的支持通过；(3) 有组织犯罪对福利机构的渗透在质询中被揭露。
+
+### 60秒情报要点
+
+- **JuU10（新武器法）通过 16:13**：C的20票一致反对是今天最重要的政治行动 [HDC120260429ap]
+- **SfU28（公民身份）通过 16:21**：S与Tidö集团一起投票赞成 [HD01SfU28]
+- **犯罪网络**：HVB渗透（HD10454）+ 3,520亿克朗犯罪经济（HD10451）
+- **中国风险聚合**：今天就中国威胁的三个议会文件
+
+### 最重要前瞻信号
+
+C对武器法的反对：蓄意差异化还是一次性偏离？以中等置信度监测 [B3]。
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+flowchart TD
+    A[2026年4月29日\n关键政治变化] --> B[C 反对 — JuU10\n脱离集团]
+    A --> C[S 赞成 — SfU28\n右倾迁移]
+    A --> D[犯罪-国家\nHVB + 3520亿]
+    A --> E[中国风险\n3项文件]
+    B --> F[2026年选举\nM+SD利用]
+    style B fill:#ff006e,color:#fff
+    style C fill:#ffbe0b,color:#0a0e27
+```
+
+---
+
+**经济背景（IMF WEO 2026年4月）**：GDP增长+1.8%，政府债务占GDP 34.3%。
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-04-29"
+  }
+}
+```
+
+<!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1900,6 +2658,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

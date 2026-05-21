@@ -6,7 +6,7 @@ date: 2026-04-29
 subfolder: interpellations
 slug: 2026-04-29-interpellations
 source_folder: analysis/daily/2026-04-29/interpellations
-generated_at: 2026-05-20T20:11:09.086Z
+generated_at: 2026-05-21T02:19:50.677Z
 language: en
 layout: article
 ---
@@ -91,6 +91,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2118,13 +2131,798 @@ This analysis followed the Riksdagsmonitor AI-Driven Analysis Guide methodology:
 - **Police report (Summer 2024)**: HVB-hem infiltration by organized crime — cited in HD10454.
 - **Statskontoret**: Relevant to social care sector oversight, particularly HVB-hem licensing and oversight mechanisms. No specific report directly addressing HVB-hem infiltration found. `Statskontoret: no directly relevant source found` for HVB-hem specifically, though general social services oversight reports exist.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الجريمة المنظمة وانتقال الطاقة والضغط على المنظومات الاجتماعية: عاصفة الاستجوابات السويدية
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-29  
+**التصنيف**: عام — المادة 9(2)(ه،ز) من اللائحة الأوروبية لحماية البيانات  
+**مستوى الثقة**: عالٍ [B2]
+
+---
+
+### 🎯 BLUF
+
+يكشف جدول الاستجوابات السويدي في 2026-04-29 عن حكومة تتعرض لضغوط متزامنة على ثلاثة خطوط صدع استراتيجية: تغلغل الجريمة المنظمة في منظومات الرعاية والأعمال، وأزمة استثمار في البنية التحتية للطاقة تستلزم حلولاً انتقالية فورية، وتراجع خدمات شبكة الأمان الاجتماعي. تستغل المعارضة — وفي مقدمتها الاشتراكيون الديمقراطيون — الإخفاقات الموثقة (اختراق دور رعاية الشباب HVB، والاقتصاد الإجرامي بنسبة 5.5 % من الناتج المحلي الإجمالي) للطعن في ادعاء الحكومة بالكفاءة في مجال القانون والنظام، فيما تتحدى SD واقعية الحكومة في مجال الطاقة من داخل القاعدة الداعمة للائتلاف.
+
+### 🧭 3 قرارات يدعمها هذا الموجز
+
+1. **لإدارة أزمة الحكومة**: إعطاء الأولوية للاستجابة لاختراق دور الرعاية HVB (HD10454) — شكّل التأخير لمدة عامين في مشاركة معلومات الشرطة مع ستوكهولم ثغرة في السمعة تجمع الآن الجريمة ورعاية الطفل والكفاءة الإدارية في رواية واحدة.
+
+2. **للجهات الفاعلة في سياسة الطاقة**: يختبر اقتراح جسر الغاز (HD10453، Josef Fransson/SD) تماسك الائتلاف — إذ يتحدى SD صراحةً نهج KD/Ebba Busch المتمحور حول الاستثمار في الشبكة. القرار: تقديم الغاز كإجراء انتقالي يخاطر بتشقق توافق الطاقة لدى ائتلاف Tidö.
+
+3. **لمراقبي السياسة الاجتماعية**: تشير مجموعة استثناءات تأمين المرض (HD10450) وإغراق الضمان الاجتماعي بين البلديات (HD10443) وإغلاق دور المرأة (HD10438) إلى توطيد رواية S حول شبكة الأمان الاجتماعي في ضوء التموضع الانتخابي لعام 2026.
+
+### نقاط الستين ثانية
+
+- 🔴 **فضيحة دور الرعاية HVB** (HD10454): انتظرت ستوكهولم ~عامين للحصول على قائمة الشرطة بدور رعاية الشباب التي يديرها المجرمون؛ تطالب S بإجراءات من Waltersson Grönvall (M). الموعد النهائي: رد بحلول 2026-05-20.
+- 🔴 **الاقتصاد الإجرامي** (HD10451): تؤكد Brå أن 1 من كل 5 من مجرمي الشبكة يدير شركة؛ تقدّر ESO الناتج المحلي الإجرامي بـ 352 مليار كرونة سويدية (5.5 %). تتحدى S ستروميرMوكالة عن سلبية الحكومة.
+- 🟡 **شبكة الطاقة** (HD10453): يتحدى فرانسون من SD بوش بشأن الغاز كجسر. ارتفعت استثمارات SVK 15 مرة في 20 عاماً؛ يطالب بتفعيل Öresundsverket.
+- 🟡 **انتزاع الأعضاء من الصين** (HD10456): يطالب Nima Gholam Ali Pour من SD بتجريم السويد استقبال أعضاء من متبرعين مكرهين؛ يستشهد بسوابق إسبانيا وبلجيكا وإسرائيل.
+- 🟡 **الأمراض النادرة** (HD10457): يتحدى ماغنوسون من S وزير الرعاية الصحية بشأن اضطرابات إمداد الأدوية لمرضى الأمراض النادرة.
+- 🟢 **التعديل الدستوري** (HD10452): تتحدى المستقلة Elsa Widding وزير العدل ستروميرM بشأن تعارضات المصالح الإجرائية في المراجعات القانونية.
+
+### أهم إشارة استشرافية
+
+🔴 الموعد النهائي للرد على HD10454 وHD10456: **2026-05-20**. إذا أخفقت Waltersson Grönvall في الإعلان عن خطوات ملموسة لحظر المشغلين الجنائيين لدور رعاية الشباب بحلول ذلك التاريخ، يُتوقع أن ترتقي S/V/MP إلى تقديم اقتراح تحقيق رسمي.
+
+### Mermaid: صورة الاستخبارات الرئيسية
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-29  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
+**Konfidens**: HØJ [B2]
+
+---
+
+### 🎯 BLUF
+
+Sveriges interpellationskalender den 2026-04-29 afslører en regering under simultant pres langs tre strategiske brudlinjer: organiseret kriminalitets infiltration af velfærds- og erhvervssystemer, en investeringskrise i energiinfrastrukturen der kræver øjeblikkelige overgangsløsninger, og forringet sociale sikkerhedsnet. Oppositionen — overvejende Socialdemokraterne — udnytter dokumenterede svigt (infiltration af HVB-hjem, kriminel økonomi på 5,5 % af BNP) til at anfægte regeringens kompetencekrav om lov og orden, mens SD udfordrer regeringens energirealisme indefra koalitionens støttebase.
+
+### 🧭 3 Beslutninger dette notat understøtter
+
+1. **For regeringens krisestyring**: Prioriter svar på HVB-hjems-infiltrationen (HD10454) — den toårige forsinkelse med at dele politieftretninger med Stockholm udgør en omdømmesårbarhed der nu forbinder kriminalitet, børneomsorg og administrativ kompetence i én fortælling.
+
+2. **For energipolitiske aktører**: Gasbro-forslaget (HD10453, Josef Fransson/SD) tester koalitionens sammenhæng — SD udfordrer eksplicit KD/Ebba Buschs netinvesteringsfokus. Beslutning: at tilbyde gas som en overgangsforanstaltning risikerer at splitte Tidökoalitionens energikonsensus.
+
+3. **For socialpolitiske iagttagere**: Kombinationen af sygesikringsundtagelser (HD10450), social dumping mellem kommuner (HD10443) og lukning af kvindekrisecentre (HD10438) signalerer en konsolidering af S's fortælling om det sociale sikkerhedsnet forud for valgpositioneringen i 2026.
+
+### 60-sekunders punkter
+
+- 🔴 **HVB-hjemsskandalen** (HD10454): Stockholm ventede ~2 år på politiets liste over kriminelt drevne ungdomshjem; S kræver handling fra Waltersson Grönvall (M). Frist: svar senest 2026-05-20.
+- 🔴 **Kriminel økonomi** (HD10451): Brå bekræfter at hvert 5. netværkskriminelle individ driver en virksomhed; ESO estimerer kriminelt BNP til 352 mia. SEK (5,5 %). S udfordrer Strömmer (M) om regeringens passivitet.
+- 🟡 **Energinet** (HD10453): SD's Fransson udfordrer Busch om gas som bro. SVK-investeringer steget 15× på 20 år; kræver aktivering af Øresundsværket.
+- 🟡 **Organhøst fra Kina** (HD10456): SD's Nima Gholam Ali Pour kræver at Sverige kriminaliserer modtagelse af organer fra tvungne donorer; citerer præcedenser fra Spanien, Belgien og Israel.
+- 🟡 **Sjældne sygdomme** (HD10457): S's Magnusson udfordrer sundhedsministeren om lægemiddelforsyningsforstyrrelser for patienter med sjældne sygdomme.
+- 🟢 **Grundlovsændring** (HD10452): Den uafhængige Elsa Widding udfordrer justitsminister Strömmer om proceduremæssige interessekonflikter i juridiske gennemgange.
+
+### Vigtigste fremadrettede signal
+
+🔴 Svarsfrist for HD10454 og HD10456: **2026-05-20**. Hvis Waltersson Grönvall undlader at bekendtgøre konkrete skridt til at forbyde kriminelle operatører af HVB-hjem inden den dato, forventes S/V/MP at eskalere til en formel undersøgelsesforespørgsel.
+
+### Mermaid: Centralt efterretningsbillede
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-29  
+**Einstufung**: ÖFFENTLICH — DSGVO Art. 9(2)(e,g)  
+**Vertrauensniveau**: HOCH [B2]
+
+---
+
+### 🎯 BLUF
+
+Der schwedische Interpellationskalender vom 2026-04-29 enthüllt eine Regierung, die gleichzeitig entlang dreier strategischer Bruchlinien unter Druck steht: die Infiltration organisierter Kriminalität in Wohlfahrts- und Unternehmenssysteme, eine Investitionskrise in der Energieinfrastruktur, die sofortige Überbrückungslösungen erfordert, sowie sich verschlechternde Sozialsicherungsleistungen. Die Opposition — überwiegend die Sozialdemokraten — nutzt dokumentierte Versäumnisse (HVB-Heim-Infiltration, kriminelle Wirtschaft bei 5,5 % des BIP), um den Kompetenzanspruch der Regierung in Bezug auf Recht und Ordnung in Frage zu stellen, während SD die Energierealismus der Regierung aus der Unterstützungsbasis der Koalition heraus herausfordert.
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Für das Krisenmanagement der Regierung**: Priorisieren Sie die Reaktion auf die Infiltration der HVB-Heime (HD10454) — die zweijährige Verzögerung bei der Weitergabe von Polizeierkenntnissen an Stockholm stellt eine Reputationsschwachstelle dar, die nun Kriminalität, Kinderwohlfahrt und administrative Kompetenz in einer einzigen Erzählung verbindet.
+
+2. **Für energiepolitische Akteure**: Der Gasbrücken-Vorschlag (HD10453, Josef Fransson/SD) testet den Koalitionszusammenhalt — SD fordert explizit KDs/Ebba Buschs Netzinvestitionsfokus heraus. Entscheidung: das Angebot von Gas als Übergangsmaßnahme riskiert, den Energiekonsens der Tidö-Koalition zu zerbrechen.
+
+3. **Für sozialpolitische Beobachter**: Die Kombination aus Krankenversicherungsausnahmen (HD10450), Sozialdumping zwischen Kommunen (HD10443) und Frauenhaus-Schließungen (HD10438) signalisiert eine Konsolidierung der S-Erzählung über das soziale Sicherheitsnetz im Hinblick auf die Wahlpositionierung 2026.
+
+### 60-Sekunden-Punkte
+
+- 🔴 **HVB-Heim-Skandal** (HD10454): Stockholm wartete ~2 Jahre auf die Polizeiliste kriminell betriebener Jugendheime; S fordert Maßnahmen von Waltersson Grönvall (M). Frist: Antwort bis 2026-05-20.
+- 🔴 **Kriminelle Wirtschaft** (HD10451): Brå bestätigt, dass jede 5. netzwerkkriminelle Person ein Unternehmen führt; ESO schätzt das kriminelle BIP auf 352 Mrd. SEK (5,5 %). S fordert Strömmer (M) wegen Regierungspassivität heraus.
+- 🟡 **Energienetz** (HD10453): SDs Fransson fordert Busch bei Gas als Brücke heraus. SVK-Investitionen 15-fach in 20 Jahren gestiegen; fordert Aktivierung des Öresundsverkets.
+- 🟡 **Organentnahme aus China** (HD10456): SDs Nima Gholam Ali Pour fordert, dass Schweden den Empfang von Organen erzwungener Spender kriminalisiert; zitiert Präzedenzfälle aus Spanien, Belgien und Israel.
+- 🟡 **Seltene Krankheiten** (HD10457): S' Magnusson fordert den Gesundheitsminister wegen Arzneimittelversorgungsstörungen für Patienten mit seltenen Krankheiten heraus.
+- 🟢 **Verfassungsänderung** (HD10452): Die unabhängige Elsa Widding fordert Justizminister Strömmer zu verfahrensrechtlichen Interessenkonflikten bei Rechtsprüfungen heraus.
+
+### Wichtigstes Vorwärtssignal
+
+🔴 Antwortfrist für HD10454 und HD10456: **2026-05-20**. Wenn Waltersson Grönvall bis zu diesem Datum keine konkreten Schritte zum Verbot krimineller Betreiber von HVB-Heimen ankündigt, werden S/V/MP voraussichtlich zu einem formellen Untersuchungsantrag eskalieren.
+
+### Mermaid: Zentrales Geheimdienstbild
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-29  
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e,g)  
+**Nivel de confianza**: ALTO [B2]
+
+---
+
+### 🎯 BLUF
+
+El calendario de interpelaciones sueco del 2026-04-29 revela un gobierno bajo presión simultánea a lo largo de tres líneas de fractura estratégicas: la infiltración del crimen organizado en los sistemas de bienestar y empresariales, una crisis de inversión en infraestructura energética que requiere soluciones puente inmediatas, y el deterioro de los servicios de la red de seguridad social. La oposición — predominantemente los Socialdemócratas — aprovecha fallos documentados (infiltración de hogares HVB, economía criminal en el 5,5 % del PIB) para cuestionar la competencia del gobierno en materia de ley y orden, mientras SD desafía el realismo energético del gobierno desde dentro de la base de apoyo de la coalición.
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **Para la gestión de crisis del gobierno**: Priorizar la respuesta a la infiltración de los hogares HVB (HD10454) — el retraso de dos años en compartir inteligencia policial con Estocolmo representa una vulnerabilidad reputacional que ahora combina crimen, bienestar infantil y competencia administrativa en un solo relato.
+
+2. **Para los actores de política energética**: La propuesta de puente de gas (HD10453, Josef Fransson/SD) pone a prueba la cohesión de la coalición — SD desafía explícitamente el enfoque de inversión en redes de KD/Ebba Busch. Decisión: ofrecer gas como medida de transición arriesga fracturar el consenso energético de la coalición Tidö.
+
+3. **Para los observadores de política social**: La combinación de excepciones al seguro de enfermedad (HD10450), dumping social entre municipios (HD10443) y cierres de refugios para mujeres (HD10438) señala una consolidación del relato de S sobre la red de seguridad social de cara al posicionamiento electoral de 2026.
+
+### Puntos en 60 segundos
+
+- 🔴 **Escándalo de los hogares HVB** (HD10454): Estocolmo esperó ~2 años la lista policial de hogares juveniles gestionados criminalmente; S exige medidas a Waltersson Grönvall (M). Plazo: respuesta antes del 2026-05-20.
+- 🔴 **Economía criminal** (HD10451): Brå confirma que 1 de cada 5 criminales en red dirige una empresa; el ESO estima el PIB criminal en 352 mil millones SEK (5,5 %). S interpela a Strömmer (M) sobre la pasividad gubernamental.
+- 🟡 **Red eléctrica** (HD10453): Fransson de SD interpela a Busch sobre el gas como puente. Inversiones SVK multiplicadas por 15 en 20 años; solicita activación del Öresundsverket.
+- 🟡 **Extracción de órganos de China** (HD10456): Nima Gholam Ali Pour de SD exige que Suecia criminalice la recepción de órganos de donantes coaccionados; cita precedentes de España, Bélgica e Israel.
+- 🟡 **Enfermedades raras** (HD10457): Magnusson de S interpela al ministro de sanidad sobre las interrupciones en el suministro de medicamentos para pacientes con enfermedades raras.
+- 🟢 **Cambio constitucional** (HD10452): La independiente Elsa Widding interpela al ministro de justicia Strömmer sobre conflictos de interés procedimentales en revisiones jurídicas.
+
+### Señal prospectiva más importante
+
+🔴 Fecha límite de respuesta para HD10454 y HD10456: **2026-05-20**. Si Waltersson Grönvall no anuncia pasos concretos para prohibir a los operadores criminales de hogares HVB antes de esa fecha, se espera que S/V/MP escale a una moción de investigación formal.
+
+### Mermaid: Imagen clave de inteligencia
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-04-29  
+**Luokitus**: JULKINEN — GDPR Art. 9(2)(e,g)  
+**Luottamustaso**: KORKEA [B2]
+
+---
+
+### 🎯 BLUF
+
+Ruotsin interpellaatiokalenteri 2026-04-29 paljastaa hallituksen, joka kohtaa samanaikaisia paineita kolmella strategisella rintamalla: järjestäytyneen rikollisuuden tunkeutuminen hyvinvointi- ja yritystoimintajärjestelmiin, energiainfrastruktuuri-investointeihin liittyvä kriisi, joka vaatii välittömiä siirtymäratkaisuja, sekä heikentyvät sosiaaliturvapalvelut. Oppositio — pääasiassa Sosiaalidemokraatit — hyödyntää dokumentoituja epäonnistumisia (HVB-kotien infiltraatio, kriminaalitalouden osuus 5,5 % BKT:sta) kyseenalaistaakseen hallituksen osaamisen lain ja järjestyksen alalla, kun taas SD haastaa hallituksen energiarealismin koalition tukipilareiden sisältä.
+
+### 🧭 3 päätöstä, joita tämä tiivis tukee
+
+1. **Hallituksen kriisinhallintaan**: Aseta HVB-kotien infiltraatioon vastaaminen (HD10454) etusijalle — kahden vuoden viive poliisin tietojen jakamisessa Tukholmalle muodostaa mainehaitan, joka yhdistää nyt rikollisuuden, lastenhuollon ja hallinnollisen osaamisen yhdeksi narratiiviksi.
+
+2. **Energiapolitiikan toimijoille**: Kaasusilta-ehdotus (HD10453, Josef Fransson/SD) testaa koalition yhtenäisyyttä — SD haastaa nimenomaisesti KD:n/Ebba Buschin verkkoinvestointipainotuksen. Päätös: kaasun tarjoaminen siirtymäkeinona voi murtaa Tidö-koalition energiakonsensuksen.
+
+3. **Sosiaalipolitiikan seuraajille**: Sairasvakuutuspoikkeuksien (HD10450), kuntien välisen sosiaalisen dumpingin (HD10443) ja naisten turvakodin sulkemisten (HD10438) yhdistelmä signaloi S:n sosiaaliturvanarratiivin konsolidoitumista vuoden 2026 vaaliasemointia varten.
+
+### 60 sekunnin pääkohdat
+
+- 🔴 **HVB-koti-skandaali** (HD10454): Tukholma odotti ~2 vuotta poliisin listaa rikollisjohtoisista nuorisokodeista; S vaatii toimia Waltersson Grönvallilta (M). Määräaika: vastaus viimeistään 2026-05-20.
+- 🔴 **Kriminaalitalous** (HD10451): Brå vahvistaa, että joka viides verkostorikolllinen yksilö johtaa yritystä; ESO arvioi kriminaalitalouden BKT:ksi 352 mrd. SEK (5,5 %). S haastaa Strömmerin (M) hallituksen passiivisuudesta.
+- 🟡 **Sähköverkko** (HD10453): SD:n Fransson haastaa Buschin kaasusilta-kysymyksessä. SVK:n investoinnit 15-kertaistuivat 20 vuodessa; vaatii Öresundverketin aktivoimista.
+- 🟡 **Elinten korjuu Kiinasta** (HD10456): SD:n Nima Gholam Ali Pour vaatii Ruotsia kriminalisoimaan pakotetuilta luovuttajilta saatujen elinten vastaanottamisen; viittaa Espanjan, Belgian ja Israelin ennakkotapauksiin.
+- 🟡 **Harvinaiset sairaudet** (HD10457): S:n Magnusson haastaa terveydenhuoltoministerin harvinaissairaspotilaiden lääketoimitushäiriöistä.
+- 🟢 **Perustuslain muutos** (HD10452): Riippumaton Elsa Widding haastaa oikeusministeri Strömmerin juridisiin arviointeihin liittyvistä menettelyllisistä eturistiriidoista.
+
+### Tärkein ennakoiva signaali
+
+🔴 Vastauksen määräaika HD10454:lle ja HD10456:lle: **2026-05-20**. Jos Waltersson Grönvall ei siihen mennessä ilmoita konkreettisia toimenpiteitä HVB-kotien rikollisoperaattoreiden kieltämiseksi, S/V/MP odotettavasti esittää virallisen tutkimuspyynnön.
+
+### Mermaid: Keskeinen tiedustelutilanteen kuva
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Niveau de confiance** : ÉLEVÉ [B2]
+
+---
+
+### 🎯 BLUF
+
+Le calendrier des interpellations suédois du 2026-04-29 révèle un gouvernement soumis à des pressions simultanées sur trois lignes de fracture stratégiques : l'infiltration du crime organisé dans les systèmes sociaux et d'entreprise, une crise d'investissement dans les infrastructures énergétiques nécessitant des solutions transitoires immédiates, et la dégradation des services du filet de sécurité sociale. L'opposition — principalement les Sociaux-démocrates — exploite des défaillances documentées (infiltration de foyers HVB, économie criminelle à 5,5 % du PIB) pour remettre en cause la compétence du gouvernement en matière d'ordre public, tandis que SD remet en question le réalisme énergétique du gouvernement depuis l'intérieur de la base de soutien de la coalition.
+
+### 🧭 3 décisions que ce document éclaire
+
+1. **Pour la gestion de crise du gouvernement** : Prioriser la réponse à l'infiltration des foyers HVB (HD10454) — le retard de deux ans dans la transmission des renseignements policiers à Stockholm constitue une vulnérabilité en termes de réputation qui combine désormais crime, protection de l'enfance et compétence administrative en un seul récit.
+
+2. **Pour les acteurs de la politique énergétique** : La proposition de pont gazier (HD10453, Josef Fransson/SD) teste la cohésion de la coalition — SD conteste explicitement l'approche investissement réseau de KD/Ebba Busch. Décision : proposer le gaz comme mesure transitoire risque de briser le consensus énergétique de la coalition Tidö.
+
+3. **Pour les observateurs de la politique sociale** : La combinaison d'exceptions à l'assurance maladie (HD10450), de dumping social entre communes (HD10443) et de fermetures de refuges pour femmes (HD10438) signale une consolidation du récit de S sur le filet de protection sociale en vue du positionnement électoral 2026.
+
+### Points en 60 secondes
+
+- 🔴 **Scandale des foyers HVB** (HD10454) : Stockholm a attendu ~2 ans la liste policière des foyers pour jeunes à gestion criminelle ; S exige des mesures de Waltersson Grönvall (M). Délai : réponse au plus tard le 2026-05-20.
+- 🔴 **Économie criminelle** (HD10451) : Brå confirme qu'1 criminel en réseau sur 5 dirige une entreprise ; l'ESO estime le PIB criminel à 352 milliards SEK (5,5 %). S interpelle Strömmer (M) sur la passivité gouvernementale.
+- 🟡 **Réseau électrique** (HD10453) : Fransson (SD) interpelle Busch sur le gaz comme pont. Investissements SVK multipliés par 15 en 20 ans ; demande d'activation de l'Öresundsverket.
+- 🟡 **Prélèvement d'organes en Chine** (HD10456) : Nima Gholam Ali Pour (SD) demande à la Suède de criminaliser la réception d'organes de donneurs contraints ; cite les précédents d'Espagne, de Belgique et d'Israël.
+- 🟡 **Maladies rares** (HD10457) : Magnusson (S) interpelle le ministre de la santé sur les perturbations d'approvisionnement en médicaments pour les patients atteints de maladies rares.
+- 🟢 **Modification constitutionnelle** (HD10452) : L'indépendante Elsa Widding interpelle le ministre de la justice Strömmer sur les conflits d'intérêts procéduraux dans les examens juridiques.
+
+### Principal signal prospectif
+
+🔴 Délai de réponse pour HD10454 et HD10456 : **2026-05-20**. Si Waltersson Grönvall ne parvient pas à annoncer des mesures concrètes pour interdire les opérateurs criminels de foyers HVB d'ici cette date, S/V/MP devrait escalader vers une motion d'enquête formelle.
+
+### Mermaid : Image clé du renseignement
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# פשע מאורגן, מעבר אנרגטי ולחץ על מערכות הרווחה: סערת השאילתות הסווידית
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-29  
+**סיווג**: ציבורי — GDPR Art. 9(2)(e,g)  
+**רמת אמינות**: גבוהה [B2]
+
+---
+
+### 🎯 BLUF
+
+לוח השאילתות הסווידי מיום 2026-04-29 חושף ממשלה שנמצאת תחת לחץ בו-זמני לאורך שלושה קווי שבר אסטרטגיים: חדירת הפשע המאורגן למערכות הרווחה והעסקים, משבר השקעות בתשתיות האנרגיה הדורש פתרונות גישור מיידיים, והידרדרות שירותי רשת הביטחון הסוציאלי. האופוזיציה — בעיקר הסוציאל-דמוקרטים — מנצלת כישלונות מתועדים (חדירה לבתי ה-HVB, כלכלה פלילית בשיעור 5.5% מהתמ"ג) כדי לערער על טענת הממשלה לכשירות בתחום החוק והסדר, בעוד SD מאתגרת את הריאליזם האנרגטי של הממשלה מבפנים, מתוך בסיס התמיכה של הקואליציה.
+
+### 🧭 3 החלטות שמסמך זה תומך בהן
+
+1. **לניהול המשבר הממשלתי**: תעדוף מענה לחדירה לבתי ה-HVB (HD10454) — עיכוב של שנתיים בשיתוף מידע משטרתי עם שטוקהולם מהווה פגיעות תדמיתית המשלבת כעת פשע, רווחת הילד וכשירות מינהלית לנרטיב אחד.
+
+2. **לגורמים בתחום מדיניות האנרגיה**: הצעת גשר הגז (HD10453, Josef Fransson/SD) בוחנת את לכידות הקואליציה — SD מאתגרת במפורש את גישת השקעות הרשת של KD/Ebba Busch. ההחלטה: הצעת גז כאמצעי מעבר מסכנת לשבור את הקונצנזוס האנרגטי של קואליציית Tidö.
+
+3. **למשקיפים על המדיניות הסוציאלית**: השילוב של חריגים בביטוח מחלה (HD10450), דמפינג סוציאלי בין עיריות (HD10443) וסגירת מקלטים לנשים (HD10438) מסמן גיבוש נרטיב S בנוגע לרשת הביטחון הסוציאלי לקראת המיצוב הבחירתי לשנת 2026.
+
+### נקודות של 60 שניות
+
+- 🔴 **שערוריית בתי ה-HVB** (HD10454): שטוקהולם המתינה ~2 שנים לרשימת המשטרה של בתי הנוער המנוהלים על ידי עבריינים; S דורשת פעולה מ-Waltersson Grönvall (M). מועד: תשובה עד 2026-05-20.
+- 🔴 **הכלכלה הפלילית** (HD10451): Brå מאשרת שכל אחד מ-5 עבריינים ברשת מנהל חברה; ESO מעריכה את התמ"ג הפלילי ב-352 מיליארד SEK (5.5%). S מאתגרת את Strömmer (M) על פסיביות הממשלה.
+- 🟡 **רשת החשמל** (HD10453): Fransson של SD מאתגר את Busch על גז כגשר. השקעות SVK גדלו פי 15 ב-20 שנה; קורא להפעלת Öresundsverket.
+- 🟡 **קצירת איברים מסין** (HD10456): Nima Gholam Ali Pour של SD דורש שסווידן תפלילית קבלת איברים מתורמים בכפייה; מצטט תקדימים מספרד, בלגיה וישראל.
+- 🟡 **מחלות נדירות** (HD10457): Magnusson של S מאתגר את שר הבריאות על שיבושים בהספקת תרופות לחולי מחלות נדירות.
+- 🟢 **שינוי חוקתי** (HD10452): העצמאית Elsa Widding מאתגרת את שר המשפטים Strömmer בנוגע לניגודי עניינים פרוצדורליים בסקירות משפטיות.
+
+### האות הצופה הקריטי ביותר
+
+🔴 מועד אחרון למענה על HD10454 וHD10456: **2026-05-20**. אם Waltersson Grönvall לא תכריז על צעדים קונקרטיים לאסור על מפעילים פליליים של בתי HVB עד לאותו תאריך, צפוי ש-S/V/MP יסלימו להצעת חקירה פורמלית.
+
+### Mermaid: תמונת המודיעין המרכזית
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-04-29  
+**分類**: 公開 — GDPR Art. 9(2)(e,g)  
+**信頼水準**: 高 [B2]
+
+---
+
+### 🎯 BLUF
+
+2026-04-29のスウェーデンの質問書（インテルペラション）日程は、三つの戦略的断層線に沿って同時に圧力を受けている政府を露わにしている。組織犯罪が福祉・ビジネスシステムへ浸透していること、即時の橋渡し策を要するエネルギーインフラへの投資危機、そして社会的セーフティネット・サービスの悪化である。野党—主に社会民主党—は文書化された失敗（HVBホームへの浸透、GDP比5.5%の犯罪経済）を利用して、治安と秩序に関する政府の能力主張を問い質している。一方SDは連立政権の支持基盤内部からエネルギー現実主義を問いただしている。
+
+### 🧭 このブリーフィングが支援する3つの意思決定
+
+1. **政府の危機管理のために**: HVBホームへの浸透（HD10454）への対応を優先すること — 警察情報をストックホルムと共有するのに2年かかった遅延は、犯罪、児童福祉、行政能力を一つの物語に結びつける評判上の脆弱性となっている。
+
+2. **エネルギー政策の関係者のために**: ガス橋渡し提案（HD10453、Josef Fransson/SD）は連立の結束を試している — SDはKD/Ebba Buschの送電網投資重視のアプローチを明示的に問い質している。決断：ガスを過渡的措置として提供することは、Tidö連立のエネルギーコンセンサスを分断するリスクがある。
+
+3. **社会政策の観察者のために**: 傷病保険の例外措置（HD10450）、自治体間の社会的ダンピング（HD10443）、女性シェルターの閉鎖（HD10438）の組み合わせは、2026年選挙ポジショニングに向けてSが社会的セーフティネットの物語を集約しつつあることを示している。
+
+### 60秒箇条書き
+
+- 🔴 **HVBホーム・スキャンダル**（HD10454）：ストックホルムは犯罪組織が運営する青少年ケアホームの警察リストを~2年待った；SはWaltersson Grönvall（M）に対応を要求。期限：2026-05-20までに回答。
+- 🔴 **犯罪経済**（HD10451）：Bråは5人に1人のネットワーク犯罪者が企業を経営していることを確認；ESOは犯罪GDPを3,520億SEK（5.5%）と推定。SはStrömmer（M）に政府の消極性を問い質す。
+- 🟡 **電力網**（HD10453）：SDのFranssonはBuschにガス橋渡しについて問い質す。SVKの投資は20年で15倍；Öresundsverketの稼働を求める。
+- 🟡 **中国からの臓器摘出**（HD10456）：SDのNima Gholam Ali Pourはスウェーデンが強制提供者からの臓器受け取りを犯罪化するよう求める；スペイン、ベルギー、イスラエルの先例を挙げる。
+- 🟡 **希少疾患**（HD10457）：SのMagnussonは希少疾患患者向け医薬品の供給障害について保健大臣に問い質す。
+- 🟢 **憲法改正**（HD10452）：無所属のElsa Widdingは法律審査における手続き上の利益相反についてStrömmer司法相に問い質す。
+
+### 最重要の将来シグナル
+
+🔴 HD10454およびHD10456の回答期限：**2026-05-20**。Waltersson Grönvallがその日付までにHVBホームの犯罪的運営者を禁止する具体的な措置を発表しない場合、S/V/MPは正式な調査動議にエスカレートすると予想される。
+
+### Mermaid: 主要インテリジェンス概況
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-29  
+**분류**: 공개 — GDPR Art. 9(2)(e,g)  
+**신뢰 수준**: 높음 [B2]
+
+---
+
+### 🎯 BLUF
+
+2026-04-29 스웨덴 질의서(인테르펠라시온) 일정은 세 가지 전략적 단층선을 따라 동시에 압박을 받는 정부를 드러낸다. 복지·사업 시스템에 대한 조직범죄 침투, 즉각적인 과도기적 해결책을 필요로 하는 에너지 인프라 투자 위기, 그리고 사회 안전망 서비스의 악화가 그것이다. 야당—주로 사회민주당—은 문서화된 실패(HVB 시설 침투, GDP의 5.5%에 달하는 범죄 경제)를 활용해 법과 질서에 관한 정부의 역량 주장에 의문을 제기하고 있으며, SD는 연립 지지 기반 내부에서 정부의 에너지 현실주의에 도전하고 있다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **정부 위기 관리를 위해**: HVB 시설 침투(HD10454)에 대한 대응을 우선시할 것 — 경찰 정보를 스톡홀름과 공유하는 데 2년이 걸린 지연은 이제 범죄, 아동 복지, 행정 역량을 하나의 서사로 결합하는 평판상 취약점이 되었다.
+
+2. **에너지 정책 행위자들을 위해**: 가스 교량 제안(HD10453, Josef Fransson/SD)은 연립 결속력을 시험하고 있다 — SD는 KD/Ebba Busch의 전력망 투자 우선 접근 방식에 명시적으로 도전하고 있다. 결정: 가스를 과도기적 조치로 제공하면 Tidö 연립의 에너지 합의가 깨질 위험이 있다.
+
+3. **사회정책 관찰자들을 위해**: 상병보험 예외(HD10450), 지자체 간 사회적 덤핑(HD10443), 여성 쉼터 폐쇄(HD10438)의 조합은 2026년 선거 포지셔닝을 앞두고 S의 사회 안전망 서사가 공고화되고 있음을 시사한다.
+
+### 60초 핵심 요약
+
+- 🔴 **HVB 시설 스캔들** (HD10454): 스톡홀름은 범죄 조직이 운영하는 청소년 케어 시설 경찰 목록을 ~2년 기다렸다; S는 Waltersson Grönvall(M)에 조치를 요구. 기한: 2026-05-20까지 답변.
+- 🔴 **범죄 경제** (HD10451): Brå는 네트워크 범죄자 5명 중 1명이 회사를 운영한다고 확인; ESO는 범죄 GDP를 3,520억 SEK(5.5%)로 추산. S는 Strömmer(M)에 정부 소극성을 문제 삼음.
+- 🟡 **전력망** (HD10453): SD의 Fransson이 Busch에게 가스 교량에 대해 질의. SVK 투자 20년간 15배 증가; Öresundsverket 가동 촉구.
+- 🟡 **중국의 장기 적출** (HD10456): SD의 Nima Gholam Ali Pour는 스웨덴이 강요된 기증자의 장기 수령을 범죄화할 것을 요구; 스페인, 벨기에, 이스라엘의 선례 인용.
+- 🟡 **희귀 질환** (HD10457): S의 Magnusson이 희귀 질환 환자 의약품 공급 중단에 대해 보건부 장관에 질의.
+- 🟢 **헌법 개정** (HD10452): 무소속 Elsa Widding이 법률 검토에서의 절차적 이해충돌에 대해 Strömmer 법무부 장관에 질의.
+
+### 가장 중요한 전망 신호
+
+🔴 HD10454 및 HD10456 답변 기한: **2026-05-20**. Waltersson Grönvall이 그 날짜까지 HVB 시설 범죄적 운영자 금지를 위한 구체적 조치를 발표하지 않을 경우, S/V/MP가 공식 조사 동의를 에스컬레이션할 것으로 예상된다.
+
+### Mermaid: 핵심 정보 현황
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-29  
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e,g)  
+**Betrouwbaarheidsniveau**: HOOG [B2]
+
+---
+
+### 🎯 BLUF
+
+De Zweedse interpellatiekalender van 2026-04-29 onthult een regering die tegelijkertijd onder druk staat langs drie strategische breuklijnen: de infiltratie van de georganiseerde misdaad in welzijns- en bedrijfssystemen, een investeringscrisis in de energie-infrastructuur die onmiddellijke overgangsoplossingen vereist, en verslechterende sociale vangnetten. De oppositie — overwegend de Sociaal-democraten — benut gedocumenteerde tekortkomingen (infiltratie van HVB-tehuizen, criminele economie op 5,5 % van het BBP) om de competentieaanspraak van de regering op wet en orde in twijfel te trekken, terwijl SD het energierealisme van de regering uitdaagt vanuit de steunbasis van de coalitie.
+
+### 🧭 3 beslissingen die dit briefing ondersteunt
+
+1. **Voor crisismanagement van de regering**: Prioriteer de respons op de infiltratie van HVB-tehuizen (HD10454) — de tweejarige vertraging in het delen van politie-inlichtingen met Stockholm vormt een reputatiekwetsbaarheid die nu misdaad, kinderwelzijn en bestuurlijke competentie combineert in één narratief.
+
+2. **Voor energiepolitieke actoren**: Het gasbrugvoorstel (HD10453, Josef Fransson/SD) test de coalitiecohesie — SD daagt expliciet het netwerkinvesteringsfocus van KD/Ebba Busch uit. Beslissing: het aanbieden van gas als overgangsmaatregel riskeert de energieconsensus van de Tidö-coalitie te breken.
+
+3. **Voor sociaalbeleid-watchers**: De combinatie van uitzonderingen op de ziekteverzekering (HD10450), sociale dumping tussen gemeenten (HD10443) en sluitingen van vrouwenopvang (HD10438) signaleert een consolidatie van het S-narratief over het sociale vangnet met het oog op de verkiezingspositionering in 2026.
+
+### 60-seconden punten
+
+- 🔴 **HVB-tehuis-schandaal** (HD10454): Stockholm wachtte ~2 jaar op de politielijst van crimineel gerunde jeugdzorgtehuizen; S eist actie van Waltersson Grönvall (M). Deadline: antwoord uiterlijk 2026-05-20.
+- 🔴 **Criminele economie** (HD10451): Brå bevestigt dat 1 op 5 netwerkcriminelen een bedrijf runt; ESO schat het criminele BBP op 352 mrd. SEK (5,5 %). S daagt Strömmer (M) uit over overheidspassiviteit.
+- 🟡 **Energienet** (HD10453): Fransson van SD daagt Busch uit over gas als brug. SVK-investeringen 15× gestegen in 20 jaar; vraagt activering van het Öresundsverket.
+- 🟡 **Orgaanoogst uit China** (HD10456): Nima Gholam Ali Pour van SD eist dat Zweden de ontvangst van organen van gedwongen donoren criminaliseert; citeert precedenten uit Spanje, België en Israël.
+- 🟡 **Zeldzame ziekten** (HD10457): Magnusson van S daagt de zorgminister uit over verstoringen in de geneesmiddelenlevering voor patiënten met zeldzame ziekten.
+- 🟢 **Grondwetswijziging** (HD10452): De onafhankelijke Elsa Widding daagt minister van Justitie Strömmer uit over procedurele belangenconflicten in juridische beoordelingen.
+
+### Belangrijkste vooruitkijkend signaal
+
+🔴 Antwoorddeadline voor HD10454 en HD10456: **2026-05-20**. Als Waltersson Grönvall voor die datum nalaat concrete stappen aan te kondigen om criminele exploitanten van HVB-tehuizen te verbieden, wordt verwacht dat S/V/MP escaleert naar een formele onderzoeksmotion.
+
+### Mermaid: Centraal inlichtingenbeeld
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-29  
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
+**Konfidens**: HØY [B2]
+
+---
+
+### 🎯 BLUF
+
+Sveriges interpellasjonskalender 2026-04-29 avslører en regjering under simultant press langs tre strategiske bruddlinjer: organisert kriminalitets infiltrasjon av velferds- og næringslivssystemer, en investeringskrise i energiinfrastrukturen som krever umiddelbare overgangsløsninger, og forverret sosialt sikkerhetsnett. Opposisjonen — overveiende Sosialdemokratene — utnytter dokumenterte svikt (infiltrasjon av HVB-hjem, kriminell økonomi på 5,5 % av BNP) til å utfordre regjeringens kompetansekrav om lov og orden, mens SD utfordrer regjeringens energirealisme fra innsiden av koalisjonens støttebase.
+
+### 🧭 3 Beslutninger dette notatet støtter
+
+1. **For regjeringens krisehåndtering**: Prioriter svar på HVB-hjems-infiltrasjonen (HD10454) — den toårige forsinkelsen med å dele politiettretninger med Stockholm utgjør en omdømmesårbarhet som nå kombinerer kriminalitet, barnepleie og administrativ kompetanse i én fortelling.
+
+2. **For energipolitiske aktører**: Gasbroforslaget (HD10453, Josef Fransson/SD) tester koalisjonens samhold — SD utfordrer eksplisitt KD/Ebba Buschs nettinvesteringsfokus. Beslutning: å tilby gass som en overgangsforanstaltning risikerer å splitte Tidökoalisjonens energikonsensus.
+
+3. **For sosialpolitiske observatører**: Kombinasjonen av sykeforsikringsunntak (HD10450), sosial dumping mellom kommuner (HD10443) og stengning av krisesentre for kvinner (HD10438) signaliserer en konsolidering av S's fortelling om det sosiale sikkerhetsnettet foran valgposisjonering i 2026.
+
+### 60-sekunders punkter
+
+- 🔴 **HVB-hjem-skandalen** (HD10454): Stockholm ventet ~2 år på politiets liste over kriminelt drevne ungdomshjem; S krever tiltak fra Waltersson Grönvall (M). Frist: svar innen 2026-05-20.
+- 🔴 **Kriminell økonomi** (HD10451): Brå bekrefter at hvert 5. nettverkskriminelle individ driver et selskap; ESO anslår kriminelt BNP til 352 mrd. SEK (5,5 %). S utfordrer Strömmer (M) om regjeringens passivitet.
+- 🟡 **Energinett** (HD10453): SD's Fransson utfordrer Busch om gass som bro. SVK-investeringer økt 15× på 20 år; krever aktivering av Øresundsverket.
+- 🟡 **Organhandel fra Kina** (HD10456): SD's Nima Gholam Ali Pour krever at Sverige kriminaliserer mottak av organer fra tvungne donorer; siterer presedens fra Spania, Belgia og Israel.
+- 🟡 **Sjeldne sykdommer** (HD10457): S's Magnusson utfordrer helseministeren om legemiddelleveringsforstyrrelser for pasienter med sjeldne sykdommer.
+- 🟢 **Grunnlovsendring** (HD10452): Den uavhengige Elsa Widding utfordrer justisminister Strömmer om prosessuelle interessekonflikter i juridiske gjennomganger.
+
+### Viktigste fremadrettede signal
+
+🔴 Svarsfrist for HD10454 og HD10456: **2026-05-20**. Hvis Waltersson Grönvall ikke kunngjør konkrete tiltak for å forby kriminelle operatører av HVB-hjem innen den datoen, forventes S/V/MP å eskalere til et formelt undersøkelsesforslag.
+
+### Mermaid: Sentralt etterretningsbilde
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-29  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
+**Konfidensgrad**: HÖG [B2]
+
+---
+
+### 🎯 BLUF
+
+Sveriges interpellationskalender den 2026-04-29 avslöjar en regering under samtidigt tryck längs tre strategiska spricklinjer: den organiserade brottslighetens infiltration av välfärds- och affärssystem, en kris i energiinfrastrukturens investeringar som kräver omedelbara övergångslösningar, och försämrande sociala skyddsnätets tjänster. Oppositionen — till övervägande del Socialdemokraterna — utnyttjar dokumenterade misslyckanden (infiltration av HVB-hem, den kriminella ekonomin på 5,5 % av BNP) för att ifrågasätta regeringens kompetensanspråk på lag och ordning, medan SD ifrågasätter regeringens energirealism inifrån koalitionens stödbas.
+
+### 🧭 3 Beslut detta underlag stöder
+
+1. **För regeringens krishantering**: Prioritera svar på infiltrationen av HVB-hem (HD10454) — den tvååriga förseningen med att dela polisunderrättelser med Stockholm utgör en reputationsrisk som nu förenar brott, barnomsorg och administrativ kompetens i en enda berättelse.
+
+2. **För energipolitiska aktörer**: Gasövergångsförslaget (HD10453, Josef Fransson/SD) prövar koalitionens sammanhållning — SD utmanar explicit KD:s/Ebba Buschs nätinvesteringsfokus. Beslut: att erbjuda gas som övergångslösning riskerar att spräcka Tidökoalitionens energikonsensus.
+
+3. **För socialpolitiska bevakare**: Kombinationen av sjukförsäkringsundantag (HD10450), social dumpning mellan kommuner (HD10443) och stängda kvinnojourer (HD10438) signalerar en konsolidering av S:s berättelse om det sociala skyddsnätet inför valpositioneringen 2026.
+
+### 60-sekunders punkter
+
+- 🔴 **HVB-hemsskandalen** (HD10454): Stockholm väntade ~2 år på polisens lista över kriminellt drivna ungdomshem; S kräver åtgärder av Waltersson Grönvall (M). Svarstid: svar senast 2026-05-20.
+- 🔴 **Kriminell ekonomi** (HD10451): Brå bekräftar att vart femte nätverkskriminellt individ driver ett företag; ESO uppskattar kriminellt BNP till 352 mdr SEK (5,5 %). S utmanar Strömmer (M) om regeringens passivitet.
+- 🟡 **Elnätet** (HD10453): SD:s Fransson utmanar Busch om gas som brygga. SVK:s investeringar har ökat 15 gånger på 20 år; begär aktivering av Öresundsverket.
+- 🟡 **Organskördar från Kina** (HD10456): SD:s Nima Gholam Ali Pour kräver att Sverige kriminaliserar mottagande av organ från tvingade donatorer; hänvisar till prejudikat i Spanien, Belgien och Israel.
+- 🟡 **Sällsynta sjukdomar** (HD10457): S:s Magnusson utmanar sjukvårdsministern om störningar i läkemedelsleveranser för patienter med sällsynta sjukdomar.
+- 🟢 **Grundlagsändring** (HD10452): Den oberoende Elsa Widding utmanar justitieminister Strömmer om processuella intressekonflikter i rättsgranskningar.
+
+### Viktigaste framåtblickande signal
+
+🔴 Svarsfrist för HD10454 och HD10456: **2026-05-20**. Om Waltersson Grönvall misslyckas med att till det datumet tillkännage konkreta steg för att förbjuda kriminella operatörer av HVB-hem, förväntas S/V/MP eskalera till ett formellt utskottsutredningsyrkande.
+
+### Mermaid: Viktigaste underrättelsebilden
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-04-29  
+**密级**：公开 — GDPR第9条第2款(e、g)项  
+**可信度**：高 [B2]
+
+---
+
+### 🎯 BLUF
+
+2026-04-29瑞典质询（interpellation）日程揭示，政府同时承受沿三条战略断层线的压力：有组织犯罪渗入福利和商业体系、能源基础设施投资危机需要立即出台过渡解决方案，以及社会安全网服务恶化。反对党——主要是社会民主党——利用有据可查的失败（HVB之家渗透、犯罪经济占GDP 5.5%）质疑政府在法律与秩序方面的能力主张，而瑞典民主党则从联合执政基础内部挑战政府的能源现实主义。
+
+### 🧭 本简报支持的3项决策
+
+1. **对于政府危机管理**：优先回应HVB之家渗透问题（HD10454）——与斯德哥尔摩共享警方情报延迟两年，已形成将犯罪、儿童福利和行政能力合并为单一叙事的声誉漏洞。
+
+2. **对于能源政策参与者**：天然气过渡方案（HD10453，Josef Fransson/SD）考验联合执政凝聚力——SD明确挑战KD/Ebba Busch的电网投资优先路线。决策：将天然气作为过渡措施可能导致Tidö联合执政能源共识破裂。
+
+3. **对于社会政策观察者**：病假保险例外（HD10450）、市镇间社会倾销（HD10443）和女性庇护所关闭（HD10438）的组合表明，S正在为2026年选举定位巩固其社会安全网叙事。
+
+### 60秒要点
+
+- 🔴 **HVB之家丑闻**（HD10454）：斯德哥尔摩等待警方违法运营青少年之家名单约2年；S要求Waltersson Grönvall（M）采取行动。截止日期：2026-05-20前答复。
+- 🔴 **犯罪经济**（HD10451）：Brå证实每5名网络犯罪分子中有1名经营公司；ESO估算犯罪GDP为3520亿瑞典克朗（5.5%）。S就政府消极性质询Strömmer（M）。
+- 🟡 **电力网络**（HD10453）：SD的Fransson就天然气作为过渡桥梁质询Busch。SVK投资20年增长15倍；要求启用Öresundsverket。
+- 🟡 **中国器官摘取**（HD10456）：SD的Nima Gholam Ali Pour要求瑞典将接受强迫捐献者器官入罪；援引西班牙、比利时、以色列先例。
+- 🟡 **罕见病**（HD10457）：S的Magnusson就罕见病患者药品供应中断质询卫生部长。
+- 🟢 **宪法修改**（HD10452）：独立议员Elsa Widding就法律审查中程序利益冲突质询司法部长Strömmer。
+
+### 最重要的前瞻信号
+
+🔴 HD10454和HD10456答复截止日期：**2026-05-20**。若Waltersson Grönvall未能在该日期前宣布禁止HVB之家犯罪运营者的具体措施，预计S/V/MP将上升为正式调查动议。
+
+### Mermaid：核心情报图景
+
+```mermaid
+graph TD
+    A[Criminal Economy 5.5% GDP ESO 2026] --> B[Organized Crime in HVB-hem HD10454]
+    A --> C[Companies as Crime Tools HD10451]
+    B --> D[Child Welfare System Compromised]
+    C --> E[23000 Companies Implicated]
+    D --> F[S challenges Waltersson Grönvall M]
+    E --> G[S challenges Strömmer M]
+    H[Energy Grid Crisis HD10453] --> I[SD gas-bridge proposal]
+    I --> J[Tests Tidö coalition energy consensus]
+    K[Social Safety Net Pressures] --> L[Women Shelters Closing HD10438]
+    K --> M[Social Dumping HD10443]
+    K --> N[Sick Insurance Cuts HD10450]
+    style A fill:#ff4444,color:#fff
+    style B fill:#ff6666,color:#fff
+    style H fill:#ffaa00,color:#000
+    style K fill:#ffcc00,color:#000
+    style D fill:#ff0000,color:#fff
+    style J fill:#ff8800,color:#000
+```
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 20 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2180,6 +2978,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

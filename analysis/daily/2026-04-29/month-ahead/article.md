@@ -6,7 +6,7 @@ date: 2026-04-29
 subfolder: month-ahead
 slug: 2026-04-29-month-ahead
 source_folder: analysis/daily/2026-04-29/month-ahead
-generated_at: 2026-05-20T20:11:09.094Z
+generated_at: 2026-05-21T02:19:50.688Z
 language: en
 layout: article
 ---
@@ -93,6 +93,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1591,13 +1604,865 @@ Three are interpellations (ip); one is a written question (fr).
 All filed by S party (HD10454, HD11767) or SD party (HD10455, HD10456).  
 Response deadlines: HD10454 → 2026-05-20.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# السويد إلى الأمام: السباق النهائي قبل الانتخابات — النشرة الشهرية مايو 2026
+
+**المؤلف**: جيمس بيتر سورلينغ  
+**التاريخ**: 2026-04-29  
+**التصنيف**: عام | مستوى الثقة: مرتفع [B2]  
+**نوع التحليل**: تجميع شهري Tier-C  
+**الريكسمويتي**: 2025/26
+
+---
+
+### 🎯 خلاصة تنفيذية (BLUF)
+
+تدخل السويد مايو 2026 مع **137 يومًا حتى الانتخابات البرلمانية في 14 سبتمبر**، مما يجعل كل جلسة في الريكسداغ حتى العطلة الصيفية اختبارًا انتخابيًا. تواجه تحالف تيدو (M/KD/L/SD) أحرج تقويم تشريعي في دورة الانتخابات: قانون الميزانية الربيعي (HC01FiU20)، وتشديد قانون الجنسية (HD01SfU28)، وقانون الأسلحة (HD01JuU10) — كل ذلك يجب إقراره بسلاسة لحمل سردية «النظام العام + المسؤولية المالية» إلى الموسم الانتخابي. صعّد الاشتراكيون الديمقراطيون حملتهم الاستجوابية قبل الانتخابات — بتقديم HD10454 اليوم (قائمة مرافق HVB الشرطية — توثيق وعد وزاري مكسور منذ عامين بأدلة راديو SR)، بعد ستة أيام من استجوابات S السابقة حول البنية التحتية وإصلاح إجازة المرض — مما يُظهر استراتيجية مساءلة منسقة تستهدف المصداقية الوزارية في الصحة والنقل وحماية الطفل. **الموعد النهائي للرد على HD10454 في 20 مايو هو أهم تاريخ سياسي قبل العطلة الصيفية.** السياق الاقتصادي الكلي للسويد (نمو الناتج المحلي الإجمالي +1.4% وفق IMF WEO أبر-2026، التضخم يتقارب نحو 2% KPIF، الدين ~35% من الناتج المحلي) قوي نسبيًا مقارنة بدول الشمال الأوروبي، غير أن حالة عدم اليقين بشأن السياسة التعريفية الأمريكية وهشاشة سوق الإسكان تظل عوامل خطر مستمرة.
+
+### 🧭 ثلاثة قرارات يُعلمها هذا النشرة
+
+1. **تقييم المخاطر التشريعية**: أيٌّ من مشاريع القوانين الخمسة الرئيسية في مايو يحمل أعلى خطر انهيار للتحالف؟ (الإجابة: HD01SfU28 الجنسية — توترات L/SD موثقة)
+2. **فاعلية المعارضة**: هل من المرجح أن تحرك حملة الاستجوابات الخاصة بـ S استطلاعات الرأي قبل الانتخابات؟ (الإجابة: احتمال مرتفع — الحملات المنسقة تُنتج تاريخيًا حركة 1.5–3.5 نقطة مئوية)
+3. **إدارة السرد الاقتصادي**: كيف تقارن الوضع المالي للسويد بجيرانها الشماليين قبل نقاش الميزانية الانتخابية؟ (الإجابة: السويد تتفوق في الدين/الناتج المحلي؛ فائض الميزانية مستمر وفق WEO أبر-2026)
+
+### ملخص الأخبار في 60 ثانية
+
+- 🏛️ **حالة التحالف**: تحالف تيدو مستقر لكنه تحت ضغط متعدد الجبهات؛ تماسك تصويت SD 97.7% في الجلسة الحالية
+- 📋 **أولويات التشريع في مايو**: قانون الميزانية الربيعي ← قانون الأسلحة ← تشديد الجنسية ← توجيه CER ← التصديق على أوكرانيا
+- 🔥 **استجوابات جديدة اليوم**: HD10454 (مرافق HVB/المجرمون، S→Waltersson Grönvall)، HD10455 (التراث الثقافي، SD)، HD10456 (الاتجار بالأعضاء، SD)، HD11767 (المشردون المفقودون، S)
+- 💰 **الاقتصاد**: نمو الناتج المحلي للسويد 2026F +1.4% (IMF WEO أبر-2026، NGDP_RPCH)؛ التضخم ~2.2%؛ البطالة ~8.4% (LUR)؛ فائض الميزانية مستمر؛ الدين ~35% من الناتج المحلي (GGXWDG_NGDP)
+- 🗳️ **العد التنازلي للانتخابات**: 137 يومًا حتى انتخابات 14 سبتمبر؛ S تتصدر معظم استطلاعات الرأي بفارق 3–5 نقاط مئوية؛ الحكومة متأخرة لكن في المتناول على سرديتي الجريمة والاقتصاد
+- ⚠️ **إشارة مسبقة رئيسية**: الرد الوزاري على HD10454 (2026-05-20) — إن التزمت Waltersson Grönvall بتشريع HVB تحول مخاطرة R1 إلى إظهار كفاءة؛ إن جاء الرد دفاعيًا تصاعدت دورة وسائل الإعلام SR/SVT
+
+### الإشارة المسبقة الرئيسية
+
+**الرد الوزاري على مرفق HVB HD10454 (الموعد النهائي HC10454: 2026-05-20)** — نقطة التحول الحرجة لسردية الخدمات الاجتماعية للحكومة.  
+إن التزمت Waltersson Grönvall بلوائح قائمة الشرطة: يُفعَّل سيناريو A — يحوّل هجوم المساءلة إلى إظهار كفاءة.  
+إن جاء الرد دفاعيًا أو متأخرًا: تصعيد SR/SVT على نمط كاريما إعلاميًا حتى يونيو 2026.  
+المؤشر الأولي الواجب رصده: جدول أعمال مجلس الوزراء لوزارة الشؤون الاجتماعية (5–16 مايو)؛ تصريحات حزب L بشأن بنود الإسكان في HC01FiU20.  
+مستوى الثقة: مرتفع [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**مستوى الثقة**: مرتفع [B2] — 3 خطوط أدلة مستقلة: مصادر riksdagen.se الأولية، تحليل الدورة السابقة، بيانات IMF الاقتصادية الكلية.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-29  
+**Klassificering**: OFFENTLIG | Konfidens: HØJ [B2]  
+**Analysetype**: Tier-C månedlig aggregering  
+
+---
+
+### 🎯 BLUF
+
+Sverige træder ind i maj 2026 med **137 dage til det parlamentariske valg den 14. september**, hvilket gør enhver Riksdag-session fra nu og frem til sommerferien til en valgkampsprøve. Tidö-koalitionen (M/KD/L/SD) står over for sin mest afgørende lovgivningskalender i valgperioden: forårsskattebudgettet (HC01FiU20), stramning af statsborgerskabslovgivning (HD01SfU28) og våbenloven (HD01JuU10) skal alle vedtages rent for at opretholde "lov og orden + finansiel ansvarlighed"-fortællingen frem mod valgkampen. Socialdemokraterne har intensiveret deres forvalgskampagne med interpellationer — med dagens indgivelse af HD10454 (HVB-hjem-polisliste — der dokumenterer et to-årigt brudt ministerielt løfte med SR-radiobevis) seks dage efter S's tidligere interpellationer om infrastruktur og sygelønsreform — og demonstrerer dermed en koordineret ansvarsstrategien rettet mod ministeriernes troværdighed inden for sundhed, transport og børnebeskyttelse. **Ministersvaret den 20. maj for HD10454 er den eneste mest afgørende politiske dato inden sommerferien.** Sveriges makroøkonomiske baggrund (BNP-vækst +1,4 % ifølge IMF WEO Apr-2026, inflation konvergerer mod 2 % CPIF, gæld ~35 % af BNP) er relativt stærk sammenlignet med nordiske jævnaldrende, men usikkerhed om amerikanske toldsatser og boligmarkedets skrøbelighed udgør vedvarende risikofaktorer.
+
+### 🧭 3 beslutninger dette notat understøtter
+
+1. **Lovgivningsrisikovurdering**: Hvilken af de fem store majforslag indebærer den højeste risiko for koalitionsfrafald? (Svar: HD01SfU28 statsborgerskab — L/SD-spænding dokumenteret)
+2. **Oppositionens effektivitet**: Er S' interpellationskampagne sandsynligvis til at flytte meningsmålingerne inden valget? (Svar: HØJ sandsynlighed — koordinerede kampagner producerer historisk 1,5–3,5 pp bevægelse)
+3. **Styring af den økonomiske fortælling**: Hvordan er Sveriges finanspolitiske stilling sammenlignet med nordiske jævnaldrende inden valgets budgetdebat? (Svar: Sverige overpræsterer på gæld/BNP; finanspolitisk overskud opretholdt ifølge WEO Apr-2026)
+
+### 60-sekunders efterretningsoversigt
+
+- 🏛️ **Koalitionsstatus**: Tidö-koalitionen stabil men under pres på flere fronter; SD's stemmekohæsion på 97,7 % i indeværende session
+- 📋 **Majmånedens lovgivningsprioriteter**: Forårsskattebudget → våbenlov → statsborgerskabsstramning → CER-direktivet → Ukraine-ratificering
+- 🔥 **Dagens nye interpellationer**: HD10454 (HVB-hjem/kriminelle, S→Waltersson Grönvall), HD10455 (kulturarv, SD), HD10456 (organhandel, SD), HD11767 (hjemløse forsvundne, S)
+- 💰 **Økonomi**: Sveriges BNP-vækst 2026F +1,4 % (IMF WEO Apr-2026, NGDP_RPCH); inflation ~2,2 %; ledighed ~8,4 % (LUR); finanspolitisk overskud opretholdt; gæld ~35 % af BNP (GGXWDG_NGDP)
+- 🗳️ **Valnedtælling**: 137 dage til valg den 14. september; S fører i de fleste meningsmålinger med 3–5 pp; regering bagud men inden rækkevidde på kriminalitets- og økonomifortællingerne
+- ⚠️ **Vigtigste fremadrettede signal**: HD10454 ministerielt svar (2026-05-20) — hvis Waltersson Grönvall forpligter sig til HVB-lovgivning, konverteres R1-risiko til kompetencedemonstration; hvis svaret er defensivt, eskalerer SR/SVT-mediecyklus
+
+### Vigtigste fremadrettede signal
+
+**HD10454 HVB-hjem ministerielt svar (HC10454 svarsfrist 2026-05-20)** — det kritiske vendepunkt for regeringens velfærdsleverings-fortælling.  
+Hvis Waltersson Grönvall forpligter sig til bekendtgørelse om polislisten: Scenarie A aktiveres — konverterer ansvarlighedsangreb til kompetencedemonstration.  
+Hvis svaret er defensivt eller udsættes: SR/SVT Carema-mønstrets medieeskalering følger og strækker sig ind i juni 2026.  
+Ledende indikator at følge: Socialdepartementets kabinetsdagsorden (5.–16. maj); L-partiets udtalelser om HC01FiU20 boligbestemmelser.  
+Konfidens: HØJ [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**Konfidens**: HØJ [B2] — 3 adskilte bevisllinjer: riksdagen.se primærkilder, analyse fra tidligere cyklus, IMF makroøkonomisk baseline.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-29  
+**Einstufung**: ÖFFENTLICH | Vertrauensniveau: HOCH [B2]  
+**Analysetyp**: Tier-C Monatsaggregation  
+
+---
+
+### 🎯 BLUF
+
+Schweden tritt in den Mai 2026 mit **137 Tagen bis zur Parlamentswahl am 14. September** ein, was jede Riksdag-Sitzung von jetzt bis zur Sommerpause zu einem Wahlkampftest macht. Die Tidö-Koalition (M/KD/L/SD) steht vor ihrem kritischsten Gesetzgebungskalender des Wahlzyklus: das Frühjahrssteuergesetz (HC01FiU20), die Verschärfung der Staatsbürgerschaftsgesetzgebung (HD01SfU28) und das Waffengesetz (HD01JuU10) müssen allesamt sauber verabschiedet werden, um die Erzählung „Recht und Ordnung + finanzielle Verantwortung" in die Wahlsaison zu tragen. Die Sozialdemokraten haben ihre Interpellationskampagne vor der Wahl intensiviert — mit der heutigen Einreichung von HD10454 (HVB-Heimliste der Polizei — das ein zweijähriges gebrochenes Ministerversprechen mit SR-Radiobeweisen dokumentiert), sechs Tage nach S' früheren Interpellationen zu Infrastruktur und Lohnfortzahlungsreform — und damit eine koordinierte Rechenschaftsstrategie demonstriert, die die ministerielle Glaubwürdigkeit in den Bereichen Gesundheit, Verkehr und Kinderschutz ins Visier nimmt. **Der 20. Mai als Antwortfrist für HD10454 ist das einzeln bedeutendste politische Datum vor der Sommerpause.** Der makroökonomische Hintergrund Schwedens (BIP-Wachstum +1,4 % laut IWF WEO Apr-2026, Inflation konvergiert auf 2 % KPIF, Schulden ~35 % des BIP) ist im Vergleich zu nordischen Nachbarländern vergleichsweise stark, doch Unsicherheit bezüglich US-amerikanischer Zollpolitik und die Fragilität des Wohnungsmarkts bleiben anhaltende Risikofaktoren.
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Gesetzgebungsrisikobewertung**: Welches der fünf wichtigen Maigesetze birgt das höchste Risiko eines Koalitionszerfalls? (Antwort: HD01SfU28 Staatsbürgerschaft — L/SD-Spannungen dokumentiert)
+2. **Wirksamkeit der Opposition**: Wird die Interpellationskampagne von S die Umfragen vor der Wahl wahrscheinlich verschieben? (Antwort: HOHE Wahrscheinlichkeit — koordinierte Kampagnen erzeugen historisch 1,5–3,5 pp Bewegung)
+3. **Wirtschaftliche Narrativführung**: Wie schneidet Schwedens Haushaltslage im Vergleich zu nordischen Nachbarländern vor der Wahlbudgetdebatte ab? (Antwort: Schweden übertrifft bei Schulden/BIP; Haushaltsüberschuss gemäß WEO Apr-2026 aufrechterhalten)
+
+### 60-Sekunden-Nachrichtenüberblick
+
+- 🏛️ **Koalitionsstatus**: Tidö-Koalition stabil, aber unter mehrfrontigem Druck; SD-Abstimmungskohäsion bei 97,7 % in der laufenden Sitzung
+- 📋 **Gesetzgebungsprioritäten im Mai**: Frühjahrssteuergesetz → Waffengesetz → Staatsbürgerschaftsverschärfung → CER-Richtlinie → Ukraine-Ratifizierung
+- 🔥 **Heutige neue Interpellationen**: HD10454 (HVB-Heime/Kriminelle, S→Waltersson Grönvall), HD10455 (Kulturerbe, SD), HD10456 (Organhandel, SD), HD11767 (Wohnungslose Vermisste, S)
+- 💰 **Wirtschaft**: Schwedens BIP-Wachstum 2026F +1,4 % (IWF WEO Apr-2026, NGDP_RPCH); Inflation ~2,2 %; Arbeitslosigkeit ~8,4 % (LUR); Haushaltsüberschuss aufrechterhalten; Schulden ~35 % des BIP (GGXWDG_NGDP)
+- 🗳️ **Wahlabwärts**: 137 Tage bis zur Wahl am 14. September; S führt in den meisten Umfragen mit 3–5 pp; Regierung im Rückstand, aber in Reichweite bei Kriminalitäts- und Wirtschaftsnarrativen
+- ⚠️ **Wichtigstes Vorwärtssignal**: HD10454 Ministerantwort (2026-05-20) — wenn Waltersson Grönvall HVB-Gesetzgebung zusichert, wird R1-Risiko zur Kompetenzdemonstration; wenn defensiv, eskaliert SR/SVT-Medienzyklus
+
+### Wichtigstes Vorwärtssignal
+
+**HD10454 HVB-Heim Ministerantwort (HC10454 Frist 2026-05-20)** — der kritische Wendepunkt für die Wohlfahrtsleistungserzählung der Regierung.  
+Wenn Waltersson Grönvall die Verordnung zur Polizeiliste zusichert: Szenario A wird aktiviert — konvertiert Rechenschaftsangriff in Kompetenzdemonstration.  
+Wenn die Antwort defensiv oder verzögert: SR/SVT Carema-Muster-Medieneskalation folgt bis in den Juni 2026.  
+Führender Indikator zum Beobachten: Kabinettsagenda des Sozialministeriums (5.–16. Mai); L-Parteistatements zu HC01FiU20-Wohnungsbestimmungen.  
+Vertrauensniveau: HOCH [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**Vertrauensniveau**: HOCH [B2] — 3 distinkte Beweislinien: riksdagen.se Primärquellen, vorheriger Zyklus-Analyse, IWF-makroökonomische Ausgangslage.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-29  
+**Clasificación**: PÚBLICO | Nivel de confianza: ALTO [B2]  
+**Tipo de análisis**: Agregación mensual Tier-C  
+
+---
+
+### 🎯 BLUF
+
+Suecia entra en mayo de 2026 con **137 días hasta las elecciones parlamentarias del 14 de septiembre**, convirtiendo cada sesión del Riksdag hasta el receso de verano en un ensayo de campaña. La coalición Tidö (M/KD/L/SD) afronta su calendario legislativo más crítico del ciclo electoral: la ley de presupuestos de primavera (HC01FiU20), el endurecimiento de la legislación de ciudadanía (HD01SfU28) y la ley de armas (HD01JuU10) deben aprobarse limpiamente para trasladar el relato «orden público + responsabilidad fiscal» a la temporada electoral. Los socialdemócratas han intensificado su campaña de interpelaciones preelectoral —presentando hoy HD10454 (lista de centros HVB de la policía —que documenta una promesa ministerial rota de dos años con pruebas de Radio SR), seis días después de las anteriores interpelaciones de S sobre infraestructura y reforma de la prestación por enfermedad— demostrando una estrategia de rendición de cuentas coordinada que apunta a la credibilidad ministerial en salud, transporte y protección de menores. **El 20 de mayo, fecha límite de respuesta a HD10454, es la fecha política más importante antes del receso de verano.** El contexto macroeconómico de Suecia (crecimiento del PIB +1,4 % según el FMI WEO abr-2026, inflación convergente al 2 % KPIF, deuda ~35 % del PIB) es comparativamente sólido frente a los vecinos nórdicos, aunque la incertidumbre sobre la política arancelaria estadounidense y la fragilidad del mercado inmobiliario siguen siendo factores de riesgo persistentes.
+
+### 🧭 3 decisiones que informa este boletín
+
+1. **Evaluación del riesgo legislativo**: ¿Cuál de los cinco proyectos de ley clave de mayo presenta mayor riesgo de ruptura de la coalición? (Respuesta: HD01SfU28 ciudadanía — tensiones L/SD documentadas)
+2. **Eficacia de la oposición**: ¿Es probable que la campaña de interpelaciones de S mueva encuestas antes de las elecciones? (Respuesta: PROBABILIDAD ALTA — las campañas coordinadas producen históricamente un movimiento de 1,5–3,5 pp)
+3. **Control del relato económico**: ¿Cómo se compara la posición presupuestaria de Suecia con los vecinos nórdicos antes del debate presupuestario electoral? (Respuesta: Suecia supera en deuda/PIB; superávit presupuestario mantenido según WEO abr-2026)
+
+### Resumen informativo en 60 segundos
+
+- 🏛️ **Estado de la coalición**: Coalición Tidö estable pero bajo presión en múltiples frentes; cohesión de voto de SD al 97,7 % en la sesión en curso
+- 📋 **Prioridades legislativas de mayo**: Ley de presupuestos de primavera → Ley de armas → Endurecimiento ciudadanía → Directiva CER → Ratificación Ucrania
+- 🔥 **Nuevas interpelaciones hoy**: HD10454 (centros HVB/criminales, S→Waltersson Grönvall), HD10455 (patrimonio cultural, SD), HD10456 (tráfico de órganos, SD), HD11767 (personas sin hogar desaparecidas, S)
+- 💰 **Economía**: Crecimiento del PIB de Suecia 2026P +1,4 % (FMI WEO abr-2026, NGDP_RPCH); inflación ~2,2 %; desempleo ~8,4 % (LUR); superávit presupuestario mantenido; deuda ~35 % del PIB (GGXWDG_NGDP)
+- 🗳️ **Cuenta atrás electoral**: 137 días hasta las elecciones del 14 de septiembre; S lidera en la mayoría de encuestas por 3–5 pp; gobierno rezagado pero al alcance en los relatos de criminalidad y economía
+- ⚠️ **Señal adelantada clave**: Respuesta ministerial a HD10454 (2026-05-20) — si Waltersson Grönvall compromete legislación HVB, el riesgo R1 se convierte en demostración de competencia; si es defensiva, escala ciclo mediático SR/SVT
+
+### Señal adelantada principal
+
+**Respuesta ministerial sobre centros HVB HD10454 (fecha límite HC10454: 2026-05-20)** — el punto de inflexión crítico para el relato de prestación social del Gobierno.  
+Si Waltersson Grönvall compromete regulación de lista policial: el escenario A se activa — convierte el ataque de rendición de cuentas en demostración de competencia.  
+Si la respuesta es defensiva o retrasada: escalada mediática SR/SVT según el patrón Carema hasta junio de 2026.  
+Indicador adelantado a vigilar: agenda del gabinete del Ministerio de Asuntos Sociales (5–16 de mayo); declaraciones del partido L sobre disposiciones de vivienda de HC01FiU20.  
+Nivel de confianza: ALTO [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**Nivel de confianza**: ALTO [B2] — 3 líneas de evidencia distintas: fuentes primarias riksdagen.se, análisis del ciclo anterior, datos macroeconómicos del FMI.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-04-29  
+**Luokitus**: JULKINEN | Luottamustaso: KORKEA [B2]  
+**Analyysiluokka**: Tier-C kuukausiaggregaatti  
+
+---
+
+### 🎯 BLUF
+
+Ruotsi aloittaa toukokuun 2026 **137 päivää ennen 14. syyskuuta pidettäviä vaaleja**, joten jokainen Riksdagin istunto nyt kesälomaan asti on vaalikampanjakoe. Tidö-koalitio (M/KD/L/SD) kohtaa vaalikauden kriittisimmän lainsäätämiskalenterinsa: kevätbudjetin (HC01FiU20), kansalaisuuslainsäädännön tiukennuksen (HD01SfU28) ja aselain (HD01JuU10) on kaikki läpäistävä puhtaasti, jotta "laki ja järjestys + finansiaalinen vastuullisuus" -kerronta säilyy vaalien alla. Sosiaalidemokraatit ovat intensifioineet ennakoivaa vaalikampanjaansa interpellaatioilla — tänään jätetty HD10454 (HVB-kotien poliisilista — joka dokumentoi kahden vuoden rikotun ministerilupauksensa SR-radioaineistolla) kuusi päivää S:n aiempien infrastruktuurista ja sairaslomauudistuksesta esittämien interpellaatioiden jälkeen — osoittaen koordinoidun vastuullisuusstrategian, joka kohdistuu ministerien uskottavuuteen terveydenhuollossa, liikenteessä ja lastensuojelussa. **Toukokuun 20. päivän ministerivastaus HD10454:ään on yksittäisesti merkittävin poliittinen päivämäärä ennen kesälomaa.** Ruotsin makrotaloudellinen tausta (BNP-kasvu +1,4 % IMF WEO Apr-2026 mukaan, inflaatio lähestyy 2 % KPIF:ia, velka ~35 % BKT:sta) on suhteellisen vahva pohjoismaisiin verrokkeihin nähden, mutta Yhdysvaltojen tulleihin liittyvä epävarmuus ja asuntomarkkinoiden hauras tila ovat jatkuvia riskitekijöitä.
+
+### 🧭 3 päätöstä, joita tämä tiivis tukee
+
+1. **Lainsäädäntöriskiarvio**: Mikä viidestä merkittävästä toukokuun lakiehdotuksesta aiheuttaa suurimman koalitioirtoamisriskin? (Vastaus: HD01SfU28 kansalaisuus — L/SD-jännite dokumentoitu)
+2. **Opposition vaikuttavuus**: Onko S:n interpellaatiokampanja todennäköisesti siirtämässä gallupeja ennen vaaleja? (Vastaus: KORKEA todennäköisyys — koordinoidut kampanjat tuottavat historiallisesti 1,5–3,5 pp:n liikkeen)
+3. **Taloudellisen narratiivin hallinta**: Miten Ruotsin finanssipoliittinen asema vertautuu pohjoismaisiin verrokkeihin ennen vaalibudjettikeskustelua? (Vastaus: Ruotsi ylisuoriutuu velka/BKT-suhteella; ylijäämä säilyy WEO Apr-2026 mukaan)
+
+### 60 sekunnin tiedustelukatsaus
+
+- 🏛️ **Koalitiotilanne**: Tidö-koalitio vakaa mutta monifrontisessa paineessa; SD:n äänestyskoheesio 97,7 % kuluvalla istuntokaudella
+- 📋 **Toukokuun lainsäädäntöprioriteetit**: Kevätbudgetti → asenlaki → kansalaisuustiukkuus → CER-direktiivi → Ukrainan ratifiointi
+- 🔥 **Tänään jätetyt uudet interpellaatiot**: HD10454 (HVB-kodit/rikolliset, S→Waltersson Grönvall), HD10455 (kulttuuriperintö, SD), HD10456 (elinkauppa, SD), HD11767 (kadonneet kodittomat, S)
+- 💰 **Talous**: Ruotsin BNP-kasvu 2026F +1,4 % (IMF WEO Apr-2026, NGDP_RPCH); inflaatio ~2,2 %; työttömyys ~8,4 % (LUR); ylijäämä säilyy; velka ~35 % BKT:sta (GGXWDG_NGDP)
+- 🗳️ **Vaalilaskuri**: 137 päivää 14. syyskuuta vaaleihin; S johtaa useimmissa galluppeissa 3–5 pp:llä; hallitus jäljessä mutta tavoitettavissa rikos- ja talousnarratiiveilla
+- ⚠️ **Tärkein eteenpäin katsova signaali**: HD10454 ministerivastaus (2026-05-20) — jos Waltersson Grönvall sitoutuu HVB-lainsäädäntöön, R1-riski muuntuu pätevyysdemonstroitukseksi; jos vastaus on puolustuksellinen, SR/SVT-mediasykli eskaloi
+
+### Tärkein eteenpäin katsova signaali
+
+**HD10454 HVB-kotien ministerivastaus (HC10454 määräaika 2026-05-20)** — kriittinen taitekohta hallituksen hyvinvoinnintoimitusten narratiivissa.  
+Jos Waltersson Grönvall sitoutuu asetukseen poliisilistan osalta: Skenaario A aktivoituu — muuntaa vastuullisuushyökkäyksen pätevyysdemonstroitukseksi.  
+Jos vastaus on puolustuksellinen tai lykkäytyy: SR/SVT:n Carema-mallinen mediaeskalatio seuraa, ulottuen kesäkuuhun 2026.  
+Seurattava johtava indikaattori: Sosiaaliministeriön kabinettiagenda (5.–16. toukokuuta); L-puolueen lausunnot HC01FiU20 asuntosäädöksistä.  
+Luottamustaso: KORKEA [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**Luottamustaso**: KORKEA [B2] — 3 erillistä todistuslinjaa: riksdagen.se primäärilähteet, edellisen syklin analyysi, IMF:n makrotaloudellinen peruslinja.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Type d'analyse** : Agrégation mensuelle Tier-C  
+
+---
+
+### 🎯 BLUF
+
+La Suède entre en mai 2026 avec **137 jours avant les élections parlementaires du 14 septembre**, faisant de chaque séance du Riksdag jusqu'à la pause estivale un test de campagne. La coalition Tidö (M/KD/L/SD) fait face à son calendrier législatif le plus critique du cycle électoral : la loi de finances de printemps (HC01FiU20), le durcissement de la législation sur la nationalité (HD01SfU28) et la loi sur les armes (HD01JuU10) doivent être adoptées proprement pour porter le récit « ordre public + responsabilité financière » dans la saison électorale. Les sociaux-démocrates ont intensifié leur campagne d'interpellations pré-électorale — en déposant aujourd'hui HD10454 (liste d'établissements HVB de la police — documentant une promesse ministérielle brisée sur deux ans avec des preuves radio SR), six jours après les précédentes interpellations de S sur l'infrastructure et la réforme des indemnités maladie — démontrant une stratégie de responsabilisation coordonnée ciblant la crédibilité ministérielle dans les domaines de la santé, des transports et de la protection de l'enfance. **Le 20 mai, date limite de réponse à HD10454, est la date politique la plus importante avant la pause estivale.** Le contexte macroéconomique suédois (croissance du PIB +1,4 % selon le FMI WEO avr-2026, inflation convergente à 2 % KPIF, dette ~35 % du PIB) est comparativement solide par rapport aux voisins nordiques, mais l'incertitude sur la politique tarifaire américaine et la fragilité du marché du logement restent des facteurs de risque persistants.
+
+### 🧭 3 décisions que ce bulletin éclaire
+
+1. **Évaluation des risques législatifs** : Lequel des cinq projets de loi majeurs de mai présente le risque le plus élevé d'effondrement de la coalition ? (Réponse : HD01SfU28 nationalité — tensions L/SD documentées)
+2. **Efficacité de l'opposition** : La campagne d'interpellations de S est-elle susceptible de faire bouger les sondages avant l'élection ? (Réponse : PROBABILITÉ ÉLEVÉE — les campagnes coordonnées produisent historiquement un mouvement de 1,5–3,5 pp)
+3. **Pilotage du récit économique** : Comment la position budgétaire de la Suède se compare-t-elle aux voisins nordiques avant le débat sur le budget électoral ? (Réponse : La Suède surperforme sur dette/PIB ; excédent budgétaire maintenu selon WEO avr-2026)
+
+### Aperçu de l'actualité en 60 secondes
+
+- 🏛️ **Statut de la coalition** : Coalition Tidö stable mais sous pression sur plusieurs fronts ; cohésion de vote SD à 97,7 % lors de la session en cours
+- 📋 **Priorités législatives de mai** : Loi de finances de printemps → Loi sur les armes → Durcissement nationalité → Directive CER → Ratification Ukraine
+- 🔥 **Nouvelles interpellations aujourd'hui** : HD10454 (établissements HVB/criminels, S→Waltersson Grönvall), HD10455 (patrimoine culturel, SD), HD10456 (trafic d'organes, SD), HD11767 (sans-abri disparus, S)
+- 💰 **Économie** : Croissance PIB Suède 2026P +1,4 % (FMI WEO avr-2026, NGDP_RPCH) ; inflation ~2,2 % ; chômage ~8,4 % (LUR) ; excédent budgétaire maintenu ; dette ~35 % du PIB (GGXWDG_NGDP)
+- 🗳️ **Compte à rebours électoral** : 137 jours avant l'élection du 14 septembre ; S en tête dans la plupart des sondages de 3–5 pp ; gouvernement en retard mais à portée sur les récits criminalité et économie
+- ⚠️ **Signal avancé clé** : Réponse ministérielle à HD10454 (2026-05-20) — si Waltersson Grönvall s'engage sur la législation HVB, R1 devient démonstration de compétence ; si défensif, escalade du cycle médiatique SR/SVT
+
+### Signal avancé principal
+
+**Réponse ministérielle à l'établissement HVB HD10454 (délai HC10454 : 2026-05-20)** — le point d'inflexion critique pour le récit de prestation sociale du gouvernement.  
+Si Waltersson Grönvall s'engage sur le règlement relatif à la liste policière : le scénario A s'active — convertit l'attaque en responsabilisation en démonstration de compétence.  
+Si la réponse est défensive ou retardée : escalade médiatique SR/SVT selon le schéma Carema jusqu'en juin 2026.  
+Indicateur avancé à surveiller : agenda du cabinet du ministère des Affaires sociales (5–16 mai) ; déclarations du parti L sur les dispositions logement de HC01FiU20.  
+Niveau de confiance : ÉLEVÉ [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**Niveau de confiance** : ÉLEVÉ [B2] — 3 lignes de preuve distinctes : sources primaires riksdagen.se, analyse du cycle précédent, données macroéconomiques FMI.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# שוודיה מסתכלת קדימה: ספרינט הגמר לפני הבחירות — עלון חודשי מאי 2026
+
+**מחבר**: ג'יימס פת'ר סורלינג  
+**תאריך**: 2026-04-29  
+**סיווג**: ציבורי | רמת ביטחון: גבוהה [B2]  
+**סוג ניתוח**: צבירה חודשית Tier-C  
+**ריקסמויטה**: 2025/26
+
+---
+
+### 🎯 BLUF
+
+שוודיה נכנסת למאי 2026 עם **137 ימים לבחירות הפרלמנטריות ב-14 בספטמבר**, מה שהופך כל ישיבה בריקסדאג עד לפגרת הקיץ לבחינה קמפיינית. קואליציית טידו (M/KD/L/SD) ניצבת בפני לוח הזמנים החקיקתי הקריטי ביותר במחזור הבחירות: חוק התקציב האביבי (HC01FiU20), הידוק חקיקת האזרחות (HD01SfU28) וחוק הנשק (HD01JuU10) — כולם חייבים לעבור בצורה נקייה כדי לשאת את הנרטיב «שלטון חוק + אחריות פיסקלית» לעונת הבחירות. הסוציאל-דמוקרטים הגבירו את מסע הבחירות הקדם-בחירות שלהם — עם הגשת HD10454 היום (רשימת מתקני HVB של המשטרה — מתעדת הבטחה שבורה של שר מזה שנתיים עם ראיות רדיו SR), שישה ימים אחרי בקשות S הקודמות על תשתיות ורפורמת חופשת מחלה — ומפגינים אסטרטגיית אחריות מתואמת הכוונת את האמינות הממשלתית בתחומי הבריאות, התחבורה והגנת הילד. **20 במאי כמועד אחרון לתשובה ל-HD10454 הוא התאריך הפוליטי החשוב ביותר לפני פגרת הקיץ.** ההקשר המאקרו-כלכלי של שוודיה (צמיחת תוצר +1.4% לפי IMF WEO אפר-2026, אינפלציה מתכנסת ל-2% KPIF, חוב ~35% מהתוצר) חזק יחסית בהשוואה לשכנות הסקנדינביות, אולם אי-הוודאות לגבי מדיניות המכסים האמריקאית ורגישות שוק הדיור ממשיכות להוות גורמי סיכון.
+
+### 🧭 שלוש החלטות שהעלון הזה מיידע
+
+1. **הערכת סיכוני חקיקה**: איזה מחמשת הצעות החוק המרכזיות במאי טומן בחובו את הסיכון הגבוה ביותר לקריסת הקואליציה? (תשובה: HD01SfU28 אזרחות — מתחים L/SD מתועדים)
+2. **יעילות האופוזיציה**: האם מסע הביקורת של S צפוי להזיז סקרים לפני הבחירות? (תשובה: סבירות גבוהה — מסעות מתואמים מייצרים היסטורית תנועה של 1.5–3.5 נקודות אחוז)
+3. **שליטה בנרטיב הכלכלי**: כיצד מתייחסת עמדת התקציב של שוודיה לשכנותיה הסקנדינביות לפני ויכוח תקציב הבחירות? (תשובה: שוודיה עולה בחוב/תוצר; עודף תקציבי נשמר לפי WEO אפר-2026)
+
+### סקירת חדשות ב-60 שניות
+
+- 🏛️ **מצב הקואליציה**: קואליציית טידו יציבה אך תחת לחץ רב-חזיתי; לכידות הצבעה SD 97.7% בהפגישה הנוכחית
+- 📋 **סדרי עדיפויות חקיקתיים במאי**: חוק תקציב אביב → חוק נשק → הידוק אזרחות → הנחיית CER → אישרור אוקראינה
+- 🔥 **בקשות ביקורת חדשות היום**: HD10454 (מתקני HVB/פושעים, S→Waltersson Grönvall), HD10455 (מורשת תרבותית, SD), HD10456 (סחר באיברים, SD), HD11767 (חסרי בית נעדרים, S)
+- 💰 **כלכלה**: צמיחת תוצר שוודיה 2026F +1.4% (IMF WEO אפר-2026, NGDP_RPCH); אינפלציה ~2.2%; אבטלה ~8.4% (LUR); עודף תקציבי נשמר; חוב ~35% תוצר (GGXWDG_NGDP)
+- 🗳️ **ספירה לאחור לבחירות**: 137 ימים עד הבחירות ב-14 בספטמבר; S מוביל ברוב הסקרים ב-3–5 נ"א; ממשלה מפגרת אך בטווח בנרטיבי פשע וכלכלה
+- ⚠️ **אות מוקדם מרכזי**: תגובה שרית ל-HD10454 (2026-05-20) — אם Waltersson Grönvall מתחייבת לחקיקת HVB, סיכון R1 הופך להפגנת כישורים; אם הגנתי, מחזור תקשורת SR/SVT מסלים
+
+### האות המוקדם המרכזי
+
+**תגובה שרית למתקן HVB HD10454 (מועד אחרון HC10454: 2026-05-20)** — נקודת המפנה הקריטית לנרטיב שירותי הרווחה של הממשלה.  
+אם Waltersson Grönvall מתחייבת לתקנת רשימת משטרה: תרחיש A מופעל — ממיר התקפת אחריות להפגנת כישורים.  
+אם התגובה הגנתית או מאוחרת: הסלמת מדיה SR/SVT על דפוס קארמה עד יוני 2026.  
+מחוון מוקדם לעקוב אחריו: סדר יום קבינט משרד הרווחה (5–16 במאי); הצהרות מפלגת L על הוראות דיור ב-HC01FiU20.  
+רמת ביטחון: גבוהה [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**רמת ביטחון**: גבוהה [B2] — 3 קווי ראיות נפרדים: מקורות ראשוניים riksdagen.se, ניתוח מחזור קודם, נתוני IMF מאקרו-כלכליים.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_ja.md -->
+
+**著者**: ジェームズ・ペーター・ソーリング  
+**日付**: 2026-04-29  
+**分類**: 公開 | 信頼水準: 高 [B2]  
+**分析タイプ**: Tier-C 月次集計  
+
+---
+
+### 🎯 BLUF（要旨）
+
+スウェーデンは**9月14日の議会選挙まで残り137日**という状況で2026年5月に突入し、夏季休会までの全リクスダーグ審議が選挙キャンペーンの試練となっている。ティドー連立政権（M/KD/L/SD）は選挙サイクル最大のヤマ場を迎えている：春季財政法案（HC01FiU20）、市民権法強化（HD01SfU28）、武器法（HD01JuU10）をすべて無事に可決し、「法と秩序＋財政責任」のナラティブを選挙シーズンに持ち込まなければならない。社会民主党は選挙前の質問攻勢を強化し、本日HD10454（警察のHVB施設リスト——SRラジオの証拠で2年間の大臣公約違反を文書化）を提出した。これはインフラと傷病手当改革に関するSの以前の質問提出から6日後のことであり、保健、交通、児童保護の分野での大臣信頼性を標的とした協調的な説明責任戦略を示している。**HD10454への回答期限である5月20日は、夏季休会前の最も重要な政治日程である。**スウェーデンのマクロ経済環境（IMF WEO 2026年4月版ではGDP成長率+1.4%、インフレはKPIF2%に収束、財政赤字~35%）は北欧諸国と比較して相対的に安定しているが、米国の関税政策を巡る不確実性と住宅市場の脆弱性は持続的なリスク要因として残っている。
+
+### 🧭 このブリーフィングが支援する3つの意思決定
+
+1. **立法リスク評価**: 5月の5大法案のうち、連立崩壊リスクが最も高いのはどれか？（回答: HD01SfU28市民権法——L/SDの緊張が文書化済み）
+2. **野党の有効性**: SによるHD10454の質問キャンペーンは選挙前に世論調査を動かす可能性があるか？（回答: 確率高——協調キャンペーンは歴史的に1.5〜3.5ポイントの変動をもたらす）
+3. **経済的ナラティブのコントロール**: 選挙予算論争前のスウェーデンの財政状況は北欧諸国と比較してどうか？（回答: 債務/GDPで優位；WEO 2026年4月版では財政黒字を維持）
+
+### 60秒ニュース概要
+
+- 🏛️ **連立の状況**: ティドー連立は安定しているが複数戦線で圧力下；SDの投票結束率は現会期中97.7%
+- 📋 **5月の立法優先事項**: 春季財政法案 → 武器法 → 市民権強化 → CER指令 → ウクライナ批准
+- 🔥 **本日の新規質問**: HD10454（HVB施設/犯罪者、S→Waltersson Grönvall）、HD10455（文化遺産、SD）、HD10456（臓器売買、SD）、HD11767（ホームレス行方不明者、S）
+- 💰 **経済**: スウェーデンGDP成長率2026F +1.4%（IMF WEO 2026年4月版、NGDP_RPCH）；インフレ ~2.2%；失業率 ~8.4%（LUR）；財政黒字維持；債務 ~35%（GGXWDG_NGDP）
+- 🗳️ **選挙カウントダウン**: 9月14日の選挙まで137日；Sは大半の世論調査で3〜5ポイントリード；政府は犯罪・経済ナラティブで追撃圏内
+- ⚠️ **主要先行シグナル**: HD10454大臣回答（2026-05-20）——Waltersson GrönvallがHVB立法を約束すればR1リスクが能力実証に転化；防衛的な回答ならSR/SVTメディアサイクルが激化
+
+### 主要先行シグナル
+
+**HVB施設大臣回答 HD10454（HC10454期限 2026-05-20）** — 政府の社会給付ナラティブの決定的な転換点。  
+Waltersson Grönvallが警察リスト規制を約束した場合：シナリオAが発動——説明責任攻撃を能力実証に転化。  
+回答が防衛的または遅延した場合：SR/SVTカレーマパターンのメディア激化が2026年6月まで続く。  
+追うべき先行指標：社会省内閣アジェンダ（5月5〜16日）；HC01FiU20の住宅規定に関するL党声明。  
+信頼水準: 高 [B2]。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**信頼水準**: 高 [B2] — 3つの独立した証拠ライン：riksdagen.se一次資料、前サイクル分析、IMFマクロ経済データ。
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_ko.md -->
+
+**저자**: 제임스 페테르 소를링  
+**날짜**: 2026-04-29  
+**분류**: 공개 | 신뢰 수준: 높음 [B2]  
+**분석 유형**: Tier-C 월간 집계  
+
+---
+
+### 🎯 BLUF(핵심 요약)
+
+스웨덴은 **9월 14일 의회 선거까지 137일**이 남은 2026년 5월에 돌입했으며, 여름 휴회까지의 모든 릭스다그 회의가 선거 캠페인 시험대가 되고 있다. 티도 연립정부(M/KD/L/SD)는 선거 주기에서 가장 중요한 입법 일정을 맞이하고 있다: 봄철 재정법안(HC01FiU20), 시민권법 강화(HD01SfU28), 무기법(HD01JuU10)이 모두 깔끔하게 통과되어 '법과 질서 + 재정 책임' 서사를 선거 시즌으로 이어가야 한다. 사회민주당은 사전 선거 질문 캠페인을 강화했다 — 오늘 HD10454(경찰 HVB 시설 목록 — SR 라디오 증거로 2년된 장관 공약 위반을 문서화)를 제출하며, 6일 전 인프라와 병가급여 개혁에 관한 S의 이전 질문들에 이어 — 보건, 교통, 아동 보호 분야에서 장관 신뢰성을 겨냥한 조율된 책임 전략을 보여주고 있다. **HD10454 답변 기한인 5월 20일은 여름 휴회 전 가장 중요한 정치 일정이다.** 스웨덴의 거시경제 환경(IMF WEO 2026년 4월판 GDP 성장률 +1.4%, 인플레이션 KPIF 2% 수렴, 채무 ~GDP의 35%)은 북유럽 이웃 국가들에 비해 상대적으로 탄탄하지만, 미국 관세 정책 불확실성과 주택 시장 취약성은 지속적인 위험 요인으로 남아 있다.
+
+### 🧭 이 브리핑이 지원하는 3가지 의사결정
+
+1. **입법 리스크 평가**: 5월의 다섯 가지 주요 법안 중 연립 붕괴 위험이 가장 높은 것은? (답변: HD01SfU28 시민권법 — L/SD 긴장 문서화됨)
+2. **야당 효과성**: S의 질문 캠페인이 선거 전 여론조사를 움직일 가능성은? (답변: 높은 확률 — 조율된 캠페인은 역사적으로 1.5~3.5포인트 움직임 발생)
+3. **경제 서사 제어**: 선거 예산 토론 전 스웨덴의 재정 상황은 북유럽 이웃 국가들과 비교해 어떠한가? (답변: 채무/GDP에서 우위; WEO 2026년 4월판 기준 재정 흑자 유지)
+
+### 60초 뉴스 개요
+
+- 🏛️ **연립 현황**: 티도 연립정부 안정적이나 다중 전선에서 압박; SD 투표 결집도 현 회기 97.7%
+- 📋 **5월 입법 우선순위**: 봄철 재정법안 → 무기법 → 시민권 강화 → CER 지침 → 우크라이나 비준
+- 🔥 **오늘 새 질문**: HD10454(HVB 시설/범죄자, S→Waltersson Grönvall), HD10455(문화유산, SD), HD10456(장기 매매, SD), HD11767(노숙자 실종자, S)
+- 💰 **경제**: 스웨덴 GDP 성장률 2026F +1.4%(IMF WEO 2026년 4월판, NGDP_RPCH); 인플레이션 ~2.2%; 실업률 ~8.4%(LUR); 재정 흑자 유지; 채무 ~GDP의 35%(GGXWDG_NGDP)
+- 🗳️ **선거 카운트다운**: 9월 14일 선거까지 137일; S가 대부분의 여론조사에서 3~5포인트 앞서; 정부는 범죄·경제 서사에서 추격 가능 범위 내
+- ⚠️ **핵심 선행 신호**: HD10454 장관 답변(2026-05-20) — Waltersson Grönvall이 HVB 입법 공약 시 R1 위험이 역량 시범으로 전환; 방어적 답변 시 SR/SVT 미디어 사이클 격화
+
+### 주요 선행 신호
+
+**HVB 시설 장관 답변 HD10454(HC10454 기한 2026-05-20)** — 정부 사회 서비스 서사의 결정적 전환점.  
+Waltersson Grönvall이 경찰 목록 규정 약속 시: 시나리오 A 발동 — 책임 공격을 역량 시범으로 전환.  
+답변이 방어적이거나 지연될 경우: SR/SVT 카레마 패턴 미디어 격화가 2026년 6월까지 지속.  
+추적할 선행 지표: 사회부 내각 의제(5월 5~16일); HC01FiU20 주택 조항에 관한 L당 성명.  
+신뢰 수준: 높음 [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**신뢰 수준**: 높음 [B2] — 3개의 독립적인 증거 라인: riksdagen.se 1차 자료, 이전 주기 분석, IMF 거시경제 데이터.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-29  
+**Classificatie**: OPENBAAR | Betrouwbaarheidsniveau: HOOG [B2]  
+**Analysetype**: Tier-C maandaggregatie  
+
+---
+
+### 🎯 BLUF
+
+Zweden treedt mei 2026 in met **137 dagen tot de parlementsverkiezingen op 14 september**, waardoor elke Riksdag-vergadering tot aan het zomerreces een campagnetest wordt. De Tidö-coalitie (M/KD/L/SD) staat voor haar meest kritische wetgevingskalender van de verkiezingscyclus: de lente-begrotingswet (HC01FiU20), de aanscherping van de nationaliteitswetgeving (HD01SfU28) en de wapenwet (HD01JuU10) moeten allemaal vlot worden aangenomen om het verhaal «openbare orde + fiscale verantwoordelijkheid» de verkiezingsperiode in te dragen. De sociaaldemocraten hebben hun pre-electorale interpellatiecampagne geïntensiveerd — met de indiening vandaag van HD10454 (politielijst HVB-instellingen — documenteert een twee jaar oud gebroken ministerbelofte met SR-radiobewijzen), zes dagen na S' eerdere interpellaties over infrastructuur en ziekengeldhervorming — en daarmee een gecoördineerde verantwoordingsstrategie gedemonstreerd gericht op ministeriële geloofwaardigheid op het gebied van gezondheid, transport en kinderbescherming. **20 mei als antwoorddeadline voor HD10454 is de meest significante politieke datum vóór het zomerreces.** De macro-economische context van Zweden (bbp-groei +1,4% volgens IMF WEO apr-2026, inflatie convergeert naar 2% KPIF, schuld ~35% van het bbp) is comparatief sterk ten opzichte van de Scandinavische buren, maar onzekerheid over het Amerikaanse tarievenbeleid en de kwetsbaarheid van de woningmarkt blijven aanhoudende risicofactoren.
+
+### 🧭 3 beslissingen die dit bulletin informeert
+
+1. **Wetgevingsrisicobeoordeling**: Welk van de vijf grote meiwetsvoorstellen heeft het hoogste risico op coalitiebreuk? (Antwoord: HD01SfU28 nationaliteit — L/SD-spanningen gedocumenteerd)
+2. **Effectiviteit van de oppositie**: Is het waarschijnlijk dat S' interpellatiecampagne de peilingen voor de verkiezingen verschuift? (Antwoord: GROTE KANS — gecoördineerde campagnes produceren historisch gezien 1,5–3,5 pp beweging)
+3. **Economisch narratief sturen**: Hoe verhoudt de begrotingspositie van Zweden zich tot die van de Scandinavische buren voor het verkiezingsbudgetdebat? (Antwoord: Zweden overtreft op schuld/bbp; begrotingsoverschot gehandhaafd volgens WEO apr-2026)
+
+### Nieuwsoverzicht in 60 seconden
+
+- 🏛️ **Coalitiestatuts**: Tidö-coalitie stabiel maar onder druk op meerdere fronten; SD-stemcohesie 97,7% in de lopende sessie
+- 📋 **Wetgevingsprioriteiten mei**: Lente-begrotingswet → Wapenwet → Nationaliteitsverscherping → CER-richtlijn → Oekraïne-ratificatie
+- 🔥 **Nieuwe interpellaties vandaag**: HD10454 (HVB-instellingen/criminelen, S→Waltersson Grönvall), HD10455 (cultureel erfgoed, SD), HD10456 (orgaanhandel, SD), HD11767 (dakloze vermisten, S)
+- 💰 **Economie**: Zweden bbp-groei 2026V +1,4% (IMF WEO apr-2026, NGDP_RPCH); inflatie ~2,2%; werkloosheid ~8,4% (LUR); begrotingsoverschot gehandhaafd; schuld ~35% van bbp (GGXWDG_NGDP)
+- 🗳️ **Verkiezingsaftelling**: 137 dagen tot verkiezingen 14 september; S leidt in de meeste peilingen met 3–5 pp; regering achter maar in bereik op criminaliteits- en economienarratief
+- ⚠️ **Kernsignaal vooruit**: Ministerieel antwoord op HD10454 (2026-05-20) — als Waltersson Grönvall HVB-wetgeving toezegt, wordt R1-risico competentiedemonstratie; als defensief, escaleert SR/SVT-mediacyclus
+
+### Voornaamste vooruitsignaal
+
+**HD10454 HVB-instelling ministerieel antwoord (HC10454 deadline 2026-05-20)** — het kritieke kantelpunt voor het sociale-voorzieningsnarratief van de regering.  
+Als Waltersson Grönvall verordening politielijst toezegt: Scenario A activeert — converteert verantwoordingsaanval naar competentiedemonstratie.  
+Als het antwoord defensief of vertraagd is: SR/SVT Carema-patroon media-escalatie volgt tot juni 2026.  
+Te volgen vroegtijdig indicatoor: Kabinetsagenda Ministerie van Sociale Zaken (5–16 mei); L-partiijverklaringen over woningbepalingen HC01FiU20.  
+Betrouwbaarheidsniveau: HOOG [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**Betrouwbaarheidsniveau**: HOOG [B2] — 3 afzonderlijke bewijslijnen: primaire bronnen riksdagen.se, analyse vorige cyclus, IMF macro-economische gegevens.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-29  
+**Klassifisering**: OFFENTLIG | Konfidens: HØY [B2]  
+**Analysetype**: Tier-C månedlig aggregering  
+
+---
+
+### 🎯 BLUF
+
+Sverige går inn i mai 2026 med **137 dager til stortingsvalget 14. september**, noe som gjør hver Riksdag-sesjon fra nå til sommerferien til en valgkamprøve. Tidö-koalisjonen (M/KD/L/SD) møter sin mest kritiske lovgivningskalender i valgperioden: vårbudsjettet (HC01FiU20), stramning av statsborgerlovgivning (HD01SfU28) og våpenloven (HD01JuU10) må alle vedtas rent for å opprettholde "lov og orden + finansielt ansvar"-fortellingen inn i valgsesongen. Sosialdemokratene har intensivert sin forvalgskampanje med interpellasjoner — med dagens innlevering av HD10454 (HVB-hjem politiliste — som dokumenterer et to-årig brutt ministerielt løfte med SR-radiobevis) seks dager etter S's tidligere interpellasjoner om infrastruktur og sykelønnsreform — og demonstrerer dermed en koordinert ansvarlighetsstrategi rettet mot ministerienes troverdighet innen helse, transport og barnebeskyttelse. **Ministersvaret 20. mai for HD10454 er den eneste viktigste politiske datoen før sommerferien.** Sveriges makroøkonomiske bakteppe (BNP-vekst +1,4 % ifølge IMF WEO Apr-2026, inflasjon konvergerer mot 2 % KPIF, gjeld ~35 % av BNP) er relativt sterkt sammenlignet med nordiske jevnaldrende, men usikkerhet rundt amerikanske tolltariffer og boligmarkedets skjørhet utgjør vedvarende risikofaktorer.
+
+### 🧭 3 beslutninger dette notatet støtter
+
+1. **Lovgivningsrisikovurdering**: Hvilken av de fem store mailovene innebærer høyest risiko for koalisjonsavhopp? (Svar: HD01SfU28 statsborgerskap — L/SD-spenning dokumentert)
+2. **Opposisjonens effektivitet**: Er S' interpellasjonskampanje sannsynlig til å flytte meningsmålingene før valget? (Svar: HØY sannsynlighet — koordinerte kampanjer produserer historisk 1,5–3,5 pp bevegelse)
+3. **Styring av det økonomiske narrativet**: Hvordan er Sveriges finanspolitiske stilling sammenlignet med nordiske jevnaldrende foran valgets budsjettdebatt? (Svar: Sverige overpresterer på gjeld/BNP; finanspolitisk overskudd opprettholdt ifølge WEO Apr-2026)
+
+### 60-sekunders etterretningsoversikt
+
+- 🏛️ **Koalisjonsstatus**: Tidö-koalisjonen stabil men under press på flere fronter; SD's stemmekohesjonen på 97,7 % i inneværende sesjon
+- 📋 **Mailovgivningsprioriteter**: Vårbudsjett → våpenlov → statsborgerskapsstramning → CER-direktivet → Ukraina-ratifisering
+- 🔥 **Dagens nye interpellasjoner**: HD10454 (HVB-hjem/kriminelle, S→Waltersson Grönvall), HD10455 (kulturarv, SD), HD10456 (organhandel, SD), HD11767 (hjemløse savnede, S)
+- 💰 **Økonomi**: Sveriges BNP-vekst 2026F +1,4 % (IMF WEO Apr-2026, NGDP_RPCH); inflasjon ~2,2 %; arbeidsledighet ~8,4 % (LUR); finanspolitisk overskudd opprettholdt; gjeld ~35 % av BNP (GGXWDG_NGDP)
+- 🗳️ **Valnedtelling**: 137 dager til valg 14. september; S leder i de fleste meningsmålinger med 3–5 pp; regjering bak men innen rekkevidde på kriminalitets- og økonomifortellingene
+- ⚠️ **Viktigste fremadrettede signal**: HD10454 ministerielt svar (2026-05-20) — hvis Waltersson Grönvall forplikter seg til HVB-lovgivning, konverteres R1-risiko til kompetansedemonstrasjon; hvis svaret er defensivt, eskalerer SR/SVT-mediesyklus
+
+### Viktigste fremadrettede signal
+
+**HD10454 HVB-hjem ministerielt svar (HC10454 svarsfrist 2026-05-20)** — det kritiske vendepunktet for regjeringens velferdsleverings-fortelling.  
+Hvis Waltersson Grönvall forplikter seg til forskrift om politilisten: Scenario A aktiveres — konverterer ansvarlighedsangrep til kompetansedemonstrasjon.  
+Hvis svaret er defensivt eller utsettes: SR/SVT Carema-mønstrets medieeskalering følger og strekker seg inn i juni 2026.  
+Ledende indikator å følge: Sosialdepartementets kabinettsagenda (5.–16. mai); L-partiets uttalelser om HC01FiU20 boligbestemmelser.  
+Konfidens: HØY [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**Konfidens**: HØY [B2] — 3 distinkte bevislinjer: riksdagen.se primærkilder, analyse fra forrige syklus, IMF makroøkonomisk basislinje.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-29  
+**Klassificering**: OFFENTLIG | Konfidensgrad: HÖG [B2]  
+**Analystyp**: Tier-C månadsaggregering  
+
+---
+
+### 🎯 BLUF
+
+Sverige inleder maj 2026 med **137 dagar kvar till riksdagsvalet den 14 september**, vilket gör varje riksdagssession från nu till sommaruppehållet till en valrörelseprövning. Tidökoalitionen (M/KD/L/SD) möter sin mest kritiska lagstiftningskalender under mandatperioden: vårbudgeten (HC01FiU20), skärpning av medborgarskapslagstiftning (HD01SfU28) och vapenlagen (HD01JuU10) måste samtliga passera rent för att upprätthålla berättelsen om "lag och ordning + finansiell ansvarstagande" inför valet. Socialdemokraterna har intensifierat sin förvalsinterpellationskampanj — med dagens inlämning av HD10454 (polislistan om HVB-hem — som dokumenterar ett brutet ministerlefte med SR-radiobevis), sex dagar efter S:s tidigare interpellationer om infrastruktur och sjuklönesreform — och visar därmed en samordnad ansvarighetsstrategi som riktar sig mot ministerias trovärdighet inom hälsa, transport och barnsskyd. **Svarstiden den 20 maj för HD10454 är det enskilt viktigaste politiska datumet inför sommaruppehållet.** Makroekonomin (BNP-tillväxt +1,4 % enligt IMF WEO Apr-2026, inflation konvergerar mot 2 % KPIF, skuld ~35 % av BNP) är relativt stark jämfört med de nordiska grannländerna, men osäkerhet kring amerikanska tullar och skörhet på bostadsmarknaden utgör bestående riskfaktorer.
+
+### 🧭 3 Beslut detta underlag stöder
+
+1. **Lagstiftningsriskbedömning**: Vilket av de fem stora lagförslagen i maj innebär störst risk för koalitionsavhopp? (Svar: HD01SfU28 medborgarskap — L/SD-spänning dokumenterad)
+2. **Oppositionens effektivitet**: Kan S:s interpellationskampanj flytta opinionen inför valet? (Svar: HÖG sannolikhet — samordnade kampanjer genererar historiskt 1,5–3,5 procentenheters rörelse)
+3. **Hantering av det ekonomiska narrativet**: Hur jämförs Sveriges finanspolitiska ställning med nordiska jämförelsekandidater inför valbudgetdebatten? (Svar: Sverige överpresterar på skuld/BNP; budgetöverskott upprätthålls enligt WEO Apr-2026)
+
+### 60-sekunders underrättelseöversikt
+
+- 🏛️ **Koalitionsstatus**: Tidökoalitionen stabil men under tryck på flera fronter; SD:s röstkohesion på 97,7 % under innevarande riksmöte
+- 📋 **Majmånadens lagstiftningsprioriteringar**: Vårbudget → vapenlag → medborgarskapsskärpning → CER-direktivet → Ukrainaratificeringen
+- 🔥 **Dagens nya interpellationer**: HD10454 (HVB-hem/kriminella, S→Waltersson Grönvall), HD10455 (kulturarv, SD), HD10456 (organhandel, SD), HD11767 (hemlösa försvunna, S)
+- 💰 **Ekonomi**: Sveriges BNP-tillväxt 2026F +1,4 % (IMF WEO Apr-2026, NGDP_RPCH); inflation ~2,2 %; arbetslöshet ~8,4 % (LUR); budgetöverskott upprätthålls; skuld ~35 % av BNP (GGXWDG_NGDP)
+- 🗳️ **Valnedräkning**: 137 dagar till valet den 14 september; S leder i de flesta opinionsundersökningar med 3–5 procentenheter; regeringen ligger efter men kan hämta in på brotts- och ekonominarrativen
+- ⚠️ **Viktigaste framåtblickande signal**: HD10454 ministeriankt svar (2026-05-20) — om Waltersson Grönvall förbinder sig till HVB-lagstiftning konverteras R1-risk till kompetensdemonstration; om svaret är defensivt eskalerar SR/SVT:s mediecykel
+
+### Viktigaste framåtblickande signal
+
+**HD10454 HVB-hems ministeriellt svar (HC10454 svarsfrist 2026-05-20)** — den kritiska inflektionspunkten för regeringens välfärdsleveransberättelse.  
+Om Waltersson Grönvall förbinder sig till förordning om polislistan: Scenario A aktiveras — omvandlar ansvarsskyldighetsattack till kompetensdemonstration.  
+Om svaret är defensivt eller uppskjutet: SR/SVT Carema-mönstrets medieeskalering följer, sträcker sig in i juni 2026.  
+Ledande indikator att bevaka: Socialdepartementets kabinettsagenda (5–16 maj); L-partiets uttalanden om HC01FiU20 bostadsbestämmelser.  
+Konfidensgrad: HÖG [B2].
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**Konfidensgrad**: HÖG [B2] — 3 distinkta bevislinjer: riksdagen.se primärkällor, analyser från föregående cykel, makroekonomisk IMF-baslinje.
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_zh.md -->
+
+**作者**: 詹姆斯·佩特尔·索林  
+**日期**: 2026-04-29  
+**分类**: 公开 | 可信度：高 [B2]  
+**分析类型**: Tier-C 月度汇总  
+
+---
+
+### 🎯 BLUF（核心摘要）
+
+瑞典以**距9月14日议会选举还有137天**的状态进入2026年5月，使得每一次里克斯达格会议直至夏季休会都成为竞选考验。蒂德联合政府（M/KD/L/SD）面临选举周期中最关键的立法日历：春季财政法案（HC01FiU20）、公民身份立法收紧（HD01SfU28）和武器法（HD01JuU10）都必须顺利通过，以将"法律秩序+财政责任"叙事带入选举季。社会民主党强化了选前质询攻势——今日提交HD10454（警察HVB设施名单——附SR广播证据记录两年未兑现的部长承诺），距S此前就基础设施和病假金改革提交质询仅6天——展示了针对卫生、交通和儿童保护领域部长公信力的协调问责战略。**HD10454的5月20日答复截止日是夏季休会前最重要的政治日期。** 瑞典的宏观经济背景（IMF WEO 2026年4月版GDP增长率+1.4%，通胀收敛至2% KPIF，债务约占GDP的35%）与北欧邻国相比相对稳健，但美国关税政策不确定性和住房市场脆弱性仍是持续风险因素。
+
+### 🧭 本简报所服务的三项决策
+
+1. **立法风险评估**：5月五项重要法案中，联合政府瓦解风险最高的是哪一项？（答案：HD01SfU28公民身份——L/SD紧张关系有据可查）
+2. **反对党效力**：S的质询攻势是否可能在选前撼动民调？（答案：可能性较高——协调性攻势历史上产生1.5~3.5个百分点的波动）
+3. **经济叙事管控**：选举预算辩论前，瑞典财政立场与北欧邻国相比如何？（答案：瑞典在债务/GDP方面领先；WEO 2026年4月版显示维持财政盈余）
+
+### 60秒新闻速览
+
+- 🏛️ **联合政府现状**：蒂德联合政府稳定，但面临多条战线压力；SD本届会期投票凝聚度97.7%
+- 📋 **5月立法优先事项**：春季财政法案 → 武器法 → 公民身份收紧 → CER指令 → 乌克兰批准
+- 🔥 **今日新质询**：HD10454（HVB设施/犯罪分子，S→Waltersson Grönvall）、HD10455（文化遗产，SD）、HD10456（器官贩卖，SD）、HD11767（无家可归失踪者，S）
+- 💰 **经济**：瑞典GDP增长率2026F +1.4%（IMF WEO 2026年4月版，NGDP_RPCH）；通胀~2.2%；失业率~8.4%（LUR）；维持财政盈余；债务~GDP的35%（GGXWDG_NGDP）
+- 🗳️ **选举倒计时**：距9月14日选举还有137天；S在大多数民调中领先3~5个百分点；政府在犯罪和经济叙事上仍在追赶范围内
+- ⚠️ **关键前瞻信号**：HD10454部长答复（2026-05-20）——若Waltersson Grönvall承诺HVB立法，R1风险转化为能力展示；若为防御性答复，SR/SVT媒体循环升级
+
+### 核心前瞻信号
+
+**HVB设施部长答复HD10454（HC10454截止日：2026-05-20）**——政府社会服务叙事的关键转折点。  
+若Waltersson Grönvall承诺警察名单法规：方案A启动——将问责攻击转化为能力展示。  
+若答复为防御性或延迟：SR/SVT卡雷马模式媒体升级至2026年6月。  
+须追踪的领先指标：社会部内阁议程（5月5~16日）；L党就HC01FiU20住房条款的声明。  
+可信度：高 [B2]。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    A["🗳️ Sept 14 Election — 137 days"] --> B["May Legislative Sprint"]
+    B --> B1["HC01FiU20 Spring Fiscal Bill"]
+    B --> B2["HD01SfU28 Citizenship"]
+    B --> B3["HD01JuU10 Weapons Law"]
+    B --> B4["HD01FöU20 CER Directive"]
+    B --> B5["HD03231/32 Ukraine Ratification"]
+    
+    C["S Opposition Campaign"] --> C1["HD10449 Infrastructure"]
+    C --> C2["HD10450 Sick-pay"]
+    C --> C3["HD10454 HVB homes today"]
+    C --> C4["HD11767 Homeless missing"]
+
+    B1 --> D["Coalition Narrative Outcome"]
+    C3 --> D
+
+    style A fill:#ff006e,stroke:#ff006e,color:#fff
+    style B fill:#0a0e27,color:#00d9ff
+    style C fill:#e63946,stroke:#e63946,color:#fff
+    style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
+```
+
+**可信度**：高 [B2] — 3条独立证据线：riksdagen.se一手资料、前一周期分析、IMF宏观经济数据。
+
+<!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1637,6 +2502,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

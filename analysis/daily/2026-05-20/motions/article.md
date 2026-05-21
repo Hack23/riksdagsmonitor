@@ -6,7 +6,7 @@ date: 2026-05-20
 subfolder: motions
 slug: 2026-05-20-motions
 source_folder: analysis/daily/2026-05-20/motions
-generated_at: 2026-05-20T20:11:10.202Z
+generated_at: 2026-05-21T02:19:51.779Z
 language: en
 layout: article
 ---
@@ -102,6 +102,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1861,13 +1874,873 @@ This analysis underwent two complete passes:
 |------|------|--------|
 | documents/hd024184.json | ~70KB | ✅ |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="شعار Hack23" width="192" height="192">
+</p>
+
+<h1 align="center">حزب الوسط ينفصل عن تكتل تيدو بسبب قانون تمويل النقابات للأحزاب</h1>
+
+<p align="center">
+  <strong>📊 ملخص تنفيذي على مستوى القرار · اقتراح KU رقم HD024184 · 2026-05-20</strong><br>
+  <em>حرية تكوين الجمعيات · إدانة مجلس الرقابة التشريعية · إصلاح الشفافية في عام الانتخابات</em>
+</p>
+
+**📋 التصنيف:** عام | **📅 تاريخ التحليل:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### الملخص التنفيذي
+
+قدّم حزب الوسط (C) — 8 نواب بقيادة مالين بيورك (intressent_id 0770363683317) — الاقتراحَ البرلماني Kommittémotion 2025/26:4184 بتاريخ 15 مايو 2026، وأُحيل إلى لجنة KU في 20 مايو 2026. يقبل الاقتراح إصلاحات الحكومة في Prop. 2025/26:258 المتعلقة بالشفافية في تمويل الأحزاب وتسجيل الضغط، لكنه يطالب البرلمان (Riksdag) بـ**رفض** مشروع القانون الجديد المقترح بشأن المساهمات السياسية للمنظمات العمالية. ويرى حزب الوسط أن القانون: (1) لا يتضمن عقوبات ويسهل التحايل عليه، (2) يُقيّد حرية تكوين الجمعيات بصورة قد تتعارض مع الاتفاقية الأوروبية لحقوق الإنسان، (3) وصفه مجلس الرقابة التشريعية Lagrådet (رأي صادر في 2026-03-24) بأنه يرتكز على أساس أدلة «bräckligt» (هش)، و(4) يذهب أبعد مما هو ضروري إذ يشمل منظمات لا تربط المساهمات بالاشتراكات. واللجنة البرلمانية التي أعدّت SOU 2025:52 (لجنة يونيو 2023) لم توصِ بمثل هذا القانون؛ غير أن الحكومة تجاهلت ذلك. ومن المرجح أن تمر Prop. 2025/26:258 في لجنة KU بأغلبية شبه مؤكدة من الحكومة وحزب SD، مما يجعل الاقتراح شبه محكوم عليه بالرفض — غير أن التموضع العلني لحزب الوسط قبل 116 يوماً من انتخابات سبتمبر 2026 هو المكسب الاستراتيجي الحقيقي.
+
+---
+
+### ثلاثة قرارات يدعمها هذا الموجز
+
+| # | القرار | الأهمية |
+|---|--------|---------|
+| 1 | **التوجيه التحريري** — تصدُّر أخبار الاقتراحات اليومية بانفصال حزب الوسط عن تيدو في مسألة حرية تكوين الجمعيات | الاقتراح الوحيد أمام KU بتاريخ 2026-05-20؛ أهمية دستورية وانتخابية |
+| 2 | **محرّك الرصد الاستشرافي** — تتبع موعد معالجة KU وموعد التصويت على Prop. 2025/26:258 | قد تدفع إدانة Lagrådet بـ«bräckligt» أحزاباً معارضة أخرى إلى الانضمام لموقف حزب الوسط |
+| 3 | **تتبع الحملة** — تصنيف تموضع حزب الوسط باعتباره مؤشراً للناخبين المترددين في مسألة تمويل LO-S | القرب من الانتخابات (116 يوماً) يرفع معامل الأهمية إلى 1.5× |
+
+---
+
+### القراءة في 60 ثانية (8 نقاط)
+
+1. **اقتراح واحد مقدَّم:** 2025/26:4184 (HD024184) من حزب الوسط، مُحال إلى KU بتاريخ 2026-05-20 — الإدراج الوحيد في هذه الدورة.
+2. **قبول جزئي:** يدعم حزب الوسط إصلاحات شفافية تمويل الأحزاب وسجل الضغط (ما يتسق مع منصة الشفافية الخاصة بالحزب).
+3. **المطلب الجوهري:** رفض قانون مساهمات المنظمات العمالية كلياً — لا تعديله، بل رفضه.
+4. **دعم Lagrådet:** أصدر المجلس الاستشاري التشريعي السويدي رأياً نادراً وانتقادياً (2026-03-24)، واصفاً المقترح بـ«bräckligt» بسبب محدودية التشاور في إطار Remiss وسهولة التحايل عليه.
+5. **خلل في الإجراءات التشريعية:** لم تدعُ الحكومة بصورة محددة الجهات المستشارة للتعليق على بند مساهمات المنظمات العمالية؛ وأوصت لجنة SOU 2025:52 بعدم سنّ هذا القانون.
+6. **تحذير الاتفاقية الأوروبية/اللائحة العامة لحماية البيانات:** يُثير حزب الوسط مخاطر الامتثال للمادة 11 من الاتفاقية الأوروبية لحقوق الإنسان (حرية تكوين الجمعيات) وللائحة GDPR — فإذا أيّدت المحكمة الأوروبية لحقوق الإنسان حجج الحزب، قد يُلغى القانون بعد إقراره.
+7. **السياق السياسي:** يستهدف القانون تدفق التبرعات من الاتحاد النقابي LO إلى حزب الاشتراكيين S — وهو هدف إصلاحي محوري لليمين يرفض حزب الوسط دعمه.
+8. **الحسابات الانتخابية:** مع بقاء 116 يوماً على انتخابات 2026، يُؤطّر حزب الوسط نفسه في آنٍ واحد بوصفه مؤيداً للشفافية وداعماً لحقوق العمال، سعياً لاستقطاب الناخبين الوسطيين والمنتمين للتيار النقابي بعيداً عن حزب S وتكتل تيدو.
+
+---
+
+### أهم محرّك استشرافي
+
+> **تصويت KU على Prop. 2025/26:258:** يُتوقع أن تنظر اللجنة في المقترح خلال مايو–يونيو 2026. ستشير المعارضة المشتركة من C وL على بند مساهمات المنظمات العمالية إلى انكسار أوسع في تيار الوسط-اليمين؛ في حين ستؤكد المعارضة المنفردة لحزب الوسط التقييمَ الراهن القائل بانفصال محدود النطاق.
+
+---
+
+### مرتكزات الأدلة
+
+| الادعاء | الدليل | تاريخ الاسترجاع | الثقة |
+|---------|--------|-----------------|-------|
+| حزب الوسط يطالب برفض قانون مساهمات المنظمات العمالية | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | عالية |
+| Lagrådet وصف المقترح بـ«bräckligt» | النص الكامل لـ HD024184، yttrande الصادر عن Lagrådet بتاريخ 2026-03-24 مُستشهَد به | 2026-05-20 | عالية |
+| SOU 2025:52 أوصى بعدم سنّ القانون | النص الكامل لـ HD024184 مع الإشارة إلى SOU 2025:52 | 2026-05-20 | عالية |
+| مالين بيورك نائبة عن حزب الوسط، ستوكهولم | intressent_id 0770363683317 | 2026-05-20 | عالية |
+| موهارم دميروك (الزعيم السابق لحزب الوسط) وقّع مشاركاً | قائمة موقّعي HD024184، intressent_id 0251136832626 | 2026-05-20 | عالية |
+| موعد الانتخابات 2026-09-13، تبقى 116 يوماً | تقويم هيئة الانتخابات السويدية | 2026-05-20 | عالية جداً |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_da.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">Centerpartiet bryder med Tidö-blokken om lov om fagforeningsbidrag</h1>
+
+<p align="center">
+  <strong>📊 Beslutsniveau BLUF · KU-motion HD024184 · 2026-05-20</strong><br>
+  <em>Foreningsfrihed · Lagrådets kritik · Valårsreform for gennemsigtighed</em>
+</p>
+
+**📋 Klassifikation:** Offentlig | **📅 Analysedato:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### BLUF
+
+Centerpartiet (C) — 8 parlamentsmedlemmer ledet af Malin Björk (intressent_id 0770363683317) — indgav Kommittémotion 2025/26:4184 den 15. maj 2026, henvist til KU den 20. maj 2026. Motionen accepterer regeringens reformer i Prop. 2025/26:258 om gennemsigtighed i partifinansieringen og lobbyregistrering, men kræver, at Riksdagen **forkaster** det foreslåede lovforslag om arbejdsorganisationers politiske bidrag. C argumenterer for, at loven: (1) mangler sanktioner og er let at omgå, (2) begrænser foreningsfriheden på en måde, der potentielt er uforenelig med EMRK, (3) af Lagrådet (yttrande 2026-03-24) er karakteriseret som hvileende på et "bräckligt" (skrøbeligt) evidensgrundlag, og (4) går længere end nødvendigt og dækker organisationer, der ikke knytter bidrag til kontingent. Det parlamentariske udvalg, der udarbejdede SOU 2025:52 (kommission juni 2023), anbefalede ikke en sådan lov; regeringen tilsidesatte dette. Prop. 2025/26:258 forventes at passere KU med næsten sikker opbakning fra regeringen og SD, hvilket gør motionen næsten sikker på at blive forkastet — men C's offentlige positionering 116 dage inden valget i september 2026 er den egentlige strategiske gevinst.
+
+---
+
+### Tre beslutninger dette notat understøtter
+
+| # | Beslutning | Relevans |
+|---|------------|----------|
+| 1 | **Redaktionel prioritering** — Led dagens nyheder om motioner med C's brud med Tidö om foreningsfrihed | Eneste KU-motion for 2026-05-20; konstitutionel og valmæssig betydning |
+| 2 | **Fremadrettet overvågning** — Overvåg KU's behandlingsdato og afstemningsdato for Prop. 2025/26:258 | Lagrådets "bräckligt"-udtalelse kan få andre oppositionspartier til at tilslutte sig C's holdning |
+| 3 | **Kampagnesporing** — Marker C's positionering som signal til svingvælgere i LO-S-finansieringsspørgsmålet | Valnærhed (116 dage) hæver signifikansmultiplikatoren til 1,5× |
+
+---
+
+### 60-sekunders læsning (8 punkter)
+
+1. **Én motion indgivet:** 2025/26:4184 (HD024184) af C, henvist til KU 2026-05-20 — eneste indgivelse i denne cyklus.
+2. **Delvis accept:** C støtter reformerne om gennemsigtighed i partifinansieringen og lobbyregisteret (i overensstemmelse med C's gennemsigtighedsplatform).
+3. **Kernekrav:** Forkast loven om arbejdsorganisationers bidrag i sin helhed — ikke ændre, forkaste.
+4. **Lagrådets opbakning:** Sveriges rådgivende lovgivningsråd afgav en sjælden kritisk udtalelse (2026-03-24) og kaldte forslaget "bräckligt" på grund af minimal høringsprocedure og let omgåelighed.
+5. **Lovgivningsmæssig procesfejl:** Regeringen inviterede specifikt ikke høringsorgan til at kommentere afsnittet om arbejdsorganisationers bidrag; SOU 2025:52-udvalget anbefalede, at det ikke vedtages.
+6. **EMRK/GDPR-flag:** C rejser EMRK Art. 11 (foreningsfrihed) og GDPR-overholdelsesproblemer — hvis Den Europæiske Menneskerettighedsdomstol giver C ret, kan loven annulleres efter vedtagelse.
+7. **Politisk kontekst:** Loven er rettet mod LO (fagforbund for ufaglærte) → S (Socialdemokraternes) donationsstrøm — et centralt reformmål for højrefløjen, som C nægter at støtte.
+8. **Valgkalkyle:** Med 116 dage til valget i 2026 positionerer C sig simultant som pro-gennemsigtighed OG pro-faglige rettigheder med henblik på at tiltrække centervælgere og fagforeningsnære vælgere fra både S og Tidö-blokken.
+
+---
+
+### Vigtigste fremadrettede udløser
+
+> **KU's afstemning om Prop. 2025/26:258:** Udvalget forventes at behandle propositionen i maj–juni 2026. En fælles C–L-dissens om afsnittet om arbejdsorganisationers bidrag ville signalere et bredere centrum-højre-brud; en isoleret C-dissens bekræfter den aktuelle vurdering af en afgrænset splittelse.
+
+---
+
+### Evidensankre
+
+| Påstand | Bevis | Hentet | Konfidens |
+|---------|-------|--------|-----------|
+| C kræver forkastelse af lov om arbejdsorganisationers bidrag | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | HØJ |
+| Lagrådet kaldte forslaget "bräckligt" | HD024184 fuld tekst, Lagrådets yttrande 2026-03-24 citeret | 2026-05-20 | HØJ |
+| SOU 2025:52 anbefalede mod loven | HD024184 fuld tekst med reference til SOU 2025:52 | 2026-05-20 | HØJ |
+| Malin Björk er C-parlamentsmedlem, Stockholm | intressent_id 0770363683317 | 2026-05-20 | HØJ |
+| Muharrem Demirok (tidligere C-leder) medsignerede | HD024184 signaturliste, intressent_id 0251136832626 | 2026-05-20 | HØJ |
+| Valgdato 2026-09-13, 116 dage tilbage | Valmyndighedens kalender | 2026-05-20 | MEGET HØJ |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_de.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">Centerpartiet trennt sich vom Tidö-Block im Streit um Gewerkschafts-Parteispendengesetz</h1>
+
+<p align="center">
+  <strong>📊 Entscheidungsgrad BLUF · KU-Antrag HD024184 · 2026-05-20</strong><br>
+  <em>Vereinigungsfreiheit · Rüge des Gesetzesprüfungsrats · Wahljahr-Transparenzreform</em>
+</p>
+
+**📋 Klassifizierung:** Öffentlich | **📅 Analysedatum:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### BLUF
+
+Centerpartiet (C) — 8 Abgeordnete unter Führung von Malin Björk (intressent_id 0770363683317) — reichte am 15. Mai 2026 den Kommittémotion 2025/26:4184 ein, der am 20. Mai 2026 an den KU verwiesen wurde. Der Antrag akzeptiert die Reformen der Regierung in Prop. 2025/26:258 zur Transparenz der Parteienfinanzierung und zum Lobbyregister, fordert den Riksdag jedoch auf, den vorgeschlagenen neuen Gesetzentwurf zu politischen Beiträgen von Arbeitsorganisationen **abzulehnen**. C argumentiert, das Gesetz: (1) enthält keine Sanktionen und ist leicht zu umgehen, (2) schränkt die Vereinigungsfreiheit in einer Weise ein, die möglicherweise unvereinbar mit der EMRK ist, (3) wurde vom Lagrådet (yttrande 2026-03-24) als auf einer „bräckligt" (fragilen) Beweisgrundlage beruhend charakterisiert, und (4) geht weiter als notwendig und erfasst Organisationen, die Beiträge nicht an Mitgliedsbeiträge knüpfen. Der parlamentarische Ausschuss, der SOU 2025:52 (Kommission Juni 2023) erstellte, empfahl selbst ein solches Gesetz nicht; die Regierung übergab dieses Ergebnis. Prop. 2025/26:258 wird im KU mit nahezu sicherer Regierungs- und SD-Mehrheit durchkommen, sodass der Antrag fast sicher abgelehnt wird — doch C's öffentliche Positionierung 116 Tage vor der Wahl im September 2026 ist der eigentliche strategische Gewinn.
+
+---
+
+### Drei Entscheidungen, die dieses Briefing unterstützt
+
+| # | Entscheidung | Relevanz |
+|---|--------------|----------|
+| 1 | **Redaktionelle Priorisierung** — Führen Sie die heutigen Antragsnachrichten mit C's Bruch mit Tidö in der Vereinigungsfreiheitsfrage | Einziger KU-Antrag für 2026-05-20; konstitutionelle und wahlrelevante Bedeutung |
+| 2 | **Vorausschauende Überwachung** — Verfolgen Sie den Behandlungstermin und den Abstimmungstermin des KU für Prop. 2025/26:258 | Das „bräckligt"-Urteil des Lagrådet könnte andere Oppositionsparteien dazu veranlassen, C's Haltung zu übernehmen |
+| 3 | **Kampagnenverfolgung** — Kennzeichnen Sie C's Positionierung als Signal für Wechselwähler in der LO-S-Finanzierungsfrage | Wahlnähe (116 Tage) erhöht den Signifikanzmultiplikator auf 1,5× |
+
+---
+
+### 60-Sekunden-Lektüre (8 Punkte)
+
+1. **Ein Antrag eingereicht:** 2025/26:4184 (HD024184) von C, an KU 2026-05-20 verwiesen — einzige Einreichung in diesem Zyklus.
+2. **Teilweise Akzeptanz:** C unterstützt die Reformen zur Parteienfinanzierungstransparenz und das Lobbyregister (im Einklang mit C's Transparenzplattform).
+3. **Kernforderung:** Das Gesetz über Beiträge von Arbeitsorganisationen vollständig ablehnen — nicht ändern, ablehnen.
+4. **Rückhalt durch den Lagrådet:** Schwedens beratendes Gesetzgebungsgremium gab eine seltene kritische Stellungnahme ab (2026-03-24) und nannte den Vorschlag „bräckligt" aufgrund minimaler Remissberatung und einfacher Umgehbarkeit.
+5. **Fehler im Gesetzgebungsverfahren:** Die Regierung lud ausdrücklich keine Remissorgane ein, den Abschnitt über Beiträge von Arbeitsorganisationen zu kommentieren; der SOU 2025:52-Ausschuss empfahl davon abzuraten.
+6. **EMRK/DSGVO-Kennzeichnung:** C hebt EMRK Art. 11 (Vereinigungsfreiheit) und DSGVO-Konformitätsrisiken hervor — sollte der Europäische Gerichtshof für Menschenrechte C Recht geben, könnte das Gesetz nach Verabschiedung aufgehoben werden.
+7. **Politischer Kontext:** Das Gesetz zielt auf den Spendenfluss LO (Gewerkschaftsbund) → S (Sozialdemokraten) — ein zentrales Reformziel der Rechten, das C sich weigert zu unterstützen.
+8. **Wahlkalkül:** Mit 116 Tagen bis zur Wahl 2026 positioniert sich C gleichzeitig als Pro-Transparenz UND Pro-Arbeitnehmerrechte, um zentristische und gewerkschaftsnahe Wähler von S und dem Tidö-Block abzuwerben.
+
+---
+
+### Wichtigster vorausschauender Auslöser
+
+> **KU-Abstimmung über Prop. 2025/26:258:** Der Ausschuss wird die Proposition voraussichtlich im Mai–Juni 2026 behandeln. Ein gemeinsames C–L-Dissens zum Abschnitt über Beiträge von Arbeitsorganisationen würde auf einen breiteren Riss im Mitte-Rechts-Lager hinweisen; ein isoliertes C-Dissens bestätigt die aktuelle Einschätzung einer begrenzten Spaltung.
+
+---
+
+### Beweisanker
+
+| Behauptung | Beweise | Abgerufen | Konfidenz |
+|------------|---------|-----------|-----------|
+| C fordert Ablehnung des Gesetzes über Beiträge von Arbeitsorganisationen | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | HOCH |
+| Lagrådet nannte den Vorschlag „bräckligt" | HD024184 Volltext, Lagrådets yttrande 2026-03-24 zitiert | 2026-05-20 | HOCH |
+| SOU 2025:52 empfahl gegen das Gesetz | HD024184 Volltext mit Verweis auf SOU 2025:52 | 2026-05-20 | HOCH |
+| Malin Björk ist C-Abgeordnete, Stockholm | intressent_id 0770363683317 | 2026-05-20 | HOCH |
+| Muharrem Demirok (früherer C-Vorsitzender) unterzeichnete mit | HD024184 Unterzeichnerliste, intressent_id 0251136832626 | 2026-05-20 | HOCH |
+| Wahldatum 2026-09-13, noch 116 Tage | Kalender der Wahlbehörde | 2026-05-20 | SEHR HOCH |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_es.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">Centerpartiet se separa del bloque Tidö por la ley sobre financiación sindical a partidos</h1>
+
+<p align="center">
+  <strong>📊 BLUF de nivel decisorio · Moción KU HD024184 · 2026-05-20</strong><br>
+  <em>Libertad de asociación · Reprimenda del Consejo de Legislación · Reforma de transparencia en año electoral</em>
+</p>
+
+**📋 Clasificación:** Pública | **📅 Fecha de análisis:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### BLUF
+
+Centerpartiet (C) — 8 diputados liderados por Malin Björk (intressent_id 0770363683317) — presentó la Kommittémotion 2025/26:4184 el 15 de mayo de 2026, remitida al KU el 20 de mayo de 2026. La moción acepta las reformas del gobierno en Prop. 2025/26:258 sobre transparencia en la financiación de partidos y registro de lobbying, pero exige que el Riksdag **rechace** la nueva ley propuesta sobre contribuciones políticas de las organizaciones sindicales. C argumenta que la ley: (1) carece de sanciones y es fácilmente eludible, (2) restringe la libertad de asociación de una manera potencialmente incompatible con el CEDH, (3) fue caracterizada por el Lagrådet (yttrande 2026-03-24) como basada en una base probatoria «bräckligt» (frágil), y (4) va más allá de lo necesario, cubriendo organizaciones que no vinculan las contribuciones a las cuotas. El comité parlamentario que elaboró SOU 2025:52 (comisión junio 2023) no recomendó dicha ley; el gobierno ignoró esa conclusión. La Prop. 2025/26:258 previsiblemente pasará el KU con apoyo casi seguro del gobierno y el SD, haciendo que la moción sea casi seguramente rechazada — pero el posicionamiento público de C a 116 días de las elecciones de septiembre de 2026 es el verdadero premio estratégico.
+
+---
+
+### Tres decisiones que apoya este resumen
+
+| # | Decisión | Relevancia |
+|---|----------|------------|
+| 1 | **Orientación editorial** — Liderar las noticias de mociones de hoy con la ruptura C–Tidö sobre la libertad de asociación | Única moción KU del 2026-05-20; relevancia constitucional y electoral |
+| 2 | **Activador de vigilancia prospectiva** — Seguir la fecha de tratamiento del KU y la fecha de votación de Prop. 2025/26:258 | El veredicto «bräckligt» del Lagrådet puede llevar a otros partidos de oposición a adherirse a la posición de C |
+| 3 | **Seguimiento de campaña** — Marcar el posicionamiento de C como señal para votantes indecisos en el asunto de financiación LO-S | Proximidad electoral (116 días) eleva el multiplicador de significancia a 1,5× |
+
+---
+
+### Lectura en 60 segundos (8 puntos)
+
+1. **Una moción presentada:** 2025/26:4184 (HD024184) por C, remitida al KU 2026-05-20 — única presentación en este ciclo.
+2. **Aceptación parcial:** C apoya las reformas de transparencia en la financiación de partidos y el registro de lobbying (compatibles con la plataforma de transparencia de C).
+3. **Exigencia central:** Rechazar totalmente la ley sobre contribuciones de las organizaciones sindicales — no enmendar, rechazar.
+4. **Respaldo del Lagrådet:** El órgano consultivo legislativo de Suecia emitió un raro dictamen crítico (2026-03-24) calificando la propuesta de «bräckligt» por la mínima consulta de remiss y la fácil elusión.
+5. **Fallo en el procedimiento legislativo:** El gobierno no invitó específicamente a los órganos de remiss a comentar la sección sobre contribuciones de las organizaciones sindicales; el comité SOU 2025:52 recomendó no legalizarla.
+6. **Señal CEDH/RGPD:** C señala riesgos de conformidad con el Art. 11 del CEDH (libertad de asociación) y el RGPD — si el Tribunal Europeo de Derechos Humanos da la razón a C, la ley podría ser anulada tras su aprobación.
+7. **Contexto político:** La ley apunta al flujo de donaciones LO (confederación sindical de cuello azul) → S (Socialdemokraterna) — un objetivo central de reforma de la derecha que C se niega a apoyar.
+8. **Cálculo electoral:** A 116 días de las elecciones de 2026, C se posiciona simultáneamente como pro-transparencia Y pro-derechos sindicales, buscando atraer votantes centristas y cercanos a los sindicatos lejos de S y del bloque Tidö.
+
+---
+
+### Principal activador prospectivo
+
+> **Votación del KU sobre Prop. 2025/26:258:** Se espera que el comité examine la proposición en mayo–junio de 2026. Una disidencia conjunta C–L sobre la sección relativa a las contribuciones de las organizaciones sindicales señalaría una fractura más amplia en el centro-derecha; una disidencia aislada de C confirma la evaluación actual de una ruptura contenida.
+
+---
+
+### Anclajes de evidencia
+
+| Afirmación | Evidencia | Obtenido | Confianza |
+|------------|-----------|----------|-----------|
+| C exige el rechazo de la ley sobre contribuciones de las organizaciones sindicales | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | ALTA |
+| El Lagrådet calificó la propuesta de «bräckligt» | Texto completo HD024184, yttrande del Lagrådet 2026-03-24 citado | 2026-05-20 | ALTA |
+| SOU 2025:52 recomendó contra la ley | Texto completo HD024184 citando SOU 2025:52 | 2026-05-20 | ALTA |
+| Malin Björk es diputada de C, Estocolmo | intressent_id 0770363683317 | 2026-05-20 | ALTA |
+| Muharrem Demirok (ex líder de C) cofirmó | Lista de firmantes HD024184, intressent_id 0251136832626 | 2026-05-20 | ALTA |
+| Fecha electoral 2026-09-13, 116 días restantes | Calendario de la Autoridad Electoral sueca | 2026-05-20 | MUY ALTA |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_fi.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">Centerpartiet irtoaa Tidö-blokilta ammattiliittojen puoluerahoituslakikiistassa</h1>
+
+<p align="center">
+  <strong>📊 Päätöstason BLUF · KU-aloite HD024184 · 2026-05-20</strong><br>
+  <em>Yhdistymisvapaus · Lakineuvosto kritisoi · Vaalivuoden läpinäkyvyysreformi</em>
+</p>
+
+**📋 Luokitus:** Julkinen | **📅 Analyysipäivä:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### BLUF
+
+Centerpartiet (C) — 8 kansanedustajaa, joita johtaa Malin Björk (intressent_id 0770363683317) — jätti Kommittémotion 2025/26:4184 15. toukokuuta 2026, ohjattiin KU:lle 20. toukokuuta 2026. Aloite hyväksyy hallituksen Prop. 2025/26:258 -reformit puolueiden rahoituksen läpinäkyvyyden ja lobbyrekisterin osalta, mutta vaatii riksdagia **hylkäämään** ehdotetun uuden lain työjärjestöjen poliittisista lahjoituksista. C:n mukaan laki: (1) ei sisällä sanktioita ja on helppo kiertää, (2) rajoittaa yhdistymisvapautta tavalla, joka saattaa olla yhteensopimaton ECHR:n kanssa, (3) lainopillinen neuvottelukunta (Lagrådet, yttrande 2026-03-24) luonnehti pohjaavan "bräckligt" (hauraalle) todistepohjalle, ja (4) menee pidemmälle kuin on tarpeen, kattaen järjestöt, jotka eivät sido lahjoituksia jäsenmaksuihin. SOU 2025:52:n (kesäkuun 2023 komissio) tuottanut parlamentaarinen komitea ei itse suositellut tällaista lakia; hallitus ohitti tämän. Prop. 2025/26:258 tulee todennäköisesti läpi KU:ssa lähes varmalla hallituksen ja SD:n enemmistöllä, minkä vuoksi aloite hylätään lähes varmasti — mutta C:n julkinen asemointi 116 päivää ennen syyskuun 2026 vaalia on todellinen strateginen saavutus.
+
+---
+
+### Kolme päätöstä, joita tämä tiedonanto tukee
+
+| # | Päätös | Merkitys |
+|---|--------|----------|
+| 1 | **Toimituksellinen priorisointi** — Johda tämän päivän aloiteuutisointi C:n ja Tidön välisellä yhdistymisvapausriidalla | Ainoa KU-aloite 2026-05-20; perustuslaillinen ja vaalimerkitys |
+| 2 | **Ennakoiva seuranta** — Seuraa KU:n käsittelypäivämäärää ja äänestysajankohtaa Prop. 2025/26:258:lle | Lakineuvosto-kritiikki saattaa saada muita oppositiopuolueita yhteenliittymään C:n kannan kanssa |
+| 3 | **Kampanjaeuranta** — Merkitse C:n asemointi signaaliksi vaaleissa heiluvista äänestäjistä LO-S-rahoituskysymyksessä | Vaalin läheisyys (116 päivää) nostaa merkittävyyskertoimeksi 1,5× |
+
+---
+
+### 60 sekunnin luku (8 kohtaa)
+
+1. **Yksi aloite jätetty:** 2025/26:4184 (HD024184) C:ltä, ohjattu KU:lle 2026-05-20 — ainoa jätöt tällä kierroksella.
+2. **Osittainen hyväksyntä:** C tukee puolueiden rahoituksen läpinäkyvyysreformeja ja lobbyrekisteriä (C:n läpinäkyvyysalustan mukaisia).
+3. **Ydinkysymys:** Hylätään laki työjärjestöjen lahjoituksista kokonaan — ei muuteta, hylätään.
+4. **Lakineuvosto-tuki:** Ruotsin lainsäädännöllinen neuvoa-antava elin antoi harvinaisen kriittisen lausunnon (2026-03-24) ja kutsui ehdotusta "bräckligtksi" vähäisen lausuntomenettelyn ja helpon kierrettävyyden vuoksi.
+5. **Lainsäädäntöprosessin virhe:** Hallitus ei nimenomaisesti kutsunut lausuntoelimiä kommentoimaan työjärjestöjen lahjoituksia koskevaa osaa; SOU 2025:52 -komitea suositti, ettei sitä säädettäisi.
+6. **ECHR/GDPR-lippu:** C nostaa esiin ECHR 11 artiklan (yhdistymisvapaus) ja GDPR-vaatimustenmukaisuusriskit — jos Euroopan ihmisoikeustuomioistuin antaa C:lle oikeuden, laki voidaan kumota hyväksymisen jälkeen.
+7. **Poliittinen konteksti:** Laki kohdistuu LO (ammattiliitto) → S (Socialdemokraterna) -lahjoitusvirtaan — keskeinen oikeiston uudistustavoite, jota C kieltäytyy tukemasta.
+8. **Vaalikalkyylit:** 116 päivää vaaleisiin 2026 C asemoituu samanaikaisesti pro-läpinäkyvyydeksi JA pro-ammattioikeuksiksi, houkutellakseen keskusta- ja ammattiyhdistysläheisiä äänestäjiä pois sekä S:ltä että Tidö-blokkilta.
+
+---
+
+### Tärkein ennakoiva laukaisija
+
+> **KU:n äänestys Prop. 2025/26:258:sta:** Komitean odotetaan käsittelevän propositiota touko–kesäkuussa 2026. Yhteinen C–L-eriävä mielipide työjärjestöjen lahjoituksia koskevasta osasta merkitsisi laajempaa keskirikkoumaa; eristetty C-eriävä mielipide vahvistaisi nykyisen arvion rajoitetusta halkeamasta.
+
+---
+
+### Todistusankkurit
+
+| Väite | Todiste | Haettu | Luottamus |
+|-------|---------|--------|-----------|
+| C vaatii lain hylkäämistä | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | KORKEA |
+| Lagrådet kutsui ehdotusta "bräckligtksi" | HD024184 koko teksti, Lagrådetin yttrande 2026-03-24 siteerattu | 2026-05-20 | KORKEA |
+| SOU 2025:52 suositti lakia vastaan | HD024184 koko teksti viitaten SOU 2025:52 | 2026-05-20 | KORKEA |
+| Malin Björk on C:n kansanedustaja, Tukholma | intressent_id 0770363683317 | 2026-05-20 | KORKEA |
+| Muharrem Demirok (entinen C-johtaja) allekirjoitti | HD024184 allekirjoittajaluettelo, intressent_id 0251136832626 | 2026-05-20 | KORKEA |
+| Vaalipäivä 2026-09-13, 116 päivää jäljellä | Vaalilautakunnan kalenteri | 2026-05-20 | ERITTÄIN KORKEA |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_fr.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">Centerpartiet se sépare du bloc Tidö sur la loi relative aux financements syndicaux</h1>
+
+<p align="center">
+  <strong>📊 BLUF de niveau décisionnel · Motion KU HD024184 · 2026-05-20</strong><br>
+  <em>Liberté d'association · Réprimande du Conseil de législation · Réforme de transparence en année électorale</em>
+</p>
+
+**📋 Classification :** Publique | **📅 Date d'analyse :** 2026-05-20 | **🔖 dok_id :** HD024184
+
+---
+
+### BLUF
+
+Centerpartiet (C) — 8 députés menés par Malin Björk (intressent_id 0770363683317) — a déposé la Kommittémotion 2025/26:4184 le 15 mai 2026, renvoyée au KU le 20 mai 2026. La motion accepte les réformes du gouvernement dans Prop. 2025/26:258 sur la transparence du financement des partis et l'enregistrement du lobbying, mais demande au Riksdag de **rejeter** la nouvelle loi proposée sur les contributions politiques des organisations syndicales. C soutient que la loi : (1) ne comporte pas de sanctions et est facilement contournable, (2) restreint la liberté d'association d'une manière potentiellement incompatible avec la CEDH, (3) a été caractérisée par le Lagrådet (yttrande 2026-03-24) comme reposant sur une base factuelle « bräckligt » (fragile), et (4) va plus loin que nécessaire, couvrant des organisations qui ne lient pas les contributions aux cotisations. Le comité parlementaire qui a produit SOU 2025:52 (commission juin 2023) n'a lui-même pas recommandé une telle loi ; le gouvernement a ignoré cette conclusion. La Prop. 2025/26:258 passera très probablement au KU avec le soutien quasi certain du gouvernement et du SD, rendant la motion presque condamnée au rejet — mais le positionnement public de C à 116 jours des élections de septembre 2026 est le véritable enjeu stratégique.
+
+---
+
+### Trois décisions que ce bref soutient
+
+| # | Décision | Pertinence |
+|---|----------|------------|
+| 1 | **Orientation éditoriale** — Mener la couverture des motions du jour avec la rupture C–Tidö sur la liberté d'association | Seule motion KU du 2026-05-20 ; importance constitutionnelle et électorale |
+| 2 | **Déclencheur de veille prospective** — Suivre la date de traitement du KU et la date de vote sur Prop. 2025/26:258 | Le verdict « bräckligt » du Lagrådet pourrait amener d'autres partis d'opposition à rejoindre la position de C |
+| 3 | **Suivi de campagne** — Marquer le positionnement de C comme signal aux électeurs indécis sur le financement LO-S | La proximité électorale (116 jours) porte le multiplicateur de significativité à 1,5× |
+
+---
+
+### Lecture en 60 secondes (8 points)
+
+1. **Une seule motion déposée :** 2025/26:4184 (HD024184) par C, renvoyée KU 2026-05-20 — seul dépôt de ce cycle.
+2. **Acceptation partielle :** C soutient les réformes de transparence du financement des partis et le registre du lobbying (conformes à la plateforme de transparence de C).
+3. **Demande centrale :** Rejeter totalement la loi sur les contributions des organisations syndicales — pas amender, rejeter.
+4. **Soutien du Lagrådet :** Le Conseil consultatif sur la législation de Suède a émis un rare avis critique (2026-03-24) qualifiant la proposition de « bräckligt » en raison d'une consultation de remiss minimale et d'une facilité de contournement.
+5. **Défaillance de la procédure législative :** Le gouvernement n'a pas invité spécifiquement les organes de remiss à commenter la section sur les contributions des organisations syndicales ; le comité SOU 2025:52 a recommandé de ne pas la légiférer.
+6. **Drapeau CEDH/RGPD :** C soulève des risques de conformité à l'Art. 11 de la CEDH (liberté d'association) et au RGPD — si la Cour européenne des droits de l'homme donne raison à C, la loi pourrait être annulée après adoption.
+7. **Contexte politique :** La loi vise le flux de dons LO (confédération syndicale des cols bleus) → S (Socialdemokraterna) — un objectif de réforme majeur de la droite que C refuse de soutenir.
+8. **Calcul électoral :** À 116 jours des élections 2026, C se positionne simultanément comme pro-transparence ET pro-droits syndicaux, cherchant à attirer des électeurs centristes et proches des syndicats loin de S et du bloc Tidö.
+
+---
+
+### Principal déclencheur prospectif
+
+> **Vote du KU sur Prop. 2025/26:258 :** Le comité devrait examiner la proposition en mai–juin 2026. Une dissidence conjointe C–L sur la section relative aux contributions des organisations syndicales signalerait une fracture plus large au centre-droit ; une dissidence isolée de C confirme l'évaluation actuelle d'une rupture contenue.
+
+---
+
+### Ancres de preuves
+
+| Affirmation | Preuve | Récupéré | Confiance |
+|-------------|--------|----------|-----------|
+| C demande le rejet de la loi sur les contributions des organisations syndicales | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | ÉLEVÉE |
+| Le Lagrådet a qualifié la proposition de « bräckligt » | Texte intégral HD024184, yttrande du Lagrådet 2026-03-24 cité | 2026-05-20 | ÉLEVÉE |
+| SOU 2025:52 a recommandé contre la loi | Texte intégral HD024184 citant SOU 2025:52 | 2026-05-20 | ÉLEVÉE |
+| Malin Björk est deputée C, Stockholm | intressent_id 0770363683317 | 2026-05-20 | ÉLEVÉE |
+| Muharrem Demirok (ancien chef de C) a cosigné | Liste des signataires HD024184, intressent_id 0251136832626 | 2026-05-20 | ÉLEVÉE |
+| Date électorale 2026-09-13, 116 jours restants | Calendrier de l'Autorité électorale suédoise | 2026-05-20 | TRÈS ÉLEVÉE |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="לוגו Hack23" width="192" height="192">
+</p>
+
+<h1 align="center">מפלגת המרכז פורשת מגוש טידו על רקע חוק מימון הסתדרויות למפלגות</h1>
+
+<p align="center">
+  <strong>📊 תמצית ביצועית ברמת החלטה · הצעת KU מס׳ HD024184 · 2026-05-20</strong><br>
+  <em>חופש ההתאגדות · נזיפת מועצת החקיקה · רפורמת שקיפות בשנת בחירות</em>
+</p>
+
+**📋 סיווג:** ציבורי | **📅 תאריך ניתוח:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### תמצית
+
+מפלגת המרכז (C) — 8 חברי פרלמנט בהנהגת מאלין ביורק (intressent_id 0770363683317) — הגישה את Kommittémotion 2025/26:4184 ב-15 במאי 2026, הועברה לוועדת KU ב-20 במאי 2026. ההצעה מקבלת את רפורמות הממשלה ב-Prop. 2025/26:258 בנושא שקיפות מימון מפלגות ורישום לובינג, אך דורשת מהפרלמנט (Riksdag) **לדחות** את מסמך החוק החדש המוצע בנוגע לתרומות פוליטיות של ארגוני עובדים. C טוענת כי החוק: (1) נטול סנקציות וניתן לעקיפה בקלות, (2) מגביל את חופש ההתאגדות בדרך שעשויה להיות בלתי-תואמת לאמנה האירופית לזכויות אדם, (3) אופיין על-ידי Lagrådet (חוות-דעת מ-2026-03-24) כמבוסס על תשתית ראייתית «bräckligt» (רעועה), ו-(4) חורג מעבר לנדרש וכולל ארגונים שאינם מקשרים תרומות לדמי-חברות. הוועדה הפרלמנטרית שגיבשה SOU 2025:52 (ועדה מיוני 2023) לא המליצה על חוק כזה; הממשלה התעלמה ממסקנה זו. Prop. 2025/26:258 צפויה לעבור בוועדת KU בתמיכה כמעט-ודאית של הממשלה ו-SD, מה שהופך את ההצעה לכמעט-ודאית לדחייה — אך ההצבה הציבורית של C כ-116 יום לפני בחירות ספטמבר 2026 היא הפרס האסטרטגי האמיתי.
+
+---
+
+### שלוש החלטות שתמצית זו תומכת בהן
+
+| # | החלטה | רלוונטיות |
+|---|-------|-----------|
+| 1 | **הכוונה עריכתית** — להוביל את חדשות ההצעות של היום עם פרישת C מטידו בסוגיית חופש ההתאגדות | הצעת KU היחידה ל-2026-05-20; משמעות חוקתית ובחירותית |
+| 2 | **מפעיל מעקב-קדימה** — לעקוב אחר מועד הטיפול של KU ותאריך ההצבעה על Prop. 2025/26:258 | פסיקת «bräckligt» של Lagrådet עשויה לגרום למפלגות אופוזיציה נוספות לאמץ את עמדת C |
+| 3 | **מעקב קמפיין** — לסמן את מיצוב C כאות לבוחרים מתנדנדים בסוגיית מימון LO-S | קרבת הבחירות (116 יום) מעלה את מכפיל המשמעותיות ל-1.5× |
+
+---
+
+### קריאה בן 60 שניות (8 נקודות)
+
+1. **הצעה אחת הוגשה:** 2025/26:4184 (HD024184) על-ידי C, הועברה ל-KU ב-2026-05-20 — ההגשה היחידה במחזור זה.
+2. **קבלה חלקית:** C תומכת ברפורמות שקיפות מימון המפלגות ובפנקס הלובינג (עולים בקנה אחד עם פלטפורמת השקיפות של C).
+3. **דרישת מפתח:** לדחות את חוק תרומות ארגוני העובדים לחלוטין — לא לתקן, לדחות.
+4. **גיבוי Lagrådet:** הגוף הייעוצי החקיקתי של שוודיה הוציא חוות-דעת ביקורתית נדירה (2026-03-24) וכינה את ההצעה «bräckligt» בשל היוועצות מינימלית ב-Remiss וקלות העקיפה.
+5. **כשל בהליך החקיקתי:** הממשלה לא הזמינה במפורש גופי Remiss להגיב על סעיף תרומות ארגוני העובדים; ועדת SOU 2025:52 המליצה שלא לחוקק אותו.
+6. **דגל ECHR/GDPR:** C מעלה סיכוני ציות לסעיף 11 של האמנה האירופית לזכויות אדם (חופש ההתאגדות) ול-GDPR — אם בית-הדין האירופי לזכויות אדם יקבל את עמדת C, החוק עשוי להתבטל לאחר אישורו.
+7. **הקשר פוליטי:** החוק מכוון לזרם התרומות מ-LO (הסתדרות הפועלים הכלליים) אל ס׳ (הסוציאל-דמוקרטים) — מטרת רפורמה מרכזית של הימין שC מסרבת לתמוך בה.
+8. **חשבון בחירותי:** עם 116 יום לבחירות 2026, C ממצבת עצמה בו-זמנית כתומכת שקיפות וכמגינה על זכויות עובדים, במטרה למשוך בוחרים מרכזניים וקרובים לתנועת העבודה הרחק מ-S וגוש טידו.
+
+---
+
+### המפעיל הקדימה החשוב ביותר
+
+> **הצבעת KU על Prop. 2025/26:258:** הוועדה צפויה לדון בהצעה במאי–יוני 2026. מחאה משותפת של C ו-L על סעיף תרומות ארגוני העובדים תאות על סדק רחב יותר בימין-המרכז; מחאה מבודדת של C בלבד מאשרת את ההערכה הנוכחית של פרישה מוגבלת.
+
+---
+
+### עוגני ראיות
+
+| טענה | ראיה | נאסף | אמינות |
+|------|------|------|--------|
+| C דורשת דחיית חוק תרומות ארגוני עובדים | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | גבוהה |
+| Lagrådet כינה ההצעה «bräckligt» | טקסט מלא של HD024184, yttrande מ-Lagrådet 2026-03-24 מצוטט | 2026-05-20 | גבוהה |
+| SOU 2025:52 המליץ נגד החוק | טקסט מלא של HD024184 המפנה ל-SOU 2025:52 | 2026-05-20 | גבוהה |
+| מאלין ביורק חברת כנסת מ-C, שטוקהולם | intressent_id 0770363683317 | 2026-05-20 | גבוהה |
+| מוהארם דמירוק (ראש C לשעבר) חתם בשיתוף | רשימת חותמים HD024184, intressent_id 0251136832626 | 2026-05-20 | גבוהה |
+| תאריך בחירות 2026-09-13, נותרו 116 יום | לוח-שנה של רשות הבחירות השוודית | 2026-05-20 | גבוהה מאוד |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_ja.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23ロゴ" width="192" height="192">
+</p>
+
+<h1 align="center">センタパルティエット、労働組合の政党献金法をめぐりティドーブロックから離脱</h1>
+
+<p align="center">
+  <strong>📊 意思決定レベルの要約 · KU動議 HD024184 · 2026-05-20</strong><br>
+  <em>結社の自由 · 立法審議会の批判 · 選挙年の透明性改革</em>
+</p>
+
+**📋 分類:** 公開 | **📅 分析日:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### 要約
+
+センタパルティエット（C）— マリン・ビョルク（intressent_id 0770363683317）率いる8人の議員 — は2026年5月15日にKommittémotion 2025/26:4184を提出し、2026年5月20日にKUへ付託された。同動議は政府のProp. 2025/26:258における政党資金の透明性改革とロビー登録制度の改革を支持するが、労働組合の政治献金に関する新法の**否決**をリクスダーグに求めている。C党は当該法律について次のように主張している：(1) 制裁規定がなく容易に迂回できる、(2) 結社の自由をECHRと潜在的に相容れない形で制限している、(3) Lagrådet（2026年3月24日の意見書）が「bräckligt」（脆弱）な証拠基盤に基づくと指摘した、(4) 会費と献金を結びつけていない組織にも適用される点で必要以上に広範囲である。SOU 2025:52（2023年6月委員会）を作成した議会委員会自体もこのような法律を勧告しなかったにもかかわらず、政府はその結論を無視した。Prop. 2025/26:258は与党とSDのほぼ確実な多数決でKUを通過するとみられ、当動議は否決される可能性が高い。しかし、2026年9月選挙まで116日という時点でのC党の公的な立ち位置こそが真の戦略的成果である。
+
+---
+
+### この要約が支援する三つの決定
+
+| # | 決定 | 関連性 |
+|---|------|--------|
+| 1 | **編集上の優先順位** — 本日の動議ニュースを結社の自由問題におけるC党とティドーの亀裂で主導 | 2026-05-20のKU動議は唯一のもの；憲法的・選挙的重要性 |
+| 2 | **先行注視トリガー** — Prop. 2025/26:258に関するKU委員会の審議日程と投票日を監視 | Lagrådетの「bräckligt」判断が他の野党によるC党の立場への追随を促す可能性 |
+| 3 | **キャンペーン追跡** — LO-S資金問題で揺れる有権者へのシグナルとしてC党の立ち位置をマーク | 選挙接近（116日）が重要性乗数を1.5×に引き上げ |
+
+---
+
+### 60秒で読む（8項目）
+
+1. **動議一件提出：** 2025/26:4184（HD024184）C党提出、2026-05-20にKU付託 — 今周期の唯一の提出。
+2. **部分的受諾：** C党は政党資金の透明性改革とロビー登録を支持（C党の透明性プラットフォームに沿う）。
+3. **核心的要求：** 労働組合の献金法を全面否決 — 修正ではなく否決。
+4. **Lagrådetの後押し：** スウェーデンの立法諮問機関は珍しい批判的意見書（2026-03-24）を出し、Remiss協議が最小限で容易に迂回できるとして提案を「bräckligt」と呼んだ。
+5. **立法過程の欠陥：** 政府は労働組合の献金条項について諮問機関への意見照会を意図的に行わなかった；SOU 2025:52委員会は立法しないよう勧告した。
+6. **ECHR/GDPRフラグ：** C党はECHR第11条（結社の自由）とGDPRコンプライアンスリスクを指摘 — 欧州人権裁判所がC党の主張を認めれば、成立後に法律が無効とされる可能性がある。
+7. **政治的背景：** この法律はLO（ブルーカラー労組連合）→S（社会民主党）への献金フローを標的にしている — C党が支持を拒否する右派の主要改革目標。
+8. **選挙計算：** 2026年選挙まで116日で、C党は透明性支持と労働権利支持を同時に打ち出し、Sもティドーブロックもどちらからも中道・労組近接の有権者を取り込もうとしている。
+
+---
+
+### 最重要な先行トリガー
+
+> **KUによるProp. 2025/26:258の採決：** 委員会は2026年5～6月に提案を審議する見込み。労働組合献金条項に関するC党・L党の共同反対意見は、中道右派の広範な亀裂を示す。C党単独の反対意見は、現在の「限定的な分裂」という評価を確認するものとなる。
+
+---
+
+### 証拠の根拠
+
+| 主張 | 証拠 | 取得 | 信頼度 |
+|------|------|------|--------|
+| C党が労働組合献金法の否決を求めている | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | 高 |
+| Lagrådетが提案を「bräckligt」と呼んだ | HD024184全文、Lagrådet意見書2026-03-24を引用 | 2026-05-20 | 高 |
+| SOU 2025:52が法律に反対勧告 | HD024184全文、SOU 2025:52を引用 | 2026-05-20 | 高 |
+| マリン・ビョルクはC党議員、ストックホルム | intressent_id 0770363683317 | 2026-05-20 | 高 |
+| ムハレム・デミロク（元C党代表）が共同署名 | HD024184署名者リスト、intressent_id 0251136832626 | 2026-05-20 | 高 |
+| 選挙日2026-09-13、116日後 | スウェーデン選挙委員会のカレンダー | 2026-05-20 | 非常に高 |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_ko.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 로고" width="192" height="192">
+</p>
+
+<h1 align="center">중앙당, 노동조합 정당 기부금법 문제로 티도 블록과 결별</h1>
+
+<p align="center">
+  <strong>📊 의사결정 수준의 요약 · KU 동의안 HD024184 · 2026-05-20</strong><br>
+  <em>결사의 자유 · 입법위원회의 질책 · 선거의 해 투명성 개혁</em>
+</p>
+
+**📋 분류:** 공개 | **📅 분석일:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### 요약
+
+중앙당(C) — 말린 비요르크(intressent_id 0770363683317)가 이끄는 의원 8명 — 은 2026년 5월 15일 Kommittémotion 2025/26:4184를 제출했으며, 2026년 5월 20일 KU에 회부되었다. 이 동의안은 정당 자금 투명성과 로비 등록에 관한 정부의 Prop. 2025/26:258 개혁안을 수용하지만, 노동조합의 정치 기부금에 관한 새 법안을 **부결**시킬 것을 릭스다그에 요구하고 있다. C당은 해당 법이: (1) 제재 조항이 없고 쉽게 우회할 수 있으며, (2) ECHR과 잠재적으로 양립 불가능한 방식으로 결사의 자유를 제한하며, (3) Lagrådet(2026-03-24 의견서)이 "bräckligt"(취약한) 증거 기반에 기초한다고 지적했고, (4) 기부금을 조합비와 연계하지 않는 조직까지 포함해 필요 이상으로 광범위하다고 주장한다. SOU 2025:52(2023년 6월 위원회)를 작성한 의회 위원회 자체도 이런 법을 권고하지 않았으나, 정부는 그 결론을 무시했다. Prop. 2025/26:258은 거의 확실한 정부와 SD의 다수결로 KU를 통과할 것으로 보여 이 동의안은 부결될 가능성이 높다. 그러나 2026년 9월 선거 116일 전이라는 시점에서의 C당의 공개적 입장 표명이야말로 진정한 전략적 성과다.
+
+---
+
+### 이 요약이 지원하는 세 가지 결정
+
+| # | 결정 | 관련성 |
+|---|------|--------|
+| 1 | **편집 우선순위** — 오늘 동의안 뉴스를 결사의 자유 문제에서 C당과 티도의 균열로 주도 | 2026-05-20의 유일한 KU 동의안; 헌법적·선거적 중요성 |
+| 2 | **선행 모니터링 트리거** — Prop. 2025/26:258에 대한 KU 심의일 및 투표일 추적 | Lagrådet의 "bräckligt" 판단이 다른 야당들의 C당 입장 지지를 유발할 가능성 |
+| 3 | **선거 캠페인 추적** — LO-S 자금 문제에서 부동층 유권자에 대한 신호로 C당의 입장을 표시 | 선거 근접(116일)으로 중요도 배수가 1.5×로 상승 |
+
+---
+
+### 60초 읽기 (8가지 요점)
+
+1. **동의안 1건 제출:** 2025/26:4184(HD024184), C당 제출, 2026-05-20 KU 회부 — 이번 주기의 유일한 제출.
+2. **부분적 수용:** C당은 정당 자금 투명성 개혁과 로비 등록을 지지(C당의 투명성 플랫폼과 일치).
+3. **핵심 요구:** 노동조합 기부금법을 전면 부결 — 수정이 아니라 부결.
+4. **Lagrådet의 지지:** 스웨덴 입법자문기관은 드문 비판적 의견서(2026-03-24)를 발표하며, 최소한의 Remiss 협의와 손쉬운 우회를 이유로 제안을 "bräckligt"라고 지칭했다.
+5. **입법 절차상의 결함:** 정부는 노동조합 기부금 조항에 대해 의견 제출 기관을 의도적으로 초청하지 않았다; SOU 2025:52 위원회는 입법하지 말 것을 권고했다.
+6. **ECHR/GDPR 경고:** C당은 ECHR 제11조(결사의 자유) 및 GDPR 준수 리스크를 제기 — 유럽인권재판소가 C당의 입장을 지지하면 법이 성립 후 무효화될 수 있다.
+7. **정치적 맥락:** 이 법은 LO(블루칼라 노동조합 연맹) → S(사민당)로의 기부 흐름을 겨냥 — C당이 지지를 거부하는 우파의 핵심 개혁 목표.
+8. **선거 계산:** 2026년 선거까지 116일이 남은 시점에서, C당은 투명성 지지와 노동권 옹호를 동시에 포지셔닝해 S와 티도 블록 모두로부터 중도·노동조합 친화 유권자를 끌어들이려 하고 있다.
+
+---
+
+### 가장 중요한 선행 트리거
+
+> **KU의 Prop. 2025/26:258 투표:** 위원회는 2026년 5~6월에 제안을 심의할 것으로 예상된다. 노동조합 기부금 조항에 대한 C당과 L당의 공동 반대 의견은 중도우파 내 더 광범위한 균열을 시사하며; C당 단독의 반대 의견은 현재의 제한적 분열 평가를 확인하는 것이다.
+
+---
+
+### 증거 근거
+
+| 주장 | 증거 | 수집 | 신뢰도 |
+|------|------|------|--------|
+| C당이 노동조합 기부금법 부결 요구 | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | 높음 |
+| Lagrådet이 제안을 "bräckligt"라 지칭 | HD024184 전문, Lagrådet의견서 2026-03-24 인용 | 2026-05-20 | 높음 |
+| SOU 2025:52가 법에 반대 권고 | HD024184 전문, SOU 2025:52 인용 | 2026-05-20 | 높음 |
+| 말린 비요르크는 C당 의원, 스톡홀름 | intressent_id 0770363683317 | 2026-05-20 | 높음 |
+| 무하렘 데미로크(전 C당 대표) 공동 서명 | HD024184 서명자 목록, intressent_id 0251136832626 | 2026-05-20 | 높음 |
+| 선거일 2026-09-13, 116일 남음 | 스웨덴 선거관리위원회 달력 | 2026-05-20 | 매우 높음 |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_nl.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">Centerpartiet breekt met Tidö-blok over wet vakbondsbijdragen aan partijen</h1>
+
+<p align="center">
+  <strong>📊 Beslissingsniveau BLUF · KU-motie HD024184 · 2026-05-20</strong><br>
+  <em>Vrijheid van vereniging · Berisping Wetgevingsadviesraad · Transparantiereform verkiezingsjaar</em>
+</p>
+
+**📋 Classificatie:** Openbaar | **📅 Analysedatum:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### BLUF
+
+Centerpartiet (C) — 8 Kamerleden onder leiding van Malin Björk (intressent_id 0770363683317) — diende op 15 mei 2026 Kommittémotion 2025/26:4184 in, op 20 mei 2026 doorverwezen naar KU. De motie aanvaardt de hervormingen van de regering in Prop. 2025/26:258 inzake transparantie van partijfinanciering en lobbyregistratie, maar eist dat de Riksdag het voorgestelde nieuwe wetsvoorstel over politieke bijdragen van arbeidsorganisaties **verwerpt**. C betoogt dat de wet: (1) geen sancties bevat en gemakkelijk te omzeilen is, (2) de vrijheid van vereniging beperkt op een manier die mogelijk onverenigbaar is met het EVRM, (3) door de Lagrådet (yttrande 2026-03-24) werd gekarakteriseerd als rustend op een «bräckligt» (fragiel) bewijsfundament, en (4) verder gaat dan noodzakelijk en organisaties dekt die bijdragen niet koppelen aan contributies. Het parlementaire comité dat SOU 2025:52 (commissie juni 2023) opstelde, bevol zelf een dergelijke wet niet aan; de regering negeerde die bevinding. Prop. 2025/26:258 zal naar verwachting het KU passeren met nagenoeg zekere steun van de regering en SD, waardoor de motie vrijwel zeker verworpen wordt — maar C's publieke positionering 116 dagen voor de verkiezingen van september 2026 is de eigenlijke strategische prijs.
+
+---
+
+### Drie beslissingen die dit briefing ondersteunt
+
+| # | Beslissing | Relevantie |
+|---|------------|------------|
+| 1 | **Redactionele prioritering** — Leid het nieuws over moties van vandaag met de C–Tidö-breuk over de vrijheid van vereniging | Enige KU-motie voor 2026-05-20; constitutionele en electorale betekenis |
+| 2 | **Vooruitziende waakzaamheidstrigger** — Volg de behandelingsdatum van KU en de stemdatum voor Prop. 2025/26:258 | Het «bräckligt»-oordeel van de Lagrådet kan andere oppositiepartijen ertoe brengen C's standpunt over te nemen |
+| 3 | **Campagnetracking** — Markeer C's positionering als signaal aan zwevende kiezers in de LO-S-financieringskwestie | Verkiezingsnabijheid (116 dagen) verhoogt de significantiemultiplicator naar 1,5× |
+
+---
+
+### 60-seconden lezing (8 punten)
+
+1. **Eén motie ingediend:** 2025/26:4184 (HD024184) door C, doorverwezen naar KU 2026-05-20 — enige indiening in deze cyclus.
+2. **Gedeeltelijke aanvaarding:** C ondersteunt de hervormingen voor transparantie van partijfinanciering en het lobbyregister (in lijn met C's transparantieplatform).
+3. **Kerneis:** De wet over bijdragen van arbeidsorganisaties volledig verwerpen — niet amenderen, verwerpen.
+4. **Steun van de Lagrådet:** Zwedens adviserend wetgevend orgaan gaf een zeldzaam kritisch advies (2026-03-24) en noemde het voorstel «bräckligt» vanwege minimale remiss-raadpleging en eenvoudige omzeiling.
+5. **Procedurefout in wetgeving:** De regering nodigde specifiek geen remiss-organen uit om commentaar te geven op het gedeelte over bijdragen van arbeidsorganisaties; het SOU 2025:52-comité beval aan het niet te wetgeven.
+6. **EVRM/AVG-markering:** C wijst op nalevingsrisico's m.b.t. EVRM Art. 11 (vrijheid van vereniging) en AVG — als het Europees Hof voor de Rechten van de Mens C gelijkgeeft, kan de wet na aanname worden vernietigd.
+7. **Politieke context:** De wet richt zich op de donatiestroom LO (vakbondsconfederatie voor arbeiders) → S (Sociaaldemocratische Partij) — een centraal hervormingsdoel van rechts dat C weigert te steunen.
+8. **Electorale berekening:** Met 116 dagen tot de verkiezingen van 2026 positioneert C zich tegelijkertijd als pro-transparantie EN pro-arbeidsrechten, om centrumstemmen en vakbondsnabije kiezers weg te lokken van zowel S als het Tidö-blok.
+
+---
+
+### Belangrijkste vooruitziende trigger
+
+> **KU-stemming over Prop. 2025/26:258:** Het comité zal de propositie naar verwachting in mei–juni 2026 behandelen. Een gezamenlijk C–L-dissent over het gedeelte m.b.t. bijdragen van arbeidsorganisaties zou wijzen op een bredere breuk in het centrum-rechts; een geïsoleerd C-dissent bevestigt de huidige beoordeling van een beperkte splitsing.
+
+---
+
+### Bewijsankers
+
+| Bewering | Bewijs | Opgehaald | Betrouwbaarheid |
+|----------|--------|-----------|-----------------|
+| C eist verwerping van wet over bijdragen van arbeidsorganisaties | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | HOOG |
+| Lagrådet noemde het voorstel «bräckligt» | Volledige tekst HD024184, yttrande Lagrådet 2026-03-24 geciteerd | 2026-05-20 | HOOG |
+| SOU 2025:52 beval tegen de wet aan | Volledige tekst HD024184 met verwijzing naar SOU 2025:52 | 2026-05-20 | HOOG |
+| Malin Björk is C-Kamerlid, Stockholm | intressent_id 0770363683317 | 2026-05-20 | HOOG |
+| Muharrem Demirok (voormalig C-leider) mede-ondertekend | Ondertekenaarlijst HD024184, intressent_id 0251136832626 | 2026-05-20 | HOOG |
+| Verkiezingsdatum 2026-09-13, 116 dagen resterend | Kalender van de Kiesraad | 2026-05-20 | ZEER HOOG |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_no.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">Centerpartiet bryter med Tidö-blokken om lov om fagforeningsbidrag</h1>
+
+<p align="center">
+  <strong>📊 Beslutsnivå BLUF · KU-motionsforslag HD024184 · 2026-05-20</strong><br>
+  <em>Foreningsfrihet · Lagrådets kritikk · Valgårsreform for åpenhet</em>
+</p>
+
+**📋 Klassifisering:** Offentlig | **📅 Analysedato:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### BLUF
+
+Centerpartiet (C) — 8 stortingsrepresentanter ledet av Malin Björk (intressent_id 0770363683317) — leverte inn Kommittémotion 2025/26:4184 den 15. mai 2026, henvist til KU den 20. mai 2026. Forslaget aksepterer regjeringens reformer i Prop. 2025/26:258 om åpenhet i partifinansieringen og lobbyregistrering, men krever at Riksdagen **avviser** det foreslåtte lovinitiativet om arbeidsorganisasjoners politiske bidrag. C argumenterer for at loven: (1) mangler sanksjoner og er lett å omgå, (2) begrenser foreningsfriheten på en måte som potensielt er uforenelig med EMK, (3) av Lagrådet (yttrande 2026-03-24) er karakterisert som hvilende på et "bräckligt" (skjørt) evidensgrunnlag, og (4) går lenger enn nødvendig og dekker organisasjoner som ikke knytter bidrag til kontingent. Det parlamentariske utvalget som utarbeidet SOU 2025:52 (kommisjon juni 2023) anbefalte ikke en slik lov; regjeringen satte dette til side. Prop. 2025/26:258 forventes å passere KU med nær sikker støtte fra regjering og SD, noe som gjør forslaget nesten sikkert destined til å bli avvist — men C's offentlige posisjonering 116 dager før valget i september 2026 er den egentlige strategiske gevinsten.
+
+---
+
+### Tre beslutninger dette notatet støtter
+
+| # | Beslutning | Relevans |
+|---|------------|----------|
+| 1 | **Redaksjonell prioritering** — Led dagens motionsnyheter med C's brudd med Tidö om foreningsfrihet | Eneste KU-motionsforslag for 2026-05-20; konstitusjonell og valgpolitisk betydning |
+| 2 | **Fremoverskuende overvåking** — Overvåk KU's behandlingsdato og voteringstato for Prop. 2025/26:258 | Lagrådets "bräckligt"-uttalelse kan få andre opposisjonspartier til å slutte seg til C's standpunkt |
+| 3 | **Kampanjesporing** — Merk C's posisjonering som signal til svingvelgere i LO-S-finansieringsspørsmålet | Valgnærhet (116 dager) hever signifikansmultiplikatoren til 1,5× |
+
+---
+
+### 60-sekunders lesning (8 punkter)
+
+1. **Ett forslag levert:** 2025/26:4184 (HD024184) av C, henvist til KU 2026-05-20 — eneste innlevering i denne syklusen.
+2. **Delvis aksept:** C støtter reformene om åpenhet i partifinansieringen og lobbyregisteret (i tråd med C's åpenhetsplattform).
+3. **Kjernebegjæring:** Avvis loven om arbeidsorganisasjoners bidrag i sin helhet — ikke endre, avvis.
+4. **Lagrådets støtte:** Sveriges rådgivende lovråd avga en sjelden kritisk uttalelse (2026-03-24) og kalte forslaget "bräckligt" på grunn av minimal høringsprosess og enkel omgåelighet.
+5. **Lovgivningsprosessfeil:** Regjeringen inviterte spesifikt ikke høringsinstanser til å kommentere avsnittet om arbeidsorganisasjoners bidrag; SOU 2025:52-utvalget anbefalte at det ikke vedtas.
+6. **EMK/GDPR-flagg:** C reiser EMK Art. 11 (foreningsfrihet) og GDPR-overholdelsesproblemer — hvis Den europeiske menneskerettighetsdomstol gir C medhold, kan loven annulleres etter vedtak.
+7. **Politisk kontekst:** Loven retter seg mot LO (fagforbund for arbeiderklassen) → S (Socialdemokraternes) donasjonsstrøm — et sentralt reformmål for høyresiden som C nekter å støtte.
+8. **Valgkalkyle:** Med 116 dager til valget i 2026 posisjonerer C seg simultant som pro-åpenhet OG pro-fagrettigheter, for å tiltrekke seg sentrumsvelgere og fagforeningsnære velgere fra både S og Tidö-blokken.
+
+---
+
+### Viktigste fremoverskuende utløser
+
+> **KU's votering om Prop. 2025/26:258:** Utvalget forventes å behandle proposisjonen i mai–juni 2026. En felles C–L-dissens om avsnittet om arbeidsorganisasjoners bidrag ville signalisere et bredere sentrum-høyre-brudd; en isolert C-dissens bekrefter den aktuelle vurderingen av en avgrenset splittelse.
+
+---
+
+### Evidensankre
+
+| Påstand | Bevis | Hentet | Konfidens |
+|---------|-------|--------|-----------|
+| C krever avvisning av lov om arbeidsorganisasjoners bidrag | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | HØY |
+| Lagrådet kalte forslaget "bräckligt" | HD024184 fulltekst, Lagrådets yttrande 2026-03-24 sitert | 2026-05-20 | HØY |
+| SOU 2025:52 anbefalte mot loven | HD024184 fulltekst med referanse til SOU 2025:52 | 2026-05-20 | HØY |
+| Malin Björk er C-representant, Stockholm | intressent_id 0770363683317 | 2026-05-20 | HØY |
+| Muharrem Demirok (tidligere C-leder) medsignerte | HD024184 signaturliste, intressent_id 0251136832626 | 2026-05-20 | HØY |
+| Valgdato 2026-09-13, 116 dager igjen | Valmyndighetens kalender | 2026-05-20 | MEGET HØY |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_sv.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">Centerpartiet bryter med Tidö-blocket i fråga om lag om fackliga bidrag</h1>
+
+<p align="center">
+  <strong>📊 Beslutsklass BLUF · KU Motion HD024184 · 2026-05-20</strong><br>
+  <em>Föreningsfrihet · Lagrådets kritik · Valårsreform för transparens</em>
+</p>
+
+**📋 Klassificering:** Offentlig | **📅 Analysdatum:** 2026-05-20 | **🔖 dok_id:** HD024184
+
+---
+
+### BLUF
+
+Centerpartiet (C) — 8 riksdagsledamöter ledda av Malin Björk (intressent_id 0770363683317) — lämnade in Kommittémotion 2025/26:4184 den 15 maj 2026, hänvisad till KU den 20 maj 2026. Motionen accepterar regeringens reformer i Prop. 2025/26:258 om transparens i partifinansieringen och lobbyregistret, men kräver att riksdagen **avslår** det föreslagna lagstiftningsinitiativet om arbetsorganisationers politiska bidrag. C menar att lagen: (1) saknar sanktioner och är lätt att kringgå, (2) begränsar föreningsfriheten på ett sätt som potentiellt är oförenligt med EKMR, (3) av Lagrådet (yttrande 2026-03-24) betecknades som vilande på ett "bräckligt" underlag, och (4) sträcker sig längre än nödvändigt och täcker organisationer som inte knyter bidrag till avgifter. Det parlamentsutskott som tog fram SOU 2025:52 (kommission juni 2023) rekommenderade inte en sådan lag; regeringen åsidosatte detta. Prop. 2025/26:258 bedöms gå igenom KU med nära nog säkert stöd från regeringen och SD, varför motionen med stor sannolikhet kommer att avslås — men C:s offentliga positionering 116 dagar före valet i september 2026 är det egentliga strategiska priset.
+
+---
+
+### Tre beslut som detta underlag stödjer
+
+| # | Beslut | Relevans |
+|---|--------|----------|
+| 1 | **Redaktionell prioritering** — Led dagens nyhetsrapportering om motioner med C:s brott med Tidö i föreningsfrihetsfrågan | Enda KU-motionen för 2026-05-20; konstitutionell och valstrategisk betydelse |
+| 2 | **Framåtbevakning** — Bevaka KU:s behandlingsdatum och omröstningsdatum för Prop. 2025/26:258 | Lagrådets "bräckliga" omdöme kan förmå andra oppositionspartier att ansluta sig till C:s ståndpunkt |
+| 3 | **Kampanjbevakning** — Märk C:s positionering som signal till svajande väljare i LO-S-finansieringsfrågan | Närheten till valet (116 dagar) höjer signifikansmultiplikatorn till 1,5× |
+
+---
+
+### 60-sekundersläsning (8 punkter)
+
+1. **En motion inlämnad:** 2025/26:4184 (HD024184) av C, hänvisad till KU 2026-05-20 — enda inlämningen i denna cykel.
+2. **Delvis acceptans:** C stödjer reformerna för transparens i partifinansieringen och lobbyregistret (förenliga med C:s transparensplattform).
+3. **Kärnkrav:** Avslå lagen om arbetsorganisationers bidrag helt och hållet — inte ändra, utan avslå.
+4. **Lagrådets stöd:** Sveriges lagråd avgav ett sällsynt kritiskt yttrande (2026-03-24) och kallade förslaget "bräckligt" på grund av minimal remissbehandling och enkel kringgåbarhet.
+5. **Fel i lagstiftningsprocessen:** Regeringen bjöd specifikt inte in remissinstanser att yttra sig om avsnittet om arbetsorganisationers bidrag; SOU 2025:52 rekommenderade att lagen inte skulle stiftas.
+6. **EKMR/GDPR-flagga:** C lyfter risker kopplade till EKMR Art. 11 (föreningsfrihet) och GDPR — om Europadomstolen ger C rätt kan lagen undanröjas efter att ha stiftats.
+7. **Politiskt sammanhang:** Lagen riktar sig mot LO (fackkonfederationen för blåkragar) → S (Socialdemokraternas) donationsflöde — ett centralt reformmål för högern som C vägrar stödja.
+8. **Valstrategisk kalkyl:** Med 116 dagar till valet 2026 positionerar sig C simultant som pro-transparens OCH pro-arbetsrätt, i syfte att locka mittenväljare och arbetsmarknadsnära väljare bort från såväl S som Tidö-blocket.
+
+---
+
+### Viktigaste framåtutlösaren
+
+> **KU:s omröstning om Prop. 2025/26:258:** Utskottet väntas behandla propositionen under maj–juni 2026. Om C och L gemensamt reserverar sig mot avsnittet om arbetsorganisationers bidrag signalerar det en bredare spricka i center-höger; en isolerad C-reservation bekräftar den aktuella bedömningen av en begränsad splittring.
+
+---
+
+### Evidensankare
+
+| Påstående | Bevis | Hämtad | Konfidens |
+|-----------|-------|--------|-----------|
+| C kräver avslag på lag om arbetsorganisationers bidrag | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | HÖG |
+| Lagrådet kallade förslaget "bräckligt" | HD024184 fulltext, Lagrådets yttrande 2026-03-24 citerat | 2026-05-20 | HÖG |
+| SOU 2025:52 rekommenderade mot lagen | HD024184 fulltext med hänvisning till SOU 2025:52 | 2026-05-20 | HÖG |
+| Malin Björk är C-ledamot, Stockholm | intressent_id 0770363683317 | 2026-05-20 | HÖG |
+| Muharrem Demirok (tidigare C-ledare) medundertecknat | HD024184 signatärlista, intressent_id 0251136832626 | 2026-05-20 | HÖG |
+| Valdatum 2026-09-13, 116 dagar kvar | Valmyndighetens kalender | 2026-05-20 | MYCKET HÖG |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_zh.md -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23标志" width="192" height="192">
+</p>
+
+<h1 align="center">中央党就工会政党捐款法与蒂多联盟决裂</h1>
+
+<p align="center">
+  <strong>📊 决策级执行简报 · KU动议 HD024184 · 2026-05-20</strong><br>
+  <em>结社自由 · 立法审议委员会批评 · 选举年透明度改革</em>
+</p>
+
+**📋 分类：** 公开 | **📅 分析日期：** 2026-05-20 | **🔖 dok_id：** HD024184
+
+---
+
+### 摘要
+
+中央党（C）— 由马林·比约克（intressent_id 0770363683317）领导的8名议员 — 于2026年5月15日提交了Kommittémotion 2025/26:4184，2026年5月20日被提交至KU委员会。该动议接受政府在Prop. 2025/26:258中关于政党资金透明度和游说登记的改革，但要求议会**否决**拟议中关于劳工组织政治捐款的新法案。C党认为该法律：(1) 缺乏制裁措施且容易被规避；(2) 以与《欧洲人权公约》可能不相容的方式限制结社自由；(3) 被立法审议委员会Lagrådet（2026-03-24意见书）定性为依据"bräckligt"（脆弱）的证据基础；(4) 覆盖范围超出必要，涵盖了不将捐款与会员费挂钩的组织。制定SOU 2025:52（2023年6月委员会）的议会委员会本身并未推荐此类法律；政府无视了这一结论。Prop. 2025/26:258预计将以政府和SD的近乎确定的多数票通过KU，使该动议几乎注定被否决——但C党在距2026年9月大选116天之际的公开立场才是真正的战略收获。
+
+---
+
+### 此简报支持的三项决策
+
+| # | 决策 | 相关性 |
+|---|------|--------|
+| 1 | **编辑优先级** — 以C党与蒂多在结社自由问题上的分裂主导今日动议新闻 | 2026-05-20唯一的KU动议；具有宪法和选举重要性 |
+| 2 | **前瞻监测触发器** — 跟踪KU对Prop. 2025/26:258的审议日期和投票日期 | Lagrådet的"bräckligt"裁定可能促使其他反对党采纳C党立场 |
+| 3 | **竞选追踪** — 将C党的定位标记为LO-S资金问题上摇摆选民的信号 | 选举临近（116天）将重要性乘数提高至1.5× |
+
+---
+
+### 60秒阅读（8要点）
+
+1. **提交一项动议：** 2025/26:4184（HD024184）由C党提交，2026-05-20提交至KU — 本轮唯一提交。
+2. **部分接受：** C党支持政党资金透明度改革和游说登记（与C党透明度纲领一致）。
+3. **核心要求：** 完全否决劳工组织捐款法——不是修改，而是否决。
+4. **Lagrådet支持：** 瑞典立法咨询机构发表了罕见的批评性意见书（2026-03-24），以Remiss协商程序最少且容易规避为由，称该提案为"bräckligt"。
+5. **立法程序缺陷：** 政府特意未邀请Remiss机构就劳工组织捐款条款发表评论；SOU 2025:52委员会建议不予立法。
+6. **欧洲人权公约/GDPR警示：** C党提出欧洲人权公约第11条（结社自由）和GDPR合规风险——若欧洲人权法院支持C党立场，该法律可能在通过后被撤销。
+7. **政治背景：** 该法律针对LO（蓝领工会联合会）向S（社会民主党）的捐款流——这是右翼的核心改革目标，C党拒绝支持。
+8. **选举算计：** 距2026年大选116天，C党同时将自己定位为支持透明度和维护劳工权利的政党，力图从S党和蒂多联盟双方吸引中间选民和亲工会选民。
+
+---
+
+### 最重要的前瞻触发器
+
+> **KU对Prop. 2025/26:258的投票：** 委员会预计将于2026年5至6月审议该提案。C党与L党就劳工组织捐款条款的联合反对意见将表明中右翼内部更广泛的裂痕；C党单独反对意见将确认当前关于有限分裂的评估。
+
+---
+
+### 证据锚点
+
+| 主张 | 证据 | 获取时间 | 可信度 |
+|------|------|----------|--------|
+| C党要求否决劳工组织捐款法 | HD024184 § "Förslag till riksdagsbeslut" | 2026-05-20 | 高 |
+| Lagrådet称该提案为"bräckligt" | HD024184全文，引用Lagrådet意见书2026-03-24 | 2026-05-20 | 高 |
+| SOU 2025:52建议反对该法律 | HD024184全文，引用SOU 2025:52 | 2026-05-20 | 高 |
+| 马林·比约克是C党议员，斯德哥尔摩 | intressent_id 0770363683317 | 2026-05-20 | 高 |
+| 穆哈雷姆·德米罗克（前C党领导人）联署 | HD024184签署人名单，intressent_id 0251136832626 | 2026-05-20 | 高 |
+| 选举日期2026-09-13，距今116天 | 瑞典选举委员会日历 | 2026-05-20 | 非常高 |
+
+<!-- source-sha: 04a5dc3452f50f6c359b1444624099a024d93088 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 1 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
@@ -1904,6 +2777,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

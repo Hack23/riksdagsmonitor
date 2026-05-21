@@ -6,7 +6,7 @@ date: 2026-04-29
 subfolder: motions
 slug: 2026-04-29-motions
 source_folder: analysis/daily/2026-04-29/motions
-generated_at: 2026-05-20T20:11:09.111Z
+generated_at: 2026-05-21T02:19:50.713Z
 language: en
 layout: article
 ---
@@ -96,6 +96,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1544,13 +1557,971 @@ IMF API connection unsuccessful in this run. Economic context references establi
 - riksdag-regering MCP (all 24 documents, summary level) [A2]
 - Document URLs: https://data.riksdagen.se/dokument/{dok_id}.html
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_ar.md -->
+
+<!-- rtl -->
+# اقتراحات المعارضة في 28 أبريل 2026: الخلاف الاقتصادي، فجوات الدفاع، ومعارك إصلاح العدالة
+
+**المؤلف**: James Pether Sörling
+**التاريخ**: 2026-04-29
+**معرّف التشغيل**: 25096387000
+**التصنيف**: عام — اللائحة الأوروبية للبيانات GDPR Art. 9(2)(e,g)
+**الثقة**: عالية [B2]
+
+---
+
+### 🎯 الملخص التنفيذي (BLUF)
+
+في 28 أبريل 2026، قدّمت أحزاب المعارضة الأربعة — Socialdemokraterna (S) وVänsterpartiet (V) وCenterpartiet (C) وMiljöpartiet (MP) — 24 اقتراحاً تغطي خمسة مجالات سياسية: مقترح الربيع الاقتصادي (prop. 2025/26:100)، وميزانية الربيع (prop. 2025/26:99)، وإصلاح قانون العقوبات، والرقابة على صادرات الأسلحة، والتنظيم البيئي. يدل الاتساع التشريعي والتوقيت المنسق على كتلة معارضة موحدة تتحدى أجندة حكومة Tidö التشريعية المحورية. ويمثل اقتراح Vänsterpartiet رقم HD024120 — الذي يرفض صراحةً مساهمة السويد في تعزيز الحضور الأمامي للناتو في فنلندا (prop. 2025/26:220) — أكثر الأفعال الفردية أهمية استراتيجية، إذ يُعدّ V الحزب الوحيد في الريكسداغ الذي يعارض الالتزامات السويدية مع الناتو على هذا المستوى التشغيلي بعد الانضمام. ويُشكّل غياب التوافق بين V وسائر أحزاب المعارضة في قضايا الدفاع خطاً انقسامياً حاسماً داخل كتلة المعارضة.
+
+### 🧭 ثلاثة قرارات يدعمها هذا التقرير الاستخباراتي
+
+1. **المحررون** الذين يحددون ما إذا كان HD024120 (رفض V للحضور الأمامي للناتو) يستحق تغطية إخبارية عاجلة منفصلة عن المجموعة الاقتصادية — **نعم، يستحق**: فهو الاقتراح الوحيد في هذه الدورة الذي يتحدى مباشرةً الالتزامات التشغيلية السويدية مع الناتو بعد الانضمام.
+2. **المحللون السياسيون** الذين يقيّمون ما إذا كان النقد الاقتصادي للمعارضة (S، V، C، MP) يُشكّل إطاراً بديلاً للميزانية أم مجرد نقد مجزّأ — تشير الأدلة إلى **التجزؤ**: إذ تدافع الأحزاب عن توجهات اقتصادية كلية متناقضة (S: تحفيز الطلب؛ C: تعزيز المالية العامة؛ V: إعادة التوزيع؛ MP: التحول الأخضر).
+3. **مستهلكو الاستخبارات** الذين يتابعون عمق تحالف المعارضة القضائية: مطالبة C بتحليل تأثير قبل المضي قُدُماً (HD024111–112) في مقابل رفض V وMP الصريح لمقترحات مضاعفة عقوبة العصابات ومسؤولية الموظفين المدنيين (HD024107، HD024114، HD024116، HD024119، HD024121، HD024123) — **المعارضة منقسمة أيديولوجياً**، مما يقلل من احتمالية حجب JuU منسق.
+
+### ⏱️ نقاط استخباراتية في 60 ثانية
+
+- **تقديم 24 اقتراحاً في 2026-04-28**، جميعها رداً على مقترحات حكومية أو مراسلات في دورة ريكسموتي 2025/26
+- **المجموعة الاقتصادية (6 اقتراحات)**: تطعن S وV وC وMP كل على حدة في prop. 2025/26:100 (المقترح الاقتصادي الربيعي)؛ كما تطعن S وV في prop. 2025/26:99 (ميزانية الربيع). لا بديل موحداً للمعارضة.
+- **مجموعة العدالة الجنائية (8 اقتراحات)**: أوسع تمثيل للمعارضة. تريد C تطبيقاً أبطأ؛ ترفض MP وV العقوبات المضاعفة للعصابات كلياً. تملك الحكومة أغلبية عبر M-KD-SD في JuU.
+- **مجموعة الرقابة على الصادرات العسكرية (4 اقتراحات)**: انقسام حاد — تريد SD (HD024106) المزيد من الموافقات على التصدير؛ تريد V (HD024102، HD024122) وMP (HD024115) حظراً على التصدير إلى مناطق الحرب. عكس المواقف داخل المعارضة.
+- **الدفاع/الناتو (اقتراح واحد — HD024120)**: ترفض V مساهمة الناتو في الحضور الأمامي في فنلندا. موقف معزول؛ لا حزب آخر يدعم هذا الموقف.
+- **البيئة (3 اقتراحات)**: تريد C إصلاح حماية الأنواع (HD024113)؛ تريد MP تحليل مساعدات الدولة الأوروبية قبل مدفوعات حماية الأنواع (HD024117)؛ ترفض V هيئة المراجعة البيئية الجديدة (HD024105).
+- **الإطار المالي العام (اقتراح واحد — HD024109)**: يدعو Martin Ådahl من C إلى سياسة مالية مسؤولة رداً على تقرير Riksrevisionen النقدي بشأن الإطار المالي.
+
+### 🔭 أهم المحفزات المستقبلية
+
+**تصويت JuU على prop. 2025/26:218 (مضاعفة عقوبة العصابات)** — متوقع خلال 2–4 أسابيع. V وMP وفصيل من Centerpartiet يعارضون؛ أغلبية M-KD-SD كافية لإقرار القانون. راقب موقف S (الغائب عن اقتراحات JuU في هذه الحزمة) كمؤشر على موقف الديمقراطيين الاجتماعيين من صياغة قضايا العدالة الجنائية قبيل انتخابات 2026.
+
+### 📊 توزيع الثقة
+
+| الادعاء | Admiralty | الثقة |
+|---------|-----------|-------|
+| جميع الاقتراحات الـ24 مقدمة في 2026-04-28 | A1 | مرتفعة جداً |
+| V الحزب الوحيد الرافض لـFP الناتو | A1 | مرتفعة جداً |
+| النقد الاقتصادي للمعارضة مجزأ | A2 | مرتفعة |
+| أغلبية JuU كافية لإقرار قانون مكافحة الجريمة | B2 | مرتفعة |
+| معاملات اقتصادية IMF مستشهد بها | F3 | منخفضة [غير مؤكدة-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+### 📈 تحسين المرور 2: تصنيف الأهمية السياسية
+
+| الترتيب | الاقتراح | الحزب | مبرر الأهمية |
+|---------|---------|--------|-------------|
+| 1 | HD024120 | V | المعارضة الوحيدة للناتو في الريكسداغ كله — تصعيد على مستوى المعاهدة |
+| 2 | HD024109 | C | نقد مالي مدعوم من Riksrevisionen — سلطة مؤسسية |
+| 3 | HD024111 | C | تأخير إجرائي قابل للتطبيق لـprop. 217 — احتمال التأخير 15–25% |
+| 4 | HD024100 | S | البديل الاقتصادي الرئيسي لـMagdalena Andersson لعام 2026 |
+| 5 | HD024115 | MP | حظر الأسلحة — أكثر اقتراحات السياسة الخارجية نشاطاً |
+
+### 🔴 التوضيح الحاسم للمرور 2
+
+عدد الاقتراحات الاقتصادية **6** (HD024100، HD024101، HD024108، HD024109، HD024110، HD024118) وليس 5 كما قد يُستنتج من الملخص الأولي — ينتمي HD024109 (الإطار المالي C) إلى مجموعة الاقتصاد/FiU رغم طابعه كاقتراح رد على RR.
+
+تتضمن مجموعة العدالة الجنائية **8 اقتراحات**، لكن المعارضة تنقسم إلى استراتيجيتين: **التأخير الإجرائي** (C: HD024111، HD024112) و**الرفض الكامل** (V: HD024107، HD024119، HD024121، HD024123؛ MP: HD024114، HD024116). هذا التمييز مهم للتنبؤ بنتائج JuU — مسار التأخير الإجرائي (C) هو الوحيد ذو قدرة واقعية.
+
+**HD024106 (SD)**: لاحظ أن Sverigedemokraterna، رغم كونها في الائتلاف الحاكم، قدّمت اقتراحاً في هذه الحزمة المجاورة للمعارضة. هذا إشارة داخل الائتلاف، وليس نشاطاً حقيقياً للمعارضة.
+
+<!-- source-sha: aef867f928a2f4069766f065dd0ce9404a49f679 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-04-29
+**Kørsels-ID**: 25096387000
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Konfidens**: HØJ [B2]
+
+---
+
+### 🎯 Sammenfatning (BLUF)
+
+Den 28. april 2026 indgav alle fire oppositionspartier — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C) og Miljöpartiet (MP) — 24 forslag inden for fem politiske klynger: vårens økonomiske proposition (prop. 2025/26:100), vårbudgettet (prop. 2025/26:99), strafferetlig reform, våbeneksportkontrol og miljøregulering. Den lovgivningsmæssige bredde og den koordinerede timing signalerer et konsolideret oppositionsblok, der udfordrer Tidö-regeringens centrale lovgivningsagenda. Vänsterpartiets forslag HD024120 — der eksplicit afviser Sveriges bidrag til NATOs forstærkede tilstedeværelse i Finland (prop. 2025/26:220) — repræsenterer den strategisk mest betydningsfulde enkelthandling, da V er det eneste Riksdag-parti, der på dette operationelle niveau modsætter sig svenske NATO-forpligtelser efter tiltrædelsen. Fraværet af partiovergreifende tilpasning mellem V og de øvrige oppositionspartier i forsvarsspørgsmål markerer en kritisk spaltningslinje inden for oppositionsblokken.
+
+### 🧭 3 beslutninger dette underrettelsesbrev understøtter
+
+1. **Redaktioner** der afgør om HD024120 (V afviser NATOs forstærkede tilstedeværelse) berettiger breaking news-behandling adskilt fra det økonomiske kluster — **ja, det gør det**: det er det eneste forslag i denne cyklus, der direkte udfordrer Sveriges NATO-operationelle forpligtelser efter tiltrædelsen.
+2. **Politikanalytikere** der vurderer, om oppositionens økonomiske kritik (S, V, C, MP) udgør et sammenhængende alternativt budgetramme eller fragmenteret kritik — beviser peger på **fragmentering**: partierne taler for modstridende makroøkonomiske retninger (S: efterspørgselsstimulans; C: finanspolitisk konsolidering; V: omfordeling; MP: grøn omstilling).
+3. **Efterretningskonsumenter** der følger dybden af oppositionens retslige koalition: C's krav om konsekvensanalyse inden behandling (HD024111–112) versus V's og MP's direkte afvisning af forslag om dobbelt-bandestraf og embedsmænds ansvar (HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **oppositionen er ideologisk splittet**, hvilket reducerer sandsynligheden for koordineret JuU-blokering.
+
+### ⏱️ 60 sekunders efterretningsbullets
+
+- **24 forslag indgivet 2026-04-28**, alle som svar på regeringspropositioner eller -skrivelser i riksmöte 2025/26
+- **Økonomisk kluster (6 forslag)**: S, V, C, MP udfordrer hver prop. 2025/26:100 (vårpropositionens økonomiske del); S og V udfordrer også prop. 2025/26:99 (vårbudgettet). Intet samlet oppositionsalternativ.
+- **Strafferetskluster (8 forslag)**: Bredeste oppositionsantal. C ønsker langsommere gennemførelse; MP og V afviser dobbelt-bandestraf helt. Regeringen har flertal via M-KD-SD i JuU.
+- **Våbeneksportkluster (4 forslag)**: Ekstrem divergens — SD (HD024106) ønsker FLERE eksportgodkendelser; V (HD024102, HD024122) og MP (HD024115) ønsker embargo mod eksport til krigsramte lande. Positionsinversion på tværs af oppositionen.
+- **Forsvar/NATO (1 forslag — HD024120)**: V afviser NATOs bidrag til forstærket tilstedeværelse i Finland. Isoleret position; intet andet parti støtter denne holdning.
+- **Miljø (3 forslag)**: C ønsker artsbeskyttelsesreform (HD024113); MP ønsker EU-statsstøtteanalyse inden artsbetalinger (HD024117); V afviser det nye miljøvurderingsorgan (HD024105).
+- **Finanspolitisk ramme (1 forslag — HD024109)**: C's Martin Ådahl opfordrer til ansvarlig finanspolitik som svar på Riksrevisionens kritiske rapport om det finanspolitiske ramme.
+
+### 🔭 Vigtigste kommende udløser
+
+**JuU-afstemning om prop. 2025/26:218 (dobbelt bandestraf)** — forventet inden for 2–4 uger. V, MP og en del af Centerpartiet modsætter sig; regeringens M-KD-SD-flertal er tilstrækkeligt til at vedtage loven. Overvåg S's holdning (fraværende i JuU-forslagene i dette bundt) som indikator for socialdemokraternes stance i strafferetsreformen op til valget 2026.
+
+### 📊 Konfidensfordeling
+
+| Påstand | Admiralty | Konfidens |
+|---------|-----------|-----------|
+| Alle 24 forslag indgivet 2026-04-28 | A1 | MEGET HØJ |
+| V er eneste parti der afviser NATOs FP | A1 | MEGET HØJ |
+| Oppositionens økonomiske kritik er fragmenteret | A2 | HØJ |
+| Regeringens JuU-flertal tilstrækkeligt til at vedtage kriminalitetsloven | B2 | HØJ |
+| IMF's økonomiske parametre citeret | F3 | LAV [ubekræftet-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Datum**: 2026-04-29
+**Lauf-ID**: 25096387000
+**Einstufung**: ÖFFENTLICH — DSGVO Art. 9(2)(e,g)
+**Konfidenz**: HOCH [B2]
+
+---
+
+### 🎯 Zusammenfassung (BLUF)
+
+Am 28. April 2026 reichten alle vier Oppositionsparteien — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C) und Miljöpartiet (MP) — 24 Anträge in fünf Politikbereichen ein: die wirtschaftliche Frühjahrsproposition (Prop. 2025/26:100), den Frühjahrshaushalt (Prop. 2025/26:99), Strafrechtsreform, Rüstungsexportkontrolle und Umweltregulierung. Die legislatorische Breite und das koordinierte Timing signalisieren einen konsolidierten Oppositionsblock, der die zentrale Gesetzgebungsagenda der Tidö-Regierung herausfordert. Vänsterpartiets Antrag HD024120 — der Schwedens Beitrag zur NATO-Vorwärtspräsenz in Finnland (Prop. 2025/26:220) ausdrücklich ablehnt — stellt die strategisch bedeutsamste Einzelmaßnahme dar, da V die einzige Riksdag-Partei ist, die schwedische NATO-Verpflichtungen nach dem Beitritt auf dieser operativen Ebene ablehnt. Das Fehlen einer parteiübergreifenden Ausrichtung zwischen V und den anderen Oppositionsparteien in Verteidigungsfragen markiert eine kritische Bruchlinie innerhalb des Oppositionsblocks.
+
+### 🧭 3 Entscheidungen, die dieses Nachrichtenbriefing unterstützt
+
+1. **Redaktionen**, die entscheiden, ob HD024120 (V lehnt NATOs Vorwärtspräsenz ab) eine gesonderte Breaking-News-Behandlung vom wirtschaftlichen Cluster verdient — **ja, das tut es**: Es ist der einzige Antrag in diesem Zyklus, der Schwedens NATO-operative Verpflichtungen nach dem Beitritt direkt herausfordert.
+2. **Politikanalysten**, die beurteilen, ob die wirtschaftliche Kritik der Opposition (S, V, C, MP) einen kohärenten alternativen Haushaltsrahmen oder fragmentierte Kritik darstellt — die Beweise deuten auf **Fragmentierung** hin: Die Parteien befürworten widersprüchliche makroökonomische Richtungen (S: Nachfragestimulierung; C: Haushaltskonsolidierung; V: Umverteilung; MP: grüne Transformation).
+3. **Nachrichtenkonsumenten**, die die Tiefe der justiziellen Koalition der Opposition verfolgen: C's Forderung nach einer Folgenabschätzung vor der Behandlung (HD024111–112) versus V's und MP's ausdrückliche Ablehnung der Doppelgangstrafe und der Beamtenhaftung (HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **die Opposition ist ideologisch gespalten**, was die Wahrscheinlichkeit einer koordinierten JuU-Blockierung verringert.
+
+### ⏱️ 60-Sekunden-Nachrichtenbullets
+
+- **24 Anträge eingereicht 2026-04-28**, alle als Reaktion auf Regierungspropositioner oder -mitteilungen im riksmöte 2025/26
+- **Wirtschaftscluster (6 Anträge)**: S, V, C, MP fordern jeweils Prop. 2025/26:100 (wirtschaftlicher Teil der Frühjahrsproposition) heraus; S und V fordern auch Prop. 2025/26:99 (Frühjahrshaushalt) heraus. Keine einheitliche Oppositionsalternative.
+- **Strafrechtlicher Cluster (8 Anträge)**: Größte Oppositionsanzahl. C will ein langsameres Rollout; MP und V lehnen Doppelgangstrafen vollständig ab. Die Regierung hat eine Mehrheit über M-KD-SD im JuU.
+- **Rüstungsexportcluster (4 Anträge)**: Extreme Divergenz — SD (HD024106) will MEHR Exportgenehmigungen; V (HD024102, HD024122) und MP (HD024115) wollen ein Embargo für Exporte in Kriegsgebiete. Positionsinversion quer durch die Opposition.
+- **Verteidigung/NATO (1 Antrag — HD024120)**: V lehnt NATOs Beitrag zur Vorwärtspräsenz in Finnland ab. Isolierte Position; keine andere Partei unterstützt diesen Standpunkt.
+- **Umwelt (3 Anträge)**: C will Artenschutzreform (HD024113); MP will EU-Beihilfeanalyse vor Artenschutzzahlungen (HD024117); V lehnt die neue Umweltgenehmigungsbehörde ab (HD024105).
+- **Finanzpolitischer Rahmen (1 Antrag — HD024109)**: C's Martin Ådahl fordert verantwortungsvolle Finanzpolitik als Reaktion auf Riksrevisionens kritischen Bericht über den Finanzrahmen.
+
+### 🔭 Wichtigster kommender Auslöser
+
+**JuU-Abstimmung über Prop. 2025/26:218 (Doppelgangstrafe)** — wird innerhalb von 2–4 Wochen erwartet. V, MP und eine Fraktion von Centerpartiet lehnen ab; die Regierungsmehrheit von M-KD-SD reicht für die Verabschiedung. Beobachten Sie S' Position (in JuU-Anträgen dieses Pakets nicht vertreten) als Indikator für die sozialdemokratische Haltung zur Strafjustiz im Vorfeld der Wahl 2026.
+
+### 📊 Konfidenzverteilung
+
+| Behauptung | Admiralty | Konfidenz |
+|------------|-----------|-----------|
+| Alle 24 Anträge eingereicht 2026-04-28 | A1 | SEHR HOCH |
+| V ist die einzige Partei, die NATOs FP ablehnt | A1 | SEHR HOCH |
+| Wirtschaftliche Kritik der Opposition ist fragmentiert | A2 | HOCH |
+| Regierungsmehrheit im JuU ausreichend für das Kriminalitätsgesetz | B2 | HOCH |
+| IMF-Wirtschaftsparameter zitiert | F3 | NIEDRIG [unbestätigt-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Fecha**: 2026-04-29
+**ID de ejecución**: 25096387000
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e,g)
+**Confianza**: ALTA [B2]
+
+---
+
+### 🎯 Resumen (BLUF)
+
+El 28 de abril de 2026, los cuatro partidos de la oposición — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C) y Miljöpartiet (MP) — presentaron 24 mociones en cinco áreas políticas: la proposición económica de primavera (prop. 2025/26:100), el presupuesto de primavera (prop. 2025/26:99), la reforma de la justicia penal, el control de exportaciones de armas y la regulación medioambiental. La amplitud legislativa y el calendario coordinado indican un bloque de oposición consolidado que desafía la agenda legislativa central del gobierno Tidö. La moción HD024120 de Vänsterpartiet — que rechaza explícitamente la contribución de Suecia a la presencia avanzada de la OTAN en Finlandia (prop. 2025/26:220) — representa el acto estratégicamente más significativo, ya que V es el único partido del Riksdag que se opone a los compromisos suecos con la OTAN a este nivel operativo tras la adhesión. La ausencia de alineación entre V y los demás partidos de la oposición en materia de defensa marca una línea de fractura crítica dentro del bloque opositor.
+
+### 🧭 3 decisiones que apoya este informe de inteligencia
+
+1. **Redacciones** que deciden si HD024120 (V rechaza la presencia avanzada de la OTAN) merece tratamiento de última hora separado del cluster económico — **sí, lo merece**: es la única moción de este ciclo que desafía directamente los compromisos operativos de Suecia con la OTAN tras la adhesión.
+2. **Analistas de política** que evalúan si la crítica económica de la oposición (S, V, C, MP) constituye un marco presupuestario alternativo coherente o una crítica fragmentada — las evidencias apuntan a la **fragmentación**: los partidos abogan por direcciones macroeconómicas contradictorias (S: estímulo a la demanda; C: consolidación fiscal; V: redistribución; MP: transformación verde).
+3. **Consumidores de inteligencia** que siguen la profundidad de la coalición judicial de la oposición: la demanda de C de un análisis de consecuencias antes de proceder (HD024111–112) frente al rechazo explícito de V y MP a las propuestas de doble pena de banda y responsabilidad de funcionarios (HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **la oposición está ideológicamente dividida**, reduciendo la probabilidad de un bloqueo coordinado en el JuU.
+
+### ⏱️ Puntos de inteligencia en 60 segundos
+
+- **24 mociones presentadas el 2026-04-28**, todas en respuesta a proposiciones o comunicaciones gubernamentales en el riksmöte 2025/26
+- **Cluster económico (6 mociones)**: S, V, C, MP impugnan cada uno la prop. 2025/26:100 (proposición económica de primavera); S y V también impugnan la prop. 2025/26:99 (presupuesto de primavera). Sin alternativa unificada de la oposición.
+- **Cluster de justicia penal (8 mociones)**: Mayor número de la oposición. C quiere un despliegue más lento; MP y V rechazan completamente las dobles penas para bandas. El gobierno tiene mayoría a través de M-KD-SD en el JuU.
+- **Cluster de control de exportaciones de armas (4 mociones)**: Divergencia extrema — SD (HD024106) quiere MÁS aprobaciones de exportación; V (HD024102, HD024122) y MP (HD024115) quieren un embargo sobre exportaciones a zonas de guerra. Inversión de posición en toda la oposición.
+- **Defensa/OTAN (1 moción — HD024120)**: V rechaza la contribución de la OTAN a la presencia avanzada en Finlandia. Posición aislada; ningún otro partido apoya esta postura.
+- **Medio ambiente (3 mociones)**: C quiere reforma de protección de especies (HD024113); MP quiere análisis de ayudas estatales de la UE antes de pagos por protección de especies (HD024117); V rechaza el nuevo organismo de revisión medioambiental (HD024105).
+- **Marco fiscal (1 moción — HD024109)**: Martin Ådahl de C insta a una política fiscal responsable en respuesta al informe crítico de Riksrevisionen sobre el marco fiscal.
+
+### 🔭 Principal catalizador futuro
+
+**Votación del JuU sobre la prop. 2025/26:218 (doble pena de banda)** — esperada en 2–4 semanas. V, MP y una facción de Centerpartiet se oponen; la mayoría M-KD-SD del gobierno es suficiente para aprobar la ley. Vigile la posición de S (ausente en las mociones del JuU en este lote) como indicador de la postura socialdemócrata sobre el encuadramiento de la justicia penal antes de las elecciones de 2026.
+
+### 📊 Distribución de confianza
+
+| Afirmación | Admiralty | Confianza |
+|------------|-----------|-----------|
+| Las 24 mociones presentadas el 2026-04-28 | A1 | MUY ALTA |
+| V es el único partido que rechaza la FP de la OTAN | A1 | MUY ALTA |
+| La crítica económica de la oposición es fragmentada | A2 | ALTA |
+| Mayoría JuU del gobierno suficiente para aprobar la ley de criminalidad | B2 | ALTA |
+| Parámetros económicos del FMI citados | F3 | BAJA [no confirmado-FMI] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+### 📈 Mejora del pase 2: Clasificación de importancia política
+
+| Rango | Moción | Partido | Justificación de la importancia |
+|-------|--------|---------|--------------------------------|
+| 1 | HD024120 | V | Única oposición a la OTAN en todo el Riksdag — escalada a nivel de tratado |
+| 2 | HD024109 | C | Crítica fiscal respaldada por Riksrevisionen — autoridad institucional |
+| 3 | HD024111 | C | Retraso procesal viable de la prop. 217 — 15–25% de probabilidad de retraso |
+| 4 | HD024100 | S | Principal alternativa económica de Magdalena Andersson para 2026 |
+| 5 | HD024115 | MP | Embargo de armas — moción de política exterior más activista |
+
+### 🔴 Aclaración crítica del pase 2
+
+El número de mociones económicas es **6** (HD024100, HD024101, HD024108, HD024109, HD024110, HD024118) y **no** 5 como podría inferirse del resumen inicial — HD024109 (C marco fiscal) pertenece al cluster económico/FiU a pesar de su carácter como moción de respuesta-RR.
+
+El cluster de justicia penal comprende **8 mociones**, pero la oposición se divide en dos estrategias: **retraso procedimental** (C: HD024111, HD024112) y **rechazo total** (V: HD024107, HD024119, HD024121, HD024123; MP: HD024114, HD024116). Esta distinción es importante para predecir los resultados del JuU — la vía del retraso procedimental (C) es la única con tracción realista.
+
+**HD024106 (SD)**: Nótese que Sverigedemokraterna, a pesar de estar en la coalición gobernante, presentó una moción en este lote próximo a la oposición. Esto es una señal intra-coalición, no actividad genuina de la oposición.
+
+<!-- source-sha: aef867f928a2f4069766f065dd0ce9404a49f679 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling
+**Päivämäärä**: 2026-04-29
+**Ajo-ID**: 25096387000
+**Luokitus**: JULKINEN — GDPR Art. 9(2)(e,g)
+**Luottamus**: KORKEA [B2]
+
+---
+
+### 🎯 Tiivistelmä (BLUF)
+
+Kaikki neljä oppositiopuoluetta — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C) ja Miljöpartiet (MP) — jättivät 28. huhtikuuta 2026 yhteensä 24 esitystä viidellä politiikan alalla: kevään talouspropositio (prop. 2025/26:100), kevätbudjetti (prop. 2025/26:99), rikosoikeudellinen uudistus, asevientivalvonta ja ympäristösääntely. Lainsäädännöllinen laajuus ja koordinoitu ajoitus viittaavat konsolidoituneeseen oppositioblokkiin, joka haastaa Tidö-hallituksen keskeisen lainsäädäntöagendan. Vänsterpartiets esitys HD024120 — joka nimenomaisesti hylkää Ruotsin panoksen NATOn eteentyönnettyyn läsnäoloon Suomessa (prop. 2025/26:220) — edustaa strategisesti merkittävintä yksittäistä toimenpidettä, koska V on ainoa rikspäiväpuolue, joka vastustaa ruotsalaisia NATO-sitoumuksia tällä operationaalisella tasolla jäsenyyden jälkeen. Se, ettei V:n ja muiden oppositiopuolueiden välillä ole puoluerajat ylittävää yhdensuuntaisuutta puolustusasioissa, merkitsee kriittistä jakolinjaa oppositioblokin sisällä.
+
+### 🧭 3 päätöstä, joita tämä tiedusteluraportti tukee
+
+1. **Toimitukset** jotka päättävät, ansaitseeko HD024120 (V hylkää NATOn eteentyönnetyn läsnäolon) uutisennakointia erikseen taloudellisesta klusterista — **kyllä, se ansaitsee**: se on ainoa esitys tässä syklissä, joka haastaa suoraan Ruotsin NATO-operatiiviset sitoumukset jäsenyyden jälkeen.
+2. **Politiikka-analyytikot** jotka arvioivat, muodostaako opposition taloudellinen kritiikki (S, V, C, MP) johdonmukaisen vaihtoehtoisen budjettikehyksen vai sirpaloituneen kritiikin — todisteet viittaavat **sirpaloitumiseen**: puolueet ajavat ristiriitaisia makrotaloudellisia suuntauksia (S: kysyntäkiihoke; C: finanssipoliittinen konsolidointi; V: tulontasaus; MP: vihreä siirtymä).
+3. **Tiedustelun käyttäjät** jotka seuraavat opposition oikeudellisen koalition syvyyttä: C:n vaatimus vaikutusarviosta ennen käsittelyä (HD024111–112) versus V:n ja MP:n suora hylkäys kaksinkertaisesta jengituomiosta ja virkamiesten vastuusta (HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **oppositio on ideologisesti jakautunut**, mikä vähentää koordinoidun JuU-estämisen todennäköisyyttä.
+
+### ⏱️ 60 sekunnin tiedustelubulletit
+
+- **24 esitystä jätetty 2026-04-28**, kaikki vastauksena hallituksen ehdotuksiin tai kirjelmöihin riksmöte 2025/26:ssa
+- **Talousklusteri (6 esitystä)**: S, V, C, MP kukin haastavat prop. 2025/26:100:n (kevätproposition taloudellinen osuus); S ja V haastavat myös prop. 2025/26:99:n (kevätbudjetti). Ei yhtenäistä oppositiovaihtoehtoa.
+- **Rikosoikeusklusteri (8 esitystä)**: Laajin oppositiomäärä. C haluaa hitaamman toimeenpanon; MP ja V hylkäävät kaksinkertaiset jengirangaistukset kokonaan. Hallituksella on enemmistö M-KD-SD:n kautta JuU:ssa.
+- **Asevientiklusteri (4 esitystä)**: Äärimmäinen hajonta — SD (HD024106) haluaa LISÄÄ vientilupuja; V (HD024102, HD024122) ja MP (HD024115) haluavat vientisaarron sotavyöhykkeille. Kantakäänteinen opposition sisällä.
+- **Puolustus/NATO (1 esitys — HD024120)**: V hylkää NATOn panoksen eteentyönnettyyn läsnäoloon Suomessa. Eristetty kanta; mikään muu puolue ei tue tätä kantaa.
+- **Ympäristö (3 esitystä)**: C haluaa lajinsuojeluuudistuksen (HD024113); MP haluaa EU:n valtiontukianalyysin ennen lajimaksuja (HD024117); V hylkää uuden ympäristölupaviraston (HD024105).
+- **Finanssipolitiikan kehys (1 esitys — HD024109)**: C:n Martin Ådahl kehottaa vastuulliseen finanssipolitiikkaan vastauksena Riksrevisionenin kriittiseen raporttiin finanssipolitiikan kehyksestä.
+
+### 🔭 Tärkein tuleva laukaisija
+
+**JuU-äänestys prop. 2025/26:218:sta (kaksinkertainen jengirangaistus)** — odotetaan 2–4 viikon sisällä. V, MP ja osa Centerpartietista vastustaa; hallituksen M-KD-SD-enemmistö riittää lain läpiajamiseen. Seuraa S:n kantaa (poissa JuU-esityksistä tässä paketissa) indikaattorina sosiaalidemokraattien asenteesta rikosoikeudelliseen profilointiin ennen vuoden 2026 vaaleja.
+
+### 📊 Luottamusjakauma
+
+| Väite | Admiralty | Luottamus |
+|-------|-----------|-----------|
+| Kaikki 24 esitystä jätetty 2026-04-28 | A1 | ERITTÄIN KORKEA |
+| V on ainoa puolue, joka hylkää NATOn FP:n | A1 | ERITTÄIN KORKEA |
+| Opposition taloudellinen kritiikki on sirpaloitunutta | A2 | KORKEA |
+| Hallituksen JuU-enemmistö riittää rikoslain läpiajamiseen | B2 | KORKEA |
+| IMF:n taloudelliset parametrit siteerattu | F3 | ALHAINEN [vahvistamaton-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+
+**ID de run** : 25096387000
+
+**Confiance** : HAUTE [B2]
+
+---
+
+### 🎯 Résumé (BLUF)
+
+Le 28 avril 2026, les quatre partis d'opposition — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C) et Miljöpartiet (MP) — ont déposé 24 motions couvrant cinq domaines politiques : la proposition économique de printemps (prop. 2025/26:100), le budget de printemps (prop. 2025/26:99), la réforme de la justice pénale, le contrôle des exportations d'armements et la réglementation environnementale. L'envergure législative et le calendrier coordonné signalent un bloc d'opposition consolidé contestant l'agenda législatif central du gouvernement Tidö. La motion HD024120 de Vänsterpartiet — rejetant explicitement la contribution de la Suède à la présence avancée de l'OTAN en Finlande (prop. 2025/26:220) — représente l'acte stratégiquement le plus significatif, V étant le seul parti du Riksdag à s'opposer aux engagements suédois envers l'OTAN à ce niveau opérationnel depuis l'adhésion. L'absence d'alignement partisan entre V et les autres partis d'opposition sur la défense marque une ligne de fracture critique au sein du bloc d'opposition.
+
+### 🧭 3 décisions que ce briefing de renseignement soutient
+
+1. **Les rédactions** décidant si HD024120 (V rejette la présence avancée de l'OTAN) mérite un traitement comme information urgente séparé du cluster économique — **oui, absolument** : c'est la seule motion de ce cycle qui remet directement en cause les engagements opérationnels suédois envers l'OTAN après l'adhésion.
+2. **Les analystes politiques** évaluant si la critique économique de l'opposition (S, V, C, MP) constitue un cadre budgétaire alternatif cohérent ou une critique fragmentée — les preuves pointent vers la **fragmentation** : les partis défendent des orientations macroéconomiques contradictoires (S : stimulation de la demande ; C : consolidation budgétaire ; V : redistribution ; MP : transformation verte).
+3. **Les consommateurs de renseignement** suivant la profondeur de la coalition judiciaire de l'opposition : la demande de C d'une analyse d'impact avant de procéder (HD024111–112) versus le rejet explicite par V et MP des propositions de double peine de gang et de responsabilité des fonctionnaires (HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **l'opposition est idéologiquement divisée**, réduisant la probabilité d'un blocage coordonné au JuU.
+
+### ⏱️ Bullets de renseignement en 60 secondes
+
+- **24 motions déposées le 2026-04-28**, toutes en réponse à des propositions ou communications gouvernementales dans le riksmöte 2025/26
+- **Cluster économique (6 motions)** : S, V, C, MP remettent chacun en cause la prop. 2025/26:100 (proposition économique de printemps) ; S et V remettent également en cause la prop. 2025/26:99 (budget de printemps). Aucune alternative unifiée de l'opposition.
+- **Cluster de justice pénale (8 motions)** : Plus grand nombre d'opposants. C souhaite un déploiement plus lent ; MP et V rejettent entièrement les doubles peines pour gangs. Le gouvernement dispose d'une majorité via M-KD-SD au JuU.
+- **Cluster de contrôle des exportations d'armements (4 motions)** : Divergence extrême — SD (HD024106) veut PLUS d'approbations d'exportation ; V (HD024102, HD024122) et MP (HD024115) veulent un embargo sur les exportations vers les zones de guerre. Inversion de positions au sein de l'opposition.
+- **Défense/OTAN (1 motion — HD024120)** : V rejette la contribution de l'OTAN à la présence avancée en Finlande. Position isolée ; aucun autre parti ne soutient cette position.
+- **Environnement (3 motions)** : C veut la réforme de la protection des espèces (HD024113) ; MP veut une analyse des aides d'État européennes avant les paiements pour la protection des espèces (HD024117) ; V rejette le nouvel organisme d'examen environnemental (HD024105).
+- **Cadre budgétaire (1 motion — HD024109)** : Le Martin Ådahl de C exhorte à une politique budgétaire responsable en réponse au rapport critique de Riksrevisionen sur le cadre budgétaire.
+
+### 🔭 Déclencheur futur prioritaire
+
+**Vote du JuU sur la prop. 2025/26:218 (double peine pour gangs)** — attendu dans les 2 à 4 semaines. V, MP et une faction de Centerpartiet s'y opposent ; la majorité M-KD-SD du gouvernement est suffisante pour faire adopter la loi. Surveiller la position de S (absente des motions JuU dans ce lot) comme indicateur de la position des sociaux-démocrates sur le cadrage de la justice pénale avant l'élection de 2026.
+
+### 📊 Distribution de confiance
+
+| Affirmation | Admiralty | Confiance |
+|-------------|-----------|-----------|
+| Toutes les 24 motions déposées le 2026-04-28 | A1 | TRÈS HAUTE |
+| V est le seul parti rejetant la FP de l'OTAN | A1 | TRÈS HAUTE |
+| La critique économique de l'opposition est fragmentée | A2 | HAUTE |
+| Majorité JuU du gouvernement suffisante pour adopter la loi sur la criminalité | B2 | HAUTE |
+| Paramètres économiques du FMI cités | F3 | FAIBLE [non confirmé-FMI] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_he.md -->
+
+<!-- rtl -->
+# הצעות האופוזיציה 28 באפריל 2026: מחלוקת כלכלית, שברים בהגנה וקרבות על רפורמות משפטיות
+
+**מחבר**: James Pether Sörling
+**תאריך**: 2026-04-29
+**מזהה ריצה**: 25096387000
+**סיווג**: ציבורי — GDPR Art. 9(2)(e,g)
+**אמינות**: גבוהה [B2]
+
+---
+
+### 🎯 תמצית (BLUF)
+
+ב-28 באפריל 2026, ארבעת מפלגות האופוזיציה — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C) ו-Miljöpartiet (MP) — הגישו 24 הצעות בחמישה אשכולות מדיניות: ההצעה הכלכלית לאביב (prop. 2025/26:100), תקציב האביב (prop. 2025/26:99), רפורמה בדיני עונשין, בקרת יצוא נשק וסדירה סביבתית. הרוחב החקיקתי והתזמון המתואם מסמנים בלוק אופוזיציה מגובש שמאתגר את לוח הסדר החקיקתי המרכזי של ממשלת Tidö. ההצעה HD024120 של Vänsterpartiet — הדוחה במפורש את תרומת שוודיה לנוכחות הקדמית של נאט"ו בפינלנד (prop. 2025/26:220) — מייצגת את הפעולה הבודדת המשמעותית ביותר מבחינה אסטרטגית, שכן V היא המפלגה היחידה בריקסדאג המתנגדת להתחייבויות שוודיה כלפי נאט"ו ברמה מבצעית זו לאחר ההצטרפות. היעדר ההתאמה הבין-מפלגתית בין V לשאר מפלגות האופוזיציה בנושאי הגנה מסמן קו שבר קריטי בתוך בלוק האופוזיציה.
+
+### 🧭 3 החלטות שדו"ח מודיעין זה תומך בהן
+
+1. **עורכים** הממליצים אם HD024120 (V דוחה נוכחות נאט"ו מקדמית) מצדיק טיפול של חדשות שוטפות נפרד מהאשכול הכלכלי — **כן, מצדיק**: זוהי ההצעה היחידה במחזור זה שמאתגרת ישירות את התחייבויות שוודיה מבצעיות כלפי נאט"ו לאחר ההצטרפות.
+2. **אנליסטים** הבוחנים אם הביקורת הכלכלית של האופוזיציה (S, V, C, MP) מהווה מסגרת תקציבית חלופית קוהרנטית או ביקורת מפורגמנטת — הראיות מצביעות על **פירגמנטציה**: המפלגות מוצדדות כיוונים מקרו-כלכליים סותרים (S: גירוי ביקוש; C: איחוד פיסקאלי; V: חלוקה מחדש; MP: מהפך ירוק).
+3. **צרכני מודיעין** עוקבים אחר עומק קואליציית האופוזיציה המשפטית: דרישת C לניתוח השלכות לפני קידום (HD024111–112) לעומת דחייתם המפורשת של V ו-MP להצעות לענישה כפולה לכנופיות ואחריות פקידים (HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **האופוזיציה מפולגת אידיאולוגית**, מה שמפחית את הסבירות לחסימת JuU מתואמת.
+
+### ⏱️ נקודות מודיעין ב-60 שניות
+
+- **24 הצעות הוגשו 2026-04-28**, כולן בתגובה להצעות ממשלה או תקשורות ב-riksmöte 2025/26
+- **אשכול כלכלי (6 הצעות)**: S, V, C, MP מערערות כל אחת על prop. 2025/26:100 (ההצעה הכלכלית לאביב); S ו-V מערערות גם על prop. 2025/26:99 (תקציב האביב). אין חלופה מאוחדת של האופוזיציה.
+- **אשכול צדק פלילי (8 הצעות)**: הספירה הרחבה ביותר של האופוזיציה. C רוצה פריסה איטית יותר; MP ו-V דוחות לחלוטין ענישה כפולה לכנופיות. לממשלה יש רוב דרך M-KD-SD ב-JuU.
+- **אשכול בקרת יצוא נשק (4 הצעות)**: קיצוניות קיצונית — SD (HD024106) רוצה אישורי יצוא נוספים; V (HD024102, HD024122) ו-MP (HD024115) רוצות אמברגו על יצוא לאזורי מלחמה. היפוך מצב בקרב האופוזיציה.
+- **הגנה/נאט"ו (הצעה אחת — HD024120)**: V דוחה את תרומת נאט"ו לנוכחות מקדמית בפינלנד. עמדה מבודדת; אין מפלגה אחרת שתומכת בעמדה זו.
+- **סביבה (3 הצעות)**: C רוצה רפורמה בהגנת מינים (HD024113); MP רוצה ניתוח סיוע מדינה של האיחוד האירופי לפני תשלומי הגנת מינים (HD024117); V דוחה את הסוכנות החדשה לסקירה סביבתית (HD024105).
+- **מסגרת פיסקאלית (הצעה אחת — HD024109)**: Martin Ådahl של C דוחק לנהל מדיניות פיסקאלית אחראית בתגובה לדו"ח הביקורתי של Riksrevisionen על המסגרת הפיסקאלית.
+
+### 🔭 הטריגר העתידי החשוב ביותר
+
+**הצבעת JuU על prop. 2025/26:218 (ענישה כפולה לכנופיות)** — צפויה תוך 2–4 שבועות. V, MP ופלג מ-Centerpartiet מתנגדים; רוב M-KD-SD של הממשלה מספיק להעביר את החוק. עקוב אחר עמדת S (נעדרת מהצעות JuU בחבילה זו) כאינדיקטור לעמדת הסוציאל-דמוקרטים בנושא צדק פלילי לפני בחירות 2026.
+
+### 📊 התפלגות אמינות
+
+| טענה | Admiralty | אמינות |
+|------|-----------|--------|
+| כל 24 ההצעות הוגשו 2026-04-28 | A1 | גבוהה מאוד |
+| V היא המפלגה היחידה הדוחה את FP של נאט"ו | A1 | גבוהה מאוד |
+| הביקורת הכלכלית של האופוזיציה מפורגמנטת | A2 | גבוהה |
+| רוב JuU של הממשלה מספיק להצבעת חוק הפשע | B2 | גבוהה |
+| פרמטרים כלכליים של IMF צוטטו | F3 | נמוכה [לא מאושר-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+### 📈 שיפור מעבר 2: דירוג משמעות פוליטית
+
+| דירוג | הצעה | מפלגה | נימוק המשמעות |
+|-------|------|--------|--------------|
+| 1 | HD024120 | V | האופוזיציה היחידה לנאט"ו בכל הריקסדאג — הסלמה ברמת אמנה |
+| 2 | HD024109 | C | ביקורת פיסקאלית מגובה Riksrevisionen — סמכות מוסדית |
+| 3 | HD024111 | C | עיכוב פרוצדורלי ישים של prop. 217 — 15–25% הסתברות עיכוב |
+| 4 | HD024100 | S | החלופה הכלכלית הראשית של Magdalena Andersson לשנת 2026 |
+| 5 | HD024115 | MP | אמברגו נשק — ההצעה האקטיביסטית ביותר במדיניות חוץ |
+
+### 🔴 הבהרה קריטית למעבר 2
+
+מספר ההצעות הכלכליות הוא **6** (HD024100, HD024101, HD024108, HD024109, HD024110, HD024118) ו**לא** 5 כפי שניתן להסיק מהסיכום הראשוני — HD024109 (מסגרת פיסקאלית C) שייכת לאשכול כלכלי/FiU למרות אופייה כהצעת תגובה ל-RR.
+
+אשכול הצדק הפלילי כולל **8 הצעות**, אך האופוזיציה מחולקת לשתי אסטרטגיות: **עיכוב פרוצדורלי** (C: HD024111, HD024112) ו**דחייה מוחלטת** (V: HD024107, HD024119, HD024121, HD024123; MP: HD024114, HD024116). הבחנה זו חשובה לחיזוי תוצאות JuU — נתיב העיכוב הפרוצדורלי (C) הוא היחיד עם תפיסה ריאלית.
+
+**HD024106 (SD)**: שימו לב כי Sverigedemokraterna, למרות היותה בקואליציה השלטת, הגישה הצעה בחבילה הקרובה לאופוזיציה. זהו אות תוך-קואליציוני, לא פעילות אופוזיציה אמיתית.
+
+<!-- source-sha: aef867f928a2f4069766f065dd0ce9404a49f679 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling
+**日付**: 2026-04-29
+**実行ID**: 25096387000
+**分類**: 公開 — GDPR Art. 9(2)(e,g)
+**信頼度**: 高 [B2]
+
+---
+
+### 🎯 要点（BLUF）
+
+2026年4月28日、4つの野党 — Socialdemokraterna (S)、Vänsterpartiet (V)、Centerpartiet (C)、Miljöpartiet (MP) — は5つの政策分野にわたる24件の動議を提出した：春の経済提案（prop. 2025/26:100）、春の予算（prop. 2025/26:99）、刑事司法改革、武器輸出管理、環境規制。立法的な広がりと協調されたタイミングは、Tidö政府の中心的立法アジェンダに挑戦する統合された野党ブロックを示す。Vänsterpartiets の動議HD024120 — スウェーデンのフィンランドへのNATO前方展開への貢献（prop. 2025/26:220）を明示的に拒否 — は最も戦略的に重要な単独行動であり、VはNATO加盟後にこの作戦レベルでのスウェーデンのNATO約束に反対するリクスダーグ唯一の政党だからである。防衛問題においてVと他の野党間の党を超えた一致が欠如していることが、野党ブロック内の重大な断層線を形成している。
+
+### 🧭 このブリーフが支援する3つの意思決定
+
+1. **編集者** がHD024120（V がNATO前方展開を拒否）が経済クラスターとは別の速報ニュース扱いに値するかを判断 — **はい、値する**：加盟後のスウェーデンのNATO作戦上の約束に直接挑戦する唯一の動議だから。
+2. **政策アナリスト** が野党の経済批判（S、V、C、MP）が一貫した代替予算枠組みを構成するか断片的批判かを評価 — 証拠は**断片化**を示す：各党は矛盾するマクロ経済の方向性を擁護（S：需要刺激；C：財政統合；V：再分配；MP：緑の転換）。
+3. **情報消費者** が野党司法連合の深さを追跡：手続き前に影響分析を要求するC（HD024111–112）対二重ギャング刑と公務員責任に明確反対するVとMP（HD024107、HD024114、HD024116、HD024119、HD024121、HD024123）— **野党は思想的に分裂**しており、調整されたJuU封鎖の可能性を低下させる。
+
+### ⏱️ 60秒情報ポイント
+
+- **24件の動議が2026-04-28に提出**、すべてriksmöte 2025/26の政府提案または通知への対応として
+- **経済クラスター（6件）**: S、V、C、MPはそれぞれprop. 2025/26:100（春の経済提案）に異議；SとVはprop. 2025/26:99（春の予算）にも異議。統一された野党の代替案なし。
+- **刑事司法クラスター（8件）**: 最多野党数。Cはより緩やかな展開を希望；MPとVは二重ギャング刑を全面拒否。政府はJuUでM-KD-SD経由の多数決を保有。
+- **武器輸出管理クラスター（4件）**: 極端な乖離 — SD（HD024106）はさらに多くの輸出承認を希望；V（HD024102、HD024122）とMP（HD024115）は戦争地帯への輸出禁輸を希望。野党全体で立場が逆転。
+- **防衛/NATO（1件 — HD024120）**: VはNATOのフィンランドへの前方展開貢献を拒否。孤立した立場；他の政党はこの立場を支持しない。
+- **環境（3件）**: Cは種保護改革を希望（HD024113）；MPは種保護支払前にEU国家補助分析を要求（HD024117）；Vは新しい環境審査機関を拒否（HD024105）。
+- **財政枠組み（1件 — HD024109）**: CのMartin ÅdahlがRiksrevisionenの財政枠組みに関する批判的報告への対応として責任ある財政政策を促す。
+
+### 🔭 最重要将来トリガー
+
+**JuU によるprop. 2025/26:218（二重ギャング刑）の採決** — 2〜4週間以内に予定。V、MP、Centerpartietの一派が反対；政府のM-KD-SD多数決は法案可決に十分。S の立場（この批次のJuU動議で不在）を2026年選挙に向けた刑事司法の枠組みに対する社会民主党の立場の指標として注目。
+
+### 📊 信頼度分布
+
+| 主張 | アドミラルティ | 信頼度 |
+|------|------------|--------|
+| すべての24件が2026-04-28に提出 | A1 | 非常に高い |
+| VはNATOのFPを拒否する唯一の党 | A1 | 非常に高い |
+| 野党の経済批判は断片化 | A2 | 高い |
+| 政府のJuU多数決は犯罪法可決に十分 | B2 | 高い |
+| IMF経済パラメーターが引用 | F3 | 低い [未確認-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+### 📈 パス2改善：政治的重要度ランキング
+
+| 順位 | 動議 | 党 | 重要性の理由 |
+|------|------|-----|------------|
+| 1 | HD024120 | V | リクスダーグ全体で唯一のNATO反対 — 条約レベルのエスカレーション |
+| 2 | HD024109 | C | Riksrevisionen支持の財政批判 — 機関的権威 |
+| 3 | HD024111 | C | prop. 217の手続き上実行可能な遅延 — 15〜25%の遅延確率 |
+| 4 | HD024100 | S | Magdalena Anderssonの2026年主要経済代替案 |
+| 5 | HD024115 | MP | 武器禁輸 — 最も活動的な外交政策動議 |
+
+### 🔴 パス2重要な明確化
+
+経済動議の数は**6件**（HD024100、HD024101、HD024108、HD024109、HD024110、HD024118）であり、初期の要約から推察されるような**5件ではない** — HD024109（C財政枠組み）はRR応答動議としての性格にもかかわらず経済/FiUクラスターに属する。
+
+刑事司法クラスターは**8件**だが、野党は2つの戦略に分かれる：**手続き的遅延**（C：HD024111、HD024112）と**完全拒否**（V：HD024107、HD024119、HD024121、HD024123；MP：HD024114、HD024116）。この区別はJuUの結果を予測するために重要 — 手続き的遅延ルート（C）が現実的な牽引力を持つ唯一のもの。
+
+**HD024106（SD）**: Sverigedemokraternaは与党連立にもかかわらず、この野党近くの批次に動議を提出した。これは連立内シグナルであり、真の野党活動ではない。
+
+<!-- source-sha: aef867f928a2f4069766f065dd0ce9404a49f679 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**날짜**: 2026-04-29
+**실행 ID**: 25096387000
+**분류**: 공개 — GDPR Art. 9(2)(e,g)
+**신뢰도**: 높음 [B2]
+
+---
+
+### 🎯 핵심 요약 (BLUF)
+
+2026년 4월 28일, 네 개의 야당 — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C), Miljöpartiet (MP) — 은 5개의 정책 분야를 포괄하는 24개의 동의를 제출했다: 봄 경제 제안(prop. 2025/26:100), 봄 예산(prop. 2025/26:99), 형사 사법 개혁, 무기 수출 통제, 환경 규제. 입법적 폭과 조율된 타이밍은 Tidö 정부의 핵심 입법 의제에 도전하는 통합된 야당 블록을 신호한다. Vänsterpartiet의 동의 HD024120 — 핀란드에 대한 NATO 전진 배치 기여(prop. 2025/26:220)를 명시적으로 거부 — 은 전략적으로 가장 중요한 단일 행위를 나타낸다, V가 가입 후 이 작전 수준에서 스웨덴의 NATO 약속에 반대하는 유일한 릭스다그 정당이기 때문이다. 국방 문제에서 V와 다른 야당 간의 정당 간 일치의 부재는 야당 블록 내의 중요한 단층선을 표시한다.
+
+### 🧭 이 정보 브리핑이 지원하는 3가지 결정
+
+1. **편집진**이 HD024120(V가 NATO 전진 배치 거부)이 경제 클러스터와 별도로 속보 처리를 받을 자격이 있는지 결정 — **예, 그렇습니다**: 가입 후 스웨덴의 NATO 작전 약속을 직접 도전하는 이 주기의 유일한 동의이기 때문이다.
+2. **정책 분석가**가 야당의 경제 비판(S, V, C, MP)이 일관된 대안 예산 프레임워크 또는 단편적 비판을 구성하는지 평가 — 증거는 **단편화**를 가리킨다: 정당들은 모순된 거시경제적 방향을 옹호(S: 수요 자극; C: 재정 통합; V: 재분배; MP: 녹색 전환).
+3. **정보 소비자**가 야당 사법 연합의 깊이를 추적: 진행 전 영향 분석을 요구하는 C(HD024111–112) 대 이중 조직폭력배 처벌과 공무원 책임 제안을 명시적으로 거부하는 V와 MP(HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **야당은 이념적으로 분열되어** 있어 조율된 JuU 차단 가능성이 낮아진다.
+
+### ⏱️ 60초 정보 포인트
+
+- **24개 동의가 2026-04-28에 제출됨**, 모두 riksmöte 2025/26의 정부 제안 또는 통지에 대한 응답으로
+- **경제 클러스터 (6건)**: S, V, C, MP 각각이 prop. 2025/26:100(봄 경제 제안)에 이의를 제기; S와 V는 prop. 2025/26:99(봄 예산)에도 이의 제기. 통합된 야당 대안 없음.
+- **형사 사법 클러스터 (8건)**: 가장 많은 야당 수. C는 더 느린 전개를 원함; MP와 V는 이중 조직폭력배 처벌을 완전 거부. 정부는 JuU에서 M-KD-SD를 통해 과반수 보유.
+- **무기 수출 통제 클러스터 (4건)**: 극단적 분기 — SD(HD024106)는 더 많은 수출 승인을 원함; V(HD024102, HD024122)와 MP(HD024115)는 전쟁 지역에 대한 수출 금지를 원함. 야당 전체에서 입장 역전.
+- **국방/NATO (1건 — HD024120)**: V는 핀란드에서의 NATO 전진 배치 기여를 거부. 고립된 입장; 다른 어떤 정당도 이 입장을 지지하지 않음.
+- **환경 (3건)**: C는 종 보호 개혁을 원함(HD024113); MP는 종 보호 지불 전 EU 국가 지원 분석을 원함(HD024117); V는 새로운 환경 검토 기관을 거부(HD024105).
+- **재정 프레임워크 (1건 — HD024109)**: C의 Martin Ådahl이 재정 프레임워크에 관한 Riksrevisionen의 비판적 보고서에 대응하여 책임 있는 재정 정책을 촉구.
+
+### 🔭 가장 중요한 향후 촉발제
+
+**prop. 2025/26:218(이중 조직폭력배 처벌)에 대한 JuU 투표** — 2–4주 이내 예상. V, MP, Centerpartiet의 일파가 반대; 정부의 M-KD-SD 과반수는 통과에 충분. S의 입장(이 배치의 JuU 동의에서 부재)을 2026년 선거를 앞두고 형사 사법 프레이밍에 대한 사회민주당 입장의 지표로 주시.
+
+### 📊 신뢰도 분포
+
+| 주장 | Admiralty | 신뢰도 |
+|------|-----------|--------|
+| 모든 24건이 2026-04-28에 제출됨 | A1 | 매우 높음 |
+| V가 NATO FP를 거부하는 유일한 정당 | A1 | 매우 높음 |
+| 야당의 경제 비판은 단편화됨 | A2 | 높음 |
+| 정부 JuU 과반수가 범죄 법안 통과에 충분 | B2 | 높음 |
+| IMF 경제 매개변수 인용됨 | F3 | 낮음 [미확인-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+### 📈 패스 2 개선: 정치적 중요도 순위
+
+| 순위 | 동의 | 정당 | 중요성 이유 |
+|------|------|------|------------|
+| 1 | HD024120 | V | 릭스다그 전체에서 유일한 NATO 반대 — 조약 수준 에스컬레이션 |
+| 2 | HD024109 | C | Riksrevisionen 지원 재정 비판 — 제도적 권위 |
+| 3 | HD024111 | C | prop. 217의 절차적으로 실행 가능한 지연 — 15–25% 지연 가능성 |
+| 4 | HD024100 | S | Magdalena Andersson의 2026년 주요 경제 대안 |
+| 5 | HD024115 | MP | 무기 금수 — 가장 활동적인 외교 정책 동의 |
+
+### 🔴 패스 2 중요한 명확화
+
+경제 동의 수는 **6건**(HD024100, HD024101, HD024108, HD024109, HD024110, HD024118)이며, 초기 요약에서 추론될 수 있는 **5건이 아니다** — HD024109(C 재정 프레임워크)는 RR 응답 동의로서의 성격에도 불구하고 경제/FiU 클러스터에 속한다.
+
+형사 사법 클러스터는 **8건**이지만 야당은 두 전략으로 나뉜다: **절차적 지연**(C: HD024111, HD024112)과 **전면 거부**(V: HD024107, HD024119, HD024121, HD024123; MP: HD024114, HD024116). 이 구별은 JuU 결과를 예측하는 데 중요하다 — 절차적 지연 경로(C)가 현실적인 견인력이 있는 유일한 것이다.
+
+**HD024106 (SD)**: Sverigedemokraterna는 집권 연립에 있음에도 불구하고 이 야당 인접 배치에 동의를 제출했다. 이것은 연립 내 신호이지 진정한 야당 활동이 아니다.
+
+<!-- source-sha: aef867f928a2f4069766f065dd0ce9404a49f679 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Datum**: 2026-04-29
+**Run-ID**: 25096387000
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e,g)
+**Vertrouwen**: HOOG [B2]
+
+---
+
+### 🎯 Samenvatting (BLUF)
+
+Op 28 april 2026 dienden alle vier oppositiepartijen — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C) en Miljöpartiet (MP) — 24 moties in op vijf beleidsterreinen: de economische lenteproposisatie (prop. 2025/26:100), de lentebegroting (prop. 2025/26:99), hervorming van het strafrecht, wapenexportcontrole en milieuregelgeving. De wetgevende breedte en de gecoördineerde timing signaleren een geconsolideerd oppositieblok dat de centrale wetgevingsagenda van de Tidö-regering aanvecht. De motie HD024120 van Vänsterpartiet — die Zweden's bijdrage aan de NATO Forward Presence in Finland (prop. 2025/26:220) uitdrukkelijk afwijst — vertegenwoordigt de strategisch meest significante enkelvoudige actie, aangezien V de enige Riksdag-partij is die Zweedse NAVO-verplichtingen op dit operationeel niveau na de toetreding afwijst. Het ontbreken van partijoverstijgende afstemming tussen V en de andere oppositiepartijen op defensie markeert een kritische breukijn binnen het oppositieblok.
+
+### 🧭 3 beslissingen die dit inlichtingenbriefing ondersteunt
+
+1. **Redacties** die bepalen of HD024120 (V wijst NATO Forward Presence af) een afzonderlijke breaking news-behandeling rechtvaardigt, gescheiden van de economische cluster — **ja, dat doet het**: het is de enige motie in deze cyclus die Zweden's NATO-operationele verplichtingen na de toetreding direct uitdaagt.
+2. **Beleidsanalisten** die beoordelen of de economische kritiek van de oppositie (S, V, C, MP) een coherent alternatief begrotingskader vormt of gefragmenteerde kritiek — de bewijzen wijzen op **fragmentatie**: de partijen pleiten voor tegenstrijdige macroeconomische richtingen (S: vraagstimulering; C: begrotingsconsolidatie; V: herverdeling; MP: groene transformatie).
+3. **Inlichtingenconsumenten** die de diepte van de justitiële coalitie van de oppositie volgen: C's eis om een impactanalyse alvorens te procederen (HD024111–112) versus V's en MP's expliciete afwijzing van de voorstellen voor dubbele bendestraffen en ambtenaaraansprakelijkheid (HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **de oppositie is ideologisch verdeeld**, waardoor de kans op gecoördineerde JuU-blokkering afneemt.
+
+### ⏱️ 60 seconden inlichtingenbullets
+
+- **24 moties ingediend 2026-04-28**, allemaal als reactie op regeringsproposisaties of -mededelingen in riksmöte 2025/26
+- **Economische cluster (6 moties)**: S, V, C, MP betwisten elk prop. 2025/26:100 (economische lenteproposisatie); S en V betwisten ook prop. 2025/26:99 (lentebegroting). Geen eensgezind oppositiealternatief.
+- **Strafrechtelijke cluster (8 moties)**: Grootste oppositioneel aantal. C wil een langzamere uitrol; MP en V wijzen dubbele bendestraffen geheel af. De regering heeft een meerderheid via M-KD-SD in het JuU.
+- **Wapenexportcluster (4 moties)**: Extreme divergentie — SD (HD024106) wil MEER exportgoedkeuringen; V (HD024102, HD024122) en MP (HD024115) willen een embargo op export naar oorlogsgebieden. Positie-inversie in de gehele oppositie.
+- **Defensie/NATO (1 motie — HD024120)**: V wijst NATO's bijdrage aan Forward Presence in Finland af. Geïsoleerde positie; geen andere partij steunt dit standpunt.
+- **Milieu (3 moties)**: C wil hervorming van soortenbescherming (HD024113); MP wil EU-staatssteunanalyse voor soortenbeschermingsbetalingen (HD024117); V wijst het nieuwe milieu-beoordelingsorgaan af (HD024105).
+- **Begrotingskader (1 motie — HD024109)**: Martin Ådahl van C dringt aan op een verantwoord begrotingsbeleid als reactie op het kritische rapport van Riksrevisionen over het begrotingskader.
+
+### 🔭 Belangrijkste toekomstige trigger
+
+**JuU-stemming over prop. 2025/26:218 (dubbele bendestraffen)** — verwacht binnen 2–4 weken. V, MP en een fractie van Centerpartiet verzetten zich; de M-KD-SD-meerderheid van de regering is voldoende om de wet aan te nemen. Let op de positie van S (afwezig in JuU-moties in dit pakket) als indicator van de sociaaldemocratische houding ten opzichte van de strafrechtelijke profilering voor de verkiezingen van 2026.
+
+### 📊 Vertrouwensverdeling
+
+| Bewering | Admiralty | Vertrouwen |
+|---------|-----------|-----------|
+| Alle 24 moties ingediend 2026-04-28 | A1 | ZEER HOOG |
+| V is de enige partij die NATO's FP afwijst | A1 | ZEER HOOG |
+| Economische kritiek van de oppositie is gefragmenteerd | A2 | HOOG |
+| JuU-meerderheid van de regering voldoende voor de criminaliteitswet | B2 | HOOG |
+| IMF-economische parameters geciteerd | F3 | LAAG [onbevestigd-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-04-29
+**Kjøre-ID**: 25096387000
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Konfidens**: HØY [B2]
+
+---
+
+### 🎯 Sammendrag (BLUF)
+
+Den 28. april 2026 leverte alle fire opposisjonspartier — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C) og Miljöpartiet (MP) — inn 24 forslag innenfor fem politiske klynger: vårens økonomiske proposisjon (prop. 2025/26:100), vårbudsjettet (prop. 2025/26:99), strafferettslig reform, våpeneksportkontroll og miljøregulering. Den lovgivningsmessige bredden og den koordinerte timingen signaliserer en konsolidert opposisjonsblokk som utfordrer Tidö-regjeringens sentrale lovgivningsagenda. Vänsterpartiets forslag HD024120 — som eksplisitt avviser Sveriges bidrag til NATOs forsterkede tilstedeværelse i Finland (prop. 2025/26:220) — representerer den strategisk mest betydningsfulle enkelthandlingen, ettersom V er det eneste Riksdag-partiet som på dette operasjonelle nivået motsetter seg svenske NATO-forpliktelser etter inntreden. Fraværet av tverrpolitisk tilpasning mellom V og de øvrige opposisjonspartier i forsvarsspørsmål markerer en kritisk sprekklinje innen opposisjonsblokken.
+
+### 🧭 3 beslutninger dette etterretningsbrevet støtter
+
+1. **Redaksjoner** som avgjør om HD024120 (V avviser NATOs forsterkede tilstedeværelse) berettiger breaking news-behandling atskilt fra det økonomiiske klusteret — **ja, det gjør det**: det er det eneste forslaget i denne syklusen som direkte utfordrer Sveriges NATO-operasjonelle forpliktelser etter inntreden.
+2. **Politikkanalytikere** som vurderer om opposisjonens økonomiske kritikk (S, V, C, MP) utgjør et sammenhengende alternativt budsjettramme eller fragmentert kritikk — bevisene peker mot **fragmentering**: partiene tar til orde for motstridende makroøkonomiske retninger (S: etterspørselsstimulans; C: finanspolitisk konsolidering; V: omfordeling; MP: grønn omstilling).
+3. **Etterretningskonsumenter** som følger dybden av opposisjonens rettslige koalisjon: C's krav om konsekvensanalyse før behandling (HD024111–112) versus V's og MP's direkte avvisning av forslagene om dobbel-gjengstraff og tjenestemenns ansvar (HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **opposisjonen er ideologisk splittet**, noe som reduserer sannsynligheten for koordinert JuU-blokkering.
+
+### ⏱️ 60 sekunders etterretningsbullets
+
+- **24 forslag levert 2026-04-28**, alle som svar på regjeringspropoisjoner eller -meldinger i riksmöte 2025/26
+- **Økonomiisk kluster (6 forslag)**: S, V, C, MP utfordrer hver prop. 2025/26:100 (vårproposisjonens økonomiiske del); S og V utfordrer også prop. 2025/26:99 (vårbudsjettet). Intet samlet opposisjonsalternativ.
+- **Strafferettskluster (8 forslag)**: Bredeste opposisjonsantall. C ønsker langsommere gjennomføring; MP og V avviser dobbel-gjengstraff fullstendig. Regjeringen har flertall via M-KD-SD i JuU.
+- **Våpeneksportkluster (4 forslag)**: Ekstrem divergens — SD (HD024106) ønsker FLERE eksportgodkjenninger; V (HD024102, HD024122) og MP (HD024115) ønsker embargo mot eksport til krigsrammede land. Posisjonsomvendt på tvers av opposisjonen.
+- **Forsvar/NATO (1 forslag — HD024120)**: V avviser NATOs bidrag til forsterkede tilstedeværelse i Finland. Isolert posisjon; intet annet parti støtter dette standpunktet.
+- **Miljø (3 forslag)**: C ønsker artsbeskyttelsesreform (HD024113); MP ønsker EU-statsstøtteanalyse før artsbetalinger (HD024117); V avviser det nye miljøvurderingsorganet (HD024105).
+- **Finanspolitisk rammeverk (1 forslag — HD024109)**: C's Martin Ådahl oppfordrer til ansvarlig finanspolitikk som svar på Riksrevisionens kritiske rapport om det finanspolitiske rammeverket.
+
+### 🔭 Viktigste kommende utløser
+
+**JuU-avstemning om prop. 2025/26:218 (dobbel gjengstraff)** — forventet innen 2–4 uker. V, MP og en del av Centerpartiet motsetter seg; regjeringens M-KD-SD-flertall er tilstrekkelig til å vedta loven. Overvåk S's posisjon (fraværende i JuU-forslagene i denne pakken) som indikator for Socialdemokraternas holdning til strafferettslig profilering frem mot valget 2026.
+
+### 📊 Konfidensfordeling
+
+| Påstand | Admiralty | Konfidens |
+|---------|-----------|-----------|
+| Alle 24 forslag levert 2026-04-28 | A1 | SVÆRT HØY |
+| V er eneste parti som avviser NATOs FP | A1 | SVÆRT HØY |
+| Opposisjonens økonomiiske kritikk er fragmentert | A2 | HØY |
+| Regjeringens JuU-flertall tilstrekkelig til å vedta kriminalitetsloven | B2 | HØY |
+| IMF's økonomiiske parametre sitert | F3 | LAV [ubekreftet-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Datum**: 2026-04-29
+**Kör-ID**: 25096387000
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Konfidens**: HÖG [B2]
+
+---
+
+### 🎯 Sammanfattning (BLUF)
+
+Den 28 april 2026 lämnade alla fyra oppositionspartier — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C) och Miljöpartiet (MP) — in 24 motioner inom fem politiska kluster: vårens ekonomiska proposition (prop. 2025/26:100), vårbudgeten (prop. 2025/26:99), straffrättslig reform, vapenkontroll och miljöreglering. Det lagstiftningsningsmässiga omfånget och den samordnade tidpunkten signalerar ett konsoliderat oppositionsblock som utmanar Tidöregeringens centrala lagstiftningsagenda. Vänsterpartiets motion HD024120 — som uttryckligen avvisar Sveriges bidrag till NATOs förtruppsnärvaro i Finland (prop. 2025/26:220) — är den strategiskt mest betydelsefulla enskilda åtgärden, eftersom V är det enda riksdagspartiet som på denna operationella nivå motsätter sig svenska NATO-åtaganden efter inträdet. Frånvaron av partiövergripande samstämmighet mellan V och övriga oppositionspartier i försvarsfrågan markerar en kritisk spricklinje inom oppositionsblocket.
+
+### 🧭 Tre beslut som detta underrättelsebrev stödjer
+
+1. **Redaktörer** som avgör om HD024120 (V avvisar NATOs förtruppsnärvaro) motiverar brekingnews-behandling skild från det ekonomiska klustret — **ja, det gör det**: det är den enda motionen i detta riksmötescykel som direkt utmanar Sveriges NATO-operativa åtaganden efter inträdet.
+2. **Policyanalytiker** som bedömer om oppositionens ekonomiska kritik (S, V, C, MP) utgör ett sammanhängande alternativt budgetramverk eller fragmenterad kritik — bevisen pekar mot **fragmentering**: partierna förespråkar motstridiga makroekonomiska inriktningar (S: efterfrågestimulans; C: finanspolitisk konsolidering; V: omfördelning; MP: grön omställning).
+3. **Underrättelsekonsumenter** som följer djupet i oppositionens rättsliga koalition: C:s krav på konsekvensanalys innan föreslagen lagstiftning behandlas (HD024111–112) kontra V:s och MP:s direkta avvisande av förslagen om dubbelpåföljd och tjänstemannaansvar (HD024107, HD024114, HD024116, HD024119, HD024121, HD024123) — **oppositionen är ideologiskt splittrad**, vilket minskar sannolikheten för samordnat JuU-blockerande.
+
+### ⏱️ 60 sekunder underrättelsekulor
+
+- **24 motioner inlämnade 2026-04-28**, alla som svar på regeringspropositioner eller -skrivelser i riksmöte 2025/26
+- **Ekonomiskt kluster (6 motioner)**: S, V, C, MP utmanar var och en prop. 2025/26:100 (vårpropositionens ekonomiska del); S och V utmanar även prop. 2025/26:99 (vårbudgeten). Inget enhetligt oppositionsalternativ.
+- **Straffrättskluster (8 motioner)**: Bredaste oppositionsuppdraget. C vill ha ett långsammare genomförande; MP och V avvisar dubbla gängpåföljder helt. Regeringen har majoritet via M-KD-SD i JuU.
+- **Vapenexportkluster (4 motioner)**: Extrem splittring — SD (HD024106) vill ha FLER exportgodkännanden; V (HD024102, HD024122) och MP (HD024115) vill ha embargo mot export till krigsdrabbade länder. Positionsinversion inom oppositionen.
+- **Försvar/NATO (1 motion — HD024120)**: V avvisar NATOs bidrag till förtruppsnärvaro i Finland. Isolerad position; inget annat parti stöder denna ståndpunkt.
+- **Miljö (3 motioner)**: C vill reformera artskyddet (HD024113); MP vill ha EU-statsstödsanalys innan artskyddsbetalningar (HD024117); V avvisar det nya tillsynsorganet för miljöprövning (HD024105).
+- **Finanspolitiskt ramverk (1 motion — HD024109)**: C:s Martin Ådahl uppmanar till ansvarsfull finanspolitik som svar på Riksrevisionens kritiska rapport om det finanspolitiska ramverket.
+
+### 🔭 Viktigaste kommande utlösare
+
+**JuU-omröstning om prop. 2025/26:218 (dubbla gängpåföljder)** — väntas inom 2–4 veckor. V, MP och en del av Centerpartiet motsätter sig; regeringens M-KD-SD-majoritet är tillräcklig för att lagen ska gå igenom. Bevaka S:s ståndpunkt (frånvarande i JuU-motionerna i detta paket) som indikator för socialdemokraternas inställning till straffrättslig profilering inför 2026 års val.
+
+### 📊 Konfidensfördelning
+
+| Påstående | Admiralty | Konfidens |
+|-----------|-----------|-----------|
+| Alla 24 motioner inlämnade 2026-04-28 | A1 | MYCKET HÖG |
+| V är enda partiet som avvisar NATOs FP | A1 | MYCKET HÖG |
+| Oppositionens ekonomiska kritik är fragmenterad | A2 | HÖG |
+| Regeringens JuU-majoritet räcker för att anta brottslagen | B2 | HÖG |
+| IMF:s ekonomiska parametrar citerade | F3 | LÅG [obekräftad-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling
+**日期**: 2026-04-29
+**运行ID**: 25096387000
+**分类**: 公开 — GDPR Art. 9(2)(e,g)
+**可信度**: 高 [B2]
+
+---
+
+### 🎯 核心摘要 (BLUF)
+
+2026年4月28日，四个反对党——Socialdemokraterna (S)、Vänsterpartiet (V)、Centerpartiet (C)和Miljöpartiet (MP)——提交了涵盖五个政策领域的24项动议：春季经济提案（prop. 2025/26:100）、春季预算（prop. 2025/26:99）、刑事司法改革、武器出口控制和环境监管。立法广度和协调时机表明，一个整合的反对党集团正在挑战Tidö政府的核心立法议程。Vänsterpartiet的动议HD024120——明确拒绝瑞典对北约驻芬兰前沿部署的贡献（prop. 2025/26:220）——代表着战略上最重要的单项行动，因为V是唯一在加入北约后在这一作战层面反对瑞典北约承诺的瑞典议会政党。V与其他反对党在国防问题上缺乏跨党派协调，标志着反对党集团内部存在重大断层线。
+
+### 🧭 本简报支持的三项决策
+
+1. **编辑** 决定HD024120（V拒绝北约前沿部署）是否值得独立于经济集群进行突发新闻处理——**是的，值得**：这是本轮中唯一直接挑战瑞典加入北约后作战承诺的动议。
+2. **政策分析师** 评估反对党经济批评（S、V、C、MP）是否构成一致的替代预算框架或碎片化批评——证据指向**碎片化**：各党倡导相互矛盾的宏观经济方向（S：需求刺激；C：财政整合；V：再分配；MP：绿色转型）。
+3. **情报消费者** 追踪反对党司法联盟的深度：C要求在推进前进行影响分析（HD024111–112）与V和MP明确拒绝双重黑帮刑罚和公务员责任提案（HD024107、HD024114、HD024116、HD024119、HD024121、HD024123）——**反对党意识形态上存在分裂**，降低了协调JuU封锁的可能性。
+
+### ⏱️ 60秒情报要点
+
+- **24项动议于2026-04-28提交**，均为响应riksmöte 2025/26中的政府提案或通告
+- **经济集群（6项）**: S、V、C、MP各自对prop. 2025/26:100（春季经济提案）提出质疑；S和V还对prop. 2025/26:99（春季预算）提出质疑。无统一的反对党替代方案。
+- **刑事司法集群（8项）**: 反对党人数最多。C希望推进较慢；MP和V完全拒绝双重黑帮刑罚。政府通过M-KD-SD在JuU拥有多数席位。
+- **武器出口控制集群（4项）**: 极端分歧——SD（HD024106）希望获得更多出口批准；V（HD024102、HD024122）和MP（HD024115）希望对战区出口实施禁运。反对党内部立场颠倒。
+- **国防/北约（1项——HD024120）**: V拒绝北约对芬兰前沿部署的贡献。孤立立场；没有其他政党支持这一立场。
+- **环境（3项）**: C希望进行物种保护改革（HD024113）；MP希望在物种保护付款前进行欧盟国家援助分析（HD024117）；V拒绝新的环境审查机构（HD024105）。
+- **财政框架（1项——HD024109）**: C的Martin Ådahl呼吁负责任的财政政策，以回应Riksrevisionen关于财政框架的批评性报告。
+
+### 🔭 最重要的前瞻触发点
+
+**JuU对prop. 2025/26:218（双重黑帮刑罚）的投票**——预计在2–4周内。V、MP和Centerpartiet的一个派系反对；政府的M-KD-SD多数足以通过法律。注意S的立场（在此批次的JuU动议中缺席），作为2026年选举前社会民主党刑事司法立场框架的指标。
+
+### 📊 可信度分布
+
+| 声明 | Admiralty | 可信度 |
+|------|-----------|--------|
+| 所有24项动议于2026-04-28提交 | A1 | 极高 |
+| V是唯一拒绝北约FP的政党 | A1 | 极高 |
+| 反对党经济批评碎片化 | A2 | 高 |
+| 政府JuU多数足以通过犯罪法 | B2 | 高 |
+| IMF经济参数被引用 | F3 | 低 [未确认-IMF] |
+
+```mermaid
+graph LR
+    subgraph MotionClusters["2026-04-28 Motion Clusters"]
+        ECO["💰 Economic\n6 motions\nS+V+C+MP"]:::eco
+        JUST["⚖️ Criminal Justice\n8 motions\nV+C+MP"]:::just
+        EXP["🔫 Export Control\n4 motions\nV+SD+MP"]:::exp
+        DEF["🛡️ Defence/NATO\n1 motion\nV only"]:::def
+        ENV["🌿 Environment\n3 motions\nV+C+MP"]:::env
+        FIS["🏛️ Fiscal Framework\n1 motion\nC"]:::fis
+    end
+    style MotionClusters fill:#0a0e27,stroke:#00d9ff
+    classDef eco fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
+    classDef just fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef exp fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef def fill:#1a1a3a,stroke:#ff006e,color:#e0e0e0
+    classDef env fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef fis fill:#2a1a3a,stroke:#ffbe0b,color:#e0e0e0
+```
+
+### 📈 第二轮优化：政治重要性排名
+
+| 排名 | 动议 | 政党 | 重要性理由 |
+|------|------|------|-----------|
+| 1 | HD024120 | V | 整个议会中唯一的北约反对——条约级别升级 |
+| 2 | HD024109 | C | Riksrevisionen支持的财政批评——制度权威 |
+| 3 | HD024111 | C | prop. 217的程序上可行延迟——15–25%延迟概率 |
+| 4 | HD024100 | S | Magdalena Andersson的2026年主要经济替代方案 |
+| 5 | HD024115 | MP | 武器禁运——最具活动性的外交政策动议 |
+
+### 🔴 第二轮关键澄清
+
+经济动议数量为**6项**（HD024100、HD024101、HD024108、HD024109、HD024110、HD024118），而**非**初始摘要中可能推断出的5项——HD024109（C财政框架）属于经济/FiU集群，尽管其具有RR回应动议的性质。
+
+刑事司法集群包含**8项动议**，但反对党分为两种策略：**程序性延迟**（C：HD024111、HD024112）和**彻底拒绝**（V：HD024107、HD024119、HD024121、HD024123；MP：HD024114、HD024116）。这一区别对于预测JuU结果很重要——程序性延迟路径（C）是唯一具有现实牵引力的策略。
+
+**HD024106 (SD)**：请注意，Sverigedemokraterna尽管身处执政联合政府，却在这批接近反对党的动议中提交了一项动议。这是联合政府内部信号，而非真正的反对党活动。
+
+<!-- source-sha: aef867f928a2f4069766f065dd0ce9404a49f679 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 24 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 25 | Linked in Article Sources, not expanded inline |
 
@@ -1610,6 +2581,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

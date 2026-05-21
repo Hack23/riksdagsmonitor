@@ -6,7 +6,7 @@ date: 2026-05-20
 subfolder: propositions
 slug: 2026-05-20-propositions
 source_folder: analysis/daily/2026-05-20/propositions
-generated_at: 2026-05-20T20:11:10.211Z
+generated_at: 2026-05-21T02:19:51.792Z
 language: en
 layout: article
 ---
@@ -111,6 +111,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2029,13 +2042,994 @@ Standing PIRs active:
 - PIR-4: Transparency/accountability mechanisms
 - PIR-5: Electoral dynamics ahead of 2026 elections
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# تسارع دولة الأمن في السويد: حكومة بوش تمضي قُدُماً في تشديد الهجرة وهندسة المراقبة الرقمية
+
+### الملخص التنفيذي
+
+قدّمت حكومة بوش السويدية سبع مقترحات تشريعية كبرى بين 30 أبريل و7 مايو 2026، تُمثّل مجتمعةً أطموح توسُّع في صلاحيات أمن الدولة منذ عقد كامل. يتمحور هذا الحزمة حول تجريم الأجانب الذين يُشكّلون تهديدات أمنية مؤهَّلة (HD03267)، وتأسيس آليات لتنفيذ قرارات الترحيل (HD03263)، وتشديد اشتراطات السيرة الحسنة لتصاريح الإقامة (HD03264)، وتوسيع صلاحيات مراقبة إدارة الضرائب (Skatteverket) في سجل السكان (HD03261)، ونشر بنية تحتية إلزامية للهوية الإلكترونية الحكومية (HD03250). يُقدّم تشريع الشفافية السياسية (HD03258) ثقلاً موازناً، غير أنه يظل قاصراً عن تعويض مخاطر الحريات المدنية التي يخلقها عنقود الأمن. يتزامن التغيير الحكومي — لوتا إيدهولم بوصفها رئيسة وزراء بالوكالة في أواخر أبريل، وإيبا بوش التي تُوقّع مقترحات مايو رسمياً في السابع منه — مع هذا التسارع التشريعي، مما يثير تساؤلات حول إعادة تموضع الائتلاف ونفوذ حزب SD على جدول الأعمال. تتوقع توقعات الاقتصاد العالمي لصندوق النقد الدولي الصادرة في أبريل 2026 نمواً في الناتج المحلي الإجمالي السويدي بحوالي 2.2٪ لعام 2026 مع هامش مالي ضيّق؛ ويمنح الضغط الاقتصادي الحكومةَ غطاءً سياسياً لإعطاء الأولوية للأمن على حساب الإصلاحات الهيكلية.
+
+### القرارات التي تدعمها هذه الوثيقة
+
+1. **فرق الاستراتيجية المعارضة (S, MP, V, C)**: تحديد المقترحات المطعون فيها في اللجان، وما يُفاوَض عليه من تعديلات، وأماكن تقديم تحفظات الأقلية — يحمل HD03267 وHD03261 أعلى مخاطر دستورية ويستحقان طلبات مراجعة المجلس التشريعي (Lagrådet).
+2. **المجتمع المدني والمنظمات القانونية (RFSU، المدافعون عن الحقوق المدنية، منظمة العفو السويدية)**: إعطاء الأولوية لموارد المناصرة تجاه HD03267 (خطر الاحتجاز دون رقابة قضائية) وHD03261 (مراقبة جماعية لبيانات السكان).
+3. **مجتمع الأعمال (Tech Sverige, SN)**: تقييم HD03250 (الهوية الإلكترونية الحكومية) بوصفه عبئاً تنظيمياً وفرصة تنافسية في آنٍ معاً — يواجه مزودو الهوية الخاصون خطر الإزاحة أو الاندماج الإلزامي.
+4. **هيئات الرقابة الأوروبية (FRA، شبكات لجنة البندقية)**: يختبر HD03267 وHD03264 امتثال السويد للمادة 8 من الاتفاقية الأوروبية لحقوق الإنسان (الخصوصية) والمادة 3 (حظر الإعادة القسرية)؛ التحذيرات المبكرة مُبرَّرة.
+
+### نقاط الاستخبارات في 60 ثانية
+
+- 🔴 **تهديدات أمنية أجنبية** (HD03267): توسيع أُسس احتجاز/طرد مواطني دول غير أوروبية المُصنَّفين "تهديدات أمنية مؤهَّلة" — مراجعة KU/Lagrådet مرجَّحة؛ مخاطر المادتين 3/8 من ECHR **عالية**
+- 🔴 **تنفيذ الترحيل** (HD03263): أدوات إدارية جديدة لتسريع إجراءات الإبعاد، شاملةً آليات التعاون على الإعادة القسرية — يعكس تفسيرات المتشددين لتوجيه العودة الأوروبي
+- 🟠 **اشتراطات السيرة الحسنة لتصاريح الإقامة** (HD03264): تشترط متطلبات سلوكية أكثر صرامة تقديراً إدارياً واسعاً — خطر التطبيق التمييزي
+- 🟠 **الهوية الإلكترونية الحكومية** (HD03250): بنية تحتية رقمية هوياتية إلزامية تصدرها الدولة؛ يواجه مزودو الهوية الإلكترونية الخاصون الإزاحة؛ مسائل السيادة على البيانات لا تزال قائمة
+- 🟠 **سجل السكان لدى Skatteverket** (HD03261): توسيع صلاحيات التحقيق وجمع البيانات في folkbokföring — توتر بين الحريات المدنية ومكافحة الاحتيال
+- 🟡 **الشفافية السياسية** (HD03258): لجنة KU؛ تشديد قواعد الإفصاح عن تمويل الأحزاب — إصلاح حقيقي لكن نطاقه مقتصر على العمليات الرسمية للأحزاب
+- 🟢 **عيّنة ديون الأسر** (HD03255): إجراء احترازي كلي تقني لرصد الديون؛ أهمية سياسية منخفضة
+
+### المحفّز الأبرز المرتقب
+
+**ترقّب**: استجابة Lagrådet لـ HD03267 وHD03261 (متوقعة خلال 4–6 أسابيع من التقديم). سيُفضي yttrande انتقادي صادر عن Lagrådet على أسس دستورية إلى أزمة ائتلافية بين M/KD وSD، مما قد يُؤخّر عنقود الأمن أو يُعدّله. ترقّب: إحالات lagrådet.se في أسبوع 2026-06-01.
+
+### مستوى الثقة
+
+**عالٍ** — يستند التحليل إلى نصوص المقترحات الأولية (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255) المُسترجَعة من data.riksdagen.se بتاريخ 2026-05-20. سياق التغيير الحكومي (لوتا إيدهولم ← إيبا بوش رئيسة وزراء) مُستنبَط من تسلسل توقيع الوثائق؛ **متوسط** مستوى الثقة في التاريخ الدقيق للانتقال.
+
+### خريطة استخبارات Mermaid
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_da.md -->
+
+### Sammenfatning
+
+Busch-regeringen fremsendte syv store lovforslag mellem 30. april og 7. maj 2026, der tilsammen udgør den mest ambitiøse udvidelse af statens sikkerhedsbeføjelser i et årti. Klyngen drejer sig om kriminalisering af kvalificerede sikkerhedstrusler mod udlændinge (HD03267), institutionalisering af håndhævelse af udvisningsbeslutninger (HD03263), skærpelse af vandel-kravene for opholdstilladelse (HD03264), udvidelse af Skatteverkets overvågningsbeføjelser i befolkningsregistret (HD03261) og udrulning af obligatorisk statslig e-identitetsinfrastruktur (HD03250). Lovgivning om politisk transparens (HD03258) udgør en modvægt, men er ikke tilstrækkelig til at opveje de borgerretlige risici, som sikkerhedsklyngen skaber. Regeringsskiftet — Lotta Edholm som fungerende statsminister i slutningen af april, Ebba Busch der formelt underskriver maj-forslagene den 7. — falder sammen med denne lovgivningsacceleration og rejser spørgsmål om koalitionsjusteringer og SD's indflydelse på dagsordenen. IMF WEO apr-2026 prognosticerer svensk BNP-vækst på ca. 2,2 % for 2026 med beskedent finanspolitisk råderum; det økonomiske pres giver regeringen politisk dækning til at prioritere sikkerhed frem for strukturreformer.
+
+### Beslutninger dette dokument understøtter
+
+1. **Oppositionens strategiteams (S, MP, V, C)**: Afgør hvilke forslag der skal bestrides i udvalg, hvilke ændringsforslag der skal forhandles om, og hvor der skal fremsættes mindretalsudtalelser — HD03267 og HD03261 indebærer den højeste forfatningsmæssige risiko og er værdige til anmodninger om Lagrådets prøvelse.
+2. **Civilsamfund og juridiske organisationer (RFSU, Civil Rights Defenders, Amnesty Sverige)**: Prioritér interessevaretagelsesressourcer på HD03267 (risiko for frihedsberøvelse uden domstolsprøvelse) og HD03261 (masseovervågning af befolkningsdata).
+3. **Erhvervslivet (Tech Sverige, SN)**: Vurdér HD03250 (statslig e-identitet) som både reguleringsmæssig byrde og konkurrencemulighed — private identitetsleverandører risikerer fortrængning eller tvungen integration.
+4. **EU's tilsynsorganer (FRA, Venedigkommissionens netværk)**: HD03267 og HD03264 tester Sveriges overholdelse af EMRK art. 8 (privatliv) og art. 3 (non-refoulement); tidlig varsling er berettiget.
+
+### 60-sekunders efterretningspunkter
+
+- 🔴 **Sikkerhedstrusler mod udlændinge** (HD03267): Udvidede grundlag for frihedsberøvelse/udvisning af ikke-EU-statsborgere vurderet som "kvalificerede sikkerhedstrusler" — KU/Lagrådet-prøvelse sandsynlig; EMRK art. 3/8-risiko HØJ
+- 🔴 **Håndhævelse af udvisning** (HD03263): Nye administrative redskaber til at fremskynde udvisningsprocedurer, herunder mekanismer for tvunget tilbagesendelsesamarbejde — afspejler EU's hårdlinjetolkning af tilbagesendelsesorientering
+- 🟠 **Vandel-krav til opholdstilladelse** (HD03264): Strengere vandel-krav skaber bred administrativ skønsbeføjelse — risiko for diskriminerende anvendelse
+- 🟠 **Statslig e-identitet** (HD03250): Obligatorisk statslig digital identitetsinfrastruktur; private e-ID-udbydere risikerer fortrængning; spørgsmål om datasuverænitet resterer
+- 🟠 **Skatteverkets befolkningsregister** (HD03261): Udvidede efterforsknings- og dataindsamlingsbeføjelser i folkbokföring — spænding mellem borgerrettigheder og svindelbekæmpelse
+- 🟡 **Politisk transparens** (HD03258): KU-udvalget; skærpede regler om partifinansieringsoplysning — reel reform, men omfanget begrænset til formelle partiprocesser
+- 🟢 **Stikprøve af husholdningsgæld** (HD03255): Teknisk makroprudentiel foranstaltning for gældsovervågning; lav politisk relevans
+
+### Vigtigste fremtidige trigger
+
+**Overvåg**: Lagrådets svar på HD03267 og HD03261 (forventet inden 4–6 uger efter indsendelse). Et kritisk yttrande fra Lagrådet på forfatningsmæssigt grundlag vil skabe en koalitionskrise mellem M/KD og SD, potentielt forsinket eller ændret sikkerhedsklynge. Overvåg: lagrådet.se-henvisninger ugen for 2026-06-01.
+
+### Konfidens
+
+**HØJ** — Analyse baseret på primære forslagstekster (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255) hentet fra data.riksdagen.se 2026-05-20. Konteksten for regeringsskiftet (Lotta Edholm → Ebba Busch statsminister) er udledt af dokumenternes underskriftssekvens; **MEDIUM** konfidens om den præcise overgangsdato.
+
+### Mermaid efterretningskort
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_de.md -->
+
+### Zusammenfassung
+
+Schwedens Busch-Regierung legte zwischen dem 30. April und dem 7. Mai 2026 sieben große Regierungspropositionen vor, die zusammen die ambitionierteste Ausweitung staatlicher Sicherheitsbefugnisse seit einem Jahrzehnt darstellen. Das Cluster konzentriert sich auf die Kriminalisierung qualifizierter Sicherheitsbedrohungen durch Ausländer (HD03267), die Institutionalisierung der Vollstreckung von Abschiebungsentscheidungen (HD03263), die Verschärfung der Leumund-Anforderungen für Aufenthaltsgenehmigungen (HD03264), die Erweiterung der Überwachungsbefugnisse des Skatteverket im Bevölkerungsregister (HD03261) sowie den Aufbau einer obligatorischen staatlichen E-Identitätsinfrastruktur (HD03250). Die Gesetzgebung zur politischen Transparenz (HD03258) bietet ein Gegengewicht, reicht aber letztlich nicht aus, um die bürgerrechtlichen Risiken des Sicherheitsclusters aufzuwiegen. Der Regierungswechsel — Lotta Edholm als geschäftsführende Premierministerin Ende April, Ebba Busch unterzeichnet die Mai-Propositionen formal am 7. — fällt mit dieser Gesetzgebungsbeschleunigung zusammen und wirft Fragen zur Koalitionsneuausrichtung und zum SD-Einfluss auf die Agenda auf. Der IWF-Weltwirtschaftsausblick vom April 2026 prognostiziert ein schwedisches BIP-Wachstum von ca. 2,2 % für 2026 bei bescheidenem fiskalischen Spielraum; der wirtschaftliche Druck gibt der Regierung politischen Rückenwind, Sicherheit vor Strukturreformen zu priorisieren.
+
+### Entscheidungen, die dieses Dokument unterstützt
+
+1. **Strategieteams der Opposition (S, MP, V, C)**: Bestimmen Sie, welche Propositionen im Ausschuss angefochten werden, über welche Änderungsanträge verhandelt wird und wo Minderheitenvorbehalte einzulegen sind — HD03267 und HD03261 tragen das höchste verfassungsrechtliche Risiko und verdienen Anträge auf Lagrådet-Prüfung.
+2. **Zivilgesellschaft und Rechtsorganisationen (RFSU, Civil Rights Defenders, Amnesty Schweden)**: Priorisieren Sie Lobbyressourcen auf HD03267 (Risiko der Inhaftierung ohne Gerichtskontrolle) und HD03261 (Massenüberwachung von Bevölkerungsdaten).
+3. **Wirtschaft (Tech Sverige, SN)**: Bewerten Sie HD03250 (staatliche E-Identität) sowohl als Regulierungsbelastung als auch als Wettbewerbschance — private Identitätsanbieter drohen verdrängt oder zu Pflichtintegrationen gezwungen zu werden.
+4. **EU-Überwachungsorgane (FRA, Netzwerke der Venedig-Kommission)**: HD03267 und HD03264 testen Schwedens Einhaltung von EMRK Art. 8 (Privatsphäre) und Art. 3 (Non-Refoulement); eine frühzeitige Warnung ist angebracht.
+
+### 60-Sekunden-Geheimdienstpunkte
+
+- 🔴 **Sicherheitsbedrohungen durch Ausländer** (HD03267): Erweiterte Haft-/Ausweisungsgründe für Nicht-EU-Bürger, die als „qualifizierte Sicherheitsbedrohungen" eingestuft werden — KU/Lagrådet-Prüfung wahrscheinlich; EMRK Art. 3/8-Risiko HOCH
+- 🔴 **Abschiebungsvollstreckung** (HD03263): Neue Verwaltungsinstrumente zur Beschleunigung von Ausweisungsverfahren, einschließlich Mechanismen für erzwungene Rückkehrkooperation — spiegelt die harte Auslegung der EU-Rückführungsrichtlinie wider
+- 🟠 **Leumund-Anforderungen für Aufenthaltsgenehmigungen** (HD03264): Strengere Leumund-Anforderungen schaffen einen weiten Verwaltungsspielraum — Risiko diskriminierender Anwendung
+- 🟠 **Staatliche E-Identität** (HD03250): Obligatorische staatlich ausgegebene digitale Identitätsinfrastruktur; private E-Identitätsanbieter drohen verdrängt zu werden; Fragen der Datensouveränität bleiben offen
+- 🟠 **Skatteverket-Bevölkerungsregister** (HD03261): Erweiterte Ermittlungs- und Datenerhebungsbefugnisse im Einwohnermelderegister — Spannung zwischen Bürgerrechten und Betrugsbekämpfung
+- 🟡 **Politische Transparenz** (HD03258): KU-Ausschuss; verschärfte Regeln zur Offenlegung von Parteienfinanzierung — echte Reform, aber Umfang auf formale Parteiprozesse beschränkt
+- 🟢 **Haushaltsverschuldungsstichprobe** (HD03255): Technische makroprudenzielle Maßnahme zur Schuldenüberwachung; geringe politische Bedeutung
+
+### Wichtigster künftiger Auslöser
+
+**Beobachten**: Lagrådet-Reaktion auf HD03267 und HD03261 (erwartet innerhalb von 4–6 Wochen nach Einreichung). Ein kritisches Yttrande des Lagrådet aus verfassungsrechtlichen Gründen würde eine Koalitionskrise zwischen M/KD und SD auslösen und das Sicherheitscluster möglicherweise verzögern oder verändern. Überwachen: lagrådet.se-Überweisungen in der Woche vom 2026-06-01.
+
+### Vertrauensniveau
+
+**HOCH** — Analyse auf Grundlage primärer Propositionstexte (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255), abgerufen von data.riksdagen.se am 2026-05-20. Der Kontext des Regierungswechsels (Lotta Edholm → Ebba Busch Premierministerin) wurde aus der Unterzeichnungsreihenfolge der Dokumente erschlossen; **MITTEL**-Vertrauen bezüglich des genauen Übergangsdatums.
+
+### Mermaid-Geheimdienstkarte
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_es.md -->
+
+### Resumen
+
+El gobierno Busch de Suecia presentó siete proposiciones legislativas importantes entre el 30 de abril y el 7 de mayo de 2026, que representan colectivamente la expansión más ambiciosa de los poderes de seguridad del Estado en una década. El clúster se centra en la criminalización de extranjeros que representan amenazas de seguridad cualificadas (HD03267), la institucionalización de la ejecución de decisiones de deportación (HD03263), el endurecimiento de los requisitos de conducta para los permisos de residencia (HD03264), la ampliación de los poderes de vigilancia del Skatteverket en el registro de población (HD03261) y el despliegue de una infraestructura de identidad electrónica estatal obligatoria (HD03250). La legislación sobre transparencia política (HD03258) ofrece un contrapeso, pero resulta insuficiente para compensar el riesgo para las libertades civiles creado por el clúster de seguridad. El cambio de gobierno — Lotta Edholm como Primera Ministra en funciones a finales de abril, Ebba Busch firmando formalmente las proposiciones de mayo el día 7 — coincide con esta aceleración legislativa, planteando preguntas sobre la realineación de la coalición y la influencia del SD en la agenda. Las Perspectivas de la Economía Mundial del FMI de abril de 2026 proyectan un crecimiento del PIB sueco de aproximadamente el 2,2 % para 2026 con un espacio fiscal modesto; las presiones económicas dan al gobierno cobertura política para priorizar la seguridad sobre las reformas estructurales.
+
+### Decisiones que este documento apoya
+
+1. **Equipos de estrategia de la oposición (S, MP, V, C)**: Determinar qué proposiciones impugnar en comité, sobre cuáles negociar enmiendas y dónde presentar reservas minoritarias — HD03267 y HD03261 conllevan el mayor riesgo constitucional y merecen solicitudes de revisión por parte del Lagrådet.
+2. **Sociedad civil y organizaciones jurídicas (RFSU, Civil Rights Defenders, Amnesty Suecia)**: Priorizar los recursos de incidencia en HD03267 (riesgo de detención sin control judicial) y HD03261 (vigilancia masiva de datos de población).
+3. **Comunidad empresarial (Tech Sverige, SN)**: Evaluar HD03250 (identidad electrónica estatal) tanto como carga regulatoria como oportunidad competitiva — los proveedores de identidad privados se enfrentan al desplazamiento o a la integración obligatoria.
+4. **Órganos de supervisión de la UE (FRA, redes de la Comisión de Venecia)**: HD03267 y HD03264 ponen a prueba el cumplimiento de Suecia con el CEDH art. 8 (privacidad) y art. 3 (no devolución); se justifican alertas tempranas.
+
+### Puntos de inteligencia en 60 segundos
+
+- 🔴 **Amenazas de seguridad extranjeras** (HD03267): Motivos ampliados para la detención/expulsión de nacionales no comunitarios considerados «amenazas de seguridad cualificadas» — revisión KU/Lagrådet probable; riesgo CEDH art. 3/8 ALTO
+- 🔴 **Ejecución de deportaciones** (HD03263): Nuevas herramientas administrativas para acelerar los procedimientos de expulsión, incluyendo mecanismos de cooperación de retorno forzoso — refleja interpretaciones de línea dura de la directiva de retorno de la UE
+- 🟠 **Requisitos de conducta para permisos de residencia** (HD03264): Requisitos de conducta más estrictos crean una amplia discrecionalidad administrativa — riesgo de aplicación discriminatoria
+- 🟠 **Identidad electrónica estatal** (HD03250): Infraestructura de identidad digital obligatoria emitida por el Estado; los proveedores de e-ID privados se enfrentan al desplazamiento; las cuestiones de soberanía de datos permanecen
+- 🟠 **Registro de población del Skatteverket** (HD03261): Poderes de investigación y recopilación de datos ampliados en el folkbokföring — tensión entre libertades civiles y prevención del fraude
+- 🟡 **Transparencia política** (HD03258): Comité KU; reglas reforzadas sobre divulgación de financiación política — reforma genuina pero alcance limitado a procesos formales de partidos
+- 🟢 **Muestreo de deuda de hogares** (HD03255): Medida macroprudencial técnica para la supervisión de la deuda; baja relevancia política
+
+### Principal desencadenante futuro
+
+**Vigilar**: Respuesta del Lagrådet a HD03267 y HD03261 (esperada dentro de 4–6 semanas tras la presentación). Un yttrande crítico del Lagrådet por motivos constitucionales crearía una crisis de coalición entre M/KD y SD, retrasando o modificando potencialmente el clúster de seguridad. Supervisar: las remisiones de lagrådet.se la semana del 2026-06-01.
+
+### Nivel de confianza
+
+**ALTO** — Análisis basado en los textos primarios de las proposiciones (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255) recuperados de data.riksdagen.se el 2026-05-20. El contexto del cambio de gobierno (Lotta Edholm → Ebba Busch Primera Ministra) se infiere de la secuencia de firma de documentos; **MEDIO** nivel de confianza sobre la fecha exacta de la transición.
+
+### Mapa de inteligencia Mermaid
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_fi.md -->
+
+### Tiivistelmä
+
+Ruotsin Busch-hallitus toimitti seitsemän merkittävää hallituksen esitystä 30. huhtikuuta ja 7. toukokuuta 2026 välisenä aikana. Ne edustavat yhdessä kunnianhimoisinta valtion turvallisuusvaltuuksien laajentamista vuosikymmeneen. Kokonaisuus keskittyy pätevöitettyjen turvallisuusuhkien kriminalisointiin ulkomaalaisten osalta (HD03267), karkotuspäätösten täytäntöönpanon institutionalisointiin (HD03263), oleskelulupien nuhteettomuu­s­vaatimusten tiukentamiseen (HD03264), Verohallinnon väestörekisterin valvontavaltuuksien laajentamiseen (HD03261) sekä pakollisen valtion sähköisen henkilöllisyysinfrastruktuurin käyttöönottoon (HD03250). Poliittista avoimuutta koskeva lainsäädäntö (HD03258) tarjoaa vastavoimaa, mutta se ei riitä kumoamaan turvallisuuskokonaisuuden kansalaisvapausriskejä. Hallituksen vaihtuminen — Lotta Edholm vt. pääministerinä huhtikuun lopulla, Ebba Busch allekirjoittaa toukokuun esitykset virallisesti 7. päivänä — osuu samaan ajankohtaan tämän lainsäädäntökiihtymisen kanssa ja herättää kysymyksiä koalition uudelleenlinjauksesta ja SD:n vaikutusvallasta esityslistaan. IMF:n maailmantalouden ennuste huhtikuulta 2026 ennustaa Ruotsin BKT:n kasvun olevan noin 2,2 % vuodelle 2026 vaatimattomalla finanssipoliittisella liikkumavaralla; taloudellinen paine antaa hallitukselle poliittisen suojan priorisoida turvallisuus rakenteellisten uudistusten sijaan.
+
+### Päätökset, joita tämä asiakirja tukee
+
+1. **Opposition strategiatiimit (S, MP, V, C)**: Päättäkää, mitä esityksiä riitautetaan valiokunnassa, mistä muutoksista neuvotellaan ja mihin jätetään vähemmistövaraumat — HD03267 ja HD03261 sisältävät suurimman perustuslaillisen riskin ja ansaitsevat Lagrådets-tarkastelupyynnöt.
+2. **Kansalaisyhteiskunta ja juridiset järjestöt (RFSU, Civil Rights Defenders, Amnesty Sverige)**: Priorisoi edunvalvontaresurssit HD03267:ään (riski säilöönottoon ilman tuomioistuimen päätöstä) ja HD03261:een (väestötietojen joukkovalvonta).
+3. **Elinkeinoelämä (Tech Sverige, SN)**: Arvioi HD03250 (valtion sähköinen henkilöllisyys) sekä sääntelytaakkana että kilpailumahdollisuutena — yksityiset henkilöllisyyden­tarjoajat kohtaavat syrjäytymisen tai pakollisen integraation.
+4. **EU:n valvontaelimet (FRA, Venetsian komission verkostot)**: HD03267 ja HD03264 testaavat Ruotsin vaatimustenmukaisuutta EIS 8 artiklan (yksityisyys) ja 3 artiklan (palautuskielto) suhteen; varhainen hälytys on perusteltua.
+
+### 60 sekunnin tiedusteluluotit
+
+- 🔴 **Turvallisuusuhat ulkomaalaisille** (HD03267): Laajennetut säilöönotto-/karkotusperusteet ei-EU-kansalaisille, joita pidetään "pätevöitettyinä turvallisuusuhkina" — KU/Lagrådet-tarkastelu todennäköinen; EIS 3/8-riski KORKEA
+- 🔴 **Karkotuksen täytäntöönpano** (HD03263): Uudet hallinnolliset välineet karkotusmenettelyn nopeuttamiseksi, mukaan lukien pakollisen paluuyhteistyön mekanismit — heijastaa EU:n paluudirektiivin tiukkaa tulkintaa
+- 🟠 **Oleskeluluvan nuhteettomuu­s­vaatimukset** (HD03264): Tiukemmat nuhteettomuu­s­vaatimukset luovat laajan hallinnollisen harkinnanvaraisen toimivallan — diskriminoivan soveltamisen riski
+- 🟠 **Valtion sähköinen henkilöllisyys** (HD03250): Pakollinen valtion myöntämä digitaalinen henkilöllisyysinfrastruktuuri; yksityiset sähköisen henkilöllisyyden tarjoajat kohtaavat syrjäytymisen; datasuve­reeniteettikysymykset jäävät avoimiksi
+- 🟠 **Verohallinnon väestörekisteri** (HD03261): Laajennetut tutkinta- ja tiedonkeruuvaltuudet väestökirjanpidossa — jännite kansalaisvapauksien ja petostentorjunnan välillä
+- 🟡 **Poliittinen avoimuus** (HD03258): KU-valiokunta; tiukennetut säännöt puolueen rahoituksen ilmoittamisesta — aito uudistus, mutta laajuus rajoittuu muodollisiin puolueprosesseihin
+- 🟢 **Kotitalouksien velkanäyte** (HD03255): Tekninen makrova­kauteen liittyvä toimenpide velanvalvontaa varten; alhainen poliittinen merkitys
+
+### Tärkein tuleva laukaisin
+
+**Seuraa**: Lagrådets-lausunto HD03267:een ja HD03261:een (odotetaan 4–6 viikon kuluessa toimittamisesta). Kriittinen yttrande Lagrådets:lta perustuslaillisilla perusteilla loisi koalitiokriisin M/KD:n ja SD:n välille, mahdollisesti viivästyttäen tai muuttaen turvallisuuskokonaisuutta. Seuraa: lagrådet.se-lausunnot viikolla 2026-06-01.
+
+### Luotettavuus
+
+**KORKEA** — Analyysi perustuu ensisijaisten esitysteksteihin (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255), jotka on haettu data.riksdagen.se:stä 2026-05-20. Hallituksen vaihtumisen konteksti (Lotta Edholm → Ebba Busch pääministeri) on johdettu asiakirjojen allekirjoitussekvenssistä; **KESKITASO** luotettavuus tarkan siirtymispäivän osalta.
+
+### Mermaid-tiedustelukartta
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_fr.md -->
+
+### Résumé
+
+Le gouvernement Busch suédois a soumis sept propositions législatives majeures entre le 30 avril et le 7 mai 2026, représentant collectivement l'expansion la plus ambitieuse des pouvoirs sécuritaires de l'État en une décennie. Le cluster se concentre sur la criminalisation des ressortissants étrangers représentant des menaces sécuritaires qualifiées (HD03267), l'institutionnalisation de l'exécution des décisions d'expulsion (HD03263), le renforcement des conditions de moralité pour les permis de séjour (HD03264), l'extension des pouvoirs de surveillance du Skatteverket dans le registre de la population (HD03261), et le déploiement d'une infrastructure obligatoire d'identité numérique étatique (HD03250). La législation sur la transparence politique (HD03258) offre un contrepoids, mais s'avère insuffisante pour compenser les risques pour les libertés civiles créés par le cluster sécuritaire. Le changement de gouvernement — Lotta Edholm en tant que Premier ministre par intérim fin avril, Ebba Busch signant formellement les propositions de mai le 7 — coïncide avec cette accélération législative, soulevant des questions sur la réalignement de la coalition et l'influence du SD sur l'agenda. Les Perspectives économiques mondiales du FMI d'avril 2026 projettent une croissance du PIB suédois d'environ 2,2 % pour 2026 avec un espace budgétaire modeste ; les pressions économiques offrent au gouvernement une couverture politique pour prioriser la sécurité sur les réformes structurelles.
+
+### Décisions que ce document soutient
+
+1. **Équipes stratégiques de l'opposition (S, MP, V, C)** : Déterminer quelles propositions contester en commission, sur lesquelles négocier des amendements, et où déposer des réserves minoritaires — HD03267 et HD03261 comportent le risque constitutionnel le plus élevé et méritent des demandes d'examen par le Lagrådet.
+2. **Société civile et organisations juridiques (RFSU, Civil Rights Defenders, Amnesty Suède)** : Prioriser les ressources de plaidoyer sur HD03267 (risque de détention sans contrôle judiciaire) et HD03261 (surveillance de masse des données démographiques).
+3. **Communauté des affaires (Tech Sverige, SN)** : Évaluer HD03250 (identité numérique d'État) comme à la fois une charge réglementaire et une opportunité concurrentielle — les fournisseurs d'identité privés risquent d'être évincés ou soumis à une intégration obligatoire.
+4. **Organes de surveillance de l'UE (FRA, réseaux de la Commission de Venise)** : HD03267 et HD03264 testent la conformité de la Suède avec la CEDH art. 8 (vie privée) et art. 3 (non-refoulement) ; des alertes précoces sont justifiées.
+
+### Points de renseignement en 60 secondes
+
+- 🔴 **Menaces sécuritaires étrangères** (HD03267) : Motifs élargis de détention/expulsion des ressortissants non-UE considérés comme des « menaces sécuritaires qualifiées » — examen KU/Lagrådet probable ; risque CEDH art. 3/8 ÉLEVÉ
+- 🔴 **Exécution des expulsions** (HD03263) : Nouveaux outils administratifs pour accélérer les procédures d'éloignement, y compris les mécanismes de coopération au retour forcé — reflète l'interprétation stricte de la directive européenne sur les retours
+- 🟠 **Conditions de moralité pour permis de séjour** (HD03264) : Des exigences de moralité plus strictes créent un large pouvoir discrétionnaire administratif — risque d'application discriminatoire
+- 🟠 **Identité numérique d'État** (HD03250) : Infrastructure d'identité numérique obligatoire émise par l'État ; les fournisseurs d'identité électronique privés risquent l'éviction ; les questions de souveraineté des données demeurent
+- 🟠 **Registre de population du Skatteverket** (HD03261) : Pouvoirs d'enquête et de collecte de données élargis dans le folkbokföring — tension entre libertés civiles et prévention de la fraude
+- 🟡 **Transparence politique** (HD03258) : Commission KU ; règles renforcées sur la divulgation du financement politique — réforme genuine mais portée limitée aux processus formels des partis
+- 🟢 **Sondage de la dette des ménages** (HD03255) : Mesure macroprudentielle technique pour la surveillance de l'endettement ; faible saillance politique
+
+### Principal déclencheur à venir
+
+**À surveiller** : Réponse du Lagrådet à HD03267 et HD03261 (attendue dans les 4 à 6 semaines suivant la soumission). Un yttrande critique du Lagrådet sur des bases constitutionnelles créerait une crise de coalition entre M/KD et SD, retardant ou modifiant potentiellement le cluster sécuritaire. Surveiller : les renvois lagrådet.se la semaine du 2026-06-01.
+
+### Niveau de confiance
+
+**ÉLEVÉ** — Analyse basée sur les textes primaires des propositions (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255) récupérés sur data.riksdagen.se le 2026-05-20. Le contexte du changement de gouvernement (Lotta Edholm → Ebba Busch Premier ministre) est déduit de la séquence de signature des documents ; **MOYEN** niveau de confiance sur la date précise de la transition.
+
+### Carte de renseignement Mermaid
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# האצת מדינת הביטחון של שוודיה: ממשלת בוש מקדמת הידוק מדיניות ההגירה וארכיטקטורת המעקב הדיגיטלי
+
+### תמצית מנהלים
+
+ממשלת בוש השוודית הגישה שבע הצעות חוק מרכזיות בין ה-30 באפריל ל-7 במאי 2026, המהוות יחד את ההרחבה הנועזת ביותר של סמכויות הביטחון הממלכתיות בעשור. הצרור מתמקד בהפללת זרים המהווים איומי ביטחון מוכשרים (HD03267), במיסוד אכיפת החלטות גירוש (HD03263), בהחמרת דרישות ההתנהגות לאשרות שהייה (HD03264), בהרחבת סמכויות המעקב של רשות המסים (Skatteverket) במרשם האוכלוסין (HD03261), ובהטמעת תשתית זהות אלקטרונית ממלכתית חובה (HD03250). חקיקת שקיפות פוליטית (HD03258) מציעה משקל נגד, אך אינה מספקת לאזן את הסיכונים לחירויות האזרח שהצרור הביטחוני יוצר. החלפת הממשלה — לוטה אדהולם כראשת ממשלה בפועל בסוף אפריל, אבה בוש חותמת רשמית על הצעות מאי ב-7 בו — חופפת להאצה חקיקתית זו ומעלה שאלות לגבי יישור מחדש של הקואליציה והשפעת SD על סדר היום. תחזיות הכלכלה העולמית של קרן המטבע הבינלאומית מאפריל 2026 צופות צמיחת תמ"ג שוודית של כ-2.2% לשנת 2026 עם מרחב פיסקלי מצומצם; לחץ כלכלי מעניק לממשלה כיסוי פוליטי לתת עדיפות לביטחון על פני רפורמות מבניות.
+
+### החלטות שמסמך זה תומך בהן
+
+1. **צוותי אסטרטגיה של האופוזיציה (S, MP, V, C)**: קביעת אילו הצעות לערער עליהן בוועדה, על אילו תיקונים לנהל משא ומתן, והיכן להגיש הסתייגויות מיעוט — HD03267 ו-HD03261 נושאות את הסיכון החוקתי הגבוה ביותר וראויות לבקשות בחינת המועצה המחוקקת (Lagrådet).
+2. **אזרחי החברה וארגונים משפטיים (RFSU, Civil Rights Defenders, אמנסטי שוודיה)**: מיקוד משאבי עריכת דין ב-HD03267 (סיכון למעצר ללא ביקורת שיפוטית) וב-HD03261 (מעקב המוני אחר נתוני אוכלוסין).
+3. **קהילת העסקים (Tech Sverige, SN)**: הערכת HD03250 (זהות אלקטרונית ממלכתית) כנטל רגולטורי וכהזדמנות תחרותית כאחד — ספקי זהות פרטיים עלולים להיות מוחלפים או לעמוד בפני אינטגרציה חובה.
+4. **גופי ניטור של האיחוד האירופי (FRA, רשתות ועדת ונציה)**: HD03267 ו-HD03264 בוחנות את עמידתה של שוודיה באמנה האירופית לזכויות האדם סעיף 8 (פרטיות) וסעיף 3 (אי-הרחקה); אזהרות מוקדמות מוצדקות.
+
+### נקודות מודיעין ב-60 שניות
+
+- 🔴 **איומי ביטחון זרים** (HD03267): הרחבת עילות מעצר/גירוש של אזרחי מדינות שאינן באיחוד האירופי המוגדרים "איומי ביטחון מוכשרים" — בחינת KU/Lagrådet סבירה; סיכון ECHR סעיפים 3/8 **גבוה**
+- 🔴 **אכיפת גירוש** (HD03263): כלים מנהליים חדשים לזירוז הליכי הרחקה, כולל מנגנוני שיתוף פעולה בהחזרה כפויה — משקף פרשנויות קו קשה של הנחיית ההחזרה האירופית
+- 🟠 **דרישות התנהגות לאשרת שהייה** (HD03264): דרישות נהגות מחמירות יוצרות שיקול דעת מנהלי רחב — סיכון ליישום מפלה
+- 🟠 **זהות אלקטרונית ממלכתית** (HD03250): תשתית זהות דיגיטלית ממלכתית חובה; ספקי זהות אלקטרונית פרטיים עלולים להיות מוחלפים; שאלות ריבונות נתונים נותרות פתוחות
+- 🟠 **מרשם האוכלוסין של Skatteverket** (HD03261): הרחבת סמכויות חקירה וגביית נתונים ב-folkbokföring — מתח בין חירויות אזרח ומניעת הונאה
+- 🟡 **שקיפות פוליטית** (HD03258): ועדת KU; כללים מחמירים לגילוי מימון פוליטי — רפורמה אמיתית אך היקפה מוגבל לתהליכי מפלגות פורמליים
+- 🟢 **דגימת חוב משקי בית** (HD03255): אמצעי מקרו-פרודנציאלי טכני לניטור חוב; חשיבות פוליטית נמוכה
+
+### הדק עתידי מרכזי
+
+**לנטר**: תגובת Lagrådet ל-HD03267 ו-HD03261 (צפויה תוך 4–6 שבועות מהגשה). yttrande ביקורתי מ-Lagrådet על בסיס חוקתי יוצר משבר קואליציוני בין M/KD ו-SD, עלול לעכב או לשנות את הצרור הביטחוני. לנטר: הפניות lagrådet.se בשבוע של 2026-06-01.
+
+### רמת אמינות
+
+**גבוהה** — ניתוח מבוסס על טקסטי הצעות ראשוניים (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255) שנשלפו מ-data.riksdagen.se ב-2026-05-20. הקשר החלפת הממשלה (לוטה אדהולם → אבה בוש ראשת ממשלה) מוסק מרצף חתימות המסמכים; **בינוני** אמינות לגבי תאריך המעבר המדויק.
+
+### מפת מודיעין Mermaid
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_ja.md -->
+
+### 要旨
+
+スウェーデンのブッシュ政権は2026年4月30日から5月7日にかけて7つの重要な法案を提出した。これらはまとめて10年来で最も野心的な国家安全保障権限の拡大を意味する。このクラスターは、国家安全保障上の脅威とみなされる外国人の犯罪化（HD03267）、強制退去命令の執行制度化（HD03263）、在留資格の品行要件強化（HD03264）、国税庁（Skatteverket）の人口登録簿における監視権限拡大（HD03261）、および国家発行の電子身分証インフラの義務的導入（HD03250）を中心に据えている。政治的透明性に関する立法（HD03258）は対抗軸を提供するが、安全保障クラスターが生み出す市民的自由リスクを相殺するには不十分だ。4月末にロッタ・エドホルムが首相代行となり、エバ・ブッシュが5月7日付で法案に正式署名するという政権交代は、この立法加速と時期が重なり、連立再編とSD（スウェーデン民主党）のアジェンダへの影響力について疑問を呈している。IMFの2026年4月世界経済見通しはスウェーデンのGDP成長率を2026年に約2.2%と予測し、財政余力は限定的。経済的圧力が政府に構造改革より安全保障を優先する政治的根拠を与えている。
+
+### この文書が支援する意思決定
+
+1. **野党戦略チーム（S、MP、V、C）**: 委員会で争う法案、修正案を交渉する法案、少数意見留保を提出する箇所を決定する。HD03267とHD03261は最高の憲法的リスクを持ち、ラーグロ（Lagrådet）審査請求に値する。
+2. **市民社会・法律組織（RFSU、Civil Rights Defenders、アムネスティ・スウェーデン）**: HD03267（司法審査なしの拘禁リスク）とHD03261（人口データの大量監視）に対する提言リソースを優先せよ。
+3. **経済界（Tech Sverige、SN）**: HD03250（国家e-IDインフラ）を規制負担と競争機会の両面で評価する。民間アイデンティティ提供者は代替または義務的統合に直面する。
+4. **EUの監視機関（FRA、ヴェネツィア委員会ネットワーク）**: HD03267とHD03264は、スウェーデンのECHR第8条（プライバシー）および第3条（ノン・ルフールマン）への準拠を試す。早期警戒が求められる。
+
+### 60秒インテリジェンス要点
+
+- 🔴 **外国人安全脅威** (HD03267): EU非加盟国籍者で「適格な安全脅威」とみなされる者の拘禁/追放根拠を拡大——KU/Lagrådet審査が濃厚；ECHR第3/8条リスク**高**
+- 🔴 **強制退去執行** (HD03263): 強制送還協力メカニズムを含む退去手続きを加速する新たな行政ツール——EU帰還指令の強硬解釈を反映
+- 🟠 **在留資格の品行要件** (HD03264): 厳格な品行要件が広範な行政裁量を生む——差別的適用のリスク
+- 🟠 **国家電子ID** (HD03250): 国家発行の義務的デジタル身分証インフラ；民間e-ID提供者が排除に直面；データ主権問題が残存
+- 🟠 **スカッテベルケット住民登録** (HD03261): folkbokföringにおける調査・データ収集権限の拡大——市民的自由と不正防止の緊張
+- 🟡 **政治的透明性** (HD03258): KU委員会；政党資金開示規則の強化——真の改革だが範囲は公式な政党プロセスに限定
+- 🟢 **家計債務サンプリング** (HD03255): 債務監視のための技術的マクロプルーデンス措置；政治的重要性低
+
+### 最重要な将来のトリガー
+
+**注目**: HD03267とHD03261に対するLagrådet（ラーグロ）の回答（提出から4～6週以内に予定）。Lagrådetが憲法上の理由で批判的なyttrande（意見書）を出せば、M/KDとSDの間に連立危機が生じ、安全保障クラスターの遅延または修正につながる可能性がある。監視：2026-06-01週のlagrådet.se審議付託。
+
+### 信頼度
+
+**高い** — 分析はdata.riksdagen.seから2026-05-20に取得した一次法案テキスト（HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255）に基づく。政権交代の文脈（ロッタ・エドホルム → エバ・ブッシュ首相）は文書の署名順序から推論；移行正確日については**中程度**の信頼度。
+
+### Mermaid インテリジェンスマップ
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_ko.md -->
+
+### 핵심 요약
+
+스웨덴 부시 정부는 2026년 4월 30일부터 5월 7일 사이에 7개의 주요 법안을 제출했으며, 이는 집합적으로 10년 만에 가장 야심찬 국가 안보 권한 확대를 나타낸다. 이 묶음 법안은 '적격 안보 위협' 외국인 형사화(HD03267), 추방 결정 집행 제도화(HD03263), 거주 허가 품행 요건 강화(HD03264), 인구 등록부에 대한 스카테베르켓(Skatteverket)의 감시 권한 확대(HD03261), 의무적 국가 전자 신원 인프라 구축(HD03250)을 중심으로 한다. 정치적 투명성 법안(HD03258)이 균형추 역할을 제공하지만, 안보 묶음이 초래하는 시민 자유 위험을 상쇄하기에는 충분하지 않다. 4월 말 로타 에드홀름의 총리 권한대행, 5월 7일 에바 부시의 공식 서명이라는 정권 교체가 이 입법 가속화와 맞물려 연정 재편 및 SD(스웨덴민주당)의 의제 영향력에 대한 의문을 제기한다. IMF 세계경제전망(2026년 4월)은 스웨덴 GDP 성장률을 2026년 약 2.2%로 전망하며 재정 여력은 제한적이다. 경제적 압박이 정부에 구조 개혁보다 안보를 우선시할 정치적 명분을 제공하고 있다.
+
+### 이 문서가 지원하는 결정
+
+1. **야당 전략팀(S, MP, V, C)**: 위원회에서 다툴 법안, 수정안을 협상할 법안, 소수 의견서를 제출할 곳 결정 — HD03267과 HD03261은 가장 높은 헌법적 위험을 가지며 라그로뎃(Lagrådet) 심사 요청이 필요하다.
+2. **시민 사회·법률 기관(RFSU, Civil Rights Defenders, 앰네스티 스웨덴)**: HD03267(사법 심사 없는 구금 위험)과 HD03261(인구 데이터 대량 감시)에 대한 옹호 자원을 우선 배분하라.
+3. **경제계(Tech Sverige, SN)**: HD03250(국가 전자 신원)을 규제 부담과 경쟁 기회 양면에서 평가하라 — 민간 신원 제공자는 대체 또는 의무 통합에 직면할 수 있다.
+4. **EU 감독 기관(FRA, 베니스위원회 네트워크)**: HD03267과 HD03264는 스웨덴의 ECHR 제8조(사생활) 및 제3조(강제 송환 금지) 준수를 시험한다. 조기 경보가 필요하다.
+
+### 60초 인텔리전스 포인트
+
+- 🔴 **외국인 안보 위협** (HD03267): '적격 안보 위협'으로 지목된 비EU 국적자에 대한 구금/추방 근거 확대 — KU/Lagrådet 심사 가능성 높음; ECHR 제3/8조 위험 **높음**
+- 🔴 **추방 집행** (HD03263): 강제 귀환 협력 메커니즘을 포함한 추방 절차 가속화 신규 행정 도구 — EU 귀환 지침의 강경 해석 반영
+- 🟠 **거주 허가 품행 요건** (HD03264): 더 엄격한 품행 요건으로 광범위한 행정 재량 발생 — 차별적 적용 위험
+- 🟠 **국가 전자 신원** (HD03250): 의무적 국가 발행 디지털 신원 인프라; 민간 전자 신원 제공자 대체 위험; 데이터 주권 문제 미해결
+- 🟠 **스카테베르켓 인구 등록부** (HD03261): folkbokföring 내 조사·데이터 수집 권한 확대 — 시민 자유와 사기 방지 사이의 긴장
+- 🟡 **정치적 투명성** (HD03258): KU 위원회; 정치 자금 공개 규칙 강화 — 실질적 개혁이지만 범위는 공식 정당 절차에 한정
+- 🟢 **가계 부채 표본 조사** (HD03255): 부채 모니터링을 위한 기술적 거시건전성 조치; 정치적 중요도 낮음
+
+### 핵심 미래 트리거
+
+**주시**: HD03267 및 HD03261에 대한 Lagrådet 응답(제출 후 4~6주 내 예상). Lagrådet가 헌법적 근거로 비판적 yttrande를 발표하면 M/KD와 SD 사이에 연정 위기가 발생하여 안보 묶음을 지연하거나 수정할 수 있다. 모니터: 2026-06-01 주의 lagrådet.se 회부 사항.
+
+### 신뢰도
+
+**높음** — 분석은 data.riksdagen.se에서 2026-05-20에 검색한 1차 법안 텍스트(HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255)에 기반함. 정권 교체 맥락(로타 에드홀름 → 에바 부시 총리)은 문서 서명 순서에서 추론됨; 정확한 전환 날짜에 대해 **중간** 신뢰도.
+
+### Mermaid 인텔리전스 지도
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_nl.md -->
+
+### Samenvatting
+
+De Busch-regering van Zweden diende tussen 30 april en 7 mei 2026 zeven grote proposities in die gezamenlijk de meest ambitieuze uitbreiding van staatsveiligheidsbevoegdheden in een decennium vormen. Het cluster richt zich op de criminalisering van buitenlanders die als gekwalificeerde veiligheidsbedreiging worden beschouwd (HD03267), de institutionalisering van de handhaving van uitwijzingsbeslissingen (HD03263), de aanscherping van de levenswandel-eisen voor verblijfsvergunningen (HD03264), de uitbreiding van de toezichtsbevoegdheden van de Skatteverket in het bevolkingsregister (HD03261) en de uitrol van een verplichte staatse e-identiteitsinfrastructuur (HD03250). Wetgeving over politieke transparantie (HD03258) biedt een tegenwicht, maar volstaat uiteindelijk niet om de risico's voor de burgerrechten die het veiligheidscluster met zich meebrengt, te compenseren. De regeringswisseling — Lotta Edholm als waarnemend premier eind april, Ebba Busch die de mei-proposities formeel op de 7e ondertekent — valt samen met deze wetgevingsversnelling en roept vragen op over coalitieheroriëntering en de invloed van SD op de agenda. Het IMF Wereld Economisch Vooruitzicht van april 2026 projecteert een Zweedse bbp-groei van circa 2,2 % voor 2026 met beperkte begrotingsruimte; de economische druk geeft de regering politieke dekking om veiligheid boven structurele hervormingen te stellen.
+
+### Beslissingen die dit document ondersteunt
+
+1. **Strategieteams van de oppositie (S, MP, V, C)**: Bepaal welke proposities in commissie betwist worden, over welke amendementen onderhandeld wordt en waar minderheidsbehouden worden ingediend — HD03267 en HD03261 dragen het hoogste constitutionele risico en verdienen verzoeken om Lagrådet-toetsing.
+2. **Maatschappelijk middenveld en juridische organisaties (RFSU, Civil Rights Defenders, Amnesty Zweden)**: Prioriteer lobbyresources op HD03267 (risico op detentie zonder rechterlijke toetsing) en HD03261 (massabewaking van bevolkingsgegevens).
+3. **Bedrijfsleven (Tech Sverige, SN)**: Beoordeel HD03250 (staatse e-identiteit) zowel als regulatoire last als als concurrentiemogelijkheid — private identiteitsaanbieders lopen het risico te worden verdrongen of verplicht te integreren.
+4. **EU-toezichthouders (FRA, netwerken van de Commissie van Venetië)**: HD03267 en HD03264 testen de naleving door Zweden van EVRM art. 8 (privacy) en art. 3 (non-refoulement); vroege waarschuwingen zijn gerechtvaardigd.
+
+### 60-seconden inlichtingenpunten
+
+- 🔴 **Veiligheidsbedreigende buitenlanders** (HD03267): Uitgebreide gronden voor detentie/uitzetting van niet-EU-onderdanen die als "gekwalificeerde veiligheidsbedreigingen" worden beschouwd — KU/Lagrådet-toetsing waarschijnlijk; EVRM art. 3/8-risico HOOG
+- 🔴 **Handhaving uitzetting** (HD03263): Nieuwe administratieve instrumenten om uitwijzingsprocedures te versnellen, inclusief mechanismen voor gedwongen terugkeersamenwerking — weerspiegelt harde interpretaties van de EU-terugkeerrichtlijn
+- 🟠 **Levenswandel-eisen verblijfsvergunning** (HD03264): Strengere levenswandel-eisen creëren ruime administratieve beoordelingsruimte — risico op discriminerende toepassing
+- 🟠 **Staatse e-identiteit** (HD03250): Verplichte staatelijk uitgegeven digitale identiteitsinfrastructuur; private e-ID-aanbieders lopen het risico te worden verdrongen; vragen over datasoevereiniteit blijven
+- 🟠 **Skatteverket bevolkingsregister** (HD03261): Uitgebreide onderzoeks- en gegevensverzamelingsbevoegdheden in de folkbokföring — spanning tussen burgerrechten en fraudebestrijding
+- 🟡 **Politieke transparantie** (HD03258): KU-commissie; aangescherpte regels voor openbaarmaking van politieke financiering — echte hervorming maar reikwijdte beperkt tot formele partijprocessen
+- 🟢 **Steekproef huishoudsschulden** (HD03255): Technische macroprudentiële maatregel voor schuldbewaking; lage politieke relevantie
+
+### Belangrijkste toekomstige trigger
+
+**Monitor**: Lagrådet-reactie op HD03267 en HD03261 (verwacht binnen 4–6 weken na indiening). Een kritisch yttrande van het Lagrådet op constitutionele gronden zou een coalitiecrisis tussen M/KD en SD veroorzaken, wat mogelijk leidt tot vertraging of wijziging van het veiligheidscluster. Monitor: lagrådet.se-verwijzingen in de week van 2026-06-01.
+
+### Betrouwbaarheidsniveau
+
+**HOOG** — Analyse gebaseerd op primaire propositieteksten (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255) opgehaald van data.riksdagen.se op 2026-05-20. De context van de regeringswisseling (Lotta Edholm → Ebba Busch premier) is afgeleid uit de ondertekeningssequentie van documenten; **MEDIUM** betrouwbaarheid over de exacte overgansdatum.
+
+### Mermaid inlichtingenkaart
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_no.md -->
+
+### Sammendrag
+
+Busch-regjeringen la frem syv store proposisjoner mellom 30. april og 7. mai 2026 som samlet representerer den mest ambisiøse utvidelsen av statlige sikkerhetsmyndigheter på et tiår. Klyngen dreier seg om kriminalisering av kvalifiserte sikkerhetstrusler mot utlendinger (HD03267), institusjonalisering av håndhevelse av utsendelsesvedtak (HD03263), innstramming av vandel-kravene for oppholdstillatelse (HD03264), utvidelse av Skatteverkets overvåkingsbeføyelser i befolkningsregisteret (HD03261), og utrulling av obligatorisk statlig e-identitetsinfrastruktur (HD03250). Lovgivning om politisk åpenhet (HD03258) gir en motvekt, men er ikke tilstrekkelig til å oppveie de borgerrettslige risikoene som sikkerhetsklyngen skaper. Regjeringsskiftet — Lotta Edholm som fungerende statsminister i slutten av april, Ebba Busch som formelt undertegner mai-proposisjonene den 7. — faller sammen med denne lovgivningsakselereringen og reiser spørsmål om koalisjonstilpasninger og SD's innflytelse på dagsordenen. IMF WEO apr-2026 anslår norsk BNP-vekst på ca. 2,2 % for 2026 med beskjedent finanspolitisk handlingsrom; det økonomiske presset gir regjeringen politisk dekning til å prioritere sikkerhet fremfor strukturreformer.
+
+### Beslutninger dette dokumentet støtter
+
+1. **Opposisjonens strategiteam (S, MP, V, C)**: Avgjør hvilke proposisjoner som skal bestrides i komité, hvilke endringsforslag som skal forhandles om, og hvor det skal fremmes mindretallsmerknader — HD03267 og HD03261 bærer størst konstitusjonell risiko og fortjener anmodninger om Lagrådets prøving.
+2. **Sivilsamfunn og juridiske organisasjoner (RFSU, Civil Rights Defenders, Amnesty Sverige)**: Prioriter påvirkningsressurser på HD03267 (risiko for frihetsberøvelse uten domstolsprøving) og HD03261 (masseovervåking av befolkningsdata).
+3. **Næringslivet (Tech Sverige, SN)**: Vurder HD03250 (statlig e-identitet) som både regulatorisk byrde og konkurransemulighet — private identitetsleverandører risikerer fortrenging eller tvungen integrasjon.
+4. **EUs tilsynsorganer (FRA, Veneziakommisjonens nettverk)**: HD03267 og HD03264 tester Sveriges overholdelse av EMK art. 8 (privatliv) og art. 3 (non-refoulement); tidlig varsling er berettiget.
+
+### 60-sekunders etterretningspunkter
+
+- 🔴 **Sikkerhetstrusler mot utlendinger** (HD03267): Utvidede grunnlag for frihetsberøvelse/utvisning av ikke-EU-borgere vurdert som «kvalifiserte sikkerhetstrusler» — KU/Lagrådet-prøving sannsynlig; EMK art. 3/8-risiko HØY
+- 🔴 **Håndhevelse av utsendelse** (HD03263): Nye administrative verktøy for å fremskynde utvisningsprosedyrer, inkludert mekanismer for tvungen retursamarbeid — speiler EUs harde linje i returdirektivet
+- 🟠 **Vandel-krav til oppholdstillatelse** (HD03264): Strengere vandel-krav skaper bred administrativ skjønnsmyndighet — risiko for diskriminerende anvendelse
+- 🟠 **Statlig e-identitet** (HD03250): Obligatorisk statlig digital identitetsinfrastruktur; private e-ID-leverandører risikerer fortrenging; spørsmål om datasuverenitet gjenstår
+- 🟠 **Skatteverkets befolkningsregister** (HD03261): Utvidede etterforsknings- og datainnsamlingsbeføyelser i folkbokföring — spenning mellom borgerrettigheter og svindelbekjempelse
+- 🟡 **Politisk åpenhet** (HD03258): KU-komitéen; skjerpede regler om partifinansieringsopplysning — reell reform, men omfanget begrenset til formelle partiprosesser
+- 🟢 **Stikkprøve av husholdningsgjeld** (HD03255): Teknisk makroprudensielt tiltak for gjeldsovervåking; lav politisk relevans
+
+### Viktigste fremtidige trigger
+
+**Følg med**: Lagrådets svar på HD03267 og HD03261 (forventet innen 4–6 uker etter innsending). Et kritisk yttrande fra Lagrådet på konstitusjonelt grunnlag vil skape en koalisjonskrise mellom M/KD og SD, potensielt forsinket eller endret sikkerhetsklynge. Overvåk: lagrådet.se-henvisninger uken for 2026-06-01.
+
+### Konfidens
+
+**HØY** — Analyse basert på primære proposisjonstekster (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255) hentet fra data.riksdagen.se 2026-05-20. Konteksten for regjeringsskiftet (Lotta Edholm → Ebba Busch statsminister) er utledet fra dokumentenes underskriftssekvens; **MIDDELS** konfidens om eksakt skiftedato.
+
+### Mermaid etterretningskart
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_sv.md -->
+
+### Sammanfattning
+
+Busch-regeringen lämnade sju stora propositioner mellan 30 april och 7 maj 2026 som sammantaget utgör den mest ambitiösa expansionen av statliga säkerhetsbefogenheter på ett decennium. Klustret handlar om att kriminalisera kvalificerade säkerhetshot mot utlänningar (HD03267), institutionalisera verkställighet av avvisningsbeslut (HD03263), skärpa karaktärskrav för uppehållstillstånd (HD03264), utöka Skatteverkets övervakningsbefogenheter i befolkningsregistret (HD03261), och driftsätta en obligatorisk statlig e-legitimationsinfrastruktur (HD03250). Lagstiftning om politisk transparens (HD03258) erbjuder en motvikt men räcker inte för att uppväga de risker för medborgerliga fri- och rättigheter som säkerhetsklustret skapar. Regeringsskiftet — Lotta Edholm som tillförordnad statsminister i slutet av april, Ebba Busch som formellt undertecknar maj-propositionerna den 7:e — sammanfaller med denna lagstiftningsacceleration och väcker frågor om koalitionsjusteringar och SD:s inflytande på dagordningen. IMF WEO apr-2026 prognostiserar svensk BNP-tillväxt på ca 2,2 % för 2026 med begränsat finanspolitiskt utrymme; det ekonomiska trycket ger regeringen politiskt manöverutrymme att prioritera säkerhet framför strukturreformer.
+
+### Beslut som detta dokument stödjer
+
+1. **Oppositionens strategiteam (S, MP, V, C)**: Avgör vilka propositioner som ska bestridas i utskott, vilka ändringsförslag man ska förhandla om och var man ska inge reservationer — HD03267 och HD03261 bär störst konstitutionell risk och förtjänar begäran om lagrådsgranskning.
+2. **Civilsamhälle och juridiska organisationer (RFSU, Civil Rights Defenders, Amnesty Sverige)**: Prioritera påverkansresurser på HD03267 (risk för förvar utan domstolsprövning) och HD03261 (massövervakning av befolkningsdata).
+3. **Näringsliv (Techsverige, SN)**: Bedöm HD03250 (statlig e-legitimation) som både regelbörda och konkurrensmöjlighet — privata legitimationsleverantörer riskerar trängsel eller tvingad integration.
+4. **EU:s övervakningsorgan (FRA, Venedigkommissionens nätverk)**: HD03267 och HD03264 prövar Sveriges efterlevnad av EKMR art. 8 (integritet) och art. 3 (non-refoulement); tidig varning motiverad.
+
+### 60-sekunders underrättelsepunkter
+
+- 🔴 **Säkerhetshot mot utlänningar** (HD03267): Utökade grunder för förvar/utvisning av tredjelandsmedborgare bedömda som "kvalificerade säkerhetshot" — KU/lagrådsgranskning sannolik; EKMR art. 3/8-risk HÖG
+- 🔴 **Verkställighet av avvisning** (HD03263): Nya administrativa verktyg för att påskynda utvisningsförfaranden, inkl. mekanismer för tvingat återvändandesamarbete — speglar EU:s hårda linje i återvändandedirektivet
+- 🟠 **Karaktärskrav för uppehållstillstånd** (HD03264): Strängare vandelskrav skapar bred administrativ diskretion — risk för diskriminerande tillämpning
+- 🟠 **Statlig e-legitimation** (HD03250): Obligatorisk statlig digital identitetsinfrastruktur; privata e-legitimationsleverantörer riskerar trängsel; frågor om datasuveränitet kvarstår
+- 🟠 **Skatteverkets befolkningsregister** (HD03261): Utökade utrednings- och datainsamlingsbefogenheter i folkbokföringen — spänning mellan medborgerliga fri- och rättigheter och bedrägeriprevention
+- 🟡 **Politisk transparens** (HD03258): KU-utskottet; skärpta regler om redovisning av partifinansiering — genuin reform men begränsad till formella partiprocesser
+- 🟢 **Hushållsskuldstickprov** (HD03255): Teknisk makroprudensiell åtgärd för skuldövervakning; låg politisk relevans
+
+### Viktigaste framtida trigger
+
+**Bevaka**: Lagrådets remissvar på HD03267 och HD03261 (förväntas inom 4–6 veckor efter inlämnande). Ett kritiskt yttrande från Lagrådet på konstitutionell grund skulle skapa en koalitionskris mellan M/KD och SD, potentiellt försenat eller ändrat säkerhetskluster. Bevaka: lagrådet.se-remisser veckan 2026-06-01.
+
+### Förtroende
+
+**HÖG** — Analys baserad på primära propositionstexter (HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255) hämtade från data.riksdagen.se 2026-05-20. Kontext kring regeringsskiftet (Lotta Edholm → Ebba Busch statsminister) är slutledning från dokumentens underteckningssekvens; **MEDEL** förtroende för exakt skiftesdatum.
+
+### Mermaid-underrättelsekarta
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_zh.md -->
+
+### 摘要
+
+瑞典布什政府于2026年4月30日至5月7日之间提交了七项重大法案，这些法案共同代表了十年来最为雄心勃勃的国家安全权力扩张。这一法案群以对被认定为"合格安全威胁"的外国人实施刑事化（HD03267）、对驱逐决定的执行加以制度化（HD03263）、加强居留许可的品行要求（HD03264）、扩展税务局（Skatteverket）在人口登记册中的监控权力（HD03261），以及部署强制性国家电子身份基础设施（HD03250）为核心。政治透明度立法（HD03258）提供了一定制衡，但最终不足以抵消安全法案群对公民自由造成的风险。政府更迭——洛塔·艾德霍尔姆于四月末担任代理首相，埃巴·布什于5月7日正式签署法案——与这一立法加速相伴，引发了外界对联合政府重组及瑞典民主党（SD）对议程影响力的疑问。国际货币基金组织2026年4月《世界经济展望》预测瑞典2026年GDP增长率约为2.2%，财政空间依然有限；经济压力为政府优先安全而非结构性改革提供了政治掩护。
+
+### 本文件支持的决策
+
+1. **反对党战略团队（S、MP、V、C）**：确定哪些法案在委员会中提出异议、哪些修正案进行谈判以及在哪里提交少数意见保留——HD03267和HD03261具有最高的宪法风险，应提请立法委员会（Lagrådet）审查。
+2. **公民社会与法律组织（RFSU、Civil Rights Defenders、国际特赦组织瑞典分会）**：将倡导资源优先投入HD03267（无司法审查拘留风险）和HD03261（人口数据大规模监控）。
+3. **商业界（Tech Sverige、SN）**：将HD03250（国家电子身份）同时评估为监管负担和竞争机遇——私人身份提供商面临被取代或被迫整合的风险。
+4. **欧盟监督机构（FRA、威尼斯委员会网络）**：HD03267和HD03264检验瑞典遵守《欧洲人权公约》第8条（隐私权）和第3条（不驱回原则）的情况；有必要发出早期警告。
+
+### 60秒情报要点
+
+- 🔴 **外国安全威胁**（HD03267）：扩大对被认定为"合格安全威胁"的非欧盟国籍人员实施拘留/驱逐的依据——KU/立法委员会审查可能性高；欧洲人权公约第3/8条风险**高**
+- 🔴 **驱逐执行**（HD03263）：加速驱逐程序的新行政工具，包括强制遣返合作机制——反映欧盟遣返指令的强硬解读
+- 🟠 **居留许可品行要求**（HD03264）：更严格的品行要求赋予广泛的行政自由裁量权——歧视性适用风险
+- 🟠 **国家电子身份**（HD03250）：强制性国家签发数字身份基础设施；私人电子身份提供商面临被取代风险；数据主权问题悬而未决
+- 🟠 **税务局人口登记册**（HD03261）：扩展人口登记（folkbokföring）中的调查和数据收集权力——公民自由与反欺诈之间的张力
+- 🟡 **政治透明度**（HD03258）：KU委员会；加强政治资金披露规则——真正的改革，但范围仅限于正式政党程序
+- 🟢 **家庭债务抽样**（HD03255）：债务监控技术性宏观审慎措施；政治显著性低
+
+### 最重要的未来触发因素
+
+**关注**：立法委员会对HD03267和HD03261的回应（预计提交后4–6周内）。立法委员会以宪法为由发出批评性意见（yttrande）将在M/KD与SD之间引发联合政府危机，可能推迟或修改安全法案群。监控：2026-06-01当周的lagrådet.se立法审议。
+
+### 可信度
+
+**高** — 分析基于2026-05-20从data.riksdagen.se获取的一手法案文本（HD03267, HD03250, HD03258, HD03261, HD03263, HD03264, HD03255）。政府更迭背景（洛塔·艾德霍尔姆 → 埃巴·布什首相）从文件签署顺序推断；对确切过渡日期的置信度为**中等**。
+
+### Mermaid 情报地图
+
+```mermaid
+mindmap
+  root((Busch Govt<br/>Propositions<br/>May 2026))
+    SecurityCluster
+      HD03267:::high
+        QualifiedSecurityThreats
+        ECHRRisk
+      HD03263:::high
+        StrengthenedDeportation
+        EnforcementTools
+      HD03264:::medium
+        CharacterRequirements
+        DiscretionRisk
+    DigitalGovernance
+      HD03250:::medium
+        StateEIdentity
+        PrivateDisplacement
+      HD03261:::medium
+        SkatteverketPowers
+        PopulationRegistry
+    Transparency
+      HD03258:::low
+        PoliticalProcesses
+        FundingDisclosure
+    Fiscal
+      HD03255:::low
+        HouseholdDebt
+        Macroprudential
+
+classDef high fill:#ff4444,color:#fff
+classDef medium fill:#ff8800,color:#fff
+classDef low fill:#44aa44,color:#fff
+
+style SecurityCluster fill:#330000,color:#ffaaaa
+style DigitalGovernance fill:#002200,color:#aaffaa
+style Transparency fill:#000033,color:#aaaaff
+style Fiscal fill:#222200,color:#ffffaa
+```
+
+<!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 7 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2078,6 +3072,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
