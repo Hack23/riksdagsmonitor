@@ -32,7 +32,7 @@ This directory is the **single source of truth** for how GitHub Agentic Workflow
   - **4 analytical supplementary artifacts** (never blocking, optional deep-dives): `pestle-analysis.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `quantitative-swot.md`. Full rules in [`analytical-supplementary-methodology.md`](../../analysis/methodologies/analytical-supplementary-methodology.md).
   - **Tier-C aggregation** produces the same 23 artifacts plus depth multipliers, cross-type sibling-folder citations, prior-cycle PIR ingestion, and a 1 500-word article floor — see [`ext/tier-c-aggregation.md`](ext/tier-c-aggregation.md).
 - **Single blocking gate**: [`05-analysis-gate.md`](05-analysis-gate.md) is the only enforcer. No article may be touched until the gate passes.
-- **AI-FIRST rule** ([`00-base-contract.md`](00-base-contract.md) §5): minimum 2 complete iterations — Pass 1 creates every artifact, Pass 2 reads Pass 1 back and improves every section.
+- **AI-FIRST rule** ([`00-base-contract.md`](00-base-contract.md) §Non-negotiable rules #5): minimum 2 complete iterations — Pass 1 creates every artifact, Pass 2 reads Pass 1 back and improves every section.
 
 ## Module catalogue
 

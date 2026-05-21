@@ -106,7 +106,7 @@ What the renderer does:
 
    `news/$ARTICLE_DATE-$SUBFOLDER-$LANG.html`   (e.g. `news/2026-04-23-propositions-en.html` … `news/2026-04-23-propositions-zh.html`)
 
-Every per-type workflow renders the full 14-language set in one agentic run. The dedicated `news-translate` workflow is re-scoped to produce `executive-brief_<lang>.md` markdown translations of every `analysis/daily/**/executive-brief.md` for the 13 non-English target languages (3 runs/day, default batch 3 sources). It does not touch `news/*.html` and does not back-fill `article.<lang>.md`. See `.github/workflows/news-translate.md`.
+Every per-type workflow renders the full 14-language set in one agentic run. The dedicated `news-translate` workflow is re-scoped to produce `executive-brief_<lang>.md` markdown translations of every `analysis/daily/**/executive-brief.md` for the 13 non-English target languages (3 runs/day, default batch 2 sources — lowered from 3 after run [#26008347629](https://github.com/Hack23/riksdagsmonitor/actions/runs/26008347629) hit Timer A). It does not touch `news/*.html` and does not back-fill `article.<lang>.md`. See `.github/workflows/news-translate.md`.
 
 ## What the AI does **not** do here
 

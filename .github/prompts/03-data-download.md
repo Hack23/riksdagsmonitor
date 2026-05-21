@@ -111,13 +111,13 @@ if [ ! -s "$SCAFFOLD" ]; then
 _(populated by 02-mcp-access.md §Three-attempt connect protocol)_
 
 ## Per-document table
-_(populated by the download step via the \`edit\` tool — never \`cat >>\` and never \`python3\`)_
+_(populated by \`scripts/download-parliamentary-data\` via \`writeManifest()\` — rewrites the manifest in full; agent uses the \`edit\` tool only for post-download amendments)_
 EOF
   echo "✅ scaffold marker written: $SCAFFOLD"
 fi
 ```
 
-The download step appends to this file using the `edit` tool (str-replace at the `## Per-document table` section anchor, or insert under the `_(populated by the download step …)_` placeholder line). See [`01-bash-and-shell-safety.md §File creation & overwrite strategy`](01-bash-and-shell-safety.md). When MCP is unreachable from start, the per-document table stays empty and the MCP-attempts section explains why.
+The scaffold above is **only** a pre-MCP fallback marker. Once `scripts/download-parliamentary-data` succeeds, its `writeManifest()` step (`scripts/download-parliamentary-data/pre-article-analysis/output-writer.ts`) rewrites `data-download-manifest.md` in full via `fs.writeFileSync` — the per-document table is script-generated, not agent-appended. If the agent must subsequently amend the manifest (e.g. recording a Statskontoret / Lagrådet enrichment retrieval added after the script ran), use the `edit` tool against the existing section anchors (`## MCP attempts`, `## Per-document table`, or the `_(populated by …)_` placeholder lines). See [`01-bash-and-shell-safety.md §File creation & overwrite strategy`](01-bash-and-shell-safety.md). When MCP is unreachable from start, the scaffold marker is the *only* version of the file and the MCP-attempts section explains why.
 
 | `IMPROVEMENT_MODE` | Behaviour |
 |--------------------|-----------|
