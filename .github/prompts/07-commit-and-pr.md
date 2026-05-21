@@ -3,12 +3,13 @@
 ## Core rule
 
 > Every run ends with **exactly one** safe-output call:
-> - `safeoutputs___create_pull_request` — the **default and overwhelmingly common** outcome. Always used when any file on disk was created **or** modified, including improvement-mode re-runs that extend prior analysis and re-render `article.md` + HTML.
-> - `safeoutputs___noop` — **last-resort only**. See §No-op policy below for the narrow conditions. **Never** call noop because prior analysis or rendered HTML already exists for this date — that is the trigger for improvement-mode (see `03-data-download.md §Pre-flight`), not for exit.
+> - `safeoutputs___create_pull_request` — the default and overwhelmingly common outcome. Use whenever any file on disk was created or modified, including improvement-mode re-runs that extend prior analysis and re-render `article.md` + HTML.
+> - `safeoutputs___noop` — last-resort only. See §No-op policy below.
 >
-> Do not open checkpoint, heartbeat, or keep-alive PRs. Content committed after the first `create_pull_request` call is lost.
+> Prior analysis / rendered HTML for `$ARTICLE_DATE` is the trigger for **improvement-mode** (`03-data-download.md §Pre-flight`), not for noop.
+> Issue one PR. Content committed after the first `create_pull_request` call is lost.
 
-Workflows declare `safe-outputs.create-pull-request.max: 1`. Attempting a second call is a workflow error.
+Workflows declare `safe-outputs.create-pull-request.max: 1`. A second call is a workflow error.
 
 ## Single-run PR strategy
 
@@ -24,13 +25,13 @@ Every run performs analysis **and** article generation end-to-end and produces *
 PR title: `📰 ${Article Type} — $ARTICLE_DATE`.
 PR labels: `agentic-news` + article-type label.
 
-The dedicated **`news-translate`** workflow has been re-scoped to a markdown-translation mission: each of three daily runs picks up untranslated `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief.md` files and produces `executive-brief_<lang>.md` siblings for the 13 non-English target languages. It does **not** touch `news/*.html`. Per-type workflows produce **all 14 language HTML files** themselves in the same agentic run via the localized executive-brief cascade (see `06-article-generation.md`). Per-type workflows do **not** write `article.<lang>.md` — those files are forbidden by `scripts/validate-file-ownership.ts`.
+The dedicated **`news-translate`** workflow owns markdown translation only: each daily run picks up untranslated `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief.md` files and produces `executive-brief_<lang>.md` siblings for the 13 non-English languages. It does not touch `news/*.html`. Per-type workflows produce **all 14 language HTML files** themselves in the same agentic run via the localized executive-brief cascade (see `06-article-generation.md`). Per-type workflows do **not** write `article.<lang>.md` — `scripts/validate-file-ownership.ts` forbids it.
 
-> **Hard rule for per-type workflows:** never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md`. Those files are exclusively owned by the `news-translate` workflow. The file-ownership validator (`scripts/validate-file-ownership.ts`) rejects `content`-category commits that touch any `executive-brief_<lang>.md` path.
+> **Per-type workflows:** keep `executive-brief_<lang>.md` out of every commit. Those files are exclusively owned by `news-translate`. The file-ownership validator rejects `content`-category commits that touch any `executive-brief_<lang>.md` path.
 
 ## Stage → commit → PR
 
-1. **Stage scoped files only.** Never stage the whole repo. Before staging any `news/*.html`, verify the aggregator + renderer pre-commit checks in `06-article-generation.md` §"What the AI still MUST do" pass (executive-brief H1 present, every cited `dok_id` has a `documents/{dok_id}-analysis.md`, rendered HTML files exist for every requested language). Abort the commit on any failure.
+1. **Stage scoped files only.** Before staging any `news/*.html`, verify the aggregator + renderer pre-commit checks in `06-article-generation.md` §"What the AI does" pass (executive-brief H1 present, every cited `dok_id` has a `documents/{dok_id}-analysis.md`, rendered HTML exists for every requested language). Abort the commit on any failure.
 
    | Content | Git path to stage |
    |---------|-------------------|
@@ -38,11 +39,11 @@ The dedicated **`news-translate`** workflow has been re-scoped to a markdown-tra
    | Visualisation data | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.json` |
    | Aggregated article markdown | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
    | Rendered articles (all 14 languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` |
-   | News-translate executive-brief translations (only when run by `news-translate.md`) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md` |
+   | News-translate executive-brief translations (only from `news-translate.md`) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md` |
 
-   Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/` wholesale — it often contains 100+ files. Stage only `documents/*.md` **if** your `documents/` stays under the safe-outputs 100-file cap; otherwise stage only summary files. Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/pass1/` — it is a local gate-evidence snapshot (see `04-analysis-pipeline.md`), not a deliverable.
+   Stage `documents/*.md` selectively — keep the total ≤ 90 files (see step 2). Skip `analysis/daily/**/pass1/` entirely; it is a local gate-evidence snapshot (`04-analysis-pipeline.md`), not a deliverable.
 
-2. **100-file guard (MANDATORY — hard enforcement).** Before calling safeoutputs, **you MUST run** the following bash snippet. If it fails (exit 1), you MUST unstage `documents/` files and/or reduce scope until the count is ≤ 90. The safe-outputs handler hard-rejects PRs with > 100 files (E003), so this guard uses a threshold of **90** to leave headroom for metadata files the handler may add.
+2. **100-file guard (mandatory).** Run this snippet before calling safeoutputs. The safe-outputs handler hard-rejects PRs with > 100 files (E003); the guard uses a 90-file threshold to leave headroom for metadata the handler may add.
 
    ```bash
    set -euo pipefail
@@ -67,11 +68,11 @@ The dedicated **`news-translate`** workflow has been re-scoped to a markdown-tra
    echo "✅ File budget OK: $STAGED_COUNT ≤ 90"
    ```
 
-   **This is non-negotiable.** If you skip this step, the `create_pull_request` safe output WILL fail with E003 and the entire run is wasted.
+   Skipping this step makes `create_pull_request` fail with E003 and wastes the run.
 
 3. **Commit** once with a descriptive message, e.g. `news(${article_type}): $ARTICLE_DATE — analysis + article`.
 
-4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (e.g. transient MCP/network failure or Timer A/B firing). The handoff is the defence-in-depth recovery for any of those failures. The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does **not** match `aw-*.json` — but it does upload the entire `/tmp/gh-aw/agent/` directory, so writing inside it guarantees the manifest reaches the host job. Run this in the same bash session as the commit:
+4. **🛟 Sandbox commit handoff (mandatory)** — *immediately after `git commit` and **before** any `safeoutputs___*` call*, write a portable bundle + manifest so the host-side PAT PR fallback can recover the commit if `safeoutputs___create_pull_request` later fails (transient MCP/network failure or Timer A/B firing). The bundle goes to `/tmp/gh-aw/aw-fallback.bundle` (matched by the gh-aw artifact upload glob `/tmp/gh-aw/aw-*.bundle`); the JSON manifest goes to `/tmp/gh-aw/agent/aw-fallback.json` because the upload glob does not match `aw-*.json` directly but uploads the entire `/tmp/gh-aw/agent/` directory. Run this in the same bash session as the commit:
 
    ```bash
    set -euo pipefail
@@ -114,7 +115,7 @@ The dedicated **`news-translate`** workflow has been re-scoped to a markdown-tra
    echo "✅ Sandbox commit handoff written: /tmp/gh-aw/aw-fallback.bundle + /tmp/gh-aw/agent/aw-fallback.json"
    ```
 
-   This step is non-negotiable. Skipping it leaves the run with **no recovery path** if `safeoutputs___create_pull_request` fails to publish (transient MCP/network error, or Timer A/B firing before the PR is materialised). See `.github/aw/SANDBOX_COMMIT_HANDOFF.md` for the full contract and `.github/workflows/news-pat-pr-fallback.yml` for the host-side recovery job.
+   Skipping this step leaves the run with **no recovery path** if `safeoutputs___create_pull_request` fails to publish. See `.github/aw/SANDBOX_COMMIT_HANDOFF.md` for the full contract and `.github/workflows/news-pat-pr-fallback.yml` for the host-side recovery job.
 
 5. **Call** `safeoutputs___create_pull_request` exactly once:
    - Title: `📰 ${Article Type} — $ARTICLE_DATE`.
@@ -122,32 +123,32 @@ The dedicated **`news-translate`** workflow has been re-scoped to a markdown-tra
    - Labels: `agentic-news` + article-type label.
    - Branch: handled automatically by safeoutputs (`news/content/$ARTICLE_DATE/$ARTICLE_TYPE`).
 
-6. **Do not** `git push`, `git checkout`, or `git checkout -b` after the call. The safe-outputs runner job publishes the PR; subsequent agent commits are not added.
+6. Exit cleanly. The safe-outputs runner job publishes the PR; subsequent agent commits are not added.
 
 ## Cache-memory recovery (resilience for failed PRs)
 
-Every news workflow declares `tools.cache-memory:` keyed by `news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}` with a configured 14-day **target** window (see `02-mcp-access.md` §Servers & tool naming). Treat 14 days as an *intended recovery horizon*, **not** as a strict guarantee that cache-memory will remain available for 14 days: actual availability depends on GitHub Actions cache persistence and eviction policy (best-effort, repo-policy driven), and the 14-day setting primarily affects retained artifacts/related workflow data rather than guaranteeing cache retention. gh-aw automatically attempts to restore cache-memory from the **last successfully persisted run** on each invocation. Analysis artifacts under `/tmp/gh-aw/cache-memory/` can therefore often be reused on the next attempt when a previous run reached the cache-update stage, but newly generated cache-memory content from an agent job that **fails or times out** is **not** guaranteed to persist for the next retry.
+Every news workflow declares `tools.cache-memory:` keyed by `news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}` with a 14-day **target** window (see `02-mcp-access.md` §Servers & tool naming). Treat 14 days as an intended recovery horizon, **not** as a guarantee — actual availability depends on GitHub Actions cache persistence and eviction policy. gh-aw automatically attempts to restore cache-memory from the **last successfully persisted run** on each invocation. Analysis artifacts under `/tmp/gh-aw/cache-memory/` can therefore often be reused on the next attempt when a previous run reached the cache-update stage; newly generated cache-memory content from an agent job that **fails or times out** is not guaranteed to persist for the next retry.
 
 **On every run, immediately after MCP pre-warm:**
 
-1. Check whether `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` exists with prior analysis artifacts (Family A/B/C/D `.md` files). If so, treat this as a **retry with recoverable prior work**. Copy them into `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` *before* re-running the analysis pipeline so Pass 2 builds on Pass 1 work that a previous successful agent run already produced.
+1. Check whether `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` exists with prior analysis artifacts (Family A/B/C/D `.md` files). If so, treat this as a **retry with recoverable prior work**. Copy them into `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` *before* re-running the analysis pipeline so Pass 2 builds on the cached Pass 1.
 2. After a successful Pass 1 (or after the analysis gate passes), copy the produced `.md` artifacts back to `/tmp/gh-aw/cache-memory/$ARTICLE_DATE/$SUBFOLDER/` so they are available for persistence if the workflow later fails during PR publication or another post-agent stage.
-3. The agent does **not** call any safe-output tool to persist cache-memory; it only writes to `/tmp/gh-aw/cache-memory/`. In compiled workflows, the updated cache is saved for the next run by a separate cache-update step/job that runs **only after a successful agent job** (`needs.agent.result == 'success'`), so recovery is reliable for **post-agent failures** (e.g. PR-publication problems) but **not** for agent-job failures or timeouts.
+3. The agent only writes to `/tmp/gh-aw/cache-memory/`; no safe-output call persists cache-memory. The compiled workflow's cache-update step runs only after a successful agent job (`needs.agent.result == 'success'`), so recovery is reliable for **post-agent failures** (PR-publication problems) but **not** for agent-job failures or timeouts.
 
-Cache-memory is **not** a substitute for committing real files on disk under `analysis/daily/`. It is a recovery mechanism for the next run, not a deliverable.
+Cache-memory is a recovery mechanism for the next run, not a substitute for committing real files on disk under `analysis/daily/`.
 
 ## PR creation resilience (`fallback-as-issue`, `if-no-changes`, host-side PAT fallback)
 
-Every news workflow's `safe-outputs.create-pull-request:` block sets two explicit resilience flags:
+Every news workflow's `safe-outputs.create-pull-request:` block sets two resilience flags:
 
 | Flag | Value | Effect |
 |------|-------|--------|
 | `fallback-as-issue` | `true` *(explicit, also the gh-aw default)* | If org settings disable "Allow GitHub Actions to create and approve pull requests", the safe-outputs runner falls back to creating an **issue with branch link** instead of failing. The agent's commit is still pushed; only the PR-creation step degrades. |
-| `if-no-changes` | `warn` | If the agent commits but the patch is empty (e.g. all artifacts already exist for this date with `force_generation=false`), the runner emits a warning instead of failing the workflow. Combined with the run-mode selection in `03-data-download.md`, this prevents spurious red runs on duplicate-date dispatches. |
+| `if-no-changes` | `warn` | If the agent commits but the patch is empty (e.g. all artifacts already exist for this date with `force_generation=false`), the runner emits a warning instead of failing the workflow. Prevents spurious red runs on duplicate-date dispatches. |
 
-Neither flag changes the agent's behaviour — both are runner-side resilience knobs. The agent still calls `safeoutputs___create_pull_request` exactly once. See [upstream `create-pull-request` reference](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/safe-outputs-pull-requests.md) for the full schema.
+Neither flag changes agent behaviour. The agent still calls `safeoutputs___create_pull_request` exactly once. See [upstream `create-pull-request` reference](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/safe-outputs-pull-requests.md) for the full schema.
 
-In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and most important) resilience layer: when `safeoutputs___create_pull_request` itself fails — e.g. transient MCP outage, network blip, or Timer A/B firing before the PR is materialised — the standalone host-side workflow `.github/workflows/news-pat-pr-fallback.yml` is triggered by `workflow_run` on completion of every news-* workflow. It downloads the agent artifact, fetches the bundle into the host checkout, force-with-leases the recovered branch to origin under the repo PAT, and opens (or refreshes) the PR. The job is **green only when the PR is actually created** — silent green-exits are eliminated.
+The **Sandbox commit handoff** in step 4 above is the third (and most important) resilience layer: when `safeoutputs___create_pull_request` itself fails (transient MCP outage, network blip, or Timer A/B firing before the PR is materialised), the standalone host-side workflow `.github/workflows/news-pat-pr-fallback.yml` is triggered by `workflow_run` on completion of every news-* workflow. It downloads the agent artifact, fetches the bundle into the host checkout, force-with-leases the recovered branch to origin under the repo PAT, and opens (or refreshes) the PR. The job is **green only when the PR is actually created** — silent green-exits are eliminated.
 
 ## Canonical PR body template
 
@@ -195,18 +196,18 @@ In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and 
 
 ## No-op policy
 
-> 🔴 **No-op is forbidden as a "nothing to do" exit.** Detecting prior analysis, prior `article.md`, or prior rendered HTML for `$ARTICLE_DATE` + `$SUBFOLDER` is **never** grounds for noop — it is the trigger for **improvement-mode** in `03-data-download.md §Pre-flight` and `04-analysis-pipeline.md §Execution order`. The agent must always extend prior artifacts, regenerate `article.md`, regenerate `news/*.html`, and end the run with `safeoutputs___create_pull_request`.
+> 🔴 **Noop is forbidden as a "nothing to do" exit.** Detecting prior analysis, prior `article.md`, or prior rendered HTML for `$ARTICLE_DATE` + `$SUBFOLDER` triggers **improvement-mode** (`03-data-download.md §Pre-flight`, `04-analysis-pipeline.md §Execution order`). The agent extends prior artifacts, regenerates `article.md`, regenerates `news/*.html`, and ends the run with `safeoutputs___create_pull_request`.
 
-`safeoutputs___noop({"message": "<reason>"})` is reserved for **catastrophic input failures** where no useful work is possible **and** zero files were produced. Allowed conditions (and only these):
+Reserve `safeoutputs___noop({"message": "<reason>"})` for **catastrophic input failures** where no useful work is possible **and** zero files were produced. Allowed conditions:
 
-1. **Scaffold-write failed AND MCP unreachable from start** — the early-scaffold marker write in `03-data-download.md §Early-scaffold marker` failed (filesystem error, sandbox restriction), **and** all three MCP attempts in `02-mcp-access.md §Three-attempt connect protocol` failed, no document data was downloaded, **and** `IMPROVEMENT_MODE=false` from `03-data-download.md §Pre-flight`. Under normal conditions the scaffold write succeeds even when MCP is unreachable — that produces a partial PR documenting the MCP failure, not a noop. When `IMPROVEMENT_MODE=true`, route to improvement-mode and continue without MCP instead of calling noop.
-2. **Hard input error** — invalid `article_date` (e.g. unparseable, future-dated beyond +30 days, or pre-2014), invalid `$SUBFOLDER`, or other structural input failure that prevents any analysis from running, **and** zero files were produced.
-3. **Empty data window with no fallback content** — every lookback day in `03-data-download.md §Lookback fallback` (`DAYS_BACK = 1..7`) returned zero documents **and** there is no prior analysis on disk for `$ARTICLE_DATE` + `$SUBFOLDER` to improve. Zero-document weekend or holiday days when prior analysis exists must run improvement-mode instead.
-4. **Improvement-mode rerun-marker write produced no tracked diff** — `IMPROVEMENT_MODE=true`, every required step (read-back, re-download, extension plan, baseline snapshot, extensions, Pass 2, gate, aggregate, render) ran to completion, the mandatory rerun marker below was attempted, but `git status --porcelain` still reports zero tracked-file changes (e.g. the marker write failed, `methodology-reflection.md` is outside the tracked/staged scope, or another repository-state failure prevented the required write from appearing as a tracked diff). Under normal conditions appending the marker always produces a non-empty diff, so this condition is an abnormal edge case only; the noop message must explicitly cite "improvement-mode rerun marker produced no tracked diff".
+1. **Scaffold-write failed AND MCP unreachable from start** — the early-scaffold marker write in `03-data-download.md §Early-scaffold marker` failed (filesystem error, sandbox restriction), all three MCP attempts in `02-mcp-access.md §Three-attempt connect protocol` failed, no document data was downloaded, and `IMPROVEMENT_MODE=false` from `03-data-download.md §Pre-flight`. Under normal conditions the scaffold write succeeds even when MCP is unreachable — that produces a partial PR documenting the MCP failure, not a noop. When `IMPROVEMENT_MODE=true`, route to improvement-mode and continue without MCP.
+2. **Hard input error** — invalid `article_date` (unparseable, future-dated beyond +30 days, or pre-2014), invalid `$SUBFOLDER`, or other structural input failure that prevents any analysis from running, and zero files were produced.
+3. **Empty data window with no fallback content** — every lookback day in `03-data-download.md §Lookback fallback` (`DAYS_BACK = 1..7`) returned zero documents and there is no prior analysis on disk for `$ARTICLE_DATE` + `$SUBFOLDER` to improve. Zero-document weekend or holiday days when prior analysis exists run improvement-mode instead.
+4. **Improvement-mode rerun-marker write produced no tracked diff** — `IMPROVEMENT_MODE=true`, every required step ran to completion, the mandatory rerun marker below was attempted, but `git status --porcelain` still reports zero tracked-file changes (marker write failed, `methodology-reflection.md` outside tracked/staged scope, or repository-state failure). The noop message must explicitly cite "improvement-mode rerun marker produced no tracked diff".
 
 ### Mandatory rerun marker (improvement-mode only)
 
-To eliminate the gap between "noop forbidden" and "no changes to PR" on deterministic re-runs, every improvement-mode run **must** append a single dated entry to `$ANALYSIS_DIR/methodology-reflection.md` under a `## Re-run log` heading, regardless of whether substantive content changed. **Ordering is mandatory:** in improvement-mode, do **not** write this marker before the Pass-1 / step-4 baseline snapshot is taken (see `04-analysis-pipeline.md §Execution order`, which forbids any writes in improvement-mode until after that snapshot). Append it **immediately after** the baseline snapshot is captured and **before** running the gate, so the pre-improvement `pass1/` baseline remains uncontaminated.
+Every improvement-mode run **must** append a single dated entry to `$ANALYSIS_DIR/methodology-reflection.md` under a `## Re-run log` heading, regardless of whether substantive content changed. **Ordering:** in improvement-mode, write this marker **only after** the Pass-1 / step-4 baseline snapshot is captured (see `04-analysis-pipeline.md §Execution order` — writes in improvement-mode are forbidden until after that snapshot) and **before** running the gate, so the pre-improvement `pass1/` baseline remains uncontaminated.
 
 This schema is canonical for all 14 `news-*.md` workflows and is enforced by `05-analysis-gate.md` in improvement-mode:
 
@@ -220,21 +221,21 @@ This schema is canonical for all 14 `news-*.md` workflows and is enforced by `05
   - vintage refresh: <"yes" or "no, IMF WEO Apr-2026 still current">
 ```
 
-This guarantees a deterministic, content-bearing diff on every improvement-mode re-run. If — after attempting to write this marker, regenerating `article.md`, and re-rendering `news/*.html` — `git status --porcelain` is still empty, treat that as an abnormal edge case only: the rerun marker did not persist as a tracked diff, `methodology-reflection.md` is outside the tracked/staged scope, or another repository-state failure prevented the required write from appearing. Only then does noop condition #4 apply.
+This guarantees a deterministic, content-bearing diff on every improvement-mode re-run. If — after writing this marker, regenerating `article.md`, and re-rendering `news/*.html` — `git status --porcelain` is still empty, treat that as an abnormal edge case: the rerun marker did not persist as a tracked diff, `methodology-reflection.md` is outside the tracked/staged scope, or another repository-state failure prevented the required write from appearing. Only then does noop condition #4 apply.
 
-In **every other case** — including "today's HTML already exists", "all 23 artifacts already exist", "no new dok_ids since last run", or "prior run was the same day" — commit whatever was extended, re-rendered, or marker-logged and call `create_pull_request` once. There is **always** something to extend on a re-run: newer voting outcomes, fresher economic vintage, sharpened uncertainty disclosure, closed `[unconfirmed]` flags, new media frames, or a freshly-rendered HTML that picks up template/chrome improvements. The aggregator + renderer always run on improvement-mode re-runs and the rerun-log marker is always appended, so the PR diff is never empty under normal conditions; condition #4 above only fires when that mandatory marker flow fails to produce any tracked change.
+In every other case — including "today's HTML already exists", "all 23 artifacts already exist", "no new dok_ids since last run", or "prior run was the same day" — commit whatever was extended, re-rendered, or marker-logged and call `create_pull_request` once. There is always something to extend on a re-run: newer voting outcomes, fresher economic vintage, sharpened uncertainty disclosure, closed `[unconfirmed]` flags, new media frames, or a freshly-rendered HTML that picks up template/chrome improvements. The aggregator + renderer always run on improvement-mode re-runs and the rerun-log marker is always appended, so the PR diff is never empty under normal conditions.
 
-The noop message **must** include which condition above applies and why improvement-mode was not viable — e.g. `"MCP unreachable from start; no prior analysis on disk for 2026-04-30/propositions"` or `"Improvement-mode rerun marker write produced no tracked diff; repository state prevented a safe PR for 2026-04-30/propositions"`.
+The noop message **must** include which condition above applies and why improvement-mode was not viable — e.g. `"MCP unreachable from start; no prior analysis on disk for 2026-04-30/propositions"`.
 
 ## Deadline enforcement
 
 Two independent timers can kill a run silently (gh-aw v0.74.3). Plan for the **shortest** of the two.
 
-> **Timer A — Job `timeout-minutes` (60 min)**: every news workflow declares `timeout-minutes: 60`. The clock starts at **job start**, before Copilot begins, and includes host-side setup/sandbox/MCP initialization. After 60 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
+> **Timer A — Job `timeout-minutes` (60 min)**: every news workflow declares `timeout-minutes: 60`. The clock starts at job start (before Copilot begins) and includes host-side setup/sandbox/MCP initialization. After 60 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
 >
-> **Timer B — Copilot API session (~60 min)**: The Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). Every tool call and inference request fails silently after that point — the agent appears to run but makes no progress and the PR is never created.
+> **Timer B — Copilot API session (~60 min)**: the Copilot API session is bound to the `github.token` baked in at step start. That token expires at approximately **60 minutes** and is never refreshed mid-run (gh-aw issue #24920). After that point every tool call fails silently — the agent appears to run but makes no progress and the PR is never created.
 
-Timers A and B are intentionally aligned at ~60 min. The PR must be issued before either fires.
+Timers A and B are intentionally aligned at ~60 min. Issue the PR before either fires.
 
 ### PR-creation windows
 
@@ -242,17 +243,17 @@ Timers A and B are intentionally aligned at ~60 min. The PR must be issued befor
 |-------|------------------|---------------|------------------|
 | Analysis + aggregate + render | **35–42 min** after agent start | **45 min** | 7 min, skip beyond 42 min |
 
-The agent-minute-45 hard deadline reserves job-level headroom for host-side setup variance plus staging, `git commit`, and the safeoutputs round-trip before Timer A and Timer B fire. Do **not** schedule any analysis or article work after the PR call — the agent's only remaining job is to exit cleanly while the safe-outputs runner publishes the PR. Equally, do **not** finish early with shallow output: AI-FIRST iteration (minimum 2 complete passes) is mandatory — see `.github/copilot-instructions.md §AI FIRST Quality Principle`.
+The agent-minute-45 hard deadline reserves job-level headroom for host-side setup variance plus staging, `git commit`, and the safeoutputs round-trip before Timer A and Timer B fire. Schedule no analysis or article work after the PR call — the agent's remaining job is to exit cleanly while the safe-outputs runner publishes the PR. Equally, finish with iterated AI-FIRST output: minimum 2 complete passes is mandatory (see `.github/copilot-instructions.md §AI FIRST Quality Principle`).
 
 ### If the run exceeds its hard deadline with no safe-output call yet
 
 1. **Stop** analysis / article work immediately — no more `edit` tool calls, no more Pass 2 improvements.
-2. **Stage** whatever exists on disk (analysis artifacts and any rendered `news/*.html`). Do not stage `pass1/`.
+2. **Stage** whatever exists on disk (analysis artifacts and any rendered `news/*.html`). Leave `pass1/` unstaged.
 3. **Commit** with message prefixed `[early-pr]` to signal partial content.
 4. **Call** `safeoutputs___create_pull_request` once with label `partial`. A partial analysis is always better than zero output.
-5. If `safeoutputs___create_pull_request` returns an error, do **not** retry — Timer A or Timer B is firing. Document the incident in the next run's methodology-reflection.
+5. If `safeoutputs___create_pull_request` returns an error, exit — Timer A or Timer B is firing. Document the incident in the next run's methodology-reflection.
 
-Do not attempt to "save" work via a second PR — there is no second PR. Creating the PR early is always better than losing all work to a timer expiry.
+A single PR is the only PR. Creating it early always beats losing all work to a timer expiry.
 
 ### Emergency deadline order of operations
 
