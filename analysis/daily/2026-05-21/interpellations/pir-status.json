@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-05-21T08:15:00Z",
+  "article_date": "2026-05-21",
+  "subfolder": "interpellations",
+  "workflow": "news-interpellations",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Coalition stability through 2025/26 riksmöte",
+      "status": "open",
+      "confidence": "high",
+      "updated": "2026-05-21",
+      "evidence": "SD filing 3 interpellations diverging from coalition line; KD ministers targeted 7 times; thin 1-vote majority maintained",
+      "next_collection": "SD summer conference statements; committee votes"
+    },
+    {
+      "id": "PIR-2",
+      "title": "SD policy demands reshaping Tidö governance",
+      "status": "open",
+      "confidence": "high",
+      "updated": "2026-05-21",
+      "evidence": "HD10494 (Chechnya), HD10490 (Cuba), HD10497 (payment terms) confirm SD independent policy pressure",
+      "next_collection": "Ministerial response HD10497 due 2026-06-02"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Climate policy gaps before Sweden's 2030 targets",
+      "status": "open",
+      "confidence": "high",
+      "updated": "2026-05-21",
+      "evidence": "HD10499, HD10488, HD10481 confirm structural water/climate governance gap in southern Sweden",
+      "next_collection": "SGU Grundvattenläget July 2026; ministerial response HD10499 due 2026-06-04"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Fiscal consolidation vs welfare service delivery",
+      "status": "open",
+      "confidence": "high",
+      "updated": "2026-05-21",
+      "evidence": "HD10484, HD10486, HD10496, HD10487 confirm welfare quality under fiscal pressure",
+      "next_collection": "IVO annual report 2025; Q2 2026 SCB welfare statistics"
+    },
+    {
+      "id": "PIR-5",
+      "title": "Swedish-Finnish minority language rights under budget pressure",
+      "status": "open",
+      "confidence": "medium",
+      "updated": "2026-05-21",
+      "evidence": "HD10498 elevates Umeå University Finnish language programme as new intelligence requirement",
+      "next_collection": "Ministerial response HD10498 due 2026-06-03; Umeå University decision"
+    }
+  ],
+  "collection_priorities": [
+    "HD10499 ministerial answer (due 2026-06-04)",
+    "HD10497 ministerial answer (due 2026-06-02)",
+    "HD10498 ministerial answer (due 2026-06-03)",
+    "SGU Grundvattenläget June 2026 report",
+    "IVO eldercare deficiency decisions"
+  ]
+}
