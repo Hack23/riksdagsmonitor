@@ -117,7 +117,7 @@ EOF
 fi
 ```
 
-The download step appends to this file using the `edit` tool (str-replace at the section anchor, or insert before the EOF marker line). See [`01-bash-and-shell-safety.md §File creation & overwrite strategy`](01-bash-and-shell-safety.md). When MCP is unreachable from start, the per-document table stays empty and the MCP-attempts section explains why.
+The download step appends to this file using the `edit` tool (str-replace at the `## Per-document table` section anchor, or insert under the `_(populated by the download step …)_` placeholder line). See [`01-bash-and-shell-safety.md §File creation & overwrite strategy`](01-bash-and-shell-safety.md). When MCP is unreachable from start, the per-document table stays empty and the MCP-attempts section explains why.
 
 | `IMPROVEMENT_MODE` | Behaviour |
 |--------------------|-----------|

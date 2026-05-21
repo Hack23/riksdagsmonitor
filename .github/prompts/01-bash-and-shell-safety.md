@@ -99,7 +99,7 @@ For short ASCII writes (< 200 bytes, no special chars) targeting `/tmp/` only, `
 | Multiple file writes inside one Python/Node `-e` invocation | Whole tool-call message (with every file body inline) replays each turn → O(n²) token blowup. |
 | `tee "$FILE"` for content writes | Same hazards as `cat >` plus stdout duplication. `tee` is fine for log capture (`… 2>&1 | tee /tmp/pipeline.log`). |
 
-Self-check before any file-write `bash` call: if the command contains `>`, `>>`, `<<`, `<<<`, `tee`, `python3`, `sed -i`, or `dd`, and the target is under the repo working tree (anything other than `/tmp/`), switch to `edit`.
+Self-check before any file-write `bash` call: if the command contains `>`, `>>`, `<<`, `<<<`, `tee`, `python3`, `sed -i`, or `dd`, and the target is under the repo working tree (anything other than `/tmp/`), switch to `edit`. **Sole exception**: the env-var-only pre-flight scaffold heredoc in [`03-data-download.md`](03-data-download.md) (creates the initial `data-download-manifest.md` marker when missing) — this uses an unquoted heredoc with only env-var references and short literals, never agent-generated content.
 
 ## Secret safety
 
