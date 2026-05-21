@@ -158,8 +158,9 @@ runs:
 
         # ── FORCE_GENERATION (boolean coercion) ──────────────────────────────
         case "${IN_FORCE_GENERATION:-}" in
-          true|TRUE|True|1|yes|YES) FORCE_GENERATION=true ;;
-          *) FORCE_GENERATION=false ;;
+          true)    FORCE_GENERATION=true ;;
+          ''|false) FORCE_GENERATION=false ;;
+          *)       fail "force_generation '$IN_FORCE_GENERATION' must be literal 'true' or 'false'" ;;
         esac
 
         # ── Optional per-workflow extras ─────────────────────────────────────
@@ -234,8 +235,9 @@ runs:
         fi
 
         case "${IN_FORCE_RETRANSLATE:-}" in
-          true|TRUE|True|1|yes|YES) FORCE_RETRANSLATE=true ;;
-          *) FORCE_RETRANSLATE=false ;;
+          true)    FORCE_RETRANSLATE=true ;;
+          ''|false) FORCE_RETRANSLATE=false ;;
+          *)       fail "force_retranslate '$IN_FORCE_RETRANSLATE' must be literal 'true' or 'false'" ;;
         esac
 
         TRANSLATE_SUBFOLDER=""
@@ -261,7 +263,7 @@ runs:
           [ -n "$MAX_BRIEFS_RESOLVED" ] && echo "MAX_BRIEFS_RESOLVED=$MAX_BRIEFS_RESOLVED"
           echo "FORCE_RETRANSLATE=$FORCE_RETRANSLATE"
           [ -n "$TRANSLATE_SUBFOLDER" ] && echo "TRANSLATE_SUBFOLDER=$TRANSLATE_SUBFOLDER"
-        } >> "$GITHUB_ENV" || true
+        } >> "$GITHUB_ENV"
 
         # Human-readable audit block (same fields, plus dispatched-vs-resolved
         # parity for operators investigating production runs).

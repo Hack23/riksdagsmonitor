@@ -234,15 +234,45 @@ describe('news-resolve-inputs runtime behaviour', () => {
     expect(bad.exitCode).not.toBe(0);
   });
 
-  it('treats any non-canonical boolean as false (force_generation, force_retranslate)', () => {
-    const { exitCode, githubEnv } = runScript({
+  it('rejects non-canonical boolean values for force_generation and force_retranslate', () => {
+    // Documented contract: boolean inputs accept ONLY literal `true` / `false`
+    // (or empty → false). Anything else is a hard failure to prevent silent
+    // misconfiguration (e.g. operator types `True` and the agent reads `false`).
+    const badForceGen = runScript({
       IN_SUBFOLDER: 'propositions',
       IN_FORCE_GENERATION: 'maybe',
-      IN_FORCE_RETRANSLATE: 'sure',
       IN_DEFAULT_DEPTH: 'deep',
     });
-    expect(exitCode).toBe(0);
-    expect(githubEnv).toContain('FORCE_GENERATION=false');
-    expect(githubEnv).toContain('FORCE_RETRANSLATE=false');
+    expect(badForceGen.exitCode).not.toBe(0);
+    expect(badForceGen.stderr).toMatch(/force_generation 'maybe' must be literal 'true' or 'false'/);
+
+    const badForceRetrans = runScript({
+      IN_SUBFOLDER: 'news-translate',
+      IN_FORCE_RETRANSLATE: 'sure',
+      IN_DEFAULT_DEPTH: 'standard',
+    });
+    expect(badForceRetrans.exitCode).not.toBe(0);
+    expect(badForceRetrans.stderr).toMatch(/force_retranslate 'sure' must be literal 'true' or 'false'/);
+  });
+
+  it('accepts only literal `true` / `false` / empty for force_generation', () => {
+    for (const v of ['true', 'false', '']) {
+      const { exitCode, githubEnv } = runScript({
+        IN_SUBFOLDER: 'propositions',
+        IN_FORCE_GENERATION: v,
+        IN_DEFAULT_DEPTH: 'deep',
+      });
+      expect(exitCode, `value=${JSON.stringify(v)}`).toBe(0);
+      expect(githubEnv).toContain(`FORCE_GENERATION=${v === 'true' ? 'true' : 'false'}`);
+    }
+    // Capitalized / numeric / synonym values are rejected (not silently coerced).
+    for (const v of ['True', 'TRUE', '1', 'yes', 'YES', 'no']) {
+      const { exitCode } = runScript({
+        IN_SUBFOLDER: 'propositions',
+        IN_FORCE_GENERATION: v,
+        IN_DEFAULT_DEPTH: 'deep',
+      });
+      expect(exitCode, `value=${JSON.stringify(v)} should be rejected`).not.toBe(0);
+    }
   });
 });
