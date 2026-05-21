@@ -1,4 +1,4 @@
-riksdagsmonitor@0.9.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.9.27 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.4.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -1277,7 +1277,7 @@ riksdagsmonitor@0.9.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └─┬ unist-util-visit-parents@6.0.2
 │   ├── @types/unist@3.0.3 deduped
 │   └── unist-util-is@6.0.1 deduped
-├─┬ vite@8.0.13
+├─┬ vite@8.0.14
 │ ├── @types/node@25.9.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.1.18
 │ ├── esbuild@0.28.0 deduped
@@ -1286,27 +1286,27 @@ riksdagsmonitor@0.9.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY less@^4.0.0
 │ ├── lightningcss@1.32.0 deduped
 │ ├── picomatch@4.0.4 deduped
-│ ├─┬ postcss@8.5.14
+│ ├─┬ postcss@8.5.15
 │ │ ├── nanoid@3.3.12
 │ │ ├── picocolors@1.1.1
 │ │ └── source-map-js@1.2.1 deduped
-│ ├─┬ rolldown@1.0.1
-│ │ ├── @oxc-project/types@0.130.0 deduped
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-freebsd-x64@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm-gnueabihf@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-gnu@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-musl@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-ppc64-gnu@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-s390x-gnu@1.0.1
-│ │ ├── @rolldown/binding-linux-x64-gnu@1.0.1
-│ │ ├── @rolldown/binding-linux-x64-musl@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-openharmony-arm64@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-wasm32-wasi@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-arm64-msvc@1.0.1
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-x64-msvc@1.0.1
+│ ├─┬ rolldown@1.0.2
+│ │ ├── @oxc-project/types@0.132.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-freebsd-x64@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm-gnueabihf@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-gnu@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-musl@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-ppc64-gnu@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-s390x-gnu@1.0.2
+│ │ ├── @rolldown/binding-linux-x64-gnu@1.0.2
+│ │ ├── @rolldown/binding-linux-x64-musl@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-openharmony-arm64@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-wasm32-wasi@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-arm64-msvc@1.0.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-x64-msvc@1.0.2
 │ │ └── @rolldown/pluginutils@1.0.1
 │ ├── UNMET OPTIONAL DEPENDENCY sass-embedded@^1.70.0
 │ ├── UNMET OPTIONAL DEPENDENCY sass@^1.70.0
@@ -1339,7 +1339,7 @@ riksdagsmonitor@0.9.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── estree-walker@3.0.3 deduped
 │ │ ├── magic-string@0.30.21 deduped
 │ │ ├── UNMET OPTIONAL DEPENDENCY msw@^2.4.9
-│ │ └── vite@8.0.13 deduped
+│ │ └── vite@8.0.14 deduped
 │ ├─┬ @vitest/pretty-format@4.1.7
 │ │ └── tinyrainbow@3.1.0 deduped
 │ ├─┬ @vitest/runner@4.1.7
@@ -1367,7 +1367,7 @@ riksdagsmonitor@0.9.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── tinyexec@1.0.2
 │ ├── tinyglobby@0.2.16 deduped
 │ ├── tinyrainbow@3.1.0 deduped
-│ ├── vite@8.0.13 deduped
+│ ├── vite@8.0.14 deduped
 │ └─┬ why-is-node-running@2.3.0
 │   ├── siginfo@2.0.0
 │   └── stackback@0.0.2
