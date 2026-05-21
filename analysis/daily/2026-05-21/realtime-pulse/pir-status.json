@@ -1,0 +1,108 @@
+{
+  "generated_at": "2026-05-21T11:45:00Z",
+  "cycle": "realtime-pulse",
+  "date": "2026-05-21",
+  "subfolder": "realtime-pulse",
+  "pirs": [
+    {
+      "pir_id": "PIR-RT-1",
+      "title": "KU34 second reading YES commitment",
+      "status": "open",
+      "opened": "2026-05-20",
+      "last_updated": "2026-05-21",
+      "trigger": "KU34 second reading scheduled 2026-06-03",
+      "confidence": "HIGH",
+      "notes": "No new information on 2026-05-21. Scheduled for 2026-06-03."
+    },
+    {
+      "pir_id": "PIR-RT-2",
+      "title": "S campaign positioning on SoU30 welfare activation",
+      "status": "open",
+      "opened": "2026-05-20",
+      "last_updated": "2026-05-21",
+      "trigger": "S publishes formal campaign platform statement",
+      "confidence": "HIGH",
+      "notes": "S six written questions today (HD11823-HD11827) confirm coordinated pre-election pressure strategy. S is in full campaign mode."
+    },
+    {
+      "pir_id": "PIR-RT-3",
+      "title": "SD internal reaction to abortion constitutional support",
+      "status": "open",
+      "opened": "2026-05-20",
+      "last_updated": "2026-05-21",
+      "trigger": "SD party conference statement or spokesperson comment",
+      "confidence": "MEDIUM",
+      "notes": "SD voted with governing bloc on JuU28 — consistent with coalition discipline. No internal dissent signals."
+    },
+    {
+      "pir_id": "PIR-RT-4",
+      "title": "Municipal SoU30 implementation readiness",
+      "status": "open",
+      "opened": "2026-05-20",
+      "last_updated": "2026-05-21",
+      "trigger": "SKL (Swedish Association of Local Authorities) survey or municipal budget decision",
+      "confidence": "MEDIUM",
+      "notes": "No new information today."
+    },
+    {
+      "pir_id": "PIR-RT-5",
+      "title": "Legal challenges to SoU30 welfare restriction",
+      "status": "open",
+      "opened": "2026-05-20",
+      "last_updated": "2026-05-21",
+      "trigger": "Administrative court application against SoU30 implementation",
+      "confidence": "MEDIUM",
+      "notes": "No new legal filings identified."
+    },
+    {
+      "pir_id": "PIR-PROP-1",
+      "title": "Lagrådet language on HD03267 security threat expulsion",
+      "status": "open",
+      "opened": "2026-05-20",
+      "last_updated": "2026-05-21",
+      "trigger": "Lagrådet publishes yttrande on HD03267",
+      "confidence": "HIGH",
+      "notes": "No Lagrådet opinion found at lagradet.se as of 11:30 UTC. Betänkande for HD03267 not yet published."
+    },
+    {
+      "pir_id": "PIR-PROP-3",
+      "title": "IMY opinion on HD03261 Skatteverket folkbokföring",
+      "status": "open",
+      "opened": "2026-05-20",
+      "last_updated": "2026-05-21",
+      "trigger": "IMY publishes formal opinion on HD03261",
+      "confidence": "MEDIUM",
+      "notes": "No IMY opinion published. Monitor imy.se weekly."
+    },
+    {
+      "pir_id": "PIR-INTERP-RUSSIA",
+      "title": "Russia-Ichkeria security nexus tracking",
+      "status": "open",
+      "opened": "2026-05-20",
+      "last_updated": "2026-05-21",
+      "trigger": "Parliamentary document, SÄPO statement, or media report on Sweden-Russia-Ichkeria nexus",
+      "confidence": "LOW",
+      "notes": "Not addressed in today's documents."
+    },
+    {
+      "pir_id": "PIR-JUU28-AI",
+      "title": "JuU28 operational guidelines specificity for exceptional circumstances threshold",
+      "status": "open",
+      "opened": "2026-05-21",
+      "last_updated": "2026-05-21",
+      "trigger": "Polismyndigheten publishes operational framework for JuU28 facial recognition deployment",
+      "confidence": "HIGH",
+      "notes": "New PIR from today's analysis. Critical for legal and democratic accountability assessment of JuU28."
+    },
+    {
+      "pir_id": "PIR-JUU28-REVIEW",
+      "title": "JuU28 sunset review independence — 2029 review body designation",
+      "status": "open",
+      "opened": "2026-05-21",
+      "last_updated": "2026-05-21",
+      "trigger": "Government designates independent review body for JuU28 sunset (expected T+180d)",
+      "confidence": "MEDIUM",
+      "notes": "New PIR from today's analysis. Sunset clause expires 31 May 2029."
+    }
+  ]
+}
