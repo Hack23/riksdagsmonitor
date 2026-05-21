@@ -281,6 +281,17 @@ steps:
     uses: ./.github/actions/news-prewarm
     with:
       imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+  - name: Resolve workflow inputs
+    uses: ./.github/actions/news-resolve-inputs
+    with:
+      subfolder: news-translate
+      article-date: ${{ inputs.article_date }}
+      analysis-depth: ${{ inputs.analysis_depth }}
+      default-analysis-depth: standard
+      languages: ${{ inputs.languages }}
+      max-briefs: ${{ inputs.max_briefs }}
+      force-retranslate: ${{ inputs.force_retranslate }}
+      translate-subfolder: ${{ inputs.subfolder }}
   - name: Build executive-brief translation work list
     id: worklist
     env:
@@ -313,8 +324,44 @@ steps:
 
       # Discover candidate sources.
       ROOT="analysis/daily"
+      # Worklist file written to GITHUB_WORKSPACE so it is visible inside the
+      # AWF container (`--add-dir "${GITHUB_WORKSPACE}"`); /tmp on the runner
+      # is NOT mounted into the container and the agent cannot read it.
+      WORKLIST_FILE="${GITHUB_WORKSPACE}/.exec-brief-worklist.txt"
+
+      # Emit a single canonical bundle to BOTH $GITHUB_OUTPUT (for downstream
+      # GHA steps) AND $GITHUB_ENV (so `awf --env-all` forwards the values
+      # to the agent's bash sandbox — agents have no access to step outputs).
+      emit_bundle() {
+        local worklist="$1" langs="$2" max="$3" missing="$4" drift="$5"
+        {
+          echo "TRANSLATION_WORKLIST=$worklist"
+          echo "TRANSLATION_LANGS=$langs"
+          echo "MAX_BRIEFS=$max"
+          echo "MAX_BRIEFS_RESOLVED=$max"
+          echo "MISSING_COUNT=$missing"
+          echo "DRIFT_COUNT=$drift"
+          echo "EXEC_BRIEF_WORKLIST_FILE=$WORKLIST_FILE"
+        } >> "$GITHUB_OUTPUT"
+        {
+          echo "TRANSLATION_WORKLIST=$worklist"
+          echo "TRANSLATION_LANGS=$langs"
+          echo "MAX_BRIEFS=$max"
+          echo "MAX_BRIEFS_RESOLVED=$max"
+          echo "MISSING_COUNT=$missing"
+          echo "DRIFT_COUNT=$drift"
+          echo "EXEC_BRIEF_WORKLIST_FILE=$WORKLIST_FILE"
+        } >> "$GITHUB_ENV"
+        # Always write the file (empty when worklist is empty) so the agent
+        # can rely on a stable path.
+        : > "$WORKLIST_FILE"
+        if [ -n "$worklist" ]; then
+          printf '%s\n' "$worklist" | tr ',' '\n' > "$WORKLIST_FILE"
+        fi
+      }
+
       if [ ! -d "$ROOT" ]; then
-        echo "TRANSLATION_WORKLIST=" >> "$GITHUB_OUTPUT"
+        emit_bundle "" "$LANGS" "$MAX_BRIEFS" "0" "0"
         echo "No $ROOT directory — nothing to translate."
         exit 0
       fi
@@ -332,7 +379,7 @@ steps:
         | sort)
 
       if [ -z "$CANDIDATES" ]; then
-        echo "TRANSLATION_WORKLIST=" >> "$GITHUB_OUTPUT"
+        emit_bundle "" "$LANGS" "$MAX_BRIEFS" "0" "0"
         echo "No executive-brief.md sources found under $SCAN_PATTERN."
         exit 0
       fi
@@ -395,9 +442,7 @@ steps:
       fi
 
       if [ "${#WORK[@]}" -eq 0 ]; then
-        echo "TRANSLATION_WORKLIST=" >> "$GITHUB_OUTPUT"
-        echo "MISSING_COUNT=$MISSING_COUNT" >> "$GITHUB_OUTPUT"
-        echo "DRIFT_COUNT=$DRIFT_COUNT" >> "$GITHUB_OUTPUT"
+        emit_bundle "" "$LANGS" "$MAX_BRIEFS" "$MISSING_COUNT" "$DRIFT_COUNT"
         echo "All discovered sources are up to date for the requested languages."
         exit 0
       fi
@@ -413,15 +458,11 @@ steps:
         WORK_DRIFT=$((WORK_DRIFT+1))
       done
 
-      printf '%s\n' "${WORK[@]}" > /tmp/exec-brief-worklist.txt
       WORKLIST_JOINED=$(printf '%s\n' "${WORK[@]}" | paste -sd ',' -)
-      echo "TRANSLATION_WORKLIST=$WORKLIST_JOINED" >> "$GITHUB_OUTPUT"
-      echo "TRANSLATION_LANGS=$LANGS" >> "$GITHUB_OUTPUT"
-      echo "MAX_BRIEFS=$MAX_BRIEFS" >> "$GITHUB_OUTPUT"
-      echo "MISSING_COUNT=$MISSING_COUNT" >> "$GITHUB_OUTPUT"
-      echo "DRIFT_COUNT=$DRIFT_COUNT" >> "$GITHUB_OUTPUT"
+      emit_bundle "$WORKLIST_JOINED" "$LANGS" "$MAX_BRIEFS" "$MISSING_COUNT" "$DRIFT_COUNT"
       echo "✅ Selected ${#WORK[@]} source brief(s) for translation into [$LANGS]"
       echo "   (greenfield=$WORK_MISSING / drift-fix=$WORK_DRIFT;  total backlog: MISSING=$MISSING_COUNT DRIFT=$DRIFT_COUNT)"
+      echo "   Worklist file (agent reads this): $WORKLIST_FILE"
       printf '   %s\n' "${WORK[@]}"
 
 engine:
@@ -437,9 +478,9 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 
 ## Pipeline
 
-1. **Wall-clock checkpoint (mandatory)** — as the **very first bash call** in this run, record `JOB_START=$(date +%s)` and export it. After every source completes Pass 2, re-read `NOW=$(date +%s)` and compute `ELAPSED_MIN=$(( (NOW - JOB_START) / 60 ))`; print it. If `ELAPSED_MIN >= 35`, stop selecting new sources and proceed directly to the validate → stage → commit → `safeoutputs___create_pull_request` flow regardless of remaining `TRANSLATION_WORKLIST` entries. If `ELAPSED_MIN >= 42`, **halt all translation work immediately** and execute the [`07-commit-and-pr.md §Emergency deadline order of operations`](../prompts/07-commit-and-pr.md) bash block to ship a partial PR before Timer A (60-min job `timeout-minutes`) and Timer B (~60-min Copilot API session) fire. A partial PR is always better than zero output — see the run-#26008347629 incident that lowered the default `max_briefs` from 3 to 2.
-2. The `Build executive-brief translation work list` pre-flight step has already populated `steps.worklist.outputs.TRANSLATION_WORKLIST` (comma-separated repo-relative paths), `TRANSLATION_LANGS` (comma-separated language codes), `MAX_BRIEFS` (1–7), and the audit counters `MISSING_COUNT` / `DRIFT_COUNT`. The selector is **greenfield-first**: sources with one or more missing target files (`MISSING`) always win the `max_briefs` batch slots over sources that only need drift-fixes (`DRIFT`); `DRIFT` is only consulted when `MISSING` is empty. If `TRANSLATION_WORKLIST` is empty (so `MISSING_COUNT=0` **and** `DRIFT_COUNT=0`), nothing is pending — proceed to improvement-mode (re-validate every existing translation against the current `<!-- source-sha: ... -->` trailer and fix any drift the validator flags). If still nothing changes after improvement-mode, follow `07-commit-and-pr.md §No-op policy`.
-3. For each source path in `TRANSLATION_WORKLIST`:
+1. **Wall-clock checkpoint (mandatory)** — as the **very first bash call** in this run, record `JOB_START=$(date +%s)` and export it. After every source completes Pass 2, re-read `NOW=$(date +%s)` and compute `ELAPSED_MIN=$(( (NOW - JOB_START) / 60 ))`; print it. If `ELAPSED_MIN >= 35`, stop selecting new sources and proceed directly to the validate → stage → commit → `safeoutputs___create_pull_request` flow regardless of remaining `$TRANSLATION_WORKLIST` entries. If `ELAPSED_MIN >= 42`, **halt all translation work immediately** and execute the [`07-commit-and-pr.md §Emergency deadline order of operations`](../prompts/07-commit-and-pr.md) bash block to ship a partial PR before Timer A (60-min job `timeout-minutes`) and Timer B (~60-min Copilot API session) fire. A partial PR is always better than zero output — see the run-#26008347629 incident that lowered the default `max_briefs` from 3 to 2.
+2. The `Build executive-brief translation work list` pre-flight step has already exported four env vars into the agent sandbox: **`$TRANSLATION_WORKLIST`** (comma-separated repo-relative paths — read this verbatim, or parse the same content line-by-line from the file at **`$EXEC_BRIEF_WORKLIST_FILE`** at `${GITHUB_WORKSPACE}/.exec-brief-worklist.txt`), **`$TRANSLATION_LANGS`** (comma-separated language codes — honours operator-supplied `inputs.languages` after preset expansion), **`$MAX_BRIEFS`** / **`$MAX_BRIEFS_RESOLVED`** (1–7, clamp-applied), and the audit counters **`$MISSING_COUNT`** / **`$DRIFT_COUNT`**. **Do not re-scan the filesystem** to rebuild this list — the pre-flight step has already honoured `inputs.article_date`, `inputs.subfolder`, `inputs.languages`, `inputs.max_briefs`, and `inputs.force_retranslate`. The selector is **greenfield-first**: sources with one or more missing target files (`MISSING`) always win the `max_briefs` batch slots over sources that only need drift-fixes (`DRIFT`); `DRIFT` is only consulted when `MISSING` is empty. If `$TRANSLATION_WORKLIST` is empty (so `$MISSING_COUNT=0` **and** `$DRIFT_COUNT=0`), nothing is pending — proceed to improvement-mode (re-validate every existing translation against the current `<!-- source-sha: ... -->` trailer and fix any drift the validator flags). If still nothing changes after improvement-mode, follow `07-commit-and-pr.md §No-op policy`.
+3. For each source path in `$TRANSLATION_WORKLIST` (or each line of `$EXEC_BRIEF_WORKLIST_FILE`):
    1. **Pass 1 — translate**: Read the source `executive-brief.md` in full. For every language in `TRANSLATION_LANGS`, produce `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` following the TRANSLATION_GUIDE rules. Preserve every verbatim block (YAML, HTML comments except `source-sha`, `dok_id` codes, Mermaid DSL bodies, code fences, URLs, file paths, evidence-anchor canonical column values). Translate every always-translate block (prose, headings, list items, table cell text, image alt-text, BLUF, decisions, link text).
    2. **Pass 2 — read-back & refine**: Read every translation back in full. Verify structural parity (heading / fence / table / Mermaid counts match source ±0). Verify dok_id and URL set equality. Verify no banned English phrases remain in non-English files (`Executive Brief`, `Decisions`, `Confidence`, `BLUF`, …). Tighten tone register for the target language using the per-language guidance in TRANSLATION_GUIDE. For `ar` and `he`, ensure the file starts with `<!-- dir: rtl -->`.
    3. **Append the source-revision marker**: compute `SRC_SHA=$(git log -1 --format=%H -- <source>)` in the runtime shell. Append `<!-- source-sha: $SRC_SHA -->` as the last non-empty line of every translation file. This is the drift signal future runs use to decide whether to retranslate.
@@ -494,7 +535,7 @@ If a run is behind schedule at agent minute 30 with translations still pending, 
 
 | Minutes | Phase |
 |---------|-------|
-| 0–3 | MCP pre-warm; work-list resolved from `steps.worklist.outputs.TRANSLATION_WORKLIST`; record `JOB_START=$(date +%s)` |
+| 0–3 | MCP pre-warm; work-list resolved into `$TRANSLATION_WORKLIST` env var + `$EXEC_BRIEF_WORKLIST_FILE` (`${GITHUB_WORKSPACE}/.exec-brief-worklist.txt`); record `JOB_START=$(date +%s)` |
 | 3–5 | Read TRANSLATION_GUIDE §Executive Brief Markdown Translations + selected sources |
 | 5–32 | Pass 1 + Pass 2 translation × `max_briefs` sources × all requested languages; re-evaluate `ELAPSED_MIN` after every source and stop selecting new sources once `ELAPSED_MIN >= 35` |
 | 32–38 | Final validation with `scripts/validate-executive-brief-translations.ts`; append `<!-- source-sha: -->` trailers; stage scoped files |

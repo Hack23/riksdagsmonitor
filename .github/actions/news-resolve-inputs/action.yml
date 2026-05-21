@@ -1,0 +1,284 @@
+name: 'News workflow input resolver'
+description: |
+  Resolves `workflow_dispatch` inputs for every `.github/workflows/news-*.md`
+  agentic workflow into a single canonical set of environment variables
+  written to `$GITHUB_ENV`. Subsequent steps — including the agent's `bash:`
+  tool inside the `Execute GitHub Copilot CLI` step (which runs
+  `awf --env-all`) — see the resolved values directly, so the imported
+  prompt modules (`.github/prompts/0[3-7]-*.md`) can rely on:
+
+    ARTICLE_DATE         YYYY-MM-DD, today (UTC) when input omitted
+    SUBFOLDER            article type id (e.g. propositions, motions, …)
+    ANALYSIS_DEPTH       standard | deep | comprehensive
+    FORCE_GENERATION     true | false
+    CYCLE_ANCHOR         current | next | both          (election-cycle)
+    COVERAGE_DEPTH       standard | deep | comprehensive (evening-analysis)
+    LOOKBACK_HOURS       integer ≥ 1                     (evening-analysis)
+    ARTICLE_TYPES        comma list                      (realtime-monitor)
+    FOCUS                votes | debates | questions | all (realtime-monitor)
+    LANGUAGES_RESOLVED   comma list of BCP-47 codes      (news-translate)
+    MAX_BRIEFS_RESOLVED  1..7                             (news-translate)
+    FORCE_RETRANSLATE    true | false                     (news-translate)
+    TRANSLATE_SUBFOLDER  optional subfolder filter        (news-translate)
+
+  All values are also echoed to the step log under a "Resolved workflow
+  inputs" group so operators can audit dispatched-vs-actual quickly.
+
+  Validation rules:
+    - article-date must match `^[0-9]{4}-[0-9]{2}-[0-9]{2}$` when non-empty;
+      otherwise the action fails fast (the agent must never silently fall
+      back to today when the operator supplied a malformed date).
+    - analysis-depth, coverage-depth must be one of standard|deep|comprehensive.
+    - cycle-anchor must be one of current|next|both.
+    - lookback-hours must be a positive integer.
+    - focus must be one of votes|debates|questions|all.
+    - max-briefs must be in 1..7 (matches news-translate hard cap; out-of-range
+      values fall back to 2 with a warning, matching the prior bespoke logic).
+    - boolean inputs accept literal `true` / `false` (anything else → `false`).
+inputs:
+  subfolder:
+    description: |
+      Article-type id used as the analysis subfolder (e.g. `propositions`,
+      `motions`, `committee-reports`, `interpellations`, `evening-analysis`,
+      `realtime-monitor`, `week-ahead`, `month-ahead`, `quarter-ahead`,
+      `year-ahead`, `election-cycle`, `weekly-review`, `monthly-review`,
+      `news-translate`). Hardcoded per workflow — must match the article-type
+      id in `analysis/article-types.json`.
+    required: true
+  article-date:
+    description: 'workflow_dispatch input `article_date` (YYYY-MM-DD). Empty → today (UTC).'
+    required: false
+    default: ''
+  force-generation:
+    description: 'workflow_dispatch input `force_generation` (true/false). Empty → false.'
+    required: false
+    default: ''
+  analysis-depth:
+    description: 'workflow_dispatch input `analysis_depth` (standard|deep|comprehensive).'
+    required: false
+    default: ''
+  default-analysis-depth:
+    description: 'Fallback analysis depth when the input is empty (per-workflow default — propositions/motions/… use `deep`, year-ahead/election-cycle use `comprehensive`, news-translate uses `standard`).'
+    required: false
+    default: 'deep'
+  cycle-anchor:
+    description: 'workflow_dispatch input `cycle_anchor` (current|next|both). election-cycle only.'
+    required: false
+    default: ''
+  coverage-depth:
+    description: 'workflow_dispatch input `coverage_depth` (standard|deep|comprehensive). evening-analysis only.'
+    required: false
+    default: ''
+  lookback-hours:
+    description: 'workflow_dispatch input `lookback_hours` (positive integer). evening-analysis only.'
+    required: false
+    default: ''
+  article-types:
+    description: 'workflow_dispatch input `article_types` (comma list). realtime-monitor only.'
+    required: false
+    default: ''
+  focus:
+    description: 'workflow_dispatch input `focus` (votes|debates|questions|all). realtime-monitor only.'
+    required: false
+    default: ''
+  languages:
+    description: 'workflow_dispatch input `languages` (comma list or preset name). news-translate only.'
+    required: false
+    default: ''
+  max-briefs:
+    description: 'workflow_dispatch input `max_briefs` (1..7). news-translate only.'
+    required: false
+    default: ''
+  force-retranslate:
+    description: 'workflow_dispatch input `force_retranslate` (true/false). news-translate only.'
+    required: false
+    default: ''
+  translate-subfolder:
+    description: 'workflow_dispatch input `subfolder` for news-translate (restricts scan to a single document type). news-translate only.'
+    required: false
+    default: ''
+runs:
+  using: 'composite'
+  steps:
+    - name: Resolve workflow inputs → $GITHUB_ENV
+      shell: bash
+      env:
+        IN_SUBFOLDER: ${{ inputs.subfolder }}
+        IN_ARTICLE_DATE: ${{ inputs.article-date }}
+        IN_FORCE_GENERATION: ${{ inputs.force-generation }}
+        IN_ANALYSIS_DEPTH: ${{ inputs.analysis-depth }}
+        IN_DEFAULT_DEPTH: ${{ inputs.default-analysis-depth }}
+        IN_CYCLE_ANCHOR: ${{ inputs.cycle-anchor }}
+        IN_COVERAGE_DEPTH: ${{ inputs.coverage-depth }}
+        IN_LOOKBACK_HOURS: ${{ inputs.lookback-hours }}
+        IN_ARTICLE_TYPES: ${{ inputs.article-types }}
+        IN_FOCUS: ${{ inputs.focus }}
+        IN_LANGUAGES: ${{ inputs.languages }}
+        IN_MAX_BRIEFS: ${{ inputs.max-briefs }}
+        IN_FORCE_RETRANSLATE: ${{ inputs.force-retranslate }}
+        IN_TRANSLATE_SUBFOLDER: ${{ inputs.translate-subfolder }}
+      run: |
+        set -Eeuo pipefail
+        LC_ALL=C.UTF-8 LANG=C.UTF-8
+
+        fail() { echo "::error::news-resolve-inputs: $*" >&2; exit 1; }
+
+        # ── SUBFOLDER (required; hardcoded per workflow) ─────────────────────
+        if [ -z "${IN_SUBFOLDER:-}" ]; then
+          fail "subfolder input is required"
+        fi
+        # Allow lower-case + digits + hyphen (matches article-type id grammar
+        # in analysis/article-types.json).
+        if ! printf '%s' "$IN_SUBFOLDER" | grep -qE '^[a-z][a-z0-9-]*$'; then
+          fail "subfolder '$IN_SUBFOLDER' must match ^[a-z][a-z0-9-]*$"
+        fi
+        SUBFOLDER="$IN_SUBFOLDER"
+
+        # ── ARTICLE_DATE (default: today UTC) ────────────────────────────────
+        if [ -n "${IN_ARTICLE_DATE:-}" ]; then
+          if ! printf '%s' "$IN_ARTICLE_DATE" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'; then
+            fail "article_date '$IN_ARTICLE_DATE' must be YYYY-MM-DD"
+          fi
+          ARTICLE_DATE="$IN_ARTICLE_DATE"
+        else
+          ARTICLE_DATE="$(date -u '+%Y-%m-%d')"
+        fi
+
+        # ── ANALYSIS_DEPTH ───────────────────────────────────────────────────
+        DEFAULT_DEPTH="${IN_DEFAULT_DEPTH:-deep}"
+        case "$DEFAULT_DEPTH" in
+          standard|deep|comprehensive) ;;
+          *) fail "default-analysis-depth '$DEFAULT_DEPTH' must be one of standard|deep|comprehensive" ;;
+        esac
+        ANALYSIS_DEPTH="${IN_ANALYSIS_DEPTH:-$DEFAULT_DEPTH}"
+        case "$ANALYSIS_DEPTH" in
+          standard|deep|comprehensive) ;;
+          *) fail "analysis_depth '$ANALYSIS_DEPTH' must be one of standard|deep|comprehensive" ;;
+        esac
+
+        # ── FORCE_GENERATION (boolean coercion) ──────────────────────────────
+        case "${IN_FORCE_GENERATION:-}" in
+          true)    FORCE_GENERATION=true ;;
+          ''|false) FORCE_GENERATION=false ;;
+          *)       fail "force_generation '$IN_FORCE_GENERATION' must be literal 'true' or 'false'" ;;
+        esac
+
+        # ── Optional per-workflow extras ─────────────────────────────────────
+        CYCLE_ANCHOR=""
+        if [ -n "${IN_CYCLE_ANCHOR:-}" ]; then
+          case "$IN_CYCLE_ANCHOR" in
+            current|next|both) CYCLE_ANCHOR="$IN_CYCLE_ANCHOR" ;;
+            *) fail "cycle_anchor '$IN_CYCLE_ANCHOR' must be one of current|next|both" ;;
+          esac
+        fi
+
+        COVERAGE_DEPTH=""
+        if [ -n "${IN_COVERAGE_DEPTH:-}" ]; then
+          case "$IN_COVERAGE_DEPTH" in
+            standard|deep|comprehensive) COVERAGE_DEPTH="$IN_COVERAGE_DEPTH" ;;
+            *) fail "coverage_depth '$IN_COVERAGE_DEPTH' must be one of standard|deep|comprehensive" ;;
+          esac
+        fi
+
+        LOOKBACK_HOURS=""
+        if [ -n "${IN_LOOKBACK_HOURS:-}" ]; then
+          if ! printf '%s' "$IN_LOOKBACK_HOURS" | grep -qE '^[1-9][0-9]*$'; then
+            fail "lookback_hours '$IN_LOOKBACK_HOURS' must be a positive integer"
+          fi
+          LOOKBACK_HOURS="$IN_LOOKBACK_HOURS"
+        fi
+
+        ARTICLE_TYPES=""
+        if [ -n "${IN_ARTICLE_TYPES:-}" ]; then
+          # Comma list of [a-z0-9-] tokens — same grammar as SUBFOLDER per item.
+          if ! printf '%s' "$IN_ARTICLE_TYPES" | grep -qE '^[a-z][a-z0-9-]*(,[a-z][a-z0-9-]*)*$'; then
+            fail "article_types '$IN_ARTICLE_TYPES' must be a comma list of [a-z][a-z0-9-]* tokens"
+          fi
+          ARTICLE_TYPES="$IN_ARTICLE_TYPES"
+        fi
+
+        FOCUS=""
+        if [ -n "${IN_FOCUS:-}" ]; then
+          case "$IN_FOCUS" in
+            votes|debates|questions|all) FOCUS="$IN_FOCUS" ;;
+            *) fail "focus '$IN_FOCUS' must be one of votes|debates|questions|all" ;;
+          esac
+        fi
+
+        # ── news-translate extras ────────────────────────────────────────────
+        LANGUAGES_RESOLVED=""
+        if [ -n "${IN_LANGUAGES:-}" ]; then
+          case "$IN_LANGUAGES" in
+            all-extra)    LANGUAGES_RESOLVED="sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh" ;;
+            nordic-extra) LANGUAGES_RESOLVED="sv,da,no,fi" ;;
+            eu-extra)     LANGUAGES_RESOLVED="de,fr,es,nl" ;;
+            cjk)          LANGUAGES_RESOLVED="ja,ko,zh" ;;
+            rtl)          LANGUAGES_RESOLVED="ar,he" ;;
+            *)
+              # Plain comma list of 2-3 letter ISO codes.
+              if ! printf '%s' "$IN_LANGUAGES" | grep -qE '^[a-z]{2,3}(,[a-z]{2,3})*$'; then
+                fail "languages '$IN_LANGUAGES' must be a known preset or comma list of ISO codes"
+              fi
+              LANGUAGES_RESOLVED="$IN_LANGUAGES"
+              ;;
+          esac
+        fi
+
+        MAX_BRIEFS_RESOLVED=""
+        if [ -n "${IN_MAX_BRIEFS:-}" ]; then
+          if ! printf '%s' "$IN_MAX_BRIEFS" | grep -qE '^[1-7]$'; then
+            echo "::warning::max_briefs '$IN_MAX_BRIEFS' out of range 1..7 — clamping to 2"
+            MAX_BRIEFS_RESOLVED=2
+          else
+            MAX_BRIEFS_RESOLVED="$IN_MAX_BRIEFS"
+          fi
+        fi
+
+        case "${IN_FORCE_RETRANSLATE:-}" in
+          true)    FORCE_RETRANSLATE=true ;;
+          ''|false) FORCE_RETRANSLATE=false ;;
+          *)       fail "force_retranslate '$IN_FORCE_RETRANSLATE' must be literal 'true' or 'false'" ;;
+        esac
+
+        TRANSLATE_SUBFOLDER=""
+        if [ -n "${IN_TRANSLATE_SUBFOLDER:-}" ]; then
+          if ! printf '%s' "$IN_TRANSLATE_SUBFOLDER" | grep -qE '^[a-z][a-z0-9-]*$'; then
+            fail "translate-subfolder '$IN_TRANSLATE_SUBFOLDER' must match ^[a-z][a-z0-9-]*$"
+          fi
+          TRANSLATE_SUBFOLDER="$IN_TRANSLATE_SUBFOLDER"
+        fi
+
+        # ── Export to $GITHUB_ENV ────────────────────────────────────────────
+        {
+          echo "ARTICLE_DATE=$ARTICLE_DATE"
+          echo "SUBFOLDER=$SUBFOLDER"
+          echo "ANALYSIS_DEPTH=$ANALYSIS_DEPTH"
+          echo "FORCE_GENERATION=$FORCE_GENERATION"
+          [ -n "$CYCLE_ANCHOR" ]        && echo "CYCLE_ANCHOR=$CYCLE_ANCHOR"
+          [ -n "$COVERAGE_DEPTH" ]      && echo "COVERAGE_DEPTH=$COVERAGE_DEPTH"
+          [ -n "$LOOKBACK_HOURS" ]      && echo "LOOKBACK_HOURS=$LOOKBACK_HOURS"
+          [ -n "$ARTICLE_TYPES" ]       && echo "ARTICLE_TYPES=$ARTICLE_TYPES"
+          [ -n "$FOCUS" ]               && echo "FOCUS=$FOCUS"
+          [ -n "$LANGUAGES_RESOLVED" ]  && echo "LANGUAGES_RESOLVED=$LANGUAGES_RESOLVED"
+          [ -n "$MAX_BRIEFS_RESOLVED" ] && echo "MAX_BRIEFS_RESOLVED=$MAX_BRIEFS_RESOLVED"
+          echo "FORCE_RETRANSLATE=$FORCE_RETRANSLATE"
+          [ -n "$TRANSLATE_SUBFOLDER" ] && echo "TRANSLATE_SUBFOLDER=$TRANSLATE_SUBFOLDER"
+        } >> "$GITHUB_ENV"
+
+        # Human-readable audit block (same fields, plus dispatched-vs-resolved
+        # parity for operators investigating production runs).
+        echo "::group::Resolved workflow inputs"
+        echo "ARTICLE_DATE        = $ARTICLE_DATE"
+        echo "SUBFOLDER           = $SUBFOLDER"
+        echo "ANALYSIS_DEPTH      = $ANALYSIS_DEPTH  (default: $DEFAULT_DEPTH)"
+        echo "FORCE_GENERATION    = $FORCE_GENERATION"
+        [ -n "$CYCLE_ANCHOR" ]        && echo "CYCLE_ANCHOR        = $CYCLE_ANCHOR"
+        [ -n "$COVERAGE_DEPTH" ]      && echo "COVERAGE_DEPTH      = $COVERAGE_DEPTH"
+        [ -n "$LOOKBACK_HOURS" ]      && echo "LOOKBACK_HOURS      = $LOOKBACK_HOURS"
+        [ -n "$ARTICLE_TYPES" ]       && echo "ARTICLE_TYPES       = $ARTICLE_TYPES"
+        [ -n "$FOCUS" ]               && echo "FOCUS               = $FOCUS"
+        [ -n "$LANGUAGES_RESOLVED" ]  && echo "LANGUAGES_RESOLVED  = $LANGUAGES_RESOLVED"
+        [ -n "$MAX_BRIEFS_RESOLVED" ] && echo "MAX_BRIEFS_RESOLVED = $MAX_BRIEFS_RESOLVED"
+        echo "FORCE_RETRANSLATE   = $FORCE_RETRANSLATE"
+        [ -n "$TRANSLATE_SUBFOLDER" ] && echo "TRANSLATE_SUBFOLDER = $TRANSLATE_SUBFOLDER"
+        echo "::endgroup::"

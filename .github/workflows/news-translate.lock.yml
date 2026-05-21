@@ -1,5 +1,5 @@
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"81db5413dbaa6ab4bdc94916339a2167490f54150e953487e3c50467e3969fe5","compiler_version":"v0.74.9","agent_id":"copilot","agent_model":"claude-sonnet-4.6"}
-# gh-aw-manifest: {"version":1,"secrets":["COPILOT_GITHUB_TOKEN","GH_AW_CI_TRIGGER_TOKEN","GH_AW_GITHUB_MCP_SERVER_TOKEN","GH_AW_GITHUB_TOKEN","GITHUB_TOKEN","IMF_SDMX_SUBSCRIPTION_KEY"],"actions":[{"repo":"actions/cache/restore","sha":"27d5ce7f107fe9357f9df03efb73ab90386fccae","version":"v5.0.5"},{"repo":"actions/cache/save","sha":"27d5ce7f107fe9357f9df03efb73ab90386fccae","version":"v5.0.5"},{"repo":"actions/checkout","sha":"de0fac2e4500dabe0009e67214ff5f5447ce83dd","version":"v6.0.2"},{"repo":"actions/download-artifact","sha":"3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c","version":"v8.0.1"},{"repo":"actions/github-script","sha":"3a2844b7e9c422d3c10d287c895573f7108da1b3","version":"v9.0.0"},{"repo":"actions/setup-node","sha":"48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e","version":"v6.4.0"},{"repo":"actions/upload-artifact","sha":"043fb46d1a93c77aae656e7c1c64a875d1fc6a0a","version":"v7.0.1"},{"repo":"github/gh-aw-actions/setup","sha":"318d7f4901f78b85e25b91709cf0109ac9b425f6","version":"v0.74.9"},{"repo":"github/gh-aw/actions/setup-cli","sha":"aaa7b6d973614970d3c33cce729b188e1bc14e7e","version":"v0.74.9"}],"containers":[{"image":"alpine:latest","digest":"sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11","pinned_image":"alpine:latest@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11"},{"image":"ghcr.io/github/gh-aw-firewall/agent:0.25.49","digest":"sha256:9e4b936d4215af09fa412e12a5fc82f97f2cde4993eefc85980a900122fa9062","pinned_image":"ghcr.io/github/gh-aw-firewall/agent:0.25.49@sha256:9e4b936d4215af09fa412e12a5fc82f97f2cde4993eefc85980a900122fa9062"},{"image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.25.49","digest":"sha256:b795506f6b4fd12694a29f964b4d38d2d29ac3aaafe3394131619ce36020b646","pinned_image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.25.49@sha256:b795506f6b4fd12694a29f964b4d38d2d29ac3aaafe3394131619ce36020b646"},{"image":"ghcr.io/github/gh-aw-firewall/squid:0.25.49","digest":"sha256:f6c6998edfb9f58b6e12d3f148e6f2104747a7702d563a9e8b13d4b2ae6997dd","pinned_image":"ghcr.io/github/gh-aw-firewall/squid:0.25.49@sha256:f6c6998edfb9f58b6e12d3f148e6f2104747a7702d563a9e8b13d4b2ae6997dd"},{"image":"ghcr.io/github/gh-aw-mcpg:v0.3.9","digest":"sha256:64828b42a4482f58fab16509d7f8f495a6d97c972a98a68aff20543531ac0388","pinned_image":"ghcr.io/github/gh-aw-mcpg:v0.3.9@sha256:64828b42a4482f58fab16509d7f8f495a6d97c972a98a68aff20543531ac0388"},{"image":"ghcr.io/github/github-mcp-server:v1.0.4","digest":"sha256:e3816a476a977cfb836e7d221510011436c654d11861db66ecfd826601aba6a4","pinned_image":"ghcr.io/github/github-mcp-server:v1.0.4@sha256:e3816a476a977cfb836e7d221510011436c654d11861db66ecfd826601aba6a4"},{"image":"node:26-alpine","digest":"sha256:30f5a66e7265ef70aac56b4753ffa7905e54eca1084bc25503893ad8e9273f05","pinned_image":"node:26-alpine@sha256:30f5a66e7265ef70aac56b4753ffa7905e54eca1084bc25503893ad8e9273f05"},{"image":"node:lts-alpine","digest":"sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f","pinned_image":"node:lts-alpine@sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f"}]}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"07a89045b8a4094f2c7b0de915473a87fcd728b8d0a4acd05308e30a70e0c934","compiler_version":"v0.74.9","agent_id":"copilot","agent_model":"claude-sonnet-4.6"}
+# gh-aw-manifest: {"version":1,"secrets":["COPILOT_GITHUB_TOKEN","GH_AW_CI_TRIGGER_TOKEN","GH_AW_GITHUB_MCP_SERVER_TOKEN","GH_AW_GITHUB_TOKEN","GITHUB_TOKEN","IMF_SDMX_SUBSCRIPTION_KEY"],"actions":[{"repo":"actions/cache/restore","sha":"27d5ce7f107fe9357f9df03efb73ab90386fccae","version":"v5.0.5"},{"repo":"actions/cache/save","sha":"27d5ce7f107fe9357f9df03efb73ab90386fccae","version":"v5.0.5"},{"repo":"actions/checkout","sha":"de0fac2e4500dabe0009e67214ff5f5447ce83dd","version":"v6.0.2"},{"repo":"actions/download-artifact","sha":"3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c","version":"v8.0.1"},{"repo":"actions/github-script","sha":"3a2844b7e9c422d3c10d287c895573f7108da1b3","version":"v9.0.0"},{"repo":"actions/setup-node","sha":"48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e","version":"v6.4.0"},{"repo":"actions/upload-artifact","sha":"043fb46d1a93c77aae656e7c1c64a875d1fc6a0a","version":"v7.0.1"},{"repo":"github/gh-aw-actions/setup","sha":"318d7f4901f78b85e25b91709cf0109ac9b425f6","version":"v0.74.9"},{"repo":"github/gh-aw/actions/setup-cli","sha":"aaa7b6d973614970d3c33cce729b188e1bc14e7e","version":"v0.74.9"},{"repo":"ruby/setup-ruby","sha":"97ecb7b512899eb71ab1bf2310a624c6f1589ac6","version":"v1.308.0"}],"containers":[{"image":"alpine:latest","digest":"sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11","pinned_image":"alpine:latest@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11"},{"image":"ghcr.io/github/gh-aw-firewall/agent:0.25.49","digest":"sha256:9e4b936d4215af09fa412e12a5fc82f97f2cde4993eefc85980a900122fa9062","pinned_image":"ghcr.io/github/gh-aw-firewall/agent:0.25.49@sha256:9e4b936d4215af09fa412e12a5fc82f97f2cde4993eefc85980a900122fa9062"},{"image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.25.49","digest":"sha256:b795506f6b4fd12694a29f964b4d38d2d29ac3aaafe3394131619ce36020b646","pinned_image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.25.49@sha256:b795506f6b4fd12694a29f964b4d38d2d29ac3aaafe3394131619ce36020b646"},{"image":"ghcr.io/github/gh-aw-firewall/squid:0.25.49","digest":"sha256:f6c6998edfb9f58b6e12d3f148e6f2104747a7702d563a9e8b13d4b2ae6997dd","pinned_image":"ghcr.io/github/gh-aw-firewall/squid:0.25.49@sha256:f6c6998edfb9f58b6e12d3f148e6f2104747a7702d563a9e8b13d4b2ae6997dd"},{"image":"ghcr.io/github/gh-aw-mcpg:v0.3.9","digest":"sha256:64828b42a4482f58fab16509d7f8f495a6d97c972a98a68aff20543531ac0388","pinned_image":"ghcr.io/github/gh-aw-mcpg:v0.3.9@sha256:64828b42a4482f58fab16509d7f8f495a6d97c972a98a68aff20543531ac0388"},{"image":"ghcr.io/github/github-mcp-server:v1.0.4","digest":"sha256:e3816a476a977cfb836e7d221510011436c654d11861db66ecfd826601aba6a4","pinned_image":"ghcr.io/github/github-mcp-server:v1.0.4@sha256:e3816a476a977cfb836e7d221510011436c654d11861db66ecfd826601aba6a4"},{"image":"node:26-alpine","digest":"sha256:30f5a66e7265ef70aac56b4753ffa7905e54eca1084bc25503893ad8e9273f05","pinned_image":"node:26-alpine@sha256:30f5a66e7265ef70aac56b4753ffa7905e54eca1084bc25503893ad8e9273f05"},{"image":"node:lts-alpine","digest":"sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f","pinned_image":"node:lts-alpine@sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f"}]}
 #    ___                   _   _      
 #   / _ \                 | | (_)     
 #  | |_| | __ _  ___ _ __ | |_ _  ___ 
@@ -50,6 +50,7 @@
 #   - actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
 #   - github/gh-aw-actions/setup@318d7f4901f78b85e25b91709cf0109ac9b425f6 # v0.74.9
 #   - github/gh-aw/actions/setup-cli@aaa7b6d973614970d3c33cce729b188e1bc14e7e # v0.74.9
+#   - ruby/setup-ruby@97ecb7b512899eb71ab1bf2310a624c6f1589ac6 # v1.308.0
 #
 # Container images used:
 #   - alpine:latest@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11
@@ -224,25 +225,25 @@ jobs:
         run: |
           bash "${RUNNER_TEMP}/gh-aw/actions/create_prompt_first.sh"
           {
-          cat << 'GH_AW_PROMPT_b12fdda7710a5675_EOF'
+          cat << 'GH_AW_PROMPT_7e58a0de2c671372_EOF'
           <system>
-          GH_AW_PROMPT_b12fdda7710a5675_EOF
+          GH_AW_PROMPT_7e58a0de2c671372_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/xpia.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/temp_folder_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/markdown.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/agentic_workflows_guide.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/cache_memory_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_prompt.md"
-          cat << 'GH_AW_PROMPT_b12fdda7710a5675_EOF'
+          cat << 'GH_AW_PROMPT_7e58a0de2c671372_EOF'
           <safe-output-tools>
           Tools: add_comment, create_pull_request, missing_tool, missing_data, noop
-          GH_AW_PROMPT_b12fdda7710a5675_EOF
+          GH_AW_PROMPT_7e58a0de2c671372_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_create_pull_request.md"
-          cat << 'GH_AW_PROMPT_b12fdda7710a5675_EOF'
+          cat << 'GH_AW_PROMPT_7e58a0de2c671372_EOF'
           </safe-output-tools>
-          GH_AW_PROMPT_b12fdda7710a5675_EOF
+          GH_AW_PROMPT_7e58a0de2c671372_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/mcp_cli_tools_prompt.md"
-          cat << 'GH_AW_PROMPT_b12fdda7710a5675_EOF'
+          cat << 'GH_AW_PROMPT_7e58a0de2c671372_EOF'
           <github-context>
           The following GitHub context information is available for this workflow:
           {{#if github.actor}}
@@ -271,16 +272,16 @@ jobs:
           {{/if}}
           </github-context>
           
-          GH_AW_PROMPT_b12fdda7710a5675_EOF
+          GH_AW_PROMPT_7e58a0de2c671372_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/github_mcp_tools_with_safeoutputs_prompt.md"
-          cat << 'GH_AW_PROMPT_b12fdda7710a5675_EOF'
+          cat << 'GH_AW_PROMPT_7e58a0de2c671372_EOF'
           </system>
           {{#runtime-import .github/prompts/00-base-contract.md}}
           {{#runtime-import .github/prompts/01-bash-and-shell-safety.md}}
           {{#runtime-import .github/prompts/02-mcp-access.md}}
           {{#runtime-import .github/prompts/07-commit-and-pr.md}}
           {{#runtime-import .github/workflows/news-translate.md}}
-          GH_AW_PROMPT_b12fdda7710a5675_EOF
+          GH_AW_PROMPT_7e58a0de2c671372_EOF
           } > "$GH_AW_PROMPT"
       - name: Interpolate variables and render templates
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
@@ -426,6 +427,10 @@ jobs:
         with:
           node-version: '26'
           package-manager-cache: false
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@97ecb7b512899eb71ab1bf2310a624c6f1589ac6 # v1.308.0
+        with:
+          ruby-version: '3.3'
       - name: Create gh-aw temp directory
         run: bash "${RUNNER_TEMP}/gh-aw/actions/create_gh_aw_tmp_dir.sh"
       - name: Configure gh CLI for GitHub Enterprise
@@ -436,6 +441,17 @@ jobs:
         uses: ./.github/actions/news-prewarm
         with:
           imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+      - name: Resolve workflow inputs
+        uses: ./.github/actions/news-resolve-inputs
+        with:
+          analysis-depth: ${{ inputs.analysis_depth }}
+          article-date: ${{ inputs.article_date }}
+          default-analysis-depth: standard
+          force-retranslate: ${{ inputs.force_retranslate }}
+          languages: ${{ inputs.languages }}
+          max-briefs: ${{ inputs.max_briefs }}
+          subfolder: news-translate
+          translate-subfolder: ${{ inputs.subfolder }}
       - env:
           ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
           FORCE_RETRANSLATE: ${{ github.event.inputs.force_retranslate }}
@@ -444,7 +460,7 @@ jobs:
           SUBFOLDER_INPUT: ${{ github.event.inputs.subfolder }}
         id: worklist
         name: Build executive-brief translation work list
-        run: "set -euo pipefail\n# Resolve target languages.\nLANGUAGES_RAW=\"${LANGUAGES_INPUT:-all-extra}\"\ncase \"$LANGUAGES_RAW\" in\n  all-extra) LANGS=\"sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh\" ;;\n  nordic-extra) LANGS=\"sv,da,no,fi\" ;;\n  eu-extra) LANGS=\"de,fr,es,nl\" ;;\n  cjk) LANGS=\"ja,ko,zh\" ;;\n  rtl) LANGS=\"ar,he\" ;;\n  *) LANGS=\"$LANGUAGES_RAW\" ;;\nesac\necho \"Target languages: $LANGS\"\n\n# Resolve batch cap (1–7 hard range).\nMAX_BRIEFS=\"${MAX_BRIEFS_INPUT:-2}\"\nif ! [[ \"$MAX_BRIEFS\" =~ ^[1-7]$ ]]; then\n  echo \"::warning::max_briefs '$MAX_BRIEFS' out of range; clamping to 2\"\n  MAX_BRIEFS=2\nfi\necho \"Max source briefs this run: $MAX_BRIEFS\"\n\n# Discover candidate sources.\nROOT=\"analysis/daily\"\nif [ ! -d \"$ROOT\" ]; then\n  echo \"TRANSLATION_WORKLIST=\" >> \"$GITHUB_OUTPUT\"\n  echo \"No $ROOT directory — nothing to translate.\"\n  exit 0\nfi\n\nif [ -n \"${ARTICLE_DATE_INPUT:-}\" ] && [ -n \"${SUBFOLDER_INPUT:-}\" ]; then\n  SCAN_PATTERN=\"$ROOT/$ARTICLE_DATE_INPUT/$SUBFOLDER_INPUT\"\nelif [ -n \"${ARTICLE_DATE_INPUT:-}\" ]; then\n  SCAN_PATTERN=\"$ROOT/$ARTICLE_DATE_INPUT\"\nelse\n  SCAN_PATTERN=\"$ROOT\"\nfi\n\n# Build list of (date, source-path) tuples, oldest date first.\nCANDIDATES=$(find \"$SCAN_PATTERN\" -type f -name 'executive-brief.md' 2>/dev/null \\\n  | sort)\n\nif [ -z \"$CANDIDATES\" ]; then\n  echo \"TRANSLATION_WORKLIST=\" >> \"$GITHUB_OUTPUT\"\n  echo \"No executive-brief.md sources found under $SCAN_PATTERN.\"\n  exit 0\nfi\n\n# For each source, classify it as MISSING (≥1 requested language file absent\n# or empty) or DRIFT (every requested language file present but ≥1 has a\n# stale `<!-- source-sha: ... -->` trailer relative to the current source\n# commit SHA). When `force_retranslate=true`, every source with at least\n# one existing target file is reclassified as DRIFT (forces a re-pass);\n# sources missing any target stay in MISSING.\n#\n# Selection policy (greenfield-first):\n#   1. Fill `MAX_BRIEFS` batch slots with MISSING sources, oldest date first\n#      (159-source backlog is drained before any drift-fix work).\n#   2. Only if MISSING is empty after the scan, fill remaining slots with\n#      DRIFT sources, oldest date first.\n# This guarantees runs never \"redo already-translated briefs\" while the\n# untranslated backlog still has work — see PR description for context.\nMISSING=()\nDRIFT=()\nIFS=',' read -ra LANG_LIST <<< \"$LANGS\"\nwhile IFS= read -r SRC; do\n  [ -n \"$SRC\" ] || continue\n  DIR=$(dirname \"$SRC\")\n  SRC_SHA=$(git log -1 --format=%H -- \"$SRC\" 2>/dev/null || echo \"\")\n  HAS_MISSING=0\n  HAS_DRIFT=0\n  for L in \"${LANG_LIST[@]}\"; do\n    TGT=\"$DIR/executive-brief_${L}.md\"\n    if [ ! -s \"$TGT\" ]; then\n      HAS_MISSING=1\n      continue\n    fi\n    if [ -n \"$SRC_SHA\" ] && ! grep -q \"<!-- source-sha: $SRC_SHA -->\" \"$TGT\" 2>/dev/null; then\n      HAS_DRIFT=1\n    fi\n  done\n  if [ \"$HAS_MISSING\" -eq 1 ]; then\n    MISSING+=(\"$SRC\")\n  elif [ \"${FORCE_RETRANSLATE:-false}\" = \"true\" ] || [ \"$HAS_DRIFT\" -eq 1 ]; then\n    DRIFT+=(\"$SRC\")\n  fi\ndone <<< \"$CANDIDATES\"\n\nMISSING_COUNT=\"${#MISSING[@]}\"\nDRIFT_COUNT=\"${#DRIFT[@]}\"\necho \"Backlog classification: MISSING=$MISSING_COUNT  DRIFT=$DRIFT_COUNT\"\n\n# Fill batch: MISSING first (greenfield), DRIFT only if capacity remains.\nWORK=()\nfor SRC in \"${MISSING[@]}\"; do\n  WORK+=(\"$SRC\")\n  if [ \"${#WORK[@]}\" -ge \"$MAX_BRIEFS\" ]; then break; fi\ndone\nif [ \"${#WORK[@]}\" -lt \"$MAX_BRIEFS\" ]; then\n  for SRC in \"${DRIFT[@]}\"; do\n    WORK+=(\"$SRC\")\n    if [ \"${#WORK[@]}\" -ge \"$MAX_BRIEFS\" ]; then break; fi\n  done\nfi\n\nif [ \"${#WORK[@]}\" -eq 0 ]; then\n  echo \"TRANSLATION_WORKLIST=\" >> \"$GITHUB_OUTPUT\"\n  echo \"MISSING_COUNT=$MISSING_COUNT\" >> \"$GITHUB_OUTPUT\"\n  echo \"DRIFT_COUNT=$DRIFT_COUNT\" >> \"$GITHUB_OUTPUT\"\n  echo \"All discovered sources are up to date for the requested languages.\"\n  exit 0\nfi\n\n# Categorise the chosen batch for the log line: how many slots were filled\n# with greenfield (MISSING) vs drift-fix (DRIFT) work.\nWORK_MISSING=0\nWORK_DRIFT=0\nfor SRC in \"${WORK[@]}\"; do\n  for M in \"${MISSING[@]:-}\"; do\n    if [ \"$M\" = \"$SRC\" ]; then WORK_MISSING=$((WORK_MISSING+1)); continue 2; fi\n  done\n  WORK_DRIFT=$((WORK_DRIFT+1))\ndone\n\nprintf '%s\\n' \"${WORK[@]}\" > /tmp/exec-brief-worklist.txt\nWORKLIST_JOINED=$(printf '%s\\n' \"${WORK[@]}\" | paste -sd ',' -)\necho \"TRANSLATION_WORKLIST=$WORKLIST_JOINED\" >> \"$GITHUB_OUTPUT\"\necho \"TRANSLATION_LANGS=$LANGS\" >> \"$GITHUB_OUTPUT\"\necho \"MAX_BRIEFS=$MAX_BRIEFS\" >> \"$GITHUB_OUTPUT\"\necho \"MISSING_COUNT=$MISSING_COUNT\" >> \"$GITHUB_OUTPUT\"\necho \"DRIFT_COUNT=$DRIFT_COUNT\" >> \"$GITHUB_OUTPUT\"\necho \"✅ Selected ${#WORK[@]} source brief(s) for translation into [$LANGS]\"\necho \"   (greenfield=$WORK_MISSING / drift-fix=$WORK_DRIFT;  total backlog: MISSING=$MISSING_COUNT DRIFT=$DRIFT_COUNT)\"\nprintf '   %s\\n' \"${WORK[@]}\"\n"
+        run: "set -euo pipefail\n# Resolve target languages.\nLANGUAGES_RAW=\"${LANGUAGES_INPUT:-all-extra}\"\ncase \"$LANGUAGES_RAW\" in\n  all-extra) LANGS=\"sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh\" ;;\n  nordic-extra) LANGS=\"sv,da,no,fi\" ;;\n  eu-extra) LANGS=\"de,fr,es,nl\" ;;\n  cjk) LANGS=\"ja,ko,zh\" ;;\n  rtl) LANGS=\"ar,he\" ;;\n  *) LANGS=\"$LANGUAGES_RAW\" ;;\nesac\necho \"Target languages: $LANGS\"\n\n# Resolve batch cap (1–7 hard range).\nMAX_BRIEFS=\"${MAX_BRIEFS_INPUT:-2}\"\nif ! [[ \"$MAX_BRIEFS\" =~ ^[1-7]$ ]]; then\n  echo \"::warning::max_briefs '$MAX_BRIEFS' out of range; clamping to 2\"\n  MAX_BRIEFS=2\nfi\necho \"Max source briefs this run: $MAX_BRIEFS\"\n\n# Discover candidate sources.\nROOT=\"analysis/daily\"\n# Worklist file written to GITHUB_WORKSPACE so it is visible inside the\n# AWF container (`--add-dir \"${GITHUB_WORKSPACE}\"`); /tmp on the runner\n# is NOT mounted into the container and the agent cannot read it.\nWORKLIST_FILE=\"${GITHUB_WORKSPACE}/.exec-brief-worklist.txt\"\n\n# Emit a single canonical bundle to BOTH $GITHUB_OUTPUT (for downstream\n# GHA steps) AND $GITHUB_ENV (so `awf --env-all` forwards the values\n# to the agent's bash sandbox — agents have no access to step outputs).\nemit_bundle() {\n  local worklist=\"$1\" langs=\"$2\" max=\"$3\" missing=\"$4\" drift=\"$5\"\n  {\n    echo \"TRANSLATION_WORKLIST=$worklist\"\n    echo \"TRANSLATION_LANGS=$langs\"\n    echo \"MAX_BRIEFS=$max\"\n    echo \"MAX_BRIEFS_RESOLVED=$max\"\n    echo \"MISSING_COUNT=$missing\"\n    echo \"DRIFT_COUNT=$drift\"\n    echo \"EXEC_BRIEF_WORKLIST_FILE=$WORKLIST_FILE\"\n  } >> \"$GITHUB_OUTPUT\"\n  {\n    echo \"TRANSLATION_WORKLIST=$worklist\"\n    echo \"TRANSLATION_LANGS=$langs\"\n    echo \"MAX_BRIEFS=$max\"\n    echo \"MAX_BRIEFS_RESOLVED=$max\"\n    echo \"MISSING_COUNT=$missing\"\n    echo \"DRIFT_COUNT=$drift\"\n    echo \"EXEC_BRIEF_WORKLIST_FILE=$WORKLIST_FILE\"\n  } >> \"$GITHUB_ENV\"\n  # Always write the file (empty when worklist is empty) so the agent\n  # can rely on a stable path.\n  : > \"$WORKLIST_FILE\"\n  if [ -n \"$worklist\" ]; then\n    printf '%s\\n' \"$worklist\" | tr ',' '\\n' > \"$WORKLIST_FILE\"\n  fi\n}\n\nif [ ! -d \"$ROOT\" ]; then\n  emit_bundle \"\" \"$LANGS\" \"$MAX_BRIEFS\" \"0\" \"0\"\n  echo \"No $ROOT directory — nothing to translate.\"\n  exit 0\nfi\n\nif [ -n \"${ARTICLE_DATE_INPUT:-}\" ] && [ -n \"${SUBFOLDER_INPUT:-}\" ]; then\n  SCAN_PATTERN=\"$ROOT/$ARTICLE_DATE_INPUT/$SUBFOLDER_INPUT\"\nelif [ -n \"${ARTICLE_DATE_INPUT:-}\" ]; then\n  SCAN_PATTERN=\"$ROOT/$ARTICLE_DATE_INPUT\"\nelse\n  SCAN_PATTERN=\"$ROOT\"\nfi\n\n# Build list of (date, source-path) tuples, oldest date first.\nCANDIDATES=$(find \"$SCAN_PATTERN\" -type f -name 'executive-brief.md' 2>/dev/null \\\n  | sort)\n\nif [ -z \"$CANDIDATES\" ]; then\n  emit_bundle \"\" \"$LANGS\" \"$MAX_BRIEFS\" \"0\" \"0\"\n  echo \"No executive-brief.md sources found under $SCAN_PATTERN.\"\n  exit 0\nfi\n\n# For each source, classify it as MISSING (≥1 requested language file absent\n# or empty) or DRIFT (every requested language file present but ≥1 has a\n# stale `<!-- source-sha: ... -->` trailer relative to the current source\n# commit SHA). When `force_retranslate=true`, every source with at least\n# one existing target file is reclassified as DRIFT (forces a re-pass);\n# sources missing any target stay in MISSING.\n#\n# Selection policy (greenfield-first):\n#   1. Fill `MAX_BRIEFS` batch slots with MISSING sources, oldest date first\n#      (159-source backlog is drained before any drift-fix work).\n#   2. Only if MISSING is empty after the scan, fill remaining slots with\n#      DRIFT sources, oldest date first.\n# This guarantees runs never \"redo already-translated briefs\" while the\n# untranslated backlog still has work — see PR description for context.\nMISSING=()\nDRIFT=()\nIFS=',' read -ra LANG_LIST <<< \"$LANGS\"\nwhile IFS= read -r SRC; do\n  [ -n \"$SRC\" ] || continue\n  DIR=$(dirname \"$SRC\")\n  SRC_SHA=$(git log -1 --format=%H -- \"$SRC\" 2>/dev/null || echo \"\")\n  HAS_MISSING=0\n  HAS_DRIFT=0\n  for L in \"${LANG_LIST[@]}\"; do\n    TGT=\"$DIR/executive-brief_${L}.md\"\n    if [ ! -s \"$TGT\" ]; then\n      HAS_MISSING=1\n      continue\n    fi\n    if [ -n \"$SRC_SHA\" ] && ! grep -q \"<!-- source-sha: $SRC_SHA -->\" \"$TGT\" 2>/dev/null; then\n      HAS_DRIFT=1\n    fi\n  done\n  if [ \"$HAS_MISSING\" -eq 1 ]; then\n    MISSING+=(\"$SRC\")\n  elif [ \"${FORCE_RETRANSLATE:-false}\" = \"true\" ] || [ \"$HAS_DRIFT\" -eq 1 ]; then\n    DRIFT+=(\"$SRC\")\n  fi\ndone <<< \"$CANDIDATES\"\n\nMISSING_COUNT=\"${#MISSING[@]}\"\nDRIFT_COUNT=\"${#DRIFT[@]}\"\necho \"Backlog classification: MISSING=$MISSING_COUNT  DRIFT=$DRIFT_COUNT\"\n\n# Fill batch: MISSING first (greenfield), DRIFT only if capacity remains.\nWORK=()\nfor SRC in \"${MISSING[@]}\"; do\n  WORK+=(\"$SRC\")\n  if [ \"${#WORK[@]}\" -ge \"$MAX_BRIEFS\" ]; then break; fi\ndone\nif [ \"${#WORK[@]}\" -lt \"$MAX_BRIEFS\" ]; then\n  for SRC in \"${DRIFT[@]}\"; do\n    WORK+=(\"$SRC\")\n    if [ \"${#WORK[@]}\" -ge \"$MAX_BRIEFS\" ]; then break; fi\n  done\nfi\n\nif [ \"${#WORK[@]}\" -eq 0 ]; then\n  emit_bundle \"\" \"$LANGS\" \"$MAX_BRIEFS\" \"$MISSING_COUNT\" \"$DRIFT_COUNT\"\n  echo \"All discovered sources are up to date for the requested languages.\"\n  exit 0\nfi\n\n# Categorise the chosen batch for the log line: how many slots were filled\n# with greenfield (MISSING) vs drift-fix (DRIFT) work.\nWORK_MISSING=0\nWORK_DRIFT=0\nfor SRC in \"${WORK[@]}\"; do\n  for M in \"${MISSING[@]:-}\"; do\n    if [ \"$M\" = \"$SRC\" ]; then WORK_MISSING=$((WORK_MISSING+1)); continue 2; fi\n  done\n  WORK_DRIFT=$((WORK_DRIFT+1))\ndone\n\nWORKLIST_JOINED=$(printf '%s\\n' \"${WORK[@]}\" | paste -sd ',' -)\nemit_bundle \"$WORKLIST_JOINED\" \"$LANGS\" \"$MAX_BRIEFS\" \"$MISSING_COUNT\" \"$DRIFT_COUNT\"\necho \"✅ Selected ${#WORK[@]} source brief(s) for translation into [$LANGS]\"\necho \"   (greenfield=$WORK_MISSING / drift-fix=$WORK_DRIFT;  total backlog: MISSING=$MISSING_COUNT DRIFT=$DRIFT_COUNT)\"\necho \"   Worklist file (agent reads this): $WORKLIST_FILE\"\nprintf '   %s\\n' \"${WORK[@]}\"\n"
 
       # Cache memory file share configuration from frontmatter processed below
       - name: Create cache-memory directory
@@ -556,9 +572,9 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/gh-aw/safeoutputs"
           mkdir -p /tmp/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/mcp-logs/safeoutputs
-          cat > "${RUNNER_TEMP}/gh-aw/safeoutputs/config.json" << 'GH_AW_SAFE_OUTPUTS_CONFIG_2b5d15ce78e391cc_EOF'
+          cat > "${RUNNER_TEMP}/gh-aw/safeoutputs/config.json" << 'GH_AW_SAFE_OUTPUTS_CONFIG_0965ec7d530bb20f_EOF'
           {"add_comment":{"max":1},"create_pull_request":{"draft":false,"expires":336,"fallback_as_issue":true,"if_no_changes":"warn","labels":["agentic-news","translation","executive-brief"],"max":1,"max_patch_files":100,"max_patch_size":10240,"protect_top_level_dot_folders":true,"protected_files":["package.json","bun.lockb","bunfig.toml","deno.json","deno.jsonc","deno.lock","global.json","NuGet.Config","Directory.Packages.props","mix.exs","mix.lock","go.mod","go.sum","stack.yaml","stack.yaml.lock","pom.xml","build.gradle","build.gradle.kts","settings.gradle","settings.gradle.kts","gradle.properties","package-lock.json","yarn.lock","pnpm-lock.yaml","npm-shrinkwrap.json","requirements.txt","Pipfile","Pipfile.lock","pyproject.toml","setup.py","setup.cfg","Gemfile","Gemfile.lock","uv.lock","CODEOWNERS","DESIGN.md","README.md","CONTRIBUTING.md","CHANGELOG.md","SECURITY.md","CODE_OF_CONDUCT.md","AGENTS.md","CLAUDE.md","GEMINI.md"],"protected_files_policy":"allowed"},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"true"},"report_incomplete":{}}
-          GH_AW_SAFE_OUTPUTS_CONFIG_2b5d15ce78e391cc_EOF
+          GH_AW_SAFE_OUTPUTS_CONFIG_0965ec7d530bb20f_EOF
       - name: Generate Safe Outputs Tools
         env:
           GH_AW_TOOLS_META_JSON: |
@@ -795,7 +811,7 @@ jobs:
           
           mkdir -p /home/runner/.copilot
           GH_AW_NODE=$(which node 2>/dev/null || command -v node 2>/dev/null || echo node)
-          cat << GH_AW_MCP_CONFIG_b2adea1ece24749a_EOF | "$GH_AW_NODE" "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.cjs"
+          cat << GH_AW_MCP_CONFIG_27c16bd7da8d3cd0_EOF | "$GH_AW_NODE" "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.cjs"
           {
             "mcpServers": {
               "agenticworkflows": {
@@ -911,7 +927,7 @@ jobs:
               "payloadDir": "${MCP_GATEWAY_PAYLOAD_DIR}"
             }
           }
-          GH_AW_MCP_CONFIG_b2adea1ece24749a_EOF
+          GH_AW_MCP_CONFIG_27c16bd7da8d3cd0_EOF
       - name: Mount MCP servers as CLIs
         id: mount-mcp-clis
         continue-on-error: true

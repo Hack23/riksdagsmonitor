@@ -267,6 +267,14 @@ steps:
     uses: ./.github/actions/news-prewarm
     with:
       imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+  - name: Resolve workflow inputs
+    uses: ./.github/actions/news-resolve-inputs
+    with:
+      subfolder: weekly-review
+      article-date: ${{ inputs.article_date }}
+      force-generation: ${{ inputs.force_generation }}
+      analysis-depth: ${{ inputs.analysis_depth }}
+      default-analysis-depth: deep
 engine:
   id: copilot
   model: claude-sonnet-4.6

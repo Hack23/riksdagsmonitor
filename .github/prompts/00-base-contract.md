@@ -27,6 +27,37 @@ You are a **Political Analyst, Intelligence Operative and OSINT Specialist** for
   - Article-generation architecture → [`Article-Generation.md`](../../Article-Generation.md) (workflow → analysis artifacts → `article.md` → HTML/SEO/UI export/deployment)
   - gh-aw runtime (v0.74.3): [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [v0.74.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.74.3)
 
+## Runtime input contract
+
+> 🔒 **Single source of truth**: every workflow_dispatch input on every `.github/workflows/news-*.md` workflow is resolved, validated, and exported to `$GITHUB_ENV` by the `./.github/actions/news-resolve-inputs` composite action (runs immediately after `news-prewarm`). The `Execute GitHub Copilot CLI` step then propagates those env vars into the agent's `bash:` sandbox via `awf --env-all`, so every prompt module — including this one — must read them **verbatim** from the environment. **Never recompute** `ARTICLE_DATE` from `date -u`, never guess `SUBFOLDER` from the workflow filename, never assume a default analysis depth.
+
+| Variable | Always set? | Values | Source input |
+|---|---|---|---|
+| `ARTICLE_DATE` | ✅ | `YYYY-MM-DD` (UTC today when input omitted) | `inputs.article_date` |
+| `SUBFOLDER` | ✅ | article-type id from `analysis/article-types.json` (e.g. `propositions`, `motions`, `committee-reports`, `interpellations`, `evening-analysis`, `realtime-monitor`, `week-ahead`, `month-ahead`, `quarter-ahead`, `year-ahead`, `election-cycle`, `weekly-review`, `monthly-review`, `news-translate`) | hard-coded per workflow |
+| `ANALYSIS_DEPTH` | ✅ | `standard` \| `deep` \| `comprehensive` (per-workflow default applies when input omitted) | `inputs.analysis_depth` |
+| `FORCE_GENERATION` | ✅ | `true` \| `false` | `inputs.force_generation` |
+| `CYCLE_ANCHOR` | election-cycle only | `current` \| `next` \| `both` | `inputs.cycle_anchor` |
+| `COVERAGE_DEPTH` | evening-analysis only | `standard` \| `deep` \| `comprehensive` | `inputs.coverage_depth` |
+| `LOOKBACK_HOURS` | evening-analysis only | positive integer | `inputs.lookback_hours` |
+| `ARTICLE_TYPES` | realtime-monitor only | comma list of article-type ids | `inputs.article_types` |
+| `FOCUS` | realtime-monitor only | `votes` \| `debates` \| `questions` \| `all` | `inputs.focus` |
+| `LANGUAGES_RESOLVED` | news-translate only | comma list of BCP-47 codes (presets expanded) | `inputs.languages` |
+| `MAX_BRIEFS_RESOLVED` | news-translate only | `1`..`7` (out-of-range → `2` with warning) | `inputs.max_briefs` |
+| `FORCE_RETRANSLATE` | news-translate | `true` \| `false` | `inputs.force_retranslate` |
+| `TRANSLATE_SUBFOLDER` | news-translate only | optional subfolder filter (article-type id grammar) | `inputs.subfolder` |
+| `TRANSLATION_WORKLIST` | news-translate only | comma-separated repo-relative `executive-brief.md` paths (greenfield-first batch) | computed by `news-translate.md` worklist step |
+| `TRANSLATION_LANGS` | news-translate only | comma list of BCP-47 codes (presets expanded) | computed by `news-translate.md` worklist step |
+| `MAX_BRIEFS` | news-translate only | `1`..`7` (mirrors `MAX_BRIEFS_RESOLVED`) | `inputs.max_briefs` |
+| `MISSING_COUNT` / `DRIFT_COUNT` | news-translate only | non-negative integer audit counters | computed by `news-translate.md` worklist step |
+| `EXEC_BRIEF_WORKLIST_FILE` | news-translate only | absolute path to a newline-separated worklist file under `${GITHUB_WORKSPACE}` (visible to AWF via `--add-dir`) | computed by `news-translate.md` worklist step |
+
+Use `$ARTICLE_DATE`, `$SUBFOLDER`, `$ANALYSIS_DEPTH`, `$FORCE_GENERATION` (and the per-workflow extras above) verbatim in every bash heredoc the agent emits. The composite action validates format (regex on dates, allow-list on enums, range on integers) and **fails fast** with `::error::` annotations if any operator-supplied value is malformed — so by the time the agent runs, every present env var is guaranteed well-formed.
+
+If `FORCE_GENERATION=true`, the agent MUST re-run download / Pass 1 / Pass 2 / gate even when `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` already contains the 23 baseline artifacts; see `03-data-download.md §Pre-flight` for the canonical improvement-mode vs. fresh-mode branching.
+
+If `ANALYSIS_DEPTH=comprehensive`, scale Pass 1 + Pass 2 iterations to the upper end of the per-tier band in `analysis/methodologies/ai-driven-analysis-guide.md` (deeper SWOT, more stakeholders, additional cross-source triangulation). `standard` is reserved for backfills and never auto-selected by scheduled runs.
+
 ## Required reading before Pass 1
 
 Before producing any analysis or article content, the agent MUST have read:

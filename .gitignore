@@ -18,6 +18,11 @@ htmlhint-report.txt
 internal-links-report.json
 external-links-report.json
 
+# Worklist files emitted by news-translate pre-flight (read by agent sandbox).
+# Written into ${GITHUB_WORKSPACE} so it is visible via AWF --add-dir; never
+# tracked because each run regenerates it from inputs + on-disk state.
+.exec-brief-worklist.txt
+
 # Test coverage (generated during development, committed during release)
 
 .nyc_output/
