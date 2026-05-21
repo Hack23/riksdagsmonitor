@@ -281,6 +281,17 @@ steps:
     uses: ./.github/actions/news-prewarm
     with:
       imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+  - name: Resolve workflow inputs
+    uses: ./.github/actions/news-resolve-inputs
+    with:
+      subfolder: news-translate
+      article-date: ${{ inputs.article_date }}
+      analysis-depth: ${{ inputs.analysis_depth }}
+      default-analysis-depth: standard
+      languages: ${{ inputs.languages }}
+      max-briefs: ${{ inputs.max_briefs }}
+      force-retranslate: ${{ inputs.force_retranslate }}
+      translate-subfolder: ${{ inputs.subfolder }}
   - name: Build executive-brief translation work list
     id: worklist
     env:

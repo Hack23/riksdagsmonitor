@@ -278,6 +278,15 @@ steps:
     uses: ./.github/actions/news-prewarm
     with:
       imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+  - name: Resolve workflow inputs
+    uses: ./.github/actions/news-resolve-inputs
+    with:
+      subfolder: realtime-monitor
+      article-date: ${{ inputs.article_date }}
+      analysis-depth: ${{ inputs.analysis_depth }}
+      default-analysis-depth: deep
+      article-types: ${{ inputs.article_types }}
+      focus: ${{ inputs.focus }}
 engine:
   id: copilot
   model: claude-sonnet-4.6

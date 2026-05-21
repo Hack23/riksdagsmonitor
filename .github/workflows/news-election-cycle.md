@@ -276,6 +276,15 @@ steps:
     uses: ./.github/actions/news-prewarm
     with:
       imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+  - name: Resolve workflow inputs
+    uses: ./.github/actions/news-resolve-inputs
+    with:
+      subfolder: election-cycle
+      article-date: ${{ inputs.article_date }}
+      force-generation: ${{ inputs.force_generation }}
+      analysis-depth: ${{ inputs.analysis_depth }}
+      default-analysis-depth: comprehensive
+      cycle-anchor: ${{ inputs.cycle_anchor }}
 engine:
   id: copilot
   model: claude-sonnet-4.6
