@@ -46,6 +46,11 @@ You are a **Political Analyst, Intelligence Operative and OSINT Specialist** for
 | `MAX_BRIEFS_RESOLVED` | news-translate only | `1`..`7` (out-of-range → `2` with warning) | `inputs.max_briefs` |
 | `FORCE_RETRANSLATE` | news-translate | `true` \| `false` | `inputs.force_retranslate` |
 | `TRANSLATE_SUBFOLDER` | news-translate only | optional subfolder filter (article-type id grammar) | `inputs.subfolder` |
+| `TRANSLATION_WORKLIST` | news-translate only | comma-separated repo-relative `executive-brief.md` paths (greenfield-first batch) | computed by `news-translate.md` worklist step |
+| `TRANSLATION_LANGS` | news-translate only | comma list of BCP-47 codes (presets expanded) | computed by `news-translate.md` worklist step |
+| `MAX_BRIEFS` | news-translate only | `1`..`7` (mirrors `MAX_BRIEFS_RESOLVED`) | `inputs.max_briefs` |
+| `MISSING_COUNT` / `DRIFT_COUNT` | news-translate only | non-negative integer audit counters | computed by `news-translate.md` worklist step |
+| `EXEC_BRIEF_WORKLIST_FILE` | news-translate only | absolute path to a newline-separated worklist file under `${GITHUB_WORKSPACE}` (visible to AWF via `--add-dir`) | computed by `news-translate.md` worklist step |
 
 Use `$ARTICLE_DATE`, `$SUBFOLDER`, `$ANALYSIS_DEPTH`, `$FORCE_GENERATION` (and the per-workflow extras above) verbatim in every bash heredoc the agent emits. The composite action validates format (regex on dates, allow-list on enums, range on integers) and **fails fast** with `::error::` annotations if any operator-supplied value is malformed — so by the time the agent runs, every present env var is guaranteed well-formed.
 
