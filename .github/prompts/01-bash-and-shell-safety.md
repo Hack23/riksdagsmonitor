@@ -163,4 +163,4 @@ Call `safeoutputs___create_pull_request` before `agent_minute = 45`. Timer A and
 3. No backticks, no `<(…)` process substitution.
 4. File paths are absolute or rooted at `$GITHUB_WORKSPACE`.
 5. Output redirection (`>`, `| tee`) writes to `/tmp/`, not the repo root.
-6. If the call writes or overwrites a file under the repo working tree, switch to `edit` (see `## File creation & overwrite strategy`).
+6. If the call writes or overwrites a file under the repo working tree, switch to `edit` (see `## File creation & overwrite strategy`). **Sole exception**: the env-var-only pre-flight scaffold heredoc in [`03-data-download.md`](03-data-download.md) — it creates the initial `data-download-manifest.md` marker (≤ 20 lines, env-var references and short literals only, never agent-generated content).

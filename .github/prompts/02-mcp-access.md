@@ -58,9 +58,9 @@ This is typically the **first** agent bash call of the run and is where the time
 Run once at workflow start, then proceed:
 
 1. Call `get_sync_status({})`. Retry up to **3 times**, 20 s apart (server is pre-warmed by the CI `steps:` block).
-2. On third-attempt failure: set `ANALYSIS_DIR=analysis/daily/$ARTICLE_DATE/$SUBFOLDER` and branch on `[ -s "$ANALYSIS_DIR/synthesis-summary.md" ]`:
+2. On third-attempt failure: write the early-scaffold marker per [`03-data-download.md §Early-scaffold marker`](03-data-download.md) (guarantees a non-empty diff even when MCP is totally unreachable). Then set `ANALYSIS_DIR=analysis/daily/$ARTICLE_DATE/$SUBFOLDER` and branch on `[ -s "$ANALYSIS_DIR/synthesis-summary.md" ]`:
    - **Prior analysis exists** → route to improvement-mode in [`04-analysis-pipeline.md`](04-analysis-pipeline.md). Extend using on-disk evidence, refresh `article.md` + HTML, PR once.
-   - **No prior analysis** → apply the MCP-unreachable no-op rule in [`07-commit-and-pr.md §No-op policy`](07-commit-and-pr.md) and exit.
+   - **No prior analysis** → if the scaffold write succeeded, issue a partial PR documenting the MCP failure (not a noop). Only if the scaffold write also failed, apply the MCP-unreachable no-op rule in [`07-commit-and-pr.md §No-op policy`](07-commit-and-pr.md) condition #1 and exit.
 3. Spend ≤ **2 minutes** on warm-up once `get_sync_status` succeeds.
 4. Read `data/imf-context.json` (written by `news-prewarm`) before any economic claim:
    - `status: ok` / `stale-vintage` / `degraded` → continue IMF-first. For `degraded`, use WEO/FM Datamapper evidence; avoid SDMX-only claims unless cached.
