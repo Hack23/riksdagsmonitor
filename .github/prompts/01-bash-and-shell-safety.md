@@ -86,7 +86,7 @@ EOF_RAW
 | One file per heredoc | Each retry re-emits the whole batch — keep them split. |
 | UTF-8 locale | `LC_ALL=C.UTF-8 LANG=C.UTF-8` on every step writing markdown / HTML. |
 
-For short ASCII writes (< 200 bytes, no special chars), `printf '%s\n' "$CONTENT" > "$TARGET"` is acceptable. `echo "$CONTENT" > file` is not — `echo` mangles backslashes and lines starting with `-`.
+For short ASCII writes (< 200 bytes, no special chars) targeting `/tmp/` only, `printf '%s\n' "$CONTENT" > "$TARGET"` is acceptable. `echo "$CONTENT" > file` is not — `echo` mangles backslashes and lines starting with `-`. For any target under the repo working tree, use `edit` regardless of size.
 
 ### Banned for file writes
 
