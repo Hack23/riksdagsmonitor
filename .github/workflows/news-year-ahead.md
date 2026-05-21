@@ -336,4 +336,8 @@ The dedicated `news-translate` workflow runs on a separate track and translates 
 
 > **Note**: there is no `languages` input. Every run produces all 14 language HTML files. Translation depth-of-quality scales with the time budget (see the table above).
 
+## File-write contract
+
+> 🛠 **Every analysis artifact (`analysis/daily/$DATE/$SUB/*.md`, `documents/*.md`, JSON sidecars, `methodology-reflection.md` re-run deltas) MUST be written with the `edit` tool.** The `cat <<'QUOTED_EOF' > file` heredoc is a Tier-2 fallback only — ASCII-only, no code fences / Mermaid / `$` / backticks / `EOF` markers, < 200 lines, and only after `edit` has already failed for a non-content reason. **Never** use `python3`, `node -e`, `sed -i`, `echo … > file`, `tee file`, or unquoted heredocs (`<<EOF`) to write any file under `analysis/daily/**`. The aggregator (`scripts/aggregate-analysis.ts`) and renderer (`scripts/render-articles.ts`) are the only allowed writers for `article.md` and `news/*.html`. See [`01-bash-and-shell-safety.md` §File creation & overwrite strategy](../prompts/01-bash-and-shell-safety.md) for the full hierarchy and banned-pattern list.
+
 All other rules live in the imported modules.

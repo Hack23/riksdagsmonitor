@@ -118,6 +118,8 @@ All of those checks were artefacts of the old scaffold pipeline. With the aggreg
 
 ## What the AI still MUST do
 
+> 🛠 **File-write contract**: do **not** edit `article.md` by hand — it is a script-generated projection of upstream `.md` artifacts. If you must touch any upstream artifact between aggregate and render (e.g. last-minute SEO H1/dek tightening in `executive-brief.md`, fixing a stale `dok_id` cross-reference in `cross-reference-map.md`), use the `edit` tool. **Never** use `python3`, `node -e`, `sed -i`, `echo … > file`, `tee file`, or unquoted heredocs (`<<EOF`) on any file under `analysis/daily/**`. The aggregator + renderer (`scripts/aggregate-analysis.ts`, `scripts/render-articles.ts`) are the only allowed writers for `article.md` and `news/*.html`. See [`01-bash-and-shell-safety.md` §File creation & overwrite strategy](01-bash-and-shell-safety.md).
+
 - ✅ Produce every analysis artifact required by `04-analysis-pipeline.md` at publication quality (AI-FIRST minimum 2 passes — see `00-base-contract.md` §5). Prose quality is set here, not later.
 - ✅ Verify the aggregator output before commit:
 

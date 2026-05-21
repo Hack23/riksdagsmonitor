@@ -50,6 +50,8 @@ The `electionCycleAnchor` field in the registry is **not** automatically rotated
 
 ## 3 — File-rename + content-carry-forward procedure
 
+> 🛠 **File-write contract**: every archival write (`analysis/cycles/2022-2026/mandate-scorecard.md`, `ku-reprimands.md`, `cohesion-trajectory.md`), every PIR carry-forward append to the new-cycle `intelligence-assessment.md`, and the T+0 `cycle-trajectory.md` rewind MUST be performed with the `edit` tool. **Never** use `python3`, `node -e`, `sed -i`, `echo … > file`, `tee file`, or unquoted heredocs (`<<EOF`) on any cycle-rollover artifact. See [`01-bash-and-shell-safety.md` §File creation & overwrite strategy](../01-bash-and-shell-safety.md).
+
 When the operator flips `electionCycleAnchor` from `current` to `next` in `analysis/article-types.json`, the rollover procedure defined in this module performs the following idempotent operations against the **most recent** `election-cycle/current/synthesis-summary.md` predecessor.
 
 > **Implementation status.** `scripts/cycle-rollover.ts` is **planned future work** and is **not yet implemented in this repository**. Until that script lands, the steps below are operator-run/manual workflow instructions; election-window runs MUST NOT invoke `scripts/cycle-rollover.ts` and MUST NOT auto-create `analysis/cycles/` directories. The `analysis/cycles/` archival paths referenced in §3.2 are the **target layout** for the future script; operators performing manual rollover should `mkdir -p analysis/cycles/<cycle-range>/` before copying files.
