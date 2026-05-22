@@ -247,20 +247,30 @@ function collapseWhitespace(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
 }
 
+/** Single-pass HTML entity decode map — avoids double-unescaping. */
+const HTML_ENTITY_MAP: Readonly<Record<string, string>> = {
+  '&nbsp;': ' ',
+  '&amp;': '&',
+  '&quot;': '"',
+  '&#39;': "'",
+  '&apos;': "'",
+  '&lt;': '<',
+  '&gt;': '>',
+};
+const HTML_ENTITY_RE = /&(?:nbsp|amp|quot|lt|gt|apos|#39);/giu;
+
+function decodeHtmlEntities(text: string): string {
+  return text.replace(HTML_ENTITY_RE, (match) => HTML_ENTITY_MAP[match.toLowerCase()] ?? match);
+}
+
 function stripDescriptionMarkup(text: string): string {
-  return collapseWhitespace(text
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/giu, ' ')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/giu, ' ')
+  return collapseWhitespace(decodeHtmlEntities(text
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/giu, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/giu, ' ')
     .replace(/<[^>]+>/gu, ' ')
     .replace(/!\[[^\]]*\]\([^)]*\)/gu, ' ')
     .replace(/\[([^\]]+)\]\([^)]*\)/gu, '$1')
-    .replace(/^[\s>#+*_`-]+/gmu, ' ')
-    .replace(/&nbsp;/giu, ' ')
-    .replace(/&amp;/giu, '&')
-    .replace(/&quot;/giu, '"')
-    .replace(/&#39;|&apos;/giu, "'")
-    .replace(/&lt;/giu, '<')
-    .replace(/&gt;/giu, '>'));
+    .replace(/^[\s>#+*_`-]+/gmu, ' ')));
 }
 
 function trimTrailingPunctuation(text: string): string {
