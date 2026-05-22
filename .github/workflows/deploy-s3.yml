@@ -35,6 +35,7 @@ jobs:
             objects.githubusercontent.com:443
             raw.githubusercontent.com:443
             registry.npmjs.org:443
+            riksdagsmonitor.com:443
             riksdagsmonitor-frontend-us-east-1-172017021075.s3.us-east-1.amazonaws.com:443
             s3.us-east-1.amazonaws.com:443
             sts.us-east-1.amazonaws.com:443
@@ -398,16 +399,18 @@ jobs:
       # browsers attribute the rejection to the parent module of the
       # dynamic-import promise.
       #
-      # Pick the entry + the alphabetically-first chunk file actually
-      # present in the local build and HEAD them against S3 directly
-      # (skipping CloudFront so a stale cache from before the
-      # invalidation finishes can't mask the failure). Any non-200
-      # fails the workflow so the issue is surfaced before the next
-      # nightly news-* run produces articles that won't render.
-      - name: Verify Mermaid runtime is reachable on S3
+      # Verify against the production domain (CloudFront) — NOT the raw
+      # S3 bucket URL (which returns 403 due to Origin Access Control
+      # restricting direct access). This mirrors what real browsers fetch.
+      # Includes retry logic since CloudFront invalidation is async.
+      - name: Verify Mermaid runtime is reachable on production domain
         run: |
           set -euo pipefail
-          BUCKET_URL="https://${{ env.S3_BUCKET_NAME }}.s3.${{ env.AWS_REGION }}.amazonaws.com"
+          # Verify via the real production domain (CloudFront) — NOT the raw
+          # S3 bucket URL (which returns 403 due to OAC restricting direct
+          # access). This is what browsers actually hit.
+          SITE_URL="https://riksdagsmonitor.com"
+          INIT_KEY="js/lib/mermaid-init.mjs"
           ENTRY_KEY="js/lib/mermaid/mermaid.esm.min.mjs"
           # Pick the first staged chunk as a representative probe.
           FIRST_CHUNK_PATH=$(find dist/js/lib/mermaid/chunks/mermaid.esm.min -maxdepth 1 -name '*.mjs' -type f | sort | head -n 1)
@@ -417,25 +420,40 @@ jobs:
           fi
           CHUNK_KEY="js/lib/mermaid/chunks/mermaid.esm.min/$(basename "$FIRST_CHUNK_PATH")"
 
-          fail=0
-          for KEY in "$ENTRY_KEY" "$CHUNK_KEY"; do
-            URL="$BUCKET_URL/$KEY"
-            STATUS=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 -I "$URL" || echo "000")
-            if [ "$STATUS" = "200" ]; then
-              echo "✅ $STATUS  $URL"
-            else
-              echo "❌ $STATUS  $URL"
-              fail=1
+          # CloudFront invalidation is async — retry with exponential backoff
+          # (up to ~60s total) to allow propagation after the invalidation
+          # request sent in the previous step.
+          MAX_RETRIES=4
+          for KEY in "$INIT_KEY" "$ENTRY_KEY" "$CHUNK_KEY"; do
+            URL="$SITE_URL/$KEY"
+            success=0
+            for attempt in $(seq 1 $MAX_RETRIES); do
+              STATUS=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 "$URL" || echo "000")
+              CT=$(curl -sS -o /dev/null -w '%{content_type}' --max-time 30 "$URL" || echo "")
+              if [ "$STATUS" = "200" ]; then
+                echo "✅ $STATUS  $URL  (content-type: $CT)"
+                success=1
+                break
+              fi
+              WAIT=$((5 * attempt))
+              echo "⏳ Attempt $attempt/$MAX_RETRIES: $STATUS for $URL — retrying in ${WAIT}s..."
+              sleep "$WAIT"
+            done
+            if [ "$success" != "1" ]; then
+              echo "❌ $STATUS  $URL  (content-type: $CT)"
+              echo ""
+              echo "Mermaid runtime is NOT reachable on production domain after $MAX_RETRIES retries."
+              echo "Articles that embed Mermaid diagrams will fail to render with"
+              echo "  'Failed to fetch dynamically imported module: …mermaid.esm.min.mjs'"
+              echo "in the browser console."
+              echo ""
+              echo "Troubleshooting:"
+              echo "  1. Check CloudFront invalidation completed"
+              echo "  2. Verify S3 objects exist: aws s3 ls s3://${{ env.S3_BUCKET_NAME }}/$KEY"
+              echo "  3. Verify content-type: aws s3api head-object --bucket ${{ env.S3_BUCKET_NAME }} --key $KEY"
+              exit 1
             fi
           done
-          if [ "$fail" != "0" ]; then
-            echo ""
-            echo "Mermaid runtime is NOT fully reachable on S3."
-            echo "Articles that embed Mermaid diagrams will fail to render with"
-            echo "  'Failed to fetch dynamically imported module: …mermaid.esm.min.mjs'"
-            echo "in the browser console. Check scripts/deploy-s3.sh."
-            exit 1
-          fi
 
   # ── Fix MIME types on existing S3 objects (manual trigger only) ──
   fix-mimetypes:
