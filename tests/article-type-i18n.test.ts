@@ -8,7 +8,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { ARTICLE_TYPE_LABEL_I18N, articleTypeLabel } from '../scripts/render-lib/article-type-i18n.js';
+import { ARTICLE_TYPE_LABEL_I18N, ARTICLE_TYPE_ICON, articleTypeLabel, articleTypeIcon } from '../scripts/render-lib/article-type-i18n.js';
 import { loadArticleTypesRegistry } from '../scripts/render-lib/article-types.js';
 import type { Language } from '../scripts/types/language.js';
 
@@ -59,6 +59,29 @@ describe('article-type-i18n', () => {
     it('preserves RTL strings exactly (Arabic, Hebrew)', () => {
       expect(articleTypeLabel('interpellations', 'ar', 'Interpellations')).toBe('استجوابات برلمانية');
       expect(articleTypeLabel('interpellations', 'he', 'Interpellations')).toBe('שאילתות בוחנות');
+    });
+  });
+
+  describe('articleTypeIcon()', () => {
+    it('returns a distinct emoji icon for every registered article type', () => {
+      // Every entry in the label map should have a matching icon so the
+      // eyebrow renders a per-type glyph for visual scannability.
+      for (const typeId of Object.keys(ARTICLE_TYPE_LABEL_I18N)) {
+        const icon = ARTICLE_TYPE_ICON[typeId];
+        expect(icon, `missing icon for type "${typeId}"`).toBeTruthy();
+        expect(typeof icon).toBe('string');
+        expect(icon!.length).toBeGreaterThan(0);
+      }
+    });
+
+    it('falls back to 🔍 for unknown article-type ids', () => {
+      expect(articleTypeIcon('not-a-real-type')).toBe('🔍');
+    });
+
+    it('returns the registered icon for known types', () => {
+      expect(articleTypeIcon('propositions')).toBe('📜');
+      expect(articleTypeIcon('election-cycle')).toBe('🗳️');
+      expect(articleTypeIcon('committee-reports')).toBe('📋');
     });
   });
 });

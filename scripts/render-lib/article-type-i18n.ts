@@ -150,6 +150,58 @@ export const ARTICLE_TYPE_LABEL_I18N: Record<string, LangMap> = {
 };
 
 /**
+ * Per-type emoji icons rendered alongside the localised eyebrow label.
+ *
+ * Icons are intentionally **language-neutral** (no glyph variation
+ * across the 14-language matrix) — emoji are Unicode and render
+ * consistently in every locale's `<html lang>`. The single
+ * `articleTypeIcon()` helper falls back to the generic 🔍 magnifying
+ * glass — the previous shared icon — for any type not registered here,
+ * which guarantees no article ever renders an empty eyebrow even for
+ * newly added registry types not yet covered.
+ *
+ * The icon is rendered inside `<span class="rm-icon" aria-hidden="true">`
+ * (see `article.ts:328`) so screen readers ignore it — the localised
+ * label that follows carries the semantic meaning.
+ */
+export const ARTICLE_TYPE_ICON: Record<string, string> = {
+  // Family A: single-type (lookback)
+  propositions: '📜',
+  motions: '✍️',
+  'committee-reports': '📋',
+  interpellations: '❓',
+  'realtime-monitor': '📡',
+  'evening-analysis': '🌙',
+  // Family B: long-horizon-forecast
+  'week-ahead': '📅',
+  'month-ahead': '🗓️',
+  'quarter-ahead': '📈',
+  'year-ahead': '🎯',
+  'election-cycle': '🗳️',
+  // Family C: tier-c-aggregation
+  'weekly-review': '📊',
+  'monthly-review': '📉',
+  'tido-2022': '🏛️',
+  'post-2026': '🏛️',
+  // Legacy fallbacks
+  'deep-inspection': '🔬',
+  realtime: '⚡',
+  'realtime-pulse': '⚡',
+  breaking: '🚨',
+  'parliament-agenda': '📑',
+  'political-intelligence': '🕵️',
+};
+
+/**
+ * Look up the per-type emoji icon. Falls back to the generic 🔍 icon
+ * (previously hard-coded in `article.ts`) so newly added registry types
+ * never render an empty `<span class="rm-icon">`.
+ */
+export function articleTypeIcon(typeId: string): string {
+  return ARTICLE_TYPE_ICON[typeId] ?? '🔍';
+}
+
+/**
  * Look up the localised eyebrow label for an article type.
  *
  * @param typeId  Article-type ID (registry `id` or legacy fallback).
