@@ -401,22 +401,6 @@ function uniqueTitleSuffix(input: ArticleSeoMetadataInput): string {
   return ` — ${input.date} · ${input.lang}`;
 }
 
-function uniqueDescriptionSuffix(input: ArticleSeoMetadataInput): string {
-  return ` Context: ${input.articleTypeLabel}, ${formatPublicationContext(input.date, input.lang)} (${input.lang}).`;
-}
-
-function descriptionFallback(input: ArticleSeoMetadataInput): string {
-  return `${topicPhrase({ ...input, description: '' }, 5)} — ${input.articleTypeLabel} analysis from Riksdagsmonitor for ${formatPublicationContext(input.date, input.lang)} (${input.lang}).`;
-}
-
-function withDescriptionSuffix(base: string, suffix: string): string {
-  const cleanBase = base.trim().replace(/[\s,;:—–-]+$/u, '').trim();
-  if (cleanBase.length === 0) return truncateWithinBudget(suffix.replace(/^ Context:\s*/u, ''), DESCRIPTION_HARD_MAX);
-  if (cleanBase.length + suffix.length <= DESCRIPTION_HARD_MAX) return `${cleanBase}${suffix}`;
-  const baseBudget = Math.max(40, DESCRIPTION_HARD_MAX - suffix.length);
-  return `${truncateWithinBudget(cleanBase, baseBudget)}${suffix}`;
-}
-
 export interface ArticleSeoMetadataInput {
   readonly title: string;
   readonly description: string;
@@ -496,10 +480,8 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  *    plumbing.
  */
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
-  const suffix = uniqueDescriptionSuffix(input);
   const base = stripDescriptionMarkup(input.description);
-  const source = base.length > 0 ? base : descriptionFallback(input);
-  return withDescriptionSuffix(source, suffix);
+  return truncateWithinBudget(base, DESCRIPTION_HARD_MAX);
 }
 
 /**

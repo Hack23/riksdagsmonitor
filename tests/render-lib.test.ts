@@ -599,7 +599,7 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
 // ---------------------------------------------------------------------------
 
 describe('render-lib — article SEO metadata', () => {
-  it('uses the brief H1 and BLUF with unique date/language SEO context', () => {
+  it('uses the brief H1 and BLUF without fixed description suffixes', () => {
     const base = {
       title: 'Security, identity and state control: three propositions',
       description: 'Three government propositions expand identity controls, population-register oversight and detention powers for security threats.',
@@ -628,14 +628,15 @@ describe('render-lib — article SEO metadata', () => {
     expect(en.title).not.toContain('update');
     expect(de.title).not.toContain('update');
     expect(de.title).not.toContain('Deutsch');
-    // Descriptions retain the brief BLUF, then add unique context without the
-    // old repetitive `Coverage: ... edition update ... provenance` boilerplate.
-    expect(en.description).toContain(base.description);
-    expect(en.description).toContain('Context: Propositions');
-    expect(en.description).toContain('(en).');
+    // Descriptions are the executive-brief BLUF only: no fixed suffix,
+    // context boilerplate, or generated fallback string.
+    expect(en.description).toBe(base.description);
+    expect(en.description).not.toContain('Context:');
+    expect(en.description).not.toContain('(en).');
     expect(de.description).not.toContain('deutsche Ausgabe');
     expect(de.description).not.toContain('Berichterstattung');
     expect(de.description).not.toContain('Riksdag/OSINT provenance');
+    expect(de.description).not.toContain('Context:');
     expect(en.description).not.toBe(de.description);
     expect(en.description.length).toBeLessThanOrEqual(200);
     expect(de.description.length).toBeLessThanOrEqual(200);
@@ -1412,7 +1413,7 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('data-article-type="propositions"');
     expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">📜</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
-    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions. Context: Propositions, January 1, 2099 (en).</p>');
+    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions.</p>');
     expect(html).toContain('<meta name="keywords" content="Propositions');
     expect(html).toContain('Traceable artifacts');
     expect(html).toContain('class="rm-article-sources"');
