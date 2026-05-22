@@ -1,0 +1,54 @@
+{
+  "analysis_date": "2026-05-22",
+  "article_type": "week-ahead",
+  "imf_status": "degraded_live_fetch",
+  "imf_prewarm_status": "ok",
+  "imf_vintage": "WEO-2026-04",
+  "imf_prewarm_source": "data/imf-context.json",
+  "live_fetch_error": "WEO/FM Datamapper connection failed (transient network error during agent run)",
+  "sdmx_fetch_attempted": false,
+  "economic_context": {
+    "provider": "imf",
+    "vintage": "WEO-2026-04",
+    "retrieved_at": "pre-warm (agent start)",
+    "probes": {
+      "WEO": "ok",
+      "FM": "ok",
+      "CPI": "ok"
+    },
+    "sweden_assessment": "Stable-growth environment per WEO Apr-2026. No material macro shock since April vintage. Economic context does not significantly alter the political risk analysis for Week 22.",
+    "indicators_available": [
+      "NGDP_RPCH (GDP growth)",
+      "GGXWDG_NGDP (Government debt % GDP)",
+      "BCA_NGDPD (Current account % GDP)",
+      "PCPIPCH (CPI inflation)"
+    ],
+    "indicators_unavailable_this_run": [
+      "IFS (International Financial Statistics) - SDMX not called",
+      "DOTS (trade flows) - SDMX not called",
+      "GFS_COFOG (government finance by function) - SDMX not called"
+    ]
+  },
+  "economic_claims": [
+    {
+      "claim": "Sweden's economic fundamentals remain stable",
+      "provider": "imf",
+      "dataflow": "WEO",
+      "indicator": "NGDP_RPCH",
+      "vintage": "WEO-2026-04",
+      "retrieved_at": "pre-warm",
+      "confidence": "MEDIUM - live fetch failed, pre-warm data is 1 month old"
+    },
+    {
+      "claim": "No significant fiscal shock relevant to Week 22 migration or security legislation",
+      "provider": "imf",
+      "dataflow": "FM",
+      "indicator": "GGXWDG_NGDP",
+      "vintage": "WEO-2026-04",
+      "retrieved_at": "pre-warm",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "degradation_note": "IMF live data unavailable for this run. Pre-warm cache used. Economic analysis quality: MEDIUM. No material impact on political intelligence assessment quality assessed.",
+  "schema_version": "1.0"
+}
