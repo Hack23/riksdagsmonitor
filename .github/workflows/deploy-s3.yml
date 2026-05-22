@@ -382,11 +382,20 @@ jobs:
           
           echo "✅ Found CloudFront distribution: $CloudFrontDistId"
           echo "🔄 Creating cache invalidation for all paths..."
-          
-          aws cloudfront create-invalidation \
-            --distribution-id $CloudFrontDistId \
-            --paths "/*"
-          
+
+          # Capture the invalidation ID and (synchronously) wait for it
+          # to reach Completed before the verify step probes CloudFront —
+          # otherwise the previous behaviour was to fire-and-forget,
+          # then race the verify against an in-progress invalidation,
+          # producing spurious 4xx from stale CF cache.
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id "$CloudFrontDistId" \
+            --paths "/*" \
+            --query 'Invalidation.Id' --output text)
+          echo "Invalidation ID: $INVALIDATION_ID — waiting for completion…"
+          aws cloudfront wait invalidation-completed \
+            --distribution-id "$CloudFrontDistId" \
+            --id "$INVALIDATION_ID"
           echo "✅ CloudFront cache invalidation completed"
 
       # ── Post-deploy verification: Mermaid runtime is reachable ────
