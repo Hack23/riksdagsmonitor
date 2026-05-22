@@ -660,7 +660,7 @@ describe('render-lib — article SEO metadata', () => {
     expect(de.keywords).not.toContain('political intelligence');
   });
 
-  it('cleans malformed HTML fragments and lengthens too-short meta descriptions', () => {
+  it('cleans malformed HTML fragments without synthesizing a fixed meta description', () => {
     const seo = buildArticleSeoMetadata({
       title: 'Riksdagen granskar vårbudgeten',
       description: '<div dir="rtl">',
@@ -672,14 +672,13 @@ describe('render-lib — article SEO metadata', () => {
     });
 
     expect(seo.description).not.toContain('<div');
-    expect(seo.description).toContain('Motioner');
-    expect(seo.description).toContain('2026');
-    expect(seo.description).toContain('(sv).');
-    expect(seo.description.length).toBeGreaterThanOrEqual(100);
+    expect(seo.description).toBe('');
+    expect(seo.description).not.toContain('Motioner');
+    expect(seo.description).not.toContain('(sv).');
     expect(seo.description.length).toBeLessThanOrEqual(200);
   });
 
-  it('makes otherwise identical localized fallback titles and descriptions unique', () => {
+  it('does not alter otherwise identical executive-brief descriptions with fixed uniqueness suffixes', () => {
     const base = {
       title: 'Tidö Current Mandate',
       description: 'The same untranslated fallback summary appears on more than one generated legacy HTML article page.',
@@ -698,11 +697,11 @@ describe('render-lib — article SEO metadata', () => {
     });
 
     expect(en.title).not.toBe(de.title);
-    expect(en.description).not.toBe(de.description);
+    expect(en.description).toBe(de.description);
     expect(en.title).toContain('· en');
     expect(de.title).toContain('· de');
-    expect(en.description).toContain('(en).');
-    expect(de.description).toContain('(de).');
+    expect(en.description).not.toContain('(en).');
+    expect(de.description).not.toContain('(de).');
   });
 });
 
