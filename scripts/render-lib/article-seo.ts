@@ -410,7 +410,7 @@ function descriptionFallback(input: ArticleSeoMetadataInput): string {
 }
 
 function withDescriptionSuffix(base: string, suffix: string): string {
-  const cleanBase = trimTrailingPunctuation(base);
+  const cleanBase = base.trim().replace(/[\s,;:—–-]+$/u, '').trim();
   if (cleanBase.length === 0) return truncateWithinBudget(suffix.replace(/^ Context:\s*/u, ''), DESCRIPTION_HARD_MAX);
   if (cleanBase.length + suffix.length <= DESCRIPTION_HARD_MAX) return `${cleanBase}${suffix}`;
   const baseBudget = Math.max(40, DESCRIPTION_HARD_MAX - suffix.length);
@@ -469,14 +469,14 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
     }
     return `${truncateWithinBudget(base, SERP_TITLE_BUDGET - uniqueSuffix.length)}${uniqueSuffix}`;
   }
-  // Append the site signature only when it fits with the unique date/lang
-  // suffix and without truncating the brief H1 mid-word.
-  if (base.length + uniqueSuffix.length + SITE_SUFFIX.length <= SERP_TITLE_BUDGET) {
-    return `${base}${uniqueSuffix}${SITE_SUFFIX}`;
+  const tail = `${uniqueSuffix}${SITE_SUFFIX}`;
+  // Append the site signature with the unique date/lang suffix and truncate
+  // only the brief H1 when needed. Returning a branded title prevents
+  // chrome/head.ts from appending a second suffix outside the SERP budget.
+  if (base.length + tail.length <= SERP_TITLE_BUDGET) {
+    return `${base}${tail}`;
   }
-  // Otherwise reserve space for the uniqueness suffix and truncate only the
-  // prose H1. The brand can be omitted on long titles; uniqueness wins here.
-  return `${truncateWithinBudget(base, SERP_TITLE_BUDGET - uniqueSuffix.length)}${uniqueSuffix}`;
+  return `${truncateWithinBudget(base, SERP_TITLE_BUDGET - tail.length)}${tail}`;
 }
 
 /**

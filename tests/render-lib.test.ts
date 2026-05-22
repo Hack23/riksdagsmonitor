@@ -619,8 +619,8 @@ describe('render-lib — article SEO metadata', () => {
     });
     // Titles retain the brief H1, then add compact date/language context so
     // untranslated legacy fallbacks do not collapse into identical titles.
-    expect(en.title).toContain('Security, identity and state control');
-    expect(de.title).toContain('Sicherheit, Identität und staatliche Kontrolle');
+    expect(en.title).toContain('Security, identity and state');
+    expect(de.title).toContain('Sicherheit, Identität');
     expect(en.title).toContain('2026-05-11 · en');
     expect(de.title).toContain('2026-05-11 · de');
     expect(en.title).not.toMatch(/\| .*Propositions:/);
@@ -1412,7 +1412,7 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('data-article-type="propositions"');
     expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">📜</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
-    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions.</p>');
+    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions. Context: Propositions, January 1, 2099 (en).</p>');
     expect(html).toContain('<meta name="keywords" content="Propositions');
     expect(html).toContain('Traceable artifacts');
     expect(html).toContain('class="rm-article-sources"');

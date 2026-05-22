@@ -58,7 +58,8 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     const result = buildSeoTitle({ ...baseInput, title: shortH1 });
     expect(result).toMatch(/Riksdagsmonitor$/);
     expect(result).toContain('2026-05-15 · en');
-    expect(result).toContain(shortH1);
+    expect(result).toContain('Riksdag Approves');
+    expect(result.length).toBeLessThanOrEqual(70);
   });
 
   it('strips Swedish connector "och" when truncating a Swedish H1', () => {
