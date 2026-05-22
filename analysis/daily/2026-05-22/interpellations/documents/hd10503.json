@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD10503",
+  "titel": "FMV:s närvaro i förbandsorter",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "parti": "S",
+  "summary": "Interpellation 2025/26:503 FMV:s närvaro i förbandsorter\n av  Erik Ezelius (S)\n till Försvarsminister Pål Jonson (M)\n Försvarsindustristrategin och Försvarets materielverks roll hänger nära samman eftersom båda syftar till att stärka Sveriges försvarsförmåga, säkerställa tillgång till kritisk materiel och utveckla en långsiktigt",
+  "url": "https://data.riksdagen.se/dokument/HD10503.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_interpellationer",
+    "query": {
+      "limit": 20,
+      "rm": "2025/26"
+    },
+    "resultCount": 20,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T07:44:20.220Z"
+  }
+}

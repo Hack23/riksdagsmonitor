@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2025/26",
+  "date": "2026-05-22",
+  "subfolder": "interpellations",
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "question": "How is the Tidögovernment managing implementation risks in the rearmament programme?",
+      "status": "partially_answered",
+      "evidence_docs": ["HD10502", "HD10503"],
+      "confidence": "medium",
+      "note": "Conscript fitness gap and FMV garrison coverage documented as open questions; awaiting ministerial response by 2026-06-05"
+    },
+    {
+      "id": "PIR-002",
+      "question": "What is the government's response to documented welfare failures in residential care?",
+      "status": "open",
+      "evidence_docs": ["HD10504", "HD10505"],
+      "confidence": "high",
+      "note": "Criminal HVB-homes still operating; boarding school violence from SVT investigation — ministerial responses due 2026-06-05"
+    },
+    {
+      "id": "PIR-003",
+      "question": "Is the government's infrastructure investment plan consistent with its stated safety and climate goals?",
+      "status": "open",
+      "evidence_docs": ["HD10506", "HD10508"],
+      "confidence": "high",
+      "note": "R&D cuts in national plan; >50% civil society road safety cuts confirmed — Carlson response due 2026-06-05"
+    },
+    {
+      "id": "PIR-004",
+      "question": "What is the impact of the cooperative development subsidy abolition on rural economy?",
+      "status": "open",
+      "evidence_docs": ["HD10507"],
+      "confidence": "medium",
+      "note": "25 MSEK/year subsidy abolished without stated justification; Busch response due 2026-06-05"
+    },
+    {
+      "id": "PIR-005",
+      "question": "What coordinated opposition campaign strategy is S deploying ahead of election 2026?",
+      "status": "answered",
+      "evidence_docs": ["HD10502", "HD10503", "HD10504", "HD10505", "HD10506", "HD10507", "HD10508"],
+      "confidence": "high",
+      "note": "Coordinated 7-interpellation batch confirmed as pre-election accountability strategy targeting four portfolios"
+    }
+  ],
+  "generated_at": "2026-05-22T07:43:09Z"
+}
