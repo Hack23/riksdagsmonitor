@@ -6,7 +6,7 @@ date: 2026-05-03
 subfolder: monthly-review
 slug: 2026-05-03-monthly-review
 source_folder: analysis/daily/2026-05-03/monthly-review
-generated_at: 2026-05-22T12:25:06.311Z
+generated_at: 2026-05-22T13:53:53.732Z
 language: en
 layout: article
 ---
@@ -86,6 +86,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Cross Session Intelligence](#rm-cross-session-intelligence) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Session Baseline](#rm-session-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -1958,6 +1971,681 @@ Economic context sourced from: (1) WEO Apr-2026 vintage from prior run data; (2)
 | L at threshold risk | MAINTAINED: No change (still 4.2%) | ✅ |
 | Police reform accountability pressure | MAINTAINED: No new JuU hearing | ✅ |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# إعادة تصحيح مسار الهجرة السويدية قبيل الانتخابات: المراجعة الشهرية لمايو 2026
+
+**المؤلف**: جيمس بيتر سورلينغ | **التاريخ**: 2026-05-03 | **معرّف التشغيل**: 25292145644  
+**مستوى الثقة**: عالٍ [B2] | **التصنيف**: عام | **القرب الانتخابي**: 133 يومًا
+
+---
+
+### الخلاصة
+
+تدخل السويد المرحلة الأخيرة من الحملة الانتخابية (133 يومًا حتى 13 سبتمبر 2026) عقب تحوّل تشريعي هجري متكامل قوامه أربعة قوانين أجرته تحالف تيدو (HD03262–HD03265)، يُعيد تأهيل منظومة اللجوء السويدية لتتوافق هيكليًا مع أقصى درجات التشدد الأوروبي. أسفر مؤتمر حزب SD (مايو 2026) عن حسم خط الصراع الطاقوي: تبنّى SD موقفًا براغماتيًا مختلطًا يتفادى قطيعة ائتلافية مباشرة، لكنه يُرسّخ الطاقة نزاعًا تفاوضيًا دائمًا داخل الائتلاف. تُصعّد مضاعفات DIW المرتبطة بالقرب الانتخابي الهجرةَ والدفاعَ إلى صدارة جدول الاستخبارات.
+
+### القرارات التي يدعمها هذا الموجز
+
+1. **تقييم استقرار الائتلاف**: هل تُمدّد نتيجة مؤتمر SD العملَ بـ Tidöavtalet حتى سبتمبر 2026، أم تُحدث نقطة كسر قبيل الانتخابات؟
+2. **مخاطر ECHR من الحزمة الهجرية**: هل تُفضي تمديدات الاحتجاز الإداري في HD03265 إلى إجراءات أوروبية/حقوقية تُلحق الضرر بسجل حكومة تيدو قبل الانتخابات؟
+3. **قدرة المعارضة**: هل يستطيع S/V/MP صياغة رواية مضادة متماسكة في الهجرة بحلول أغسطس 2026 تستقطب ≥5% من الناخبين المترددين؟
+
+### نقاط الاستخبارات في 60 ثانية
+
+- 🔴 **الحزمة الهجرية الكبرى** (HD03262–HD03265): أربع propositioner متزامنة من وزارة العدل تُلغي تصاريح الإقامة الدائمة، وتوسّع آليات الترحيل، وتمدّ الاحتجاز الإداري إلى 6 أشهر دون رقابة قضائية. أهمية استخباراتية من المستوى L3. [A1]
+- 🟠 **مؤتمر SD يبتّ** (مايو 2026): اعتمد SD «teknologineutral kärnenergisatsning» — لا التعظيم النووي الخالص لـ Busch ولا موقف التنويع اللين. يمكن تفسيره بوصفه غموضًا يصون الائتلاف. PIR-D مُجاب جزئيًا. [B2]
+- 🟠 **الإرث البنية التحتية** (HD03259 بتاريخ 2026-04-30): خطة بنية تحتية بـ 970 مليار كرونة، الأضخم في زمن السلم بتاريخ السويد. تركيز على السكك الحديدية وإقليم نورلاند. [A1]
+- 🟡 **مساءلة إصلاح الشرطة** (PIR-B جارٍ): 9 توصيات مفتوحة من هيئة Riksrevisionen دون جدول زمني حكومي للإغلاق. تصويت غرفة JuU قيد الانتظار. [A1]
+- 🟡 **الحزمة المصرفية** (HD03253): سلطة تقدير الركيزة 2 من CRR3/CRD6 بواسطة Finansinspektionen لم تُحسم؛ remissvar مايو–يونيو 2026. تواجه البنوك الكبرى — Nordea وSEB وHandelsbanken وSwedbank — نافذة تعديل رأسمالية مدتها 18 شهرًا. [A2]
+- 🟢 **التعاون العسكري** (HD03254): الإطار التشغيلي لتكامل الدفاع نهائي؛ يُلائم السويد مع معايير التعاون الثنائي لحلف الناتو. دعم برلماني واسع. [A2]
+
+### المحفّز الاستشرافي الرئيسي
+
+**منصة الطاقة لمؤتمر SD** (محسومة مايو 2026) — تُغذّي فورًا التقييم الختامي لـ PIR-D وتبلوُر الرواية الانتخابية الطاقوية. المحفّز القادم: جلسة استماع FöU حول HD03254 (مايو 2026) + جدول SfU لـ HD03262 (يونيو 2026).
+
+### تسمية الثقة
+
+عالٍ إجمالًا [B2] — تقييمات الهجرة والائتلاف مستندة إلى وثائق رسمية من Riksdag؛ نتيجة مؤتمر SD عبر الرصد لا النص MCP المُتحقَّق منه؛ السياق الاقتصادي من إصدار WEO أبريل 2026 (≤6 أشهر).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title الأحداث الرئيسية — النافذة الشهرية أبريل–مايو 2026
+    2026-04-29 : نُشرت مراجعة أبريل
+    2026-04-30 : تقديم الحزمة الهجرية الكبرى (HD03262-65)
+              : توقيع خطة البنية التحتية (HD03259)
+              : قانون التعاون العسكري (HD03254)
+    2026-05-03 : مؤتمر SD يعتمد منصة الطاقة
+              : 133 يومًا حتى الانتخابات
+    2026-06 : جلسات استماع لجنة SfU حول الحزمة الهجرية
+    2026-09-13 : الانتخابات البرلمانية السويدية
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+</div>
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-03 | **Kørsels-ID**: 25292145644  
+**Konfidens**: HØJ [B2] | **Klassificering**: OFFENTLIG | **Valnærhed**: 133 dage
+
+---
+
+### BLUF
+
+Sverige går ind i den endelige kampagnefase (133 dage til 13. september 2026) med Tidöalliansen, der har gennemført en koordineret firebillotransformation af migrationslovgivningen (HD03262–HD03265), som strukturelt tilpasser den svenske asylarkitektur til EU's maksimale restriktivitet. SD's kongres (maj 2026) har løst energikonfliktslinjen: SD vedtog en pragmatisk-blandet position, der undgår et direkte koalitionsbrud men permanent indlejrer energi som en intra-blokforhandlingskonflikt. Valnærhedens DIW-multiplikatorer løfter migration og forsvar til toppen af efterretningsdagsordenen.
+
+### Beslutninger, dette notat støtter
+
+1. **Koalitionsstabilitetsanalyse**: Forlænger SD's kongresresultat Tidöaftalen frem til september 2026, eller skaber det et brudpunkt inden valget?
+2. **EMRK-risiko for migrationspakke**: Udløser HD03265 tilbageholdelsesudvidelser EU/EMRK-procedurer, der kan skade Tidös styringsrekord inden valget?
+3. **Oppositionens levedygtighed**: Kan S/V/MP formulere en sammenhængende migrations-modfortælling, der bevæger ≥5 % af swing-vælgere inden august 2026?
+
+### 60-sekunders efterretningspunkter
+
+- 🔴 **Migrationsmegapakke** (HD03262–HD03265): Fire samtidige propositioner fra Justitiedepartementet afskaffer permanente opholdstilladelser, udvider deportationsmaskineri, forlænger administrativ tilbageholdelse til 6 måneder uden domstolsprøvelse. L3 Efterretningsgraderet signifikans. [A1]
+- 🟠 **SD's kongres afgjort** (maj 2026): SD vedtog "teknologineutral kärnenergisatsning" — hverken Buschs rene kernekraftmaksimalisme eller den bløde diversificeringsposition. Kan fortolkes som koalitionsbevarende tvetydighed. PIR-D nu delvist besvaret. [B2]
+- 🟠 **Infrastrukturarv** (HD03259 fra 2026-04-30): 970 milliarder SEK infrastrukturplan, det største fredstidsengagement i svensk historie. Jernbane + Norrland-fokus. [A1]
+- 🟡 **Politireformredegørelse** (PIR-B igangværende): Riksrevisionens 9 åbne anbefalinger stadig uden statslig afslutningsplan. JuU's kammervoting afventer. [A1]
+- 🟡 **Bankpakke** (HD03253): CRR3/CRD6 søjle-2-diskretion stadig uløst af Finansinspektionen; høringssvar maj–juni 2026. SIBs — Nordea, SEB, Handelsbanken, Swedbank — møder 18-måneders kapitaliseringstilpasningsvindue. [A2]
+- 🟢 **Militært samarbejde** (HD03254): Operativt forsvarsintegrationsrammeværk fuldført; tilpasser Sverige til NATOs bilaterale samarbejdsstandarder. Bredt parlamentarisk støtte. [A2]
+
+### Vigtigste fremadrettede udløser
+
+**SD-kongressens energiplatform** (afgjort maj 2026) — mader straks PIR-D's afslutningsvurdering og kampagnens energinarrativkrystallisering. Næste udløser: FöU's høring om HD03254 (maj 2026) + SfU's tidsplan for HD03262 (juni 2026).
+
+### Konfidensetiket
+
+HØJ samlet [B2] — kerne-migrations- og koalitionsvurderinger baseret på officielle Riksdag-dokumenter; SD's kongresresultat via overvågning snarere end verificeret MCP-tekst; økonomisk kontekst fra WEO apr-2026-årgangen (≤6 måneder gammel).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title Nøglebegivenheder — April–maj 2026 månedligt vindue
+    2026-04-29 : April månedsoversigt offentliggjort
+    2026-04-30 : Migrationsmegapakke forelagt (HD03262-65)
+              : Infrastrukturplan underskrevet (HD03259)
+              : Militært samarbejdsbill (HD03254)
+    2026-05-03 : SD's kongres afgør energiplatform
+              : 133 dage til valg
+    2026-06 : SfU's udvalghøringer om migrationspakke
+    2026-09-13 : Svenske parlamentsvalg
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-05-03 | **Lauf-ID**: 25292145644  
+**Konfidenz**: HOCH [B2] | **Klassifizierung**: ÖFFENTLICH | **Wahlnähe**: 133 Tage
+
+---
+
+### BLUF
+
+Schweden tritt in die letzte Wahlkampfphase ein (133 Tage bis zum 13. September 2026), nachdem die Tidöalliansen eine koordinierte Vier-Gesetze-Transformation der Migrationsgesetzgebung (HD03262–HD03265) durchgeführt hat, die die schwedische Asylarchitektur strukturell an die EU-maximale Restriktivität anpasst. Der SD-Kongress (Mai 2026) hat die Energiekonfliktlinie gelöst: SD verabschiedete eine pragmatisch-gemischte Position, die einen direkten Koalitionsbruch vermeidet, aber Energie dauerhaft als koalitionsinternen Verhandlungskonflikt verankert. Die wahlnähebezogenen DIW-Multiplikatoren rücken Migration und Verteidigung an die Spitze des Nachrichtendienstagenda.
+
+### Entscheidungen, die dieses Briefing unterstützt
+
+1. **Koalitionsstabilitätsbewertung**: Verlängert das SD-Kongressergebnis das Tidöavtalet bis September 2026 oder schafft es vor der Wahl einen Bruchpunkt?
+2. **EMRK-Risiko des Migrationspakets**: Lösen die Ausdehnungen der Verwaltungshaft in HD03265 EU/EMRK-Verfahren aus, die Tidös Regierungsleistung vor der Wahl beschädigen könnten?
+3. **Lebensfähigkeit der Opposition**: Können S/V/MP bis August 2026 eine kohärente Migrations-Gegenerzählung formulieren, die ≥5 % der Wechselwähler bewegt?
+
+### 60-Sekunden-Nachrichtendienstpunkte
+
+- 🔴 **Migrations-Megapaket** (HD03262–HD03265): Vier gleichzeitige Propositioner des Justitiedepartementet schaffen dauerhafte Aufenthaltserlaubnisse ab, erweitern Abschiebungsmaschinerien und verlängern die Verwaltungshaft auf 6 Monate ohne richterliche Überprüfung. L3 Nachrichtendienstgradierte Bedeutung. [A1]
+- 🟠 **SD-Kongress entschieden** (Mai 2026): SD verabschiedete „teknologineutral kärnenergisatsning" — weder Buschs reine Kernenergiemaximalisierung noch die weiche Diversifizierungsposition. Als koalitionserhaltende Mehrdeutigkeit interpretierbar. PIR-D jetzt teilweise beantwortet. [B2]
+- 🟠 **Infrastrukturvermächtnis** (HD03259 vom 2026-04-30): 970-Milliarden-SEK-Infrastrukturplan, das größte Friedenszeitengagement in der schwedischen Geschichte. Eisenbahn + Norrland-Schwerpunkt. [A1]
+- 🟡 **Polizeireformrechenschaft** (PIR-B laufend): Riksrevisionens 9 offene Empfehlungen noch ohne staatlichen Abschlusszeitplan. JuU-Kammervotum steht aus. [A1]
+- 🟡 **Bankpaket** (HD03253): CRR3/CRD6 Säule-2-Diskretion von Finansinspektionen noch ungelöst; Remissvar Mai–Juni 2026. SIBs — Nordea, SEB, Handelsbanken, Swedbank — stehen vor einem 18-monatigen Kapitalanpassungsfenster. [A2]
+- 🟢 **Militärische Zusammenarbeit** (HD03254): Operatives Verteidigungsintegrationsrahmenwerk abgeschlossen; passt Schweden an NATOs bilaterale Kooperationsstandards an. Breite parlamentarische Unterstützung. [A2]
+
+### Wichtigster Vorwärtsauslöser
+
+**SD-Kongress-Energieplattform** (entschieden Mai 2026) — speist sofort die PIR-D-Abschlussbewertung und die Kristallisierung des Energie-Kampagnennarrativs. Nächster Auslöser: FöU-Anhörung zu HD03254 (Mai 2026) + SfU-Zeitplan für HD03262 (Juni 2026).
+
+### Konfidenzetikett
+
+HOCH insgesamt [B2] — Kern-Migrations- und Koalitionsbewertungen in offiziellen Riksdag-Dokumenten verankert; SD-Kongressergebnis über Monitoring statt verifiziertem MCP-Text; wirtschaftlicher Kontext aus WEO Apr-2026-Jahrgang (≤6 Monate alt).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title Schlüsselereignisse — April–Mai 2026 Monatsfenster
+    2026-04-29 : April-Monatsrückblick veröffentlicht
+    2026-04-30 : Migrations-Megapaket eingereicht (HD03262-65)
+              : Infrastrukturplan unterzeichnet (HD03259)
+              : Militärisches Kooperationsgesetz (HD03254)
+    2026-05-03 : SD-Kongress beschließt Energieplattform
+              : 133 Tage bis zur Wahl
+    2026-06 : SfU-Ausschussanhörungen zum Migrationspaket
+    2026-09-13 : Schwedische Parlamentswahl
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-05-03 | **ID de ejecución**: 25292145644  
+**Confianza**: ALTA [B2] | **Clasificación**: PÚBLICO | **Proximidad electoral**: 133 días
+
+---
+
+### BLUF
+
+Suecia entra en la fase final de campaña electoral (133 días hasta el 13 de septiembre de 2026) tras la transformación legislativa migratoria coordinada en cuatro leyes de la Tidöalliansen (HD03262–HD03265), que alinea estructuralmente la arquitectura de asilo sueca con la máxima restrictividad de la UE. El congreso del SD (mayo 2026) resolvió la línea de conflicto energético: el SD adoptó una posición pragmática mixta que evita una ruptura directa de la coalición, pero ancla permanentemente la energía como conflicto de negociación interno de la coalición. Los multiplicadores DIW vinculados a la proximidad electoral sitúan la migración y la defensa al frente de la agenda de inteligencia.
+
+### Decisiones que apoya este informe
+
+1. **Evaluación de estabilidad de la coalición**: ¿El resultado del congreso del SD prolonga el Tidöavtalet hasta septiembre de 2026 o crea un punto de ruptura antes de las elecciones?
+2. **Riesgo CEDH del paquete migratorio**: ¿Las extensiones de detención administrativa en HD03265 desencadenan procedimientos de la UE/CEDH que podrían dañar el historial de gobierno de Tidö antes de las elecciones?
+3. **Viabilidad de la oposición**: ¿Pueden S/V/MP formular para agosto de 2026 un contrarelato migratorio coherente que movilice a ≥5% de los votantes indecisos?
+
+### Puntos de inteligencia en 60 segundos
+
+- 🔴 **Megapaquete migratorio** (HD03262–HD03265): Cuatro propositioner simultáneas del Justitiedepartementet eliminan los permisos de residencia permanente, amplían la maquinaria de expulsión y extienden la detención administrativa a 6 meses sin control judicial. Importancia de inteligencia de nivel L3. [A1]
+- 🟠 **Congreso SD decidido** (mayo 2026): El SD adoptó una «teknologineutral kärnenergisatsning» — ni la maximización nuclear pura de Busch ni la posición de diversificación suave. Interpretable como ambigüedad de preservación de la coalición. PIR-D ahora parcialmente respondido. [B2]
+- 🟠 **Legado infraestructural** (HD03259 del 2026-04-30): Plan de infraestructura de 970 mil millones SEK, el mayor compromiso en tiempo de paz de la historia sueca. Énfasis en ferroviaria y Norrland. [A1]
+- 🟡 **Rendición de cuentas de reforma policial** (PIR-B en curso): 9 recomendaciones abiertas del Riksrevisionen sin calendario de cierre gubernamental. Voto de la cámara JuU pendiente. [A1]
+- 🟡 **Paquete bancario** (HD03253): Discreción del Pilar 2 CRR3/CRD6 por Finansinspektionen sin resolver; remissvar mayo–junio 2026. Las GSIBs — Nordea, SEB, Handelsbanken, Swedbank — enfrentan una ventana de ajuste de capital de 18 meses. [A2]
+- 🟢 **Cooperación militar** (HD03254): Marco de integración de defensa operativa finalizado; alinea a Suecia con los estándares de cooperación bilateral de la OTAN. Amplio apoyo parlamentario. [A2]
+
+### Desencadenante prospectivo principal
+
+**Plataforma energética del congreso SD** (decidida mayo 2026) — alimenta inmediatamente la evaluación final PIR-D y la cristalización del narrativo de campaña energética. Próximo desencadenante: audiencia FöU sobre HD03254 (mayo 2026) + calendario SfU para HD03262 (junio 2026).
+
+### Etiqueta de confianza
+
+ALTA general [B2] — evaluaciones migratorias y de coalición ancladas en documentos oficiales del Riksdag; resultado del congreso SD por monitoreo en lugar de texto MCP verificado; contexto económico del vintage WEO abr-2026 (≤6 meses).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title Eventos clave — Ventana mensual abril–mayo 2026
+    2026-04-29 : Revisión mensual de abril publicada
+    2026-04-30 : Megapaquete migratorio presentado (HD03262-65)
+              : Plan de infraestructura firmado (HD03259)
+              : Ley de cooperación militar (HD03254)
+    2026-05-03 : Congreso SD adopta plataforma energética
+              : 133 días hasta las elecciones
+    2026-06 : Audiencias de la comisión SfU sobre el paquete migratorio
+    2026-09-13 : Elecciones legislativas suecas
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-05-03 | **Ajotyön ID**: 25292145644  
+**Luottamus**: KORKEA [B2] | **Luokittelu**: JULKINEN | **Vaaliläheisyys**: 133 päivää
+
+---
+
+### BLUF
+
+Ruotsi astuu viimeiseen kampanjavaiheeseen (133 päivää 13. syyskuuta 2026) Tidöallianssin toteutettua koordinoidun neljän lain muuttoliikepolitiikan muutoksen (HD03262–HD03265), joka rakenteellisesti yhdenmukaistaa ruotsalaisen turvapaikkajärjestelmän EU:n maksimaalisimman rajoittavuuden kanssa. SD:n puoluekokous (toukokuu 2026) on ratkaissut energiakiistan: SD omaksui pragmaattis-sekaisen kannan, joka välttää suoran koaliotiohajoamisen mutta juurruttaa pysyvästi energian blokinsisäiseksi neuvottelukiistaksi. Vaaliläheisyyden DIW-kertoimet nostavat muuttoliikkeen ja puolustuksen tiedusteluagendan kärkeen.
+
+### Tämän tiedotteen tukemat päätökset
+
+1. **Koalitiostabiliteetin arviointi**: Jatkaako SD:n puoluekokouksen tulos Tidöavtaletia syyskuuhun 2026 saakka vai luoko se murtokohdan ennen vaaleja?
+2. **HD03265:n ECHR-riski**: Käynnistävätkö säilöönpidon laajennukset EU/ECHR-menettelyjä, jotka voivat vahingoittaa Tidön hallintotapasuoritusta ennen vaaleja?
+3. **Opposition elinvoimaisuus**: Pystyykö S/V/MP muotoilemaan yhtenäisen muuttoliikekertomuksen vaihtoehdon, joka muuttaa ≥5 % heiluriäänestäjistä elokuuhun 2026 mennessä?
+
+### 60 sekunnin tiedustelupisteet
+
+- 🔴 **Muuttoliikemegapaketti** (HD03262–HD03265): Neljä samanaikaista Justitiedepartementetin esitystä lakkauttavat pysyvät oleskeluluvat, laajentavat karkotusmekanismeja ja pidentävät hallinnollista säilöönpitoa 6 kuukauteen ilman tuomioistuinvalvontaa. L3 Tiedustelutason merkitys. [A1]
+- 🟠 **SD:n puoluekokous ratkaistu** (toukokuu 2026): SD omaksui "teknologineutral kärnenergisatsning" — ei Buschin puhdasta ydinvoimamaksimalismia eikä pehmeää monimuotoistumisasentoa. Tulkittavissa koalitioita säilyttäväksi epäselvyydeksi. PIR-D nyt osittain vastattu. [B2]
+- 🟠 **Infrastruktuuriperintö** (HD03259, 2026-04-30): 970 miljardin SEK:n infrastruktuuriverkoston suunnitelma, Ruotsin historian suurin rauhanajan sitoumus. Rautatie + Pohjois-Ruotsin painotus. [A1]
+- 🟡 **Poliisiuudistuksen tilivelvollisuus** (PIR-B käynnissä): Riksrevisionenin 9 avointa suositusta ilman hallituksen sulkemisaikataulua. JuU:n täysistuntoäänestys odottaa. [A1]
+- 🟡 **Pankkipaketti** (HD03253): CRR3/CRD6 pilari-2 harkinnanvara yhä ratkaisematta Finansinspektionenin toimesta; lausuntoajat touko–kesäkuu 2026. SIBs — Nordea, SEB, Handelsbanken, Swedbank — kohtaavat 18 kuukauden pääomamuutosikkunan. [A2]
+- 🟢 **Sotilaallinen yhteistyö** (HD03254): Operatiivinen puolustusintegraatiokehys valmistui; yhdenmukaistaa Ruotsin NATOn kahdenvälisten yhteistyöstandardien kanssa. Laajapohjainen parlamentaarinen tuki. [A2]
+
+### Tärkein eteenpäin katsova laukaisin
+
+**SD:n puoluekokouksen energiaohjelma** (ratkaistu toukokuu 2026) — syöttää välittömästi PIR-D:n sulkemisarviointiin ja kampanjan energianarratiivin kiteytymiseen. Seuraava laukaisin: FöU:n kuuleminen HD03254:stä (toukokuu 2026) + SfU:n aikataulu HD03262:lle (kesäkuu 2026).
+
+### Luottamusmerkintä
+
+KORKEA yhteensä [B2] — ydinmuuttoliike- ja koalitioarvioinnit perustuvat virallisiin Riksdag-asiakirjoihin; SD:n puoluekokouksen tulos seurannan kautta eikä todennettuna MCP-tekstinä; taloudellinen konteksti WEO huhtikuu 2026 -vuosikerrasta (≤6 kuukautta vanha).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title Avaintapahtumat — Huhti–toukokuu 2026 kuukausi-ikkuna
+    2026-04-29 : Huhtikuun kuukausikatsaus julkaistu
+    2026-04-30 : Muuttoliikemegapaketti jätetty (HD03262-65)
+              : Infrastruktuuriverkoston suunnitelma allekirjoitettu (HD03259)
+              : Sotilaallinen yhteistyölaki (HD03254)
+    2026-05-03 : SD:n puoluekokous ratkaisee energiaohjelman
+              : 133 päivää vaaleihin
+    2026-06 : SfU:n valiokuntakuulemiset muuttoliikepaketista
+    2026-09-13 : Ruotsin yleiset vaalit
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **Date** : 2026-05-03 | **ID de run** : 25292145644  
+**Confiance** : ÉLEVÉE [B2] | **Classification** : PUBLIC | **Proximité électorale** : 133 jours
+
+---
+
+### BLUF
+
+La Suède entre dans la phase finale de campagne électorale (133 jours avant le 13 septembre 2026) après que la Tidöalliansen a réalisé une transformation législative migratoire coordonnée en quatre lois (HD03262–HD03265), alignant structurellement l'architecture d'asile suédoise sur la restrictivité maximale de l'UE. Le congrès SD (mai 2026) a résolu la ligne de conflit énergétique : SD a adopté une position pragmatique mixte évitant une rupture de coalition directe, mais ancrant définitivement l'énergie comme conflit de négociation interne à la coalition. Les multiplicateurs DIW liés à la proximité électorale placent la migration et la défense en tête de l'agenda des renseignements.
+
+### Décisions que ce bulletin soutient
+
+1. **Évaluation de la stabilité de la coalition** : Le résultat du congrès SD prolonge-t-il le Tidöavtalet jusqu'en septembre 2026 ou crée-t-il un point de rupture avant le scrutin ?
+2. **Risque CEDH du paquet migratoire** : Les extensions de détention administrative dans HD03265 déclenchent-elles des procédures UE/CEDH susceptibles d'endommager le bilan gouvernemental de Tidö avant les élections ?
+3. **Viabilité de l'opposition** : S/V/MP peuvent-ils formuler d'ici août 2026 un contre-récit migratoire cohérent susceptible de mobiliser ≥5 % des électeurs indécis ?
+
+### Points de renseignement en 60 secondes
+
+- 🔴 **Méga-paquet migratoire** (HD03262–HD03265) : Quatre propositioner simultanées du Justitiedepartementet suppriment les permis de séjour permanents, étendent les mécanismes d'expulsion et prolongent la détention administrative à 6 mois sans contrôle judiciaire. Importance de renseignements de niveau L3. [A1]
+- 🟠 **Congrès SD tranché** (mai 2026) : SD a adopté une « teknologineutral kärnenergisatsning » — ni la maximisation nucléaire pure de Busch ni la position de diversification douce. Interprétable comme une ambiguïté de préservation de la coalition. PIR-D maintenant partiellement répondu. [B2]
+- 🟠 **Héritage infrastructurel** (HD03259 du 2026-04-30) : Plan d'infrastructure de 970 milliards SEK, le plus grand engagement en temps de paix de l'histoire suédoise. Accent sur le ferroviaire et le Norrland. [A1]
+- 🟡 **Responsabilité de la réforme policière** (PIR-B en cours) : 9 recommandations ouvertes du Riksrevisionen sans calendrier de clôture gouvernemental. Vote de la chambre JuU en attente. [A1]
+- 🟡 **Paquet bancaire** (HD03253) : Discrétion du pilier 2 CRR3/CRD6 par Finansinspektionen non résolue ; remissvar mai–juin 2026. Les GSIBs — Nordea, SEB, Handelsbanken, Swedbank — font face à une fenêtre d'ajustement de capital de 18 mois. [A2]
+- 🟢 **Coopération militaire** (HD03254) : Cadre d'intégration de défense opérationnelle finalisé ; aligne la Suède sur les normes de coopération bilatérale de l'OTAN. Large soutien parlementaire. [A2]
+
+### Principal déclencheur prospectif
+
+**Plateforme énergétique du congrès SD** (décidée en mai 2026) — alimente immédiatement l'évaluation finale PIR-D et la cristallisation du récit de campagne énergétique. Prochain déclencheur : audition FöU sur HD03254 (mai 2026) + calendrier SfU pour HD03262 (juin 2026).
+
+### Label de confiance
+
+ÉLEVÉE globale [B2] — évaluations migratoires et de coalition ancrées dans les documents officiels du Riksdag ; résultat du congrès SD via monitoring plutôt que texte MCP vérifié ; contexte économique du millésime WEO avr-2026 (≤6 mois).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title Événements clés — Fenêtre mensuelle avril–mai 2026
+    2026-04-29 : Revue mensuelle d'avril publiée
+    2026-04-30 : Méga-paquet migratoire déposé (HD03262-65)
+              : Plan d'infrastructure signé (HD03259)
+              : Loi de coopération militaire (HD03254)
+    2026-05-03 : Congrès SD adopte la plateforme énergétique
+              : 133 jours avant les élections
+    2026-06 : Auditions de la commission SfU sur le paquet migratoire
+    2026-09-13 : Élections législatives suédoises
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# איפוס מדיניות ההגירה של שוודיה לקראת הבחירות: סקירה חודשית מאי 2026
+
+**מחבר**: ג'יימס פיטר סורלינג | **תאריך**: 2026-05-03 | **מזהה ריצה**: 25292145644  
+**אמינות**: גבוהה [B2] | **סיווג**: ציבורי | **קרבה לבחירות**: 133 ימים
+
+---
+
+### תמצית
+
+שוודיה נכנסת לשלב הסופי של מסע הבחירות (133 ימים עד 13 בספטמבר 2026) לאחר שה-Tidöalliansen ביצע שינוי חקיקתי הגירתי מתואם של ארבעה חוקים (HD03262–HD03265), המיישר את ארכיטקטורת המקלט השוודית באופן מבני עם מקסימום ההגבלה האירופאית. כינוס ה-SD (מאי 2026) יישב את קו המחלוקת האנרגטי: SD אימץ עמדה פרגמטית מעורבת הנמנעת מפירוק ישיר של הקואליציה, אך עוגנת את האנרגיה כסכסוך משא ומתן פנימי-קואליציוני קבוע. המכפילים של DIW הקשורים לקרבה לבחירות מעלים את ההגירה והביטחון לראש סדר יום המודיעין.
+
+### החלטות שמסמך זה תומך בהן
+
+1. **הערכת יציבות הקואליציה**: האם תוצאת הכינוס של SD מאריכה את ה-Tidöavtalet עד ספטמבר 2026 או יוצרת נקודת שבירה לפני הבחירות?
+2. **סיכון ECHR של חבילת ההגירה**: האם הארכות המעצר המנהלי ב-HD03265 מפעילות הליכים אירופאיים/ECHR שעלולים לפגוע בשיא הממשל של Tidö לפני הבחירות?
+3. **כדאיות האופוזיציה**: האם S/V/MP יכולים לגבש עד אוגוסט 2026 נרטיב-נגד הגירתי קוהרנטי שיניע ≥5% מהמצביעים המתנדנדים?
+
+### נקודות מודיעין ב-60 שניות
+
+- 🔴 **מגה-חבילת הגירה** (HD03262–HD03265): ארבע propositioner מקבילות של משרד המשפטים מבטלות אשרות שהייה קבועות, מרחיבות את מנגנוני הגירוש ומאריכות את המעצר המנהלי ל-6 חודשים ללא ביקורת שיפוטית. חשיבות מודיעינית ברמה L3. [A1]
+- 🟠 **כינוס SD הוכרע** (מאי 2026): SD אימץ «teknologineutral kärnenergisatsning» — לא מיקסום גרעיני טהור של Busch ולא עמדת הגיוון המתונה. ניתן לפרש כדו-משמעות משמרת-קואליציה. PIR-D נענה חלקית. [B2]
+- 🟠 **מורשת תשתיות** (HD03259 מ-2026-04-30): תוכנית תשתיות של 970 מיליארד SEK, ההתחייבות הגדולה ביותר בזמן שלום בהיסטוריה השוודית. דגש על רכבות ו-Norrland. [A1]
+- 🟡 **אחריות רפורמת המשטרה** (PIR-B מתמשך): 9 המלצות פתוחות של Riksrevisionen ללא לוח זמנים ממשלתי לסגירה. הצבעת אולם JuU ממתינה. [A1]
+- 🟡 **חבילה בנקאית** (HD03253): שיקול דעת עמוד 2 CRR3/CRD6 על ידי Finansinspektionen לא הוכרע; remissvar מאי–יוני 2026. הבנקים הגדולים — Nordea, SEB, Handelsbanken, Swedbank — עומדים בפני חלון התאמת הון של 18 חודשים. [A2]
+- 🟢 **שיתוף פעולה צבאי** (HD03254): מסגרת שילוב הגנה מבצעית הושלמה; מיישרת את שוודיה עם תקני שיתוף הפעולה הדו-צדדי של נאט"ו. תמיכה פרלמנטרית רחבה. [A2]
+
+### הטריגר המעשי העיקרי
+
+**פלטפורמת האנרגיה של כינוס SD** (הוחלט מאי 2026) — מזין מיידית את הערכת הסיום של PIR-D ואת התגבשות נרטיב הקמפיין האנרגטי. הטריגר הבא: דיון FöU על HD03254 (מאי 2026) + לוח זמנים SfU עבור HD03262 (יוני 2026).
+
+### תווית אמינות
+
+גבוהה כוללת [B2] — הערכות הגירה וקואליציה מעוגנות במסמכים רשמיים של Riksdag; תוצאת כינוס SD דרך מעקב ולא טקסט MCP מאומת; הקשר כלכלי מגרסת WEO אפריל 2026 (≤6 חודשים).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title אירועים מרכזיים — חלון חודשי אפריל–מאי 2026
+    2026-04-29 : פורסמה סקירת אפריל
+    2026-04-30 : הוגשה מגה-חבילת הגירה (HD03262-65)
+              : נחתמה תוכנית תשתיות (HD03259)
+              : חוק שיתוף פעולה צבאי (HD03254)
+    2026-05-03 : כינוס SD מאמץ פלטפורמת אנרגיה
+              : 133 ימים לבחירות
+    2026-06 : דיוני ועדת SfU על חבילת ההגירה
+    2026-09-13 : בחירות פרלמנטריות בשוודיה
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+</div>
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_ja.md -->
+
+**著者**: ジェームズ・ピーター・ソーリング | **日付**: 2026-05-03 | **実行ID**: 25292145644  
+**信頼度**: 高 [B2] | **分類**: 公開 | **選挙まで**: 133日
+
+---
+
+### 要約
+
+スウェーデンは選挙運動の最終段階に入った（2026年9月13日まで133日）。Tidöalliansen が4法令による移民法制の協調変革（HD03262–HD03265）を実施し、スウェーデンの難民受け入れ制度をEUの最大制限水準に構造的に整合させた。SD党大会（2026年5月）がエネルギー対立軸を解決した：SDは直接的な連立分裂を回避しつつも、エネルギーを連立内交渉紛争として永続的に固定する実用的折衷立場を採択した。選挙接近に連動したDIW乗数が移民と防衛を情報分析アジェンダの最上位に押し上げている。
+
+### このブリーフィングが支援する政策判断
+
+1. **連立安定性評価**: SD党大会の結果は Tidöavtalet を2026年9月まで延長させるか、それとも選挙前の決裂点を生むか？
+2. **移民パッケージのECHRリスク**: HD03265の行政拘禁延長がEU/ECHR手続きを誘発し、Tidö政権の選挙前実績を毀損するか？
+3. **野党の実行可能性**: S/V/MPは2026年8月までに、浮動票層の≥5%を動かせる一貫した移民対抗物語を形成できるか？
+
+### 60秒情報ポイント
+
+- 🔴 **移民メガパッケージ** (HD03262–HD03265): 法務省が4本のpropositioner を同時提出し、永住許可証を廃止、送還機構を拡大、行政拘禁を司法審査なしで最長6ヶ月に延長。L3情報重要度。[A1]
+- 🟠 **SD党大会決定** (2026年5月): SDは「teknologineutral kärnenergisatsning」を採択――Buschの純粋核エネルギー最大化でも穏健多様化でもない。連立温存のための戦略的曖昧性と解釈可能。PIR-D は部分的に回答済み。[B2]
+- 🟠 **インフラ遺産** (HD03259, 2026-04-30): 9,700億SEKのインフラ計画――スウェーデン史上最大の平時コミットメント。鉄道とノルランドに重点。[A1]
+- 🟡 **警察改革の説明責任** (PIR-B 進行中): Riksrevisionen の9件の勧告が未決。JuU 本会議投票待ち。[A1]
+- 🟡 **銀行パッケージ** (HD03253): Finansinspektionen によるCRR3/CRD6第2の柱裁量が未解決；remissvar 2026年5〜6月。大手行（Nordea, SEB, Handelsbanken, Swedbank）は18ヶ月の資本調整期間に直面。[A2]
+- 🟢 **軍事協力** (HD03254): 防衛統合運用枠組みが完成；スウェーデンをNATO二国間協力基準に整合。広範な議会支持。[A2]
+
+### 主要フォワードトリガー
+
+**SD党大会エネルギー政策** (2026年5月決定) ―― PIR-D 最終評価とエネルギー選挙物語の結晶化に即座に反映。次のトリガー：HD03254に関するFöU委員会公聴会（2026年5月）＋ HD03262のSfUスケジュール（2026年6月）。
+
+### 信頼度ラベル
+
+高 総合 [B2] ―― 中核的な移民・連立評価は公式Riksdag文書に基づく；SD党大会結果はMCP本文検証ではなくモニタリング経由；経済コンテキストはWEO 2026年4月版（≤6ヶ月）。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title 主要イベント — 2026年4〜5月月次ウィンドウ
+    2026-04-29 : 4月月次レビュー公開
+    2026-04-30 : 移民メガパッケージ提出 (HD03262-65)
+              : インフラ計画署名 (HD03259)
+              : 軍事協力法 (HD03254)
+    2026-05-03 : SD党大会エネルギー政策採択
+              : 選挙まで133日
+    2026-06 : SfU委員会による移民パッケージ公聴会
+    2026-09-13 : スウェーデン議会選挙
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_ko.md -->
+
+**저자**: 제임스 피터 소를링 | **날짜**: 2026-05-03 | **실행 ID**: 25292145644  
+**신뢰도**: 높음 [B2] | **분류**: 공개 | **선거까지**: 133일
+
+---
+
+### 요약
+
+스웨덴은 선거 운동 최종 단계에 접어들었다(2026년 9월 13일까지 133일). Tidöalliansen이 4개 법률로 이민 법제를 협조적으로 변환(HD03262–HD03265)하여 스웨덴 망명 체계를 EU 최대 제한 수준에 구조적으로 정렬시켰다. SD 당 대회(2026년 5월)가 에너지 갈등 노선을 해소했다: SD는 직접적인 연립 붕괴를 피하면서도 에너지를 연립 내부 협상 갈등으로 영구 고착시키는 실용적 혼합 입장을 채택했다. 선거 근접에 연동된 DIW 승수가 이민과 국방을 정보 분석 의제 최상위로 끌어올렸다.
+
+### 이 브리핑이 지원하는 정책 결정
+
+1. **연립 안정성 평가**: SD 당 대회 결과가 Tidöavtalet을 2026년 9월까지 연장하는가, 아니면 선거 전 균열 지점을 만드는가?
+2. **이민 패키지의 ECHR 위험**: HD03265의 행정 구금 연장이 EU/ECHR 절차를 촉발하여 선거 전 Tidö 정부 실적을 훼손할 수 있는가?
+3. **야당의 실행 가능성**: S/V/MP가 2026년 8월까지 부동층의 ≥5%를 움직일 일관된 이민 대항 서사를 형성할 수 있는가?
+
+### 60초 정보 포인트
+
+- 🔴 **이민 메가 패키지** (HD03262–HD03265): 법무부의 4개 propositioner 동시 제출로 영주 허가 폐지, 추방 기제 확대, 사법 심사 없이 행정 구금 최장 6개월 연장. L3 정보 중요도. [A1]
+- 🟠 **SD 당 대회 결정** (2026년 5월): SD가 「teknologineutral kärnenergisatsning」 채택 — Busch의 순수 핵에너지 극대화도 아니고 온건 다양화 입장도 아님. 연립 보존을 위한 전략적 모호성으로 해석 가능. PIR-D 부분적으로 답변됨. [B2]
+- 🟠 **인프라 유산** (HD03259, 2026-04-30): 9,700억 SEK 인프라 계획 — 스웨덴 역사상 최대 평시 공약. 철도와 노르란드 중심. [A1]
+- 🟡 **경찰 개혁 책임** (PIR-B 진행 중): Riksrevisionen의 9개 미결 권고안, 정부 마감 일정 없음. JuU 본회의 투표 대기. [A1]
+- 🟡 **은행 패키지** (HD03253): Finansinspektionen의 CRR3/CRD6 제2기둥 재량 미해결; remissvar 2026년 5~6월. 대형 은행(Nordea, SEB, Handelsbanken, Swedbank)은 18개월 자본 조정 기간 직면. [A2]
+- 🟢 **군사 협력** (HD03254): 방어 통합 운용 체계 완성; 스웨덴을 NATO 양자 협력 기준에 정렬. 광범한 의회 지지. [A2]
+
+### 주요 선행 트리거
+
+**SD 당 대회 에너지 플랫폼** (2026년 5월 결정) — PIR-D 최종 평가와 에너지 선거 서사 결정화에 즉각 반영. 다음 트리거: HD03254에 관한 FöU 위원회 청문회 (2026년 5월) + HD03262의 SfU 일정 (2026년 6월).
+
+### 신뢰도 레이블
+
+높음 종합 [B2] — 핵심 이민·연립 평가는 공식 Riksdag 문서에 근거; SD 당 대회 결과는 MCP 텍스트 검증이 아닌 모니터링 경유; 경제 맥락은 WEO 2026년 4월판(≤6개월).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title 주요 이벤트 — 2026년 4~5월 월간 윈도우
+    2026-04-29 : 4월 월간 리뷰 공개
+    2026-04-30 : 이민 메가 패키지 제출 (HD03262-65)
+              : 인프라 계획 서명 (HD03259)
+              : 군사 협력법 (HD03254)
+    2026-05-03 : SD 당 대회 에너지 플랫폼 채택
+              : 선거까지 133일
+    2026-06 : SfU 위원회 이민 패키지 청문회
+    2026-09-13 : 스웨덴 의회 선거
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-05-03 | **Run-ID**: 25292145644  
+**Vertrouwen**: HOOG [B2] | **Classificatie**: OPENBAAR | **Verkiezingsnabijheid**: 133 dagen
+
+---
+
+### BLUF
+
+Zweden betreedt de laatste verkiezingscampagnefase (133 dagen tot 13 september 2026) na de gecoördineerde vier-wetgevende migratiehervormingen van de Tidöalliansen (HD03262–HD03265), die de Zweedse asielarchitectuur structureel afstemmen op de maximale EU-restrictiviteit. Het SD-congres (mei 2026) heeft de energieconflictlijn opgelost: SD heeft een pragmatisch gemengde positie aangenomen die een directe coalitiebreuk vermijdt, maar energie permanent verankert als intern coalitieonderhandelingsconflict. De DIW-vermenigvuldigers gekoppeld aan verkiezingsnabijheid plaatsen migratie en defensie bovenaan de inlichtingenagenda.
+
+### Besluiten die dit briefing ondersteunt
+
+1. **Beoordeling coalitionsstabiliteit**: Verlengt de SD-congresuikomst het Tidöavtalet tot september 2026 of creëert het voor de verkiezingen een breekpunt?
+2. **EVRM-risico migratiepack**: Triggeren de uitbreidingen van administratieve detentie in HD03265 EU/EVRM-procedures die het regeringsrecord van Tidö voor de verkiezingen kunnen beschadigen?
+3. **Levensvatbaarheid oppositie**: Kunnen S/V/MP voor augustus 2026 een coherent migratie-tegennarratief formuleren dat ≥5% van de wisselstemgevers beweegt?
+
+### Inlichtingenpunten in 60 seconden
+
+- 🔴 **Migratie-megapakket** (HD03262–HD03265): Vier gelijktijdige propositioner van het Justitiedepartementet schaffen permanente verblijfsvergunningen af, breiden uitzetmechanismen uit en verlengen administratieve detentie tot 6 maanden zonder rechterlijke toetsing. Inlichtingsbelang niveau L3. [A1]
+- 🟠 **SD-congres besloten** (mei 2026): SD nam een «teknologineutral kärnenergisatsning» aan — noch Buschs pure kernenergiemaximalisering, noch de zachte diversificatiepositie. Interpreteerbaar als coalitiebesparende ambiguïteit. PIR-D nu gedeeltelijk beantwoord. [B2]
+- 🟠 **Infrastructuurerfenis** (HD03259 van 2026-04-30): Infrastructuurplan van 970 miljard SEK, de grootste vredestijdse verbintenis in de Zweedse geschiedenis. Nadruk op spoorwegen en Norrland. [A1]
+- 🟡 **Politiehervormingsverantwoording** (PIR-B lopend): 9 open aanbevelingen van Riksrevisionen zonder gouvernementele afsluitingstijdlijn. JuU-kamervotum in afwachting. [A1]
+- 🟡 **Bankenpakket** (HD03253): CRR3/CRD6 Pijler-2-discretie door Finansinspektionen nog onopgelost; remissvar mei–juni 2026. SIBs — Nordea, SEB, Handelsbanken, Swedbank — staan voor een 18-maands kapitaalaanpassingsvenster. [A2]
+- 🟢 **Militaire samenwerking** (HD03254): Operationeel defensie-integratiekader afgerond; stemt Zweden af op NAVO's bilaterale samenwerkingsnormen. Breed parlementair draagvlak. [A2]
+
+### Belangrijkste voorwaartse trigger
+
+**SD-congres energieplatform** (besloten mei 2026) — voedt onmiddellijk de PIR-D-eindbeoordeling en de kristallisering van het energie-campagnenarratief. Volgende trigger: FöU-hoorzitting over HD03254 (mei 2026) + SfU-tijdlijn voor HD03262 (juni 2026).
+
+### Vertrouwenslabel
+
+HOOG algemeen [B2] — kern-migratie- en coalitiebeoordeling verankerd in officiële Riksdag-documenten; SD-congresuikomst via monitoring in plaats van geverifieerde MCP-tekst; economische context uit WEO apr-2026-vintage (≤6 maanden oud).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title Sleutelgebeurtenissen — Maandvenster april–mei 2026
+    2026-04-29 : Apriloverzicht gepubliceerd
+    2026-04-30 : Migratie-megapakket ingediend (HD03262-65)
+              : Infrastructuurplan ondertekend (HD03259)
+              : Wet militaire samenwerking (HD03254)
+    2026-05-03 : SD-congres neemt energieplatform aan
+              : 133 dagen tot verkiezingen
+    2026-06 : SfU-commissiehoorzittingen over migratiepack
+    2026-09-13 : Zweedse parlementsverkiezingen
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-03 | **Kjørings-ID**: 25292145644  
+**Konfidens**: HØY [B2] | **Klassifisering**: OFFENTLIG | **Valnærhet**: 133 dager
+
+---
+
+### BLUF
+
+Sverige går inn i den siste kampanjefasen (133 dager til 13. september 2026) med at Tidöalliansen har gjennomført en koordinert firebillotransformasjon av migrasjonslovgivningen (HD03262–HD03265) som strukturelt tilpasser den svenske asylarkitekturen til EUs maksimale restriktivitet. SDs kongress (mai 2026) har løst energikonfliktlinjen: SD vedtok en pragmatisk-blandet posisjon som unngår et direkte koalisjonsbrudd, men permanent innbakt energi som en intra-blokforhandlingskonflikt. Valnærhetens DIW-multiplikatorer løfter migrasjon og forsvar til toppen av etterretningsagendaen.
+
+### Beslutninger dette notatet støtter
+
+1. **Koalisjonsstabilitetsanalyse**: Forlenger SDs kongresresultat Tidöavtalen frem til september 2026, eller skaper det et brudpunkt før valget?
+2. **EMK-risiko for migrasjonspakke**: Utløser HD03265 forvarsutvidelser EU/EMK-prosedyrer som kan skade Tidös styringsrekord før valget?
+3. **Opposisjonens levedyktighet**: Kan S/V/MP formulere en sammenhengende migrasjons-motfortelling som beveger ≥5 % av svingvelgere innen august 2026?
+
+### 60-sekunders etterretningspunkter
+
+- 🔴 **Migrasjonsmegapakke** (HD03262–HD03265): Fire samtidige proposisjoner fra Justitiedepartementet avskaffet permanente oppholdstillatelser, utvider deportasjonsmaskineri, forlenger administrativ forvaring til 6 måneder uten domstolsprøving. L3 Etterretningsgradert signifikans. [A1]
+- 🟠 **SDs kongress avgjort** (mai 2026): SD vedtok "teknologineutral kärnenergisatsning" — verken Buschs rene kjernekraftmaksimalisme eller den myke diversifiseringsposisjonen. Tolkbar som koalisjonsbevarende tvetydighet. PIR-D nå delvis besvart. [B2]
+- 🟠 **Infrastrukturarv** (HD03259 fra 2026-04-30): 970 milliarder SEK infrastrukturplan, den største fredstidsforpliktelsen i svensk historie. Jernbane + Norrland-fokus. [A1]
+- 🟡 **Politireformredegjørelse** (PIR-B pågående): Riksrevisjonens 9 åpne anbefalinger fortsatt uten statlig avslutningsplan. JuU kammervotering avventer. [A1]
+- 🟡 **Bankpakke** (HD03253): CRR3/CRD6 søyle-2-diskretion fortsatt uløst av Finansinspektionen; høringssvar mai–juni 2026. SIBs — Nordea, SEB, Handelsbanken, Swedbank — møter 18-måneders kapitaliseringstilpasningsvindu. [A2]
+- 🟢 **Militært samarbeid** (HD03254): Operativt forsvarsintegrasjonsrammeverk fullført; tilpasser Sverige til NATOs bilaterale samarbeidsstandarder. Bredt parlamentarisk støtte. [A2]
+
+### Viktigste fremadrettede utløser
+
+**SDs kongress-energiplattform** (avgjort mai 2026) — mater straks PIR-Ds avslutningsvurdering og kampanjens energinarrativkrystallisering. Neste utløser: FöUs høring om HD03254 (mai 2026) + SfUs tidsplan for HD03262 (juni 2026).
+
+### Konfidensetiketten
+
+HØY totalt [B2] — kjernemigrasjon og koalisjonsvurderinger forankret i offisielle Riksdag-dokumenter; SDs kongresresultat via overvåking snarere enn verifisert MCP-tekst; økonomisk kontekst fra WEO apr-2026-årgangen (≤6 måneder gammel).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title Nøkkelhendelser — April–mai 2026 månedlig vindu
+    2026-04-29 : April månedsoversikt publisert
+    2026-04-30 : Migrasjonsmegapakke lagt frem (HD03262-65)
+              : Infrastrukturplan signert (HD03259)
+              : Militært samarbeidsbill (HD03254)
+    2026-05-03 : SDs kongress avgjør energiplattform
+              : 133 dager til valg
+    2026-06 : SfU komitéhøringer om migrasjonspakke
+    2026-09-13 : Svenske stortingsvalg
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-05-03 | **Körnings-ID**: 25292145644  
+**Konfidens**: HÖG [B2] | **Klassificering**: OFFENTLIG | **Valproximititet**: 133 dagar
+
+---
+
+### BLUF
+
+Sverige går in i den sista kampanjfasen (133 dagar till 13 september 2026) med att Tidöalliansen har genomfört en samordnad fyrabillags-transformation av migrationslagstiftningen (HD03262–HD03265) som strukturellt anpassar svensk asylarkitektur till EU:s maximala restriktivitet. SD:s kongress (maj 2026) har löst energikonfliktlinjen: SD antog en pragmatisk-blandad position som undviker ett direkt koalitionsbrott men permanent inbäddar energi som en intra-blocförhandlingskonflikt. Val-närhets-DIW-multiplikatorer lyfter migration och försvar till toppen av underrättelseagendan.
+
+### Beslut som detta PM stödjer
+
+1. **Koalitionsstabilitetsanalys**: Förlänger SD:s kongressutfall Tidöavtalet fram till september 2026 eller skapar det ett brottspunkt inför valet?
+2. **ECMR-risk för migrationspaket**: Utlöser HD03265 utvisningsutvidgningar EU/ECMR-förfaranden som kan skada Tidös styrningsrekord inför valet?
+3. **Oppositionens livskraft**: Kan S/V/MP formulera en sammanhängande migrationsmotberättelse som rör ≥5 % av svajningsväljarna till augusti 2026?
+
+### 60-sekunders underrättelsepunkter
+
+- 🔴 **Migrationsmegapaket** (HD03262–HD03265): Fyra simultana propositioner från Justitiedepartementet avskaffar permanenta uppehållstillstånd, utvidgar utvisningsmaskineri, förlänger administrativt förvar till 6 månader utan domstolsprövning. L3 Underrättelsegraderad signifikans. [A1]
+- 🟠 **SD:s kongress avgjord** (maj 2026): SD antog "teknologineutral kärnenergisatsning" — varken Buschs rena kärnenergimaximalism eller den mjuka diversifieringspositionen. Tolkningsbar som koalitionsbevarande tvetydighet. PIR-D nu delvis besvarad. [B2]
+- 🟠 **Infrastrukturarv** (HD03259 från 2026-04-30): 970 miljarder SEK infrastrukturplan, den största fredstidens satsning i svensk historia. Järnväg + Norrlandsfokus. [A1]
+- 🟡 **Polisreformsredovisning** (PIR-B pågående): Riksrevisionens 9 öppna rekommendationer fortfarande utan statlig avslutningsplan. JuU:s kammarvot avvaktar. [A1]
+- 🟡 **Bankpaket** (HD03253): CRR3/CRD6 pelare-2-diskretion fortfarande olöst av Finansinspektionen; remissvar maj–juni 2026. SIBs — Nordea, SEB, Handelsbanken, Swedbank — möter 18-månaders kapitalanpassningsfönster. [A2]
+- 🟢 **Militärt samarbete** (HD03254): Operativt försvarsintegreringsramverk slutfört; anpassar Sverige till NATOs bilaterala samarbetsstandarder. Brett parlamentariskt stöd. [A2]
+
+### Främsta framåtutlösare
+
+**SD-kongressens energiplattform** (avgjord maj 2026) — matar omedelbart PIR-D:s avslutningsbedömning och kampanjens energinarrativkristallisering. Nästa utlösare: FöU:s hearing om HD03254 (maj 2026) + SfU:s tidsplan för HD03262 (juni 2026).
+
+### Konfidensetikett
+
+HÖG totalt [B2] — kärn-migrations- och koalitionsbedömningar grundade i officiella riksdagsdokument; SD:s kongressutfall via bevakning snarare än verifierad MCP-text; ekonomisk kontext från WEO apr-2026-årgång (≤6 månader gammal).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title Nyckelhandelser — April–maj 2026 månadsfönster
+    2026-04-29 : April månadsöversikt publicerad
+    2026-04-30 : Migrationsmegapaket inlämnat (HD03262-65)
+              : Infrastrukturplan undertecknad (HD03259)
+              : Militärt samarbetsbill (HD03254)
+    2026-05-03 : SD:s kongress avgör energiplattform
+              : 133 dagar till val
+    2026-06 : SfU:s utskottshearings om migrationspaket
+    2026-09-13 : Allmänna val i Sverige
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_zh.md -->
+
+**作者**：詹姆斯·彼得·索尔林 | **日期**：2026-05-03 | **运行ID**：25292145644  
+**置信度**：高 [B2] | **分类**：公开 | **距选举**：133天
+
+---
+
+### 摘要
+
+瑞典进入选举竞选最后阶段（距2026年9月13日还有133天），此前Tidöalliansen完成了由四部法律构成的协调移民立法变革（HD03262–HD03265），将瑞典庇护架构在结构上与欧盟最严格限制水平对齐。瑞典民主党全国代表大会（2026年5月）解决了能源冲突路线：瑞典民主党采取了务实的混合立场，既避免联合政府直接破裂，又将能源永久锁定为联合政府内部谈判冲突。与选举临近挂钩的DIW乘数将移民和国防推至情报议程首位。
+
+### 本简报所支持的政策决定
+
+1. **联合政府稳定性评估**：瑞典民主党大会结果能否将Tidöavtalet延续至2026年9月，还是会在选举前形成破裂点？
+2. **移民方案的《欧洲人权公约》风险**：HD03265中的行政羁押延期是否会引发欧盟/《欧洲人权公约》程序，从而在选举前损害Tidö执政记录？
+3. **反对派可行性**：S/V/MP能否在2026年8月前形成一套连贯的移民反叙事，足以撬动≥5%的摇摆选民？
+
+### 60秒情报要点
+
+- 🔴 **移民大方案**（HD03262–HD03265）：法务部四份propositioner同步提交，废除永久居留许可、扩大驱逐机制、将行政羁押延长至6个月且无需司法审查。L3级情报重要性。[A1]
+- 🟠 **瑞典民主党大会决议**（2026年5月）：瑞典民主党通过"teknologineutral kärnenergisatsning"——既非布希的纯核能最大化，也非温和多元化立场。可解读为维护联合政府的战略模糊性。PIR-D已部分得到回答。[B2]
+- 🟠 **基础设施遗产**（HD03259，2026-04-30）：9700亿瑞典克朗基础设施计划——瑞典历史上规模最大的和平时期承诺。重点发展铁路与北部地区。[A1]
+- 🟡 **警察改革问责**（PIR-B 进行中）：国家审计局9项未决建议迄无政府关闭时间表。JuU议院投票待定。[A1]
+- 🟡 **银行业方案**（HD03253）：金融监督局对CRR3/CRD6第二支柱的自由裁量权尚未厘清；remissvar 2026年5至6月。大型银行（Nordea、SEB、Handelsbanken、Swedbank）面临18个月的资本调整期。[A2]
+- 🟢 **军事合作**（HD03254）：国防整合运作框架敲定；使瑞典与北约双边合作标准接轨。获议会广泛支持。[A2]
+
+### 主要前瞻触发因素
+
+**瑞典民主党大会能源纲领**（2026年5月决定）——立即推动PIR-D最终评估及能源竞选叙事的成形。下一触发：FöU委员会就HD03254召开听证（2026年5月）＋ SfU就HD03262排定日程（2026年6月）。
+
+### 置信度标注
+
+高 综合 [B2] ——核心移民与联合政府评估立基于Riksdag官方文件；瑞典民主党大会结果来自监测而非经MCP核实文本；经济背景援引WEO 2026年4月版本（≤6个月）。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+timeline
+    title 关键事件 — 2026年4至5月月度窗口
+    2026-04-29 : 发布4月月度回顾
+    2026-04-30 : 提交移民大方案 (HD03262-65)
+              : 签署基础设施计划 (HD03259)
+              : 军事合作法 (HD03254)
+    2026-05-03 : 瑞典民主党大会通过能源纲领
+              : 距选举133天
+    2026-06 : SfU委员会就移民方案召开听证
+    2026-09-13 : 瑞典议会选举
+```
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
 ## Mcp Reliability Audit
 <!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/mcp-reliability-audit.md -->
 
@@ -2073,7 +2761,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 41 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2116,6 +2804,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/data-download-manifest.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/analysis-index.md)
 - [`cross-session-intelligence.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/cross-session-intelligence.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/executive-brief_zh.md)
 - [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/reference-analysis-quality.md)
 - [`session-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/session-baseline.md)

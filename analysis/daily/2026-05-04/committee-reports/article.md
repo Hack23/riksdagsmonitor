@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: committee-reports
 slug: 2026-05-04-committee-reports
 source_folder: analysis/daily/2026-05-04/committee-reports
-generated_at: 2026-05-22T12:25:06.323Z
+generated_at: 2026-05-22T13:53:53.745Z
 language: en
 layout: article
 ---
@@ -122,6 +122,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1927,13 +1940,1169 @@ Priority Intelligence Requirements for this cycle:
 - Full votings data for SfU28 punkt 1 available; NU19 grouped voting not yet available (sync lag)
 - HD01FöU20 and HD01FöU14: planned betänkanden, not yet published; metadata only
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# البرلمان السويدي يُقدّم إصلاح ترخيص الطاقة النووية وتشديد الجنسية
+
+### الخلاصة
+
+تُقدّم مرحلة اللجان في Riksdag خلال دورة riksmötet 2025/26 تقريرَين يهزّان المشهد السياسي في الأسبوع الأخير من أبريل 2026: تُوافق لجنة الأعمال (NU) على قانون جديد يُتيح الترخيص الحكومي المباشر لمنشآت الطاقة النووية (HD01NU19)، وتُقرّ لجنة التأمين الاجتماعي (SfU) معايير جنسيةً مشدَّدةً تشمل متطلب إقامة مدته 8 سنوات واختبار لغوي وحدًّا أدنى للدخل (HD01SfU28). يُحدِّد كلا الإجراءين إرث تحالف Tidö ويدخلان حيز التنفيذ قبل انتخابات سبتمبر 2026.
+
+### القرارات السياسية التي يدعمها هذا الموجز
+
+1. **الحكم التحريري**: التصدير بترخيص HD01NU19 النووي وجنسية HD01SfU28 بوصفهما الحدثين التشريعيين المحوريين لدورة لجان أبريل 2026.
+2. **تحليل الائتلاف**: تقييم ما إذا كان دعم SfU28 بين أحزاب S/C/M/SD يُشير إلى تحول دائم نحو وسط اليمين في سياسة الاندماج.
+3. **تتبع السياسات**: رصد استعداد Migrationsverket وSSM لتطبيق القانونين في تواريخ نفاذهما 6 و17 يونيو 2026.
+4. **التقييم الاستخباراتي**: تقييم مخاطر الطعون القانونية في ترخيص الطاقة النووية الذي يتجاوز الإجراءات البيئية المعيارية.
+
+### قراءة في 60 ثانية
+
+- 🔵 **ترخيص الطاقة النووية** (HD01NU19): قانون جديد (Prop 2025/26:171) يُتيح لمطوّري الطاقة النووية التقدم مباشرةً للحكومة للحصول على الموافقة، متجاوزًا إجراءات الفصل السابع عشر من القانون البيئي المعياري. راجع Lagrådet وتبعته الحكومة. يسري اعتبارًا من 17 يونيو 2026. قدّمت المعارضة (S, V, C, MP) تحفظين رسميين. **الأهمية الانتخابية: عالية** — الطاقة النووية هي محور الانقسام السياسي الطاقوي في 2026.
+- 🔴 **تشديد الجنسية** (HD01SfU28): ترفع Prop 2025/26:175 متطلب الإقامة من 5 إلى 8 سنوات، وتُضيف اختبار اللغة والمدنيات، وتُدخل حدًّا أدنى للدخل (≥3 inkomstbasbelopp)، وتُشدّد معايير السلوك. تصويت متعدد الأحزاب: M وSD وKD وL + S وC صوّتوا بنعم. عارض V وMP بشدة مع 10 تحفظات. يسري اعتبارًا من 6 يونيو 2026. **الأهمية الانتخابية: عالية** — يُعدّ الاندماج القضيةَ الأبرز لدى الناخبين منذ 2022.
+- 🟡 **إصلاح الإجراءات القضائية** (HD01JuU9): تُوسّع Prop 2025/26:155 قبول تسجيلات المقابلات المبكرة. يسري اعتبارًا من 1 يوليو 2026. يُعزّز ملاحقات جرائم العصابات.
+- 🔵 **التعاون العسكري** (HD01FöU14): وافقت اللجنة على شروط محسّنة للتعاون العسكري التشغيلي. أهمية استراتيجية عالية في سياق الناتو.
+- ⚪ **البنية التحتية الحيوية** (HD01FöU20): قانون جديد لمرونة CER/NIS2 مخطط؛ التقرير مقرر في يونيو 2026.
+
+### المحفّز الاستشرافي الرئيسي
+
+**راقب**: إذا أفضى قانون ترخيص الطاقة النووية NU19 إلى شكوى دستورية أو إحالة لمحكمة إدارية قبل يوليو 2026، فقد يتأخر برنامج توسيع الطاقة النووية بأكمله.
+
+### تقييم الثقة
+
+**الثقة: عالية** — جميع التقارير الثلاثة المنشورة تحتوي على النص الكامل ومواقف اللجان بوضوح.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title التقويم التشريعي أبريل–يونيو 2026
+    section أبريل 2026
+        29 أبريل : تمت الموافقة على HD01NU19 (لجنة NU)
+        29 أبريل : تصويت HD01SfU28 (SfU)
+        29 أبريل : تمت الموافقة على HD01JuU9 (JuU)
+    section يونيو 2026
+        6 يونيو : قانون جنسية SfU28 يسري
+        17 يونيو : قانون ترخيص النووي NU19 يسري
+        1 يوليو : إصلاح الإجراءات القضائية JuU9 يسري
+    section سبتمبر 2026
+        13 سبتمبر : انتخابات عامة (مقدّرة)
+```
+
+### الجهات الفاعلة الرئيسية
+
+| الجهة الفاعلة | الدور | الإجراء/الموقف |
+|---------------|-------|----------------|
+| Tobias Andersson (SD) | رئيس لجنة NU | ترأّس الموافقة على HD01NU19 — أكبر انتصار طاقوي لـ SD |
+| Viktor Wärnick (M) | رئيس لجنة SfU | ترأّس التصويت متعدد الأحزاب HD01SfU28 |
+| Kenneth G Forslund (S) | عضو SfU | المتحدث باسم S صوّت بنعم على SfU28 — يُؤكّد التحوّل الاستراتيجي لـ S |
+| Julia Kronlid (SD) | عضو SfU | ممثلة SD تُؤكّد التوافق بين SD وS في الجنسية |
+| Kerstin Lundgren (C) | عضو SfU | ممثلة C — صوّتت بنعم، كاسرةً الموقف الليبرالي التقليدي للهجرة |
+| Gudrun Nordborg (V) | عضو JuU | المتحفّظة الوحيدة على JuU9 — تحفّظ محاكمة عادلة وفق ECHR |
+| SSM (Strålsäkerhetsmyndigheten) | المنظّم النووي | يجب إصدار لوائح الخطة النووية بحلول Q3 2026 كي يعمل NU19 |
+| Migrationsverket | هيئة الهجرة | يجب تطبيق التحقق من الدخل/الإقامة لـ SfU28 قبل 6 يونيو 2026 |
+
+### التواريخ الرئيسية
+
+- **6 يونيو 2026**: تشديد جنسية SfU28 يدخل حيز التنفيذ
+- **17 يونيو 2026**: قانون ترخيص النووي NU19 يسري — أهم قانون طاقة سويدي منذ 30 عامًا
+- **1 يوليو 2026**: إصلاح الإجراءات القضائية JuU9 يسري
+- **~13 سبتمبر 2026**: انتخابات عامة
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+</div>
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_da.md -->
+
+### Sammenfatning
+
+Riksdagens udvalgsfase i riksmötet 2025/26 leverer to politisk jordrystende betænkninger i den sidste uge af april 2026: Erhvervsudvalget (NU) godkender en ny lov, der muliggør direkte regeringstilladelse til kernekraftinstallationer (HD01NU19), og Socialforsikringsudvalget (SfU) godkender kraftigt skærpede statsborgerskabskriterier inklusiv et 8-årigt bopælskrav, sprogtest og indkomstgrænse (HD01SfU28). Begge foranstaltninger definerer Tidö-koalitionens arvs inden valet og træder i kraft inden valget i september 2026.
+
+### Politiske afgørelser dette briefing understøtter
+
+1. **Redaktionel vurdering**: Led med NU19 kernekraftslicensering og SfU28 statsborgerskab som de to definerende lovgivningshændelser i april 2026-udvalgsperioden.
+2. **Koalitionsanalyse**: Vurder om SfU28's tværpartistøtte S/C/M/SD signalerer en permanent center-højreforskydning i integrationspolitikken.
+3. **Politisk sporbarhed**: Overvåg Migrationsverkets og SSM's implementeringsberedskab for ikrafttrædelsesdatoerne 6. juni og 17. juni 2026.
+4. **Efterretningsvurdering**: Evaluer risikoen for juridiske udfordringer mod atomlicensering, der omgår standardmiljøprocedurer.
+
+### 60-sekunders læsning
+
+- 🔵 **Atomlicensering** (HD01NU19): Ny lov (Prop 2025/26:171) lader kerneenergiudviklere ansøge direkte til regeringen om godkendelse, omgår standardmæssig miljøbalken kap. 17-proces. Lagrådet gennemgik og blev fulgt. Træder i kraft 17. juni 2026. Oppositionen (S, V, C, MP) afgav to formelle reservationer. **Valgbetydning: HØJ** — kernekraft er den definerende energipolitiske skillelinje i 2026.
+- 🔴 **Statsborgerskabsstramning** (HD01SfU28): Prop 2025/26:175 hæver bopælskravet fra 5 til 8 år, tilføjer sprog- og samfundstest, indfører indkomstgulv (≥3 inkomstbasbelopp), stramme adfærdsstandarder. Tværpartiafstemning: M, SD, KD, L + S og C stemte Ja. V og MP var stærkt imod med 10 reservationer. Træder i kraft 6. juni 2026 (sprogtestkomponenten udsat til oktober 2027). **Valgbetydning: HØJ** — integration har været det dominerende vælgerspørgsmål siden 2022.
+- 🟡 **Retsproces reform** (HD01JuU9): Prop 2025/26:155 udvider tilladelsen af tidlige afhørsoptagelser. Træder i kraft 1. juli 2026. Styrker bandeforbrydelsesretsforfølgninger.
+- 🔵 **Militært samarbejde** (HD01FöU14): Udvalget godkendte forbedrede vilkår for operativt militært samarbejde. Høj strategisk betydning i NATO-kontekst.
+- ⚪ **Kritisk infrastruktur** (HD01FöU20): Ny lov for CER/NIS2-resiliens planlagt; betænkning planlagt til juni 2026.
+
+### Vigtigste fremadrettede udløser
+
+**Overvåg**: Hvis NU19's atomlicenseringslov genererer forfatningsklage eller forvaltningsdomstolshenvisning inden juli 2026, risikerer hele kernekraftudvidelsesprogrammet forsinkelse.
+
+### Tillidsgrad
+
+**Tillid: HØJ** — Alle tre publicerede betænkninger indeholder fuldtekst og klare udvalgsstillinger.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title April–Juni 2026 lovgivningskalender
+    section April 2026
+        29. april : HD01NU19 godkendt (NU-udvalg)
+        29. april : HD01SfU28 stemt (SfU)
+        29. april : HD01JuU9 godkendt (JuU)
+    section Juni 2026
+        6. juni : SfU28 statsborgerskabslov træder i kraft
+        17. juni : NU19 atomlicenseringslov træder i kraft
+        1. juli : JuU9 retsprocessreform træder i kraft
+    section September 2026
+        13. sept : Parlamentsvalg (estimeret)
+```
+
+### Nøgleaktører
+
+| Aktør | Rolle | Handling/Holdning |
+|-------|-------|-------------------|
+| Tobias Andersson (SD) | NU-udvalgsformand | Ledede HD01NU19-godkendelse — SD's vigtigste energipolitiske sejr |
+| Viktor Wärnick (M) | SfU-udvalgsformand | Forsad over HD01SfU28 tværpartiafstemning |
+| Kenneth G Forslund (S) | SfU-udvalgsmedlem | S-ordfører der stemte Ja på SfU28 — bekræfter S strategisk drejning |
+| Julia Kronlid (SD) | SfU-udvalgsmedlem | SD-repræsentant der bekræfter SD-S-alignment på statsborgerskab |
+| Kerstin Lundgren (C) | SfU-udvalgsmedlem | C-repræsentant — stemte Ja, bryder med traditionel liberal immigrationsholdning |
+| Gudrun Nordborg (V) | JuU-udvalgsmedlem | Eneste reservant til JuU9 — EMRK retfærdig rettergang-reservation |
+| SSM (Strålsäkerhetsmyndigheten) | Atomregulator | Skal udstede kärnteknisk plan-regler senest Q3 2026 for at NU19 fungerer |
+| Migrationsverket | Migrationsagentur | Skal implementere SfU28 indkomst/bopælsverifikation inden 6. juni 2026 |
+
+### Nøgledatoer
+
+- **6. juni 2026**: SfU28 statsborgerskabsstramning træder i kraft
+- **17. juni 2026**: NU19 atomlicenseringslov træder i kraft — Sveriges vigtigste energilov i 30 år
+- **1. juli 2026**: JuU9 retsprocessreform træder i kraft
+- **~13. september 2026**: Parlamentsvalg
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_de.md -->
+
+### Zusammenfassung
+
+Die Ausschussphase des Riksdag im Riksmöte 2025/26 liefert zwei politisch erschütternde Betänkanden in der letzten Aprilwoche 2026: Der Wirtschaftsausschuss (NU) genehmigt ein neues Gesetz zur direkten Regierungsgenehmigung von Kernkraftanlagen (HD01NU19), und der Sozialversicherungsausschuss (SfU) genehmigt stark verschärfte Staatsbürgerschaftskriterien einschließlich eines 8-jährigen Wohnsitzerfordernisses, Sprachprüfung und Einkommensgrenze (HD01SfU28). Beide Maßnahmen definieren das Erbe der Tidö-Koalition und treten vor der Wahl im September 2026 in Kraft.
+
+### Politische Entscheidungen, die dieses Briefing unterstützt
+
+1. **Redaktionelle Beurteilung**: Führen Sie mit NU19 Kernkraftlizensierung und SfU28 Staatsbürgerschaft als den zwei definierenden Gesetzgebungsereignissen des Ausschusszyklus April 2026.
+2. **Koalitionsanalyse**: Beurteilen Sie, ob die parteienübergreifende S/C/M/SD-Unterstützung für SfU28 eine dauerhafte Mitte-rechts-Verlagerung in der Integrationspolitik signalisiert.
+3. **Politikverfolgung**: Überwachen Sie die Implementierungsbereitschaft von Migrationsverket und SSM für die Inkrafttreten-Termine 6. Juni und 17. Juni 2026.
+4. **Nachrichtenbewertung**: Bewerten Sie das Risiko rechtlicher Herausforderungen gegen Kernkraftlizenzierung, die Standardumweltverfahren umgeht.
+
+### 60-Sekunden-Lektüre
+
+- 🔵 **Kernkraftlizenzierung** (HD01NU19): Neues Gesetz (Prop 2025/26:171) ermöglicht Kernkraftentwicklern, direkt bei der Regierung eine Genehmigung zu beantragen, unter Umgehung des Standard-Miljöbalken-Kap.-17-Verfahrens. Lagrådet prüfte und wurde befolgt. Tritt am 17. Juni 2026 in Kraft. Die Opposition (S, V, C, MP) legte zwei formelle Vorbehalte ein. **Wahlbedeutung: HOCH** — Kernkraft ist die definierende energiepolitische Konfliktlinie 2026.
+- 🔴 **Staatsbürgerschaftsverschärfung** (HD01SfU28): Prop 2025/26:175 erhöht das Wohnsitzerfordernis von 5 auf 8 Jahre, fügt Sprach- und Staatskunde-Test hinzu, führt Einkommensboden ein (≥3 inkomstbasbelopp), verschärft Verhaltensstandards. Parteienübergreifende Abstimmung: M, SD, KD, L + S und C stimmten Ja. V und MP waren mit 10 Vorbehalten stark dagegen. Tritt am 6. Juni 2026 in Kraft. **Wahlbedeutung: HOCH** — Integration ist seit 2022 das dominierende Wählerthema.
+- 🟡 **Gerichtsverfahrensreform** (HD01JuU9): Prop 2025/26:155 erweitert die Zulässigkeit früher Vernehmungsaufnahmen. Tritt am 1. Juli 2026 in Kraft. Stärkt Bandenkriminalitätsverfolgungen.
+- 🔵 **Militärische Zusammenarbeit** (HD01FöU14): Ausschuss genehmigte verbesserte Bedingungen für operative militärische Zusammenarbeit. Hohe strategische Bedeutung im NATO-Kontext.
+- ⚪ **Kritische Infrastruktur** (HD01FöU20): Neues Gesetz für CER/NIS2-Resilienz geplant; Betänkande zur Veröffentlichung Juni 2026 geplant.
+
+### Wichtigster Vorwärtsauslöser
+
+**Überwachen**: Wenn NU19's Kernkraftlizenzierungsgesetz vor Juli 2026 eine Verfassungsbeschwerde oder Verwaltungsgerichtsvorlage erzeugt, riskiert das gesamte Kernkrafterweiterungsprogramm eine Verzögerung.
+
+### Vertrauensbewertung
+
+**Vertrauen: HOCH** — Alle drei veröffentlichten Betänkanden enthalten Volltext und klare Ausschusspositionen.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title April–Juni 2026 Gesetzgebungskalender
+    section April 2026
+        29. April : HD01NU19 genehmigt (NU-Ausschuss)
+        29. April : HD01SfU28 abgestimmt (SfU)
+        29. April : HD01JuU9 genehmigt (JuU)
+    section Juni 2026
+        6. Juni : SfU28 Staatsbürgerschaftsgesetz tritt in Kraft
+        17. Juni : NU19 Kernkraftlizenzierungsgesetz tritt in Kraft
+        1. Juli : JuU9 Gerichtsverfahrensreform tritt in Kraft
+    section September 2026
+        13. Sept : Parlamentswahl (geschätzt)
+```
+
+### Wichtige Akteure
+
+| Akteur | Rolle | Maßnahme/Standpunkt |
+|--------|-------|---------------------|
+| Tobias Andersson (SD) | NU-Ausschussvorsitzender | Leitete HD01NU19-Genehmigung — SDs wichtigster energiepolitischer Sieg |
+| Viktor Wärnick (M) | SfU-Ausschussvorsitzender | Vorsitz bei HD01SfU28 parteienübergreifender Abstimmung |
+| Kenneth G Forslund (S) | SfU-Mitglied | S-Sprecher, der Ja zu SfU28 stimmte — bestätigt S strategischen Schwenk |
+| Julia Kronlid (SD) | SfU-Mitglied | SD-Vertreterin bestätigt SD-S-Übereinstimmung bei Staatsbürgerschaft |
+| Kerstin Lundgren (C) | SfU-Mitglied | C-Vertreterin — stimmte Ja, bricht mit traditionell liberaler Einwanderungshaltung |
+| Gudrun Nordborg (V) | JuU-Mitglied | Alleinige Vorbehaltende bei JuU9 — EMRK fairer Prozess-Vorbehalt |
+| SSM (Strålsäkerhetsmyndigheten) | Kernkraftregulator | Muss kärnteknisk plan-Vorschriften bis Q3 2026 erlassen damit NU19 funktioniert |
+| Migrationsverket | Migrationsbehörde | Muss SfU28 Einkommens-/Wohnsitzverifikation bis 6. Juni 2026 implementieren |
+
+### Wichtige Daten
+
+- **6. Juni 2026**: SfU28 Staatsbürgerschaftsverschärfung tritt in Kraft
+- **17. Juni 2026**: NU19 Kernkraftlizenzierungsgesetz tritt in Kraft — Schwedens wichtigstes Energiegesetz seit 30 Jahren
+- **1. Juli 2026**: JuU9 Gerichtsverfahrensreform tritt in Kraft
+- **~13. September 2026**: Parlamentswahl
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_es.md -->
+
+### Resumen
+
+La fase en comisión del Riksdag en el riksmöte 2025/26 entrega dos betänkanden políticamente sísmicos en la última semana de abril de 2026: la Comisión de Empresa (NU) aprueba una nueva ley que permite la autorización directa del gobierno para instalaciones nucleares (HD01NU19), y la Comisión del Seguro Social (SfU) da luz verde a criterios de ciudadanía fuertemente endurecidos incluyendo un requisito de residencia de 8 años, prueba de idioma y suelo de ingresos (HD01SfU28). Ambas medidas definen el legado de la coalición Tidö y entrarán en vigor antes de las elecciones de septiembre de 2026.
+
+### Decisiones políticas que apoya este informe
+
+1. **Juicio editorial**: Liderar con la licencia nuclear NU19 y la ciudadanía SfU28 como los dos eventos legislativos definitorios del ciclo de comisiones de abril de 2026.
+2. **Análisis de coalición**: Evaluar si el apoyo transpartidista S/C/M/SD a SfU28 señala un cambio permanente hacia el centro-derecha en política de integración.
+3. **Seguimiento de políticas**: Supervisar la preparación de implementación de Migrationsverket y SSM para las fechas de entrada en vigor del 6 y 17 de junio de 2026.
+4. **Evaluación de inteligencia**: Evaluar el riesgo de desafíos legales contra la licencia nuclear que elude procedimientos ambientales estándar.
+
+### Lectura de 60 segundos
+
+- 🔵 **Licencia nuclear** (HD01NU19): Nueva ley (Prop 2025/26:171) permite a los desarrolladores nucleares solicitar directamente al gobierno la aprobación, eludiendo el proceso estándar del Capítulo 17 del miljöbalken. Lagrådet revisó y fue seguido. Entra en vigor el 17 de junio de 2026. La oposición (S, V, C, MP) emitió dos reservas formales. **Relevancia electoral: ALTA** — la energía nuclear es la línea divisoria política energética definidora de 2026.
+- 🔴 **Endurecimiento de la ciudadanía** (HD01SfU28): Prop 2025/26:175 eleva el requisito de residencia de 5 a 8 años, añade prueba de idioma y educación cívica, introduce suelo de ingresos (≥3 inkomstbasbelopp), endurece estándares de conducta. Votación transpartidista: M, SD, KD, L + S y C votaron Sí. V y MP se opusieron firmemente con 10 reservas. Entra en vigor el 6 de junio de 2026. **Relevancia electoral: ALTA** — la integración ha sido el tema de mayor relevancia electoral desde 2022.
+- 🟡 **Reforma del proceso judicial** (HD01JuU9): Prop 2025/26:155 amplía la admisibilidad de grabaciones de entrevistas tempranas. Entra en vigor el 1 de julio de 2026. Fortalece los procesamientos por crimen organizado.
+- 🔵 **Cooperación militar** (HD01FöU14): La comisión aprobó condiciones mejoradas para la cooperación militar operativa. Alta relevancia estratégica en contexto OTAN.
+- ⚪ **Infraestructura crítica** (HD01FöU20): Nueva ley para resiliencia CER/NIS2 planificada; informe programado para junio de 2026.
+
+### Principal desencadenante prospectivo
+
+**Supervisar**: Si la ley de licencia nuclear NU19 genera una queja constitucional o remisión a tribunal administrativo antes de julio de 2026, todo el programa de expansión nuclear corre riesgo de retraso.
+
+### Evaluación de confianza
+
+**Confianza: ALTA** — Los tres betänkanden publicados contienen texto completo y posiciones claras de la comisión.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title Calendario legislativo abril–junio 2026
+    section Abril 2026
+        29 abril : HD01NU19 aprobado (comisión NU)
+        29 abril : HD01SfU28 votado (SfU)
+        29 abril : HD01JuU9 aprobado (JuU)
+    section Junio 2026
+        6 junio : Ley SfU28 de ciudadanía entra en vigor
+        17 junio : Ley NU19 de licencia nuclear entra en vigor
+        1 julio : Reforma JuU9 del proceso judicial entra en vigor
+    section Septiembre 2026
+        13 sept : Elecciones legislativas (estimadas)
+```
+
+### Actores clave
+
+| Actor | Rol | Acción/Posición |
+|-------|-----|----------------|
+| Tobias Andersson (SD) | Presidente comisión NU | Presidió aprobación HD01NU19 — la mayor victoria energética de SD |
+| Viktor Wärnick (M) | Presidente comisión SfU | Presidió votación transpartidista HD01SfU28 |
+| Kenneth G Forslund (S) | Miembro SfU | Portavoz de S que votó Sí en SfU28 — confirma giro estratégico de S |
+| Julia Kronlid (SD) | Miembro SfU | Representante SD que confirma alineación SD-S en ciudadanía |
+| Kerstin Lundgren (C) | Miembro SfU | Representante C — votó Sí, rompiendo con posición liberal tradicional de inmigración |
+| Gudrun Nordborg (V) | Miembro JuU | Única reservante en JuU9 — reserva de juicio justo del CEDH |
+| SSM (Strålsäkerhetsmyndigheten) | Regulador nuclear | Debe emitir reglamentos del plan kärnteknisk para Q3 2026 para que NU19 funcione |
+| Migrationsverket | Agencia de migración | Debe implementar verificación de ingresos/residencia SfU28 antes del 6 de junio de 2026 |
+
+### Fechas clave
+
+- **6 junio 2026**: Endurecimiento de ciudadanía SfU28 entra en vigor
+- **17 junio 2026**: Ley NU19 de licencia nuclear entra en vigor — la ley energética más importante de Suecia en 30 años
+- **1 julio 2026**: Reforma JuU9 del proceso judicial entra en vigor
+- **~13 septiembre 2026**: Elecciones legislativas
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_fi.md -->
+
+### Tiivistelmä
+
+Riksdagenin valiokuntavaihe riksmötet 2025/26 -istuntokaudella tuottaa kaksi poliittisesti maanjäristyksenomaista mietintöä huhtikuun 2026 viimeisellä viikolla: Elinkeinovaliokunta (NU) hyväksyy uuden lain, joka mahdollistaa suoran hallituksen luvan ydinvoimalaitoksille (HD01NU19), ja Sosiaalivakuutusvaliokunta (SfU) hyväksyy voimakkaasti tiukennetut kansalaisuuskriteerit, mukaan lukien 8 vuoden asumisvaatimus, kielitesti ja tulovaatimus (HD01SfU28). Molemmat toimenpiteet määrittelevät Tidö-koalition perinnön ja astuvat voimaan ennen syyskuun 2026 vaaleja.
+
+### Politiikkapäätökset, joita tämä tiedote tukee
+
+1. **Toimituksellinen arvio**: Johda NU19 ydinluvan ja SfU28 kansalaisuuden kanssa huhtikuun 2026 valiokuntakauden kahtena määrittävänä lainsäädäntötapahtumana.
+2. **Koalitioanalyysi**: Arvioi, merkitseekö SfU28:n puoluerajat ylittävä S/C/M/SD-tuki pysyvää keskustaoikeistolaista siirtymää integraatiopolitiikassa.
+3. **Politiikan seuranta**: Tarkkaile Migrationsverketin ja SSM:n toimeenpanovalmiutta 6. kesäkuuta ja 17. kesäkuuta 2026 voimaantulopäivien osalta.
+4. **Tiedusteluarvio**: Arvioi oikeudellisten haasteiden riskiä ydinlupauksia vastaan, jotka ohittavat standardimittaiset ympäristöprosessit.
+
+### 60 sekunnin lukeminen
+
+- 🔵 **Ydinvoimaohjelma** (HD01NU19): Uusi laki (Prop 2025/26:171) antaa ydinvoimakehittäjille mahdollisuuden hakea suoraan hallitukselta hyväksyntää, ohittaen standardimittainen miljöbalken luku 17 -prosessi. Lagrådet tarkisti ja sitä seurattiin. Astuu voimaan 17. kesäkuuta 2026. Oppositio (S, V, C, MP) jätti kaksi virallista varausta. **Vaalikansainvälisyys: KORKEA** — ydinvoima on vuoden 2026 määrittävä energiapolitiikan jakolinja.
+- 🔴 **Kansalaisuuden tiukentaminen** (HD01SfU28): Prop 2025/26:175 nostaa asumisvaatimuksen 5:stä 8 vuoteen, lisää kieli- ja yhteiskuntatiedon testin, ottaa käyttöön tulolattiaan (≥3 inkomstbasbelopp), tiukentaa käyttäytymisstandardeja. Puoluerajat ylittävä äänestys: M, SD, KD, L + S ja C äänestivät Kyllä. V ja MP vastustivat voimakkaasti 10 varauksella. Astuu voimaan 6. kesäkuuta 2026. **Vaalikansainvälisyys: KORKEA** — integraatio on ollut hallitseva äänestäjäaihe vuodesta 2022.
+- 🟡 **Oikeudenkäyntiuudistus** (HD01JuU9): Prop 2025/26:155 laajentaa varhaisten kuulustelunauhoitusten hyväksyttävyyttä. Astuu voimaan 1. heinäkuuta 2026. Vahvistaa jengirikossyytteitä.
+- 🔵 **Sotilasyhteistyö** (HD01FöU14): Valiokunta hyväksyi parantuneet edellytykset operatiiviselle sotilasyhteistyölle. Korkea strateginen merkitys NATO-kontekstissa.
+- ⚪ **Kriittinen infrastruktuuri** (HD01FöU20): Uusi laki CER/NIS2-resilienssiä varten suunniteltu; mietintö ajoitettu julkaistavaksi kesäkuussa 2026.
+
+### Tärkein eteenpäin suuntautuva laukaisija
+
+**Tarkkaile**: Jos NU19:n ydinlupauslaki synnyttää perustuslaillisen valituksen ennen heinäkuuta 2026, koko ydinvoimaohjelman laajennus saattaa viivästyä seuraavalle vaalikaudelle.
+
+### Luottamusarvio
+
+**Luottamus: KORKEA** — Kaikki kolme julkaistua mietintöä sisältävät koko tekstin ja selkeät valiokunnan kannanotot.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title Huhti–Kesäkuu 2026 lainsäädäntökalenteri
+    section Huhtikuu 2026
+        29. huhtikuuta : HD01NU19 hyväksytty (NU-valiokunta)
+        29. huhtikuuta : HD01SfU28 äänestetty (SfU)
+        29. huhtikuuta : HD01JuU9 hyväksytty (JuU)
+    section Kesäkuu 2026
+        6. kesäkuuta : SfU28 kansalaisuuslaki astuu voimaan
+        17. kesäkuuta : NU19 ydinlupalaki astuu voimaan
+        1. heinäkuuta : JuU9 oikeudenkäyntiuudistus astuu voimaan
+    section Syyskuu 2026
+        13. syyskuuta : Vaalit (arvioitu)
+```
+
+### Avaintoimijat
+
+| Toimija | Rooli | Toiminta/Kanta |
+|---------|-------|----------------|
+| Tobias Andersson (SD) | NU-valiokunnan puheenjohtaja | Johti HD01NU19-hyväksyntää — SD:n tärkein energiapoliittinen voitto |
+| Viktor Wärnick (M) | SfU-valiokunnan puheenjohtaja | Johti HD01SfU28 puoluerajat ylittävää äänestystä |
+| Kenneth G Forslund (S) | SfU-jäsen | S-edustajana äänesti Kyllä SfU28:lle — vahvistaa S:n strategisen suunnanmuutoksen |
+| Julia Kronlid (SD) | SfU-jäsen | SD-edustaja vahvistaa SD-S-linjauksen kansalaisuudessa |
+| Kerstin Lundgren (C) | SfU-jäsen | C-edustaja — äänesti Kyllä, rikkoo perinteisen liberaalin maahanmuuttokannan |
+| Gudrun Nordborg (V) | JuU-jäsen | Ainoa JuU9:n vastustaja — EIS oikeusturvavaraus |
+| SSM (Strålsäkerhetsmyndigheten) | Ydinvoimavalvoja | Täytyy antaa kärnteknisk plan -määräykset Q3 2026 mennessä jotta NU19 toimii |
+| Migrationsverket | Maahanmuuttovirasto | Täytyy toteuttaa SfU28 tulo/asuinpaikkaverifikaatio 6. kesäkuuta 2026 mennessä |
+
+### Avainpäivämäärät
+
+- **6. kesäkuuta 2026**: SfU28 kansalaisuuden tiukentaminen astuu voimaan
+- **17. kesäkuuta 2026**: NU19 ydinlupalaki astuu voimaan — Ruotsin tärkein energialaki 30 vuoteen
+- **1. heinäkuuta 2026**: JuU9 oikeudenkäyntiuudistus astuu voimaan
+- **~13. syyskuuta 2026**: Vaalit
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_fr.md -->
+
+### Résumé
+
+La phase en commission du Riksdag lors du riksmöte 2025/26 livre deux rapports politiquement sismiques dans la dernière semaine d'avril 2026 : la Commission des entreprises (NU) approuve une nouvelle loi permettant l'autorisation directe du gouvernement pour les installations nucléaires (HD01NU19), et la Commission des assurances sociales (SfU) donne le feu vert à des critères de citoyenneté fortement durcis incluant une exigence de résidence de 8 ans, un test de langue et un plancher de revenus (HD01SfU28). Les deux mesures définissent l'héritage de la coalition Tidö et entreront en vigueur avant les élections de septembre 2026.
+
+### Décisions politiques que ce briefing soutient
+
+1. **Jugement éditorial** : Mettre en avant la licence nucléaire NU19 et la citoyenneté SfU28 comme les deux événements législatifs définissants du cycle en commission d'avril 2026.
+2. **Analyse de coalition** : Évaluer si le soutien transpartisan S/C/M/SD à SfU28 signale un glissement permanent vers la droite modérée dans la politique d'intégration.
+3. **Suivi des politiques** : Surveiller la préparation à la mise en œuvre de Migrationsverket et SSM pour les dates d'entrée en vigueur du 6 juin et du 17 juin 2026.
+4. **Évaluation du renseignement** : Évaluer le risque de contestations juridiques contre les licences nucléaires contournant les procédures environnementales standard.
+
+### Lecture en 60 secondes
+
+- 🔵 **Licence nucléaire** (HD01NU19) : La nouvelle loi (Prop 2025/26:171) permet aux développeurs nucléaires de demander directement au gouvernement une approbation, contournant le processus standard du Chapitre 17 du miljöbalken. Lagrådet a examiné et a été suivi. Entre en vigueur le 17 juin 2026. L'opposition (S, V, C, MP) a émis deux réserves formelles. **Signification électorale : ÉLEVÉE** — le nucléaire est la ligne de partage définissant la politique énergétique de 2026.
+- 🔴 **Durcissement de la citoyenneté** (HD01SfU28) : La Prop 2025/26:175 relève l'exigence de résidence de 5 à 8 ans, ajoute un test de langue et de culture civique, instaure un plancher de revenus (≥3 inkomstbasbelopp), durcit les normes de conduite. Vote transpartisan : M, SD, KD, L + S et C ont voté Oui. V et MP étaient fortement opposés avec 10 réserves. Entre en vigueur le 6 juin 2026. **Signification électorale : ÉLEVÉE** — l'intégration est le sujet de préoccupation dominant des électeurs depuis 2022.
+- 🟡 **Réforme de la procédure judiciaire** (HD01JuU9) : La Prop 2025/26:155 élargit la recevabilité des enregistrements d'auditions précoces. Entre en vigueur le 1er juillet 2026. Renforce les poursuites pour crimes de gangs.
+- 🔵 **Coopération militaire** (HD01FöU14) : La commission a approuvé des conditions améliorées pour la coopération militaire opérationnelle. Haute signification stratégique dans le contexte OTAN.
+- ⚪ **Infrastructures critiques** (HD01FöU20) : Nouvelle loi pour la résilience CER/NIS2 prévue ; rapport prévu pour juin 2026.
+
+### Principal déclencheur prospectif
+
+**Surveiller** : Si la loi de licence nucléaire NU19 génère une plainte constitutionnelle ou un renvoi au tribunal administratif avant juillet 2026, l'ensemble du programme d'expansion nucléaire risque d'être retardé.
+
+### Évaluation de la confiance
+
+**Confiance : ÉLEVÉE** — Les trois rapports publiés contiennent le texte intégral et des positions claires de la commission.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title Calendrier législatif avril–juin 2026
+    section Avril 2026
+        29 avril : HD01NU19 approuvé (commission NU)
+        29 avril : HD01SfU28 voté (SfU)
+        29 avril : HD01JuU9 approuvé (JuU)
+    section Juin 2026
+        6 juin : Loi SfU28 sur la citoyenneté entre en vigueur
+        17 juin : Loi NU19 sur les licences nucléaires entre en vigueur
+        1er juillet : Réforme JuU9 de la procédure judiciaire entre en vigueur
+    section Septembre 2026
+        13 sept : Élections législatives (estimées)
+```
+
+### Acteurs clés
+
+| Acteur | Rôle | Action/Position |
+|--------|------|----------------|
+| Tobias Andersson (SD) | Président de la commission NU | A présidé l'approbation HD01NU19 — la plus grande victoire énergétique de SD |
+| Viktor Wärnick (M) | Président de la commission SfU | A présidé le vote transpartisan HD01SfU28 |
+| Kenneth G Forslund (S) | Membre SfU | Porte-parole S ayant voté Oui sur SfU28 — confirme le pivot stratégique de S |
+| Julia Kronlid (SD) | Membre SfU | Représentante SD confirmant l'alignement SD-S sur la citoyenneté |
+| Kerstin Lundgren (C) | Membre SfU | Représentante C — a voté Oui, rompant avec la position libérale traditionnelle |
+| Gudrun Nordborg (V) | Membre JuU | Seule réservante sur JuU9 — réserve CEDH procès équitable |
+| SSM (Strålsäkerhetsmyndigheten) | Régulateur nucléaire | Doit émettre les réglementations du plan kärnteknisk avant Q3 2026 pour que NU19 fonctionne |
+| Migrationsverket | Agence de migration | Doit mettre en œuvre la vérification revenus/résidence SfU28 avant le 6 juin 2026 |
+
+### Dates clés
+
+- **6 juin 2026** : Durcissement de la citoyenneté SfU28 entre en vigueur
+- **17 juin 2026** : Loi NU19 sur les licences nucléaires entre en vigueur — la loi énergétique la plus importante de la Suède depuis 30 ans
+- **1er juillet 2026** : Réforme JuU9 de la procédure judiciaire entre en vigueur
+- **~13 septembre 2026** : Élections législatives
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# הריקסדאג השוודי מקדם רפורמת רישוי גרעיני והידוק אזרחות
+
+### תמצית
+
+שלב הוועדות של הריקסדאג בדיון riksmötet 2025/26 מספק שני betänkanden רועשים פוליטית בשבוע האחרון של אפריל 2026: ועדת העסקים (NU) מאשרת חוק חדש המאפשר רישוי ממשלתי ישיר למתקני גרעין (HD01NU19), וועדת ביטוח לאומי (SfU) מאשרת קריטריוני אזרחות מהודקים מאוד כולל דרישת מגורים של 8 שנים, מבחן שפה ורצפת הכנסה (HD01SfU28). שני הצעדים מגדירים את מורשת קואליציית Tidö ויכנסו לתוקף לפני בחירות ספטמבר 2026.
+
+### החלטות מדיניות שמסמך זה תומך בהן
+
+1. **שיקול עריכתי**: הובלה עם רישוי NU19 גרעיני ואזרחות SfU28 כשני האירועים החקיקתיים המגדירים של מחזור ועדות אפריל 2026.
+2. **ניתוח קואליציה**: הערכה האם תמיכת S/C/M/SD מעבר למפלגות ב-SfU28 מאותתת שינוי קבוע ימינה במרכז במדיניות שילוב.
+3. **מעקב מדיניות**: מעקב אחר מוכנות היישום של Migrationsverket ו-SSM לתאריכי הכניסה לתוקף 6 ו-17 ביוני 2026.
+4. **הערכת מודיעין**: הערכת הסיכון לאתגרים משפטיים כנגד רישוי גרעיני שעוקף נהלי סביבה סטנדרטיים.
+
+### קריאה בת 60 שניות
+
+- 🔵 **רישוי גרעיני** (HD01NU19): חוק חדש (Prop 2025/26:171) מאפשר למפתחי גרעין לפנות ישירות לממשלה לאישור, תוך עקיפת תהליך סטנדרטי של פרק 17 במילנובלקן. Lagrådet סקר ונעקב. נכנס לתוקף ב-17 יוני 2026. האופוזיציה (S, V, C, MP) הגישה שני הסתייגויות רשמיות. **חשיבות בחירותית: גבוהה** — גרעין הוא קו השסע המגדיר במדיניות אנרגיה 2026.
+- 🔴 **הידוק אזרחות** (HD01SfU28): Prop 2025/26:175 מעלה דרישת מגורים מ-5 ל-8 שנים, מוסיפה מבחן שפה ואזרחות, מציגה רצפת הכנסה (≥3 inkomstbasbelopp), מחמירה סטנדרטים של התנהגות. הצבעה רב-מפלגתית: M, SD, KD, L + S ו-C הצביעו כן. V ו-MP התנגדו בחריפות עם 10 הסתייגויות. נכנס לתוקף 6 יוני 2026. **חשיבות בחירותית: גבוהה** — שילוב היה נושא בוחרים דומיננטי מאז 2022.
+- 🟡 **רפורמת הליך משפטי** (HD01JuU9): Prop 2025/26:155 מרחיבה קבילות הקלטות חקירות מוקדמות. נכנס לתוקף 1 יולי 2026. מחזק תביעות פשעי כנופיות.
+- 🔵 **שיתוף פעולה צבאי** (HD01FöU14): הוועדה אישרה תנאים משופרים לשיתוף פעולה צבאי מבצעי. חשיבות אסטרטגית גבוהה בהקשר נאט"ו.
+- ⚪ **תשתית קריטית** (HD01FöU20): חוק חדש לחוסן CER/NIS2 מתוכנן; betänkande מתוכנן לפרסום יוני 2026.
+
+### הגורם המפעיל המרכזי
+
+**מעקב**: אם חוק רישוי גרעיני NU19 יוצר תלונה חוקתית או הפניה לבית משפט מנהלי לפני יולי 2026, כל תוכנית הרחבת הגרעין עלולה להתעכב.
+
+### הערכת ביטחון
+
+**ביטחון: גבוה** — שלושת ה-betänkanden המפורסמים מכילים טקסט מלא ועמדות ברורות של הוועדה.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title לוח שנה חקיקתי אפריל–יוני 2026
+    section אפריל 2026
+        29 אפריל : HD01NU19 אושר (ועדת NU)
+        29 אפריל : HD01SfU28 הוצבע (SfU)
+        29 אפריל : HD01JuU9 אושר (JuU)
+    section יוני 2026
+        6 יוני : חוק אזרחות SfU28 נכנס לתוקף
+        17 יוני : חוק רישוי גרעיני NU19 נכנס לתוקף
+        1 יולי : רפורמת הליך JuU9 נכנסת לתוקף
+    section ספטמבר 2026
+        13 ספטמבר : בחירות כלליות (מוערך)
+```
+
+### שחקנים מרכזיים
+
+| שחקן | תפקיד | פעולה/עמדה |
+|------|--------|------------|
+| Tobias Andersson (SD) | יו"ר ועדת NU | הוביל אישור HD01NU19 — הניצחון האנרגטי החשוב ביותר של SD |
+| Viktor Wärnick (M) | יו"ר ועדת SfU | יישב הצבעה רב-מפלגתית HD01SfU28 |
+| Kenneth G Forslund (S) | חבר SfU | דובר S שהצביע כן ל-SfU28 — מאשש ציר אסטרטגי של S |
+| Julia Kronlid (SD) | חבר SfU | נציגת SD מאששת יישור SD-S על אזרחות |
+| Kerstin Lundgren (C) | חבר SfU | נציגת C — הצביעה כן, שוברת עמדה ליברלית מסורתית |
+| Gudrun Nordborg (V) | חבר JuU | הסתייגות יחידה ל-JuU9 — הסתייגות משפט הוגן ECHR |
+| SSM (Strålsäkerhetsmyndigheten) | רגולטור גרעיני | חייב להוציא תקנות תוכנית גרעינית ב-Q3 2026 כדי ש-NU19 יפעל |
+| Migrationsverket | סוכנות הגירה | חייב ליישם אימות הכנסה/מגורים SfU28 לפני 6 יוני 2026 |
+
+### תאריכים מרכזיים
+
+- **6 יוני 2026**: הידוק אזרחות SfU28 נכנס לתוקף
+- **17 יוני 2026**: חוק רישוי גרעיני NU19 נכנס לתוקף — חוק האנרגיה החשוב ביותר בשוודיה ב-30 שנה
+- **1 יולי 2026**: רפורמת הליך JuU9 נכנסת לתוקף
+- **~13 ספטמבר 2026**: בחירות כלליות
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+</div>
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_ja.md -->
+
+### 要旨
+
+Riksdag の委員会フェーズ（riksmötet 2025/26）は、2026年4月最終週に政治的に衝撃的な2本の betänkanden を提出した。企業委員会（NU）が原子力施設への政府直接許可を可能にする新法（HD01NU19）を承認し、社会保険委員会（SfU）が8年居住要件・語学試験・最低所得要件を含む大幅に厳格化された市民権基準（HD01SfU28）を承認した。両措置は Tidö 連立政権の政策遺産を規定し、2026年9月の選挙前に発効する。
+
+### このブリーフィングが支援する政策決定
+
+1. **編集上の判断**: NU19 原子力認可と SfU28 市民権を、2026年4月委員会サイクルの2つの画期的立法事案として前面に出す。
+2. **連立分析**: SfU28 への S/C/M/SD の超党派支持が、統合政策における恒久的な中道右派シフトを示すかどうかを評価する。
+3. **政策追跡**: 2026年6月6日と17日の施行日に向けた Migrationsverket および SSM の実施準備状況を監視する。
+4. **情報評価**: 標準環境手続きを回避する原子力認可に対する法的異議のリスクを評価する。
+
+### 60秒読み
+
+- 🔵 **原子力認可** (HD01NU19): 新法（Prop 2025/26:171）により、原子力開発者が標準的な miljöbalken 第17章プロセスを回避して政府に直接承認申請できるようになる。Lagrådet が審査し従われた。2026年6月17日発効。野党（S, V, C, MP）が2件の公式留保を提出。**選挙的重要性: 高** — 原子力は2026年の定義的なエネルギー政策断層線。
+- 🔴 **市民権厳格化** (HD01SfU28): Prop 2025/26:175 は居住要件を5年から8年に引き上げ、語学・公民テストを追加し、最低所得（≥3 inkomstbasbelopp）を導入、行動基準を厳格化。超党派投票: M, SD, KD, L + S および C が賛成。V と MP は10件の留保で強く反対。2026年6月6日発効（語学テスト部分は2027年10月以降）。**選挙的重要性: 高** — 統合は2022年以来の有権者の主要関心事項。
+- 🟡 **司法プロセス改革** (HD01JuU9): Prop 2025/26:155 は早期面接録音の許容性を拡大。2026年7月1日発効。組織犯罪訴追を強化。
+- 🔵 **軍事協力** (HD01FöU14): 委員会が作戦的軍事協力の条件改善を承認。NATO 文脈での高い戦略的重要性。
+- ⚪ **重要インフラ** (HD01FöU20): CER/NIS2 レジリエンスのための新法計画; betänkande は2026年6月公開予定。
+
+### 主要フォワードトリガー
+
+**監視**: NU19 原子力認可法が2026年7月前に憲法訴訟や行政裁判所付託を生成すると、原子力拡張プログラム全体が遅延リスクに直面する。
+
+### 信頼性評価
+
+**信頼度: 高** — 公表された3本すべての betänkanden が全文と明確な委員会見解を含む。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title 2026年4〜6月 立法カレンダー
+    section 2026年4月
+        4月29日 : HD01NU19 承認（NU委員会）
+        4月29日 : HD01SfU28 投票（SfU）
+        4月29日 : HD01JuU9 承認（JuU）
+    section 2026年6月
+        6月6日 : SfU28 市民権法発効
+        6月17日 : NU19 原子力認可法発効
+        7月1日 : JuU9 司法プロセス改革発効
+    section 2026年9月
+        9月13日 : 総選挙（予定）
+```
+
+### 主要人物
+
+| 人物 | 役割 | 行動/立場 |
+|------|------|----------|
+| Tobias Andersson (SD) | NU委員会委員長 | HD01NU19 承認を主導 — SD 最大のエネルギー政策勝利 |
+| Viktor Wärnick (M) | SfU委員会委員長 | HD01SfU28 超党派投票を主宰 |
+| Kenneth G Forslund (S) | SfU委員 | SfU28 に賛成投票したS政策広報 — S の戦略的転換を確認 |
+| Julia Kronlid (SD) | SfU委員 | SD代表が SD-S の市民権における整合を確認 |
+| Kerstin Lundgren (C) | SfU委員 | C代表 — 賛成投票、伝統的リベラル移民立場を破る |
+| Gudrun Nordborg (V) | JuU委員 | JuU9 唯一の留保者 — ECHR公正裁判留保 |
+| SSM (Strålsäkerhetsmyndigheten) | 原子力規制機関 | NU19 が機能するため2026年Q3までに核技術計画規則を発行要 |
+| Migrationsverket | 移民局 | 2026年6月6日までに SfU28 所得/居住確認を実施要 |
+
+### 主要日程
+
+- **2026年6月6日**: SfU28 市民権厳格化発効
+- **2026年6月17日**: NU19 原子力認可法発効 — スウェーデン30年最重要エネルギー法
+- **2026年7月1日**: JuU9 司法プロセス改革発効
+- **~2026年9月13日**: 総選挙
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_ko.md -->
+
+### 요약
+
+Riksdag의 위원회 단계(riksmötet 2025/26)가 2026년 4월 마지막 주에 정치적으로 지진 같은 두 개의 betänkanden을 제출했다: 기업위원회(NU)가 원자력 시설에 대한 정부 직접 허가를 가능하게 하는 새로운 법안(HD01NU19)을 승인하고, 사회보험위원회(SfU)가 8년 거주 요건, 언어 시험 및 소득 하한을 포함한 대폭 강화된 시민권 기준(HD01SfU28)을 승인했다. 두 조치 모두 Tidö 연립정부의 정책 유산을 규정하며 2026년 9월 선거 전에 시행된다.
+
+### 이 브리핑이 지원하는 정책 결정
+
+1. **편집 판단**: NU19 원자력 인허가와 SfU28 시민권을 2026년 4월 위원회 사이클의 두 가지 결정적 입법 사건으로 전면에 제시한다.
+2. **연립 분석**: SfU28에 대한 S/C/M/SD의 초당파적 지지가 통합 정책에서 영구적인 중도우파 전환을 시사하는지 평가한다.
+3. **정책 추적**: 2026년 6월 6일과 17일 시행 날짜에 대한 Migrationsverket 및 SSM의 시행 준비 상태를 모니터링한다.
+4. **정보 평가**: 표준 환경 절차를 우회하는 원자력 인허가에 대한 법적 도전 위험을 평가한다.
+
+### 60초 읽기
+
+- 🔵 **원자력 인허가** (HD01NU19): 새로운 법률(Prop 2025/26:171)로 원자력 개발자들이 표준 miljöbalken 17장 절차를 우회해 정부에 직접 승인을 신청할 수 있다. Lagrådet이 검토하고 따랐다. 2026년 6월 17일 발효. 야당(S, V, C, MP)이 두 가지 공식 유보를 제출했다. **선거적 중요성: 높음** — 원자력은 2026년 결정적 에너지 정책 분열선.
+- 🔴 **시민권 강화** (HD01SfU28): Prop 2025/26:175가 거주 요건을 5년에서 8년으로 높이고 언어·시민 시험 추가, 소득 하한 도입(≥3 inkomstbasbelopp), 행동 기준 강화. 초당파 투표: M, SD, KD, L + S 및 C가 찬성. V와 MP는 10개의 유보로 강력 반대. 2026년 6월 6일 발효. **선거적 중요성: 높음** — 통합은 2022년 이후 주요 유권자 관심사.
+- 🟡 **사법 절차 개혁** (HD01JuU9): Prop 2025/26:155가 초기 면접 녹음의 허용성을 확대. 2026년 7월 1일 발효. 조직범죄 기소 강화.
+- 🔵 **군사 협력** (HD01FöU14): 위원회가 작전적 군사 협력을 위한 개선된 조건 승인. NATO 맥락에서 높은 전략적 중요성.
+- ⚪ **중요 인프라** (HD01FöU20): CER/NIS2 회복력을 위한 새 법률 계획; betänkande는 2026년 6월 발행 예정.
+
+### 주요 전향적 트리거
+
+**모니터링**: NU19 원자력 인허가법이 2026년 7월 전에 헌법 소원이나 행정법원 회부를 생성한다면, 전체 원자력 확장 프로그램은 지연될 위험이 있다.
+
+### 신뢰도 평가
+
+**신뢰도: 높음** — 발행된 세 개의 betänkanden 모두 전체 텍스트와 명확한 위원회 입장을 포함.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title 2026년 4~6월 입법 달력
+    section 2026년 4월
+        4월 29일 : HD01NU19 승인 (NU 위원회)
+        4월 29일 : HD01SfU28 투표 (SfU)
+        4월 29일 : HD01JuU9 승인 (JuU)
+    section 2026년 6월
+        6월 6일 : SfU28 시민권법 발효
+        6월 17일 : NU19 원자력 인허가법 발효
+        7월 1일 : JuU9 사법 절차 개혁 발효
+    section 2026년 9월
+        9월 13일 : 총선 (예정)
+```
+
+### 주요 인물
+
+| 인물 | 역할 | 행동/입장 |
+|------|------|----------|
+| Tobias Andersson (SD) | NU 위원회 위원장 | HD01NU19 승인 주도 — SD의 가장 중요한 에너지 정책 승리 |
+| Viktor Wärnick (M) | SfU 위원회 위원장 | HD01SfU28 초당파 투표 주관 |
+| Kenneth G Forslund (S) | SfU 위원 | SfU28에 찬성 투표한 S 대변인 — S의 전략적 전환 확인 |
+| Julia Kronlid (SD) | SfU 위원 | 시민권에서 SD-S 정렬 확인하는 SD 대표 |
+| Kerstin Lundgren (C) | SfU 위원 | C 대표 — 찬성 투표, 전통적 자유주의 이민 입장 탈피 |
+| Gudrun Nordborg (V) | JuU 위원 | JuU9 유일한 유보자 — ECHR 공정한 재판 유보 |
+| SSM (Strålsäkerhetsmyndigheten) | 원자력 규제기관 | NU19 기능을 위해 2026년 Q3까지 핵기술 계획 규정 발행 필요 |
+| Migrationsverket | 이민청 | 2026년 6월 6일 전까지 SfU28 소득/거주 검증 시행 필요 |
+
+### 주요 날짜
+
+- **2026년 6월 6일**: SfU28 시민권 강화 발효
+- **2026년 6월 17일**: NU19 원자력 인허가법 발효 — 스웨덴 30년 가장 중요한 에너지 법률
+- **2026년 7월 1일**: JuU9 사법 절차 개혁 발효
+- **~2026년 9월 13일**: 총선
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_nl.md -->
+
+### Samenvatting
+
+De commissiefase van de Riksdag in riksmöte 2025/26 levert twee politiek aardbeving-achtige betänkanden in de laatste week van april 2026: de Ondernemingscommissie (NU) keurt een nieuwe wet goed die directe regeringsvergunning voor kerninstallaties mogelijk maakt (HD01NU19), en de Sociale Verzekeringscommissie (SfU) keurt sterk aangescherpte burgerschap criteria goed inclusief een 8-jarige verblijfseis, taaltest en inkomensbodem (HD01SfU28). Beide maatregelen definiëren de erfenis van de Tidö-coalitie en treden in werking vóór de verkiezingen van september 2026.
+
+### Politieke beslissingen die dit briefing ondersteunt
+
+1. **Redactioneel oordeel**: Leiden met NU19 nucleaire licentieverlening en SfU28 staatsburgerschap als de twee bepalende wetgevende gebeurtenissen van de commissiecyclus april 2026.
+2. **Coalitieanalyse**: Beoordeel of de partijoverschrijdende S/C/M/SD-steun voor SfU28 een permanente centrumrechtse verschuiving in integratiebeleid signaleert.
+3. **Beleidsmonitoring**: Houd de implementatiebereidheid van Migrationsverket en SSM bij voor de inwerkingtredingsdata 6 juni en 17 juni 2026.
+4. **Inlichtingenbeoordeling**: Evalueer het risico op juridische uitdagingen tegen nucleaire licentieverlening die standaard milieuprocedures omzeilt.
+
+### 60-seconden lezing
+
+- 🔵 **Nucleaire licentieverlening** (HD01NU19): Nieuwe wet (Prop 2025/26:171) stelt nucleaire ontwikkelaars in staat direct bij de regering goedkeuring aan te vragen, omzeilend de standaard miljöbalken Hfst. 17-procedure. Lagrådet beoordeelde en werd gevolgd. Treedt in werking op 17 juni 2026. Oppositie (S, V, C, MP) diende twee formele voorbehouden in. **Verkiezingsbetekenis: HOOG** — kernenergie is de bepalende energiepolitieke scheidslijn van 2026.
+- 🔴 **Aanscherping staatsburgerschap** (HD01SfU28): Prop 2025/26:175 verhoogt verblijfseis van 5 naar 8 jaar, voegt taal- en burgerschapstest toe, introduceert inkomensbodem (≥3 inkomstbasbelopp), verscherpt gedragsnormen. Partijoverschrijdende stemming: M, SD, KD, L + S en C stemden Ja. V en MP waren sterk tegen met 10 voorbehouden. Treedt in werking op 6 juni 2026. **Verkiezingsbetekenis: HOOG** — integratie is het dominante kiezersonderwerp geweest sinds 2022.
+- 🟡 **Rechtshervorming** (HD01JuU9): Prop 2025/26:155 breidt toelaatbaarheid van vroege verhooropnames uit. Treedt in werking op 1 juli 2026. Versterkt bendecrimeprocessen.
+- 🔵 **Militaire samenwerking** (HD01FöU14): Commissie keurde verbeterde voorwaarden voor operationele militaire samenwerking goed. Hoge strategische betekenis in NAVO-context.
+- ⚪ **Kritieke infrastructuur** (HD01FöU20): Nieuwe wet voor CER/NIS2-veerkracht gepland; betänkande gepland voor publicatie juni 2026.
+
+### Belangrijkste voorwaartse trigger
+
+**Houd in de gaten**: Als NU19's wet nucleaire licentieverlening vóór juli 2026 een grondwettelijke klacht of bestuursrechterlijke verwijzing genereert, riskeert het volledige kernuitbreidingsprogramma vertraging.
+
+### Vertrouwensbeoordeling
+
+**Vertrouwen: HOOG** — Alle drie gepubliceerde betänkanden bevatten volledige tekst en duidelijke commissiestandpunten.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title April–Juni 2026 wetgevingskalender
+    section April 2026
+        29 april : HD01NU19 goedgekeurd (NU-commissie)
+        29 april : HD01SfU28 gestemd (SfU)
+        29 april : HD01JuU9 goedgekeurd (JuU)
+    section Juni 2026
+        6 juni : SfU28 staatsburgerschapswet treedt in werking
+        17 juni : NU19 nucleaire licentieverleningswet treedt in werking
+        1 juli : JuU9 rechtshervorming treedt in werking
+    section September 2026
+        13 sept : Parlementsverkiezingen (geschat)
+```
+
+### Belangrijke actoren
+
+| Actor | Rol | Actie/Standpunt |
+|-------|-----|----------------|
+| Tobias Andersson (SD) | NU-commissievoorzitter | Leidde HD01NU19-goedkeuring — SD's belangrijkste energiepolitieke overwinning |
+| Viktor Wärnick (M) | SfU-commissievoorzitter | Voorzat partijoverschrijdende HD01SfU28-stemming |
+| Kenneth G Forslund (S) | SfU-lid | S-woordvoerder die Ja stemde op SfU28 — bevestigt S strategische koerswijziging |
+| Julia Kronlid (SD) | SfU-lid | SD-vertegenwoordigster bevestigt SD-S-afstemming op staatsburgerschap |
+| Kerstin Lundgren (C) | SfU-lid | C-vertegenwoordigster — stemde Ja, brekend met traditioneel liberale immigratieopvatting |
+| Gudrun Nordborg (V) | JuU-lid | Enige voorbehoudende bij JuU9 — EVRM eerlijk proces-voorbehoud |
+| SSM (Strålsäkerhetsmyndigheten) | Nucleaire toezichthouder | Moet kärnteknisk plan-regelgeving uitvaardigen voor Q3 2026 zodat NU19 werkt |
+| Migrationsverket | Migratiedienst | Moet SfU28 inkomen/verblijfsverificatie implementeren vóór 6 juni 2026 |
+
+### Sleuteldata
+
+- **6 juni 2026**: SfU28 aanscherping staatsburgerschap treedt in werking
+- **17 juni 2026**: NU19 nucleaire licentieverleningswet treedt in werking — Zwedens belangrijkste energiewet in 30 jaar
+- **1 juli 2026**: JuU9 rechtshervorming treedt in werking
+- **~13 september 2026**: Parlementsverkiezingen
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_no.md -->
+
+### Sammendrag
+
+Riksdagens komitéfase i riksmøtet 2025/26 leverer to politisk jordskjelvende betenkning i den siste uken av april 2026: Næringsutvalget (NU) godkjenner en ny lov som muliggjør direkte regjeringstillatelse til kjernekraftinstallasjoner (HD01NU19), og Trygdekomitéen (SfU) godkjenner kraftig innskjerpede statsborgerskapskriterier inklusiv et 8-årig botidskrav, språktest og inntektsgulv (HD01SfU28). Begge tiltak definerer Tidö-koalisjonens arv og trer i kraft før valget i september 2026.
+
+### Politiske vurderinger dette briefet støtter
+
+1. **Redaksjonell vurdering**: Led med NU19 kjernekraftlisensering og SfU28 statsborgerskap som de to definerende lovgivningshendelsene i april 2026-komitéperioden.
+2. **Koalisjonsanalyse**: Vurder om SfU28's tverrpartistøtte S/C/M/SD signaliserer et permanent sentrum-høyre-skifte i integrasjonspolitikken.
+3. **Politisk sporing**: Overvåk Migrationsverkets og SSM's implementeringsberedskap for ikrafttredelsesdatoene 6. juni og 17. juni 2026.
+4. **Etterretningsvurdering**: Evaluer risikoen for juridiske utfordringer mot atomlisensering som omgår standardmiljøprosedyrer.
+
+### 60-sekunders lesning
+
+- 🔵 **Atomlisensering** (HD01NU19): Ny lov (Prop 2025/26:171) lar kjernekraftsutviklere søke direkte til regjeringen om godkjenning, omgår standardmessig miljøbalken kap. 17-prosess. Lagrådet gjennomgikk og ble fulgt. Trer i kraft 17. juni 2026. Opposisjonen (S, V, C, MP) avga to formelle reservasjoner. **Valgbetydning: HØY** — kjernekraft er den definerende energipolitiske skillelinjen i 2026.
+- 🔴 **Statsborgerskap-innstramming** (HD01SfU28): Prop 2025/26:175 hever botidskravet fra 5 til 8 år, legger til språk- og samfunnstest, innfører inntektsgulv (≥3 inkomstbasbelopp), strammer adferdsstandarden. Tverrpartiavstemning: M, SD, KD, L + S og C stemte Ja. V og MP var sterkt imot med 10 reservasjoner. Trer i kraft 6. juni 2026. **Valgbetydning: HØY** — integrering har vært det dominerende velgerspørsmålet siden 2022.
+- 🟡 **Rettsprosessreform** (HD01JuU9): Prop 2025/26:155 utvider tillatelsen av tidlige avhørsopptak. Trer i kraft 1. juli 2026. Styrker bandekriminalitetsprosesser.
+- 🔵 **Militært samarbeid** (HD01FöU14): Komitéen godkjente forbedrede vilkår for operativt militært samarbeid. Høy strategisk betydning i NATO-kontekst.
+- ⚪ **Kritisk infrastruktur** (HD01FöU20): Ny lov for CER/NIS2-resiliens planlagt; betenkning planlagt til juni 2026.
+
+### Viktigste fremadrettede utløser
+
+**Overvåk**: Hvis NU19's atomlisensieringslov genererer konstitusjonell klage eller forvaltningsdomstolhenvisning før juli 2026, risikerer hele kjernekraftutvidelsesprogrammet forsinkelse.
+
+### Tillitsvurdering
+
+**Tillit: HØY** — Alle tre publiserte betenkning inneholder fulltekst og tydelige komitéposisjoner.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title April–Juni 2026 lovgivningskalender
+    section April 2026
+        29. april : HD01NU19 godkjent (NU-utvalg)
+        29. april : HD01SfU28 stemt (SfU)
+        29. april : HD01JuU9 godkjent (JuU)
+    section Juni 2026
+        6. juni : SfU28 statsborgerlov trer i kraft
+        17. juni : NU19 atomlisensieringslov trer i kraft
+        1. juli : JuU9 rettsprosessreform trer i kraft
+    section September 2026
+        13. sept : Stortingsvalg (estimert)
+```
+
+### Nøkkelaktører
+
+| Aktør | Rolle | Handling/Holdning |
+|-------|-------|-------------------|
+| Tobias Andersson (SD) | NU-komitéformann | Ledet HD01NU19-godkjenning — SD's viktigste energipolitiske seier |
+| Viktor Wärnick (M) | SfU-komitéformann | Presiderte over HD01SfU28 tverrpartiavstemning |
+| Kenneth G Forslund (S) | SfU-komitémedlem | S-talsmann som stemte Ja på SfU28 — bekrefter S strategisk dreining |
+| Julia Kronlid (SD) | SfU-komitémedlem | SD-representant bekrefter SD-S-tilpasning på statsborgerskap |
+| Kerstin Lundgren (C) | SfU-komitémedlem | C-representant — stemte Ja, bryter med tradisjonell liberal innvandringsholdning |
+| Gudrun Nordborg (V) | JuU-komitémedlem | Eneste reservant mot JuU9 — EMK rettferdig rettergang-reservasjon |
+| SSM (Strålsäkerhetsmyndigheten) | Atomregulator | Må utstede kjerneteknisk plan-regler innen Q3 2026 for at NU19 skal fungere |
+| Migrationsverket | Migrasjonsetat | Må implementere SfU28 inntekts/botidsverifisering innen 6. juni 2026 |
+
+### Nøkkeldatoer
+
+- **6. juni 2026**: SfU28 statsborgerskap-innstramming trer i kraft
+- **17. juni 2026**: NU19 atomlisensieringslov trer i kraft — Sveriges viktigste energilov på 30 år
+- **1. juli 2026**: JuU9 rettsprosessreform trer i kraft
+- **~13. september 2026**: Stortingsvalg
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_sv.md -->
+
+### Sammanfattning
+
+Riksdagens utskottsfas under riksmötet 2025/26 levererar två politiskt skakande betänkanden under sista veckan i april 2026: Näringsutskottet (NU) godkänner en ny lag som möjliggör direkt regeringstillstånd för kärnkraftsinstallationer (HD01NU19), och Socialförsäkringsutskottet (SfU) godkänner kraftigt skärpta medborgarskapskriterier inklusive ett 8-årigt bosättningskrav, språktest och inkomstkrav (HD01SfU28). Båda åtgärderna definierar Tidökoalitionens valrörelsearvets och träder i kraft innan valet i september 2026, vilket dramatiskt omformar Sveriges energi- och integrationsdebatt.
+
+### Politiska bedömningar detta briefing stöder
+
+1. **Redaktionell bedömning**: Led med NU19 kärnkraftslicensiering och SfU28 medborgarskap som de två definierande lagstiftningshändelserna i april 2026; kontextualisera inom valrörelsen inför september 2026.
+2. **Koalitionsanalys**: Bedöm om SfU28:s tvärpartiliga S/C/M/SD-stöd signalerar en permanent center-höger-förändring i integrationspolitiken eller en taktisk anpassning inför valet.
+3. **Policybevakningsspårning**: Övervaka Migrationsverkets och SSM:s implementeringsberedskap för ikraftträdandedatumen 6 juni och 17 juni 2026.
+4. **Underrättelsebedömning**: Utvärdera risken för rättsliga utmaningar mot kärnkraftslicensieringen som kringgår standardmässiga miljöbalkensprocesser.
+
+### 60-sekunders läsning
+
+- 🔵 **Kärnkraftslicensiering** (HD01NU19): Ny lag (Prop 2025/26:171) låter kärnkraftsutvecklare ansöka direkt till regeringen om godkännande, kringgår standardmässig miljöbalken kap 17-process. Lagrådet granskade och följdes. Träder i kraft 17 juni 2026. Oppositionen (S, V, C, MP) lämnade två formella reservationer. **Valbetydelse: HÖG** — kärnkraft är den definierande energipolitiska skiljelinjen 2026.
+- 🔴 **Medborgarskapsskärpning** (HD01SfU28): Prop 2025/26:175 höjer bosättningskravet från 5 till 8 år, tillför språk- och samhällskunskapstest, inför inkomstgolv (≥3 inkomstbasbelopp), skärper vandelsreglerna. Tvärpartilig omröstning: M, SD, KD, L + S och C röstade Ja. V och MP var starkt emot med 10 reservationer. Träder i kraft 6 juni 2026 (språktestkomponenten uppskjuten till oktober 2027 eller tidigare). **Valbetydelse: HÖG** — integration har varit den dominerande väljarfrågan sedan 2022.
+- 🟡 **Processreform i domstol** (HD01JuU9): Prop 2025/26:155 utvidgar tillåtligheten av tidiga förhörsinspelningar och tar bort tilltrosbestämmelserna i hovrätterna. En V-reservation. Träder i kraft 1 juli 2026. Stärker åtal i gängbrottmål.
+- 🔵 **Militärt samarbete** (HD01FöU14): Utskottet godkände förbättrade villkor för operativt militärt samarbete. Ännu ej publicerat — hög strategisk betydelse i NATO-kontext.
+- ⚪ **Kritisk infrastruktur** (HD01FöU20): Ny lag för CER/NIS2-resiliens planerad; betänkande schemalagt för publicering juni 2026.
+
+### Viktigaste framåtriktat utlösare
+
+**Bevaka**: Om NU19:s lag om kärnkraftslicensiering genererar konstitutionellt klagomål eller remiss till Högsta förvaltningsdomstolen före juli 2026, riskerar hela kärnkraftsexpansionsprogrammet att försenas till nästa mandatperiod.
+
+### Konfidensbedömning
+
+**Konfidensgrad: HÖG** — Alla tre publicerade betänkandena innehåller fulltext och tydliga utskottspositioner. Röstdata för SfU28 bekräftade. DIW-signifikansbedömning vilar på primärkällebevis (dok_id, utskottsprotokoll, Lagrådsreferenser).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title April–Juni 2026 lagstiftningskalender
+    section April 2026
+        29 april : HD01NU19 godkänns (NU-utskottet)
+        29 april : HD01SfU28 röstas (SfU)
+        29 april : HD01JuU9 godkänns (JuU)
+    section Juni 2026
+        6 juni : SfU28 medborgarskapslag träder i kraft
+        17 juni : NU19 kärnkraftslicensieringslag träder i kraft
+        1 juli : JuU9 domstolsprocessreform träder i kraft
+    section September 2026
+        13 sept : Riksdagsval (beräknat)
+```
+
+### Nyckelaktörer
+
+| Aktör | Roll | Åtgärd/Ståndpunkt |
+|-------|------|-------------------|
+| Tobias Andersson (SD) | NU-utskottsordförande | Ledde HD01NU19-godkännandet — SD:s viktigaste energipolitiska seger |
+| Viktor Wärnick (M) | SfU-utskottsordförande | Presiderade över HD01SfU28 tvärpartilig omröstning |
+| Kenneth G Forslund (S) | SfU-ledamot | S-talesperson som röstade Ja på SfU28 — bekräftar S strategisk pivot |
+| Julia Kronlid (SD) | SfU-ledamot | SD-representant bekräftar SD-S-samstämmighet i medborgarskap |
+| Kerstin Lundgren (C) | SfU-ledamot | C-representant — röstade Ja, bryter med traditionell liberal migrationshållning |
+| Gudrun Nordborg (V) | JuU-ledamot | Ensam reservant mot JuU9 — EMRK rättvis rättegång-reservation |
+| SSM (Strålsäkerhetsmyndigheten) | Kärnkraftsregulator | Måste utfärda kärntekniska planregler senast Q3 2026 för att NU19 ska fungera |
+| Migrationsverket | Migrationsverksamhet | Måste implementera SfU28 inkomst-/bosättningsverifiering senast 6 juni 2026 |
+
+### Viktiga datum
+
+- **6 juni 2026**: SfU28 medborgarskapsskärpning träder i kraft — dagar före Riksdagens sommarrecess
+- **17 juni 2026**: NU19 kärnkraftslicensieringslag träder i kraft — Sveriges viktigaste energilag på 30 år
+- **1 juli 2026**: JuU9 domstolsprocessreform träder i kraft
+- **~13 september 2026**: Riksdagsval — alla tre lagarna utgör valets bakgrund
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_zh.md -->
+
+### 摘要
+
+Riksdag 委员会阶段（riksmötet 2025/26）在2026年4月最后一周提交两份在政治上震撼人心的 betänkanden：企业委员会（NU）批准一项允许政府直接许可核设施的新法律（HD01NU19），社会保险委员会（SfU）批准大幅收紧的公民身份标准，包括8年居住要求、语言测试和最低收入要求（HD01SfU28）。两项措施都界定了 Tidö 联合政府的政策遗产，并将在2026年9月选举前生效。
+
+### 本简报支持的政策决定
+
+1. **编辑判断**：以 NU19 核许可和 SfU28 公民身份作为2026年4月委员会周期两大决定性立法事件进行前置报道。
+2. **联合分析**：评估 SfU28 获得 S/C/M/SD 跨党支持是否预示着移民融合政策上的永久性中间偏右转变。
+3. **政策追踪**：监测 Migrationsverket 和 SSM 为2026年6月6日和6月17日生效日期的实施准备情况。
+4. **情报评估**：评估绕过标准环境程序的核许可面临法律挑战的风险。
+
+### 60秒阅读
+
+- 🔵 **核许可**（HD01NU19）：新法律（Prop 2025/26:171）允许核能开发商直接向政府申请批准，绕过 miljöbalken 第17章标准程序。Lagrådet 审查后被遵循。2026年6月17日生效。反对派（S, V, C, MP）提交两项正式保留意见。**选举重要性：高** ——核能是2026年界定性能源政策分歧线。
+- 🔴 **公民身份收紧**（HD01SfU28）：Prop 2025/26:175 将居住要求从5年提高到8年，增加语言和公民测试，引入最低收入（≥3 inkomstbasbelopp），收紧行为标准。跨党投票：M、SD、KD、L + S 和 C 投票赞成。V 和 MP 强烈反对，提出10项保留意见。2026年6月6日生效。**选举重要性：高** ——融合一直是2022年以来选民最关注的议题。
+- 🟡 **司法程序改革**（HD01JuU9）：Prop 2025/26:155 扩大了早期访谈录音的可采性。2026年7月1日生效。加强团伙犯罪起诉。
+- 🔵 **军事合作**（HD01FöU14）：委员会批准了改善作战军事合作条件的提案。在北约背景下具有高度战略意义。
+- ⚪ **关键基础设施**（HD01FöU20）：CER/NIS2 弹性新法律已计划；betänkande 预定2026年6月发布。
+
+### 主要前瞻性触发因素
+
+**监测**：如果 NU19 核许可法在2026年7月前引发宪法诉讼或行政法院转介，整个核扩张计划面临延期风险。
+
+### 可信度评估
+
+**可信度：高** ——已发布的三份 betänkanden 均包含完整文本和清晰的委员会立场。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Committee Reports — Significance vs Political Controversy
+    x-axis "Low Political Controversy" --> "High Political Controversy"
+    y-axis "Low Legislative Significance" --> "High Legislative Significance"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Battleground
+    quadrant-3 Routine
+    quadrant-4 Significant but Consensual
+    HD01NU19: [0.87, 0.91]
+    HD01SfU28: [0.82, 0.88]
+    HD01JuU9: [0.38, 0.72]
+    HD01FöU14: [0.45, 0.79]
+    HD01KU36: [0.55, 0.60]
+    HD01NU22: [0.32, 0.55]
+    HD01SkU22: [0.28, 0.48]
+    HD01CU37: [0.42, 0.44]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title 2026年4至6月立法日历
+    section 2026年4月
+        4月29日 : HD01NU19 获批（NU 委员会）
+        4月29日 : HD01SfU28 投票（SfU）
+        4月29日 : HD01JuU9 获批（JuU）
+    section 2026年6月
+        6月6日 : SfU28 公民身份法生效
+        6月17日 : NU19 核许可法生效
+        7月1日 : JuU9 司法程序改革生效
+    section 2026年9月
+        9月13日 : 大选（预计）
+```
+
+### 主要行动者
+
+| 行动者 | 角色 | 行动/立场 |
+|--------|------|----------|
+| Tobias Andersson (SD) | NU 委员会主席 | 主持 HD01NU19 批准 — SD 最重要的能源政策胜利 |
+| Viktor Wärnick (M) | SfU 委员会主席 | 主持 HD01SfU28 跨党投票 |
+| Kenneth G Forslund (S) | SfU 成员 | 赞成 SfU28 的 S 发言人 — 确认 S 的战略转向 |
+| Julia Kronlid (SD) | SfU 成员 | SD 代表确认 SD-S 在公民身份上的一致立场 |
+| Kerstin Lundgren (C) | SfU 成员 | C 代表 — 投票赞成，打破传统自由主义移民立场 |
+| Gudrun Nordborg (V) | JuU 成员 | JuU9 唯一持保留意见者 — ECHR 公正审判保留 |
+| SSM（Strålsäkerhetsmyndigheten） | 核能监管机构 | 须于2026年Q3前发布核技术计划法规，NU19 方可运作 |
+| Migrationsverket | 移民局 | 须于2026年6月6日前实施 SfU28 收入/居住核查 |
+
+### 关键日期
+
+- **2026年6月6日**：SfU28 公民身份收紧生效
+- **2026年6月17日**：NU19 核许可法生效 — 瑞典30年来最重要能源法律
+- **2026年7月1日**：JuU9 司法程序改革生效
+- **约2026年9月13日**：大选
+
+<!-- source-sha: 69fae8c5b56fa37d6a281e5e15d5acb956d405aa -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 9 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1978,6 +3147,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
