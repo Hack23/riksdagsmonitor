@@ -105,3 +105,14 @@
 | FI-RT-010 | T+90d | EU/CoE formal response | 🟡 MED | Pending |
 
 **Next scheduled review**: FI-RT-001 and FI-RT-002 should be rechecked at next realtime-monitor run (2026-05-23 morning cycle).
+
+---
+
+## Pass 2 Additions
+
+### FI-RT-011 — HD01FiU47 Content Publication (New — Pass 2)
+**Definition**: Finance Committee betänkande 2025/26:FiU47 content published on Riksdag website  
+**Trigger condition**: Title and summary become available at data.riksdagen.se/dokument/HD01FiU47  
+**Intelligence value**: Subject unknown; scheduled for chamber debate/vote 16–17 June 2026 — potential significance for fiscal or regulatory agenda  
+**Monitoring source**: Riksdag MCP `get_dokument_innehall(dok_id="HD01FiU47")`  
+**Alert threshold**: If subject relates to immigration, security, or major fiscal changes = escalate to L2+ priority

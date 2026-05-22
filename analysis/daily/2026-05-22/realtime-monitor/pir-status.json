@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-monitor",
+  "date": "2026-05-22",
+  "subfolder": "realtime-monitor",
+  "generated_at": "2026-05-22T16:30:00Z",
+  "inherited_from": null,
+  "pirs": [
+    {
+      "pir_id": "PIR-RT-001",
+      "statement": "Will JuU produce formal dissenting reservations (reservationer) on prop. 2025/26:267 child-detention provisions?",
+      "trigger": "JuU committee report published with reservationer section citing HD024192 grounds",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "2026-06-10",
+      "admiralty_grade": "A1",
+      "evidence_refs": ["HD024192", "prop. 2025/26:267"],
+      "inherits_from": []
+    },
+    {
+      "pir_id": "PIR-RT-002",
+      "statement": "Will S, MP, and V parties vote against HD01SfU37 family reunification tightening in full coalition opposition?",
+      "trigger": "SfU vote record shows all three parties (S+MP+V = 107 seats) voting Nej on HD01SfU37",
+      "status": "open",
+      "confidence": "HIGH",
+      "horizon": "2026-06-17",
+      "admiralty_grade": "B2",
+      "evidence_refs": ["HD01SfU37"],
+      "inherits_from": []
+    },
+    {
+      "pir_id": "PIR-RT-003",
+      "statement": "Does Lagrådet advisory on prop. 2025/26:267 contain at least one reservation or recommendation on proportionality of child-detention provisions?",
+      "trigger": "Lagrådet yttrande published at www.lagradet.se with reference to prop. 2025/26:267",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "2026-05-25",
+      "admiralty_grade": "C3",
+      "evidence_refs": ["prop. 2025/26:267", "HD024192"],
+      "inherits_from": []
+    },
+    {
+      "pir_id": "PIR-RT-004",
+      "statement": "Will the child-detention media cycle for prop. 2025/26:267 sustain national coverage for 2–10 days?",
+      "trigger": "Three or more major Swedish news outlets (DN, Aftonbladet, SVT) publish articles on child-detention provisions within 10 days of motion filing",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "horizon": "2026-06-01",
+      "admiralty_grade": "C3",
+      "evidence_refs": ["HD024192"],
+      "inherits_from": []
+    }
+  ]
+}

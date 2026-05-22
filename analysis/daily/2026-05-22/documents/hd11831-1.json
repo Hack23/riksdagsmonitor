@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11831",
+  "titel": "Växtförädling vid Sveriges lantbruksuniversitet",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "parti": "C",
+  "summary": "Fråga 2025/26:831 Växtförädling vid Sveriges lantbruksuniversitet\n av  Stina Larsson (C)\n till Landsbygdsminister Peter Kullgren (KD)\n Sveriges lantbruksuniversitet, SLU, har ett särskilt anslag för viss växtförädlingsverksamhet enligt regleringsbrev till Formas under förutsättning av SLU:s medfinansiering. Detta har bland",
+  "url": "https://data.riksdagen.se/dokument/HD11831.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T16:26:24.409Z"
+  }
+}

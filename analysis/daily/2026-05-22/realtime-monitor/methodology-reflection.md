@@ -85,6 +85,30 @@
 
 All 23 required artifacts written in Pass 1. Pass 2 read-back and improvement scheduled immediately.
 
+---
+
+## Pass-2 status: executed in full
+
+Pass 2 read-back completed 2026-05-22T16:30Z (run_id=26299246626, attempt=1). All 23 artifacts reviewed; improvements applied per checklist below. Gate run follows.
+
+---
+
+## Re-run log
+
+| Field | Value |
+|-------|-------|
+| run_id | 26299246626 |
+| attempt | 1 |
+| mode | IMPROVEMENT_MODE=true |
+| agent_start_epoch | 1779467079 |
+| pass1_snapshot | analysis/daily/2026-05-22/realtime-monitor/pass1/ (24 files) |
+| new_dok_ids | HD01FiU47 (FiU betänkande, planerat 2026-06-17, content not yet published) |
+| artifacts_extended | executive-brief.md, synthesis-summary.md, intelligence-assessment.md, cross-reference-map.md, forward-indicators.md, methodology-reflection.md |
+| flags_closed | H1 boilerplate → publishable title; pir-status.json created; Decisions section added |
+| vintage_refresh | Download script re-run 2026-05-22T16:26Z; 26 documents, 10 full-text; HD01FiU47 newly registered |
+| ig_001_lagrådet | Fetch attempted — www.lagradet.se not accessible in this environment; IG-001 remains open |
+| pass2_improvements | Strategic assessment updated with coalition arithmetic and electoral timeline; Decisions section added; HD01FiU47 forward signal added; sibling-folder cross-references added to cross-reference-map.md; PIR table aligned with pir-status.json |
+
 | Artifact | Status |
 |----------|:------:|
 | README.md | ✅ |

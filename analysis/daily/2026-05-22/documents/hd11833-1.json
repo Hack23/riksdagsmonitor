@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11833",
+  "titel": "Svenska myndigheters genomförande av beslutad folkhälsopolitik",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "parti": "-",
+  "summary": "Fråga 2025/26:833 Svenska myndigheters genomförande av beslutad folkhälsopolitik\n av  Arin Karapet till Sjukvårdsminister Elisabet Lann (KD)\n Sveriges Radio har nyligen publicerat en dokumentärserie om hur snustillverkares argument rörande alternativa nikotinprodukters betydelse för Sveriges internationellt sett unikt låga",
+  "url": "https://data.riksdagen.se/dokument/HD11833.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T16:26:24.409Z"
+  }
+}

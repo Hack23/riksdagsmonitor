@@ -4,7 +4,7 @@
 **Admiralty Rating**: B2 (Reliable source, probably true)  
 **WEP Confidence**: HIGH  
 **Analyst**: James Pether Sörling  
-**Generated**: 2026-05-22T14:17Z  
+**Generated**: 2026-05-22T16:30Z (Pass 2 — run_id 26299246626)  
 
 ---
 
@@ -60,7 +60,25 @@ CU betänkande on a new consumer credit law reflects EU transposition obligation
 
 ---
 
-## Source Quality Assessment
+## Pass 2 Intelligence Supplement
+
+### New Forward Signal: HD01FiU47
+Finance Committee Betänkande 2025/26:FiU47, registered 2026-05-22T16:45Z, is scheduled "planerat" with beredning/bordläggning/justering 2026-06-16 and behandling (chamber vote) 2026-06-17. Content not yet published ("Dokumentet är inte publicerat"). This is the second Finance Committee betänkande in today's cluster alongside HD01FiU42. The subject is unknown pending publication; the scheduling adds a Finance Committee item to the June 17 Riksdag session — the same day expected for SfU/JuU votes on the security-immigration cluster.
+
+**Admiralty annotation**: HD01FiU47 assessed as A1 on provenance (official registry) but C3 on intelligence value (content unknown, title "Titel" = placeholder). No current intelligence weight assigned; indicator elevated to FI-RT-011 monitoring.
+
+### Uncertainty Disclosures (Pass 2 Additions)
+
+| Claim | Original Confidence | Pass 2 Adjustment | Basis |
+|-------|:-----------------:|:---------------:|-------|
+| Coalition will pass prop. 2025/26:267 | HIGH | **HIGH (maintained)** — no new C/L split signals | Arithmetic stable; no press statements found |
+| S votes against HD01SfU37 | HIGH | **HIGH (maintained)** | Confirmed by historical SfU voting pattern |
+| Lagrådet has reservations on child-detention | MEDIUM | **MEDIUM (maintained)** | IG-001 gap not resolved; www.lagradet.se inaccessible |
+| Media cycle 2–10 days | MEDIUM | **MEDIUM-LOW** | No Barnombudsmannen statement found as of 16:30Z; coverage window may be shorter |
+| C files reservations in JuU | LOW | **LOW (maintained)** | No C press statement found in T+2h window since motion filing |
+
+### Source Quality Note
+All primary intelligence is sourced from `data.riksdagen.se` via riksdag-regering MCP (Admiralty A1). Party position assessments are B2 (inferred from Tidö agreement and historical voting records). Polling figures are C2 (secondary compilation from public aggregators, current as of May 2026 baseline). **No AI-generated or synthetic intelligence included.** Uncertainty flags above reflect genuine epistemic gaps, not modelling artefacts.
 
 | Source | Admiralty Source Rating | Admiralty Information Rating |
 |--------|------------------------|------------------------------|
