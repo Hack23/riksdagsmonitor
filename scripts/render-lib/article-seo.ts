@@ -247,6 +247,22 @@ function collapseWhitespace(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
 }
 
+function stripDescriptionMarkup(text: string): string {
+  return collapseWhitespace(text
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/giu, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/giu, ' ')
+    .replace(/<[^>]+>/gu, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/gu, ' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/gu, '$1')
+    .replace(/^[\s>#+*_`-]+/gmu, ' ')
+    .replace(/&nbsp;/giu, ' ')
+    .replace(/&amp;/giu, '&')
+    .replace(/&quot;/giu, '"')
+    .replace(/&#39;|&apos;/giu, "'")
+    .replace(/&lt;/giu, '<')
+    .replace(/&gt;/giu, '>'));
+}
+
 function trimTrailingPunctuation(text: string): string {
   return text.replace(/[\s,;:—–-]+$/u, '').replace(/[.。؟?!…]+$/u, '').trim();
 }
@@ -304,6 +320,14 @@ function truncateAtWord(text: string, maxLen: number): string {
   const cut = lastSpace > Math.floor(maxLen * 0.55) ? sliced.slice(0, lastSpace) : sliced;
   const stripped = trimTrailingConnectors(trimTrailingPunctuation(cut));
   return stripped + '…';
+}
+
+function truncateWithinBudget(text: string, maxLen: number): string {
+  const clean = collapseWhitespace(text);
+  if (clean.length <= maxLen) return clean;
+  if (maxLen <= 1) return '…'.slice(0, maxLen);
+  const truncated = truncateAtWord(clean, maxLen - 1);
+  return truncated.length <= maxLen ? truncated : `${clean.slice(0, maxLen - 1).trim()}…`;
 }
 
 function normaliseKeyword(raw: string): string {
@@ -373,6 +397,26 @@ function formatPublicationUpdateKeyword(date: string, lang: Language): string {
   return `${formatPublicationContext(date, lang)} ${LANG_UPDATE_WORD[lang]}`;
 }
 
+function uniqueTitleSuffix(input: ArticleSeoMetadataInput): string {
+  return ` — ${input.date} · ${input.lang}`;
+}
+
+function uniqueDescriptionSuffix(input: ArticleSeoMetadataInput): string {
+  return ` Context: ${input.articleTypeLabel}, ${formatPublicationContext(input.date, input.lang)} (${input.lang}).`;
+}
+
+function descriptionFallback(input: ArticleSeoMetadataInput): string {
+  return `${topicPhrase({ ...input, description: '' }, 5)} — ${input.articleTypeLabel} analysis from Riksdagsmonitor for ${formatPublicationContext(input.date, input.lang)} (${input.lang}).`;
+}
+
+function withDescriptionSuffix(base: string, suffix: string): string {
+  const cleanBase = trimTrailingPunctuation(base);
+  if (cleanBase.length === 0) return truncateWithinBudget(suffix.replace(/^ Context:\s*/u, ''), DESCRIPTION_HARD_MAX);
+  if (cleanBase.length + suffix.length <= DESCRIPTION_HARD_MAX) return `${cleanBase}${suffix}`;
+  const baseBudget = Math.max(40, DESCRIPTION_HARD_MAX - suffix.length);
+  return `${truncateWithinBudget(cleanBase, baseBudget)}${suffix}`;
+}
+
 export interface ArticleSeoMetadataInput {
   readonly title: string;
   readonly description: string;
@@ -412,23 +456,27 @@ export interface ArticleSeoMetadata {
 export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
   const SERP_TITLE_BUDGET = 70;
   const SITE_SUFFIX = ' — Riksdagsmonitor';
+  const uniqueSuffix = uniqueTitleSuffix(input);
   const base = collapseWhitespace(input.title);
   if (base.length === 0) {
-    return `${input.articleTypeLabel} — Riksdagsmonitor`;
+    return truncateWithinBudget(`${input.articleTypeLabel}${uniqueSuffix}${SITE_SUFFIX}`, SERP_TITLE_BUDGET);
   }
-  // If the brief H1 already advertises the platform, return it as-is.
+  // Every article title carries date + locale context so legacy pages with
+  // reused H1s (or untranslated fallback H1s) stay unique in webmaster tools.
   if (/riksdagsmonitor/i.test(base)) {
-    return truncateAtWord(base, SERP_TITLE_BUDGET);
+    if (base.length + uniqueSuffix.length <= SERP_TITLE_BUDGET) {
+      return `${base}${uniqueSuffix}`;
+    }
+    return `${truncateWithinBudget(base, SERP_TITLE_BUDGET - uniqueSuffix.length)}${uniqueSuffix}`;
   }
-  // Append the site signature only when it fits without truncating
-  // the brief H1 mid-word.
-  if (base.length + SITE_SUFFIX.length <= SERP_TITLE_BUDGET) {
-    return `${base}${SITE_SUFFIX}`;
+  // Append the site signature only when it fits with the unique date/lang
+  // suffix and without truncating the brief H1 mid-word.
+  if (base.length + uniqueSuffix.length + SITE_SUFFIX.length <= SERP_TITLE_BUDGET) {
+    return `${base}${uniqueSuffix}${SITE_SUFFIX}`;
   }
-  // Otherwise the brief H1 is itself near the budget — keep it pristine
-  // (truncated to the SERP budget) so search engines never see
-  // duplicated boilerplate suffixes.
-  return truncateAtWord(base, SERP_TITLE_BUDGET);
+  // Otherwise reserve space for the uniqueness suffix and truncate only the
+  // prose H1. The brand can be omitted on long titles; uniqueness wins here.
+  return `${truncateWithinBudget(base, SERP_TITLE_BUDGET - uniqueSuffix.length)}${uniqueSuffix}`;
 }
 
 /**
@@ -448,12 +496,10 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  *    plumbing.
  */
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
-  const base = collapseWhitespace(input.description);
-  if (base.length === 0) {
-    return `${input.articleTypeLabel} — ${formatPublicationContext(input.date, input.lang)}`;
-  }
-  if (base.length <= DESCRIPTION_HARD_MAX) return base;
-  return truncateAtWord(base, DESCRIPTION_HARD_MAX);
+  const suffix = uniqueDescriptionSuffix(input);
+  const base = stripDescriptionMarkup(input.description);
+  const source = base.length > 0 ? base : descriptionFallback(input);
+  return withDescriptionSuffix(source, suffix);
 }
 
 /**

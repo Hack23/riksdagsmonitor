@@ -599,7 +599,7 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
 // ---------------------------------------------------------------------------
 
 describe('render-lib — article SEO metadata', () => {
-  it('uses the brief H1 as the SERP title and the BLUF as the description without boilerplate', () => {
+  it('uses the brief H1 and BLUF with unique date/language SEO context', () => {
     const base = {
       title: 'Security, identity and state control: three propositions',
       description: 'Three government propositions expand identity controls, population-register oversight and detention powers for security threats.',
@@ -617,28 +617,30 @@ describe('render-lib — article SEO metadata', () => {
       articleTypeLabel: 'Regierungsvorlagen',
       canonicalPath: 'news/2026-05-11-propositions-de.html',
     });
-    // Titles ARE the brief H1 — no `| Lang Article-Type: topic — date update`
-    // boilerplate. They are distinct across languages because the cascade
-    // already localized the H1 itself.
+    // Titles retain the brief H1, then add compact date/language context so
+    // untranslated legacy fallbacks do not collapse into identical titles.
     expect(en.title).toContain('Security, identity and state control');
     expect(de.title).toContain('Sicherheit, Identität und staatliche Kontrolle');
+    expect(en.title).toContain('2026-05-11 · en');
+    expect(de.title).toContain('2026-05-11 · de');
     expect(en.title).not.toMatch(/\| .*Propositions:/);
     expect(de.title).not.toMatch(/\| .*Regierungsvorlagen:/);
     expect(en.title).not.toContain('update');
     expect(de.title).not.toContain('update');
     expect(de.title).not.toContain('Deutsch');
-    // Descriptions ARE the brief BLUF — no `Coverage: X on Y; <lang>
-    // edition update for <date> with Riksdag/OSINT provenance.` suffix.
-    expect(en.description).toBe(base.description);
+    // Descriptions retain the brief BLUF, then add unique context without the
+    // old repetitive `Coverage: ... edition update ... provenance` boilerplate.
+    expect(en.description).toContain(base.description);
+    expect(en.description).toContain('Context: Propositions');
+    expect(en.description).toContain('(en).');
     expect(de.description).not.toContain('deutsche Ausgabe');
     expect(de.description).not.toContain('Berichterstattung');
     expect(de.description).not.toContain('Riksdag/OSINT provenance');
     expect(en.description).not.toBe(de.description);
     expect(en.description.length).toBeLessThanOrEqual(200);
     expect(de.description.length).toBeLessThanOrEqual(200);
-    // Title budget — SERP-friendly, no date-stuffing.
+    // Title budget — SERP-friendly with compact uniqueness context.
     expect(en.title.length).toBeLessThanOrEqual(70);
-    expect(en.title).not.toContain('2026-05-11');
     // Keywords pull article-type label + native language name.
     // (Pre-2026-05 this asserted the EN `German` leak — the fix in
     // article-seo.ts § buildArticleKeywords intentionally surfaces the
@@ -655,6 +657,51 @@ describe('render-lib — article SEO metadata', () => {
     // English frontmatter seed must NOT leak into a DE page.
     expect(de.keywords).not.toContain('Swedish Parliament');
     expect(de.keywords).not.toContain('political intelligence');
+  });
+
+  it('cleans malformed HTML fragments and lengthens too-short meta descriptions', () => {
+    const seo = buildArticleSeoMetadata({
+      title: 'Riksdagen granskar vårbudgeten',
+      description: '<div dir="rtl">',
+      date: '2026-05-22',
+      articleTypeLabel: 'Motioner',
+      articleTypeId: 'motions',
+      canonicalPath: 'news/2026-05-22-motions-sv.html',
+      lang: 'sv',
+    });
+
+    expect(seo.description).not.toContain('<div');
+    expect(seo.description).toContain('Motioner');
+    expect(seo.description).toContain('2026');
+    expect(seo.description).toContain('(sv).');
+    expect(seo.description.length).toBeGreaterThanOrEqual(100);
+    expect(seo.description.length).toBeLessThanOrEqual(200);
+  });
+
+  it('makes otherwise identical localized fallback titles and descriptions unique', () => {
+    const base = {
+      title: 'Tidö Current Mandate',
+      description: 'The same untranslated fallback summary appears on more than one generated legacy HTML article page.',
+      date: '2026-05-11',
+      articleTypeLabel: 'Election cycle',
+      articleTypeId: 'election-cycle-current',
+      canonicalPath: 'news/2026-05-11-election-cycle-current-en.html',
+    };
+
+    const en = buildArticleSeoMetadata({ ...base, lang: 'en' });
+    const de = buildArticleSeoMetadata({
+      ...base,
+      lang: 'de',
+      articleTypeLabel: 'Wahlzyklus',
+      canonicalPath: 'news/2026-05-11-election-cycle-current-de.html',
+    });
+
+    expect(en.title).not.toBe(de.title);
+    expect(en.description).not.toBe(de.description);
+    expect(en.title).toContain('· en');
+    expect(de.title).toContain('· de');
+    expect(en.description).toContain('(en).');
+    expect(de.description).toContain('(de).');
   });
 });
 
