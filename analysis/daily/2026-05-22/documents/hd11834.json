@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11834",
+  "titel": "Gifttunnorna utanför Sundsvall",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "parti": "C",
+  "summary": "Fråga 2025/26:834 Gifttunnorna utanför Sundsvall\n av  Anne-Li Sjölund (C)\n till Arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz (L)\n Utanför Sundsvall ligger omkring 23 000 tunnor med kvicksilverhaltigt industriavfall dumpade på havsbottnen efter verksamhet under 1950- och 1960-talen. Tunnorna",
+  "url": "https://data.riksdagen.se/dokument/HD11834.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T14:15:07.326Z"
+  }
+}

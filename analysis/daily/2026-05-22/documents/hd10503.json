@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD10503",
+  "titel": "FMV:s närvaro i förbandsorter",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "parti": "S",
+  "summary": "Interpellation 2025/26:503 FMV:s närvaro i förbandsorter\n av  Erik Ezelius (S)\n till Försvarsminister Pål Jonson (M)\n Försvarsindustristrategin och Försvarets materielverks roll hänger nära samman eftersom båda syftar till att stärka Sveriges försvarsförmåga, säkerställa tillgång till kritisk materiel och utveckla en långsiktigt",
+  "url": "https://data.riksdagen.se/dokument/HD10503.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD10503",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T14:15:32.038Z"
+  },
+  "fullContent": "5290414\r\n HD10503\r\n 2025/26\r\n 503\r\n ip\r\n \r\n ip\r\n Interpellation 2025/26:503 av Erik Ezelius (S)\r\n Interpellation\r\n Interpellationsdebatt\r\n S\r\n S\r\n Försvarsminister Pål Jonson (M)\r\n 503\r\n 0\r\n 2026-05-22 00:00:00\r\n 2026-05-22 08:25:55\r\n 2026-05-22 00:00:00\r\n FMV:s närvaro i förbandsorter\r\n Erik Ezelius (S)\r\n Skickad\r\n html\r\n \r\n Frips\r\n b15ba50b-7dad-4f6e-a4b7-0f35619906d4\r\n https://data.riksdagen.se/dokument/HD10503/text\r\n https://data.riksdagen.se/dokument/HD10503\r\n https://data.riksdagen.se/dokumentstatus/HD10503\r\n <h2>Interpellation 2025/26:503 FMV:s närvaro i förbandsorter</h2>\r\n<p class=\"Av\">av <i>Erik Ezelius (S)</i></p>\r\n<p class=\"Till\">till Försvarsminister Pål Jonson (M)</p>\r\n<p>&nbsp;</p>\r\n<p>Försvarsindustristrategin och Försvarets materielverks roll hänger nära samman eftersom båda syftar till att stärka Sveriges försvarsförmåga, säkerställa tillgång till kritisk materiel och utveckla en långsiktigt hållbar försvarsindustri. FMV omsätter strategin i praktiken genom att upphandla, utveckla och vidmakthålla materiel i nära samverkan med både Försvarsmakten och industrin. För att detta ska fungera effektivt är det viktigt att FMV befinner sig nära verksamheten och har en god förståelse för Försvarsmaktens operativa behov, tekniska utveckling och förändrade hotbilder. Den närheten skapar bättre förutsättningar för relevanta upphandlingar, snabbare anpassning och långsiktig utveckling av strategiskt viktiga svenska försvarsförmågor. Förbandsorterna Halmstad och Karlskrona är två exempel där FMV i närtid har ökat sin närvaro.</p><p>Med anledning av ovanstående vill jag fråga försvarsminister Pål Jonson&#58;</p><p>&#160;</p><ol><li>Har regeringen gjort någon analys över behovet av att utöka FMV&#58;s närvaro i fler förbandsorter?</li><li>Om så är fallet, vilka åtgärder är ministern och&#160;regeringen då beredda att vidta utifrån denna analys?</li></ol>\r\n\r\n\r\n\r\nINL\r\nInlämnad\r\n2026-05-21 00:00:00\r\ninträffat\r\n0\r\nbehandling\r\n\r\n\r\nÖverlämnad\r\nÖverlämnad\r\n2026-05-22 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\nANM\r\nAnmäld\r\n2026-05-25 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\nSISVA\r\nSista svarsdatum\r\n2026-06-05 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\n\r\n\r\n0642224351118\r\nFörsvarsminister Pål Jonson\r\nM\r\n1\r\nbesvaradav\r\n\r\n\r\n0642224351118\r\nFörsvarsminister Pål Jonson\r\nM\r\n1\r\nstalldtill\r\n\r\n\r\n0667220767927\r\nErik Ezelius\r\nS\r\n1\r\nundertecknare\r\n\r\n\r\n\r\n\r\nstatustext\r\nstatustext\r\nInterpellationen är inlämnad\r\nHD10503\r\n2026-05-22 09:11:28\r\n\r\n\r\n\r\n\r\nHD10503\r\nErik Ezelius (S)\r\nip_202526__503.pdf\r\n81186\r\npdf\r\nFMV:s närvaro i förbandsorter\r\nhttps://data.riksdagen.se/fil/63543F4E-C205-4637-8C97-52B299698847",
+  "contentFetched": true
+}

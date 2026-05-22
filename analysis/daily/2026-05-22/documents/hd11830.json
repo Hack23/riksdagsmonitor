@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11830",
+  "titel": "Irans attacker mot oppositionella kurder i irakiska Kurdistan",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "parti": "S",
+  "summary": "Fråga 2025/26:830 Irans attacker mot oppositionella kurder i irakiska Kurdistan\n av  Kadir Kasirga (S)\n till Utrikesminister Maria Malmer Stenergard (M)\n Den iranska regimen fortsätter att bedriva destabiliserande verksamhet i regionen. Trots den vapenvila som råder mellan Iran och USA/Israel har Iran under den senaste",
+  "url": "https://data.riksdagen.se/dokument/HD11830.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T14:15:07.326Z"
+  }
+}
