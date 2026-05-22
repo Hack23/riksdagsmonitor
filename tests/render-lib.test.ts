@@ -1363,7 +1363,7 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html.startsWith('<!DOCTYPE html>')).toBe(true);
     expect(html).toContain('<article class="rm-article rm-article-type-propositions"');
     expect(html).toContain('data-article-type="propositions"');
-    expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> Propositions</p>');
+    expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">📜</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
     expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions.</p>');
     expect(html).toContain('<meta name="keywords" content="Propositions');

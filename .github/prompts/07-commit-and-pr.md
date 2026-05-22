@@ -43,7 +43,7 @@ The dedicated **`news-translate`** workflow owns markdown translation only: each
 
    Stage `documents/*.md` selectively — keep the total ≤ 90 files (see step 2). Skip `analysis/daily/**/pass1/` entirely; it is a local gate-evidence snapshot (`04-analysis-pipeline.md`), not a deliverable.
 
-2. **100-file guard (mandatory).** Run this snippet before calling safeoutputs. The safe-outputs handler hard-rejects PRs with > 100 files (E003); the guard uses a 90-file threshold to leave headroom for metadata the handler may add.
+2. **100-file guard (non-negotiable).** Run this snippet before calling safeoutputs. The safe-outputs handler hard-rejects PRs with > 100 files (E003); the guard uses a 90-file threshold to leave headroom for metadata the handler may add.
 
    ```bash
    set -euo pipefail

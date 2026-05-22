@@ -41,7 +41,7 @@ import { buildChrome } from './chrome.js';
 import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
-import { articleTypeLabel } from './article-type-i18n.js';
+import { articleTypeLabel, articleTypeIcon } from './article-type-i18n.js';
 import { buildArticleSeoMetadata } from './article-seo.js';
 import {
   renderReaderNavigation,
@@ -375,7 +375,7 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
 ${chrome.headerHtml}
       <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
         <header class="rm-article-header">
-          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> ${escapeHtml(localizedArticleTypeLabel)}</p>
+          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">${articleTypeIcon(articleType.type)}</span> ${escapeHtml(localizedArticleTypeLabel)}</p>
           <h1>${escapeHtml(title)}</h1>
           <p class="rm-article-dek">${escapeHtml(seo.description)}</p>
           <p class="rm-article-meta">

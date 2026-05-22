@@ -362,4 +362,60 @@ describe('markdown — mermaid preprocessor', () => {
     const preCount = (result.match(/<pre class="mermaid"/g) || []).length;
     expect(preCount).toBe(2);
   });
+
+  // ──────────────────────────────────────────────────────────────────
+  // Edge-label typo repair — AI agents occasionally emit `-->|label]`
+  // (closing `]` instead of `|`) which makes mermaid refuse to render
+  // the entire diagram with `Parse error … Expecting 'PIPE'`. The
+  // preprocessor rewrites this single typo class to the canonical
+  // `-->|label|` form so readers see the diagram while the upstream
+  // validator still surfaces the AI-source regression in CI.
+  // ──────────────────────────────────────────────────────────────────
+  it('auto-repairs `-->|label]` edge-label closing typo', () => {
+    const md = '```mermaid\nflowchart LR\n  A -->|votes against] B\n```';
+    const result = preprocessMermaidFences(md);
+    // Body is HTML-escaped (`>` → `&gt;`) before the <pre> emission.
+    expect(result).toContain('A --&gt;|votes against| B');
+    expect(result).not.toMatch(/--&gt;\|votes against\]/);
+  });
+
+  it('repairs the typo across multiple arrow shapes', () => {
+    const md = [
+      '```mermaid',
+      'flowchart LR',
+      '  A -->|first] B',
+      '  C ==>|second] D',
+      '  E -.->|third] F',
+      '```',
+    ].join('\n');
+    const result = preprocessMermaidFences(md);
+    expect(result).toContain('A --&gt;|first| B');
+    expect(result).toContain('C ==&gt;|second| D');
+    expect(result).toContain('E -.-&gt;|third| F');
+  });
+
+  it('leaves correct `-->|label|` syntax untouched', () => {
+    const md = '```mermaid\nflowchart LR\n  A -->|valid label| B\n```';
+    const result = preprocessMermaidFences(md);
+    expect(result).toContain('A --&gt;|valid label| B');
+  });
+
+  it('does not rewrite `]` inside flowchart node bodies', () => {
+    // `A[node with ] text]` is plain (already-broken) node syntax —
+    // the repair regex requires the arrow + `|` opener, so it must
+    // not touch this content.
+    const md = '```mermaid\nflowchart LR\n  A[harmless ] text]\n```';
+    const result = preprocessMermaidFences(md);
+    expect(result).toContain('A[harmless ] text]');
+  });
+
+  it('preserves `data-mermaid-source="true"` after sanitization', async () => {
+    const md = '```mermaid\ngraph LR\n  A-->B\n```';
+    const html = await renderMarkdownToHtml(md);
+    // The HAST property name is `dataMermaidSource` (camel-cased); the
+    // serialised attribute name is the kebab-cased form below. The
+    // sanitize-schema entry must use the camel-cased property name or
+    // `hast-util-sanitize` silently strips the attribute.
+    expect(html).toContain('data-mermaid-source="true"');
+  });
 });
