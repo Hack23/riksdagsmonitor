@@ -177,6 +177,40 @@ aws s3 sync "$SRC" "$BUCKET" \
 
 echo "✅ Per-type sync complete (only changed files uploaded)"
 
+# ── Mermaid runtime: unconditional cp --recursive ────────────────────
+# The per-type `aws s3 sync --include '*.mjs' --size-only` block above
+# has been observed to silently skip the deeply-nested chunk files
+# under `dist/js/lib/mermaid/chunks/mermaid.esm.min/` even when those
+# keys are missing from the bucket (deploy run 26294355929: zero .mjs
+# uploads despite 82 chunks present in dist). The result is that every
+# article page that embeds Mermaid diagrams fails to render with
+# `Failed to fetch dynamically imported module: …/mermaid.esm.min.mjs`
+# in the browser console — the entry module loads OK, but its internal
+# imports of `./chunks/mermaid.esm.min/chunk-*.mjs` 404, and the
+# browser surfaces the failure against the top-level URL.
+#
+# `aws s3 cp --recursive` is unconditional (no size-vs-mtime compare —
+# always uploads), so it guarantees correctness regardless of why
+# `aws s3 sync` decided the chunks were "already in sync". The mermaid
+# runtime is small (~2.6 MB across ~82 chunks) and only changes when
+# the pinned `mermaid` devDependency is bumped in `package.json`, so
+# the extra always-upload cost is negligible compared to the cost of
+# articles silently rendering without diagrams.
+#
+# Placed AFTER per-type sync (so the cache-control / content-type
+# headers we set here are the ones that survive) and BEFORE orphan
+# cleanup (so the cleanup pass sees our just-uploaded keys as
+# already-in-sync and does not consider them orphans).
+if [ -d "$SRC/js/lib/mermaid" ]; then
+  echo "🎨 Force-uploading Mermaid runtime → $BUCKET/js/lib/mermaid/"
+  aws s3 cp "$SRC/js/lib/mermaid" "$BUCKET/js/lib/mermaid" \
+    --recursive \
+    --exclude '*' --include '*.mjs' \
+    --no-guess-mime-type --content-type 'application/javascript' \
+    --cache-control 'public, max-age=31536000, immutable'
+  echo "✅ Mermaid runtime upload complete"
+fi
+
 # ── Delete orphaned objects from S3 ──
 # A final sync --delete pass removes files that no longer exist locally.
 # --size-only ensures it does NOT re-upload files already handled above.
