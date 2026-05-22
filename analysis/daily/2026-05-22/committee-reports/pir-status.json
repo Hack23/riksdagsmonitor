@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-22T00:00:00Z",
+  "article_date": "2026-05-22",
+  "subfolder": "committee-reports",
+  "pirs": [
+    {
+      "pir_id": "PIR-SEC-2026-001",
+      "description": "AI law enforcement legislation progress — JuU28 passage and implementation",
+      "status": "ACTIVE",
+      "priority": "HIGH",
+      "horizon": "T+30d",
+      "last_updated": "2026-05-22",
+      "indicators": ["FI-01", "FI-04", "FI-05"],
+      "current_intelligence": "JuU28 betänkande published 2026-05-21. Chamber vote imminent. Coalition majority confirmed (M+SD+KD+L+S). Entry into force targeted July 1, 2026."
+    },
+    {
+      "pir_id": "PIR-SEC-2026-002",
+      "description": "AI policing effectiveness evidence base",
+      "status": "ACTIVE",
+      "priority": "MEDIUM",
+      "horizon": "T+12mo",
+      "last_updated": "2026-05-22",
+      "indicators": ["FI-06", "FI-09"],
+      "current_intelligence": "No effectiveness data available — law not yet in force. BRÅ H1 2026 statistics (August 2026) will be first proxy indicator."
+    },
+    {
+      "pir_id": "PIR-CIV-2026-001",
+      "description": "Civil liberties legal challenges to surveillance law",
+      "status": "WATCHING",
+      "priority": "MEDIUM",
+      "horizon": "T+24mo",
+      "last_updated": "2026-05-22",
+      "indicators": ["FI-02", "FI-03", "FI-11"],
+      "current_intelligence": "Civil society legal opinion expected within 30 days. IMY supervisory preparation underway. ECHR challenge likely within 24 months."
+    },
+    {
+      "pir_id": "PIR-POL-2026-001",
+      "description": "2026 general election outcome and government formation",
+      "status": "ACTIVE",
+      "priority": "CRITICAL",
+      "horizon": "T+114d",
+      "last_updated": "2026-05-22",
+      "indicators": ["FI-08"],
+      "current_intelligence": "Election 2026-09-13. Current coalition polling indicates retention of majority. JuU28 issue may help coalition; MP threshold risk identified."
+    },
+    {
+      "pir_id": "PIR-URB-2026-001",
+      "description": "Urban safety governance — CU36 area cooperation fee implementation",
+      "status": "WATCHING",
+      "priority": "LOW",
+      "horizon": "T+6mo",
+      "last_updated": "2026-05-22",
+      "indicators": ["FI-07"],
+      "current_intelligence": "CU36 entry into force August 1, 2026. First zone designation applications expected Q4 2026."
+    }
+  ],
+  "roll_forward": {
+    "next_review_date": "2026-06-05",
+    "trigger_event": "FI-01 Riksdag chamber vote on JuU28",
+    "roll_forward_pirs": ["PIR-SEC-2026-001", "PIR-POL-2026-001"]
+  }
+}
