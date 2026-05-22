@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11829",
+  "titel": "Arbetsförmedlingens uppdrag i Öresundsregionen",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "parti": "S",
+  "summary": "Fråga 2025/26:829 Arbetsförmedlingens uppdrag i Öresundsregionen\n av  Joakim Sandell (S)\n till Arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz (L)\n Drygt 22 000 personer pendlar dagligen över Öresund, varav 96 procent bor i Sverige och arbetar i Danmark. Samtidigt är arbetslösheten betydligt",
+  "url": "https://data.riksdagen.se/dokument/HD11829.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T19:16:00.323Z"
+  }
+}
