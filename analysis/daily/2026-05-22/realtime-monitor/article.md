@@ -1,17 +1,28 @@
 ---
-title: "Sweden's Riksdag on 22 May 2026 is processing a coordinated"
+title: "Swedish Riksdag Advances Security-State Laws Amid Civil-Liberties Challenge Before Summer Recess"
 description: "Sweden's Riksdag on 22 May 2026 is processing a coordinated late-spring legislative cluster. The top breaking signal is MP's civil-liberties challenge (dokid HD024192) to the government's…"
-keywords: "Realtime Monitor, English, May 22, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden processing coordinated late-spring legislative, Sweden, 2026, processing, coordinated, late-spring, legislative, cluster, breaking, signal, civil-liberties, challenge, dokid, HD024192"
+keywords: "Realtime Monitor, English, May 22, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Advances Security-State Laws Amid Civil-Liberties, Swedish, Advances, Security-State, Laws, Amid, Civil-Liberties, Challenge, Before, Summer, Recess, Sweden, 2026, processing"
 date: 2026-05-22
 subfolder: realtime-monitor
 slug: 2026-05-22-realtime-monitor
 source_folder: analysis/daily/2026-05-22/realtime-monitor
-generated_at: 2026-05-22T14:28:55.575Z
+generated_at: 2026-05-22T16:31:58.922Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/executive-brief.md -->
+
+---
+
+### Decisions This Brief Supports
+
+| Decision | Decision-Maker | Urgency | Recommendation |
+|----------|----------------|:-------:|----------------|
+| Monitor JuU for committee reservations on child-detention (prop. 2025/26:267) | Intelligence analyst / newsroom | T+72h | Activate daily Riksdag calendar monitoring |
+| Track L (Liberalerna) public position on civil-liberties provisions | Political risk assessor | T+7d | Brief L spokespeople in media watch list |
+| Assess electoral impact of combined security+immigration legislative sprint | Electoral analyst | T+14d | Commission comparative poll analysis once legislation passes |
+| Verify Lagrådet advisory status on prop. 2025/26:267 | Legal analyst | T+24h | Attempt direct access to www.lagradet.se |
 
 ---
 
@@ -48,9 +59,13 @@ HD01UU11 (OSCE), HD01UU12 (Council of Europe) — procedural foreign affairs com
 
 ### Strategic Assessment
 
-The day's legislative signals cluster into three narratives: (1) **security-state legitimacy battle** — government strengthening enforcement capacity, opposition challenging on civil-liberties grounds; (2) **immigration agenda completion** — Tidö coalition finalising pre-election immigration reforms; (3) **technical governance improvements** — procurement, consumer credit, education.
+The day's legislative signals cluster into three narratives: (1) **security-state legitimacy battle** — government strengthening enforcement capacity, opposition challenging on civil-liberties grounds; (2) **immigration agenda completion** — Tidö coalition finalising pre-election immigration reforms 115 days before September 14, 2026 election; (3) **technical governance improvements** — procurement, consumer credit, education.
 
-The most media-sensitive item is the child-detention dimension of prop. 2025/26:267. If Swedish and international media amplify MP's motion, this could become a public controversy that tests the government's messaging discipline.
+The most media-sensitive item is the child-detention dimension of prop. 2025/26:267. MP's motion (HD024192) creates a formal parliamentary record of civil-liberties opposition that will be cited in JuU committee deliberations and may attract domestic NGO mobilisation (Barnombudsmannen, Amnesty Sweden). KJ-3 [MEDIUM] projects 2–10 days of sustained national media coverage.
+
+**Coalition arithmetic is decisive**: M(68)+SD(73)+KD(19)+L(16)=176 seats; with C(24) passive support = 200/349. The government can pass all today's legislation without C votes. KJ-1 confidence: HIGH (>80%).
+
+**New forward signal (Pass 2)**: HD01FiU47 — Finance Committee Betänkande 2025/26:FiU47 — is now registered as "planerat" (scheduled) with debate 16 June and vote 17 June 2026. Content not yet published. This adds a Finance Committee item to the late-spring calendar that warrants monitoring.
 
 ---
 
@@ -67,10 +82,11 @@ The most media-sensitive item is the child-detention dimension of prop. 2025/26:
 
 ### Horizon Indicators
 
+- **T+24h**: Lagrådet advisory check on prop. 2025/26:267 (IG-001); Barnombudsmannen statement watch (FI-RT-003)
 - **T+72h**: Committee deliberations on HD024192 and HD01SfU37; potential Riksdag debate scheduling  
-- **T+7d**: Expected committee votes in JuU/SfU/SkU; media coverage of child-detention provisions  
-- **T+30d**: Riksdag chamber votes; government response to MP motion arguments  
-- **T+90d**: Implementation of enacted legislation; Statskontoret implementation monitoring begins
+- **T+7d**: Expected committee votes in JuU/SfU/SkU; L party formal position on child-detention (FI-RT-007)
+- **T+30d**: Riksdag chamber votes; C abstention signal (FI-RT-008); HD01FiU47 content publication  
+- **T+90d**: Implementation of enacted legislation; Statskontoret monitoring; post-legislation polling (FI-RT-009)
 
 ## Reader Intelligence Guide
 
@@ -161,17 +177,6 @@ CU betänkande on a new consumer credit law reflects EU transposition obligation
 **Quantitative electoral stakes**: Opinion polling aggregates (pre-legislation baseline, Demoskop/Novus May 2026) indicate M (19%), SD (18%), KD (5%), L (5%), C (6%) versus S (34%), V (7%), MP (5%). The governing bloc's legislative output in security and immigration — subjects where polling consistently shows majority public support for stricter measures — is designed to consolidate this support ahead of the election.
 
 ---
-
-### Source Quality Assessment
-
-| Source | Admiralty Source Rating | Admiralty Information Rating |
-|--------|------------------------|------------------------------|
-| Riksdagen API (HD024192) | A — Official parliamentary record | 1 — Confirmed direct observation |
-| Riksdagen API (HD024191) | A — Official parliamentary record | 1 — Confirmed direct observation |
-| Riksdagen API (HD01SfU37) | A — Official parliamentary record | 1 — Confirmed direct observation |
-| Riksdagen API (HD01FiU42) | A — Official parliamentary record | 1 — Confirmed direct observation |
-
-All documents sourced directly from `data.riksdagen.se` via riksdag-regering MCP. No secondary or unverified sources used.
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/intelligence-assessment.md -->
@@ -690,6 +695,8 @@ Young voters (18-29) in Sweden are disproportionately MP and V supporters, and t
 | FI-RT-010 | T+90d | EU/CoE formal response | 🟡 MED | Pending |
 
 **Next scheduled review**: FI-RT-001 and FI-RT-002 should be rechecked at next realtime-monitor run (2026-05-23 morning cycle).
+
+---
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/scenario-analysis.md -->
@@ -1668,6 +1675,20 @@ graph TD
 | FMV | HD10503 | Subject of interpellation |
 | Barnombudsmannen | HD024192 | Rights monitoring role (prop. 2025/26:267) |
 
+---
+
+### Tier-C Sibling Folder Cross-References (Prior 7 Days)
+
+| Date | Subfolder | Thematic Continuity | Key Artifact |
+|------|-----------|---------------------|--------------|
+| 2026-05-22 | propositions | Today's propositions cycle — prop. 2025/26:267 and prop. 2025/26:261 are the source instruments for HD024192/HD024191 opposition motions analysed here | analysis/daily/2026-05-22/propositions/ |
+| 2026-05-22 | committee-reports | Today's committee-reports cycle covers FiU, UbU, SfU, CU, UU betänkanden — direct continuity with HD01FiU42, HD01SfU37, HD01UbU19/22/27, HD01CU26, HD01UU11/12 | analysis/daily/2026-05-22/committee-reports/ |
+| 2026-05-22 | week-ahead | Week-ahead cycle provides T+7d forecast context for JuU/SfU/SkU committee vote scheduling | analysis/daily/2026-05-22/week-ahead/ |
+| 2026-05-21 | realtime-pulse | Prior-day realtime cycle — immigration and security legislative cluster pre-cursor signals | analysis/daily/2026-05-21/realtime-pulse/ |
+| 2026-05-21 | propositions | Prior-day propositions — legislative sprint continuity | analysis/daily/2026-05-21/propositions/ |
+| 2026-05-21 | evening-analysis | Prior-day evening analysis — full-day synthesis that today's realtime cluster builds on | analysis/daily/2026-05-21/evening-analysis/ |
+| 2026-05-20 | evening-analysis | 2-day prior evening analysis — cross-cycle pattern validation for Tidö legislative sprint | analysis/daily/2026-05-20/evening-analysis/ |
+
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/methodology-reflection.md -->
 
@@ -1754,6 +1775,30 @@ graph TD
 
 All 23 required artifacts written in Pass 1. Pass 2 read-back and improvement scheduled immediately.
 
+---
+
+### Pass-2 status: executed in full
+
+Pass 2 read-back completed 2026-05-22T16:30Z (run_id=26299246626, attempt=1). All 23 artifacts reviewed; improvements applied per checklist below. Gate run follows.
+
+---
+
+### Re-run log
+
+| Field | Value |
+|-------|-------|
+| run_id | 26299246626 |
+| attempt | 1 |
+| mode | IMPROVEMENT_MODE=true |
+| agent_start_epoch | 1779467079 |
+| pass1_snapshot | analysis/daily/2026-05-22/realtime-monitor/pass1/ (24 files) |
+| new_dok_ids | HD01FiU47 (FiU betänkande, planerat 2026-06-17, content not yet published) |
+| artifacts_extended | executive-brief.md, synthesis-summary.md, intelligence-assessment.md, cross-reference-map.md, forward-indicators.md, methodology-reflection.md |
+| flags_closed | H1 boilerplate → publishable title; pir-status.json created; Decisions section added |
+| vintage_refresh | Download script re-run 2026-05-22T16:26Z; 26 documents, 10 full-text; HD01FiU47 newly registered |
+| ig_001_lagrådet | Fetch attempted — www.lagradet.se not accessible in this environment; IG-001 remains open |
+| pass2_improvements | Strategic assessment updated with coalition arithmetic and electoral timeline; Decisions section added; HD01FiU47 forward signal added; sibling-folder cross-references added to cross-reference-map.md; PIR table aligned with pir-status.json |
+
 | Artifact | Status |
 |----------|:------:|
 | README.md | ✅ |
@@ -1808,7 +1853,7 @@ This generated report reconciles the analysis folder with the article projection
 |---|---:|---|
 | Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
-| Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
+| Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
 **Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
 
@@ -1842,3 +1887,9 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/realtime-monitor/pir-status.json)

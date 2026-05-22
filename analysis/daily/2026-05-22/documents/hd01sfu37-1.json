@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD01SfU37",
+  "titel": "Skärpta villkor för anhöriginvandring",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "organ": "SfU",
+  "summary": "5290500\r\n HD01SfU37\r\n 2025/26\r\n SfU37\r\n bet\r\n bet\r\n bet\r\n Betänkande 2025/26:SfU37\r\n Betänkande\r\n Debatt om förslag\r\n \r\n SfU\r\n \r\n 37\r\n 0\r\n 2026-05-22 00:00:00\r\n 2026-05-22 15:54:57\r\n 2026-05-22 15:54:57\r\n Skärpta villkor för anhöriginvandring\r\n \r\n planerat\r\n \r\n \r\n Brus\r\n ba8ec3ed-3210-4c0c-af15-18a8a7123c26\r\n https://data.riksdagen.se/dokument/HD01SfU37/text\r\n https://data.riksdagen.se/dokument...",
+  "url": "https://data.riksdagen.se/dokument/HD01SfU37.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD01SfU37",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T16:26:48.530Z"
+  },
+  "fullContent": "5290500\r\n HD01SfU37\r\n 2025/26\r\n SfU37\r\n bet\r\n bet\r\n bet\r\n Betänkande 2025/26:SfU37\r\n Betänkande\r\n Debatt om förslag\r\n \r\n SfU\r\n \r\n 37\r\n 0\r\n 2026-05-22 00:00:00\r\n 2026-05-22 15:54:57\r\n 2026-05-22 15:54:57\r\n Skärpta villkor för anhöriginvandring\r\n \r\n planerat\r\n \r\n \r\n Brus\r\n ba8ec3ed-3210-4c0c-af15-18a8a7123c26\r\n https://data.riksdagen.se/dokument/HD01SfU37/text\r\n https://data.riksdagen.se/dokument/HD01SfU37\r\n https://data.riksdagen.se/dokumentstatus/HD01SfU37\r\n https://data.riksdagen.se/utskottsforslag/HD01SfU37\r\n <h2>Skärpta villkor för anhöriginvandring</h2>\r\nDokumentet är inte publicerat\r\n\r\n\r\n\r\nUBE\r\nBeredning\r\n2026-08-10 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nJUS\r\nJustering\r\n2026-08-11 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nTRY\r\nTrycklov\r\n2026-08-11 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nB\r\nBordläggning\r\n2026-08-12 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBEH\r\nBehandling\r\n2026-08-13 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBES\r\nBeslut\r\n2026-08-13 00:00:00\r\nplanerat\r\n0",
+  "contentFetched": true
+}

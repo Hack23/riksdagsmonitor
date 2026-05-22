@@ -1,9 +1,9 @@
 # Data Download Manifest — 2026-05-22
 
-**Generated**: 2026-05-22 14:15 UTC
+**Generated**: 2026-05-22 16:26 UTC
 **Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
 **Documents Downloaded**: 210
-**Documents Selected (date-filtered)**: 25
+**Documents Selected (date-filtered)**: 26
 **Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
@@ -47,12 +47,13 @@ All documents sourced from official riksdag-regering-mcp API.
 | HD024191 | full_text | live | get_dokument_innehall | 1 | full-text/HD024191.md |
 | HD01FiU42 | full_text | live | get_dokument_innehall | 1 | full-text/HD01FiU42.md |
 | HD01SfU37 | full_text | live | get_dokument_innehall | 1 | full-text/HD01SfU37.md |
+| HD01FiU47 | full_text | live | get_dokument_innehall | 1 | full-text/HD01FiU47.md |
 | HD01UU12 | full_text | live | get_dokument_innehall | 1 | full-text/HD01UU12.md |
 | HD01UU11 | full_text | live | get_dokument_innehall | 1 | full-text/HD01UU11.md |
 | HD01UbU27 | full_text | live | get_dokument_innehall | 1 | full-text/HD01UbU27.md |
 | HD01UbU22 | full_text | live | get_dokument_innehall | 1 | full-text/HD01UbU22.md |
 | HD01UbU19 | full_text | live | get_dokument_innehall | 1 | full-text/HD01UbU19.md |
-| HD01CU26 | full_text | live | get_dokument_innehall | 1 | full-text/HD01CU26.md |
+| HD01CU26 | full_text | live | get_dokument_innehall | 1 | summary present |
 | HD11834 | metadata_only | live | get_fragor | 30 | list payload only; get_dokument_innehall not attempted in this run |
 | HD11832 | metadata_only | live | get_fragor | 30 | list payload only; get_dokument_innehall not attempted in this run |
 | HD11828 | metadata_only | live | get_fragor | 30 | list payload only; get_dokument_innehall not attempted in this run |
@@ -61,13 +62,13 @@ All documents sourced from official riksdag-regering-mcp API.
 | HD11829 | metadata_only | live | get_fragor | 30 | list payload only; get_dokument_innehall not attempted in this run |
 | HD11833 | metadata_only | live | get_fragor | 30 | list payload only; get_dokument_innehall not attempted in this run |
 | HD11835 | metadata_only | live | get_fragor | 30 | list payload only; get_dokument_innehall not attempted in this run |
+| HD10507 | full_text | live | get_dokument_innehall | 1 | summary present |
+| HD10508 | full_text | live | get_dokument_innehall | 1 | summary present |
 | HD10504 | full_text | live | get_dokument_innehall | 1 | summary present |
 | HD10505 | full_text | live | get_dokument_innehall | 1 | summary present |
-| HD10508 | full_text | live | get_dokument_innehall | 1 | summary present |
 | HD10506 | full_text | live | get_dokument_innehall | 1 | summary present |
 | HD10503 | full_text | live | get_dokument_innehall | 1 | summary present |
 | HD10502 | full_text | live | get_dokument_innehall | 1 | summary present |
-| HD10507 | full_text | live | get_dokument_innehall | 1 | summary present |
 
 ## Full-Text Fetch Outcomes
 
@@ -77,12 +78,12 @@ All documents sourced from official riksdag-regering-mcp API.
 | HD024191 | full_text | true | 29595 | live | persisted: full-text/HD024191.md |
 | HD01FiU42 | full_text | true | 85258 | live | persisted: full-text/HD01FiU42.md |
 | HD01SfU37 | full_text | true | 928 | live | persisted: full-text/HD01SfU37.md |
+| HD01FiU47 | full_text | true | 851 | live | persisted: full-text/HD01FiU47.md |
 | HD01UU12 | full_text | true | 45602 | live | persisted: full-text/HD01UU12.md |
 | HD01UU11 | full_text | true | 41499 | live | persisted: full-text/HD01UU11.md |
 | HD01UbU27 | full_text | true | 100015 | live | persisted: full-text/HD01UbU27.md |
 | HD01UbU22 | full_text | true | 100015 | live | persisted: full-text/HD01UbU22.md |
 | HD01UbU19 | full_text | true | 100015 | live | persisted: full-text/HD01UbU19.md |
-| HD01CU26 | full_text | true | 100015 | live | persisted: full-text/HD01CU26.md |
 
 **Full-text retrieved**: 10/10 top documents
 
