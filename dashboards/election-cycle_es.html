@@ -141,121 +141,50 @@
 }
 </script>
 </head>
-<body class="rm-article-body rm-dashboard-page rm-dashboard-election-cycle">
-    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-    <header class="rm-site-header" role="banner">
-      <div class="rm-site-header-inner">
-        <a class="rm-logo" href="../index_es.html" aria-label="Riksdagsmonitor Inicio">
-          <img class="rm-logo-img" data-rm-logo-img="true" src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-48w.webp 48w, ../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="48px" alt="" width="48" height="48" loading="eager" decoding="async">
-          <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
-          <span class="rm-logo-text">
-            <span class="rm-logo-brand">Riksdagsmonitor</span>
-            <span class="rm-logo-tagline">Inteligencia parlamentaria sueca · Código abierto · Apache-2.0</span>
-          </span>
-        </a>
-        <nav class="rm-site-nav" aria-label="Plataforma principal">
-          <a href="../index_es.html">Inicio</a>
-          <a href="../news/index_es.html">Noticias</a>
-          <a href="../dashboard/index_es.html">Panel</a>
-          <a href="../politician-dashboard_es.html">👤 Políticos</a>
-          <a href="../political-intelligence_es.html">🧠 Inteligencia política</a>
-          <a href="../sitemap_es.html">Mapa del sitio</a>
-          <a href="https://riksdagsmonitor.com/docs/api/index.html">Documentación API</a>
-        </nav>
-        <details class="rm-lang-switcher">
-          <summary aria-label="Cambiar idioma">
-            <span aria-hidden="true">🇪🇸</span>
-            <span class="rm-lang-current-label">Español</span>
-            <span class="rm-lang-switcher-caret" aria-hidden="true">▾</span>
-          </summary>
-          <div class="rm-lang-switcher-dropdown" role="menu">
-          <a href="../dashboards/election-cycle.html" lang="en" title="English" role="menuitem"><span aria-hidden="true">🇬🇧</span> English</a>
-          <a href="../dashboards/election-cycle_sv.html" lang="sv" title="Svenska" role="menuitem"><span aria-hidden="true">🇸🇪</span> Svenska</a>
-          <a href="../dashboards/election-cycle_da.html" lang="da" title="Dansk" role="menuitem"><span aria-hidden="true">🇩🇰</span> Dansk</a>
-          <a href="../dashboards/election-cycle_no.html" lang="nb" title="Norsk" role="menuitem"><span aria-hidden="true">🇳🇴</span> Norsk</a>
-          <a href="../dashboards/election-cycle_fi.html" lang="fi" title="Suomi" role="menuitem"><span aria-hidden="true">🇫🇮</span> Suomi</a>
-          <a href="../dashboards/election-cycle_de.html" lang="de" title="Deutsch" role="menuitem"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
-          <a href="../dashboards/election-cycle_fr.html" lang="fr" title="Français" role="menuitem"><span aria-hidden="true">🇫🇷</span> Français</a>
-          <a href="../dashboards/election-cycle_nl.html" lang="nl" title="Nederlands" role="menuitem"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
-          <a href="../dashboards/election-cycle_ar.html" lang="ar" title="العربية" role="menuitem"><span aria-hidden="true">🇸🇦</span> العربية</a>
-          <a href="../dashboards/election-cycle_he.html" lang="he" title="עברית" role="menuitem"><span aria-hidden="true">🇮🇱</span> עברית</a>
-          <a href="../dashboards/election-cycle_ja.html" lang="ja" title="日本語" role="menuitem"><span aria-hidden="true">🇯🇵</span> 日本語</a>
-          <a href="../dashboards/election-cycle_ko.html" lang="ko" title="한국어" role="menuitem"><span aria-hidden="true">🇰🇷</span> 한국어</a>
-          <a href="../dashboards/election-cycle_zh.html" lang="zh" title="中文" role="menuitem"><span aria-hidden="true">🇨🇳</span> 中文</a>
-          </div>
-        </details>
-        <a class="rm-header-cta rm-header-cta-pi"
-           href="../political-intelligence_es.html"
-           title="Análisis político profundo e informes de inteligencia"
-           aria-label="Análisis político profundo e informes de inteligencia">
-          <span class="rm-header-cta-icon" aria-hidden="true">🧠</span>
-          <span class="rm-header-cta-label">Inteligencia política</span>
-        </a>
-        <a class="rm-header-cta rm-header-cta-transparency"
-           href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md"
-           target="_blank" rel="noopener noreferrer"
-           title="Compromiso de Hack23 con la transparencia y la seguridad"
-           aria-label="Compromiso de Hack23 con la transparencia y la seguridad">
-          <span class="rm-header-cta-icon" aria-hidden="true">🔐</span>
-          <span class="rm-header-cta-label">Transparencia &amp; Seguridad</span>
-        </a>
-        <a class="rm-header-cta rm-header-cta-sponsor"
-           href="https://github.com/sponsors/Hack23"
-           target="_blank" rel="noopener noreferrer"
-           title="Conviértete en patrocinador de Hack23 en GitHub"
-           aria-label="Conviértete en patrocinador de Hack23 en GitHub">
-          <span class="rm-header-cta-icon" aria-hidden="true">💖</span>
-          <span class="rm-header-cta-label">Patrocinar Hack23</span>
-        </a>
-        <button id="theme-toggle" class="rm-theme-toggle" type="button"
-                aria-pressed="false"
-                aria-label="Cambiar tema"
-                title="Cambiar tema"
-                data-label-dark="Cambiar al tema claro"
-                data-label-light="Cambiar al tema oscuro">
-          <span class="rm-theme-toggle-icon" aria-hidden="true">🌓</span>
-          <span class="rm-theme-toggle-label">Tema</span>
-        </button>
-      </div>
-      <div class="rm-site-subnav" aria-label="Contexto de la página">
-        <nav class="rm-breadcrumb" aria-label="Migas de pan">
-          <ol>
-            <li><a href="../index_es.html">Inicio</a></li>
-            <li><a href="../dashboard/index_es.html">Panel</a></li>
-            <li aria-current="page">🗳️ Inteligencia de ciclos electorales (1994-2034) | Riksdagsmonitor</li>
-          </ol>
-        </nav>
-        
-      </div>
-    </header>
-    <div class="hero-banner" aria-hidden="true">
-      <picture class="hero-banner-picture">
-        <source type="image/avif" srcset="../images/riksdagsmonitor-banner-480w.avif 480w, ../images/riksdagsmonitor-banner-768w.avif 768w, ../images/riksdagsmonitor-banner-1024w.avif 1024w, ../images/riksdagsmonitor-banner-1536w.avif 1536w" sizes="100vw">
-        <source type="image/webp" srcset="../images/riksdagsmonitor-banner-480w.webp 480w, ../images/riksdagsmonitor-banner-768w.webp 768w, ../images/riksdagsmonitor-banner-1024w.webp 1024w, ../images/riksdagsmonitor-banner-1536w.webp 1536w" sizes="100vw">
+<body class="rm-dashboard-page rm-dashboard-election-cycle">
+<a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+<nav aria-label="Breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="../index_es.html">Inicio</a>
+</li>
+<li class="breadcrumb-item">
+<a href="../dashboard/index_es.html">Paneles</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+🗳️ Inteligencia de ciclos electorales (1994-2034)
+</li>
+</ol>
+</nav>
+
+<header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Cambiar tema"
+        title="Cambiar tema"
+        data-label-dark="Cambiar al tema claro"
+        data-label-light="Cambiar al tema oscuro"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">Tema</span>
+</button>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <picture class="hero-banner-picture">
+        <source type="image/avif" srcset="images/riksdagsmonitor-banner-480w.avif 480w, images/riksdagsmonitor-banner-768w.avif 768w, images/riksdagsmonitor-banner-1024w.avif 1024w, images/riksdagsmonitor-banner-1536w.avif 1536w" sizes="100vw">
+        <source type="image/webp" srcset="images/riksdagsmonitor-banner-480w.webp 480w, images/riksdagsmonitor-banner-768w.webp 768w, images/riksdagsmonitor-banner-1024w.webp 1024w, images/riksdagsmonitor-banner-1536w.webp 1536w" sizes="100vw">
         <img src="../images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high">
       </picture>
-    </div>
-    <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="Esta página en otros idiomas">
-      <a href="../dashboards/election-cycle.html" class="lang-link" hreflang="en" lang="en" title="English"><span aria-hidden="true">🇬🇧</span> English</a>
-      <a href="../dashboards/election-cycle_sv.html" class="lang-link" hreflang="sv" lang="sv" title="Svenska"><span aria-hidden="true">🇸🇪</span> Svenska</a>
-      <a href="../dashboards/election-cycle_da.html" class="lang-link" hreflang="da" lang="da" title="Dansk"><span aria-hidden="true">🇩🇰</span> Dansk</a>
-      <a href="../dashboards/election-cycle_no.html" class="lang-link" hreflang="nb" lang="nb" title="Norsk"><span aria-hidden="true">🇳🇴</span> Norsk</a>
-      <a href="../dashboards/election-cycle_fi.html" class="lang-link" hreflang="fi" lang="fi" title="Suomi"><span aria-hidden="true">🇫🇮</span> Suomi</a>
-      <a href="../dashboards/election-cycle_de.html" class="lang-link" hreflang="de" lang="de" title="Deutsch"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
-      <a href="../dashboards/election-cycle_fr.html" class="lang-link" hreflang="fr" lang="fr" title="Français"><span aria-hidden="true">🇫🇷</span> Français</a>
-      <span class="lang-link active" lang="es" title="Español" aria-current="page"><span aria-hidden="true">🇪🇸</span> Español</span>
-      <a href="../dashboards/election-cycle_nl.html" class="lang-link" hreflang="nl" lang="nl" title="Nederlands"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
-      <a href="../dashboards/election-cycle_ar.html" class="lang-link" hreflang="ar" lang="ar" title="العربية"><span aria-hidden="true">🇸🇦</span> العربية</a>
-      <a href="../dashboards/election-cycle_he.html" class="lang-link" hreflang="he" lang="he" title="עברית"><span aria-hidden="true">🇮🇱</span> עברית</a>
-      <a href="../dashboards/election-cycle_ja.html" class="lang-link" hreflang="ja" lang="ja" title="日本語"><span aria-hidden="true">🇯🇵</span> 日本語</a>
-      <a href="../dashboards/election-cycle_ko.html" class="lang-link" hreflang="ko" lang="ko" title="한국어"><span aria-hidden="true">🇰🇷</span> 한국어</a>
-      <a href="../dashboards/election-cycle_zh.html" class="lang-link" hreflang="zh" lang="zh" title="中文"><span aria-hidden="true">🇨🇳</span> 中文</a>
-    </nav>
+</div>
 
+<!-- Hero Title -->
 <div class="hero-header-text">
   <h1> Riksdagsmonitor<br><span class="h1-subtitle">Plataforma de inteligencia de las elecciones suecas 2026</span></h1>
   <p class="tagline">Monitoreo parlamentario en tiempo real · Predicciones de coalición · 45 reglas de riesgo · 50+ años de datos</p>
 </div>
+
 
 <div class="election-countdown">
 <h2>Elecciones en: <span id="countdown">13 de septiembre de 2026 (Segundo domingo de septiembre)</span></h2>
@@ -284,7 +213,34 @@
 <span class="label"><span aria-hidden="true">🏛️</span> Decisiones de comisión</span>
 </div>
 </div>
-
+<nav class="site-header-nav" aria-label="Plataforma principal" data-rm-static-primary-nav="true">
+  <a href="../index_es.html">Inicio</a>
+  <a href="news/index_es.html">Noticias</a>
+  <a href="dashboard/index_es.html">Panel</a>
+  <a href="politician-dashboard_es.html"><span aria-hidden="true">👤</span> Políticos</a>
+  <a href="political-intelligence_es.html"><span aria-hidden="true">🧠</span> Inteligencia política</a>
+  <a href="sitemap_es.html"><span aria-hidden="true">🗺️</span> Mapa del sitio</a>
+  <a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> Documentación API</a>
+  <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="Compromiso de Hack23 con la transparencia y la seguridad" aria-label="Compromiso de Hack23 con la transparencia y la seguridad"><span aria-hidden="true">🔐</span> Transparencia &amp; Seguridad</a>
+  <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="Conviértete en patrocinador de Hack23 en GitHub" aria-label="Conviértete en patrocinador de Hack23 en GitHub"><span aria-hidden="true">💖</span> Patrocinar Hack23</a>
+</nav>
+<nav class="language-switcher site-language-switcher" aria-label="Esta página en otros idiomas" data-rm-static-language-switcher="true">
+        <a href="../dashboards/election-cycle.html" lang="en" hreflang="en" title="English" aria-label="Cambiar idioma: English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="../dashboards/election-cycle_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Cambiar idioma: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="../dashboards/election-cycle_da.html" lang="da" hreflang="da" title="Dansk" aria-label="Cambiar idioma: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="../dashboards/election-cycle_no.html" lang="no" hreflang="nb" title="Norsk" aria-label="Cambiar idioma: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="../dashboards/election-cycle_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="Cambiar idioma: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="../dashboards/election-cycle_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="Cambiar idioma: German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="../dashboards/election-cycle_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="Cambiar idioma: French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="../dashboards/election-cycle_es.html" lang="es" hreflang="es" title="Español" aria-label="Cambiar idioma: Spanish" aria-current="page" class="active"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="../dashboards/election-cycle_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="Cambiar idioma: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="../dashboards/election-cycle_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="Cambiar idioma: Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="../dashboards/election-cycle_he.html" lang="he" hreflang="he" title="עברית" aria-label="Cambiar idioma: Hebrew"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="../dashboards/election-cycle_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="Cambiar idioma: Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="../dashboards/election-cycle_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="Cambiar idioma: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="../dashboards/election-cycle_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="Cambiar idioma: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
+</nav>
+</header>
 
 <main id="main-content" role="main">
 <nav class="dashboard-page-back" aria-label="← Volver al inicio">
