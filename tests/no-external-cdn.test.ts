@@ -82,17 +82,27 @@ function isExcluded(path: string): boolean {
 
 async function findForbidden(files: string[]): Promise<Array<{ file: string; host: string; line: string }>> {
   const hits: Array<{ file: string; host: string; line: string }> = [];
-  for (const f of files) {
-    if (isExcluded(f)) continue;
-    const text = await readFile(f, 'utf8');
-    const lower = text.toLowerCase();
-    for (const host of FORBIDDEN_HOSTS) {
-      if (!lower.includes(host)) continue;
-      // Find the offending line for a useful error message.
-      const lines = text.split(/\r?\n/);
-      const offending = lines.find((l) => l.toLowerCase().includes(host)) ?? '';
-      hits.push({ file: f.slice(REPO_ROOT.length + 1), host, line: offending.trim().slice(0, 200) });
-    }
+  const filtered = files.filter((f) => !isExcluded(f));
+
+  // Process files in parallel batches to avoid timeout on large directories.
+  const BATCH_SIZE = 100;
+  for (let i = 0; i < filtered.length; i += BATCH_SIZE) {
+    const batch = filtered.slice(i, i + BATCH_SIZE);
+    const results = await Promise.all(
+      batch.map(async (f) => {
+        const text = await readFile(f, 'utf8');
+        const lower = text.toLowerCase();
+        const fileHits: Array<{ file: string; host: string; line: string }> = [];
+        for (const host of FORBIDDEN_HOSTS) {
+          if (!lower.includes(host)) continue;
+          const lines = text.split(/\r?\n/);
+          const offending = lines.find((l) => l.toLowerCase().includes(host)) ?? '';
+          fileHits.push({ file: f.slice(REPO_ROOT.length + 1), host, line: offending.trim().slice(0, 200) });
+        }
+        return fileHits;
+      }),
+    );
+    hits.push(...results.flat());
   }
   return hits;
 }
@@ -145,5 +155,5 @@ describe('no external CDN in rendered news articles', () => {
       );
     }
     expect(hits).toEqual([]);
-  });
+  }, 60_000);
 });
