@@ -57,7 +57,16 @@ export const sanitizeSchema: typeof defaultSchema = {
   clobberPrefix: HEADING_ID_PREFIX,
   attributes: {
     ...defaultSchema.attributes,
-    pre: [...(defaultSchema.attributes?.pre ?? []), ['className', 'mermaid'], 'tabIndex', ['data-mermaid-source', 'true']],
+    // `data-mermaid-source` is preserved on `<pre class="mermaid">`
+    // blocks so the client-side loader (`js/lib/mermaid-init.mjs`) and
+    // downstream auditors can distinguish mermaid containers from any
+    // other `<pre>` carrying a `mermaid` class. The attribute must be
+    // declared with its HAST property name (`dataMermaidSource`,
+    // camel-cased) — `hast-util-sanitize` matches the property key, not
+    // the serialised attribute name, so the previous kebab-case form
+    // `['data-mermaid-source', 'true']` was silently stripping the
+    // attribute from every rendered article.
+    pre: [...(defaultSchema.attributes?.pre ?? []), ['className', 'mermaid'], 'tabIndex', ['dataMermaidSource', 'true']],
     code: [...(defaultSchema.attributes?.code ?? []), ['className', /^language-/], ['className', 'mermaid']],
     a: [...(defaultSchema.attributes?.a ?? []), ['className', 'anchor', 'heading-anchor'], 'ariaHidden', 'tabIndex'],
     span: [...(defaultSchema.attributes?.span ?? []), ['className', 'icon', 'icon-link']],

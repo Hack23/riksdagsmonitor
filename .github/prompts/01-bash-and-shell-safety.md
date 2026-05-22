@@ -41,7 +41,7 @@ The AWF sandbox rejects any command containing these patterns. Rewrite using the
 | `${!var}` | Indirect expansion — attacker-controlled string picks which variable is read. | Associative array: `declare -A MAP; MAP[foo]=bar; echo "${MAP[$key]}"`. |
 | Nested `$(…$(…)…)` | Staged command injection. | Two lines: `inner=$(cmd2); outer=$(cmd1 "$inner")`. |
 | Chained builder assignments (`a=foo; b="$a"bar; c=$($b)`) | Staged injection spread across statements. | Arrays invoked via `"${cmd[@]}"`; never re-parse a string as a command. |
-| `eval` on variable contents, `bash -c "$var"`, `source /dev/stdin <<<"$var"` | Direct arbitrary-code execution from data. | Refuse and rewrite using arrays, `case`, explicit branches. |
+| `eval` on variable contents, `bash -c "$var"`, `source /dev/stdin <<<"$var"` | Direct arbitrary-code execution from data. Never required. | Refuse and rewrite using arrays, `case`, explicit branches. |
 | `echo "…text $(cmd) more text…"` with another `$(…)` elsewhere in the same `command` string | AWF flags this as "nested command substitution" (false positive but still blocks). | Two lines: `RESULT=$(cmd); echo "…text $RESULT more text…"`. Prefer `printf '%s\n' "$RESULT"` if the value may contain backslashes. |
 | Inline-built arrays expanded with `"${arr[@]}"` in the same `command` string | AWF flags `(…)` + `[@]` as "dangerous expansion". | Write the list to a temp file and loop: `printf '%s\n' README.md foo.md > /tmp/req-$$ && while IFS= read -r f; do …; done < /tmp/req-$$`. Or unroll: `for f in README.md foo.md; do …; done`. |
 

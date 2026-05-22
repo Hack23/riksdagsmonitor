@@ -55,6 +55,36 @@ import { ensureMermaidTheme } from './mermaid-canonical-theme.js';
  * the regression surfaces, but the rendered HTML never silently loses
  * diagrams.
  */
+/**
+ * Repair the single most common AI-generated mermaid edge-label typo:
+ * `-->|label]` (closing `]` instead of `|`). Mermaid raises
+ * `Parse error … Expecting 'PIPE'` and refuses to render the diagram.
+ *
+ * Pattern matched (anchored line-by-line so we never reach across
+ * mermaid statements): an arrow operator (`-->`, `--`, `-.->`, `==>`,
+ * `~~~`, `--x`, `--o`, with optional length/colour modifiers) followed
+ * by `|<label>]` where `<label>` may contain any character except `|`
+ * or `]`. The trailing `]` is rewritten to `|`, restoring valid
+ * `-->|label|` syntax. We deliberately match conservatively — only the
+ * arrow context plus a literal opening `|` triggers repair, so prose
+ * inside `flowchart` node bodies like `[text with ] inside]` is never
+ * touched.
+ *
+ * The companion validator
+ * (`scripts/validate-article.ts → mermaid-syntax`) still surfaces the
+ * regression in CI on the source artifact so editorial agents can fix
+ * the upstream prompt, but readers never see a broken diagram in the
+ * meantime — same defence-in-depth contract as the canonical-theme
+ * prologue above.
+ */
+function repairEdgeLabelClosingBracket(diagramBody: string): string {
+  return diagramBody.replace(
+    /(-{2,3}>|-\.->|={2,}>|~{3,}|-{2,}x|-{2,}o)(\|[^|\]\n]+)\]/g,
+    '$1$2|',
+  );
+}
+
+
 export function preprocessMermaidFences(markdownBody: string): string {
   const lines = markdownBody.split('\n');
   const out: string[] = [];
@@ -76,7 +106,7 @@ export function preprocessMermaidFences(markdownBody: string): string {
         }
         bodyLines.push(cur);
       }
-      const themed = ensureMermaidTheme(bodyLines.join('\n').trimEnd());
+      const themed = ensureMermaidTheme(repairEdgeLabelClosingBracket(bodyLines.join('\n').trimEnd()));
       const escaped = escapeHtml(themed);
       out.push('', `<pre class="mermaid" data-mermaid-source="true" tabindex="0">${escaped}</pre>`, '');
       i = consumedClose ? j + 1 : j;

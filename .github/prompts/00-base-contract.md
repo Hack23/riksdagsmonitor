@@ -30,7 +30,7 @@ Static HTML/CSS site · 14 languages · WCAG 2.1 AA · cyberpunk theme · no JS 
 
 ## Runtime input contract
 
-`.github/actions/news-resolve-inputs` validates every `workflow_dispatch` input and exports it to `$GITHUB_ENV` after `news-prewarm`. `awf --env-all` forwards them to the agent's bash sandbox. **Read these from the environment verbatim** — do not recompute `ARTICLE_DATE` from `date -u`, do not guess `SUBFOLDER` from the workflow filename, do not assume an analysis depth.
+`.github/actions/news-resolve-inputs` validates every `workflow_dispatch` input and exports it to `$GITHUB_ENV` after `news-prewarm`. `awf --env-all` forwards them to the agent's bash sandbox. **Never recompute** `ARTICLE_DATE` from `date -u`, never guess `SUBFOLDER` from the workflow filename, never assume an analysis depth — read these from the environment verbatim.
 
 | Variable | Set when | Values | Source |
 |---|---|---|---|
