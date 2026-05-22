@@ -208,7 +208,73 @@ if [ -d "$SRC/js/lib/mermaid" ]; then
     --exclude '*' --include '*.mjs' \
     --no-guess-mime-type --content-type 'application/javascript' \
     --cache-control 'public, max-age=31536000, immutable'
-  echo "✅ Mermaid runtime upload complete"
+  echo "✅ Mermaid runtime upload command completed"
+
+  # ── HARD per-chunk verification ────────────────────────────────────
+  # `aws s3 cp --recursive` prints `upload: …` per file but its overall
+  # exit code is the ONLY signal of failure; individual key durability
+  # is NOT re-checked. Production runs 1882 + 1883 logged "upload: …"
+  # for every chunk yet CloudFront subsequently returned 403 for every
+  # chunk (S3 `<Code>AccessDenied</Code>` body — with OAC, missing keys
+  # surface as 403 not 404). The asymmetric symptom (entry .mjs = 200,
+  # every `chunks/mermaid.esm.min/*.mjs` = 403) only makes sense if
+  # those keys never actually landed in S3.
+  #
+  # Re-verify durability with `aws s3api head-object` per key. This is
+  # ~80 cheap HEAD calls (well under 1s in total for the runner) and
+  # turns silent CDN-only failures into a HARD deploy failure with the
+  # exact list of missing keys + a one-shot retry attempt for each.
+  BUCKET_NAME="${BUCKET#s3://}"
+  BUCKET_NAME="${BUCKET_NAME%%/*}"
+  echo "🔍 Verifying every Mermaid .mjs key landed in s3://$BUCKET_NAME/…"
+  MISSING_KEYS=()
+  while IFS= read -r -d '' LOCAL; do
+    REL="${LOCAL#"$SRC"/}"
+    if ! aws s3api head-object \
+        --bucket "$BUCKET_NAME" --key "$REL" >/dev/null 2>&1; then
+      MISSING_KEYS+=("$REL")
+    fi
+  done < <(find "$SRC/js/lib/mermaid" -name '*.mjs' -type f -print0)
+
+  if [ "${#MISSING_KEYS[@]}" -gt 0 ]; then
+    echo "⚠️  ${#MISSING_KEYS[@]} Mermaid chunk(s) MISSING from S3 after force-upload:"
+    printf '   - %s\n' "${MISSING_KEYS[@]}"
+    echo "🔁 Retrying each missing key individually with explicit put-object…"
+    STILL_MISSING=()
+    for REL in "${MISSING_KEYS[@]}"; do
+      aws s3 cp "$SRC/$REL" "s3://$BUCKET_NAME/$REL" \
+        --no-guess-mime-type --content-type 'application/javascript' \
+        --cache-control 'public, max-age=31536000, immutable' \
+        --only-show-errors || true
+      if ! aws s3api head-object \
+          --bucket "$BUCKET_NAME" --key "$REL" >/dev/null 2>&1; then
+        STILL_MISSING+=("$REL")
+      fi
+    done
+    if [ "${#STILL_MISSING[@]}" -gt 0 ]; then
+      echo "❌ ${#STILL_MISSING[@]} Mermaid chunk(s) still missing from S3 after retry:"
+      printf '   - %s\n' "${STILL_MISSING[@]}"
+      echo "    Bucket listing of chunks prefix follows (truncated to 200 lines):"
+      aws s3 ls "s3://$BUCKET_NAME/js/lib/mermaid/" --recursive | head -200 || true
+      exit 1
+    fi
+    echo "✅ Retry succeeded — all previously-missing chunks are now in S3"
+  fi
+
+  # Ground-truth bucket listing for the chunks prefix — single source
+  # of truth in deploy logs, regardless of upload exit codes.
+  CHUNK_S3_COUNT=$(aws s3 ls \
+    "s3://$BUCKET_NAME/js/lib/mermaid/chunks/mermaid.esm.min/" \
+    --recursive 2>/dev/null | grep -c '\.mjs$' || true)
+  CHUNK_LOCAL_COUNT=$(find \
+    "$SRC/js/lib/mermaid/chunks/mermaid.esm.min" \
+    -name '*.mjs' -type f 2>/dev/null | wc -l)
+  echo "📊 Mermaid chunks in S3: $CHUNK_S3_COUNT (local: $CHUNK_LOCAL_COUNT)"
+  if [ "$CHUNK_S3_COUNT" -lt "$CHUNK_LOCAL_COUNT" ]; then
+    echo "❌ S3 chunk count ($CHUNK_S3_COUNT) is below local count ($CHUNK_LOCAL_COUNT)"
+    exit 1
+  fi
+  echo "✅ Mermaid runtime upload verified — entry + $CHUNK_S3_COUNT chunks live on S3"
 fi
 
 # ── Delete orphaned objects from S3 ──
