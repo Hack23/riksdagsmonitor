@@ -1,0 +1,65 @@
+{
+  "analysis_date": "2026-05-22",
+  "article_type": "week-ahead",
+  "pirs": [
+    {
+      "id": "PIR-WA-01",
+      "question": "Has the government produced impact assessments for discontinued development aid strategies?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "opened": "2026-05-15",
+      "last_updated": "2026-05-22",
+      "evidence_this_cycle": "None. Issue not raised in Week 22 documentation. S interpellations (HD10499-HD10508) do not directly address aid impact assessments.",
+      "close_condition": "Government publishes or commits to impact assessment; or Sida formally responds to accountability request",
+      "collection_method": "Monitor Sida publications; S interpellation filings targeting aid accountability"
+    },
+    {
+      "id": "PIR-WA-02",
+      "question": "What was the media coverage tone of the May 18 aid debate?",
+      "status": "PARTIALLY_ANSWERED",
+      "priority": "LOW",
+      "opened": "2026-05-15",
+      "last_updated": "2026-05-22",
+      "evidence_this_cycle": "S interpellation campaign demonstrates ongoing opposition media strategy but not specific coverage assessment of May 18 debate",
+      "close_condition": "Acquire media monitoring data for May 18 Riksdag debate",
+      "collection_method": "External media monitoring source required"
+    },
+    {
+      "id": "PIR-WA-03",
+      "question": "Will Lagrådet issue a blocking critique of HD03262 (permanent permit elimination) before Riksdag recess?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "opened": "2026-05-22",
+      "last_updated": "2026-05-22",
+      "evidence_this_cycle": "Lagrådet referral pending as of 2026-05-22. No opinion published yet.",
+      "close_condition": "Lagrådet publishes opinion on HD03262",
+      "collection_method": "Monitor data.riksdagen.se for HD03262 lagrådsremiss document",
+      "target_resolution": "2026-05-29"
+    },
+    {
+      "id": "PIR-WA-04",
+      "question": "Will L or C file a substantive reservation on JuU28 in the committee vote?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "opened": "2026-05-22",
+      "last_updated": "2026-05-22",
+      "evidence_this_cycle": "No public statement from L or C on JuU28 as of analysis date. KJ-6 assessed at 35-45% probability.",
+      "close_condition": "JuU28 chamber vote completed; committee reservation text published",
+      "collection_method": "riksdagen.se JuU committee records",
+      "target_resolution": "2026-05-25"
+    },
+    {
+      "id": "PIR-WA-05",
+      "question": "What is the current Migrationsverket case backlog as of May 2026?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "opened": "2026-05-22",
+      "last_updated": "2026-05-22",
+      "evidence_this_cycle": "Statskontoret 2024 context indicates 180,000+ cases. May 2026 figure not yet published.",
+      "close_condition": "Migrationsverket publishes May 2026 statistics",
+      "collection_method": "migrationsverket.se statistics publications",
+      "target_resolution": "2026-06-22"
+    }
+  ],
+  "schema_version": "1.0"
+}
