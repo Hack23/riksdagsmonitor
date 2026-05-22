@@ -585,6 +585,7 @@ def build_dashboard_page(
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{_html_safe(page_title)}">
 <meta property="og:locale" content="{_og_locale(lang)}">
+{_og_locale_alternates_block(lang)}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -706,6 +707,22 @@ def _og_locale(lang: str) -> str:
         'nl': 'nl_NL', 'ar': 'ar_SA', 'he': 'he_IL', 'ja': 'ja_JP',
         'ko': 'ko_KR', 'zh': 'zh_CN',
     }[lang]
+
+
+def _og_locale_alternates_block(lang: str) -> str:
+    """Emit `og:locale:alternate` tags for the other 13 hreflang siblings.
+
+    Open Graph requires `og:locale` for the page itself plus one
+    `og:locale:alternate` per sibling language so Facebook / LinkedIn can
+    pick the best-fit preview at share time. Dashboards previously
+    shipped only the primary `og:locale` — search engines collapsed all
+    14 hreflang siblings into near-identical OG previews.
+    """
+    others = [l for l in LANGS if l != lang]
+    return '\n'.join(
+        f'<meta property="og:locale:alternate" content="{_og_locale(l)}">'
+        for l in others
+    )
 
 
 def _extract_csp_block(head_html: str) -> str:

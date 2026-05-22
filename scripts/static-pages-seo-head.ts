@@ -226,9 +226,28 @@ export function buildStaticPageJsonLd(input: {
 }): string {
   const { title, description, canonicalUrl, lang, family } = input;
   const inLanguage = HREFLANG[lang];
+  const homeHref = lang === 'en'
+    ? 'https://riksdagsmonitor.com/'
+    : `https://riksdagsmonitor.com/index_${lang}.html`;
+  const homeLabel = breadcrumbLabel('home', lang);
+  const pageLabel = breadcrumbLabel(family, lang);
   // The `inLanguage` field carries the BCP-47 / hreflang code; the
   // `Speakable` cssSelector points at the first `<h1>` on every static
-  // page (every family ships one).
+  // page (every family ships one). The `BreadcrumbList` node is added
+  // for every family (single-item for `home`, two-item for the rest)
+  // so Google rich-results and AI assistants can surface the page
+  // location inside the site hierarchy.
+  const breadcrumbItems: ReadonlyArray<{
+    '@type': 'ListItem';
+    position: number;
+    name: string;
+    item: string;
+  }> = family === 'home'
+    ? [{ '@type': 'ListItem', position: 1, name: homeLabel, item: homeHref }]
+    : [
+        { '@type': 'ListItem', position: 1, name: homeLabel, item: homeHref },
+        { '@type': 'ListItem', position: 2, name: pageLabel, item: canonicalUrl },
+      ];
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -248,6 +267,11 @@ export function buildStaticPageJsonLd(input: {
         'logo': 'https://riksdagsmonitor.com/icon-192.png',
       },
       {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonicalUrl}#breadcrumb`,
+        'itemListElement': breadcrumbItems,
+      },
+      {
         '@type': 'WebPage',
         '@id': `${canonicalUrl}#webpage`,
         'url': canonicalUrl,
@@ -255,6 +279,7 @@ export function buildStaticPageJsonLd(input: {
         'description': description,
         'inLanguage': inLanguage,
         'isPartOf': { '@id': 'https://riksdagsmonitor.com/#website' },
+        'breadcrumb': { '@id': `${canonicalUrl}#breadcrumb` },
         'about': {
           '@type': 'Thing',
           'name': pageAbout(family, lang),
@@ -267,6 +292,40 @@ export function buildStaticPageJsonLd(input: {
     ],
   };
   return `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>`;
+}
+
+/**
+ * Localised `BreadcrumbList` item label per `family × language`. Mirrors
+ * the human-readable header links shipped on the same pages so a screen
+ * reader hearing the breadcrumb hears the same phrase it sees in the
+ * navigation bar.
+ */
+function breadcrumbLabel(family: StaticPageFamily, lang: Language): string {
+  const BREADCRUMB_LABELS: Readonly<Record<StaticPageFamily, Readonly<Record<Language, string>>>> = {
+    home: {
+      en: 'Home', sv: 'Hem', da: 'Hjem', no: 'Hjem', fi: 'Etusivu',
+      de: 'Startseite', fr: 'Accueil', es: 'Inicio', nl: 'Home',
+      ar: 'الرئيسية', he: 'דף הבית', ja: 'ホーム', ko: '홈', zh: '首页',
+    },
+    dashboard: {
+      en: 'Dashboard', sv: 'Instrumentpanel', da: 'Dashboard',
+      no: 'Dashbord', fi: 'Kojelauta', de: 'Dashboard',
+      fr: 'Tableau de bord', es: 'Tablero', nl: 'Dashboard',
+      ar: 'لوحة المعلومات', he: 'לוח מחוונים', ja: 'ダッシュボード',
+      ko: '대시보드', zh: '仪表板',
+    },
+    politician: {
+      en: 'Politician Dashboard', sv: 'Politikerpanel',
+      da: 'Politikerpanel', no: 'Politikerpanel',
+      fi: 'Poliitikko­paneeli', de: 'Politiker-Dashboard',
+      fr: 'Tableau des politiciens', es: 'Tablero de políticos',
+      nl: 'Politici-dashboard',
+      ar: 'لوحة السياسيين', he: 'לוח פוליטיקאים',
+      ja: '政治家ダッシュボード', ko: '정치인 대시보드',
+      zh: '政治家仪表板',
+    },
+  };
+  return BREADCRUMB_LABELS[family][lang];
 }
 
 /**
@@ -422,8 +481,39 @@ export function enhanceStaticPageHead(input: {
     }
   }
 
-  // ── (4) JSON-LD WebSite + WebPage + Speakable — add if missing ──────
-  if (!/<script\s+type=["']application\/ld\+json["']/i.test(next)) {
+  // ── (4) JSON-LD WebSite + WebPage + BreadcrumbList + Speakable ────
+  // Idempotency contract:
+  //
+  //   • If the document already contains `"@type": "BreadcrumbList"`
+  //     anywhere (our current contract OR a hand-authored block — e.g.
+  //     `index.html`, `political-intelligence_*.html`,
+  //     `dashboards/*.html` all ship their own BreadcrumbList nodes),
+  //     we leave structured data untouched.
+  //
+  //   • Otherwise, if the canonical WebSite `@id` is present, the page
+  //     was enhanced by a previous version of this script that didn't
+  //     emit BreadcrumbList. We strip that legacy block and re-inject
+  //     the current contract so older committed pages get upgraded
+  //     in-place on the next normalize pass.
+  //
+  //   • If neither marker is present, we inject for the first time.
+  //
+  // Multiple `<script type="application/ld+json">` blocks per page are
+  // explicitly supported by Schema.org / Google Search, so we only
+  // augment — never remove — hand-authored JSON-LD that ships its own
+  // BreadcrumbList.
+  const hasBreadcrumb = /"@type":\s*"BreadcrumbList"/.test(next);
+  if (!hasBreadcrumb) {
+    const legacyMarker = '"@id": "https://riksdagsmonitor.com/#website"';
+    if (next.includes(legacyMarker)) {
+      // Strip our legacy block (WebSite + Organization + WebPage,
+      // no BreadcrumbList). We only enter this branch when no
+      // BreadcrumbList exists in the document, so this regex is safe.
+      next = next.replace(
+        /<script type="application\/ld\+json">\s*\{[\s\S]*?"@id":\s*"https:\/\/riksdagsmonitor\.com\/#website"[\s\S]*?<\/script>\s*/,
+        '',
+      );
+    }
     const jsonLdBlock = buildStaticPageJsonLd({
       title,
       description,

@@ -217,6 +217,83 @@ describe('buildStaticPageJsonLd', () => {
     );
     expect(webPage.inLanguage).toBe('nb');
   });
+
+  it('emits a BreadcrumbList node with two items for dashboard / politician families', () => {
+    const out = buildStaticPageJsonLd({
+      title: 'Politikerkarriere',
+      description: 'Y',
+      canonicalUrl: 'https://riksdagsmonitor.com/politician-dashboard_de.html',
+      lang: 'de',
+      family: 'politician',
+    });
+    const jsonText = out.replace(/^<script[^>]*>\s*/, '').replace(/\s*<\/script>$/, '');
+    const parsed = JSON.parse(jsonText);
+    const breadcrumb = parsed['@graph'].find(
+      (node: { '@type': string }) => node['@type'] === 'BreadcrumbList',
+    );
+    expect(breadcrumb).toBeDefined();
+    expect(breadcrumb['@id']).toBe(
+      'https://riksdagsmonitor.com/politician-dashboard_de.html#breadcrumb',
+    );
+    expect(breadcrumb.itemListElement).toHaveLength(2);
+    expect(breadcrumb.itemListElement[0].position).toBe(1);
+    expect(breadcrumb.itemListElement[0].name).toBe('Startseite');
+    expect(breadcrumb.itemListElement[0].item).toBe(
+      'https://riksdagsmonitor.com/index_de.html',
+    );
+    expect(breadcrumb.itemListElement[1].position).toBe(2);
+    expect(breadcrumb.itemListElement[1].name).toBe('Politiker-Dashboard');
+    expect(breadcrumb.itemListElement[1].item).toBe(
+      'https://riksdagsmonitor.com/politician-dashboard_de.html',
+    );
+    // The WebPage node must reference the BreadcrumbList by @id so the
+    // graph is connected (Google rich-results pattern).
+    const webPage = parsed['@graph'].find(
+      (node: { '@type': string }) => node['@type'] === 'WebPage',
+    );
+    expect(webPage.breadcrumb).toEqual({
+      '@id': 'https://riksdagsmonitor.com/politician-dashboard_de.html#breadcrumb',
+    });
+  });
+
+  it('emits a single-item BreadcrumbList for the home family (EN home URL)', () => {
+    const out = buildStaticPageJsonLd({
+      title: 'Riksdagsmonitor',
+      description: 'Z',
+      canonicalUrl: 'https://riksdagsmonitor.com/',
+      lang: 'en',
+      family: 'home',
+    });
+    const jsonText = out.replace(/^<script[^>]*>\s*/, '').replace(/\s*<\/script>$/, '');
+    const parsed = JSON.parse(jsonText);
+    const breadcrumb = parsed['@graph'].find(
+      (node: { '@type': string }) => node['@type'] === 'BreadcrumbList',
+    );
+    expect(breadcrumb.itemListElement).toHaveLength(1);
+    expect(breadcrumb.itemListElement[0].name).toBe('Home');
+    expect(breadcrumb.itemListElement[0].item).toBe('https://riksdagsmonitor.com/');
+  });
+
+  it('localises BreadcrumbList Home label per language (ar / ja / zh)', () => {
+    const cases: ReadonlyArray<readonly [Language, string]> = [
+      ['ar', 'الرئيسية'],
+      ['ja', 'ホーム'],
+      ['zh', '首页'],
+    ];
+    for (const [lang, expected] of cases) {
+      const out = buildStaticPageJsonLd({
+        title: 't', description: 'd',
+        canonicalUrl: `https://riksdagsmonitor.com/dashboard/index_${lang}.html`,
+        lang, family: 'dashboard',
+      });
+      const jsonText = out.replace(/^<script[^>]*>\s*/, '').replace(/\s*<\/script>$/, '');
+      const parsed = JSON.parse(jsonText);
+      const breadcrumb = parsed['@graph'].find(
+        (n: { '@type': string }) => n['@type'] === 'BreadcrumbList',
+      );
+      expect(breadcrumb.itemListElement[0].name).toBe(expected);
+    }
+  });
 });
 
 describe('enhanceStaticPageHead — integration (DE politician-dashboard)', () => {
