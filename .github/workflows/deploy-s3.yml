@@ -262,6 +262,45 @@ jobs:
             echo "⚠️  No js/ directory found — skipping"
           fi
 
+      # ── Pre-deploy assertion: Mermaid runtime is staged in dist ───
+      # Articles embed Mermaid diagrams via an inline bootstrap that
+      # dynamic-imports `/js/lib/mermaid-init.mjs`, which in turn
+      # dynamic-imports `/js/lib/mermaid/mermaid.esm.min.mjs`, which
+      # statically imports ~80 chunk files under
+      # `/js/lib/mermaid/chunks/mermaid.esm.min/`. If ANY chunk is
+      # missing on S3 the browser fails the whole module graph with
+      # `Failed to fetch dynamically imported module: …mermaid.esm.min.mjs`
+      # and every diagram on the page silently disappears.
+      #
+      # Fail the deploy here (BEFORE invoking aws s3 sync) if the
+      # mermaid runtime is incomplete — this surfaces a broken vendor
+      # copy at build time rather than after publishing to production.
+      - name: Verify Mermaid runtime is staged in dist
+        run: |
+          set -euo pipefail
+          ENTRY="dist/js/lib/mermaid/mermaid.esm.min.mjs"
+          CHUNKS_DIR="dist/js/lib/mermaid/chunks/mermaid.esm.min"
+          if [ ! -f "$ENTRY" ]; then
+            echo "❌ Missing Mermaid entry point: $ENTRY"
+            echo "   Did scripts/copy-vendor-mermaid.ts run during prebuild?"
+            exit 1
+          fi
+          if [ ! -d "$CHUNKS_DIR" ]; then
+            echo "❌ Missing Mermaid chunks directory: $CHUNKS_DIR"
+            exit 1
+          fi
+          CHUNK_COUNT=$(find "$CHUNKS_DIR" -name '*.mjs' -type f | wc -l)
+          # Mermaid 11.x ships ~80 chunk files. Anything below 50 means
+          # the vendor copy is incomplete (partial extraction, wrong
+          # version, or a path mismatch in copy-vendor-mermaid.ts).
+          MIN_CHUNKS=50
+          if [ "$CHUNK_COUNT" -lt "$MIN_CHUNKS" ]; then
+            echo "❌ Mermaid chunks directory has only $CHUNK_COUNT .mjs files (expected ≥$MIN_CHUNKS)"
+            ls -la "$CHUNKS_DIR" | head -20
+            exit 1
+          fi
+          echo "✅ Mermaid runtime OK: entry + $CHUNK_COUNT chunks staged in dist/"
+
       # ── Bake CIA stats into start-page HTML ───────────────────────
       # Replaces every `<span data-stat-id="stat-…">PLACEHOLDER</span>`
       # in `dist/index*.html` with the real value parsed from
@@ -348,6 +387,55 @@ jobs:
             --paths "/*"
           
           echo "✅ CloudFront cache invalidation completed"
+
+      # ── Post-deploy verification: Mermaid runtime is reachable ────
+      # The browser console error
+      #   `Failed to fetch dynamically imported module:
+      #    https://riksdagsmonitor.com/js/lib/mermaid/mermaid.esm.min.mjs`
+      # is reported against the top-level URL, but the actual failure
+      # is usually a NESTED chunk file under
+      # `/js/lib/mermaid/chunks/mermaid.esm.min/` returning 403 —
+      # browsers attribute the rejection to the parent module of the
+      # dynamic-import promise.
+      #
+      # Pick the entry + the alphabetically-first chunk file actually
+      # present in the local build and HEAD them against S3 directly
+      # (skipping CloudFront so a stale cache from before the
+      # invalidation finishes can't mask the failure). Any non-200
+      # fails the workflow so the issue is surfaced before the next
+      # nightly news-* run produces articles that won't render.
+      - name: Verify Mermaid runtime is reachable on S3
+        run: |
+          set -euo pipefail
+          BUCKET_URL="https://${{ env.S3_BUCKET_NAME }}.s3.${{ env.AWS_REGION }}.amazonaws.com"
+          ENTRY_KEY="js/lib/mermaid/mermaid.esm.min.mjs"
+          # Pick the first staged chunk as a representative probe.
+          FIRST_CHUNK_PATH=$(find dist/js/lib/mermaid/chunks/mermaid.esm.min -maxdepth 1 -name '*.mjs' -type f | sort | head -n 1)
+          if [ -z "$FIRST_CHUNK_PATH" ]; then
+            echo "❌ No staged chunk found to probe — vendor copy missing?"
+            exit 1
+          fi
+          CHUNK_KEY="js/lib/mermaid/chunks/mermaid.esm.min/$(basename "$FIRST_CHUNK_PATH")"
+
+          fail=0
+          for KEY in "$ENTRY_KEY" "$CHUNK_KEY"; do
+            URL="$BUCKET_URL/$KEY"
+            STATUS=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 -I "$URL" || echo "000")
+            if [ "$STATUS" = "200" ]; then
+              echo "✅ $STATUS  $URL"
+            else
+              echo "❌ $STATUS  $URL"
+              fail=1
+            fi
+          done
+          if [ "$fail" != "0" ]; then
+            echo ""
+            echo "Mermaid runtime is NOT fully reachable on S3."
+            echo "Articles that embed Mermaid diagrams will fail to render with"
+            echo "  'Failed to fetch dynamically imported module: …mermaid.esm.min.mjs'"
+            echo "in the browser console. Check scripts/deploy-s3.sh."
+            exit 1
+          fi
 
   # ── Fix MIME types on existing S3 objects (manual trigger only) ──
   fix-mimetypes:
