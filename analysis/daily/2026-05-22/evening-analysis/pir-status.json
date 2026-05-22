@@ -1,0 +1,76 @@
+{
+  "schema": "pir-status/1.0",
+  "generatedAt": "2026-05-22T19:40:00Z",
+  "date": "2026-05-22",
+  "subfolder": "evening-analysis",
+  "pirsTotal": 5,
+  "pirsActive": 4,
+  "pirsResolved": 0,
+  "pirsSatisfied": 1,
+  "pirs": [
+    {
+      "id": "PIR-01",
+      "title": "SD Voting Discipline as Election Approaches",
+      "status": "active",
+      "priority": "medium",
+      "description": "Track SD voting cohesion and any signs of coalition defection on key votes",
+      "activatedDate": "2026-05-21",
+      "lastUpdatedDate": "2026-05-22",
+      "nextCollectionPoint": "SfU37 August vote — watch for SD demands for additional measures",
+      "satisfactionCriteria": "SD votes consistently with Tidö on all major legislation through election",
+      "notes": "No SD defection signals in today's output. SD written questions in non-core policy areas."
+    },
+    {
+      "id": "PIR-02",
+      "title": "MP Electoral Threshold Position",
+      "status": "active",
+      "priority": "high",
+      "description": "Monitor MP polling against 4% parliamentary threshold",
+      "activatedDate": "2026-05-22",
+      "lastUpdatedDate": "2026-05-22",
+      "nextCollectionPoint": "First Novus/SIFO post-22 May tracker",
+      "satisfactionCriteria": "MP consistently above 5% in polls OR falls below 4% (resolved either direction)",
+      "alertThreshold": "Below 4.5% in any tracker",
+      "notes": "ACTIVATED: MP filed two counter-motions (HD024191, HD024192) confirming civil liberties differentiation strategy. 40% probability of threshold failure."
+    },
+    {
+      "id": "PIR-03",
+      "title": "Education Reform Implementation Readiness",
+      "status": "active",
+      "priority": "high",
+      "description": "Track mobile ban and vocational reform implementation preparedness",
+      "activatedDate": "2026-05-22",
+      "lastUpdatedDate": "2026-05-22",
+      "nextCollectionPoint": "Skolverket guidance publication; Lärarförbundet formal position",
+      "satisfactionCriteria": "Smooth school opening August 2026 with mobile ban in place",
+      "alertThreshold": "Teacher union formal strike threat or non-compliance guidance",
+      "notes": "Committee reports published (UbU22, UbU27). Implementation window July-August 2026."
+    },
+    {
+      "id": "PIR-04",
+      "title": "Immigration Tightening Political Timing",
+      "status": "active",
+      "priority": "high",
+      "description": "Monitor SfU37 August 2026 passage and political impact",
+      "activatedDate": "2026-05-21",
+      "lastUpdatedDate": "2026-05-22",
+      "nextCollectionPoint": "SfU37 full text publication; August committee session scheduling",
+      "satisfactionCriteria": "SfU37 passes August 13 as planned without major incident",
+      "alertThreshold": "Migration crisis event June-August 2026; L coalition stress",
+      "notes": "CONFIRMED: SfU37 registered 22 May with August 2026 decision date. Strategic timing confirmed."
+    },
+    {
+      "id": "PIR-05",
+      "title": "ECHR/CRC Pressure on Prop 267 (Security Deportation)",
+      "status": "active",
+      "priority": "high",
+      "description": "Monitor international human rights pressure on security deportation child detention provisions",
+      "activatedDate": "2026-05-22",
+      "lastUpdatedDate": "2026-05-22",
+      "nextCollectionPoint": "JuU scheduling for HD024192; civil society statements",
+      "satisfactionCriteria": "No formal international challenge before election; JuU rejects HD024192",
+      "alertThreshold": "UNHCR or UNICEF Sweden issues formal statement; Council of Europe secretariat acknowledges concern",
+      "notes": "NEW PIR: Activated by HD024192 filing. ECHR/CRC arguments well-founded. Civil society activation likely."
+    }
+  ]
+}
