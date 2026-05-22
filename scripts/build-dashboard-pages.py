@@ -432,6 +432,13 @@ def build_dashboard_page(
     section_p = first_p_text(section_html)
     page_title = f'{section_h2} | {meta.site_name}'
     page_description = (section_p or section_h2)[:300]
+    # Google structured data requires description ≥ 50 chars.  When the
+    # section has no <p> (e.g. committees, ministers) the h2 alone is often
+    # shorter than that.  Extend with the per-language site description so
+    # the fallback stays properly localised.
+    if len(page_description) < 50:
+        extended = f'{section_h2}. {meta.description}'
+        page_description = extended[:300]
 
     # Rebuild head: drop the original <head> body since meta varies and
     # redo it from scratch with dashboard-specific values, then append the
