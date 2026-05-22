@@ -6,7 +6,7 @@ date: 2026-05-21
 subfolder: propositions
 slug: 2026-05-21-propositions
 source_folder: analysis/daily/2026-05-21/propositions
-generated_at: 2026-05-21T07:11:26.237Z
+generated_at: 2026-05-22T12:25:07.529Z
 language: en
 layout: article
 ---
@@ -110,6 +110,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Economic Context](#rm-economic-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Implications](#rm-electoral-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Eu Context](#rm-eu-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Executive Summary](#rm-executive-summary) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Fiscal Impact](#rm-fiscal-impact) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Key Propositions](#rm-key-propositions) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -1509,6 +1522,1196 @@ The proposition operates within the EU security framework:
 
 *Pass 1 — EU context analysis*
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز تنفيذي — مقترحات الحكومة السويدية 2026-05-21
+
+**التصنيف**: OSINT عام · **الثقة**: متوسطة إلى عالية · **المؤلف**: خط أنابيب استخبارات Riksdagsmonitor
+
+### 🎯 تقييم الموقف الموجز
+
+في الفترة من 30 أبريل إلى 7 مايو 2026، قدّمت حكومة كريسترسون (تحالف تيدو — M، KD، L + SD كحزب داعم) **10 مقترحات برلمانية** في سباق تشريعي منسّق. يهيمن على الحزمة هيكلان استراتيجيان: **(1) هيكل هجرة من أربعة مقترحات** (HD03267، HD03262، HD03263، HD03265) يلغي تصريح الإقامة الدائم كمسار قياسي، ويعزز آلية الترحيل، ويُنشئ إجراءً سريعًا لترحيل التهديدات الأمنية — المرحلة الأخيرة من التقارب السويدي مع المعايير الاسكندنافية التقييدية؛ و**(2) تحديث الحوكمة الرقمية** (HD03250، HD03261) الذي يُنشئ هوية إلكترونية حكومية ويوسع رقابة Skatteverket على سجلات السكان. مع 115 يومًا حتى انتخابات سبتمبر 2026، يسري مُضاعف DIW ×1.5 على عنقود الهجرة بأكمله. أثقل العناصر هو HD03262 (إلغاء PUT + التكيف مع ميثاق اللجوء الأوروبي، DIW المقدّر ~4.2).
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 قرارات يدعمها هذا الملف
+
+1. **المجتمع المدني/القانوني**: إعداد آراء قانونية من منظمة العفو الدولية وMHCR ونقابة المحامين بشأن HD03267 (المادة 6 من الاتفاقية الأوروبية لحقوق الإنسان، أدلة سرية) وHD03262 (التوافق مع اتفاقية اللاجئين). **المحفّز**: انفتاح مداولات لجنة SfU ونشر رأي Lagrådet (المقدّر يونيو 2026). الثقة: **عالية**.
+
+2. **وحدة المخاطر السياسية**: تتبع موقف حزب L (Liberalernas) من أحكام سيادة القانون في HD03267. **المحفّز**: انفتاح مداولات لجنة JuU. الثقة: **متوسطة**.
+
+3. **الحوكمة الرقمية**: إعلام قطاع التكنولوجيا بالجدول الزمني للهوية الإلكترونية الحكومية HD03250 وتأثير BankID التنافسي. **المحفّز**: جلسة استماع لجنة FiU. الثقة: **متوسطة إلى عالية**.
+
+### قراءة 60 ثانية
+
+- **الأكثر أهمية**: HD03262 — إلغاء تصريح الإقامة الدائم كمسار قياسي + التكيف مع ميثاق اللجوء الأوروبي (DIW ~4.2).
+- **الأكثر تعقيدًا دستوريًا**: HD03267 — ترحيل مؤهَّل للتهديدات الأمنية بأدلة سرية (DIW ~3.8). توتر مع المادة 6 من الاتفاقية الأوروبية لحقوق الإنسان.
+- **الأكثر تحميلًا سياسيًا قبل الانتخابات**: الرباعي الهجري (HD03262/67/63/65) هو الإنجاز التشريعي الرئيسي لتحالف تيدو.
+- **الأكثر ابتكارًا تقنيًا**: HD03250 — الهوية الإلكترونية الحكومية تنهي الاعتماد السويدي الفريد على BankID.
+- **الأكثر دعمًا للديمقراطية**: HD03258 — شفافية تمويل الأحزاب تعالج توصيات GRECO المتراكمة.
+
+### المحفّزات المستقبلية الرئيسية (72 ساعة / 7 أيام)
+
+🔴 **رأي Lagrådet بشأن HD03267** (النشر المقدّر يونيو 2026).
+
+🟡 **مداولات لجنة SfU بشأن HD03262/263/265** (الأسبوع الحالي).
+
+🟢 **استشارة IMY (هيئة حماية البيانات) بشأن HD03261**.
+
+### مصفوفة القرارات الرئيسية
+
+| القرار | المحفّز | Horizon | الثقة |
+|---|---|---|---|
+| إعداد طعن قانوني (HD03267) | نشر رأي Lagrådet | 3–6 أسابيع | HIGH |
+| موقف تحالف L | انفتاح مداولات JuU | 2–4 أسابيع | MEDIUM |
+| تحليل تنافسية BankID (HD03250) | جلسة FiU مقررة | 4–6 أسابيع | MEDIUM-HIGH |
+| تصريحات رسمية UNHCR/منظمة العفو (HD03262) | استشارة SfU مفتوحة | 4–8 أسابيع | HIGH |
+| تقييم طاقة Migrationsverket | تقرير الربع الثاني للوكالة | 6–8 أسابيع | MEDIUM |
+
+### ملخص المخاطر
+
+- **المستوى 1 (منظومي)**: تنفيذ HD03262 → مخاطر طاقة عالية.
+- **المستوى 2 (دستوري)**: إجراء الأدلة السرية في HD03267 → طعن أمام المحكمة الأوروبية لحقوق الإنسان خلال 5 سنوات.
+- **المستوى 3 (سياسي)**: مخاطر انتشار "قضية التعاطف" للعنقود الهجري فيروسيًا.
+- **المستوى 4 (رقمي)**: البنية التحتية للهوية المركزية HD03250 → مخاطر عند الرقابة غير الكافية.
+
+**قاعدة الأدلة**: 10 وثائق مصدر أولي + IMF WEO-2026-04 + تحليل OSINT. تم تأكيد MCP 2026-05-21T06:53:22Z.
+
+---
+
+### 🔁 ملحق الجولة الثانية — الإسناد المتقاطع والتحسينات
+
+**تحسينات الجولة الثانية**: تمت ترقية مستوى الثقة من متوسط إلى متوسط-عالٍ لنتائج التشريع. 115 يومًا حتى انتخابات 13 سبتمبر 2026. ثغرة إجرائية في HD03267: تفتقر السويد حاليًا إلى نظام "säkerhetsombud".
+
+---
+
+يمثل HD03267 المقترح الأكثر تعقيدًا من الناحية الدستورية في الحزمة. تفتقر السويد حاليًا إلى نظام "säkerhetsombud" (محامٍ متخصص يتمتع بتصريح أمني) يمكنه تمثيل الطرف المُرحَّل في الإجراءات المتعلقة بالأدلة السرية. وبدون مثل هذه الضمانة الإجرائية، سيحدد Lagrådet على الأرجح تعارضًا مع المادة 6 من الاتفاقية الأوروبية لحقوق الإنسان ("الحق في محاكمة عادلة"). ومن الناحية التاريخية، كانت Liberalernas (L) هي عضو الائتلاف الأكثر احتمالًا للضغط على مثل هذه الضمانات الإجرائية. إذا شرطت L دعمها على إدراج هذا الحكم، فقد يُشكّل ذلك أول تصدع علني في الائتلاف قبل 111 يومًا من الانتخابات.
+
+الرباعي الهجري (HD03262/63/65/67) ليس مجرد سياسة — بل هو سيناريو حملة انتخابية. مع 115 يومًا حتى انتخابات 13 سبتمبر 2026، ستهيمن هذه المقترحات الأربعة على النقاش السياسي. ستحمل SD حملات مكثفة لصالح جميعها. لا تستطيع S وMP حجبها برلمانيًا، لكنها ستستخدمها كأساس للتعبئة. السؤال الحاسم هو ما إذا كانت L ستبتعد عن المشكلات القانونية لـHD03267، مما قد يضعف الرواية الإجمالية لتحالف تيدو.
+
+يُنهي HD03250 (الهوية الإلكترونية الحكومية) اعتماد السويد الفريد على BankID ويضع الأساس لامتثال eIDAS 2.0 الأوروبي. ومع ذلك، فإن مخاطر التنفيذ حقيقية: ترحيل ملايين المستخدمين من BankID إلى الهوية الإلكترونية الحكومية يتطلب فترات انتقالية وتدابير تدريبية.
+
+---
+
+*economicProvenance: { "provider": "imf", "dataflow": "WEO", "vintage": "WEO-2026-04", "retrieved_at": "2026-05-21T07:10:00Z" }*
+
+<!-- source-sha: bdc7c0fc02b5c1027cadc022718d4793fb0c07a3 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_da.md -->
+
+**Klassificering**: Offentlig OSINT · **Tillid**: MEDIUM-HØJ · **Forfatter**: Riksdagsmonitor Intelligence Pipeline
+
+### 🎯 Kortfattet situationsvurdering
+
+Den 30. april – 7. maj 2026 fremsatte Kristersson-regeringen (Tidö-koalitionen — M, KD, L + SD som støtteparti) **10 parlamentariske propositioner** i et koordineret lovsprints inden valget. Pakken domineres af to strategiske arkitekturer: **(1) en fire-propositions migrationsarkitektur** (HD03267, HD03262, HD03263, HD03265), der afvikler den permanente opholdstilladelse som standardvej, forstærker udvisningsapparatet og skaber en hurtigsporudvisningsprocedure for sikkerhedstrusler — den endelige fase i Sveriges årtidlange konvergens mod nordiske restriktive normer; og **(2) en digital styrningsmodernisering** (HD03250, HD03261), der etablerer en statslig e-legitimation og udvider Skatteverkets befolkningsregistertilsyn. Med 115 dage til valget i september 2026 gælder 1,5× DIW-multiplikatoren for hele migrationsklyngen. Det tungestvejende element er HD03262 (afskaffelse af PUT + EU-asylpakttilpasning, estimeret DIW ~4,2), som er både den forfatningsmæssigt mest robuste og den politisk mest ladede proposition i pakken.
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 beslutninger dette underlag støtter
+
+1. **Civilsamfund/juridisk**: Forbered Amnesty, UNHCR, Advokatsamfundets juridiske udtalelser om HD03267 (ECHR artikel 6, klassificerede bevisbetingelser) og HD03262 (kompatibilitet med Flygtningekonventionen). **Udløser**: SfU-udvalgets behandling åbnes og Lagrådets udtalelse offentliggøres (estimeret juni 2026). Tillid: **HØJ**.
+
+2. **Politisk risikoafdeling**: Spor L's (Liberalernes) positionering om HD03267's retssikkerhedsbestemmelser — hvis L betinger støtte på indførelse af "säkerhetsombud" (sikkerhedsclearet specialadvokat), signalerer det intern koalitionsspænding, der vil fremkomme i valgkampen 2026. **Udløser**: JuU-udvalgets deliberationer åbnes. Tillid: **MEDIUM**.
+
+3. **Digital styring**: Orienter teknologisektoren om HD03250's tidslinje for statslig e-ID og BankIDs konkurrencemæssige påvirkning. Markér HD03261's Skatteverkets hjembesøgsbeføjelser som kræver DPIA fra Datatilsynet (IMY). **Udløser**: FiU's udvalgshosting. Tillid: **MEDIUM-HØJ**.
+
+### 60-sekunders læsning
+
+- **Mest betydningsfuld**: HD03262 — afskaffelse af permanent opholdstilladelse som standardvej + EU-asylpakttilpasning (DIW ~4,2). Strukturel ændring af svensk immigrationslovgivning; samtidig en EU-forpligtelse.
+- **Mest forfatningsmæssigt kompleks**: HD03267 — kvalificeret udvisning af sikkerhedstrusler med klassificeret bevis (DIW ~3,8). ECHR artikel 6-spænding kræver Lagrådet-godkendte proceduremæssige sikkerhedsforanstaltninger.
+- **Mest politisk ladet inden valget**: Migrationsskvartetten (HD03262/67/63/65) er Tidö-regeringens primære lovgivningsmæssige præstation inden valget. SD vil kampagne på alle fire; oppositionen kan ikke blokere.
+- **Mest teknisk innovativt**: HD03250 — statslig e-ID afslutter Sveriges unikke BankID-afhængighed; EU eIDAS 2.0-overensstemmelse.
+- **Mest demokratifremmende**: HD03258 — transparens i partifinansering imødekommer årtiers GRECO-anbefalinger og bekymringer om udenlandsk indflydelse.
+- **Fælles tråd**: Justitsdepartementet bærer 5 af 10 propositioner; Finansdepartementet bærer 3. Det er Gunnar Strömmers lovgivningsarv inden valget.
+
+### Top fremtidige udløsere (72h / 7d)
+
+🔴 **Lagrådets udtalelse om HD03267** (estimeret offentliggørelse juni 2026): Hvis Lagrådet rejser uløste artikel 6/ECHR-indsigelser, kan L betinge støtte — overvåg JuU-udvalgsprocessen.
+
+🟡 **SfU-udvalgets behandling af HD03262/263/265** (indeværende uge): Oppositionspartier indgiver første reservationsmotioner; sætter tonen for debatten inden valget.
+
+🟢 **IMY-konsultation (Datatilsynet) om HD03261**: DPA's vurdering af Skatteverkets hjembesøgsbeføjelser; udformer implementeringssikkerhedsforanstaltninger.
+
+### Nøglebeslutningsmatrix
+
+| Beslutning | Udløser | Horizon | Tillid |
+|---|---|---|---|
+| Forberedelse af juridisk udfordring (HD03267) | Lagrådets udtalelse offentliggjort | 3–6 uger | HIGH |
+| L's koalitionspositionering | JuU's deliberationer åbnes | 2–4 uger | MEDIUM |
+| BankID-konkurrenceanalyse (HD03250) | FiU-høring planlagt | 4–6 uger | MEDIUM-HIGH |
+| UNHCR/Amnestys formelle udtalelser (HD03262) | SfU-konsultation åbnes | 4–8 uger | HIGH |
+| Migrationsverkets kapacitetsvurdering | Agenturets Q2-rapport offentliggjort | 6–8 uger | MEDIUM |
+
+### Risikosammenfatning
+
+- **Niveau 1 (systemisk)**: HD03262-implementering på Migrationsverket → kapacitetsrisiko HØJ; EU-Kommissionens overvågning pågår.
+- **Niveau 2 (forfatning)**: HD03267's klassificerede bevisprocedure → ECtHR-udfordring HØJ inden for 5 år efter ikrafttrædelse.
+- **Niveau 3 (politisk)**: Migrationsklyngens "sympatisag" der spreder sig viralt → valgnarrativsrisiko for regeringen. LAV sandsynlighed, HØJ påvirkning.
+- **Niveau 4 (digital)**: HD03250 centraliseret identitetsinfrastruktur → risiko for enkelt fejlpunkt og statsovervågning ved utilstrækkelig uafhængigt tilsyn.
+
+**Bevismateriale**: 10 primærkilder (Riksdag API via riksdag-regering MCP) + IMF WEO-2026-04 økonomiisk kontekst + OSINT politisk analyse. MCP bekræftet live 2026-05-21T06:53:22Z.
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_de.md -->
+
+**Klassifizierung**: Öffentliches OSINT · **Konfidenz**: MITTEL-HOCH · **Autor**: Riksdagsmonitor Intelligence Pipeline
+
+### 🎯 Kurze Lagebeurteilung
+
+Vom 30. April bis 7. Mai 2026 brachte die Kristersson-Regierung (Tidö-Koalition — M, KD, L + SD als Unterstützungspartei) **10 parlamentarische Propositionern** in einem koordinierten Gesetzgebungssprint ein. Das Paket wird von zwei strategischen Architekturen dominiert: **(1) einer Vier-Propositionern-Migrationsarchitektur** (HD03267, HD03262, HD03263, HD03265), die den permanenten Aufenthaltstitel als Standardweg abschafft, den Abschiebungsapparat stärkt und ein Schnellverfahren zur Ausweisung von Sicherheitsbedrohungen schafft — die Abschlussphase von Schwedens jahrzehntelanger Konvergenz zu nordischen restriktiven Normen; und **(2) eine Modernisierung der digitalen Verwaltung** (HD03250, HD03261), die eine staatliche eID einführt und die Bevölkerungsmeldeüberwachung von Skatteverket ausweitet. Mit 115 Tagen bis zur Wahl im September 2026 gilt der 1,5× DIW-Multiplikator für den gesamten Migrationscluster. Das gewichtigste Element ist HD03262 (PUT-Abschaffung + EU-Asylpakt-Anpassung, geschätztes DIW ~4,2).
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 Entscheidungen, die diese Unterlage unterstützt
+
+1. **Zivilgesellschaft/Rechtlich**: Bereiten Sie rechtliche Stellungnahmen von Amnesty, UNHCR und der Anwaltskammer zu HD03267 (EMRK Artikel 6, geheime Beweismittel) und HD03262 (Kompatibilität mit der Flüchtlingskonvention) vor. **Auslöser**: Ausschussberatung SfU eröffnet, Lagrådets Gutachten veröffentlicht (geschätzt Juni 2026). Konfidenz: **HOCH**.
+
+2. **Politische Risikoabteilung**: Verfolgen Sie L's (Liberalernas) Positionierung zu HD03267's Rechtsstaatlichkeitsbestimmungen. **Auslöser**: JuU-Ausschussberatungen eröffnen. Konfidenz: **MITTEL**.
+
+3. **Digitale Verwaltung**: Informieren Sie den Technologiesektor über HD03250's Zeitplan für staatliche eID und BankIDs Wettbewerbsauswirkungen. Kennzeichnen Sie HD03261's Skatteverket-Hausbesuchsbefugnisse als IMY-DPIA-Anforderung. **Auslöser**: FiU-Anhörung. Konfidenz: **MITTEL-HOCH**.
+
+### 60-Sekunden-Lektüre
+
+- **Bedeutendste**: HD03262 — Abschaffung des permanenten Aufenthaltstitels + EU-Asylpakt-Anpassung (DIW ~4,2).
+- **Verfassungsrechtlich komplexeste**: HD03267 — qualifizierte Ausweisung von Sicherheitsbedrohungen mit geheimen Beweisen (DIW ~3,8). EMRK-Artikel-6-Spannung.
+- **Politisch am stärksten aufgeladen vor der Wahl**: Migrationenkvartett (HD03262/67/63/65) ist die primäre Gesetzgebungsleistung der Tidö-Regierung. SD wird für alle vier Wahlkampf machen.
+- **Technisch innovativste**: HD03250 — staatliche eID beendet Schwedens einzigartigen BankID-Abhängigkeit; EU eIDAS 2.0-Konformität.
+- **Demokratieförderlichste**: HD03258 — Transparenz der Parteienfinanzierung adressiert jahrzehntelange GRECO-Empfehlungen.
+- **Gemeinsamer Faden**: Justitsdepartementet trägt 5 von 10 Propositionern; Finansdepartementet 3.
+
+### Top zukünftige Auslöser (72h / 7d)
+
+🔴 **Lagrådets Gutachten zu HD03267** (geschätzte Veröffentlichung Juni 2026).
+
+🟡 **SfU-Ausschussberatungen zu HD03262/263/265** (laufende Woche).
+
+🟢 **IMY-Konsultation zu HD03261** (Datenschutzbehörde).
+
+### Entscheidungsschlüsselmatrix
+
+| Entscheidung | Auslöser | Horizon | Konfidenz |
+|---|---|---|---|
+| Rechtliche Herausforderung vorbereiten (HD03267) | Lagrådets Gutachten veröffentlicht | 3–6 Wochen | HIGH |
+| L's Koalitionspositionierung | JuU-Beratungen eröffnen | 2–4 Wochen | MEDIUM |
+| BankID-Wettbewerbsanalyse (HD03250) | FiU-Anhörung geplant | 4–6 Wochen | MEDIUM-HIGH |
+| UNHCR/Amnestys formelle Stellungnahmen (HD03262) | SfU-Konsultation eröffnet | 4–8 Wochen | HIGH |
+| Migrationsverket-Kapazitätsbewertung | Q2-Bericht der Behörde veröffentlicht | 6–8 Wochen | MEDIUM |
+
+### Risikozusammenfassung
+
+- **Ebene 1 (systemisch)**: HD03262-Implementierung → Kapazitätsrisiko HOCH.
+- **Ebene 2 (verfassungsrechtlich)**: HD03267's geheimes Beweisverfahren → ECtHR-Herausforderung HOCH innerhalb 5 Jahren.
+- **Ebene 3 (politisch)**: Migrationscluster's "Sympathiefall"-Viralrisiko → Wahlnarrativrisiko für die Regierung.
+- **Ebene 4 (digital)**: HD03250 zentralisierte Identitätsinfrastruktur → Risiko bei unzureichender Aufsicht.
+
+**Belege**: 10 Primärquellendokumente + IMF WEO-2026-04 + OSINT. MCP bestätigt 2026-05-21T06:53:22Z.
+
+---
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_es.md -->
+
+**Clasificación**: OSINT público · **Confianza**: MEDIO-ALTO · **Autor**: Riksdagsmonitor Intelligence Pipeline
+
+### 🎯 Evaluación de situación sintética
+
+Del 30 de abril al 7 de mayo de 2026, el gobierno Kristersson (coalición Tidö — M, KD, L + SD como apoyo parlamentario) presentó **10 proposiciones parlamentarias** en un sprint legislativo coordinado. El paquete está dominado por dos arquitecturas estratégicas: **(1) una arquitectura migratoria de cuatro proposiciones** (HD03267, HD03262, HD03263, HD03265) que abolye el permiso de residencia permanente como vía estándar, refuerza el aparato de expulsión y crea un procedimiento de expulsión acelerada para amenazas a la seguridad — la fase final de la convergencia sueca de décadas hacia normas nórdicas restrictivas; y **(2) una modernización de la gobernanza digital** (HD03250, HD03261) que establece una eID estatal y amplía la supervisión del registro de población por parte de Skatteverket. Con 115 días para las elecciones de septiembre de 2026, el multiplicador 1,5× DIW se aplica a todo el clúster migratorio. El elemento de mayor peso es HD03262 (abolición del PUT + adaptación al Pacto de Asilo de la UE, DIW estimado ~4,2).
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 decisiones que esta nota apoya
+
+1. **Sociedad civil/jurídico**: Preparar dictámenes jurídicos de Amnistía Internacional, ACNUR y el Colegio de Abogados sobre HD03267 (CEDH artículo 6, pruebas clasificadas) y HD03262 (compatibilidad con la Convención de Refugiados). **Desencadenante**: Apertura de las deliberaciones del comité SfU y publicación del dictamen del Lagrådet (estimado junio 2026). Confianza: **ALTA**.
+
+2. **Unidad de riesgo político**: Rastrear el posicionamiento de L (Liberalernas) sobre las disposiciones de seguridad jurídica de HD03267. **Desencadenante**: Apertura de las deliberaciones del comité JuU. Confianza: **MEDIA**.
+
+3. **Gobernanza digital**: Informar al sector tecnológico sobre el calendario de la eID estatal HD03250 y el impacto competitivo de BankID. Marcar las competencias de visita domiciliaria de Skatteverket en HD03261 como requisito de EIPD del IMY. **Desencadenante**: Audiencia del comité FiU. Confianza: **MEDIO-ALTA**.
+
+### Lectura de 60 segundos
+
+- **Más significativa**: HD03262 — abolición del permiso de residencia permanente como vía estándar + adaptación al Pacto de Asilo de la UE (DIW ~4,2).
+- **Más compleja constitucionalmente**: HD03267 — expulsión calificada de amenazas a la seguridad con pruebas clasificadas (DIW ~3,8). Tensión con el artículo 6 del CEDH.
+- **Más cargada políticamente antes de las elecciones**: El cuarteto migratorio (HD03262/67/63/65) es el logro legislativo primario de la coalición Tidö.
+- **Más innovadora técnicamente**: HD03250 — la eID estatal pone fin a la dependencia sueca única de BankID; conformidad con eIDAS 2.0 de la UE.
+- **Más favorable a la democracia**: HD03258 — la transparencia del financiamiento de partidos aborda recomendaciones GRECO de larga data.
+- **Hilo conductor**: Justitsdepartementet lleva 5 de las 10 proposiciones; Finansdepartementet lleva 3.
+
+### Principales desencadenantes futuros (72h / 7d)
+
+🔴 **Dictamen del Lagrådet sobre HD03267** (publicación estimada junio 2026).
+
+🟡 **Deliberaciones del comité SfU sobre HD03262/263/265** (semana en curso).
+
+🟢 **Consulta del IMY (autoridad de protección de datos) sobre HD03261**.
+
+### Matriz de decisiones clave
+
+| Decisión | Desencadenante | Horizon | Confianza |
+|---|---|---|---|
+| Preparación de impugnación jurídica (HD03267) | Dictamen del Lagrådet publicado | 3–6 semanas | HIGH |
+| Posicionamiento de coalición de L | Deliberaciones JuU abiertas | 2–4 semanas | MEDIUM |
+| Análisis competitivo de BankID (HD03250) | Audiencia FiU programada | 4–6 semanas | MEDIUM-HIGH |
+| Declaraciones formales ACNUR/Amnistía (HD03262) | Consulta SfU abierta | 4–8 semanas | HIGH |
+| Evaluación de capacidad Migrationsverket | Informe T2 de la agencia publicado | 6–8 semanas | MEDIUM |
+
+### Resumen de riesgos
+
+- **Nivel 1 (sistémico)**: Implementación de HD03262 → riesgo de capacidad ALTO.
+- **Nivel 2 (constitucional)**: Procedimiento de pruebas clasificadas de HD03267 → impugnación ante el TEDH ALTA dentro de 5 años.
+- **Nivel 3 (político)**: Riesgo viral de "caso de simpatía" del clúster migratorio → riesgo narrativo electoral para el gobierno.
+- **Nivel 4 (digital)**: Infraestructura de identidad centralizada HD03250 → riesgo con supervisión insuficiente.
+
+**Base probatoria**: 10 documentos fuente primarios + IMF WEO-2026-04 + análisis OSINT. MCP confirmado 2026-05-21T06:53:22Z.
+
+---
+
+### 🔁 Adenda Pasada 2 — Referencias cruzadas y mejoras
+
+**Mejoras Pasada 2**: Confianza revisada de MEDIO a MEDIO-ALTO para resultados legislativos. 115 días hasta las elecciones del 13 de septiembre de 2026 — el cuarteto migratorio es material electoral antes de ser ley. Brecha procedimental HD03267: Suecia carece actualmente de un sistema de "säkerhetsombud".
+
+---
+
+*economicProvenance: { "provider": "imf", "dataflow": "WEO", "vintage": "WEO-2026-04", "retrieved_at": "2026-05-21T07:10:00Z" }*
+
+<!-- source-sha: bdc7c0fc02b5c1027cadc022718d4793fb0c07a3 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_fi.md -->
+
+**Luokitus**: Julkinen OSINT · **Varmuus**: MEDIUM-KORKEA · **Tekijä**: Riksdagsmonitor Intelligence Pipeline
+
+### 🎯 Lyhyt tilannekatsaus
+
+30. huhtikuuta – 7. toukokuuta 2026 Kristersson-hallitus (Tidö-koalitio — M, KD, L + SD tukipuolueena) esitti **10 parlamentaarista esitystä** koordinoidussa lainsäädäntösprintissä ennen vaaleja. Pakettia hallitsevat kaksi strategista arkkitehtuuria: **(1) neljän esityksen maahanmuuttoarkkitehtuuri** (HD03267, HD03262, HD03263, HD03265), joka purkaa pysyvän oleskeluluvan vakioreittinä, vahvistaa käännytyskoneistoa ja luo pikakaistan turvallisuusuhkien karkottamiselle — Ruotsin vuosikymmenen mittaisen lähentymisen pohjoismaisia rajoittavia normeja kohti viimeinen vaihe; ja **(2) digitaalisen hallinnon modernisaatio** (HD03250, HD03261), joka perustaa valtiollisen sähköisen henkilöllisyystodistuksen ja laajentaa Skatteverketin väestörekisteriä koskevia valvontavaltuuksia. Syyskuun 2026 vaaleihin on 115 päivää; koko maahanmuuttoklusteri soveltaa 1,5× DIW-kerrointa. Suuripainoisin kohta on HD03262 (PUT:n lakkauttaminen + EU:n turvapaikkapaktin sovitus, arvioitu DIW ~4,2).
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 päätöstä, joita tämä analyysi tukee
+
+1. **Kansalaisyhteiskunta/oikeudellinen**: Valmistele Amnestyn, UNHCR:n ja Asianajajaliton oikeudelliset lausunnot HD03267:stä (ECHR 6 artikla, salainen todistusaineisto) ja HD03262:sta (yhteensopivuus pakolaissopimuksen kanssa). **Käynnistin**: SfU:n valiokuntakäsittely avautuu ja Lagrådets-lausunto julkaistaan (arvioitu kesäkuu 2026). Varmuus: **KORKEA**.
+
+2. **Poliittinen riskitiimi**: Seuraa L:n (Liberalernas) asemoitumista HD03267:n oikeusturvamääräyksissä. **Käynnistin**: JuU:n käsittelykokous avautuu. Varmuus: **MEDIUM**.
+
+3. **Digitaalinen hallinto**: Informoi teknologiasektoria HD03250:n aikataulusta ja BankID:n kilpailuvaikutuksesta. Merkitse HD03261:n Skatteverketin kotikäyntivaltuudet IMY:n DPIA-arvioinnin kohteeksi. **Käynnistin**: FiU:n kuuleminen. Varmuus: **MEDIUM-KORKEA**.
+
+### 60 sekunnin tiivistelmä
+
+- **Merkittävin**: HD03262 — pysyvän oleskeluluvan vakioreitin lakkauttaminen + EU:n turvapaikkapaktin sovitus (DIW ~4,2).
+- **Perustuslaillisesti monimutkaisin**: HD03267 — turvallisuusuhan karkottaminen salaisella todisteella (DIW ~3,8). ECHR 6 artiklan jännite.
+- **Poliittisesti latautunein ennen vaaleja**: Maahanmuuttokvartetti (HD03262/67/63/65) on Tidö-hallituksen ensisijainen vaalisaavutus.
+- **Teknisesti innovatiivisin**: HD03250 — valtiollinen sähköinen henkilöllisyystodistus päättää Ruotsin ainutlaatuisen BankID-riippuvuuden.
+- **Demokratiaselle myönteisin**: HD03258 — puolueiden rahoituksen avoimuus vastaa vuosikymmenen GRECO-suosituksiin.
+- **Yhteinen lanka**: Oikeusministeriö kantaa 5/10 esityksistä; Valtiovarainministeriö 3.
+
+### Tärkeimmät tulevat käynnistimet (72h / 7d)
+
+🔴 **Lagrådets-lausunto HD03267:stä** (arvioitu julkaisu kesäkuu 2026).
+
+🟡 **SfU:n HD03262/263/265-valiokuntakäsittely** (kuluva viikko).
+
+🟢 **IMY:n (tietosuojaviranomainen) konsultaatio HD03261:stä**.
+
+### Keskeisten päätösten matriisi
+
+| Päätös | Käynnistin | Horizon | Varmuus |
+|---|---|---|---|
+| Oikeudellisen haasteen valmistelu (HD03267) | Lagrådets-lausunto julkaistu | 3–6 viikkoa | HIGH |
+| L:n koalitioasemoituminen | JuU:n käsittelykokoukset avautuvat | 2–4 viikkoa | MEDIUM |
+| BankID:n kilpailuvaikutusanalyysi (HD03250) | FiU:n kuuleminen suunniteltu | 4–6 viikkoa | MEDIUM-HIGH |
+| UNHCR:n/Amnestyn viralliset lausunnot (HD03262) | SfU:n konsultaatio avautuu | 4–8 viikkoa | HIGH |
+| Migrationsverketin kapasiteettiarvio | Viraston Q2-raportti julkaistu | 6–8 viikkoa | MEDIUM |
+
+### Riskiyhteenveto
+
+- **Taso 1 (systeeminen)**: HD03262:n toteutus Migrationsverketissä → kapasiteettiriski KORKEA.
+- **Taso 2 (perustuslaillinen)**: HD03267:n salainen todistusmenettely → ECtHR-haaste KORKEA 5 vuoden kuluessa.
+- **Taso 3 (poliittinen)**: Maahanmuuttoklusterin "sympatiatapauksen" viraalileviäminen → vaalinarratiivin riski hallitukselle.
+- **Taso 4 (digitaalinen)**: HD03250:n keskitetty identiteettiinfrastruktuuri → riski yhden vikapisteen ja valtion valvonnan suhteen.
+
+**Todistuspohja**: 10 primäärilähteen asiakirjaa + IMF WEO-2026-04 + OSINT. MCP vahvistettu 2026-05-21T06:53:22Z.
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_fr.md -->
+
+### 🎯 Évaluation de situation synthétique
+
+Du 30 avril au 7 mai 2026, le gouvernement Kristersson (coalition Tidö — M, KD, L + SD en soutien parlementaire) a soumis **10 propositions parlementaires** dans un sprint législatif coordonné. Le paquet est dominé par deux architectures stratégiques : **(1) une architecture migratoire à quatre propositions** (HD03267, HD03262, HD03263, HD03265) qui abolit le titre de séjour permanent comme voie standard, renforce le dispositif d'expulsion et crée une procédure d'expulsion accélérée pour les menaces à la sécurité — phase finale de la convergence suédoise décennale vers les normes restrictives nordiques ; et **(2) une modernisation de la gouvernance numérique** (HD03250, HD03261) instaurant une eID d'État et élargissant la surveillance des registres de population par Skatteverket. À 115 jours des élections de septembre 2026, le multiplicateur 1,5× DIW s'applique à l'ensemble du cluster migratoire. L'élément le plus lourd est HD03262 (abolition du PUT + adaptation au Pacte d'asile européen, DIW estimé ~4,2).
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 décisions que cette note soutient
+
+1. **Société civile/juridique** : Préparer les avis juridiques d'Amnesty, du HCR et du barreau sur HD03267 (CEDH article 6, preuves classifiées) et HD03262 (compatibilité avec la Convention des réfugiés). **Déclencheur** : Ouverture des délibérations du comité SfU et publication de l'avis du Lagrådet (estimé juin 2026). Confiance : **ÉLEVÉE**.
+
+2. **Cellule de risque politique** : Suivre le positionnement de L (Liberalernas) sur les dispositions de sécurité juridique de HD03267. **Déclencheur** : Ouverture des délibérations du comité JuU. Confiance : **MOYENNE**.
+
+3. **Gouvernance numérique** : Informer le secteur technologique sur le calendrier de l'eID étatique HD03250 et l'impact concurrentiel de BankID. Signaler les pouvoirs de visite à domicile de HD03261 comme nécessitant une AIPD de l'IMY. **Déclencheur** : Audition du comité FiU. Confiance : **MOYEN-ÉLEVÉ**.
+
+### Lecture en 60 secondes
+
+- **La plus significative** : HD03262 — abolition du titre de séjour permanent comme voie standard + adaptation au Pacte d'asile européen (DIW ~4,2).
+- **La plus complexe constitutionnellement** : HD03267 — expulsion qualifiée de menace sécuritaire avec preuves classifiées (DIW ~3,8). Tension avec l'article 6 de la CEDH.
+- **La plus chargée politiquement avant les élections** : Le quartet migratoire (HD03262/67/63/65) est la réalisation législative primaire de la coalition Tidö.
+- **La plus innovante techniquement** : HD03250 — l'eID d'État met fin à la dépendance suédoise unique à BankID ; conformité eIDAS 2.0 de l'UE.
+- **La plus favorable à la démocratie** : HD03258 — la transparence du financement des partis répond aux recommandations GRECO de longue date.
+- **Fil directeur** : Le Justitsdepartementet porte 5 des 10 propositions ; le Finansdepartementet 3.
+
+### Principaux déclencheurs futurs (72h / 7j)
+
+🔴 **Avis du Lagrådet sur HD03267** (publication estimée juin 2026).
+
+🟡 **Délibérations du comité SfU sur HD03262/263/265** (semaine en cours).
+
+🟢 **Consultation IMY (autorité de protection des données) sur HD03261**.
+
+### Matrice des décisions clés
+
+| Décision | Déclencheur | Horizon | Confiance |
+|---|---|---|---|
+| Préparation d'un recours juridique (HD03267) | Avis du Lagrådet publié | 3–6 semaines | HIGH |
+| Positionnement de coalition de L | Délibérations JuU ouvertes | 2–4 semaines | MEDIUM |
+| Analyse concurrentielle BankID (HD03250) | Audition FiU planifiée | 4–6 semaines | MEDIUM-HIGH |
+| Déclarations formelles UNHCR/Amnesty (HD03262) | Consultation SfU ouverte | 4–8 semaines | HIGH |
+| Évaluation de capacité Migrationsverket | Rapport T2 de l'agence publié | 6–8 semaines | MEDIUM |
+
+### Synthèse des risques
+
+- **Niveau 1 (systémique)** : Mise en œuvre HD03262 → risque de capacité ÉLEVÉ.
+- **Niveau 2 (constitutionnel)** : Procédure à preuves classifiées de HD03267 → recours devant la CrEDH ÉLEVÉ dans les 5 ans.
+- **Niveau 3 (politique)** : Risque viral "cas de sympathie" du cluster migratoire → risque narratif électoral pour le gouvernement.
+- **Niveau 4 (numérique)** : Infrastructure d'identité centralisée HD03250 → risque en cas de surveillance insuffisante.
+
+**Base probatoire** : 10 documents sources primaires + IMF WEO-2026-04 + analyse OSINT. MCP confirmé 2026-05-21T06:53:22Z.
+
+---
+
+### 🔁 Addendum Passe 2 — Références croisées et améliorations
+
+**Améliorations Passe 2** : Confiance revue de MOYEN à MOYEN-ÉLEVÉ pour les résultats législatifs. 115 jours jusqu'aux élections du 13 septembre 2026 — le quartet migratoire constitue un matériel électoral avant d'être une loi. Lacune procédurale HD03267 : la Suède manque actuellement d'un système de "säkerhetsombud".
+
+---
+
+*economicProvenance: { "provider": "imf", "dataflow": "WEO", "vintage": "WEO-2026-04", "retrieved_at": "2026-05-21T07:10:00Z" }*
+
+<!-- source-sha: bdc7c0fc02b5c1027cadc022718d4793fb0c07a3 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — הצעות חוק ממשלתיות 2026-05-21
+
+**סיווג**: OSINT ציבורי · **ביטחון**: בינוני-גבוה · **מחבר**: Riksdagsmonitor Intelligence Pipeline
+
+### 🎯 הערכת מצב תמציתית
+
+בין 30 באפריל ל-7 במאי 2026, הגישה ממשלת קריסטרסון (קואליציית טידו — M, KD, L + SD כמפלגת תמיכה) **10 הצעות חוק פרלמנטריות** בספרינט חקיקתי מתואם. החבילה נשלטת על ידי שתי ארכיטקטורות אסטרטגיות: **(1) ארכיטקטורת הגירה של ארבע הצעות חוק** (HD03267, HD03262, HD03263, HD03265) המבטלת את היתר השהייה הקבוע כמסלול סטנדרטי, מחזקת את מנגנון הגירוש ויוצרת נוהל גירוש מואץ לאיומי ביטחון — השלב הסופי בהתכנסות שוודית של עשורים לנורמות סקנדינביות מגבילות; ו-**(2) מודרניזציה של ממשל דיגיטלי** (HD03250, HD03261) המקימה זהות אלקטרונית ממשלתית ומרחיבה את פיקוח Skatteverket על מרשם האוכלוסין. עם 115 ימים לבחירות ספטמבר 2026, מכפיל DIW ×1.5 חל על אשכול ההגירה כולו. האלמנט הכבד ביותר הוא HD03262 (ביטול PUT + התאמה לאמנת המקלט האירופאית, DIW משוערת ~4.2).
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 החלטות שתקציר זה תומך בהן
+
+1. **חברה אזרחית/משפטית**: הכנת חוות דעת משפטיות של Amnesty International, UNHCR ולשכת עורכי הדין בנוגע ל-HD03267 (סעיף 6 ECHR, ראיות סודיות) ו-HD03262 (תאימות לאמנת הפליטים). **מנגנון הפעלה**: פתיחת דיוני ועדת SfU ופרסום חוות דעת Lagrådet (משוערת יוני 2026). ביטחון: **גבוה**.
+
+2. **יחידת סיכונים פוליטיים**: מעקב אחר עמדת L (Liberalernas) בנוגע להוראות שלטון החוק ב-HD03267. **מנגנון הפעלה**: פתיחת דיוני ועדת JuU. ביטחון: **בינוני**.
+
+3. **ממשל דיגיטלי**: הכרת מגזר הטכנולוגיה בלוח הזמנים של זהות אלקטרונית ממשלתית HD03250 והשפעת BankID התחרותית. **מנגנון הפעלה**: שימוע ועדת FiU. ביטחון: **בינוני-גבוה**.
+
+### קריאה של 60 שניות
+
+- **המשמעותית ביותר**: HD03262 — ביטול היתר שהייה קבוע כמסלול סטנדרטי + התאמה לאמנת מקלט אירופאית (DIW ~4.2).
+- **המורכבת חוקתית ביותר**: HD03267 — גירוש מוסמך של איום ביטחוני עם ראיות סודיות (DIW ~3.8). מתח עם סעיף 6 ECHR.
+- **הטעונה ביותר פוליטית לפני הבחירות**: הרביעייה ההגירתית (HD03262/67/63/65) היא ההישג החקיקתי הראשי של קואליציית טידו.
+- **החדשנית ביותר טכנולוגית**: HD03250 — זהות אלקטרונית ממשלתית מסיימת את התלות הייחודית של שוודיה ב-BankID.
+- **המקדמת ביותר את הדמוקרטיה**: HD03258 — שקיפות מימון מפלגות מטפלת בהמלצות GRECO של שנים.
+
+### טריגרים עתידיים מובילים (72 שעות / 7 ימים)
+
+🔴 **חוות דעת Lagrådet על HD03267** (פרסום משוערת יוני 2026).
+
+🟡 **דיוני ועדת SfU על HD03262/263/265** (השבוע הנוכחי).
+
+🟢 **התייעצות IMY (רשות הגנת המידע) על HD03261**.
+
+### מטריצת החלטות מפתח
+
+| החלטה | מנגנון הפעלה | Horizon | ביטחון |
+|---|---|---|---|
+| הכנת אתגר משפטי (HD03267) | פרסום חוות דעת Lagrådet | 3–6 שבועות | HIGH |
+| מיקום קואליציית L | פתיחת דיוני JuU | 2–4 שבועות | MEDIUM |
+| ניתוח תחרותי BankID (HD03250) | שימוע FiU מתוכנן | 4–6 שבועות | MEDIUM-HIGH |
+| הצהרות רשמיות UNHCR/Amnesty (HD03262) | פתיחת התייעצות SfU | 4–8 שבועות | HIGH |
+| הערכת קיבולת Migrationsverket | פרסום דוח Q2 של הסוכנות | 6–8 שבועות | MEDIUM |
+
+### סיכום סיכונים
+
+- **רמה 1 (מערכתית)**: יישום HD03262 → סיכון קיבולת גבוה.
+- **רמה 2 (חוקתית)**: נוהל ראיות סודיות של HD03267 → אתגר ECtHR גבוה תוך 5 שנים.
+- **רמה 3 (פוליטית)**: סיכון ויראלי "מקרה סימפתיה" של אשכול ההגירה → סיכון נרטיב בחירות לממשלה.
+- **רמה 4 (דיגיטלית)**: תשתית זהות מרכזית HD03250 → סיכון עם פיקוח לא מספק.
+
+**בסיס ראיות**: 10 מסמכי מקור ראשוניים + IMF WEO-2026-04 + ניתוח OSINT. MCP אושר 2026-05-21T06:53:22Z.
+
+---
+
+### 🔁 תוספת סבב 2 — הפניות צולבות ושיפורים
+
+**שיפורי סבב 2**: ביטחון עודכן מבינוני לבינוני-גבוה עבור תוצאות חקיקה. 115 ימים לבחירות ב-13 בספטמבר 2026. פגם פרוצדורלי ב-HD03267: שוודיה נעדרת כיום מערכת "säkerhetsombud".
+
+---
+
+HD03267 מייצג את ההצעה המורכבת חוקתית ביותר בחבילה. שוודיה נעדרת כיום מערכת "säkerhetsombud" (עורך דין מיוחד בעל אישור ביטחוני) שיכול לייצג את הצד המגורש בהליכים הכוללים ראיות מסווגות. ללא ערובה דיונית כזו, Lagrådet ייתכן שיקבע אי-תאימות עם סעיף 6 לאמנה האירופית לזכויות אדם ("זכות למשפט הוגן"). Liberalernas (L) היוו היסטורית את חבר הקואליציה הסביר ביותר שידחוף להבטחות זכויות דיוניות כאלו. אם L תתנה את תמיכתה בהכללת הוראה זו, עשוי הדבר ליצור את הסדק הקואליציוני הציבורי הראשון 111 ימים לפני הבחירות.
+
+הרביעייה ההגירתית (HD03262/63/65/67) אינה רק מדיניות — היא תרחיש מערכת בחירות. עם 115 ימים לבחירות ה-13 בספטמבר 2026, ארבע הצעות חוק אלה ישלטו בדיון הפוליטי. SD ינהל קמפיין נמרץ לטובת כולן. S ו-MP אינם יכולים לחסום אותן פרלמנטרית, אך ישתמשו בהן כבסיס לגיוס. השאלה הקריטית היא האם L יתרחק מהבעיות המשפטיות של HD03267, מה שעלול להחליש את הנרטיב הכולל של ממשלת טידו.
+
+HD03250 (זהות אלקטרונית ממשלתית) מסיים את התלות הייחודית של שוודיה ב-BankID ומניח את הבסיס לציות ל-eIDAS 2.0 האירופאי. עם זאת, סיכון היישום הוא ממשי: העברת מיליוני משתמשים מ-BankID לזהות אלקטרונית ממשלתית דורשת תקופות מעבר ואמצעי הכשרה. IMY (רשות הגנת המידע) חייבת להשלים הערכת השפעה על פרטיות לפני פריסה מלאה.
+
+---
+
+*economicProvenance: { "provider": "imf", "dataflow": "WEO", "vintage": "WEO-2026-04", "retrieved_at": "2026-05-21T07:10:00Z" }*
+
+<!-- source-sha: bdc7c0fc02b5c1027cadc022718d4793fb0c07a3 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_ja.md -->
+
+**分類**: 公開OSINT · **信頼度**: 中高 · **著者**: Riksdagsmonitor インテリジェンス・パイプライン
+
+### 🎯 状況評価の要約
+
+2026年4月30日～5月7日、クリスターソン政権（ティード連合 — M、KD、L + SD支持党）は**10件の議会法案**を調整済み立法スプリントで提出した。パッケージは2つの戦略的枠組みによって支配されている：**(1) 4法案の移民セキュリティ枠組み**（HD03267、HD03262、HD03263、HD03265）、永住許可を標準ルートとして廃止し、退去強制機構を強化し、安全保障上の脅威の迅速退去手続きを創設する――スウェーデンの数十年にわたる北欧制限規範への収斂の最終段階；と**(2) デジタルガバナンスの近代化**（HD03250、HD03261）、国家eIDを設立しSkatteverketの住民登録監視を拡大する。2026年9月選挙まで115日、移民クラスター全体にDIW 1.5×乗数が適用される。最重量項目はHD03262（PUT廃止 + EU庇護協定適応、推定DIW ~4.2）。
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 この分析が支援する3つの決定
+
+1. **市民社会/法律**: アムネスティ、UNHCR、弁護士会によるHD03267（ECHR第6条、機密証拠）とHD03262（難民条約との適合性）に関する法律意見の準備。**トリガー**: SfU委員会審議開始とLagrådet意見書公表（推定2026年6月）。信頼度: **高**.
+
+2. **政治リスクデスク**: L（Liberalernas）のHD03267の法の支配規定に関する立場を追跡する。**トリガー**: JuU委員会審議開始。信頼度: **中**.
+
+3. **デジタルガバナンス**: 国家eID（HD03250）のタイムラインとBankIDの競争力についてテクノロジーセクターに情報提供。HD03261のSkatteverketの家庭訪問権限がIMYのDPIAを必要とするとフラグ立て。**トリガー**: FiU委員会公聴会。信頼度: **中高**.
+
+### 60秒要約
+
+- **最重要**: HD03262 — 永住許可の標準ルートとしての廃止 + EU庇護協定適応（DIW ~4.2）。
+- **最も憲法的に複雑**: HD03267 — 機密証拠による安全保障上の脅威の適格退去（DIW ~3.8）。ECHR第6条緊張。
+- **選挙前最も政治的に帯電**: 移民四件組（HD03262/67/63/65）はティード連合の主要立法成果。
+- **最も技術的に革新的**: HD03250 — 国家eIDがスウェーデン固有のBankID依存を終わらせる；EU eIDAS 2.0準拠。
+- **最も民主主義促進的**: HD03258 — 政党資金の透明性が長年のGRECO勧告に対応。
+- **共通の糸**: Justitsdepartementetが10法案中5件；Finansdepartementetが3件。
+
+### 主要な将来トリガー（72時間 / 7日）
+
+🔴 **HD03267に関するLagrådet意見書**（推定2026年6月公表）。
+
+🟡 **HD03262/263/265に関するSfU委員会審議**（今週）。
+
+🟢 **HD03261に関するIMY（データ保護機関）協議**。
+
+### 主要決定マトリクス
+
+| 決定 | トリガー | Horizon | 信頼度 |
+|---|---|---|---|
+| 法的異議申し立て準備（HD03267） | Lagrådet意見書公表 | 3〜6週間 | HIGH |
+| Lの連立立場 | JuU審議開始 | 2〜4週間 | MEDIUM |
+| BankID競争分析（HD03250） | FiU公聴会予定 | 4〜6週間 | MEDIUM-HIGH |
+| UNHCR/アムネスティ公式声明（HD03262） | SfU協議開始 | 4〜8週間 | HIGH |
+| Migrationsverket能力評価 | 機関Q2報告書公表 | 6〜8週間 | MEDIUM |
+
+### リスク要約
+
+- **レベル1（全体的）**: HD03262実施 → キャパシティリスク高。
+- **レベル2（憲法的）**: HD03267機密証拠手続き → 5年以内のECtHR訴訟リスク高。
+- **レベル3（政治的）**: 移民クラスターの「同情事例」ウイルス性リスク → 選挙ナラティブリスク。
+- **レベル4（デジタル）**: HD03250中央集権的ID基盤 → 不十分な監視によるリスク。
+
+**証拠基盤**: 主要10次ソース + IMF WEO-2026-04 + OSINT分析。MCP確認済み 2026-05-21T06:53:22Z。
+
+---
+
+### 🔁 第2パス追記 — 相互参照と改善
+
+**第2パス改善**: 立法結果の信頼度を中から中高に更新。2026年9月13日選挙まで115日 — 移民四件組は法律になる前に選挙素材。HD03267手続き上の欠陥：スウェーデンは現在「säkerhetsombud」システムを欠く。
+
+---
+
+*economicProvenance: { "provider": "imf", "dataflow": "WEO", "vintage": "WEO-2026-04", "retrieved_at": "2026-05-21T07:10:00Z" }*
+
+<!-- source-sha: bdc7c0fc02b5c1027cadc022718d4793fb0c07a3 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_ko.md -->
+
+**분류**: 공개 OSINT · **신뢰도**: 중간-높음 · **작성자**: Riksdagsmonitor 인텔리전스 파이프라인
+
+### 🎯 상황 평가 요약
+
+2026년 4월 30일~5월 7일, 크리스테르손 정부(티도 연립 — M, KD, L + SD 지지 정당)는 조율된 입법 스프린트에서 **10건의 의회 법안**을 제출했다. 패키지는 두 가지 전략적 아키텍처로 지배된다: **(1) 4개 법안 이민 보안 아키텍처** (HD03267, HD03262, HD03263, HD03265) — 영구 거주 허가를 표준 경로로 폐지하고, 추방 기구를 강화하며, 안보 위협에 대한 신속 추방 절차를 신설 — 스웨덴의 수십 년간의 북유럽 제한적 규범 수렴의 최종 단계; 및 **(2) 디지털 거버넌스 현대화** (HD03250, HD03261) — 국가 eID를 설립하고 Skatteverket의 인구 등록 감독을 확대. 2026년 9월 선거까지 115일, 이민 클러스터 전체에 DIW 1.5× 승수 적용. 가장 무거운 요소는 HD03262 (PUT 폐지 + EU 망명 협약 적응, 추정 DIW ~4.2).
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 이 분석이 지원하는 3가지 결정
+
+1. **시민사회/법률**: HD03267(ECHR 제6조, 기밀 증거) 및 HD03262(난민 협약 적합성)에 대한 국제사면위원회, UNHCR, 변호사 협회의 법률 의견 준비. **트리거**: SfU 위원회 심의 개시 및 Lagrådet 의견서 발표(추정 2026년 6월). 신뢰도: **높음**.
+
+2. **정치 리스크 데스크**: HD03267의 법치주의 규정에 대한 L(Liberalernas)의 입장 추적. **트리거**: JuU 위원회 심의 개시. 신뢰도: **중간**.
+
+3. **디지털 거버넌스**: HD03250 국가 eID 타임라인과 BankID 경쟁력에 대해 기술 섹터 정보 제공. HD03261 Skatteverket 가정 방문 권한을 IMY DPIA 요구 사항으로 표시. **트리거**: FiU 위원회 청문회. 신뢰도: **중간-높음**.
+
+### 60초 요약
+
+- **가장 중요**: HD03262 — 영구 거주 허가 표준 경로 폐지 + EU 망명 협약 적응 (DIW ~4.2).
+- **헌법적으로 가장 복잡**: HD03267 — 기밀 증거를 통한 안보 위협 자격 추방 (DIW ~3.8). ECHR 제6조 긴장.
+- **선거 전 가장 정치적으로 충전된**: 이민 4인조(HD03262/67/63/65)는 티도 연립의 주요 입법 성과.
+- **기술적으로 가장 혁신적**: HD03250 — 국가 eID가 스웨덴의 고유한 BankID 의존 종료; EU eIDAS 2.0 준수.
+- **민주주의에 가장 유익**: HD03258 — 정당 재정 투명성이 수십 년간의 GRECO 권고에 대응.
+- **공통 실**: Justitsdepartementet이 10건 중 5건; Finansdepartementet이 3건.
+
+### 주요 미래 트리거 (72시간 / 7일)
+
+🔴 **HD03267에 대한 Lagrådet 의견서** (추정 2026년 6월 발표).
+
+🟡 **HD03262/263/265에 대한 SfU 위원회 심의** (이번 주).
+
+🟢 **HD03261에 대한 IMY(데이터 보호 기관) 협의**.
+
+### 주요 결정 매트릭스
+
+| 결정 | 트리거 | Horizon | 신뢰도 |
+|---|---|---|---|
+| 법적 이의 제기 준비 (HD03267) | Lagrådet 의견서 발표 | 3~6주 | HIGH |
+| L의 연립 입장 | JuU 심의 개시 | 2~4주 | MEDIUM |
+| BankID 경쟁 분석 (HD03250) | FiU 청문회 예정 | 4~6주 | MEDIUM-HIGH |
+| UNHCR/국제사면위원회 공식 성명 (HD03262) | SfU 협의 개시 | 4~8주 | HIGH |
+| Migrationsverket 역량 평가 | 기관 Q2 보고서 발표 | 6~8주 | MEDIUM |
+
+### 리스크 요약
+
+- **수준 1 (시스템)**: HD03262 구현 → 역량 리스크 높음.
+- **수준 2 (헌법)**: HD03267 기밀 증거 절차 → 5년 이내 ECtHR 도전 높음.
+- **수준 3 (정치)**: 이민 클러스터의 "공감 사례" 바이럴 리스크 → 정부 선거 내러티브 리스크.
+- **수준 4 (디지털)**: HD03250 중앙집중식 ID 인프라 → 감독 불충분 시 리스크.
+
+**증거 기반**: 10개 1차 소스 문서 + IMF WEO-2026-04 + OSINT 분석. MCP 확인 2026-05-21T06:53:22Z.
+
+---
+
+### 🔁 2차 패스 부록 — 교차 참조 및 개선
+
+**2차 패스 개선**: 입법 결과 신뢰도 중간에서 중간-높음으로 업데이트. 2026년 9월 13일 선거까지 115일 — 이민 4인조는 법률이 되기 전에 선거 자료. HD03267 절차적 결함: 스웨덴은 현재 "säkerhetsombud" 시스템 부재.
+
+---
+
+HD03267은 패키지에서 헌법적으로 가장 까다로운 법안이다. 스웨덴은 현재 기밀 증거 관련 심리에서 추방 대상자를 대리할 수 있는 "säkerhetsombud" 시스템(보안 허가를 받은 특별 변호사)을 갖추고 있지 않다. 이러한 절차적 보호 장치 없이는 Lagrådet이 ECHR 제6조("공정한 재판을 받을 권리")와의 불합치를 지적할 가능성이 높다. 역사적으로 Liberalernas(L)은 이러한 절차적 권리 보호를 주장하는 연립 구성원이었다. L이 이 조항 포함을 조건으로 지지를 거는 경우, 선거 111일 전에 첫 번째 공개적인 연립 균열이 발생할 수 있다.
+
+이민 4인조(HD03262/63/65/67)는 단순한 정책이 아니라 선거 캠페인 시나리오이다. 2026년 9월 13일 선거까지 115일이 남은 상황에서 이 네 법안이 정치적 토론을 지배할 것이다. SD는 네 가지 모두에 대해 강력한 캠페인을 벌일 것이다. S와 MP는 의회에서 이를 저지할 수 없지만 동원의 기반으로 활용할 것이다. 핵심 문제는 L이 HD03267의 법적 문제로부터 거리를 두느냐이며, 이것이 Tidö 연립의 전체 내러티브를 약화시킬 수 있다.
+
+HD03250(국가 eID)은 스웨덴의 독특한 BankID 의존을 종식시키고 EU eIDAS 2.0 준수의 기반을 마련한다. 그러나 구현 위험은 실재한다: 수백만 사용자를 BankID에서 국가 eID로 이전하려면 전환 기간과 교육 조치가 필요하다. IMY(개인정보보호청)는 전면 배포 전에 개인정보 영향 평가를 완료해야 한다.
+
+경제적 맥락: IMF WEO-2026-04는 2026년 스웨덴 GDP 성장률을 1.8%로 예측하며, 인플레이션이 2.1%로 안정화됨에 따라 정부에 약간의 재정적 여유가 생긴다. 그러나 정부의 이민 절감 추정치(30억~80억 SEK)는 IMF 국가 간 이민 경제 연구를 기반으로 30~50% 과대추정된 것으로 평가된다.
+
+---
+
+*economicProvenance: { "provider": "imf", "dataflow": "WEO", "vintage": "WEO-2026-04", "retrieved_at": "2026-05-21T07:10:00Z" }*
+
+<!-- source-sha: bdc7c0fc02b5c1027cadc022718d4793fb0c07a3 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_nl.md -->
+
+**Classificatie**: Publiek OSINT · **Betrouwbaarheid**: MIDDELHOOG · **Auteur**: Riksdagsmonitor Intelligence Pipeline
+
+### 🎯 Korte situatiebeoordeling
+
+Van 30 april tot 7 mei 2026 diende de regering-Kristersson (Tidö-coalitie — M, KD, L + SD als steunpartij) **10 parlementaire proposities** in tijdens een gecoördineerde wetgevingssprint. Het pakket wordt gedomineerd door twee strategische architecturen: **(1) een vier-proposities migratiebeleid-architectuur** (HD03267, HD03262, HD03263, HD03265) die de permanente verblijfsvergunning als standaardroute afschaft, het uitzettingsapparaat versterkt en een spoedprocedure voor uitzetting van veiligheidsbedreigingen creëert — de eindfase van Zweden's tienjarige convergentie naar Noordse restrictieve normen; en **(2) een modernisering van digitaal bestuur** (HD03250, HD03261) die een staatse eID instelt en het bevolkingsregistertoe­zicht van Skatteverket uitbreidt. Met 115 dagen tot de verkiezingen in september 2026 geldt de 1,5× DIW-vermenigvuldiger voor het gehele migratiecluster. Het zwaarst wegende element is HD03262 (afschaffing PUT + aanpassing EU-asielpact, geschatte DIW ~4,2).
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 beslissingen die deze analyse ondersteunt
+
+1. **Maatschappelijk middenveld/juridisch**: Bereid juridische adviezen voor van Amnesty International, UNHCR en de Orde van Advocaten over HD03267 (EVRM artikel 6, geclassificeerd bewijs) en HD03262 (compatibiliteit met Vluchtelingenverdrag). **Trigger**: SfU-commissievergadering opent en oordeel Lagrådet gepubliceerd (geschat juni 2026). Betrouwbaarheid: **HOOG**.
+
+2. **Politieke risico-eenheid**: Volg de positionering van L (Liberalernas) over HD03267's rechtsbeschermingsbepalingen. **Trigger**: JuU-commissieberaadslagingen openen. Betrouwbaarheid: **MIDDEL**.
+
+3. **Digitaal bestuur**: Informeer de technologiesector over de tijdlijn voor staatse eID (HD03250) en BankID's concurrentiepositie. Markeer HD03261's thuisbezoeksbevoegdheden van Skatteverket als vereiste DPIA van IMY. **Trigger**: FiU-commissiehearing. Betrouwbaarheid: **MIDDELHOOG**.
+
+### 60-seconden leesgids
+
+- **Meest significant**: HD03262 — afschaffing permanente verblijfsvergunning als standaardroute + EU-asielpaktaanpassing (DIW ~4,2).
+- **Meest constitutioneel complex**: HD03267 — gekwalificeerde uitzetting van veiligheidsbedreiging met geclassificeerd bewijs (DIW ~3,8). EVRM-artikel-6-spanning.
+- **Meest politiek geladen voor de verkiezingen**: Het migratieskwartet (HD03262/67/63/65) is de primaire wetgevingsprestatie van de Tidö-coalitie.
+- **Meest technisch innovatief**: HD03250 — staatse eID beëindigt Zweden's unieke BankID-afhankelijkheid; EU eIDAS 2.0-naleving.
+- **Meest democratiebevorderend**: HD03258 — transparantie van partijfinanciering adresseert decennialange GRECO-aanbevelingen.
+- **Gemeenschappelijke draad**: Justitsdepartementet draagt 5 van 10 proposities; Finansdepartementet draagt 3.
+
+### Toekomstige triggerpunten (72h / 7d)
+
+🔴 **Oordeel Lagrådet over HD03267** (geschatte publicatie juni 2026).
+
+🟡 **SfU-commissieberaadslagingen over HD03262/263/265** (lopende week).
+
+🟢 **IMY-consultatie (gegevensbeschermingsautoriteit) over HD03261**.
+
+### Beslissingsmatrix
+
+| Beslissing | Trigger | Horizon | Betrouwbaarheid |
+|---|---|---|---|
+| Voorbereiding juridische aanvechting (HD03267) | Lagrådet-oordeel gepubliceerd | 3–6 weken | HIGH |
+| L's coalitiepositionering | JuU-beraadslagingen openen | 2–4 weken | MEDIUM |
+| BankID-concurrentieanalyse (HD03250) | FiU-hearing gepland | 4–6 weken | MEDIUM-HIGH |
+| Formele verklaringen UNHCR/Amnesty (HD03262) | SfU-consultatie geopend | 4–8 weken | HIGH |
+| Capaciteitsbeoordeling Migrationsverket | Q2-rapport agentschap gepubliceerd | 6–8 weken | MEDIUM |
+
+### Risicosamenvatting
+
+- **Niveau 1 (systemisch)**: HD03262-implementatie → capaciteitsrisico HOOG.
+- **Niveau 2 (constitutioneel)**: Geclassificeerde bewijsprocedure HD03267 → ECtHR-aanvechting HOOG binnen 5 jaar.
+- **Niveau 3 (politiek)**: Viraal risico "sympathiegeval" migratiecluster → electoraal narratiefrisico voor de regering.
+- **Niveau 4 (digitaal)**: Gecentraliseerde identiteitsinfrastructuur HD03250 → risico bij onvoldoende toezicht.
+
+**Bewijsbasis**: 10 primaire brondocumenten + IMF WEO-2026-04 + OSINT-analyse. MCP bevestigd 2026-05-21T06:53:22Z.
+
+---
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_no.md -->
+
+**Klassifisering**: Offentlig OSINT · **Tillitt**: MEDIUM-HØY · **Forfatter**: Riksdagsmonitor Intelligence Pipeline
+
+### 🎯 Kort situasjonsvurdering
+
+30. april – 7. mai 2026 la Kristersson-regjeringen (Tidö-koalisjonen — M, KD, L + SD som støtteparti) frem **10 parlamentariske proposisjoner** i en koordinert lovgivningsspurt. Pakken domineres av to strategiske arkitekturer: **(1) en fire-proposisjons migrasjonsarkitektur** (HD03267, HD03262, HD03263, HD03265) som avvikler permanent oppholdstillatelse som standardvei, styrker utvisningsapparatet og skaper en hurtigspor-utvisningsprosedyre for sikkerhettrusler — den endelige fasen i Sveriges tiår-lange konvergens mot nordiske restriktive normer; og **(2) en digital styringsmodernisering** (HD03250, HD03261) som etablerer statlig e-legitimasjon og utvider Skatteverkets befolkningsregisterovervåking. Med 115 dager til valget i september 2026 gjelder 1,5× DIW-multiplikatoren for hele migrasjonsklyngen. Det tyngste elementet er HD03262 (avskaffelse av PUT + EU-asylpakttilpasning, estimert DIW ~4,2).
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 beslutninger dette underlaget støtter
+
+1. **Sivilsamfunn/juridisk**: Forbered Amnesty, UNHCR, Advokatforeningens juridiske uttalelser om HD03267 (ECHR artikkel 6, klassifiserte bevisbestemmelser) og HD03262 (kompatibilitet med flyktningkonvensjonen). **Utløser**: SfU-komiteens behandling åpnes og Lagrådets uttalelse publiseres (estimert juni 2026). Tillitt: **HØY**.
+
+2. **Politisk risikodesk**: Spor L's (Liberalernes) posisjonering om HD03267 rettssikkerhetsbestemmelser. **Utløser**: JuU-komiteens deliberasjoner åpner. Tillitt: **MEDIUM**.
+
+3. **Digital styring**: Orienter teknologisektoren om HD03250 tidslinje for statlig e-ID og BankIDs konkurransevirkning. **Utløser**: FiUs komitéhøring. Tillitt: **MEDIUM-HØY**.
+
+### 60-sekunders lesning
+
+- **Mest betydningsfull**: HD03262 — avskaffelse av permanent oppholdstillatelse som standardvei + EU-asylpakttilpasning (DIW ~4,2).
+- **Mest forfatningsmessig kompleks**: HD03267 — kvalifisert utvisning av sikkerhetstrussel med klassifisert bevis (DIW ~3,8). ECHR artikkel 6-spenning.
+- **Mest politisk ladet**: Migrasjonskvartetten (HD03262/67/63/65) er Tidö-regjeringens primære lovgivningsprestasjon. SD vil kampanje på alle fire; opposisjonen kan ikke blokkere.
+- **Mest teknisk innovativt**: HD03250 — statlig e-ID avslutter Sveriges unike BankID-avhengighet; EU eIDAS 2.0-samsvar.
+- **Mest demokratifremmende**: HD03258 — åpenhet i partifinansiering imøtekommer tiårs GRECO-anbefalinger.
+- **Felles tråd**: Justitsdepartementet bærer 5 av 10 proposisjoner; Finansdepartementet bærer 3.
+
+### Topp fremtidige utløsere (72h / 7d)
+
+🔴 **Lagrådets uttalelse om HD03267** (estimert juni 2026): Eventuelle uløste artikkel 6/ECHR-innvendinger kan gjøre at L betinger støtten.
+
+🟡 **SfUs komitébehandling av HD03262/263/265** (inneværende uke): Opposisjonspartier innleverer første reservasjonsmosjoner.
+
+🟢 **IMY-konsultasjon om HD03261**: DPAs vurdering av Skatteverkets hjembesøksmyndigheter.
+
+### Nøkkelbeslutningsmatrise
+
+| Beslutning | Utløser | Horizon | Tillitt |
+|---|---|---|---|
+| Forberedelse av rettslig utfordring (HD03267) | Lagrådets uttalelse publisert | 3–6 uker | HIGH |
+| L's koalisjonsposisjonering | JuUs deliberasjoner åpner | 2–4 uker | MEDIUM |
+| BankID-konkurranseanalyse (HD03250) | FiU-høring planlagt | 4–6 uker | MEDIUM-HIGH |
+| UNHCR/Amnestys formelle uttalelser (HD03262) | SfU-konsultasjon åpner | 4–8 uker | HIGH |
+| Migrationsverkets kapasitetsvurdering | Etatens Q2-rapport publisert | 6–8 uker | MEDIUM |
+
+### Risikosammendrag
+
+- **Nivå 1 (systemisk)**: HD03262-implementering → kapasitetsrisiko HØY.
+- **Nivå 2 (forfatning)**: HD03267 klassifisert bevisprotokoll → ECtHR-utfordring HØY innen 5 år.
+- **Nivå 3 (politisk)**: Migrasjonsklusterns "sympatisak" som sprer seg viralt → valgnarrativrisiko.
+- **Nivå 4 (digital)**: HD03250 sentralisert identitetsinfrastruktur → risiko ved utilstrekkelig uavhengig tilsyn.
+
+**Bevisgrunnlag**: 10 primærkilder + IMF WEO-2026-04 + OSINT politisk analyse. MCP bekreftet live 2026-05-21T06:53:22Z.
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_sv.md -->
+
+**Klassificering**: Offentlig OSINT · **Konfidens**: MEDEL-HÖG · **Författare**: Riksdagsmonitor Intelligence Pipeline
+
+### 🎯 Kortfattad lägesbedömning
+
+Den 30 april–7 maj 2026 lade Kristersson-regeringen (Tidö-koalitionen — M, KD, L + SD som stödparti) fram **10 riksdagspropositioner** i en samordnad förvalsspurt. Paketet domineras av två strategiska arkitekturer: **(1) en fyrapropositions migrationsarkitektur** (HD03267, HD03262, HD03263, HD03265) som avskaffar permanentuppehållstillståndet som standardväg, förstärker utvisningsapparaten och skapar ett snabbspår för utvisning av säkerhetshot — den slutliga fasen av Sveriges decennielånga konvergens mot nordiska restriktiva normer; och **(2) en digital styrningsmodernisering** (HD03250, HD03261) som etablerar en statlig e-legitimation och utvidgar Skatteverkets befolkningsregistertillsyn. Med 115 dagar till valet i september 2026 gäller 1,5× DIW-multiplikatorn för hela migrationsklustret. Det tyngst vägande är HD03262 (avskaffande av PUT + anpassning till EU:s asylpakt, beräknat DIW ~4,2), som är samtida den konstitutionellt robustaste och den mest politiskt laddade propositionen i paketet.
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 3 beslut detta underlag stöder
+
+1. **Civilsamhälle/juridik**: Förbered Amnesty, UNHCR, Advokatsamfundets rättsliga yttranden om HD03267 (ECHR artikel 6, hemligstämplade bevisbestämmelser) och HD03262 (kompatibilitet med flyktingkonventionen). **Utlösare**: SfU:s remiss öppnas och Lagrådets yttrande publiceras (uppskattat juni 2026). Konfidens: **HÖG**.
+
+2. **Politisk riskavdelning**: Spåra L:s (Liberalernas) positionering om HD03267:s rättssäkerhetsbestämmelser — om L villkorar stöd på "säkerhetsombudets" introduktion signalerar det intern koalitionsspänning som blir synlig i valrörelsen 2026. **Utlösare**: JuU:s beredningsmöten öppnar. Konfidens: **MEDEL**.
+
+3. **Digital styrning**: Informera tekniksektorn om HD03250:s tidslinje för statlig e-legitimation och BankIDs konkurrenskraft. Flagga HD03261:s Skatteverket-hembesöksbefogenheter som kräver DPIA från Integritetsskyddsmyndigheten (IMY). **Utlösare**: FiU:s utfrågning. Konfidens: **MEDEL-HÖG**.
+
+### 60-sekunders läsning
+
+- **Mest betydelsefull**: HD03262 — avskaffande av permanent uppehållstillstånd som standardväg + EU:s asylpaktanpassning (DIW ~4,2). Strukturell förändring av svensk migrationslagstiftning; samtidigt en EU-förpliktelse.
+- **Konstitutionellt mest komplex**: HD03267 — kvalificerad utvisning av säkerhetshot med hemligstämplad bevisning (DIW ~3,8). ECHR artikel 6-spänning kräver Lagrådsgodkända processuella skyddsregler.
+- **Mest politiskt laddad inför valet**: Migrationsskvartetten (HD03262/67/63/65) är Tidö-regeringens primära förvalspolitiska prestation. SD kommer att valkampanja på alla fyra; oppositionen kan inte blockera.
+- **Mest tekniskt innovativt**: HD03250 — statlig e-legitimation avslutar Sveriges unika BankID-beroende; EU eIDAS 2.0-efterlevnad.
+- **Mest demokratifrämjande**: HD03258 — transparens i partifinansering hanterar decenniegamla GRECO-rekommendationer och bekymmer om utländsk påverkan.
+- **Gemensam tråd**: Justitiedepartementet bär 5 av 10 propositioner; Finansdepartementet bär 3. Det är Gunnar Strömmers förvalslagstiftningsarv.
+
+### Topp framtida utlösare (72h / 7d)
+
+🔴 **Lagrådets yttrande om HD03267** (uppskattad publicering juni 2026): Om Lagrådet väcker olösta artikel 6/ECHR-invändningar kan L villkora stöd — bevaka JuU:s kommittéprocess.
+
+🟡 **SfU:s remissarbete om HD03262/263/265** (innevarande vecka): Oppositionspartier lämnar in första reservationsmotioner; sätter tonen för förvalsdebatten.
+
+🟢 **IMY:s (Integritetsskyddsmyndigheten) remiss om HD03261**: IMY:s bedömning av Skatteverkets hembesöksbefogenheter; formar implementeringsskyddsregler.
+
+### Beslutsnyckelmatris
+
+| Beslut | Utlösare | Horizon | Konfidens |
+|---|---|---|---|
+| Förberedelse av rättsutmaning (HD03267) | Lagrådets yttrande publicerat | 3–6 veckor | HIGH |
+| L:s koalitionsposition | JuU:s beredningsmöten öppnar | 2–4 veckor | MEDIUM |
+| BankIDs konkurrenskraftanalys (HD03250) | FiU:s utfrågning inplanerad | 4–6 veckor | MEDIUM-HIGH |
+| UNHCR/Amnestys formella uttalanden (HD03262) | SfU:s remiss öppnar | 4–8 veckor | HIGH |
+| Migrationsverkets kapacitetsbedömning | Myndighetens Q2-rapport publicerad | 6–8 veckor | MEDIUM |
+
+### Risksammanfattning
+
+- **Nivå 1 (systemisk)**: HD03262-genomförande på Migrationsverket → kapacitetsrisk HÖG; EU-kommissionens efterlevnadsövervakning pågår.
+- **Nivå 2 (konstitutionell)**: HD03267:s hemligstämplade bevisförfarande → ECtHR-utmaning HÖG inom 5 år från ikraftträdande.
+- **Nivå 3 (politisk)**: Migrationsklusterns "sympatifallsrisk" som sprids viralt → valnarratssrisk för regeringen. LÅG sannolikhet, HÖG påverkan.
+- **Nivå 4 (digital)**: HD03250 centraliserad identitetsinfrastruktur → risk för enda felkälla och statlig övervakning om otillräcklig oberoende tillsyn.
+
+**Bevisunderlag**: 10 primärkälledokument (Riksdags-API via riksdag-regering MCP) + IMF WEO-2026-04 ekonomisk kontext + OSINT politisk analys. MCP bekräftad live 2026-05-21T06:53:22Z.
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_zh.md -->
+
+**分类**：公开OSINT · **可信度**：中高 · **作者**：Riksdagsmonitor情报分析流水线
+
+### 🎯 态势简要评估
+
+2026年4月30日至5月7日，克里斯特松政府（蒂多联合政府 — M、KD、L + SD支持党）在协调立法冲刺中提交了**10项议会议案**。该议案包由两大战略架构主导：**(1) 四项移民安全架构**（HD03267、HD03262、HD03263、HD03265）——废除永久居留许可作为标准路径、加强驱逐机制并为安全威胁建立快速驱逐程序——瑞典数十年向北欧限制性规范收敛的最后阶段；以及**(2) 数字治理现代化**（HD03250、HD03261）——建立国家电子身份证并扩大Skatteverket人口登记监管权限。距2026年9月选举还有115天，整个移民集群适用1.5×DIW乘数。权重最大的是HD03262（废除PUT + 适应欧盟庇护协议，估计DIW约4.2）。
+
+```mermaid
+flowchart LR
+    A[📜 10 Propositions<br/>Apr 30 – May 7 2026] --> B[Migration-Security Architecture]
+    A --> C[Digital Governance]
+    A --> D[Political Transparency]
+    A --> E[EU Partnerships]
+    B --> B1[HD03262 PUT Abolition + EU Pact<br/>DIW ~4.2]
+    B --> B2[HD03267 Security Threat Expulsion<br/>DIW ~3.8]
+    B --> B3[HD03263 Strengthened Returns<br/>DIW ~3.5]
+    B --> B4[HD03265 Detention/Surveillance<br/>DIW ~3.3]
+    C --> C1[HD03250 State e-ID<br/>DIW ~3.0]
+    C --> C2[HD03261 Skatteverket Folkbokföring<br/>DIW ~2.8]
+    D --> D1[HD03258 Political Process Transparency<br/>DIW ~3.2]
+    E --> E1[HD03249 EU-Uzbekistan + HD03248 EU-Kyrgyzstan<br/>DIW ~1.5]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style D fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style E fill:#1a1e3d,stroke:#888888,color:#888888
+    style B1 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B2 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B3 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style B4 fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style C1 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style C2 fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style D1 fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+    style E1 fill:#0a0e27,stroke:#888888,color:#888888
+```
+
+### 🧭 本简报支持的3项决策
+
+1. **公民社会/法律**：准备国际特赦组织、联合国难民署和律师协会关于HD03267（欧洲人权公约第6条、机密证据）和HD03262（与难民公约的兼容性）的法律意见。**触发器**：SfU委员会审议开始，Lagrådet意见书发布（预计2026年6月）。可信度：**高**。
+
+2. **政治风险部门**：追踪L（自由党）对HD03267法治条款的立场。**触发器**：JuU委员会审议开始。可信度：**中**。
+
+3. **数字治理**：向科技行业介绍HD03250国家电子身份证时间表和BankID竞争影响。将HD03261 Skatteverket家访权限标记为IMY的DPIA要求。**触发器**：FiU委员会听证会。可信度：**中高**。
+
+### 60秒速读
+
+- **最重要**：HD03262——废除永久居留许可标准路径 + 适应欧盟庇护协议（DIW约4.2）。
+- **宪法上最复杂**：HD03267——以机密证据对安全威胁进行合格驱逐（DIW约3.8）。欧洲人权公约第6条紧张关系。
+- **选举前政治张力最大**：移民四项组合（HD03262/67/63/65）是蒂多联合政府的主要立法成就。
+- **技术上最具创新性**：HD03250——国家电子身份证结束瑞典独特的BankID依赖；符合欧盟eIDAS 2.0。
+- **最有利于民主**：HD03258——政党资金透明度回应多年来的GRECO建议。
+- **共同线索**：司法部承担10项议案中的5项；财政部承担3项。
+
+### 主要未来触发器（72小时 / 7天）
+
+🔴 **Lagrådet关于HD03267的意见书**（预计2026年6月发布）。
+
+🟡 **SfU委员会关于HD03262/263/265的审议**（本周）。
+
+🟢 **IMY（数据保护机构）关于HD03261的磋商**。
+
+### 关键决策矩阵
+
+| 决策 | 触发器 | Horizon | 可信度 |
+|---|---|---|---|
+| 准备法律挑战（HD03267） | Lagrådet意见书发布 | 3–6周 | HIGH |
+| L的联合立场 | JuU审议开始 | 2–4周 | MEDIUM |
+| BankID竞争分析（HD03250） | FiU听证会计划 | 4–6周 | MEDIUM-HIGH |
+| 联合国难民署/特赦组织正式声明（HD03262） | SfU磋商开始 | 4–8周 | HIGH |
+| Migrationsverket能力评估 | 机构Q2报告发布 | 6–8周 | MEDIUM |
+
+### 风险摘要
+
+- **第1级（系统性）**：HD03262实施 → 能力风险高。
+- **第2级（宪法）**：HD03267机密证据程序 → 5年内ECtHR挑战风险高。
+- **第3级（政治）**：移民集群"同情案例"病毒式传播风险 → 政府选举叙事风险。
+- **第4级（数字）**：HD03250中央化身份基础设施 → 监管不足时的风险。
+
+**证据基础**：10份主要来源文件 + IMF WEO-2026-04 + OSINT分析。MCP确认 2026-05-21T06:53:22Z。
+
+---
+
+### 🔁 第二轮附录——交叉引用与改进
+
+**第二轮改进**：立法结果可信度从中等更新为中高。距2026年9月13日选举115天——移民四项组合在成为法律之前就是选举材料。HD03267程序漏洞：瑞典目前缺少"säkerhetsombud"系统。
+
+---
+
+*economicProvenance: { "provider": "imf", "dataflow": "WEO", "vintage": "WEO-2026-04", "retrieved_at": "2026-05-21T07:10:00Z" }*
+
+<!-- source-sha: bdc7c0fc02b5c1027cadc022718d4793fb0c07a3 -->
+
 ## Executive Summary
 <!-- source: executive-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-summary.md -->
 
@@ -2592,7 +3795,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 24 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 37 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2621,6 +3824,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/economic-context.md)
 - [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/electoral-implications.md)
 - [`eu-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/eu-context.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_zh.md)
 - [`executive-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-summary.md)
 - [`fiscal-impact.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/fiscal-impact.md)
 - [`key-propositions.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/key-propositions.md)

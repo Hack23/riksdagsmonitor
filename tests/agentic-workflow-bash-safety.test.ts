@@ -289,7 +289,7 @@ describe('Agentic Workflow Bash & Shell Safety', () => {
       // both the doc AND this test in the same PR.
       const evalRow = safety
         .split('\n')
-        .find((l) => /\beval\b/.test(l) && /Never required/i.test(l));
+        .find((l) => /\beval\b/.test(l) && /Refuse and rewrite|Never required/i.test(l));
       expect(evalRow, 'eval row missing from safety doc table').toBeDefined();
       expect(evalRow).toMatch(/arrays/i);
       expect(evalRow).toMatch(/case/i);

@@ -6,7 +6,7 @@ date: 2026-04-30
 subfolder: committeeReports
 slug: 2026-04-30-committeeReports
 source_folder: analysis/daily/2026-04-30/committeeReports
-generated_at: 2026-05-21T02:19:50.735Z
+generated_at: 2026-05-22T12:25:06.130Z
 language: en
 layout: article
 ---
@@ -108,6 +108,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1754,13 +1767,1033 @@ ACH (Analysis of Competing Hypotheses), SWOT, Stakeholder Analysis, Scenario Ana
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-04-29 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# تقارير لجان الريكسداغ تعزز المساءلة التشريعية وأطر الأمن
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-30  
+**تاريخ المقال**: 2026-04-29  
+**التصنيف**: عام  
+**الثقة**: متوسطة-عالية [B2]
+
+### 🎯 الملخص التنفيذي
+
+تقدم دورة لجان الريكسداغ الربيعية 2025/26 ثمانية تقارير تشمل الرقابة على الخصوصية، وكفاءة القضاء، والسيطرة على المتفجرات، وإصلاح التراخيص للمنشآت النووية، وتحديث قانون المنافسة، والتدخل في سوق الإسكان. تحظى المراجعة الاسترجاعية للجنة الدستورية للنزاهة الرقمية (HD01KU36) وإصلاح كفاءة المحاكم للجنة القضائية (HD01JuU9) بأعلى ثقل استراتيجي، مما يشير إلى نية الحكومة في تحديث بنية الدولة القانونية في عام الانتخابات 2026. تؤثر ثلاثة مقترحات مباشرة على توافق السويد مع اللوائح الأوروبية في ظل الوعي الأمني الاسكندنافي المتصاعد.
+
+### 🧭 ثلاثة قرارات يدعمها هذا الملخص
+
+1. **الإعلام والمساءلة العامة**: أي تقارير اللجان تستحق تغطية معمقة نظرًا لأهمية عام الانتخابات والأثر السياسي؟
+2. **مراقبة السياسات**: أي المقترحات تحمل مخاطر تنفيذية تستوجب المتابعة حتى التصويت في الريكسداغ (المتوقع مايو–يونيو 2026)؟
+3. **المجتمع المدني والممارسون القانونيون**: أي الإصلاحات القانونية (JuU9 كفاءة المحاكم، KU36 الخصوصية الرقمية، NU22 المنافسة) تتطلب استجابة فورية من أصحاب المصلحة؟
+
+### قراءة 60 ثانية
+
+- **قيادة الخصوصية (HD01KU36 [B2])**: تقترح KU 17 تحسينًا لأطر النزاهة الرقمية استنادًا إلى دورة الرقابة 2020–2024 — يضع جدول أعمال لتنفيذ لائحة الذكاء الاصطناعي وحدود مراقبة القطاع العام.
+- **إصلاح القضاء (HD01JuU9 [B2])**: تدفع JuU بحزمة كفاءة إجرائية تستهدف تراكم قضايا المعالجة والإجراءات الكتابية والتقديمات الرقمية — هدف التنفيذ 2027.
+- **تحديث المنافسة (HD01NU22 [B2])**: تطرح NU أدوات تحقيق جديدة لـ Konkurrensverket تستهدف الأسواق الخاصة والمشتريات العامة على حد سواء؛ قانون الأسواق الرقمية الأوروبي محوري.
+- **ترخيص الطاقة النووية (HD01NU19 [B2])**: تبسط NU مراجعة المنشآت النووية في إطار الهيكل الجديد لـ Energimyndighet — أمر حيوي لطموحات توسيع الطاقة النووية السويدية.
+- **السيطرة على المتفجرات (HD01FöU13 [B3])**: تشدد FöU الرقابة على المواد الأولية وتبادل المعلومات الاستخباراتية بين الوكالات وفق اللائحة الأوروبية 2019/1148 — أهمية أمنية مرتفعة.
+- **ضمان الإسكان (Housing guarantee, HD01CU37 [B2])**: تتيح CU ضمانات إيجار بلدية للفئات المعرضة اجتماعيًا — مثار جدل بين تحرير سوق الإسكان الحكومي والسياسة الإسكانية الاشتراكية الديمقراطية.
+- **ترخيص الخدمة (HD01SoU33 [C2])**: تلغي SoU الاشتراط الإلزامي لتقديم الطعام لتراخيص الكحول — إلغاء قيود قطاع الضيافة.
+- **وفد يوروبول (HD01JuU46 [C1])**: تقرير المساءلة البرلمانية السنوي — إجرائي.
+
+### المحفز المستقبلي الرئيسي
+
+**تصويت الغرفة على KU36 (متوقع 2026-05-06)**: أول تصويت برلماني على إطار سياسة الخصوصية الرقمية بعد لائحة الذكاء الاصطناعي الأوروبية — تشير النتيجة إلى توازن الحكومة/المعارضة بشأن حدود دولة المراقبة قبيل انتخابات 2026.
+
+### علامة الثقة
+
+ثقة التقييم الإجمالية: متوسطة-عالية. المصادر الأولية: تقارير الريكسداغ (عامة). لا تُستخدم بيانات مملوكة أو مسربة.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-30  
+**Artikeldato**: 2026-04-29  
+**Klassifikation**: OFFENTLIG  
+**Konfidens**: MEDIUM-HØJ [B2]
+
+### 🎯 Resumé
+
+Riksdagens forårsudvalgssession 2025/26 leverer otte betænkninger inden for overvågning af privatlivets fred, domstolseffektivitet, kontrol med sprængstoffer, reform af tilladelser til atomanlæg, modernisering af konkurrenceretten og boligmarkedsintervention. Konstitutionsudvalgets retrospektive gennemgang af digital integritet (HD01KU36) og Retsudvalgets domstolseffektivitetsreform (HD01JuU9) har den største strategiske vægt og signalerer regeringens hensigt om at modernisere retsstatens infrastruktur i valgåret 2026. Tre forslag påvirker direkte Sveriges EU-reguleringstilpasning på et tidspunkt med øget nordisk sikkerhedsbevidsthed.
+
+### 🧭 3 beslutninger dette notat understøtter
+
+1. **Medier og offentlig ansvarlighed**: De udvalgsrapporter fortjener grundig dækning i betragtning af valgårssaliens og politisk betydning?
+2. **Politisk overvågning**: De forslag bærer implementeringsrisici, der kræver opfølgning frem til Riksdagsafstemning (forventet maj–juni 2026)?
+3. **Civilsamfund og jurister**: De retsreformer (JuU9 domstolseffektivitet, KU36 digital privatlivsbeskyttelse, NU22 konkurrence) kræver øjeblikkelig interessentrespons?
+
+### 60-sekunders læsning
+
+- **Privatlivslederskab (HD01KU36 [B2])**: KU foreslår 17 forbedringer til rammer for digital integritet bygget på sin tilsynscyklus 2020–2024 — sætter dagsordenen for implementering af AI-forordningen og grænser for offentlig sektors overvågning.
+- **Domstolsreform (HD01JuU9 [B2])**: JuU fremmer et proceduremæssigt effektivitetspakke rettet mod sagsbehandlingsefterslæb, skriftlige procedurer og digital indsendelse — implementeringsmål 2027.
+- **Konkurrencemodernisering (HD01NU22 [B2])**: NU indfører nye efterforskningsværktøjer for Konkurrensverket rettet mod både private markeder og offentlige indkøb; EU's digitale markedslov er central.
+- **Atomkraftstilladelse (HD01NU19 [B2])**: NU strømliner gennemgang af atomanlæg under den nye Energimyndigheds struktur — afgørende for Sveriges atomkraftsudvidelsesambitioner.
+- **Sprængstofstokkontrol (HD01FöU13 [B3])**: FöU strammes kontrol med forstadier og tværagenturt efterretningsdeling i overensstemmelse med EU-forordning 2019/1148 — forhøjet sikkerhedspolitisk relevans.
+- **Boliggaranti (Housing guarantee, HD01CU37 [B2])**: CU giver kommunale lejegarantier for socialt udsatte grupper — omstridt mellem regeringens boligmarkedsliberalisering og socialdemokratisk boligpolitik.
+- **Serveringstilladelse (HD01SoU33 [C2])**: SoU fjerner obligatorisk krav om madservering ved alkoholbevillinger — deregulering af restaurationsbranchen.
+- **Europol-delegation (HD01JuU46 [C1])**: Årlig parlamentarisk ansvarsrapport — proceduremæssig.
+
+### Vigtigste fremtidige trigger
+
+**KU36 kammervotum (forventet 2026-05-06)**: Første parlamentsafstemning om rammer for digital privatlivspolitik efter EU's AI-forordning — resultatet signalerer regeringens/oppositionens balance om overvågningsstatens grænser forud for valget 2026.
+
+### Konfidensmarkering
+
+Overordnet vurderingskonfidens: MEDIUM-HØJ. Primære kilder: Riksdagens betænkninger (offentlige). Ingen proprietære eller lækkede data anvendt.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-30  
+**Artikeldatum**: 2026-04-29  
+**Klassifizierung**: ÖFFENTLICH  
+**Konfidenz**: MITTEL-HOCH [B2]
+
+### 🎯 Zusammenfassung
+
+Die Frühjahrssitzung des Riksdag-Ausschusses 2025/26 liefert acht Berichte zu Datenschutzaufsicht, Gerichtseffizienz, Sprengstoffkontrolle, Genehmigungsreform für Kernanlagen, Modernisierung des Wettbewerbsrechts und Wohnungsmarktintervention. Der retrospektive Bericht des Verfassungsausschusses zur digitalen Integrität (HD01KU36) und die Gerichtseffizienzreform des Justizausschusses (HD01JuU9) haben das höchste strategische Gewicht und signalisieren die Absicht der Regierung, die Rechtsstaatsinfrastruktur im Wahljahr 2026 zu modernisieren. Drei Vorschläge betreffen direkt die EU-Regulierungsanpassung Schwedens in einer Zeit erhöhter nordischer Sicherheitsbewusstsein.
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Medien und öffentliche Rechenschaftspflicht**: Welche Ausschussberichte verdienen angesichts der Wahljahrssalienz und politischen Bedeutung eine eingehende Berichterstattung?
+2. **Politiküberwachung**: Welche Vorschläge tragen Umsetzungsrisiken, die eine Verfolgung bis zur Riksdag-Abstimmung (erwartet Mai–Juni 2026) erfordern?
+3. **Zivilgesellschaft und Rechtspraktiker**: Welche Rechtsreformen (JuU9 Gerichtseffizienz, KU36 digitaler Datenschutz, NU22 Wettbewerb) erfordern sofortige Interessenvertreterreaktion?
+
+### 60-Sekunden-Lektüre
+
+- **Datenschutzführerschaft (HD01KU36 [B2])**: KU schlägt 17 Verbesserungen an digitalen Integritätsrahmen vor, die auf seinem Überwachungszyklus 2020–2024 aufbauen — setzt die Agenda für die Umsetzung des KI-Gesetzes und Grenzen für die Überwachung des öffentlichen Sektors.
+- **Gerichtsreform (HD01JuU9 [B2])**: JuU treibt ein Effizienzpaket für Verfahren voran, das auf Rückstände in der Fallbearbeitung, schriftliche Verfahren und digitale Einreichungen abzielt — Umsetzungsziel 2027.
+- **Wettbewerbsmodernisierung (HD01NU22 [B2])**: NU führt neue Ermittlungstools für Konkurrensverket ein, die sowohl private Märkte als auch die öffentliche Beschaffung zum Ziel haben; das EU-Gesetz über digitale Märkte ist zentral.
+- **Kernanlagengenehmigung (HD01NU19 [B2])**: NU optimiert die Überprüfung von Kernanlagen unter der neuen Energibehördenstruktur — entscheidend für Schwedens Ambition zur Kernenergiekapazitätserweiterung.
+- **Sprengstoffkontrolle (HD01FöU13 [B3])**: FöU verschärft die Kontrolle von Ausgangsstoffen und behördenübergreifende Geheimdienstinformationen gemäß EU-Verordnung 2019/1148 — erhöhte sicherheitspolitische Relevanz.
+- **Wohnungsgarantie (Housing guarantee, HD01CU37 [B2])**: CU ermöglicht kommunale Mietgarantien für sozial schwache Gruppen — umstritten zwischen der Wohnungsmarktliberalisierung der Regierung und sozialdemokratischer Wohnungspolitik.
+- **Servierlizenz (HD01SoU33 [C2])**: SoU hebt die obligatorische Speisenverpflichtung für Alkohollizenzen auf — Deregulierung der Gastronomiebranche.
+- **Europol-Delegation (HD01JuU46 [C1])**: Jährlicher parlamentarischer Rechenschaftsbericht — verfahrenstechnisch.
+
+### Wichtigster zukünftiger Auslöser
+
+**KU36 Kammervotum (erwartet 2026-05-06)**: Erste parlamentarische Abstimmung über den digitalen Datenschutzpolitikrahmen nach dem EU-KI-Gesetz — das Ergebnis signalisiert die Regierungs-/Oppositionsbalance bezüglich der Grenzen des Überwachungsstaats vor den Wahlen 2026.
+
+### Konfidenzmarkierung
+
+Gesamtbewertungskonfidenz: MITTEL-HOCH. Primärquellen: Riksdag-Berichte (öffentlich). Keine proprietären oder geleakten Daten verwendet.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-30  
+**Fecha del artículo**: 2026-04-29  
+**Clasificación**: PÚBLICO  
+**Confianza**: MEDIO-ALTO [B2]
+
+### 🎯 Resumen
+
+La sesión 2025/26 produce ocho betänkanden: privacidad, eficiencia judicial, explosivos, nuclear, competencia y vivienda. HD01KU36 (KU) y HD01JuU9 (JuU) tienen mayor peso estratégico en el año electoral 2026. Tres propuestas afectan la alineación regulatoria con la UE en un contexto de mayor conciencia de seguridad nórdica.
+
+### 🧭 3 decisiones que este documento apoya
+
+1. **Medios y responsabilidad pública**: ¿Qué informes merecen cobertura en profundidad dada la relevancia electoral?
+2. **Seguimiento de políticas**: ¿Qué propuestas conllevan riesgos que requieren seguimiento hasta la votación (mayo–junio 2026)?
+3. **Sociedad civil y juristas**: ¿Qué reformas jurídicas (JuU9, KU36, NU22) requieren respuesta inmediata de las partes interesadas?
+
+### Lectura en 60 segundos
+
+- **Liderazgo en privacidad (HD01KU36 [B2])**: KU propone 17 mejoras a los marcos de integridad digital basándose en el ciclo de supervisión 2020–2024 — establece la agenda para la implementación del Reglamento de IA y los límites de vigilancia del sector público.
+- **Reforma judicial (HD01JuU9 [B2])**: JuU avanza un paquete de eficiencia procesal para reducir el retraso de casos, procedimientos escritos y presentaciones digitales — objetivo de implementación 2027.
+- **Modernización de la competencia (HD01NU22 [B2])**: NU introduce nuevas herramientas de investigación para Konkurrensverket dirigidas a mercados privados y contratación pública; Ley Europea de Mercados Digitales central.
+- **Autorización nuclear (HD01NU19 [B2])**: NU agiliza la revisión de instalaciones nucleares bajo la nueva estructura de Energimyndighet — crucial para las ambiciones de expansión nuclear de Suecia.
+- **Control de explosivos (HD01FöU13 [B3])**: FöU endurece el control de precursores e intercambio de inteligencia entre agencias según el Reglamento UE 2019/1148.
+- **Garantía de vivienda (Housing guarantee, HD01CU37 [B2])**: CU permite garantías de alquiler municipales para grupos vulnerables — disputado entre la liberalización del mercado inmobiliario y la política socialdemócrata.
+- **Licencia de servicio (HD01SoU33 [C2])**: SoU elimina el requisito obligatorio de servicio de comidas para licencias de alcohol — desregulación del sector hostelero.
+- **Delegación Europol (HD01JuU46 [C1])**: Informe anual de rendición de cuentas parlamentaria — procedimental.
+
+### Desencadenante futuro principal
+
+**Votación en cámara KU36 (prevista el 2026-05-06)**: Primera votación sobre el marco de política de privacidad digital tras el Reglamento UE de IA — señala el equilibrio gobierno/oposición sobre los límites del Estado de vigilancia antes de las elecciones 2026.
+
+### Marcador de confianza
+
+Confianza general: MEDIO-ALTO. Fuentes primarias: informes del Riksdag (públicos). Sin datos propietarios o filtrados.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-04-30  
+**Artikkelin päivämäärä**: 2026-04-29  
+**Luokittelu**: JULKINEN  
+**Luottamus**: KESKISUURI-KORKEA [B2]
+
+### 🎯 Yhteenveto
+
+Riksdagin kevätvaliokunnan istunto 2025/26 tuottaa kahdeksan mietintöä yksityisyyden suojan valvonnasta, tuomioistuinten tehokkuudesta, räjähdeaineiden hallinnasta, ydinvoimaloiden lupajärjestelmän uudistuksesta, kilpailulainsäädännön modernisoinnista ja asuntomarkkinointerventiosta. Perustuslakivaliokunnan takautuva arvio digitaalisesta eheydestä (HD01KU36) ja Lakivaliokunnan tuomioistuintehokkuusuudistus (HD01JuU9) ovat strategisesti merkittävimmät ja viestivät hallituksen aikomuksesta modernisoida oikeusvaltion infrastruktuuri vaalivuotena 2026. Kolme ehdotusta vaikuttaa suoraan Ruotsin EU-sääntelyyhdenmukaistumiseen pohjoisen turvallisuustietoisuuden lisääntyessä.
+
+### 🧭 3 päätöstä, joita tämä tiedote tukee
+
+1. **Media ja julkinen vastuullisuus**: Mitkä valiokunnan raportit ansaitsevat perusteellisen uutisoinnin vaalivuoden tärkeyden ja poliittisen painoarvon perusteella?
+2. **Politiikan seuranta**: Mitkä ehdotukset sisältävät toteutusriskejä, jotka edellyttävät seurantaa Riksdag-äänestykseen asti (odotettu toukokuu–kesäkuu 2026)?
+3. **Kansalaisyhteiskunta ja oikeudenkäyttäjät**: Mitkä oikeudelliset uudistukset (JuU9 tuomioistuintehokkuus, KU36 digitaalinen yksityisyys, NU22 kilpailu) vaativat välitöntä sidosryhmätoimintaa?
+
+### 60 sekunnin luku
+
+- **Yksityisyyden suojan johtajuus (HD01KU36 [B2])**: KU ehdottaa 17 parannusta digitaalisen eheyden kehyksiin perustuen valvontasykliinsä 2020–2024 — asettaa agendaa tekoälylain täytäntöönpanolle ja julkisen sektorin valvontarajoituksille.
+- **Tuomioistuinuudistus (HD01JuU9 [B2])**: JuU edistää menettelyllisen tehokkuuden pakettia, joka kohdistuu asioiden käsittelyruuhkiin, kirjallisiin menettelyihin ja digitaalisiin toimitustapoihin — täytäntöönpanon tavoite 2027.
+- **Kilpailun modernisointi (HD01NU22 [B2])**: NU tuo uusia tutkintavälineitä Konkurrensverketille, jotka kohdistuvat sekä yksityismarkkinoihin että julkisiin hankintoihin; EU:n digitaalisten markkinoiden laki on keskeinen.
+- **Ydinvoimalan lupa (HD01NU19 [B2])**: NU virtaviivaistaa ydinlaitosten tarkistamista uuden Energimyndighetin rakenteen alla — kriittinen Ruotsin ydinvoimakapasiteetin laajentamistavoitteiden kannalta.
+- **Räjähdeaineiden hallinta (HD01FöU13 [B3])**: FöU tiukentaa lähtöaineiden valvontaa ja virastojen välistä tiedustelujen jakamista EU-asetuksen 2019/1148 mukaisesti — kohonnut turvallisuuspoliittinen merkitys.
+- **Asuntogarantia (Housing guarantee, HD01CU37 [B2])**: CU mahdollistaa kunnallisia vuokratakuita sosiaalisesti haavoittuvaisille ryhmille — kiistanalainen hallituksen asuntomarkkinoiden vapautumisen ja sosiaalidemokraattisen asuntopolitiikan välillä.
+- **Anniskelulupa (HD01SoU33 [C2])**: SoU poistaa pakollisen ruokapalveluvaatimuksen alkoholiluvista — ravintola-alan sääntelyn purkaminen.
+- **Europol-delegaatio (HD01JuU46 [C1])**: Vuotuinen parlamentaarinen vastuullisuusraportti — menettelyllinen.
+
+### Tärkein tulevaisuuden laukaistija
+
+**KU36 täysistuntoäänestys (odotettu 2026-05-06)**: Ensimmäinen parlamenttiäänestys digitaalisen yksityisyyspolitiikan kehyksestä EU:n tekoälylain jälkeen — tulos viestii hallituksen/opposition tasapainosta valvontavaltion rajojen suhteen ennen vuoden 2026 vaaleja.
+
+### Luottamusmerkintä
+
+Kokonaisarvioinnin luottamus: KESKISUURI-KORKEA. Ensisijaiset lähteet: Riksdagin mietinnöt (julkiset). Ei käytetä omistusoikeudellisia tai vuodettuja tietoja.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling  
+
+**Date de l'article**: 2026-04-29  
+
+**Confiance**: MOYEN-ÉLEVÉ [B2]
+
+### 🎯 Résumé
+
+La session 2025/26 produit huit betänkanden: surveillance numérique, efficacité judiciaire, explosifs, nucléaire, concurrence et logement. HD01KU36 (KU) et HD01JuU9 (JuU) ont le poids stratégique le plus élevé en cette année électorale 2026. Trois propositions affectent l'alignement UE dans un contexte de sécurité nordique renforcée.
+
+### 🧭 3 décisions que ce document soutient
+
+1. **Médias et responsabilité publique**: Quels rapports méritent une couverture approfondie vu la saillance électorale et l'importance politique?
+2. **Surveillance des politiques**: Quelles propositions portent des risques nécessitant un suivi jusqu'au vote (mai–juin 2026)?
+3. **Société civile et praticiens du droit**: Quelles réformes juridiques (JuU9, KU36, NU22) nécessitent une réponse immédiate des parties prenantes?
+
+### Lecture en 60 secondes
+
+- **Leadership en matière de confidentialité (HD01KU36 [B2])**: La KU propose 17 améliorations aux cadres d'intégrité numérique s'appuyant sur son cycle de supervision 2020–2024 — fixe l'agenda pour la mise en œuvre du règlement sur l'IA et les limites de surveillance du secteur public.
+- **Réforme judiciaire (HD01JuU9 [B2])**: La JuU fait avancer un ensemble d'efficacité procédurale ciblant les arriérés de traitement des affaires, les procédures écrites et les soumissions numériques — objectif de mise en œuvre 2027.
+- **Modernisation de la concurrence (HD01NU22 [B2])**: La NU introduit de nouveaux outils d'enquête pour Konkurrensverket ciblant les marchés privés et les marchés publics; la loi européenne sur les marchés numériques est centrale.
+- **Autorisation nucléaire (HD01NU19 [B2])**: La NU rationalise l'examen des installations nucléaires sous la nouvelle structure de l'Energimyndighet — crucial pour les ambitions d'expansion nucléaire de la Suède.
+- **Contrôle des explosifs (HD01FöU13 [B3])**: La FöU resserre le contrôle des précurseurs et le partage de renseignements inter-agences conformément au règlement UE 2019/1148 — pertinence sécuritaire élevée.
+- **Garantie de logement (Housing guarantee, HD01CU37 [B2])**: La CU permet des garanties de location municipales pour les groupes socialement vulnérables — contesté entre la libéralisation du marché immobilier du gouvernement et la politique de logement social-démocrate.
+- **Licence de service (HD01SoU33 [C2])**: La SoU supprime l'obligation obligatoire de restauration pour les licences d'alcool — déréglementation du secteur de la restauration.
+- **Délégation Europol (HD01JuU46 [C1])**: Rapport annuel de responsabilité parlementaire — procédural.
+
+### Déclencheur futur principal
+
+**Vote en chambre KU36 (prévu le 2026-05-06)**: Premier vote parlementaire sur le cadre de politique de confidentialité numérique après le règlement UE sur l'IA — le résultat signale l'équilibre gouvernement/opposition sur les limites de l'État de surveillance avant les élections 2026.
+
+### Marqueur de confiance
+
+Confiance globale d'évaluation: MOYEN-ÉLEVÉ. Sources primaires: rapports du Riksdag (publics). Aucune donnée propriétaire ou divulguée utilisée.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# דוחות ועדות הריקסדאג מחזקים את אחריות החקיקה ומסגרות הביטחון
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-30  
+**תאריך המאמר**: 2026-04-29  
+**סיווג**: ציבורי  
+**ביטחון**: בינוני-גבוה [B2]
+
+### 🎯 תמצית מנהלים
+
+מושב ועדות האביב של הריקסדאג 2025/26 מספק שמונה דוחות המכסים פיקוח על פרטיות, יעילות שיפוטית, בקרת חומרי נפץ, רפורמה בהיתרים למתקנים גרעיניים, מודרניזציה של דיני תחרות והתערבות בשוק הדיור. הבדיקה הרטרוספקטיבית של הוועדה החוקתית על שלמות דיגיטלית (HD01KU36) ורפורמת יעילות בתי המשפט של ועדת המשפטים (HD01JuU9) נושאות את המשקל האסטרטגי הגבוה ביותר, ומסמנות את כוונת הממשלה לחדש את תשתית שלטון החוק בשנת הבחירות 2026. שלושה הצעות משפיעות ישירות על ההתאמה הרגולטורית של שוודיה לאיחוד האירופי בתקופה של מודעות ביטחונית נורדית מוגברת.
+
+### 🧭 3 החלטות שמסמך זה תומך בהן
+
+1. **תקשורת ואחריות ציבורית**: אילו דוחות ועדות ראויים לסיקור מעמיק בהתחשב בחשיבות שנת הבחירות ומשמעותם הפוליטית?
+2. **מעקב מדיניות**: אילו הצעות נושאות סיכוני יישום הדורשים מעקב עד להצבעה בריקסדאג (צפויה מאי–יוני 2026)?
+3. **חברה אזרחית ומשפטנים**: אילו רפורמות משפטיות (JuU9 יעילות שיפוטית, KU36 פרטיות דיגיטלית, NU22 תחרות) דורשות תגובה מיידית מבעלי עניין?
+
+### קריאה בת 60 שניות
+
+- **מנהיגות בפרטיות (HD01KU36 [B2])**: KU מציעה 17 שיפורים למסגרות שלמות דיגיטלית בהתבסס על מחזור הפיקוח 2020–2024 — קובעת סדר יום ליישום תקנת הבינה המלאכותית וגבולות לפיקוח הסקטור הציבורי.
+- **רפורמה שיפוטית (HD01JuU9 [B2])**: JuU מקדמת חבילת יעילות פרוצדורלית המכוונת לפיגורים בטיפול בתיקים, הליכים בכתב והגשות דיגיטליות — יעד יישום 2027.
+- **מודרניזציה של התחרות (HD01NU22 [B2])**: NU מכניסה כלי חקירה חדשים עבור Konkurrensverket המכוונים לשווקים פרטיים ורכש ציבורי; חוק השווקים הדיגיטליים של האיחוד האירופי מרכזי.
+- **היתר גרעיני (HD01NU19 [B2])**: NU מייעלת את בדיקת המתקנים הגרעיניים תחת המבנה החדש של Energimyndighet — קריטי לשאיפות הרחבת הגרעין של שוודיה.
+- **בקרת חומרי נפץ (HD01FöU13 [B3])**: FöU מהדקת בקרת חומרי מוצא ושיתוף מידע מודיעיני בין-סוכנות בהתאם לתקנת האיחוד האירופי 2019/1148 — רלוונטיות ביטחונית מוגברת.
+- **ערבות דיור (Housing guarantee, HD01CU37 [B2])**: CU מאפשרת ערבויות שכירות עירוניות לקבוצות הפגיעות חברתית — שנוי במחלוקת בין ליברליזציית שוק הדיור של הממשלה לבין מדיניות הדיור הסוציאל-דמוקרטית.
+- **רישיון שירות (HD01SoU33 [C2])**: SoU מבטלת את דרישת שירות האוכל החובה לרישיונות אלכוהול — בטול רגולציה בענף האירוח.
+- **משלחת אירופול (HD01JuU46 [C1])**: דוח אחריות פרלמנטרי שנתי — פרוצדורלי.
+
+### המפעיל המרכזי העתידי
+
+**הצבעת לשכה KU36 (צפויה 2026-05-06)**: ההצבעה הפרלמנטרית הראשונה על מסגרת מדיניות הפרטיות הדיגיטלית לאחר תקנת הבינה המלאכותית של האיחוד האירופי — התוצאה מסמנת את האיזון ממשלה/אופוזיציה על גבולות מדינת הפיקוח לפני בחירות 2026.
+
+### סמן ביטחון
+
+ביטחון הערכה כולל: בינוני-גבוה. מקורות ראשוניים: דוחות ריקסדאג (ציבוריים). לא נעשה שימוש בנתונים קנייניים או מודלפים.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-04-30  
+**記事日付**: 2026-04-29  
+**分類**: 公開  
+**信頼度**: 中高 [B2]
+
+### 🎯 要点
+
+スウェーデン国会（Riksdag）2025/26年春期委員会会期では、プライバシー監視、司法効率、爆発物管理、原子力施設許可改革、競争法近代化、住宅市場介入を網羅する8件の答申が提出された。憲法委員会によるデジタル整合性の遡及的審査（HD01KU36）および司法委員会の司法効率改革（HD01JuU9）が最も高い戦略的重要性を持ち、2026年選挙年における法の支配インフラの近代化に向けた政府の意図を示している。3件の提案は、北欧安全保障意識が高まる中、スウェーデンのEU規制整合に直接影響する。
+
+### 🧭 この要約が支援する3つの決定
+
+1. **メディアと公的説明責任**: 選挙年の重要性と政治的意義を踏まえ、詳細な報道に値する委員会報告はどれか？
+2. **政策モニタリング**: 国会投票（2026年5月～6月予定）まで追跡が必要な実施リスクを抱える提案はどれか？
+3. **市民社会と法律実務家**: どの法律改革（JuU9司法効率、KU36デジタルプライバシー、NU22競争）が即時のステークホルダー対応を必要とするか？
+
+### 60秒読解
+
+- **プライバシーリーダーシップ（HD01KU36 [B2]）**: KUは2020～2024年の監視サイクルを踏まえてデジタル整合性枠組みの17項目の改善を提案——AI法施行と公共部門監視制限の議題を設定。
+- **司法改革（HD01JuU9 [B2]）**: JuUは案件処理積滞、書面手続き、電子提出を対象とした手続き効率化パッケージを推進——実施目標2027年。
+- **競争近代化（HD01NU22 [B2]）**: NUはKonkurrensverketに対し民間市場と公共調達を対象とした新調査ツールを導入；EUデジタル市場法が中心。
+- **原子力許可（HD01NU19 [B2]）**: NUは新しいEnergimyndighet構造のもとで核施設審査を合理化——スウェーデンの原子力拡張意欲にとって重要。
+- **爆発物管理（HD01FöU13 [B3]）**: FöUはEU規則2019/1148に従い前駆体管理と機関間情報共有を強化——安全保障政策上の重要性が高い。
+- **住宅保証 (Housing guarantee, HD01CU37 [B2])**: CUは社会的脆弱グループへの自治体家賃保証を可能にする——政府の住宅市場自由化と社会民主主義的住宅政策の間で争点。
+- **飲食サービス許可（HD01SoU33 [C2]）**: SoUはアルコール免許の義務的食事提供要件を廃止——飲食業界の規制緩和。
+- **ユーロポール委任（HD01JuU46 [C1]）**: 年次議会説明責任報告書——手続き的。
+
+### 最重要の将来のトリガー
+
+**KU36本会議投票（2026-05-06予定）**: EU AI法後のデジタルプライバシー政策枠組みに関する最初の議会投票——結果は2026年選挙前の監視国家制限に関する政府/野党バランスを示す。
+
+### 信頼度マーカー
+
+全体的評価信頼度: 中高。一次資料：Riksdag答申（公開）。専有情報または漏洩データは使用せず。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-30  
+**기사 날짜**: 2026-04-29  
+**분류**: 공개  
+**신뢰도**: 중상 [B2]
+
+### 🎯 핵심 요약
+
+스웨덴 의회(Riksdag) 2025/26년 봄 위원회 회기는 프라이버시 감독, 사법 효율성, 폭발물 통제, 핵시설 허가 개혁, 경쟁법 현대화, 주택시장 개입을 망라하는 8개의 보고서를 제출한다. 헌법위원회의 디지털 무결성에 대한 소급 검토(HD01KU36)와 사법위원회의 법원 효율성 개혁(HD01JuU9)이 가장 높은 전략적 비중을 지니며, 2026년 선거의 해에 법치국가 인프라를 현대화하려는 정부의 의도를 나타낸다. 세 가지 제안은 북유럽 안보 의식이 고조되는 시점에서 스웨덴의 EU 규제 정렬에 직접적인 영향을 미친다.
+
+### 🧭 이 보고서가 지원하는 3가지 결정
+
+1. **언론과 공적 책임**: 선거의 해 중요성과 정치적 의의를 감안할 때 심층 보도가 필요한 위원회 보고서는 무엇인가?
+2. **정책 모니터링**: 릭스다그 투표(2026년 5월~6월 예정)까지 추적이 필요한 이행 위험을 안고 있는 제안은 무엇인가?
+3. **시민사회와 법률 실무자**: 어떤 법률 개혁(JuU9 사법 효율성, KU36 디지털 프라이버시, NU22 경쟁)이 이해관계자의 즉각적인 대응을 요구하는가?
+
+### 60초 읽기
+
+- **프라이버시 리더십 (HD01KU36 [B2])**: KU는 2020~2024년 감독 주기를 바탕으로 디지털 무결성 프레임워크의 17가지 개선안을 제안함 — AI법 시행과 공공 부문 감시 제한을 위한 의제 설정.
+- **사법 개혁 (HD01JuU9 [B2])**: JuU는 사건 처리 적체, 서면 절차, 디지털 제출을 목표로 하는 절차적 효율성 패키지를 추진함 — 이행 목표 2027년.
+- **경쟁 현대화 (HD01NU22 [B2])**: NU는 민간 시장과 공공 조달을 대상으로 Konkurrensverket에 새로운 조사 도구를 도입함; EU 디지털 시장법이 핵심.
+- **핵 허가 (HD01NU19 [B2])**: NU는 새로운 Energimyndighet 구조 아래 핵시설 검토를 간소화함 — 스웨덴의 핵에너지 확장 야망에 결정적.
+- **폭발물 통제 (HD01FöU13 [B3])**: FöU는 EU 규정 2019/1148에 따라 전구체 통제 및 기관 간 정보 공유를 강화함 — 안보 정책적 관련성 증가.
+- **주택 보증 (Housing guarantee, HD01CU37 [B2])**: CU는 사회적으로 취약한 집단을 위한 지방자치단체 임대 보증을 가능하게 함 — 정부의 주택시장 자유화와 사회민주주의 주택정책 사이에서 논쟁.
+- **서비스 허가 (HD01SoU33 [C2])**: SoU는 주류 면허에 대한 의무적 음식 제공 요건을 폐지함 — 요식업 규제 완화.
+- **유로폴 위임 (HD01JuU46 [C1])**: 연례 의회 책임 보고서 — 절차적.
+
+### 가장 중요한 미래 트리거
+
+**KU36 본회의 표결 (2026-05-06 예정)**: EU AI법 이후 디지털 프라이버시 정책 프레임워크에 관한 첫 번째 의회 표결 — 결과는 2026년 선거 전 감시국가 한계에 관한 정부/야당 균형을 나타냄.
+
+### 신뢰도 표시
+
+전체 평가 신뢰도: 중상. 1차 자료: 릭스다그 보고서(공개). 독점적 또는 유출된 데이터 미사용.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-30  
+**Artikeldatum**: 2026-04-29  
+**Classificatie**: OPENBAAR  
+**Vertrouwen**: MIDDEN-HOOG [B2]
+
+### 🎯 Samenvatting
+
+De voorjaarssessie van de Riksdag-commissie 2025/26 levert acht rapporten op het gebied van privacytoezicht, gerechtelijke efficiëntie, explosiefbeheersing, hervorming van vergunningen voor kerninstallaties, modernisering van het mededingingsrecht en woningmarktinterventie. De retrospectieve beoordeling van digitale integriteit door de Constitutionele Commissie (HD01KU36) en de gerechtelijke efficiëntiehervorm van de Justitiecommissie (HD01JuU9) hebben het grootste strategische gewicht en signaleren de bedoeling van de regering om de rechtsstaatstinfrastructuur te moderniseren in het verkiezingsjaar 2026. Drie voorstellen hebben direct invloed op de EU-regelgevingsafstemming van Zweden in een tijd van verhoogd noordelijk veiligheidsbewustzijn.
+
+### 🧭 3 beslissingen die dit document ondersteunt
+
+1. **Media en publieke verantwoordelijkheid**: Welke commissierapporten verdienen diepgaande berichtgeving gezien de verkiezingsjaarssaillantie en politieke betekenis?
+2. **Beleidsmonitoring**: Welke voorstellen dragen implementatierisico's die monitoring tot aan de Riksdag-stemming vereisen (verwacht mei–juni 2026)?
+3. **Maatschappelijk middenveld en rechtsprofessionals**: Welke juridische hervormingen (JuU9 gerechtelijke efficiëntie, KU36 digitale privacy, NU22 concurrentie) vereisen directe respons van belanghebbenden?
+
+### 60-seconden lezing
+
+- **Privacyleiderschap (HD01KU36 [B2])**: KU stelt 17 verbeteringen voor aan digitale integriteitskaders op basis van haar toezichtscyclus 2020–2024 — stelt de agenda voor de implementatie van de AI-verordening en grenzen voor surveillance door de publieke sector.
+- **Gerechtelijke hervorming (HD01JuU9 [B2])**: JuU drijft een procedureel efficiëntiepakket aan gericht op achterstanden in zaakbehandeling, schriftelijke procedures en digitale indieningen — implementatiedoelstelling 2027.
+- **Concurrentiemodernisering (HD01NU22 [B2])**: NU introduceert nieuwe onderzoekstools voor Konkurrensverket gericht op zowel private markten als overheidsaanbestedingen; de EU-wet inzake digitale markten is centraal.
+- **Kernvergunning (HD01NU19 [B2])**: NU stroomlijnt de beoordeling van kerninstallaties onder de nieuwe Energimyndighet-structuur — cruciaal voor Zwedens kernenergie-uitbreidingsambities.
+- **Explosiefbeheersing (HD01FöU13 [B3])**: FöU scherpt de controle op precursoren en interagentschaps-inlichtingendeling aan overeenkomstig EU-Verordening 2019/1148 — verhoogde veiligheidspolitieke relevantie.
+- **Woongarantie (Housing guarantee, HD01CU37 [B2])**: CU maakt gemeentelijke huurgaranties voor sociaal kwetsbare groepen mogelijk — omstreden tussen de woningmarktliberalisering van de regering en sociaaldemocratisch woonbeleid.
+- **Serveervergrunning (HD01SoU33 [C2])**: SoU schrapt de verplichte maaltijdverplichting voor drankvergunningen — deregulering van de horecasector.
+- **Europol-delegatie (HD01JuU46 [C1])**: Jaarlijks parlementair verantwoordingsrapport — procedureel.
+
+### Belangrijkste toekomstige trigger
+
+**KU36 kamervotum (verwacht 2026-05-06)**: Eerste parlementaire stemming over het kader voor digitaal privacybeleid na de EU AI-verordening — de uitkomst signaleert het regeringsopositionssaldo over de grenzen van de surveillance staat voor de verkiezingen van 2026.
+
+### Betrouwbaarheidslabel
+
+Algehele beoordelingsbetrouwbaarheid: MIDDEN-HOOG. Primaire bronnen: Riksdag-rapporten (openbaar). Geen propriëtaire of gelekte data gebruikt.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-30  
+**Artikeldato**: 2026-04-29  
+**Klassifikasjon**: OFFENTLIG  
+**Konfidens**: MEDIUM-HØY [B2]
+
+### 🎯 Sammendrag
+
+Riksdagens vårsesjons utvalg 2025/26 leverer åtte betenkninger innen personvern, domstolseffektivitet, eksplosivkontroll, reform av konsesjonsprosessen for kjernekraftverk, modernisering av konkurranselovgivningen og boligmarkedsintervensjon. Konstitusjonskomiteen retrospektive gjennomgang av digital integritet (HD01KU36) og Justiskomiteen domstolseffektivitetsreform (HD01JuU9) har størst strategisk vekt og signalerer regjeringens intensjon om å modernisere rettsstatsinfrastrukturen i valgåret 2026. Tre forslag påvirker direkte Sveriges EU-reguleringstilpasning i en tid med økt nordisk sikkerhetsbevissthet.
+
+### 🧭 3 beslutninger dette notatet støtter
+
+1. **Medier og offentlig ansvarlighet**: De utvalgsrapporter fortjener grundig dekning gitt valgårssaliens og politisk betydning?
+2. **Politisk overvåking**: De forslag bærer implementeringsrisiko som krever oppfølging frem til Riksdagsavstemning (forventet mai–juni 2026)?
+3. **Sivilsamfunn og juridiske utøvere**: De rettsreformer (JuU9 domstolseffektivitet, KU36 digital personvern, NU22 konkurranse) krever umiddelbar interessentrespons?
+
+### 60-sekunders lesning
+
+- **Personvernlederskab (HD01KU36 [B2])**: KU foreslår 17 forbedringer av rammer for digital integritet bygget på sitt tilsynssyklus 2020–2024 — setter agendaen for implementering av AI-forordningen og grenser for offentlig sektorovervåking.
+- **Domstolsreform (HD01JuU9 [B2])**: JuU fremmer en prosedyreeffektivitetspakke rettet mot saksbehandlingsrestanser, skriftlige prosedyrer og digital innlevering — implementeringsmål 2027.
+- **Konkurransemodernisering (HD01NU22 [B2])**: NU innfører nye etterforskningsverktøy for Konkurrensverket rettet mot både private markeder og offentlig anskaffelse; EUs digitale markedslov er sentral.
+- **Kjernekraftstillatelse (HD01NU19 [B2])**: NU strømlinjeformer gjennomgang av kjernekraftanlegg under den nye Energimyndighetens struktur — avgjørende for Sveriges kjernekraftutvidelsesамbisjoner.
+- **Eksplosivkontroll (HD01FöU13 [B3])**: FöU strammer inn kontroll med forløpermaterialer og tverretatlig etterretningsdeling i tråd med EU-forordning 2019/1148 — økt sikkerhetspolitisk relevans.
+- **Boliggaranti (Housing guarantee, HD01CU37 [B2])**: CU muliggjør kommunale leigarantier for sosialt utsatte grupper — omstridt mellom regjeringens boligmarkedsliberalisering og sosialdemokratisk boligpolitikk.
+- **Serveringstillatelse (HD01SoU33 [C2])**: SoU fjerner obligatorisk matkrav for alkoholbevilgninger — deregulering av restaurantbransjen.
+- **Europol-delegasjon (HD01JuU46 [C1])**: Årlig parlamentarisk ansvarsrapport — prosedyremessig.
+
+### Viktigste fremtidige trigger
+
+**KU36 kammeravtemning (forventet 2026-05-06)**: Første parlamentsavstemning om rammer for digital personvernpolitikk etter EUs AI-forordning — utfallet signalerer regjerings-/opposisjonssaldo om overvåkingsstatens grenser foran valget 2026.
+
+### Konfidensmarkering
+
+Overordnet vurderingskonfidens: MEDIUM-HØY. Primære kilder: Riksdagens betenkninger (offentlige). Ingen proprietære eller lekkede data brukt.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-04-30  
+**Artikeldatum**: 2026-04-29  
+**Klassificering**: OFFENTLIG  
+**Konfidens**: MEDIUM-HÖG [B2]
+
+### 🎯 Sammanfattning
+
+Riksdagens vårtermin 2025/26 levererar åtta betänkanden inom integritetsgranskning, domstolseffektivitet, sprängämneskontroll, tillståndsreform för kärnkraftsanläggningar, modernisering av konkurrensrätten och bostadsmarknadsintervention. Konstitutionsutskottets retrospektiva granskning av digital integritet (HD01KU36) och Justitieutskottets domstolseffektivitetsreform (HD01JuU9) väger tyngst strategiskt och signalerar regeringens vilja att modernisera rättsstatens infrastruktur i valår 2026. Tre förslag påverkar direkt Sveriges EU-regleringsanpassning i ett läge av förhöjd nordisk säkerhetsmedvetenhet.
+
+### 🧭 3 beslut som detta PM stödjer
+
+1. **Medier och allmänhetsgranskning**: Vilka utskottsbetänkanden förtjänar djuprapportering med tanke på valårssaliens och politisk vikt?
+2. **Policybevakning**: Vilka förslag bär genomföranderisker som kräver uppföljning fram till Riksdagsomröstning (förväntad maj–juni 2026)?
+3. **Civilsamhälle och jurister**: Vilka rättsreformer (JuU9 domstolseffektivitet, KU36 digital integritet, NU22 konkurrens) kräver omedelbar intressenthanttering?
+
+### 60-sekunders läsning
+
+- **Integritetsledarskap (HD01KU36 [B2])**: KU föreslår 17 förbättringar av ramverket för digital integritet baserat på sitt tillsynscykel 2020–2024 — sätter agendan för implementeringen av AI-förordningen och gränser för offentlig sektorövervakning.
+- **Domstolsreform (HD01JuU9 [B2])**: JuU driver ett procedursteffektivitetspaket för att minska balansen av ärenden, skriftliga förfaranden och digitala inlämningar — implementeringsmål 2027.
+- **Konkurrensmodernisering (HD01NU22 [B2])**: NU inför nya utredningsverktyg för Konkurrensverket riktade mot både privata marknader och offentlig upphandling; EU:s digitala marknadslag central.
+- **Kärnkraftstillståndsgivning (HD01NU19 [B2])**: NU effektiviserar granskningen av kärnkraftsanläggningar under den nya Energimyndighetens struktur — avgörande för Sveriges kärnkraftsexpansionsambitioner.
+- **Sprängämneskontroll (HD01FöU13 [B3])**: FöU skärper föregångarmaterialkontroll och underrättelsesamverkan mellan myndigheter i linje med EU-förordning 2019/1148 — förhöjd säkerhetspolitisk relevans.
+- **Bostadsgaranti (Housing guarantee, HD01CU37 [B2])**: CU möjliggör kommunala hyresgarantier för socialt utsatta grupper — omtvistat mellan regeringens bostadsmarknadsliberalisering och socialdemokratisk bostadspolitik.
+- **Serveringstillstånd (HD01SoU33 [C2])**: SoU tar bort obligatoriskt matkravet för alkoholtillstånd — avreglering av restaurangbranschen.
+- **Europoldelegation (HD01JuU46 [C1])**: Riksdagens årsredovisning för parlamentariskt ansvarsutkrävande — procedurellt.
+
+### Viktigaste framtida trigger
+
+**KU36 kammarvotum (förväntat 2026-05-06)**: Första parlamentsomröstningen om ramverket för digital integritetspolitik efter EU:s AI-förordning — resultatet signalerar regering/oppositionssaldo om övervakningsstatens gränser inför valet 2026.
+
+### Konfidensmarkering
+
+Övergripande konfidens: MEDIUM-HÖG. Primärkällor: Riksdagens betänkanden (offentliga). Inga proprietära eller läckta uppgifter används.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**日期**: 2026-04-30  
+**文章日期**: 2026-04-29  
+**分类**: 公开  
+**置信度**: 中高 [B2]
+
+### 🎯 执行摘要
+
+瑞典议会（Riksdag）2025/26年春季委员会会期提交了八份报告，涵盖隐私监督、司法效率、爆炸物管控、核设施许可改革、竞争法现代化以及住房市场干预。宪法委员会对数字完整性的回溯性审查（HD01KU36）和司法委员会的法院效率改革（HD01JuU9）具有最高战略分量，表明政府在2026年选举年推进法治基础设施现代化的意图。在北欧安全意识增强的背景下，三项提案直接影响瑞典与欧盟的监管对齐。
+
+### 🧭 本简报支持的三项决策
+
+1. **媒体与公共问责**: 鉴于选举年的重要性和政治意义，哪些委员会报告值得深度报道？
+2. **政策监测**: 哪些提案存在需要追踪至议会投票（预计2026年5至6月）的实施风险？
+3. **公民社会与法律从业者**: 哪些法律改革（JuU9司法效率、KU36数字隐私、NU22竞争）需要利益相关者立即作出回应？
+
+### 60秒速读
+
+- **隐私领导力（HD01KU36 [B2]）**: KU提议基于其2020至2024年监督周期对数字完整性框架进行17项改进——为人工智能法规实施和公共部门监控限制设置议程。
+- **司法改革（HD01JuU9 [B2]）**: JuU推进针对案件积压、书面程序和数字提交的程序效率改革包——实施目标2027年。
+- **竞争现代化（HD01NU22 [B2]）**: NU为Konkurrensverket引入新调查工具，面向私人市场和公共采购；欧盟数字市场法居于核心。
+- **核能许可（HD01NU19 [B2]）**: NU在新能源机构（Energimyndighet）架构下简化核设施审查——对瑞典核能扩张雄心至关重要。
+- **爆炸物管控（HD01FöU13 [B3]）**: FöU依据欧盟法规2019/1148强化前体管控和跨机构情报共享——安全政策关联性提升。
+- **住房保证 (Housing guarantee, HD01CU37 [B2])**: CU允许为社会弱势群体提供市政租金担保——政府住房市场自由化与社会民主党住房政策之间存在争议。
+- **服务许可（HD01SoU33 [C2]）**: SoU取消酒类许可证的强制性餐饮服务要求——餐饮行业放松管制。
+- **欧洲刑警组织代表团（HD01JuU46 [C1]）**: 年度议会责任报告——程序性事务。
+
+### 最重要的未来触发因素
+
+**KU36全院投票（预计2026-05-06）**: 欧盟AI法规出台后首次关于数字隐私政策框架的议会投票——结果将在2026年选举前揭示政府与反对党在监控国家边界问题上的力量对比。
+
+### 置信度标记
+
+总体评估置信度：中高。主要来源：瑞典议会报告（公开）。未使用专有或泄露数据。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title Significance × Urgency — Committee Reports 2026-04-29
+    x-axis Low Urgency --> High Urgency
+    x-axis Low Urgency --> High Urgency
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Immediate action
+    quadrant-3 Low priority
+    quadrant-4 Track for trends
+    HD01KU36: [0.75, 0.85]
+    HD01JuU9: [0.70, 0.80]
+    HD01NU22: [0.65, 0.75]
+    HD01NU19: [0.60, 0.72]
+    HD01FöU13: [0.68, 0.70]
+    HD01CU37: [0.55, 0.65]
+    HD01SoU33: [0.40, 0.35]
+    HD01JuU46: [0.30, 0.30]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    A[KU36 Privacy Oversight] --> B[AI Act Implementation]
+    C[JuU9 Court Efficiency] --> D[2027 Procedural Reform]
+    E[NU22 Competition Tools] --> F[Konkurrensverket Powers]
+    G[NU19 Nuclear Review] --> H[Energy Policy 2026+]
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#000
+    style G fill:#ffbe0b,color:#000
+    style B fill:#00d9ff,color:#000
+    style D fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style H fill:#00d9ff,color:#000
+```
+
+<!-- source-sha: 06c5659c339f0846d505d906c42f224f6577bfe3 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 9 | Linked in Article Sources, not expanded inline |
 
@@ -1804,6 +2837,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

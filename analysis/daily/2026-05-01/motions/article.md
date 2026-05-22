@@ -6,7 +6,7 @@ date: 2026-05-01
 subfolder: motions
 slug: 2026-05-01-motions
 source_folder: analysis/daily/2026-05-01/motions
-generated_at: 2026-05-21T02:19:50.810Z
+generated_at: 2026-05-22T12:25:06.235Z
 language: en
 layout: article
 ---
@@ -98,6 +98,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2056,13 +2069,939 @@ Proposition 2025/26:238 (new myndighet) and 2025/26:246 (stricter rules for youn
 
 No prior PIR files found for motions subfolder within 14-day window. First-generation run — PIR status established from scratch.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_ar.md -->
+
+‏# المعارضة السويدية تشن تحدياً منسقاً ضد أجندة الحكومة في مجال الطاقة والبيئة
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-01 | **معرّف التشغيل**: 25206597626 | **التصنيف**: عام  
+**مستوى الثقة**: متوسط (مواقف الأحزاب موثقة؛ yrkanden محددة بانتظار مراجعة النص الكامل)
+
+### BLUF
+
+قدّمت المعارضة الاشتراكية الديمقراطية 16 اقتراحاً لجنوياً في 2026-04-29 — آخر يوم للتقديم قبل العطلة الصيفية — موزعةً على خمسة مقترحات حكومية تغطي إصلاح نظام الطاقة، والتصاريح البيئية، وطاقة الرياح، وقانون الموانئ، وقضاء الأحداث. تكشف الاقتراحات عن استراتيجية معارضة متماسكة: يقبل حزب S التوجه الهيكلي للتشريعات الحكومية في سياسة الطاقة والبيئة، مع الضغط نحو طموحات مناخية أقوى، وحقوق حوكمة مجتمعية أكثر وضوحاً، وحمايات رعاية اجتماعية أصرم للجانحين الأحداث. تم سحب اقتراح واحد (HD024127) قبل التقديم — شذوذ إجرائي يشير إلى فشل محتمل في التنسيق الداخلي.
+
+### BLUF — النتائج الرئيسية
+
+- **حزمة سياسة الطاقة (3 مقترحات، 8 اقتراحات)**: يطعن حزب S في قوانين الحكومة المتعلقة بنظام الكهرباء (prop. 2025/26:240) والإطار البلدي لطاقة الرياح (prop. 2025/26:239)، مطالباً بأهداف أسرع لإزالة الكربون وحوكمة ديمقراطية محلية أوضح على قرارات موقع الطاقة.
+- **إصلاح التصاريح البيئية (prop. 2025/26:238، 4 اقتراحات)**: يعترض حزب S على تصميم هيئة التصاريح البيئية الجديدة المخصصة، محتجاً بأنها تخاطر بتشتيت الحوكمة البيئية وإضعاف الرقابة القضائية؛ وهذا هو المجموعة الأعلى في مؤشر DIW.
+- **العدالة الجنائية (prop. 2025/26:246، اقتراح واحد)**: يستجيب حزب S للقواعد الأكثر صرامة للأحداث بمطالب خدمات إعادة تأهيل متكاملة — مما يعكس انقساماً جوهرياً في القيم حول معاملة الجانحين الأحداث.
+- **النوع الاجتماعي/حقوق الإنسان (skr. 2025/26:245، اقتراحان)**: يُشير جهد مشترك بين S وحزب مقرب من V ضد العنف القائم على الشرف إلى تعاون عابر للكتل حول المساواة بين الجنسين خارج سياسة الطاقة.
+- **ضريبة الحمولة (prop. 2025/26:243)**: اقتراح تنظيمي منخفض الأهمية بشأن الضرائب البحرية.
+
+### القرارات المدعومة
+
+1. **التخطيط البرلماني**: يجب على لجان MJU وNU وTU وJuU وAU وSkU ترتيب أولويات هذه الاقتراحات مقابل جدولها الزمني للعام 2025/26 قبل العطلة الصيفية (الموعد المستهدف: يونيو 2026).
+2. **موقف الاستجابة الحكومية**: يجب على وزارتي المناخ والبيئة والطاقة تقييم ما إذا كانت اعتراضات حزب S على الهيئة البيئية الجديدة وقانون الكهرباء تمثل مخاطر عرقلة (تستلزم تنازلات) أم ضجيجاً إجرائياً (يمكن تجاوزه بالأغلبية الحالية).
+3. **إدارة الائتلاف**: يجب على شركاء الحكومة (M، SD، KD، L) تأكيد تماسك التصويت لجميع حزم المقترحات الخمس قبل تصويتات اللجان — تختبر اقتراحات حزب S ما إذا كان أي حزب حكومي يحمل تحفظات مستقلة حول حوكمة الطاقة أو قضاء الأحداث.
+
+### نقاط الاستخبارات في 60 ثانية
+
+- 16 اقتراحاً موضوعياً في 6 لجان مُقدَّمة في يوم واحد — أعلى حجم اقتراحات ليوم واحد في riksmötet 2025/26 للكتلة S في هذه المجالات السياسية [HD024124–HD024140, data.riksdagen.se]
+- التصاريح البيئية (MJU) هي الأولوية الاستراتيجية: 4 اقتراحات لجنوية منفصلة (HD024124، HD024131، HD024134، HD024139) — هجوم منسق شبه مؤكد على إصلاح الإدارة الحكومية الرئيسي [HD024124، تأكيد النص الكامل]
+- حق النقض على طاقة الرياح وتصميم نظام الكهرباء متنازع عليهما في لجنة NU (HD024126، HD024129، HD024130، HD024132، HD024137، HD024138) — 6 اقتراحات في مجال سياسي واحد تشير إلى تنسيق عالٍ داخل الكتلة [HD024126، HD024129، تأكيد النص الكامل]
+- سحب HD024127 (الحالة: منتهية الصلاحية) قبل المراجعة الموضوعية شذوذ تحليلي — خلل إجرائي داخلي لدى حزب S أو سحب تكتيكي [HD024127، riksdagen.se]
+- إشارة عابرة للكتل: HD024133 من Lorena Delgado Varas (-) حول العنف القائم على الشرف تشير إلى أن حزب V ينسق مع استراتيجية حزب S خارج قطاع الطاقة [HD024133، riksdagen.se]
+
+### أهم المحفزات المستقبلية
+
+**جلسة الاستماع للجنة MJU حول prop. 2025/26:238** (هيئة التصاريح البيئية الجديدة): متوقعة يونيو 2026. إذا اعتمدت اللجنة أي yrkande من حزب S، فهذا يشير إلى تنازلات حكومية بشأن التصميم المؤسسي. مراقبة الإشارات المحتملة "tillkännagivande" من الحكومة قبل ذلك التاريخ.
+
+### تقييم الثقة
+
+| البُعد | مستوى الثقة | ملاحظة |
+|--------|------------|--------|
+| تحديد الوثائق | عالٍ | جميع الـ 17 من dok_ids مؤكدة عبر riksdagen MCP |
+| نسب الحزب (S) | عالٍ | ثلاثة قادة مؤكدون (Åsa Westlund، Fredrik Olovsson، Teresa Carvalho) |
+| نسب الحزب (وثائق غير مؤكدة) | متوسط | 13 وثيقة بدون علامة حزب صريحة في مخرجات MCP؛ النمط متسق مع كتلة S |
+| محتوى الموقف السياسي | متوسط | النص الكامل متاح لـ HD024124، HD024126، HD024129؛ البقية بيانات وصفية فقط |
+| توقع نتيجة التصويت | منخفض | لم يتم العثور على تصويتات مقارنة سابقة في آخر 4 riksmöten لهذه التدابير المحددة |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### تحديث المرحلة الثانية
+
+**الإثراء من مراجعة محفظة التحليل الكاملة**:
+
+بعد اكتمال جميع الـ 23 نتيجة تحليلية، يُؤكَّد ويُعزَّز تقييم BLUF أعلاه:
+
+1. **تأكيد التموضع المسبق للائتلاف**: يُظهر coalition-mathematics.md أن yrkanden الاقتراحات تتوافق بدقة مع متطلبات ائتلاف C، V، MP — أقوى دليل على الوظيفة المزدوجة (حملة انتخابية + تفاوض)
+2. **التحقق من تغطية شريحة الناخبين**: يؤكد voter-segmentation.md أربعة شرائح مستهدفة متميزة، جميعها مغطاة؛ تحصل الطاقة/البيئة على معظم الموارد (7 اقتراحات) موجهةً نحو أكثر الناخبين المتأرجحين قيمةً
+3. **المؤشرات الاستشرافية نشطة**: يحدد forward-indicators.md 6 أهداف جمع؛ FI-001 (جلسة استماع MJU) وFI-003 (أسعار الكهرباء) هما أهم الإشارات الاستشرافية للمراقبة
+4. **المثيل التاريخي يعزز التقييم**: يُظهر historical-parallels.md أن سابقة 2014 (فاز حزب S بالانتخابات بعد هجوم ربيعي مماثل) يمنح حزب S أسباباً للثقة، بينما تحذر سابقة 2010 (الخسارة رغم استراتيجية مماثلة) من هيمنة العوامل الخارجية
+
+**تحديث الثقة**: رُفِّع إلى عالٍ لـ KJ-1 (الهجوم المنسق) وKJ-2 (جميع الاقتراحات ستفشل). يبقى KJ-4 (تنسيق كتلة V) عند المتوسط لكن مع اتجاه نحو المتوسط-العالي بعد التقاطع مع توقيت HD024133.
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-01 | **Kørsels-ID**: 25206597626 | **Klassifikation**: OFFENTLIG  
+**Konfidensgrad**: MIDDEL (verificerede partipositioner; specifikke yrkanden afventer fuldstændig tekstgennemgang)
+
+### BLUF
+
+Socialdemokraternes opposition indgav 16 udvalgsforslag den 2026-04-29 — den sidste dag for indsendelse inden sommerferien — fordelt på fem regeringspropositioner om energisystemreform, miljøtilladelser, vindkraft, havneloven og ungdomsretfærdighed. Forslagene afslører en sammenhængende oppositionsstrategi: S accepterer den strukturelle retning i regeringens lovgivning om energi- og miljøpolitik, men presser på for stærkere klimaambitioner, tydeligere rettigheder til samfundsstyring og hårdere socialpolitiske beskyttelser for unge lovovertrædere. Ét forslag (HD024127) blev trukket tilbage inden indsendelse — en proceduremæssig anomali, der signalerer mulig intern koordineringssvigt.
+
+### BLUF — Centrale fund
+
+- **Energipolitikklynge (3 propositioner, 8 forslag)**: S udfordrer regeringens love om elsystemet (prop. 2025/26:240) og vindkraftens kommuneramme (prop. 2025/26:239) og kræver hurtigere dekarboniseringsmål og klarere lokal demokratisk styring af energilokaliseringsbeslutninger.
+- **Reform af miljøtilladelser (prop. 2025/26:238, 4 forslag)**: S gør indsigelse mod udformningen af den nye dedikerede miljøtilladelsesmyndighed og hævder, at den risikerer fragmentering af miljøstyringen og svækkelse af den retslige kontrol; dette er det højest DIW-klynge.
+- **Strafferetslig retfærdighed (prop. 2025/26:246, 1 forslag)**: S svarer på strengere ungdomsregler med krav om integrerede rehabiliteringstjenester — afspejler en grundlæggende værdiforskel i synet på behandlingen af unge lovovertrædere.
+- **Køn/menneskerettigheder (skr. 2025/26:245, 2 forslag)**: En fælles S + V-nærliggende indsats mod æresrelateret vold signalerer tværblokkende samarbejde om ligestilling uden for energipolitikken.
+- **Tonnageskat (prop. 2025/26:243)**: Lavt prioriteret reguleringsforslag om søfartsbeskatning.
+
+### Understøttede beslutninger
+
+1. **Parlamentarisk planlægning**: Udvalgene MJU, NU, TU, JuU, AU og SkU skal prioritere disse forslag i forhold til deres kalender for 2025/26 inden sommerferien (mål: juni 2026).
+2. **Regeringens svarposition**: Ministerierne for Klima & Miljø og Energi skal vurdere, om S' indvendinger mod den nye miljømyndighed og elloven udgør blokeringsrisici (der kræver indrømmelser) eller proceduremæssig støj (kan overrules med eksisterende flertal).
+3. **Koalitionsstyring**: Regeringspartnerne (M, SD, KD, L) skal bekræfte afstemningskohæsion for alle fem propositionsklynger inden udvalgsafstemninger — S-forslagene tester, om noget regeringsparti har selvstændige forbehold om energistyring eller ungdomsretfærdighed.
+
+### 60-sekunders efterretningspunkter
+
+- 16 substantielle forslag i 6 udvalg indgivet på én dag — højeste enkeltdagsforslags­volumen i riksmötet 2025/26 for S-blokken på disse politikområder [HD024124–HD024140, data.riksdagen.se]
+- Miljøtilladelser (MJU) er den strategiske prioritet: 4 separate udvalgsforslag (HD024124, HD024131, HD024134, HD024139) — næsten sikker koordineret angreb på en flagskibsreform inden for statslig forvaltning [HD024124, fulltekst bekræftet]
+- Vindkraftsveto og elsystemdesign er omtvistede i NU-udvalget (HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 6 forslag inden for ét politikområde indikerer høj intra-blokkens koordinering [HD024126, HD024129, fulltekst bekræftet]
+- Tilbagetrækning af HD024127 (status: Udgået) inden substantiel gennemgang er en analytisk anomali — intern S-procedurefejl eller taktisk tilbagetrækning [HD024127, riksdagen.se]
+- Tværblokssignal: HD024133 af Lorena Delgado Varas (-) om æresvold antyder, at V koordinerer med S-strategi uden for energisektoren [HD024133, riksdagen.se]
+
+### Vigtigste fremtidsudløser
+
+**MJU-udvalgets høring om prop. 2025/26:238** (ny miljøtilladelsesmyndighed): forventes juni 2026. Hvis MJU vedtager noget S-yrkande, signalerer det regeringsindrømmelser om institutionel design. Hold øje med eventualle "tillkännagivande"-signaler fra regeringen inden den dato.
+
+### Konfidensvurdering
+
+| Dimension | Konfidensgrad | Bemærkning |
+|-----------|--------------|------------|
+| Dokumentidentifikation | HØJ | Alle 17 dok_ids bekræftet via riksdagen MCP |
+| Partitilhørighed (S) | HØJ | Tre ledere bekræftet (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| Partitilhørighed (ubekræftede dok) | MIDDEL | 13 dok mangler eksplicit partimærke i MCP-retur; mønster stemmer med S-blokken |
+| Politisk positionsindhold | MIDDEL | Fulltekst tilgængelig for HD024124, HD024126, HD024129; andre kun metadata |
+| Forudsigelse af afstemningsresultat | LAV | Ingen sammenlignelige tidligere afstemninger fundet i de seneste 4 riksmöten for disse specifikke foranstaltninger |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-01 | **Ausführungs-ID**: 25206597626 | **Klassifizierung**: ÖFFENTLICH  
+**Konfidenzniveau**: MITTEL (verifizierte Parteipositionen; spezifische yrkanden stehen unter vollständiger Textprüfung)
+
+### BLUF
+
+Die sozialdemokratische Opposition reichte am 2026-04-29 — dem letzten Einreichungstag vor der Sommerpause — 16 Ausschussanträge ein, die auf fünf Regierungspropositions zu Energiesystemreform, Umweltgenehmigungen, Windkraft, Hafengesetz und Jugendstrafrecht verteilt waren. Die Anträge offenbaren eine kohärente Oppositionsstrategie: S akzeptiert die strukturelle Ausrichtung der Regierungsgesetzgebung in der Energie- und Umweltpolitik, fordert jedoch stärkere Klimaambition, explizitere kommunale Selbstverwaltungsrechte und härtere soziale Schutzmaßnahmen für jugendliche Straftäter. Ein Antrag (HD024127) wurde vor der Einreichung zurückgezogen — eine verfahrensmäßige Anomalie, die auf einen möglichen internen Koordinierungsfehler hinweist.
+
+### BLUF — Zentrale Erkenntnisse
+
+- **Energiepolitik-Cluster (3 Propositionen, 8 Anträge)**: S fordert die Gesetze der Regierung zum Stromsystem (prop. 2025/26:240) und den Kommunalrahmen für Windkraft (prop. 2025/26:239) heraus und fordert schnellere Dekarbonisierungsziele und klarere lokale demokratische Steuerung von Energiestandortentscheidungen.
+- **Reform der Umweltgenehmigungen (prop. 2025/26:238, 4 Anträge)**: S widerspricht der Gestaltung der neuen dedizierten Umweltgenehmigungsbehörde und argumentiert, dass diese eine Fragmentierung der Umweltsteuerung und eine Schwächung der richterlichen Aufsicht riskiert; dies ist der höchste DIW-Cluster.
+- **Strafjustiz (prop. 2025/26:246, 1 Antrag)**: S reagiert auf strengere Jugendvorschriften mit Forderungen nach integrierten Rehabilitierungsdiensten — reflektiert eine grundlegende Wertedifferenz in der Behandlung jugendlicher Straftäter.
+- **Geschlecht/Menschenrechte (skr. 2025/26:245, 2 Anträge)**: Ein gemeinsamer S + V-naher Vorstoß gegen Ehrgewalt signalisiert blockübergreifende Zusammenarbeit bei der Gleichstellung außerhalb der Energiepolitik.
+- **Tonnagesteuer (prop. 2025/26:243)**: Niedrig priorisierter Regulierungsantrag zur Seeverkehrsbesteuerung.
+
+### Unterstützte Entscheidungen
+
+1. **Parlamentarische Terminplanung**: Die Ausschüsse MJU, NU, TU, JuU, AU und SkU müssen diese Anträge vor der Sommerpause gegen ihren Kalender für 2025/26 priorisieren (Zielfrist: Juni 2026).
+2. **Reaktionsposition der Regierung**: Die Ministerien für Klima & Umwelt und Energie müssen bewerten, ob die Einwände von S gegen die neue Umweltbehörde und das Stromgesetz Blockierungsrisiken darstellen (die Zugeständnisse erfordern) oder prozedurales Rauschen (mit bestehender Mehrheit überstimmt werden kann).
+3. **Koalitionsmanagement**: Die Regierungspartner (M, SD, KD, L) müssen die Abstimmungskohäsion für alle fünf Propositions-Cluster vor den Ausschussabstimmungen bestätigen — die S-Anträge testen, ob eine Regierungspartei unabhängige Vorbehalte zur Energiesteuerung oder Jugendstrafjustiz hat.
+
+### 60-Sekunden-Nachrichtenpunkte
+
+- 16 substantielle Anträge in 6 Ausschüssen an einem einzigen Tag eingereicht — höchstes Einzeltags-Antragsvolumen im Riksmötet 2025/26 für den S-Block in diesen Politikbereichen [HD024124–HD024140, data.riksdagen.se]
+- Umweltgenehmigungen (MJU) sind die strategische Priorität: 4 separate Ausschussanträge (HD024124, HD024131, HD024134, HD024139) — nahezu sicherer koordinierter Angriff auf eine Leitreform der staatlichen Verwaltung [HD024124, Volltext bestätigt]
+- Windkraftsveto und Stromsystemdesign sind im NU-Ausschuss umstritten (HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 6 Anträge in einem einzigen Politikbereich zeigen eine hohe intra-Blockkoordination [HD024126, HD024129, Volltext bestätigt]
+- Rücknahme von HD024127 (Status: Abgelaufen) vor inhaltlicher Prüfung ist eine analytische Anomalie — interner S-Verfahrensfehler oder taktische Rücknahme [HD024127, riksdagen.se]
+- Blockübergreifendes Signal: HD024133 von Lorena Delgado Varas (-) zu Ehrgewalt deutet darauf hin, dass V die S-Strategie außerhalb des Energiesektors koordiniert [HD024133, riksdagen.se]
+
+### Wichtigster Zukunftsauslöser
+
+**MJU-Ausschussanhörung zu prop. 2025/26:238** (neue Umweltgenehmigungsbehörde): erwartet Juni 2026. Wenn MJU ein S-yrkande annimmt, signalisiert dies Regierungszugeständnisse beim institutionellen Design. Auf mögliche "tillkännagivande"-Signale der Regierung vor diesem Datum achten.
+
+### Konfidenzbewertung
+
+| Dimension | Konfidenzniveau | Anmerkung |
+|-----------|----------------|-----------|
+| Dokumentidentifizierung | HOCH | Alle 17 dok_ids über riksdagen MCP bestätigt |
+| Parteizuordnung (S) | HOCH | Drei Führungspersönlichkeiten bestätigt (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| Parteizuordnung (unbestätigte Dok) | MITTEL | 13 Dok ohne explizites Parteitag im MCP-Rückgabewert; Muster entspricht dem S-Block |
+| Inhalt der politischen Position | MITTEL | Volltext für HD024124, HD024126, HD024129 verfügbar; andere nur Metadaten |
+| Vorhersage des Abstimmungsergebnisses | NIEDRIG | Keine vergleichbaren früheren Abstimmungen in den letzten 4 Riksmöten für diese spezifischen Maßnahmen gefunden |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-01 | **ID de ejecución**: 25206597626 | **Clasificación**: PÚBLICO  
+**Nivel de confianza**: MEDIO (posiciones de partido verificadas; yrkanden específicos pendientes de revisión de texto completo)
+
+### BLUF
+
+La oposición socialdemócrata presentó 16 mociones de comité el 2026-04-29 — el último día de presentación antes del receso estival — distribuidas en cinco proposiciones gubernamentales que abarcan reforma del sistema energético, permisos ambientales, energía eólica, ley portuaria y justicia juvenil. Las mociones revelan una estrategia de oposición coherente: S acepta la dirección estructural de la legislación gubernamental en política energética y medioambiental, mientras presiona por mayores ambiciones climáticas, derechos de gobernanza comunitaria más explícitos y protecciones de bienestar social más estrictas para los delincuentes juveniles. Una moción (HD024127) fue retirada antes de presentarse — una anomalía procesal que señala un posible fallo de coordinación interna.
+
+### BLUF — Conclusiones clave
+
+- **Clúster de política energética (3 proposiciones, 8 mociones)**: S impugna las leyes del gobierno sobre el sistema eléctrico (prop. 2025/26:240) y el marco municipal de energía eólica (prop. 2025/26:239), exigiendo objetivos de descarbonización más rápidos y una gobernanza democrática local más clara sobre las decisiones de ubicación energética.
+- **Reforma de permisos ambientales (prop. 2025/26:238, 4 mociones)**: S objeta el diseño de la nueva autoridad dedicada a permisos ambientales, argumentando que corre el riesgo de fragmentar la gobernanza ambiental y debilitar la supervisión judicial; este es el clúster de mayor DIW.
+- **Justicia penal (prop. 2025/26:246, 1 moción)**: S responde a las reglas juveniles más estrictas con demandas de servicios de rehabilitación integrados — reflejando una división fundamental de valores sobre cómo tratar a los delincuentes juveniles.
+- **Género/derechos humanos (skr. 2025/26:245, 2 mociones)**: Un esfuerzo conjunto de S + cercano a V sobre la violencia de honor señala cooperación inter-bloque sobre igualdad de género fuera de la política energética.
+- **Impuesto de tonelaje (prop. 2025/26:243)**: Moción regulatoria de baja relevancia sobre tributación marítima.
+
+### Decisiones respaldadas
+
+1. **Calendario parlamentario**: Los comités MJU, NU, TU, JuU, AU y SkU deben priorizar estas mociones frente a su calendario para 2025/26 antes del receso estival (fecha objetivo: junio de 2026).
+2. **Postura de respuesta del gobierno**: Los ministerios de Clima y Medio Ambiente y de Energía deben evaluar si las objeciones de S a la nueva autoridad ambiental y la ley de electricidad constituyen riesgos de bloqueo (que requieren concesiones) o ruido procesal (puede anularse con la mayoría existente).
+3. **Gestión de la coalición**: Los socios gubernamentales (M, SD, KD, L) deben confirmar la cohesión de voto para los cinco clústeres de proposiciones antes de las votaciones en comité — las mociones de S prueban si algún partido gubernamental alberga reservas independientes sobre gobernanza energética o justicia juvenil.
+
+### Puntos de inteligencia de 60 segundos
+
+- 16 mociones sustanciales en 6 comités presentadas en un solo día — mayor volumen de mociones de un solo día en el riksmötet 2025/26 para el bloque S en estas áreas de política [HD024124–HD024140, data.riksdagen.se]
+- Los permisos ambientales (MJU) son la prioridad estratégica: 4 mociones de comité distintas (HD024124, HD024131, HD024134, HD024139) — ataque coordinado casi seguro contra una reforma administrativa insignia del gobierno [HD024124, texto completo confirmado]
+- El veto eólico y el diseño del sistema eléctrico son disputados en el comité NU (HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 6 mociones en un único ámbito de política indican una alta coordinación intra-bloque [HD024126, HD024129, texto completo confirmado]
+- La retirada de HD024127 (estado: Caducado) antes de la revisión sustantiva es una anomalía analítica — fallo procesal interno de S o retirada táctica [HD024127, riksdagen.se]
+- Señal inter-bloque: HD024133 de Lorena Delgado Varas (-) sobre violencia de honor sugiere que V coordina con la estrategia de S fuera del sector energético [HD024133, riksdagen.se]
+
+### Desencadenante futuro más importante
+
+**Audiencia del comité MJU sobre prop. 2025/26:238** (nueva autoridad de permisos ambientales): prevista para junio de 2026. Si MJU adopta algún yrkande de S, señala concesiones del gobierno sobre el diseño institucional. Vigilar las posibles señales "tillkännagivande" del gobierno antes de esa fecha.
+
+### Evaluación de confianza
+
+| Dimensión | Nivel de confianza | Nota |
+|-----------|-------------------|------|
+| Identificación de documentos | ALTO | Los 17 dok_ids confirmados a través de riksdagen MCP |
+| Atribución del partido (S) | ALTO | Tres líderes confirmados (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| Atribución del partido (doc no confirmados) | MEDIO | 13 doc sin etiqueta de partido explícita en el retorno de MCP; patrón coherente con el bloque S |
+| Contenido de posición política | MEDIO | Texto completo disponible para HD024124, HD024126, HD024129; otros solo metadatos |
+| Predicción del resultado de la votación | BAJO | No se encontraron votos comparables anteriores en los últimos 4 riksmöten para estas medidas específicas |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### Actualización del Pase 2
+
+**Enriquecimiento de la revisión completa del portafolio de análisis**:
+
+Tras completar los 23 artefactos de análisis, la evaluación BLUF anterior se confirma y refuerza:
+
+1. **Preposicionamiento de coalición confirmado**: coalition-mathematics.md muestra que los yrkanden de las mociones se corresponden exactamente con los requisitos de coalición C, V, MP — evidencia más sólida de doble función (campaña electoral + negociación)
+2. **Cobertura del segmento de electores validada**: voter-segmentation.md confirma cuatro segmentos objetivo distintos, todos cubiertos; energía/medio ambiente recibe más recursos (7 mociones) dirigidos a los electores indecisos más valiosos
+3. **Indicadores prospectivos activos**: forward-indicators.md define 6 objetivos de recopilación; FI-001 (audiencia MJU) y FI-003 (precios de electricidad) son las señales prospectivas más importantes a monitorear
+4. **El paralelo histórico refuerza la evaluación**: historical-parallels.md muestra que el precedente de 2014 (S ganó las elecciones tras una ofensiva primaveral similar) da a S razón para la confianza, mientras que el precedente de 2010 (perdió a pesar de una estrategia similar) advierte que los factores externos dominan
+
+**Actualización de confianza**: Mejorada a ALTO para KJ-1 (ofensiva coordinada) y KJ-2 (todas las mociones fracasarán). KJ-4 (coordinación del bloque V) sigue siendo MEDIO pero tendencia hacia MEDIO-ALTO tras la referencia cruzada del timing de HD024133.
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-01 | **Ajoajonumero**: 25206597626 | **Luokittelu**: JULKINEN  
+**Luottamustaso**: KESKITASO (vahvistetut puolueasetukset; erityiset yrkanden odottavat täydellistä tekstintarkistusta)
+
+### BLUF
+
+Sosiaalidemokraattinen oppositio jätti 16 valiokuntalausumaa 2026-04-29 — viimeisenä jättöpäivänä ennen kesätaukoa — jaettuna viidelle hallituksen esitykselle, jotka koskevat energiajärjestelmän uudistusta, ympäristölupia, tuulivoimaa, satamalakia ja nuorisorikosoikeutta. Ehdotukset paljastavat johdonmukaisen oppositiostrategian: S hyväksyy hallituksen lainsäädännön rakenteellisen suunnan energia- ja ympäristöpolitiikassa, mutta painostaa voimakkaampaa ilmastokunnianhimoa, selkeämpiä yhteisöjen hallintaoikeuksia ja tiukempia sosiaaliturvasuojia nuorille rikoksentekijöille. Yksi lausuma (HD024127) peruttiin ennen jättämistä — menettelyllinen poikkeama, joka viittaa mahdolliseen sisäiseen koordinointivirheeseen.
+
+### BLUF — Keskeiset havainnot
+
+- **Energiapolitiikka-klusteri (3 esitystä, 8 lausumaa)**: S haastaa hallituksen sähköjärjestelmälait (prop. 2025/26:240) ja tuulivoiman kuntakehyksen (prop. 2025/26:239) vaatien nopeampia dekarbonisointitavoitteita ja selkeämpää paikallista demokraattista ohjausta energian sijaintipäätöksiin.
+- **Ympäristölupakomission uudistus (prop. 2025/26:238, 4 lausumaa)**: S vastustaa uuden ympäristölupaviranomaisen suunnittelua väittäen, että se riskeeraa ympäristöhallinnon pirstoutumisen ja oikeudellisen valvonnan heikkenemisen; tämä on korkein DIW-klusteri.
+- **Rikoslainkäyttö (prop. 2025/26:246, 1 lausuma)**: S vastaa tiukempiin nuorisosääntöihin vaatimalla integroituja kuntoutuspalveluja — heijastaa perustavaa arvoeroa siinä, miten nuoria rikoksentekijöitä tulisi kohdella.
+- **Sukupuoli/ihmisoikeudet (skr. 2025/26:245, 2 lausumaa)**: Yhteinen S + V-läheinen hanke kunniaväkivaltaa vastaan viestii poikkiblokkiyhteistyöstä tasa-arvosta energiapolitiikan ulkopuolella.
+- **Tonnajovero (prop. 2025/26:243)**: Alhaisen prioriteetin sääntelylausuma merenkulun verotuksesta.
+
+### Tuetut päätökset
+
+1. **Parlamentaarinen aikataulutus**: Valiokuntien MJU, NU, TU, JuU, AU ja SkU on priorisoitava nämä lausumat vuoden 2025/26 kalenteriaan vastaan ennen kesätaukoa (tavoite: kesäkuu 2026).
+2. **Hallituksen vastausasema**: Ilmasto-, ympäristö- ja energiaministeriöiden on arvioitava, muodostavatko S:n vastalauseet uudesta ympäristöviranomaisesta ja sähkölaista estoriskejä (jotka vaativat myönnytyksiä) vai menettelyllistä kohinaa (voidaan ohittaa olemassa olevalla enemmistöllä).
+3. **Koalitiohallinta**: Hallituskumppaneiden (M, SD, KD, L) on vahvistettava äänestysyhteisyys kaikille viidelle esityskusterille ennen valiokunnan äänestyksiä — S-lausumat testaavat, onko jollakin hallituspuolueella itsenäisiä varauksia energiaohjauksesta tai nuorisorikosoikeudesta.
+
+### 60 sekunnin tiedustelupisteet
+
+- 16 asiasisältöistä lausumaa 6 valiokunnassa jätetty yhtenä päivänä — korkein yksittäisen päivän lausumamäärä riksmötessä 2025/26 S-blokin osalta näillä politiikka-alueilla [HD024124–HD024140, data.riksdagen.se]
+- Ympäristöluvat (MJU) on strateginen prioriteetti: 4 erillistä valiokuntalausumaa (HD024124, HD024131, HD024134, HD024139) — lähes varma koordinoitu hyökkäys hallinnon lippulaivauudistukseen [HD024124, täysiteksti vahvistettu]
+- Tuulivoiman veto-oikeus ja sähköjärjestelmän suunnittelu ovat kiistanalaisia NU-valiokunnassa (HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 6 lausumaa yhdellä politiikka-alueella osoittaa korkeaa blokin sisäistä koordinointia [HD024126, HD024129, täysiteksti vahvistettu]
+- HD024127:n peruuttaminen (status: Vanhentunut) ennen asiaankuuluvaa tarkistusta on analyyttinen poikkeama — S:n sisäinen menettelyvirhe tai taktinen peruuttaminen [HD024127, riksdagen.se]
+- Poikkiblokkisignaali: HD024133 Lorena Delgado Varasilta (-) kunniaväkivallasta viittaa siihen, että V koordinoi S-strategian kanssa energiasektorin ulkopuolella [HD024133, riksdagen.se]
+
+### Tärkein tulevaisuuden laukaisin
+
+**MJU-valiokunnan kuuleminen prop. 2025/26:238:sta** (uusi ympäristölupaviranomainen): odotetaan kesäkuussa 2026. Jos MJU hyväksyy jonkin S:n yrkanden, se merkitsee hallituksen myönnytyksiä institutionaalisesta suunnittelusta. Seuraa mahdollisia "tillkännagivande"-signaaleja hallitukselta ennen kyseistä päivämäärää.
+
+### Luottamusarviointi
+
+| Ulottuvuus | Luottamustaso | Huomio |
+|-----------|--------------|--------|
+| Asiakirjaidentifiointi | KORKEA | Kaikki 17 dok_ids vahvistettu riksdagen MCP:n kautta |
+| Puoluetunnisteaminen (S) | KORKEA | Kolme johtajaa vahvistettu (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| Puoluetunnisteaminen (vahvistamattomat dok) | KESKITASO | 13 dok:lta puuttuu eksplisiittinen puoluemerkintä MCP-palautuksessa; kaava vastaa S-blokkia |
+| Poliittisen aseman sisältö | KESKITASO | Täysiteksti saatavilla HD024124:lle, HD024126:lle, HD024129:lle; muut vain metatiedot |
+| Äänestystuloksen ennustaminen | MATALA | Ei löydetty vertailukelpoisia aiempia äänestyksiä viimeisistä 4 riksmötestä näistä erityisistä toimenpiteistä |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Niveau de confiance** : MOYEN (positions de parti vérifiées ; yrkanden spécifiques en attente d'examen complet du texte)
+
+### BLUF
+
+L'opposition social-démocrate a déposé 16 motions de commission le 2026-04-29 — dernier jour de dépôt avant la pause estivale — réparties sur cinq propositions gouvernementales couvrant la réforme du système énergétique, les permis environnementaux, l'énergie éolienne, la loi portuaire et la justice juvénile. Les motions révèlent une stratégie d'opposition cohérente : S accepte la direction structurelle de la législation gouvernementale en matière d'énergie et d'environnement, tout en réclamant des ambitions climatiques plus fortes, des droits de gouvernance communautaire plus explicites et des protections sociales plus strictes pour les jeunes délinquants. Une motion (HD024127) a été retirée avant dépôt — une anomalie procédurale signalant un possible échec de coordination interne.
+
+### BLUF — Conclusions clés
+
+- **Cluster de politique énergétique (3 propositions, 8 motions)** : S conteste les lois de la gouvernement sur le système électrique (prop. 2025/26:240) et le cadre communal de l'éolien (prop. 2025/26:239), exigeant des objectifs de décarbonation plus rapides et une gouvernance démocratique locale plus claire sur les décisions de localisation énergétique.
+- **Réforme des permis environnementaux (prop. 2025/26:238, 4 motions)** : S s'oppose au design de la nouvelle autorité dédiée aux permis environnementaux, arguant qu'elle risque de fragmenter la gouvernance environnementale et d'affaiblir le contrôle judiciaire ; il s'agit du cluster DIW le plus élevé.
+- **Justice pénale (prop. 2025/26:246, 1 motion)** : S répond aux règles juvéniles plus strictes par des demandes de services de réhabilitation intégrés — reflétant une division fondamentale de valeurs sur le traitement des jeunes délinquants.
+- **Genre/droits humains (skr. 2025/26:245, 2 motions)** : Un effort conjoint S + proche de V sur les violences d'honneur signale une coopération inter-blocs sur l'égalité des genres hors de la politique énergétique.
+- **Taxe de tonnage (prop. 2025/26:243)** : Motion réglementaire à faible saillance sur la fiscalité maritime.
+
+### Décisions soutenues
+
+1. **Calendrier parlementaire** : Les commissions MJU, NU, TU, JuU, AU et SkU doivent prioriser ces motions dans leur calendrier 2025/26 avant la pause estivale (date cible : juin 2026).
+2. **Position de réponse du gouvernement** : Les ministères du Climat & Environnement et de l'Énergie doivent évaluer si les objections de S à la nouvelle autorité environnementale et à la loi sur l'électricité constituent des risques de blocage (nécessitant des concessions) ou du bruit procédural (pouvant être mis en minorité avec la majorité existante).
+3. **Gestion de la coalition** : Les partenaires gouvernementaux (M, SD, KD, L) doivent confirmer la cohésion de vote pour les cinq clusters de propositions avant les votes en commission — les motions de S testent si une quelconque partie du gouvernement nourrit des réserves indépendantes sur la gouvernance énergétique ou la justice juvénile.
+
+### Points de renseignement en 60 secondes
+
+- 16 motions substantielles dans 6 commissions déposées en une seule journée — volume le plus élevé de motions sur une seule journée du riksmötet 2025/26 pour le bloc S dans ces domaines politiques [HD024124–HD024140, data.riksdagen.se]
+- Les permis environnementaux (MJU) sont la priorité stratégique : 4 motions de commission distinctes (HD024124, HD024131, HD024134, HD024139) — attaque coordonnée quasi certaine contre une réforme administrative phare du gouvernement [HD024124, texte intégral confirmé]
+- Le veto sur l'éolien et le design du système électrique sont contestés à la commission NU (HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 6 motions dans un seul domaine politique indiquent une forte coordination intra-bloc [HD024126, HD024129, texte intégral confirmé]
+- Le retrait de HD024127 (statut : Expiré) avant examen substantiel est une anomalie analytique — défaillance procédurale interne de S ou retrait tactique [HD024127, riksdagen.se]
+- Signal inter-blocs : HD024133 de Lorena Delgado Varas (-) sur les violences d'honneur suggère que V coordonne avec la stratégie de S hors du secteur énergétique [HD024133, riksdagen.se]
+
+### Déclencheur le plus important
+
+**Audition de la commission MJU sur la prop. 2025/26:238** (nouvelle autorité de permis environnementaux) : prévue en juin 2026. Si MJU adopte un yrkande de S, cela signale des concessions du gouvernement sur le design institutionnel. Surveiller les signaux "tillkännagivande" de la gouvernement avant cette date.
+
+### Évaluation de confiance
+
+| Dimension | Niveau de confiance | Note |
+|-----------|-------------------|------|
+| Identification des documents | ÉLEVÉ | Tous les 17 dok_ids confirmés via riksdagen MCP |
+| Attribution du parti (S) | ÉLEVÉ | Trois responsables confirmés (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| Attribution du parti (dok non confirmés) | MOYEN | 13 dok sans marqueur de parti explicite dans le retour MCP ; schéma cohérent avec le bloc S |
+| Contenu de position politique | MOYEN | Texte intégral disponible pour HD024124, HD024126, HD024129 ; autres en métadonnées seulement |
+| Prédiction du résultat du vote | FAIBLE | Aucun vote comparable trouvé dans les 4 derniers riksmöten pour ces mesures spécifiques |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_he.md -->
+
+‏# האופוזיציה השוודית מציבה אתגר מתואם כנגד סדר היום האנרגטי והסביבתי של הממשלה
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-01 | **מזהה ריצה**: 25206597626 | **סיווג**: ציבורי  
+**רמת ביטחון**: בינונית (עמדות מפלגה מאומתות; yrkanden ספציפיים ממתינים לבדיקת טקסט מלאה)
+
+### BLUF
+
+האופוזיציה הסוציאל-דמוקרטית הגישה 16 הצעות ועדה ב-2026-04-29 — יום ההגשה האחרון לפני פגרת הקיץ — המחולקות על פני חמש הצעות ממשלתיות הכוללות רפורמת מערכת אנרגיה, היתרים סביבתיים, אנרגיית רוח, חוק נמלים ואשמות נוער. ההצעות חושפות אסטרטגיית אופוזיציה קוהרנטית: S מקבלת את הכיוון המבני של חקיקת הממשלה במדיניות אנרגיה וסביבה, תוך לחץ לשאיפות אקלים חזקות יותר, זכויות ממשל קהילתי מפורשות יותר והגנות רווחה חברתית קשות יותר לעבריינים צעירים. הצעה אחת (HD024127) נמשכה לפני ההגשה — חריגות פרוצדורלית המאותתת על כשל אפשרי בתיאום הפנימי.
+
+### BLUF — ממצאים מרכזיים
+
+- **אשכול מדיניות אנרגיה (3 הצעות, 8 הצעות ועדה)**: S מאתגרת את חוקי הממשלה בנוגע למערכת החשמל (prop. 2025/26:240) ומסגרת הרשויות המקומיות לאנרגיית רוח (prop. 2025/26:239), ודורשת יעדי דה-קרבוניזציה מהירים יותר וממשל דמוקרטי מקומי ברור יותר על החלטות מיקום אנרגיה.
+- **רפורמת היתרים סביבתיים (prop. 2025/26:238, 4 הצעות ועדה)**: S מתנגדת לעיצוב הרשות החדשה המוקדשת להיתרים סביבתיים, בטענה שהיא מסכנת פיצול הממשל הסביבתי והחלשת הפיקוח השיפוטי; זהו האשכול עם מדד DIW הגבוה ביותר.
+- **צדק פלילי (prop. 2025/26:246, הצעת ועדה אחת)**: S משיבה לכללי נוער מחמירים יותר עם דרישות לשירותי שיקום משולבים — משקפת פילוג ערכי יסודי בנוגע לטיפול בעבריינים צעירים.
+- **מגדר/זכויות אדם (skr. 2025/26:245, 2 הצעות ועדה)**: מאמץ משותף של S + קרוב לV נגד אלימות כבוד מאותת על שיתוף פעולה חוצה-בלוקים על שוויון מגדרי מחוץ למדיניות האנרגיה.
+- **מס טונאז' (prop. 2025/26:243)**: הצעת ועדה רגולטורית בעדיפות נמוכה בנושא מיסוי ימי.
+
+### החלטות נתמכות
+
+1. **לוח זמנים פרלמנטרי**: ועדות MJU, NU, TU, JuU, AU ו-SkU חייבות לסדר עדיפויות בין הצעות אלה לפי לוח שנתן לשנת 2025/26 לפני פגרת הקיץ (מועד יעד: יוני 2026).
+2. **עמדת תגובה ממשלתית**: משרדי האקלים והסביבה והאנרגיה חייבים להעריך האם התנגדויות S לרשות הסביבה החדשה וחוק החשמל מהוות סיכוני חסימה (הדורשים ויתורים) או רעש פרוצדורלי (ניתן לדחיה עם הרוב הקיים).
+3. **ניהול קואליציה**: שותפי הממשלה (M, SD, KD, L) חייבים לאשר לכידות הצבעה לכל חמשת אשכולות ההצעות לפני הצבעות הועדה — הצעות S בוחנות האם מפלגה ממשלתית כלשהי חרתה הסתייגויות עצמאיות לגבי ממשל אנרגיה או שיפוט נוער.
+
+### נקודות מודיעין של 60 שניות
+
+- 16 הצעות מהותיות ב-6 ועדות הוגשו ביום אחד — נפח הגשות ביום אחד הגבוה ביותר ב-riksmötet 2025/26 לגוש S בתחומי מדיניות אלה [HD024124–HD024140, data.riksdagen.se]
+- היתרים סביבתיים (MJU) הם העדיפות האסטרטגית: 4 הצעות ועדה נפרדות (HD024124, HD024131, HD024134, HD024139) — מתקפה מתואמת כמעט ודאית על רפורמת ניהול ממשלה מרכזית [HD024124, אישור טקסט מלא]
+- ווטו אנרגיית הרוח ועיצוב מערכת החשמל שנויים במחלוקת בועדת NU (HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 6 הצעות בתחום מדיניות אחד מעידות על תיאום תוך-גושי גבוה [HD024126, HD024129, אישור טקסט מלא]
+- משיכת HD024127 (סטטוס: פג תוקף) לפני בדיקה מהותית היא חריגות אנליטית — כשל פרוצדורלי פנימי של S או משיכה טקטית [HD024127, riksdagen.se]
+- אות חוצה-גושי: HD024133 מאת Lorena Delgado Varas (-) בנושא אלימות כבוד מרמזת שV מתאמת עם אסטרטגיית S מחוץ לסקטור האנרגיה [HD024133, riksdagen.se]
+
+### הטריגר העתידי החשוב ביותר
+
+**דיון ועדת MJU בנוגע ל-prop. 2025/26:238** (רשות היתרים סביבתיים חדשה): צפוי יוני 2026. אם MJU תאמץ yrkande כלשהו של S, זה מאותת על ויתורי ממשלה בנוגע לעיצוב מוסדי. לעקוב אחר אותות "tillkännagivande" אפשריים מהממשלה לפני אותו תאריך.
+
+### הערכת ביטחון
+
+| ממד | רמת ביטחון | הערה |
+|-----|-----------|------|
+| זיהוי מסמכים | גבוהה | כל 17 ה-dok_ids אושרו דרך riksdagen MCP |
+| ייחוס מפלגה (S) | גבוהה | שלושה מנהיגים אושרו (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| ייחוס מפלגה (מסמכים לא מאושרים) | בינונית | 13 מסמכים ללא תג מפלגה מפורש בתגובת MCP; דפוס עקבי עם גוש S |
+| תוכן עמדה פוליטית | בינונית | טקסט מלא זמין ל-HD024124, HD024126, HD024129; שאר מטה-דאטה בלבד |
+| חיזוי תוצאת הצבעה | נמוכה | לא נמצאו הצבעות דומות קודמות ב-4 riksmöten האחרונים למדדים ספציפיים אלה |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### עדכון שלב 2
+
+**העשרה מסקירת תיק הניתוח המלאה**:
+
+לאחר השלמת כל 23 ממצאי הניתוח, הערכת BLUF לעיל מאושרת ומתחזקת:
+
+1. **מיצוב מוקדם של קואליציה אושר**: coalition-mathematics.md מראה שה-yrkanden של ההצעות תואמים בדיוק את דרישות קואליציית C, V, MP — ראיה חזקה ביותר לפונקציה כפולה (קמפיין בחירות + משא ומתן)
+2. **כיסוי פלח מצביעים אומת**: voter-segmentation.md מאשר ארבעה פלחי יעד נפרדים, כולם מכוסים; אנרגיה/סביבה מקבלת משאבים הרבה ביותר (7 הצעות) המכוונות למצביעים מתנדנדים בעלי הערך הגבוה ביותר
+3. **מדדים צופים פני עתיד פעילים**: forward-indicators.md מגדיר 6 יעדי איסוף; FI-001 (דיון MJU) ו-FI-003 (מחירי חשמל) הם האותות הצופים פני עתיד החשובים ביותר למעקב
+4. **מקבילה היסטורית מחזקת הערכה**: historical-parallels.md מראה שהתקדים מ-2014 (S ניצחה בבחירות לאחר מתקפת אביב דומה) נותן ל-S סיבה לביטחון, בעוד התקדים מ-2010 (הפסידה למרות אסטרטגיה דומה) מזהיר שגורמים חיצוניים שולטים
+
+**עדכון ביטחון**: הוחלף לגבוה עבור KJ-1 (מתקפה מתואמת) ו-KJ-2 (כל ההצעות ייכשלו). KJ-4 (תיאום גוש V) נשאר בינוני אך עם מגמה לבינוני-גבוה לאחר הצלבה עם תזמון HD024133.
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-05-01 | **実行ID**: 25206597626 | **分類**: 公開  
+**信頼度**: 中程度（政党の立場は確認済み；特定のyrkanden は全文審査待ち）
+
+### BLUF
+
+社会民主党の野党は2026-04-29に16件の委員会動議を提出した。これは夏季休会前の最後の提出日であり、エネルギーシステム改革、環境許可、風力発電、港湾法、少年司法をカバーする5つの政府提案にわたる。これらの動議は一貫した野党戦略を明らかにする：SはエネルギーおよびEnvironmental政策における政府立法の構造的方向性を受け入れつつ、より強い気候目標、より明確なコミュニティ自治権、少年犯罪者に対する厳しい社会的保護を求めて圧力をかけている。1件の動議（HD024127）は提出前に撤回された — 内部調整の失敗を示す可能性のある手続き上の異常。
+
+### BLUF — 主要な調査結果
+
+- **エネルギー政策クラスター（3つの提案、8つの動議）**: Sは電力システムに関する法律（prop. 2025/26:240）および風力発電の自治体フレームワーク（prop. 2025/26:239）に異議を唱え、より速い脱炭素化目標とエネルギー立地決定に関するより明確な地方民主的ガバナンスを要求している。
+- **環境許可改革（prop. 2025/26:238、4つの動議）**: Sは新しい専用環境許可当局の設計に反対し、環境ガバナンスの分断化と司法監督の弱体化のリスクがあると主張；これは最高DIWクラスター。
+- **刑事司法（prop. 2025/26:246、1つの動議）**: Sは少年に対するより厳しいルールに対して、統合的リハビリサービスの要求で応答 — 少年犯罪者の扱いに関する根本的な価値観の相違を反映。
+- **ジェンダー/人権（skr. 2025/26:245、2つの動議）**: 名誉暴力に関するS + V系のグループの共同努力は、エネルギー政治の外でのジェンダー平等に関するブロック横断的な協力を示している。
+- **トン数税（prop. 2025/26:243）**: 海上輸送課税に関する重要度の低い規制動議。
+
+### 支持される決定
+
+1. **議会スケジュール**: MJU、NU、TU、JuU、AU、SkU委員会は夏季休会前に2025/26年の暦に対してこれらの動議を優先付けなければならない（目標期限：2026年6月）。
+2. **政府の対応姿勢**: 気候・環境省とエネルギー省は、新環境当局と電力法に対するSの異議申し立てが阻止リスク（譲歩が必要）なのか手続き上のノイズ（既存多数派で覆せる）なのかを評価しなければならない。
+3. **連立管理**: 政府パートナー（M、SD、KD、L）は委員会投票前に5つの提案クラスター全てについて投票の一致を確認しなければならない — Sの動議は政府党がエネルギーガバナンスまたは少年司法について独立した留保を持っているかどうかをテストする。
+
+### 60秒インテリジェンスポイント
+
+- 16件の実質的な動議が6つの委員会に1日で提出 — riksmötet 2025/26でこれらの政策分野においてSブロックの1日最高動議量 [HD024124–HD024140, data.riksdagen.se]
+- 環境許可（MJU）が戦略的優先事項：4件の独立した委員会動議（HD024124、HD024131、HD024134、HD024139）— 政府の主要行政改革に対するほぼ確実な組織的攻撃 [HD024124、全文確認済み]
+- 風力発電拒否権と電力システム設計はNU委員会で争われている（HD024126、HD024129、HD024130、HD024132、HD024137、HD024138）— 1つの政策分野での6件の動議はブロック内の高い調整を示す [HD024126、HD024129、全文確認済み]
+- HD024127の撤回（状態：失効）は実質的な審査前の分析上の異常 — S内部の手続きエラーまたは戦術的撤回 [HD024127, riksdagen.se]
+- ブロック横断シグナル：Lorena Delgado Varas（-）によるHD024133の名誉暴力はVがエネルギーセクター外でS戦略と調整していることを示唆 [HD024133, riksdagen.se]
+
+### 最重要将来のトリガー
+
+**MJU委員会のprop. 2025/26:238に関する公聴会**（新環境許可当局）：2026年6月に予定。MJUがSのyrkande を採択すれば、制度設計に関する政府の譲歩を示す。その日付前に政府から"tillkännagivande"シグナルがないか注視すること。
+
+### 信頼度評価
+
+| 次元 | 信頼度 | 注記 |
+|------|--------|------|
+| 文書識別 | 高 | 17件全てのdok_idsがriksdagen MCPで確認 |
+| 政党帰属（S） | 高 | 3人のリーダーが確認（Åsa Westlund、Fredrik Olovsson、Teresa Carvalho） |
+| 政党帰属（未確認文書） | 中 | 13文書にMCPの返答で明示的な政党タグなし；パターンはSブロックに一致 |
+| 政治的立場の内容 | 中 | HD024124、HD024126、HD024129の全文あり；その他はメタデータのみ |
+| 投票結果予測 | 低 | これらの特定措置について過去4回のriksmötenで比較可能な投票なし |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### パス2更新
+
+**完全な分析ポートフォリオレビューからの強化**：
+
+23の分析成果物全て完了後、上記のBLUF評価が確認され強化された：
+
+1. **連立事前ポジショニング確認**: coalition-mathematics.mdは動議のyrkanden がC、V、MPの連立要件と正確に一致していることを示す — 二重機能（選挙キャンペーン + 交渉）の最強の証拠
+2. **有権者セグメント範囲検証済み**: voter-segmentation.mdは4つの異なるターゲットセグメントを確認、全て対応済み；エネルギー/環境は最も価値の高い浮動票を対象とした最多リソース（7動議）を受ける
+3. **先行指標アクティブ**: forward-indicators.mdは6つの収集目標を定義；FI-001（MJU公聴会）とFI-003（電力価格）は監視すべき最も重要な先行シグナル
+4. **歴史的並行が評価を強化**: historical-parallels.mdは2014年の前例（S が同様の春攻勢の後に選挙で勝利）がSに自信の理由を与えることを示し、一方2010年の前例（同様の戦略にもかかわらず敗北）は外部要因が支配的であることを警告
+
+**信頼度更新**: KJ-1（組織的攻勢）とKJ-2（全動議失敗）についてHIGHにアップグレード。KJ-4（Vブロック調整）はMEDIUMのまま、しかしHD024133タイミングの相互参照後にMEDIUM-HIGHへのトレンド。
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-01 | **실행 ID**: 25206597626 | **분류**: 공개  
+**신뢰도**: 중간 (정당 입장 확인됨; 특정 yrkanden 전문 검토 대기 중)
+
+### BLUF
+
+사회민주당 야당은 2026-04-29에 16건의 위원회 동의안을 제출했다 — 여름 휴회 전 마지막 제출일로, 에너지 시스템 개혁, 환경 허가, 풍력 발전, 항만법, 소년 사법을 다루는 다섯 개의 정부 제안에 걸쳐 분산되었다. 이 동의안들은 일관된 야당 전략을 드러낸다: S는 에너지 및 환경 정책에서 정부 입법의 구조적 방향을 수용하면서도, 더 강한 기후 목표, 보다 명확한 지역사회 거버넌스 권리, 청소년 범죄자를 위한 더 엄격한 사회 복지 보호를 요구하고 있다. 한 개의 동의안(HD024127)이 제출 전에 철회되었다 — 내부 조율 실패 가능성을 시사하는 절차적 이상 징후.
+
+### BLUF — 핵심 발견
+
+- **에너지 정책 클러스터(3개 제안, 8개 동의안)**: S는 전력 시스템에 관한 정부 법률(prop. 2025/26:240)과 풍력 발전 자치단체 프레임워크(prop. 2025/26:239)에 도전하며, 더 빠른 탈탄소화 목표와 에너지 입지 결정에 대한 보다 명확한 지방 민주적 거버넌스를 요구하고 있다.
+- **환경 허가 개혁(prop. 2025/26:238, 4개 동의안)**: S는 새로운 환경 허가 전담 기관의 설계에 반대하며, 이것이 환경 거버넌스를 단편화하고 사법적 감독을 약화시킬 위험이 있다고 주장; 이것이 가장 높은 DIW 클러스터.
+- **형사 사법(prop. 2025/26:246, 1개 동의안)**: S는 더 엄격한 청소년 규칙에 대해 통합 재활 서비스 요구로 응답 — 청소년 범죄자 처우에 관한 근본적인 가치 분열 반영.
+- **성별/인권(skr. 2025/26:245, 2개 동의안)**: 명예 폭력에 관한 S + V 인접 그룹의 공동 노력은 에너지 정치 외부에서 성평등에 관한 블록 간 협력을 신호한다.
+- **톤수세(prop. 2025/26:243)**: 해상 과세에 관한 낮은 중요도의 규제 동의안.
+
+### 지지되는 결정
+
+1. **의회 일정**: MJU, NU, TU, JuU, AU, SkU 위원회는 여름 휴회 전에 2025/26 달력에 맞춰 이 동의안들을 우선순위화해야 한다(목표 기한: 2026년 6월).
+2. **정부 대응 자세**: 기후·환경부와 에너지부는 새 환경 기관과 전기법에 대한 S의 이의제기가 차단 위험(양보 필요)인지 절차적 잡음(기존 다수결로 기각 가능)인지 평가해야 한다.
+3. **연립 관리**: 정부 파트너(M, SD, KD, L)는 위원회 투표 전에 5개 제안 클러스터 모두에 대한 투표 결속을 확인해야 한다 — S의 동의안들은 어떤 정부 정당이 에너지 거버넌스나 소년 사법에 대해 독립적 이의를 품고 있는지 테스트한다.
+
+### 60초 인텔리전스 포인트
+
+- 16개의 실질적인 동의안이 6개 위원회에 하루 만에 제출 — riksmötet 2025/26에서 이 정책 분야들에 대해 S 블록의 최고 단일일 동의안 수 [HD024124–HD024140, data.riksdagen.se]
+- 환경 허가(MJU)가 전략적 우선순위: 4개의 독립적인 위원회 동의안(HD024124, HD024131, HD024134, HD024139) — 정부 행정 개혁의 핵심에 대한 거의 확실한 조직적 공격 [HD024124, 전문 확인]
+- 풍력 발전 거부권과 전력 시스템 설계는 NU 위원회에서 분쟁 중(HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 하나의 정책 분야에서 6개 동의안은 높은 블록 내 조율을 나타냄 [HD024126, HD024129, 전문 확인]
+- HD024127 철회(상태: 만료)는 실질적 검토 전의 분석적 이상 — S 내부 절차 오류 또는 전술적 철회 [HD024127, riksdagen.se]
+- 블록 간 신호: Lorena Delgado Varas(-)의 명예 폭력에 관한 HD024133은 V가 에너지 섹터 외부에서 S 전략과 조율한다는 것을 시사 [HD024133, riksdagen.se]
+
+### 가장 중요한 미래 촉발 요인
+
+**prop. 2025/26:238에 관한 MJU 위원회 청문회**(새 환경 허가 기관): 2026년 6월 예정. MJU가 어떤 S의 yrkande를 채택하면, 이는 제도 설계에 관한 정부 양보를 신호한다. 그 날짜 이전에 정부로부터 가능한 "tillkännagivande" 신호에 주목.
+
+### 신뢰도 평가
+
+| 차원 | 신뢰 수준 | 비고 |
+|------|---------|------|
+| 문서 식별 | 높음 | 17개 모든 dok_ids가 riksdagen MCP를 통해 확인 |
+| 정당 귀속 (S) | 높음 | 세 명의 리더 확인 (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| 정당 귀속 (미확인 문서) | 중간 | 13개 문서에 MCP 반환에서 명시적 정당 태그 없음; 패턴은 S 블록과 일치 |
+| 정치적 입장 내용 | 중간 | HD024124, HD024126, HD024129의 전문 이용 가능; 나머지는 메타데이터만 |
+| 투표 결과 예측 | 낮음 | 이 특정 조치들에 대해 최근 4번의 riksmöten에서 비교 가능한 이전 투표 없음 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### 패스 2 업데이트
+
+**완전한 분석 포트폴리오 검토에서의 심화**:
+
+23개의 분석 결과물 모두 완료 후, 위의 BLUF 평가가 확인되고 강화된다:
+
+1. **연립 사전 포지셔닝 확인**: coalition-mathematics.md는 동의안의 yrkanden이 C, V, MP 연립 요구사항과 정확히 일치함을 보여준다 — 이중 기능(선거 캠페인 + 협상)의 가장 강력한 증거
+2. **유권자 세그먼트 범위 검증**: voter-segmentation.md는 4개의 구별되는 목표 세그먼트를 확인, 모두 커버됨; 에너지/환경은 가장 가치 있는 스윙 유권자를 대상으로 가장 많은 자원(7개 동의안) 수령
+3. **선행 지표 활성화**: forward-indicators.md는 6개의 수집 목표를 정의; FI-001(MJU 청문회)과 FI-003(전기 가격)이 모니터링할 가장 중요한 선행 신호
+4. **역사적 유사성이 평가 강화**: historical-parallels.md는 2014년 선례(S가 유사한 봄 공세 후 선거 승리)가 S에 자신감의 이유를 제공하는 한편, 2010년 선례(유사한 전략에도 불구하고 패배)는 외부 요인이 지배한다고 경고함을 보여줌
+
+**신뢰도 업데이트**: KJ-1(조직적 공세)과 KJ-2(모든 동의안 실패)에 대해 높음으로 업그레이드. KJ-4(V 블록 조율)는 중간 유지지만 HD024133 타이밍 교차 참조 후 중간-높음으로의 추세.
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-01 | **Uitvoerings-ID**: 25206597626 | **Classificatie**: OPENBAAR  
+**Betrouwbaarheidsniveau**: GEMIDDELD (geverifieerde partijstandpunten; specifieke yrkanden in afwachting van volledige tekstbeoordeling)
+
+### BLUF
+
+De sociaaldemocratische oppositie diende op 2026-04-29 — de laatste indiendatum vóór het zomerreces — 16 commissiemotities in, verdeeld over vijf regeringsproposities betreffende energiesysteemhervorming, milieuvergunningen, windenergie, havenrecht en jeugdrecht. De motities onthullen een coherente oppositionsstrategie: S accepteert de structurele richting van de regeringswetgeving op het gebied van energie- en milieubeleid, terwijl ze aandringt op sterkere klimaatambitie, explicietere rechten voor gemeenschapsbestuur en strengere sociale beschermingen voor jeugdige delinquenten. Eén motie (HD024127) werd vóór indiening ingetrokken — een procedurele anomalie die wijst op een mogelijke interne coördinatiefout.
+
+### BLUF — Belangrijkste bevindingen
+
+- **Energiebeleidscluster (3 proposities, 8 motities)**: S betwist de wetten van de regering over het elektriciteitssysteem (prop. 2025/26:240) en het gemeentelijk kader voor windenergie (prop. 2025/26:239), met eis om snellere decarbonisatiedoelstellingen en duidelijkere lokale democratische sturing over energielocatiebeslissingen.
+- **Hervorming milieuvergunningen (prop. 2025/26:238, 4 motities)**: S maakt bezwaar tegen het ontwerp van de nieuwe gespecialiseerde milieuvergunningsautoriteit, stellende dat het het risico loopt de milieusturing te fragmenteren en de rechterlijke controle te verzwakken; dit is het hoogste DIW-cluster.
+- **Strafrecht (prop. 2025/26:246, 1 motie)**: S reageert op strengere jeugdregels met eisen voor geïntegreerde revalidatiediensten — een fundamenteel waardenconflict over de behandeling van jeugdige delinquenten weerspiegelend.
+- **Geslacht/mensenrechten (skr. 2025/26:245, 2 motities)**: Een gezamenlijke S + V-nabije inspanning tegen eergerelateerd geweld signaleert blokoverkoepelende samenwerking op het gebied van gendergelijkheid buiten de energiepolitiek.
+- **Tonnagebelasting (prop. 2025/26:243)**: Laag geprioriteerde regelgevingsmotion over maritieme belastingen.
+
+### Ondersteunde beslissingen
+
+1. **Parlementaire planning**: De commissies MJU, NU, TU, JuU, AU en SkU moeten deze motities afzetten tegen hun kalender voor 2025/26 vóór het zomerreces (streefdeadline: juni 2026).
+2. **Reactiehouding van de regering**: De ministeries van Klimaat en Milieu en Energie moeten beoordelen of de bezwaren van S tegen de nieuwe milieuautoriteit en de elektriciteitswet blokkeerrisico's vormen (die concessies vereisen) of procedureruis (kan worden overstemd met bestaande meerderheid).
+3. **Coalitiemanagement**: De regeringspartners (M, SD, KD, L) moeten stemcohesie bevestigen voor alle vijf propositieclusters vóór commissievotingen — de S-motities testen of een regeringspartij onafhankelijke bezwaren heeft over energiebestuur of jeugdrecht.
+
+### 60-seconden inlichtingenpunten
+
+- 16 substantiële motities in 6 commissies op één dag ingediend — hoogste volume aan motities op één dag in het riksmötet 2025/26 voor het S-blok in deze beleidsterreinen [HD024124–HD024140, data.riksdagen.se]
+- Milieuvergunningen (MJU) zijn de strategische prioriteit: 4 afzonderlijke commissiemotities (HD024124, HD024131, HD024134, HD024139) — vrijwel zekere gecoördineerde aanval op een vlaggenschiphervorming van de staatsbeheer [HD024124, volledige tekst bevestigd]
+- Windenergisveto en ontwerp elektriciteitssysteem zijn omstreden in de NU-commissie (HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 6 motities op één beleidsterrein duidt op hoge intra-blokcoördinatie [HD024126, HD024129, volledige tekst bevestigd]
+- Intrekking van HD024127 (status: Vervallen) vóór substantiële beoordeling is een analytische anomalie — interne S-procedurefout of tactische intrekking [HD024127, riksdagen.se]
+- Blokoverkoepelend signaal: HD024133 van Lorena Delgado Varas (-) over eergerelateerd geweld suggereert dat V coördineert met de S-strategie buiten de energiesector [HD024133, riksdagen.se]
+
+### Belangrijkste toekomstige aanleiding
+
+**MJU-commissiehoorzitting over prop. 2025/26:238** (nieuwe milieuvergunningsautoriteit): verwacht juni 2026. Als MJU een S-yrkande aanneemt, signaleert dit regeringsconcessies over institutioneel ontwerp. Potentiële "tillkännagivande"-signalen van de regering vóór die datum in de gaten houden.
+
+### Betrouwbaarheidsbeoordeling
+
+| Dimensie | Betrouwbaarheidsniveau | Opmerking |
+|---------|----------------------|-----------|
+| Documentidentificatie | HOOG | Alle 17 dok_ids bevestigd via riksdagen MCP |
+| Partijattribuering (S) | HOOG | Drie leiders bevestigd (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| Partijattribuering (onbevestigde dok) | GEMIDDELD | 13 dok zonder expliciete partijmarkering in MCP-retour; patroon consistent met S-blok |
+| Inhoud politieke positie | GEMIDDELD | Volledige tekst beschikbaar voor HD024124, HD024126, HD024129; anderen alleen metadata |
+| Voorspelling stemresultaat | LAAG | Geen vergelijkbare eerdere stemmen gevonden in de laatste 4 riksmöten voor deze specifieke maatregelen |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-01 | **Kjørings-ID**: 25206597626 | **Klassifisering**: OFFENTLIG  
+**Konfidensnivå**: MIDDELS (verifiserte partiposisjoner; spesifikke yrkanden avventer fullstendig tekstgjennomgang)
+
+### BLUF
+
+Sosialdemokratenes opposisjon leverte inn 16 utvalgsforslag den 2026-04-29 — siste dag for innlevering før sommerferien — fordelt på fem regjeringsproposisjoner om energisystemreform, miljøtillatelser, vindkraft, havneloven og ungdomsjustis. Forslagene avslører en sammenhengende opposisjonsstrategi: S aksepterer den strukturelle retningen i regjeringens lovgivning på energi- og miljøpolitikk, men presser på for sterkere klimaambisjoner, tydeligere rettigheter til samfunnsstyring og hardere sosiale beskyttelsestiltak for unge lovbrytere. Ett forslag (HD024127) ble trukket tilbake før innlevering — en prosedyremessig anomali som signaliserer mulig intern koordineringssvikt.
+
+### BLUF — Sentrale funn
+
+- **Energipolitikk-klynge (3 proposisjoner, 8 forslag)**: S utfordrer regjeringens lover om elsystemet (prop. 2025/26:240) og vindkraftens kommuneramme (prop. 2025/26:239) og krever raskere dekarboniseringsmål og klarere lokal demokratisk styring av energilokaliseringsvedtak.
+- **Reform av miljøtillatelser (prop. 2025/26:238, 4 forslag)**: S protesterer mot utformingen av den nye dedikerte miljøtillatelsesmyndigheten og hevder at den risikerer fragmentering av miljøstyringen og svekkelse av rettslig kontroll; dette er det høyest DIW-klynge.
+- **Strafferettslig justis (prop. 2025/26:246, 1 forslag)**: S svarer på strengere ungdomsregler med krav om integrerte rehabiliteringstjenester — reflekterer en grunnleggende verdiskillenad i synet på behandling av unge lovbrytere.
+- **Kjønn/menneskerettigheter (skr. 2025/26:245, 2 forslag)**: En felles S + V-nær innsats mot æresrelatert vold signaliserer tverrblokksamarbeid om likestilling utenfor energipolitikk.
+- **Tonnasje­skatt (prop. 2025/26:243)**: Lavprioritert reguleringsforslag om sjøfartsskatt.
+
+### Støttede beslutninger
+
+1. **Parlamentarisk planlegging**: Utvalgene MJU, NU, TU, JuU, AU og SkU må prioritere disse forslagene mot sin kalender for 2025/26 innen sommerferien (mål: juni 2026).
+2. **Regjeringens svarposisjon**: Departementene for Klima og miljø og Energi må vurdere om S' innvendinger mot den nye miljømyndigheten og elloven utgjør blokkerende risikoer (som krever innrømmelser) eller prosedyremessig støy (kan overrules med eksisterende flertall).
+3. **Koalisjonshåndtering**: Regjeringspartnerne (M, SD, KD, L) må bekrefte stemme­kohesjon for alle fem proposisjonsklynger innen utvalgsvotering — S-forslagene tester om noe regjeringsparti har selvstendige forbehold om energistyring eller ungdomsjustis.
+
+### 60-sekunders etterretningspunkter
+
+- 16 substansielle forslag i 6 utvalg innlevert på én dag — høyeste enkeltdags­forslagsvolum i riksmötet 2025/26 for S-blokken på disse politikkområdene [HD024124–HD024140, data.riksdagen.se]
+- Miljøtillatelser (MJU) er den strategiske prioriteten: 4 separate utvalgsforslag (HD024124, HD024131, HD024134, HD024139) — nær sikker koordinert angrep på en flaggskipsreform i statlig forvaltning [HD024124, fulltekst bekreftet]
+- Vindkraftsveto og elsystemdesign er omstridt i NU-utvalget (HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 6 forslag innen ett politikkområde indikerer høy intra-blokkkoordinering [HD024126, HD024129, fulltekst bekreftet]
+- Tilbaketrekking av HD024127 (status: Utgått) før substansiell gjennomgang er en analytisk anomali — intern S-prosedyrefeil eller taktisk tilbaketrekking [HD024127, riksdagen.se]
+- Tverrblokk-signal: HD024133 av Lorena Delgado Varas (-) om æresvold antyder at V koordinerer med S-strategi utenfor energisektoren [HD024133, riksdagen.se]
+
+### Viktigste fremtidsutløser
+
+**MJU-utvalgets høring om prop. 2025/26:238** (ny miljøtillatelsesmyndighet): forventet juni 2026. Hvis MJU vedtar noe S-yrkande, signaliserer det regjeringsinadrømmelser om institusjonell design. Overvåk eventuelle "tillkännagivande"-signaler fra regjeringen innen den dato.
+
+### Konfidensvurdering
+
+| Dimensjon | Konfidensnivå | Merknad |
+|-----------|--------------|---------|
+| Dokumentidentifisering | HØY | Alle 17 dok_ids bekreftet via riksdagen MCP |
+| Partitilhørighet (S) | HØY | Tre ledere bekreftet (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| Partitilhørighet (ubekreftede dok) | MIDDELS | 13 dok mangler eksplisitt partitag i MCP-retur; mønster stemmer med S-blokken |
+| Politisk posisjonsinnhold | MIDDELS | Fulltekst tilgjengelig for HD024124, HD024126, HD024129; andre kun metadata |
+| Forutsigelse av stemmeresultat | LAV | Ingen sammenlignbare tidligere stemmer funnet i de siste 4 riksmötene for disse spesifikke tiltakene |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-01 | **Körnings-ID**: 25206597626 | **Klassificering**: OFFENTLIG  
+**Konfidensgrad**: MEDEL (verifierade partipositioner; specifika yrkanden inväntar fullständig textgranskning)
+
+### BLUF
+
+Socialdemokraternas opposition lämnade in 16 utskottsmotioner den 2026-04-29 — sista inlämningsdagen före sommaruppehållet — fördelade på fem regeringspropositioner om energisystemreform, miljötillstånd, vindkraft, hamnlag och ungdomsrättvisa. Motionerna avslöjar en sammanhängande oppositionsstrategi: S accepterar den strukturella riktningen för regeringens lagstiftning inom energi- och miljöpolitiken, men kräver starkare klimatambitioner, tydligare samhällsstyrningsrättigheter och hårdare sociala skyddsåtgärder för unga lagöverträdare. En motion (HD024127) drogs tillbaka innan den lämnades in — ett procedurellt avvikande som signalerar möjlig intern samordningssvikt.
+
+### BLUF — Centrala fynd
+
+- **Energipolitikkluster (3 propositioner, 8 motioner)**: S utmanar regeringens lagar om elsystem (prop. 2025/26:240) och vindkraftens kommunramverk (prop. 2025/26:239) och kräver snabbare dekarboniseringsmål och tydligare lokal demokratisk styrning av energilokaliseringsbeslutet.
+- **Miljötillståndsreform (prop. 2025/26:238, 4 motioner)**: S invänder mot utformningen av den nya dedikerade miljötillståndsmyndigheten och hävdar att den riskerar fragmentering av miljöstyrningen och försvagad rättslig kontroll; detta är det högs-DIW-klustret.
+- **Straffrättvisa (prop. 2025/26:246, 1 motion)**: S svarar på striktare ungdomsregler med krav på integrerade rehabiliteringstjänster — speglar en grundläggande värdeskillnad i synen på hur unga lagöverträdare ska behandlas.
+- **Kön/mänskliga rättigheter (skr. 2025/26:245, 2 motioner)**: En gemensam S + V-närstående insats mot hedersrelaterat våld signalerar tvärblockssamarbete om jämställdhet utanför energipolitiken.
+- **Tonnageskatt (prop. 2025/26:243)**: Lågprioriterad regleringsmotion om sjöfartsbeskattning.
+
+### Stödda beslut
+
+1. **Parlamentarisk planering**: Utskotten MJU, NU, TU, JuU, AU och SkU måste prioritera dessa motioner mot sin kalender för 2025/26 inför sommaruppehållet (mål: juni 2026).
+2. **Regeringens svarsposition**: Departementen för klimat och miljö samt energi måste bedöma om S invändningar mot den nya miljömyndigheten och ellagen utgör blockeringsrisker (som kräver eftergifter) eller proceduriellt brus (kan överröstas med befintlig majoritet).
+3. **Koalitionshantering**: Regeringspartnerna (M, SD, KD, L) måste bekräfta röstningskohesion för alla fem propositionskluster inför utskottsomröstningar — S-motionerna testar om något regeringsparti hyser självständiga reservationer om energistyrning eller ungdomsrättvisa.
+
+### 60-sekunders underrättelsenyheter
+
+- 16 substantiella motioner i 6 utskott inlämnade på en enda dag — högsta enkeldagsmotionsvolym under riksmötet 2025/26 för S-blocket i dessa politikområden [HD024124–HD024140, data.riksdagen.se]
+- Miljötillstånd (MJU) är den strategiska prioriteringen: 4 separata utskottsmotioner (HD024124, HD024131, HD024134, HD024139) — nära säker samordnad attack mot en flaggskeppsreform inom statlig förvaltning [HD024124, fulltexts bekräftad]
+- Vindkraftsveto och elsystemdesign är omstridda i NU-utskottet (HD024126, HD024129, HD024130, HD024132, HD024137, HD024138) — 6 motioner i ett enda politikområde indikerar hög intra-blockskoordination [HD024126, HD024129, fulltext bekräftad]
+- Återtagande av HD024127 (status: Utgången) innan substantiell granskning är ett analytiskt avvikande — intern S-procedurfel eller taktiskt tillbakadragande [HD024127, riksdagen.se]
+- Tvärblocksignal: HD024133 av Lorena Delgado Varas (-) om hedersrelaterat våld antyder att V samordnar sig med S-strategi utanför energisektorn [HD024133, riksdagen.se]
+
+### Viktigaste framåtsignal
+
+**MJU-utskottets utfrågning om prop. 2025/26:238** (ny miljötillståndsmyndighet): förväntas i juni 2026. Om MJU antar något S-yrkande signalerar det regeringseftergifter om institutionell design. Bevaka eventuella "tillkännagivande"-signaler från regeringen före det datumet.
+
+### Konfidensanalys
+
+| Dimension | Konfidensgrad | Not |
+|-----------|--------------|-----|
+| Dokumentidentifiering | HÖG | Alla 17 dok_ids bekräftade via riksdagen MCP |
+| Partitillhörighet (S) | HÖG | Tre ledare bekräftade (Åsa Westlund, Fredrik Olovsson, Teresa Carvalho) |
+| Partitillhörighet (obekräftade dok) | MEDEL | 13 dok saknar explicit partitag i MCP-retur; mönster stämmer med S-blocket |
+| Politisk positionsinnehåll | MEDEL | Fulltext tillgänglig för HD024124, HD024126, HD024129; övriga metadata-only |
+| Röstutfallsprediktion | LÅG | Inga jämförbara tidigare omröstningar hittade under de senaste 4 riksmötena för dessa specifika åtgärder |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-05-01 | **运行ID**：25206597626 | **分类**：公开  
+**可信度**：中等（政党立场已核实；特定yrkanden待全文审查）
+
+### BLUF
+
+社会民主党反对派于2026-04-29提交了16项委员会动议——夏季休会前最后提交日——分布在五项政府提案上，涵盖能源系统改革、环境许可、风能、港口法和少年司法。这些动议揭示了一致的反对党战略：S接受政府在能源和环境政策方面立法的结构方向，同时推动更强的气候抱负、更明确的社区治理权利以及对青少年违法者更严格的社会保障保护。一项动议（HD024127）在提交前被撤回——一个程序性异常，表明可能存在内部协调失误。
+
+### BLUF — 主要发现
+
+- **能源政策集群（3项提案，8项动议）**：S对政府关于电力系统的法律（prop. 2025/26:240）和风力发电市政框架（prop. 2025/26:239）提出质疑，要求更快的脱碳目标和对能源选址决策更清晰的地方民主治理。
+- **环境许可改革（prop. 2025/26:238，4项动议）**：S反对新的专门环境许可机构的设计，认为其有碎片化环境治理并削弱司法监督的风险；这是最高DIW集群。
+- **刑事司法（prop. 2025/26:246，1项动议）**：S以要求综合康复服务回应更严格的青少年规定——反映在如何对待青少年违法者问题上的根本价值观分歧。
+- **性别/人权（skr. 2025/26:245，2项动议）**：S与V系联合应对荣誉暴力的努力表明在能源政治之外就性别平等问题的跨党合作。
+- **吨位税（prop. 2025/26:243）**：关于海运税收的低重要性监管动议。
+
+### 支持的决定
+
+1. **议会日程**：MJU、NU、TU、JuU、AU和SkU委员会必须在夏季休会前根据其2025/26年日历对这些动议进行优先排序（目标截止日期：2026年6月）。
+2. **政府应对立场**：气候与环境部和能源部必须评估S对新环境机构和电力法的反对是否构成阻止风险（需要妥协）还是程序性噪音（可以用现有多数票否决）。
+3. **联合政府管理**：政府合作伙伴（M、SD、KD、L）必须在委员会投票前确认所有五个提案集群的投票凝聚力——S的动议测试任何政府党是否对能源治理或少年司法持有独立保留意见。
+
+### 60秒情报要点
+
+- 16项实质性动议在6个委员会的一天内提交——riksmötet 2025/26中S阵营在这些政策领域单日最高动议量 [HD024124–HD024140, data.riksdagen.se]
+- 环境许可（MJU）是战略优先级：4项独立委员会动议（HD024124、HD024131、HD024134、HD024139）——几乎可以确定是对政府旗舰行政改革的协调攻击 [HD024124，全文已确认]
+- 风力否决权和电力系统设计在NU委员会存在争议（HD024126、HD024129、HD024130、HD024132、HD024137、HD024138）——单一政策领域的6项动议表明高度的党内协调 [HD024126、HD024129，全文已确认]
+- HD024127撤回（状态：已过期）在实质审查前是一个分析异常——S内部程序错误或战术性撤回 [HD024127, riksdagen.se]
+- 跨党信号：Lorena Delgado Varas（-）关于荣誉暴力的HD024133暗示V在能源领域以外与S战略协调 [HD024133, riksdagen.se]
+
+### 最重要的未来触发因素
+
+**MJU委员会关于prop. 2025/26:238的听证会**（新环境许可机构）：预计2026年6月。如果MJU采纳任何S的yrkande，这将表明政府在机构设计上作出让步。在该日期前注意政府的任何"tillkännagivande"信号。
+
+### 可信度评估
+
+| 维度 | 可信度 | 备注 |
+|------|--------|------|
+| 文件识别 | 高 | 所有17个dok_ids通过riksdagen MCP确认 |
+| 政党归属（S） | 高 | 三位领导人确认（Åsa Westlund、Fredrik Olovsson、Teresa Carvalho） |
+| 政党归属（未确认文件） | 中等 | 13份文件在MCP返回中没有明确政党标签；模式与S阵营一致 |
+| 政治立场内容 | 中等 | HD024124、HD024126、HD024129全文可用；其他仅元数据 |
+| 投票结果预测 | 低 | 在过去4次riksmöten中未发现这些具体措施的可比较投票 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+graph LR
+  subgraph "Opposition Strategy 2026-04-29"
+    A[Energy Reform\n8 motions\nNU/TU/SkU] --> B[Accept structure\nDemand faster\ndecarbonisation]
+    C[Environmental Auth\n4 motions\nMJU] --> D[Challenge design\nProtect judicial\noversight]
+    E[Criminal Justice\n1 motion\nJuU] --> F[Add rehabilitation\nreject pure\npunishment]
+    G[Gender/HR\n2 motions\nAU] --> H[Cross-bloc\nS + V-adjacent\nhonour violence]
+  end
+  style A fill:#00d9ff,color:#0a0e27
+  style C fill:#ff006e,color:#e0e0e0
+  style E fill:#ffbe0b,color:#0a0e27
+  style G fill:#1a1e3d,color:#e0e0e0
+```
+
+---
+
+### 第二阶段更新
+
+**来自完整分析组合回顾的丰富内容**：
+
+完成所有23项分析工件后，上述BLUF评估得到确认和加强：
+
+1. **联合政府预先定位确认**：coalition-mathematics.md显示动议的yrkanden与C、V、MP联合政府要求精确对应——双重功能（选举竞选+谈判）的最有力证据
+2. **选民细分覆盖验证**：voter-segmentation.md确认四个不同的目标细分，全部覆盖；能源/环境获得最多资源（7项动议），针对最有价值的摇摆选民
+3. **前瞻性指标活跃**：forward-indicators.md定义6个收集目标；FI-001（MJU听证会）和FI-003（电价）是最重要的前瞻性信号
+4. **历史类比加强评估**：historical-parallels.md显示2014年的先例（S在类似春季攻势后赢得选举）给S理由自信，而2010年的先例（尽管战略相似但失败）警告外部因素主导
+
+**可信度更新**：KJ-1（协调攻势）和KJ-2（所有动议将失败）升级为高。KJ-4（V阵营协调）保持中等，但HD024133时机交叉引用后呈中等偏高趋势。
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 17 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 18 | Linked in Article Sources, not expanded inline |
 
@@ -2115,6 +3054,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

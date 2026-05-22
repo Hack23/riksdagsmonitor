@@ -6,7 +6,7 @@ date: 2026-04-30
 subfolder: realtime-pulse
 slug: 2026-04-30-realtime-pulse
 source_folder: analysis/daily/2026-04-30/realtime-pulse
-generated_at: 2026-05-21T02:19:50.781Z
+generated_at: 2026-05-22T12:25:06.194Z
 language: en
 layout: article
 ---
@@ -85,6 +85,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2001,13 +2014,656 @@ none found — no directly relevant Statskontoret source retrieved for this batc
 | analysis/daily/2026-04-30/motions/ | Full 23 artifacts | Energy transition cluster; opposition permitting agency challenge; wind power |
 | analysis/daily/2026-04-30/interpellations/ | Full 23 artifacts | Cultural heritage (HD10460); Space industry ESA cuts (HD10461) |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_ar.md -->
+
+<!-- rtl -->
+# ملخص تنفيذي — النبض اللحظي للبرلمان السويدي، 30 أبريل 2026
+
+---
+
+### 🎯 الخلاصة التنفيذية
+
+شنّت حكومة كريسترسون في الثلاثين من أبريل 2026 موجةً تشريعيةً استثنائية، وقدّمت حزمةً ثانيةً كبيرةً من الاقتراحات تركّز صلاحيات التنفيذ في ثلاثة مشاريع قوانين هجرة مترابطة، إلى جانب إطارٍ رائدٍ للتعاون الدفاعي وإصلاحٍ للشفافية السياسية. ويُمثّل هذا اليوم الواحد — مقروناً بخطة البنية التحتية البالغة 970 مليار كرونة سويدية من الحزمة الأولى ومقترحات المعارضة بشأن التحوّل في مجال الطاقة — أعلى كثافةٍ تشريعيةٍ في دورة البرلمان 2025/26، وهو عبارة عن اندفاعةٍ محسوبةٍ قبل الانتخابات لتثبيت هوية تحالف تيدو في مجال القانون والنظام والدفاع قبل انتخابات خريف 2026.
+
+### 🧭 ثلاثة قرارات يدعمها هذا الملخص
+
+| # | القرار | الصلة | الأفق الزمني |
+|---|--------|-------|--------------|
+| 1 | معايرة المخاطر السياسية للمنظمات العاملة في مجال الهجرة والتنفيذ في السويد | HD03263+264+265 تُشدّد الإعادة والسلوك السكني والاحتجاز في آنٍ واحد — تحوّل منسّق في بنية التنفيذ | 2026–2027 |
+| 2 | التموضع الدفاعي والامتثال للجهات الفاعلة في الصناعة العسكرية متعددة الجنسيات | HD03254 يوسّع الأساس القانوني للتعاون العسكري العملياتي في إطار حلف الناتو | النصف الثاني من 2026 |
+| 3 | استراتيجية المشاركة السياسية للأحزاب والمجتمع المدني بشأن الشفافية الديمقراطية | HD03258 (الشفافية السياسية) سيقيّد تمويل الأحزاب والضغط — يؤثر على المشهد التنافسي | 2026–2028 |
+
+### ⚡ قراءة في 60 ثانية
+
+- **حزمة تنفيذ الهجرة**: HD03263 (تنفيذ الإعادة)، HD03264 (اشتراطات السلوك لتصاريح الإقامة)، HD03265 (قواعد الإشراف/الاحتجاز) — ثلاثة قوانين متزامنة تُشير إلى تشديدٍ منهجي لبنية تنفيذ الهجرة.
+- **التعاون الدفاعي** (HD03254): يُزيل العقبات القانونية أمام التعاون العسكري العملياتي مع الدول الشريكة في إطار الناتو والترتيبات الثنائية. Pål Jonson (M)، وزارة الدفاع.
+- **الشفافية السياسية** (HD03258): Gunnar Strömmer (M)، وزارة العدل — اشتراطات إفصاحٍ مُعزَّزة في العمليات السياسية، تشمل تمويل الأحزاب وأنشطة الضغط.
+- **التكامل الصحي** (HD03251): Jakob Forssmed (KD)، وزارة الشؤون الاجتماعية — رعاية متكاملة للأشخاص المصابين بالإدمان والاضطرابات النفسية المصاحبة.
+- **التقاطع**: يشمل الناتج التشريعي لهذا اليوم من التحليلات الشقيقة: خطة البنية التحتية البالغة 970 مليار كرونة، وتحويل قانون البنوك الأوروبي، وتحدي التحوّل في الطاقة للمعارضة، وثغرة الامتثال لقانون الذكاء الاصطناعي التي رصدتها لجنة KU.
+- **القراءة الانتخابية**: تشديد الهجرة + توسيع الدفاع + إصلاح الشفافية = بصمةٌ تشريعية قبل الانتخابات مُصمَّمة لاستقطاب ائتلاف ناخبي تيدو وتحييد خطوط هجوم المعارضة.
+
+### 🔮 أبرز المحفّزات المستقبلية
+
+**استقبال لجنة تنفيذ الهجرة (HD03263/264/265) في SfU (Socialförsäkringsutskottet)، متوقّع في مايو–يونيو 2026**: سيكون موقف SD حاسماً — بوصفه الشريك الأوّل في مجال سياسة الهجرة، ستحدّد تصويتات SD في اللجنة مدى نجاح أي تعديلات تخفيفية. تابعوا المقترحات المضادة من S وMP في اللجنة.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_da.md -->
+
+---
+
+### 🎯 BLUF
+
+Kristersson-regeringen har gennemført en ekstraordinær lovgivningssurge den 30. april 2026 og indsendt en anden stor propositionspakke, der koncentrerer håndhævelsesmagt i tre sammenkoblede migrationslovgivninger ved siden af en banebrydende ramme for forsvarssamarbejde og en politisk transparensreform. Kombineret med den første pakkes infrastrukturplan på 970 milliarder SEK og oppositionens energiomstillingsforslagstillinger repræsenterer denne enkelt dag den tætteste lovgivningsproduktion i 2025/26 Riksdag-sessionen — en beregnet valgkampssprint designet til at låse Tidöalliansens lov-og-orden og forsvarsidentitet fast inden efterårets valg 2026.
+
+### 🧭 3 Beslutninger som dette orientering understøtter
+
+| # | Beslutning | Relevans | Horisont |
+|---|-----------|----------|----------|
+| 1 | Politisk risikokalibrering for organisationer, der opererer i Sveriges migrations-/håndhævelsesrum | HD03263+264+265 stramme returnering, bopælsadfærd og tilbageholdelse simultant — et koordineret paradigmeskift inden for håndhævelsesarkitekturen | 2026–2027 |
+| 2 | Forsvarspositionering og compliance for aktører inden for multinational militærindustri | HD03254 udvider det juridiske grundlag for operativt militært samarbejde under NATO-rammen | 2026 H2 |
+| 3 | Politisk engagementsstrategi for partier og civilsamfund om demokratisk transparens | HD03258 (politisk transparens) vil begrænse partifinansering og lobbyisme — påvirker det konkurrencemæssige landskab | 2026–2028 |
+
+### ⚡ 60-sekunders læsning
+
+- **Migrationshåndhævelsesklynge**: HD03263 (returhåndhævelse), HD03264 (adfærdskrav for opholdstilladelse), HD03265 (tilsyns-/tilbageholdelsesregler) — tre simultane lovgivninger signalerer en systemisk stramning af migrationshåndhævelsesarkitekturen.
+- **Forsvarssamarbejde** (HD03254): Fjerner juridiske barrierer for operativt militært samarbejde med partnernationer under NATO og bilaterale arrangementer. Pål Jonson (M), Forsvarsministeriet.
+- **Politisk transparens** (HD03258): Gunnar Strömmer (M), Justitsministeriet — øgede indsigtsrettigheder i politiske processer, dækker partifinansering og lobbyisme.
+- **Sundhedsintegration** (HD03251): Jakob Forssmed (KD), Socialministeriet — integreret pleje for personer med afhængighed og samtidige psykiatriske tilstande.
+- **Tværgående**: Dagens lovgivningsoutput fra søsteranalyser inkluderer 970 mia. SEK infrastrukturplan, EU-banktransponering, oppositionens energiomstillingsudfordring og AI Act-overholdelsesgab identificeret af KU.
+- **Valglæsning**: Migrationsstramning + forsvarsudvidelse + transparensreform = en forvalgssignatur designet til at appellere til Tidöalliansens vælgerkoalition og neutralisere oppositionens angrebslinjer.
+
+### 🔮 Topfremadudløser
+
+**Udvalgsmodtagelse af migrationshåndhævelsesklyngen (HD03263/264/265) i SfU (Socialförsäkringsutskottet), forventet maj–juni 2026**: SD's position vil være afgørende — som ledende partner inden for migrationspolitikområdet vil SD's udvalgsafstemninger afgøre, om eventuelle lempende ændringer lykkes. Overvåg S og MP's modforslag i udvalget.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_de.md -->
+
+---
+
+### 🎯 BLUF
+
+Die Kristersson-Regierung hat am 30. April 2026 einen außergewöhnlichen Gesetzgebungsschub vollzogen und ein zweites großes Propositionspaket eingereicht, das die Vollzugsmacht in drei miteinander verknüpften Migrationsgesetzen bündelt — flankiert von einem wegweisenden Rahmenwerk für Verteidigungskooperation und einer Reform zur politischen Transparenz. Kombiniert mit dem 970-Milliarden-SEK-Infrastrukturplan des ersten Pakets und den Energiewende-Anträgen der Opposition stellt dieser einzelne Tag die dichteste Gesetzgebungsproduktion der Riksdag-Sitzungsperiode 2025/26 dar — ein kalkulierter Vorwahlsprint zur Festigung der Recht-und-Ordnungs- und Verteidigungs-Identität der Tidöalliansen vor den Herbstwahlen 2026.
+
+### 🧭 3 Entscheidungen, die diese Kurzfassung unterstützt
+
+| # | Entscheidung | Relevanz | Zeithorizont |
+|---|-------------|----------|--------------|
+| 1 | Politische Risikokalibrierung für Organisationen im schwedischen Migrations-/Vollzugsbereich | HD03263+264+265 verschärfen Rückkehr, Aufenthaltsverhalten und Inhaftierung simultan — ein koordinierter Paradigmenwechsel in der Vollzugsarchitektur | 2026–2027 |
+| 2 | Verteidigungspositionierung und Compliance für Akteure in der multinationalen Militärindustrie | HD03254 erweitert die Rechtsgrundlage für operative Militärkooperation im NATO-Rahmen | 2026 H2 |
+| 3 | Politische Engagementstrategie für Parteien und Zivilgesellschaft zur demokratischen Transparenz | HD03258 (politische Transparenz) wird Parteienfinanzierung und Lobbying einschränken — beeinflusst die Wettbewerbslandschaft | 2026–2028 |
+
+### ⚡ 60-Sekunden-Lektüre
+
+- **Migrationsvollzugscluster**: HD03263 (Rückkehrvollzug), HD03264 (Verhaltensanforderungen für Aufenthaltserlaubnisse), HD03265 (Überwachungs-/Haftregeln) — drei simultane Gesetze signalisieren eine systemische Verschärfung der Migrationsvollzugsarchitektur.
+- **Verteidigungskooperation** (HD03254): Beseitigt rechtliche Hindernisse für operative Militärkooperation mit Partnernationen im Rahmen von NATO und bilateralen Vereinbarungen. Pål Jonson (M), Verteidigungsministerium.
+- **Politische Transparenz** (HD03258): Gunnar Strömmer (M), Justizministerium — erhöhte Einsichtsrechte in politische Prozesse, umfasst Parteienfinanzierung und Lobbying.
+- **Gesundheitsintegration** (HD03251): Jakob Forssmed (KD), Sozialministerium — integrierte Versorgung für Personen mit Sucht und gleichzeitig bestehenden psychiatrischen Erkrankungen.
+- **Querschnittlich**: Die heutige Gesetzgebungsproduktion aus Schwesteranalysen umfasst den 970-Mrd.-SEK-Infrastrukturplan, EU-Banktransposition, die Energiewende-Herausforderung der Opposition und eine vom KU-Ausschuss identifizierte KI-Regulierungslücke.
+- **Wahllektüre**: Migrationsstraffung + Verteidigungsexpansion + Transparenzreform = eine Vorwahl-Gesetzgebungssignatur zur Stärkung der Tidöalliansen-Wählerkoalition und Neutralisierung oppositioneller Angriffspunkte.
+
+### 🔮 Wichtigster Vorwärtsauslöser
+
+**Ausschussbehandlung des Migrationsvollzugsclusters (HD03263/264/265) im SfU (Socialförsäkringsutskottet), erwartet Mai–Juni 2026**: SD's Position wird entscheidend sein — als führender Partner im Migrationspolitikbereich werden SD's Ausschussabstimmungen darüber entscheiden, ob etwaige Abmilderungsänderungen Erfolg haben. Beobachten Sie S und MP's Gegenvorschläge im Ausschuss.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_es.md -->
+
+---
+
+### 🎯 BLUF
+
+El gobierno Kristersson ha protagonizado una extraordinaria oleada legislativa el 30 de abril de 2026, presentando un segundo gran paquete de proposiciones que concentra el poder ejecutivo en tres proyectos de ley migratorios interconectados, junto con un innovador marco de cooperación defensiva y una reforma de transparencia política. Combinado con el plan de infraestructura de 970 mil millones de SEK del primer paquete y las mociones de transición energética de la oposición, este único día representa la producción legislativa más densa de la sesión parlamentaria 2025/26 — un calculado sprint preelectoral diseñado para consolidar la identidad de ley y orden y defensa de la Tidöallians antes de las elecciones de otoño de 2026.
+
+### 🧭 3 decisiones que respalda este resumen
+
+| # | Decisión | Relevancia | Horizonte |
+|---|---------|------------|-----------|
+| 1 | Calibración del riesgo político para organizaciones que operan en el espacio de migración/aplicación de Suecia | HD03263+264+265 endurecen simultáneamente el retorno, la conducta residencial y la detención — un cambio de paradigma coordinado en la arquitectura de aplicación | 2026–2027 |
+| 2 | Posicionamiento defensivo y cumplimiento para actores en la industria militar multinacional | HD03254 amplía la base jurídica para la cooperación militar operativa en el marco de la OTAN | 2026 S2 |
+| 3 | Estrategia de compromiso político para partidos y sociedad civil sobre transparencia democrática | HD03258 (transparencia política) restringirá la financiación de partidos y el lobbying — afecta al panorama competitivo | 2026–2028 |
+
+### ⚡ Lectura de 60 segundos
+
+- **Clúster de aplicación migratoria**: HD03263 (aplicación del retorno), HD03264 (requisitos de conducta para permisos de residencia), HD03265 (normas de supervisión/detención) — tres leyes simultáneas señalan un endurecimiento sistémico de la arquitectura de aplicación migratoria.
+- **Cooperación defensiva** (HD03254): Elimina barreras jurídicas para la cooperación militar operativa con naciones asociadas en el marco de la OTAN y acuerdos bilaterales. Pål Jonson (M), Ministerio de Defensa.
+- **Transparencia política** (HD03258): Gunnar Strömmer (M), Ministerio de Justicia — mayores requisitos de transparencia en los procesos políticos, abarca la financiación de partidos y el lobbying.
+- **Integración sanitaria** (HD03251): Jakob Forssmed (KD), Ministerio de Asuntos Sociales — atención integrada para personas con adicción y trastornos psiquiátricos concurrentes.
+- **Transversal**: La producción legislativa del día de análisis relacionados incluye el plan de infraestructura de 970 000 millones de SEK, transposición bancaria de la UE, el desafío de transición energética de la oposición y una brecha de cumplimiento de la Ley de IA identificada por el comité KU.
+- **Lectura electoral**: Endurecimiento migratorio + expansión defensiva + reforma de transparencia = una firma legislativa preelectoral diseñada para apelar a la coalición electoral de la Tidöallians y neutralizar las líneas de ataque de la oposición.
+
+### 🔮 Principal desencadenante prospectivo
+
+**Recepción en comité del clúster de aplicación migratoria (HD03263/264/265) en el SfU (Socialförsäkringsutskottet), prevista mayo–junio de 2026**: La posición del SD será determinante — como socio principal en el ámbito de la política migratoria, los votos del SD en comité decidirán si prosperan las posibles enmiendas de moderación. Seguir las contrapropuestas de S y MP en el comité.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_fi.md -->
+
+---
+
+### 🎯 BLUF
+
+Kristersson-hallitus on toteuttanut poikkeuksellisen lainsäädäntörynnäkön 30. huhtikuuta 2026 ja jättänyt toisen suuren hallitusesityspaketin, joka keskittää täytäntöönpanovallan kolmeen toisiinsa linkitettyyn maahanmuuttolakiin yhdessä maanpuolustusyhteistyön puitesopimuksen ja poliittisen läpinäkyvyysuudistuksen kanssa. Yhdistettynä ensimmäisen paketin 970 miljardin SEK:n infrastrukturisuunnitelmaan ja opposition energiasiirtymäaloitteisiin tämä yksittäinen päivä edustaa 2025/26 Riksdagin istuntokauden tiheintä lainsäädäntötuotantoa — laskelmoitu vaalikampanjakiri, jolla pyritään lukitsemaan Tidöalliansens laki- ja järjestys- sekä puolustusidentiteetti ennen syksyn 2026 vaaleja.
+
+### 🧭 3 päätöstä, joita tämä yhteenveto tukee
+
+| # | Päätös | Merkitys | Aikajänne |
+|---|--------|----------|-----------|
+| 1 | Poliittinen riskikalibrointi organisaatioille, jotka toimivat Ruotsin maahanmuutto-/täytäntöönpanotilassa | HD03263+264+265 tiukentavat samanaikaisesti palautusta, asumiskäyttäytymistä ja säilöönottoa — koordinoitu muutos täytäntöönpanoarkkitehtuurissa | 2026–2027 |
+| 2 | Puolustusasemointi ja vaatimustenmukaisuus monikansallisessa puolusteteollisuudessa toimiville | HD03254 laajentaa operatiivisen sotilasyhteistyön oikeusperustaa NATO-kehyksen alla | 2026 H2 |
+| 3 | Poliittinen vaikuttamisstrategia puolueille ja kansalaisyhteiskunnalle demokraattisesta läpinäkyvyydestä | HD03258 (poliittinen läpinäkyvyys) rajoittaa puoluerahoitusta ja lobbausta — vaikuttaa kilpailutilanteeseen | 2026–2028 |
+
+### ⚡ 60 sekunnin lukeminen
+
+- **Maahanmuuton täytäntöönpanoryväs**: HD03263 (palautuksen täytäntöönpano), HD03264 (käyttäytymisvaatimukset oleskeluluville), HD03265 (valvonta-/säilöönottosäännöt) — kolme samanaikaista lakia signaloivat maahanmuuton täytäntöönpanoarkkitehtuurin järjestelmällistä tiukentamista.
+- **Puolustusyhteistyö** (HD03254): Poistaa operatiivisen sotilasyhteistyön juridiset esteet NATO:n ja kahdenvälisten järjestelyjen puitteissa toimivien kumppanimaiden kanssa. Pål Jonson (M), Puolustusministeriö.
+- **Poliittinen läpinäkyvyys** (HD03258): Gunnar Strömmer (M), Oikeusministeriö — lisätään näkyvyysvaatimuksia poliittisissa prosesseissa, kattaa puoluerahoituksen ja lobbauksen.
+- **Terveydenhuoltointegraatio** (HD03251): Jakob Forssmed (KD), Sosiaaliministeriö — integroitu hoito päihderiippuvaisille, joilla on samanaikaisia psykiatrisia tiloja.
+- **Poikkileikkaava**: Päivän lainsäädäntötuotanto sisarsisältöanalyyseistä käsittää 970 mrd. SEK:n infrastruktuurisuunnitelman, EU-pankkitranspositio, opposition energiasiirtymähaasteen sekä KU:n tunnistaman tekoälylain noudattamisaukon.
+- **Vaaliluenta**: Maahanmuuton tiukentaminen + puolustuksen laajentaminen + läpinäkyvyysuudistus = vaalienneskirjoitus, jolla pyritään vetoamaan Tidöalliansens äänestäjäkoalitioon ja neutralisoimaan opposition hyökkäyslinjat.
+
+### 🔮 Tärkein tulevaisuuden laukaisija
+
+**Maahanmuuton täytäntöönpanoryväksen (HD03263/264/265) vastaanotto SfU:ssa (Socialförsäkringsutskottet), odotettavissa touko–kesäkuu 2026**: SD:n kanta on ratkaiseva — maahanmuuttopolitiikan alueella johtavana kumppanina SD:n valiokuntaäänestykset ratkaisevat, onnistuvatko mahdolliset pehmentämismuutokset. Seuraa S:n ja MP:n vastaesityksiä valiokunnassa.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_fr.md -->
+
+---
+
+### 🎯 BLUF
+
+Le gouvernement Kristersson a réalisé une poussée législative extraordinaire le 30 avril 2026, soumettant un second grand paquet de propositions qui concentre le pouvoir exécutif dans trois textes migratoires interconnectés, ainsi qu'un cadre novateur de coopération défensive et une réforme de la transparence politique. Combiné au plan d'infrastructure de 970 milliards de SEK du premier paquet et aux motions de transition énergétique de l'opposition, cette seule journée représente la production législative la plus dense de la session parlementaire 2025/26 — un sprint pré-électoral calculé visant à consolider l'identité sécuritaire et défensive de la Tidöallians avant les élections d'automne 2026.
+
+### 🧭 3 décisions que cette note appuie
+
+| # | Décision | Pertinence | Horizon |
+|---|---------|------------|---------|
+| 1 | Calibrage du risque politique pour les organisations opérant dans l'espace migration/application suédois | HD03263+264+265 renforcent simultanément le retour, la conduite résidentielle et la détention — un changement de paradigme coordonné dans l'architecture d'application | 2026–2027 |
+| 2 | Positionnement défensif et conformité pour les acteurs de l'industrie militaire multinationale | HD03254 élargit la base juridique de la coopération militaire opérationnelle dans le cadre de l'OTAN | 2026 S2 |
+| 3 | Stratégie d'engagement politique pour les partis et la société civile sur la transparence démocratique | HD03258 (transparence politique) limitera le financement des partis et le lobbying — affecte le paysage concurrentiel | 2026–2028 |
+
+### ⚡ Lecture en 60 secondes
+
+- **Groupe d'application migratoire** : HD03263 (application du retour), HD03264 (conditions de comportement pour les titres de séjour), HD03265 (règles de supervision/détention) — trois textes simultanés signalent un resserrement systémique de l'architecture d'application migratoire.
+- **Coopération défensive** (HD03254) : Supprime les obstacles juridiques à la coopération militaire opérationnelle avec les nations partenaires dans le cadre de l'OTAN et des arrangements bilatéraux. Pål Jonson (M), Ministère de la Défense.
+- **Transparence politique** (HD03258) : Gunnar Strömmer (M), Ministère de la Justice — exigences accrues de transparence dans les processus politiques, couvre le financement des partis et le lobbying.
+- **Intégration des soins de santé** (HD03251) : Jakob Forssmed (KD), Ministère des Affaires sociales — soins intégrés pour les personnes souffrant de dépendance et de troubles psychiatriques concomitants.
+- **Transversal** : La production législative du jour issue des analyses associées comprend le plan d'infrastructure de 970 mrd. SEK, la transposition bancaire européenne, le défi de transition énergétique de l'opposition et une lacune de conformité à la loi IA identifiée par la commission KU.
+- **Lecture électorale** : Renforcement migratoire + expansion défensive + réforme de la transparence = une signature législative pré-électorale conçue pour séduire la coalition électorale de la Tidöallians et neutraliser les lignes d'attaque de l'opposition.
+
+### 🔮 Principal déclencheur prospectif
+
+**Réception en commission du groupe d'application migratoire (HD03263/264/265) au SfU (Socialförsäkringsutskottet), attendue mai–juin 2026** : La position du SD sera déterminante — en tant que partenaire principal dans le domaine de la politique migratoire, les votes de commission du SD décideront du succès éventuel d'amendements d'assouplissement. Surveiller les contre-propositions de S et MP en commission.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_he.md -->
+
+<!-- rtl -->
+# סיכום מנהלים — הדופק בזמן אמת של הריקסדאג, 30 באפריל 2026
+
+---
+
+### 🎯 BLUF
+
+ממשלת קריסטרסון ביצעה ביום 30 באפריל 2026 גל חקיקה יוצא דופן, והגישה חבילת הצעות שנייה גדולה המרכזת סמכויות אכיפה בשלושה הצעות חוק הגירה קשורות זו בזו, לצד מסגרת שיתוף פעולה ביטחוני חדשנית ורפורמת שקיפות פוליטית. בשילוב עם תוכנית התשתיות בסך 970 מיליארד קרון שוודי של החבילה הראשונה והצעות המעבר האנרגטי של האופוזיציה, יום בודד זה מייצג את תפוקת החקיקה הצפופה ביותר של מושב הריקסדאג 2025/26 — ספרינט מחושב לפני הבחירות שנועד לגבש את זהות החוק-הסדר-ביטחון של ברית Tidö לקראת בחירות סתיו 2026.
+
+### 🧭 3 החלטות שסיכום זה תומך בהן
+
+| # | החלטה | רלוונטיות | אופק |
+|---|-------|-----------|------|
+| 1 | כיול סיכון פוליטי לארגונים הפועלים במרחב ההגירה/האכיפה של שוודיה | HD03263+264+265 מחמירים בו-זמנית גירוש, התנהגות שוהים ומעצר — שינוי פרדיגמה מתואם בארכיטקטורת האכיפה | 2026–2027 |
+| 2 | מיצוב ביטחוני ותאימות לגורמים בתעשיית הצבאית הרב-לאומית | HD03254 מרחיב את הבסיס המשפטי לשיתוף פעולה צבאי מבצעי במסגרת נאט"ו | מחצית שנייה 2026 |
+| 3 | אסטרטגיית מעורבות פוליטית למפלגות ולחברה האזרחית בשקיפות דמוקרטית | HD03258 (שקיפות פוליטית) יגביל מימון מפלגות ופעילות לובי — משפיע על הנוף התחרותי | 2026–2028 |
+
+### ⚡ קריאה של 60 שניות
+
+- **אשכול אכיפת הגירה**: HD03263 (אכיפת גירוש), HD03264 (דרישות התנהגות לאישורי שהייה), HD03265 (כללי פיקוח/מעצר) — שלושה חוקים בו-זמניים מאותתים על הידוק שיטתי של ארכיטקטורת אכיפת ההגירה.
+- **שיתוף פעולה ביטחוני** (HD03254): מסיר מחסומים משפטיים לשיתוף פעולה צבאי מבצעי עם מדינות שותפות במסגרת נאט"ו והסדרים דו-צדדיים. Pål Jonson (M), משרד הביטחון.
+- **שקיפות פוליטית** (HD03258): Gunnar Strömmer (M), משרד המשפטים — דרישות שקיפות מוגברות בתהליכים פוליטיים, מכסה מימון מפלגות ולובי.
+- **אינטגרציה בריאותית** (HD03251): Jakob Forssmed (KD), משרד הרווחה — טיפול משולב לאנשים עם התמכרות ומצבים פסיכיאטריים נלווים.
+- **רוחבי**: תפוקת החקיקה של היום מניתוחים אחיים כוללת תוכנית תשתיות בסך 970 מיליארד, טרנספוזיציה בנקאית של האיחוד האירופי, אתגר המעבר האנרגטי של האופוזיציה, ופער ציות לחוק ה-AI שזוהה על ידי ועדת KU.
+- **קריאה בחירותית**: הידוק הגירה + הרחבת ביטחון + רפורמת שקיפות = חתימה חקיקתית לפני הבחירות שנועדה לפנות לקואליציית המצביעים של Tidöallians ולנטרל את קווי ההתקפה של האופוזיציה.
+
+### 🔮 טריגר מוביל עתידי
+
+**קבלת ועדת אשכול אכיפת ההגירה (HD03263/264/265) ב-SfU (Socialförsäkringsutskottet), צפוי מאי–יוני 2026**: עמדת SD תהיה קריטית — כשותפה בכירה בתחום מדיניות ההגירה, הצבעות SD בוועדה יקבעו אם תיקוני ריכוך אפשריים יצליחו. עקוב אחר הצעות הנגד של S ו-MP בוועדה.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_ja.md -->
+
+---
+
+### 🎯 要点
+
+クリステション政権は2026年4月30日、前例のない立法ラッシュを実施し、第二次大型提案パッケージを提出した。これは三つの連動した移民関連法案に執行権限を集中させるものであり、画期的な防衛協力枠組みと政治透明性改革を伴っている。第一パッケージの9,700億クローナのインフラ計画と野党のエネルギー転換動議を合わせると、この一日は2025/26年リクスダーグ会期で最も密度の高い立法生産を表している。これは2026年秋の選挙前にティドアリアンスの法と秩序・防衛アイデンティティを固めるための計算されたダッシュである。
+
+### 🧭 このブリーフが支援する3つの意思決定
+
+| # | 意思決定 | 関連性 | 時間軸 |
+|---|---------|--------|--------|
+| 1 | スウェーデンの移民・執行領域で活動する組織のための政治リスク較正 | HD03263+264+265が帰還、居住行動、収容を同時に強化 — 執行アーキテクチャにおける協調的パラダイムシフト | 2026–2027 |
+| 2 | 多国籍軍事産業に関与する事業体の防衛分野ポジショニングとコンプライアンス | HD03254がNATO枠組み下での作戦軍事協力の法的根拠を拡大 | 2026年下半期 |
+| 3 | 民主的透明性に関する政党と市民社会の政治エンゲージメント戦略 | HD03258（政治透明性）が党費資金調達とロビー活動を制約 — 競争環境に影響 | 2026–2028 |
+
+### ⚡ 60秒のダイジェスト
+
+- **移民執行クラスター**: HD03263（帰還執行）、HD03264（居住許可の行動要件）、HD03265（監督・収容規則）— 三つの同時立法が移民執行アーキテクチャの体系的強化を示している。
+- **防衛協力**（HD03254）: NATO及び二国間取り決めの下、パートナー国との作戦軍事協力への法的障壁を撤廃。Pål Jonson（M）、国防省。
+- **政治透明性**（HD03258）: Gunnar Strömmer（M）、法務省 — 政治プロセスにおける情報開示要件の強化、党費資金調達とロビー活動を対象。
+- **医療統合**（HD03251）: Jakob Forssmed（KD）、社会省 — 依存症と共存する精神疾患を抱える人々への統合ケア。
+- **横断的**: 関連分析からの今日の立法生産には、9,700億SEKインフラ計画、EU銀行転換、野党のエネルギー転換挑戦、KU委員会が特定したAI法準拠ギャップが含まれる。
+- **選挙分析**: 移民強化 + 防衛拡張 + 透明性改革 = ティドアリアンス有権者連合に訴求し、野党の攻撃ラインを中和するための選挙前立法署名。
+
+### 🔮 最重要先行指標
+
+**SfU（Socialförsäkringsutskottet）での移民執行クラスター（HD03263/264/265）の委員会審議、2026年5月〜6月予定**: SDの立場が重要となる。移民政策分野の筆頭パートナーとして、SDの委員会投票が軟化修正案の成否を左右する。SとMPの委員会における対案に注目。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_ko.md -->
+
+---
+
+### 🎯 핵심 요약
+
+크리스테르손 정부는 2026년 4월 30일 이례적인 입법 공세를 펼치며 두 번째 대형 법안 패키지를 제출했다. 이 패키지는 상호 연계된 세 가지 이민 법안에 집행 권한을 집중시키는 동시에, 획기적인 방위 협력 프레임워크와 정치 투명성 개혁을 포함하고 있다. 첫 번째 패키지의 9,700억 크로나 인프라 계획과 야당의 에너지 전환 동의안을 합산하면, 이 하루는 2025/26 릭스다그 회기 중 가장 밀도 높은 입법 생산일을 기록한다. 이는 2026년 가을 선거 전 티되알리안스의 법질서·방위 정체성을 고착시키기 위해 치밀하게 계획된 선거 전 막판 스퍼트다.
+
+### 🧭 이 브리핑이 지원하는 3가지 의사결정
+
+| # | 의사결정 | 관련성 | 시간 범위 |
+|---|---------|--------|----------|
+| 1 | 스웨덴 이민/집행 분야에서 활동하는 조직을 위한 정치적 리스크 보정 | HD03263+264+265가 귀환, 거주 행동, 구금을 동시에 강화 — 집행 아키텍처의 협조적 패러다임 전환 | 2026–2027 |
+| 2 | 다국적 군사 산업 관련 기업의 방위 포지셔닝 및 컴플라이언스 | HD03254가 NATO 프레임워크 하에서 작전적 군사 협력의 법적 근거 확대 | 2026년 하반기 |
+| 3 | 민주적 투명성에 관한 정당 및 시민사회의 정치 참여 전략 | HD03258(정치 투명성)이 정당 자금 조달과 로비 활동을 제한 — 경쟁 환경에 영향 | 2026–2028 |
+
+### ⚡ 60초 요약
+
+- **이민 집행 클러스터**: HD03263(귀환 집행), HD03264(거주 허가 행동 요건), HD03265(감독/구금 규정) — 세 가지 동시 법률이 이민 집행 아키텍처의 체계적 강화를 시사.
+- **방위 협력** (HD03254): NATO 및 양자 합의에 따른 파트너 국가와의 작전 군사 협력에 대한 법적 장벽 철폐. Pål Jonson (M), 국방부.
+- **정치 투명성** (HD03258): Gunnar Strömmer (M), 법무부 — 정치 과정의 정보 공개 요건 강화, 정당 자금 및 로비 활동 포함.
+- **의료 통합** (HD03251): Jakob Forssmed (KD), 사회부 — 중독 및 동반 정신 질환자를 위한 통합 치료.
+- **교차 분야**: 오늘의 관련 분석 입법 생산에는 9,700억 SEK 인프라 계획, EU 은행 전환, 야당의 에너지 전환 도전, KU 위원회가 식별한 AI 법 준수 격차가 포함됨.
+- **선거 분석**: 이민 강화 + 방위 확대 + 투명성 개혁 = 티되알리안스 유권자 연합에 호소하고 야당의 공격 라인을 무력화하기 위한 선거 전 입법 서명.
+
+### 🔮 주요 선행 촉발 요인
+
+**SfU(Socialförsäkringsutskottet)의 이민 집행 클러스터(HD03263/264/265) 위원회 심의, 2026년 5~6월 예상**: SD의 입장이 결정적 — 이민 정책 영역의 선도적 파트너로서 SD의 위원회 투표가 완화 수정안 성사 여부를 결정. S와 MP의 위원회 내 대안 제안 주시.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_nl.md -->
+
+---
+
+### 🎯 BLUF
+
+De Kristersson-regering heeft op 30 april 2026 een buitengewone wetgevingsstoot uitgevoerd en een tweede groot propositionenpakket ingediend dat handhavingsmacht concentreert in drie onderling verbonden migratiewetten naast een baanbrekend kader voor defensiesamenwerking en een politieke transparantiereform. Gecombineerd met het 970 miljard SEK infrastructuurplan van het eerste pakket en de energietransitie-moties van de oppositie vertegenwoordigt deze ene dag de dichtstebevolkte wetgevingsproductie van de Riksdag-sessie 2025/26 — een berekende pre-verkiezingssprint om de wet-en-orde- en defensie-identiteit van de Tidöallians te verankeren voor de najaarverkiezingen van 2026.
+
+### 🧭 3 Beslissingen die deze samenvatting ondersteunt
+
+| # | Beslissing | Relevantie | Horizon |
+|---|-----------|------------|---------|
+| 1 | Politieke risicocalibratie voor organisaties actief in Zweden's migratie-/handhavingsruimte | HD03263+264+265 verscherpen terugkeer, verblijfsgedrag en detentie gelijktijdig — een gecoördineerde paradigmawisseling in de handhavingsarchitectuur | 2026–2027 |
+| 2 | Defensiepositionering en naleving voor actoren in de multinationale militaire industrie | HD03254 breidt de juridische grondslag uit voor operationele militaire samenwerking binnen het NAVO-kader | 2026 H2 |
+| 3 | Politieke betrokkenheidsstrategie voor partijen en maatschappelijk middenveld over democratische transparantie | HD03258 (politieke transparantie) zal partijfinanciering en lobbyen beperken — beïnvloedt het concurrentielandschap | 2026–2028 |
+
+### ⚡ 60-seconden lezing
+
+- **Migratie-handhavingscluster**: HD03263 (terugkeerhandhaving), HD03264 (gedragsvereisten voor verblijfsvergunningen), HD03265 (toezichts-/detentieregels) — drie simultane wetten signaleren een systemische verscherping van de migratie-handhavingsarchitectuur.
+- **Defensiesamenwerking** (HD03254): Verwijdert juridische barrières voor operationele militaire samenwerking met partnernaties binnen het NAVO-kader en bilaterale regelingen. Pål Jonson (M), Ministerie van Defensie.
+- **Politieke transparantie** (HD03258): Gunnar Strömmer (M), Ministerie van Justitie — verhoogde inzichtsvereisten in politieke processen, omvat partijfinanciering en lobbyen.
+- **Zorgintegratie** (HD03251): Jakob Forssmed (KD), Ministerie van Sociale Zaken — geïntegreerde zorg voor personen met verslaving en gelijktijdige psychiatrische aandoeningen.
+- **Dwars**: De wetgevingsoutput van de dag uit zusteranalyses omvat het 970 mrd. SEK infrastructuurplan, EU-banktranspositie, de energietransitie-uitdaging van de oppositie en een AI-wet-nalevingshiaat geïdentificeerd door de KU-commissie.
+- **Verkiezingslezing**: Migratieverscherping + defensie-uitbreiding + transparantiereform = een pre-verkiezings-wetgevingshandtekening ontworpen om de kiezerscoalitie van de Tidöallians aan te spreken en aanvalslijnen van de oppositie te neutraliseren.
+
+### 🔮 Belangrijkste voorwaartse trigger
+
+**Commissiebehandeling van het migratie-handhavingscluster (HD03263/264/265) in de SfU (Socialförsäkringsutskottet), verwacht mei–juni 2026**: SD's positie zal cruciaal zijn — als hoofdpartner op het migratiebeleidsterrein zullen SD's commissiestemmen bepalen of eventuele verzachtende wijzigingen slagen. Let op tegenstellen van S en MP in de commissie.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_no.md -->
+
+---
+
+### 🎯 BLUF
+
+Kristersson-regjeringen har gjennomført et ekstraordinært lovgivningsrykk 30. april 2026 og levert inn en andre større proposisjonspakke som konsentrerer håndhevelsesmakt i tre sammenkoblede migrasjonslovgivninger ved siden av et banebrytende rammeverk for forsvarssamarbeid og en politisk transparensreform. Kombinert med den første pakkens infrastrukturplan på 970 milliarder SEK og opposisjonens energiomstillingsforslagstillinger representerer denne enkelt dagen den tetteste lovgivningsproduksjonen i 2025/26 Riksdag-sesjonen — et beregnet valgspurt designet for å låse Tidöalliansens lov-og-orden og forsvarsidentitet fast før høstens valg 2026.
+
+### 🧭 3 Beslutninger som denne orienteringen støtter
+
+| # | Beslutning | Relevans | Horisont |
+|---|-----------|----------|----------|
+| 1 | Politisk risikokalibrering for organisasjoner som opererer i Sveriges migrasjons-/håndhevelsesrom | HD03263+264+265 strammer retur, bostedsadferd og internering simultant — et koordinert paradigmeskifte i håndhevelsesarkitekturen | 2026–2027 |
+| 2 | Forsvarsposisjonering og etterlevelse for aktører i multinasjonell militærindustri | HD03254 utvider det juridiske grunnlaget for operativt militært samarbeid under NATO-rammeverket | 2026 H2 |
+| 3 | Politisk påvirkningsstrategi for partier og sivilsamfunn om demokratisk transparens | HD03258 (politisk transparens) vil begrense partifinansering og lobbyvirksomhet — påvirker det konkurransemessige landskapet | 2026–2028 |
+
+### ⚡ 60-sekunders lesning
+
+- **Migrasjonshåndhevelsesklynge**: HD03263 (returhåndhevelse), HD03264 (atferdskrav for oppholdstillatelse), HD03265 (tilsyns-/interneringsregler) — tre simultane lovgivninger signaliserer en systemisk innstramming av migrasjonshåndhevelsesarkitekturen.
+- **Forsvarssamarbeid** (HD03254): Fjerner juridiske barrierer for operativt militært samarbeid med partnernasjoner under NATO og bilaterale arrangementer. Pål Jonson (M), Forsvarsdepartementet.
+- **Politisk transparens** (HD03258): Gunnar Strömmer (M), Justisdepartementet — økte innsiktsrettigheter i politiske prosesser, dekker partifinansering og lobbyvirksomhet.
+- **Helseintegrasjon** (HD03251): Jakob Forssmed (KD), Sosialdepartementet — integrert omsorg for personer med avhengighet og samtidige psykiatriske tilstander.
+- **Tverrfaglig**: Dagens lovgivningsoutput fra søsteranalyser inkluderer 970 mrd. SEK infrastrukturplan, EU-banktransponering, opposisjonens energiomstillingsutfordring og AI Act-samsvarsmanko identifisert av KU.
+- **Valglesning**: Innstramming av migrasjon + forsvarsutvidelse + transparensreform = en forvalgssignatur designet for å appellere til Tidöalliansens velgerkoalisjon og nøytralisere opposisjonens angrepslinjer.
+
+### 🔮 Topp fremtidsutløser
+
+**Komitébehandling av migrasjonshåndhevelsesklyngen (HD03263/264/265) i SfU (Socialförsäkringsutskottet), forventet mai–juni 2026**: SD's posisjon vil være avgjørende — som ledende partner i migrasjonspolitikkområdet vil SD's komitéavstemninger avgjøre om eventuelle lempende endringer lykkes. Overvåk S og MP's motforslag i komiteen.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_sv.md -->
+
+---
+
+### 🎯 BLUF
+
+Kristersson-regeringen har genomfört en extraordinär lagstiftningssurge den 30 april 2026 och lämnat in ett andra stort propositionspaket som koncentrerar verkställighetsmakt i tre sammanlänkade migrationslagstiftningar, vid sidan av ett banbrytande försvarssamarbetsramverk och en politisk transparensreform. Kombinerat med det första paketets infrastrukturplan på 970 miljarder SEK och oppositionens energiomställningsmotioner representerar denna enda dag den tätaste lagstiftningsproduktionen under 2025/26 års riksdagssession — en kalkylerad förvalspurt utformad för att befästa Tidöalliansens lag-och-ordnings- och försvarsidentitet inför höstens val 2026.
+
+### 🧭 3 beslut som denna sammanfattning stöder
+
+| # | Beslut | Relevans | Horisont |
+|---|--------|----------|----------|
+| 1 | Politisk riskkalibrering för organisationer som verkar inom Sveriges migrations- och verkställighetssfär | HD03263+264+265 skärper återvändande, boendeuppträdande och förvar simultant — ett koordinerat paradigmskifte inom verkställighetsarkitekturen | 2026–2027 |
+| 2 | Försvarspositionering och efterlevnad för aktörer inom multinationell militärindustri | HD03254 utökar den rättsliga grunden för operativt militärt samarbete inom NATO-ramen | 2026 H2 |
+| 3 | Politisk påverkansstrategi för partier och civilsamhälle kring demokratisk transparens | HD03258 (politisk transparens) kommer att begränsa partifinansering och lobbying — påverkar det konkurrensmässiga landskapet | 2026–2028 |
+
+### ⚡ 60-sekunders läsning
+
+- **Migrationsverkställighetskluster**: HD03263 (återvändandeverkställighet), HD03264 (uppförandekrav för uppehållstillstånd), HD03265 (tillsyns-/förvaringsregler) — tre simultana lagstiftningar signalerar en systemisk åtstramning av migrationsverkställighetsarkitekturen.
+- **Försvarssamarbete** (HD03254): Undanröjer rättsliga hinder för operativt militärt samarbete med partnernationer under NATO och bilaterala arrangemang. Pål Jonson (M), Försvarsdepartementet.
+- **Politisk transparens** (HD03258): Gunnar Strömmer (M), Justitiedepartementet — ökade insiktsrättigheter i politiska processer, täcker partifinansering och lobbying.
+- **Sjukvårdsintegration** (HD03251): Jakob Forssmed (KD), Socialdepartementet — integrerad vård för personer med beroende och samsjuklighet i psykiatriska tillstånd.
+- **Tvärgående**: Dagens lagstiftningsproduktion från syskonanalyser inkluderar 970 miljarder SEK infrastrukturplan, EU-banktransponering, oppositionens energiomställningsutmaning och AI-aktefterlev­nads­lucka identifierad av KU.
+- **Valläsning**: Migrationsåtstramning + försvarsexpansion + transparensreform = en förvals­lagstiftningssignatur utformad för att appellera till Tidöalliansens väljarkoalition och neutralisera oppositionens attacklinjer.
+
+### 🔮 Topp framåtutlösare
+
+**Utskottsmottagande av migrationsverkställighetsklustret (HD03263/264/265) i SfU (Socialförsäkringsutskottet), förväntat maj–juni 2026**: SD:s position kommer att vara avgörande — som ledande partner inom migrationspolitikområdet kommer SD:s utskottsröster att avgöra om eventuella mildrandeändringar lyckas. Bevaka S och MP:s motförslag i utskottet.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_zh.md -->
+
+---
+
+### 🎯 核心摘要
+
+克里斯特松政府于2026年4月30日发起了一场非同寻常的立法冲刺，提交了第二批大型法案包，将执法权力集中于三项相互关联的移民法案，同时附带一项具有开创性的国防合作框架及政治透明度改革。加上第一批方案中9700亿瑞典克朗的基础设施计划和反对党的能源转型动议，这单一一天代表2025/26年议会届期中立法产出最为密集的一天——这是一次精心计算的大选前冲刺，旨在于2026年秋季大选前巩固Tidöallians的法律秩序与国防身份认同。
+
+### 🧭 本简报支持的3项决策
+
+| # | 决策 | 相关性 | 时间范围 |
+|---|------|--------|---------|
+| 1 | 为在瑞典移民/执法领域运营的机构进行政治风险校准 | HD03263+264+265同步收紧遣返、居留行为与拘留规定——执法架构的协调性范式转变 | 2026–2027 |
+| 2 | 跨国军事工业参与者的国防战略定位与合规 | HD03254扩大了北约框架下作战军事合作的法律依据 | 2026年下半年 |
+| 3 | 政党及公民社会关于民主透明度的政治参与策略 | HD03258（政治透明度）将限制党派资金募集与游说活动——影响竞争格局 | 2026–2028 |
+
+### ⚡ 60秒速读
+
+- **移民执法集群**：HD03263（遣返执法）、HD03264（居留许可行为要求）、HD03265（监督/拘留规定）——三项同步立法标志着移民执法架构的系统性收紧。
+- **国防合作**（HD03254）：消除与北约及双边安排框架下伙伴国开展作战军事合作的法律障碍。Pål Jonson（M），国防部。
+- **政治透明度**（HD03258）：Gunnar Strömmer（M），司法部——加强政治进程中的信息披露要求，涵盖政党资金和游说活动。
+- **医疗整合**（HD03251）：Jakob Forssmed（KD），社会事务部——为同时患有成瘾症和精神障碍的人员提供综合护理。
+- **横向关联**：今日来自姊妹分析的立法产出包括9700亿瑞克朗基础设施计划、欧盟银行业转化指令、反对党的能源转型挑战，以及KU委员会识别出的人工智能法规合规缺口。
+- **选举解读**：移民收紧 + 国防扩展 + 透明度改革 = 一项旨在吸引Tidöallians选民联盟并化解反对党攻击路线的大选前立法标志。
+
+### 🔮 最重要前瞻性触发因素
+
+**SfU（Socialförsäkringsutskottet）对移民执法集群（HD03263/264/265）的委员会审议，预计2026年5月至6月**：SD的立场至关重要——作为移民政策领域的核心伙伴，SD在委员会的投票将决定任何软化修正案能否通过。关注S和MP在委员会中的反提案动向。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph TD
+    A["Migration Cluster\nHD03263+264+265"] -->|SfU Committee| B["Coalition Lock-in\n2026 Election"]
+    C["HD03254\nMilitary Cooperation"] -->|FöU Committee| D["NATO Framework\nExpansion"]
+    E["HD03258\nPolitical Transparency"] -->|KU Committee| F["Democratic\nAccountability"]
+    G["HD03251\nIntegrated Care"] -->|SoU Committee| H["Mental Health\nReform"]
+    A --> I["Pre-Election\nLegislative Sprint"]
+    C --> I
+    E --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00ff88,color:#0a0e27
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 20 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2063,6 +2719,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

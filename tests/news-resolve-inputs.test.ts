@@ -189,6 +189,6 @@ describe('runtime input contract is documented in 00-base-contract.md', () => {
   });
 
   it('forbids recomputing ARTICLE_DATE/SUBFOLDER inside agent prompts', () => {
-    expect(promptContent).toMatch(/Never\s+recompute/i);
+    expect(promptContent).toMatch(/(?:Never|do not)\s+recompute/i);
   });
 });

@@ -6,7 +6,7 @@ date: 2026-05-01
 subfolder: week-ahead
 slug: 2026-05-01-week-ahead
 source_folder: analysis/daily/2026-05-01/week-ahead
-generated_at: 2026-05-21T02:19:50.833Z
+generated_at: 2026-05-22T12:25:06.274Z
 language: en
 layout: article
 ---
@@ -84,6 +84,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -1659,13 +1672,718 @@ Sibling analyses read for cross-type synthesis:
 - `analysis/daily/2026-05-01/interpellations/` — gang violence, criminal economy
 - `analysis/daily/2026-04-30/evening-analysis/` — evening synthesis
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_ar.md -->
+
+‏# الأسبوع القادم: عاصفة تشريعية في السويد قبيل الانتخابات — 4–10 مايو 2026
+
+‏**المؤلف**: جيمس بيذر سورلينغ
+‏**التاريخ**: 2026-05-01
+‏**التصنيف**: OSINT — مصادر عامة
+‏**مستوى الثقة**: عالٍ [B2]
+‏**معرّف التشغيل**: 25207939386
+
+‏## الخلاصة التنفيذية
+
+‏تأتي أسبوع 4–10 مايو 2026 قبل خمسة أشهر من الانتخابات السويدية، وقد قدّمت تحالف تيدو للتو أكبر حزمة تشريعية لها — والأكثر خطورة دستورياً — منذ توليها السلطة: أربعة قوانين متزامنة لتقييد الهجرة تُلغي تصاريح الإقامة الدائمة، وتوسّع جهاز الترحيل، وتشدّد التحقق من السجل الجنائي، وتوسّع الاحتجاز الإداري. ستحدد جداول جلسات استماع اللجنتين SfU وJuU وتيرة التشريع في السباق قبيل الانتخابات. في الوقت ذاته، يؤكد اعتماد لجنة المالية في الريكسداج للإطار الاقتصادي (HC01FiU20) قبولاً بنمو دون المتوسط، في حين يدخل تقرير ESO الذي يقدّر الاقتصاد الجنائي السويدي بـ352 مليار كرونة (5.5% من الناتج المحلي) النقاش السياسي الكامل. أبرز صانعي القرار هذا الأسبوع: وزير العدل غونار ستروميرغ (تطبيق قوانين الهجرة + جريمة العصابات)، ووزير الدفاع بول يونسون (HD03254 التعاون الدفاعي)، ووزيرة المالية إليزابيث سفانتيسون (HC01FiU20 الإطار الاقتصادي)، ورئيس الريكسداج فيما يخص تخطيط لجنتي JuU/SfU. يعني عيد فالبورغ (1 مايو) أن أول يوم عمل هو الاثنين 4 مايو — نافذة مضغوطة من 5 أيام قبل عطلة نهاية الأسبوع.
+
+‏**ملاحظة استرجاعية**: 2026-05-01 هو عيد فالبورغ (عطلة رسمية سويدية). لا جلسة عامة للريكسداج. يستخدم جمع الوثائق جلسة 2026-04-30 (استرجاع مشروع وفق المنهجية). الفترة المستقبلية للتغطية هي 4–10 مايو 2026.
+
+‏## القرارات التي يدعمها هذا التقرير
+
+‏1. **استخبارات اللجان**: ستجدول SfU وJuU جلسات استماع حول HD03262–65 هذا الأسبوع — تتبع هذه التواريخ بالغ الأهمية لتوقيت تنسيق المعارضة واستراتيجيات التصعيد الإعلامي.
+‏2. **بوابة مخاطر الاتفاقية الأوروبية**: لم يُصدر لاغروديت بعد آراء حول HD03262/HD03265 — أي رأي يصدر هذا الأسبوع سيكون الحدث الأكثر أهمية قانونياً في الدورة التشريعية.
+‏3. **التمركز الاقتصادي**: يحدد الإطار المعتمد HC01FiU20 هوية التقشف-ضمن-التحفيز الاقتصادية للحكومة في الانتخابات؛ تتبع ردود الرأي العام يُعلم تحليل استقرار الائتلاف.
+
+‏## قراءة استخباراتية في 60 ثانية
+
+‏- 🔴 **حزمة الهجرة الكبرى** (HD03262/63/64/65): تبدأ جلسات اللجان أسبوع 4 مايو. S وV وMP في معارضة قوية؛ C على الأرجح مؤيدة جزئياً. رأي لاغروديت حول الامتثال للاتفاقية الأوروبية لحقوق الإنسان لا يزال معلقاً.
+‏- 🟡 **التعاون الدفاعي** (HD03254): لجنة FöU تُمرّر مشروع القانون بالمسار السريع. توافق واسع عابر للأحزاب يشمل S. تُتوقع المصادقة السلسة بحلول يونيو 2026.
+‏- 🟠 **الإطار الاقتصادي** (HC01FiU20): أقرّ الريكسداج توقعات نمو أدنى تحت ضغط الرسوم الجمركية الأمريكية. نمو الناتج المحلي السويدي 2026 متوقع عند 1.2% مقابل إمكانية 2.1%. التشديد المالي في سنة انتخابية محفوف بمخاطر سياسية.
+‏- 🔴 **الاقتصاد الجنائي**: تقرير ESO (352 مليار كرونة / 5.5% ناتج محلي، 23,000 شركة) دخل رسمياً النقاش السياسي عبر HD10451. وعد ستروميرغ بـ"القضاء على جريمة العصابات في 4 سنوات" (HD10458) أصبح الآن وعداً انتخابياً قابلاً للقياس.
+‏- 🟡 **مقترحات البيئة/الطاقة**: ستحصل مجموعة السبعة مقترحات لحزب S حول هيئة البيئة وقانون الكهرباء على إحالة لجنتي MJU/NU هذا الأسبوع.
+
+‏## المحفّز الاستشرافي الرئيسي
+
+‏**ملاحظة حيوية — قبل 2026-05-08**: هل سيصدر لاغروديت آراء حول HD03262 (إلغاء التصاريح الدائمة) أو HD03265 (توسيع الاحتجاز)؟ رأي معارض يستند إلى المادة 5 أو 8 من الاتفاقية الأوروبية سيُطلق متطلبات مراجعة دستورية، ويؤخر الحزمة أشهراً، ويمنح المعارضة حجتها الانتخابية الأقوى. احتمال رأي معارض: متوسط [B3] — النظائر الدنماركية والألمانية تقترح امتثالاً للاتفاقية قابلاً للتطبيق لكنه ضيّق.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-01
+**Klassificering**: OSINT — Offentlige kilder
+**Konfidens**: HØJ [B2]
+**Kørselsnummer**: 25207939386
+
+### Konklusion
+
+Ugen 4.–10. maj 2026 ankommer fem måneder inden Sveriges valg med Tidöalliansen, der netop har fremsat sin mest konsekvente — og forfatningsmæssigt risikable — lovgivningspakke siden regeringsdannelsen: fire samtidige immigrationsbegrænsningslove, der afskaffer permanente opholdstilladelser, udvider deportationsapparatet, strammer vandelskontrollen og udvider administrativ frihedsberøvelse. Udvalgshoringers skemaer ved SfU og JuU vil sætte tempoet for lovgivningssprinten op til valget. Samtidig låser Riksdagens finansudvalgs godkendelse af rammerne for den økonomiske politik (HC01FiU20) en accept af under-trend-vækst fast, mens ESO-rapporten, der placerer Sveriges kriminaløkonomi på 352 milliarder SEK (5,5 % af BNP), træder ind i den fulde politiske debat. Centrale beslutningstagere denne uge: Justitieminister Gunnar Strömmer (migrationsapplikation + bandeforbrydelse), Forsvarsminister Pål Jonson (HD03254 forsvarssamarbejde), Finansminister Elisabeth Svantesson (HC01FiU20 økonomisk ramme) og Riksdagens talman angående JuU/SfU's udvalgsplanlægning. Valborg-helligdagen (1. maj) betyder, at den første arbejdsdag er mandag 4. maj — et komprimeret 5-dages vindue inden weekenden.
+
+**Tilbagebliksnote**: 2026-05-01 er Valborg (svensk helligdag). Ingen Riksdag-plenumssession. Dokumenthentning bruger sessionen fra 2026-04-30 (lovligt tilbageblik per metodologi). Fremadrettet dækningsperiode er 4.–10. maj 2026.
+
+### Beslutninger dette notat understøtter
+
+1. **Udvalgsefterretning**: SfU og JuU vil planlægge høringer om HD03262–65 denne uge — sporing af disse datoer er afgørende for oppositionens koordineringstiming og medieeskaleringsstrategier.
+2. **EMRK-risikoport**: Lagrådet har endnu ikke udstedt yttranden om HD03262/HD03265 — ethvert yttrande offentliggjort denne uge bliver den mest juridisk signifikante begivenhed i lovgivningssessionen.
+3. **Økonomisk positionering**: Det HC01FiU20-godkendte rammeværk definerer regeringens stramning-inden-for-stimulus-identitet til valget; sporing af opinionsundersøgelsessvar informerer om koalitionens stabilitetsanalyse.
+
+### 60-sekunders efterretningslæsning
+
+- 🔴 **Migrations-megapakke** (HD03262/63/64/65): Udvalgshoringer begynder ugen den 4. maj. S, V, MP i hård opposition; C sandsynligvis delvis støtte. Lagrådets yttrande om EMRK-overholdelse afventes.
+- 🟡 **Forsvarssamarbejde** (HD03254): FöU-udvalget ekspederer lovforslaget. Bred tværpolitisk konsensus inklusive S. Forventes at passere problemfrit inden juni 2026.
+- 🟠 **Økonomisk rammeværk** (HC01FiU20): Riksdagen godkendte lavere vækstprognoser under amerikansk tolpres. Svensk BNP-vækst 2026 prognosticeret til 1,2 % mod potentielle 2,1 %. Finanspolitisk stramning i valgåret er politisk risikabelt.
+- 🔴 **Kriminaløkonomi**: ESO-rapport (352 GSEK / 5,5 % af BNP, 23.000 virksomheder) trådte formelt ind i politisk debat via HD10451. Strömmers løfte om at "udrydde bandekriminalitet på 4 år" (HD10458) er nu et målbart valgengagement.
+- 🟡 **Miljø-/energimotioner**: S's 7-motionsklynge om miljømyndighed og ellov vil modtage udvalgshenvisning til MJU/NU denne uge.
+
+### Ledende fremadrettet udløser
+
+**Kritisk observation — inden 2026-05-08**: Vil Lagrådet offentliggøre yttranden om HD03262 (afskaffelse af permanente tilladelser) eller HD03265 (udvidelse af frihedsberøvelse)? Et blokerende yttrande, der citerer EMRK Art. 5 eller Art. 8, ville udløse krav om grundlovsrevision, forsinke pakken med måneder og give oppositionen sit mest potente valgargument. Sandsynlighed for blokerende yttrande: MEDIUM [B3] — danske og tyske paralleller antyder en gennemførlig men snæver EMRK-overholdelse.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Datum**: 2026-05-01
+**Klassifizierung**: OSINT — Öffentliche Quellen
+**Konfidenz**: HOCH [B2]
+**Lauf-ID**: 25207939386
+
+### Fazit
+
+Die Woche des 4.–10. Mai 2026 steht fünf Monate vor Schwedens Wahl mit der Tidöalliansen, die gerade ihr folgenreichstes — und verfassungsrechtlich riskantestes — Gesetzgebungspaket seit Regierungsantritt vorgelegt hat: vier gleichzeitige Einwanderungsbeschränkungsgesetze, die dauerhaften Aufenthalt abschaffen, den Abschiebungsapparat erweitern, die Charakter-Überprüfung verschärfen und die Verwaltungshaft ausweiten. Die Ausschussanhörungspläne bei SfU und JuU bestimmen das Gesetzgebungstempo des Vorwahlsprints. Gleichzeitig bestätigt die Zustimmung des Finanzausschusses des Riksdags zum wirtschaftspolitischen Rahmen (HC01FiU20) eine Akzeptanz unterdurchschnittlichen Wachstums, während der ESO-Bericht, der Schwedens Kriminalwirtschaft auf 352 Milliarden SEK (5,5 % des BIP) beziffert, in die volle politische Debatte eintritt. Wichtige Entscheidungsträger diese Woche: Justizminister Gunnar Strömmer (Migrationsanwendung + Bandenverbrechen), Verteidigungsminister Pål Jonson (HD03254 Verteidigungskooperation), Finanzminister Elisabeth Svantesson (HC01FiU20 wirtschaftlicher Rahmen) und der Riksdags-Talman bezüglich der JuU/SfU-Ausschussplanung. Der Valborgstag (1. Mai) bedeutet, dass der erste Arbeitstag Montag, der 4. Mai ist — ein verdichtetes 5-Tages-Fenster vor dem Wochenende.
+
+**Rückblick-Hinweis**: 2026-05-01 ist Valborg (schwedischer gesetzlicher Feiertag). Keine Riksdag-Plenarsitzung. Die Dokumentenbeschaffung verwendet die Sitzung vom 2026-04-30 (legitimer Rückblick gemäß Methodik). Vorausschauende Abdeckungsperiode ist der 4.–10. Mai 2026.
+
+### Entscheidungen, die dieser Bericht unterstützt
+
+1. **Ausschussaufklärung**: SfU und JuU planen Anhörungen zu HD03262–65 in dieser Woche — die Verfolgung dieser Daten ist entscheidend für das Koordinierungstiming der Opposition und Medieneskaliationsstrategien.
+2. **EMRK-Risikotor**: Lagrådet hat bisher keine Gutachten zu HD03262/HD03265 ausgestellt — ein in dieser Woche veröffentlichtes Gutachten wird das rechtlich bedeutendste Ereignis der Legislaturperiode.
+3. **Wirtschaftliche Positionierung**: Das HC01FiU20-angenommene Rahmenwerk definiert die wirtschaftliche Identität der Regierung als Sparmaßnahmen-im-Stimulus-Rahmen für die Wahl; die Verfolgung der Meinungsumfrageantworten informiert die Koalitionsstabilitätsanalyse.
+
+### 60-Sekunden-Nachrichtenlektüre
+
+- 🔴 **Migrationsmegapaket** (HD03262/63/64/65): Ausschussanhörungen beginnen Woche des 4. Mai. S, V, MP in harter Opposition; C wahrscheinlich partiell unterstützend. Lagrådets Gutachten zur EMRK-Konformität ausstehend.
+- 🟡 **Verteidigungskooperation** (HD03254): FöU-Ausschuss zieht Gesetzentwurf durch. Breiter parteiübergreifender Konsens einschließlich S. Erwartet wird reibungslose Verabschiedung bis Juni 2026.
+- 🟠 **Wirtschaftliches Rahmenwerk** (HC01FiU20): Riksdag genehmigte niedrigere Wachstumsprognosen unter US-Zolldruck. Schwedens BIP-Wachstum 2026 prognostiziert auf 1,2 % gegenüber potentiellen 2,1 %. Finanzpolitische Straffung im Wahljahr ist politisch riskant.
+- 🔴 **Kriminalwirtschaft**: ESO-Bericht (352 Mrd. SEK / 5,5 % des BIP, 23.000 Unternehmen) trat formal in die politische Debatte über HD10451 ein. Strömmers Versprechen, „Bandenkriminalität in 4 Jahren auszurotten" (HD10458), ist jetzt ein messbares Wahlversprechen.
+- 🟡 **Umwelt-/Energieanträge**: S's 7-Antragscluster zu Umweltbehörde und Stromgesetz erhält Ausschussverweisung zu MJU/NU diese Woche.
+
+### Führender vorausschauender Auslöser
+
+**Kritische Beobachtung — bis 2026-05-08**: Wird Lagrådet Gutachten zu HD03262 (Abschaffung dauerhafter Genehmigungen) oder HD03265 (Ausweitung der Haft) veröffentlichen? Ein blockierendes Gutachten, das EMRK Art. 5 oder Art. 8 zitiert, würde Anforderungen für Verfassungsrevisionen auslösen, das Paket um Monate verzögern und der Opposition ihr schlagkräftigstes Wahlargument liefern. Wahrscheinlichkeit eines blockierenden Gutachtens: MITTEL [B3] — dänische und deutsche Parallelen legen eine praktikable, aber knappe EMRK-Konformität nahe.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Fecha**: 2026-05-01
+**Clasificación**: OSINT — Fuentes públicas
+**Confianza**: ALTA [B2]
+**ID de ejecución**: 25207939386
+
+### Conclusión
+
+La semana del 4 al 10 de mayo de 2026 llega cinco meses antes de las elecciones suecas con la Tidöalliansen habiendo presentado su paquete legislativo más consecuente —y constitucionalmente arriesgado— desde que tomó el poder: cuatro leyes simultáneas de restricción migratoria que abolirán los permisos de residencia permanente, ampliarán el aparato de expulsión, endurecerán la verificación de antecedentes penales y extenderán la detención administrativa. Los calendarios de audiencias de los comités SfU y JuU determinarán el ritmo legislativo del sprint preelectoral. Simultáneamente, la aprobación por el Comité de Finanzas del Riksdag del marco de política económica (HC01FiU20) confirma la aceptación de un crecimiento por debajo de la tendencia, mientras el informe ESO que sitúa la economía criminal sueca en 352.000 millones de SEK (5,5 % del PIB) entra en el pleno debate político. Principales tomadores de decisiones esta semana: el Ministro de Justicia Gunnar Strömmer (aplicación migratoria + crimen organizado), el Ministro de Defensa Pål Jonson (HD03254 cooperación en defensa), la Ministra de Finanzas Elisabeth Svantesson (HC01FiU20 marco económico) y el Talman del Riksdag respecto a la planificación de los comités JuU/SfU. El Día de Valborg (1 de mayo) significa que el primer día hábil es el lunes 4 de mayo — una ventana comprimida de 5 días antes del fin de semana.
+
+**Nota retrospectiva**: El 2026-05-01 es Valborg (festivo nacional sueco). No hay sesión plenaria en el Riksdag. La recopilación de documentos utiliza la sesión del 2026-04-30 (retrospectiva legítima según metodología). El período de cobertura prospectiva es del 4 al 10 de mayo de 2026.
+
+### Decisiones que apoya este informe
+
+1. **Inteligencia de comités**: SfU y JuU programarán audiencias sobre HD03262–65 esta semana — el seguimiento de estas fechas es crucial para el timing de coordinación de la oposición y las estrategias de escalada mediática.
+2. **Puerta de riesgo CEDH**: Lagrådet no ha emitido aún dictámenes sobre HD03262/HD03265 — cualquier dictamen publicado esta semana se convierte en el evento jurídicamente más significativo de la sesión legislativa.
+3. **Posicionamiento económico**: El marco aprobado HC01FiU20 define la identidad económica de austeridad-en-estímulo del gobierno para las elecciones; el seguimiento de las respuestas en encuestas informa el análisis de estabilidad de coalición.
+
+### Lectura de inteligencia en 60 segundos
+
+- 🔴 **Megapaquete migratorio** (HD03262/63/64/65): Las audiencias de comités comienzan la semana del 4 de mayo. S, V, MP en fuerte oposición; C probablemente con apoyo parcial. El dictamen de Lagrådet sobre conformidad CEDH está pendiente.
+- 🟡 **Cooperación en defensa** (HD03254): El comité FöU tramita el proyecto de ley por vía rápida. Amplio consenso transpartidista incluido S. Se espera aprobación sin obstáculos para junio 2026.
+- 🟠 **Marco económico** (HC01FiU20): El Riksdag aprobó previsiones de crecimiento menores bajo la presión arancelaria de EE.UU. Crecimiento del PIB sueco 2026 proyectado en 1,2 % frente al 2,1 % potencial. El ajuste fiscal en año electoral es políticamente arriesgado.
+- 🔴 **Economía criminal**: El informe ESO (352.000 millones SEK / 5,5 % del PIB, 23.000 empresas) entró formalmente en el debate político a través de HD10451. La promesa de Strömmer de «erradicar la criminalidad de bandas en 4 años» (HD10458) es ahora un compromiso electoral medible.
+- 🟡 **Mociones medioambientales/energéticas**: El grupo de 7 mociones del S sobre autoridad medioambiental y ley eléctrica recibirá remisión a los comités MJU/NU esta semana.
+
+### Desencadenante prospectivo principal
+
+**Observación crítica — antes del 2026-05-08**: ¿Emitirá Lagrådet dictámenes sobre HD03262 (abolición de permisos permanentes) o HD03265 (extensión de la detención)? Un dictamen bloqueante que cite el CEDH Art. 5 o Art. 8 desencadenaría requisitos de revisión constitucional, retrasaría el paquete varios meses y daría a la oposición su argumento electoral más poderoso. Probabilidad de dictamen bloqueante: MEDIA [B3] — los paralelos danés y alemán sugieren conformidad CEDH viable pero ajustada.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling
+**Päivämäärä**: 2026-05-01
+**Luokitus**: OSINT — Julkiset lähteet
+**Luottamus**: KORKEA [B2]
+**Ajo-ID**: 25207939386
+
+### Yhteenveto
+
+Viikko 4.–10. toukokuuta 2026 saapuu viisi kuukautta ennen Ruotsin vaaleja, jolloin Tidöalliansen on juuri jättänyt kautensa merkittävimmän — ja perustuslaillisesti riskialttiimman — lakipaketin: neljä samanaikaista maahanmuuton rajoituslakia, jotka poistavat pysyvät oleskeluluvat, laajentavat karkottamiskoneistoa, tiukentavat taustatarkistuksia ja laajentavat hallinnollista säilöönottoa. SfU:n ja JuU:n valiokuntakuulemisten aikataulu asettaa lainsäädäntötahdin ennen vaaleja. Samanaikaisesti riksdagin talousvaliokunta hyväksyi talouspolitiikan puitteet (HC01FiU20) ja jähmettää sitoumuksen alle-trendin kasvuun, kun taas ESO-raportti, joka sijoittaa Ruotsin rikostalouden 352 miljardiin kruunuun (5,5 % BKT:stä), astuu täyteen poliittiseen debattiin. Tällä viikolla avainpäätöksentekijät ovat: oikeusministeri Gunnar Strömmer (maahanmuuton täytäntöönpano + jengirikollisuus), puolustusministeri Pål Jonson (HD03254 puolustusyhteistyö), valtiovarainministeri Elisabeth Svantesson (HC01FiU20 taloudellinen kehys) ja riksdagin talman JuU/SfU-valiokuntien aikataulutuksesta. Vappu (1. toukokuuta) tarkoittaa, että ensimmäinen työpäivä on maanantai 4. toukokuuta — tiivistetty 5 päivän ikkuna ennen viikonloppua.
+
+**Takautuva huomio**: 2026-05-01 on Vappu (Ruotsin julkinen vapaapäivä). Ei plenariumistuntoa. Asiakirjojen hankinnassa käytetään 2026-04-30 istuntoa (laillinen takautuva haku metodologian mukaan). Eteenpäin katsova kattavuusjakso on 4.–10. toukokuuta 2026.
+
+### Päätökset, joita tämä tiivistelmä tukee
+
+1. **Valiokuntatieto**: SfU ja JuU aikatauluttavat kuulemiset HD03262–65:stä tällä viikolla — näiden päivämäärien seuraaminen on kriittistä opposition koordinointiajankohdille ja mediakärjistämisstrategioille.
+2. **ECHR-riskiportti**: Lagrådet ei ole vielä antanut lausuntoja HD03262/HD03265:stä — tällä viikolla julkaistu lausunto tulee olemaan istuntokauden oikeudellisesti merkittävin tapahtuma.
+3. **Taloudellinen asemointi**: HC01FiU20-hyväksytty viitekehys määrittelee hallituksen säästöt-stimulus-sisällä taloudellisen identiteetin vaaleihin; mielipidemittausten seuraaminen antaa tietoa koalition vakausanalyysistä.
+
+### 60 sekunnin tiedustelulukeminen
+
+- 🔴 **Migraatio-megapaketti** (HD03262/63/64/65): Valiokuntakuulemiset alkavat viikolla 4. toukokuuta. S, V, MP vahvassa oppositiossa; C todennäköisesti osittain tukee. Lagrådets:n lausunto ECHR-yhteensopivuudesta odottaa.
+- 🟡 **Puolustusyhteistyö** (HD03254): FöU-valiokunta käsittelee lakia nopeasti. Laaja puoluerajat ylittävä konsensus mukaan lukien S. Odotetaan sujuvan läpäisyn kesäkuuhun 2026 mennessä.
+- 🟠 **Taloudellinen viitekehys** (HC01FiU20): Riksdag hyväksyi alhaisemmat kasvuennusteet Yhdysvaltain tullipaineessa. Ruotsin BNP-kasvu 2026 ennustetaan 1,2 %:ksi verrattuna potentiaaliseen 2,1 %:iin. Vaalivuoden finanssitiukkuus on poliittisesti riskialtista.
+- 🔴 **Rikosekonomi**: ESO-raportti (352 GSEK / 5,5 % BKT:stä, 23 000 yritystä) astui virallisesti poliittiseen debattiin HD10451:n kautta. Strömmerin lupaus "hävittää jengirikollisuus 4 vuodessa" (HD10458) on nyt mitattava vaalilupaitus.
+- 🟡 **Ympäristö-/energiamotiot**: S:n 7 motioista koostuva klusteri ympäristöviranomaisesta ja sähkölaista saa valiokuntaremissin MJU/NU:lle tällä viikolla.
+
+### Johtava eteenpäin katsova laukaisin
+
+**Kriittinen seuranta — viimeistään 2026-05-08**: Julkaiseeko Lagrådet lausunnot HD03262:sta (pysyvien lupien poistaminen) tai HD03265:stä (säilöönoton laajentaminen)? Estävä lausunto, jossa viitataan ECHR Art. 5:een tai Art. 8:aan, käynnistäisi perustuslaillisia uudistusvaatimuksia, viivästyttäisi pakettia kuukausilla ja antaisi oppositiolle sen tehokkaimmman vaalilauseen. Estävän lausunnon todennäköisyys: KESKINKER TAINEN [B3] — tanskalaiset ja saksalaiset rinnakkaisesimerkit viittaavat toimivaan mutta kapeaan ECHR-yhteensopivuuteen.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+
+**Confiance** : ÉLEVÉE [B2]
+**ID d'exécution** : 25207939386
+
+### Conclusion
+
+La semaine du 4 au 10 mai 2026 survient cinq mois avant les élections suédoises, alors que la Tidöalliansen vient de déposer son ensemble législatif le plus conséquent — et le plus risqué sur le plan constitutionnel — depuis son entrée en fonctions : quatre lois de restriction migratoire simultanées abolissant les permis de résidence permanents, élargissant l'appareil d'expulsion, resserrant la vérification du casier judiciaire et étendant la détention administrative. Les calendriers d'audition des commissions SfU et JuU détermineront le tempo législatif du sprint pré-électoral. Parallèlement, l'approbation par la commission des finances du Riksdag du cadre de politique économique (HC01FiU20) confirme une acceptation d'une croissance sous tendance, tandis que le rapport ESO plaçant l'économie criminelle suédoise à 352 milliards de SEK (5,5 % du PIB) entre dans le plein débat politique. Principaux décideurs de la semaine : le ministre de la Justice Gunnar Strömmer (application de la migration + criminalité des gangs), le ministre de la Défense Pål Jonson (HD03254 coopération défense), la ministre des Finances Elisabeth Svantesson (HC01FiU20 cadre économique) et le Talman du Riksdag concernant la planification des commissions JuU/SfU. Le jour de Valborg (1er mai) signifie que le premier jour ouvrable est le lundi 4 mai — une fenêtre comprimée de 5 jours avant le week-end.
+
+**Note rétrospective** : 2026-05-01 est Valborg (jour férié national suédois). Pas de session plénière au Riksdag. La collecte de documents utilise la session du 2026-04-30 (rétrospective légitime selon la méthodologie). Période de couverture prospective : 4–10 mai 2026.
+
+### Décisions que ce rapport soutient
+
+1. **Renseignement sur les commissions** : SfU et JuU programmeront des auditions sur HD03262–65 cette semaine — le suivi de ces dates est crucial pour le timing de coordination de l'opposition et les stratégies d'escalade médiatique.
+2. **Porte de risque CEDH** : Lagrådet n'a pas encore publié d'avis sur HD03262/HD03265 — tout avis publié cette semaine devient l'événement juridiquement le plus significatif de la session législative.
+3. **Positionnement économique** : Le cadre approuvé HC01FiU20 définit l'identité économique d'austérité-dans-le-stimulus du gouvernement pour les élections ; le suivi des réponses aux sondages informe l'analyse de stabilité de la coalition.
+
+### Lecture de renseignement en 60 secondes
+
+- 🔴 **Méga-paquet migratoire** (HD03262/63/64/65) : Les auditions des commissions commencent la semaine du 4 mai. S, V, MP dans une forte opposition ; C probablement en soutien partiel. L'avis du Lagrådet sur la conformité CEDH est en attente.
+- 🟡 **Coopération de défense** (HD03254) : La commission FöU met le projet de loi sur la voie rapide. Large consensus transpartisan y compris S. Passage en douceur attendu d'ici juin 2026.
+- 🟠 **Cadre économique** (HC01FiU20) : Le Riksdag a approuvé des prévisions de croissance inférieures sous la pression tarifaire américaine. Croissance du PIB suédois 2026 prévue à 1,2 % contre 2,1 % potentiel. Le resserrement budgétaire en année électorale est politiquement risqué.
+- 🔴 **Économie criminelle** : Rapport ESO (352 Mrd. SEK / 5,5 % du PIB, 23 000 entreprises) entré formellement dans le débat politique via HD10451. La promesse de Strömmer d'« éradiquer la criminalité des gangs en 4 ans » (HD10458) est désormais un engagement électoral mesurable.
+- 🟡 **Motions environnementales/énergétiques** : Le groupe de 7 motions du S sur l'autorité environnementale et la loi sur l'électricité recevra une saisine des commissions MJU/NU cette semaine.
+
+### Déclencheur prospectif principal
+
+**Observation critique — d'ici le 2026-05-08** : Lagrådet publiera-t-il des avis sur HD03262 (abolition des permis permanents) ou HD03265 (extension de la détention) ? Un avis bloquant citant la CEDH Art. 5 ou Art. 8 déclencherait des exigences de révision constitutionnelle, retarderait le paquet de plusieurs mois et donnerait à l'opposition son argument électoral le plus puissant. Probabilité d'un avis bloquant : MOYEN [B3] — les parallèles danois et allemand suggèrent une conformité CEDH praticable mais étroite.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_he.md -->
+
+‏# השבוע הקרוב: סערת חקיקה בשוודיה ערב הבחירות — 4–10 במאי 2026
+
+‏**מחבר**: ג'יימס פתר סורלינג
+‏**תאריך**: 2026-05-01
+‏**סיווג**: OSINT — מקורות ציבוריים
+‏**רמת ביטחון**: גבוהה [B2]
+‏**מזהה הרצה**: 25207939386
+
+‏## סיכום מנהלים
+
+‏שבוע ה-4–10 במאי 2026 מגיע חמישה חודשים לפני הבחירות השוודיות, כשה-Tidöalliansen זה עתה הגישה את חבילת החקיקה המשמעותית ביותר — והמסוכנת חוקתית ביותר — מאז עלותה לשלטון: ארבעה חוקי הגבלת הגירה בו-זמניים שיבטלו היתרי מגורים קבועים, יורחב מנגנון הגירוש, יוקשחו בדיקות רקע פלילי ותורחב המעצר המנהלי. לוחות הזמנים של ועדות SfU ו-JuU יקבעו את קצב החקיקה בסיבוב הקדם-בחירות. במקביל, אישור ועדת האוצר של הריקסדאג למסגרת המדיניות הכלכלית (HC01FiU20) מאשר קבלת צמיחה מתחת למגמה, בעוד דוח ESO המעריך את הכלכלה הפלילית השוודית ב-352 מיליארד כתרים (5.5% מהתמ"ג) נכנס לדיון הפוליטי המלא. קובעי ההחלטות המרכזיים השבוע: שר המשפטים גונר סטרומר (אכיפת הגירה + פשע כנופיות), שר הביטחון פול יונסון (HD03254 שיתוף פעולה ביטחוני), שרת האוצר אליזבת סוונטסון (HC01FiU20 מסגרת כלכלית) ויו"ר הריקסדאג לגבי תכנון ועדות JuU/SfU. חג הוולבורג (1 במאי) משמעותו שיום העבודה הראשון הוא יום שני, 4 במאי — חלון מצומצם של 5 ימים לפני סוף השבוע.
+
+‏**הערת מבט לאחור**: 2026-05-01 הוא Valborg (חג לאומי שוודי). אין מושב מליאה בריקסדאג. איסוף המסמכים משתמש במושב מ-2026-04-30 (מבט לאחור לגיטימי לפי המתודולוגיה). תקופת הכיסוי לעתיד היא 4–10 במאי 2026.
+
+‏## החלטות שדוח זה תומך בהן
+
+‏1. **מודיעין ועדות**: SfU ו-JuU יתזמנו דיוני שמיעה בנושא HD03262–65 השבוע — מעקב אחר תאריכים אלה קריטי לתזמון תיאום האופוזיציה ואסטרטגיות הסלמה תקשורתית.
+‏2. **שער סיכון ECHR**: ה-Lagrådet טרם הוציא חוות דעת על HD03262/HD03265 — כל חוות דעת שתפורסם השבוע תהיה האירוע המשפטי המשמעותי ביותר בדיון.
+‏3. **מיצוב כלכלי**: מסגרת HC01FiU20 שאושרה מגדירה את הזהות הכלכלית צנע-בתוך-גירוי של הממשלה לבחירות; מעקב אחר תגובות סקרים מספק מידע לניתוח יציבות הקואליציה.
+
+‏## קריאת מודיעין ב-60 שניות
+
+‏- 🔴 **חבילת ההגירה הגדולה** (HD03262/63/64/65): דיוני ועדות מתחילים בשבוע ה-4 במאי. S, V, MP בהתנגדות חזקה; C כנראה תומכת חלקית. חוות דעת ה-Lagrådet על תאימות ECHR ממתינה.
+‏- 🟡 **שיתוף פעולה ביטחוני** (HD03254): ועדת FöU מקדמת את הצעת החוק במסלול מהיר. קונצנזוס רחב חוצה מפלגות כולל S. צפויה אישור חלק עד יוני 2026.
+‏- 🟠 **מסגרת כלכלית** (HC01FiU20): הריקסדאג אישר תחזיות צמיחה נמוכות יותר תחת לחץ מכסים אמריקאי. צמיחת התמ"ג השוודי 2026 צפויה ב-1.2% לעומת פוטנציאל 2.1%. הידוק פיסקלי בשנת בחירות הוא מסוכן פוליטית.
+‏- 🔴 **כלכלה פלילית**: דוח ESO (352 מיליארד כתרים / 5.5% תמ"ג, 23,000 עסקים) נכנס רשמית לדיון הפוליטי דרך HD10451. הבטחת סטרומר "לחסל פשע כנופיות ב-4 שנים" (HD10458) היא כעת הבטחת בחירות מדידה.
+‏- 🟡 **הצעות סביבה/אנרגיה**: אשכול 7 ההצעות של S על רשות הסביבה וחוק החשמל יקבל הפניה לוועדות MJU/NU השבוע.
+
+‏## הטריגר הצופה קדימה המוביל
+
+‏**תצפית קריטית — עד 2026-05-08**: האם ה-Lagrådet יוציא חוות דעת על HD03262 (ביטול היתרים קבועים) או HD03265 (הרחבת המעצר)? חוות דעת חוסמת המצטטת ECHR סע' 5 או 8 תפעיל דרישות לתיקון חוקתי, תעכב את החבילה בחודשים ותעניק לאופוזיציה את הטיעון הבחירותי החזק ביותר שלה. הסתברות לחוות דעת חוסמת: בינוני [B3] — מקבילות דניות וגרמניות מצביעות על תאימות ECHR ברת-ביצוע אך צרה.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_ja.md -->
+
+**著者**：ジェームズ・ペテル・ソーリング
+**日付**：2026-05-01
+**分類**：OSINT — 公開情報源
+**信頼度**：高 [B2]
+**実行ID**：25207939386
+
+### エグゼクティブサマリー
+
+2026年5月4日～10日の週は、スウェーデン選挙の5ヶ月前に位置し、ティドー連合が政権獲得以来最も重大で憲法上のリスクを伴う立法パッケージを提出した時期にあたる：永住許可を廃止し、強制退去の体制を拡大し、前科確認を強化し、行政拘留を拡張する4つの移民制限法を同時に提出した。SfU委員会およびJuU委員会の公聴会スケジュールが選挙前スプリントの立法ペースを決定する。同時に、リクスダーグ財務委員会の経済政策枠組み（HC01FiU20）承認はトレンド以下の成長を受容することを確認しており、スウェーデンの犯罪経済規模を3520億クローナ（GDP比5.5%）とするESO報告書が本格的な政治議論に入った。今週の主要意思決定者：グンナル・ストロメル法務大臣（移民執行＋ギャング犯罪）、ポール・ヨンソン国防大臣（HD03254 防衛協力）、エリサベト・スバンテソン財務大臣（HC01FiU20 経済枠組み）、JuU/SfUの委員会スケジュールに関するリクスダーグ議長。ヴァルボルグの日（5月1日）により、最初の営業日は月曜日の5月4日となり、週末前の5日間に圧縮される。
+
+**回顧注記**：2026-05-01はヴァルボルグ（スウェーデンの国民祝日）。リクスダーグ本会議なし。文書収集には2026-04-30のセッションを使用（方法論に基づく正当な回顧）。展望的な対象期間は2026年5月4日～10日。
+
+### 本報告書が支援する意思決定
+
+1. **委員会インテリジェンス**：SfUとJuUは今週、HD03262–65に関する公聴会をスケジュールする予定 — これらの日程の追跡は野党の調整タイミングとメディア拡大戦略に不可欠。
+2. **ECHRリスクゲート**：Lagrådetはまだ HD03262/HD03265 に関する意見書を発行していない — 今週発行されたいかなる意見書も、立法会期において法的に最も重要な事象となる。
+3. **経済的位置付け**：承認されたHC01FiU20枠組みは、政府の選挙に向けた緊縮-刺激経済的アイデンティティを定義する；世論調査の反応を追跡することで連立安定性分析が深まる。
+
+### 60秒インテリジェンス概要
+
+- 🔴 **移民メガパッケージ**（HD03262/63/64/65）：委員会公聴会は5月4日の週から始まる。S、V、MPは強硬に反対；Cは部分的支持の可能性。ECHRへの適合性に関するLagrådetの意見書は保留中。
+- 🟡 **防衛協力**（HD03254）：FöU委員会が法案を迅速審議。Sを含む幅広い超党派合意。2026年6月までの円滑な可決が見込まれる。
+- 🟠 **経済枠組み**（HC01FiU20）：リクスダーグは米国関税の圧力下でより低い成長予測を承認。スウェーデンの2026年GDP成長率は潜在的2.1%に対して1.2%と予測。選挙年における財政引き締めは政治的にリスクが高い。
+- 🔴 **犯罪経済**：ESO報告書（3520億クローナ / GDP比5.5%、23,000社）がHD10451を通じて正式に政治議論に入った。ストロメルの「4年でギャング犯罪を根絶する」という約束（HD10458）は今や測定可能な選挙公約となった。
+- 🟡 **環境・エネルギー動議**：S党の環境機関と電力法に関する7動議クラスターが今週、MJU/NU委員会への付託を受ける。
+
+### 主要先見性トリガー
+
+**重要観察 — 2026-05-08までに**：Lagrådetは HD03262（永住許可廃止）またはHD03265（拘留拡大）に関する意見書を発行するか？ECHR第5条または第8条を引用した阻止的意見書は憲法改正要件を発動させ、パッケージを数ヶ月遅らせ、野党に最強の選挙議論を与えることになる。阻止的意見書の可能性：中程度 [B3] — デンマークおよびドイツの前例は実行可能だが余裕のないECHR適合性を示唆。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_ko.md -->
+
+**저자**: 제임스 페테르 소를링
+**날짜**: 2026-05-01
+**분류**: OSINT — 공개 출처
+**신뢰도**: 높음 [B2]
+**실행 ID**: 25207939386
+
+### 개요
+
+2026년 5월 4일~10일 주는 스웨덴 선거 5개월 전에 위치하며, 티도 연합이 집권 이후 가장 중대하고 헌법적으로 위험한 입법 패키지를 제출했다: 영구 거주 허가를 폐지하고, 강제 퇴거 체계를 확대하며, 전과 기록 확인을 강화하고, 행정 구금을 확장하는 4개의 이민 제한법을 동시에 제출했다. SfU와 JuU 위원회 청문회 일정이 선거 전 스프린트의 입법 속도를 결정한다. 동시에 리크스다그 재무위원회의 경제 정책 프레임워크(HC01FiU20) 승인은 추세 이하의 성장을 받아들인다는 것을 확인하며, 스웨덴 범죄 경제 규모를 3,520억 크로나(GDP 대비 5.5%)로 추정한 ESO 보고서가 본격적인 정치 논쟁에 들어갔다. 이번 주 핵심 의사결정자: 군나르 스트로메르 법무부 장관(이민 집행 + 갱 범죄), 팔 욘손 국방부 장관(HD03254 국방 협력), 엘리사벳 스반테손 재무부 장관(HC01FiU20 경제 프레임워크), JuU/SfU 위원회 일정 관련 리크스다그 의장. 발보르그의 날(5월 1일)로 인해 첫 영업일은 월요일 5월 4일로, 주말 전 5일 압축 기간이다.
+
+**회고 참고**: 2026-05-01은 Valborg(스웨덴 국가 공휴일). 리크스다그 본회의 없음. 문서 수집은 2026-04-30 회의를 사용(방법론에 따른 정당한 회고). 전망적 대상 기간은 2026년 5월 4일~10일.
+
+### 이 보고서가 지원하는 의사결정
+
+1. **위원회 인텔리전스**: SfU와 JuU는 이번 주 HD03262–65에 관한 청문회를 일정에 넣을 예정 — 이 날짜 추적은 야당 조율 타이밍과 미디어 확대 전략에 중요하다.
+2. **ECHR 리스크 관문**: Lagrådet은 아직 HD03262/HD03265에 관한 의견서를 발행하지 않았음 — 이번 주 발행되는 어떤 의견서도 입법 회기에서 법적으로 가장 중요한 사건이 된다.
+3. **경제적 포지셔닝**: 승인된 HC01FiU20 프레임워크는 선거를 위한 정부의 긴축-자극 내 경제적 정체성을 정의한다; 여론 조사 반응 추적은 연립 안정성 분석에 정보를 제공한다.
+
+### 60초 인텔리전스 요약
+
+- 🔴 **이민 메가 패키지** (HD03262/63/64/65): 위원회 청문회가 5월 4일 주부터 시작. S, V, MP 강력 반대; C 부분 지지 가능성. ECHR 적합성에 대한 Lagrådet 의견서 보류 중.
+- 🟡 **국방 협력** (HD03254): FöU 위원회가 법안을 신속 처리. S 포함 광범위한 초당적 합의. 2026년 6월까지 원활한 통과 예상.
+- 🟠 **경제 프레임워크** (HC01FiU20): 리크스다그가 미국 관세 압박 하에 더 낮은 성장 전망을 승인. 스웨덴 2026년 GDP 성장률 잠재적 2.1%에 대해 1.2%로 예측. 선거 연도의 재정 긴축은 정치적으로 위험하다.
+- 🔴 **범죄 경제**: ESO 보고서(3,520억 크로나 / GDP 5.5%, 23,000개 기업)가 HD10451을 통해 공식적으로 정치 논쟁에 진입. 스트로메르의 "4년 안에 갱 범죄 근절" 약속(HD10458)은 이제 측정 가능한 선거 공약이 됐다.
+- 🟡 **환경/에너지 발의**: S의 환경 기관 및 전력법에 관한 7개 발의 클러스터가 이번 주 MJU/NU 위원회 회부를 받는다.
+
+### 주요 선행 촉발 요인
+
+**핵심 관찰 — 2026-05-08까지**: Lagrådet이 HD03262(영구 허가 폐지) 또는 HD03265(구금 확대)에 관한 의견서를 발행할 것인가? ECHR 제5조 또는 제8조를 인용한 차단 의견서는 헌법 개정 요건을 발동하고, 패키지를 수개월 지연시키며, 야당에게 가장 강력한 선거 논거를 제공할 것이다. 차단 의견서 가능성: 중간 [B3] — 덴마크 및 독일 전례는 실행 가능하지만 좁은 ECHR 적합성을 시사한다.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Datum**: 2026-05-01
+**Classificatie**: OSINT — Openbare bronnen
+**Betrouwbaarheid**: HOOG [B2]
+**Run-ID**: 25207939386
+
+### Conclusie
+
+De week van 4–10 mei 2026 vindt plaats vijf maanden voor de Zweedse verkiezingen, waarbij de Tidöalliansen zojuist het meest ingrijpende — en grondwettelijk meest risicovolle — wetgevingspakket heeft ingediend sinds haar aantreden: vier gelijktijdige migratierestrictiewetten die permanente verblijfsvergunningen afschaffen, het uitzettingsapparaat uitbreiden, de antecedentencontrole aanscherpen en de administratieve detentie uitbreiden. De hoorzittingsschema's van de SfU- en JuU-commissies bepalen het wetgevingstempo van de pre-verkiezingssprint. Tegelijkertijd bevestigt de goedkeuring door de Financiële Commissie van de Riksdag van het economisch beleidskader (HC01FiU20) acceptatie van ondertrends groei, terwijl het ESO-rapport dat de Zweedse criminele economie op 352 miljard SEK (5,5 % bbp) schat het volledige politieke debat ingaat. Belangrijkste besluitvormers deze week: Minister van Justitie Gunnar Strömmer (migratihandhaving + bendecrimiliteit), Minister van Defensie Pål Jonson (HD03254 defensiesamenwerking), Minister van Financiën Elisabeth Svantesson (HC01FiU20 economisch kader) en de Talman van de Riksdag betreffende JuU/SfU-commissieplanning. De Walpurgisdag (1 mei) betekent dat de eerste werkdag maandag 4 mei is — een gecomprimeerd 5-dagenvenster voor het weekend.
+
+**Terugblikopmerking**: 2026-05-01 is Valborg (Zweedse nationale feestdag). Geen plenaire vergadering in de Riksdag. Documentenverzameling gebruikt de sessie van 2026-04-30 (legitiem terugblik volgens methodologie). Vooruitkijkende dekkingsperiode is 4–10 mei 2026.
+
+### Beslissingen die dit rapport ondersteunt
+
+1. **Commissie-inlichtingen**: SfU en JuU plannen hoorzittingen over HD03262–65 deze week — het bijhouden van deze datums is cruciaal voor het coördinatietiming van de oppositie en mediaescalatiestrategieën.
+2. **EVRM-risicopoort**: Lagrådet heeft nog geen adviezen uitgebracht over HD03262/HD03265 — elk advies dat deze week wordt gepubliceerd, wordt de juridisch meest significante gebeurtenis van de wetgevende zitting.
+3. **Economische positionering**: Het goedgekeurde HC01FiU20-kader definieert de bezuinigings-in-stimulans economische identiteit van de regering voor de verkiezingen; het bijhouden van peilingresponsies informeert de coalitiesstabiliteitsanalyse.
+
+### 60-seconden nieuwslezing
+
+- 🔴 **Migratiemegapakket** (HD03262/63/64/65): Commissiehorzittingen beginnen week van 4 mei. S, V, MP in sterke oppositie; C waarschijnlijk gedeeltelijk ondersteunend. Lagrådet-advies over EVRM-conformiteit in behandeling.
+- 🟡 **Defensiesamenwerking** (HD03254): FöU-commissie behandelt wetsvoorstel op spoorkoers. Breed partijoverschrijdend consensus inclusief S. Vlotte aanneming verwacht voor juni 2026.
+- 🟠 **Economisch kader** (HC01FiU20): Riksdag keurde lagere groeiverwachtingen goed onder Amerikaanse tariefdruk. Zweedse bbp-groei 2026 geprognosticeerd op 1,2 % versus potentieel 2,1 %. Begrotingsverkrapping in een verkiezingsjaar is politiek riskant.
+- 🔴 **Criminele economie**: ESO-rapport (352 mrd. SEK / 5,5 % bbp, 23.000 bedrijven) trad formeel het politieke debat in via HD10451. Strömmer's belofte om 'bendecriminaliteit in 4 jaar uit te roeien' (HD10458) is nu een meetbare verkiezingsbelofte.
+- 🟡 **Milieu-/energiemoties**: S's cluster van 7 moties over milieu-autoriteit en elektriciteitswet ontvangt commissieverwijzing naar MJU/NU deze week.
+
+### Leidende vooruitkijkende trigger
+
+**Kritische waarneming — voor 2026-05-08**: Zal Lagrådet adviezen uitbrengen over HD03262 (afschaffing van permanente vergunningen) of HD03265 (uitbreiding van detentie)? Een blokkerend advies dat EVRM Art. 5 of Art. 8 aanhaalt, zou eisen voor grondwetsherziening triggeren, het pakket maanden vertragen en de oppositie haar krachtigste verkiezingsargument geven. Kans op een blokkerend advies: GEMIDDELD [B3] — Deense en Duitse parallellen suggereren werkbare maar krappe EVRM-conformiteit.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-01
+**Klassifisering**: OSINT — Offentlige kilder
+**Konfidens**: HØY [B2]
+**Kjøre-ID**: 25207939386
+
+### Konklusjon
+
+Uken 4.–10. mai 2026 ankommer fem måneder før Riksdagens valg, med Tidöalliansen som nettopp har lagt frem sin mest konsekvente — og konstitusjonelt risikable — lovgivningspakke siden regjeringen tok over: fire samtidige innvandringsrestriksjonslover som avskaffer permanente oppholdstillatelser, utvider deportasjonsapparatet, strammer inn vandelskontroll og utvider administrativ internering. Utvalgshoringers tidsplaner ved SfU og JuU vil bestemme lovgivningstempoet for den siste sprinten mot valget. Samtidig låser Riksdagens finanskomités godkjenning av rammene for den økonomiske politikken (HC01FiU20) inn en aksept av under-trend vekst, mens ESO-rapporten som plasserer Riksdagens kriminaløkonomi på 352 milliarder SEK (5,5 % av BNP) trer inn i full politisk debatt. Sentrale beslutningstakere denne uken: Justisminister Gunnar Strömmer (migrasjonsapplikasjon + gjengkriminalitet), Forsvarsminister Pål Jonson (HD03254 forsvarssamarbeid), Finansminister Elisabeth Svantesson (HC01FiU20 økonomisk rammeverk) og Riksdagens talman angående JuU/SfU utvalgsplanlegging. Valborg-helligdagen (1. mai) betyr at den første arbeidsdagen er mandag 4. mai — et komprimert 5-dagers vindu før helgen.
+
+**Tilbakeblikksnotat**: 2026-05-01 er Valborg (svensk offentlig helligdag). Ingen Riksdag-plenumssesjon. Dokumentinnhenting bruker sesjon 2026-04-30 (legitimt tilbakeblikk per metodologi). Fremoverskuende dekningsperiode er 4.–10. mai 2026.
+
+### Beslutninger dette notatet støtter
+
+1. **Utvalgsetterre tning**: SfU og JuU vil planlegge høringer om HD03262–65 denne uken — å spore disse datoene er avgjørende for opposisjonens koordineringstiming og medieeskaleringsstrategier.
+2. **ECHR-risikoport**: Lagrådet har ennå ikke utstedt yttranden om HD03262/HD03265 — et yttrande publisert denne uken blir den mest juridisk signifikante begivenheten i lovgivningssesjonenets.
+3. **Økonomisk posisjonering**: Det HC01FiU20-godkjente rammeverket definerer regjeringens strammings-innenfor-stimulus-identitet for valget; sporing av opinionsundersøkelsessvar informerer om koalisjonens stabilitetsanalyse.
+
+### 60-sekunders etterretningslesning
+
+- 🔴 **Migrations-megapakke** (HD03262/63/64/65): Utvalgshoringer begynner uken 4. mai. S, V, MP i hard opposisjon; C sannsynligvis delvis støtte. Lagrådets yttrande om ECHR-overholdelse avventes.
+- 🟡 **Forsvarssamarbeid** (HD03254): FöU-utvalget ekspederer lovforslaget. Bred tverrpolitisk konsensus inkludert S. Forventes å passere smidig innen juni 2026.
+- 🟠 **Økonomisk rammeverk** (HC01FiU20): Riksdagen godkjente lavere vekstprognoser under amerikansk tolpres. Norsk BNP-vekst 2026 prognostisert til 1,2 % mot potensielle 2,1 %. Finanspolitisk innstramming i valgåret er politisk risikabelt.
+- 🔴 **Kriminaløkonomi**: ESO-rapport (352 GSEK / 5,5 % av BNP, 23.000 selskaper) trådte formelt inn i politisk debatt via HD10451. Strömmers løfte om å "utrydde gjengkriminalitet på 4 år" (HD10458) er nå et målbart valgengasjement.
+- 🟡 **Miljø-/energimosioner**: S's 7-mosjonsklynge om miljømyndighet og ellov vil motta utvalgshenvisning til MJU/NU denne uken.
+
+### Ledende fremoverskuende trigger
+
+**Kritisk observasjon — innen 2026-05-08**: Vil Lagrådet publisere yttranden om HD03262 (avskaffelse av permanente tillatelser) eller HD03265 (utvidelse av internering)? Et blokkerende yttrande som siterer ECHR Art. 5 eller Art. 8 vil utløse krav om grunnlovsrevisjon, forsinke pakken med måneder og gi opposisjonen sitt mest potente valgargument. Sannsynlighet for blokkerende yttrande: MEDIUM [B3] — danske og tyske paralleller antyder en gjennomførbar men smal ECHR-overholdelse.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Datum**: 2026-05-01
+**Klassificering**: OSINT — Offentliga källor
+**Konfidens**: HÖG [B2]
+**Körnings-ID**: 25207939386
+
+### Slutsats
+
+Veckan 4–10 maj 2026 infaller fem månader före Sveriges riksdagsval, med Tidöalliansen som precis lagt fram det mest konsekventa — och konstitutionellt riskfyllda — lagstiftningspaketet sedan regeringstillträdet: fyra simultana migrationsbegränsningslagar som avskaffar permanenta uppehållstillstånd, utökar utvisningsmaskineriet, skärper vandelsprövning och utvidgar administrativt förvar. Utskottshearingarnas schema vid SfU och JuU avgör lagstiftningstempoet inför valspurten. Parallellt låser riksdagens finansutskotts godkännande av det ekonomisk-politiska ramverket (HC01FiU20) fast en acceptans av undertrendstillväxt, medan ESO-rapporten som placerar Sveriges kriminalekonomi på 352 miljarder kronor (5,5 % av BNP) träder in i full politisk debatt. Centrala beslutsfattare denna vecka: justitieminister Gunnar Strömmer (migrationstillämpning + gängkriminalitet), försvarsminister Pål Jonson (HD03254 försvarssamarbete), finansminister Elisabeth Svantesson (HC01FiU20 ekonomiskt ramverk) och riksdagens talman angående JuU/SfU:s utskottsplanering. Valborgshelgen (1 maj) innebär att den första arbetsdagen är måndag 4 maj — ett komprimerat 5-dagarsfönster inför helgen.
+
+**Anmärkning om tillbakablick**: 2026-05-01 är Valborg (svensk allmän helgdag). Ingen riksdagsplenum. Dokumentinhämtning använder 2026-04-30 session (legitim tillbakablick per metodik). Framåtblickande täckningsperiod är 4–10 maj 2026.
+
+### Beslut som detta underlag stöder
+
+1. **Utskottsunderrättelse**: SfU och JuU schemalägger hearingar om HD03262–65 denna vecka — att spåra dessa datum är kritiskt för oppositionens samordningstiming och medieeskaleringsstrategier.
+2. **ECHR-riskport**: Lagrådet har ännu inte utfärdat yttranden om HD03262/HD03265 — ett yttrande publicerat denna vecka blir den mest juridiskt signifikanta händelsen under lagstiftningssessionen.
+3. **Ekonomisk positionering**: Det HC01FiU20-godkända ramverket definierar regeringens åtstramning-inom-stimulans ekonomiska identitet inför valet; spårning av opinionsundersökningssvar informerar om koalitionens stabilitetsanalys.
+
+### 60-sekunders underrättelseläsning
+
+- 🔴 **Migrations-megapaket** (HD03262/63/64/65): Utskottshearingar börjar veckan 4 maj. S, V, MP i hård opposition; C troligen partiellt stöd. Lagrådets yttrande om ECHR-efterlevnad avvaktas.
+- 🟡 **Försvarssamarbete** (HD03254): FöU-utskottet snabbbehandlar lagen. Bred tvärpolitisk konsensus inklusive S. Förväntas passera obehindrat till juni 2026.
+- 🟠 **Ekonomiskt ramverk** (HC01FiU20): Riksdagen godkände lägre tillväxtprognoser under amerikanskt trycktryck. Sveriges BNP-tillväxt 2026 prognosticeras till 1,2 % jämfört med potentiella 2,1 %. Valårets finansiella åtstramning är politiskt riskabel.
+- 🔴 **Kriminalekonomi**: ESO-rapport (352 GSEK / 5,5 % av BNP, 23 000 företag) trädde formellt in i politisk debatt via HD10451. Strömmers "utrota gängkriminaliteten på 4 år"-löfte (HD10458) är nu ett mätbart valåtagande.
+- 🟡 **Miljö-/energimotioner**: S:s 7-motionskluster om miljömyndighet och ellag får utskottsremiss till MJU/NU denna vecka.
+
+### Ledande framåtblickande trigger
+
+**Kritisk bevakning — senast 2026-05-08**: Kommer Lagrådet att publicera yttranden om HD03262 (avskaffande av permanenta tillstånd) eller HD03265 (utvidgning av förvar)? Ett blockerande yttrande med hänvisning till ECHR Art. 5 eller Art. 8 skulle utlösa krav på grundlagsrevision, försena paketet med månader och ge oppositionen sitt mest potenta valargument. Sannolikhet för blockerande yttrande: MEDEL [B3] — danska och tyska paralleller tyder på en genomförbar men smal ECHR-efterlevnad.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_zh.md -->
+
+**作者**：詹姆斯·佩瑟·索林
+**日期**：2026-05-01
+**分类**：OSINT — 公开信息来源
+**可信度**：高 [B2]
+**运行ID**：25207939386
+
+### 执行摘要
+
+2026年5月4日至10日这一周距瑞典选举还有五个月，蒂多联盟刚刚提交了其执政以来最重大、宪法风险最高的立法方案：同时推进四项移民限制法律，将废除永久居留许可、扩大强制遣返机制、强化犯罪背景审查、扩展行政拘留权限。SfU和JuU委员会的听证日程将决定选举前立法冲刺的节奏。与此同时，瑞典议会财政委员会批准经济政策框架（HC01FiU20），确认接受低于趋势线的增长，而将瑞典犯罪经济规模估算为3520亿克朗（占GDP 5.5%）的ESO报告正式进入政治辩论。本周关键决策者：司法部长贡纳尔·斯特罗默（移民执法 + 帮派犯罪）、国防部长帕尔·约翰逊（HD03254 国防合作）、财政部长伊丽莎白·斯万特松（HC01FiU20 经济框架）以及议会议长关于JuU/SfU委员会安排。瓦尔伯格日（5月1日）意味着第一个工作日是周一5月4日——周末前压缩为5天的窗口期。
+
+**回溯说明**：2026-05-01是瓦尔伯格节（瑞典国家法定假日）。议会无全体会议。文件收集使用2026-04-30会期（依据方法论合规回溯）。前瞻报道期为2026年5月4日至10日。
+
+### 本报告支持的决策
+
+1. **委员会情报**：SfU和JuU本周将安排HD03262–65的听证会——追踪这些日期对于反对派协调时机和媒体升级策略至关重要。
+2. **ECHR风险关口**：Lagrådet尚未就HD03262/HD03265发表意见——本周发布的任何意见将成为立法会期在法律上最重要的事件。
+3. **经济定位**：已批准的HC01FiU20框架定义了政府面向选举的"紧缩中刺激"经济身份；追踪民调反应为联合政府稳定性分析提供信息。
+
+### 60秒情报速览
+
+- 🔴 **移民超级方案**（HD03262/63/64/65）：委员会听证会从5月4日当周开始。S、V、MP强烈反对；C可能部分支持。Lagrådet关于ECHR合规性的意见尚待发布。
+- 🟡 **国防合作**（HD03254）：FöU委员会将法案走快速通道。包括S在内的广泛跨党派共识。预计2026年6月前顺利通过。
+- 🟠 **经济框架**（HC01FiU20）：议会在美国关税压力下批准了更低的增长预测。瑞典2026年GDP增长预计为1.2%，而潜在增速为2.1%。选举年财政收紧具有政治风险。
+- 🔴 **犯罪经济**：ESO报告（3520亿克朗 / GDP 5.5%，23,000家企业）通过HD10451正式进入政治辩论。斯特罗默"4年内消灭帮派犯罪"的承诺（HD10458）现已成为可衡量的选举承诺。
+- 🟡 **环境/能源动议**：S党7项关于环境机构和电力法的动议组合本周将获得MJU/NU委员会转介。
+
+### 领先前瞻性触发因素
+
+**关键观察——在2026-05-08之前**：Lagrådet会否就HD03262（废除永久许可）或HD03265（扩展拘留）发表意见？援引ECHR第5条或第8条的阻止性意见将触发宪法修正要求，将方案延迟数月，并给予反对派最强有力的选举论据。阻止性意见的概率：中等 [B3]——丹麦和德国的先例表明ECHR合规性可行但空间狭窄。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+graph TD
+    A["Week 4–10 May 2026\nSweden Pre-Election Sprint"] --> B["Migration Mega-Package\nHD03262–HD03265\n🔴 HIGH RISK"]
+    A --> C["Defence Cooperation\nHD03254\n🟢 CONSENSUS"]
+    A --> D["Economic Framework\nHC01FiU20 Approved\n🟡 BELOW TREND"]
+    A --> E["Criminal Economy\n352 GSEK ESO\n🟠 CAMPAIGN ISSUE"]
+    B --> F["SfU/JuU\nCommittee Hearings"]
+    B --> G["Lagrådet ECHR\nOpinion Pending"]
+    C --> H["FöU Fast-track\nJune passage"]
+    D --> I["GDP 1.2% vs 2.1%\nUS tariff impact"]
+    E --> J["Strömmer pledge\n'Eradicate in 4 years'"]
+    style B fill:#ff006e,color:#fff
+    style C fill:#00d9ff,color:#0a0e27
+    style D fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1701,6 +2419,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

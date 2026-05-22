@@ -6,7 +6,7 @@ date: 2026-05-22
 subfolder: interpellations
 slug: 2026-05-22-interpellations
 source_folder: analysis/daily/2026-05-22/interpellations
-generated_at: 2026-05-22T08:03:33.085Z
+generated_at: 2026-05-22T12:25:07.559Z
 language: en
 layout: article
 ---
@@ -83,6 +83,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Economic Policy Analysis](#rm-economic-policy-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Election Proximity Analysis](#rm-election-proximity-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Implications](#rm-electoral-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Infrastructure Analysis](#rm-infrastructure-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [International Context](#rm-international-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Key Findings](#rm-key-findings) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -1405,6 +1418,733 @@ The seven interpellations constitute a comprehensive electoral positioning exerc
 | Government responds comprehensively | No net electoral change from batch | 0.45 |
 | HD10505 escalates with new HVB incident | M loses 3–5% to SD/S combined | 0.10 |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_ar.md -->
+
+**التاريخ**: 2026-05-22 | **النوع**: تحليل مناظرة الاستجوابات | **العمق**: مرتفع
+**الأطراف الرئيسية**: إريك إيزيليوس، غوستاف لانتز، كارينا أوديبرينك، إيفا ليند (S)؛ بول يونسون (M)، لوتا إيدهولم (L)، كاميلا والتيرسون غرونفال (M)، أندرياس كارلسون (KD)، إيبا بوش (KD)
+**الأهمية الانتخابية**: حرجة للغاية — 115 يوماً حتى انتخابات البرلمان في 2026-09-13
+
+---
+
+### 🎯 الملخص التنفيذي
+
+قدّم الاشتراكيون الديمقراطيون في 22 مايو 2026 سبع استجوابات استهدفت أربع حقائب في حكومة تيدو — استراتيجية مساءلة انتخابية منسّقة قبل الانتخابات بموعد للرد في 5 يونيو و115 يوماً قبل الانتخابات. الاستجواب الأشد خطورة على الحكومة هو HD10505 (دور HVB الإجرامية لا تزال تعمل)، الذي يضع وزيرة الشؤون الاجتماعية والتيرسون غرونفال في مأزق مساءلة حول القضية الانتخابية الأولى في السويد.
+
+### الملخص
+
+قدّمت Socialdemokraterna في 22 مايو 2026 سبع استجوابات في يوم واحد — استراتيجية معارضة منسّقة توجّه أسئلة المساءلة إلى أربعة وزراء في حكومة تيدو. تغطي الاستجوابات: القدرة الدفاعية الوطنية (المجنّدون وإدارة المشتريات الدفاعية FMV)، ورعاية الأطفال والشباب (العنف في المدارس الداخلية والدور الإجرامية)، والاستثمارات في البنية التحتية (تخفيضات البحث والتطوير ومنظمات السلامة المرورية)، والنمو الريفي (إلغاء إعانة الدولة التعاونية بقيمة 25 مليون كرونة سويدية).
+
+**الرسالة المحورية**: تُوثّق Socialdemokraterna أن حكومة تيدو تخلق مخاطر ملموسة وقابلة للإثبات إعلامياً في أكثر القضايا أهمية للحملة الانتخابية — الأمن والرعاية والاقتصاد المحلي — في وقت تمر فيه السويد بمرحلة حرجة من إعادة التسليح ويتبقى 115 يوماً على انتخابات 13 سبتمبر 2026. جميع الاستجوابات السبع لها موعد استحقاق للرد في 5 يونيو 2026 — قبيل الإجازة الصيفية مباشرة ومع انطلاق نافذة الحملة المبكرة.
+
+### النتائج الرئيسية
+
+#### 1. الاستجواب الدفاعي المزدوج: إيزيليوس (S) ضد يونسون (M)
+يتساءل HD10502 عمّا إذا كانت الحكومة قد حلّلت تردّي اللياقة البدنية الأساسية للمجنّدين في ظل التوسع من 5000 إلى 10000 مجنّد سنوياً بحلول 2030. يستفسر HD10503 عن توسّع FMV في مدن الحامية العسكرية (هالمستاد وكارلسكرونا نماذج). معاً، يُشيران إلى رغبة S في تموضعها كمعارضة دفاعية مسؤولة تطرح متطلبات جدوى عملية.
+
+#### 2. الاستجواب المزدوج لرعاية الطفل: لانتز (S) ضد وزيرين
+يستغل HD10504 (لوتا إيدهولم/L حول العنف في المدارس الداخلية) وHD10505 (والتيرسون غرونفال/M حول الدور الإجرامية) التغطية الإعلامية الراهنة (SVT للمدارس الداخلية، وEkot للدور) لكشف الثغرات في أدوات رقابة التفتيش المدرسي والخدمات الاجتماعية.
+
+#### 3. الاستجواب البنية التحتية المزدوج: أوديبرينك (S) ضد كارلسون (KD)
+يستفسر HD10506 عن سبب تقليص البحث والتطوير في الخطة الوطنية 2026–2037 رغم الأهداف المناخية ورؤية الصفر. يهاجم HD10508 تخفيض دعم المجتمع المدني للسلامة المرورية بأكثر من النصف (–8 ملايين كرونة/سنة منذ 2026). كلاهما يعالجان أولويات ميزانية KD مقارنة بأهداف المناخ والسلامة.
+
+#### 4. استجواب التعاونيات: ليند (S) ضد بوش (KD)
+يهاجم HD10507 القرار المُعلَن دون سابق إنذار بإلغاء 25 مليون كرونة/سنة من الإعانات الحكومية التعاونية التي تدعم شبكة Coompanion بخدمات استشارية لعشرات الآلاف من التعاونيات والشركات الاجتماعية — مع بُعد واضح لسياسة الريف.
+
+### السياق السياسي (انتخابات 2026)
+
+مع 115 يوماً على انتخابات 13 سبتمبر 2026، تمر السويد بدورة انتخابية مكثّفة. الحزمة الاستجوابية مُصمَّمة استراتيجياً لـ:
+1. تغطية شرائح ناخبين واسعة: الموجّهون دفاعياً، الأسر المهتمة بالأمن، المستفيدون من البنية التحتية، سكان الريف
+2. استغلال أحداث إعلامية حقيقية (SVT، Ekot) كوقائع للسياق
+3. إرغام أربعة وزراء على تقديم ردود علنية قبل الانتخابات (موعد الرد 5 يونيو 2026)
+
+**مضاعف DIW 1.5×** مطبّق على جميع الاستجوابات بسبب الدورة الانتخابية ≤6 أشهر.
+
+### التداعيات على الحكومة
+
+- **وزير الدفاع يونسون (M)**: يجب أن يُجيب كيف يُدار الحجم المتزايد للمجنّدين مع تردّي اللياقة البدنية الأساسية — خطر كشف عجز عملياتي في خطة تنفيذ إعادة التسليح
+- **وزيرة التعليم إيدهولم (L)**: تغطية SVT للعنف في المدارس الداخلية تمنح S زخماً سياسياً؛ عجز التفتيش المدرسي ثغرة ملموسة
+- **وزيرة الشؤون الاجتماعية والتيرسون غرونفال (M)**: دور HVB ذات صلات إجرامية لا تزال تعمل بعد قوائم الشرطة — يصعب الدفاع عن عدم الإغلاق
+- **وزير البنية التحتية كارلسون (KD)**: هجوم مزدوج (البحث والتطوير + المجتمع) على منطقة سياسية حساسة انتخابياً
+- **وزيرة الطاقة بوش (KD)**: إلغاء التعاونيات يفتقر إلى المبرر — قد يُنظر إليه على أنه أيديولوجي لا مالي
+
+### المصدر
+
+بيانات مفتوحة من Riksdagen. الاستجوابات 2025/26:502–508. مقدّمة في 2026-05-21، مسجّلة في 2026-05-22. موعد الرد 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_da.md -->
+
+**Dato**: 2026-05-22 | **Type**: Interpellationsdebatanalyse | **Dybde**: Høj
+**Nøgleaktører**: Erik Ezelius, Gustaf Lantz, Carina Ödebrink, Eva Lindh (S); Pål Jonson (M), Lotta Edholm (L), Camilla Waltersson Grönvall (M), Andreas Carlson (KD), Ebba Busch (KD)
+**Valgrelevans**: KRITISK — 115 dage til riksdagsvalget 2026-09-13
+
+---
+
+### 🎯 Konklusion (BLUF)
+
+Socialdemokraterne indgav syv interpellationer den 22. maj 2026 rettet mod fire porteføljer i Tidö-regeringen — en koordineret forvalgsstrategi med svarsdato 5. juni og 115 dage til valget. Den farligste interpellation for regeringen er HD10505 (kriminelle HVB-hjem stadig i drift), som sætter socialminister Waltersson Grönvall i en ansvarsknibe om Sveriges vigtigste valgtema.
+
+### Sammenfatning
+
+Socialdemokraterna indgav den 22. maj 2026 syv interpellationer på én dag — en koordineret oppositionsstrategi rettet mod fire ministre i Tidö-regeringen. Interpellationerne dækker national forsvarskapacitet (værnepligtige og FMV), børne- og ungdomsvelfærd (kostskolevold og kriminelle HVB-hjem), infrastrukturinvesteringer (nedskæringer i F&U og trafiksikkerhedsorganisationer) samt landlig vækst (udfasning af 25 mio. SEK i kooperativt statstilskud).
+
+**Kernebudskab**: Socialdemokraterna dokumenterer, at Tidö-regeringen skaber konkrete, mediedemonstrabile risici på valgkampens vigtigste emner — sikkerhed, velfærd og lokal økonomi — i en periode, hvor Sverige befinder sig i en kritisk oprustningsfase og 115 dage er tilbage til riksdagsvalget den 13. september 2026. Alle syv interpellationer har svarsfrist den 5. juni 2026 — lige før sommerferien og ind i det tidlige valgvindue.
+
+### Nøglefund
+
+#### 1. Dobbelt forsvarsinterpellation: Ezelius (S) mod Jonson (M)
+HD10502 spørger, om regeringen har analyseret forringet fysisk grundkapacitet hos værnepligtige midt i en udvidelse fra 5.000 til 10.000 værnepligtige om året inden 2030. HD10503 spørger om FMV-udvidelse i garnisonsbyer (Halmstad og Karlskrona nævnt som forbilleder). Tilsammen signalerer interpellationerne, at S ønsker at positionere sig som ansvarlig forsvarsopposition, der stiller praktiske gennemførelighedskrav.
+
+#### 2. Dobbelt børnevelfærdsinterpellation: Lantz (S) mod to ministre
+HD10504 (Lotta Edholm/L om kostskolevold) og HD10505 (Waltersson Grönvall/M om kriminelle HVB-hjem) udnytter aktuel mediescrutiny (SVT kostskole, Ekot HVB-hjem) til at blotlægge huller i Skolinspektionens og socialvæsenets tilsynsværktøjer.
+
+#### 3. Dobbelt infrastrukturinterpellation: Ödebrink (S) mod Carlson (KD)
+HD10506 spørger, hvorfor F&U skæres i den nationale plan 2026–2037 på trods af klima- og nulvisionsmål. HD10508 angriber mere end en halvering af civilsamfundets trafiksikkerhedsstøtte (–8 mio. SEK/år fra 2026). Begge synes at adressere KD's budgetprioritering over for klima-/sikkerhedsmål.
+
+#### 4. Kooperativinterpellation: Lindh (S) mod Busch (KD)
+HD10507 angriber den varslede udfasning af 25 mio. SEK/år i kooperativt statstilskud, som støtter Coompanion-netværket med rådgivning til titusindvis af kooperativer og sociale virksomheder — med en tydelig landdistriktspolitisk dimension.
+
+### Politisk Kontekst (Valg 2026)
+
+Med 115 dage til valget den 13. september 2026 befinder Sverige sig i en intens valgcyklus. Interpellationspakken er strategisk sammensat for at:
+1. Dække brede vælgergrupper: forsvarssindede, familiers sikkerhed, infrastrukturmodtagere, landdistriktsboere
+2. Udnytte reelle mediehændelser (SVT, Ekot) som baggrundsfakta
+3. Tvinge fire ministre til offentlige svar inden valget (svarsfrist 5. juni 2026)
+
+**DIW-multiplikator 1,5×** anvendes på alle interpellationer på grund af valgcyklus ≤6 måneder.
+
+### Implikationer for Regeringen
+
+- **Forsvarsminister Jonson (M)**: Skal svare på, hvordan øget værnepligtsvolumen håndteres med forringet fysisk grundkapacitet — risikerer at blotlægge et operationelt hul i oprustningens implementeringsplan
+- **Undervisningsminister Edholm (L)**: SVT's granskning af kostskolevold giver S politisk momentum; Skolinspektionens magtesløshed er en konkret sårbarhed
+- **Socialminister Waltersson Grönvall (M)**: HVB-hjem med kriminelle forbindelser stadig i drift efter politilister — svært at forsvare manglende lukning
+- **Infrastrukturminister Carlson (KD)**: Dobbelt angreb (F&U + civilsamfund) på et valgfølsomt politikområde
+- **Energiminister Busch (KD)**: Kooperativudfasningen mangler begrundelse — kan opfattes som ideologisk snarere end budgetdrevet
+
+### Kilde
+
+Riksdagens åbne data. Interpellationer 2025/26:502–508. Indgivet 2026-05-21, registreret 2026-05-22. Svarsfrist 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_de.md -->
+
+**Datum**: 2026-05-22 | **Typ**: Interpellationsdebatt-Analyse | **Tiefe**: Hoch
+**Hauptakteure**: Erik Ezelius, Gustaf Lantz, Carina Ödebrink, Eva Lindh (S); Pål Jonson (M), Lotta Edholm (L), Camilla Waltersson Grönvall (M), Andreas Carlson (KD), Ebba Busch (KD)
+**Wahlrelevanz**: KRITISCH — 115 Tage bis zur Reichstagswahl 2026-09-13
+
+---
+
+### 🎯 Kernaussage (BLUF)
+
+Die Sozialdemokraten reichten am 22. Mai 2026 sieben Interpellationen ein, die auf vier Portefeuilles der Tidö-Regierung abzielen — eine koordinierte Vor-Wahl-Rechenschaftsstrategie mit Antwortdatum 5. Juni und 115 Tagen bis zur Wahl. Die gefährlichste Interpellation für die Regierung ist HD10505 (kriminelle HVB-Heime noch in Betrieb), die Sozialministerin Waltersson Grönvall in eine Rechenschaftspflicht-Zwickmühle zu Schwedens wichtigstem Wahlthema bringt.
+
+### Zusammenfassung
+
+Socialdemokraterna reichte am 22. Mai 2026 sieben Interpellationen an einem einzigen Tag ein — eine koordinierte Oppositionsstrategie, die Rechenschaftsfragen an vier Minister der Tidö-Regierung richtet. Die Interpellationen umfassen nationale Verteidigungsfähigkeit (Wehrpflichtige und FMV), Kinder- und Jugendwohlfahrt (Internatsgewalt und kriminelle HVB-Heime), Infrastrukturinvestitionen (Kürzungen bei F&E und Verkehrssicherheitsorganisationen) sowie ländliches Wachstum (Abschaffung des kooperativen Staatszuschusses von 25 Mio. SEK).
+
+**Kernbotschaft**: Socialdemokraterna dokumentiert, dass die Tidö-Regierung konkrete, medial demonstrierbare Risiken in den wichtigsten Themen des Wahlkampfs — Sicherheit, Wohlfahrt und lokale Wirtschaft — schafft, zu einem Zeitpunkt, an dem Schweden sich in einer kritischen Aufrüstungsphase befindet und 115 Tage bis zur Reichstagswahl am 13. September 2026 verbleiben. Alle sieben Interpellationen haben ein abschließendes Antwortdatum am 5. Juni 2026 — kurz vor der Sommerpause und zu Beginn des frühen Wahlkampffensters.
+
+### Wesentliche Erkenntnisse
+
+#### 1. Doppelte Verteidigungsinterpellation: Ezelius (S) gegen Jonson (M)
+HD10502 fragt, ob die Regierung die verschlechterte körperliche Grundfähigkeit bei Wehrpflichtigen inmitten einer Ausweitung von 5.000 auf 10.000 Wehrpflichtige pro Jahr bis 2030 analysiert hat. HD10503 fragt nach dem FMV-Ausbau in Garnisonsstädten (Halmstad und Karlskrona als Vorbilder genannt). Zusammen signalisieren die Interpellationen, dass S sich als verantwortungsvolle Verteidigungsopposition positionieren will, die praktische Durchführbarkeitsforderungen stellt.
+
+#### 2. Doppelte Kinderwohlfahrtsinterpellation: Lantz (S) gegen zwei Minister
+HD10504 (Lotta Edholm/L zu Internatsgewalt) und HD10505 (Waltersson Grönvall/M zu kriminellen HVB-Heimen) nutzen aktuelle Medienberichte (SVT Internate, Ekot HVB-Heime), um Lücken in den Aufsichtswerkzeugen der Schulinspektion und Sozialdienste aufzuzeigen.
+
+#### 3. Doppelte InfrastrukturInterpellation: Ödebrink (S) gegen Carlson (KD)
+HD10506 fragt, warum F&E im Nationalen Plan 2026–2037 trotz Klima- und Nullvisionsziele gekürzt wird. HD10508 greift die mehr als Halbierung der zivilgesellschaftlichen Verkehrssicherheitsunterstützung an (–8 Mio. SEK/Jahr ab 2026). Beide scheinen KDs Budgetpriorisierung gegenüber Klima-/Sicherheitszielen anzusprechen.
+
+#### 4. Genossenschaftsinterpellation: Lindh (S) gegen Busch (KD)
+HD10507 greift die unangekündigte Abschaffung von 25 Mio. SEK/Jahr an kooperativen Staatszuschüssen an, die das Coompanion-Netzwerk mit Beratungsleistungen für Zehntausende Genossenschaften und Sozialunternehmen unterstützen — mit eindeutiger ländlicher Politikdimension.
+
+### Politischer Kontext (Wahl 2026)
+
+Mit 115 Tagen bis zur Wahl am 13. September 2026 befindet sich Schweden in einem intensiven Wahlzyklus. Das Interpellationspaket ist strategisch zusammengestellt, um:
+1. Breite Wählergruppen abzudecken: verteidigungsgesinnte, sicherheitsbewusste Familien, Infrastrukturempfänger, Landbewohner
+2. Reale Medienereignisse (SVT, Ekot) als Hintergrundfakten zu nutzen
+3. Vier Minister zur öffentlichen Antwort vor der Wahl zu zwingen (abschließendes Antwortdatum 5. Juni 2026)
+
+**DIW-Multiplikator 1,5×** auf alle Interpellationen angewandt aufgrund des Wahlzyklus ≤6 Monate.
+
+### Implikationen für die Regierung
+
+- **Verteidigungsminister Jonson (M)**: Muss antworten, wie erhöhtes Wehrpflichtsvolumen bei verschlechterter körperlicher Grundfähigkeit gehandhabt wird — riskiert ein operatives Defizit im Aufrüstungsdurchführungsplan aufzudecken
+- **Bildungsminister Edholm (L)**: SVT-Berichterstattung über Internatsgewalt gibt S politischen Auftrieb; die Machtlosigkeit der Schulinspektion ist ein konkreter Schwachpunkt
+- **Sozialminister Waltersson Grönvall (M)**: HVB-Heime mit kriminellen Verbindungen nach Polizeilisten noch in Betrieb — Unterlassung von Schließungen schwer zu verteidigen
+- **Infrastrukturminister Carlson (KD)**: Doppelter Angriff (F&E + Zivilgesellschaft) auf ein wahlempfindliches Politikfeld
+- **Energieminister Busch (KD)**: Die Genossenschaftsabschaffung entbehrt einer Begründung — könnte als ideologisch statt budgetgetrieben wahrgenommen werden
+
+### Quelle
+
+Riksdagens offene Daten. Interpellationen 2025/26:502–508. Eingereicht 2026-05-21, registriert 2026-05-22. Abschließendes Antwortdatum 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_es.md -->
+
+**Fecha**: 2026-05-22 | **Tipo**: Análisis de debate de interpelación | **Profundidad**: Alta
+**Actores clave**: Erik Ezelius, Gustaf Lantz, Carina Ödebrink, Eva Lindh (S); Pål Jonson (M), Lotta Edholm (L), Camilla Waltersson Grönvall (M), Andreas Carlson (KD), Ebba Busch (KD)
+**Relevancia electoral**: CRÍTICA — 115 días hasta las elecciones parlamentarias del 2026-09-13
+
+---
+
+### 🎯 BLUF
+
+Los Socialdemócratas presentaron siete interpelaciones el 22 de mayo de 2026 dirigidas a cuatro carteras del gobierno Tidö — una estrategia de rendición de cuentas preelectoral coordinada con fecha de respuesta el 5 de junio y 115 días para las elecciones. La interpelación más peligrosa para el gobierno es HD10505 (hogares HVB criminales aún en funcionamiento), que coloca a la Ministra de Servicios Sociales Waltersson Grönvall en un aprieto de rendición de cuentas en el principal tema electoral de Suecia.
+
+### Resumen
+
+Socialdemokraterna presentó el 22 de mayo de 2026 siete interpelaciones en un solo día — una estrategia de oposición coordinada que dirige preguntas de rendición de cuentas a cuatro ministros del gobierno Tidö. Las interpelaciones cubren la capacidad de defensa nacional (conscriptos y FMV), el bienestar de niños y jóvenes (violencia en internados y hogares HVB criminales), inversiones en infraestructura (recortes en I+D y organizaciones de seguridad vial) y el crecimiento rural (eliminación de la subvención estatal cooperativa de 25 millones de SEK).
+
+**Mensaje central**: Socialdemokraterna documenta que el gobierno Tidö está creando riesgos concretos y demostrables mediáticamente en los temas más importantes de la campaña electoral — seguridad, bienestar y economía local — en un momento en que Suecia se encuentra en una fase crítica de rearmamento y quedan 115 días para las elecciones parlamentarias del 13 de septiembre de 2026. Todas las siete interpelaciones tienen fecha límite de respuesta el 5 de junio de 2026 — justo antes del receso de verano y en el comienzo de la ventana de campaña temprana.
+
+### Hallazgos clave
+
+#### 1. Doble interpelación de defensa: Ezelius (S) contra Jonson (M)
+HD10502 pregunta si el gobierno ha analizado el deterioro de la capacidad física básica entre los conscriptos en medio de una expansión de 5.000 a 10.000 conscriptos por año para 2030. HD10503 pregunta sobre la expansión del FMV en ciudades de guarnición (Halmstad y Karlskrona citadas como modelos). Juntas, las interpelaciones señalan que S quiere posicionarse como una oposición de defensa responsable que plantea exigencias prácticas de viabilidad.
+
+#### 2. Doble interpelación de bienestar infantil: Lantz (S) contra dos ministros
+HD10504 (Lotta Edholm/L sobre violencia en internados) y HD10505 (Waltersson Grönvall/M sobre hogares HVB criminales) aprovechan el escrutinio mediático actual (SVT internados, Ekot hogares HVB) para exponer brechas en las herramientas de supervisión de la inspección escolar y los servicios sociales.
+
+#### 3. Doble interpelación de infraestructura: Ödebrink (S) contra Carlson (KD)
+HD10506 pregunta por qué se recorta la I+D en el plan nacional 2026–2037 a pesar de los objetivos climáticos y de visión cero. HD10508 ataca la reducción a más de la mitad del apoyo de la sociedad civil a la seguridad vial (–8 millones de SEK/año desde 2026). Ambas parecen abordar la priorización presupuestaria del KD frente a los objetivos climáticos/seguridad.
+
+#### 4. Interpelación cooperativa: Lindh (S) contra Busch (KD)
+HD10507 ataca la decisión sin previo aviso de eliminar 25 millones de SEK/año en subvenciones estatales cooperativas que apoyan la red Coompanion con servicios de asesoramiento a decenas de miles de cooperativas y empresas sociales — con una clara dimensión de política rural.
+
+### Contexto político (Elecciones 2026)
+
+Con 115 días para las elecciones del 13 de septiembre de 2026, Suecia se encuentra en un intenso ciclo electoral. El paquete de interpelaciones está compuesto estratégicamente para:
+1. Cubrir amplios grupos de votantes: orientados a la defensa, familias preocupadas por la seguridad, receptores de infraestructura, residentes rurales
+2. Aprovechar eventos mediáticos reales (SVT, Ekot) como hechos de contexto
+3. Obligar a cuatro ministros a dar respuestas públicas antes de las elecciones (fecha límite de respuesta 5 de junio de 2026)
+
+**Multiplicador DIW 1,5×** aplicado a todas las interpelaciones debido al ciclo electoral ≤6 meses.
+
+### Implicaciones para el Gobierno
+
+- **Ministro de Defensa Jonson (M)**: Debe responder cómo se maneja el mayor volumen de conscriptos con capacidad física básica deteriorada — riesgo de exponer un déficit operativo en el plan de implementación del rearmamento
+- **Ministra de Educación Edholm (L)**: La cobertura de SVT sobre violencia en internados da a S impulso político; la impotencia de la inspección escolar es una vulnerabilidad concreta
+- **Ministra de Servicios Sociales Waltersson Grönvall (M)**: Hogares HVB con conexiones criminales aún en funcionamiento tras las listas policiales — difícil de defender la falta de cierre
+- **Ministro de Infraestructura Carlson (KD)**: Doble ataque (I+D + sociedad civil) en un área política electoralmente sensible
+- **Ministra de Energía Busch (KD)**: La eliminación cooperativa carece de justificación — puede percibirse como ideológica más que presupuestaria
+
+### Fuente
+
+Datos abiertos de Riksdagen. Interpelaciones 2025/26:502–508. Presentadas el 2026-05-21, registradas el 2026-05-22. Fecha límite de respuesta 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_fi.md -->
+
+**Päivämäärä**: 2026-05-22 | **Tyyppi**: Interpellaatiodebattianalyysi | **Syvyys**: Korkea
+**Keskeiset toimijat**: Erik Ezelius, Gustaf Lantz, Carina Ödebrink, Eva Lindh (S); Pål Jonson (M), Lotta Edholm (L), Camilla Waltersson Grönvall (M), Andreas Carlson (KD), Ebba Busch (KD)
+**Vaalimerkitys**: KRIITTINEN — 115 päivää vaalipäivään 2026-09-13
+
+---
+
+### 🎯 Tiivistelmä (BLUF)
+
+Sosialidemokraatit jättivät seitsemän interpellaatiota 22. toukokuuta 2026 kohdistuen neljään Tidö-hallituksen salkkuun — koordinoitu ennakkovaalin vastuustrategia, jonka vastauspäivä on 5. kesäkuuta ja 115 päivää vaaleihin. Hallitukselle vaarallisin interpellaatio on HD10505 (kriminaaliset HVB-kodit edelleen toiminnassa), joka sitoo sosiaaliministeri Waltersson Grönvallin vastuuseen Ruotsin tärkeimmässä vaalikysymyksessä.
+
+### Yhteenveto
+
+Socialdemokraterna jätti 22. toukokuuta 2026 seitsemän interpellaatiota yhtenä päivänä — koordinoitu oppositiostrategia, joka kohdistaa vastuukysymyksiä neljälle Tidö-hallituksen ministerille. Interpellaatiot kattavat kansallisen puolustuskyvyn (asevelvolliset ja FMV), lasten ja nuorten hyvinvoinnin (sisäoppilaitosten väkivalta ja kriminaaliset HVB-kodit), infrastruktuuri-investoinnit (T&K-leikkaukset ja liikenneturvallisuusjärjestöt) sekä maaseudun kasvun (25 miljoonan SEK:n osuustoiminnallisen valtionavun lakkauttaminen).
+
+**Ydinviesti**: Socialdemokraterna dokumentoi, että Tidö-hallitus luo konkreettisia, mediassa osoitettavissa olevia riskejä vaalikamppailun tärkeimmissä teemoissa — turvallisuus, hyvinvointi ja paikallinen talous — tilanteessa, jossa Ruotsi on kriittisessä varustautumisvaihessa ja 115 päivää on jäljellä vaalipäivään 13. syyskuuta 2026. Kaikilla seitsemällä interpellaatiolla on viimeinen vastauspäivä 5. kesäkuuta 2026 — juuri ennen kesälomaa ja varhaisen kampanjaikkunan alkaessa.
+
+### Tärkeimmät havainnot
+
+#### 1. Kaksois puolustusinterpellaatio: Ezelius (S) Jonsonia (M) vastaan
+HD10502 kysyy, onko hallitus analysoinut asevelvollisten heikentynyttä fyysistä peruskuntoa laajennuksen keskellä — 5 000:sta 10 000 asevelvolliseen vuodessa vuoteen 2030 mennessä. HD10503 kysyy FMV:n laajentamisesta varuskuntakaupungeissa (Halmstad ja Karlskrona mainittu esimerkkeinä). Yhdessä interpellaatiot viestivät, että S haluaa asemoitua vastuulliseksi puolustusoppositioksi, joka esittää käytännön toteutettavuusvaatimuksia.
+
+#### 2. Kaksois lapsi-hyvinvointointerpellaatio: Lantz (S) kahta ministeriä vastaan
+HD10504 (Lotta Edholm/L sisäoppilaitosten väkivallasta) ja HD10505 (Waltersson Grönvall/M kriminaalisista HVB-kodeista) hyödyntävät ajankohtaista mediaskrutinia (SVT sisäoppilaitokset, Ekot HVB-kodit) paljastaakseen puutteet Skolinspektionenin ja sosiaalihallinnon valvontavälineissä.
+
+#### 3. Kaksois infrastruktuuriinterpellaatio: Ödebrink (S) Carlsonia (KD) vastaan
+HD10506 kysyy, miksi T&K-rahoitusta leikataan kansallisessa suunnitelmassa 2026–2037 ilmasto- ja nollatavoitteista huolimatta. HD10508 hyökkää kansalaisyhteiskunnan liikenneturvallisuustuen yli puolittamista vastaan (–8 milj. SEK/vuosi vuodesta 2026). Molemmat näyttävät käsittelevän KD:n budjettipriorisointia ilmasto-/turvallisuustavoitteiden suhteen.
+
+#### 4. Osuustoimintainterpellaatio: Lindh (S) Buschia (KD) vastaan
+HD10507 hyökkää ilman varoitusta päätettyä 25 milj. SEK:n vuotuisen osuustoiminnallisen valtionavun lakkauttamista vastaan, joka tukee Coompanion-verkostoa kymmeniä tuhansia osuuskuntia ja sosiaalisia yrityksiä palvelevalla neuvonnalla — selkeällä maaseutupolitiikan ulottuvuudella.
+
+### Poliittinen konteksti (Vaalit 2026)
+
+115 päivää ennen 13. syyskuuta 2026 vaaleja Ruotsi on intensiivisessä vaalijaksossa. Interpellaatiopaketti on strategisesti koostettu:
+1. Kattamaan laajoja äänestäjäryhmiä: puolustussuuntautuneet, lasten turvallisuudesta huolissaan olevat perheet, infrastruktuurin saajat, maaseudun asukkaat
+2. Hyödyntämään todellisia mediatapahtumia (SVT, Ekot) taustatietoina
+3. Pakottamaan neljä ministeriä julkisiin vastauksiin ennen vaaleja (viimeinen vastauspäivä 5. kesäkuuta 2026)
+
+**DIW-kerroin 1,5×** sovelletaan kaikkiin interpellaatioihin, koska vaalijaksoon on ≤6 kuukautta.
+
+### Vaikutukset hallitukselle
+
+- **Puolustusministeri Jonson (M)**: Täytyy vastata, miten kasvanut asevelvollisten määrä hallitaan heikentyneen fyysisen peruskunnon myötä — voi paljastaa operatiivisen puutteen varustautumisen toteutussuunnitelmassa
+- **Opetusministeri Edholm (L)**: SVT:n sisäoppilaitosten väkivallan tarkastelu antaa S:lle poliittisen momentin; Skolinspektionenin voimattomuus on konkreettinen haavoittuvuus
+- **Sosiaaliministeri Waltersson Grönvall (M)**: Kriminaalisiin yhteyksiin liittyviä HVB-koteja edelleen toiminnassa poliisin listojen jälkeen — sulkemisten laiminlyöntiä on vaikea puolustaa
+- **Infrastruktuuriministeri Carlson (KD)**: Kaksoisiskku (T&K + kansalaisyhteiskunta) vaaliherkkään politiikka-alaan
+- **Energiaministeri Busch (KD)**: Osuustoimintaavun lakkauttamisella ei ole perusteluja — saattaa tuntua ideologiselta ennemmin kuin budjettisyistä tehdyltä
+
+### Lähde
+
+Riksdagenin avoimet tiedot. Interpellaatiot 2025/26:502–508. Jätetty 2026-05-21, rekisteröity 2026-05-22. Viimeinen vastauspäivä 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_fr.md -->
+
+**Acteurs clés** : Erik Ezelius, Gustaf Lantz, Carina Ödebrink, Eva Lindh (S) ; Pål Jonson (M), Lotta Edholm (L), Camilla Waltersson Grönvall (M), Andreas Carlson (KD), Ebba Busch (KD)
+**Pertinence électorale** : CRITIQUE — 115 jours avant les élections législatives du 2026-09-13
+
+---
+
+### 🎯 BLUF
+
+Les Sociaux-démocrates ont déposé sept interpellations le 22 mai 2026 ciblant quatre portefeuilles du gouvernement Tidö — une stratégie de responsabilité pré-électorale coordonnée avec svarsdatum le 5 juin et 115 jours avant les élections. L'interpellation la plus dangereuse pour le gouvernement est HD10505 (maisons HVB criminelles encore en activité), qui place la ministre des Affaires sociales Waltersson Grönvall dans un dilemme de responsabilité sur le principal enjeu électoral suédois.
+
+### Résumé
+
+Socialdemokraterna a soumis le 22 mai 2026 sept interpellations en une seule journée — une stratégie d'opposition coordonnée adressant des questions de responsabilité à quatre ministres du gouvernement Tidö. Les interpellations couvrent la capacité de défense nationale (conscrits et FMV), le bien-être des enfants et des jeunes (violences dans les internats et maisons HVB criminelles), les investissements d'infrastructure (réductions de la R&D et des organisations de sécurité routière) et la croissance rurale (suppression de la subvention d'État coopérative de 25 millions de SEK).
+
+**Message central** : Socialdemokraterna documente que le gouvernement Tidö crée des risques concrets, médiatiquement démontrables, sur les thèmes les plus importants de la campagne électorale — sécurité, bien-être et économie locale — à un moment où la Suède se trouve dans une phase critique de réarmement et où il reste 115 jours avant les élections législatives du 13 septembre 2026. Toutes les sept interpellations ont une date limite de réponse au 5 juin 2026 — juste avant la pause estivale et à l'entrée dans la fenêtre de campagne précoce.
+
+### Constats clés
+
+#### 1. Double interpellation de défense : Ezelius (S) contre Jonson (M)
+HD10502 demande si le gouvernement a analysé la dégradation des capacités physiques de base des conscrits au milieu d'une expansion de 5 000 à 10 000 conscrits par an d'ici 2030. HD10503 interroge sur l'expansion du FMV dans les villes de garnison (Halmstad et Karlskrona cités comme modèles). Ensemble, les interpellations signalent que S veut se positionner comme une opposition de défense responsable qui pose des exigences pratiques de faisabilité.
+
+#### 2. Double interpellation bien-être de l'enfant : Lantz (S) contre deux ministres
+HD10504 (Lotta Edholm/L sur les violences dans les internats) et HD10505 (Waltersson Grönvall/M sur les maisons HVB criminelles) exploitent un examen médiatique actuel (SVT internats, Ekot maisons HVB) pour exposer des lacunes dans les outils de supervision de l'inspection scolaire et des services sociaux.
+
+#### 3. Double interpellation infrastructure : Ödebrink (S) contre Carlson (KD)
+HD10506 demande pourquoi la R&D est réduite dans le plan national 2026–2037 malgré les objectifs climatiques et de vision zéro. HD10508 attaque la réduction de plus de moitié du soutien civil de la société à la sécurité routière (–8 millions de SEK/an à partir de 2026). Les deux semblent aborder les priorités budgétaires du KD par rapport aux objectifs climatiques/sécurité.
+
+#### 4. Interpellation coopérative : Lindh (S) contre Busch (KD)
+HD10507 attaque la décision annoncée sans préavis de supprimer 25 millions de SEK/an en subventions d'État coopératives soutenant le réseau Coompanion avec des services de conseil à des dizaines de milliers de coopératives et d'entreprises sociales — avec une dimension claire de politique rurale.
+
+### Contexte politique (Élections 2026)
+
+Avec 115 jours avant les élections du 13 septembre 2026, la Suède se trouve dans un cycle électoral intense. Le paquet d'interpellations est stratégiquement composé pour :
+1. Couvrir de larges groupes d'électeurs : orientés défense, sécurité des familles avec enfants, bénéficiaires d'infrastructure, résidents ruraux
+2. Exploiter de vrais événements médiatiques (SVT, Ekot) comme faits de contexte
+3. Forcer quatre ministres à donner des réponses publiques avant les élections (date limite de réponse 5 juin 2026)
+
+**Multiplicateur DIW 1,5×** appliqué à toutes les interpellations en raison du cycle électoral ≤6 mois.
+
+### Implications pour le Gouvernement
+
+- **Ministre de la Défense Jonson (M)** : Doit répondre à comment la hausse du volume de conscrits est gérée avec une détérioration des capacités physiques de base — risque d'exposer un déficit opérationnel dans le plan de mise en œuvre du réarmement
+- **Ministre de l'Éducation Edholm (L)** : La couverture SVT des violences dans les internats donne à S un momentum politique ; l'impuissance de l'inspection scolaire est une vulnérabilité concrète
+- **Ministre des Affaires sociales Waltersson Grönvall (M)** : Maisons HVB avec des connexions criminelles encore en activité après les listes de police — difficile à défendre l'absence de fermeture
+- **Ministre de l'Infrastructure Carlson (KD)** : Double attaque (R&D + société civile) sur un domaine politique électoralement sensible
+- **Ministre de l'Énergie Busch (KD)** : La suppression coopérative manque de justification — pourrait être perçue comme idéologique plutôt que budgétaire
+
+### Source
+
+Données ouvertes de Riksdagen. Interpellations 2025/26:502–508. Déposées le 2026-05-21, enregistrées le 2026-05-22. Date limite de réponse 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_he.md -->
+
+**תאריך**: 2026-05-22 | **סוג**: ניתוח דיון שאילתות | **עומק**: גבוה
+**שחקנים מרכזיים**: אריק אזליוס, גוסטאף לנץ, קארינה אודברינק, אבה לינד (S); פול יונסון (M), לוטה אדהולם (L), קמילה וולטרסון גרונוואל (M), אנדרס קרלסון (KD), אבה בוש (KD)
+**רלוונטיות בחירותית**: קריטית — 115 ימים עד לבחירות הפרלמנטריות ב-2026-09-13
+
+---
+
+### 🎯 סיכום עיקרי
+
+הסוציאל-דמוקרטים הגישו ב-22 במאי 2026 שבע שאילתות המכוונות לארבעה תיקים בממשלת טידו — אסטרטגיית אחריות מתואמת לפני הבחירות עם מועד תגובה ב-5 ביוני ו-115 ימים לפני הבחירות. השאילתה המסוכנת ביותר לממשלה היא HD10505 (בתי HVB פליליים עדיין פעילים), שמציבה את שרת השירותים החברתיים וולטרסון גרונוואל בדילמת אחריות בנושא הבחירותי העיקרי בשוודיה.
+
+### סיכום
+
+Socialdemokraterna הגישה ב-22 במאי 2026 שבע שאילתות ביום אחד — אסטרטגיית אופוזיציה מתואמת המפנה שאלות אחריות לארבעה שרים בממשלת טידו. השאילתות מכסות: כושר הגנה לאומי (מגויסים ו-FMV), רווחת ילדים ונוער (אלימות במעונות ובתי HVB פליליים), השקעות בתשתיות (קיצוצים במחקר ופיתוח וארגוני בטיחות בדרכים) וצמיחה כפרית (ביטול מענק מדינה שיתופי של 25 מיליון כרון שוודי).
+
+**המסר המרכזי**: Socialdemokraterna מתעדת שממשלת טידו יוצרת סיכונים מוחשיים וניתנים להוכחה תקשורתית בנושאים החשובים ביותר לקמפיין הבחירותי — ביטחון, רווחה וכלכלה מקומית — בעת שהשוודיה נמצאת בשלב קריטי של הידוק מחדש ונותרים 115 ימים לבחירות ה-13 בספטמבר 2026. לכל שבע השאילתות יש מועד תגובה ב-5 ביוני 2026 — ממש לפני חופשת הקיץ ובפתיחת חלון הקמפיין המוקדם.
+
+### ממצאים מרכזיים
+
+#### 1. שאילתה ביטחונית כפולה: אזליוס (S) נגד יונסון (M)
+HD10502 שואל האם הממשלה ניתחה את הידרדרות הכושר הגופני הבסיסי של המגויסים בעת הרחבה מ-5,000 ל-10,000 מגויסים בשנה עד 2030. HD10503 שואל על הרחבת FMV בערי גריזון (הלמסטד וקרלסקרונה כמודלים). יחד, השאילתות מאותתות שـS מבקשת למצב עצמה כאופוזיציה ביטחונית אחראית המציבה דרישות ישימות.
+
+#### 2. שאילתה כפולה לרווחת ילדים: לנץ (S) נגד שני שרים
+HD10504 (לוטה אדהולם/L על אלימות במעונות) ו-HD10505 (וולטרסון גרונוואל/M על בתי HVB פליליים) מנצלים סקרוטיניה תקשורתית עכשווית (SVT מעונות, Ekot בתי HVB) לחשוף פערים בכלי הפיקוח של פיקוח בתי ספר ושירותי רווחה.
+
+#### 3. שאילתה תשתיתית כפולה: אודברינק (S) נגד קרלסון (KD)
+HD10506 שואל מדוע מחקר ופיתוח קוצץ בתכנית הלאומית 2026–2037 למרות יעדי האקלים וחזון האפס. HD10508 תוקף את הקיצוץ של יותר מחצי בתמיכה האזרחית לבטיחות בדרכים (–8 מיליון כרון/שנה מ-2026). השניים מתמודדים עם עדיפויות תקציב KD מול יעדי אקלים/בטיחות.
+
+#### 4. שאילתה שיתופית: לינד (S) נגד בוש (KD)
+HD10507 תוקפת את ההחלטה שהוכרזה ללא הודעה מוקדמת לביטול 25 מיליון כרון/שנה מסובסידיות מדינה שיתופיות התומכות ברשת Coompanion עם שירותי ייעוץ לעשרות אלפי קואופרטיבים ועסקים חברתיים — עם ממד ברור למדיניות כפרית.
+
+### הקשר פוליטי (בחירות 2026)
+
+עם 115 ימים לבחירות ה-13 בספטמבר 2026, השוודיה נמצאת במחזור בחירותי אינטנסיבי. חבילת השאילתות מורכבת אסטרטגית כדי:
+1. לכסות קבוצות בוחרים רחבות: מוכווני ביטחון, משפחות מודאגות מבטיחות, מקבלי תשתיות, תושבי כפר
+2. לנצל אירועי מדיה אמיתיים (SVT, Ekot) כעובדות הקשר
+3. לכפות על ארבעה שרים למסור תגובות פומביות לפני הבחירות (מועד תגובה 5 ביוני 2026)
+
+**מכפיל DIW 1.5×** מוחל על כל השאילתות בגלל מחזור הבחירות ≤6 חודשים.
+
+### השלכות על הממשלה
+
+- **שר הביטחון יונסון (M)**: חייב לענות כיצד מנהלים את נפח המגויסים הגדול יותר עם ירידה בכושר הגופני הבסיסי — סיכון לחשוף גירעון מבצעי בתכנית יישום ההידוק מחדש
+- **שרת החינוך אדהולם (L)**: סיקור SVT על אלימות במעונות מעניק ל-S מומנטום פוליטי; חוסר האונים של פיקוח בתי ספר הוא פגיעות קונקרטית
+- **שרת השירותים החברתיים וולטרסון גרונוואל (M)**: בתי HVB עם קשרים פליליים עדיין פעילים אחרי רשימות המשטרה — קשה להגן על היעדר סגירה
+- **שר התשתיות קרלסון (KD)**: מתקפה כפולה (מחקר ופיתוח + חברה) על תחום מדיניות רגיש מבחינה בחירותית
+- **שרת האנרגיה בוש (KD)**: ביטול השיתופיים חסר הצדקה — עשוי להיתפס כאידיאולוגי ולא תקציבי
+
+### מקור
+
+נתונים פתוחים של Riksdagen. שאילתות 2025/26:502–508. הוגשו ב-2026-05-21, נרשמו ב-2026-05-22. מועד תגובה 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_ja.md -->
+
+**日付**: 2026-05-22 | **種別**: 質問主意書討論分析 | **深度**: 高
+**主要関係者**: エリク・エゼリウス、グスタフ・ランツ、カリーナ・オーデブリンク、エヴァ・リンド（S）；ポール・ヨンソン（M）、ロッタ・エードホルム（L）、カミラ・ヴァルタソン・グリョンヴァル（M）、アンドレアス・カールソン（KD）、エッバ・ブッシュ（KD）
+**選挙的重要性**: 極めて重大 — 2026-09-13の国会議員選挙まで115日
+
+---
+
+### 🎯 BLUF
+
+社会民主党（Socialdemokraterna）は2026年5月22日、ティード政権の4閣僚を標的に7件の質問主意書を提出した。6月5日を回答期限とした事前選挙の説明責任戦略であり、選挙まで115日のタイミングで実施された。政府にとって最も危険な質問主意書はHD10505（犯罪的HVBホームが依然として営業中）であり、スウェーデンの最大の選挙争点においてワルテルソン・グリョンヴァル社会大臣を説明責任のジレンマに追い込む。
+
+### 概要
+
+Socialdemokraternaは2026年5月22日、一日に7件の質問主意書を提出した。これはティード政権の4閣僚に説明責任を問う協調的な野党戦略である。質問主意書は国防能力（徴兵と防衛調達局FMV）、児童・青少年福祉（寄宿舎での暴力と犯罪的HVBホーム）、インフラ投資（研究開発費削減と交通安全団体への補助削減）、農村振興（2500万クローナの協同組合国家補助の廃止）を対象としている。
+
+**中核メッセージ**: Socialdemokraternaは、スウェーデンが再軍備の重要段階にあり2026年9月13日の国会議員選挙まで115日しか残っていない中で、ティード政権が選挙運動で最も重要なテーマ——安全保障、福祉、地域経済——において具体的かつメディアが実証できるリスクを生じさせていることを記録している。7件全ての質問主意書の回答期限は2026年6月5日——夏季休会直前であり、早期選挙運動の窓が開く時期である。
+
+### 主要所見
+
+#### 1. 二重防衛質問主意書：エゼリウス（S）対ヨンソン（M）
+HD10502は、2030年までに年間5,000人から10,000人の徴兵拡大を見据える中、政府が徴兵の基礎体力低下を分析しているかを問う。HD10503は駐屯地都市（ハルムスタードとカールスクルーナがモデルとして挙げられている）でのFMV拡充について問う。両質問主意書は、Sが実際の実施可能性を問う責任ある防衛野党として位置付けようとしていることを示す。
+
+#### 2. 二重児童福祉質問主意書：ランツ（S）対2大臣
+HD10504（ロッタ・エードホルム/L、寄宿舎での暴力）とHD10505（ヴァルテルソン・グリョンヴァル/M、犯罪的HVBホーム）は、現在のメディアスクラティニー（SVTの寄宿舎特集、EkotのHVBホーム報道）を活用し、学校監察および社会福祉の監督ツールの欠陥を明らかにする。
+
+#### 3. 二重インフラ質問主意書：オーデブリンク（S）対カールソン（KD）
+HD10506は、気候目標とゼロビジョン目標にもかかわらず2026–2037国家計画で研究開発費が削減される理由を問う。HD10508は交通安全への市民社会支援の半減以上の削減（2026年から年間▲800万クローナ）を攻撃する。両者はKDの気候・安全目標に対する予算優先順位に取り組む。
+
+#### 4. 協同組合質問主意書：リンド（S）対ブッシュ（KD）
+HD10507は、数万の協同組合と社会的企業にCoompanionネットワークを通じて助言サービスを提供している年間2500万クローナの協同組合国家補助を予告なく廃止する決定を攻撃する——農村政策の観点が明確にある。
+
+### 政治的文脈（2026年選挙）
+
+2026年9月13日の選挙まで115日の中、スウェーデンは激しい選挙サイクルにある。質問主意書パッケージは以下のため戦略的に構成されている：
+1. 広範な有権者層を網羅：防衛志向者、安全意識の高い家庭、インフラ受益者、農村住民
+2. 実際のメディアイベント（SVT、Ekot）を背景事実として活用
+3. 4大臣を選挙前に公式回答することを強制（回答期限2026年6月5日）
+
+**DIW乗数1.5×**を選挙サイクル≤6か月のため全質問主意書に適用。
+
+### 政府への示唆
+
+- **防衛大臣ヨンソン（M）**: 基礎体力が低下する中でより多くの徴兵を管理する方法に答えなければならない——再軍備実施計画の運用上の欠陥を露呈するリスク
+- **教育大臣エードホルム（L）**: 寄宿舎での暴力に関するSVTの報道がSに政治的勢いを与える；学校監察の無力化は具体的な脆弱性
+- **社会大臣ヴァルテルソン・グリョンヴァル（M）**: 警察リスト後も犯罪的つながりのあるHVBホームが営業中——閉鎖がないことの弁護は難しい
+- **インフラ大臣カールソン（KD）**: 選挙的に敏感な政策分野への二重攻撃（研究開発＋市民社会）
+- **エネルギー大臣ブッシュ（KD）**: 協同組合廃止に正当化が欠如——予算上ではなくイデオロギー的と見られる可能性
+
+### 出典
+
+Riksdagenのオープンデータ。質問主意書2025/26:502–508。2026-05-21提出、2026-05-22登録。回答期限2026-06-05。
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_ko.md -->
+
+**날짜**: 2026-05-22 | **유형**: 대정부질문 토론 분석 | **심도**: 높음
+**주요 행위자**: 에릭 에젤리우스, 구스타프 란츠, 카리나 오데브링크, 에바 린드 (S); 폴 욘손 (M), 로타 에드홀름 (L), 카밀라 발테르손 그뢴발 (M), 안드레아스 칼손 (KD), 에바 부시 (KD)
+**선거적 중요성**: 매우 심각 — 2026-09-13 국회의원 선거까지 115일
+
+---
+
+### 🎯 핵심 요약
+
+사민당(Socialdemokraterna)은 2026년 5월 22일 티도 정부의 4개 부처를 겨냥한 7건의 대정부질문을 제출했다. 6월 5일 답변 기한의 선거 전 조직적인 책임 추궁 전략으로, 선거까지 115일을 남긴 시점이다. 정부에 가장 위험한 질문은 HD10505(범죄적 HVB 시설 여전히 운영 중)로, 스웨덴 최대 선거 이슈에서 발테르손 그뢴발 사회부 장관을 책임 딜레마에 빠뜨린다.
+
+### 요약
+
+Socialdemokraterna는 2026년 5월 22일 하루에 7건의 대정부질문을 제출했다 — 티도 정부의 4명의 장관에게 책임 질문을 보내는 조직적인 야당 전략이다. 질문들은 국방 능력(징집병과 FMV), 아동·청소년 복지(기숙사 폭력과 범죄 HVB 시설), 인프라 투자(연구개발 예산 삭감과 교통안전 기관 지원 삭감), 농촌 성장(2500만 크로나 협동조합 국가보조금 폐지)을 다룬다.
+
+**핵심 메시지**: Socialdemokraterna는 스웨덴이 재무장의 중요한 단계에 있고 2026년 9월 13일 국회의원 선거까지 115일이 남은 상황에서, 티도 정부가 선거 캠페인의 가장 중요한 주제인 안보, 복지, 지역 경제에서 구체적이고 언론이 검증할 수 있는 위험을 만들고 있음을 문서화한다. 7건의 대정부질문 모두 답변 기한이 2026년 6월 5일 — 여름 휴회 직전이자 조기 선거 운동 창이 열리는 시점이다.
+
+### 주요 발견
+
+#### 1. 이중 국방 대정부질문: 에젤리우스 (S) 대 욘손 (M)
+HD10502는 2030년까지 연간 5,000명에서 10,000명으로 징집 확대 속에서 정부가 징집병의 기초 체력 저하를 분석했는지 묻는다. HD10503은 주둔지 도시(할름스타드와 칼스크루나가 모델로 언급됨)에서의 FMV 확장에 대해 묻는다. 두 질문은 S가 실질적인 실행 가능성을 요구하는 책임 있는 국방 야당으로 자리매김하려는 신호다.
+
+#### 2. 아동 복지 이중 대정부질문: 란츠 (S) 대 두 장관
+HD10504(로타 에드홀름/L, 기숙사 폭력)와 HD10505(발테르손 그뢴발/M, 범죄 HVB 시설)는 현재 미디어 스크러티니(SVT 기숙사, Ekot HVB 시설)를 활용해 학교 감찰과 사회 서비스의 감독 도구 결함을 드러낸다.
+
+#### 3. 인프라 이중 대정부질문: 오데브링크 (S) 대 칼손 (KD)
+HD10506은 기후 목표와 제로 비전 목표에도 불구하고 2026-2037 국가 계획에서 연구개발이 왜 삭감되는지 묻는다. HD10508은 교통안전에 대한 시민 사회 지원이 절반 이상 삭감된 것(2026년부터 연간 -800만 크로나)을 공격한다. 두 질문 모두 KD의 예산 우선순위 대 기후/안전 목표를 다룬다.
+
+#### 4. 협동조합 대정부질문: 린드 (S) 대 부시 (KD)
+HD10507은 수만 개의 협동조합과 사회적 기업에 Coompanion 네트워크를 통해 자문 서비스를 지원하는 연간 2500만 크로나의 협동조합 국가보조금을 사전 통보 없이 폐지하는 결정을 공격한다 — 명확한 농촌 정책 차원이 있다.
+
+### 정치적 맥락 (2026년 선거)
+
+2026년 9월 13일 선거까지 115일을 남기고, 스웨덴은 치열한 선거 사이클에 있다. 대정부질문 패키지는 전략적으로 다음을 위해 구성되었다:
+1. 광범위한 유권자 그룹을 포괄: 국방 지향, 안전 의식 가족, 인프라 수혜자, 농촌 주민
+2. 실제 미디어 이벤트(SVT, Ekot)를 맥락 사실로 활용
+3. 4명의 장관이 선거 전에 공개 답변을 하도록 강제(답변 기한 2026년 6월 5일)
+
+**DIW 승수 1.5×** 선거 사이클 ≤6개월로 인해 모든 질문에 적용.
+
+### 정부에 대한 함의
+
+- **국방부 장관 욘손 (M)**: 기초 체력이 저하된 상태에서 더 많은 징집병을 어떻게 관리하는지 답해야 한다 — 재무장 실행 계획의 운영상 결함을 드러낼 위험
+- **교육부 장관 에드홀름 (L)**: 기숙사 폭력에 관한 SVT 보도가 S에 정치적 모멘텀을 준다; 학교 감찰의 무기력화는 구체적인 취약점
+- **사회부 장관 발테르손 그뢴발 (M)**: 경찰 목록 이후에도 범죄 연결 HVB 시설이 여전히 운영 중 — 폐쇄 없음을 방어하기 어려움
+- **인프라부 장관 칼손 (KD)**: 선거적으로 민감한 정책 분야에 대한 이중 공격(연구개발 + 사회)
+- **에너지부 장관 부시 (KD)**: 협동조합 폐지에 정당성 결여 — 예산상이 아닌 이념적으로 보일 수 있음
+
+### 출처
+
+Riksdagen 공개 데이터. 대정부질문 2025/26:502–508. 2026-05-21 제출, 2026-05-22 등록. 답변 기한 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_nl.md -->
+
+**Datum**: 2026-05-22 | **Type**: Interpellatiedebatanalyse | **Diepte**: Hoog
+**Sleutelactoren**: Erik Ezelius, Gustaf Lantz, Carina Ödebrink, Eva Lindh (S); Pål Jonson (M), Lotta Edholm (L), Camilla Waltersson Grönvall (M), Andreas Carlson (KD), Ebba Busch (KD)
+**Electorale relevantie**: KRITIEK — 115 dagen tot de parlementsverkiezingen van 2026-09-13
+
+---
+
+### 🎯 BLUF
+
+De Sociaal-democraten dienden op 22 mei 2026 zeven interpellaties in gericht op vier portefeuilles van het Tidö-kabinet — een gecoördineerde pre-electorale verantwoordingsstrategie met antwoorddatum 5 juni en 115 dagen voor de verkiezingen. De gevaarlijkste interpellatie voor de regering is HD10505 (criminele HVB-huizen nog in bedrijf), die Minister van Sociale Zaken Waltersson Grönvall in een verantwoordingsdilemma plaatst over het hoofdthema in de Zweedse verkiezingscampagne.
+
+### Samenvatting
+
+Socialdemokraterna diende op 22 mei 2026 zeven interpellaties op één dag in — een gecoördineerde oppositiestrategie met verantwoordingsvragen gericht aan vier ministers van het Tidö-kabinet. De interpellaties omvatten nationale defensiecapaciteit (dienstplichtigen en FMV), welzijn van kinderen en jongeren (geweld in internaten en criminele HVB-huizen), infrastructuurinvesteringen (bezuinigingen op R&D en verkeersveiligheidsorganisaties) en plattelandsgroei (afschaffing van de coöperatieve rijkssubsidie van 25 miljoen SEK).
+
+**Kernboodschap**: Socialdemokraterna documenteert dat het Tidö-kabinet concrete, mediaal aantoonbare risico's creëert op de belangrijkste thema's in de verkiezingscampagne — veiligheid, welzijn en lokale economie — op een moment dat Zweden in een kritieke herbewapenningsfase verkeert en er 115 dagen resten tot de parlementsverkiezingen van 13 september 2026. Alle zeven interpellaties hebben een antwoorddeadline van 5 juni 2026 — vlak voor het zomerreces en bij het begin van het vroege campagnevenster.
+
+### Kernbevindingen
+
+#### 1. Dubbele defensie-interpellatie: Ezelius (S) tegen Jonson (M)
+HD10502 vraagt of de regering de verslechtering van de basislichamelijke capaciteit van dienstplichtigen heeft geanalyseerd bij een uitbreiding van 5.000 naar 10.000 dienstplichtigen per jaar in 2030. HD10503 vraagt naar de uitbreiding van FMV in garnizoensteden (Halmstad en Karlskrona als modellen aangehaald). Samen signaleren de interpellaties dat S zich wil positioneren als een verantwoordelijke defensieopposie die praktische uitvoeringsbaarheidseisen stelt.
+
+#### 2. Dubbele interpellatie kinderwelzijn: Lantz (S) tegen twee ministers
+HD10504 (Lotta Edholm/L over geweld in internaten) en HD10505 (Waltersson Grönvall/M over criminele HVB-huizen) benutten actuele media-aandacht (SVT internaten, Ekot HVB-huizen) om lacunes te blootleggen in de toezichtsinstrumenten van schoolinspectie en sociale diensten.
+
+#### 3. Dubbele infrastructuur-interpellatie: Ödebrink (S) tegen Carlson (KD)
+HD10506 vraagt waarom R&D wordt bezuinigd in het nationale plan 2026–2037 ondanks klimaat- en nul-visiondoelstellingen. HD10508 valt de meer dan halvering van maatschappelijke steun aan verkeersveiligheid aan (–8 miljoen SEK/jaar vanaf 2026). Beide lijken de budgetprioritering van KD ten opzichte van klimaat-/veiligheidsdoelstellingen aan te pakken.
+
+#### 4. Coöperatieve interpellatie: Lindh (S) tegen Busch (KD)
+HD10507 valt de aankondiging zonder voorafgaand bericht aan van het elimineren van 25 miljoen SEK/jaar aan rijkscoöperatieve subsidies ter ondersteuning van het Coompanion-netwerk met adviesdiensten aan tienduizenden coöperaties en sociale ondernemingen — met een duidelijke dimensie voor plattelandsbeleid.
+
+### Politieke context (Verkiezingen 2026)
+
+Met 115 dagen tot de verkiezingen van 13 september 2026 bevindt Zweden zich in een intensieve verkiezingscyclus. Het interpelatiepakket is strategisch samengesteld om:
+1. Brede kiezersgroepen te bereiken: defensiegericht, gezinsveiligheidsbewust, infrastructuurontvangers, plattelandsbewoners
+2. Echte media-evenementen (SVT, Ekot) als contextfeiten te benutten
+3. Vier ministers te dwingen openbare antwoorden te geven vóór de verkiezingen (antwoorddeadline 5 juni 2026)
+
+**DIW-multiplier 1,5×** toegepast op alle interpellaties vanwege verkiezingscyclus ≤6 maanden.
+
+### Implicaties voor de Regering
+
+- **Minister van Defensie Jonson (M)**: Moet beantwoorden hoe het hogere dienstplichtigvolume wordt beheerd met verslechterde basislichamelijke capaciteit — risico om een operationeel deficit bloot te leggen in het implementatieplan voor herbewapening
+- **Minister van Onderwijs Edholm (L)**: SVT-berichtgeving over geweld in internaten geeft S politiek momentum; de machteloosheid van schoolinspectie is een concrete kwetsbaarheid
+- **Minister van Sociale Zaken Waltersson Grönvall (M)**: HVB-huizen met criminele verbindingen nog in bedrijf na politielijsten — moeilijk te verdedigen dat er geen sluiting plaatsvond
+- **Minister van Infrastructuur Carlson (KD)**: Dubbele aanval (R&D + maatschappij) op een electoraal gevoelig beleidsgebied
+- **Minister van Energie Busch (KD)**: De coöperatieve eliminatie mist rechtvaardiging — kan als ideologisch in plaats van budgettair worden gezien
+
+### Bron
+
+Openbare data van Riksdagen. Interpellaties 2025/26:502–508. Ingediend op 2026-05-21, geregistreerd op 2026-05-22. Antwoorddeadline 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_no.md -->
+
+**Dato**: 2026-05-22 | **Type**: Interpellasjonsdebbatanalyse | **Dybde**: Høy
+**Nøkkelaktører**: Erik Ezelius, Gustaf Lantz, Carina Ödebrink, Eva Lindh (S); Pål Jonson (M), Lotta Edholm (L), Camilla Waltersson Grönvall (M), Andreas Carlson (KD), Ebba Busch (KD)
+**Valgdrelevans**: KRITISK — 115 dager til riksdagsvalget 2026-09-13
+
+---
+
+### 🎯 Konklusjon (BLUF)
+
+Sosialdemokratene leverte syv interpellasjoner 22. mai 2026 rettet mot fire Tidö-regjeringsporteføljer — en koordinert forvalgsstrategi med svarsdato 5. juni og 115 dager til valget. Den farligste interpellasjonen for regjeringen er HD10505 (kriminelle HVB-hjem fortsatt i drift), som setter sosialminister Waltersson Grönvall i et ansvarlighetsbindemiddel på Sveriges viktigste valgspørsmål.
+
+### Sammendrag
+
+Socialdemokraterna leverte 22. mai 2026 syv interpellasjoner på én dag — en koordinert opposisjonsstrategi som retter ansvarsspørsmål mot fire statsråd i Tidö-regjeringen. Interpellasjonene dekker nasjonal forsvarsevne (vernepliktige og FMV), barne- og ungdomsvelferd (internatskolens vold og kriminelle HVB-hjem), infrastrukturinvesteringer (kutt i FoU og trafikksikkerhetsorganisasjoner) og rural vekst (avvikling av kooperativt statstilskudd på 25 mill. SEK).
+
+**Kjernebudskapet**: Socialdemokraterna dokumenterer at Tidö-regjeringen skaper konkrete, mediesynlige risikoer innenfor valgkampens viktigste temaer — trygghet, velferd og lokal økonomi — i en periode der Sverige befinner seg i en kritisk opprustningsfase og 115 dager gjenstår til riksdagsvalget 13. september 2026. Alle syv interpellasjoner har siste svarsdato 5. juni 2026 — rett før sommerferien og inn i det tidlige valgkampvinduet.
+
+### Nøkkelfunn
+
+#### 1. Dobbel forsvarsinterpellasjon: Ezelius (S) mot Jonson (M)
+HD10502 spør om regjeringen har analysert svekket fysisk grunnkapasitet blant vernepliktige midt i en utbygging fra 5 000 til 10 000 vernepliktige per år innen 2030. HD10503 spør om FMV-utbygging i garnisonsbyer (Halmstad og Karlskrona nevnt som forbilder). Til sammen signaliserer interpellasjonene at S ønsker å posisjonere seg som ansvarlig forsvarsopposisjon som stiller praktiske gjennomførbarhetskrav.
+
+#### 2. Dobbel barnevelferdsinterpellasjon: Lantz (S) mot to statsråd
+HD10504 (Lotta Edholm/L om internatskolens vold) og HD10505 (Waltersson Grönvall/M om kriminelle HVB-hjem) utnytter aktuell mediegransking (SVT internatskole, Ekot HVB-hjem) for å avdekke hull i Skolinspektionens og sosialtjenestens tilsynsverktøy.
+
+#### 3. Dobbel infrastrukturinterpellasjon: Ödebrink (S) mot Carlson (KD)
+HD10506 spør hvorfor FoU kuttes i nasjonal plan 2026–2037 til tross for klima- og nullvisjonsmål. HD10508 angriper mer enn en halvering av sivilsamfunnets trafikksikkerhetsstøtte (–8 mill. SEK/år fra 2026). Begge virker å adressere KDs budsjettprioriteringer kontra klima-/sikkerhetsmål.
+
+#### 4. Kooperativinterpellasjon: Lindh (S) mot Busch (KD)
+HD10507 angriper den ubevarslete beslutningen om avvikling av 25 mill. SEK/år i kooperativt statstilskudd som støtter Coompanion-nettverket med rådgivning til titusenvis av kooperativer og sosiale bedrifter — med en tydelig distriktspolitisk dimensjon.
+
+### Politisk Kontekst (Valg 2026)
+
+Med 115 dager til valget 13. september 2026 er Sverige i en intens valgsyklus. Interpellasjonspakken er strategisk sammensatt for å:
+1. Dekke brede velgergrupper: forsvarsvennlige, barnefamiliers trygghet, infrastrukturmottakere, distriktsbeboere
+2. Utnytte reelle mediehendelser (SVT, Ekot) som bakgrunnsfakta
+3. Tvinge fire statsråd til offentlige svar før valget (siste svarsdato 5. juni 2026)
+
+**DIW-multiplikator 1,5×** anvendes på alle interpellasjoner på grunn av valgsyklus ≤6 måneder.
+
+### Implikasjoner for Regjeringen
+
+- **Forsvarsminister Jonson (M)**: Må svare på hvordan økt vernepliktsvolum håndteres med svekket fysisk grunnkapasitet — risikerer å blottlegge et operativt gap i opprustningens gjennomføringsplan
+- **Utdanningsminister Edholm (L)**: SVTs gransking av internatskolens vold gir S politisk momentum; Skolinspektionens maktesløshet er et konkret sårbarhetspunkt
+- **Sosialminister Waltersson Grönvall (M)**: HVB-hjem med kriminelle koblinger fortsatt i drift etter politilister — vanskelig å forsvare manglende stengninger
+- **Infrastrukturminister Carlson (KD)**: Dobbelt angrep (FoU + sivilsamfunn) på et valgfølsomt politikkområde
+- **Energiminister Busch (KD)**: Kooperativavviklingen mangler begrunnelse — kan oppfattes som ideologisk snarere enn budsjettdrevet
+
+### Kilde
+
+Riksdagens åpne data. Interpellasjoner 2025/26:502–508. Innlevert 2026-05-21, registrert 2026-05-22. Siste svarsdato 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_sv.md -->
+
+**Datum**: 2026-05-22 | **Typ**: Interpellationsdebatt-analys | **Djup**: Hög
+**Nyckelaktörer**: Erik Ezelius, Gustaf Lantz, Carina Ödebrink, Eva Lindh (S); Pål Jonson (M), Lotta Edholm (L), Camilla Waltersson Grönvall (M), Andreas Carlson (KD), Ebba Busch (KD)
+**Valrelevans**: KRITISK — 115 dagar till riksdagsvalet 2026-09-13
+
+---
+
+### 🎯 Slutsats i korthet (BLUF)
+
+Social Democrats filed seven interpellations on 22 May 2026 targeting four Tidö government portfolios — a coordinated pre-election accountability strategy with svarsdatum 5 June and 115 days to the election. Den farligaste interpellationen för regeringen är HD10505 (kriminella HVB-hem i drift), som försätter socialminister Waltersson Grönvall i ett ansvarighetsbindande på Sveriges viktigaste valfråga.
+
+### Sammanfattning
+
+Socialdemokraterna lämnade den 22 maj 2026 in sju interpellationer på en enda dag — en koordinerad oppositionsstrategi som riktar ansvarsfrågor mot fyra statsråd i Tidöregeringen. Interpellationerna täcker nationell försvarsförmåga (värnpliktiga och FMV), barn- och ungdomsskydd (internatskolevåld och kriminella HVB-hem), infrastrukturinvesteringar (nedskärning av FoU och trafiksäkerhetsorganisationer) samt rural tillväxt (avveckling av kooperativt statsbidrag på 25 Mkr).
+
+**Kärnbudskapet**: Socialdemokraterna dokumenterar att Tidöregeringen skapar konkreta, mediepåvisbara risker inom valrörelsens viktigaste ämnen — trygghet, välfärd och lokal ekonomi — i ett läge då Sverige befinner sig i en kritisk upprustningsfas och 115 dagar kvarstår till riksdagsvalet den 13 september 2026. Alla sju interpellationer har sista svarsdatum 5 juni 2026 — precis innan sommaruppehållet och in i det tidiga kampanjfönstret.
+
+### Nyckelrön
+
+#### 1. Dubbel försvarsinterp: Ezelius (S) mot Jonson (M)
+HD10502 frågar om regeringen analyserat försämrad fysisk grundförmåga bland värnpliktiga mitt i en utbyggnad från 5 000 till 10 000 värnpliktiga per år till 2030. HD10503 frågar om FMV-utbyggnad i förbandsorter (Halmstad, Karlskrona nämnda som förebilder). Tillsammans signalerar interpellationerna att S vill positionera sig som ansvarsfull försvarsopposition som ställer praktiska krav på genomförbarhet.
+
+#### 2. Dubbel barn-välfärdsinterp: Lantz (S) mot två statsråd
+HD10504 (Lotta Edholm/L om internatskolevåld) och HD10505 (Waltersson Grönvall/M om kriminella HVB-hem) utnyttjar aktuell mediegranskning (SVT internatskolor, Ekot HVB-hem) för att exponera luckor i Skolinspektionens och socialtjänstens tillsynsverktyg.
+
+#### 3. Dubbel infrastrukturinterp: Ödebrink (S) mot Carlson (KD)
+HD10506 frågar varför FoU sänks i nationella planen 2026–2037 trots klimat- och nollvisionsmål. HD10508 attackerar mer än halvering av civilsamhällets trafiksäkerhetsstöd (–8 Mkr/år från 2026). Beides verkar adressera KD:s budgetprioritering kontra klimat/säkerhetsmål.
+
+#### 4. Kooperativinterp: Lindh (S) mot Busch (KD)
+HD10507 angriper utan varsel beslutad avveckling av 25 Mkr/år kooperativt statsbidrag som stöder Coompanion-nätverket med rådgivning till 10 000-tals kooperativ och sociala företag — med tydlig landsbygdspolitisk dimension.
+
+### Politisk Kontext (Val 2026)
+
+Med 115 dagar till valet den 13 september 2026 befinner sig Sverige i en intensiv valcykel. Interpellationsbatchen är strategiskt sammansatt för att:
+1. Täcka breda väljargrupper: försvarsvänliga, barnfamiljers trygghet, infrastrukturmottagare, landsbygdsbor
+2. Utnyttja reella mediehändelser (SVT, Ekot) som bakgrundsfakta
+3. Tvinga fyra statsråd till offentliga svar inför valet (sista svarsdatum 5 juni 2026)
+
+**DIW-multiplikator 1,5×** appliceras på alla interpellationer p.g.a. valcykeln ≤6 månader.
+
+### Implikationer för Regeringen
+
+- **Försvarsminister Jonson (M)**: Måste svara på hur ökad värnpliktsvolym hanteras med försämrad fysisk basförmåga — riskerar att blottlägga ett operativt gap i upprustningens genomförandeplan
+- **Utbildningsminister Edholm (L)**: SVT-granskning av internatskolevåld ger S politisk momentum; Skolinspektionens maktlöshet är ett konkret sårbarhetspunkt
+- **Socialtjänstminister Waltersson Grönvall (M)**: HVB-hem med kriminella kopplingar i drift efter polislistor — svårt att försvara uteblivna stängningar
+- **Infrastrukturminister Carlson (KD)**: Dubbelt angrepp (FoU + civilsamhälle) på ett riksdagsval-känsligt politikområde
+- **Energiminister Busch (KD)**: Kooperativavvecklingen saknar motivering — kan uppfattas som ideologisk snarare än budgetmässigt driven
+
+### Källa
+
+Riksdagen öppna data. Interpellationer 2025/26:502–508. Inlämnade 2026-05-21, registrerade 2026-05-22. Sista svarsdatum 2026-06-05.
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_zh.md -->
+
+**日期**: 2026-05-22 | **类型**: 质询辩论分析 | **深度**: 高
+**主要行为者**: 埃里克·埃泽利乌斯、古斯塔夫·兰茨、卡琳娜·欧德布林克、伊娃·林德 (S)；保罗·约翰逊 (M)、洛塔·埃德霍尔姆 (L)、卡米拉·瓦尔特森·格伦瓦尔 (M)、安德烈亚斯·卡尔松 (KD)、埃芭·布什 (KD)
+**选举相关性**: 极为关键 — 距2026-09-13议会选举还有115天
+
+---
+
+### 🎯 核心摘要
+
+社会民主党（Socialdemokraterna）于2026年5月22日提交七项质询，针对蒂德政府的四个部门——这是一项协调一致的选前问责策略，答复截止日期为6月5日，距选举还有115天。对政府最危险的质询是HD10505（犯罪性HVB之家仍在运营），这使社会事务部长瓦尔特森·格伦瓦尔在瑞典最大选举议题上陷入问责困境。
+
+### 摘要
+
+Socialdemokraterna于2026年5月22日一天内提交了七项质询——这是一项协调性的反对党策略，向蒂德政府四位部长提出问责问题。质询涵盖：国防能力（征兵和国防采购局FMV）、儿童和青少年福利（寄宿学校暴力和犯罪性HVB之家）、基础设施投资（削减研发和道路安全组织支持）以及农村增长（废除2500万克朗的合作社国家补贴）。
+
+**核心信息**: Socialdemokraterna记录了蒂德政府在选举活动最重要的主题——安全、福利和地方经济——上制造具体的、可在媒体上证实的风险，而此时瑞典正处于重新武装的关键阶段，距2026年9月13日议会选举还有115天。全部七项质询的答复截止日期均为2026年6月5日——正好在夏季休会前夕，是早期竞选窗口开启之际。
+
+### 主要发现
+
+#### 1. 双重国防质询：埃泽利乌斯 (S) 对约翰逊 (M)
+HD10502询问政府是否分析了在扩大至2030年每年5,000至10,000名征兵的过程中，征兵基础体能的下降情况。HD10503询问在驻军城市（哈尔姆斯塔德和卡尔斯克鲁纳作为模型被提及）扩大FMV的问题。两项质询共同表明S希望将自己定位为提出实际可行性要求的负责任国防反对党。
+
+#### 2. 儿童福利双重质询：兰茨 (S) 对两位部长
+HD10504（洛塔·埃德霍尔姆/L，关于寄宿学校暴力）和HD10505（瓦尔特森·格伦瓦尔/M，关于犯罪性HVB之家）利用当前媒体审查（SVT寄宿学校、Ekot HVB之家）揭示学校检察和社会服务监督工具中的漏洞。
+
+#### 3. 双重基础设施质询：欧德布林克 (S) 对卡尔松 (KD)
+HD10506询问为何在气候目标和零愿景目标的背景下，2026-2037年国家计划中研发被削减。HD10508攻击道路安全公民社会支持减半以上（2026年起每年减少800万克朗）。两者似乎都在探讨KD的预算优先事项与气候/安全目标的关系。
+
+#### 4. 合作社质询：林德 (S) 对布什 (KD)
+HD10507攻击在没有预先通知的情况下宣布废除每年2500万克朗的合作社国家补贴——该补贴通过Coompanion网络为数以万计的合作社和社会企业提供咨询服务——具有明显的农村政策维度。
+
+### 政治背景（2026年选举）
+
+距2026年9月13日选举还有115天，瑞典正处于激烈的选举周期。质询包被战略性地构建为：
+1. 覆盖广泛的选民群体：国防导向、安全意识家庭、基础设施受益者、农村居民
+2. 利用真实的媒体事件（SVT、Ekot）作为背景事实
+3. 迫使四位部长在选举前给出公开答复（答复截止日期2026年6月5日）
+
+**DIW乘数1.5×** 因选举周期≤6个月适用于所有质询。
+
+### 对政府的影响
+
+- **国防部长约翰逊 (M)**: 必须回答如何在基础体能下降的情况下管理更多征兵——有暴露重新武装实施计划运营缺陷的风险
+- **教育部长埃德霍尔姆 (L)**: SVT关于寄宿学校暴力的报道给S带来政治动力；学校检察的无力化是具体的脆弱性
+- **社会事务部长瓦尔特森·格伦瓦尔 (M)**: 警察名单出现后，有犯罪关联的HVB之家仍在运营——难以为未关闭辩护
+- **基础设施部长卡尔松 (KD)**: 对选举敏感政策领域的双重攻击（研发+社会）
+- **能源部长布什 (KD)**: 合作社废除缺乏理由——可能被视为意识形态的而非预算的
+
+### 来源
+
+Riksdagen公开数据。质询2025/26:502–508。2026-05-21提交，2026-05-22登记。答复截止日期2026-06-05。
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
 ## Infrastructure Analysis
 <!-- source: infrastructure-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/infrastructure-analysis.md -->
 
@@ -1989,7 +2729,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 7 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 8 | Linked in Article Sources, not expanded inline |
 
@@ -2023,6 +2763,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`economic-policy-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/economic-policy-analysis.md)
 - [`election-proximity-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/election-proximity-analysis.md)
 - [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/electoral-implications.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/executive-brief_zh.md)
 - [`infrastructure-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/infrastructure-analysis.md)
 - [`international-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/international-context.md)
 - [`key-findings.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/interpellations/key-findings.md)

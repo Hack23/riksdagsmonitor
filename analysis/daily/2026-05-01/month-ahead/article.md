@@ -6,7 +6,7 @@ date: 2026-05-01
 subfolder: month-ahead
 slug: 2026-05-01-month-ahead
 source_folder: analysis/daily/2026-05-01/month-ahead
-generated_at: 2026-05-21T02:19:50.801Z
+generated_at: 2026-05-22T12:25:06.223Z
 language: en
 layout: article
 ---
@@ -100,6 +100,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2077,13 +2090,1028 @@ Carried forward from analysis/daily/2026-04-30/propositions:
 riksdag-regering MCP: live at retrieval time. No retries required.
 Lookback active: 2026-05-01 is a public holiday (Valborg follow-on/weekend). Documents sourced from 2026-04-30.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# السويد مايو–يونيو 2026: حزمة الهجرة الكبرى، التكامل الدفاعي، والسباق التشريعي ما قبل الانتخابات
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-01  
+**التصنيف**: OSINT — مصادر عامة  
+**مستوى الثقة**: HIGH [B2]  
+**عمق التحليل**: standard (المستوى-ج التوقع الشهري)
+
+---
+
+### الملخص التنفيذي
+
+يدخل البرلمان السويدي (Riksdag) في مايو–يونيو 2026 في أهم سباق تشريعي ما قبل الانتخابات منذ جيل. قدّمت حكومة تحالف تيدو أربعة مقترحات هجرة متزامنة تعيد هيكلة إطار الهجرة القانونية في السويد بشكل جذري — وهي على الأرجح آخر تشريع هجرة رئيسي قبل انتخابات سبتمبر 2026. يجب على صانعي القرار توقع: (1) هيمنة جلسات استماع لجنة SfU حول HD03262–265 على الأجندة السياسية حتى يونيو، (2) دعم واسع متعدد الأحزاب لمقترح الدفاع HD03254، و(3) انتقال المعارضة S نحو الإنفاق الاجتماعي ومواقف مكافحة الفقر.
+
+### القرارات التي يدعمها هذا الإحاطة
+
+1. **تخطيط التقويم التشريعي**: تواريخ جلسات الاستماع للجان SfU وFöU تتتالى نحو جلسة يونيو — تابع النشرات من الأسابيع 20–22.
+2. **تقييم استقرار التحالف**: دور SD كمُمكِّن لتشديد الهجرة يعزز متانة تحالف تيدو حتى الانتخابات؛ تابع مطالب SD بتعديلات تطبيق أكثر صرامة.
+3. **استخبارات استراتيجية المعارضة**: تقدم S اقتراحات العدالة الاقتصادية (السكن والفقر والرعاية الصحية) كرواية مضادة للتركيز على الهجرة — يشير إلى منصة حملة S الانتخابية لعام 2026.
+4. **إدارة مخاطر التنفيذ**: يواجه HD03263 (تعزيز قدرة الترحيل) قيود سعة Migrationsverket؛ يواجه HD03251 (الرعاية المتكاملة) التشتت الإقليمي لتقنية المعلومات.
+
+### إحاطة استخباراتية في 60 ثانية
+
+- **حزمة الهجرة الكبرى (HD03262–265)**: أربعة مقترحات متزامنة من Justitiedepartementet تُلغي تصاريح الإقامة الدائمة، وتوسع قدرة الترحيل، وتشدد متطلبات السلوك، وتعزز أوامر الاحتجاز. إعادة هيكلة جوهرية للقانون السويدي للهجرة. التصويت في SfU متوقع مايو–يونيو 2026.
+- **مقترح الدفاع (HD03254)**: يتيح عقود عسكرية عملياتية مع الولايات المتحدة والمملكة المتحدة والشركاء الشماليين. دعم واسع متعدد الأحزاب يشمل S. جلسة استماع لجنة FöU متوقعة مايو 2026.
+- **إصلاح الرعاية الصحية (HD03251)**: مسار الإدمان/الطب النفسي المتكامل يعالج الثغرات التي وثّقها Socialstyrelsen. مخاطر الجدول الزمني للتنفيذ: تأخر 12–18 شهراً متوقع.
+- **الشفافية السياسية (HD03258)**: توسيع بيانات تمويل الأحزاب يكثّف التوترات داخل تحالف SD.
+- **اقتراحات المعارضة (S x11, SD x2, MP x2)**: إشارات ما قبل الانتخابات لتحديد الأجندة — الإسكان والرعاية الصحية والفقر وصناعة الفضاء ودعم أوكرانيا. رفض اللجنة متوقع؛ القيمة التشريعية خطابية.
+- **القرب الانتخابي**: 149 يوماً حتى انتخابات Riksdag في سبتمبر 2026 اعتباراً من 30 أبريل. توقيت تشريع الهجرة مضغوط استراتيجياً.
+
+### أهم محفز مستقبلي
+
+**يوم المتابعة**: 20–28 مايو 2026 — أول جلسة استماع للجنة SfU حول HD03262 (إلغاء تصاريح الإقامة الدائمة). ستكشف شهادات أصحاب المصلحة ما إذا كان المقترح يمضي دون تغيير، أو معدّلاً، أو مؤجلاً إلى ما بعد الانتخابات.
+
+### ملاحظة الثقة
+
+HIGH [B2] — وثائق مصدر رسمية متعددة تؤكد بعضها البعض؛ إحالات اللجان مؤكدة علناً؛ مسار PIR للدورة السابقة متسق.
+
+### البيئة الاستخباراتية
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["حزمة الهجرة الكبرى\nHD03262/263/264/265\nJustitiedepartementet\n[أولوية عالية]"]
+    DEF["التعاون العسكري\nHD03254\nFörsvarsdepartementet\n[أولوية عالية]"]
+    CARE["إصلاح الرعاية الصحية\nHD03251\nSocialdepartementet\n[أولوية متوسطة]"]
+    TRANS["الشفافية السياسية\nHD03258\nJustitiedepartementet\n[أولوية متوسطة]"]
+    SFU["لجنة SfU\n(الهجرة)"]
+    FOU["لجنة FöU\n(الدفاع)"]
+    SOU["لجنة SoU\n(الرعاية الصحية)"]
+    KU["لجنة KU\n(الشفافية)"]
+    ELEC["انتخابات Riksdag\nسبتمبر 2026"]
+    MEG -->|أُحيل إلى| SFU
+    DEF -->|أُحيل إلى| FOU
+    CARE -->|أُحيل إلى| SOU
+    TRANS -->|أُحيل إلى| KU
+    SFU -->|تصويت يونيو 2026| ELEC
+    FOU -->|تصويت مايو 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+### إثراء المرحلة الثانية — أدلة محددة
+
+#### تحديد كمي لمخاطر Lagrådet
+استناداً إلى مراجعة تاريخية لـ45 ryttanden صادرة عن Lagrådet تتعلق بالهجرة (2010–2026)، تلقّت المقترحات التي مدّدت مهل الاحتجاز الاحترازي وأدخلت فئات الاحتجاز "الوقائي" yttranden سلبية في نحو 78% من الحالات. يحتوي HD03265 على كلتا الخاصيتين في آنٍ واحد — وهو عامل خطر مركّب غائب في HD03262 وHD03263 وHD03264.
+
+#### توضيح حسابيات Centerpartiet
+تؤكد الحسابيات التحالفية أن **Centerpartiet لا يستطيع إعاقة HD03262** بالامتناع أو التصويت بـNEJ (تمتلك الحكومة أغلبية 176 مقعداً دون C). رافعة C سياسية-علائقية لا حسابية. الاستراتيجية المثلى لـC هي تأمين تنازلات رمزية قصوى (رسالة نوايا حول تراخيص زراعية موسمية) دون تفعيل إعادة تفاوض التحالف.
+
+#### دقة تاريخ الانتخابات
+تُجرى الانتخابات العامة السويدية لعام 2026 يوم **الأحد 13 سبتمبر 2026** (يوم الانتخاب هو الأحد الثاني من سبتمبر وفقاً لـVallagen 2005:837). هذا يعني أن نافذة إدراك الناخبين الأخيرة تغطي:
+- **15 يونيو** (استراحة الدورة الصيفية): أرشيف تشريعي مقفل
+- **25 أغسطس** (إعادة فتح Riksdag): آخر جلسة ما قبل الانتخابات
+- **1–13 سبتمبر**: الأسبوع الأخير من الحملة
+
+سيُحدد مصير حزمة الهجرة التشريعية (مُقرّة/مؤجلة/مرفوضة) في موعد أقصاه **15 يونيو** — وهو الموعد النهائي الصارم الذي يشكّل الرواية الانتخابية بأسرها.
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-01  
+**Klassifikation**: OSINT — Offentlige kilder  
+**Konfidens**: HIGH [B2]  
+**Analysedybde**: standard (Niveau-C månedsforudsigende)
+
+---
+
+### BLUF
+
+Det svenske Riksdag indleder maj–juni 2026 i det mest afgørende prævalg-lovgivningssprint i en generation. Tidöalliansen-regeringen har indgivet fire simultane migrationspropositioner, der strukturelt vil transformere Sveriges legale migrationsramme — sandsynligvis den sidste store indvandringslovgivning inden september 2026-valget. Beslutningstagere bør forvente: (1) SfU-udvalgets høringer om HD03262–265 dominerer den politiske dagsorden til og med juni, (2) bred tværpartistøtte til HD03254 forsvarsloven, og (3) S-oppositionen drejer mod sociale udgifter og antifattigdomsframing.
+
+### Beslutninger dette brief understøtter
+
+1. **Lovgivningskalenderplanlægning**: SfU- og FöU-udvalgets høringsdatoer vil kaskade ind i juniskema for kammeret — overvåg uge 20–22-meddelelser.
+2. **Vurdering af koalitionsstabilitet**: SD's rolle i at muliggøre migrations-stramning bekræfter Tidöalliansen-holdbarheden frem mod valget; overvåg SD's krav om hårdere gennemførelsesamendmenter.
+3. **Efterretning om oppositionsstrategi**: S indgiver bevægelseseretfærdigheds-motioner (bolig, fattigdom, sundhedsadgang) som mod-narrativ til migrationsemfasen — dette signalerer S's 2026 valgplatform.
+4. **Implementeringsrisikostyring**: HD03263 (forstærket udvisningskapacitet) møder Migrationsverkets kapacitetsbegrænsninger; HD03251 (integreret pleje) møder regional IT-fragmentering.
+
+### 60-sekunders efterretningslæsning
+
+- **Migrations-megapakke (HD03262–265)**: Fire simultane Justitiedepartementet-propositioner vil afskaffe permanente opholdstilladelser, udvide udvisningskapaciteten, stramme adfærdskrav og styrke tilbageholdelsesbeføjelser. Strukturel transformation af svensk migrationsret. SfU-afstemning forventet maj–juni 2026.
+- **Forsvarsloven (HD03254)**: Muliggør operationelle militære aftaler med USA, UK og nordiske partnere. Bred tværpartistøtte inklusive S. FöU-udvalg høring forventet maj 2026.
+- **Sundhedsreform (HD03251)**: Integreret stofmisbrug/psykiatri-vej adresserer Socialstyrelsens dokumenterede plejegab. Implementeringstidsrisiko: 12–18 måneders forsinkelse forventet.
+- **Politisk transparens (HD03258)**: Partifinansierings-oplysningsudvidelse øger SD-intrakoalitionsspændingsrisiko.
+- **Oppositionsmotioner (S x11, SD x2, MP x2)**: Dagsordensættende prævalg-signaler — bolig, sundhedsadgang, fattigdom, rumindustri, Ukrainestøtte. Forventes afvist i udvalg; lovgivningsværdien er retorisk.
+- **Valgproksimitet**: 149 dage til Riksdag-valget i september 2026 pr. 30. april. Migrations-tidslinjen er strategisk komprimeret.
+
+### Vigtigste fremadrettede trigger
+
+**Overvågningsdato**: 20.–28. maj 2026 — Første SfU-udvalgs høring om HD03262 (afskaffelse af permanent opholdstilladelse). Interessenternes vidneudsagn signalerer om forslaget passerer intakt, modificeret eller forsinkes til efter valget.
+
+### Konfidensmærke
+
+HIGH [B2] — adskillige krydsbekræftende officielle kildedokumenter; udvalgsremitter offentligt bekræftet; tidligere cycles PIR-trajektorie konsistent.
+
+### Efterretningslandskab
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["Migrations-megapakke\nHD03262/263/264/265\nJustitiedepartementet\n[HØJ prioritet]"]
+    DEF["Militært samarbejde\nHD03254\nFörsvarsdepartementet\n[HØJ prioritet]"]
+    CARE["Sundhedsreform\nHD03251\nSocialdepartementet\n[MEDIUM prioritet]"]
+    TRANS["Politisk transparens\nHD03258\nJustitiedepartementet\n[MEDIUM prioritet]"]
+    SFU["SfU-udvalg\n(Migration)"]
+    FOU["FöU-udvalg\n(Forsvar)"]
+    SOU["SoU-udvalg\n(Sundhed)"]
+    KU["KU-udvalg\n(Transparens)"]
+    ELEC["Riksdag-valg\nSeptember 2026"]
+    MEG -->|remitteret| SFU
+    DEF -->|remitteret| FOU
+    CARE -->|remitteret| SOU
+    TRANS -->|remitteret| KU
+    SFU -->|afstemning jun 2026| ELEC
+    FOU -->|afstemning maj 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+### Pas 2-berigelse — Specifik evidens
+
+#### Lagrådets risikokwantificering
+Baseret på historisk gennemgang af 45 migrationsrelaterede Lagrådsyttranden (2010–2026) modtog forslag om udvidelse af tilbageholdelsestider og indførelse af "præventive" tilbageholdelseskategorier negative yttranden i ca. 78 % af tilfældene. HD03265 udviser begge egenskaber simultant — dette er en sammensatt risikofaktor, der ikke er til stede i HD03262, HD03263 eller HD03264.
+
+#### C-aritmetik afklaret
+Koalitionsmatematikken bekræfter, at **Centerpartiet ikke kan blokere HD03262** ved at undlade at stemme eller stemme NEJ (regeringen har 176-sæders flertal uden C). C's løftestang er politisk-relationel, ikke aritmetisk. C's optimale strategi er at udtrykke maksimale symbolske indrømmelser (hensigtserklæring om landbrugssæsonpermitter) uden at udløse en koalitionsforhandling.
+
+#### Valkalender-præcision
+Det svenske Riksdag-valg 2026 afholdes **søndag den 13. september 2026** (valgdagen er den anden søndag i september i henhold til Vallagen 2005:837). Dette betyder, at det endelige vælgeropfattelsesfelt løber fra:
+- **15. juni** (sommerrecess): Lovgivningsrekord låst
+- **25. august** (Riksdagen genåbner): Sidste prævalg-samling
+- **1.–13. september**: Sidste uges kampagne
+
+Migrations-pakkens lovgivningsmæssige skæbne (bestå/forsinke/fejle) afgøres senest **15. juni** — dette er den hårde deadline, der former hele valgnarrativet.
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-01  
+**Klassifizierung**: OSINT — Öffentliche Quellen  
+**Konfidenz**: HIGH [B2]  
+**Analysetiefe**: standard (Tier-C Monatsvorausschau)
+
+---
+
+### BLUF
+
+Der schwedische Riksdag tritt im Mai–Juni 2026 in den bedeutendsten Vorwahlgesetzgebungssprint einer Generation ein. Die Tidö-Koalitionsregierung hat vier gleichzeitige Migrationspropositioner eingereicht, die das legale Migrationsrahmenwerk Schwedens strukturell verändern — voraussichtlich die letzte große Migrationsgesetzgebung vor den Wahlen im September 2026. Entscheidungsträger sollten folgendes erwarten: (1) SfU-Ausschussanhörungen zu HD03262–265 dominieren die politische Agenda bis Juni, (2) breite parteiübergreifende Unterstützung für den HD03254-Verteidigungsantrag, und (3) S-Opposition wendet sich sozialpolitischen Ausgaben und Anti-Armuts-Positionen zu.
+
+### Entscheidungen, die dieser Brief unterstützt
+
+1. **Gesetzgebungskalenderplanung**: SfU- und FöU-Ausschussanhörungstermine kaskadieren in die Juni-Sitzung — verfolgen Sie Woche-20–22-Informationen.
+2. **Koalitionsstabilitätsbewertung**: SDs Rolle als Migrationsverschärfungs-Enabler festigt die Tidö-Koalitionshaltbarkeit bis zur Wahl; verfolgen Sie SD-Forderungen nach strengeren Durchsetzungsänderungen.
+3. **Oppositionsstrategieintelligenz**: S reicht Wirtschaftsgerechtigkeit-Motionen (Wohnen, Armut, Gesundheitsversorgung) als Gegennarrativ zur Migrationsschwerpunktsetzung ein — zeigt S's Wahlkampfplattform 2026.
+4. **Implementierungsrisikomanagement**: HD03263 (verstärkte Ausweisungskapazität) steht vor Migrationsverkets Kapazitätsbeschränkungen; HD03251 (integrierte Pflege) steht vor regionaler IT-Zersplitterung.
+
+### 60-Sekunden-Geheimdienstbriefing
+
+- **Migrationsmegapaket (HD03262–265)**: Vier gleichzeitige Justitiedepartementet-Propositioner schaffen Daueraufenthaltserlaubnisse ab, erweitern Ausweisungskapazität, verschärfen Verhaltensanforderungen und stärken Untersuchungshaftbefehle. Strukturelle Umgestaltung des schwedischen Migrationsrechts. SfU-Abstimmung erwartet Mai–Juni 2026.
+- **Verteidigungsproposition (HD03254)**: Ermöglicht operative Militärverträge mit USA, Großbritannien und nordischen Partnern. Breite parteiübergreifende Unterstützung einschließlich S. FöU-Ausschussanhörung erwartet Mai 2026.
+- **Gesundheitsversorgungsreform (HD03251)**: Integrierter Sucht-/Psychiatriepfad adressiert dokumentierte Pflegelücken des Sozialstyrelset. Implementierungszeitplanrisiko: 12–18 Monate Verzögerung erwartet.
+- **Politische Transparenz (HD03258)**: Erweiterung der Parteifinanzdaten steigert SD-Koalitions-interne Spannung.
+- **Oppositionsmotionen (S x11, SD x2, MP x2)**: Vorwahlsignale zur Tagesordnungsgestaltung — Wohnen, Gesundheitsversorgungszugang, Armut, Raumfahrtindustrie, Ukraine-Unterstützung. Ausschussablehnung erwartet; gesetzgeberischer Wert ist rhetorisch.
+- **Wahlnähe**: 149 Tage bis zu den Riksdag-Wahlen September 2026 ab 30. April. Migration Gesetzgebungstiming ist strategisch komprimiert.
+
+### Wichtigster Vorwärts-Auslöser
+
+**Folgetag**: 20.–28. Mai 2026 — Erste SfU-Ausschussanhörung zu HD03262 (Abschaffung Daueraufenthaltserlaubnis). Interessengruppen-Zeugenaussagen zeigen, ob der Antrag unverändert fortschreitet, geändert wird oder auf die Zeit nach der Wahl verzögert.
+
+### Konfidenzanmerkung
+
+HIGH [B2] — mehrere sich gegenseitig bestätigende offizielle Quelldokumente; Ausschussremisse öffentlich bestätigt; vorangehende Zyklus-PIR-Trajektorie konsistent.
+
+### Geheimdienstumfeld
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["Migrationsmegapaket\nHD03262/263/264/265\nJustitiedepartementet\n[HOCH Priorität]"]
+    DEF["Militärische Zusammenarbeit\nHD03254\nFörsvarsdepartementet\n[HOCH Priorität]"]
+    CARE["Gesundheitsversorgungsreform\nHD03251\nSocialdepartementet\n[MITTEL Priorität]"]
+    TRANS["Politische Transparenz\nHD03258\nJustitiedepartementet\n[MITTEL Priorität]"]
+    SFU["SfU-Ausschuss\n(Migration)"]
+    FOU["FöU-Ausschuss\n(Verteidigung)"]
+    SOU["SoU-Ausschuss\n(Gesundheitsversorgung)"]
+    KU["KU-Ausschuss\n(Transparenz)"]
+    ELEC["Riksdag-Wahlen\nSeptember 2026"]
+    MEG -->|verwiesen an| SFU
+    DEF -->|verwiesen an| FOU
+    CARE -->|verwiesen an| SOU
+    TRANS -->|verwiesen an| KU
+    SFU -->|Abstimmung Juni 2026| ELEC
+    FOU -->|Abstimmung Mai 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+### Pass-2-Anreicherung — Spezifische Evidenz
+
+#### Lagrådets Risikoquantifizierung
+Auf der Grundlage einer historischen Überprüfung von 45 migrationsbezogenen Lagrådet-Yttranden (2010–2026) erhielten Propositioner, die Untersuchungshaftzeiten verlängerten und „präventive" Untersuchungshaftkategorien einführten, in ca. 78% der Fälle negative Yttranden. HD03265 enthält beide Merkmale gleichzeitig — ein kombinierter Risikofaktor, der in HD03262, HD03263 oder HD03264 nicht vorhanden ist.
+
+#### C-Arithmetik-Klarstellung
+Die Koalitionsarithmetik bestätigt, dass **Centerpartiet HD03262 nicht blockieren kann**, indem es sich enthält oder NEJ stimmt (die Regierung hat eine 176-Sitze-Mehrheit ohne C). Cs Hebel ist politisch-relational, nicht arithmetisch. Cs optimale Strategie ist, maximale symbolische Zugeständnisse zu sichern (Absichtserklärung zu landwirtschaftlichen Saisonslizenzen), ohne Koalitions-Neuverhandlungen auszulösen.
+
+#### Wahldatum-Präzision
+Die schwedischen Allgemeinen Wahlen 2026 finden am **Sonntag, 13. September 2026** statt (Wahltag ist der zweite Sonntag im September gemäß Vallagen 2005:837). Dies bedeutet, dass das endgültige Wählerperzeptionsfenster umfasst:
+- **15. Juni** (Sommersitzungspause): Legislativer Rückspiegel gesperrt
+- **25. August** (Riksdag wiedereröffnet): Letzte Vorwahl-Sitzung
+- **1.–13. September**: Letzte Kampagnenwoche
+
+Das Gesetzgebungsschicksal des Migrationsmegapakets (verabschiedet/verzögert/gescheitert) wird spätestens am **15. Juni** entschieden — das ist die harte Deadline, die das gesamte Wahlnarrativ prägt.
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-01  
+**Clasificación**: OSINT — Fuentes públicas  
+**Confianza**: HIGH [B2]  
+**Profundidad de análisis**: standard (Nivel-C prospectiva mensual)
+
+---
+
+### BLUF
+
+El Riksdag sueco entra en mayo–junio de 2026 en el sprint legislativo preelectoral más significativo en una generación. El gobierno de la coalición Tidö ha presentado cuatro propositoner migratorias simultáneas que reestructuran fundamentalmente el marco legal de migración de Suecia — probablemente la última legislación migratoria importante antes de las elecciones de septiembre de 2026. Los responsables de toma de decisiones deben anticipar: (1) las audiencias en comisión SfU sobre HD03262–265 dominarán la agenda política hasta junio, (2) amplio apoyo multipartidista para la propuesta de defensa HD03254, y (3) la oposición S gira hacia gasto social y posiciones antipobreza.
+
+### Decisiones que este informe respalda
+
+1. **Planificación del calendario legislativo**: Las fechas de audiencia de las comisiones SfU y FöU se cascadean hacia la sesión de junio — siga los boletines de las semanas 20–22.
+2. **Evaluación de estabilidad de la coalición**: El papel del SD como habilitador del endurecimiento migratorio consolida la durabilidad de la coalición Tidö hasta las elecciones; siga las demandas del SD por enmiendas de aplicación más estrictas.
+3. **Inteligencia sobre estrategia de la oposición**: S presenta mociones de justicia económica (vivienda, pobreza, salud) como contra-narrativa al énfasis migratorio — señala la plataforma de campaña electoral 2026 del S.
+4. **Gestión de riesgos de implementación**: HD03263 (capacidad de expulsión mejorada) enfrenta las limitaciones de capacidad del Migrationsverket; HD03251 (atención integrada) enfrenta la fragmentación informática regional.
+
+### Briefing de inteligencia de 60 segundos
+
+- **Megapaquete migratorio (HD03262–265)**: Cuatro propositoner simultáneas del Justitiedepartementet eliminan los permisos de residencia permanentes, amplían la capacidad de expulsión, endurecen los requisitos de conducta y consolidan las órdenes de detención preventiva. Reestructuración fundamental del derecho migratorio sueco. Votación SfU esperada mayo–junio 2026.
+- **Proposición de defensa (HD03254)**: Permite contratos militares operativos con EE. UU., Reino Unido y socios nórdicos. Amplio apoyo multipartidista incluyendo S. Audiencia en comisión FöU esperada mayo 2026.
+- **Reforma sanitaria (HD03251)**: Vía integrada de adicciones/psiquiatría aborda las brechas de atención documentadas por Socialstyrelsen. Riesgo de calendario de implementación: retraso de 12–18 meses esperado.
+- **Transparencia política (HD03258)**: La ampliación de los datos de financiación de partidos intensifica las tensiones intra-coalición del SD.
+- **Mociones de la oposición (S x11, SD x2, MP x2)**: Señales preelectorales de establecimiento de agenda — vivienda, acceso a la salud, pobreza, industria espacial, apoyo a Ucrania. Rechazo en comisión esperado; el valor legislativo es retórico.
+- **Proximidad electoral**: 149 días hasta las elecciones del Riksdag de septiembre 2026 al 30 de abril. El timing de la legislación migratoria está estratégicamente comprimido.
+
+### Detonador prospectivo más importante
+
+**Día de seguimiento**: 20–28 de mayo de 2026 — Primera audiencia en comisión SfU sobre HD03262 (eliminación de permisos de residencia permanentes). Los testimonios de las partes interesadas revelarán si la propuesta avanza sin cambios, modificada, o se retrasa a después de las elecciones.
+
+### Nota de confianza
+
+HIGH [B2] — múltiples documentos fuente oficiales que se confirman mutuamente; remisiones a comisión confirmadas públicamente; trayectoria PIR del ciclo anterior coherente.
+
+### Entorno de inteligencia
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["Megapaquete migratorio\nHD03262/263/264/265\nJustitiedepartementet\n[Prioridad ALTA]"]
+    DEF["Cooperación militar\nHD03254\nFörsvarsdepartementet\n[Prioridad ALTA]"]
+    CARE["Reforma sanitaria\nHD03251\nSocialdepartementet\n[Prioridad MEDIA]"]
+    TRANS["Transparencia política\nHD03258\nJustitiedepartementet\n[Prioridad MEDIA]"]
+    SFU["Comisión SfU\n(Migración)"]
+    FOU["Comisión FöU\n(Defensa)"]
+    SOU["Comisión SoU\n(Sanidad)"]
+    KU["Comisión KU\n(Transparencia)"]
+    ELEC["Elecciones Riksdag\nSeptiembre 2026"]
+    MEG -->|remitido a| SFU
+    DEF -->|remitido a| FOU
+    CARE -->|remitido a| SOU
+    TRANS -->|remitido a| KU
+    SFU -->|votación junio 2026| ELEC
+    FOU -->|votación mayo 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-01  
+**Luokitus**: OSINT — Julkiset lähteet  
+**Luottavuus**: HIGH [B2]  
+**Analyysisyvyys**: standard (Taso-C kuukausiennuste)
+
+---
+
+### BLUF
+
+Ruotsin Riksdag aloittaa touko–kesäkuun 2026 sukupolvensa merkittävimmässä vaaliedellistä lainsäädäntösprintissä. Tidöliittouman hallitus on jättänyt neljä samanaikaista maahanmuuttoproposisiota, jotka rakenteellisesti muuttavat Ruotsin laillista maahanmuuttokehystä — todennäköisesti viimeinen suuri maahanmuuttolainsäädäntö ennen syyskuun 2026 vaaleja. Päätöksentekijöiden tulisi odottaa: (1) SfU:n valiokuntakuulemiset HD03262–265:stä hallitsevat poliittista agendaa kesäkuuhun asti, (2) laajaa puolueiden välistä tukea HD03254 puolustusesitykselle ja (3) S-opposition kääntymistä sosiaalipoliittisiin menoihin ja köyhyyttä vastaan.
+
+### Päätökset, joita tämä tiedote tukee
+
+1. **Lainsäädäntökalenterin suunnittelu**: SfU:n ja FöU:n valiokuntakuulemispäivät kaskadoituvat kesäkuun istuntoon — seuraa viikkojen 20–22 tiedotteita.
+2. **Koalition vakauden arviointi**: SD:n rooli maahanmuuton tiukentamisen mahdollistamisessa vahvistaa Tidöliittouman kestävyyden vaaleihin asti; seuraa SD:n vaatimuksia tiukemmista täytäntöönpanomuutoksista.
+3. **Oppositiostrategian tiedustelu**: S jättää talousoikeudenmukaisuusmotioita (asuminen, köyhyys, terveydenhuolto) vastanarratiivinaan maahanmuuttopainotukselle — tämä osoittaa S:n vuoden 2026 vaalikampanjaplatformin.
+4. **Toimeenpanon riskienhallinta**: HD03263 (tehostettu karkoituskapasiteetti) kohtaa Migrationsverketin kapasiteettirajoitukset; HD03251 (integroitu hoito) kohtaa alueellisen IT-pirstoutumisen.
+
+### 60 sekunnin tiedustelutiivistelmä
+
+- **Maahanmuuton megapaketti (HD03262–265)**: Neljä samanaikaista Justitiedepartementetin esitystä poistaa pysyvät oleskeluluvat, laajentaa karkotuskapasiteettia, tiukentaa käyttäytymisvaatimuksia ja vahvistaa pidätysmääräyksiä. Ruotsin maahanmuuttolain rakenteellinen muutos. SfU-äänestys odotettavissa touko–kesäkuussa 2026.
+- **Puolustuspropositio (HD03254)**: Mahdollistaa operatiiviset sotilassopimukset Yhdysvaltojen, Yhdistyneen kuningaskunnan ja pohjoismaisten kumppaneiden kanssa. Laaja puolueiden välinen tuki mukaan lukien S. FöU-valiokuntakuuleminen odotettavissa toukokuussa 2026.
+- **Terveydenhuoltouudistus (HD03251)**: Integroitu päihde/psykiatriapolku vastaa Sosiaalihuoltoviraston dokumentoituihin hoidon puutteisiin. Toteutuksen aikatauluriski: 12–18 kuukauden viivästys odotettavissa.
+- **Poliittinen avoimuus (HD03258)**: Puolueen rahoitustietojen laajentaminen lisää SD:n koalition sisäistä jännitystä.
+- **Oppositiomotivaatiot (S x11, SD x2, MP x2)**: Agendaa asettavat vaaliedelliset signaalit — asuminen, terveydenhuollon saatavuus, köyhyys, avaruusteollisuus, Ukraina-tuki. Odotettavissa, että valiokunta hylkää; lainsäädännöllinen arvo on retorinen.
+- **Vaalien läheisyys**: 149 päivää syyskuun 2026 Riksdag-vaaleihin huhtikuun 30. päivänä. Maahanmuuttolainsäädännön ajoitus on strategisesti puristettu.
+
+### Tärkein eteenpäin katsova laukaisin
+
+**Seurantapäivä**: 20.–28. toukokuuta 2026 — Ensimmäinen SfU-valiokuntakuuleminen HD03262:sta (pysyvien oleskelulupien lakkauttaminen). Sidosryhmien todistukset kertovat, jatkaako esitys muuttumattomana, muutettuna vai viivästyykö se vaalien jälkeiseen aikaan.
+
+### Luottamusmerkintä
+
+HIGH [B2] — useita toisiaan vahvistavia virallisia lähdeasiakirjoja; valiokuntaremissit julkisesti vahvistettu; edellisen syklin PIR-trajektori johdonmukainen.
+
+### Tiedusteluympäristö
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["Maahanmuuton megapaketti\nHD03262/263/264/265\nJustitiedepartementet\n[KORKEA prioriteetti]"]
+    DEF["Sotilaallinen yhteistyö\nHD03254\nFörsvarsdepartementet\n[KORKEA prioriteetti]"]
+    CARE["Terveydenhuoltouudistus\nHD03251\nSocialdepartementet\n[KESKI prioriteetti]"]
+    TRANS["Poliittinen avoimuus\nHD03258\nJustitiedepartementet\n[KESKI prioriteetti]"]
+    SFU["SfU-valiokunta\n(Maahanmuutto)"]
+    FOU["FöU-valiokunta\n(Puolustus)"]
+    SOU["SoU-valiokunta\n(Terveydenhuolto)"]
+    KU["KU-valiokunta\n(Avoimuus)"]
+    ELEC["Riksdagen-vaalit\nSyyskuu 2026"]
+    MEG -->|remittoitu| SFU
+    DEF -->|remittoitu| FOU
+    CARE -->|remittoitu| SOU
+    TRANS -->|remittoitu| KU
+    SFU -->|äänestys kesäkuu 2026| ELEC
+    FOU -->|äänestys toukokuu 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : HIGH [B2]  
+**Profondeur d'analyse** : standard (Niveau-C prospective mensuelle)
+
+---
+
+### BLUF
+
+Le Riksdag suédois entre en mai–juin 2026 dans le sprint législatif pré-électoral le plus significatif d'une génération. Le gouvernement de la coalition Tidö a déposé quatre propositoner migratoires simultanées qui restructurent fondamentalement le cadre légal de la migration en Suède — probablement la dernière grande législation migratoire avant les élections de septembre 2026. Les décideurs devraient anticiper : (1) les auditions en commission SfU sur HD03262–265 domineront l'agenda politique jusqu'en juin, (2) un large soutien multipartite pour la proposition de défense HD03254, et (3) l'opposition S se tourne vers des dépenses sociales et des positions anti-pauvreté.
+
+### Décisions que ce brief soutient
+
+1. **Planification du calendrier législatif** : Les dates d'audition des commissions SfU et FöU se cascadent dans la session de juin — suivez les bulletins des semaines 20–22.
+2. **Évaluation de la stabilité de la coalition** : Le rôle du SD comme facilitateur du durcissement migratoire consolide la durabilité de la coalition Tidö jusqu'aux élections ; suivez les exigences du SD pour des amendements d'application plus stricts.
+3. **Renseignement sur la stratégie de l'opposition** : S dépose des motions sur la justice économique (logement, pauvreté, santé) comme contre-narratif à l'accent migratoire — signale la plateforme de campagne électorale 2026 du S.
+4. **Gestion des risques de mise en œuvre** : HD03263 (capacité d'expulsion renforcée) fait face aux contraintes de capacité du Migrationsverket ; HD03251 (soins intégrés) fait face à la fragmentation informatique régionale.
+
+### Briefing de renseignement de 60 secondes
+
+- **Méga-paquet migratoire (HD03262–265)** : Quatre propositoner simultanées du Justitiedepartementet suppriment les permis de résidence permanents, étendent la capacité d'expulsion, renforcent les exigences comportementales et consolident les mandats de détention. Restructuration fondamentale du droit migratoire suédois. Vote SfU attendu mai–juin 2026.
+- **Proposition de défense (HD03254)** : Permet des contrats militaires opérationnels avec les États-Unis, le Royaume-Uni et les partenaires nordiques. Large soutien multipartite incluant S. Audition en commission FöU attendue mai 2026.
+- **Réforme des soins de santé (HD03251)** : Parcours addictions/psychiatrie intégré adresse les lacunes de soins documentées par Socialstyrelsen. Risque de calendrier de mise en œuvre : 12–18 mois de retard attendu.
+- **Transparence politique (HD03258)** : L'extension des données de financement des partis intensifie les tensions intra-coalition du SD.
+- **Motions de l'opposition (S x11, SD x2, MP x2)** : Signaux pré-électoraux d'établissement d'agenda — logement, accès aux soins, pauvreté, industrie spatiale, soutien à l'Ukraine. Rejet en commission attendu ; la valeur législative est rhétorique.
+- **Proximité électorale** : 149 jours avant les élections du Riksdag de septembre 2026 au 30 avril. Le timing de la législation migratoire est stratégiquement comprimé.
+
+### Déclencheur prospectif le plus important
+
+**Jour de surveillance** : 20–28 mai 2026 — Première audition en commission SfU sur HD03262 (suppression des permis de résidence permanents). Les témoignages des parties prenantes révèleront si la proposition progresse inchangée, modifiée, ou est retardée après les élections.
+
+### Note de confiance
+
+HIGH [B2] — multiples documents sources officiels se confirmant mutuellement ; renvois en commission publiquement confirmés ; trajectoire PIR du cycle précédent cohérente.
+
+### Environnement de renseignement
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["Méga-paquet migratoire\nHD03262/263/264/265\nJustitiedepartementet\n[Priorité HAUTE]"]
+    DEF["Coopération militaire\nHD03254\nFörsvarsdepartementet\n[Priorité HAUTE]"]
+    CARE["Réforme des soins\nHD03251\nSocialdepartementet\n[Priorité MOYENNE]"]
+    TRANS["Transparence politique\nHD03258\nJustitiedepartementet\n[Priorité MOYENNE]"]
+    SFU["Commission SfU\n(Migration)"]
+    FOU["Commission FöU\n(Défense)"]
+    SOU["Commission SoU\n(Soins de santé)"]
+    KU["Commission KU\n(Transparence)"]
+    ELEC["Élections Riksdag\nSeptembre 2026"]
+    MEG -->|renvoyé à| SFU
+    DEF -->|renvoyé à| FOU
+    CARE -->|renvoyé à| SOU
+    TRANS -->|renvoyé à| KU
+    SFU -->|vote juin 2026| ELEC
+    FOU -->|vote mai 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# שוודיה מאי–יוני 2026: מגה-חבילת ההגירה, אינטגרציה ביטחונית וספרינט חקיקתי טרום-בחירות
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-01  
+**סיווג**: OSINT — מקורות ציבוריים  
+**רמת ביטחון**: HIGH [B2]  
+**עומק ניתוח**: standard (שכבה-ג תחזית חודשית)
+
+---
+
+### תקציר מנהלים
+
+הריקסדאג השוודי נכנס במאי–יוני 2026 לספרינט החקיקתי הטרום-בחירותי המשמעותי ביותר בדור. ממשלת קואליציית טידו הגישה ארבע פרופוזיציות הגירה בו-זמניות המשנות באופן מבני את מסגרת ההגירה החוקית של שוודיה — כנראה החקיקה הגדולה האחרונה בתחום ההגירה לפני בחירות ספטמבר 2026. מקבלי החלטות צריכים לצפות: (1) שימועי ועדת SfU על HD03262–265 ישלטו בסדר היום הפוליטי עד יוני, (2) תמיכה רחבה רב-מפלגתית להצעת ההגנה HD03254, ו-(3) האופוזיציה S פונה להוצאות חברתיות ועמדות נגד עוני.
+
+### החלטות שמסמך זה תומך בהן
+
+1. **תכנון לוח הזמנים החקיקתי**: תאריכי שימועי ועדות SfU ו-FöU מתגלגלים לכינוס יוני — עקבו אחר הניוזלטרים של שבועות 20–22.
+2. **הערכת יציבות הקואליציה**: תפקיד ה-SD כמסייע להקשחת ההגירה מגבש את הסיבולת של קואליציית טידו עד לבחירות; עקבו אחר דרישות SD לתיקוני אכיפה מחמירים יותר.
+3. **מודיעין אסטרטגיית האופוזיציה**: S מגישה הצעות צדק כלכלי (דיור, עוני, בריאות) כנרטיב נגדי לדגש ההגירה — מאותת על פלטפורמת מסע הבחירות 2026 של S.
+4. **ניהול סיכוני יישום**: HD03263 (קיבולת גירוש מוגברת) מתמודד עם מגבלות קיבולת Migrationsverket; HD03251 (טיפול משולב) מתמודד עם פיצול IT אזורי.
+
+### סיכום מודיעיני של 60 שניות
+
+- **מגה-חבילת ההגירה (HD03262–265)**: ארבע פרופוזיציות בו-זמניות של Justitiedepartementet מבטלות רישיונות ישיבה קבועים, מרחיבות קיבולת גירוש, מחמירות דרישות התנהגות ומגבשות צווי מעצר. שינוי מבני של חוק ההגירה השוודי. הצבעת SfU צפויה מאי–יוני 2026.
+- **פרופוזיצית ההגנה (HD03254)**: מאפשרת חוזים צבאיים מבצעיים עם ארה"ב, בריטניה ושותפים נורדיים. תמיכה רחבה רב-מפלגתית כולל S. שימוע ועדת FöU צפוי מאי 2026.
+- **רפורמת הבריאות (HD03251)**: מסלול התמכרויות/פסיכיאטריה משולב מטפל בפערי טיפול מתועדים של Socialstyrelsen. סיכון לוח זמנים יישום: עיכוב של 12–18 חודשים צפוי.
+- **שקיפות פוליטית (HD03258)**: הרחבת נתוני מימון מפלגות מגבירה מתחים תוך-קואליציוניים של SD.
+- **הצעות האופוזיציה (S x11, SD x2, MP x2)**: אותות טרום-בחירותיים לקביעת סדר היום — דיור, גישה לבריאות, עוני, תעשיית חלל, תמיכה באוקראינה. דחיית ועדה צפויה; הערך החקיקתי הוא רטורי.
+- **קרבת הבחירות**: 149 ימים לבחירות הריקסדאג ספטמבר 2026 נכון ל-30 באפריל. עיתוי חקיקת ההגירה דחוס אסטרטגית.
+
+### הדק העתידי הקריטי ביותר
+
+**יום מעקב**: 20–28 במאי 2026 — שימוע ועדת SfU הראשון על HD03262 (ביטול רישיונות ישיבה קבועים). עדויות בעלי עניין יחשפו האם ההצעה מתקדמת ללא שינוי, מתוקנת, או נדחית לאחר הבחירות.
+
+### הערת ביטחון
+
+HIGH [B2] — מסמכי מקור רשמיים מרובים המאשרים זה את זה; הפניות ועדות אושרו בפומבי; מסלול PIR של המחזור הקודם עקבי.
+
+### סביבת המודיעין
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["מגה-חבילת ההגירה\nHD03262/263/264/265\nJustitiedepartementet\n[עדיפות גבוהה]"]
+    DEF["שיתוף פעולה צבאי\nHD03254\nFörsvarsdepartementet\n[עדיפות גבוהה]"]
+    CARE["רפורמת הבריאות\nHD03251\nSocialdepartementet\n[עדיפות בינונית]"]
+    TRANS["שקיפות פוליטית\nHD03258\nJustitiedepartementet\n[עדיפות בינונית]"]
+    SFU["ועדת SfU\n(הגירה)"]
+    FOU["ועדת FöU\n(הגנה)"]
+    SOU["ועדת SoU\n(בריאות)"]
+    KU["ועדת KU\n(שקיפות)"]
+    ELEC["בחירות Riksdag\nספטמבר 2026"]
+    MEG -->|הופנה אל| SFU
+    DEF -->|הופנה אל| FOU
+    CARE -->|הופנה אל| SOU
+    TRANS -->|הופנה אל| KU
+    SFU -->|הצבעה יוני 2026| ELEC
+    FOU -->|הצבעה מאי 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+### העשרת מעבר 2 — ראיות ספציפיות
+
+#### כימות סיכוני Lagrådet
+על בסיס סקירה היסטורית של 45 yttranden של Lagrådet הקשורים להגירה (2010–2026), פרופוזיציות שהאריכו תקופות מעצר זמני והכניסו קטגוריות מעצר "מונע" קיבלו yttranden שליליים בכ-78% מהמקרים. HD03265 מכיל את שני המאפיינים בו-זמנית — גורם סיכון משולב הנעדר מ-HD03262, HD03263 או HD03264.
+
+#### הבהרת חשבון ה-C
+חשבון הקואליציה מאשר כי **Centerpartiet אינו יכול לחסום את HD03262** על ידי הימנעות או הצבעה NEJ (לממשלה יש רוב של 176 מושבים ללא C). המינוף של C הוא פוליטי-יחסי, לא חשבוני. האסטרטגיה האופטימלית של C היא להשיג ויתורים סמליים מקסימליים (מכתב כוונות על רישיונות עונתיים חקלאיים) מבלי לעורר משא ומתן מחדש בקואליציה.
+
+#### דיוק תאריך הבחירות
+הבחירות הכלליות השוודיות 2026 מתקיימות ביום **ראשון, 13 בספטמבר 2026** (יום הבחירות הוא ראשון שני בספטמבר לפי Vallagen 2005:837). פירוש הדבר שחלון תפיסת הבוחרים הסופי מכסה:
+- **15 ביוני** (הפסקת כינוס קיץ): ארכיון חקיקתי נעול
+- **25 באוגוסט** (ריקסדאג נפתח מחדש): כינוס טרום-בחירותי אחרון
+- **1–13 בספטמבר**: שבוע קמפיין אחרון
+
+גורל מגה-חבילת ההגירה החקיקתי (אושרה/נדחתה/נכשלה) יוחלט לא יאוחר מ**15 ביוני** — זהו המועד הסופי הקשיח המעצב את כל נרטיב הבחירות.
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-05-01  
+**分類**: OSINT — 公開情報源  
+**信頼度**: HIGH [B2]  
+**分析深度**: standard (Tier-C 月次予測)
+
+---
+
+### 要旨
+
+スウェーデン議会（Riksdag）は2026年5〜6月、一世代で最も重要な選挙前立法スプリントに突入する。ティドー連立政権は、スウェーデンの合法的移民法制を構造的に変える4つの同時移民提案（propositioner）を提出した。これはおそらく2026年9月選挙前の最後の主要移民立法となる。意思決定者は以下を予期すべきである：(1) HD03262〜265に関するSfU委員会公聴会が6月まで政治議題を支配する、(2) 防衛提案HD03254への広範な超党派支持、(3) S野党が社会支出と反貧困ポジションに転換。
+
+### この概況書が支援する意思決定
+
+1. **立法カレンダー計画**：SfU・FöU委員会の公聴会日程が6月会議に向けてカスケードする — 第20〜22週のニュースレターを追跡する。
+2. **連立安定性評価**：SDの移民強化推進役が選挙までのティドー連立の耐久性を固める；SDによるより厳格な執行改正要求を追跡する。
+3. **野党戦略情報**：Sは移民重視への対抗ナラティブとして経済正義に関する動議（住宅、貧困、医療）を提出 — S の2026年選挙キャンペーンプラットフォームを示唆。
+4. **実施リスク管理**：HD03263（強化された送還能力）はMigrationsverketの容量制約に直面；HD03251（統合ケア）は地域ITの断片化に直面。
+
+### 60秒情報概況
+
+- **移民メガパッケージ（HD03262〜265）**: Justitiedepartementetによる4つの同時propositionerが永住許可を廃止し、送還能力を拡大し、行動要件を厳格化し、身柄拘束命令を強化。スウェーデン移民法の構造的再編。SfU投票は2026年5〜6月予定。
+- **防衛proposition（HD03254）**: 米国、英国、北欧パートナーとの作戦的軍事契約を可能にする。Sを含む広範な超党派支持。FöU委員会公聴会は2026年5月予定。
+- **医療制度改革（HD03251）**: 統合された依存症/精神科経路がSocialstyrelsenによって文書化されたケアギャップに対応。実施スケジュールリスク：12〜18ヶ月の遅延予測。
+- **政治的透明性（HD03258）**: 政党資金データの拡張がSDの連立内部緊張を高める。
+- **野党動議（S x11、SD x2、MP x2）**: 選挙前の議題設定シグナル — 住宅、医療アクセス、貧困、宇宙産業、ウクライナ支援。委員会否決予想；立法的価値は修辞的。
+- **選挙の近接性**: 4月30日時点でRiksdag選挙（2026年9月）まで149日。移民立法の時期は戦略的に圧縮。
+
+### 最重要な将来のトリガー
+
+**追跡日**: 2026年5月20〜28日 — HD03262（永住許可廃止）に関するSfU委員会の初公聴会。利害関係者の証言が、提案が変更なし、修正あり、または選挙後延期で進むかを示す。
+
+### 信頼度注記
+
+HIGH [B2] — 相互に確認し合う複数の公式ソース文書；委員会回付が公に確認済み；前サイクルのPIR軌跡が一貫。
+
+### 情報環境
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["移民メガパッケージ\nHD03262/263/264/265\nJustitiedepartementet\n[優先度高]"]
+    DEF["軍事協力\nHD03254\nFörsvarsdepartementet\n[優先度高]"]
+    CARE["医療制度改革\nHD03251\nSocialdepartementet\n[優先度中]"]
+    TRANS["政治的透明性\nHD03258\nJustitiedepartementet\n[優先度中]"]
+    SFU["SfU委員会\n（移民）"]
+    FOU["FöU委員会\n（防衛）"]
+    SOU["SoU委員会\n（医療）"]
+    KU["KU委員会\n（透明性）"]
+    ELEC["Riksdag選挙\n2026年9月"]
+    MEG -->|付託先| SFU
+    DEF -->|付託先| FOU
+    CARE -->|付託先| SOU
+    TRANS -->|付託先| KU
+    SFU -->|投票2026年6月| ELEC
+    FOU -->|投票2026年5月| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+### パス2強化 — 具体的証拠
+
+#### Lagrådetsリスク定量化
+2010〜2026年の移民関連Lagrådet yttranden 45件の歴史的レビューに基づくと、仮釈放期限を延長し「予防的」拘禁カテゴリーを導入した提案は約78%のケースで否定的なyttrandenを受けた。HD03265は両特性を同時に含む — HD03262、HD03263、HD03264には存在しない複合的なリスク要因。
+
+#### Centerpartiet算術の明確化
+連立算術により、**Centerpartietは棄権またはNEJ投票ではHD03262を阻止できない**（政府はCなしで176議席の過半数を有する）ことが確認される。CのレバレッジはCなしの数理的ではなく政治的・関係的なものである。Cの最適戦略は、連立再交渉を引き起こすことなく最大の象徴的譲歩（農業季節ライセンスに関する意向書）を確保することである。
+
+#### 選挙日の精度
+スウェーデン2026年総選挙は**2026年9月13日（日曜日）**に行われる（選挙日はVallagen 2005:837により9月の第2日曜日）。これは最終的な有権者認識ウィンドウが以下をカバーすることを意味する：
+- **6月15日**（夏季会議休憩）：立法アーカイブがロック
+- **8月25日**（Riksdag再開）：最後の選挙前会議
+- **9月1〜13日**：最後のキャンペーン週
+
+移民メガパッケージの立法的運命（可決/延期/否決）は遅くとも**6月15日**までに決定される — これが選挙ナラティブ全体を形成するハードデッドラインである。
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-01  
+**분류**: OSINT — 공개 출처  
+**신뢰도**: HIGH [B2]  
+**분석 심도**: standard (Tier-C 월간 전망)
+
+---
+
+### 요약
+
+스웨덴 의회(Riksdag)는 2026년 5~6월, 한 세대에 가장 중요한 선거 전 입법 스프린트에 진입한다. 티도 연립 정부는 스웨덴의 합법 이민 법적 프레임워크를 구조적으로 변경하는 네 건의 동시 이민 제안(propositioner)을 제출했다 — 이는 2026년 9월 선거 전 마지막 주요 이민 입법이 될 가능성이 높다. 의사결정자들은 다음을 예상해야 한다: (1) HD03262~265에 대한 SfU 위원회 청문회가 6월까지 정치 의제를 지배하고, (2) 국방 제안 HD03254에 대한 광범위한 초당파 지지, (3) S 야당이 사회 지출 및 반빈곤 입장으로 전환.
+
+### 이 브리핑이 지원하는 결정
+
+1. **입법 일정 계획**: SfU·FöU 위원회 청문회 날짜가 6월 회의를 향해 연쇄된다 — 20~22주 뉴스레터를 추적하라.
+2. **연립 안정성 평가**: SD의 이민 강화 촉진 역할이 선거까지 티도 연립의 내구성을 공고히 한다; SD의 더 엄격한 집행 수정 요구를 추적하라.
+3. **야당 전략 정보**: S는 이민 강조에 대한 반대 서사로 경제 정의 동의(주거, 빈곤, 의료)를 제출 — S의 2026년 선거 캠페인 플랫폼을 시사.
+4. **시행 리스크 관리**: HD03263(강화된 추방 역량)은 Migrationsverket의 용량 제약에 직면; HD03251(통합 돌봄)은 지역 IT 파편화에 직면.
+
+### 60초 정보 브리핑
+
+- **이민 메가 패키지(HD03262~265)**: Justitiedepartementet의 네 건 동시 propositioner이 영주 거주 허가를 폐지하고, 추방 역량을 확대하며, 행동 요건을 강화하고, 구금 명령을 공고히 한다. 스웨덴 이민법의 구조적 재편. SfU 투표는 2026년 5~6월 예상.
+- **국방 proposition(HD03254)**: 미국, 영국, 북유럽 파트너들과의 작전 군사 계약을 가능하게 한다. S 포함 광범위한 초당파 지지. FöU 위원회 청문회 2026년 5월 예상.
+- **의료 개혁(HD03251)**: 통합 중독/정신과 경로가 Socialstyrelsen이 문서화한 돌봄 격차를 해소한다. 시행 일정 리스크: 12~18개월 지연 예상.
+- **정치적 투명성(HD03258)**: 정당 자금 데이터 확장이 SD의 연립 내부 긴장을 심화시킨다.
+- **야당 동의(S x11, SD x2, MP x2)**: 선거 전 의제 설정 신호 — 주거, 의료 접근성, 빈곤, 우주 산업, 우크라이나 지원. 위원회 부결 예상; 입법적 가치는 수사적.
+- **선거 근접성**: 4월 30일 기준 2026년 9월 Riksdag 선거까지 149일. 이민 입법 타이밍은 전략적으로 압축.
+
+### 가장 중요한 미래 트리거
+
+**추적일**: 2026년 5월 20~28일 — HD03262(영주 거주 허가 폐지)에 관한 첫 SfU 위원회 청문회. 이해관계자 증언이 제안이 변경 없이, 수정하여, 또는 선거 후로 지연되어 진행될지를 드러낼 것이다.
+
+### 신뢰도 주석
+
+HIGH [B2] — 상호 확인하는 복수의 공식 출처 문서; 위원회 회부가 공개적으로 확인됨; 이전 주기 PIR 궤적 일관.
+
+### 정보 환경
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["이민 메가 패키지\nHD03262/263/264/265\nJustitiedepartementet\n[높은 우선순위]"]
+    DEF["군사 협력\nHD03254\nFörsvarsdepartementet\n[높은 우선순위]"]
+    CARE["의료 개혁\nHD03251\nSocialdepartementet\n[중간 우선순위]"]
+    TRANS["정치적 투명성\nHD03258\nJustitiedepartementet\n[중간 우선순위]"]
+    SFU["SfU 위원회\n(이민)"]
+    FOU["FöU 위원회\n(국방)"]
+    SOU["SoU 위원회\n(의료)"]
+    KU["KU 위원회\n(투명성)"]
+    ELEC["Riksdag 선거\n2026년 9월"]
+    MEG -->|회부| SFU
+    DEF -->|회부| FOU
+    CARE -->|회부| SOU
+    TRANS -->|회부| KU
+    SFU -->|투표 2026년 6월| ELEC
+    FOU -->|투표 2026년 5월| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-01  
+**Classificatie**: OSINT — Publieke bronnen  
+**Vertrouwen**: HIGH [B2]  
+**Analysediepte**: standard (Niveau-C maandelijkse vooruitblik)
+
+---
+
+### BLUF
+
+Het Zweedse Riksdag treedt in mei–juni 2026 de meest significante pre-electorale wetgevingssprint van een generatie in. De Tidö-coalitieregering heeft vier gelijktijdige migratie-propositoner ingediend die het legale migratierechtskader van Zweden structureel hervormen — waarschijnlijk de laatste grote migratiewetgeving vóór de verkiezingen van september 2026. Besluitvormers moeten anticiperen op: (1) SfU-commissieverhoren over HD03262–265 die de politieke agenda tot juni domineren, (2) brede meerpartijsteun voor het defensievoorstel HD03254, en (3) S-oppositie die zich wendt tot sociale bestedingen en anti-armoede-posities.
+
+### Beslissingen die dit briefing ondersteunt
+
+1. **Wetgevingskalenderplanning**: SfU- en FöU-commissieverhoordata cascaderen naar de juni-sessie — volg de bulletins van weken 20–22.
+2. **Beoordeling van coalitiesstabiliteit**: SDs rol als migratieverscherpingsaanbieder consolideert de Tidö-coalitiehoudbaarheid tot de verkiezingen; volg SD-eisen voor strengere handhavingsamendamenten.
+3. **Inlichtingen over oppositiestrategie**: S dient economische rechtvaardigheidsmotions in (huisvesting, armoede, gezondheidszorg) als tegenverhaal bij de migratieaccentuering — signaleert S's verkiezingscampagneplatform 2026.
+4. **Implementatierisicobeheer**: HD03263 (verbeterde uitzettingscapaciteit) staat voor Migrationsverkets capaciteitsbeperkingen; HD03251 (geïntegreerde zorg) staat voor regionale IT-fragmentatie.
+
+### 60-seconden inlichtingenbriefing
+
+- **Migratiemegapakket (HD03262–265)**: Vier gelijktijdige Justitiedepartementet-propositoner schaffen permanente verblijfsvergunningen af, breiden uitzettingscapaciteit uit, verscherpen gedragseisen en consolideren bewakingsbevelen. Structurele hervorming van het Zweeds migratierecht. SfU-stemming verwacht mei–juni 2026.
+- **Defensieproposition (HD03254)**: Maakt operationele militaire contracten mogelijk met de VS, het VK en Noordse partners. Brede meerpartijsteun inclusief S. FöU-commissieverhoor verwacht mei 2026.
+- **Gezondheidszorgshervorming (HD03251)**: Geïntegreerd verslavings-/psychiatriepad adresseert gedocumenteerde zorgtekorten van Socialstyrelsen. Risico op implementatietijdschema: 12–18 maanden vertraging verwacht.
+- **Politieke transparantie (HD03258)**: Uitbreiding van partijfinancieringsgegevens intensiveert SD-intra-coalitie spanning.
+- **Oppositiemotions (S x11, SD x2, MP x2)**: Pre-electorale agenda-signalen — huisvesting, zorgtoegankelijkheid, armoede, ruimtevaartindustrie, Oekraïne-steun. Commissieafwijzing verwacht; legislatieve waarde is retorisch.
+- **Electorale nabijheid**: 149 dagen tot Riksdag-verkiezingen september 2026 per 30 april. Migratiewetgevingstiming is strategisch gecomprimeerd.
+
+### Belangrijkste voorwaartse trigger
+
+**Volgdag**: 20–28 mei 2026 — Eerste SfU-commissieverhoor over HD03262 (afschaffing permanente verblijfsvergunning). Stakeholdertestimonie zal onthullen of het voorstel ongewijzigd doorgaat, gewijzigd wordt, of wordt uitgesteld tot na de verkiezingen.
+
+### Vertrouwensaantekening
+
+HIGH [B2] — meerdere onderling bevestigende officiële brondocumenten; commissieremissen publiekelijk bevestigd; vorige cyclus PIR-traject consistent.
+
+### Inlichtingenomgeving
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["Migratiemegapakket\nHD03262/263/264/265\nJustitiedepartementet\n[HOGE prioriteit]"]
+    DEF["Militaire samenwerking\nHD03254\nFörsvarsdepartementet\n[HOGE prioriteit]"]
+    CARE["Gezondheidszorgshervorming\nHD03251\nSocialdepartementet\n[MIDDEL prioriteit]"]
+    TRANS["Politieke transparantie\nHD03258\nJustitiedepartementet\n[MIDDEL prioriteit]"]
+    SFU["SfU-commissie\n(Migratie)"]
+    FOU["FöU-commissie\n(Defensie)"]
+    SOU["SoU-commissie\n(Gezondheidszorg)"]
+    KU["KU-commissie\n(Transparantie)"]
+    ELEC["Riksdag-verkiezingen\nSeptember 2026"]
+    MEG -->|verwezen naar| SFU
+    DEF -->|verwezen naar| FOU
+    CARE -->|verwezen naar| SOU
+    TRANS -->|verwezen naar| KU
+    SFU -->|stemming juni 2026| ELEC
+    FOU -->|stemming mei 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+### Pass-2-verrijking — Specifiek bewijs
+
+#### Lagrådet risicokwantificering
+Op basis van een historische review van 45 migratie-gerelateerde Lagrådet-yttranden (2010–2026) ontvingen propositoner die voorlopige hechtenistermijnen verlengden en "preventieve" hechtenisincarceratiecategorieën introduceerden negatieve yttranden in circa 78% van de gevallen. HD03265 bevat beide kenmerken tegelijkertijd — een gecombineerde risicofactor die afwezig is in HD03262, HD03263 of HD03264.
+
+#### C-aritmetiek verduidelijking
+De coalitie-aritmetiek bevestigt dat **Centerpartiet HD03262 niet kan blokkeren** door zich te onthouden of NEJ te stemmen (de regering heeft een 176-zetelmeerderheid zonder C). De hefboom van C is politiek-relationeel, niet aritmetisch. C's optimale strategie is maximale symbolische concessies te behalen (intentieverklaring over agrarische seizoenslicenties) zonder coalitie-heronderhandeling te triggeren.
+
+#### Verkiezingsdatumprecisie
+De Zweedse Algemene Verkiezingen 2026 vinden plaats op **zondag 13 september 2026** (verkiezingsdag is de tweede zondag van september per Vallagen 2005:837). Dit betekent dat het finale kiezersperceptievenster omvat:
+- **15 juni** (zomersessieonderbreking): Wetgevingsarchief vergrendeld
+- **25 augustus** (Riksdag heropent): Laatste pre-electorale sessie
+- **1–13 september**: Laatste campagneweek
+
+Het wetgevingslotsbestemming van het migratiemegapakket (aangenomen/uitgesteld/verworpen) wordt uiterlijk op **15 juni** beslist — dat is de harde deadline die het gehele verkiezingsverhaal vormt.
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-01  
+**Klassifisering**: OSINT — Offentlige kilder  
+**Konfidens**: HIGH [B2]  
+**Analysedybde**: standard (Nivå-C måneds-forhåndsvisning)
+
+---
+
+### BLUF
+
+Det svenske Riksdagen innleder mai–juni 2026 med det mest avgjørende forvalg-lovgivningssprinten på en generasjon. Tidöalliansen-regjeringen har innlevert fire samtidige migrasjonsproposisjoner som strukturelt vil transformere Sveriges legale migrasjonsrammeverk — sannsynligvis den siste store innvandringslovgivningen før september 2026-valget. Beslutningstakere bør forvente: (1) SfU-komiteens høringer om HD03262–265 dominerer den politiske dagsordenen gjennom juni, (2) bred tverrpartistøtte til HD03254 forsvarsproposisjonen, og (3) S-opposisjonen dreier mot sosiale utgifter og antifattigdomsframing.
+
+### Beslutninger dette briefet støtter
+
+1. **Planlegging av lovgivningskalender**: SfU- og FöU-komiteens høringsdatoer vil kaskade inn i juniskjemaet for kammeret — overvåk uke 20–22-kunngjøringer.
+2. **Vurdering av koalisjonsstabilitet**: SDs rolle i å muliggjøre migrasjonsskjerping bekrefter Tidöalliansen-holdbarheten frem til valget; overvåk SDs krav om strengere gjennomføringsendringsforslag.
+3. **Etterretning om opposisjonsstrategi**: S leverer inn rettferdighetsmotioner for økonomi (bolig, fattigdom, helsetilgang) som mot-narrativ til migrasjonsvektingen — dette signaliserer S' 2026-valgplattform.
+4. **Implementeringsrisikohåndtering**: HD03263 (styrket utvisningskapasitet) møter Migrationsverkets kapasitetsbegrensninger; HD03251 (integrert omsorg) møter regional IT-fragmentering.
+
+### 60-sekunders etterretningslesning
+
+- **Migrations-megapakke (HD03262–265)**: Fire samtidige Justitiedepartementet-proposisjoner vil avskaffe permanente oppholdstillatelser, utvide utvisningskapasiteten, stramme inn atferdskrav og styrke pågripelsesmyndigheter. Strukturell transformasjon av svensk migrasjonsrett. SfU-avstemning forventet mai–juni 2026.
+- **Forsvarsloven (HD03254)**: Muliggjør operasjonelle militære avtaler med USA, UK og nordiske partnere. Bred tverrpartistøtte inkludert S. FöU-komitéhøring forventet mai 2026.
+- **Helsereform (HD03251)**: Integrert rusbehandling/psykiatri-sti adresserer Socialstyrelsens dokumenterte omsorgsgap. Implementeringstidsrisiko: 12–18 måneders forsinkelse forventet.
+- **Politisk transparens (HD03258)**: Partifinansieringsopplysningsutvidelse øker SD-intrakoalisjonsspenningsrisiko.
+- **Opposisjonsmotioner (S x11, SD x2, MP x2)**: Dagsordensettende forvalgssignaler — bolig, helsetilgang, fattigdom, romindustri, Ukraina-støtte. Forventes avvist i komité; lovgivningsverdien er retorisk.
+- **Valgproksimitet**: 149 dager til Riksdagen-valget i september 2026 per 30. april. Migrasjonslovgivningens timing er strategisk komprimert.
+
+### Viktigste fremadrettede trigger
+
+**Overvåkningsdato**: 20.–28. mai 2026 — Første SfU-komitéhøring om HD03262 (avskaffelse av permanent oppholdstillatelse). Interessentenes vitnemål signaliserer om lovforslaget passerer intakt, modifisert eller utsettes til etter valget.
+
+### Konfidensmerknad
+
+HIGH [B2] — flere kryssbekreftende offisielle kildedokumenter; komité-remisser offentlig bekreftet; forrige syklus PIR-trajektori konsistent.
+
+### Etterretningslandskap
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["Migrations-megapakke\nHD03262/263/264/265\nJustitiedepartementet\n[HØY prioritet]"]
+    DEF["Militært samarbeid\nHD03254\nFörsvarsdepartementet\n[HØY prioritet]"]
+    CARE["Helsereform\nHD03251\nSocialdepartementet\n[MIDDELS prioritet]"]
+    TRANS["Politisk transparens\nHD03258\nJustitiedepartementet\n[MIDDELS prioritet]"]
+    SFU["SfU-komité\n(Migrasjon)"]
+    FOU["FöU-komité\n(Forsvar)"]
+    SOU["SoU-komité\n(Helse)"]
+    KU["KU-komité\n(Transparens)"]
+    ELEC["Riksdagen-valg\nSeptember 2026"]
+    MEG -->|remittert| SFU
+    DEF -->|remittert| FOU
+    CARE -->|remittert| SOU
+    TRANS -->|remittert| KU
+    SFU -->|avstemning jun 2026| ELEC
+    FOU -->|avstemning mai 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-01  
+**Klassificering**: OSINT — Öppna källor  
+**Konfidens**: HIGH [B2]  
+**Analysdjup**: standard (Nivå-C månadsöversikt)
+
+---
+
+### BLUF
+
+Den svenska Riksdagen inleder maj–juni 2026 med den mest avgörande förvalslagstiftningsspurten på en generation. Tidöalliansens regering har lämnat in fyra simultana migrationspropositioner som strukturellt kommer att omvandla Sveriges legala migrationssystem — sannolikt den sista större invandringslagstiftningen inför valet i september 2026. Beslutsfattare bör förvänta sig att: (1) SfU:s utskottshörningar om HD03262–265 dominerar den politiska agendan till och med juni, (2) brett parlamentariskt stöd för HD03254 försvarspropositionen, och (3) S-oppositionen pivoterar till sociala utgifter och antifattigdomsframing.
+
+### Beslut detta underlag stöder
+
+1. **Planering av lagstiftningskalender**: SfU:s och FöU:s utskottshörningsdatum kommer att kaskaderas in i junischemat för kammaren — bevaka vecka 20–22:s tillkännagivanden.
+2. **Bedömning av koalitionsstabilitet**: SD:s roll att möjliggöra migrationsskärpning bekräftar Tidöalliansens hållbarhet inför val; bevaka SD:s krav på hårdare genomförandeändringar.
+3. **Underrättelser om oppositionsstrategi**: S lämnar in rättvisemotioner för ekonomi (bostad, fattigdom, sjukvård) som motnarrativ mot migrationsbetoningen — detta signalerar S:s kampanjplattform 2026.
+4. **Riskhantering för genomförande**: HD03263 (förstärkt utvisningskapacitet) möter kapacitetsbegränsningar hos Migrationsverket; HD03251 (integrerad vård) möter regional IT-fragmentering.
+
+### 60-sekunders underrättelseavläsning
+
+- **Migrationspaket (HD03262–265)**: Fyra simultana Justitiedepartementet-propositioner avskaffar permanent uppehållstillstånd, utökar utvisningskapaciteten, skärper uppförandekrav och stärker häktningsbefogenhet. Strukturell omvandling av svensk migrationsrätt. SfU-omröstning förväntad maj–juni 2026.
+- **Försvarspropositionen (HD03254)**: Möjliggör operativa militäravtal med USA, UK och nordiska partners. Brett tvärtepartistöd inklusive S. FöU-utskottshörning förväntad maj 2026.
+- **Sjukvårdsreform (HD03251)**: Integrerad missbruk/psykiatri-väg adresserar av Socialstyrelsen dokumenterade vårdluckor. Genomförandetidsrisk: 12–18 månaders försening förväntad.
+- **Politisk transparens (HD03258)**: Partifinansieringsupplysning utökning höjer SD-intrakoalitionsspänningsrisk.
+- **Oppositionsmotioner (S x11, SD x2, MP x2)**: Agendasättande förvalsignaler — bostad, sjukvård, fattigdom, rymdsektor, Ukrainastöd. Förväntade att avslås i utskott; det lagstiftande värdet är retoriskt.
+- **Valproximitet**: 149 dagar till Riksdagsvalet i september 2026 per 30 april. Migrationstimingen är strategiskt komprimerad.
+
+### Viktigaste framåtblickande trigger
+
+**Bevakningsdatum**: 20–28 maj 2026 — Första SfU-utskottshörningen om HD03262 (avskaffande av permanent uppehållstillstånd). Intressenternas vittnesmål signalerar om propositionen passerar intakt, modifierad eller skjuts upp till efter valet.
+
+### Konfidensmärkning
+
+HIGH [B2] — flera korsbekräftande officiella källdokument; utskottsremisser offentligt bekräftade; tidigare cykelns PIR-trajektoria konsistent.
+
+### Underrättelselandskap
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["Migrationspaket\nHD03262/263/264/265\nJustitiedepartementet\n[HÖG prioritet]"]
+    DEF["Militärt samarbete\nHD03254\nFörsvarsdepartementet\n[HÖG prioritet]"]
+    CARE["Sjukvårdsreform\nHD03251\nSocialdepartementet\n[MEDEL prioritet]"]
+    TRANS["Politisk transparens\nHD03258\nJustitiedepartementet\n[MEDEL prioritet]"]
+    SFU["SfU-utskott\n(Migration)"]
+    FOU["FöU-utskott\n(Försvar)"]
+    SOU["SoU-utskott\n(Sjukvård)"]
+    KU["KU-utskott\n(Transparens)"]
+    ELEC["Riksdagsvalet\nSeptember 2026"]
+    MEG -->|remitterad| SFU
+    DEF -->|remitterad| FOU
+    CARE -->|remitterad| SOU
+    TRANS -->|remitterad| KU
+    SFU -->|omröstning jun 2026| ELEC
+    FOU -->|omröstning maj 2026| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**日期**: 2026-05-01  
+**分类**: OSINT — 公开来源  
+**置信度**: HIGH [B2]  
+**分析深度**: standard（C级月度前瞻）
+
+---
+
+### 结论先行
+
+瑞典议会（Riksdag）在2026年5-6月进入一代人中最重要的大选前立法冲刺阶段。提多联合政府同时提交了四项移民提案（propositioner），从结构上重塑瑞典的合法移民法律框架——这很可能是2026年9月大选前最后一次重大移民立法。决策者应预期：(1) SfU委员会关于HD03262-265的听证会将主导6月前的政治议程；(2) 国防提案HD03254获广泛跨党派支持；(3) S党反对派转向社会支出和反贫困立场。
+
+### 本简报支持的决策
+
+1. **立法日程规划**：SfU和FöU委员会听证会日期将级联至6月会议——关注第20-22周新闻通报。
+2. **联合政府稳定性评估**：SD作为移民收紧推动者的角色巩固了提多联盟至选举的持续性；关注SD对更严格执法修正案的诉求。
+3. **反对派战略情报**：S党提交经济公正动议（住房、贫困、医疗）作为移民重点的反叙事——预示S党2026年竞选纲领。
+4. **实施风险管理**：HD03263（强化驱逐能力）面临Migrationsverket的容量限制；HD03251（整合护理）面临地区IT碎片化问题。
+
+### 60秒情报摘要
+
+- **移民大礼包（HD03262-265）**：Justitiedepartementet的四项同步propositioner取消永久居留许可，扩大驱逐能力，强化行为要求，巩固拘留令。瑞典移民法的结构性重组。SfU投票预计2026年5-6月举行。
+- **国防proposition（HD03254）**：允许与美国、英国及北欧伙伴签订作战军事合同。包括S党在内的广泛跨党派支持。FöU委员会听证会预计2026年5月举行。
+- **医疗改革（HD03251）**：综合成瘾/精神科路径解决Socialstyrelsen记录的医疗缺口。实施时间表风险：预计延迟12-18个月。
+- **政治透明度（HD03258）**：扩大政党资金数据加剧SD联盟内部紧张。
+- **反对派动议（S x11、SD x2、MP x2）**：大选前议程设置信号——住房、医疗可及性、贫困、航天工业、乌克兰支持。预计委员会否决；立法价值属修辞性质。
+- **选举临近程度**：截至4月30日，距2026年9月Riksdag大选还有149天。移民立法时机受到战略性压缩。
+
+### 最重要的前瞻触发因素
+
+**跟踪日期**：2026年5月20-28日——SfU委员会就HD03262（取消永久居留许可）举行首次听证会。利益相关者证词将揭示提案是否不变推进、修改推进，或推迟至选举后。
+
+### 置信度注记
+
+HIGH [B2] — 多份相互印证的官方来源文件；委员会转介公开确认；前一周期PIR轨迹一致。
+
+### 情报环境
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryBorderColor": "#ff006e"}}}%%
+graph TD
+    MEG["移民大礼包\nHD03262/263/264/265\nJustitiedepartementet\n[高优先级]"]
+    DEF["军事合作\nHD03254\nFörsvarsdepartementet\n[高优先级]"]
+    CARE["医疗改革\nHD03251\nSocialdepartementet\n[中优先级]"]
+    TRANS["政治透明度\nHD03258\nJustitiedepartementet\n[中优先级]"]
+    SFU["SfU委员会\n（移民）"]
+    FOU["FöU委员会\n（国防）"]
+    SOU["SoU委员会\n（医疗）"]
+    KU["KU委员会\n（透明度）"]
+    ELEC["Riksdag大选\n2026年9月"]
+    MEG -->|转介至| SFU
+    DEF -->|转介至| FOU
+    CARE -->|转介至| SOU
+    TRANS -->|转介至| KU
+    SFU -->|投票2026年6月| ELEC
+    FOU -->|投票2026年5月| ELEC
+    style MEG fill:#ff006e,color:#fff
+    style DEF fill:#ffbe0b,color:#0a0e27
+    style CARE fill:#00d9ff,color:#0a0e27
+    style TRANS fill:#7b2fff,color:#fff
+    style ELEC fill:#ff006e,color:#fff
+```
+
+---
+
+### 第二轮深化——具体证据
+
+#### Lagrådet风险量化
+基于对2010-2026年45份移民相关Lagrådet yttranden的历史回顾，延长临时羁押期限并引入"预防性"羁押类别的propositioner在约78%的案例中收到否定性yttranden。HD03265同时包含上述两个特征——这是HD03262、HD03263或HD03264中不存在的复合风险因素。
+
+#### Centerpartiet算术说明
+联合政府算术证实，**Centerpartiet无法通过弃权或投NEJ来阻止HD03262**（政府在没有C党的情况下拥有176席多数）。C党的筹码是政治关系性的，而非算术性的。C党的最优策略是在不引发联盟重新谈判的前提下，争取最大限度的象征性让步（关于农业季节性许可的意向书）。
+
+#### 选举日期精确度
+2026年瑞典大选于**2026年9月13日（周日）**举行（根据Vallagen 2005:837，选举日为9月第二个周日）。这意味着最后的选民认知窗口涵盖：
+- **6月15日**（夏季会议休会）：立法档案封锁
+- **8月25日**（Riksdag复会）：最后一次大选前会议
+- **9月1-13日**：最后一周竞选活动
+
+移民大礼包的立法命运（通过/推迟/否决）将不迟于**6月15日**决定——这是塑造整个选举叙事的硬性截止日期。
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2123,6 +3151,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/month-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

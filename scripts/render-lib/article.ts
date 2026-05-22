@@ -30,6 +30,7 @@
  */
 
 import matter from 'gray-matter';
+import path from 'path';
 
 import type { Language } from '../types/language.js';
 import { LANGUAGE_META, escapeHtml } from '../sitemap-html/index.js';
@@ -72,6 +73,52 @@ export interface RenderArticleInput {
   readonly subfolderRepoRelPath?: string;
   /** Ordered list of artifacts used (shown in the footer). */
   readonly artifactsUsed?: readonly string[];
+}
+
+function canonicalizeMarkdownHrefTarget(
+  href: string,
+  subfolderRepoRelPath: string | undefined,
+): string {
+  const [pathPart, anchor] = href.split('#', 2) as [string, string | undefined];
+  if (!pathPart) return href;
+
+  const withAnchor = (base: string): string => (anchor ? `${base}#${anchor}` : base);
+  const toBlobHref = (repoRelativePath: string): string =>
+    withAnchor(buildGithubBlobUrl(repoRelativePath.replace(/^\/+/, '')));
+
+  if (/^(#|mailto:)/i.test(href)) return href;
+
+  const rawGithubMatch = pathPart.match(
+    /^https:\/\/raw\.githubusercontent\.com\/Hack23\/riksdagsmonitor\/(?:main|master)\/(.+\.md)$/i,
+  );
+  if (rawGithubMatch?.[1]) return toBlobHref(rawGithubMatch[1]);
+
+  const githubFileMatch = pathPart.match(
+    /^https:\/\/github\.com\/Hack23\/riksdagsmonitor\/(?:blob|tree)\/(?:main|master)\/(.+\.md)$/i,
+  );
+  if (githubFileMatch?.[1]) return toBlobHref(githubFileMatch[1]);
+
+  if (/^https?:\/\//i.test(pathPart)) return href;
+
+  const analysisPathMatch = pathPart.match(/^(?:\.\/|\.\.\/)*\/?(analysis\/.+\.md)$/i);
+  if (analysisPathMatch?.[1]) return toBlobHref(analysisPathMatch[1]);
+
+  if (!subfolderRepoRelPath) return href;
+
+  const resolved = path.posix.normalize(path.posix.join(subfolderRepoRelPath, pathPart));
+  if (resolved.startsWith('..')) return href;
+  return toBlobHref(resolved);
+}
+
+export function rewriteMarkdownHrefsInHtml(
+  bodyHtml: string,
+  subfolderRepoRelPath: string | undefined,
+): string {
+  return bodyHtml.replace(
+    /(<a\b[^>]*\bhref=)(['"])([^"']+\.md(?:#[^"']*)?)(\2)/gi,
+    (_match, before: string, quote: string, href: string) =>
+      `${before}${quote}${canonicalizeMarkdownHrefTarget(href, subfolderRepoRelPath)}${quote}`,
+  );
 }
 
 /**
@@ -248,7 +295,10 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
 
   const cleanedContent = stripBodyDuplicateSections(parsed.content);
 
-  const bodyHtml = await renderMarkdownToHtml(cleanedContent);
+  const bodyHtml = rewriteMarkdownHrefsInHtml(
+    await renderMarkdownToHtml(cleanedContent),
+    input.subfolderRepoRelPath,
+  );
 
   const { lead: leadHtml, rest: restHtml } = splitBodyAtSecondH2(bodyHtml);
 

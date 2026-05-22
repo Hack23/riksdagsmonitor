@@ -6,7 +6,7 @@ date: 2026-05-01
 subfolder: committeeReports
 slug: 2026-05-01-committeeReports
 source_folder: analysis/daily/2026-05-01/committeeReports
-generated_at: 2026-05-21T02:19:50.788Z
+generated_at: 2026-05-22T12:25:06.205Z
 language: en
 layout: article
 ---
@@ -96,6 +96,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1913,13 +1926,799 @@ HC01FiU33 (extra ändringsbudget) — budget bill; Lagrådet review not statutor
 
 No prior PIR files found in last 14 days for committeeReports. Starting fresh PIR cycle.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_ar.md -->
+
+<!-- rtl -->
+# تقارير لجان الريكسداغ: المسار الاقتصادي للسويد، وضوابط الهجرة، والاستعداد الدفاعي — الأسبوع الأخير 2024/25
+
+### الخلاصة التنفيذية
+
+أسفر الأسبوع الأخير من دورة ريكسمؤته 2024/25 عن حزمة لافتة من تقارير اللجان التي تُشكّل معاً الإطار الاقتصادي السويدي للفترة 2025–2026: أيّدت لجنة المالية التوسع المالي الحذر للحكومة في مواجهة رياح الحرب التجارية المعاكسة، وأقرّت ضخّ رأسمال طارئ بقيمة 700 مليون كرونة سويدية لشركة APL الصيدلانية الحكومية لصون أمن الدواء في أوقات الأزمات والحروب، وأكّدت حسن أداء السياسة النقدية لبنك ريكسبانك عام 2024 مع حثّه على تسريع تطبيع أسعار الفائدة، كما أجازت لجنة الشؤون الاجتماعية برنامج بطاقة أوقات الفراغ المبتكر (HC01SoU29) لتوسيع وصول أكثر من 400 ألف طفل إلى الأنشطة. وفي الوقت ذاته، وسّعت لجنة الأمن الاجتماعي والهجرة (SfU) الصلاحيات القسرية في مراكز احتجاز المهاجرين. تشير هذه التقارير مجتمعةً إلى: حكومة تُعلي الاستعداد للدفاع الشامل إلى جانب استثمارات اجتماعية محدودة، في ظل هوامش مالية ضيّقة ومخاطر جانب العرض المتصاعدة بفعل التصعيد الجمركي الأمريكي.
+
+### القرارات التي تدعمها هذه الوثيقة
+
+1. **التموضع الاقتصادي الكلي**: السويد في مرحلة **تعافٍ دون الاتجاه** (نمو الناتج المحلي +1,0 % عام 2024، بطالة متصاعدة)؛ مصادقة لجنة المالية على الإطار الاقتصادي للحكومة تُشير إلى استمرار التضخم الانعكاسي الحذر دون ارتفاع حرارة الطلب. ينبغي على المستثمرين والمحللين وصانعي السياسات خصم التفاؤل السابق للرسوم الجمركية.
+2. **مشتريات الدفاع والصناعة الدوائية**: ضخّ رأسمال APL (700 مليون كرونة، HC01FiU33) يؤكد أن السويد تبني بنشاط مخزوناً دوائياً لسيناريوهات الحرب — إشارة جوهرية لسياسة الصناعة الدفاعية الشمالية.
+3. **تقاطع الهجرة والأمن**: يوسّع HC01SfU22 صلاحيات ميغراتيونسفيركيت القسرية في مراكز الاحتجاز (التفتيش الجسدي، تفتيش الغرف، حواجز زجاجية خلال الزيارات). وهو تعديل تشريعي حساس بموجب الاتفاقية الأوروبية لحقوق الإنسان مع مخاطر تنفيذ.
+4. **تطبيع ريكسبانك**: تقييم لجنة المالية (HC01FiU24) يدعم استمرار خفض الفائدة، لكنه يُنبّه إلى الاعتماد المفرط على نمذجة سعر الصرف — ذو صلة بتوقعات الكرونة السويدية SEK.
+
+### نقاط الاستخبارات في 60 ثانية
+
+- 🔴 **HC01FiU20**: وافق الريكسداغ على توجهات السياسة الاقتصادية. يتباطأ النمو جراء الرسوم الجمركية الأمريكية؛ الدورة الانكماشية مستمرة. ثلاثة محاور: دعم الأسر، سوق العمل، النمو والاستثمار.
+- 🔴 **HC01FiU33**: 700 مليون كرونة لـ APL لإنتاج أدوية طارئ — إشارة استعداد للحرب؛ أُقرَّ بغالبية حكومية.
+- 🟠 **HC01SfU22**: تحصل ميغراتيونسفيركيت على صلاحيات التفتيش الجسدي وتفتيش الغرف في الاحتجاز؛ حواجز زجاجية جديدة في غرف الزيارات؛ سارٍ من 1 أغسطس 2025. مخاطر التوافق مع الاتفاقية الأوروبية لحقوق الإنسان.
+- 🟡 **HC01FiU24**: تقييم سياسة ريكسبانك 2024 بـ"sammantaget god"؛ تنتقد اللجنة الاعتماد المفرط على نمذجة سعر الصرف؛ تدعم تحسينات الشفافية.
+- 🟡 **HC01SoU29**: بطاقة أوقات الفراغ للأطفال. تديرها هيئة الصحة الإلكترونية E-hälsomyndigheten. مخاطر التنفيذ: نظام معلوماتي جديد، انتشار واسع النطاق.
+- 🟢 **HC01KU22**: رفضت لجنة KU مقترح الحكومة بإعادة تصنيف تمويل أمن المجتمع المدني (تحويل نطاق الإنفاق) — هُزمت الحكومة في مسألة هيكلية في الميزانية.
+
+### المحفّز الرئيسي المستقبلي
+
+إذا أفضت التدابير القسرية في مراكز الاحتجاز بموجب HC01SfU22 إلى شكوى لدى المحكمة الأوروبية لحقوق الإنسان أو طعن المحاكم السويدية في أساسها الدستوري (RF 2:8 بشأن الحرية الشخصية)، فسيرتفع المستوى من إصلاح إداري إلى مواجهة دستورية. متابعة حالة الإحالة إلى Lagrådet وآراء تفتيش JO خلال الفترة Q3 2025 – Q1 2026.
+
+### ملخص الثقة
+
+مستوى الثقة التحليلي الكلي: **HIGH [B2]** — مصادر أولية عالية الجودة (betänkanden من الريكسداغ، قرارات لجان مسمّاة، نتائج التصويت)؛ التوقعات الاقتصادية مختومة بتقديرات WEO أبريل 2026 لصندوق النقد الدولي؛ بعض الانقسامات الحزبية تستوجب التحقق من بيانات التصويت الإضافية.
+
+### مخطط ميرميد: تدفق القرارات الرئيسية
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_da.md -->
+
+### BLUF
+
+Riksdagens slutuge af riksmötet 2024/25 producerede en klynge af konsekvente udvalgsrapporter, der tilsammen definerer Sveriges økonomiske ramme for 2025–2026: Finansudvalget godkendte regeringens forsigtige finanspolitiske ekspansion midt i handelskrigens modvind, godkendte en nødkapitalindsprøjtning på 700 MSEK til det statsejede lægemiddelselskab APL for at sikre sig mod forstyrrelser i medicin­leverancerne i krise/krigstid, bekræftede Riksbankens pengepolitiske resultater i 2024 med opfordring til hurtigere rentenormalisering, og Socialudvalget godkendte et banebrydende fritidskortprogram (HC01SoU29), der udvider aktivitetsadgangen for 400.000+ børn. Sideløbende udvidede SfU (Social­forsikrings-/Migrationsudvalget) tvangsbeføjelserne ved immigrationsfængsler. Disse rapporter signalerer samlet: en regering, der prioriterer totalforsvarsberedskab sideløbende med begrænsede sociale investeringer, og som håndterer snævre finanspolitiske råderum, mens udbudsrisici fra amerikanske toldforhøjelser materialiserer sig.
+
+### Beslutninger som dette underlag understøtter
+
+1. **Makroøkonomisk positionering**: Sverige befinder sig i en **undertrendsmæssig genopretning** (BNP +1,0 % 2024, stigende ledighed); Finansudvalgets godkendelse af regeringens økonomiske ramme signalerer fortsat forsigtig reflation, men intet efterspørgselsboom. Investorer, analytikere og beslutningstagere bør rabattere pre-told-optimisme.
+2. **Forsvars-/lægemiddelindkøb**: APL-kapitalindsprøjtning (700 MSEK, HC01FiU33) bekræfter, at Sverige aktivt opbygger medicinlagerkapacitet til krigstidsscenarier — et materielt signal for nordisk forsvarsindustriel politik.
+3. **Migrations-sikkerhedsneksus**: HC01SfU22 udvider Migrationsverkets tvangsbeføjelser ved tilbageholdelsescentre (kropsvisitation, rumsvisitation, glaspartitioner ved besøg). Dette er en betydelig ECHR-sensitiv lovgivningsudvidelse med implementeringsrisiko.
+4. **Riksbanksnormalisering**: FiU's evaluering (HC01FiU24) støtter fortsat rentenedsættelser, men markerer Riksbankens overafhængighed af valutakursmodellering — relevant for SEK-prognoser.
+
+### 60-sekunders efterretningspunkter
+
+- 🔴 **HC01FiU20**: Riksdagen godkendte retningslinjer for økonomisk politik. Væksten bremsas af amerikanske toldsatser; lågkonjunktur forlænges. Tre søjler: husholdningsstøtte, arbejdsmarked, vækst/investering.
+- 🔴 **HC01FiU33**: 700 MSEK til APL til nødproduktion af medicin — krigsberedskabssignal; vedtaget med regeringsflertal.
+- 🟠 **HC01SfU22**: Migrationsverket får kropsvisitations- og rumsvisitationsbeføjelser ved tilbageholdelse; nye glaspartitioner i besøgsrum; gælder fra 1. august 2025. ECHR-overholdelses­risiko.
+- 🟡 **HC01FiU24**: Riksbankens politik i 2024 vurderes som "sammantaget god"; FiU kritiserer overafhængighed af valutakursmodellering; støtter transparensforbedringer.
+- 🟡 **HC01SoU29**: Fritidskort til børn. E-hälsomyndigheten administrerer. Implementeringsrisiko: nyt IT-system, stor befolkningsudrulning.
+- 🟢 **HC01KU22**: KU afviste regeringens forslag om at omklassificere civilsamfundets sikkerhedsfinansiering (udgiftsområdeflytning) — regeringen led nederlag på et strukturelt budgetspørgsmål.
+
+### Top fremadudløser
+
+Hvis HC01SfU22's tvangsforanstaltninger ved tilbageholdelse udløser en ECHR-klage, eller svenske domstole anfægter det konstitutionelle grundlag (RF 2:8 om personlig frihed), vil dette eskalere fra en administrativ reform til en konstitutionel konfrontation. Overvåg Lagrådets høringstatus og Justitieombudsmannens (JO) inspektionsmeddelelser Q3 2025 – Q1 2026.
+
+### Sikkerhedssammenfatning
+
+Samlet analytisk sikkerhed: **HIGH [B2]** — primære kilder (Riksdagens betænkninger, navngivne udvalgsbeslutninger, afstemningsresultater) er af høj kvalitet; økonomiske prognoser er stemplet med IMF WEO april 2026-vintage; nogle partiopsplitninger kræver validering med yderligere stemmeregistreringer.
+
+### Mermaid: Nøglebeslutningsflow
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_de.md -->
+
+### BLUF
+
+Die Schlusswoche des Riksmöte 2024/25 brachte eine Reihe folgenreicher Ausschussberichte hervor, die zusammen den schwedischen Wirtschaftsrahmen für 2025–2026 definieren: Der Finanzausschuss befürwortete die vorsichtige Haushaltserweiterung der Regierung inmitten der Handelskriegswiderstände, genehmigte eine Notkapitalspritze von 700 MSEK für den staatseigenen Pharmahersteller APL zur Absicherung gegen Medikamentenlieferausfälle in Krisen-/Kriegszeiten, bescheinigte der Riksbank eine gute Geldpolitik 2024 unter Forderung nach rascherer Normalisierung, und der Sozialausschuss verabschiedete ein wegweisendes Freizeitkarteuprogramm (HC01SoU29) für 400.000+ Kinder. Gleichzeitig erweiterte der SfU (Sozialversicherungs-/Migrationsausschuss) die Zwangsbefugnisse in Migrationsabschiebezentren. Diese Berichte signalisieren insgesamt: eine Regierung, die Gesamtverteidigungsbereitschaft neben begrenzten sozialen Investitionen priorisiert und enge Haushaltsspielräume managt, während sich Angebotsrisiken durch US-Zollerhöhungen materialisieren.
+
+### Entscheidungen, die dieses Dokument unterstützt
+
+1. **Makroökonomische Positionierung**: Schweden befindet sich in einer **Erholung unter Trendniveau** (BIP +1,0 % 2024, steigende Arbeitslosigkeit); die Zustimmung des Finanzausschusses zum Wirtschaftsrahmen der Regierung signalisiert eine anhaltende vorsichtige Reflation, aber keinen Nachfrageboom. Investoren, Analysten und Entscheidungsträger sollten vor-Zoll-Optimismus diskontieren.
+2. **Verteidigungs-/Pharmabeschaffung**: APL-Kapitalspritze (700 MSEK, HC01FiU33) bestätigt, dass Schweden aktiv Medikamentenlagerkapazitäten für Kriegsszenarien aufbaut — ein materielles Signal für die nordische Verteidigungsindustriepolitik.
+3. **Migrations-Sicherheitsnexus**: HC01SfU22 erweitert die Zwangsbefugnisse von Migrationsverket in Abschiebezentren (Körpervisitation, Raumvisitation, Glastrennwände für Besuche). Dies ist eine erhebliche EGMR-sensible Gesetzgebungsausweitung mit Umsetzungsrisiko.
+4. **Riksbank-Normalisierung**: Die Bewertung des FiU (HC01FiU24) unterstützt weitere Zinssenkungen, flaggt aber die Überabhängigkeit der Riksbank von Wechselkursmodellen — relevant für SEK-Prognosen.
+
+### 60-Sekunden-Nachrichten
+
+- 🔴 **HC01FiU20**: Riksdagen verabschiedete wirtschaftspolitische Leitlinien. Wachstum bremst sich durch US-Zölle; Konjunkturtief verlängert sich. Drei Säulen: Haushaltsstützung, Arbeitsmarkt, Wachstum/Investitionen.
+- 🔴 **HC01FiU33**: 700 MSEK an APL für Notfallmedikamentenproduktion — Kriegsvorbereitungssignal; verabschiedet mit Regierungsmehrheit.
+- 🟠 **HC01SfU22**: Migrationsverket erhält Körper- und Raumvisitationsbefugnisse in Abschiebezentren; neue Glastrennwände in Besuchsräumen; wirksam ab 1. August 2025. EGMR-Konformitätsrisiko.
+- 🟡 **HC01FiU24**: Riksbanks Politik 2024 als "sammantaget god" bewertet; FiU kritisiert Überabhängigkeit von Wechselkursmodellierung; unterstützt Transparenzverbesserungen.
+- 🟡 **HC01SoU29**: Freizeitkarte für Kinder. E-hälsomyndigheten verwaltet. Umsetzungsrisiko: neues IT-System, große Bevölkerungsrollout.
+- 🟢 **HC01KU22**: KU lehnte den Regierungsvorschlag zur Umklassifizierung der Zivilgesellschafts-Sicherheitsfinanzierung ab (Ausgabenbereichsverschiebung) — Regierung unterlag in einer strukturellen Haushaltsfrage.
+
+### Wichtigster Vorwärtsauslöser
+
+Wenn HC01SfU22-Zwangsmaßnahmen in Abschiebezentren eine EGMR-Klage auslösen oder schwedische Gerichte die Verfassungsgrundlage (RF 2:8 zur persönlichen Freiheit) anfechten, eskaliert dies von einer Verwaltungsreform zu einer Verfassungskonfrontation. Lagrådet-Verweisungsstatus und JO-Inspektionsmitteilungen Q3 2025 – Q1 2026 beobachten.
+
+### Konfidenzübersicht
+
+Gesamtanalytisches Vertrauen: **HIGH [B2]** — Primärquellen (Riksdag-Ausschussberichte, benannte Ausschussentscheidungen, Abstimmungsergebnisse) von hoher Qualität; Wirtschaftsprognosen mit IMF-WEO-April-2026-Vintage gestempelt; einige Parteiaufteilungen erfordern Validierung mit weiteren Abstimmungsprotokollen.
+
+### Mermaid: Wichtiger Entscheidungsfluss
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_es.md -->
+
+### BLUF
+
+La última semana del riksmöte 2024/25 produjo un conjunto de informes de comisiones con consecuencias notables que, en conjunto, definen el marco económico de Suecia para 2025–2026: la Comisión de Finanzas refrendó la expansión presupuestaria prudente del gobierno ante los vientos en contra de la guerra comercial, aprobó una inyección de capital de emergencia de 700 MSEK para el fabricante farmacéutico estatal APL con el fin de protegerse contra las perturbaciones del suministro de medicamentos en crisis/guerra, confirmó el buen desempeño de la política monetaria del Riksbank en 2024 al tiempo que lo instaba a acelerar la normalización de los tipos, y la Comisión de Asuntos Sociales aprobó un innovador programa de tarjeta de ocio (HC01SoU29) que amplía el acceso a actividades para más de 400 000 niños. Simultáneamente, la SfU (Comisión de Seguridad Social/Migración) amplió los poderes coercitivos en los centros de detención de migrantes. Estos informes señalan colectivamente: un gobierno que prioriza la preparación para la defensa total junto con inversiones sociales limitadas, gestionando márgenes fiscales estrechos mientras se materializan los riesgos de oferta derivados de la escalada arancelaria estadounidense.
+
+### Decisiones que este documento apoya
+
+1. **Posicionamiento macroeconómico**: Suecia está en una **recuperación por debajo de la tendencia** (PIB +1,0 % 2024, desempleo en aumento); el respaldo de la Comisión de Finanzas al marco económico del gobierno señala una reflación cautelosa continuada, pero sin sobrecalentamiento de la demanda. Inversores, analistas y responsables de políticas deben descontar el optimismo previo a los aranceles.
+2. **Adquisiciones defensa/farmacia**: La inyección de capital a APL (700 MSEK, HC01FiU33) confirma que Suecia está constituyendo activamente reservas de medicamentos para escenarios de guerra — señal material para la política industrial de defensa nórdica.
+3. **Nexo migración-seguridad**: HC01SfU22 amplía los poderes coercitivos de Migrationsverket en los centros de detención (cacheos corporales, registros de habitaciones, mamparas de vidrio en las visitas). Se trata de una extensión legislativa sensible al CEDH con riesgo de implementación.
+4. **Normalización Riksbank**: La evaluación de la FiU (HC01FiU24) respalda la continuación de las bajadas de tipos, pero señala la dependencia excesiva del Riksbank en la modelización del tipo de cambio — relevante para las previsiones de la SEK.
+
+### Puntos de inteligencia en 60 segundos
+
+- 🔴 **HC01FiU20**: El Riksdagen aprobó las orientaciones de política económica. El crecimiento se ralentiza por los aranceles estadounidenses; la coyuntura baja se prolonga. Tres pilares: apoyo a los hogares, mercado laboral, crecimiento/inversión.
+- 🔴 **HC01FiU33**: 700 MSEK a APL para producción de emergencia de medicamentos — señal de preparación para la guerra; adoptado con mayoría gubernamental.
+- 🟠 **HC01SfU22**: Migrationsverket obtiene poderes de cacheo corporal y registro de habitaciones en detención; nuevas mamparas de vidrio en salas de visitas; en vigor desde el 1 de agosto de 2025. Riesgo de conformidad con el CEDH.
+- 🟡 **HC01FiU24**: La política 2024 del Riksbank evaluada como "sammantaget god"; la FiU critica la dependencia excesiva en la modelización del tipo de cambio; respalda mejoras de transparencia.
+- 🟡 **HC01SoU29**: Tarjeta de ocio para niños. E-hälsomyndigheten la gestiona. Riesgo de implementación: nuevo sistema informático, despliegue a gran escala.
+- 🟢 **HC01KU22**: La KU rechazó la propuesta del gobierno de reclasificar la financiación de seguridad de la sociedad civil (desplazamiento de dominio de gasto) — el gobierno fue derrotado en una cuestión presupuestaria estructural.
+
+### Principal catalizador prospectivo
+
+Si las medidas coercitivas en los centros de detención de HC01SfU22 desencadenan una denuncia ante el CEDH o los tribunales suecos impugnan la base constitucional (RF 2:8 sobre la libertad personal), esto escalará de una reforma administrativa a un enfrentamiento constitucional. Seguir el estado de la remisión al Lagrådet y los dictámenes de inspección del Justitieombudsmannen (JO) T3 2025 – T1 2026.
+
+### Resumen de confianza
+
+Confianza analítica global: **HIGH [B2]** — fuentes primarias (betänkanden del Riksdag, decisiones de comisiones nombradas, resultados de votaciones) de alta calidad; proyecciones económicas estampilladas con el vintage IMF WEO abril 2026; algunas divisiones partidistas requieren validación con datos adicionales de votación.
+
+### Mermaid: Flujo de decisiones clave
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_fi.md -->
+
+### BLUF
+
+Riksdagin riksmöten 2024/25 viimeinen viikko tuotti joukon merkittäviä valiokuntaraportteja, jotka yhdessä määrittävät Ruotsin taloudellisen kehyksen vuosille 2025–2026: Valtiovarainvaliokunta tuki hallituksen varovaista finanssipoliittista laajentumista kauppasodan vastaisessa tuulessa, hyväksyi hätäpääomainjektion 700 MSEK valtion omistamalle lääkevalmistaja APL:lle lääketoimitushäiriöiden varalle kriisi-/sotatilaan, vahvisti Riksbankin rahapoliittisen tuloksen vuodelta 2024 kehottaen nopeampaan korkonormalisointiin, ja Sosiaaliasioiden valiokunta hyväksyi merkittävän vapaa-aikakorttiohjelman (HC01SoU29), joka laajentaa 400 000+ lapsen aktiviteettimahdollisuuksia. Samanaikaisesti SfU (Sosiaaliturva-/Maahanmuuttovaliokunta) laajensi pakkotoimivaltuuksia maahanmuuttajien säilöönottokeskuksissa. Nämä raportit signaloivat yhteisesti: hallitusta, joka priorisoi kokonaismaanpuolustuksen valmiutta rajallisten sosiaalisten investointien rinnalla halliten tiukkaa finanssipoliittista liikkumavaraa, kun tarjontariskit Yhdysvaltojen tullien eskaloimisesta toteutuvat.
+
+### Päätökset, joita tämä analyysi tukee
+
+1. **Makrotaloudellinen asemointi**: Ruotsi on **trendin alittavassa elpymisessä** (BKT +1,0 % 2024, nouseva työttömyys); Valtiovarainvaliokunnan hyväksyntä hallituksen talouspoliittiselle kehykselle signaloi jatkuvaa varovaista reflatiota mutta ei kysyntäryntäystä. Sijoittajien, analyytikkojen ja päättäjien tulisi diskontata ennen-tullit-optimismia.
+2. **Puolustus-/lääkehankinta**: APL-pääomainjektion (700 MSEK, HC01FiU33) vahvistaa, että Ruotsi rakentaa aktiivisesti lääkevarastointikapasiteettia sotatilaskenaarioita varten — merkittävä signaali Pohjoismaiden puolustus­teollisuuden politiikalle.
+3. **Maahanmuutto-turvallisuusneksus**: HC01SfU22 laajentaa Migrationsverketin pakkokeinovaltuuksia säilöönottotiloissa (henkilötarkastukset, tilatarkastukset, lasipartitiojärjestelyt vierailuja varten). Tämä on merkittävä ECHR-herkkä lainsäädäntölaajennus, johon liittyy toimeenpanoriski.
+4. **Riksbank-normalisointi**: FiU:n arviointi (HC01FiU24) tukee jatkuvia koronlaskuja mutta liputtaa Riksbankin liiallisen riippuvuuden valuuttakurssimalleista — merkityksellinen SEK-ennustukselle.
+
+### 60 sekunnin tiedustelupisteet
+
+- 🔴 **HC01FiU20**: Riksdagen hyväksyi talouspolitiikan suuntaviivat. Kasvu hidastuu Yhdysvaltojen tullien takia; lågkonjunktur jatkuu. Kolme pilaria: kotitalouksien tuki, työmarkkinat, kasvu/investoinnit.
+- 🔴 **HC01FiU33**: 700 MSEK APL:lle hätälääkevalmistukseen — sotavalmiussignaali; hyväksyttiin hallitusenemmistöllä.
+- 🟠 **HC01SfU22**: Migrationsverket saa henkilötarkastus- ja tilatarkastusoikeudet säilöönottotiloissa; uudet lasipartitiot vierailutiloihin; voimaan 1. elokuuta 2025. ECHR-vaatimustenmukaisuusriski.
+- 🟡 **HC01FiU24**: Riksbankin 2024-politiikka arvioitu "sammantaget god"; FiU kritisoi liiallista riippuvuutta valuuttakurssi­mallinnuksesta; tukee läpinäkyvyysparannuksia.
+- 🟡 **HC01SoU29**: Fritidskort lapsille. E-hälsomyndigheten hallinnoi. Toimeenpanoriski: uusi IT-järjestelmä, laaja väestöllinen käyttöönotto.
+- 🟢 **HC01KU22**: KU hylkäsi hallituksen ehdotuksen kansalaisyhteiskunnan turvallisuusrahoituksen uudelleenluokittelusta (menoaluesiirto) — hallitus hävisi rakenteellisessa budjettikysymyksessä.
+
+### Tärkein tulevaisuuden laukaisija
+
+Jos HC01SfU22:n pakkokeinot säilöönottotiloissa laukaisevat ECHR-valituksen tai Ruotsin tuomioistuimet haastavat perustuslaillisen perustan (RF 2:8 henkilökohtaisesta vapaudesta), tämä eskaloi hallinnollisesta uudistuksesta perustuslailliseksi konfrontaatioksi. Seuraa Lagrådetin lausuntovaiheistusta sekä Justitieombudsmannin (JO) tarkastusilmoituksia Q3 2025 – Q1 2026.
+
+### Luottamustason yhteenveto
+
+Kokonaisanalyyttinen luottamus: **HIGH [B2]** — ensisijaiset lähteet (Riksdagenin betänkanden, nimetyt valiokuntapäätökset, äänestystulokset) ovat korkealaatuisia; taloudelliset ennusteet on leimattu IMF WEO huhtikuu 2026 -vintage-merkinnällä; jotkut puoluejakaumat vaativat validointia lisääänestysdatalla.
+
+### Mermaid: Keskeinen päätösvirtakaavio
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_fr.md -->
+
+### BLUF
+
+La dernière semaine du riksmöte 2024/25 a produit un ensemble de rapports de commissions aux conséquences notables qui, ensemble, définissent le cadre économique de la Suède pour 2025–2026 : la Commission des finances a entériné l'expansion budgétaire prudente du gouvernement face aux vents contraires de la guerre commerciale, approuvé une injection de capital d'urgence de 700 MSEK au profit du fabricant pharmaceutique d'État APL pour se prémunir contre les perturbations de l'approvisionnement en médicaments en cas de crise/guerre, confirmé la bonne performance de la politique monétaire de la Riksbank en 2024 en l'invitant à accélérer la normalisation des taux, et la Commission des affaires sociales a approuvé un programme novateur de carte de loisirs (HC01SoU29) élargissant l'accès aux activités pour plus de 400 000 enfants. Simultanément, la SfU (Commission de la sécurité sociale/migration) a élargi les pouvoirs coercitifs dans les centres de rétention pour migrants. Ces rapports signalent collectivement : un gouvernement qui priorise la préparation à la défense totale parallèlement à des investissements sociaux limités, gérant des marges budgétaires étroites alors que les risques du côté offre liés à l'escalade des tarifs américains se matérialisent.
+
+### Décisions que ce document appuie
+
+1. **Positionnement macroéconomique** : La Suède est dans une **reprise sous la tendance** (PIB +1,0 % 2024, chômage en hausse) ; l'endorsement du cadre économique du gouvernement par la Commission des finances signale une réflation prudente continuée, mais pas de surchauffe de la demande. Les investisseurs, analystes et décideurs devraient escompter l'optimisme pré-tarifs.
+2. **Acquisition défense/pharmacie** : L'injection de capital APL (700 MSEK, HC01FiU33) confirme que la Suède constitue activement des stocks de médicaments pour des scénarios de guerre — signal matériel pour la politique industrielle de défense nordique.
+3. **Nexus migration-sécurité** : HC01SfU22 élargit les pouvoirs coercitifs de Migrationsverket dans les centres de rétention (fouilles corporelles, fouilles de chambres, cloisons en verre pour les visites). Il s'agit d'une extension législative sensible à la CEDH avec un risque de mise en œuvre.
+4. **Normalisation Riksbank** : L'évaluation de la FiU (HC01FiU24) soutient la poursuite des baisses de taux, mais signale la dépendance excessive de la Riksbank à la modélisation des taux de change — pertinent pour les prévisions SEK.
+
+### Points de renseignement en 60 secondes
+
+- 🔴 **HC01FiU20** : Le Riksdagen a approuvé les orientations de politique économique. La croissance ralentit en raison des tarifs américains ; la conjoncture basse se prolonge. Trois piliers : soutien aux ménages, marché du travail, croissance/investissement.
+- 🔴 **HC01FiU33** : 700 MSEK à APL pour la production d'urgence de médicaments — signal de préparation à la guerre ; adopté avec la majorité gouvernementale.
+- 🟠 **HC01SfU22** : Migrationsverket obtient des pouvoirs de fouille corporelle et de chambre en rétention ; nouvelles cloisons en verre dans les salles de visite ; effectif au 1er août 2025. Risque de conformité à la CEDH.
+- 🟡 **HC01FiU24** : La politique 2024 de la Riksbank évaluée comme "sammantaget god" ; la FiU critique la dépendance excessive à la modélisation des taux de change ; soutient des améliorations de transparence.
+- 🟡 **HC01SoU29** : Carte de loisirs pour les enfants. E-hälsomyndigheten gère. Risque de mise en œuvre : nouveau système informatique, déploiement à grande échelle.
+- 🟢 **HC01KU22** : La KU a rejeté la proposition du gouvernement de reclassifier le financement de sécurité de la société civile (déplacement de domaine de dépenses) — le gouvernement a été battu sur une question budgétaire structurelle.
+
+### Principal déclencheur prospectif
+
+Si les mesures coercitives en rétention de HC01SfU22 déclenchent une plainte auprès de la CEDH ou si des tribunaux suédois contestent la base constitutionnelle (RF 2:8 sur la liberté personnelle), cela escalera d'une réforme administrative à une confrontation constitutionnelle. Surveiller le statut du renvoi au Lagrådet et les avis d'inspection du Justitieombudsmannen (JO) T3 2025 – T1 2026.
+
+### Résumé de confiance
+
+Confiance analytique globale : **HIGH [B2]** — sources primaires (betänkanden du Riksdag, décisions de commissions nommées, résultats de votes) de haute qualité ; projections économiques estampillées avec le millésime IMF WEO avril 2026 ; certaines divisions partisanes nécessitent validation avec des données de vote supplémentaires.
+
+### Mermaid : Flux de décision clé
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_he.md -->
+
+<!-- rtl -->
+# דוחות ועדות הריקסדאג: המסלול הכלכלי של שוודיה, פיקוח על הגירה והכנה לביטחון לאומי — השבוע האחרון 2024/25
+
+### סיכום מנהלים
+
+השבוע האחרון של ריקסמוטה 2024/25 הניב קבוצה בולטת של דוחות ועדות שמגדירים יחד את המסגרת הכלכלית של שוודיה לשנים 2025–2026: ועדת הכספים אישרה את ההרחבה התקציבית הזהירה של הממשלה מול רוחות הנגד של מלחמת הסחר, אישרה הזרמת הון חירום של 700 מיליון כ"ש ליצרן התרופות הממשלתי APL לשמירה על היצע התרופות בעת משבר/מלחמה, אישרה את ביצועי המדיניות המוניטרית של ריקסבנק ב-2024 תוך קריאה לזרז את נורמליזציית הריבית, וועדת הענינים החברתיים אישרה תוכנית חדשנית של "כרטיס פנאי" (HC01SoU29) המרחיבה גישה לפעילויות עבור יותר מ-400,000 ילדים. במקביל, הרחיבה ועדת הביטחון הסוציאלי/ההגירה (SfU) את סמכויות הכפייה במרכזי מעצר מהגרים. דוחות אלה מצביעים במשותף על: ממשלה המעדיפה היערכות לביטחון לאומי כולל לצד השקעות חברתיות מוגבלות, תוך ניהול מרווחים תקציביים צרים בזמן שמתגשמים סיכוני ההיצע מהסלמת המכסים האמריקאיים.
+
+### ההחלטות שמסמך זה תומך בהן
+
+1. **מיצוב מאקרו-כלכלי**: שוודיה נמצאת ב**התאוששות מתחת לטרנד** (תמ"ג +1.0% ב-2024, אבטלה עולה); אישור ועדת הכספים למסגרת הכלכלית של הממשלה מסמן המשך רפלציה זהירה, אך ללא התחממות יתר של הביקוש. משקיעים, אנליסטים וקובעי מדיניות צריכים לנכות את האופטימיות שקדמה למכסים.
+2. **רכש ביטחוני/תרופתי**: הזרמת ההון ל-APL (700 מיליון כ"ש, HC01FiU33) מאשרת שוודיה בונה אקטיבית מלאי תרופות לתרחישי מלחמה — אות מהותי למדיניות תעשיית הביטחון הסקנדינבית.
+3. **צומת הגירה-ביטחון**: HC01SfU22 מרחיב את סמכויות הכפייה של Migrationsverket במרכזי מעצר (חיפוש גופני, חיפוש חדרים, מחיצות זכוכית בביקורים). זהו הרחבת חקיקה הרגישה לאמנה האירופית לזכויות האדם עם סיכוני יישום.
+4. **נורמליזציית ריקסבנק**: הערכת ועדת הכספים (HC01FiU24) תומכת בהמשך הפחתות ריבית, אך מסמנת תלות יתר של ריקסבנק במידול שערי חליפין — רלוונטי לתחזיות ה-SEK.
+
+### נקודות מידע ב-60 שניות
+
+- 🔴 **HC01FiU20**: הריקסדאג אישר את קווי מדיניות הכלכלה. הצמיחה מאטה בגלל המכסים האמריקאיים; המיתון נמשך. שלושה עמודים: תמיכה במשקי בית, שוק עבודה, צמיחה/השקעות.
+- 🔴 **HC01FiU33**: 700 מיליון כ"ש ל-APL לייצור תרופות חירום — אות היערכות למלחמה; אושר ברוב ממשלתי.
+- 🟠 **HC01SfU22**: Migrationsverket מקבל סמכויות חיפוש גופני וחיפוש חדרים במעצר; מחיצות זכוכית חדשות בחדרי ביקורים; בתוקף מ-1 באוגוסט 2025. סיכון ציות לאמנה האירופית לזכויות האדם.
+- 🟡 **HC01FiU24**: מדיניות ריקסבנק 2024 הוערכה "sammantaget god"; ועדת הכספים מבקרת תלות יתר במידול שערי חליפין; תומכת בשיפורי שקיפות.
+- 🟡 **HC01SoU29**: כרטיס פנאי לילדים. E-hälsomyndigheten מנהלת. סיכון יישום: מערכת IT חדשה, פריסה רחבת היקף.
+- 🟢 **HC01KU22**: ועדת KU דחתה את הצעת הממשלה לסיווג מחדש של מימון ביטחון החברה האזרחית (העברת תחום הוצאה) — הממשלה הובסה בשאלה תקציבית מבנית.
+
+### המזרז המרכזי לעתיד
+
+אם אמצעות הכפייה במעצר של HC01SfU22 יעוררו תלונה לבית הדין האירופי לזכויות האדם או שבתי המשפט השוודיים יערערו על הבסיס החוקתי (RF 2:8 בנוגע לחירות האישית), זה יסלים מרפורמה מינהלית לעימות חוקתי. לעקוב אחר מצב ההפניה ל-Lagrådet וחוות הדעת של JO בין Q3 2025 ל-Q1 2026.
+
+### סיכום אמינות
+
+אמינות אנליטית כוללת: **HIGH [B2]** — מקורות ראשוניים (betänkanden של הריקסדאג, החלטות ועדות מוגדרות, תוצאות הצבעות) באיכות גבוהה; תחזיות כלכליות מתוייגות עם ויניטאג' IMF WEO אפריל 2026; חלק מהפילוגים המפלגתיים דורשים אימות עם נתוני הצבעה נוספים.
+
+### מדיאגרמת מרמייד: זרימת ההחלטות המרכזית
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_ja.md -->
+
+### 要点（BLUF）
+
+2024/25年度リクスメッテの最終週は、2025–2026年のスウェーデン経済枠組みを総体的に規定する注目すべき委員会報告書群を生み出した。財務委員会は、貿易戦争の逆風に直面した政府の慎重な財政拡大を承認し、危機・戦時の医薬品供給混乱を防ぐため国営製薬会社APLへの7億クローナの緊急資本注入を可決し、リクスバンクの2024年金融政策を評価した上で金利正常化の加速を促し、さらに社会問題委員会は40万人以上の子どもの活動アクセスを拡大する画期的な余暇カードプログラム（HC01SoU29）を可決した。同時に、社会保険・移民委員会（SfU）は移民収容施設における強制的権限を拡大した。これらの報告書は、アメリカの関税エスカレーションに伴う供給サイドリスクが顕在化する中、限られた財政余地を管理しながら、総合防衛準備態勢を優先しつつ限定的な社会投資を行う政府像を集約的に示している。
+
+### 本文書が支持する意思決定
+
+1. **マクロ経済的位置づけ**: スウェーデンは**トレンド未満の回復**局面（GDP +1.0% 2024年、失業率上昇）にある。財務委員会による政府経済枠組みの承認は、需要過熱を伴わない慎重な緩やかな回復傾向が継続することを示唆する。投資家・アナリスト・政策立案者は関税前の楽観論を割り引くべきである。
+2. **防衛・製薬調達**: APLへの資本注入（7億クローナ、HC01FiU33）は、スウェーデンが戦時シナリオに向けて医薬品備蓄を積極的に構築していることを確認するもの — 北欧の防衛産業政策にとって重要なシグナルである。
+3. **移民・安全保障の接点**: HC01SfU22はMigrationsverketの収容施設における強制権限（身体検査、居室捜索、面会時のガラス仕切り）を拡大する。これはECHRへの配慮が必要な立法拡張であり、実施上のリスクが伴う。
+4. **リクスバンク正常化**: 財務委員会評価（HC01FiU24）はさらなる利下げを支持するが、リクスバンクの為替レートモデリングへの過度な依存を指摘している — スウェーデンクローナSEK見通しに関連する。
+
+### 60秒でわかる情報ポイント
+
+- 🔴 **HC01FiU20**: リクスダーゲンが経済政策の方向性を承認。アメリカの関税により成長は鈍化。景気低迷局面が続く。3つの柱：家庭支援、労働市場、成長・投資。
+- 🔴 **HC01FiU33**: APLへ7億クローナ（緊急医薬品生産のため）— 戦時準備シグナル。与党多数で採択。
+- 🟠 **HC01SfU22**: Migrationsverketが収容施設での身体検査・居室捜索権限を取得。面会室に新たなガラス仕切り設置。2025年8月1日施行。ECHR適合リスクあり。
+- 🟡 **HC01FiU24**: リクスバンク2024年政策が「sammantaget god」と評価。財務委員会は為替レートモデリングへの過度な依存を批判。透明性向上を支持。
+- 🟡 **HC01SoU29**: 子ども向け余暇カード。E-hälsomyndigheten（電子保健庁）が管理。実施リスク：新ITシステム、大規模展開。
+- 🟢 **HC01KU22**: KU委員会が市民社会の安全保障資金の再分類に関する政府提案を否決（支出領域の移動）— 政府が構造的予算問題で敗北。
+
+### 主要な先行触媒
+
+HC01SfU22の収容施設における強制措置がECHRへの申し立てを誘発、またはスウェーデン裁判所が憲法的根拠（RF 2:8個人の自由に関する条項）に異議を申し立てた場合、行政改革から憲法的対立へとエスカレートする可能性がある。ラーグローデットへの付託状況とJO（法務監察官）の2025年Q3–2026年Q1の監査意見を追跡すること。
+
+### 信頼性の要約
+
+全体的な分析上の信頼性：**HIGH [B2]** — 高品質な一次資料（国会のbetänkanden、指名委員会の決定、投票結果）。経済予測はIMF WEO 2026年4月版でスタンプ済み。一部の政党内分裂は追加の投票データで検証が必要。
+
+### マーメイド図：主要意思決定フロー
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_ko.md -->
+
+### 핵심 요약(BLUF)
+
+2024/25년도 릭스메테의 마지막 주는 2025–2026년 스웨덴 경제 프레임워크를 총체적으로 규정하는 주목할 만한 위원회 보고서 묶음을 생산했다. 재정위원회는 무역 전쟁 역풍에 맞선 정부의 신중한 재정 확대를 승인하고, 위기·전시 시 의약품 공급 차질을 막기 위해 국영 제약사 APL에 7억 크로나의 긴급 자본 주입을 승인했으며, 릭스방크의 2024년 통화정책이 양호했음을 확인하면서 금리 정상화 가속을 촉구했다. 또한 사회문제위원회는 40만 명 이상의 어린이 활동 접근성을 넓히는 혁신적인 여가 카드 프로그램(HC01SoU29)을 승인했다. 동시에 사회보험·이민위원회(SfU)는 이민자 수용 시설의 강제 권한을 확대했다. 이 보고서들은 집합적으로 다음을 시사한다: 미국 관세 에스컬레이션으로 인한 공급 측 리스크가 현실화되는 가운데, 좁은 재정 여유를 관리하면서 총체적 국방 준비태세를 우선시하고 제한적 사회 투자를 병행하는 정부.
+
+### 이 문서가 지원하는 의사결정
+
+1. **거시경제적 위치 설정**: 스웨덴은 **추세 이하 회복** 국면(GDP +1.0% 2024, 실업률 상승)에 있다. 재정위원회의 정부 경제 프레임워크 승인은 수요 과열 없이 신중한 완만한 회복이 지속됨을 시사한다. 투자자·애널리스트·정책 입안자는 관세 전 낙관론을 할인해야 한다.
+2. **국방·제약 조달**: APL 자본 주입(7억 크로나, HC01FiU33)은 스웨덴이 전시 시나리오를 위해 적극적으로 의약품 비축물을 구축 중임을 확인한다 — 북유럽 방위 산업 정책에 대한 중요한 신호다.
+3. **이민-안보 넥서스**: HC01SfU22는 수용 시설에서 Migrationsverket의 강제 권한(신체 수색, 방 수색, 면회 시 유리 칸막이)을 확대한다. 이것은 유럽인권협약에 민감한 입법 확대로 이행 리스크가 있다.
+4. **릭스방크 정상화**: 재정위원회 평가(HC01FiU24)는 추가 금리 인하를 지지하지만 릭스방크의 환율 모델링 과다 의존을 지적한다 — SEK 전망에 관련된다.
+
+### 60초 인텔리전스 포인트
+
+- 🔴 **HC01FiU20**: 릭스다겐이 경제정책 방향을 승인. 미국 관세로 성장 둔화. 경기 침체 국면 지속. 3대 축: 가계 지원, 노동시장, 성장·투자.
+- 🔴 **HC01FiU33**: APL에 7억 크로나(긴급 의약품 생산) — 전시 준비 신호. 여당 과반으로 채택.
+- 🟠 **HC01SfU22**: Migrationsverket이 수용 시설 신체 수색·방 수색 권한 획득. 면회실 유리 칸막이 신설. 2025년 8월 1일 발효. 유럽인권협약 준수 리스크.
+- 🟡 **HC01FiU24**: 릭스방크 2024년 정책 "sammantaget god" 평가. 재정위원회는 환율 모델링 과다 의존 비판. 투명성 개선 지지.
+- 🟡 **HC01SoU29**: 아동 여가 카드. E-hälsomyndigheten 관리. 이행 리스크: 새 IT 시스템, 대규모 배포.
+- 🟢 **HC01KU22**: KU위원회가 시민사회 보안 자금 재분류에 관한 정부 제안 부결(지출 영역 이전) — 정부가 구조적 예산 문제에서 패배.
+
+### 주요 전향적 촉매제
+
+HC01SfU22의 수용 시설 강제 조치가 유럽인권법원에 제소를 유발하거나 스웨덴 법원이 헌법적 근거(RF 2:8 개인 자유 조항)에 이의를 제기할 경우, 행정 개혁에서 헌법적 대결로 에스컬레이션된다. 라그로오데트 회부 상태와 JO 감사 의견 2025년 Q3–2026년 Q1을 추적할 것.
+
+### 신뢰도 요약
+
+전체 분석 신뢰도: **HIGH [B2]** — 고품질 1차 자료(국회 betänkanden, 지명 위원회 결정, 투표 결과). 경제 전망은 IMF WEO 2026년 4월 빈티지로 스탬프됨. 일부 정당 내 분열은 추가 투표 데이터로 검증 필요.
+
+### 머메이드 다이어그램: 핵심 의사결정 흐름
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_nl.md -->
+
+### BLUF
+
+De laatste week van het riksmöte 2024/25 leverde een opmerkelijk pakket commissierapporten op dat samen het economische kader van Zweden voor 2025–2026 definieert: de Financiële commissie bekrachtigde de voorzichtige begrotingsuitbreiding van de regering tegenover de handelsoorlogtegenwind, keurde een noodinjectie van 700 MSEK goed voor de staatsfarmaceutische fabrikant APL om medicijntekorten bij crisis/oorlog te voorkomen, bevestigde het goede beleidsprestaties van de Riksbank in 2024 terwijl ze werd aangespoord het renteherstel te versnellen, en de Commissie voor Sociale Zaken keurde een innovatief fritidskort-programma goed (HC01SoU29) dat toegang tot activiteiten vergroot voor meer dan 400 000 kinderen. Tegelijkertijd breidde de SfU (Commissie voor Sociale Zekerheid/Migratie) de dwangbevoegdheden in migratiedetentiecentra uit. Deze rapporten geven gezamenlijk aan: een regering die prioriteit geeft aan totale defensiegereedheid naast beperkte sociale investeringen, terwijl ze smalle fiscale marges beheert terwijl aanbodrisico's door de escalerende Amerikaanse tarieven zich materialiseren.
+
+### Beslissingen die dit document onderbouwt
+
+1. **Macro-economische positionering**: Zweden bevindt zich in een **herstel onder trend** (bbp +1,0 % 2024, oplopende werkloosheid); de goedkeuring van het economische kader van de regering door de Financiële commissie signaleert voortgaande voorzichtige reflatie, maar geen oververhitting van de vraag. Beleggers, analisten en beleidsmakers dienen pre-tarievenoptimisme te verdisconteren.
+2. **Defensie/farma-aanschaffingen**: De APL-kapitaalinjectie (700 MSEK, HC01FiU33) bevestigt dat Zweden actief geneesmiddelenvoorraden opbouwt voor oorlogsscenario's — een materieel signaal voor het Noordse defensie-industriebeleid.
+3. **Migratie-veiligheidsnexus**: HC01SfU22 vergroot de dwangbevoegdheden van Migrationsverket in detentiecentra (lichamelijke fouillering, kamerfouillering, glasschermen bij bezoeken). Dit is een EVRM-gevoelige wetgevingsuitbreiding met implementatierisico.
+4. **Riksbank-normalisering**: De FiU-evaluatie (HC01FiU24) steunt verdere renteverlagingen, maar signaleert overmatige afhankelijkheid van de Riksbank van wisselkoersmodellering — relevant voor SEK-prognoses.
+
+### Inlichtingenpunten in 60 seconden
+
+- 🔴 **HC01FiU20**: Riksdagen keurde de economische beleidslijnen goed. Groei vertraagt door Amerikaanse tarieven; laagconjunctuur houdt aan. Drie pijlers: huishoudenssteun, arbeidsmarkt, groei/investeringen.
+- 🔴 **HC01FiU33**: 700 MSEK aan APL voor noodgeneesmiddelenproductie — oorlogsgereedheidssignaal; aangenomen met regeringsmeerderheid.
+- 🟠 **HC01SfU22**: Migrationsverket krijgt lichamelijke fouilleer- en kamerzoekmacht in detentie; nieuwe glasschermen in bezoekruimten; van kracht per 1 augustus 2025. EVRM-conformiteitsrisico.
+- 🟡 **HC01FiU24**: Riksbank-beleid 2024 beoordeeld als "sammantaget god"; FiU bekritiseert overmatige afhankelijkheid van wisselkoersmodellering; steunt transparantieverbeteringen.
+- 🟡 **HC01SoU29**: Fritidskort voor kinderen. E-hälsomyndigheten beheert het. Implementatierisico: nieuw IT-systeem, grootschalige uitrol.
+- 🟢 **HC01KU22**: KU verwierp het voorstel van de regering om de financieringsclassificatie van maatschappelijke organisaties te wijzigen (budgetdomeindiscrepantie) — de regering werd verslagen op een structurele begrotingskwestie.
+
+### Voornaamste vooruitblikkende katalysator
+
+Als de dwangmaatregelen in detentie van HC01SfU22 een EVRM-klacht uitlokken of Zweedse rechtbanken de constitutionele grondslag betwisten (RF 2:8 over persoonlijke vrijheid), escaleert dit van administratieve hervorming naar constitutionele confrontatie. Het remissiestatus naar de Lagrådet en de JO-inspectieopinies Q3 2025 – Q1 2026 bijhouden.
+
+### Betrouwbaarheidssamenvatting
+
+Algehele analytische betrouwbaarheid: **HIGH [B2]** — primaire bronnen (Riksdag betänkanden, benoemde commissiebeslissingen, stemresultaten) van hoge kwaliteit; economische projecties gestempeld met IMF WEO april 2026-vintage; sommige partijscheidingen vereisen validatie met aanvullende stemdata.
+
+### Mermaid: Sleutelbeslissingsstroom
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_no.md -->
+
+### BLUF
+
+Riksdagens siste uke av riksmötet 2024/25 produserte en klynge av konsekvente komitérapporter som til sammen definerer Sveriges økonomiske rammeverk for 2025–2026: Finanskomiteen godkjente regjeringens forsiktige finanspolitiske ekspansjon midt i handelskrigens motvind, godkjente en nødkapitalinjeksjon på 700 MSEK til det statseide legemiddelprodusenten APL for å sikre seg mot forstyrrelser i medisinleveransene i krise/krigstid, bekreftet Riksbankens pengepolitiske resultater i 2024 og oppfordret til raskere rentenormalisering, og Sosialkomiteen godkjente et banebrytende fritidskortprogram (HC01SoU29) som utvider aktivitetstilgangen for 400 000+ barn. Samtidig utvidet SfU (Trygde-/Migrasjonskomiteen) tvangsbeføyelsene ved immigrasjonsinterneringssentre. Disse rapportene signaliserer samlet: en regjering som prioriterer totalforsvarsberedskap ved siden av begrensede sosiale investeringer, og som håndterer trange finanspolitiske rammer mens tilbudsrisiki fra amerikanske tollavgifter materialiserer seg.
+
+### Beslutninger dette underlaget støtter
+
+1. **Makroøkonomisk posisjonering**: Sverige er i en **undertrendsmessig gjenopphenting** (BNP +1,0 % 2024, stigende arbeidsledighet); Finanskomiteens godkjenning av regjeringens økonomiske rammeverk signaliserer fortsatt forsiktig reflasjon, men ingen etterspørselsoppsving. Investorer, analytikere og beslutningstakere bør rabattere pre-toll-optimisme.
+2. **Forsvars-/legemiddelanskaffelse**: APL-kapitalinjeksjon (700 MSEK, HC01FiU33) bekrefter at Sverige aktivt bygger opp medisinlagerkapasitet for krigstidsscenarier — et materielt signal for nordisk forsvarsindustriell politikk.
+3. **Migrasjons-sikkerhetsneksus**: HC01SfU22 utvider Migrationsverkets tvangsbeføyelser ved interneringsfasiliteter (kroppsvisitasjon, romsvisitasjon, glassklesvegger for besøk). Dette er en betydelig ECHR-sensitiv lovgivningsutvidelse med implementeringsrisiko.
+4. **Riksbanknormalisering**: FiU's evaluering (HC01FiU24) støtter fortsatte rentekutt, men flagger Riksbankens overhengighet på valutakursmodellering — relevant for SEK-prognoser.
+
+### 60-sekunders etterretningspunkter
+
+- 🔴 **HC01FiU20**: Riksdagen godkjente retningslinjer for økonomisk politikk. Veksten bremses av amerikanske tollavgifter; lågkonjunktur forlenges. Tre pilarer: husholdningsstøtte, arbeidsmarked, vekst/investering.
+- 🔴 **HC01FiU33**: 700 MSEK til APL for akutt medisinproduksjon — krigsbereds­kapssignal; vedtatt med regjeringsflertall.
+- 🟠 **HC01SfU22**: Migrationsverket får kroppsvisitasjons- og romsvisitasjonsbeføyelser ved internering; nye glassklesvegger i besøksrom; gjelder fra 1. august 2025. ECHR-overholdelses­risiko.
+- 🟡 **HC01FiU24**: Riksbankens politikk i 2024 vurdert som "sammantaget god"; FiU kritiserer overhengighet på valutakursmodellering; støtter transparensforbedringer.
+- 🟡 **HC01SoU29**: Fritidskort til barn. E-hälsomyndigheten administrerer. Implementeringsrisiko: nytt IT-system, stor befolkningsrullering.
+- 🟢 **HC01KU22**: KU avviste regjeringens forslag om å reklassifisere sivilsamfunnets sikkerhetsfinansiering (utgiftsområdeflytting) — regjeringen ble beseiret på et strukturelt budsjettspørsmål.
+
+### Topp fremtidsutløser
+
+Hvis HC01SfU22's tvangsinngrep ved internering utløser en ECHR-klage eller svenske domstoler utfordrer det konstitusjonelle grunnlaget (RF 2:8 om personlig frihet), vil dette eskalere fra en administrativ reform til en konstitusjonell konfrontasjon. Overvåk Lagrådets høringsstatus og Justitieombudsmannens (JO) inspeksjonsmeldinger kvartal 3 2025 – kvartal 1 2026.
+
+### Sikker­hetssammendrag
+
+Samlet analytisk sikkerhet: **HIGH [B2]** — primære kilder (Riksdagens betenkninger, navngitte komitébeslutninger, stemmeresultater) er av høy kvalitet; økonomiske prognoser er stemplet med IMF WEO april 2026-vintage; noen partisplittinger krever validering med ytterligere stemmeregistreringer.
+
+### Mermaid: Nøkkelbeslutningsflyt
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_sv.md -->
+
+### BLUF
+
+Riksdagens sista vecka av riksmötet 2024/25 producerade ett kluster av konsekventa utskottsbetänkanden som tillsammans definierar Sveriges ekonomiska ramverk för 2025–2026: Finansutskottet godkände regeringens försiktiga finanspolitiska expansion mitt i handelskonfliktens motvind, godkände en nödinjektion av kapital på 700 miljoner SEK till statligt ägda läkemedelstillverkaren APL för att gardera sig mot störningar i läkemedelsleveranserna i kris/krigstid, bekräftade Riksbankens penningpolitiska prestanda under 2024 med uppmaning om snabbare ränteinormalisering, och Socialutskottet godkände ett banbrytande fritidskortsprogram (HC01SoU29) som utökar aktivitetstillgången för 400 000+ barn. Simultaneously utvidgade SfU (Socialförsäkrings-/Migrationsutskottet) tvångsmedel vid förvaringsenheterna för migranter. Dessa betänkanden signalerar sammantaget: en regering som prioriterar totalförsvarsförberedelse vid sidan av begränsade sociala investeringar, och som hanterar ett snävt finanspolitiskt handlingsutrymme när utbudsrisker från amerikanska tullhöjningar materialiserar sig.
+
+### Beslut som detta underlag stöder
+
+1. **Makroekonomisk positionering**: Sverige befinner sig i en **undertrendsmässig återhämtning** (BNP +1,0 % 2024, stigande arbetslöshet); Finansutskottets godkännande av regeringens ekonomiska ramverk signalerar fortsatt försiktig reflation men ingen efterfrågesurge. Investerare, analytiker och beslutsfattare bör rabatera pre-tulloptimism.
+2. **Försvars-/läkemedelsinköp**: APL-kapitalinjektion (700 MSEK, HC01FiU33) bekräftar att Sverige aktivt bygger upp läkemedelslagringskapacitet för krigstidsscenarier — en materiell signal för nordisk försvarsindustriell policy.
+3. **Migrations-säkerhetsnexus**: HC01SfU22 utvidgar Migrationsverkets tvångsbefogenheter vid förvaringsenheterna (kroppsvisitation, rumsvisitation, glaspartitioner vid besök). Detta är en betydande ECHR-känslig lagstiftningsutvidgning med genomföranderisk.
+4. **Riksbanksnormalisering**: FiU:s utvärdering (HC01FiU24) stöder fortsatta räntesänkningar men flaggar för Riksbankens överberoende av växelkursmodellering — relevant för SEK-prognostisering.
+
+### 60-sekunders underrättelsepunkter
+
+- 🔴 **HC01FiU20**: Riksdagen godkände riktlinjer för ekonomisk politik. Tillväxten bromsas av amerikanska tullar; lågkonjunkturen förlängs. Tre pelare: hushållsstöd, arbetsmarknad, tillväxt/investering.
+- 🔴 **HC01FiU33**: 700 MSEK till APL för akut läkemedelstillverkning — signal om krigsförberedelse; antogs med regeringsmajoritet.
+- 🟠 **HC01SfU22**: Migrationsverket får kroppsvisitering och rumsvisitering vid förvar; nya glaspartitioner i besöksrum; gäller från 1 augusti 2025. ECHR-efterlevnadsrisk.
+- 🟡 **HC01FiU24**: Riksbankens policy 2024 bedöms som "sammantaget god"; FiU kritiserar överberoende av växelkursmodellering; stöder transparensförbättringar.
+- 🟡 **HC01SoU29**: Fritidskort för barn. E-hälsomyndigheten administrerar. Genomföranderisk: nytt IT-system, stor befolkningsrollout.
+- 🟢 **HC01KU22**: KU avvisade regeringens förslag att omklassificera civilsamhällets säkerhetsfinansiering (utgiftsområdesflytt) — regeringen besegrades i en strukturell budgetfråga.
+
+### Topp framåtutlösare
+
+Om HC01SfU22:s tvångsmedelsdomar vid förvar utlöser ett ECHR-klagomål eller svenska domstolar ifrågasätter den konstitutionella grunden (RF 2:8 om personlig frihet), eskalerar detta från en administrativ reform till en konstitutionell konfrontation. Bevaka Lagrådets remissstatus och Justitieombudsmannens (JO) inspektionsmeddelanden kvartal 3 2025 – kvartal 1 2026.
+
+### Säkerhetssammanfattning
+
+Sammanlagd analytisk säkerhet: **HIGH [B2]** — primära källor (Riksdagens betänkanden, namngivna utskottsbeslut, omröstningsutfall) är av hög kvalitet; ekonomiska prognoser är stämplade med IMF WEO april 2026-vintage; en del partiuppdelningar kräver validering med fler voteringsuppgifter.
+
+### Mermaid: Nyckelbeslutsflöde
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_zh.md -->
+
+### 核心摘要（BLUF）
+
+2024/25年度议会会期的最终一周产出了一批引人注目的委员会报告，共同界定了瑞典2025–2026年的经济框架：财政委员会批准了政府在贸易战逆风下的审慎财政扩张，批准向国有制药商APL注入7亿瑞典克朗紧急资本以防范危机/战争期间的药品供应中断，确认了瑞典央行（Riksbank）2024年货币政策表现良好，同时敦促加速利率正常化；社会事务委员会批准了创新性休闲卡计划（HC01SoU29），为超过40万名儿童扩大了活动获取渠道。与此同时，社会保险/移民委员会（SfU）扩大了移民拘留设施的强制权力。这些报告共同指向：一个在美国关税升级导致供给侧风险显现的背景下，以总体防卫准备为优先、兼顾有限社会投资、管理狭窄财政空间的政府。
+
+### 本文件支持的决策
+
+1. **宏观经济定位**：瑞典处于**低于趋势的复苏**阶段（2024年GDP +1.0%，失业率上升）；财政委员会背书政府经济框架，表明将继续审慎回升，但不存在需求过热。投资者、分析师和政策制定者应对关税前的乐观情绪予以折扣。
+2. **国防/制药采购**：APL资本注入（7亿克朗，HC01FiU33）证实瑞典正在积极为战争情景构建药品储备——这是北欧国防工业政策的实质性信号。
+3. **移民-安全关联**：HC01SfU22扩大了Migrationsverket在拘留设施的强制权力（人身搜查、房间搜查、探视时的玻璃隔板）。这是一项需顾及《欧洲人权公约》的立法扩展，具有执行风险。
+4. **Riksbank正常化**：财政委员会评估（HC01FiU24）支持继续降息，但指出Riksbank过度依赖汇率建模——与瑞典克朗SEK预测密切相关。
+
+### 60秒情报要点
+
+- 🔴 **HC01FiU20**：国会批准经济政策方向。受美国关税影响增长放缓；低迷周期延续。三大支柱：家庭支持、劳动力市场、增长/投资。
+- 🔴 **HC01FiU33**：向APL拨付7亿克朗用于紧急药品生产——战争准备信号；以执政联盟多数票通过。
+- 🟠 **HC01SfU22**：Migrationsverket获得拘留期间人身搜查和房间搜查权力；探视室新设玻璃隔板；2025年8月1日生效。欧洲人权公约合规风险。
+- 🟡 **HC01FiU24**：Riksbank 2024年政策被评为"sammantaget god"；财政委员会批评其对汇率建模的过度依赖；支持提升透明度。
+- 🟡 **HC01SoU29**：儿童休闲卡。由E-hälsomyndigheten管理。执行风险：新IT系统，大规模推广。
+- 🟢 **HC01KU22**：KU委员会否决政府重新分类公民社会安全资助的提案（支出领域转移）——政府在一项结构性预算问题上遭到失败。
+
+### 关键前瞻性催化剂
+
+若HC01SfU22的拘留强制措施引发《欧洲人权公约》申诉，或瑞典法院对宪法依据（RF 2:8关于人身自由）提出质疑，将从行政改革升级为宪法对抗。密切关注提交Lagrådet的状态及2025年Q3至2026年Q1期间JO（议会监察专员）的检查意见。
+
+### 可信度摘要
+
+整体分析可信度：**HIGH [B2]** — 高质量一手来源（国会betänkanden、指定委员会决定、投票结果）；经济预测已加盖IMF WEO 2026年4月版本印戳；部分党内分歧需结合更多投票数据加以验证。
+
+### 美人鱼图：关键决策流程
+
+```mermaid
+flowchart TD
+    A["2024/25 Final Week<br/>Committee Reports"] --> B["HC01FiU20<br/>Economic Guidelines<br/>(Riksdagen approved)"]
+    A --> C["HC01FiU33<br/>APL 700 MSEK<br/>(Riksdagen approved)"]
+    A --> D["HC01SfU22<br/>Detention Powers<br/>(Riksdagen approved)"]
+    A --> E["HC01FiU24<br/>Riksbank Evaluation<br/>(Riksdagen approved)"]
+    A --> F["HC01SoU29<br/>Fritidskort<br/>(Riksdagen approved)"]
+    A --> G["HC01KU22<br/>Budget classification<br/>(Riksdagen REJECTED)"]
+    B --> H["Slow recovery<br/>Tariff headwinds<br/>Fiscal caution"]
+    C --> I["Total defence<br/>Medicine preparedness"]
+    D --> J["ECHR risk<br/>Implementation Aug 2025"]
+    E --> K["Rate normalisation<br/>FX modelling critique"]
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ffbe0b
+    style C fill:#1a1e3d,color:#ff006e
+    style D fill:#1a1e3d,color:#ff006e
+    style E fill:#1a1e3d,color:#00d9ff
+    style F fill:#1a1e3d,color:#00d9ff
+    style G fill:#2a0e27,color:#ff006e
+    style H fill:#0a0e27,color:#e0e0e0
+    style I fill:#0a0e27,color:#e0e0e0
+    style J fill:#0a0e27,color:#e0e0e0
+    style K fill:#0a0e27,color:#e0e0e0
+```
+
+<!-- source-sha: 4982fc0535678625b509068942c6e0e28c6416e6 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1960,6 +2759,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

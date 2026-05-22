@@ -72,7 +72,7 @@ describe('PR file-budget enforcement', () => {
     expect(commitPrompt).toContain('100-file guard');
     expect(commitPrompt).toContain('STAGED_COUNT');
     expect(commitPrompt).toContain('OVER FILE BUDGET');
-    expect(commitPrompt).toContain('non-negotiable');
+    expect(commitPrompt).toMatch(/\(mandatory\)/i);
   });
 
   it('all 14 news workflows have max-patch-files in safe-outputs block and ≤ 100', () => {

@@ -1455,6 +1455,43 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     // Swedish i18n title in source card
     expect(html).toContain('Chefsbriefing'); // sv title for executive-brief.md
   });
+
+  it('rewrites embedded HTML .md links to canonical GitHub blob URLs', async () => {
+    const md = [
+      '---',
+      'title: "Breaking 2099-01-01"',
+      'description: "Link rewrite check."',
+      'date: 2099-01-01',
+      '---',
+      '',
+      '## Executive Brief',
+      '',
+      'See <a href="../analysis/daily/2099-01-01/propositions/risk-assessment.md#r1">risk</a> and',
+      '<a href="https://raw.githubusercontent.com/Hack23/riksdagsmonitor/main/analysis/daily/2099-01-01/propositions/scenario-analysis.md">scenario</a>.',
+      '',
+      '## Risk Assessment',
+      '',
+      'Body.',
+      '',
+    ].join('\n');
+
+    const html = await renderArticleHtml({
+      markdown: md,
+      lang: 'en',
+      canonicalPath: 'news/2099-01-01-breaking-en.html',
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
+      artifactsUsed: ['executive-brief.md'],
+    });
+
+    expect(html).toContain(
+      `${GITHUB_BLOB}/analysis/daily/2099-01-01/propositions/risk-assessment.md#r1`,
+    );
+    expect(html).toContain(
+      `${GITHUB_BLOB}/analysis/daily/2099-01-01/propositions/scenario-analysis.md`,
+    );
+    expect(html).not.toContain('../analysis/daily/2099-01-01/propositions/risk-assessment.md');
+    expect(html).not.toContain('raw.githubusercontent.com/Hack23/riksdagsmonitor/main');
+  });
 });
 
 // ---------------------------------------------------------------------------

@@ -6,7 +6,7 @@ date: 2026-05-22
 subfolder: committee-reports
 slug: 2026-05-22-committee-reports
 source_folder: analysis/daily/2026-05-22/committee-reports
-generated_at: 2026-05-22T05:18:53.604Z
+generated_at: 2026-05-22T12:25:07.546Z
 language: en
 layout: article
 ---
@@ -100,6 +100,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2416,13 +2429,881 @@ Data sourced from 2026-05-21 via lookback fallback — check freshness indicator
 |----------:|---------:|---------:|--------:|---------:|
 | 0 | 0 | 0 | 0 | 0 |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_ar.md -->
+
+**التصنيف**: عام | **التاريخ**: 2026-05-22 | **المؤلف**: James Pether Sörling
+**الجمهور**: صانعو القرار السياسي، المحللون الأمنيون، مراقبو المجتمع المدني
+
+---
+
+### الخلاصة التنفيذية (BLUF)
+
+وافقت لجنة العدل (JuU) على مشروع قانون الحكومة الذي يمنح Polismyndigheten وSÄPO صلاحية نشر تقنية التعرف على الوجه بالذكاء الاصطناعي في الوقت الفعلي لأغراض إنفاذ القانون — وهو أهم تشريعات المراقبة البيومترية في تاريخ السويد. وبالتزامن مع أربعة تقارير لجانية أخرى تتعلق بتمويل السلامة الحضرية وحماية الوصول إلى النقد وتعزيز سوق الصناديق الاستثمارية والإعفاءات البيئية لطاقة المياه، تُمثّل جلسة betänkanden في 21 مايو 2026 تحوّلاً حاسماً نحو اليمين في السياسة الأمنية السويدية له تداعيات على الحقوق الدستورية ستهيمن على الحملة الانتخابية عام 2026.
+
+---
+
+### النتائج الرئيسية
+
+1. **إقرار قانون التعرف على الوجه بالذكاء الاصطناعي** (HD01JuU28): تدعم JuU اقتراح القانون 2025/26:150 الذي يتيح للشرطة استخدام الذكاء الاصطناعي البيومتري في الوقت الفعلي وفق ضمانات إجرائية صارمة؛ يدخل حيز التنفيذ في 1 يوليو 2026. معارضة محدودة من V وC وMP.
+
+2. **قانون رسوم التعاون بين المناطق** (HD01CU36): آلية رسوم جديدة على أصحاب العقارات في مناطق السلامة الحضرية؛ قدّمت جميع أحزاب المعارضة تحفظات. تُقرّ CU اقتراح القانون 2025/26:157.
+
+3. **تدابير توافر النقد** (HD01FiU39): تُقرّ FiU تدابير لحماية توافر النقد المادي في خضم التحول اللانقدي في السويد، مما يُخفف من خطر الإقصاء المالي لكبار السن والفئات الضعيفة.
+
+4. **سوق صناديق أكثر قوة** (HD01FiU40): تُعزّز FiU إصلاحات صناديق الاستثمار بما يُعمّق التوافق مع اتحاد أسواق المال؛ يدعم تنقل رأس المال التقاعدي.
+
+5. **إعفاء بيئي لطاقة المياه** (HD01CU41): تُقرّ CU إعفاءات من متطلبات توجيه الموائل الطبيعية الأوروبي خلال إعادة ترخيص محطات طاقة المياه، مع إعطاء الأولوية لأمن الطاقة ضمن هدف السويد للوصول إلى 100% كهرباء متجددة.
+
+---
+
+### القرارات التي يدعمها هذا الملخص
+
+| مجال القرار | الخيارات | التوصية |
+|-------------|---------|--------|
+| استجابة المجتمع المدني لـ JuU28 | الطعن أمام المحكمة الدستورية؛ شكوى للمحكمة الأوروبية لحقوق الإنسان؛ حملة عامة | مراقبة مراسيم التنفيذ (SFS 2026)؛ تقديم شكوى للمحكمة الأوروبية إن طُبّق الاستثناء لمدة 24 ساعة دون مراجعة قضائية مسبقة |
+| استجابة الشركات لـ CU36 | قبول نظام الرسوم؛ الطعن في مشروعيته كضريبة شبه رسمية | تقييم نسبة الرسوم إلى الفوائد؛ المشاركة في عملية التشاور مع CU |
+| استجابة القطاع المالي لـ FiU40 | الامتثال السلبي؛ التوافق الاستباقي مع اتحاد أسواق المال | المشاركة في مشاورات AMF/Finansinspektionen لتحقيق أقصى قدر من اليقين التنظيمي |
+
+---
+
+### السياق الاستراتيجي
+
+يعكس التصويت على التعرف على الوجه بالذكاء الاصطناعي الموقف الأمني الثابت لتحالف Tidö (M+SD+KD+L) الذي حدّد دورة التشريع 2022–2026. يُمثّل دعم حزب S لـ JuU28 تكيّفاً جوهرياً لتيار الوسط اليساري مع سياسات القانون والنظام، مدفوعاً باستطلاعات تُظهر أن مخاوف الجريمة تحتل صدارة أولويات الناخبين السويديين قُبيل انتخابات البرلمان في سبتمبر 2026. يُبيّن عزل V وC وMP في كل من JuU28 وCU36 محدودية التنسيق المعارض.
+
+دولياً، تُعدّ السويد من أوائل الدول الأعضاء في الاتحاد الأوروبي التي تُشغّل استثناءات تنظيم الذكاء الاصطناعي المتعلقة بالمراقبة البيومترية — سابقة تتابعها فرنسا وألمانيا وإيطاليا عن كثب.
+
+---
+
+### لمحة سريعة عن المخاطر
+
+| الخطر | الاحتمال | الأثر | الأفق الزمني |
+|-------|---------|------|------------|
+| شكوى للمحكمة الأوروبية ضد JuU28 | عالٍ | عالٍ | 18–36 شهراً |
+| إساءة استخدام JuU28 من قِبَل الشرطة دون تصريح قضائي مسبق | متوسط | عالٍ | 6–12 شهراً |
+| طعن قانوني في CU36 بوصفها ضريبة شبه رسمية غير دستورية | متوسط | متوسط | 6–18 شهراً |
+| إقصاء مالي جراء التحول اللانقدي (FiU39 غير كافٍ) | متوسط | متوسط | 12–24 شهراً |
+
+---
+
+### المصادر
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_da.md -->
+
+**Klassifikation**: OFFENTLIG | **Dato**: 2026-05-22 | **Forfatter**: James Pether Sörling
+**Målgruppe**: Politiske beslutningstagere, sikkerhedsanalytikere, civilsamfundsobservatører
+
+---
+
+### BLUF
+
+Justitsudvalget (JuU) har godkendt regeringens lovforslag, der giver Polismyndigheten og SÄPO beføjelse til at anvende realtids-AI med ansigtsgenkendelse i retshåndhævelse — Sveriges mest betydningsfulde biometriske overvågningslovgivning. Kombineret med fire andre udvalgsberetninger om finansiering af bysikkerhed, beskyttelse af kontantadgang, styrkelse af fondsmarkedet og miljøundtagelser for vandkraft markerer betænkningssessionen den 21. maj 2026 et afgørende højreorienteret skifte i svensk sikkerhedspolitik med konstitutionelle rettigheder som er centrale i valgkampen 2026.
+
+---
+
+### Nøglefund
+
+1. **AI-ansigtsgenkendelseslov vedtaget** (HD01JuU28): JuU støtter prop. 2025/26:150, der giver politiet mulighed for at anvende realtids-biometrisk AI med strenge proceduremæssige sikkerhedsforanstaltninger; træder i kraft 1. juli 2026. V, C og MP stemte imod.
+
+2. **Lov om områdesamarbejdsgebyr** (HD01CU36): Ny gebyrmekanisme for ejendomsejere i bysikkerhedszoner; alle oppositionspartier indsendte forbehold. CU godkender prop. 2025/26:157.
+
+3. **Kontantfunktionalitetstiltag** (HD01FiU39): FiU godkender foranstaltninger, der beskytter fysisk kontanttilgængelighed midt i Sveriges kontantløse overgang og reducerer risikoen for finansiel eksklusion af ældre og sårbare befolkningsgrupper.
+
+4. **Stærkere fondsmarked** (HD01FiU40): FiU fremmer investeringsfondsreformer, der uddyber tilpasningen til kapitalmarkedsunionen; understøtter mobilitet for pensionskapital.
+
+5. **Vandkraft miljøundtagelse** (HD01CU41): CU godkender undtagelser fra EU's habitatdirektivkrav ved vandkraftslicensfornyelse med prioritet til energisikkerhed i Sveriges mål om 100 % vedvarende energi.
+
+---
+
+### Beslutninger denne resumé understøtter
+
+| Beslutningsområde | Muligheder | Anbefaling |
+|-------------------|-----------|-----------|
+| Civilsamfundets reaktion på JuU28 | Appel til forfatningsdomstol; ECHR-klage; offentlig kampagne | Overvåg gennemførelsesbekendtgørelser (SFS 2026); indgiv ECHR-klage hvis 24-timers-undtagelse anvendes uden domstolsgodkendelse |
+| Erhvervslivets reaktion på CU36 | Accepter gebyrregime; anfægt lovlighed som kvasi-skat | Evaluer gebyrforhold til fordel; engager CU-høringsproces |
+| Finanssektorens reaktion på FiU40 | Passiv overholdelse; proaktiv CMU-tilpasning | Engager AMF/Finansinspektionens høring for maksimal regelsikkerhed |
+
+---
+
+### Strategisk kontekst
+
+AI-ansigtsgenkendelsesafstemningen afspejler en holdbar Tidö-koalitionssikkerhedsposition (M+SD+KD+L), der har præget lovgivningscyklussen 2022–2026. S's støtte til JuU28 markerer en betydelig centervenstreorienteret tilpasning til lov-og-orden-politik drevet af meningsmålinger, der viser kriminalitetshensyn som Sveriges vigtigste vælgerprioritering frem mod riksdagsvalget i september 2026. V, C og MP's isolation i både JuU28 og CU36 viser begrænsningerne for oppositionskoordination.
+
+Internationalt er Sverige blandt de første EU-medlemsstater til at operationalisere AI-forordningens undtagelser for biometrisk overvågning — et præcedens som Frankrig, Tyskland og Italien følger tæt.
+
+---
+
+### Risikooversigt
+
+| Risiko | Sandsynlighed | Konsekvens | Horisont |
+|--------|--------------|------------|----------|
+| ECHR-klage mod JuU28 | HØJ | HØJ | 18–36 måneder |
+| Misbrug af JuU28 af politiet uden forhåndsgodkendelse | MIDDEL | HØJ | 6–12 måneder |
+| Juridisk udfordring af CU36 som forfatningsstridig kvasi-skat | MIDDEL | MIDDEL | 6–18 måneder |
+| Finansiel eksklusion fra kontantløs overgang (FiU39 utilstrækkelig) | MIDDEL | MIDDEL | 12–24 måneder |
+
+---
+
+### Kilder
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_de.md -->
+
+**Klassifikation**: ÖFFENTLICH | **Datum**: 2026-05-22 | **Autor**: James Pether Sörling
+**Zielgruppe**: Politische Entscheidungsträger, Sicherheitsanalytiker, Zivilgesellschaft
+
+---
+
+### BLUF
+
+Der Justizausschuss (JuU) hat den Gesetzentwurf der Regierung gebilligt, der Polismyndigheten und SÄPO die Befugnis erteilt, Echtzeit-KI-Gesichtserkennung in der Strafverfolgung einzusetzen — Schwedens bedeutsamste biometrische Überwachungsgesetzgebung. Zusammen mit vier weiteren Ausschussberichten zu städtischer Sicherheitsfinanzierung, Schutz des Bargeldstands, Stärkung des Fondsmarkts und Umweltausnahmen für Wasserkraft markiert die Betänkanden-Sitzung vom 21. Mai 2026 eine entscheidende Rechtsverschiebung in der schwedischen Sicherheitspolitik mit verfassungsrechtlichen Konsequenzen, die den Wahlkampf 2026 dominieren werden.
+
+---
+
+### Wesentliche Erkenntnisse
+
+1. **KI-Gesichtserkennung verabschiedet** (HD01JuU28): JuU unterstützt Prop. 2025/26:150, die der Polizei Echtzeit-Biometrie-KI unter strengen Verfahrensgarantien erlaubt; Inkrafttreten 1. Juli 2026. Isolierter Widerstand von V, C und MP.
+
+2. **Gesetz zur Gebietskooperationsgebühr** (HD01CU36): Neuer Gebührmechanismus für Eigentümer in städtischen Sicherheitszonen; alle Oppositionsparteien legten Vorbehalte ein. CU billigt Prop. 2025/26:157.
+
+3. **Maßnahmen zur Bargeldverfügbarkeit** (HD01FiU39): FiU billigt Maßnahmen zum Schutz des physischen Bargelds während Schwedens bargeldloser Umstellung und senkt das Risiko finanzieller Ausgrenzung für ältere und vulnerable Bevölkerungsgruppen.
+
+4. **Stärkung des Fondsmarkts** (HD01FiU40): FiU treibt Investmentfondsreformen voran, die die Angleichung an die Kapitalmarktunion vertiefen; unterstützt die Mobilität von Pensionskapital.
+
+5. **Wasserkraft-Umweltausnahme** (HD01CU41): CU billigt Ausnahmen von den EU-Habitatrichtlinien-Anforderungen bei der Neuzulassung von Wasserkraftanlagen mit Priorität für die Energieversorgungssicherheit und Schwedens Ziel von 100 % erneuerbarem Strom.
+
+---
+
+### Entscheidungen, die diese Zusammenfassung unterstützt
+
+| Entscheidungsbereich | Optionen | Empfehlung |
+|----------------------|---------|-----------|
+| Zivilgesellschaft zu JuU28 | Klage beim Verfassungsgericht; EGMR-Beschwerde; Öffentlichkeitskampagne | Durchführungsverordnungen (SFS 2026) beobachten; EGMR-Beschwerde einreichen, falls 24-Stunden-Ausnahme ohne richterliche Vorabgenehmigung eingesetzt wird |
+| Unternehmen zu CU36 | Gebührenregime akzeptieren; Rechtmäßigkeit als Quasi-Steuer anfechten | Kosten-Nutzen des Gebührs bewerten; am CU-Konsultationsprozess teilnehmen |
+| Finanzsektor zu FiU40 | Passive Compliance; proaktive KMU-Ausrichtung | AMF/Finansinspektionens Konsultation einbeziehen für maximale Rechtssicherheit |
+
+---
+
+### Strategischer Kontext
+
+Die KI-Gesichtserkennung-Abstimmung spiegelt die beständige Sicherheitshaltung der Tidö-Koalition (M+SD+KD+L) wider, die den Gesetzgebungszyklus 2022–2026 geprägt hat. Die Unterstützung der S für JuU28 markiert eine bedeutende Anpassung der Mitte-Links-Kräfte an die Sicherheitspolitik, getrieben von Umfragen, die Kriminalitätsprävention als Schwedens wichtigstes Wählerthema vor der Reichstagswahl im September 2026 ausweisen. Die Isolation von V, C und MP sowohl bei JuU28 als auch CU36 zeigt die Grenzen der Oppositionskoordination.
+
+International gehört Schweden zu den ersten EU-Mitgliedstaaten, die die Ausnahmen der KI-Verordnung zur biometrischen Überwachung operationalisieren — ein Präzedenzfall, den Frankreich, Deutschland und Italien genau beobachten.
+
+---
+
+### Risikoübersicht
+
+| Risiko | Wahrscheinlichkeit | Auswirkung | Zeitraum |
+|--------|-------------------|-----------|---------|
+| EGMR-Beschwerde gegen JuU28 | HOCH | HOCH | 18–36 Monate |
+| Missbrauch von JuU28 durch Polizei ohne richterliche Vorabgenehmigung | MITTEL | HOCH | 6–12 Monate |
+| Rechtliche Anfechtung von CU36 als verfassungswidrige Quasi-Steuer | MITTEL | MITTEL | 6–18 Monate |
+| Finanzielle Ausgrenzung durch bargeldlose Umstellung (FiU39 unzureichend) | MITTEL | MITTEL | 12–24 Monate |
+
+---
+
+### Quellen
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICO | **Fecha**: 2026-05-22 | **Autor**: James Pether Sörling
+**Audiencia**: Responsables de decisiones políticas, analistas de seguridad, observadores de la sociedad civil
+
+---
+
+### BLUF
+
+El Comité de Justicia (JuU) ha respaldado el proyecto de ley del gobierno que otorga a Polismyndigheten y SÄPO autoridad para desplegar reconocimiento facial con IA en tiempo real en la aplicación de la ley — la legislación de vigilancia biométrica más significativa de Suecia. Combinado con otros cuatro informes de comités sobre financiamiento de seguridad urbana, protección del acceso al efectivo, fortalecimiento del mercado de fondos y exenciones medioambientales para la energía hidroeléctrica, la sesión de betänkanden del 21 de mayo de 2026 marca un decisivo giro hacia la derecha en la política de seguridad sueca con implicaciones para los derechos constitucionales que dominarán la campaña electoral de 2026.
+
+---
+
+### Hallazgos clave
+
+1. **Ley de reconocimiento facial con IA aprobada** (HD01JuU28): JuU respalda la prop. 2025/26:150 que permite a la policía usar IA biométrica en tiempo real bajo estrictas garantías procedimentales; entrada en vigor el 1 de julio de 2026. Oposición aislada de V, C y MP.
+
+2. **Ley de tasa de cooperación de área** (HD01CU36): Nuevo mecanismo de tarifa para propietarios en zonas de seguridad urbana; todos los partidos de oposición presentaron reservas. CU respalda la prop. 2025/26:157.
+
+3. **Medidas de funcionalidad del efectivo** (HD01FiU39): FiU respalda medidas que protegen la disponibilidad del efectivo físico en medio de la transición sin efectivo de Suecia, reduciendo el riesgo de exclusión financiera para personas mayores y poblaciones vulnerables.
+
+4. **Mercado de fondos más sólido** (HD01FiU40): FiU impulsa reformas de fondos de inversión que profundizan la alineación con la Unión de Mercados de Capitales; apoya la movilidad del capital de pensiones.
+
+5. **Exención medioambiental para la energía hidroeléctrica** (HD01CU41): CU respalda exenciones a los requisitos de la directiva de hábitats de la UE durante la relicenciación de la energía hidroeléctrica, priorizando la seguridad energética en el objetivo de Suecia del 100% de electricidad renovable.
+
+---
+
+### Decisiones que apoya este resumen
+
+| Área de decisión | Opciones | Recomendación |
+|------------------|---------|--------------|
+| Respuesta de la sociedad civil a JuU28 | Recurso ante el Tribunal Constitucional; queja ante el TEDH; campaña pública | Monitorear decretos de implementación (SFS 2026); presentar queja ante el TEDH si la excepción de 24 horas se despliega sin revisión judicial previa |
+| Respuesta empresarial a CU36 | Aceptar el régimen de tarifas; impugnar la legalidad como cuasi-impuesto | Evaluar relación costo-beneficio; participar en el proceso de consulta del CU |
+| Respuesta del sector financiero a FiU40 | Cumplimiento pasivo; alineación proactiva con la UMC | Participar en la consulta de AMF/Finansinspektionen para maximizar la certeza regulatoria |
+
+---
+
+### Contexto estratégico
+
+La votación sobre el reconocimiento facial con IA refleja la duradera postura de seguridad de la coalición Tidö (M+SD+KD+L) que ha definido el ciclo legislativo 2022–2026. El apoyo de S a JuU28 marca una significativa acomodación del centroizquierda a la política de ley y orden, impulsada por encuestas que muestran las preocupaciones por el crimen como la principal prioridad electoral de Suecia de cara a las elecciones legislativas de septiembre de 2026. El aislamiento de V, C y MP tanto en JuU28 como en CU36 demuestra los límites de la coordinación de la oposición.
+
+A nivel internacional, Suecia es uno de los primeros estados miembros de la UE en operacionalizar las excepciones del Reglamento de IA para la vigilancia biométrica — un precedente que Francia, Alemania e Italia observan con atención.
+
+---
+
+### Resumen de riesgos
+
+| Riesgo | Probabilidad | Impacto | Horizonte |
+|--------|-------------|---------|----------|
+| Queja al TEDH contra JuU28 | ALTA | ALTO | 18–36 meses |
+| Abuso de JuU28 por la policía sin autorización judicial previa | MEDIA | ALTO | 6–12 meses |
+| Impugnación legal de CU36 como cuasi-impuesto inconstitucional | MEDIA | MEDIO | 6–18 meses |
+| Exclusión financiera por transición sin efectivo (FiU39 insuficiente) | MEDIA | MEDIO | 12–24 meses |
+
+---
+
+### Fuentes
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_fi.md -->
+
+**Luokitus**: JULKINEN | **Päivämäärä**: 2026-05-22 | **Tekijä**: James Pether Sörling
+**Kohderyhmä**: Poliittiset päätöksentekijät, turvallisuusanalyytikot, kansalaisyhteiskunnan tarkkailijat
+
+---
+
+### BLUF
+
+Lakivaliokunta (JuU) on hyväksynyt hallituksen lakiesityksen, joka antaa Polismyndighetenille ja SÄPOlle valtuudet käyttää reaaliaikaista tekoälypohjaista kasvojentunnistusta lainvalvonnassa — Ruotsin merkittävin biometrinen valvontalainsäädäntö. Yhdistettynä neljään muuhun valiokunnan mietintöön kaupunkiturvallisuuden rahoituksesta, käteisvarojen saatavuuden suojaamisesta, rahastomarkkinoiden vahvistamisesta ja vesivoimalan ympäristöpoikkeuksista, 21.5.2026 mietintöistunto merkitsee ratkaisevaa oikeistovaltaista muutosta Ruotsin turvallisuuspolitiikassa, jolla on perusoikeuksiin liittyviä vaikutuksia vuoden 2026 vaalikampanjaan.
+
+---
+
+### Tärkeimmät havainnot
+
+1. **Tekoälyn kasvojentunnistuslaki hyväksytty** (HD01JuU28): JuU tukee ehdotusta 2025/26:150, joka antaa poliisille oikeuden käyttää reaaliaikaista biometristä tekoälyä tiukkojen menettelyllisten suojatoimien alaisena; voimaan 1.7.2026. V, C ja MP vastustivat.
+
+2. **Laki alueyhteistyömaksusta** (HD01CU36): Uusi maksujärjestelmä kiinteistönomistajille kaupunkiturvallisuusvyöhykkeillä; kaikki oppositiopuolueet jättivät varaumia. CU hyväksyy ehdotuksen 2025/26:157.
+
+3. **Käteistoiminnallisuuden turvaamistoimenpiteet** (HD01FiU39): FiU hyväksyy toimenpiteet, jotka suojaavat fyysisen käteisen saatavuutta Ruotsin kassattoman siirtymän keskellä ja vähentävät iäkkäiden ja haavoittuvien väestöryhmien taloudellisen syrjäytymisen riskiä.
+
+4. **Vahvempi rahastomarkkina** (HD01FiU40): FiU edistää sijoitusrahastojen uudistuksia, jotka syventävät pääomamarkkinaunionin mukaistamista; tukee eläkepääoman liikkuvuutta.
+
+5. **Vesivoimalan ympäristöpoikkeus** (HD01CU41): CU hyväksyy poikkeukset EU:n luontodirektiivistä vesivoimaluvan uudelleenlisensioinnin yhteydessä, priorisoiden energiaturvallisuus Ruotsin 100 %:n uusiutuvan energian tavoitteen mukaisesti.
+
+---
+
+### Päätökset, joita tämä tiivistelmä tukee
+
+| Päätösalue | Vaihtoehdot | Suositus |
+|------------|------------|---------|
+| Kansalaisyhteiskunnan vastaus JuU28:aan | Valituksen tekeminen perustuslakituomioistuimeen; ECHR-valitus; julkinen kampanja | Seuraa täytäntöönpanoasetuksia (SFS 2026); jätä ECHR-valitus, jos 24 tunnin poikkeus otetaan käyttöön ilman tuomioistuimen ennakkohyväksyntää |
+| Yritysten vastaus CU36:een | Hyväksy maksujärjestelmä; haasta laillisuus kvasi-verona | Arvioi maksun hyöty-suhde; osallistu CU:n kuulemisprosessiin |
+| Rahoitussektorin vastaus FiU40:een | Passiivinen vaatimustenmukaisuus; proaktiivinen CMU-linjaaminen | Osallistu AMF/Finansinspektionens kuulemiseen maksimaalisen sääntelyvarmuuden saavuttamiseksi |
+
+---
+
+### Strateginen konteksti
+
+Tekoälyn kasvojentunnistusäänestys heijastaa Tidö-koalition (M+SD+KD+L) kestävää turvallisuuspoliittista asentoa, joka on määritellyt lainsäädäntösyklin 2022–2026. S:n tuki JuU28:lle merkitsee merkittävää vasemmistokeskustan mukautumista laki-ja-järjestys-politiikkaan, jonka taustalla ovat mielipidekyselyt, jotka osoittavat rikollisuushuolien olevan Ruotsin tärkein äänestäjäprioriteetti syyskuun 2026 riksdaalivaaleihin johtavana aikana. V:n, C:n ja MP:n eristäytyminen sekä JuU28:ssa että CU36:ssa osoittaa oppositioyhteis­työn rajat.
+
+Kansainvälisesti Ruotsi on ensimmäisten EU:n jäsenvaltioiden joukossa, jotka operationalisoivat tekoälyasetuksen biometristä valvontaa koskevat poikkeukset — ennakkotapaus, jota Ranska, Saksa ja Italia seuraavat tarkasti.
+
+---
+
+### Riskit tiivistettynä
+
+| Riski | Todennäköisyys | Vaikutus | Aikajänne |
+|-------|---------------|---------|----------|
+| ECHR-valitus JuU28:aa vastaan | KORKEA | KORKEA | 18–36 kuukautta |
+| JuU28:n väärinkäyttö poliisin toimesta ilman tuomioistuimen ennakkohyväksyntää | KESKISUURI | KORKEA | 6–12 kuukautta |
+| CU36:n oikeudellinen haastaminen perustuslainvastaisena kvasi-verona | KESKISUURI | KESKISUURI | 6–18 kuukautta |
+| Taloudellinen syrjäytyminen kassattomasta siirtymästä (FiU39 riittämätön) | KESKISUURI | KESKISUURI | 12–24 kuukautta |
+
+---
+
+### Lähteet
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_fr.md -->
+
+---
+
+### BLUF
+
+La Commission judiciaire (JuU) a approuvé le projet de loi du gouvernement accordant à Polismyndigheten et à la SÄPO l'autorité de déployer la reconnaissance faciale par IA en temps réel dans le cadre de l'application de la loi — la législation biométrique de surveillance la plus significative de Suède. Combinés avec quatre autres rapports de commission sur le financement de la sécurité urbaine, la protection de l'accès aux espèces, le renforcement du marché des fonds et les dérogations environnementales pour l'hydroélectricité, les travaux de la session du 21 mai 2026 marquent un virage sécuritaire décisif en politique suédoise avec des implications pour les droits constitutionnels qui domineront la campagne électorale de 2026.
+
+---
+
+### Principaux constats
+
+1. **Loi sur la reconnaissance faciale par l'IA adoptée** (HD01JuU28) : JuU soutient la prop. 2025/26:150 permettant à la police d'utiliser une IA biométrique en temps réel sous des garanties procédurales strictes ; entrée en vigueur le 1er juillet 2026. Opposition isolée de V, C et MP.
+
+2. **Loi sur la taxe de coopération de zone** (HD01CU36) : Nouveau mécanisme de redevance pour les propriétaires dans les zones de sécurité urbaine ; tous les partis d'opposition ont déposé des réserves. CU approuve la prop. 2025/26:157.
+
+3. **Mesures de fonctionnalité des espèces** (HD01FiU39) : FiU approuve des mesures protégeant la disponibilité des espèces physiques lors de la transition sans espèces de la Suède, réduisant le risque d'exclusion financière pour les personnes âgées et les populations vulnérables.
+
+4. **Marché des fonds renforcé** (HD01FiU40) : FiU fait avancer des réformes des fonds d'investissement approfondissant l'alignement sur l'Union des marchés des capitaux ; soutient la mobilité des capitaux de retraite.
+
+5. **Dérogation environnementale pour l'hydroélectricité** (HD01CU41) : CU approuve les exemptions aux exigences de la directive habitats de l'UE lors du renouvellement des licences hydroélectriques, en priorisant la sécurité énergétique dans l'objectif suédois de 100 % d'électricité renouvelable.
+
+---
+
+### Décisions que cette note soutient
+
+| Domaine de décision | Options | Recommandation |
+|---------------------|---------|---------------|
+| Réponse de la société civile à JuU28 | Recours devant la Cour constitutionnelle ; plainte CEDH ; campagne publique | Surveiller les décrets d'application (SFS 2026) ; déposer une plainte auprès de la CEDH si l'exception de 24 heures est utilisée sans contrôle judiciaire préalable |
+| Réponse des entreprises à CU36 | Accepter le régime de redevance ; contester la légalité en tant que quasi-taxe | Évaluer le rapport coût-bénéfice de la redevance ; s'engager dans le processus de consultation du CU |
+| Réponse du secteur financier à FiU40 | Conformité passive ; alignement proactif sur l'UMC | Engager la consultation AMF/Finansinspektionen pour une sécurité juridique maximale |
+
+---
+
+### Contexte stratégique
+
+Le vote sur la reconnaissance faciale par l'IA reflète la posture sécuritaire durable de la coalition Tidö (M+SD+KD+L) qui a défini le cycle législatif 2022–2026. Le soutien des S à JuU28 marque une accommodation significative du centre-gauche à la politique de sécurité, portée par des sondages montrant que les préoccupations liées à la criminalité constituent la priorité électorale principale en Suède avant les élections législatives de septembre 2026. L'isolement de V, C et MP tant sur JuU28 que sur CU36 démontre les limites de la coordination de l'opposition.
+
+À l'international, la Suède est l'un des premiers États membres de l'UE à opérationnaliser les exceptions de l'IA Act sur la surveillance biométrique — un précédent que la France, l'Allemagne et l'Italie observent attentivement.
+
+---
+
+### Aperçu des risques
+
+| Risque | Probabilité | Impact | Horizon |
+|--------|------------|--------|---------|
+| Plainte CEDH contre JuU28 | ÉLEVÉE | ÉLEVÉ | 18–36 mois |
+| Abus de JuU28 par la police sans autorisation judiciaire préalable | MOYEN | ÉLEVÉ | 6–12 mois |
+| Contestation juridique de CU36 comme quasi-taxe inconstitutionnelle | MOYEN | MOYEN | 6–18 mois |
+| Exclusion financière liée à la transition sans espèces (FiU39 insuffisant) | MOYEN | MOYEN | 12–24 mois |
+
+---
+
+### Sources
+
+- HD01JuU28 : https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36 : https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39 : https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40 : https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41 : https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_he.md -->
+
+**סיווג**: ציבורי | **תאריך**: 2026-05-22 | **מחבר**: James Pether Sörling
+**קהל יעד**: קובעי מדיניות, אנליסטים בתחום הביטחון, צופי החברה האזרחית
+
+---
+
+### תמצית (BLUF)
+
+ועדת המשפטים (JuU) אישרה את הצעת החוק של הממשלה המעניקה ל-Polismyndigheten ול-SÄPO סמכות לפרוס זיהוי פנים בבינה מלאכותית בזמן אמת לצורכי אכיפת חוק — חקיקת הפיקוח הביומטרי המשמעותית ביותר בשוודיה. בצירוף ארבעה דוחות ועדות נוספים העוסקים במימון בטיחות עירונית, הגנה על גישה למזומן, חיזוק שוק הקרנות ופטורים סביבתיים לאנרגיית מים, מסמנת ישיבת betänkanden מה-21 במאי 2026 מפנה מכריע ימינה במדיניות הביטחון השוודית עם השלכות על זכויות חוקתיות שישלטו בקמפיין הבחירות של 2026.
+
+---
+
+### ממצאים מרכזיים
+
+1. **חוק זיהוי פנים בבינה מלאכותית אושר** (HD01JuU28): JuU תומכת בהצעה 2025/26:150 המאפשרת למשטרה להשתמש בבינה מלאכותית ביומטרית בזמן אמת תחת ערבויות פרוצדורליות קפדניות; כניסה לתוקף 1 ביולי 2026. התנגדות מבודדת מצד V, C ו-MP.
+
+2. **חוק אגרת שיתוף פעולה אזורי** (HD01CU36): מנגנון אגרה חדש לבעלי נכסים באזורי בטיחות עירוניים; כל מפלגות האופוזיציה הגישו הסתייגויות. CU מאשרת הצעה 2025/26:157.
+
+3. **אמצעים לזמינות מזומן** (HD01FiU39): FiU מאשרת אמצעים המגנים על זמינות מזומן פיזי בתקופת המעבר ללא-מזומן של שוודיה, ומצמצמים את סיכון ההדרה הפיננסית לקשישים ולאוכלוסיות פגיעות.
+
+4. **שוק קרנות חזק יותר** (HD01FiU40): FiU מקדמת רפורמות בקרנות השקעה המעמיקות את ההתאמה לאיחוד שוקי ההון; תומכת בניידות הון פנסיוני.
+
+5. **פטור סביבתי לאנרגיית מים** (HD01CU41): CU מאשרת פטורים מדרישות הנחיית בתי הגידול של האיחוד האירופי בעת חידוש רישיונות הידרואנרגיה, תוך מתן עדיפות לביטחון אנרגטי ביחס ליעד 100% חשמל מתחדש של שוודיה.
+
+---
+
+### החלטות שסיכום זה תומך בהן
+
+| תחום החלטה | אפשרויות | המלצה |
+|------------|---------|-------|
+| תגובת החברה האזרחית לJuU28 | ערעור בבית משפט חוקתי; תלונה לאמנ"א; קמפיין ציבורי | לעקוב אחר צווי יישום (SFS 2026); להגיש תלונה לאמנ"א אם יופעל חריג 24 השעות ללא ביקורת שיפוטית מוקדמת |
+| תגובת עסקים לCU36 | קבלת משטר האגרות; ערעור על החוקיות כמס-מעין | הערכת יחס עלות-תועלת; מעורבות בתהליך ייעוץ CU |
+| תגובת המגזר הפיננסי לFiU40 | עמידה פסיבית; התאמה פרואקטיבית לCMU | מעורבות בייעוץ AMF/Finansinspektionen להשגת ודאות רגולטורית מרבית |
+
+---
+
+### הקשר אסטרטגי
+
+הצבעת זיהוי הפנים בבינה מלאכותית משקפת את עמדת הביטחון הקבועה של קואליציית Tidö (M+SD+KD+L) שהגדירה את מחזור החקיקה 2022–2026. תמיכת ס' ב-JuU28 מסמנת התאמה משמעותית של מרכז-שמאל לפוליטיקת חוק-וסדר, מונעת על ידי סקרים המראים שדאגות הפשיעה הן עדיפות הבוחרים המובילה בשוודיה לקראת בחירות הריקסדאג בספטמבר 2026. בידוד V, C ו-MP ב-JuU28 וב-CU36 כאחד מדגים את גבולות תיאום האופוזיציה.
+
+בינלאומית, שוודיה נמנית עם המדינות החברות הראשונות באיחוד האירופי המפעילות את החריגים של תקנת הבינה המלאכותית לגבי פיקוח ביומטרי — תקדים שצרפת, גרמניה ואיטליה עוקבות אחריו בדריכות.
+
+---
+
+### סיכום סיכונים
+
+| סיכון | הסתברות | השפעה | אופק |
+|-------|---------|------|-----|
+| תלונה לאמנ"א נגד JuU28 | גבוהה | גבוהה | 18–36 חודשים |
+| שימוש לרעה ב-JuU28 על ידי המשטרה ללא אישור שיפוטי מוקדם | בינונית | גבוהה | 6–12 חודשים |
+| ערעור משפטי על CU36 כמס-מעין הסותר את החוקה | בינונית | בינונית | 6–18 חודשים |
+| הדרה פיננסית ממעבר ללא-מזומן (FiU39 אינסופיקנטי) | בינונית | בינונית | 12–24 חודשים |
+
+---
+
+### מקורות
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_ja.md -->
+
+**分類**: 公開 | **日付**: 2026-05-22 | **著者**: James Pether Sörling
+**対象**: 政策立案者、セキュリティアナリスト、市民社会オブザーバー
+
+---
+
+### BLUF（結論先行）
+
+司法委員会（JuU）は、PolismyndighetenおよびSÄPOがリアルタイムAI顔認証を法執行に展開する権限を付与する政府法案を支持した。これはスウェーデンで最も重要な生体認証監視立法である。都市安全保障資金調達、現金アクセス保護、ファンド市場強化、水力発電の環境適用除外に関する4つの委員会報告と合わせて、2026年5月21日のbetänkanden審議は、2026年選挙キャンペーンを席巻する憲法上の権利への影響を伴う、スウェーデン安全保障政策の決定的な右方向への転換を示している。
+
+---
+
+### 主要所見
+
+1. **AI顔認証法可決**（HD01JuU28）：JuUは、厳格な手続き的保護の下でリアルタイム生体AI使用を警察に認める提案2025/26:150を支持。2026年7月1日施行。V、C、MPは孤立した反対票。
+
+2. **地域協力費法**（HD01CU36）：都市安全ゾーンの不動産所有者への新たな課徴金メカニズム。全野党が留保を提出。CUは提案2025/26:157を承認。
+
+3. **現金機能確保措置**（HD01FiU39）：FiUはスウェーデンのキャッシュレス化移行の中、物理的現金の利用可能性を保護する措置を承認。高齢者および脆弱な人々の金融排除リスクを低減。
+
+4. **ファンド市場強化**（HD01FiU40）：FiUは資本市場同盟との整合を深める投資ファンド改革を推進。年金資本の流動性を支援。
+
+5. **水力発電環境適用除外**（HD01CU41）：CUは水力発電ライセンス再審査中のEU生息地指令要件からの適用除外を承認。スウェーデンの100%再生可能電力目標においてエネルギー安全保障を優先。
+
+---
+
+### このブリーフが支持する意思決定
+
+| 意思決定分野 | 選択肢 | 推奨事項 |
+|-------------|-------|---------|
+| JuU28に対する市民社会の対応 | 憲法裁判所への申し立て；ECHR申立；公開キャンペーン | 施行令（SFS 2026）を監視；24時間例外が司法審査なしに適用された場合はECHR申立を提出 |
+| CU36に対する企業の対応 | 課徴金制度の受諾；準租税としての合法性への異議 | 費用対効果を評価；CU協議プロセスに参加 |
+| FiU40に対する金融セクターの対応 | 受動的コンプライアンス；CMUへの積極的整合 | 規制確実性を最大化するためAMF/Finansinspektionens協議に参加 |
+
+---
+
+### 戦略的背景
+
+AI顔認証投票は、2022–2026年の立法サイクルを定義したTidö連立政権（M+SD+KD+L）の持続可能な安全保障姿勢を反映している。JuU28へのSの支持は、2026年9月のリクスダーグ選挙に向けて犯罪問題がスウェーデンの主要な有権者優先事項であることを示す世論調査に後押しされた、中道左派の治安政策への重大な歩み寄りを示す。JuU28とCU36双方におけるV、C、MPの孤立は、野党協調の限界を示している。
+
+国際的には、スウェーデンはAI規則の生体認証監視例外を運用した最初のEU加盟国の一つであり、フランス、ドイツ、イタリアが注視している先例を作った。
+
+---
+
+### リスク概要
+
+| リスク | 確率 | 影響 | 時間軸 |
+|--------|-----|-----|-------|
+| JuU28に対するECHR申立 | 高 | 高 | 18〜36ヶ月 |
+| 司法による事前承認なしの警察によるJuU28の濫用 | 中 | 高 | 6〜12ヶ月 |
+| CU36の違憲な準租税としての法的異議申し立て | 中 | 中 | 6〜18ヶ月 |
+| キャッシュレス移行による金融排除（FiU39不十分） | 中 | 中 | 12〜24ヶ月 |
+
+---
+
+### 情報源
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_ko.md -->
+
+**분류**: 공개 | **날짜**: 2026-05-22 | **저자**: James Pether Sörling
+**대상**: 정책 결정자, 보안 분석가, 시민사회 옵저버
+
+---
+
+### BLUF(결론 선행)
+
+법사위원회(JuU)는 Polismyndigheten과 SÄPO에 법 집행에서 실시간 AI 얼굴 인식을 배치할 권한을 부여하는 정부 법안을 지지했다. 이는 스웨덴 역사상 가장 중요한 생체인식 감시 입법이다. 도시 안전 자금 조달, 현금 접근 보호, 펀드 시장 강화, 수력발전 환경 적용 제외에 관한 4개의 위원회 보고서와 함께, 2026년 5월 21일 betänkanden 심의는 2026년 선거 캠페인을 지배할 헌법적 권리 함의를 수반한 스웨덴 안보 정책의 결정적인 우향 전환을 의미한다.
+
+---
+
+### 주요 발견
+
+1. **AI 얼굴 인식법 가결** (HD01JuU28): JuU는 엄격한 절차적 보호 아래 실시간 생체 AI 사용을 경찰에 허용하는 제안 2025/26:150을 지지. 2026년 7월 1일 발효. V, C, MP의 고립된 반대.
+
+2. **지역 협력 수수료법** (HD01CU36): 도시 안전 구역 내 부동산 소유자에 대한 새로운 부과금 체계. 모든 야당이 유보 의견 제출. CU는 제안 2025/26:157을 승인.
+
+3. **현금 기능 유지 조치** (HD01FiU39): FiU는 스웨덴의 현금 없는 전환 과정에서 물리적 현금 이용 가능성을 보호하는 조치를 승인. 노인 및 취약 계층의 금융 배제 위험 감소.
+
+4. **펀드 시장 강화** (HD01FiU40): FiU는 자본 시장 연합과의 정합성을 심화하는 투자 펀드 개혁을 추진. 연금 자본의 유동성 지원.
+
+5. **수력발전 환경 적용 제외** (HD01CU41): CU는 수력발전 면허 재심사 중 EU 서식지 지침 요건 적용 제외를 승인. 스웨덴의 100% 재생에너지 목표에서 에너지 안보 우선.
+
+---
+
+### 이 브리핑이 지원하는 의사결정
+
+| 의사결정 분야 | 선택지 | 권고 사항 |
+|-------------|-------|---------|
+| JuU28에 대한 시민사회 대응 | 헌법재판소 이의 신청; ECHR 진정; 공개 캠페인 | 시행령(SFS 2026) 모니터링; 24시간 예외가 사법 심사 없이 적용될 경우 ECHR 진정 제출 |
+| CU36에 대한 기업 대응 | 부과금 제도 수용; 준조세로서 합법성 이의 | 비용 대비 효익 평가; CU 협의 과정 참여 |
+| FiU40에 대한 금융 부문 대응 | 수동적 준수; CMU에 대한 적극적 정렬 | 최대 규제 확실성을 위해 AMF/Finansinspektionen 협의에 참여 |
+
+---
+
+### 전략적 맥락
+
+AI 얼굴 인식 투표는 2022–2026 입법 주기를 정의해온 Tidö 연립(M+SD+KD+L)의 지속적인 안보 입장을 반영한다. JuU28에 대한 S의 지지는 2026년 9월 릭스다그 선거를 앞두고 범죄 우려가 스웨덴의 주요 유권자 우선 사항임을 보여주는 여론조사에 힘입어 중도좌파가 법질서 정치에 중요하게 적응한 것을 의미한다. JuU28과 CU36 모두에서 V, C, MP의 고립은 야당 협조의 한계를 보여준다.
+
+국제적으로 스웨덴은 AI 규정의 생체인식 감시 예외를 운용한 최초의 EU 회원국 중 하나로, 프랑스, 독일, 이탈리아가 주목하는 선례를 만들었다.
+
+---
+
+### 리스크 스냅샷
+
+| 리스크 | 확률 | 영향 | 시간 범위 |
+|--------|-----|-----|---------|
+| JuU28에 대한 ECHR 진정 | 높음 | 높음 | 18~36개월 |
+| 사법 사전 승인 없는 경찰의 JuU28 남용 | 중간 | 높음 | 6~12개월 |
+| CU36의 위헌 준조세로서 법적 이의 | 중간 | 중간 | 6~18개월 |
+| 현금 없는 전환의 금융 배제(FiU39 불충분) | 중간 | 중간 | 12~24개월 |
+
+---
+
+### 출처
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR | **Datum**: 2026-05-22 | **Auteur**: James Pether Sörling
+**Doelgroep**: Politieke besluitvormers, veiligheidsanalisten, maatschappelijke organisaties
+
+---
+
+### BLUF
+
+De Commissie Justitie (JuU) heeft het wetsvoorstel van de regering goedgekeurd dat Polismyndigheten en SÄPO bevoegdheid geeft om realtime AI-gezichtsherkenning in te zetten bij de rechtshandhaving — de meest significante biometrische bewakingswetgeving van Zweden. In combinatie met vier andere commissierapporten over stedelijke veiligheidsfinanciering, bescherming van contanttoegang, versterking van de fondsmarkt en milieuderogaties voor waterkracht markeert de betänkanden-sessie van 21 mei 2026 een beslissende rechtse verschuiving in het Zweedse veiligheidsbeleid met constitutionele rechtsgevolgen die de verkiezingscampagne van 2026 zullen domineren.
+
+---
+
+### Kernbevindingen
+
+1. **AI-gezichtsherkenningswet aangenomen** (HD01JuU28): JuU steunt prop. 2025/26:150 die politie toestaat realtime biometrische AI te gebruiken onder strikte procedurele waarborgen; inwerkingtreding 1 juli 2026. Geïsoleerde oppositie van V, C en MP.
+
+2. **Wet gebiedssamenwerkingsheffing** (HD01CU36): Nieuw heffingsmechanisme voor vastgoedeigenaren in stedelijke veiligheidszones; alle oppositiepartijen dienden bezwaren in. CU onderschrijft prop. 2025/26:157.
+
+3. **Maatregelen contantfunctionaliteit** (HD01FiU39): FiU onderschrijft maatregelen die beschikbaarheid van fysiek contant geld beschermen tijdens Zwedens cashloze overgang en het risico op financiële uitsluiting voor ouderen en kwetsbare groepen verminderen.
+
+4. **Sterkere fondsmarkt** (HD01FiU40): FiU drijft investeringsfondsrevormen door die de afstemming op de Kapitaalmarktunie verdiepen; ondersteunt mobiliteit van pensioenkapitaal.
+
+5. **Waterkracht milieuderogatie** (HD01CU41): CU onderschrijft uitzonderingen op de EU-habitatrichtlijnvereisten bij herbeoordeling van waterkrachtvergunningen, met prioriteit voor energiezekerheid in Zwedens doel van 100% hernieuwbare elektriciteit.
+
+---
+
+### Beslissingen die deze samenvatting ondersteunt
+
+| Beslissingsgebied | Opties | Aanbeveling |
+|-------------------|-------|------------|
+| Maatschappelijke respons op JuU28 | Beroep bij constitutionele rechtbank; EVRM-klacht; publieke campagne | Implementatiebesluiten (SFS 2026) monitoren; EVRM-klacht indienen indien 24-uursuitzondering zonder rechterlijke toetsing vooraf wordt ingezet |
+| Bedrijfsrespons op CU36 | Heffingsregime accepteren; rechtmatigheid aanvechten als quasi-belasting | Kosten-batenverhouding evalueren; deelnemen aan CU-consultatieproces |
+| Financiële sector respons op FiU40 | Passieve naleving; proactieve KMU-afstemming | AMF/Finansinspektionens consultatie betrekken voor maximale rechtszekerheid |
+
+---
+
+### Strategische context
+
+De stemming over AI-gezichtsherkenning weerspiegelt de duurzame veiligheidspositie van de Tidö-coalitie (M+SD+KD+L) die de wetgevingscyclus 2022–2026 heeft bepaald. De steun van S voor JuU28 markeert een significante aanpassing van links-midden aan wet-en-orde-politiek, gedreven door peilingen die criminaliteitszorgen tonen als Zwedens voornaamste prioriteit voor kiezers richting de rijksdagverkiezingen van september 2026. De isolatie van V, C en MP bij zowel JuU28 als CU36 toont de grenzen van oppositiecoördinatie.
+
+Internationaal behoort Zweden tot de eerste EU-lidstaten die de uitzonderingen van de AI-verordening voor biometrische bewaking operationaliseren — een precedent dat Frankrijk, Duitsland en Italië nauwlettend volgen.
+
+---
+
+### Risicooverzicht
+
+| Risico | Kans | Impact | Tijdshorizon |
+|--------|-----|--------|-------------|
+| EVRM-klacht tegen JuU28 | HOOG | HOOG | 18–36 maanden |
+| Misbruik van JuU28 door politie zonder rechterlijke voorafgaande toestemming | GEMIDDELD | HOOG | 6–12 maanden |
+| Juridische aanvechting CU36 als ongrondwettelijke quasi-belasting | GEMIDDELD | GEMIDDELD | 6–18 maanden |
+| Financiële uitsluiting door cashloze overgang (FiU39 onvoldoende) | GEMIDDELD | GEMIDDELD | 12–24 maanden |
+
+---
+
+### Bronnen
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_no.md -->
+
+**Klassifisering**: OFFENTLIG | **Dato**: 2026-05-22 | **Forfatter**: James Pether Sörling
+**Målgruppe**: Politiske beslutningstakere, sikkerhetsanalytikere, sivilsamfunnsaktører
+
+---
+
+### BLUF
+
+Justiskomiteen (JuU) har godkjent regjeringens lovforslag som gir Polismyndigheten og SÄPO myndighet til å bruke sanntids-AI med ansiktsgjenkjenning i politiarbeidet — Sveriges viktigste biometriske overvåkningslovgivning. Kombinert med fire andre komitérapporter om finansiering av urbant sikkerhet, beskyttelse av kontanttilgang, styrking av fondsmarkedet og miljøunntak for vannkraft, markerer 21. mai 2026-behandlingen et avgjørende skifte i svensk sikkerhetspolitikk med konstitusjonelle rettighetsimplikasjoner som vil dominere valgkampen i 2026.
+
+---
+
+### Nøkkelfunn
+
+1. **AI-ansiktsgjenkjenningslov vedtatt** (HD01JuU28): JuU støtter prop. 2025/26:150 som gir politiet rett til å bruke sanntids-biometrisk AI med strenge prosessuelle sikkerhetsmekanismer; trer i kraft 1. juli 2026. V, C og MP stemte imot.
+
+2. **Lov om områdesamarbeidsgebyr** (HD01CU36): Ny gebyrmekanisme for eiendomseiere i urbane sikkerhetssoner; alle opposisjonspartier innga forbehold. CU godkjenner prop. 2025/26:157.
+
+3. **Tiltak for kontantfunksjonalitet** (HD01FiU39): FiU godkjenner tiltak som beskytter fysisk kontanttilgjengelighet midt i Sveriges kontantløse overgang og reduserer risikoen for finansiell eksklusjon av eldre og sårbare grupper.
+
+4. **Styrket fondsmarked** (HD01FiU40): FiU fremmer investeringsfondsreformer som fordyper tilpasningen til kapitalmarkedsunionen; støtter mobilitet for pensionskapital.
+
+5. **Vannkraft miljøunntak** (HD01CU41): CU godkjenner unntak fra EUs habitatdirektivkrav ved fornying av vannkraftlisenser, med prioritet til energiforsyningssikkerhet i Sveriges mål om 100 % fornybar strøm.
+
+---
+
+### Beslutninger dette sammendraget støtter
+
+| Beslutningsområde | Alternativer | Anbefaling |
+|-------------------|-------------|-----------|
+| Sivilsamfunnets respons på JuU28 | Anke til grunnlovsdomstol; ECHR-klage; offentlig kampanje | Overvåk gjennomføringsforordninger (SFS 2026); send inn ECHR-klage hvis 24-timersunntaket brukes uten forhåndsgodkjenning |
+| Næringslivets respons på CU36 | Aksepter gebyrregimet; anfekt lovligheten som kvasi-skatt | Evaluer gebyrets fordel-kostnad-forhold; delta i CU-hørings­prosessen |
+| Finanssektorens respons på FiU40 | Passiv etterlevelse; proaktiv CMU-tilpasning | Delta i AMF/Finansinspektionens høring for maksimal regelklarhet |
+
+---
+
+### Strategisk kontekst
+
+AI-ansiktsgjenkjenningsavstemningen gjenspeiler en varig Tidö-koalisjons sikkerhetspolitisk posisjon (M+SD+KD+L) som har preget lovgivningssyklusen 2022–2026. S' støtte til JuU28 markerer en vesentlig tilpasning fra sentrum-venstre til lov-og-orden-politikk, drevet av meningsmålinger som viser at kriminalitetsspørsmål er den viktigste velgerprioriteten foran riksdagsvalget i september 2026. V, C og MPs isolasjon i både JuU28 og CU36 demonstrerer grensene for opposisjonssamordning.
+
+Internasjonalt er Sverige blant de første EU-landene til å operasjonalisere AI-forordningens unntak for biometrisk overvåkning — et prejudikat som Frankrike, Tyskland og Italia følger nøye.
+
+---
+
+### Risikooversikt
+
+| Risiko | Sannsynlighet | Konsekvens | Horisont |
+|--------|--------------|------------|----------|
+| ECHR-klage mot JuU28 | HØY | HØY | 18–36 måneder |
+| Misbruk av JuU28 av politiet uten forhåndsgodkjenning | MIDDELS | HØY | 6–12 måneder |
+| Juridisk utfordring av CU36 som grunnlovsstridig kvasi-skatt | MIDDELS | MIDDELS | 6–18 måneder |
+| Finansiell eksklusjon fra kontantløs overgang (FiU39 utilstrekkelig) | MIDDELS | MIDDELS | 12–24 måneder |
+
+---
+
+### Kilder
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG | **Datum**: 2026-05-22 | **Författare**: James Pether Sörling
+**Målgrupp**: Beslutsfattare i politik och näringsliv, säkerhetsanalytiker, civilsamhällesobservatörer
+
+---
+
+### Slutsats i korthet (BLUF)
+
+Justitieutskottet (JuU) har tillstyrkt regeringens proposition som ger Polismyndigheten och SÄPO befogenhet att använda realtids-AI med ansiktsigenkänning inom brottsbekämpningen — Sveriges mest betydelsefulla biometriska övervakningslagstiftning. Tillsammans med fyra övriga utskottsbetänkanden som rör finansiering av urban säkerhet, skydd av kontanttillgång, förstärkning av fondmarknaden och miljöundantag för vattenkraft präglas betänkandeomgången den 21 maj 2026 av en tydlig förskjutning i svensk säkerhetspolitik med konsekvenser för grundläggande rättigheter som väntas dominera valrörelsen inför riksdagsvalet 2026.
+
+---
+
+### Nyckelrön
+
+1. **AI-lag för ansiktsigenkänning antagen** (HD01JuU28): JuU tillstyrker prop. 2025/26:150 som ger polisen möjlighet att använda realtids-biometrisk AI med strikta procedurskydd; träder i kraft 1 juli 2026. V, C och MP reserverade sig.
+
+2. **Lag om områdessamverkanskostnad** (HD01CU36): Ny avgiftsmekanism för fastighetsägare i trygghetszonszoner; samtliga oppositionspartier lämnade reservationer. CU tillstyrker prop. 2025/26:157.
+
+3. **Åtgärder för kontantfunktionalitet** (HD01FiU39): FiU tillstyrker åtgärder som skyddar tillgången till fysiska kontanter mitt i Sveriges kontantlösa omställning och minskar risken för finansiell utestängning av äldre och utsatta grupper.
+
+4. **Stärkt fondmarknad** (HD01FiU40): FiU driver igenom reformer för investeringsfonder som fördjupar anpassningen till kapitalmarknadsunionen; stödjer rörlighet för pensionskapital.
+
+5. **Miljöundantag för vattenkraft** (HD01CU41): CU tillstyrker undantag från EU:s art- och habitatdirektivs krav vid omprövning av vattenkraftslicenser, med prioritet för energitryggheten och Sveriges mål om 100 % förnybar el.
+
+---
+
+### Beslut som denna sammanfattning stöder
+
+| Beslutsområde | Alternativ | Rekommendation |
+|---------------|-----------|---------------|
+| Civilsamhällets respons på JuU28 | Överklagande i Högsta domstolen; klagomål till ECHR; folklig kampanj | Bevaka genomförandeförordningar (SFS 2026); lämna in ECHR-klagomål om 24-timmarsundantaget tillämpas utan domstolsprövning |
+| Företagens respons på CU36 | Acceptera avgiftsregimen; ifrågasätt lagligheten som kvasi-skatt | Utvärdera avgiftens förhållande till nyttan; delta i CU:s konsultationsprocess |
+| Finanssektorns respons på FiU40 | Passiv efterlevnad; proaktiv anpassning till kapitalmarknadsunionen | Engagera AMF/Finansinspektionens konsultationsprocess för maximal regelklarhet |
+
+---
+
+### Strategisk kontext
+
+AI-omröstningen om ansiktsigenkänning speglar Tidökoalitionens (M+SD+KD+L) varaktiga säkerhetspolitiska position under lagstiftningscykeln 2022–2026. S:s stöd för JuU28 innebär en markant vänstercentristisk anpassning till lag-och-ordningspolitiken, driven av opinionsundersökningar som visar att brottsbekämpning är väljarnas viktigaste fråga inför riksdagsvalet i september 2026. V:s, C:s och MP:s isolering i såväl JuU28 som CU36 illustrerar oppositionssamordningens begränsningar.
+
+Internationellt är Sverige bland de första EU-länderna att operationalisera AI-förordningens undantag för biometrisk övervakning — ett prejudikat som Frankrike, Tyskland och Italien följer noga.
+
+---
+
+### Risköversikt
+
+| Risk | Sannolikhet | Konsekvens | Tidshorisont |
+|------|------------|------------|--------------|
+| ECHR-klagomål mot JuU28 | HÖG | HÖG | 18–36 månader |
+| Missbruk av JuU28 av polisen utan förhandsgodkännande | MEDEL | HÖG | 6–12 månader |
+| Rättslig talan mot CU36 som grundlagsstridig kvasi-skatt | MEDEL | MEDEL | 6–18 månader |
+| Finansiell utestängning vid kontantlös omställning (FiU39 otillräcklig) | MEDEL | MEDEL | 12–24 månader |
+
+---
+
+### Källor
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_zh.md -->
+
+**分类**：公开 | **日期**：2026-05-22 | **作者**：James Pether Sörling
+**受众**：政策决策者、安全分析人士、公民社会观察员
+
+---
+
+### 核心结论（BLUF）
+
+司法委员会（JuU）支持政府法案，赋予Polismyndigheten和SÄPO在执法中部署实时人工智能人脸识别的权力——这是瑞典最重要的生物特征监控立法。结合其他四项关于城市安全融资、现金获取保护、基金市场强化和水力发电环境豁免的委员会报告，2026年5月21日的betänkanden审议标志着瑞典安全政策向右的决定性转变，其宪法权利影响将主导2026年选举活动。
+
+---
+
+### 主要发现
+
+1. **人工智能人脸识别法获批**（HD01JuU28）：JuU支持提案2025/26:150，允许警方在严格程序保障下使用实时生物特征人工智能；2026年7月1日起生效。V、C和MP孤立反对。
+
+2. **区域合作费法**（HD01CU36）：针对城市安全区域房产所有者的新收费机制；所有反对党提交了保留意见。CU批准提案2025/26:157。
+
+3. **现金功能保障措施**（HD01FiU39）：FiU批准在瑞典向无现金转型过程中保护实物现金可用性的措施，降低老年人和弱势群体金融排斥风险。
+
+4. **强化基金市场**（HD01FiU40）：FiU推进深化与资本市场联盟对接的投资基金改革；支持养老金资本流动性。
+
+5. **水电环境豁免**（HD01CU41）：CU批准在水电站重新许可期间免于执行欧盟栖息地指令要求，在瑞典100%可再生电力目标中优先考虑能源安全。
+
+---
+
+### 本简报支持的决策
+
+| 决策领域 | 选项 | 建议 |
+|---------|-----|-----|
+| 公民社会对JuU28的回应 | 诉诸宪法法院；欧洲人权法院申诉；公开运动 | 监测实施法令（SFS 2026）；若无司法预先审查即部署24小时例外，提交欧洲人权法院申诉 |
+| 企业对CU36的回应 | 接受收费制度；以准税名义质疑合法性 | 评估费用收益比；参与CU协商流程 |
+| 金融部门对FiU40的回应 | 被动合规；主动对接资本市场联盟 | 参与AMF/Finansinspektionen协商以最大化监管确定性 |
+
+---
+
+### 战略背景
+
+人工智能人脸识别投票反映了Tidö联合政府（M+SD+KD+L）持久的安全立场，该立场定义了2022–2026年立法周期。S对JuU28的支持标志着中左翼对法律与秩序政治的重大适应，这受到民调推动——民调显示犯罪问题是瑞典选民在2026年9月大选前的首要优先事项。V、C和MP在JuU28和CU36上的双重孤立表明了反对党协调的局限性。
+
+在国际上，瑞典是最早将《人工智能法》生物特征监控例外付诸实施的欧盟成员国之一——法国、德国和意大利正密切关注这一先例。
+
+---
+
+### 风险概览
+
+| 风险 | 概率 | 影响 | 时间范围 |
+|-----|-----|-----|---------|
+| 针对JuU28的欧洲人权法院申诉 | 高 | 高 | 18–36个月 |
+| 警方在无司法预先授权下滥用JuU28 | 中 | 高 | 6–12个月 |
+| 将CU36作为违宪准税提出法律挑战 | 中 | 中 | 6–18个月 |
+| 无现金转型导致金融排斥（FiU39不足） | 中 | 中 | 12–24个月 |
+
+---
+
+### 来源
+
+- HD01JuU28: https://data.riksdagen.se/dokument/HD01JuU28 [A2]
+- HD01CU36: https://data.riksdagen.se/dokument/HD01CU36 [A2]
+- HD01FiU39: https://data.riksdagen.se/dokument/HD01FiU39 [A2]
+- HD01FiU40: https://data.riksdagen.se/dokument/HD01FiU40 [A2]
+- HD01CU41: https://data.riksdagen.se/dokument/HD01CU41 [A2]
+
+<!-- source-sha: d0e35a3cd1e42a21df51397f46911e221c1d441f -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 6 | Linked in Article Sources, not expanded inline |
 
@@ -2463,6 +3344,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-22/committee-reports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

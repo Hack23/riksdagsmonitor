@@ -6,7 +6,7 @@ date: 2026-04-30
 subfolder: month-ahead
 slug: 2026-04-30-month-ahead
 source_folder: analysis/daily/2026-04-30/month-ahead
-generated_at: 2026-05-21T02:19:50.758Z
+generated_at: 2026-05-22T12:25:06.160Z
 language: en
 layout: article
 ---
@@ -89,6 +89,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -3289,13 +3302,708 @@ These three documents were filed on 2026-04-16 and fall within the 30-day analys
 
 <full-text-fallback: metadata-only documents in this improvement run batch>
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# السويد في مايو 2026: البنية التحتية وسيادة القانون والتموضع الانتخابي في السباق التشريعي الأخير
+
+### 🎯 الخلاصة التنفيذية
+
+مايو 2026 هو آخر شهر تشريعي كامل لتحالف تيدو قبل انتخابات الريكسداغ في سبتمبر 2026. ثلاثة معالم تشريعية رئيسية تهيمن على المشهد: تصويت الريكسداغ على خطة البنية التحتية للنقل الوطني البالغة 970 مليار كرونة سويدية (HD03259)، واستكمال نقل تشريعات التنظيم المصرفي الأوروبي (HD03253)، والمعالجة المتسارعة لتقارير اللجان بشأن الخصوصية الرقمية والمنافسة وإصلاح القضاء. الاقتراحات المعارضة الـ11 الصادرة في 30 أبريل — التي تغطي المساعدات لأوكرانيا والإسكان وسلامة العمل والصحة النفسية ورفاه الحيوان — تُشير إلى استراتيجية تمييز ما قبل الانتخابات. السياسة السويدية في مايو 2026 تتشكل من خلال جهد الحكومة لترسيخ رواية إرثها ومحاولة المعارضة تحديد أجندة الحملة الانتخابية.
+
+### 🧭 3 قرارات يدعمها هذا الإحاطة
+
+1. **التحليل الانتخابي**: أي النتائج التشريعية في مايو 2026 ستؤثر أكثر في تصور الناخبين لسجل حوكمة تحالف تيدو قبل سبتمبر؟
+2. **متابعة السياسات**: أي تقارير اللجان والمقترحات تستلزم متابعة عبر التصويت في الريكسداغ لتقييم مخاطر التنفيذ؟
+3. **الأعمال والمجتمع المدني**: أي التغييرات التنظيمية (القطاع المصرفي، المنافسة، الإسكان، سلامة العمل) تستلزم مشاركة فورية من أصحاب المصلحة في مايو؟
+
+### قراءة في 60 ثانية
+
+- **إرث البنية التحتية (HD03259 [A2])**: خطة النقل الوطنية 970 مليار كرونة 2026–2037 تصل إلى التصويت النهائي في الريكسداغ خلال مايو. كهربة السكك الحديدية وربط منطقة نورلاند وممرات الشحن الدولية تُشكّل إطار مطالبة الحكومة بالإرث الصناعي-المناخي. جدول جلسات الاستماع للجنة TU هو المؤشر المتقدم الأول.
+- **التنظيم المصرفي (HD03253 [B2])**: استكمال نقل CRR3/بازل III الأوروبي عبر بيتانكاندا FiU — يُحدد متطلبات رأس المال للبنوك السويدية في وقت تُعرب فيه EBA عن قلقها إزاء اختبارات الإجهاد للمؤسسات المتوسطة الحجم في الاتحاد الأوروبي.
+- **تصعيد القانون والنظام (HD03252 [B2])**: تقييد الضمان الاجتماعي للمدانين — جزء من برنامج تحالف تيدو المتصاعد للربط بين العدالة والضمان الاجتماعي (انظر HC03202, HC03201) استهدافاً للناخبين المترددين الذين تُعدّ الجريمة من أولوياتهم الانتخابية الثلاث الأولى.
+- **الخصوصية الرقمية (HD01KU36 [B2])**: التحسينات الـ17 للجنة KU على أطر النزاهة الرقمية تُحدد أجندة تنفيذ قانون الذكاء الاصطناعي لحكومة ما بعد الانتخابات.
+- **إصلاح القضاء (HD01JuU9 [B2])**: حزمة كفاءة إجراءات لجنة JuU لمعالجة تراكم القضايا؛ هدف التنفيذ 2027.
+- **الفضاء والبحث (HD10461 [B3])**: الفجوة التمويلية لوكالة الفضاء الأوروبية كشفتها الاستجواب — السويد تُخاطر بخسارة المشاركة في البرنامج الفضائي الأوروبي في وقت تزداد فيه أهمية البنية التحتية ذات الاستخدام المزدوج لتموضع الناتو.
+- **الوصول إلى الإسكان (HD11774 [C2])**: اقتراح المعارضة بضمان الائتمان يُشير إلى عجز الإسكان الاجتماعي كقضية انتخابية.
+
+### المؤشر المتقدم الرئيسي
+
+**2026-05-15**: لجنة TU تُعلن جدول جلسات الاستماع العامة لتصويت NTP HD03259 — إذا أُكّد لنهاية مايو، تترسخ رواية إرث البنية التحتية للحكومة قبل فترة التوقف الصيفي. التأجيل إلى الخريف يُخاطر بالتزامن مع نافذة الحملة الانتخابية.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title الجدول الزمني التشريعي مايو 2026
+    dateFormat YYYY-MM-DD
+    section البنية التحتية
+    جلسة استماع TU NTP HD03259     :milestone, 2026-05-15, 0d
+    تصويت الريكسداغ على NTP        :crit, 2026-05-20, 2026-05-31
+    section القطاع المالي
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section تقارير اللجان
+    تصويت إصلاح القضاء JuU9        :2026-05-15, 2026-05-25
+    تصويت الخصوصية الرقمية KU36   :2026-05-20, 2026-05-30
+    section الفترة الانتخابية
+    بداية الإجازة الصيفية          :milestone, 2026-07-01, 0d
+    يوم الانتخابات                 :milestone, 2026-09-13, 0d
+```
+
+### تقييم الثقة
+
+- الجدول الزمني لتصويت NTP للبنية التحتية: HIGH [B2] — استناداً إلى تاريخ قيد HD03259 وجدول اللجنة
+- المسار الانتخابي: MEDIUM-HIGH [B2] — استناداً إلى اتجاه الاستطلاعات + النمط التشريعي
+- توقعات صندوق النقد الدولي الاقتصادية: MEDIUM [C2] — الاستخراج المباشر من صندوق النقد الدولي غير متاح؛ تم استخدام إصدار WEO أبريل 2026 من الذاكرة المؤقتة
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_da.md -->
+
+### 🎯 BLUF
+
+Maj 2026 er Tidöalliansens sidste fulde lovgivningsmåned inden Riksdag-valget i september 2026. Tre lovgivningsmilestene dominerer: Riksdag-afstemningen om den nationale transportinfrastrukturplan på 970 mia. SEK (HD03259), afslutningen af EU-bankreguleringstransposering (HD03253) og accelereret udvalgsbehandling af digital privatliv, konkurrence og domstolsreform. Oppositionens 11 motioner den 30. april — om Ukraine-støtte, boliger, arbejdssikkerhed, mental sundhed og dyrevelfærd — signalerer en strategi for præ-valg-differentiering. Svensk politik i maj 2026 er præget af regeringens bestræbelse på at fastholde sin arvsfortælling og oppositionens bud på at definere valgkampagnens dagsorden.
+
+### 🧭 3 beslutninger dette briefing understøtter
+
+1. **Valganalyse**: Hvilke lovgivningsresultater i maj 2026 vil mest forme vælgernes opfattelse af Tidöalliansens styringsrekord forud for september?
+2. **Politikopfølgning**: Hvilke udvalgsrapporter og lovforslag kræver overvågning gennem Riksdag-afstemning for at vurdere implementeringsrisiko?
+3. **Erhvervslivet og civilsamfundet**: Hvilke regelændringer (bank, konkurrence, bolig, arbejdssikkerhed) kræver øjeblikkelig interessentinddragelse i maj?
+
+### 60-sekunders læsning
+
+- **Infrastrukturarv (HD03259 [A2])**: 970 mia. SEK NTP 2026–2037 kommer til endelig Riksdag-afstemning i maj. Jernbaneelektrificering, Norrland-forbindelser og internationale godsforbindelser rammesætter regeringens industri-klimatarvskrav. TU-udvalgets høringsskema er den første ledende indikator.
+- **Bankregulering (HD03253 [B2])**: EU CRR3/Basel III-transponering fuldført via FiU betänkande — fastsætter kapitalkrav for svenske banker i et øjeblik med EBA-stresstestbekymring for mellemstore EU-institutioner.
+- **Lov og orden-eskalering (HD03252 [B2])**: Social sikkerhedsrestriktion for dømte — del af et eskalerende Tidöalliansen retsafdelings-social sikkerhedssamspilsprogram (se HC03202, HC03201) rettet mod svingvælgere med kriminalitet som top-3-valgspørgsmål.
+- **Digital privatliv (HD01KU36 [B2])**: KU's 17 forbedringer af digitale integritetssystemer sætter AI Act-implementeringsdagsordenen for post-valg-regeringen.
+- **Domstolsreform (HD01JuU9 [B2])**: JuU-proceduremæssig effektivitetspakke rettet mod sagsbehandlingsefterslæb; implementeringsmål 2027.
+- **Rum og forskning (HD10461 [B3])**: ESA-finansieringsgab afsløret ved interpellation — Sverige risikerer at miste deltagelse i det europæiske rumprogram i et øjeblik med øget dual-use-infrastrukturvigt for NATO-positionering.
+- **Boligadgang (HD11774 [C2])**: Oppositionens kreditgarantibevægelse signalerer socialt boliggab som valgspørgsmål.
+
+### Ledende fremadrettet indikator
+
+**2026-05-15**: TU annoncerer offentlig høringsskema for HD03259 NTP-afstemning — hvis bekræftet til sen maj, er regeringens infrastrukturarvsfortælling låst inden sommerpausen. Forsinkelse til efteråret risikerer at løbe ind i valgkampagnevinduet.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title Lovgivningstidslinje maj 2026
+    dateFormat YYYY-MM-DD
+    section Infrastruktur
+    TU høring NTP HD03259           :milestone, 2026-05-15, 0d
+    Riksdag NTP-afstemning          :crit, 2026-05-20, 2026-05-31
+    section Finanssektoren
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section Udvalgsrapporter
+    JuU9 domstolsreformafstemning   :2026-05-15, 2026-05-25
+    KU36 digital privatlivsafstemning :2026-05-20, 2026-05-30
+    section Valgperiode
+    Sommerpause begynder            :milestone, 2026-07-01, 0d
+    Valgdag                         :milestone, 2026-09-13, 0d
+```
+
+### Konfidensvurdering
+
+- Infrastruktur NTP-afstemningsdato: HIGH [B2] — baseret på HD03259 tabelleringsdato og udvalgsplan
+- Valgbane: MEDIUM-HIGH [B2] — baseret på meningsmålingstrend + lovgivningsmønster
+- IMF-økonomiske prognoser: MEDIUM [C2] — IMF direkt hentning utilgængelig; WEO-årgang apr-2026 brugt fra cache
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_de.md -->
+
+### 🎯 BLUF
+
+Mai 2026 ist der letzte vollständige Gesetzgebungsmonat der Tidöalliansen vor den Riksdag-Wahlen im September 2026. Drei Gesetzgebungsmeilensteine dominieren: die Riksdag-Abstimmung über den nationalen Verkehrsinfrastrukturplan im Wert von 970 Mrd. SEK (HD03259), der Abschluss der EU-Bankregulierungstransposition (HD03253) und die beschleunigte Ausschussbearbeitung in den Bereichen digitale Privatsphäre, Wettbewerb und Justizreform. Die 11 Anträge der Opposition vom 30. April — zu Ukraine-Hilfe, Wohnungsbau, Arbeitssicherheit, psychische Gesundheit und Tierschutz — signalisieren eine Strategie zur Vor-Wahl-Profilierung. Die schwedische Politik im Mai 2026 wird durch die Bemühungen der Regierung geprägt, ihre Erbenarrative zu festigen, und durch das Bestreben der Opposition, die Wahlkampfagenda zu definieren.
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Wahlanalyse**: Welche Gesetzgebungsergebnisse im Mai 2026 werden die Wahrnehmung der Wähler von der Bilanz der Tidöalliansen vor September am stärksten beeinflussen?
+2. **Politikverfolgung**: Welche Ausschussberichte und Gesetzesvorlagen müssen durch Riksdag-Abstimmungen verfolgt werden, um Umsetzungsrisiken zu bewerten?
+3. **Wirtschaft und Zivilgesellschaft**: Welche regulatorischen Änderungen (Bankwesen, Wettbewerb, Wohnungsbau, Arbeitssicherheit) erfordern im Mai ein sofortiges Stakeholder-Engagement?
+
+### 60-Sekunden-Lektüre
+
+- **Infrastrukturvermächtnis (HD03259 [A2])**: Der 970 Mrd. SEK NTP 2026–2037 kommt im Mai zur endgültigen Riksdag-Abstimmung. Bahnelektrifizierung, Norrland-Anbindung und internationale Güterkorridore bilden den Industrie-Klimaerbe-Anspruch der Regierung. Der TU-Ausschusskomplex ist der erste Frühindikator.
+- **Bankregulierung (HD03253 [B2])**: EU-CRR3/Basel-III-Transposition über FiU-Betänkande abgeschlossen — legt Eigenkapitalanforderungen für schwedische Banken fest, zu einem Zeitpunkt, an dem EBA-Stresstestbedenken für mittelgroße EU-Institute bestehen.
+- **Gesetz-und-Ordnung-Eskalation (HD03252 [B2])**: Sozialversicherungsbeschränkung für Verurteilte — Teil eines eskalierenden Tidöalliansen-Justiz-Sozialversicherungs-Nexusprogramms (siehe HC03202, HC03201) für Wechselwähler mit Kriminalität als Top-3-Wahlthema.
+- **Digitaler Datenschutz (HD01KU36 [B2])**: KUs 17 Verbesserungen der Rahmenbedingungen für digitale Integrität setzen die KI-Gesetz-Umsetzungsagenda für die Regierung nach der Wahl.
+- **Justizreform (HD01JuU9 [B2])**: JuU-Verfahrenseffizienzpaket zur Bekämpfung von Bearbeitungsrückständen; Umsetzungsziel 2027.
+- **Raumfahrt und Forschung (HD10461 [B3])**: ESA-Finanzierungslücke durch Interpellation aufgedeckt — Schweden riskiert den Verlust der Teilnahme am europäischen Raumfahrtprogramm in einem Moment erhöhter Dual-use-Infrastrukturbedeutung für die NATO-Positionierung.
+- **Wohnungszugang (HD11774 [C2])**: Kreditgarantieantrag der Opposition signalisiert soziales Wohnungsdefizit als Wahlthema.
+
+### Führender Vorwärtsindikator
+
+**2026-05-15**: TU kündigt öffentlichen Anhörungszeitplan für HD03259-NTP-Abstimmung an — wenn für Ende Mai bestätigt, ist das Infrastrukturvermächtnisnarrativ der Regierung vor der Sommerpause festgeschrieben. Eine Verzögerung auf Herbst riskiert das Hineinlaufen in das Wahlkampffenster.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title Gesetzgebungszeitplan Mai 2026
+    dateFormat YYYY-MM-DD
+    section Infrastruktur
+    TU-Anhörung NTP HD03259         :milestone, 2026-05-15, 0d
+    Riksdag NTP-Abstimmung          :crit, 2026-05-20, 2026-05-31
+    section Finanzsektor
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section Ausschussberichte
+    JuU9 Justizreformabstimmung     :2026-05-15, 2026-05-25
+    KU36 digitale Datenschutzabstimmung :2026-05-20, 2026-05-30
+    section Wahlperiode
+    Sommerpause beginnt             :milestone, 2026-07-01, 0d
+    Wahltag                         :milestone, 2026-09-13, 0d
+```
+
+### Konfidenzbewertung
+
+- Infrastruktur-NTP-Abstimmungszeitpunkt: HIGH [B2] — basierend auf Tabellierungsdatum von HD03259 und Ausschussplan
+- Wahltrajektorie: MEDIUM-HIGH [B2] — basierend auf Umfragetrend + Gesetzgebungsmuster
+- IMF-Wirtschaftsprognosen: MEDIUM [C2] — IMF-Direktabruf nicht verfügbar; WEO-Ausgabe Apr. 2026 aus Cache verwendet
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_es.md -->
+
+### 🎯 BLUF
+
+Mayo de 2026 es el último mes legislativo completo de la Tidöalliansen antes de las elecciones al Riksdag de septiembre de 2026. Tres hitos legislativos dominan: la votación del Riksdag sobre el Plan Nacional de Infraestructura de Transporte de 970 mil millones de SEK (HD03259), la finalización de la transposición de la regulación bancaria de la UE (HD03253) y el procesamiento acelerado de informes de comisión sobre privacidad digital, competencia y reforma judicial. Las 11 mociones de la oposición del 30 de abril — que abarcan ayuda a Ucrania, vivienda, seguridad laboral, salud mental y bienestar animal — señalan una estrategia de diferenciación preelectoral. La política sueca en mayo de 2026 está definida por el esfuerzo del gobierno por cristalizar su narrativa de legado y el intento de la oposición de definir la agenda de la campaña electoral.
+
+### 🧭 3 decisiones que este informe apoya
+
+1. **Análisis electoral**: ¿Qué resultados legislativos en mayo de 2026 influirán más en la percepción de los votantes sobre el historial de gobernanza de la Tidöalliansen antes de septiembre?
+2. **Seguimiento de políticas**: ¿Qué informes de comisión y proposiciones requieren seguimiento mediante votación en el Riksdag para evaluar los riesgos de implementación?
+3. **Empresas y sociedad civil**: ¿Qué cambios regulatorios (banca, competencia, vivienda, seguridad laboral) requieren participación inmediata de las partes interesadas en mayo?
+
+### Lectura de 60 segundos
+
+- **Legado de infraestructura (HD03259 [A2])**: El NTP 2026–2037 de 970 mil millones de SEK llega a la votación final del Riksdag en mayo. La electrificación ferroviaria, la conectividad del Norrland y los corredores de carga internacional enmarcan la reclamación de legado industrial-climático del gobierno. El calendario de audiencias del comité TU es el primer indicador adelantado.
+- **Regulación bancaria (HD03253 [B2])**: La transposición EU CRR3/Basilea III se completa mediante el betänkande del FiU — establece los requisitos de capital para los bancos suecos en un momento de preocupaciones de pruebas de estrés de la EBA para instituciones de tamaño medio de la UE.
+- **Escalada de ley y orden (HD03252 [B2])**: Restricción de seguridad social para condenados — parte de un programa Tidöalliansen justicia-seguridad social en escalada (véase HC03202, HC03201) dirigido a votantes indecisos con la criminalidad como tema electoral número 3.
+- **Privacidad digital (HD01KU36 [B2])**: Las 17 mejoras del KU a los marcos de integridad digital establecen la agenda de implementación de la Ley de IA para el gobierno poselectoral.
+- **Reforma judicial (HD01JuU9 [B2])**: Paquete de eficiencia procesal del JuU orientado a los retrasos en el procesamiento de casos; objetivo de implementación 2027.
+- **Espacio e investigación (HD10461 [B3])**: Brecha de financiamiento de la ESA expuesta por interpelación — Suecia arriesga perder la participación en el programa espacial europeo en un momento de mayor importancia de la infraestructura de doble uso para el posicionamiento de la OTAN.
+- **Acceso a la vivienda (HD11774 [C2])**: La moción de garantía de crédito de la oposición señala una brecha de vivienda social como tema electoral.
+
+### Principal indicador adelantado
+
+**2026-05-15**: TU anuncia el calendario de audiencias públicas para la votación NTP HD03259 — si se confirma para finales de mayo, la narrativa del legado de infraestructura del gobierno queda fijada antes del receso de verano. Un retraso al otoño arriesga coincidir con la ventana de campaña electoral.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title Cronograma legislativo mayo 2026
+    dateFormat YYYY-MM-DD
+    section Infraestructura
+    Audiencia TU NTP HD03259        :milestone, 2026-05-15, 0d
+    Votación Riksdag NTP            :crit, 2026-05-20, 2026-05-31
+    section Sector financiero
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section Informes de comisión
+    Votación reforma judicial JuU9  :2026-05-15, 2026-05-25
+    Votación privacidad digital KU36 :2026-05-20, 2026-05-30
+    section Período electoral
+    Inicio del receso de verano     :milestone, 2026-07-01, 0d
+    Día de elecciones               :milestone, 2026-09-13, 0d
+```
+
+### Evaluación de confianza
+
+- Calendario de votación NTP de infraestructura: HIGH [B2] — basado en la fecha de presentación de HD03259 y el calendario del comité
+- Trayectoria electoral: MEDIUM-HIGH [B2] — basado en la tendencia de encuestas + el patrón legislativo
+- Proyecciones económicas del FMI: MEDIUM [C2] — extracción directa del FMI no disponible; se utilizó la cosecha WEO abr-2026 desde la caché
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_fi.md -->
+
+### 🎯 BLUF
+
+Toukokuu 2026 on Tidöallianssin viimeinen täysi lainsäädäntökuukausi ennen syyskuun 2026 vaaleja. Kolme lainsäädäntöverstaista hallitsee: Riksdagin äänestys 970 miljardin kruunun kansallisesta liikenneinfrastruktuurisuunnitelmasta (HD03259), EU:n pankkisääntelytransposition viimeistely (HD03253) sekä digitaalisen yksityisyyden, kilpailun ja tuomioistuinuudistuksen valiokuntaraporttien nopeutettu käsittely. Opposition 11 pontta 30. huhtikuuta — kattaen Ukraina-tuen, asumisen, työturvallisuuden, mielenterveyden ja eläinten hyvinvoinnin — signaloi vaalierilaistamisen strategiaa. Ruotsin politiikkaa toukokuussa 2026 määrittelee hallituksen pyrkimys vahvistaa perintönarratiiviaan ja opposition yritys muotoilla vaalikampanjan agenda.
+
+### 🧭 3 päätöstä, joita tämä tiedote tukee
+
+1. **Vaalitutkimus**: Mitkä lainsäädäntötulokset toukokuussa 2026 vaikuttavat eniten äänestäjien käsitykseen Tidöallianssin hallintotavasta ennen syyskuuta?
+2. **Politiikkaseuranta**: Mitkä valiokuntaraportit ja lakiesitykset vaativat seurantaa Riksdagin äänestyksen kautta toteutumisriskin arvioimiseksi?
+3. **Yritykset ja kansalaisyhteiskunta**: Mitkä sääntelymuutokset (pankit, kilpailu, asuminen, työturvallisuus) vaativat välitöntä sidosryhmäosallistumista toukokuussa?
+
+### 60 sekunnin lukeminen
+
+- **Infrastruktuuriperintö (HD03259 [A2])**: 970 miljardin kruunun NTP 2026–2037 tulee lopulliseen Riksdagin äänestykseen toukokuussa. Rautateiden sähköistäminen, Pohjois-Ruotsin yhteydet ja kansainväliset tavaraliikennekäytävät kehystävät hallituksen teollisuus-ilmastoarvovaatimuksen. TU-valiokunnan kuulemisaikataulu on ensimmäinen johtava indikaattori.
+- **Pankkisäätely (HD03253 [B2])**: EU:n CRR3/Basel III -transposition viimeistely FiU betänkanden kautta — asettaa pääomavaatimukset ruotsalaisille pankeille EBA:n stressitestikysymysten herättämällä hetkellä keskikokoisille EU-laitoksille.
+- **Laki ja järjestys -eskalaatio (HD03252 [B2])**: Sosiaaliturvan rajoittaminen tuomituille — osa etenevää Tidöallianssin oikeus-sosiaaliturvaneksus-ohjelmaa (ks. HC03202, HC03201) suunnattu svingiäänestäjille rikollisuuden ollessa top-3-vaaliaihe.
+- **Digitaalinen yksityisyys (HD01KU36 [B2])**: KU:n 17 digitaalisten yksityisyyskehysten parannusta asettaa tekoälyasetus-toteutusagendan vaalien jälkeiselle hallitukselle.
+- **Tuomioistuinuudistus (HD01JuU9 [B2])**: JuU:n prosessuaalinen tehokkuuspaketti kohdistuen käsittelyaikaeroihin; toteutustavoite 2027.
+- **Avaruus ja tutkimus (HD10461 [B3])**: ESA-rahoitusvaje paljastettu interpellaation kautta — Ruotsi riskeeraa eurooppalaisen avaruusohjelman osallistumisen menettämisen hetkellä, jolloin kaksikäyttöinfrastruktuurin merkitys NATO-asemointiin on kasvanut.
+- **Asuntoihin pääsy (HD11774 [C2])**: Opposition luottotakauslause signaloi sosiaalista asumisaukkoa vaaliasiana.
+
+### Johtava eteenpäin katsova indikaattori
+
+**2026-05-15**: TU ilmoittaa julkisesta kuulemisaikataulusta HD03259 NTP:n äänestystä varten — jos vahvistetaan toukokuun loppuun, hallituksen infrastruktuuriperintönarratiivi on lukittu ennen kesälomaa. Syksyyn viivästyminen riskeeraa törmäystä vaalikampanjaaikaikkunan kanssa.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title Toukokuun 2026 lainsäädäntöaikataulu
+    dateFormat YYYY-MM-DD
+    section Infrastruktuuri
+    TU kuuleminen NTP HD03259       :milestone, 2026-05-15, 0d
+    Riksdagin NTP-äänestys          :crit, 2026-05-20, 2026-05-31
+    section Rahoitussektori
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section Valiokuntaraportit
+    JuU9 tuomioistuinuudistusäänestys :2026-05-15, 2026-05-25
+    KU36 digitaalinen yksityisyysäänestys :2026-05-20, 2026-05-30
+    section Vaalikausi
+    Kesäloma alkaa                  :milestone, 2026-07-01, 0d
+    Vaalipäivä                      :milestone, 2026-09-13, 0d
+```
+
+### Luottamustasioarvio
+
+- Infrastruktuurin NTP-äänestyksen ajoitus: HIGH [B2] — HD03259:n taulukointipäivämäärään ja valiokunta-aikatauluun perustuen
+- Vaaliraita: MEDIUM-HIGH [B2] — mielipidemittaustrend + lainsäädäntömalli perustuen
+- IMF:n taloudelliset ennusteet: MEDIUM [C2] — IMF:n suorahaku ei saatavilla; WEO-vuosikerta huhtikuu 2026 käytetty välimuistista
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_fr.md -->
+
+### 🎯 BLUF
+
+Mai 2026 est le dernier mois législatif complet de la Tidöalliansen avant les élections au Riksdag de septembre 2026. Trois jalons législatifs dominent : le vote du Riksdag sur le Plan national de transport et d'infrastructure de 970 milliards de SEK (HD03259), l'achèvement de la transposition de la réglementation bancaire européenne (HD03253) et le traitement accéléré des rapports de commission sur la vie privée numérique, la concurrence et la réforme judiciaire. Les 11 motions de l'opposition du 30 avril — couvrant l'aide à l'Ukraine, le logement, la sécurité au travail, la santé mentale et le bien-être animal — signalent une stratégie de différenciation pré-électorale. La politique suédoise en mai 2026 est définie par l'effort du gouvernement de cristalliser son récit d'héritage et la tentative de l'opposition de définir l'agenda de la campagne électorale.
+
+### 🧭 3 décisions que ce briefing soutient
+
+1. **Analyse électorale** : Quels résultats législatifs en mai 2026 façonneront le plus la perception des électeurs sur le bilan de gouvernance de la Tidöalliansen avant septembre ?
+2. **Suivi des politiques** : Quels rapports de commission et propositions nécessitent un suivi lors du vote au Riksdag pour évaluer les risques d'implémentation ?
+3. **Entreprises et société civile** : Quels changements réglementaires (secteur bancaire, concurrence, logement, sécurité au travail) nécessitent un engagement immédiat des parties prenantes en mai ?
+
+### Lecture en 60 secondes
+
+- **Héritage infrastructure (HD03259 [A2])** : Le NTP 970 milliards SEK 2026–2037 vient au vote final du Riksdag en mai. L'électrification ferroviaire, la connectivité du Norrland et les corridors fret internationaux encadrent la revendication d'héritage industriel-climatique du gouvernement. Le programme d'auditions du comité TU est le premier indicateur avancé.
+- **Réglementation bancaire (HD03253 [B2])** : La transposition EU CRR3/Bâle III est achevée via le betänkande du FiU — fixe les exigences de fonds propres pour les banques suédoises à un moment de préoccupations des tests de résistance de l'EBA pour les institutions de taille moyenne de l'UE.
+- **Escalade loi et ordre (HD03252 [B2])** : Restriction de sécurité sociale pour les condamnés — partie d'un programme Tidöalliansen justice-sécurité sociale en escalade (voir HC03202, HC03201) ciblant les électeurs indécis avec la criminalité comme sujet électoral numéro 3.
+- **Vie privée numérique (HD01KU36 [B2])** : Les 17 améliorations du KU aux cadres d'intégrité numérique définissent l'agenda de mise en œuvre de l'AI Act pour le gouvernement post-électoral.
+- **Réforme judiciaire (HD01JuU9 [B2])** : Le paquet d'efficacité procédurale du JuU ciblant les arriérés de traitement ; objectif de mise en œuvre 2027.
+- **Espace et recherche (HD10461 [B3])** : Lacune de financement ESA exposée par interpellation — la Suède risque de perdre sa participation au programme spatial européen à un moment d'importance accrue des infrastructures à double usage pour le positionnement OTAN.
+- **Accès au logement (HD11774 [C2])** : La motion de garantie de crédit de l'opposition signale un déficit de logement social comme enjeu électoral.
+
+### Principal indicateur avancé
+
+**2026-05-15** : TU annonce le calendrier d'audience publique pour le vote NTP HD03259 — si confirmé pour fin mai, le récit d'héritage infrastructure du gouvernement est verrouillé avant la suspension estivale. Un report à l'automne risque de coïncider avec la fenêtre de campagne électorale.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title Calendrier législatif mai 2026
+    dateFormat YYYY-MM-DD
+    section Infrastructure
+    Audience TU NTP HD03259         :milestone, 2026-05-15, 0d
+    Vote Riksdag NTP                :crit, 2026-05-20, 2026-05-31
+    section Secteur financier
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section Rapports de commission
+    Vote réforme judiciaire JuU9    :2026-05-15, 2026-05-25
+    Vote vie privée numérique KU36  :2026-05-20, 2026-05-30
+    section Période électorale
+    Suspension estivale             :milestone, 2026-07-01, 0d
+    Jour des élections              :milestone, 2026-09-13, 0d
+```
+
+### Évaluation de confiance
+
+- Calendrier vote NTP infrastructure : HIGH [B2] — basé sur la date de dépôt de HD03259 et le calendrier du comité
+- Trajectoire électorale : MEDIUM-HIGH [B2] — basé sur la tendance des sondages + le schéma législatif
+- Projections économiques du FMI : MEDIUM [C2] — extraction directe FMI indisponible ; millésime WEO avr. 2026 utilisé depuis le cache
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# שוודיה במאי 2026: תשתיות, שלטון החוק ומיצוב בחירותי במרוץ החקיקתי האחרון
+
+### 🎯 תמצית מנהלים
+
+מאי 2026 הוא החודש החקיקתי המלא האחרון של קואליציית טידו לפני בחירות הריקסדאג בספטמבר 2026. שלושה אבני דרך חקיקתיות דומיננטיות: הצבעת הריקסדאג על תוכנית התשתיות הלאומית של 970 מיליארד כתר שוודי (HD03259), השלמת טרנספוזיציית הרגולציה הבנקאית האירופית (HD03253), ועיבוד מזורז של דוחות ועדות בנושאי פרטיות דיגיטלית, תחרות ורפורמה שיפוטית. 11 הצעות האופוזיציה מה-30 באפריל — הכוללות סיוע לאוקראינה, דיור, בטיחות בעבודה, בריאות נפשית ורווחת בעלי חיים — מסמנות אסטרטגיית בידול טרום-בחירות. הפוליטיקה השוודית במאי 2026 מעוצבת על ידי מאמץ הממשלה לגבש את נרטיב הירושה שלה ונסיון האופוזיציה להגדיר את אג'נדת הקמפיין הבחירותי.
+
+### 🧭 3 החלטות שהאינפורמציה הזו תומכת בהן
+
+1. **ניתוח בחירותי**: אילו תוצאות חקיקתיות במאי 2026 ישפיעו ביותר על תפיסת הבוחרים את מאזן הממשל של קואליציית טידו לפני ספטמבר?
+2. **מעקב מדיניות**: אילו דוחות ועדות והצעות מחייבים מעקב דרך הצבעה בריקסדאג להערכת סיכוני יישום?
+3. **עסקים וחברה אזרחית**: אילו שינויים רגולטוריים (בנקאות, תחרות, דיור, בטיחות בעבודה) מחייבים מעורבות מיידית של בעלי עניין במאי?
+
+### קריאה של 60 שניות
+
+- **ירושת תשתיות (HD03259 [A2])**: תוכנית NTP 2026–2037 בסך 970 מיליארד כתר מגיעה להצבעה סופית בריקסדאג במאי. חשמול מסילות הברזל, קישוריות נורלאנד ומסדרונות מטען בינלאומיים מסגירים את תביעת ירושת האקלים-תעשיה של הממשלה. לוח הזמנים של שימועי ועדת TU הוא המדד המוביל הראשון.
+- **רגולציה בנקאית (HD03253 [B2])**: טרנספוזיציה של EU CRR3/באזל III הושלמה דרך בטנקנדה של FiU — מגדיר דרישות הון לבנקים שוודיים בעת דאגות ממבחני הלחץ של EBA עבור מוסדות בגודל בינוני ב-EU.
+- **הסלמת חוק וסדר (HD03252 [B2])**: הגבלת ביטוח לאומי לנידונים — חלק מתוכנית טידו המסלימה של קישור צדק-ביטוח לאומי (ראו HC03202, HC03201) המכוונת לבוחרים נדנדה עם פשיעה כנושא בחירות מוביל.
+- **פרטיות דיגיטלית (HD01KU36 [B2])**: 17 שיפורי KU למסגרות יושרה דיגיטלית מגדירים את אג'נדת יישום חוק ה-AI לממשלה שלאחר הבחירות.
+- **רפורמה שיפוטית (HD01JuU9 [B2])**: חבילת יעילות פרוצדורלית של JuU לטיפול בפיגורי עיבוד; יעד יישום 2027.
+- **חלל ומחקר (HD10461 [B3])**: פער מימוני של ESA נחשף דרך שאילתת בין-שורות — שוודיה מסתכנת באובדן השתתפות בתוכנית החלל האירופית ברגע של חשיבות מוגברת של תשתיות dual-use למיצוב ב-NATO.
+- **גישה לדיור (HD11774 [C2])**: הצעת ערבות אשראי של האופוזיציה מסמנת גירעון דיור ציבורי כנושא בחירותי.
+
+### מדד מוביל ראשי
+
+**2026-05-15**: TU מודיעה על לוח זמנים של שימוע ציבורי להצבעת NTP HD03259 — אם מאושר לסוף מאי, נרטיב ירושת התשתיות של הממשלה נעול לפני הפסקת הקיץ. דחייה לסתיו מסתכנת בהתנגשות עם חלון הקמפיין הבחירותי.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title לוח זמנים חקיקתי מאי 2026
+    dateFormat YYYY-MM-DD
+    section תשתיות
+    שימוע TU NTP HD03259           :milestone, 2026-05-15, 0d
+    הצבעת ריקסדאג על NTP           :crit, 2026-05-20, 2026-05-31
+    section המגזר הפיננסי
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section דוחות ועדות
+    הצבעת רפורמה שיפוטית JuU9      :2026-05-15, 2026-05-25
+    הצבעת פרטיות דיגיטלית KU36    :2026-05-20, 2026-05-30
+    section תקופה בחירותית
+    תחילת פסק הקיץ                :milestone, 2026-07-01, 0d
+    יום הבחירות                   :milestone, 2026-09-13, 0d
+```
+
+### הערכת אמינות
+
+- לוח זמנים הצבעת NTP תשתיות: HIGH [B2] — מבוסס על תאריך הגשת HD03259 ולוח ועדות
+- מסלול בחירותי: MEDIUM-HIGH [B2] — מבוסס על מגמת סקרים + דפוס חקיקתי
+- תחזיות כלכליות של קרן המטבע: MEDIUM [C2] — חילוץ ישיר מקרן המטבע לא זמין; נעשה שימוש בגרסת WEO אפריל 2026 מהמטמון
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_ja.md -->
+
+### 🎯 要点
+
+2026年5月は、2026年9月のリクスダーグ選挙前のティドー連合最後の完全な立法月である。3つの立法マイルストーンが支配的だ：9,700億スウェーデンクローナの国家交通インフラ計画（HD03259）に関するリクスダーグ採決、EU銀行規制の国内法化の完了（HD03253）、デジタルプライバシー、競争、司法改革に関する委員会報告書の加速処理。4月30日の野党11件の動議（ウクライナ支援、住宅、労働安全、メンタルヘルス、動物福祉を含む）は、選挙前の差別化戦略を示している。2026年5月のスウェーデン政治は、政府のレガシー物語の固定化への取り組みと、野党の選挙キャンペーン議題の定義への試みによって形成されている。
+
+### 🧭 このブリーフィングが支援する3つの意思決定
+
+1. **選挙分析**：2026年5月のどの立法成果が、9月前のティドー連合のガバナンス実績に対する有権者の認識に最も影響するか？
+2. **政策追跡**：実施リスクを評価するためにリクスダーグ採決を通じて追跡が必要な委員会報告書および法案はどれか？
+3. **ビジネスおよび市民社会**：5月に規制当局の利害関係者との即時エンゲージメントが必要な規制変更（銀行、競争、住宅、労働安全）はどれか？
+
+### 60秒で読む
+
+- **インフラのレガシー（HD03259 [A2]）**：9,700億クローナのNTP 2026–2037が5月に最終リクスダーグ採決を迎える。鉄道電化、ノルランド接続性、国際貨物回廊が政府の産業・気候レガシー主張を形成する。TU委員会の公聴会スケジュールが最初の先行指標だ。
+- **銀行規制（HD03253 [B2]）**：EU CRR3/バーゼルIIIの国内法化がFiU betänkandeを通じて完了——中規模EU機関に対するEBAのストレステスト懸念の時期に、スウェーデンの銀行に対する自己資本要件を確定する。
+- **治安秩序の激化（HD03252 [B2]）**：有罪判決者への社会保障制限——犯罪を上位3つの選挙テーマとするスイング有権者をターゲットとするティドー連合の司法・社会保障連携プログラムの一環（HC03202、HC03201参照）。
+- **デジタルプライバシー（HD01KU36 [B2]）**：デジタル誠実性フレームワークへのKUの17の改善が、選挙後政府のAI法実施議題を設定する。
+- **司法改革（HD01JuU9 [B2]）**：処理積滞を対象とするJuUの手続き効率化パッケージ；実施目標2027年。
+- **宇宙・研究（HD10461 [B3]）**：質問による欧州宇宙機関の資金ギャップの露呈——スウェーデンは、NATO配置に対するデュアルユースインフラの重要性が高まる時期に、欧州宇宙プログラムへの参加を失うリスクがある。
+- **住宅アクセス（HD11774 [C2]）**：野党の信用保証動議は、社会住宅不足を選挙問題として示唆している。
+
+### 主要先行指標
+
+**2026-05-15**：TUがHD03259 NTP採決の公聴会スケジュールを発表——5月末に確認されれば、政府のインフラレガシー物語は夏季休会前に固定される。秋への延期は選挙キャンペーン期間と重なるリスクがある。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title 2026年5月立法タイムライン
+    dateFormat YYYY-MM-DD
+    section インフラ
+    TU公聴会 NTP HD03259            :milestone, 2026-05-15, 0d
+    リクスダーグ NTP採決             :crit, 2026-05-20, 2026-05-31
+    section 金融セクター
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section 委員会報告書
+    JuU9 司法改革採決               :2026-05-15, 2026-05-25
+    KU36 デジタルプライバシー採決   :2026-05-20, 2026-05-30
+    section 選挙期間
+    夏季休会開始                    :milestone, 2026-07-01, 0d
+    選挙日                         :milestone, 2026-09-13, 0d
+```
+
+### 信頼性評価
+
+- インフラNTP採決タイムライン：HIGH [B2] — HD03259提出日および委員会スケジュールに基づく
+- 選挙軌跡：MEDIUM-HIGH [B2] — 世論調査トレンド＋立法パターンに基づく
+- IMF経済見通し：MEDIUM [C2] — IMF直接取得不可；キャッシュから2026年4月WEOビンテージを使用
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_ko.md -->
+
+### 🎯 핵심 요약
+
+2026년 5월은 2026년 9월 릭스다그 선거 전 티도 연립의 마지막 완전한 입법 월이다. 세 가지 입법 이정표가 지배적이다: 9,700억 스웨덴 크로나 국가 교통 인프라 계획(HD03259)에 대한 릭스다그 표결, EU 은행 규제 국내법화 완료(HD03253), 디지털 프라이버시·경쟁·사법 개혁에 관한 위원회 보고서의 가속 처리. 4월 30일의 야당 11개 동의안 — 우크라이나 지원, 주택, 노동 안전, 정신 건강, 동물 복지 포함 — 은 선거 전 차별화 전략을 시사한다. 2026년 5월 스웨덴 정치는 정부의 레거시 서사 고착화 노력과 야당의 선거 캠페인 의제 정의 시도로 형성된다.
+
+### 🧭 이 브리핑이 지원하는 3가지 의사결정
+
+1. **선거 분석**: 2026년 5월의 어떤 입법 결과가 9월 전 티도 연립의 거버넌스 실적에 대한 유권자 인식에 가장 영향을 미칠 것인가?
+2. **정책 추적**: 실행 위험을 평가하기 위해 릭스다그 표결을 통해 추적해야 하는 위원회 보고서와 법안은 무엇인가?
+3. **기업 및 시민 사회**: 5월에 즉각적인 이해관계자 참여가 필요한 규제 변경 사항(은행, 경쟁, 주택, 노동 안전)은 무엇인가?
+
+### 60초 읽기
+
+- **인프라 레거시(HD03259 [A2])**: 9,700억 크로나 NTP 2026–2037이 5월 릭스다그 최종 표결에 도달한다. 철도 전철화, 노를란드 연결성, 국제 화물 회랑이 정부의 산업-기후 레거시 주장을 형성한다. TU 위원회 청문 일정이 첫 번째 선행 지표다.
+- **은행 규제(HD03253 [B2])**: EU CRR3/바젤 III 국내법화가 FiU betänkande를 통해 완료됨 — EU 중규모 기관에 대한 EBA 스트레스 테스트 우려 시기에 스웨덴 은행의 자본 요건을 확정한다.
+- **법질서 확대(HD03252 [B2])**: 유죄 판결자에 대한 사회 보장 제한 — 범죄를 상위 3개 선거 이슈로 삼는 스윙 유권자를 대상으로 하는 티도 연립의 사법-사회 보장 연계 프로그램 일부(HC03202, HC03201 참조).
+- **디지털 프라이버시(HD01KU36 [B2])**: 디지털 무결성 프레임워크에 대한 KU의 17개 개선 사항이 선거 후 정부를 위한 AI 법 실행 의제를 설정한다.
+- **사법 개혁(HD01JuU9 [B2])**: 처리 적체 해소를 위한 JuU 절차 효율성 패키지; 실행 목표 2027년.
+- **우주 및 연구(HD10461 [B3])**: 대정부 질문을 통해 드러난 ESA 자금 격차 — NATO 포지셔닝을 위한 이중 용도 인프라의 중요성이 높아지는 시기에 스웨덴이 유럽 우주 프로그램 참여를 잃을 위험에 처해 있다.
+- **주택 접근성(HD11774 [C2])**: 야당의 신용 보증 동의안은 사회 주택 부족을 선거 이슈로 시사한다.
+
+### 주요 선행 지표
+
+**2026-05-15**: TU가 HD03259 NTP 표결을 위한 공청회 일정을 발표함 — 5월 말로 확인되면 정부의 인프라 레거시 서사가 여름 휴회 전에 고착된다. 가을로 연기되면 선거 캠페인 기간과 겹칠 위험이 있다.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title 2026년 5월 입법 타임라인
+    dateFormat YYYY-MM-DD
+    section 인프라
+    TU 청문 NTP HD03259             :milestone, 2026-05-15, 0d
+    릭스다그 NTP 표결               :crit, 2026-05-20, 2026-05-31
+    section 금융 부문
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section 위원회 보고서
+    JuU9 사법 개혁 표결             :2026-05-15, 2026-05-25
+    KU36 디지털 프라이버시 표결     :2026-05-20, 2026-05-30
+    section 선거 기간
+    여름 휴회 시작                  :milestone, 2026-07-01, 0d
+    선거일                         :milestone, 2026-09-13, 0d
+```
+
+### 신뢰도 평가
+
+- 인프라 NTP 표결 타임라인: HIGH [B2] — HD03259 제출 날짜와 위원회 일정에 근거
+- 선거 궤적: MEDIUM-HIGH [B2] — 여론 조사 트렌드 + 입법 패턴에 근거
+- IMF 경제 전망: MEDIUM [C2] — IMF 직접 추출 불가; 캐시에서 2026년 4월 WEO 빈티지 사용
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_nl.md -->
+
+### 🎯 BLUF
+
+Mei 2026 is de laatste volledige wetgevingsmaand van de Tidöalliansen voor de Riksdag-verkiezingen van september 2026. Drie wetgevingsmijlpalen domineren: de Riksdag-stemming over het nationaal transportinfrastructuurplan van 970 miljard SEK (HD03259), de voltooiing van de EU-bankreguleringstransposities (HD03253) en versnelde commissieverwerking over digitale privacy, concurrentie en justitiële hervorming. De 11 oppositiemoties van 30 april — over Oekraïne-hulp, huisvesting, arbeidsveiligheid, geestelijke gezondheid en dierenwelzijn — signaleren een strategie voor pre-electorale profilering. De Zweedse politiek in mei 2026 wordt bepaald door de inspanning van de regering om haar erfenisnarratief te consolideren en de poging van de oppositie om de campagneagenda te definiëren.
+
+### 🧭 3 beslissingen die dit briefing ondersteunt
+
+1. **Verkiezingsanalyse**: Welke wetgevingsuitkomsten in mei 2026 zullen de perceptie van kiezers over het bestuursrecord van de Tidöalliansen vóór september het meest beïnvloeden?
+2. **Beleidsopvolging**: Welke commissierapporten en proposities vereisen opvolging via Riksdag-stemming om implementatierisico's te beoordelen?
+3. **Bedrijfsleven en maatschappelijk middenveld**: Welke regelgevingswijzigingen (bankwezen, concurrentie, huisvesting, arbeidsveiligheid) vereisen onmiddellijke betrokkenheid van stakeholders in mei?
+
+### Lezen in 60 seconden
+
+- **Infrastructuurerfenis (HD03259 [A2])**: Het NTP 970 miljard SEK 2026–2037 komt in mei voor de eindstemming in de Riksdag. Spoorwegelectrificatie, Norrland-connectiviteit en internationale vrachtcorridors omkaderen de industrieel-klimatologische erfenisclaim van de regering. Het hoorzittingsschema van de TU-commissie is de eerste voorlopende indicator.
+- **Bankregulering (HD03253 [B2])**: EU CRR3/Basel III-transpositie afgerond via FiU betänkande — stelt kapitaaleisen voor Zweedse banken vast op een moment van EBA-stresstestbezorgdheid voor middelgrote EU-instellingen.
+- **Wet en orde-escalatie (HD03252 [B2])**: Sociale zekerheidsbeperking voor veroordeelden — onderdeel van een escalerend Tidöalliansen justitie-sociale zekerheid nexusprogramma (zie HC03202, HC03201) gericht op wisselkiezers met misdaad als top-3 verkiezingsthema.
+- **Digitale privacy (HD01KU36 [B2])**: KU's 17 verbeteringen aan digitale integriteitskaders stellen de AI Act-implementatieagenda in voor de post-verkiezingsregering.
+- **Justitiële hervorming (HD01JuU9 [B2])**: JuU procedureel efficiëntiepakket gericht op verwerkingsachterstanden; implementatiedoelstelling 2027.
+- **Ruimtevaart en onderzoek (HD10461 [B3])**: ESA-financieringskloof blootgelegd door interpellatie — Zweden riskeert verlies van deelname aan het Europese ruimtevaartprogramma op een moment van verhoogd belang van dual-use infrastructuur voor NAVO-positionering.
+- **Toegang tot huisvesting (HD11774 [C2])**: Oppositie kredietgarantiemotie signaleert sociaal huisvestingstekort als verkiezingsprobleem.
+
+### Leidende voorlopende indicator
+
+**2026-05-15**: TU kondigt publiek hoorzittingsschema aan voor HD03259 NTP-stemming — indien bevestigd voor eind mei, is het infrastructuurerfenisnarratief van de regering vastgelegd vóór het zomerreces. Een vertraging naar het najaar riskeert in het campagnetermijn te vallen.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title Wetgevend tijdschema mei 2026
+    dateFormat YYYY-MM-DD
+    section Infrastructuur
+    TU hoorzitting NTP HD03259      :milestone, 2026-05-15, 0d
+    Riksdag NTP-stemming            :crit, 2026-05-20, 2026-05-31
+    section Financiële sector
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section Commissierapporten
+    JuU9 justitiehervormingsstemming :2026-05-15, 2026-05-25
+    KU36 digitale privacystemming    :2026-05-20, 2026-05-30
+    section Verkiezingsperiode
+    Zomerreces begint               :milestone, 2026-07-01, 0d
+    Verkiezingsdag                  :milestone, 2026-09-13, 0d
+```
+
+### Betrouwbaarheidsbeoordeling
+
+- Infrastructuur NTP-stemmingtijdlijn: HIGH [B2] — gebaseerd op HD03259-tabelleringsdatum en commissieschema
+- Electorale trajectorie: MEDIUM-HIGH [B2] — gebaseerd op peilingtrend + wetgevingspatroon
+- IMF economische prognoses: MEDIUM [C2] — directe IMF-extractie niet beschikbaar; WEO apr.-2026-vintage gebruikt uit cache
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_no.md -->
+
+### 🎯 BLUF
+
+Mai 2026 er Tidöalliansens siste fullstendige lovgivningsmåned før Riksdag-valget i september 2026. Tre lovgivningsmilepæler dominerer: Riksdag-avstemningen om den nasjonale transportinfrastrukturplanen på 970 milliarder SEK (HD03259), ferdigstillelsen av EU-bankregulerings-transposisjonen (HD03253) og akselerert utvalgsbehandling innen digital personvern, konkurranse og domstolsreform. Opposisjonens 11 motioner den 30. april — som spenner over Ukraina-støtte, boliger, arbeidssikkerhet, psykisk helse og dyrevelferd — signaliserer en strategi for pre-valg-differensiering. Svensk politikk i mai 2026 er definert av regjeringens innsats for å befeste sitt arvsnarrativ og opposisjonens bud på å definere valgkampanjens agenda.
+
+### 🧭 3 beslutninger dette briefet støtter
+
+1. **Valganalyse**: Hvilke lovgivningsresultater i mai 2026 vil mest forme velgernes oppfatning av Tidöalliansens styringsrekord foran september?
+2. **Politikksporing**: Hvilke utvalgsrapporter og proposisjoner krever overvåking gjennom Riksdag-avstemning for å vurdere implementeringsrisiko?
+3. **Næringsliv og sivilsamfunn**: Hvilke regelendringer (bank, konkurranse, bolig, arbeidssikkerhet) krever umiddelbar interessentengasjement i mai?
+
+### 60-sekunders lesning
+
+- **Infrastrukturarv (HD03259 [A2])**: 970 milliarder SEK NTP 2026–2037 kommer til endelig Riksdag-avstemning i mai. Jernbaneelektrifisering, Norrland-forbindelser og internasjonale godskorridorer rammesetter regjeringens industri-klimaarvsanspråk. TU-utvalgets høringsskjema er den første ledende indikatoren.
+- **Bankregulering (HD03253 [B2])**: EU CRR3/Basel III-transposisjon fullført via FiU betänkande — setter kapitalkrav for svenske banker i et øyeblikk av EBA-stresstestbekymring for mellomstore EU-institusjoner.
+- **Lov og orden-eskalering (HD03252 [B2])**: Sosialforsikringsrestriksjon for dømte — del av et eskalerende Tidöalliansen rettferdighet-sosialpolitikk-nexusprogram (se HC03202, HC03201) som retter seg mot svingvelgere med kriminalitet som topp-3-valgsak.
+- **Digitalt personvern (HD01KU36 [B2])**: KUs 17 forbedringer av digitale integritetssystemer setter AI Act-implementeringsagendaen for post-valgregjering.
+- **Domstolsreform (HD01JuU9 [B2])**: JuU prosedyreeffektivitetspakke rettet mot saksbehandlingsbalanse; implementeringsmål 2027.
+- **Rom og forskning (HD10461 [B3])**: ESA-finansieringsgap eksponert av interpellasjon — Sverige risikerer å miste deltakelse i det europeiske romprogrammet i et øyeblikk av økt dual-use-infrastrukturvikt for NATO-posisjonering.
+- **Boligenhet (HD11774 [C2])**: Opposisjonens kredittgarantimosjon signaliserer sosialt boliggap som valgsak.
+
+### Ledende fremover-indikator
+
+**2026-05-15**: TU kunngjør offentlig høringsskjema for HD03259 NTP-avstemning — hvis bekreftet for slutten av mai, er regjeringens infrastrukturarvsnarrativ låst inn før sommerferien. Forsinkelse til høsten risikerer å falle inn i valgkampanjevinduet.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title Lovgivningstidslinje mai 2026
+    dateFormat YYYY-MM-DD
+    section Infrastruktur
+    TU høring NTP HD03259           :milestone, 2026-05-15, 0d
+    Riksdag NTP-avstemning          :crit, 2026-05-20, 2026-05-31
+    section Finanssektoren
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section Utvalgsrapporter
+    JuU9 domstolsreformavstemning   :2026-05-15, 2026-05-25
+    KU36 digital personvernsavstemning :2026-05-20, 2026-05-30
+    section Valgperiode
+    Sommerferie starter             :milestone, 2026-07-01, 0d
+    Valgdag                         :milestone, 2026-09-13, 0d
+```
+
+### Konfidensvurdering
+
+- Infrastruktur NTP-avstemningsdato: HIGH [B2] — basert på HD03259-tabellert dato og utvalgsplan
+- Valgbane: MEDIUM-HIGH [B2] — basert på meningsmålingstrend + lovgivningsmønster
+- IMF-økonomiske prognoser: MEDIUM [C2] — IMF direkte henting utilgjengelig; WEO-årgangen apr-2026 brukt fra cache
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_sv.md -->
+
+### 🎯 BLUF
+
+Maj 2026 är Tidöalliansens sista fullständiga lagstiftarmånad före riksdagsvalet i september 2026. Tre lagstiftningsmilstolpar dominerar: riksdagsomröstningen om det nationella transportinfrastrukturprogrammet på 970 miljarder kronor (HD03259), slutförandet av transponeringen av EU:s bankregleringar (HD03253) och accelererad behandling av utskottsbetänkanden inom digital integritet, konkurrens och domstolsreform. Oppositionens 11 motioner den 30 april — inom områdena Ukraine-stöd, bostäder, arbetsmiljö, psykisk hälsa och djurvälfärd — signalerar en strategi för valskillnadsmarkering. Svensk politik i maj 2026 präglas av regeringens ansträngningar att befästa sitt arvsnarrativ och oppositionens strävan att definiera valkampanjens agenda.
+
+### 🧭 3 Beslut som detta briefing stödjer
+
+1. **Valanalys**: Vilka lagstiftningsresultat i maj 2026 kommer mest att påverka väljarnas syn på Tidöalliansens styrningsrekord inför september?
+2. **Policybevakning**: Vilka utskottsbetänkanden och propositioner behöver bevakas genom riksdagsomröstning för att bedöma implementeringsrisker?
+3. **Näringsliv och civilsamhälle**: Vilka regeländringar (banksektor, konkurrens, bostäder, arbetsmiljö) kräver omedelbart intressentengagemang i maj?
+
+### 60-sekunders läsning
+
+- **Infrastrukturarvet (HD03259 [A2])**: NTP 2026–2037 på 970 miljarder kronor kommer till slutlig riksdagsomröstning i maj. Järnvägselektrifiering, Norrlandsförbindelser och internationella godsstråk utgör regeringens arvsanspråk på industri och klimat. TU:s utfrågningsschema är den första ledande indikatorn.
+- **Bankreglering (HD03253 [B2])**: EU:s CRR3/Basel III-transponering klar via FiU-betänkande — fastställer kapitalkrav för svenska banker vid ett tillfälle av EBA-stresstestoro för medelstora EU-institutioner.
+- **Lag och ordning-eskalering (HD03252 [B2])**: Socialförsäkringsrestriktion för dömda — del av ett eskalerande Tidöalliansen rättvisa-socialpolitik-nexusprogram (se HC03202, HC03201) som riktar sig till svängväljare med brottslighet som topp-3 valfråga.
+- **Digital integritet (HD01KU36 [B2])**: KU:s 17 förbättringar av digitala integritetsramverk sätter AI Act-implementeringsagenda för post-valregeringen.
+- **Domstolsreform (HD01JuU9 [B2])**: JuU processuellt effektivitetspaket som riktar sig mot balans i ärendehandläggning; implementeringsmål 2027.
+- **Rymd och forskning (HD10461 [B3])**: ESA-finansieringsgap exponerat av interpellation — Sverige riskerar att förlora deltagande i det europeiska rymdprogrammet i ett läge med ökad dual-use-infrastrukturviktighet för NATO-positionering.
+- **Bostadsaccess (HD11774 [C2])**: Oppositionens kreditgarantimotion signalerar socialt bostadsgap som valfråga.
+
+### Ledande framåtindikator
+
+**2026-05-15**: TU meddelar offentlig utfrågningsplan för HD03259 NTP-omröstning — om bekräftad för slutet av maj är regeringens infrastrukturarvsnarrativ låst innan sommaruppehållet. Fördröjning till hösten riskerar att sammanfalla med valkampanjfönstret.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title Lagstiftningskalender maj 2026
+    dateFormat YYYY-MM-DD
+    section Infrastruktur
+    TU-utfrågning NTP HD03259      :milestone, 2026-05-15, 0d
+    Riksdagsomröstning NTP          :crit, 2026-05-20, 2026-05-31
+    section Finansiell sektor
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section Utskottsbetänkanden
+    JuU9 domstolsreformomröstning   :2026-05-15, 2026-05-25
+    KU36 digital integritetsomröstning :2026-05-20, 2026-05-30
+    section Valperiod
+    Sommaruppehåll börjar           :milestone, 2026-07-01, 0d
+    Valdag                          :milestone, 2026-09-13, 0d
+```
+
+### Konfidenssbedömning
+
+- NTP-omröstningens timing infrastruktur: HIGH [B2] — baserat på HD03259:s tabelleringsdatum och utskottsschemat
+- Valbanskurva: MEDIUM-HIGH [B2] — baserat på opinionsundersökningstrender + lagstiftningsmönster
+- IMF ekonomiska prognoser: MEDIUM [C2] — IMF direkthämtning ej tillgänglig; WEO-årgång april 2026 använd från cache
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_zh.md -->
+
+### 🎯 核心要点
+
+2026年5月是蒂德联盟在2026年9月议会选举前的最后一个完整立法月。三个立法里程碑占主导地位：议会就价值9700亿瑞典克朗的国家交通基础设施计划（HD03259）进行表决、欧盟银行监管移植完成（HD03253），以及委员会加速处理数字隐私、竞争和司法改革报告。4月30日的11项反对派动议——涵盖乌克兰援助、住房、劳动安全、心理健康和动物福利——标志着一种选前差异化策略。2026年5月的瑞典政治由政府巩固遗产叙事的努力与反对派定义竞选议程的尝试所塑造。
+
+### 🧭 本简报支持的3项决策
+
+1. **选举分析**：2026年5月哪些立法成果将最深刻影响选民对蒂德联盟在9月前治理记录的认知？
+2. **政策追踪**：哪些委员会报告和议案需要通过议会表决来追踪，以评估实施风险？
+3. **企业与公民社会**：哪些监管变化（银行业、竞争、住房、劳动安全）需要在5月立即开展利益相关者参与？
+
+### 60秒阅读
+
+- **基础设施遗产（HD03259 [A2]）**：9700亿克朗NTP 2026–2037将于5月进行议会最终表决。铁路电气化、诺尔兰连通性和国际货运走廊构成政府工业-气候遗产主张的框架。交通基础设施委员会（TU）的听证日程是第一个领先指标。
+- **银行监管（HD03253 [B2]）**：通过FiU betänkande完成欧盟CRR3/巴塞尔III移植——在欧洲银行管理局（EBA）对中型欧盟机构压力测试问题存在担忧之际，确立瑞典银行的资本要求。
+- **法律与秩序升级（HD03252 [B2]）**：对被定罪者的社会保障限制——是蒂德联盟以犯罪为选举主题前三名、针对摇摆选民的司法-社会保障关联计划（参见HC03202、HC03201）的一部分。
+- **数字隐私（HD01KU36 [B2]）**：KU对数字诚信框架的17项改进为选后政府设定了人工智能法实施议程。
+- **司法改革（HD01JuU9 [B2]）**：JuU针对案件积压的程序效率套餐；实施目标2027年。
+- **太空与研究（HD10461 [B3]）**：通过质询暴露的欧洲航天局资金缺口——在双用途基础设施对北约定位重要性日益上升的时刻，瑞典面临失去欧洲太空计划参与的风险。
+- **住房可及性（HD11774 [C2]）**：反对派信用担保动议将社会住房缺口标记为选举议题。
+
+### 主要领先指标
+
+**2026-05-15**：TU公布HD03259 NTP表决的公开听证日程——若确认在5月底前，政府的基础设施遗产叙事在夏季休会前得以锁定。推迟至秋季则有与选举竞选期窗口重叠的风险。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "secondaryColor": "#ff006e"}}}%%
+gantt
+    title 2026年5月立法时间表
+    dateFormat YYYY-MM-DD
+    section 基础设施
+    TU听证 NTP HD03259              :milestone, 2026-05-15, 0d
+    议会NTP表决                     :crit, 2026-05-20, 2026-05-31
+    section 金融部门
+    FiU betänkande HD03253          :2026-05-10, 2026-05-20
+    section 委员会报告
+    JuU9司法改革表决                :2026-05-15, 2026-05-25
+    KU36数字隐私表决                :2026-05-20, 2026-05-30
+    section 选举期
+    夏季休会开始                    :milestone, 2026-07-01, 0d
+    选举日                         :milestone, 2026-09-13, 0d
+```
+
+### 置信度评估
+
+- 基础设施NTP表决时间表：HIGH [B2] — 基于HD03259提交日期和委员会日程
+- 选举轨迹：MEDIUM-HIGH [B2] — 基于民调趋势+立法模式
+- IMF经济预测：MEDIUM [C2] — IMF直接提取不可用；使用缓存中的2026年4月WEO版本
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 34 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -3365,6 +4073,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
