@@ -6,7 +6,7 @@ date: 2026-04-30
 subfolder: motions
 slug: 2026-04-30-motions
 source_folder: analysis/daily/2026-04-30/motions
-generated_at: 2026-05-21T02:19:50.766Z
+generated_at: 2026-05-22T12:25:06.172Z
 language: en
 layout: article
 ---
@@ -90,6 +90,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1613,13 +1626,722 @@ pie title SAT Techniques Applied
 
 <full-text-fallback: full text not available from MCP for motions in this batch>
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# مقترحات المعارضة تتحدى الحكومة في مجالات تراخيص البيئة والتحول الطاقوي وقضاء الأحداث — 2026-04-29
+
+**المؤلف**: James Pether Sörling | **التاريخ**: 2026-04-30 | **التصنيف**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+قدّمت أحزاب المعارضة السويدية سبعة عشر مقترحاً (2026-04-29) لتحدّي أجندة الحكومة التشريعية في مجالَي الطاقة والبيئة على أربعة محاور رئيسية: إنشاء هيئة جديدة لتراخيص البيئة (Miljöprövningsmyndigheten)، ونشر طاقة الرياح في البلديات، وإعادة تنظيم منظومة الكهرباء، وتشديد قانون قضاء الأحداث. وتُشير المقترحات إلى أن تحالف تيدو اليمين-وسطي يواجه ضغطاً برلمانياً متواصلاً على أجندتَي التحول الأخضر وسيادة القانون من الاشتراكيين الديمقراطيين وحزب الوسط والخضر واليسار، وكل منهم يستغل الشقوق العقائدية داخل الكتلة الحاكمة.
+
+### 🧭 3 قرارات يدعم هذا الملخص اتخاذها
+
+1. **رصد هيئة تراخيص البيئة (HD024124/131/134/139)**: تكشف المقترحات الأربعة للجنة MJU عن تحالف معارضة واسع قد يُرغم على تعديلات لجنوية على prop. 2025/26:238 — تابع مداولات لجنة MJU والتنازلات المحتملة لصالح SD.
+2. **تقييم مخاطر التحول الطاقوي**: تمثّل مقترحات لجنة NU بشأن طاقة الرياح (HD024126/132/137) ومنظومة الكهرباء (HD024129/130/138) معاً روايةً موحدة للمعارضة مفادها أن تحويل البنية التحتية الطاقوية السويدية غير محدد قانونياً بما يكفي — قيّم ما إذا كان ذلك يُعجّل أو يُؤخّر هدف التخلص من الوقود الأحفوري في 2045.
+3. **الحرارة السياسية لقضاء الأحداث**: يختبر HD024136 (JuU) بشأن تشديد العقوبات على الشباب تماسك الحكومة بين جناح القانون والنظام (M/SD) والجناح الليبرالي-الإنساني (L/KD) — مؤشر على ضغط التحالف.
+
+### ⚡ قراءة استخباراتية في 60 ثانية
+
+- **17 مقترحاً من المعارضة** قُدِّمت في مواجهة 6 مشاريع قوانين/مراسلات حكومية في 2026-04-29
+- **التراخيص البيئية** (MJU، 4 مقترحات): تطالب المعارضة بآليات محاسبة ورقابة مستقلة على Miljöprövningsmyndigheten المقترحة
+- **طاقة الرياح** (NU، 3 مقترحات): تتباين المقترحات — يريد حزب الوسط تسريع التراخيص، بينما تريد SD تعزيز حق النقض البلدي
+- **منظومة الكهرباء** (NU، 3 مقترحات): تؤكد المعارضة أن قانون منظومة الكهرباء الجديد غير محايد تقنياً بما يكفي؛ واليسار يريد ضمانات للملكية العامة للشبكة
+- **الموانئ البلدية** (TU، مقترحان): S وM يقترحان نظامَي تنظيم مختلفَين للموانئ المملوكة للقطاع العام
+- **قضاء الأحداث** (JuU، مقترح واحد): مقترح S لإرشادات أحكام منظّمة في مقابل النهج الحكومي القائم على الاعتقال
+- **الاتجار/العنف** (AU، مقترحان): SD وV تقدّمان مقترحَين متنافسَين بشأن المراسلة الحكومية 245 — أولويات متعارضة أيديولوجياً
+- **السياق الاقتصادي-صندوق النقد الدولي** (WEO أبريل 2026): نمو الناتج المحلي الإجمالي السويدي 2.1% في 2026 متوقع، فائض مالي 0.5% من الناتج المحلي — للحكومة هامش مالي لتمويل الإصلاحات المؤسسية
+
+### 🏹 أبرز المحفّزات المستقبلية
+
+**تصويت لجنة MJU على تعديلات سلسلة HD024124 بحلول 2026-05-14** — إذا قبلت لجنة MJU أي بند معارض بشأن المراجعة المستقلة للـ Miljöprövningsmyndigheten، فهذا يُشير إلى استعداد الحكومة لمقايضة الرقابة المؤسسية بدعم SD لتشريعات التحول الطاقوي.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-04-30 | **Klassificering**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+Svenske oppositionspartier har indgivet sytten forslag (2026-04-29) om at udfordre regeringens energi- og miljølovgivningsdagsorden på fire centrale områder: oprettelsen af et nyt miljøgodkendelsesagentur (Miljøprövningsmyndigheten), vindkraftsudrulning i kommuner, omreguleringen af elsystemet og skærpet ungdomsstrafferet. Forslagene signalerer, at den centerkonservative Tidø-koalition møder vedvarende parlamentarisk pres på den grønne omstilling og retsstatsdagsordenen fra både Socialdemokraterne, Centerpartiet, De Grønne og Venstrefløjen, der hver udnytter doktrinære sprækker i den regerende blok.
+
+### 🧭 3 Beslutninger dette underlag understøtter
+
+1. **Overvåg miljøgodkendelsesagenturet (HD024124/131/134/139)**: De fire MJU-forslag afslører en bred oppositionskoalition, der kan tvinge udvalgsændringer til prop. 2025/26:238 — følg MJU-udvalgets drøftelser og mulige indrømmelser til SD.
+2. **Risikovurdering af energiomstilling**: NU-forslagene om vindkraft (HD024126/132/137) og elsystemet (HD024129/130/138) repræsenterer tilsammen et samlet oppositionsnarrativ om, at Sveriges energiinfrastrukturtransformation er utilstrækkeligt retsligt specificeret — vurder, om dette fremskynder eller forsinker målet om fossilfrihed i 2045.
+3. **Politisk temperatur omkring ungdomsstrafferet**: HD024136 (JuU) om skærpede ungdomssanktioner tester regeringens sammenhæng mellem lov-og-orden (M/SD) og liberal-humanitære (L/KD) partier — en lakmusprøve for koalitionsstress.
+
+### ⚡ 60-sekunders efterretningslæsning
+
+- **17 oppositionsforslag** indgivet mod 6 regeringspropositioner/skrivelser den 2026-04-29
+- **Miljøgodkendelse** (MJU, 4 forslag): Oppositionen kræver ansvarlighedsmekanismer og uafhængigt tilsyn med det foreslåede Miljøprövningsmyndigheten
+- **Vindkraft** (NU, 3 forslag): Forslagene divergerer — Centerpartiet ønsker hurtigere tilladelser, SD ønsker stærkere kommunalt veto
+- **Elsystemet** (NU, 3 forslag): Oppositionen hævder, at den nye ellov er utilstrækkeligt teknologineutral; Venstrefløjen ønsker garantier for offentligt netejerskab
+- **Kommunale havne** (TU, 2 forslag): S og M foreslår forskellige reguleringsregimer for offentligt ejede havne
+- **Ungdomsstrafferet** (JuU, 1 forslag): S-forslag om strukturerede strafferammer versus regeringens arrestationsfokuserede tilgang
+- **Menneskehandel/vold** (AU, 2 forslag): SD og V indgiver konkurrerende forslag til regeringsskrivelse 245 — ideologisk modsatte prioriteter
+- **IMF-kontekst** (WEO Apr-2026): Sveriges BNP-vækst 2,1 % 2026F, finansoverskud 0,5 % af BNP — regeringen har finanspolitisk råderum til at finansiere institutionelle reformer
+
+### 🏹 Vigtigste fremadrettede trigger
+
+**Udvalgsafstemning (MJU) om HD024124-serieændringer senest 2026-05-14** — hvis MJU accepterer en oppositionsklausul om uafhængig gennemgang af Miljøprövningsmyndigheten, signalerer det, at regeringen er villig til at handle institutionelt tilsyn mod SD's støtte til energiomstillingslovgivningen.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-04-30 | **Klassifizierung**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+Schwedische Oppositionsparteien haben siebzehn Anträge (2026-04-29) eingebracht, die die Energie- und Umweltgesetzgebungsagenda der Regierung in vier wesentlichen Bereichen herausfordern: die Schaffung einer neuen Umweltgenehmigungsbehörde (Miljöprövningsmyndigheten), den Windkraftausbau in Kommunen, die Neuregulierung des Stromsystems und ein verschärftes Jugendstrafrecht. Die Anträge signalisieren, dass die zentrums-konservative Tidö-Koalition anhaltendem parlamentarischen Druck bei der grünen Transformation und der Rechtsstaatsagenda sowohl von den Sozialdemokraten, dem Zentrum, den Grünen als auch der Linken ausgesetzt ist, die jeweils doktrinäre Risse innerhalb des regierenden Blocks ausnutzen.
+
+### 🧭 3 Entscheidungen, die diese Zusammenfassung unterstützt
+
+1. **Überwachung der Umweltgenehmigungsbehörde (HD024124/131/134/139)**: Die vier MJU-Anträge enthüllen eine breite Oppositionskoalition, die Ausschussänderungen zu prop. 2025/26:238 erzwingen könnte — verfolgen Sie die Beratungen des MJU-Ausschusses und mögliche Zugeständnisse an die SD.
+2. **Risikoabschätzung der Energiewende**: Die NU-Anträge zur Windkraft (HD024126/132/137) und zum Stromsystem (HD024129/130/138) repräsentieren zusammen eine einheitliche Oppositionserzählung, dass Schwedens Energieinfrastrukturwandel rechtlich unzureichend spezifiziert ist — beurteilen Sie, ob dies das Ziel der Fossilfreiheit 2045 beschleunigt oder verzögert.
+3. **Politische Temperatur beim Jugendstrafrecht**: HD024136 (JuU) über schärfere Jugendstrafen testet den Zusammenhalt der Regierung zwischen dem Law-and-Order-Flügel (M/SD) und dem liberal-humanistischen Flügel (L/KD) — ein Barometer für Koalitionsstress.
+
+### ⚡ 60-Sekunden-Geheimdienstlektüre
+
+- **17 Oppositionsanträge** gegen 6 Regierungsvorlagen/-schreiben am 2026-04-29 eingereicht
+- **Umweltgenehmigung** (MJU, 4 Anträge): Die Opposition fordert Rechenschaftsmechanismen und unabhängige Aufsicht für das vorgeschlagene Miljöprövningsmyndigheten
+- **Windkraft** (NU, 3 Anträge): Die Anträge divergieren — das Zentrum will schnellere Genehmigungen, die SD will ein stärkeres kommunales Vetorecht
+- **Stromsystem** (NU, 3 Anträge): Die Opposition behauptet, das neue Stromgesetz sei unzureichend technologieneutral; die Linke will Garantien für öffentliches Netzeigentum
+- **Kommunale Häfen** (TU, 2 Anträge): S und M schlagen unterschiedliche Regulierungsregime für öffentlich geführte Häfen vor
+- **Jugendstrafrecht** (JuU, 1 Antrag): S-Antrag für strukturierte Strafzumessungsrichtlinien gegenüber dem verhaftungsorientierten Ansatz der Regierung
+- **Menschenhandel/Gewalt** (AU, 2 Anträge): SD und V reichen konkurrierende Anträge zur Regierungsmitteilung 245 ein — ideologisch entgegengesetzte Prioritäten
+- **IMF-Kontext** (WEO Apr-2026): Schwedens BIP-Wachstum 2,1 % 2026P, Fiskalüberschuss 0,5 % des BIP — die Regierung hat fiskalischen Spielraum zur Finanzierung institutioneller Reformen
+
+### 🏹 Wichtigster Vorwärts-Trigger
+
+**Ausschussabstimmung (MJU) über HD024124-Serienänderungen bis 2026-05-14** — wenn der MJU eine Oppositionsklausel zur unabhängigen Überprüfung des Miljöprövningsmyndigheten annimmt, signalisiert dies, dass die Regierung bereit ist, institutionelle Kontrolle gegen die Unterstützung der SD für die Energiewendegesetzgebung zu tauschen.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-04-30 | **Clasificación**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+Los partidos de oposición suecos han presentado diecisiete mociones (2026-04-29) que desafían la agenda legislativa energética y medioambiental del gobierno en cuatro áreas principales: la creación de una nueva agencia de permisos ambientales (Miljöprövningsmyndigheten), el despliegue de energía eólica en los municipios, la reforma de la regulación del sistema eléctrico y un derecho penal de menores más estricto. Las mociones señalan que la coalición centro-conservadora Tidö enfrenta presión parlamentaria sostenida sobre la transición verde y la agenda del Estado de derecho por parte de los Socialdemócratas, el Centro, los Verdes y la Izquierda, cada uno explotando fisuras doctrinales dentro del bloque gobernante.
+
+### 🧭 3 Decisiones que apoya este informe
+
+1. **Supervisar la agencia de permisos ambientales (HD024124/131/134/139)**: Las cuatro mociones MJU revelan una amplia coalición de oposición que puede forzar enmiendas en comisión a la prop. 2025/26:238 — seguir las deliberaciones de la comisión MJU y posibles concesiones al SD.
+2. **Evaluación de riesgos de la transición energética**: Las mociones NU sobre energía eólica (HD024126/132/137) y sistema eléctrico (HD024129/130/138) representan juntas una narrativa de oposición unificada de que la transformación de la infraestructura energética sueca está insuficientemente especificada legalmente — evaluar si esto acelera o retrasa el objetivo de neutralidad de carbono 2045.
+3. **Temperatura política en torno a la justicia juvenil**: HD024136 (JuU) sobre sanciones penales más estrictas para menores pone a prueba la cohesión del gobierno entre el ala de ley y orden (M/SD) y la liberal-humanista (L/KD) — un barómetro del estrés de la coalición.
+
+### ⚡ Lectura de inteligencia en 60 segundos
+
+- **17 mociones de oposición** presentadas contra 6 proposiciones/comunicaciones del gobierno el 2026-04-29
+- **Permisos ambientales** (MJU, 4 mociones): La oposición exige mecanismos de responsabilidad y supervisión independiente del Miljöprövningsmyndigheten propuesto
+- **Energía eólica** (NU, 3 mociones): Las mociones divergen — el Centro quiere permisos más rápidos, SD quiere un derecho de veto municipal más fuerte
+- **Sistema eléctrico** (NU, 3 mociones): La oposición afirma que la nueva ley del sistema eléctrico es insuficientemente neutral tecnológicamente; la Izquierda quiere garantías sobre la propiedad pública de la red
+- **Puertos municipales** (TU, 2 mociones): S y M proponen regímenes regulatorios diferentes para puertos de propiedad pública
+- **Justicia juvenil** (JuU, 1 moción): Moción S para directrices estructuradas de determinación de penas frente al enfoque centrado en arrestos del gobierno
+- **Trata/violencia** (AU, 2 mociones): SD y V presentan mociones concurrentes sobre la comunicación gubernamental 245 — prioridades ideológicamente opuestas
+- **Contexto FMI** (WEO abr.-2026): Crecimiento del PIB sueco 2,1 % 2026P, superávit fiscal 0,5 % del PIB — el gobierno tiene margen fiscal para financiar reformas institucionales
+
+### 🏹 Principal detonante prospectivo
+
+**Votación en comisión (MJU) sobre enmiendas de la serie HD024124 antes del 2026-05-14** — si la MJU acepta cualquier cláusula de oposición sobre revisión independiente del Miljöprövningsmyndigheten, señala que el gobierno está dispuesto a intercambiar supervisión institucional por el apoyo de SD a la legislación sobre transición energética.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_fi.md -->
+
+**Kirjoittaja**: James Pether Sörling | **Päivämäärä**: 2026-04-30 | **Luokittelu**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+Ruotsin oppositiopuolueet ovat jättäneet seitsemäntoista aloitetta (2026-04-29), joissa haastetaan hallituksen energia- ja ympäristölainsäädäntöohjelma neljällä pääalueella: uuden ympäristölupaviraston (Miljöprövningsmyndigheten) perustaminen, tuulivoiman rakentaminen kunnissa, sähköjärjestelmän sääntelyn uudistaminen ja ankarampi nuorisorikoslaki. Aloitteet osoittavat, että keskustaoikeistolainen Tidö-koalitio kohtaa jatkuvaa parlamentaarista painetta vihreän siirtymän ja oikeusvaltioperiaatteen asialistalla sekä Sosiaalidemokraateilta, Keskustapuolueelta, Vihreiltä että Vasemmistolta, joista kukin hyödyntää opillisia halkeamia hallitsevassa blokissa.
+
+### 🧭 3 Päätöstä, joita tämä lyhennelmä tukee
+
+1. **Seuraa ympäristölupaviraston kehitystä (HD024124/131/134/139)**: Neljä MJU-aloitetta paljastavat laajan oppositiokoalition, joka saattaa pakottaa valiokuntamuutoksia prop. 2025/26:238:aan — seuraa MJU-valiokunnan harkintoja ja mahdollisia myönnytyksiä SD:lle.
+2. **Energiasiirtymän riskiarviointi**: NU:n tuulivoima-aloitteet (HD024126/132/137) ja sähköjärjestelmäaloitteet (HD024129/130/138) edustavat yhdessä yhtenäistä oppositiokertomusta siitä, että Ruotsin energiainfrastruktuurin muutos on oikeudellisesti alimääriteltyjä — arvioi, kiihdyttääkö vai viivästyttääkö tämä hiilivapaustavoitetta 2045.
+3. **Nuorisorikoslain poliittinen lämpötila**: HD024136 (JuU) ankarammista nuorisosanktioista testaa hallituksen yhtenäisyyttä laki-ja-järjestys- (M/SD) ja liberaalihumanististen (L/KD) siipien välillä — koalitiorasituksen barometri.
+
+### ⚡ 60 sekunnin tiedustelulukema
+
+- **17 oppositioaloitetta** jätetty 6 hallituksen esitystä/kirjelmää vastaan 2026-04-29
+- **Ympäristölupa** (MJU, 4 aloitetta): Oppositio vaatii vastuumekanismeja ja riippumatonta valvontaa ehdotetulle Miljöprövningsmyndighetenille
+- **Tuulivoima** (NU, 3 aloitetta): Aloitteet eriävät — Keskustapuolue haluaa nopeampaa lupamenettelyä, SD haluaa vahvempaa kunnallista veto-oikeutta
+- **Sähköjärjestelmä** (NU, 3 aloitetta): Oppositio väittää, että uusi sähköjärjestelmälaki on riittämättömän teknologianeutraali; Vasemmisto haluaa takuita julkisesta verkon omistajuudesta
+- **Kunnalliset satamat** (TU, 2 aloitetta): S ja M ehdottavat erilaisia sääntelyjärjestelmiä julkisesti omistetuille satamille
+- **Nuorisorikoslaki** (JuU, 1 aloite): S-aloite rakenteellisista tuomiolinjauksista versus hallituksen pidätyslähtöinen lähestymistapa
+- **Ihmiskauppa/väkivalta** (AU, 2 aloitetta): SD ja V jättävät kilpailevia aloitteita hallituksen kirjelmään 245 — ideologisesti vastakkaiset prioriteetit
+- **IMF-konteksti** (WEO huhtikuu 2026): Ruotsin BKT-kasvu 2,1 % 2026E, finanssiylijäämä 0,5 % BKT:sta — hallituksella on finanssipoliittista liikkumavaraa institutionaalisten uudistusten rahoittamiseen
+
+### 🏹 Tärkein eteenpäin katsova laukaisin
+
+**Valiokunnan (MJU) äänestys HD024124-sarjan muutoksista viimeistään 2026-05-14** — jos MJU hyväksyy minkään opposition lausekkeen Miljöprövningsmyndighetenin riippumattomasta tarkastelusta, se signaloi, että hallitus on valmis kauppaamaan institutionaalista valvontaa vastaan SD:n tukea energiasiirtymälainsäädännölle.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **Date** : 2026-04-30 | **Classification** : PUBLIC
+
+---
+
+### 🎯 BLUF
+
+Les partis d'opposition suédois ont déposé dix-sept motions (2026-04-29) contestant l'agenda législatif énergétique et environnemental du gouvernement dans quatre domaines majeurs : la création d'une nouvelle agence de permis environnementaux (Miljöprövningsmyndigheten), le déploiement de l'éolien dans les communes, la réforme de la régulation du système électrique et un droit pénal des mineurs plus strict. Les motions signalent que la coalition centriste-conservatrice Tidö fait face à une pression parlementaire soutenue sur la transition verte et l'agenda de l'État de droit de la part des Sociaux-démocrates, du Centre, des Verts et de la Gauche, chacun exploitant des failles doctrinales au sein du bloc gouvernant.
+
+### 🧭 3 Décisions que cette note soutient
+
+1. **Surveiller l'agence de permis environnementaux (HD024124/131/134/139)** : Les quatre motions MJU révèlent une large coalition d'opposition susceptible de forcer des amendements en commission à la prop. 2025/26:238 — suivre les délibérations de la commission MJU et les concessions éventuelles à SD.
+2. **Évaluation des risques de la transition énergétique** : Les motions NU sur l'éolien (HD024126/132/137) et le système électrique (HD024129/130/138) représentent ensemble un récit d'opposition unifié selon lequel la transformation de l'infrastructure énergétique suédoise est insuffisamment spécifiée juridiquement — évaluer si cela accélère ou retarde l'objectif de neutralité carbone 2045.
+3. **Température politique autour de la justice des mineurs** : HD024136 (JuU) sur les sanctions pénales des mineurs teste la cohésion gouvernementale entre l'aile loi-et-ordre (M/SD) et l'aile libérale-humaniste (L/KD) — un baromètre du stress de la coalition.
+
+### ⚡ Lecture de renseignement en 60 secondes
+
+- **17 motions d'opposition** déposées contre 6 propositions/communications gouvernementales le 2026-04-29
+- **Permis environnementaux** (MJU, 4 motions) : L'opposition exige des mécanismes de responsabilité et une supervision indépendante du Miljöprövningsmyndigheten proposé
+- **Éolien** (NU, 3 motions) : Les motions divergent — le Centre veut des permis plus rapides, SD veut un droit de veto communal plus fort
+- **Système électrique** (NU, 3 motions) : L'opposition affirme que la nouvelle loi sur le système électrique est insuffisamment neutre technologiquement ; la Gauche veut des garanties sur la propriété publique du réseau
+- **Ports communaux** (TU, 2 motions) : S et M proposent des régimes réglementaires différents pour les ports à propriété publique
+- **Justice des mineurs** (JuU, 1 motion) : Motion S pour des lignes directrices structurées de détermination des peines face à l'approche axée sur l'arrestation du gouvernement
+- **Traite/violence** (AU, 2 motions) : SD et V déposent des motions concurrentes sur la communication gouvernementale 245 — priorités idéologiquement opposées
+- **Contexte FMI** (WEO avr.-2026) : Croissance du PIB suédois 2,1 % 2026P, excédent budgétaire 0,5 % du PIB — le gouvernement dispose d'une marge budgétaire pour financer des réformes institutionnelles
+
+### 🏹 Principal déclencheur prospectif
+
+**Vote en commission (MJU) sur les amendements de la série HD024124 d'ici le 2026-05-14** — si la MJU accepte une clause d'opposition sur le contrôle indépendant du Miljöprövningsmyndigheten, cela signale que le gouvernement est prêt à échanger une surveillance institutionnelle contre le soutien de SD à la législation sur la transition énergétique.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# הצעות האופוזיציה מאתגרות את הממשלה בנושאי רישוי סביבתי, מעבר אנרגטי וצדק נוער — 2026-04-29
+
+**מחבר**: James Pether Sörling | **תאריך**: 2026-04-30 | **סיווג**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+מפלגות האופוזיציה השוודיות הגישו שבע עשרה הצעות (2026-04-29) המאתגרות את אג'נדת החקיקה האנרגטית והסביבתית של הממשלה בארבעה תחומים עיקריים: הקמת רשות חדשה לרישוי סביבתי (Miljöprövningsmyndigheten), פריסת אנרגיית רוח בעיריות, מסגרת רגולציה מחדש של מערכת החשמל ודיני עונשין מחמירים לנוער. ההצעות מאותתות כי קואליציית טידו הימין-מרכזית מתמודדת עם לחץ פרלמנטרי מתמשך על מהפכת האנרגיה הירוקה וסדר היום של שלטון החוק, הן מהסוציאל-דמוקרטים, מפלגת המרכז, הירוקים והשמאל, שכל אחד מהם מנצל סדקים אידיאולוגיים בתוך הגוש השלטוני.
+
+### 🧭 3 החלטות שתמצית זו תומכת בהן
+
+1. **מעקב אחר רשות הרישוי הסביבתי (HD024124/131/134/139)**: ארבע הצעות ה-MJU חושפות קואליציה רחבה של אופוזיציה שעשויה לאלץ תיקוני ועדה להצעת חוק 2025/26:238 — עקבו אחר דיוני ועדת MJU ואחר הפשרות האפשריות לגבי SD.
+2. **הערכת סיכוני מעבר אנרגטי**: הצעות NU לאנרגיית רוח (HD024126/132/137) ולמערכת החשמל (HD024129/130/138) מייצגות יחד נרטיב אופוזיציה מאוחד לפיו תשתית האנרגיה השוודית אינה מוגדרת דיה מבחינה משפטית — העריכו האם הדבר יאיץ או יעכב את יעד ניטרליות הפחמן ב-2045.
+3. **הטמפרטורה הפוליטית בנושא צדק נוער**: HD024136 (JuU) בדבר ענישה מחמירה לנוער בוחן את לכידות הממשלה בין כנף החוק והסדר (M/SD) לכנף הליברלית-הומניסטית (L/KD) — אינדיקטור ללחץ קואליציוני.
+
+### ⚡ קריאת מודיעין ב-60 שניות
+
+- **17 הצעות אופוזיציה** הוגשו נגד 6 הצעות חוק/מסמכי ממשלה ב-2026-04-29
+- **רישוי סביבתי** (MJU, 4 הצעות): האופוזיציה דורשת מנגנוני אחריות ופיקוח עצמאי על ה-Miljöprövningsmyndigheten המוצע
+- **אנרגיית רוח** (NU, 3 הצעות): ההצעות מתפצלות — מפלגת המרכז רוצה רישוי מהיר יותר, SD רוצה זכות וטו עירונית חזקה יותר
+- **מערכת החשמל** (NU, 3 הצעות): האופוזיציה טוענת שחוק מערכת החשמל החדש אינו נייטרלי טכנולוגית דיו; השמאל רוצה ערבויות לבעלות ציבורית על הרשת
+- **נמלים עירוניים** (TU, 2 הצעות): S ו-M מציעות משטרי רגולציה שונים לנמלים בבעלות ציבורית
+- **צדק נוער** (JuU, הצעה 1): הצעת S להנחיות גזר דין מובנות מול הגישה הממשלתית הממוקדת במעצר
+- **סחר בבני אדם/אלימות** (AU, 2 הצעות): SD ו-V מגישות הצעות מתחרות על מסמך ממשלה 245 — עדיפויות מנוגדות אידיאולוגית
+- **הקשר IMF** (WEO אפריל 2026): צמיחת התמ"ג השוודי 2.1% ב-2026 חיזוי, עודף פיסקלי 0.5% מהתמ"ג — לממשלה מרחב פיסקלי למימון רפורמות מוסדיות
+
+### 🏹 הטריגר העתידי המרכזי
+
+**הצבעת ועדת MJU על תיקוני סדרת HD024124 עד 2026-05-14** — אם MJU תאמץ סעיף אופוזיציה בנושא בדיקה עצמאית של Miljöprövningsmyndigheten, הדבר מסמן שהממשלה מוכנה לסחור פיקוח מוסדי בתמורה לתמיכת SD בחקיקת מעבר אנרגטי.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling | **日付**: 2026-04-30 | **分類**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+スウェーデンの野党各党は2026年4月29日、政府のエネルギー・環境立法アジェンダに対し、17件の動議を提出した。争点は4つの主要分野にわたる：新環境許可機関（Miljöprövningsmyndigheten）の設立、自治体における風力発電の展開、電力システム規制の見直し、少年刑事司法の厳格化。これらの動議は、中道右派のティドー連立政権が、緑の転換と法の支配アジェンダをめぐって、社会民主党・中央党・緑の党・左翼党から継続的な議会圧力を受けており、各党が与党内の教義的な断層線を巧みに利用していることを示している。
+
+### 🧭 この概要が支援する3つの意思決定
+
+1. **環境許可機関の動向監視 (HD024124/131/134/139)**：4件のMJU動議は、prop. 2025/26:238への委員会修正を迫る可能性のある広範な野党連合の存在を明らかにしている。MJU委員会の審議とSDへの譲歩の動向を追うこと。
+2. **エネルギー転換のリスク評価**：NU委員会の風力動議 (HD024126/132/137) と電力動議 (HD024129/130/138) は合わせて、スウェーデンのエネルギーインフラ転換が法的に不十分だという統一した野党の論点を構成している。2045年の化石燃料フリー目標が早まるか遅れるかを評価すること。
+3. **少年司法をめぐる政治的温度**：HD024136 (JuU) による少年刑罰強化は、法と秩序重視 (M/SD) と自由人道主義的 (L/KD) の両翼間の政府結束を試す。連立ストレスの先行指標となる。
+
+### ⚡ 60秒インテリジェンス概要
+
+- **17件の野党動議**が2026年4月29日に6件の政府法案/通知に対して提出された
+- **環境許可** (MJU、4件)：野党は、提案されたMiljöprövningsmyndighetenに対する説明責任メカニズムと独立した監督を要求
+- **風力発電** (NU、3件)：動議は分岐 — 中央党はより迅速な許可を望み、SDはより強い自治体拒否権を要求
+- **電力システム** (NU、3件)：野党は新電力システム法が技術中立性に欠けると主張；左翼党は公的送電網所有の保証を要求
+- **自治体港湾** (TU、2件)：SとMが公有港湾に対して異なる規制体制を提案
+- **少年司法** (JuU、1件)：政府の逮捕重視アプローチに対し、S党は構造化された量刑ガイドラインを求める動議
+- **人身売買/暴力** (AU、2件)：SDとVが政府文書245に対して競合する動議を提出 — イデオロギー的に対立する優先事項
+- **IMFコンテキスト** (WEO 2026年4月)：スウェーデンGDP成長率2.1%（2026年予測）、財政黒字0.5%（GDP比） — 政府には制度改革を資金調達する財政余力がある
+
+### 🏹 最重要の先行トリガー
+
+**MJU委員会のHD024124シリーズ修正案に関する採決（2026-05-14まで）** — MJUがMiljöprövningsmyndighetenの独立審査に関する野党条項を受け入れた場合、政府がエネルギー転換立法に対するSDの支持と引き換えに制度的監視を取引する意向があることを示す。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **날짜**: 2026-04-30 | **분류**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+스웨덴 야당들은 2026년 4월 29일 네 가지 주요 분야에 걸쳐 정부의 에너지·환경 입법 의제에 도전하는 17건의 발의안을 제출했다: 새로운 환경 허가 기관(Miljöprövningsmyndigheten) 설립, 지방자치단체 내 풍력 발전 배치, 전력 시스템 규제 개편, 소년 형사사법 강화. 이 발의안들은 중도우파 티도 연립정부가 녹색 전환 및 법치주의 의제에서 사회민주당·중앙당·녹색당·좌파당으로부터 지속적인 의회 압력을 받고 있음을 시사하며, 각 당은 집권 블록 내부의 교리적 균열을 적극 활용하고 있다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **환경 허가 기관 모니터링 (HD024124/131/134/139)**: 4건의 MJU 발의안은 prop. 2025/26:238에 대한 위원회 수정을 강제할 수 있는 광범위한 야당 연합의 존재를 드러낸다 — MJU 위원회 심의와 SD에 대한 가능한 양보를 추적할 것.
+2. **에너지 전환 리스크 평가**: NU 위원회의 풍력 발의안 (HD024126/132/137)과 전력 시스템 발의안 (HD024129/130/138)은 합쳐서 스웨덴의 에너지 인프라 전환이 법적으로 불충분하게 규정되어 있다는 통합된 야당 담론을 구성한다 — 이것이 2045년 화석연료 제로 목표를 앞당기거나 지연시키는지 평가할 것.
+3. **소년 사법의 정치적 온도**: HD024136 (JuU)의 소년 처벌 강화는 법과 질서 (M/SD)와 자유인도주의적 (L/KD) 양 진영 간 정부 결속을 시험한다 — 연립정부 긴장의 바로미터.
+
+### ⚡ 60초 인텔리전스 개요
+
+- **17건의 야당 발의안**이 2026년 4월 29일 6건의 정부 법안/통지에 대응해 제출됨
+- **환경 허가** (MJU, 4건): 야당은 제안된 Miljöprövningsmyndigheten에 대한 책임 메커니즘과 독립적 감독을 요구
+- **풍력 발전** (NU, 3건): 발의안 분화 — 중앙당은 더 빠른 허가 요구, SD는 더 강한 지자체 거부권 요구
+- **전력 시스템** (NU, 3건): 야당은 새 전력 시스템법이 기술 중립성이 부족하다고 주장; 좌파당은 공공 네트워크 소유권 보장 요구
+- **지방 항구** (TU, 2건): S와 M은 공공 소유 항구에 대해 서로 다른 규제 체계 제안
+- **소년 사법** (JuU, 1건): S 발의안은 구조화된 양형 가이드라인 요구 vs. 정부의 구금 중심 접근
+- **인신매매/폭력** (AU, 2건): SD와 V가 정부 통지 245에 대해 경쟁적 발의안 제출 — 이념적으로 상반된 우선순위
+- **IMF 맥락** (WEO 2026년 4월): 스웨덴 GDP 성장률 2.1% (2026년 전망), 재정 흑자 0.5% (GDP 대비) — 정부는 제도 개혁 재원을 마련할 재정 여력 보유
+
+### 🏹 핵심 선행 트리거
+
+**MJU 위원회의 HD024124 시리즈 수정안 표결 (2026-05-14까지)** — MJU가 Miljöprövningsmyndigheten의 독립적 검토에 관한 야당 조항을 수용할 경우, 정부가 에너지 전환 입법에 대한 SD의 지지를 대가로 제도적 감독을 거래할 의향이 있음을 시사한다.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-04-30 | **Classificatie**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+Zweedse oppositiepartijen hebben zeventien moties ingediend (2026-04-29) die de energie- en milieuwetgevingsagenda van de regering uitdagen op vier hoofdgebieden: de oprichting van een nieuwe milieuvergunningsinstantie (Miljöprövningsmyndigheten), de uitrol van windenergie in gemeenten, de herregulering van het elektriciteitssysteem en een strenger jeugdstrafrecht. De moties signaleren dat de centrumrechtse Tidö-coalitie aanhoudende parlementaire druk ondervindt op de groene transitie en de rechtsstaatsagenda van zowel de Sociaaldemocraten, het Centrum, de Groenen als Links, die elk gebruik maken van doctrinaire breuken binnen het regerende blok.
+
+### 🧭 3 Beslissingen die dit rapport ondersteunt
+
+1. **Monitor de milieuvergunningsinstantie (HD024124/131/134/139)**: De vier MJU-moties onthullen een brede oppositiecoalitie die commissiewijzigingen aan prop. 2025/26:238 kan afdwingen — volg de beraadslagingen van de MJU-commissie en mogelijke concessies aan SD.
+2. **Risicobeoordeling van de energietransitie**: De NU-moties over windenergie (HD024126/132/137) en het elektriciteitssysteem (HD024129/130/138) vertegenwoordigen samen een eenduidige oppositienarratief dat de transformatie van Zweeds energieinfrastructuur juridisch onvoldoende is gespecificeerd — beoordeel of dit het doel van fossielvrij 2045 versnelt of vertraagt.
+3. **Politieke temperatuur rondom jeugdstrafrecht**: HD024136 (JuU) over strengere jeugdsancties test de samenhang van de regering tussen de wet-en-orde-vleugel (M/SD) en de liberaal-humanistische vleugel (L/KD) — een barometer voor coalitiedruk.
+
+### ⚡ 60-seconden inlichtingenlectuur
+
+- **17 oppositiemoties** ingediend tegen 6 regeringsvoorstellen/-mededelingen op 2026-04-29
+- **Milieuvergunning** (MJU, 4 moties): De oppositie eist verantwoordingsmechanismen en onafhankelijk toezicht voor het voorgestelde Miljöprövningsmyndigheten
+- **Windenergie** (NU, 3 moties): De moties divergeren — het Centrum wil snellere vergunningen, SD wil een sterker gemeentelijk vetorecht
+- **Elektriciteitssysteem** (NU, 3 moties): De oppositie beweert dat de nieuwe elektriciteitssysteemwet onvoldoende technologieneutraal is; Links wil garanties voor publiek netwerkeigendom
+- **Gemeentelijke havens** (TU, 2 moties): S en M stellen verschillende regelgevingsregimes voor voor publiek beheerde havens
+- **Jeugdstrafrecht** (JuU, 1 motie): S-motie voor gestructureerde straftoemetingsrichtlijnen versus de op aanhouding gerichte aanpak van de regering
+- **Mensenhandel/geweld** (AU, 2 moties): SD en V dienen concurrerende moties in over regeringsmededeling 245 — ideologisch tegengestelde prioriteiten
+- **IMF-context** (WEO apr.-2026): Zweedse bbp-groei 2,1 % 2026P, begrotingsoverschot 0,5 % van bbp — de regering heeft fiscale ruimte om institutionele hervormingen te financieren
+
+### 🏹 Belangrijkste toekomstige trigger
+
+**Commissiestemming (MJU) over wijzigingen van de HD024124-serie uiterlijk 2026-05-14** — als de MJU een oppositieclausule over onafhankelijke toetsing van het Miljöprövningsmyndigheten accepteert, geeft dit aan dat de regering bereid is institutioneel toezicht in te ruilen voor de steun van SD voor de energietransitiewetgeving.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-04-30 | **Klassifisering**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+Svenske opposisjonspartier har levert sytten forslag (2026-04-29) som utfordrer regjeringens energi- og miljølovgivningsagenda på fire hovedområder: opprettelsen av et nytt miljøgodkjenningsorgan (Miljøprövningsmyndigheten), vindkraftutbygging i kommuner, omregulering av elsystemet og strengere ungdomsstraffrett. Forslagene signaliserer at den sentrumskonservative Tidø-koalisjonen møter vedvarende parlamentarisk press på den grønne omstillingen og rettsstatsagendaen fra både Sosialdemokratene, Senterpartiet, Miljøpartiet og Venstresiden, som hver utnytter doktrinære sprekkdannelser innenfor den styrende blokken.
+
+### 🧭 3 Beslutninger dette underlaget støtter
+
+1. **Overvåk miljøgodkjenningsorganet (HD024124/131/134/139)**: De fire MJU-forslagene avslører en bred opposisjonskoalisjon som kan tvinge frem utvalgsendringer i prop. 2025/26:238 — følg MJU-utvalgets drøftelser og mulige konsesjoner til SD.
+2. **Risikovurdering av energiomstilling**: NU-forslagene om vindkraft (HD024126/132/137) og elsystemet (HD024129/130/138) representerer til sammen en samlet opposisjonsfortelling om at Sveriges energiinfrastrukturtransformasjon er utilstrekkelig rettslig spesifisert — vurder om dette fremskynder eller forsinker målet om fossilfrihet i 2045.
+3. **Politisk temperatur rundt ungdomsstraffrett**: HD024136 (JuU) om strengere ungdomssanksjoner tester regjeringens samhørighet mellom lov-og-orden (M/SD) og liberal-humanitære (L/KD) partier — en pekepinn på koalisjonsbelastning.
+
+### ⚡ 60-sekunders etterretningslesning
+
+- **17 opposisjonsforslag** levert mot 6 regjeringsproposisjoner/skrivelser den 2026-04-29
+- **Miljøgodkjenning** (MJU, 4 forslag): Opposisjonen krever ansvarsmekanismer og uavhengig tilsyn med det foreslåtte Miljøprövningsmyndigheten
+- **Vindkraft** (NU, 3 forslag): Forslagene divergerer — Senterpartiet vil ha raskere tillatelser, SD vil ha sterkere kommunalt veto
+- **Elsystemet** (NU, 3 forslag): Opposisjonen hevder at den nye elsystemloven er utilstrekkelig teknologinøytral; Venstresiden vil ha garantier for offentlig netteierskapet
+- **Kommunale havner** (TU, 2 forslag): S og M foreslår ulike reguleringsregimer for offentlig eide havner
+- **Ungdomsstraffrett** (JuU, 1 forslag): S-forslag om strukturerte straffeutmålingsretningslinjer mot regjeringens pågripelsesfokuserte tilnærming
+- **Menneskehandel/vold** (AU, 2 forslag): SD og V leverer konkurrerende forslag til regjeringsskrivelse 245 — ideologisk motsatte prioriteringer
+- **IMF-kontekst** (WEO Apr-2026): Sveriges BNP-vekst 2,1 % 2026F, finansoverskudd 0,5 % av BNP — regjeringen har finanspolitisk handlingsrom til å finansiere institusjonelle reformer
+
+### 🏹 Viktigste fremadrettede trigger
+
+**Utvalgsavstemning (MJU) om HD024124-serieendringer innen 2026-05-14** — hvis MJU aksepterer en opposisjonsklausul om uavhengig gjennomgang av Miljøprövningsmyndigheten, signaliserer det at regjeringen er villig til å handle institusjonelt tilsyn mot SD's støtte til energiomstillingslovgivningen.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-04-30 | **Klassificering**: PUBLIC
+
+---
+
+### 🎯 BLUF
+
+Svenska oppositionspartier har lämnat in sjutton motioner (2026-04-29) som utmanar regeringens energi- och miljölagstiftningsagenda inom fyra huvudområden: inrättandet av en ny miljöprövningsmyndighet (Miljöprövningsmyndigheten), vindkraftsetablering i kommuner, omregleringen av elsystemet och strängare ungdomsbrottslighet. Motionerna signalerar att den centerkonservativa Tidökoalitionen möter ihållande parlamentariskt tryck på den gröna omställningen och rättsstatsdagordningen från både Socialdemokraterna, Centerpartiet, Miljöpartiet och Vänsterpartiet, som var och en utnyttjar doktrinariska sprickor inom det styrande blocket.
+
+### 🧭 3 Beslut detta underlag stödjer
+
+1. **Bevaka miljöprövningsmyndigheten (HD024124/131/134/139)**: De fyra MJU-motionerna avslöjar en bred oppositionskoalition som kan tvinga fram utskottsändringar i prop. 2025/26:238 — följ MJU-utskottets behandling och eventuella eftergifter till SD.
+2. **Riskbedömning av energiomställningen**: NU-motionerna om vindkraft (HD024126/132/137) och elsystemet (HD024129/130/138) representerar tillsammans en enad oppositionsnarration om att Sveriges energiinfrastrukturtransformation är otillräckligt rättsligt specificerad — bedöm om detta påskyndar eller försenar målet om fossilfrihet 2045.
+3. **Politisk temperatur kring ungdomsjustis**: HD024136 (JuU) om strängare ungdomspåföljder testar regeringens sammanhållning mellan lag-och-ordning (M/SD) och liberal-humanitärt (L/KD) inriktade partier — en vägvisare för koalitionsstress.
+
+### ⚡ 60-sekunders underrättelseläsning
+
+- **17 oppositionsmotioner** inlämnade mot 6 regeringspropositioner/skrivelser den 2026-04-29
+- **Miljötillstånd** (MJU, 4 motioner): Oppositionen kräver ansvarsutkrävande och oberoende tillsyn av den föreslagna Miljöprövningsmyndigheten
+- **Vindkraft** (NU, 3 motioner): Motionerna divergerar — Centerpartiet vill ha snabbare tillståndsgivning, SD vill ha starkare kommunalt veto
+- **Elsystemet** (NU, 3 motioner): Oppositionen hävdar att den nya elsystemslagen är otillräckligt teknikneutral; Vänsterpartiet vill ha garantier för statligt ägande av elnätet
+- **Kommunala hamnar** (TU, 2 motioner): S och M föreslår olika tillsynsregimer för offentligt ägda hamnar
+- **Ungdomsjustis** (JuU, 1 motion): S-motion om strukturerade påföljdsriktlinjer kontra regeringens gripnings-fokuserade ansats
+- **Handel/våld** (AU, 2 motioner): SD och V lämnar konkurrerande motioner om regeringsskrivelse 245 — ideologiskt motsatta prioriteringar
+- **IMF-kontext** (WEO Apr-2026): Sveriges BNP-tillväxt 2,1 % 2026P, finansiellt överskott 0,5 % av BNP — regeringen har finanspolitiskt utrymme att finansiera institutionella reformer
+
+### 🏹 Viktigaste framåtblickande trigger
+
+**Utskottsomröstning (MJU) om HD024124-serieändringar senast 2026-05-14** — om MJU accepterar någon oppositionsklausul om oberoende granskning av Miljöprövningsmyndigheten, signalerar det att regeringen är villig att handla institutionell tillsyn mot SD:s stöd för energiomställningslagstiftningen.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling | **日期**：2026-04-30 | **密级**：PUBLIC
+**Confidence**：HIGH [B2] | **Riksmöte**：2025/26
+
+---
+
+### 🎯 BLUF
+
+瑞典反对党于2026年4月29日提交了十七项动议，就四大核心领域对政府的能源与环境立法议程发起挑战：建立新的环境许可机构（Miljöprövningsmyndigheten）、推进市政风电部署、重构电力系统监管框架，以及强化青少年刑事司法。这些动议表明，中间偏右的提道联合政府在绿色转型与法治议程上正面临来自社会民主党、中央党、绿党及左翼党的持续议会压力，各党均在利用执政集团内部的理念分歧。
+
+### 🧭 本简报支持的3项决策
+
+1. **监测环境许可机构动态 (HD024124/131/134/139)**：四项MJU动议揭示了可能迫使prop. 2025/26:238进行委员会修订的广泛反对党联盟——追踪MJU委员会审议进展及对SD的潜在让步。
+2. **能源转型风险评估**：NU委员会关于风电的动议 (HD024126/132/137) 和电力系统的动议 (HD024129/130/138) 共同构成统一的反对党叙事——即瑞典能源基础设施转型的法律界定不足——评估这是否将加速或延缓2045年无化石燃料目标。
+3. **青少年司法政治温度**：HD024136 (JuU) 关于加重青少年刑罚的议案考验政府在法律秩序派 (M/SD) 与自由人道主义派 (L/KD) 之间的凝聚力——联合政府压力的晴雨表。
+
+### ⚡ 60秒情报速读
+
+- **17项反对党动议**于2026年4月29日提交，针对6项政府法案/文函
+- **环境许可** (MJU，4项)：反对党要求对拟议中的Miljöprövningsmyndigheten建立问责机制与独立监督
+- **风力发电** (NU，3项)：动议存在分歧——中央党希望加快审批，SD要求加强市政否决权
+- **电力系统** (NU，3项)：反对党认为新电力系统法技术中立性不足；左翼党要求公共电网所有权保障
+- **市政港口** (TU，2项)：S与M就公有港口提出不同监管方案
+- **青少年司法** (JuU，1项)：S党动议要求结构化量刑指南，对应政府以逮捕为核心的路径
+- **人口贩卖/暴力** (AU，2项)：SD与V就政府文函245提交竞争性动议——意识形态立场截然相反
+- **IMF背景** (WEO 2026年4月)：瑞典GDP增速2.1%（2026年预测），财政盈余0.5%（占GDP）——政府具备资助制度改革的财政空间
+
+### 🏹 最关键的前瞻触发事件
+
+**MJU委员会就HD024124系列修正案进行表决（2026-05-14前）** — 若MJU接受任何关于Miljöprövningsmyndigheten独立审查的反对党条款，则表明政府愿意以制度监督换取SD对能源转型立法的支持。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    A["17 Opposition Motions\n2026-04-29"] --> B["Environmental Permitting\nMJU: HD024124/131/134/139"]
+    A --> C["Energy Transition\nNU: HD024126/129/130/132/137/138"]
+    A --> D["Social Policy\nJuU/AU/TU: HD024133/136/140/125/128/135"]
+    B --> E["MJU Committee Vote\n≈ 2026-05-14"]
+    C --> F["NU Energy Vote\n≈ 2026-05-20"]
+    D --> G["Social Package Vote\n≈ 2026-06-01"]
+    E --> H["Coalition Test:\nSD Demands vs. L/KD Principles"]
+    style A fill:#1a1e3d,color:#00d9ff
+    style B fill:#0a0e27,color:#ff006e
+    style C fill:#0a0e27,color:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e
+    style F fill:#1a1e3d,color:#ffbe0b
+    style G fill:#1a1e3d,color:#00d9ff
+    style H fill:#0a0e27,color:#ff006e
+```
+
+---
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 17 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 18 | Linked in Article Sources, not expanded inline |
 
@@ -1672,6 +2394,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

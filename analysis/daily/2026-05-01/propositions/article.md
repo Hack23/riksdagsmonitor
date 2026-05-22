@@ -6,7 +6,7 @@ date: 2026-05-01
 subfolder: propositions
 slug: 2026-05-01-propositions
 source_folder: analysis/daily/2026-05-01/propositions
-generated_at: 2026-05-21T02:19:50.818Z
+generated_at: 2026-05-22T12:25:06.249Z
 language: en
 layout: article
 ---
@@ -86,6 +86,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1953,13 +1966,731 @@ Data sourced from 2026-04-30 via lookback fallback — check freshness indicator
 
 PIR-1 (Vårpropositionen agency capacity) carried forward from 2026-04-30 cycle. Status: PARTIALLY ANSWERED. See pir-status.json for full PIR register.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_ar.md -->
+
+‏# أكثر إصلاح جذري للهجرة في السويد منذ عقود: تيدوألليانسن يقدم حزمة تشريعية من أربعة قوانين للجوء
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-01  
+**التصنيف**: عام  
+**الثقة**: عالية [B2] — مصادر أولية متعددة (8 مقترحات حكومية، MCP riksdag-regering)
+
+### الملخص التنفيذي
+
+قدّمت حكومة تيدوألليانسن أربعة مقترحات متزامنة في 30 أبريل 2026 تشكّل معاً أشمل تقييد لحقوق اللجوء والهجرة في السويد منذ قانون الأجانب المؤقت لعام 2016: الإلغاء الكامل لتصاريح الإقامة الدائمة (HD03262)، وتوسيع صلاحيات الترحيل القسري (HD03263)، واشتراطات سلوكية أكثر صرامة لجميع حاملي التصاريح (HD03264)، وتشديد الاحتجاز الإداري والمراقبة (HD03265). أُودعت الحزمة قبل ستة أشهر من انتخابات سبتمبر 2026، وتُشير إلى تصعيد انتخابي مقصود في ملف الهجرة، راهناً على عزل معارضة حزب S وحزب MP بينما يتوطد حزب SD وكتلة الائتلاف. كما قدّمت الحكومة مقترحات حول التعاون العسكري العملياتي (HD03254)، والرعاية المتكاملة لإدمان المخدرات (HD03251)، والشفافية السياسية (HD03258)، وأخلاقيات البحث العلمي (HD03260).
+
+### القرارات التي يدعمها هذا التقرير
+
+1. **لجنة SfU في ريكسداجن** — تستلزم أربعة مقترحات هجرة مراجعة تسلسلية في اللجنة وتصويتات في الغرفة؛ يحتاج الائتلاف إلى اجتياز التصويتات الأربعة، على الأرجح في خريف 2026.
+2. **أحزاب المعارضة (S, MP, V, C)** — البت فيما إذا كانت ستطعن دستورياً أمام لاجراديت أم تقبل الهزيمة؛ يواجه حزب S معضلة تموضع حادة في ضوء إشارات التعاون السابقة عام 2022.
+3. **المستوى الأوروبي/بروكسل** — يُنفّذ HD03262 مباشرةً ميثاق الهجرة واللجوء في الاتحاد الأوروبي؛ موقفه من الامتثال سيُشير إلى نية السويد في التطبيق لمديرية GD HOME.
+4. **المجتمع المدني/المفوضية السامية للأمم المتحدة لشؤون اللاجئين** — تقييم مخاطر التقاضي بموجب المادة 5 من الاتفاقية الأوروبية لحقوق الإنسان (الاحتجاز، HD03265) والمادة 8 (وحدة الأسرة، HD03262).
+
+### إحاطة 60 ثانية
+
+- **مجموعة مقترحات الهجرة الأربعة** هي القصة الرئيسية: إلغاء الإقامة الدائمة → جميع المهاجرين يحملون تصاريح مؤقتة متجددة
+- **HD03263**: توسيع طاقة الترحيل — صلاحيات جديدة لـ Migrationsverket وPolismyndigheten؛ مرتبط بمخاطر قدرة وكالة Statskontoret
+- **HD03264**: توسيع اختبار الشخصية — الإدانة في أي دولة يمكن أن تؤدي إلى الإلغاء
+- **HD03265**: احتجاز إداري موسّع دون أمر قضائي لمدة تصل إلى 6 أشهر
+- **HD03254** (دفاع): NORDEFCO + ترقيات الإطار الثنائي التي تُمكّن من تمارين مشتركة مُفوَّضة مسبقاً على الأراضي السويدية — أهمية استراتيجية عالية
+- **HD03251**: يدمج رعاية الإدمان في الهياكل الصحية الإقليمية — دعم عابر للأحزاب غير مثير للجدل متوقع
+- **HD03258**: قواعد شفافية جديدة لتمويل الأحزاب السياسية وسجلات الضغط — إحالة إلى KU متوقعة
+- **الثقة**: عالية بأن حزمة الهجرة ستُقر؛ متوسطة حول التأثير الانتخابي — استطلاعات الرأي تقاربت
+
+### أبرز محفزات المستقبل
+
+**بحلول 2026-06-01**: جدول جلسات الاستماع للجنة SfU للمقترحات HD03262–HD03265؛ حالة إحالة Lagrådet للمقترح HD03265 (الاحتجاز)؛ وأول رد فعل من Eurostat على موقف السويد في تنفيذ الميثاق.
+
+### ملخص الاستخبارات الرئيسية
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-01  
+**Klassificering**: OFFENTLIG  
+**Tillid**: HØJ [B2] — Flere primærkilder (8 regeringspropositioner, riksdag-regering MCP)
+
+### BLUF
+
+Tidöalliansen-regeringen indsendte fire samtidige propositioner den 30. april 2026, som tilsammen udgør Sveriges mest vidtgående indskrænkning af asyl- og migrationsrettigheder siden den midlertidige udlændingelov fra 2016: fuldstændig afskaffelse af permanent opholdstilladelse (HD03262), udvidelse af beføjelserne til tvangsudvisning (HD03263), strammere vandelskrav for alle tilladelseshavere (HD03264) og stramning af administrativ tilbageholdelse og overvågning (HD03265). Pakken, der er indsendt seks måneder før valget i september 2026, signalerer en bevidst valgstrategisk eskalering på indvandringsområdet og satser på, at S's og MP's modstand vil blive isoleret, mens SD og koalitionsblokken konsolideres. Regeringen indsendte også propositioner om operativt militært samarbejde (HD03254), integreret misbrugsbehandling (HD03251), politisk gennemsigtighed (HD03258) og forskningsetik (HD03260).
+
+### Beslutninger dette notat understøtter
+
+1. **Riksdagens SfU-udvalg** — Fire migrationspropositioner kræver sekventiel udvalgsbehandling og afstemninger i kammeret; koalitionen har brug for alle fire afstemninger til at gå igennem, sandsynligvis efterår 2026.
+2. **Oppositionspartier (S, MP, V, C)** — Beslutte om at rejse en forfatningsretlig udfordring ved Lagrådet eller acceptere nederlaget; S befinder sig i et akut positioneringsdilemma i lyset af tidligere 2022-samarbejdssignaler.
+3. **EU/Bruxelles-niveau** — HD03262 implementerer direkte EU's migrations- og asylpagt; dens efterlevelsesposition signalerer Sveriges håndhævelsesintention til GD HOME.
+4. **Civilsamfund/UNHCR** — Vurder sagsrisiko i henhold til EMRK artikel 5 (tilbageholdelse, HD03265) og artikel 8 (familiens enhed, HD03262).
+
+### 60-sekunders briefing
+
+- **4-propositions-migrationsklynge** er hovedhistorien: permanent opholdstilladelse afskaffet → alle migranter på rullende midlertidige tilladelser
+- **HD03263**: udvidelse af udvisningskapacitet — nye beføjelser for Migrationsverket, Polismyndigheten; knyttet til Statskontorets myndighedskapacitetsrisiko
+- **HD03264**: vandelstesten udvides — domfældelse i ethvert land kan udløse tilbagekaldelse
+- **HD03265**: udvidet administrativ tilbageholdelse uden domstolskendelse i op til 6 måneder
+- **HD03254** (forsvar): NORDEFCO + bilaterale rammeudvidelser, der muliggør forudgodkendte fælles øvelser på svensk territorium — HØJ strategisk betydning
+- **HD03251**: integrerer misbrugsbehandling i regionale sundhedsstrukturer — ukontroversiell tværpolitisk støtte forventet
+- **HD03258**: nye gennemsigtighedsregler for politisk partifinansering og lobbyregistre — KU-henvisning forventet
+- **Tillid**: HØJ til at migrationspakken vedtages; MIDDEL om valgeffekt — meningsmålinger er jævnet ud
+
+### Vigtigste fremadrettet trigger
+
+**Inden 2026-06-01**: SfU-udvalgets høringsskema for HD03262–HD03265; Lagrådets høringsstatus for HD03265 (tilbageholdelse); og Eurostats første reaktion på Sveriges pagt-implementeringsposition.
+
+### Vigtig efterretningsoversigt
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-01  
+**Klassifizierung**: ÖFFENTLICH  
+**Vertrauen**: HOCH [B2] — Mehrere Primärquellen (8 Regierungspropositioner, riksdag-regering MCP)
+
+### BLUF
+
+Die Tidöalliansen-Regierung reichte am 30. April 2026 vier gleichzeitige Propositioner ein, die zusammen Schwedens weitreichendste Einschränkung von Asyl- und Migrationsrechten seit dem befristeten Ausländergesetz von 2016 darstellen: vollständige Abschaffung unbefristeter Aufenthaltserlaubnisse (HD03262), Ausweitung von Abschiebungsbefugnissen (HD03263), strengere Charaktertests für alle Erlaubnisinhaber (HD03264) und Verschärfung der administrativen Abschiebehaft und Überwachung (HD03265). Das sechs Monate vor der Wahl im September 2026 eingereichte Paket signalisiert eine bewusste wahlkampfstrategische Eskalation beim Thema Einwanderung und setzt darauf, dass der Widerstand von S und MP isoliert wird, während SD und der Koalitionsblock sich konsolidieren. Die Regierung reichte auch Propositioner zum operativen militärischen Zusammenwirken (HD03254), zur integrierten Suchtbehandlung (HD03251), zur politischen Transparenz (HD03258) und zur Forschungsethik (HD03260) ein.
+
+### Entscheidungen, die dieser Bericht unterstützt
+
+1. **SfU-Ausschuss des Riksdag** — Vier Migrationspropositioner erfordern sequenzielle Ausschussbehandlung und Kammerabstimmungen; die Koalition benötigt alle vier Abstimmungen, voraussichtlich Herbst 2026.
+2. **Oppositionsparteien (S, MP, V, C)** — Entscheidung, ob eine verfassungsrechtliche Anfechtung beim Lagrådet angestrengt oder die Niederlage akzeptiert wird; S befindet sich angesichts früherer Kooperationssignale von 2022 in einem akuten Positionierungsdilemma.
+3. **EU/Brüssel-Ebene** — HD03262 setzt das EU-Migrations- und Asylabkommen direkt um; seine Compliance-Position signalisiert Schwedens Durchsetzungsabsicht gegenüber GD HOME.
+4. **Zivilgesellschaft/UNHCR** — Bewertung des Prozessrisikos gemäß EMRK Artikel 5 (Abschiebehaft, HD03265) und Artikel 8 (Familieneinheit, HD03262).
+
+### 60-Sekunden-Briefing
+
+- **4-Propositioner-Migrationscluster** ist die Hauptmeldung: unbefristeter Aufenthalt abgeschafft → alle Migranten mit rollierenden Aufenthaltserlaubnissen
+- **HD03263**: Ausweitung der Abschiebungskapazität — neue Befugnisse für Migrationsverket, Polismyndigheten; verknüpft mit dem Kapazitätsrisiko der Behörde Statskontoret
+- **HD03264**: Charaktertest wird ausgeweitet — Verurteilung in einem beliebigen Land kann zum Widerruf führen
+- **HD03265**: erweiterte administrative Abschiebehaft ohne Gerichtsbeschluss für bis zu 6 Monate
+- **HD03254** (Verteidigung): NORDEFCO + bilaterale Rahmenaufrüstungen, die vorautorisierte gemeinsame Übungen auf schwedischem Boden ermöglichen — HOHE strategische Bedeutung
+- **HD03251**: integriert Suchtbehandlung in regionale Gesundheitsstrukturen — unkontroverser parteiübergreifender Zuspruch erwartet
+- **HD03258**: neue Transparenzregeln für politische Parteienfinanzierung und Lobbyregister — KU-Überweisung erwartet
+- **Vertrauen**: HOCH, dass Migrationspaket verabschiedet wird; MITTEL zum Wahleffekt — Umfragen haben sich angenähert
+
+### Wichtigster Zukunftsauslöser
+
+**Bis 2026-06-01**: SfU-Ausschuss-Anhörungskalender für HD03262–HD03265; Lagrådets Stellungnahme-Status für HD03265 (Abschiebehaft); und erste Reaktion von Eurostat auf Schwedens Pakt-Umsetzungsposition.
+
+### Wichtige Geheimdienstzusammenfassung
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-01  
+**Clasificación**: PÚBLICO  
+**Confianza**: ALTA [B2] — Múltiples fuentes primarias (8 proposiciones gubernamentales, MCP riksdag-regering)
+
+### BLUF
+
+El gobierno Tidöalliansen presentó cuatro proposiciones simultáneas el 30 de abril de 2026 que juntas constituyen la restricción más amplia de los derechos de asilo y migración en Suecia desde la Ley temporal de extranjería de 2016: abolición total de los permisos de residencia permanente (HD03262), ampliación de los poderes de deportación forzada (HD03263), pruebas de conducta más estrictas para todos los titulares de permisos (HD03264) y endurecimiento de la detención administrativa y la vigilancia (HD03265). Presentado seis meses antes de las elecciones de septiembre de 2026, el paquete señala una escalada estratégica deliberada en materia electoral sobre inmigración, apostando a que la oposición de S y MP quedará aislada mientras SD y el bloque de coalición se consolidan. El gobierno también presentó proposiciones sobre cooperación militar operativa (HD03254), atención integrada a las adicciones (HD03251), transparencia política (HD03258) y ética de la investigación (HD03260).
+
+### Decisiones que este informe apoya
+
+1. **Comisión SfU del Riksdag** — Cuatro proposiciones migratorias requieren revisión secuencial en comisión y votaciones en cámara; la coalición necesita que pasen las cuatro votaciones, probablemente otoño de 2026.
+2. **Partidos de oposición (S, MP, V, C)** — Decidir si se interpone un recurso constitucional ante el Lagrådet o se acepta la derrota; S enfrenta un agudo dilema de posicionamiento dados las señales de cooperación anteriores de 2022.
+3. **Nivel UE/Bruselas** — HD03262 implementa directamente el Pacto sobre Migración y Asilo de la UE; su postura de cumplimiento indicará la intención de aplicación de Suecia ante la DG HOME.
+4. **Sociedad civil/ACNUR** — Evaluar el riesgo de litigio bajo el artículo 5 del CEDH (detención, HD03265) y el artículo 8 (unidad familiar, HD03262).
+
+### Briefing de 60 segundos
+
+- **El cluster de 4 proposiciones de migración** es la historia principal: residencia permanente abolida → todos los migrantes con permisos temporales renovables
+- **HD03263**: expansión de la capacidad de deportación — nuevos poderes para Migrationsverket, Polismyndigheten; vinculado al riesgo de capacidad de la agencia Statskontoret
+- **HD03264**: la prueba de conducta se amplía — una condena en cualquier país puede desencadenar la revocación
+- **HD03265**: detención administrativa ampliada sin orden judicial por hasta 6 meses
+- **HD03254** (defensa): NORDEFCO + actualizaciones del marco bilateral que permiten ejercicios conjuntos preautorizados en suelo sueco — ALTA importancia estratégica
+- **HD03251**: integra el cuidado de adicciones en las estructuras de salud regionales — apoyo transpartidario no controvertido esperado
+- **HD03258**: nuevas reglas de transparencia para la financiación de partidos políticos y registros de lobbying — remisión a KU esperada
+- **Confianza**: ALTA de que el paquete migratorio pase; MEDIA sobre el impacto electoral — las encuestas se han igualado
+
+### Principal desencadenante prospectivo
+
+**Para el 2026-06-01**: agenda de audiencias de la comisión SfU para HD03262–HD03265; estado del examen del Lagrådet para HD03265 (detención); y primera reacción de Eurostat ante la postura de implementación del pacto por parte de Suecia.
+
+### Resumen de inteligencia clave
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-01  
+**Luokittelu**: JULKINEN  
+**Luottamus**: KORKEA [B2] — Useita primäärilähteitä (8 hallituksen esitystä, riksdag-regering MCP)
+
+### BLUF
+
+Tidöalliansen-hallitus jätti neljä samanaikaista esitystä 30. huhtikuuta 2026, jotka yhdessä muodostavat Ruotsin laajimman turvapaikan- ja maahanmuuttooikeuksien rajoituksen sitten vuoden 2016 tilapäisen ulkomaalaislain: pysyvien oleskelulupien täydellinen poistaminen (HD03262), pakkokarkotusvaltuuksien laajentaminen (HD03263), tiukemmat luonnekokeet kaikille luvanhaltijoille (HD03264) ja hallinnollisen säilöönoton ja valvonnan tiukentaminen (HD03265). Kuusi kuukautta ennen syyskuun 2026 vaaleja jätetty paketti viestii tahallisesta vaalitaktisesta eskaloimisesta maahanmuuttoasioissa ja lyö vetoa, että S:n ja MP:n vastustus eristyy SD:n ja koalitiolohkon lujittuessa. Hallitus jätti myös esitykset operatiivisesta sotilaallisesta yhteistyöstä (HD03254), integroidusta päihdehuollosta (HD03251), poliittisesta avoimuudesta (HD03258) ja tutkimusetiikasta (HD03260).
+
+### Päätökset, joita tämä muistio tukee
+
+1. **Riksdagenin SfU-valiokunta** — Neljä maahanmuuttoesitystä vaativat peräkkäistä valiokunnan käsittelyä ja täysistuntoäänestyksiä; koalitio tarvitsee kaikkien neljän äänestyksen läpäisyn, todennäköisesti syksy 2026.
+2. **Oppositiopuolueet (S, MP, V, C)** — Päätettävä perustuslaillisen haasteen nostamisesta Lagrådetissa tai tappion hyväksymisestä; S on akuutissa asemointiongelmassa aiempien vuoden 2022 yhteistyösignaalien vuoksi.
+3. **EU/Bryssel-taso** — HD03262 toteuttaa suoraan EU:n muutto- ja turvapaikkosopimuksen; sen noudattamisasento viestii Ruotsin täytäntöönpanotarkoituksesta DG HOME:lle.
+4. **Kansalaisyhteiskunta/UNHCR** — Arvioi oikeudenkäyntiriski EIS 5 artiklan (säilöönotto, HD03265) ja 8 artiklan (perheenyhdistäminen, HD03262) nojalla.
+
+### 60 sekunnin yhteenveto
+
+- **4 esityksen maahanmuuttoryhmä** on päätarina: pysyvä oleskelulupa poistettu → kaikki maahanmuuttajat jatkuvilla tilapäisillä luvilla
+- **HD03263**: karkotuskapasiteetin laajentaminen — uudet valtuudet Migrationsverketille, Polismyndighetenille; yhteydessä Statskontoretsin virastokapasiteettiriskiin
+- **HD03264**: luonnekoe laajennetaan — tuomio missä tahansa maassa voi laukaista peruutuksen
+- **HD03265**: laajennettu hallinnollinen säilöönotto ilman tuomioistuimen päätöstä enintään 6 kuukaudeksi
+- **HD03254** (puolustus): NORDEFCO + kahdenväliset puitepäivitykset mahdollistamassa ennakolta hyväksyttyjä yhteisharjoituksia Ruotsin maaperällä — KORKEA strateginen merkitys
+- **HD03251**: integroi päihdehuollon alueellisiin terveysrakenteisiin — kiistaton puolueiden välinen tuki odotettu
+- **HD03258**: uudet avoimuussäännöt poliittiselle puoluerahoitukselle ja lobbyrekistereille — KU-siirto odotettu
+- **Luottamus**: KORKEA, että maahanmuuttopaketti hyväksytään; KOHTALAINEN vaalyvaikutuksesta — mielipidemittaukset tasoittuneet
+
+### Tärkein tuleva laukaisija
+
+**Viimeistään 2026-06-01**: SfU-valiokunnan kuulemisaikataulu HD03262–HD03265:lle; Lagrådagin lausuntostatus HD03265:lle (säilöönotto); ja Eurostatin ensireaktio Ruotsin sopimuksen täytäntöönpanoasemaan.
+
+### Tärkeä tiedustelun yhteenveto
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : ÉLEVÉE [B2] — Plusieurs sources primaires (8 propositions gouvernementales, MCP riksdag-regering)
+
+### BLUF
+
+Le gouvernement Tidöalliansen a soumis quatre propositions simultanées le 30 avril 2026 qui constituent ensemble la restriction la plus étendue des droits d'asile et de migration en Suède depuis la loi temporaire sur les étrangers de 2016 : abolition totale des permis de résidence permanente (HD03262), extension des pouvoirs d'expulsion forcée (HD03263), tests de moralité plus stricts pour tous les titulaires de permis (HD03264), et renforcement de la détention administrative et de la surveillance (HD03265). Déposé six mois avant les élections de septembre 2026, le paquet signale une escalade délibérément stratégique sur le plan électoral en matière d'immigration, pariant que l'opposition de S et du MP sera isolée tandis que SD et le bloc de coalition se consolident. Le gouvernement a également déposé des propositions sur la coopération militaire opérationnelle (HD03254), les soins intégrés pour les dépendances (HD03251), la transparence politique (HD03258) et l'éthique de la recherche (HD03260).
+
+### Décisions que ce rapport soutient
+
+1. **Commission SfU du Riksdag** — Quatre propositions migratoires nécessitent un examen séquentiel en commission et des votes en chambre ; la coalition a besoin des quatre votes pour passer, probablement à l'automne 2026.
+2. **Partis d'opposition (S, MP, V, C)** — Décider d'engager un recours constitutionnel au Lagrådet ou d'accepter la défaite ; S fait face à un dilemme de positionnement aigu étant donné les signaux de coopération antérieurs de 2022.
+3. **Niveau UE/Bruxelles** — HD03262 met directement en œuvre le Pacte sur la migration et l'asile de l'UE ; sa posture de conformité indiquera l'intention d'application de la Suède à la DG HOME.
+4. **Société civile/HCR** — Évaluer le risque de contentieux au titre de l'article 5 CEDH (détention, HD03265) et de l'article 8 (unité familiale, HD03262).
+
+### Briefing de 60 secondes
+
+- **Le groupe de 4 propositions sur la migration** est l'histoire principale : résidence permanente abolie → tous les migrants avec des permis temporaires renouvelables
+- **HD03263** : expansion de la capacité d'expulsion — nouveaux pouvoirs pour Migrationsverket, Polismyndigheten ; lié au risque de capacité de l'agence Statskontoret
+- **HD03264** : le test de moralité est élargi — une condamnation dans n'importe quel pays peut déclencher une révocation
+- **HD03265** : détention administrative étendue sans ordonnance judiciaire jusqu'à 6 mois
+- **HD03254** (défense) : NORDEFCO + mises à niveau du cadre bilatéral permettant des exercices conjoints pré-autorisés sur le sol suédois — HAUTE importance stratégique
+- **HD03251** : intègre les soins aux dépendances dans les structures de santé régionales — soutien transpartisan non controversé attendu
+- **HD03258** : nouvelles règles de transparence pour le financement des partis politiques et les registres de lobbying — renvoi au KU attendu
+- **Confiance** : ÉLEVÉE que le paquet migratoire passe ; MOYENNE sur l'impact électoral — les sondages se sont resserrés
+
+### Principale amorce prospective
+
+**D'ici le 2026-06-01** : calendrier d'audition de la commission SfU pour HD03262–HD03265 ; statut du renvoi au Lagrådet pour HD03265 (détention) ; et première réaction d'Eurostat à la posture de mise en œuvre du pacte par la Suède.
+
+### Résumé du renseignement clé
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_he.md -->
+
+‏# הרפורמה הרדיקלית ביותר להגירה בשוודיה בעשורים: טידואלליאנסן מגישה חבילת חקיקה בת ארבעה חוקים בנושא מקלט
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-01  
+**סיווג**: ציבורי  
+**אמינות**: גבוהה [B2] — מקורות ראשוניים מרובים (8 הצעות ממשלתיות, MCP riksdag-regering)
+
+### תמצית מנהלים
+
+ממשלת טידואלליאנסן הגישה ארבע הצעות חוק בו-זמניות ב-30 באפריל 2026 המהוות יחדיו את ההגבלה הנרחבת ביותר על זכויות מקלט והגירה בשוודיה מאז חוק הזרים הזמני של 2016: ביטול מוחלט של היתרי שהייה קבועים (HD03262), הרחבת סמכויות הגירוש הכפוי (HD03263), בדיקות אופי מחמירות יותר לכל מחזיקי ההיתרים (HD03264), והחמרת מעצר מינהלי ופיקוח (HD03265). החבילה, שהוגשה שישה חודשים לפני בחירות ספטמבר 2026, מסמנת הסלמה בחירותית מכוונת בנושא ההגירה, ומהמרת על כך שהתנגדות S ו-MP תבודד בעוד SD וגוש הקואליציה מתגבשים. הממשלה הגישה גם הצעות חוק בנושא שיתוף פעולה צבאי מבצעי (HD03254), טיפול משולב בהתמכרויות (HD03251), שקיפות פוליטית (HD03258) ואתיקת מחקר (HD03260).
+
+### החלטות שדוח זה תומך בהן
+
+1. **ועדת SfU של ריקסדאגן** — ארבע הצעות הגירה דורשות ביקורת רצופה בוועדה והצבעות בחדר; הקואליציה זקוקה לאישור ארבעת ההצבעות, ככל הנראה בסתיו 2026.
+2. **מפלגות האופוזיציה (S, MP, V, C)** — להחליט אם לנקוט אתגר חוקתי בלאגרודט או לקבל את ההפסד; S מתמודדת עם דילמת מיצוב חריפה לאור אותות שיתוף הפעולה הקודמים מ-2022.
+3. **רמת האיחוד האירופי/בריסל** — HD03262 מיישם ישירות את אמנת ההגירה והמקלט של האיחוד האירופי; עמדת הציות שלה תאותת על כוונת האכיפה של שוודיה ל-DG HOME.
+4. **החברה האזרחית/UNHCR** — הערכת סיכון משפטי לפי סעיף 5 של ECHR (מעצר, HD03265) וסעיף 8 (אחדות המשפחה, HD03262).
+
+### תדריך 60 שניות
+
+- **אשכול ארבע הצעות ההגירה** הוא הסיפור המוביל: שהייה קבועה בוטלה → כל המהגרים מחזיקים ברישיונות זמניים מתחלפים
+- **HD03263**: הרחבת יכולת הגירוש — סמכויות חדשות ל-Migrationsverket, Polismyndigheten; קשור לסיכון יכולת הסוכנות Statskontoret
+- **HD03264**: בדיקת האופי מורחבת — הרשעה בכל מדינה יכולה להפעיל שלילה
+- **HD03265**: מעצר מינהלי מורחב ללא צו בית משפט עד 6 חודשים
+- **HD03254** (ביטחון): NORDEFCO + שדרוגי מסגרת דו-צדדית המאפשרים תמרינות משותפות מאושרות מראש על אדמת שוודיה — חשיבות אסטרטגית גבוהה
+- **HD03251**: משלב טיפול בהתמכרויות במבנים הבריאותיים האזוריים — תמיכה חוצת מפלגות לא שנויה במחלוקת צפויה
+- **HD03258**: כללי שקיפות חדשים למימון מפלגות פוליטיות ורישומי לוביסטים — הפניה ל-KU צפויה
+- **אמינות**: גבוהה שחבילת ההגירה תעבור; בינונית לגבי ההשפעה הבחירותית — סקרים התאחו
+
+### הגורם העתידי החשוב ביותר
+
+**עד 2026-06-01**: לוח הזמנים של שימועי ועדת SfU עבור HD03262–HD03265; מצב הפניית לאגרודט עבור HD03265 (מעצר); ותגובת Eurostat הראשונה לעמדת יישום האמנה של שוודיה.
+
+### סיכום מודיעין מפתח
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling  
+**日付**：2026-05-01  
+**分類**：公開  
+**信頼度**：高 [B2] — 複数の一次情報源（8件の政府提案、riksdag-regering MCP）
+
+### BLUF
+
+ティデーアリアンセン政府は2026年4月30日に4つの同時提案を提出した。これらは合わせて、2016年の臨時外国人法以来スウェーデンで最も広範な亡命・移民権の制限を構成する：永住許可の完全廃止（HD03262）、強制送還権限の拡大（HD03263）、全許可証保持者に対するより厳格な品行テスト（HD03264）、そして行政的拘留と監視の強化（HD03265）。2026年9月選挙の6ヶ月前に提出されたこのパッケージは、移民問題における意図的な選挙戦略的エスカレーションを示しており、SとMPの反対が孤立する一方でSDと連立ブロックが固まるとの賭けである。政府はまた、作戦的軍事協力（HD03254）、統合的薬物依存治療（HD03251）、政治的透明性（HD03258）、研究倫理（HD03260）に関する提案も提出した。
+
+### この報告書が支持する決定事項
+
+1. **国会SfU委員会** — 4つの移民提案は、委員会での順次審査と本会議投票が必要。連立政権は4つの投票すべてを通過させる必要があり、おそらく2026年秋。
+2. **野党（S, MP, V, C）** — ラーグロデットで憲法上の異議申立てを行うか、敗北を受け入れるかを決定。Sは2022年以前の協力シグナルを踏まえ、鋭いポジショニングジレンマに直面。
+3. **EU/ブリュッセル・レベル** — HD03262はEU移住・庇護協定を直接実施する。そのコンプライアンス姿勢はDG HOMEに対するスウェーデンの執行意図を示す。
+4. **市民社会/UNHCR** — ECHR第5条（拘留、HD03265）および第8条（家族統一、HD03262）に基づく訴訟リスクを評価。
+
+### 60秒ブリーフィング
+
+- **4提案の移民クラスター**がメインストーリー：永住権廃止 → すべての移民が更新式一時許可証を保有
+- **HD03263**：送還能力の拡大 — Migrationsverket、Polismyndighetenへの新権限。Statskontoretの行政能力リスクと関連
+- **HD03264**：品行テストが拡大 — いかなる国での有罪判決も許可取消しの引き金になる可能性
+- **HD03265**：裁判所命令なしに最長6ヶ月の行政拘留を拡大
+- **HD03254**（防衛）：NORDEFCO + スウェーデン領土上での事前承認済み共同演習を可能にする二国間枠組み強化 — 高い戦略的重要性
+- **HD03251**：薬物依存治療を地域保健構造に統合 — 超党派の非論争的支持が見込まれる
+- **HD03258**：政治党財務とロビー登録の新透明性規則 — KU付託が見込まれる
+- **信頼度**：移民パッケージが通過する可能性は高い；選挙への影響については中程度 — 世論調査は接近
+
+### 最も重要な将来のトリガー
+
+**2026-06-01まで**：HD03262–HD03265に関するSfU委員会の公聴会スケジュール；HD03265（拘留）に関するラーグロデット回付状況；そしてスウェーデンの協定実施姿勢に対するユーロスタットの最初の反応。
+
+### 主要な情報まとめ
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-01  
+**분류**: 공개  
+**신뢰도**: 높음 [B2] — 복수 1차 출처 (정부 제안 8건, riksdag-regering MCP)
+
+### BLUF
+
+티데알리안센 정부는 2026년 4월 30일 4건의 동시 제안을 제출했으며, 이는 2016년 임시 외국인법 이후 스웨덴에서 가장 광범위한 망명 및 이민권 제한을 구성한다: 영주권 허가의 완전 폐지(HD03262), 강제 추방 권한 확대(HD03263), 모든 허가증 소지자에 대한 더 엄격한 품성 검사(HD03264), 행정적 구금 및 감시 강화(HD03265). 2026년 9월 선거 6개월 전에 제출된 이 패키지는 이민 문제에 대한 의도적인 선거 전략적 에스컬레이션을 의미하며, SD와 연립 블록이 공고화되는 동안 S와 MP의 반대가 고립될 것이라는 판단이다. 정부는 또한 작전적 군사 협력(HD03254), 통합 약물 남용 치료(HD03251), 정치적 투명성(HD03258), 연구 윤리(HD03260)에 관한 제안도 제출했다.
+
+### 이 보고서가 지원하는 결정 사항
+
+1. **국회 SfU 위원회** — 4건의 이민 제안은 순차적 위원회 심사와 본회의 표결이 필요; 연립은 4건의 표결 모두 통과가 필요하며, 아마도 2026년 가을.
+2. **야당 (S, MP, V, C)** — 라그로데트에서 헌법적 도전 제기 여부 또는 패배 수용 결정; S는 2022년 이전 협력 신호를 고려할 때 첨예한 포지셔닝 딜레마에 직면.
+3. **EU/브뤼셀 수준** — HD03262는 EU 이주 및 망명 협약을 직접 이행; 그 준수 입장은 DG HOME에 스웨덴의 집행 의도를 시사할 것.
+4. **시민사회/UNHCR** — ECHR 제5조(구금, HD03265)와 제8조(가족 결합, HD03262)에 따른 소송 위험 평가.
+
+### 60초 브리핑
+
+- **4개 제안 이민 클러스터**가 주요 소식: 영주권 폐지 → 모든 이민자가 갱신 임시 허가증 보유
+- **HD03263**: 추방 역량 확대 — Migrationsverket, Polismyndigheten에 대한 새로운 권한; Statskontoret 기관 역량 위험과 연계
+- **HD03264**: 품성 검사 확대 — 어느 나라에서의 유죄 판결도 취소를 유발할 수 있음
+- **HD03265**: 법원 명령 없이 최대 6개월 행정 구금 확대
+- **HD03254** (방위): NORDEFCO + 스웨덴 영토에서 사전 승인된 합동 훈련을 가능하게 하는 양자 프레임워크 업그레이드 — 높은 전략적 중요성
+- **HD03251**: 약물 남용 치료를 지역 보건 구조에 통합 — 비논쟁적 초당적 지지 기대
+- **HD03258**: 정치 정당 재정과 로비 등록에 관한 새 투명성 규칙 — KU 회부 예상
+- **신뢰도**: 이민 패키지 통과 가능성 높음; 선거 영향에 대해서는 보통 — 여론조사 격차 좁혀짐
+
+### 가장 중요한 미래 트리거
+
+**2026-06-01까지**: HD03262–HD03265에 대한 SfU 위원회 청문 일정; HD03265(구금)에 대한 라그로데트 회부 상태; 그리고 스웨덴의 협약 이행 입장에 대한 유로스타트의 첫 반응.
+
+### 핵심 정보 요약
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-01  
+**Classificatie**: OPENBAAR  
+**Vertrouwen**: HOOG [B2] — Meerdere primaire bronnen (8 regeringsproposities, riksdag-regering MCP)
+
+### BLUF
+
+De Tidöalliansen-regering diende op 30 april 2026 vier gelijktijdige proposities in die samen de meest vergaande beperking van asiel- en migratierechten in Zweden vormen sinds de tijdelijke Vreemdelingenwet van 2016: volledige afschaffing van permanente verblijfsvergunningen (HD03262), uitbreiding van bevoegdheden voor gedwongen uitzetting (HD03263), strengere toetsing van zedelijk gedrag voor alle vergunninghouders (HD03264), en aanscherping van administratieve bewaring en toezicht (HD03265). Het pakket, ingediend zes maanden voor de verkiezingen van september 2026, signaleert een bewuste electoraal-strategische escalatie op het gebied van immigratie en wedt dat het verzet van S en MP geïsoleerd zal worden terwijl SD en het coalitieblok consolideren. De regering diende ook proposities in over operationele militaire samenwerking (HD03254), geïntegreerde verslavingszorg (HD03251), politieke transparantie (HD03258) en onderzoeksethiek (HD03260).
+
+### Beslissingen die dit rapport ondersteunt
+
+1. **SfU-commissie van de Riksdag** — Vier migratiepositities vereisen sequentiële commissiebehandeling en kamerafstemmingen; de coalitie heeft alle vier stemmen nodig om door te gaan, waarschijnlijk herfst 2026.
+2. **Oppositiepartijen (S, MP, V, C)** — Beslissen of een constitutionele uitdaging bij de Lagrådet wordt aangevochten of de nederlaag wordt geaccepteerd; S staat voor een acuut positioneringsdilemma gezien eerdere samenwerkingssignalen uit 2022.
+3. **EU/Brussel-niveau** — HD03262 implementeert direct het EU Migratie- en Asielpact; de nalevingshouding ervan geeft Zwedens handhavingsintentie aan bij DG HOME.
+4. **Maatschappelijk middenveld/UNHCR** — Beoordeel het procesrisico onder artikel 5 EVRM (bewaring, HD03265) en artikel 8 (gezinseenheid, HD03262).
+
+### 60-seconden briefing
+
+- **4-propositie-migratiegroep** is het hoofdverhaal: permanente verblijfsvergunning afgeschaft → alle migranten met doorlopende tijdelijke vergunningen
+- **HD03263**: uitbreiding van uitzettingscapaciteit — nieuwe bevoegdheden voor Migrationsverket, Polismyndigheten; gekoppeld aan het capaciteitsrisico van instantie Statskontoret
+- **HD03264**: gedragstoets wordt uitgebreid — veroordeling in elk land kan leiden tot intrekking
+- **HD03265**: uitgebreide administratieve bewaring zonder rechterlijk bevel voor maximaal 6 maanden
+- **HD03254** (defensie): NORDEFCO + bilaterale raamwerkupgrades die vooraf goedgekeurde gezamenlijke oefeningen op Zweeds grondgebied mogelijk maken — HOGE strategische betekenis
+- **HD03251**: integreert verslavingszorg in regionale gezondheidsstructuren — niet-controversiële steun over partijgrenzen heen verwacht
+- **HD03258**: nieuwe transparantieregels voor politieke partijfinanciering en lobbyregisters — KU-verwijzing verwacht
+- **Vertrouwen**: HOOG dat migratiepakket wordt aangenomen; MIDDEL over verkiezingseffect — peilingen zijn gelijkgetrokken
+
+### Belangrijkste toekomstige trigger
+
+**Voor 2026-06-01**: SfU-commissie hoorzittingsschema voor HD03262–HD03265; Lagrådets verwijzingsstatus voor HD03265 (bewaring); en eerste reactie van Eurostat op Zwedens pact-implementatiehouding.
+
+### Samenvatting van de belangrijkste inlichtingen
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-01  
+**Klassifisering**: OFFENTLIG  
+**Tillid**: HØY [B2] — Flere primærkilder (8 regjeringsproposisjoner, riksdag-regering MCP)
+
+### BLUF
+
+Tidöalliansen-regjeringen sendte inn fire samtidige proposisjoner den 30. april 2026 som til sammen utgjør Sveriges mest vidtrekkende innskrenkning av asyl- og migrasjonsrettigheter siden den midlertidige utlendingsloven fra 2016: full avskaffelse av permanent oppholdstillatelse (HD03262), utvidelse av makter for tvangsutsendelse (HD03263), strengere vandelstest for alle tillatelsesinnehavere (HD03264) og innstramming av administrativ forvaring og overvåking (HD03265). Pakken, som ble sendt inn seks måneder før valget i september 2026, signaliserer en bevisst valgstrategisk eskalering på innvandringsfeltet og satser på at S's og MP's motstand vil bli isolert mens SD og koalisjonsblokken konsolideres. Regjeringen sendte også inn proposisjoner om operativt militært samarbeid (HD03254), integrert rusbehandling (HD03251), politisk åpenhet (HD03258) og forskningsetikk (HD03260).
+
+### Beslutninger dette notatet støtter
+
+1. **Riksdagens SfU-komité** — Fire migrasjonsproposisjoner krever sekvensiell komitébehandling og kammeravstemninger; koalisjonen trenger alle fire avstemninger til å gå igjennom, sannsynligvis høst 2026.
+2. **Opposisjonspartier (S, MP, V, C)** — Bestemme om man skal reise en konstitusjonell utfordring ved Lagrådet eller akseptere nederlaget; S befinner seg i et akutt posisjonsdilemma gitt tidligere 2022-samarbeidssignaler.
+3. **EU/Brussel-nivå** — HD03262 implementerer direkte EUs migrations- og asylpakt; dens etterlevelsesposisjon signaliserer Sveriges håndhevelsesintensjon til GD HOME.
+4. **Sivilsamfunn/UNHCR** — Vurder rettssaksrisiko under EMK artikkel 5 (forvaring, HD03265) og artikkel 8 (familiens enhet, HD03262).
+
+### 60-sekunders briefing
+
+- **4-proposisjons-migrasjonsklynge** er hovedsaken: permanent oppholdstillatelse avskaffet → alle migranter på rullerende midlertidige tillatelser
+- **HD03263**: utvidelse av utvisningskapasitet — nye fullmakter for Migrationsverket, Polismyndigheten; knyttet til Statskontorets myndighetkapasitetsrisiko
+- **HD03264**: vandelstest breddas — domfellelse i ethvert land kan utløse tilbakekallelse
+- **HD03265**: utvidet administrativ forvaring uten rettslig kjennelse i inntil 6 måneder
+- **HD03254** (forsvar): NORDEFCO + bilaterale rammeoppdateringer som muliggjør forhåndsautoriserte felles øvelser på svensk territorium — HØY strategisk betydning
+- **HD03251**: integrerer rusbehandling i regionale helsestrukturer — ukontroversielt tverrpolitisk støtte forventet
+- **HD03258**: nye åpenhetsregler for politisk partifinansering og lobbyregistre — KU-henvisning forventet
+- **Tillid**: HØY til at migrasjonspakken vedtas; MIDDELS om valgeffekt — meningsmålinger jevnet ut
+
+### Viktigste fremtidige trigger
+
+**Innen 2026-06-01**: SfU-komiteens høringsskjema for HD03262–HD03265; Lagrådets høringsstatus for HD03265 (forvaring); og Eurostats første reaksjon på Sveriges pakt-implementeringsposisjon.
+
+### Viktig etterretningssammendrag
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-01  
+**Klassificering**: OFFENTLIG  
+**Konfidens**: HÖG [B2] — Flera primärkällor (8 regeringspropositioner, riksdag-regering MCP)
+
+### BLUF
+
+Tidöalliansen-regeringen lämnade in fyra simultana propositioner den 30 april 2026 som tillsammans utgör Sveriges mest genomgripande inskränkning av asyl- och migrationsrättigheter sedan den tillfälliga utlänningslagen 2016: helt avskaffande av permanenta uppehållstillstånd (HD03262), utvidgning av tvångsutvisningsbefogenheter (HD03263), striktare vandelstest för alla tillståndshavare (HD03264) och åtstramning av administrativt förvar och övvakning (HD03265). Paketet, som lämnades in sex månader före valet i september 2026, signalerar en medveten valstrategisk eskalering i invandringsfrågan och satsar på att S:s och MP:s motstånd kommer att isoleras medan SD och koalitionsblocket konsolideras. Regeringen lämnade också in propositioner om operativt militärt samarbete (HD03254), integrerad beroendevård (HD03251), politisk transparens (HD03258) och forskningsetik (HD03260).
+
+### Beslut detta PM stödjer
+
+1. **Riksdagens SfU-utskott** — Fyra migrationspropositioner kräver sekvensiell utskottsbehandling och kammarvotningar; koalitionen behöver alla fyra voteringar att gå igenom, troligen hösten 2026.
+2. **Oppositionspartier (S, MP, V, C)** — Besluta om att resa ett konstitutionellt utmanat vid Lagrådet eller acceptera nederlaget; S befinner sig i ett akut positioneringsdilemma med tanke på tidigare 2022-samarbetssignaler.
+3. **EU/Bryssel-nivå** — HD03262 implementerar direkt EU:s migrations- och asylpakt; dess efterlevnadsposition signalerar Sveriges verkställighetsintention till GD HOME.
+4. **Civilsamhälle/UNHCR** — Bedöm rättegångsrisk enligt EKMR artikel 5 (förvar, HD03265) och artikel 8 (familjens enhet, HD03262).
+
+### 60-sekunders sammanfattning
+
+- **4-propositionsmigrationsklubbor** är huvudnyheten: permanent uppehållstillstånd avskaffat → alla migranter på rullande temporära tillstånd
+- **HD03263**: utvidgning av utvisningskapacitet — nya befogenheter för Migrationsverket, Polismyndigheten; kopplat till Statskontorets myndighetkapacitetsrisk
+- **HD03264**: vandelstestet breddas — fällande dom i vilket land som helst kan utlösa återkallelse
+- **HD03265**: utvidgat administrativt förvar utan domstolsbeslut i upp till 6 månader
+- **HD03254** (försvar): NORDEFCO + bilaterala ramuppgraderingar som möjliggör förutauktoriserade gemensamma övningar på svensk mark — HÖG strategisk betydelse
+- **HD03251**: integrerar beroendevård i regionala hälsostrukturer — okontroversiellt stöd över partigränser förväntat
+- **HD03258**: nya transparensregler för politisk partifinansering och lobbyregister — KU-remiss förväntas
+- **Konfidens**: HÖG att migrationspaket passerar; MEDEL om valeffekt — opinionsmätningar har jämnats ut
+
+### Viktigaste framåtindikatorn
+
+**Senast 2026-06-01**: SfU-utskottets hörandeschema för HD03262–HD03265; Lagrådets remissstatus för HD03265 (förvar); och Eurostats första reaktion på Sveriges pakt-implementeringsposition.
+
+### Viktig underrättelsesammanfattning
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-05-01  
+**分类**：公开  
+**可信度**：高 [B2] — 多个一次信息来源（8项政府提案，riksdag-regering MCP）
+
+### BLUF
+
+蒂德联盟政府于2026年4月30日同时提交了四项提案，这些提案共同构成自2016年临时外国人法以来瑞典对庇护和移民权利最广泛的限制：完全废除永久居留许可（HD03262）、扩大强制驱逐权力（HD03263）、对所有许可证持有者实施更严格的品行测试（HD03264），以及收紧行政拘留和监控（HD03265）。该套餐在2026年9月大选前六个月提交，显示出在移民问题上刻意的选举战略升级，赌的是S党和MP党的反对会被孤立，同时SD党和执政联盟巩固。政府还提交了关于作战军事合作（HD03254）、综合药物滥用治疗（HD03251）、政治透明度（HD03258）和研究伦理（HD03260）的提案。
+
+### 本报告支持的决策
+
+1. **国会SfU委员会** — 四项移民提案需要依次进行委员会审查和议院投票；联合政府需要四项投票全部通过，可能在2026年秋季。
+2. **反对党（S、MP、V、C）** — 决定是否在Lagrådet提出宪法质疑，或接受失败；S党鉴于2022年先前的合作信号，面临紧迫的定位困境。
+3. **欧盟/布鲁塞尔层面** — HD03262直接实施欧盟移民和庇护公约；其合规立场将向GD HOME表明瑞典的执法意图。
+4. **公民社会/联合国难民署** — 根据《欧洲人权公约》第5条（拘留，HD03265）和第8条（家庭团聚，HD03262）评估诉讼风险。
+
+### 60秒摘要
+
+- **四项提案移民集群**是主要新闻：永久居留废除 → 所有移民持有滚动式临时许可证
+- **HD03263**：扩大驱逐能力 — 赋予Migrationsverket、Polismyndigheten新权力；与Statskontoret机构能力风险挂钩
+- **HD03264**：品行测试扩大 — 在任何国家的定罪都可能触发撤销
+- **HD03265**：无需法院命令，最长6个月的行政拘留扩大
+- **HD03254**（防务）：NORDEFCO + 双边框架升级，使在瑞典领土上进行预授权联合演习成为可能 — 高度战略意义
+- **HD03251**：将药物依赖治疗整合到区域卫生结构中 — 预计各党派均无争议支持
+- **HD03258**：政治党派财务和游说注册的新透明度规则 — 预计KU转交
+- **可信度**：移民套餐通过可能性高；选举影响方面为中等 — 民调差距收窄
+
+### 最重要的未来触发因素
+
+**2026-06-01前**：SfU委员会关于HD03262–HD03265的听证日程；Lagrådet关于HD03265（拘留）的转交状态；以及欧统局对瑞典公约实施立场的首次反应。
+
+### 重要情报摘要
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+graph TD
+    A[Tidöalliansen Migration Package<br/>4 props, 30 Apr 2026] --> B[HD03262: Abolish permanent permits<br/>L3 Intelligence-grade]
+    A --> C[HD03263: Deportation expansion<br/>L3 Intelligence-grade]
+    A --> D[HD03264: Character tests<br/>L2+ Priority]
+    A --> E[HD03265: Detention expansion<br/>L2+ Priority]
+    B --> F[EU Asylum Pact compliance<br/>SfU committee review]
+    C --> G[Migrationsverket/Polis capacity<br/>Statskontoret risk HIGH]
+    D --> H[ECHR Art.8 litigation risk<br/>Lagrådet review required]
+    E --> I[ECHR Art.5 detention risk<br/>VERY HIGH litigation exposure]
+    style A fill:#ff006e,color:#fff
+    style B fill:#1a1e3d,stroke:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff
+    style I fill:#1a1e3d,stroke:#ffbe0b
+```
+
+<!-- source-sha: 8bc6777dbaae351e4328c07645b52c7979dc2a68 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 9 | Linked in Article Sources, not expanded inline |
 
@@ -2003,6 +2734,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -6,7 +6,7 @@ date: 2026-04-30
 subfolder: propositions
 slug: 2026-04-30-propositions
 source_folder: analysis/daily/2026-04-30/propositions
-generated_at: 2026-05-21T02:19:50.773Z
+generated_at: 2026-05-22T12:25:06.184Z
 language: en
 layout: article
 ---
@@ -83,6 +83,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1636,13 +1649,695 @@ All sources are PUBLIC documents under Sweden's Offentlighetsprincipen (Freedom 
 - SCB: Swedish statistical ground truth not required for today's document scope
 - IMF: Economic context for EU banking package (HD03253) drawn from WEO/FM/IFS dataflows
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص تنفيذي — مقترحات الحكومة السويدية، 30 أبريل 2026
+
+**المؤلف**: James Pether Sörling  
+**التصنيف**: عام — اللائحة الأوروبية GDPR المادة 9(2)(e,g)  
+**الثقة**: عالية [B2]  
+**معرّف التشغيل**: 25150587415
+
+---
+
+### 🎯 الخلاصة التنفيذية
+
+قدّمت حكومة كريسترسون أربعة مقترحات قانونية مهمة إلى البرلمان السويدي (Riksdag) في أواخر أبريل 2026، تشمل الاستثمار في البنية التحتية وإصلاح العدالة الجنائية والتنظيم المالي الأوروبي والرعاية الصحية. الوثيقة الرئيسية — الخطة الوطنية لبنية تحتية النقل 2026–2037 (HD03259) — تُوظِّف 970 مليار كرونة سويدية تاريخية في السكك الحديدية والطرق والشحن البحري والطيران على مدى اثني عشر عامًا، مُرسِّخةً تحولًا استراتيجيًا نحو السكك الحديدية الكهربائية والطرق المتكيفة مع المناخ التي ستُشكّل القدرة التنافسية الإقليمية وقرارات التوطين الصناعي على مدى العقد القادم. تُشدِّد مقترحات موازية الضمان الاجتماعي للمحتجزين (HD03252)، وتُدرج حزمة الاتحاد الأوروبي المصرفية في القانون السويدي (HD03253)، وتُقرِّر متطلبات الاستشارة الصيدلانية لبعض الأدوية المتاحة دون وصفة طبية (HD03247).
+
+### 🧭 3 قرارات يدعمها هذا الملخص
+
+| # | القرار | الأهمية | الأفق الزمني |
+|---|--------|---------|-------------|
+| 1 | استراتيجيات الاستثمار في البنية التحتية والتوطين للصناعات المعتمدة على شحن السكك الحديدية أو توسعة الطرق الأوروبية | يخصص HD03259 أموالًا ضخمة لممرات محددة — معرفة الرابحين والخاسرين قابلة للتطبيق | 2026–2037 |
+| 2 | التخطيط للامتثال لقطاع البنوك/المالية بموجب بازل III/CRR3/CRD6 | يُحدِّد HD03253 الجدول الزمني للتنفيذ السويدي | 2026–2027 |
+| 3 | التموضع الاجتماعي السياسي للأحزاب قبل انتخابات خريف 2026 | يُقيِّد HD03252 مزايا السجناء الخاضعين للمراقبة الإلكترونية — إشارة صارمة لمكافحة الجريمة ذات آثار انتخابية | 2026 H2 |
+
+### ⚡ قراءة 60 ثانية
+
+- **البنية التحتية (HD03259)**: 970 مليار كرونة على مدى 2026–2037؛ صيانة السكك الحديدية مُقدَّمة على غيرها؛ قطاعات جديدة للسرعة العالية؛ الربط مع Norrland؛ التكيف المناخي. اللجنة: TU.
+- **العدالة/الشؤون الاجتماعية (HD03252)**: يفقد الأشخاص الذين يقضون عقوبات في "kontrollerat boende" (الاحتجاز المنزلي بسوار إلكتروني) أو في säkerhetsförvaring (الاحتجاز الوقائي) حقهم في معظم مزايا التأمين الاجتماعي. اللجنة: SfU. يُشير إلى موقف متصاعد من القانون والنظام.
+- **المالية/الاتحاد الأوروبي (HD03253)**: تُنفِّذ السويد حزمة الاتحاد الأوروبي المصرفية (CRR3 وCRD6 وتعديلات BRRD2) — التطبيق الكامل لبازل III، وأكثر صرامة لاحتياطيات رأس المال، ومتطلبات أموال خاصة جديدة. Finansdepartementet. اللجنة: FiU.
+- **الصحة (HD03247)**: يجب على الصيادلة تقديم إرشادات محددة عند صرف أدوية معيّنة دون وصفة طبية للحد من إساءة الاستخدام. Socialdepartementet. اللجنة: SoU.
+
+### 🔮 أبرز المحفزات القادمة
+
+**تصويتات البنية التحتية في لجنة TU (المتوقعة مايو–يونيو 2026)**: تمتلك أحزاب المعارضة SD وS وMP مواقف متباينة حول أولويات الممرات. تضطر حكومة أقلية بلا أغلبية لحزب واحد إلى التفاوض؛ راقب ما إذا كان SD سيستخرج تنازلات حول توازن الطرق مقابل السكك الحديدية.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Klassifikation**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Konfidens**: HØJ [B2]  
+**Kørselsnummer**: 25150587415
+
+---
+
+### 🎯 BLUF
+
+Kristersson-regeringen har i slutningen af april 2026 fremsendt fire vigtige propositioner til Riksdagen omhandlende infrastrukturinvesteringer, strafferetsreform, EU-finansregulering og sundhedsadgang. Hoveddokumentet — den nationale transportinfrastrukturplan 2026–2037 (HD03259) — forpligter historiske 970 milliarder SEK til jernbane, vej, søfart og luftfart over tolv år og kodificerer et strategisk skift mod elektrisk jernbane og klimatilpassede veje, der vil forme regional konkurrenceevne og industrielle lokaliseringsbeslutninger i det næste årti. Parallelle propositioner stramme den sociale sikring for fængslede (HD03252), gennemfører EU's bankpakke i svensk ret (HD03253) og indfører krav om farmaceutisk rådgivning ved salg af udvalgte håndkøbslægemidler (HD03247).
+
+### 🧭 3 beslutninger denne rapport understøtter
+
+| # | Beslutning | Relevans | Horisont |
+|---|-----------|----------|----------|
+| 1 | Infrastrukturinvesterings- og lokaliseringsstrategier for industrier afhængige af godstog eller E-vejsudbygning | HD03259 afsætter store midler til specifikke korridorer — viden om vindere/tabere er handlingsbar | 2026–2037 |
+| 2 | Compliance-planlægning for bank-/finanssektoren vedr. Basel III/CRR3/CRD6 | HD03253 fastsætter den svenske implementeringstidsplan | 2026–2027 |
+| 3 | Socialpolitisk positionering for partier forud for efterårsvalget 2026 | HD03252 begrænser ydelser til elektronisk overvågede indsatte — et hårdt-over-for-kriminalitet-signal med valgmæssige implikationer | 2026 H2 |
+
+### ⚡ 60 sekunders læsning
+
+- **Infrastruktur (HD03259)**: 970 mia. SEK over 2026–2037; jernbanevedligeholdelse prioriteret; nye højhastighedssegmenter; Norrland-tilkoblingen; klimasikring. Udvalg: TU.
+- **Retspleje/socialt (HD03252)**: Personer, der afsoner straffe i "kontrollerat boende" (hjemmefængsel med elektronisk fodlænke) eller i säkerhetsförvaring (præventiv forvaring), mister retten til de fleste sociale ydelser. Udvalg: SfU. Signalerer en eskalerende lov-og-orden-holdning.
+- **Finans/EU (HD03253)**: Sverige gennemfører EU's bankpakke (CRR3, CRD6, BRRD2-ændringer) — fuld Basel III-implementering, strengere kapitalbuffere, nye egenkapitalkrav. Finansdepartementet. Udvalg: FiU.
+- **Sundhed (HD03247)**: Farmaceuter skal yde specifik rådgivning ved udlevering af udpegede håndkøbslægemidler for at reducere misbrug. Socialdepartementet. Udvalg: SoU.
+
+### 🔮 Vigtigste fremtidige udløser
+
+**Infrastruktuafstemninger i TU-udvalget (forventet maj–juni 2026)**: Oppositionspartierne SD, S og MP har divergerende standpunkter om korridor-prioriteterne. En mindretalsregering uden absolut flertal skal forhandle; hold øje med om SD presser koncessionerne om balance mellem vej og jernbane.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Klassifizierung**: PUBLIC — DSGVO Art. 9(2)(e,g)  
+**Konfidenz**: HOCH [B2]  
+**Lauf-ID**: 25150587415
+
+---
+
+### 🎯 BLUF
+
+Die Regierung Kristersson hat Ende April 2026 vier bedeutende Gesetzesvorlagen beim Riksdag eingereicht, die Infrastrukturinvestitionen, Strafrechtsreform, EU-Finanzregulierung und Gesundheitsversorgung betreffen. Das Hauptdokument — der Nationale Verkehrsinfrastrukturplan 2026–2037 (HD03259) — verpflichtet historische 970 Milliarden SEK für Schiene, Straße, Seefahrt und Luftfahrt über zwölf Jahre und kodiert eine strategische Wende zur elektrischen Schiene und klimaangepassten Straßen, die regionale Wettbewerbsfähigkeit und industrielle Standortentscheidungen über das nächste Jahrzehnt prägen werden. Parallel dazu verschärfen Vorlagen die soziale Absicherung für Inhaftierte (HD03252), setzen das EU-Bankenpaket in schwedisches Recht um (HD03253) und führen apothekenspezifische Beratungspflichten bei ausgewählten rezeptfreien Arzneimitteln ein (HD03247).
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+| # | Entscheidung | Relevanz | Horizont |
+|---|-------------|----------|----------|
+| 1 | Infrastrukturinvestitions- und Standortstrategien für Industrien, die auf Güterverkehr oder E-Straßenausbau angewiesen sind | HD03259 weist erhebliche Mittel für spezifische Korridore zu — Wissen über Gewinner/Verlierer ist handlungsrelevant | 2026–2037 |
+| 2 | Compliance-Planung für den Bank-/Finanzsektor bezüglich Basel III/CRR3/CRD6 | HD03253 legt den schwedischen Umsetzungszeitplan fest | 2026–2027 |
+| 3 | Sozialpolitische Positionierung für Parteien vor der Herbstwahl 2026 | HD03252 beschränkt Leistungen für elektronisch überwachte Häftlinge — ein hartes Kriminalitätsbekämpfungssignal mit Wahlimplikationen | 2026 H2 |
+
+### ⚡ 60-Sekunden-Lesung
+
+- **Infrastruktur (HD03259)**: 970 Mrd. SEK über 2026–2037; Schienenerhaltung priorisiert; neue Hochgeschwindigkeitssegmente; Norrland-Anbindung; Klimasicherung. Ausschuss: TU.
+- **Justiz/Soziales (HD03252)**: Personen, die Strafen in "kontrollerat boende" (Hausarrest mit elektronischer Fußfessel) oder in säkerhetsförvaring (vorbeugende Verwahrung) verbüßen, verlieren den Anspruch auf die meisten Sozialversicherungsleistungen. Ausschuss: SfU. Signalisiert eine eskalierende Recht-und-Ordnung-Haltung.
+- **Finanzen/EU (HD03253)**: Schweden setzt das EU-Bankenpaket (CRR3, CRD6, BRRD2-Änderungen) um — vollständige Basel-III-Implementierung, strengere Kapitalpuffer, neue Eigenmittelanforderungen. Finansdepartementet. Ausschuss: FiU.
+- **Gesundheit (HD03247)**: Apotheker müssen bei der Abgabe bestimmter rezeptfreier Arzneimittel eine spezifische Beratung leisten, um Missbrauch zu reduzieren. Socialdepartementet. Ausschuss: SoU.
+
+### 🔮 Wichtigster bevorstehender Auslöser
+
+**Infrastrukturabstimmungen im TU-Ausschuss (erwartet Mai–Juni 2026)**: Die Oppositionsparteien SD, S und MP haben unterschiedliche Standpunkte zu den Korridorprioritäten. Eine Minderheitsregierung ohne Einzelpartei-Mehrheit muss verhandeln; beobachten Sie, ob SD Zugeständnisse zur Straße-Schiene-Balance erzwingt.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Clasificación**: PUBLIC — RGPD Art. 9(2)(e,g)  
+**Confianza**: ALTA [B2]  
+**ID de ejecución**: 25150587415
+
+---
+
+### 🎯 BLUF
+
+El gobierno Kristersson ha presentado al Riksdag cuatro proposiciones significativas a finales de abril de 2026, abarcando inversión en infraestructuras, reforma de la justicia penal, regulación financiera de la UE y acceso a la atención médica. El documento principal — el Plan Nacional de Infraestructura de Transporte 2026–2037 (HD03259) — compromete un histórico 970 mil millones de SEK para ferrocarril, carretera, transporte marítimo y aviación durante doce años, codificando un giro estratégico hacia el ferrocarril eléctrico y las carreteras adaptadas al clima que moldearán la competitividad regional y las decisiones de localización industrial durante la próxima década. Proposiciones paralelas endurecen la seguridad social para personas encarceladas (HD03252), transponen el paquete bancario de la UE al derecho sueco (HD03253) y establecen requisitos de asesoramiento farmacéutico para determinados medicamentos de venta libre (HD03247).
+
+### 🧭 3 decisiones que apoya este informe
+
+| # | Decisión | Relevancia | Horizonte |
+|---|---------|------------|-----------|
+| 1 | Estrategias de inversión en infraestructura y localización para industrias dependientes del ferrocarril de mercancías o la expansión de las carreteras E | HD03259 asigna fondos importantes a corredores específicos — el conocimiento de ganadores/perdedores es accionable | 2026–2037 |
+| 2 | Planificación del cumplimiento para el sector bancario/financiero en Basilea III/CRR3/CRD6 | HD03253 establece el calendario de implementación sueco | 2026–2027 |
+| 3 | Posicionamiento sociopolítico para los partidos antes de las elecciones de otoño de 2026 | HD03252 restringe las prestaciones para presos bajo vigilancia electrónica — una señal de dureza ante la delincuencia con implicaciones electorales | 2026 H2 |
+
+### ⚡ Lectura de 60 segundos
+
+- **Infraestructura (HD03259)**: 970 mil millones de SEK durante 2026–2037; mantenimiento ferroviario priorizado; nuevos segmentos de alta velocidad; conectividad de Norrland; adaptación climática. Comisión: TU.
+- **Justicia/Social (HD03252)**: Las personas que cumplen condena en "kontrollerat boende" (arresto domiciliario con tobillera electrónica) o en säkerhetsförvaring (internamiento preventivo) pierden el derecho a la mayoría de las prestaciones del seguro social. Comisión: SfU. Señala una postura de ley y orden en escalada.
+- **Finanzas/UE (HD03253)**: Suecia transpone el paquete bancario de la UE (CRR3, CRD6, modificaciones BRRD2) — plena implementación de Basilea III, colchones de capital más estrictos, nuevos requisitos de fondos propios. Finansdepartementet. Comisión: FiU.
+- **Salud (HD03247)**: Los farmacéuticos deben proporcionar asesoramiento específico al dispensar determinados medicamentos de venta libre para reducir el uso indebido. Socialdepartementet. Comisión: SoU.
+
+### 🔮 Principal desencadenante futuro
+
+**Votos sobre infraestructura en la comisión TU (esperado mayo–junio de 2026)**: Los partidos de la oposición SD, S y MP tienen posiciones divergentes sobre las prioridades de los corredores. Un gobierno minoritario sin mayoría de un solo partido debe negociar; observar si SD extrae concesiones sobre el equilibrio carretera-ferrocarril.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Luokittelu**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Luotettavuus**: KORKEA [B2]  
+**Ajotunnus**: 25150587415
+
+---
+
+### 🎯 BLUF
+
+Kristersson-hallitus on toimittanut Riksdagille neljä merkittävää esitystä huhtikuun lopussa 2026 infrastruktuuri-investointien, rikosoikeudistuksen, EU:n rahoitussääntelyn ja terveydenhuollon aloilta. Pääasiakirja — Kansallinen liikenneinfrastruktuurisuunnitelma 2026–2037 (HD03259) — sitoo historialliset 970 miljardia SEK rautatiehen, teihin, merenkäyntiin ja ilmailuun kahdentoista vuoden ajalle, ja koodaa strategisen siirtymän sähköiseen rautatieliikenteeeseen ja ilmastonmuutokseen sopeutettuihin teihin, jotka muovaavat alueellista kilpailukykyä ja teollisuuden sijoittumispäätöksiä seuraavalla vuosikymmenellä. Rinnakkaisesitykset tiukentavat vapausrangaistusta suorittavien sosiaaliturvaa (HD03252), saattavat EU:n pankkipaketin osaksi Ruotsin lainsäädäntöä (HD03253) ja asettavat apteekkineuvontavaatimuksen tietyille itsehoitolääkkeille (HD03247).
+
+### 🧭 3 päätöstä, joita tämä raportti tukee
+
+| # | Päätös | Relevanssi | Horisontti |
+|---|--------|------------|------------|
+| 1 | Infrastruktuuri-investointi- ja sijoittautumisstrategiat tavarajunakuljetuksista tai E-tielaajennuksista riippuvaisille teollisuudenaloille | HD03259 osoittaa suuria varoja tiettyihin käytäviin — tieto voittajista/häviäjistä on toimintakelpoinen | 2026–2037 |
+| 2 | Basel III/CRR3/CRD6-vaatimusten noudattamisen suunnittelu pankki-/rahoitussektorille | HD03253 asettaa Ruotsin täytäntöönpanoaikataulun | 2026–2027 |
+| 3 | Sosiaalipolitiikka-asemoituminen puolueille ennen syksyn 2026 vaaleja | HD03252 rajoittaa etuuksia elektronisesti valvotuille vangeille — kova rikostorjuntasignaali vaalipoliittisine vaikutuksineen | 2026 H2 |
+
+### ⚡ 60 sekunnin lukeminen
+
+- **Infrastruktuuri (HD03259)**: 970 mrd. SEK vuosina 2026–2037; rautateiden kunnossapito etusijalla; uusia nopearaiteita; Norrlandin liityntä; ilmastokestävyys. Valiokunta: TU.
+- **Oikeusturva/sosiaali (HD03252)**: "Kontrollerat boendessa" (kotiaresti elektronisella valvonnalla) tai säkerhetsförvaringissa (ennaltaehkäisevä säilöönotto) tuomionsa suorittavat menettävät oikeuden useimpiin sosiaalivakuutusetuuksiin. Valiokunta: SfU. Viestii koventuvasta laki-ja-järjestys-kannasta.
+- **Rahoitus/EU (HD03253)**: Ruotsi saattaa EU:n pankkipaketin (CRR3, CRD6, BRRD2-muutokset) osaksi lainsäädäntöään — täysi Basel III:n täytäntöönpano, tiukemmat pääomapuskurit, uudet omat vaatimukset. Finansdepartementet. Valiokunta: FiU.
+- **Terveys (HD03247)**: Apteekkihenkilökunnan on annettava erityinen neuvonta nimettyjen itsehoitolääkkeiden luovutuksen yhteydessä väärinkäytön vähentämiseksi. Socialdepartementet. Valiokunta: SoU.
+
+### 🔮 Tärkein tuleva laukaisin
+
+**TU-valiokunnan infrastruktuuriäänestykset (odotetaan toukokuu–kesäkuu 2026)**: Oppositiopuolueet SD, S ja MP ovat eri mieltä käytäväprioriteeteista. Vähemmistöhallituksen on neuvoteltava ilman yksipuolueen enemmistöä; seuraa, aiheuttaako SD myönnytyksiä tie- ja rautatieliikenteen välisessä tasapainossa.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : HAUTE [B2]  
+**ID d'exécution** : 25150587415
+
+---
+
+### 🎯 BLUF
+
+Le gouvernement Kristersson a soumis quatre propositions importantes au Riksdag fin avril 2026, portant sur les investissements en infrastructures, la réforme de la justice pénale, la réglementation financière européenne et l'accès aux soins de santé. Le document principal — le Plan national de transport d'infrastructure 2026–2037 (HD03259) — engage 970 milliards de SEK historiques pour le rail, la route, le maritime et l'aviation sur douze ans, codifiant un pivot stratégique vers le rail électrique et les routes adaptées au climat qui façonneront la compétitivité régionale et les décisions de localisation industrielle au cours de la prochaine décennie. Des propositions parallèles renforcent la sécurité sociale pour les personnes incarcérées (HD03252), transposent le paquet bancaire européen en droit suédois (HD03253) et instaurent des exigences de conseil pharmaceutique pour certains médicaments en vente libre (HD03247).
+
+### 🧭 3 décisions que cette note soutient
+
+| # | Décision | Pertinence | Horizon |
+|---|---------|------------|---------|
+| 1 | Stratégies d'investissement en infrastructure et de localisation pour les industries dépendant du fret ferroviaire ou de l'expansion des routes E | HD03259 alloue des fonds importants à des corridors spécifiques — la connaissance des gagnants/perdants est exploitable | 2026–2037 |
+| 2 | Planification de la conformité pour le secteur bancaire/financier concernant Bâle III/CRR3/CRD6 | HD03253 fixe le calendrier de mise en œuvre suédois | 2026–2027 |
+| 3 | Positionnement sociopolitique pour les partis avant les élections d'automne 2026 | HD03252 restreint les prestations pour les détenus sous surveillance électronique — un signal de fermeté anti-criminalité aux implications électorales | 2026 H2 |
+
+### ⚡ Lecture en 60 secondes
+
+- **Infrastructures (HD03259)** : 970 Mds SEK sur 2026–2037 ; entretien ferroviaire priorisé ; nouveaux segments à grande vitesse ; connectivité Norrland ; adaptation climatique. Commission : TU.
+- **Justice/Social (HD03252)** : Les personnes purgeant des peines en "kontrollerat boende" (assignation à résidence avec bracelet électronique) ou en säkerhetsförvaring (détention préventive) perdent leur droit à la plupart des prestations d'assurance sociale. Commission : SfU. Signale une posture loi-et-ordre en escalade.
+- **Finance/UE (HD03253)** : La Suède transpose le paquet bancaire européen (CRR3, CRD6, amendements BRRD2) — pleine mise en œuvre de Bâle III, coussins de capital plus stricts, nouvelles exigences en fonds propres. Finansdepartementet. Commission : FiU.
+- **Santé (HD03247)** : Les pharmaciens doivent fournir des conseils spécifiques lors de la délivrance de certains médicaments en vente libre pour réduire les abus. Socialdepartementet. Commission : SoU.
+
+### 🔮 Principal déclencheur à venir
+
+**Votes sur l'infrastructure en commission TU (attendu mai–juin 2026)** : Les partis d'opposition SD, S et MP ont des positions divergentes sur les priorités de corridors. Un gouvernement minoritaire sans majorité d'un seul parti doit négocier ; surveiller si SD extrait des concessions sur l'équilibre route-rail.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — הצעות חוק של ממשלת שוודיה, 30 באפריל 2026
+
+**מחבר**: James Pether Sörling  
+**סיווג**: PUBLIC — GDPR סעיף 9(2)(e,g)  
+**רמת ביטחון**: גבוהה [B2]  
+**מזהה ריצה**: 25150587415
+
+---
+
+### 🎯 BLUF
+
+ממשלת קריסטרסון הגישה לריקסדאג ארבע הצעות חוק משמעותיות בסוף אפריל 2026, הנוגעות להשקעות בתשתיות, רפורמת צדק פלילי, רגולציה פיננסית אירופאית וגישה לשירותי בריאות. המסמך המרכזי — התוכנית הלאומית לתשתית תחבורה 2026–2037 (HD03259) — מחייב 970 מיליארד SEK היסטוריים לרכבת, כביש, ים ותעופה על פני שתים-עשרה שנים, ומקדד מפנה אסטרטגי לרכבת חשמלית ולכבישים מותאמי אקלים שיעצבו את התחרותיות האזורית והחלטות מיקום תעשייתי בעשור הבא. הצעות מקבילות מחמירות את הביטוח הלאומי לעצורים (HD03252), משלבות את חבילת הבנקאות של האיחוד האירופי בחוק השוודי (HD03253), ומטילות דרישות ייעוץ פרמצבטי לתרופות מסוימות ללא מרשם (HD03247).
+
+### 🧭 3 החלטות שתקציר זה תומך בהן
+
+| # | החלטה | רלוונטיות | אופק |
+|---|------|----------|------|
+| 1 | אסטרטגיות השקעה בתשתיות ומיקום לתעשיות התלויות בשינוע מטען ברכבת או בהרחבת כבישים אירופאיים | HD03259 מקצה כספים ניכרים למסדרונות ספציפיים — ידע על מנצחים/מפסידים הוא בר-פעולה | 2026–2037 |
+| 2 | תכנון ציות לסקטור הבנקאי/פיננסי לפי בזל III/CRR3/CRD6 | HD03253 קובע את לוח הזמנים לביצוע השוודי | 2026–2027 |
+| 3 | מיצוב סוציו-פוליטי למפלגות לקראת הבחירות בסתיו 2026 | HD03252 מגביל גמלאות לאסירים בפיקוח אלקטרוני — אות "חוק וסדר" עם השלכות בחירתיות | 2026 H2 |
+
+### ⚡ קריאה של 60 שניות
+
+- **תשתיות (HD03259)**: 970 מיליארד SEK בין 2026–2037; תחזוקת רכבת בעדיפות; מקטעי מהירות גבוהה חדשים; קישוריות נוררלנד; הסתגלות לאקלים. ועדה: TU.
+- **משפטי/סוציאלי (HD03252)**: אנשים המרצים עונשים ב"kontrollerat boende" (מעצר בית עם אזיק אלקטרוני) או ב-säkerhetsförvaring (מעצר מניעתי) מאבדים את הזכאות לרוב גמלאות הביטוח הלאומי. ועדה: SfU. מאותת על עמדת חוק וסדר מסלימה.
+- **פיננסים/האיחוד האירופי (HD03253)**: שוודיה משלבת חבילת הבנקאות האירופאית (CRR3, CRD6, תיקוני BRRD2) — יישום מלא של בזל III, כריות הון מחמירות יותר, דרישות הון עצמי חדשות. Finansdepartementet. ועדה: FiU.
+- **בריאות (HD03247)**: פרמצבטים חייבים לספק ייעוץ ספציפי בעת מתן תרופות מסוימות ללא מרשם כדי לצמצם שימוש לרעה. Socialdepartementet. ועדה: SoU.
+
+### 🔮 הגורם המעורר הקריטי הבא
+
+**הצבעות תשתיות בוועדת TU (צפוי מאי–יוני 2026)**: למפלגות האופוזיציה SD, S ו-MP עמדות שונות בנוגע לעדיפויות המסדרונות. ממשלת מיעוט ללא רוב של מפלגה אחת חייבת לנהל משא ומתן; עקוב אחר האם SD ידרוש ויזכה בהחלטות לגבי איזון כביש-רכבת.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**分類**: PUBLIC — GDPR第9条(2)(e,g)  
+**信頼度**: 高 [B2]  
+**実行ID**: 25150587415
+
+---
+
+### 🎯 BLUF
+
+クリステション政権は2026年4月下旬、インフラ投資、刑事司法改革、EU金融規制、医療アクセスにわたる4件の重要な法案をリクスダーグに提出した。主要文書——国家交通インフラ計画2026–2037（HD03259）——は12年間にわたり鉄道・道路・海運・航空に向けた歴史的な9700億スウェーデン・クローナを拠出し、電気鉄道および気候対応道路への戦略的転換を法制化する。これは今後10年間、地域競争力と産業立地決定を左右する。並行する法案は、収監者の社会保障を厳格化し（HD03252）、EU銀行パッケージをスウェーデン法に転換し（HD03253）、特定の市販薬に薬剤師による指導義務を導入する（HD03247）。
+
+### 🧭 本ブリーフが支援する3つの意思決定
+
+| # | 意思決定 | 関連性 | 時間軸 |
+|---|---------|--------|--------|
+| 1 | 貨物鉄道やE道路拡張に依存する産業のインフラ投資・立地戦略 | HD03259は特定回廊に多大な資金を配分——勝者/敗者の知識は実行可能 | 2026–2037 |
+| 2 | バーゼルIII/CRR3/CRD6に関する銀行・金融セクターのコンプライアンス計画 | HD03253がスウェーデンの実施スケジュールを設定 | 2026–2027 |
+| 3 | 2026年秋の選挙に向けた各党の社会政策ポジショニング | HD03252は電子監視下の受刑者の給付を制限——犯罪への厳格対応シグナルで選挙への含意あり | 2026 H2 |
+
+### ⚡ 60秒読み
+
+- **インフラ（HD03259）**: 2026–2037年の9700億クローナ；鉄道維持管理を優先；新たな高速路線；ノルランド接続；気候強靭化。委員会：TU。
+- **司法/社会（HD03252）**: "kontrollerat boende"（電子タグ付き自宅拘禁）またはsäkerhetsförvaring（予防的拘禁）で刑を服している者は、ほとんどの社会保険給付の受給権を失う。委員会：SfU。法と秩序姿勢の強化を示す。
+- **財政/EU（HD03253）**: スウェーデンはEU銀行パッケージ（CRR3、CRD6、BRRD2改正）を転換——バーゼルIIIの完全実施、より厳しい資本バッファー、新たな自己資本要件。Finansdepartementet。委員会：FiU。
+- **保健（HD03247）**: 薬剤師は、指定された市販薬を調剤する際に具体的な指導を行い、乱用を削減しなければならない。Socialdepartementet。委員会：SoU。
+
+### 🔮 最重要の将来トリガー
+
+**TU委員会のインフラ採決（2026年5月〜6月予定）**: 野党のSD、S、MPは回廊優先事項について異なる立場を持つ。単独過半数のない少数派政府は交渉が必要；SDが道路対鉄道バランスで譲歩を引き出すかに注目。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**분류**: PUBLIC — GDPR 제9조(2)(e,g)  
+**신뢰도**: 높음 [B2]  
+**실행 ID**: 25150587415
+
+---
+
+### 🎯 핵심 요약
+
+크리스테르손 정부는 2026년 4월 말 인프라 투자, 형사사법 개혁, EU 금융 규제, 의료 접근성에 걸친 네 가지 중요한 법안을 릭스다그에 제출했다. 주요 문서인 국가 교통인프라 계획 2026–2037(HD03259)은 12년에 걸쳐 철도·도로·해상·항공에 역사적인 9,700억 스웨덴 크로나를 투입하며, 전기철도와 기후 적응 도로로의 전략적 전환을 법제화한다. 이는 향후 10년간 지역 경쟁력과 산업 입지 결정을 형성하게 될 것이다. 병행 법안들은 수용자 사회보장을 강화하고(HD03252), EU 은행 패키지를 스웨덴법에 편입하며(HD03253), 특정 일반의약품에 대한 약사 상담 의무를 도입한다(HD03247).
+
+### 🧭 이 브리핑이 지원하는 3가지 의사결정
+
+| # | 의사결정 | 관련성 | 시간대 |
+|---|---------|--------|--------|
+| 1 | 화물 철도 또는 유럽 도로 확장에 의존하는 산업의 인프라 투자·입지 전략 | HD03259는 특정 회랑에 상당한 자금을 배정——승자/패자 파악은 실행 가능 | 2026–2037 |
+| 2 | 바젤III/CRR3/CRD6에 대한 은행·금융 부문 컴플라이언스 계획 | HD03253이 스웨덴 이행 일정 설정 | 2026–2027 |
+| 3 | 2026년 가을 선거를 앞둔 각 정당의 사회정책 포지셔닝 | HD03252는 전자 감시 수감자 혜택 제한——범죄 강경 대응 신호로 선거적 함의 | 2026 H2 |
+
+### ⚡ 60초 읽기
+
+- **인프라(HD03259)**: 2026–2037년 9,700억 크로나；철도 유지관리 우선；새로운 고속 구간；노르란드 연결；기후 강화. 위원회: TU.
+- **사법/사회(HD03252)**: "kontrollerat boende"(전자 발찌 가택 구금) 또는 säkerhetsförvaring(예방적 구금)에서 형을 복역하는 자는 대부분의 사회보험 급여 자격을 상실. 위원회: SfU. 법과 질서 입장 강화를 신호.
+- **금융/EU(HD03253)**: 스웨덴, EU 은행 패키지(CRR3, CRD6, BRRD2 개정) 국내법화——바젤III 완전 이행, 엄격한 자본 완충, 새로운 자기자본 요건. Finansdepartementet. 위원회: FiU.
+- **보건(HD03247)**: 약사는 특정 일반의약품 조제 시 구체적 지도를 제공해 오용을 줄여야 함. Socialdepartementet. 위원회: SoU.
+
+### 🔮 가장 중요한 향후 촉발 요인
+
+**TU 위원회 인프라 표결(2026년 5–6월 예정)**: 야당 SD, S, MP는 회랑 우선순위에 대해 서로 다른 입장. 단독 과반수 없는 소수파 정부는 협상이 필요；SD가 도로 대 철도 균형에서 양보를 끌어내는지 주목.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Classificatie**: PUBLIC — AVG Art. 9(2)(e,g)  
+**Vertrouwen**: HOOG [B2]  
+**Loop-ID**: 25150587415
+
+---
+
+### 🎯 BLUF
+
+De regering-Kristersson heeft eind april 2026 vier significante wetsvoorstellen ingediend bij de Riksdag, die betrekking hebben op infrastructuurinvesteringen, strafrechtshervorming, EU-financiële regelgeving en toegang tot gezondheidszorg. Het hoofddocument — het Nationaal Vervoersinfrastructuurplan 2026–2037 (HD03259) — verbindt historische 970 miljard SEK aan spoor, weg, maritiem vervoer en luchtvaart over twaalf jaar, en codeert een strategische ommezwaai naar elektrisch spoor en klimaatbestendige wegen die de regionale concurrentiekracht en industriële vestigingsbeslissingen in het volgende decennium zullen vormen. Parallelle voorstellen verscherpen de sociale zekerheid voor gedetineerden (HD03252), transponen het EU-bankenpakket in Zweeds recht (HD03253) en stellen farmaciebegeleiding in voor geselecteerde vrij verkrijgbare geneesmiddelen (HD03247).
+
+### 🧭 3 beslissingen die dit rapport ondersteunt
+
+| # | Beslissing | Relevantie | Horizon |
+|---|-----------|------------|---------|
+| 1 | Infrastructuurinvesterings- en vestigingsstrategieën voor industrieën afhankelijk van goederenspoor of E-weguitbreiding | HD03259 wijst aanzienlijke fondsen toe aan specifieke corridors — kennis van winnaars/verliezers is uitvoerbaar | 2026–2037 |
+| 2 | Compliance-planning voor de bank-/financiële sector voor Bazel III/CRR3/CRD6 | HD03253 stelt de Zweedse implementatietijdlijn vast | 2026–2027 |
+| 3 | Sociaal-politieke positionering voor partijen vóór de herfstverkiezingen 2026 | HD03252 beperkt uitkeringen voor elektronisch gecontroleerde gevangenen — een harde misdaadbestrijdingssignaal met electorale implicaties | 2026 H2 |
+
+### ⚡ 60-seconden lezing
+
+- **Infrastructuur (HD03259)**: 970 mrd. SEK over 2026–2037; spooronderhoud geprioriteerd; nieuwe hogesnelheidssegmenten; Norrland-verbinding; klimaatbestendigheid. Commissie: TU.
+- **Justitie/Sociaal (HD03252)**: Personen die straffen uitzitten in "kontrollerat boende" (huisarrest met elektronische enkelbanden) of in säkerhetsförvaring (preventieve hechtenis) verliezen het recht op de meeste sociale verzekeringsuitkeringen. Commissie: SfU. Signaleert een escalerende wet-en-orde-houding.
+- **Financiën/EU (HD03253)**: Zweden transponeert het EU-bankenpakket (CRR3, CRD6, BRRD2-wijzigingen) — volledige Bazel III-implementatie, strengere kapitaalbuffers, nieuwe eigenvermogensvereisten. Finansdepartementet. Commissie: FiU.
+- **Gezondheid (HD03247)**: Apothekers moeten specifieke begeleiding bieden bij de afgifte van aangewezen vrij verkrijgbare geneesmiddelen om misbruik te verminderen. Socialdepartementet. Commissie: SoU.
+
+### 🔮 Belangrijkste toekomstige trigger
+
+**Infrastructuurstemmen in TU-commissie (verwacht mei–juni 2026)**: Oppositiepartijen SD, S en MP hebben uiteenlopende standpunten over de corridorprioriteiten. Een minderheidsregering zonder meerderheid van één partij moet onderhandelen; let op of SD concessies afdwingt over de weg-spoor-balans.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Klassifisering**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Konfidensgrad**: HØY [B2]  
+**Kjørings-ID**: 25150587415
+
+---
+
+### 🎯 BLUF
+
+Kristersson-regjeringen har i slutten av april 2026 lagt frem fire viktige proposisjoner for Riksdagen, innen infrastrukturinvesteringer, strafferettereform, EU-finansregulering og helsetjenester. Hoveddokumentet — Nasjonal transportinfrastrukturplan 2026–2037 (HD03259) — forplikter historiske 970 milliarder SEK til jernbane, vei, sjøfart og luftfart over tolv år og kodifiserer et strategisk skifte mot elektrisk jernbane og klimatilpassede veier som vil forme regional konkurransekraft og industrielle lokaliseringsbeslutninger gjennom neste tiår. Parallelle proposisjoner strammer inn sosial trygghet for frihetsberøvede (HD03252), gjennomfører EUs bankpakke i svensk rett (HD03253) og innfører krav om farmasøytisk rådgivning ved salg av utvalgte reseptfrie legemidler (HD03247).
+
+### 🧭 3 beslutninger denne rapporten støtter
+
+| # | Beslutning | Relevans | Horisont |
+|---|-----------|----------|----------|
+| 1 | Infrastrukturinvesterings- og lokaliseringsstrategier for industrier avhengige av godstog eller E-veiutbygging | HD03259 avsetter store midler til spesifikke korridorer — kunnskap om vinnere/tapere er handlingsbar | 2026–2037 |
+| 2 | Compliance-planlegging for bank-/finanssektoren for Basel III/CRR3/CRD6 | HD03253 fastsetter den svenske gjennomføringstidsplanen | 2026–2027 |
+| 3 | Sosialpolitisk posisjonering for partier foran høstvalget 2026 | HD03252 begrenser ytelser til elektronisk overvåkede innsatte — et tøft-mot-kriminalitet-signal med valgmessige implikasjoner | 2026 H2 |
+
+### ⚡ 60 sekunders lesning
+
+- **Infrastruktur (HD03259)**: 970 mrd. SEK over 2026–2037; jernbanevedlikehold prioritert; nye høyhastighetssegmenter; Norrland-tilkobling; klimasikring. Komité: TU.
+- **Strafferett/sosialt (HD03252)**: Personer som soner straffer i "kontrollerat boende" (hjemmefengsel med elektronisk ankellenke) eller i säkerhetsförvaring (preventiv forvaring) mister retten til de fleste sosiale ytelser. Komité: SfU. Signaliserer en eskalerende lov-og-orden-holdning.
+- **Finans/EU (HD03253)**: Sverige gjennomfører EUs bankpakke (CRR3, CRD6, BRRD2-endringer) — full Basel III-implementering, strengere kapitalbuffere, nye egenkapitalkrav. Finansdepartementet. Komité: FiU.
+- **Helse (HD03247)**: Farmasøyter skal gi spesifikk rådgivning ved utlevering av utpekte reseptfrie legemidler for å redusere misbruk. Socialdepartementet. Komité: SoU.
+
+### 🔮 Viktigste fremtidige utløser
+
+**Infrastrukturvoteringer i TU-komiteen (forventet mai–juni 2026)**: Opposisjonspartiene SD, S og MP har ulike standpunkter om korridor-prioriteringene. En mindretallsregjering uten enkeltpartis flertall må forhandle; følg med på om SD presser frem innrømmelser om balansen mellom vei og jernbane.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Klassificering**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Konfidensgrad**: HÖG [B2]  
+**Körnings-ID**: 25150587415
+
+---
+
+### 🎯 BLUF
+
+Regeringen Kristersson har i slutet av april 2026 lämnat fyra viktiga propositioner till riksdagen inom infrastrukturinvesteringar, kriminalpolitik, EU-finansreglering och hälso- och sjukvård. Huvuddokumentet — Nationell plan för transportinfrastruktur 2026–2037 (HD03259) — avsätter historiska 970 miljarder kronor till järnväg, väg, sjöfart och luftfart under tolv år, och cementerar en strategisk satsning på elektrisk järnväg och klimatanpassade vägar som kommer att forma regional konkurrenskraft och industrilokaliseringsbeslut under nästa decennium. Parallella propositioner skärper socialförsäkringsregler för frihetsberövade (HD03252), genomför EU:s bankpaket i svensk rätt (HD03253) samt inför krav på farmaceutisk rådgivning vid köp av utvalda receptfria läkemedel (HD03247).
+
+### 🧭 3 beslut som rapporten stödjer
+
+| # | Beslut | Relevans | Horisont |
+|---|--------|----------|----------|
+| 1 | Infrastrukturinvesterings- och lokaliseringsstrategier för industrier beroende av godstrafik eller E-vägutbyggnad | HD03259 avsätter stora medel till specifika stråk — kunskap om vinnare/förlorare är handlingsbar | 2026–2037 |
+| 2 | Compliance-planering för bank-/finanssektor avseende Basel III/CRR3/CRD6 | HD03253 fastställer den svenska genomförandetidsplanen | 2026–2027 |
+| 3 | Socialpolirisk positionering för partier inför höstvalet 2026 | HD03252 begränsar förmåner för elektroniskt övervakade intagna — en tuff brottsbekämpningssignal med valimplikationer | 2026 H2 |
+
+### ⚡ 60 sekunders läsning
+
+- **Infrastruktur (HD03259)**: 970 miljarder kronor under 2026–2037; järnvägsunderhåll prioriterat; nya snabbanläggningar; Norrlandsanslutning; klimatsäkring. Utskott: TU.
+- **Juridik/socialt (HD03252)**: Personer som avtjänar straff i kontrollerat boende (hemfängelse med elektronisk tagg) eller säkerhetsförvaring förlorar rätten till de flesta socialförsäkringsförmåner. Utskott: SfU. Signalerar en alltmer tuff lag-och-ordningsståndpunkt.
+- **Finans/EU (HD03253)**: Sverige genomför EU:s bankpaket (CRR3, CRD6, BRRD2-ändringar) — full Basel III-implementering, strängare kapitalbuffertar, nya kapitalkrav. Finansdepartementet. Utskott: FiU.
+- **Hälsa (HD03247)**: Farmaceuter ska lämna specifik rådgivning vid utlämning av utpekade receptfria läkemedel för att minska missbruk. Socialdepartementet. Utskott: SoU.
+
+### 🔮 Viktigaste framtida utlösare
+
+**Omröstning om infrastruktur i TU-utskottet (förväntas maj–juni 2026)**: Oppositionspartier SD, S och MP har skilda åsikter om stråkprioriteringarna. En minoritetsregering utan enkelt partiets majoritet måste förhandla; bevaka om SD utverkar eftergifter om balansen mellan väg och järnväg.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**密级**：PUBLIC — GDPR第9条(2)(e,g)  
+**置信度**：高 [B2]  
+**运行ID**：25150587415
+
+---
+
+### 🎯 核心摘要
+
+克里斯特松政府于2026年4月下旬向瑞典议会（Riksdag）提交了四项重要提案，涵盖基础设施投资、刑事司法改革、欧盟金融监管和医疗保障。主要文件——国家交通基础设施规划2026–2037（HD03259）——承诺在12年内向铁路、公路、航运和航空投入9700亿瑞典克朗，以法律形式确立向电气铁路和气候适应型道路转型的战略，这将在未来十年塑造地区竞争力和工业选址决策。并行提案收紧了对被监禁人员的社会保障（HD03252），将欧盟银行业一揽子方案纳入瑞典法律（HD03253），并为特定非处方药品引入药剂师指导要求（HD03247）。
+
+### 🧭 本简报支持的3项决策
+
+| # | 决策 | 相关性 | 时间范围 |
+|---|-----|--------|----------|
+| 1 | 依赖货运铁路或欧洲公路扩建的产业基础设施投资与选址策略 | HD03259为特定走廊分配大量资金——了解赢家/输家具有可操作性 | 2026–2037 |
+| 2 | 银行/金融业关于巴塞尔III/CRR3/CRD6的合规规划 | HD03253确立瑞典实施时间表 | 2026–2027 |
+| 3 | 各党派在2026年秋季大选前的社会政策定位 | HD03252限制电子监控服刑人员的福利——具有选举影响的强硬反犯罪信号 | 2026 H2 |
+
+### ⚡ 60秒速读
+
+- **基础设施（HD03259）**：2026–2037年9700亿克朗；铁路维护优先；新高速路段；诺尔兰连通性；气候防护。委员会：TU。
+- **司法/社会（HD03252）**：在"kontrollerat boende"（电子标签居家监禁）或säkerhetsförvaring（预防性拘留）中服刑者丧失大多数社会保险福利权利。委员会：SfU。表明不断升级的法律与秩序立场。
+- **金融/欧盟（HD03253）**：瑞典转换欧盟银行业一揽子方案（CRR3、CRD6、BRRD2修订）——全面实施巴塞尔III、更严格的资本缓冲、新的自有资金要求。Finansdepartementet。委员会：FiU。
+- **卫生（HD03247）**：药剂师在分发特定非处方药品时必须提供具体指导，以减少滥用。Socialdepartementet。委员会：SoU。
+
+### 🔮 最关键的前瞻触发事件
+
+**TU委员会基础设施表决（预计2026年5–6月）**：反对党SD、S和MP在走廊优先事项上立场各异。无单一政党多数的少数派政府必须谈判；关注SD是否在公路与铁路平衡问题上争取到让步。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD03259\n970bn SEK\nInfrastructure"] -->|TU Committee| B["Coalition\nNegotiation"]
+    C["HD03252\nPrison Benefits\nRestriction"] -->|SfU| D["Electoral\nSignal 2026"]
+    E["HD03253\nEU Banking\nPackage"] -->|FiU| F["Basel III\nCompliance"]
+    G["HD03247\nOTC\nPharmacist"] -->|SoU| H["Health\nSafety"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ff006e,color:#fff
+    style E fill:#ffbe0b,color:#0a0e27
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 363f4a8634f2384be17ea1c3598e718d8d485fa1 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1682,6 +2377,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

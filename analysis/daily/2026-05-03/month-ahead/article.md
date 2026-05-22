@@ -6,7 +6,7 @@ date: 2026-05-03
 subfolder: month-ahead
 slug: 2026-05-03-month-ahead
 source_folder: analysis/daily/2026-05-03/month-ahead
-generated_at: 2026-05-21T02:19:50.853Z
+generated_at: 2026-05-22T12:25:06.302Z
 language: en
 layout: article
 ---
@@ -79,6 +79,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2271,13 +2284,600 @@ Standing PIRs for this cycle:
 - PIR-4: Healthcare reform momentum — HD03251 vs S/V/MP counter-proposals
 - PIR-5: Transparency (HD03258) — KU committee reception and opposition amendments
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_ar.md -->
+
+&#x200F;# تقرير استخباراتي — السويد في الشهر القادم: يونيو 2026
+
+**التصنيف**: عام | **التاريخ**: 2026-05-03 | **المؤلف**: James Pether Sörling
+
+---
+
+### 🎯 الخلاصة التنفيذية
+
+أطلق ائتلاف Tidö السويدي (M-SD-KD-L، 176/349 مقعداً) وابلاً تشريعياً قبل الانتخابات مع أربعة مقترحات هجرة متزامنة قدمت في 30 أبريل 2026 — تشمل إلغاء تصاريح الإقامة الدائمة — قبل 133 يوماً من انتخابات 13 سبتمبر. ستختبر الحزمة تماسك الائتلاف (لا سيما ولاء الليبراليين)، وتكشف مخاطر الامتثال للاتفاقية الأوروبية لحقوق الإنسان، وترسم خارطة المنافسة الانتخابية في الفترة يونيو–سبتمبر. في الوقت ذاته، تمتد أجندة الانتخابات إلى الدفاع والصحة بموجب إطار التعاون العسكري (HD03254) وإصلاح الرعاية النفسية والإدمان المتكاملة (HD03251).
+
+### 🧭 3 قرارات يدعمها هذا التقرير
+
+1. **متابعة التشريعات**: رصد تصويتات حزب L (Liberalerna) في اللجنة على HD03262 — إذ يُعرّض أي انشقاق ليبرالي الحزمة الهجروية بأكملها واستقرار الحكومة للخطر.
+2. **رسم خرائط السيناريوهات الانتخابية**: يُرسّخ السباق الهجروي قبل الانتخابات إما قاعدة حزب SD أو يُنفّر ناخبي الوسط؛ وكلا النتيجتين يغيّران حسابات الائتلاف قبيل سبتمبر.
+3. **محفز تصعيد المخاطر**: الطعن القانوني بموجب الاتفاقية الأوروبية لحقوق الإنسان/الاتحاد الأوروبي في HD03262 (إلغاء تصريح الإقامة الدائم) — إذا أشارت المفوضية أو المحاكم السويدية إلى تعارضه، فسيواجه الجدول التشريعي أزمة دستورية قبل الانتخابات.
+
+### نقاط استخباراتية في 60 ثانية
+
+- 🔴 **السباق الهجروي**: 4 مقترحات (HD03262، 263، 264، 265) تُلغي تصاريح الإقامة الدائمة، تُعزز الترحيل، تُشدّد قواعد العقوبات/الاحتجاز — أكثر الحزم الهجروية تشدداً منذ أزمة 2016. **DIW: 10.2 (L3، مُعدَّل انتخابياً)**
+- 🟠 **الموقف الدفاعي**: HD03254 (إطار تعاون عسكري تشغيلي) — تكامل الدفاع في إطار حلف شمال الأطلسي/الدول الاسكندنافية، Pål Jonson (M). من المتوقع دعم متعدد الأحزاب؛ لا يستطيع حزب S المعارضة.
+- 🟡 **إصلاح الصحة**: HD03251 (رعاية متكاملة للإدمان/الطب النفسي) — إصلاح KD المميّز لـ Jakob Forssmed؛ يقدم حزب S تعديلات مضادة حول الاستقلالية الإقليمية.
+- 🟡 **الشفافية**: HD03258 (شفافية العملية السياسية) — يستهدف شفافية تمويل المجتمع المدني؛ معارضة لجنة KU من S وV وMP؛ رأي Lagrådet معلق.
+- ⚪ **اقتراحات المعارضة**: يقدم حزب S 9 اقتراحات رعاية اجتماعية (ائتمان سكن، فقر، حوادث عمل، الحصول على الرعاية الصحية) — تموضع برنامج ما قبل الانتخابات؛ تأثير تشريعي ضئيل في مواجهة أغلبية 176 مقعداً.
+
+### أبرز إشارة إنذار مبكر
+
+**موقف حزب L (Liberalerna) في اللجنة بشأن HD03262** (أسبوع 18 مايو 2026): إذا أبدى حزب L معارضته لإلغاء تصاريح الإقامة الدائمة بدواعي الاتفاقية الأوروبية لحقوق الإنسان، فستواجه الحزمة الهجروية بأكملها التعديل أو السحب — أكبر مخاطر سياسية قصيرة الأمد.
+
+### تصنيف الثقة
+
+**مرتفع** [B2] — تحليل مُرسَّخ في الوثائق بمراجع حقيقية لـ `dok_id`؛ حسابيات ائتلافية معروفة؛ البُعد القانوني للاتفاقية الأوروبية مُصنَّف بـ `[احتمالية طعن عالية]`.
+
+```mermaid
+pie title توزيع الأولويات التشريعية (مُعدَّل DIW)
+    "حزمة الهجرة (HD03262-65)" : 35
+    "الدفاع HD03254" : 14
+    "الشفافية HD03258" : 12
+    "الصحة HD03251" : 11
+    "مقترحات معارضة S" : 15
+    "اقتراحات أخرى" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_da.md -->
+
+**Klassifikation**: OFFENTLIG | **Dato**: 2026-05-03 | **Forfatter**: James Pether Sörling
+
+---
+
+### 🎯 BLUF
+
+Sveriges Tidö-koalition (M-SD-KD-L, 176/349 pladser) affyrede en forvalgsstrategi med fire simultane migrationsforslagslove indgivet den 30. april 2026 — herunder afskaffelse af permanente opholdstilladelser — 133 dage inden valget den 13. september. Pakken vil afprøve koalitionens sammenhæng (særligt Liberal loyalitet), eksponere EMRK-overholdelses risiko og definere valgterrænet for juni–september. Simultaneously udvider en militær samarbejdsramme (HD03254) og en integreret psykiatri-/misbrugsvårdsreform (HD03251) valgdagsordenen til forsvar og sundhed.
+
+### 🧭 3 beslutninger som dette brief understøtter
+
+1. **Lovgivningsovervågning**: Følg L's (Liberalernes) udvalgsstemmer om HD03262 — Liberal afhopper risikerer hele migrationspakken og regeringsstabiliteten.
+2. **Valgscenariekortlægning**: Den forvalgsmigrationssprint konsoliderer enten SD-basen eller fremmedgør centristiske vælgere; begge udfald ændrer koalitionsaritmetikken mod september.
+3. **Risikoeskaleringsudløser**: EMRK/EU-retlig udfordring af HD03262 (afskaffelse af permanent tilladelse) — hvis Kommissionen eller svenske domstole signalerer inkompatibilitet, møder lovgivningskalenderen en forfatningskrise inden valget.
+
+### 60-sekunders efterretningspunkter
+
+- 🔴 **MIGRATIONSSPRINT**: 4 forslag (HD03262, 263, 264, 265) afskaffer permanente opholdstilladelser, styrker udvisning, stramner straffe-/detentionsregler — den mest aggressive migrationspakke siden 2016-krisen. **DIW: 10.2 (L3, valgkorrigeret)**
+- 🟠 **FORSVARSPOSITUR**: HD03254 (operativ militær samarbejdsramme) — NATO/Nordisk forsvarsintegration, Pål Jonson (M). Tværpartistøtte forventes; S kan ikke modsætte sig.
+- 🟡 **SUNDHEDSREFORM**: HD03251 (integreret afhængigheds-/psykiatribehandling) — KD's signaturreform af Jakob Forssmed; S indgiver modændringsforslag om regional autonomi.
+- 🟡 **TRANSPARENS**: HD03258 (transparens i den politiske proces) — retter sig mod finansieringstransparens for civilsamfund; KU-udvalgsopposition fra S, V, MP; Lagrådets yttrande afventes.
+- ⚪ **OPPOSITIONSMOTIONER**: S indgiver 9 socialvelfærdsmotioner (boligkredit, fattigdom, arbejdsskader, sundhedsadgang) — forvalgspolitisk positionering; lovgivningstroværdighed minimal mod 176-pladsmajoriteten.
+
+### Top fremadrettet signal
+
+**L's (Liberalernes) udvalgsposition om HD03262** (ugen den 18. maj 2026): Hvis L signalerer modstand mod afskaffelse af permanente tilladelser på EMRK-grunde, møder hele migrationspakken ændring eller tilbagetrækning — den største kortsigtede politiske risiko.
+
+### Konfidensmærkning
+
+**HØJ** [B2] — dokumentforankret analyse med rigtige `dok_id`-citater; kendt koalitionsaritmetik; EMRK-retlig dimension markeret som `[HØJ sandsynlighed udfordring]`.
+
+```mermaid
+pie title Lovgivningsprioritetsfordeling (DIW-justeret)
+    "Migrationspakke (HD03262-65)" : 35
+    "Forsvar HD03254" : 14
+    "Transparens HD03258" : 12
+    "Sundhed HD03251" : 11
+    "S-oppositionsklynge" : 15
+    "Andre motioner" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_de.md -->
+
+**Klassifizierung**: ÖFFENTLICH | **Datum**: 2026-05-03 | **Autor**: James Pether Sörling
+
+---
+
+### 🎯 BLUF
+
+Schwedens Tidö-Koalition (M-SD-KD-L, 176/349 Sitze) feuerte eine Vorwahl-Gesetzgebungssalve mit vier gleichzeitigen Migrationsvorschlägen ab, eingereicht am 30. April 2026 — einschließlich der Abschaffung von Daueraufenthaltsgenehmigungen — 133 Tage vor der Wahl am 13. September. Das Paket wird die Koalitionskohäsion testen (besonders Liberal-Loyalität), EMRK-Konformitätsrisiken offenlegen und das Wahlterrain für Juni–September definieren. Gleichzeitig erweitert ein militärisches Kooperationsrahmen (HD03254) und eine integrierte Psychiatrie-/Suchtbehandlungsreform (HD03251) die Wahltagsordnung auf Verteidigung und Gesundheit.
+
+### 🧭 3 Entscheidungen, die dieses Brief unterstützt
+
+1. **Gesetzgebungsmonitoring**: Verfolgen Sie L's (Liberalernas) Ausschussabstimmungen zu HD03262 — Liberal-Überläufer riskiert das gesamte Migrationspaket und die Regierungsstabilität.
+2. **Wahlszenario-Kartierung**: Der Vorwahl-Migrationssprint konsolidiert entweder die SD-Basis oder entfremdet zentristische Wähler; beide Ergebnisse verschieben die Koalitionsarithmetik in Richtung September.
+3. **Risikoeskalations-Auslöser**: EMRK/EU-rechtliche Herausforderung von HD03262 (Abschaffung der Dauererlaubnis) — wenn die Kommission oder schwedische Gerichte Inkompatibilität signalisieren, begegnet der Gesetzgebungskalender vor der Wahl einer Verfassungskrise.
+
+### 60-Sekunden-Nachrichtenpunkte
+
+- 🔴 **MIGRATIONSSPRINT**: 4 Vorschläge (HD03262, 263, 264, 265) schaffen Daueraufenthaltsgenehmigungen ab, stärken Abschiebung, verschärfen Straf-/Inhaftierungsregeln — das aggressivste Migrationspaket seit der Krise 2016. **DIW: 10.2 (L3, wahlbereinigt)**
+- 🟠 **VERTEIDIGUNGSPOSTUR**: HD03254 (operativer militärischer Kooperationsrahmen) — NATO/Nordische Verteidigungsintegration, Pål Jonson (M). Überparteiliche Unterstützung erwartet; S kann sich nicht widersetzen.
+- 🟡 **GESUNDHEITSREFORM**: HD03251 (integrierte Sucht-/Psychiatriebehandlung) — KD-Signaturreform von Jakob Forssmed; S reicht Gegenänderungen zur regionalen Autonomie ein.
+- 🟡 **TRANSPARENZ**: HD03258 (Transparenz im politischen Prozess) — zielt auf Transparenz bei der Finanzierung der Zivilgesellschaft; KU-Ausschussopposition von S, V, MP; Lagrådet-Stellungnahme ausstehend.
+- ⚪ **OPPOSITIONSANTRÄGE**: S reicht 9 Sozialwohlfahrtsanträge ein (Wohnraumkredit, Armut, Arbeitsunfälle, Gesundheitsversorgung) — Vorwahl-Plattformpositionierung; gesetzgeberische Schlagkraft minimal gegen die 176-Sitze-Mehrheit.
+
+### Wichtigster Vorwärtssignal
+
+**L's (Liberalernas) Ausschussposition zu HD03262** (Woche des 18. Mai 2026): Wenn L Widerstand gegen die Abschaffung von Dauererlaubnissen auf EMRK-Grundlage signalisiert, begegnet das gesamte Migrationspaket Änderungen oder Rücknahme — das größte kurzfristige politische Risiko.
+
+### Konfidenzetikett
+
+**HOCH** [B2] — dokumentengestützte Analyse mit echten `dok_id`-Zitaten; bekannte Koalitionsarithmetik; EMRK-rechtliche Dimension als `[HOHE Wahrscheinlichkeit Herausforderung]` markiert.
+
+```mermaid
+pie title Gesetzgebungsprioritätsverteilung (DIW-bereinigt)
+    "Migrationspaket (HD03262-65)" : 35
+    "Verteidigung HD03254" : 14
+    "Transparenz HD03258" : 12
+    "Gesundheit HD03251" : 11
+    "S-Oppositionscluster" : 15
+    "Andere Anträge" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICO | **Fecha**: 2026-05-03 | **Autor**: James Pether Sörling
+
+---
+
+### 🎯 BLUF
+
+La coalición Tidö sueca (M-SD-KD-L, 176/349 escaños) disparó una salva legislativa preelectoral con cuatro propuestas de migración simultáneas presentadas el 30 de abril de 2026 — incluida la abolición de los permisos de residencia permanentes — 133 días antes de las elecciones del 13 de septiembre. El paquete pondrá a prueba la cohesión de la coalición (especialmente la lealtad liberal), expondrá el riesgo de cumplimiento del CEDH y definirá el terreno electoral de junio a septiembre. Simultáneamente, un marco de cooperación militar (HD03254) y una reforma integrada de atención psiquiátrica/adicciones (HD03251) amplían la agenda electoral a defensa y salud.
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **Seguimiento legislativo**: Rastrear los votos de L (Liberalerna) en el comité sobre HD03262 — la deserción liberal pone en riesgo todo el paquete migratorio y la estabilidad gubernamental.
+2. **Mapeo de escenarios electorales**: El sprint migratorio preelectoral consolidará bien la base de SD o alienará a los votantes centristas; ambos resultados desplazan la aritmética de la coalición de cara a septiembre.
+3. **Detonante de escalada de riesgo**: Impugnación jurídica CEDH/UE de HD03262 (abolición del permiso permanente) — si la Comisión o los tribunales suecos señalan incompatibilidad, el calendario legislativo enfrenta una crisis constitucional antes de las elecciones.
+
+### Puntos de inteligencia en 60 segundos
+
+- 🔴 **SPRINT MIGRATORIO**: 4 propuestas (HD03262, 263, 264, 265) abolirán permisos permanentes, reforzarán la deportación, endurecerán normas de sanción/detención — el paquete migratorio más agresivo desde la crisis de 2016. **DIW: 10.2 (L3, ajustado elección)**
+- 🟠 **POSTURA DEFENSIVA**: HD03254 (marco de cooperación militar operativo) — integración de defensa NATO/Nórdica, Pål Jonson (M). Se espera apoyo multipartidista; S no puede oponerse.
+- 🟡 **REFORMA SANITARIA**: HD03251 (atención integrada adicciones/psiquiatría) — reforma insignia de KD por Jakob Forssmed; S presenta contramiendas sobre autonomía regional.
+- 🟡 **TRANSPARENCIA**: HD03258 (transparencia del proceso político) — apunta a la transparencia en la financiación de la sociedad civil; oposición del comité KU de S, V, MP; dictamen Lagrådet pendiente.
+- ⚪ **MOCIONES DE OPOSICIÓN**: S presenta 9 mociones de bienestar social (crédito vivienda, pobreza, accidentes laborales, acceso a la salud) — posicionamiento de plataforma preelectoral; tracción legislativa mínima frente a la mayoría de 176 escaños.
+
+### Principal señal de alerta temprana
+
+**Posición de L (Liberalerna) en el comité sobre HD03262** (semana del 18 de mayo de 2026): Si L señala oposición a la abolición de permisos permanentes por razones CEDH, todo el paquete migratorio enfrenta enmiendas o retirada — el mayor riesgo político a corto plazo.
+
+### Etiqueta de confianza
+
+**ALTO** [B2] — análisis anclado en documentos con citas reales de `dok_id`; aritmética de coalición conocida; dimensión jurídica CEDH marcada como `[ALTA probabilidad de impugnación]`.
+
+```mermaid
+pie title Distribución de prioridades legislativas (ajustada DIW)
+    "Paquete migración (HD03262-65)" : 35
+    "Defensa HD03254" : 14
+    "Transparencia HD03258" : 12
+    "Salud HD03251" : 11
+    "Clúster mociones oposición S" : 15
+    "Otras mociones" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_fi.md -->
+
+**Luokitus**: JULKINEN | **Päivämäärä**: 2026-05-03 | **Tekijä**: James Pether Sörling
+
+---
+
+### 🎯 BLUF
+
+Ruotsin Tidö-koalitio (M-SD-KD-L, 176/349 paikkaa) ampui ennakkovaalilainansäädäntösalvan neljällä samanaikaisella migraatioproposisiolla, jotka jätettiin 30. huhtikuuta 2026 — mukaan lukien pysyvien oleskelulupien lakkauttaminen — 133 päivää ennen 13. syyskuuta pidettäviä vaaleja. Paketti testaa koalition yhtenäisyyttä (erityisesti Liberaalien lojaaliutta), altistaa ECHR-noudattamisriskin ja määrittelee vaaliterränin kesä–syyskuulle. Samanaikaisesti sotilaallinen yhteistyökehys (HD03254) ja integroitu psykiatria-/päihdehoidon uudistus (HD03251) laajentavat vaaliagendan puolustukseen ja terveydenhuoltoon.
+
+### 🧭 3 päätöstä, joita tämä tiedote tukee
+
+1. **Lainsäädännön seuranta**: Seuraa L:n (Liberaalien) valiokuntaäänestyksiä HD03262:sta — Liberaalien irtiotto riskeeraa koko migraatiopaketin ja hallituksen vakauden.
+2. **Vaaliskenaarioiden kartoitus**: Ennakkovaalimigratiosprint joko vahvistaa SD:n kannatuspohjaa tai vieraannuttaa keskiryhmän äänestäjiä; molemmat lopputulokset siirtävät koalitioaritmetiikkaa kohti syyskuuta.
+3. **Riskin eskalointilaukaisija**: ECHR/EU-oikeudellinen haaste HD03262:lle (pysyvän luvan lakkauttaminen) — jos komissio tai ruotsalaiset tuomioistuimet antavat yhteensopimattomuuden signaalin, lainsäädäntökalenteri kohtaa perustuslaillisen kriisin ennen vaaleja.
+
+### 60 sekunnin tiedusteluteesit
+
+- 🔴 **MIGRAATIOSPRINT**: 4 ehdotusta (HD03262, 263, 264, 265) lakkauttavat pysyvät oleskeluluvat, vahvistavat karkottamista, tiukentavat rangaistus-/säilöönottosääntöjä — aggressiivisin maahanmuuttopaketti vuoden 2016 kriisin jälkeen. **DIW: 10.2 (L3, vaalikorjattu)**
+- 🟠 **PUOLUSTUSPOSTURA**: HD03254 (operatiivinen sotilaallinen yhteistyökehys) — NATO/Pohjoismainen puolustusintegraatio, Pål Jonson (M). Puolueiden välinen tuki odotetaan; S ei voi vastustaa.
+- 🟡 **TERVEYDENHUOLTOUUDISTUS**: HD03251 (integroitu päihde-/psykiatrihoito) — KD:n merkkiuudistus Jakob Forssmadin johdolla; S jättää vastamuutosesityksiä alueellisesta autonomiasta.
+- 🟡 **LÄPINÄKYVYYS**: HD03258 (poliittisen prosessin läpinäkyvyys) — kohdistuu kansalaisyhteiskunnan rahoituksen läpinäkyvyyteen; KU-valiokunnan oppositio S:ltä, V:ltä, MP:ltä; Lagrådets yttrande odotettavissa.
+- ⚪ **OPPOSITIOMOTIOT**: S jättää 9 sosiaalista hyvinvointia koskevaa motiota (asuntoluotto, köyhyys, työtapaturmat, terveydenhuollon saatavuus) — ennakkovaalin alustapositionointi; lainsäädännöllinen painoarvo minimaalinen 176-paikan enemmistöä vastaan.
+
+### Tärkein eteenpäinsuuntautuva signaali
+
+**L:n (Liberaalien) valiokuntakanta HD03262:sta** (viikko 18. toukokuuta 2026): Jos L ilmaisee vastustuksensa pysyvien lupien lakkauttamiseen ECHR-perusteella, koko migraatiopaketti kohtaa muuttamisen tai peruuttamisen — merkittävin lähiaikainen poliittinen riski.
+
+### Luottamustaso
+
+**KORKEA** [B2] — dokumenttipohjainen analyysi todellisilla `dok_id`-viittauksilla; tunnettu koalitioaritmetiikka; ECHR-oikeudellinen ulottuvuus merkitty `[KORKEA todennäköisyys haaste]`.
+
+```mermaid
+pie title Lainsäädäntöprioriteettien jakauma (DIW-korjattu)
+    "Migraatiopaketti (HD03262-65)" : 35
+    "Puolustus HD03254" : 14
+    "Läpinäkyvyys HD03258" : 12
+    "Terveydenhuolto HD03251" : 11
+    "S-opposition motioklusteri" : 15
+    "Muut motiott" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_fr.md -->
+
+---
+
+### 🎯 BLUF
+
+La coalition Tidö suédoise (M-SD-KD-L, 176/349 sièges) a tiré une salve législative préélectorale avec quatre propositions de migration simultanées déposées le 30 avril 2026 — dont l'abolition des titres de séjour permanents — 133 jours avant l'élection du 13 septembre. Le paquet mettra à l'épreuve la cohésion de la coalition (notamment la loyauté libérale), exposera le risque de conformité CEDH et définira le terrain électoral pour juin–septembre. Parallèlement, un cadre de coopération militaire (HD03254) et une réforme intégrée des soins psychiatriques/de dépendance (HD03251) élargissent l'agenda électoral à la défense et à la santé.
+
+### 🧭 3 décisions que ce brief soutient
+
+1. **Surveillance législative** : Suivre les votes de L (Liberalerna) en comité sur HD03262 — une défection libérale risque d'emporter tout le paquet migratoire et la stabilité gouvernementale.
+2. **Cartographie des scénarios électoraux** : Le sprint migratoire préélectoral consolide soit la base SD, soit aliène les électeurs centristes ; les deux issues modifient l'arithmétique de coalition avant septembre.
+3. **Déclencheur d'escalade des risques** : Contestation juridique CEDH/UE de HD03262 (abolition du titre permanent) — si la Commission ou les tribunaux suédois signalent une incompatibilité, le calendrier législatif affronte une crise constitutionnelle avant l'élection.
+
+### Points de renseignement en 60 secondes
+
+- 🔴 **SPRINT MIGRATOIRE** : 4 propositions (HD03262, 263, 264, 265) abolissent les titres permanents, renforcent l'expulsion, resserrent les règles de sanction/détention — le paquet migratoire le plus agressif depuis la crise de 2016. **DIW : 10.2 (L3, ajusté élection)**
+- 🟠 **POSTURE DÉFENSIVE** : HD03254 (cadre de coopération militaire opérationnel) — intégration défense NATO/nordique, Pål Jonson (M). Soutien multipartite attendu ; S ne peut s'y opposer.
+- 🟡 **RÉFORME SANTÉ** : HD03251 (soins intégrés addiction/psychiatrie) — réforme signature KD de Jakob Forssmed ; S dépose des contre-amendements sur l'autonomie régionale.
+- 🟡 **TRANSPARENCE** : HD03258 (transparence du processus politique) — vise la transparence du financement de la société civile ; opposition du comité KU de S, V, MP ; avis Lagrådet en attente.
+- ⚪ **MOTIONS OPPOSITION** : S dépose 9 motions de bien-être social (crédit logement, pauvreté, accidents du travail, accès aux soins) — positionnement de plateforme préélectorale ; portée législative minimale contre la majorité de 176 sièges.
+
+### Meilleur signal d'alerte précoce
+
+**Position de L (Liberalerna) en comité sur HD03262** (semaine du 18 mai 2026) : Si L signale son opposition à l'abolition des titres permanents pour des raisons CEDH, l'ensemble du paquet migratoire est confronté à un amendement ou un retrait — le plus grand risque politique à court terme.
+
+### Label de confiance
+
+**ÉLEVÉ** [B2] — analyse ancrée dans les documents avec de vraies citations `dok_id` ; arithmétique de coalition connue ; dimension juridique CEDH signalée comme `[HAUTE probabilité de contestation]`.
+
+```mermaid
+pie title Distribution des priorités législatives (ajustées DIW)
+    "Paquet migration (HD03262-65)" : 35
+    "Défense HD03254" : 14
+    "Transparence HD03258" : 12
+    "Santé HD03251" : 11
+    "Cluster motions opposition S" : 15
+    "Autres motions" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_he.md -->
+
+&#x200F;# דוח מודיעיני — שוודיה בחודש הקרוב: יוני 2026
+
+**סיווג**: ציבורי | **תאריך**: 2026-05-03 | **מחבר**: James Pether Sörling
+
+---
+
+### 🎯 תמצית מנהלים
+
+קואליציית Tidö השוודית (M-SD-KD-L, 176/349 מנדטים) פתחה במתקפה תחיקתית טרום-בחירות עם ארבעה הצעות הגירה סימולטניות שהוגשו ב-30 באפריל 2026 — כולל ביטול היתרי שהייה קבועים — 133 ימים לפני הבחירות ב-13 בספטמבר. החבילה תבחן את הלכידות הקואליציונית (בעיקר נאמנות הליברלים), תחשוף סיכון עמידה באמנה האירופית לזכויות אדם ותגדיר את שדה הקרב הבחירותי לתקופה יוני–ספטמבר. בו זמנית, מסגרת שיתוף פעולה צבאי (HD03254) ורפורמה משולבת בבריאות הנפש/התמכרויות (HD03251) מרחיבות את סדר יום הבחירות לביטחון ובריאות.
+
+### 🧭 3 החלטות שדוח זה תומך בהן
+
+1. **מעקב תחיקתי**: מעקב אחר הצבעות L (Liberalerna) בוועדה על HD03262 — עריקה ליברלית מסכנת את כל חבילת ההגירה ויציבות הממשלה.
+2. **מיפוי תרחישים בחירותיים**: ספרינט ההגירה הטרום-בחירותי מגבש את בסיס SD או מרחיק בוחרים מרכזיים; שתי התוצאות משנות את חשבון הקואליציה לקראת ספטמבר.
+3. **טריגר הסלמת סיכון**: ערעור משפטי ECHR/EU על HD03262 (ביטול היתר קבוע) — אם הנציבות או בתי המשפט השוודיים יסמנו אי-תאימות, לוח הזמנים התחיקתי יתמודד עם משבר חוקתי לפני הבחירות.
+
+### נקודות מודיעיניות ב-60 שניות
+
+- 🔴 **ספרינט הגירה**: 4 הצעות (HD03262, 263, 264, 265) יבטלו היתרים קבועים, יחזקו גירוש, יחמירו כללי עונשין/מעצר — חבילת ההגירה האגרסיבית ביותר מאז משבר 2016. **DIW: 10.2 (L3, מותאם בחירות)**
+- 🟠 **עמדה ביטחונית**: HD03254 (מסגרת שיתוף פעולה צבאי מבצעי) — שילוב ביטחון נאט"ו/נורדי, Pål Jonson (M). צפוי תמיכה רב-מפלגתית; S אינה יכולה להתנגד.
+- 🟡 **רפורמת בריאות**: HD03251 (טיפול משולב בהתמכרויות/פסיכיאטריה) — רפורמת דגל KD של Jakob Forssmed; S מגישה תיקונים נגדיים על אוטונומיה אזורית.
+- 🟡 **שקיפות**: HD03258 (שקיפות התהליך הפוליטי) — מכוון לשקיפות מימון החברה האזרחית; התנגדות ועדת KU מ-S, V, MP; חוות דעת Lagrådet ממתינה.
+- ⚪ **הצעות אופוזיציה**: S מגישה 9 הצעות רווחה חברתית (אשראי דיור, עוני, תאונות עבודה, גישה לבריאות) — מיצוב פלטפורמה טרום-בחירות; השפעה תחיקתית מינימלית מול רוב 176 מנדטים.
+
+### האות מוביל העיקרי
+
+**עמדת L (Liberalerna) בוועדה על HD03262** (שבוע 18 במאי 2026): אם L תסמן התנגדות לביטול היתרים הקבועים מטעמי ECHR, כל חבילת ההגירה תתמודד עם תיקון או נסיגה — הסיכון הפוליטי הגדול ביותר לטווח הקצר.
+
+### תווית אמינות
+
+**גבוה** [B2] — ניתוח מעוגן במסמכים עם ציטוטי `dok_id` אמיתיים; אריתמטיקה קואליציונית ידועה; ממד ECHR משפטי מסומן כ-`[סבירות גבוהה לערעור]`.
+
+```mermaid
+pie title התפלגות עדיפויות תחיקתיות (מותאם DIW)
+    "חבילת הגירה (HD03262-65)" : 35
+    "ביטחון HD03254" : 14
+    "שקיפות HD03258" : 12
+    "בריאות HD03251" : 11
+    "אשכול הצעות אופוזיציה S" : 15
+    "הצעות אחרות" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_ja.md -->
+
+**分類**：公開 | **日付**：2026-05-03 | **著者**：James Pether Sörling
+
+---
+
+### 🎯 BLUF（要旨）
+
+スウェーデンのTidö連立政権（M-SD-KD-L、176/349議席）は、9月13日の選挙まで133日という時点で、2026年4月30日に永住許可廃止を含む4件の移民政策提案を同時に提出するという選挙前の立法攻勢を開始した。この政策パッケージは連立の結束（特に自由党の忠誠心）を試し、欧州人権条約（ECHR）の遵守リスクを露呈させ、6月から9月にかけての選挙戦の地盤を形成することになる。同時に、軍事協力枠組み（HD03254）と統合的な精神科・依存症ケア改革（HD03251）が選挙アジェンダを安全保障・医療分野にまで拡大させている。
+
+### 🧭 本ブリーフィングが支援する3つの意思決定
+
+1. **立法監視**：HD03262に関する委員会でのL党（Liberalerna）の投票を追跡 — 自由党の離反は移民政策パッケージ全体と政権の安定を危機にさらす。
+2. **選挙シナリオのマッピング**：選挙前の移民攻勢は、SD基盤の強化か中道有権者の離反かいずれかにつながり、どちらの結果も9月に向けた連立の議席計算に影響する。
+3. **リスク拡大のトリガー**：HD03262（永住許可廃止）に対するECHR/EU法的異議申し立て — 欧州委員会またはスウェーデン裁判所が適合性の問題を指摘した場合、選挙前に立法スケジュールが憲法上の危機に直面する。
+
+### 60秒インテリジェンスポイント
+
+- 🔴 **移民攻勢**：4件の提案（HD03262、263、264、265）により永住許可廃止、強制送還強化、制裁・拘留規定の厳格化 — 2016年の難民危機以来最も攻撃的な移民政策パッケージ。**DIW：10.2（L3、選挙補正）**
+- 🟠 **防衛体制**：HD03254（実用的軍事協力枠組み）— NATO・北欧防衛統合、Pål Jonson（M）。超党派的支持が見込まれ、S党は反対できない。
+- 🟡 **医療改革**：HD03251（依存症・精神科統合ケア）— Jakob Forssmead（KD）の看板政策；S党が地域自治に関する対抗修正案を提出。
+- 🟡 **透明性**：HD03258（政治プロセスの透明性）— 市民社会資金の透明性を目的；S・V・MPのKU委員会が反対；Lagrådet意見待ち。
+- ⚪ **野党動議**：S党が住宅ローン控除、貧困、労働災害、医療アクセスに関する9件の社会福祉動議を提出 — 176議席の多数派に対する立法影響は最小限。
+
+### 主要な早期警戒シグナル
+
+**HD03262に関するL党（Liberalerna）の委員会での立場**（2026年5月18日週）：L党がECHR上の理由から永住許可廃止に反対するシグナルを発した場合、移民政策パッケージ全体が修正または撤回に直面 — 最大の短期政治リスク。
+
+### 信頼性ラベル
+
+**高** [B2] — 実際の`dok_id`引用を含む文書根拠のある分析；既知の連立議席計算；ECHR法的側面は`[高確率の異議申し立て]`として注記。
+
+```mermaid
+pie title 立法優先度分布（DIW補正）
+    "移民政策パッケージ（HD03262-65）" : 35
+    "防衛 HD03254" : 14
+    "透明性 HD03258" : 12
+    "医療 HD03251" : 11
+    "S野党動議クラスター" : 15
+    "その他動議" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_ko.md -->
+
+**분류**: 공개 | **날짜**: 2026-05-03 | **저자**: James Pether Sörling
+
+---
+
+### 🎯 BLUF(핵심 요약)
+
+스웨덴 Tidö 연립정부(M-SD-KD-L, 176/349석)는 9월 13일 선거까지 133일을 남겨두고, 2026년 4월 30일에 영주권 폐지를 포함한 4건의 이민정책 법안을 동시에 제출하는 선거 전 입법 공세를 펼쳤다. 이 정책 패키지는 연립 결속력(특히 자유당의 충성도)을 시험하고, 유럽인권협약(ECHR) 준수 리스크를 노출시키며, 6월부터 9월까지의 선거 지형을 결정할 것이다. 동시에 군사협력 프레임워크(HD03254)와 정신건강·중독치료 통합 개혁(HD03251)이 선거 의제를 안보·의료 영역으로 확장하고 있다.
+
+### 🧭 이 브리핑이 지원하는 3가지 의사결정
+
+1. **입법 모니터링**: HD03262에 관한 위원회에서 L당(Liberalerna)의 투표 추적 — 자유당 이탈은 전체 이민 패키지와 정부 안정을 위협한다.
+2. **선거 시나리오 매핑**: 선거 전 이민 공세는 SD 기반 결집 또는 중도 유권자 이탈로 귀결되며, 두 결과 모두 9월에 앞서 연립 의석 계산에 영향을 미친다.
+3. **리스크 확대 트리거**: HD03262(영주권 폐지)에 대한 ECHR/EU 법적 이의제기 — 유럽위원회 또는 스웨덴 법원이 불합치를 지적할 경우, 선거 전에 입법 일정이 헌법적 위기에 직면한다.
+
+### 60초 인텔리전스 포인트
+
+- 🔴 **이민 공세**: 4건의 법안(HD03262, 263, 264, 265)으로 영주권 폐지, 추방 강화, 제재·구금 규정 강화 — 2016년 난민 위기 이래 가장 강경한 이민 패키지. **DIW: 10.2 (L3, 선거 보정)**
+- 🟠 **국방 자세**: HD03254(실용적 군사협력 프레임워크) — NATO·북유럽 국방 통합, Pål Jonson(M). 초당적 지지 예상; S당은 반대할 수 없다.
+- 🟡 **의료 개혁**: HD03251(중독·정신과 통합 치료) — Jakob Forssmed(KD)의 대표 정책; S당이 지역 자율성에 관한 수정안 제출.
+- 🟡 **투명성**: HD03258(정치 과정 투명성) — 시민사회 자금 조달 투명성 목적; S·V·MP의 KU 위원회 반대; Lagrådet 의견 대기.
+- ⚪ **야당 발의**: S당이 주택 대출, 빈곤, 산업재해, 의료 접근에 관한 9건의 사회복지 발의 제출 — 176석 다수파에 대한 입법 영향 최소화.
+
+### 주요 조기경보 신호
+
+**HD03262에 관한 L당(Liberalerna)의 위원회 입장**(2026년 5월 18일 주): L당이 ECHR을 이유로 영주권 폐지에 반대 신호를 보낼 경우, 전체 이민 패키지가 수정 또는 철회에 직면 — 최대 단기 정치 리스크.
+
+### 신뢰도 레이블
+
+**높음** [B2] — 실제 `dok_id` 인용이 포함된 문서 기반 분석; 알려진 연립 의석 계산; ECHR 법적 측면은 `[이의제기 높은 가능성]`으로 표기.
+
+```mermaid
+pie title 입법 우선순위 분포 (DIW 보정)
+    "이민 패키지 (HD03262-65)" : 35
+    "국방 HD03254" : 14
+    "투명성 HD03258" : 12
+    "의료 HD03251" : 11
+    "S 야당 발의 클러스터" : 15
+    "기타 발의" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_nl.md -->
+
+**Classificering**: OPENBAAR | **Datum**: 2026-05-03 | **Auteur**: James Pether Sörling
+
+---
+
+### 🎯 BLUF
+
+Zweden's Tidö-coalitie (M-SD-KD-L, 176/349 zetels) loste een voorverkiezingsvolley af met vier gelijktijdige migratievoorstellen ingediend op 30 april 2026 — inclusief de afschaffing van permanente verblijfsvergunningen — 133 dagen voor de verkiezingen op 13 september. Het pakket zal de cohesie van de coalitie testen (met name de liberale loyaliteit), EVRM-nalevingsrisico blootleggen en het verkiezingsterrein definiëren voor juni–september. Tegelijkertijd breidt een militair samenwerkingskader (HD03254) en een geïntegreerde psychiatrie-/verslavingszorgreform (HD03251) de verkiezingsdagorde uit naar defensie en gezondheid.
+
+### 🧭 3 beslissingen die dit brief ondersteunt
+
+1. **Wetgevingsmonitoring**: Volg L's (Liberalernas) commissiestemmen over HD03262 — een liberale overloper riskeer het hele migratiepakket en de regeringsstabiliteit.
+2. **Verkiezingsscenarioskaart**: De voorverkiezingsmigratiesprint consolideert ofwel de SD-basis of vervreemd centristische kiezers; beide uitkomsten verschuiven de coalitie-arithmetiek richting september.
+3. **Risicoescalatie-trigger**: EVRM/EU-rechtelijke aanvechting van HD03262 (afschaffing permanent verblijf) — als de Commissie of Zweedse rechtbanken incompatibiliteit signaleren, staat de wetgevingskalender voor de verkiezingen voor een constitutionele crisis.
+
+### 60-seconden inlichtingenpunten
+
+- 🔴 **MIGRATIESPRINT**: 4 voorstellen (HD03262, 263, 264, 265) schaffen permanente verblijfsvergunningen af, versterken uitzetting, verscherpen straf-/detentieregels — het meest agressieve migratiepakket sinds de crisis van 2016. **DIW: 10.2 (L3, verkiezingsgecorrigeerd)**
+- 🟠 **DEFENSIEHOUDING**: HD03254 (operationeel militair samenwerkingskader) — NAVO/Noordse defensie-integratie, Pål Jonson (M). Partijoverstijgende steun verwacht; S kan zich niet verzetten.
+- 🟡 **GEZONDHEIDSHERVORMING**: HD03251 (geïntegreerde verslavings-/psychiatrische zorg) — KD-handtekeninghervorming van Jakob Forssmed; S dient tegenamendamenten in over regionale autonomie.
+- 🟡 **TRANSPARANTIE**: HD03258 (transparantie in het politieke proces) — richt zich op transparantie in de financiering van het maatschappelijk middenveld; KU-commissieopositie van S, V, MP; Lagrådet-advies in afwachting.
+- ⚪ **OPPOSITIEMOTIES**: S dient 9 sociale welvaartsmoties in (woningkrediet, armoede, arbeidsongevallen, toegang tot gezondheidszorg) — voorverkiezingsplatformpositionering; wetgevende impact minimaal tegen de 176-zetelmeerderheid.
+
+### Top voorwaarts signaal
+
+**L's (Liberalernas) commissiepositie over HD03262** (week van 18 mei 2026): Als L weerstand signaleert tegen afschaffing van permanente vergunningen op EVRM-gronden, begegent het hele migratiepakket aanpassing of intrekking — het grootste kortetermijn politieke risico.
+
+### Vertrouwenslabel
+
+**HOOG** [B2] — documentverankerde analyse met echte `dok_id`-citaten; bekende coalitie-arithmetiek; EVRM-juridische dimensie gemarkeerd als `[HOGE waarschijnlijkheid uitdaging]`.
+
+```mermaid
+pie title Wetgevingsprioriteitsverdeling (DIW-gecorrigeerd)
+    "Migratiepakket (HD03262-65)" : 35
+    "Defensie HD03254" : 14
+    "Transparantie HD03258" : 12
+    "Gezondheid HD03251" : 11
+    "S-oppositiecluster" : 15
+    "Andere moties" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_no.md -->
+
+**Klassifisering**: OFFENTLIG | **Dato**: 2026-05-03 | **Forfatter**: James Pether Sörling
+
+---
+
+### 🎯 BLUF
+
+Sveriges Tidö-koalisjon (M-SD-KD-L, 176/349 seter) avfyrte en forvalgsstrategi med fire simultane migrasjonsproposisjoner innlevert 30. april 2026 — inkludert avskaffelse av permanente oppholdstillatelser — 133 dager før valget 13. september. Pakken vil teste koalisjonens samhold (særlig Liberal lojalitet), eksponere EMK-overholdelses risiko og definere valterreng for juni–september. Simultaneously utvider en militær samarbeidsramme (HD03254) og en integrert psykiatri-/rusomsorgsreform (HD03251) valgdagsordenen til forsvar og helse.
+
+### 🧭 3 beslutninger dette briefet støtter
+
+1. **Lovgivningsovervåking**: Følg Ls (Liberalernes) utvalgstemmer om HD03262 — Liberal avhopper risikerer hele migrasjonspakken og regjeringens stabilitet.
+2. **Valgscenariekartlegging**: Forvalgsmigrasjonssprinten konsoliderer enten SD-basen eller fremmedgjør sentristiske velgere; begge utfall forskyver koalisjonsaritmetikken mot september.
+3. **Risikoeskaleringsutløser**: EMK/EU-rettslig utfordring av HD03262 (avskaffelse av permanent tillatelse) — hvis Kommisjonen eller svenske domstoler signaliserer inkompatibilitet, møter lovgivningskalenderen en konstitusjonell krise før valget.
+
+### 60-sekunders etterretningspunkter
+
+- 🔴 **MIGRASJONSPRINT**: 4 proposisjoner (HD03262, 263, 264, 265) avskaffer permanente oppholdstillatelser, styrker utvisning, strammer straffe-/detenasjonsregler — den mest aggressive migrasjonspakken siden 2016-krisen. **DIW: 10.2 (L3, valgjustert)**
+- 🟠 **FORSVARSPOSITUR**: HD03254 (operativ militær samarbeidsramme) — NATO/Nordisk forsvarsintegrasjon, Pål Jonson (M). Tverrpartistøtte forventes; S kan ikke motsette seg.
+- 🟡 **HELSEREFORM**: HD03251 (integrert rus-/psykiatribehandling) — KDs signaturreform av Jakob Forssmed; S sender inn motamendments om regional autonomi.
+- 🟡 **TRANSPARENS**: HD03258 (transparens i politisk prosess) — retter seg mot sivilt samfunns finansieringstransparens; KU-utvalgsopposisjon fra S, V, MP; Lagrådets yttrande avventes.
+- ⚪ **OPPOSISJONSMOTIVASJONER**: S legger inn 9 sosialvelferdsforslag (boligkreditt, fattigdom, arbeidsskader, helsetilgang) — forvalgspolitisk posisjonering; lovgivningstroværdighet minimal mot 176-seters flertall.
+
+### Toppfremovertrigger
+
+**Ls (Liberalernes) utvalgsposisjon om HD03262** (uken 18. mai 2026): Hvis L signaliserer motstand mot avskaffelse av permanente tillatelser på EMK-grunnlag, møter hele migrasjonspakken endring eller tilbaketrekning — den største kortsiktige politiske risikoen.
+
+### Konfidensmerknad
+
+**HØY** [B2] — dokumentforankret analyse med ekte `dok_id`-sitater; kjent koalisjonsaritmetikk; EMK-rettslig dimensjon flagget som `[HØY sannsynlighet utfordring]`.
+
+```mermaid
+pie title Lovgivningsprioritetfordeling (DIW-justert)
+    "Migrasjonspakke (HD03262-65)" : 35
+    "Forsvar HD03254" : 14
+    "Transparens HD03258" : 12
+    "Helse HD03251" : 11
+    "S-opposisjonsklynge" : 15
+    "Andre forslag" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG | **Datum**: 2026-05-03 | **Författare**: James Pether Sörling
+
+---
+
+### 🎯 BLUF
+
+Sveriges Tidökoalition (M-SD-KD-L, 176/349 platser) avfyrade en förvalslagstiftningssalva med fyra simultana migrationsmotioner inlämnade den 30 april 2026 — inklusive avskaffande av permanenta uppehållstillstånd — 133 dagar före valet den 13 september. Paketet kommer att testa koalitionskohesionen (särskilt Liberal lojalitet), exponera ECHR-efterlevnadsrisk och definiera den valrörelseterräng som gäller juni–september. Simultant vidgar ett militärt samarbetsramverk (HD03254) och en integrerad psykiatri-/beroendevårdsreform (HD03251) valrörelseagendan till försvar och hälso- och sjukvård.
+
+### 🧭 3 beslut som denna briefing stödjer
+
+1. **Lagstiftningsuppföljning**: Spåra L:s (Liberalernas) utskottsröster om HD03262 — Liberal defektering riskerar hela migrationspaketet och regeringsstabiliteten.
+2. **Valscenariokartläggning**: Den förvalsmigrationsspriten konsoliderar antingen SD-basen eller alienerar centristiska väljare; båda utfallen förskjuter koalitionsaritmetiken inför september.
+3. **Riskeskaleringsutlösare**: ECHR/EU-rättslig utmaning mot HD03262 (avskaffande av permanent tillstånd) — om kommissionen eller svenska domstolar signalerar inkompatibilitet, möter lagstiftningskalendern en konstitutionell kris före valet.
+
+### 60-sekunders underrättelsepunkter
+
+- 🔴 **MIGRATIONSSPRINT**: 4 propositioner (HD03262, 263, 264, 265) avskaffar permanenta uppehållstillstånd, förstärker utvisning, skärper straff-/häktningsregler — det mest aggressiva migrationspaketet sedan 2016 års kris. **DIW: 10.2 (L3, valkorrigerat)**
+- 🟠 **FÖRSVARSPOSITION**: HD03254 (operativt militärt samarbetsramverk) — NATO/nordisk försvarsintegration, Pål Jonson (M). Tvärpartistöd förväntas; S kan inte motsätta sig.
+- 🟡 **SJUKVÅRDSREFORM**: HD03251 (integrerad beroende/psykiatrivård) — KD:s signaturreform av Jakob Forssmed; S lämnar in motändringar om regional autonomi.
+- 🟡 **TRANSPARENS**: HD03258 (transparens i den politiska processen) — riktar sig mot civilsamhällets finansieringstransparens; KU-utskottets opposition från S, V, MP; Lagrådets yttrande inväntat.
+- ⚪ **OPPOSITIONSMOTIONER**: S lämnar in 9 socialvälmåendesmotioner (bostadskredit, fattigdom, arbetsplatsolyckor, hälso- och sjukvårdstillgång) — förvalsplattformspositionering; lagstiftningstrovärdighet minimal mot 176-platsmajoriteten.
+
+### Främsta framåtsignal
+
+**L:s (Liberalernas) utskottsposition om HD03262** (veckan den 18 maj 2026): Om L signalerar motstånd mot avskaffande av permanenta tillstånd på ECHR-grunder, möter hela migrationspaketet ändringar eller återkallande — den största kortsiktiga politiska risken.
+
+### Konfidensetikett
+
+**HÖG** [B2] — dokumentförankrad analys med verkliga `dok_id`-citat; känd koalitionsaritmetik; ECHR-rättslig dimension flaggad som `[HÖG sannolikhet utmaning]`.
+
+```mermaid
+pie title Lagstiftningsprioritetsfördelning (DIW-justerad)
+    "Migrationspaket (HD03262-65)" : 35
+    "Försvar HD03254" : 14
+    "Transparens HD03258" : 12
+    "Sjukvård HD03251" : 11
+    "S-oppositionskluster" : 15
+    "Övriga motioner" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_zh.md -->
+
+**分类**：公开 | **日期**：2026-05-03 | **作者**：James Pether Sörling
+
+---
+
+### 🎯 核心摘要（BLUF）
+
+瑞典Tidö联合政府（M-SD-KD-L，176/349席）在距9月13日大选还有133天时，于2026年4月30日同时提交了包括废除永久居留许可在内的4项移民政策提案，发动了选前立法攻势。这一政策包将考验联合政府的凝聚力（尤其是自由党的忠诚度），暴露欧洲人权公约（ECHR）合规风险，并为6月至9月的竞选格局奠定基础。与此同时，军事合作框架（HD03254）和精神科/成瘾综合治疗改革（HD03251）将选举议程延伸至国防与卫生领域。
+
+### 🧭 本简报支持的3项决策
+
+1. **立法监控**：追踪L党（Liberalerna）在委员会中就HD03262的投票——自由党若叛离将危及整个移民政策包及政府稳定。
+2. **选举情景映射**：选前移民攻势或将巩固SD基本盘，或将疏远中间选民；两种结果都将改变9月前的联合席位计算。
+3. **风险升级触发因素**：对HD03262（废除永久许可）提起ECHR/EU法律挑战——若欧盟委员会或瑞典法院认定不符合，选举前立法日程将面临宪法危机。
+
+### 60秒情报要点
+
+- 🔴 **移民攻势**：4项提案（HD03262、263、264、265）废除永久居留许可，强化驱逐，收紧制裁/拘留规定——自2016年难民危机以来最强硬的移民政策包。**DIW：10.2（L3，选举调整）**
+- 🟠 **防务姿态**：HD03254（实用军事合作框架）——北约/北欧防务一体化，Pål Jonson（M）。预计获跨党派支持；S党无力反对。
+- 🟡 **卫生改革**：HD03251（成瘾/精神科综合治疗）——KD党Jakob Forssmed的标志性改革；S党就地区自治提交反修正案。
+- 🟡 **透明度**：HD03258（政治进程透明度）——旨在提高公民社会资金透明度；S、V、MP的KU委员会反对；Lagrådet意见待定。
+- ⚪ **反对党动议**：S党提交9项社会福利动议（住房信贷、贫困、工伤、医疗获取）——选前纲领定位；在176席多数面前立法影响微乎其微。
+
+### 主要预警信号
+
+**L党（Liberalerna）在委员会中就HD03262的立场**（2026年5月18日当周）：若L党以ECHR理由反对废除永久许可，整个移民政策包将面临修改或撤回——最大的短期政治风险。
+
+### 置信度标签
+
+**高** [B2] — 基于文件的分析，附真实`dok_id`引用；联合席位计算已知；ECHR法律层面标注为`[挑战可能性高]`。
+
+```mermaid
+pie title 立法优先级分布（DIW调整）
+    "移民政策包 (HD03262-65)" : 35
+    "国防 HD03254" : 14
+    "透明度 HD03258" : 12
+    "卫生 HD03251" : 11
+    "S党反对党动议群" : 15
+    "其他动议" : 13
+```
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 7 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2320,3 +2920,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_zh.md)

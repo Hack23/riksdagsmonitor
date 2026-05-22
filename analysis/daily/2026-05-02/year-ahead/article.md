@@ -6,7 +6,7 @@ date: 2026-05-02
 subfolder: year-ahead
 slug: 2026-05-02-year-ahead
 source_folder: analysis/daily/2026-05-02/year-ahead
-generated_at: 2026-05-21T02:19:50.844Z
+generated_at: 2026-05-22T12:25:06.290Z
 language: en
 layout: article
 ---
@@ -118,6 +118,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -2965,13 +2978,1040 @@ From `analysis/daily/2026-04-29/monthly-review/pir-status.json`:
 | analysis/daily/2026-04-27/monthly-review/ | synthesis-summary.md | Prior month reference |
 | analysis/daily/2026-04-25/monthly-review/ | synthesis-summary.md | Prior month reference |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_ar.md -->
+
+&#x200F;# إحاطة استخباراتية — العام المقبل 2026-05-02
+
+**الأفق**: 365 يوماً · **العمق**: شامل · **المستوى**: C  
+**العد التنازلي للانتخابات**: 134 يوماً حتى 2026-09-13  
+**مستوى الثقة**: متوسط-مرتفع للربع الأول–الثاني (أشهر 1–6)، متوسط للربع الثالث–الرابع (أشهر 7–12)
+
+---
+
+### التقييم العام
+
+تدخل السويد أهم اثني عشر شهراً منذ دورة انتخابات 2022. أربع اقتراحات إصلاح للهجرة متزامنة (HD03262–HD03265) تُشير إلى حكومة مستعدة لتحديد معركة الحملة الانتخابية على أرضية أيديولوجية مواتية للجناح الأيمن لتحالف تيدو. غير أن أغلبية التحالف بهامش صفر (175/349 مقعداً بالضبط) وحزبان يواجهان خطر العتبة يخلقان هشاشةً هيكلية قد تنهار قبل سبتمبر 2026.
+
+**التوتر المحوري للعام المقبل**: يجب على تحالف تيدو في الوقت ذاته تحقيق التشديد على الهجرة لإرضاء SD (مرساة التحالف بـ70 مقعداً)، والحفاظ على المصداقية المالية لطمأنة ناخبي M في ظل ضغوط صدمة الرسوم الجمركية الأمريكية، ومنع خلاف SD–KD حول الطاقة (HD10448) من تفكيك التحالف قبل يوم الاقتراع.
+
+---
+
+### خمسة متطلبات استخباراتية ذات أولوية
+
+| المتطلب | السؤال | الأفق | الثقة |
+|---------|--------|-------|-------|
+| م-د (حرج) | هل سيُفضي تباين SD–KD الطاقوي إلى عدم استقرار التحالف؟ | T+90d | متوسط |
+| م-و (جديد) | تشكيل الحكومة بعد الانتخابات: Tidö-II أم أقلية S أم برلمان مُعطَّل؟ | T+365d (انتخابات) | منخفض |
+| م-أ | مسار استطلاعات الرأي: هل ستنجو الأحزاب العتبوية؟ | T+30d | متوسط |
+| م-ج (جديد) | امتثال إصلاح الهجرة للاتفاقية الأوروبية لحقوق الإنسان: هل ستطعن Lagrådet أو المفوضية الأوروبية في HD03262؟ | T+90d–T+180d | متوسط |
+| م-هـ (جديد) | التعاون العسكري مع الناتو: هل سيُترجَم HD03254 إلى قابلية تشغيل بيني حقيقية؟ | T+180d–T+365d | متوسط-منخفض |
+
+---
+
+### التوقعات السياسية الهيكلية (T+365d)
+
+يتشكّل مشهد السيناريوهات للعام المقبل من خلال أربعة نتائج لتشكيل الحكومة بعد انتخابات سبتمبر 2026:
+
+1. **استمرارية Tidö-II** (احتمال ~40 %): تحتفظ M وSD وKD بالأغلبية؛ يُعطي برنامج الحكومة الجديد الأولوية لمحور الأمن-الهجرة-الطاقة
+2. **أقلية بقيادة S** (احتمال ~25 %؛ الفرع B1 مُعدَّل إلى 15–18 % من 8 % الأولية — انظر devils-advocate.md CF-2): تصبح S أكبر كتلة لكنها تحكم عبر C و/أو ثقة المعارضة؛ إصلاحات الهجرة معكوسة جزئياً
+3. **برلمان مُعطَّل/تشكيل ممتد** (احتمال ~25 %): لا تحقق أي كتلة 175؛ مفاوضات مطولة، سيناريو صانع الملوك C محتمل
+4. **ائتلاف كبير** (احتمال ~10 %): حكومة تكنوقراطية يمينية وسطية M+S إذا امتدت أزمة التشكيل أكثر من 3 أشهر
+
+---
+
+### السياق الاقتصادي [الأفق:T+365d]
+
+*الإصدار: WEO أبريل 2026 (تقدير مُثبَّت — واجهة برمجة IMF غير متاحة وقت التحليل)*
+
+تدهورت التوقعات الاقتصادية الكلية للسويد مقارنةً بخط الأساس لصندوق النقد الدولي في أعقاب صدمة الرسوم الجمركية الأمريكية (أبريل 2026). يُتوقع أن يبلغ نمو الناتج المحلي الإجمالي ~1.2 % (2026، مُخفَّض من 2.1 %)، مع تعافٍ إلى ~2.2 % (2027). يظل الدين العام منخفضاً عند ~33 % من الناتج المحلي الإجمالي. الرصيد المالي: نحو -0.5 % (2026). استقرت البطالة عند 8.4 % رغم ضغوط الرسوم الجمركية.
+
+HC01FiU20 (قانون الميزانية الربيعي، أبريل 2026) أغلق الإطار المالي لعام الانتخابات: 31 مليار كرونة سويدية كهامش متاح للوعود الانتخابية. سيتنافس كلا الكتلتين على المصداقية المالية.
+
+**مخاطر اقتصادية رئيسية**: إذا انخفض الناتج المحلي الإجمالي إلى ما دون 0.8 %، تنقلب الرواية السياسية بحدة نحو الكفاءة الاقتصادية — أقوى أوراق M في مواجهة S، لكنها أيضاً ضغط على تيدو لإظهار مكاسب ملموسة من التشديد على الهجرة (انتقاد الاندماج في سوق العمل).
+
+---
+
+### السباق التشريعي (مايو–يوليو 2026)
+
+يجلس Riksdag لمدة ~10 أسابيع عمل إضافية (مايو–أواخر يونيو 2026 الجلسة الرئيسية، افتتاح خريفي قصير في سبتمبر). تشريعات رئيسية في الأجندة:
+
+| التشريع | المسار | الخطر |
+|---------|--------|-------|
+| HD03262–HD03265 (هندسة الهجرة) | مرحلة اللجنة SfU/JuU | طعن ECHR، مراجعة Lagrådet |
+| HD03254 (التعاون العسكري مع الناتو) | مرحلة اللجنة FöU | دعم متعدد الأحزاب (S إيجابية) |
+| HD10448 رد استجواب الطاقة | نافذة الميزانية 2027 | خط الصدع SD–KD غير محسوم |
+| HC01FiU20 (التصويت النهائي على ميزانية الربيع) | تصويت أواخر مايو 2026 | خطر العتبة إذا امتنعت L |
+
+---
+
+### إشارات للمراقبة
+
+1. **مسار استطلاعات L** (أسبوعياً Novus/SIFO): أقل من 4.5 % = خطر وجودي على التحالف
+2. **لغة ائتلاف KD بشأن الطاقة** (مناقشات FöU، مؤتمر الحزب في يونيو): تصلُّب الموقف يُشير إلى انفصال ما قبل الانتخابات
+3. **رأي Lagrådet بشأن HD03262** (متوقع مايو–يونيو 2026): إحالة سلبية = تأخر تشريعي، تداعيات سياسية
+4. **أصوات انضباط SD** (أي تعديلات ميزانية): انهيار التضامن = خطر الثقة
+5. **إعلانات هجوم S على الجريمة/الهجرة** (توقيت التفعيل): التفعيل المبكر (<100 يوم) يُشير إلى استراتيجية هجومية
+
+*[الأفق:T+90d] نافذة التسعين يوماً الفورية هي الفترة الأعلى تقلباً في العام: مشاريع قوانين الهجرة في اللجنة، خط صدع الطاقة غير محسوم، مسار التعريفات الأمريكية غير مؤكد، L عند العتبة.*
+
+*[الأفق:انتخابات] انتخابات سبتمبر 2026 هي الحدث الهيكلي للعام. كل تطور لاحق يجب أن يُرسَم مقابل تداعيات التشكيل.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_da.md -->
+
+**Horisont**: 365 dage · **Dybde**: omfattende · **Niveau**: C  
+**Valgoptælling**: 134 dage til 2026-09-13  
+**Konfidensniveau**: MIDDEL-HØJ for K1–K2 (måned 1–6), MIDDEL for K3–K4 (måned 7–12)
+
+---
+
+### Overordnet vurdering
+
+Sverige går ind i de mest afgørende tolv måneder siden valgcyklussen 2022. Fire samtidige migrationsreformforslag (HD03262–HD03265) signalerer en regering parat til at definere valgkampen på ideologisk gunstigt terræn for Tidökoalitionens højrefløj. Alligevel skaber koalitionens nulmarginsmajoritet (præcis 175/349 pladser) og to tærskelstruede partier en strukturel skrøbelighed, der kan falde fra hinanden inden september 2026.
+
+**Den centrale spænding i det kommende år**: Tidöalliansen skal simultant levere på migrationsstramning for at tilfredsstille SD (koalitionens 70-mandatsanker), opretholde finanspolitisk troværdighed for at berolige M-vælgere under US-toldchoksstress, og forhindre SD–KD's energiuenighed (HD10448) i at splitte koalitionen inden valgdagen.
+
+---
+
+### Fem prioriterede efterretningskrav
+
+| PEK | Spørgsmål | Horisont | Konfidens |
+|-----|-----------|---------|-----------|
+| PEK-D (KRITISK) | Vil SD–KD's energidivergens udløse koalitionsinstabilitet? | T+90d | MIDDEL |
+| PEK-F (NY) | Eftervalgsregeringsdannelse: Tidö-II, S-mindretal eller låst parlament? | T+365d (valg) | LAV |
+| PEK-A | Meningsmålingstrajektorie: overlever tærskelpartierne? | T+30d | MIDDEL |
+| PEK-G (NY) | Migrationsreform EMRK-overholdelse: vil Lagrådet eller EU-Kommissionen udfordre HD03262? | T+90d–T+180d | MIDDEL |
+| PEK-H (NY) | NATO militært samarbejde: vil HD03254 føre til reel interoperabilitet? | T+180d–T+365d | MIDDEL-LAV |
+
+---
+
+### Strukturelt politisk udsyn (T+365d)
+
+Scenarielandskabet for det kommende år defineres af fire dannelsesresultater efter september 2026-valget:
+
+1. **Tidö-II-fortsættelse** (~40 % sandsynlighed): M, SD, KD fastholder flertal; nyt regeringsprogram prioriterer sikkerheds-migrations-energineksus
+2. **S-ledet mindretal** (~25 % sandsynlighed; gren B1 revideret til 15–18 % fra primære 8 % — se devils-advocate.md CF-2): S bliver største blok men regerer via C og/eller oppositionens tillid; migrationsreformer delvist omvendt
+3. **Låst parlament/udvidet dannelse** (~25 % sandsynlighed): Ingen blok når 175; udvidet forhandling, muligt C-kongemagersscenarie
+4. **Storkoalition** (~10 % sandsynlighed): M+S centrumborgerlig teknokratisk regering hvis dannelseskrisen varer >3 måneder
+
+---
+
+### Økonomisk kontekst [horisont:T+365d]
+
+Sveriges makroøkonomiske udsigter er forværret i forhold til IMF's basislinje efter den amerikanske toldchok (april 2026). BNP-vækst prognosticeres til ~1,2 % (2026, nedgraderet fra 2,1 %), med genopretning til ~2,2 % (2027). Den offentlige gæld forbliver lav på ~33 % af BNP. Finansielt saldo: ca. -0,5 % (2026). Arbejdsløshed er stabiliseret på 8,4 % på trods af toldpres.
+
+HC01FiU20 (Forårs-finanslov, april 2026) låste det finanspolitiske rammeværk for valgåret: 31 mia. SEK tilgængeligt råderum for valgkampagneløfter. Begge blokke vil konkurrere om finanspolitisk troværdighed.
+
+**Vigtig økonomisk risiko**: Hvis BNP falder til under 0,8 %, skifter det politiske narrativ kraftigt til økonomisk kompetence — M's stærkeste kort mod S, men også pres på Tidö om at vise håndgribelige gevinster fra migrationsstramning (kritik af arbejdsmarkedsintegration).
+
+---
+
+### Lovgivningssprint (maj–juli 2026)
+
+Riksdagen sidder i ca. 10 yderligere arbejdsuger (maj–sent juni 2026 hovednormation, kort efterårsåbning september). Vigtig lovgivning i pipeline:
+
+| Lovgivning | Spor | Risiko |
+|------------|------|--------|
+| HD03262–HD03265 (migrationsarkitektur) | Udvalgsstadie SfU/JuU | EMRK-udfordring, Lagrådets granskning |
+| HD03254 (NATO militært samarbejde) | Udvalgsstadie FöU | Tværpartistøtte (S positiv) |
+| HD10448 interpellationssvar om energi | Budgetvindue 2027 | SD–KD-brudlinje uløst |
+| HC01FiU20 (Forårsbudget slutafstemning) | Afstemning sent maj 2026 | Tærskelrisiko hvis L undlader |
+
+---
+
+### Signaler at overvåge
+
+1. **L's meningsmålingstrajektorie** (ugentlig Novus/SIFO): under 4,5 % = eksistentiel risiko for koalitionen
+2. **KD's koalitionssprog om energi** (FöU-debatter, partikonference juni): stivnende position signalerer forvalgsseparation
+3. **Lagrådets yttrande om HD03262** (forventet maj–juni 2026): negativ indstilling = lovgivningsforsinkelse, politisk fald
+4. **SD's disciplinstemmer** (eventuelle budgetændringsforslag): solidaritetskollaps = tillidsrisiko
+5. **S-ledede kriminalitets-/migrationsangrebsreklamer** (aktiveringszeitpunkt): tidlig aktivering (<100 dage) signalerer offensiv strategi
+
+*[horisont:T+90d] Det umiddelbare 90-dages vindue er årets højeste volatilitetsperiode: migrationsforslag i udvalg, energibrudlinje uløst, USA-toldtrajektorie usikker, L ved tærsklen.*
+
+*[horisont:valg] September 2026-valget er årets strukturerende begivenhed. Enhver efterfølgende udvikling skal kortlægges mod dannelsesimplikationer.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_de.md -->
+
+**Horizont**: 365 Tage · **Tiefe**: umfassend · **Stufe**: C  
+**Wahlrückzählung**: 134 Tage bis 13.09.2026  
+**Konfidenzniveau**: MITTEL-HOCH für Q1–Q2 (Monate 1–6), MITTEL für Q3–Q4 (Monate 7–12)
+
+---
+
+### Übergeordnete Einschätzung
+
+Schweden tritt in die folgenreichsten zwölf Monate seit dem Wahlzyklus 2022 ein. Vier gleichzeitige Migrationsreformpropositionsgesetze (HD03262–HD03265) signalisieren eine Regierung, die bereit ist, den Wahlkampf auf ideologisch günstigem Terrain für den rechten Flügel der Tidö-Koalition zu definieren. Dennoch schafft die Nullmargenmehrheit der Koalition (genau 175/349 Sitze) und zwei schwellengefährdete Parteien eine strukturelle Fragilität, die vor September 2026 auseinanderfallen könnte.
+
+**Die zentrale Spannung des kommenden Jahres**: Das Tidöbündnis muss gleichzeitig Migrationsversprechen einhalten, um SD (den 70-Sitze-Anker der Koalition) zu befriedigen, fiskalische Glaubwürdigkeit aufrechterhalten, um M-Wähler unter dem US-Zollschockstress zu beruhigen, und verhindern, dass der SD–KD-Energiekonflikt (HD10448) die Koalition vor dem Wahltag auseinanderbricht.
+
+---
+
+### Fünf priorisierte Nachrichtenanforderungen
+
+| PNA | Frage | Horizont | Konfidenz |
+|-----|-------|---------|-----------|
+| PNA-D (KRITISCH) | Wird die SD–KD-Energiedivergenz Koalitionsinstabilität auslösen? | T+90d | MITTEL |
+| PNA-F (NEU) | Nachwahlregierungsbildung: Tidö-II, S-Minderheit oder Patt? | T+365d (Wahl) | NIEDRIG |
+| PNA-A | Umfragetrajektorie: Überleben die Schwellenparteien? | T+30d | MITTEL |
+| PNA-G (NEU) | Migrationsreform EMRK-Konformität: Werden Lagrådet oder EU-Kommission HD03262 anfechten? | T+90d–T+180d | MITTEL |
+| PNA-H (NEU) | NATO-Militärkooperation: Wird HD03254 zu echter Interoperabilität führen? | T+180d–T+365d | MITTEL-NIEDRIG |
+
+---
+
+### Struktureller politischer Ausblick (T+365d)
+
+Die Szenariolandschaft für das kommende Jahr wird durch vier Bildungsergebnisse nach der Wahl im September 2026 definiert:
+
+1. **Tidö-II-Fortsetzung** (~40 % Wahrscheinlichkeit): M, SD, KD behalten Mehrheit; neues Regierungsprogramm priorisiert Sicherheits-Migrations-Energienexus
+2. **S-geführte Minderheit** (~25 % Wahrscheinlichkeit; Ast B1 auf 15–18 % von primären 8 % revidiert — siehe devils-advocate.md CF-2): S wird größter Block, regiert aber via C und/oder Oppositionsvertrauen; Migrationsreformen teilweise umgekehrt
+3. **Patt/verlängerte Bildung** (~25 % Wahrscheinlichkeit): Kein Block erreicht 175; ausgedehnte Verhandlung, mögliches C-Königsmacher-Szenario
+4. **Große Koalition** (~10 % Wahrscheinlichkeit): M+S-zentristische Technokratenregierung, wenn Bildungskrise >3 Monate andauert
+
+---
+
+### Wirtschaftlicher Kontext [Horizont:T+365d]
+
+Schwedens makroökonomische Aussichten haben sich im Vergleich zur IMF-Basislinie nach dem US-Zollschock (April 2026) verschlechtert. BIP-Wachstum wird auf ~1,2 % (2026, herabgestuft von 2,1 %) prognostiziert, mit Erholung auf ~2,2 % (2027). Die öffentlichen Schulden bleiben niedrig bei ~33 % des BIP. Finanzbalance: ca. -0,5 % (2026). Die Arbeitslosigkeit hat sich trotz Zolldruck bei 8,4 % stabilisiert.
+
+HC01FiU20 (Frühlings-Haushaltsgesetz, April 2026) sperrte den fiskalischen Rahmen für das Wahljahr: 31 Mrd. SEK verfügbarer Spielraum für Wahlkampfversprechen. Beide Blöcke werden um fiskalische Glaubwürdigkeit konkurrieren.
+
+**Wesentliches wirtschaftliches Risiko**: Wenn das BIP unter 0,8 % fällt, verlagert sich das politische Narrativ stark auf wirtschaftliche Kompetenz — M's stärkste Karte gegen S, aber auch Druck auf Tidö, konkrete Gewinne aus der Migrationsverschärfung zu zeigen (Kritik an der Arbeitsmarktintegration).
+
+---
+
+### Gesetzgebungssprint (Mai–Juli 2026)
+
+Der Riksdag tagt für ca. 10 weitere Arbeitswochen (Mai–spät Juni 2026 Hauptsitzung, kurze Herbstöffnung September). Wichtige Gesetzgebung in der Pipeline:
+
+| Gesetzgebung | Spur | Risiko |
+|------------|------|--------|
+| HD03262–HD03265 (Migrationsarchitektur) | Ausschussstadium SfU/JuU | EMRK-Herausforderung, Lagrådet-Prüfung |
+| HD03254 (NATO-Militärkooperation) | Ausschussstadium FöU | Überparteiliche Unterstützung (S positiv) |
+| HD10448 Interpellationsantwort Energie | Haushaltsfenster 2027 | SD–KD-Bruchlinie ungelöst |
+| HC01FiU20 (Frühjahreshaushalt Abschlussvoting) | Abstimmung spät Mai 2026 | Schwellenrisiko wenn L enthält |
+
+---
+
+### Zu überwachende Signale
+
+1. **L-Umfragetrajektorie** (wöchentlich Novus/SIFO): unter 4,5 % = existenzielle Gefahr für die Koalition
+2. **KD-Koalitionssprache zu Energie** (FöU-Debatten, Parteikonferenz Juni): Verhärtung der Position signalisiert Vorwahl-Trennung
+3. **Lagrådets yttrande zu HD03262** (erwartet Mai–Juni 2026): negative Stellungnahme = Gesetzgebungsverzögerung, politischer Schaden
+4. **SD-Disziplinabstimmungen** (etwaige Haushaltsamendements): Solidaritätskollaps = Vertrauensrisiko
+5. **S-geführte Kriminalitäts-/Migrationsangriffsanzeigen** (Aktivierungszeitpunkt): frühe Aktivierung (<100 Tage) signalisiert Offensivstrategie
+
+*[Horizont:T+90d] Das unmittelbare 90-Tage-Fenster ist die volatilste Periode des Jahres: Migrationsgesetze im Ausschuss, Energiebruchlinie ungelöst, US-Zolltrajektorie unsicher, L an der Schwelle.*
+
+*[Horizont:Wahl] Die Wahl September 2026 ist das strukturierende Ereignis des Jahres. Jede nachfolgende Entwicklung muss auf Bildungsimplikationen kartiert werden.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_es.md -->
+
+**Horizonte**: 365 días · **Profundidad**: completa · **Nivel**: C  
+**Cuenta regresiva electoral**: 134 días hasta el 13/09/2026  
+**Nivel de confianza**: MEDIO-ALTO para T1–T2 (meses 1–6), MEDIO para T3–T4 (meses 7–12)
+
+---
+
+### Evaluación general
+
+Suecia entra en los doce meses más decisivos desde el ciclo electoral de 2022. Cuatro propuestas de reforma migratoria simultáneas (HD03262–HD03265) señalan un gobierno dispuesto a definir la campaña electoral en un terreno ideológico favorable al ala derecha de la coalición Tidö. Sin embargo, la mayoría con margen cero de la coalición (exactamente 175/349 escaños) y dos partidos amenazados por el umbral crean una fragilidad estructural que podría desintegrarse antes de septiembre de 2026.
+
+**La tensión central del año venidero**: la Alianza Tidö debe simultáneamente cumplir con el endurecimiento migratorio para satisfacer a SD (el ancla de 70 escaños de la coalición), mantener la credibilidad fiscal para tranquilizar a los votantes de M bajo el estrés del choque arancelario de EE. UU., y evitar que el desacuerdo SD–KD sobre energía (HD10448) fracture la coalición antes del día de votación.
+
+---
+
+### Cinco requisitos prioritarios de inteligencia
+
+| RPI | Pregunta | Horizonte | Confianza |
+|-----|----------|---------|-----------|
+| RPI-D (CRÍTICO) | ¿La divergencia energética SD–KD desencadenará inestabilidad en la coalición? | T+90d | MEDIO |
+| RPI-F (NUEVO) | Formación de gobierno post-electoral: ¿Tidö-II, minoría S o parlamento bloqueado? | T+365d (elección) | BAJO |
+| RPI-A | Trayectoria de encuestas: ¿sobrevivirán los partidos umbral? | T+30d | MEDIO |
+| RPI-G (NUEVO) | Conformidad migratoria con el CEDH: ¿Lagrådet o la Comisión Europea impugnarán HD03262? | T+90d–T+180d | MEDIO |
+| RPI-H (NUEVO) | Cooperación militar de la OTAN: ¿HD03254 se traducirá en auténtica interoperabilidad? | T+180d–T+365d | MEDIO-BAJO |
+
+---
+
+### Perspectiva política estructural (T+365d)
+
+El panorama de escenarios para el año venidero está definido por cuatro resultados de formación tras las elecciones de septiembre de 2026:
+
+1. **Continuación Tidö-II** (~40 % de probabilidad): M, SD, KD retienen la mayoría; nuevo programa de gobierno prioriza el nexo seguridad-migración-energía
+2. **Minoría liderada por S** (~25 % de probabilidad; rama B1 revisada al 15–18 % desde el 8 % primario — véase devils-advocate.md CF-2): S se convierte en el mayor bloque pero gobierna a través de C y/o la confianza de la oposición; reformas migratorias parcialmente revertidas
+3. **Parlamento bloqueado/formación prolongada** (~25 % de probabilidad): ningún bloque alcanza 175; negociación prolongada, posible escenario de árbitro C
+4. **Gran coalición** (~10 % de probabilidad): gobierno tecnocrático centroderechista M+S si la crisis de formación dura >3 meses
+
+---
+
+### Contexto económico [horizonte:T+365d]
+
+*Vintage: WEO abr-2026 (estimación fijada — API del FMI no disponible en el momento del análisis)*
+
+Las perspectivas macroeconómicas de Suecia se han deteriorado respecto a la línea base del FMI tras el choque arancelario de EE. UU. (abril de 2026). El crecimiento del PIB se proyecta en ~1,2 % (2026, degradado desde 2,1 %), con recuperación a ~2,2 % (2027). La deuda pública sigue siendo baja en ~33 % del PIB. Saldo fiscal: aproximadamente -0,5 % (2026). El desempleo se ha estabilizado en 8,4 % a pesar de la presión arancelaria.
+
+HC01FiU20 (Ley de presupuestos de primavera, abril de 2026) cerró el marco fiscal para el año electoral: 31 mil millones SEK de margen disponible para promesas de campaña. Ambos bloques competirán por la credibilidad fiscal.
+
+**Riesgo económico clave**: Si el PIB cae por debajo del 0,8 %, el relato político cambia drásticamente hacia la competencia económica — la carta más fuerte de M contra S, pero también presión sobre Tidö para mostrar ganancias concretas del endurecimiento migratorio (crítica a la integración en el mercado laboral).
+
+---
+
+### Carrera legislativa (mayo–julio de 2026)
+
+El Riksdag sesiona durante aproximadamente 10 semanas laborales más (mayo–finales de junio de 2026 sesión principal, breve apertura otoñal en septiembre). Legislación clave en la cartera:
+
+| Legislación | Vía | Riesgo |
+|------------|-----|--------|
+| HD03262–HD03265 (arquitectura migratoria) | Fase de comité SfU/JuU | Impugnación CEDH, examen Lagrådet |
+| HD03254 (cooperación militar OTAN) | Fase de comité FöU | Apoyo multipartidista (S favorable) |
+| HD10448 respuesta interpelación energía | Ventana presupuestaria 2027 | Línea de fractura SD–KD sin resolver |
+| HC01FiU20 (votación final presupuesto de primavera) | Votación finales de mayo de 2026 | Riesgo umbral si L se abstiene |
+
+---
+
+### Señales a monitorizar
+
+1. **Trayectoria encuestas L** (semanal Novus/SIFO): por debajo del 4,5 % = riesgo existencial para la coalición
+2. **Lenguaje coalición KD sobre energía** (debates FöU, conferencia del partido junio): endurecimiento de posición señala separación preelectoral
+3. **Dictamen Lagrådet sobre HD03262** (esperado mayo–junio de 2026): remisión negativa = retraso legislativo, repercusiones políticas
+4. **Votos de disciplina SD** (enmiendas presupuestarias eventuales): colapso solidaridad = riesgo de confianza
+5. **Anuncios de ataque S sobre crimen/migración** (momento de activación): activación temprana (<100 días) señala estrategia ofensiva
+
+*[horizonte:T+90d] La ventana inmediata de 90 días es el período de mayor volatilidad del año: proyectos de ley migración en comité, línea de fractura energética sin resolver, trayectoria aranceles EE. UU. incierta, L en el umbral.*
+
+*[horizonte:elección] Las elecciones de septiembre de 2026 son el evento estructurante del año. Cada desarrollo posterior debe cartografiarse frente a las implicaciones de formación.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_fi.md -->
+
+**Horisontti**: 365 päivää · **Syvyys**: kattava · **Taso**: C  
+**Vaalilaskuri**: 134 päivää 13.9.2026 saakka  
+**Luottamustaso**: KESKITASO-KORKEA K1–K2:lle (kuukaudet 1–6), KESKITASO K3–K4:lle (kuukaudet 7–12)
+
+---
+
+### Kokonaisarvio
+
+Ruotsi astuu vuoden 2022 vaalien jälkeen tärkeimpiin kahteentoista kuukauteensa. Neljä samanaikaista maahanmuuttouudistusesitystä (HD03262–HD03265) osoittavat hallituksen olevan valmis määrittelemään vaalikamppailun Tidö-koalition oikeistosiipiä suosivalla ideologisella alueella. Silti koalition nollamarginaalinen enemmistö (tarkalleen 175/349 paikkaa) ja kaksi kynnysuhan alla olevaa puoluetta luovat rakenteellisen haurauden, joka voi hajota ennen syyskuuta 2026.
+
+**Tulevan vuoden keskeinen jännite**: Tidöallianssin on samanaikaisesti lunastettava lupaukset maahanmuuton tiukennuksista tyydyttääkseen SD:n (koalition 70-paikkaiset ankkuri), ylläpidettävä finanssipolitiikan uskottavuutta rauhoittaakseen M-äänestäjiä USA:n tullishokistressissä ja estettävä SD–KD:n energierimielisyyden (HD10448) hajottamasta koalitio ennen vaalipäivää.
+
+---
+
+### Viisi prioriteettitiedusteluvaatimusta
+
+| PTV | Kysymys | Horisontti | Luottamus |
+|-----|---------|-----------|-----------|
+| PTV-D (KRIITTINEN) | Johtaako SD–KD:n energiadivergenssi koalition epävakauteen? | T+90d | KESKITASO |
+| PTV-F (UUSI) | Vaalien jälkeinen hallitusmuodostus: Tidö-II, S-vähemmistö vai umpikuja? | T+365d (vaali) | MATALA |
+| PTV-A | Kannatuskyselytrendit: selviytyvätkö kynnysarvopuolueet? | T+30d | KESKITASO |
+| PTV-G (UUSI) | Maahanmuuttouudistus ECHR-yhteensopivuus: haastaako Lagrådet tai EU-komissio HD03262:n? | T+90d–T+180d | KESKITASO |
+| PTV-H (UUSI) | NATO:n sotilasyhteistyö: johtaako HD03254 todelliseen yhteentoimivuuteen? | T+180d–T+365d | KESKITASO-MATALA |
+
+---
+
+### Rakenteellinen poliittinen näkymä (T+365d)
+
+Seuraavan vuoden skenaariomaisema määrittyy neljän syyskuun 2026 vaalien jälkeisen hallitusmuodostusvaihtoehdon kautta:
+
+1. **Tidö-II-jatkuvuus** (~40 %:n todennäköisyys): M, SD, KD säilyttävät enemmistön; uusi hallitusohjelma priorisoi turvallisuus-maahanmuutto-energianexuksen
+2. **S-johtoinen vähemmistö** (~25 %:n todennäköisyys; haara B1 tarkistettu 15–18 %:iin ensisijaisesta 8 %:sta — katso devils-advocate.md CF-2): S:stä tulee suurin ryhmittymä mutta se hallitsee C:n ja/tai opposition luottamuksen kautta; maahanmuuttouudistukset osittain kumottu
+3. **Umpikuja/pitkittynyt muodostaminen** (~25 %:n todennäköisyys): Kumpikaan ryhmittymä ei saavuta 175:tä; pitkittynyt neuvottelu, mahdollinen C:n kuningastentekilläscenario
+4. **Suurkoalitio** (~10 %:n todennäköisyys): M+S-keskiryhmä teknokraattinen hallitus, jos hallitusmuodostuskriisi jatkuu >3 kuukautta
+
+---
+
+### Taloudellinen konteksti [horisontti:T+365d]
+
+*Versio: WEO huhtikuu 2026 (kiinnitetty arvio — IMF-rajapinta ei käytettävissä analyysihetkellä)*
+
+Ruotsin makrotaloudelliset näkymät ovat heikentyneet suhteessa IMF:n perusennusteeseen Yhdysvaltojen tullishokin jälkeen (huhtikuu 2026). BKT-kasvun ennustetaan olevan ~1,2 % (2026, alennettu 2,1 %:sta), elpymisen ~2,2 % (2027). Julkinen velka pysyy alhaisena ~33 %:ssa BKT:stä. Finanssitasapaino: noin -0,5 % (2026). Työttömyys on vakautunut 8,4 %:iin tullipainosta huolimatta.
+
+HC01FiU20 (Kevätbudjettiesitys, huhtikuu 2026) lukitsi vaalivuoden finanssipoliittisen kehyksen: 31 miljardia SEK käytettäväksi vaalikampanjalupauksia varten. Molemmat ryhmittymät kilpailevat finanssipoliittisesta uskottavuudesta.
+
+**Keskeinen taloudellinen riski**: Jos BKT putoaa alle 0,8 %:n, poliittinen narratiivi siirtyy voimakkaasti taloudelliseen osaamiseen — M:n vahvin kortti S:ää vastaan, mutta myös paine Tidölle osoittaa konkreettisia hyötyjä maahanmuuton tiukentamisesta (kritiikki työmarkkina-integraatiosta).
+
+---
+
+### Lainsäädäntösprintti (touko–heinäkuu 2026)
+
+Riksdag istuu noin 10 lisätyöviikkoa (touko–kesäkuun loppupuoli 2026 pääistunto, lyhyt syysavaus syyskuussa). Tärkeä lainsäädäntö putkessa:
+
+| Lainsäädäntö | Kaista | Riski |
+|------------|--------|-------|
+| HD03262–HD03265 (maahanmuuttoarkkitehtuuri) | Valiokuntavaihe SfU/JuU | ECHR-haaste, Lagrådets tarkistus |
+| HD03254 (NATO:n sotilasyhteistyö) | Valiokuntavaihe FöU | Puolueiden välinen tuki (S myönteinen) |
+| HD10448 interpellaatiovastaus energiasta | Budjetti-ikkuna 2027 | SD–KD-vikasinja ratkaisematon |
+| HC01FiU20 (Kevätbudjetti loppuäänestys) | Äänestys toukokuun lopussa 2026 | Kynnysriski jos L pidättyy äänestämästä |
+
+---
+
+### Seurattavat signaalit
+
+1. **L:n kannatuskyselytrendit** (viikoittain Novus/SIFO): alle 4,5 % = eksistentiaalinen riski koalitiolle
+2. **KD:n koalitiopuhe energiasta** (FöU-debatit, puoluekonferenssi kesäkuussa): koveneva kanta signaloi ennakkovaali-eroa
+3. **Lagrådets yttrande HD03262:sta** (odotetaan touko–kesäkuussa 2026): kielteinen lausunto = lainsäädäntöviive, poliittinen vaikutus
+4. **SD:n kuridiscipliiniäänestykset** (mahdolliset budjettimuutokset): solidaarisuuden romahdus = luottamusriski
+5. **S:n johtamat rikos-/maahanmuuttohyökkäysmainokset** (aktivoinnin ajoitus): varhainen aktivointi (<100 päivää) signaloi hyökkäysstrategiaa
+
+*[horisontti:T+90d] Välitön 90 päivän ikkuna on vuoden korkein volatiliteettijakso: maahanmuuttolait valiokunnassa, energiavikasinja ratkaisematon, USA:n tullitrajektori epävarma, L kynnysarvon tuntumassa.*
+
+*[horisontti:vaali] Syyskuun 2026 vaalit ovat vuoden rakennetta luova tapahtuma. Jokainen myöhempi tapahtuma on kartoitettava hallitusmuodostuksen vaikutusten näkökulmasta.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_fr.md -->
+
+**Horizon** : 365 jours · **Profondeur** : complète · **Niveau** : C  
+**Compte à rebours électoral** : 134 jours jusqu'au 13/09/2026  
+**Niveau de confiance** : MOYEN-ÉLEVÉ pour T1–T2 (mois 1–6), MOYEN pour T3–T4 (mois 7–12)
+
+---
+
+### Évaluation générale
+
+La Suède entre dans les douze mois les plus décisifs depuis le cycle électoral de 2022. Quatre propositions de réforme de la migration simultanées (HD03262–HD03265) signalent un gouvernement prêt à définir la campagne électorale sur un terrain idéologique favorable à l'aile droite de la coalition Tidö. Pourtant, la majorité à marge nulle de la coalition (exactement 175/349 sièges) et deux partis à risque de seuil créent une fragilité structurelle qui pourrait se désintégrer avant septembre 2026.
+
+**La tension centrale de l'année à venir** : l'Alliance Tidö doit simultanément livrer sur le durcissement migratoire pour satisfaire SD (l'ancre à 70 sièges de la coalition), maintenir la crédibilité budgétaire pour rassurer les électeurs de M sous le stress du choc tarifaire américain, et empêcher le désaccord SD–KD sur l'énergie (HD10448) de fracturer la coalition avant le jour du vote.
+
+---
+
+### Cinq exigences prioritaires de renseignement
+
+| EPR | Question | Horizon | Confiance |
+|-----|----------|---------|-----------|
+| EPR-D (CRITIQUE) | La divergence énergétique SD–KD déclenchera-t-elle l'instabilité de la coalition ? | T+90j | MOYEN |
+| EPR-F (NOUVEAU) | Formation gouvernementale post-électorale : Tidö-II, minorité S, ou parlement bloqué ? | T+365j (élection) | FAIBLE |
+| EPR-A | Trajectoire sondages : les partis à seuil survivront-ils ? | T+30j | MOYEN |
+| EPR-G (NOUVEAU) | Conformité migration CEDH : Lagrådet ou la Commission européenne contestera-t-elle HD03262 ? | T+90j–T+180j | MOYEN |
+| EPR-H (NOUVEAU) | Coopération militaire OTAN : HD03254 se traduira-t-il en véritable interopérabilité ? | T+180j–T+365j | MOYEN-FAIBLE |
+
+---
+
+### Perspectives politiques structurelles (T+365j)
+
+Le paysage de scénarios pour l'année à venir est défini par quatre issues de formation après l'élection de septembre 2026 :
+
+1. **Continuation Tidö-II** (~40 % de probabilité) : M, SD, KD conservent la majorité ; nouveau programme gouvernemental priorise le nexus sécurité-migration-énergie
+2. **Minorité menée par S** (~25 % de probabilité ; branche B1 révisée à 15–18 % depuis les 8 % primaires — voir devils-advocate.md CF-2) : S devient le plus grand bloc mais gouverne via C et/ou la confiance de l'opposition ; réformes migratoires partiellement inversées
+3. **Parlement bloqué/formation prolongée** (~25 % de probabilité) : aucun bloc n'atteint 175 ; négociation prolongée, possible scénario faiseur de roi C
+4. **Grande coalition** (~10 % de probabilité) : gouvernement technocratique centre-droit M+S si la crise de formation dure >3 mois
+
+---
+
+### Contexte économique [horizon:T+365j]
+
+*Millésime : WEO avr-2026 (estimation figée — API FMI indisponible lors de l'analyse)*
+
+Les perspectives macroéconomiques de la Suède se sont dégradées par rapport au scénario de référence du FMI suite au choc tarifaire américain (avril 2026). La croissance du PIB est projetée à ~1,2 % (2026, dégradée de 2,1 %), avec une reprise à ~2,2 % (2027). La dette publique reste faible à ~33 % du PIB. Solde budgétaire : environ -0,5 % (2026). Le chômage s'est stabilisé à 8,4 % malgré les pressions tarifaires.
+
+HC01FiU20 (Loi de finances de printemps, avril 2026) a verrouillé le cadre budgétaire pour l'année électorale : 31 milliards SEK de marge disponible pour les promesses électorales. Les deux blocs se disputeront la crédibilité budgétaire.
+
+**Risque économique clé** : si le PIB tombe en dessous de 0,8 %, le récit politique bascule fortement vers la compétence économique — l'atout le plus fort de M contre S, mais aussi une pression sur Tidö pour montrer des gains concrets du durcissement migratoire (critique de l'intégration sur le marché du travail).
+
+---
+
+### Sprint législatif (mai–juillet 2026)
+
+Le Riksdag siège pendant environ 10 semaines de travail supplémentaires (mai–fin juin 2026 session principale, brève ouverture d'automne en septembre). Législation clé en pipeline :
+
+| Législation | Voie | Risque |
+|------------|------|--------|
+| HD03262–HD03265 (architecture migratoire) | Stade comité SfU/JuU | Défi CEDH, examen Lagrådet |
+| HD03254 (coopération militaire OTAN) | Stade comité FöU | Soutien multipartite (S favorable) |
+| HD10448 réponse interpellation énergie | Fenêtre budgétaire 2027 | Ligne de fracture SD–KD non résolue |
+| HC01FiU20 (vote final budget de printemps) | Vote fin mai 2026 | Risque seuil si L s'abstient |
+
+---
+
+### Signaux à surveiller
+
+1. **Trajectoire sondages L** (hebdomadaire Novus/SIFO) : sous 4,5 % = risque existentiel pour la coalition
+2. **Langage coalition KD sur l'énergie** (débats FöU, conférence du parti juin) : durcissement de position signale séparation pré-électorale
+3. **Avis Lagrådet sur HD03262** (attendu mai–juin 2026) : renvoi négatif = retard législatif, retombées politiques
+4. **Votes de discipline SD** (amendements budgétaires éventuels) : effondrement solidarité = risque confiance
+5. **Publicités d'attaque S sur crime/migration** (calendrier d'activation) : activation précoce (<100 jours) signale stratégie offensive
+
+*[horizon:T+90j] La fenêtre immédiate des 90 jours est la période de volatilité la plus élevée de l'année : projets de loi migration en comité, ligne de fracture énergétique non résolue, trajectoire tarifs US incertaine, L au seuil.*
+
+*[horizon:élection] L'élection de septembre 2026 est l'événement structurant de l'année. Chaque développement ultérieur doit être cartographié face aux implications de formation.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_he.md -->
+
+&#x200F;# תדריך מודיעין — השנה הקרובה 2026-05-02
+
+**אופק**: 365 ימים · **עומק**: מקיף · **רמה**: C  
+**ספירת ימים לבחירות**: 134 ימים עד 13.09.2026  
+**רמת ביטחון**: בינוני-גבוה לרבעונים 1–2 (חודשים 1–6), בינוני לרבעונים 3–4 (חודשים 7–12)
+
+---
+
+### הערכה כללית
+
+שוודיה נכנסת לשנים-עשר החודשים המכריעים ביותר מאז מחזור הבחירות של 2022. ארבעה הצעות חוק לרפורמת הגירה בו-זמניות (HD03262–HD03265) מסמנות ממשלה מוכנה להגדיר את קמפיין הבחירות על קרקע אידיאולוגית המועדפת על הכנף הימנית של קואליציית טידו. עם זאת, הרוב עם שוליים אפסיים של הקואליציה (בדיוק 175/349 מושבים) ושני מפלגות המאוימות בסף יוצרים שבריריות מבנית שעלולה להתפרק לפני ספטמבר 2026.
+
+**המתח המרכזי של השנה הקרובה**: ברית טידו חייבת בו-זמנית לספק את ההחמרה בהגירה כדי לספק את SD (עוגן 70 המושבים של הקואליציה), לשמור על אמינות פיסקלית כדי להרגיע מצביעי M תחת לחץ הלם המכסים האמריקאי, ולמנוע ממחלוקת SD–KD על האנרגיה (HD10448) לפצל את הקואליציה לפני יום הבחירות.
+
+---
+
+### חמישה דרישות מודיעין בעדיפות עליונה
+
+| דרישה | שאלה | אופק | ביטחון |
+|-------|------|------|--------|
+| ד-ד (קריטי) | האם סטיית SD–KD האנרגטית תעורר אי-יציבות בקואליציה? | T+90d | בינוני |
+| ד-פ (חדש) | הרכבת ממשלה לאחר הבחירות: Tidö-II, מיעוט S, או פרלמנט תקוע? | T+365d (בחירות) | נמוך |
+| ד-א | מסלול סקרים: האם מפלגות הסף ישרדו? | T+30d | בינוני |
+| ד-ג (חדש) | עמידת רפורמת ההגירה ב-ECHR: האם Lagrådet או הנציבות האירופית יאתגרו את HD03262? | T+90d–T+180d | בינוני |
+| ד-ה (חדש) | שיתוף פעולה צבאי נאט"ו: האם HD03254 יתורגם לאינטראופרביליות אמיתית? | T+180d–T+365d | בינוני-נמוך |
+
+---
+
+### תצפית פוליטית מבנית (T+365d)
+
+נוף התרחישים לשנה הקרובה מוגדר על ידי ארבעה תוצאות הרכבה לאחר בחירות ספטמבר 2026:
+
+1. **המשכיות Tidö-II** (הסתברות ~40 %): M, SD, KD שומרות על רוב; תכנית ממשלה חדשה מעדיפה צומת ביטחון-הגירה-אנרגיה
+2. **מיעוט בהובלת S** (הסתברות ~25 %; ענף B1 מתוקן ל-15–18 % מהראשוני 8 % — ראה devils-advocate.md CF-2): S הופכת לבלוק הגדול ביותר אך שולטת דרך C ו/או אמון האופוזיציה; רפורמות ההגירה הפוכות חלקית
+3. **פרלמנט תקוע/הרכבה ממושכת** (הסתברות ~25 %): אף בלוק אינו מגיע ל-175; משא ומתן ממושך, תרחיש יוצר מלכים C אפשרי
+4. **קואליציה גדולה** (הסתברות ~10 %): ממשלה טכנוקרטית M+S מרכז-ימנית אם משבר ההרכבה נמשך >3 חודשים
+
+---
+
+### הקשר כלכלי [אופק:T+365d]
+
+*ווינטאג': WEO אפריל 2026 (הערכה קבועה — ממשק IMF API לא זמין בזמן הניתוח)*
+
+הסיכויים המקרו-כלכליים של שוודיה הידרדרו ביחס לקו הבסיס של ה-IMF לאחר הלם המכסים האמריקאי (אפריל 2026). צמיחת GDP צפויה להגיע ל-~1.2 % (2026, ירידה מ-2.1 %), עם התאוששות ל-~2.2 % (2027). החוב הציבורי נשאר נמוך ב-~33 % מהתמ"ג. יתרת תקציב: כ-0.5 % שלילי (2026). האבטלה התייצבה על 8.4 % למרות לחץ המכסים.
+
+HC01FiU20 (חוק תקציב האביב, אפריל 2026) נעל את המסגרת הפיסקלית לשנת הבחירות: 31 מיליארד SEK מרחב פנוי להבטחות קמפיין. שני הבלוקים יתחרו על אמינות פיסקלית.
+
+**סיכון כלכלי מרכזי**: אם GDP יצנח מתחת ל-0.8 %, הנרטיב הפוליטי ינוע בחדות לכיוון יכולת כלכלית — הקלף החזק ביותר של M מול S, אך גם לחץ על טידו להראות רווחים מוחשיים מהחמרת ההגירה (ביקורת על אינטגרציה בשוק העבודה).
+
+---
+
+### ספרינט חקיקתי (מאי–יולי 2026)
+
+הריקסדאג יושב כ-10 שבועות עבודה נוספים (מאי–סוף יוני 2026 מושב ראשי, פתיחת סתיו קצרה בספטמבר). חקיקה מרכזית בצינור:
+
+| חקיקה | נתיב | סיכון |
+|-------|------|-------|
+| HD03262–HD03265 (ארכיטקטורת הגירה) | שלב ועדה SfU/JuU | אתגר ECHR, בחינת Lagrådet |
+| HD03254 (שיתוף פעולה צבאי נאט"ו) | שלב ועדה FöU | תמיכה בין-מפלגתית (S תומכת) |
+| HD10448 תשובת שאלת הנרגזות על אנרגיה | חלון תקציב 2027 | קו שבר SD–KD לא פתור |
+| HC01FiU20 (הצבעה סופית תקציב אביב) | הצבעה סוף מאי 2026 | סיכון סף אם L נמנעת |
+
+---
+
+### אותות לניטור
+
+1. **מסלול סקרים L** (שבועי Novus/SIFO): מתחת ל-4.5 % = סיכון קיומי לקואליציה
+2. **שפת קואליציה KD על אנרגיה** (דיוני FöU, ועידת מפלגה יוני): נוקשות עמדה מסמנת הפרדה טרום-בחירות
+3. **חוות דעת Lagrådet על HD03262** (צפויה מאי–יוני 2026): הפנייה שלילית = עיכוב חקיקה, השלכות פוליטיות
+4. **הצבעות משמעת SD** (תיקוני תקציב אפשריים): קריסת סולידריות = סיכון אמון
+5. **פרסומות תקיפה S על פשיעה/הגירה** (תזמון הפעלה): הפעלה מוקדמת (<100 ימים) מסמנת אסטרטגיה התקפית
+
+*[אופק:T+90d] חלון 90 הימים המיידי הוא תקופת התנודתיות הגבוהה ביותר של השנה: הצעות חוק הגירה בוועדה, קו שבר אנרגיה לא פתור, מסלול מכסים אמריקאי לא ודאי, L בסף.*
+
+*[אופק:בחירות] בחירות ספטמבר 2026 הן האירוע המבנה של השנה. כל התפתחות לאחר מכן חייבת להיות ממופה מול השלכות ההרכבה.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_ja.md -->
+
+**期間**: 365日 · **深度**: 包括的 · **ティア**: C  
+**選挙カウントダウン**: 2026年9月13日まで134日  
+**信頼度**: Q1–Q2（月1–6）：中〜高、Q3–Q4（月7–12）：中
+
+---
+
+### 総合評価
+
+スウェーデンは2022年選挙サイクル以来、最も重大な12カ月に突入する。4つの同時移民改革法案（HD03262–HD03265）は、ティドー連立政権の右派が好む政治的土俵で選挙キャンペーンを定義する準備ができた政府を示している。しかし、連立政権のゼロ・マージン多数（正確に175/349議席）と2つの閾値危機政党は、2026年9月前に崩壊する可能性がある構造的な脆弱性を生み出している。
+
+**来年の中心的緊張**: ティドーアライアンスは、SD（連立政権の70議席のアンカー）を満足させるために移民強化を実施し、米国関税ショックのストレス下でM支持者を安心させるために財政信頼性を維持し、SD–KDのエネルギー不一致（HD10448）が選挙日前に連立政権を分裂させるのを防ぐという三つの課題を同時に解決しなければならない。
+
+---
+
+### 5つの優先インテリジェンス要件
+
+| PIR | 質問 | 期間 | 信頼度 |
+|-----|------|------|--------|
+| PIR-D（重大） | SD–KDのエネルギー乖離は連立不安定を引き起こすか？ | T+90d | 中 |
+| PIR-F（新規） | 選挙後の組閣：ティドー-II、S少数政権、それとも膠着国会？ | T+365d（選挙） | 低 |
+| PIR-A | 世論調査の軌跡：閾値政党は生き残るか？ | T+30d | 中 |
+| PIR-G（新規） | 移民改革ECHR適合性：LagrådetまたはEU委員会はHD03262に異議を申し立てるか？ | T+90d–T+180d | 中 |
+| PIR-H（新規） | NATO軍事協力：HD03254は真の相互運用性につながるか？ | T+180d–T+365d | 中〜低 |
+
+---
+
+### 構造的政治展望（T+365d）
+
+来年の政治シナリオ全景は、2026年9月選挙後の4つの組閣結果によって定義される：
+
+1. **ティドー-II継続**（確率約40%）：M、SD、KDが過半数を維持；新政府プログラムは安全保障・移民・エネルギーの連結を優先
+2. **S主導少数政権**（確率約25%；ブランチB1を一次8%から15〜18%に修正 — devils-advocate.md CF-2参照）：Sが最大ブロックになるが、C及び/または野党の信任で統治；移民改革は部分的に覆される
+3. **膠着国会/長期組閣**（確率約25%）：どのブロックも175に達しない；長期交渉、C「キングメーカー」シナリオの可能性
+4. **大連立**（確率約10%）：組閣危機が3ヶ月超の場合、M+S中道右派テクノクラット政府
+
+---
+
+### 経済コンテキスト [期間:T+365d]
+
+*ヴィンテージ: WEO 2026年4月（固定推定値 — 分析時IMF API利用不可）*
+
+米国関税ショック（2026年4月）を受け、スウェーデンのマクロ経済見通しはIMFベースラインから悪化した。GDP成長率は約1.2%（2026年、2.1%から下方修正）、2027年は約2.2%に回復する見込み。公的債務はGDPの約33%と低水準を維持。財政収支：約-0.5%（2026年）。失業率は関税圧力にもかかわらず8.4%で安定。
+
+HC01FiU20（2026年4月春季財政法案）は選挙年の財政フレームワークを固定：選挙公約用に310億SEKの利用可能な余裕。両ブロックは財政信頼性を競う。
+
+**主要経済リスク**：GDPが0.8%を下回ると、政治的ナラティブは経済的能力に大きくシフト — Mの対S最強カードだが、ティドーに移民強化の具体的成果を示す圧力にもなる（労働市場統合批判）。
+
+---
+
+### 立法スプリント（2026年5月〜7月）
+
+Riksdagはおよそ10週間の作業週（5月〜6月下旬2026年本会議、9月短秋季開会）続く。重要法案パイプライン：
+
+| 立法 | 経路 | リスク |
+|-----|------|--------|
+| HD03262–HD03265（移民アーキテクチャ） | 委員会段階 SfU/JuU | ECHR異議、Lagrådet審査 |
+| HD03254（NATO軍事協力） | 委員会段階 FöU | 超党派支持（S好意的） |
+| HD10448 エネルギー質問演説回答 | 2027年予算枠 | SD–KD断層線未解決 |
+| HC01FiU20（春季予算最終採決） | 2026年5月下旬採決 | LがBIを欠席する場合の閾値リスク |
+
+---
+
+### 注視すべきシグナル
+
+1. **L世論調査軌跡**（週次Novus/SIFO）：4.5%未満 = 連立政権の実存的リスク
+2. **KDのエネルギーに関する連立発言**（FöU討論、6月党大会）：立場の硬化は選挙前分離を示す
+3. **HD03262に関するLagrådetの意見書**（2026年5〜6月予定）：否定的な付議 = 立法の遅延、政治的ダメージ
+4. **SD規律投票**（予算修正案）：連帯崩壊 = 信任リスク
+5. **Sの犯罪・移民攻撃広告**（活性化タイミング）：早期活性化（100日未満）は攻撃的戦略を示す
+
+*[期間:T+90d] 直近の90日間窓は今年最も高いボラティリティ期間：委員会での移民法案、エネルギー断層線未解決、米国関税軌跡不確実、L閾値際。*
+
+*[期間:選挙] 2026年9月選挙は今年の構造的イベント。すべての後続展開は組閣への含意と照らし合わせてマッピングされなければならない。*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_ko.md -->
+
+**지평선**: 365일 · **심도**: 포괄적 · **티어**: C  
+**선거 카운트다운**: 2026년 9월 13일까지 134일  
+**신뢰도**: 1·2분기(1–6개월) 중간-높음, 3·4분기(7–12개월) 중간
+
+---
+
+### 종합 평가
+
+스웨덴은 2022년 선거 사이클 이후 가장 결정적인 12개월에 진입한다. 동시 다발적인 4개의 이민 개혁 법안(HD03262–HD03265)은 티도 연립정권의 우익에 유리한 이념적 지형에서 선거 캠페인을 정의할 준비가 된 정부를 보여준다. 그러나 연립정권의 제로마진 과반수(정확히 175/349석)와 두 개의 임계치 위험 정당이 2026년 9월 이전에 붕괴될 수 있는 구조적 취약성을 만들어낸다.
+
+**내년의 핵심 긴장**: 티도 연합은 SD(연립정권의 70석 앵커)를 만족시키기 위한 이민 강화 이행, 미국 관세 충격 스트레스 하에서 M 유권자를 안심시키기 위한 재정 신뢰성 유지, SD–KD의 에너지 불일치(HD10448)가 투표일 전에 연립정권을 분열시키는 것을 방지하는 세 가지 과제를 동시에 해결해야 한다.
+
+---
+
+### 5가지 우선 정보 요건
+
+| PIR | 질문 | 지평선 | 신뢰도 |
+|-----|------|--------|--------|
+| PIR-D (중요) | SD–KD의 에너지 이견이 연립 불안정을 촉발할 것인가? | T+90d | 중간 |
+| PIR-F (신규) | 선거 후 정부 구성: 티도-II, S 소수정권, 아니면 교착 국회? | T+365d (선거) | 낮음 |
+| PIR-A | 여론조사 추이: 임계치 정당이 살아남을 것인가? | T+30d | 중간 |
+| PIR-G (신규) | 이민 개혁 ECHR 준수: Lagrådet 또는 EU 위원회가 HD03262에 이의를 제기할 것인가? | T+90d–T+180d | 중간 |
+| PIR-H (신규) | NATO 군사 협력: HD03254가 진정한 상호운용성으로 이어질 것인가? | T+180d–T+365d | 중간-낮음 |
+
+---
+
+### 구조적 정치 전망 (T+365d)
+
+내년의 시나리오 지형은 2026년 9월 선거 이후 4가지 정부 구성 결과로 정의된다:
+
+1. **티도-II 지속** (확률 ~40%): M, SD, KD가 과반 유지; 새 정부 프로그램은 안보-이민-에너지 연결 우선화
+2. **S 주도 소수정권** (확률 ~25%; 분기 B1 수정 15–18%로, 1차 8%에서 — devils-advocate.md CF-2 참조): S가 최대 블록이 되나 C 및/또는 야당 신임으로 통치; 이민 개혁 부분 역전
+3. **교착 국회/장기 정부 구성** (확률 ~25%): 어느 블록도 175에 도달하지 못함; 장기 협상, C '킹메이커' 시나리오 가능
+4. **대연립** (확률 ~10%): 정부 구성 위기가 3개월 이상 지속되면 M+S 중도우파 테크노크라트 정부
+
+---
+
+### 경제 맥락 [지평선:T+365d]
+
+*빈티지: WEO 2026년 4월 (고정 추정치 — 분석 시 IMF API 이용 불가)*
+
+미국 관세 충격(2026년 4월) 이후 스웨덴의 거시경제 전망이 IMF 기준선 대비 악화되었다. GDP 성장률은 ~1.2%(2026년, 2.1%에서 하향 조정)로 예측되며, 2027년 ~2.2%로 회복. 공공 부채는 GDP의 ~33%로 낮게 유지. 재정 수지: 약 -0.5%(2026년). 실업률은 관세 압력에도 불구하고 8.4%에서 안정.
+
+HC01FiU20(2026년 4월 봄 재정법안)은 선거 연도 재정 프레임워크를 확정: 선거 공약을 위한 310억 SEK 가용 여력. 양 블록은 재정 신뢰성을 둘러싸고 경쟁할 것이다.
+
+**주요 경제 위험**: GDP가 0.8% 이하로 하락하면 정치적 내러티브는 경제적 역량으로 크게 전환 — M의 S 대비 가장 강력한 카드이지만 이민 강화의 구체적 성과를 보여주어야 하는 티도에 대한 압박이기도 함(노동시장 통합 비판).
+
+---
+
+### 입법 스프린트 (2026년 5월~7월)
+
+Riksdag는 약 10주의 추가 작업 주(5월~6월 하순 2026년 본회의, 9월 짧은 가을 개회)를 갖는다. 주요 입법 파이프라인:
+
+| 입법 | 경로 | 위험 |
+|-----|------|------|
+| HD03262–HD03265 (이민 아키텍처) | 위원회 단계 SfU/JuU | ECHR 이의, Lagrådet 검토 |
+| HD03254 (NATO 군사 협력) | 위원회 단계 FöU | 초당적 지지 (S 호의적) |
+| HD10448 에너지 질문 발언 응답 | 2027년 예산 창구 | SD–KD 단층선 미해결 |
+| HC01FiU20 (봄 예산 최종 표결) | 2026년 5월 하순 표결 | L이 기권할 경우 임계치 위험 |
+
+---
+
+### 모니터링 신호
+
+1. **L 여론조사 추이** (주간 Novus/SIFO): 4.5% 미만 = 연립정권에 대한 실존적 위험
+2. **KD의 에너지 관련 연립 발언** (FöU 토론, 6월 당 대회): 입장 강경화는 선거 전 분리를 시사
+3. **HD03262에 관한 Lagrådet 의견** (2026년 5~6월 예정): 부정적 회부 = 입법 지연, 정치적 파장
+4. **SD 규율 투표** (예산 수정안): 연대 붕괴 = 신임 위험
+5. **S의 범죄/이민 공격 광고** (활성화 시점): 조기 활성화(<100일)는 공격적 전략을 시사
+
+*[지평선:T+90d] 직근 90일 창구는 올해 가장 높은 변동성의 기간: 위원회에서의 이민 법안, 에너지 단층선 미해결, 미국 관세 궤적 불확실, L 임계치 근방.*
+
+*[지평선:선거] 2026년 9월 선거는 올해의 구조적 사건이다. 이후의 모든 발전은 정부 구성 함의에 대해 매핑되어야 한다.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_nl.md -->
+
+**Horizon**: 365 dagen · **Diepgang**: uitvoerig · **Niveau**: C  
+**Verkiezingsaftelling**: 134 dagen tot 13-09-2026  
+**Betrouwbaarheidsniveau**: GEMIDDELD-HOOG voor K1–K2 (maanden 1–6), GEMIDDELD voor K3–K4 (maanden 7–12)
+
+---
+
+### Overkoepelende beoordeling
+
+Zweden treedt het meest beslissende twaalf maanden in sinds de verkiezingscyclus van 2022. Vier gelijktijdige migratiehervorming proposities (HD03262–HD03265) geven aan dat de regering bereid is de verkiezingscampagne te definiëren op ideologisch gunstig terrein voor de rechtervleugel van de Tidö-coalitie. Toch creëren de nulmargenmeerderheid van de coalitie (precies 175/349 zetels) en twee drempel-bedreigde partijen een structurele fragiliteit die vóór september 2026 uit elkaar kan vallen.
+
+**De centrale spanning van het komende jaar**: de Tidöalliantie moet gelijktijdig de migratieverscherping waarmaken om SD (het 70-zetels anker van de coalitie) tevreden te stellen, de begrotingspolitieke geloofwaardigheid handhaven om M-kiezers gerust te stellen onder de US-handelstariefschok, en voorkomen dat het SD–KD-energieconflict (HD10448) de coalitie voor de verkiezingsdag uiteen scheurt.
+
+---
+
+### Vijf prioritaire inlichtingenvereisten
+
+| PIV | Vraag | Horizon | Betrouwbaarheid |
+|-----|-------|---------|-----------------|
+| PIV-D (KRITIEK) | Zal de SD–KD-energiedivergentie coaltie-instabiliteit veroorzaken? | T+90d | GEMIDDELD |
+| PIV-F (NIEUW) | Naverkiezingsregeervorming: Tidö-II, S-minderheid of vast parlement? | T+365d (verkiezing) | LAAG |
+| PIV-A | Peilingstrajectorie: zullen de drempelpartijen overleven? | T+30d | GEMIDDELD |
+| PIV-G (NIEUW) | Migratiehervormingen EVRM-naleving: zullen Lagrådet of de EU-Commissie HD03262 aanvechten? | T+90d–T+180d | GEMIDDELD |
+| PIV-H (NIEUW) | NAVO militaire samenwerking: zal HD03254 leiden tot echte interoperabiliteit? | T+180d–T+365d | GEMIDDELD-LAAG |
+
+---
+
+### Structureel politiek vooruitzicht (T+365d)
+
+Het scenario-landschap voor het komende jaar wordt bepaald door vier kabinetsformatie-uitkomsten na de verkiezingen van september 2026:
+
+1. **Tidö-II-continuering** (~40 % kans): M, SD, KD behouden meerderheid; nieuw regeerakkoord prioriteert veiligheids-migratie-energienexus
+2. **S-geleide minderheid** (~25 % kans; tak B1 herzien naar 15–18 % van primaire 8 % — zie devils-advocate.md CF-2): S wordt het grootste blok maar regeert via C en/of oppositievertrouwen; migratiehervormingen gedeeltelijk teruggedraaid
+3. **Vastgelopen parlement/verlengde formatie** (~25 % kans): geen blok bereikt 175; langdurig onderhandelen, mogelijk C-koningsmakers-scenario
+4. **Grote coalitie** (~10 % kans): M+S centrumrechtse technocratische regering als formatie-crisis >3 maanden duurt
+
+---
+
+### Economische context [horizon:T+365d]
+
+*Versie: WEO apr-2026 (vastgepinde schatting — IMF API niet beschikbaar op analysetijdstip)*
+
+De macro-economische vooruitzichten van Zweden zijn verslechterd ten opzichte van de IMF-basislijn na de Amerikaanse handelstarifschok (april 2026). BBP-groei wordt geprojecteerd op ~1,2 % (2026, verlaagd van 2,1 %), met herstel naar ~2,2 % (2027). De overheidsschuld blijft laag op ~33 % van het BBP. Begrotingssaldo: circa -0,5 % (2026). De werkloosheid is gestabiliseerd op 8,4 % ondanks tariefdruk.
+
+HC01FiU20 (Voorjaarsbegroting, april 2026) vergrendelde het begrotingskader voor het verkiezingsjaar: 31 miljard SEK beschikbare marge voor verkiezingsbeloften. Beide blokken zullen strijden om begrotingspolitieke geloofwaardigheid.
+
+**Belangrijk economisch risico**: Als het BBP daalt tot onder 0,8 %, verschuift het politieke narratief sterk naar economische competentie — M's sterkste kaart tegen S, maar ook druk op Tidö om concrete winst te tonen van migratieverscherping (kritiek op arbeidsmarktintegratie).
+
+---
+
+### Wetgevende sprint (mei–juli 2026)
+
+De Riksdag vergadert voor ca. 10 extra werkweken (mei–laat juni 2026 hoofdzitting, korte herfstopening september). Belangrijke wetgeving in de pijplijn:
+
+| Wetgeving | Spoor | Risico |
+|------------|-------|--------|
+| HD03262–HD03265 (migratiearchitectuur) | Commissiestadium SfU/JuU | EVRM-uitdaging, Lagrådet-toetsing |
+| HD03254 (NAVO militaire samenwerking) | Commissiestadium FöU | Partijoverstijgende steun (S positief) |
+| HD10448 interpellatieantwoord energie | Begrotingsvenster 2027 | SD–KD-breukzone onopgelost |
+| HC01FiU20 (Voorjaarsbegroting eindstemming) | Stemming laat mei 2026 | Drempelrisico als L onthoudt |
+
+---
+
+### Signalen om te volgen
+
+1. **L peilingstrajectorie** (wekelijks Novus/SIFO): onder 4,5 % = existentieel risico voor de coalitie
+2. **KD coalitietaal over energie** (FöU-debatten, partijconferentie juni): verharding standpunt signaleert voorverkiezingsseparatie
+3. **Lagrådet-advies over HD03262** (verwacht mei–juni 2026): negatieve verwijzing = wetgevingsvertraging, politieke schade
+4. **SD-disciplinestemmen** (eventuele begrotingsamendamenten): solidariteitsinstorting = vertrouwensrisico
+5. **S-geleide criminaliteits-/migratie-aanvalsadvertenties** (activeringstijdstip): vroege activering (<100 dagen) signaleert offensieve strategie
+
+*[horizon:T+90d] Het onmiddellijke 90-dagenvenster is de meest volatiele periode van het jaar: migratiewetten in commissie, energiebreukzone onopgelost, US-tarieftrajecto onzeker, L bij de drempel.*
+
+*[horizon:verkiezing] De verkiezingen van september 2026 zijn het structurerende evenement van het jaar. Elke volgende ontwikkeling moet worden gekarteerd ten opzichte van de formatie-implicaties.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_no.md -->
+
+**Horisont**: 365 dager · **Dybde**: omfattende · **Nivå**: C  
+**Valgopptelling**: 134 dager til 2026-09-13  
+**Konfidensnivå**: MIDDELS-HØY for K1–K2 (måned 1–6), MIDDELS for K3–K4 (måned 7–12)
+
+---
+
+### Overordnet vurdering
+
+Sverige går inn i de mest avgjørende tolv månedene siden valgssyklusen 2022. Fire samtidige migrasjonsreformproposisjoner (HD03262–HD03265) signaliserer en regjering klar til å definere valgkampen på ideologisk gunstig grunn for Tidökoalisjonens høyrefløy. Likevel skaper koalisjonens nullmarginmajoritet (nøyaktig 175/349 seter) og to terskelstruede partier en strukturell skjørhet som kan falle fra hverandre før september 2026.
+
+**Den sentrale spenningen i det kommende året**: Tidöalliansen må samtidig levere på migrasjonsstramning for å tilfredsstille SD (koalisjonens 70-seters anker), opprettholde finanspolitisk troverdighet for å berolige M-velgere under USA-tollsjokk-stress, og hindre SD–KDs energiuenighet (HD10448) i å splitte koalisjonen før valgdagen.
+
+---
+
+### Fem prioriterte etterretningskrav
+
+| PEK | Spørsmål | Horisont | Konfidens |
+|-----|----------|---------|-----------|
+| PEK-D (KRITISK) | Vil SD–KDs energidivergering utløse koalisjonsinstabilitet? | T+90d | MIDDELS |
+| PEK-F (NY) | Ettervalsregjering: Tidö-II, S-mindretall eller låst storting? | T+365d (valg) | LAV |
+| PEK-A | Meningsmålingstrend: overlever terskelpartiene? | T+30d | MIDDELS |
+| PEK-G (NY) | Migrasjonsreform EMK-overholdelse: vil Lagrådet eller EU-Kommisjonen utfordre HD03262? | T+90d–T+180d | MIDDELS |
+| PEK-H (NY) | NATO militært samarbeid: vil HD03254 føre til reell interoperabilitet? | T+180d–T+365d | MIDDELS-LAV |
+
+---
+
+### Strukturelt politisk utsyn (T+365d)
+
+Scenarielandskapet for det kommende året defineres av fire dannelsesutfall etter september 2026-valget:
+
+1. **Tidö-II-fortsettelse** (~40 % sannsynlighet): M, SD, KD beholder flertall; nytt regjeringsprogram prioriterer sikkerhets-migrasjons-energineksus
+2. **S-ledet mindretall** (~25 % sannsynlighet; gren B1 revidert til 15–18 % fra primære 8 % — se devils-advocate.md CF-2): S blir største blokk men regjerer via C og/eller opposisjonens tillit; migrasjonsreformer delvis omgjort
+3. **Låst storting/forlenget dannelse** (~25 % sannsynlighet): Ingen blokk når 175; forlenget forhandling, mulig C-kongemakersscenario
+4. **Storkoalisjon** (~10 % sannsynlighet): M+S-sentrum-borgerlig teknokratisk regjering hvis dannelseskrisen varer >3 måneder
+
+---
+
+### Økonomisk kontekst [horisont:T+365d]
+
+*Versjon: WEO apr-2026 (fastsatt estimat — IMF API utilgjengelig ved analysetidspunkt)*
+
+Sveriges makroøkonomiske utsikter har forverret seg relativt til IMFs basislinje etter den amerikanske tollsjokken (april 2026). BNP-vekst anslås til ~1,2 % (2026, nedgradert fra 2,1 %), med gjenopprettelse til ~2,2 % (2027). Den offentlige gjelden forblir lav på ~33 % av BNP. Finansielt saldo: ca. -0,5 % (2026). Arbeidsledigheten har stabilisert seg på 8,4 % til tross for tollpress.
+
+HC01FiU20 (Vårfinanslov, april 2026) låste det finanspolitiske rammeverket for valgåret: 31 mrd. SEK tilgjengelig handlingsrom for valgkampanjeløfter. Begge blokkene vil konkurrere om finanspolitisk troverdighet.
+
+**Viktig økonomisk risiko**: Hvis BNP faller under 0,8 %, skifter det politiske narrativet kraftig til økonomisk kompetanse — Ms sterkeste kort mot S, men også press på Tidö om å vise konkrete gevinster fra migrasjonsstramning (kritikk av arbeidsmarkedsintegrasjon).
+
+---
+
+### Lovgivningssprint (mai–juli 2026)
+
+Riksdagen sitter i ca. 10 ytterligere arbeidsuker (mai–sent juni 2026 hovednormation, kort høståpning september). Viktig lovgivning i pipeline:
+
+| Lovgivning | Spor | Risiko |
+|------------|------|--------|
+| HD03262–HD03265 (migrasjonsarkitektur) | Utvalgsstadie SfU/JuU | EMK-utfordring, Lagrådets granskning |
+| HD03254 (NATO militært samarbeid) | Utvalgsstadie FöU | Tverrpartistøtte (S positiv) |
+| HD10448 interpellasjonssvar om energi | Budsjettvindu 2027 | SD–KD-bruddlinje uløst |
+| HC01FiU20 (Vårbudsjett sluttavstemning) | Votering sent mai 2026 | Terskelrisiko hvis L avholder |
+
+---
+
+### Signaler å overvåke
+
+1. **Ls meningsmålingstrendling** (ukentlig Novus/SIFO): under 4,5 % = eksistensiell risiko for koalisjonen
+2. **KDs koalisjonssspråk om energi** (FöU-debatter, partikonferanse juni): hardnende posisjon signaliserer forvalgsseparasjon
+3. **Lagrådets yttrande om HD03262** (forventet mai–juni 2026): negativ uttalelse = lovgivningsforsinkelse, politisk fall
+4. **SDs disiplinstemmer** (eventuelle budsjettendringer): solidaritetskollaps = tillitsrisiko
+5. **S-ledede kriminalitets-/migrasjonsangrepsannonser** (aktiveringstidspunkt): tidlig aktivering (<100 dager) signaliserer offensiv strategi
+
+*[horisont:T+90d] Det umiddelbare 90-dagersvinduet er årets periode med høyest volatilitet: migrasjonsforslag i utvalg, energibruddlinje uløst, USA-tolltrajektorie usikker, L ved terskelen.*
+
+*[horisont:valg] September 2026-valget er årets strukturerende begivenhet. Enhver etterfølgende utvikling må kartlegges mot dannelsesimplikasjoner.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_sv.md -->
+
+**Horisont**: 365 dagar · **Djup**: heltäckande · **Nivå**: C  
+**Val-nedräkning**: 134 dagar till 2026-09-13  
+**Konfidensnivå**: MEDEL-HÖG för K1–K2 (månad 1–6), MEDEL för K3–K4 (månad 7–12)
+
+---
+
+### Övergripande bedömning
+
+Sverige går in i de mest avgörande tolv månaderna sedan valcykeln 2022. Fyra simultana migrationsreformpropositioner (HD03262–HD03265) signalerar en regering beredd att definiera valkampanjen på ideologiskt gynnsam mark för Tidökoalitionens högerkant. Ändå skapar koalitionens nollmarginalmajoritet (exakt 175/349 platser) och två tröskelhot-partier en strukturell skörhet som kan kollapsa innan september 2026.
+
+**Den centrala spänningen under det kommande året**: Tidöalliansen måste samtidigt leverera på migrationsåtstramningar för att tillfredsställa SD (koalitionens 70-mannaankare), upprätthålla finanspolitisk trovärdighet för att lugna M-väljare under US-tullchosstress, och förhindra att SD–KD:s energidissens (HD10448) bryter upp koalitionen före valdagen.
+
+---
+
+### Fem prioriterade underrättelsekrav
+
+| PIK | Fråga | Horisont | Konfidens |
+|-----|-------|---------|-----------|
+| PIK-D (KRITISK) | Kommer SD–KD:s energidivergens utlösa koalitionsinstabilitet? | T+90d | MEDEL |
+| PIK-F (NY) | Eftervalsregeringsbildning: Tidö-II, S-minoritet eller låst riksdag? | T+365d (val) | LÅG |
+| PIK-A | Opinionsundersökningstrend: överlever tröskelpartierna? | T+30d | MEDEL |
+| PIK-G (NY) | Migrationsreform ECHR-efterlevnad: kommer Lagrådet eller EU-kommissionen utmana HD03262? | T+90d–T+180d | MEDEL |
+| PIK-H (NY) | NATO militärt samarbete: kommer HD03254 leda till verklig interoperabilitet? | T+180d–T+365d | MEDEL-LÅG |
+
+---
+
+### Strukturell politisk utsikt (T+365d)
+
+Scenarielandskapet för det kommande året definieras av fyra bildningsutfall efter valet i september 2026:
+
+1. **Tidö-II-fortsättning** (~40 % sannolikhet): M, SD, KD behåller majoritet; nytt regeringsprogram prioriterar säkerhets-migrations-energinexus
+2. **S-ledd minoritet** (~25 % sannolikhet; gren B1 reviderad till 15–18 % från primära 8 % — se devils-advocate.md CF-2): S blir största block men regerar via C och/eller oppositionens förtroende; migrationsreformer delvis återvunna
+3. **Låst riksdag/förlängd bildning** (~25 % sannolikhet): Inget block når 175; utdragen förhandling, möjligt C-kungamäkare-scenario
+4. **Stor koalition** (~10 % sannolikhet): M+S-centerborgerlig teknokratisk regering om bildningskrisen pågår >3 månader
+
+---
+
+### Ekonomisk kontext [horisont:T+365d]
+
+*Årsversion: WEO Apr-2026 (fastnålad uppskattning — IMF API otillgänglig vid analystillfälle)*
+
+Sveriges makroekonomiska utsikter har försämrats relativt IMF:s basscenario efter den amerikanska tullchocken (april 2026). BNP-tillväxt prognostiseras till ~1,2 % (2026, nedgraderad från 2,1 %), med återhämtning till ~2,2 % (2027). Den offentliga skulden förblir låg vid ~33 % av BNP. Finansiellt saldo: ungefär -0,5 % (2026). Arbetslöshet har stabiliserats vid 8,4 % trots tullpress.
+
+HC01FiU20 (Vårfiskalbudget, april 2026) låste det finanspolitiska ramverket för valåret: 31 miljarder SEK tillgängligt utrymme för valkampanjlöften. Båda blocken kommer att tävla om finanspolitisk trovärdighet.
+
+**Viktig ekonomisk risk**: Om BNP sjunker under 0,8 % skiftar det politiska narrativet kraftigt mot ekonomisk kompetens — M:s starkaste kort mot S, men också press på Tidö att visa konkreta vinster från migrationsåtstramning (kritik mot arbetsmarknadsintegration).
+
+---
+
+### Lagstiftningssprint (maj–juli 2026)
+
+Riksdagen sitter ungefär 10 ytterligare arbetsveckor (maj–sent juni 2026 huvudsession, kort höstsöppning september). Viktig lagstiftning i pipeline:
+
+| Lagstiftning | Spår | Risk |
+|------------|-------|------|
+| HD03262–HD03265 (migrationsarkitektur) | Utskottsstadium SfU/JuU | ECHR-utmaning, Lagrådets granskning |
+| HD03254 (NATO militärt samarbete) | Utskottsstadium FöU | Tvärpartistöd (S positiv) |
+| HD10448 interpellationssvar om energi | Budgetfönster 2027 | SD–KD-fellinjen olöst |
+| HC01FiU20 (Vårbudget slutvotering) | Omröstning sent maj 2026 | Tröskelrisk om L avstår |
+
+---
+
+### Signaler att bevaka
+
+1. **L:s opinionsundersökningstrend** (veckovis Novus/SIFO): under 4,5 % = existentiell risk för koalitionen
+2. **KD:s koalitionsspråk om energi** (FöU-debatter, partikonferens juni): hårdnad position signalerar förvalseparation
+3. **Lagrådets yttrande om HD03262** (förväntat maj–juni 2026): negativt remissvar = lagstiftningsfördröjning, politiskt fall
+4. **SD:s disciplinomröstningar** (eventuella budgetändringar): solidaritetskollaps = förtroenderisk
+5. **S-ledda kriminalitets-/migrationsattackannonser** (aktiveringstidpunkt): tidig aktivering (<100 dagar) signalerar offensiv strategi
+
+*[horisont:T+90d] Det omedelbara 90-dagsfönstret är årets period med högst volatilitet: migrationsräkningar i utskott, energifellinje olöst, USA-tulltrajektoria osäker, L vid tröskeln.*
+
+*[horisont:val] Valet i september 2026 är årets strukturerande händelse. Varje efterföljande händelse måste kartläggas mot bildningsimplikationer.*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_zh.md -->
+
+**时间跨度**：365天 · **深度**：全面 · **层级**：C  
+**选举倒计时**：距2026年9月13日还有134天  
+**置信度**：第1–2季度（1–6月）中高，第3–4季度（7–12月）中等
+
+---
+
+### 总体评估
+
+瑞典正进入2022年选举周期以来最关键的十二个月。四项同时提交的移民改革提案（HD03262–HD03265）表明，政府已准备好在有利于Tidö联合政府右翼的意识形态地带定义选举战场。然而，联合政府的零边际多数（恰好175/349席）以及两个处于议会门槛边缘的政党，形成了可能在2026年9月前瓦解的结构性脆弱性。
+
+**未来一年的核心张力**：Tidö联盟必须同时兑现移民收紧措施以满足SD（联合政府70席的支柱），维持财政公信力以安抚在美国关税冲击压力下的M选民，并阻止SD–KD能源分歧（HD10448）在投票日前分裂联合政府。
+
+---
+
+### 五项优先情报需求
+
+| 优先情报需求 | 问题 | 时间跨度 | 置信度 |
+|------------|------|---------|--------|
+| PIR-D（关键） | SD–KD能源分歧是否会引发联合政府不稳定？ | T+90d | 中等 |
+| PIR-F（新增） | 大选后组阁：Tidö-II、S少数政府，还是议会僵局？ | T+365d（大选） | 低 |
+| PIR-A | 民调趋势：门槛政党能否生存？ | T+30d | 中等 |
+| PIR-G（新增） | 移民改革的欧洲人权公约合规性：Lagrådet或欧盟委员会是否会挑战HD03262？ | T+90d–T+180d | 中等 |
+| PIR-H（新增） | 北约军事合作：HD03254能否转化为真正的互操作性？ | T+180d–T+365d | 中低 |
+
+---
+
+### 结构性政治前景（T+365d）
+
+未来一年的情景蓝图由2026年9月大选后四种组阁结果定义：
+
+1. **Tidö-II延续**（概率约40%）：M、SD、KD保持多数；新政府纲领优先推进安全-移民-能源联结
+2. **S主导少数政府**（概率约25%；B1分支从主要8%修订为15–18%——见devils-advocate.md CF-2）：S成为最大党团，但通过C及/或反对党信任执政；移民改革部分逆转
+3. **议会僵局/延长组阁**（概率约25%）：无党团达到175席；谈判旷日持久，C"造王者"情景可能出现
+4. **大联合政府**（概率约10%）：若组阁危机持续超过3个月，M+S中右翼技术官僚政府
+
+---
+
+### 经济背景 [时间跨度:T+365d]
+
+*数据版本：WEO 2026年4月（固定估算——分析时IMF API不可用）*
+
+美国关税冲击（2026年4月）后，瑞典宏观经济前景相较IMF基准线有所恶化。GDP增长预测约1.2%（2026年，从2.1%下调），2027年回升至约2.2%。公共债务维持在GDP的约33%低位。财政余额：约-0.5%（2026年）。尽管受关税压力，失业率稳定在8.4%。
+
+HC01FiU20（2026年4月春季财政法案）锁定了选举年财政框架：310亿瑞典克朗可用于选举竞选承诺。两大阵营将在财政公信力上展开竞争。
+
+**关键经济风险**：若GDP降至0.8%以下，政治叙事将大幅转向经济能力——这是M对抗S的最强牌，但也给Tidö施压，需展示移民收紧的具体成效（劳动力市场融合批评）。
+
+---
+
+### 立法冲刺（2026年5月至7月）
+
+Riksdag还将进行约10周的工作周（5月至6月底2026年主要会期，9月短暂秋季开幕）。重要立法管道：
+
+| 立法 | 轨道 | 风险 |
+|-----|------|------|
+| HD03262–HD03265（移民架构） | 委员会阶段 SfU/JuU | ECHR挑战，Lagrådet审查 |
+| HD03254（北约军事合作） | 委员会阶段 FöU | 跨党派支持（S持正面态度） |
+| HD10448 能源质询回答 | 2027年预算窗口 | SD–KD断层线悬而未决 |
+| HC01FiU20（春季预算最终表决） | 2026年5月底表决 | L弃权将带来门槛风险 |
+
+---
+
+### 需监测的信号
+
+1. **L民调走势**（每周Novus/SIFO）：低于4.5% = 联合政府面临生存威胁
+2. **KD能源联盟语言**（FöU辩论，六月党代会）：立场硬化表明选前分裂
+3. **Lagrådet关于HD03262的意见**（预计2026年5至6月）：否定性转介 = 立法迟滞，政治冲击
+4. **SD纪律票**（任何预算修正案）：团结崩溃 = 信任风险
+5. **S主导的犯罪/移民攻击广告**（启动时机）：提前启动（<100天）表明进攻性策略
+
+*[时间跨度:T+90d] 近90天窗口是全年波动最高时期：移民法案在委员会审议，能源断层线悬而未决，美国关税走向不确定，L处于议会门槛边缘。*
+
+*[时间跨度:大选] 2026年9月大选是本年的结构性事件。此后所有发展都必须对照组阁影响进行映射。*
+
+<!-- source-sha: 7f57e4a4f6dc30be3a923cf3528c3a09ec191564 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 25 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 38 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -3010,6 +4050,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-02/year-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

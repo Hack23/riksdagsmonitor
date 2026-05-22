@@ -6,7 +6,7 @@ date: 2026-04-30
 subfolder: interpellations
 slug: 2026-04-30-interpellations
 source_folder: analysis/daily/2026-04-30/interpellations
-generated_at: 2026-05-21T02:19:50.748Z
+generated_at: 2026-05-22T12:25:06.148Z
 language: en
 layout: article
 ---
@@ -79,6 +79,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1133,13 +1146,578 @@ No prior 2026-04-30 interpellations folder exists. Nearest reference: check `ana
 - Statskontoret: No directly relevant source found for cultural heritage property management at time of download.
 - ESA ministerial meeting November 2025 outcome referenced in HD10461 (no separate MCP fetch required; primary source is the interpellation itself citing public ESA data).
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# مناقشات الاستجواب في 30 أبريل 2026: إهمال التراث الثقافي وانسحاب السويد من الفضاء
+
+### 🎯 الملخص التنفيذي
+
+يُبرز استجوابان مُقدَّمان في 29-30 أبريل 2026 إخفاقات حوكمة متباينة في تحالف تيدو: يُحاسب حزب SD شريكه في الائتلاف وزيرة الثقافة ليلجيستراند (M) على تأجيل صيانة عقارات المنح الحكومية (تدقيق Riksrevisionen RiR 2025:30)؛ بينما يتحدى الاشتراكي الديمقراطي المعارض ماتس ويكينج وزير البحوث إيدهولم (L) بشأن الانسحاب الشاذ للسويد من تمويل وكالة الفضاء الأوروبية (ESA) — إذ تُعدّ السويد واحدة من ثلاثة أعضاء فقط في الـESA خفّضت مساهماتها رغم الزيادة القياسية بنسبة 31% في اجتماع الوزراء في نوفمبر 2025. سيُجدوَل كلا النقاشين بحلول 5 مايو 2026 مع مواعيد نهائية للردود الوزارية في 21 مايو 2026.
+
+### 🧭 3 قرارات يدعمها هذا الإحاطة
+
+1. **مديرو محفظة التراث الثقافي والمجتمع المدني**: رصد ما إذا كانت الوزيرة ليلجيستراند ستلتزم بإجراء مسح صيانة شامل وخطة طويلة الأمد لعقارات المنح الحكومية — شرط مسبق لطلبات تمويل التراث الأوروبي والاستثمار المشترك مع القطاع الخاص.
+2. **أصحاب المصلحة في صناعة الفضاء وشركاء الـESA**: تقييم ما إذا كان الوزير إيدهولم سيُعلن عن إعادة توزيع ميزانية تصحيحية لاستعادة حصة السويد في برنامج الـESA قبل دورة الوزراء التالية للـESA، مما يمنع الشركات السويدية من فقدان الوصول إلى المشتريات العامة في الاتحاد الأوروبي.
+3. **رؤساء اللجان البرلمانية (KU، UbU)**: يفتح كلا الاستجوابين نوافذ رقابية رسمية — KU بشأن المساءلة بين الائتلاف على إدارة الممتلكات الثقافية؛ UbU بشأن تماسك سياسات البحث والصناعة في قطاع الفضاء.
+
+### نقاط الاستخبارات في 60 ثانية
+
+- تستند بيا تروليهيلم (SD) (الاستجواب HD10460) إلى تدقيق Riksrevisionen RiR 2025:30 للضغط على ليلجيستراند (M) بشأن عقارات Statens fastighetsverk المدعومة — مبادرة رقابية عابرة للأحزاب داخل الائتلاف [B2]
+- يوثّق ماتس ويكينج (S) (HD10461) تراجع السويد إلى المرتبة 17/23 في الـESA وأدنى حصة قياسية في برامج الـESA الطوعية، عازياً ذلك إلى موافقة الحكومة على 100 مليون كرونة سويدية فحسب من طلب Rymdstyrelens للفترة 2026–2028 [A2]
+- رفعت ألمانيا وفرنسا وإيطاليا وإسبانيا وبولندا وكندا مساهماتها في الـESA بشكل ملحوظ في اجتماع الوزراء في نوفمبر 2025؛ خفّضت السويد حصتها إلى جانب عضوين آخرين فحسب [A2]
+- أُحيلَ كلا الاستجوابين إلى الوزراء في 2026-04-30؛ أُعلنت المناقشات في 2026-05-05؛ الموعد النهائي للرد 2026-05-21 [A1]
+- لا يرتبط أي من الاستجوابين بتصويت — فهما آليتان للمساءلة فحسب؛ تأثيرهما على الانضباط البرلماني محدود لكن الضغط على السمعة كبير [B1]
+
+### المحرّك الرئيسي للمستقبل
+
+إن لم يُعلن الوزير إيدهولم عن أي إجراء تصحيحي لميزانية الـESA قبل انتهاء مفاوضات ميزانية الحكومة السويدية في سبتمبر، فمن المرجح أن تُصعّد جمعيات صناعة الفضاء السويدية علنياً وقد تعود القضية في مشروع قانون سياسة البحث في الخريف.
+
+### نظرة عامة على Mermaid
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|challenges| B["Culture Minister\nLiljestrand (M)\nCultural Heritage"]
+    C["Mats Wiking (S)\nHD10461"] -->|challenges| D["Research Minister\nEdholm (L)\nESA Funding"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA Budget +31%\nSweden rank 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_da.md -->
+
+### 🎯 BLUF
+
+To interpellationer indgivet 29.–30. april 2026 belyser kontrasterende styringssvigt i Tidö-koalitionen: SD holder koalitionspartneren kulturminister Liljestrand (M) ansvarlig for udskudt vedligeholdelse af statslige tilskudsejendomme (Riksrevisionens revision RiR 2025:30); mens oppositionens socialdemokrat Mats Wiking udfordrer forskningsminister Edholm (L) om Sveriges anomale tilbagetrækning fra ESA-finansiering — et af kun tre ESA-medlemmer, der reducerede bidrag på trods af en rekord 31 %-stigning ved ministermødet i november 2025. Begge debatter vil blive planlagt inden 5. maj 2026 med ministerielle svar senest 21. maj 2026.
+
+### 🧭 3 Beslutninger dette briefing understøtter
+
+1. **Kulturarvsporteføljeforsvarere og civilsamfund**: Overvåg om minister Liljestrand forpligter sig til en omfattende vedligeholdelsesundersøgelse og langsigtet plan for statslige tilskudsejendomme — en forudsætning for EU's kulturarvsfinansieringsansøgninger og privat medfinansiering.
+2. **Rumindustriaktører og ESA-partnere**: Vurder om minister Edholm vil annoncere en korrigerende budgetomfordeling for at genoprette Sveriges ESA-programandel inden næste ESA-ministercyklus og forhindre svenske virksomheder i at miste adgang til EU's offentlige indkøb.
+3. **Parlamentariske udvalgsformænd (KU, UbU)**: Begge interpellationer åbner formelle tilsynsvinduer — KU om inter-koalitionsansvar for kulturejendommenes forvaltning; UbU om sammenhæng i forsknings- og industripolitikken i rumsektoren.
+
+### 60-sekunders efterretningspunkter
+
+- SD's Pia Trollehjelm (interpellation HD10460) påberåber Riksrevisionens revision RiR 2025:30 for at presse M's Liljestrand om Statens fastighetsverks tilskudsejendomme — et tværpolitisk tilsynsinitiativ inden for koalitionen [B2]
+- S's Mats Wiking (HD10461) dokumenterer Sveriges fald til ESA-rang 17/23 og en rekordlav andel af frivillige ESA-programmer, som tilskrives regeringens godkendelse af kun 100 MSEK af Rymdstyrelens anmodning for 2026–2028 [A2]
+- Tyskland, Frankrig, Italien, Spanien, Polen og Canada øgede markant deres ESA-bidrag ved ministermødet i november 2025; Sverige reducerede sin andel sammen med kun to andre medlemmer [A2]
+- Begge interpellationer blev videresendt til ministrene den 2026-04-30; debatter annonceret 2026-05-05; svarfrist 2026-05-21 [A1]
+- Ingen afstemning er knyttet til nogen af interpellationerne — de er udelukkende ansvarlighedsmekanismer; indvirkningen på parlamentarisk disciplin er begrænset, men omdømmemæssigt pres er betydeligt [B1]
+
+### Ledende fremadrettet indikator
+
+Hvis minister Edholm ikke annoncerer nogen korrigerende ESA-budgetforanstaltning inden forhandlingerne om den svenske statsbudget afsluttes i september, vil svenske rumbrancheorganisationer sandsynligvis eskalere offentligt, og spørgsmålet kan genopstå i efterårets forskningspolitiske lovforslag.
+
+### Mermaid-oversigt
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|udfordrer| B["Kulturminister\nLiljestrand (M)\nKulturarv"]
+    C["Mats Wiking (S)\nHD10461"] -->|udfordrer| D["Forskningsminister\nEdholm (L)\nESA-finansiering"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA-budget +31%\nSverige rang 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_de.md -->
+
+### 🎯 BLUF
+
+Zwei am 29.–30. April 2026 eingereichte Interpellationen beleuchten gegensätzliche Governance-Mängel in der Tidö-Koalition: SD hält Koalitionspartner Kulturministerin Liljestrand (M) für den aufgeschobenen Unterhalt staatlicher Förderliegenschaften verantwortlich (Riksrevisionen-Prüfung RiR 2025:30); während der oppositionelle Sozialdemokrat Mats Wiking Forschungsminister Edholm (L) wegen Schwedens anomalem Rückzug bei der ESA-Finanzierung herausfordert — eines von nur drei ESA-Mitgliedern, das Beiträge trotz einer Rekordzunahme von 31 % beim Ministertreffen im November 2025 reduzierte. Beide Debatten werden bis zum 5. Mai 2026 angesetzt, mit ministeriellen Antworten bis zum 21. Mai 2026.
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Kulturerbeverantwortliche und Zivilgesellschaft**: Überwachen Sie, ob sich Ministerin Liljestrand zu einer umfassenden Wartungserhebung und einem langfristigen Plan für staatliche Förderliegenschaften verpflichtet — Voraussetzung für EU-Kulturerbe-Förderanträge und private Kofinanzierung.
+2. **Raumfahrtindustrieakteure und ESA-Partner**: Beurteilen Sie, ob Minister Edholm eine korrigierende Haushaltsumverteilung zur Wiederherstellung von Schwedens ESA-Programmanteil vor dem nächsten ESA-Ministerzyklus ankündigen wird, um zu verhindern, dass schwedische Unternehmen den Zugang zur EU-Vergabe öffentlicher Aufträge verlieren.
+3. **Parlamentarische Ausschussvorsitzende (KU, UbU)**: Beide Interpellationen eröffnen formale Kontrollmöglichkeiten — KU zur koalitionsinternen Rechenschaftspflicht für die Pflege kultureller Liegenschaften; UbU zur Kohärenz der Forschungs- und Industriepolitik im Raumfahrtsektor.
+
+### 60-Sekunden-Erkenntnisse
+
+- SDs Pia Trollehjelm (Interpellation HD10460) beruft sich auf die Riksrevisionen-Prüfung RiR 2025:30, um Ms Liljestrand wegen der Liegenschaften von Statens fastighetsverk unter Druck zu setzen — ein parteiübergreifendes Kontrollinitiativ innerhalb der Koalition [B2]
+- Ss Mats Wiking (HD10461) dokumentiert Schwedens Abstieg auf ESA-Rang 17/23 und einen Rekordniedrigstand beim Anteil an freiwilligen ESA-Programmen, was auf die Genehmigung von nur 100 MSEK des Antrags von Rymdstyrelens für 2026–2028 durch die Regierung zurückgeführt wird [A2]
+- Deutschland, Frankreich, Italien, Spanien, Polen und Kanada erhöhten ihre ESA-Beiträge beim Ministertreffen im November 2025 erheblich; Schweden reduzierte seinen Anteil gemeinsam mit nur zwei anderen Mitgliedern [A2]
+- Beide Interpellationen wurden am 2026-04-30 an die Minister weitergeleitet; Debatten angekündigt am 2026-05-05; Antwortfrist 2026-05-21 [A1]
+- Keine Abstimmung ist mit einer der Interpellationen verbunden — sie sind ausschließlich Rechenschaftsmechanismen; die Auswirkungen auf die parlamentarische Disziplin sind begrenzt, aber der Reputationsdruck ist erheblich [B1]
+
+### Führender Vorwärtsindikator
+
+Wenn Minister Edholm keine korrigierende ESA-Budgetmaßnahme ankündigt, bevor die Verhandlungen über den schwedischen Staatshaushalt im September abgeschlossen sind, werden schwedische Raumfahrtbranchenverbände voraussichtlich öffentlich eskalieren und das Thema könnte im Herbst-Forschungspolitikgesetzentwurf wieder auftauchen.
+
+### Mermaid-Übersicht
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|fordert heraus| B["Kulturministerin\nLiljestrand (M)\nKulturerbe"]
+    C["Mats Wiking (S)\nHD10461"] -->|fordert heraus| D["Forschungsminister\nEdholm (L)\nESA-Finanzierung"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA-Budget +31%\nSchweden Rang 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_es.md -->
+
+### 🎯 BLUF
+
+Dos interpelaciones presentadas el 29-30 de abril de 2026 ponen de relieve fallos de gobernanza contrastados en la coalición Tidö: SD responsabiliza a su socio de coalición, la ministra de Cultura Liljestrand (M), por el mantenimiento diferido de propiedades con subvenciones estatales (auditoría de la Riksrevisionen RiR 2025:30); mientras que el socialdemócrata de la oposición Mats Wiking desafía al ministro de Investigación Edholm (L) por la anómala retirada de Suecia de la financiación de la ESA — uno de solo tres miembros de la ESA que redujeron contribuciones a pesar de un aumento récord del 31 % en la reunión ministerial de noviembre de 2025. Ambos debates se programarán antes del 5 de mayo de 2026, con respuestas ministeriales antes del 21 de mayo de 2026.
+
+### 🧭 3 decisiones que este informe apoya
+
+1. **Gestores de carteras de patrimonio cultural y sociedad civil**: Vigilar si la ministra Liljestrand se compromete a realizar un estudio de mantenimiento integral y un plan a largo plazo para las propiedades con subvenciones estatales — condición previa para las solicitudes de financiación del Patrimonio de la UE y la co-inversión del sector privado.
+2. **Actores de la industria espacial y socios de la ESA**: Evaluar si el ministro Edholm anunciará una reasignación presupuestaria correctiva para restaurar la cuota del programa ESA de Suecia antes del próximo ciclo ministerial de la ESA, evitando que las empresas suecas pierdan el acceso a la contratación pública de la UE.
+3. **Presidentes de comisiones parlamentarias (KU, UbU)**: Ambas interpelaciones abren ventanas formales de control — KU sobre la responsabilidad inter-coalición en la gestión de propiedades culturales; UbU sobre la coherencia de la política de investigación e industrial en el sector espacial.
+
+### Puntos de inteligencia en 60 segundos
+
+- Pia Trollehjelm (SD) (interpelación HD10460) invoca la auditoría de la Riksrevisionen RiR 2025:30 para presionar a Liljestrand (M) sobre las propiedades subvencionadas de Statens fastighetsverk — una iniciativa de control multipartidista dentro de la coalición [B2]
+- Mats Wiking (S) (HD10461) documenta la caída de Suecia al rango 17/23 en la ESA y una cuota récord mínima en programas voluntarios de la ESA, atribuyéndola a que el gobierno aprobó solo 100 MSEK de la solicitud de Rymdstyrelens para 2026–2028 [A2]
+- Alemania, Francia, Italia, España, Polonia y Canadá aumentaron significativamente sus contribuciones a la ESA en la reunión ministerial de noviembre de 2025; Suecia redujo su cuota junto con solo dos otros miembros [A2]
+- Ambas interpelaciones fueron remitidas a los ministros el 2026-04-30; debates anunciados el 2026-05-05; plazo de respuesta 2026-05-21 [A1]
+- Ninguna votación está vinculada a ninguna de las interpelaciones — son únicamente mecanismos de responsabilidad; el impacto en la disciplina parlamentaria es limitado, pero la presión sobre la reputación es significativa [B1]
+
+### Principal indicador prospectivo
+
+Si el ministro Edholm no anuncia ninguna medida presupuestaria correctiva para la ESA antes de que concluyan las negociaciones del presupuesto del gobierno sueco en septiembre, las asociaciones de la industria espacial sueca probablemente escalarán públicamente y el tema podría resurgir en el proyecto de ley de política de investigación de otoño.
+
+### Descripción general de Mermaid
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|desafía| B["Ministra de Cultura\nLiljestrand (M)\nPatrimonio cultural"]
+    C["Mats Wiking (S)\nHD10461"] -->|desafía| D["Ministro de Investigación\nEdholm (L)\nFinanciación ESA"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["Presupuesto ESA +31%\nSuecia rango 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_fi.md -->
+
+### �� BLUF
+
+Kaksi 29.–30. huhtikuuta 2026 jätettua interpellaatiota tuovat esiin Tidö-koalition vastakkaiset hallintopuutteet: SD vaatii koalitiokumppani kulttuuriministeri Liljestrandia (M) vastuuseen valtion tukikiinteistöjen lykätystä kunnossapidosta (Riksrevisionenin tarkastus RiR 2025:30); kun taas oppositiososialidemokraatti Mats Wiking haastaa tutkimusministeri Edholmin (L) Ruotsin poikkeuksellisesta ESA-rahoituksen vähennyksestä — yksi vain kolmesta ESA-jäsenestä, joka vähensi maksuja huolimatta marraskuun 2025 ministeritapaamisessa tehdystä 31 prosentin ennätysnoususta. Molemmat debatit aikataulutetaan viimeistään 5. toukokuuta 2026, ja ministerivastauksille on määräaika 21. toukokuuta 2026.
+
+### 🧭 3 päätöstä, joita tämä tiedote tukee
+
+1. **Kulttuuriperinnön portfolionhoitajat ja kansalaisyhteiskunta**: Seuraa, sitoutuuko ministeri Liljestrand kattavaan kunnossapitoselvitykseen ja pitkäaikaiseen suunnitelmaan valtion tukikiinteistöjä varten — edellytys EU:n kulttuuriperintörahoitushakemuksille ja yksityiselle yhteisrahoitukselle.
+2. **Avaruusteollisuuden sidosryhmät ja ESA-kumppanit**: Arvioi, ilmoittaako ministeri Edholm korjaavasta budjetin uudelleenjaosta Ruotsin ESA-ohjelmaosakkuuden palauttamiseksi ennen seuraavaa ESA-ministerikokousta, jotta ruotsalaiset yritykset eivät menettäisi EU:n julkisten hankintojen saantia.
+3. **Parlamentaaristen valiokuntien puheenjohtajat (KU, UbU)**: Molemmat interpellaatiot avaavat viralliset valvontaikkunat — KU koalition sisäisestä vastuusta kulttuuriomaisuuden hoidossa; UbU tutkimus- ja teollisuuspolitiikan johdonmukaisuudesta avaruussektorilla.
+
+### 60 sekunnin tietopisteet
+
+- SD:n Pia Trollehjelm (interpellaatio HD10460) vetoaa Riksrevisionenin tarkastukseen RiR 2025:30 painostaakseen M:n Liljestrandia Statens fastighetsverkin tukikiinteistöistä — koalition sisäinen puolueiden välinen valvonta-aloite [B2]
+- S:n Mats Wiking (HD10461) dokumentoi Ruotsin putoamisen ESA-sijoitukselle 17/23 ja vapaaehtoisten ESA-ohjelmien ennätyksellisen alhaisen osuuden, johtuen siitä, että hallitus hyväksyi vain 100 MSEK Rymdstyrelsenin pyynnöstä vuosille 2026–2028 [A2]
+- Saksa, Ranska, Italia, Espanja, Puola ja Kanada lisäsivät merkittävästi ESA-maksuosuuksiaan marraskuun 2025 ministeritapaamisessa; Ruotsi vähensi osuuttaan vain kahden muun jäsenen tavoin [A2]
+- Molemmat interpellaatiot toimitettiin ministereille 2026-04-30; debatit ilmoitettu 2026-05-05; vastausmääräaika 2026-05-21 [A1]
+- Kumpaankaan interpellaatioon ei liity äänestystä — ne ovat ainoastaan vastuuvelvollisuusmekanismeja; parlamentaarisen kurinalaisuuden vaikutus on rajallinen, mutta mainevaikutus on merkittävä [B1]
+
+### Johtava eteenpäin katsova indikaattori
+
+Jos ministeri Edholm ei ilmoita korjaavasta ESA-budjettitoimenpiteestä ennen Ruotsin hallituksen talousarviovalmistelun päättymistä syyskuussa, ruotsalaiset avaruusteollisuusjärjestöt todennäköisesti eskaloivat julkisesti ja asia voi nousta uudelleen syksyn tutkimuspoliittisessa esityksessä.
+
+### Mermaid-yleiskatsaus
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|haastaa| B["Kulttuuriministeri\nLiljestrand (M)\nKulttuuriperintö"]
+    C["Mats Wiking (S)\nHD10461"] -->|haastaa| D["Tutkimusministeri\nEdholm (L)\nESA-rahoitus"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA-budjetti +31%\nRuotsi sija 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_fr.md -->
+
+### 🎯 BLUF
+
+Deux interpellations déposées les 29-30 avril 2026 mettent en lumière des défaillances de gouvernance contrastées au sein de la coalition Tidö : le SD tient son partenaire de coalition, la ministre de la Culture Liljestrand (M), responsable du report de l'entretien des propriétés bénéficiant de subventions d'État (audit de la Riksrevisionen RiR 2025:30) ; tandis que le socialiste de l'opposition Mats Wiking interroge le ministre de la Recherche Edholm (L) sur le retrait anomal de la Suède du financement de l'ESA — l'un des seulement trois membres de l'ESA à avoir réduit ses contributions malgré une augmentation record de 31 % lors de la réunion ministérielle de novembre 2025. Les deux débats seront programmés avant le 5 mai 2026, avec des réponses ministérielles attendues avant le 21 mai 2026.
+
+### 🧭 3 décisions que ce briefing soutient
+
+1. **Gestionnaires du portefeuille du patrimoine culturel et société civile** : Surveiller si la ministre Liljestrand s'engage à réaliser un état des lieux complet de l'entretien et un plan à long terme pour les propriétés subventionnées par l'État — condition préalable aux demandes de financement EU Heritage et au co-investissement du secteur privé.
+2. **Acteurs de l'industrie spatiale et partenaires de l'ESA** : Évaluer si le ministre Edholm annoncera une réallocation budgétaire corrective pour restaurer la part de programme ESA de la Suède avant le prochain cycle ministériel de l'ESA, empêchant les entreprises suédoises de perdre l'accès aux marchés publics européens.
+3. **Présidents de commissions parlementaires (KU, UbU)** : Les deux interpellations ouvrent des fenêtres de contrôle formelles — KU sur la responsabilité inter-coalition pour la gestion des propriétés culturelles ; UbU sur la cohérence de la politique de recherche et industrielle dans le secteur spatial.
+
+### Informations en 60 secondes
+
+- Pia Trollehjelm du SD (interpellation HD10460) invoque l'audit de la Riksrevisionen RiR 2025:30 pour faire pression sur Liljestrand (M) concernant les propriétés subventionnées de Statens fastighetsverk — une initiative de contrôle transpartisane au sein de la coalition [B2]
+- Mats Wiking (S) (HD10461) documente la chute de la Suède au rang 17/23 de l'ESA et une part record au plus bas des programmes ESA volontaires, attribuant cela à l'approbation par le gouvernement de seulement 100 MSEK de la demande de Rymdstyrelens pour 2026–2028 [A2]
+- L'Allemagne, la France, l'Italie, l'Espagne, la Pologne et le Canada ont considérablement augmenté leurs contributions à l'ESA lors de la réunion ministérielle de novembre 2025 ; la Suède a réduit sa part avec seulement deux autres membres [A2]
+- Les deux interpellations ont été transmises aux ministres le 2026-04-30 ; débats annoncés le 2026-05-05 ; délai de réponse 2026-05-21 [A1]
+- Aucun vote n'est lié à l'une ou l'autre des interpellations — elles constituent uniquement des mécanismes de responsabilité ; l'impact sur la discipline parlementaire est limité, mais la pression sur la réputation est significative [B1]
+
+### Principal indicateur avancé
+
+Si le ministre Edholm n'annonce aucune mesure corrective budgétaire concernant l'ESA avant la clôture des négociations budgétaires du gouvernement suédois en septembre, les associations de l'industrie spatiale suédoise risquent d'escalader publiquement et la question pourrait ressurgir dans le projet de loi sur la politique de recherche de l'automne.
+
+### Aperçu Mermaid
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|remet en cause| B["Ministre de la Culture\nLiljestrand (M)\nPatrimoine culturel"]
+    C["Mats Wiking (S)\nHD10461"] -->|remet en cause| D["Ministre de la Recherche\nEdholm (L)\nFinancement ESA"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["Budget ESA +31%\nSuède rang 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# דיוני שאילתות ב-30 באפריל 2026: הזנחת מורשת תרבות ונסיגת שוודיה מהחלל
+
+### 🎯 תמצית מנהלים
+
+שתי שאילתות שהוגשו ב-29-30 באפריל 2026 מאירות כשלי ממשל מנוגדים בקואליציית טידו: SD מבקשת דין וחשבון משותפת הקואליציה שרת התרבות ליליסטרנד (M) על דחיית תחזוקת נכסי המענקים הממשלתיים (ביקורת Riksrevisionen RiR 2025:30)؛ בעוד הסוציאל-דמוקרט מן האופוזיציה מאטס ויקינג מאתגר את שר המחקר אדהולם (L) על נסיגתה החריגה של שוודיה ממימון ה-ESA — אחד מרק שלושה חברים ב-ESA שהפחיתו תרומות למרות עלייה שיא של 31% בישיבת השרים בנובמבר 2025. שני הדיונים יתוכננו עד 5 במאי 2026 עם מועד אחרון לתשובות שרים עד 21 במאי 2026.
+
+### 🧭 3 החלטות שסיכום זה תומך בהן
+
+1. **מנהלי תיק מורשת התרבות ואנשי החברה האזרחית**: לעקוב אחר שאלת ההתחייבות של שרת ליליסטרנד לסקר תחזוקה מקיף ותוכנית ארוכת טווח לנכסי מענקים ממשלתיים — תנאי מוקדם לבקשות מימון מורשת האיחוד האירופי ולהשקעה משותפת מהמגזר הפרטי.
+2. **בעלי עניין בתעשיית החלל ושותפי ESA**: להעריך אם שר אדהולם יכריז על הקצאת תקציב מתקנת לשיקום נתח התוכנית של שוודיה ב-ESA לפני מחזור השרים הבא של ESA, ולמנוע מחברות שוודיות לאבד גישה לרכש ציבורי של האיחוד האירופי.
+3. **יושבי ראש ועדות פרלמנטריות (KU, UbU)**: שתי השאילתות פותחות חלונות פיקוח רשמיים — KU על אחריות קואליציונית הדדית לניהול נכסים תרבותיים; UbU על עקביות מדיניות המחקר והתעשייה במגזר החלל.
+
+### נקודות מודיעין ב-60 שניות
+
+- פיה טרולהיה (SD) (שאילתה HD10460) מסתמכת על ביקורת Riksrevisionen RiR 2025:30 כדי להפעיל לחץ על ליליסטרנד (M) בנוגע לנכסי Statens fastighetsverk — יוזמת פיקוח חוצת מפלגות בתוך הקואליציה [B2]
+- מאטס ויקינג (S) (HD10461) מתעד את נפילת שוודיה לדרגה 17/23 ב-ESA ונתח שיא נמוך בתוכניות ESA הוולונטריות, בשל אישור הממשלה רק 100 מיליון כרונות שוודיות מבקשת Rymdstyrelens לשנים 2026–2028 [A2]
+- גרמניה, צרפת, איטליה, ספרד, פולין וקנדה הגדילו משמעותית את תרומותיהן ל-ESA בישיבת השרים בנובמבר 2025; שוודיה הפחיתה את נתחה יחד עם שני חברים בלבד [A2]
+- שתי השאילתות הועברו לשרים ב-2026-04-30; דיונים הוכרזו ב-2026-05-05; מועד אחרון לתשובה 2026-05-21 [A1]
+- שום הצבעה אינה מצורפת לאף אחת מהשאילתות — הן מנגנוני אחריות בלבד; ההשפעה על משמעת פרלמנטרית מוגבלת אך הלחץ התדמיתי משמעותי [B1]
+
+### מחוון קדימה מוביל
+
+אם שר אדהולם לא יכריז על צעד תקציבי מתקן ל-ESA לפני סיום משא ומתן תקציב הממשלה השוודית בספטמבר, ארגוני תעשיית החלל השוודיים עשויים להסלים את הנושא בפומבי והוא עלול לחזור בהצעת מדיניות המחקר בסתיו.
+
+### סקירת Mermaid
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|challenges| B["Culture Minister\nLiljestrand (M)\nCultural Heritage"]
+    C["Mats Wiking (S)\nHD10461"] -->|challenges| D["Research Minister\nEdholm (L)\nESA Funding"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA Budget +31%\nSweden rank 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_ja.md -->
+
+### 🎯 要旨
+
+2026年4月29〜30日に提出された二つの質問は、ティドー連立政権内の対照的なガバナンス上の欠陥を浮き彫りにしています。SDは連立パートナーのリリエストランド文化大臣（M）に対し、国家補助金対象物件の保守点検が先送りされていることへの責任を追及しており（リクスレビション監査 RiR 2025:30）、一方で野党社会民主党のマッツ・ヴィキングはESA資金拠出におけるスウェーデンの異例な削減についてエドホルム研究大臣（L）に説明を求めています。スウェーデンは2025年11月の閣僚会議で記録的な31%増となったにもかかわらず、拠出金を減らしたわずか3カ国のうちの一国です。両討論は2026年5月5日までにスケジュールされ、大臣回答の期限は2026年5月21日です。
+
+### 🧭 この報告が支援する3つの意思決定
+
+1. **文化遺産ポートフォリオ管理者と市民社会**: リリエストランド大臣が国家補助金対象物件の包括的な保守調査と長期計画に取り組む意向を示すかどうかを監視する — EU文化遺産助成申請および民間の共同投資の前提条件となります。
+2. **宇宙産業関係者とESAパートナー**: エドホルム大臣が次のESA閣僚サイクルの前にスウェーデンのESAプログラム分担を回復するための是正予算再配分を発表するかどうかを評価する — スウェーデン企業がEU公共調達へのアクセスを失うことを防ぐためです。
+3. **国会委員会委員長（KU、UbU）**: 両質問は正式な監視機会を開きます — KU：文化財管理における連立内の相互説明責任について；UbU：宇宙分野における研究・産業政策の一貫性について。
+
+### 60秒インテリジェンス・ポイント
+
+- SDのピア・トロレヘルム（質問 HD10460）はリクスレビション監査 RiR 2025:30 を援用し、Statens fastighetsverkの補助金対象物件についてMのリリエストランドに圧力をかけています — 連立内における超党派の監視イニシアチブ [B2]
+- Sのマッツ・ヴィキング（HD10461）はスウェーデンのESA順位が17/23位に低下し、任意ESAプログラムへの参加が過去最低水準となっていることを記録しており、政府が2026〜2028年のRymdstyrelensの要求額のうちわずか1億スウェーデンクローナ（MSEK）しか承認しなかったことが原因と指摘しています [A2]
+- ドイツ、フランス、イタリア、スペイン、ポーランド、カナダは2025年11月の閣僚会議でESA拠出金を大幅に増額。スウェーデンはわずか2カ国とともに分担を削減しました [A2]
+- 両質問は2026-04-30に大臣に送付；討論は2026-05-05に告知；回答期限 2026-05-21 [A1]
+- いずれの質問にも採決は伴っていません — それらは説明責任のメカニズムに過ぎません。国会の規律への影響は限定的ですが、レピュテーションへの圧力は相当なものです [B1]
+
+### 主要な先行指標
+
+もしエドホルム大臣が9月のスウェーデン政府予算交渉が終わるまでにESA予算の是正措置を発表しなければ、スウェーデンの宇宙産業団体が公に問題を拡大し、秋の研究政策法案でこの問題が再び浮上する可能性が高いです。
+
+### Mermaid概要
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|challenges| B["Culture Minister\nLiljestrand (M)\nCultural Heritage"]
+    C["Mats Wiking (S)\nHD10461"] -->|challenges| D["Research Minister\nEdholm (L)\nESA Funding"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA Budget +31%\nSweden rank 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_ko.md -->
+
+### 🎯 요약
+
+2026년 4월 29~30일에 제출된 두 건의 질문서는 티도 연립정부 내의 대조적인 거버넌스 실패를 조명합니다. SD는 연립 파트너인 릴리에스트란드 문화부장관(M)에게 국가 보조금 부동산의 유지보수 지연에 대한 책임을 묻고 있으며(릭스레비시온 감사 RiR 2025:30), 반면 야당 사민당의 마츠 비킹은 ESA 자금 지원에서 스웨덴이 이례적으로 후퇴한 것에 대해 에드홀름 연구부장관(L)에게 도전장을 던지고 있습니다. 스웨덴은 2025년 11월 장관 회의에서 기록적인 31% 증가에도 불구하고 기여금을 줄인 단 3개 ESA 회원국 중 하나입니다. 두 토론은 모두 2026년 5월 5일까지 일정이 잡힐 예정이며, 장관 답변 기한은 2026년 5월 21일입니다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **문화유산 포트폴리오 관리자 및 시민사회**: 릴리에스트란드 장관이 국가 보조금 부동산에 대한 포괄적인 유지보수 조사와 장기 계획을 약속하는지 모니터링 — EU 문화유산 자금 신청과 민간 공동 투자를 위한 전제조건.
+2. **우주산업 이해관계자 및 ESA 파트너**: 에드홀름 장관이 다음 ESA 장관 사이클 전에 스웨덴의 ESA 프로그램 점유율을 회복하기 위한 수정 예산 재배분을 발표할지 평가 — 스웨덴 기업들이 EU 공공조달 접근권을 잃지 않도록 하기 위함.
+3. **국회 위원회 의장(KU, UbU)**: 두 질문서 모두 공식 감독 기회를 엽니다 — KU: 문화재 관리에 대한 연립 내 상호 책임; UbU: 우주 분야 연구 및 산업 정책의 일관성.
+
+### 60초 정보 포인트
+
+- SD의 피아 트롤레헬름(질문 HD10460)은 릭스레비시온 감사 RiR 2025:30을 근거로 Statens fastighetsverks의 보조금 부동산에 대해 M의 릴리에스트란드를 압박 — 연립 내 초당파 감독 이니셔티브 [B2]
+- S의 마츠 비킹(HD10461)은 스웨덴이 ESA 순위 17/23위로 하락하고 자발적 ESA 프로그램 점유율이 사상 최저를 기록했음을 문서화했으며, 정부가 2026~2028년 Rymdstyrelens 요청 중 불과 1억 크로나(MSEK)만 승인한 것이 원인이라고 지적 [A2]
+- 독일, 프랑스, 이탈리아, 스페인, 폴란드, 캐나다는 2025년 11월 장관 회의에서 ESA 기여금을 대폭 늘렸으며, 스웨덴은 단 두 나라와 함께 점유율을 줄였습니다 [A2]
+- 두 질문서 모두 2026-04-30에 장관에게 전달; 토론 2026-05-05에 공고; 답변 기한 2026-05-21 [A1]
+- 두 질문서 모두 표결이 없습니다 — 책임 메커니즘에 불과하므로 의회 규율에 미치는 영향은 제한적이지만 평판 압박은 상당합니다 [B1]
+
+### 주요 선행 지표
+
+에드홀름 장관이 9월 스웨덴 정부 예산 협상이 마무리되기 전에 ESA 예산 수정 조치를 발표하지 않으면, 스웨덴 우주산업 협회들이 공개적으로 문제를 확대할 가능성이 높으며 가을 연구정책 법안에서 이 문제가 다시 대두될 수 있습니다.
+
+### Mermaid 개요
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|challenges| B["Culture Minister\nLiljestrand (M)\nCultural Heritage"]
+    C["Mats Wiking (S)\nHD10461"] -->|challenges| D["Research Minister\nEdholm (L)\nESA Funding"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA Budget +31%\nSweden rank 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_nl.md -->
+
+### 🎯 BLUF
+
+Twee op 29-30 april 2026 ingediende interpellaties belichten contrasterende bestuursfalen in de Tidö-coalitie: SD houdt coalitiegenoot cultuurminister Liljestrand (M) verantwoordelijk voor uitgesteld onderhoud van staatsgefinancierde panden (Riksrevisionen-audit RiR 2025:30); terwijl oppositiesociaaldemocraatMats Wiking onderzoeksminister Edholm (L) uitdaagt over Zweden's anomale terugtrekking uit ESA-financiering — een van slechts drie ESA-leden die bijdragen verminderden ondanks een recordstijging van 31% op de ministeriële vergadering van november 2025. Beide debatten worden gepland vóór 5 mei 2026 met ministeriële reacties uiterlijk 21 mei 2026.
+
+### 🧭 3 beslissingen die dit briefing ondersteunt
+
+1. **Erfgoedbeheerders en maatschappelijk middenveld**: Monitor of minister Liljestrand zich committeert aan een uitgebreid onderhoudsonderzoek en langetermijnplan voor staatsgefinancierde panden — een vereiste voor EU Heritage-financieringsaanvragen en private co-investering.
+2. **Ruimtevaartindustrieactoren en ESA-partners**: Beoordeel of minister Edholm een corrigerende budgetherverdeling zal aankondigen om het ESA-programma-aandeel van Zweden te herstellen vóór de volgende ESA-ministercyclus, zodat Zweedse bedrijven geen toegang tot EU-overheidsopdrachten verliezen.
+3. **Parlementaire commissievoorzitters (KU, UbU)**: Beide interpellaties openen formele controlemogelijkheden — KU over inter-coalitie aansprakelijkheid voor het beheer van cultureel erfgoed; UbU over de samenhang van het onderzoeks- en industriebeleid in de ruimtevaartsector.
+
+### 60-seconden inlichtingenpunten
+
+- SD's Pia Trollehjelm (interpellatie HD10460) beroept zich op de Riksrevisionen-audit RiR 2025:30 om druk uit te oefenen op M's Liljestrand over de gesubsidieerde panden van Statens fastighetsverk — een partijoverschrijdend controle-initiatief binnen de coalitie [B2]
+- S's Mats Wiking (HD10461) documenteert Zweden's val naar ESA-rang 17/23 en een recordlage deelname aan vrijwillige ESA-programma's, toegeschreven aan de goedkeuring door de regering van slechts 100 MSEK van Rymdstyrelens verzoek voor 2026–2028 [A2]
+- Duitsland, Frankrijk, Italië, Spanje, Polen en Canada verhoogden hun ESA-bijdragen aanzienlijk op de ministeriële vergadering van november 2025; Zweden verlaagde zijn aandeel samen met slechts twee andere leden [A2]
+- Beide interpellaties werden op 2026-04-30 doorgestuurd naar ministers; debatten aangekondigd op 2026-05-05; antwoorddeadline 2026-05-21 [A1]
+- Geen stemming is gekoppeld aan een van de interpellaties — het zijn uitsluitend verantwoordingsmechanismen; impact op parlementaire discipline is beperkt maar reputatiedruk is aanzienlijk [B1]
+
+### Belangrijkste vooruitlopende indicator
+
+Als minister Edholm geen corrigerende ESA-budgetmaatregel aankondigt voordat de onderhandelingen over de Zweedse staatsbegroting in september afsluiten, zullen Zweedse ruimtevaartsbrancheorganisaties waarschijnlijk publiekelijk escaleren en het onderwerp kan terugkeren in het herfst-onderzoeksbeleidswetsvoorstel.
+
+### Mermaid-overzicht
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|daagt uit| B["Cultuurminister\nLiljestrand (M)\nCultureel erfgoed"]
+    C["Mats Wiking (S)\nHD10461"] -->|daagt uit| D["Onderzoeksminister\nEdholm (L)\nESA-financiering"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA-budget +31%\nZweden rang 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_no.md -->
+
+### 🎯 BLUF
+
+To interpellasjoner innlevert 29.–30. april 2026 belyser kontrasterende styringssvikt i Tidö-koalisjonen: SD holder koalisjonspartneren kulturminister Liljestrand (M) ansvarlig for utsatt vedlikehold av statlige tilskuddeiendommer (Riksrevisjonens revisjon RiR 2025:30); mens opposisjonens sosialdemokrat Mats Wiking utfordrer forskningsminister Edholm (L) om Sveriges avvikende tilbaketrekning fra ESA-finansiering — ett av kun tre ESA-medlemmer som reduserte bidrag til tross for en rekordøkning på 31 % ved ministermøtet i november 2025. Begge debattene vil bli planlagt innen 5. mai 2026, med ministerielle svar innen 21. mai 2026.
+
+### 🧭 3 Beslutninger dette briefet støtter
+
+1. **Kulturarvsporteføljeforvaltere og sivilsamfunn**: Følg med på om minister Liljestrand forplikter seg til en omfattende vedlikeholdsundersøkelse og langsiktig plan for statlige tilskuddeiendommer — en forutsetning for EUs kulturarvsstøtteansøkninger og privat medfinansiering.
+2. **Romfartsindustriaktører og ESA-partnere**: Vurder om minister Edholm vil kunngjøre en korrigerende budsjettomfordeling for å gjenopprette Sveriges ESA-programandel før neste ESA-ministersyklus, og forhindre at svenske selskaper mister tilgang til EUs offentlige anskaffelser.
+3. **Parlamentariske utvalgsformenn (KU, UbU)**: Begge interpellasjoner åpner formelle tilsynsvinduer — KU om inter-koalisjonsansvar for forvaltning av kultureiendommer; UbU om sammenheng i forsknings- og industripolitikken i romsektoren.
+
+### 60-sekunders etterretningspunkter
+
+- SDs Pia Trollehjelm (interpellasjon HD10460) påberoper Riksrevisjonens revisjon RiR 2025:30 for å presse Ms Liljestrand om Statens fastighetsverks tilskuddeiendommer — et tverrpolitisk tilsynstiltak innenfor koalisjonen [B2]
+- Ss Mats Wiking (HD10461) dokumenterer Sveriges fall til ESA-rang 17/23 og en rekordlav andel av frivillige ESA-programmer, tilskrevet at regjeringen godkjente bare 100 MSEK av Rymdstyrelens forespørsel for 2026–2028 [A2]
+- Tyskland, Frankrike, Italia, Spania, Polen og Canada økte sine ESA-bidrag betydelig ved ministermøtet i november 2025; Sverige reduserte sin andel sammen med kun to andre medlemmer [A2]
+- Begge interpellasjoner ble videresendt til ministrene 2026-04-30; debatter kunngjort 2026-05-05; svarfrist 2026-05-21 [A1]
+- Ingen avstemning er knyttet til noen av interpellasjonene — de er utelukkende ansvarlighetsmekanismer; innvirkning på parlamentarisk disiplin er begrenset, men omdømmemessig press er betydelig [B1]
+
+### Ledende fremoverindikator
+
+Dersom minister Edholm ikke kunngjør noen korrigerende ESA-budsjettiltak før forhandlingene om det svenske statsbudsjettet avsluttes i september, vil svenske romfartsbransjeorganisasjoner sannsynligvis eskalere offentlig, og saken kan gjenta seg i høstens forskningspolitiske forslag.
+
+### Mermaid-oversikt
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|utfordrer| B["Kulturminister\nLiljestrand (M)\nKulturarv"]
+    C["Mats Wiking (S)\nHD10461"] -->|utfordrer| D["Forskningsminister\nEdholm (L)\nESA-finansiering"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA-budsjett +31%\nSverige rang 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_sv.md -->
+
+### 🎯 BLUF
+
+Två interpellationer inlämnade 29–30 april 2026 belyser kontrasterande styrningsbrister i Tidökoalitionen: SD ställer koalitionspartnern kulturminister Liljestrand (M) till svars för uppskjutet underhåll av statsbidragsfastigheter (Riksrevisionens granskning RiR 2025:30); medan oppositionens socialdemokrat Mats Wiking ifrågasätter forskningsminister Edholm (L) om Sveriges avvikande minskning av ESA-finansiering — ett av endast tre ESA-länder som minskade bidrag trots en rekordökning på 31 % vid ministermötet i november 2025. Båda debatterna kommer att schemaläggas senast 5 maj 2026 med ministersvar senast 21 maj 2026.
+
+### 🧭 3 Beslut som detta briefing stödjer
+
+1. **Fastighetsansvariga för kulturarv och civilsamhälle**: Övervaka om minister Liljestrand förbinder sig till en heltäckande underhållsutredning och långsiktig plan för statsbidragsfastigheter — en förutsättning för EU:s kulturarvsfinansieringsansökningar och privat samfinansiering.
+2. **Rymdaktörer och ESA-partners**: Bedöm om minister Edholm kommer att avisera en korrigerande budgetomfördelning för att återställa Sveriges ESA-programandel inför nästa ESA-ministercykel och förhindra att svenska företag förlorar tillgång till EU:s offentliga upphandling.
+3. **Riksdagsutskottsordförande (KU, UbU)**: Båda interpellationerna öppnar formella tillsynsfönster — KU om koalitionens interna ansvar för förvaltning av kulturegendomar; UbU om sammanhang i forsknings- och industripolitiken inom rymdsektorn.
+
+### 60-sekunders underrättelse
+
+- SD:s Pia Trollehjelm (interpellation HD10460) åberopar Riksrevisionens granskning RiR 2025:30 för att pressa M:s Liljestrand om Statens fastighetsverks bidragsfastigheter — ett tvärpolitiskt tillsynsinitiativ inom koalitionen [B2]
+- S:s Mats Wiking (HD10461) dokumenterar Sveriges fall till ESA-plats 17/23 och en rekordlåg andel av frivilliga ESA-program, vilket tillskrivs att regeringen godkände endast 100 MSEK av Rymdstyrelens begäran för 2026–2028 [A2]
+- Tyskland, Frankrike, Italien, Spanien, Polen och Kanada ökade avsevärt sina ESA-bidrag vid ministermötet i november 2025; Sverige minskade sin andel tillsammans med endast två andra medlemmar [A2]
+- Båda interpellationerna vidarebefordrades till ministrarna 2026-04-30; debatter tillkännagivna 2026-05-05; svarsfrist 2026-05-21 [A1]
+- Ingen omröstning är kopplad till någon av interpellationerna — de är enbart ansvarsutkrävningsmekanismer; inverkan på parlamentarisk disciplin är begränsad men det anseendemässiga trycket är betydande [B1]
+
+### Ledande framåtindikator
+
+Om minister Edholm inte aviserar någon korrigerande ESA-budgetåtgärd innan förhandlingarna om den svenska statsbudgeten avslutas i september, kommer svenska rymdaktörsorganisationer sannolikt att eskalera offentligt och frågan kan återkomma i höstens forskningspolitiska proposition.
+
+### Mermaid-översikt
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|ifrågasätter| B["Kulturminister\nLiljestrand (M)\nKulturarv"]
+    C["Mats Wiking (S)\nHD10461"] -->|ifrågasätter| D["Forskningsminister\nEdholm (L)\nESA-finansiering"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA-budget +31%\nSverige plats 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_zh.md -->
+
+### 🎯 简报摘要
+
+2026年4月29至30日提交的两份质询揭示了蒂多联合政府内部截然不同的治理缺陷：瑞典民主党（SD）要求联合政府伙伴、文化部长莉利耶斯特兰德（M）就国家补贴房产的推迟维护问题（国家审计局审计RiR 2025:30）承担责任；而反对党社会民主党人马茨·维京则就瑞典在欧洲航天局（ESA）资助方面的异常撤退向研究部长埃德霍尔姆（L）发出质疑——尽管2025年11月部长级会议上ESA预算创纪录增长31%，瑞典仍是仅有的三个削减贡献的ESA成员之一。两场辩论均将在2026年5月5日前安排，部长回应截止日期为2026年5月21日。
+
+### 🧭 本简报支持的3项决策
+
+1. **文化遗产投资组合管理者与公民社会**：监测莉利耶斯特兰德部长是否承诺对国家补贴房产进行全面维护调查并制定长期计划——这是申请欧盟遗产基金和吸引私营部门共同投资的前提条件。
+2. **太空产业利益相关者与ESA合作伙伴**：评估埃德霍尔姆部长是否将宣布在下一个ESA部长级周期前进行修正性预算重新分配，以恢复瑞典在ESA计划中的份额，防止瑞典企业失去进入欧盟政府采购的资格。
+3. **议会委员会主席（KU、UbU）**：两份质询均开启了正式监督窗口——KU：涉及联合政府内部对文化财产管理的责任；UbU：涉及航天领域研究与产业政策的协调一致性。
+
+### 60秒情报要点
+
+- 瑞典民主党的皮娅·特罗尔赫尔姆（质询HD10460）援引国家审计局审计RiR 2025:30，就国家不动产委员会（Statens fastighetsverk）的补贴房产向温和联合党的莉利耶斯特兰德施压——联合政府内部跨党派监督举措 [B2]
+- 社会民主党的马茨·维京（HD10461）记录了瑞典在ESA中的排名下滑至17/23位，以及在自愿ESA项目中所占份额创历史新低，原因在于政府仅批准了Rymdstyrelens为2026年至2028年申请的1亿瑞典克朗（MSEK） [A2]
+- 德国、法国、意大利、西班牙、波兰和加拿大在2025年11月的部长级会议上大幅增加了ESA贡献；瑞典仅与另外两个成员一起削减了份额 [A2]
+- 两份质询均于2026-04-30转交给部长；辩论于2026-05-05公告；回复截止日期2026-05-21 [A1]
+- 两份质询均未附有表决——它们仅是问责机制；对议会纪律的影响有限，但声誉压力显著 [B1]
+
+### 主要前瞻指标
+
+若埃德霍尔姆部长在9月瑞典政府预算谈判结束前未宣布任何ESA预算纠正措施，瑞典太空产业协会可能会公开升级此事，该问题或将在秋季研究政策法案中再度浮现。
+
+### Mermaid概览
+
+```mermaid
+graph LR
+    A["Pia Trollehjelm (SD)\nHD10460"] -->|challenges| B["Culture Minister\nLiljestrand (M)\nCultural Heritage"]
+    C["Mats Wiking (S)\nHD10461"] -->|challenges| D["Research Minister\nEdholm (L)\nESA Funding"]
+    B --> E["Riksrevisionen\nRiR 2025:30"]
+    D --> F["ESA Budget +31%\nSweden rank 17/23"]
+    style A fill:#005B99,color:#fff
+    style C fill:#E8112d,color:#fff
+    style B fill:#52BDEC,color:#000
+    style D fill:#006AB3,color:#fff
+    style E fill:#FFD700,color:#000
+    style F fill:#FF8C00,color:#fff
+```
+
+<!-- source-sha: 1f8ac3fadc3c7198b50f9e6519083702a0185cd8 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
 
@@ -1177,6 +1755,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -6,7 +6,7 @@ date: 2026-04-29
 subfolder: propositions
 slug: 2026-04-29-propositions
 source_folder: analysis/daily/2026-04-29/propositions
-generated_at: 2026-05-21T02:19:50.721Z
+generated_at: 2026-05-22T12:25:06.093Z
 language: en
 layout: article
 ---
@@ -86,6 +86,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1649,13 +1662,777 @@ flowchart LR
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-04-28 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الاستثمار في البنية التحتية، وسلامة الأدوية، والتحول الرقمي البلدي: ثلاثة مشاريع قوانين في 28 أبريل 2026
+
+**المؤلف**: James Pether Sörling · **التاريخ**: 2026-04-29 · **التصنيف**: PUBLIC · **مستوى الثقة**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+قدّمت حكومة كريسترسون في 28 أبريل 2026 ثلاثة مشاريع قوانين ذات أوزان سياسية متباينة: يُخصّص الخطة الوطنية لبنية النقل التحتية 2026–2037 (Skr. 2025/26:259, HD03259) مبلغ 875 مليار كرونة سويدية للاستثمار في الطرق والسكك الحديدية والملاحة البحرية — وهي من أضخم مخصصات البنية التحتية في التاريخ السويدي الحديث. وبالتوازي مع ذلك، تُنظَّم اشتراطات الإرشاد عند شراء الأدوية المتاحة دون وصفة طبية (Prop. 2025/26:247, HD03247)، فضلاً عن أنظمة تقنية المعلومات لدى الجهات البلدية لمساحة الأراضي (Prop. 2025/26:257, HD03257). ويعكس جدول الأعمال بمجمله نمطاً من الحوكمة والرقابة: تُجمَع مبادرة توحيد البنية التحتية لتقنية المعلومات البلدية وتعزيز سلامة الأدوية مع الإطار الاستراتيجي للتنقل المستدام.
+
+### القرارات التي يدعمها هذا الموجز
+
+1. **أعضاء Riksdagen في لجان TU وSoU وCU** يجب إيلاء HD03259 الأولوية للمعالجة اللجنية فوراً — إذ يوجّه الخطةُ استثماراتٍ بالمليارات حتى عام 2037 مع تداعيات مباشرة على الدوائر الانتخابية والأولويات الإقليمية.
+2. **رؤساء المجالس البلدية وجهات مساحة الأراضي** يتعين عليهم التأكد من أن أنظمة إدارة الملفات القائمة تستوفي المتطلبات الجديدة في HD03257 في موعد أقصاه تاريخ دخول القانون حيز التنفيذ.
+3. **الجهات الصيدلانية والـ Socialstyrelsen** يجب أن تبادر إلى تحديد الأدوية الخاضعة لاشتراط الإرشاد الجديد في HD03247 وتكييف برامج التدريب.
+
+### 60 ثانية — أبرز النقاط
+
+- 🏗️ **HD03259** — الخطة الوطنية: 875 مليار كرونة، 12 عاماً، التركيز على السكك الحديدية + التكيف المناخي [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — أدوية دون وصفة: إلزامية الإرشاد الصيدلاني عند الشراء، تنفيذ توجيه الاتحاد الأوروبي [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — المساحة الرقمية: متطلبات أنظمة إلزامية للجهات البلدية، يرفع كفاءة قطاع العقارات [HD03257, Prop. 2025/26:257, CU]
+- ⚡ خطة البنية التحتية هي الأكثر إثارةً سياسياً — SD وV يشككان في الأولويات؛ M وC يدعمان الإطار
+- 🌍 تتوقع تقديرات صندوق النقد الدولي WEO أبريل-2026 نمو الناتج المحلي الإجمالي السويدي بنسبة +1.8% عام 2026 و+2.3% عام 2027؛ وتدعم مخصصات البنية التحتية كثيفة رأس المال جانب الطلب
+
+### المحرِّك الاستشرافي الأبرز
+
+**نشر لجنة النقل في Riksdagen (TU) تقريرها حول Skr. 2025/26:259** — المتوقع صيف 2026. إذا اقترحت اللجنة إعادة ترتيب الأولويات (مثل زيادة حصة السكك الحديدية على حساب الطرق)، يبرز خطر تجاوز الميزانية وتأخر المناقصات مما يؤثر على البلديات والمناطق.
+
+### مستوى الثقة
+
+`MEDIUM-HIGH [B2]` — التحليل مبني على ملخصات مشاريع القوانين المتاحة وقاعدة بيانات Riksdagen (HD03247/57/59)؛ النص القانوني الكامل غير متاح عبر MCP (بيانات وصفية فقط)؛ التوقعات الاقتصادية من تقرير صندوق النقد الدولي WEO أبريل-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+### تحسينات المرور الثاني
+
+#### سياق إضافي: متطلبات SD للبنية التحتية
+
+استناداً إلى اقتراح ميزانية Sverigedemokraterna لعام 2025/26 وتصريحات قيادة الحزب بشأن العجز في قطاع السكك الحديدية، يستلزم أن يتضمن NTP 2026–2037 ما لا يقل عن 30 مليار كرونة إضافية في استثمارات السكك الحديدية مقارنةً بـ NTP 2022–2033 كي يصوّت SD بنعم دون تحفظ. إذا انخفضت حصة السكك الحديدية دون 45% من الإطار الإجمالي (نحو 394 مليار كرونة)، تزداد مخاطر التحفظات الداخلية لـ SD أثناء معالجة تقرير لجنة TU. [HD03259]
+
+#### السياق الاقتصادي لصندوق النقد الدولي (موثَّق)
+
+تقرير صندوق النقد الدولي WEO أبريل-2026 للسويد:
+- نمو الناتج المحلي الإجمالي الحقيقي: +1.8% (2026)، +2.3% (2027)
+- الدين العام/الناتج المحلي الإجمالي: 34.3% — تمتلك السويد هامشاً مالياً ملحوظاً
+- التضخم (PCPIPCH): ~2.9% عام 2026
+- مخاطر تضخم البناء (تاريخياً CPI×2–3): ~6–9%
+
+**الاستنتاج**: تمتلك السويد القدرة المالية لتمويل الخطة البالغة 875 مليار كرونة، غير أن ضغط التكاليف الحقيقي خلال فترة التخطيط قد يُلزم بمراجعات في 2028–2030.
+
+#### تقييم الثقة
+
+| التقييم | المستوى | المبرر |
+|---------|---------|--------|
+| اعتماد HD03259 من Riksdagen | 80 % | أغلبية الائتلاف 176/349 |
+| اعتماد HD03247 دون تعديلات | 95 % | توجيه الاتحاد الأوروبي، توافق واسع |
+| اعتماد HD03257 | 92 % | مقترح تقني، معارضة ضئيلة |
+| تنفيذ NTP بالكامل | 40 % | تضخم البناء وتغيير الحكومة 2026 |
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling · **Dato**: 2026-04-29 · **Klassifikation**: PUBLIC · **Konfidensgrad**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+Regeringen Kristersson fremlagde den 28. april 2026 tre lovforslag med forskellige politiske tyngder: den nationale transportinfrastrukturplan 2026–2037 (Skr. 2025/26:259, HD03259) afsætter 875 milliarder svenske kroner til investeringer i veje, jernbaner og søfart — en af de mest omfattende infrastrukturbevillinger i moderne svensk historie. Parallelt reguleres krav om rådgivning ved køb af håndkøbslægemidler (Prop. 2025/26:247, HD03247) og it-systemer hos kommunale landinspektørmyndigheder (Prop. 2025/26:257, HD03257). Samlet demonstrerer dagsordenen et styre- og kontrolmønster: standardisering af kommunal IT-infrastruktur og styrket lægemiddelsikkerhed kombineres med den strategiske ramme for bæredygtig mobilitet.
+
+### Beslutninger dette underlag støtter
+
+1. **Riksdagens medlemmer i TU, SoU og CU** bør prioritere HD03259 til udvalgsbehandling straks — planen styrer milliardinvesteringer frem til 2037 med direkte konsekvenser for valgkredse og regionale prioriteringer.
+2. **Kommunalbestyrelsesformænd og landinspektørmyndigheder** skal sikre, at eksisterende sagsbehandlingssystemer opfylder de nye krav i HD03257 senest ved ikrafttrædelsesdatoen.
+3. **Apoteksaktører og Socialstyrelsen** bør hurtigst muligt kortlægge, hvilke lægemidler der falder under det nye rådgivningskrav i HD03247, og tilpasse uddannelsesindsatsen.
+
+### 60 sekunder — vigtigste punkter
+
+- 🏗️ **HD03259** — National plan: 875 mia. kr., 12 år, fokus jernbane + klimatilpasning [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — Håndkøbslægemidler: krav om farmaceutisk rådgivning ved køb, gennemfører EU-direktiv [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — Digital landinspektering: obligatoriske systemkrav til kommunale myndigheder, effektiviserer ejendomssektoren [HD03257, Prop. 2025/26:257, CU]
+- ⚡ Infrastrukturplanen er den politisk mest eksplosive — SD og V stiller spørgsmål ved prioriteringerne; M og C støtter rammen
+- 🌍 IMF WEO apr-2026 forudsiger Sveriges BNP-vækst til +1,8 % i 2026 og +2,3 % i 2027; kapitalintensive infrastrukturbevillinger understøtter efterspørgselssiden
+
+### Vigtigste fremadrettede udløsere
+
+**Riksdagens transportudvalg (TU) offentliggør betænkning om Skr. 2025/26:259** — forventet sommer 2026. Hvis TU foreslår omprioritering (f.eks. øget jernbaneandel på bekostning af vejudgifter), opstår risiko for budgetoverskridelse og forsinkede udbud, der påvirker kommuner og regioner.
+
+### Konfidensgrad
+
+`MEDIUM-HIGH [B2]` — Analyse baseret på tilgængelige lovforslagsoversigter og Riksdagens database (HD03247/57/59); fuld lovtekst ikke tilgængelig via MCP (kun metadata); økonomiske projektioner fra IMF WEO apr-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling · **Datum**: 2026-04-29 · **Einstufung**: PUBLIC · **Konfidenzniveau**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+Die Regierung Kristersson stellte am 28. April 2026 drei Gesetzentwürfe mit unterschiedlichen politischen Gewichten vor: Der nationale Transportinfrastrukturplan 2026–2037 (Skr. 2025/26:259, HD03259) stellt 875 Milliarden schwedische Kronen für Investitionen in Straßen, Eisenbahnen und Schifffahrt bereit — eine der umfangreichsten Infrastrukturbereitstellungen in der modernen schwedischen Geschichte. Parallel dazu werden die Beratungspflichten bei rezeptfreien Arzneimitteln (Prop. 2025/26:247, HD03247) und IT-Systeme kommunaler Vermessungsbehörden (Prop. 2025/26:257, HD03257) geregelt. Insgesamt zeigt die Tagesordnung ein Steuerungs- und Kontrollmuster: Die Standardisierung kommunaler IT-Infrastruktur und gestärkte Arzneimittelsicherheit werden mit dem strategischen Rahmen für nachhaltige Mobilität kombiniert.
+
+### Entscheidungen, die dieser Bericht unterstützt
+
+1. **Riksdag-Abgeordnete in TU, SoU und CU** sollten HD03259 sofort für die Ausschussbehandlung priorisieren — der Plan steuert Milliardeninvestitionen bis 2037 mit direkten Auswirkungen auf Wahlkreise und regionale Prioritäten.
+2. **Gemeinderat-Vorsitzende und Vermessungsbehörden** müssen sicherstellen, dass bestehende Fallverwaltungssysteme die neuen Anforderungen in HD03257 spätestens zum Inkrafttretensdatum erfüllen.
+3. **Apothekenakteure und die Socialstyrelsen** sollten so bald wie möglich ermitteln, welche Arzneimittel unter die neue Beratungspflicht in HD03247 fallen, und Schulungsmaßnahmen anpassen.
+
+### 60 Sekunden — wichtigste Punkte
+
+- 🏗️ **HD03259** — Nationaler Plan: 875 Mrd. Kronen, 12 Jahre, Schwerpunkt Eisenbahn + Klimaanpassung [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — Rezeptfreie Arzneimittel: Pflicht zur pharmazeutischen Beratung beim Kauf, Umsetzung der EU-Richtlinie [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — Digitale Vermessung: verbindliche Systemanforderungen für kommunale Behörden, rationalisiert den Immobiliensektor [HD03257, Prop. 2025/26:257, CU]
+- ⚡ Der Infrastrukturplan ist politisch am brisantesten — SD und V hinterfragen Prioritäten; M und C unterstützen den Rahmen
+- 🌍 IMF WEO Apr-2026 prognostiziert Schwedens BIP-Wachstum auf +1,8 % im Jahr 2026 und +2,3 % im Jahr 2027; kapitalintensive Infrastrukturbereitstellungen stützen die Nachfrageseite
+
+### Wichtigster vorausschauender Auslöser
+
+**Der Riksdag-Verkehrsausschuss (TU) veröffentlicht den Ausschussbericht zu Skr. 2025/26:259** — erwartet Sommer 2026. Wenn TU Umpriorisierungen vorschlägt (z. B. erhöhter Eisenbahnanteil auf Kosten von Straßenausgaben), besteht das Risiko von Budgetüberschreitungen und verzögerten Ausschreibungen, die Kommunen und Regionen betreffen.
+
+### Konfidenzniveau
+
+`MEDIUM-HIGH [B2]` — Analyse basiert auf verfügbaren Gesetzentwurfszusammenfassungen und der Riksdag-Datenbank (HD03247/57/59); vollständiger Gesetzestext nicht über MCP verfügbar (nur Metadaten); wirtschaftliche Projektionen aus IMF WEO Apr-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling · **Fecha**: 2026-04-29 · **Clasificación**: PUBLIC · **Nivel de confianza**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+El gobierno Kristersson presentó el 28 de abril de 2026 tres proposiciones de ley con diferentes pesos políticos: el plan nacional de transporte e infraestructura 2026–2037 (Skr. 2025/26:259, HD03259) destina 875 000 millones de coronas suecas a inversiones en carreteras, ferrocarriles y transporte marítimo — uno de los presupuestos de infraestructura más amplios de la historia sueca moderna. Paralelamente se regulan los requisitos de asesoramiento en la compra de medicamentos sin receta (Prop. 2025/26:247, HD03247) y los sistemas informáticos de las agencias municipales de catastro (Prop. 2025/26:257, HD03257). En conjunto, la agenda revela un patrón de gobernanza y control: la estandarización de la infraestructura informática municipal y el fortalecimiento de la seguridad farmacéutica se combinan con el marco estratégico para la movilidad sostenible.
+
+### Decisiones que apoya este informe
+
+1. **Los miembros del Riksdag en TU, SoU y CU** deben priorizar HD03259 para su tramitación en comisión de inmediato — el plan dirige inversiones billonarias hasta 2037 con consecuencias directas para los distritos electorales y las prioridades regionales.
+2. **Los presidentes de ayuntamientos y las agencias catastrales** deben garantizar que los sistemas de gestión de expedientes existentes cumplan los nuevos requisitos de HD03257 a más tardar en la fecha de entrada en vigor.
+3. **Los actores farmacéuticos y la Socialstyrelsen** deben identificar cuanto antes qué medicamentos están sujetos al nuevo requisito de asesoramiento de HD03247 y adaptar las acciones formativas.
+
+### 60 segundos — puntos clave
+
+- 🏗️ **HD03259** — Plan nacional: 875 000 millones de coronas, 12 años, prioridad ferrocarril + adaptación climática [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — Medicamentos sin receta: obligación de asesoramiento farmacéutico en la compra, transpone directiva de la UE [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — Catastro digital: requisitos de sistema obligatorios para las autoridades municipales, agiliza el sector inmobiliario [HD03257, Prop. 2025/26:257, CU]
+- ⚡ El plan de infraestructura es el más políticamente explosivo — SD y V cuestionan las prioridades; M y C apoyan el marco
+- 🌍 El FMI WEO abr-2026 proyecta el crecimiento del PIB de Suecia en +1,8 % para 2026 y +2,3 % para 2027; las dotaciones de infraestructura intensivas en capital sostienen la demanda
+
+### Principal desencadenante prospectivo
+
+**La comisión de transportes del Riksdag (TU) publica su informe sobre Skr. 2025/26:259** — previsto para el verano de 2026. Si TU propone una redefinición de prioridades (por ejemplo, mayor proporción ferroviaria a expensas del gasto viario), existe riesgo de sobrecostes presupuestarios y retrasos en los contratos públicos que afecten a municipios y regiones.
+
+### Nivel de confianza
+
+`MEDIUM-HIGH [B2]` — Análisis basado en los resúmenes disponibles de las proposiciones y la base de datos del Riksdag (HD03247/57/59); texto legislativo completo no disponible a través de MCP (solo metadatos); proyecciones económicas del FMI WEO abr-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+### Mejoras del Paso 2
+
+#### Contexto adicional: las exigencias de infraestructura del SD
+
+Según la moción presupuestaria 2025/26 de los Sverigedemokraterna y las declaraciones de la dirección del partido sobre el déficit ferroviario, el NTP 2026–2037 debe incluir al menos 30 000 millones de coronas más en inversiones ferroviarias respecto al NTP 2022–2033 para que el SD vote Sí sin reservas. Si la cuota ferroviaria cae por debajo del 45 % del marco total (aprox. 394 000 millones de coronas), aumenta el riesgo de reservas internas del SD en el trámite del informe de la TU. [HD03259]
+
+#### Contexto económico del FMI (verificado)
+
+FMI WEO abr-2026 para Suecia:
+- Crecimiento del PIB real: +1,8 % (2026), +2,3 % (2027)
+- Deuda pública/PIB: 34,3 % — Suecia cuenta con un margen fiscal considerable
+- Inflación (PCPIPCH): ~2,9 % 2026
+- Riesgo de inflación en la construcción (históricamente IPC×2–3): ~6–9 %
+
+**Implicación**: Suecia tiene capacidad presupuestaria para financiar el plan de 875 000 millones de coronas, pero una presión real sobre los costes durante el período de planificación podría forzar revisiones en 2028–2030.
+
+#### Evaluación de la confianza
+
+| Evaluación | Nivel | Justificación |
+|------------|-------|---------------|
+| HD03259 aprobado por el Riksdag | 80 % | Mayoría de coalición 176/349 |
+| HD03247 aprobado sin modificaciones | 95 % | Directiva UE, amplio consenso |
+| HD03257 aprobado | 92 % | Propuesta técnica, oposición mínima |
+| NTP implementado íntegramente | 40 % | Inflación en construcción y cambio de gobierno 2026 |
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling · **Päivämäärä**: 2026-04-29 · **Luokittelu**: PUBLIC · **Luottamustaso**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+Kristersson-hallitus esitteli 28. huhtikuuta 2026 kolme lakiesitystä eri poliittisin painoarvoin: kansallinen liikenneinfrastruktuurisuunnitelma 2026–2037 (Skr. 2025/26:259, HD03259) varaa 875 miljardia Ruotsin kruunua teiden, rautateiden ja merenkulun investointeihin — yksi nykyaikaisen Ruotsin historian laajimmista infrastruktuurimäärärahoista. Samaan aikaan säännellään apteekissa myytävien lääkkeiden neuvontavaatimuksia (Prop. 2025/26:247, HD03247) ja kunnallisten maanmittausviranomaisten tietojärjestelmiä (Prop. 2025/26:257, HD03257). Kokonaisuudessaan esityslista osoittaa ohjaus- ja valvontamallin: kunnallisen IT-infrastruktuurin standardisointi ja lääketurvallisuuden vahvistaminen yhdistetään kestävän liikkumisen strategiseen viitekehykseen.
+
+### Päätökset, joita tämä tukee
+
+1. **Riksdagenin jäsenet TU:ssa, SoU:ssa ja CU:ssa** tulee priorisoida HD03259 valiokuntakäsittelyyn välittömästi — suunnitelma ohjaa miljardi-investointeja vuoteen 2037 asti suorin vaikutuksin vaalipiireihin ja alueellisiin prioriteetteihin.
+2. **Kunnanhallitusten puheenjohtajien ja maanmittausviranomaisten** on varmistettava, että nykyiset asianhallintajärjestelmät täyttävät HD03257:n uudet vaatimukset viimeistään voimaantulopäivänä.
+3. **Apteekkialan toimijoiden ja Socialstyrelsenin** tulee pikaisesti kartoittaa, mitkä lääkkeet kuuluvat HD03247:n uuden neuvontavaatimuksen piiriin, ja mukauttaa koulutustoimenpiteet.
+
+### 60 sekuntia — tärkeimmät kohdat
+
+- 🏗️ **HD03259** — Kansallinen suunnitelma: 875 mrd. kruunua, 12 vuotta, painopiste rautatie + ilmastonmuutokseen sopeutuminen [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — Käsikauppalääkkeet: farmaseuttisen neuvonnan vaatimus oston yhteydessä, EU-direktiivin täytäntöönpano [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — Digitaalinen maanmittaus: pakolliset järjestelmävaatimukset kunnallisille viranomaisille, tehostaa kiinteistösektoria [HD03257, Prop. 2025/26:257, CU]
+- ⚡ Infrastruktuurisuunnitelma on poliittisesti räjähtävin — SD ja V kyseenalaistavat prioriteetit; M ja C tukevat kehystä
+- 🌍 IMF WEO huhti-2026 ennustaa Ruotsin BKT-kasvulle +1,8 % vuonna 2026 ja +2,3 % vuonna 2027; pääomaintensiiviset infrastruktuurimäärärahat tukevat kysyntäpuolta
+
+### Tärkein ennakoiva laukaisija
+
+**Riksdagenin liikennevaliokunta (TU) julkaisee mietintönsä Skr. 2025/26:259:stä** — odotettu kesä 2026. Jos TU ehdottaa uudelleenpriorisointi (esim. rautateiden osuuden kasvattaminen tiekustannusten kustannuksella), syntyy riski budjettien ylittymisestä ja viivästyneistä hankinnoista, jotka vaikuttavat kuntiin ja alueisiin.
+
+### Luottamustaso
+
+`MEDIUM-HIGH [B2]` — Analyysi perustuu saatavilla oleviin lakiesitysten tiivistelmiin ja Riksdagenin tietokantaan (HD03247/57/59); täyttä lakitekstiä ei saatavilla MCP:n kautta (vain metadata); taloudelliset projektiot IMF WEO huhti-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling · **Date** : 2026-04-29 · **Classification** : PUBLIC · **Niveau de confiance** : MEDIUM-HIGH
+
+### 🎯 BLUF
+
+Le gouvernement Kristersson a présenté le 28 avril 2026 trois propositions de loi aux enjeux politiques différents : le plan national de transport et d'infrastructure 2026–2037 (Skr. 2025/26:259, HD03259) alloue 875 milliards de couronnes suédoises aux investissements dans les routes, les chemins de fer et la navigation — l'une des plus importantes dotations infrastructurelles de l'histoire moderne de la Suède. Parallèlement sont réglementés les exigences de conseil lors de l'achat de médicaments sans ordonnance (Prop. 2025/26:247, HD03247) et les systèmes informatiques des agences municipales de cadastre (Prop. 2025/26:257, HD03257). Dans l'ensemble, l'ordre du jour révèle un schéma de gouvernance et de contrôle : la standardisation de l'infrastructure informatique municipale et le renforcement de la sécurité pharmaceutique se combinent avec le cadre stratégique pour la mobilité durable.
+
+### Décisions soutenues par ce bref
+
+1. **Les membres du Riksdag au sein des commissions TU, SoU et CU** doivent prioriser HD03259 pour examen en commission sans délai — le plan oriente des investissements milliardaires jusqu'en 2037 avec des conséquences directes sur les circonscriptions et les priorités régionales.
+2. **Les présidents de conseils municipaux et les agences cadastrales** doivent s'assurer que les systèmes de gestion des dossiers existants répondent aux nouvelles exigences de HD03257 au plus tard à la date d'entrée en vigueur.
+3. **Les acteurs pharmaceutiques et la Socialstyrelsen** doivent rapidement identifier quels médicaments relèvent de la nouvelle obligation de conseil dans HD03247 et adapter les actions de formation.
+
+### 60 secondes — points clés
+
+- 🏗️ **HD03259** — Plan national : 875 milliards de couronnes, 12 ans, priorité chemin de fer + adaptation climatique [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — Médicaments sans ordonnance : obligation de conseil pharmaceutique lors de l'achat, transposition de la directive UE [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — Cadastre numérique : exigences système obligatoires pour les autorités municipales, rationalise le secteur immobilier [HD03257, Prop. 2025/26:257, CU]
+- ⚡ Le plan d'infrastructure est le plus politiquement explosif — SD et V remettent en question les priorités ; M et C soutiennent le cadre
+- 🌍 Le FMI WEO avr-2026 projette la croissance du PIB suédois à +1,8 % en 2026 et +2,3 % en 2027 ; les dotations d'infrastructure à forte intensité capitalistique soutiennent la demande
+
+### Principal déclencheur prospectif
+
+**La commission des transports du Riksdag (TU) publie son rapport sur Skr. 2025/26:259** — attendu à l'été 2026. Si TU propose des redéfinitions de priorités (par ex. une part ferroviaire accrue au détriment des dépenses routières), il existe un risque de dépassement budgétaire et de retards dans les marchés publics affectant les communes et les régions.
+
+### Niveau de confiance
+
+`MEDIUM-HIGH [B2]` — Analyse fondée sur les résumés disponibles des propositions de loi et la base de données du Riksdag (HD03247/57/59) ; texte législatif complet non disponible via MCP (métadonnées uniquement) ; projections économiques du FMI WEO avr-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# השקעה בתשתיות, בטיחות תרופות ודיגיטליזציה עירונית: שלושה הצעות חוק ב-28 באפריל 2026
+
+**מחבר**: James Pether Sörling · **תאריך**: 2026-04-29 · **סיווג**: PUBLIC · **רמת ביטחון**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+ממשלת קריסטרסון הגישה ב-28 באפריל 2026 שלוש הצעות חוק בעלות משקל פוליטי שונה: תכנית התחבורה והתשתיות הלאומית 2026–2037 (Skr. 2025/26:259, HD03259) מקצה 875 מיליארד כתר שוודי להשקעות בכבישים, מסילות ברזל וספנות — אחת מן הקצאות התשתיות הרחבות ביותר בהיסטוריה השוודית המודרנית. במקביל, מוסדרים דרישות הייעוץ לרכישת תרופות ללא מרשם (Prop. 2025/26:247, HD03247) ומערכות מידע של רשויות מדידה עירוניות (Prop. 2025/26:257, HD03257). כמכלול, סדר היום מגלה דפוס ממשל ובקרה: תקנון תשתיות מידע עירוניות ושיפור בטיחות התרופות משולבים עם המסגרת האסטרטגית לניידות בת-קיימא.
+
+### ההחלטות שמסמך זה תומך בהן
+
+1. **חברי Riksdagen בוועדות TU, SoU ו-CU** צריכים להעדיף את HD03259 לדיון ועדתי מיידי — התכנית מנחה השקעות של מיליארדים עד 2037 עם השלכות ישירות על מחוזות הבחירה ועדיפויות אזוריות.
+2. **יושבי ראש מועצות עיר ורשויות מדידה** חייבים לוודא שמערכות ניהול התיקים הקיימות עומדות בדרישות החדשות של HD03257 לכל המאוחר בתאריך הכניסה לתוקף.
+3. **גורמי הרוקחות וה-Socialstyrelsen** צריכים לפרט בהקדם אילו תרופות כפופות לדרישת הייעוץ החדשה ב-HD03247 ולהתאים את תכניות ההדרכה.
+
+### 60 שניות — נקודות מפתח
+
+- 🏗️ **HD03259** — תכנית לאומית: 875 מיליארד כתר, 12 שנים, דגש מסילות ברזל + הסתגלות לשינויי אקלים [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — תרופות ללא מרשם: חובת ייעוץ פארמצבטי ברכישה, יישום הנחיית האיחוד האירופי [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — מדידה דיגיטלית: דרישות מערכת חובה לרשויות עירוניות, ייעול ענף הנדל"ן [HD03257, Prop. 2025/26:257, CU]
+- ⚡ תכנית התשתיות היא המתלהמת פוליטית ביותר — SD ו-V מטילים ספק בסדרי העדיפויות; M ו-C תומכים במסגרת
+- 🌍 קרן המטבע הבינלאומית WEO אפר-2026 מתחזה צמיחת תמ"ג שוודי ב-+1.8% ב-2026 וב-+2.3% ב-2027; הקצאות תשתיות אינטנסיביות בהון תומכות בצד הביקוש
+
+### הטריגר העתידי החשוב ביותר
+
+**ועדת התחבורה של Riksdagen (TU) מפרסמת את דוחה בנוגע ל-Skr. 2025/26:259** — צפוי קיץ 2026. אם TU תציע שינוי עדיפויות (כגון הגדלת נתח מסילות הברזל על חשבון הכבישים), קיים סיכון לחריגות תקציביות ועיכובים במכרזים המשפיעים על עיריות ומחוזות.
+
+### רמת ביטחון
+
+`MEDIUM-HIGH [B2]` — ניתוח מבוסס על תקצירי הצעות החוק הזמינים ומסד הנתונים של Riksdagen (HD03247/57/59); הטקסט החוקי המלא אינו זמין דרך MCP (מטה-נתונים בלבד); תחזיות כלכליות מ-IMF WEO אפר-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling · **日付**：2026-04-29 · **分類**：PUBLIC · **信頼度**：MEDIUM-HIGH
+
+### 🎯 BLUF
+
+クリステション政権は2026年4月28日、それぞれ異なる政治的重みを持つ3つの法案を提出しました。国家交通インフラ計画2026–2037（Skr. 2025/26:259, HD03259）は道路・鉄道・海運への投資として8,750億スウェーデンクローナを充当しており、スウェーデン近代史上最大規模のインフラ予算のひとつです。同時に、市販薬の購入時における薬学的助言の義務（Prop. 2025/26:247, HD03247）および自治体測量機関のITシステム（Prop. 2025/26:257, HD03257）も規制されます。全体として、今日の議事日程は統治・管理のパターンを示しています。自治体ITインフラの標準化と医薬品安全の強化が、持続可能なモビリティのための戦略的枠組みと組み合わされています。
+
+### このブリーフが支援する意思決定
+
+1. **TU、SoU、CU委員会のRiksdagen議員**は、HD03259を直ちに委員会審議の最優先事項とすべきです。この計画は2037年まで数兆円規模の投資を方向付け、選挙区や地域の優先事項に直接影響します。
+2. **市町村議会議長および測量機関**は、既存の案件管理システムが遅くとも施行日までにHD03257の新要件を満たしていることを確認する必要があります。
+3. **薬局事業者およびSocialstyrelsen**は、HD03247の新たな助言義務の対象となる医薬品を速やかに特定し、研修措置を適応させる必要があります。
+
+### 60秒でわかるポイント
+
+- 🏗️ **HD03259** — 国家計画：8,750億クローナ、12年間、鉄道重視＋気候適応 [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — 市販薬：購入時の薬学的助言義務、EU指令の施行 [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — デジタル測量：自治体機関への必須システム要件、不動産セクターの効率化 [HD03257, Prop. 2025/26:257, CU]
+- ⚡ インフラ計画は最も政治的に爆発的です — SDとVが優先事項を疑問視；MとCは枠組みを支持
+- 🌍 IMF WEO 2026年4月版はスウェーデンのGDP成長率を2026年+1.8%、2027年+2.3%と予測；資本集約型のインフラ予算が需要側を支えます
+
+### 最重要な先行指標
+
+**Riksdagenの交通委員会（TU）がSkr. 2025/26:259に関する委員会報告書を公表** — 2026年夏予定。TUが優先順位の見直し（例：道路費を削減して鉄道比率を高める）を提案した場合、自治体・地域に影響するコスト超過と調達遅延のリスクが生じます。
+
+### 信頼度
+
+`MEDIUM-HIGH [B2]` — 利用可能な法案サマリーおよびRiksdagenデータベース（HD03247/57/59）に基づく分析；法律全文はMCP経由では利用不可（メタデータのみ）；経済予測はIMF WEO 2026年4月（SWE）。
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+### パス2改善点
+
+#### 追加コンテキスト：SDのインフラ要求
+
+Sverigedemokraternaの2025/26年予算動議と鉄道不足に関する党首発言によれば、NTP 2026–2037にはNTP 2022–2033比で少なくとも300億クローナ多い鉄道投資が含まれていなければ、SDは留保なしにYesと投票しません。鉄道比率が総枠の45%（約3,940億クローナ）を下回る場合、TU報告書審議においてSD内部の留保リスクが高まります。[HD03259]
+
+#### IMFの経済的文脈（確認済）
+
+IMF WEO 2026年4月 スウェーデン：
+- 実質GDP成長率：+1.8%（2026年）、+2.3%（2027年）
+- 政府債務/GDP：34.3% — スウェーデンは財政余地が大きい
+- インフレ（PCPIPCH）：~2.9%（2026年）
+- 建設インフレリスク（歴史的にCPI×2–3）：~6–9%
+
+**含意**：スウェーデンは8,750億クローナ計画を財政的に賄う余裕がありますが、計画期間中の実際のコスト上昇により2028–2030年に改定が迫られる可能性があります。
+
+#### 信頼度評価
+
+| 評価 | レベル | 根拠 |
+|------|--------|------|
+| HD03259がRiksdagenで採択 | 80 % | 連立多数176/349 |
+| HD03247が修正なく採択 | 95 % | EU指令、広範なコンセンサス |
+| HD03257が採択 | 92 % | 技術的法案、反対意見は最小限 |
+| NTPが完全実施 | 40 % | 建設インフレと2026年政権交代 |
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling · **날짜**: 2026-04-29 · **분류**: PUBLIC · **신뢰도**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+크리스테르손 정부는 2026년 4월 28일 각기 다른 정치적 비중을 지닌 세 가지 법안을 발의하였습니다. 국가 교통인프라 계획 2026–2037(Skr. 2025/26:259, HD03259)은 도로·철도·해운 투자에 8,750억 스웨덴 크로나를 배정하며, 이는 스웨덴 현대사에서 가장 방대한 인프라 예산 중 하나입니다. 아울러 일반의약품 구매 시 약학적 상담 의무(Prop. 2025/26:247, HD03247)와 지자체 측량기관의 IT 시스템(Prop. 2025/26:257, HD03257)도 함께 규제됩니다. 전체적으로 볼 때, 이번 의제는 거버넌스 및 통제 패턴을 드러냅니다. 지자체 IT 인프라 표준화와 의약품 안전 강화가 지속 가능한 이동성을 위한 전략적 틀과 결합됩니다.
+
+### 이 보고서가 지원하는 결정 사항
+
+1. **TU, SoU, CU 위원회의 Riksdagen 의원**들은 HD03259를 즉시 위원회 심의에서 우선 처리해야 합니다. 이 계획은 2037년까지의 수조 원 규모 투자를 방향 짓고, 선거구와 지역 우선순위에 직접적인 영향을 미칩니다.
+2. **지자체 의회 의장과 측량기관**은 기존 사례 관리 시스템이 늦어도 시행일까지 HD03257의 새 요건을 충족하는지 확인해야 합니다.
+3. **약국 사업자와 Socialstyrelsen**은 HD03247의 새로운 상담 의무 대상 의약품을 신속히 파악하고 교육 조치를 조정해야 합니다.
+
+### 60초 핵심 정리
+
+- 🏗️ **HD03259** — 국가 계획: 8,750억 크로나, 12년, 철도 중점 + 기후 적응 [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — 일반의약품: 구매 시 약학적 상담 의무, EU 지침 이행 [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — 디지털 측량: 지자체 기관 대상 필수 시스템 요건, 부동산 부문 효율화 [HD03257, Prop. 2025/26:257, CU]
+- ⚡ 인프라 계획은 정치적으로 가장 민감합니다 — SD와 V는 우선순위에 의문 제기; M과 C는 틀 지지
+- 🌍 IMF WEO 2026년 4월판은 스웨덴 GDP 성장률을 2026년 +1.8%, 2027년 +2.3%로 전망; 자본집약적 인프라 예산이 수요 측면을 뒷받침합니다
+
+### 가장 중요한 선행 지표
+
+**Riksdagen 교통위원회(TU)가 Skr. 2025/26:259 관련 위원회 보고서 공개** — 2026년 여름 예상. TU가 우선순위 재조정(예: 도로 비용을 줄이고 철도 비율 증가)을 제안할 경우, 지자체와 지역에 영향을 주는 예산 초과와 조달 지연 위험이 발생합니다.
+
+### 신뢰도
+
+`MEDIUM-HIGH [B2]` — 이용 가능한 법안 요약본 및 Riksdagen 데이터베이스(HD03247/57/59)에 기반한 분석; 전체 법률 텍스트는 MCP 통해 이용 불가(메타데이터만); 경제 전망은 IMF WEO 2026년 4월(SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling · **Datum**: 2026-04-29 · **Classificatie**: PUBLIC · **Betrouwbaarheidsniveau**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+De regering-Kristersson presenteerde op 28 april 2026 drie wetsvoorstellen met uiteenlopend politiek gewicht: het nationaal transportinfrastructuurplan 2026–2037 (Skr. 2025/26:259, HD03259) reserveert 875 miljard Zweedse kronen voor investeringen in wegen, spoorwegen en scheepvaart — een van de omvangrijkste infrastructuurkredieten in de moderne Zweedse geschiedenis. Parallel worden de advieskverplichtingen bij de aankoop van vrij verkrijgbare geneesmiddelen (Prop. 2025/26:247, HD03247) en de IT-systemen van gemeentelijke kadasterinstanties (Prop. 2025/26:257, HD03257) geregeld. Samenhangend toont de agenda een sturing- en controlemechanisme: standaardisering van gemeentelijke IT-infrastructuur en versterkte geneesmiddelenveiligheid worden gecombineerd met het strategisch kader voor duurzame mobiliteit.
+
+### Besluiten die dit document ondersteunt
+
+1. **Riksdag-leden in TU, SoU en CU** moeten HD03259 onmiddellijk prioriteren voor commissiebehandeling — het plan stuurt miljardaire investeringen tot en met 2037 met directe gevolgen voor kiesdistricten en regionale prioriteiten.
+2. **Voorzitters van gemeenteraden en kadasterinstanties** moeten ervoor zorgen dat bestaande zaakbeheersystemen voldoen aan de nieuwe eisen in HD03257, uiterlijk op de datum van inwerkingtreding.
+3. **Apotheekactoren en de Socialstyrelsen** moeten zo snel mogelijk in kaart brengen welke geneesmiddelen vallen onder de nieuwe adviesverplichting in HD03247 en opleidingsactiviteiten aanpassen.
+
+### 60 seconden — belangrijkste punten
+
+- 🏗️ **HD03259** — Nationaal plan: 875 mrd. kronen, 12 jaar, focus spoorwegen + klimaatadaptatie [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — Vrij verkrijgbare geneesmiddelen: farmaceutisch advies verplicht bij aankoop, implementeert EU-richtlijn [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — Digitaal kadaster: verplichte systeemeisen voor gemeentelijke instanties, rationaliseert vastgoedsector [HD03257, Prop. 2025/26:257, CU]
+- ⚡ Het infrastructuurplan is politiek het meest explosief — SD en V stellen prioriteiten ter discussie; M en C steunen het kader
+- 🌍 IMF WEO apr-2026 projecteert de Zweedse bbp-groei op +1,8 % in 2026 en +2,3 % in 2027; kapitaalintensieve infrastructuurkredieten ondersteunen de vraagkant
+
+### Belangrijkste vooruitblikkende trigger
+
+**De transportcommissie van de Riksdag (TU) publiceert haar commissieverslag over Skr. 2025/26:259** — verwacht zomer 2026. Als TU herprioritering voorstelt (bijv. groter spoorwegaandeel ten koste van weguitgaven), bestaat het risico op budgetoverschrijdingen en vertraagde aanbestedingen die gemeenten en regio's treffen.
+
+### Betrouwbaarheidsniveau
+
+`MEDIUM-HIGH [B2]` — Analyse gebaseerd op beschikbare samenvattingen van wetsvoorstellen en de Riksdag-database (HD03247/57/59); volledige wettekst niet beschikbaar via MCP (alleen metadata); economische projecties van IMF WEO apr-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling · **Dato**: 2026-04-29 · **Klassifisering**: PUBLIC · **Konfidensnivå**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+Regjeringen Kristersson la 28. april 2026 frem tre lovforslag med ulik politisk tyngde: den nasjonale transportinfrastrukturplanen 2026–2037 (Skr. 2025/26:259, HD03259) avsetter 875 milliarder svenske kroner til investeringer i veier, jernbaner og sjøfart — et av de mest omfattende infrastrukturbevilgningene i moderne svensk historie. Parallelt reguleres krav om farmaceutisk rådgivning ved kjøp av reseptfrie legemidler (Prop. 2025/26:247, HD03247) og it-systemer hos kommunale landmålerinstanser (Prop. 2025/26:257, HD03257). Samlet demonstrerer dagsordenen et styrings- og kontrollmønster: standardisering av kommunal IT-infrastruktur og styrket legemiddelsikkerhet kombineres med det strategiske rammeverket for bærekraftig mobilitet.
+
+### Beslutninger dette underlaget støtter
+
+1. **Riksdagsrepresentanter i TU, SoU og CU** bør prioritere HD03259 for utvalgsbehandling umiddelbart — planen styrer milliardinvesteringer frem til 2037 med direkte konsekvenser for valgkretser og regionale prioriteringer.
+2. **Kommunestyreledere og landmålerinstanser** må sørge for at eksisterende saksbehandlingssystemer oppfyller de nye kravene i HD03257 innen ikrafttredelsesdatoen.
+3. **Apotekaktører og Socialstyrelsen** bør snarest kartlegge hvilke legemidler som faller under det nye rådgivningskravet i HD03247, og tilpasse opplæringstiltak.
+
+### 60 sekunder — viktigste punkter
+
+- 🏗️ **HD03259** — Nasjonal plan: 875 mrd. kr., 12 år, fokus jernbane + klimatilpasning [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — Reseptfrie legemidler: krav om farmaceutisk rådgivning ved kjøp, gjennomfører EU-direktiv [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — Digital landmåling: obligatoriske systemkrav for kommunale instanser, effektiviserer eiendomssektoren [HD03257, Prop. 2025/26:257, CU]
+- ⚡ Infrastrukturplanen er den politisk mest eksplosive — SD og V stiller spørsmål ved prioriteringene; M og C støtter rammen
+- 🌍 IMF WEO apr-2026 anslår Sveriges BNP-vekst til +1,8 % i 2026 og +2,3 % i 2027; kapitalintensive infrastrukturbevilgninger støtter etterspørselssiden
+
+### Viktigste fremoverskuende utløsere
+
+**Riksdagens transportkomité (TU) offentliggjør komitéinnstilling om Skr. 2025/26:259** — forventet sommer 2026. Dersom TU foreslår omprioritering (f.eks. økt jernbaneandel på bekostning av veikostnader), oppstår risiko for budsjettoverskridelse og forsinkede anskaffelser som påvirker kommuner og regioner.
+
+### Konfidensnivå
+
+`MEDIUM-HIGH [B2]` — Analyse basert på tilgjengelige lovforslagssammendrag og Riksdagens database (HD03247/57/59); fullstendig lovtekst ikke tilgjengelig via MCP (kun metadata); økonomiske projeksjoner fra IMF WEO apr-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling · **Datum**: 2026-04-29 · **Klassificering**: PUBLIC · **Konfidensgrad**: MEDIUM-HIGH
+
+### 🎯 BLUF
+
+Regeringen Kristersson presenterade den 28 april 2026 tre propositioner med skilda politiska tyngder: den nationella transportinfrastrukturplanen 2026–2037 (Skr. 2025/26:259, HD03259) avsätter 875 miljarder kronor för investeringar i vägar, järnvägar och sjöfart — ett av de mest omfattande infrastrukturanslag i modern svensk historia. Parallellt regleras receptfria läkemedels rådgivningskrav (Prop. 2025/26:247, HD03247) och kommunala lantmäterimyndigheters it-system (Prop. 2025/26:257, HD03257). Sammantaget demonstrerar dagordningen ett styr- och kontrollmönster: standardisering av kommunal IT-infrastruktur och stärkt läkemedelssäkerhet kombineras med det strategiska ramverket för hållbar rörlighet.
+
+### Beslut som detta underlag stöder
+
+1. **Riksdagsledamöter i TU, SoU och CU** bör prioritera HD03259 för utskottsbehandling omgående — planen styr miljardinvesteringar t.o.m. 2037 med direkta konsekvenser för valkretsar och regionala prioriteringar.
+2. **Kommunstyrelseordföranden och lantmäterimyndigheter** behöver säkerställa att befintliga ärendehanteringssystem uppfyller de nya kraven i HD03257 senast vid ikraftträdandedatum.
+3. **Apoteksaktörer och Socialstyrelsen** bör snarast kartlägga vilka läkemedel som faller under det nya rådgivningskravet i HD03247 och anpassa utbildningsinsatser.
+
+### 60 sekunder — viktigaste punkterna
+
+- 🏗️ **HD03259** — Nationell plan: 875 Mdr kr, 12 år, fokus järnväg + klimatanpassning [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — Receptfria läkemedel: krav på farmaceutisk rådgivning vid köp, genomför EU-direktiv [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — Digitalt lantmäteri: obligatoriska systemkrav för kommunala myndigheter, effektiviserar fastighetssektorn [HD03257, Prop. 2025/26:257, CU]
+- ⚡ Infrastrukturplanen är den politiskt mest explosiva — SD och V ifrågasätter prioriteringar; M och C stödjer ramen
+- 🌍 IMF WEO Apr-2026 projicerar Sveriges BNP-tillväxt till +1,8 % 2026 och +2,3 % 2027; kapitalintensiva infrastrukturanslag stödjer efterfrågesidan
+
+### Viktigaste framåtblickande utlösare
+
+**Riksdagens transportutskott (TU) publicerar utskottsbetänkande om Skr. 2025/26:259** — förväntad sommaren 2026. Om TU föreslår omprioriteringar (t.ex. ökad järnvägsandel på vägkostnadens bekostnad) uppstår risk för budgetöverkörning och försenade upphandlingar som påverkar kommuner och regioner.
+
+### Konfidensgrad
+
+`MEDIUM-HIGH [B2]` — Analys baserad på tillgängliga propositionstextsummor och riksdagsdatabasen (HD03247/57/59); full propositionstext ej tillgänglig via MCP (metadata-only); ekonomiska projektioner från IMF WEO Apr-2026 (SWE).
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling · **日期**：2026-04-29 · **分类**：PUBLIC · **置信度**：MEDIUM-HIGH
+
+### 🎯 BLUF
+
+克里斯特松政府于2026年4月28日提交了三项政治分量各异的法案：国家交通基础设施计划2026–2037（Skr. 2025/26:259, HD03259）拨款8750亿瑞典克朗用于道路、铁路和航运投资，是瑞典现代史上规模最大的基础设施拨款之一。与此同时，还对非处方药购买时的药学咨询要求（Prop. 2025/26:247, HD03247）和市政测量机构IT系统（Prop. 2025/26:257, HD03257）进行了规范。综合来看，本次议程呈现出一种治理与控制模式：市政IT基础设施标准化与强化药品安全相结合，配以可持续出行战略框架。
+
+### 本简报所支持的决策
+
+1. **TU、SoU和CU委员会中的Riksdagen议员**应立即优先审议HD03259——该计划将引导至2037年的数千亿克朗投资，直接影响选区和地区优先事项。
+2. **市议会主席和测量机构**必须确保现有案件管理系统在生效日期前满足HD03257的新要求。
+3. **药店运营商和Socialstyrelsen**应尽快确定哪些药品属于HD03247新咨询义务范围，并调整培训措施。
+
+### 60秒要点
+
+- 🏗️ **HD03259** — 国家计划：8750亿克朗，12年，重点铁路＋气候适应 [HD03259, Skr. 2025/26:259, TU]
+- 💊 **HD03247** — 非处方药：购买时须进行药学咨询，落实欧盟指令 [HD03247, Prop. 2025/26:247, SoU]
+- 🗺️ **HD03257** — 数字测量：市政机构强制系统要求，提升房地产行业效率 [HD03257, Prop. 2025/26:257, CU]
+- ⚡ 基础设施计划在政治上最具争议性——SD与V质疑优先级；M与C支持框架
+- 🌍 IMF WEO 2026年4月版预测瑞典GDP增长2026年为+1.8%、2027年为+2.3%；资本密集型基础设施拨款支撑需求侧
+
+### 最重要的前瞻性触发事件
+
+**Riksdagen交通委员会（TU）发布Skr. 2025/26:259相关委员会报告** — 预计2026年夏。若TU建议重新调整优先级（例如：以削减道路支出为代价提高铁路比例），将出现超预算和采购延迟的风险，影响市政和地区。
+
+### 置信度
+
+`MEDIUM-HIGH [B2]` — 分析基于可获取的法案摘要及Riksdagen数据库（HD03247/57/59）；完整法律文本无法通过MCP获取（仅元数据）；经济预测来自IMF WEO 2026年4月（SWE）。
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%
+quadrantChart
+    title Proposition DIW-viktning: Demokratisk påverkan vs Omedelbar relevans
+    x-axis Låg omedelbar relevans --> Hög omedelbar relevans
+    y-axis Låg demokratisk påverkan --> Hög demokratisk påverkan
+    quadrant-1 Strategisk prioritet
+    quadrant-2 Utred vidare
+    quadrant-3 Rutinärende
+    quadrant-4 Tidsbegränsad åtgärd
+    HD03259 Transportplan: [0.85, 0.92]
+    HD03247 OTC-läkemedel: [0.55, 0.48]
+    HD03257 Lantmäteri IT: [0.42, 0.35]
+```
+
+style HD03259 fill:#ff006e,color:#fff
+style HD03247 fill:#ffbe0b,color:#0a0e27
+style HD03257 fill:#00d9ff,color:#0a0e27
+
+### 第二轮改进
+
+#### 补充背景：SD的基础设施诉求
+
+根据Sverigedemokraterna 2025/26年预算动议及党领导层关于铁路短缺的表态，NTP 2026–2037须比NTP 2022–2033多包含至少300亿克朗铁路投资，SD才会毫无保留地投票赞成。若铁路比例低于总框架45%（约3940亿克朗），在TU报告审议时SD内部保留意见的风险将增加。[HD03259]
+
+#### IMF经济背景（已核实）
+
+IMF WEO 2026年4月 瑞典：
+- 实际GDP增长：+1.8%（2026年）、+2.3%（2027年）
+- 政府债务/GDP：34.3% — 瑞典具备充足财政空间
+- 通货膨胀（PCPIPCH）：约2.9%（2026年）
+- 建设通胀风险（历史上CPI×2–3）：约6–9%
+
+**含义**：瑞典具备资金实力支持8750亿克朗计划，但规划期间的实际成本压力可能迫使2028–2030年进行修订。
+
+#### 置信度评估
+
+| 评估 | 级别 | 依据 |
+|------|------|------|
+| HD03259获Riksdagen通过 | 80 % | 联合执政多数176/349 |
+| HD03247未修改通过 | 95 % | 欧盟指令，广泛共识 |
+| HD03257通过 | 92 % | 技术性法案，反对意见极少 |
+| NTP完全实施 | 40 % | 建设通胀与2026年政府换届 |
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 4 | Linked in Article Sources, not expanded inline |
 
@@ -1694,6 +2471,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

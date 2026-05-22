@@ -6,7 +6,7 @@ date: 2026-05-18
 subfolder: election-cycle/next/pass1
 slug: 2026-05-18-election-cycle/next/pass1
 source_folder: analysis/daily/2026-05-18/election-cycle/next/pass1
-generated_at: 2026-05-21T02:19:51.702Z
+generated_at: 2026-05-22T12:25:07.324Z
 language: en
 layout: article
 ---

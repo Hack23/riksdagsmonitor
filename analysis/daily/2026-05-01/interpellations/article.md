@@ -6,7 +6,7 @@ date: 2026-05-01
 subfolder: interpellations
 slug: 2026-05-01-interpellations
 source_folder: analysis/daily/2026-05-01/interpellations
-generated_at: 2026-05-21T02:19:50.794Z
+generated_at: 2026-05-22T12:25:06.213Z
 language: en
 layout: article
 ---
@@ -88,6 +88,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1653,13 +1666,857 @@ None of the 5 interpellations are government propositions; Lagrådet review is n
 
 No prior-cycle PIR files found for interpellations subfolder within 14 days. New PIRs defined in intelligence-assessment.md.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز تنفيذي — الاستجوابات البرلمانية 2026-05-01
+
+**الخلاصة التنفيذية (BLUF)**: كشفت خمسة استجوابات برلمانية مقدَّمة في الفترة 22–30 أبريل 2026 عن ثلاث أزمات متقاطعة — الاقتصاد الجنائي السويدي (352 مليار كرونة / 5.5 % من الناتج المحلي الإجمالي)، وعنف العصابات، وتراجع القدرة التنافسية في قطاع الفضاء — وكلها تتزامن في التقويم السياسي قبيل الانتخابات. تستخدم المعارضة S وحزب الحكومة SD الاستجوابات لتشكيل السردية الانتخابية لصيف 2026.
+
+### القرارات المطلوبة فوراً
+
+1. **وزير العدل ستروميّر (M)**: يجب أن يُجسّد "القضاء على جرائم العصابات في 4 سنوات" قبل موعد الرد على HD10458 في 2026-05-19 — وإلا يواجه أضراراً في مصداقيته عشية الحملة الانتخابية
+2. **الوزير إيدهولم (L)**: يجب أن يُفسّر تراجع السويد إلى المرتبة 17 في وكالة الفضاء الأوروبية قبل موعد الرد على HD10461 في 2026-05-19 — إذ تطلب Rymdstyrelsen ما يفوق بكثير مبلغ 100 مليون كرونة المخصّص
+3. **الوزير المدني سلوتنر (KD)**: يجب الرد على مطلب SD بإصلاح دستوري (منح البرلمان صلاحية التعيينات) بحلول 2026-05-20 — سيشير الرد إلى مدى تسامح الائتلاف مع تسهيلات SD
+
+### ملخص الأهمية
+
+| dok_id | الموضوع | درجة DIW | الأولوية |
+|--------|---------|----------|---------|
+| HD10458 | وعد بالقضاء على جرائم العصابات | 8/10 | L2+ أولوية |
+| HD10451 | الاقتصاد الجنائي 352 مليار كرونة | 7/10 | L2 استراتيجي |
+| HD10461 | تراجع تمويل وكالة الفضاء الأوروبية | 7/10 | L2 استراتيجي |
+| HD10459 | مطالبة بإصلاح الوكالات الناشطة | 6/10 | L2 استراتيجي |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 عملياتي |
+
+### الديناميكية الاستراتيجية المحورية
+
+```mermaid
+graph TD
+    A[S: الاقتصاد الجنائي\nHD10458 + HD10451] -->|352 مليار كرونة ESO| B[فجوة المساءلة الحكومية\nقبيل الانتخابات]
+    C[SD: الإصلاح المؤسسي\nHD10459] -->|ضغط داخل الائتلاف| D[التوتر الداخلي\nفي Tidökoalitionen]
+    E[S: تراجع الفضاء ESA\nHD10461] -->|المرتبة 17 من 23| F[سردية القدرة التنافسية]
+    B --> G[ساحة معركة انتخابات 2026]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### المؤشرات الحرجة زمنياً
+
+- **2026-05-19**: يردّ ستروميّر (العصابات) + إيدهولم (الفضاء) — أكثر التواريخ بروزاً
+- **2026-05-20**: يردّ سلوتنر (ناشطية الوكالات) — توترات الائتلاف مرئية
+- **2026-05-21**: يردّ برانبرغ (SFV) — أدنى مستوى من الظهور
+
+**التقييم**: يُفضي تقاطع HD10458 و HD10451 إلى أشد تحدي معارضة خطراً على الحكومة: سردية متماسكة مفادها "352 مليار كرونة اقتصاد جنائي + تصاعد العنف + حكومة بلا أدوات"، مدعومة بمصادر مستقلة (ESO) وقابلة للتحقق.
+
+---
+*المحلل: خط أنابيب الاستخبارات الوكيلة | التاريخ: 2026-05-01 | التصنيف: غير سري*
+
+---
+
+### إضافات الجولة الثانية: تقييم استراتيجي معمّق
+
+#### فجوة حرجة تم تحديدها في مراجعة الجولة الأولى
+
+تواجه الحكومة مفارقة هيكلية في المساءلة: **الاستجوابات الثلاثة الأقوى دليلاً (HD10458، HD10451، HD10461) تستشهد جميعها ببيانات مصدرية مستقلة** (ESO: 352 مليار كرونة؛ ESA: المرتبة 17/23؛ العنف: إحصاءات قياسية لعام 2025). وهذا أمر غير معتاد تحليلياً — إذ تعتمد استجوابات المعارضة عادةً على التأطير السياسي. في هذه الدفعة، أرست S حملتها على أرقام لا تستطيع الحكومة الطعن فيها بصدقية دون تحدي هيئات الخبراء المستقلة (ESO) وRymdstyrelsen.
+
+#### شجرة القرار المحسّنة
+
+1. **ستروميّر** (HD10458 + HD10451): الإعلان عن حزمة تشريعية (تطبيق توجيه الاتحاد الأوروبي لمكافحة الجريمة المنظمة + مصادرة الأصول) بحلول 2026-05-12 (7 أيام قبل الموعد) — يحوّل هذا لحظة دفاعية إلى إعلان سياسة
+2. **إيدهولم** (HD10461): التمويل التكميلي VÅP هو المسار الوحيد ذو المصداقية؛ يجب تنسيقه مع وزارة المالية
+3. **سلوتنر** (HD10459): الإعلان عن مراجعة مستهدفة لدعم المجتمع المدني — استيعاب جزئي لـ SD دون التزام دستوري
+
+#### السياق الاقتصادي (IMF/SCB)
+- الناتج المحلي الإجمالي السويدي 2025: نحو 6,400 مليار كرونة (تقديري)
+- 352 مليار كرونة اقتصاد جنائي = ~5.5 % من الناتج المحلي الإجمالي (حساب ESO)
+- المقارنة مع الاتحاد الأوروبي: تقدّر UNODC الاقتصاد الجنائي في الاتحاد بنسبة 2–4 % من الناتج؛ نسبة السويد 5.5 % (إن كانت منهجية ESO متسقة) تشير إلى اختراق أعلى من المتوسط
+
+---
+*إضافات الجولة الثانية: 2026-05-01*
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_da.md -->
+
+**BLUF (Bundlinie)**: Fem interpellationer indgivet 22.–30. april 2026 afslører tre samtidige kriser — Sveriges kriminelle økonomi (352 GSEK/5,5 % af BNP), banderelateret vold og faldende konkurrenceevne i rumsektoren — som alle ankommer simultant i den prævalgte politiske kalender. Oppositionen S og regeringspartiet SD bruger interpellationer til at forme sommerens valgfortælling 2026.
+
+### Beslutninger der kræves straks
+
+1. **Justitsminister Strömmer (M)**: Skal operationalisere "udrydde bandekriminalitet på 4 år" inden HD10458 svarsfrist 2026-05-19 — ellers risikeres troværdighedsskade forud for valgkampen
+2. **Minister Edholm (L)**: Skal forklare Sveriges fald til plads 17 hos ESA inden HD10461 svarsfrist 2026-05-19 — Rymdstyrelsen anmoder om betydeligt mere end de tildelte 100 MSEK
+3. **Civilminister Slottner (KD)**: Skal svare på SD's krav om konstitutionel reform (udnævnelsesmagt til Riksdag) senest 2026-05-20 — svaret signalerer tolerancen for intrakoalitionelt SD-imødekommende
+
+### Signifikansoversigt
+
+| dok_id | Emne | DIW-score | Prioritet |
+|--------|------|-----------|----------|
+| HD10458 | Løfte om at udrydde bandekriminalitet | 8/10 | L2+ Prioritet |
+| HD10451 | Kriminel økonomi 352 GSEK | 7/10 | L2 Strategisk |
+| HD10461 | ESA/rumfinansiering i tilbagegang | 7/10 | L2 Strategisk |
+| HD10459 | Krav om reform af aktivistmyndigheder | 6/10 | L2 Strategisk |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 Operationel |
+
+### Central strategisk dynamik
+
+```mermaid
+graph TD
+    A[S: Kriminel økonomi\nHD10458 + HD10451] -->|352 GSEK ESO-tal| B[Regerings ansvarsgab\nforud for valg]
+    C[SD: Institutionel reform\nHD10459] -->|Intrakoalitionspres| D[Tidökoalitionens\ninterne spænding]
+    E[S: ESA rumdnedgang\nHD10461] -->|Plads 17 af 23| F[Konkurrenceevnefortælling]
+    B --> G[2026 Valkampbane]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### Tidskritiske indikatorer
+
+- **2026-05-19**: Strömmer (bander) + Edholm (rum) svarer — mest synlige datoer
+- **2026-05-20**: Slottner (myndigheds aktivisme) svarer — koalitionsspændinger synliggøres
+- **2026-05-21**: Brandberg (SFV) svarer — lavest synlighed
+
+**Vurdering**: Konvergensen af HD10458 + HD10451 skaber den farligste oppositionsudfordring for regeringen: en sammenhængende fortælling om "352 GSEK kriminel økonomi + stigende vold + en regering uden redskaber" med uafhængigt kildebelæg (ESO) og verificerbarhed.
+
+---
+*Analytiker: Agentisk efterretningspipeline | Dato: 2026-05-01 | Klassifikation: UKLASSIFICERET*
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_de.md -->
+
+**BLUF (Kernaussage)**: Fünf zwischen dem 22. und 30. April 2026 eingereichte Interpellationen enthüllen drei gleichzeitig eskalierenden Krisen — Schwedens Kriminalwirtschaft (352 GSEK/5,5 % des BIP), Bandenkriminalität und sinkende Wettbewerbsfähigkeit im Raumfahrtsektor — die allesamt im vorwahlpolitischen Kalender zusammentreffen. Die Oppositionspartei S und die Regierungspartei SD nutzen Interpellationen, um das Wahlkampfnarrativ für Sommer 2026 zu gestalten.
+
+### Sofort erforderliche Entscheidungen
+
+1. **Justizminister Strömmer (M)**: Muss „Bandenkriminalität in 4 Jahren ausrotten" vor dem HD10458-Antworttermin 2026-05-19 operationalisieren — sonst drohen Glaubwürdigkeitsverluste im Wahlkampf
+2. **Minister Edholm (L)**: Muss Schwedens Abstieg auf Rang 17 bei der ESA vor dem HD10461-Antworttermin 2026-05-19 erklären — Rymdstyrelsen beantragt erheblich mehr als die zugewiesenen 100 MSEK
+3. **Zivilminister Slottner (KD)**: Muss auf SDs Forderung nach Verfassungsreform (Ernennungsrecht an den Riksdag) bis zum 2026-05-20 antworten — die Antwort signalisiert die Toleranz der Koalition gegenüber SD-Entgegenkommen
+
+### Signifikanzübersicht
+
+| dok_id | Thema | DIW-Bewertung | Priorität |
+|--------|-------|---------------|----------|
+| HD10458 | Versprechen zur Ausrottung der Bandenkriminalität | 8/10 | L2+ Priorität |
+| HD10451 | Kriminalwirtschaft 352 GSEK | 7/10 | L2 Strategisch |
+| HD10461 | ESA/Raumfahrtfinanzierung rückläufig | 7/10 | L2 Strategisch |
+| HD10459 | Forderung nach Reform aktivistischer Behörden | 6/10 | L2 Strategisch |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 Operativ |
+
+### Zentrale strategische Dynamik
+
+```mermaid
+graph TD
+    A[S: Kriminalwirtschaft\nHD10458 + HD10451] -->|352 GSEK ESO-Zahl| B[Regierungs-Rechenschaftslücke\nvor der Wahl]
+    C[SD: Institutionelle Reform\nHD10459] -->|Innerkoalitionsdruck| D[Tidökoalition\ninnere Spannung]
+    E[S: ESA Raumfahrtrückgang\nHD10461] -->|Rang 17 von 23| F[Wettbewerbsfähigkeitsnarrativ]
+    B --> G[Wahlschlachtfeld 2026]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### Zeitkritische Indikatoren
+
+- **2026-05-19**: Strömmer (Banden) + Edholm (Raumfahrt) antworten — sichtbarste Daten
+- **2026-05-20**: Slottner (Behördenaktivismus) antwortet — Koalitionsspannungen sichtbar
+- **2026-05-21**: Brandberg (SFV) antwortet — geringste Sichtbarkeit
+
+**Bewertung**: Die Konvergenz von HD10458 + HD10451 schafft die gefährlichste Oppositionsherausforderung für die Regierung: ein kohärentes Narrativ von „352 GSEK Kriminalwirtschaft + eskalierender Gewalt + Regierung ohne Mittel", das unabhängig belegt (ESO) und verifizierbar ist.
+
+---
+
+---
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_es.md -->
+
+**BLUF (Conclusión principal)**: Cinco interpelaciones presentadas entre el 22 y el 30 de abril de 2026 revelan tres crisis convergentes — la economía criminal sueca (352 GSEK/5,5 % del PIB), la violencia de bandas y el declive de la competitividad en el sector espacial — que llegan simultáneamente al calendario político preelectoral. La oposición S y el partido gubernamental SD utilizan las interpelaciones para moldear el relato electoral del verano de 2026.
+
+### Decisiones inmediatas requeridas
+
+1. **Ministro de Justicia Strömmer (M)**: Debe operacionalizar "erradicar la criminalidad de bandas en 4 años" antes de la fecha de respuesta HD10458 el 2026-05-19 — de lo contrario, se arriesga a un daño de credibilidad antes de la campaña electoral
+2. **Ministro Edholm (L)**: Debe explicar el descenso de Suecia al puesto 17 en la ESA antes de la fecha de respuesta HD10461 el 2026-05-19 — Rymdstyrelsen solicita considerablemente más que los 100 MSEK asignados
+3. **Ministro civil Slottner (KD)**: Debe responder a la demanda de reforma constitucional del SD (poder de nombramiento al Riksdag) antes del 2026-05-20 — la respuesta señalará la tolerancia de la coalición hacia las concesiones al SD
+
+### Resumen de importancia
+
+| dok_id | Tema | Puntuación DIW | Prioridad |
+|--------|------|----------------|---------|
+| HD10458 | Promesa de erradicación de la criminalidad de bandas | 8/10 | L2+ Prioridad |
+| HD10451 | Economía criminal 352 GSEK | 7/10 | L2 Estratégico |
+| HD10461 | Financiamiento ESA/espacial en declive | 7/10 | L2 Estratégico |
+| HD10459 | Demanda de reforma de agencias activistas | 6/10 | L2 Estratégico |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 Operacional |
+
+### Dinámica estratégica central
+
+```mermaid
+graph TD
+    A[S: Economía criminal\nHD10458 + HD10451] -->|352 GSEK cifra ESO| B[Déficit de responsabilidad\ndel gobierno antes de las elecciones]
+    C[SD: Reforma institucional\nHD10459] -->|Presión intra-coalición| D[Tensión interna\nde la Tidökoalition]
+    E[S: Declive espacial ESA\nHD10461] -->|Puesto 17 de 23| F[Relato de competitividad]
+    B --> G[Campo de batalla electoral 2026]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### Indicadores con plazos críticos
+
+- **2026-05-19**: Strömmer (bandas) + Edholm (espacio) responden — fechas de mayor visibilidad
+- **2026-05-20**: Slottner (activismo institucional) responde — tensiones de coalición visibles
+- **2026-05-21**: Brandberg (SFV) responde — menor visibilidad
+
+**Evaluación**: La convergencia de HD10458 + HD10451 crea el desafío de oposición más peligroso para el gobierno: un relato coherente de "352 GSEK de economía criminal + violencia creciente + gobierno sin herramientas", con respaldo de fuentes independientes (ESO) y verificable.
+
+---
+*Analista: Línea de inteligencia agéntica | Fecha: 2026-05-01 | Clasificación: SIN CLASIFICAR*
+
+---
+
+### Adiciones del Paso 2: Evaluación estratégica ampliada
+
+#### Laguna crítica identificada en la revisión del Paso 1
+
+El gobierno se enfrenta a una paradoja estructural de rendición de cuentas: **las tres interpelaciones con evidencia más sólida (HD10458, HD10451, HD10461) citan todas datos de fuentes independientes** (ESO: 352 GSEK; ESA: puesto 17/23; violencia: estadísticas récord 2025). Esto es analíticamente inusual — las interpelaciones de la oposición suelen basarse en un encuadre político. En este lote, S ha anclado su campaña en cifras que el gobierno no puede rebatir de manera creíble sin cuestionar organismos expertos independientes (ESO) y Rymdstyrelsen.
+
+#### Árbol de decisiones mejorado
+
+1. **Strömmer** (HD10458 + HD10451): Anunciar paquete legislativo (implementación de la Directiva UE contra la delincuencia organizada + decomiso de activos) antes del 2026-05-12 (7 días antes de la fecha de respuesta) — esto convierte un momento defensivo en un anuncio de política
+2. **Edholm** (HD10461): La financiación suplementaria VÅP es el único camino de respuesta creíble; debe coordinarse con el Finansdepartementet
+3. **Slottner** (HD10459): Anunciar revisión específica de los subsidios a la sociedad civil — concesión parcial al SD sin compromiso constitucional
+
+#### Contexto económico (FMI/SCB)
+- PIB sueco 2025: aproximadamente 6.400 GSEK (estimado)
+- 352 GSEK de economía criminal = ~5,5 % del PIB (cálculo de ESO)
+- Comparación UE: la UNODC estima la economía criminal de la UE en el 2–4 % del PIB; el 5,5 % de Suecia (si la metodología de la ESO es coherente) indica una penetración superior a la media
+
+---
+*Adiciones del Paso 2: 2026-05-01*
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_fi.md -->
+
+**BLUF (Ydinviesti)**: Viisi 22.–30. huhtikuuta 2026 jätettyjä interpellaatioita paljastaa kolme samanaikaista kriisiä — Ruotsin rikollinen talous (352 GSEK / 5,5 % BKT:stä), jengiväkivalta ja heikkenevä kilpailukyky avaruussektorilla — jotka kaikki saapuvat samanaikaisesti vaaleja edeltävässä poliittisessa kalenterissa. Oppositio S ja hallituspuolue SD käyttävät interpellaatioita muokatakseen kesä-2026 vaalikertomusta.
+
+### Välittömästi vaadittavat päätökset
+
+1. **Oikeusministeri Strömmer (M)**: Tulee operationalisoida "hävitä jengirikollisuus 4 vuodessa" ennen HD10458 vastauspäivää 2026-05-19 — muutoin uskottavuus kärsii ennen vaalikampanjaa
+2. **Ministeri Edholm (L)**: Tulee selittää Ruotsin putoaminen ESA:n sijalle 17 ennen HD10461 vastauspäivää 2026-05-19 — Rymdstyrelsen pyytää huomattavasti enemmän kuin myönnetyt 100 MSEK
+3. **Siviiliministeri Slottner (KD)**: Tulee vastata SD:n perustuslaillisen uudistuksen vaatimukseen (nimitysvalta Riksdagille) viimeistään 2026-05-20 — vastaus kertoo koalition sisäisestä SD:n myöntyväisyydestä
+
+### Merkittävyysyhteenveto
+
+| dok_id | Aihe | DIW-pisteet | Prioriteetti |
+|--------|------|-------------|-------------|
+| HD10458 | Lupaus jengirikollisuuden hävittämisestä | 8/10 | L2+ Prioriteetti |
+| HD10451 | Rikollinen talous 352 GSEK | 7/10 | L2 Strateginen |
+| HD10461 | ESA/avaruusrahoitus laskussa | 7/10 | L2 Strateginen |
+| HD10459 | Vaatimus aktivistijärjestöjen reformista | 6/10 | L2 Strateginen |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 Operatiivinen |
+
+### Keskeinen strateginen dynamiikka
+
+```mermaid
+graph TD
+    A[S: Rikollinen talous\nHD10458 + HD10451] -->|352 GSEK ESO-luku| B[Hallituksen vastuuvaje\nennen vaaleja]
+    C[SD: Institutionaalinen uudistus\nHD10459] -->|Koalition sisäinen paine| D[Tidökoalition\nsisäinen jännite]
+    E[S: ESA avaruuden taantuma\nHD10461] -->|Sija 17/23| F[Kilpailukykykertomus]
+    B --> G[2026 Vaalitaistelu]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### Aikakriittiset indikaattorit
+
+- **2026-05-19**: Strömmer (jengit) + Edholm (avaruus) vastaavat — näkyvimmät päivämäärät
+- **2026-05-20**: Slottner (virastolaktivismi) vastaa — koalitiojännitteet näkyvillä
+- **2026-05-21**: Brandberg (SFV) vastaa — vähäisin näkyvyys
+
+**Arvio**: HD10458:n ja HD10451:n konvergenssi luo vaarallisimman oppositiohaasteen hallitukselle: johdonmukainen kertomus "352 GSEK rikollinen talous + lisääntyvä väkivalta + hallitus ilman välineitä", jolla on itsenäinen lähdetuki (ESO) ja todennettavuus.
+
+---
+*Analyytikko: Agenttinen tiedusteluputki | Päivämäärä: 2026-05-01 | Luokitus: JULKINEN*
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_fr.md -->
+
+**BLUF (Ligne directrice)** : Cinq interpellations déposées du 22 au 30 avril 2026 révèlent trois crises concomitantes — l'économie criminelle suédoise (352 GSEK/5,5 % du PIB), les violences de gangs et le déclin de la compétitivité dans le secteur spatial — qui convergent simultanément dans le calendrier politique pré-électoral. L'opposition S et le parti gouvernemental SD utilisent les interpellations pour façonner le récit électoral de l'été 2026.
+
+### Décisions immédiates requises
+
+1. **Ministre de la Justice Strömmer (M)** : Doit opérationnaliser « éradiquer la criminalité des gangs en 4 ans » avant la date de réponse HD10458 le 2026-05-19 — sous peine d'atteinte à la crédibilité avant la campagne électorale
+2. **Ministre Edholm (L)** : Doit expliquer la chute de la Suède au rang 17 auprès de l'ESA avant la date de réponse HD10461 le 2026-05-19 — Rymdstyrelsen demande sensiblement plus que les 100 MSEK alloués
+3. **Ministre civil Slottner (KD)** : Doit répondre à la demande de réforme constitutionnelle du SD (pouvoir de nomination au Riksdag) d'ici le 2026-05-20 — la réponse signalera la tolérance de la coalition envers les concessions au SD
+
+### Récapitulatif de l'importance
+
+| dok_id | Sujet | Score DIW | Priorité |
+|--------|-------|-----------|---------|
+| HD10458 | Promesse d'éradication de la criminalité des gangs | 8/10 | L2+ Priorité |
+| HD10451 | Économie criminelle 352 GSEK | 7/10 | L2 Stratégique |
+| HD10461 | Financement ESA/spatial en déclin | 7/10 | L2 Stratégique |
+| HD10459 | Demande de réforme des agences activistes | 6/10 | L2 Stratégique |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 Opérationnel |
+
+### Dynamique stratégique centrale
+
+```mermaid
+graph TD
+    A[S: Économie criminelle\nHD10458 + HD10451] -->|352 GSEK chiffre ESO| B[Déficit de responsabilité\ndu gouvernement avant les élections]
+    C[SD: Réforme institutionnelle\nHD10459] -->|Pression intra-coalition| D[Tension interne\nde la Tidökoalition]
+    E[S: Déclin spatial ESA\nHD10461] -->|Rang 17 sur 23| F[Récit de compétitivité]
+    B --> G[Champ de bataille électoral 2026]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### Indicateurs à échéance critique
+
+- **2026-05-19** : Strömmer (gangs) + Edholm (espace) répondent — dates les plus visibles
+- **2026-05-20** : Slottner (activisme institutionnel) répond — tensions de coalition visibles
+- **2026-05-21** : Brandberg (SFV) répond — visibilité la plus faible
+
+**Évaluation** : La convergence des HD10458 + HD10451 crée le défi d'opposition le plus dangereux pour le gouvernement : un récit cohérent de « 352 GSEK d'économie criminelle + violence croissante + gouvernement sans outils », étayé par des sources indépendantes (ESO) et vérifiable.
+
+---
+*Analyste : Pipeline de renseignement agentique | Date : 2026-05-01 | Classification : NON CLASSIFIÉ*
+
+---
+
+### Ajouts du Passage 2 : Évaluation stratégique approfondie
+
+#### Lacune critique identifiée lors de la révision du Passage 1
+
+Le gouvernement est confronté à un paradoxe structurel de responsabilisation : **les trois interpellations à la preuve la plus solide (HD10458, HD10451, HD10461) citent toutes des données de source indépendante** (ESO : 352 GSEK ; ESA : rang 17/23 ; violence : statistiques record 2025). Ceci est analytiquement inhabituel — les interpellations de l'opposition s'appuient typiquement sur un cadrage politique. Dans ce lot, S a ancré sa campagne sur des chiffres que le gouvernement ne peut pas contester de manière crédible sans remettre en question des organes d'experts indépendants (ESO) et Rymdstyrelsen.
+
+#### Arbre décisionnel amélioré
+
+1. **Strömmer** (HD10458 + HD10451) : Annoncer un paquet législatif (transposition de la directive UE contre la criminalité organisée + confiscation d'avoirs) d'ici le 2026-05-12 (7 jours avant la date de réponse) — cela transforme un moment défensif en annonce de politique publique
+2. **Edholm** (HD10461) : Le financement supplémentaire VÅP est la seule voie de réponse crédible ; doit être coordonné avec le Finansdepartementet
+3. **Slottner** (HD10459) : Annoncer un examen ciblé des subventions à la société civile — concession partielle au SD sans engagement constitutionnel
+
+#### Contexte économique (FMI/SCB)
+- PIB suédois 2025 : environ 6 400 GSEK (estimé)
+- 352 GSEK d'économie criminelle = ~5,5 % du PIB (calcul ESO)
+- Comparaison UE : l'ONUDC estime l'économie criminelle de l'UE à 2–4 % du PIB ; les 5,5 % de la Suède (si la méthodologie de l'ESO est cohérente) indiquent une pénétration supérieure à la moyenne
+
+---
+*Ajouts du Passage 2 : 2026-05-01*
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — שאילתות לממשלה 2026-05-01
+
+**תמצית (BLUF)**: חמש שאילתות שהוגשו בין 22 ל-30 באפריל 2026 חושפות שלוש משברים מתכנסים — הכלכלה הפלילית של שוודיה (352 מיליארד קרונות / 5.5% מהתוצר), אלימות כנופיות, ירידה בתחרותיות מגזר החלל — שכולם מגיעים בו-זמנית בלוח הזמנים הפוליטי לקראת הבחירות. האופוזיציה S ומפלגת הממשלה SD משתמשות בשאילתות לעיצוב נרטיב הבחירות של קיץ 2026.
+
+### החלטות נדרשות מיידית
+
+1. **שר המשפטים סטרומר (M)**: חייב לאפיין "מיגור פשע הכנופיות ב-4 שנים" לפני תאריך התשובה HD10458 ב-2026-05-19 — אחרת ייפגע האמינות לקראת מסע הבחירות
+2. **השר אדהולם (L)**: חייב להסביר את ירידת שוודיה לדירוג 17 ב-ESA לפני תאריך התשובה HD10461 ב-2026-05-19 — Rymdstyrelsen מבקשת הרבה יותר מ-100 מיליון קרונות שהוקצו
+3. **השר האזרחי סלוטנר (KD)**: חייב להגיב לדרישת SD לרפורמה חוקתית (סמכות מינוי לרישדאג) עד 2026-05-20 — התשובה תאותת על סבלנות הקואליציה כלפי פייסנות SD
+
+### סיכום חשיבות
+
+| dok_id | נושא | ציון DIW | עדיפות |
+|--------|------|----------|-------|
+| HD10458 | הבטחה למיגור פשע הכנופיות | 8/10 | L2+ עדיפות |
+| HD10451 | כלכלה פלילית 352 מיליארד קרונות | 7/10 | L2 אסטרטגי |
+| HD10461 | מימון ESA/חלל בירידה | 7/10 | L2 אסטרטגי |
+| HD10459 | דרישה לרפורמה בסוכנויות פעילניות | 6/10 | L2 אסטרטגי |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 מבצעי |
+
+### דינמיקה אסטרטגית מרכזית
+
+```mermaid
+graph TD
+    A[S: כלכלה פלילית\nHD10458 + HD10451] -->|352 מיליארד קרונות ESO| B[פער אחריות ממשלתי\nלקראת הבחירות]
+    C[SD: רפורמה מוסדית\nHD10459] -->|לחץ בתוך הקואליציה| D[מתח פנימי\nב-Tidökoalitionen]
+    E[S: ירידה בתחום החלל ESA\nHD10461] -->|דירוג 17 מ-23| F[נרטיב כושר התחרות]
+    B --> G[זירת הבחירות 2026]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### מדדים קריטיים בזמן
+
+- **2026-05-19**: סטרומר (כנופיות) + אדהולם (חלל) מגיבים — תאריכים הנראים ביותר
+- **2026-05-20**: סלוטנר (פעילנות ממסדית) מגיב — מתחי הקואליציה גלויים
+- **2026-05-21**: ברנדברג (SFV) מגיב — נראות נמוכה ביותר
+
+**הערכה**: התכנסות HD10458 ו-HD10451 יוצרת את האתגר האופוזיציוני המסוכן ביותר לממשלה: נרטיב קוהרנטי של "352 מיליארד קרונות כלכלה פלילית + אלימות מתגברת + ממשלה ללא כלים", המגובה על ידי מקורות עצמאיים (ESO) ואף ניתן לאימות.
+
+---
+*אנליסט: צינור מודיעין אגנטי | תאריך: 2026-05-01 | סיווג: לא מסווג*
+
+---
+
+### תוספות סיבוב 2: הערכה אסטרטגית מורחבת
+
+#### פגם קריטי שזוהה בסקירת סיבוב 1
+
+הממשלה עומדת בפני פרדוקס אחריות מבני: **שלוש השאילתות בעלות הראיות החזקות ביותר (HD10458, HD10451, HD10461) כולן מצטטות נתוני מקור עצמאיים** (ESO: 352 מיליארד קרונות; ESA: דירוג 17/23; אלימות: סטטיסטיקות שיא 2025). זהו דבר יוצא דופן מבחינה אנליטית — בדרך כלל שאילתות האופוזיציה מתבססות על מיסגור פוליטי. בקבוצה זו, S עיגנה את מסע הבחירות שלה על נתונים שהממשלה אינה יכולה לחלוק עליהם באמינות מבלי לערער גופי מומחים עצמאיים (ESO) ו-Rymdstyrelsen.
+
+#### עץ החלטות משופר
+
+1. **סטרומר** (HD10458 + HD10451): להכריז על חבילת חקיקה (יישום הנחיית האיחוד האירופי נגד פשע מאורגן + חילוט נכסים) עד 2026-05-12 (7 ימים לפני מועד התשובה) — הופך רגע הגנתי להכרזת מדיניות
+2. **אדהולם** (HD10461): מימון VÅP הנוסף הוא המסלול היחיד בעל האמינות; יש לתאם עם משרד האוצר
+3. **סלוטנר** (HD10459): להכריז על סקירה ממוקדת של סבסוד החברה האזרחית — פייסנות חלקית ל-SD ללא מחויבות חוקתית
+
+#### הקשר כלכלי (IMF/SCB)
+- תמ"ג שוודיה 2025: כ-6,400 מיליארד קרונות (הערכה)
+- 352 מיליארד קרונות כלכלה פלילית = ~5.5% מהתמ"ג (חישוב ESO)
+- השוואה לאיחוד האירופי: UNODC מעריכה את הכלכלה הפלילית באיחוד ב-2–4% מהתמ"ג; 5.5% של שוודיה (אם מתודולוגיית ESO עקבית) מצביעה על חדירה גבוהה מהממוצע
+
+---
+*תוספות סיבוב 2: 2026-05-01*
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_ja.md -->
+
+**BLUF（結論）**: 2026年4月22日から30日にかけて提出された5件の政府質問書は、3つの同時発生的な危機を明らかにしている — スウェーデンの犯罪経済（352 GSEK / GDP比5.5%）、ギャング暴力、宇宙セクターの競争力低下。これらはすべて、選挙前の政治カレンダーに同時に到来している。野党Sと与党SDは、2026年夏の選挙ナラティブを形成するために政府質問書を活用している。
+
+### 即時対応が必要な決定事項
+
+1. **法務大臣ストロマー（M）**: HD10458の回答期限2026-05-19までに「ギャング犯罪を4年で撲滅」を具体化しなければならない — さもなければ選挙運動前の信頼性に損害が生じる
+2. **大臣エドホルム（L）**: HD10461の回答期限2026-05-19までにスウェーデンのESAでの順位17位への転落を説明しなければならない — Rymdstyrelsは割り当て額100 MSEKを大幅に超える要求をしている
+3. **民政大臣スロットナー（KD）**: SDの憲法改革要求（リクスダーグへの任命権移譲）に2026-05-20までに回答しなければならない — 回答は連立内でのSD配慮の許容度を示す
+
+### 重要度サマリー
+
+| dok_id | テーマ | DIWスコア | 優先度 |
+|--------|--------|-----------|-------|
+| HD10458 | ギャング犯罪撲滅の公約 | 8/10 | L2+優先 |
+| HD10451 | 犯罪経済352 GSEK | 7/10 | L2戦略的 |
+| HD10461 | ESA/宇宙資金の減少 | 7/10 | L2戦略的 |
+| HD10459 | 活動家機関の改革要求 | 6/10 | L2戦略的 |
+| HD10460 | SFV bidragsfastigheter（RiR 2025:30） | 5/10 | L3作戦的 |
+
+### 中心的な戦略的ダイナミクス
+
+```mermaid
+graph TD
+    A[S: 犯罪経済\nHD10458 + HD10451] -->|352 GSEK ESO数値| B[選挙前の\n政府アカウンタビリティギャップ]
+    C[SD: 制度改革\nHD10459] -->|連立内圧力| D[Tidökoalitionenの\n内部緊張]
+    E[S: ESA宇宙後退\nHD10461] -->|23か国中17位| F[競争力ナラティブ]
+    B --> G[2026年選挙の戦場]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### 時間的に重要な指標
+
+- **2026-05-19**: ストロマー（ギャング）+ エドホルム（宇宙）が回答 — 最も注目度の高い日程
+- **2026-05-20**: スロットナー（機関活動主義）が回答 — 連立の緊張が可視化
+- **2026-05-21**: ブランドベリ（SFV）が回答 — 最も注目度が低い
+
+**評価**: HD10458とHD10451の収束は、政府にとって最も危険な野党の挑戦を生み出す：独立して裏付けられ（ESO）検証可能な「352 GSEKの犯罪経済 + 暴力の拡大 + 手段のない政府」という一貫したナラティブ。
+
+---
+*アナリスト：エージェンティック・インテリジェンス・パイプライン | 日付：2026-05-01 | 分類：非機密*
+
+---
+
+### パス2追加事項：強化された戦略的評価
+
+#### パス1レビューで特定された重要なギャップ
+
+政府は構造的な説明責任のパラドックスに直面している：**最も証拠力の強い3件の質問書（HD10458、HD10451、HD10461）はすべて独立した情報源データを引用している**（ESO：352 GSEK；ESA：17/23位；暴力：2025年過去最高統計）。これは分析的に異例であり — 通常、野党の質問書は政治的フレーミングに依拠する。今回の一括審議では、Sは独立した専門機関（ESO）とRymdstyrelsを問題にすることなく政府が信頼性をもって反論できない数値に選挙運動を固定した。
+
+#### 強化された意思決定ツリー
+
+1. **ストロマー**（HD10458 + HD10451）：2026-05-12（回答期限7日前）までに法律パッケージを発表（EU組織犯罪指令の実施 + 資産没収）— これにより防御的な局面が政策発表に転換
+2. **エドホルム**（HD10461）：VÅP補足財政支援が唯一の信頼できる対応経路；Finansdepartementetとの調整が必要
+3. **スロットナー**（HD10459）：市民社会補助金の対象審査を発表 — 憲法的コミットメントなしの部分的SD配慮
+
+#### 経済的文脈（IMF/SCB）
+- スウェーデンGDP 2025：推定6,400 GSEK
+- 352 GSEKの犯罪経済 = GDP比～5.5%（ESO計算）
+- EU比較：UNODCはEUの犯罪経済をGDP比2–4%と推定；スウェーデンの5.5%（ESO手法が整合的であれば）は平均以上の浸透を示す
+
+---
+*パス2追加事項：2026-05-01*
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_ko.md -->
+
+**BLUF（핵심 요약）**: 2026년 4월 22일부터 30일 사이에 제출된 5건의 대정부 질문은 세 가지 동시 위기를 드러냅니다 — 스웨덴의 범죄 경제(352 GSEK/GDP 대비 5.5%), 갱단 폭력, 우주 산업 경쟁력 저하 — 이 모든 것이 선거 전 정치 일정에 동시에 도래하고 있습니다. 야당 S와 여당 SD는 대정부 질문을 활용하여 2026년 여름 선거 내러티브를 형성하고 있습니다.
+
+### 즉각적인 결정 사항
+
+1. **법무장관 스트뢰메르(M)**: 2026-05-19 HD10458 답변 기한 전에 "4년 내 갱단 범죄 근절"을 구체화해야 함 — 그렇지 않으면 선거 캠페인 전 신뢰성 손상 위험
+2. **에드홀름 장관(L)**: 2026-05-19 HD10461 답변 기한 전에 스웨덴의 ESA 17위 추락을 설명해야 함 — Rymdstyrelsen은 배정된 100 MSEK를 크게 초과하는 예산을 요청 중
+3. **민정장관 슬로트네르(KD)**: 2026-05-20까지 SD의 헌법 개혁 요구(국회에 임명권 부여)에 답변해야 함 — 답변은 연립 내 SD 수용 범위를 시사
+
+### 중요도 요약
+
+| dok_id | 주제 | DIW 점수 | 우선순위 |
+|--------|------|----------|---------|
+| HD10458 | 갱단 범죄 근절 약속 | 8/10 | L2+ 우선 |
+| HD10451 | 범죄 경제 352 GSEK | 7/10 | L2 전략적 |
+| HD10461 | ESA/우주 자금 감소 | 7/10 | L2 전략적 |
+| HD10459 | 활동가 기관 개혁 요구 | 6/10 | L2 전략적 |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 운용적 |
+
+### 핵심 전략적 역학
+
+```mermaid
+graph TD
+    A[S: 범죄 경제\nHD10458 + HD10451] -->|352 GSEK ESO 수치| B[선거 전\n정부 책임 공백]
+    C[SD: 제도 개혁\nHD10459] -->|연립 내부 압력| D[Tidökoalitionens\n내부 긴장]
+    E[S: ESA 우주 쇠퇴\nHD10461] -->|23개국 중 17위| F[경쟁력 서사]
+    B --> G[2026 선거 전장]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### 시간적으로 중요한 지표
+
+- **2026-05-19**: 스트뢰메르(갱단) + 에드홀름(우주) 답변 — 가장 가시적인 날짜
+- **2026-05-20**: 슬로트네르(기관 활동주의) 답변 — 연립 긴장 가시화
+- **2026-05-21**: 브란드베리(SFV) 답변 — 가시성 최저
+
+**평가**: HD10458과 HD10451의 수렴은 정부에 가장 위험한 야당의 도전을 만들어냅니다: 독립적으로 근거가 있고(ESO) 검증 가능한 "352 GSEK 범죄 경제 + 증가하는 폭력 + 도구 없는 정부"라는 일관된 서사.
+
+---
+*분석가: 에이전틱 인텔리전스 파이프라인 | 날짜: 2026-05-01 | 분류: 미분류*
+
+---
+
+### 2차 검토 추가 사항: 강화된 전략적 평가
+
+#### 1차 검토에서 식별된 핵심 공백
+
+정부는 구조적인 책임 역설에 직면합니다: **가장 강력한 증거를 가진 세 개의 질문(HD10458, HD10451, HD10461)은 모두 독립적인 원천 데이터를 인용하고 있습니다** (ESO: 352 GSEK; ESA: 17/23위; 폭력: 2025년 기록적 통계). 이것은 분석적으로 드문 일입니다 — 일반적으로 야당의 대정부 질문은 정치적 프레이밍에 의존합니다. 이번 패키지에서 S는 독립 전문가 기관(ESO)과 Rymdstyrelsen을 도전하지 않고서는 정부가 신뢰성 있게 반박할 수 없는 수치에 캠페인을 고정했습니다.
+
+#### 개선된 의사결정 트리
+
+1. **스트뢰메르** (HD10458 + HD10451): 2026-05-12(답변 기한 7일 전)까지 법안 패키지 발표(EU 조직범죄 지침 시행 + 자산 몰수) — 이를 통해 방어적 순간을 정책 발표로 전환
+2. **에드홀름** (HD10461): VÅP 추가 재정 지원이 유일하게 신뢰할 수 있는 대응 경로; Finansdepartementet와 조율 필요
+3. **슬로트네르** (HD10459): 시민사회 보조금 대상 검토 발표 — 헌법적 약속 없는 부분적 SD 수용
+
+#### 경제적 맥락 (IMF/SCB)
+- 스웨덴 GDP 2025: 약 6,400 GSEK (추정)
+- 352 GSEK 범죄 경제 = GDP 대비 ~5.5% (ESO 계산)
+- EU 비교: UNODC는 EU 범죄 경제를 GDP 대비 2–4%로 추산; 스웨덴의 5.5%(ESO 방법론이 일관적이라면)는 평균 이상의 침투를 나타냄
+
+---
+*2차 검토 추가 사항: 2026-05-01*
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_nl.md -->
+
+**BLUF (Kernboodschap)**: Vijf interpellaties ingediend van 22 tot 30 april 2026 onthullen drie samenlopende crises — de Zweedse criminele economie (352 GSEK/5,5 % van het bbp), bendegeweld en dalende concurrentiekracht in de ruimtesector — die allemaal gelijktijdig aankomen in de pre-electorale politieke agenda. De oppositiepartij S en de regeringspartij SD gebruiken interpellaties om het verkiezingsnarratief van zomer 2026 te vormen.
+
+### Onmiddellijk vereiste beslissingen
+
+1. **Minister van Justitie Strömmer (M)**: Moet "bendegeweld in 4 jaar uitroeien" operationaliseren vóór de antwoorddatum HD10458 op 2026-05-19 — anders riskert men geloofwaardigheidsverlies voor de verkiezingscampagne
+2. **Minister Edholm (L)**: Moet de daling van Zweden naar rang 17 bij de ESA verklaren vóór de antwoorddatum HD10461 op 2026-05-19 — Rymdstyrelsen verzoekt aanzienlijk meer dan de toegewezen 100 MSEK
+3. **Civiele minister Slottner (KD)**: Moet vóór 2026-05-20 reageren op SD's eis voor grondwettelijke hervorming (benoemingsbevoegdheid aan de Riksdag) — de reactie signaleert de tolerantie van de coalitie voor SD-tegemoetkomingen
+
+### Significantieoverzicht
+
+| dok_id | Onderwerp | DIW-score | Prioriteit |
+|--------|-----------|-----------|----------|
+| HD10458 | Belofte om bendegeweld uit te roeien | 8/10 | L2+ Prioriteit |
+| HD10451 | Criminele economie 352 GSEK | 7/10 | L2 Strategisch |
+| HD10461 | ESA/ruimtefinanciering in verval | 7/10 | L2 Strategisch |
+| HD10459 | Eis tot hervorming van activistische instanties | 6/10 | L2 Strategisch |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 Operationeel |
+
+### Centrale strategische dynamiek
+
+```mermaid
+graph TD
+    A[S: Criminele economie\nHD10458 + HD10451] -->|352 GSEK ESO-cijfer| B[Verantwoordingskloof\noverheid voor de verkiezingen]
+    C[SD: Institutionele hervorming\nHD10459] -->|Intracoalitiedruk| D[Interne spanning\nvan de Tidöcoalitie]
+    E[S: ESA ruimteverval\nHD10461] -->|Rang 17 van 23| F[Concurrentievermogensverhaal]
+    B --> G[Verkiezingsstrijd 2026]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### Tijdkritische indicatoren
+
+- **2026-05-19**: Strömmer (bendes) + Edholm (ruimte) reageren — meest zichtbare data
+- **2026-05-20**: Slottner (instantie-activisme) reageert — coalitiespaningen zichtbaar
+- **2026-05-21**: Brandberg (SFV) reageert — minste zichtbaarheid
+
+**Beoordeling**: De convergentie van HD10458 + HD10451 creëert de gevaarlijkste oppositie-uitdaging voor de regering: een coherent narratief van "352 GSEK criminele economie + toenemend geweld + regering zonder middelen", met onafhankelijke bronvermelding (ESO) en verifieerbaarheid.
+
+---
+*Analist: Agentische inlichtingenpijplijn | Datum: 2026-05-01 | Classificatie: NIET-GERUBRICEERD*
+
+---
+
+### Toevoegingen Doorloop 2: Uitgebreide strategische beoordeling
+
+#### Kritieke leemte geïdentificeerd bij beoordeling van Doorloop 1
+
+De regering staat voor een structureel verantwoordelijkheidsparadox: **de drie interpellaties met de sterkste bewijsvoering (HD10458, HD10451, HD10461) citeren alle onafhankelijke brongegevens** (ESO: 352 GSEK; ESA: rang 17/23; geweld: recordcijfers 2025). Dit is analytisch ongebruikelijk — doorgaans steunen de interpellaties van de oppositie op politieke framing. In dit pakket heeft S haar campagne verankerd in cijfers die de regering niet geloofwaardig kan betwisten zonder onafhankelijke deskundigenorganen (ESO) en Rymdstyrelsen ter discussie te stellen.
+
+#### Verbeterde beslisboom
+
+1. **Strömmer** (HD10458 + HD10451): Aankondiging wetgevingspakket (implementatie EU-richtlijn georganiseerde criminaliteit + vermogensbeslag) vóór 2026-05-12 (7 dagen voor de antwoorddatum) — dit zet een defensief moment om in een beleidsaankondiging
+2. **Edholm** (HD10461): VÅP-aanvullende financiering is het enige geloofwaardige antwoordpad; moet worden gecoördineerd met het Finansdepartementet
+3. **Slottner** (HD10459): Aankondiging gericht onderzoek naar subsidies aan maatschappelijk middenveld — gedeeltelijke SD-tegemoetkoming zonder grondwettelijke verbintenis
+
+#### Economische context (IMF/SCB)
+- Zweeds bbp 2025: naar schatting 6.400 GSEK
+- 352 GSEK criminele economie = ~5,5 % van het bbp (ESO-berekening)
+- EU-vergelijking: UNODC schat de criminele EU-economie op 2–4 % van het bbp; Zwedens 5,5 % (als de ESO-methodologie consistent is) duidt op een bovengemiddelde infiltratie
+
+---
+*Toevoegingen Doorloop 2: 2026-05-01*
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_no.md -->
+
+**BLUF (Bunnlinje)**: Fem interpellasjoner innlevert 22.–30. april 2026 avslører tre samtidige kriser — Sveriges kriminelle økonomi (352 GSEK/5,5 % av BNP), gjengerelatert vold og fallende konkurranseevne i romsektoren — som alle ankommer simultant i den forvalgspolitiske kalenderen. Opposisjonen S og regjeringspartiet SD bruker interpellasjoner til å forme sommer-2026 valgfortellingen.
+
+### Beslutninger som kreves umiddelbart
+
+1. **Justisminister Strömmer (M)**: Må operasjonalisere "utrydde gjengkriminalitet på 4 år" innen HD10458 svarsfrist 2026-05-19 — ellers risikeres troverdighetssskade foran valgkampen
+2. **Minister Edholm (L)**: Må forklare Sveriges fall til plass 17 hos ESA innen HD10461 svarsfrist 2026-05-19 — Rymdstyrelsen anmoder om betydelig mer enn tildelte 100 MSEK
+3. **Sivil statsråd Slottner (KD)**: Må svare på SDs krav om konstitusjonell reform (utnevnelsesmakt til Riksdagen) senest 2026-05-20 — svaret signaliserer toleransen for intrakoalisjons-SD-imøtekommelse
+
+### Signifikansoppsummering
+
+| dok_id | Tema | DIW-poeng | Prioritet |
+|--------|------|-----------|----------|
+| HD10458 | Løfte om å utrydde gjengkriminalitet | 8/10 | L2+ Prioritet |
+| HD10451 | Kriminell økonomi 352 GSEK | 7/10 | L2 Strategisk |
+| HD10461 | ESA/romfinansiering i tilbakegang | 7/10 | L2 Strategisk |
+| HD10459 | Krav om reform av aktivistbyråkrater | 6/10 | L2 Strategisk |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 Operasjonell |
+
+### Sentral strategisk dynamikk
+
+```mermaid
+graph TD
+    A[S: Kriminell økonomi\nHD10458 + HD10451] -->|352 GSEK ESO-tall| B[Regjeringens ansvarsgap\nforan valg]
+    C[SD: Institusjonell reform\nHD10459] -->|Intrakoalisjonstrykk| D[Tidökoalisjonens\ninternspenning]
+    E[S: ESA romtilbakegang\nHD10461] -->|Plass 17 av 23| F[Konkurranseevnefortelling]
+    B --> G[2026 Valgkampplass]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### Tidskritiske indikatorer
+
+- **2026-05-19**: Strömmer (gjeng) + Edholm (rom) svarer — mest synlige datoer
+- **2026-05-20**: Slottner (byråkrataktivisme) svarer — koalisjonsspenninger synliggjøres
+- **2026-05-21**: Brandberg (SFV) svarer — lavest synlighet
+
+**Vurdering**: Konvergensen av HD10458 + HD10451 skaper den farligste opposisjonsutfordringen for regjeringen: en sammenhengende fortelling om "352 GSEK kriminell økonomi + eskalerende vold + en regjering uten verktøy" med uavhengig kildedekning (ESO) og verifiserbarhet.
+
+---
+*Analytiker: Agentisk etterretningspipeline | Dato: 2026-05-01 | Klassifisering: UGRADERT*
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_sv.md -->
+
+**BLUF (Kärnbudskap)**: Fem interpellationer inlämnade 22–30 april 2026 avslöjar tre sammanfallande kriser — Sveriges kriminella ekonomi (352 GSEK/5,5 % av BNP), gängrelaterat våld och sjunkande konkurrenskraft inom rymdssektorn — som alla anländer samtidigt i den förvalpolitiska kalendern. Oppositionen S och regeringspartiet SD använder interpellationer för att forma sommar-2026 valnarrativet.
+
+### Beslut som krävs omedelbart
+
+1. **Justitieminister Strömmer (M)**: Måste operationalisera "utrota gängkriminalitet på 4 år" före HD10458 svarstid 2026-05-19 — annars riskeras trovärdighetsskada inför valrörelsen
+2. **Minister Edholm (L)**: Måste förklara Sveriges fall till plats 17 hos ESA före HD10461 svarstid 2026-05-19 — Rymdstyrelsen begär betydligt mer än tilldelade 100 MSEK
+3. **Civilminister Slottner (KD)**: Måste svara på SD:s krav om konstitutionell reform (utnämningsmakt till Riksdag) senast 2026-05-20 — svaret signalerar toleransen för intrakoalitionellt SD-tillmötesgående
+
+### Signifikanssummering
+
+| dok_id | Ämne | DIW-poäng | Prioritet |
+|--------|------|-----------|----------|
+| HD10458 | Löfte om utrotning av gängkriminalitet | 8/10 | L2+ Prioritet |
+| HD10451 | Kriminell ekonomi 352 GSEK | 7/10 | L2 Strategisk |
+| HD10461 | ESA/rymdfinansiering i nedgång | 7/10 | L2 Strategisk |
+| HD10459 | Krav på reform av aktivistmyndigheter | 6/10 | L2 Strategisk |
+| HD10460 | SFV bidragsfastigheter (RiR 2025:30) | 5/10 | L3 Operationell |
+
+### Central strategisk dynamik
+
+```mermaid
+graph TD
+    A[S: Kriminell ekonomi\nHD10458 + HD10451] -->|352 GSEK ESO-siffra| B[Regeringens ansvarsgap\nföre val]
+    C[SD: Institutionell reform\nHD10459] -->|Intrakoalitionstryck| D[Tidökoalitionens\ninterntension]
+    E[S: ESA rymdnedgång\nHD10461] -->|Plats 17 av 23| F[Konkurrenskraftsnarrativ]
+    B --> G[2026 Valstridsplan]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### Tidskritiska indikatorer
+
+- **2026-05-19**: Strömmer (gäng) + Edholm (rymd) svarar — högst synliga datum
+- **2026-05-20**: Slottner (myndighetaktivism) svarar — koalitionsspänningar synliggörs
+- **2026-05-21**: Brandberg (SFV) svarar — lägst synlighet
+
+**Bedömning**: Konvergensen av HD10458 + HD10451 skapar den farligaste oppositionsutmaningen för regeringen: ett sammanhängande narrativ om "352 GSEK kriminell ekonomi + eskalerande våld + en regering utan verktyg" som har oberoende källstöd (ESO) och är verifierbart.
+
+---
+*Analytiker: Agentisk underrättelsepipeline | Datum: 2026-05-01 | Klassificering: HEMLIGHETSGRADERAS EJ*
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_zh.md -->
+
+**BLUF（核心要点）**：2026年4月22日至30日提交的五份质询议案揭示了三个相互交织的危机——瑞典犯罪经济（3520亿克朗/占GDP的5.5%）、黑帮暴力以及航天领域竞争力下降——均在选前政治日程中同步到来。反对党S和执政党SD借助质询议案塑造2026年夏季选举叙事。
+
+### 即刻所需决策
+
+1. **司法部长斯特罗默（M）**：须在HD10458回复截止日期2026-05-19前将"4年内根除黑帮犯罪"付诸实施——否则在选举活动前将面临公信力损伤
+2. **部长埃德霍尔姆（L）**：须在HD10461回复截止日期2026-05-19前解释瑞典跌至欧空局第17名的问题——Rymdstyrelsen申请的经费远超拨付的1亿克朗
+3. **民政部长斯洛特纳（KD）**：须在2026-05-20前回应SD提出的宪法改革诉求（将任命权移交议会）——回应将表明联合政府对SD的让步容忍度
+
+### 重要性汇总
+
+| dok_id | 议题 | DIW得分 | 优先级 |
+|--------|------|---------|-------|
+| HD10458 | 根除黑帮犯罪承诺 | 8/10 | L2+优先 |
+| HD10451 | 犯罪经济3520亿克朗 | 7/10 | L2战略级 |
+| HD10461 | 欧空局/航天资金下降 | 7/10 | L2战略级 |
+| HD10459 | 要求改革激进主义机构 | 6/10 | L2战略级 |
+| HD10460 | SFV bidragsfastigheter（RiR 2025:30） | 5/10 | L3作战级 |
+
+### 核心战略动态
+
+```mermaid
+graph TD
+    A[S：犯罪经济\nHD10458 + HD10451] -->|ESO数据3520亿克朗| B[选前\n政府问责缺口]
+    C[SD：制度改革\nHD10459] -->|联合政府内部压力| D[Tidökoalitionen\n内部张力]
+    E[S：欧空局航天衰退\nHD10461] -->|23国中排名第17| F[竞争力叙事]
+    B --> G[2026年选举战场]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#003087,color:#fff
+```
+
+### 时间紧迫指标
+
+- **2026-05-19**：斯特罗默（黑帮）+ 埃德霍尔姆（航天）作答——最具曝光度的日期
+- **2026-05-20**：斯洛特纳（机构激进主义）作答——联合政府紧张局势显现
+- **2026-05-21**：布兰德贝里（SFV）作答——曝光度最低
+
+**评估**：HD10458与HD10451的汇合为政府制造了最危险的反对派挑战：一个有独立来源佐证（ESO）且可核实的连贯叙事——"3520亿克朗犯罪经济 + 不断升级的暴力 + 束手无策的政府"。
+
+---
+*分析师：智能体情报管道 | 日期：2026-05-01 | 密级：非保密*
+
+---
+
+### 第二轮补充：深化战略评估
+
+#### 第一轮审查中发现的关键缺口
+
+政府面临一个结构性问责悖论：**证据最充分的三份质询（HD10458、HD10451、HD10461）均引用独立来源数据**（ESO：3520亿克朗；欧空局：17/23名；暴力：2025年历史峰值统计）。这在分析上异乎寻常——反对党的质询通常依赖政治框架。在此批次中，S将竞选活动锚定在政府无法在不质疑独立专家机构（ESO）和Rymdstyrelsen的前提下加以可信否认的数据上。
+
+#### 改进版决策树
+
+1. **斯特罗默**（HD10458 + HD10451）：在2026-05-12前（回复截止前7天）宣布立法方案（实施欧盟打击有组织犯罪指令 + 资产没收）——将防御时刻转化为政策宣示
+2. **埃德霍尔姆**（HD10461）：VÅP追加拨款是唯一可信的应对路径；须与财政部协调
+3. **斯洛特纳**（HD10459）：宣布对公民社会补贴进行定向审查——在不作宪法承诺的前提下对SD作出部分回应
+
+#### 经济背景（IMF/SCB）
+- 瑞典2025年GDP：约6.4万亿克朗（估算）
+- 3520亿克朗犯罪经济 = 约占GDP 5.5%（ESO测算）
+- 欧盟对比：联合国毒品和犯罪问题办公室估计欧盟犯罪经济占GDP的2–4%；若ESO方法论具有一致性，瑞典的5.5%表明渗透程度高于平均水平
+
+---
+*第二轮补充：2026-05-01*
+
+<!-- source-sha: 2d65e85af6ee6672a9ff7a4fcd257a8ea9b0651f -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1700,3 +2557,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/executive-brief_zh.md)

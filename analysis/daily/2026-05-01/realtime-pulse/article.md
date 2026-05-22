@@ -6,7 +6,7 @@ date: 2026-05-01
 subfolder: realtime-pulse
 slug: 2026-05-01-realtime-pulse
 source_folder: analysis/daily/2026-05-01/realtime-pulse
-generated_at: 2026-05-21T02:19:50.826Z
+generated_at: 2026-05-22T12:25:06.264Z
 language: en
 layout: article
 ---
@@ -83,6 +83,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2226,13 +2239,680 @@ Prior-cycle PIRs from sibling analyses (week-ahead, month-ahead):
 - PIR-MA-001: Electoral polling trajectory post-migration package announcement — **Open**
 - PIR-MA-002: IMF SEK exchange-rate deterioration threshold — **Open**
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_ar.md -->
+
+‏# سباق التشريعات السويدية قبيل الانتخابات: الهجرة والجريمة والقيد الاقتصادي
+
+‏**المؤلف**: James Pether Sörling
+‏**التصنيف**: عام — اللائحة العامة لحماية البيانات المادة 9(2)(ه) منشور علنًا / 9(2)(ز) مصلحة عامة جوهرية
+‏**الثقة**: عالية [B2] | **التاريخ**: 2026-05-01
+
+‏## 🎯 الخلاصة
+
+‏قبل خمسة أشهر من انتخابات البرلمان السويدي في سبتمبر 2026، أطلق تحالف Tidöalliansen أكثر مسيرة تشريعية طموحًا له قبيل الانتخابات: حزمة هجرة ضخمة من أربعة مشاريع قوانين (HD03262–65) تقترح إلغاء تصاريح الإقامة الدائمة، وتشديد عمليات الترحيل، وتوسيع صلاحيات الاحتجاز — في وقت واحد مع المصادقة الرسمية من الريكسداغ على النمو الاقتصادي دون المعدل (الناتج المحلي الإجمالي 1.2٪ لعام 2026) ومعارك المساءلة البرلمانية حول اقتصاد إجرامي بقيمة 352 مليار كرونة سويدية. الموقف الانتخابي للحكومة قوي هيكليًا في الهجرة والأمن، لكنه مكشوف بشكل حرج في مجال الحوكمة الاقتصادية. لا تزال مراجعة Lagrådet للاتفاقية الأوروبية لحقوق الإنسان لمشروعَي قانون رئيسيَّين معلقةً.
+
+‏## 🧭 3 قرارات يدعمها هذا التقرير
+
+‏1. **مراقبة جدول زمني Lagrådet**: سيضطر رأي سلبي من Lagrådet حول HD03262/HD03265 إلى إجراء مراجعة دستورية أو تجاوز مكلف سياسيًا من الريكسداغ — أهم ثغرة استخباراتية في الأسبوع.
+‏2. **تتبع الاستراتيجية المضادة الانتخابية لحزب S**: يؤكد تقديم حزب S المنسق لـ 16 اقتراحًا تحقيق الحد الأقصى من نهاية الجلسة؛ تحدي تصاريح البيئة (المرساة HD024124) هو أقوى حجة موضوعية لهم. مراقبة نتائج جلسات استماع اللجان في MJU وNU تحدد مصداقية S الانتخابية في إصلاحات الحوكمة.
+‏3. **تقييم بيانات صندوق النقد الدولي الاقتصادية**: يصادق HC01FiU20 على نمو دون الاتجاه (1.2٪ لعام 2026، توقعات الاقتصاد العالمي لصندوق النقد الدولي أبريل 2026)؛ ستربط المعارضة حملتها الاقتصادية بهذا الخط الأساسي. بيانات مؤشر أسعار المستهلك الشهرية الأخيرة لصندوق النقد الدولي (PCPI_IX SWE) ومسار معدل السياسة النقدية MFS_IR للريكسبنك هي محفزات استخباراتية مستقبلية.
+
+‏## القراءة في 60 ثانية
+
+‏- **حزمة الهجرة (HD03262–65)**: أربعة مشاريع قوانين متزامنة تستهدف بنية الهجرة السويدية — أكثر الاقتراحات تقييدًا منذ القيود المؤقتة عام 2016. إلغاء تصاريح الإقامة الدائمة هو المرساة الهيكلية؛ قوانين الترحيل والاحتجاز والشخصية هي أذرع التنفيذ. Lagrådet معلق على مشروعَي قانون.
+‏- **المساءلة الاقتصادية الجنائية (HD10451, HD10458)**: القطاع الإجرامي الموثق من ESO بقيمة 352 مليار كرونة سويدية (5.5٪ من الناتج المحلي الإجمالي، 23,000 هيكل مرتبط بالشركات) يدخل نقاشًا رسميًا في الريكسداغ. وعد Strömmer بـ"الاستئصال في 4 سنوات" لديه الآن خط أساس قابل للقياس وساعة قابلة للتكذيب.
+‏- **القيد الاقتصادي المصادق عليه (HC01FiU20)**: وافق الريكسداغ رسميًا على نمو الناتج المحلي الإجمالي دون الاتجاه — لا يمكن للحكومة الادعاء بالنجاح الاقتصادي. يحدد توقعات الاقتصاد العالمي لصندوق النقد الدولي أبريل 2026 خط الأساس؛ صدمة الرسوم الجمركية الأمريكية توفر الغطاء لكنها لن تحيد خطوط الهجوم المعارضة.
+‏- **توافق الدفاع (HD03254)**: يمر إطار التعاون العسكري (NORDEFCO، UK ELSA، US DCA) بتوافق شبه عابر للأحزاب — 297/28 في تصويتات مماثلة سابقة. يعزز هيكليًا الاندماج في حلف الناتو.
+‏- **تطرف المعارضة (مجموعة اقتراحات S)**: 16 اقتراحًا لجنة متزامنًا عبر 6 لجان تشير إلى استراتيجية إشباع تشريعي لعام الانتخابات لدى S. تصاريح البيئة (مجموعة HD024124) هي التحدي الموضوعي الأعلى جودة.
+
+‏## المحفز الاستشرافي الرئيسي
+
+‏**رأي Lagrådet حول HD03265 (توسيع الاحتجاز)** — النافذة المتوقعة: 5–12 مايو 2026. يؤدي الرأي السلبي إلى تفعيل متطلبات مراجعة الامتثال للاتفاقية الأوروبية لحقوق الإنسان ويخلق أقصى تكلفة سياسية للحكومة مباشرة قبل ذروة الحملة الانتخابية.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Klassificering**: OFFENTLIG — GDPR art. 9(2)(e) offentliggjort / 9(2)(g) væsentlig samfundsinteresse
+**Konfidens**: HØJ [B2] | **Dato**: 2026-05-01
+
+### 🎯 Konklusion
+
+Fem måneder inden Sveriges Riksdag-valg i september 2026 har Tidöalliansen sat gang i sin mest ambitiøse lovgivningssprint inden valget: en migrationspakke med fire lovforslag (HD03262–65), der foreslår at afskaffe permanent opholdstilladelse, skærpe udvisningsoperationer og udvide frihedsberøvelsesbeføjelser — samtidig med Riksdagens formelle ratificering af under-trend BNP-vækst (1,2 % i 2026) og parlamentariske ansvarsopgør over en kriminaløkonomi på 352 milliarder SEK. Regeringens valgpolitiske position er strukturelt stærk på migration og sikkerhed, men kritisk eksponeret på den økonomiske styring. Lagrådets EMRK-gennemgang af to centrale lovforslag udestår.
+
+### 🧭 3 beslutninger, dette notat understøtter
+
+1. **Overvåg Lagrådets tidslinje**: Et negativt Lagrådet-yttrande om HD03262/HD03265 ville tvinge enten en grundlovsrevision eller en politisk kostbar Riksdag-overtrumfning — den enkelt vigtigste efterretningslacune i ugen.
+2. **Følg S's electorale modstrategi**: S's koordinerede indgivelse af 16 motioner bekræfter slutsession-maksimalisme; miljøtilladelsesudfordringen (HD024124-ankeret) er deres stærkeste indholdsmæssige argument. Overvågning af udvalgshøringers resultater ved MJU og NU definerer S's valgkredibilitet på styringsreformer.
+3. **Vurder IMF's dataårsgang**: HC01FiU20 ratificerer under-trend-vækst (1,2 % 2026, IMF WEO apr. 2026); oppositionen vil forankre sin økonomiske valgkampagne til denne baseline. Aktuelle IMF IFS månedlige KPI-data (PCPI_IX SWE) og Riksbankens MFS_IR-rentetrajectory er fremadrettede efterretningsudløsere.
+
+### 60-sekunders læsning
+
+- **Migrationspakke (HD03262–65)**: Fire samtidige lovforslag rettet mod Sveriges migrationsarkitektur — det mest restriktive forslag siden de midlertidige restriktioner i 2016. Afskaffelse af permanent opholdstilladelse er det strukturelle ankerpunkt; udvisnings-, frihedsberøvelses- og vandelslovene er håndhævelsesarmene. Lagrådet afventer på to lovforslag.
+- **Kriminaløkonomisk ansvarlighed (HD10451, HD10458)**: ESO-dokumenteret kriminel sektor på 352 mia. SEK (5,5 % af BNP, 23.000 selskabstilknyttede strukturer) er nu genstand for formel Riksdag-debat. Strömmers løfte om "udrydde på 4 år" har nu en målbar baseline og et falsificerbart ur.
+- **Økonomisk bind ratificeret (HC01FiU20)**: Riksdagen godkendte formelt under-trend BNP-vækst — regeringen kan ikke gøre krav på økonomisk succes. IMF WEO apr. 2026 sætter baselinjen; det amerikanske toldstød giver dækning, men neutraliserer ikke oppositionens angrebslinjer.
+- **Forsvarskonsensus (HD03254)**: Militært samarbejdsramme (NORDEFCO, UK ELSA, US DCA) vedtages med nærmest tværpolitisk enighed — 297/28 i tidligere sammenlignelige afstemninger. Styrker strukturelt NATO-integrationen.
+- **Oppositionens maksimalisme (S-motionsklynge)**: 16 samtidige udvalgsforslag på tværs af 6 udvalg signalerer S's valgårs lovgivningsmætningsstrategi. Miljøtilladelse (HD024124-klyngen) er den højeste kvalitative indholdsmæssige udfordring.
+
+### Ledende fremadrettede udløser
+
+**Lagrådets yttrande om HD03265 (udvidelse af frihedsberøvelse)** — forventet vindue: 5.–12. maj 2026. Et negativt yttrande udløser EMRK-overensstemmelses-revisjonskrav og skaber maksimale politiske omkostninger for regeringen umiddelbart inden valgkampagnens top.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e) öffentlich gemacht / 9(2)(g) erhebliches öffentliches Interesse
+**Konfidenz**: HOCH [B2] | **Datum**: 2026-05-01
+
+### 🎯 Fazit
+
+Fünf Monate vor Schwedens Riksdag-Wahl im September 2026 hat die Tidöalliansen ihren ambitioniertesten Vorwahlgesetzgebungssprint gestartet: ein Vier-Gesetze-Migrationsmegapaket (HD03262–65), das die Abschaffung dauerhafter Aufenthaltsgenehmigungen, härtere Abschiebungsoperationen und erweiterte Abschiebebefugnisse vorschlägt — gleichzeitig mit der formalen Ratifizierung unterdurchschnittlichen Wirtschaftswachstums (BIP 1,2 % 2026) und parlamentarischen Rechenschaftsschlachten über eine 352-Milliarden-SEK-Kriminalwirtschaft. Die Wahlposition der Regierung ist in Migration und Sicherheit strukturell stark, aber in der Wirtschaftspolitik kritisch exponiert. Lagrådets EMRK-Prüfung zweier Schlüsselgesetze steht noch aus.
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Lagrådets Zeitplan überwachen**: Ein negatives Lagrådet-Gutachten zu HD03262/HD03265 würde entweder eine Verfassungsrevision oder eine politisch kostspielige Riksdag-Überstimmung erzwingen — die einzige wichtigste Nachrichtenlücke der Woche.
+2. **S's wahlstrategische Gegenstrategie verfolgen**: S's koordinierte Einreichung von 16 Anträgen bestätigt Sitzungsende-Maximalismus; die Herausforderung bei Umweltgenehmigungen (HD024124-Anker) ist ihr stärkstes sachliches Argument. Die Überwachung der Ausschussanhörungsergebnisse bei MJU und NU definiert S's Glaubwürdigkeit bei Governance-Reformen.
+3. **IMF-Wirtschaftsdaten-Jahrgang bewerten**: HC01FiU20 ratifiziert unterdurchschnittliches Wachstum (1,2 % 2026, IWF WEO Apr. 2026); die Opposition wird ihren Wirtschaftswahlkampf an dieser Baseline verankern. Aktuelle IWF-IFS-monatliche KPI-Daten (PCPI_IX SWE) und Riksbankens MFS_IR-Zinspfad sind vorausschauende Nachrichtentrigger.
+
+### 60-Sekunden-Lektüre
+
+- **Migrationspaket (HD03262–65)**: Vier gleichzeitige Gesetzentwürfe gegen Schwedens Migrationsarchitektur — der restriktivste Vorschlag seit den temporären Beschränkungen von 2016. Die Abschaffung dauerhafter Aufenthaltsgenehmigungen ist der strukturelle Anker; Abschiebungs-, Abschiebe- und Charaktergesetze sind die Vollstreckungsarme. Lagrådet ausstehendes Gutachten zu zwei Gesetzentwürfen.
+- **Kriminalwirtschaft-Rechenschaft (HD10451, HD10458)**: ESO-dokumentierter 352-Mrd.-SEK-Kriminalsektor (5,5 % des BIP, 23.000 unternehmensverbundene Strukturen) tritt in die formale Riksdag-Debatte ein. Strömmers Versprechen „in 4 Jahren ausrotten" hat jetzt eine messbare Baseline und eine falsifizierbare Uhr.
+- **Wirtschaftliche Zwangslage ratifiziert (HC01FiU20)**: Der Riksdag genehmigte formell unterdurchschnittliches BIP-Wachstum — die Regierung kann keinen wirtschaftlichen Erfolg beanspruchen. IWF WEO Apr. 2026 setzt die Baseline; der US-Zollschock bietet Deckung, neutralisiert jedoch nicht die Angriffslinien der Opposition.
+- **Verteidigungskonsens (HD03254)**: Militärisches Kooperationsrahmenwerk (NORDEFCO, UK ELSA, US DCA) wird mit parteiübergreifendem Konsens verabschiedet — 297/28 bei früheren vergleichbaren Abstimmungen. Stärkt strukturell die NATO-Integration.
+- **Oppositionsmaximalismus (S-Antragscluster)**: 16 gleichzeitige Ausschussanträge in 6 Ausschüssen signalisieren S's wahljahrbedingte Gesetzgebungssättigungsstrategie. Umweltgenehmigungen (HD024124-Cluster) sind die inhaltlich hochwertigste Herausforderung.
+
+### Führender vorausschauender Auslöser
+
+**Lagrådets Gutachten zu HD03265 (Ausweitung der Inhaftierung)** — erwartetes Fenster: 5.–12. Mai 2026. Ein negatives Gutachten löst EMRK-Konformitätsrevisionspflichten aus und verursacht maximale politische Kosten für die Regierung unmittelbar vor den Höhepunkten des Wahlkampfs.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Clasificación**: PÚBLICO — RGPD art. 9(2)(e) hecho público / 9(2)(g) interés público sustancial
+**Confianza**: ALTA [B2] | **Fecha**: 2026-05-01
+
+### 🎯 Conclusión
+
+Cinco meses antes de las elecciones suecas al Riksdag de septiembre de 2026, la Tidöalliansen ha lanzado su sprint legislativo pre-electoral más ambicioso: un mega-paquete migratorio de cuatro leyes (HD03262–65) que propone abolir los permisos de residencia permanente, endurecer las operaciones de deportación y ampliar la autoridad de detención — simultáneamente con la ratificación formal por el Riksdag del crecimiento económico por debajo de tendencia (PIB 1,2 % en 2026) y las batallas parlamentarias de rendición de cuentas en torno a una economía criminal de 352 miles de millones de SEK. La posición electoral del gobierno es estructuralmente sólida en migración y seguridad, pero críticamente expuesta en materia de gobernanza económica. La revisión CEDH del Lagrådet sobre dos proyectos de ley clave permanece pendiente.
+
+### 🧭 3 decisiones que respalda este informe
+
+1. **Vigilar el calendario del Lagrådet**: Un dictamen negativo del Lagrådet sobre HD03262/HD03265 forzaría una revisión constitucional o una costosa anulación parlamentaria — la brecha de inteligencia más importante de la semana.
+2. **Seguir la contra-estrategia electoral del S**: La presentación coordinada de 16 mociones por el S confirma el maximalismo de final de sesión; el desafío sobre los permisos medioambientales (ancla HD024124) es su argumento sustantivo más sólido. El seguimiento de los resultados de las audiencias de los comités en MJU y NU define la credibilidad electoral del S en las reformas de gobernanza.
+3. **Evaluar el año de datos económicos del FMI**: HC01FiU20 ratifica el crecimiento por debajo de tendencia (1,2 % en 2026, FMI WEO abr. 2026); la oposición anclará su campaña económica a esta línea base. Los datos mensuales recientes del IPC IFS del FMI (PCPI_IX SWE) y la trayectoria de tasas MFS_IR del Riksbank son desencadenantes de inteligencia prospectiva.
+
+### Lectura en 60 segundos
+
+- **Paquete migratorio (HD03262–65)**: Cuatro proyectos de ley simultáneos contra la arquitectura migratoria sueca — la propuesta más restrictiva desde las restricciones temporales de 2016. La abolición de los permisos de residencia permanente es el ancla estructural; las leyes de deportación, detención y conducta son los brazos de aplicación. Lagrådet pendiente en dos proyectos.
+- **Rendición de cuentas de la economía criminal (HD10451, HD10458)**: Sector criminal de 352.000 millones de SEK documentado por ESO (5,5 % del PIB, 23.000 estructuras vinculadas a empresas) entra en el debate formal del Riksdag. La promesa de Strömmer de «erradicar en 4 años» tiene ahora una línea base medible y un reloj falsificable.
+- **Aprieto económico ratificado (HC01FiU20)**: El Riksdag aprobó formalmente el crecimiento del PIB por debajo de tendencia — el gobierno no puede reclamar éxito económico. El FMI WEO abr. 2026 fija la línea base; el choque arancelario estadounidense proporciona cobertura pero no neutralizará las líneas de ataque de la oposición.
+- **Consenso en defensa (HD03254)**: El marco de cooperación militar (NORDEFCO, UK ELSA, US DCA) se aprueba con un consenso casi transversal — 297/28 en votaciones anteriores comparables. Refuerza estructuralmente la integración en la OTAN.
+- **Maximalismo de la oposición (clúster de mociones S)**: 16 mociones de comité simultáneas en 6 comités señalan la estrategia de saturación legislativa del año electoral del S. Los permisos medioambientales (clúster HD024124) son el desafío sustantivo de mayor calidad.
+
+### Desencadenante prospectivo principal
+
+**Dictamen del Lagrådet sobre HD03265 (ampliación de la detención)** — ventana esperada: 5–12 de mayo de 2026. Un dictamen negativo desencadena requisitos de revisión de cumplimiento del CEDH y crea el máximo coste político para el gobierno inmediatamente antes de los picos de la campaña electoral.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling
+**Luokitus**: JULKINEN — GDPR 9(2)(e) julkinen / 9(2)(g) merkittävä yleinen etu
+**Luottamus**: KORKEA [B2] | **Päivämäärä**: 2026-05-01
+
+### 🎯 Yhteenveto
+
+Viisi kuukautta ennen Ruotsin syyskuun 2026 vaaleja Tidöalliansen on käynnistänyt kunnianhimoisimman vaaleja edeltävän lainsäädäntösprinttinsä: neljän lain maahanmuuttomegapaketin (HD03262–65), joka ehdottaa pysyvien oleskelulupien poistamista, karkotustoiminnan tiukentamista ja säilöönottovaltuuksien laajentamista — samaan aikaan kuin Riksdag on virallisesti ratifioinut trendialittavan talouskasvun (BKT 1,2 % 2026) ja parlamentaariset vastuutaistelut 352 miljardin kruunun rikostaloudesta. Hallituksen vaalipolitiittinen asema on rakenteellisesti vahva maahanmuuton ja turvallisuuden osalta, mutta kriittisesti alttiina talousohjauksessa. Lagrådets ECHR-tarkistus kahdesta keskeisestä lakiesityksestä on vielä kesken.
+
+### 🧭 3 päätöstä, joita tämä tiivistelmä tukee
+
+1. **Seuraa Lagrådets-aikataulua**: Kielteinen Lagrådets-lausunto HD03262/HD03265-lakiesityksistä pakottaisi joko perustuslain tarkistamiseen tai poliittisesti kalliiseen Riksdag-yliohitukseen — viikon tärkein tiedusteluaukko.
+2. **Seuraa S:n vaalien vastastrategiaa**: S:n koordinoitu 16 liikkeestä koostuva jättäminen vahvistaa loppuistuntokauden maksimalismin; ympäristölupahaaste (HD024124-ankkuri) on heidän vahvin asiallinen argumenttinsa. Valiokunnan kuulemistulosten seuranta MJU:ssa ja NU:ssa määrittelee S:n vaalimaineen hallintouudistusten osalta.
+3. **Arvioi IMF:n talousdata-vuosikerta**: HC01FiU20 ratifioi trendialittavan kasvun (1,2 % 2026, IMF WEO huhtikuu 2026); oppositio kiinnittää talouskampanjansa tähän perusviivaan. Tuore IMF IFS kuukausittainen KPI-data (PCPI_IX SWE) ja Riksbanken MFS_IR-korkorata ovat eteenpäin katsovia tiedustelulaukaisimia.
+
+### 60 sekunnin lukeminen
+
+- **Maahanmuuttopaketti (HD03262–65)**: Neljä samanaikaista lakiesitystä kohdistuu Ruotsin maahanmuuttorakenteeseen — rajoittavin ehdotus sitten vuoden 2016 väliaikaisrajoitusten. Pysyvien oleskelulupien poistaminen on rakenteellinen ankkuri; karkotus-, säilöönotto- ja luonteenpiirtotuslait ovat täytäntöönpanohaarat. Lagrådets odottaa kahta lakiesitystä.
+- **Rikostaloudellinen vastuullisuus (HD10451, HD10458)**: ESO-dokumentoitu 352 mrd. SEK rikollinen sektori (5,5 % BKT:sta, 23 000 yrityskytkentäistä rakennetta) siirtyy viralliseen Riksdag-debattiin. Strömmerin lupaus "hävittää 4 vuodessa" on nyt mitattava lähtötaso ja falsifioituva kello.
+- **Taloudellinen solmukohta ratifioitu (HC01FiU20)**: Riksdag hyväksyi virallisesti trendialittavan BKT-kasvun — hallitus ei voi väittää saavuttaneensa taloudellista menestystä. IMF WEO huhtikuu 2026 asettaa lähtötason; Yhdysvaltain tullishokki tarjoaa suojan mutta ei neutralisoi opposition hyökkäyslinjoja.
+- **Puolustuskonsensus (HD03254)**: Sotilaallinen yhteistyökehys (NORDEFCO, UK ELSA, US DCA) läpäisee lähes puolueenvälisellä yksimielisyydellä — 297/28 aiemmissa vertailukelpoisissa äänestyksissä. Vahvistaa rakenteellisesti NATO-integraatiota.
+- **Opposition maksimalismi (S-motioniklusteri)**: 16 samanaikaista valiokuntamotiota 6 valiokunnassa merkitsee S:n vaalivuoden lainsäädäntökyllästymisstrategiaa. Ympäristölupa (HD024124-klusteri) on laadukkain asiallinen haaste.
+
+### Johtava eteenpäin katsova laukaisin
+
+**Lagrådets yttrande HD03265:stä (säilöönoton laajentaminen)** — odotettu ikkuna: 5.–12. toukokuuta 2026. Kielteinen lausunto käynnistää ECHR-vaatimustenmukaisuustarkistusvaatimukset ja luo maksimaalisen poliittisen kustannuksen hallitukselle juuri ennen vaalikampanjan huippua.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+
+**Confiance** : ÉLEVÉE [B2] | **Date** : 2026-05-01
+
+### 🎯 Conclusion
+
+Cinq mois avant les élections suédoises au Riksdag de septembre 2026, la Tidöalliansen a lancé son sprint législatif pré-électoral le plus ambitieux : un méga-paquet migratoire de quatre projets de loi (HD03262–65) proposant d'abolir les permis de résidence permanents, de durcir les opérations d'expulsion et d'étendre les pouvoirs de détention — en parallèle avec la ratification formelle par le Riksdag d'une croissance économique sous tendance (PIB 1,2 % en 2026) et des batailles parlementaires de responsabilité autour d'une économie criminelle de 352 milliards de SEK. La position électorale du gouvernement est structurellement forte sur la migration et la sécurité, mais critiquement exposée sur la gouvernance économique. L'examen CEDH de deux projets de loi clés par le Lagrådet reste en suspens.
+
+### 🧭 3 décisions que ce rapport soutient
+
+1. **Surveiller le calendrier du Lagrådet** : Un avis négatif du Lagrådet sur HD03262/HD03265 forcerait soit une révision constitutionnelle, soit un rejet politique coûteux du Riksdag — la lacune de renseignement la plus importante de la semaine.
+2. **Suivre la contre-stratégie électorale du S** : Le dépôt coordonné de 16 motions par le S confirme le maximalisme de fin de session ; le défi sur les permis environnementaux (ancre HD024124) est leur argument substantiel le plus fort. Le suivi des résultats des auditions des commissions à MJU et NU définit la crédibilité électorale du S sur les réformes de gouvernance.
+3. **Évaluer le millésime des données économiques du FMI** : HC01FiU20 ratifie une croissance sous tendance (1,2 % en 2026, FMI WEO avr. 2026) ; l'opposition ancrera sa campagne économique à cette ligne de base. Les données mensuelles récentes de l'IPC IFS du FMI (PCPI_IX SWE) et la trajectoire des taux MFS_IR de la Riksbank sont des déclencheurs de renseignement prospectifs.
+
+### Lecture en 60 secondes
+
+- **Paquet migratoire (HD03262–65)** : Quatre projets de loi simultanés ciblant l'architecture migratoire suédoise — la proposition la plus restrictive depuis les restrictions temporaires de 2016. L'abolition des permis de résidence permanents est l'ancre structurelle ; les lois sur l'expulsion, la détention et le comportement sont les bras d'exécution. Lagrådet en attente sur deux projets.
+- **Responsabilité de l'économie criminelle (HD10451, HD10458)** : Le secteur criminel de 352 Mrd. SEK documenté par l'ESO (5,5 % du PIB, 23 000 structures liées aux entreprises) entre dans le débat formel du Riksdag. La promesse de Strömmer « d'éradiquer en 4 ans » dispose désormais d'une base de référence mesurable et d'une horloge falsifiable.
+- **Contrainte économique ratifiée (HC01FiU20)** : Le Riksdag a approuvé formellement une croissance du PIB sous tendance — le gouvernement ne peut pas prétendre à un succès économique. Le FMI WEO avr. 2026 fixe la base ; le choc tarifaire américain offre une couverture mais ne neutralisera pas les lignes d'attaque de l'opposition.
+- **Consensus sur la défense (HD03254)** : Le cadre de coopération militaire (NORDEFCO, UK ELSA, US DCA) passe avec un consensus presque transpartisan — 297/28 lors de votes comparables précédents. Renforce structurellement l'intégration OTAN.
+- **Maximalisme de l'opposition (grappe de motions S)** : 16 motions simultanées en commission dans 6 commissions signalent la stratégie de saturation législative de l'année électorale du S. Les permis environnementaux (grappe HD024124) sont le défi substantiel de la plus haute qualité.
+
+### Déclencheur prospectif principal
+
+**Avis du Lagrådet sur HD03265 (extension de la détention)** — fenêtre attendue : 5–12 mai 2026. Un avis négatif déclenche des exigences de révision de conformité CEDH et crée un coût politique maximal pour le gouvernement immédiatement avant les pics de la campagne électorale.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_he.md -->
+
+‏# ספרינט החקיקה הטרום-בחירותי בשוודיה: הגירה, פשע ולחץ כלכלי
+
+‏**מחבר**: James Pether Sörling
+‏**סיווג**: ציבורי — GDPR סעיף 9(2)(ה) פורסם לציבור / 9(2)(ז) אינטרס ציבורי מהותי
+‏**רמת ביטחון**: גבוהה [B2] | **תאריך**: 2026-05-01
+
+‏## 🎯 תמצית
+
+‏חמישה חודשים לפני בחירות הריקסדאג השוודי בספטמבר 2026, השיקה Tidöalliansen את הספרינט החקיקתי הטרום-בחירותי השאפתני ביותר שלה: חבילת הגירה ענקית של ארבעה חוקים (HD03262–65) המציעה לבטל רישיונות שהייה קבועים, להקשיח פעולות גירוש ולהרחיב סמכויות מעצר — במקביל לאישור הרשמי של הריקסדאג לצמיחה כלכלית מתחת למגמה (תמ"ג 1.2% ב-2026) ולמאבקי אחריות פרלמנטריים סביב כלכלה פלילית של 352 מיליארד כתר שוודי. עמדתה הבחירותית של הממשלה חזקה מבחינה מבנית בנושאי הגירה וביטחון, אך חשופה בצורה קריטית בנושא הממשל הכלכלי. בחינת ה-ECHR של Lagrådet לשני הצעות חוק מרכזיות עדיין ממתינה.
+
+‏## 🧭 3 החלטות שדוח זה תומך בהן
+
+‏1. **מעקב אחר לוח הזמנים של Lagrådet**: חוות דעת שלילית של Lagrådet על HD03262/HD03265 תכריח לבצע שינוי חוקתי או פסיחה פרלמנטרית יקרה פוליטית — פער המודיעין המשמעותי ביותר של השבוע.
+‏2. **מעקב אחר אסטרטגיית הנגד הבחירותית של S**: הגשת 16 הצעות מתואמת על ידי S מאשרת מקסימליזם של סוף המושב; האתגר על רישיונות סביבתיים (עוגן HD024124) הוא הטיעון המהותי החזק ביותר שלהם. מעקב אחר תוצאות שימועי הוועדות ב-MJU וב-NU מגדיר את אמינות S הבחירותית ברפורמות הממשל.
+‏3. **הערכת וינטאג' הנתונים הכלכליים של קרן המטבע הבינלאומית**: HC01FiU20 מאשר צמיחה מתחת למגמה (1.2% ב-2026, IMF WEO אפריל 2026); האופוזיציה תעגן את קמפיין הכלכלה שלה לקו הבסיס הזה. נתוני מדד המחירים לצרכן החודשיים של IMF IFS (PCPI_IX SWE) ומסלול ריבית MFS_IR של הריקסבנק הם טריגרי מודיעין עתידיים.
+
+‏## קריאה של 60 שניות
+
+‏- **חבילת ההגירה (HD03262–65)**: ארבע הצעות חוק מקבילות המכוונות לארכיטקטורת ההגירה של שוודיה — ההצעה המגבילה ביותר מאז המגבלות הזמניות של 2016. ביטול רישיונות שהייה קבועים הוא העוגן המבני; חוקי גירוש, מעצר ואופי הם זרועות האכיפה. Lagrådet ממתין על שתי הצעות חוק.
+‏- **אחריות כלכלית פלילית (HD10451, HD10458)**: ענף פלילי של 352 מיליארד כתר שוודי הרשום על ידי ESO (5.5% מהתמ"ג, 23,000 מבנים קשורים לחברות) נכנס לדיון רשמי בריקסדאג. הבטחתו של Strömmer "לכחד תוך 4 שנים" כוללת כעת קו בסיס מדיד ושעון שניתן להפריך.
+‏- **לחץ כלכלי מאושר (HC01FiU20)**: הריקסדאג אישר רשמית צמיחת תמ"ג מתחת למגמה — הממשלה אינה יכולה לטעון להצלחה כלכלית. IMF WEO אפריל 2026 קובע את קו הבסיס; הלם המכסים האמריקאי מספק כיסוי אך לא יסתיר את קווי התקיפה של האופוזיציה.
+‏- **קונצנזוס ביטחון (HD03254)**: מסגרת שיתוף הפעולה הצבאי (NORDEFCO, UK ELSA, US DCA) עוברת עם קונצנזוס כמעט חוצה מפלגות — 297/28 בהצבעות קודמות דומות. מחזקת מבנית את השילוב בנאט"ו.
+‏- **מקסימליזם של האופוזיציה (מקבץ הצעות S)**: 16 הצעות ועדה מקבילות ב-6 ועדות מאותתות על אסטרטגיית רוויה חקיקתית לשנת הבחירות של S. רישיונות סביבתיים (מקבץ HD024124) הם האתגר המהותי האיכותי ביותר.
+
+‏## טריגר עתידי מוביל
+
+‏**חוות דעת Lagrådet על HD03265 (הרחבת המעצר)** — חלון צפוי: 5–12 במאי 2026. חוות דעת שלילית מפעילה דרישות תיקון ציות ל-ECHR ויוצרת עלות פוליטית מקסימלית לממשלה מיד לפני שיאי קמפיין הבחירות.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling
+**分類**: 公開 — GDPR第9条(2)(e)公開済み / 第9条(2)(g)実質的な公益
+**信頼度**: 高 [B2] | **日付**: 2026-05-01
+
+### 🎯 結論
+
+2026年9月のスウェーデン・リクスダーグ選挙まで5か月、Tidöalliansen政府は最も野心的な選挙前立法スプリントを開始した。4法案からなる移民メガパッケージ（HD03262–65）は永住許可証の廃止、国外退去強化、収容権限の拡大を提案し、リクスダーグが正式に低成長トレンド（GDP 1.2%、2026年）を承認したこと、352億SEKの犯罪経済をめぐる議会的説明責任の争いとも同時進行している。政府の選挙的立場は移民・安全保障において構造的に強いが、経済ガバナンスで決定的な脆弱性を抱える。2つの主要法案についてのLagrådets（立法評議会）のECHR審査は未決のまま。
+
+### 🧭 この報告が支援する3つの意思決定
+
+1. **Lagrådetsのタイムラインを監視する**: HD03262/HD03265に対するLagrådetsの否定的な意見は、憲法改正か政治的コストの高いリクスダーグ否決のいずれかを強いる——今週最も重要な情報ギャップ。
+2. **Sの選挙的反撃戦略を追跡する**: S党による16の動議の調整的提出は会期末最大主義を確認する。環境許可への挑戦（HD024124アンカー）が最も強力な実質的論拠。MJUおよびNUでの委員会審議結果の監視がSのガバナンス改革における選挙的信頼性を定義する。
+3. **IMF経済データのヴィンテージを評価する**: HC01FiU20はトレンド以下の成長（1.2%、2026年、IMF WEO 2026年4月）を批准。野党はこの基準線に経済選挙運動を据える。IMF IFS月次CPI（PCPI_IX SWE）とリクスバンクのMFS_IR政策金利軌道は先見的な情報トリガー。
+
+### 60秒要約
+
+- **移民パッケージ（HD03262–65）**: スウェーデンの移民構造を対象とした4つの同時法案——2016年の一時規制以来最も厳しい提案。永住許可証の廃止が構造的な要となり、退去強制・収容・品性法が執行の腕となる。Lagrådets審査が2法案において保留中。
+- **犯罪経済の説明責任（HD10451、HD10458）**: ESO文書化の352億SEK犯罪セクター（GDP比5.5%、2万3,000の企業関連構造）がリクスダーグの正式な議論に入る。Strömmersの「4年で根絶」の公約は今や測定可能な基準線と反証可能な時計を持つ。
+- **経済的制約の承認（HC01FiU20）**: リクスダーグはトレンド以下のGDP成長を正式に承認——政府は経済的成功を主張できない。IMF WEO 2026年4月が基準を設定、米国の関税ショックが口実を提供するが野党の攻撃線を無力化しない。
+- **防衛コンセンサス（HD03254）**: 軍事協力枠組み（NORDEFCO、UK ELSA、US DCA）がほぼ全党一致で可決——過去の同等の採決では297対28。NATOへの統合を構造的に強化。
+- **野党の最大主義（S動議クラスター）**: 6委員会にまたがる16の同時委員会動議はSの選挙年における立法飽和戦略を示す。環境許可（HD024124クラスター）が最も質の高い実質的課題。
+
+### 主要な前方展望トリガー
+
+**HD03265（収容拡大）に関するLagrådetsの意見** — 予想窓：2026年5月5日〜12日。否定的意見はECHR適合性改正要件を発動し、選挙運動のピーク直前に政府に最大の政治的コストをもたらす。
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**분류**: 공개 — GDPR 제9조(2)(e) 공개 / 제9조(2)(g) 실질적인 공익
+**신뢰도**: 높음 [B2] | **날짜**: 2026-05-01
+
+### 🎯 결론
+
+2026년 9월 스웨덴 릭스다그 선거를 5개월 앞두고, Tidöalliansen 정부는 가장 야심찬 선거 전 입법 스프린트를 시작했다. 4개 법안으로 구성된 이민 메가패키지(HD03262–65)는 영주 허가 폐지, 추방 작전 강화, 구금 권한 확대를 제안하며, 릭스다그의 공식적인 저성장 추세 비준(GDP 1.2%, 2026년)과 3,520억 SEK 규모 범죄 경제에 대한 의회적 책임 투쟁과 동시에 진행되고 있다. 정부의 선거적 입지는 이민·안보 면에서 구조적으로 강하지만, 경제 거버넌스에서는 치명적으로 취약하다. 주요 법안 2건에 대한 Lagrådet의 ECHR 검토가 아직 미결 상태다.
+
+### 🧭 이 보고서가 지원하는 3가지 결정
+
+1. **Lagrådet 일정 모니터링**: HD03262/HD03265에 대한 Lagrådet의 부정적 의견은 헌법 개정이나 정치적으로 값비싼 릭스다그 번복을 강요할 것이다 — 이번 주 가장 중요한 정보 공백.
+2. **S당의 선거적 반전 전략 추적**: S당의 16개 동의 조율 제출은 회기말 최대주의를 확인한다. 환경 허가 도전(HD024124 앵커)이 가장 강력한 실질적 논거. MJU와 NU에서 위원회 청문회 결과를 모니터링하는 것이 거버넌스 개혁에서 S당의 선거 신뢰성을 정의한다.
+3. **IMF 경제 데이터 빈티지 평가**: HC01FiU20은 추세 이하 성장(1.2%, 2026, IMF WEO 2026년 4월)을 비준한다. 야당은 경제 선거 캠페인을 이 기준선에 고정할 것이다. 최신 IMF IFS 월별 CPI 데이터(PCPI_IX SWE)와 릭스방크 MFS_IR 정책금리 궤도가 전망적 정보 트리거다.
+
+### 60초 요약
+
+- **이민 패키지(HD03262–65)**: 스웨덴 이민 구조를 겨냥한 4개의 동시 법안 — 2016년 임시 제한 이래 가장 제한적인 제안. 영주 허가 폐지가 구조적 앵커이며, 추방·구금·품성 법안이 집행의 팔. Lagrådet가 2개 법안 심사 중.
+- **범죄 경제 책임(HD10451, HD10458)**: ESO가 문서화한 3,520억 SEK 범죄 부문(GDP의 5.5%, 2만 3,000개 기업 연관 구조)이 공식 릭스다그 토론에 진입. Strömmer의 "4년 내 척결" 약속은 이제 측정 가능한 기준선과 반증 가능한 시계를 가진다.
+- **경제적 압박 비준(HC01FiU20)**: 릭스다그는 공식적으로 추세 이하 GDP 성장을 승인 — 정부는 경제적 성공을 주장할 수 없다. IMF WEO 2026년 4월이 기준선을 설정하며, 미국 관세 충격이 덮개를 제공하지만 야당의 공격선을 무력화하지는 않는다.
+- **방위 합의(HD03254)**: 군사 협력 프레임워크(NORDEFCO, UK ELSA, US DCA)가 사실상 초당적 합의로 통과 — 이전 유사 표결에서 297대 28. 나토 통합을 구조적으로 강화.
+- **야당 최대주의(S 동의 클러스터)**: 6개 위원회에 걸친 16개 동시 위원회 동의가 S당의 선거 연도 입법 포화 전략을 신호한다. 환경 허가(HD024124 클러스터)가 가장 질 높은 실질적 도전.
+
+### 선도적 전망 트리거
+
+**HD03265(구금 확대)에 관한 Lagrådet 의견** — 예상 창구: 2026년 5월 5일~12일. 부정적 의견은 ECHR 준수 개정 요건을 발동시키고 선거 운동 정점 직전에 정부에 최대 정치적 비용을 창출한다.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Classificatie**: OPENBAAR — AVG art. 9(2)(e) openbaar gemaakt / 9(2)(g) aanzienlijk algemeen belang
+**Vertrouwen**: HOOG [B2] | **Datum**: 2026-05-01
+
+### 🎯 Conclusie
+
+Vijf maanden voor de Zweedse Riksdag-verkiezingen van september 2026 heeft de Tidöalliansen zijn meest ambitieuze pre-electorale wetgevingssprint gestart: een migratiemegapakket van vier wetten (HD03262–65) dat de afschaffing van permanente verblijfsvergunningen, hardere deportatieoperaties en uitgebreide detentiebevoegdheden voorstelt — gelijktijdig met de formele ratificatie door de Riksdag van ondertrends economische groei (bbp 1,2% in 2026) en parlementaire verantwoordingsgeslachten over een 352 miljard SEK-criminele economie. De electorale positie van de regering is structureel sterk op migratie en veiligheid, maar kritisch blootgesteld op economisch bestuur. De EVRM-toetsing van het Lagrådet van twee sleutelwetten staat nog open.
+
+### 🧭 3 beslissingen die dit rapport ondersteunt
+
+1. **Tijdlijn Lagrådet bewaken**: Een negatief advies van het Lagrådet over HD03262/HD03265 zou een grondwetsherziening of een politiek kostbare Riksdag-overstemmig afdwingen — de belangrijkste inlichtingenlacune van de week.
+2. **S's electorale tegenstrategie volgen**: De gecoördineerde indiening van 16 moties door S bevestigt einde-sessie-maximalisme; de uitdaging op milieuvergunningen (HD024124-anker) is hun sterkste inhoudelijke argument. Monitoring van uitkomsten van commissieverhoren bij MJU en NU definieert de electorale geloofwaardigheid van S op bestuursreformen.
+3. **Jaargang IMF-economische data beoordelen**: HC01FiU20 ratificeert ondertrends groei (1,2% 2026, IMF WEO apr. 2026); de oppositie zal haar economische campagne aan deze basislijn verankeren. Recente maandelijkse IMF IFS CPI-data (PCPI_IX SWE) en het MFS_IR-rentetraject van Riksbank zijn vooruitblikkende inlichtingenactiveerders.
+
+### 60-secondenlectuur
+
+- **Migratiepakket (HD03262–65)**: Vier gelijktijdige wetsvoorstellen gericht op Zweden's migratiearchitectuur — het meest restrictieve voorstel sinds de tijdelijke beperkingen van 2016. De afschaffing van permanente verblijfsvergunningen is het structurele anker; deportatie-, detentie- en gedragswetten zijn de uitvoeringsarmen. Lagrådet in afwachting van twee wetsvoorstellen.
+- **Verantwoording criminele economie (HD10451, HD10458)**: ESO-gedocumenteerde 352 mrd. SEK criminele sector (5,5% bbp, 23.000 bedrijfsgerelateerde structuren) treedt in formeel Riksdag-debat. Strömmers belofte 'uitroeien in 4 jaar' heeft nu een meetbare basislijn en een falsificeerbare klok.
+- **Economische knel geratificeerd (HC01FiU20)**: De Riksdag keurde formeel ondertrends bbp-groei goed — de regering kan geen economisch succes claimen. IMF WEO apr. 2026 stelt de basislijn; de Amerikaanse tariefschok biedt dekking maar neutraliseert de aanvalslijnen van de oppositie niet.
+- **Defensieconsensus (HD03254)**: Militair samenwerkingskader (NORDEFCO, UK ELSA, US DCA) wordt aangenomen met bijna transpartijse consensus — 297/28 bij eerdere vergelijkbare stemmingen. Versterkt structureel de NAVO-integratie.
+- **Oppositionsmaximalisme (S-motiecluster)**: 16 gelijktijdige commissiemoties in 6 commissies signaleren S's verkiezingsjaar wetgevingsverzadigingsstrategie. Milieuvergunningen (HD024124-cluster) zijn de inhoudelijk hoogwaardige uitdaging.
+
+### Toonaangevende vooruitblikkende activeerder
+
+**Advies Lagrådet over HD03265 (uitbreiding detentie)** — verwacht venster: 5–12 mei 2026. Een negatief advies activeert EVRM-nalevingsrevisievereisten en creëert maximale politieke kosten voor de regering onmiddellijk vóór de hoogtepunten van de verkiezingscampagne.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Klassifisering**: OFFENTLIG — GDPR art. 9(2)(e) offentliggjort / 9(2)(g) vesentlig samfunnsinteresse
+**Konfidens**: HØY [B2] | **Dato**: 2026-05-01
+
+### 🎯 Konklusjon
+
+Fem måneder før Riksdagens valg i september 2026 har Tidöalliansen satt i gang sin mest ambisiøse lovgivningssprint før valget: en migrasjonspakke med fire lovforslag (HD03262–65) som foreslår å avskaffe permanent oppholdstillatelse, skjerpe utvisningsoperasjoner og utvide innholdsbemyndigelser — parallelt med Riksdagens formelle ratifisering av under-trend BNP-vekst (1,2 % i 2026) og parlamentariske ansvarsbataljer om en 352 milliarder SEK stor kriminaløkonomi. Regjeringens valgpolitiske posisjon er strukturelt sterk på migrasjon og sikkerhet, men kritisk eksponert på den økonomiske styringen. Lagrådets ECHR-gjennomgang av to sentrale lovforslag gjenstår.
+
+### 🧭 3 beslutninger dette notatet støtter
+
+1. **Overvåk Lagrådets tidslinje**: Et negativt Lagrådet-yttrande om HD03262/HD03265 ville tvinge frem enten en grunnlovsrevisjon eller en politisk kostbar Riksdag-overstyring — den enkelt viktigste etterretningslacunen i uken.
+2. **Følg S's valmessige motstrategi**: S's koordinerte innsending av 16 motioner bekrefter sluttsesjonsmaksimalisme; miljøtillstandsutfordringen (HD024124-ankeret) er deres sterkeste saklige argument. Overvåking av utvalgshoringers utfall ved MJU og NU definerer S's troverdighet i styringsreformspørsmål.
+3. **Vurder IMF-datavintage**: HC01FiU20 ratifiserer under-trend-vekst (1,2 % 2026, IMF WEO apr. 2026); opposisjonen vil forankre sin økonomiske valgkampanje til denne basislinja. Fersk IMF IFS månedlig KPI-data (PCPI_IX SWE) og Riksbankens MFS_IR-rentetrajectory er fremoverskuende etterretningstriggere.
+
+### 60-sekunders lesning
+
+- **Migrasjonspakke (HD03262–65)**: Fire samtidige lovforslag rettet mot Sveriges migrasjonsarkitektur — det mest restriktive forslaget siden de midlertidige restriksjonene i 2016. Avskaffelse av permanent oppholdstillatelse er strukturelt ankerpunkt; utvisnings-, innholds- og vandelslovene er håndhevelsesarmer. Lagrådet avventer på to forslag.
+- **Kriminaløkonomisk ansvarliggjøring (HD10451, HD10458)**: ESO-dokumentert 352 mrd. SEK kriminell sektor (5,5 % av BNP, 23 000 selskapstilknyttede strukturer) trer inn i formell Riksdag-debatt. Strömmers løfte om "utrydde på 4 år" har nå en målbar basislinjen og en falsifiserbar klokke.
+- **Økonomisk klemme ratifisert (HC01FiU20)**: Riksdagen godkjente formelt under-trend BNP-vekst — regjeringen kan ikke gjøre krav på økonomisk suksess. IMF WEO apr. 2026 setter basislinja; det amerikanske tollsjokket gir dekning, men nøytraliserer ikke opposisjonens angrepslinjene.
+- **Forsvarskonsensus (HD03254)**: Militært samarbeidsrammeverk (NORDEFCO, UK ELSA, US DCA) vedtas med nær-tverrpolitisk enighet — 297/28 i tidligere sammenlignbare voteringer. Styrker strukturelt NATO-integrasjonen.
+- **Opposisjonens maksimalisme (S-mosjonsklynge)**: 16 samtidige utvalgsforslag på tvers av 6 utvalg signaliserer S's valgårs lovgivningsmetningsstrategi. Miljøtillatelse (HD024124-klyngen) er den høyeste kvalitative saklige utfordringen.
+
+### Ledende fremoverskuende trigger
+
+**Lagrådets yttrande om HD03265 (utvidelse av forvaring)** — forventet vindu: 5.–12. mai 2026. Et negativt yttrande utløser krav om ECHR-samsvarrevisjon og skaper maksimale politiske kostnader for regjeringen umiddelbart før valgkampanjens topp.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e) offentliggjord / 9(2)(g) väsentligt allmänintresse
+**Konfidens**: HÖG [B2] | **Datum**: 2026-05-01
+
+### 🎯 Slutsats
+
+Fem månader före Sveriges riksdagsval i september 2026 har Tidöalliansen inlett sin mest ambitiösa förvalslagstiftningssprint: ett fyra-lagsmigrationspaket (HD03262–65) som föreslår att permanenta uppehållstillstånd avskaffas, utvisningsoperationer hårdnar och förvarsbefogenheter utökas — parallellt med riksdagens formella ratificering av undertrendsmässig ekonomisk tillväxt (BNP 1,2 % 2026) och parlamentariska ansvarsbataljer om en 352 miljarder kronor stor kriminalekonomi. Regeringens valpolitiska position är strukturellt stark i migrations- och säkerhetsfrågor, men kritiskt exponerad i ekonomisk styrning. Lagrådets ECHR-granskning av två centrala lagförslag återstår.
+
+### 🧭 3 beslut som detta underlag stöder
+
+1. **Bevaka Lagrådets tidslinje**: Ett negativt yttrande från Lagrådet om HD03262/HD03265 skulle tvinga fram antingen grundlagsrevision eller en politiskt kostsam riksdagsöverstyrning — den enskilt viktigaste underrättelsefrågan under veckan.
+2. **Följ S:s valmässiga motstrategi**: S:s samordnade inlämning av 16 motioner bekräftar slutsessionsmaximalism; miljötillståndsutmaningen (HD024124-ankaret) är deras starkaste sakliga argument. Bevakning av utskottshearingsutfall vid MJU och NU definierar S:s valförtroende på styrningsfrågor.
+3. **Bedöm IMF:s ekonomidatavintage**: HC01FiU20 ratificerar undertrendstillväxt (1,2 % 2026, IMF WEO apr 2026); oppositionen kommer att förankra sin ekonomiska valkampanj vid denna baslinje. Aktuell IMF IFS månads-KPI-data (PCPI_IX SWE) och Riksbankens MFS_IR styrräntebana är framåtblickande underrättelsetriggrar.
+
+### 60-sekunders läsning
+
+- **Migrationspaket (HD03262–65)**: Fyra simultana lagförslag riktar sig mot Sveriges migrationsarkitektur — det mest restriktiva förslaget sedan de temporära restriktionerna 2016. Avskaffandet av permanenta uppehållstillstånd är strukturellt ankare; utvisnings-, förvars- och vandelsslagarna är verkställighetsarmar. Lagrådet avvaktar på två förslag.
+- **Ansvarsutkrävande kriminalekonomi (HD10451, HD10458)**: ESO-dokumenterad 352 miljarder kronor stor kriminell sektor (5,5 % av BNP, 23 000 bolagsanknutna strukturer) inträder i formell riksdagsdebatt.Strömmers "utrota på 4 år"-löfte har nu en mätbar baslinje och en falsifierbar klocka.
+- **Ekonomisk klemma ratificerad (HC01FiU20)**: Riksdagen godkände formellt undertrendsmässig BNP-tillväxt — regeringen kan inte göra anspråk på ekonomisk framgång. IMF WEO apr 2026 sätter baslinjen; den amerikanska tullavancen ger täckning men neutraliserar inte oppositionens attacklinjer.
+- **Försvarskonsensus (HD03254)**: Militärt samarbetsramverk (NORDEFCO, UK ELSA, US DCA) passerar med nästan tvärpolitisk enighet — 297/28 i tidigare jämförbara omröstningar. Stärker strukturellt NATO-integrationen.
+- **Oppositionens maximalism (S-motionskluster)**: 16 simultana utskottsmotioner i 6 utskott signalerar S:s valårs lagstiftningsmettnadsstrategikens. Miljötillståndsfrågan (HD024124-klustret) är den högst kvalitativa sakliga utmaningen.
+
+### Ledande framåtblickande trigger
+
+**Lagrådets yttrande om HD03265 (utvidgad förvarsrätt)** — förväntat fönster: 5–12 maj 2026. Ett negativt yttrande utlöser krav på ECHR-efterlevnadsrevision och skapar maximal politisk kostnad för regeringen omedelbart inför valkampanjernas topp.
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling
+**分类**：公开 — GDPR第9条(2)(e)公开发布 / 第9条(2)(g)实质性公共利益
+**置信度**：高 [B2] | **日期**：2026-05-01
+
+### 🎯 结论
+
+距瑞典2026年9月议会选举还有五个月，Tidöalliansen政府发起了其最具雄心的选前立法冲刺：一个由四项法案组成的移民超级方案（HD03262–65），提议废除永久居留许可、强化驱逐行动、扩大羁押权限——同时伴随着议会正式批准低于趋势的经济增长（2026年GDP 1.2%）以及围绕3520亿瑞典克朗犯罪经济的议会问责之争。政府在移民和安全问题上的选举立场在结构上颇为强势，但在经济治理方面暴露出严重弱点。Lagrådet对两项关键法案的《欧洲人权公约》审查仍未完成。
+
+### 🧭 本报告支持的3项决策
+
+1. **监测Lagrådet时间表**：Lagrådet对HD03262/HD03265出具负面意见将迫使进行宪法修订或在议会进行政治代价高昂的否决——本周最重要的情报缺口。
+2. **追踪S党的选举反制策略**：S党协调提交16项动议证实了会期末最大主义；环境许可挑战（HD024124锚点）是其最有力的实质性论点。监测MJU和NU委员会听证结果将界定S党在治理改革上的选举可信度。
+3. **评估IMF经济数据年份**：HC01FiU20批准了低于趋势的增长（2026年1.2%，IMF《世界经济展望》2026年4月版）；反对党将以此基线为其经济竞选活动定锚。最新IMF IFS月度CPI数据（PCPI_IX SWE）和瑞典央行MFS_IR政策利率路径是前瞻性情报触发因素。
+
+### 60秒速览
+
+- **移民法案（HD03262–65）**：针对瑞典移民架构的四项同时推进的法案——自2016年临时限制以来最具限制性的提案。废除永久居留许可是结构性锚点；驱逐、羁押和品行法案是执法臂膀。Lagrådet对两项法案持保留意见。
+- **犯罪经济责任（HD10451、HD10458）**：ESO记录的3520亿克朗犯罪部门（占GDP 5.5%，23,000个与企业关联的结构）正式进入议会辩论。Strömmer"4年根除"的承诺现在有了可测量的基线和可证伪的时钟。
+- **经济困境正式批准（HC01FiU20）**：议会正式认可低于趋势的GDP增长——政府无法声称经济成功。IMF《世界经济展望》2026年4月版设定了基线；美国关税冲击提供了掩护，但无法消弭反对派的攻击线。
+- **国防共识（HD03254）**：军事合作框架（NORDEFCO、UK ELSA、US DCA）以几乎跨党派的共识通过——与此前可比投票的297对28相比。从结构上强化了北约一体化。
+- **反对派最大主义（S动议集群）**：6个委员会的16项同期委员会动议标志着S党大选年的立法饱和战略。环境许可（HD024124集群）是质量最高的实质性挑战。
+
+### 主要前瞻触发因素
+
+**Lagrådet就HD03265（扩大羁押）发表意见** — 预期窗口：2026年5月5日至12日。负面意见将触发《欧洲人权公约》合规修订要求，并在大选运动高峰前为政府创造最大政治代价。
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Pre-Election Legislative Timeline — May–September 2026
+    dateFormat  YYYY-MM-DD
+    section Migration Package
+    Lagrådet review HD03262/65        :active, lag1, 2026-05-01, 14d
+    SfU/JuU committee hearings        :hear1, 2026-05-04, 21d
+    Committee report (bet)            :bet1, 2026-05-25, 30d
+    Riksdag vote                      :vote1, 2026-06-15, 7d
+    section Election
+    Election campaign peak            :crit, camp1, 2026-06-01, 100d
+    General election                  :milestone, 2026-09-13, 0d
+    section Economic
+    IMF WEO Spring update             :imf1, 2026-05-01, 7d
+    Riksbank rate decision            :rbk1, 2026-06-01, 3d
+    style lag1 fill:#ff006e
+    style camp1 fill:#ffbe0b
+```
+
+<!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 13 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2281,6 +2961,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

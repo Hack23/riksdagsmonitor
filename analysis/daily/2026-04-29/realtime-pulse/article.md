@@ -6,7 +6,7 @@ date: 2026-04-29
 subfolder: realtime-pulse
 slug: 2026-04-29-realtime-pulse
 source_folder: analysis/daily/2026-04-29/realtime-pulse
-generated_at: 2026-05-21T02:19:50.729Z
+generated_at: 2026-05-22T12:25:06.109Z
 language: en
 layout: article
 ---
@@ -106,6 +106,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1864,13 +1877,884 @@ full-text-fallback: metadata-only run — full text snippets available via MCP b
 
 vote-confirmation-timestamp: 2026-04-29T16:45Z
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# نبض التشريع السويدي: قانون الأسلحة، التهديد الصيني، وشح المياه — 29 أبريل 2026
+
+**المؤلف**: James Pether Sörling
+**التاريخ**: 2026-04-29
+**نوع المقال**: realtime-pulse
+**مستوى الثقة**: HIGH [B2]
+**التصنيف**: PUBLIC
+
+### 🎯 الملخص التنفيذي
+
+**[مؤكد — نتائج التصويت 16:13–16:21 ستوكهولم]** أقر الريكسداغ في 29 أبريل قانونَين تاريخيَّين: (1) **JuU10 (قانون الأسلحة الجديد)** أُقرَّ الساعة 16:13 بأغلبية من تكتل تيدو + الاشتراكيين الديمقراطيين؛ وكان الحاسم أن **حزب الوسط (C) صوّت بالإجماع بـ"لا"** — وهو انفصال علني نادر عن التحالف البرجوازي. (2) **SfU28 (اشتراطات الجنسية المشددة)** أُقرَّ الساعة 16:21 مع تصويت غالبية حزب S بـ"نعم" — وهو انعطافة يمينية بارزة للاشتراكيين الديمقراطيين السويديين. صوّت V وMP بـ"لا" في الحالتين.
+
+### القرارات التي يدعمها هذا التقرير
+
+1. **تحريري**: القصة الرئيسية هي التصويت على قانون الأسلحة الجديد.
+2. **استخباراتي**: يتصاعد خطر التأثير الصيني على البنية التحتية الحيوية السويدية.
+3. **السياسة الاجتماعية**: يكشف التغلغل الإجرامي في مراكز الإيواء عن ثغرة تنظيمية.
+4. **تقاطع المناخ/الأمن**: تقترب أزمة المياه في جنوب السويد من عتبة الدفاع المدني.
+
+### 60 ثانية
+
+- 🗳️ **JuU10 قانون الأسلحة الجديد** — أُقرَّ الساعة 16:13.
+- 🇨🇳 **تجمع التهديد الصيني** — HD12744، HD12746، HD10456.
+- 💧 **شح المياه** — HD12743 + HD12745.
+- 🏠 **مراكز الإيواء الإجرامية** — HD10454.
+- ⚛️ **تنظيم الطاقة النووية** — HD01NU19.
+- 🇪🇺 **التحضير لـ Ecofin** — اجتمعت لجنة الاتحاد الأوروبي الساعة 09:00.
+
+### نتائج التصويت المؤكدة — 29 أبريل 2026
+
+| التصويت | الوقت | النتيجة | المؤشر الرئيسي |
+|---------|-------|---------|----------------|
+| JuU10 البند 1 (قانون الأسلحة الجديد) | 16:13:22 | ✅ أُقرَّ | **C صوّت بالإجماع بـ"لا"** |
+| JuU10 البند 2 | 16:13 | ❌ رُفض | |
+| SfU28 البند 1 (اشتراطات الجنسية) | 16:21:06 | ✅ أُقرَّ | **S (الغالبية) صوّت بـ"نعم"** |
+| SfU28 البند 2 | 16:21 | ❌ رُفض | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29 أبريل 2026\nالنبض اللحظي))
+    الأمن
+      JuU10 قانون الأسلحة الجديد
+        تصويت ≥16:00
+        SD·S·M يتحدثون جميعاً
+      تجمع الصين
+        HD12744 الصناعة
+        HD12746 تايوان
+        HD10456 الأعضاء
+    الرفاه
+      HD10454 مراكز الإيواء الإجرامية
+        تقرير الشرطة 2024
+        المساءلة الوزارية
+    البيئة
+      HD12743 شح المياه
+      HD12745 الدفاع المدني
+    الطاقة النووية
+      HD01NU19 إصلاح التراخيص
+    الاتحاد الأوروبي
+      HDA3EUN37 تحضير Ecofin
+      HD0N50B0F8 جدول أعمال 5 مايو
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-04-29
+**Artikeltype**: realtime-pulse
+**Konfidensniveau**: HIGH [B2]
+**Klassificering**: PUBLIC
+
+### 🎯 BLUF
+
+**[BEKRÆFTET — AFSTEMNINGSRESULTATER 16:13–16:21 STOCKHOLM]** Riksdagen vedtog den 29. april to historiske love: (1) **JuU10 (Ny våbenlov)** vedtaget 16:13 med Tidöblokket + Socialdemokraterne i flertal; afgørende var at **Centerpartiet (C) stemte enstemmigt NEJ** — et sjældent offentligt brud med den borgerlige alliance, der signalerer C's voksende afstand fra Tidöblokets sikkerhedspolitik. (2) **SfU28 (Skærpede krav til svenske statsborgerskab)** vedtaget 16:21 med M, SD, KD, L og **flertallet af S stemte JA** — en markant højredrejning for Sveriges socialdemokrater i statsborgerskabs- og migrationsspørgsmål. V og MP stemte NEJ på begge.
+
+### Beslutninger dette underlag understøtter
+
+1. **Redaktionelt**: Ledende nyhed er den nye våbenlovsafstemning og hvad den signalerer for retningen af Sveriges sikkerhedslovgivning efter NATO-optagelsen.
+2. **Efterretning**: Kina-eksponeringens risiko mod svensk kritisk infrastruktur eskalerer — tre separate parlamentariske instrumenter i dag afspejler bred tværblok-konsensus om, at eksisterende tilsyn er utilstrækkeligt.
+3. **Velfærdspolitik**: Kriminel infiltration i HVB-hjem eksponerer en reguleringsmæssig lakune i socialtjenesteloven; spørgsmålet er nu genstand for en formel interpellation.
+4. **Klima/sikkerhedsneksus**: Den sydsvenske vandkrise er ved at krydse grænsen fra miljøspørgsmål til civilforsvarsspørgsmål.
+
+### 60 sekunder
+
+- 🗳️ **JuU10 Ny våbenlov** — vedtaget i dag kl. 16:13.
+- 🇨🇳 **Kina-trussel-klyngen** — HD12744, HD12746, HD10456: tvær-blok parlamentarisk bekymring.
+- 💧 **Vandmangel** — HD12743 + HD12745: sydsvensk strukturel vandkrise kobles til civilforsvar.
+- 🏠 **Kriminelle HVB-hjem** — HD10454: ministeriel ansvarliggørelse.
+- ⚛️ **Kerneenergiregulering** — HD01NU19: forenklede tilladelsesprocesser.
+- 🇪🇺 **Ecofin-forberedelse** — EU-udvalget mødes kl. 09:00 om Sveriges position.
+
+### Bekræftede afstemningsresultater — 29. april 2026
+
+| Afstemning | Tid | Resultat | Nøgleindikation |
+|------------|-----|----------|-----------------|
+| JuU10 punkt 1 (Ny våbenlov) | 16:13:22 | ✅ VEDTAGET | **C stemte enstemmigt NEJ** — blokskred |
+| JuU10 punkt 2 | 16:13 | ❌ AFVIST | |
+| SfU28 punkt 1 (Statsborgerskabskrav) | 16:21:06 | ✅ VEDTAGET | **S (flest) stemte JA** med Tidöblokket |
+| SfU28 punkt 2 | 16:21 | ❌ AFVIST | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29. april 2026\nRealtidspuls))
+    Sikkerhed
+      JuU10 Ny våbenlov
+        Afstemning ≥16:00
+        SD·S·M taler alle
+      Kina-klyngen
+        HD12744 Industri
+        HD12746 Taiwan
+        HD10456 Organer
+    Velfærd
+      HD10454 Kriminelle HVB-hjem
+        Politirapport 2024
+        Ministeransvar
+    Miljø
+      HD12743 Vandmangel
+      HD12745 Civilforsvar
+    Kerneenergi
+      HD01NU19 Tilladelsesreform
+    EU
+      HDA3EUN37 Ecofin-forberedelse
+      HD0N50B0F8 5. maj dagsorden
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Datum**: 2026-04-29
+**Artikeltyp**: realtime-pulse
+**Konfidenzniveau**: HIGH [B2]
+**Klassifizierung**: PUBLIC
+
+### 🎯 BLUF
+
+**[BESTÄTIGT — ABSTIMMUNGSERGEBNISSE 16:13–16:21 STOCKHOLM]** Das Riksdag verabschiedete am 29. April zwei historische Gesetze: (1) **JuU10 (Neues Waffengesetz)** angenommen um 16:13 mit Tidöblock + Sozialdemokraten in der Mehrheit; entscheidend war, dass **Centerpartiet (C) einstimmig mit NEIN stimmte** — ein seltener öffentlicher Bruch mit dem bürgerlichen Bündnis. (2) **SfU28 (Verschärfte Staatsbürgerschaftsanforderungen)** angenommen um 16:21, wobei die Mehrheit der S mit JA stimmte — eine bedeutende Rechtsverschiebung der schwedischen Sozialdemokraten. V und MP stimmten bei beiden mit NEIN.
+
+### Entscheidungen, die diese Vorlage unterstützt
+
+1. **Redaktionell**: Leitnachricht ist die neue Waffengesetzabstimmung.
+2. **Nachrichtendienst**: Chinas Risiko für kritische Infrastruktur Schwedens eskaliert.
+3. **Sozialpolitik**: Kriminelle Infiltration in Heimeinrichtungen legt Regulierungslücke offen.
+4. **Klima/Sicherheitsnexus**: Südschwedens Wasserkrise nähert sich zivilverteidigungsrelevanz.
+
+### 60 Sekunden
+
+- 🗳️ **JuU10 Neues Waffengesetz** — um 16:13 angenommen.
+- 🇨🇳 **China-Bedrohungscluster** — HD12744, HD12746, HD10456.
+- 💧 **Wasserknappheit** — HD12743 + HD12745.
+- 🏠 **Kriminelle Heimunterkünfte** — HD10454.
+- ⚛️ **Kernenergieregulierung** — HD01NU19.
+- 🇪🇺 **Ecofin-Vorbereitung** — EU-Ausschuss traf sich um 09:00.
+
+### Bestätigte Abstimmungsergebnisse — 29. April 2026
+
+| Abstimmung | Uhrzeit | Ergebnis | Schlüsselindikator |
+|------------|---------|----------|-------------------|
+| JuU10 Punkt 1 (Neues Waffengesetz) | 16:13:22 | ✅ ANGENOMMEN | **C stimmte einstimmig NEIN** |
+| JuU10 Punkt 2 | 16:13 | ❌ ABGELEHNT | |
+| SfU28 Punkt 1 (Staatsbürgerschaftsanforderungen) | 16:21:06 | ✅ ANGENOMMEN | **S (Mehrheit) stimmte JA** |
+| SfU28 Punkt 2 | 16:21 | ❌ ABGELEHNT | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29. April 2026\nEchtzeit-Puls))
+    Sicherheit
+      JuU10 Neues Waffengesetz
+        Abstimmung ≥16:00
+        SD·S·M sprechen alle
+      China-Cluster
+        HD12744 Industrie
+        HD12746 Taiwan
+        HD10456 Organe
+    Wohlfahrt
+      HD10454 Kriminelle Heimunterkünfte
+        Polizeibericht 2024
+        Ministerverantwortung
+    Umwelt
+      HD12743 Wasserknappheit
+      HD12745 Zivilverteidigung
+    Kernenergie
+      HD01NU19 Genehmigungsreform
+    EU
+      HDA3EUN37 Ecofin-Vorbereitung
+      HD0N50B0F8 5. Mai Tagesordnung
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Fecha**: 2026-04-29
+**Tipo de artículo**: realtime-pulse
+**Nivel de confianza**: HIGH [B2]
+**Clasificación**: PUBLIC
+
+### 🎯 BLUF
+
+**[CONFIRMADO — RESULTADOS DE VOTACIÓN 16:13–16:21 ESTOCOLMO]** El Riksdag aprobó el 29 de abril dos leyes históricas: (1) **JuU10 (Nueva Ley de Armas)** aprobada a las 16:13 con el bloque Tidö + los socialdemócratas en mayoría; el elemento decisivo fue que **el Partido del Centro (C) votó unánimemente NO** — una rara ruptura pública con la alianza burguesa. (2) **SfU28 (Requisitos de ciudadanía más estrictos)** aprobada a las 16:21 con la mayoría del S votando SÍ — un giro significativo a la derecha para los socialdemócratas suecos. V y MP votaron NO en ambas.
+
+### Decisiones que respalda este informe
+
+1. **Editorial**: La noticia principal es la votación sobre la nueva ley de armas.
+2. **Inteligencia**: El riesgo de exposición china a la infraestructura crítica sueca se intensifica.
+3. **Política social**: La infiltración criminal en hogares residenciales revela una laguna regulatoria.
+4. **Nexo clima/seguridad**: La crisis hídrica del sur de Suecia se acerca al umbral de defensa civil.
+
+### 60 segundos
+
+- 🗳️ **JuU10 Nueva Ley de Armas** — aprobada a las 16:13.
+- 🇨🇳 **Clúster de amenaza china** — HD12744, HD12746, HD10456.
+- 💧 **Escasez de agua** — HD12743 + HD12745.
+- 🏠 **Hogares residenciales criminales** — HD10454.
+- ⚛️ **Regulación nuclear** — HD01NU19.
+- 🇪🇺 **Preparación Ecofin** — Comité UE reunido a las 09:00.
+
+### Resultados de votación confirmados — 29 de abril de 2026
+
+| Votación | Hora | Resultado | Indicador clave |
+|----------|------|-----------|-----------------|
+| JuU10 punto 1 (Nueva Ley de Armas) | 16:13:22 | ✅ APROBADA | **C votó unánimemente NO** |
+| JuU10 punto 2 | 16:13 | ❌ RECHAZADA | |
+| SfU28 punto 1 (Requisitos de ciudadanía) | 16:21:06 | ✅ APROBADA | **S (mayoría) votó SÍ** |
+| SfU28 punto 2 | 16:21 | ❌ RECHAZADA | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29 de abril 2026\nPulso en tiempo real))
+    Seguridad
+      JuU10 Nueva Ley de Armas
+        Votación ≥16:00
+        SD·S·M hablan todos
+      Clúster China
+        HD12744 Industria
+        HD12746 Taiwán
+        HD10456 Órganos
+    Bienestar
+      HD10454 Hogares criminales
+        Informe policial 2024
+        Responsabilidad ministerial
+    Medio ambiente
+      HD12743 Escasez de agua
+      HD12745 Defensa civil
+    Nuclear
+      HD01NU19 Reforma de permisos
+    UE
+      HDA3EUN37 Preparación Ecofin
+      HD0N50B0F8 Agenda 5 de mayo
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_fi.md -->
+
+**Kirjoittaja**: James Pether Sörling
+**Päivämäärä**: 2026-04-29
+**Artikkelityyppi**: realtime-pulse
+**Luottamustaso**: HIGH [B2]
+**Luokitus**: PUBLIC
+
+### 🎯 BLUF
+
+**[VAHVISTETTU — ÄÄNESTYSTULOKSET 16:13–16:21 TUKHOLMA]** Riksdag hyväksyi 29. huhtikuuta kaksi historiallista lakia: (1) **JuU10 (Uusi aselaki)** hyväksyttiin klo 16:13 Tidöblokin + Sosiaalidemokraattien enemmistöllä; ratkaisevaa oli, että **Keskustapuolue (C) äänesti yksimielisesti EI** — harvinainen julkinen ero porvarillisilta liittolaisilta, joka merkitsee C:n kasvavaa etäisyyttä Tidöblokin turvallisuuspolitiikasta. (2) **SfU28 (Tiukemmat kansalaisuusvaatimukset)** hyväksyttiin klo 16:21 M:n, SD:n, KD:n, L:n ja **suurimman osan S:stä äänestäessä KYLLÄ** — merkittävä oikeistokäänne Ruotsin sosiaalidemokraateille. V ja MP äänestivät EI molemmissa.
+
+### Päätökset, joita tämä taustamuistio tukee
+
+1. **Toimituksellinen**: Tärkein uutinen on uusi aselakiäänestys ja sen turvallisuuslainsäädännöllinen merkitys.
+2. **Tiedustelu**: Kiinan uhka Ruotsin kriittiselle infrastruktuurille kasvaa.
+3. **Sosiaalipolitiikka**: Rikollisten tunkeutuminen perhekoteihin paljastaa sääntelyaukon.
+4. **Ilmasto/turvallisuusnexus**: Etelä-Ruotsin vesipula lähestyy siviilipuolustuksen relevanssia.
+
+### 60 sekuntia
+
+- 🗳️ **JuU10 Uusi aselaki** — hyväksytty klo 16:13.
+- 🇨🇳 **Kiina-uhkarypäs** — HD12744, HD12746, HD10456.
+- 💧 **Vesipula** — HD12743 + HD12745.
+- 🏠 **Rikolliset perhekotit** — HD10454.
+- ⚛️ **Ydinvoimasääntely** — HD01NU19.
+- 🇪🇺 **Ecofin-valmistelu** — EU-neuvosto kokoontui klo 09:00.
+
+### Vahvistetut äänestystulokset — 29. huhtikuuta 2026
+
+| Äänestys | Aika | Tulos | Avainilmaisin |
+|----------|------|-------|---------------|
+| JuU10 kohta 1 (Uusi aselaki) | 16:13:22 | ✅ HYVÄKSYTTY | **C äänesti yksimielisesti EI** |
+| JuU10 kohta 2 | 16:13 | ❌ HYLÄTTY | |
+| SfU28 kohta 1 (Kansalaisuusvaatimukset) | 16:21:06 | ✅ HYVÄKSYTTY | **S (enimmäkseen) äänesti KYLLÄ** |
+| SfU28 kohta 2 | 16:21 | ❌ HYLÄTTY | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29. huhtikuuta 2026\nReaaliaika-pulssi))
+    Turvallisuus
+      JuU10 Uusi aselaki
+        Äänestys ≥16:00
+        SD·S·M puhuvat kaikki
+      Kiina-rypäs
+        HD12744 Teollisuus
+        HD12746 Taiwan
+        HD10456 Elimet
+    Hyvinvointi
+      HD10454 Rikolliset perhekotit
+        Poliisiraportti 2024
+        Ministerivastuu
+    Ympäristö
+      HD12743 Vesipula
+      HD12745 Siviilipuolustus
+    Ydinvoima
+      HD01NU19 Lupauudistus
+    EU
+      HDA3EUN37 Ecofin-valmistelu
+      HD0N50B0F8 5. toukokuuta asialistat
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+
+**Type d'article** : realtime-pulse
+**Niveau de confiance** : HIGH [B2]
+
+### 🎯 BLUF
+
+**[CONFIRMÉ — RÉSULTATS DES VOTES 16:13–16:21 STOCKHOLM]** Le Riksdag a adopté le 29 avril deux lois historiques : (1) **JuU10 (Nouvelle loi sur les armes)** adoptée à 16:13 avec le bloc Tidö + les sociaux-démocrates en majorité ; l'élément décisif est que **le Parti du Centre (C) a voté unanimement NON** — une rupture publique rare avec l'alliance bourgeoise. (2) **SfU28 (Conditions de citoyenneté renforcées)** adoptée à 16:21 avec la majorité du S votant OUI — un virage significatif vers la droite pour les sociaux-démocrates suédois. V et MP ont voté NON aux deux votes.
+
+### Décisions soutenues par cette note
+
+1. **Éditorial** : La principale information est le vote sur la nouvelle loi sur les armes.
+2. **Renseignement** : Le risque de l'exposition chinoise à l'infrastructure critique suédoise s'intensifie.
+3. **Politique sociale** : L'infiltration criminelle dans les foyers d'hébergement révèle une lacune réglementaire.
+4. **Nexus climat/sécurité** : La crise hydrique du sud de la Suède approche du seuil de défense civile.
+
+### 60 secondes
+
+- 🗳️ **JuU10 Nouvelle loi sur les armes** — adoptée à 16:13.
+- 🇨🇳 **Cluster de menace chinoise** — HD12744, HD12746, HD10456.
+- 💧 **Pénurie d'eau** — HD12743 + HD12745.
+- 🏠 **Foyers d'hébergement criminels** — HD10454.
+- ⚛️ **Régulation nucléaire** — HD01NU19.
+- 🇪🇺 **Préparation Ecofin** — Comité UE réuni à 09:00.
+
+### Résultats de votes confirmés — 29 avril 2026
+
+| Vote | Heure | Résultat | Indicateur clé |
+|------|-------|----------|----------------|
+| JuU10 point 1 (Nouvelle loi sur les armes) | 16:13:22 | ✅ ADOPTÉ | **C a voté unanimement NON** |
+| JuU10 point 2 | 16:13 | ❌ REJETÉ | |
+| SfU28 point 1 (Conditions de citoyenneté) | 16:21:06 | ✅ ADOPTÉ | **S (majorité) a voté OUI** |
+| SfU28 point 2 | 16:21 | ❌ REJETÉ | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29 avril 2026\nPuls en temps réel))
+    Sécurité
+      JuU10 Nouvelle loi sur les armes
+        Vote ≥16:00
+        SD·S·M parlent tous
+      Cluster Chine
+        HD12744 Industrie
+        HD12746 Taïwan
+        HD10456 Organes
+    Bien-être
+      HD10454 Foyers criminels
+        Rapport de police 2024
+        Responsabilité ministérielle
+    Environnement
+      HD12743 Pénurie d'eau
+      HD12745 Défense civile
+    Nucléaire
+      HD01NU19 Réforme des permis
+    UE
+      HDA3EUN37 Préparation Ecofin
+      HD0N50B0F8 Ordre du jour 5 mai
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# דופק החקיקה השוודי: חוק הנשק, האיום הסיני ומחסור במים — 29 באפריל 2026
+
+**מחבר**: James Pether Sörling
+**תאריך**: 2026-04-29
+**סוג מאמר**: realtime-pulse
+**רמת ביטחון**: HIGH [B2]
+**סיווג**: PUBLIC
+
+### 🎯 תקציר מנהלים
+
+**[מאושר — תוצאות הצבעה 16:13–16:21 שטוקהולם]** הריקסדאג אישר ב-29 באפריל שני חוקים היסטוריים: (1) **JuU10 (חוק הנשק החדש)** אושר בשעה 16:13 עם גוש טידו + הסוציאל-דמוקרטים ברוב; המכריע היה ש**מפלגת המרכז (C) הצביעה פה אחד נגד** — שבירה פומבית נדירה עם הברית הבורגנית. (2) **SfU28 (דרישות אזרחות מחמירות)** אושר בשעה 16:21 עם רוב חברי S שהצביעו בעד — הטיה ימנית משמעותית לסוציאל-דמוקרטים השוודים. V וMP הצביעו נגד בשניהם.
+
+### החלטות שדוח זה תומך בהן
+
+1. **עריכתי**: הידיעה המרכזית היא הצבעה על חוק הנשק החדש.
+2. **מודיעין**: הסיכון הסיני לתשתית קריטית שוודית מסלים.
+3. **מדיניות חברתית**: חדירה פלילית לבתי אכסון חושפת פרצה רגולטורית.
+4. **ממשק אקלים/ביטחון**: משבר המים בדרום שוודיה מתקרב לסף ההגנה האזרחית.
+
+### 60 שניות
+
+- 🗳️ **JuU10 חוק הנשק החדש** — אושר בשעה 16:13.
+- 🇨🇳 **אשכול האיום הסיני** — HD12744, HD12746, HD10456.
+- 💧 **מחסור במים** — HD12743 + HD12745.
+- 🏠 **בתי אכסון פליליים** — HD10454.
+- ⚛️ **רגולציה גרעינית** — HD01NU19.
+- 🇪🇺 **הכנה לאקופין** — ועדת האיחוד האירופי נפגשה בשעה 09:00.
+
+### תוצאות הצבעה מאושרות — 29 באפריל 2026
+
+| הצבעה | שעה | תוצאה | מחוון מפתח |
+|-------|-----|-------|------------|
+| JuU10 סעיף 1 (חוק הנשק החדש) | 16:13:22 | ✅ אושר | **C הצביעה פה אחד נגד** |
+| JuU10 סעיף 2 | 16:13 | ❌ נדחה | |
+| SfU28 סעיף 1 (דרישות אזרחות) | 16:21:06 | ✅ אושר | **S (רוב) הצביעה בעד** |
+| SfU28 סעיף 2 | 16:21 | ❌ נדחה | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29 באפריל 2026\nדופק בזמן אמת))
+    ביטחון
+      JuU10 חוק הנשק החדש
+        הצבעה ≥16:00
+        SD·S·M מדברים כולם
+      אשכול סין
+        HD12744 תעשייה
+        HD12746 טייוואן
+        HD10456 איברים
+    רווחה
+      HD10454 בתי אכסון פליליים
+        דוח משטרה 2024
+        אחריות שרים
+    סביבה
+      HD12743 מחסור במים
+      HD12745 הגנה אזרחית
+    אנרגיה גרעינית
+      HD01NU19 רפורמת רישיונות
+    האיחוד האירופי
+      HDA3EUN37 הכנה לאקופין
+      HD0N50B0F8 סדר יום 5 מאי
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling
+**日付**: 2026-04-29
+**記事タイプ**: realtime-pulse
+**信頼性レベル**: HIGH [B2]
+**分類**: PUBLIC
+
+### 🎯 要約
+
+**[確認済み — 投票結果 16:13–16:21 ストックホルム]** リクスダーグは4月29日、歴史的な2つの法律を可決した：(1) **JuU10（新武器法）** はティードーブロック＋社会民主党の多数派で16:13に可決；決定的だったのは**中央党（C）が全会一致で反対票を投じた**ことで、市民連合との公的な決裂という珍しい出来事であり、ティードーブロックの安全保障政策からのCの距離感が拡大していることを示す。(2) **SfU28（市民権要件の強化）** はM、SD、KD、Lおよび**Sの過半数が賛成票を投じ**16:21に可決——スウェーデン社会民主党にとって市民権・移民問題での顕著な右傾化。VとMPは両方とも反対票を投じた。
+
+### この報告書が支援する意思決定
+
+1. **編集上**: 主要ニュースは新武器法の投票とスウェーデンのNATO加盟後の安全保障立法の方向性。
+2. **情報分析**: スウェーデンの重要インフラへの中国のリスクが高まっている。
+3. **社会政策**: 児童福祉施設への犯罪組織の浸透が規制上の抜け穴を露呈。
+4. **気候・安全保障の交差点**: 南スウェーデンの水不足が市民防衛の関連性に近づいている。
+
+### 60秒サマリー
+
+- 🗳️ **JuU10 新武器法** — 16:13に可決。
+- 🇨🇳 **中国脅威クラスター** — HD12744、HD12746、HD10456。
+- 💧 **水不足** — HD12743 + HD12745。
+- 🏠 **犯罪組織が関与する居住施設** — HD10454。
+- ⚛️ **原子力規制** — HD01NU19。
+- 🇪🇺 **Ecofin準備** — EU委員会が09:00に集合。
+
+### 確認済み投票結果 — 2026年4月29日
+
+| 投票 | 時刻 | 結果 | 主要指標 |
+|-----|------|------|---------|
+| JuU10 点1（新武器法） | 16:13:22 | ✅ 可決 | **C全会一致反対** |
+| JuU10 点2 | 16:13 | ❌ 否決 | |
+| SfU28 点1（市民権要件） | 16:21:06 | ✅ 可決 | **S（過半数）賛成** |
+| SfU28 点2 | 16:21 | ❌ 否決 | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((2026年4月29日\nリアルタイムパルス))
+    安全保障
+      JuU10 新武器法
+        投票 ≥16:00
+        SD·S·Mが全員発言
+      中国クラスター
+        HD12744 産業
+        HD12746 台湾
+        HD10456 臓器
+    福祉
+      HD10454 犯罪居住施設
+        警察報告書2024
+        大臣責任
+    環境
+      HD12743 水不足
+      HD12745 市民防衛
+    原子力
+      HD01NU19 許可改革
+    EU
+      HDA3EUN37 Ecofin準備
+      HD0N50B0F8 5月5日議題
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**날짜**: 2026-04-29
+**기사 유형**: realtime-pulse
+**신뢰도 수준**: HIGH [B2]
+**분류**: PUBLIC
+
+### 🎯 요약
+
+**[확인됨 — 투표 결과 16:13–16:21 스톡홀름]** 릭스다겐은 4월 29일 두 개의 역사적인 법률을 통과시켰다: (1) **JuU10 (새 무기법)** 은 티도 블록 + 사회민주당의 다수결로 16:13에 통과됐다; 결정적 요소는 **중앙당(C)이 만장일치로 반대표를 던진 것**으로, 시민 연합과의 보기 드문 공개적 결별이었다. (2) **SfU28 (시민권 요건 강화)** 은 M, SD, KD, L과 **S의 다수가 찬성표를 던져** 16:21에 통과됐다. V와 MP는 둘 다 반대표를 던졌다.
+
+### 이 보고서가 지원하는 결정
+
+1. **편집부**: 주요 뉴스는 새 무기법 투표와 스웨덴 안보 입법의 방향.
+2. **정보**: 스웨덴 핵심 인프라에 대한 중국의 위험이 고조되고 있다.
+3. **사회 정책**: 주거 시설에 대한 범죄 조직 침투가 규제 허점을 드러냈다.
+4. **기후/안보 넥서스**: 스웨덴 남부 물 위기가 민방위 관련성 임계점에 가까워지고 있다.
+
+### 60초
+
+- 🗳️ **JuU10 새 무기법** — 16:13에 통과.
+- 🇨🇳 **중국 위협 클러스터** — HD12744, HD12746, HD10456.
+- 💧 **물 부족** — HD12743 + HD12745.
+- 🏠 **범죄 주거 시설** — HD10454.
+- ⚛️ **원자력 규제** — HD01NU19.
+- 🇪🇺 **에코핀 준비** — EU 위원회 09:00에 회의.
+
+### 확인된 투표 결과 — 2026년 4월 29일
+
+| 투표 | 시간 | 결과 | 핵심 지표 |
+|-----|------|------|---------|
+| JuU10 항목 1 (새 무기법) | 16:13:22 | ✅ 통과 | **C 만장일치 반대** |
+| JuU10 항목 2 | 16:13 | ❌ 부결 | |
+| SfU28 항목 1 (시민권 요건) | 16:21:06 | ✅ 통과 | **S (다수) 찬성** |
+| SfU28 항목 2 | 16:21 | ❌ 부결 | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((2026년 4월 29일\n실시간 맥박))
+    안보
+      JuU10 새 무기법
+        투표 ≥16:00
+        SD·S·M 모두 발언
+      중국 클러스터
+        HD12744 산업
+        HD12746 대만
+        HD10456 장기
+    복지
+      HD10454 범죄 주거 시설
+        경찰 보고서 2024
+        장관 책임
+    환경
+      HD12743 물 부족
+      HD12745 민방위
+    원자력
+      HD01NU19 허가 개혁
+    EU
+      HDA3EUN37 에코핀 준비
+      HD0N50B0F8 5월 5일 의제
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Datum**: 2026-04-29
+**Artikeltype**: realtime-pulse
+**Betrouwbaarheidsniveau**: HIGH [B2]
+**Classificatie**: PUBLIC
+
+### 🎯 BLUF
+
+**[BEVESTIGD — STEMRESULTATEN 16:13–16:21 STOCKHOLM]** De Riksdag nam op 29 april twee historische wetten aan: (1) **JuU10 (Nieuwe Wapenwet)** aangenomen om 16:13 met het Tidöblok + Sociaal-Democraten in meerderheid; beslissend was dat **Centerpartiet (C) unaniem NEE stemde** — een zeldzame publieke breuk met de burgerlijke alliantie. (2) **SfU28 (Aangescherpte burgerschapseisen)** aangenomen om 16:21 waarbij de meerderheid van S JA stemde — een significante rechtse verschuiving voor Zweedse sociaal-democraten. V en MP stemden NEE bij beide.
+
+### Beslissingen die dit rapport ondersteunt
+
+1. **Redactioneel**: Hoofdnieuws is de nieuwe wapenwetstemming.
+2. **Inlichtingen**: Het Chinese risico voor Zweedse kritieke infrastructuur escaleert.
+3. **Sociaal beleid**: Criminele infiltratie in residentiële instellingen legt een regelgevingskloof bloot.
+4. **Klimaat/veiligheidsnexus**: De watercrisis in Zuid-Zweden nadert de drempel van burgerverdediging.
+
+### 60 seconden
+
+- 🗳️ **JuU10 Nieuwe Wapenwet** — aangenomen om 16:13.
+- 🇨🇳 **China-dreigingscluster** — HD12744, HD12746, HD10456.
+- 💧 **Waterschaarste** — HD12743 + HD12745.
+- 🏠 **Criminele residentiële instellingen** — HD10454.
+- ⚛️ **Kernenergieregelgeving** — HD01NU19.
+- 🇪🇺 **Ecofin-voorbereiding** — EU-commissie bijeengekomen om 09:00.
+
+### Bevestigde stemresultaten — 29 april 2026
+
+| Stemming | Tijd | Resultaat | Sleutelindicator |
+|----------|------|-----------|-----------------|
+| JuU10 punt 1 (Nieuwe Wapenwet) | 16:13:22 | ✅ AANGENOMEN | **C stemde unaniem NEE** |
+| JuU10 punt 2 | 16:13 | ❌ VERWORPEN | |
+| SfU28 punt 1 (Burgerschapseisen) | 16:21:06 | ✅ AANGENOMEN | **S (meerderheid) stemde JA** |
+| SfU28 punt 2 | 16:21 | ❌ VERWORPEN | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29 april 2026\nRealtijdpuls))
+    Veiligheid
+      JuU10 Nieuwe Wapenwet
+        Stemming ≥16:00
+        SD·S·M spreken allen
+      China-cluster
+        HD12744 Industrie
+        HD12746 Taiwan
+        HD10456 Organen
+    Welzijn
+      HD10454 Criminele instellingen
+        Politierapport 2024
+        Ministerverantwoordelijkheid
+    Milieu
+      HD12743 Waterschaarste
+      HD12745 Burgerverdediging
+    Kernenergie
+      HD01NU19 Vergunninghervorming
+    EU
+      HDA3EUN37 Ecofin-voorbereiding
+      HD0N50B0F8 Agenda 5 mei
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-04-29
+**Artikeltype**: realtime-pulse
+**Konfidensnivå**: HIGH [B2]
+**Klassifisering**: PUBLIC
+
+### 🎯 BLUF
+
+**[BEKREFTET — AVSTEMNINGSRESULTATER 16:13–16:21 STOCKHOLM]** Riksdagen vedtok 29. april to historiske lover: (1) **JuU10 (Ny våpenlov)** vedtatt 16:13 med Tidöblokket + Sosialdemokratene i flertall; avgjørende var at **Centerpartiet (C) stemte enstemmig NEI** — et sjeldent offentlig brudd med den borgerlige alliansen. (2) **SfU28 (Skjerpede krav til svensk statsborgerskap)** vedtatt 16:21 med M, SD, KD, L og **flertallet av S stemte JA** — en markant høyrefront for Sveriges sosialdemokrater i statsborger- og migrasjonsspørsmål. V og MP stemte NEI på begge.
+
+### Beslutninger dette underlaget støtter
+
+1. **Redaksjonelt**: Ledende nyhet er den nye våpenlovsavstemningen og hva den signalerer for retningen av Sveriges sikkerhetslovgivning.
+2. **Etterretning**: Kina-eksponeringens risiko mot svensk kritisk infrastruktur eskalerer.
+3. **Velferdspolitikk**: Kriminell infiltrasjon i HVB-hjem eksponerer en reguleringssmutter.
+4. **Klima/sikkerhetsnexa**: Den sørsvenske vannkrisen nærmer seg sivilforsvarsrelevans.
+
+### 60 sekunder
+
+- 🗳️ **JuU10 Ny våpenlov** — vedtatt kl. 16:13.
+- 🇨�� **Kina-trusselklyngen** — HD12744, HD12746, HD10456.
+- 💧 **Vannmangel** — HD12743 + HD12745.
+- 🏠 **Kriminelle HVB-hjem** — HD10454.
+- ⚛️ **Kjernekraftregulering** — HD01NU19.
+- 🇪🇺 **Ecofin-forberedelse** — EU-nemnda møttes kl. 09:00.
+
+### Bekreftede avstemningsresultater — 29. april 2026
+
+| Avstemning | Tid | Resultat | Nøkkelindikasjon |
+|------------|-----|----------|------------------|
+| JuU10 punkt 1 (Ny våpenlov) | 16:13:22 | ✅ VEDTATT | **C stemte enstemmig NEI** |
+| JuU10 punkt 2 | 16:13 | ❌ AVSLÅTT | |
+| SfU28 punkt 1 (Statsborgerskapskrav) | 16:21:06 | ✅ VEDTATT | **S (flest) stemte JA** |
+| SfU28 punkt 2 | 16:21 | ❌ AVSLÅTT | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29. april 2026\nRealtidspuls))
+    Sikkerhet
+      JuU10 Ny våpenlov
+        Avstemning ≥16:00
+        SD·S·M taler alle
+      Kina-klyngen
+        HD12744 Industri
+        HD12746 Taiwan
+        HD10456 Organer
+    Velferd
+      HD10454 Kriminelle HVB-hjem
+        Politirapport 2024
+        Ministeransvar
+    Miljø
+      HD12743 Vannmangel
+      HD12745 Sivilforsvar
+    Kjernekraft
+      HD01NU19 Tillatelsesreform
+    EU
+      HDA3EUN37 Ecofin-forberedelse
+      HD0N50B0F8 5. mai dagsorden
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Datum**: 2026-04-29
+**Artikeltyp**: realtime-pulse
+**Konfidensgrad**: HIGH [B2]
+**Klassificering**: PUBLIC
+
+### 🎯 BLUF
+
+**[BEKRÄFTAT — RÖSTRESULTAT 16:13–16:21 STOCKHOLM]** Riksdagen antog den 29 april två historiska lagar: (1) **JuU10 (En ny vapenlag)** antogs 16:13 med Tidöblocket + Socialdemokraterna i majoritet; avgörande var att **Centerpartiet (C) röstade enhälligt NEJ** — ett sällsynt offentligt brott med den borgerliga alliansen som signalerar C:s växande distans från Tidöblokets säkerhetspolitik. (2) **SfU28 (Skärpta krav för svenskt medborgarskap)** antogs 16:21 med M, SD, KD, L och **flertalet av S röstade JA** — en signifikant högerförskjutning av Sveriges socialdemokrater i frågor om medborgarskap och migration. V och MP röstade NEJ på bägge. Dessa röstresultat bekräftar att Sveriges post-NATO-säkerhetsjustering fortsätter, medan C:s avhopp i vapenfrågan introducerar en ny skiljelinje inför 2026 års valrörelse.
+
+### Beslut som detta underlag stöder
+
+1. **Redaktionellt**: Ledande nyhet är den nya vapenlagsomröstningen och vad den signalerar om den fortsatta inriktningen för Sveriges säkerhetslagstiftning efter NATO-inträdet.
+2. **Underrättelse**: Kinaexponeringens risk mot svensk kritisk infrastruktur eskalerar — tre separata parlamentariska instrument i dag speglar en bred blocköverskridande samsyn om att befintlig tillsyn är otillräcklig.
+3. **Välfärdspolitik**: Kriminell infiltration i HVB-hem exponerar en reglerlucka i socialtjänstlagen; frågan är nu föremål för en formell interpellation som kräver ministerielt svar.
+4. **Klimat/säkerhetsnexus**: Södra Sveriges vattenkris är på väg att korsa gränsen från miljöfråga till civilförsvarsfråga — två separata frågor från olika partier speglar tvärpolitisk oro.
+
+### 60 sekunder
+
+- 🗳️ **JuU10 Ny vapenlag** — Riksdagen debatterar och röstar i dag; Adam Marttinen (SD), Petter Löberg (S), Sten Bergheden (M) är alla inplanerade talare. Detta är dagens viktigaste lagstiftningshändelse.
+- 🇨🇳 **Kinahotsklustret** — HD12744 (Kina i svensk industri), HD12746 (inställt Taiwan-presidentbesök), HD10456 (organhandelsanklagelser mot Kina) utgör en sammanhängande hotsignal. Att SD och S separat lyfter Kinaexponering tyder på tvärblocksmässig oro.
+- 💧 **Vattenbrist** — HD12743 + HD12745: södra Sverige står inför strukturell vattenbrist; en fråga kopplar uttryckligen ihop detta med civilförsvarsplanering.
+- 🏠 **Kriminella HVB-hem** — HD10454: Polisens rapport 2024 bekräftade kriminella gängs kontroll över familjehem och HVB-hem; Socialminister Waltersson Grönvall ställs inför formell interpellation.
+- ⚛️ **Kärnkraftsreglering** — HD01NU19 (NU19): utskottsbetänkande om förenklade tillståndsprocesser för kärnkraftsanläggningar — centralt för Sveriges kärnkraftsåterstartsuppdrag.
+- 🇪🇺 **Ekofin-förberedelse** — EU-nämnden möttes 09:00 med lägesredovisning av statssekreterare Lybeck Lilja om Sveriges position inför EU:s finansministermöte Ekofin den 5 maj.
+
+### Bekräftade röstresultat — 29 april 2026 (eftermiddag)
+
+| Röstning | Tid | Utfall | Nyckelindikation |
+|----------|-----|--------|------------------|
+| JuU10 punkt 1 (Ny vapenlag) | 16:13:22 | ✅ ANTAGEN | **C röstade enhälligt NEJ** — blockavhopp |
+| JuU10 punkt 2 (oppositionsändringsförslag) | 16:13 | ❌ AVSLAGEN | S/V/MP/f.d. partimedlem röstade NEJ (inga sidovändare) |
+| SfU28 punkt 1 (Medborgarskapskrav) | 16:21:06 | ✅ ANTAGEN | **S (de flesta ledamöter) röstade JA** med Tidöblocket |
+| SfU28 punkt 2 | 16:21 | ❌ AVSLAGEN | S+C+V+MP röstade NEJ (enhälligt tvärblocksmässigt avslag) |
+
+**Strategisk läsning av C:s NEJ i JuU10**: Samtliga 20 C-ledamöter röstade mot vapenlaget. Det är inte en procedurprotest — det är en offentlig differentiering i säkerhetskulturfrågor. C:s ledare har tidigare uttryckt reservationer mot militarisering av civil vapenkultur. Röstningen finns nu på protokollet och ger Tidöblockspartier ammunition (bildligen talat) för valreklam mot C i 2026 års kampanj.
+
+**Strategisk läsning av S:s JA i SfU28**: Socialdemokraternas stöd för skärpta medborgarskapskrav representerar det tydligaste godkännandet av Tidöblockets migrationsinramning av det huvudsakliga oppositionspartiet under den här mandatperioden. Annika Strandhäll (S) var bland de sällsynta S-avvikarna som röstade NEJ — en signal om att vänsterfalangen inom S är obekväm. S-ledningen bedömde tydligen att folkligt stöd för strängare medborgarskapskrav väger tyngre än vänsterflankens obehag.
+
+### Viktigaste framåtblickande utlösare
+
+**[LÖST]** ~~Omröstning om JuU10 — ≥16:00~~ BEKRÄFTAT ANTAGEN kl. 16:13. Ny toppindikator: **C:s svar på kritiken mot vapenlaget** — bevaka presskonferenser från C-ledningen (Annie Lööfs efterträdare) och om SD utnyttjar C:s NEJ-röst i förvalskampanjen 2026.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((29 april 2026\nRealtidspuls))
+    Säkerhet
+      JuU10 Ny vapenlag
+        Röstning ≥16:00
+        SD·S·M talar alla
+      Kinaklustret
+        HD12744 Industri
+        HD12746 Taiwan
+        HD10456 Organ
+    Välfärd
+      HD10454 Kriminella HVB-hem
+        Polisrapport 2024
+        Ministeransvar
+    Miljö
+      HD12743 Vattenbrist
+      HD12745 Civilförsvar
+    Kärnkraft
+      HD01NU19 Tillståndsreform
+    EU
+      HDA3EUN37 Ekofin-förberedelse
+      HD0N50B0F8 5 maj agenda
+```
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling
+**日期**：2026-04-29
+**文章类型**：realtime-pulse
+**可信度级别**：HIGH [B2]
+**分类**：PUBLIC
+
+### 🎯 摘要
+
+**[已确认 — 投票结果 16:13–16:21 斯德哥尔摩]** 瑞典国会于4月29日通过了两项历史性法律：(1) **JuU10（新武器法）**于16:13以蒂德集团＋社会民主党多数票通过；决定性因素是**中央党（C）一致投票反对**——这是与市民联盟罕见的公开决裂，表明C与蒂德集团安全政策的距离在扩大。(2) **SfU28（更严格的公民身份要求）**于16:21通过，M、SD、KD、L以及**S的多数成员投票赞成**——这是瑞典社会民主党在公民身份和移民问题上的显著右转。V和MP在两项投票中均投票反对。
+
+### 本报告支持的决策
+
+1. **编辑方面**：主要新闻是新武器法投票及其对瑞典入北约后安全立法方向的意义。
+2. **情报方面**：中国对瑞典关键基础设施的风险正在升级。
+3. **社会政策**：犯罪组织渗透寄宿设施暴露了监管漏洞。
+4. **气候/安全交汇点**：瑞典南部水危机正逼近民防相关性阈值。
+
+### 60秒摘要
+
+- 🗳️ **JuU10 新武器法** — 于16:13通过。
+- 🇨🇳 **中国威胁集群** — HD12744、HD12746、HD10456。
+- 💧 **水资源短缺** — HD12743 + HD12745。
+- 🏠 **犯罪寄宿设施** — HD10454。
+- ⚛️ **核能监管** — HD01NU19。
+- 🇪🇺 **欧财部长会议准备** — 欧盟委员会09:00召开会议。
+
+### 已确认的投票结果 — 2026年4月29日
+
+| 投票 | 时间 | 结果 | 关键指标 |
+|-----|------|------|---------|
+| JuU10 第1点（新武器法） | 16:13:22 | ✅ 通过 | **C全票反对** |
+| JuU10 第2点 | 16:13 | ❌ 否决 | |
+| SfU28 第1点（公民身份要求） | 16:21:06 | ✅ 通过 | **S（多数）赞成** |
+| SfU28 第2点 | 16:21 | ❌ 否决 | |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+mindmap
+  root((2026年4月29日\n实时脉动))
+    安全
+      JuU10 新武器法
+        投票 ≥16:00
+        SD·S·M均发言
+      中国集群
+        HD12744 工业
+        HD12746 台湾
+        HD10456 器官
+    福利
+      HD10454 犯罪寄宿设施
+        警察报告2024
+        部长责任
+    环境
+      HD12743 水资源短缺
+      HD12745 民防
+    核能
+      HD01NU19 许可证改革
+    欧盟
+      HDA3EUN37 欧财部长会议准备
+      HD0N50B0F8 5月5日议程
+```
+
+<!-- source-sha: ca5132f63cde44ffd5f34653584580125a270023 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 17 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1923,6 +2807,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -6,7 +6,7 @@ date: 2026-05-21
 subfolder: committee-reports
 slug: 2026-05-21-committee-reports
 source_folder: analysis/daily/2026-05-21/committee-reports
-generated_at: 2026-05-21T05:22:14.103Z
+generated_at: 2026-05-22T12:25:07.486Z
 language: en
 layout: article
 ---
@@ -113,6 +113,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1598,15 +1611,1070 @@ Data sourced from 2026-05-20 via lookback fallback — check freshness indicator
 |----------:|---------:|---------:|--------:|---------:|
 | 0 | 0 | 0 | 0 | 0 |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز تنفيذي — تقارير لجان الريكسداغ السويدي، 21 مايو 2026
+
+**المؤلف**: Riksdagsmonitor Intelligence  
+**التصنيف**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**الثقة**: HIGH [A1] حماية الطفل / MEDIUM [B2] إصلاح الرعاية الاجتماعية  
+**معرّف التشغيل**: 26206467231
+
+---
+
+### 🎯 ملخص
+
+أصدر الريكسداغ السويدي اثني عشر تقرير لجنة في 20 مايو 2026، في أكثر إنتاج يومي موضوعاً خلال اندفاعة ما قبل الانتخابات في دورة 2025/26. يتمحور المحور الرئيسي حول إصلاح مزدوج لحماية الطفل — HD01SoU38 (قانون جديد للرعاية الإلزامية) و HD01SoU39 (تفويض الخدمات الاجتماعية الوقائية) — يمثّلان أهم تشريع لرعاية الطفل منذ عقدين، ويحظيان بدعم واسع عبر الأحزاب قبل ستة عشر أسبوعاً من انتخابات الريكسداغ في سبتمبر 2026. يُكمّل التقدم المتزامن في تشريع العنف القائم على الشرف (HD01JuU43) والإصلاحات المتنازع عليها للمساعدة الاجتماعية (HD01SoU29، HD01SoU30) تنفيذَ منصة الائتلاف الانتخابية الأساسية Tidö، في حين تُنهي التعليم (HD01UbU30، HD01UbU21) والشؤون الدولية (HD01UU3، HD01UU4، HD01MJU22) دورةً تشريعيةً كثيفة. تُعدّ حزمة تفعيل الرعاية الاجتماعية العنصرَ الأكثر جدلاً انتخابياً — إذ تمسّ نحو 80,000 أسرة وتمنح المعارضةَ S/MP/V سلاحَها الانتخابي الرئيسي.
+
+### 🧭 3 قرارات يدعمها هذا الموجز
+
+| # | القرار | الأهمية | Horizon |
+|---|--------|---------|--------------|
+| 1 | متابعة مراجعة Lagrådet لبنود العنف القائم على الشرف في JuU43 بحثاً عن مخاطر دستورية | رأي سلبي سيُلزم الحكومة بالمراجعة ويُفرز رواية "قانون غير دستوري" أثناء الحملة الانتخابية | T+14–30d |
+| 2 | رصد موقف حزب الوسط من التصويت في الجلسة العامة حول SoU29/SoU30 بشأن تفعيل الرعاية | C يصوت ضد ← الحكومة تفوز بـ 174-171 على أي حال؛ C يمتنع ← تفويض أوسع؛ C يتأخر ← مشكلة حملة خريفية | T+21–45d |
+| 3 | تقييم قدرة البلديات على تنفيذ تشريعات حماية الطفل SoU38/SoU39 | التنفيذ المحدود التمويل خلال فترة الحملة يُمثّل خطراً انتخابياً حرجاً على كتلة الحكومة | T+30–90d |
+
+### ⚡ قراءة 60 ثانية
+
+- **إصلاح حماية الطفل** (HD01SoU38 + HD01SoU39): قانون جديد للرعاية الإلزامية مرتكز على الحقوق + تفويض وقائي. أشمل إصلاح تشريعي لرعاية الطفل السويدية منذ 2003. دعم حزبي واسع. التصويت في الجلسة العامة متوقع 3–9 يونيو 2026.
+- **العنف القائم على الشرف** (HD01JuU43): فئة جنائية جديدة للعنف القائم على الشرف. المشروع الرئيسي لـ SD. مراجعة Lagrådet قيد الانتظار. مخاطر المادة 14 من ECHR قابلة للإدارة بصياغة دقيقة.
+- **تفعيل الرعاية الاجتماعية** (HD01SoU29 + HD01SoU30): اشتراطات نشاط + سقف مزايا تمسّ نحو 80,000 أسرة. التشريع الأكثر جدلاً — S/MP/V معارضة بشدة؛ C غامضة. ساحة المعركة الانتخابية الرئيسية.
+- **Friskola** (HD01UbU30): شروط تشغيل أكثر صرامة للمدارس المستقلة؛ يُحدث توترات داخلية في كتلة M/KD/L حول مبادئ التوجه السوقي.
+- **الشأن الدولي** (HD01UU3، HD01UU4، HD01MJU22): المساءلة عن المساعدات، التفويض الشمالي-القطبي (ما بعد الناتو)، تدقيق تمويل المناخ من Riksrevisionen. النتائج النقدية لـ MJU22 تمنح المعارضةَ فرصةَ هجوم مناخي.
+
+### 🔮 أبرز المحفزات المستقبلية
+
+**رأي Lagrådet حول JuU43 (T+14–30d)**: إذا أصدر Lagrådet رأياً سلبياً لأسباب دستورية، ستواجه كتلة الحكومة رواية "تشريع غير دستوري" في خضمّ الحملة الانتخابية. إذا لم يصدر رأي سلبي، فالمسار التشريعي ممهّد للإقرار. تابع www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### التطورات الرئيسية
+
+#### إصلاح حماية الطفل (HD01SoU38 + HD01SoU39) ★ حرج
+يُنشئ تقريران لجنتيان متكاملان بنيةً تشريعيةً جديدة للرعاية الإلزامية للأطفال والشباب. يستبدل SoU38 الأحكام الجوهرية في LVU بإطار مرتكز على الحقوق؛ ويُضيف SoU39 صلاحيات وقائية حين ترفض الأسر التعاون مع الخدمات الاجتماعية. معاً يُمثّلان أشمل إصلاح لقانون حماية الطفل السويدي منذ 2003. يُقلّل الدعم الحزبي الواسع من مخاطر التراجع. مخاطر التنفيذ كبيرة نظراً لعجوزات ميزانيات البلديات (SKR نحو 18 مليار SEK عجزاً هيكلياً).
+
+#### Honour: العنف القائم على الشرف — تعزيز القانون الجنائي (HD01JuU43)
+تُروّج لجنة العدل لتشريع مُعزَّز يُنشئ فئة جنائية مستقلة للعنف والاضطهاد القائمَين على الشرف. يُغلق الثغرات التنفيذية الموثقة؛ مدعوم من أبحاث Barnafrid و Länsstyrelsen Östergötland. وضع مراجعة Lagrådet في انتظار الاستكمال بتاريخ 2026-05-21.
+
+#### إصلاح المساعدة الاجتماعية — مثير للجدل سياسياً (HD01SoU29 + HD01SoU30)
+تدفع اشتراطات النشاط (SoU29) وسقف المزايا (SoU30) برنامجَ تفعيل الرعاية الاجتماعية لكتلة الحكومة. تُشير أحزاب المعارضة (S/MP/V) إلى مقاومة شديدة. تتأثر نحو 80,000 أسرة بآلية السقف (بيانات SCB). مع اقتراب الانتخابات خلال 16 أسبوعاً، تُعدّ هذه التقارير الأكثر تأثيراً انتخابياً في الدورة.
+
+#### المدارس المستقلة — شروط أكثر صرامة (HD01UbU30)
+يُدخل تقرير لجنة التعليم شروطَ تشغيل أكثر صرامة لقطاع المدارس المستقلة. يُحدث توتراً داخلياً في كتلة M/KD/L حول مبادئ التوجه السوقي.
+
+#### التجمع الدولي: المساعدات الإنمائية، الشمال الأقصى-القطبي، مراجعة المناخ
+UU3 (إعداد تقارير أعمق للمساعدات)، UU4 (التفويض الشمالي-القطبي في سياق ما بعد الناتو)، MJU22 (نتائج Riksrevisionen بشأن تمويل المناخ) تُشكّل رواية متماسكة للمساءلة الدولية.
+
+### الاستخبارات الانتخابية
+
+مع اقتراب انتخابات الريكسداغ في سبتمبر 2026 بنحو 16 أسبوعاً، قدّمت كتلة الحكومة أكثر تشريعاتها قابليةً للتنفيذ. توفّر حزمتا حماية الطفل والعنف القائم على الشرف مكاسبَ توافقيةً واسعة. تفعيل الرعاية (SoU29/SoU30) مخاطرة محسوبة — محبوب لدى قاعدة ناخبي الكتلة الحاكمة، لكنه قد يُحفّز ناخبي المعارضة.
+
+**أبرز المتطلبات الاستخباراتية ذات الأولوية (PIRs)**: رأي Lagrådet حول JuU43 (T+14d)؛ جدول التصويت في الجلسة العامة لـ SoU38/39 (T+14d)؛ موقف C من SoU29/30 (T+21d)؛ استطلاعات ما بعد الدورة (T+14d).
+
+### تقييم الثقة
+
+ثقة عالية (A1): SoU38، SoU39، SoU29، SoU30، UU4 (تم استرداد النص الكامل).  
+ثقة متوسطة (B2): JuU43، MJU22، UbU21، UbU30، UU3، SoU40، SoU41 (بيانات وصفية فقط).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_da.md -->
+
+**Forfatter**: Riksdagsmonitor Intelligence  
+**Klassificering**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Tillid**: HIGH [A1] børnebeskyttelse / MEDIUM [B2] velfærdsreform  
+**Kørsels-ID**: 26206467231
+
+---
+
+### 🎯 Konklusion
+
+Det svenske Riksdag offentliggjorde tolv udvalgsrapporter den 20. maj 2026 i den mest substantielle enkeltdagsproduktion i 2025/26-sessionen op til valget. Den dominerende klynge er en tvillingereform om børnebeskyttelse — HD01SoU38 (ny tvangsomsorgslov) og HD01SoU39 (forebyggende socialservicemandat) — som repræsenterer den mest betydende børnevelferdslovgivning i to årtier og opnår bred tværpolitisk støtte seksten uger før Riksdagsvalget i september 2026. Samtidig fremgang for lovgivning om æresbaseret vold (HD01JuU43) og omstridte reformer af sociale ydelser (HD01SoU29, HD01SoU30) fuldender Tidö-koalitionens kernevalprogram, mens uddannelse (HD01UbU30, HD01UbU21) og internationale anliggender (HD01UU3, HD01UU4, HD01MJU22) runder en tæt lovgivningssession af. Velfærdsaktiveringspakken er det mest valgmæssigt kontroversielle element — ~80.000 husstande berøres og oppositionen S/MP/V får deres primære kampagnevåben.
+
+### 🧭 3 Beslutninger denne briefing understøtter
+
+| # | Beslutning | Relevans | Horizon |
+|---|------------|----------|----------|
+| 1 | Overvåg Lagrådets gennemgang af JuU43 æresvoldsparagrafferne for konstitutionel risiko | Negativ udtalelse tvinger regeringen til revision og skaber en "grundlovsstridig lov"-fortælling i valgkampen | T+14–30d |
+| 2 | Følg Centerpartiets holdning til SoU29/SoU30 plenumomröstning om velfærdsaktivering | C stemmer imod → regeringen vinder stadig 174-171; C afholder sig → bredere mandat; C trækker ud → efterårskampagneproblem | T+21–45d |
+| 3 | Vurder kommunernes implementeringskapacitet for SoU38/SoU39 børnebeskyttelseslovgivning | Underfinansieret implementering i kampagneperioden er kritisk valgrisiko for regeringsblokken | T+30–90d |
+
+### ⚡ 60-sekunders læsning
+
+- **Børnebeskyttelsesreform** (HD01SoU38 + HD01SoU39): Ny rettighedscentreret tvangsomsorgslov + forebyggende mandat. Bredeste lovgivningsreform af svensk børneomsorg siden 2003. Bred tværpolitisk støtte. Plenumomröstning estimeret 3.–9. juni 2026.
+- **Honour-based violence** (HD01JuU43): Ny strafferetlig kategori for æresbaseret vold. SD's flagskib. Lagrådets gennemgang afventer. ECHR-artikel 14-risiko håndterbar med omhyggelig formulering.
+- **Velfærdsaktivering** (HD01SoU29 + HD01SoU30): Aktivitetskrav + ydelsesloft berører ~80.000 husstande. Mest omstridte lovgivning — S/MP/V stærkt imod; C tvetydig. Centralt valgkampeslagsmål.
+- **Friskola** (HD01UbU30): Skærpede vilkår for frie skoler; skaber intern spænding i M/KD/L-blokken om markedsorientering.
+- **Internationalt** (HD01UU3, HD01UU4, HD01MJU22): Bistandsansvarlighed, nordisk-arktisk mandat (post-NATO), Riksrevisionens klimafinansrevision. MJU22's kritiske fund giver oppositionen en klimatangrebsmulighed.
+
+### 🔮 Vigtigste fremadrettede udløser
+
+**Lagrådets udtalelse om JuU43 (T+14–30d)**: Hvis Lagrådet afgiver en negativ udtalelse på konstitutionelt grundlag, står regeringsblokken over for en "grundlovsstridig lovgivning"-fortælling i valgkampen. Uden negativ udtalelse er lovgivningsvejen klar til vedtagelse. Overvåg www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### Vigtige udviklinger
+
+#### Børnebeskyttelsesreform (HD01SoU38 + HD01SoU39) ★ KRITISK
+To komplementære udvalgsrapporter skaber en ny lovgivningsmæssig arkitektur for tvangspleje af børn og unge. SoU38 erstatter kernebestemmelserne i LVU med et rettighedscentreret rammer; SoU39 tilføjer forebyggende beføjelser, når familier modsætter sig socialvæsenets samarbejde. Tilsammen udgør de den mest gennemgribende reform af svensk børnevelferdslovgivning siden 2003. Bred tværpolitisk støtte reducerer tilbagegangsrisikoen. Implementeringsrisikoen er betragtelig givet kommunale budgetunderskud (SKR ~SEK 18 mia. strukturelt underskud).
+
+#### Honour: Æresbaseret vold — straffeloven styrkes (HD01JuU43)
+Retsudvalget fremmer styrket lovgivning, der opretter en særskilt strafferetlig kategori for æresbaseret vold og undertrykkelse. Lukker dokumenterede håndhævelseshuller; støttet af Barnafrid og Länsstyrelsen Östergötlands forskning. Lagrådets gennemgangsstatus afventer pr. 2026-05-21.
+
+#### Kontanthjælpsreform — politisk omstridt (HD01SoU29 + HD01SoU30)
+Aktivitetskrav (SoU29) og ydelsesloft (SoU30) fremmer regeringsblokens velfærdsaktiveringsprogram. Oppositionspartier (S/MP/V) signalerer stærk modstand. ~80.000 husstande berøres af loftmekanismen (SCB-data). Med valget 16 uger væk er disse de mest valgmæssigt afgørende rapporter i sessionen.
+
+#### Frie skoler — vilkår strammes (HD01UbU30)
+Uddannelsesudvalgets rapport indfører strengere driftsvilkår for den frie skolesektor. Skaber intern spænding i M/KD/L-blokken om markedsorienterede principper.
+
+#### Internationalt klynge: bistandsansvarlighed, nordisk-arktisk, klimarevision
+UU3 (dybere bistandsrapportering), UU4 (nordisk-arktisk mandat i post-NATO-kontekst), MJU22 (Riksrevisionens fund om klimafinansiering) danner et sammenhængende internationalt ansvarsnarrativ.
+
+### Valgkampeintelligens
+
+Med Riksdagsvalget i september 2026 ca. 16 uger væk har regeringsblokken lagt sin mest leverbare lovgivning frem. Børnebeskyttelses- og æresvoldspakker giver høj-konsensus-gevinster. Velfærdsaktivering (SoU29/SoU30) er en kalkuleret risiko — populær hos regeringsblokens vælgerbasis men potentielt mobiliserende for oppositionsvælgere.
+
+**Centrale PIR'er**: Lagrådets udtalelse om JuU43 (T+14d); plenumomröstningsplan for SoU38/39 (T+14d); C's holdning til SoU29/30 (T+21d); meningsmålinger efter sessionen (T+14d).
+
+### Tillids-vurdering
+
+Høj tillid (A1): SoU38, SoU39, SoU29, SoU30, UU4 (fuldtekst hentet).  
+Middel tillid (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (kun metadata).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_de.md -->
+
+**Autor**: Riksdagsmonitor Intelligence  
+**Klassifizierung**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Vertrauen**: HIGH [A1] Kinderschutz / MEDIUM [B2] Sozialreform  
+**Ausführungs-ID**: 26206467231
+
+---
+
+### 🎯 Kurzzusammenfassung
+
+Der schwedische Riksdag veröffentlichte am 20. Mai 2026 zwölf Ausschussberichte — die substantiellste Tagesproduktion des Vorsessions-Spurts 2025/26. Den Schwerpunkt bildet eine zweiteilige Kinderschutzreform — HD01SoU38 (neues Zwangspflegegesetz) und HD01SoU39 (präventives Sozialdienstmandat) — die bedeutendste Kindeswohlgesetzgebung seit zwei Jahrzehnten, mit breiter überparteilicher Unterstützung sechzehn Wochen vor den Riksdag-Wahlen im September 2026. Der gleichzeitige Fortschritt bei der Honour-Gesetzgebung (HD01JuU43) und den umstrittenen Sozialhilfereformen (HD01SoU29, HD01SoU30) vollendet die Kernwahlkampfversprechen der Tidö-Koalition, während Bildung (HD01UbU30, HD01UbU21) und außenpolitische Berichte (HD01UU3, HD01UU4, HD01MJU22) eine dichte Legislaturperiode abrunden. Das Wohlfahrtsaktivierungspaket ist das politisch umstrittenste Element — es betrifft ~80.000 Familien und verschafft der Opposition S/MP/V ihre wichtigste Kampagnewaffe.
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+| # | Entscheidung | Relevanz | Horizon |
+|---|--------------|----------|----------|
+| 1 | Beobachten Sie die Lagrådet-Prüfung der JuU43 Honour-based-violence-Paragraphen auf verfassungsrechtliche Risiken | Ein negatives Gutachten zwingt die Regierung zur Überarbeitung und schafft eine "verfassungswidrige Gesetzgebung"-Erzählung im Wahlkampf | T+14–30d |
+| 2 | Verfolgen Sie die Position der Centerpartei zur SoU29/SoU30-Plenumabstimmung über Wohlfahrtsaktivierung | C stimmt dagegen → Regierung gewinnt trotzdem 174-171; C enthält sich → breiteres Mandat; C verzögert → Herbstkampagneproblem | T+21–45d |
+| 3 | Bewerten Sie die kommunale Umsetzungskapazität für SoU38/SoU39 Kinderschutzgesetzgebung | Unterfinanzierte Umsetzung während der Wahlkampfphase ist ein kritisches Wahlrisiko für den Regierungsblock | T+30–90d |
+
+### ⚡ 60-Sekunden-Zusammenfassung
+
+- **Kinderschutzreform** (HD01SoU38 + HD01SoU39): Neues rechtebasiertes Zwangspflegegesetz + präventives Mandat. Umfassendste Gesetzgebungsreform der schwedischen Kinderfürsorge seit 2003. Breite Parteiunterstützung. Plenumabstimmung geschätzt 3.–9. Juni 2026.
+- **Honour-based violence** (HD01JuU43): Neue strafrechtliche Kategorie für ehrbasierte Gewalt. SD-Flaggschiff. Lagrådet-Prüfung ausstehend. ECHR-Artikel 14-Risiko mit sorgfältiger Formulierung handhabbar.
+- **Wohlfahrtsaktivierung** (HD01SoU29 + HD01SoU30): Aktivitätspflichten + Leistungsdeckelung betreffen ~80.000 Familien. Umstrittenste Gesetzgebung — S/MP/V stark dagegen; C zweideutig. Zentrales Wahlkampfschlachtfeld.
+- **Friskola** (HD01UbU30): Strengere Betriebsbedingungen für Privatschulen; erzeugt interne Spannung im M/KD/L-Block zu Marktorientierungsprinzipien.
+- **International** (HD01UU3, HD01UU4, HD01MJU22): Entwicklungshilfe-Rechenschaftspflicht, nordisch-arktisches Mandat (post-NATO), Riksrevisionens Klimafinanzierungsprüfung. Kritische MJU22-Befunde geben der Opposition eine Klimaangriffsmöglichkeit.
+
+### 🔮 Wichtigster Vorwärtsauslöser
+
+**Lagrådet-Gutachten zu JuU43 (T+14–30d)**: Wenn Lagrådet ein negatives Gutachten aus verfassungsrechtlichen Gründen abgibt, steht der Regierungsblock vor einer "verfassungswidrigen Gesetzgebung"-Erzählung im Wahlkampf. Kein negatives Gutachten → Gesetzgebungsweg ist klar zur Annahme. Beobachten Sie www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### Wichtige Entwicklungen
+
+#### Kinderschutzreform (HD01SoU38 + HD01SoU39) ★ KRITISCH
+Zwei komplementäre Ausschussberichte schaffen eine neue Gesetzgebungsarchitektur für die Zwangspflege von Kindern und Jugendlichen. SoU38 ersetzt die Kernbestimmungen des LVU durch ein rechtebasiertes Rahmenwerk; SoU39 fügt präventive Befugnisse hinzu, wenn Familien der Zusammenarbeit mit dem Sozialdienst widersprechen. Gemeinsam stellen sie die umfassendste Reform des schwedischen Kinderschutzrechts seit 2003 dar. Breite überparteiliche Unterstützung verringert das Umkehrrisiko. Das Umsetzungsrisiko ist erheblich angesichts kommunaler Haushaltsdefizite (SKR ~SEK 18 Mrd. strukturelles Defizit).
+
+#### Ehrbasierte Gewalt — Strafrecht gestärkt (HD01JuU43)
+Der Justizausschuss fördert verstärkte Gesetzgebung, die eine eigenständige strafrechtliche Kategorie für ehrbasierte Gewalt und Unterdrückung schafft. Schließt dokumentierte Vollzugslücken; unterstützt durch Barnafrid und Länsstyrelsen Östergötlands Forschung. Lagrådet-Prüfungsstatus ausstehend per 2026-05-21.
+
+#### Sozialhilfereform — politisch umstritten (HD01SoU29 + HD01SoU30)
+Aktivitätspflichten (SoU29) und Leistungsdeckelung (SoU30) fördern das Wohlfahrtsaktivierungsprogramm des Regierungsblocks. Oppositionsparteien (S/MP/V) signalisieren starken Widerstand. ~80.000 Familien sind von der Deckelungsmechanik betroffen (SCB-Daten). Mit der Wahl in 16 Wochen sind dies die wahlpolitisch bedeutendsten Berichte der Sitzungsperiode.
+
+#### Privatschulen — Bedingungen verschärft (HD01UbU30)
+Der Bildungsausschussbericht führt strengere Betriebsbedingungen für den Privatschulsektor ein. Erzeugt interne Spannung im M/KD/L-Block bezüglich Marktorientierungsprinzipien.
+
+#### Internationales Cluster: Entwicklungshilfe, Nordisch-Arktisch, Klimaprüfung
+UU3 (vertiefende Entwicklungshilfeberichterstattung), UU4 (nordisch-arktisches Mandat im post-NATO-Kontext), MJU22 (Riksrevisionens Klimafinanzierungsbefunde) bilden eine kohärente internationale Rechenschaftspflicht-Erzählung.
+
+### Wahlkampf-Nachrichtendienst
+
+Mit den Riksdag-Wahlen im September 2026 ca. 16 Wochen entfernt hat der Regierungsblock seine umsetzbarste Gesetzgebung vorgezogen. Kinderschutz- und Honour-based-violence-Pakete liefern breite Konsenserfolge. Wohlfahrtsaktivierung (SoU29/SoU30) ist ein kalkuliertes Risiko — bei der Wählerschaft des Regierungsblocks beliebt, aber potenziell Oppositionswähler mobilisierend.
+
+**Wesentliche PIRs**: Lagrådet-Gutachten zu JuU43 (T+14d); Plenumabstimmungsplan für SoU38/39 (T+14d); C-Position zu SoU29/30 (T+21d); Umfragen nach der Sitzung (T+14d).
+
+### Vertrauensbeurteilung
+
+Starkes Vertrauen (A1): SoU38, SoU39, SoU29, SoU30, UU4 (Volltext abgerufen).  
+Mittleres Vertrauen (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (nur Metadaten).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_es.md -->
+
+**Autor**: Riksdagsmonitor Intelligence  
+**Clasificación**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Confianza**: HIGH [A1] protección infantil / MEDIUM [B2] reforma del bienestar  
+**ID de ejecución**: 26206467231
+
+---
+
+### 🎯 Resumen
+
+El Riksdag sueco publicó doce informes de comisión el 20 de mayo de 2026, en la producción diaria más sustancial del sprint preelectoral de la sesión 2025/26. El grupo dominante es una doble reforma de protección infantil — HD01SoU38 (nueva ley de cuidados obligatorios) y HD01SoU39 (mandato preventivo de servicios sociales) — que representa la legislación de bienestar infantil más significativa en dos décadas, con amplio apoyo multipartidista dieciséis semanas antes de las elecciones al Riksdag de septiembre de 2026. El avance simultáneo de la legislación sobre violencia de honor (HD01JuU43) y las reformas controvertidas de asistencia social (HD01SoU29, HD01SoU30) completa la entrega de la plataforma electoral central de la coalición Tidö, mientras que educación (HD01UbU30, HD01UbU21) y asuntos internacionales (HD01UU3, HD01UU4, HD01MJU22) redondean una sesión legislativa densa. El paquete de activación del bienestar es el elemento más electoralmente controvertido — afecta a ~80.000 hogares y proporciona a la oposición S/MP/V su principal arma de campaña.
+
+### 🧭 3 Decisiones que apoya este informe
+
+| # | Decisión | Relevancia | Horizon |
+|---|----------|------------|-----------|
+| 1 | Monitorear la revisión del Lagrådet sobre las disposiciones de violencia de honor JuU43 para riesgos constitucionales | Un dictamen negativo obligaría al gobierno a revisar el texto y crearía una narrativa de "ley inconstitucional" durante la campaña | T+14–30d |
+| 2 | Seguir la posición del Partido del Centro en la votación plenaria SoU29/SoU30 sobre activación del bienestar | C vota en contra → el gobierno gana de todas formas 174-171; C se abstiene → mandato más amplio; C retrasa → problema de campaña en otoño | T+21–45d |
+| 3 | Evaluar la capacidad de implementación municipal de la legislación de protección infantil SoU38/SoU39 | Una implementación con recursos insuficientes durante el período de campaña es un riesgo electoral crítico para el bloque gobernante | T+30–90d |
+
+### ⚡ Lectura de 60 segundos
+
+- **Reforma de protección infantil** (HD01SoU38 + HD01SoU39): Nueva ley de cuidados obligatorios centrada en derechos + mandato preventivo. La reforma legislativa más amplia de los servicios de infancia suecos desde 2003. Amplio apoyo partidista. Votación plenaria estimada 3–9 de junio de 2026.
+- **Violencia de honor** (HD01JuU43): Nueva categoría penal para la violencia basada en el honor. Buque insignia del SD. Revisión del Lagrådet pendiente. Riesgo ECHR Artículo 14 manejable con redacción cuidadosa.
+- **Activación del bienestar** (HD01SoU29 + HD01SoU30): Requisitos de actividad + tope de prestaciones que afectan a ~80.000 hogares. Legislación más controvertida — S/MP/V fuertemente en contra; C ambiguo. Principal campo de batalla electoral.
+- **Friskola** (HD01UbU30): Condiciones de operación más estrictas para escuelas independientes; genera tensión interna en el bloque M/KD/L sobre principios de orientación al mercado.
+- **Internacional** (HD01UU3, HD01UU4, HD01MJU22): Responsabilidad de la ayuda al desarrollo, mandato nórdico-ártico (post-OTAN), auditoría de financiamiento climático del Riksrevisionen. Los hallazgos críticos de MJU22 brindan a la oposición una oportunidad de ataque sobre el clima.
+
+### 🔮 Principal desencadenante prospectivo
+
+**Dictamen del Lagrådet sobre JuU43 (T+14–30d)**: Si el Lagrådet emite un dictamen negativo por razones constitucionales, el bloque gobernante enfrenta una narrativa de "legislación inconstitucional" en plena campaña electoral. Sin dictamen negativo, la vía legislativa está despejada para la aprobación. Monitorear www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### Desarrollos clave
+
+#### Reforma de protección infantil (HD01SoU38 + HD01SoU39) ★ CRÍTICO
+Dos informes de comisión complementarios crean una nueva arquitectura legislativa para el cuidado obligatorio de niños y jóvenes. SoU38 reemplaza las disposiciones centrales del LVU con un marco centrado en derechos; SoU39 añade poderes preventivos cuando las familias se resisten a la cooperación con los servicios sociales. Juntos representan la reforma más sustancial del derecho de protección infantil sueco desde 2003. El amplio apoyo multipartidista reduce el riesgo de reversión. El riesgo de implementación es significativo dado los déficits presupuestarios municipales (SKR ~SEK 18 Md de déficit estructural).
+
+#### Honour: Violencia basada en el honor — derecho penal fortalecido (HD01JuU43)
+La comisión de justicia promueve una legislación reforzada que crea una categoría penal separada para la violencia y la opresión basadas en el honor. Cierra las lagunas de aplicación documentadas; respaldado por la investigación de Barnafrid y Länsstyrelsen Östergötland. Estado de revisión del Lagrådet pendiente al 2026-05-21.
+
+#### Reforma de asistencia social — políticamente controvertida (HD01SoU29 + HD01SoU30)
+SoU29 (actividad obligatoria) y SoU30 (tope de prestaciones) impulsan el programa de activación. Oposición S/MP/V fuerte. ~80.000 hogares afectados (SCB). Informes electoralmente más decisivos de la sesión.
+
+#### Escuelas independientes — condiciones endurecidas (HD01UbU30)
+Condiciones más estrictas para escuelas independientes. Tensión interna M/KD/L sobre principios de mercado.
+
+#### Clúster internacional (HD01UU3 + HD01UU4 + HD01MJU22)
+UU3 (ayuda al desarrollo), UU4 (mandato nórdico-ártico post-OTAN), MJU22 (financiamiento climático Riksrevisionen) forman una narrativa coherente de responsabilidad internacional.
+
+### Inteligencia electoral
+
+A 16 semanas de las elecciones de septiembre 2026, el bloque gobernante adelanta su legislación clave. Protección infantil y violencia de honor ofrecen consenso amplio. La activación del bienestar (SoU29/SoU30) es un riesgo calculado con potencial movilizador opositor.
+
+### Evaluación de confianza
+
+A1: SoU38, SoU39, SoU29, SoU30, UU4 (texto completo).  
+B2: JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (metadatos).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_fi.md -->
+
+**Tekijä**: Riksdagsmonitor Intelligence  
+**Luokittelu**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Luottamus**: HIGH [A1] lastensuojelu / MEDIUM [B2] hyvinvointiuudistus  
+**Ajo-ID**: 26206467231
+
+---
+
+### 🎯 Lyhyt yhteenveto
+
+Ruotsin Riksdag julkaisi kaksitoista valiokuntamietintöä 20. toukokuuta 2026 — 2025/26 istuntokauden vaalien edellä tapahtuvan sprintin merkittävin yksittäispäivän tuotos. Keskeisimpänä kokonaisuutena on kaksoisuudistus lasten suojelemiseksi — HD01SoU38 (uusi pakkohuolenpitolaki) ja HD01SoU39 (ennaltaehkäisevä sosiaalipalvelumandaatti) — joka edustaa merkittävintä lasten hyvinvointilainsäädäntöä kahteen vuosikymmeneen ja nauttii laajaa poikkipuolueellista tukea kuusitoista viikkoa ennen syyskuun 2026 Riksdag-vaaleja. Kunniaväkivaltaa koskevan lainsäädännön (HD01JuU43) ja kiistanalaisten toimeentulotukiuudistusten (HD01SoU29, HD01SoU30) samanaikainen eteneminen täydentää Tidö-koalition ydinsitoumusten toteutumisen, kun taas koulutus (HD01UbU30, HD01UbU21) ja kansainväliset asiat (HD01UU3, HD01UU4, HD01MJU22) täydentävät tiivistä lainsäädäntöistuntoa. Hyvinvointiaktivoinnin paketti on kaikkein kiistanalaisin elementti — se koskee noin 80 000 kotitaloutta ja antaa oppositiolle S/MP/V heidän ensisijaisen kampanjaaseensa.
+
+### 🧭 3 Päätöstä, joita tämä katsaus tukee
+
+| # | Päätös | Merkitys | Horizon |
+|---|--------|----------|----------------|
+| 1 | Seuraa Lagrådets JuU43:n kunniaväkivaltatarkastelua perustuslaillisen riskin osalta | Kielteinen lausunto pakottaa hallituksen tarkistukseen ja luo "perustuslainvastainen laki" -narratiivin vaalikampanjaan | T+14–30d |
+| 2 | Seuraa Keskustapuolueen (C) kantaa SoU29/SoU30 hyvinvointiaktivoinnin täysistuntoäänestyksessä | C äänestää vastaan → hallitus voittaa silti 174-171; C pidättäytyy → laajempi mandaatti; C viivyttää → syyskauden kampanjaongelma | T+21–45d |
+| 3 | Arvioi kuntien toimeenpanokapasiteettia SoU38/SoU39 lastensuojelulainsäädännön osalta | Aliresursoitu toimeenpano kampanjakaudella on kriittinen vaaliриски hallitusblokille | T+30–90d |
+
+### ⚡ 60 sekunnin tiivistelmä
+
+- **Lastensuojeluuudistus** (HD01SoU38 + HD01SoU39): Uusi oikeusperustainen pakkohuolenpitolaki + ennaltaehkäisevä mandaatti. Laajin ruotsalaisen lastenhuollon lainsäädäntöuudistus vuodesta 2003. Laaja puoluetuki. Täysistuntoäänestys arvioitu 3.–9. kesäkuuta 2026.
+- **Honour-based violence** (HD01JuU43): Uusi rikosoikeudellinen luokka kunniaperusteiselle väkivallalle. SD:n lippulaivauudistus. Lagrådets tarkastelu odottaa. ECHR 14 artiklan riski hallittavissa huolellisella muotoilulla.
+- **Hyvinvointiaktivointi** (HD01SoU29 + HD01SoU30): Aktivointivaatimukset + etuuskatto koskevat ~80 000 kotitaloutta. Kiistanalaisin lainsäädäntö — S/MP/V voimakkaasti vastaan; C epäselvä. Keskeinen vaalikenttä.
+- **Vapaat koulut** (HD01UbU30): Tiukemmat vapaan koulutuksen toimintaehdot; aiheuttaa sisäistä jännitystä M/KD/L-lohkossa markkinaorientaatiosta.
+- **Kansainvälinen** (HD01UU3, HD01UU4, HD01MJU22): Kehitysapuvastuullisuus, pohjoinen arktinen mandaatti (post-NATO), Riksrevisionenin ilmastorahoitustarkastus. MJU22:n kriittiset havainnot antavat oppositiolle ilmastohyökkäysmahdollisuuden.
+
+### 🔮 Tärkein eteenpäin suuntautuva laukaisin
+
+**Lagrådets lausunto JuU43:sta (T+14–30d)**: Jos Lagrådet antaa kielteisen lausunnon perustuslailliselta pohjalta, hallitusblokki kohtaa "perustuslainvastainen lainsäädäntö" -narratiivin vaalikampanjassa. Ilman kielteistä lausuntoa lainsäädäntöpolku on selkeä hyväksymiseen. Seuraa www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### Keskeiset kehityskulut
+
+#### Lastensuojeluuudistus (HD01SoU38 + HD01SoU39) ★ KRIITTINEN
+Kaksi toisiaan täydentävää mietintöä luovat uuden lainsäädäntöarkkitehtuurin lasten ja nuorten pakkohuolenpidolle. SoU38 korvaa LVU:n ydinmääräykset oikeusperustaisella kehyksellä; SoU39 lisää ennaltaehkäiseviä toimivaltuuksia, kun perheet vastustavat sosiaalipalvelujen yhteistyötä. Yhdessä ne muodostavat perusteellisimman ruotsalaisen lastensuojelulainsäädännön uudistuksen vuodesta 2003. Laaja poikkipuolueellinen tuki vähentää peruuttamisriskiä. Toimeenpanoriski on merkittävä kuntien budjettivajauksista johtuen (SKR ~18 miljardia SEK rakenteellinen vaje).
+
+#### Honour: Kunniaväkivalta — rikoslaki vahvistuu (HD01JuU43)
+Oikeuskomitea edistää vahvistettua lainsäädäntöä, joka luo erillisen rikosoikeudellisen luokan kunniaperusteiselle väkivallalle ja sorrolla. Korjaa dokumentoidut täytäntöönpanoaukot; saa tukea Barnafridin ja Länsstyrelsen Östergötlandin tutkimuksesta. Lagrådets tarkastelustatus odottaa 2026-05-21.
+
+#### Toimeentulotukiuudistus — poliittisesti kiistanalainen (HD01SoU29 + HD01SoU30)
+Aktivointivaatimukset (SoU29) ja etuuskatto (SoU30) edistävät hallitusblokkin hyvinvointiaktivointiohjelmaa. Oppositiopuolueet (S/MP/V) ilmaisevat voimakasta vastustusta. ~80 000 kotitaloutta kärsii kattomekanismista (SCB-data). Vaaleihun ollessa 16 viikkoa, nämä ovat istuntokauden vaalipoliittisesti merkittävimmät mietinnöt.
+
+#### Vapaat koulut — ehtoja kiristetään (HD01UbU30)
+Koulutuskomitean mietintö ottaa käyttöön tiukemmat toimintaehdot yksityiskoululle. Luo sisäistä jännitettä M/KD/L-lohkossa markkinaorientaatioperiaatteista.
+
+#### Kansainvälinen kokonaisuus: kehitysapu, pohjoinen arktinen, ilmastoarviointi
+UU3 (syvennetty kehitysapuraportointi), UU4 (pohjoinen arktinen mandaatti post-NATO-kontekstissa), MJU22 (Riksrevisionenin ilmastorahoitushavainnot) muodostavat johdonmukaisen kansainvälisen vastuullisuusnarratiivin.
+
+### Vaalikampanjatiedustelu
+
+Riksdag-vaalien ollessa syyskuussa 2026 noin 16 viikkoa päässä hallitusblokki on laittanut etusijalle toteutettavimman lainsäädäntönsä. Lastensuojelu- ja Honour-based violence -paketit tarjoavat laajan konsensuksen voittoja. Hyvinvointiaktivointi (SoU29/SoU30) on laskettu riski — suosittu hallitusblokkin äänestäjäkunnan keskuudessa, mutta mahdollisesti oppositioäänestäjiä mobilisoiva.
+
+**Keskeisimmät PIR:t**: Lagrådets lausunto JuU43:sta (T+14d); SoU38/39:n täysistuntoäänestysaikataulu (T+14d); C:n kanta SoU29/30:een (T+21d); istuntokauden jälkeiset galluppimittaukset (T+14d).
+
+### Luottamusarvio
+
+Korkea luottamus (A1): SoU38, SoU39, SoU29, SoU30, UU4 (kokoteksti haettu).  
+Keskitason luottamus (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (vain metatiedot).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_fr.md -->
+
+**Auteur** : Riksdagsmonitor Intelligence  
+
+**Confiance** : HIGH [A1] protection de l'enfance / MEDIUM [B2] réforme sociale  
+**ID d'exécution** : 26206467231
+
+---
+
+### 🎯 Synthèse
+
+Le Riksdag suédois a publié douze rapports de commission le 20 mai 2026, dans la production journalière la plus substantielle du sprint pré-électoral de la session 2025/26. La grappe dominante est une double réforme de la protection de l'enfance — HD01SoU38 (nouvelle loi sur les soins obligatoires) et HD01SoU39 (mandat préventif des services sociaux) — représentant la législation la plus significative en matière de protection de l'enfance depuis deux décennies, avec un large soutien multipartite seize semaines avant les élections au Riksdag de septembre 2026. L'avancement simultané de la législation sur les violences fondées sur l'honneur (HD01JuU43) et les réformes contestées de l'aide sociale (HD01SoU29, HD01SoU30) complète la livraison de la plateforme électorale centrale de la coalition Tidö, tandis que l'éducation (HD01UbU30, HD01UbU21) et les affaires internationales (HD01UU3, HD01UU4, HD01MJU22) parachèvent une session législative dense. Le paquet d'activation du bien-être est l'élément le plus électoralement controversé — il affecte ~80 000 foyers et fournit à l'opposition S/MP/V leur principale arme de campagne.
+
+### 🧭 3 Décisions que ce rapport soutient
+
+| # | Décision | Pertinence | Horizon |
+|---|----------|------------|---------|
+| 1 | Surveiller l'examen par le Lagrådet des dispositions sur les violences d'honneur JuU43 pour les risques constitutionnels | Un avis négatif obligerait le gouvernement à réviser le texte et créerait un narratif de "loi inconstitutionnelle" pendant la campagne | T+14–30d |
+| 2 | Suivre la position du Parti du Centre sur le vote en plénière SoU29/SoU30 sur l'activation sociale | C vote contre → le gouvernement gagne quand même 174-171 ; C s'abstient → mandat plus large ; C diffère → problème de campagne à l'automne | T+21–45d |
+| 3 | Évaluer la capacité d'exécution municipale pour la législation de protection de l'enfance SoU38/SoU39 | Une mise en œuvre sous-financée pendant la période de campagne représente un risque électoral critique pour le bloc gouvernemental | T+30–90d |
+
+### ⚡ Lecture en 60 secondes
+
+- **Réforme de la protection de l'enfance** (HD01SoU38 + HD01SoU39) : Nouvelle loi sur les soins obligatoires centrée sur les droits + mandat préventif. La réforme législative la plus large des services à l'enfance suédois depuis 2003. Large soutien partisan. Vote en plénière estimé 3–9 juin 2026.
+- **Violences d'honneur** (HD01JuU43) : Nouvelle catégorie pénale pour les violences fondées sur l'honneur. Mesure phare du SD. Examen du Lagrådet en attente. Risque ECHR article 14 gérable avec une rédaction soignée.
+- **Activation sociale** (HD01SoU29 + HD01SoU30) : Exigences d'activité + plafonnement des prestations touchant ~80 000 foyers. Législation la plus contestée — S/MP/V fortement opposés ; C ambigu. Principal terrain de bataille électoral.
+- **Friskola** (HD01UbU30) : Conditions d'exploitation plus strictes pour les écoles indépendantes ; crée des tensions internes dans le bloc M/KD/L sur les principes d'orientation de marché.
+- **International** (HD01UU3, HD01UU4, HD01MJU22) : Redevabilité de l'aide, mandat nordique-arctique (post-OTAN), audit du financement climatique du Riksrevisionen. Les conclusions critiques de MJU22 offrent à l'opposition une occasion d'attaque sur le climat.
+
+### 🔮 Principal déclencheur prospectif
+
+**Avis du Lagrådet sur JuU43 (T+14–30d)** : Si le Lagrådet émet un avis négatif pour des raisons constitutionnelles, le bloc gouvernemental fait face à un narratif "législation inconstitutionnelle" en pleine campagne électorale. Sans avis négatif, la voie législative est dégagée pour adoption. Surveiller www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### Développements clés
+
+#### Réforme de la protection de l'enfance (HD01SoU38 + HD01SoU39) ★ CRITIQUE
+Deux rapports de commission complémentaires créent une nouvelle architecture législative pour les soins obligatoires des enfants et des jeunes. SoU38 remplace les dispositions fondamentales du LVU par un cadre centré sur les droits ; SoU39 ajoute des pouvoirs préventifs lorsque les familles résistent à la coopération avec les services sociaux. Ensemble, ils représentent la réforme la plus substantielle du droit suédois de la protection de l'enfance depuis 2003. Le large soutien multipartite réduit le risque de retournement. Le risque d'exécution est significatif compte tenu des déficits budgétaires municipaux (SKR ~SEK 18 Md de déficit structurel).
+
+#### Honour: Violence fondée sur l'honneur — droit pénal renforcé (HD01JuU43)
+La commission de la justice fait avancer une législation renforcée créant une catégorie pénale distincte pour les violences et oppressions fondées sur l'honneur. Comble les lacunes d'application documentées ; soutenu par les recherches de Barnafrid et du Länsstyrelsen Östergötland. Statut d'examen du Lagrådet en attente au 2026-05-21.
+
+#### Réforme de l'aide sociale — politiquement contestée (HD01SoU29 + HD01SoU30)
+SoU29 (activité obligatoire) et SoU30 (plafonnement des prestations) font avancer le programme d'activation sociale. Opposition S/MP/V forte. ~80 000 foyers affectés (SCB). Rapports électoralement les plus décisifs de la session.
+
+#### Écoles indépendantes — conditions renforcées (HD01UbU30)
+Conditions d'exploitation plus strictes pour les écoles indépendantes. Tension interne au sein du bloc M/KD/L sur les principes de marché.
+
+#### Cluster international (HD01UU3 + HD01UU4 + HD01MJU22)
+UU3 (aide au développement), UU4 (mandat nordique-arctique post-OTAN), MJU22 (financement climatique Riksrevisionen) forment un narratif cohérent de responsabilisation internationale.
+
+### Renseignements électoraux
+
+À 16 semaines des élections de septembre 2026, le bloc gouvernemental livre sa législation phare. Protection de l'enfance et violences d'honneur offrent un consensus large. L'activation sociale (SoU29/SoU30) est un risque calculé avec potentiel de mobilisation de l'opposition.
+
+### Évaluation de la confiance
+
+A1 : SoU38, SoU39, SoU29, SoU30, UU4 (texte intégral).  
+B2 : JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (métadonnées).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — דוחות ועדות הריקסדאג השוודי, 21 במאי 2026
+
+**מחבר**: Riksdagsmonitor Intelligence  
+**סיווג**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**אמינות**: HIGH [A1] הגנת הילד / MEDIUM [B2] רפורמת רווחה  
+**מזהה הרצה**: 26206467231
+
+---
+
+### 🎯 סיכום
+
+הריקסדאג השוודי פרסם שנים עשר דוחות ועדות ב-20 במאי 2026, בתפוקה היומית המשמעותית ביותר של המירוץ הטרום-בחירותי בהפעלת הפגישה 2025/26. הצביר המרכזי הוא רפורמה כפולה להגנת הילד — HD01SoU38 (חוק טיפול כפוי חדש) ו-HD01SoU39 (מנדט שירותי רווחה מניעתי) — המייצגת את חקיקת רווחת הילד המשמעותית ביותר בשני עשורים, עם תמיכה רחבה מעל המחיצות המפלגתיות שישה עשר שבועות לפני בחירות הריקסדאג בספטמבר 2026. התקדמות מקבילה של חקיקת אלימות על כבוד (HD01JuU43) ורפורמות שנויות במחלוקת בסיוע סוציאלי (HD01SoU29, HD01SoU30) משלימה את מסירת הפלטפורמה הבחירותית המרכזית של קואליציית טידו, בעוד חינוך (HD01UbU30, HD01UbU21) וענייני חוץ (HD01UU3, HD01UU4, HD01MJU22) מסיימים מושב חקיקה עמוס. חבילת הפעלת הרווחה היא האלמנט השנוי במחלוקת ביותר מבחינה בחירותית — משפיעה על כ-80,000 משקי בית ומעניקה לאופוזיציה S/MP/V את נשק הקמפיין העיקרי שלה.
+
+### 🧭 3 החלטות שתקציר זה תומך בהן
+
+| # | החלטה | רלוונטיות | Horizon |
+|---|-------|----------|------|
+| 1 | לעקוב אחר בדיקת Lagrådet של סעיפי האלימות על כבוד JuU43 לאיתור סיכונים חוקתיים | חוות דעת שלילית תאלץ את הממשלה לתקן ותיצור נרטיב של "חוק לא חוקתי" בקמפיין הבחירות | T+14–30d |
+| 2 | לעקוב אחר עמדת מפלגת המרכז בהצבעת המליאה על SoU29/SoU30 בנושא הפעלת רווחה | C מצביעה נגד → הממשלה ניצחת 174-171 בכל מקרה; C נמנעת → מנדט רחב יותר; C מעכבת → בעיית קמפיין סתיו | T+21–45d |
+| 3 | להעריך את כושר היישום העירוני לחקיקת הגנת הילד SoU38/SoU39 | יישום תת-ממומן בתקופת הקמפיין הוא סיכון בחירותי קריטי עבור הגוש הממשלתי | T+30–90d |
+
+### ⚡ קריאה של 60 שניות
+
+- **רפורמת הגנת הילד** (HD01SoU38 + HD01SoU39): חוק טיפול כפוי חדש המבוסס על זכויות + מנדט מניעתי. הרפורמה החקיקתית הרחבה ביותר בשירותי הילד השוודיים מאז 2003. תמיכה רחבה. הצבעת מליאה משוערת 3–9 יוני 2026.
+- **אלימות על כבוד** (HD01JuU43): קטגוריה פלילית חדשה לאלימות מבוססת כבוד. דגל SD. בדיקת Lagrådet ממתינה. סיכון ECHR סעיף 14 ניתן לניהול עם ניסוח זהיר.
+- **הפעלת רווחה** (HD01SoU29 + HD01SoU30): דרישות פעילות + תקרת קצבאות משפיעות על כ-80,000 משקי בית. החקיקה השנויה ביותר במחלוקת — S/MP/V מתנגדים בחריפות; C עמומה. שדה קרב בחירותי מרכזי.
+- **Friskola** (HD01UbU30): תנאי הפעלה מחמירים יותר לבתי ספר עצמאיים; יוצר מתחים פנימיים בגוש M/KD/L על עקרונות אוריינטציה שוקית.
+- **בינלאומי** (HD01UU3, HD01UU4, HD01MJU22): אחריות סיוע, מנדט צפוני-ארקטי (לאחר נאטו), ביקורת מימון אקלים של Riksrevisionen. ממצאי MJU22 הביקורתיים נותנים לאופוזיציה הזדמנות תקיפה אקלימית.
+
+### 🔮 הגורם המחולל העתידי החשוב ביותר
+
+**חוות דעת Lagrådet על JuU43 (T+14–30d)**: אם Lagrådet יוציא חוות דעת שלילית מטעמים חוקתיים, הגוש הממשלתי יתמודד עם נרטיב "חקיקה לא חוקתית" בעיצומו של הקמפיין הבחירותי. ללא חוות דעת שלילית — הנתיב החקיקתי פתוח לאישור. עקוב אחר www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### התפתחויות מרכזיות
+
+#### רפורמת הגנת הילד (HD01SoU38 + HD01SoU39) ★ קריטי
+שני דוחות ועדות משלימים יוצרים ארכיטקטורה חקיקתית חדשה לטיפול כפוי בילדים ובני נוער. SoU38 מחליף את הוראות הליבה של LVU במסגרת מבוססת-זכויות; SoU39 מוסיף סמכויות מניעתיות כאשר משפחות מתנגדות לשיתוף פעולה עם שירותי הרווחה. יחד הם מייצגים את הרפורמה המקיפה ביותר של חוק הגנת הילד השוודי מאז 2003. תמיכה רחבה מפחיתה את סיכון היפוך הנהלה. סיכון היישום משמעותי לנוכח גירעונות תקציב עירוניים (SKR כ-18 מיליארד SEK גירעון מבני).
+
+#### Honour: אלימות מבוססת כבוד — חיזוק חוק הפלילי (HD01JuU43)
+ועדת המשפטים מקדמת חקיקה מחוזקת היוצרת קטגוריה פלילית נפרדת לאלימות ודיכוי מבוססי כבוד. סוגרת פרצות אכיפה מתועדות; נתמכת במחקרי Barnafrid ו-Länsstyrelsen Östergötland. מצב בדיקת Lagrådet ממתין נכון ל-2026-05-21.
+
+#### רפורמת הסיוע הסוציאלי — שנויה במחלוקת פוליטית (HD01SoU29 + HD01SoU30)
+דרישות פעילות (SoU29) ותקרת קצבאות (SoU30) מקדמות את תוכנית הפעלת הרווחה של הגוש הממשלתי. מפלגות האופוזיציה (S/MP/V) מסמנות התנגדות חזקה. כ-80,000 משקי בית מושפעים ממנגנון התקרה (נתוני SCB). עם הבחירות 16 שבועות מכאן, אלה הדוחות בעלי ההשפעה הבחירותית הגבוהה ביותר בפגישה.
+
+#### בתי ספר עצמאיים — תנאים מחמירים (HD01UbU30)
+דוח ועדת החינוך מציג תנאי הפעלה מחמירים יותר למגזר בתי הספר העצמאיים. יוצר מתח פנימי בגוש M/KD/L סביב עקרונות אוריינטציה שוקית.
+
+#### צביר בינלאומי: סיוע לפיתוח, צפוני-ארקטי, ביקורת אקלים
+UU3 (דיווח מעמיק יותר על סיוע), UU4 (מנדט צפוני-ארקטי בהקשר לאחר נאטו), MJU22 (ממצאי Riksrevisionen על מימון אקלים) מגבשים נרטיב אחריות בינלאומי קוהרנטי.
+
+### מודיעין בחירותי
+
+עם בחירות הריקסדאג בספטמבר 2026 כ-16 שבועות קדימה, הגוש הממשלתי הקדים את החקיקה הניתנת ביותר ליישום. חבילות הגנת הילד ואלימות על כבוד מציעות ניצחונות בעלי קונצנזוס גבוה. הפעלת הרווחה (SoU29/SoU30) היא סיכון מחושב — פופולרי בקרב בסיס המצביעים של הגוש הממשלתי אך עלול לגייס מצביעי אופוזיציה.
+
+**PIRs מרכזיים**: חוות דעת Lagrådet על JuU43 (T+14d); לוח זמנים להצבעת מליאה עבור SoU38/39 (T+14d); עמדת C על SoU29/30 (T+21d); סקרים לאחר הפגישה (T+14d).
+
+### הערכת אמינות
+
+אמינות גבוהה (A1): SoU38, SoU39, SoU29, SoU30, UU4 (אוחזר טקסט מלא).  
+אמינות בינונית (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (מטא-נתונים בלבד).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_ja.md -->
+
+**著者**：Riksdagsmonitor Intelligence  
+**分類**：PUBLIC — GDPR Art. 9(2)(e,g)  
+**信頼度**：HIGH [A1] 児童保護 / MEDIUM [B2] 福祉改革  
+**実行ID**：26206467231
+
+---
+
+### 🎯 結論
+
+スウェーデン国会（リクスダーグ）は2026年5月20日に12件の委員会報告書を公表し、2025/26年会期の選挙前スプリントで最も実質的な1日の成果となった。主軸となるのは、児童保護に関する2本の改革 — HD01SoU38（新強制ケア法）とHD01SoU39（予防的社会サービス義務化）— であり、20年ぶりの最重要児童福祉立法として2026年9月の総選挙（リクスダーグ選挙）まで16週の時点で幅広い超党派支持を集めている。名誉暴力立法（HD01JuU43）と係争中の生活保護改革（HD01SoU29、HD01SoU30）の同時前進は、ティードー連立政権の核心選挙公約の達成を完成させ、教育（HD01UbU30、HD01UbU21）および国際問題（HD01UU3、HD01UU4、HD01MJU22）が密度の高い立法会期を締めくくる。福祉活性化パッケージは最も選挙的に論争的な要素であり、約8万世帯に影響を与え、野党S/MP/Vに主要な選挙キャンペーンの武器を提供する。
+
+### 🧭 このブリーフが支援する3つの決定事項
+
+| # | 決定事項 | 関連性 | Horizon |
+|---|---------|--------|--------|
+| 1 | JuU43の名誉暴力条項に関するLagrådets審査を憲法リスクの観点から監視する | 否定的意見は政府に改訂を強い、選挙キャンペーン中に「違憲立法」の物語を生み出す | T+14–30d |
+| 2 | SoU29/SoU30福祉活性化の本会議採決に関する中央党（C）の立場を追う | Cが反対 → 政府は174-171で勝利；Cが棄権 → より広い委任；Cが遅延 → 秋の選挙キャンペーン問題 | T+21–45d |
+| 3 | SoU38/SoU39児童保護立法に向けた自治体の実施能力を評価する | キャンペーン期間中の資金不足による実施は、与党ブロックにとって重大な選挙リスク | T+30–90d |
+
+### ⚡ 60秒の要約
+
+- **児童保護改革**（HD01SoU38 + HD01SoU39）：権利中心の新強制ケア法＋予防的義務。2003年以来最も広範なスウェーデン児童ケアの立法改革。幅広い党派支持。本会議採決は2026年6月3〜9日と推定。
+- **名誉暴力**（HD01JuU43）：名誉に基づく暴力に関する新しい刑事カテゴリー。SDの旗艦政策。Lagrådets審査待ち。ECHR第14条リスクは慎重な法文作成で管理可能。
+- **福祉活性化**（HD01SoU29 + HD01SoU30）：活動要件＋給付上限で約8万世帯に影響。最も論争的な立法 — S/MP/Vが強く反対；Cは曖昧。中心的な選挙戦争場。
+- **Friskola**（HD01UbU30）：独立学校の運営条件の厳格化；市場原理をめぐりM/KD/Lブロック内で内部緊張を生む。
+- **国際問題**（HD01UU3、HD01UU4、HD01MJU22）：開発援助の説明責任、北欧・北極圏委任（ポストNATO）、Riksrevisionenの気候金融監査。MJU22の批判的所見は野党に気候攻撃の機会を与える。
+
+### 🔮 最重要の先行きトリガー
+
+**LagrådetsのJuU43に関する意見（T+14–30d）**：Lagrådetsが憲法的理由から否定的な意見を出した場合、与党ブロックは選挙キャンペーン真っ只中に「違憲立法」の物語に直面する。否定的意見がなければ、立法の道は採択に向けて開かれている。www.lagradet.seを監視すること。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### 主要な進展
+
+#### 児童保護改革（HD01SoU38 + HD01SoU39）★ 重大
+2つの補完的な委員会報告書が、子どもと若者の強制ケアに向けた新しい立法アーキテクチャを構築している。SoU38はLVUの核心規定を権利中心の枠組みで置き換え、SoU39は家族が社会サービスとの協力を拒む際の予防的権限を追加する。両者合わせて、2003年以来最も実質的なスウェーデン児童保護法の改革を体現する。幅広い超党派支持が逆転リスクを低減。自治体の財政赤字（SKR約180億SEKの構造的赤字）を考慮すると実施リスクは相当大きい。
+
+#### Honour: 名誉に基づく暴力 — 刑法強化（HD01JuU43）
+司法委員会が、名誉に基づく暴力と抑圧に対する独立した刑事カテゴリーを創設する強化立法を推進。文書化された執行上のギャップを埋める；BarnafridおよびLänsstyrelsen Östergötlandの研究に支持されている。2026-05-21時点でLagrådets審査状況は待ち。
+
+#### 生活保護改革 — 政治的に論争的（HD01SoU29 + HD01SoU30）
+活動要件（SoU29）と給付上限（SoU30）が与党ブロックの福祉活性化プログラムを推進。野党（S/MP/V）は強い抵抗を表明。約8万世帯が上限メカニズムの影響を受ける（SCBデータ）。選挙まで16週の時点で、これらは会期で最も選挙的に重要な報告書である。
+
+#### 独立学校 — 条件を強化（HD01UbU30）
+教育委員会報告書が独立学校セクターに対してより厳格な運営条件を導入。市場原理をめぐりM/KD/Lブロック内で内部緊張を生む。
+
+#### 国際クラスター：開発援助、北欧・北極圏、気候監査
+UU3（より深い援助報告）、UU4（ポストNATO文脈での北欧・北極圏委任）、MJU22（Riksrevisionenの気候金融に関する所見）が一貫した国際的説明責任の物語を形成する。
+
+### 選挙インテリジェンス
+
+2026年9月のリクスダーグ選挙まで約16週となった今、与党ブロックは最も実行可能な立法を前倒しした。児童保護と名誉暴力パッケージは高いコンセンサスの勝利をもたらす。福祉活性化（SoU29/SoU30）は計算されたリスク — 与党ブロックの支持基盤には人気だが、野党支持者を動員する可能性もある。
+
+**主要PIR**：LagrådetsのJuU43に関する意見（T+14d）；SoU38/39の本会議採決スケジュール（T+14d）；CのSoU29/30に対する立場（T+21d）；会期後の世論調査（T+14d）。
+
+### 信頼度評価
+
+高い信頼度（A1）：SoU38、SoU39、SoU29、SoU30、UU4（全文取得済み）。  
+中程度の信頼度（B2）：JuU43、MJU22、UbU21、UbU30、UU3、SoU40、SoU41（メタデータのみ）。
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_ko.md -->
+
+**저자**：Riksdagsmonitor Intelligence  
+**분류**：PUBLIC — GDPR Art. 9(2)(e,g)  
+**신뢰도**：HIGH [A1] 아동보호 / MEDIUM [B2] 복지개혁  
+**실행 ID**：26206467231
+
+---
+
+### 🎯 결론
+
+스웨덴 의회(Riksdag)는 2026년 5월 20일 12건의 상임위원회 보고서를 공표하며 2025/26 회기 선거 전 스프린트에서 가장 실질적인 하루치 결과물을 냈다. 핵심은 아동보호에 관한 두 가지 개혁 — HD01SoU38(새 강제 돌봄법)과 HD01SoU39(예방적 사회서비스 의무화) — 으로, 2026년 9월 총선(Riksdag 선거)까지 16주를 남긴 시점에 20년 만의 가장 중요한 아동복지 입법으로서 광범위한 초당파 지지를 얻고 있다. 명예폭력 법제(HD01JuU43)와 논쟁적인 생활보호 개혁(HD01SoU29, HD01SoU30)의 동시 진행은 티데(Tidö) 연립정부의 핵심 선거 공약 이행을 완성시키며, 교육(HD01UbU30, HD01UbU21) 및 국제 문제(HD01UU3, HD01UU4, HD01MJU22)가 밀도 높은 입법 회기를 마무리한다. 복지 활성화 패키지는 약 8만 가구에 영향을 미쳐 야당 S/MP/V에 주요 선거 무기를 제공하는 가장 선거적으로 논쟁적인 요소다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정 사항
+
+| # | 결정 사항 | 관련성 | Horizon |
+|---|----------|--------|--------|
+| 1 | JuU43 명예폭력 조항에 관한 Lagrådets 검토를 헌법 리스크 관점에서 모니터링 | 부정적 의견은 정부에 개정을 강요하고 선거 캠페인 중 '위헌 입법' 내러티브를 만듦 | T+14–30일 |
+| 2 | SoU29/SoU30 복지 활성화 본회의 표결에 관한 중앙당(C)의 입장 추적 | C 반대 → 174-171 정부 승리; C 기권 → 더 넓은 위임; C 지연 → 가을 선거 캠페인 이슈 | T+21–45일 |
+| 3 | SoU38/SoU39 아동보호 입법을 위한 지방자치단체 이행 능력 평가 | 캠페인 기간 중 자금 부족에 의한 이행은 여당 블록에 심각한 선거 리스크 | T+30–90일 |
+
+### ⚡ 60초 요약
+
+- **아동보호 개혁**(HD01SoU38 + HD01SoU39): 권리 중심 새 강제 돌봄법 + 예방적 의무. 2003년 이후 가장 포괄적인 스웨덴 아동 돌봄 입법 개혁. 광범위한 당파 지지. 본회의 표결 2026년 6월 3~9일 예상.
+- **명예폭력**(HD01JuU43): 명예 기반 폭력에 관한 새 형사 카테고리. SD 핵심 정책. Lagrådets 검토 대기 중. ECHR 제14조 리스크는 신중한 법문 작성으로 관리 가능.
+- **복지 활성화**(HD01SoU29 + HD01SoU30): 활동 요건 + 급여 상한으로 약 8만 가구 영향. 가장 논쟁적인 입법 — S/MP/V 강력 반대; C 모호. 핵심 선거 전쟁터.
+- **Friskola**(HD01UbU30): 독립학교 운영 조건 강화; 시장 원리를 둘러싸고 M/KD/L 블록 내 내부 긴장 유발.
+- **국제 클러스터**(HD01UU3, HD01UU4, HD01MJU22): 개발 원조 책임성, 북유럽·북극 위임(포스트 NATO), Riksrevisionen의 기후 금융 감사. MJU22의 비판적 소견은 야당에 기후 공격 기회를 줌.
+
+### 🔮 최우선 선행 트리거
+
+**Lagrådets의 JuU43에 관한 의견(T+14–30일)**: Lagrådets가 헌법적 이유로 부정적 의견을 낼 경우, 여당 블록은 선거 캠페인 한복판에서 '위헌 입법' 내러티브에 직면한다. 부정적 의견이 없으면 입법 경로는 채택을 향해 열린다. www.lagradet.se 모니터링 필요.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### 주요 진전 사항
+
+#### 아동보호 개혁(HD01SoU38 + HD01SoU39) ★ 중요
+두 보완적 상임위원회 보고서가 아동·청소년 강제 돌봄을 위한 새로운 입법 아키텍처를 구축한다. SoU38은 LVU 핵심 조항을 권리 중심 프레임워크로 대체하고, SoU39는 가족이 사회서비스 협력을 거부할 때의 예방적 권한을 추가한다. 함께, 2003년 이후 가장 실질적인 스웨덴 아동보호법 개혁을 구현한다. 광범위한 초당파 지지가 역전 리스크를 낮춘다. SKR 약 180억 SEK의 구조적 적자를 고려하면 이행 리스크가 상당하다.
+
+#### Honour: 명예 기반 폭력 — 형법 강화(HD01JuU43)
+사법위원회가 명예 기반 폭력·억압에 대한 독립적 형사 카테고리를 만드는 강화 입법을 추진. 문서화된 집행 격차를 해소; Barnafrid 및 Länsstyrelsen Östergötland 연구에 지지됨. 2026-05-21 기준 Lagrådets 검토 상태 대기 중.
+
+#### 생활보호 개혁 — 정치적으로 논쟁적(HD01SoU29 + HD01SoU30)
+활동 요건(SoU29)과 급여 상한(SoU30)이 여당 블록의 복지 활성화 프로그램을 추진. 야당(S/MP/V)이 강한 저항 표명. 약 8만 가구가 상한 메커니즘의 영향을 받음(SCB 데이터). 총선까지 16주 시점에 회기의 가장 선거적으로 중요한 보고서들이다.
+
+#### 독립학교 — 조건 강화(HD01UbU30)
+교육위원회 보고서가 독립학교 부문에 더 엄격한 운영 조건 도입. 시장 원리를 둘러싸고 M/KD/L 블록 내 내부 긴장 유발.
+
+#### 국제 클러스터: 개발 원조, 북유럽·북극, 기후 감사
+UU3(더 깊은 원조 보고), UU4(포스트 NATO 맥락의 북유럽·북극 위임), MJU22(Riksrevisionen의 기후 금융 소견)이 일관된 국제 책임성 내러티브를 형성한다.
+
+### 선거 인텔리전스
+
+2026년 9월 Riksdag 선거까지 약 16주가 된 지금, 여당 블록은 가장 이행 가능한 입법을 앞당겼다. 아동보호·명예폭력 패키지는 높은 합의 승리를 가져온다. 복지 활성화(SoU29/SoU30)는 계산된 리스크다 — 여당 블록 지지층에는 인기지만 야당 지지자를 동원할 수 있다.
+
+**주요 PIR**: Lagrådets의 JuU43 의견(T+14일); SoU38/39 본회의 표결 일정(T+14일); C의 SoU29/30 입장(T+21일); 회기 후 여론조사(T+14일).
+
+### 신뢰도 평가
+
+높은 신뢰도(A1): SoU38, SoU39, SoU29, SoU30, UU4(전문 취득).  
+중간 신뢰도(B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41(메타데이터만).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_nl.md -->
+
+**Auteur**: Riksdagsmonitor Intelligence  
+**Classificatie**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Vertrouwen**: HIGH [A1] kinderbescherming / MEDIUM [B2] hervorming welzijn  
+**Uitvoerings-ID**: 26206467231
+
+---
+
+### 🎯 Samenvatting
+
+Het Zweedse Riksdag publiceerde op 20 mei 2026 twaalf commissierapporten — de meest substantiële dagproductie van de pre-verkiezingsspurt van de sessie 2025/26. De dominante cluster is een dubbele kinderbeschermingshervorming — HD01SoU38 (nieuwe wet op verplichte zorg) en HD01SoU39 (preventief mandaat sociale dienstverlening) — die de meest significante kinderwelzijnswetgeving in twee decennia vertegenwoordigt, met brede meerpartijen-steun zestien weken voor de Riksdag-verkiezingen van september 2026. De gelijktijdige vooruitgang van wetgeving over eergerelateerd geweld (HD01JuU43) en betwiste hervormingen van de bijstand (HD01SoU29, HD01SoU30) voltooit de levering van de kernverkiezingsplatform van de Tidö-coalitie, terwijl onderwijs (HD01UbU30, HD01UbU21) en internationale zaken (HD01UU3, HD01UU4, HD01MJU22) een dichte wetgevingssessie afronden. Het welzijnsactiveringspakket is het meest electoraal controversiële element — het treft ~80.000 huishoudens en geeft de oppositie S/MP/V hun voornaamste campagnewapen.
+
+### 🧭 3 Beslissingen die dit verslag ondersteunt
+
+| # | Beslissing | Relevantie | Horizon |
+|---|------------|------------|---------|
+| 1 | Monitor de Lagrådet-toetsing van JuU43 eergeweld-bepalingen op constitutionele risico's | Een negatief advies dwingt de regering tot herziening en creëert een narratief van "ongrondwettelijke wetgeving" tijdens de campagne | T+14–30d |
+| 2 | Volg de positie van de Centrumpartij bij de plenaire stemming SoU29/SoU30 over welzijnsactivering | C stemt tegen → de regering wint toch 174-171; C onthoudt zich → breder mandaat; C vertraagt → herfstcampagneprobleem | T+21–45d |
+| 3 | Beoordeel de gemeentelijke uitvoeringskapaciteit voor SoU38/SoU39 kinderbeschermingswetgeving | Onderfinancierde uitvoering tijdens de campagneperiode is een kritiek electoraal risico voor het regeringsblok | T+30–90d |
+
+### ⚡ 60-secondenlezing
+
+- **Kinderbeschermingshervorming** (HD01SoU38 + HD01SoU39): Nieuwe op rechten gebaseerde wet op verplichte zorg + preventief mandaat. Meest omvangrijke wetgevingshervorming van Zweedse kinderzorg sinds 2003. Brede partijsteun. Plenaire stemming geschat 3–9 juni 2026.
+- **Eergerelateerd geweld** (HD01JuU43): Nieuwe strafrechtelijke categorie voor eergebaseerd geweld. SD-vlaggenschip. Lagrådet-toetsing in afwachting. ECHR-artikel 14-risico beheersbaar met zorgvuldige formulering.
+- **Welzijnsactivering** (HD01SoU29 + HD01SoU30): Activiteitseisen + uitkeringsplafond treft ~80.000 huishoudens. Meest betwiste wetgeving — S/MP/V sterk tegen; C dubbelzinnig. Centraal verkiezingsslagveld.
+- **Friskola** (HD01UbU30): Strengere exploitatievoorwaarden voor vrije scholen; creëert interne spanning in M/KD/L-blok over marktoriëntatie-principes.
+- **Internationaal** (HD01UU3, HD01UU4, HD01MJU22): Verantwoording ontwikkelingshulp, Noordelijk-Arctisch mandaat (post-NAVO), Riksrevisionens klimaatfinancieringsaudit. Kritische bevindingen MJU22 geven de oppositie een klimaataanvalsmogelijkheid.
+
+### 🔮 Belangrijkste vooruitblikkende trigger
+
+**Lagrådet-advies over JuU43 (T+14–30d)**: Als Lagrådet een negatief advies uitbrengt op constitutionele gronden, staat het regeringsblok voor een "ongrondwettelijke wetgeving"-narratief in de verkiezingscampagne. Geen negatief advies → wetgevingspad is vrij voor aanneming. Monitor www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### Belangrijke ontwikkelingen
+
+#### Kinderbeschermingshervorming (HD01SoU38 + HD01SoU39) ★ KRITIEK
+Twee complementaire commissierapporten creëren een nieuwe wetgevingsarchitectuur voor verplichte zorg van kinderen en jongeren. SoU38 vervangt de kernbepalingen van de LVU door een op rechten gebaseerd kader; SoU39 voegt preventieve bevoegdheden toe wanneer gezinnen zich verzetten tegen samenwerking met sociale diensten. Samen vertegenwoordigen zij de meest ingrijpende hervorming van het Zweedse kinderbeschermingsrecht sinds 2003. Brede meerpartijen-steun vermindert het terugdraairisico. Het uitvoeringsrisico is aanzienlijk gezien de gemeentelijke begrotingstekorten (SKR ~SEK 18 mrd structureel tekort).
+
+#### Honour: Eergerelateerd geweld — strafrecht versterkt (HD01JuU43)
+De justitiecommissie bevordert versterkte wetgeving die een afzonderlijke strafrechtelijke categorie schept voor eergebaseerd geweld en onderdrukking. Sluit gedocumenteerde handhavingslacunes; ondersteund door onderzoek van Barnafrid en Länsstyrelsen Östergötland. Lagrådet-toetsingsstatus in afwachting per 2026-05-21.
+
+#### Bijstandshervorming — politiek omstreden (HD01SoU29 + HD01SoU30)
+Activiteitseisen (SoU29) en uitkeringsplafond (SoU30) bevorderen het welzijnsactiveringsprogramma van het regeringsblok. Oppositiepartijen (S/MP/V) signaleren sterke weerstand. ~80.000 huishoudens worden getroffen door het plafondmechanisme (SCB-data). Met de verkiezingen 16 weken weg zijn dit de electoraal meest beslissende rapporten van de sessie.
+
+#### Vrije scholen — voorwaarden aangescherpt (HD01UbU30)
+Het rapport van de onderwijscommissie introduceert strengere exploitatievoorwaarden voor de vrije schoolsector. Creëert interne spanning in het M/KD/L-blok over marktoriëntatie-principes.
+
+#### Internationale cluster: ontwikkelingshulp, Noordelijk-Arctisch, klimaataudit
+UU3 (diepere hulprapportage), UU4 (Noordelijk-Arctisch mandaat in post-NAVO-context), MJU22 (Riksrevisionens bevindingen over klimaatfinanciering) vormen een coherent internationaal verantwoordelijkheidsnarratief.
+
+### Verkiezingsintelligentie
+
+Met de Riksdag-verkiezingen van september 2026 op ca. 16 weken heeft het regeringsblok zijn meest leverbare wetgeving naar voren geplaatst. Kinderbeschermings- en eergeweldpakketten leveren hoog-consensus-winsten op. Welzijnsactivering (SoU29/SoU30) is een berekend risico — populair onder de kiezerbasis van het regeringsblok maar potentieel mobiliserend voor oppositiekiezers.
+
+**Sleutel-PIRs**: Lagrådet-advies over JuU43 (T+14d); schema plenaire stemming voor SoU38/39 (T+14d); C-positie over SoU29/30 (T+21d); peilingen na de sessie (T+14d).
+
+### Vertrouwensbeoordeling
+
+Hoog vertrouwen (A1): SoU38, SoU39, SoU29, SoU30, UU4 (volledige tekst opgehaald).  
+Gemiddeld vertrouwen (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (alleen metadata).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_no.md -->
+
+**Forfatter**: Riksdagsmonitor Intelligence  
+**Klassifisering**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Tillit**: HIGH [A1] barnebeskyttelse / MEDIUM [B2] velferdsreform  
+**Kjøre-ID**: 26206467231
+
+---
+
+### 🎯 Konklusjon
+
+Det svenske Riksdaget offentliggjorde tolv komitérapporter (betänkanden) 20. mai 2026 i den mest substansielle endagsproduksjonen i 2025/26-sesjonens pre-valgspurt. Den dominerende klyngen er en tvillingreform om barnebeskyttelse — HD01SoU38 (ny tvangsomsorglov) og HD01SoU39 (forebyggende sosialservicemandat) — som representerer den mest betydningsfulle barnevelferdslovgivningen på to tiår og har bred tverrpolitisk støtte seksten uker før Riksdagsvalget i september 2026. Samtidig fremgang for Honour-based violence-lovgivning (HD01JuU43) og omstridte reformer av sosialhjelp (HD01SoU29, HD01SoU30) fullfører Tidö-koalisjonens kjernevalgplattform, mens utdanning (HD01UbU30, HD01UbU21) og internasjonale anliggender (HD01UU3, HD01UU4, HD01MJU22) avrunder en tett lovgivningssesjon. Velferdsaktiveringspa​kken er det mest valgpolitisk kontroversielle elementet — berører ~80 000 husholdninger og gir opposisjonen S/MP/V deres primære kampanjevåpen.
+
+### 🧭 3 Beslutninger denne rapporten støtter
+
+| # | Beslutning | Relevans | Horizon |
+|---|------------|----------|----------|
+| 1 | Overvåk Lagrådets gjennomgang av JuU43 æresvoldsparagrafene for konstitusjonell risiko | Negativ uttalelse tvinger regjeringen til revisjon og skaper narrativ om "grunnlovsstridig lov" i valgkampen | T+14–30d |
+| 2 | Følg Senterpartiets (C) stilling i plenarvotering om SoU29/SoU30 velferdsaktivering | C stemmer mot → regjeringen vinner fortsatt 174-171; C avholder seg → bredere mandat; C utsetter → høstens kampanjeproblem | T+21–45d |
+| 3 | Vurder kommunenes gjennomføringskapasitet for SoU38/SoU39 barnebeskyttelseslovgivning | Underfinansiert gjennomføring i kampanjeperioden er kritisk valgrisiko for regjeringsblokken | T+30–90d |
+
+### ⚡ 60-sekunders lesning
+
+- **Barnebeskyttelsesreform** (HD01SoU38 + HD01SoU39): Ny rettighetssentrert tvangsomsorglov + forebyggende mandat. Bredeste lovgivningsreform av svensk barnevern siden 2003. Bred partistøtte. Plenarvotering anslått 3.–9. juni 2026.
+- **Honour-based violence** (HD01JuU43): Ny strafferettslig kategori for æresbasert vold. SDs flaggskip. Lagrådets gjennomgang avventes. ECHR-artikkel 14-risiko håndterbar med nøye utforming.
+- **Velferdsaktivering** (HD01SoU29 + HD01SoU30): Aktivitetskrav + ytelsestak berører ~80 000 husholdninger. Mest omstridt lovgivning — S/MP/V sterkt imot; C tvetydig. Sentral valgkampfrontlinje.
+- **Friskola** (HD01UbU30): Strengere driftsvilkår for friskoler; skaper intern spenning i M/KD/L-blokken om markedsorientering.
+- **Internasjonalt** (HD01UU3, HD01UU4, HD01MJU22): Bistandsansvarlighet, nordisk-arktisk mandat (post-NATO), Riksrevisjonens klimafinansrevisjon. MJU22s kritiske funn gir opposisjonen en klimaangrepsmulighet.
+
+### 🔮 Viktigste fremoverskuende utløser
+
+**Lagrådets uttalelse om JuU43 (T+14–30d)**: Hvis Lagrådet avgir en negativ uttalelse på konstitusjonelt grunnlag, møter regjeringsblokken et "grunnlovsstridig lovgivning"-narrativ i valgkampen. Ingen negativ uttalelse → lovgivningsveien er klar for vedtakelse. Overvåk www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### Viktige utviklinger
+
+#### Barnebeskyttelsesreform (HD01SoU38 + HD01SoU39) ★ KRITISK
+To komplementære komitérapporter skaper en ny lovgivningsmessig arkitektur for tvangsplassering av barn og unge. SoU38 erstatter kjernebestemmelsene i LVU med et rettighetssentrert rammeverk; SoU39 tilføyer forebyggende fullmakter når familier motsetter seg sosialvesenets samarbeid. Tilsammen representerer de den mest gjennomgripende reformen av svensk barnevernlovgivning siden 2003. Bred tverrpolitisk støtte reduserer risikoen for tilbakeslag. Gjennomføringsrisikoen er betydelig gitt kommunale budsjettunderskudd (SKR ~SEK 18 mrd. strukturelt underskudd).
+
+#### Honour: Æresbasert vold — straffeloven styrkes (HD01JuU43)
+Justiskomiteen fremmer styrket lovgivning som oppretter en særskilt strafferettslig kategori for æresbasert vold og undertrykkelse. Lukker dokumenterte håndhevingshull; støttet av Barnafrid og Länsstyrelsen Östergötlands forskning. Lagrådets gjennomgangsstatus avventes per 2026-05-21.
+
+#### Sosialhjelpsreform — politisk omstridt (HD01SoU29 + HD01SoU30)
+Aktivitetskrav (SoU29) og ytelsestak (SoU30) fremmer regjeringsblokens velferdsaktiveringsagenda. Opposisjonspartier (S/MP/V) signaliserer sterk motstand. ~80 000 husholdninger berøres av takmekanismen (SCB-data). Med valget 16 uker unna er dette de mest valgpolitisk avgjørende rapportene i sesjonen.
+
+#### Friskoler — vilkår strammes (HD01UbU30)
+Utdanningskomiteens rapport innfører strengere driftsvilkår for friskolesektor. Skaper intern spenning i M/KD/L-blokken om markedsorientering.
+
+#### Internasjonal klynge: bistandsansvarlighet, nordisk-arktisk, klimarevisjon
+UU3 (dypere bistandsrapportering), UU4 (nordisk-arktisk mandat i post-NATO-kontekst), MJU22 (Riksrevisjonens funn om klimafinansiering) danner et sammenhengende internasjonalt ansvarsnarrativ.
+
+### Valgkampsetterretning
+
+Med Riksdagsvalget i september 2026 ca. 16 uker unna har regjeringsblokken lagt sin mest leverbare lovgivning frem. Barnebeskyttelses- og æresvoldspakker gir høy-konsensus-gevinster. Velferdsaktivering (SoU29/SoU30) er en kalkulert risiko — populær hos regjeringsblokens velgerbasis men potensielt mobiliserende for opposisjonens velgere.
+
+**Sentrale PIR-er**: Lagrådets uttalelse om JuU43 (T+14d); plenarvoteringsplan for SoU38/39 (T+14d); Cs stilling til SoU29/30 (T+21d); meningsmålinger etter sesjonen (T+14d).
+
+### Tillitsvurdering
+
+Høy tillit (A1): SoU38, SoU39, SoU29, SoU30, UU4 (fulltekst hentet).  
+Middels tillit (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (kun metadata).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_sv.md -->
+
+**Upphovsman**: Riksdagsmonitor Intelligence  
+**Klassificering**: PUBLIC — GDPR Art. 9(2)(e,g)  
+**Tillförlitlighet**: HIGH [A1] barnsskydd / MEDIUM [B2] välfärdsreform  
+**Körnings-ID**: 26206467231
+
+---
+
+### 🎯 Slutsats
+
+Sveriges riksdag publicerade tolv betänkanden den 20 maj 2026 i den mest substantiella endagsproduktionen under 2025/26 riksmötets valspurt. Centralt är en tvilling-barnsskyddsreform — HD01SoU38 (ny tvångsvårdslag) och HD01SoU39 (förebyggande socialservicemandat) — som utgör den mest betydande barnvälfärdslagstiftningen på två decennier med brett parlamentariskt stöd sexton veckor före riksdagsvalet i september 2026. Honour-based violence-lagstiftning (HD01JuU43) och omtvistade reformer av försörjningsstöd (HD01SoU29, HD01SoU30) fulländar Tidökoalitionens kärnlöften, medan utbildning (HD01UbU30, HD01UbU21) och utrikesärenden (HD01UU3, HD01UU4, HD01MJU22) kompletterar en tät lagstiftningssession. Välfärdsaktiveringspaketet är det mest electoralt kontroversiella inslaget — det berör ~80 000 hushåll och ger S/MP/V deras viktigaste kampanjvapen.
+
+### 🧭 3 Beslut denna rapport stödjer
+
+| # | Beslut | Relevans | Horizon |
+|---|--------|----------|----------|
+| 1 | Bevaka Lagrådets granskning av JuU43 hedervåldsparagraferna för konstitutionell risk | Negativt yttrande tvingar regeringen till revision och skapar narrativ om "grundlagsstridig lag" i valrörelsen | T+14–30d |
+| 2 | Följ Centerpartiets ställningstagande i plenumomröstningen om SoU29/SoU30 välfärdsaktivering | C röstar emot → regeringen vinner ändå 174-171; C avstår → bredare mandat; C dröjer → höstens valrörelseproblem | T+21–45d |
+| 3 | Bedöm kommunernas genomförandekapacitet för SoU38/SoU39 barnsskyddslagstiftning | Underfinansierad implementering under kampanjperioden är kritisk valrörelsrisk för regeringsblocket | T+30–90d |
+
+### ⚡ 60-sekundersläsning
+
+- **Barnsskyddsreform** (HD01SoU38 + HD01SoU39): Ny rättighetscentrerad tvångsvårdslag + förebyggande mandat. Bredaste lagstiftningsreformen av svensk barnvård sedan 2003. Bred partistöd. Plenumomröstning beräknas 3–9 juni 2026.
+- **Honour-based violence** (HD01JuU43): Ny brottsrubricering för hedersbaserat våld. SD:s flaggskepp. Lagrådsgranskning pågår. ECHR-artikel 14-risk hanterbbar med noggrant formulerade regler.
+- **Välfärdsaktivering** (HD01SoU29 + HD01SoU30): Aktivitetskrav + bidragstak berör ~80 000 hushåll. Mest omtvistad lagstiftning — S/MP/V starkt emot; C tveksamt. Central valrörelsebattleground.
+- **Friskola** (HD01UbU30): Skärpta villkor för fristående skolor; skapar intern spänning hos M/KD/L.
+- **Internationellt** (HD01UU3, HD01UU4, HD01MJU22): Biståndsansvarighet, nordisk-arktiskt mandat (post-NATO), Riksrevisionens klimatfinansrevision. MJU22:s kritiska slutsatser ger oppositionen ett klimatattackstillfälle.
+
+### 🔮 Viktigaste framåtblickande utlösaren
+
+**Lagrådets yttrande om JuU43 (T+14–30d)**: Om Lagrådet avger ett negativt yttrande på konstitutionell grund, ställs regeringsblocket inför ett "grundlagsstridig lagstiftning"-narrativ i valrörelsen. Om inget negativt yttrande utfärdas, är den lagstiftningsspåret klart för antagande. Bevaka www.lagradet.se.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### Viktiga händelseutvecklingar
+
+#### Barnsskyddsreform (HD01SoU38 + HD01SoU39) ★ KRITISKT
+Två kompletterande betänkanden skapar en ny lagstiftningsarkitektur för tvångsvård av barn och unga. SoU38 ersätter kärnan i LVU-bestämmelserna med ett rättighetscentrerat ramverk; SoU39 lägger till förebyggande befogenheter när familjer motsätter sig socialtjänstens samarbete. Tillsammans utgör de den mest genomgripande reformen av svensk barnvårdslagstiftning sedan 2003. Brett partistöd minskar risken för bakslag. Genomföranderisken är betydande med hänsyn till kommunala underskott (SKR ~18 mdr kr strukturellt underskott).
+
+#### Honour-based violence — strafflagen stärks (HD01JuU43)
+Justitieutskottet driver fram förstärkt lagstiftning som skapar en ny brottsrubricering för hedersbaserat våld och förtryck. Täpper igen dokumenterade tillämpningsluckor; stöds av Barnafrid och Länsstyrelsen Östergötlands forskning. Lagrådets granskningsstatus pågår per 2026-05-21.
+
+#### Socialbidrags reform — politiskt omtvistat (HD01SoU29 + HD01SoU30)
+Aktivitetskrav (SoU29) och bidragstak (SoU30) driver på regeringsblockets välfärdsaktiveringsprogram. Oppositionspartier (S/MP/V) signalerar starkt motstånd. ~80 000 hushåll berörs av takmekanismen (SCB-data). Med valet 16 veckor bort är dessa de mest electoralt avgörande betänkandena i sessionen.
+
+#### Fristående skolor — villkor skärps (HD01UbU30)
+Utbildningsutskottets betänkande inför striktare driftsvillkor för friskolesektorn. Skapar intern spänning inom M/KD/L-blocket kring marknadsorienterade principer.
+
+#### Internationellt kluster: biståndsansvarighet, nordisk-arktiskt, klimatrevision
+UU3 (fördjupad biståndsrapportering), UU4 (nordisk-arktiskt mandat i post-NATO-kontext), MJU22 (Riksrevisionens slutsatser om klimatfinansiering) bildar ett sammanhängande internationellt ansvarighetsnarrativ.
+
+### Valrörelsesunderrättelse
+
+Med riksdagsvalet i september 2026 ungefär 16 veckor bort har regeringsblocket lagt sin mest levererbar lagstiftning i förväg. Barnsskydds- och hedersvåldspaket ger högkonsensuerade vinster. Välfärdsaktivering (SoU29/SoU30) är en kalkylerad risk — populär bland regeringsblockets väljarbas men potentiellt mobiliserande för oppositionsväljare.
+
+**Nyckel-PIR:er**: Lagrådets yttrande om JuU43 (T+14d); schema för plenumomröstning om SoU38/39 (T+14d); C:s position om SoU29/30 (T+21d); opinionsundersökningar efter sessionen (T+14d).
+
+### Tillförlitlighetsbedömning
+
+Hög tillförlitlighet (A1): SoU38, SoU39, SoU29, SoU30, UU4 (fulltext hämtad).  
+Medel tillförlitlighet (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (enbart metadata).
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_zh.md -->
+
+**作者**：Riksdagsmonitor Intelligence  
+**分类**：PUBLIC — GDPR Art. 9(2)(e,g)  
+**置信度**：HIGH [A1] 儿童保护 / MEDIUM [B2] 福利改革  
+**执行ID**：26206467231
+
+---
+
+### 🎯 结论
+
+2026年5月20日，瑞典议会（Riksdag）公布12份委员会报告，成为2025/26年度会期选举前冲刺阶段最具实质意义的单日成果。核心是两项儿童保护改革 — HD01SoU38（新强制照护法）和HD01SoU39（预防性社会服务义务化） — 这两项改革距2026年9月大选（Riksdag选举）还有16周，作为20年来最重要的儿童福利立法获得广泛跨党派支持。名誉暴力立法（HD01JuU43）与争议性社会救助改革（HD01SoU29、HD01SoU30）同步推进，完成了蒂德（Tidö）联合政府核心选举承诺的兑现，教育（HD01UbU30、HD01UbU21）和国际事务（HD01UU3、HD01UU4、HD01MJU22）为密集立法会期画上句点。福利激活方案是选举争议最大的要素，影响约8万户家庭，为反对党S/MP/V提供主要选举武器。
+
+### 🧭 本简报支持的三项决策
+
+| # | 决策 | 相关性 | Horizon |
+|---|------|--------|---------|
+| 1 | 从宪法风险角度监控Lagrådets对JuU43荣誉暴力条款的审查 | 负面意见将迫使政府修订，并在竞选期间制造"违宪立法"叙事 | T+14–30天 |
+| 2 | 追踪中央党（C）对SoU29/SoU30福利激活全体会议表决的立场 | C反对→政府以174-171胜出；C弃权→更广授权；C拖延→秋季竞选议题 | T+21–45天 |
+| 3 | 评估地方政府对SoU38/SoU39儿童保护立法的执行能力 | 竞选期间因资金不足导致的执行失败将给执政联盟带来严重选举风险 | T+30–90天 |
+
+### ⚡ 60秒摘要
+
+- **儿童保护改革**（HD01SoU38 + HD01SoU39）：权利中心的新强制照护法 + 预防性义务。2003年以来最全面的瑞典儿童照护立法改革。广泛党派支持。全体表决预计2026年6月3~9日。
+- **名誉暴力**（HD01JuU43）：针对荣誉暴力的新刑事类别。SD旗舰政策。待Lagrådets审查。ECHR第14条风险通过谨慎起草可管控。
+- **福利激活**（HD01SoU29 + HD01SoU30）：活动要求 + 福利上限，影响约8万户家庭。争议最大的立法 — S/MP/V强烈反对；C态度模糊。核心选举战场。
+- **独立学校**（HD01UbU30）：对独立学校部门引入更严格的运营条件；围绕市场原则在M/KD/L联盟内部引发紧张。
+- **国际组合**（HD01UU3、HD01UU4、HD01MJU22）：发展援助问责、北欧-北极圈授权（后北约背景）、Riksrevisionen气候金融审计。MJU22的批评性发现给反对党提供气候攻击机会。
+
+### 🔮 最高优先级的先行触发因素
+
+**Lagrådets就JuU43发表意见（T+14–30天）**：如Lagrådets以宪法理由提出负面意见，执政联盟将在竞选期间面临"违宪立法"叙事。无负面意见则立法通道向通过开放。监控 www.lagradet.se。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+graph LR
+    A["HD01SoU38/39\nChild Protection\nNew LVU Law"] -->|SoU Committee| B["Plenary\nJune 2026"]
+    C["HD01JuU43\nHonour Violence\nNew Offence"] -->|JuU| D["Lagrådet\nReview Pending"]
+    E["HD01SoU29/30\nWelfare\nActivation"] -->|SoU| F["Electoral\nBattleground"]
+    G["HD01UU4\nNordic-Arctic\nNATO Context"] -->|UU| H["Security\nCooperation"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#ffbe0b,color:#0a0e27
+    style E fill:#ff006e,color:#fff
+    style G fill:#00d9ff,color:#0a0e27
+    style B fill:#1a1e3d,color:#e0e0e0
+    style D fill:#1a1e3d,color:#e0e0e0
+    style F fill:#1a1e3d,color:#e0e0e0
+    style H fill:#1a1e3d,color:#e0e0e0
+```
+
+### 主要进展
+
+#### 儿童保护改革（HD01SoU38 + HD01SoU39）★ 重要
+两份互补的委员会报告构建了儿童和青少年强制照护的新立法架构。SoU38以权利中心框架替换LVU核心条款，SoU39增加家庭拒绝与社会服务合作时的预防性权力。两者共同体现了2003年以来最实质性的瑞典儿童保护法改革。广泛的跨党派支持降低了逆转风险。考虑到SKR约180亿瑞典克朗的结构性赤字，执行风险相当大。
+
+#### Honour: 荣誉暴力 — 刑法强化（HD01JuU43）
+司法委员会推进立法强化，为荣誉暴力和压迫创建独立刑事类别。填补已记录的执法缺口；获Barnafrid和Länsstyrelsen Östergötland研究支持。截至2026-05-21，Lagrådets审查状态待定。
+
+#### 社会救助改革 — 政治争议性（HD01SoU29 + HD01SoU30）
+活动要求（SoU29）和福利上限（SoU30）推动执政联盟的福利激活方案。反对党（S/MP/V）表达强烈抵抗。约8万户家庭受上限机制影响（SCB数据）。距大选16周，这是本会期选举意义最重大的报告。
+
+#### 独立学校 — 强化条件（HD01UbU30）
+教育委员会报告为独立学校部门引入更严格的运营条件。围绕市场原则在M/KD/L联盟内部引发紧张。
+
+#### 国际组合：发展援助、北欧-北极圈、气候审计
+UU3（更深入的援助报告）、UU4（后北约背景下的北欧-北极圈授权）、MJU22（Riksrevisionen气候金融调查结果）共同构成一致的国际问责叙事。
+
+### 选举情报
+
+距2026年9月Riksdag选举约16周，执政联盟提前推进了最具可执行性的立法。儿童保护和名誉暴力方案带来高共识胜利。福利激活（SoU29/SoU30）是经过计算的风险 — 在执政联盟支持者中受欢迎，但可能动员反对党选民。
+
+**主要PIR**：Lagrådets就JuU43发表意见（T+14天）；SoU38/39全体表决日程（T+14天）；C对SoU29/30的立场（T+21天）；会期后民调（T+14天）。
+
+### 置信度评估
+
+高置信度（A1）：SoU38、SoU39、SoU29、SoU30、UU4（全文已获取）。  
+中等置信度（B2）：JuU43、MJU22、UbU21、UbU30、UU3、SoU40、SoU41（仅元数据）。
+
+<!-- source-sha: f930d5ccb5c3d5e7b85a164feccaacedd41f53b4 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 23 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 36 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 12 | Expanded under `## Per-document intelligence` immediately after significance scoring |
-| Supporting data artifacts | 13 | Linked in Article Sources, not expanded inline |
+| Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
 **Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `horizon-pir-rollforward.md`
 
@@ -1653,21 +2721,22 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
 These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
 
 - [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/pir-status.json)
-- [`documents/hd01juu43.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01juu43.json)
-- [`documents/hd01mju22.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01mju22.json)
-- [`documents/hd01sou29.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01sou29.json)
-- [`documents/hd01sou30.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01sou30.json)
-- [`documents/hd01sou38.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01sou38.json)
-- [`documents/hd01sou39.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01sou39.json)
-- [`documents/hd01sou40.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01sou40.json)
-- [`documents/hd01sou41.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01sou41.json)
-- [`documents/hd01ubu21.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01ubu21.json)
-- [`documents/hd01ubu30.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01ubu30.json)
-- [`documents/hd01uu3.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01uu3.json)
-- [`documents/hd01uu4.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/documents/hd01uu4.json)
