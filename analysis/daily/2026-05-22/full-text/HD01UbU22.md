@@ -1,0 +1,1068 @@
+# Full Text — HD01UbU22
+
+> <p>Utbildningsutskottet föreslår att riksdagen säger ja till regeringens förslag som syftar till att skapa bättre förutsättningar för trygghet och studiero i skolan genom flera samverkande åtgärder.</p>
+<p>Förslaget innebär bland annat att huvudmannens och rektorns ansvar för tryggheten och studieron på skolenheten ska förtydligas. Utöver ett förebyggande arbete ska huvudmannen och rektorn arbeta för att upprätthålla tryggheten och studieron. </p>
+<p>Regeringen föreslår att skolan ska göras mobilfri genom att elevernas mobiltelefoner samlas in vid skoldagens början och lämnas tillbaka vid skoldagens slut. Regeringens förslag innebär också att dagens ordningsregler ska byta namn till skolregler, bli skolgemensamma och innehålla en plan för konsekvenser vid överträdelser av reglerna. Möjligheterna ska även stärkas att använda de disciplinära åtgärderna utvisning ur undervisningslokalen, tillfällig omplacering inom den egna skolenheten och tillfällig placering utanför den egna skolenheten samt avstängning. </p>
+<p>Regeringen föreslår också att det i vissa fall ska bli möjligt att neka en elev tillträde till skolenheten om eleven hotar säkerheten för andra elever och personal. Skolans förväntningar på eleverna och deras vårdnadshavare ska tydliggöras genom ett förväntansdokument. </p>
+<p>Därutöver föreslås det bli möjligt att bedriva akutskola på entreprenad, det vill säga en verksamhet där elever tillfälligt ges undervisning utanför den egna skolenheten.</p>
+<p>Lagändringarna föreslås börja gälla den 1 augusti 2026.</p>
+
+---
+5279062
+ HD01UbU22
+ 2025/26
+ UbU22
+ bet
+ bet
+ bet
+ Betänkande 2025/26:UbU22
+ Betänkande
+ Debatt om förslag
+ 
+ UbU
+ 
+ 22
+ 0
+ 2026-05-22 00:00:00
+ 2026-05-22 13:52:29
+ 2026-01-23 12:54:37
+ Bättre förutsättningar för trygghet och studiero i skolan
+ 
+ Webbpublicering
+ html
+ 
+ RIM
+ 473bc8ad-c423-4ea9-9a18-b7bfe4c86c80
+ https://data.riksdagen.se/dokument/HD01UbU22/text
+ https://data.riksdagen.se/dokument/HD01UbU22
+ https://data.riksdagen.se/dokumentstatus/HD01UbU22
+ https://data.riksdagen.se/utskottsforslag/HD01UbU22
+ <style><!--
+ .w600px{width: 600px;font-family:Verdana, Geneva, sans-serif}
+h2.dtyp{font-size:1.5em !important;} 
+@page Section1 { size:467.8pt 686.05pt; margin:45.35pt 102.05pt 73.7pt 70.85pt }
+div.Section1 { page:Section1 }
+zbody { text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+zh1, h2, h3, h4, h5, h6, p { margin:3.1pt 0pt 0pt }
+zli, table { margin-top:3.1pt; margin-bottom:0pt }
+zh1 { margin-top:3.1pt; margin-bottom:12pt; text-align:left; page-break-inside:auto; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt; font-weight:normal; color:#000000 }
+zh2 { margin-top:20pt; margin-bottom:6pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:13.5pt; font-weight:normal; color:#000000 }
+zh3 { margin-top:20pt; margin-bottom:3.1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:10.5pt; font-weight:bold; color:#000000 }
+zh4 { margin-top:15pt; margin-bottom:3.1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:10.5pt; font-weight:normal; font-style:italic; color:#000000 }
+zh5 { margin-top:6.25pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-weight:bold; color:#000000 }
+zh6 { margin-top:6.25pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-weight:normal; font-style:italic; color:#000000 }
+.Heading7 { margin-top:2pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-weight:normal; font-style:italic; color:#243f60; -aw-style-name:heading7 }
+.Heading8 { margin-top:2pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9pt; font-weight:normal; color:#272727; -aw-style-name:heading8 }
+.Heading9 { margin-top:2pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9pt; font-weight:normal; font-style:italic; color:#272727; -aw-style-name:heading9 }
+.Avsnittsrubrik { margin-top:0pt; margin-bottom:27.7pt; text-align:left; page-break-before:always; page-break-after:avoid; line-height:normal; font-family:'Verdana'; font-size:16pt }
+.Avvikandemeningrubrik { margin-top:0pt; margin-bottom:3.1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:10.5pt; font-weight:bold }
+.BalloonText { margin-top:3.1pt; margin-bottom:0pt; text-align:justify; line-height:normal; font-family:Tahoma; font-size:8pt }
+.Bilaga { margin-top:0pt; margin-bottom:0pt; text-align:left; page-break-before:always; page-break-after:avoid; line-height:normal; widows:0; orphans:0; font-family:'Verdana'; font-size:8pt; font-variant:small-caps; text-decoration:underline }
+.Bilagerubrik { margin-top:0pt; margin-bottom:17.7pt; text-align:left; page-break-after:auto; line-height:normal; widows:0; orphans:0; font-family:'Verdana'; font-size:16pt }
+.Bild-R { margin-top:12pt; margin-bottom:3pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:10pt; font-family:'Verdana'; font-size:9pt; font-weight:bold }
+.Bild-Rubrik { margin-top:12pt; margin-bottom:3pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:10pt; font-family:'Verdana'; font-size:9pt; font-weight:bold }
+.Bild-Underrubrik { margin-top:0pt; margin-bottom:1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:8pt; font-family:'Verdana'; font-size:8pt; font-weight:normal; font-style:italic }
+.BodyText { margin-top:3.1pt; margin-bottom:0pt; text-align:left; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.BodyTextIndent2 { margin-top:3.1pt; margin-left:14.15pt; margin-bottom:6pt; text-align:justify; line-height:200%; font-family:'Verdana'; font-size:9.5pt }
+.Citatindrag { margin-top:0pt; margin-left:14.2pt; margin-bottom:6.1pt; text-indent:14.2pt; text-align:justify; line-height:10pt; font-family:'Verdana'; font-size:9.5pt }
+.CommentSubject { margin-top:3.1pt; margin-bottom:0pt; text-align:justify; line-height:normal; font-family:'Verdana'; font-size:10pt; font-weight:bold }
+.CommentText { margin-top:3.1pt; margin-bottom:0pt; text-align:justify; line-height:normal; font-family:'Verdana'; font-size:10pt }
+.Deltagare { margin-top:0pt; margin-bottom:0pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:9.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Diagram-R { margin-top:12pt; margin-bottom:3pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:10pt; font-family:'Verdana'; font-size:9pt; font-weight:bold }
+.Diagram-Rubrik { margin-top:12pt; margin-bottom:3pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:10pt; font-family:'Verdana'; font-size:9pt; font-weight:bold }
+.Diagram-Underrubrik { margin-top:0pt; margin-bottom:1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:8pt; font-family:'Verdana'; font-size:8pt; font-weight:normal; font-style:italic }
+.DokumentRubrik { margin-top:6pt; margin-bottom:24pt; text-align:left; line-height:normal; border-bottom:0.75pt solid #000000; padding-bottom:4pt; font-family:'Verdana'; font-size:18pt; -aw-border-bottom:0.5pt single }
+.Dokumentbeteckning { margin-top:0pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Fluglort { margin-top:0.1pt; margin-bottom:0pt; text-align:justify; line-height:0.7pt; font-family:'Verdana'; font-size:9.5pt }
+.Footer { margin-top:3.1pt; margin-bottom:0pt; text-align:justify; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.FootnoteText { margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:8pt; font-family:'Verdana'; font-size:8pt }
+.Fotnotstextindrag { margin-top:0pt; margin-left:5.65pt; margin-bottom:0pt; text-align:left; line-height:8pt; font-family:'Verdana'; font-size:8pt }
+.Frslagspunkt { margin-top:0pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-weight:bold }
+.Frslagstext { margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Frteckningsrubrik { margin-top:9.6pt; margin-bottom:3.1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:normal; font-family:'Verdana'; font-size:9.5pt; font-weight:normal; font-style:italic; color:#000000 }
+.Grupprubrik { margin-top:6pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+.Grupprubrikindrag { margin-top:6pt; margin-left:22.1pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+.Header { margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:normal; font-family:'Verdana'; font-size:7.5pt; font-variant:small-caps }
+.Innehllsfrteckning { margin-top:0pt; margin-bottom:17.7pt; text-align:left; page-break-before:always; page-break-after:auto; line-height:normal; font-family:'Verdana'; font-size:16pt }
+.Kanslikommentar { margin-top:3.1pt; margin-bottom:12pt; text-align:left; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Kantrubrik { margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:normal; font-family:'Verdana'; font-size:7.5pt }
+.ListBullet { margin-top:6.25pt; margin-left:17.85pt; margin-bottom:6.25pt; text-indent:-17.85pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.ListParagraph { margin-top:3.1pt; margin-left:28.35pt; margin-bottom:0pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Litentext { margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:normal; font-family:'Verdana'; font-size:8pt }
+.Mellanrubrik { margin-top:11pt; margin-bottom:3.1pt; text-align:left; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+.Mellanrubrikverst { margin-top:0pt; margin-bottom:3.1pt; text-align:left; page-break-after:avoid; line-height:normal; font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+.Mellanrum { margin-top:0pt; margin-bottom:0pt; text-align:left; page-break-before:auto; page-break-after:auto; line-height:1pt; widows:0; orphans:0; font-family:'Verdana'; font-size:1pt; font-variant:small-caps; text-decoration:none; color:#ffffff }
+.MotionsTypMarkering { margin-top:0pt; margin-bottom:0pt; text-align:right; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-weight:bold }
+.NormalIndent { margin-top:0pt; margin-bottom:0pt; text-indent:11.35pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Normalinskjuten { margin-top:0pt; margin-left:22.1pt; margin-bottom:0pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Normalinskjutenindrag { margin-top:0pt; margin-left:22.1pt; margin-bottom:0pt; text-indent:11.35pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Normalinskjutenkursiv { margin-top:6pt; margin-bottom:0pt; line-height:normal; font-family:'Verdana'; font-size:10pt; font-style:italic }
+.Normalkursiv { margin-top:3.1pt; margin-bottom:0pt; text-align:left; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+.Normalruta { margin:3.1pt 5.65pt 0pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; border:0.75pt solid #000000; padding:4pt; font-family:'Verdana'; font-size:10.5pt; -aw-border:0.5pt single }
+.Normalrutafet { margin:3.1pt 5.65pt 0pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; border:0.75pt solid #000000; padding:4pt; font-family:'Verdana'; font-size:10.5pt; font-weight:bold; -aw-border:0.5pt single }
+.Normalrutaindrag { margin:0pt 5.65pt; text-indent:11.35pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; border:0.75pt solid #000000; padding:4pt; font-family:'Verdana'; font-size:10.5pt; -aw-border:0.5pt single }
+.Normalutanluftfre { margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.NormalLeft { margin-top:3.1pt; margin-bottom:0pt; text-align:left; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.NormalNoll { margin-top:0pt; margin-bottom:3.1pt; text-align:left; line-height:12.5pt; font-family:'Verdana'; font-size:10.5pt; font-weight:bold }
+.NumlistaTOC { margin:3.1pt 28.35pt 0pt 0pt; text-indent:0pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.Ordfrande { margin-top:0pt; margin-bottom:22pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:11.5pt; font-style:italic }
+.Ordfranden { margin-top:3.1pt; margin-bottom:22pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:normal; font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+.OrtochDatum { margin-top:18pt; margin-bottom:18pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.OrtOchDatum0 { margin-top:18pt; margin-bottom:18pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:11.5pt }
+.Punktlistabomb { margin-top:6.25pt; margin-left:14.2pt; margin-bottom:6.25pt; text-indent:-14.2pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Punktlistagemener { margin-top:6.25pt; margin-left:14.2pt; margin-bottom:6.25pt; text-indent:-14.2pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Punktlistalinje { margin-top:6.25pt; margin-left:14.2pt; margin-bottom:6.25pt; text-indent:-14.2pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Punktlistalinjeindragen { margin-top:6.25pt; margin-left:28.4pt; margin-bottom:6.25pt; text-indent:-14.2pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.Punktlistasiffra { margin-top:6.25pt; margin-left:14.2pt; margin-bottom:6.25pt; text-indent:-14.2pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.PVgnar { margin-top:3.1pt; margin-bottom:26pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.Quote { margin-top:6.1pt; margin-left:14.2pt; margin-bottom:0pt; text-align:justify; line-height:10pt; font-family:'Verdana'; font-size:9.5pt }
+.R1 { margin-top:3.1pt; margin-bottom:12pt; text-align:left; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.R1bilaga { margin-top:3.1pt; margin-bottom:12pt; text-align:left; page-break-after:auto; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.R2 { margin-top:20pt; margin-bottom:6pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:13.5pt }
+.R3 { margin-top:20pt; margin-bottom:3.1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:10.5pt; font-weight:bold }
+.R4 { margin-top:15pt; margin-bottom:3.1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:10.5pt; font-weight:normal; font-style:italic; color:#000000 }
+.R5 { margin-top:6.25pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-weight:bold }
+.R6 { margin-top:6.25pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-weight:normal; font-style:italic; color:#000000 }
+.Reservationshnvisning { margin-top:0pt; margin-bottom:8pt; text-align:right; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+.Reservationsrubrik { margin-top:0pt; margin-bottom:3.1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:10.5pt; font-weight:bold }
+.Revision { margin-bottom:0pt; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.Rubrik1Dokumentinformation { margin-top:0pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Rubrik1bilaga { margin-top:0pt; margin-bottom:27.7pt; text-align:left; page-break-after:auto; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Rubrik1medsidhuvud { margin-top:3.1pt; margin-bottom:12pt; text-align:left; page-break-before:always; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Rubrik1numrerat { margin-top:3.1pt; margin-left:0pt; margin-bottom:12pt; text-indent:0pt; text-align:left; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Rubrik1numreratmedsidhuvud { margin-top:0pt; margin-left:0pt; margin-bottom:16pt; text-indent:0pt; text-align:left; page-break-before:always; page-break-after:avoid; line-height:normal; font-family:'Verdana'; font-size:16pt }
+.Rubrik2bilaga { margin-top:20pt; margin-bottom:6pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:13.5pt }
+.Rubrik2numrerat { margin-top:20pt; margin-left:0pt; margin-bottom:6pt; text-indent:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:13.5pt }
+.Rubrik3numrerat { margin-top:20pt; margin-left:0pt; margin-bottom:3.1pt; text-indent:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:10.5pt; font-weight:bold }
+.Sammanfattning { margin-top:3.1pt; margin-bottom:12pt; text-align:left; page-break-after:auto; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Sidhuvudhgerstlld { margin-top:0pt; margin-bottom:0pt; text-align:right; line-height:normal; font-family:'Verdana'; font-size:7.5pt; font-variant:small-caps }
+.Sidhuvudvnsterstlld { margin-top:0pt; margin-bottom:0pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:7.5pt; font-variant:small-caps }
+.Stdrubrik { margin-top:12pt; margin-bottom:0pt; line-height:12pt; font-family:'Verdana'; font-size:9.5pt; font-weight:bold }
+.Srskiltyttranderubrik { margin-top:0pt; margin-bottom:3.1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:10.5pt; font-weight:bold }
+.TOC1 { margin-top:0pt; margin-right:28.35pt; margin-bottom:0pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TOC2 { margin:0pt 28.35pt 0pt 5.65pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TOC3 { margin:0pt 28.35pt 0pt 11.35pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TOC4 { margin:0pt 28.35pt 0pt 17pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TOC5 { margin:0pt 28.35pt 0pt 22.7pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TOC6 { margin-top:0pt; margin-left:47.65pt; margin-bottom:0pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TOC7 { margin-top:0pt; margin-right:28.35pt; margin-bottom:0pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TOC8 { margin-top:0pt; margin-right:28.35pt; margin-bottom:0pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TOC9 { margin-top:0pt; margin-left:8.5pt; margin-bottom:0pt; text-align:left; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TOCHeading { margin-top:3.1pt; margin-bottom:9pt; text-align:left; page-break-before:always; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Tabell-Kolumnrubrik { margin-top:3pt; margin-bottom:0pt; line-height:10pt; font-family:'Verdana'; font-size:8pt; font-weight:bold }
+.Tabell-KolumnrubrikHger { margin-top:3pt; margin-bottom:0pt; text-align:right; line-height:10pt; font-family:'Verdana'; font-size:8pt; font-weight:bold }
+.Tabell-Klla { margin-top:2pt; margin-bottom:0pt; line-height:8pt; font-family:'Verdana'; font-size:7pt }
+.Tabell-R { margin-top:12pt; margin-bottom:3pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:10pt; font-family:'Verdana'; font-size:9pt; font-weight:bold }
+.Tabell-Radrubrik { margin-top:3pt; margin-bottom:0pt; line-height:10pt; font-family:'Verdana'; font-size:8pt }
+.Tabell-Rubrik { margin-top:12pt; margin-bottom:3pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:10pt; font-family:'Verdana'; font-size:9pt; font-weight:bold }
+.Tabell-Siffror { margin-top:3pt; margin-bottom:0pt; text-align:right; line-height:10pt; font-family:'Verdana'; font-size:8pt }
+.Tabell-Text { margin-top:3pt; margin-bottom:0pt; line-height:10pt; font-family:'Verdana'; font-size:8pt }
+.Tabell-Underrubrik { margin-top:0pt; margin-bottom:1pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:8pt; font-family:'Verdana'; font-size:8pt; font-weight:normal; font-style:italic }
+.TableofFigures { margin-top:3.1pt; margin-bottom:0pt; text-align:justify; line-height:normal; font-family:'Verdana'; font-size:9.5pt }
+.TillX-utskottet { margin-top:0pt; margin-bottom:12pt; text-align:left; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Title { margin-top:3.1pt; margin-bottom:1pt; text-align:left; line-height:12pt; font-family:'Verdana'; font-size:20pt; letter-spacing:-0.5pt }
+.Vapen { margin-top:0pt; margin-bottom:0pt; text-align:left; page-break-inside:avoid; page-break-after:avoid; line-height:12.5pt; font-family:'Verdana'; font-size:16pt }
+.Yrkandelista { margin-top:3.1pt; margin-left:28.35pt; margin-bottom:0pt; text-indent:-28.35pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+.YrkandelistaEtt { margin-top:3.1pt; margin-left:0pt; margin-bottom:0pt; text-indent:0pt; text-align:justify; line-height:12.5pt; font-family:'Verdana'; font-size:9.5pt }
+span.BallongtextChar { font-family:Tahoma; font-size:8pt }
+span.BilagaChar { font-family:'Verdana'; font-size:8pt; font-variant:small-caps; text-decoration:underline }
+span.BrdtextChar { font-family:'Verdana'; font-size:9.5pt }
+span.BrdtextChar1 { font-family:'Verdana'; font-size:9.5pt }
+span.Brdtextmedindrag2Char { font-family:'Verdana'; font-size:9.5pt }
+span.CitatChar { font-family:'Verdana'; font-size:9.5pt }
+span.CommentReference { font-size:8pt }
+span.DokumentRubrikChar { font-family:'Verdana'; font-size:18pt }
+span.FotnotstextChar { font-family:'Verdana'; font-size:8pt }
+span.FotnotstextindragChar { font-family:'Verdana'; font-size:8pt }
+span.FrslagspunktChar { font-family:'Verdana'; font-size:9.5pt; font-weight:bold; font-style:normal }
+span.Hyperlink { text-decoration:none; color:#000000; -aw-style-name:hyperlink }
+span.KommentarerChar { font-family:'Verdana'; font-size:10pt }
+span.KommentarsmneChar { font-family:'Verdana'; font-size:10pt; font-weight:bold }
+span.NormalkursivChar { font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+span.NormaltindragChar { font-family:'Verdana'; font-size:9.5pt }
+span.OrdfrandeChar { font-family:'Verdana'; font-size:11.5pt; font-style:italic }
+span.OrdfrandenChar { font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+span.OrtochDatumChar { font-family:'Verdana'; font-size:9.5pt }
+span.OrtOchDatumChar0 { font-family:'Verdana'; font-size:11.5pt }
+span.PlaceholderText { color:#808080 }
+span.PVgnarChar { font-family:'Verdana'; font-size:9.5pt }
+span.ReservationshnvisningChar { font-family:'Verdana'; font-size:9.5pt; font-style:italic }
+span.Rubrik1Char { font-family:'Verdana'; font-size:16pt }
+span.Rubrik1DokumentinformationChar { font-family:'Verdana'; font-size:16pt }
+span.Rubrik2Char { font-family:'Verdana'; font-size:13.5pt }
+span.Rubrik3Char { font-family:'Verdana'; font-size:10.5pt; font-weight:bold }
+span.Rubrik4Char { font-family:'Verdana'; font-size:10.5pt; font-style:italic; color:#000000 }
+span.Rubrik5Char { font-family:'Verdana'; font-size:9.5pt; font-weight:bold }
+span.Rubrik6Char { font-family:'Verdana'; font-size:9.5pt; font-style:italic; color:#000000 }
+span.Rubrik7Char { font-family:'Verdana'; font-size:9.5pt; font-style:italic; color:#243f60 }
+span.Rubrik8Char { font-family:'Verdana'; font-size:9pt; color:#272727 }
+span.Rubrik9Char { font-family:'Verdana'; font-size:9pt; font-style:italic; color:#272727 }
+span.RubrikChar { font-family:'Verdana'; font-size:20pt; letter-spacing:-0.5pt }
+span.SidfotChar { font-family:'Verdana'; font-size:9.5pt }
+span.SidhuvudChar { font-family:'Verdana'; font-size:7.5pt; font-variant:small-caps }
+span.Tabell-Upphjttecken { font-family:'Verdana'; font-variant:normal; text-decoration:none; text-transform:none; vertical-align:super; display:inline }
+span.VapenChar { font-family:'Verdana'; font-size:16pt }
+span.tBilagaJA { color:#000000 }
+span.tSidrubrikJA { color:#000000 }
+.PlainTable1 {  }
+.TableGrid {  }
+--></style>
+
+		<div class="Section1">
+			<table cellspacing="0" cellpadding="0" style="margin-top:0pt; border-collapse:collapse">
+				<tr style="height:79.4pt; -aw-height-rule:exactly">
+					<td style="width:297.7pt; vertical-align:top">
+						<p class="Rubrik1Dokumentinformation" style="line-height:16pt">
+							<span style="-aw-sdt-tag:'ccUtskott'; -aw-sdt-title:'utskottsnamn Dokumentegenskap'"><span>Utbildningsutskottet</span></span><span style="-aw-sdt-tag:'ccS'; -aw-sdt-title:'s'"><span>s</span></span><span style="-aw-sdt-tag:'ccMellanslag'; -aw-sdt-title:'Mellanslag'"><span style="-aw-import:spaces">&#xa0;</span></span><a name="Utlatande"></a><span>betänkande</span>
+						</p>
+						<p class="Dokumentbeteckning" style="line-height:16pt">
+							<span style="-aw-sdt-tag:'ccRiksmote'; -aw-sdt-title:'riksmote Dokumentegenskap'"><span>2025/26</span></span><span style="-aw-sdt-tag:'ccKolon'; -aw-sdt-title:'Kolon'"><span>:</span></span><a name="Utskottebeteckning"></a><span>UbU22</span>
+						</p>
+						<p class="Rubrik1Dokumentinformation" style="line-height:16pt">
+							<span style="-aw-import:ignore">&#xa0;</span>
+						</p>
+					</td>
+				</tr>
+			</table>
+			<div style="-aw-sdt-tag:'ccDokumentrubrik'; -aw-sdt-title:'dokumentrubrik Dokumentegenskap'">
+				<p class="DokumentRubrik">
+					<span>Bättre förutsättningar för trygghet och studiero i skolan</span>
+				</p>
+			</div>
+			<p class="Sammanfattning" style="line-height:16pt">
+				<span class="tSidrubrikJA">Sammanfattning</span>
+			</p>
+			<p>
+				<span>Utskottet ställer sig bakom regeringens förslag till ändringar i skollagen. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringens förslag syftar till att åstadkomma bättre förutsättningar för trygghet och studiero i skolan genom flera samverkande åtgärder. Regeringen föreslår bl.a. att huvudmannens och rektorns ansvar för tryggheten och studie</span><span>&#xad;</span><span>ron på skolenheten ska förtydligas. Utöver ett förebyggande arbete ska huvud</span><span>&#xad;</span><span>mannen och rektorn bedriva ett arbete för att upprätthålla tryggheten och stu</span><span>&#xad;</span><span>dieron. Regeringen föreslår vidare att skolan ska göras mobilfri genom att ele</span><span>&#xad;</span><span>vernas mobiltelefoner samlas in vid skoldagens början och lämnas tillbaka vid skoldagens slut i de obligatoriska skolformerna, fritidshemmet och öppen fri</span><span>&#xad;</span><span>tidsverksamhet. Dessutom föreslår regeringen att dagens ordningsregler ska byta namn till skolregler, bli skolgemensamma och innehålla en plan för kon</span><span>&#xad;</span><span>sekvenser vid överträdelser av reglerna. Vidare ska möjligheterna stärkas att använda de disciplinära åtgärderna utvisning ur undervisningslokalen, till</span><span>&#xad;</span><span>fällig omplacering inom den egna skolenheten, tillfällig placering utanför den egna skolenheten och avstängning. Vidare föreslår regeringen att det i vissa fall även ska bli möjligt att neka en elev tillträde till skolenheten om eleven hotar säkerheten för andra elever och personal. Skolans förväntningar på ele</span><span>&#xad;</span><span>verna och deras vårdnadshavare ska tydliggöras genom ett förväntansdoku</span><span>&#xad;</span><span>ment. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Dessutom föreslås att det ska bli möjligt att bedriva akutskola på entrepre</span><span>&#xad;</span><span>nad, dvs. en verksamhet där elever tillfälligt ges undervisning utanför den egna skolenheten.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Ändringarna i skollagen föreslås träda i kraft den 1</span><span>&#xa0;</span><span>augusti 2026.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Utskottet anser att riksdagen bör avslå samtliga motionsyrkanden.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>I betänkandet finns nio reservationer (S, V, C, MP).</span>
+			</p>
+			<p class="R4">
+				<span>Behandlade förslag</span>
+			</p>
+			<div style="-aw-sdt-tag:'sum_bf'; -aw-sdt-title:'sammanställning över behandlade förslag'">
+				<p>
+					<span>Proposition 2025/26:193 Bättre förutsättningar för trygghet och studiero i skolan.</span>
+				</p>
+				<p>
+					<span>Elva yrkanden i följdmotioner.</span>
+				</p>
+			</div>
+			<p>
+				<span style="-aw-import:ignore">&#xa0;</span>
+			</p>
+			<p class="Innehllsfrteckning">
+				<span style="height:0pt; display:block; position:absolute; z-index:0"><img src="https://data.riksdagen.se/fil/HD01UbU22/Dokument.001.png" width="400" height="34" alt="" style="margin-top:-35.35pt; margin-left:2.95pt; -aw-left-pos:2.95pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:-35.35pt; -aw-wrap-type:none; position:absolute"></span><a name="Innehållsförteckning"></a><span class="tSidrubrikJA">Innehållsförteckning</span>
+			</p>
+			<p class="TOC1">
+				<a href="#_Toc230339566" style="text-decoration:none"><span class="Hyperlink">Utskottets förslag till riksdagsbeslut</span></a>
+			</p>
+			<p class="TOC1">
+				<a href="#_Toc230339567" style="text-decoration:none"><span class="Hyperlink">Redogörelse för ärendet</span></a>
+			</p>
+			<p class="TOC2">
+				<a href="#_Toc230339568" style="text-decoration:none"><span class="Hyperlink">Ärendet och dess beredning</span></a>
+			</p>
+			<p class="TOC2">
+				<a href="#_Toc230339569" style="text-decoration:none"><span class="Hyperlink">Propositionens huvudsakliga innehåll</span></a>
+			</p>
+			<p class="TOC1">
+				<a href="#_Toc230339570" style="text-decoration:none"><span class="Hyperlink">Utskottets överväganden</span></a>
+			</p>
+			<p class="TOC2">
+				<a href="#_Toc230339571" style="text-decoration:none"><span class="Hyperlink">Regeringens lagförslag</span></a>
+			</p>
+			<p class="TOC3">
+				<a href="#_Toc230339572" style="text-decoration:none"><span class="Hyperlink">Utskottets ställningstagande</span></a>
+			</p>
+			<p class="TOC2">
+				<a href="#_Toc230339573" style="text-decoration:none"><span class="Hyperlink">Dokumentationskrav vid utvisning ur undervisningslokalen och kvarsittning</span></a>
+			</p>
+			<p class="TOC3">
+				<a href="#_Toc230339574" style="text-decoration:none"><span class="Hyperlink">Utskottets ställningstagande</span></a>
+			</p>
+			<p class="TOC2">
+				<a href="#_Toc230339575" style="text-decoration:none"><span class="Hyperlink">Utredning om förutsättningar för utvisning ur undervisningslokalen</span></a>
+			</p>
+			<p class="TOC3">
+				<a href="#_Toc230339576" style="text-decoration:none"><span class="Hyperlink">Utskottets ställningstagande</span></a>
+			</p>
+			<p class="TOC2">
+				<a href="#_Toc230339577" style="text-decoration:none"><span class="Hyperlink">Mobilfri skola</span></a>
+			</p>
+			<p class="TOC3">
+				<a href="#_Toc230339578" style="text-decoration:none"><span class="Hyperlink">Utskottets ställningstagande</span></a>
+			</p>
+			<p class="TOC2">
+				<a href="#_Toc230339579" style="text-decoration:none"><span class="Hyperlink">Skolregler</span></a>
+			</p>
+			<p class="TOC3">
+				<a href="#_Toc230339580" style="text-decoration:none"><span class="Hyperlink">Utskottets ställningstagande</span></a>
+			</p>
+			<p class="TOC2">
+				<a href="#_Toc230339581" style="text-decoration:none"><span class="Hyperlink">Förväntansdokument</span></a>
+			</p>
+			<p class="TOC3">
+				<a href="#_Toc230339582" style="text-decoration:none"><span class="Hyperlink">Utskottets ställningstagande</span></a>
+			</p>
+			<p class="TOC2">
+				<a href="#_Toc230339583" style="text-decoration:none"><span class="Hyperlink">Tillfällig omplacering och akutskolor på entreprenad</span></a>
+			</p>
+			<p class="TOC3">
+				<a href="#_Toc230339584" style="text-decoration:none"><span class="Hyperlink">Utskottets ställningstagande</span></a>
+			</p>
+			<p class="TOC1">
+				<a href="#_Toc230339585" style="text-decoration:none"><span class="Hyperlink">Reservationer</span></a>
+			</p>
+			<p class="TOC6" style="margin-right:17pt; margin-left:19.85pt; text-indent:-14.15pt">
+				<span class="Hyperlink">1.</span><span style="width:7.02pt; text-indent:0pt; display:inline-block">&#xa0;</span><a href="#_Toc230339586" style="text-decoration:none"><span class="Hyperlink">Regeringens lagförslag, punkt 1 (V)</span></a>
+			</p>
+			<p class="TOC6" style="margin-right:17pt; margin-left:19.85pt; text-indent:-14.15pt">
+				<span class="Hyperlink">2.</span><span style="width:7.02pt; text-indent:0pt; display:inline-block">&#xa0;</span><a href="#_Toc230339587" style="text-decoration:none"><span class="Hyperlink">Dokumentationskrav vid utvisning ur undervisningslokalen och kvarsittning, punkt 2 (V, C, MP)</span></a>
+			</p>
+			<p class="TOC6" style="margin-right:17pt; margin-left:19.85pt; text-indent:-14.15pt">
+				<span class="Hyperlink">3.</span><span style="width:7.02pt; text-indent:0pt; display:inline-block">&#xa0;</span><a href="#_Toc230339588" style="text-decoration:none"><span class="Hyperlink">Utredning om förutsättningar för utvisning ur undervisningslokalen, punkt 3 (V)</span></a>
+			</p>
+			<p class="TOC6" style="margin-right:17pt; margin-left:19.85pt; text-indent:-14.15pt">
+				<span class="Hyperlink">4.</span><span style="width:7.02pt; text-indent:0pt; display:inline-block">&#xa0;</span><a href="#_Toc230339589" style="text-decoration:none"><span class="Hyperlink">Mobilfri skola, punkt 4 (C)</span></a>
+			</p>
+			<p class="TOC6" style="margin-right:17pt; margin-left:19.85pt; text-indent:-14.15pt">
+				<span class="Hyperlink">5.</span><span style="width:7.02pt; text-indent:0pt; display:inline-block">&#xa0;</span><a href="#_Toc230339590" style="text-decoration:none"><span class="Hyperlink">Mobilfri skola, punkt 4 (MP)</span></a>
+			</p>
+			<p class="TOC6" style="margin-right:17pt; margin-left:19.85pt; text-indent:-14.15pt">
+				<span class="Hyperlink">6.</span><span style="width:7.02pt; text-indent:0pt; display:inline-block">&#xa0;</span><a href="#_Toc230339591" style="text-decoration:none"><span class="Hyperlink">Skolregler, punkt 5 (V)</span></a>
+			</p>
+			<p class="TOC6" style="margin-right:17pt; margin-left:19.85pt; text-indent:-14.15pt">
+				<span class="Hyperlink">7.</span><span style="width:7.02pt; text-indent:0pt; display:inline-block">&#xa0;</span><a href="#_Toc230339592" style="text-decoration:none"><span class="Hyperlink">Förväntansdokument, punkt 6 (S, V, MP)</span></a>
+			</p>
+			<p class="TOC6" style="margin-right:17pt; margin-left:19.85pt; text-indent:-14.15pt">
+				<span class="Hyperlink">8.</span><span style="width:7.02pt; text-indent:0pt; display:inline-block">&#xa0;</span><a href="#_Toc230339593" style="text-decoration:none"><span class="Hyperlink">Tillfällig omplacering och akutskolor på entreprenad, punkt 7 (S, V)</span></a>
+			</p>
+			<p class="TOC6" style="margin-right:17pt; margin-left:19.85pt; text-indent:-14.15pt">
+				<span class="Hyperlink">9.</span><span style="width:7.02pt; text-indent:0pt; display:inline-block">&#xa0;</span><a href="#_Toc230339594" style="text-decoration:none"><span class="Hyperlink">Tillfällig omplacering och akutskolor på entreprenad, punkt 7 (C)</span></a>
+			</p>
+			<p class="TOC8">
+				<span class="Hyperlink" style="font-style:italic">Bilaga 1</span><br><a href="#_Toc230339595" style="text-decoration:none"><span class="Hyperlink">Förteckning över behandlade förslag</span></a>
+			</p>
+			<p class="TOC9">
+				<a href="#_Toc230339596" style="text-decoration:none"><span class="Hyperlink">Propositionen</span></a>
+			</p>
+			<p class="TOC9">
+				<a href="#_Toc230339597" style="text-decoration:none"><span class="Hyperlink">Följdmotionerna</span></a>
+			</p>
+			<p class="TOC8">
+				<span class="Hyperlink" style="font-style:italic">Bilaga 2</span><br><a href="#_Toc230339598" style="text-decoration:none"><span class="Hyperlink">Regeringens lagförslag</span></a>
+			</p>
+			<p class="Fluglort">
+			</p>
+			<p class="Fluglort">
+				<span style="-aw-import:ignore">&#xa0;</span>
+			</p>
+			<p class="Avsnittsrubrik">
+				<a name="_Toc230339566"><span style="height:0pt; display:block; position:absolute; z-index:1"><img src="https://data.riksdagen.se/fil/HD01UbU22/Dokument.001.png" width="400" height="34" alt="" style="margin-top:-35.35pt; margin-left:-5.85pt; -aw-left-pos:-5.85pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:-35.35pt; -aw-wrap-type:none; position:absolute"></span></a><a name="StopCC"></a><span class="tSidrubrikJA">Utskottets förslag till riksdagsbeslut</span><span style="-aw-bookmark-end:_Toc230339566"></span>
+			</p>
+			<div style="-aw-sdt-tag:'dokumentavsnitt/utskottets förslag till riksdagsbeslut/1565930051/1779351981278'; -aw-sdt-title:'utskottets förslag till riksdagsbeslut'">
+				<p class="Mellanrum">
+					<span style="-aw-import:spaces">&#xa0;</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:spaces">&#xa0;</span>
+				</p>
+				<table cellspacing="0" cellpadding="0" style="width:294.2pt; margin-top:0pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
+					<tr style="page-break-inside:avoid">
+						<td style="width:22pt; vertical-align:top">
+							<p class="NormalLeft" style="page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">1.</span>
+							</p>
+						</td>
+						<td style="width:272.2pt; vertical-align:top">
+							<p class="NormalLeft" style="page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">Regeringens lagförslag</span>
+							</p>
+						</td>
+					</tr>
+				</table>
+				<p class="Normalinskjuten">
+					<span>Riksdagen antar regeringens förslag till lag om ändring i skollagen (2010:800).</span>
+				</p>
+				<p class="Normalinskjutenindrag" style="text-indent:11.3pt">
+					<span>Därmed bifaller riksdagen proposition 2025/26:193 och avslår motion </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4002 av Isabell Mixter m.fl. (V) yrkande 3.</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:ignore">&#xa0;</span>
+				</p>
+				<p class="Reservationshnvisning">
+					<span>Reservation 1 (V)</span>
+				</p>
+				<table cellspacing="0" cellpadding="0" style="width:294.2pt; margin-top:0pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
+					<tr style="page-break-inside:avoid">
+						<td style="width:22pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">2.</span>
+							</p>
+						</td>
+						<td style="width:272.2pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">Dokumentationskrav vid utvisning ur undervisningslokalen och kvarsittning</span>
+							</p>
+						</td>
+					</tr>
+				</table>
+				<p class="Normalinskjuten">
+					<span>Riksdagen avslår motionerna </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4041 av Niels Paarup-Petersen m.fl. (C) yrkande 3 och </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4050 av Camilla Hansén m.fl. (MP) yrkande 1.</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:ignore">&#xa0;</span>
+				</p>
+				<p class="Reservationshnvisning">
+					<span>Reservation 2 (V, C, MP)</span>
+				</p>
+				<table cellspacing="0" cellpadding="0" style="width:294.2pt; margin-top:0pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
+					<tr style="page-break-inside:avoid">
+						<td style="width:22pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">3.</span>
+							</p>
+						</td>
+						<td style="width:272.2pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">Utredning om förutsättningar för utvisning ur undervisningslokalen</span>
+							</p>
+						</td>
+					</tr>
+				</table>
+				<p class="Normalinskjuten">
+					<span>Riksdagen avslår motion </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4002 av Isabell Mixter m.fl. (V) yrkande 2.</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:ignore">&#xa0;</span>
+				</p>
+				<p class="Reservationshnvisning">
+					<span>Reservation 3 (V)</span>
+				</p>
+				<table cellspacing="0" cellpadding="0" style="width:294.2pt; margin-top:0pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
+					<tr style="page-break-inside:avoid">
+						<td style="width:22pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">4.</span>
+							</p>
+						</td>
+						<td style="width:272.2pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">Mobilfri skola</span>
+							</p>
+						</td>
+					</tr>
+				</table>
+				<p class="Normalinskjuten">
+					<span>Riksdagen avslår motionerna </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4041 av Niels Paarup-Petersen m.fl. (C) yrkande 1 och </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4050 av Camilla Hansén m.fl. (MP) yrkande 3.</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:ignore">&#xa0;</span>
+				</p>
+				<p class="Reservationshnvisning" style="margin-bottom:0pt">
+					<span>Reservation 4 (C)</span>
+				</p>
+				<p class="Reservationshnvisning">
+					<span>Reservation 5 (MP)</span>
+				</p>
+				<table cellspacing="0" cellpadding="0" style="width:294.2pt; margin-top:0pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
+					<tr style="page-break-inside:avoid">
+						<td style="width:22pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">5.</span>
+							</p>
+						</td>
+						<td style="width:272.2pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">Skolregler</span>
+							</p>
+						</td>
+					</tr>
+				</table>
+				<p class="Normalinskjuten">
+					<span>Riksdagen avslår motion </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4002 av Isabell Mixter m.fl. (V) yrkande 1.</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:ignore">&#xa0;</span>
+				</p>
+				<p class="Reservationshnvisning">
+					<span>Reservation 6 (V)</span>
+				</p>
+				<table cellspacing="0" cellpadding="0" style="width:294.2pt; margin-top:0pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
+					<tr style="page-break-inside:avoid">
+						<td style="width:22pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">6.</span>
+							</p>
+						</td>
+						<td style="width:272.2pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">Förväntansdokument</span>
+							</p>
+						</td>
+					</tr>
+				</table>
+				<p class="Normalinskjuten">
+					<span>Riksdagen avslår motionerna </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4018 av Anders Ygeman m.fl. (S) yrkande 2 och </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4050 av Camilla Hansén m.fl. (MP) yrkande 2.</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:ignore">&#xa0;</span>
+				</p>
+				<p class="Reservationshnvisning">
+					<span>Reservation 7 (S, V, MP)</span>
+				</p>
+				<table cellspacing="0" cellpadding="0" style="width:294.2pt; margin-top:0pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
+					<tr style="page-break-inside:avoid">
+						<td style="width:22pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">7.</span>
+							</p>
+						</td>
+						<td style="width:272.2pt; vertical-align:top">
+							<p class="NormalLeft" style="margin-top:3pt; page-break-inside:avoid; page-break-after:avoid">
+								<span style="font-size:10.5pt; font-weight:bold">Tillfällig omplacering och akutskolor på entreprenad</span>
+							</p>
+						</td>
+					</tr>
+				</table>
+				<p class="Normalinskjuten">
+					<span>Riksdagen avslår motionerna </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4018 av Anders Ygeman m.fl. (S) yrkande 1 och </span>
+				</p>
+				<p class="Normalinskjuten">
+					<span>2025/26:4041 av Niels Paarup-Petersen m.fl. (C) yrkande 2.</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:ignore">&#xa0;</span>
+				</p>
+				<p class="Reservationshnvisning" style="margin-bottom:0pt">
+					<span>Reservation 8 (S, V)</span>
+				</p>
+				<p class="Reservationshnvisning">
+					<span>Reservation 9 (C)</span>
+				</p>
+				<p class="OrtochDatum">
+					<span>Stockholm den 21 maj 2026</span>
+				</p>
+				<p class="PVgnar">
+					<span>På utbildningsutskottets vägnar</span>
+				</p>
+				<p class="Ordfranden">
+					<span>Joar Forssell</span>
+				</p>
+				<p class="Deltagare">
+					<span>Följande ledamöter har deltagit i beslutet: Joar Forssell (L), Anders Ygeman (S), Patrick Reslow (SD), Josefin Malmqvist (M), Linus Sköld (S), Mats Wiking (S), Jörgen Grubb (SD), Ulrika Heindorff (M), Isabell Mixter (V), Mathias Bengtsson (KD), Anders Alftberg (SD), Camilla Hansén (MP), Robert Olesen (S), Niklas Sigvardsson (S), Peter Ollén (M), Kent Kumpula (SD) och Madeleine Atlas (C).</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:ignore">&#xa0;</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="-aw-import:ignore">&#xa0;</span>
+				</p>
+				<p class="Mellanrum">
+					<span style="font-size:9.5pt; -aw-import:ignore">&#xa0;</span>
+				</p>
+			</div>
+			<p class="Avsnittsrubrik">
+				<a name="_Toc230339567"><span style="height:0pt; display:block; position:absolute; z-index:2"><img src="https://data.riksdagen.se/fil/HD01UbU22/Dokument.001.png" width="400" height="34" alt="" style="margin-top:-35.35pt; margin-left:2.95pt; -aw-left-pos:2.95pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:-35.35pt; -aw-wrap-type:none; position:absolute"></span></a><a name="SlutUtskottsForslag"></a><span class="tSidrubrikJA">Redogörelse för ärendet</span><span style="-aw-bookmark-end:_Toc230339567"></span>
+			</p>
+			<h2 style="line-height:13.5pt">
+				<a name="_Toc230339568"><span>Ärendet och dess beredning</span></a>
+			</h2>
+			<p>
+				<span>I betänkandet behandlar utskottet regeringens proposition 2025/26:193 Bättre förutsättningar för trygghet och studiero i skolan. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen beslutade den 29</span><span>&#xa0;</span><span>januari 2026 att begära Lagrådets yttrande över regeringens lagförslag. Regeringen följer Lagrådets synpunkter och för</span><span>&#xad;</span><span>slag. I förhållande till lagrådsremissens lagförslag görs dessutom vissa språk</span><span>&#xad;</span><span>liga och redaktionella ändringar. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Fyra motioner med sammanlagt elva yrkanden har väckts med anledning av propositionen. En förteckning över de behandlade förslagen finns i bilaga</span><span>&#xa0;</span><span>1. Regeringens lagförslag finns i bilaga</span><span>&#xa0;</span><span>2.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>I propositionen ges en redogörelse för ärendets beredning fram till reger</span><span>&#xad;</span><span>ingens beslut om propositionen. </span>
+			</p>
+			<h2 style="line-height:13.5pt">
+				<a name="_Toc230339569"><span>Propositionens huvudsakliga innehåll</span></a>
+			</h2>
+			<p>
+				<span>Propositionen innehåller förslag till ändringar i skollagen (2010:800) som syf</span><span>&#xad;</span><span>tar till att åstadkomma bättre förutsättningar för trygghet och studiero i skolan genom flera samverkande åtgärder. Förslagen innebär i huvudsak följande.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Huvudmannens och rektorns ansvar för tryggheten och studieron på skolen</span><span>&#xad;</span><span>heten ska förtydligas. Utöver ett förebyggande arbete ska huvudmannen och rektorn bedriva ett arbete för att upprätthålla tryggheten och studieron. Skolan ska göras mobilfri genom att elevernas mobiltelefoner samlas in vid skolda</span><span>&#xad;</span><span>gens början och lämnas tillbaka vid skoldagens slut i de obligatoriska skol</span><span>&#xad;</span><span>formerna, fritidshemmet och öppen fritidsverksamhet. Dagens ordningsregler ska byta namn till skolregler, bli skolgemensamma och innehålla en plan för konsekvenser vid överträdelser av reglerna. Vidare ska möjligheterna stärkas att använda de disciplinära åtgärderna utvisning ur undervisningslokalen, till</span><span>&#xad;</span><span>fällig omplacering inom den egna skolenheten, tillfällig placering utanför den egna skolenheten och avstängning. I vissa fall ska det även bli möjligt att neka en elev tillträde till skolenheten om eleven hotar säkerheten för andra elever och personal. Skolans förväntningar på eleverna och deras vårdnadshavare ska tydliggöras genom ett förväntansdokument.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Dessutom föreslås att det ska bli möjligt att bedriva akutskola på entrepre</span><span>&#xad;</span><span>nad, dvs. en verksamhet där elever tillfälligt ges undervisning utanför den egna skolenheten.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Ändringarna i skollagen föreslås träda i kraft den 1</span><span>&#xa0;</span><span>augusti 2026. </span>
+			</p>
+			<p class="Avsnittsrubrik">
+				<a name="_Toc230339570"><span style="height:0pt; display:block; position:absolute; z-index:3"><img src="https://data.riksdagen.se/fil/HD01UbU22/Dokument.001.png" width="400" height="34" alt="" style="margin-top:-35.35pt; margin-left:-5.85pt; -aw-left-pos:-5.85pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:-35.35pt; -aw-wrap-type:none; position:absolute"></span><span class="tSidrubrikJA">Utskottets överväganden</span></a>
+			</p>
+			<p class="R2" style="margin-top:0pt; line-height:13.5pt">
+				<span>Inledning</span>
+			</p>
+			<p>
+				<span>Betänkandet är disponerat så att utskottet inleder med att behandla lagförsla</span><span>&#xad;</span><span>gen. Därefter behandlas motionsyrkandena som innehåller förslag om tillkän</span><span>&#xad;</span><span>nagivanden till regeringen i frågor som anknyter till propositionens förslag.</span>
+			</p>
+			<div style="-aw-sdt-tag:'d3aa9207-66db-4951-bdc8-f3ad4c3623fe/förslagsrutor/-1999618586/1777374578017'; -aw-sdt-title:'förslagsrutor'">
+				<h2 style="line-height:13.5pt">
+					<a name="_Toc230339571"><span>Regeringens lagförslag</span></a>
+				</h2>
+			</div>
+			<span style="-aw-bookmark-end:_Toc230339571">
+			</span>
+			<div style="margin-top:3.1pt; margin-right:0.9pt; margin-left:0.9pt; border:0.75pt solid #000000; -aw-border:0.5pt single; clear:both">
+				<p class="Normalrutafet" style="margin-top:0pt; margin-right:0pt; margin-left:0pt; border-style:none; padding-bottom:0pt">
+					<span>Utskottets förslag i korthet</span>
+				</p>
+				<p class="Normalruta" style="margin-top:0pt; margin-right:0pt; margin-left:0pt; border-style:none; padding-top:0pt; padding-bottom:0pt">
+					<span>Riksdagen antar regeringens förslag till ändringar i skollagen. Där</span><span>&#xad;</span><span>med avslår riksdagen ett motionsyrkande om en ändring i regering</span><span>&#xad;</span><span>ens förslag.</span>
+				</p>
+				<p class="Normalrutaindrag" style="margin-right:0pt; margin-left:0pt; border-style:none; padding-top:0pt; padding-bottom:0pt">
+					<span>Lagändringarna syftar till att skapa bättre förutsättningar för trygghet och studiero i skolan genom flera samverkande åtgärder. Bland annat ska skolan göras mobilfri och skolans förväntningar på eleverna och deras vårdnadshavare ska tydliggöras genom ett för</span><span>&#xad;</span><span>väntansdokument. Dessutom ska det nuvarande kravet på att ett beslut om utvisning ur undervisningslokalen eller kvarsittning ska dokumenteras skriftligt av den som har genomfört åtgärden, tas bort.</span>
+				</p>
+				<div style="-aw-sdt-tag:'d3aa9207-66db-4951-bdc8-f3ad4c3623fe/förslagsrutor reservations text/-368174713/1777374578027'; -aw-sdt-title:'förslagsrutor reservations text'">
+					<p class="Normalrutaindrag" style="margin-right:0pt; margin-left:0pt; border-style:none; padding-top:0pt">
+						<span>Jämför reservation 1 (V).</span>
+					</p>
+				</div>
+			</div>
+			<p class="R3">
+				<span>Propositionen</span>
+			</p>
+			<p class="R4" style="margin-top:6.25pt; margin-bottom:0pt">
+				<span>Bakgrund</span>
+			</p>
+			<p class="R5">
+				<span>Det behövs bättre förutsättningar för trygghet och studiero i skolan </span>
+			</p>
+			<p>
+				<span>Regeringen framhåller i propositionen att skolan ska ge alla elever goda möj</span><span>&#xad;</span><span>ligheter till lärande och utveckling. Vidare är trygghet och studiero viktiga förutsättningar för att undervisningen ska kunna förmedla och förankra kun</span><span>&#xad;</span><span>skaper och värden hos eleverna och för att alla som verkar i skolan ska trivas och må bra. Flera undersökningar visar att det finns en tydlig koppling mellan studiero och elevers kunskapsutveckling och att det finns en koppling mellan bristande studiero på lektionerna och förekomsten av våld och kränkningar samt sämre mående hos eleverna. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>I avsnitt</span><span>&#xa0;</span><span>4 i propositionen ger regeringen en bakgrund till förslagen i propo</span><span>&#xad;</span><span>sitionen. Regeringen lyfter bl.a. följande.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Den svenska skolan har på senare år blivit mer otrygg och det finns brister i studieron. Många elever upplever en bristande studiero i klassrummen, vilket påverkar både deras egen och klasskamraternas möjlighet att tillgodogöra sig undervisningen. Regeringen noterar att skolan är den vanligaste brottsplatsen för både mindre grov och grövre misshandel, samt för fysiska sexuella kränk</span><span>&#xad;</span><span>ningar bland pojkar. Skolmiljön är också en vanlig brottsplats vid hot. Reger</span><span>&#xad;</span><span>ingen påpekar att rektorer, lärare och annan personal i dag ofta saknar rätt för</span><span>&#xad;</span><span>utsättningar för att upprätthålla trygghet och studiero och motverka att ord</span><span>&#xad;</span><span>ningsstörningar, kränkningar, hot eller våld uppstår i och utanför undervis</span><span>&#xad;</span><span>ningen. Regeringen anger att det finns både oklarheter i nuvarande lagstiftning och brister i hur regelverket fungerar i praktiken. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen ser behov av ett regelverk som stärker skolans pedagogiska uppdrag och samtidigt ger personalen verktyg för att hantera situationer som idag hindrar undervisningen. Regeringen anser att regelverket om de mer in</span><span>&#xad;</span><span>gripande disciplinära åtgärderna måste ge skolan möjlighet att agera effektivt och ändamålsenligt när en allvarlig situation uppstår. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>I avsnitt</span><span>&#xa0;</span><span>5 i propositionen redogör regeringen för nuvarande reglering på området. Nedan redogörs för regeringens förslag (se även avsnitt 6–8 i propo</span><span>&#xad;</span><span>sitionen).</span>
+			</p>
+			<p class="R4">
+				<span>Det behövs en tydligare reglering av huvudmannens och rektorns ansvar för trygghet och studiero</span>
+			</p>
+			<p class="R5">
+				<span>Regeringens förslag</span>
+			</p>
+			<p>
+				<span>Det ska förtydligas i skollagen att det ska bedrivas både ett förebyggande arbe</span><span>&#xad;</span><span>te som syftar till att skapa trygghet och studiero och ett arbete för att tryggheten och studieron ska upprätthållas. Huvudmannen ska säkerställa att arbetet be</span><span>&#xad;</span><span>drivs och rektorn ska ansvara för att bedriva det.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Bemyndigandet för regeringen eller den myndighet som regeringen be</span><span>&#xad;</span><span>stämmer att meddela föreskrifter om arbetet med trygghet och studiero ska förtydligas så att det framgår att det även omfattar huvudmannens upprätt</span><span>&#xad;</span><span>hållande arbete samt rektorns förebyggande och upprätthållande arbete.</span>
+			</p>
+			<p class="R5">
+				<span>Skälen för regeringens förslag</span>
+			</p>
+			<p class="R6">
+				<span>För att utbildningen ska präglas av trygghet och studiero krävs ett förbyggande och upprätthållande arbete</span>
+			</p>
+			<p>
+				<span>Arbetet med trygghet och studiero är komplext och skolornas arbete behöver vara inriktat både mot att motverka att brister uppstår och mot att vidta åtgärder när brister ändå uppstår. Därför anser regeringen att ett välfungerande arbete för trygghet och studiero förutsätter ett långsiktigt och målmedvetet arbete som omfattar hela skolan och där hela organisationen involveras. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen anser att ansvaret för såväl det förebyggande som det upprätt</span><span>&#xad;</span><span>hållande arbetet bör regleras på ett tydligt sätt. Huvudmannen har det yttersta ansvaret för verksamheten och behöver säkerställa att rektorn har de förutsätt</span><span>&#xad;</span><span>ningar som behövs. Regeringen föreslår därför att det är huvudmannens ansvar som ska förtydligas så att det även omfattar arbetet med att upprätthålla trygg</span><span>&#xad;</span><span>heten och studieron.</span>
+			</p>
+			<p class="R6">
+				<span>Rektorns ansvar för arbetet med trygghet och studiero behöver förtydligas</span>
+			</p>
+			<p>
+				<span>Rektorn ansvarar för den egna skolenheten, men rektorns ansvar för trygghet och studiero framgår inte explicit av skollagen. Regeringen anser därför att även rektorns ansvar för trygghet och studiero bör synliggöras i skollagen. Ett tyd</span><span>&#xad;</span><span>ligt utpekat rektorsansvar ökar också förutsättningarna för ett verksamhets</span><span>&#xad;</span><span>nära ledarskap. Rektorn behöver ansvara för att bedriva både ett förebyggande arbete och ett arbete för att upprätthålla tryggheten och studieron i skolmiljön. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Även om arbetet med trygghet och studiero behöver bedrivas på flera nivåer har rektorn en särskild roll på skolenheten. Att rektorn har ett ansvar för arbetet med trygghet och studiero på skolenheten innebär dock enligt regeringen inte att detta arbete endast ska utföras av rektorn. Regeringen anser att förväntning</span><span>&#xad;</span><span>arna på rektorn behöver vara realistiska och att arbetet med trygghet och stu</span><span>&#xad;</span><span>diero måste vara en gemensam angelägenhet för alla yrkesgrupper i skolan. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen anser vidare att ett aktivt och ständigt pågående arbete med trygghet och studiero är viktigt även på komvux och att bestämmelserna i skol</span><span>&#xad;</span><span>lagen därför även bör omfatta rektorer i denna skolform. Det faktiska arbetet behöver dock anpassas utifrån aktuell skolform och med hänsyn till att eleverna är vuxna.</span>
+			</p>
+			<p class="R6">
+				<span>Huvudmannen ansvarar för att rektorn ges rätt förutsättningar och rektorn ansvarar för att se till att personalen har nödvändiga förutsättningar för att agera</span>
+			</p>
+			<p>
+				<span>Regeringen konstaterar i propositionen att huvudmannen redan i dag har det yttersta ansvaret för att rektorn genomför sitt uppdrag och för att rektorn har de förutsättningar som behövs för att kunna göra det. Regeringen konstaterar även att rektorns ansvar för att personalen har nödvändiga förutsättningar redan följer av gällande bestämmelser. Regeringen vill dock betona vikten av att ge personalen nödvändiga förutsättningar i arbetet med trygghet och stu</span><span>&#xad;</span><span>diero och poängterar att rektorn behöver skapa förutsättningar för skolans personal att agera. Regeringen föreslår därför att det görs ett tillägg i skollagen som förtydligar att rektorn ska se till att det finns förutsättningar för skolans personal att vidta de tillfälliga och omedelbara åtgärder som krävs för att till</span><span>&#xad;</span><span>försäkra elever och personal trygghet och studiero.</span>
+			</p>
+			<p class="R6">
+				<span>Det ska kunna meddelas föreskrifter om såväl det förebyggande som det upprätthållande arbetet</span>
+			</p>
+			<p>
+				<span>Regeringen anser att bemyndigandet i skollagen om att regeringen eller den myndighet som regeringen bestämmer får meddela föreskrifter om arbetet med trygghet och studiero bör förtydligas. Enligt regeringen bör bemyndigandet även omfatta föreskrifter om det upprätthållande arbetet. Sådana föreskrifter kan även öka förutsättningarna att bedriva en effektiv tillsyn, eftersom Skol</span><span>&#xad;</span><span>inspektionens möjligheter att använda sig av vitesförelägganden för att komma till rätta med konstaterade brister begränsas om det saknas föreskrifter.</span>
+			</p>
+			<p class="R4">
+				<span>Lärarna ska få utökade möjligheter att visa ut elever ur undervisningslokalen</span>
+			</p>
+			<p class="R5">
+				<span>Regeringens förslag</span>
+			</p>
+			<p>
+				<span>För att en lärare eller handledare ska få visa ut en elev ur undervisningslokalen ska det i vissa fall inte längre krävas att läraren eller handledaren först har uppmanat eleven att ändra sitt uppförande. Detta ska gälla när elevens upp</span><span>&#xad;</span><span>trädande har inneburit våld, hot eller kränkning.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Om ingen lärare eller handledare är närvarande i lokalen ska detta gälla även annan personal.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Det görs språkliga och redaktionella ändringar i bestämmelserna om all</span><span>&#xad;</span><span>männa befogenheter för personalen.</span>
+			</p>
+			<p class="R5">
+				<span>Skälen för regeringens förslag</span>
+			</p>
+			<p class="R6">
+				<span>Skolpersonalen behöver fler möjligheter att ingripa mot ordningsstörningar på ett effektivt sätt</span>
+			</p>
+			<p>
+				<span>Regeringen anser att skolpersonalen behöver fler möjligheter att ingripa mot ordningsstörningar på ett effektivt sätt, särskilt när allvarliga situationer upp</span><span>&#xad;</span><span>står. Regeringen anser att personalen i sådana situationer måste kunna säker</span><span>&#xad;</span><span>ställa att det finns förutsättningar att bedriva undervisningen och samtidigt värna både elevernas och sin egen säkerhet.</span>
+			</p>
+			<p class="R6">
+				<span>Utvisning ur klassrummet bör kunna ske utan föregående tillsägelse när elevens uppträdande har inneburit våld, hot eller kränkning</span>
+			</p>
+			<p>
+				<span>En åtgärd som kan behöva användas för att komma till rätta med ordnings-störningar är utvisning ur undervisningslokalen. Utvisning ur undervisnings</span><span>&#xad;</span><span>lokalen är en ingripande åtgärd och i dag krävs det att en elev först ska ha uppmanats att ändra sitt uppförande innan eleven kan visas ut ur under</span><span>&#xad;</span><span>visningslokalen. Regeringen anser att detta inte alltid är rimligt. Vid allvarliga händelser, där elevens uppträdande inneburit våld, hot eller kränkningar, kan det vara nödvändigt att omedelbart bryta beteendet genom att visa ut eleven från klassrummet. Regeringen föreslår därför att det inte längre ska krävas en föregående uppmaning i dessa situationer. Regeringen anger att syftet med förslaget är att stärka personalens möjligheter att agera snabbt och adekvat för att upprätthålla trygghet och studiero. Regeringen lyfter dock fram att åtgärden alltid måste stå i rimlig proportion till sitt syfte och omständigheterna i det enskilda fallet. Hänsyn ska även tas till elevens ålder, mognad och förutsätt</span><span>&#xad;</span><span>ningar, och barnets bästa ska vara en utgångspunkt.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen bedömer att även annan personal än lärare ska få visa ut en elev om ingen lärare eller handledare är närvarande i undervisningslokalen. </span>
+			</p>
+			<p class="R6">
+				<span>Skolans personal behöver förutsättningar att utöva sitt tillsynsansvar</span>
+			</p>
+			<p>
+				<span>Huvudmän för förskolor, skolor och fritidshem har ansvar för att barn och ele</span><span>&#xad;</span><span>ver som deltar i verksamheten får den tillsyn de behöver. Regeringen konsta</span><span>&#xad;</span><span>terar att om en elev visas ut ur undervisningslokalen behöver tillsynsan</span><span>&#xad;</span><span>svaret upprätthållas. Förslaget innebär därför att skolan måste ha en organisation och rutiner som gör det möjligt att ta emot elever som visas ut ur undervisnings</span><span>&#xad;</span><span>lokalen, så att lektionen kan fortsätta för övriga elever. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Sammanfattningsvis menar regeringen att förslaget stärker skolpersonalens möjligheter att agera snabbt och proportionerligt vid allvarliga ordningsstör</span><span>&#xad;</span><span>ningar, och därigenom ökar tryggheten och studieron i skolmiljön. Regeringen poängterar dock att åtgärden aldrig får ersätta det stöd elever behöver, utan är ett verktyg för att hantera akuta situationer. </span>
+			</p>
+			<p class="R4">
+				<span>Utvisning och kvarsittning ska inte behöva dokumenteras</span>
+			</p>
+			<p class="R5">
+				<span>Regeringens förslag</span>
+			</p>
+			<p>
+				<span>Det nuvarande kravet på att ett beslut om utvisning ur undervisningslokalen eller kvarsittning ska dokumenteras skriftligt av den som har genomfört åtgär</span><span>&#xad;</span><span>den ska tas bort.</span>
+			</p>
+			<p class="R5">
+				<span>Skälen för regeringens förslag</span>
+			</p>
+			<p class="R6">
+				<span>Dokumentation av utvisning ur undervisningslokalen och kvarsittning utgör en administrativ börda</span>
+			</p>
+			<p>
+				<span>Om en elev visas ut ur undervisningslokalen eller om det beslutas att en elev får kvarsittning krävs det i dag att detta dokumenteras skriftligt. Regeringen gör bedömningen att kravet på skriftlig dokumentation i dessa fall innebär en administrativ börda som riskerar att leda till att åtgärderna inte används, trots att de skulle kunna vara viktiga för att upprätthålla trygghet och studiero. Regeringen påpekar att åtgärderna ligger inom ramen för skolpersonalens all</span><span>&#xad;</span><span>männa befogenheter och bedömer att åtgärderna inte är så ingripande att det av rättssäkerhetsskäl måste finnas en lagreglerad skyldighet att dokumentera dem. </span>
+			</p>
+			<p class="R6">
+				<span>Det finns ett fortsatt behov av information för att upprepade ordnings</span><span>&#xad;</span><span>störningar ska kunna utredas och följas upp</span>
+			</p>
+			<p>
+				<span>Regeringen anser att det, även om dokumentationsskyldigheten tas bort, fort</span><span>&#xad;</span><span>farande kommer att finnas behov av att utreda och följa upp upprepade ord</span><span>&#xad;</span><span>ningsstörningar och att ha rutiner för att upptäcka när sådana behov av utred</span><span>&#xad;</span><span>ningar uppstår. Det kan innebära att rektorn och andra aktörer behöver infor</span><span>&#xad;</span><span>meras om att åtgärderna utvisning ur undervisningslokalen eller kvarsittning har vidtagits. Regeringen anser vidare att lärarna och rektorn, utifrån sina pro</span><span>&#xad;</span><span>fessionella bedömningar, bör kunna avgöra vilket underlag som behövs, exem</span><span>&#xad;</span><span>pelvis för rektorns utredningsskyldighet eller socialtjänstens behov av infor</span><span>&#xad;</span><span>mation. Enligt regeringen kan sådan information vidarebefordras utan lagkrav på formell skriftlig dokumentation.</span>
+			</p>
+			<p class="R4">
+				<span>En mobilfri skola ger bättre förutsättningar för trygghet och studiero</span>
+			</p>
+			<p class="R5">
+				<span>Regeringens förslag </span>
+			</p>
+			<p>
+				<span>Skolan ska göras mobilfri genom att elevers mobiltelefoner ska samlas in vid elevens skoldags början och återlämnas vid elevens skoldags slut. Detta ska gälla i grundskolan, anpassade grundskolan, specialskolan, sameskolan, fri</span><span>&#xad;</span><span>tidshemmet och öppen fritidsverksamhet. Det ska därmed inte längre vara rek</span><span>&#xad;</span><span>torn som fattar beslut om sådan insamling i de nämnda verksamheterna.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Den möjlighet som i dag finns för rektorn att besluta om att elevers övriga elektroniska kommunikationsutrustning ska samlas in ska utvidgas till att även gälla inom öppen fritidsverksamhet.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Rektorn eller en lärare ska få göra undantag från insamling för sådan an</span><span>&#xad;</span><span>vändning av mobiltelefoner och annan elektronisk kommunikationsutrustning som sker enligt lärarens instruktioner i syfte att främja elevernas utveckling och lärande. Undantag får också göras för sådan användning som utgör extra anpassningar eller särskilt stöd samt för en enskild elev om det finns särskilda skäl.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Rektorn eller en lärare ska även få göra undantag från insamling av elever</span><span>&#xad;</span><span>nas mobiltelefoner vid utbildning utanför skolenheten om en insamling eller återlämning skulle medföra betydande praktiska svårigheter.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Förslaget omfattar även förskoleklassen till dess att den upphör som skol</span><span>&#xad;</span><span>form.</span>
+			</p>
+			<p class="R5">
+				<span>Skälen för regeringens förslag</span>
+			</p>
+			<p class="R6">
+				<span>Mobiltelefoner i skolan är ett problem för lärandet och för elevernas mående </span>
+			</p>
+			<p>
+				<span>Regeringen anser att mobiltelefoner i skolan är ett problem eftersom de stör undervisningen, påverkar koncentrationen negativt och kan leda till konflikter vid omhändertagande. Regeringen konstaterar att även om mobiltelefonen stängs av eller lämnas i elevskåp utanför lektionssalen kan den utgöra en källa till stress och distraktion. Såväl lärare som elever beskriver hur det förekom</span><span>&#xad;</span><span>mer att elever hittar på ärenden under lektionstid för att kunna lämna klass</span><span>&#xad;</span><span>rummet för att använda sina mobiltelefoner. Regeringen anser också att mobil</span><span>&#xad;</span><span>telefonanvändning under skoltid bidrar till ökad risk för kränkningar och nät</span><span>&#xad;</span><span>mobbning. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen noterar att det finns forskningsstöd för att omfattande använd</span><span>&#xad;</span><span>ning av mobiltelefoner medför negativa hälsoeffekter som exempelvis försäm</span><span>&#xad;</span><span>rad sömn och minskad fysisk aktivitet. Regeringen lyfter fram att det rådande kunskapsläget ger skäl att utveckla lagstiftningen. Exempelvis visar den ge</span><span>&#xad;</span><span>nomgång av internationell litteratur som Svenska skolläkarföreningen har tagit fram att användning av mobiltelefoner i skolan generellt är kopplat till lägre skolprestation och har negativa kognitiva effekter främst på minnesfunktioner. Därutöver kan ett alltför omfattande mobilanvändande under skoldagen för</span><span>&#xad;</span><span>svåra för elever att umgås med varandra på raster och därmed innebära att eleverna inte får möjlighet att lära sig normer och utveckla förmågor när det gäller t.ex. interaktion och samarbete. </span>
+			</p>
+			<p class="R6">
+				<span>I dag är det rektorn som fattar beslut om att samla in mobiltelefoner under skoldagen men ytterligare åtgärder behövs</span>
+			</p>
+			<p>
+				<span>Sedan den 1</span><span>&#xa0;</span><span>augusti 2022 får en rektor i grundskolan, anpassade grundskolan, specialskolan, sameskolan och fritidshemmet besluta att mobiltelefoner och annan elektronisk kommunikationsutrustning ska samlas in vid varje skoldags början. Regeringen noterar att de flesta grundskolorna (cirka åtta av tio skolor) i dag tillämpar ett sådant beslut om att elevers mobiltelefoner ska vara insam</span><span>&#xad;</span><span>lade under hela skoldagen. Regeringen noterar vidare att oavsett om rektorn har beslutat om insamling eller inte får som huvudregel användning av mobil</span><span>&#xad;</span><span>telefoner eller annan digital kommunikationsutrustning enligt lärares instruk</span><span>&#xad;</span><span>tion endast förkomma i vissa fall. Det gäller sådan användning som syftar till att främja elevernas utveckling och lärande, eller som utgör extra anpassningar eller särskilt stöd.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen konstaterar att trots att rektorer redan i dag kan besluta om dag</span><span>&#xad;</span><span>lig insamling av mobiltelefoner under skoldagen i de obligatoriska skolfor</span><span>&#xad;</span><span>merna och fritidshemmet används inte denna möjlighet på alla skolor, vilket skapar ojämlikhet och varierande förutsättningar för studiero. Regeringen an</span><span>&#xad;</span><span>ser att ett nationellt mobilförbud skulle öka likvärdigheten.</span>
+			</p>
+			<p class="R6">
+				<span>Skolan bör göras mobilfri genom att elevers mobiltelefoner samlas in dagligen</span>
+			</p>
+			<p>
+				<span>Regeringen noterar att den nuvarande bestämmelsen i 5</span><span>&#xa0;</span><span>kap. 4</span><span>&#xa0;</span><span>d</span><span>&#xa0;</span><span>§ skollagen har utformats teknikneutralt och ger således en möjlighet att samla in ”mobil</span><span>&#xad;</span><span>telefoner och annan elektronisk kommunikationsutrustning”. Skälet till att mo</span><span>&#xad;</span><span>biltelefoner har omnämnts särskilt i bestämmelsen är att mobiltelefonen är det privata digitala verktyg som är vanligast att elever har med sig till skolan. Regeringen understryker att den problematiska användningen av digitala en</span><span>&#xad;</span><span>heter i skolmiljön är koncentrerad till användningen av elevers privata mobil</span><span>&#xad;</span><span>telefoner. Regeringen bedömer därför att de digitala riskerna i skolan är som störst med just elevers privata mobiltelefoner. </span>
+			</p>
+			<p class="R6">
+				<span>Mobiltelefonerna ska vara insamlade under hela skoldagen i de obligatoriska skolformerna, fritidshemmet och öppen fritidsverksamhet </span>
+			</p>
+			<p>
+				<span>Regeringen bedömer att det är lämpligt att de verksamheter där rektorn redan i dag har möjlighet att besluta om daglig insamling av mobiltelefoner och an</span><span>&#xad;</span><span>nan elektronisk utrustning, dvs. de obligatoriska skolformerna och fritidshem</span><span>&#xad;</span><span>met, också är de verksamheter som ska göras mobilfria. Dessutom anser reger</span><span>&#xad;</span><span>ingen att öppen fritidsverksamhet, genom sitt uppdrag att komplettera utbild</span><span>&#xad;</span><span>ningen i de obligatoriska skolformerna, har en sådan närhet till skolans övriga verksamhet att en daglig insamling av elevernas mobiltelefoner är motiverad även där.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen anser att mobiltelefonerna bör samlas in i början av varje elevs skoldag och att mobiltelefonerna bör återlämnas i slutet av elevens skoldag. På så sätt behöver det inte läggas tid på att samla in och återlämna en elevs telefon vid flera tillfällen under en elevs skoldag. </span>
+			</p>
+			<p class="R6">
+				<span>Undantag från insamling av mobiltelefoner får göras av rektorn eller en lärare och behöver inte dokumenteras</span>
+			</p>
+			<p>
+				<span>Regeringen anser att det redan finns tillräckliga möjligheter för personal att omhänderta mobiltelefoner vid överträdelser. Regeringen påpekar dock att skolans regler och rutiner behöver vara tydliga när det gäller vilka konsekven</span><span>&#xad;</span><span>serna blir när regler inte följs. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen anser att nuvarande möjligheter till undantag – för användning enligt lärarens instruktioner, som extra anpassning eller särskilt stöd eller för en enskild elev vid särskilda skäl – bör finnas kvar, men tillämpas restriktivt.</span>
+			</p>
+			<p class="R6">
+				<span>Skolan har ett ansvar för insamlade mobiltelefoner</span>
+			</p>
+			<p>
+				<span>Regeringen påpekar att förslaget innebär att fler skolenheter än i dag kommer att samla in och därmed ansvara för ett stort antal mobiltelefoner till ett högt sammanlagt ekonomiskt värde. Regeringen konstaterar vidare att när en elevs mobiltelefon, eller annan elektronisk kommunikationsutrustning, samlas in är det skolans ansvar att förvara den på ett säkert sätt tills den lämnas tillbaka. </span>
+			</p>
+			<p class="R4">
+				<span>Skolornas regler ska bli mer ändamålsenliga, kända och förankrade</span>
+			</p>
+			<p class="R5">
+				<span>Regeringens förslag </span>
+			</p>
+			<p>
+				<span>Termen skolregler ska ersätta termen ordningsregler i skollagen. Skolreglerna ska gälla även för fritidshem som inte är integrerade med en skolenhet och för öppen fritidsverksamhet.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Skolreglerna ska innehålla skolgemensamma förhållningsregler som syftar till att upprätthålla trygghet och studiero. Skolreglerna ska även innehålla en plan för konsekvenser vid överträdelser av reglerna.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Rektorn ska ansvara för att skolreglerna tas fram och besluta om dem. Skol</span><span>&#xad;</span><span>reglerna ska förankras hos eleverna.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Rektorn ska ansvara för att det på skolenheten finns gemensamma rutiner och förhållningssätt i arbetet med att upprätthålla skolreglerna.</span>
+			</p>
+			<p class="R5">
+				<span>Skälen för regeringens förslag</span>
+			</p>
+			<p class="R6">
+				<span>Skolans regler är viktiga för att upprätthålla trygghet och studiero och för ungas inställning till samhällets normer och regler men följs inte alltid</span>
+			</p>
+			<p>
+				<span>Regeringen noterar att det i skollagen finns krav på att det ska finnas ordnings</span><span>&#xad;</span><span>regler i skolan. Det gäller för samtliga skolformer utom förskolan och komvux. Regeringen framhåller att välfungerande ordningsregler är en viktig del i sko</span><span>&#xad;</span><span>lors arbete för trygghet och studiero. Enligt Skolinspektionen kännetecknas skolor som lyckas väl bl.a. av att hela organisationen involveras i arbetet med ordningsreglerna och att reglerna upprätthålls av all personal. Regeringen be</span><span>&#xad;</span><span>dömer att ordningsreglerna även kan bidra i arbetet med att förmedla skolans värdegrund och att lagar och andra föreskrifter som gäller i samhället ska följas. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen noterar vidare att trots att det är så viktigt med välfungerande ordningsregler förekommer det att varken elever eller föräldrar respekterar dessa. Skolinspektionen har exempelvis konstaterat fall där både elever och lärare framhåller regelefterlevnaden i skolorna som låg och att det på vissa skolenheter i dag skapas skolmiljöer där allvarliga fall av stök och bråk inte möts av konsekvenser.</span>
+			</p>
+			<p class="R6">
+				<span>Reglerna bör vara skolgemensamma och därför benämnas skolregler och vila på samhällets demokratiska värden</span>
+			</p>
+			<p>
+				<span>Regeringen anser att tydliga och skolgemensamma regler är en förutsättning för trygghet och studiero. Regeringen anser därför att termen skolregler bättre speglar reglernas syfte, innehåll och värdegrund än den nuvarande termen ordningsregler. Regeringen anser att skolreglerna ska gälla för hela skolenhe</span><span>&#xad;</span><span>ten, inklusive fritidshemmet. För att skapa en enhetlig ordning i hela verksam</span><span>&#xad;</span><span>heten bör därför skolregler även gälla sådan fritidsverksamhet som inte är inte</span><span>&#xad;</span><span>grerad med en skola samt även öppen fritidsverksamhet. Regeringen bedömer vidare att skolreglerna bör vara få, förutsägbara och vila på samhällets demo</span><span>&#xad;</span><span>kratiska värden samt vara tillgängliga och begripliga för alla elever.</span>
+			</p>
+			<p class="R6">
+				<span>Skolans regler ska beslutas av rektorn och förankras hos eleverna</span>
+			</p>
+			<p>
+				<span>Regeringen noterar att trots att det tydligt framgår av skollagen att rektorn ska besluta om ordningsreglerna lämnas arbetet med att formulera ordnings</span><span>&#xad;</span><span>reglerna på sina håll till enskilda klasser eller grupper. Regeringen anser att det är centralt att rektorn tar ansvar för att utarbeta och besluta om reglerna för att upprätthålla en rimlig arbetsmiljö för lärare och övrig personal i skolan. Skolans ledning bör vara tydlig med vilka regler som ska gälla på skolan för att därmed ge personalen förutsättningar att enas i arbetet med att säkerställa att dessa följs. Enligt regeringen finns det därför skäl att förtydliga rek</span><span>&#xad;</span><span>torns mandat och ansvar för att besluta om skolans regler. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen anser att elevernas delaktighet ska säkerställas genom att re</span><span>&#xad;</span><span>glerna förankras hos dem genom dialog och undervisning snarare än genom medbestämmande. </span>
+			</p>
+			<p class="R6">
+				<span>Verkningsfulla skolregler förutsätter välkända konsekvenser som aktiveras vid regelöverträdelser</span>
+			</p>
+			<p>
+				<span>Regeringen anser att det är angeläget att skolor arbetar strukturerat med tydliga regler och gemensamma förhållningssätt för att öka regelefterlevnaden. Reger</span><span>&#xad;</span><span>ingen anser även att det är viktigt att skolreglerna har uttalade konsekvenser som kan aktiveras när reglerna bryts. En skolmiljö där stök och bråk inte får några konsekvenser kan leda till att övriga elever förlorar tilliten till en trygg och rättvis skola där personalen tar ansvar. Skolorna behöver därmed en plan där det framgår vilka åtgärder som ska vidtas i olika situationer, såsom disci</span><span>&#xad;</span><span>plinära åtgärder, och hur de förhåller sig till varandra. Regeringen anser vidare att skolreglerna ska innehålla en sådan plan, eftersom tydliga och väl kända konsekvenser är nödvändiga för att reglerna ska tillämpas enhetligt, rättvist och verkningsfullt.</span>
+			</p>
+			<p class="R6">
+				<span>Rektorn ska ansvara för att det på skolenheten finns gemensamma rutiner och förhållningssätt i arbetet med att upprätthålla skolreglerna</span>
+			</p>
+			<p>
+				<span>För ett välfungerande arbete med skolregler är det enligt regeringen inte till</span><span>&#xad;</span><span>räckligt att de innehåller en konsekvensplan och att de är förankrade med ele</span><span>&#xad;</span><span>verna. Regeringen bedömer att personalen, utöver detta, även behöver ha en gemensam bild av vilka regler som gäller, vikten av att dessa följs och vilka konsekvenser som följer vid överträdelser. Eftersom rektorn föreslås vara an</span><span>&#xad;</span><span>svarig för att ta fram och besluta om skolreglerna är det även rimligt att rektorn ansvarar för skolenhetens rutiner och förhållningssätt när det gäller skolreg</span><span>&#xad;</span><span>lerna. </span>
+			</p>
+			<p class="R4">
+				<span>Skolans förväntningar på eleverna och deras vårdnadshavare ska tydliggöras genom förväntansdokument</span>
+			</p>
+			<p class="R5">
+				<span>Regeringens förslag</span>
+			</p>
+			<p>
+				<span>Varje skolenhet ska ha ett förväntansdokument som ska innehålla information om innehållet i skolreglerna och om skolenhetens gemensamma rutiner och förhållningssätt i arbetet med att upprätthålla skolreglerna. Förväntansdoku</span><span>&#xad;</span><span>mentet ska även innehålla en påminnelse om vårdnadshavares ansvar enligt 6</span><span>&#xa0;</span><span>kap. föräldrabalken, där det bl.a. anges att den som har vårdnaden om ett barn har ett ansvar för barnets personliga förhållanden och ska se till att barnets behov av bl.a. en god fostran tillgodoses. Förväntansdokumentet får även inne</span><span>&#xad;</span><span>hålla annan information som är relevant för att förtydliga de ömsesidiga förväntningarna mellan skolan och eleverna respektive skolan och vårdnads</span><span>&#xad;</span><span>havarna.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Rektorn ska ansvara för att förväntansdokumentet tas fram. Elever och vårdnadshavare ska under varje läsår informeras om innehållet i förväntans</span><span>&#xad;</span><span>dokumentet. </span>
+			</p>
+			<p class="R5">
+				<span>Skälen för regeringens förslag</span>
+			</p>
+			<p class="R6">
+				<span>Skolan behöver tydliggöra de förväntningar som finns på elever och deras vårdnadshavare</span>
+			</p>
+			<p>
+				<span>Som framgår ovan vill regeringen åstadkomma en bättre ordning när det gäller innehållet i och arbetet med skolans regler och vill bl.a. att termen skolregler fortsättningsvis ska användas för att betona att reglerna ska vara skolgemen</span><span>&#xad;</span><span>samma. Regeringen konstaterar dock att skolan inte ensam kan lösa de utma</span><span>&#xad;</span><span>ningar som rör elevers utveckling, trygghet och studiero. Det finns därför skäl att göra insatser för att tydliggöra de förväntningar som finns på elever och deras vårdnadshavare.</span>
+			</p>
+			<p class="R6">
+				<span>Förväntansdokument kan bidra till en bättre skolmiljö</span>
+			</p>
+			<p>
+				<span>Regeringen noterar att flera skolor och huvudmän redan i dag använder sig av ett s.k. förväntansdokument för att tydliggöra skolans förväntningar på vård</span><span>&#xad;</span><span>nadshavare och elever. I ett sådant förväntansdokument kan även elevers och vårdnadshavares förväntningar på skolan beskrivas. Statens skolverk publi</span><span>&#xad;</span><span>cerar mallar för sådana dokument som beskriver både förväntningar som finns mellan skola och vårdnadshavare och förväntningar som finns mellan skola och elev. Regeringen noterar vidare att förväntansdokument inte används på alla skolor i dag. Det finns heller inget krav på att skolor ska använda sig av förväntansdokument. Regeringen bedömer att för att förslagen om skolregler och konsekvensplan som lämnas ovan ska få fullt genomslag är det motiverat att även införa ett krav på förväntansdokument. </span>
+			</p>
+			<p class="R6">
+				<span>Förväntansdokumentet bör innehålla information om hur skolan arbetar med regler och konsekvenser samt om vårdnadshavares ansvar</span>
+			</p>
+			<p>
+				<span>Regeringen anser att det finns en bristande gemensam bild av vilka regler som gäller i skolan och av ansvarsfördelningen mellan skola, elev och vårdnads</span><span>&#xad;</span><span>havare, vilket kan försvåra samverkan och bidra till konflikter. För att skapa enhetlighet och tydlighet, bör det därför finnas vissa krav på vad förväntans</span><span>&#xad;</span><span>dokumentet ska innehålla. Regeringen bedömer att förväntansdokumentet bl.a. bör innehålla skolenhetens skolregler inklusive konsekvensplan i de fall skolreglerna inte följs.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen anser att det också är viktigt att föräldrar har kännedom om sitt lagstadgade ansvar för sina barn. Att stärka föräldraförmågan och föräldraan</span><span>&#xad;</span><span>svaret är också viktiga prioriteringar för regeringen. Regeringens bedömning är att det därför finns skäl att göra insatser för att tydliggöra de förvänt</span><span>&#xad;</span><span>ningar som finns på elever och deras vårdnadshavare.</span>
+			</p>
+			<p class="R6">
+				<span>Rektorn bör kunna besluta om ytterligare innehåll i förväntansdokumentet</span>
+			</p>
+			<p>
+				<span>Regeringen bedömer att det bör finnas utrymme för att, utöver det innehåll som beskrivs under föregående rubriker i detta avsnitt, även inkludera annan infor</span><span>&#xad;</span><span>mation i förväntansdokumentet och att denna möjlighet ska framgå av lagen. </span>
+			</p>
+			<p class="R6">
+				<span>Skolan behöver arbeta aktivt med att kommunicera förväntansdokumentet</span>
+			</p>
+			<p>
+				<span>Regeringen bedömer att förväntansdokumentet, för att bli ett verkningsfullt verktyg, behöver både diskuteras med och förklaras för vårdnadshavare så att de är medvetna om innehållet och förstår innebörden. Regeringen bedömer att det är rimligt att vårdnadshavare och elever informeras om innehållet i förvän</span><span>&#xad;</span><span>tansdokumentet minst en gång varje läsår samt när behov uppstår. </span>
+			</p>
+			<p class="R6">
+				<span>Förväntansdokument ska finnas vid alla skolenheter och rektorn bör ansvara för framtagandet</span>
+			</p>
+			<p>
+				<span>För att nå så god effekt som möjligt anser regeringen att förväntansdokument bör finnas för varje skolenhet i de skolformer som föreslås omfattas av bestäm</span><span>&#xad;</span><span>melserna om skolregler och konsekvensplan. Förväntansdokumentens utform</span><span>&#xad;</span><span>ning behöver dock anpassas, t.ex. för att ta hänsyn till att vissa elever inom gymnasieskolan och anpassade gymnasieskolan är 18 år och därför myn</span><span>&#xad;</span><span>diga enligt 9</span><span>&#xa0;</span><span>kap. 1</span><span>&#xa0;</span><span>§ föräldrabalken.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Av förslagen ovan framgår det att regeringen vill att det ska vara rektorn som beslutar om skolreglerna och rutinerna för dessa. Regeringen bedömer därför att rektorn även bör ansvara för att ta fram förväntansdokumentet samt för rutinerna för hur innehållet i förväntansdokumentet ska kommuniceras.</span>
+			</p>
+			<p class="R4">
+				<span>Det ska bli möjligt att tillfälligt omplacera elever under längre tid</span>
+			</p>
+			<p class="R5">
+				<span>Regeringens förslag</span>
+			</p>
+			<p>
+				<span>Den tidsperiod som en elev som längst får omplaceras tillfälligt inom den egna skolenheten ska förlängas från fyra veckor till återstoden av terminen. Om det återstår kortare tid än fyra veckor av terminen när åtgärden vidtas ska åtgärden i stället få gälla som längst fyra veckor in på nästa termin. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Även den längsta tidsperiod som en elev tillfälligt får placeras utanför den egna skolenheten ska utökas. Om det finns särskilda skäl ska placeringen få gälla längre tid än den nuvarande gränsen på fyra veckor, dock som längst i åtta veckor. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Vid en tillfällig placering utanför den egna skolenheten ska det utarbetas en plan för att stödja elevens återgång till ordinarie skolgång efter den tillfälliga placeringen. Rektorn vid den skolenhet som eleven hör till när placerings</span><span>&#xad;</span><span>beslutet fattas ska ansvara för att planen utarbetas. Rektorn ska även samråda med rektorn vid den skolenhet som eleven är tillfälligt placerad vid. Om eleven efter den tillfälliga placeringen ska placeras vid en annan skolenhet än den som eleven hörde till när beslutet om tillfällig placering fattades ska samråd även ske med rektorn vid den skolenhet där eleven placeras. </span>
+			</p>
+			<p class="R5">
+				<span>Skälen för regeringens förslag</span>
+			</p>
+			<p class="R6">
+				<span>Omplacering ska kunna ske under längre perioder</span>
+			</p>
+			<p>
+				<span>Regeringen konstaterar att tryggheten i skolan minskar och att skolans regel</span><span>&#xad;</span><span>verk därför måste ge rektorer bättre möjligheter att agera effektivt mot elever som upprepat kränker eller hotar andra, använder våld eller agerar störande. Regeringen noterar att möjligheten att tillfälligt omplacera en elev inom eller utanför skolenheten är en av de mer ingripande disciplinära åtgärder som får vidtas enligt skollagen. Syftet med att omplacera en elev är att tillförsäkra trygghet och studiero för elever på skolan men även att ge tid för skolan att utreda hur en långsiktig lösning som fungerar för både den aktuella eleven och övriga elever kan utformas. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Tidsgränsen för en tillfällig omplacering inom skolenheten liksom för en tillfällig placering utanför skolenheten är i dag fyra veckor. Regeringen anser att detta i många fall är en alltför kort tid för rektorn att utreda och åtgärda den uppkomna situationen. Regeringen bedömer därför att tiden för tillfällig om</span><span>&#xad;</span><span>placering inom den egna skolenheten bör förlängas, dock inte längre än vad som är nödvändigt med hänsyn till ändamålet. </span>
+			</p>
+			<p class="R6">
+				<span>En omplacering inom den egna skolenheten ska som längst få gälla återstoden av en pågående termin</span>
+			</p>
+			<p>
+				<span>Regeringen bedömer att en förlängning av den tidsperiod en elev kan ompla</span><span>&#xad;</span><span>ceras inom den egna skolenheten kan bidra till att ge eleven tid att vänja sig vid och acklimatisera sig till en ny grupp samtidigt som eleven får vara kvar i sitt sociala nätverk och närområde. Regeringen föreslår att omplaceringen ska kunna pågå under resten av terminen och om det återstår kortare tid än fyra veckor av terminen när åtgärden vidtas ska åtgärden i stället få gälla som längst fyra veckor in på nästa termin. Regeringen bedömer att detta skapar flexibilitet och ger utrymme för att anpassa omplaceringstiden till de behov som uppstår under terminen.</span>
+			</p>
+			<p class="R6">
+				<span>Om det finns särskilda skäl ska en tillfällig placering utanför den egna skolenheten få gälla som längst i åtta veckor</span>
+			</p>
+			<p>
+				<span>Regeringen anser också att det bör införas en möjlighet att placera en elev utanför den egna skolenheten längre än fyra veckor om det finns särskilda skäl, t.ex. för att tillförsäkra andra elevers trygghet och studiero. Regeringen bedö</span><span>&#xad;</span><span>mer att en placering utanför den egna skolenheten bör få pågå som längst i åtta veckor eftersom åtgärden är mer ingripande. Regeringen påpekar dock att den aldrig ska vara längre än nödvändigt. Regeringen bedömer att det inte är läm</span><span>&#xad;</span><span>pligt att införa en särskild reglering av denna åtgärd som innebär ännu längre placeringstider i de fall då placeringen sträcker sig över ett terminsuppehåll.</span>
+			</p>
+			<p class="R6">
+				<span>Det behövs en plan för återgång som skapar förutsättningar för långsiktiga lösningar</span>
+			</p>
+			<p>
+				<span>Regeringen påpekar att syftet med en tillfällig placering utanför den egna skol</span><span>&#xad;</span><span>enheten är att tillförsäkra alla elever trygghet och studiero. Skolan behöver därför planera för att ta emot eleven för att skapa förutsättningar för långsiktiga lösningar som leder till att den situation som gav anledning till den tillfälliga placeringen inte uppstår igen. Regeringen vill därför att en sådan plan alltid ska utarbetas vid tillfällig placering utanför den egna skolenheten.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Det är rektorn på elevens ordinarie skolenhet som bäst känner till elevens situation och behov. Regeringen föreslår därför att rektorn vid den skolenhet som eleven hörde till när beslutet fattades ska ansvara för att planen tas fram och att rektorn i detta arbete ska samråda med berörda skolenheter.</span>
+			</p>
+			<p class="R4">
+				<span>Akutskola ska få överlämnas till en annan huvudman på entreprenad </span>
+			</p>
+			<p class="R5">
+				<span>Regeringens förslag </span>
+			</p>
+			<p>
+				<span>Uppgifter som avser utbildning av en elev som tillfälligt får undervisning utanför den egna skolenheten ska inom grundskolan få överlämnas på entre</span><span>&#xad;</span><span>prenad till en annan huvudman inom skolväsendet.</span>
+			</p>
+			<p class="NormalIndent">
+				<span>Entreprenad ska dock bara vara tillåten om undervisningen bedrivs i en akutskola, dvs. i en verksamhet där elever tillfälligt får undervisning utanför den egna skolenheten. Dessutom ska det krävas att akutskolan ingår i en skol</span><span>&#xad;</span><span>enhet eller är organisatoriskt knuten till en sådan samt att den är inriktad mot att ge undervisning till elever som tillfälligt placerats utanför den egna skol</span><span>&#xad;</span><span>enheten.</span>
+			</p>
+			<p class="R5">
+				<span>Skälen för regeringens förslag</span>
+			</p>
+			<p class="R6">
+				<span>Fler huvudmän kan ha nytta av att kunna placera elever vid en akutskola</span>
+			</p>
+			<p>
+				<span>Regeringen noterar att ett sätt som vissa huvudmän använder för att organisera tillfälliga placeringar utanför den egna skolenheten är att inrätta s.k. akutskolor som är särskilt utformade för att ta emot den aktuella elevgruppen. Akutsko</span><span>&#xad;</span><span>lorna kan innebära en möjlighet för huvudmän att hantera ordningsproblem, värna trygg</span><span>&#xad;</span><span>heten och studieron i skolan och säkra kontinuiteten i utbildningen för alla elever. Regeringen anser att det genom akutskolorna blir möjligt att samla de elever som har likartade behov, så att de undervisas gemensamt, vilket kan vara såväl resurseffektivt som pedagogiskt motiverat. </span>
+			</p>
+			<p class="NormalIndent">
+				<span>Regeringen noterar vidare att tillgången till akutskolor varierar kraftigt i landet. Det kan exempelvis handla om huvudmän med ett litet elevunderlag eller huvudmän som saknar personal med rätt kompetens eller som saknar ändamål... [TRUNCATED]

@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11832",
+  "titel": "Tvångsarbete inom bomullssektorn i Turkmenistan",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "parti": "SD",
+  "summary": "Fråga 2025/26:832 Tvångsarbete inom bomullssektorn i Turkmenistan\n av  Björn Söder (SD)\n till Bistånds- och utrikeshandelsminister Benjamin Dousa (M)\n Enligt rapporten  Turkmenistan Cotton: State-Imposed Forced Labor in the Annual Cotton Harvest, High Risk in Global Supply Chains\n återgick Turkmenistans regering förra året",
+  "url": "https://data.riksdagen.se/dokument/HD11832.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T14:15:07.326Z"
+  }
+}
