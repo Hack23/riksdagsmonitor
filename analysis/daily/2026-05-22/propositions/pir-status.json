@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "cycle": "propositions",
+  "article_date": "2026-05-22",
+  "generated_at": "2026-05-22T07:30:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "statement": "What is Lagrådet's opinion on HD03267 (security threat deportation fast-track)? Does it demand fundamental revision or issue advisory amendments only?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "due": "2026-06-15",
+      "propositions": ["HD03267"],
+      "carry_forward_from": "2026-05-20"
+    },
+    {
+      "pir_id": "PIR-2",
+      "statement": "What is Centerpartiet's formal vote commitment in SfU on HD03262 (permanent residence abolition)?",
+      "status": "open",
+      "confidence": "HIGH",
+      "due": "2026-06-15",
+      "propositions": ["HD03262"],
+      "carry_forward_from": "2026-05-20"
+    },
+    {
+      "pir_id": "PIR-3",
+      "statement": "Does IMY issue a formal enforcement action against HD03261 Skatteverket data powers, or provide guidance only?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "due": "2026-07-01",
+      "propositions": ["HD03261"],
+      "carry_forward_from": "2026-05-20"
+    },
+    {
+      "pir_id": "PIR-4",
+      "statement": "What is Digg's implementation plan and timeline feasibility for HD03250 state e-identity — and does Statskontoret validate the timeline?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "due": "2026-06-30",
+      "propositions": ["HD03250"],
+      "carry_forward_from": "2026-05-20"
+    },
+    {
+      "pir_id": "PIR-5",
+      "statement": "Will Sverigedemokraterna accept a C-amended form of HD03262 (permanent residence abolition) or will they reject any modification and withdraw supply?",
+      "status": "open",
+      "confidence": "HIGH",
+      "due": "2026-06-20",
+      "propositions": ["HD03262"],
+      "carry_forward_from": "2026-05-20"
+    },
+    {
+      "pir_id": "PIR-6",
+      "statement": "What is Centerpartiet's formal SfU position on HD03262 — specifically, will the three dissenting MPs vote against in committee?",
+      "status": "open",
+      "confidence": "HIGH",
+      "due": "2026-06-15",
+      "propositions": ["HD03262"],
+      "carry_forward_from": null,
+      "new_in_cycle": "2026-05-22"
+    },
+    {
+      "pir_id": "PIR-7",
+      "statement": "Will the KU (Konstitutionsutskottet) trigger an extended constitutional review of HD03254 (military cooperation), delaying the proposition beyond the pre-election Riksdag session?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "due": "2026-06-10",
+      "propositions": ["HD03254"],
+      "carry_forward_from": null,
+      "new_in_cycle": "2026-05-22"
+    }
+  ]
+}
