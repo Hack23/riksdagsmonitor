@@ -187,7 +187,7 @@ describe('buildStaticPageJsonLd', () => {
     });
     expect(out).toContain('<script type="application/ld+json">');
     // Parse the JSON to verify shape
-    const jsonText = out.replace(/^<script[^>]*>\s*/, '').replace(/\s*<\/script>$/, '');
+    const jsonText = out.replace(/^<script[^>]*>\s*/i, '').replace(/\s*<\/script>$/i, '');
     const parsed = JSON.parse(jsonText);
     expect(parsed['@context']).toBe('https://schema.org');
     const types = parsed['@graph'].map((node: { '@type': string }) => node['@type']);
@@ -210,7 +210,7 @@ describe('buildStaticPageJsonLd', () => {
       lang: 'no',
       family: 'home',
     });
-    const jsonText = out.replace(/^<script[^>]*>\s*/, '').replace(/\s*<\/script>$/, '');
+    const jsonText = out.replace(/^<script[^>]*>\s*/i, '').replace(/\s*<\/script>$/i, '');
     const parsed = JSON.parse(jsonText);
     const webPage = parsed['@graph'].find(
       (node: { '@type': string }) => node['@type'] === 'WebPage',
@@ -226,7 +226,7 @@ describe('buildStaticPageJsonLd', () => {
       lang: 'de',
       family: 'politician',
     });
-    const jsonText = out.replace(/^<script[^>]*>\s*/, '').replace(/\s*<\/script>$/, '');
+    const jsonText = out.replace(/^<script[^>]*>\s*/i, '').replace(/\s*<\/script>$/i, '');
     const parsed = JSON.parse(jsonText);
     const breadcrumb = parsed['@graph'].find(
       (node: { '@type': string }) => node['@type'] === 'BreadcrumbList',
@@ -264,7 +264,7 @@ describe('buildStaticPageJsonLd', () => {
       lang: 'en',
       family: 'home',
     });
-    const jsonText = out.replace(/^<script[^>]*>\s*/, '').replace(/\s*<\/script>$/, '');
+    const jsonText = out.replace(/^<script[^>]*>\s*/i, '').replace(/\s*<\/script>$/i, '');
     const parsed = JSON.parse(jsonText);
     const breadcrumb = parsed['@graph'].find(
       (node: { '@type': string }) => node['@type'] === 'BreadcrumbList',
@@ -286,7 +286,7 @@ describe('buildStaticPageJsonLd', () => {
         canonicalUrl: `https://riksdagsmonitor.com/dashboard/index_${lang}.html`,
         lang, family: 'dashboard',
       });
-      const jsonText = out.replace(/^<script[^>]*>\s*/, '').replace(/\s*<\/script>$/, '');
+      const jsonText = out.replace(/^<script[^>]*>\s*/i, '').replace(/\s*<\/script>$/i, '');
       const parsed = JSON.parse(jsonText);
       const breadcrumb = parsed['@graph'].find(
         (n: { '@type': string }) => n['@type'] === 'BreadcrumbList',
