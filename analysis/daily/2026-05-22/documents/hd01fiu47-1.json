@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD01FiU47",
+  "titel": "Titel",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "organ": "FiU",
+  "summary": "5278772\r\n HD01FiU47\r\n 2025/26\r\n FiU47\r\n bet\r\n \r\n bet\r\n Betänkande 2025/26:FiU47\r\n Betänkande\r\n Debatt om förslag\r\n \r\n FiU\r\n \r\n 47\r\n 0\r\n 2026-05-22 00:00:00\r\n 2026-05-22 16:45:53\r\n 2026-05-22 16:45:53\r\n \r\n \r\n planerat\r\n \r\n \r\n Brus\r\n bcc89dd6-6898-4f2a-9382-7cd202ff5d5b\r\n https://data.riksdagen.se/dokument/HD01FiU47/text\r\n https://data.riksdagen.se/dokument/HD01FiU47\r\n https://data.riksdagen.se/d...",
+  "url": "https://data.riksdagen.se/dokument/HD01FiU47.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD01FiU47",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T19:16:25.684Z"
+  },
+  "fullContent": "5278772\r\n HD01FiU47\r\n 2025/26\r\n FiU47\r\n bet\r\n \r\n bet\r\n Betänkande 2025/26:FiU47\r\n Betänkande\r\n Debatt om förslag\r\n \r\n FiU\r\n \r\n 47\r\n 0\r\n 2026-05-22 00:00:00\r\n 2026-05-22 16:45:53\r\n 2026-05-22 16:45:53\r\n \r\n \r\n planerat\r\n \r\n \r\n Brus\r\n bcc89dd6-6898-4f2a-9382-7cd202ff5d5b\r\n https://data.riksdagen.se/dokument/HD01FiU47/text\r\n https://data.riksdagen.se/dokument/HD01FiU47\r\n https://data.riksdagen.se/dokumentstatus/HD01FiU47\r\n https://data.riksdagen.se/utskottsforslag/HD01FiU47\r\n <h2></h2>\r\nDokumentet är inte publicerat\r\n\r\n\r\n\r\nUBE\r\nBeredning\r\n2026-06-15 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nB\r\nBordläggning\r\n2026-06-16 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nJUS\r\nJustering\r\n2026-06-16 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nTRY\r\nTrycklov\r\n2026-06-16 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBEH\r\nBehandling\r\n2026-06-17 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBES\r\nBeslut\r\n2026-06-17 00:00:00\r\nplanerat\r\n0",
+  "contentFetched": true
+}

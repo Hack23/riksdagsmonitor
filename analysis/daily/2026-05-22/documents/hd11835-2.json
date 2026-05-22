@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD11835",
+  "titel": "Samma förutsättningar att ta del av elbilspremien",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "parti": "V",
+  "summary": "Fråga 2025/26:835 Samma förutsättningar att ta del av elbilspremien\n av  Malin Östh (V)\n till Arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz (L)\n Jag har tidigare ställt en fråga till minister Johan Britz om han avser att säkerställa att samtliga grupper som uppfyller grundkraven ges en faktisk",
+  "url": "https://data.riksdagen.se/dokument/HD11835.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_fragor",
+    "query": {
+      "limit": 30,
+      "rm": "2025/26"
+    },
+    "resultCount": 30,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-22T19:16:00.323Z"
+  }
+}

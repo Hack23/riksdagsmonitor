@@ -1,6 +1,6 @@
 # Data Download Manifest — 2026-05-22
 
-**Generated**: 2026-05-22 16:26 UTC
+**Generated**: 2026-05-22 19:15 UTC
 **Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
 **Documents Downloaded**: 210
 **Documents Selected (date-filtered)**: 26
