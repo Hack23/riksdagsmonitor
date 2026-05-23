@@ -40,9 +40,16 @@ import { renderMarkdownToHtml } from './markdown/index.js';
 import { buildChrome } from './chrome.js';
 import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
 
-import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
-import { articleTypeLabel, articleTypeIcon } from './article-type-i18n.js';
-import { buildArticleSeoMetadata } from './article-seo.js';
+import { articleTypeIcon } from './article-type-i18n.js';
+import { computeArticleHeadMetadata } from './article-head-metadata.js';
+/**
+ * @deprecated Re-exported from `article-head-metadata.ts`. The function
+ * body lives there now so the renderer, regenerator and QA tooling all
+ * call exactly one implementation. This export only exists to preserve
+ * the historical `import { parseFrontMatterDate } from './article.js'`
+ * import sites (notably `tests/render-lib-architecture.test.ts`).
+ */
+export { parseFrontMatterDate, inferArticleType } from './article-head-metadata.js';
 import {
   renderReaderNavigation,
   renderAnalysisArtifactsReference,
@@ -122,62 +129,6 @@ export function rewriteMarkdownHrefsInHtml(
 }
 
 /**
- * Hard-coded fallback labels — kept only for legacy article types not yet
- * in the registry. New types should ONLY add a registry entry.
- */
-const ARTICLE_TYPE_LABELS_FALLBACK: Record<string, string> = {
-  'deep-inspection': 'Deep inspection',
-  realtime: 'Realtime pulse',
-  'realtime-pulse': 'Realtime pulse',
-  breaking: 'Breaking intelligence',
-  'parliament-agenda': 'Parliament agenda',
-};
-
-/**
- * Build a label lookup from the registry + legacy fallbacks.
- */
-function getArticleTypeLabel(type: string): string {
-  const entry = getById(type) ?? getBySubfolder(type);
-  if (entry) return entry.label;
-  return ARTICLE_TYPE_LABELS_FALLBACK[type] ?? 'Political intelligence';
-}
-
-function normalizeArticleType(value: string): string {
-  return value
-    .replace(/committeeReports/g, 'committee-reports')
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/[^a-zA-Z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .toLowerCase();
-}
-
-function inferArticleType(canonicalPath: string, title: string): { type: string; label: string } {
-  const source = `${canonicalPath} ${title}`.toLowerCase();
-
-  const registry = loadArticleTypesRegistry();
-  for (const entry of registry.types) {
-    if (source.includes(entry.subfolder.toLowerCase()) || source.includes(entry.id.toLowerCase())) {
-      return { type: normalizeArticleType(entry.id), label: entry.label };
-    }
-  }
-
-  const legacyCandidates = [
-    'committeeReports',
-    'deep-inspection',
-    'realtime-pulse',
-    'realtime',
-    'breaking',
-    'parliament-agenda',
-  ];
-  const match = legacyCandidates.find((candidate) => source.includes(candidate.toLowerCase()));
-  const type = normalizeArticleType(match ?? 'political-intelligence');
-  return {
-    type,
-    label: getArticleTypeLabel(match ?? type),
-  };
-}
-
-/**
  * Strip the markdown-based "Reader Intelligence Guide" table and the
  * "Article Sources" appendix from the article body. These sections are
  * injected by the aggregator in English-only; the renderer emits
@@ -247,51 +198,22 @@ export function splitBodyAtSecondH2(bodyHtml: string): { lead: string; rest: str
   };
 }
 
-/**
- * Parse a `date` value from front-matter into a stable `YYYY-MM-DD`
- * string. Front-matter dates can arrive as either a parsed `Date` (when
- * `gray-matter` recognises an ISO-8601 scalar) or as a raw string. When
- * the value is missing or unrecognised, today's UTC date is used so the
- * article still renders with a valid `<time datetime>`.
- *
- * Exported for testability — pure function, no I/O.
- *
- * @param dateRaw The raw `data.date` field returned by `gray-matter`.
- * @param now     Injection seam for "today" — defaults to `new Date()`.
- *                Tests pass a frozen clock to make assertions deterministic.
- * @returns       A `YYYY-MM-DD` string.
- */
-export function parseFrontMatterDate(dateRaw: unknown, now: Date = new Date()): string {
-  if (dateRaw instanceof Date && !Number.isNaN(dateRaw.getTime())) {
-    return dateRaw.toISOString().slice(0, 10);
-  }
-  if (typeof dateRaw === 'string' && /^\d{4}-\d{2}-\d{2}/.test(dateRaw)) {
-    return dateRaw.slice(0, 10);
-  }
-  return now.toISOString().slice(0, 10);
-}
-
 export async function renderArticleHtml(input: RenderArticleInput): Promise<string> {
   const parsed = matter(input.markdown);
-  const fm = parsed.data as Record<string, unknown>;
-  const title = String(fm.title ?? 'Political Intelligence');
-  const description = String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
-  const rawKeywords = typeof fm.keywords === 'string' ? fm.keywords : undefined;
-  const date = parseFrontMatterDate(fm.date);
+  // Delegate every `<head>`-relevant derivation to the shared helper so
+  // the renderer and the `test-article-headers` CLI can never drift.
+  const head = computeArticleHeadMetadata({
+    markdown: input.markdown,
+    lang: input.lang,
+    canonicalPath: input.canonicalPath,
+    // Pass the already-parsed front-matter data so `computeArticleHeadMetadata`
+    // can skip a second `matter()` call on the same string.
+    parsedData: parsed.data as Record<string, unknown>,
+  });
+  const { rawTitle: title, date, articleTypeId, articleTypeLabel: localizedArticleTypeLabel, seo } = head;
   const publishedIso = `${date}T00:00:00Z`;
   const modifiedIso = new Date().toISOString();
-  const articleType = inferArticleType(input.canonicalPath, title);
-  const localizedArticleTypeLabel = articleTypeLabel(articleType.type, input.lang, articleType.label);
-  const seo = buildArticleSeoMetadata({
-    title,
-    description,
-    keywords: rawKeywords,
-    lang: input.lang,
-    date,
-    articleTypeLabel: localizedArticleTypeLabel,
-    articleTypeId: articleType.type,
-    canonicalPath: input.canonicalPath,
-  });
+  const articleType = { type: articleTypeId, label: localizedArticleTypeLabel };
 
   const cleanedContent = stripBodyDuplicateSections(parsed.content);
 
@@ -351,7 +273,7 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     publishedIso,
     modifiedIso,
     jsonLd: [newsArticleLd, breadcrumbLd, speakableLd],
-    section: 'Political Intelligence',
+    section: head.articleSection,
     heroBannerImage: 'images/riksdagsmonitornews-banner.webp',
     bodyClass: 'news-article',
   });

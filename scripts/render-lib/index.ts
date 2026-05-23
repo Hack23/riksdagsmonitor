@@ -112,6 +112,20 @@ export type { BreadcrumbEntry, BreadcrumbEntryWithItem, BreadcrumbEntryCurrentPa
 export { renderArticleHtml, stripBodyDuplicateSections, splitBodyAtSecondH2 } from './article.js';
 export type { RenderArticleInput } from './article.js';
 
+// --- Shared `<head>` metadata composer -------------------------------------
+// Single source of truth used by both `renderArticleHtml` (real article
+// generation) and the `test-article-headers` QA CLI so the audit report
+// can never drift from what actually ships in production HTML.
+export {
+  computeArticleHeadMetadata,
+  inferArticleType,
+  parseFrontMatterDate,
+} from './article-head-metadata.js';
+export type {
+  ArticleHeadMetadataInput,
+  ArticleHeadMetadata,
+} from './article-head-metadata.js';
+
 // --- Localized + English article merge -------------------------------------
 // Used by `scripts/render-articles.ts` so that non-English news HTML pages
 // always include the full English analytical depth when the agent-translated

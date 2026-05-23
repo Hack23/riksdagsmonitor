@@ -1,0 +1,89 @@
+name: Test Article Headers
+
+# Manually audit the `<head>` metadata (title, description, keywords plus
+# OpenGraph + Twitter siblings) that the article renderer would embed for
+# every aggregated `analysis/daily/<date>/<subfolder>/article.md` — for the
+# English locale only.
+#
+# The audit script (`scripts/test-article-headers.ts`) calls the same
+# `computeArticleHeadMetadata` helper as the real article renderer
+# (`scripts/render-lib/article.ts → renderArticleHtml`), so the report
+# is guaranteed not to drift from what production HTML actually ships.
+#
+# Reference docs:
+#   - Article-Generation.md (full pipeline)
+#   - scripts/render-lib/article-head-metadata.ts (shared composer)
+#   - .github/workflows/regenerate-articles.yml (sibling deterministic workflow)
+#
+# Output: a human + AI readable text report uploaded as a workflow artifact
+# (`test-article-headers-report`). First step toward improving the bad
+# current state of titles / descriptions / keywords seen at
+# https://riksdagsmonitor.com/news/index.html and
+# https://riksdagsmonitor.com/news/2026-05-22-committee-reports-en.html.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Optional cap on the number of articles processed (smoke test). Leave blank to process all.'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Audit <head> metadata (English locale)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '26'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/test-article-headers.yml
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run `<head>` audit (English locale, all articles)
+        env:
+          AUDIT_LIMIT: ${{ inputs.limit }}
+        run: |
+          mkdir -p reports
+          if [ -n "${AUDIT_LIMIT:-}" ]; then
+            echo "Running with --limit ${AUDIT_LIMIT}"
+            npx tsx scripts/test-article-headers.ts \
+              --out reports/test-article-headers-report.txt \
+              --limit "${AUDIT_LIMIT}"
+          else
+            npx tsx scripts/test-article-headers.ts \
+              --out reports/test-article-headers-report.txt
+          fi
+
+      - name: Print summary tail to job log
+        run: |
+          echo "::group::Report summary (last 40 lines)"
+          tail -n 40 reports/test-article-headers-report.txt
+          echo "::endgroup::"
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: test-article-headers-report
+          path: reports/test-article-headers-report.txt
+          retention-days: 30
+          if-no-files-found: error

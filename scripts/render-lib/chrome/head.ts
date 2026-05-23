@@ -24,6 +24,30 @@ interface JsonLdNode {
 }
 
 /**
+ * Apply the canonical Riksdagsmonitor brand-suffix rule to a `<title>` string.
+ *
+ * If `title` already contains "Riksdagsmonitor" (case-insensitive) it is
+ * returned unchanged; otherwise the brand suffix " — Riksdagsmonitor" is
+ * appended.
+ *
+ * Extracted as a standalone export so that `article-head-metadata.ts` (which
+ * must report the *exact* branded title that `renderChromeHead` emits) can
+ * reuse the same rule without duplicating it.
+ */
+export function brandTitle(title: string): string {
+  return /riksdagsmonitor/i.test(title) ? title : `${title} — Riksdagsmonitor`;
+}
+
+/**
+ * Canonical default for `article:section` / `articleSection`.
+ *
+ * Exported so that {@link ../article-head-metadata.ts | computeArticleHeadMetadata}
+ * can mirror the exact value emitted by `renderChromeHead` without duplicating
+ * the string literal — eliminating the drift risk flagged in PR review.
+ */
+export const DEFAULT_ARTICLE_SECTION = 'Political Intelligence';
+
+/**
  * Render the complete `<!DOCTYPE html><html…><head>…</head>` block.
  *
  * This function is synchronous and deterministic for identical inputs
@@ -94,9 +118,7 @@ export function renderChromeHead(opts: ChromeOptions): string {
   if (opts.relNext) pagerLinks.push(`    <link rel="next" href="${escapeHtml(opts.relNext)}">`);
   const pagerLinksHtml = pagerLinks.length > 0 ? pagerLinks.join('\n') + '\n' : '';
 
-  const brandedTitle = /riksdagsmonitor/i.test(opts.title)
-    ? opts.title
-    : `${opts.title} — Riksdagsmonitor`;
+  const brandedTitle = brandTitle(opts.title);
   const escapedTitle = escapeHtml(opts.title);
   const escapedBrandedTitle = escapeHtml(brandedTitle);
 
@@ -110,7 +132,7 @@ export function renderChromeHead(opts: ChromeOptions): string {
   const ogType = opts.ogType ?? 'article';
   const articleMetaBlock = ogType === 'article'
     ? `    <meta property="article:publisher" content="https://www.hack23.com">
-    <meta property="article:section" content="${escapeHtml(opts.section ?? 'Political Intelligence')}">
+    <meta property="article:section" content="${escapeHtml(opts.section ?? DEFAULT_ARTICLE_SECTION)}">
     <meta property="article:modified_time" content="${modified}">
     <meta property="article:published_time" content="${published}">
 `
