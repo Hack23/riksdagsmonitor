@@ -264,13 +264,18 @@ function decodeHtmlEntities(text: string): string {
 }
 
 function stripDescriptionMarkup(text: string): string {
-  return collapseWhitespace(decodeHtmlEntities(text
+  const stripped = text
     .replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/giu, ' ')
     .replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/giu, ' ')
     .replace(/<[^>]+>/gu, ' ')
     .replace(/!\[[^\]]*\]\([^)]*\)/gu, ' ')
     .replace(/\[([^\]]+)\]\([^)]*\)/gu, '$1')
-    .replace(/^[\s>#+*_`-]+/gmu, ' ')));
+    .replace(/^[\s>#+*_`-]+/gmu, ' ');
+  // Decode entities after initial tag strip, then strip again to catch
+  // entity-encoded markup (e.g. &lt;script&gt;) that becomes real tags.
+  const decoded = decodeHtmlEntities(stripped);
+  const reStripped = decoded.replace(/<[^>]+>/gu, ' ');
+  return collapseWhitespace(reStripped);
 }
 
 function trimTrailingPunctuation(text: string): string {
