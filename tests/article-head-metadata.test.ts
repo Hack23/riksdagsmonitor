@@ -110,6 +110,19 @@ keywords: Riksdagsmonitor
     });
     expect(head.date).toBe('2026-01-15');
   });
+
+  it('exposes articleSection matching the value buildChrome passes to article:section', () => {
+    const head = computeArticleHeadMetadata({
+      markdown: ARTICLE_MD,
+      lang: 'en',
+      canonicalPath: 'news/2026-05-22-committeeReports-en.html',
+    });
+    // Must equal the hard-coded default in chrome/head.ts:
+    //   opts.section ?? 'Political Intelligence'
+    // renderArticleHtml passes head.articleSection as section, so both
+    // the audit report and the rendered HTML will always agree.
+    expect(head.articleSection).toBe('Political Intelligence');
+  });
 });
 
 describe('parseFrontMatterDate (re-exported)', () => {

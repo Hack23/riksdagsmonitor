@@ -29,6 +29,7 @@ import { articleTypeLabel } from './article-type-i18n.js';
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
 import type { ArticleSeoMetadata } from './article-seo.js';
 import { buildArticleSeoMetadata } from './article-seo.js';
+import { brandTitle } from './chrome/head.js';
 
 /**
  * Hard-coded fallback labels — kept only for legacy article types not yet
@@ -219,9 +220,7 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
     articleTypeId: articleType.type,
     canonicalPath: input.canonicalPath,
   });
-  const brandedTitle = /riksdagsmonitor/i.test(seo.title)
-    ? seo.title
-    : `${seo.title} — Riksdagsmonitor`;
+  const computedBrandedTitle = brandTitle(seo.title);
   // Mirror the section value passed to buildChrome so the audit CLI
   // reports exactly what ships in the rendered HTML.
   const articleSection = 'Political Intelligence';
@@ -233,7 +232,7 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
     articleTypeId: articleType.type,
     articleTypeLabel: localizedArticleTypeLabel,
     seo,
-    brandedTitle,
+    brandedTitle: computedBrandedTitle,
     articleSection,
   };
 }

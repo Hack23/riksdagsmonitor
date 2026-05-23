@@ -33,13 +33,22 @@ export type { BreadcrumbItem, ChromeOptions, SiteChrome } from './chrome/types.j
 
 // Re-export sub-module functions
 import type { ChromeOptions, SiteChrome } from './chrome/types.js';
-import { renderChromeHead as _renderChromeHead } from './chrome/head.js';
+import { brandTitle as _brandTitle, renderChromeHead as _renderChromeHead } from './chrome/head.js';
 import { buildHeaderHtml } from './chrome/header.js';
 import { buildFooterHtml } from './chrome/footer.js';
 
 // ---------------------------------------------------------------------------
 // Public API — preserves the exact same signatures as the original chrome.ts
 // ---------------------------------------------------------------------------
+
+/**
+ * Apply the canonical Riksdagsmonitor brand-suffix rule to a `<title>` string.
+ * Delegates to `chrome/head.ts`. Re-exported here for consumers that import
+ * from the façade (`render-lib/chrome.js`) rather than the sub-module directly.
+ */
+export function brandTitle(title: string): string {
+  return _brandTitle(title);
+}
 
 /**
  * Render the complete `<!DOCTYPE html><html…><head>…</head>` block.

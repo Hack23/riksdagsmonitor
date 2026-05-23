@@ -24,6 +24,21 @@ interface JsonLdNode {
 }
 
 /**
+ * Apply the canonical Riksdagsmonitor brand-suffix rule to a `<title>` string.
+ *
+ * If `title` already contains "Riksdagsmonitor" (case-insensitive) it is
+ * returned unchanged; otherwise the brand suffix " — Riksdagsmonitor" is
+ * appended.
+ *
+ * Extracted as a standalone export so that `article-head-metadata.ts` (which
+ * must report the *exact* branded title that `renderChromeHead` emits) can
+ * reuse the same rule without duplicating it.
+ */
+export function brandTitle(title: string): string {
+  return /riksdagsmonitor/i.test(title) ? title : `${title} — Riksdagsmonitor`;
+}
+
+/**
  * Render the complete `<!DOCTYPE html><html…><head>…</head>` block.
  *
  * This function is synchronous and deterministic for identical inputs
@@ -94,9 +109,7 @@ export function renderChromeHead(opts: ChromeOptions): string {
   if (opts.relNext) pagerLinks.push(`    <link rel="next" href="${escapeHtml(opts.relNext)}">`);
   const pagerLinksHtml = pagerLinks.length > 0 ? pagerLinks.join('\n') + '\n' : '';
 
-  const brandedTitle = /riksdagsmonitor/i.test(opts.title)
-    ? opts.title
-    : `${opts.title} — Riksdagsmonitor`;
+  const brandedTitle = brandTitle(opts.title);
   const escapedTitle = escapeHtml(opts.title);
   const escapedBrandedTitle = escapeHtml(brandedTitle);
 

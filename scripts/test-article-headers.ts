@@ -1,13 +1,15 @@
-#!/usr/bin/env node
+#!/usr/bin/env -S npx tsx
 /**
  * @module Operations/QA/TestArticleHeaders
  * @category Intelligence Operations / Quality Assurance
- * @name HTML `<head>` audit for the rendered news corpus
+ * @name SEO & `<head>` HTML audit for the rendered news corpus
  *
  * @description
  * Walks every aggregated `analysis/daily/<YYYY-MM-DD>/<subfolder>/article.md`
- * and prints — for the English locale only — the **exact** `<head>`
- * metadata strings that the article renderer would embed:
+ * (whose front-matter is derived from the article's executive brief) and
+ * prints — for the English locale only — the **exact** `<head>` metadata
+ * that the article renderer would embed, both as structured text values and
+ * as the rendered `<head>` HTML block:
  *
  *  - Branded `<title>` (post `chrome/head.ts` Riksdagsmonitor-suffix rule)
  *  - `<meta name="description">`
@@ -17,6 +19,11 @@
  *  - The raw front-matter title/description/keywords that fed the SEO
  *    composer (so the reader can see how much the SEO truncation /
  *    suffix logic mutated the executive-brief inputs).
+ *  - The rendered `<head>…</head>` HTML block (exactly what ships in HTML)
+ *
+ * This makes it possible to iterate on SEO and header quality directly
+ * from the executive-brief inputs **before** running the full article HTML
+ * generation pipeline.
  *
  * The values are produced by {@link ./render-lib/article-head-metadata.ts |
  * computeArticleHeadMetadata} — the **same** function the production
@@ -30,10 +37,10 @@
  *   --limit <N>    Process only the first N articles (smoke testing)
  *
  * @output
- * Both a human-readable block-per-article report and a final summary
- * with corpus-wide statistics (avg/min/max title & description length,
- * count of articles exceeding the 70-char SERP title budget and the
- * 200-char meta-description budget).
+ * Both a human-readable block-per-article report (with rendered `<head>`
+ * HTML) and a final summary with corpus-wide statistics (avg/min/max
+ * title & description length, count of articles exceeding the 70-char
+ * SERP title budget and the 200-char meta-description budget).
  *
  * @author Hack23 AB (Infrastructure Team)
  * @license Apache-2.0
@@ -44,7 +51,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import { LANGUAGE_META } from './sitemap-html/index.js';
-import { computeArticleHeadMetadata } from './render-lib/article-head-metadata.js';
+import { computeArticleHeadMetadata, type ArticleHeadMetadata } from './render-lib/article-head-metadata.js';
+import { renderChromeHead } from './render-lib/chrome.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -154,13 +162,7 @@ function newStats(): Stats {
   };
 }
 
-function formatBlock(index: number, total: number, ac: ArticleCase, lang: 'en'): string {
-  const markdown = fs.readFileSync(ac.articleMdPath, 'utf8');
-  const head = computeArticleHeadMetadata({
-    markdown,
-    lang,
-    canonicalPath: ac.canonicalPath,
-  });
+function formatBlock(index: number, total: number, ac: ArticleCase, head: ArticleHeadMetadata, lang: 'en'): string {
   const langMeta = LANGUAGE_META[lang];
 
   // Derived `<head>` siblings that chrome/head.ts emits alongside the
@@ -173,6 +175,20 @@ function formatBlock(index: number, total: number, ac: ArticleCase, lang: 'en'):
   const articleSection = head.articleSection;
   const twitterTitle = head.brandedTitle;
   const twitterDescription = head.seo.description;
+
+  // Render the exact <head>…</head> HTML that renderArticleHtml would emit,
+  // so the report shows what ships in the HTML before the full pipeline runs.
+  const fullHtml = renderChromeHead({
+    lang,
+    title: head.seo.title,
+    description: head.seo.description,
+    keywords: head.seo.keywords,
+    canonicalPath: ac.canonicalPath,
+    publishedIso: `${head.date}T00:00:00Z`,
+    section: head.articleSection,
+  });
+  const headMatch = fullHtml.match(/<head[\s\S]*?<\/head>/i);
+  const headHtml = headMatch ? headMatch[0] : '(error: could not extract <head> block)';
 
   const lines: string[] = [];
   lines.push('═'.repeat(78));
@@ -221,16 +237,13 @@ function formatBlock(index: number, total: number, ac: ArticleCase, lang: 'en'):
     lines.push(`  ⚠ flags           : ${flags.join('  ')}`);
   }
   lines.push('');
+  lines.push(`  ── rendered <head> HTML (exact output of renderChromeHead) ────────────`);
+  lines.push(headHtml);
+  lines.push('');
   return lines.join('\n');
 }
 
-function updateStats(stats: Stats, ac: ArticleCase): void {
-  const markdown = fs.readFileSync(ac.articleMdPath, 'utf8');
-  const head = computeArticleHeadMetadata({
-    markdown,
-    lang: 'en',
-    canonicalPath: ac.canonicalPath,
-  });
+function updateStats(stats: Stats, head: ArticleHeadMetadata): void {
   stats.count += 1;
   stats.titleLenSum += head.brandedTitle.length;
   stats.titleLenMin = Math.min(stats.titleLenMin, head.brandedTitle.length);
@@ -288,25 +301,31 @@ function main(): void {
 
   const stats = newStats();
   const chunks: string[] = [];
-  chunks.push('# Riksdagsmonitor news `<head>` audit (English locale)');
+  chunks.push('# Riksdagsmonitor news `<head>` SEO & HTML audit (English locale)');
   chunks.push('');
   chunks.push(`Generated by: scripts/test-article-headers.ts`);
   chunks.push(`Articles discovered: ${total}`);
   chunks.push(`Articles processed : ${articles.length}${args.limit ? ` (--limit ${args.limit})` : ''}`);
   chunks.push('');
   chunks.push(
-    'This report prints every `<head>` value that ships into a rendered ' +
-      "news article HTML page, using the same `computeArticleHeadMetadata` " +
-      'helper as the real article renderer. The goal is to expose the ' +
-      "current state of titles, descriptions and keywords so they can be " +
-      'improved.',
+    'This report prints every `<head>` value — plus the rendered `<head>` HTML ' +
+      'block — that would ship into a rendered news article HTML page, using the ' +
+      'same `computeArticleHeadMetadata` helper as the real article renderer. ' +
+      'Use it to iterate on SEO and header quality from the executive-brief inputs ' +
+      'before running the full HTML generation pipeline.',
   );
   chunks.push('');
 
   for (let i = 0; i < articles.length; i++) {
     try {
-      chunks.push(formatBlock(i, articles.length, articles[i], 'en'));
-      updateStats(stats, articles[i]);
+      const markdown = fs.readFileSync(articles[i].articleMdPath, 'utf8');
+      const head = computeArticleHeadMetadata({
+        markdown,
+        lang: 'en',
+        canonicalPath: articles[i].canonicalPath,
+      });
+      chunks.push(formatBlock(i, articles.length, articles[i], head, 'en'));
+      updateStats(stats, head);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       chunks.push(`!! ERROR processing ${articles[i].articleMdPath}: ${msg}`);

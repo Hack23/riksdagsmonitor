@@ -144,8 +144,8 @@ const ARTICLE_TYPE_LABELS_FALLBACK: Record<string, string> = {
   breaking: 'Breaking intelligence',
   'parliament-agenda': 'Parliament agenda',
 };
-// Referenced so dead-code analysers (knip) see the export. The runtime
-// lookup is owned by `getArticleTypeLabel` inside `article-head-metadata.ts`.
+// Referenced to prevent dead-code analysers (knip) from removing it. The
+// runtime lookup is owned by `getArticleTypeLabel` inside `article-head-metadata.ts`.
 void ARTICLE_TYPE_LABELS_FALLBACK;
 
 /**

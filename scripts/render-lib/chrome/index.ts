@@ -19,6 +19,6 @@
 
 export type { BreadcrumbItem, ChromeOptions, SiteChrome } from './types.js';
 export { depth, renderHreflangBlock, fallbackAlternateHref } from './helpers.js';
-export { renderChromeHead } from './head.js';
+export { brandTitle, renderChromeHead } from './head.js';
 export { buildHeaderHtml } from './header.js';
 export { buildFooterHtml } from './footer.js';
