@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: realtime-pulse
 slug: 2026-05-04-realtime-pulse
 source_folder: analysis/daily/2026-05-04/realtime-pulse
-generated_at: 2026-05-22T13:53:53.810Z
+generated_at: 2026-05-23T08:06:00.530Z
 language: en
 layout: article
 ---
@@ -163,6 +163,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Core Synthesis](#rm-core-synthesis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Economic Context](#rm-economic-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Implications](#rm-electoral-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Horizon Assessment](#rm-horizon-assessment) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Intelligence Gaps](#rm-intelligence-gaps) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Legislative Agenda](#rm-legislative-agenda) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -1189,6 +1202,1813 @@ Sweden's fiscal position is notably strong:
 | Western Sweden | ~22 seats | SD/S swing | Crime narrative effectiveness |
 | Northern Sweden | ~12 seats | C swing | Infrastructure + nuclear energy |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# إحاطة استخباراتية — النبض الفوري للريكسداغ 2026-05-04
+
+**التصنيف**: 🟢 عام — Riksdagsmonitor Intelligence
+**الجمهور المستهدف**: المحررون، المناوبون، الباحثون، المواطنون المهتمون
+**التاريخ**: 2026-05-04 (بالتوقيت العالمي)
+**الأيام المتبقية حتى انتخابات 2026-09-13**: 132
+**سير العمل**: news-realtime-monitor
+**أعدّه**: نظام الذكاء الاصطناعي Riksdagsmonitor
+**مستوى الثقة الإجمالي**: 🟩 مرتفع [A2] — تحقق متعدد المصادر عبر `dok_id` من بيانات الريكسداغ المفتوحة + تقرير آفاق الاقتصاد العالمي لصندوق النقد الدولي أبريل 2026
+**قرار النشر**: **نشر** (EN + AR) — الموضوع الأول بتصنيف DIW ≥ 9.0
+**متطلبات المعلومات ذات الأولوية المُجابة**: PIR-RT-001، PIR-RT-005، PIR-RT-006
+
+---
+
+### 🎯 ملخص تنفيذي (BLUF)
+
+أنتج الريكسداغ السويدي في 4 مايو 2026 أعلى كثافة تشريعية قبل الانتخابات حتى الآن: أقرّت لجنة الصناعة (NU) منح التراخيص المباشرة للمفاعلات النووية (`HD01NU19`، يدخل حيز التنفيذ في 17 يونيو 2026) — الإنجاز الهيكلي الأبرز لتحالف تيدو في السياسة الطاقوية — فيما تقدّمت الحزمة السابعة المتتالية لمكافحة العصابات عبر إصلاح ضبط المتفجرات (`HD01FöU13`) وإصلاح الإجراءات الجزائية (`HD01JuU9`)، كلاهما يدخل حيز التنفيذ في 1 يوليو 2026. في مواجهة هذا الجدار من الإنجازات الحكومية، تقدّمت النائبة الاشتراكية **إيفا ليند** باستجواب `HD10463` لوزير البنية التحتية أندرياس كارلسون (KD) بشأن إلغاء محطة لينشوبينغ على خط Ostlänken — وعد مكسور منذ 20 عامًا أمام منطقة ركوب يومية تضم 500,000 شخص في دائرة انتخابية ذات هامش تنافسي. من المقرر التصويت على تقرير الشفافية في تمويل الأحزاب (`HD01KU39`) في الجلسة العامة في 16 يونيو 2026، مما يستكمل رواية إنجاز رباعية المسارات (الطاقة والأمن والشفافية والمحصلة المالية) قبل 89 يومًا من الانتخابات. **مستوى الثقة: 🟩 مرتفع [A2]** — المصادر: بيانات الريكسداغ المفتوحة، صندوق النقد الدولي WEO أبريل 2026.
+
+---
+
+### 🧭 ثلاثة قرارات يدعمها هذا التقرير
+
+| # | القرار | صاحب القرار | الموعد النهائي | الأساس |
+|:-:|--------|-------------|:--------------:|--------|
+| 1 | **تحريري:** تقديم مقال EN + AR عاجل بالإطار المزدوج (إصلاح الطاقة النووية + الرواية المضادة لـ Ostlänken) في غضون ساعتين | رئيس التحرير | +2 س | قرار لجنة `HD01NU19` + استجواب `HD10463` المقدّم في 2026-05-04 |
+| 2 | **تغطية استباقية:** تكليف مناوب بمتابعة رد كارلسون على Ostlänken (الأجل القانوني للرد: 25 مايو 2026) ودخول قانون الطاقة النووية حيز التنفيذ في 17 يونيو | المناوب | 2026-05-25 / 2026-06-17 | PIR-RT-005، PIR-RT-006؛ سجل الاستجوابات `HD10463` |
+| 3 | **مخاطر:** رفع مستوى رصد عتبة L من المراقبة إلى التتبع النشط — منطق أداء الائتلاف تفترض تجاوز L نسبة 4% في 13 سبتمبر؛ أي نتيجة Novus/Demoskop <4.5% تُطلق مراجعة حسابية للائتلاف | رئيس التحليل | أسبوعيًا مستمرًا | `coalition-dynamics.md`، رأي ما بعد الهجرة PIR-RT-003 |
+
+---
+
+### ⚡ قراءة في 60 ثانية
+
+- 🔴 **إصلاح الطاقة النووية نحو الترخيص المباشر (`HD01NU19`)** — وافقت لجنة الصناعة (NU) على الترخيص المباشر متجاوزةً خط أنابيب الهيئة النووية (SSM) متعدد المراحل؛ **يدخل حيز التنفيذ في 17 يونيو 2026**. أكبر إنجاز تشريعي هيكلي في عهد تيدو؛ يُنجز وعد M/KD/L/SD بإعادة تشغيل الطاقة النووية عام 2022 قبل يوم الانتخابات [🟩 مرتفع — `HD01NU19`، محضر لجنة NU].
+- 🟠 **استجواب خرق وعد Ostlänken (`HD10463`)** — تطلب النائبة S **إيفا ليند** من الوزير **أندرياس كارلسون (KD)** تفسير إلغاء محطة لينشوبينغ على خط Ostlänken؛ الأجل القانوني للرد **25 مايو 2026**. الاستجواب الثالث المقدّم ضد كارلسون في 10 أيام — ضغط S إقليمي منسق على منطقة ركوب 500,000 شخص [🟩 مرتفع — `HD10463`، سجل الاستجوابات].
+- 🟢 **الحزمة السابعة لمكافحة العصابات تتقدم (`HD01FöU13` + `HD01JuU9`)** — اشتراط تشديد تراخيص المتفجرات (لجنة الدفاع، 1 يوليو 2026)؛ يُلغي إصلاح الإجراءات الجزائية *tilltrosbestämmelserna* ويوسع أدلة الاستجواب المبكر (لجنة العدالة، 1 يوليو 2026). يتعزز السرد الجوهري لـ M/SD «إنجاز ما وُعد به في الأمن» [🟩 مرتفع — `HD01FöU13`، `HD01JuU9`].
+- 🟡 **شفافية تمويل الأحزاب (`HD01KU39`)** — تُسجّل لجنة الدستور تقريرًا عن الشفافية في العمليات السياسية (يتناول على الأرجح اقتراح `HD03258` بشأن الإفصاح عن تمويل الأحزاب)؛ تصويت عام **16 يونيو 2026**؛ L/KD يستفيدان من موقعهما في إصلاح الديمقراطية. تمت الإجابة على PIR-RT-002: KU (ليس JuU/SfU) هو المسؤول عن الملف [🟧 متوسط — `HD01KU39`، التقويم].
+- 🔵 **السياق الاقتصادي (صندوق النقد الدولي WEO أبريل 2026)** — الدين العام السويدي ≈ 34% من الناتج المحلي الإجمالي (`GGXWDG_NGDP` توقعات 2026) مقابل متوسط منطقة اليورو >90%؛ نمو الناتج المحلي الإجمالي الحقيقي 2026 `NGDP_RPCH` 2.0–2.1%؛ التضخم يتراجع (`PCPIEPCH`). خفضت Riksbank أسعار الفائدة 2025–26 لتصل إلى أصحاب الرهن العقاري → سردية M «الأيادي الأمينة» [🟩 مرتفع — المزود: imf، تدفق البيانات: WEO_Apr_2026، الإصدار: أبريل 2026].
+- 🟣 **مرجع متقاطع** — ترتبط `HD01NU19` بخيط السياسة الطاقوية في تحليل المقترحات (`../propositions/`)؛ تُطيل `HD10463` مجموعة خرق الوعود الإقليمي لـ S من `opposition-analysis.md`؛ الشفافية `HD01KU39` تتناول `HD03258` من حزمة مقترحات 30 أبريل.
+- 🩷 **ثغرة ناشئة — مخاطر «مسرح الطاقة النووية»** — إطار المعارضة الذي يصف دخول القانون حيز التنفيذ في 17 يونيو بأنه رمزي دون تقديم طلب قبل يوم الانتخابات في 13 سبتمبر. إذا لم تُقدّم فاتنفال/يونيبر/جهة جديدة طلبًا خلال نافذة الـ88 يومًا قبل الانتخابات، قد تصبح سردية الأداء قابلة للطعن [🟧 متوسط — PIR-RT-006 مفتوح].
+- ⚪ **منقول** — آراء Lagråd بشأن مقترحات الهجرة `HD03262` و`HD03265` (PIR-RT-001) لا تزال **مفتوحة — حرجة**؛ مراجعة الجودة الدستورية هي العامل الأكثر تأثيرًا غير المحسوم الذي يُشكّل السردية السياسية لإصلاح الهجرة خلال الموسم الصيفي.
+
+---
+
+### 🗂️ المستندات المصنّفة (ترتيب DIW)
+
+| الترتيب | dok_id | العنوان (مختصر) | DIW | الثقة | الحالة |
+|:-------:|--------|-----------------|:---:|:-----:|--------|
+| 1 | `HD01NU19` | إصلاح ترخيص الطاقة النووية (مسار مباشر) | 9.2 | 🟩 مرتفع [A2] | موافقة اللجنة — يدخل حيز التنفيذ 17 يونيو 2026 |
+| 2 | `HD10463` | استجواب Ostlänken — ليند (S) → كارلسون (KD) | 8.6 | 🟩 مرتفع [A2] | مقدّم — الرد مستحق 25 مايو 2026 |
+| 3 | `HD01FöU13` | إصلاح ضبط المتفجرات | 7.5 | 🟩 مرتفع [A2] | موافقة اللجنة — يدخل حيز التنفيذ 1 يوليو 2026 |
+| 4 | `HD01JuU9` | إصلاح الإجراءات الجزائية | 7.4 | 🟩 مرتفع [A2] | موافقة اللجنة — يدخل حيز التنفيذ 1 يوليو 2026 |
+| 5 | `HD01KU39` | الشفافية في العمليات السياسية | 7.0 | 🟧 متوسط [B2] | مسجّل — تصويت عام 16 يونيو 2026 |
+| 6 | `HD01FiU49` | تقييم إدارة الدين العام 2021–2025 | 6.4 | 🟩 مرتفع [A2] | مسجّل — قرار 11 يونيو 2026 |
+
+---
+
+### ⚠️ نظرة عامة على المخاطر والتهديدات
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 خطر عتبة L<br/>L أقل من 4 بالمئة<br/>L x I = 3 x 5 = 15"] --> CONS["رصد Novus / Demoskop<br/>استطلاعات أسبوعية"]
+    R2["🟠 Ostlänken الإقليمي<br/>سردية S للدائرة الهامشية<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 إطار مسرح الطاقة النووية<br/>لا طلب مقدّم 13 سبت<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 Lagråd الهجرة<br/>HD03262 / HD03265 جارٍ<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| الخطر | الاحتمالية | الأثر | الدرجة | المشغّل | المصدر | Admiralty |
+|-------|:----------:|:------:|:------:|---------|--------|:---------:|
+| Liberalerna أقل من عتبة 4% → تيدو يفقد الأغلبية | 3 | 5 | 15 | أي نتيجة Novus/Demoskop <4.0% (الحد الأدنى لفاصل ثقة 95% <4.0) | `coalition-dynamics.md` R1 | **[B2]** |
+| سردية خرق الوعود الإقليمية لـ S تُحوّل مقاعد هامشية في Östergötland | 4 | 3 | 12 | تُقيّم تحرير SVT/SR Östergötland ردّ كارلسون في 25 مايو بأنه غير كافٍ | `opposition-analysis.md` | **[A2]** |
+| رأي Lagråd المعادي حول حزمة الهجرة `HD03262`/`HD03265` | 3 | 4 | 12 | نشر رأي Lagråd في 30 يومًا مع اعتراضات دستورية | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| «مسرح الطاقة النووية» — دخول `HD01NU19` حيز التنفيذ دون طلب مقدّم قبل 13 سبتمبر | 3 | 3 | 9 | تخلّف فاتنفال/يونيبر/جهة جديدة عن تقديم الطلب قبل 1 سبتمبر 2026 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 أبرز المحفزات المستقبلية
+
+**الرد الكتابي لأندرياس كارلسون على الاستجواب `HD10463`، الأجل القانوني للرد 25 مايو 2026.** طريقة تأطير كارلسون لإلغاء محطة لينشوبينغ على خط Ostlänken — سواء اعترف بخرق الوعد، أو دافع عن تغيير المسار بأسباب تقنية/ميزانياتية، أو تحوّل نحو عروض بنية تحتية إقليمية بديلة — ستحدد ما إذا كانت سردية Östergötland ستتصاعد إلى نقاش استجواب كامل في الجلسة العامة قبل التعليق الصيفي. الرد التهرّبي أو التكنوقراطي هو أكثر الطرق احتمالًا لـ S لتحويل السردية إلى 1–2 تحوّلات هامشية في المقاعد في لينشوبينغ/نورشوبينغ. عرض استثماري بديل جوهري سيُهدئ السردية. كلا النتيجتين تُزيحان تقييمات الدوائر الهامشية في `coalition-mathematics.md` وتُطلقان مراجعة Pass-2 لـ `electoral-implications.md`.
+
+**المحفز الثانوي** (رصد متوازٍ): 16 يونيو 2026 — تصويت عام `HD01KU39` بشأن شفافية التمويل السياسي. يؤكد أو يكسر السردية الرباعية المسارات للحكومة (الطاقة + الأمن + الشفافية + المحصلة المالية) قبل 89 يومًا من الانتخابات.
+
+---
+
+### 📊 التقييم الاستراتيجي
+
+**مستوى الثقة: 🟩 مرتفع [A2]** — تشمل المصادر بيانات الريكسداغ المفتوحة (`HD01NU19`، `HD10463`، `HD01FöU13`، `HD01JuU9`، `HD01KU39`، `HD01FiU49`)، والإصدار الأخير من صندوق النقد الدولي WEO أبريل 2026، وسجل الاستجوابات.
+
+يلتقط المشهد في 4 مايو 2026 تحالف تيدو في **أقصى سرعة تشريعية**: سبعة إصلاحات ائتلافية تتقدم في أسبوع واحد، مع تواريخ سريان محددة تمتد من 1 يونيو إلى 1 يوليو 2026. كل تاريخ سريان يُولّد إيقاع إنجاز يمكن للأحزاب الأربعة أن تُحمّله في حملاتها الانتخابية. الثغرة الاستراتيجية غير متماثلة: M وKD وSD يستفيدون من التتالي؛ بينما يتحمّل **L** العبء — الحزب الأصغر في الائتلاف هو الأقرب لعتبة 4% ويحمل خطر خسارة مقاعد غير متناسب.
+
+ردّ معارضة S دقيق منهجيًا: بدلًا من مواجهة الحكومة على أقوى أراضيها (الأمن، الطاقة النووية، الاقتصاد)، تبني S **فسيفساء سخط إقليمية موزّعة** — Ostlänken في Östergötland (`HD10463`)، Scandinavian Mountain Airport (استجواب 428)، الإسكان في ستوكهولم (استجواب 434) — كلٌّ موجَّه ضد وزير واحد (كارلسون) من دوائر مختلفة.
+
+الإطار الاقتصادي الكلي لصندوق النقد الدولي مؤاتٍ للحكومة الحاكمة: الدين العام ≈ 34% من الناتج المحلي الإجمالي، تضخم متراجع، نمو نحو 2%. السردية الاقتصادية هي أقوى أصول M.
+
+**منظور انتخابات 2026**: المسار الحالي يُبقي تيدو قرب 175 مقعدًا — عند حدود الأغلبية بالضبط. خطر عتبة L (PIR-RT-003) هو المتغير الانتخابي الأهم منفردًا. رأي Lagråd حول الهجرة (PIR-RT-001) هو المتغير الوحيد الأهم للسردية السياسية. رد كارلسون على Ostlänken (PIR-RT-005) هو المتغير الوحيد الأهم للمقاعد الإقليمية. تُحسم الثلاثة في غضون 5 أسابيع من تاريخ نشر هذه الإحاطة.
+
+---
+
+### 📎 الروابط
+
+| الرابط | المسار |
+|--------|--------|
+| المقال | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| ملخص التوليف | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| التوليف الجوهري | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| ديناميكيات الائتلاف | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| تحليل المعارضة | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| التداعيات الانتخابية | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| السياق الاقتصادي (صندوق النقد) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| المؤشرات الاستشرافية | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| مصفوفة المخاطر/الفرص | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| تحليل السيناريوهات | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| الملاحظات المنهجية | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| قائمة البيانات | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| تحليلات المستندات | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 ضبط الوثيقة
+
+- **معرّف الإحاطة**: `EB-2026-05-04-001`
+- **تاريخ الإنشاء**: 2026-05-16 (تعويض متأخر — أُنشئ من نتائج تحليل المرور الثاني الموجودة)
+- **مسار القالب**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **منهجية الملكية**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **بوابة الملكية**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) فحص 1 + فحص 7
+- **عائلة المخرجات**: A — التوليف الجوهري
+- **التصنيف**: 🟢 عام
+
+*المصدر الاقتصادي: المزود: imf، تدفق البيانات: WEO_Apr_2026، المؤشرات: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH، الإصدار: أبريل 2026، تاريخ الاسترداد: 2026-05-04. بيانات الريكسداغ مسترداة عبر API riksdag-regering في 2026-05-04. يُنتج Riksdagsmonitor بواسطة Hack23 AB؛ هذه الإحاطة تمثّل تقييمًا تحريريًا مستقلًا مستندًا إلى وثائق برلمانية متاحة للعموم.*
+
+</div>
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_da.md -->
+
+**Klassificering**: 🟢 OFFENTLIG — Riksdagsmonitor Intelligence
+**Målgrupp**: Redaktører, vagthavende, forskere, engagerede borgere
+**Dato**: 2026-05-04 (UTC)
+**Dage til valget 2026-09-13**: 132
+**Workflow**: news-realtime-monitor
+**Udarbejdet af**: Riksdagsmonitor AI Intelligence System
+**Samlet konfidensniveau**: 🟩 HØJ [A2] — flerkildekorreborering via `dok_id` fra åbne Riksdag-data + IMF WEO apr 2026
+**Publiceringsbeslutning**: **PUBLICER** (EN + DA) — DIW-rangeret tophistorie ≥ 9,0
+**PIR'er besvaret**: PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 BLUF
+
+Sveriges Riksdag producerede den 4. maj 2026 sin hidtil mest koncentrerede lovgivningsoutput før valget: Erhvervsudvalget (NU) godkendte direkte sporsgodkendelse af atomkraftanlæg (`HD01NU19`, træder i kraft 17. juni 2026) — Tidø-koalitionens eneste største strukturelle energipolitiske bedrift — mens den 7. på hinanden følgende antikriminalitetsindsats avancerede via sprængstofreglering (`HD01FöU13`) og reform af strafferetlige processer (`HD01JuU9`), begge med ikrafttrædelse 1. juli 2026. Over for denne mur af regeringslevering indgav socialdemokraten **Eva Lindh** en interpellation `HD10463` mod KD's infrastrukturminister **Andreas Carlson** om den annullerede Ostlänken Linköping-stationstilføjelse — et 20 år gammelt løftebrud mod en 500.000-personers pendlerregion i konkurrencedygtigt valgkredsmarginalterritorium. Transparensrapporten om politisk finansiering (`HD01KU39`) er planlagt til plenarvote den 16. juni 2026, som fuldfører et firesporet leveringsnarrativ (energi, sikkerhed, transparens, finansielt resultat) 89 dage før valget. **Konfidensniveau: 🟩 HØJ [A2]** — kilder: Riksdagens åbne data, IMF WEO apr 2026.
+
+---
+
+### 🧭 3 beslutninger dette briefing understøtter
+
+| # | Beslutning | Beslutningstager | Frist | Grundlag |
+|:-:|------------|------------------|:-----:|---------|
+| 1 | **Redaktionel:** lead EN + DA breaking-artikel med atomkraftreform-plus-Ostlänken-modnarrativ (dobbeltramme, 2-timers publiceringsmål) | Chefredaktør | +2 t | `HD01NU19` udvalgsafgørelse + `HD10463` interpellation indgivet 2026-05-04 |
+| 2 | **Fremadrettet dækning:** tildel vagthavende til at følge Carlsons Ostlänken-svar (lovpligtig svarsfrist 25. maj 2026) og atomlovens ikrafttrædelse 17. juni | Vagthavende | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; `HD10463` interpellationsregister |
+| 3 | **Risiko:** forhøj L-tærskelovervaagningsniveau fra observation til aktiv sporing — koalitionens leveringsdynamik forudsætter at L overstiger 4 % den 13. sept; ethvert Novus/Demoskop-resultat <4,5 % udløser koalitionsmatematisk revision | Analyseleder | Rullende ugentligt | `coalition-dynamics.md`, post-migrationsopinion PIR-RT-003 |
+
+---
+
+### ⚡ 60-sekunders læsning
+
+- 🔴 **Atomkraftreform til direkte sporsgodkendelse (`HD01NU19`)** — Erhvervsudvalget (NU) godkender direkte sporsgodkendelse, omgår Strålsikkerhedsmyndighedens (SSM) fleretapspipeline; **træder i kraft 17. juni 2026**. Tidø-mandatperiodens eneste største strukturelle lovgivningsbedrift; lever M/KD/L/SD's atomkraftgenstartsløfte fra 2022 med operationel milepælopfyldelse inden valgdagen [🟩 HØJ — `HD01NU19`, NU's udvalgsprotokol].
+- 🟠 **Ostlänken-løftebrud-interpellation (`HD10463`)** — S-medlem **Eva Lindh** kræver at infrastrukturminister **Andreas Carlson (KD)** redegør for annulleringen af den planlagte Linköping Ostlänken-station; lovpligtig svarsfrist **25. maj 2026**. Tredje interpellation indgivet mod Carlson på 10 dage — koordineret regionalt S-pres på en 500.000-personers pendlingsregion [🟩 HØJ — `HD10463`, interpellationsregistret].
+- 🟢 **Syvende gangbekæmpelsesindsats avancerer (`HD01FöU13` + `HD01JuU9`)** — Tilladelseskrav til sprængstoffer skærpes (Forsvarsudvalget, 1. juli 2026); reform af strafferetlige processer afskaffer *tilltrosbestämmelserna* og udvider tidligt forhørsbevismateriale (Retsudvalget, 1. juli 2026). M/SD's kernefortælling om "leverer på sikkerhed" styrkes [🟩 HØJ — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **Politisk finansieringstransparens (`HD01KU39`)** — Forfatningsudvalget registrerer betænkning om transparens i politiske processer (behandler med stor sandsynlighed proposition `HD03258` om redegørelse for partifinansering); plenarvote **16. juni 2026**; L/KD drager fordel af demokratireformpositionering. PIR-RT-002 besvaret: KU (ikke JuU/SfU) ejer sagen [🟧 MIDDEL — `HD01KU39`, kalenderen].
+- 🔵 **Ekonomisk kontekst (IMF WEO apr 2026)** — Sveriges offentlige gæld ≈ 34 % af BNP (`GGXWDG_NGDP` 2026-prognose) mod eurozonegennemsnittet >90 %; reel BNP-vækst 2026 `NGDP_RPCH` 2,0–2,1 %; inflation falder (`PCPIEPCH`). Riksbankens rentenedsættelser 2025–26 når boliglåntagere → M's "sikre hænder"-fortælling [🟩 HØJ — udbyder: imf, datastrøm: WEO_Apr_2026, vintage: april 2026].
+- 🟣 **Krydshenvisning** — `HD01NU19` knytter til energipolitiktråden i propositionsanalysen (`../propositions/`); `HD10463` forlænger S's regionale løftebrudkluster fra `opposition-analysis.md`; transparens `HD01KU39` behandler `HD03258` fra 30. april-propositionspakken.
+- 🩷 **Fremvoksende sårbarhed — "atomkraftteater"-risiko** — Oppositionens ramme om, at ikrafttrædelsen 17. juni er symbolsk uden indgivet ansøgning inden valgdagen den 13. september. Hvis Vattenfall/Uniper/ny aktør ikke indgiver ansøgning inden for det 88-dages pre-valgsvindue, risikerer præstationsfortællingen at blive anfægtelig [🟧 MIDDEL — PIR-RT-006 åben].
+- ⚪ **Overført** — Lagrådets udtalelser om migrationspropositionerne `HD03262` og `HD03265` (PIR-RT-001) forbliver **ÅBNE — KRITISKE**; den konstitutionelle kvalitetsgennemgang er den eneste mest indflydelsesrige uløste faktor der former migrationsreformens politiske fortælling i sommersæsonen.
+
+---
+
+### 🗂️ Topopstilling (DIW-rangeret)
+
+| Rang | dok_id | Titel (kort) | DIW | Konfidens | Status |
+|:----:|--------|--------------|:---:|:---------:|--------|
+| 1 | `HD01NU19` | Atomkrafttilladelsesreform (direkte spor) | 9,2 | 🟩 HØJ [A2] | Udvalg godkendt — træder i kraft 17. juni 2026 |
+| 2 | `HD10463` | Ostlänken-interpellation — Lindh (S) → Carlson (KD) | 8,6 | 🟩 HØJ [A2] | Indgivet — svar forfaldent 25. maj 2026 |
+| 3 | `HD01FöU13` | Reform af sprængstofreglering | 7,5 | 🟩 HØJ [A2] | Udvalg godkendt — træder i kraft 1. juli 2026 |
+| 4 | `HD01JuU9` | Reform af strafferetlige processer | 7,4 | 🟩 HØJ [A2] | Udvalg godkendt — træder i kraft 1. juli 2026 |
+| 5 | `HD01KU39` | Transparens i politiske processer | 7,0 | 🟧 MIDDEL [B2] | Registreret — plenarvote 16. juni 2026 |
+| 6 | `HD01FiU49` | Statsgældsforvaltningsevaluering 2021–2025 | 6,4 | 🟩 HØJ [A2] | Registreret — beslutning 11. juni 2026 |
+
+---
+
+### ⚠️ Risiko- og trusselbillede
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 L-tærskelrisiko<br/>L under 4 procent<br/>L x I = 3 x 5 = 15"] --> CONS["Overvåg Novus / Demoskop<br/>ugentlige meningsmålinger"]
+    R2["🟠 Ostlänken regional<br/>S marginalt valgkredsnarrativ<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 Atomkraftteaterramme<br/>ingen tilladelse indgivet 13. sept<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 Migrationslagrådets udtalelse<br/>HD03262 / HD03265 igangværende<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| Risiko | L | I | Score | Udløser | Kilde | Admiralty |
+|--------|:-:|:-:|:-----:|---------|-------|:---------:|
+| Liberalerna under 4%-tærsklen → Tidø mister majoritet | 3 | 5 | 15 | Ethvert Novus/Demoskop-resultat <4,0 % (95 % CI nedre grænse <4,0) | `coalition-dynamics.md` R1 | **[B2]** |
+| S's regionale løftebrudnarrativ konverterer marginale Østergötland-mandater | 4 | 3 | 12 | Carlsons 25. maj-svar vurderet utilstrækkeligt af SVT/SR Østergötlands redaktion | `opposition-analysis.md` | **[A2]** |
+| Lagrådets fjendtlige udtalelse om migrationspakken `HD03262`/`HD03265` | 3 | 4 | 12 | Lagrådets udtalelse offentliggjort inden for 30 d med forfatningsindvendinger | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| "Atomkraftteater" — `HD01NU19` ikrafttrædelse uden indgivet tilladelsesansøgning inden 13. sept | 3 | 3 | 9 | Vattenfall/Uniper/ny aktør undlader at indgive ansøgning senest 1. sept 2026 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 Vigtigste fremtidige udløsere
+
+**Andreas Carlsons skriftlige svar på interpellation `HD10463`, lovpligtig svarsfrist 25. maj 2026.** Carlsons måde at ramme den annullerede Linköping Ostlänken-station — om han indrømmer løftebrud, forsvarer routeændringen på tekniske/budgetmæssige grunde eller svinger mod alternative regionale infrastrukturtilbud — afgør om Østergötland-narrativet eskalerer til en fuld interpellationsdebat i kammeret inden sommerudsættelsen. Et undvigent eller teknokratisk svar er den mest sandsynlige vej for S til at omdanne narrativet til 1–2 marginale mandatskift i Linköping/Norrköping. Et substantielt alternativt investeringstilbud de-eskalerer narrativet. Begge udfald forskyver `coalition-mathematics.md`'s marginale valgkredsvurderinger og udløser en Pass-2-omskrivning af `electoral-implications.md`.
+
+**Sekundær udløser** (parallel overvågning): 16. juni 2026 — `HD01KU39` plenarvote om politisk finansieringstransparens. Bekræfter eller bryder det firesporede leveringsnarrativ for regeringen (energi + sikkerhed + transparens + finansielt resultat) 89 dage før valget.
+
+---
+
+### 📊 Strategisk vurdering
+
+**Konfidensniveau: 🟩 HØJ [A2]** — kilder inkluderer Riksdagens åbne data (`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), IMF WEO april 2026 vintage og interpellationsregistret.
+
+Øjebliksbilledet fra 4. maj 2026 fanger en Tidø-koalition i **maksimal lovgivningshastighed**: syv koalitionsreformer avancerer i løbet af én uge, med konkrete ikrafttrædelsesdatoer spredt fra 1. juni til 1. juli 2026. Hver ikrafttrædelsesdato genererer en leveringstakt, som de fire koalitionspartier kan føre valgkamp på. Den strategiske sårbarhed er asymmetrisk: M, KD og SD drager fordel af kaskaden; **L** absorberer belastningen — det mindste koalitionsparti er tættest på 4 %-grænsen og bærer uforholdsmæssig mandatrisiko.
+
+S-oppositionens svar er metodologisk præcist: i stedet for at udfordre regeringen på dens stærkeste grund (sikkerhed, atomenergi, økonomi) bygger S en **distribueret regional-utilfredshedsmosaik** — Ostlänken i Østergötland (`HD10463`), Scandinavian Mountain Airport (interpellation 428), Stockholms boliger (interpellation 434) — hver rettet mod en enkelt minister (Carlson) fra forskellige valgkredse.
+
+IMF's makroramme er gunstig for den siddende regering: offentlig gæld ≈ 34 % af BNP, faldende inflation, vækst på ca. 2 %. Det økonomiske narrativ er M's stærkeste aktiv.
+
+**Valg 2026-linse**: Den nuværende kurs holder Tidø nær 175 mandater — præcist ved majoritetsgrænserne. L's tærskelrisiko (PIR-RT-003) er den eneste vigtigste valgvariabel. Lagrådets migrationsudtalelse (PIR-RT-001) er den eneste vigtigste politiske narrativvariabel. Carlsons Ostlänken-svar (PIR-RT-005) er den eneste vigtigste regionale mandatvariabel. Alle tre løses inden for 5 uger fra denne briefings publiceringsdato.
+
+---
+
+### 📎 Links
+
+| Link | Sti |
+|------|-----|
+| Artikel | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| Synteseoverview | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| Kernesyntese | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| Koalitionsdynamik | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| Oppositionsanalyse | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| Valgimplikationer | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| Ökonomisk kontekst (IMF) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| Fremtidsindikatorer | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| Risiko-/mulighedsmatrix | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| Scenarieanalyse | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| Metodenoter | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| Datamanifest | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| Per-dokumentanalyser | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 Dokumentkontrol
+
+- **Briefing-ID**: `EB-2026-05-04-001`
+- **Genereret**: 2026-05-16 (efterslæbsopfyldning — skabt fra eksisterende Pass-2-analyseartefakter)
+- **Skabelonsti**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **Ejerskabsmetodologi**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **Ejerskabsgate**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) Check 1 + Check 7
+- **Outputfamilie**: A — Kernesyntese
+- **Klassificering**: 🟢 OFFENTLIG
+
+*Risikodagsorden: udbyder: imf, datastrøm: WEO_Apr_2026, indikatorer: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, vintage: april 2026, retrieved_at: 2026-05-04. Riksdagsdata hentet via riksdag-regering API 2026-05-04. Riksdagsmonitor produceres af Hack23 AB; denne briefing repræsenterer en uafhængig redaktionel vurdering baseret på offentligt tilgængelige parlamentariske dokumenter.*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_de.md -->
+
+**Klassifizierung**: 🟢 ÖFFENTLICH — Riksdagsmonitor Intelligence
+**Zielgruppe**: Redakteure, Diensthabende, Forscher, interessierte Bürger
+**Datum**: 2026-05-04 (UTC)
+**Tage bis zur Wahl 2026-09-13**: 132
+**Workflow**: news-realtime-monitor
+**Erstellt von**: Riksdagsmonitor AI Intelligence System
+**Gesamtes Konfidenzniveau**: 🟩 HOCH [A2] — Mehrquellen-Korroboration über `dok_id` aus offenen Riksdag-Daten + IMF WEO April 2026
+**Veröffentlichungsentscheidung**: **VERÖFFENTLICHEN** (EN + DE) — DIW-priorisiertes Topthema ≥ 9,0
+**Beantwortete PIRs**: PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 BLUF
+
+Schwedens Riksdag produzierte am 4. Mai 2026 seine bisher konzentrierteste Gesetzgebungsleistung vor der Wahl: Der Wirtschaftsausschuss (NU) billigte die Direktgenehmigung von Kernkraftanlagen (`HD01NU19`, tritt am 17. Juni 2026 in Kraft) — die einzige größte strukturelle energiepolitische Leistung der Tidö-Koalition — während die siebte aufeinanderfolgende Antigang-Maßnahme durch Sprengstoffkontrollreform (`HD01FöU13`) und Reform der Strafprozesse (`HD01JuU9`) vorankam, beide mit Inkrafttreten am 1. Juli 2026. Gegen diese Wand der Regierungsleistung reichte die Sozialdemokratin **Eva Lindh** eine Interpellation `HD10463` gegen KDs Infrastrukturminister **Andreas Carlson** zur gestrichenen Ostlänken Linköping-Stationserweiterung ein — ein 20 Jahre altes Versprechen, das einer 500.000-Einwohner-Pendlerregion in wettbewerbsfähigem Wahlkreis-Randgebiet gebrochen wurde. Der Transparenzbericht zur politischen Finanzierung (`HD01KU39`) ist für eine Plenarvote am 16. Juni 2026 eingeplant, was ein vierspuriges Leistungsnarrativ (Energie, Sicherheit, Transparenz, Finanzergebnis) 89 Tage vor der Wahl vervollständigt. **Konfidenzniveau: 🟩 HOCH [A2]** — Quellen: Riksdagens offene Daten, IMF WEO April 2026.
+
+---
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+| # | Entscheidung | Entscheidungsträger | Frist | Grundlage |
+|:-:|-------------|--------------------:|:-----:|-----------|
+| 1 | **Redaktionell:** EN + DE Breaking-Artikel mit Kernkraftreform-plus-Ostlänken-Gegennarrativ führen (Doppelrahmen, 2-Stunden-Veröffentlichungsziel) | Chefredakteur | +2 h | `HD01NU19` Ausschussentscheid + `HD10463` Interpellation eingereicht 2026-05-04 |
+| 2 | **Vorausschauende Berichterstattung:** Diensthabenden beauftragen, Carlsons Ostlänken-Antwort (gesetzliche Antwortfrist 25. Mai 2026) und Kerngesetz-Inkrafttreten am 17. Juni zu verfolgen | Diensthabender | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; `HD10463` Interpellationsregister |
+| 3 | **Risiko:** L-Schwellenüberwachungsniveau von Beobachtung auf aktive Verfolgung anheben — Koalitionsleistungslogik setzt voraus, dass L am 13. Sept. 4 % überschreitet; jedes Novus/Demoskop-Ergebnis <4,5 % löst koalitionsarithmetische Revision aus | Analyseleiterin | Fortlaufend wöchentlich | `coalition-dynamics.md`, Post-Migrations-Meinung PIR-RT-003 |
+
+---
+
+### ⚡ 60-Sekunden-Lektüre
+
+- 🔴 **Kernkraftreform zur Direktgenehmigung (`HD01NU19`)** — Wirtschaftsausschuss (NU) billigt Direktgenehmigung, umgeht die mehrstufige Pipeline der Strahlenschutzbehörde (SSM); **tritt am 17. Juni 2026 in Kraft**. Größte strukturelle Gesetzgebungsleistung der Tidö-Legislaturperiode; liefert M/KD/L/SDs Kernkraft-Neustart-Versprechen von 2022 mit operativer Meilensteinerfüllung vor dem Wahltag [🟩 HOCH — `HD01NU19`, NU-Ausschussprotokoll].
+- 🟠 **Ostlänken-Versprechen-Interpellation (`HD10463`)** — S-Abgeordnete **Eva Lindh** fordert Infrastrukturminister **Andreas Carlson (KD)** auf, die Streichung der geplanten Linköping Ostlänken-Station zu erklären; gesetzliche Antwortfrist **25. Mai 2026**. Dritte Interpellation gegen Carlson in 10 Tagen — koordinierter regionaler S-Druck auf eine 500.000-Einwohner-Pendlerregion [🟩 HOCH — `HD10463`, Interpellationsregister].
+- 🟢 **Siebte Gangbekämpfungsmaßnahme schreitet voran (`HD01FöU13` + `HD01JuU9`)** — Genehmigungsanforderungen für Sprengstoffe werden verschärft (Verteidigungsausschuss, 1. Juli 2026); Strafprozessreform schafft *tilltrosbestämmelserna* ab und erweitert frühzeitiges Verhörbeweismaterial (Rechtsausschuss, 1. Juli 2026). M/SDs Kernnarrativ „liefert bei Sicherheit" wird gestärkt [🟩 HOCH — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **Transparenz bei politischer Finanzierung (`HD01KU39`)** — Verfassungsausschuss registriert Bericht über Transparenz in politischen Prozessen (behandelt höchstwahrscheinlich Proposition `HD03258` zur Berichterstattung über Parteifinanzen); Plenarvote **16. Juni 2026**; L/KD profitieren von Demokratiereformpositionierung. PIR-RT-002 beantwortet: KU (nicht JuU/SfU) besitzt das Thema [🟧 MITTEL — `HD01KU39`, Kalender].
+- 🔵 **Wirtschaftlicher Kontext (IMF WEO April 2026)** — Schwedens Staatsverschuldung ≈ 34 % des BIP (`GGXWDG_NGDP` 2026-Prognose) vs. Eurozone-Durchschnitt >90 %; reales BIP-Wachstum 2026 `NGDP_RPCH` 2,0–2,1 %; Inflation sinkt (`PCPIEPCH`). Riksbanks Zinssenkungen 2025–26 erreichen Hypothekennehmer → Ms „sichere Hände"-Narrativ [🟩 HOCH — Anbieter: imf, Datenfluss: WEO_Apr_2026, Vintage: April 2026].
+- 🟣 **Querverweis** — `HD01NU19` knüpft an den Energiepolitikstrang der Propositionsanalyse (`../propositions/`); `HD10463` verlängert Ss regionales Versprechensbruch-Cluster aus `opposition-analysis.md`; Transparenz `HD01KU39` behandelt `HD03258` aus dem 30. April-Propositionspaket.
+- 🩷 **Entstehende Verwundbarkeit — „Kernkrafttheater"-Risiko** — Oppositionsrahmen, dass das Inkrafttreten am 17. Juni symbolisch ist ohne eingereichten Antrag vor dem Wahltag am 13. September. Falls Vattenfall/Uniper/neuer Akteur keinen Antrag im 88-Tage-Vorwahlsfenster einreicht, riskiert das Leistungsnarrativ angreifbar zu werden [🟧 MITTEL — PIR-RT-006 offen].
+- ⚪ **Übertragen** — Lagråds Stellungnahmen zu Migrationsproposifionen `HD03262` und `HD03265` (PIR-RT-001) bleiben **OFFEN — KRITISCH**; die verfassungsrechtliche Qualitätsprüfung ist der einzige einflussreichste ungelöste Faktor, der das politische Narrativ der Migrationsreform in der Sommersaison prägt.
+
+---
+
+### 🗂️ Top-Dokumente (DIW-Rangfolge)
+
+| Rang | dok_id | Titel (kurz) | DIW | Konfidenz | Status |
+|:----:|--------|--------------|:---:|:---------:|--------|
+| 1 | `HD01NU19` | Kernkraft-Genehmigungsreform (Direktspur) | 9,2 | 🟩 HOCH [A2] | Ausschuss beschlossen — tritt in Kraft 17. Juni 2026 |
+| 2 | `HD10463` | Ostlänken-Interpellation — Lindh (S) → Carlson (KD) | 8,6 | 🟩 HOCH [A2] | Eingereicht — Antwort fällig 25. Mai 2026 |
+| 3 | `HD01FöU13` | Reform der Sprengstoffkontrolle | 7,5 | 🟩 HOCH [A2] | Ausschuss beschlossen — tritt in Kraft 1. Juli 2026 |
+| 4 | `HD01JuU9` | Reform der Strafprozesse | 7,4 | 🟩 HOCH [A2] | Ausschuss beschlossen — tritt in Kraft 1. Juli 2026 |
+| 5 | `HD01KU39` | Transparenz in politischen Prozessen | 7,0 | 🟧 MITTEL [B2] | Registriert — Plenarvote 16. Juni 2026 |
+| 6 | `HD01FiU49` | Staatsschuldverwaltungsevaluierung 2021–2025 | 6,4 | 🟩 HOCH [A2] | Registriert — Beschluss 11. Juni 2026 |
+
+---
+
+### ⚠️ Risiko- und Bedrohungsübersicht
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 L-Schwellenrisiko<br/>L unter 4 Prozent<br/>L x I = 3 x 5 = 15"] --> CONS["Überwache Novus / Demoskop<br/>wöchentliche Umfragen"]
+    R2["🟠 Ostlänken regional<br/>S Marginalwahlkreisnarrativ<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 Kernkrafttheater-Rahmen<br/>kein Antrag eingereicht 13. Sept.<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 Migrations-Lagråd<br/>HD03262 / HD03265 laufend<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| Risiko | L | I | Punkte | Auslöser | Quelle | Admiralty |
+|--------|:-:|:-:|:------:|---------|--------|:---------:|
+| Liberalerna unter 4 %-Schwelle → Tidö verliert Mehrheit | 3 | 5 | 15 | Jedes Novus/Demoskop-Ergebnis <4,0 % (95 % KI Untergrenze <4,0) | `coalition-dynamics.md` R1 | **[B2]** |
+| Ss regionales Versprechensbruch-Narrativ wandelt marginale Östergötland-Mandate um | 4 | 3 | 12 | Carlsons 25. Mai-Antwort von SVT/SR Östergötland-Redaktion als unzureichend bewertet | `opposition-analysis.md` | **[A2]** |
+| Lagrådets feindliche Stellungnahme zum Migrationspaket `HD03262`/`HD03265` | 3 | 4 | 12 | Lagrådets Stellungnahme innerhalb von 30 T veröffentlicht mit verfassungsrechtlichen Einwänden | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| „Kernkrafttheater" — `HD01NU19` Inkrafttreten ohne eingereichten Antrag bis 13. Sept. | 3 | 3 | 9 | Vattenfall/Uniper/neuer Akteur versäumt Antrag bis 1. Sept. 2026 einzureichen | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 Wichtigste zukünftige Auslöser
+
+**Andreas Carlsons schriftliche Antwort auf Interpellation `HD10463`, gesetzliche Antwortfrist 25. Mai 2026.** Carlsons Art und Weise, die gestrichene Linköping Ostlänken-Station zu rahmen — ob er den Vertragsbruch einräumt, die Routenänderung auf technischen/budgetären Gründen verteidigt oder sich alternativen regionalen Infrastrukturangeboten zuwendet — entscheidet, ob das Östergötland-Narrativ vor der Sommerpause zu einer vollständigen Interpellationsdebatte im Plenum eskaliert. Eine ausweichende oder technokratische Antwort ist der wahrscheinlichste Weg für S, das Narrativ in 1–2 marginale Mandatverschiebungen in Linköping/Norrköping umzuwandeln. Ein substantielles alternatives Investitionsangebot deeskaliert das Narrativ. Beide Ergebnisse verschieben die Marginalwahlkreisbewertungen von `coalition-mathematics.md` und lösen eine Pass-2-Überarbeitung von `electoral-implications.md` aus.
+
+**Sekundärer Auslöser** (parallele Überwachung): 16. Juni 2026 — `HD01KU39` Plenarvote zur Transparenz politischer Finanzierung. Bestätigt oder bricht das vierspurige Leistungsnarrativ der Regierung (Energie + Sicherheit + Transparenz + Finanzergebnis) 89 Tage vor der Wahl.
+
+---
+
+### 📊 Strategische Einschätzung
+
+**Konfidenzniveau: 🟩 HOCH [A2]** — Quellen umfassen Riksdagens offene Daten (`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), IMF WEO April 2026 Vintage und das Interpellationsregister.
+
+Der Schnappschuss vom 4. Mai 2026 erfasst eine Tidö-Koalition in **maximaler Gesetzgebungsgeschwindigkeit**: Sieben Koalitionsreformen schreiten in einer einzigen Woche voran, mit konkreten Inkrafttreten-Daten zwischen 1. Juni und 1. Juli 2026. Jedes Inkrafttreten-Datum generiert eine Leistungstaktik, für die die vier Koalitionsparteien Wahlkampf führen können. Die strategische Verwundbarkeit ist asymmetrisch: M, KD und SD profitieren von der Kaskade; **L** absorbiert die Last — die kleinste Koalitionspartei ist am nächsten an der 4 %-Schwelle und trägt unverhältnismäßiges Mandatverlustrisiko.
+
+Ss Oppositionsreaktion ist methodisch präzise: Anstatt die Regierung auf ihrem stärksten Terrain herauszufordern (Sicherheit, Kernenergie, Wirtschaft) baut S ein **verteiltes regionales Unzufriedenheitsmosaik** — Ostlänken in Östergötland (`HD10463`), Scandinavian Mountain Airport (Interpellation 428), Stockholmer Wohnungsbau (Interpellation 434) — jede gegen einen einzelnen Minister (Carlson) aus verschiedenen Wahlkreisen gerichtet.
+
+IMFs Makrorahmen ist für die Regierung günstig: Staatsverschuldung ≈ 34 % des BIP, sinkende Inflation, Wachstum um 2 %. Das wirtschaftliche Narrativ ist Ms stärkstes Asset.
+
+**Wahl 2026-Linse**: Der aktuelle Kurs hält Tidö bei etwa 175 Mandaten — genau an den Mehrheitsgrenzen. Ls Schwellenrisiko (PIR-RT-003) ist die einzeln wichtigste Wahlvariable. Lagrådets Migrationsgutachten (PIR-RT-001) ist die einzeln wichtigste politische Narrativ-Variable. Carlsons Ostlänken-Antwort (PIR-RT-005) ist die einzeln wichtigste regionale Mandatvariable. Alle drei werden innerhalb von 5 Wochen nach dem Veröffentlichungsdatum dieses Briefings gelöst.
+
+---
+
+### 📎 Links
+
+| Link | Pfad |
+|------|------|
+| Artikel | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| Syntheseübersicht | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| Kernsynthese | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| Koalitionsdynamik | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| Oppositionsanalyse | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| Wahlimplikationen | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| Wirtschaftlicher Kontext (IMF) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| Zukunftsindikatoren | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| Risiko-/Chancenmatrix | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| Szenarioanalyse | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| Methodennotizen | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| Daten-Manifest | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| Dokumentenanalysen | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 Dokumentenkontrolle
+
+- **Briefing-ID**: `EB-2026-05-04-001`
+- **Erstellt**: 2026-05-16 (Nachholarbeit — erstellt aus bestehenden Pass-2-Analyseartefakten)
+- **Vorlagenpfad**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **Eigentumsmethodik**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **Eigentumsgate**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) Check 1 + Check 7
+- **Ausgabefamilie**: A — Kernsynthese
+- **Klassifizierung**: 🟢 ÖFFENTLICH
+
+*Wirtschaftliche Provenienz: Anbieter: imf, Datenfluss: WEO_Apr_2026, Indikatoren: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, Vintage: April 2026, retrieved_at: 2026-05-04. Riksdag-Daten abgerufen über riksdag-regering API 2026-05-04. Riksdagsmonitor wird von Hack23 AB produziert; dieses Briefing stellt eine unabhängige redaktionelle Einschätzung auf Basis öffentlich zugänglicher parlamentarischer Dokumente dar.*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_es.md -->
+
+**Clasificación**: 🟢 PÚBLICO — Riksdagsmonitor Intelligence
+**Audiencia**: Redactores, guardias, investigadores, ciudadanos comprometidos
+**Fecha**: 2026-05-04 (UTC)
+**Días hasta las elecciones 2026-09-13**: 132
+**Flujo de trabajo**: news-realtime-monitor
+**Elaborado por**: Riksdagsmonitor AI Intelligence System
+**Nivel de confianza general**: 🟩 ALTO [A2] — corroboración multifuente mediante `dok_id` de datos abiertos del Riksdag + FMI WEO abr. 2026
+**Decisión de publicación**: **PUBLICAR** (EN + ES) — tema prioritario con clasificación DIW ≥ 9,0
+**PIR respondidos**: PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 BLUF
+
+El Riksdag sueco produjo el 4 de mayo de 2026 su producción legislativa más concentrada antes de las elecciones hasta la fecha: la Comisión de Industria (NU) aprobó la autorización de vía directa para instalaciones nucleares (`HD01NU19`, entra en vigor el 17 de junio de 2026) — el único logro estructural más importante de la coalición Tidö en política energética — mientras que la séptima medida anti-bandas consecutiva avanzó mediante la reforma del control de explosivos (`HD01FöU13`) y la reforma de los procedimientos penales (`HD01JuU9`), ambas con entrada en vigor el 1 de julio de 2026. Frente a este muro de realizaciones gubernamentales, la socialista **Eva Lindh** presentó una interpelación `HD10463` contra el ministro KD de infraestructuras **Andreas Carlson** sobre la cancelada parada de Linköping en Ostlänken — un incumplimiento de promesa de 20 años a una región de 500.000 viajeros en territorio de margen electoral competitivo. El informe de transparencia sobre financiación política (`HD01KU39`) está previsto para una votación en pleno el 16 de junio de 2026, completando un narrativo de realización de cuatro vías (energía, seguridad, transparencia, resultado financiero) a 89 días de las elecciones. **Nivel de confianza: 🟩 ALTO [A2]** — fuentes: datos abiertos del Riksdag, FMI WEO abr. 2026.
+
+---
+
+### 🧭 3 decisiones que apoya este informe
+
+| # | Decisión | Responsable | Plazo | Fundamento |
+|:-:|----------|-------------|:-----:|-----------|
+| 1 | **Editorial:** liderar artículo de última hora EN + ES con doble encuadre reforma nuclear más contra-narrativo Ostlänken (objetivo de publicación a 2 h) | Editor jefe | +2 h | Decisión de comisión `HD01NU19` + interpelación `HD10463` presentada el 2026-05-04 |
+| 2 | **Cobertura anticipada:** asignar guardia para seguir la respuesta de Carlson sobre Ostlänken (plazo legal de respuesta: 25 de mayo de 2026) y la entrada en vigor de la ley nuclear el 17 de junio | Guardia | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; registro de interpelaciones `HD10463` |
+| 3 | **Riesgo:** elevar el nivel de vigilancia del umbral L de observación a seguimiento activo — la lógica de rendimiento de la coalición supone que L supere el 4 % el 13 de sept.; cualquier resultado Novus/Demoskop <4,5 % activa una revisión de aritmética de coalición | Jefe de análisis | Semanal continuo | `coalition-dynamics.md`, opinión post-migración PIR-RT-003 |
+
+---
+
+### ⚡ Lectura de 60 segundos
+
+- 🔴 **Reforma nuclear hacia autorización de vía directa (`HD01NU19`)** — La Comisión de Industria (NU) aprueba la autorización de vía directa, evitando el proceso multietapa de la Autoridad de Seguridad Radiológica (SSM); **entra en vigor el 17 de junio de 2026**. El mayor logro legislativo estructural del mandato Tidö; cumple la promesa de relanzamiento nuclear de M/KD/L/SD de 2022 con hito operativo antes del día de elecciones [🟩 ALTO — `HD01NU19`, acta de comisión NU].
+- 🟠 **Interpelación por incumplimiento de promesa Ostlänken (`HD10463`)** — La diputada S **Eva Lindh** exige que el ministro de infraestructuras **Andreas Carlson (KD)** explique la cancelación de la parada de Linköping en Ostlänken; plazo legal de respuesta **25 de mayo de 2026**. Tercera interpelación presentada contra Carlson en 10 días — presión regional coordinada de S sobre una región de 500.000 viajeros [🟩 ALTO — `HD10463`, registro de interpelaciones].
+- 🟢 **La séptima medida anti-bandas avanza (`HD01FöU13` + `HD01JuU9`)** — Los requisitos de autorización para explosivos se endurecen (Comisión de Defensa, 1 de julio de 2026); la reforma de procedimientos penales elimina las *tilltrosbestämmelserna* y amplía el material probatorio de interrogatorios tempranos (Comisión de Justicia, 1 de julio de 2026). El narrativo central M/SD «cumple en seguridad» se refuerza [🟩 ALTO — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **Transparencia en financiación política (`HD01KU39`)** — La Comisión Constitucional registra un informe sobre transparencia en procesos políticos (trata muy probablemente la proposición `HD03258` sobre rendición de cuentas del financiamiento de partidos); votación en pleno **16 de junio de 2026**; L/KD se benefician del posicionamiento de reforma democrática. PIR-RT-002 respondido: KU (no JuU/SfU) es responsable del tema [🟧 MEDIO — `HD01KU39`, calendario].
+- 🔵 **Contexto económico (FMI WEO abr. 2026)** — Deuda pública sueca ≈ 34 % del PIB (`GGXWDG_NGDP` previsión 2026) frente a la media de la eurozona >90 %; crecimiento real del PIB 2026 `NGDP_RPCH` 2,0–2,1 %; inflación en descenso (`PCPIEPCH`). Las bajadas de tipos del Riksbank 2025–26 alcanzan a los hipotecados → narrativo M «manos seguras» [🟩 ALTO — proveedor: imf, flujo de datos: WEO_Apr_2026, vintage: abril 2026].
+- 🟣 **Referencia cruzada** — `HD01NU19` se vincula al hilo de política energética en el análisis de proposiciones (`../propositions/`); `HD10463` extiende el grupo de incumplimientos de promesas regionales de S en `opposition-analysis.md`; transparencia `HD01KU39` trata `HD03258` del paquete de proposiciones del 30 de abril.
+- 🩷 **Vulnerabilidad emergente — riesgo «teatro nuclear»** — Encuadre de la oposición de que la entrada en vigor el 17 de junio es simbólica sin solicitud presentada antes del día de elecciones el 13 de septiembre. Si Vattenfall/Uniper/nuevo actor no presenta solicitud en la ventana de 88 días previos a las elecciones, el narrativo de rendimiento corre el riesgo de ser cuestionable [🟧 MEDIO — PIR-RT-006 abierto].
+- ⚪ **Transferido** — Los dictámenes del Lagråd sobre las proposiciones migratorias `HD03262` y `HD03265` (PIR-RT-001) siguen **ABIERTOS — CRÍTICOS**; la revisión constitucional de calidad es el único factor no resuelto más influyente que moldea el narrativo político de la reforma migratoria durante la temporada estival.
+
+---
+
+### 🗂️ Documentos principales (clasificación DIW)
+
+| Rango | dok_id | Título (corto) | DIW | Confianza | Estado |
+|:-----:|--------|----------------|:---:|:---------:|--------|
+| 1 | `HD01NU19` | Reforma autorización nuclear (vía directa) | 9,2 | 🟩 ALTO [A2] | Comisión aprobado — entra en vigor 17 jun. 2026 |
+| 2 | `HD10463` | Interpelación Ostlänken — Lindh (S) → Carlson (KD) | 8,6 | 🟩 ALTO [A2] | Presentada — respuesta vence 25 may. 2026 |
+| 3 | `HD01FöU13` | Reforma control de explosivos | 7,5 | 🟩 ALTO [A2] | Comisión aprobado — entra en vigor 1 jul. 2026 |
+| 4 | `HD01JuU9` | Reforma procedimientos penales | 7,4 | 🟩 ALTO [A2] | Comisión aprobado — entra en vigor 1 jul. 2026 |
+| 5 | `HD01KU39` | Transparencia en procesos políticos | 7,0 | 🟧 MEDIO [B2] | Registrado — votación pleno 16 jun. 2026 |
+| 6 | `HD01FiU49` | Evaluación gestión deuda pública 2021–2025 | 6,4 | 🟩 ALTO [A2] | Registrado — decisión 11 jun. 2026 |
+
+---
+
+### ⚠️ Resumen de riesgos y amenazas
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 Riesgo umbral L<br/>L bajo 4 por ciento<br/>L x I = 3 x 5 = 15"] --> CONS["Vigilar Novus / Demoskop<br/>encuestas semanales"]
+    R2["🟠 Ostlänken regional<br/>Narrativo S circunscripción marginal<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 Encuadre teatro nuclear<br/>sin solicitud presentada 13 sept.<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 Migración Lagråd<br/>HD03262 / HD03265 en curso<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| Riesgo | L | I | Puntos | Desencadenante | Fuente | Admiralty |
+|--------|:-:|:-:|:------:|----------------|--------|:---------:|
+| Liberalerna bajo umbral 4 % → Tidö pierde mayoría | 3 | 5 | 15 | Cualquier resultado Novus/Demoskop <4,0 % (límite inferior IC 95 % <4,0) | `coalition-dynamics.md` R1 | **[B2]** |
+| Narrativo S de incumplimiento regional convierte mandatos marginales en Östergötland | 4 | 3 | 12 | Respuesta de Carlson el 25 de mayo juzgada insuficiente por redacción SVT/SR Östergötland | `opposition-analysis.md` | **[A2]** |
+| Dictamen adverso del Lagråd sobre paquete migratorio `HD03262`/`HD03265` | 3 | 4 | 12 | Dictamen Lagråd publicado en 30 d con objeciones constitucionales | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| «Teatro nuclear» — `HD01NU19` entrada en vigor sin solicitud presentada antes del 13 sept. | 3 | 3 | 9 | Vattenfall/Uniper/nuevo actor no presenta solicitud antes del 1 sept. 2026 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 Principales desencadenantes futuros
+
+**Respuesta escrita de Andreas Carlson a la interpelación `HD10463`, plazo legal de respuesta 25 de mayo de 2026.** La forma en que Carlson encuadre la cancelación de la parada de Linköping en Ostlänken — si reconoce el incumplimiento, defiende el cambio de ruta por razones técnicas/presupuestarias o gira hacia ofertas de infraestructura regional alternativas — determina si el narrativo de Östergötland escala hacia un debate de interpelación completo en el pleno antes de la suspensión estival. Una respuesta evasiva o tecnocrática es la vía más probable para que S convierta el narrativo en 1–2 deslizamientos marginales de mandatos en Linköping/Norrköping. Una oferta sustantiva de inversión alternativa desescala el narrativo. Cualquiera de los dos resultados desplaza las evaluaciones de circunscripciones marginales de `coalition-mathematics.md` y activa una revisión Pass-2 de `electoral-implications.md`.
+
+**Desencadenante secundario** (vigilancia paralela): 16 de junio de 2026 — votación en pleno `HD01KU39` sobre transparencia en financiación política. Confirma o rompe el narrativo de realización de cuatro vías del gobierno (energía + seguridad + transparencia + resultado financiero) a 89 días de las elecciones.
+
+---
+
+### 📊 Evaluación estratégica
+
+**Nivel de confianza: 🟩 ALTO [A2]** — las fuentes incluyen los datos abiertos del Riksdag (`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), el vintage FMI WEO abril 2026 y el registro de interpelaciones.
+
+La instantánea del 4 de mayo de 2026 captura una coalición Tidö en **velocidad legislativa máxima**: siete reformas de coalición avanzan en una sola semana, con fechas de entrada en vigor concretas repartidas entre el 1 de junio y el 1 de julio de 2026. Cada fecha de entrada en vigor genera un ritmo de rendimiento sobre el que los cuatro partidos de la coalición pueden hacer campaña. La vulnerabilidad estratégica es asimétrica: M, KD y SD se benefician de la cascada; **L** absorbe la carga — el partido más pequeño de la coalición está más cerca del umbral del 4 % y soporta un riesgo desproporcionado de pérdida de mandatos.
+
+La respuesta de la oposición S es metodológicamente precisa: en lugar de desafiar al gobierno en su terreno más fuerte (seguridad, nuclear, economía), S construye un **mosaico de descontento regional distribuido** — Ostlänken en Östergötland (`HD10463`), Scandinavian Mountain Airport (interpelación 428), vivienda en Estocolmo (interpelación 434) — cada uno dirigido contra un único ministro (Carlson) de diferentes circunscripciones.
+
+El marco macro del FMI es favorable para el gobierno en ejercicio: deuda pública ≈ 34 % del PIB, inflación en descenso, crecimiento de aproximadamente el 2 %. El narrativo económico es el principal activo de M.
+
+**Lente elecciones 2026**: La trayectoria actual mantiene a Tidö cerca de 175 mandatos — exactamente en los límites de la mayoría. El riesgo de umbral de L (PIR-RT-003) es la variable electoral más importante individualmente. El dictamen del Lagråd sobre migración (PIR-RT-001) es la variable de narrativo político más importante individualmente. La respuesta de Carlson sobre Ostlänken (PIR-RT-005) es la variable de mandato regional más importante individualmente. Las tres se resuelven en las 5 semanas siguientes a la fecha de publicación de este informe.
+
+---
+
+### 📎 Enlaces
+
+| Enlace | Ruta |
+|--------|------|
+| Artículo | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| Resumen de síntesis | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| Síntesis central | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| Dinámica de coalición | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| Análisis de la oposición | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| Implicaciones electorales | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| Contexto económico (FMI) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| Indicadores prospectivos | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| Matriz de riesgos/oportunidades | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| Análisis de escenarios | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| Notas metodológicas | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| Manifiesto de datos | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| Análisis por documento | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 Control documental
+
+- **ID Informe**: `EB-2026-05-04-001`
+- **Generado**: 2026-05-16 (recuperación — creado a partir de artefactos de análisis Pass-2 existentes)
+- **Ruta de plantilla**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **Metodología de propiedad**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **Portal de propiedad**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) Check 1 + Check 7
+- **Familia de salida**: A — Síntesis central
+- **Clasificación**: 🟢 PÚBLICO
+
+*Proveniencia económica: proveedor: imf, flujo de datos: WEO_Apr_2026, indicadores: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, vintage: abril 2026, retrieved_at: 2026-05-04. Datos del Riksdag obtenidos a través de la API riksdag-regering el 2026-05-04. Riksdagsmonitor es producido por Hack23 AB; este informe representa una evaluación editorial independiente basada en documentos parlamentarios de acceso público.*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_fi.md -->
+
+**Luokittelu**: 🟢 JULKINEN — Riksdagsmonitor Intelligence
+**Kohderyhmä**: Toimittajat, päivystäjät, tutkijat, kiinnostuneet kansalaiset
+**Päivämäärä**: 2026-05-04 (UTC)
+**Päiviä vaaleihin 2026-09-13**: 132
+**Työnkulku**: news-realtime-monitor
+**Laatinut**: Riksdagsmonitor AI Intelligence System
+**Kokonaisluottamustaso**: 🟩 KORKEA [A2] — monilähteinen vahvistus `dok_id`:n kautta avoimista Riksdagin tiedoista + IMF WEO huhtikuu 2026
+**Julkaisupäätös**: **JULKAISE** (EN + FI) — DIW-rangaistu pääuutinen ≥ 9,0
+**Vastatut PIR:t**: PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 BLUF
+
+Ruotsin Riksdag tuotti 4. toukokuuta 2026 tähänastisen tiivistetyimmän lainsäädäntötuotoksensa ennen vaaleja: Elinkeinovaliokunta (NU) hyväksyi suorasporiluvitus ydinvoimalaitoksille (`HD01NU19`, voimaan 17. kesäkuuta 2026) — Tidö-koalition yksittäinen suurin rakenteellinen energiapoliittinen saavutus — kun taas seitsemäs peräkkäinen jengirikostenvastainen toimenpide eteni räjähdevalvonnan uudistuksen (`HD01FöU13`) ja rikosprosessien reformin (`HD01JuU9`) kautta, molemmat voimaan 1. heinäkuuta 2026. Tätä hallituslupausten seinää vasten sosiaalidemokraatti **Eva Lindh** jätti kysymyksen `HD10463` KD:n infrastruktuuriministeri **Andreas Carlsonille** peruutetusta Ostlänken Linköpingin asemalisäyksestä — 20 vuotta vanha luparikkomus 500 000 henkilön pendelöintialueella kilpaillussa vaalipiirimarginaalialueella. Poliittisen rahoituksen läpinäkyvyysraportti (`HD01KU39`) on aikataulutettu täysistuntoäänestykseen 16. kesäkuuta 2026, mikä täydentää nelilinjaisen suoritusnarratiivin (energia, turvallisuus, läpinäkyvyys, taloudellinen tulos) 89 päivää ennen vaaleja. **Luottamustaso: 🟩 KORKEA [A2]** — lähteet: Riksdagin avoin data, IMF WEO huhtikuu 2026.
+
+---
+
+### 🧭 3 päätöstä, joita tämä tiivistelmä tukee
+
+| # | Päätös | Päätöksentekijä | Määräaika | Perusta |
+|:-:|--------|-----------------|:---------:|--------|
+| 1 | **Toimituksellinen:** johda EN + FI breaking-artikkeli ydinvoima-uudistus-plus-Ostlänken-vastanarratiivipohjaisesti (kaksoisviitekehys, 2 tunnin julkaisutavoite) | Päätoimittaja | +2 h | `HD01NU19` valiokunnan päätös + `HD10463` kysymys jätetty 2026-05-04 |
+| 2 | **Ennakoiva seuranta:** osoita päivystäjä seuraamaan Carlsonin Ostlänken-vastausta (lakisääteinen vastaamisaika 25. toukokuuta 2026) ja ydinlain voimaantuloa 17. kesäkuuta | Päivystäjä | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; `HD10463` kysymysrekisteri |
+| 3 | **Riski:** nosta L-kynnysvalvontatasoa seurannasta aktiiviseen seurantaan — koalition suorituslogiikka edellyttää L:n ylittävän 4 % 13. syyskuuta; mikä tahansa Novus/Demoskop-tulos <4,5 % käynnistää koalitioaritmeettisen tarkistuksen | Analyysipäällikkö | Viikottain jatkuvasti | `coalition-dynamics.md`, maahanmuuttoa seurannaisopinion PIR-RT-003 |
+
+---
+
+### ⚡ 60 sekunnin lukeminen
+
+- 🔴 **Ydinvoimauudistus suorasporiluvitukseen (`HD01NU19`)** — Elinkeinovaliokunta (NU) hyväksyy suorasporiluvituksen, ohittaa Säteilyturvallisuusviraston (SSM) monivaiheisen prosessin; **voimaan 17. kesäkuuta 2026**. Tidö-toimikauden yksittäinen suurin rakenteellinen lainsäädännöllinen saavutus; lunastaa M/KD/L/SD:n ydinvoiman käynnistyslupauksensa vuodelta 2022 operatiivisella välietapilla ennen vaalipäivää [🟩 KORKEA — `HD01NU19`, NU:n valiokunnan pöytäkirja].
+- 🟠 **Ostlänken-luparikomusinterpellaatio (`HD10463`)** — S-edustaja **Eva Lindh** vaatii infrastruktuuriministeri **Andreas Carlsonia (KD)** selittämään suunnitellun Linköpingin Ostlänken-aseman peruuttamisen; lakisääteinen vastaamisaika **25. toukokuuta 2026**. Kolmas kysymys jätetty Carlsonille 10 päivän aikana — koordinoitu alueellinen S-paine 500 000 henkilön pendelöintialueeseen [🟩 KORKEA — `HD10463`, kysymysrekisteri].
+- 🟢 **Seitsemäs jengirikostenvastainen toimenpide etenee (`HD01FöU13` + `HD01JuU9`)** — Räjähteiden lupavaatimuksia tiukennetaan (Puolustusvaliokunta, 1. heinäkuuta 2026); rikosprosessien uudistus poistaa *tilltrosbestämmelserna* ja laajentaa varhaista kuulustelutodistusaineistoa (Lakivaliokunta, 1. heinäkuuta 2026). M/SD:n peruskertomus "lunastaa turvallisuuslupaukset" vahvistuu [🟩 KORKEA — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **Poliittisen rahoituksen läpinäkyvyys (`HD01KU39`)** — Perustuslakivaliokunta rekisteröi mietinnön poliittisten prosessien läpinäkyvyydestä (käsittelee suurella todennäköisyydellä ehdotuksen `HD03258` puoluerahoituksen raportoinnista); täysistuntoäänestys **16. kesäkuuta 2026**; L/KD hyötyy demokratiauudistusasemoinnista. PIR-RT-002 vastattu: KU (ei JuU/SfU) omistaa asian [🟧 KESKITASO — `HD01KU39`, kalenteri].
+- 🔵 **Taloudellinen konteksti (IMF WEO huhtikuu 2026)** — Ruotsin julkinen velka ≈ 34 % BKT:sta (`GGXWDG_NGDP` 2026-ennuste) verrattuna euroalueen >90 %:iin; reaalinen BKT-kasvu 2026 `NGDP_RPCH` 2,0–2,1 %; inflaatio laskee (`PCPIEPCH`). Riksbankin koronlaskut 2025–26 tavoittavat asuntolainanottajat → M:n "turvalliset kädet" -narratiivi [🟩 KORKEA — tarjoaja: imf, tietovirta: WEO_Apr_2026, vintage: huhtikuu 2026].
+- 🟣 **Ristiviittaus** — `HD01NU19` kytkeytyy energiapolitiikan ketjuun ehdotusanalyysissä (`../propositions/`); `HD10463` jatkaa S:n alueellista luparikomusklusteria `opposition-analysis.md`:ssä; läpinäkyvyys `HD01KU39` käsittelee `HD03258`:aa 30. huhtikuun ehdotuspaketista.
+- 🩷 **Kehittyvä haavoittuvuus — "ydinvoimateatteri"-riski** — Opposition kehys, jonka mukaan voimaantulo 17. kesäkuuta on symbolinen ilman jätettyjä hakemuksia ennen 13. syyskuuta. Jos Vattenfall/Uniper/uusi toimija ei jätä hakemusta 88 päivän vaalia edeltävässä ikkunassa, suoritusnarratiivin uskottavuus voi vaarantua [🟧 KESKITASO — PIR-RT-006 avoin].
+- ⚪ **Siirretty** — Lagrådets lausunnot maahanmuuttoehdotuksista `HD03262` ja `HD03265` (PIR-RT-001) ovat edelleen **AVOIMIA — KRIITTISIÄ**; perustuslaillinen laaduntarkastus on yksittäisesti vaikuttavin ratkaisematon tekijä, joka muovaa maahanmuuttouudistuksen poliittista narratiivia kesäkaudella.
+
+---
+
+### 🗂️ Topplistat asiakirjat (DIW-rangattu)
+
+| Sija | dok_id | Otsikko (lyhyt) | DIW | Luottamus | Tila |
+|:----:|--------|-----------------|:---:|:---------:|------|
+| 1 | `HD01NU19` | Ydinvoimaluvan uudistus (suora spori) | 9,2 | 🟩 KORKEA [A2] | Valiokunta hyväksytty — voimaan 17. kesäkuuta 2026 |
+| 2 | `HD10463` | Ostlänken-interpellaatio — Lindh (S) → Carlson (KD) | 8,6 | 🟩 KORKEA [A2] | Jätetty — vastausaika päättyy 25. toukokuuta 2026 |
+| 3 | `HD01FöU13` | Räjähdevalvonnan uudistus | 7,5 | 🟩 KORKEA [A2] | Valiokunta hyväksytty — voimaan 1. heinäkuuta 2026 |
+| 4 | `HD01JuU9` | Rikosprosessien uudistus | 7,4 | 🟩 KORKEA [A2] | Valiokunta hyväksytty — voimaan 1. heinäkuuta 2026 |
+| 5 | `HD01KU39` | Läpinäkyvyys poliittisissa prosesseissa | 7,0 | 🟧 KESKITASO [B2] | Rekisteröity — täysistuntoäänestys 16. kesäkuuta 2026 |
+| 6 | `HD01FiU49` | Valtionvelan hallinnon arviointi 2021–2025 | 6,4 | 🟩 KORKEA [A2] | Rekisteröity — päätös 11. kesäkuuta 2026 |
+
+---
+
+### ⚠️ Riski- ja uhkakuvaus
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 L-kynnysriski<br/>L alle 4 prosenttia<br/>L x I = 3 x 5 = 15"] --> CONS["Seuraa Novus / Demoskop<br/>viikottaisia kyselyjä"]
+    R2["🟠 Ostlänken alueellinen<br/>S marginaali vaalipiirinarratiivi<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 Ydinvoimateatterin kehys<br/>ei hakemusta jätetty 13. sept<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 Maahanmuuton Lagrådet<br/>HD03262 / HD03265 käynnissä<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| Riski | L | I | Pisteet | Laukaisin | Lähde | Admiralty |
+|-------|:-:|:-:|:-------:|-----------|-------|:---------:|
+| Liberalerna alle 4 %-kynnyksen → Tidö menettää enemmistön | 3 | 5 | 15 | Mikä tahansa Novus/Demoskop-tulos <4,0 % (95 % LV alaraja <4,0) | `coalition-dynamics.md` R1 | **[B2]** |
+| S:n alueellinen luparikomusnarratiivi muuntaa marginaaliset Östergötlandin mandaatit | 4 | 3 | 12 | Carlsonin 25. toukokuuta vastausta pitää SVT/SR Östergötlandin toimitus riittämättömänä | `opposition-analysis.md` | **[A2]** |
+| Lagrådets vihamielinen lausunto maahanmuuttopaketista `HD03262`/`HD03265` | 3 | 4 | 12 | Lagrådets lausunto julkaistu 30 päivän kuluessa perustuslaillisilla vastalauseilla | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| "Ydinvoimateatteri" — `HD01NU19` voimaantulo ilman jätettyjä lupahakemuksia ennen 13. syyskuuta | 3 | 3 | 9 | Vattenfall/Uniper/uusi toimija laiminlyö hakemuksen jättämisen viimeistään 1. syyskuuta 2026 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 Tärkeimmät tulevat laukaisimet
+
+**Andreas Carlsonin kirjallinen vastaus interpellaatioon `HD10463`, lakisääteinen vastaamisaika 25. toukokuuta 2026.** Carlsonin tapa kehystää peruutettu Linköpingin Ostlänken-asema — myöntääkö hän luparikomusken, puolustaako reittimuutosta teknisillä/taloudellisilla perusteilla vai kääntyykö hän kohti vaihtoehtoisia alueellisia infrastruktuuritarjouksia — ratkaisee, eskaloituuko Östergötlandin narratiivi täyteen interpellaatiodebattiin täysistunnossa ennen kesätaukoa. Väistelevä tai teknokraattinen vastaus on todennäköisin reitti S:lle muuntaa narratiivi 1–2 marginaaliseksi mandaattisiirtymäksi Linköpingissä/Norrköpingissä. Merkittävä vaihtoehtoinen investointitarjous de-eskaloi narratiivin. Kumpikaan tulos siirtää `coalition-mathematics.md`:n marginaalivaalipiiriarvioita ja laukaisee Pass-2-uudelleenkirjoituksen `electoral-implications.md`:ssä.
+
+**Sekundaarinen laukaisin** (rinnakkainen seuranta): 16. kesäkuuta 2026 — `HD01KU39` täysistuntoäänestys poliittisen rahoituksen läpinäkyvyydestä. Vahvistaa tai rikkoo hallituksen nelilinjaisen suoritusnarratiivin (energia + turvallisuus + läpinäkyvyys + taloudellinen tulos) 89 päivää ennen vaaleja.
+
+---
+
+### 📊 Strateginen arvio
+
+**Luottamustaso: 🟩 KORKEA [A2]** — lähteet sisältävät Riksdagin avoimen datan (`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), IMF WEO huhtikuu 2026 vintagen ja kysymysrekisterin.
+
+Tilannevedos 4. toukokuuta 2026 kuvaa Tidö-koalitiota **lainsäädäntönopeuden maksimitilassa**: seitsemän koalitiouudistusta etenee yhden viikon aikana, konkreettisilla voimaantulopäivillä välillä 1. kesäkuuta – 1. heinäkuuta 2026. Jokainen voimaantulopäivä luo suoritusrytmin, jota neljä koalitiopuoluetta voi kampanjoida. Strateginen haavoittuvuus on epäsymmetrinen: M, KD ja SD hyötyvät kaskadista; **L** absorboi kuormituksen — pienin koalitiopuolue on lähinnä 4 %:n rajaa ja kantaa suhteettoman suuren mandaattiriskin.
+
+S-opposition vastaus on metodologisesti tarkka: sen sijaan, että haastaisi hallitusta sen vahvimmalla alueella (turvallisuus, ydinenergia, talous), S rakentaa **hajautetun alueellisen tyytymättömyysmosaiikin** — Ostlänken Östergötlandissa (`HD10463`), Scandinavian Mountain Airport (interpellaatio 428), Tukholman asuminen (interpellaatio 434) — jokainen kohdistettuna yksittäiseen ministeriin (Carlson) eri vaalipiireistä.
+
+IMF:n makrokehys on suotuisa istuvan hallituksen kannalta: julkinen velka ≈ 34 % BKT:sta, laskeva inflaatio, kasvu noin 2 %. Taloudellinen narratiivi on M:n vahvin voimavara.
+
+**Vaali 2026 -linssi**: Nykykurssi pitää Tidön lähellä 175 mandaattia — tarkalleen enemmistörajoilla. L:n kynnysriski (PIR-RT-003) on yksittäisesti tärkein vaaliprosessin muuttuja. Lagrådets maahanmuuttolausunto (PIR-RT-001) on yksittäisesti tärkein poliittisen narratiivin muuttuja. Carlsonin Ostlänken-vastaus (PIR-RT-005) on yksittäisesti tärkein alueellinen mandaattimuuttuja. Kaikki kolme ratkeavat viiden viikon kuluessa tämän tiivistelmän julkaisupäivästä.
+
+---
+
+### 📎 Linkit
+
+| Linkki | Polku |
+|--------|-------|
+| Artikkeli | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| Synteesikatsaus | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| Ydinsynteesi | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| Koalitiodynamiikka | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| Oppositioanalyysi | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| Vaalimplikaatiot | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| Taloudellinen konteksti (IMF) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| Tulevaisuuden indikaattorit | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| Riski-/mahdollisuusmatriisi | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| Skenaarioanalyysi | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| Menetelmämuistiinpanot | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| Datamanifesti | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| Asiakirja-analyysit | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 Asiakirjahallinta
+
+- **Tiivistelmä-ID**: `EB-2026-05-04-001`
+- **Luotu**: 2026-05-16 (jälkikäteistäyttö — luotu olemassa olevista Pass-2-analyysiarvioista)
+- **Mallipolku**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **Omistajuusmetodologia**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **Omistajuusportti**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) Check 1 + Check 7
+- **Tuotosperhe**: A — Ydinsynteesi
+- **Luokittelu**: 🟢 JULKINEN
+
+*Taloudellinen provenienssi: tarjoaja: imf, tietovirta: WEO_Apr_2026, indikaattorit: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, vintage: huhtikuu 2026, retrieved_at: 2026-05-04. Riksdagin data haettu riksdag-regering API:n kautta 2026-05-04. Riksdagsmonitor on Hack23 AB:n tuottama; tämä tiivistelmä edustaa riippumatonta toimituksellista arviota julkisesti saatavilla olevien parlamentaaristen asiakirjojen perusteella.*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_fr.md -->
+
+**Jours avant les élections du 2026-09-13** : 132
+**Workflow** : news-realtime-monitor
+**Produit par** : Riksdagsmonitor AI Intelligence System
+**Niveau de confiance global** : 🟩 ÉLEVÉ [A2] — corroboration multi-sources via `dok_id` à partir des données ouvertes du Riksdag + FMI WEO avr. 2026
+**Décision de publication** : **PUBLIER** (EN + FR) — sujet prioritaire classé DIW ≥ 9,0
+**PIR répondus** : PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 BLUF
+
+Le Riksdag suédois a produit le 4 mai 2026 sa production législative la plus concentrée avant les élections à ce jour : la Commission de l'industrie (NU) a approuvé l'autorisation à voie directe des centrales nucléaires (`HD01NU19`, entrant en vigueur le 17 juin 2026) — la seule réalisation structurelle la plus importante de la coalition Tidö en matière d'énergie — tandis que la septième mesure anti-gangs consécutive a progressé avec la réforme du contrôle des explosifs (`HD01FöU13`) et la réforme des procédures pénales (`HD01JuU9`), toutes deux entrant en vigueur le 1er juillet 2026. Face à ce mur de réalisations gouvernementales, la socialiste **Eva Lindh** a déposé une interpellation `HD10463` contre le ministre KD des infrastructures **Andreas Carlson** concernant l'annulation de l'arrêt Linköping sur Ostlänken — une promesse non tenue depuis 20 ans envers une région de pendulaires de 500 000 personnes dans un territoire à faible marge électorale. Le rapport sur la transparence du financement politique (`HD01KU39`) est prévu pour un vote en séance plénière le 16 juin 2026, complétant un narratif de réalisation à quatre voies (énergie, sécurité, transparence, résultat financier) à 89 jours des élections. **Niveau de confiance : 🟩 ÉLEVÉ [A2]** — sources : données ouvertes du Riksdag, FMI WEO avr. 2026.
+
+---
+
+### 🧭 3 décisions que ce briefing soutient
+
+| # | Décision | Décideur | Délai | Fondement |
+|:-:|----------|----------|:-----:|-----------|
+| 1 | **Éditorial :** mener l'article EN + FR en breaking avec le double cadrage réforme nucléaire + contre-narratif Ostlänken (objectif publication à 2 h) | Rédacteur en chef | +2 h | Décision de commission `HD01NU19` + interpellation `HD10463` déposée le 2026-05-04 |
+| 2 | **Couverture anticipée :** affecter un permanent pour suivre la réponse de Carlson sur Ostlänken (délai légal de réponse : 25 mai 2026) et l'entrée en vigueur de la loi nucléaire le 17 juin | Permanent | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006 ; registre interpellations `HD10463` |
+| 3 | **Risque :** élever le niveau de surveillance du seuil L de l'observation au suivi actif — la logique de performance de la coalition suppose que L dépasse 4 % le 13 sept. ; tout résultat Novus/Demoskop <4,5 % déclenche une révision de l'arithmétique de coalition | Chef d'analyse | Continu hebdomadaire | `coalition-dynamics.md`, opinion post-migration PIR-RT-003 |
+
+---
+
+### ⚡ Lecture en 60 secondes
+
+- 🔴 **Réforme nucléaire vers autorisation à voie directe (`HD01NU19`)** — La commission de l'industrie (NU) approuve l'autorisation à voie directe, contournant le pipeline multi-étapes de l'Autorité de sûreté radiologique (SSM) ; **entre en vigueur le 17 juin 2026**. Principale réalisation structurelle du mandat Tidö ; concrétise la promesse M/KD/L/SD de relance du nucléaire en 2022 avec une étape opérationnelle avant le jour du scrutin [🟩 ÉLEVÉ — `HD01NU19`, procès-verbal de commission NU].
+- 🟠 **Interpellation sur la promesse non tenue Ostlänken (`HD10463`)** — La députée S **Eva Lindh** demande au ministre des infrastructures **Andreas Carlson (KD)** d'expliquer l'annulation de l'arrêt Linköping d'Ostlänken ; délai légal de réponse **25 mai 2026**. Troisième interpellation déposée contre Carlson en 10 jours — pression régionale S coordonnée sur une région de pendulaires de 500 000 personnes [🟩 ÉLEVÉ — `HD10463`, registre des interpellations].
+- 🟢 **La septième mesure anti-gangs progresse (`HD01FöU13` + `HD01JuU9`)** — Les exigences d'autorisation pour les explosifs sont durcies (Commission de la défense, 1er juillet 2026) ; la réforme des procédures pénales abolit les *tilltrosbestämmelserna* et élargit le matériel de preuves d'interrogatoire précoce (Commission judiciaire, 1er juillet 2026). Le narratif principal M/SD « tient ses promesses en matière de sécurité » est renforcé [🟩 ÉLEVÉ — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **Transparence du financement politique (`HD01KU39`)** — La commission constitutionnelle enregistre un rapport sur la transparence dans les processus politiques (traite très probablement la proposition `HD03258` sur le compte rendu du financement des partis) ; vote en séance plénière **16 juin 2026** ; L/KD bénéficient du positionnement réforme démocratique. PIR-RT-002 répondu : KU (pas JuU/SfU) possède le sujet [🟧 MOYEN — `HD01KU39`, calendrier].
+- 🔵 **Contexte économique (FMI WEO avr. 2026)** — Dette publique suédoise ≈ 34 % du PIB (`GGXWDG_NGDP` prévision 2026) vs. moyenne de la zone euro >90 % ; croissance réelle du PIB 2026 `NGDP_RPCH` 2,0–2,1 % ; inflation en baisse (`PCPIEPCH`). Les baisses de taux de la Riksbank 2025–26 atteignent les emprunteurs hypothécaires → narratif M « mains sûres » [🟩 ÉLEVÉ — fournisseur : imf, flux de données : WEO_Apr_2026, vintage : avril 2026].
+- 🟣 **Renvoi croisé** — `HD01NU19` se rattache au fil de politique énergétique dans l'analyse des propositions (`../propositions/`) ; `HD10463` prolonge le groupe de promesses non tenues régionales de S dans `opposition-analysis.md` ; transparence `HD01KU39` traite `HD03258` du paquet de propositions du 30 avril.
+- 🩷 **Vulnérabilité émergente — risque « théâtre nucléaire »** — Cadrage de l'opposition selon lequel l'entrée en vigueur le 17 juin est symbolique sans dossier déposé avant le jour du scrutin le 13 septembre. Si Vattenfall/Uniper/nouvel acteur ne dépose pas de demande dans la fenêtre pré-électorale de 88 jours, le narratif de performance risque d'être contestable [🟧 MOYEN — PIR-RT-006 ouvert].
+- ⚪ **Transféré** — Les avis du Lagråd sur les propositions migratoires `HD03262` et `HD03265` (PIR-RT-001) restent **OUVERTS — CRITIQUES** ; l'examen constitutionnel de qualité est le seul facteur non résolu le plus influent façonnant le narratif politique de la réforme migratoire pendant la période estivale.
+
+---
+
+### 🗂️ Classement des principaux documents (classement DIW)
+
+| Rang | dok_id | Titre (court) | DIW | Confiance | Statut |
+|:----:|--------|---------------|:---:|:---------:|--------|
+| 1 | `HD01NU19` | Réforme autorisation nucléaire (voie directe) | 9,2 | 🟩 ÉLEVÉ [A2] | Commission approuvé — entre en vigueur 17 juin 2026 |
+| 2 | `HD10463` | Interpellation Ostlänken — Lindh (S) → Carlson (KD) | 8,6 | 🟩 ÉLEVÉ [A2] | Déposée — réponse attendue 25 mai 2026 |
+| 3 | `HD01FöU13` | Réforme du contrôle des explosifs | 7,5 | 🟩 ÉLEVÉ [A2] | Commission approuvé — entre en vigueur 1er juillet 2026 |
+| 4 | `HD01JuU9` | Réforme des procédures pénales | 7,4 | 🟩 ÉLEVÉ [A2] | Commission approuvé — entre en vigueur 1er juillet 2026 |
+| 5 | `HD01KU39` | Transparence dans les processus politiques | 7,0 | 🟧 MOYEN [B2] | Enregistré — vote plénier 16 juin 2026 |
+| 6 | `HD01FiU49` | Évaluation gestion dette publique 2021–2025 | 6,4 | 🟩 ÉLEVÉ [A2] | Enregistré — décision 11 juin 2026 |
+
+---
+
+### ⚠️ Aperçu des risques et menaces
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 Risque seuil L<br/>L sous 4 pour cent<br/>L x I = 3 x 5 = 15"] --> CONS["Surveiller Novus / Demoskop<br/>sondages hebdomadaires"]
+    R2["🟠 Ostlänken régional<br/>Narratif S circonscription marginale<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 Cadrage théâtre nucléaire<br/>aucun dossier déposé 13 sept.<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 Migration Lagråd<br/>HD03262 / HD03265 en cours<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| Risque | L | I | Score | Déclencheur | Source | Admiralty |
+|--------|:-:|:-:|:-----:|-------------|--------|:---------:|
+| Liberalerna sous le seuil 4 % → Tidö perd la majorité | 3 | 5 | 15 | Tout résultat Novus/Demoskop <4,0 % (limite inférieure IC 95 % <4,0) | `coalition-dynamics.md` R1 | **[B2]** |
+| Narratif S promesses non tenues régionales convertit des mandats marginaux d'Östergötland | 4 | 3 | 12 | Réponse de Carlson le 25 mai jugée insuffisante par rédaction SVT/SR Östergötland | `opposition-analysis.md` | **[A2]** |
+| Avis hostile du Lagråd sur le paquet migratoire `HD03262`/`HD03265` | 3 | 4 | 12 | Avis Lagråd publié dans les 30 j avec objections constitutionnelles | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| « Théâtre nucléaire » — `HD01NU19` entrée en vigueur sans dossier déposé avant le 13 sept. | 3 | 3 | 9 | Vattenfall/Uniper/nouvel acteur ne dépose pas de demande avant le 1er sept. 2026 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 Principaux déclencheurs futurs
+
+**Réponse écrite d'Andreas Carlson à l'interpellation `HD10463`, délai légal de réponse 25 mai 2026.** La façon dont Carlson encadre l'annulation de l'arrêt Linköping d'Ostlänken — s'il reconnaît la promesse non tenue, défend le changement de tracé pour des raisons techniques/budgétaires ou pivote vers des offres alternatives d'infrastructure régionale — détermine si le narratif Östergötland escalade vers un débat d'interpellation complet en séance avant la suspension estivale. Une réponse évasive ou technocratique est la voie la plus probable pour S de convertir le narratif en 1–2 glissements de mandats marginaux à Linköping/Norrköping. Une offre substantielle d'investissement alternatif désescalade le narratif. L'un ou l'autre résultat déplace les évaluations de circonscriptions marginales de `coalition-mathematics.md` et déclenche une révision Pass-2 de `electoral-implications.md`.
+
+**Déclencheur secondaire** (surveillance parallèle) : 16 juin 2026 — vote plénier `HD01KU39` sur la transparence du financement politique. Confirme ou brise le narratif de réalisation à quatre voies du gouvernement (énergie + sécurité + transparence + résultat financier) à 89 jours des élections.
+
+---
+
+### 📊 Évaluation stratégique
+
+**Niveau de confiance : 🟩 ÉLEVÉ [A2]** — sources incluant les données ouvertes du Riksdag (`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), le vintage FMI WEO avril 2026 et le registre des interpellations.
+
+L'instantané du 4 mai 2026 capture une coalition Tidö en **vitesse législative maximale** : sept réformes de coalition progressent en une seule semaine, avec des dates d'entrée en vigueur concrètes réparties entre le 1er juin et le 1er juillet 2026. Chaque date d'entrée en vigueur génère un rythme de performance que les quatre partis de coalition peuvent campaigner. La vulnérabilité stratégique est asymétrique : M, KD et SD bénéficient de la cascade ; **L** absorbe la charge — le plus petit parti de la coalition est le plus proche du seuil de 4 % et supporte un risque de perte de mandat disproportionné.
+
+La réponse de l'opposition S est méthodiquement précise : plutôt que d'affronter le gouvernement sur son terrain le plus fort (sécurité, nucléaire, économie), S construit une **mosaïque de mécontentement régional distribué** — Ostlänken en Östergötland (`HD10463`), Scandinavian Mountain Airport (interpellation 428), logement à Stockholm (interpellation 434) — chacune ciblant un seul ministre (Carlson) de différentes circonscriptions.
+
+Le cadre macro du FMI est favorable au gouvernement en place : dette publique ≈ 34 % du PIB, inflation en baisse, croissance d'environ 2 %. Le narratif économique est l'atout principal de M.
+
+**Prisme élections 2026** : La trajectoire actuelle maintient Tidö à environ 175 mandats — précisément aux limites de la majorité. Le risque de seuil L (PIR-RT-003) est la seule variable électorale la plus importante. L'avis du Lagråd sur la migration (PIR-RT-001) est la seule variable de narratif politique la plus importante. La réponse de Carlson sur Ostlänken (PIR-RT-005) est la seule variable de mandat régional la plus importante. Les trois se résolvent dans les 5 semaines suivant la date de publication de ce briefing.
+
+---
+
+### 📎 Liens
+
+| Lien | Chemin |
+|------|--------|
+| Article | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| Synthèse globale | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| Synthèse centrale | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| Dynamiques de coalition | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| Analyse de l'opposition | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| Implications électorales | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| Contexte économique (FMI) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| Indicateurs prospectifs | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| Matrice risques/opportunités | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| Analyse de scénarios | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| Notes méthodologiques | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| Manifeste de données | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| Analyses par document | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 Contrôle documentaire
+
+- **ID Briefing** : `EB-2026-05-04-001`
+- **Généré** : 2026-05-16 (rattrapage — créé à partir d'artefacts d'analyse Pass-2 existants)
+- **Chemin du modèle** : [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **Méthodologie de propriété** : [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **Portail de propriété** : [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) Check 1 + Check 7
+- **Famille de sortie** : A — Synthèse centrale
+- **Classification** : 🟢 PUBLIC
+
+*Provenance économique : fournisseur : imf, flux de données : WEO_Apr_2026, indicateurs : NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, vintage : avril 2026, retrieved_at : 2026-05-04. Données du Riksdag récupérées via l'API riksdag-regering le 2026-05-04. Riksdagsmonitor est produit par Hack23 AB ; ce briefing représente une évaluation éditoriale indépendante basée sur des documents parlementaires accessibles au public.*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# תדריך מודיעיני — פולס בזמן אמת של הריקסדאג 2026-05-04
+
+**סיווג**: 🟢 ציבורי — Riksdagsmonitor Intelligence
+**קהל יעד**: עורכים, כוננים, חוקרים, אזרחים מעורבים
+**תאריך**: 2026-05-04 (UTC)
+**ימים עד לבחירות 2026-09-13**: 132
+**זרימת עבודה**: news-realtime-monitor
+**הוכן על ידי**: מערכת Riksdagsmonitor AI Intelligence
+**רמת ביטחון כוללת**: 🟩 גבוה [A2] — אימות רב-מקורי באמצעות `dok_id` מנתוני ריקסדאג פתוחים + IMF WEO אפר' 2026
+**החלטת פרסום**: **פרסם** (EN + HE) — נושא עדיפות ראשונה בדירוג DIW ≥ 9.0
+**דרישות מידע עדיפות שנוענו**: PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 תמצית מנהלים (BLUF)
+
+הריקסדאג השוודי ייצר ב-4 במאי 2026 את פריון החקיקה הרב-ביותר שלפני הבחירות עד כה: ועדת התעשייה (NU) אישרה הענקת רישיון ישיר למתקני אנרגיה גרעינית (`HD01NU19`, נכנס לתוקף ב-17 ביוני 2026) — ההישג המבני הגדול ביותר של קואליציית Tidö במדיניות האנרגיה — בעוד הצעד השביעי ברצף נגד כנופיות התקדם באמצעות רפורמת פיקוח על חומרי נפץ (`HD01FöU13`) ורפורמת הליכי משפט פלילי (`HD01JuU9`), שניהם נכנסים לתוקף ב-1 ביולי 2026. מול קיר ההישגים הממשלתי הזה, הגישה ח"כ הסוציאל-דמוקרטית **אווה לינד** שאילתה `HD10463` לשר התשתיות **אנדראס קארלסון (KD)** על ביטול תחנת Linköping בקו Ostlänken — הפרת הבטחה בת 20 שנה לאזור עם 500,000 נוסעים יומיים בטריטוריית מרווח בחירות תחרותי. דוח השקיפות על מימון מפלגות (`HD01KU39`) מתוכנן להצבעה פלנרית ב-16 ביוני 2026, מה שמשלים נרטיב ביצועים ארבעה-מסלולי (אנרגיה, ביטחון, שקיפות, תוצאה פיננסית) 89 ימים לפני הבחירות. **רמת ביטחון: 🟩 גבוה [A2]** — מקורות: נתוני ריקסדאג פתוחים, IMF WEO אפר' 2026.
+
+---
+
+### 🧭 שלוש החלטות שתדריך זה תומך בהן
+
+| # | החלטה | מקבל ההחלטה | מועד אחרון | בסיס |
+|:-:|-------|-------------|:----------:|------|
+| 1 | **מערכתי:** להוביל מאמר EN + HE בכותרות עם מסגור כפול — רפורמת הגרעין בתוספת נגד-נרטיב Ostlänken (יעד פרסום תוך שעתיים) | עורך ראשי | +2 ש | החלטת ועדה `HD01NU19` + שאילתה `HD10463` שהוגשה 2026-05-04 |
+| 2 | **כיסוי מקדים:** להקצות כונן למעקב אחר תגובת קארלסון ל-Ostlänken (מועד תגובה חוקי: 25 במאי 2026) וכניסת חוק הגרעין לתוקף ב-17 ביוני | כוננות | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; רישום שאילתות `HD10463` |
+| 3 | **סיכון:** להעלות את רמת ניטור סף L מהתבוננות למעקב פעיל — לוגיקת ביצועי הקואליציה מניחה ש-L תחצה 4% ב-13 ספט'; כל תוצאת Novus/Demoskop <4.5% מפעילה בחינה מחדש של חשבון הקואליציה | ראש אנליזה | שוטף שבועי | `coalition-dynamics.md`, דעה שלאחר הגירה PIR-RT-003 |
+
+---
+
+### ⚡ קריאה של 60 שניות
+
+- 🔴 **רפורמת גרעין לרישוי ישיר (`HD01NU19`)** — ועדת התעשייה (NU) מאשרת רישוי ישיר, עוקפת את צינור הרב-שלבי של הרשות לבטיחות קרינה (SSM); **נכנס לתוקף ב-17 ביוני 2026**. ההישג החקיקתי המבני הגדול ביותר של כהונת Tidö; מממש את הבטחת הפעלה-מחדש הגרעינית של M/KD/L/SD מ-2022 עם השגת אבן דרך תפעולית לפני יום הבחירות [🟩 גבוה — `HD01NU19`, פרוטוקול ועדת NU].
+- 🟠 **שאילתת הפרת הבטחת Ostlänken (`HD10463`)** — ח"כ S **אווה לינד** דורשת משר התשתיות **אנדראס קארלסון (KD)** להסביר ביטול תחנת Linköping המתוכננת בקו Ostlänken; מועד תגובה חוקי **25 במאי 2026**. השאילתה השלישית שהוגשה נגד קארלסון ב-10 ימים — לחץ אזורי מתואם של S על אזור 500,000 נוסעים יומיים [🟩 גבוה — `HD10463`, רישום שאילתות].
+- 🟢 **הצעד השביעי נגד כנופיות מתקדם (`HD01FöU13` + `HD01JuU9`)** — דרישות רישוי חומרי נפץ מחמירות (ועדת הביטחון, 1 ביולי 2026); רפורמת הליכי המשפט הפלילי מבטלת את *tilltrosbestämmelserna* ומרחיבה ראיות חקירה מוקדמת (ועדת המשפטים, 1 ביולי 2026). נרטיב הליבה של M/SD «מממשים בביטחון» מתחזק [🟩 גבוה — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **שקיפות במימון פוליטי (`HD01KU39`)** — ועדת החוקה רושמת דוח על שקיפות בתהליכים פוליטיים (עוסק ככל הנראה בהצעה `HD03258` בנושא דיווח מימון מפלגות); הצבעה פלנרית **16 ביוני 2026**; L/KD מרוויחים ממיצוב רפורמת הדמוקרטיה. PIR-RT-002 נענה: KU (לא JuU/SfU) הוא הבעלים של הנושא [🟧 בינוני — `HD01KU39`, לוח שנה].
+- 🔵 **הקשר כלכלי (IMF WEO אפר' 2026)** — חוב ציבורי שוודי ≈ 34% מהתמ"ג (`GGXWDG_NGDP` תחזית 2026) מול ממוצע גוש היורו >90%; צמיחת תמ"ג ריאלי 2026 `NGDP_RPCH` 2.0–2.1%; אינפלציה יורדת (`PCPIEPCH`). הפחתות הריבית של Riksbank 2025–26 מגיעות ללווי משכנתאות → נרטיב M «ידיים בטוחות» [🟩 גבוה — ספק: imf, זרם נתונים: WEO_Apr_2026, גרסה: אפריל 2026].
+- 🟣 **הפנייה צולבת** — `HD01NU19` מתקשר לחוט מדיניות האנרגיה בניתוח ההצעות (`../propositions/`); `HD10463` מאריכה את אשכול הפרת ההבטחות האזורי של S מ-`opposition-analysis.md`; שקיפות `HD01KU39` עוסקת ב-`HD03258` מחבילת ההצעות של 30 באפריל.
+- 🩷 **פגיעות מתהווה — סיכון «תיאטר גרעיני»** — מסגור האופוזיציה שלפיו כניסת החוק לתוקף ב-17 ביוני היא סמלית ללא הגשת בקשה לפני יום הבחירות ב-13 ספטמבר. אם Vattenfall/Uniper/שחקן חדש לא יגישו בקשה בתוך חלון 88 הימים שלפני הבחירות, נרטיב הביצועים עלול להפוך לניתן לתקיפה [🟧 בינוני — PIR-RT-006 פתוח].
+- ⚪ **הועבר** — חוות דעת Lagråd על הצעות ההגירה `HD03262` ו-`HD03265` (PIR-RT-001) נשארות **פתוחות — קריטיות**; ביקורת האיכות החוקתית היא הגורם הבלתי-פתור המשפיע ביותר המעצב את הנרטיב הפוליטי של רפורמת ההגירה בעונת הקיץ.
+
+---
+
+### 🗂️ מסמכים מובילים (דירוג DIW)
+
+| דירוג | dok_id | כותרת (קצר) | DIW | ביטחון | סטטוס |
+|:-----:|--------|-------------|:---:|:------:|-------|
+| 1 | `HD01NU19` | רפורמת רישוי גרעיני (מסלול ישיר) | 9.2 | 🟩 גבוה [A2] | ועדה אישרה — נכנס לתוקף 17 יוני 2026 |
+| 2 | `HD10463` | שאילתת Ostlänken — לינד (S) → קארלסון (KD) | 8.6 | 🟩 גבוה [A2] | הוגש — תגובה נדרשת ב-25 מאי 2026 |
+| 3 | `HD01FöU13` | רפורמת פיקוח על חומרי נפץ | 7.5 | 🟩 גבוה [A2] | ועדה אישרה — נכנס לתוקף 1 יולי 2026 |
+| 4 | `HD01JuU9` | רפורמת הליכי משפט פלילי | 7.4 | 🟩 גבוה [A2] | ועדה אישרה — נכנס לתוקף 1 יולי 2026 |
+| 5 | `HD01KU39` | שקיפות בתהליכים פוליטיים | 7.0 | 🟧 בינוני [B2] | נרשם — הצבעה פלנרית 16 יוני 2026 |
+| 6 | `HD01FiU49` | הערכת ניהול חוב ציבורי 2021–2025 | 6.4 | 🟩 גבוה [A2] | נרשם — החלטה 11 יוני 2026 |
+
+---
+
+### ⚠️ סקירת סיכונים ואיומים
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 סיכון סף L<br/>L מתחת ל-4 אחוזים<br/>L x I = 3 x 5 = 15"] --> CONS["ניטור Novus / Demoskop<br/>סקרים שבועיים"]
+    R2["🟠 Ostlänken אזורי<br/>נרטיב S לאזור שוליים<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 מסגור תיאטר גרעיני<br/>לא הוגשה בקשה 13 ספט'<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 הגירה Lagråd<br/>HD03262 / HD03265 בתהליך<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| סיכון | ה' | ע' | ציון | מפעיל | מקור | Admiralty |
+|-------|:--:|:--:|:----:|-------|------|:---------:|
+| Liberalerna מתחת לסף 4% → Tidö מאבד רוב | 3 | 5 | 15 | כל תוצאת Novus/Demoskop <4.0% (גבול תחתון CI 95% <4.0) | `coalition-dynamics.md` R1 | **[B2]** |
+| נרטיב הפרת הבטחות אזורי של S ממיר מנדטים שוליים ב-Östergötland | 4 | 3 | 12 | מערכת SVT/SR Östergötland מעריכה תגובת קארלסון ב-25 מאי כבלתי מספקת | `opposition-analysis.md` | **[A2]** |
+| חוות דעת עוינת של Lagråd על חבילת ההגירה `HD03262`/`HD03265` | 3 | 4 | 12 | חוות דעת Lagråd מתפרסמת תוך 30 יום עם הסתייגויות חוקתיות | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| «תיאטר גרעיני» — כניסת `HD01NU19` לתוקף ללא הגשת בקשה לפני 13 ספטמבר | 3 | 3 | 9 | Vattenfall/Uniper/שחקן חדש לא מגישים בקשה לפני 1 ספטמבר 2026 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 מפעילים עתידיים חשובים
+
+**תגובתו הכתובה של אנדראס קארלסון לשאילתה `HD10463`, מועד תגובה חוקי 25 במאי 2026.** הדרך שבה קארלסון ימסגר את ביטול תחנת Linköping ב-Ostlänken — אם יודה בהפרת הבטחה, יגן על שינוי המסלול בנימוקים טכניים/תקציביים, או יפנה לחלופות תשתית אזוריות — תקבע אם נרטיב Östergötland יסלים לדיון שאילתה מלא במליאה לפני הפסקת הקיץ. תגובה מתחמקת או טכנוקרטית היא הדרך הסבירה ביותר עבור S להמיר את הנרטיב ל-1–2 העברות שוליות של מנדטים ב-Linköping/Norrköping. הצעת השקעה חלופית מהותית תפחית את הנרטיב. כל אחת משתי התוצאות מזיזה את הערכות האזורים השוליים ב-`coalition-mathematics.md` ומפעילה עדכון Pass-2 של `electoral-implications.md`.
+
+**מפעיל משני** (ניטור מקביל): 16 ביוני 2026 — הצבעה פלנרית `HD01KU39` על שקיפות במימון פוליטי. מאשר או שובר את נרטיב הביצועים הרבעוני של הממשלה (אנרגיה + ביטחון + שקיפות + תוצאה פיננסית) 89 ימים לפני הבחירות.
+
+---
+
+### 📊 הערכה אסטרטגית
+
+**רמת ביטחון: 🟩 גבוה [A2]** — המקורות כוללים נתוני ריקסדאג פתוחים (`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), גרסת IMF WEO אפריל 2026 ורישום השאילתות.
+
+תמונת המצב מ-4 במאי 2026 לוכדת קואליציית Tidö ב**מהירות חקיקה מרבית**: שבעה רפורמות קואליציוניות מתקדמות בשבוע אחד, עם תאריכי כניסה לתוקף קונקרטיים מפוזרים בין 1 ביוני ל-1 ביולי 2026. כל תאריך כניסה לתוקף מייצר קצב ביצועים שארבעת מפלגות הקואליציה יכולות לעשות בו שימוש בקמפיין. הפגיעות האסטרטגית אינה סימטרית: M, KD ו-SD נהנים מהרצף; **L** סופג את הנטל — המפלגה הקטנה ביותר בקואליציה קרובה ביותר לסף 4% ונושאת סיכון לא פרופורציונלי לאיבוד מנדטים.
+
+תגובת האופוזיציה S מדויקת מתודולוגית: במקום להתעמת עם הממשלה בשטח החזק ביותר שלה (ביטחון, גרעין, כלכלה), S בונה **פסיפס אזורי מבוזר של חוסר שביעות רצון** — Ostlänken ב-Östergötland (`HD10463`), Scandinavian Mountain Airport (שאילתה 428), דיור בסטוקהולם (שאילתה 434) — כל אחד מכוון לשר בודד (קארלסון) מאזורים שונים.
+
+המסגרת המאקרו-כלכלית של קרן המטבע הבינלאומית נוחה לממשלה הנוכחית: חוב ציבורי ≈ 34% מהתמ"ג, אינפלציה יורדת, צמיחה של כ-2%. הנרטיב הכלכלי הוא הנכס החזק ביותר של M.
+
+**עדשת בחירות 2026**: המסלול הנוכחי מחזיק את Tidö קרוב ל-175 מנדטים — בדיוק בגבולות הרוב. סיכון הסף של L (PIR-RT-003) הוא המשתנה הבחירתי החשוב ביותר. חוות דעת Lagråd על ההגירה (PIR-RT-001) היא המשתנה הנרטיבי הפוליטי החשוב ביותר. תגובת קארלסון על Ostlänken (PIR-RT-005) היא המשתנה האזורי של המנדטים החשוב ביותר. שלושתם נפתרים תוך 5 שבועות מתאריך פרסום תדריך זה.
+
+---
+
+### 📎 קישורים
+
+| קישור | נתיב |
+|-------|------|
+| מאמר | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| סיכום סינתזה | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| סינתזה מרכזית | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| דינמיקת קואליציה | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| ניתוח האופוזיציה | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| השלכות בחירתיות | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| הקשר כלכלי (IMF) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| אינדיקטורים עתידיים | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| מטריצת סיכונים/הזדמנויות | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| ניתוח תרחישים | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| הערות מתודולוגיות | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| מניפסט נתונים | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| ניתוחי מסמכים | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 בקרת מסמך
+
+- **מזהה תדריך**: `EB-2026-05-04-001`
+- **נוצר**: 2026-05-16 (השלמה מאוחרת — נוצר מתוצרי ניתוח Pass-2 קיימים)
+- **נתיב תבנית**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **מתודולוגיית בעלות**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **שער בעלות**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) בדיקה 1 + בדיקה 7
+- **משפחת פלט**: A — סינתזה מרכזית
+- **סיווג**: 🟢 ציבורי
+
+*מקור כלכלי: ספק: imf, זרם נתונים: WEO_Apr_2026, אינדיקטורים: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, גרסה: אפריל 2026, retrieved_at: 2026-05-04. נתוני ריקסדאג אוחזרו דרך ה-API riksdag-regering ב-2026-05-04. Riksdagsmonitor מופק על ידי Hack23 AB; תדריך זה מייצג הערכה עצמאית עריכתית המבוססת על מסמכים פרלמנטריים זמינים לציבור.*
+
+</div>
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_ja.md -->
+
+**分類**: 🟢 公開 — Riksdagsmonitor Intelligence
+**対象**: 編集者、当直者、研究者、関心ある市民
+**日付**: 2026-05-04 (UTC)
+**2026-09-13 選挙まであと**: 132日
+**ワークフロー**: news-realtime-monitor
+**作成**: Riksdagsmonitor AIインテリジェンスシステム
+**総合信頼レベル**: 🟩 高 [A2] — `dok_id` 経由でオープンリクスダーグデータ + IMF WEO 2026年4月からの複数ソース照合
+**公開決定**: **公開** (EN + JA) — DIW優先度トップ記事 ≥ 9.0
+**回答済みPIR**: PIR-RT-001、PIR-RT-005、PIR-RT-006
+
+---
+
+### 🎯 BLUF（要約）
+
+スウェーデン・リクスダーグは2026年5月4日、選挙前としてこれまでで最も集中した立法成果を生み出した。産業委員会（NU）は原子力発電所への直接許可付与を承認し（`HD01NU19`、2026年6月17日施行）——Tidö連立政権の単一最大のエネルギー政策構造的成果——また7回連続となるギャング対策が爆発物規制改革（`HD01FöU13`）および刑事手続き改革（`HD01JuU9`）により進展し、いずれも2026年7月1日施行。この政府の実績の壁に対し、社会民主党の**エヴァ・リンド**議員がKD党インフラ大臣**アンドレアス・カールソン**に対して質問`HD10463`を提出——Ostlänken リンショーピング駅追加の中止について、競争的選挙区マージン地域での50万人通勤圏に対する20年来の約束違反を問いただした。政治資金透明性報告（`HD01KU39`）は2026年6月16日の本会議採決が予定されており、選挙89日前に四路線実績ナラティブ（エネルギー・安全保障・透明性・財政成果）を完成させる。**信頼レベル: 🟩 高 [A2]** — 出典：リクスダーグオープンデータ、IMF WEO 2026年4月。
+
+---
+
+### 🧭 このブリーフィングが支援する3つの決定
+
+| # | 決定 | 意思決定者 | 期限 | 根拠 |
+|:-:|------|----------|:----:|------|
+| 1 | **編集上:** 原子力改革 + Ostlänken 対立ナラティブの二重フレームでEN + JA速報記事を展開（2時間以内公開目標） | 編集長 | +2時間 | `HD01NU19` 委員会決定 + `HD10463` 質問 2026-05-04 提出 |
+| 2 | **前向き取材:** カールソンのOstlänken回答（法定回答期限: 2026年5月25日）と原子力法6月17日施行を担当当直に割当 | 当直者 | 2026-05-25 / 2026-06-17 | PIR-RT-005、PIR-RT-006；`HD10463` 質問登録 |
+| 3 | **リスク:** L閾値監視レベルを観察から積極的追跡に引き上げ——連立実績論理はLが9月13日に4%超えを前提とする；Novus/Demoskop調査結果<4.5%は連立数学的見直しを発動 | 分析責任者 | 継続的週次 | `coalition-dynamics.md`、移民後の世論 PIR-RT-003 |
+
+---
+
+### ⚡ 60秒読み
+
+- 🔴 **原子力改革で直接許可取得へ (`HD01NU19`)** — 産業委員会（NU）が直接許可を承認、放射線安全機関（SSM）の多段階パイプラインを回避；**2026年6月17日施行**。Tidö任期中で単一最大の構造的立法成果；2022年のM/KD/L/SDの原発再起動公約を選挙前に運用マイルストーン達成で実現 [🟩 高 — `HD01NU19`、NU委員会議事録]。
+- 🟠 **Ostlänken約束違反質問 (`HD10463`)** — S党議員**エヴァ・リンド**がインフラ大臣**アンドレアス・カールソン（KD）**に対しリンショーピングOstlänken駅計画中止の説明を要求；法定回答期限**2026年5月25日**。10日間でカールソンへの3件目の質問——50万人通勤圏への調整済みS地域圧力 [🟩 高 — `HD10463`、質問登録]。
+- 🟢 **第7次ギャング対策進展 (`HD01FöU13` + `HD01JuU9`)** — 爆発物許可要件強化（防衛委員会、2026年7月1日）；刑事手続き改革が*tilltrosbestämmelserna*を廃止し早期尋問証拠資料を拡大（司法委員会、2026年7月1日）。M/SDの「安全保障で実績を出す」コアナラティブ強化 [🟩 高 — `HD01FöU13`、`HD01JuU9`]。
+- 🟡 **政治資金透明性 (`HD01KU39`)** — 憲法委員会が政治プロセスの透明性に関する報告書を登録（高い確率で政党資金報告に関する提案`HD03258`を扱う）；本会議採決**2026年6月16日**；L/KDが民主主義改革ポジショニングで恩恵。PIR-RT-002回答：KU（JuU/SfUではなく）が所管 [🟧 中 — `HD01KU39`、カレンダー]。
+- 🔵 **経済的背景 (IMF WEO 2026年4月)** — スウェーデン公的債務≈GDP比34%（`GGXWDG_NGDP` 2026年予測）対ユーロ圏平均>90%；2026年実質GDP成長率`NGDP_RPCH` 2.0–2.1%；インフレ低下（`PCPIEPCH`）。Riksbank利下げ2025–26が住宅ローン利用者に届く→Mの「安定した手」ナラティブ [🟩 高 — プロバイダー: imf、データフロー: WEO_Apr_2026、ヴィンテージ: 2026年4月]。
+- 🟣 **相互参照** — `HD01NU19`は提案書分析のエネルギー政策スレッドに連結（`../propositions/`）；`HD10463`は`opposition-analysis.md`のS地域約束違反クラスターを延長；透明性`HD01KU39`は4月30日提案パッケージの`HD03258`を扱う。
+- 🩷 **新興脆弱性 — 「原子力劇場」リスク** — 9月13日選挙日前に申請が提出されていなければ6月17日施行は象徴的という野党フレーミング。Vattenfall/Uniper/新規参入者が88日間の選挙前ウィンドウ内に申請しない場合、実績ナラティブが疑問視されるリスク [🟧 中 — PIR-RT-006 未解決]。
+- ⚪ **繰越** — 移民提案`HD03262`と`HD03265`に関するLagråd意見書（PIR-RT-001）は**未解決——重要**；憲法上の品質審査は移民改革の政治的ナラティブを夏季に形成する最も影響力のある未解決要因。
+
+---
+
+### 🗂️ トップ文書（DIW順位）
+
+| 順位 | dok_id | タイトル（短縮） | DIW | 信頼 | 状況 |
+|:----:|--------|----------------|:---:|:----:|------|
+| 1 | `HD01NU19` | 原子力許可改革（直接ルート） | 9.2 | 🟩 高 [A2] | 委員会承認 — 2026年6月17日施行 |
+| 2 | `HD10463` | Ostlänken質問 — リンド（S）→ カールソン（KD） | 8.6 | 🟩 高 [A2] | 提出済 — 回答期限2026年5月25日 |
+| 3 | `HD01FöU13` | 爆発物規制改革 | 7.5 | 🟩 高 [A2] | 委員会承認 — 2026年7月1日施行 |
+| 4 | `HD01JuU9` | 刑事手続き改革 | 7.4 | 🟩 高 [A2] | 委員会承認 — 2026年7月1日施行 |
+| 5 | `HD01KU39` | 政治プロセスの透明性 | 7.0 | 🟧 中 [B2] | 登録済 — 本会議採決2026年6月16日 |
+| 6 | `HD01FiU49` | 国債管理評価2021–2025 | 6.4 | 🟩 高 [A2] | 登録済 — 決定2026年6月11日 |
+
+---
+
+### ⚠️ リスク・脅威概要
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 L閾値リスク<br/>Lが4パーセント未満<br/>L x I = 3 x 5 = 15"] --> CONS["Novus / Demoskop監視<br/>週次世論調査"]
+    R2["🟠 Ostlänken地域<br/>S僅差選挙区ナラティブ<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 原子力劇場フレーミング<br/>9月13日前に申請なし<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 移民Lagråd<br/>HD03262 / HD03265 進行中<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| リスク | 可能性 | 影響 | スコア | トリガー | 出典 | アドミラルティ |
+|--------|:------:|:----:|:------:|---------|------|:-------------:|
+| Liberalerna が4%閾値を下回る → Tidöが過半数を失う | 3 | 5 | 15 | Novus/Demoskop結果<4.0%（95%CI下限<4.0） | `coalition-dynamics.md` R1 | **[B2]** |
+| S地域約束違反ナラティブがÖstergötlandの僅差議席を転換 | 4 | 3 | 12 | SVT/SR Östergötland編集部がカールソンの5月25日回答を不十分と評価 | `opposition-analysis.md` | **[A2]** |
+| Lagråd移民パッケージ`HD03262`/`HD03265`への否定的意見 | 3 | 4 | 12 | Lagråd意見書が30日以内に憲法上の異議を含んで公表 | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| 「原子力劇場」— 9月13日前に申請提出なしで`HD01NU19`施行 | 3 | 3 | 9 | Vattenfall/Uniper/新規参入者が2026年9月1日までに申請を提出しない | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 最重要今後のトリガー
+
+**アンドレアス・カールソンの質問`HD10463`への書面回答、法定回答期限2026年5月25日。** カールソンがリンショーピングOstlänken駅中止をどうフレーミングするか——約束違反を認めるか、技術的/予算的理由でルート変更を擁護するか、代替地域インフラ提案に転換するか——によって、Östergötlandナラティブが夏季休会前に本会議での完全な質問討論にエスカレートするかどうかが決まる。回避的または技術官僚的な回答は、Sがナラティブをリンショーピング/ノルショーピングでの1–2件の僅差議席転換に変換する最も可能性の高い経路。実質的な代替投資提案はナラティブを鎮静化させる。どちらの結果も`coalition-mathematics.md`の僅差選挙区評価をシフトさせ、`electoral-implications.md`のPass-2改訂を発動する。
+
+**副次トリガー**（並行監視）：2026年6月16日 — `HD01KU39`政治資金透明性本会議採決。選挙89日前に政府の四路線実績ナラティブ（エネルギー + 安全保障 + 透明性 + 財政成果）を確認または破綻させる。
+
+---
+
+### 📊 戦略的評価
+
+**信頼レベル: 🟩 高 [A2]** — 出典にはリクスダーグオープンデータ（`HD01NU19`、`HD10463`、`HD01FöU13`、`HD01JuU9`、`HD01KU39`、`HD01FiU49`）、IMF WEO 2026年4月ヴィンテージ、質問登録が含まれる。
+
+2026年5月4日のスナップショットは**最大立法速度**のTidö連立政権を捉えている：7件の連立改革が1週間で進展し、具体的な施行日が2026年6月1日から7月1日に分散している。各施行日は4つの連立政党が選挙活動で活用できる実績リズムを生み出す。戦略的脆弱性は非対称：M、KD、SDがカスケードの恩恵を受ける一方、**L**が負担を吸収する——連立最小政党が4%閾値に最も近く、不均衡な議席損失リスクを負う。
+
+S野党の応答は方法論的に正確：安全保障・原子力・経済という政府の最強地盤で対抗する代わりに、Sは**分散型地域的不満のモザイク**を構築——Östergötlandのostlänken（`HD10463`）、Scandinavian Mountain Airport（質問428）、ストックホルムの住宅（質問434）——それぞれ異なる選挙区から単一の大臣（カールソン）に向けられている。
+
+IMFのマクロ枠組みは現政権に有利：公的債務≈GDP比34%、インフレ低下、約2%成長。経済的ナラティブはMの最強資産。
+
+**2026年選挙のレンズ**：現在の軌道はTidöを175議席前後に維持——過半数の境界線上。Lの閾値リスク（PIR-RT-003）が単一最重要選挙変数。Lagråd移民意見書（PIR-RT-001）が単一最重要政治的ナラティブ変数。カールソンのOstlänken回答（PIR-RT-005）が単一最重要地域議席変数。3つすべてがこのブリーフィング公開から5週間以内に解決する。
+
+---
+
+### 📎 リンク
+
+| リンク | パス |
+|--------|------|
+| 記事 | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| 統合概要 | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| コア統合 | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| 連立ダイナミクス | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| 野党分析 | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| 選挙的含意 | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| 経済的背景（IMF） | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| 先行指標 | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| リスク・機会マトリクス | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| シナリオ分析 | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| 方法論ノート | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| データマニフェスト | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| 文書別分析 | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 文書管理
+
+- **ブリーフィングID**: `EB-2026-05-04-001`
+- **生成**: 2026-05-16（追補充足——既存Pass-2分析成果物から作成）
+- **テンプレートパス**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **所有方法論**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **所有ゲート**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) チェック1 + チェック7
+- **出力ファミリー**: A — コア統合
+- **分類**: 🟢 公開
+
+*経済的出所：プロバイダー: imf、データフロー: WEO_Apr_2026、指標: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH、ヴィンテージ: 2026年4月、retrieved_at: 2026-05-04。リクスダーグデータはriksdag-regering API経由で2026-05-04に取得。Riksdagsmonitorはhack23 ABが制作；本ブリーフィングは公開されている議会文書に基づく独立した編集的評価を代表する。*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_ko.md -->
+
+**분류**: 🟢 공개 — Riksdagsmonitor Intelligence
+**대상**: 편집자, 당직자, 연구자, 관심 있는 시민
+**날짜**: 2026-05-04 (UTC)
+**2026-09-13 선거까지**: 132일
+**워크플로**: news-realtime-monitor
+**작성**: Riksdagsmonitor AI 인텔리전스 시스템
+**전체 신뢰 수준**: 🟩 높음 [A2] — `dok_id` 경유 공개 리크스다그 데이터 + IMF WEO 2026년 4월 다중 출처 교차 검증
+**공개 결정**: **공개** (EN + KO) — DIW 우선순위 상위 기사 ≥ 9.0
+**해결된 PIR**: PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 BLUF (요약)
+
+스웨덴 리크스다그는 2026년 5월 4일, 선거 전 최고 수준의 집중된 입법 성과를 창출했다. 산업위원회(NU)는 원자력 발전소에 대한 직접 허가 부여를 승인했으며(`HD01NU19`, 2026년 6월 17일 발효) ——Tidö 연립 정부의 단일 최대 에너지 정책 구조적 성과——, 7회 연속 갱단 대책이 폭발물 규제 개혁(`HD01FöU13`)과 형사 절차 개혁(`HD01JuU9`)으로 진전되었으며, 두 가지 모두 2026년 7월 1일 발효된다. 이 정부 실적의 벽에 맞서, 사민당의 **에바 린드** 의원이 KD당 인프라부 장관 **안드레아스 칼손**에게 질의 `HD10463`을 제출——Ostlänken 링셰핑 역 추가 취소에 대해, 경쟁적 선거구 마진 지역의 50만 통근자에 대한 20년 약속 위반을 추궁했다. 정치 자금 투명성 보고서(`HD01KU39`)는 2026년 6월 16일 본회의 표결이 예정되어 있어, 선거 89일 전에 4개 노선 실적 내러티브(에너지·안보·투명성·재정 성과)를 완성시킨다. **신뢰 수준: 🟩 높음 [A2]** — 출처: 리크스다그 공개 데이터, IMF WEO 2026년 4월.
+
+---
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+| # | 결정 | 의사결정자 | 기한 | 근거 |
+|:-:|------|----------|:----:|------|
+| 1 | **편집적:** 원자력 개혁 + Ostlänken 갈등 내러티브 이중 프레임으로 EN + KO 속보 기사 배포(2시간 내 게재 목표) | 편집장 | +2시간 | `HD01NU19` 위원회 결정 + `HD10463` 질의 2026-05-04 제출 |
+| 2 | **전향적 취재:** 칼손의 Ostlänken 답변(법정 답변 기한: 2026년 5월 25일)과 원자력법 6월 17일 발효를 당직 기자에게 배정 | 당직자 | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; `HD10463` 질의 등록 |
+| 3 | **리스크:** L 임계값 모니터링 수준을 관찰에서 적극적 추적으로 격상——연립 실적 논리는 L이 9월 13일에 4% 초과를 가정; Novus/Demoskop 조사 결과<4.5%는 연립 수학적 재검토 발동 | 분석 책임자 | 지속적 주간 | `coalition-dynamics.md`, 이민 후 여론 PIR-RT-003 |
+
+---
+
+### ⚡ 60초 읽기
+
+- 🔴 **원자력 개혁으로 직접 허가 취득 (`HD01NU19`)** — 산업위원회(NU)가 직접 허가를 승인, 방사선안전청(SSM)의 다단계 파이프라인 우회; **2026년 6월 17일 발효**. Tidö 임기 중 단일 최대 구조적 입법 성과; 2022년 M/KD/L/SD의 원전 재가동 공약을 선거 전 운영 마일스톤 달성으로 실현 [🟩 높음 — `HD01NU19`, NU 위원회 회의록].
+- 🟠 **Ostlänken 약속 위반 질의 (`HD10463`)** — S당 의원 **에바 린드**가 인프라부 장관 **안드레아스 칼손(KD)**에게 링셰핑 Ostlänken 역 계획 취소 설명 요구; 법정 답변 기한 **2026년 5월 25일**. 10일 만에 칼손에 대한 3번째 질의——50만 통근자에 대한 조율된 S 지역 압박 [🟩 높음 — `HD10463`, 질의 등록].
+- 🟢 **7차 갱단 대책 진전 (`HD01FöU13` + `HD01JuU9`)** — 폭발물 허가 요건 강화(방위위원회, 2026년 7월 1일); 형사 절차 개혁이 *tilltrosbestämmelserna*를 폐지하고 조기 심문 증거 자료를 확대(사법위원회, 2026년 7월 1일). M/SD의 "안보에서 실적 내기" 핵심 내러티브 강화 [🟩 높음 — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **정치 자금 투명성 (`HD01KU39`)** — 헌법위원회가 정치 과정의 투명성에 관한 보고서 등록(높은 확률로 정당 자금 보고에 관한 제안 `HD03258` 포함); 본회의 표결 **2026년 6월 16일**; L/KD가 민주주의 개혁 포지셔닝에서 수혜. PIR-RT-002 해답: KU(JuU/SfU가 아닌)가 소관 [🟧 중간 — `HD01KU39`, 일정].
+- 🔵 **경제적 맥락 (IMF WEO 2026년 4월)** — 스웨덴 공공 부채 ≈ GDP 대비 34%(`GGXWDG_NGDP` 2026년 전망) 대비 유로존 평균>90%; 2026년 실질 GDP 성장률 `NGDP_RPCH` 2.0–2.1%; 인플레이션 하락(`PCPIEPCH`). Riksbank 금리 인하 2025–26이 주택담보대출 이용자에게 전달→M의 "안정된 손" 내러티브 [🟩 높음 — 제공자: imf, 데이터플로: WEO_Apr_2026, 빈티지: 2026년 4월].
+- 🟣 **상호 참조** — `HD01NU19`는 제안서 분석의 에너지 정책 스레드와 연결(`../propositions/`); `HD10463`은 `opposition-analysis.md`의 S 지역 약속 위반 클러스터 연장; 투명성 `HD01KU39`는 4월 30일 제안 패키지의 `HD03258` 포함.
+- 🩷 **신흥 취약성 — "원자력 극장" 리스크** — 9월 13일 선거일 전에 신청이 제출되지 않으면 6월 17일 발효는 상징적이라는 야당 프레이밍. Vattenfall/Uniper/신규 진입자가 88일간의 선거 전 윈도우 내에 신청하지 않으면 실적 내러티브가 의문시될 위험 [🟧 중간 — PIR-RT-006 미해결].
+- ⚪ **이월** — 이민 제안 `HD03262`와 `HD03265`에 대한 Lagråd 의견서(PIR-RT-001)는 **미해결——중요**; 헌법적 품질 심사는 이민 개혁의 정치적 내러티브를 여름에 형성하는 가장 영향력 있는 미해결 요인.
+
+---
+
+### 🗂️ 상위 문서 (DIW 순위)
+
+| 순위 | dok_id | 제목(단축) | DIW | 신뢰 | 상태 |
+|:----:|--------|-----------|:---:|:----:|------|
+| 1 | `HD01NU19` | 원자력 허가 개혁(직접 경로) | 9.2 | 🟩 높음 [A2] | 위원회 승인 — 2026년 6월 17일 발효 |
+| 2 | `HD10463` | Ostlänken 질의 — 린드(S) → 칼손(KD) | 8.6 | 🟩 높음 [A2] | 제출됨 — 답변 기한 2026년 5월 25일 |
+| 3 | `HD01FöU13` | 폭발물 규제 개혁 | 7.5 | 🟩 높음 [A2] | 위원회 승인 — 2026년 7월 1일 발효 |
+| 4 | `HD01JuU9` | 형사 절차 개혁 | 7.4 | 🟩 높음 [A2] | 위원회 승인 — 2026년 7월 1일 발효 |
+| 5 | `HD01KU39` | 정치 과정의 투명성 | 7.0 | 🟧 중간 [B2] | 등록됨 — 본회의 표결 2026년 6월 16일 |
+| 6 | `HD01FiU49` | 국가 채무 관리 평가 2021–2025 | 6.4 | 🟩 높음 [A2] | 등록됨 — 결정 2026년 6월 11일 |
+
+---
+
+### ⚠️ 리스크·위협 개요
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 L 임계값 리스크<br/>L이 4퍼센트 미만<br/>L x I = 3 x 5 = 15"] --> CONS["Novus / Demoskop 모니터링<br/>주간 여론조사"]
+    R2["🟠 Ostlänken 지역<br/>S 접전 선거구 내러티브<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 원자력 극장 프레이밍<br/>9월 13일 전에 신청 없음<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 이민 Lagråd<br/>HD03262 / HD03265 진행 중<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| 리스크 | 가능성 | 영향 | 점수 | 트리거 | 출처 | 아드미랄티 |
+|--------|:------:|:----:|:----:|--------|------|:----------:|
+| Liberalerna가 4% 임계값 미달 → Tidö가 과반수 상실 | 3 | 5 | 15 | Novus/Demoskop 결과<4.0%(95% CI 하한<4.0) | `coalition-dynamics.md` R1 | **[B2]** |
+| S 지역 약속 위반 내러티브가 Östergötland 접전 의석 전환 | 4 | 3 | 12 | SVT/SR Östergötland 편집부가 칼손의 5월 25일 답변을 불충분으로 평가 | `opposition-analysis.md` | **[A2]** |
+| Lagråd 이민 패키지 `HD03262`/`HD03265`에 부정적 의견 | 3 | 4 | 12 | Lagråd 의견서가 30일 이내에 헌법적 이의를 포함해 공표 | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| "원자력 극장" — 9월 13일 전에 신청 제출 없이 `HD01NU19` 발효 | 3 | 3 | 9 | Vattenfall/Uniper/신규 진입자가 2026년 9월 1일까지 신청을 제출하지 않음 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 가장 중요한 향후 트리거
+
+**안드레아스 칼손의 질의 `HD10463`에 대한 서면 답변, 법정 답변 기한 2026년 5월 25일.** 칼손이 링셰핑 Ostlänken 역 취소를 어떻게 프레이밍하는지——약속 위반을 인정하는지, 기술적/예산적 이유로 경로 변경을 옹호하는지, 대안 지역 인프라 제안으로 전환하는지——에 따라, Östergötland 내러티브가 여름 휴회 전에 본회의에서 완전한 질의 토론으로 에스컬레이션할지 여부가 결정된다. 회피적이거나 기술 관료적인 답변은 S가 내러티브를 링셰핑/노르셰핑에서 1–2개 접전 의석 전환으로 변환하는 가장 가능성 높은 경로. 실질적인 대안 투자 제안은 내러티브를 진정시킨다. 두 결과 모두 `coalition-mathematics.md`의 접전 선거구 평가를 시프트시키고 `electoral-implications.md`의 Pass-2 개정을 발동한다.
+
+**부차 트리거**(병행 모니터링): 2026년 6월 16일 — `HD01KU39` 정치 자금 투명성 본회의 표결. 선거 89일 전에 정부의 4개 노선 실적 내러티브(에너지 + 안보 + 투명성 + 재정 성과)를 확인하거나 무너뜨린다.
+
+---
+
+### 📊 전략적 평가
+
+**신뢰 수준: 🟩 높음 [A2]** — 출처에는 리크스다그 공개 데이터(`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), IMF WEO 2026년 4월 빈티지, 질의 등록이 포함된다.
+
+2026년 5월 4일 스냅샷은 **최고 입법 속도**의 Tidö 연립 정부를 포착한다: 7개 연립 개혁이 1주일 만에 진전되고, 구체적인 발효일이 2026년 6월 1일부터 7월 1일까지 분산되어 있다. 각 발효일은 4개 연립 정당이 선거 운동에서 활용할 수 있는 실적 리듬을 만들어 낸다. 전략적 취약성은 비대칭적: M, KD, SD가 캐스케이드의 혜택을 받는 반면, **L**이 부담을 흡수——연립 최소 정당이 4% 임계값에 가장 가깝고, 불균형적인 의석 손실 위험을 안고 있다.
+
+S 야당의 대응은 방법론적으로 정확하다: 안보·원자력·경제라는 정부의 가장 강한 지반에서 대항하는 대신, S는 **분산형 지역적 불만의 모자이크**를 구축——Östergötland의 Ostlänken(`HD10463`), Scandinavian Mountain Airport(질의 428), 스톡홀름의 주택(질의 434)——각각 다른 선거구에서 단일 장관(칼손)을 향하고 있다.
+
+IMF의 거시 프레임워크는 현 정부에 유리하다: 공공 부채 ≈ GDP 대비 34%, 인플레이션 하락, 약 2% 성장. 경제적 내러티브는 M의 가장 강한 자산이다.
+
+**2026년 선거 렌즈**: 현재 궤도는 Tidö를 175석 내외로 유지——과반수 경계선. L의 임계값 리스크(PIR-RT-003)가 단일 최중요 선거 변수. Lagråd 이민 의견서(PIR-RT-001)가 단일 최중요 정치적 내러티브 변수. 칼손의 Ostlänken 답변(PIR-RT-005)이 단일 최중요 지역 의석 변수. 세 가지 모두 이 브리핑 공개로부터 5주 이내에 해결된다.
+
+---
+
+### 📎 링크
+
+| 링크 | 경로 |
+|------|------|
+| 기사 | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| 통합 개요 | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| 코어 통합 | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| 연립 다이나믹스 | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| 야당 분석 | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| 선거적 함의 | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| 경제적 맥락(IMF) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| 선행 지표 | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| 리스크·기회 매트릭스 | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| 시나리오 분석 | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| 방법론 노트 | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| 데이터 매니페스트 | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| 문서별 분석 | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 문서 관리
+
+- **브리핑 ID**: `EB-2026-05-04-001`
+- **생성**: 2026-05-16 (보충——기존 Pass-2 분석 산출물에서 작성)
+- **템플릿 경로**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **소유 방법론**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **소유 게이트**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) 체크 1 + 체크 7
+- **출력 패밀리**: A — 코어 통합
+- **분류**: 🟢 공개
+
+*경제적 출처: 제공자: imf, 데이터플로: WEO_Apr_2026, 지표: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, 빈티지: 2026년 4월, retrieved_at: 2026-05-04. 리크스다그 데이터는 riksdag-regering API 경유 2026-05-04 취득. Riksdagsmonitor는 hack23 AB가 제작; 본 브리핑은 공개되어 있는 의회 문서에 기반한 독립적인 편집적 평가를 대표한다.*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_nl.md -->
+
+**Classificatie**: 🟢 OPENBAAR — Riksdagsmonitor Intelligence
+**Doelgroep**: Redacteuren, wachtdienstmedewerkers, onderzoekers, betrokken burgers
+**Datum**: 2026-05-04 (UTC)
+**Dagen tot verkiezingen 2026-09-13**: 132
+**Workflow**: news-realtime-monitor
+**Opgesteld door**: Riksdagsmonitor AI Intelligence System
+**Algeheel betrouwbaarheidsniveau**: 🟩 HOOG [A2] — meerbronnenbevestiging via `dok_id` uit open Riksdag-data + IMF WEO apr. 2026
+**Publicatiebeslissing**: **PUBLICEER** (EN + NL) — DIW-geprioriteerd toponderwerp ≥ 9,0
+**Beantwoorde PIR's**: PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 BLUF
+
+De Zweedse Riksdag produceerde op 4 mei 2026 zijn tot nu toe meest geconcentreerde wetgevingsoutput voor de verkiezingen: de Commissie voor Economische Zaken (NU) keurde directe vergunningverlening voor kernenergiestations goed (`HD01NU19`, treedt op 17 juni 2026 in werking) — de enige grootste structurele energiepolitieke prestatie van de Tidö-coalitie — terwijl de zevende opeenvolgende anti-bendemaatregel vorderde via hervorming van explosiefcontrole (`HD01FöU13`) en hervorming van strafprocedures (`HD01JuU9`), beide met inwerkingtreding op 1 juli 2026. Tegen deze muur van regeringsprestaties diende de sociaaldemocrate **Eva Lindh** een interpellatie `HD10463` in tegen KD-minister van Infrastructuur **Andreas Carlson** over de geannuleerde Ostlänken Linköping-stationstoevoeging — een 20 jaar oud gebroken belofte aan een regio van 500.000 forensen in concurrerend marginaal verkiezingsgebied. Het transparantierapport over politieke financiering (`HD01KU39`) is gepland voor een plenaire stemming op 16 juni 2026, waarmee een vierlaags prestatienarriatief (energie, veiligheid, transparantie, financieel resultaat) 89 dagen voor de verkiezingen wordt voltooid. **Betrouwbaarheidsniveau: 🟩 HOOG [A2]** — bronnen: open data Riksdag, IMF WEO apr. 2026.
+
+---
+
+### 🧭 3 beslissingen die dit briefing ondersteunt
+
+| # | Beslissing | Beslisser | Deadline | Grondslag |
+|:-:|-----------|-----------|:--------:|-----------|
+| 1 | **Redactioneel:** EN + NL breaking-artikel leiden met dubbel kader kernenergiereform plus Ostlänken-tegennarratief (tweeuurspublicatiedoel) | Hoofdredacteur | +2 u | Commissiebesluit `HD01NU19` + interpellatie `HD10463` ingediend 2026-05-04 |
+| 2 | **Vooruitblikkende dekking:** wachtdienstmedewerker aanwijzen om Carlsons Ostlänken-antwoord te volgen (wettelijke antwoordtermijn: 25 mei 2026) en inwerkingtreding kernwet op 17 juni | Wachtdienst | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; `HD10463` interpellatieregister |
+| 3 | **Risico:** L-drempeltoezichtsniveau verhogen van observatie naar actieve opvolging — prestatielogica coalitie vereist dat L op 13 sept. 4 % overschrijdt; elk Novus/Demoskop-resultaat <4,5 % activeert rekenkundige coalitieherziening | Analysemanager | Continu wekelijks | `coalition-dynamics.md`, post-migratieopinie PIR-RT-003 |
+
+---
+
+### ⚡ 60-secondenlezing
+
+- 🔴 **Kernenergiereform naar directe vergunningverlening (`HD01NU19`)** — Commissie voor Economische Zaken (NU) keurt directe vergunningverlening goed, omzeilt de meerstappenpijplijn van de Stralingsveiligheidsautoriteit (SSM); **treedt in werking op 17 juni 2026**. Grootste structurele wetgevingsprestatie van het Tidö-mandaat; levert de M/KD/L/SD-kernenergieherstartsbelofte uit 2022 met operationele mijlpaalvervulling vóór verkiezingsdag [🟩 HOOG — `HD01NU19`, NU-commissieprotocol].
+- 🟠 **Ostlänken-beloftebreuk-interpellatie (`HD10463`)** — S-lid **Eva Lindh** eist dat minister van Infrastructuur **Andreas Carlson (KD)** de annulering van het geplande Linköping Ostlänken-station uitlegt; wettelijke antwoordtermijn **25 mei 2026**. Derde interpellatie ingediend tegen Carlson in 10 dagen — gecoördineerde regionale S-druk op een regio van 500.000 forensen [🟩 HOOG — `HD10463`, interpellatieregister].
+- 🟢 **Zevende bendemaatregel vordert (`HD01FöU13` + `HD01JuU9`)** — Vergunningseisen voor explosieven worden aangescherpt (Defensiecommissie, 1 juli 2026); hervorming strafprocedures schrapt *tilltrosbestämmelserna* en breidt vroeg verhoorbewijsmateriaal uit (Justitiecommissie, 1 juli 2026). M/SD-kernnarratief «levert op veiligheid» wordt versterkt [🟩 HOOG — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **Transparantie in politieke financiering (`HD01KU39`)** — Constitutionele commissie registreert rapport over transparantie in politieke processen (behandelt hoogstwaarschijnlijk propositie `HD03258` over verantwoording partijfinanciering); plenaire stemming **16 juni 2026**; L/KD profiteren van positionering democratische hervorming. PIR-RT-002 beantwoord: KU (niet JuU/SfU) bezit het onderwerp [🟧 GEMIDDELD — `HD01KU39`, kalender].
+- 🔵 **Economische context (IMF WEO apr. 2026)** — Zweedse staatsschuld ≈ 34 % van het bbp (`GGXWDG_NGDP` prognose 2026) vs. eurozone-gemiddelde >90 %; reële bbp-groei 2026 `NGDP_RPCH` 2,0–2,1 %; inflatie daalt (`PCPIEPCH`). Riksbank-renteverlagingen 2025–26 bereiken hypotheekhouders → M-narratief «veilige handen» [🟩 HOOG — leverancier: imf, gegevensstroom: WEO_Apr_2026, vintage: april 2026].
+- 🟣 **Kruisverwijzing** — `HD01NU19` koppelt aan de energiebeleidsdraad in de propositieanalyse (`../propositions/`); `HD10463` verlengt S's regionaal beloftebreukcluster uit `opposition-analysis.md`; transparantie `HD01KU39` behandelt `HD03258` uit het propositionpakket van 30 april.
+- 🩷 **Opkomende kwetsbaarheid — «kernenergieteater»-risico** — Oppositiekader dat inwerkingtreding op 17 juni symbolisch is zonder ingediende aanvraag vóór verkiezingsdag op 13 september. Als Vattenfall/Uniper/nieuwe speler geen aanvraag indient in het 88-daagse pre-verkiezingsvenster, loopt het prestatienarratief het risico aanvechtbaar te worden [🟧 GEMIDDELD — PIR-RT-006 open].
+- ⚪ **Overgedragen** — Lagråds adviezen over migratiepropositionen `HD03262` en `HD03265` (PIR-RT-001) blijven **OPEN — KRITIEK**; de constitutionele kwaliteitstoets is de enige meest invloedrijke onopgeloste factor die het politieke narratief van de migratiehervorming tijdens het zomerseizoen vormt.
+
+---
+
+### 🗂️ Topdocumenten (DIW-rangschikking)
+
+| Rang | dok_id | Titel (kort) | DIW | Vertrouwen | Status |
+|:----:|--------|--------------|:---:|:----------:|--------|
+| 1 | `HD01NU19` | Kernenergievergunningreform (directe route) | 9,2 | 🟩 HOOG [A2] | Commissie goedgekeurd — treedt in werking 17 juni 2026 |
+| 2 | `HD10463` | Ostlänken-interpellatie — Lindh (S) → Carlson (KD) | 8,6 | 🟩 HOOG [A2] | Ingediend — antwoord verschuldigd 25 mei 2026 |
+| 3 | `HD01FöU13` | Hervorming explosiefcontrole | 7,5 | 🟩 HOOG [A2] | Commissie goedgekeurd — treedt in werking 1 juli 2026 |
+| 4 | `HD01JuU9` | Hervorming strafprocedures | 7,4 | 🟩 HOOG [A2] | Commissie goedgekeurd — treedt in werking 1 juli 2026 |
+| 5 | `HD01KU39` | Transparantie in politieke processen | 7,0 | 🟧 GEMIDDELD [B2] | Geregistreerd — plenaire stemming 16 juni 2026 |
+| 6 | `HD01FiU49` | Evaluatie staatsschuldbeheer 2021–2025 | 6,4 | 🟩 HOOG [A2] | Geregistreerd — besluit 11 juni 2026 |
+
+---
+
+### ⚠️ Risico- en dreigingsoverzicht
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 L-drempelrisico<br/>L onder 4 procent<br/>L x I = 3 x 5 = 15"] --> CONS["Monitor Novus / Demoskop<br/>wekelijkse peilingen"]
+    R2["🟠 Ostlänken regionaal<br/>S marginaal kiesdistrict-narratief<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 Kernenergieteater-kader<br/>geen aanvraag ingediend 13 sept.<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 Migratie Lagråd<br/>HD03262 / HD03265 lopend<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| Risico | L | I | Score | Activator | Bron | Admiralty |
+|--------|:-:|:-:|:-----:|-----------|------|:---------:|
+| Liberalerna onder 4%-drempel → Tidö verliest meerderheid | 3 | 5 | 15 | Elk Novus/Demoskop-resultaat <4,0 % (95 % BI ondergrens <4,0) | `coalition-dynamics.md` R1 | **[B2]** |
+| S's regionaal beloftebreuknarratief converteert marginale Östergötland-mandaten | 4 | 3 | 12 | Carlsons 25-mei-antwoord door SVT/SR Östergötland-redactie als onvoldoende beoordeeld | `opposition-analysis.md` | **[A2]** |
+| Lagrådets ongunstig advies over migratiepakket `HD03262`/`HD03265` | 3 | 4 | 12 | Lagråd-advies binnen 30 d gepubliceerd met constitutionele bezwaren | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| «Kernenergieteater» — `HD01NU19` inwerkingtreding zonder ingediende aanvraag vóór 13 sept. | 3 | 3 | 9 | Vattenfall/Uniper/nieuwe speler verzuimt aanvraag vóór 1 sept. 2026 in te dienen | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 Belangrijkste toekomstige activatoren
+
+**Schriftelijk antwoord van Andreas Carlson op interpellatie `HD10463`, wettelijke antwoordtermijn 25 mei 2026.** Hoe Carlson de geannuleerde Linköping Ostlänken-station inkadert — of hij de beloftebreuk erkent, de routewijziging op technische/budgettaire gronden verdedigt of overschakelt naar alternatieve regionale infrastructuuraanbiedingen — bepaalt of het Östergötland-narratief escaleert naar een volledig interpellatiedebat in de plenaire vergadering vóór het zomerreces. Een ontwijkend of technocratisch antwoord is de meest waarschijnlijke weg voor S om het narratief te converteren in 1–2 marginale mandaatverschuivingen in Linköping/Norrköping. Een substantieel alternatief investeringsaanbod de-escaleert het narratief. Beide uitkomsten verschuiven de marginalekiesdistrict-beoordelingen van `coalition-mathematics.md` en activeren een Pass-2-herziening van `electoral-implications.md`.
+
+**Secundaire activator** (parallelle monitoring): 16 juni 2026 — plenaire stemming `HD01KU39` over transparantie in politieke financiering. Bevestigt of breekt het vierlaagse prestatienarratief van de regering (energie + veiligheid + transparantie + financieel resultaat) 89 dagen voor de verkiezingen.
+
+---
+
+### 📊 Strategische beoordeling
+
+**Betrouwbaarheidsniveau: 🟩 HOOG [A2]** — bronnen omvatten open data van de Riksdag (`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), IMF WEO april 2026 vintage en het interpellatieregister.
+
+De momentopname van 4 mei 2026 legt een Tidö-coalitie vast in **maximale wetgevingssnelheid**: zeven coalitieherzieningen vorderen in één week, met concrete inwerkingtredingsdatums verspreid over 1 juni tot 1 juli 2026. Elke inwerkingtredingsdatum genereert een prestatiestemming waarvoor de vier coalitiepartijen campagne kunnen voeren. De strategische kwetsbaarheid is asymmetrisch: M, KD en SD profiteren van de cascade; **L** absorbeert de last — de kleinste coalitiepartij staat het dichtst bij de 4 %-drempel en draagt een onevenredig groot mandaatverliesrisico.
+
+S's oppositierespons is methodologisch precies: in plaats van de regering uit te dagen op haar sterkste terrein (veiligheid, kernenergie, economie) bouwt S een **gedistribueerd regionaal ontevredenheidsmozaïek** — Ostlänken in Östergötland (`HD10463`), Scandinavian Mountain Airport (interpellatie 428), Stockholmse woningbouw (interpellatie 434) — elk gericht op één enkele minister (Carlson) uit verschillende kiesdistricten.
+
+IMF's macrokader is gunstig voor de zittende regering: staatsschuld ≈ 34 % van het bbp, dalende inflatie, groei rond 2 %. Het economische narratief is M's sterkste troef.
+
+**Verkiezingen 2026-lens**: Het huidige koers houdt Tidö bij circa 175 mandaten — precies op de meerderheidsgrens. L's drempelrisico (PIR-RT-003) is de enige meest cruciale verkiezingsvariabele. Lagråds migratie-advies (PIR-RT-001) is de enige meest cruciale politieke narratiefvariabele. Carlsons Ostlänken-antwoord (PIR-RT-005) is de enige meest cruciale regionale mandaatvariabele. Alle drie worden binnen 5 weken na de publicatiedatum van dit briefing opgelost.
+
+---
+
+### 📎 Links
+
+| Link | Pad |
+|------|-----|
+| Artikel | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| Syntheseoverzicht | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| Kernsynthese | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| Coalitiedynamiek | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| Oppositieanalyse | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| Verkiezingsimplicaties | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| Economische context (IMF) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| Toekomstindicatoren | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| Risico-/kansmatrix | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| Scenarioanalyse | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| Methodologische notities | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| Datamanifest | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| Documentanalyses | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 Documentbeheer
+
+- **Briefing-ID**: `EB-2026-05-04-001`
+- **Gegenereerd**: 2026-05-16 (inhaalactie — aangemaakt uit bestaande Pass-2-analyseartefacten)
+- **Sjabloonpad**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **Eigendomsmethodologie**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **Eigendomsgate**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) Check 1 + Check 7
+- **Uitvoerfamilie**: A — Kernsynthese
+- **Classificatie**: 🟢 OPENBAAR
+
+*Economische herkomst: leverancier: imf, gegevensstroom: WEO_Apr_2026, indicatoren: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, vintage: april 2026, retrieved_at: 2026-05-04. Riksdag-data opgehaald via riksdag-regering API op 2026-05-04. Riksdagsmonitor wordt geproduceerd door Hack23 AB; dit briefing vertegenwoordigt een onafhankelijke redactionele beoordeling op basis van openbaar toegankelijke parlementaire documenten.*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_no.md -->
+
+**Klassifisering**: 🟢 OFFENTLIG — Riksdagsmonitor Intelligence
+**Målgruppe**: Redaktører, vakthavende, forskere, engasjerte borgere
+**Dato**: 2026-05-04 (UTC)
+**Dager til valget 2026-09-13**: 132
+**Arbeidsflyt**: news-realtime-monitor
+**Utarbeidet av**: Riksdagsmonitor AI Intelligence System
+**Samlet konfidensnivå**: 🟩 HØY [A2] — flerkildekorraborering via `dok_id` fra åpne Riksdag-data + IMF WEO apr 2026
+**Publiseringsbeslutning**: **PUBLISER** (EN + NO) — DIW-rangert topphistorie ≥ 9,0
+**PIR-er besvart**: PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 BLUF
+
+Sveriges Riksdag produserte den 4. mai 2026 sin hittil mest konsentrerte lovgivningsoutput før valget: Næringsutvalget (NU) godkjente direktesporsgodkjenning av kjernekraftanlegg (`HD01NU19`, trer i kraft 17. juni 2026) — Tidø-koalisjonens eneste største strukturelle energipolitiske bragd — mens den 7. fortløpende anti-kriminalitetsinnsats avanserte via eksplosivregulering (`HD01FöU13`) og reform av strafferetlige prosesser (`HD01JuU9`), begge med ikrafttreden 1. juli 2026. Mot denne veggen av regjeringsleveranse innleverte sosialdemokraten **Eva Lindh** en interpellasjon `HD10463` mot KD's infrastrukturminister **Andreas Carlson** om den avlyste Ostlänken Linköping-stasjonstilføyelsen — et 20 år gammelt løftebrudd mot en 500 000-personers pendlerregion i konkurranseutsatt valgkretsmarginalt territorium. Transparensrapporten om politisk finansiering (`HD01KU39`) er planlagt til plenarvote den 16. juni 2026, som fullfører et firesporet leveringsnarrativ (energi, sikkerhet, transparens, finansielt resultat) 89 dager før valget. **Konfidensnivå: 🟩 HØY [A2]** — kilder: Riksdagens åpne data, IMF WEO apr 2026.
+
+---
+
+### 🧭 3 beslutninger denne briefingen støtter
+
+| # | Beslutning | Beslutningstaker | Frist | Grunnlag |
+|:-:|------------|------------------|:-----:|---------|
+| 1 | **Redaksjonell:** lede EN + NO breaking-artikkel med kjernekraftreform-pluss-Ostlänken-motnarrativ (dobbeltramme, 2-timers publiseringsmål) | Sjefredaktør | +2 t | `HD01NU19` utvalgsvedtak + `HD10463` interpellasjon innlevert 2026-05-04 |
+| 2 | **Fremadrettet dekning:** tildel vakthavende til å følge Carlsons Ostlänken-svar (lovpliktig svarsfrist 25. mai 2026) og kjerneloven ikrafttreden 17. juni | Vakthavende | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; `HD10463` interpellasjonsregister |
+| 3 | **Risiko:** hev L-terskelovervåkningsnivå fra observasjon til aktiv sporing — koalisjonens leveringsdynamikk forutsetter at L overstiger 4 % den 13. sept; ethvert Novus/Demoskop-resultat <4,5 % utløser koalisjonsmatematisk revisjon | Analyseleder | Rullende ukentlig | `coalition-dynamics.md`, post-migrasjonsopinion PIR-RT-003 |
+
+---
+
+### ⚡ 60-sekunders lesing
+
+- 🔴 **Kjernekraftreform til direktesporsgodkjenning (`HD01NU19`)** — Næringsutvalget (NU) godkjenner direktesporsgodkjenning, omgår Strålsikkerhetsmyndighetens (SSM) flertrinns-pipeline; **trer i kraft 17. juni 2026**. Tidø-mandatperiodens eneste største strukturelle lovgivningsbragd; leverer M/KD/L/SD's kjernekraftgjenstartsløfte fra 2022 med operasjonell milepæloppfyllelse før valgdagen [🟩 HØY — `HD01NU19`, NU's utvalgsprotokoll].
+- 🟠 **Ostlänken-løftebrudd-interpellasjon (`HD10463`)** — S-representant **Eva Lindh** krever at infrastrukturminister **Andreas Carlson (KD)** redegjør for avlysningen av den planlagte Linköping Ostlänken-stasjonen; lovpliktig svarsfrist **25. mai 2026**. Tredje interpellasjon innlevert mot Carlson på 10 dager — koordinert regionalt S-press på en 500 000-personers pendlingsregion [🟩 HØY — `HD10463`, interpellasjonsregisteret].
+- 🟢 **Syvende gjenginnsats avanserer (`HD01FöU13` + `HD01JuU9`)** — Tillatelseskrav til eksplosiver skjerpes (Forsvarsutvalget, 1. juli 2026); reform av strafferetlige prosesser avvikler *tilltrosbestämmelserna* og utvider tidlig avhørsbevismateriell (Justisutvalget, 1. juli 2026). M/SD's kjernefortelling om «leverer på sikkerhet» styrkes [🟩 HØY — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **Politisk finansieringstransparens (`HD01KU39`)** — Grunnlovsutvalget registrerer betenkning om transparens i politiske prosesser (behandler med stor sannsynlighet proposisjon `HD03258` om redegjørelse for partifinansering); plenarvote **16. juni 2026**; L/KD drar fordel av demokratireformposisjonering. PIR-RT-002 besvart: KU (ikke JuU/SfU) eier saken [🟧 MIDDELS — `HD01KU39`, kalenderen].
+- 🔵 **Ekonomisk kontekst (IMF WEO apr 2026)** — Sveriges offentlige gjeld ≈ 34 % av BNP (`GGXWDG_NGDP` 2026-prognose) mot eurosone-gjennomsnittet >90 %; reel BNP-vekst 2026 `NGDP_RPCH` 2,0–2,1 %; inflasjon synker (`PCPIEPCH`). Riksbankens rentekutt 2025–26 når boliglånstakere → M's «trygge hender»-fortelling [🟩 HØY — leverandør: imf, dataflyt: WEO_Apr_2026, vintage: april 2026].
+- 🟣 **Krysshenvisning** — `HD01NU19` knytter til energipolitikktråden i proposisjonsanalysen (`../propositions/`); `HD10463` forlenger S's regionale løftebruddkluster fra `opposition-analysis.md`; transparens `HD01KU39` behandler `HD03258` fra 30. april-proposisjonspakken.
+- 🩷 **Fremvoksende sårbarhet — «kjernekraftteater»-risiko** — Opposisjonens ramme om at ikrafttreden 17. juni er symbolsk uten innlevert søknad innen valgdagen den 13. september. Hvis Vattenfall/Uniper/ny aktør ikke leverer søknad innen det 88-dagers pre-valgsvinduet, risikerer prestasjonsfortelling å bli anfektelig [🟧 MIDDELS — PIR-RT-006 åpen].
+- ⚪ **Overført** — Lagrådets uttalelser om migrasjonsproposisjonene `HD03262` og `HD03265` (PIR-RT-001) forblir **ÅPNE — KRITISKE**; den konstitusjonelle kvalitetsgjennomgangen er den eneste mest innflytelsesrike uløste faktoren som former migrasjonsreformens politiske fortelling i sommersesonga.
+
+---
+
+### 🗂️ Topprangerte dokumenter (DIW-rangert)
+
+| Rang | dok_id | Tittel (kort) | DIW | Konfidens | Status |
+|:----:|--------|---------------|:---:|:---------:|--------|
+| 1 | `HD01NU19` | Kjernekrafttillatelsesreform (direkte spor) | 9,2 | 🟩 HØY [A2] | Utvalg vedtatt — trer i kraft 17. juni 2026 |
+| 2 | `HD10463` | Ostlänken-interpellasjon — Lindh (S) → Carlson (KD) | 8,6 | 🟩 HØY [A2] | Innlevert — svar forfaller 25. mai 2026 |
+| 3 | `HD01FöU13` | Reform av eksplosivregulering | 7,5 | 🟩 HØY [A2] | Utvalg vedtatt — trer i kraft 1. juli 2026 |
+| 4 | `HD01JuU9` | Reform av strafferetlige prosesser | 7,4 | 🟩 HØY [A2] | Utvalg vedtatt — trer i kraft 1. juli 2026 |
+| 5 | `HD01KU39` | Transparens i politiske prosesser | 7,0 | 🟧 MIDDELS [B2] | Registrert — plenarvote 16. juni 2026 |
+| 6 | `HD01FiU49` | Statsgjeldforvaltningsevaluering 2021–2025 | 6,4 | 🟩 HØY [A2] | Registrert — vedtak 11. juni 2026 |
+
+---
+
+### ⚠️ Risiko- og trusselbildet
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 L-terskelrisiko<br/>L under 4 prosent<br/>L x I = 3 x 5 = 15"] --> CONS["Overvåk Novus / Demoskop<br/>ukentlige meningsmålinger"]
+    R2["🟠 Ostlänken regional<br/>S marginalt valgkretsnarrativ<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 Kjernekraftteaterramme<br/>ingen tillatelse innlevert 13. sept<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 Migrasjonslagrådets uttalelse<br/>HD03262 / HD03265 pågående<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| Risiko | L | I | Score | Utløser | Kilde | Admiralty |
+|--------|:-:|:-:|:-----:|---------|-------|:---------:|
+| Liberalerna under 4%-terskel → Tidø mister majoritet | 3 | 5 | 15 | Ethvert Novus/Demoskop-resultat <4,0 % (95 % KI nedre grense <4,0) | `coalition-dynamics.md` R1 | **[B2]** |
+| S's regionale løftebruddnarrativ konverterer marginale Østergötland-mandater | 4 | 3 | 12 | Carlsons 25. mai-svar vurdert utilstrekkelig av SVT/SR Østergötlands redaksjon | `opposition-analysis.md` | **[A2]** |
+| Lagrådets fiendtlige uttalelse om migrasjonspakken `HD03262`/`HD03265` | 3 | 4 | 12 | Lagrådets uttalelse offentliggjort innen 30 d med konstitusjonelle innvendinger | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| «Kjernekraftteater» — `HD01NU19` ikrafttreden uten innlevert søknad innen 13. sept | 3 | 3 | 9 | Vattenfall/Uniper/ny aktør unnlater å levere søknad innen 1. sept 2026 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 Viktigste fremtidige utløsere
+
+**Andreas Carlsons skriftlige svar på interpellasjon `HD10463`, lovpliktig svarsfrist 25. mai 2026.** Carlsons måte å ramme inn den avlyste Linköping Ostlänken-stasjonen — om han innrømmer løftebrudd, forsvarer ruteendringen på tekniske/budsjettmessige grunnlag eller svinger mot alternative regionale infrastrukturtilbud — avgjør om Østergötland-narrativet eskalerer til en full interpellasjonsdebatt i kammeret før sommeropphøret. Et unnvikende eller teknokratisk svar er den mest sannsynlige veien for S til å omdanne narrativet til 1–2 marginale mandatskift i Linköping/Norrköping. Et substansielt alternativt investeringstilbud de-eskalerer narrativet. Begge utfall forskyver `coalition-mathematics.md`'s marginale valgkretsvurderinger og utløser en Pass-2-omskriving av `electoral-implications.md`.
+
+**Sekundær utløser** (parallell overvåking): 16. juni 2026 — `HD01KU39` plenarvote om politisk finansieringstransparens. Bekrefter eller bryter det firesporede leveringsnarrativet for regjeringen (energi + sikkerhet + transparens + finansielt resultat) 89 dager før valget.
+
+---
+
+### 📊 Strategisk vurdering
+
+**Konfidensnivå: 🟩 HØY [A2]** — kilder inkluderer Riksdagens åpne data (`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), IMF WEO april 2026 vintage og interpellasjonsregisteret.
+
+Øyeblikksbildet fra 4. mai 2026 fanger en Tidø-koalisjon i **maksimal lovgivningshastighet**: syv koalisjonsreformer avanserer i løpet av én uke, med konkrete ikrafttreden-datoer spredt fra 1. juni til 1. juli 2026. Hver ikrafttreden-dato genererer en leveringstakt som de fire koalisjonspartiene kan drive valgkamp på. Den strategiske sårbarheten er asymmetrisk: M, KD og SD drar fordel av kaskaden; **L** absorberer belastningen — det minste koalisjonspartiet er nærmest 4 %-grensen og bærer uforholdsmessig mandatrisiko.
+
+S-opposisjonens svar er metodologisk presist: i stedet for å utfordre regjeringen på dens sterkeste grunn (sikkerhet, kjernekraft, økonomi) bygger S en **distribuert regional-misnøyemosaikk** — Ostlänken i Østergötland (`HD10463`), Scandinavian Mountain Airport (interpellasjon 428), Stockholms boliger (interpellasjon 434) — hver rettet mot én enkelt minister (Carlson) fra forskjellige valgkretser.
+
+IMF's makroramme er gunstig for sittende regjering: offentlig gjeld ≈ 34 % av BNP, fallende inflasjon, vekst på ca. 2 %. Det økonomiske narrativet er M's sterkeste aktivum.
+
+**Valg 2026-linse**: Nåværende kurs holder Tidø nær 175 mandater — presist ved majoritetsgrensene. L's terskelrisiko (PIR-RT-003) er den eneste viktigste valgvariabelen. Lagrådets migrasjonsuttalelse (PIR-RT-001) er den eneste viktigste politiske narrativvariabelen. Carlsons Ostlänken-svar (PIR-RT-005) er den eneste viktigste regionale mandatvariabelen. Alle tre løses innen 5 uker fra denne briefingens publiseringsdato.
+
+---
+
+### 📎 Lenker
+
+| Lenke | Sti |
+|-------|-----|
+| Artikkel | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| Synteseoversikt | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| Kjernesyntese | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| Koalisjonsdinamikk | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| Opposisjonsanalyse | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| Valgimplikasjoner | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| Ekonomisk kontekst (IMF) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| Fremtidsindikatorer | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| Risiko-/mulighetsmatrise | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| Scenarieanalyse | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| Metodenotater | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| Datamanifest | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| Per-dokumentanalyser | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 Dokumentkontroll
+
+- **Briefing-ID**: `EB-2026-05-04-001`
+- **Generert**: 2026-05-16 (etterslepsfylling — skapt fra eksisterende Pass-2-analyseartefakter)
+- **Malonsti**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **Eierskapsmetodologi**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **Eierskapsgate**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) Check 1 + Check 7
+- **Utdatafamilie**: A — Kjernesyntese
+- **Klassifisering**: 🟢 OFFENTLIG
+
+*Risikoprovenianse: leverandør: imf, dataflyt: WEO_Apr_2026, indikatorer: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, vintage: april 2026, retrieved_at: 2026-05-04. Riksdagsdata hentet via riksdag-regering API 2026-05-04. Riksdagsmonitor produseres av Hack23 AB; denne briefingen representerer en uavhengig redaksjonell vurdering basert på offentlig tilgjengelige parlamentariske dokumenter.*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_sv.md -->
+
+**Klassificering**: 🟢 OFFENTLIG — Riksdagsmonitor Intelligence
+**Målgrupp**: Redaktörer, jourhavande, forskare, engagerade medborgare
+**Datum**: 2026-05-04 (UTC)
+**Dagar till val 2026-09-13**: 132
+**Arbetsflöde**: news-realtime-monitor
+**Framtaget av**: Riksdagsmonitor AI Intelligence System
+**Övergripande konfidensgrad**: 🟩 HÖG [A2] — flerkällskorroborering via `dok_id` från öppna riksdagsdata + IMF WEO apr 2026
+**Publiceringsbeslut**: **PUBLICERA** (EN + SV) — DIW-rangordnat toppuppslag ≥ 9,0
+
+---
+
+### 🎯 BLUF
+
+Sveriges riksdag producerade den 4 maj 2026 sin mest koncentrerade lagstiftningsoutput inför valet hittills: Näringsutskottet (NU) tillstyrkte direktspårsgodkännande av kärnkraftsanläggningar (`HD01NU19`, träder i kraft 17 juni 2026) — Tidökoalitionens enskilt största strukturella energipolitiska bedrift — medan den 7:e på varandra följande insatsen mot gängkriminalitet avancerade via explosivkontroll (`HD01FöU13`) och reformering av rättsprocessen (`HD01JuU9`), båda med ikraftträdande 1 juli 2026. Mot denna mur av leveranser från regeringen lämnade socialdemokraten **Eva Lindh** en interpellation `HD10463` mot KD:s infrastrukturminister **Andreas Carlson** angående det inställda Ostlänken Linköping-stationstillägget — ett 20 år gammalt löftesbrott mot en 500 000-personers pendlarregion i konkurrensutsatt valkretsmarginalt territorium. Transparensrapporten om politisk finansiering (`HD01KU39`) är inplanerad för plenarvote den 16 juni 2026, vilket kompletterar ett fyrspårigt leveransnarrativ (energi, säkerhet, transparens, finansiellt facit) 89 dagar före valet. **Konfidensgrad: 🟩 HÖG [A2]** — källor: riksdagens öppna data, IMF WEO apr 2026.
+
+---
+
+### 🧭 3 beslut som detta underlag stödjer
+
+| # | Beslut | Vem beslutar | Deadline | Underlag |
+|:-:|--------|--------------|:--------:|----------|
+| 1 | **Redaktionellt:** leda EN + SV breaking-artikel med kärnkraftsreform-plus-Ostlänken-motnarrativ (dubbelram, 2-tim publiceringsmål) | Chefredaktör | +2 h | `HD01NU19` utskottsbeslut + `HD10463` interpellation inlämnad 2026-05-04 |
+| 2 | **Framåtbevakning:** tilldela jourhavande att följa Carlsons Ostlänken-svar (lagstadgad svarsfrist 25 maj 2026) och kärnlagens ikraftträdande 17 juni | Jourhavande | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; `HD10463` interpellationsregister |
+| 3 | **Risk:** höj L-tröskelbevakningsnivå från bevakning till aktiv spårning — koalitionens leveranskadans förutsätter att L överstiger 4 % den 13 sept; valfritt Novus/Demoskop-utfall <4,5 % utlöser koalitionsmatematisk revision | Analysledare | Rullande veckovis | `coalition-dynamics.md`, post-migrationsopinion PIR-RT-003 |
+
+---
+
+### ⚡ 60-sekunders läsning
+
+- 🔴 **Kärnkraftsreform för direktspårstillstånd (`HD01NU19`)** — Näringsutskottet (NU) tillstyrker direktspårsgodkännande, kringgår Strålsäkerhetsmyndighetens (SSM) flerstegspipeline; **träder i kraft 17 juni 2026**. Tidö-mandatperiodens enskilt största strukturella lagstiftningsbedrift; levererar M/KD/L/SD:s kärnkraftsomstartslöfte från 2022 med operativt milstolpsuppfyllelse innan valdagen [🟩 HÖG — `HD01NU19`, NU:s utskottsprotokoll].
+- 🟠 **Ostlänken-löftesbrott-interpellation (`HD10463`)** — S-ledamoten **Eva Lindh** kräver att infrastrukturminister **Andreas Carlson (KD)** förklarar inställningen av den planerade Linköpens Ostlänken-station; lagstadgad svarsfrist **25 maj 2026**. Tredje interpellationen inlämnad mot Carlson på 10 dagar — samordnat regionalt S-tryck på en 500 000-personers pendlingsarbetsmarknadsregion [🟩 HÖG — `HD10463`, interpellationsregistret].
+- 🟢 **Sjunde gängsatsningen avancerar (`HD01FöU13` + `HD01JuU9`)** — Tillståndskrav för explosivhantering skärps (Försvarsutskottet, 1 juli 2026); reform av straffrättsliga förfaranden avskaffar *tilltrosbestämmelserna* och breddar tidigt förhörsbevismaterial (Justitieutskottet, 1 juli 2026). M/SD:s kärnnarrativ om "levererar på säkerhet" förstärks [🟩 HÖG — `HD01FöU13`, `HD01JuU9`].
+- 🟡 **Politisk finansieringstransparens (`HD01KU39`)** — Konstitutionsutskottet registrerar betänkande om transparens i politiska processer (behandlar med stor sannolikhet proposition `HD03258` om redovisning av partifinansering); plenarvote **16 juni 2026**; L/KD gynnas av demokratireformpositionering. PIR-RT-002 besvarad: KU (inte JuU/SfU) äger frågan [🟧 MEDIUM — `HD01KU39`, kalendern].
+- 🔵 **Ekonomiskt sammanhang (IMF WEO apr 2026)** — Sveriges offentliga skuld ≈ 34 % av BNP (`GGXWDG_NGDP` 2026-prognos) jämfört med eurozonens >90 %; real BNP-tillväxt 2026 `NGDP_RPCH` 2,0–2,1 %; inflation sjunker (`PCPIEPCH`). Riksbankens räntesänkningar 2025–26 når bolånetagare → M:s "trygga händer"-narrativ [🟩 HÖG — provider: imf, dataflow: WEO_Apr_2026, vintage: April 2026].
+- 🟣 **Korshänvisning** — `HD01NU19` knyter till energipolitikstråden i propositionsanalysen (`../propositions/`); `HD10463` förlänger S:s regionala löftesbrott-kluster från `opposition-analysis.md`; transparens `HD01KU39` behandlar `HD03258` från 30 april-propositionspaketet.
+- 🩷 **Framväxande sårbarhet — "kärnkraftsteater"-risk** — Oppositionens inramning att ikraftträdandet 17 juni är symboliskt utan inlämnade tillstånd före valdagen den 13 september. Om Vattenfall/Uniper/nya aktörer inte lämnar in ansökan under det 88-dagars pre-valsfönstret riskerar prestationsnarrativet att bli ifrågasättbart [🟧 MEDIUM — PIR-RT-006 öppen].
+- ⚪ **Överfört** — Lagrådets yttranden om migrationspropositionerna `HD03262` och `HD03265` (PIR-RT-001) är fortsatt **ÖPPNA — KRITISKA**; den konstitutionella kvalitetsgranskningen är det enskilt mest inflytelserika olösta underlaget som formar migrationsreformens politiska narrativ under sommaren.
+
+---
+
+### 🗂️ Topplistade dokument (DIW-rangordnat)
+
+| Rang | dok_id | Titel (kort) | DIW | Konfidensgrad | Status |
+|:----:|--------|--------------|:---:|:-------------:|--------|
+| 1 | `HD01NU19` | Kärnkraftstillståndsreform (direktspår) | 9,2 | 🟩 HÖG [A2] | Utskott antaget — träder i kraft 17 juni 2026 |
+| 2 | `HD10463` | Ostlänken-interpellation — Lindh (S) → Carlson (KD) | 8,6 | 🟩 HÖG [A2] | Inlämnad — svar förfaller 25 maj 2026 |
+| 3 | `HD01FöU13` | Reform av explosivkontroll | 7,5 | 🟩 HÖG [A2] | Utskott antaget — träder i kraft 1 juli 2026 |
+| 4 | `HD01JuU9` | Reform av straffrättsliga förfaranden | 7,4 | 🟩 HÖG [A2] | Utskott antaget — träder i kraft 1 juli 2026 |
+| 5 | `HD01KU39` | Transparens i politiska processer | 7,0 | 🟧 MEDIUM [B2] | Registrerat — plenarvote 16 juni 2026 |
+| 6 | `HD01FiU49` | Statsskuldförvaltningsutvärdering 2021–2025 | 6,4 | 🟩 HÖG [A2] | Registrerat — beslut 11 juni 2026 |
+
+Rangordningen matchar `significance-scoring.md`; avvikelse utlöser Pass-2-reconciliering.
+
+---
+
+### ⚠️ Risk- och hotbildsöversikt
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 L-tröskelrisk<br/>L under 4 procent<br/>L x I = 3 x 5 = 15"] --> CONS["Bevaka Novus / Demoskop<br/>veckovisa opinionsmätningar"]
+    R2["🟠 Ostlänken regional<br/>S marginalvalkretsnarrativ<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 Kärnkraftsteaterinramning<br/>inget tillstånd inlämnat 13 sept<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 Migrationslagrådet<br/>HD03262 / HD03265 pågående<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| Risk | L | I | Poäng | Utlösare | Källa | Admiralty |
+|------|:-:|:-:|:-----:|---------|-------|:---------:|
+| Liberalerna under 4%-tröskeln → Tidö förlorar majoritet | 3 | 5 | 15 | Valfritt Novus/Demoskop-utfall <4,0 % (95 % CI nedre gräns <4,0) | `coalition-dynamics.md` R1 | **[B2]** |
+| S:s regionala löftesbrott-narrativ konverterar marginala Östergötlands-mandat | 4 | 3 | 12 | Carlsons 25-maj-svar bedömt otillräckligt av SVT/SR Östergötlands redaktion | `opposition-analysis.md` | **[A2]** |
+| Lagrådets fientliga yttrande om migrationspaketet `HD03262`/`HD03265` | 3 | 4 | 12 | Lagrådets yttrande publicerat inom 30 d med konstitutionella invändningar | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| "Kärnkraftsteater" — `HD01NU19` ikraftträdande utan inlämnad tillståndsansökan innan 13 sept | 3 | 3 | 9 | Vattenfall/Uniper/ny aktör underlåter att lämna in ansökan senast 1 sept 2026 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 Viktigaste framtida utlösare
+
+> **Den enskilt viktigaste händelsen att bevaka härnäst.**
+
+**Andreas Carlsons skriftliga svar på interpellation `HD10463`, lagstadgad svarsfrist 25 maj 2026.** Carlsons sätt att rama in den inställda Linköpens Ostlänken-station — huruvida han medger löftesbrott, försvarar ruttändringen på tekniska/budgetmässiga grunder eller svänger mot alternativa regionala infrastrukturerbjudanden — avgör om Östergötlands-narrativet eskalerar till en fullständig interpellationsdebatt i kammaren innan sommarupphörandet. Ett undvikande eller teknokratiskt svar är den mest sannolika vägen för S att omvandla narrativet till 1–2 marginala mandatskiften i Linköping/Norrköping. Ett substantiellt alternativt investeringserbjudande de-eskalerar narrativet. Endera utfallet förskjuter `coalition-mathematics.md`:s marginalvalkretsbedömningar och utlöser en Pass-2-omskrivning av `electoral-implications.md`.
+
+**Sekundär utlösare** (parallell bevakning): 16 juni 2026 — `HD01KU39` plenarvote om politisk finansieringstransparens. Bekräftar eller bryter det fyrspåriga leveransnarrativet för regeringen (energi + säkerhet + transparens + finansiellt facit) 89 dagar före valet.
+
+---
+
+### 📊 Strategisk bedömning
+
+**Konfidensgrad: 🟩 HÖG [A2]** — källor inkluderar riksdagens öppna data (`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`), IMF WEO april 2026 vintage och interpellationsregistret.
+
+Ögonblicksbilden från 4 maj 2026 fångar en Tidökoalition i **maximalt lagstiftningshastighetläge**: sju koalitionsreformer avancerar under en enda vecka, med konkreta ikraftträdandedatum spridda mellan 1 juni och 1 juli 2026 (alkoholtillståndsgivning, explosivkontroll, straffrättsliga förfaranden, kärnkraftstillståndsgivning). Varje ikraftträdandedatum genererar en leveranstakt som de fyra koalitionspartierna kan kampanja på. Den strategiska sårbarheten är asymmetrisk: M, KD och SD gynnas av kaskadet; **L** absorberar belastningen — det minsta koalitionspartiet är närmast 4 %-riksdagsgränsen och bär oproportionerlig mandatförlustrisk om dess civila frihets-profil spädas ut av säkerhets-/kärnenergibetoning.
+
+S-oppositionens svar är metodologiskt träffsäkert: i stället för att utmana regeringen på dess starkaste terräng (säkerhet, kärnenergi, ekonomi) bygger S en **distribuerad regional-missnöjesmosaik** — Ostlänken i Östergötland (`HD10463`), Scandinavian Mountain Airport (interpellation 428), Stockholms bostäder (interpellation 434) — var och en riktad mot en enskild minister (Carlson) från olika valkretsar. Detta skapar lokal mediesaturation i exakt de marginalvalkretsarna som avgör riksdagsmajoriteter under Sveriges proportionella system med regional listdynamik.
+
+IMF:s makroram är gynnsam för sittande regering: offentlig skuld ≈ 34 % av BNP, sjunkande inflation, tillväxt runt 2 %. Riksbankens räntesänkningar förmedlas synligt till bolånetagare. Det ekonomiska narrativet är M:s starkaste tillgång, men den politiska finansieringstransparens-voteringen den 16 juni (`HD01KU39`) ägs av L+KD, inte M — en avsiktlig intrakoalitionell mandatsrotation av tillgodo.
+
+**Val 2026-lins**: Nuvarande bana håller Tidö nära 175 mandat — vid exakt majoritetsgränsen. L:s tröskelrisk (PIR-RT-003) är den enskilt viktigaste valvariabeln. Migrationslagrådets yttrande (PIR-RT-001) är den enskilt viktigaste politiska narrativvariabeln. Carlsons Ostlänken-svar (PIR-RT-005) är den enskilt viktigaste regionala mandatvariabeln. Alla tre löses inom 5 veckor från detta underrättelsemeddelandes publiceringsdatum.
+
+---
+
+### 📎 Länkar
+
+| Länk | Sökväg |
+|------|--------|
+| Artikel | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| Syntesöversikt | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| Kärnsyntés | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| Koalitionsdynamik | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| Oppositionsanalys | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| Valimplikationer | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| Ekonomiskt sammanhang (IMF) | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| Framtidsindikatorer | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| Risk-/möjlighetsmatris | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| Scenarioanalys | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| Metodnoteringar | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| Datamanifest | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| Per-dokumentanalyser | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 Dokumentkontroll
+
+- **Underlag-ID**: `EB-2026-05-04-001`
+- **Genererat**: 2026-05-16 (eftersläpningsuppfyllnad — skapat från befintliga Pass-2-analysartefakter)
+- **Mallsökväg**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **Ägande metodologi**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **Ägande gate**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) Check 1 + Check 7
+- **Utdatafamilj**: A — Kärnsyntés
+- **Klassificering**: 🟢 OFFENTLIG
+- **Eftersläpningsnotering**: Detta underlag skapades den 2026-05-16 för att stänga ett gap som upptäcktes under en korsmapps `article.md` ↔ `executive-brief.md`-granskning. Alla underlag hämtas från in-mapps Pass-2-artefakter; inget externt underlag har lagts till som inte redan citerades i den ursprungliga Pass-2-analysen.
+
+*Ekonomisk härkomst: provider: imf, dataflow: WEO_Apr_2026, indicators: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH, vintage: April 2026, retrieved_at: 2026-05-04. Riksdagsdata hämtad via riksdag-regering API 2026-05-04. Riksdagsmonitor produceras av Hack23 AB; detta underlag representerar en oberoende redaktionell bedömning baserad på offentligt tillgängliga parlamentariska handlingar.*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_zh.md -->
+
+**分类**: 🟢 公开 — Riksdagsmonitor Intelligence
+**受众**: 编辑、值班人员、研究人员及关心此议题的公民
+**日期**: 2026-05-04 (UTC)
+**距2026-09-13选举**: 132天
+**工作流**: news-realtime-monitor
+**作者**: Riksdagsmonitor AI情报系统
+**整体可信度**: 🟩 高 [A2] — 通过`dok_id`交叉核实公开议会数据 + IMF WEO 2026年4月多来源验证
+**发布决定**: **公开** (EN + ZH) — DIW优先级头条文章 ≥ 9.0
+**已回答PIR**: PIR-RT-001, PIR-RT-005, PIR-RT-006
+
+---
+
+### 🎯 BLUF（核心摘要）
+
+2026年5月4日，瑞典议会创造了选举前密度最高的立法成果集。产业委员会（NU）批准了对核电站直接授予许可证（`HD01NU19`，2026年6月17日生效）——这是Tidö联合政府在能源政策上最重大的结构性成果——同时，第7轮反帮派措施通过爆炸物管制改革（`HD01FöU13`）和刑事诉讼程序改革（`HD01JuU9`）取得进展，均于2026年7月1日生效。面对这堵政府政绩之墙，社会民主党议员**埃娃·林德**向KD党基础设施部长**安德烈亚斯·卡尔松**提交了质询`HD10463`——就Ostlänken林雪平站追加计划取消一事，追问对50万竞争性选区通勤圈20年承诺遭到违背的问题。政治资金透明度报告（`HD01KU39`）预计于2026年6月16日进行全体表决，在选举前89天完成四条线政绩叙事（能源·安全·透明度·财政成果）。**可信度: 🟩 高 [A2]** — 来源：议会公开数据，IMF WEO 2026年4月。
+
+---
+
+### 🧭 本简报支持的3项决策
+
+| # | 决策 | 决策者 | 截止 | 依据 |
+|:-:|------|--------|:----:|------|
+| 1 | **编辑**: 以核改革 + Ostlänken对立叙事双重框架发布EN + ZH快讯（目标2小时内发布） | 编辑主任 | +2小时 | `HD01NU19`委员会决定 + `HD10463`质询2026-05-04提交 |
+| 2 | **前瞻报道**: 将卡尔松的Ostlänken回复（法定回复期限：2026年5月25日）和核法6月17日生效事项分配给值班记者 | 值班人员 | 2026-05-25 / 2026-06-17 | PIR-RT-005, PIR-RT-006; `HD10463`质询登记 |
+| 3 | **风险**: 将L阈值监控级别从观察升级为主动追踪——联合政府政绩逻辑以L在9月13日超过4%为前提；Novus/Demoskop民调结果<4.5%触发联合政府数学审查 | 分析负责人 | 持续每周 | `coalition-dynamics.md`，移民后舆情 PIR-RT-003 |
+
+---
+
+### ⚡ 60秒速读
+
+- 🔴 **核改革获直接许可途径 (`HD01NU19`)** — 产业委员会（NU）批准直接许可，绕过辐射安全局（SSM）多阶段流程；**2026年6月17日生效**。Tidö任期内最重大结构性立法成果；2022年M/KD/L/SD核电重启承诺在选举前实现运营里程碑 [🟩 高 — `HD01NU19`，NU委员会会议记录]。
+- 🟠 **Ostlänken承诺违背质询 (`HD10463`)** — S党议员**埃娃·林德**要求基础设施部长**安德烈亚斯·卡尔松（KD）**就林雪平Ostlänken车站计划取消作出说明；法定回复期限**2026年5月25日**。10天内对卡尔松提出第3次质询——对50万通勤圈的有协调S党地方压力 [🟩 高 — `HD10463`，质询登记]。
+- 🟢 **第7轮反帮派措施进展 (`HD01FöU13` + `HD01JuU9`)** — 爆炸物许可要求收紧（防务委员会，2026年7月1日）；刑事诉讼程序改革废除*tilltrosbestämmelserna*，扩大早期讯问证据资料（司法委员会，2026年7月1日）。强化M/SD"在安全上交出成绩单"核心叙事 [🟩 高 — `HD01FöU13`, `HD01JuU9`]。
+- 🟡 **政治资金透明度 (`HD01KU39`)** — 宪法委员会登记关于政治进程透明度的报告（极有可能涉及政党资金报告提案`HD03258`）；全体表决**2026年6月16日**；L/KD在民主改革定位上获益。PIR-RT-002解答：KU（而非JuU/SfU）主管 [🟧 中 — `HD01KU39`，日程]。
+- 🔵 **经济背景 (IMF WEO 2026年4月)** — 瑞典公共债务≈GDP的34%（`GGXWDG_NGDP` 2026年预测）对比欧元区平均>90%；2026年实际GDP增长率`NGDP_RPCH` 2.0–2.1%；通胀下降（`PCPIEPCH`）。瑞典央行2025–26降息传导至房贷用户→M的"稳健之手"叙事 [🟩 高 — 来源: imf，数据流: WEO_Apr_2026，年份: 2026年4月]。
+- 🟣 **交叉参考** — `HD01NU19`与提案分析中的能源政策线索相链接（`../propositions/`）；`HD10463`延伸`opposition-analysis.md`中S党地方承诺违背集群；透明度`HD01KU39`涵盖4月30日提案包中的`HD03258`。
+- 🩷 **新兴脆弱性——"核剧场"风险** — 若9月13日选举日前未提交申请，在野党框架认为6月17日生效仅具象征意义。若Vattenfall/Uniper/新进入者未在88天选举前窗口内提交申请，政绩叙事面临质疑风险 [🟧 中 — PIR-RT-006 未解决]。
+- ⚪ **延续项** — 移民提案`HD03262`与`HD03265`的Lagråd意见书（PIR-RT-001）**未解决——重要**；宪法质量审查是夏季塑造移民改革政治叙事最具影响力的未决因素。
+
+---
+
+### 🗂️ 顶级文件（按DIW排序）
+
+| 排名 | dok_id | 标题（简短） | DIW | 可信度 | 状态 |
+|:----:|--------|------------|:---:|:------:|------|
+| 1 | `HD01NU19` | 核许可改革（直接路径） | 9.2 | 🟩 高 [A2] | 委员会批准 — 2026年6月17日生效 |
+| 2 | `HD10463` | Ostlänken质询 — 林德(S) → 卡尔松(KD) | 8.6 | 🟩 高 [A2] | 已提交 — 回复期限2026年5月25日 |
+| 3 | `HD01FöU13` | 爆炸物管制改革 | 7.5 | 🟩 高 [A2] | 委员会批准 — 2026年7月1日生效 |
+| 4 | `HD01JuU9` | 刑事诉讼程序改革 | 7.4 | 🟩 高 [A2] | 委员会批准 — 2026年7月1日生效 |
+| 5 | `HD01KU39` | 政治进程透明度 | 7.0 | 🟧 中 [B2] | 已登记 — 全体表决2026年6月16日 |
+| 6 | `HD01FiU49` | 国家债务管理评估2021–2025 | 6.4 | 🟩 高 [A2] | 已登记 — 决定2026年6月11日 |
+
+---
+
+### ⚠️ 风险·威胁概览
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    R1["🔴 L阈值风险<br/>L低于4%<br/>L x I = 3 x 5 = 15"] --> CONS["Novus / Demoskop监控<br/>每周民调"]
+    R2["🟠 Ostlänken地区<br/>S胶着选区叙事<br/>L x I = 4 x 3 = 12"] --> CONS
+    R3["🟡 核剧场框架<br/>9月13日前无申请<br/>L x I = 3 x 3 = 9"] --> CONS
+    R4["🟡 移民Lagråd<br/>HD03262 / HD03265进行中<br/>L x I = 3 x 4 = 12"] --> CONS
+    style R1 fill:#D32F2F,color:#FFFFFF,stroke:#ff006e
+    style R2 fill:#FF9800,color:#FFFFFF,stroke:#ffbe0b
+    style R3 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style R4 fill:#FFC107,color:#000000,stroke:#ffbe0b
+    style CONS fill:#1565C0,color:#FFFFFF,stroke:#00d9ff
+```
+
+| 风险 | 可能性 | 影响 | 得分 | 触发条件 | 来源 | 海军情报分级 |
+|------|:------:|:----:|:----:|---------|------|:-----------:|
+| Liberalerna跌破4%阈值 → Tidö失去过半数 | 3 | 5 | 15 | Novus/Demoskop结果<4.0%（95%置信区间下限<4.0） | `coalition-dynamics.md` R1 | **[B2]** |
+| S党地方承诺违背叙事转化Östergötland胶着议席 | 4 | 3 | 12 | SVT/SR Östergötland编辑部评估卡尔松5月25日回复不够充分 | `opposition-analysis.md` | **[A2]** |
+| Lagråd对移民包`HD03262`/`HD03265`出具负面意见 | 3 | 4 | 12 | Lagråd意见书在30天内含宪法异议公布 | PIR-RT-001 (`forward-indicators.md`) | **[A2]** |
+| "核剧场"——`HD01NU19`生效但9月13日前无申请提交 | 3 | 3 | 9 | Vattenfall/Uniper/新进入者在2026年9月1日前未提交申请 | PIR-RT-006 | **[B2]** |
+
+---
+
+### 🔮 最关键的未来触发因素
+
+**安德烈亚斯·卡尔松对质询`HD10463`的书面答复，法定回复期限2026年5月25日。** 卡尔松如何框架林雪平Ostlänken车站取消——是承认承诺违背、以技术/预算原因为改道辩护、还是转向替代地区基础设施提案——将决定Östergötland叙事是否在夏季休会前升级为全体质询辩论。回避性或官僚式的答复是S党将叙事转化为林雪平/诺尔雪平1-2个胶着议席转换的最可能路径。实质性的替代投资提案将平息叙事。两种结果都将改变`coalition-mathematics.md`的胶着选区评估，并触发`electoral-implications.md`的Pass-2修订。
+
+**次级触发因素**（并行监控）：2026年6月16日——`HD01KU39`政治资金透明度全体表决。在选举前89天确认或瓦解政府四条线政绩叙事（能源 + 安全 + 透明度 + 财政成果）。
+
+---
+
+### 📊 战略评估
+
+**可信度: 🟩 高 [A2]** — 来源包括议会公开数据（`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`）、IMF WEO 2026年4月年份、质询登记。
+
+2026年5月4日的快照捕捉到**最高立法速度**的Tidö联合政府：7项联合改革在1周内取得进展，具体生效日期分散在2026年6月1日至7月1日之间。每个生效日都为4个联合政党创造了可在竞选活动中利用的政绩节奏。战略脆弱性是不对称的：M、KD、SD受益于这一连锁，而**L**承担负担——作为联合最小政党最接近4%阈值，承担着不成比例的议席损失风险。
+
+S在野党的回应在方法上是精确的：不是在安全、核能、经济等政府最强阵地上正面对抗，而是构建**分散化地方不满的马赛克**——Östergötland的Ostlänken（`HD10463`）、斯堪的纳维亚山脉机场（质询428）、斯德哥尔摩的住房（质询434）——每一个都来自不同选区，指向同一位部长（卡尔松）。
+
+IMF的宏观框架对现政府有利：公共债务≈GDP的34%，通胀下降，约2%增长。经济叙事是M最强的资产。
+
+**2026年选举视角**：目前轨迹维持Tidö在175席左右——过半数边缘。L的阈值风险（PIR-RT-003）是单一最重要选举变量。Lagråd移民意见书（PIR-RT-001）是单一最重要政治叙事变量。卡尔松的Ostlänken答复（PIR-RT-005）是单一最重要地区议席变量。三者均在本简报发布后5周内解决。
+
+---
+
+### 📎 链接
+
+| 链接 | 路径 |
+|------|------|
+| 文章 | [`article.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/article.md) |
+| 综合摘要 | [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/synthesis-summary.md) |
+| 核心综合 | [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md) |
+| 联合动态 | [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/coalition-dynamics.md) |
+| 在野党分析 | [`opposition-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/opposition-analysis.md) |
+| 选举影响 | [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md) |
+| 经济背景（IMF） | [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md) |
+| 前导指标 | [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/forward-indicators.md) |
+| 风险·机遇矩阵 | [`risk-opportunity-matrix.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/risk-opportunity-matrix.md) |
+| 情景分析 | [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/scenario-analysis.md) |
+| 方法论备注 | [`methodology-notes.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/methodology-notes.md) |
+| 数据清单 | [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/data-download-manifest.md) |
+| 逐文件分析 | [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/documents/) |
+
+---
+
+### 📝 文件管理
+
+- **简报ID**: `EB-2026-05-04-001`
+- **生成时间**: 2026-05-16（补充——基于现有Pass-2分析产出物创建）
+- **模板路径**: [`analysis/templates/executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/executive-brief.md)
+- **所属方法论**: [`per-artifact-methodologies.md` § executive-brief](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/per-artifact-methodologies.md#executive-brief)
+- **所属检查门**: [`05-analysis-gate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/prompts/05-analysis-gate.md) 检查1 + 检查7
+- **输出族**: A — 核心综合
+- **分类**: 🟢 公开
+
+*经济数据出处：来源: imf，数据流: WEO_Apr_2026，指标: NGDP_RPCH / GGXWDG_NGDP / PCPIEPCH，年份: 2026年4月，retrieved_at: 2026-05-04。议会数据通过riksdag-regering API于2026-05-04获取。Riksdagsmonitor由hack23 AB制作；本简报代表基于公开议会文件的独立编辑评估。*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
 ## Horizon Assessment
 <!-- source: horizon-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/horizon-assessment.md -->
 
@@ -1830,7 +3650,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 23 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 36 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1861,6 +3681,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`core-synthesis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/core-synthesis.md)
 - [`economic-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/economic-context.md)
 - [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/electoral-implications.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/executive-brief_zh.md)
 - [`horizon-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/horizon-assessment.md)
 - [`intelligence-gaps.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/intelligence-gaps.md)
 - [`legislative-agenda.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/realtime-pulse/legislative-agenda.md)

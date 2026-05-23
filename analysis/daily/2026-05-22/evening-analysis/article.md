@@ -6,7 +6,7 @@ date: 2026-05-22
 subfolder: evening-analysis
 slug: 2026-05-22-evening-analysis
 source_folder: analysis/daily/2026-05-22/evening-analysis
-generated_at: 2026-05-22T19:34:35.466Z
+generated_at: 2026-05-23T08:06:01.631Z
 language: en
 layout: article
 ---
@@ -2772,7 +2772,7 @@ The motions sibling confirms MP's counter-motions are among the last motions fil
 The 2026-05-21 evening analysis covered [prior day's topics — see analysis/daily/2026-05-21/evening-analysis/]. The following PIRs carry forward:
 - **PIR-01**: Track SD voting discipline as election approaches (continued relevance: SD's FiU role in SfU37)
 - **PIR-02**: Monitor MP differentiation strategy (NOW ACTIVATED: HD024191, HD024192 confirm strategy)
-- **PIR-03**: Education reform implementation readiness (NOW ACTIVE: UbU22 July implementation)
+- **PIR-03**: Education reform implementation readiness (NOW IN FOCUS: UbU22 July implementation)
 - **PIR-04**: Immigration tightening political timing (NOW CONFIRMED: SfU37 August timing)
 
 #### Realtime-monitor (today)

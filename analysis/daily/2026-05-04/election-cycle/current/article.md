@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: election-cycle/current
 slug: 2026-05-04-election-cycle/current
 source_folder: analysis/daily/2026-05-04/election-cycle/current
-generated_at: 2026-05-22T13:53:53.764Z
+generated_at: 2026-05-23T08:06:00.451Z
 language: en
 layout: article
 ---
@@ -92,6 +92,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Comparative Context](#rm-comparative-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Confidence Calibration](#rm-confidence-calibration) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Forecast](#rm-electoral-forecast) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Forward Look](#rm-forward-look) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Institutional Constraints](#rm-institutional-constraints) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [International Context](#rm-international-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -1439,6 +1452,921 @@ Assuming Scenario A1 (most likely):
 
 **Critical path**: The pre-election budget (spring 2026) has already been tabled. The post-election budget fight will be the new government's first major policy signal and will determine whether nuclear energy construction decisions are activated, whether migration legislation is continued or reversed, and whether NATO 2.4% GDP defence target is maintained.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# دورة الانتخابات الحالية للسويد (2022–2026): تصويت على إرث الولاية
+
+**المؤلف**: James Pether Sörling
+**التاريخ**: 2026-05-04
+**التصنيف**: عام — GDPR Art 9(2)(e)(g)
+**عمق التحليل**: comprehensive (2.5× Tier-C election-cycle)
+**مستوى الثقة**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+تدخل الولاية السويدية 2022–2026 أيامها الـ 132 الأخيرة: حكمت ائتلاف تيدو M+KD+L مع دعم الثقة والإمداد من SD، منفّذةً أعمق تحول في سياسة الهجرة السويدية في جيل (HD03262)، وأعادت تنشيط الطاقة النووية (HD01NU19)، وتعهّدت بـ 2.4% من الناتج المحلي الإجمالي للدفاع (هدف الناتو 2028). تمتلك الائتلاف 175 مقعداً — أغلبية ضيقة — مع تعرّض حزب L لخطر حرج عند العتبة (32% احتمال التراجع تحت 4%)، وكذلك مواجهة MP خطر الاستبعاد (38%). التعافي الاقتصادي في مساره: توقّعات صندوق النقد الدولي WEO أبريل-2026 تُسجّل نمواً في الناتج المحلي بنسبة 2.4% لعام 2026، ارتفاعاً من أدنى مستويات الركود عام 2024. انتخابات سبتمبر 2026 هي إحصائياً قرعة.
+
+### القرارات التي يدعمها هذا التقرير
+
+1. **تخطيط سيناريوهات الانتخابات**: أيّ من 12 سيناريو ما بعد الانتخابات سيتحقق؟ حسابات الائتلاف، جدول التشكيل، مسألة خزانة SD.
+2. **تقييم الإرث السياسي**: هل أوفى حكم تيدو بوعوده لعام 2022؟ الهجرة، الطاقة النووية، الدفاع، الجريمة، الاقتصاد.
+3. **تحديد المخاطر**: ما هي أبرز 5 مخاطر في الـ 132 يوماً المتبقية (التحديات القانونية، الصدمات الاقتصادية، هشاشة الائتلاف)؟
+4. **الاستعداد للولاية القادمة**: ما الشروط الهيكلية التي يرثها الفائز في سبتمبر 2026؟
+5. **تقييم الصمود الديمقراطي**: هل الصمود المؤسسي للسويد كافٍ لمواجهة تحدي تطبيع SD؟
+
+### القراءة الاستخباراتية في 60 ثانية
+
+- **الانتخابات**: SD ~20–22% (أكبر أحزاب الكتلة اليمينية)؛ S ~31–33%؛ كلا الكتلتين قريبتان من التعادل عند 175 مقعداً. **متقاربة جداً للحسم** — داخل هامش خطأ استطلاعات الرأي.
+- **الهجرة**: HD03262 مُقرَّة؛ رأي لاغرود ينتظر بشأن أحكام ECHR المادة 8؛ الطعن أمام CJEU ممكن.
+- **الطاقة النووية**: HD01NU19 مُقرَّة؛ اختيار الموقع وقرار الاستثمار في البناء مطلوبان بين 2027–2028.
+- **الدفاع**: تأكيد التزام 2.4% من الناتج المحلي؛ SAAB Gripen E وBofors وNammo جميعها تزيد طاقتها.
+- **الاقتصاد**: التعافي يتسارع؛ IMF الناتج المحلي 2.4% (2026)؛ مخاطر ديون الأسر تتطبيع؛ سوق العقارات في تعافٍ.
+- **هشاشة الائتلاف**: L عند خطر عتبة 32%؛ الحسابات الائتلافية تعتمد على تجاوز L عتبة 4%.
+
+### المحفّز الاستراتيجي الرئيسي
+
+**عتبة استطلاعات حزب L**: إذا هبط L دون 4% في استطلاعات SVT/Ipsos الأخيرة، فإن ائتلاف تيدو يفقد قاعدته الحسابية وتتحول حسابات تشكيل الائتلاف بشكل جذري نحو بدائل بقيادة S.
+
+### بطاقة أداء الولاية
+
+| الأولوية | الحالة | التقييم |
+|---|---|---|
+| تقييد الهجرة | ✅ مُقرَّة | HD03262 مُنجَزة؛ طعون قانونية معلقة |
+| إعادة تنشيط الطاقة النووية | ✅ القانون مُقرَّ | HD01NU19 مُقرَّة؛ قرار البناء مؤجل |
+| الدفاع 2.4% من الناتج المحلي | ⚠️ في المسار | الالتزام مؤكد؛ المعلم 2028 قادم |
+| الحد من جرائم العصابات | ⚠️ مختلط | التشريع مُقرَّ؛ النتائج جزئية |
+| التعافي الاقتصادي | ✅ جارٍ | IMF نمو 2.4% في الناتج المحلي 2026 |
+| استقرار الائتلاف | ⚠️ هش | 175 مقعداً؛ خطر عتبة L |
+
+### تصنيف الثقة
+
+ثقة عالية في التحليل الهيكلي (إرث الولاية، حسابات الائتلاف)؛ متوسطة في نتائج الانتخابات وتشكيل الولاية القادمة.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-04
+**Klassifikation**: OFFENTLIG — GDPR Art 9(2)(e)(g)
+**Analysedybde**: comprehensive (2.5× Tier-C election-cycle)
+**Konfidens**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+Sveriges mandat 2022–2026 er ved at nå sine sidste 132 dage: Tidø-koalitionen M+KD+L har regeret med SD's tillids- og forsyningsstøtte og gennemført det mest vidtgående skift i svensk migrationspolitik i en generation (HD03262), genaktiveret atomkraft (HD01NU19) og forpligtet sig til 2,4 % af BNP til forsvar (NATO 2028-mål). Koalitionen har 175 mandater — et knebent flertal — med L ved kritisk tærskelrisiko (32 % sandsynlighed for at falde under 4 %) og MP der også risikerer elimination (38 %). Genopretning er i gang: IMF WEO apr-2026 forventer 2,4 % BNP-vækst for 2026, op fra recessionslavpunktet i 2024. Valget i september 2026 er statistisk set et møntkast.
+
+### Beslutninger dette briefing understøtter
+
+1. **Valgscenarieplanlægning**: Hvilket af 12 post-valscenarier realiseres? Koalitionsarithmetic, formeringstidslinje, SD-kabinetsspørgsmål.
+2. **Vurdering af politisk arv**: Har Tidø-mandatet leveret på dets 2022-løfter? Migration, atomkraft, forsvar, kriminalitet, økonomi.
+3. **Risikoidentifikation**: Hvad er de 5 største risici i de resterende 132 dage (retssager, økonomiske chok, koalitionsskrøbelighed)?
+4. **Forberedelse af næste mandat**: Hvilke strukturelle betingelser arver vinderen i september 2026?
+5. **Vurdering af demokratisk modstandsdygtighed**: Er Sveriges institutionelle modstandsdygtighed tilstrækkelig i lyset af SD-normaliseringsudfordringen?
+
+### 60-sekunders efterretningsoversigt
+
+- **Valg**: SD ~20–22 % (det største parti i højrefløjsblokken); S ~31–33 %; begge blokke tæt på 175-mandats-paritet. **For tæt til afgørelse** — inden for meningsmålingers fejlmargen.
+- **Migration**: HD03262 vedtaget; Lagrådets udtalelse afventes vedr. ECHR Art 8-bestemmelserne; CJEU-udfordring mulig.
+- **Atomkraft**: HD01NU19 vedtaget; placeringsvalg og investeringsbeslutning til konstruktion påkrævet 2027–2028.
+- **Forsvar**: 2,4 % BNP-forpligtelse bekræftet; SAAB Gripen E, Bofors, Nammo øger alle kapaciteten.
+- **Økonomi**: Genopretning accelererer; IMF BNP 2,4 % (2026); husholdningsgæld-risiko normaliseres; ejendomsmarkedet i bedring.
+- **Koalitionsskrøbelighed**: L ved 32 % tærskelrisiko; koalitionsarithmetik afhænger af at L overstiger 4 %-spærren.
+
+### Primær fremadrettet trigger
+
+**L-partiets valgundersøgelsestærskel**: Hvis L falder under 4 % i de endelige SVT/Ipsos-målinger, mister Tidø-koalitionen sit arithmetiske grundlag, og koalitionsberegningen skifter dramatisk mod S-ledede alternativer.
+
+### Mandatscorecard
+
+| Prioritet | Status | Vurdering |
+|---|---|---|
+| Migrationsbegrænsning | ✅ Vedtaget | HD03262 leveret; retssager under behandling |
+| Atomkraftgenaktivering | ✅ Lov vedtaget | HD01NU19 vedtaget; konstruktionsbeslutning udskudt |
+| Forsvar 2,4 % BNP | ⚠️ På sporet | Forpligtelse bekræftet; 2028-milepæl foran |
+| Reduktion af bandekriminalitet | ⚠️ Blandet | Lovgivning vedtaget; resultater delvist |
+| Genopretning af økonomi | ✅ I gang | IMF 2,4 % BNP-vækst 2026 |
+| Koalitionsstabilitet | ⚠️ Skrøbelig | 175 mandater; L-tærskelrisiko |
+
+### Konfidensmærke
+
+HØJ konfidens på strukturel analyse (mandatarv, koalitionsarithmetic); MEDIUM på valgresultat og næste mandatformering.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Datum**: 2026-05-04
+**Klassifizierung**: ÖFFENTLICH — GDPR Art 9(2)(e)(g)
+**Analysetiefe**: comprehensive (2.5× Tier-C election-cycle)
+**Konfidenz**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+Schwedens Mandat 2022–2026 tritt in seine letzten 132 Tage: Die Tidö-Koalition M+KD+L hat mit SDs Unterstützung durch Vertrauen und Duldung regiert und den tiefgreifendsten Wandel in der schwedischen Migrationspolitik einer Generation durchgesetzt (HD03262), Kernenergie reaktiviert (HD01NU19) und 2,4 % des BIP für die Verteidigung zugesagt (NATO-Ziel 2028). Die Koalition hält 175 Sitze — eine knappe Mehrheit — wobei L an der kritischen Schwellenrisiko steht (32 % Wahrscheinlichkeit, unter 4 % zu fallen) und MP ebenfalls mit Eliminierung konfrontiert ist (38 %). Die wirtschaftliche Erholung ist im Gange: der IWF WEO Apr-2026 prognostiziert 2,4 % BIP-Wachstum für 2026, ein Anstieg vom Rezessionstief 2024. Die Wahl im September 2026 ist statistisch ein Münzwurf.
+
+### Entscheidungen, die dieser Bericht unterstützt
+
+1. **Wahlszenarioplanung**: Welches von 12 Nachwahlszenarien realisiert sich? Koalitionsarithmetik, Bildungszeitplan, SD-Kabinetsfrage.
+2. **Bewertung des politischen Erbes**: Hat das Tidö-Mandat seine Versprechen von 2022 eingelöst? Migration, Kernenergie, Verteidigung, Kriminalität, Wirtschaft.
+3. **Risikoidentifikation**: Was sind die 5 größten Risiken in den verbleibenden 132 Tagen (Gerichtsverfahren, Wirtschaftsschocks, Koalitionszerbrechlichkeit)?
+4. **Vorbereitung des nächsten Mandats**: Welche Strukturbedingungen erbt der Gewinner im September 2026?
+5. **Bewertung der demokratischen Widerstandsfähigkeit**: Ist Schwedens institutionelle Widerstandsfähigkeit gegenüber der SD-Normalisierungsherausforderung ausreichend?
+
+### 60-Sekunden-Geheimdienstüberblick
+
+- **Wahl**: SD ~20–22 % (größte Partei im rechten Block); S ~31–33 %; beide Blöcke nahe an 175-Sitz-Parität. **Zu eng für eine Entscheidung** — innerhalb der Umfrage-Fehlermarge.
+- **Migration**: HD03262 verabschiedet; Lagrådets Stellungnahme zu ECHR Art 8-Bestimmungen ausstehend; CJEU-Herausforderung möglich.
+- **Kernenergie**: HD01NU19 verabschiedet; Standortauswahl und Bau-Investitionsentscheidung bis 2027–2028 erforderlich.
+- **Verteidigung**: 2,4 % BIP-Zusage bestätigt; SAAB Gripen E, Bofors, Nammo alle ausgebaut.
+- **Wirtschaft**: Erholung beschleunigt; IWF BIP 2,4 % (2026); Haushaltsverschuldungsrisiko normalisiert sich; Immobilienmarkt erholt sich.
+- **Koalitionszerbrechlichkeit**: L an 32 % Schwellenrisiko; Koalitionsarithmetik hängt davon ab, dass L die 4 %-Hürde übersteigt.
+
+### Primärer Vorwärts-Auslöser
+
+**L-Partei Umfrageschwell**: Wenn L in den abschließenden SVT/Ipsos-Umfragen unter 4 % fällt, verliert die Tidö-Koalition ihre arithmetische Basis, und die Koalitionsberechnung verschiebt sich dramatisch in Richtung S-geführter Alternativen.
+
+### Mandat-Scorecard
+
+| Priorität | Status | Bewertung |
+|---|---|---|
+| Migrationsbeschränkung | ✅ Verabschiedet | HD03262 umgesetzt; Rechtsverfahren laufen |
+| Kernenergie-Reaktivierung | ✅ Gesetz verabschiedet | HD01NU19 verabschiedet; Bau-Entscheidung verschoben |
+| Verteidigung 2,4 % BIP | ⚠️ Auf Kurs | Zusage bestätigt; Meilenstein 2028 steht aus |
+| Reduktion der Bandenkriminalität | ⚠️ Gemischt | Gesetzgebung verabschiedet; Ergebnisse teilweise |
+| Wirtschaftliche Erholung | ✅ Im Gange | IWF 2,4 % BIP-Wachstum 2026 |
+| Koalitionsstabilität | ⚠️ Zerbrechlich | 175 Sitze; L-Schwellenrisiko |
+
+### Konfidenz-Label
+
+HOHE Konfidenz bei struktureller Analyse (Mandatserbe, Koalitionsarithmetik); MITTEL bei Wahlergebnis und nächster Mandatsbildung.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Fecha**: 2026-05-04
+**Clasificación**: PÚBLICA — GDPR Art 9(2)(e)(g)
+**Profundidad de análisis**: comprehensive (2.5× Tier-C election-cycle)
+**Confianza**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+El mandato 2022–2026 de Suecia entra en sus últimos 132 días: la coalición Tidö M+KD+L ha gobernado con el apoyo de confianza y suministro de SD, ejecutando el cambio más profundo en la política migratoria sueca en una generación (HD03262), reactivando la energía nuclear (HD01NU19) y comprometiéndose con el 2,4 % del PIB para defensa (objetivo OTAN 2028). La coalición mantiene 175 escaños — una mayoría ajustada — con L en riesgo umbral crítico (32 % de probabilidad de caer por debajo del 4 %) y MP también ante el riesgo de eliminación (38 %). La recuperación económica está en marcha: el IMF WEO abr-2026 proyecta un crecimiento del PIB del 2,4 % para 2026, al alza respecto al mínimo de la recesión de 2024. La elección de septiembre de 2026 es estadísticamente un lanzamiento de moneda.
+
+### Decisiones que este informe apoya
+
+1. **Planificación de escenarios electorales**: ¿Cuál de los 12 escenarios post-electorales se materializará? Aritmética de coalición, cronograma de formación, pregunta del gabinete SD.
+2. **Evaluación del legado político**: ¿Ha cumplido el mandato Tidö sus promesas de 2022? Migración, nuclear, defensa, crimen, economía.
+3. **Identificación de riesgos**: ¿Cuáles son los 5 principales riesgos en los 132 días restantes (desafíos legales, choques económicos, fragilidad de la coalición)?
+4. **Preparación del próximo mandato**: ¿Qué condiciones estructurales hereda el ganador en septiembre de 2026?
+5. **Evaluación de la resiliencia democrática**: ¿Es suficiente la resiliencia institucional de Suecia ante el desafío de la normalización de SD?
+
+### Inteligencia en 60 segundos
+
+- **Elección**: SD ~20–22 % (el mayor partido del bloque de derecha); S ~31–33 %; ambos bloques cerca de la paridad en 175 escaños. **Demasiado ajustado para decidir** — dentro del margen de error de las encuestas.
+- **Migración**: HD03262 promulgada; dictamen del Lagrådet pendiente sobre las disposiciones del ECHR Art 8; impugnación ante el CJEU posible.
+- **Nuclear**: HD01NU19 promulgada; selección de emplazamiento y decisión de inversión de construcción requeridas 2027–2028.
+- **Defensa**: compromiso del 2,4 % del PIB confirmado; SAAB Gripen E, Bofors, Nammo todos en aumento.
+- **Economía**: recuperación acelerando; IMF PIB 2,4 % (2026); riesgo de deuda de hogares normalizándose; mercado inmobiliario recuperándose.
+- **Fragilidad de la coalición**: L en 32 % de riesgo umbral; la aritmética de coalición depende de que L supere el umbral del 4 %.
+
+### Detonante prospectivo principal
+
+**Umbral de encuesta del partido L**: Si L cae por debajo del 4 % en las últimas encuestas de SVT/Ipsos, la coalición Tidö pierde su base aritmética y el cálculo de coalición se desplaza dramáticamente hacia alternativas lideradas por S.
+
+### Scorecard del mandato
+
+| Prioridad | Estado | Evaluación |
+|---|---|---|
+| Restricción migratoria | ✅ Promulgada | HD03262 entregado; recursos legales pendientes |
+| Reactivación nuclear | ✅ Ley promulgada | HD01NU19 promulgada; decisión de construcción aplazada |
+| Defensa 2,4 % PIB | ⚠️ En camino | Compromiso confirmado; hito 2028 por delante |
+| Reducción de criminalidad organizada | ⚠️ Mixto | Legislación promulgada; resultados parciales |
+| Recuperación económica | ✅ En curso | IMF 2,4 % crecimiento PIB 2026 |
+| Estabilidad de coalición | ⚠️ Frágil | 175 escaños; riesgo umbral L |
+
+### Etiqueta de confianza
+
+ALTA confianza en el análisis estructural (legado del mandato, aritmética de coalición); MEDIA en resultado electoral y formación del próximo mandato.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_fi.md -->
+
+**Kirjoittaja**: James Pether Sörling
+**Päiväys**: 2026-05-04
+**Luokittelu**: JULKINEN — GDPR Art 9(2)(e)(g)
+**Analyysin syvyys**: comprehensive (2.5× Tier-C election-cycle)
+**Luottamustaso**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+Ruotsin vuoden 2022–2026 toimikausi on viimeisissä 132 päivässään: Tidö-koalitio M+KD+L on hallitut SD:n luottamus- ja toimitustukeen nojautuen ja toteuttanut sukupolven merkittävimmän muutoksen Ruotsin maahanmuuttopolitiikassa (HD03262), reaktivoinut ydinvoiman (HD01NU19) ja sitoutunut 2,4 % BKT:stä puolustukseen (NATO:n 2028-tavoite). Koalitiolla on 175 paikkaa — niukka enemmistö — L kriittisen kynnyksen riskillä (32 % todennäköisyys jäädä alle 4 %) ja MP myös eliminoitumisen vaarassa (38 %). Taloudellinen elpyminen on käynnissä: IMF WEO huhtikuu-2026 ennustaa 2,4 % BKT-kasvun vuodelle 2026, nousua vuoden 2024 taantuman pohjasta. Syyskuun 2026 vaalit ovat tilastollisesti kolikonheitto.
+
+### Päätökset, joita tämä briefing tukee
+
+1. **Vaaliskenaariosuunnittelu**: Mitkä 12 vaalinjälkeisestä skenaariosta toteutuu? Koalitioaritmetiikka, muodostamisen aikajana, SD:n kabinettikysymys.
+2. **Poliittisen perinnön arviointi**: Onko Tidö-toimikausi toimittanut vuoden 2022 lupauksensa? Maahanmuutto, ydinvoima, puolustus, rikollisuus, talous.
+3. **Riskien tunnistaminen**: Mitkä ovat 5 suurinta riskiä jäljellä olevissa 132 päivässä (oikeudelliset haasteet, taloudelliset shokit, koalition hauraudes)?
+4. **Seuraavan toimikauden valmistelu**: Mitkä rakenteelliset olosuhteet voittaja perii syyskuussa 2026?
+5. **Demokratian häiriönsietokyvyn arviointi**: Onko Ruotsin institutionaalinen häiriönsietokyky riittävä SD:n normalisaatiohaasteen edessä?
+
+### 60 sekunnin tiedustelutiivistelmä
+
+- **Vaalit**: SD ~20–22 % (suurin oikean puolen puolue); S ~31–33 %; molemmat blokit lähellä 175 paikan tasa-arvoa. **Liian tasainen arvioitavaksi** — mielipidetutkimusten virhemarginaalin sisällä.
+- **Maahanmuutto**: HD03262 hyväksytty; Lagradin lausunto odottaa ECHR Art 8 -säännöksistä; CJEU-haaste mahdollinen.
+- **Ydinvoima**: HD01NU19 hyväksytty; sijainninvalinta ja rakentamisen investointipäätös tarvitaan 2027–2028.
+- **Puolustus**: 2,4 % BKT-sitoumus vahvistettu; SAAB Gripen E, Bofors, Nammo kaikki kasvattavat kapasiteettia.
+- **Talous**: Elpyminen kiihtyy; IMF BKT 2,4 % (2026); kotitalouksien velkariskit normalisoituvat; kiinteistömarkkinat elpyvät.
+- **Koalition hauraus**: L 32 % kynnysriskillä; koalitioaritmetiikka riippuu L:n ylityksestä 4 % kynnyksellä.
+
+### Ensisijainen tulevaisuuden laukaisin
+
+**L-puolueen gallupin kynnys**: Jos L putoaa alle 4 % viimeisessä SVT/Ipsos-mittauksessa, Tidö-koalitio menettää aritmeettisen perustansa ja koalitiolaskenta siirtyy dramaattisesti kohti S-johtoisisa vaihtoehtoja.
+
+### Toimikauden tuloskortti
+
+| Prioriteetti | Status | Arvio |
+|---|---|---|
+| Maahanmuuton rajoittaminen | ✅ Hyväksytty | HD03262 toimitettu; oikeudelliset haasteet vireillä |
+| Ydinvoiman reaktivointi | ✅ Laki hyväksytty | HD01NU19 hyväksytty; rakennuspäätös lykätty |
+| Puolustus 2,4 % BKT | ⚠️ Oikealla tiellä | Sitoumus vahvistettu; 2028 virstanpylväs edessä |
+| Jengirikollisuuden vähentäminen | ⚠️ Sekainen | Lainsäädäntö hyväksytty; osittaiset tulokset |
+| Taloudellinen elpyminen | ✅ Käynnissä | IMF 2,4 % BKT-kasvu 2026 |
+| Koalition vakaus | ⚠️ Hauras | 175 paikkaa; L-kynnysriski |
+
+### Luottamusmerkintä
+
+KORKEA luottamus rakenteellisessa analyysissä (toimikauden perintö, koalitioaritmetiikka); KESKITASO vaaliulostulossa ja seuraavan toimikauden muodostamisessa.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+
+**Profondeur d'analyse** : comprehensive (2.5× Tier-C election-cycle)
+**Confiance** : HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+Le mandat 2022–2026 de la Suède entre dans ses 132 derniers jours : la coalition Tidö M+KD+L a gouverné avec le soutien de confiance et d'approvisionnement de SD, réalisant le changement le plus profond de la politique migratoire suédoise en une génération (HD03262), réactivant l'énergie nucléaire (HD01NU19) et s'engageant à 2,4 % du PIB pour la défense (objectif OTAN 2028). La coalition détient 175 sièges — une majorité étroite — L étant à risque seuil critique (32 % de probabilité de tomber sous 4 %) et MP également menacé d'élimination (38 %). La reprise économique est en cours : l'IMF WEO avr-2026 projette une croissance du PIB de 2,4 % pour 2026, en hausse par rapport au creux de la récession 2024. L'élection de septembre 2026 est statistiquement un pile ou face.
+
+### Décisions que ce briefing soutient
+
+1. **Planification de scénarios électoraux** : Lequel des 12 scénarios post-électoraux se matérialisera ? Arithmétique de coalition, calendrier de formation, question du cabinet SD.
+2. **Évaluation de l'héritage politique** : Le mandat Tidö a-t-il tenu ses promesses de 2022 ? Migration, nucléaire, défense, criminalité, économie.
+3. **Identification des risques** : Quels sont les 5 principaux risques dans les 132 jours restants (défis juridiques, chocs économiques, fragilité de la coalition) ?
+4. **Préparation du prochain mandat** : Quelles conditions structurelles le gagnant hérite-t-il en septembre 2026 ?
+5. **Évaluation de la résilience démocratique** : La résilience institutionnelle de la Suède est-elle suffisante face au défi de la normalisation de SD ?
+
+### Intelligence en 60 secondes
+
+- **Élection** : SD ~20–22 % (le plus grand parti du bloc de droite) ; S ~31–33 % ; les deux blocs proches de la parité à 175 sièges. **Trop serré pour trancher** — dans la marge d'erreur des sondages.
+- **Migration** : HD03262 adopté ; avis du Lagrådet attendu sur les dispositions de l'ECHR Art 8 ; défi CJEU possible.
+- **Nucléaire** : HD01NU19 adopté ; sélection du site et décision d'investissement de construction requises 2027–2028.
+- **Défense** : engagement à 2,4 % du PIB confirmé ; SAAB Gripen E, Bofors, Nammo augmentent tous leur capacité.
+- **Économie** : reprise s'accélère ; IMF PIB 2,4 % (2026) ; risque d'endettement des ménages normalisé ; marché immobilier en convalescence.
+- **Fragilité de la coalition** : L à 32 % de risque seuil ; l'arithmétique de coalition dépend de L dépassant le seuil de 4 %.
+
+### Principal déclencheur prospectif
+
+**Seuil de sondage du parti L** : Si L tombe sous les 4 % dans les derniers sondages SVT/Ipsos, la coalition Tidö perd sa base arithmétique et le calcul de coalition se déplace dramatiquement vers des alternatives dirigées par S.
+
+### Scorecard du mandat
+
+| Priorité | Statut | Évaluation |
+|---|---|---|
+| Restriction migratoire | ✅ Adoptée | HD03262 livré ; recours juridiques en cours |
+| Réactivation du nucléaire | ✅ Loi adoptée | HD01NU19 adopté ; décision de construction reportée |
+| Défense 2,4 % PIB | ⚠️ En bonne voie | Engagement confirmé ; jalon 2028 à venir |
+| Réduction de la criminalité des gangs | ⚠️ Mitigé | Législation adoptée ; résultats partiels |
+| Reprise économique | ✅ En cours | IMF 2,4 % croissance PIB 2026 |
+| Stabilité de coalition | ⚠️ Fragile | 175 sièges ; risque seuil L |
+
+### Label de confiance
+
+HAUTE confiance sur l'analyse structurelle (héritage du mandat, arithmétique de coalition) ; MOYEN sur le résultat électoral et la formation du prochain mandat.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# מחזור הבחירות הנוכחי בשבדיה (2022–2026): המנדט לפני הכרעה
+
+**מחבר**: James Pether Sörling
+**תאריך**: 2026-05-04
+**סיווג**: ציבורי — GDPR Art 9(2)(e)(g)
+**עומק ניתוח**: comprehensive (2.5× Tier-C election-cycle)
+**ביטחון**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+המנדט השבדי 2022–2026 נכנס ל-132 ימיו האחרונים: ממשלת טידו M+KD+L שלטה עם תמיכת הסמכה ואספקה של SD, וביצעה את השינוי העמוק ביותר במדיניות ההגירה השבדית בדור (HD03262), הפעילה מחדש אנרגיה גרעינית (HD01NU19) והתחייבה ל-2.4% מהתמ"ג עבור הגנה (יעד נאט"ו 2028). לקואליציה 175 מושבים — רוב דחוק — כאשר L נמצאת בסיכון קריטי של סף (32% סבירות לנפילה מתחת ל-4%), וגם MP עומדת בפני חיסול (38%). ההתאוששות הכלכלית מתקדמת: IMF WEO אפר-2026 מקרינה 2.4% צמיחה בתמ"ג ל-2026, עלייה ממינימום המיתון ב-2024. בחירות ספטמבר 2026 הן מבחינה סטטיסטית הטלת מטבע.
+
+### החלטות שתדריך זה תומך בהן
+
+1. **תכנון תרחישי בחירות**: איזה מ-12 תרחישים שלאחר הבחירות יתממש? אריתמטיקה קואליציונית, ציר הזמן לגיבוש, שאלת קבינט SD.
+2. **הערכת מורשת פוליטית**: האם מנדט טידו עמד בהבטחותיו מ-2022? הגירה, גרעין, הגנה, פשיעה, כלכלה.
+3. **זיהוי סיכונים**: מה 5 הסיכונים העיקריים ב-132 הימים הנותרים (אתגרים משפטיים, זעזועים כלכליים, שבירות הקואליציה)?
+4. **הכנה למנדט הבא**: אילו תנאים מבניים הזוכה יורש בספטמבר 2026?
+5. **הערכת חוסן דמוקרטי**: האם החוסן המוסדי של שבדיה מספיק בפני אתגר נורמליזציית SD?
+
+### קריאת מודיעין ב-60 שניות
+
+- **בחירות**: SD ~20–22% (הגדול שבמפלגות הגוש הימני); S ~31–33%; שני הגושים קרובים לשוויון ב-175 מושבים. **צמוד מדי להכרעה** — בתוך שולי שגיאת הסקרים.
+- **הגירה**: HD03262 נחקקה; חוות דעת לאגרוד ממתינה לגבי הוראות ECHR סעיף 8; ערעור CJEU אפשרי.
+- **גרעין**: HD01NU19 נחקקה; בחירת אתר והחלטת השקעה בבנייה נדרשות 2027–2028.
+- **הגנה**: התחייבות 2.4% מהתמ"ג אושרה; SAAB Gripen E, Bofors, Nammo כולם מגדילים קיבולת.
+- **כלכלה**: ההתאוששות מואצת; IMF תמ"ג 2.4% (2026); סיכון חוב משקי בית מתנרמל; שוק הנדל"ן מתאושש.
+- **שבירות הקואליציה**: L בסיכון סף 32%; אריתמטיקה קואליציונית תלויה ב-L חוצה 4%.
+
+### הגורם המניע העיקרי
+
+**סף סקרי מפלגת L**: אם L נופלת מתחת ל-4% בסקרי SVT/Ipsos האחרונים, קואליציית טידו מאבדת את בסיסה האריתמטי וחישוב הקואליציה עובר באופן דרמטי לעבר חלופות בהובלת S.
+
+### כרטיס ניקוד המנדט
+
+| עדיפות | סטטוס | הערכה |
+|---|---|---|
+| הגבלת הגירה | ✅ נחקק | HD03262 הושג; ערעורים משפטיים בתהליך |
+| הפעלה מחדש של גרעין | ✅ חוק נחקק | HD01NU19 נחקק; החלטת בנייה נדחתה |
+| הגנה 2.4% מהתמ"ג | ⚠️ בנתיב | התחייבות אושרה; אבן דרך 2028 לפנינו |
+| הפחתת פשיעת כנופיות | ⚠️ מעורב | חקיקה נחקקה; תוצאות חלקיות |
+| התאוששות כלכלית | ✅ מתקדם | IMF 2.4% צמיחת תמ"ג 2026 |
+| יציבות קואליציה | ⚠️ שברירי | 175 מושבים; סיכון סף L |
+
+### תווית ביטחון
+
+ביטחון גבוה בניתוח המבני (מורשת מנדט, אריתמטיקה קואליציונית); בינוני לגבי תוצאת הבחירות וגיבוש המנדט הבא.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling
+**日付**：2026-05-04
+**分類**：公開 — GDPR Art 9(2)(e)(g)
+**分析深度**：comprehensive（2.5× Tier-C election-cycle）
+**信頼度**：HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+スウェーデンの2022–2026年マンデートは最後の132日を迎えている。ティドー連立M+KD+LはSDの信任・閣外協力支持のもとで統治し、一世代で最も大きな移民政策の転換（HD03262）、原子力再活性化（HD01NU19）、GDP2.4%の防衛公約（NATO2028目標）を実現した。連立は175議席を保有 — 辛うじての過半数 — Lが閾値リスク（4%を下回る確率32%）、MPも排除リスク（38%）に晒されている。経済回復は進行中：IMF WEO 2026年4月は2026年のGDP成長を2.4%と予測、2024年の不況底から上向き。2026年9月の選挙は統計的にコイントスだ。
+
+### このブリーフィングが支援する決定
+
+1. **選挙後シナリオ計画**：12の選挙後シナリオのどれが実現するか？連立算術、組閣スケジュール、SD入閣問題。
+2. **政治的遺産の評価**：ティドー政権は2022年の公約を果たしたか？移民、原子力、防衛、犯罪、経済。
+3. **リスク特定**：残り132日間の最大5つのリスクは何か（法的課題、経済的ショック、連立の脆弱性）？
+4. **次のマンデートへの準備**：2026年9月の勝者はどのような構造的条件を引き継ぐか？
+5. **民主的レジリエンスの評価**：SDの正常化の課題に対して、スウェーデンの制度的レジリエンスは十分か？
+
+### 60秒インテリジェンス概要
+
+- **選挙**：SD ~20–22%（右派ブロック最大政党）; S ~31–33%; 両ブロック175議席のパリティに接近。**判断不能の僅差** — 世論調査の誤差範囲内。
+- **移民**：HD03262制定済み; ECHR第8条規定についてのラグロードの意見待ち; CJEU異議の可能性あり。
+- **原子力**：HD01NU19制定済み; 建設の敷地選定と投資決定が2027–2028に必要。
+- **防衛**：GDP2.4%公約確認; SAAB グリペンE、ボフォース、ナムモはいずれも能力増強中。
+- **経済**：回復加速; IMF GDP 2.4%（2026）; 家計負債リスク正常化; 不動産市場回復中。
+- **連立の脆弱性**：Lは閾値リスク32%; 連立算術はLが4%を超えることが前提。
+
+### 最優先の先行指標
+
+**L党の世論調査閾値**：最終SVT/Ipsos世論調査でLが4%を下回った場合、ティドー連立はその算術的基盤を失い、組閣計算は劇的にS主導の代替案へシフトする。
+
+### マンデートスコアカード
+
+| 優先事項 | 状況 | 評価 |
+|---|---|---|
+| 移民制限 | ✅ 制定済み | HD03262 実現；法的異議申立て継続中 |
+| 原子力再活性化 | ✅ 法律制定済み | HD01NU19 制定済み；建設決定は延期 |
+| 防衛 GDP2.4% | ⚠️ 順調 | 公約確認；2028マイルストーン待ち |
+| 暴力団犯罪削減 | ⚠️ 混在 | 立法済み；結果は部分的 |
+| 経済回復 | ✅ 進行中 | IMF 2.4% GDP成長 2026 |
+| 連立安定 | ⚠️ 脆弱 | 175議席；L閾値リスク |
+
+### 信頼度ラベル
+
+構造的分析（マンデートの遺産、連立算術）は高信頼度；選挙結果と次のマンデート形成は中程度。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**날짜**: 2026-05-04
+**분류**: 공개 — GDPR Art 9(2)(e)(g)
+**분석 깊이**: comprehensive (2.5× Tier-C election-cycle)
+**신뢰도**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+스웨덴의 2022–2026년 임기는 마지막 132일에 접어들었다: 티되 연립 M+KD+L은 SD의 신임 및 공급 지원으로 통치하며, 한 세대에서 가장 심층적인 스웨덴 이민 정책 전환(HD03262), 핵에너지 재활성화(HD01NU19), GDP의 2.4%를 국방에 약속(NATO 2028 목표)을 달성했다. 연립은 175석을 보유 — 간신히 과반수 — L이 임계 위험 수준(4% 미만 가능성 32%)에, MP도 탈락 위험(38%)에 처해 있다. 경제 회복이 진행 중: IMF WEO 2026년 4월은 2026년 GDP 2.4% 성장을 전망, 2024년 불황 바닥에서 상승. 2026년 9월 선거는 통계적으로 동전 던지기다.
+
+### 이 브리핑이 지원하는 결정
+
+1. **선거 후 시나리오 계획**: 12가지 선거 후 시나리오 중 어떤 것이 실현될까? 연립 계산, 구성 일정, SD 입각 문제.
+2. **정치적 유산 평가**: 티되 임기가 2022년 약속을 이행했는가? 이민, 원자력, 국방, 범죄, 경제.
+3. **위험 식별**: 남은 132일간 5대 위험은 무엇인가 (법적 도전, 경제적 충격, 연립 취약성)?
+4. **다음 임기 준비**: 2026년 9월 승자는 어떤 구조적 조건을 물려받는가?
+5. **민주적 회복력 평가**: SD 정상화 도전에 대한 스웨덴의 제도적 회복력이 충분한가?
+
+### 60초 정보 개요
+
+- **선거**: SD ~20–22% (우익 블록 최대 정당); S ~31–33%; 양 블록 175석 균형에 근접. **결정하기에 너무 접전** — 여론조사 오차 범위 내.
+- **이민**: HD03262 제정; ECHR 제8조 규정에 관한 라그로드 의견 대기 중; CJEU 이의 제기 가능.
+- **원자력**: HD01NU19 제정; 부지 선정과 건설 투자 결정 2027–2028 필요.
+- **국방**: GDP 2.4% 약속 확인; SAAB 그리펜 E, 보포스, 남모 모두 능력 증강 중.
+- **경제**: 회복 가속; IMF GDP 2.4% (2026); 가계 부채 위험 정상화; 부동산 시장 회복.
+- **연립 취약성**: L 임계 위험 32%; 연립 계산은 L이 4% 초과하는 데 의존.
+
+### 최우선 선행 지표
+
+**L당 여론조사 임계점**: L이 최종 SVT/Ipsos 여론조사에서 4% 미만으로 떨어지면 티되 연립은 산술적 기반을 잃고, 연립 계산이 S 주도 대안으로 극적으로 이동한다.
+
+### 임기 성과표
+
+| 우선순위 | 상태 | 평가 |
+|---|---|---|
+| 이민 제한 | ✅ 제정 | HD03262 실현; 법적 이의 제기 진행 중 |
+| 원자력 재활성화 | ✅ 법률 제정 | HD01NU19 제정; 건설 결정 연기 |
+| 국방 GDP 2.4% | ⚠️ 순조 | 약속 확인; 2028 이정표 앞으로 |
+| 조직 범죄 감소 | ⚠️ 혼재 | 법제화 완료; 결과 부분적 |
+| 경제 회복 | ✅ 진행 중 | IMF 2.4% GDP 성장 2026 |
+| 연립 안정 | ⚠️ 취약 | 175석; L 임계 위험 |
+
+### 신뢰도 라벨
+
+구조 분석(임기 유산, 연립 계산)은 높은 신뢰도; 선거 결과와 다음 임기 구성은 중간 신뢰도.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Datum**: 2026-05-04
+**Classificatie**: OPENBAAR — GDPR Art 9(2)(e)(g)
+**Analysediepte**: comprehensive (2.5× Tier-C election-cycle)
+**Betrouwbaarheid**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+Het Zweedse mandaat 2022–2026 treedt zijn laatste 132 dagen in: de Tidö-coalitie M+KD+L heeft geregeerd met de steun van SDs vertrouwen-en-gedoogakkoord, en heeft het meest ingrijpende wijziging van het Zweedse migratiebeleid in een generatie doorgevoerd (HD03262), kernenergie geheractiveerd (HD01NU19) en 2,4 % van het BBP voor defensie toegezegd (NAVO-doel 2028). De coalitie beschikt over 175 zetels — een krappe meerderheid — met L aan kritische drempelrisico (32 % kans om onder 4 % te vallen) en MP ook voor eliminatie (38 %). Het economisch herstel is op gang: het IMF WEO apr-2026 projecteert 2,4 % BBP-groei voor 2026, gestegen van het recessiedieptepunt in 2024. De verkiezing van september 2026 is statistisch een muntgooiing.
+
+### Beslissingen die dit briefing ondersteunt
+
+1. **Verkiezingsscenarioplanning**: Welk van de 12 post-verkiezingsscenario's realiseert zich? Coalitie-arithmetiek, formeringstijdlijn, SD-kabinethsvraag.
+2. **Beoordeling van politieke erfenis**: Heeft het Tidö-mandaat zijn beloftes van 2022 ingelost? Migratie, kernenergie, defensie, criminaliteit, economie.
+3. **Risicoidentificatie**: Wat zijn de 5 grootste risico's in de resterende 132 dagen (juridische uitdagingen, economische schokken, coalitiekwetsbaarheid)?
+4. **Voorbereiding volgend mandaat**: Welke structurele omstandigheden erft de winnaar in september 2026?
+5. **Beoordeling van democratische weerbaarheid**: Is Zwedens institutionele weerbaarheid voldoende voor de SD-normaliseringsuitdaging?
+
+### 60-seconden inlichtingenoverzicht
+
+- **Verkiezing**: SD ~20–22 % (het grootste partij in het rechtse blok); S ~31–33 %; beide blokken dicht bij 175-zetel-pariteit. **Te krap voor een beslissing** — binnen de foutmarge van peilingen.
+- **Migratie**: HD03262 aangenomen; advies van de Lagrådet afwachtend inzake ECHR Art 8-bepalingen; CJEU-aanvechting mogelijk.
+- **Kernenergie**: HD01NU19 aangenomen; locatieselectie en bouw-investeringsbeslissing vereist 2027–2028.
+- **Defensie**: toezegging 2,4 % BBP bevestigd; SAAB Gripen E, Bofors, Nammo allen verhogen capaciteit.
+- **Economie**: herstel versnelt; IMF BBP 2,4 % (2026); huishoudelijk schuldrisico normaliseert; vastgoedmarkt herstelt.
+- **Coalitiekwetsbaarheid**: L aan 32 % drempelrisico; coalitie-arithmetiek hangt af van L die de 4%-drempel overstijgt.
+
+### Primaire voorwaartse trigger
+
+**Drempel van de peilingen voor partij L**: Als L onder 4 % daalt in de afsluitende SVT/Ipsos-peilingen, verliest de Tidö-coalitie haar arithmetische basis en verschuift de coalitieberekening dramatisch naar S-geleide alternatieven.
+
+### Mandaat-scorecard
+
+| Prioriteit | Status | Beoordeling |
+|---|---|---|
+| Migratiebeperking | ✅ Aangenomen | HD03262 geleverd; rechtszaken lopende |
+| Heractivering kernenergie | ✅ Wet aangenomen | HD01NU19 aangenomen; bouwbeslissing uitgesteld |
+| Defensie 2,4 % BBP | ⚠️ Op koers | Toezegging bevestigd; mijlpaal 2028 voor de boeg |
+| Vermindering bandecriminaliteit | ⚠️ Gemengd | Wetgeving aangenomen; resultaten gedeeltelijk |
+| Economisch herstel | ✅ In gang | IMF 2,4 % BBP-groei 2026 |
+| Coalitiesstabiliteit | ⚠️ Kwetsbaar | 175 zetels; L-drempelrisico |
+
+### Betrouwbaarheidslabel
+
+HOGE betrouwbaarheid bij structurele analyse (mandaaterfenis, coalitie-arithmetiek); MEDIUM bij verkiezingsuitslag en formatie van het volgende mandaat.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-04
+**Klassifisering**: OFFENTLIG — GDPR Art 9(2)(e)(g)
+**Analysedybde**: comprehensive (2.5× Tier-C election-cycle)
+**Konfidens**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+Sveriges mandat 2022–2026 nærmer seg sine siste 132 dager: Tidø-koalisjonen M+KD+L har styrt med SD sin tillits- og forsyningsstøtte, og gjennomført det mest gjennomgripende skiftet i svensk migrasjonspolitikk på en generasjon (HD03262), reaktivert atomkraft (HD01NU19) og forpliktet seg til 2,4 % av BNP til forsvar (NATO 2028-mål). Koalisjonen har 175 mandater — et knapp flertall — med L ved kritisk terskelsrisiko (32 % sannsynlighet for å falle under 4 %) og MP som også risikerer eliminasjon (38 %). Økonomisk bedring er i gang: IMF WEO apr-2026 projiserer 2,4 % BNP-vekst for 2026, opp fra resesjonsbunn i 2024. Valget i september 2026 er statistisk sett et myntkast.
+
+### Beslutninger dette brifingen støtter
+
+1. **Valgscenarioplanlegging**: Hvilket av 12 scenarier etter valget realiseres? Koalisjonsaritmetikk, formeringstidslinje, SD-kabinettsspørsmål.
+2. **Vurdering av politisk arv**: Har Tidø-mandatet levert på sine 2022-løfter? Migrasjon, atomkraft, forsvar, kriminalitet, økonomi.
+3. **Risikoidentifikasjon**: Hva er de 5 største risikoene i de gjenstående 132 dagene (rettssaker, økonomiske sjokk, koalisjonsskjørhet)?
+4. **Forberedelse til neste mandat**: Hvilke strukturelle betingelser arver vinneren i september 2026?
+5. **Vurdering av demokratisk motstandsdyktighet**: Er Sveriges institusjonelle motstandsdyktighet tilstrekkelig overfor SD-normaliseringsutfordringen?
+
+### 60-sekunders etterretningsoversikt
+
+- **Valg**: SD ~20–22 % (det største partiet i høyreblokken); S ~31–33 %; begge blokker nær 175-mandats-paritet. **For jevnt til å avgjøre** — innenfor meningsmålingers feilmargin.
+- **Migrasjon**: HD03262 vedtatt; Lagrådets uttalelse avventes vedr. ECHR Art 8-bestemmelsene; CJEU-utfordring mulig.
+- **Atomkraft**: HD01NU19 vedtatt; valg av tomt og investeringsbeslutning for bygging kreves 2027–2028.
+- **Forsvar**: 2,4 % BNP-forpliktelse bekreftet; SAAB Gripen E, Bofors, Nammo øker alle kapasiteten.
+- **Økonomi**: Bedring akselererer; IMF BNP 2,4 % (2026); husholdningsgjeldsrisiko normaliseres; eiendomsmarkedet bedrer seg.
+- **Koalisjonsskjørhet**: L ved 32 % terskelsrisiko; koalisjonsaritmetikk avhenger av at L overstiger 4%-sperregrensen.
+
+### Primær fremadrettet triggermekanisme
+
+**L-partiets valgmålingsterskel**: Hvis L faller under 4 % i de siste SVT/Ipsos-målingene, mister Tidø-koalisjonen sitt aritmetiske grunnlag, og koalisjonsberegningen skifter dramatisk mot S-ledede alternativer.
+
+### Mandatscorecard
+
+| Prioritet | Status | Vurdering |
+|---|---|---|
+| Migrasjonsbegrensninge | ✅ Vedtatt | HD03262 levert; rettssaker pågår |
+| Reaktivering av atomkraft | ✅ Lov vedtatt | HD01NU19 vedtatt; byggebeslutning utsatt |
+| Forsvar 2,4 % BNP | ⚠️ I rute | Forpliktelse bekreftet; 2028-milepæl gjenstår |
+| Reduksjon av gjengkriminalitet | ⚠️ Blandet | Lovgivning vedtatt; resultater delvis |
+| Ekonomisk bedring | ✅ Pågår | IMF 2,4 % BNP-vekst 2026 |
+| Koalisjonsstabilitet | ⚠️ Skjør | 175 mandater; L-terskelsrisiko |
+
+### Konfidensmerknad
+
+HØY konfidens på strukturell analyse (mandatarv, koalisjonsaritmetikk); MEDIUM på valgresultat og neste mandatformering.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Datum**: 2026-05-04
+**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e)(g)
+**Analysdjup**: comprehensive (2.5× Tier-C election-cycle)
+**Konfidensgrad**: HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+Sveriges mandatperiod 2022–2026 befinner sig i sina sista 132 dagar: Tidökoalitionen M+KD+L har styrt med SD:s förtroende- och sakpolitikstöd och genomfört den mest genomgripande förändringen av svensk migrationspolitik på en generation (HD03262), återaktiverat kärnkraft (HD01NU19) och åtagit sig 2,4 % av BNP i försvar (NATO:s mål till 2028). Koalitionen har 175 mandat — en knapp majoritet — med L vid kritisk tröskelrisk (32 % sannolikhet att falla under 4 %) och MP som också riskerar utslängning (38 %). Ekonomisk återhämtning pågår: IMF WEO apr-2026 prognostiserar 2,4 % BNP-tillväxt för 2026, upp från recessionsbutten 2024. Valet i september 2026 är statistiskt ett mynt som kastas.
+
+### Beslut som detta briefing stödjer
+
+1. **Valscenarioplanering**: Vilket av 12 scenarier efter valet realiseras? Koalitionsaritmetik, formeringstid, SD-kabinetsfråga.
+2. **Bedömning av politisk legacy**: Har Tidömandatet levererat på sina löften från 2022? Migration, kärnkraft, försvar, brottslighet, ekonomi.
+3. **Riskidentifiering**: Vilka är de 5 viktigaste riskerna under de återstående 132 dagarna (juridiska utmaningar, ekonomiska chocker, koalitionssplittring)?
+4. **Förberedelse för nästa mandatperiod**: Vilka strukturella förutsättningar ärver vinnaren i september 2026?
+5. **Bedömning av demokratisk motståndskraft**: Är Sveriges institutionella motståndskraft tillräcklig för utmaningen med SD:s normalisering?
+
+### 60-sekundersintelligens
+
+- **Val**: SD ~20–22 % (störst högerblockparti); S ~31–33 %; båda blocken nära 175-mandat-paritet. **Alltför jämnt att avgöra** — inom opinionsundersökningarnas felmarginal.
+- **Migration**: HD03262 antagen; Lagrådets yttrande inväntas gällande ECHR Art 8-bestämmelserna; CJEU-utmaning möjlig.
+- **Kärnkraft**: HD01NU19 antagen; platsvalsoch investeringsbeslut för konstruktion krävs 2027–2028.
+- **Försvar**: 2,4 % BNP-åtagande bekräftat; SAAB Gripen E, Bofors, Nammo ökar alla kapacitet.
+- **Ekonomi**: Återhämtning accelererar; IMF BNP 2,4 % (2026); hushållsrisk för skulder normaliseras; fastighetsmarknaden återhämtar sig.
+- **Koalitionsbräcklighet**: L vid 32 % tröskelrisk; koalitionsaritmetiken beror på att L överstiger 4 %-spärren.
+
+### Främsta framåtriktat utlösande faktor
+
+**L-partiets opinionsundersökningstryckel**: Om L sjunker under 4 % i de sista SVT/Ipsos-mätningarna förlorar Tidökoalitionen sin aritmetiska bas och koalitionsberäkningen skiftar dramatiskt mot S-ledda alternativ.
+
+### Mandatscorecard
+
+| Prioritet | Status | Bedömning |
+|---|---|---|
+| Migrationsbegränsning | ✅ Antagen | HD03262 levererad; juridiska utmaningar pågår |
+| Kärnkraftsåterstart | ✅ Lag antagen | HD01NU19 antagen; konstruktionsbeslut uppskjutet |
+| Försvar 2,4 % BNP | ⚠️ I rätt riktning | Åtagande bekräftat; milstolpe 2028 återstår |
+| Minskning av gängrelaterad brottslighet | ⚠️ Blandad | Lagstiftning antagen; delvis genomfört |
+| Ekonomisk återhämtning | ✅ Pågår | IMF 2,4 % BNP-tillväxt 2026 |
+| Koalitionsstabilitet | ⚠️ Skör | 175 mandat; L-tröskelrisk |
+
+### Konfidensgradering
+
+HÖG konfidensgrad på strukturell analys (mandatlegacy, koalitionsaritmetik); MEDEL på valresultat och nästa mandatformering.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling
+**日期**：2026-05-04
+**分类**：公开 — GDPR Art 9(2)(e)(g)
+**分析深度**：comprehensive（2.5× Tier-C election-cycle）
+**信心**：HIGH [Admiralty B2]
+
+---
+
+### BLUF
+
+瑞典2022–2026年任期进入最后132天：蒂德联合政府M+KD+L在SD的信任与供给支持下施政，实现了一代人中瑞典移民政策最深刻的转变（HD03262）、重新激活核能（HD01NU19）并承诺将GDP的2.4%用于国防（NATO 2028目标）。联合政府拥有175个席位——勉强过半——L党处于关键门槛风险（32%的概率跌破4%），MP也面临出局风险（38%）。经济复苏进行中：IMF WEO 2026年4月预测2026年GDP增长2.4%，从2024年经济衰退低谷回升。2026年9月的选举在统计上是一枚硬币的两面。
+
+### 本简报支持的决策
+
+1. **选举后情景规划**：12个选举后情景中哪个会成真？联合政府算术、组阁时间线、SD入阁问题。
+2. **政治遗产评估**：蒂德任期是否兑现了2022年的承诺？移民、核能、国防、犯罪、经济。
+3. **风险识别**：剩余132天内5大风险是什么（法律挑战、经济冲击、联合政府脆弱性）？
+4. **下届任期准备**：2026年9月的胜者继承怎样的结构性条件？
+5. **民主韧性评估**：面对SD正常化挑战，瑞典的制度韧性是否充分？
+
+### 60秒情报速览
+
+- **选举**：SD ~20–22%（右翼阵营最大政党）; S ~31–33%; 两大阵营接近175席均势。**过于接近难以判断** — 在民调误差范围内。
+- **移民**：HD03262已颁布；Lagrådet意见待发，涉及ECHR第8条条款；CJEU挑战可能出现。
+- **核能**：HD01NU19已颁布；选址和建设投资决定于2027–2028年需要作出。
+- **国防**：2.4%GDP承诺已确认；SAAB鹰狮E、博福斯、纳姆莫均在扩大产能。
+- **经济**：复苏加速；IMF GDP 2.4%（2026）；家庭负债风险正常化；房地产市场恢复。
+- **联合政府脆弱性**：L党处于32%门槛风险；联合政府算术依赖L超过4%门槛。
+
+### 主要前向触发因素
+
+**L党民调门槛**：如果L在最终SVT/Ipsos民调中跌破4%，蒂德联合政府将失去其算术基础，组阁计算将急剧转向以S为主导的替代方案。
+
+### 任期评分卡
+
+| 优先事项 | 状态 | 评估 |
+|---|---|---|
+| 移民限制 | ✅ 已颁布 | HD03262已落地；法律挑战进行中 |
+| 核能重新激活 | ✅ 法律已颁布 | HD01NU19已颁布；建设决定推迟 |
+| 国防GDP 2.4% | ⚠️ 进展顺利 | 承诺已确认；2028里程碑待达 |
+| 减少帮派犯罪 | ⚠️ 参差不齐 | 立法完成；结果部分实现 |
+| 经济复苏 | ✅ 进行中 | IMF 2.4% GDP增长2026 |
+| 联合政府稳定性 | ⚠️ 脆弱 | 175席；L门槛风险 |
+
+### 信心标签
+
+结构性分析（任期遗产、联合政府算术）置信度高；选举结果和下届任期组建置信度中等。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13<br/>T-132 days"] --> A["Scenario A<br/>Tidö renewal<br/>45%"]
+  E --> B["Scenario B<br/>S-bloc return<br/>45%"]
+  E --> C["Scenario C<br/>Hung parliament<br/>10%"]
+  A --> A1["A1: SD C&S<br/>Status quo<br/>27%"]
+  A --> A2["A2: SD cabinet<br/>Transformative<br/>9%"]
+  B --> B1["B1: S minority<br/>V+MP support<br/>18%"]
+  B --> B2["B2: S grand<br/>S+M coalition<br/>18%"]
+  C --> C1["C1: Caretaker<br/>Formation crisis<br/>10%"]
+  style E fill:#ff006e,color:#fff
+  style A fill:#1a4a8a,color:#fff
+  style B fill:#cc0000,color:#fff
+  style C fill:#555,color:#fff
+```
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
 ## Forward Look
 <!-- source: forward-look.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/forward-look.md -->
 
@@ -2474,7 +3402,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 41 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2504,6 +3432,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`comparative-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/comparative-context.md)
 - [`confidence-calibration.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/confidence-calibration.md)
 - [`electoral-forecast.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/electoral-forecast.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief_zh.md)
 - [`forward-look.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/forward-look.md)
 - [`institutional-constraints.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/institutional-constraints.md)
 - [`international-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/international-context.md)

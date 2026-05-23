@@ -6,7 +6,7 @@ date: 2026-05-05
 subfolder: evening-analysis
 slug: 2026-05-05-evening-analysis
 source_folder: analysis/daily/2026-05-05/evening-analysis
-generated_at: 2026-05-22T13:53:53.842Z
+generated_at: 2026-05-23T08:06:00.579Z
 language: en
 layout: article
 ---
@@ -88,6 +88,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1945,13 +1958,759 @@ New PIRs generated this cycle:
 - SCB: available
 - World Bank: available
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز استخباراتي — تحليل المساء 2026-05-05
+
+**التصنيف**: PUBLIC  
+**إلى**: مشتركي Riksdagsmonitor والمحللين السياسيين  
+**التاريخ**: 2026-05-05 | **Riksmöte**: 2025/26  
+**العد التنازلي للانتخابات**: T−131 يوماً (2026-09-13)  
+
+---
+
+### الملخص التنفيذي في خمس نقاط
+
+1. **SD يطلق طلقتين إصلاحيتين منسقتين للدولة**: تشير الاستجوابات HD10464 (إلغاء Sida) وHD10466 (موظفون مدنيون غير سياسيين في Regeringskansliet) إلى حملة ما قبل الانتخابات لإعادة تأطير الدولة السويدية باعتبارها منتفخة ومأسورة سياسياً. كلاهما يستهدف وزراء الشريك الائتلافي (Dousa/M, Malmer Stenergard/M)، مما يخلق توتراً عاماً متعمداً.
+
+2. **JuU30 يمضي قدماً بالاحتجاز الإلزامي للشباب**: وافقت لجنة العدل في Riksdag على Prop. 2025/26:99، مشددةً العقوبات السالبة للحرية على الجانحين الأحداث. تدخل حيز التنفيذ عند موافقة Riksdag. صوتت S + V ضد بناءً على أسس التناسب واتفاقية الأمم المتحدة لحقوق الطفل. تضمن الحكومة إنجازاً ملموساً في "مكافحة الجريمة" قبل الانتخابات.
+
+3. **S تتحرك ضد تفكيك الحضور الإقليمي للدولة**: تتحدى HD10465 (S/Björk) وزير KD للإدارة العامة بشأن إغلاق مكاتب Skatteverket. تعزز رواية S الريفية لدولة الرفاهية بوصفها ثيمة انتخابية مركزية.
+
+4. **V يتحدى موقف السويد من معاهدة NPT**: تسأل HD11787 عما إذا كانت السويد ستبتعد عن مواقف التكامل النووي لحلف الناتو في مؤتمر مراجعة NPT الجاري (27 أبريل–22 مايو). الإجابة متوقعة بحلول ~26 مايو.
+
+5. **السياق اليومي الشامل**: بالاقتران مع التحليلات الشقيقة لهذا اليوم (HD03255 مراقبة ديون الأسر، KU39 الشفافية الدستورية، مسار Ostlänken، شرطة جرائم العصابات)، يُعد كوربوس الخامس من مايو أكثر يوم برلماني محملاً بالعبء الانتخابي منذ 29 أبريل.
+
+---
+
+### الشخصيات الرئيسية
+
+| الاسم | الحزب | الدور | إشارة اليوم |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | قدّم HD10464 (Sida) + HD10466 (موظفون مدنيون) |
+| Tobias Dousa | M | Biståndsminister | هدف استجواب إلغاء Sida |
+| Maria Malmer Stenergard | M | Utrikesminister | هدف استجوابات الموظفين + NPT |
+| Eric Slottner | KD | Civilminister | هدف استجواب الحضور الإقليمي للدولة |
+| Peter Björk | S | Riksdagsledamot | قدّم HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | قدّم HD11787 (NPT/kärnvapen) |
+
+---
+
+### متطلبات الاستخبارات ذات الأولوية الاستشرافية
+
+| PIR | الأفق | الحالة |
+|-----|---------|--------|
+| PIR-001: اجتثاث جرائم العصابات (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: نشاط الوكالات (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: متانة الائتلاف | T+30→T+90 | OPEN |
+| PIR-007: مسار Ostlänken | T+21 | OPEN |
+| PIR-EA-2505-01: الرد على إلغاء Sida | T+21→T+30 | NEW |
+| PIR-EA-2505-02: رد الموظفين غير السياسيين | T+21 | NEW |
+| PIR-EA-2505-03: إعلان الموقف السويدي من NPT | T+21 | NEW |
+
+---
+
+### تقييم مستوى الثقة
+
+**إجمالي**: HIGH. تم استرداد جميع الوثائق ذات الأولوية القصوى مع النص الكامل. تؤكد التحليلات الشقيقة التماسك السردي. سياق IMF الاقتصادي متدهور (SDMX) لكن WEO/FM Datamapper يعمل — لا تأثير مادي على تحليل الحوكمة والتشريع.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_da.md -->
+
+**Klassificering**: PUBLIC  
+**For**: Riksdagsmonitors abonnenter og politiske analytikere  
+**Dato**: 2026-05-05 | **Riksmøde**: 2025/26  
+**Valtælling**: T−131 dage (2026-09-13)  
+
+---
+
+### Fempunktsopsummering
+
+1. **SD affyrer to koordinerede statreformsangreb**: Interpellationerne HD10464 (afskaf Sida) og HD10466 (upolitiske embedsmænd i Regeringskansliet) signalerer en førvalgskampagne for at omformulere den svenske stat som oppustet og politisk fanget. Begge retter sig mod koalitionspartnerens ministre (Dousa/M, Malmer Stenergard/M), hvilket skaber bevidst offentlig spænding.
+
+2. **JuU30 fremmer obligatorisk ungdomsvaretægt**: Riksdagens retsudvalg har godkendt Prop. 2025/26:99 og stramme frihedsberøvende sanktioner for unge lovovertrædere. Træder i kraft ved Riksdagens vedtagelse. S + V stemte imod af proportionalitets- og UNCRC-grunde. Regeringen sikrer et konkret "hårdt mod kriminalitet"-resultat inden valget.
+
+3. **S mobiliserer mod nedlæggelse af statslig regional tilstedeværelse**: HD10465 (S/Björk) udfordrer KD's civilminister om Skatteverkets kontornedlæggelser. Styrker S's landlige velfærdsstatslige narrativ som centralt valgttema.
+
+4. **V udfordrer Sveriges NPT-holdning**: HD11787 spørger, om Sverige vil afvige fra NATO's atomvåbenintegrationspositioner på den igangværende NPT-revisionskonference (27. april–22. maj). Svar forventet ~26. maj.
+
+5. **Heldagskontekst**: Kombineret med dagens søsteranalyser (HD03255 husstandsgældsovervågning, KU39 konstitutionel gennemsigtighed, Ostlänkens rute, bandekriminalitetsbekæmpelse) er 5. maj-korpuset den mest valgladede parlamentsdag siden 29. april.
+
+---
+
+### Nøglepersoner
+
+| Navn | Parti | Rolle | Dagens signal |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | Indgav HD10464 (Sida) + HD10466 (embedsmænd) |
+| Tobias Dousa | M | Biståndsminister | Mål for Sida-nedlæggelsesinterpellation |
+| Maria Malmer Stenergard | M | Utrikesminister | Mål for embedsmands- + NPT-interpellationer |
+| Eric Slottner | KD | Civilminister | Mål for statslig servicenærværsinterpellation |
+| Peter Björk | S | Riksdagsledamot | Indgav HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | Indgav HD11787 (NPT/kärnvapen) |
+
+---
+
+### Fremadrettede prioriterede efterretningskrav
+
+| PIR | Horisont | Status |
+|-----|---------|--------|
+| PIR-001: Bandekriminalitetsudryddelse (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: Myndighedsaktivisme (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: Koalitionsholdbarhed | T+30→T+90 | OPEN |
+| PIR-007: Ostlänkens rute | T+21 | OPEN |
+| PIR-EA-2505-01: Sida-nedlæggelsessvar | T+21→T+30 | NEW |
+| PIR-EA-2505-02: Upolitiske embedsmændssvar | T+21 | NEW |
+| PIR-EA-2505-03: Sveriges NPT-positionserklæring | T+21 | NEW |
+
+---
+
+### Konfidensvurdering
+
+**Samlet**: HIGH. Alle højprioriterede dokumenter hentet med fuld tekst. Søsteranalyser bekræfter narrativ sammenhæng. IMF økonomisk kontekst forringet (SDMX) men WEO/FM Datamapper operationel — ingen materiel indvirkning på styrings-/lovgivningsanalysen.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_de.md -->
+
+**Klassifizierung**: PUBLIC  
+**Für**: Riksdagsmonitor-Abonnenten und politische Analysten  
+**Datum**: 2026-05-05 | **Riksmöte**: 2025/26  
+**Wahlcountdown**: T−131 Tage (2026-09-13)  
+
+---
+
+### Fünfpunktzusammenfassung
+
+1. **SD feuert zwei koordinierte Staatsreformsalven**: Die Interpellationen HD10464 (Abschaffung von Sida) und HD10466 (unpolitische Beamte im Regeringskansliet) signalisieren eine Vorwahlkampagne, um den schwedischen Staat als aufgebläht und politisch vereinnahmt neu zu rahmen. Beide richten sich gegen Koalitionspartnerminister (Dousa/M, Malmer Stenergard/M) und schaffen bewusste öffentliche Spannungen.
+
+2. **JuU30 treibt obligatorische Jugendhaft voran**: Der Rechtsausschuss des Riksdags hat Prop. 2025/26:99 gebilligt und verschärft freiheitsentziehende Strafen für jugendliche Straftäter. Tritt mit Annahme durch den Riksdag in Kraft. S + V stimmten aus Verhältnismäßigkeits- und UN-Kinderrechtskonventionsgründen dagegen. Die Regierung sichert sich vor der Wahl ein konkretes „Hartes Vorgehen gegen Kriminalität"-Ergebnis.
+
+3. **S mobilisiert gegen Abbau staatlicher Regionalpräsenz**: HD10465 (S/Björk) fordert die KD-Ministerin für öffentliche Verwaltung zu Skatteverket-Büroschließungen heraus. Stärkt S's ländliches Wohlfahrtsstaatsnarrativ als zentrales Wahlthema.
+
+4. **V fordert Schwedens NPT-Haltung heraus**: HD11787 fragt, ob Schweden bei der laufenden NPT-Überprüfungskonferenz (27. April–22. Mai) von den NATO-Nuklearintegrationsstandpunkten abweichen wird. Antwort bis ~26. Mai erwartet.
+
+5. **Tagesübergreifender Kontext**: Zusammen mit den heutigen Schwesteranalysen (HD03255 Haushaltsschuldenüberwachung, KU39 verfassungsrechtliche Transparenz, Ostlänken-Route, Bandenkriminalitätspolizei) ist das 5.-Mai-Korpus der wahlträchtigste Parlamentstag seit dem 29. April.
+
+---
+
+### Schlüsselpersonen
+
+| Name | Partei | Rolle | Heutiges Signal |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | Eingebracht HD10464 (Sida) + HD10466 (Beamte) |
+| Tobias Dousa | M | Biståndsminister | Ziel der Sida-Abschaffungsinterpellation |
+| Maria Malmer Stenergard | M | Utrikesminister | Ziel der Beamten- + NPT-Interpellationen |
+| Eric Slottner | KD | Civilminister | Ziel der staatlichen Servicepräsenz-Interpellation |
+| Peter Björk | S | Riksdagsledamot | Eingebracht HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | Eingebracht HD11787 (NPT/kärnvapen) |
+
+---
+
+### Zukunftsgerichtete prioritäre Nachrichtenanforderungen
+
+| PIR | Horizont | Status |
+|-----|---------|--------|
+| PIR-001: Bandenkriminalitätseradikation (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: Behördenaktivismus (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: Koalitionsbeständigkeit | T+30→T+90 | OPEN |
+| PIR-007: Ostlänken-Route | T+21 | OPEN |
+| PIR-EA-2505-01: Sida-Abschaffungsantwort | T+21→T+30 | NEW |
+| PIR-EA-2505-02: Unpolitische Beamtenantwort | T+21 | NEW |
+| PIR-EA-2505-03: Schwedische NPT-Positionserklärung | T+21 | NEW |
+
+---
+
+### Konfidenzeinschätzung
+
+**Gesamt**: HIGH. Alle hochprioritären Dokumente mit Volltext abgerufen. Schwesteranalysen bestätigen narrative Kohärenz. IMF-Wirtschaftskontext verschlechtert (SDMX), aber WEO/FM Datamapper betriebsbereit — kein materieller Einfluss auf die Governance-/Gesetzgebungsanalyse.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_es.md -->
+
+**Clasificación**: PUBLIC  
+**Para**: Suscriptores de Riksdagsmonitor y analistas políticos  
+**Fecha**: 2026-05-05 | **Riksmöte**: 2025/26  
+**Cuenta regresiva electoral**: T−131 días (2026-09-13)  
+
+---
+
+### Resumen ejecutivo en cinco puntos
+
+1. **El SD dispara dos salvas coordinadas de reforma estatal**: Las interpelaciones HD10464 (abolir Sida) y HD10466 (funcionarios apolíticos en el Regeringskansliet) señalan una campaña preelectoral para reencuadrar el Estado sueco como hinchado y políticamente capturado. Ambas apuntan a ministros del socio de coalición (Dousa/M, Malmer Stenergard/M), creando tensión pública deliberada.
+
+2. **JuU30 impulsa la custodia obligatoria de jóvenes**: El Comité de Justicia del Riksdag ha aprobado la Prop. 2025/26:99, endureciendo las sanciones privativas de libertad para delincuentes juveniles. Entrará en vigor a la aprobación del Riksdag. S + V votaron en contra por razones de proporcionalidad y la CDN. El Gobierno asegura un resultado concreto de «mano dura contra el crimen» antes de las elecciones.
+
+3. **S se moviliza contra el desmantelamiento de la presencia regional del Estado**: HD10465 (S/Björk) interpela a la ministra de KD para la Administración Pública sobre el cierre de oficinas del Skatteverket. Refuerza el narrativo rural de Estado de bienestar de S como tema electoral central.
+
+4. **V cuestiona la postura de Suecia sobre el TNP**: HD11787 pregunta si Suecia se apartará de las posiciones de integración nuclear de la OTAN en la conferencia de revisión del TNP en curso (27 de abril–22 de mayo). Respuesta esperada para ~26 de mayo.
+
+5. **Contexto global del día**: Combinado con los análisis hermanos del día (HD03255 vigilancia de deuda de hogares, KU39 transparencia constitucional, ruta de Ostlänken, policía de crimen organizado), el corpus del 5 de mayo es el día parlamentario con mayor carga electoral desde el 29 de abril.
+
+---
+
+### Personas clave
+
+| Nombre | Partido | Cargo | Señal del día |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | Presentó HD10464 (Sida) + HD10466 (funcionarios) |
+| Tobias Dousa | M | Biståndsminister | Objetivo de la interpelación sobre abolición de Sida |
+| Maria Malmer Stenergard | M | Utrikesminister | Objetivo de las interpelaciones de funcionarios + TNP |
+| Eric Slottner | KD | Civilminister | Objetivo de la interpelación sobre presencia regional del Estado |
+| Peter Björk | S | Riksdagsledamot | Presentó HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | Presentó HD11787 (NPT/kärnvapen) |
+
+---
+
+### Requisitos de inteligencia prioritarios prospectivos
+
+| PIR | Horizonte | Estado |
+|-----|---------|--------|
+| PIR-001: Erradicación del crimen organizado (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: Activismo de agencias (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: Durabilidad de la coalición | T+30→T+90 | OPEN |
+| PIR-007: Ruta de Ostlänken | T+21 | OPEN |
+| PIR-EA-2505-01: Respuesta a la abolición de Sida | T+21→T+30 | NEW |
+| PIR-EA-2505-02: Respuesta de funcionarios apolíticos | T+21 | NEW |
+| PIR-EA-2505-03: Declaración de posición de Suecia sobre el TNP | T+21 | NEW |
+
+---
+
+### Evaluación de confianza
+
+**General**: HIGH. Todos los documentos de alta prioridad recuperados con texto completo. Los análisis hermanos confirman coherencia narrativa. El contexto económico del FMI está degradado (SDMX) pero WEO/FM Datamapper operativo — sin impacto material en el análisis de gobernanza/legislativo.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_fi.md -->
+
+**Luokitus**: PUBLIC  
+**Kohde**: Riksdagsmonitorin tilaajat ja poliittiset analyytikot  
+**Päivämäärä**: 2026-05-05 | **Riksmöte**: 2025/26  
+**Vaalilaskelma**: T−131 päivää (2026-09-13)  
+
+---
+
+### Viisikohtainen yhteenveto
+
+1. **SD ampuu kaksi koordinoitua valtiouudistussalvaa**: Interpellaatiot HD10464 (Sidan lakkauttaminen) ja HD10466 (epäpoliittiset virkamiehet Regeringskansliassa) merkitsevät ennakkovaalikampanjaa Ruotsin valtion uudelleenfreimaamiseksi paisuneeksi ja poliittisesti kaappaukseen joutuneeksi. Molemmat kohdistuvat koaliopartnerien ministereihin (Dousa/M, Malmer Stenergard/M), luoden tahallisen julkisen jännitteen.
+
+2. **JuU30 edistää pakollista nuorisotutkintavankeutta**: Riksdagenin oikeuskomitea on hyväksynyt Prop. 2025/26:99, tiukentaen vapaudenriistoseuraamuksia nuorille rikoksentekijöille. Voimaan Riksdagenin hyväksynnällä. S + V äänestivät vastaan suhteellisuus-/YK:n lapsen oikeuksien sopimuksen perusteilla. Hallitus varmistaa konkreettisen "kova rikoksille" -tuloksen ennen vaaleja.
+
+3. **S mobilisoi valtiollisen alueellisen läsnäolon purkamista vastaan**: HD10465 (S/Björk) haastaa KD:n sisäasiainministerin Skatteverketin toimistosulkemisista. Vahvistaa S:n maaseudun hyvinvointivaltio-narratiivia keskeisenä vaaliteemana.
+
+4. **V haastaa Ruotsin NPT-kannan**: HD11787 kysyy, poistuuko Ruotsi NATO:n ydinaseiden integrointipositioista meneillään olevassa NPT:n arviointikonferenssissa (27.4.–22.5.). Vastaus odotettavissa ~26.5.
+
+5. **Kokonaisviikon konteksti**: Yhdistettynä tämän päivän sisaranalyyseihin (HD03255 kotitalouksien velkavalvonta, KU39 perustuslaillinen läpinäkyvyys, Ostlänkenin reitti, jengirikosvalvonta) on 5.5.-korpus vaaleilla lataukseltaan vaativan parlamenttipäivän sitten 29. huhtikuuta.
+
+---
+
+### Avainhenkilöt
+
+| Nimi | Puolue | Rooli | Tämän päivän signaali |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | Jätti HD10464 (Sida) + HD10466 (virkamiehet) |
+| Tobias Dousa | M | Biståndsminister | Sidan lakkauttamisinterpellaation kohde |
+| Maria Malmer Stenergard | M | Utrikesminister | Virkamies- + NPT-interpellaatioiden kohde |
+| Eric Slottner | KD | Civilminister | Valtiollisen palveluläsnäolon interpellaation kohde |
+| Peter Björk | S | Riksdagsledamot | Jätti HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | Jätti HD11787 (NPT/kärnvapen) |
+
+---
+
+### Eteenpäin katsovat prioriteetit tiedusteluvaatimuksissa
+
+| PIR | Horisontti | Tila |
+|-----|---------|--------|
+| PIR-001: Jengirikollisuuden hävittäminen (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: Virastoktiivismi (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: Koalition kestävyys | T+30→T+90 | OPEN |
+| PIR-007: Ostlänkenin reitti | T+21 | OPEN |
+| PIR-EA-2505-01: Sidan lakkauttamisen vastaus | T+21→T+30 | NEW |
+| PIR-EA-2505-02: Epäpoliittisten virkamiesten vastaus | T+21 | NEW |
+| PIR-EA-2505-03: Ruotsin NPT-positiojulistus | T+21 | NEW |
+
+---
+
+### Luottamusarvio
+
+**Kokonaisuudessaan**: HIGH. Kaikki huippuprioriteettidokumentit haettu täydellä tekstillä. Sisaranalyysit vahvistavat narratiivisen koherenssin. IMF:n taloudellinen konteksti heikentynyt (SDMX) mutta WEO/FM Datamapper toiminnassa — ei materiaalista vaikutusta hallinto-/lainsäädäntöanalyysiin.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_fr.md -->
+
+**À l'attention de** : Les abonnés de Riksdagsmonitor et les analystes politiques  
+
+**Compte à rebours électoral** : T−131 jours (2026-09-13)  
+
+---
+
+### Résumé en cinq points
+
+1. **Le SD tire deux salves coordonnées de réforme de l'État** : Les interpellations HD10464 (abolir la Sida) et HD10466 (fonctionnaires apolitiques au Regeringskansliet) annoncent une campagne pré-électorale visant à recadrer l'État suédois comme obèse et politiquement capturé. Les deux visent des ministres partenaires de coalition (Dousa/M, Malmer Stenergard/M), créant une tension publique délibérée.
+
+2. **JuU30 fait avancer la détention obligatoire des jeunes** : Le comité de justice du Riksdag a approuvé la Prop. 2025/26:99, renforçant les sanctions privatives de liberté pour les jeunes délinquants. Entre en vigueur à l'adoption par le Riksdag. S + V ont voté contre pour des raisons de proportionnalité et de CIDE. Le gouvernement s'assure un résultat concret de type « lutte contre la criminalité » avant les élections.
+
+3. **S se mobilise contre le démantèlement de la présence régionale de l'État** : HD10465 (S/Björk) interpelle la ministre KD de l'administration publique sur les fermetures de bureaux du Skatteverket. Renforce le narratif rural d'État-providence de S comme thème électoral central.
+
+4. **V remet en question la position suédoise sur le TNP** : HD11787 demande si la Suède s'écartera des positions d'intégration nucléaire de l'OTAN lors de la conférence d'examen du TNP en cours (27 avril–22 mai). Réponse attendue d'ici le ~26 mai.
+
+5. **Contexte global de la journée** : Combiné avec les analyses sœurs du jour (HD03255 surveillance de la dette des ménages, KU39 transparence constitutionnelle, tracé d'Ostlänken, policing de la criminalité des gangs), le corpus du 5 mai est la journée parlementaire la plus électoralement chargée depuis le 29 avril.
+
+---
+
+### Personnalités clés
+
+| Nom | Parti | Rôle | Signal du jour |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | A déposé HD10464 (Sida) + HD10466 (fonctionnaires) |
+| Tobias Dousa | M | Biståndsminister | Cible de l'interpellation sur l'abolition de Sida |
+| Maria Malmer Stenergard | M | Utrikesminister | Cible des interpellations fonctionnaires + TNP |
+| Eric Slottner | KD | Civilminister | Cible de l'interpellation sur la présence régionale de l'État |
+| Peter Björk | S | Riksdagsledamot | A déposé HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | A déposé HD11787 (NPT/kärnvapen) |
+
+---
+
+### Exigences prioritaires de renseignement prospectif
+
+| PIR | Horizon | Statut |
+|-----|---------|--------|
+| PIR-001 : Éradication de la criminalité des gangs (HD10458) | T+7→T+21 | OPEN |
+| PIR-003 : Activisme des agences (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005 : Durabilité de la coalition | T+30→T+90 | OPEN |
+| PIR-007 : Tracé d'Ostlänken | T+21 | OPEN |
+| PIR-EA-2505-01 : Réponse à l'abolition de Sida | T+21→T+30 | NEW |
+| PIR-EA-2505-02 : Réponse fonctionnaires apolitiques | T+21 | NEW |
+| PIR-EA-2505-03 : Déclaration de position suédoise sur le TNP | T+21 | NEW |
+
+---
+
+### Évaluation de la confiance
+
+**Global** : HIGH. Tous les documents hautement prioritaires récupérés avec texte intégral. Les analyses sœurs confirment la cohérence narrative. Le contexte économique du FMI est dégradé (SDMX) mais WEO/FM Datamapper opérationnel — aucun impact matériel sur l'analyse de gouvernance/législative.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תדריך מודיעיני — ניתוח ערב 2026-05-05
+
+**סיווג**: PUBLIC  
+**לכבוד**: מנויי Riksdagsmonitor ואנליסטים פוליטיים  
+**תאריך**: 2026-05-05 | **Riksmöte**: 2025/26  
+**ספירה לאחור לבחירות**: T−131 ימים (2026-09-13)  
+
+---
+
+### סיכום בחמש נקודות
+
+1. **SD מפתיח שתי פגזי רפורמת מדינה מתואמות**: הבהכרזות HD10464 (ביטול Sida) ו-HD10466 (עובדי ממשלה א-פוליטיים ב-Regeringskansliet) מסמנות קמפיין טרום-בחירות לממסגר מחדש את המדינה השוודית כנפוחה ומושפעת פוליטית. שתיהן מכוונות לשרים מהשותפה לקואליציה (Dousa/M, Malmer Stenergard/M), ויוצרות מתח ציבורי מכוון.
+
+2. **JuU30 מקדם מעצר חובה לנוער**: ועדת המשפט של Riksdag אישרה את Prop. 2025/26:99, המחמירה עונשים שוללי חירות לעברייני נוער. ייכנס לתוקף עם אישור Riksdag. S + V הצביעו נגד מטעמי מידתיות ואמנת זכויות הילד של האו"ם. הממשלה מבטיחה הישג קונקרטי בתחום "אפס סובלנות לפשע" לפני הבחירות.
+
+3. **S מגייסת כוחות נגד פירוק נוכחות המדינה האזורית**: HD10465 (S/Björk) מאתגרת את שרת KD לממשל הציבורי בנושא סגירת משרדי Skatteverket. מחזקת את נרטיב מדינת הרווחה הכפרית של S כנושא מרכזי בבחירות.
+
+4. **V מאתגר את עמדת שוודיה ב-NPT**: HD11787 שואל האם שוודיה תסטה מעמדות שילוב הגרעין של נאט"ו בוועידת הסקירה ה-NPT השוטפת (27 באפריל–22 במאי). תשובה צפויה עד ~26 במאי.
+
+5. **הקשר יומי כולל**: בשילוב עם הניתוחים האחים של היום (HD03255 פיקוח על חובות משקי בית, KU39 שקיפות חוקתית, מסלול Ostlänken, ‏אכיפת פשע כנופיות), קורפוס ה-5 במאי הוא יום הפרלמנט בעל העומס הבחירותי הגדול ביותר מאז ה-29 באפריל.
+
+---
+
+### אנשי מפתח
+
+| שם | מפלגה | תפקיד | אות של היום |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | הגיש HD10464 (Sida) + HD10466 (עובדי ממשלה) |
+| Tobias Dousa | M | Biståndsminister | יעד בהכרזת ביטול Sida |
+| Maria Malmer Stenergard | M | Utrikesminister | יעד בהכרזות עובדים + NPT |
+| Eric Slottner | KD | Civilminister | יעד בהכרזת נוכחות שירות מדינתי |
+| Peter Björk | S | Riksdagsledamot | הגיש HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | הגיש HD11787 (NPT/kärnvapen) |
+
+---
+
+### דרישות מודיעין מועדפות לעתיד
+
+| PIR | אופק | מצב |
+|-----|---------|--------|
+| PIR-001: השמדת פשע כנופיות (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: אקטיביזם סוכנויות (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: עמידות הקואליציה | T+30→T+90 | OPEN |
+| PIR-007: מסלול Ostlänken | T+21 | OPEN |
+| PIR-EA-2505-01: מענה לביטול Sida | T+21→T+30 | NEW |
+| PIR-EA-2505-02: מענה עובדים א-פוליטיים | T+21 | NEW |
+| PIR-EA-2505-03: הצהרת עמדת שוודיה ב-NPT | T+21 | NEW |
+
+---
+
+### הערכת אמינות
+
+**כוללת**: HIGH. כל המסמכים בעדיפות גבוהה אוחזרו עם טקסט מלא. הניתוחים האחים מאשרים קוהרנטיות נרטיבית. ההקשר הכלכלי של IMF ירוד (SDMX) אך WEO/FM Datamapper פעיל — אין השפעה מהותית על ניתוח הממשל/החקיקה.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_ja.md -->
+
+**分類**: PUBLIC  
+**宛先**: Riksdagsmonitor購読者および政治アナリスト  
+**日付**: 2026-05-05 | **Riksmöte**: 2025/26  
+**選挙カウントダウン**: T−131日 (2026-09-13)  
+
+---
+
+### 5点エグゼクティブサマリー
+
+1. **SDが2つの協調的な国家改革攻撃を仕掛ける**: 質問状HD10464（Sida廃止）とHD10466（Regeringskanslietnの非政治的公務員）は、スウェーデン国家を肥大化して政治的に取り込まれたものとして再定義する選挙前キャンペーンを示している。両方とも連立パートナーの大臣（Dousa/M, Malmer Stenergard/M）を標的にし、意図的な公的緊張を生み出している。
+
+2. **JuU30が義務的少年拘留を推進**: Riksdag司法委員会がProp. 2025/26:99を承認し、少年犯罪者への自由制限処罰を強化した。Riksdag採択後に発効。S + Vは比例性・国連子どもの権利条約を理由に反対票を投じた。政府は選挙前に具体的な「犯罪に厳しい」成果を確保する。
+
+3. **Sが国家の地域存在感解体に対して動員**: HD10465（S/Björk）は、Skatteverketの事務所閉鎖についてKDの行政大臣を問い質す。中心的選挙テーマとしてSの地方福祉国家ナラティブを強化する。
+
+4. **VがスウェーデンのNPTスタンスに異議**: HD11787は、進行中のNPT再検討会議（4月27日〜5月22日）でスウェーデンがNATOの核統合ポジションから離れるかどうかを問う。回答は〜5月26日まで。
+
+5. **一日全体の文脈**: 本日の関連分析（HD03255家計債務監視、KU39憲法的透明性、Ostlänken路線、ギャング犯罪取締り）と合わせて、5月5日の資料群は4月29日以来最も選挙色の強い議会の日となっている。
+
+---
+
+### 主要人物
+
+| 氏名 | 政党 | 役割 | 本日のシグナル |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | HD10464 (Sida) + HD10466 (公務員) を提出 |
+| Tobias Dousa | M | Biståndsminister | Sida廃止質問状の対象 |
+| Maria Malmer Stenergard | M | Utrikesminister | 公務員 + NPT質問状の対象 |
+| Eric Slottner | KD | Civilminister | 国家地域サービス存在質問状の対象 |
+| Peter Björk | S | Riksdagsledamot | HD10465 (statlig närvaro) を提出 |
+| Håkan Svenneling | V | Riksdagsledamot | HD11787 (NPT/kärnvapen) を提出 |
+
+---
+
+### 将来の優先インテリジェンス要件
+
+| PIR | 期間 | 状態 |
+|-----|---------|--------|
+| PIR-001: ギャング犯罪撲滅 (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: 機関活動主義 (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: 連立政権の耐久性 | T+30→T+90 | OPEN |
+| PIR-007: Ostlänken路線 | T+21 | OPEN |
+| PIR-EA-2505-01: Sida廃止に対する回答 | T+21→T+30 | NEW |
+| PIR-EA-2505-02: 非政治的公務員への回答 | T+21 | NEW |
+| PIR-EA-2505-03: スウェーデンのNPTポジション宣言 | T+21 | NEW |
+
+---
+
+### 信頼性評価
+
+**総合**: HIGH。すべての最優先文書がフルテキストで取得済み。関連分析がナラティブの一貫性を確認。IMFの経済コンテキストは低下（SDMX）しているが、WEO/FM Datamapperは稼働中 — ガバナンス/立法分析への実質的影響なし。
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_ko.md -->
+
+**분류**: PUBLIC  
+**수신**: Riksdagsmonitor 구독자 및 정치 분석가  
+**날짜**: 2026-05-05 | **Riksmöte**: 2025/26  
+**선거 카운트다운**: T−131일 (2026-09-13)  
+
+---
+
+### 5개항 요약
+
+1. **SD가 두 가지 협조적 국가 개혁 공격을 개시**: 질의서 HD10464 (Sida 폐지)와 HD10466 (Regeringskansliet의 비정치적 공무원)은 스웨덴 국가를 비대하고 정치적으로 포획된 것으로 재정의하는 선거 전 캠페인을 신호한다. 둘 다 연립 파트너 장관들(Dousa/M, Malmer Stenergard/M)을 겨냥해 의도적인 공적 긴장을 조성한다.
+
+2. **JuU30이 의무적 청소년 구금을 추진**: Riksdag 법사위원회가 Prop. 2025/26:99를 승인하여 청소년 범죄자에 대한 자유 제한적 처벌을 강화했다. Riksdag 채택 시 발효. S + V는 비례성 및 유엔아동권리협약을 이유로 반대 투표. 정부는 선거 전에 구체적인 "범죄에 강경" 성과를 확보한다.
+
+3. **S가 국가 지역 존재감 해체에 반대하여 동원**: HD10465 (S/Björk)는 Skatteverket 사무소 폐쇄에 관해 KD 행정장관을 질책한다. 중심 선거 테마로서 S의 농촌 복지국가 서사를 강화한다.
+
+4. **V가 스웨덴의 NPT 입장에 이의**: HD11787은 진행 중인 NPT 검토회의(4월 27일~5월 22일)에서 스웨덴이 NATO 핵 통합 입장에서 이탈할 것인지를 묻는다. 답변은 ~5월 26일 예정.
+
+5. **하루 전체 맥락**: 오늘의 자매 분석(HD03255 가계 부채 감시, KU39 헌법적 투명성, Ostlänken 노선, 갱단 범죄 치안)과 결합하면, 5월 5일 자료집은 4월 29일 이후 가장 선거색이 짙은 의회일이다.
+
+---
+
+### 핵심 인물
+
+| 이름 | 정당 | 역할 | 오늘의 신호 |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | HD10464 (Sida) + HD10466 (공무원) 제출 |
+| Tobias Dousa | M | Biståndsminister | Sida 폐지 질의서 대상 |
+| Maria Malmer Stenergard | M | Utrikesminister | 공무원 + NPT 질의서 대상 |
+| Eric Slottner | KD | Civilminister | 국가 지역 서비스 존재감 질의서 대상 |
+| Peter Björk | S | Riksdagsledamot | HD10465 (statlig närvaro) 제출 |
+| Håkan Svenneling | V | Riksdagsledamot | HD11787 (NPT/kärnvapen) 제출 |
+
+---
+
+### 미래 우선 정보 요구사항
+
+| PIR | 지평 | 상태 |
+|-----|---------|--------|
+| PIR-001: 갱단 범죄 근절 (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: 기관 행동주의 (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: 연립 내구성 | T+30→T+90 | OPEN |
+| PIR-007: Ostlänken 노선 | T+21 | OPEN |
+| PIR-EA-2505-01: Sida 폐지에 대한 답변 | T+21→T+30 | NEW |
+| PIR-EA-2505-02: 비정치적 공무원 답변 | T+21 | NEW |
+| PIR-EA-2505-03: 스웨덴 NPT 입장 선언 | T+21 | NEW |
+
+---
+
+### 신뢰성 평가
+
+**전반**: HIGH. 모든 최우선 문서가 전문으로 검색됨. 자매 분석이 서사적 일관성을 확인. IMF 경제 맥락 저하(SDMX)되었으나 WEO/FM Datamapper 운영 중 — 거버넌스/입법 분석에 실질적 영향 없음.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_nl.md -->
+
+**Classificatie**: PUBLIC  
+**Voor**: Riksdagsmonitor-abonnees en politieke analisten  
+**Datum**: 2026-05-05 | **Riksmöte**: 2025/26  
+**Verkiezingsaftelling**: T−131 dagen (2026-09-13)  
+
+---
+
+### Vijfpuntssamenvatting
+
+1. **SD vuurt twee gecoördineerde staatshervormingssalvo's af**: De interpellaties HD10464 (afschaffen van Sida) en HD10466 (apolitieke ambtenaren in het Regeringskansliet) signaleren een pre-electorale campagne om de Zweedse staat neer te zetten als opgezwollen en politiek gevangen. Beide richten zich op ministers van de coalitiepartner (Dousa/M, Malmer Stenergard/M), wat bewuste publieke spanning creëert.
+
+2. **JuU30 drijft verplichte jeugddetentie door**: De justitiecommissie van de Riksdag heeft Prop. 2025/26:99 goedgekeurd en de vrijheidsbeperkende sancties voor jeugdige overtreders aangescherpt. Treedt in werking bij aanvaarding door de Riksdag. S + V stemden tegen op grond van proportionaliteit en het VN-Kinderrechtenverdrag. De regering verzekert een concreet 'hard tegen criminaliteit'-resultaat voor de verkiezingen.
+
+3. **S mobiliseert tegen afbraak van staatlijke regionale aanwezigheid**: HD10465 (S/Björk) daagt de KD-minister van Binnenlandse Zaken uit over Skatteverket-kantoorsluitingen. Versterkt het plattelandse verzorgingsstaatsnarrativ van S als centraal verkiezingsthema.
+
+4. **V daagt de NPT-positie van Zweden uit**: HD11787 vraagt of Zweden zal afwijken van de NATO-kernaspecten van nucleaire integratie op de lopende NPT-herzieningsconferentie (27 april–22 mei). Antwoord verwacht ~26 mei.
+
+5. **Dagbrede context**: Gecombineerd met de dagelijkse zusteranalyses (HD03255 huishoudschuldbewaking, KU39 constitutionele transparantie, Ostlänken-route, bendecrimi-politie) is het 5-mei-corpus de meest verkiezingsgevoelige parlementaire dag sinds 29 april.
+
+---
+
+### Sleutelpersonen
+
+| Naam | Partij | Rol | Signaal van de dag |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | Ingediend HD10464 (Sida) + HD10466 (ambtenaren) |
+| Tobias Dousa | M | Biståndsminister | Doelwit van Sida-afschaffingsinterpellatie |
+| Maria Malmer Stenergard | M | Utrikesminister | Doelwit van ambtenaren- + NPT-interpellaties |
+| Eric Slottner | KD | Civilminister | Doelwit van staatlijke serviceaanwezigheidsinterpellatie |
+| Peter Björk | S | Riksdagsledamot | Ingediend HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | Ingediend HD11787 (NPT/kärnvapen) |
+
+---
+
+### Vooruitblikkende prioritaire inlichtingenvereisten
+
+| PIR | Horizon | Status |
+|-----|---------|--------|
+| PIR-001: Uitroeiing van bendecriminaliteit (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: Agentschapsactivisme (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: Coalitiehoudbaarheid | T+30→T+90 | OPEN |
+| PIR-007: Ostlänken-route | T+21 | OPEN |
+| PIR-EA-2505-01: Reactie Sida-afschaffing | T+21→T+30 | NEW |
+| PIR-EA-2505-02: Reactie apolitieke ambtenaren | T+21 | NEW |
+| PIR-EA-2505-03: Zweeds NPT-positieverklaring | T+21 | NEW |
+
+---
+
+### Betrouwbaarheidsbeoordeling
+
+**Algeheel**: HIGH. Alle hoogprioritaire documenten opgehaald met volledige tekst. Zusteranalyses bevestigen narratieve samenhang. IMF economische context verslechterd (SDMX) maar WEO/FM Datamapper operationeel — geen materiële impact op bestuur-/wetgevingsanalyse.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_no.md -->
+
+**Klassifisering**: PUBLIC  
+**For**: Riksdagsmonitors abonnenter og politiske analytikere  
+**Dato**: 2026-05-05 | **Riksmøte**: 2025/26  
+**Valnedtelling**: T−131 dager (2026-09-13)  
+
+---
+
+### Fempunktssammendrag
+
+1. **SD avfyrer to koordinerte statreformsangrep**: Interpellasjonene HD10464 (avvikle Sida) og HD10466 (upolitiske tjenestemenn i Regeringskansliet) signaliserer en forvalgskampanje for å omformulere den svenske staten som oppblåst og politisk fanget. Begge er rettet mot koalisjonspartnerens statsråder (Dousa/M, Malmer Stenergard/M), noe som skaper bevisst offentlig spenning.
+
+2. **JuU30 fremmer obligatorisk ungdomsfrihetsberøvelse**: Riksdagens justisutvalg har godkjent Prop. 2025/26:99 og strammer inn frihetsberøvende straffer for unge lovbrytere. Trer i kraft ved Riksdagens vedtak. S + V stemte imot av proporsjonalitets- og barnekonvensjonsgrunnlag. Regjeringen sikrer et konkret «hardt mot kriminalitet»-resultat før valget.
+
+3. **S mobiliserer mot avvikling av statlig regional tilstedeværelse**: HD10465 (S/Björk) utfordrer KD's statsminister for offentlig forvaltning om Skatteverkets kontornedleggelser. Styrker S's landlige velferdsstatlige narrativ som sentralt valtema.
+
+4. **V utfordrer Sveriges NPT-holdning**: HD11787 spør om Sverige vil avvike fra NATOs kjernevåpenintegrasjonsposisjoner på den pågående NPT-gjennomgangskonferansen (27. april–22. mai). Svar forventet ~26. mai.
+
+5. **Heldagskontekst**: Kombinert med dagens søsteranalyser (HD03255 husholdningsgjeldovervåking, KU39 konstitusjonell åpenhet, Ostlänkens trasé, gjengkriminalitetsbekjempelse) er 5. mai-korpuset den mest valgtunge parlamentsdagen siden 29. april.
+
+---
+
+### Nøkkelpersoner
+
+| Navn | Parti | Rolle | Dagens signal |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | Fremmet HD10464 (Sida) + HD10466 (tjenestemenn) |
+| Tobias Dousa | M | Biståndsminister | Mål for Sida-avviklingsinterpellasjon |
+| Maria Malmer Stenergard | M | Utrikesminister | Mål for tjenestemann- + NPT-interpellasjoner |
+| Eric Slottner | KD | Civilminister | Mål for statlig servicenærværsinterpellasjon |
+| Peter Björk | S | Riksdagsledamot | Fremmet HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | Fremmet HD11787 (NPT/kärnvapen) |
+
+---
+
+### Fremadrettede prioriterte etterretningskrav
+
+| PIR | Horisont | Status |
+|-----|---------|--------|
+| PIR-001: Gjengkriminalitetsutryddelse (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: Myndighetsaktivisme (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: Koalisjonsholdbarhdet | T+30→T+90 | OPEN |
+| PIR-007: Ostlänkens trasé | T+21 | OPEN |
+| PIR-EA-2505-01: Sida-avviklingssvar | T+21→T+30 | NEW |
+| PIR-EA-2505-02: Upolitiske tjenestemenns svar | T+21 | NEW |
+| PIR-EA-2505-03: Sveriges NPT-posisjonsdeklarasjon | T+21 | NEW |
+
+---
+
+### Konfidensvurdering
+
+**Samlet**: HIGH. Alle høyprioriterte dokumenter hentet med fulltext. Søsteranalyser bekrefter narrativ sammenheng. IMF økonomisk kontekst forringet (SDMX) men WEO/FM Datamapper operasjonell — ingen materiell påvirkning på styrings-/lovgivningsanalysen.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_sv.md -->
+
+**Klassificering**: PUBLIC  
+**För**: Riksdagsmonitors prenumeranter och politiska analytiker  
+**Datum**: 2026-05-05 | **Riksmöte**: 2025/26  
+**Valräkning**: T−131 dagar (2026-09-13)  
+
+---
+
+### Fempunktsammanfattning
+
+1. **SD avfyrar två samordnade statreformsskott**: Interpellationerna HD10464 (avskaffa Sida) och HD10466 (opolitiska tjänstemän i Regeringskansliet) signalerar en förvalskampanj för att omrama den svenska staten som uppsvälld och politiskt fångad. Båda riktas mot koalitionspartnerns ministrar (Dousa/M, Malmer Stenergard/M), vilket skapar medveten offentlig spänning.
+
+2. **JuU30 driver igenom obligatorisk ungdomsfrihetsberövning**: Riksdagens justitieutskott har godkänt Prop. 2025/26:99 och skärper frihetsberövande påföljder för unga lagöverträdare. Träder i kraft vid riksdagsantagande. S + V reserverade sig mot proportionalitets- och barnkonventionsgrunder. Regeringen säkrar ett konkret "tufft mot brott"-resultat inför valet.
+
+3. **S mobiliserar mot avveckling av statlig regional närvaro**: HD10465 (S/Björk) utmanar KD:s civilminister om Skatteverkets kontorsnedläggningar. Förstärker S:s landsbygds- och välfärdsstatliga narrativ som centralt valtema.
+
+4. **V utmanar Sveriges NPT-ståndpunkt**: HD11787 frågar om Sverige kommer att avvika från NATO:s kärnvapenintegrationspositioner vid den pågående NPT-granskningskonferensen (27 april–22 maj). Svar förväntas senast ~26 maj.
+
+5. **Heldagskontext**: Kombinerat med dagens systeranalyser (HD03255 hushållsskuldövervakning, KU39 konstitutionell transparens, Ostlänkens sträckning, gängbrottsbekämpning) är den 5 maj-korpusen den mest valstyrkta parlamentsdagen sedan 29 april.
+
+---
+
+### Nyckelpersoner
+
+| Namn | Parti | Roll | Dagens signal |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | Lämnade in HD10464 (Sida) + HD10466 (tjänstemän) |
+| Tobias Dousa | M | Biståndsminister | Föremål för Sida-avskaffningsinterpellation |
+| Maria Malmer Stenergard | M | Utrikesminister | Föremål för tjänsteman- + NPT-interpellationer |
+| Eric Slottner | KD | Civilminister | Föremål för statlig servicenärvaro-interpellation |
+| Peter Björk | S | Riksdagsledamot | Lämnade in HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | Lämnade in HD11787 (NPT/kärnvapen) |
+
+---
+
+### Framåtblickande prioriterade underrättelsekrav
+
+| PIR | Horisont | Status |
+|-----|---------|--------|
+| PIR-001: Gängbrottsutrotning (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: Myndighetsaktivism (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: Koalitionshållbarhet | T+30→T+90 | OPEN |
+| PIR-007: Ostlänkens sträckning | T+21 | OPEN |
+| PIR-EA-2505-01: Sida-avskaffningssvar | T+21→T+30 | NEW |
+| PIR-EA-2505-02: Opolitiska tjänstemän-svar | T+21 | NEW |
+| PIR-EA-2505-03: Sveriges NPT-positionsdeklaration | T+21 | NEW |
+
+---
+
+### Konfidensläge
+
+**Övergripande**: HIGH. Alla topprioriterade dokument hämtade med fulltext. Systeranalyser bekräftar narrativ koherens. IMF ekonomisk kontext försämrad (SDMX) men WEO/FM Datamapper operativ — ingen materiell påverkan på styrnings-/lagstiftningsanalysen.
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_zh.md -->
+
+**分类**: PUBLIC  
+**收件人**: Riksdagsmonitor订阅者和政治分析师  
+**日期**: 2026-05-05 | **Riksmöte**: 2025/26  
+**选举倒计时**: T−131天 (2026-09-13)  
+
+---
+
+### 五点执行摘要
+
+1. **SD发射两枚协调的国家改革炮弹**: 质询HD10464（废除Sida）和HD10466（Regeringskansliet的非政治性公务员）标志着一场竞选前活动，旨在将瑞典国家重新定义为臃肿且被政治俘获的机构。两者均针对联合执政伙伴的部长（Dousa/M, Malmer Stenergard/M），制造了有意的公众紧张局面。
+
+2. **JuU30推进强制青少年羁押**: Riksdag司法委员会批准了Prop. 2025/26:99，收紧了对未成年违法者的限制自由处罚。Riksdag通过后生效。S + V以比例原则和联合国儿童权利公约为由投反对票。政府在选举前确保了具体的"严惩犯罪"成果。
+
+3. **S就拆除国家地区存在而动员**: HD10465（S/Björk）就Skatteverket办公室关闭问题向KD公共行政大臣发出挑战。强化了S作为中心选举主题的农村福利国家叙事。
+
+4. **V挑战瑞典的NPT立场**: HD11787询问瑞典是否会在正在进行的NPT审议会议（4月27日至5月22日）上偏离北约核整合立场。答复预计在约5月26日。
+
+5. **全天背景**: 结合当天的相关分析（HD03255家庭债务监控、KU39宪法透明度、Ostlänken路线、黑帮犯罪执法），5月5日文件库是4月29日以来选举色彩最浓的议会日。
+
+---
+
+### 关键人物
+
+| 姓名 | 政党 | 角色 | 今日信号 |
+|------|-------|------|----------------|
+| Björn Wiechel | SD | Riksdagsledamot | 提交HD10464 (Sida) + HD10466 (公务员) |
+| Tobias Dousa | M | Biståndsminister | Sida废除质询目标 |
+| Maria Malmer Stenergard | M | Utrikesminister | 公务员 + NPT质询目标 |
+| Eric Slottner | KD | Civilminister | 国家地区服务存在质询目标 |
+| Peter Björk | S | Riksdagsledamot | 提交HD10465 (statlig närvaro) |
+| Håkan Svenneling | V | Riksdagsledamot | 提交HD11787 (NPT/kärnvapen) |
+
+---
+
+### 前瞻性优先情报需求
+
+| PIR | 期限 | 状态 |
+|-----|---------|--------|
+| PIR-001: 消灭帮派犯罪 (HD10458) | T+7→T+21 | OPEN |
+| PIR-003: 机构行动主义 (HD10459 + HD10466) | T+14→T+30 | UPDATED |
+| PIR-005: 联合政府持久性 | T+30→T+90 | OPEN |
+| PIR-007: Ostlänken路线 | T+21 | OPEN |
+| PIR-EA-2505-01: Sida废除回应 | T+21→T+30 | NEW |
+| PIR-EA-2505-02: 非政治性公务员回应 | T+21 | NEW |
+| PIR-EA-2505-03: 瑞典NPT立场声明 | T+21 | NEW |
+
+---
+
+### 置信度评估
+
+**总体**: HIGH。所有最优先文件均已以全文检索。相关分析确认叙事一致性。IMF经济背景下降（SDMX），但WEO/FM Datamapper运行正常——对治理/立法分析无实质性影响。
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1992,6 +2751,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

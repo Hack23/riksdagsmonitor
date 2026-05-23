@@ -6,7 +6,7 @@ date: 2026-05-05
 subfolder: election-cycle/current
 slug: 2026-05-05-election-cycle/current
 source_folder: analysis/daily/2026-05-05/election-cycle/current
-generated_at: 2026-05-22T13:53:53.831Z
+generated_at: 2026-05-23T08:06:00.562Z
 language: en
 layout: article
 ---
@@ -75,6 +75,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -1815,13 +1828,485 @@ All economic figures sourced from WEO Apr-2026 (provider: imf, vintage: WEO-2026
 - No budget documents (state budget cycle not active)
 - Riksdag plenary records not included (speech-based analysis deferred)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز تنفيذي — الولاية الحالية 2026-05-05
+
+**التصنيف**: PUBLIC | **الثقة**: HIGH [B2] | **الوقت حتى الانتخابات**: T-131 يوماً
+
+### ملخص الإجراءات
+
+يدخل تحالف تيدو مرحلته الأخيرة البالغة 131 يوماً مع خمسة إشارات بالغة الأهمية من السجل البرلماني اليوم تستدعي الانتباه التحليلي الفوري:
+
+1. **اقتراح إلغاء سيدا (HD10464)** — يشير السؤال الكتابي الذي يطالب بحل وكالة سيدا (الوكالة السويدية للتعاون الإنمائي الدولي) إلى هجوم أيديولوجي متسارع على التزامات السويد متعددة الأطراف. إذا بلغ هذا مرتبة التشريع قبل 13 سبتمبر، فسيمثل الانقطاع الأكثر دراماتيكية في السياسة الخارجية لأي حكومة سويدية منذ عام 1945.
+
+2. **موظفون مدنيون غير سياسيين في Regeringskansliet (HD10466)** — يحمل هذا الاقتراح الخاص بإزالة الطابع السياسي عن الخدمة المدنية الحكومية آثاراً بالغة الأهمية لمبدأ سيادة القانون، ويشير إلى أجندة التوطيد الهيكلي للحزب الديمقراطي السويدي SD عبر الدورات الانتخابية.
+
+3. **إطار احتجاز الشباب (HD01JuU30)** — يمثل تقرير اللجنة المتعلق باحتجاز الأطفال والشباب التوطيد التشريعي النهائي لثورة العدالة الجنائية. لا تزال العدالة الجنائية تشكل الأصل السياسي الأعلى تصنيفاً في هذه الولاية.
+
+4. **تصنيف منظمة SILC كمتطرفة (HD11782)** — يواصل تصنيف منظمة SILC (تنظيم إسلامي) كمتطرفة المسار التشريعي لمكافحة التطرف؛ وسياسياً يتقاطع هذا مع الرواية المحورية لحزب SD.
+
+5. **مؤتمر مراجعة معاهدة عدم انتشار الأسلحة النووية 2026 (HD11787)** — يُختبر موقف السويد من منع الانتشار النووي في وقت واحد مع التشريع المحلي الممكّن للطاقة النووية (HD01NU19). يُعدّ المسار المزدوج المتماسك (الطاقة النووية المدنية + الالتزام بمعاهدة عدم الانتشار) ضرورياً للمصداقية.
+
+### الخلاصة الانتخابية
+
+تتبع الولاية الحالية: **المهمة مكتملة بنسبة 60% من الالتزامات السياسية الرئيسية** (العدالة الجنائية ✓، تقييد الهجرة جارٍ، الناتو ✓، تمكين الطاقة النووية ✓، إصلاح الإسكان ✗، التوطيد المالي جزئي).
+
+توقعات مقاعد التحالف (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. الخطر: العتبة الحرجة لـ L (4.2% مقابل 4.0% المطلوبة).
+
+**الإجراء الرقابي الموصى به**: متابعة استطلاعات الرأي الداخلية لحزب Liberalerna أسبوعياً؛ أي انخفاض إلى ما دون 3.8% في استطلاعات تتبع الحزب يُفعّل سيناريو انهيار L مع احتمالية 100% لحل الحكومة قبل الانتخابات.
+
+### السياق الاقتصادي للصندوق الدولي (WEO Apr-2026)
+
+- نمو الناتج المحلي الإجمالي للسويد: 1.8% (2026)، 2.3% (2027) — مسار التعافي سليم
+- الميزان المالي: -0.8% من الناتج المحلي الإجمالي (2026) — ضمن الإطار المالي لتيدو
+- الدين الحكومي: 34.5% من الناتج المحلي الإجمالي — الأدنى في الاتحاد الأوروبي مع الدنمارك
+- البطالة: 8.3% — تستدعي البطالة الهيكلية الاهتمام خلال حملة الانتخابات
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_da.md -->
+
+**Klassificering**: PUBLIC | **Konfidensgrad**: HIGH [B2] | **Tid til valget**: T-131 dage
+
+### HANDLINGSRESUMÉ
+
+Tidö-koalitionen indleder sin afsluttende 131-dages periode med fem kritiske signaler fra dagens parlamentariske register, der kræver øjeblikkelig analytisk opmærksomhed:
+
+1. **Forslag om afskaffelse af Sida (HD10464)** — Et skriftligt spørgsmål, der kræver opløsning af Sida (det svenske agentur for internationalt udviklingssamarbejde), indikerer et accelererende ideologisk angreb på Sveriges multilaterale forpligtelser. Hvis dette opnår lovgivningsstatus inden den 13. september, ville det udgøre det mest dramatiske udenrigspolitiske brud fra nogen svensk regering siden 1945.
+
+2. **Ikke-politiske embedsmænd ved Regeringskansliet (HD10466)** — Dette forslag om afpolitisering af den statslige forvaltning indeholder betydelige retsstatsmæssige implikationer og signalerer SD's strukturelle konsolideringsdagsorden ud over valgcyklusser.
+
+3. **Ramme for ungdomsvaretægt (HD01JuU30)** — Udvalgsrapporten om frihedsberøvelse af børn og unge repræsenterer den endelige lovgivningsmæssige konsolidering af strafferetsrevolutionen. Strafferetten forbliver mandatets bedst placerede politiske aktiv.
+
+4. **SILC-ekstremistklassificering (HD11782)** — Klassificeringen af SILC (islamistisk organisation) som ekstremistisk fortsætter det kontraekstremistiske lovgivningsspor; politisk kortlægges dette ind i SD's kernefortælling.
+
+5. **NPT-revisionskonference 2026 (HD11787)** — Sveriges holdning om ikke-spredning af atomvåben testes samtidigt med indenlandsk lovgivning om atomkraft (HD01NU19). Et sammenhængende dobbeltspor (civil atomkraft + NPT-overholdelse) er afgørende for troværdigheden.
+
+### VALANALYTISK KONKLUSION
+
+Nuværende mandatsporing: **Mission 60% fuldført på hovedeløfter** (strafferet ✓, migrationsrestriktion i gang, NATO ✓, atomkraftfremme ✓, boligreform ✗, finansiel konsolidering delvis).
+
+Koalitionsmandatprognose (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. Risiko: L-tærskel (4,2% vs. 4,0% krævet).
+
+**Anbefalet overvågningshandling**: Spor Liberalernas interne meningsmålinger ugentligt; ethvert fald under 3,8% i partimålinger udløser L-kollapsscenariet med 100% sandsynlighed for regeringsopløsning inden valget.
+
+### IMF ØKONOMISK KONTEKST (WEO Apr-2026)
+
+- Sveriges BNP-vækst: 1,8% (2026), 2,3% (2027) — genopretningsbane intakt
+- Finanspolitisk saldo: -0,8% BNP (2026) — inden for Tidös finanspolitiske ramme
+- Statsgæld: 34,5% BNP — lavest i EU sammen med Danmark
+- Arbejdsløshed: 8,3% — strukturel arbejdsløshed kræver opmærksomhed under valgkampen
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_de.md -->
+
+**Klassifizierung**: PUBLIC | **Konfidenz**: HIGH [B2] | **Zeit bis zur Wahl**: T-131 Tage
+
+### HANDLUNGSZUSAMMENFASSUNG
+
+Die Tidö-Koalition tritt in ihre abschließende 131-Tage-Phase ein, mit fünf kritischen Signalen aus dem heutigen parlamentarischen Protokoll, die sofortige analytische Aufmerksamkeit erfordern:
+
+1. **Abschaffungsvorschlag für Sida (HD10464)** — Eine schriftliche Anfrage, die die Auflösung von Sida (die schwedische Behörde für internationale Entwicklungszusammenarbeit) fordert, signalisiert einen sich beschleunigenden ideologischen Angriff auf Schwedens multilaterale Verpflichtungen. Sollte dies vor dem 13. September Gesetzeskraft erlangen, würde es den dramatischsten außenpolitischen Bruch einer schwedischen Regierung seit 1945 darstellen.
+
+2. **Nicht-politische Beamte beim Regeringskansliet (HD10466)** — Dieser Vorschlag zur Entpolitisierung des staatlichen öffentlichen Dienstes enthält erhebliche rechtsstaatliche Implikationen und signalisiert die strukturelle Konsolidierungsagenda der SD über Wahlzyklen hinaus.
+
+3. **Rechtsrahmen für Jugendinhaftierung (HD01JuU30)** — Der Ausschussbericht zur Freiheitsentziehung bei Kindern und Jugendlichen stellt die abschließende gesetzgeberische Konsolidierung der Strafrechtsrevolution dar. Das Strafrecht bleibt das am höchsten eingestufte politische Asset des Mandats.
+
+4. **SILC-Extremistenklassifizierung (HD11782)** — Die Klassifizierung von SILC (islamistische Organisation) als extremistisch setzt die anti-extremistische Gesetzgebungsspur fort; politisch ordnet sich dies in die Kernerzählung der SD ein.
+
+5. **NPT-Überprüfungskonferenz 2026 (HD11787)** — Schwedens Nichtverbreitungshaltung wird gleichzeitig mit der inländischen kernenergieermöglichenden Gesetzgebung (HD01NU19) auf die Probe gestellt. Eine kohärente Doppelstrategie (zivile Kernenergie + NPT-Einhaltung) ist entscheidend für die Glaubwürdigkeit.
+
+### WAHLANALYTISCHES FAZIT
+
+Aktuelle Mandatsverfolgung: **Mission zu 60% bei den wichtigsten Politikversprechen erfüllt** (Strafrecht ✓, Migrationseinschränkungen im Gange, NATO ✓, Kernenergie-Ermöglichung ✓, Wohnungsreform ✗, Haushaltskonsolidierung teilweise).
+
+Koalitionssitzprojektion (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. Risiko: L-Schwellenwert (4,2% vs. 4,0% erforderlich).
+
+**Empfohlene Überwachungsmaßnahme**: Interne Umfragen der Liberalerna wöchentlich verfolgen; jeder Rückgang unter 3,8% in Parteitracking-Umfragen löst das L-Kollaps-Szenario mit 100%iger Wahrscheinlichkeit einer Regierungsauflösung vor der Wahl aus.
+
+### IMF WIRTSCHAFTLICHER KONTEXT (WEO Apr-2026)
+
+- Schwedisches BIP-Wachstum: 1,8% (2026), 2,3% (2027) — Erholungskurs intakt
+- Finanzierungssaldo: -0,8% BIP (2026) — im Rahmen des Tidö-Fiskalrahmens
+- Staatsverschuldung: 34,5% BIP — niedrigste in der EU zusammen mit Dänemark
+- Arbeitslosigkeit: 8,3% — strukturelle Arbeitslosigkeit erfordert Aufmerksamkeit im Wahlkampf
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_es.md -->
+
+**Clasificación**: PUBLIC | **Confianza**: HIGH [B2] | **Tiempo hasta las elecciones**: T-131 días
+
+### RESUMEN DE ACCIÓN
+
+La coalición Tidö entra en su tramo final de 131 días con cinco señales críticas del registro parlamentario de hoy que requieren atención analítica inmediata:
+
+1. **Propuesta de abolición de Sida (HD10464)** — Una pregunta escrita que exige la disolución de Sida (Agencia Sueca de Cooperación para el Desarrollo Internacional) indica un asalto ideológico acelerado contra los compromisos multilaterales de Suecia. Si esto alcanza estatus legislativo antes del 13 de septiembre, representaría la ruptura de política exterior más dramática de cualquier gobierno sueco desde 1945.
+
+2. **Funcionarios civiles no políticos en el Regeringskansliet (HD10466)** — Esta propuesta de despolitización del servicio civil gubernamental contiene implicaciones significativas para el Estado de derecho y señala la agenda de consolidación estructural del SD más allá de los ciclos electorales.
+
+3. **Marco de internamiento de jóvenes (HD01JuU30)** — El informe del comité sobre el internamiento de niños y jóvenes representa la consolidación legislativa final de la revolución de la justicia penal. La justicia penal sigue siendo el activo político mejor valorado del mandato.
+
+4. **Clasificación extremista de SILC (HD11782)** — La clasificación de SILC (organización islamista) como extremista continúa la vía legislativa anti-extremista; políticamente, esto se inserta en el relato central del SD.
+
+5. **Conferencia de Revisión del TNP 2026 (HD11787)** — La postura de no proliferación nuclear de Suecia está siendo puesta a prueba simultáneamente con la legislación nacional habilitante de energía nuclear (HD01NU19). Una doble estrategia coherente (nuclear civil + cumplimiento del TNP) es esencial para la credibilidad.
+
+### CONCLUSIÓN ELECTORAL
+
+Seguimiento del mandato actual: **Misión completada al 60% en los principales compromisos de política** (justicia penal ✓, restricción migratoria en curso, OTAN ✓, habilitación nuclear ✓, reforma de vivienda ✗, consolidación fiscal parcial).
+
+Proyección de escaños de coalición (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. Riesgo: umbral de L (4,2% vs. 4,0% requerido).
+
+**Acción de seguimiento recomendada**: Realizar un seguimiento de las encuestas internas de los Liberalerna semanalmente; cualquier caída por debajo del 3,8% en las encuestas de seguimiento de partidos desencadena el escenario de colapso de L con un 100% de probabilidad de disolución del gobierno antes de las elecciones.
+
+### CONTEXTO ECONÓMICO DEL FMI (WEO Apr-2026)
+
+- Crecimiento del PIB sueco: 1,8% (2026), 2,3% (2027) — trayectoria de recuperación intacta
+- Saldo fiscal: -0,8% del PIB (2026) — dentro del marco fiscal Tidö
+- Deuda pública: 34,5% del PIB — la más baja de la UE junto con Dinamarca
+- Desempleo: 8,3% — el desempleo estructural requiere atención durante la campaña
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_fi.md -->
+
+**Luokittelu**: PUBLIC | **Luotettavuustaso**: HIGH [B2] | **Aika vaaleihin**: T-131 päivää
+
+### TOIMINTAYHTEENVETO
+
+Tidö-koalitio aloittaa viimeiset 131 päiväänsä viidellä kriittisellä signaalilla tämän päivän parlamenttikirjauksilta, jotka vaativat välitöntä analyyttistä huomiota:
+
+1. **Ehdotus Sidan lakkauttamisesta (HD10464)** — Kirjallinen kysymys, joka vaatii Sidan (Ruotsin kansainvälisen kehitysyhteistyövirasto) lakkauttamista, osoittaa kiihtyvää ideologista hyökkäystä Ruotsin monenvälisiä sitoumuksia vastaan. Jos tämä saa lainsäädännöllisen aseman ennen 13. syyskuuta, se edustaisi dramaattisinta ulkopoliittista katkosta mistään Ruotsin hallituksesta vuoden 1945 jälkeen.
+
+2. **Epäpoliittiset virkamiehet Regeringskanslietissa (HD10466)** — Tämä ehdotus valtiohallinnon epäpolitisoinnista sisältää merkittäviä oikeusvaltioperiaatteen seurauksia ja signaloi SD:n rakenteellista konsolidointiagendaa vaalikausien yli.
+
+3. **Nuorisovankeuspuitteet (HD01JuU30)** — Valiokunnan mietintö lasten ja nuorten vapaudenmenetyksestä edustaa rikosoikeusrevoluution lopullista lainsäädännöllistä konsolidointia. Rikosoikeus pysyy toimikauden korkeimmalle arvostetuksi poliittiseksi voimavaraksi.
+
+4. **SILC-ääriliikeluokittelu (HD11782)** — SILCin (islamistiorganisaatio) luokittelu ääriliikkeeksi jatkaa vastaääriliikelainsäädännön raiteita; poliittisesti tämä karttuu SD:n ydinnarratiiville.
+
+5. **Ydinaseiden leviämisen estokomitean konferenssi 2026 (HD11787)** — Ruotsin ydinaseiden leviämisen estoa koskeva asema testataan samanaikaisesti kotimaisen ydinenergian mahdollistavan lainsäädännön (HD01NU19) kanssa. Johdonmukainen kaksoisraite (siviiliydinvoima + NPT-noudattaminen) on olennainen uskottavuuden kannalta.
+
+### VAALIEN LOPPUTULOS
+
+Nykyinen toimikauden seuranta: **Tehtävä 60% suoritettu keskeisistä politiikkatavoitteista** (rikosoikeus ✓, maahanmuuttorajoitukset käynnissä, NATO ✓, ydinenergian mahdollistaminen ✓, asuntouudistus ✗, finanssinen konsolidointi osittain).
+
+Koalition paikkaennuste (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. Riski: L-kynnys (4,2% vs. 4,0% vaaditaan).
+
+**Suositeltava seurantatoimenpide**: Seuraa Liberalernan sisäisiä mielipidemittauksia viikoittain; mikä tahansa lasku alle 3,8%:n puoluemittauksissa käynnistää L-romahdusskenaarion 100%:n todennäköisyydellä hallituksen hajoamiseen ennen vaaleja.
+
+### IMF TALOUDELLINEN KONTEKSTI (WEO Apr-2026)
+
+- Ruotsin BKT-kasvu: 1,8% (2026), 2,3% (2027) — elpymisura ehjä
+- Rahoitustasapaino: -0,8% BKT (2026) — Tidön finanssipoliittisen kehyksen sisällä
+- Valtion velka: 34,5% BKT — alhaisin EU:ssa Tanskan ohella
+- Työttömyys: 8,3% — rakenteellinen työttömyys vaatii huomiota kampanjassa
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_fr.md -->
+
+### RÉSUMÉ D'ACTION
+
+La coalition Tidö entre dans sa dernière période de 131 jours avec cinq signaux critiques issus du registre parlementaire d'aujourd'hui qui requièrent une attention analytique immédiate :
+
+1. **Proposition d'abolition de Sida (HD10464)** — Une question écrite exigeant la dissolution de Sida (Agence suédoise de coopération au développement international) indique une offensive idéologique accélérée contre les engagements multilatéraux de la Suède. Si cela atteint un statut législatif avant le 13 septembre, il s'agirait de la rupture de politique étrangère la plus dramatique de tout gouvernement suédois depuis 1945.
+
+2. **Fonctionnaires non politiques au Regeringskansliet (HD10466)** — Cette proposition de dépolitisation du service public gouvernemental contient des implications significatives pour l'État de droit et signale l'agenda de consolidation structurelle du SD au-delà des cycles électoraux.
+
+3. **Cadre d'incarcération des jeunes (HD01JuU30)** — Le rapport de comité sur l'incarcération des enfants et des jeunes représente la consolidation législative finale de la révolution de la justice pénale. La justice pénale demeure le capital politique le mieux noté du mandat.
+
+4. **Classification extrémiste de SILC (HD11782)** — La classification de SILC (organisation islamiste) comme extrémiste poursuit la piste législative anti-extrémiste ; politiquement, cela s'inscrit dans le récit central du SD.
+
+5. **Conférence d'examen du TNP 2026 (HD11787)** — La posture de non-prolifération nucléaire de la Suède est testée simultanément avec la législation nationale permettant le nucléaire (HD01NU19). Une double stratégie cohérente (nucléaire civil + conformité au TNP) est essentielle à la crédibilité.
+
+### BILAN ÉLECTORAL
+
+Suivi du mandat en cours : **Mission accomplie à 60% sur les engagements politiques principaux** (justice pénale ✓, restriction migratoire en cours, OTAN ✓, permettre le nucléaire ✓, réforme du logement ✗, consolidation budgétaire partielle).
+
+Projection de sièges de coalition (2026-05-05) : M 68 + KD 19 + L 16 + SD 73 = 175. Risque : seuil L (4,2% vs. 4,0% requis).
+
+**Action de surveillance recommandée** : Suivre les sondages internes des Liberalerna chaque semaine ; toute baisse sous 3,8% dans les sondages de suivi de parti déclenche le scénario d'effondrement de L avec 100% de probabilité de dissolution du gouvernement avant l'élection.
+
+### CONTEXTE ÉCONOMIQUE DU FMI (WEO Apr-2026)
+
+- Croissance du PIB suédois : 1,8% (2026), 2,3% (2027) — trajectoire de reprise intacte
+- Solde budgétaire : -0,8% du PIB (2026) — dans le cadre budgétaire Tidö
+- Dette publique : 34,5% du PIB — la plus faible de l'UE avec le Danemark
+- Chômage : 8,3% — le chômage structurel nécessite une attention particulière pendant la campagne
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תדריך מנהלים — כהונה נוכחית 2026-05-05
+
+**סיווג**: PUBLIC | **רמת ביטחון**: HIGH [B2] | **זמן לבחירות**: T-131 ימים
+
+### סיכום פעולה
+
+קואליציית טידו נכנסת לתקופת 131 הימים האחרונה שלה עם חמישה אותות קריטיים מהפרוטוקול הפרלמנטרי של היום הדורשים תשומת לב אנליטית מיידית:
+
+1. **הצעה לביטול סידא (HD10464)** — שאלה כתובה הדורשת פירוק של סידא (הסוכנות השוודית לשיתוף פעולה לפיתוח בינלאומי) מצביעה על התקפה אידיאולוגית מואצת על ההתחייבויות הרב-צדדיות של שוודיה. אם זה יגיע למעמד חקיקתי לפני ה-13 בספטמבר, הדבר יהווה את ההפסקה הדרמטית ביותר במדיניות החוץ של כל ממשלה שוודית מאז 1945.
+
+2. **פקידי ממשל לא פוליטיים ב-Regeringskansliet (HD10466)** — הצעה זו לדה-פוליטיזציה של השירות הציבורי הממשלתי מכילה השלכות משמעותיות על שלטון החוק ומסמנת את אגנדת הגיבוש המבני של SD מעבר למחזורי בחירות.
+
+3. **מסגרת כליאת נוער (HD01JuU30)** — דוח הוועדה על כליאת ילדים ונוער מייצג את הגיבוש החקיקתי הסופי של מהפכת מערכת המשפט הפלילי. הצדק הפלילי נותר הנכס הפוליטי בעל הדירוג הגבוה ביותר של הכהונה.
+
+4. **סיווג SILC כארגון קיצוני (HD11782)** — סיווג SILC (ארגון איסלאמיסטי) כקיצוני ממשיך את מסלול החקיקה נגד קיצוניות; מבחינה פוליטית זה מתמפה לנרטיב המרכזי של SD.
+
+5. **ועידת סקירת NPT 2026 (HD11787)** — עמדת אי-הפצה הגרעינית של שוודיה נבחנת בו-זמנית עם החקיקה המקומית המאפשרת אנרגיה גרעינית (HD01NU19). מסלול כפול קוהרנטי (גרעין אזרחי + עמידה ב-NPT) חיוני לאמינות.
+
+### מסקנה בחירתית
+
+מעקב כהונה נוכחי: **משימה הושלמה ב-60% בהתחייבויות מדיניות ראשיות** (צדק פלילי ✓, הגבלת הגירה בתהליך, נאט"ו ✓, הפעלת אנרגיה גרעינית ✓, רפורמת דיור ✗, גיבוש פיסקלי חלקי).
+
+תחזית מושבי קואליציה (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. סיכון: סף L (4.2% לעומת 4.0% הנדרש).
+
+**פעולת ניטור מומלצת**: מעקב אחר סקרים פנימיים של Liberalerna מדי שבוע; כל ירידה מתחת ל-3.8% בסקרי מעקב מפלגתיים מפעיל תרחיש קריסת L עם הסתברות 100% לפירוק הממשלה לפני הבחירות.
+
+### הקשר כלכלי של קרן המטבע (WEO Apr-2026)
+
+- צמיחת תמ"ג שוודיה: 1.8% (2026), 2.3% (2027) — מסלול ההתאוששות שלם
+- מאזן פיסקלי: -0.8% תמ"ג (2026) — במסגרת המסגרת הפיסקלית של טידו
+- חוב ממשלתי: 34.5% תמ"ג — הנמוך ביותר באיחוד האירופי יחד עם דנמרק
+- אבטלה: 8.3% — אבטלה מבנית מצריכה תשומת לב בקמפיין הבחירות
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_ja.md -->
+
+**分類**: PUBLIC | **信頼度**: HIGH [B2] | **選挙まで**: T-131日
+
+### 行動要約
+
+ティドー連立政権は最後の131日間に突入しました。本日の議会記録から直ちに分析上の注意を要する5つの重大シグナルが浮かび上がっています：
+
+1. **Sida廃止提案 (HD10464)** — Sida（スウェーデン国際開発協力庁）の解散を求める書面質問は、スウェーデンの多国間コミットメントへの加速するイデオロギー的攻撃を示しています。9月13日以前に立法化された場合、1945年以降のいかなるスウェーデン政府よりも劇的な外交政策の断絶となります。
+
+2. **Regeringskanslietにおける非政治的公務員 (HD10466)** — 政府公務員の脱政治化に関するこの提案は、法の支配に重大な影響を与え、選挙サイクルを超えたSDの構造的統合アジェンダを示しています。
+
+3. **青少年収監制度 (HD01JuU30)** — 児童・青少年の収監に関する委員会報告書は、刑事司法改革の最終的な立法統合を意味します。刑事司法は依然として今任期で最も高い支持率を誇る政策資産です。
+
+4. **SILC過激主義認定 (HD11782)** — SILC（イスラム主義組織）の過激派認定は反過激主義立法の流れを継続するものであり、政治的にはSDの中核的なナラティブに沿うものです。
+
+5. **NPT再検討会議2026 (HD11787)** — スウェーデンの核不拡散姿勢は、国内の原子力推進立法（HD01NU19）と同時に試されています。一貫した二元的アプローチ（民間原子力 + NPT遵守）が信頼性確保に不可欠です。
+
+### 選挙分析の結論
+
+現任期の追跡：**主要政策公約の60%達成** (刑事司法 ✓、移民制限進行中、NATO ✓、原子力推進 ✓、住宅改革 ✗、財政統合 部分的)
+
+連立議席予測 (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175。リスク：Lの閾値（4.2% 対 4.0% 必要）。
+
+**推奨される監視行動**：Liberalernaの内部世論調査を毎週追跡；政党追跡調査で3.8%を下回ると、選挙前に政府解散の可能性100%のLの崩壊シナリオが発動されます。
+
+### IMF経済的文脈 (WEO Apr-2026)
+
+- スウェーデンGDP成長率：1.8%（2026年）、2.3%（2027年） — 回復軌道は維持
+- 財政収支：-0.8% GDP（2026年） — ティドーの財政枠組み内
+- 政府債務：34.5% GDP — デンマークとともにEU最低
+- 失業率：8.3% — 構造的失業は選挙戦で注目が必要
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_ko.md -->
+
+**분류**: PUBLIC | **신뢰도**: HIGH [B2] | **선거까지**: T-131일
+
+### 행동 요약
+
+티되 연립 정부는 마지막 131일 기간에 돌입하며 오늘의 의회 기록에서 즉각적인 분석 주의가 필요한 다섯 가지 중요한 신호가 있습니다:
+
+1. **Sida 폐지 제안 (HD10464)** — Sida(스웨덴 국제개발협력청) 해체를 요구하는 서면 질문은 스웨덴의 다자간 약속에 대한 가속화된 이념적 공격을 나타냅니다. 이것이 9월 13일 이전에 입법 지위에 도달한다면, 1945년 이후 어떤 스웨덴 정부도 보이지 않았던 가장 극적인 외교 정책 결별을 의미하게 됩니다.
+
+2. **Regeringskansliet의 비정치적 공무원 (HD10466)** — 정부 공무원 비정치화에 관한 이 제안은 법치주의에 중요한 영향을 미치며 선거 주기를 넘어선 SD의 구조적 통합 의제를 시사합니다.
+
+3. **청소년 구금 체계 (HD01JuU30)** — 아동 및 청소년 구금에 관한 위원회 보고서는 형사사법 혁명의 최종 입법 통합을 나타냅니다. 형사사법은 이 임기에서 가장 높은 지지율을 유지하는 정책 자산으로 남아 있습니다.
+
+4. **SILC 극단주의 분류 (HD11782)** — SILC(이슬람주의 조직)의 극단주의 분류는 반극단주의 입법 흐름을 계속하며, 정치적으로 SD의 핵심 서사와 일치합니다.
+
+5. **NPT 검토 회의 2026 (HD11787)** — 스웨덴의 핵 비확산 입장은 국내 원자력 에너지 실현 법안(HD01NU19)과 동시에 시험받고 있습니다. 일관된 이중 트랙(민간 원자력 + NPT 준수)이 신뢰성을 위해 필수적입니다.
+
+### 선거 분석 결론
+
+현 임기 추적: **주요 정책 공약의 60% 완수** (형사사법 ✓, 이민 제한 진행 중, NATO ✓, 원자력 실현 ✓, 주택 개혁 ✗, 재정 통합 부분적)
+
+연립 의석 예측 (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. 위험: L의 임계값(4.2% 대 4.0% 필요).
+
+**권고 모니터링 조치**: Liberalerna의 내부 여론조사를 매주 추적; 정당 추적 조사에서 3.8% 미만으로 하락하면 선거 전 정부 해산 100% 확률의 L 붕괴 시나리오가 발동됩니다.
+
+### IMF 경제적 맥락 (WEO Apr-2026)
+
+- 스웨덴 GDP 성장: 1.8% (2026년), 2.3% (2027년) — 회복 궤도 유지
+- 재정 수지: -0.8% GDP (2026년) — 티되 재정 프레임워크 내
+- 정부 부채: 34.5% GDP — 덴마크와 함께 EU 최저
+- 실업률: 8.3% — 구조적 실업 문제는 선거 운동에서 주목 필요
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_nl.md -->
+
+**Classificatie**: PUBLIC | **Betrouwbaarheid**: HIGH [B2] | **Tijd tot de verkiezingen**: T-131 dagen
+
+### ACTIEOVERZICHT
+
+De Tidö-coalitie begint aan haar afsluitende 131-dagensperiode met vijf kritieke signalen uit het parlementaire register van vandaag die onmiddellijke analytische aandacht vereisen:
+
+1. **Voorstel tot afschaffing van Sida (HD10464)** — Een schriftelijke vraag die de ontbinding van Sida (het Zweedse agentschap voor internationale ontwikkelingssamenwerking) eist, wijst op een versnelde ideologische aanval op Zweden's multilaterale verplichtingen. Als dit voor 13 september wetgevende status bereikt, zou het de meest dramatische breuk in het buitenlands beleid van enige Zweedse regering sinds 1945 zijn.
+
+2. **Niet-politieke ambtenaren bij het Regeringskansliet (HD10466)** — Dit voorstel voor depolitisering van de overheidsdienst bevat significante implicaties voor de rechtsstaat en signaleert de structurele consolidatieagenda van SD buiten verkiezingscycli.
+
+3. **Kader voor jeugddetentie (HD01JuU30)** — Het commissierapport over detentie van kinderen en jongeren vertegenwoordigt de definitieve wetgevende consolidatie van de strafrechtrevolutie. Strafrecht blijft het hoogst gewaardeerde politieke actief van het mandaat.
+
+4. **SILC-extremistclassificatie (HD11782)** — De classificatie van SILC (islamistische organisatie) als extremistisch zet de anti-extremistische wetgevingslijn voort; politiek gezien sluit dit aan bij de kernvertelling van SD.
+
+5. **NPV-Toetsingsconferentie 2026 (HD11787)** — Zweden's non-proliferatiehouding wordt gelijktijdig getest met nationale kernenergie-inschakeleringswetgeving (HD01NU19). Een coherente dubbelstrategie (civiele kernenergie + NPV-naleving) is essentieel voor de geloofwaardigheid.
+
+### ELECTORALE CONCLUSIE
+
+Huidig mandaattracking: **Missie voor 60% voltooid op hoofdbeloeningen** (strafrecht ✓, migratiebeperking in uitvoering, NAVO ✓, kernenergie-inschakeling ✓, woninghervormig ✗, begrotingsconsolidatie gedeeltelijk).
+
+Coalitiezetelsprojectie (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. Risico: L-drempel (4,2% vs. 4,0% vereist).
+
+**Aanbevolen monitoringactie**: Liberalernas interne peilingen wekelijks volgen; elke daling onder 3,8% in partijtrackingpeilingen activeert het L-collapsscenario met 100% kans op kabinetsontbinding vóór de verkiezingen.
+
+### IMF ECONOMISCHE CONTEXT (WEO Apr-2026)
+
+- Zweedse bbp-groei: 1,8% (2026), 2,3% (2027) — hersteltraject intact
+- Begrotingssaldo: -0,8% bbp (2026) — binnen het Tidö-begrotingskader
+- Staatsschuld: 34,5% bbp — laagste in de EU samen met Denemarken
+- Werkloosheid: 8,3% — structurele werkloosheid vereist aandacht tijdens de campagne
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_no.md -->
+
+**Klassifisering**: PUBLIC | **Konfidensnivå**: HIGH [B2] | **Tid til valget**: T-131 dager
+
+### HANDLINGSSAMMENDRAG
+
+Tidö-koalisjonen innleder sin avsluttende 131-dagersperiode med fem kritiske signaler fra dagens parlamentariske register som krever umiddelbar analytisk oppmerksomhet:
+
+1. **Forslag om avskaffelse av Sida (HD10464)** — Et skriftlig spørsmål som krever oppløsning av Sida (det svenske byrået for internasjonalt utviklingssamarbeid) indikerer et akselererende ideologisk angrep på Sveriges multilaterale forpliktelser. Dersom dette oppnår lovgivningsstatus før 13. september, ville det representere det mest dramatiske utenrikspolitiske bruddet fra noen svensk regjering siden 1945.
+
+2. **Ikke-politiske tjenestemenn ved Regeringskansliet (HD10466)** — Dette forslaget om avpolitisering av den statlige forvaltningen inneholder betydelige rettsstatsimplikasjoner og signalerer SDs strukturelle konsolideringsagenda utover valgyklusen.
+
+3. **Rammeverk for ungdomsfengsling (HD01JuU30)** — Utvalgsrapporten om frihetsberøvelse av barn og ungdom representerer den endelige lovgivningsmessige konsolideringen av strafferettsrevolusjonen. Strafferetten forblir mandatets høyest rangerte politiske aktiva.
+
+4. **SILC-ekstremistklassifisering (HD11782)** — Klassifiseringen av SILC (islamistisk organisasjon) som ekstremistisk fortsetter det motekstremistiske lovgivningssporet; politisk kartlegges dette inn i SDs kjernefortelling.
+
+5. **NPT-revisjonskonfereanse 2026 (HD11787)** — Sveriges holdning om ikke-spredning av atomvåpen testes samtidig med innenlandsk atomkraftfremmenende lovgivning (HD01NU19). Et sammenhengende dobbeltspor (sivil atomkraft + NPT-overholdelse) er avgjørende for troverdigheten.
+
+### VALGANALYTISK KONKLUSJON
+
+Gjeldende mandatsporing: **Oppdrag 60% fullført på hovedpolitiske forpliktelser** (strafferett ✓, migrasjonsrestriksjoner pågår, NATO ✓, atomkraftfremme ✓, boligreform ✗, finansiell konsolidering delvis).
+
+Koalisjonsmandarprognose (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. Risiko: L-terskel (4,2% vs. 4,0% kreves).
+
+**Anbefalt overvåkningshandling**: Følg Liberalernas interne meningsmålinger ukentlig; ethvert fall under 3,8% i partimålinger utløser L-kollapsscenariet med 100% sannsynlighet for regjeringsoppløsning før valget.
+
+### IMF ØKONOMISK KONTEKST (WEO Apr-2026)
+
+- Sveriges BNP-vekst: 1,8% (2026), 2,3% (2027) — gjenopprettingsbane intakt
+- Finanspolitisk saldo: -0,8% BNP (2026) — innenfor Tidös finanspolitiske rammeverk
+- Statsgjeld: 34,5% BNP — lavest i EU sammen med Danmark
+- Arbeidsledighet: 8,3% — strukturell arbeidsledighet krever oppmerksomhet i valgkampen
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_sv.md -->
+
+**Klassificering**: PUBLIC | **Konfidensgrad**: HIGH [B2] | **Tid till valet**: T-131 dagar
+
+### ÅTGÄRDSSAMMANFATTNING
+
+Tidökoalitionen inleder sin avslutande 131-dagarsperiod med fem kritiska signaler från dagens parlamentariska protokoll som kräver omedelbar analytisk uppmärksamhet:
+
+1. **Förslag om avskaffande av Sida (HD10464)** — En skriftlig fråga som kräver upplösning av Sida (Styrelsen för internationellt utvecklingssamarbete) indikerar ett accelererande ideologiskt angrepp på Sveriges multilaterala åtaganden. Om detta når lagstiftningsstatus före den 13 september skulle det representera det mest dramatiska utrikespolitiska brottet av någon svensk regering sedan 1945.
+
+2. **Icke-politiska tjänstemän vid Regeringskansliet (HD10466)** — Detta förslag om avpolitisering av den statliga förvaltningen innehåller betydande rättsstatsimplikationer och signalerar SD:s strukturella konsolideringsagenda bortom valkretsar.
+
+3. **Ramverk för ungdomsfrihetsberövande (HD01JuU30)** — Utskottsbetänkandet om frihetsberövande för barn och ungdomar representerar den slutliga lagstiftningskonsolideringen av straffrättsrevolutionen. Straffrättsliga frågor förblir mandatets högst rankade politiska tillgång.
+
+4. **SILC extremistklassificering (HD11782)** — Klassificeringen av SILC (islamistisk organisation) som extremistisk fortsätter det motextremistiska lagstiftningsspåret; politiskt kartlägger detta in i SD:s kärnberättelse.
+
+5. **NPT-granskningskonferens 2026 (HD11787)** — Sveriges icke-spridningshållning testas samtidigt som inhemsk kärnkraftsmöjliggörande lagstiftning (HD01NU19) behandlas. Ett koherent dubbelt spår (civil kärnkraft + NPT-efterlevnad) är avgörande för trovärdigheten.
+
+### VALANALYTISK SLUTSATS
+
+Aktuellt mandatspårande: **Uppdrag 60% slutfört på rubrikpolicymål** (straffrättsliga frågor ✓, migrationsrestriktion pågår, NATO ✓, kärnkraftsmöjliggörande ✓, bostadsreform ✗, finansiell konsolidering delvis).
+
+Koalitionsmandarprojektion (2026-05-05): M 68 + KD 19 + L 16 + SD 73 = 175. Risk: L-tröskel (4,2% vs 4,0% krävs).
+
+**Rekommenderad övervakningsåtgärd**: Följ Liberalernas interna opinionsundersökningar varje vecka; varje fall under 3,8% i partimätningar utlöser L-kollapsscenariot med 100% sannolikhet för regeringsupplösning före valet.
+
+### IMF EKONOMISKT SAMMANHANG (WEO Apr-2026)
+
+- Sveriges BNP-tillväxt: 1,8% (2026), 2,3% (2027) — återhämtningsbana intakt
+- Finansiellt saldo: -0,8% BNP (2026) — inom Tidös finansiella ramverk
+- Statskuld: 34,5% BNP — lägst i EU tillsammans med Danmark
+- Arbetslöshet: 8,3% — strukturell arbetslöshet kräver uppmärksamhet i valrörelsen
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_zh.md -->
+
+**分类**：PUBLIC | **可信度**：HIGH [B2] | **距大选**：T-131天
+
+### 行动摘要
+
+提德联合政府进入最后131天阶段，今日议会记录中出现五个需要立即分析关注的关键信号：
+
+1. **废除Sida提案（HD10464）** — 一项要求解散Sida（瑞典国际发展合作署）的书面质询表明，针对瑞典多边承诺的意识形态攻势正在加剧。若此提案在9月13日前获得立法地位，将是自1945年以来任何瑞典政府最戏剧性的外交政策断裂。
+
+2. **Regeringskansliet非政治性公务员（HD10466）** — 这项政府公务员去政治化提案包含重大法治影响，并标志着瑞典民主党（SD）超越选举周期的结构性巩固议程。
+
+3. **青少年羁押框架（HD01JuU30）** — 关于儿童及青少年羁押的委员会报告代表了刑事司法革命最终的立法巩固。刑事司法仍是本任期民调支持率最高的政策资产。
+
+4. **SILC极端主义认定（HD11782）** — 将SILC（伊斯兰主义组织）认定为极端主义组织延续了反极端主义立法轨道；在政治上，这与SD的核心叙事相吻合。
+
+5. **2026年《不扩散核武器条约》审议会议（HD11787）** — 瑞典的核不扩散立场正在与国内核电许可立法（HD01NU19）同步接受考验。一个连贯的双轨战略（民用核能 + 遵守《不扩散核武器条约》）对于维护公信力至关重要。
+
+### 选举分析结论
+
+当前任期追踪：**主要政策承诺完成60%**（刑事司法 ✓、移民限制进行中、北约 ✓、核能开放 ✓、住房改革 ✗、财政整合部分完成）
+
+联合政府席位预测（2026-05-05）：M 68 + KD 19 + L 16 + SD 73 = 175。风险：自由党（L）的支持率门槛（4.2% 对比 4.0% 最低要求）。
+
+**建议监测行动**：每周追踪自由党（Liberalerna）内部民调；若党派追踪调查跌破3.8%，将触发L党崩溃情景，在大选前政府解散概率为100%。
+
+### 国际货币基金组织经济背景（WEO Apr-2026）
+
+- 瑞典GDP增长：1.8%（2026年）、2.3%（2027年） — 复苏轨道完好
+- 财政收支：-0.8% GDP（2026年） — 在提德财政框架内
+- 政府债务：34.5% GDP — 与丹麦同为欧盟最低
+- 失业率：8.3% — 结构性失业需要在选举期间关注
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 27 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 40 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1862,3 +2347,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/current/executive-brief_zh.md)

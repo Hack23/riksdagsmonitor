@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: propositions
 slug: 2026-05-04-propositions
 source_folder: analysis/daily/2026-05-04/propositions
-generated_at: 2026-05-22T13:53:53.801Z
+generated_at: 2026-05-23T08:06:00.509Z
 language: en
 layout: article
 ---
@@ -101,6 +101,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2562,13 +2575,893 @@ See `pir-status.json` for full PIR status.
 - PIR-COAL-01: C party coalition preference (watch July-August 2026)
 - PIR-MP-01: MP threshold risk (ongoing monitoring)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# موجز الاستخبارات — مشاريع قوانين الحكومة السويدية
+### دفعة البرلمان السويدي 2025/26 | التاريخ: 2026-04-30 | النشر: 2026-05-04
+
+**التصنيف**: عام — Riksdagsmonitor Intelligence  
+**مستوى الثقة**: عالٍ (سجلات برلمانية موثقة)  
+**معامل الانتخابات**: 1.5× (132 يوماً قبل 2026-09-13)
+
+---
+
+### BLUF — الخلاصة مقدماً
+
+قدّمت الحكومة السويدية 8 مشاريع قوانين في 30 أبريل 2026، تهيمن عليها مجموعة من أربعة مشاريع قوانين لإصلاح الهجرة تُلغي مجتمعةً تصاريح الإقامة الدائمة، وتُنفّذ ميثاق الهجرة واللجوء الأوروبي، وتُعزّز عمليات الترحيل، وتُشدّد سحب التصاريح بسبب سوء السلوك، وتُوسّع صلاحيات الاحتجاز. وهذا أهم تشريع للهجرة منذ قانون تصاريح الإقامة المؤقتة السويدي عام 2016. وإلى جانب إطار التعاون العملياتي مع الناتو وإصلاحات الشفافية ما قبل الانتخابات، يُرسّخ حزمة أبريل الدفعة التشريعية الأخيرة لاتفاق تيدو قبل انتخابات سبتمبر 2026.
+
+---
+
+### نقاط الاستخبارات ذات الأولوية
+
+#### 1. HD03262 — إصلاح جوهري لنظام الهجرة ★★★ حرج
+**ماذا**: يُلغي تصاريح الإقامة الدائمة كفئة قانونية. يصبح كل وضع حماية محدداً بمدة (3 سنوات في البداية، قابلة للتجديد إذا استمرت الحاجة للحماية). ويُنفّذ في الوقت ذاته ميثاق الهجرة واللجوء الأوروبي: لائحة إجراءات اللجوء (APR)، ولائحة التأهيل (QR)، وتوجيه شروط الاستقبال (RCD)، وتوجيه العودة في القانون السويدي.
+
+**لماذا يهم**: هذا الانعكاس لنهج السويد في مرحلة ما بعد الحرب تجاه اللجوء — حيث كانت الحماية الدائمة هي القاعدة — لا مثيل له في العصر الحديث. تنفيذ الميثاق الأوروبي ملزم قانونياً، لكن السويد أضافت قيوداً وطنية تتجاوز الحد الأدنى الأوروبي. البنية السياسية مقصودة: لا يمكن لحكومة مستقبلية التراجع عن العناصر الأوروبية دون انتهاك القانون الأوروبي، مما يُنشئ آلية قفل تشريعية.
+
+**الديناميكيات السياسية**: M+KD+L يدعمون (الائتلاف). SD مؤلف أيديولوجي مشارك لكنه يقف خارج الحكومة الرسمية. S تعارض إلغاء التصاريح الدائمة لكنها تقبل تنفيذ الميثاق الأوروبي. V وMP يعارضان بشدة. C تدعم الميثاق جزئياً لكنها تعارض العناصر الخاصة بالسويد.
+
+**الجدول الزمني**: أُحيل إلى SfU. تقرير اللجنة المتوقع خريف 2026 — على الأرجح بعد الانتخابات إذا تأخر SfU. الخطر: نتيجة الانتخابات تُحدد ما إذا كان مشروع القانون يمضي قُدُماً أم يموت في اللجنة.
+
+#### 2. HD03254 — التكامل العملياتي مع الناتو ★★ عالٍ
+**ماذا**: إطار قانوني جديد يتيح (أ) عمل القوات السويدية تحت قيادة الناتو دون تفويض من البرلمان السويدي لكل حالة على حدة؛ (ب) عمل قوات الحلفاء على الأراضي السويدية بموجب دعم الدولة المضيفة السويدية؛ (ج) المشاركة في التدريبات والتمارين المشتركة للناتو.
+
+**لماذا يهم**: انضمت السويد إلى الناتو في 7 مارس 2024. يوفر هذا المشروع البنية التحتية القانونية العملياتية. بدونه، تتطلب كل عملية للناتو بمشاركة قوات سويدية قراراً حكومياً جديداً وإشعاراً ضمنياً للبرلمان — غير عملي لأغراض الردع. هذا هو الفارق بين العضوية الاسمية والتكامل الفعلي في الناتو.
+
+**الديناميكيات السياسية**: دعم واسع من M وSD وS وL وC وKD. MP متحفظ. V يعارض. البُعد الدستوري: تسعى الحكومة إلى تفويض صلاحيات الحرب التي كانت تستوجب تقليدياً موافقة البرلمان.
+
+#### 3. HD03258 — الشفافية السياسية قبل الانتخابات ★★ عالٍ
+**ماذا**: متطلبات الإفصاح الموسّعة لتمويل الأحزاب السياسية، وإقرارات الأصول للمسؤولين الكبار، ونظام تسجيل مناصري الضغط، وزيادة الاطلاع على وثائق صنع القرار الحكومي.
+
+**لماذا يهم**: حساس انتخابياً. تُقنّن الحكومة قواعد الشفافية قبل 4 أشهر من الانتخابات. ترى المعارضة في ذلك إصلاحاً ضرورياً حقيقياً وتمركزاً استراتيجياً. Gunnar Strömmer (Justitiedepartementet) — إشارة إلى أجندة وزارة العدل قبل الانتخابات.
+
+#### 4. HD03263–HD03265 — الحزمة العملياتية للهجرة ★★ عالٍ
+**ماذا**: ثلاثة مشاريع قوانين تُشغّل إطار HD03262: البنية التحتية للعودة/الترحيل (HD03263)، فقدان التصريح بسبب سوء السلوك (HD03264)، الإشراف الموسّع/الاحتجاز (HD03265).
+
+**لماذا يهم**: يُحدد HD03262 الإطار القانوني؛ يوفر HD03263–65 أدوات التطبيق. الحزمة متسقة ومصمّمة للعمل المشترك. يُعالَج التراكم في الترحيل (المقدّر بأكثر من 12,000 قضية معلّقة) عبر الأدوات العملياتية الجديدة في HD03263.
+
+---
+
+### السياق الاقتصادي
+*المصدر: صندوق النقد الدولي — آفاق الاقتصاد العالمي، إصدار أبريل 2026*
+- نمو الناتج المحلي الإجمالي في السويد 2024: 1.0%؛ 2025م: 1.5%؛ 2026م: 2.0%
+- الدين الحكومي السويدي/الناتج المحلي الإجمالي 2024: 33.9%؛ 2026م: 36.7% — منخفض وفق المعايير الأوروبية
+- الأثر المالي لإصلاح الهجرة: تخفيض تكاليف معالجة طلبات اللجوء المقدّر بـ 2–4 مليارات SEK/سنة؛ تكاليف التنفيذ 0.5–1 مليار SEK
+
+---
+
+### قائمة المتابعة — الـ30 يوماً القادمة
+1. رد لجنة SfU على HD03262 (مراقبة تحفظات الأقلية)
+2. تصريحات أحزاب المعارضة حول HD03262 — تموضع قيادة S بشأن التصاريح الدائمة
+3. جدولة لجنة FöU لـ HD03254
+4. ردّ المفوضية السامية للأمم المتحدة لشؤون اللاجئين/مجلس أوروبا على HD03262
+
+---
+
+*أعدّه نظام Riksdagsmonitor AI Intelligence System | المنشأ الاقتصادي: IMF WEO أبريل 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+</div>
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_da.md -->
+
+### Riksdag-batch 2025/26 | Dato: 2026-04-30 | Publiceret: 2026-05-04
+
+**Klassificering**: OFFENTLIG — Riksdagsmonitor Intelligence  
+**Konfidensgrad**: HØJ (verificerede parlamentariske registreringer)  
+**Valgmultiplikator**: 1,5× (T-132 dage til 2026-09-13)
+
+---
+
+### BLUF — Bundlinje på forhånd
+
+Den svenske regering fremlagde 8 lovforslag den 30. april 2026, domineret af en klynge med fire migrationsreformlovforslag, som tilsammen afskaffer permanente opholdstilladelser, implementerer EU's migrations- og asylpagt, styrker udsendelsesoperationer, strammes tilbagekaldelse af tilladelser ved upassende adfærd og udvider frihedsberøvelsesbeføjelser. Dette er den mest konsekvensrige migrationslovgivning siden Sveriges midlertidige opholdstilladelses­lov fra 2016. Kombineret med et NATO-operativt samarbejdsramme og valgrelaterede transparensreformer cementerer april-pakken Tidö-aftalens endelige lovgivningspres forud for valget i september 2026.
+
+---
+
+### Prioriterede efterretningspunkter
+
+#### 1. HD03262 — Grundlæggende reform af migrationssystemet ★★★ KRITISK
+**Hvad**: Afskaffer permanente opholdstilladelser som retlig kategori. Al beskyttelsesstatus bliver tidsbegrænset (3 år indledningsvis, fornybar hvis beskyttelsesbehovet består). Gennemfører samtidig EU's migrations- og asylpagt: Asylprocedureforordningen (APR), Kvalifikationsforordningen (QR), Modtagelsesdirektivet (RCD), Tilbagesendelsesdirektivet i svensk ret.
+
+**Hvorfor det har betydning**: Denne omvending af Sveriges efterkrigstilgang til asyl — hvor permanent beskyttelse var normen — har intet moderne sidestykke. EU-pagtens gennemførelse er juridisk bindende, men Sverige har tilføjet nationale restriktioner ud over EU-minimumskravene. Den politiske arkitektur er bevidst: EU-elementerne kan ikke omgøres af en fremtidig regering uden at overtræde EU-retten, hvilket skaber en lovgivningsmæssig låsemekanisme.
+
+**Politisk dynamik**: M+KD+L støtter (koalitionen). SD er ideologisk medforfatter, men står uden for den formelle regering. S modsætter sig afskaffelsen af permanente tilladelser, men accepterer EU-pagtens gennemførelse. V, MP er stærkt imod. C støtter delvist pagten, men modsætter sig de Sverige-specifikke elementer.
+
+**Tidslinje**: Indsendt til SfU. Forventet udvalgsrapport efterår 2026 — sandsynligvis efter valget, hvis SfU trækker sagen ud. RISIKO: Valgresultatet afgør, om lovforslaget skrider frem eller dør i udvalget.
+
+#### 2. HD03254 — NATO-operativ integration ★★ HØJ
+**Hvad**: Nyt retligt rammeværk, der muliggør (a) at svenske styrker opererer under NATO-kommando uden case-by-case-Riksdag-bemyndigelse; (b) at allierede styrker opererer på svensk territorium under Danmarks værtsnationsstøtte; (c) deltagelse i NATOs kombinerede uddannelse og øvelser.
+
+**Hvorfor det har betydning**: Sverige tilsluttede sig NATO den 7. marts 2024. Dette lovforslag tilvejebringe den operative retslige infrastruktur. Uden det kræver enhver NATO-operation med svenske styrker en ny regeringsbeslutning og implicit Riksdag-underretning — operativt upraktisk for afskrækkelse. Det er forskellen mellem nominelt NATO-medlemskab og funktionelt NATO-integration.
+
+**Politisk dynamik**: Bred støtte fra M, SD, S, L, C, KD. MP er forsigtig. V modsætter sig. Konstitutionel dimension: regeringen søger at delegere krigsbeføjelser, der traditionelt har krævet Riksdag-godkendelse.
+
+#### 3. HD03258 — Politisk transparens inden valget ★★ HØJ
+**Hvad**: Udvidede oplysningskrav til politisk partifinansering, aktivopgørelser for højtstående embedsmænd, lobbyistregistreringssystem, øget adgang til dokumentation fra regeringens beslutningstagning.
+
+**Hvorfor det har betydning**: Valgfølsomt. Regeringen låser transparensregler fast 4 måneder inden valget. Oppositionen ser dette som både en nødvendig reform og strategisk positionering. Gunnar Strömmer (Justitiedepartementet) — signal om Justitieministeriets dagsorden inden valget.
+
+#### 4. HD03263–HD03265 — Migrationens operative pakke ★★ HØJ
+**Hvad**: Tre lovforslag, der operationaliserer HD03262's rammeværk: infrastruktur til returnering/udvisning (HD03263), tilladelsestab ved upassende adfærd (HD03264), udvidet tilsyn/frihedsberøvelse (HD03265).
+
+**Hvorfor det har betydning**: HD03262 sætter den juridiske ramme; HD03263–65 leverer håndhævelseskraft. Pakken er sammenhængende og designet til at fungere samlet. Udvisningsefterslettet (anslået 12.000+ ventende sager) adresseres via HD03263's nye operative redskaber.
+
+---
+
+### Økonomisk kontekst
+*Kilde: IMF World Economic Outlook, april 2026 vintage*
+- Sveriges BNP-vækst 2024: 1,0 %; 2025f: 1,5 %; 2026f: 2,0 %
+- Sveriges offentlige gæld/BNP 2024: 33,9 %; 2026f: 36,7 % — lavt efter EU-standard
+- Fiskal påvirkning af migrationsreform: reducerede asylbehandlingsomkostninger anslået 2–4 mia. SEK/år; implementeringsomkostninger 0,5–1 mia. SEK
+
+---
+
+### Overvågningsliste — Næste 30 dage
+1. SfU-udvalgets svar på HD03262 (hold øje med mindretalsreservationer)
+2. Oppositionspartiernes udtalelser om HD03262 — S-ledelsens positionering om permanente tilladelser
+3. FöU-udvalgets planlægning af HD03254
+4. UNHCR's/Europarådets svar på HD03262
+
+---
+
+*Udarbejdet af Riksdagsmonitor AI Intelligence System | Øk. herkomst: IMF WEO april 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_de.md -->
+
+### Riksdag-Paket 2025/26 | Datum: 2026-04-30 | Veröffentlicht: 2026-05-04
+
+**Klassifizierung**: ÖFFENTLICH — Riksdagsmonitor Intelligence  
+**Konfidenzgrad**: HOCH (verifizierte parlamentarische Aufzeichnungen)  
+**Wahlmultiplikator**: 1,5× (T-132 Tage bis 2026-09-13)
+
+---
+
+### BLUF — Kernaussage vorab
+
+Die schwedische Regierung legte am 30. April 2026 8 Gesetzentwürfe vor, dominiert von einem Cluster aus vier Migrationreformgesetzentwürfen, die gemeinsam dauerhafte Aufenthaltserlaubnisse abschaffen, den EU-Migrations- und Asylpakt umsetzen, Abschiebungsoperationen stärken, die Widerrufung von Erlaubnissen bei Fehlverhalten verschärfen und die Inhaftierungsbefugnisse ausweiten. Dies ist die folgenreichste Migrationsgesetzgebung seit Schwedens Gesetz über vorübergehende Aufenthaltserlaubnisse von 2016. In Verbindung mit einem operativen NATO-Kooperationsrahmen und Transparenzreformen vor der Wahl zementiert das April-Paket die letzte gesetzgeberische Initiative des Tidö-Abkommens vor der Wahl im September 2026.
+
+---
+
+### Prioritäre Nachrichtendienstpunkte
+
+#### 1. HD03262 — Grundlegende Reform des Migrationssystems ★★★ KRITISCH
+**Was**: Schafft dauerhaften Aufenthaltserlaubnissen als rechtliche Kategorie ab. Jeder Schutzstatus wird zeitlich befristet (anfänglich 3 Jahre, verlängerbar, wenn der Schutzbedarf fortbesteht). Setzt gleichzeitig den EU-Migrations- und Asylpakt um: die Asylverfahrensverordnung (APR), die Qualifikationsverordnung (QR), die Aufnahmerichtlinie (RCD), die Rückführungsrichtlinie in schwedisches Recht.
+
+**Warum es wichtig ist**: Diese Umkehrung von Schwedens Nachkriegsansatz beim Asylrecht — bei dem dauerhafter Schutz die Norm war — hat kein modernes Äquivalent. Die Umsetzung des EU-Pakts ist rechtlich bindend, aber Schweden hat nationale Beschränkungen über die EU-Mindestanforderungen hinaus hinzugefügt. Die politische Architektur ist bewusst: Die EU-Elemente können von einer künftigen Regierung nicht rückgängig gemacht werden, ohne EU-Recht zu verletzen, was einen gesetzgeberischen Riegelungsmechanismus schafft.
+
+**Politische Dynamik**: M+KD+L unterstützen (Koalition). SD ist ideologischer Mitautor, steht aber außerhalb der formellen Regierung. S lehnt die Abschaffung dauerhafter Erlaubnisse ab, akzeptiert aber die Umsetzung des EU-Pakts. V, MP sind strikt dagegen. C unterstützt den Pakt teilweise, lehnt aber die Schweden-spezifischen Elemente ab.
+
+**Zeitplan**: An SfU übermittelt. Erwarteter Ausschussbericht Herbst 2026 — wahrscheinlich nach der Wahl, wenn SfU verzögert. RISIKO: Das Wahlergebnis entscheidet, ob der Gesetzentwurf vorankommt oder im Ausschuss stirbt.
+
+#### 2. HD03254 — NATO-operative Integration ★★ HOCH
+**Was**: Neuer Rechtsrahmen, der ermöglicht (a) dass schwedische Streitkräfte unter NATO-Befehl operieren, ohne von Fall zu Fall eine Riksdag-Ermächtigung einzuholen; (b) dass verbündete Streitkräfte auf schwedischem Territorium unter schwedischer Gastnahmeunterstützung operieren; (c) Teilnahme an NATOs gemeinsamer Ausbildung und Übungen.
+
+**Warum es wichtig ist**: Schweden trat der NATO am 7. März 2024 bei. Dieser Gesetzentwurf stellt die operative Rechtsinfrastruktur bereit. Ohne ihn erfordert jede NATO-Operation mit schwedischen Streitkräften eine neue Regierungsentscheidung und implizite Riksdag-Benachrichtigung — operativ unpraktisch für die Abschreckung. Dies ist der Unterschied zwischen nomineller NATO-Mitgliedschaft und funktioneller NATO-Integration.
+
+**Politische Dynamik**: Breite Unterstützung von M, SD, S, L, C, KD. MP ist vorsichtig. V lehnt ab. Verfassungsdimension: Die Regierung versucht, Kriegsvollmachten zu delegieren, die traditionell den Riksdag erforderten.
+
+#### 3. HD03258 — Politische Transparenz vor der Wahl ★★ HOCH
+**Was**: Erweiterte Offenlegungspflichten für politische Parteienfinanzierung, Vermögenserklärungen für leitende Beamte, Lobbyistenregistrierungssystem, erhöhter Zugang zur Dokumentation der Regierungsentscheidungen.
+
+**Warum es wichtig ist**: Wahlsensibel. Die Regierung verankert Transparenzregeln 4 Monate vor der Wahl. Die Opposition sieht dies sowohl als notwendige Reform als auch als strategische Positionierung. Gunnar Strömmer (Justitiedepartementet) — Signal für die Vorwahlagenda des Justizministeriums.
+
+#### 4. HD03263–HD03265 — Operatives Migrationspaket ★★ HOCH
+**Was**: Drei Gesetzentwürfe, die den Rahmen von HD03262 operationalisieren: Rückführungs-/Abschiebungsinfrastruktur (HD03263), Erlaubnisverlust bei Fehlverhalten (HD03264), erweiterte Überwachung/Inhaftierung (HD03265).
+
+**Warum es wichtig ist**: HD03262 legt den Rechtsrahmen fest; HD03263–65 liefern die Durchsetzungskraft. Das Paket ist kohärent und so gestaltet, dass es gemeinsam funktioniert. Der Abschiebungsrückstand (geschätzte 12.000+ ausstehende Fälle) wird durch die neuen operativen Instrumente von HD03263 adressiert.
+
+---
+
+### Wirtschaftlicher Kontext
+*Quelle: IMF World Economic Outlook, April 2026 Vintage*
+- Schwedens BIP-Wachstum 2024: 1,0 %; 2025p: 1,5 %; 2026p: 2,0 %
+- Schwedens öffentliche Schulden/BIP 2024: 33,9 %; 2026p: 36,7 % — niedrig nach EU-Maßstäben
+- Fiskalische Auswirkung der Migrationsreform: reduzierte Asylbearbeitungskosten geschätzt 2–4 Mrd. SEK/Jahr; Implementierungskosten 0,5–1 Mrd. SEK
+
+---
+
+### Beobachtungsliste — Nächste 30 Tage
+1. SfU-Ausschussantwort auf HD03262 (auf Minderheitsvorbehalte achten)
+2. Oppositionspartei-Erklärungen zu HD03262 — S-Führungspositionierung zu dauerhaften Erlaubnissen
+3. FöU-Ausschussplanung für HD03254
+4. UNHCR-/Europarat-Antwort auf HD03262
+
+---
+
+*Erstellt vom Riksdagsmonitor AI Intelligence System | Wirtschaftliche Herkunft: IMF WEO April 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_es.md -->
+
+### Lote Riksdag 2025/26 | Fecha: 2026-04-30 | Publicado: 2026-05-04
+
+**Clasificación**: PÚBLICO — Riksdagsmonitor Intelligence  
+**Nivel de confianza**: ALTO (registros parlamentarios verificados)  
+**Multiplicador electoral**: 1,5× (T-132 días hasta el 2026-09-13)
+
+---
+
+### BLUF — Conclusión adelantada
+
+El gobierno sueco presentó 8 proyectos de ley el 30 de abril de 2026, dominados por un grupo de cuatro proyectos de reforma migratoria que, en conjunto, eliminan los permisos de residencia permanente, implementan el Pacto Europeo sobre Migración y Asilo, refuerzan las operaciones de deportación, endurecen la revocación de permisos por mala conducta y amplían los poderes de detención. Esta es la legislación migratoria más trascendental desde la ley sueca de permisos temporales de 2016. Combinado con un marco de cooperación operativa con la OTAN y reformas de transparencia preelectorales, el paquete de abril consolida el último impulso legislativo del acuerdo Tidö antes de las elecciones de septiembre de 2026.
+
+---
+
+### Puntos de inteligencia prioritarios
+
+#### 1. HD03262 — Reforma fundamental del sistema migratorio ★★★ CRÍTICO
+**Qué**: Elimina los permisos de residencia permanente como categoría jurídica. Todo el estatus de protección pasa a ser de duración limitada (3 años inicialmente, renovable si la necesidad de protección persiste). Transpone simultáneamente el Pacto Europeo sobre Migración y Asilo: el Reglamento de Procedimientos de Asilo (APR), el Reglamento de Reconocimiento (QR), la Directiva de Condiciones de Acogida (RCD), la Directiva de Retorno al derecho sueco.
+
+**Por qué importa**: Esta inversión del enfoque sueco de posguerra respecto al asilo — donde la protección permanente era la norma — no tiene equivalente moderno. La transposición del pacto europeo es jurídicamente vinculante, pero Suecia ha añadido restricciones nacionales que superan los mínimos europeos. La arquitectura política es deliberada: los elementos europeos no pueden ser revertidos por un futuro gobierno sin violar el derecho comunitario, creando un mecanismo de bloqueo legislativo.
+
+**Dinámica política**: M+KD+L apoyan (coalición). SD es coautor ideológico pero se mantiene fuera del gobierno formal. S se opone a la eliminación de los permisos permanentes pero acepta la transposición del pacto europeo. V, MP están fuertemente en contra. C apoya parcialmente el pacto pero se opone a los elementos específicos de Suecia.
+
+**Calendario**: Remitido a SfU. Informe de comisión esperado en otoño de 2026 — probablemente después de las elecciones si SfU se demora. RIESGO: El resultado electoral determina si el proyecto avanza o muere en comisión.
+
+#### 2. HD03254 — Integración operativa con la OTAN ★★ ALTO
+**Qué**: Nuevo marco jurídico que permite (a) que las fuerzas suecas operen bajo mando de la OTAN sin autorización caso por caso del Riksdag; (b) que las fuerzas aliadas operen en territorio sueco bajo apoyo de nación anfitriona sueca; (c) participación en ejercicios y formación combinados de la OTAN.
+
+**Por qué importa**: Suecia se unió a la OTAN el 7 de marzo de 2024. Este proyecto de ley proporciona la infraestructura jurídica operativa. Sin él, cada operación de la OTAN que involucre fuerzas suecas requiere una nueva decisión gubernamental y notificación implícita al Riksdag — operativamente impracticable para la disuasión. Esta es la diferencia entre la membresía nominal y la integración funcional en la OTAN.
+
+**Dinámica política**: Amplio apoyo de M, SD, S, L, C, KD. MP es cauteloso. V se opone. Dimensión constitucional: el gobierno busca delegar poderes de guerra que tradicionalmente requerían el Riksdag.
+
+#### 3. HD03258 — Transparencia política preelectoral ★★ ALTO
+**Qué**: Requisitos de divulgación ampliados para la financiación de partidos políticos, declaraciones de activos para altos funcionarios, sistema de registro de lobistas, mayor acceso a la documentación de decisiones gubernamentales.
+
+**Por qué importa**: Electoralmente sensible. El gobierno consolida las normas de transparencia 4 meses antes de las elecciones. La oposición ve esto como una reforma genuinamente necesaria y un posicionamiento estratégico. Gunnar Strömmer (Justitiedepartementet) — señal de la agenda preelectoral del Ministerio de Justicia.
+
+#### 4. HD03263–HD03265 — Paquete operativo migratorio ★★ ALTO
+**Qué**: Tres proyectos de ley que operacionalizan el marco de HD03262: infraestructura de retorno/deportación (HD03263), pérdida de permiso por mala conducta (HD03264), supervisión/detención ampliada (HD03265).
+
+**Por qué importa**: HD03262 establece el marco jurídico; HD03263–65 proporcionan la capacidad de aplicación. El paquete es coherente y diseñado para funcionar conjuntamente. El atraso en deportaciones (estimado en 12.000+ casos pendientes) se aborda a través de las nuevas herramientas operativas de HD03263.
+
+---
+
+### Contexto económico
+*Fuente: FMI Perspectivas de la Economía Mundial, vintage abril 2026*
+- Crecimiento del PIB sueco 2024: 1,0 %; 2025p: 1,5 %; 2026p: 2,0 %
+- Deuda pública sueca/PIB 2024: 33,9 %; 2026p: 36,7 % — bajo según estándares de la UE
+- Impacto fiscal de la reforma migratoria: reducción de costos de procesamiento de asilo estimada en 2–4 mil millones SEK/año; costos de implementación 0,5–1 mil millones SEK
+
+---
+
+### Lista de vigilancia — Próximos 30 días
+1. Respuesta del comité SfU sobre HD03262 (observar reservas de la minoría)
+2. Declaraciones de partidos de oposición sobre HD03262 — posicionamiento de la dirección de S sobre permisos permanentes
+3. Calendario del comité FöU para HD03254
+4. Respuesta de ACNUR/Consejo de Europa sobre HD03262
+
+---
+
+*Elaborado por Riksdagsmonitor AI Intelligence System | Procedencia económica: IMF WEO abril 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_fi.md -->
+
+### Riksdag-erä 2025/26 | Päivämäärä: 2026-04-30 | Julkaistu: 2026-05-04
+
+**Luokittelu**: JULKINEN — Riksdagsmonitor Intelligence  
+**Luottamustaso**: KORKEA (todennetut parlamentaariset asiakirjat)  
+**Vaalikertoimet**: 1,5× (T-132 päivää aikaan 2026-09-13)
+
+---
+
+### BLUF — Ydinviesti tiivistetysti
+
+Ruotsin hallitus antoi 8 hallituksen esitystä 30. huhtikuuta 2026. Hallituksen esityksistä neljä muodostaa maahanmuuttouudistusten ryppään, joka poistaa pysyvät oleskeluluvat, toteuttaa EU:n maahanmuutto- ja turvapaikkasopimuksen, tehostaa palautustoimia, tiukentaa lupien peruuttamista epäasiallisen käyttäytymisen perusteella ja laajentaa säilöönottovaltuuksia. Tämä on merkittävin maahanmuuttolainsäädäntö sitten Ruotsin väliaikaisen oleskelulupajärjestelmän vuodelta 2016. Yhdistettynä NATO-operatiiviseen yhteistyöpuitteeseen ja vaaleja edeltäviin avoimuusuudistuksiin huhtikuun paketti vahvistaa Tidö-sopimuksen viimeistä lainsäädäntöponnistusta ennen syyskuun 2026 vaaleja.
+
+---
+
+### Tärkeimmät tiedustelupisteet
+
+#### 1. HD03262 — Maahanmuuttojärjestelmän perusuudistus ★★★ KRIITTINEN
+**Mitä**: Poistaa pysyvät oleskeluluvat oikeudellisena kategoriana. Kaikki suojeluasema muuttuu määräaikaiseksi (aluksi 3 vuotta, uusittavissa jos suojelutarve jatkuu). Samalla pannaan täytäntöön EU:n maahanmuutto- ja turvapaikkasopimus: Turvapaikkamenettelyasetus (APR), Asemamääritysasetus (QR), Vastaanottodirektiivi (RCD) ja Paluudirektiivi Ruotsin oikeuteen.
+
+**Miksi tällä on merkitystä**: Tämä Ruotsin toisen maailmansodan jälkeisen turvapaikkalähestymistavan kääntäminen — jossa pysyvä suojelu oli normi — ei ole saanut vastaavaa modernina aikana. EU:n sopimuksen täytäntöönpano on oikeudellisesti sitova, mutta Ruotsi on lisännyt kansallisia rajoituksia EU:n vähimmäisvaatimusten yli. Poliittinen rakenne on tarkoituksellinen: EU-elementtejä ei voi peruuttaa tuleva hallitus rikkomatta EU:n oikeutta, mikä luo lainsäädännöllisen lukkiuman.
+
+**Poliittinen dynamiikka**: M+KD+L tukee (koalitio). SD on ideologinen kanssaluoja, mutta seisoo muodollisen hallituksen ulkopuolella. S vastustaa pysyvien lupien poistamista, mutta hyväksyy EU-sopimuksen täytäntöönpanon. V, MP on voimakkaasti vastaan. C tukee sopimusta osittain, mutta vastustaa Ruotsi-kohtaisia elementtejä.
+
+**Aikataulu**: Lähetetty SfU:lle. Odotettu valiokuntaraportti syksy 2026 — todennäköisesti vaalien jälkeen, jos SfU viivyttää. RISKI: Vaaliutulos ratkaisee, eteneekö esitys vai kuoleeko se valiokunnassa.
+
+#### 2. HD03254 — NATO:n operatiivinen integraatio ★★ KORKEA
+**Mitä**: Uusi oikeudellinen viitekehys, joka mahdollistaa (a) ruotsalaisten joukkojen toimimisen NATO-komentojärjestelmässä ilman tapauskohtaista Riksdagin valtuutusta; (b) liittoutuneiden joukkojen toimimisen Ruotsin alueella isäntämaatuen alaisena; (c) osallistumisen NATO:n yhteiseen harjoitustoimintaan.
+
+**Miksi tällä on merkitystä**: Ruotsi liittyi NATO:on 7. maaliskuuta 2024. Tämä esitys tarjoaa operatiivisen oikeudellisen infrastruktuurin. Ilman sitä jokainen ruotsalaisia joukkoja käsittävä NATO-operaatio edellyttää uutta hallituspäätöstä ja implisiittistä Riksdagin ilmoitusta — operatiivisesti epäkäytännöllistä pelotteen kannalta. Tämä on ero nimellisen ja toiminnallisen NATO-jäsenyyden välillä.
+
+**Poliittinen dynamiikka**: Laaja tuki M:ltä, SD:ltä, S:ltä, L:ltä, C:ltä, KD:ltä. MP on varovainen. V vastustaa. Perustuslaillinen ulottuvuus: hallitus pyrkii delegoimaan sotavaltaa, joka on perinteisesti vaatinut Riksdagin hyväksynnän.
+
+#### 3. HD03258 — Poliittinen avoimuus ennen vaaleja ★★ KORKEA
+**Mitä**: Laajennetut ilmoitusvaatimukset puoluerahoituksesta, varallisuusilmoitukset korkea-arvoisille virkamiehille, lobbaajien rekisteröintijärjestelmä, lisätty pääsy hallituksen päätöksentekodokumentaatioon.
+
+**Miksi tällä on merkitystä**: Vaaliherkkyys. Hallitus lukitsee avoimuussäännöt 4 kuukautta ennen vaaleja. Oppositio pitää tätä sekä aidosti tarpeellisena uudistuksena että strategisena asemoitumisena. Gunnar Strömmer (Justitiedepartementet) — signaali oikeusministeriön vaaleja edeltävästä agendasta.
+
+#### 4. HD03263–HD03265 — Maahanmuuton operatiivinen paketti ★★ KORKEA
+**Mitä**: Kolme esitystä, jotka operationalisoivat HD03262:n viitekehyksen: paluu-/palautusinfrastruktuuri (HD03263), luvan menettäminen epäasiallisen käyttäytymisen perusteella (HD03264), laajennettu valvonta/säilöönotto (HD03265).
+
+**Miksi tällä on merkitystä**: HD03262 asettaa oikeudellisen viitekehyksen; HD03263–65 antavat toimeenpanovoiman. Paketti on yhtenäinen ja suunniteltu toimimaan kokonaisuutena. Palautusruuhka (arvioitu 12 000+ odottavaa asiaa) käsitellään HD03263:n uusilla operatiivisilla välineillä.
+
+---
+
+### Taloudellinen konteksti
+*Lähde: IMF World Economic Outlook, huhtikuu 2026 vintage*
+- Ruotsin BKT-kasvu 2024: 1,0 %; 2025e: 1,5 %; 2026e: 2,0 %
+- Ruotsin julkinen velka/BKT 2024: 33,9 %; 2026e: 36,7 % — matala EU:n standardeihin nähden
+- Maahanmuuttouudistuksen finanssivaikutus: turvapaikkaprosessoinnin kustannusten lasku arvioitu 2–4 mrd. SEK/vuosi; täytäntöönpanokustannukset 0,5–1 mrd. SEK
+
+---
+
+### Seurantalista — Seuraavat 30 päivää
+1. SfU:n valiokuntavastaus HD03262:een (seuraa vähemmistövaraumia)
+2. Oppositiopuolueiden lausunnot HD03262:sta — S-johdon asemoituminen pysyvistä luvista
+3. FöU:n ajoitus HD03254:lle
+4. UNHCR:n/Euroopan neuvoston vastaus HD03262:een
+
+---
+
+*Laadittu Riksdagsmonitor AI Intelligence System -järjestelmällä | Taloudellinen alkuperä: IMF WEO huhtikuu 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_fr.md -->
+
+### Lot Riksdag 2025/26 | Date : 2026-04-30 | Publiée : 2026-05-04
+
+**Niveau de confiance** : ÉLEVÉ (archives parlementaires vérifiées)  
+**Multiplicateur électoral** : 1,5× (T-132 jours avant le 2026-09-13)
+
+---
+
+### BLUF — L'essentiel en bref
+
+Le gouvernement suédois a présenté 8 projets de loi le 30 avril 2026, dominés par un groupe de quatre projets de réforme migratoire qui, ensemble, suppriment les permis de résidence permanente, mettent en œuvre le Pacte européen sur la migration et l'asile, renforcent les opérations d'expulsion, durcissent la révocation des permis pour mauvaise conduite et élargissent les pouvoirs de détention. C'est la législation migratoire la plus conséquente depuis la loi suédoise sur les permis temporaires de 2016. Combiné à un cadre de coopération opérationnelle avec l'OTAN et des réformes de transparence pré-électorales, le paquet d'avril cimente la dernière initiative législative de l'accord Tidö avant les élections de septembre 2026.
+
+---
+
+### Points de renseignement prioritaires
+
+#### 1. HD03262 — Réforme fondamentale du système migratoire ★★★ CRITIQUE
+**Quoi** : Supprime les permis de résidence permanente en tant que catégorie juridique. Tout statut de protection devient limité dans le temps (3 ans initialement, renouvelable si le besoin de protection persiste). Transpose simultanément le Pacte européen sur la migration et l'asile : le Règlement sur les procédures d'asile (APR), le Règlement de qualification (QR), la Directive sur les conditions d'accueil (RCD), la Directive sur le retour en droit suédois.
+
+**Pourquoi c'est important** : Ce renversement de l'approche suédoise d'après-guerre en matière d'asile — où la protection permanente était la norme — n'a pas d'équivalent moderne. La transposition du pacte de l'UE est juridiquement contraignante, mais la Suède a ajouté des restrictions nationales au-delà des minimums européens. L'architecture politique est délibérée : les éléments européens ne peuvent pas être annulés par un futur gouvernement sans violer le droit de l'UE, créant ainsi un mécanisme de verrouillage législatif.
+
+**Dynamique politique** : M+KD+L soutiennent (coalition). SD est co-auteur idéologique mais se tient en dehors du gouvernement officiel. S s'oppose à la suppression des permis permanents mais accepte la transposition du pacte européen. V, MP s'y opposent vivement. C soutient partiellement le pacte mais s'oppose aux éléments spécifiques à la Suède.
+
+**Calendrier** : Transmis à SfU. Rapport de commission attendu à l'automne 2026 — probablement après les élections si SfU tarde. RISQUE : Le résultat électoral détermine si le projet de loi avance ou meurt en commission.
+
+#### 2. HD03254 — Intégration opérationnelle avec l'OTAN ★★ ÉLEVÉ
+**Quoi** : Nouveau cadre juridique permettant (a) aux forces suédoises d'opérer sous commandement OTAN sans autorisation au cas par cas du Riksdag ; (b) aux forces alliées d'opérer sur le territoire suédois dans le cadre du soutien de nation hôte suédois ; (c) la participation aux exercices et entraînements combinés de l'OTAN.
+
+**Pourquoi c'est important** : La Suède a rejoint l'OTAN le 7 mars 2024. Ce projet de loi fournit l'infrastructure juridique opérationnelle. Sans lui, chaque opération OTAN impliquant des forces suédoises nécessite une nouvelle décision gouvernementale et une notification implicite du Riksdag — opérationnellement impraticable pour la dissuasion. C'est la différence entre une adhésion nominale à l'OTAN et une intégration fonctionnelle.
+
+**Dynamique politique** : Large soutien de M, SD, S, L, C, KD. MP est prudent. V s'y oppose. Dimension constitutionnelle : le gouvernement cherche à déléguer des pouvoirs de guerre qui nécessitaient traditionnellement l'accord du Riksdag.
+
+#### 3. HD03258 — Transparence politique pré-électorale ★★ ÉLEVÉ
+**Quoi** : Obligations de déclaration élargies pour le financement des partis politiques, déclarations d'actifs pour les hauts fonctionnaires, système d'enregistrement des lobbyistes, accès accru à la documentation sur les décisions gouvernementales.
+
+**Pourquoi c'est important** : Électoralement sensible. Le gouvernement verrouille les règles de transparence 4 mois avant les élections. L'opposition voit cela à la fois comme une réforme véritablement nécessaire et un positionnement stratégique. Gunnar Strömmer (Justitiedepartementet) — signal sur l'agenda pré-électoral du ministère de la Justice.
+
+#### 4. HD03263–HD03265 — Paquet opérationnel migratoire ★★ ÉLEVÉ
+**Quoi** : Trois projets de loi opérationnalisant le cadre de HD03262 : infrastructure de retour/expulsion (HD03263), perte de permis pour mauvaise conduite (HD03264), supervision/détention élargie (HD03265).
+
+**Pourquoi c'est important** : HD03262 établit le cadre juridique ; HD03263–65 fournissent les outils d'application. Le paquet est cohérent et conçu pour fonctionner ensemble. Le retard d'expulsion (estimé à 12 000+ dossiers en attente) est traité via les nouveaux outils opérationnels de HD03263.
+
+---
+
+### Contexte économique
+*Source : FMI World Economic Outlook, vintage avril 2026*
+- Croissance du PIB suédois 2024 : 1,0 % ; 2025p : 1,5 % ; 2026p : 2,0 %
+- Dette publique suédoise/PIB 2024 : 33,9 % ; 2026p : 36,7 % — faible selon les standards européens
+- Impact budgétaire de la réforme migratoire : réduction des coûts de traitement des demandes d'asile estimée à 2–4 Mds SEK/an ; coûts de mise en œuvre 0,5–1 Md SEK
+
+---
+
+### Liste de surveillance — 30 prochains jours
+1. Réponse du comité SfU sur HD03262 (surveiller les réserves de la minorité)
+2. Déclarations des partis d'opposition sur HD03262 — positionnement de la direction S sur les permis permanents
+3. Planification du comité FöU pour HD03254
+4. Réponse du HCR/Conseil de l'Europe sur HD03262
+
+---
+
+*Préparé par le système Riksdagsmonitor AI Intelligence System | Provenance économique : IMF WEO avril 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# תקציר מודיעין — הצעות חוק של הממשלה השוודית
+### אצווה Riksdag 2025/26 | תאריך: 2026-04-30 | פורסם: 2026-05-04
+
+**סיווג**: ציבורי — Riksdagsmonitor Intelligence  
+**רמת ביטחון**: גבוהה (רשומות פרלמנטריות מאומתות)  
+**מכפיל בחירות**: 1.5× (132 יום עד 2026-09-13)
+
+---
+
+### BLUF — עיקר הדברים מראש
+
+הממשלה השוודית הציגה 8 הצעות חוק ב-30 באפריל 2026, בשליטתה של קבוצת ארבע הצעות חוק לרפורמת הגירה המבטלות ביחד אשרות שהייה קבועות, מיישמות את האמנה האירופית להגירה ומקלט, מחזקות פעולות גירוש, מחמירות ביטול אשרות בשל התנהגות לא הולמת ומרחיבות סמכויות מעצר. זוהי החקיקה המשמעותית ביותר בנושא הגירה מאז חוק האשרות הזמניות השוודי משנת 2016. בשילוב עם מסגרת שיתוף הפעולה המבצעי עם נאט"ו ורפורמות שקיפות לפני הבחירות, מגבשת חבילת אפריל את הדחיפה החקיקתית האחרונה של הסכם Tidö לקראת בחירות ספטמבר 2026.
+
+---
+
+### נקודות מודיעין בעדיפות
+
+#### 1. HD03262 — רפורמה יסודית במערכת ההגירה ★★★ קריטי
+**מה**: מבטל אשרות שהייה קבועות כקטגוריה משפטית. כל מעמד הגנה הופך מוגבל בזמן (3 שנים בתחילה, ניתן לחידוש אם הצורך בהגנה נמשך). מיישם בו-זמנית את האמנה האירופית להגירה ומקלט: תקנת נהלי מקלט (APR), תקנת הכישורים (QR), הנחיית תנאי קבלה (RCD), הנחיית ההחזרה לחוק השוודי.
+
+**למה זה חשוב**: היפוך זה של גישת שוודיה לאחר מלחמת העולם השנייה כלפי מקלט — שבה הגנה קבועה הייתה הנורמה — אין לו מקבילה מודרנית. יישום האמנה האירופית מחייב מבחינה משפטית, אך שוודיה הוסיפה הגבלות לאומיות מעבר למינימום האירופי. הארכיטקטורה הפוליטית היא מכוונת: הממשלה הבאה לא תוכל לבטל את המרכיבים האירופיים מבלי להפר את החוק האירופי, ובכך נוצר מנגנון נעילה חקיקתי.
+
+**דינמיקה פוליטית**: M+KD+L תומכים (קואליציה). SD הוא שותף-מחבר אידיאולוגי אך עומד מחוץ לממשלה הרשמית. S מתנגד לביטול אשרות קבועות אך מקבל את יישום האמנה האירופית. V, MP מתנגדים בתוקף. C תומך חלקית באמנה אך מתנגד למרכיבים הספציפיים לשוודיה.
+
+**ציר זמן**: הועבר ל-SfU. דוח ועדה צפוי בסתיו 2026 — כנראה לאחר הבחירות אם SfU יתמהמה. סיכון: תוצאת הבחירות תקבע אם הצעת החוק תתקדם או תמות בוועדה.
+
+#### 2. HD03254 — שילוב מבצעי עם נאט"ו ★★ גבוה
+**מה**: מסגרת משפטית חדשה המאפשרת (א) פעולת כוחות שוודיים תחת פיקוד נאט"ו ללא אישור ה-Riksdag מקרה לקרה; (ב) פעולת כוחות בעלי ברית על הקרקע השוודית במסגרת תמיכת מדינה מארחת שוודית; (ג) השתתפות בתרגולים ובאימונים משותפים של נאט"ו.
+
+**למה זה חשוב**: שוודיה הצטרפה לנאט"ו ב-7 במרץ 2024. הצעת חוק זו מספקת את התשתית המשפטית המבצעית. ללא זאת, כל פעולת נאט"ו הכוללת כוחות שוודיים מחייבת החלטה ממשלתית חדשה והודעה משתמעת ל-Riksdag — לא מעשי מבחינה מבצעית לצרכי הרתעה. זה ההבדל בין חברות נומינלית בנאט"ו לשילוב פונקציונלי.
+
+**דינמיקה פוליטית**: תמיכה רחבה מ-M, SD, S, L, C, KD. MP זהיר. V מתנגד. ממד חוקתי: הממשלה מבקשת להאציל סמכויות מלחמה שמסורתית דרשו את ה-Riksdag.
+
+#### 3. HD03258 — שקיפות פוליטית לפני הבחירות ★★ גבוה
+**מה**: דרישות גילוי מורחבות למימון מפלגות פוליטיות, הצהרות נכסים לפקידים בכירים, מערכת רישום לוביסטים, גישה מוגברת לתיעוד קבלת החלטות ממשלתיות.
+
+**למה זה חשוב**: רגיש בחינות. הממשלה מעגנת כללי שקיפות 4 חודשים לפני הבחירות. האופוזיציה רואה בכך גם רפורמה הכרחית אמיתית וגם מיצוב אסטרטגי. Gunnar Strömmer (Justitiedepartementet) — אות לסדר היום של משרד המשפטים לפני הבחירות.
+
+#### 4. HD03263–HD03265 — חבילת ההגירה המבצעית ★★ גבוה
+**מה**: שלוש הצעות חוק המפעילות את מסגרת HD03262: תשתית חזרה/גירוש (HD03263), אובדן אשרה בשל התנהגות לא הולמת (HD03264), פיקוח/מעצר מורחב (HD03265).
+
+**למה זה חשוב**: HD03262 קובע את המסגרת המשפטית; HD03263–65 מספקים כוח אכיפה. החבילה קוהרנטית ומתוכננת לפעול יחד. הצטברות הגירושים (כ-12,000+ מקרים ממתינים) מטופלת דרך כלי HD03263 המבצעיים החדשים.
+
+---
+
+### הקשר כלכלי
+*מקור: IMF World Economic Outlook, ווינטאז' אפריל 2026*
+- צמיחת התמ"ג של שוודיה 2024: 1.0%; 2025ח: 1.5%; 2026ח: 2.0%
+- חוב ציבורי שוודי/תמ"ג 2024: 33.9%; 2026ח: 36.7% — נמוך לפי סטנדרטים אירופיים
+- השפעה פיסקלית של רפורמת ההגירה: הפחתת עלויות עיבוד מקלט מוערכת ב-2–4 מיליארד SEK/שנה; עלויות יישום 0.5–1 מיליארד SEK
+
+---
+
+### רשימת מעקב — 30 הימים הקרובים
+1. תגובת ועדת SfU על HD03262 (מעקב אחר הסתייגויות מיעוט)
+2. הצהרות מפלגות האופוזיציה על HD03262 — מיצוב הנהגת S בנושא אשרות קבועות
+3. תזמון ועדת FöU ל-HD03254
+4. תגובת נציבות האו"ם לפליטים/מועצת אירופה על HD03262
+
+---
+
+*הוכן על ידי Riksdagsmonitor AI Intelligence System | מקור כלכלי: IMF WEO אפריל 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+</div>
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_ja.md -->
+
+### 国会バッチ 2025/26 | 日付：2026-04-30 | 公開：2026-05-04
+
+**分類**：公開 — Riksdagsmonitor Intelligence  
+**信頼度**：高（議会公式記録により確認済み）  
+**選挙近接乗数**：1.5×（2026-09-13まで残り132日）
+
+---
+
+### BLUF — 要点先行
+
+スウェーデン政府は2026年4月30日に8本の法案を提出。そのうち4本が移民改革法案の集まりを形成し、永住許可の廃止、EU移民・庇護協定の実施、送還業務の強化、不法行為による許可取り消しの厳格化、そして収容権限の拡大を一体的に推進する。これは2016年の一時的許可法以来、最も重大な移民立法である。NATO作戦協力枠組みおよび選挙前透明性改革と組み合わせ、4月パッケージは2026年9月選挙に向けたTidö協定の最終立法推進を確実なものにしている。
+
+---
+
+### 優先インテリジェンス事項
+
+#### 1. HD03262 — 移民制度の根本改革 ★★★ 重大
+**内容**：永住許可を法的カテゴリーとして廃止。すべての保護状態を期限付き（最初は3年、保護の必要性が続く場合は更新可能）とする。同時にEU移民・庇護協定を転置：庇護手続き規則（APR）、資格認定規則（QR）、受け入れ条件指令（RCD）、帰還指令をスウェーデン法に取り込む。
+
+**重要な理由**：永続的保護が規範であったスウェーデンの戦後庇護アプローチのこの転換に、近代的な類例はない。EU協定の転置は法的拘束力があるが、スウェーデンはEUの最低基準を超える国内規制を追加した。政治的構造は意図的なもの：EU要素は将来の政府がEU法に違反することなく覆すことができず、立法的ロック機構を形成する。
+
+**政治力学**：M+KD+L支持（連立）。SDはイデオロギー的共著者だが正式政府の外側に立つ。Sは永住許可廃止に反対するが、EU協定転置は受け入れる。V、MPは強く反対。Cは協定を部分的に支持するが、スウェーデン固有の要素には反対。
+
+**スケジュール**：SfUに送付。委員会報告は2026年秋が見込まれる—SfUが遅延した場合は選挙後の可能性が高い。リスク：選挙結果が法案の進展または委員会での否決を左右する。
+
+#### 2. HD03254 — NATOとの作戦的統合 ★★ 高
+**内容**：（a）スウェーデン軍がRiksdag（国会）の個別認可なくNATO指揮下で作戦を実施；（b）同盟軍がスウェーデン領域内でスウェーデンの受入国支援の下で作戦を実施；（c）NATOの合同訓練・演習への参加、を可能にする新法的枠組み。
+
+**重要な理由**：スウェーデンは2024年3月7日にNATOに加盟した。この法案は作戦上の法的インフラを提供する。これがなければ、スウェーデン軍を含むすべてのNATO作戦において、新たな政府決定とRiksdagへの暗黙の通知が必要となり、抑止力として作戦上非実用的となる。これは名目上のNATO加盟と機能的なNATO統合の違いである。
+
+**政治力学**：M、SD、S、L、C、KDから幅広い支持。MPは慎重。Vは反対。憲法上の次元：政府は伝統的にRiksdagを要していた戦争権限の委任を求める。
+
+#### 3. HD03258 — 選挙前の政治的透明性 ★★ 高
+**内容**：政党資金に関する開示要件の拡大、高官の資産申告、ロビイスト登録制度、政府意思決定文書へのアクセス向上。
+
+**重要な理由**：選挙敏感案件。政府は選挙4ヶ月前に透明性ルールを固定する。野党はこれを真に必要な改革かつ戦略的ポジショニングの両面として見る。Gunnar Strömmer（Justitiedepartementet）—司法省の選挙前アジェンダのシグナル。
+
+#### 4. HD03263–HD03265 — 移民作戦パッケージ ★★ 高
+**内容**：HD03262の枠組みを具体化する3本の法案：帰還・送還インフラ（HD03263）、不法行為による許可喪失（HD03264）、拡大された監督・収容（HD03265）。
+
+**重要な理由**：HD03262が法的枠組みを設定；HD03263–65が施行力を提供する。パッケージは整合的で、一体として機能するよう設計されている。送還の滞留（推定12,000件以上の案件が保留中）はHD03263の新たな作戦ツールにより対処される。
+
+---
+
+### 経済的背景
+*出典：IMF世界経済見通し、2026年4月版*
+- スウェーデンGDP成長率2024：1.0%；2025f：1.5%；2026f：2.0%
+- スウェーデン政府債務/GDP 2024：33.9%；2026f：36.7%—EU基準では低水準
+- 移民改革の財政影響：庇護処理コストの削減推定20〜40億SEK/年；実施コスト5〜10億SEK
+
+---
+
+### 注目リスト — 今後30日間
+1. SfU委員会のHD03262への回答（少数意見の留保に注目）
+2. 野党のHD03262に関する声明—永住許可についてのS指導部のポジショニング
+3. FöU委員会のHD03254スケジュール
+4. UNHCR/欧州評議会のHD03262への反応
+
+---
+
+*Riksdagsmonitor AI Intelligence Systemが作成 | 経済的出典：IMF WEO 2026年4月 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_ko.md -->
+
+### 릭스다그 배치 2025/26 | 날짜: 2026-04-30 | 발행: 2026-05-04
+
+**분류**: 공개 — Riksdagsmonitor Intelligence  
+**신뢰도**: 높음 (검증된 의회 기록)  
+**선거 근접 배수**: 1.5× (2026-09-13까지 T-132일)
+
+---
+
+### BLUF — 핵심 요약 선제 제시
+
+스웨덴 정부는 2026년 4월 30일에 8개의 법안을 제출했으며, 그 중 4개는 이민 개혁 법안 묶음으로 구성되어 있다. 이 묶음은 영구 거주 허가를 폐지하고, EU 이민·망명 협약을 이행하며, 추방 작전을 강화하고, 위법 행위로 인한 허가 취소를 강화하며, 구금 권한을 확대한다. 이는 2016년 스웨덴의 임시 허가 법률 이후 가장 중요한 이민 입법이다. NATO 작전 협력 프레임워크 및 선거 전 투명성 개혁과 함께 4월 패키지는 2026년 9월 선거를 앞두고 Tidö 협정의 최종 입법 추진을 공고히 한다.
+
+---
+
+### 우선 인텔리전스 포인트
+
+#### 1. HD03262 — 이민 시스템 근본 개혁 ★★★ 매우 중요
+**내용**: 영구 거주 허가를 법적 범주로서 폐지한다. 모든 보호 지위는 기간 제한적(초기 3년, 보호 필요성이 지속되면 갱신 가능)이 된다. 동시에 EU 이민·망명 협약을 전환한다: 망명 절차 규정(APR), 자격 인정 규정(QR), 수용 조건 지침(RCD), 반환 지침을 스웨덴 법률에 통합.
+
+**중요한 이유**: 영구 보호가 규범이었던 스웨덴의 전후 망명 접근법의 이 전환은 현대적 유사 사례가 없다. EU 협약 전환은 법적 구속력이 있지만 스웨덴은 EU 최저 기준 이상의 국내 제한을 추가했다. 정치적 구조는 의도적이다: EU 요소는 미래 정부가 EU 법을 위반하지 않고는 뒤집을 수 없어 입법 잠금 메커니즘을 형성한다.
+
+**정치적 역학**: M+KD+L 지지(연립). SD는 이념적 공동 입안자이지만 공식 정부 밖에 선다. S는 영구 허가 폐지에 반대하지만 EU 협약 전환은 수용한다. V, MP는 강력히 반대한다. C는 협약을 부분적으로 지지하지만 스웨덴 특유 요소는 반대한다.
+
+**일정**: SfU에 제출됨. 위원회 보고서는 2026년 가을 예상—SfU가 지연하면 선거 이후일 가능성 높음. 위험: 선거 결과가 법안 진행 여부를 결정한다.
+
+#### 2. HD03254 — NATO 작전 통합 ★★ 높음
+**내용**: (a) 스웨덴 군이 릭스다그의 개별 승인 없이 NATO 지휘 하에 작전 수행; (b) 동맹군이 스웨덴 영토에서 스웨덴 주둔국 지원 하에 작전 수행; (c) NATO 합동 훈련 및 연습 참가를 가능하게 하는 새로운 법적 프레임워크.
+
+**중요한 이유**: 스웨덴은 2024년 3월 7일 NATO에 가입했다. 이 법안은 작전상 법적 인프라를 제공한다. 이것 없이는 스웨덴 군이 참여하는 모든 NATO 작전에 새로운 정부 결정과 릭스다그에 대한 묵시적 통보가 필요하며 억지력을 위해 작전상 비실용적이다. 이것이 명목적 NATO 가입과 기능적 NATO 통합의 차이다.
+
+**정치적 역학**: M, SD, S, L, C, KD의 광범위한 지지. MP는 신중. V는 반대. 헌법적 측면: 전통적으로 릭스다그를 필요로 했던 전쟁 권한 위임을 정부가 모색한다.
+
+#### 3. HD03258 — 선거 전 정치적 투명성 ★★ 높음
+**내용**: 정당 자금 조달에 대한 확대된 공개 요건, 고위 공직자를 위한 자산 신고, 로비이스트 등록 시스템, 정부 의사결정 문서에 대한 접근 확대.
+
+**중요한 이유**: 선거 민감 사안. 정부는 선거 4개월 전에 투명성 규정을 고정한다. 야당은 이것을 진정으로 필요한 개혁이자 전략적 포지셔닝 양면으로 본다. Gunnar Strömmer(Justitiedepartementet) — 법무부의 선거 전 의제 신호.
+
+#### 4. HD03263–HD03265 — 이민 운영 패키지 ★★ 높음
+**내용**: HD03262의 프레임워크를 운영화하는 3개 법안: 귀환/추방 인프라(HD03263), 위법 행위로 인한 허가 상실(HD03264), 확대된 감독/구금(HD03265).
+
+**중요한 이유**: HD03262가 법적 프레임워크를 설정하고; HD03263–65가 집행력을 제공한다. 패키지는 일관성이 있으며 함께 작동하도록 설계되었다. 추방 미처리 건수(추정 12,000건 이상 대기 중)는 HD03263의 새로운 운영 도구를 통해 처리된다.
+
+---
+
+### 경제적 맥락
+*출처: IMF 세계 경제 전망, 2026년 4월 빈티지*
+- 스웨덴 GDP 성장률 2024: 1.0%; 2025f: 1.5%; 2026f: 2.0%
+- 스웨덴 정부 부채/GDP 2024: 33.9%; 2026f: 36.7% — EU 기준으로 낮음
+- 이민 개혁의 재정 영향: 망명 처리 비용 절감 추정 20~40억 SEK/년; 이행 비용 5~10억 SEK
+
+---
+
+### 모니터링 목록 — 향후 30일
+1. SfU 위원회의 HD03262에 대한 응답 (소수 의견 유보 주시)
+2. 야당의 HD03262에 관한 성명 — 영구 허가에 대한 S 지도부 포지셔닝
+3. FöU 위원회의 HD03254 일정
+4. UNHCR/유럽평의회의 HD03262에 대한 응답
+
+---
+
+*Riksdagsmonitor AI Intelligence System 작성 | 경제적 출처: IMF WEO 2026년 4월 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_nl.md -->
+
+### Riksdag-batch 2025/26 | Datum: 2026-04-30 | Gepubliceerd: 2026-05-04
+
+**Classificatie**: OPENBAAR — Riksdagsmonitor Intelligence  
+**Betrouwbaarheidsniveau**: HOOG (geverifieerde parlementaire documenten)  
+**Verkiezingsmultiplikator**: 1,5× (T-132 dagen tot 2026-09-13)
+
+---
+
+### BLUF — Samenvatting vooraf
+
+De Zweedse regering presenteerde op 30 april 2026 8 wetsvoorstellen, gedomineerd door een cluster van vier migratiehervorming­wetsvoorstellen die samen permanente verblijfsvergunningen afschaffen, het EU-Migratie- en Asielpact implementeren, deportatieoperaties versterken, de intrekking van vergunningen bij wangedrag aanscherpen en de bevoegdheden voor detentie uitbreiden. Dit is de meest ingrijpende migratiewetgeving sinds Zweden's tijdelijke verblijfsvergunningswet van 2016. In combinatie met een NAVO-operatief samenwerkingskader en transparantiehervormingen voor de verkiezingen, consolideert het april-pakket de laatste wetgevingspush van het Tidö-akkoord vóór de verkiezingen van september 2026.
+
+---
+
+### Prioritaire inlichtingenpunten
+
+#### 1. HD03262 — Fundamentele hervorming van het migratiesysteem ★★★ KRITIEK
+**Wat**: Schafft permanente verblijfsvergunningen als juridische categorie af. Alle beschermingsstatus wordt tijdelijk (aanvankelijk 3 jaar, verlengbaar als de beschermingsbehoefte aanhoudt). Transposeert tegelijkertijd het EU-Migratie- en Asielpact: de Verordening Asielprocedures (APR), de Kwalificatieverordening (QR), de Opvangrichtlijn (RCD), de Terugkeerrichtlijn in Zweeds recht.
+
+**Waarom het belangrijk is**: Deze ommekeer van Zweden's naoorlogse benadering van asiel — waarbij permanente bescherming de norm was — heeft geen modern equivalent. De omzetting van het EU-pact is juridisch bindend, maar Zweden heeft nationale beperkingen toegevoegd die verder gaan dan de EU-minimumnormen. De politieke architectuur is bewust: de EU-elementen kunnen niet worden teruggedraaid door een toekomstige regering zonder het EU-recht te schenden, waardoor een wetgevingsblokkeringsmechanisme ontstaat.
+
+**Politieke dynamiek**: M+KD+L ondersteunen (coalitie). SD is ideologisch medeauteur maar staat buiten de formele regering. S verzet zich tegen de afschaffing van permanente vergunningen maar accepteert de omzetting van het EU-pact. V, MP zijn sterk tegen. C ondersteunt het pact gedeeltelijk maar verzet zich tegen de Zweden-specifieke elementen.
+
+**Tijdlijn**: Doorgezonden naar SfU. Verwacht commissierapport herfst 2026 — waarschijnlijk na de verkiezingen als SfU vertraagt. RISICO: De verkiezingsuitslag bepaalt of het wetsvoorstel doorgaat of sterft in de commissie.
+
+#### 2. HD03254 — NAVO-operationele integratie ★★ HOOG
+**Wat**: Nieuw juridisch kader dat (a) mogelijk maakt dat Zweedse strijdkrachten opereren onder NAVO-commando zonder geval-voor-geval-Riksdag-machtiging; (b) dat geallieerde strijdkrachten opereren op Zweeds grondgebied onder Zweeds gastlandsteun; (c) deelname aan NAVO gecombineerde training en oefeningen.
+
+**Waarom het belangrijk is**: Zweden trad op 7 maart 2024 toe tot de NAVO. Dit wetsvoorstel biedt de operationele juridische infrastructuur. Zonder het vereist elke NAVO-operatie met Zweedse strijdkrachten een nieuwe regeringsbeslissing en impliciete Riksdag-kennisgeving — operationeel onpraktisch voor afschrikking. Dit is het verschil tussen nominaal NAVO-lidmaatschap en functionele NAVO-integratie.
+
+**Politieke dynamiek**: Brede steun van M, SD, S, L, C, KD. MP is voorzichtig. V verzet zich. Constitutionele dimensie: de regering tracht oorlogsbevoegdheden te delegeren die traditioneel de Riksdag vereisten.
+
+#### 3. HD03258 — Politieke transparantie vóór de verkiezingen ★★ HOOG
+**Wat**: Uitgebreide openbaarmakingsvereisten voor politieke partijfinanciering, vermogensverklaringen voor hoge ambtenaren, lobbyistregistratiesysteem, verhoogde toegang tot documentatie over overheidsbesluitvorming.
+
+**Waarom het belangrijk is**: Verkiezingsgevoelig. De regering verankert transparantieregels 4 maanden voor de verkiezingen. De oppositie ziet dit als zowel een oprecht noodzakelijke hervorming als een strategische positionering. Gunnar Strömmer (Justitiedepartementet) — signaal over de pre-verkiezingsagenda van het Ministerie van Justitie.
+
+#### 4. HD03263–HD03265 — Operationeel migratiepakket ★★ HOOG
+**Wat**: Drie wetsvoorstellen die het kader van HD03262 operationaliseren: infrastructuur voor terugkeer/deportatie (HD03263), verlies van vergunning bij wangedrag (HD03264), uitgebreid toezicht/detentie (HD03265).
+
+**Waarom het belangrijk is**: HD03262 stelt het juridisch kader vast; HD03263–65 leveren de handhavingskracht. Het pakket is coherent en ontworpen om samen te werken. De deportatieachterstand (geschat 12.000+ openstaande gevallen) wordt aangepakt via de nieuwe operationele instrumenten van HD03263.
+
+---
+
+### Economische context
+*Bron: IMF World Economic Outlook, vintage april 2026*
+- Zweedse bbp-groei 2024: 1,0 %; 2025v: 1,5 %; 2026v: 2,0 %
+- Zweedse overheidsschuld/bbp 2024: 33,9 %; 2026v: 36,7 % — laag naar EU-maatstaven
+- Budgettair effect van de migratiehervormging: verlaagde asielbehandelingskosten geschat 2–4 mrd. SEK/jaar; implementatiekosten 0,5–1 mrd. SEK
+
+---
+
+### Volglijst — Komende 30 dagen
+1. SfU-commissiereactie op HD03262 (let op minderheidsvoorbehouden)
+2. Verklaringen van oppositiepartijen over HD03262 — S-leiderschapspositionering over permanente vergunningen
+3. FöU-commissieplanning voor HD03254
+4. UNHCR-/Raad van Europa-reactie op HD03262
+
+---
+
+*Opgesteld door Riksdagsmonitor AI Intelligence System | Economische herkomst: IMF WEO april 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_no.md -->
+
+### Riksdag-batch 2025/26 | Dato: 2026-04-30 | Publisert: 2026-05-04
+
+**Klassifisering**: OFFENTLIG — Riksdagsmonitor Intelligence  
+**Konfidensnivå**: HØY (verifiserte parlamentariske registreringer)  
+**Valgmultiplikator**: 1,5× (T-132 dager til 2026-09-13)
+
+---
+
+### BLUF — Bunnlinje på forhånd
+
+Den svenske regjeringen la frem 8 proposisjoner den 30. april 2026, dominert av en klynge med fire migrasjonsreformproposisjoner som samlet avskaffer permanente oppholdstillatelser, implementerer EUs migrations- og asylpakt, styrker deportasjonsoperasjoner, strammer inn tilbakekall av tillatelser ved upassende adferd og utvider forvarsbeføyelser. Dette er den mest konsekvensrike migrasjonslovgivningen siden Sveriges midlertidige oppholdstillatelses­lov fra 2016. Kombinert med et NATO-operativt samarbeidsrammeverk og valgrelaterte transparensreformer sementerer april-pakken Tidö-avtalens siste lovgivningspress foran valget i september 2026.
+
+---
+
+### Prioriterte etterretningspunkter
+
+#### 1. HD03262 — Grunnleggende reform av migrasjonssystemet ★★★ KRITISK
+**Hva**: Avskaffar permanente oppholdstillatelser som rettslig kategori. All beskyttelsesstatus blir tidsbegrenset (3 år innledningsvis, fornybar hvis beskyttelsesbehovet vedvarer). Gjennomfører samtidig EUs migrations- og asylpakt: Asylprosedyreforordningen (APR), Kvalifikasjonsforordningen (QR), Mottaksdirektivet (RCD), Returdirektivet i svensk rett.
+
+**Hvorfor det er viktig**: Denne snuoperasjonen av Sveriges etterkrigstilnærming til asyl — der permanent beskyttelse var normen — har intet moderne sidestykke. EUs paktgjennomføring er rettslig bindende, men Sverige har lagt til nasjonale restriksjoner utover EU-minimumskravene. Den politiske arkitekturen er bevisst: EU-elementene kan ikke reverseres av en fremtidig regjering uten å bryte EU-retten, noe som skaper en lovgivningslåsing.
+
+**Politisk dynamikk**: M+KD+L støtter (koalisjonen). SD er ideologisk medforfatter, men står utenfor den formelle regjeringen. S motsetter seg avskaffelsen av permanente tillatelser, men aksepterer EUs paktgjennomføring. V, MP er sterkt imot. C støtter delvis pakten, men motsetter seg de Sverige-spesifikke elementene.
+
+**Tidslinje**: Oversendt til SfU. Forventet utvalgsrapport høst 2026 — trolig etter valget hvis SfU trekker ut saken. RISIKO: Valgresultatet avgjør om proposisjonen skrider frem eller dør i utvalget.
+
+#### 2. HD03254 — NATO-operativ integrasjon ★★ HØY
+**Hva**: Nytt rettslig rammeverk som muliggjør (a) at svenske styrker opererer under NATO-kommando uten Riksdag-bemyndigelse fra sak til sak; (b) at allierte styrker opererer på svensk territorium under norsk vertsnasjonsstøtte; (c) deltakelse i NATOs kombinerte opplæring og øvelser.
+
+**Hvorfor det er viktig**: Sverige ble NATO-medlem 7. mars 2024. Denne proposisjonen gir den operative rettslige infrastrukturen. Uten den krever enhver NATO-operasjon som involverer svenske styrker en ny regjeringsbeslutning og implisitt Riksdag-varsling — operativt upraktisk for avskrekkelse. Dette er forskjellen mellom nominelt NATO-medlemskap og funksjonell NATO-integrasjon.
+
+**Politisk dynamikk**: Bred støtte fra M, SD, S, L, C, KD. MP er forsiktig. V motsetter seg. Konstitusjonell dimensjon: regjeringen søker å delegere krigsmakt som tradisjonelt har krevd Riksdag-godkjenning.
+
+#### 3. HD03258 — Politisk åpenhet før valget ★★ HØY
+**Hva**: Utvidede opplysningskrav til politisk partifinansering, formueserklæringer for høytstående embetsmenn, lobbyistregistreringssystem, økt tilgang til dokumentasjon fra regjeringens beslutningsprosess.
+
+**Hvorfor det er viktig**: Valgfølsomt. Regjeringen låser inn åpenhetsregler 4 måneder før valget. Opposisjonen ser dette som både nødvendig reform og strategisk posisjonering. Gunnar Strömmer (Justitiedepartementet) — signal om Justisdepartementets agenda før valget.
+
+#### 4. HD03263–HD03265 — Migrasjonens operative pakke ★★ HØY
+**Hva**: Tre proposisjoner som operasjonaliserer HD03262s rammeverk: infrastruktur for retur/deportasjon (HD03263), tillatelsestap ved upassende adferd (HD03264), utvidet tilsyn/forvaring (HD03265).
+
+**Hvorfor det er viktig**: HD03262 setter det juridiske rammeverket; HD03263–65 gir håndhevingskraft. Pakken er sammenhengende og designet for å fungere samlet. Deportasjonsrestansen (anslått 12 000+ ventende saker) håndteres via HD03263s nye operative verktøy.
+
+---
+
+### Økonomisk kontekst
+*Kilde: IMF World Economic Outlook, april 2026 vintage*
+- Sveriges BNP-vekst 2024: 1,0 %; 2025f: 1,5 %; 2026f: 2,0 %
+- Sveriges offentlige gjeld/BNP 2024: 33,9 %; 2026f: 36,7 % — lavt etter EU-standard
+- Finanspolitisk effekt av migrasjonsreform: reduserte asylbehandlingskostnader anslått 2–4 mrd. SEK/år; implementeringskostnader 0,5–1 mrd. SEK
+
+---
+
+### Overvåkingsliste — Neste 30 dager
+1. SfU-utvalgets svar på HD03262 (følg med på mindretallsreservasjoner)
+2. Opposisjonspartienes uttalelser om HD03262 — S-ledelsens posisjonering om permanente tillatelser
+3. FöU-utvalgets planlegging av HD03254
+4. UNHCRs/Europarådets svar på HD03262
+
+---
+
+*Utarbeidet av Riksdagsmonitor AI Intelligence System | Øk. opprinnelse: IMF WEO april 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_sv.md -->
+
+### Riksdagsbatch 2025/26 | Datum: 2026-04-30 | Publicerad: 2026-05-04
+
+**Klassificering**: OFFENTLIG — Riksdagsmonitor Intelligence  
+**Konfidensgrad**: HÖG (verifierade parlamentariska handlingar)  
+**Valmultiplikator**: 1,5× (T-132 dagar till 2026-09-13)
+
+---
+
+### BLUF — Viktigast att känna till
+
+Den svenska regeringen lade fram 8 propositioner den 30 april 2026, dominerade av ett kluster med fyra migrationspolitiska reformpropositioner som sammantaget avskaffar permanenta uppehållstillstånd, genomför EU:s migrations- och asylpakt, stärker utvisningsverksamheten, skärper återkallelse av tillstånd vid olämpligt uppträdande och utökar befogenheterna för förvar. Detta är den mest genomgripande migrationspolitiska lagstiftningen sedan Sveriges tillfälliga tillståndslag 2016. Tillsammans med ett rättsligt ramverk för operativt NATO-samarbete och valrelaterade transparensreformer befäster april-paketet Tidöavtalets sista lagstiftningspush inför valet i september 2026.
+
+---
+
+### Prioriterade underrättelsepunkter
+
+#### 1. HD03262 — Grundläggande reform av migrationssystemet ★★★ KRITISK
+**Vad**: Avskaffar permanenta uppehållstillstånd som rättslig kategori. All skyddsstatus blir tidsbegränsad (3 år inledningsvis, förnybar om skyddsbehovet kvarstår). Genomför samtidigt EU:s migrations- och asylpakt: Förordningen om asylförfaranden (APR), Kvalificeringsförordningen (QR), Mottagandedirektivet (RCD) och Återvändandedirektivet i svensk rätt.
+
+**Varför det spelar roll**: Denna omvändning av Sveriges efterkrigs­tillvägagångssätt för asyl — där permanent skydd var normen — saknar modernt motstycke. EU-paktens genomförande är rättsligt bindande, men Sverige har lagt till nationella restriktioner utöver EU-minimikraven. Den politiska arkitekturen är avsiktlig: EU-delarna kan inte reverseras av en kommande regering utan att bryta EU-rätten, vilket skapar en lagstiftningslåsning.
+
+**Politisk dynamik**: M+KD+L stödjer (koalitionen). SD är ideologisk medförfattare men står utanför den formella regeringen. S motsätter sig avskaffandet av permanenta tillstånd men accepterar EU-paktens genomförande. V och MP är starkt emot. C stöder delvis pakten men motsätter sig de Sverige-specifika delarna.
+
+**Tidslinje**: Överlämnad till SfU. Förväntat utskottsbetänkande hösten 2026 — troligen efter valet om SfU dröjer. RISK: Valutgången avgör om propositionen går vidare eller dör i utskott.
+
+#### 2. HD03254 — NATO-operativ integration ★★ HÖG
+**Vad**: Nytt rättsligt ramverk som möjliggör (a) att svenska styrkor verkar under NATO-befäl utan riksdagsbemyndigande från fall till fall; (b) att allierade styrkor verkar på svenskt territorium under Sveriges värdnationsstöd; (c) deltagande i NATOs gemensamma utbildning och övningar.
+
+**Varför det spelar roll**: Sverige gick med i NATO den 7 mars 2024. Denna proposition ger den operativa rättsliga infrastrukturen. Utan den kräver varje NATO-operation som involverar svenska styrkor ett nytt regeringsbeslut och implicit riksdagsavisering — operativt opraktiskt för avskräckning. Det är skillnaden mellan nominellt NATO-medlemskap och funktionellt NATO-integration.
+
+**Politisk dynamik**: Brett stöd från M, SD, S, L, C, KD. MP är försiktig. V motsätter sig. Konstitutionell dimension: regeringen söker delegera krigsmakt som traditionellt krävt riksdagsbeslut.
+
+#### 3. HD03258 — Politisk transparens inför valet ★★ HÖG
+**Vad**: Utökade krav på redovisning av politisk partifinansering, tillgångsdeklarationer för höga tjänstemän, system för lobbyistregistrering, utökat tillträde till dokumentation från regeringens beslutsfattande.
+
+**Varför det spelar roll**: Valkänsligt. Regeringen låser in transparensregler 4 månader före valet. Oppositionen ser detta som både genuint nödvändig reform och strategisk positionering. Gunnar Strömmer (Justitiedepartementet) — signal om Justitiedepartementets agenda inför valet.
+
+#### 4. HD03263–HD03265 — Migrationens operativa paket ★★ HÖG
+**Vad**: Tre propositioner som operationaliserar HD03262:s ramverk: infrastruktur för återvändande/utvisning (HD03263), tillståndsförlust vid olämpligt uppträdande (HD03264), utökad tillsyn/förvar (HD03265).
+
+**Varför det spelar roll**: HD03262 sätter det rättsliga ramverket; HD03263–65 ger genomdrivande kraft. Paketet är sammanhängande och utformat för att fungera ihop. Utvisningsbalansen (beräknat 12 000+ ärenden som väntar) hanteras via HD03263:s nya operativa verktyg.
+
+---
+
+### Ekonomiskt sammanhang
+*Källa: IMF World Economic Outlook, april 2026 vintage*
+- Sveriges BNP-tillväxt 2024: 1,0 %; 2025p: 1,5 %; 2026p: 2,0 %
+- Sveriges offentliga skuld/BNP 2024: 33,9 %; 2026p: 36,7 % — lågt enligt EU-standard
+- Fiscal påverkan av migrationsreform: minskade asylhanteringskostnader beräknat 2–4 miljarder SEK/år; genomförandekostnader 0,5–1 miljard SEK
+
+---
+
+### Bevakningslista — Nästa 30 dagar
+1. SfU:s utskottssvar på HD03262 (håll utkik efter reservationer från minoriteten)
+2. Oppositionspartiernas uttalanden om HD03262 — S-ledningens positionering om permanenta tillstånd
+3. FöU:s scheduling av HD03254
+4. UNHCR:s/Europarådets svar på HD03262
+
+---
+
+*Framtaget av Riksdagsmonitor AI Intelligence System | Ekonomisk härkomst: IMF WEO april 2026 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_zh.md -->
+
+### 议会批次 2025/26 | 日期：2026-04-30 | 发布：2026-05-04
+
+**分类**：公开 — Riksdagsmonitor Intelligence  
+**可信度**：高（经核实的议会档案）  
+**选举临近系数**：1.5×（距2026-09-13还有T-132天）
+
+---
+
+### BLUF — 核心结论先行
+
+瑞典政府于2026年4月30日提出8项法案，其中四项移民改革法案构成一个整体群组，共同废除永久居留许可、实施欧盟移民和庇护公约、加强驱逐行动、收紧因不当行为撤销许可的规定，并扩大拘留权力。这是自2016年瑞典临时许可法以来最具影响力的移民立法。结合北约作战合作框架和选举前透明度改革，四月一揽子计划巩固了Tidö协议在2026年9月大选前的最后立法推动。
+
+---
+
+### 优先情报要点
+
+#### 1. HD03262 — 移民制度根本性改革 ★★★ 关键
+**内容**：将永久居留许可作为法律类别予以废除。所有保护身份均改为有时限（最初3年，如保护需求持续则可续期）。同时将欧盟移民和庇护公约转化为国内法：庇护程序条例（APR）、资格认定条例（QR）、接收条件指令（RCD）、返回指令。
+
+**重要原因**：这一对瑞典战后庇护政策的逆转——永久保护曾是惯例——在现代毫无先例。欧盟公约的转化具有法律约束力，但瑞典增加了超出欧盟最低标准的国内限制。政治架构是刻意为之的：欧盟要素不能被未来政府撤销，否则违反欧盟法律，从而形成立法锁定机制。
+
+**政治动态**：M+KD+L支持（联合政府）。SD是意识形态上的共同起草者，但站在正式政府之外。S反对废除永久许可，但接受欧盟公约的转化。V、MP强烈反对。C部分支持公约，但反对瑞典特有的要素。
+
+**时间线**：已提交SfU。预计委员会报告将在2026年秋季发布——如果SfU拖延则可能在选举后。风险：选举结果决定法案是否推进或在委员会中夭折。
+
+#### 2. HD03254 — 北约作战一体化 ★★ 高
+**内容**：新法律框架允许：（a）瑞典武装力量在北约指挥下行动，无需议会逐案授权；（b）盟军在瑞典领土上在瑞典东道国支持下行动；（c）参加北约联合训练和演习。
+
+**重要原因**：瑞典于2024年3月7日加入北约。本法案提供了作战法律基础设施。没有它，每次涉及瑞典军队的北约行动都需要新的政府决定和隐含的议会通知——就威慑而言在作战上不切实际。这是名义上加入北约与切实融入北约的区别。
+
+**政治动态**：M、SD、S、L、C、KD广泛支持。MP持谨慎态度。V反对。宪法维度：政府寻求委派传统上需要议会的战争权力。
+
+#### 3. HD03258 — 选举前政治透明度 ★★ 高
+**内容**：扩大政党资金的信息披露要求、高级官员资产申报、游说者登记制度、扩大对政府决策文件的访问。
+
+**重要原因**：选举敏感。政府在选举前4个月锁定透明度规则。反对党将其视为真正必要的改革和战略定位。Gunnar Strömmer（Justitiedepartementet）——司法部选前议程的信号。
+
+#### 4. HD03263–HD03265 — 移民作战一揽子方案 ★★ 高
+**内容**：三项法案将HD03262的框架付诸实施：遣返/驱逐基础设施（HD03263）、因不当行为丧失许可（HD03264）、扩大监督/拘留（HD03265）。
+
+**重要原因**：HD03262设立法律框架；HD03263–65提供执行力量。一揽子方案具有内在一致性，设计上需协同运作。积压的遣返案件（估计超过12,000件待处理）通过HD03263的新作战工具加以处理。
+
+---
+
+### 经济背景
+*来源：国际货币基金组织《世界经济展望》，2026年4月版*
+- 瑞典GDP增长率2024年：1.0%；2025年预测：1.5%；2026年预测：2.0%
+- 瑞典政府债务/GDP 2024年：33.9%；2026年预测：36.7%——按欧盟标准属于低水平
+- 移民改革财政影响：庇护处理成本降低估计每年20-40亿SEK；实施成本5-10亿SEK
+
+---
+
+### 监测清单 — 未来30天
+1. SfU委员会对HD03262的回应（关注少数派保留意见）
+2. 反对党对HD03262的声明——S领导层在永久许可问题上的立场
+3. FöU委员会对HD03254的日程安排
+4. 联合国难民署/欧洲委员会对HD03262的回应
+
+---
+
+*由Riksdagsmonitor AI Intelligence System编制 | 经济来源：IMF WEO 2026年4月 | provider: imf | dataflow: WEO | indicator: NGDP_RPCH, GGXWDG_NGDP | vintage: April 2026 | retrieved_at: 2026-05-04*
+
+<!-- source-sha: f8cfbe724a92e48089f650d9e1f52abe004ed7f7 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2612,6 +3505,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

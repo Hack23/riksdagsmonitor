@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: year-ahead
 slug: 2026-05-04-year-ahead
 source_folder: analysis/daily/2026-05-04/year-ahead
-generated_at: 2026-05-22T13:53:53.816Z
+generated_at: 2026-05-23T08:06:00.543Z
 language: en
 layout: article
 ---
@@ -92,6 +92,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2057,13 +2070,785 @@ Sibling folders read for Tier-C cross-reference ingestion:
 | payload_sha256 | N/A (published knowledge, not fetched from API this run) |
 | note | IMF WEO Apr-2026: SWE NGDP_RPCH est. 0.8% (2025 actual), 2.1% T+1 (2026), 2.4% T+2 (2027), 2.0% T+5 (2030) |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# السنة المقبلة للسويد: انتخابات 2026، التحول الدفاعي، والانتعاش الاقتصادي
+
+**المؤلف**: James Pether Sörling
+**التاريخ**: 2026-05-04
+**التصنيف**: عام — اللائحة العامة لحماية البيانات المادة 9(2)(هـ)(ز)
+**عمق التحليل**: شامل (2.0× المستوى-C)
+**مستوى الثقة**: عالٍ [Admiralty B2]
+
+---
+
+### الخلاصة التنفيذية
+
+تواجه السويد أكثر أعوامها حسماً منذ الانضمام إلى حلف الناتو؛ فانتخابات الريكسداغ في 13 سبتمبر 2026 ستحدد ما إذا كانت تحالف تيدو من يمين الوسط سيستمر في الحكم، أو ما إذا كانت الكتلة التي يقودها الاشتراكيون الديمقراطيون ستعود إلى السلطة، مع توقف النتيجة على سياسة الجريمة المنظمة والاستراتيجية الطاقوية ومصداقية الإنفاق الدفاعي. يسير الانتعاش الاقتصادي من ركود 2024 لكنه هش؛ إذ يتوقع صندوق النقد الدولي WEO أبريل-2026 نمواً اقتصادياً بنسبة 2.1٪ لعام 2026 [أفق:سنة]، وهو دون المتوسط بين نظيراتها الشمالية. ثلاث ميغاتيارات هيكلية — إعادة بناء الدفاع الشامل، وإحياء الطاقة النووية، وتشريع المرونة الدستورية — ستُلزم أي حكومة خلف بصرف النظر عن نتيجة الانتخابات.
+
+### القرارات التي يدعمها هذا الموجز
+
+1. **التخطيط لسيناريوهات الانتخابات**: أي تشكيلات تحالفية ممكنة بعد سبتمبر 2026، وما التغيير في الأجندة التشريعية الذي يعقب كل سيناريو؟
+2. **تتبع بناء الدفاع**: هل مسيرة بناء الدفاع الشامل السويدي (MSB → Myndigheten för civilt försvar) على المسار الصحيح لبلوغ هدف 2030 بأكثر من 2٪ من الناتج المحلي الإجمالي؟
+3. **مخاطر التحول في قطاع الطاقة**: هل تشير تشريعات تعدين اليورانيوم وإصلاح الضريبة على طاقة الرياح إلى استراتيجية طاقة متماسكة مرتكزة على الطاقة النووية، أم إنها مجرد رقعة مالية قصيرة الأجل؟
+4. **مسار سيادة القانون**: هل موجة التشريعات الجنائية (الجريمة المنظمة، صلاحيات الشرطة، المراقبة الإلكترونية، الأسرار التجارية) قابلة للاستمرار عبر تحول حكومي؟
+5. **الاستقرار الدستوري**: هل يوفر HC03155 (stärkt konstitutionell beredskap) صلاحيات طوارئ كافية دون إحداث خطر التراجع الديمقراطي؟
+
+### القراءة الاستخباراتية في 60 ثانية
+
+- **الانتخابات**: يبقى SD صانع القرار؛ V + MP يحتفظان بحق النقض الأقلي لـVänsterblocket؛ C و L أمام خطر وجودي عند العتبة. تُقيّد حسابات التحالف كلا الكتلتين بالقرب من التعادل عند 175 مقعداً. **الحكم: فارق ضيق جداً لا يسمح بالتنبؤ** [أفق:انتخابات].
+- **الدفاع**: HC03205 (إعادة تسمية MSB إلى Myndigheten för civilt försvar) + HC03193 (försvarsindustristrategi) تشير إلى تسريع التكامل المدني-العسكري. التزمت السويد بتخصيص 2.4٪ من الناتج المحلي الإجمالي للدفاع بحلول 2028 (هدف الناتو).
+- **الاقتصاد**: يتسارع الانتعاش. صندوق النقد الدولي WEO أبريل-2026: نمو SWE 2.1٪ T+1، وتراجع التضخم نحو ~2.5٪. تبقى مخاطر مديونية الأسر مرتفعة؛ وانتعاش سوق العقارات غير متكافئ.
+- **الطاقة**: HC03203 (رفع حظر تعدين اليورانيوم) + HC03168 (رفع ضريبة عقارات الطاقة الريحية) = إشارة متعمدة نحو الطاقة النووية قبيل الانتخابات. محفوفة بالمخاطر سياسياً لدى شرائح الناخبين الخضر.
+- **النظام العام**: HC03186 (أسلحة نارية للشرطة)، HC03189 (oskuldskontroller kriminaliserat)، HC03208 (الأسرار التجارية) تواصل مسيرة التشريع الأكثر إثارة للجدل في عقود.
+
+### المُحرِّك الأمامي الرئيسي
+
+**نتيجة الانتخابات T−132 يوماً**: الاستطلاعات التي تُظهر SD فوق 22٪ أو S دون 30٪ ستُطلق إعادة حساب جوهرية للتحالفات ورسائل الميزانية. رصد الاستطلاعات النهائية لـSVT/Ipsos قبيل انتخابات سبتمبر 2026 والنتائج على مستوى المقاطعات في مالمو وغوتنبرغ وضواحي ستوكهولم.
+
+### تسمية الثقة
+
+ثقة عالية في الاتجاهات الهيكلية (الدفاع، الإصلاح القانوني)؛ متوسطة في نتيجة الانتخابات وتركيبة التحالف [Admiralty B2 / WEP: محتمل].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-04
+**Klassifikation**: OFFENTLIG — GDPR Art 9(2)(e)(g)
+**Analysdybde**: omfattende (2,0× Niveau-C)
+**Konfidens**: HØJ [Admiralty B2]
+
+---
+
+### BLUF
+
+Sverige står over for sit mest skelsættende år siden NATO-tiltrædelsen: Riksdag-valget den 13. september 2026 vil afgøre, om Tidö-centrehøjrekoalitionen fortsætter, eller om et Socialdemokratisk ledet blok vender tilbage til magten, med udfaldet afhængende af politikken om bandekriminalitet, energistrategi og troværdighed i forsvarsudgifterne. Den økonomiske genopretning efter recessionen i 2024 er i gang men skrøbelig — IMF WEO apr-2026 forventer 2,1 % BNP-vækst for 2026 [horisont:år], under nordiske jævnaldrende. Tre strukturelle megatendenser — rekonstruktion af totalforsvaret, atomenergirevival og lovgivning om konstitutionel modstandsdygtighed — vil binde enhver efterfølgende regering uanset valgresultat.
+
+### Beslutninger dette brief understøtter
+
+1. **Valgscenariplanlægning**: Hvilke koalitionskonfigurationer er levedygtige efter september 2026, og hvilken lovgivningsmæssig dagsordensændring følger hvert scenarie?
+2. **Sporing af forsvarsopbygning**: Er Sveriges totalforsvarsopbygning (MSB → Myndigheten för civilt försvar) på rette spor til at opfylde 2030-målet på over 2 % af BNP?
+3. **Energiomstillingsrisiko**: Signalerer lovgivning om uranminedrift og vindkraftsskatteændring en sammenhængende atomenergiforankret energistrategi eller et kortsigtet finanspolitisk plaster?
+4. **Retsstatens kurs**: Er bølgen af strafferetslovgivning (bandekriminalitet, politibeføjelser, elektronisk overvågning, forretningshemmeligheder) holdbar på tværs af et regeringsskifte?
+5. **Konstitutionel stabilitet**: Skaber HC03155 (stärkt konstitutionell beredskap) tilstrækkelige nødbeføjelser uden at skabe risiko for demokratisk tilbagegang?
+
+### 60-sekunders efterretningslæsning
+
+- **Valg**: SD forbliver tungen på vægtskålen; V + MP holder Vänsterblokets mindretals-veto; C og L står over for eksistentiel tærskeltrussel. Koalitionsaritmetikken låser begge blokke tæt på 175-mandat-paritet. **Konklusion: for jævnt til at forudsige** [horisont:valg].
+- **Forsvar**: HC03205 (MSB omdøbt til Myndigheten för civilt försvar) + HC03193 (försvarsindustristrategi) signalerer accelereret civil-militær integration. Sverige har forpligtet sig til 2,4 % af BNP på forsvar inden 2028 (NATO-mål).
+- **Økonomi**: Genopretningen accelererer. IMF WEO apr-2026: SWE vækst 2,1 % T+1, inflationen falder mod ~2,5 %. Husholdningernes gældsrisiko forbliver forhøjet; ejendomsmarkedets genopretning ujævn.
+- **Energi**: HC03203 (forbud mod uranminedrift ophævet) + HC03168 (vindkraftsejendomsskat forhøjet) = bevidst atomenergi-signalering inden valget. Politisk risikabelt med grønne vælgersegmenter.
+- **Offentlig orden**: HC03186 (politiets skydevåben), HC03189 (oskuldskontroller kriminaliserat), HC03208 (forretningshemmeligheder) fortsætter årtiers hårdeste lovgivningssprint.
+
+### Ledende fremtidig trigger
+
+**Valgresultat T−132 dage**: Målinger der viser SD over 22 % eller S under 30 % vil udløse en fundamental koalitionsgenberegning og budgetsignalering. Hold øje med SVT/Ipsos' endelige valgmålinger i september 2026 og distriktsresultater i Malmö, Göteborg og Stockholms forstæder.
+
+### Konfidensmærkat
+
+HØJ konfidens på strukturelle tendenser (forsvar, retsreform); MEDIUM på valgresultat og koalitionssammensætning [Admiralty B2 / WEP: sandsynligt].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Datum**: 2026-05-04
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9 Abs. 2 lit. e/g
+**Analysetiefe**: umfassend (2,0× Stufe-C)
+**Konfidenz**: HOCH [Admiralty B2]
+
+---
+
+### BLUF
+
+Schweden steht vor seinem folgenreichsten Jahr seit dem NATO-Beitritt: Die Riksdag-Wahl am 13. September 2026 wird darüber entscheiden, ob die Tidö-Mitte-rechts-Koalition weiterregiert oder ein sozialdemokratisch geführter Block die Macht zurückerobert — das Ergebnis dreht sich um Bandenkriminalpolitik, Energiestrategie und die Glaubwürdigkeit der Verteidigungsausgaben. Die wirtschaftliche Erholung von der Rezession 2024 ist im Gange, aber fragil — IWF WEO Apr-2026 prognostiziert 2,1 % BIP-Wachstum für 2026 [Horizont:Jahr], unterhalb nordischer Vergleichsländer. Drei strukturelle Megatrends — Wiederaufbau der Gesamtverteidigung, Atomenergie-Revival und Verfassungsresilienzgesetzgebung — werden jede Folgeregierung unabhängig vom Wahlergebnis binden.
+
+### Entscheidungen, die dieses Briefing unterstützt
+
+1. **Wahlszenarienplanung**: Welche Koalitionskonfigurationen sind nach September 2026 lebensfähig, und welche legislativen Agendaänderungen folgen jedem Szenario?
+2. **Überwachung des Verteidigungsaufbaus**: Ist Schwedens Gesamtverteidigungsaufbau (MSB → Myndigheten för civilt försvar) auf Kurs, um das 2030-Ziel von über 2 % des BIP zu erreichen?
+3. **Energiewendeisiko**: Signalisiert die Uranbergbaugesetzgebung und die Windkraftsteueränderung eine kohärente, kernkraftverankerte Energiestrategie oder einen kurzfristigen Fiskalplaster?
+4. **Rechtsstaatsentwicklung**: Ist die Welle der Strafrechtsgesetzgebung (Bandenkriminalität, Polizeibefugnisse, elektronische Überwachung, Geschäftsgeheimnisse) über einen Regierungswechsel hinaus tragfähig?
+5. **Verfassungsstabilität**: Schafft HC03155 (stärkt konstitutionell beredskap) ausreichende Notstandsbefugnisse, ohne das Risiko eines demokratischen Rückschritts zu erzeugen?
+
+### 60-Sekunden-Nachrichtenüberblick
+
+- **Wahl**: SD bleibt Zünglein an der Waage; V + MP halten das Minderheitsveto des Vänsterblokets; C und L stehen vor existenziellen Hürdenrisiken. Die Koalitionsarithmetik sperrt beide Blöcke nahe der 175-Sitze-Parität. **Fazit: zu knapp für eine Prognose** [Horizont:Wahl].
+- **Verteidigung**: HC03205 (MSB umbenannt in Myndigheten för civilt försvar) + HC03193 (försvarsindustristrategi) signalisiert beschleunigte zivil-militärische Integration. Schweden hat sich zu 2,4 % des BIP für Verteidigung bis 2028 verpflichtet (NATO-Ziel).
+- **Wirtschaft**: Erholung beschleunigt sich. IWF WEO Apr-2026: SWE-Wachstum 2,1 % T+1, Inflation sinkt auf ~2,5 %. Haushaltsschuldenrisiko bleibt erhöht; Immobilienmarkterholung ungleichmäßig.
+- **Energie**: HC03203 (Uranbergbauverbot aufgehoben) + HC03168 (Windkraftgrundsteuer erhöht) = bewusste Atomenergie-Signalgebung vor der Wahl. Politisch riskant bei grünen Wählergruppen.
+- **Öffentliche Ordnung**: HC03186 (Polizeischusswaffen), HC03189 (oskuldskontroller kriminaliserat), HC03208 (Geschäftsgeheimnisse) setzt den härtesten Gesetzgebungssprint des Jahrzehnts fort.
+
+### Wichtigster Zukunftsauslöser
+
+**Wahlergebnis T−132 Tage**: Umfragen, die SD über 22 % oder S unter 30 % zeigen, werden eine grundlegende Koalitionsneuberechnung und Budgetsignalgebung auslösen. Beobachten Sie die abschließenden SVT/Ipsos-Vorwahlumfragen im September 2026 sowie Ergebnisse auf Wahlkreisebene in Malmö, Göteborg und den Stockholmer Vororten.
+
+### Konfidenzlabel
+
+HOHE Konfidenz bei strukturellen Trends (Verteidigung, Rechtsreform); MITTLERE Konfidenz bei Wahlergebnis und Koalitionszusammensetzung [Admiralty B2 / WEP: wahrscheinlich].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Fecha**: 2026-05-04
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e)(g)
+**Profundidad de análisis**: exhaustiva (2,0× Nivel-C)
+**Confianza**: ALTA [Admiralty B2]
+
+---
+
+### BLUF
+
+Suecia afronta su año más decisivo desde el ingreso en la OTAN: las elecciones al Riksdag del 13 de septiembre de 2026 determinarán si la coalición de centro-derecha Tidö continúa o si un bloque liderado por los socialdemócratas regresa al poder, con el resultado girando en torno a la política contra las bandas, la estrategia energética y la credibilidad del gasto en defensa. La recuperación económica de la recesión de 2024 está en marcha pero es frágil — el FMI WEO abr-2026 proyecta un crecimiento del PIB del 2,1 % para 2026 [horizonte:año], por debajo de los pares nórdicos. Tres megatendencias estructurales — la reconstrucción de la defensa total, el renacimiento de la energía nuclear y la legislación de resiliencia constitucional — vincularán a cualquier gobierno sucesor independientemente del resultado electoral.
+
+### Decisiones que apoya este informe
+
+1. **Planificación de escenarios electorales**: ¿Qué configuraciones de coalición son viables después de septiembre de 2026 y qué cambio de agenda legislativa sigue a cada escenario?
+2. **Seguimiento de la construcción de defensa**: ¿Está la construcción de la defensa total de Suecia (MSB → Myndigheten för civilt försvar) en camino de cumplir el objetivo de 2030 de más del 2 % del PIB?
+3. **Riesgo en la transición energética**: ¿La legislación sobre minería de uranio y la reforma fiscal eólica señalan una estrategia energética coherente anclada en lo nuclear, o un parche fiscal a corto plazo?
+4. **Trayectoria del Estado de Derecho**: ¿Es sostenible la ola de legislación penal (crimen organizado, poderes policiales, vigilancia electrónica, secretos empresariales) a través de un cambio de gobierno?
+5. **Estabilidad constitucional**: ¿Crea HC03155 (stärkt konstitutionell beredskap) poderes de emergencia adecuados sin generar riesgo de retroceso democrático?
+
+### Resumen de inteligencia en 60 segundos
+
+- **Elecciones**: SD sigue siendo árbitro; V + MP mantienen el veto de minoría del Vänsterblocket; C y L enfrentan riesgo umbral existencial. La aritmética de coalición bloquea ambos bloques cerca de la paridad de 175 escaños. **Veredicto: demasiado ajustado para predecir** [horizonte:elección].
+- **Defensa**: HC03205 (MSB rebautizado como Myndigheten för civilt försvar) + HC03193 (försvarsindustristrategi) señala una integración civil-militar acelerada. Suecia se comprometió al 2,4 % del PIB en defensa para 2028 (objetivo OTAN).
+- **Economía**: La recuperación se acelera. FMI WEO abr-2026: crecimiento SWE 2,1 % T+1, inflación descendiendo hacia ~2,5 %. El riesgo de deuda de los hogares sigue elevado; la recuperación del mercado inmobiliario es desigual.
+- **Energía**: HC03203 (prohibición de minería de uranio levantada) + HC03168 (impuesto inmobiliario sobre la energía eólica aumentado) = señalización deliberada pro-nuclear antes de las elecciones. Políticamente arriesgado con segmentos electorales verdes.
+- **Orden público**: HC03186 (armas de fuego policiales), HC03189 (oskuldskontroller kriminaliserat), HC03208 (secretos empresariales) continúa el sprint legislativo más intenso de la década.
+
+### Principal detonante futuro
+
+**Resultado electoral T−132 días**: Las encuestas que muestren SD por encima del 22 % o S por debajo del 30 % desencadenarán un recálculo fundamental de coalición y señalización presupuestaria. Observar las encuestas finales preelectorales de SVT/Ipsos de septiembre de 2026 y los resultados por distrito en Malmö, Gotemburgo y los suburbios de Estocolmo.
+
+### Etiqueta de confianza
+
+ALTA confianza en tendencias estructurales (defensa, reforma legal); MEDIA en resultado electoral y composición de coalición [Admiralty B2 / WEP: probable].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling
+**Päiväys**: 2026-05-04
+**Luokitus**: JULKINEN — GDPR Art 9(2)(e)(g)
+**Analyysin syvyys**: kattava (2,0× Taso-C)
+**Luotettavuus**: KORKEA [Admiralty B2]
+
+---
+
+### BLUF
+
+Ruotsi kohtaa merkittävimmän vuotensa sitten NATO-liittymisensä: 13. syyskuuta 2026 pidettävät Riksdag-vaalit ratkaisevat, jatkuuko Tidö-koalition keskusta-oikeistohallitus vai palaako sosialidemokraattinen blokki valtaan. Lopputulos riippuu jengirikollisuuspolitiikasta, energiastrategiasta ja puolustusmenoja koskevasta uskottavuudesta. Talouden elpyminen vuoden 2024 taantumasta on käynnissä mutta hauraalla pohjalla — IMF WEO huhti-2026 ennustaa 2,1 %:n BNP-kasvun vuodelle 2026 [horisontti:vuosi], mikä jää alle pohjoismaisten verrokkaiden. Kolme rakenteellista megatrendiä — kokonaismaanpuolustuksen jälleenrakennus, ydinenergiavivahta ja perustuslaillista resilienssiä koskeva lainsäädäntö — sitovat jokaisen seuraavan hallituksen riippumatta vaalituloksesta.
+
+### Päätökset, joita tämä tiedustelutiivistelmä tukee
+
+1. **Vaaliskenaarion suunnittelu**: Mitkä koalitiokokoonpanot ovat toteuttamiskelpoisia syyskuun 2026 jälkeen, ja millainen lainsäädäntömuutos seuraa kutakin skenaariota?
+2. **Puolustusrakentamisen seuranta**: Onko Ruotsin kokonaismaanpuolustuksen rakentaminen (MSB → Myndigheten för civilt försvar) oikealla tiellä vuoden 2030 tavoitteen saavuttamiseksi (yli 2 % BNP:stä)?
+3. **Energiasiirtymän riski**: Viestittääkö uraanin louhinnan lainsäädäntö ja tuulivoimaveromuutos johdonmukaista ydinvoimaan perustuvaa energiastrategiaa vai lyhytaikaista taloudellista paikkausta?
+4. **Oikeusvaltion kehityssuunta**: Onko rikosoikeudellisen lainsäädännön aalto (jengirikollisuus, poliisivaltuudet, sähköinen valvonta, liikesalaisuudet) kestävällä pohjalla hallitusvaihdoksen yli?
+5. **Perustuslaillinen vakaus**: Luoko HC03155 (stärkt konstitutionell beredskap) riittävät kriisiä koskevat valtuudet ilman demokratisen taantumisen riskiä?
+
+### 60 sekunnin tiedusteluyhteenveto
+
+- **Vaalit**: SD pysyy vaakakielenä; V + MP pitää Vänsterbloketin vähemmistöveto-oikeuden; C ja L kohtaavat eksistentiaalisen kynnysriskin. Koalitioaritmetiikka lukitsee molemmat blokit lähelle 175 paikan tasapainoa. **Lausunto: liian tasainen ennustettavaksi** [horisontti:vaalit].
+- **Puolustus**: HC03205 (MSB nimetty uudelleen Myndigheten för civilt försvarsksi) + HC03193 (försvarsindustristrategi) viestii kiihtyvästä siviili-sotilaallisesta integraatiosta. Ruotsi on sitoutunut 2,4 %:iin BNP:stä puolustukseen vuoteen 2028 mennessä (NATO-tavoite).
+- **Talous**: Elpyminen kiihtyy. IMF WEO huhti-2026: SWE kasvu 2,1 % T+1, inflaatio laskee kohti ~2,5 %. Kotitalouksien velkaantumisriski pysyy korkeana; kiinteistömarkkinoiden elpyminen epätasainen.
+- **Energia**: HC03203 (uraanin louhinnan kielto poistettu) + HC03168 (tuulivoimakiinteistövero korotettu) = tarkoituksellinen ydinvoimaviestintä ennen vaaleja. Poliittisesti riskialtis vihreiden äänestäjäsegmenttien osalta.
+- **Yleinen järjestys**: HC03186 (poliisin ampuma-aseet), HC03189 (oskuldskontroller kriminaliserat), HC03208 (liikesalaisuudet) jatkavat vuosikymmenen kovinta lainsäädäntösprinttiä.
+
+### Tärkein tuleva laukaisija
+
+**Vaalitulos T−132 päivää**: Kyselyt, joissa SD on yli 22 % tai S alle 30 %, laukaisevat perustavanlaatuisen koalitionuudelleenlaskennan ja budjettivistiinnin. Seuraa SVT/Ipsos -tutkimuslaitosten viimeiset ennen vaaleja tehdyt syyskuun 2026 mielipidemittaukset ja piirikohtaiset tulokset Malmössa, Göteborgissa ja Tukholman lähiöissä.
+
+### Luotettavuusmerkintä
+
+KORKEA luotettavuus rakenteellisten trendien osalta (puolustus, oikeudellinen uudistus); KESKITASOINEN vaalituloksen ja koalitiokokoonpanon osalta [Admiralty B2 / WEP: todennäköinen].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+
+**Profondeur d'analyse** : approfondie (2,0× Niveau-C)
+**Confiance** : ÉLEVÉE [Admiralty B2]
+
+---
+
+### BLUF
+
+La Suède affronte son année la plus décisive depuis l'adhésion à l'OTAN : l'élection du Riksdag le 13 septembre 2026 déterminera si la coalition de centre droit Tidö se maintient ou si un bloc conduit par les sociaux-démocrates revient au pouvoir, le résultat pivotant autour de la politique contre les gangs, la stratégie énergétique et la crédibilité des dépenses de défense. La reprise économique après la récession de 2024 est en cours mais fragile — le FMI WEO avr-2026 projette une croissance du PIB de 2,1 % pour 2026 [horizon:année], en deçà des pays nordiques comparables. Trois mégatendances structurelles — reconstruction de la défense totale, renouveau de l'énergie nucléaire et législation sur la résilience constitutionnelle — lieront tout gouvernement successeur quel que soit le résultat électoral.
+
+### Décisions que ce briefing soutient
+
+1. **Planification de scénarios électoraux** : Quelles configurations de coalition sont viables après septembre 2026, et quel changement d'agenda législatif suit chaque scénario ?
+2. **Suivi de la construction de la défense** : La construction de la défense totale suédoise (MSB → Myndigheten för civilt försvar) est-elle sur la bonne voie pour atteindre l'objectif 2030 de plus de 2 % du PIB ?
+3. **Risque de transition énergétique** : La législation sur l'exploitation minière d'uranium et la réforme fiscale sur l'éolien signalent-elles une stratégie énergétique cohérente ancrée dans le nucléaire, ou un simple pansement fiscal à court terme ?
+4. **Trajectoire de l'État de droit** : La vague de législation pénale (criminalité organisée, pouvoirs de police, surveillance électronique, secrets commerciaux) est-elle soutenable au-delà d'un changement de gouvernement ?
+5. **Stabilité constitutionnelle** : HC03155 (stärkt konstitutionell beredskap) crée-t-il des pouvoirs d'urgence adéquats sans créer de risque de recul démocratique ?
+
+### Synthèse renseignement en 60 secondes
+
+- **Élections** : SD demeure l'arbitre ; V + MP détiennent le veto minoritaire du Vänsterblocket ; C et L font face à un risque existentiel de seuil. L'arithmétique des coalitions verrouille les deux blocs près de la parité des 175 sièges. **Verdict : trop serré pour prédire** [horizon:élection].
+- **Défense** : HC03205 (MSB rebaptisé Myndigheten för civilt försvar) + HC03193 (försvarsindustristrategi) signale une intégration civilo-militaire accélérée. La Suède s'est engagée à 2,4 % du PIB pour la défense d'ici 2028 (objectif OTAN).
+- **Économie** : La reprise s'accélère. FMI WEO avr-2026 : croissance SWE 2,1 % T+1, inflation déclinant vers ~2,5 %. Le risque d'endettement des ménages reste élevé ; la reprise du marché immobilier est inégale.
+- **Énergie** : HC03203 (interdiction de l'exploitation minière d'uranium levée) + HC03168 (taxe foncière sur l'éolien relevée) = signalisation délibérée pro-nucléaire avant les élections. Politiquement risqué auprès des segments d'électeurs verts.
+- **Ordre public** : HC03186 (armes à feu policières), HC03189 (oskuldskontroller kriminaliserat), HC03208 (secrets commerciaux) prolonge le sprint législatif le plus intense depuis une décennie.
+
+### Principal déclencheur futur
+
+**Résultat électoral T−132 jours** : Des sondages montrant SD au-dessus de 22 % ou S en dessous de 30 % déclencheront une refonte fondamentale des calculs de coalition et de la signalisation budgétaire. Surveiller les derniers sondages pré-électoraux SVT/Ipsos de septembre 2026 et les résultats par district à Malmö, Göteborg et la banlieue de Stockholm.
+
+### Étiquette de confiance
+
+HAUTE confiance sur les tendances structurelles (défense, réforme judiciaire) ; MOYENNE sur le résultat électoral et la composition des coalitions [Admiralty B2 / WEP : probable].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# השנה הקרובה של שוודיה: בחירות 2026, ציר הביטחון והתאוששות כלכלית
+
+**מחבר**: James Pether Sörling
+**תאריך**: 2026-05-04
+**סיווג**: ציבורי — GDPR סעיף 9(2)(ה)(ז)
+**עומק ניתוח**: מקיף (2.0× רמה-C)
+**רמת ביטחון**: גבוהה [Admiralty B2]
+
+---
+
+### תמצית מנהלים
+
+שוודיה ניצבת בפני שנתה המכרעת ביותר מאז הצטרפותה לנאט"ו: בחירות הריקסדאג ב-13 בספטמבר 2026 יכריעו האם קואליציית טידו (מרכז-ימין) ממשיכה בשלטון, או האם גוש בהובלת הסוציאל-דמוקרטים חוזר לשלטון, כאשר התוצאה תלויה במדיניות נגד פשיעת כנופיות, באסטרטגיית האנרגיה ובאמינות ההוצאה הביטחונית. ההתאוששות הכלכלית ממיתון 2024 מתרחשת אך שברירית — קרן המטבע הבינלאומית WEO אפר-2026 צופה צמיחת תמ"ג של 2.1% לשנת 2026 [אופק:שנה], מתחת לנורדיות השוות לה. שלושה מגה-מגמות מבניות — שיקום ההגנה הכוללת, תחיית אנרגיה גרעינית וחקיקת חוסן חוקתי — יחייבו כל ממשלה יורשת ללא קשר לתוצאות הבחירות.
+
+### החלטות שתדריך זה תומך בהן
+
+1. **תכנון תרחישי בחירות**: אילו הרכבי קואליציה ישימים לאחר ספטמבר 2026, ואיזה שינוי בסדר יום החקיקתי יחול בכל תרחיש?
+2. **מעקב אחר בניית ההגנה**: האם בניית ההגנה הכוללת של שוודיה (MSB → Myndigheten för civilt försvar) נמצאת במסלול להשגת יעד 2030 של למעלה מ-2% מהתמ"ג?
+3. **סיכון מעבר אנרגטי**: האם חקיקת כריית האורניום ורפורמת המס על אנרגיית רוח מאותתים על אסטרטגיית אנרגיה עקבית המעוגנת בגרעין, או על תיקון פיסקלי לטווח קצר?
+4. **מסלול שלטון החוק**: האם גל חקיקת המשפט הפלילי (פשיעת כנופיות, סמכויות משטרה, מעקב אלקטרוני, סודות מסחריים) בר-קיימא לאורך מעבר ממשלתי?
+5. **יציבות חוקתית**: האם HC03155 (stärkt konstitutionell beredskap) יוצר סמכויות חירום מספיקות מבלי ליצור סיכון לנסיגה דמוקרטית?
+
+### קריאת מודיעין ב-60 שניות
+
+- **בחירות**: SD נשאר כגורם מכריע; V + MP שומרים על וטו המיעוט של Vänsterblocket; C ו-L ניצבים בפני סיכון קיומי בסף הרלוונטי. אריתמטיקת הקואליציה נועלת את שני הגושים סמוך לשוויון של 175 מנדטים. **פסיקה: צמוד מדי מכדי לחזות** [אופק:בחירות].
+- **ביטחון**: HC03205 (MSB שונה שמו ל-Myndigheten för civilt försvar) + HC03193 (försvarsindustristrategi) מאות על אינטגרציה אזרחית-צבאית מואצת. שוודיה התחייבה ל-2.4% מהתמ"ג על ביטחון עד 2028 (יעד נאט"ו).
+- **כלכלה**: ההתאוששות מואצת. קרן המטבע הבינלאומית WEO אפר-2026: צמיחת SWE 2.1% T+1, אינפלציה יורדת ל-~2.5%. סיכון חוב משקי הבית נותר גבוה; התאוששות שוק הנדל"ן אינה אחידה.
+- **אנרגיה**: HC03203 (הגבלת כריית אורניום הוסרה) + HC03168 (מס מקרקעין על אנרגיית רוח הוגדל) = איתות מכוון לטובת גרעין לפני הבחירות. מסוכן פוליטית מול מקטעי מצביעים ירוקים.
+- **סדר ציבורי**: HC03186 (כלי נשק של משטרה), HC03189 (oskuldskontroller kriminaliserat), HC03208 (סודות מסחריים) מוסיפה לספרינט החקיקתי הנמרץ ביותר של העשור.
+
+### הטריגר המוביל לעתיד
+
+**תוצאות בחירות T−132 ימים**: סקרים המציגים SD מעל 22% או S מתחת ל-30% יפעילו חישוב קואליציה מחדש ואיתות תקציבי מהותי. לצפות בסקרים הסופיים לפני הבחירות של SVT/Ipsos בספטמבר 2026 ובתוצאות ברמת המחוז במלמו, גטבורג ופרברי שטוקהולם.
+
+### תווית ביטחון
+
+ביטחון גבוה במגמות מבניות (ביטחון, רפורמה משפטית); בינוני בתוצאות בחירות והרכב קואליציה [Admiralty B2 / WEP: סביר].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling
+**日付**：2026-05-04
+**分類**：公開 — GDPR第9条(2)(e)(g)
+**分析深度**：包括的（2.0×ティアC）
+**信頼度**：HIGH（高）[Admiralty B2]
+
+---
+
+### BLUF
+
+スウェーデンはNATO加盟以来最も重要な年を迎えている。2026年9月13日のリクスダーグ選挙は、ティドー中道右派連立政権が続くか、社会民主党主導の勢力が政権を奪還するかを決定づける。その行方は、ギャング犯罪対策、エネルギー戦略、防衛費の信頼性に懸かっている。2024年の景気後退からの経済回復は進んでいるが不安定であり、IMF WEO 2026年4月版は2026年のGDP成長率を2.1%と予測している[ホライズン:年]——北欧諸国の水準を下回る。総合防衛の再構築、原子力エネルギーの復興、憲法的強靭性に関する法整備という三つの構造的メガトレンドは、選挙結果を問わずいかなる後継政権も縛るものとなる。
+
+### この報告が支援する意思決定
+
+1. **選挙シナリオ計画**：2026年9月以降に実現可能な連立構成はどれか、それぞれのシナリオで立法課題はどう変わるか？
+2. **防衛整備の追跡**：スウェーデンの総合防衛整備（MSB → Myndigheten för civilt försvar）はGDP比2%超という2030年目標に向けて軌道に乗っているか？
+3. **エネルギー転換リスク**：ウラン採掘に関する立法と風力発電税制改革は、核エネルギーを軸とした一貫したエネルギー戦略を示しているか、それとも短期的な財政上の応急措置か？
+4. **法の支配の軌跡**：刑事法制の波（ギャング犯罪、警察権限、電子的監視、営業秘密）は政権移行を経ても持続可能か？
+5. **憲法的安定性**：HC03155（stärkt konstitutionell beredskap）は民主的後退のリスクを生じさせることなく、十分な緊急権限を設けているか？
+
+### 60秒インテリジェンス要約
+
+- **選挙**：SDが引き続きキングメーカー；VとMPがVänsterbloketの少数派拒否権を維持；CとLは存亡に関わる得票率リスクに直面。連立の算数は両陣営を175議席の均衡付近に固定している。**評決：予測困難なほど接戦** [ホライズン:選挙]。
+- **防衛**：HC03205（MSBをMyndigheten för civilt försvarに改称）＋HC03193（försvarsindustristrategi）が民軍統合の加速を示す。スウェーデンは2028年までにGDP比2.4%の防衛費を公約（NATOの目標）。
+- **経済**：回復が加速。IMF WEO 2026年4月：SWE成長率2.1%（T+1）、インフレは~2.5%に向けて低下。家計債務リスクは依然高水準；不動産市場の回復は不均一。
+- **エネルギー**：HC03203（ウラン採掘禁止解除）＋HC03168（風力発電固定資産税引き上げ）＝選挙前の意図的な原子力推進シグナル。緑の有権者層には政治的リスク。
+- **治安**：HC03186（警察の銃器）、HC03189（oskuldskontroller kriminaliserat）、HC03208（営業秘密）が10年間で最も精力的な立法スプリントを継続。
+
+### 主要な将来トリガー
+
+**選挙結果 T−132日**：SDが22%超またはSが30%未満を示す世論調査が出れば、根本的な連立再計算と予算シグナルが動き出す。2026年9月のSVT/Ipsos最終選挙前世論調査とマルメー、イェーテボリ、ストックホルム郊外の選挙区別結果に注目。
+
+### 信頼度ラベル
+
+構造的トレンド（防衛、法制改革）については信頼度HIGH；選挙結果と連立構成についてはMEDIUM [Admiralty B2 / WEP：probable（公算大）]。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**날짜**: 2026-05-04
+**분류**: 공개 — GDPR 제9조 제2항 (e)(g)
+**분석 심도**: 포괄적 (2.0× 티어-C)
+**신뢰도**: 높음 [Admiralty B2]
+
+---
+
+### 핵심 요약
+
+스웨덴은 NATO 가입 이후 가장 중요한 한 해를 맞이하고 있다. 2026년 9월 13일 실시되는 릭스다그 선거는 티도(Tidö) 중도우파 연립 정권이 지속될 것인지, 사회민주당이 이끄는 블록이 권력을 탈환할 것인지를 결정지을 것이며, 결과는 갱 범죄 정책, 에너지 전략 및 국방비 신뢰성에 달려 있다. 2024년 경기침체에서의 경제 회복은 진행 중이나 취약한 상태이다 — IMF WEO 2026년 4월판은 2026년 GDP 성장률을 2.1%로 예측하고 있으며[지평:년], 이는 북유럽 국가들의 평균을 하회한다. 세 가지 구조적 메가트렌드 — 총합 방위 재건, 원자력 에너지 부흥, 헌법적 회복력 입법 — 이 선거 결과와 무관하게 모든 후임 정부를 구속하게 될 것이다.
+
+### 이 보고서가 지원하는 의사결정
+
+1. **선거 시나리오 계획**: 2026년 9월 이후 실행 가능한 연립 구성은 무엇이며, 각 시나리오에서 어떤 입법 의제 변화가 따르는가?
+2. **방위 구축 추적**: 스웨덴의 총합 방위 구축(MSB → Myndigheten för civilt försvar)은 2030년 GDP 대비 2% 초과 목표를 향해 제 궤도에 있는가?
+3. **에너지 전환 리스크**: 우라늄 채굴 입법과 풍력 발전 세제 개혁은 일관된 원자력 기반 에너지 전략을 나타내는가, 아니면 단기 재정적 임시방편인가?
+4. **법치주의 궤적**: 형사 법제의 물결(갱 범죄, 경찰 권한, 전자 감시, 영업비밀)이 정부 교체에 걸쳐 지속 가능한가?
+5. **헌법적 안정성**: HC03155(stärkt konstitutionell beredskap)는 민주적 후퇴 위험 없이 적절한 비상 권한을 창설하는가?
+
+### 60초 인텔리전스 요약
+
+- **선거**: SD가 계속 캐스팅보트; V + MP가 Vänsterbloket의 소수 거부권을 유지; C와 L은 존재론적 문턱 위험에 직면. 연립 산술이 양 블록을 175 의석 균형 근처에 고정하고 있다. **판단: 예측하기엔 너무 박빙** [지평:선거].
+- **방위**: HC03205(MSB를 Myndigheten för civilt försvar로 개명) + HC03193(försvarsindustristrategi)는 가속화된 민군 통합을 시사. 스웨덴은 2028년까지 GDP 대비 2.4% 방위비 공약(NATO 목표).
+- **경제**: 회복 가속화. IMF WEO 2026년 4월: SWE 성장률 2.1% T+1, 인플레이션은 ~2.5%를 향해 하락. 가계 부채 리스크는 여전히 높음; 부동산 시장 회복은 불균일.
+- **에너지**: HC03203(우라늄 채굴 금지 해제) + HC03168(풍력 발전 재산세 인상) = 선거 전 의도적인 원자력 옹호 시그널. 녹색 유권자층에게 정치적 위험 요소.
+- **공공질서**: HC03186(경찰 화기), HC03189(oskuldskontroller kriminaliserat), HC03208(영업비밀)이 10년간 가장 강력한 입법 스프린트를 지속.
+
+### 주요 미래 촉발 요인
+
+**선거 결과 T−132일**: SD가 22% 초과 또는 S가 30% 미만을 보이는 여론 조사는 근본적인 연립 재계산 및 예산 신호를 촉발시킬 것이다. 2026년 9월 SVT/Ipsos 최종 사전 선거 여론 조사와 말뫼, 예테보리 및 스톡홀름 교외의 지역별 결과를 주시하라.
+
+### 신뢰도 레이블
+
+구조적 트렌드(방위, 법 개혁)에 대해 높은 신뢰도; 선거 결과 및 연립 구성에 대해 중간 신뢰도 [Admiralty B2 / WEP: 공산 높음].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Datum**: 2026-05-04
+**Classificatie**: OPENBAAR — AVG Art. 9 lid 2 onder e/g
+**Analysediepte**: uitgebreid (2,0× Niveau-C)
+**Betrouwbaarheid**: HOOG [Admiralty B2]
+
+---
+
+### BLUF
+
+Zweden staat voor zijn meest bepalende jaar sinds de NAVO-toetreding: de Riksdag-verkiezingen op 13 september 2026 zullen bepalen of de Tidö-centrum-rechtscoalitie aanblijft of dat een door sociaaldemocraten geleid blok terugkeert aan de macht, waarbij het resultaat draait om bendecrimi­naliteitsbeleid, energiestrategie en de geloofwaardigheid van defensie-uitgaven. Het economisch herstel na de recessie van 2024 is op gang maar fragiel — IMF WEO apr-2026 projecteert 2,1 % bbp-groei voor 2026 [horizon:jaar], onder Scandinavische vergelijkingslanden. Drie structurele megatrends — reconstructie van de totale defensie, kernenergieherviving en constitutionele veerkrachtswetgeving — zullen elke opvolgende regering binden ongeacht de verkiezingsuitslag.
+
+### Beslissingen die dit briefing ondersteunt
+
+1. **Verkiezingsscenarioplanning**: Welke coalitieconfiguraties zijn levensvatbaar na september 2026, en welke legislatieve agendawijziging volgt elk scenario?
+2. **Monitoring van de defensieopbouw**: Ligt Zwedens totale defensieopbouw (MSB → Myndigheten för civilt försvar) op koers om de 2030-doelstelling van meer dan 2 % van het bbp te halen?
+3. **Risico van energietransitie**: Signaleert de wetgeving over uraniumwinning en de windenergie­belasting­hervorming een coherente kernenergie-verankerde energiestrategie of een korte­termijn fiscale pleister?
+4. **Trajectoire van de rechtsstaat**: Is de golf van strafwet­geving (bendecrimi­naliteit, politiebevoegd­heden, elektronisch toezicht, bedrijfsgeheimen) houdbaar over een regeringswissel heen?
+5. **Constitutionele stabiliteit**: Schept HC03155 (stärkt konstitutionell beredskap) toereikende noodbevoegdheden zonder risico op democratische terugval te creëren?
+
+### 60-seconden inlichtingenoverzicht
+
+- **Verkiezingen**: SD blijft spil; V + MP houden het minderheidsveto van het Vänsterblocket; C en L staan voor existentieel drempelrisico. De coalitie­aritme­tiek vergrendelt beide blokken dicht bij de 175-zetel pariteit. **Oordeel: te nipt om te voorspellen** [horizon:verkiezing].
+- **Defensie**: HC03205 (MSB hernoemd tot Myndigheten för civilt försvar) + HC03193 (försvarsindustristrategi) signaleert versnelde civiel-militaire integratie. Zweden heeft zich verbonden aan 2,4 % van het bbp voor defensie tot 2028 (NAVO-doel­stelling).
+- **Economie**: Het herstel versnelt. IMF WEO apr-2026: SWE-groei 2,1 % T+1, inflatie daalt naar ~2,5 %. Het schuldenrisico van huishoudens blijft verhoogd; het herstel van de woningmarkt is ongelijkmatig.
+- **Energie**: HC03203 (verbod op uraniumwinning opgeheven) + HC03168 (wind­energie­onroerend­goedbelasting verhoogd) = bewuste pro-nucleaire signalering voor de verkiezingen. Politiek riskant bij groene kiezers­segmenten.
+- **Openbare orde**: HC03186 (politievuurwapens), HC03189 (oskuldskontroller kriminaliserat), HC03208 (bedrijfsgeheimen) zet de intensste wetgevingssprint van het decennium voort.
+
+### Voornaamste toekomstige trigger
+
+**Verkiezingsuitslag T−132 dagen**: Peilingen die SD boven 22 % of S onder 30 % tonen, zullen een fundamentele coalitieherberekening en begrotingssignalering uitlokken. Houd de laatste pre-verkiezings­peilingen van SVT/Ipsos van september 2026 en districtsresultaten in Malmö, Göteborg en de Stockholmse voorsteden in de gaten.
+
+### Betrouwbaarheids­label
+
+HOGE betrouwbaarheid voor structurele trends (defensie, rechtshervoming); MEDIUM voor verkiezingsuitslag en coalitiesamenstelling [Admiralty B2 / WEP: waarschijnlijk].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-04
+**Klassifisering**: OFFENTLIG — GDPR Art 9(2)(e)(g)
+**Analysedybde**: omfattende (2,0× Nivå-C)
+**Konfidens**: HØY [Admiralty B2]
+
+---
+
+### BLUF
+
+Sverige står overfor sitt mest avgjørende år siden NATO-inntreden: Riksdagsvalget 13. september 2026 vil avgjøre om Tidö-sentrum-høyre-koalisjonen fortsetter eller om et Sosialdemokratisk ledet blokk returnerer til makten, med utfallet som dreier seg om gjengkriminalitetspolitikk, energistrategi og troverdigheten i forsvarsutgifter. Den økonomiske gjenopprettingen fra resesjonen i 2024 er underveis men skjør — IMF WEO apr-2026 projiserer 2,1 % BNP-vekst for 2026 [horisont:år], under nordiske jevnaldrende. Tre strukturelle megatrender — rekonstruksjon av totalforsvar, atomenergirevival og konstitusjonell motstandsdyktighetslovgivning — vil binde enhver etterfølgende regjering uavhengig av valgresultat.
+
+### Beslutninger dette brifet støtter
+
+1. **Valgscenarieplanlegging**: Hvilke koalisjonsoppsett er levedyktige etter september 2026, og hvilken lovgivningsagendaendring følger hvert scenario?
+2. **Sporing av forsvarsoppbygging**: Er Sveriges totalforsvarsoppbygging (MSB → Myndigheten för civilt försvar) på rett spor for å nå 2030-målet på over 2 % av BNP?
+3. **Energiomstillingsrisiko**: Signaliserer lovgivning om urangruvedrift og vindkraftsskatteendring en sammenhengende atomenergiforankret energistrategi eller et kortsiktig finanspolitisk plaster?
+4. **Rettsstatens retning**: Er bølgen av strafferettslovgivning (gjengkriminalitet, politimyndigheter, elektronisk overvåking, forretningshemmeligheter) bærekraftig over en regjeringsveksling?
+5. **Konstitusjonell stabilitet**: Skaper HC03155 (stärkt konstitutionell beredskap) tilstrekkelige nødfullmakter uten å skape risiko for demokratisk tilbakegang?
+
+### 60-sekunders etterretningslesning
+
+- **Valg**: SD forblir tungen på vektskålen; V + MP holder Vänsterblokets minoritetsveto; C og L møter eksistensiell terskeltrussel. Koalisjonsaritmetikken låser begge blokker nær 175-mandatparitet. **Konklusjon: for jevnt til å forutsi** [horisont:valg].
+- **Forsvar**: HC03205 (MSB omdøpt til Myndigheten för civilt försvar) + HC03193 (försvarsindustristrategi) signaliserer akselerert sivil-militær integrasjon. Sverige forpliktet seg til 2,4 % av BNP på forsvar innen 2028 (NATO-mål).
+- **Økonomi**: Gjenopprettingen akselererer. IMF WEO apr-2026: SWE vekst 2,1 % T+1, inflasjonen synker mot ~2,5 %. Husholdningenes gjeldsrisiko forblir forhøyet; eiendomsmarkedets gjenoppretting ujevn.
+- **Energi**: HC03203 (forbud mot urangruvedrift opphevet) + HC03168 (vindkraftseiendomsskatt økt) = bevisst atomenergi-signalisering før valget. Politisk risikabelt med grønne velgersegmenter.
+- **Offentlig orden**: HC03186 (politiets skytevåpen), HC03189 (oskuldskontroller kriminaliserat), HC03208 (forretningshemmeligheter) fortsetter tiårets hardeste lovgivningssprint.
+
+### Ledende fremtidig trigger
+
+**Valgresultat T−132 dager**: Meningsmålinger som viser SD over 22 % eller S under 30 % vil utløse en fundamental koalisjonsomregning og budgetsignalisering. Overvåk SVT/Ipsos' endelige forhåndsvalgsundersøkelser september 2026 og distriktsresultater i Malmö, Göteborg og Stockholmsforsteder.
+
+### Konfidensmerke
+
+HØY konfidens på strukturelle trender (forsvar, rettighetsreform); MEDIUM på valgresultat og koalisjonssammensetning [Admiralty B2 / WEP: sannsynlig].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Datum**: 2026-05-04
+**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e)(g)
+**Analysdjup**: omfattande (2,0× Nivå-C)
+**Konfidens**: HÖG [Admiralty B2]
+
+---
+
+### BLUF
+
+Sverige möter sitt mest avgörande år sedan NATO-inträdet: Riksdagsvalet den 13 september 2026 kommer att avgöra om Tidö-koalitionens centerHögerregering fortsätter eller om ett Socialdemokratiskt ledat block återtar makten, där utfallet pivoterar kring gängkriminalitetspolitik, energistrategi och trovärdigheten i försvarsutgifterna. Den ekonomiska återhämtningen från 2024 års recession är igång men bräcklig — IMF WEO apr-2026 projicerar 2,1 % BNP-tillväxt för 2026 [horisont:år], under nordiska jämförbara länder. Tre strukturella megatrender — rekonstruktion av totalförsvaret, kärnenergirevival och konstitutionell resilienslag­stiftning — kommer att binda varje efterträdande regering oavsett valutfall.
+
+### Beslut som detta underlag stödjer
+
+1. **Elektoral scenarioplanering**: Vilka koalitionskonfigurationer är möjliga efter september 2026 och vilka lagstiftningsändringar följer av respektive scenario?
+2. **Spårning av försvarsuppbyggnad**: Är Sveriges totalförsvarsuppbyggnad (MSB → Myndigheten för civilt försvar) på rätt spår för att nå 2030 års mål om mer än 2 % av BNP?
+3. **Energiomställningsrisk**: Signalerar lagstiftningen om uranbrytning och vindkraftsskatteförändringen en sammanhängande kärnkraftsförankrad energistrategi eller ett kortsiktigt finanspolitiskt plåster?
+4. **Rättsstatens riktning**: Är den våg av straffrättslagstiftning (gängkriminalitet, polisbefogenheter, elektronisk övervakning, företagshemligheter) hållbar över en regeringsövergång?
+5. **Konstitutionell stabilitet**: Skapar HC03155 (stärkt konstitutionell beredskap) tillräckliga krisbe­fogenheter utan att riskera demokratisk tillbakagång?
+
+### 60 sekunders underrättelseavläsning
+
+- **Val**: SD förblir vågmästare; V + MP håller Vänsterblokets minoritetsveto; C och L möter existentiell tröskelrisk. Koalitionsaritmetiken låser bägge block nära 175-mandatjämvikt. **Utlåtande: för jämnt för att förutspå** [horisont:val].
+- **Försvar**: HC03205 (MSB ombenämnt till Myndigheten för civilt försvar) + HC03193 (försvarsindustristrategi) signalerar accelererad civil-militär integration. Sverige har åtagit sig 2,4 % av BNP på försvar till 2028 (NATO-mål).
+- **Ekonomi**: Återhämtningen accelererar. IMF WEO apr-2026: SWE-tillväxt 2,1 % T+1, inflationen sjunker mot ~2,5 %. Hushållens skuldrisk kvarstår förhöjd; fastighetsmarknadens återhämtning ojämn.
+- **Energi**: HC03203 (förbud mot uranbrytning hävt) + HC03168 (vindkraftsfastighetsskatt höjd) = avsiktlig kärnkraftssignalering inför valet. Politiskt riskabelt med gröna väljarsegment.
+- **Allmän ordning**: HC03186 (polisens skjutvapen), HC03189 (oskuldskontroller kriminaliserat), HC03208 (företagshemligheter) fortsätter decenniets hårdaste lagstiftningssprint.
+
+### Ledande framtida trigger
+
+**Valutfall T−132 dagar**: Opinionsundersökningar som visar att SD är över 22 % eller S under 30 % kommer att utlösa en fundamental koalitionsomräkning och budgetsignalering. Bevaka SVT/Ipsos slutliga pre-valundersökningar september 2026 och distriktsresultat i Malmö, Göteborg och Stockholmsförorter.
+
+### Konfidensetikett
+
+HÖG konfidens på strukturella trender (försvar, rättsreform); MEDIUM på valutfall och koalitionssammansättning [Admiralty B2 / WEP: troligt].
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling
+**日期**：2026-05-04
+**分类**：公开 — GDPR第9条第2款(e)(g)
+**分析深度**：全面（2.0× C级）
+**置信度**：高 [Admiralty B2]
+
+---
+
+### 核心摘要
+
+瑞典正面临自加入北约以来最具决定性的一年：2026年9月13日的里克斯达格选举将决定提多（Tidö）中间偏右联合政府是否延续，还是由社会民主党领导的政治集团重返执政，结果将取决于帮派犯罪政策、能源战略以及国防支出公信力。2024年经济衰退后的复苏正在进行中，但仍脆弱——国际货币基金组织WEO 2026年4月版预测2026年GDP增速为2.1%[展望:年]，低于北欧国家平均水平。三大结构性超级趋势——全面防卫重建、核能复兴与宪法韧性立法——将束缚任何继任政府，无论选举结果如何。
+
+### 本简报支持的决策
+
+1. **选举情景规划**：2026年9月后哪些联合政府配置可行？各情景下立法议程将如何调整？
+2. **国防建设追踪**：瑞典总体国防建设（MSB → Myndigheten för civilt försvar）是否有望实现2030年国防支出超过GDP 2%的目标？
+3. **能源转型风险**：铀矿开采立法与风电税制改革是否预示着以核能为支柱的连贯能源战略，还是短期财政应急措施？
+4. **法治走向**：刑事立法浪潮（帮派犯罪、警察权力、电子监控、商业秘密）能否在政府更迭后维持？
+5. **宪法稳定性**：HC03155（stärkt konstitutionell beredskap）是否在不引发民主倒退风险的前提下创设了充分的紧急权力？
+
+### 60秒情报摘要
+
+- **选举**：SD仍是关键造王者；V + MP持有Vänsterbloket的少数否决权；C和L面临生死攸关的选票门槛风险。联合算术将两个政治集团锁定在175席均势附近。**结论：势均力敌，难以预测** [展望:选举]。
+- **国防**：HC03205（MSB更名为Myndigheten för civilt försvar）+ HC03193（försvarsindustristrategi）标志着军民融合加速。瑞典承诺到2028年将国防支出提升至GDP的2.4%（北约目标）。
+- **经济**：复苏加速。国际货币基金组织WEO 2026年4月：SWE经济增速T+1为2.1%，通胀降至约2.5%。家庭债务风险仍然偏高；房地产市场复苏参差不齐。
+- **能源**：HC03203（铀矿开采禁令解除）+ HC03168（风电不动产税上调）= 选前有意释放核能支持信号。对绿色选民群体而言存在政治风险。
+- **公共秩序**：HC03186（警察枪械）、HC03189（oskuldskontroller kriminaliserat）、HC03208（商业秘密）延续了十年来最密集的立法冲刺。
+
+### 关键前瞻触发因素
+
+**选举结果 T−132天**：若民调显示SD超过22%或S低于30%，将引发联合政府格局根本性重算和预算信号传导。关注2026年9月SVT/Ipsos最终选前民调，以及马尔默、哥德堡和斯德哥尔摩郊区的分区计票结果。
+
+### 置信度标签
+
+结构性趋势（国防、法律改革）置信度高；选举结果与联合政府构成置信度中等 [Admiralty B2 / WEP：可能]。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart LR
+  E["🗳️ Election<br/>2026-09-13"] --> C1["Tidö II<br/>(M+SD+KD+L)"]
+  E --> C2["S+MP+V+C<br/>Rödgrönt+"]
+  E --> C3["Hung Parliament<br/>Minority govt"]
+  C1 --> D1["Defence 2.4%<br/>Nuclear expansion"]
+  C2 --> D2["Green energy<br/>Social welfare↑"]
+  C3 --> D3["Budget gridlock<br/>Early election risk"]
+  style E fill:#ff006e,color:#fff
+  style C1 fill:#1a4a8a,color:#fff
+  style C2 fill:#cc0000,color:#fff
+  style C3 fill:#555,color:#fff
+  style D1 fill:#0a3060,color:#ccc
+  style D2 fill:#8b0000,color:#ccc
+  style D3 fill:#333,color:#ccc
+```
+
+<!-- source-sha: b5d10858f4d82b9b502512cd3ecbf7e174e813ae -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 25 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 38 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 10 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2112,6 +2897,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

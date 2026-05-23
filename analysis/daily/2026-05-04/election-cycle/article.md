@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: election-cycle
 slug: 2026-05-04-election-cycle
 source_folder: analysis/daily/2026-05-04/election-cycle
-generated_at: 2026-05-22T13:53:53.754Z
+generated_at: 2026-05-23T08:06:00.434Z
 language: en
 layout: article
 ---
@@ -91,6 +91,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -2451,13 +2464,693 @@ All 24 required artifacts created in Pass 1. Full artifact list:
 | IMF economic data | 0% direct | MEDIUM | Using known WEO Oct 2025 |
 | Party polling data | 0% direct | ESTIMATED | Market consensus estimates used |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز تنفيذي — دورة الانتخابات السويدية 2022–2030
+
+**التاريخ**: 2026-05-04 | **التصنيف**: عام | **الأفق الزمني**: T+1460d
+
+### الملخص الاستراتيجي
+
+تدخل حكومة تيدو الـ 132 يومًا الأخيرة قبل انتخابات الريكسداغ في 13 سبتمبر 2026. تستمد حكومة الأقلية M+KD+L دعمها من اتفاقية الثقة والإمداد مع سفيريغيديموكراتيرنا (SD) منذ سبتمبر 2022، وقد نفّذت واحدة من أبرز التحولات نحو اليمين في السياسة السويدية منذ عقود — عبر تقييد الهجرة، وبناء القدرات الدفاعية، وتشريعات النظام والقانون بوتيرة تشريعية غير مسبوقة.
+
+### المستجدات الحاسمة (الأسبوع الممتد من 2026-04-28 إلى 2026-05-04)
+
+#### اندفاع تشريعي في المرحلة الختامية
+قدّمت الحكومة في 2026-04-30 **حزمة إصلاحات الهجرة** التاريخية (مقترحات HD03262–HD03265):
+- **Prop. 2025/26:262** (HD03262): إلغاء تصاريح الإقامة الدائمة للمتقدمين الجدد؛ تكييف القانون السويدي مع ميثاق الهجرة واللجوء الأوروبي
+- **Prop. 2025/26:265** (HD03265): قواعد إشراف واحتجاز أكثر صرامة لتطبيق قوانين الهجرة
+- **Prop. 2025/26:263** (HD03263): تعزيز أنشطة الترحيل للمهاجرين غير النظاميين
+- **Prop. 2025/26:264** (HD03264): تدابير إضافية لتطبيق قوانين الهجرة
+- **Prop. 2025/26:254** (HD03254): تعزيز المتطلبات المسبقة للتعاون العسكري العملياتي (الثنائي)
+
+#### إصلاح الجنسية يدخل حيز التنفيذ
+أقر الريكسداغ (HD01SfU28) اشتراطات جنسية مشددة سارية المفعول اعتبارًا من **6 يونيو 2026**، تشمل:
+- رفع مدة الإقامة المطلوبة من 5 إلى 8 سنوات
+- اشتراط جديد للاكتفاء الذاتي
+- اشتراط اختبار اللغة السويدية والمعرفة المدنية
+- مسار محدود للحصول على الجنسية بالإشعار
+
+#### الشفافية السياسية
+أقرّت لجنة KU39 تعزيز الشفافية في العمليات السياسية (HD01KU39 + prop HD03258).
+
+### المخاطر السياسية الرئيسية (T+30d إلى T+90d)
+1. **قرب الانتخابات**: 132 يومًا حتى الانتخابات — جميع التصويتات التشريعية تحمل الآن ثقلًا إشاريًا انتخابيًا
+2. **نفوذ SD في ذروته**: تتيح الجلسة الأخيرة لـ SD الفرصة لانتزاع أقصى التزامات سياسية من M+KD+L قبل التفاوض الانتخابي
+3. **تفعّل المعارضة**: 463 استجوابًا في 2025/26 — يضغط الاشتراكيون الديمقراطيون بشأن الفجوة في مكافحة جرائم العصابات (HD10458)، والبنية التحتية للسكك الحديدية (HD10463)، وصناعة الفضاء (HD10461)
+4. **جدلية إصلاح الهجرة**: إلغاء التصاريح الدائمة سابقة تاريخية؛ الطعون القانونية من منظمات حقوق الإنسان محتملة بعد الانتخابات
+5. **الوضع الدفاعي**: تستكمل السويد تطبيق التزاماتها تجاه الناتو ضمن أطر موسّعة للتعاون العسكري الثنائي
+
+### التقييم الختامي
+تنتهج حكومة تيدو استراتيجية **الاندفاع التشريعي** — تمرير أقصى قدر من الإصلاحات قبل الانتخابات لترسيخ الإرث السياسي وتقييد الحكومات التالية عبر قوانين راسخة. تمثّل حزمة إصلاحات الهجرة الذروة الأيديولوجية للسياسات المتأثرة بـ SD. ستحدد انتخابات سبتمبر 2026 ما إذا كان هذا المسار سيستمر أو يتخفف أو ينعكس.
+
+**احتمال استمرارية تيدو-II**: ~35–42% (ضمن فترة الثقة — انظر coalition-mathematics.md)
+**احتمال حكومة بقيادة S**: ~38–45%
+**احتمال ريكسداغ مجمّد/مفاوضات مطوّلة**: ~20–25%
+
+### متطلبات الاستخبارات ذات الأولوية (PIR) — الحالة الراهنة
+- PIR-1: السقف الانتخابي لـ SD — نشط (متوسط الاستطلاعات ~18–20%)
+- PIR-2: إطار التعاون بين S وMP — نشط (إعلان التعاون متوقع مايو-يونيو 2026)
+- PIR-3: مقاييس ردود الفعل السلبية على إصلاح الهجرة — قيد المراقبة
+- PIR-4: استدامة ميزانية الدفاع — قيد المراقبة (تحقق هدف 2 % من الناتج المحلي الإجمالي)
+- PIR-5: الرياح الاقتصادية المعاكسة (الإسكان، التضخم) — مرتفع
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_da.md -->
+
+**Dato**: 2026-05-04 | **Klassifikation**: OFFENTLIG | **Horisont**: T+1460d
+
+### Strategisk sammenfatning
+
+Tidø-regeringen er nu 132 dage fra riksdagsvalget den 13. september 2026. M+KD+L-mindretalsregeringen, støttet af Sverigedemokraternas (SD) tillids- og forsyningsaftale siden september 2022, har gennemført et af de mest markante højredrejninger i svensk politik i årtier — med migrationsrestriktioner, forsvarsudbygning og lov-og-orden-lovgivning i hidtil uset lovgivningstempo.
+
+### Kritiske udviklinger (Uge 2026-04-28 til 2026-05-04)
+
+#### Lovgivningssprint i slutfasen
+Regeringen fremlagde en historisk **migrationsreformklynge** (propositioner HD03262–HD03265) den 2026-04-30:
+- **Prop. 2025/26:262** (HD03262): Afskaffelse af permanente opholdstilladelser for nye ansøgere; tilpasning af svensk ret til EU's migrations- og asylpagt
+- **Prop. 2025/26:265** (HD03265): Skærpet tilsyn og tilbageholdelsesregler for migrationsretshåndhævelse
+- **Prop. 2025/26:263** (HD03263): Styrket returaktivitet for irregulære migranter
+- **Prop. 2025/26:264** (HD03264): Yderligere foranstaltninger til migrationsretshåndhævelse
+- **Prop. 2025/26:254** (HD03254): Styrkede forudsætninger for operativt militært samarbejde (bilateralt)
+
+#### Statsborgerskabsreform vedtaget
+Riksdagen godkendte (HD01SfU28) skærpede statsborgerskabskrav med virkning fra **6. juni 2026**, herunder:
+- Bopælskravet hævet fra 5 til 8 år
+- Nyt krav om selvforsørgelse
+- Krav om kendskab til svensk sprog og samfundsliv
+- Begrænset vej til statsborgerskab ved anmeldelse
+
+#### Politisk gennemsigtighed
+Udvalget KU39 godkendte øget gennemsigtighed i politiske processer (HD01KU39 + prop HD03258).
+
+### Centrale politiske risici (T+30d til T+90d)
+1. **Valgproximitet**: 132 dage til valget — alle lovgivningsmæssige afstemninger bærer nu valgafsignaleringsvægt
+2. **SD-indflydelse maksimeret**: Slutsessionen giver SD mulighed for at sikre maksimale politiske tilsagn fra M+KD+L inden valgnye forhandlinger
+3. **Oppositionens aktivering**: 463 interpellationer i 2025/26 — Socialdemokraterne presser på leverancegabet i bandekriminalitet (HD10458), jernbaneinfrastruktur (HD10463), rumindustri (HD10461)
+4. **Kontroversiel migrationsreform**: Afskaffelse af permanente tilladelser er historisk uden fortilfælde; retssager fra menneskerettighedsorganisationer sandsynlige efter valget
+5. **Forsvarsstilling**: Sverige operationaliserer NATO-forpligtelser med udvidede rammer for bilateralt militært samarbejde
+
+### Samlet vurdering
+Tidø-regeringen implementerer en **lovgivningssprint**-strategi — maksimalt reformarbejde inden valget for at forankre den politiske arv og begrænse efterfølgende regeringer via fast forankret lovgivning. Migrationsreformklyngen repræsenterer den ideologiske kulmination af SD-influeret politikleverance. Valget i september 2026 afgør, om denne kurs fortsætter, modereres eller vendes.
+
+**Sandsynlighed for Tidø-II-kontinuitet**: ~35–42% (inden for konfidensinterval — se coalition-mathematics.md)
+**Sandsynlighed for S-ledet regering**: ~38–45%
+**Sandsynlighed for fastlåst Riksdag/udvidede forhandlinger**: ~20–25%
+
+### Prioriterede efterretningskrav (PIR) — Aktuel status
+- PIR-1: SD's valgtal-loft — AKTIVT (gennemsnitlig meningsmåling ~18–20%)
+- PIR-2: S-MP-samarbejdsramme — AKTIVT (samarbejdsannoncering forventet maj-juni 2026)
+- PIR-3: Måleenheder for modreaktion på migrationsreform — OVERVÅGNING
+- PIR-4: Forsvarsbudgettets holdbarhed — OVERVÅGNING (2 % af BNP opnået)
+- PIR-5: Økonomiske modvinde (bolig, inflation) — FORHØJET
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_de.md -->
+
+**Datum**: 2026-05-04 | **Klassifizierung**: ÖFFENTLICH | **Horizont**: T+1460d
+
+### Strategische Zusammenfassung
+
+Die Tidö-Regierung befindet sich nun 132 Tage vor der Riksdag-Wahl am 13. September 2026. Die M+KD+L-Minderheitsregierung, die seit September 2022 durch das Vertrauens- und Duldungsabkommen der Sverigedemokraterna (SD) gestützt wird, hat eine der bedeutendsten Rechtsverschiebungen in der schwedischen Politik seit Jahrzehnten vollzogen — mit Migrationsbeschränkungen, Verteidigungsaufbau und Recht-und-Ordnung-Gesetzgebung in beispiellosem legislativem Tempo.
+
+### Kritische Entwicklungen (Woche 2026-04-28 bis 2026-05-04)
+
+#### Gesetzgebungssprint in der Schlussphase
+Die Regierung legte am 2026-04-30 ein historisches **Migrationsreformpaket** (Propositionen HD03262–HD03265) vor:
+- **Prop. 2025/26:262** (HD03262): Abschaffung von unbefristeten Aufenthaltsgenehmigungen für neue Antragsteller; Anpassung des schwedischen Rechts an den EU-Migrations- und Asylpakt
+- **Prop. 2025/26:265** (HD03265): Verschärfte Überwachungs- und Abschiebungshaftregeln für die Migrationsvollstreckung
+- **Prop. 2025/26:263** (HD03263): Verstärkte Rückführungsaktivitäten für irreguläre Migranten
+- **Prop. 2025/26:264** (HD03264): Zusätzliche Maßnahmen zur Migrationsvollstreckung
+- **Prop. 2025/26:254** (HD03254): Verstärkte Voraussetzungen für operative militärische Zusammenarbeit (bilateral)
+
+#### Staatsbürgerschaftsreform verabschiedet
+Der Riksdag billigte (HD01SfU28) verschärfte Staatsbürgerschaftsanforderungen mit Wirkung ab **6. Juni 2026**, darunter:
+- Wohnsitzerfordernis von 5 auf 8 Jahre angehoben
+- Neues Selbstversorgungserfordernis
+- Erfordernis eines Sprach- und Staatsbürgerkundetests
+- Beschränkter Weg zur Staatsbürgerschaft durch Anmeldung
+
+#### Politische Transparenz
+Ausschuss KU39 billigte mehr Transparenz in politischen Prozessen (HD01KU39 + Prop HD03258).
+
+### Zentrale politische Risiken (T+30d bis T+90d)
+1. **Wahlnähe**: 132 Tage bis zur Wahl — alle Abstimmungen im Riksdag tragen jetzt Wahlsignalisierungsgewicht
+2. **SD-Einfluss maximiert**: Die letzte Sitzungsperiode bietet SD die Möglichkeit, maximale politische Zusagen von M+KD+L vor der Wahlneuverhandlung zu sichern
+3. **Oppositionsaktivierung**: 463 Interpellationen in 2025/26 — Sozialdemokraten drängen auf das Lieferdefizit bei Bandenkriminalität (HD10458), Schieneninfrastruktur (HD10463), Raumfahrtindustrie (HD10461)
+4. **Kontroverse Migrationsreform**: Abschaffung von Daueraufenthaltsgenehmigungen ist historisch ohne Präzedenz; Rechtsmittel von Menschenrechtsorganisationen nach der Wahl wahrscheinlich
+5. **Verteidigungshaltung**: Schweden operationalisiert NATO-Verpflichtungen mit erweiterten Rahmen für bilaterale militärische Zusammenarbeit
+
+### Gesamtbewertung
+Die Tidö-Regierung verfolgt eine **Gesetzgebungssprint**-Strategie — maximales Reformpaket vor der Wahl, um das politische Erbe zu zementieren und Nachfolgeregierungen durch verankerte Gesetzgebung einzuschränken. Das Migrationsreformpaket stellt den ideologischen Höhepunkt SD-beeinflusster Politikumsetzung dar. Die Wahl im September 2026 wird entscheiden, ob dieser Kurs fortgesetzt, gemäßigt oder umgekehrt wird.
+
+**Wahrscheinlichkeit der Tidö-II-Kontinuität**: ~35–42% (innerhalb des Konfidenzintervalls — siehe coalition-mathematics.md)
+**Wahrscheinlichkeit einer S-geführten Regierung**: ~38–45%
+**Wahrscheinlichkeit eines blockierten Riksdag/verlängerter Verhandlungen**: ~20–25%
+
+### Prioritäre Geheimdienstanforderungen (PIR) — Aktueller Status
+- PIR-1: SD-Wahldecke — AKTIV (Umfragedurchschnitt ~18–20%)
+- PIR-2: S-MP-Kooperationsrahmen — AKTIV (Kooperationsankündigung für Mai-Juni 2026 erwartet)
+- PIR-3: Messgrößen für Gegenreaktionen auf die Migrationsreform — ÜBERWACHUNG
+- PIR-4: Nachhaltigkeit des Verteidigungsbudgets — ÜBERWACHUNG (2 % des BIP-Ziel erreicht)
+- PIR-5: Wirtschaftlicher Gegenwind (Wohnen, Inflation) — ERHÖHT
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_es.md -->
+
+**Fecha**: 2026-05-04 | **Clasificación**: PÚBLICA | **Horizonte**: T+1460d
+
+### Resumen estratégico
+
+El gobierno Tidö entra en sus últimos 132 días antes de las elecciones al Riksdag del 13 de septiembre de 2026. El gobierno minoritario M+KD+L, sostenido por el acuerdo de confianza y suministro de los Sverigedemokraterna (SD) desde septiembre de 2022, ha ejecutado uno de los giros políticos más significativos hacia la derecha en la política sueca en décadas — impulsando restricciones migratorias, refuerzo de la defensa y legislación de ley y orden a una velocidad legislativa sin precedentes.
+
+### Desarrollos críticos (Semana del 2026-04-28 al 2026-05-04)
+
+#### Carrera legislativa en la fase final
+El gobierno presentó un histórico **conjunto de reformas migratorias** (proposiciones HD03262–HD03265) el 2026-04-30:
+- **Prop. 2025/26:262** (HD03262): Abolición de los permisos de residencia permanente para nuevos solicitantes; adaptación del derecho sueco al Pacto europeo sobre migración y asilo
+- **Prop. 2025/26:265** (HD03265): Normas más estrictas de supervisión y detención para la ejecución de la migración
+- **Prop. 2025/26:263** (HD03263): Actividades de retorno reforzadas para migrantes irregulares
+- **Prop. 2025/26:264** (HD03264): Medidas adicionales de ejecución migratoria
+- **Prop. 2025/26:254** (HD03254): Condiciones previas mejoradas para la cooperación militar operacional (bilateral)
+
+#### Reforma de ciudadanía promulgada
+El Riksdag aprobó (HD01SfU28) requisitos de ciudadanía más estrictos en vigor desde el **6 de junio de 2026**, incluyendo:
+- Requisito de residencia elevado de 5 a 8 años
+- Nuevo requisito de autosuficiencia
+- Requisito de examen de lengua y civismo sueco
+- Vía restringida a la ciudadanía por notificación
+
+#### Transparencia política
+El comité KU39 aprobó una mayor transparencia en los procesos políticos (HD01KU39 + prop HD03258).
+
+### Riesgos políticos clave (T+30d a T+90d)
+1. **Proximidad electoral**: 132 días para las elecciones — todas las votaciones legislativas llevan ahora peso de señalización electoral
+2. **Influencia SD maximizada**: La sesión final ofrece a SD la oportunidad de obtener compromisos políticos máximos de M+KD+L antes de la renegociación electoral
+3. **Activación de la oposición**: 463 interpelaciones en 2025/26 — el Partido Socialdemócrata presiona sobre el déficit de entrega en crimen organizado (HD10458), infraestructura ferroviaria (HD10463), industria espacial (HD10461)
+4. **Controversia sobre la reforma migratoria**: La abolición de los permisos permanentes es históricamente sin precedentes; los recursos legales de las organizaciones de derechos humanos son probables después de las elecciones
+5. **Postura de defensa**: Suecia operacionaliza sus compromisos con la OTAN con marcos ampliados de cooperación militar bilateral
+
+### Evaluación final
+El gobierno Tidö está implementando una estrategia de **carrera legislativa** — aprobando el máximo de reformas antes de las elecciones para consolidar el legado político y limitar a los gobiernos sucesores mediante leyes afianzadas. El conjunto de reformas migratorias representa el punto álgido ideológico de la entrega política influenciada por SD. Las elecciones de septiembre de 2026 determinarán si esta trayectoria continúa, se modera o se invierte.
+
+**Probabilidad de continuidad Tidö-II**: ~35–42% (dentro del intervalo de confianza — ver coalition-mathematics.md)
+**Probabilidad de un gobierno liderado por S**: ~38–45%
+**Probabilidad de Riksdag bloqueado/negociaciones prolongadas**: ~20–25%
+
+### Requisitos de inteligencia prioritarios (PIR) — Estado actual
+- PIR-1: Techo electoral de SD — ACTIVO (media de encuestas ~18–20%)
+- PIR-2: Marco de cooperación S-MP — ACTIVO (anuncio de cooperación esperado mayo-junio 2026)
+- PIR-3: Métricas de reacción adversa a la reforma migratoria — SEGUIMIENTO
+- PIR-4: Sostenibilidad del presupuesto de defensa — SEGUIMIENTO (objetivo del 2 % del PIB alcanzado)
+- PIR-5: Vientos en contra económicos (vivienda, inflación) — ELEVADO
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_fi.md -->
+
+**Päiväys**: 2026-05-04 | **Luokittelu**: JULKINEN | **Horisontti**: T+1460d
+
+### Strateginen yhteenveto
+
+Tidö-hallitus on nyt 132 päivän päässä riksdag-vaaleista 13. syyskuuta 2026. M+KD+L-vähemmistöhallitus, jota Sverigedemokraternas (SD) luottamus- ja tarjontasopimus on tukenut syyskuusta 2022 lähtien, on toteuttanut yhden Ruotsin viime vuosikymmenten merkittävimmistä oikeistopoliittisista käänteistä — maahanmuuttorajoituksin, puolustusrakentamisin sekä laki ja järjestys -lainsäädännöllä ennennäkemättömällä lainsäädäntövauhdilla.
+
+### Kriittiset tapahtumat (viikko 2026-04-28 – 2026-05-04)
+
+#### Lainsäädännön loppusuoran sprintti
+Hallitus toimitti historiallisen **maahanmuuttouudistuspaketin** (esitykset HD03262–HD03265) 2026-04-30:
+- **Prop. 2025/26:262** (HD03262): Pysyvien oleskelulupien poistaminen uusilta hakijoilta; Ruotsin lain sovittaminen EU:n muuttoliike- ja turvapaikkasopimukseen
+- **Prop. 2025/26:265** (HD03265): Tiukennettu valvonta ja säilöönottosäännöt maahanmuuton täytäntöönpanoa varten
+- **Prop. 2025/26:263** (HD03263): Tehostetut palautustoimet laittomille maahanmuuttajille
+- **Prop. 2025/26:264** (HD03264): Lisätoimenpiteet maahanmuuton täytäntöönpanoa varten
+- **Prop. 2025/26:254** (HD03254): Parannetut edellytykset operatiiviselle sotilaalliselle yhteistyölle (kahdenvälinen)
+
+#### Kansalaisuusuudistus hyväksytty
+Riksdag hyväksyi (HD01SfU28) tiukennetut kansalaisuusvaatimukset voimaan **6. kesäkuuta 2026** alkaen, mukaan lukien:
+- Asumisvaatimus nostettu 5 vuodesta 8 vuoteen
+- Uusi omavaraisuusvaatimus
+- Ruotsin kielen ja yhteiskuntatiedon kokemuusvaatimus
+- Rajoitettu tie kansalaisuuteen ilmoittamalla
+
+#### Poliittinen avoimuus
+Valiokunta KU39 hyväksyi parannetun avoimuuden poliittisissa prosesseissa (HD01KU39 + prop HD03258).
+
+### Keskeiset poliittiset riskit (T+30d – T+90d)
+1. **Vaalit lähestyvät**: 132 päivää vaaleihin — kaikilla lainsäädäntöäänestyksillä on nyt vaalimerkitys
+2. **SD:n vaikutusvalta maksimoitu**: Viimeinen istunto antaa SD:lle mahdollisuuden varmistaa maksimaaliset politiikkasitoumat M+KD+L:ltä ennen vaalineuvotteluja
+3. **Opposition aktivoituminen**: 463 kirjallista kysymystä 2025/26 — Sosiaalidemokraatit painostavat jengirikoksia (HD10458), rautatieinfrastruktuuria (HD10463), avaruusteollisuutta (HD10461) koskevan toimituksen puutteesta
+4. **Kiistanalainen maahanmuuttouudistus**: Pysyvien lupien poistaminen on historiallisesti ennennäkemätöntä; ihmisoikeusjärjestöjen oikeudelliset haasteet todennäköisiä vaalien jälkeen
+5. **Puolustusasema**: Ruotsi operationalisoi NATO-sitoumukset laajennetuilla kahdenvälisillä sotilaallisen yhteistyön puitteilla
+
+### Loppuarvio
+Tidö-hallitus toteuttaa **lainsäädäntösprintti**-strategiaa — maksimaalinen uudistustyö ennen vaaleja poliittisen perinnön lukitsemiseksi ja seuraavien hallitusten rajoittamiseksi vakiintuneen lain kautta. Maahanmuuttouudistuspaketti edustaa SD:n vaikuttaman politiikan ideologista huippukohtaa. Syyskuun 2026 vaalit ratkaisevat, jatkuuko, kohteleeko vai kääntyykö tämä kurssi.
+
+**Tidö-II-jatkuvuuden todennäköisyys**: ~35–42% (luottamusvälin sisällä — katso coalition-mathematics.md)
+**S-johtoisen hallituksen todennäköisyys**: ~38–45%
+**Lukkiutuneen riksdag-tilanteen/pitkittyneiden neuvottelujen todennäköisyys**: ~20–25%
+
+### Prioriteettiset tiedusteluvaatimukset (PIR) — Nykyinen tila
+- PIR-1: SD:n vaalikatto — AKTIIVINEN (kyselyjen keskiarvo ~18–20%)
+- PIR-2: S-MP-yhteistyöpuitteet — AKTIIVINEN (yhteistyöilmoitus odotetaan touko-kesäkuu 2026)
+- PIR-3: Maahanmuuttouudistuksen vastareaktiomittarit — SEURANNASSA
+- PIR-4: Puolustusbudjetin kestävyys — SEURANNASSA (2 % BKT:stä saavutettu)
+- PIR-5: Taloudelliset vastatuulet (asuminen, inflaatio) — KOHONNUT
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_fr.md -->
+
+### Résumé stratégique
+
+Le gouvernement Tidö entre dans ses 132 derniers jours avant l'élection au Riksdag du 13 septembre 2026. Le gouvernement minoritaire M+KD+L, soutenu par l'accord de confiance et d'approvisionnement des Sverigedemokraterna (SD) depuis septembre 2022, a réalisé l'un des virages les plus significatifs vers la droite de la politique suédoise en décennies — en adoptant des restrictions migratoires, un renforcement de la défense et une législation sur la loi et l'ordre à une vitesse législative sans précédent.
+
+### Développements critiques (Semaine du 2026-04-28 au 2026-05-04)
+
+#### Sprint législatif en phase finale
+Le gouvernement a soumis un **ensemble de réformes migratoires** historique (propositions HD03262–HD03265) le 2026-04-30 :
+- **Prop. 2025/26:262** (HD03262) : Abolition des permis de résidence permanente pour les nouveaux demandeurs ; adaptation du droit suédois au Pacte européen sur la migration et l'asile
+- **Prop. 2025/26:265** (HD03265) : Règles de surveillance et de rétention plus strictes pour l'application de la migration
+- **Prop. 2025/26:263** (HD03263) : Activités de retour renforcées pour les migrants irréguliers
+- **Prop. 2025/26:264** (HD03264) : Mesures supplémentaires d'application migratoire
+- **Prop. 2025/26:254** (HD03254) : Conditions préalables renforcées pour la coopération militaire opérationnelle (bilatérale)
+
+#### Réforme de la citoyenneté adoptée
+Le Riksdag a approuvé (HD01SfU28) le resserrement des conditions de naturalisation en vigueur à compter du **6 juin 2026**, notamment :
+- Exigence de résidence relevée de 5 à 8 ans
+- Nouvelle exigence d'autosuffisance
+- Exigence de test de langue suédoise et de civisme
+- Voie restreinte à la citoyenneté par déclaration
+
+#### Transparence politique
+Le comité KU39 a approuvé un renforcement de la transparence dans les processus politiques (HD01KU39 + prop HD03258).
+
+### Principaux risques politiques (T+30j à T+90j)
+1. **Proximité électorale** : 132 jours avant les élections — tous les votes législatifs portent désormais un poids de signalisation électorale
+2. **Influence SD maximisée** : La dernière session offre à SD l'occasion d'obtenir des engagements politiques maximaux de M+KD+L avant la renégociation électorale
+3. **Activation de l'opposition** : 463 interpellations en 2025/26 — les Sociaux-démocrates font pression sur le déficit de livraison en matière de criminalité organisée (HD10458), d'infrastructure ferroviaire (HD10463), d'industrie spatiale (HD10461)
+4. **Controverse sur la réforme migratoire** : L'abolition des permis permanents est historiquement sans précédent ; les recours juridiques des organisations de défense des droits humains sont probables après les élections
+5. **Posture de défense** : La Suède opérationnalise ses engagements envers l'OTAN avec des cadres élargis de coopération militaire bilatérale
+
+### Évaluation globale
+Le gouvernement Tidö met en œuvre une stratégie de **sprint législatif** — adoption d'un maximum de réformes avant les élections pour consolider l'héritage politique et contraindre les gouvernements successeurs via une législation enracinée. L'ensemble des réformes migratoires représente le sommet idéologique de la politique influencée par SD. L'élection de septembre 2026 déterminera si cette trajectoire se poursuit, se modère ou s'inverse.
+
+**Probabilité de continuité Tidö-II** : ~35–42% (dans l'intervalle de confiance — voir coalition-mathematics.md)
+**Probabilité d'un gouvernement dirigé par S** : ~38–45%
+**Probabilité d'un Riksdag bloqué/négociations prolongées** : ~20–25%
+
+### Exigences prioritaires en matière de renseignement (PIR) — Statut actuel
+- PIR-1 : Plafond électoral de SD — ACTIF (moyenne des sondages ~18–20%)
+- PIR-2 : Cadre de coopération S-MP — ACTIF (annonce de coopération attendue mai-juin 2026)
+- PIR-3 : Indicateurs de réaction négative à la réforme migratoire — SURVEILLANCE
+- PIR-4 : Durabilité du budget de la défense — SURVEILLANCE (objectif 2 % du PIB atteint)
+- PIR-5 : Vents contraires économiques (logement, inflation) — ÉLEVÉ
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תדריך מנהלים — מחזור הבחירות השבדי 2022–2030
+
+**תאריך**: 2026-05-04 | **סיווג**: ציבורי | **אופק**: T+1460d
+
+### סיכום אסטרטגי
+
+ממשלת טידו נכנסת ל-132 ימיה האחרונים לפני בחירות הריקסדאג ב-13 בספטמבר 2026. ממשלת המיעוט M+KD+L, הנתמכת על ידי הסכם האמון והאספקה של סבריגדמוקרטרנה (SD) מאז ספטמבר 2022, ביצעה אחד מהמהפכים הפוליטיים הניכרים ביותר לכיוון ימין בפוליטיקה השבדית בעשורים — תוך הגשת הגבלות הגירה, בניית כוח הגנתי, וחקיקה של חוק וסדר במהירות חקיקתית חסרת תקדים.
+
+### התפתחויות קריטיות (שבוע 2026-04-28 עד 2026-05-04)
+
+#### ספרינט חקיקתי בשלב הסיום
+הממשלה הגישה ב-2026-04-30 **חבילת רפורמות הגירה** היסטורית (הצעות HD03262–HD03265):
+- **Prop. 2025/26:262** (HD03262): ביטול היתרי שהייה קבועים למגישים חדשים; התאמת החוק השבדי לאמנת ההגירה והמקלט האירופית
+- **Prop. 2025/26:265** (HD03265): כללי פיקוח ומעצר מחמירים יותר לאכיפת הגירה
+- **Prop. 2025/26:263** (HD03263): פעילויות החזרה מוגברות למהגרים בלתי חוקיים
+- **Prop. 2025/26:264** (HD03264): אמצעי אכיפת הגירה נוספים
+- **Prop. 2025/26:254** (HD03254): תנאים מוקדמים משופרים לשיתוף פעולה צבאי מבצעי (דו-צדדי)
+
+#### רפורמת האזרחות נחקקה
+הריקסדאג אישר (HD01SfU28) דרישות אזרחות מחמירות שיכנסו לתוקף ב**-6 ביוני 2026**, כולל:
+- דרישת מגורים הועלתה מ-5 ל-8 שנים
+- דרישת עצמאות כלכלית חדשה
+- דרישת בחינת שפה שבדית וחינוך אזרחי
+- מסלול מוגבל לאזרחות על ידי הודעה
+
+#### שקיפות פוליטית
+ועדת KU39 אישרה שקיפות מוגברת בתהליכים פוליטיים (HD01KU39 + prop HD03258).
+
+### סיכוני המדיניות המרכזיים (T+30d עד T+90d)
+1. **קרבה לבחירות**: 132 ימים עד לבחירות — כל ההצבעות החקיקתיות נושאות כעת משקל איתות בחירות
+2. **השפעת SD במקסימום**: ישיבת הסיום מאפשרת ל-SD להוציא מ-M+KD+L מקסימום התחייבויות מדיניות לפני משא ומתן בחירות מחדש
+3. **הפעלת האופוזיציה**: 463 שאלות פרלמנטריות ב-2025/26 — הסוציאל-דמוקרטים לוחצים על פער מסירת מאבק פשע כנופיות (HD10458), תשתית רכבות (HD10463), תעשיית חלל (HD10461)
+4. **פולמוס רפורמת ההגירה**: ביטול היתרים קבועים הינו היסטורית חסר תקדים; ערעורים משפטיים מארגוני זכויות אדם צפויים לאחר הבחירות
+5. **יציבה ביטחונית**: שבדיה מממשת את התחייבויותיה לנאט"ו עם מסגרות מורחבות לשיתוף פעולה צבאי דו-צדדי
+
+### הערכה סופית
+ממשלת טידו מיישמת אסטרטגיית **ספרינט חקיקתי** — העברת מקסימום רפורמות לפני הבחירות לנעילת ירושת המדיניות והגבלת ממשלות יורשות דרך חוקים מבוססים. חבילת רפורמות ההגירה מייצגת את השיא האידיאולוגי של מסירת מדיניות בהשפעת SD. בחירות ספטמבר 2026 יקבעו האם מסלול זה ימשיך, יתמתן או יתהפך.
+
+**הסתברות להמשכיות טידו-II**: ~35–42% (בתוך רווח הסמך — ראה coalition-mathematics.md)
+**הסתברות לממשלה בהנהגת S**: ~38–45%
+**הסתברות לריקסדאג חסום/משא ומתן ממושך**: ~20–25%
+
+### דרישות מודיעין עדיפות (PIR) — מצב נוכחי
+- PIR-1: תקרת הבחירות של SD — פעיל (ממוצע סקרים ~18–20%)
+- PIR-2: מסגרת שיתוף פעולה S-MP — פעיל (הכרזת שיתוף פעולה צפויה מאי-יוני 2026)
+- PIR-3: מדדי תגובת נגד לרפורמת ההגירה — בניטור
+- PIR-4: קיימות תקציב הביטחון — בניטור (יעד 2% מהתמ"ג הושג)
+- PIR-5: רוחות נגד כלכליות (דיור, אינפלציה) — מוגבר
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_ja.md -->
+
+**日付**: 2026-05-04 | **分類**: 公開 | **時間軸**: T+1460d
+
+### 戦略的概要
+
+ティドー政権は、2026年9月13日のリクスダーグ選挙まで残り132日を迎えた。2022年9月以来、スウェーデン民主党（SD）の信任・閣外協力協定に支えられてきたM+KD+L少数政権は、スウェーデン政治において数十年ぶりとなる最も顕著な右派政策転換の一つを実行してきた。移民制限、防衛力の強化、法と秩序に関する立法を、前例のない立法スピードで実現してきた。
+
+### 重大な動向（2026-04-28〜2026-05-04週）
+
+#### 終盤の立法スプリント
+政府は2026-04-30に歴史的な**移民改革パッケージ**（提案 HD03262–HD03265）を提出した：
+- **Prop. 2025/26:262** (HD03262)：新規申請者への永住許可廃止、EU移民・庇護協定へのスウェーデン法の適応
+- **Prop. 2025/26:265** (HD03265)：移民執行に関する監督・拘留規則の厳格化
+- **Prop. 2025/26:263** (HD03263)：不法移民への帰還活動の強化
+- **Prop. 2025/26:264** (HD03264)：移民執行のための追加措置
+- **Prop. 2025/26:254** (HD03254)：二国間の作戦的軍事協力のための前提条件の強化
+
+#### 市民権改革の制定
+リクスダーグは(HD01SfU28) **2026年6月6日**から有効となる厳格化された市民権要件を承認。主な内容：
+- 居住要件を5年から8年に引き上げ
+- 新たな自立要件
+- スウェーデン語・公民試験要件
+- 届出による市民権取得ルートの制限
+
+#### 政治的透明性
+委員会KU39は政治プロセスにおける透明性強化を承認（HD01KU39 + prop HD03258）。
+
+### 主要な政治的リスク（T+30d〜T+90d）
+1. **選挙への近接性**：選挙まで132日 — すべての立法投票が今や選挙シグナリングの重みを持つ
+2. **SDの影響力最大化**：最終会期はSDがM+KD+Lから選挙再交渉前に最大の政策コミットメントを引き出す機会
+3. **野党の活性化**：2025/26年に463件の質問書 — 社会民主党は暴力団犯罪の対応遅れ（HD10458）、鉄道インフラ（HD10463）、宇宙産業（HD10461）で圧力
+4. **移民改革論争**：永住許可廃止は歴史的に前例なし。選挙後に人権団体からの法的異議申立の可能性
+5. **防衛姿勢**：スウェーデンはNATO義務を二国間軍事協力の拡大枠組みで具体化
+
+### 総合評価
+ティドー政権は**立法スプリント**戦略を実行している。選挙前に最大限の改革を通過させ、政策的遺産を固定し、後継政府を既成法によって制約する。移民改革パッケージはSD影響下の政策実現の思想的頂点を示す。2026年9月の選挙は、この軌道が継続・穏健化・逆転するかどうかを決定する。
+
+**ティドー-II継続の確率**：~35–42%（信頼区間内 — coalition-mathematics.md参照）
+**S主導政権の確率**：~38–45%
+**議会膠着/交渉長期化の確率**：~20–25%
+
+### 優先情報収集要件（PIR）— 現状
+- PIR-1：SDの選挙上限 — 活動中（世論調査平均 ~18–20%）
+- PIR-2：S-MP協力枠組み — 活動中（協力表明は2026年5月〜6月予定）
+- PIR-3：移民改革への反発指標 — 監視中
+- PIR-4：防衛予算の持続可能性 — 監視中（GDP比2%目標達成）
+- PIR-5：経済的向かい風（住宅、インフレ） — 上昇中
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_ko.md -->
+
+**날짜**: 2026-05-04 | **분류**: 공개 | **지평선**: T+1460d
+
+### 전략적 요약
+
+티되 정부는 2026년 9월 13일 릭스닥(Riksdag) 선거를 132일 앞두고 있다. 2022년 9월 이후 스웨리게데모크라테르나(SD)의 신임 및 공급 협정에 의해 유지되어 온 M+KD+L 소수 정부는 수십 년 만에 스웨덴 정치에서 가장 두드러진 우익 정책 전환 중 하나를 실행했다 — 전례 없는 입법 속도로 이민 제한, 국방 강화, 법과 질서 관련 입법을 이행했다.
+
+### 주요 동향 (2026-04-28 ~ 2026-05-04 주간)
+
+#### 마지막 단계의 입법 스프린트
+정부는 2026-04-30에 역사적인 **이민 개혁 패키지** (제안 HD03262–HD03265)를 제출했다:
+- **Prop. 2025/26:262** (HD03262): 신규 신청자에 대한 영주권 폐지; EU 이민·망명 협약에 맞게 스웨덴 법 조정
+- **Prop. 2025/26:265** (HD03265): 이민 집행을 위한 더 엄격한 감독 및 구금 규정
+- **Prop. 2025/26:263** (HD03263): 불법 이민자에 대한 강화된 귀환 활동
+- **Prop. 2025/26:264** (HD03264): 이민 집행을 위한 추가 조치
+- **Prop. 2025/26:254** (HD03254): 작전적 군사 협력(양자)을 위한 강화된 전제 조건
+
+#### 시민권 개혁 제정
+릭스닥은 (HD01SfU28) **2026년 6월 6일** 발효될 강화된 시민권 요건을 승인했으며, 주요 내용은 다음과 같다:
+- 거주 요건을 5년에서 8년으로 상향
+- 새로운 자립 요건
+- 스웨덴어 및 시민 지식 시험 요건
+- 신고를 통한 시민권 취득 경로 제한
+
+#### 정치적 투명성
+위원회 KU39는 정치 과정에서의 투명성 강화를 승인했다 (HD01KU39 + prop HD03258).
+
+### 주요 정치적 위험 요인 (T+30d ~ T+90d)
+1. **선거 근접성**: 선거까지 132일 — 모든 입법 표결이 이제 선거 신호 의미를 가짐
+2. **SD 영향력 최대화**: 마지막 회기는 선거 전 재협상 전에 M+KD+L에서 최대 정책 약속을 이끌어낼 SD의 기회
+3. **야당 활성화**: 2025/26년 463건의 대정부 질문 — 사회민주당은 조직범죄 대응 격차(HD10458), 철도 인프라(HD10463), 우주 산업(HD10461) 문제로 압박
+4. **이민 개혁 논란**: 영주권 폐지는 역사적으로 전례 없음; 선거 후 인권단체의 법적 이의 제기 가능성 높음
+5. **국방 태세**: 스웨덴은 확대된 양자 군사협력 프레임워크로 NATO 공약을 이행
+
+### 종합 평가
+티되 정부는 **입법 스프린트** 전략을 실행하고 있다 — 선거 전 최대 개혁을 통과시켜 정책적 유산을 굳히고 뿌리 깊은 법률을 통해 후속 정부를 제약한다. 이민 개혁 패키지는 SD 영향을 받은 정책 이행의 이념적 절정을 나타낸다. 2026년 9월 선거는 이 궤도가 지속될지, 완화될지, 역전될지를 결정한다.
+
+**티되-II 연속성 확률**: ~35–42% (신뢰 구간 내 — coalition-mathematics.md 참조)
+**S 주도 정부 확률**: ~38–45%
+**교착 릭스닥/장기 협상 확률**: ~20–25%
+
+### 우선 정보 요구 사항 (PIR) — 현황
+- PIR-1: SD 선거 상한선 — 활성 (여론조사 평균 ~18–20%)
+- PIR-2: S-MP 협력 프레임워크 — 활성 (협력 발표 2026년 5~6월 예정)
+- PIR-3: 이민 개혁 반발 지표 — 모니터링
+- PIR-4: 국방 예산 지속 가능성 — 모니터링 (GDP 2% 목표 달성)
+- PIR-5: 경제적 역풍 (주거, 인플레이션) — 상승
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_nl.md -->
+
+**Datum**: 2026-05-04 | **Classificatie**: OPENBAAR | **Horizon**: T+1460d
+
+### Strategische samenvatting
+
+De Tidö-regering staat nu 132 dagen voor de Riksdag-verkiezingen van 13 september 2026. De M+KD+L-minderheidsregering, gedragen door het vertrouwens- en gedoogakkoord van de Sverigedemokraterna (SD) sinds september 2022, heeft een van de meest significante rechtse politieke omwendingen in Zweden in decennia voltrokken — met migratierestricties, defensieopbouw en wet-en-orde-wetgeving in een ongekend wetgevingstempo.
+
+### Kritieke ontwikkelingen (Week van 2026-04-28 tot 2026-05-04)
+
+#### Wetgevingssprint in de eindfase
+De regering diende op 2026-04-30 een historisch **migratiehervormingspakket** in (proposities HD03262–HD03265):
+- **Prop. 2025/26:262** (HD03262): Afschaffing van permanente verblijfsvergunningen voor nieuwe aanvragers; aanpassing van de Zweedse wet aan het EU-pact voor migratie en asiel
+- **Prop. 2025/26:265** (HD03265): Strengere toezichts- en detentieregels voor migratiehandhaving
+- **Prop. 2025/26:263** (HD03263): Versterkte terugkeeractiviteiten voor irreguliere migranten
+- **Prop. 2025/26:264** (HD03264): Aanvullende maatregelen voor migratiehandhaving
+- **Prop. 2025/26:254** (HD03254): Verbeterde voorwaarden voor operationele militaire samenwerking (bilateraal)
+
+#### Staatsburgererschapshervorming aangenomen
+De Riksdag keurde (HD01SfU28) verscherpte staatsburgerschapsvereisten goed die per **6 juni 2026** van kracht worden, waaronder:
+- Verblijfsvereiste verhoogd van 5 naar 8 jaar
+- Nieuw zelfvoorzieningsvereiste
+- Vereiste voor taal- en burgerschapskennis
+- Beperkte weg naar staatsburgerschap via kennisgeving
+
+#### Politieke transparantie
+Commissie KU39 keurde verbeterde transparantie in politieke processen goed (HD01KU39 + prop HD03258).
+
+### Belangrijkste politieke risico's (T+30d tot T+90d)
+1. **Electorale nabijheid**: 132 dagen tot de verkiezingen — alle wetgevingsstemmen dragen nu electorale signaalwaarde
+2. **SD-invloed gemaximaliseerd**: De laatste sessie biedt SD de kans maximale beleidsbeloften van M+KD+L te verkrijgen voor electorale heronderhandeling
+3. **Activering oppositie**: 463 interpellaties in 2025/26 — Sociaal-democraten oefenen druk uit op het leveringstekort inzake bendegeweld (HD10458), spoorweginfrastructuur (HD10463), ruimtevaartindustrie (HD10461)
+4. **Controversiële migratiehervorming**: Afschaffing van permanente vergunningen is historisch zonder precedent; juridische aanvechting door mensenrechtenorganisaties waarschijnlijk na de verkiezingen
+5. **Defensiehouding**: Zweden operationaliseert NAVO-verplichtingen met uitgebreide kaders voor bilaterale militaire samenwerking
+
+### Eindoordeel
+De Tidö-regering voert een **wetgevingssprint**-strategie uit — maximale hervormingen vóór de verkiezingen om het politieke erfgoed te verankeren en opvolgende regeringen te beperken via verankerde wetgeving. Het migratiehervormingspakket vertegenwoordigt het ideologische hoogtepunt van SD-beïnvloede beleidslevering. De verkiezingen van september 2026 bepalen of deze koers voortgezet, gematigd of omgekeerd wordt.
+
+**Kans op Tidö-II-continuïteit**: ~35–42% (binnen betrouwbaarheidsinterval — zie coalition-mathematics.md)
+**Kans op een S-geleide regering**: ~38–45%
+**Kans op geblokkeerde Riksdag/verlengde onderhandelingen**: ~20–25%
+
+### Prioritaire inlichtingenvereisten (PIR) — Huidige status
+- PIR-1: SD electoraal plafond — ACTIEF (peilinggemiddelde ~18–20%)
+- PIR-2: S-MP-samenwerkingskader — ACTIEF (samenwerkingsaankondiging verwacht mei-juni 2026)
+- PIR-3: Meetgegevens voor tegenreacties op de migratiehervorming — BEWAKING
+- PIR-4: Houdbaarheid defensiebudget — BEWAKING (doelstelling 2 % van het BBP behaald)
+- PIR-5: Economische tegenwind (wonen, inflatie) — VERHOOGD
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_no.md -->
+
+**Dato**: 2026-05-04 | **Klassifisering**: OFFENTLIG | **Horisont**: T+1460d
+
+### Strategisk sammendrag
+
+Tidø-regjeringen er nå 132 dager fra riksdagsvalget den 13. september 2026. M+KD+L-mindretallsregjeringen, støttet av Sverigedemokraternas (SD) tillits- og forsyningsavtale siden september 2022, har gjennomført et av de mest markante høyreskiftene i svensk politikk på tiår — med migrasjonsrestriksjoner, forsvarsopprustning og lov-og-orden-lovgivning i enestående lovgivningstempo.
+
+### Kritiske utviklinger (Uke 2026-04-28 til 2026-05-04)
+
+#### Lovgivningssprint i sluttfasen
+Regjeringen la frem en historisk **migrasjonsreformklynge** (proposisjoner HD03262–HD03265) den 2026-04-30:
+- **Prop. 2025/26:262** (HD03262): Avskaffelse av permanente oppholdstillatelser for nye søkere; tilpasning av svensk rett til EUs migrasjons- og asylpakt
+- **Prop. 2025/26:265** (HD03265): Strengere tilsyn og frihetsberøvelsesregler for migrasjonshåndhevelse
+- **Prop. 2025/26:263** (HD03263): Styrket returaktivitet for irregulære migranter
+- **Prop. 2025/26:264** (HD03264): Ytterligere tiltak for migrasjonshåndhevelse
+- **Prop. 2025/26:254** (HD03254): Styrkede forutsetninger for operativt militært samarbeid (bilateralt)
+
+#### Statsborgerskapsreform vedtatt
+Riksdagen godkjente (HD01SfU28) skjerpede statsborgerskapskrav med virkning fra **6. juni 2026**, blant annet:
+- Botidskravet hevet fra 5 til 8 år
+- Nytt krav om selvforsørgelse
+- Krav om kunnskap i svensk språk og samfunnskunnskap
+- Begrenset vei til statsborgerskap ved melding
+
+#### Politisk åpenhet
+Komité KU39 godkjente styrket åpenhet i politiske prosesser (HD01KU39 + prop HD03258).
+
+### Sentrale politiske risikoer (T+30d til T+90d)
+1. **Valgproximitet**: 132 dager til valget — alle lovgivningsmessige avstemninger bærer nå valgSignaleringsvekt
+2. **SD-innflytelse maksimert**: Sluttsessionen gir SD mulighet til å sikre maksimale politiske løfter fra M+KD+L før valgforhandlinger
+3. **Opposisjonens aktivering**: 463 interpellasjoner i 2025/26 — Sosialdemokratene presser på leveransegapet i gjengkriminalitet (HD10458), jernbaneinfrastruktur (HD10463), romfart (HD10461)
+4. **Kontroversiell migrasjonsreform**: Avskaffelse av permanente tillatelser er historisk uten presedens; juridiske utfordringer fra menneskerettighetsorganisasjoner sannsynlig etter valget
+5. **Forsvarsstilling**: Sverige operasjonaliserer NATO-forpliktelser med utvidede rammer for bilateralt militært samarbeid
+
+### Samlet vurdering
+Tidø-regjeringen implementerer en **lovgivningssprint**-strategi — maksimalt reformarbeid før valget for å befeste politisk arv og begrense etterfølgende regjeringer via forankret lovgivning. Migrasjonsreformklyngen representerer det ideologiske toppunktet av SD-influert politikkleveranse. Valget i september 2026 avgjør om denne kursen fortsetter, modereres eller reverseres.
+
+**Sannsynlighet for Tidø-II-kontinuitet**: ~35–42% (innenfor konfidensintervall — se coalition-mathematics.md)
+**Sannsynlighet for S-ledet regjering**: ~38–45%
+**Sannsynlighet for fastlåst Riksdag/langvarige forhandlinger**: ~20–25%
+
+### Prioriterte etterretningskrav (PIR) — Gjeldende status
+- PIR-1: SDs valgtak — AKTIVT (gjennomsnittsopinion ~18–20%)
+- PIR-2: S-MP-samarbeidsramme — AKTIVT (samarbeidsannonsering forventet mai-juni 2026)
+- PIR-3: Måletall for reaksjon mot migrasjonsreform — OVERVÅKING
+- PIR-4: Forsvarsbudsjettets bærekraft — OVERVÅKING (2 % av BNP oppnådd)
+- PIR-5: Økonomiske motvinder (bolig, inflasjon) — FORHØYET
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_sv.md -->
+
+**Datum**: 2026-05-04 | **Klassificering**: OFFENTLIG | **Horisont**: T+1460d
+
+### Strategisk sammanfattning
+
+Tidöregeringen befinner sig nu 132 dagar från riksdagsvalet den 13 september 2026. M+KD+L-minoritetsregeringen, som burit upp av Sverigedemokraternas (SD) förtroende- och sakpolitikavtal sedan september 2022, har genomfört en av de mest betydande högerförskjutningarna i svensk politik på decennier — med migrationsrestriktioner, försvarsuppbyggnad och lag-och-ordningslagstiftning i oöverträffad legislativ takt.
+
+### Kritiska händelser (vecka 2026-04-28 t.o.m. 2026-05-04)
+
+#### Lagstiftningssprint i slutfasen
+Regeringen lade fram ett historiskt **migrationsreformpaket** (propositionerna HD03262–HD03265) den 2026-04-30:
+- **Prop. 2025/26:262** (HD03262): Avskaffande av permanenta uppehållstillstånd för nya sökanden; anpassning av svensk rätt till EU:s migrations- och asylpakt
+- **Prop. 2025/26:265** (HD03265): Skärpt tillsyn och förvaringsregler för migrationsverkställighet
+- **Prop. 2025/26:263** (HD03263): Förstärkta återvändandeinsatser för irreguljära migranter
+- **Prop. 2025/26:264** (HD03264): Ytterligare åtgärder för migrationsverkställighet
+- **Prop. 2025/26:254** (HD03254): Förstärkta förutsättningar för operativt militärt samarbete (bilateralt)
+
+#### Medborgarskapsreform beslutad
+Riksdagen godkände (HD01SfU28) skärpta medborgarskapsvillkor som träder i kraft **den 6 juni 2026**, däribland:
+- Bosättningskravet höjt från 5 till 8 år
+- Nytt krav på självförsörjning
+- Krav på kunskapsprov i svenska och samhällskunskap
+- Begränsad väg till medborgarskap genom anmälan
+
+#### Politisk insyn
+Utskottet KU39 godkände förstärkt insyn i politiska processer (HD01KU39 + prop HD03258).
+
+### Centrala politiska risker (T+30d t.o.m. T+90d)
+1. **Valnärhet**: 132 dagar till valet — alla lagstiftningsomröstningar bär nu valsignaleringsvikt
+2. **SD-inflytande maximerat**: Slutsessionen ger SD möjlighet att säkra maximala policylöften från M+KD+L inför valomförhandling
+3. **Oppositionens aktivering**: 463 interpellationer 2025/26 — Socialdemokraterna pressar på leveransgapet i gänkriminalitet (HD10458), järnvägsinfrastruktur (HD10463), rymdnäring (HD10461)
+4. **Kontroversiell migrationsreform**: Avskaffande av permanenta tillstånd är historiskt utan motstycke; rättsliga överklaganden från människorättsorganisationer troliga efter valet
+5. **Försvarsläge**: Sverige operationaliserar NATO-åtaganden med utvidgade ramverk för bilateralt militärt samarbete
+
+### Slutbedömning
+Tidöregeringen genomför en **lagstiftningssprint** — maximalt reformarbete före valet för att låsa in politisk legacy och begränsa efterföljande regeringar via förankrad lagstiftning. Migrationsreformpaketet utgör den ideologiska höjdpunkten av SD-influerad policyleverans. Valet i september 2026 avgör om denna kurs fortsätter, modereras eller vänder.
+
+**Sannolikhet för Tidö-II-kontinuitet**: ~35–42% (inom konfidensintervall — se coalition-mathematics.md)
+**Sannolikhet för S-ledd regering**: ~38–45%
+**Sannolikhet för låst riksdag/utdragna förhandlingar**: ~20–25%
+
+### Prioriterade underrättelsekrav (PIR) — Aktuell status
+- PIR-1: SD:s valtak — AKTIVT (snittopinion ~18–20%)
+- PIR-2: S-MP-samarbetsramverk — AKTIVT (samarbetsannonsering förväntad maj-juni 2026)
+- PIR-3: Mätetal för motreaktion på migrationsreform — BEVAKAS
+- PIR-4: Hållbarhet i försvarsbudgeten — BEVAKAS (2 % av BNP uppnått)
+- PIR-5: Ekonomiska motvinder (bostäder, inflation) — FÖRHÖJT
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_zh.md -->
+
+**日期**: 2026-05-04 | **分类**: 公开 | **时间范围**: T+1460d
+
+### 战略摘要
+
+蒂德政府进入2026年9月13日议会选举前的最后132天。自2022年9月起由瑞典民主党（SD）信任与供给协议支撑的M+KD+L少数政府，执行了数十年来瑞典政治最显著的右翼政策转变之一——以前所未有的立法速度推进移民限制、国防建设和法律与秩序立法。
+
+### 重大动态（2026-04-28至2026-05-04当周）
+
+#### 最终阶段立法冲刺
+政府于2026-04-30提交了历史性的**移民改革一揽子计划**（提案 HD03262–HD03265）：
+- **Prop. 2025/26:262** (HD03262)：废除对新申请人的永久居留许可；使瑞典法律适应欧盟移民与庇护公约
+- **Prop. 2025/26:265** (HD03265)：对移民执法的监督和拘留规定更为严格
+- **Prop. 2025/26:263** (HD03263)：加强针对非法移民的遣返活动
+- **Prop. 2025/26:264** (HD03264)：额外的移民执法措施
+- **Prop. 2025/26:254** (HD03254)：强化双边作战军事合作的前提条件
+
+#### 公民权改革颁布实施
+议会批准（HD01SfU28）自**2026年6月6日**起生效的严格公民权要求，包括：
+- 居住要求从5年提高至8年
+- 新增自给自足要求
+- 瑞典语言和公民知识测试要求
+- 通过申报获得公民权的途径受限
+
+#### 政治透明度
+委员会KU39批准加强政治进程的透明度（HD01KU39 + prop HD03258）。
+
+### 主要政治风险（T+30d至T+90d）
+1. **选举临近**：距选举132天——所有立法投票现在都带有选举信号权重
+2. **SD影响力最大化**：末轮会期为SD提供在选举前重新谈判之前，从M+KD+L获取最大政策承诺的机会
+3. **反对派激活**：2025/26年提出463项质询——社会民主党在帮派犯罪交付缺口（HD10458）、铁路基础设施（HD10463）、航天工业（HD10461）上施压
+4. **移民改革争议**：废除永久许可在历史上史无前例；人权组织在选举后提起法律挑战的可能性较大
+5. **国防姿态**：瑞典通过扩大双边军事合作框架，落实北约承诺
+
+### 综合评估
+蒂德政府正在实施**立法冲刺**战略——在选举前通过最多改革，以锁定政策遗产并通过根深蒂固的法律约束继任政府。移民改革一揽子计划代表SD影响政策执行的意识形态顶峰。2026年9月的选举将决定这一轨迹是继续、适度还是逆转。
+
+**蒂德-II延续的概率**：~35–42%（置信区间内——见 coalition-mathematics.md）
+**S领导政府的概率**：~38–45%
+**议会僵局/谈判延长的概率**：~20–25%
+
+### 优先情报需求（PIR）——当前状态
+- PIR-1：SD选举上限——活跃（民调平均 ~18–20%）
+- PIR-2：S-MP合作框架——活跃（合作公告预期2026年5-6月）
+- PIR-3：移民改革负面反应指标——监测中
+- PIR-4：国防预算可持续性——监测中（GDP 2%目标已达成）
+- PIR-5：经济逆风（住房、通货膨胀）——上升
+
+<!-- source-sha: a07cdf9a7bb470fd04a51b2f65b33c4561d82496 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 27 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 40 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2498,6 +3191,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

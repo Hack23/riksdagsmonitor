@@ -6,7 +6,7 @@ date: 2026-05-05
 subfolder: interpellations
 slug: 2026-05-05-interpellations
 source_folder: analysis/daily/2026-05-05/interpellations
-generated_at: 2026-05-22T13:53:53.850Z
+generated_at: 2026-05-23T08:06:00.589Z
 language: en
 layout: article
 ---
@@ -85,6 +85,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1801,13 +1814,720 @@ Prior PIR files found (from 2026-05-04/interpellations/pir-status.json):
 
 All four prior PIRs remain open and are active collection targets for this cycle.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز استخباراتي — الاستجوابات البرلمانية 2026-05-05
+
+**التصنيف**: PUBLIC  
+**أُعدّ في**: 2026-05-05T07:15:00Z  
+**مستوى ثقة المحلل**: HIGH (تمت مراجعة المصادر الأولية)  
+**ملخص WEP**: 0.60 يقين معتدل-مرتفع بشأن التوترات السياسية على المدى القريب  
+
+---
+
+### ملخص استخباراتي في فقرة واحدة
+
+يهيمن على نبض المحاسبة البرلمانية السويدي في 5 مايو 2026 خمسة استجوابات تكشف مجتمعةً عن ثلاثة خطوط صدع هيكلية في الولاية الثانية لائتلاف تيدو: *تآكل وعود البنية التحتية* (إعادة توجيه Ostlänken، HD10463)، *عجز مصداقية الأمن والنظام* (مؤشر KPI لاجتثاث الجريمة المنظمة، HD10458)، و*تسييس الجهاز الحكومي* (نشاط الوكالات، HD10459). خيط رابع — تراجع السويد في تمويل وكالة الفضاء الأوروبية ESA (HD10461) — يكشف عن ضعف في سياسة البحث والصناعة يؤثر على البنى التحتية الفضائية المدنية والدفاعية على حد سواء. وكشفت الاستجواب الخامس (HD10462) عن خلل تنظيمي ضيق لكن ملموس في تشريع ضريبة المبيدات الحشرية. مجتمعةً، تشير هذه المعطيات إلى أن المعارضة (S وSD من جبهتين مختلفتين) تنفذ هجوماً محاسبياً مستداماً يستهدف وزراء الحكومة عبر أربع حقائب وزارية في آنٍ واحد.
+
+---
+
+### الأحكام الجوهرية
+
+**KJ-1**: يُعدّ قرار Ostlänken (HD10463) أهم عنصر في هذه الدفعة. إن عجز الوزير Carlson عن تقديم خطة بديلة للطاقة الاستيعابية ذات مصداقية سيكثّف الضغط السياسي الإقليمي في أوستيرغوتلاند قبيل انتخابات 2026. WEP = 0.75 أن الحكومة ستفشل في إرضاء مطالب لينشوبينج ضمن دورة الاستجواب هذه.
+
+**KJ-2**: يمثّل استجواب الجريمة المنظمة (HD10458) ضغطاً معارضاً مستداماً على وزير العدل Strömmer. تصريح الحكومة ذاتها في أفتونبلادت ("اجتثاث الجريمة المنظمة في أربع سنوات") يخلق فخ محاسبة ذاتياً — أي تملص أو تخفيض لمؤشر KPI يُشكّل الآن إخلالاً بالوعود. WEP = 0.65 أن رد Strömmer سيُنظر إليه على أنه تهرب لا التزام مدعوم بأدلة.
+
+**KJ-3**: يعكس استجواب SD لنشاط الوكالات (HD10459) حملة منهجية لإعادة تشكيل الجهاز الحكومي السويدي من خلال الضغط البرلماني لا التشريع. سيوضح رد وزير الشؤون المدنية Slottner ما إذا كانت الحكومة مستعدة للتصرف إدارياً أم أنها ستكتفي بالموافقة اللفظية على توصيف SD. WEP = 0.70 أن الوزير سيقدم رداً غير ملزم مستشهداً بالقيود الدستورية على استقلالية الوكالات.
+
+**KJ-4**: تراجع السويد إلى المرتبة #17 في وكالة الفضاء الأوروبية ESA (HD10461) يمثّل خطراً استراتيجياً غير مُبلَّغ عنه يجمع بين خسارة القدرة الصناعية الفضائية المدنية واحتمال الإقصاء من مشتريات دفاعية أوروبية. WEP = 0.50 أن وزيرة البحث Edholm ستتعهد بزيادة الميزانية؛ WEP = 0.45 أنها ستشير إلى مراجعة جارية.
+
+**KJ-5**: مشكلة ضريبة المبيدات الحشرية (HD10462) شذوذ تنظيمي ضيق وقابل للحل — يمكن لوزير المالية Svantesson حله بتعديل تشريعي أو توجيهات Skatteverket دون تكاليف سياسية. WEP = 0.80 أن يُقدَّم رد إيجابي موجّه نحو الإصلاح.
+
+---
+
+### متطلبات الجمع الفورية
+
+| الأولوية | الهدف | الإجراء | الموعد النهائي |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) بشأن رد مؤشر KPI للجريمة المنظمة | مراقبة 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) بشأن بدائل طاقة Ostlänken الاستيعابية | مراقبة 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) بشأن مراجعة ميزانية ESA | مراقبة 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) بشأن تطبيق نشاط الوكالات | مراقبة 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) بشأن ضريبة مطهرات القطاع الصحي | مراقبة 2026-05-25 | 2026-05-25 |
+
+---
+
+### سجل المخاطر — العناوين الرئيسية
+
+| الخطر | الاحتمالية | الأثر |
+|------|-----------|--------|
+| Ostlänken: التعبئة الإقليمية لـ S/MP قبل انتخابات 2026 | HIGH | HIGH |
+| الجريمة المنظمة: مصداقية الحكومة في أجندة الأمن | HIGH | HIGH |
+| ESA/الفضاء: خسارة العقود التجارية/الدفاعية السويدية | MEDIUM | HIGH |
+| نشاط الوكالات: تصاعد الاحتكاك بين SD والحكومة | MEDIUM | MEDIUM |
+| ضريبة المبيدات: خطر تأخر إمدادات مطهرات القطاع الصحي | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_da.md -->
+
+**Klassificering**: PUBLIC  
+**Udarbejdet**: 2026-05-05T07:15:00Z  
+**Analytikerens konfidensniveau**: HIGH (primærkilder gennemgået)  
+**WEP-resumé**: 0.60 moderat-høj sikkerhed om kortsigtede politiske spændinger  
+
+---
+
+### SAMMENFATTENDE ENSTYKKEANALYSE
+
+Sveriges parlamentariske ansvarlighedspuls den 5. maj 2026 domineres af fem interpellationer, der tilsammen blotlægger tre strukturelle brudlinjer i Tidö-koalitionens anden periode: *erosion af infrastrukturløfter* (Ostlänken-omlæggelse, HD10463), *troværdighedsunderskud i lov og orden* (bandekriminalitet KPI, HD10458), og *politisering af statsapparatet* (myndighedsaktivisme, HD10459). En fjerde tråd — Sveriges fald i ESA-finansiering (HD10461) — blotlægger svagheder i forsknings- og industripolitikken, der påvirker både civile og forsvarsrelaterede ruminfrastrukturer. En femte (HD10462) afslører en smal men håndgribelig reguleringssvigt i pesticidbeskatningslovgivningen. Samlet indikerer materialet, at oppositionen (S og SD fra forskellige flanker) gennemfører en vedvarende ansvarsoffensiv rettet mod regeringsministre på tværs af fire porteføljer simultant.
+
+---
+
+### KERNEDØMMELSER
+
+**KJ-1**: Ostlänken-beslutningen (HD10463) er den vigtigste post i dette materiale. Minister Carlsons manglende evne til at frembringe en troværdig alternativ kapacitetsplan vil intensivere det regionale politiske pres i Östergötland forud for valget 2026. WEP = 0.75 at regeringen ikke formår at tilfredsstille Linköpings krav inden for denne interpellationscyklus.
+
+**KJ-2**: Bandekriminalitetsinterpellationen (HD10458) repræsenterer vedvarende oppositionspres på justitsminister Strömmer. Regeringens eget Aftonbladet-udtalelse ("udryd bandekriminaliteten på fire år") skaber en selvpålagt ansvarlighedsfælde — enhver undvigelse eller KPI-nedjustering udgør nu et løftebrud. WEP = 0.65 at Strömmers svar vil blive opfattet som undvigelse snarere end engagement med beviser.
+
+**KJ-3**: SD's myndighedsaktivismeinterpellation (HD10459) afspejler en systematisk kampagne for at omforme den svenske statsapparat gennem parlamentarisk pres snarere end lovgivning. Civilminister Slottners svar vil signalere, om regeringen er villig til at handle administrativt eller blot verbalt bekræfte SD's indramning. WEP = 0.70 at ministeren giver et ikke-bindende svar med reference til konstitutionelle begrænsninger i myndighedernes uafhængighed.
+
+**KJ-4**: Sveriges fald til ESA-rangering #17 (HD10461) er en underrapporteret strategisk risiko, der kombinerer civilt rumforskningskapacitetstab med potentiel udelukkelse fra EU's forsvarsrelaterede indkøb. WEP = 0.50 at forskningsminister Edholm forpligter sig til en budgetforøgelse; WEP = 0.45 at hun signalerer, at en gennemgang er i gang.
+
+**KJ-5**: Pesticidbeskatningsspørgsmålet (HD10462) er en smal, løsbar reguleringsanomali — finansminister Svantesson kan løse det med en lovændring eller Skatteverkets vejledning uden politiske omkostninger. WEP = 0.80 at der afgives et positivt, reformorienteret svar.
+
+---
+
+### UMIDDELBARE INDSAMLINGSKRAV
+
+| Prioritet | Mål | Handling | Deadline |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) om bandekriminalitet KPI-svar | Overvåg 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) om Ostlänken kapacitetsalternativer | Overvåg 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) om ESA-budgetgennemgang | Overvåg 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) om myndighedsaktivismeudøvelse | Overvåg 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) om sundhedssektorens desinfektionsmiddelskat | Overvåg 2026-05-25 | 2026-05-25 |
+
+---
+
+### RISIKOREGISTER — OVERSKRIFT
+
+| Risiko | Sandsynlighed | Påvirkning |
+|------|-----------|--------|
+| Ostlänken: Regional S/MP-mobilisering forud for valget 2026 | HIGH | HIGH |
+| Bandekriminalitet: Regeringens troværdighed på sikkerhedsdagsordenen | HIGH | HIGH |
+| ESA/Rum: Tab af svenske kommercielle/forsvarsrelaterede kontrakter | MEDIUM | HIGH |
+| Myndighedsaktivisme: SD–regeringsfriktion eskalering | MEDIUM | MEDIUM |
+| Pesticidskat: Forsinket forsyningsrisiko for sundhedssektorens desinfektionsmidler | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_de.md -->
+
+**Klassifizierung**: PUBLIC  
+**Erstellt**: 2026-05-05T07:15:00Z  
+**Analysten-Konfidenzlevel**: HIGH (Primärquellen überprüft)  
+**WEP-Zusammenfassung**: 0.60 moderat-hohe Gewissheit über kurzfristige politische Spannungen  
+
+---
+
+### ZUSAMMENFASSUNG IN EINEM ABSATZ
+
+Schwedens parlamentarischer Rechenschaftspuls am 5. Mai 2026 wird von fünf Interpellationen dominiert, die gemeinsam drei strukturelle Bruchlinien in der zweiten Amtszeit der Tidö-Koalition offenlegen: *Erosion von Infrastrukturversprechen* (Ostlänken-Umleitung, HD10463), *Glaubwürdigkeitsdefizit bei Recht und Ordnung* (Bandenkriminalitäts-KPI, HD10458) und *Politisierung des Staatsapparats* (Behördenaktivismus, HD10459). Ein vierter Strang — Schwedens Rückgang bei der ESA-Finanzierung (HD10461) — deckt Schwächen in der Forschungs- und Industriepolitik auf, die sowohl zivile als auch verteidigungsnahe Rauminfrastrukturen betreffen. Ein fünfter (HD10462) enthüllt ein enges, aber greifbares Regulierungsversagen im Pestizidsteuergesetz. Insgesamt deutet das Material darauf hin, dass die Opposition (S und SD aus verschiedenen Lagern) eine anhaltende Rechenschaftsoffensive gegen Regierungsminister über vier Portfolios hinweg gleichzeitig durchführt.
+
+---
+
+### KERNURTEILE
+
+**KJ-1**: Die Ostlänken-Entscheidung (HD10463) ist der bedeutendste Punkt in diesem Material. Minister Carlsons Unfähigkeit, einen glaubwürdigen alternativen Kapazitätsplan vorzulegen, wird den regionalen politischen Druck in Östergötland vor den Wahlen 2026 verstärken. WEP = 0.75, dass die Regierung scheitert, Linköpings Forderungen innerhalb dieses Interpellationszyklus zu erfüllen.
+
+**KJ-2**: Die Bandenkriminalitätsinterpellation (HD10458) repräsentiert anhaltenden Oppositionsdruck auf Justizminister Strömmer. Die eigene Aftonbladet-Aussage der Regierung ("Bandenkriminalität in vier Jahren ausrotten") schafft eine selbst auferlegte Rechenschaftsfalle — jede Ausweichung oder KPI-Herabstufung stellt nun einen Versprechen-Bruch dar. WEP = 0.65, dass Strömmers Antwort eher als Ausweichung denn als Bekenntnis mit Beweisen wahrgenommen wird.
+
+**KJ-3**: SDs Behördenaktivismus-Interpellation (HD10459) spiegelt eine systematische Kampagne wider, den schwedischen Staatsapparat durch parlamentarischen Druck statt durch Gesetzgebung umzugestalten. Zivilminister Slottners Antwort wird signalisieren, ob die Regierung bereit ist, administrativ zu handeln oder SDs Rahmung nur verbal zu unterstützen. WEP = 0.70, dass der Minister eine unverbindliche Antwort unter Berufung auf verfassungsrechtliche Beschränkungen der Behördenunabhängigkeit gibt.
+
+**KJ-4**: Schwedens Fall auf ESA-Rang #17 (HD10461) ist ein unterberichtetes strategisches Risiko, das den Verlust ziviler Raumfahrtindustriekapazität mit einem potenziellen Ausschluss von EU-verteidigungsnahen Beschaffungen verbindet. WEP = 0.50, dass Forschungsministerin Edholm eine Budgeterhöhung zusagt; WEP = 0.45, dass sie eine laufende Überprüfung signalisiert.
+
+**KJ-5**: Das Pestizidsteuerproblem (HD10462) ist eine enge, lösbare Regulierungsanomalie — Finanzminister Svantesson kann es mit einer Gesetzesänderung oder einer Skatteverket-Richtlinie ohne politische Kosten lösen. WEP = 0.80, dass eine positive, reformorientierte Antwort gegeben wird.
+
+---
+
+### UNMITTELBARE ERFASSUNGSANFORDERUNGEN
+
+| Priorität | Ziel | Maßnahme | Frist |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) zu Bandenkriminalitäts-KPI-Antwort | Überwachen 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) zu Ostlänken-Kapazitätsalternativen | Überwachen 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) zur ESA-Budgetüberprüfung | Überwachen 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) zur Behördenaktivismusdurchsetzung | Überwachen 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) zur Gesundheitssektor-Desinfektionsmittelsteuer | Überwachen 2026-05-25 | 2026-05-25 |
+
+---
+
+### RISIKOREGISTER — ÜBERSCHRIFT
+
+| Risiko | Wahrscheinlichkeit | Auswirkung |
+|------|-----------|--------|
+| Ostlänken: Regionale S/MP-Mobilisierung vor den Wahlen 2026 | HIGH | HIGH |
+| Bandenkriminalität: Glaubwürdigkeit der Regierung bei der Sicherheitsagenda | HIGH | HIGH |
+| ESA/Weltraum: Verlust schwedischer kommerzieller/verteidigungsnaher Verträge | MEDIUM | HIGH |
+| Behördenaktivismus: SD–Regierungsreibungseskalation | MEDIUM | MEDIUM |
+| Pestizidsteuer: Verzögertes Versorgungsrisiko für Gesundheitssektor-Desinfektionsmittel | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_es.md -->
+
+**Clasificación**: PUBLIC  
+**Preparado**: 2026-05-05T07:15:00Z  
+**Nivel de confianza del analista**: HIGH (fuentes primarias revisadas)  
+**Resumen WEP**: 0,60 certeza moderadamente alta sobre tensiones políticas a corto plazo  
+
+---
+
+### RESUMEN DE INTELIGENCIA EN UN PÁRRAFO
+
+El pulso de responsabilidad parlamentaria de Suecia el 5 de mayo de 2026 está dominado por cinco interpelaciones que colectivamente exponen tres líneas de fractura estructurales en el segundo mandato de la coalición Tidö: *erosión de las promesas de infraestructura* (reorientación de Ostlänken, HD10463), *déficit de credibilidad en ley y orden* (KPI de erradicación del crimen organizado, HD10458), y *politización del aparato estatal* (activismo de agencias, HD10459). Un cuarto hilo —el declive de Suecia en la financiación de la ESA (HD10461)— expone debilidades en la política de investigación e industrial que afectan tanto a la infraestructura espacial civil como a la adyacente a la defensa. Un quinto (HD10462) revela una estrecha pero tangible falla regulatoria en la legislación fiscal sobre pesticidas. En conjunto, el lote indica que una oposición (S y SD desde distintos flancos) ejecuta una ofensiva de accountability sostenida dirigida a ministros del gobierno en cuatro carteras simultáneamente.
+
+---
+
+### JUICIOS CLAVE
+
+**KJ-1**: La decisión sobre Ostlänken (HD10463) es el elemento más significativo de este lote. La incapacidad del Ministro Carlson para presentar un plan de capacidad alternativo creíble intensificará la presión política regional en Östergötland antes de las elecciones 2026. WEP = 0,75 de que el gobierno no satisfará las demandas de Linköping dentro de este ciclo de interpelación.
+
+**KJ-2**: La interpelación sobre crimen organizado (HD10458) representa una presión opositora sostenida sobre el Ministro de Justicia Strömmer. La propia declaración del gobierno en Aftonbladet ("erradicar el crimen organizado en cuatro años") crea una trampa de responsabilidad auto-impuesta —cualquier evasión o degradación del KPI constituye ahora una ruptura de promesa. WEP = 0,65 de que la respuesta de Strömmer se percibirá como evasión más que como compromiso basado en evidencia.
+
+**KJ-3**: La interpelación de SD sobre el activismo de agencias (HD10459) refleja una campaña sistemática para remodelar el aparato estatal sueco mediante presión parlamentaria en lugar de legislación. La respuesta del Ministro Civil Slottner señalará si el gobierno está dispuesto a actuar administrativamente o simplemente respaldar verbalmente el encuadre de SD. WEP = 0,70 de que el ministro dé una respuesta no comprometida invocando las restricciones constitucionales sobre la independencia de las agencias.
+
+**KJ-4**: La caída de Suecia al rango #17 de la ESA (HD10461) es un riesgo estratégico sub-reportado que combina la pérdida de capacidad industrial espacial civil con la posible exclusión de las adquisiciones europeas adyacentes a la defensa. WEP = 0,50 de que la Ministra de Investigación Edholm se comprometa con un aumento presupuestario; WEP = 0,45 de que señale que una revisión está en curso.
+
+**KJ-5**: El problema del impuesto sobre pesticidas (HD10462) es una anomalía regulatoria estrecha y resoluble —el Ministro de Finanzas Svantesson puede resolverlo con una enmienda legislativa o una orientación del Skatteverket sin costo político. WEP = 0,80 de que se proporcione una respuesta positiva y orientada a las reformas.
+
+---
+
+### REQUISITOS DE RECOPILACIÓN INMEDIATOS
+
+| Prioridad | Objetivo | Acción | Plazo |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) sobre respuesta al KPI de crimen organizado | Monitorear 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) sobre alternativas de capacidad de Ostlänken | Monitorear 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) sobre revisión del presupuesto de la ESA | Monitorear 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) sobre aplicación del activismo de agencias | Monitorear 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) sobre el impuesto de desinfectantes sanitarios | Monitorear 2026-05-25 | 2026-05-25 |
+
+---
+
+### REGISTRO DE RIESGOS — TITULAR
+
+| Riesgo | Probabilidad | Impacto |
+|------|-----------|--------|
+| Ostlänken: Movilización regional S/MP antes de las elecciones 2026 | HIGH | HIGH |
+| Crimen organizado: Credibilidad del gobierno en la agenda de seguridad | HIGH | HIGH |
+| ESA/Espacio: Pérdida de contratos comerciales/adyacentes a la defensa suecos | MEDIUM | HIGH |
+| Activismo de agencias: Escalada de fricción SD–gobierno | MEDIUM | MEDIUM |
+| Impuesto sobre pesticidas: Riesgo de suministro retrasado de desinfectantes para el sector salud | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_fi.md -->
+
+**Luokitus**: PUBLIC  
+**Laadittu**: 2026-05-05T07:15:00Z  
+**Analyytikon luottamustaso**: HIGH (ensisijaiset lähteet tarkastettu)  
+**WEP-yhteenveto**: 0.60 kohtalaisen korkea varmuus lähitulevaisuuden poliittisista jännitteistä  
+
+---
+
+### YHDEN KAPPALEEN TIEDUSTELUYHTEENVETO
+
+Ruotsin parlamentaarinen vastuupulssi 5. toukokuuta 2026 hallitsevat viisi interpellaatiota, jotka yhteisesti paljastavat kolme rakenteellista halkeamaa Tidö-koalition toisella kaudella: *infrastruktuurilupausten rapautuminen* (Ostlänkenin reittijärjestely, HD10463), *lain ja järjestyksen uskottavuusvaje* (jengirikollisuuden KPI, HD10458) ja *valtiokoneiston politisoituminen* (virastoktiivismi, HD10459). Neljäs juoni — Ruotsin lasku ESA-rahoituksessa (HD10461) — paljastaa tutkimus- ja teollisuuspolitiikan heikkoudet, jotka vaikuttavat sekä siviili- että puolustusinfrastruktuuriin avaruussektorilla. Viides (HD10462) paljastaa kapean mutta konkreettisen sääntelyvian torjunta-aineverotuslainsäädännössä. Kokonaisuudessaan materiaali viittaa siihen, että oppositio (S ja SD eri suunnilta) toteuttaa jatkuvaa vastuuoffensiivia kohdistuen hallitusministereihin neljässä eri portfoliossa samanaikaisesti.
+
+---
+
+### KESKEISRATKAISUT
+
+**KJ-1**: Ostlänken-päätös (HD10463) on tämän materiaalin merkittävin kohta. Ministeri Carlsonin kyvyttömyys tuottaa uskottavaa vaihtoehtoista kapasiteettisuunnitelmaa tulee voimistamaan alueellista poliittista painetta Östergötlandissa ennen vuoden 2026 vaaleja. WEP = 0.75 että hallitus epäonnistuu täyttämään Linköpingin vaatimukset tässä interpellaatiosyklissä.
+
+**KJ-2**: Jengirikollisuusinterpellaatio (HD10458) edustaa jatkuvaa oppositiopaineita oikeusministeri Strömmeriä kohtaan. Hallituksen oma Aftonbladet-lausuma ("hävittää jengirikollisuus neljässä vuodessa") luo itselleen asetetun vastuuloukun — mikä tahansa epäselvyys tai KPI-alennos merkitsee nyt lupauksen rikkomista. WEP = 0.65 että Strömmerin vastaus koetaan epäselvänä eikä sitoutumisena todisteiden kanssa.
+
+**KJ-3**: SD:n virastoktiivismiinterpellaatio (HD10459) heijastaa systemaattista kampanjaa muokata ruotsalaista valtiokonetta parlamentaarisen paineen kautta lainsäädännön sijaan. Siviiliministeri Slottner signaloi vastauksellaan, onko hallitus valmis toimimaan hallinnollisesti vai ainoastaan sanallisesti hyväksymään SD:n kehystämistä. WEP = 0.70 että ministeri antaa ei-sitovan vastauksen viitaten perustuslaillisiin rajoituksiin virastojen itsenäisyydessä.
+
+**KJ-4**: Ruotsin lasku ESA-sijoitukseen #17 (HD10461) on aliarvioitu strateginen riski yhdistämällä siviiliavaruusteollisen kapasiteetin menetyksen mahdolliseen poissulkemiseen EU:n puolustukseen liittyvistä hankinnoista. WEP = 0.50 että tutkimusministeri Edholm sitoutuu budjettilisäykseen; WEP = 0.45 että hän signaloi katsauksen olevan käynnissä.
+
+**KJ-5**: Torjunta-aineverokysymys (HD10462) on kapea, ratkaistavissa oleva sääntelypoikkeavuus — valtiovarainministeri Svantesson voi ratkaista sen lakimuutoksella tai Skatteverketin ohjauksella ilman poliittisia kustannuksia. WEP = 0.80 että annetaan positiivinen, uudistusorientoitunut vastaus.
+
+---
+
+### VÄLITTÖMÄT TIEDUSTELUTARPEEET
+
+| Prioriteetti | Kohde | Toimenpide | Määräaika |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) jengirikollisuus KPI-vastaukseen | Seuraa 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) Ostlänken kapasiteettivaihtoehdoista | Seuraa 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) ESA-budjettiarvioinnista | Seuraa 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) virastoktiivismin täytäntöönpanosta | Seuraa 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) terveydenhuollon desinfektiomaksuista | Seuraa 2026-05-25 | 2026-05-25 |
+
+---
+
+### RISKIREGISTERI — OTSIKOINTI
+
+| Riski | Todennäköisyys | Vaikutus |
+|------|-----------|--------|
+| Ostlänken: Alueellinen S/MP-mobilisaatio ennen vuoden 2026 vaaleja | HIGH | HIGH |
+| Jengirikollisuus: Hallituksen uskottavuus turvallisuusagendassa | HIGH | HIGH |
+| ESA/Avaruus: Ruotsin kaupallisten/puolustukseen liittyvien sopimusten menetys | MEDIUM | HIGH |
+| Virastoktiivismi: SD–hallituksen kitkanlisäys | MEDIUM | MEDIUM |
+| Torjunta-aineverot: Terveydenhuollon desinfiointiainehuollon viivästymisriski | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_fr.md -->
+
+**Préparée** : 2026-05-05T07:15:00Z  
+**Niveau de confiance de l'analyste** : HIGH (sources primaires examinées)  
+**Résumé WEP** : 0,60 certitude modérément élevée sur les tensions politiques à court terme  
+
+---
+
+### RÉSUMÉ DE RENSEIGNEMENT EN UN PARAGRAPHE
+
+Le pouls de responsabilité parlementaire suédois du 5 mai 2026 est dominé par cinq interpellations qui exposent collectivement trois lignes de fracture structurelles dans le second mandat de la coalition Tidö : *érosion des promesses d'infrastructure* (réorientation d'Ostlänken, HD10463), *déficit de crédibilité en matière de droit et d'ordre* (KPI de l'éradication des crimes de gangs, HD10458), et *politisation de l'appareil d'État* (activisme des agences, HD10459). Un quatrième fil — le déclin de la Suède dans le financement de l'ESA (HD10461) — expose des faiblesses dans la politique de recherche et industrielle affectant à la fois les infrastructures spatiales civiles et adjacentes à la défense. Un cinquième (HD10462) révèle une défaillance réglementaire étroite mais tangible dans la législation fiscale sur les pesticides. Pris ensemble, le lot indique qu'une opposition (S et SD de flancs différents) mène une offensive d'accountability soutenue ciblant les ministres du gouvernement dans quatre portefeuilles simultanément.
+
+---
+
+### JUGEMENTS CLÉS
+
+**KJ-1** : La décision concernant Ostlänken (HD10463) est l'élément le plus significatif de ce lot. L'incapacité du ministre Carlson à produire un plan de capacité alternatif crédible intensifiera la pression politique régionale dans l'Östergötland avant les élections 2026. WEP = 0,75 que le gouvernement ne satisfait pas aux demandes de Linköping dans ce cycle d'interpellation.
+
+**KJ-2** : L'interpellation sur la criminalité des gangs (HD10458) représente une pression soutenue de l'opposition sur le ministre de la Justice Strömmer. La propre déclaration du gouvernement dans Aftonbladet (« éradiquer la criminalité des gangs en quatre ans ») crée un piège de responsabilité auto-imposé — toute nuance ou révision à la baisse du KPI constitue désormais une rupture de promesse. WEP = 0,65 que la réponse de Strömmer sera perçue comme une manœuvre d'esquive plutôt qu'un engagement basé sur des preuves.
+
+**KJ-3** : L'interpellation sur l'activisme des agences par SD (HD10459) reflète une campagne systématique visant à remodeler l'appareil d'État suédois par une pression parlementaire plutôt que par la législation. La réponse du ministre civil Slottner signalera si le gouvernement est prêt à agir administrativement ou simplement à avaliser verbalement le cadrage de SD. WEP = 0,70 que le ministre donne une réponse non contraignante en invoquant les contraintes constitutionnelles sur l'indépendance des agences.
+
+**KJ-4** : La chute de la Suède au rang #17 de l'ESA (HD10461) est un risque stratégique sous-rapporté combinant la perte de capacité industrielle spatiale civile avec une potentielle exclusion des marchés publics européens liés à la défense. WEP = 0,50 que la ministre de la Recherche Edholm s'engage pour une augmentation budgétaire ; WEP = 0,45 qu'elle signale qu'un examen est en cours.
+
+**KJ-5** : Le problème de la taxe sur les pesticides (HD10462) est une anomalie réglementaire étroite et résolvable — le ministre des Finances Svantesson peut le résoudre avec un amendement législatif ou des orientations du Skatteverket sans coût politique. WEP = 0,80 qu'une réponse positive, orientée vers des réformes, sera fournie.
+
+---
+
+### EXIGENCES DE COLLECTE IMMÉDIATES
+
+| Priorité | Cible | Action | Échéance |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) sur la réponse au KPI de criminalité des gangs | Surveiller 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) sur les alternatives de capacité d'Ostlänken | Surveiller 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) sur l'examen budgétaire de l'ESA | Surveiller 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) sur l'application de l'activisme des agences | Surveiller 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) sur la taxe sur les désinfectants de santé | Surveiller 2026-05-25 | 2026-05-25 |
+
+---
+
+### REGISTRE DES RISQUES — GROS TITRES
+
+| Risque | Probabilité | Impact |
+|------|-----------|--------|
+| Ostlänken : Mobilisation régionale S/MP avant les élections 2026 | HIGH | HIGH |
+| Criminalité des gangs : Crédibilité du gouvernement sur l'agenda sécuritaire | HIGH | HIGH |
+| ESA/Espace : Perte de contrats commerciaux/liés à la défense suédois | MEDIUM | HIGH |
+| Activisme des agences : Escalade de la friction SD–gouvernement | MEDIUM | MEDIUM |
+| Taxe sur les pesticides : Risque d'approvisionnement retardé en désinfectants pour le secteur santé | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# ביון מנהיגותי — שאילתות פרלמנטריות 2026-05-05
+
+**סיווג**: PUBLIC  
+**נערך**: 2026-05-05T07:15:00Z  
+**רמת ביטחון אנליסט**: HIGH (מקורות ראשוניים נבדקו)  
+**סיכום WEP**: 0.60 ביטחון בינוני-גבוה לגבי מתחים פוליטיים לטווח הקצר  
+
+---
+
+### תקציר מודיעיני בפסקה אחת
+
+הדופק הפרלמנטרי של אחריות שוודיה ב-5 במאי 2026 נשלט על ידי חמש שאילתות המגלות יחד שלוש קווי שבר מבניים בקדנציה השנייה של קואליציית טידו: *שחיקת הבטחות תשתית* (הסטת Ostlänken, HD10463), *גירעון אמינות בביטחון וסדר* (KPI למיגור פשיעת כנופיות, HD10458), ו*פוליטיזציה של מנגנון המדינה* (אקטיביזם סוכנויות, HD10459). חוט רביעי — ירידת שוודיה במימון ה-ESA (HD10461) — חושף חולשות במדיניות המחקר והתעשייה הנוגעות לתשתיות חלל אזרחיות וקשורות לביטחון. שאילתה חמישית (HD10462) חושפת כשל רגולטורי צר אך מוחשי בחקיקת מס חומרי ההדברה. בכללותן, הנסיבות מרמזות שאופוזיציה (S ו-SD מצדדים שונים) מבצעת קמפיין אחריות מתמשך המכוון לשרים בממשלה בארבע תיקים בו-זמנית.
+
+---
+
+### שיפוטים מרכזיים
+
+**KJ-1**: החלטת Ostlänken (HD10463) היא הפריט המשמעותי ביותר בחומר זה. חוסר יכולתו של שר Carlson להציג תוכנית חלופית אמינה לכושר ייצור יגביר את הלחץ הפוליטי האזורי באֶסטֶרְגֶטְלַנְד לפני בחירות 2026. WEP = 0.75 שהממשלה תיכשל בסיפוק דרישות לינשפינג במחזור שאילתה זה.
+
+**KJ-2**: שאילתת פשיעת הכנופיות (HD10458) מייצגת לחץ ממשיך של האופוזיציה על שר המשפטים Strömmer. הצהרת Aftonbladet של הממשלה עצמה ("לחסל פשיעת כנופיות בארבע שנים") יוצרת מלכודת אחריות עצמית — כל התחמקות או הורדת KPI מהווה כעת הפרת הבטחה. WEP = 0.65 שתגובת Strömmer תיתפס כהתחמקות ולא כמחויבות מגובה בראיות.
+
+**KJ-3**: שאילתת SD על אקטיביזם סוכנויות (HD10459) משקפת קמפיין שיטתי לעיצוב מחדש של מנגנון המדינה השוודי דרך לחץ פרלמנטרי ולא חקיקה. תגובת שר העניינים האזרחיים Slottner תצביע על נכונות הממשלה לפעול מנהלית או רק להסכים מילולית למסגור SD. WEP = 0.70 שהשר יספק תגובה לא מחייבת תוך ציון מגבלות חוקתיות על עצמאות סוכנויות.
+
+**KJ-4**: ירידת שוודיה לדירוג #17 ב-ESA (HD10461) היא סיכון אסטרטגי שדיווח לא מספיק עליו, המשלב אובדן כושר תעשיית חלל אזרחית עם הדרה פוטנציאלית ממכרזי ביטחון קשורים ל-EU. WEP = 0.50 ש-Edholm שרת המחקר תתחייב להגדלת תקציב; WEP = 0.45 שתציין שסקירה מתנהלת.
+
+**KJ-5**: בעיית מס חומרי ההדברה (HD10462) היא חריגה רגולטורית צרה וניתנת לפתרון — שר האוצר Svantesson יכול לפתור אותה עם תיקון חקיקתי או הנחיית Skatteverket ללא עלויות פוליטיות. WEP = 0.80 שתינתן תגובה חיובית ומכוונת-לרפורמה.
+
+---
+
+### דרישות איסוף מיידיות
+
+| עדיפות | יעד | פעולה | מועד אחרון |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) על תגובת KPI לפשיעת כנופיות | מעקב 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) על חלופות כושר Ostlänken | מעקב 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) על סקירת תקציב ESA | מעקב 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) על אכיפת אקטיביזם סוכנויות | מעקב 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) על מס חומרי חיטוי מגזר בריאות | מעקב 2026-05-25 | 2026-05-25 |
+
+---
+
+### רישום סיכונים — כותרות
+
+| סיכון | הסתברות | השפעה |
+|------|-----------|--------|
+| Ostlänken: גיוס אזורי של S/MP לפני בחירות 2026 | HIGH | HIGH |
+| פשיעת כנופיות: אמינות הממשלה בסדר היום הביטחוני | HIGH | HIGH |
+| ESA/חלל: אובדן חוזים מסחריים/ביטחוניים שוודיים | MEDIUM | HIGH |
+| אקטיביזם סוכנויות: הסלמת חיכוך SD-ממשלה | MEDIUM | MEDIUM |
+| מס חומרי הדברה: סיכון איחור אספקת חומרי חיטוי לבריאות | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_ja.md -->
+
+**分類**: PUBLIC  
+**作成日**: 2026-05-05T07:15:00Z  
+**アナリスト確信レベル**: HIGH（一次情報源確認済み）  
+**WEP概要**: 0.60 短期的政治緊張に関して中高程度の確信  
+
+---
+
+### 1段落インテリジェンス・サマリー
+
+2026年5月5日のスウェーデン国会説明責任の焦点は、ティドー連立政権第2期における3つの構造的断層線を共同で浮き彫りにする5件の代表質問によって支配されている：*インフラ約束の侵食*（Ostlänken経路変更、HD10463）、*治安・秩序に関する信頼性の欠如*（暴力団撲滅KPI、HD10458）、*国家機構の政治化*（機関アクティビズム、HD10459）。第4の糸は——ESA資金調達におけるスウェーデンの後退（HD10461）——が民間および防衛関連の宇宙インフラ双方に影響する研究・産業政策上の弱点を露呈している。第5件（HD10462）は農薬税立法における狭小だが実質的な規制上の失敗を明らかにしている。総合すると、野党（SとSDが異なる翼から）が4つの省庁分野で政府大臣を同時に標的とした持続的な説明責任攻勢を展開していることを示唆している。
+
+---
+
+### 主要判断
+
+**KJ-1**: Ostlänken決定（HD10463）がこの材料の最重要事項である。Carlson大臣が信頼できる代替容量計画を提示できなければ、2026年選挙前にエステルイェートランドにおける地域的政治圧力が激化するだろう。WEP = 0.75 政府はこの質問サイクル内でリンシェーピングの要求を満たすことに失敗する。
+
+**KJ-2**: 暴力団犯罪質問（HD10458）はStrömmer司法大臣への継続的な野党圧力を表している。政府自身のAftonbladet声明（「4年以内に暴力団犯罪を撲滅する」）は自己課題の説明責任トラップを生み出している——いかなる回避もKPI引き下げも今や約束違反となる。WEP = 0.65 Strömmerの答弁は証拠に基づくコミットメントではなく回避と認識される。
+
+**KJ-3**: SDの機関アクティビズム質問（HD10459）は、立法ではなく議会圧力を通じてスウェーデン国家機構を再形成する体系的なキャンペーンを反映している。Slottner民事大臣の答弁は、政府が行政的に行動する用意があるかどうか、それともSDのフレーミングに口頭で賛同するだけかを示すだろう。WEP = 0.70 大臣は機関の独立性に関する憲法上の制限を引用して非拘束的な答弁をする。
+
+**KJ-4**: スウェーデンのESAランキング第17位への下落（HD10461）は、民間宇宙産業能力の喪失とEU防衛関連調達からの潜在的排除を組み合わせた過小報告の戦略的リスクである。WEP = 0.50 Edholm研究大臣が予算増額を約束する；WEP = 0.45 審査が進行中であることを示す。
+
+**KJ-5**: 農薬税問題（HD10462）は狭小で解決可能な規制上の変則事項——Svantesson財務大臣は立法修正またはSkatteverketガイダンスで政治的コストなしに解決できる。WEP = 0.80 改革志向のポジティブな答弁がなされる。
+
+---
+
+### 即時収集要件
+
+| 優先度 | 対象 | アクション | 期限 |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) 暴力団犯罪KPI答弁について | 2026-05-19 モニタリング | 2026-05-19 |
+| HIGH | Carlson (KD) Ostlänken代替容量について | 2026-05-25 モニタリング | 2026-05-25 |
+| MEDIUM | Edholm (L) ESA予算審査について | 2026-05-19 モニタリング | 2026-05-19 |
+| MEDIUM | Slottner (KD) 機関アクティビズム執行について | 2026-05-20 モニタリング | 2026-05-20 |
+| LOW | Svantesson (M) 医療セクター消毒剤税について | 2026-05-25 モニタリング | 2026-05-25 |
+
+---
+
+### リスク・レジスター — 見出し
+
+| リスク | 可能性 | 影響 |
+|------|-----------|--------|
+| Ostlänken: 2026年選挙前のS/MP地域動員 | HIGH | HIGH |
+| 暴力団犯罪: セキュリティアジェンダに関する政府の信頼性 | HIGH | HIGH |
+| ESA/宇宙: スウェーデン商業・防衛関連契約の喪失 | MEDIUM | HIGH |
+| 機関アクティビズム: SD-政府摩擦のエスカレーション | MEDIUM | MEDIUM |
+| 農薬税: 医療セクター消毒剤供給の遅延リスク | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_ko.md -->
+
+**분류**: PUBLIC  
+**작성일**: 2026-05-05T07:15:00Z  
+**분석가 신뢰도**: HIGH (1차 출처 검증 완료)  
+**WEP 요약**: 0.60 단기 정치적 긴장에 대한 중간-높은 확신  
+
+---
+
+### 단락 요약 인텔리전스
+
+2026년 5월 5일 스웨덴 의회 책임 지표는 티도 연립 2기의 세 가지 구조적 단층선을 공동으로 드러내는 5건의 대표 질의에 의해 지배되고 있다: *인프라 약속 침식* (Ostlänken 경로 변경, HD10463), *치안·질서 신뢰도 적자* (폭력 조직 척결 KPI, HD10458), *국가 기구 정치화* (기관 활동주의, HD10459). 네 번째 실 — ESA 자금 지원에서 스웨덴의 하락 (HD10461) — 은 민간 및 방위 관련 우주 인프라 모두에 영향을 미치는 연구·산업 정책의 약점을 드러낸다. 다섯 번째 (HD10462)는 농약세 입법의 좁지만 실질적인 규제 실패를 드러낸다. 종합적으로 이는 야당(S와 SD가 서로 다른 방향에서)이 4개 포트폴리오의 정부 장관을 동시에 표적으로 하는 지속적인 책임 공세를 전개하고 있음을 시사한다.
+
+---
+
+### 핵심 판단
+
+**KJ-1**: Ostlänken 결정 (HD10463)이 이 자료에서 가장 중요한 항목이다. Carlson 장관이 신뢰할 수 있는 대안 용량 계획을 제시하지 못한다면 2026년 선거 전 에스테르예틀란트의 지역 정치적 압력이 강화될 것이다. WEP = 0.75 정부는 이 질의 주기 내에 린셰핑의 요구를 충족하는 데 실패한다.
+
+**KJ-2**: 폭력 조직 범죄 질의 (HD10458)는 Strömmer 법무장관에 대한 지속적인 야당 압력을 나타낸다. 정부 자체의 Aftonbladet 성명("4년 내 폭력 조직 범죄 척결")은 자기 부과 책임 함정을 만든다 — 어떠한 회피나 KPI 하향도 이제 약속 위반이 된다. WEP = 0.65 Strömmer의 답변은 증거 기반 약속이 아닌 회피로 인식된다.
+
+**KJ-3**: SD의 기관 활동주의 질의 (HD10459)는 입법이 아닌 의회 압력을 통해 스웨덴 국가 기구를 재편하려는 체계적인 캠페인을 반영한다. Slottner 민사부 장관의 답변은 정부가 행정적으로 행동할 의지가 있는지, 아니면 SD의 프레이밍에 단순히 언어적으로 동의할지를 신호할 것이다. WEP = 0.70 장관은 기관 독립성에 관한 헌법적 제한을 인용하며 비구속적 답변을 제공한다.
+
+**KJ-4**: 스웨덴의 ESA 순위 17위 하락 (HD10461)은 민간 우주 산업 역량 상실과 EU 방위 관련 조달 잠재적 배제를 결합한 과소 보고된 전략적 위험이다. WEP = 0.50 Edholm 연구장관이 예산 증액을 약속한다; WEP = 0.45 검토가 진행 중임을 나타낸다.
+
+**KJ-5**: 농약세 문제 (HD10462)는 좁고 해결 가능한 규제 이상 — Svantesson 재무장관은 정치적 비용 없이 입법 수정 또는 Skatteverket 지침으로 해결할 수 있다. WEP = 0.80 개혁 지향의 긍정적 답변이 제공된다.
+
+---
+
+### 즉각적인 수집 요건
+
+| 우선순위 | 대상 | 조치 | 기한 |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) 폭력 조직 범죄 KPI 답변 관련 | 2026-05-19 모니터링 | 2026-05-19 |
+| HIGH | Carlson (KD) Ostlänken 대안 용량 관련 | 2026-05-25 모니터링 | 2026-05-25 |
+| MEDIUM | Edholm (L) ESA 예산 검토 관련 | 2026-05-19 모니터링 | 2026-05-19 |
+| MEDIUM | Slottner (KD) 기관 활동주의 집행 관련 | 2026-05-20 모니터링 | 2026-05-20 |
+| LOW | Svantesson (M) 의료 분야 소독제 세금 관련 | 2026-05-25 모니터링 | 2026-05-25 |
+
+---
+
+### 리스크 등록 — 헤드라인
+
+| 위험 | 확률 | 영향 |
+|------|-----------|--------|
+| Ostlänken: 2026년 선거 전 S/MP 지역 동원 | HIGH | HIGH |
+| 폭력 조직 범죄: 안보 의제에 관한 정부 신뢰도 | HIGH | HIGH |
+| ESA/우주: 스웨덴 상업·방위 관련 계약 손실 | MEDIUM | HIGH |
+| 기관 활동주의: SD-정부 마찰 고조 | MEDIUM | MEDIUM |
+| 농약세: 의료 분야 소독제 공급 지연 위험 | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_nl.md -->
+
+**Classificatie**: PUBLIC  
+**Opgesteld**: 2026-05-05T07:15:00Z  
+**Analysten-confidentieniveau**: HIGH (primaire bronnen gecontroleerd)  
+**WEP-samenvatting**: 0,60 matig-hoge zekerheid over kortetermijn politieke spanningen  
+
+---
+
+### SAMENVATTING IN ÉÉN ALINEA
+
+De parlementaire verantwoordingspols van Zweden op 5 mei 2026 wordt gedomineerd door vijf interpellaties die gezamenlijk drie structurele breuklijnen blootleggen in de tweede termijn van de Tidö-coalitie: *erosie van infrastructuurbeloften* (Ostlänken-omlegging, HD10463), *geloofwaardigheidstekort bij recht en orde* (bendecrimi-KPI, HD10458), en *politisering van het staatsapparaat* (agentschapsactivisme, HD10459). Een vierde draad — Zwedens daling in ESA-financiering (HD10461) — onthult zwakheden in het onderzoeks- en industriebeleid die zowel civiele als defensiegerelateerde ruimte-infrastructuren betreffen. Een vijfde (HD10462) onthult een smal maar tastbaar regelgevingsfalen in de pesticidbelastingwetgeving. Samengenomen duidt het geheel erop dat een oppositie (S en SD van verschillende flanken) een volgehouden verantwoordingsoffensief uitvoert gericht op regeringsministers in vier portefeuilles tegelijkertijd.
+
+---
+
+### KERNOORDELEN
+
+**KJ-1**: De Ostlänken-beslissing (HD10463) is het meest significante punt in dit materiaal. Minister Carlsons onvermogen om een geloofwaardig alternatief capaciteitsplan te produceren zal de regionale politieke druk in Östergötland vóór de verkiezingen van 2026 intensiveren. WEP = 0,75 dat de regering er niet in slaagt Linköpings eisen binnen deze interpellatiecyclus te vervullen.
+
+**KJ-2**: De bendecrimi-interpellatie (HD10458) vertegenwoordigt aanhoudende oppositiedruk op Minister van Justitie Strömmer. De eigen Aftonbladet-verklaring van de regering ("bandencriminaliteit in vier jaar uitroeien") creëert een zelfopgelegde verantwoordingsval — elke ontwijking of KPI-verlaging vormt nu een belofte-breuk. WEP = 0,65 dat Strömmers antwoord eerder als ontwijking dan als toewijding met bewijzen wordt ervaren.
+
+**KJ-3**: SDs agentschapsactivisme-interpellatie (HD10459) weerspiegelt een systematische campagne om het Zweedse staatsapparaat te hervormen via parlementaire druk in plaats van wetgeving. Het antwoord van Civiminister Slottner zal signaleren of de regering bereid is administratief te handelen of SDs framing slechts verbaal te ondersteunen. WEP = 0,70 dat de minister een niet-verbindend antwoord geeft met een beroep op constitutionele beperkingen op de onafhankelijkheid van agentschappen.
+
+**KJ-4**: Zwedens val naar ESA-rang #17 (HD10461) is een onderbelicht strategisch risico dat het verlies van civiele ruimtevaartindustriële capaciteit combineert met potentiële uitsluiting van EU-defensiegerelateerde aanbestedingen. WEP = 0,50 dat Onderzoeksminister Edholm een budgetverhoging toezegt; WEP = 0,45 dat ze aangeeft dat een beoordeling gaande is.
+
+**KJ-5**: Het pesticidbelastingprobleem (HD10462) is een smalle, oplosbare regelgevingsanomalie — Minister van Financiën Svantesson kan het oplossen met een wetsamendement of een Skatteverket-richtsnoer zonder politieke kosten. WEP = 0,80 dat een positief, hervorminggericht antwoord wordt gegeven.
+
+---
+
+### ONMIDDELLIJKE VERZAMELINGSVEREISTEN
+
+| Prioriteit | Doel | Actie | Deadline |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) over bendecrimi-KPI-antwoord | Monitoren 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) over Ostlänken-capaciteitsalternatieven | Monitoren 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) over ESA-budgetbeoordeling | Monitoren 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) over agentschapsactivisme-handhaving | Monitoren 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) over gezondheidssector-desinfectiemiddelenbelasting | Monitoren 2026-05-25 | 2026-05-25 |
+
+---
+
+### RISICOREGISTER — KOPTEKST
+
+| Risico | Kans | Impact |
+|------|-----------|--------|
+| Ostlänken: Regionale S/MP-mobilisatie vóór de verkiezingen van 2026 | HIGH | HIGH |
+| Bendecriminaliteit: Geloofwaardigheid van de regering op de veiligheidsagenda | HIGH | HIGH |
+| ESA/Ruimte: Verlies van Zweedse commerciële/defensiegerelateerde contracten | MEDIUM | HIGH |
+| Agentschapsactivisme: SD–regeringsfriktie escalatie | MEDIUM | MEDIUM |
+| Pesticidbelasting: Vertraagd bevoorradingsrisico voor gezondheidssector-desinfectiemiddelen | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_no.md -->
+
+**Klassifisering**: PUBLIC  
+**Utarbeidet**: 2026-05-05T07:15:00Z  
+**Analytikerens konfidensnivå**: HIGH (primærkilder gjennomgått)  
+**WEP-sammendrag**: 0.60 moderat-høy sikkerhet om kortsiktige politiske spenninger  
+
+---
+
+### SAMMENDRAG I ETT AVSNITT
+
+Sveriges parlamentariske ansvarspuls 5. mai 2026 domineres av fem interpellasjoner som samlet avdekker tre strukturelle sprekker i Tidö-koalisjonens andre periode: *erosjon av infrastrukturløfter* (Ostlänken-omlegging, HD10463), *troverdighetsmangel i lov og orden* (gjengkriminalitet KPI, HD10458), og *politisering av statsapparatet* (myndighetsaktivisme, HD10459). En fjerde tråd — Sveriges fall i ESA-finansiering (HD10461) — avdekker svakheter i forsknings- og industripolitikken som påvirker både sivil og forsvarsrelatert rominfrastruktur. En femte (HD10462) avslører en smal, men håndgripelig reguleringssvikt i pesticidbeskatningslovgivningen. Samlet indikerer materialet at opposisjonen (S og SD fra ulike flanker) gjennomfører et vedvarende ansvarsoffensiv rettet mot regjeringsministre på tvers av fire porteføljer simultaneously.
+
+---
+
+### KJERNEDOMSTOLER
+
+**KJ-1**: Ostlänken-beslutningen (HD10463) er den viktigste posten i dette materialet. Minister Carlsons manglende evne til å frembringe en troverdig alternativ kapasitetsplan vil intensivere det regionale politiske presset i Östergötland foran valget 2026. WEP = 0.75 at regjeringen mislykkes i å tilfredsstille Linköpings krav innenfor denne interpellasjonssyklusen.
+
+**KJ-2**: Gjengkriminalitetsinterpellasjonen (HD10458) representerer vedvarende opposisjonspress på justisminister Strömmer. Regjeringens eget Aftonbladet-utsagn ("utrydde gjengkriminaliteten på fire år") skaper en selvpålagt ansvarlighetsfelle — enhver unnvikelse eller KPI-nedjustering utgjør nå et løftebrudd. WEP = 0.65 at Strömmers svar vil bli oppfattet som unnvikelse snarere enn engasjement med bevis.
+
+**KJ-3**: SDs myndighetsaktivismeinterpellasjon (HD10459) gjenspeiler en systematisk kampanje for å omforme den svenske statsapparaten gjennom parlamentarisk press snarere enn lovgivning. Sivilminister Slottners svar vil signalisere om regjeringen er villig til å handle administrativt eller bare verbalt godkjenne SDs inramning. WEP = 0.70 at ministeren gir et ikke-forpliktende svar med referanse til konstitusjonelle begrensninger på myndighetenes uavhengighet.
+
+**KJ-4**: Sveriges fall til ESA-rangering #17 (HD10461) er en underrapportert strategisk risiko som kombinerer tap av sivil romforskningskapasitet med potensiell utelukkelse fra EUs forsvarsrelaterte innkjøp. WEP = 0.50 at forskningsminister Edholm forplikter seg til en budsjettøkning; WEP = 0.45 at hun signaliserer at en gjennomgang pågår.
+
+**KJ-5**: Pesticidbeskatningsspørsmålet (HD10462) er en smal, løsbar reguleringsanomali — finansminister Svantesson kan løse det med en lovendring eller Skatteverkets veiledning uten politisk kostnad. WEP = 0.80 at det gis et positivt, reformorientert svar.
+
+---
+
+### UMIDDELBARE INNSAMLINGSKRAV
+
+| Prioritet | Mål | Handling | Frist |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) om gjengkriminalitet KPI-svar | Overvåk 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) om Ostlänken kapasitetsalternativer | Overvåk 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) om ESA-budsjettgjennomgang | Overvåk 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) om myndighetsaktivismegjennomføring | Overvåk 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) om helsevesenets desinfeksjonsmiddelskatt | Overvåk 2026-05-25 | 2026-05-25 |
+
+---
+
+### RISIKOREGISTER — OVERSKRIFT
+
+| Risiko | Sannsynlighet | Påvirkning |
+|------|-----------|--------|
+| Ostlänken: Regional S/MP-mobilisering foran valget 2026 | HIGH | HIGH |
+| Gjengkriminalitet: Regjeringens troverdighet på sikkerhetsagendaen | HIGH | HIGH |
+| ESA/Rom: Tap av svenske kommersielle/forsvarsrelaterte kontrakter | MEDIUM | HIGH |
+| Myndighetsaktivisme: SD–regjerings friksjonstrapping | MEDIUM | MEDIUM |
+| Pesticidskatt: Forsinket forsyningsrisiko for helsesektorens desinfeksjonsmidler | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_sv.md -->
+
+**Klassificering**: PUBLIC  
+**Upprättad**: 2026-05-05T07:15:00Z  
+**Analytikerns konfidensläge**: HIGH (primärkällor granskade)  
+**WEP-sammanfattning**: 0.60 måttlig-hög säkerhet om kortsiktiga politiska spänningar  
+
+---
+
+### SAMMANFATTNING I ETT STYCKE
+
+Sveriges parlamentariska ansvarighetspuls den 5 maj 2026 domineras av fem interpellationer som sammantaget blottlägger tre strukturella sprickor i Tidökoalitionens andra mandatperiod: *erosion av infrastrukturlöften* (Ostlänkens omdragning, HD10463), *trovärdighetsunderskott i lag och ordning* (gängbrottslighet KPI, HD10458), och *politisering av statsapparaten* (myndighetsaktivism, HD10459). En fjärde tråd — Sveriges nedgång i ESA-finansiering (HD10461) — blottlägger svagheter i forsknings- och industripolitiken som påverkar både civila och försvarsrelaterade rymdinfrastrukturer. En femte (HD10462) avslöjar ett smalt men handfasto regleringsmisslyckande i bekämpningsmedelsbeskattningslagstiftningen. Sammantaget indikerar materialet att oppositionen (S och SD från olika flanker) genomför ett varaktigt ansvarighetsoffensiv riktat mot regeringsministrar inom fyra portföljer simultaneously.
+
+---
+
+### NYCKELDOMSLUT
+
+**KJ-1**: Ostlänken-beslutet (HD10463) är den viktigaste posten i detta material. Minister Carlsons oförmåga att ta fram en trovärdig alternativ kapacitetsplan kommer att intensifiera det regionala politiska trycket i Östergötland inför valet 2026. WEP = 0.75 att regeringen misslyckas med att tillfredsställa Linköpings krav inom denna interpellationscykel.
+
+**KJ-2**: Gängbrottslighetsinterpellationen (HD10458) representerar ett uthålligt oppositionstryck på justitieminister Strömmer. Regeringens eget uttalande i Aftonbladet ("utrota gängbrottsligheten på fyra år") skapar en självpåtagen ansvarlighetsfälla — varje undvikande svar eller KPI-nedgradering utgör nu ett löftesbrott. WEP = 0.65 att Strömmers svar kommer att uppfattas som undvikande snarare än som ett engagemang med bevis.
+
+**KJ-3**: SD:s interpellation om myndighetsaktivism (HD10459) speglar en systematisk kampanj för att omforma den svenska statsapparaten genom parlamentärt tryck snarare än lagstiftning. Civilminister Slottners svar kommer att signalera om regeringen är beredd att agera administrativt eller bara verbalt välsigna SD:s inramning. WEP = 0.70 att ministern ger ett icke-bindande svar med hänvisning till konstitutionella begränsningar av myndigheternas självständighet.
+
+**KJ-4**: Sveriges fall till ESA-rankning nr 17 (HD10461) är en underrapporterad strategisk risk som kombinerar civil rymdindutriell kapacitetsförlust med potentiellt utestängning från EU:s försvarsrelaterade upphandlingar. WEP = 0.50 att forskningsminister Edholm åtar sig en budgetökning; WEP = 0.45 att hon signalerar att en översyn pågår.
+
+**KJ-5**: Bekämpningsmedelsskattfrågan (HD10462) är en smal, lösbar reglerings anomali — finansminister Svantesson kan lösa den med en lagändring eller Skatteverkets vägledning utan politisk kostnad. WEP = 0.80 att ett positivt, reforminriktat svar lämnas.
+
+---
+
+### OMEDELBARA INSAMLINGSKRAV
+
+| Prioritet | Mål | Åtgärd | Deadline |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) om gängbrottslighet KPI-svar | Bevaka 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) om Ostlänken kapacitetsalternativ | Bevaka 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) om ESA-budgetöversyn | Bevaka 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) om myndighetersaktivismtillämpning | Bevaka 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) om sjukvårdens desinfektionsmedelsskatt | Bevaka 2026-05-25 | 2026-05-25 |
+
+---
+
+### RISKREGISTER — RUBRIK
+
+| Risk | Sannolikhet | Påverkan |
+|------|-----------|--------|
+| Ostlänken: Regional S/MP-mobilisering inför valet 2026 | HIGH | HIGH |
+| Gängbrottslighet: Regeringens trovärdighet i säkerhetsagendan | HIGH | HIGH |
+| ESA/Rymd: Förlust av svenska kommersiella/försvarsrelaterade kontrakt | MEDIUM | HIGH |
+| Myndighetsaktivism: SD–regeringsfriktion eskalering | MEDIUM | MEDIUM |
+| Bekämpningsmedelsskatt: Försenad risk för sjukvårdens desinfektionsmedelsförsörjning | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_zh.md -->
+
+**分类**: PUBLIC  
+**编制日期**: 2026-05-05T07:15:00Z  
+**分析师可信度**: HIGH（已核实一手来源）  
+**WEP摘要**: 0.60 对短期政治紧张局势的中高确信度  
+
+---
+
+### 单段情报摘要
+
+2026年5月5日瑞典议会问责脉搏由五项质询主导，共同揭示了蒂多联合政府第二任期的三条结构性断层线：*基础设施承诺侵蚀*（Ostlänken改线，HD10463）、*治安秩序公信力赤字*（黑帮犯罪KPI，HD10458）和*国家机器政治化*（机构活动主义，HD10459）。第四条线索——瑞典ESA资助排名下滑（HD10461）——揭示了影响民用及国防相关航天基础设施的研究和产业政策弱点。第五项（HD10462）揭示了农药税立法中一个狭窄但实质性的监管失灵。综合来看，这表明反对党（S和SD从不同侧翼）正对四个内阁组合的政府部长同时发动持续性的问责攻势。
+
+---
+
+### 关键判断
+
+**KJ-1**: Ostlänken决定（HD10463）是本批材料中最重要的条目。Carlson部长若无法提出可信的替代运力计划，将在2026年大选前加剧东约特兰地区的政治压力。WEP = 0.75 政府在本次质询周期内无法满足林雪平的诉求。
+
+**KJ-2**: 黑帮犯罪质询（HD10458）代表反对党对司法部长Strömmer的持续压力。政府自身在Aftonbladet上的声明（"四年内根除黑帮犯罪"）制造了自我施加的问责陷阱——任何回避或KPI下调现在都构成违背承诺。WEP = 0.65 Strömmer的答复将被视为回避而非有证据支持的承诺。
+
+**KJ-3**: SD的机构活动主义质询（HD10459）反映了通过议会压力而非立法重塑瑞典国家机构的系统性运动。民政部长Slottner的答复将传递政府是否愿意采取行政行动，还是仅仅在口头上认同SD的定性框架。WEP = 0.70 部长将以援引机构独立性的宪法限制为由给出非约束性答复。
+
+**KJ-4**: 瑞典滑落至ESA排名第17位（HD10461）是一项被低估的战略风险，结合了民用航天工业能力的丧失与潜在被排除在欧盟国防相关采购之外。WEP = 0.50 研究部长Edholm承诺增加预算；WEP = 0.45 她表示评估正在进行。
+
+**KJ-5**: 农药税问题（HD10462）是一个狭窄且可解决的监管异常——财政部长Svantesson可通过立法修正案或Skatteverket指引无政治代价地解决。WEP = 0.80 将给出积极的、以改革为导向的答复。
+
+---
+
+### 即时收集要求
+
+| 优先级 | 目标 | 行动 | 截止日期 |
+|----------|--------|--------|---------|
+| HIGH | Strömmer (M) 关于黑帮犯罪KPI答复 | 监测 2026-05-19 | 2026-05-19 |
+| HIGH | Carlson (KD) 关于Ostlänken替代运力 | 监测 2026-05-25 | 2026-05-25 |
+| MEDIUM | Edholm (L) 关于ESA预算审查 | 监测 2026-05-19 | 2026-05-19 |
+| MEDIUM | Slottner (KD) 关于机构活动主义执行 | 监测 2026-05-20 | 2026-05-20 |
+| LOW | Svantesson (M) 关于卫生部门消毒剂税 | 监测 2026-05-25 | 2026-05-25 |
+
+---
+
+### 风险登记册 — 标题
+
+| 风险 | 概率 | 影响 |
+|------|-----------|--------|
+| Ostlänken: 2026年大选前S/MP地区动员 | HIGH | HIGH |
+| 黑帮犯罪: 政府在安全议程上的公信力 | HIGH | HIGH |
+| ESA/航天: 瑞典商业/国防相关合同损失 | MEDIUM | HIGH |
+| 机构活动主义: SD-政府摩擦升级 | MEDIUM | MEDIUM |
+| 农药税: 卫生部门消毒剂供应延迟风险 | LOW | LOW |
+
+<!-- source-sha: aa5f6ee34056e5d48dde4c67948d4326f0c7afcd -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1848,6 +2568,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

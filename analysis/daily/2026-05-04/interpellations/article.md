@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: interpellations
 slug: 2026-05-04-interpellations
 source_folder: analysis/daily/2026-05-04/interpellations
-generated_at: 2026-05-22T13:53:53.785Z
+generated_at: 2026-05-23T08:06:00.484Z
 language: en
 layout: article
 ---
@@ -97,6 +97,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1912,13 +1925,886 @@ No withdrawn interpellations in this batch.
 ### PIR Carry-Forward
 No prior PIRs found for interpellations subfolder within last 14 days. This is the first run for this article type in the current period.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_ar.md -->
+
+&#x200F;# موجز استخباراتي — مناقشات الاستجوابات 2026-05-04
+
+**التصنيف**: 🟢 عام  
+**التاريخ**: 2026-05-04  
+**المحلل**: سير عمل AI-FIRST (news-interpellations)  
+**مستوى الثقة**: B2 (جيد / صحيح على الأرجح)  
+**القرب من الانتخابات**: T−135 يوماً حتى 14 سبتمبر 2026
+
+### متطلبات الاستخبارات ذات الأولوية (PIR)
+
+**PIR-1**: هل سيصمد وعد الحكومة في 20 أبريل بـ"القضاء" على الجريمة العصابات أمام التدقيق السياسي والتجريبي قبل الانتخابات؟  
+**PIR-2**: كيف سيؤثر انخفاض ملف مساهمة السويد في وكالة الفضاء الأوروبية على رواية الابتكار في الحملة الانتخابية؟  
+**PIR-3**: هل تكتسب إطارية "نشاط الوكالات" في HD10459 (SD) نفوذاً في صنع القرار الحكومي؟
+
+### الأحكام الرئيسية
+
+**الحكم-1** (ثقة عالية): الاستجواب المتعلق بجرائم العصابات (HD10458) هو تبادل مسبق للانتخابات ذو تأثير عالٍ. وعد الحكومة بـ"القضاء" على جرائم العصابات بحلول 2030 جريء سياسياً لكنه مثير للجدل دليلياً — بلغت الانفجارات مستويات قياسية في 2024 (117 مؤكدة)، ويبقى الرقم المعلن البالغ 350 مليار كرونة سويدية للاقتصاد الإجرامي محل جدل منهجي. سيواجه وزير العدل ستروموير ضغوطاً لتحديد مؤشرات أداء رئيسية قابلة للقياس.
+
+**الحكم-2** (ثقة معتدلة): تراجع السويد إلى المرتبة 17 في وكالة الفضاء الأوروبية (HD10461) يخلق فجوة مصداقية في جدول أعمال الابتكار للحكومة. زادت السويد ميزانيتها الفضائية الوطنية (Rymdstyrelsen) بينما قلّصت في آنٍ واحد مساهمتها النسبية متعددة الأطراف (ESA) — موقف متناقض يتعين على لوتا إدهولم تفسيره.
+
+**الحكم-3** (ثقة عالية): HD10459 (نشاط الوكالات) حساس دستورياً. نموذج الإدارة السويدي — وكالات مستقلة تقدم تقاريرها للحكومة لكن لا تخضع للتعليمات الوزارية — يجعل أي إجراء ضد "تكوين الرأي في الوكالات" معقداً قانونياً. سيدافع إريك سلوتنر (KD) على الأرجح عن النموذج القائم مع الاعتراف بالتوتر السياسي.
+
+**الحكم-4** (ثقة معتدلة): HD10460 (التراث الثقافي) يبني على نتائج تدقيق RiR 2025:30 التي توثّق صيانة مؤجلة تصل إلى 4 مليارات كرونة سويدية في الممتلكات الحكومية. أفرزت عمليات تدقيق Riksrevisionen تاريخياً ضغطاً تشريعياً خلال 12 شهراً.
+
+**الحكم-5** (ثقة منخفضة-معتدلة): HD10462 (ضريبة المبيدات) مسألة تقنية ضيقة. التناقض بين "bekämpningsmedel" (مبيدات/مطهرات) بموجب ML §9(2)(2) وإعفاءات الرعاية الصحية الأوروبية هو شذوذ صياغي — يمكن حله على الأرجح بلائحة دون إجراء برلماني.
+
+### الصورة الاستراتيجية
+
+تدخل السويد حملتها الانتخابية في بيئة أمنية-اقتصادية معقدة:
+- الجريمة: انفجارات قياسية، عمليات عصابات كبرى جارية
+- الاقتصاد: يتوقع صندوق النقد الدولي WEO أبريل 2026 نمو الناتج المحلي الإجمالي السويدي بـ~1.6٪ (تعافٍ من انكماش -0.1٪ عام 2023)
+- الابتكار: النظراء الاسكندنافيون يتقدمون على السويد في ESA وتكنولوجيا الطاقة الخضراء
+- الحوكمة: حكومة التحالف تدير توترات الائتلاف الداخلية (M-KD-L + SD في علاقة تسامح)
+
+يختبر الاستجوابات الخمسة مجتمعةً مصداقية الحكومة في وعودها الانتخابية الأبرز.
+
+### الإجراءات الفورية المطلوبة
+
+لا شيء — هذه استجوابات وليست اقتراحات حكومية. مقررة للنقاش في مجلس النواب في الفترة 19–25 مايو 2026 وفق النظام الداخلي.
+
+### السياق الاقتصادي (مصدر صندوق النقد الدولي)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### مراقبة: T+21 يوماً (نقاش المجلس ~19–25 مايو)
+إشارات رئيسية للمراقبة:
+1. هل يُعلن ستروموير عن لوحة مؤشرات أداء لجرائم العصابات؟
+2. هل تلتزم إدهولم باستعادة المساهمة في ESA؟
+3. هل يُعلن سلوتنر عن مراجعة نموذج حوكمة الوكالات؟
+إذا كانت الإجابة نعم لـ 2 من 3: تُحيِّد الحكومة حزمة الاستجوابات جزئياً. إذا كانت لا: ستشير اتصالات حملات S وSD إلى هذه النقاشات حتى سبتمبر 2026.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_da.md -->
+
+**Klassificering**: 🟢 OFFENTLIG  
+**Dato**: 2026-05-04  
+**Analytiker**: AI-FIRST-arbejdsgang (news-interpellations)  
+**Konfidens**: B2 (God / Sandsynligvis sand)  
+**Valgafstand**: T−135 dage til 14. september 2026
+
+### Prioriterede efterretningsbehov (PIR)
+
+**PIR-1**: Vil regeringens løfte fra 20. april om at "udrydde" bandekriminalitet overleve politisk og empirisk granskning inden valget?  
+**PIR-2**: Hvordan vil Sveriges faldende ESA-bidragsprofil påvirke innovationsnarrativet i valgkampen?  
+**PIR-3**: Vinder HD10459's "agenturaktivisme"-framing (SD) indflydelse i regeringens beslutningstagning?
+
+### Nøglevurderinger
+
+**KV-1** (HØJ KONFIDENS): Bandekriminalitetsinterpellationen (HD10458) er et højt-impact præ-valg-udveksling. Regeringens løfte om at "udrydde" bandekriminalitet inden 2030 er politisk dristigt men evidensudfordret — eksplosioner nåede rekordniveauer i 2024 (117 bekræftede), og den angivne 350 milliarder SEK kriminelle økonomi-figur forbliver metodologisk omtvistet. Justitsminister Strömmer vil stå over for pres om at definere målbare KPI'er.
+
+**KV-2** (MODERAT KONFIDENS): Sveriges fald til ESA-rang 17 (HD10461) skaber et troværdighedsgab for regeringens innovationsdagsorden. Sverige øgede sit nationale rumbudget (Rymdstyrelsen) mens det samtidig reducerede sit proportionale multilaterale (ESA) bidrag — en modsigelsesfyldt holdning som Lotta Edholm skal forklare.
+
+**KV-3** (HØJ KONFIDENS): HD10459 (agenturaktivisme) er konstitutionelt følsomt. Sveriges forvaltningsmodel — uafhængige agenturer der rapporterer til regeringen men ikke er underlagt ministeriel instruktion — gør ethvert tiltag mod "agentur-meningsdannelse" juridisk komplekst. Erik Slottner (KD) vil sandsynligvis forsvare den eksisterende model mens han anerkender den politiske spænding.
+
+**KV-4** (MODERAT KONFIDENS): HD10460 (kulturarv) bygger på RiR 2025:30 revisionsresultater der dokumenterer udskudt vedligeholdelse på op til 4 milliarder SEK i statsejede ejendomme. Riksrevisionens revisioner har historisk produceret lovgivningstryk inden for 12 måneder.
+
+**KV-5** (LAV-MODERAT KONFIDENS): HD10462 (pesticidafgift) er et smalt teknisk spørgsmål. Diskrepansen mellem "bekämpningsmedel" (pesticider/desinfektionsmidler) under ML §9(2)(2) og EU's sundhedsundtagelser er en formuleringsanomali — sandsynligvis mulig at løse ved forordning uden parlamentarisk handling.
+
+### Strategisk billede
+
+Sverige indleder sin valgkampagne i et komplekst sikkerheds-økonomisk miljø:
+- Kriminalitet: Rekordeksplosioner, store bandeoperationer i gang
+- Økonomi: IMF WEO april 2026 projicerer Sveriges BNP-vækst til ~1,6 % (genopretning fra kontraktion på -0,1 % i 2023)
+- Innovation: Nordiske lande distancerer Sverige i ESA og grøn teknologi
+- Styring: Allianceregeringen håndterer interne koalitionsspændinger (M-KD-L + SD i tillidsforhold)
+
+De fem interpellationer undersøger samlet set regeringens troværdighed på dens mest fremtrædende valgløfter.
+
+### Øjeblikkelige handlinger krævet
+
+Ingen — dette er interpellationer, ikke regeringsforslag. Planlagt til kammerdebatten den 19.–25. maj 2026 i henhold til forretningsordenen.
+
+### Økonomisk kontekst (IMF-proveniensoplysninger)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### Observer: T+21 dage (Kammerdebatten ~19.–25. maj)
+Nøglesignaler at overvåge:
+1. Annoncerer Strömmer et KPI-dashboard for bandekriminalitet?
+2. Forpligter Edholm sig til at genoprette ESA-bidraget?
+3. Annoncerer Slottner en gennemgang af agenturstyringsmodellen?
+Hvis ja på 2 af 3: Regeringen afvæbner delvist interpellationspakken. Hvis nej: S og SD's kampagnekommunikation vil referere til disse debatter frem til september 2026.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_de.md -->
+
+**Einstufung**: 🟢 ÖFFENTLICH  
+**Datum**: 2026-05-04  
+**Analytiker**: AI-FIRST-Workflow (news-interpellations)  
+**Konfidenzgrad**: B2 (Gut / Wahrscheinlich wahr)  
+**Wahlabstand**: T−135 Tage bis 14. September 2026
+
+### Prioritäre Nachrichtenanforderungen (PIR)
+
+**PIR-1**: Wird das Versprechen der Regierung vom 20. April, Bandenkriminalität zu "tilgen", einer politischen und empirischen Überprüfung vor den Wahlen standhalten?  
+**PIR-2**: Wie wird Schwedens sinkendes ESA-Beitragsprofil die Innovationserzählung im Wahlkampf beeinflussen?  
+**PIR-3**: Gewinnt die "Behördenaktivismus"-Rahmung von HD10459 (SD) an Einfluss in der Regierungspolitik?
+
+### Kerturteile
+
+**KU-1** (HOHE KONFIDENZ): Die Bandenkriminalitätsinterpellation (HD10458) ist ein hochimpactvoller Vorwahl-Austausch. Das Versprechen der Regierung, Bandenkriminalität bis 2030 zu "tilgen", ist politisch kühn, aber evidenzbelastet — Explosionen erreichten 2024 Rekordniveaus (117 bestätigt), und die genannte Zahl von 350 Milliarden SEK für die kriminelle Wirtschaft bleibt methodologisch umstritten. Justizminister Strömmer wird unter Druck stehen, messbare KPIs zu definieren.
+
+**KU-2** (MODERATE KONFIDENZ): Schwedens Fall auf ESA-Rang 17 (HD10461) schafft eine Glaubwürdigkeitslücke für die Innovationsagenda der Regierung. Schweden erhöhte sein nationales Raumfahrtbudget (Rymdstyrelsen), während es gleichzeitig seinen proportionalen multilateralen (ESA) Beitrag reduzierte — eine widersprüchliche Haltung, die Lotta Edholm erklären muss.
+
+**KU-3** (HOHE KONFIDENZ): HD10459 (Behördenaktivismus) ist verfassungsrechtlich sensibel. Schwedens Verwaltungsmodell — unabhängige Behörden, die der Regierung berichten, aber keinen ministeriellen Anweisungen unterliegen — macht jeden Vorstoß gegen "behördliche Meinungsbildung" rechtlich komplex. Erik Slottner (KD) wird wahrscheinlich das bestehende Modell verteidigen und dabei die politische Spannung anerkennen.
+
+**KU-4** (MODERATE KONFIDENZ): HD10460 (Kulturerbe) baut auf den Prüfungsergebnissen von RiR 2025:30 auf, die aufgeschobene Instandhaltung von bis zu 4 Milliarden SEK bei staatlichen Liegenschaften dokumentieren. Riksrevisionens Prüfungen haben historisch innerhalb von 12 Monaten Gesetzgebungsdruck erzeugt.
+
+**KU-5** (NIEDRIG-MODERAT KONFIDENZ): HD10462 (Pestizidsteuer) ist ein enges technisches Thema. Die Diskrepanz zwischen "bekämpningsmedel" (Pestizide/Desinfektionsmittel) gemäß ML §9(2)(2) und EU-Gesundheitsausnahmen ist eine Formulierungsanomalie — wahrscheinlich durch Verordnung lösbar ohne parlamentarische Maßnahmen.
+
+### Strategisches Bild
+
+Schweden tritt seinen Wahlkampf in einem komplexen sicherheitspolitisch-wirtschaftlichen Umfeld an:
+- Kriminalität: Rekordexplosionen, große Bandeneinsätze laufen
+- Wirtschaft: IWF WEO April 2026 projiziert Schwedens BIP-Wachstum bei ~1,6 % (Erholung von Kontraktion von -0,1 % 2023)
+- Innovation: Nordische Nachbarn distanzieren Schweden bei ESA und Grüntechnologie
+- Governance: Allianzregierung managt interne Koalitionsspannungen (M-KD-L + SD im Tolerierungsverhältnis)
+
+Die fünf Interpellationen zusammen testen die Glaubwürdigkeit der Regierung bezüglich ihrer prominentesten Wahlversprechen.
+
+### Sofortige Maßnahmen erforderlich
+
+Keine — dies sind Interpellationen, keine Regierungsvorlagen. Für die Kammerdebatte am 19.–25. Mai 2026 gemäß Geschäftsordnung geplant.
+
+### Wirtschaftlicher Kontext (IWF-Provenienz)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### Beobachten: T+21 Tage (Kammerdebatte ~19.–25. Mai)
+Schlüsselsignale zu verfolgen:
+1. Kündigt Strömmer ein KPI-Dashboard für Bandenkriminalität an?
+2. Verpflichtet sich Edholm zur Wiederherstellung des ESA-Beitrags?
+3. Kündigt Slottner eine Überprüfung des Behördenverwaltungsmodells an?
+Wenn ja bei 2 von 3: Regierung neutralisiert die Interpellationsgruppe teilweise. Wenn nein: Die Wahlkampfkommunikation von S und SD wird diese Debatten bis September 2026 referenzieren.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_es.md -->
+
+**Clasificación**: 🟢 PÚBLICO  
+**Fecha**: 2026-05-04  
+**Analista**: Flujo de trabajo AI-FIRST (news-interpellations)  
+**Nivel de confianza**: B2 (Bueno / Probablemente verdadero)  
+**Proximidad electoral**: T−135 días hasta el 14 de septiembre de 2026
+
+### Requisitos prioritarios de inteligencia (PIR)
+
+**PIR-1**: ¿Sobrevivirá la promesa del gobierno del 20 de abril de "erradicar" la criminalidad de bandas al escrutinio político y empírico antes de las elecciones?  
+**PIR-2**: ¿Cómo afectará el declive del perfil de contribución de Suecia a la ESA a la narrativa de innovación en la campaña electoral?  
+**PIR-3**: ¿Está ganando influencia el encuadre de "activismo de agencias" de HD10459 (SD) en la toma de decisiones gubernamentales?
+
+### Juicios clave
+
+**JC-1** (ALTA CONFIANZA): La interpelación sobre criminalidad de bandas (HD10458) es un intercambio preelectoral de alto impacto. La promesa del gobierno de "erradicar" la criminalidad de bandas para 2030 es políticamente audaz pero con evidencia desafiante — las explosiones alcanzaron niveles récord en 2024 (117 confirmadas), y la cifra declarada de 350 mil millones de SEK de economía criminal sigue siendo metodológicamente contestada. El ministro de Justicia Strömmer enfrentará presiones para definir KPI medibles.
+
+**JC-2** (CONFIANZA MODERADA): La caída de Suecia al rango 17 de la ESA (HD10461) crea una brecha de credibilidad para la agenda de innovación del gobierno. Suecia aumentó su presupuesto espacial nacional (Rymdstyrelsen) mientras simultáneamente redujo su contribución multilateral proporcional (ESA) — una postura contradictoria que Lotta Edholm debe explicar.
+
+**JC-3** (ALTA CONFIANZA): HD10459 (activismo de agencias) es constitucionalmente sensible. El modelo administrativo sueco — agencias independientes que informan al gobierno pero no están sujetas a instrucción ministerial — hace que cualquier acción contra la "formación de opinión de las agencias" sea jurídicamente compleja. Erik Slottner (KD) probablemente defenderá el modelo existente reconociendo la tensión política.
+
+**JC-4** (CONFIANZA MODERADA): HD10460 (patrimonio cultural) se basa en los hallazgos de auditoría de RiR 2025:30 que documentan mantenimiento diferido de hasta 4 mil millones de SEK en propiedades del estado. Las auditorías de Riksrevisionen han producido históricamente presión legislativa dentro de 12 meses.
+
+**JC-5** (CONFIANZA BAJA-MODERADA): HD10462 (impuesto pesticidas) es una cuestión técnica estrecha. La discrepancia entre "bekämpningsmedel" (pesticidas/desinfectantes) bajo ML §9(2)(2) y las exenciones sanitarias de la UE es una anomalía de redacción — probablemente resoluble mediante reglamento sin acción parlamentaria.
+
+### Panorama estratégico
+
+Suecia inicia su campaña electoral en un complejo entorno de seguridad-economía:
+- Criminalidad: Explosiones récord, grandes operaciones contra bandas en curso
+- Economía: El FMI WEO abril 2026 proyecta el crecimiento del PIB de Suecia en ~1,6 % (recuperación de la contracción del -0,1 % en 2023)
+- Innovación: Los pares nórdicos se están distanciando de Suecia en ESA y tecnología verde
+- Gobernanza: El gobierno de la Alianza gestiona las tensiones internas de la coalición (M-KD-L + SD en acuerdo de tolerancia)
+
+Las cinco interpelaciones prueban colectivamente la credibilidad del gobierno en sus promesas electorales más prominentes.
+
+### Acciones inmediatas requeridas
+
+Ninguna — estas son interpelaciones, no proposiciones gubernamentales. Programadas para el debate en cámara del 19 al 25 de mayo de 2026 de acuerdo con el reglamento.
+
+### Contexto económico (proveniencia del FMI)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### Vigilar: T+21 días (Debate en cámara ~19–25 de mayo)
+Señales clave a monitorear:
+1. ¿Anuncia Strömmer un panel de KPI sobre criminalidad de bandas?
+2. ¿Se compromete Edholm a restablecer la contribución a la ESA?
+3. ¿Anuncia Slottner una revisión del modelo de gobernanza de agencias?
+Si sí en 2 de 3: El gobierno neutraliza parcialmente el lote de interpelaciones. Si no: La comunicación de campaña de S y SD hará referencia a estos debates hasta septiembre de 2026.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_fi.md -->
+
+**Luokitus**: 🟢 JULKINEN  
+**Päivämäärä**: 2026-05-04  
+**Analyytikko**: AI-FIRST-työnkulku (news-interpellations)  
+**Luottamustaso**: B2 (Hyvä / Todennäköisesti tosi)  
+**Vaalietäisyys**: T−135 päivää 14. syyskuuta 2026
+
+### Prioriteettiset tiedusteluvaatimukset (PIR)
+
+**PIR-1**: Selviytyykö hallituksen 20. huhtikuuta antama lupaus "hävittää" jengirikollisuus poliittisesta ja empiirisestä tarkastelusta ennen vaaleja?  
+**PIR-2**: Miten Ruotsin alentunut ESA-osuusprofiili vaikuttaa innovaationarratiivin vaalikampanjassa?  
+**PIR-3**: Saako HD10459:n "virastoaktivismi"-kehystys (SD) vaikutusvaltaa hallituksen päätöksenteossa?
+
+### Keskeisarviot
+
+**KA-1** (KORKEA LUOTTAMUSTASO): Jengirikollisuusinterpellaatio (HD10458) on korkean vaikutuksen vaalien alla käytävä vaihto. Hallituksen lupaus "hävittää" jengirikollisuus vuoteen 2030 mennessä on poliittisesti rohkea mutta todistusaineistoltaan haastava — räjähdykset saavuttivat ennätystason 2024 (117 vahvistettua), ja mainittu 350 miljardin SEK rikollisen talouden luku on metodologisesti kiistelty. Oikeusministeri Strömmeriin kohdistuu paineita määritellä mitattavat KPI:t.
+
+**KA-2** (KOHTALAINEN LUOTTAMUSTASO): Ruotsin pudotus ESA-sijaluvulle 17 (HD10461) luo uskottavuusvajeen hallituksen innovaatioagendalle. Ruotsi kasvatti kansallista avaruusbudjettiaan (Rymdstyrelsen) samalla kun pienensi suhteellista multilateraalista (ESA) osuuttaan — ristiriitainen asenne, jota Lotta Edholmin täytyy selittää.
+
+**KA-3** (KORKEA LUOTTAMUSTASO): HD10459 (virastoaktivismi) on perustuslaillisesti herkkä. Ruotsin hallintomalli — riippumattomat virastot, jotka raportoivat hallitukselle mutta eivät ole ministeriohjauksen alaisia — tekee kaikista "virastojen mielipiteenmuodostuksen" vastaisten toimien oikeudellisesta näkökulmasta monitahoista. Erik Slottner (KD) puolustanee nykyistä mallia myöntäen samalla poliittisen jännitteen.
+
+**KA-4** (KOHTALAINEN LUOTTAMUSTASO): HD10460 (kulttuuriperintö) perustuu RiR 2025:30:n tarkastushavaintoihin, jotka dokumentoivat jopa 4 miljardin SEK siirretyn ylläpidon valtion kiinteistöissä. Riksrevisionenin tarkastukset ovat historiallisesti tuottaneet lainsäädäntöpainetta 12 kuukauden kuluessa.
+
+**KA-5** (MATALA-KOHTALAINEN LUOTTAMUSTASO): HD10462 (torjunta-ainemaksu) on kapea tekninen kysymys. Ristiriita "bekämpningsmedel" (torjunta-aineet/desinfiointi aineet) ML §9(2)(2) ja EU:n terveydenhuollon poikkeuksen välillä on muotoilupoikkeama — todennäköisesti ratkaistavissa asetuksella ilman parlamentaarista toimia.
+
+### Strateginen kuva
+
+Ruotsi aloittaa vaalikampanjansa monimutkaisessa turvallisuus-taloudellisessa ympäristössä:
+- Rikollisuus: Ennätysräjähdykset, suuria jengioperaatioita käynnissä
+- Talous: IMF WEO huhtikuu 2026 ennustaa Ruotsin BKT-kasvuksi ~1,6 % (elpyminen vuoden 2023 -0,1 % supistumisesta)
+- Innovaatio: Pohjoismaiset verrokit etääntyessä Ruotsista ESA:ssa ja vihreässä teknologiassa
+- Hallinto: Alliansihallitus hallinnoi sisäisiä koalitiopaineitaan (M-KD-L + SD luottamussuhteessa)
+
+Viisi interpellaatiota yhdessä testaavat hallituksen uskottavuuden sen näkyvimmissä vaalupauksissa.
+
+### Välittömästi vaadittavat toimenpiteet
+
+Ei mitään — nämä ovat interpellaatioita, eivät hallituksen esityksiä. Aikataulutettu kamarin debattiin noin 19.–25. toukokuuta 2026 istuntojärjestyksen mukaisesti.
+
+### Taloudellinen konteksti (IMF-provenienssi)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### Seuraa: T+21 päivää (Kamarin debatti ~19.–25. toukokuuta)
+Seurattavat avainmerkit:
+1. Julkistaako Strömmer jengirikollisuuden KPI-kojelaudan?
+2. Sitoutuuko Edholm ESA-osuuden palauttamiseen?
+3. Julkistaako Slottner virastohallintomallin tarkastelun?
+Jos kyllä 2/3:lle: Hallitus osittain neutraloi interpellaatiopaketin. Jos ei: S:n ja SD:n kampanjaviestintä viittaa näihin debatteihin syyskuuhun 2026 saakka.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_fr.md -->
+
+**Analyste**: Workflow AI-FIRST (news-interpellations)  
+**Niveau de confiance**: B2 (Bon / Probablement vrai)  
+**Proximité électorale**: T−135 jours jusqu'au 14 septembre 2026
+
+### Exigences prioritaires de renseignement (PIR)
+
+**PIR-1**: La promesse du gouvernement du 20 avril d'«éradiquer» la criminalité des gangs survivra-t-elle à l'examen politique et empirique avant les élections ?  
+**PIR-2**: Comment le profil de contribution ESA en déclin de la Suède affectera-t-il la narrative d'innovation dans la campagne électorale ?  
+**PIR-3**: Le cadrage «activisme des agences» de HD10459 (SD) gagne-t-il en influence dans les prises de décision gouvernementales ?
+
+### Jugements clés
+
+**JC-1** (HAUTE CONFIANCE): L'interpellation sur la criminalité des gangs (HD10458) est un échange pré-électoral à fort impact. La promesse du gouvernement d'«éradiquer» la criminalité des gangs d'ici 2030 est politiquement audacieuse mais contestée sur le plan des preuves — les explosions ont atteint des niveaux records en 2024 (117 confirmées), et le chiffre de 350 milliards SEK avancé pour l'économie criminelle reste méthodologiquement contesté. Le ministre de la Justice Strömmer sera soumis à des pressions pour définir des KPI mesurables.
+
+**JC-2** (CONFIANCE MODÉRÉE): La chute de la Suède au rang 17 de l'ESA (HD10461) crée un déficit de crédibilité pour l'agenda d'innovation du gouvernement. La Suède a augmenté son budget spatial national (Rymdstyrelsen) tout en réduisant simultanément sa contribution multilatérale proportionnelle (ESA) — une posture contradictoire que Lotta Edholm doit expliquer.
+
+**JC-3** (HAUTE CONFIANCE): HD10459 (activisme des agences) est constitutionnellement sensible. Le modèle administratif suédois — agences indépendantes rendant compte au gouvernement mais non soumises à l'instruction ministérielle — rend toute action contre la «formation d'opinion des agences» juridiquement complexe. Erik Slottner (KD) défendra probablement le modèle existant tout en reconnaissant la tension politique.
+
+**JC-4** (CONFIANCE MODÉRÉE): HD10460 (patrimoine culturel) s'appuie sur les conclusions de l'audit RiR 2025:30 documentant un entretien différé allant jusqu'à 4 milliards SEK dans les propriétés de l'État. Les audits de Riksrevisionen ont historiquement produit une pression législative dans les 12 mois.
+
+**JC-5** (CONFIANCE FAIBLE-MODÉRÉE): HD10462 (taxe pesticides) est une question technique étroite. La discordance entre «bekämpningsmedel» (pesticides/désinfectants) en vertu de ML §9(2)(2) et les exemptions de santé de l'UE est une anomalie de rédaction — probablement résolvable par règlement sans action parlementaire.
+
+### Tableau stratégique
+
+La Suède entre dans sa campagne électorale dans un environnement sécurité-économique complexe :
+- Criminalité : Explosions record, grandes opérations anti-gangs en cours
+- Économie : Le FMI WEO avril 2026 projette une croissance du PIB suédois à ~1,6 % (reprise après contraction de -0,1 % en 2023)
+- Innovation : Les pairs nordiques distancent la Suède en ESA et technologie verte
+- Gouvernance : Le gouvernement d'Alliance gère les tensions internes de la coalition (M-KD-L + SD en accord de tolérance)
+
+Les cinq interpellations testent collectivement la crédibilité du gouvernement sur ses promesses électorales les plus importantes.
+
+### Actions immédiates requises
+
+Aucune — ce sont des interpellations, pas des propositions gouvernementales. Prévu pour le débat en chambre du 19 au 25 mai 2026 conformément au règlement.
+
+### Contexte économique (provenance FMI)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### À surveiller : T+21 jours (Débat en chambre ~19–25 mai)
+Signaux clés à surveiller :
+1. Strömmer annonce-t-il un tableau de bord KPI sur la criminalité des gangs ?
+2. Edholm s'engage-t-elle à rétablir la contribution ESA ?
+3. Slottner annonce-t-il un examen du modèle de gouvernance des agences ?
+Si oui sur 2 des 3 : Le gouvernement désamorce partiellement le lot d'interpellations. Si non : La communication de campagne de S et SD fera référence à ces débats jusqu'en septembre 2026.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_he.md -->
+
+&#x200F;# תקציר מודיעיני — דיוני שאילתות 2026-05-04
+
+**סיווג**: 🟢 ציבורי  
+**תאריך**: 2026-05-04  
+**אנליסט**: זרימת עבודה AI-FIRST (news-interpellations)  
+**רמת אמינות**: B2 (טובה / כנראה נכון)  
+**קרבה לבחירות**: T−135 ימים עד 14 בספטמבר 2026
+
+### דרישות מודיעין עדיפות (PIR)
+
+**PIR-1**: האם ההבטחה של הממשלה מ-20 באפריל לـ"מגר" את פשיעת הכנופיות תשרוד בחינה פוליטית ואמפירית לפני הבחירות?  
+**PIR-2**: כיצד ישפיע פרופיל תרומת שוודיה הדועכת ל-ESA על נרטיב החדשנות בקמפיין הבחירות?  
+**PIR-3**: האם מסגרת ה"פעילות הסוכנויות" של HD10459 (SD) צוברת השפעה בקבלת ההחלטות הממשלתית?
+
+### פסיקות מפתח
+
+**פ"מ-1** (אמינות גבוהה): שאילת הכנופיות (HD10458) היא חליפין טרום-בחירתי בעל השפעה רבה. הבטחת הממשלה לـ"מגר" פשיעת כנופיות עד 2030 היא אמיצה פוליטית אך מאותגרת בראיות — פיצוצים הגיעו לרמות שיא ב-2024 (117 מאושרים), ונתון 350 מיליארד כתרים שוודים של הכלכלה הפלילית נותר שנוי במחלוקת מתודולוגית. שר המשפטים שטרומר יעמוד בפני לחצים להגדיר מדדי KPI מדידים.
+
+**פ"מ-2** (אמינות מתונה): ירידת שוודיה לדרגה 17 ב-ESA (HD10461) יוצרת פער אמינות לאג'נדת החדשנות של הממשלה. שוודיה הגדילה את תקציב החלל הלאומי שלה (Rymdstyrelsen) תוך הפחתת תרומתה הרב-צדדית הפרופורציונלית (ESA) בו-זמנית — עמדה סותרת שלוטה אדהולם חייבת להסביר.
+
+**פ"מ-3** (אמינות גבוהה): HD10459 (פעילות סוכנויות) הוא עניין רגיש חוקתית. מודל המנהל השוודי — סוכנויות עצמאיות המדווחות לממשלה אך אינן כפופות להוראות שרים — הופך כל פעולה נגד "עיצוב דעת הסוכנויות" למורכבת משפטית. אריק סלוטנר (KD) ככל הנראה יגן על המודל הקיים תוך הכרה במתח הפוליטי.
+
+**פ"מ-4** (אמינות מתונה): HD10460 (מורשת תרבותית) בנוי על ממצאי הביקורת RiR 2025:30 המתעדים תחזוקה דחויה של עד 4 מיליארד כתרים שוודים בנכסי המדינה. ביקורות Riksrevisionen הפיקו לחץ חקיקתי היסטורית תוך 12 חודשים.
+
+**פ"מ-5** (אמינות נמוכה-מתונה): HD10462 (מס חומרי הדברה) הוא עניין טכני צר. הפער בין "bekämpningsmedel" (חומרי הדברה/חיטוי) לפי ML §9(2)(2) לבין פטורי הבריאות האירופיים הוא חריגת ניסוח — ניתן לפתרון על פי רוב בתקנה ללא פעולה פרלמנטרית.
+
+### תמונה אסטרטגית
+
+שוודיה נכנסת לקמפיין הבחירות שלה בסביבה ביטחונית-כלכלית מורכבת:
+- פשיעה: פיצוצים שיא, מבצעי כנופיות גדולים מתנהלים
+- כלכלה: קרן המטבע הבינלאומית WEO אפריל 2026 מקרינה צמיחת תוצר של שוודיה ב-~1.6% (התאוששות מהתכווצות של -0.1% ב-2023)
+- חדשנות: עמיתים נורדיים מתרחקים משוודיה ב-ESA ובטכנולוגיה ירוקה
+- ממשל: ממשלת הברית מנהלת מתחי קואליציה פנימיים (M-KD-L + SD בהסדר סבלנות)
+
+חמש השאילתות בוחנות יחד את אמינות הממשלה בהבטחות הבחירה הבולטות שלה.
+
+### פעולות מיידיות נדרשות
+
+אין — אלה שאילתות, לא הצעות ממשלתיות. מתוכנן לדיון האולם ב-19–25 במאי 2026 לפי הסדר הפנימי.
+
+### הקשר כלכלי (מקור קרן המטבע הבינלאומית)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### מעקב: T+21 ימים (דיון האולם ~19–25 במאי)
+אותות מפתח לניטור:
+1. האם שטרומר מכריז על לוח KPI לפשיעת כנופיות?
+2. האם אדהולם מתחייבת לשחזור התרומה ל-ESA?
+3. האם סלוטנר מכריז על בחינת מודל ממשל הסוכנויות?
+אם כן על 2 מתוך 3: הממשלה מנטרלת חלקית את חבילת השאילתות. אם לא: תקשורת הקמפיין של S ו-SD תתייחס לדיונים אלה עד ספטמבר 2026.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_ja.md -->
+
+**分類**: 🟢 公開  
+**日付**: 2026-05-04  
+**アナリスト**: AI-FIRSTワークフロー (news-interpellations)  
+**信頼度**: B2（良好 / おそらく真実）  
+**選挙まで**: T−135日（2026年9月14日まで）
+
+### 優先情報要件（PIR）
+
+**PIR-1**: 4月20日の政府の「ギャング犯罪根絶」約束は、選挙前の政治的・実証的検証に耐えられるか？  
+**PIR-2**: スウェーデンのESA拠出プロファイルの低下は、選挙キャンペーンにおけるイノベーション・ナラティブにどう影響するか？  
+**PIR-3**: HD10459の「機関活動主義」フレーミング（SD）は政府の意思決定に影響を得ているか？
+
+### 主要判断
+
+**KJ-1**（高信頼度）: ギャング犯罪質問（HD10458）は高影響力の選挙前交換である。2030年までにギャング犯罪を「根絶」するという政府の約束は政治的に大胆だが証拠に欠ける — 爆発は2024年に記録的なレベルに達し（117件確認）、3500億SEKの犯罪経済という数字は方法論的に争われたまま。司法大臣シュトロマーは測定可能なKPIを定義する圧力に直面するだろう。
+
+**KJ-2**（中程度の信頼度）: スウェーデンのESAランキング17位への低下（HD10461）は、政府のイノベーション議題における信頼性の差を生む。スウェーデンは国家宇宙予算（Rymdstyrelsen）を増加させながら、同時に比例的な多国間（ESA）拠出を削減した — ロッタ・エドホルムが説明しなければならない矛盾した姿勢。
+
+**KJ-3**（高信頼度）: HD10459（機関活動主義）は憲法的に敏感だ。スウェーデンの行政モデル — 政府に報告するが省庁の指示に従わない独立機関 — は「機関の意見形成」に対するいかなる規制も法的に複雑にする。エリック・スロットナー（KD）は政治的緊張を認めながらも既存モデルを擁護するだろう。
+
+**KJ-4**（中程度の信頼度）: HD10460（文化遺産）はRiR 2025:30の監査結果に基づいており、国有不動産における最大40億SEKの延期された維持管理を記録している。Riksrevisionenの監査は歴史的に12か月以内に立法的圧力を生み出している。
+
+**KJ-5**（低～中程度の信頼度）: HD10462（農薬税）は狭い技術的問題だ。ML §9(2)(2)の「bekämpningsmedel」（農薬/消毒剤）とEUの医療免除の不一致は起草上の異常 — 議会の行動なしに規制によって解決可能な可能性が高い。
+
+### 戦略的全体像
+
+スウェーデンは複雑な安全保障・経済環境の中で選挙キャンペーンを開始する：
+- 犯罪：記録的な爆発、大規模なギャング作戦進行中
+- 経済：IMF世界経済見通し2026年4月はスウェーデンのGDP成長率を約1.6%と予測（2023年の-0.1%の収縮から回復）
+- イノベーション：北欧の同僚諸国がESAと緑の技術でスウェーデンを凌駕
+- ガバナンス：連立政権内の内部緊張を管理する連立政府（M-KD-L + SD信任供給協定）
+
+五つの質問は、政府の最も重要な選挙公約に対する信頼性を集合的に試している。
+
+### 即時対応が必要な行動
+
+なし — これらは質問であり、政府提案ではない。議会規則に従い、2026年5月19〜25日頃の本会議討論に予定。
+
+### 経済的文脈（IMF出典）
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### 注目：T+21日（本会議討論 〜5月19〜25日）
+監視すべき主要シグナル：
+1. ストローマーはギャング犯罪のKPIダッシュボードを発表するか？
+2. エドホルムはESA拠出の回復を約束するか？
+3. スロットナーは機関ガバナンスモデルの見直しを発表するか？
+3項目のうち2つが「はい」の場合：政府は質問群を部分的に無力化。「いいえ」の場合：SとSDの選挙コミュニケーションは2026年9月まで本討論を参照するだろう。
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_ko.md -->
+
+**분류**: 🟢 공개  
+**날짜**: 2026-05-04  
+**분석가**: AI-FIRST 워크플로우 (news-interpellations)  
+**신뢰도**: B2(양호 / 아마도 사실)  
+**선거까지**: T−135일(2026년 9월 14일까지)
+
+### 우선 정보 요건(PIR)
+
+**PIR-1**: 4월 20일 정부의 조직범죄 "근절" 약속은 선거 전 정치적·실증적 검토를 견뎌낼 수 있는가?  
+**PIR-2**: 스웨덴의 감소하는 ESA 기여 프로필은 선거 캠페인에서 혁신 서사에 어떤 영향을 미치는가?  
+**PIR-3**: HD10459의 "기관 행동주의" 프레이밍(SD)은 정부 의사결정에서 영향력을 얻고 있는가?
+
+### 핵심 판단
+
+**KJ-1**(높은 신뢰도): 조직범죄 질문(HD10458)은 영향력이 높은 선거 전 교환이다. 2030년까지 조직범죄를 "근절"하겠다는 정부의 약속은 정치적으로 대담하지만 증거가 불충분하다 — 2024년 폭발이 기록적 수준에 달했고(117건 확인), 3500억 SEK 범죄 경제 수치는 방법론적으로 여전히 논쟁 중이다. 법무부 장관 스트뢰마는 측정 가능한 KPI를 정의해야 한다는 압력에 직면할 것이다.
+
+**KJ-2**(중간 신뢰도): 스웨덴의 ESA 순위 17위 하락(HD10461)은 정부의 혁신 의제에 신뢰성 격차를 만든다. 스웨덴은 국가 우주 예산(Rymdstyrelsen)을 늘리면서 동시에 비례적 다자(ESA) 기여를 줄였다 — 로타 에드홀름이 설명해야 할 모순된 입장.
+
+**KJ-3**(높은 신뢰도): HD10459(기관 행동주의)는 헌법적으로 민감하다. 스웨덴의 행정 모델 — 정부에 보고하지만 장관 지시를 받지 않는 독립 기관들 — 은 "기관 의견 형성"에 대한 어떠한 조치도 법적으로 복잡하게 만든다. 에리크 슬로트나(KD)는 정치적 긴장을 인정하면서도 기존 모델을 방어할 것으로 보인다.
+
+**KJ-4**(중간 신뢰도): HD10460(문화유산)은 국유 부동산에서 최대 40억 SEK의 연기된 유지관리를 기록한 RiR 2025:30 감사 결과를 기반으로 한다. Riksrevisionen의 감사는 역사적으로 12개월 이내에 입법적 압력을 생산했다.
+
+**KJ-5**(낮음-중간 신뢰도): HD10462(농약세)는 좁은 기술적 문제다. ML §9(2)(2)의 "bekämpningsmedel"(농약/소독제)과 EU 의료 면제 간의 불일치는 초안 이상 — 의회 조치 없이 규정으로 해결 가능할 것이다.
+
+### 전략적 그림
+
+스웨덴은 복잡한 안보-경제 환경에서 선거 캠페인을 시작한다:
+- 범죄: 기록적인 폭발, 대규모 조직범죄 작전 진행 중
+- 경제: IMF WEO 2026년 4월은 스웨덴 GDP 성장률을 약 1.6%로 전망(2023년 -0.1% 수축에서 회복)
+- 혁신: 북유럽 동료국들이 ESA와 녹색 기술에서 스웨덴을 앞서고 있음
+- 거버넌스: 연립 정부가 내부 연정 긴장 관리(M-KD-L + SD 신임 공급 협정)
+
+다섯 가지 질문들은 집합적으로 정부의 가장 주목할 선거 공약에 대한 신뢰성을 시험한다.
+
+### 즉각적 조치 필요
+
+없음 — 이것들은 질문이지 정부 제안이 아니다. 의회 규칙에 따라 2026년 5월 19~25일경 본회의 토론 예정.
+
+### 경제적 맥락(IMF 출처)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### 주목: T+21일(본회의 토론 ~5월 19~25일)
+모니터링할 핵심 신호:
+1. 스트뢰마는 조직범죄 KPI 대시보드를 발표하는가?
+2. 에드홀름은 ESA 기여 회복을 약속하는가?
+3. 슬로트나는 기관 거버넌스 모델 검토를 발표하는가?
+3가지 중 2가지 예스: 정부가 질문 묶음을 부분적으로 무력화. 아니오 경우: S와 SD의 캠페인 커뮤니케이션이 2026년 9월까지 이 토론들을 참조할 것이다.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_nl.md -->
+
+**Classificatie**: 🟢 OPENBAAR  
+**Datum**: 2026-05-04  
+**Analist**: AI-FIRST-workflow (news-interpellations)  
+**Betrouwbaarheidsniveau**: B2 (Goed / Waarschijnlijk waar)  
+**Verkiezingsafstand**: T−135 dagen tot 14 september 2026
+
+### Prioritaire inlichtingsvereisten (PIR)
+
+**PIR-1**: Zal de belofte van de regering van 20 april om bendegeweld te "uitroeien" politieke en empirische scrutinie overleven voor de verkiezingen?  
+**PIR-2**: Hoe zal het dalende ESA-bijdrageprofiel van Zweden de innovatienarratie in de verkiezingscampagne beïnvloeden?  
+**PIR-3**: Wint de "agentschapsactivisme"-framing van HD10459 (SD) invloed in de besluitvorming van de regering?
+
+### Kernoordelen
+
+**KO-1** (HOGE BETROUWBAARHEID): De interpellatie over bendegeweld (HD10458) is een hoogimpact pre-verkiezingsuitwisseling. De belofte van de regering om bendegeweld voor 2030 te "uitroeien" is politiek gewaagd maar bewijs-uitdagend — explosies bereikten recordniveaus in 2024 (117 bevestigd), en het genoemde getal van 350 miljard SEK van de criminele economie blijft methodologisch betwist. Minister van Justitie Strömmer zal onder druk staan om meetbare KPI's te definiëren.
+
+**KO-2** (MATIGE BETROUWBAARHEID): Zweden's val naar ESA-rang 17 (HD10461) creëert een geloofwaardigheidstekort voor de innovatieagenda van de regering. Zweden verhoogde zijn nationale ruimtevaartbudget (Rymdstyrelsen) terwijl het tegelijkertijd zijn proportionele multilaterale (ESA) bijdrage verminderde — een tegenstrijdige houding die Lotta Edholm moet uitleggen.
+
+**KO-3** (HOGE BETROUWBAARHEID): HD10459 (agentschapsactivisme) is constitutioneel gevoelig. Zwedens bestuursmodel — onafhankelijke agentschappen die rapporteren aan de regering maar niet onderworpen zijn aan ministeriële instructie — maakt elke actie tegen "agentschaps-meningsvorming" juridisch complex. Erik Slottner (KD) zal waarschijnlijk het bestaande model verdedigen terwijl hij de politieke spanning erkent.
+
+**KO-4** (MATIGE BETROUWBAARHEID): HD10460 (cultureel erfgoed) bouwt voort op de bevindingen van het audit RiR 2025:30 die uitgesteld onderhoud van maximaal 4 miljard SEK in staatseigendommen documenteren. Riksrevisionens audits hebben historisch gezien binnen 12 maanden wetgevingsdruk geproduceerd.
+
+**KO-5** (LAAG-MATIGE BETROUWBAARHEID): HD10462 (pesticidebelasting) is een smal technisch vraagstuk. De discrepantie tussen "bekämpningsmedel" (pesticiden/desinfectiemiddelen) onder ML §9(2)(2) en EU-gezondheidsuitzonderingen is een formuleringsanomalie — waarschijnlijk oplosbaar via verordening zonder parlementaire actie.
+
+### Strategisch beeld
+
+Zweden betreedt zijn verkiezingscampagne in een complex veiligheids-economisch milieu:
+- Criminaliteit: Recordexplosies, grote bendeoperaties gaande
+- Economie: IMF WEO april 2026 projecteert Zweden's BBP-groei op ~1,6 % (herstel van krimp van -0,1 % in 2023)
+- Innovatie: Nordische peers distanciëren Zweden in ESA en groene technologie
+- Bestuur: Allianceregering beheert interne coalitiespan ningen (M-KD-L + SD in tolerantieakkoord)
+
+De vijf interpellaties testen gezamenlijk de geloofwaardigheid van de regering over haar meest prominente verkiezingsbeloften.
+
+### Onmiddellijk vereiste acties
+
+Geen — dit zijn interpellaties, geen regeringsvoorstellen. Gepland voor het kamerdebat van 19 tot 25 mei 2026 overeenkomstig het reglement.
+
+### Economische context (IMF-herkomst)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### In de gaten houden: T+21 dagen (Kamerdebat ~19–25 mei)
+Kernsignalen om te volgen:
+1. Kondigt Strömmer een KPI-dashboard voor bendegeweld aan?
+2. Verbindt Edholm zich tot herstel van de ESA-bijdrage?
+3. Kondigt Slottner een herziening van het agentschapsbeheersmodel aan?
+Als ja op 2 van 3: Regering neutraliseert het interpellatiepakket gedeeltelijk. Als nee: De campagnecommunicatie van S en SD zal verwijzen naar deze debatten tot september 2026.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_no.md -->
+
+**Klassifisering**: 🟢 OFFENTLIG  
+**Dato**: 2026-05-04  
+**Analytiker**: AI-FIRST-arbeidsflyt (news-interpellations)  
+**Konfidensgrad**: B2 (God / Sannsynligvis sann)  
+**Valgavstand**: T−135 dager til 14. september 2026
+
+### Prioriterte etterretningskrav (PIR)
+
+**PIR-1**: Vil regjeringens løfte fra 20. april om å "utrydde" gjengkriminalitet overleve politisk og empirisk granskning før valget?  
+**PIR-2**: Hvordan vil Sveriges fallende ESA-bidragsprofil påvirke innovasjonsnarrativet i valgkampen?  
+**PIR-3**: Vinner HD10459's "etatsaktivisme"-innramming (SD) gjennomslag i regjeringens beslutningstagning?
+
+### Nøkkelvurderinger
+
+**NV-1** (HØY KONFIDENSGRAD): Gjengkriminalitetsinterpellasjonen (HD10458) er en høyt-impact pre-valg-utveksling. Regjeringens løfte om å "utrydde" gjengkriminalitet innen 2030 er politisk dristig, men evidensutfordret — eksplosjoner nådde rekordnivåer i 2024 (117 bekreftet), og den angitte 350 milliarder SEK kriminelle økonomi-figuren forblir metodologisk omstridt. Justisminister Strömmer vil stå overfor press om å definere målbare KPI-er.
+
+**NV-2** (MODERAT KONFIDENSGRAD): Sveriges fall til ESA-rang 17 (HD10461) skaper et troverdighetsunderskudd for regjeringens innovasjonsagenda. Sverige økte sitt nasjonale rombudsjett (Rymdstyrelsen) mens det samtidig reduserte sitt proporsjonale multilaterale (ESA) bidrag — en selvmotsigende holdning som Lotta Edholm må forklare.
+
+**NV-3** (HØY KONFIDENSGRAD): HD10459 (etatsaktivisme) er konstitusjonelt følsomt. Sveriges forvaltningsmodell — uavhengige etater som rapporterer til regjeringen men ikke er underlagt ministeriell instruksjon — gjør ethvert tiltak mot "etaters meningsdannelse" juridisk komplekst. Erik Slottner (KD) vil sannsynligvis forsvare den eksisterende modellen mens han erkjenner den politiske spenningen.
+
+**NV-4** (MODERAT KONFIDENSGRAD): HD10460 (kulturarv) bygger på RiR 2025:30 revisjonsresultater som dokumenterer utsatt vedlikehold på opptil 4 milliarder SEK i statlig eiendom. Riksrevisjonens revisjoner har historisk produsert lovgivningspress innen 12 måneder.
+
+**NV-5** (LAV-MODERAT KONFIDENSGRAD): HD10462 (pesticidavgift) er et smalt teknisk spørsmål. Diskrepansen mellom "bekämpningsmedel" (plantevernmidler/desinfeksjonsmidler) under ML §9(2)(2) og EUs helseunntak er en formuleringsfeil — trolig løsbar gjennom forordning uten parlamentarisk handling.
+
+### Strategisk bilde
+
+Sverige innleder sin valgkampanje i et komplekst sikkerhets-økonomisk miljø:
+- Kriminalitet: Rekordeksplosjoner, store gjengoperasjoner pågår
+- Økonomi: IMF WEO april 2026 projiserer Sveriges BNP-vekst til ~1,6 % (gjenopphenting fra kontraksjon på -0,1 % i 2023)
+- Innovasjon: Nordiske land distanserer Sverige innen ESA og grønn teknologi
+- Styring: Alliansregjeringen håndterer interne koalisjonspensjoner (M-KD-L + SD i tillitsforhold)
+
+De fem interpellasjonene undersøker samlet regjeringens troverdighet på dens mest fremtredende valgløfter.
+
+### Øyeblikkelige tiltak påkrevd
+
+Ingen — dette er interpellasjoner, ikke regjeringsproposisjoner. Planlagt til kammerdebatten den 19.–25. mai 2026 i henhold til forretningsordenen.
+
+### Økonomisk kontekst (IMF-proveniensopplysninger)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### Følg med: T+21 dager (Kammerdebatten ~19.–25. mai)
+Nøkkelsignaler å overvåke:
+1. Kunngjør Strömmer et KPI-dashboard for gjengkriminalitet?
+2. Forplikter Edholm seg til å gjenopprette ESA-bidraget?
+3. Kunngjør Slottner en gjennomgang av etatsforvaltningsmodellen?
+Hvis ja på 2 av 3: Regjeringen avvæpner delvis interpellasjonspakken. Hvis nei: S og SDs kampanjekommunikasjon vil referere til disse debattene frem til september 2026.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_sv.md -->
+
+**Klassificering**: 🟢 OFFENTLIG  
+**Datum**: 2026-05-04  
+**Analytiker**: AI-FIRST-arbetsflöde (news-interpellations)  
+**Konfidensgrad**: B2 (God / Troligen sann)  
+**Valavstånd**: T−135 dagar till 14 september 2026
+
+### Prioriterade underrättelseinhämtningsbehov (PIR)
+
+**PIR-1**: Kommer regeringens löfte från 20 april om att "utrota" gängkriminaliteten att överleva politisk och empirisk granskning inför valet?  
+**PIR-2**: Hur kommer Sveriges sjunkande ESA-bidragsprofil att påverka innovationsnarrativet i valkampanjen?  
+**PIR-3**: Vinner HD10459:s "myndighetsaktivist"-formulering (SD) gehör i regeringens beslutsfattande?
+
+### Nyckeldomsslut
+
+**ND-1** (HÖG KONFIDENSGRAD): Gängkriminalitetsinterpellationen (HD10458) är ett höginflytandevälde utbyte inför valet. Regeringens löfte om att "utrota" gängkriminalitet till 2030 är politiskt djärvt men evidensutmanat — explosioner nådde rekordnivåer 2024 (117 bekräftade), och den angivna siffran 350 miljarder SEK för kriminell ekonomi förblir metodologiskt omtvistad. Justitieminister Strömmer kommer att ställas inför krav på att definiera mätbara KPI:er.
+
+**ND-2** (MÅTTLIG KONFIDENSGRAD): Sveriges fall till ESA-plats 17 (HD10461) skapar en trovärdighetslucka för regeringens innovationsagenda. Sverige ökade sin nationella rymdbudget (Rymdstyrelsen) samtidigt som man minskade sitt proportionella multilaterala (ESA) bidrag — en motsägelsefull hållning som Lotta Edholm måste förklara.
+
+**ND-3** (HÖG KONFIDENSGRAD): HD10459 (myndighetsaktivsm) är konstitutionellt känslig. Sveriges förvaltningsmodell — oberoende myndigheter som rapporterar till regeringen men inte är underordnade ministeriell instruktion — gör varje åtgärd mot "myndigheternas opinionsbildning" juridiskt komplex. Erik Slottner (KD) kommer sannolikt att försvara den befintliga modellen samtidigt som han erkänner den politiska spänningen.
+
+**ND-4** (MÅTTLIG KONFIDENSGRAD): HD10460 (kulturarv) bygger på RiR 2025:30:s granskningsfynd som dokumenterar uppskjutet underhåll på upp till 4 miljarder SEK i statliga fastigheter. Riksrevisionens granskningar har historiskt sett lett till lagstiftningstryck inom 12 månader.
+
+**ND-5** (LÅG-MÅTTLIG KONFIDENSGRAD): HD10462 (bekämpningsmedelsskatt) är en smal teknisk fråga. Diskrepansen mellan "bekämpningsmedel" (bekämpningsmedel/desinfektionsmedel) under ML §9(2)(2) och EU:s sjukvårdsundantag är en formuleringssanomalg — troligen möjlig att lösa med förordning utan parlamentarisk åtgärd.
+
+### Strategisk bild
+
+Sverige inleder sin valkampanj i en komplex säkerhetsekonomisk miljö:
+- Brottslighet: Rekordexplosioner, stora gängoperationer pågår
+- Ekonomi: IMF WEO april 2026 projicerar Sveriges BNP-tillväxt till ~1,6 % (återhämtning från kontraktion på -0,1 % 2023)
+- Innovation: Nordiska peers distanserar Sverige i ESA och grön teknologi
+- Styrning: Alliansregeringen hanterar interna koalitionsspänningar (M-KD-L + SD i konfidensförhållande)
+
+De fem interpellationerna prövar sammantaget regeringens trovärdighet kring sina mest framträdande vallöften.
+
+### Omedelbara åtgärder som krävs
+
+Inga — dessa är interpellationer, inte regeringspropositioner. Schemalagda för kammardebatten den 19–25 maj 2026 i enlighet med arbetsordningen.
+
+### Ekonomisk kontext (IMF-källa)
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### Bevaka: T+21 dagar (Kammardebatten ~19–25 maj)
+Nyckelsignaler att följa:
+1. Tillkännager Strömmer ett KPI-dashboard för gängkriminalitet?
+2. Förbinder sig Edholm till att återställa ESA-bidraget?
+3. Tillkännager Slottner en granskning av myndighetsförvaltningen?
+Om ja på 2 av 3: Regeringen neutraliserar delvis interpellationsbatchen. Om nej: S och SD:s kampanjkommunikation kommer att referera till dessa debatter fram till september 2026.
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_zh.md -->
+
+**分类**: 🟢 公开  
+**日期**: 2026-05-04  
+**分析师**: AI-FIRST工作流程 (news-interpellations)  
+**可信度**: B2（良好 / 可能为真）  
+**距选举**: T−135天（至2026年9月14日）
+
+### 优先情报需求（PIR）
+
+**PIR-1**: 政府4月20日"根除"黑帮犯罪的承诺是否能在选举前经受政治和实证审查？  
+**PIR-2**: 瑞典不断下降的ESA贡献份额将如何影响选举活动中的创新叙事？  
+**PIR-3**: HD10459的"机构行动主义"框架（SD）是否在政府决策中获得影响力？
+
+### 关键判断
+
+**KJ-1**（高度可信）: 黑帮犯罪质询（HD10458）是选前高影响力的交锋。政府到2030年"根除"黑帮犯罪的承诺政治上大胆但证据不足——2024年爆炸事件达到历史最高水平（117起确认），3500亿瑞典克朗的犯罪经济数字在方法论上仍存争议。司法部长施特罗默将面临压力，需要定义可测量的KPI。
+
+**KJ-2**（中等可信）: 瑞典跌至ESA第17名（HD10461）为政府创新议程造成信任缺口。瑞典增加了国家航天预算（Rymdstyrelsen），同时削减了其比例性多边（ESA）贡献——这种自相矛盾的立场需要洛塔·埃德霍尔姆解释。
+
+**KJ-3**（高度可信）: HD10459（机构行动主义）在宪法上敏感。瑞典行政管理模式——向政府汇报但不受部长级指令约束的独立机构——使任何针对"机构意见形成"的行动在法律上都变得复杂。埃里克·斯洛特纳（KD）可能会在承认政治紧张局势的同时为现有模式辩护。
+
+**KJ-4**（中等可信）: HD10460（文化遗产）建立在RiR 2025:30审计结果之上，该审计记录了国家财产高达40亿瑞典克朗的延期维护。Riksrevisionen的审计历来在12个月内产生立法压力。
+
+**KJ-5**（低至中等可信）: HD10462（农药税）是一个狭窄的技术问题。ML §9(2)(2)下的"bekämpningsmedel"（杀虫剂/消毒剂）与欧盟医疗保健豁免之间的差异是起草异常——可能通过法规解决，无需议会行动。
+
+### 战略全景
+
+瑞典在复杂的安全-经济环境中启动选举运动：
+- 犯罪：创纪录的爆炸案，大规模黑帮行动正在进行
+- 经济：IMF《世界经济展望》2026年4月预测瑞典GDP增长约1.6%（从2023年-0.1%的收缩中复苏）
+- 创新：北欧同行在ESA和绿色技术方面超越瑞典
+- 治理：联盟政府管理内部联盟紧张局势（M-KD-L + SD信任供给协议）
+
+五项质询共同检验政府在其最重要竞选承诺上的可信度。
+
+### 需要立即采取的行动
+
+无——这些是质询，而非政府提案。按议事规则计划于2026年5月19日至25日左右进行议会辩论。
+
+### 经济背景（IMF来源）
+
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04",
+    "value": "~1.6% (recovery from -0.1% contraction in 2023)",
+    "retrieved_at": "2026-05-04",
+    "note": "API unavailable during workflow run; using known WEO April 2026 vintage figures"
+  }
+}
+```
+
+### 关注：T+21天（议会辩论 ~5月19—25日）
+需要监测的关键信号：
+1. 施特罗默是否宣布黑帮犯罪KPI仪表板？
+2. 埃德霍尔姆是否承诺恢复ESA贡献？
+3. 斯洛特纳是否宣布对机构治理模式进行审查？
+如果3项中有2项为是：政府部分化解质询批次。如果否：S和SD的竞选传播将在2026年9月前引用这些辩论。
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1959,6 +2845,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

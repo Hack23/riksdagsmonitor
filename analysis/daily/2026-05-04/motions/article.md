@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: motions
 slug: 2026-05-04-motions
 source_folder: analysis/daily/2026-05-04/motions
-generated_at: 2026-05-22T13:53:53.792Z
+generated_at: 2026-05-23T08:06:00.494Z
 language: en
 layout: article
 ---
@@ -79,6 +79,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1336,13 +1349,602 @@ Prop. 2025/26:238 (constitutional/rights) and prop. 2025/26:246 (criminal age, E
 
 No prior PIR files found for motions subfolder. Standing PIRs PIR-1 through PIR-7 applied fresh.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ar.md -->
+
+&#x200F;# مقترحات المعارضة تتحدى ستة مقترحات حكومية في سباق السويد قبيل الانتخابات
+
+**المؤلف**: جيمس بيثر سورلينغ | **التاريخ**: 2026-05-04 | **التصنيف**: عام | **مستوى الثقة**: عالٍ [B2]
+
+### BLUF
+
+ستة عشر مقترح معارضة نشطاً مقدمة في 2026-04-29 تتحدى ستة مقترحات حكومية في سياسة الطاقة والبيئة والعدالة الجنائية والنقل والضرائب. يقود حزب الديمقراطيين الاجتماعيين (S) بتسعة مقترحات، مدعوماً من حزب البيئة (MP) وحزب اليسار (V) وحزب الوسط (C). مع بُعد الانتخابات العامة السويدية 132 يوماً (14 سبتمبر 2026)، تشكّل هذه المقترحات معارضة سياسية جوهرية وتموضعاً صريحاً قبيل الانتخابات. أبرز المعارك: (1) هيئة تراخيص البيئة المقترحة (الاقتراح 238) التي تعارضها S وMP وV وC لأسباب مختلفة؛ (2) خفض سن المسؤولية الجنائية إلى 13 (الاقتراح 246) حيث تقبل S بـ14 لكن ترفض 13؛ و(3) إصلاح حق النقض البلدي في طاقة الرياح (الاقتراح 239) حيث تطالب المعارضة على نطاق واسع باتخاذ إجراءات أسرع.
+
+### القرارات التي يدعمها هذا الموجز
+
+1. **الفرق التحريرية**: الصدارة بقضية سن الجرائم/الجريمة في صفوف الشباب وتراخيص البيئة بوصفهما النزاعين الأعلى تأثيراً
+2. **محللو السياسات**: رسم خريطة مطالب المعارضة كالتزامات سياسية ما قبل الانتخابات ذات تداعيات على المساءلة الانتخابية
+3. **رصد المخاطر**: تقييم احتمالية هزائم الحكومة في اللجان/الجلسة العامة على نقاط التعديل المتنازع عليها
+4. **المحللون الأجانب**: تقييم مصداقية حوكمة التحول الطاقوي في السويد قبيل قرارات الاستثمار الرئيسية
+
+### قراءة 60 ثانية
+
+- **17 مقترحاً** (16 نشطاً، 1 مسحوب): مقدمة في 2026-04-29 في جلسة الريكسداغ 2025/26
+- **مضاعف القرب من الانتخابات**: درجات DIW ×1.5 (الانتخابات ≤132 يوماً) — مقترحات المعارضة التزامات سياسية وليست ضجيجاً إجرائياً
+- **الجريمة في صفوف الشباب**: تقبل S بخفض سن الجرائم إلى 14 (لا 13)، معارضةً الحكم الجوهري للاقتراح 246؛ أغلبية متعددة الأحزاب ضد عتبة 13 عاماً غير محتملة دون انشقاق SD
+- **ترخيص البيئة**: تطالب S بإصلاحات جوهرية إلى جانب السلطة الجديدة؛ تطالب V بالرفض؛ يسعى MP وC إلى تعديلات — تواجه الحكومة معارضة متشظية دون كتلة موحدة
+- **الطاقة/الرياح**: تطالب S وMP وC جميعاً بسياسة رياح أكثر جرأة بما يشمل إصلاح حق النقض البلدي في وقت أبكر؛ هذا ينسجم مع هزائم مقترحات سابقة بقيادة S في 2021-22
+- **سحب HD024127**: غير مُفسَّر — إشارة إعادة تموضع استراتيجي
+- **بيانات صندوق النقد الدولي غير متاحة** (تدفق الشبكة محجوب)؛ السياق الاقتصادي مقدَّر من بيانات مخزنة سابقة
+
+### أبرز المحفزات المستقبلية
+
+إذا فشلت لجنة العدل (JuU) في إنتاج أغلبية لخفض السن إلى 13، ستواجه الحكومة هزيمتها التشريعية الأكثر أهمية في الفترة الانتخابية في السباق الأخير نحو الانتخابات.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 مقترحاً نشطاً<br/>2026-04-29] --> B[ترخيص البيئة<br/>4 مقترحات MJU]
+    A --> C[الطاقة/الرياح<br/>6 مقترحات NU]
+    A --> D[جرائم الشباب<br/>1 مقترح JuU]
+    A --> E[الميناء/الضريبة/GBV<br/>5 مقترحات]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-04 | **Klassificering**: OFFENTLIG | **Konfidens**: HØJ [B2]
+
+### BLUF
+
+Seksten aktive oppositionsforslag indgivet 2026-04-29 udfordrer seks regeringsforslag inden for energi, miljø, kriminaljustis, transport og skattepolitik. Socialdemokraterna (S) leder med ni forslag, flanket af Miljøpartiet (MP), Venstre (V) og Centerpartiet (C). Med Sveriges valg 132 dage væk (14. september 2026) udgør disse forslag både substantiel politisk opposition og eksplicit præ-valgpositionering. De vigtigste kampe: (1) det foreslåede miljøtilladelsesorgan (prop. 238) som S, MP, V og C modsætter sig af forskellige grunde; (2) kriminel aldersansvarssænkning til 13 (prop. 246), hvor S accepterer 14 men afviser 13; og (3) reform af kommunalt vindenergiveto (prop. 239), hvor oppositionen bredt kræver hurtigere handling.
+
+### Beslutninger dette brief støtter
+
+1. **Redaktionsteam**: Fremhæv kriminel alder/ungdomskriminalitet og miljøtilladelse som de to højest-impact-konflikter
+2. **Politikanalytikere**: Kortlæg oppositionskrav som præ-valgspolitiske forpligtelser med valgansvarligheds-implikationer
+3. **Risikomonitorer**: Vurder sandsynligheden for regeringsnederlag i udvalg/plenum på omstridte ændringspunkter
+4. **Udenlandske analytikere**: Bedøm Danmarks energiomstillingsgovernance-troværdighed forud for vigtige investeringsbeslutninger
+
+### 60-sekunders læsning
+
+- **17 forslag** (16 aktive, 1 trukket tilbage): indgivet 2026-04-29 i Riksmöte 2025/26
+- **Valgærhedsmultiplikator**: DIW-scorer ×1,5 (valg ≤132 dage væk) — oppositionsforslag er politiske forpligtelser, ikke proceduremæssig støj
+- **Ungdomskriminalitet**: S accepterer sænkning af kriminel alder til 14 (ikke 13), imod prop. 246's kernebestemmelse; tværpartiflertal mod 13-årsgrænsen usandsynlig uden SD-frafald
+- **Miljøtilladelse**: S kræver materielle reformer parallelt med det nye organ; V kræver afvisning; MP og C søger modifikationer — regeringen møder en fragmenteret opposition uden samlet blok
+- **Energi/vind**: S, MP, C kræver alle mere ambitiøs vindkraftpolitik herunder tidligere kommunal vetoreform; dette er i overensstemmelse med tidligere S-ledede forslagsnederlag 2021-22
+- **Tilbagetrækning af HD024127**: uforklaret — signal om strategisk ompositionering
+- **IMF-data utilgængelig** (netværksegress blokeret); økonomisk kontekst estimeret fra tidligere cachedata
+
+### Top fremtidig trigger
+
+Hvis Retsudvalget (JuU) ikke formår at producere et flertal for at sænke alderen til 13, vil regeringen stå over for sit mest betydelige lovgivningsnederlag i mandatperioden i det finale sprint til valgene.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 aktive forslag<br/>2026-04-29] --> B[Miljøtilladelse<br/>4 forslag MJU]
+    A --> C[Energi/vind<br/>6 forslag NU]
+    A --> D[Ungdomskriminalitet<br/>1 forslag JuU]
+    A --> E[Havn/Skat/GBV<br/>5 forslag]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-05-04 | **Einstufung**: ÖFFENTLICH | **Konfidenz**: HOCH [B2]
+
+### BLUF
+
+Sechzehn aktive Oppositionsanträge, eingereicht am 2026-04-29, fordern sechs Regierungsvorlagen in den Bereichen Energie, Umwelt, Strafjustiz, Verkehr und Steuerpolitik heraus. Socialdemokraterna (S) führt mit neun Anträgen, flankiert von Miljöpartiet (MP), Vänsterpartiet (V) und Centerpartiet (C). Mit Schwedens Parlamentswahl 132 Tage entfernt (14. September 2026) stellen diese Anträge sowohl substantielle politische Opposition als auch explizite Vorwahlpositionierung dar. Die wichtigsten Auseinandersetzungen: (1) die vorgeschlagene Umweltgenehmigungsbehörde (Prop. 238), die von S, MP, V und C aus verschiedenen Gründen abgelehnt wird; (2) Absenkung des Strafmündigkeitsalters auf 13 (Prop. 246), wobei S 14 akzeptiert, aber 13 ablehnt; und (3) Reform des kommunalen Windkraftvetos (Prop. 239), wo die Opposition weitgehend schnelleres Handeln fordert.
+
+### Entscheidungen, die dieses Briefing unterstützt
+
+1. **Redaktionsteams**: Führen Sie mit kriminellem Alter/Jugendkriminalität und Umweltgenehmigung als den zwei Konflikten mit dem höchsten Impact
+2. **Politikanalysten**: Kartieren Sie Oppositionsforderungen als Vorwahlpolitische Verpflichtungen mit wahlmäßigen Verantwortlichkeitsimplikationen
+3. **Risikomonitore**: Beurteilen Sie die Wahrscheinlichkeit von Regierungsniederlage im Ausschuss/Plenum bei umstrittenen Änderungspunkten
+4. **Ausländische Analysten**: Beurteilen Sie die Glaubwürdigkeit der schwedischen Energiewende-Governance vor wichtigen Investitionsentscheidungen
+
+### 60-Sekunden-Lektüre
+
+- **17 Anträge** (16 aktiv, 1 zurückgezogen): eingereicht am 2026-04-29 in Riksmöte 2025/26
+- **Wahlnähe-Multiplikator**: DIW-Punkte ×1,5 (Wahl ≤132 Tage entfernt) — Oppositionsanträge sind politische Verpflichtungen, kein Verfahrenslärm
+- **Jugendkriminalität**: S akzeptiert Absenkung des Strafmündigkeitsalters auf 14 (nicht 13), gegen die Kernbestimmung von Prop. 246; parteiübergreifende Mehrheit gegen die 13-Jahres-Grenze ohne SD-Abfall unwahrscheinlich
+- **Umweltgenehmigung**: S fordert materielle Reformen neben der neuen Behörde; V fordert Ablehnung; MP und C suchen Modifikationen — die Regierung steht einer fragmentierten Opposition ohne einheitlichen Block gegenüber
+- **Energie/Wind**: S, MP, C fordern alle mutigere Windkraftpolitik einschließlich früherer kommunaler Vetoreform; dies entspricht früheren S-geführten Antragsniederlagen 2021-22
+- **Rücknahme von HD024127**: unerklärlich — Signal für strategische Neupositionierung
+- **IMF-Daten nicht verfügbar** (Netzwerkegress blockiert); wirtschaftlicher Kontext aus früher gecachten Daten geschätzt
+
+### Wichtigster Zukunftstrigger
+
+Wenn der Rechtsausschuss (JuU) keine Mehrheit für die Altersabsenkung auf 13 produzieren kann, wird die Regierung im Endspurt vor den Wahlen ihre bedeutendste Gesetzgebungsniederlage der Amtszeit erleiden.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 aktive Anträge<br/>2026-04-29] --> B[Umweltgenehmigung<br/>4 Anträge MJU]
+    A --> C[Energie/Wind<br/>6 Anträge NU]
+    A --> D[Jugendkriminalität<br/>1 Antrag JuU]
+    A --> E[Hafen/Steuer/GBV<br/>5 Anträge]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-05-04 | **Clasificación**: PÚBLICO | **Confianza**: ALTA [B2]
+
+### BLUF
+
+Dieciséis mociones de oposición activas presentadas el 2026-04-29 desafían seis propuestas gubernamentales en política energética, medioambiental, de justicia penal, transporte y fiscal. Socialdemokraterna (S) lidera con nueve mociones, flanqueado por Miljöpartiet (MP), Vänsterpartiet (V) y Centerpartiet (C). Con las elecciones generales de Suecia 132 días (14 de septiembre de 2026), estas mociones constituyen tanto oposición política sustantiva como posicionamiento preelectoral explícito. Las batallas más significativas: (1) la propuesta autoridad de permisos medioambientales (prop. 238) a la que S, MP, V y C se oponen por diferentes razones; (2) reducción de la edad de responsabilidad penal a 13 años (prop. 246) donde S acepta 14 pero rechaza 13; y (3) reforma del veto municipal en energía eólica (prop. 239) donde la oposición ampliamente exige acción más rápida.
+
+### Decisiones que apoya este informe
+
+1. **Equipos editoriales**: Liderar con edad penal/delincuencia juvenil y permisos medioambientales como los dos conflictos de mayor impacto
+2. **Analistas de políticas**: Mapear las demandas de la oposición como compromisos políticos preelectorales con implicaciones de responsabilidad electoral
+3. **Monitores de riesgo**: Evaluar la probabilidad de derrotas gubernamentales en comité/pleno en puntos de enmienda controvertidos
+4. **Analistas extranjeros**: Evaluar la credibilidad de la gobernanza de transición energética de Suecia antes de decisiones de inversión clave
+
+### Lectura de 60 segundos
+
+- **17 mociones** (16 activas, 1 retirada): presentadas el 2026-04-29 en Riksmöte 2025/26
+- **Multiplicador de proximidad electoral**: puntuaciones DIW ×1,5 (elección ≤132 días) — las mociones de oposición son compromisos políticos, no ruido procesal
+- **Delincuencia juvenil**: S acepta bajar la edad penal a 14 (no 13), oponiéndose a la disposición central de la prop. 246; mayoría multipartidista contra el umbral de 13 años improbable sin deserción de SD
+- **Permiso medioambiental**: S exige reformas sustanciales junto con la nueva autoridad; V exige rechazo; MP y C buscan modificaciones — el gobierno enfrenta una oposición fragmentada sin bloque unido
+- **Energía/eólica**: S, MP, C todos exigen una política eólica más audaz incluyendo reforma más temprana del veto municipal; esto se alinea con derrotas previas de mociones lideradas por S en 2021-22
+- **Retirada de HD024127**: sin explicación — señal de reposicionamiento estratégico
+- **Datos del FMI no disponibles** (salida de red bloqueada); contexto económico estimado a partir de datos en caché anteriores
+
+### Principal desencadenante futuro
+
+Si el Comité de Justicia (JuU) no logra producir una mayoría para bajar la edad a 13 años, el gobierno enfrentará su derrota legislativa más significativa del período de mandato en el sprint final hacia las elecciones.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 mociones activas<br/>2026-04-29] --> B[Permiso ambiental<br/>4 mociones MJU]
+    A --> C[Energía/eólica<br/>6 mociones NU]
+    A --> D[Delincuencia juvenil<br/>1 moción JuU]
+    A --> E[Puerto/Impuesto/VBG<br/>5 mociones]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-05-04 | **Luokitus**: JULKINEN | **Luottamustaso**: KORKEA [B2]
+
+### BLUF
+
+Kuusitoista aktiivista 2026-04-29 jätettyjä oppositioaloitetta haastaa kuusi hallituksen esitystä energia-, ympäristö-, rikoslainsäädäntö-, liikenne- ja veropolitiikassa. Socialdemokraterna (S) johtaa yhdeksällä aloitteella, flankeerattuna Miljöpartietillä (MP), Vänsterpartietillä (V) ja Centerpartietillä (C). Ruotsin eduskuntavaalit ovat 132 päivän päässä (14. syyskuuta 2026), ja nämä aloitteet muodostavat sekä asiasisällöllisen opposition että eksplisiittisen vaaliasemoinnin. Tärkeimmät taistelut: (1) ehdotettu ympäristölupaviranomainen (prop. 238), jota S, MP, V ja C vastustavat eri syistä; (2) rikosoikeudellisen vastuuiän alentaminen 13 vuoteen (prop. 246), jossa S hyväksyy 14 mutta hylkää 13; ja (3) kunnallisen tuulivoimaveto-oikeuden uudistus (prop. 239), jossa oppositio laajasti vaatii nopeampia toimia.
+
+### Päätökset joita tämä katsaus tukee
+
+1. **Toimitustiimit**: Johda rikosoikeusikä/nuorisorikollinen ja ympäristölupa kahden suurimman vaikutuksen konfliktina
+2. **Politiikkaanalyytikot**: Kartoita oppositiovaatimukset vaalipoliittisina sitoumuksina, joilla on vaalivastuumerkitys
+3. **Riskimonitorit**: Arvioi hallituksen tappion todennäköisyys valiokunnassa/täysistunnossa riidanalaisissa muutosehdotuksissa
+4. **Ulkomaiset analyytikot**: Arvioi Ruotsin energiasiirtymähallinnon uskottavuus tärkeiden investointipäätösten edellä
+
+### 60-sekunnin lukeminen
+
+- **17 aloitetta** (16 aktiivista, 1 peruttu): jätetty 2026-04-29 riksmöte 2025/26:ssa
+- **Vaalien läheisyyskertoja**: DIW-pisteet ×1,5 (vaalit ≤132 päivän päässä) — oppositioaloitteet ovat poliittisia sitoumuksia, eivät menettelyllistä melua
+- **Nuorisorikollinen**: S hyväksyy rikosoikeudellisen vastuuiän alentamisen 14:ään (ei 13:een), vastustaa prop. 246:n ydinkohtaa; monipuolueiden enemmistö 13 vuoden ikärajaa vastaan epätodennäköinen ilman SD:n hajaannusta
+- **Ympäristölupa**: S vaatii aineellisia uudistuksia uuden viranomaisen rinnalle; V vaatii hylkäämistä; MP ja C hakevat muutoksia — hallitus kohtaa hajanaisen opposition ilman yhtenäistä blokkia
+- **Energia/tuulivoima**: S, MP, C kaikki vaativat kunnianhimoisempaa tuulivoimapolitiikkaa mukaan lukien aikaisempi kunnallisen veto-oikeuden uudistus; tämä vastaa aiempia S-johtamisia aloitetappioita 2021-22
+- **HD024127:n peruuttaminen**: selittämätön — strategisen uudelleenasemoinnin signaali
+- **IMF-tiedot saatavissa**: (verkkoegress estetty); taloudellinen konteksti arvioitu aiemmista välimuistitiedoista
+
+### Tärkein ennakkotriggeri
+
+Jos oikeusvaliokunta (JuU) ei saa aikaan enemmistöä iän alentamiseksi 13 vuoteen, hallitus kohtaa mandaattikauden merkittävimmän lainsäädäntötappionsa viimeisessä vaalisprintissä.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 aktiivista aloitetta<br/>2026-04-29] --> B[Ympäristölupa<br/>4 aloitetta MJU]
+    A --> C[Energia/tuulivoima<br/>6 aloitetta NU]
+    A --> D[Nuorisorikollinen<br/>1 aloite JuU]
+    A --> E[Satama/Vero/GBV<br/>5 aloitetta]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling | **Date**: 2026-05-04 | **Classification**: PUBLIC | **Confiance**: ÉLEVÉE [B2]
+
+### BLUF
+
+Seize motions d'opposition actives déposées le 2026-04-29 défient six propositions gouvernementales dans les domaines de l'énergie, de l'environnement, de la justice pénale, des transports et de la fiscalité. Socialdemokraterna (S) mène avec neuf motions, flanqué de Miljöpartiet (MP), Vänsterpartiet (V) et Centerpartiet (C). Avec les élections générales de la Suède 132 jours à venir (14 septembre 2026), ces motions constituent à la fois une opposition politique substantielle et un positionnement pré-électoral explicite. Les batailles les plus significatives : (1) l'autorité de permis environnementaux proposée (prop. 238) à laquelle S, MP, V et C s'opposent pour différentes raisons ; (2) la réduction de l'âge de responsabilité pénale à 13 ans (prop. 246) où S accepte 14 mais rejette 13 ; et (3) la réforme du veto municipal en éolien (prop. 239) où l'opposition réclame généralement une action plus rapide.
+
+### Décisions soutenues par ce briefing
+
+1. **Équipes éditoriales**: Mener avec l'âge pénal/délinquance juvénile et les permis environnementaux comme les deux conflits à impact le plus élevé
+2. **Analystes politiques**: Cartographier les demandes de l'opposition comme des engagements politiques pré-électoraux avec des implications de responsabilité électorale
+3. **Moniteurs de risques**: Évaluer la probabilité de défaites gouvernementales en commission/plénière sur les points d'amendement contestés
+4. **Analystes étrangers**: Évaluer la crédibilité de la gouvernance de la transition énergétique de la Suède avant les décisions d'investissement clés
+
+### Lecture de 60 secondes
+
+- **17 motions** (16 actives, 1 retirée) : déposées le 2026-04-29 dans le Riksmöte 2025/26
+- **Multiplicateur de proximité électorale**: scores DIW ×1,5 (élection ≤132 jours) — les motions d'opposition sont des engagements politiques, pas du bruit procédural
+- **Criminalité juvénile**: S accepte d'abaisser l'âge pénal à 14 (pas 13), s'opposant à la disposition centrale de la prop. 246 ; majorité interpartis contre le seuil de 13 ans improbable sans défection SD
+- **Permis environnemental**: S exige des réformes matérielles aux côtés de la nouvelle autorité ; V exige le rejet ; MP et C recherchent des modifications — le gouvernement fait face à une opposition fragmentée sans bloc uni
+- **Énergie/éolien**: S, MP, C réclament tous une politique éolienne plus audacieuse incluant la réforme plus rapide du veto municipal ; cela s'aligne sur les défaites de motions antérieures menées par S en 2021-22
+- **Retrait de HD024127**: inexpliqué — signal de repositionnement stratégique
+- **Données FMI indisponibles** (sortie réseau bloquée) ; contexte économique estimé à partir de données en cache antérieures
+
+### Principal déclencheur futur
+
+Si la Commission judiciaire (JuU) ne parvient pas à produire une majorité pour abaisser l'âge à 13 ans, le gouvernement fera face à sa défaite législative la plus significative du mandat dans le sprint final vers les élections.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 motions actives<br/>2026-04-29] --> B[Permis env.<br/>4 motions MJU]
+    A --> C[Énergie/éolien<br/>6 motions NU]
+    A --> D[Criminalité juvénile<br/>1 motion JuU]
+    A --> E[Port/Taxe/VBG<br/>5 motions]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_he.md -->
+
+&#x200F;# הצעות האופוזיציה מאתגרות שישה הצעות ממשלתיות בספרינט הטרום-בחירות של שוודיה
+
+**מחבר**: ג'יימס פת'ר סורלינג | **תאריך**: 2026-05-04 | **סיווג**: ציבורי | **אמינות**: גבוהה [B2]
+
+### BLUF
+
+שש עשרה הצעות אופוזיציה פעילות שהוגשו ב-2026-04-29 מאתגרות שש הצעות ממשלתיות במדיניות האנרגיה, הסביבה, המשפט הפלילי, התחבורה והמיסוי. Socialdemokraterna (S) מוביל עם תשע הצעות, מלווה ב-Miljöpartiet (MP), Vänsterpartiet (V) ו-Centerpartiet (C). כשבחירות הכלליות של שוודיה 132 יום (14 בספטמבר 2026), הצעות אלה מהוות הן אופוזיציה פוליטית מהותית והן מיצוב ברור לפני הבחירות. הקרבות המשמעותיים ביותר: (1) רשות ההיתרים הסביבתיים המוצעת (הצעה 238) שאותה מתנגדים S, MP, V ו-C מסיבות שונות; (2) הורדת גיל האחריות הפלילית ל-13 (הצעה 246) שבה S מקבלת 14 אך דוחה 13; ו-(3) רפורמת הווטו העירוני לאנרגיית רוח (הצעה 239) שבה האופוזיציה דורשת באופן רחב פעולה מהירה יותר.
+
+### החלטות שתדריך זה תומך בהן
+
+1. **צוותי עריכה**: הובל עם גיל פלילי/פשיעת נוער והיתרים סביבתיים כשני הקונפליקטים בעלי ההשפעה הגבוהה ביותר
+2. **אנליסטי מדיניות**: מפה את דרישות האופוזיציה כהתחייבויות פוליטיות טרום-בחירות עם השלכות אחריות בחירות
+3. **מוניטורי סיכון**: הערכת סבירות תבוסות ממשלה בוועדה/מליאה על נקודות תיקון שנויות במחלוקת
+4. **אנליסטים זרים**: הערכת אמינות ממשל מעבר האנרגיה של שוודיה לפני החלטות השקעה מרכזיות
+
+### קריאה של 60 שניות
+
+- **17 הצעות** (16 פעילות, 1 נסוגה): הוגשו ב-2026-04-29 ב-Riksmöte 2025/26
+- **מכפיל קרבה לבחירות**: ניקוד DIW ×1.5 (בחירות ≤132 יום) — הצעות אופוזיציה הן התחייבויות פוליטיות, לא רעש פרוצדורלי
+- **פשיעת נוער**: S מקבלת הורדת גיל פלילי ל-14 (לא 13), מתנגדת להוראה המרכזית של הצעה 246; רוב רב-מפלגתי נגד ספי 13 השנים לא סביר ללא ריחוק SD
+- **היתר סביבתי**: S דורשת רפורמות מהותיות לצד הרשות החדשה; V דורשת דחייה; MP ו-C מבקשים שינויים — הממשלה מתמודדת עם אופוזיציה מפוצלת ללא בלוק מאוחד
+- **אנרגיה/רוח**: S, MP, C כולם דורשים מדיניות אנרגיית רוח נועזת יותר כולל רפורמת הווטו העירוני מוקדם יותר; זה מתואם עם תבוסות הצעות קודמות בהובלת S ב-2021-22
+- **נסיגת HD024127**: ללא הסבר — אות למיצוב אסטרטגי מחדש
+- **נתוני קרן המטבע הבינלאומית לא זמינים** (יציאת רשת חסומה); הקשר כלכלי מוערך מנתונים מאוחסנים קודמים
+
+### הטריגר העתידי הראשי
+
+אם ועדת המשפטים (JuU) לא תצליח לייצר רוב להורדת הגיל ל-13, תתמודד הממשלה עם תבוסתה החקיקתית המשמעותית ביותר של תקופת הכהונה בספרינט הסופי לבחירות.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 הצעות פעילות<br/>2026-04-29] --> B[היתר סביבתי<br/>4 הצעות MJU]
+    A --> C[אנרגיה/רוח<br/>6 הצעות NU]
+    A --> D[פשיעת נוער<br/>1 הצעה JuU]
+    A --> E[נמל/מס/GBV<br/>5 הצעות]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ja.md -->
+
+**著者**: ジェームズ・ペシャー・セーリング | **日付**: 2026-05-04 | **分類**: 公開 | **信頼度**: 高 [B2]
+
+### BLUF
+
+2026年4月29日に提出された16の有効な野党動議が、エネルギー、環境、刑事司法、交通、税制政策において6つの政府提案に挑戦している。Socialdemokraterna（S）が9動議でリードし、Miljöpartiet（MP）、Vänsterpartiet（V）、Centerpartiet（C）が続く。スウェーデン総選挙まで132日（2026年9月14日）と迫るなか、これらの動議は実質的な政治的反対意見と明確な選挙前ポジショニングの両方を構成する。最も重要な争点：（1）提案238の環境許可当局（S、MP、V、Cがそれぞれ異なる理由で反対）；（2）刑事責任年齢を13歳に引き下げ（提案246、Sは14歳を受け入れるが13歳は拒否）；（3）風力エネルギーの市町村拒否権改革（提案239、野党が広く一段と迅速な行動を要求）。
+
+### このブリーフが支援する決定
+
+1. **編集チーム**: 刑事年齢・少年犯罪と環境許可を最も影響度の高い2つの対立点として前面に出す
+2. **政策アナリスト**: 野党の要求を選挙前の政策コミットメントとしてマッピングし、選挙責任の含意を検討
+3. **リスク監視**: 争点となっている修正点に関する委員会・本会議での政府敗北の可能性を評価
+4. **海外アナリスト**: 主要投資決定前のスウェーデンのエネルギー転換ガバナンスの信頼性を評価
+
+### 60秒リード
+
+- **17動議**（16有効、1撤回）：2025/26年議会会期に2026年4月29日提出
+- **選挙近接乗数**: DIWスコア×1.5（選挙まで≤132日）—野党動議は手続き的ノイズではなく政策コミットメント
+- **少年犯罪**: Sは刑事年齢を14歳に引き下げることを受け入れる（13歳ではない）、提案246の中核的命令に反対；SDの離脱なしに13歳閾値に反対する多党多数は見込み薄
+- **環境許可**: Sは新当局に加えて実質的な改革を要求；Vは拒否を要求；MPとCは修正を求める—政府は統一ブロックなしに断片化した反対に直面
+- **エネルギー/風力**: S、MP、Cはすべて市町村拒否権改革を含む一段と大胆な風力エネルギー政策を要求；これは2021-22年のS主導の先行動議の敗北と合致
+- **HD024127撤回**: 説明なし—戦略的再ポジショニングのシグナル
+- **IMFデータ利用不可**（ネットワーク出口ブロック）；経済コンテキストは以前のキャッシュデータから推定
+
+### 主要フォワードトリガー
+
+司法委員会（JuU）が13歳への引き下げに関して多数を生成できない場合、政府は選挙最終スプリントで任期中最も重大な立法上の敗北に直面する。
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16有効動議<br/>2026-04-29] --> B[環境許可<br/>4動議 MJU]
+    A --> C[エネルギー/風力<br/>6動議 NU]
+    A --> D[少年犯罪<br/>1動議 JuU]
+    A --> E[港湾/税制/GBV<br/>5動議]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ko.md -->
+
+**저자**: 제임스 페서 쇠를링 | **날짜**: 2026-05-04 | **분류**: 공개 | **신뢰도**: 높음 [B2]
+
+### BLUF
+
+2026년 4월 29일에 제출된 16개의 활성 야당 발의안이 에너지, 환경, 형사 사법, 교통, 세제 정책에서 6개의 정부 제안에 도전하고 있다. Socialdemokraterna(S)가 9개 발의안으로 선두를 달리며 Miljöpartiet(MP), Vänsterpartiet(V), Centerpartiet(C)가 뒤를 잇는다. 스웨덴 총선까지 132일(2026년 9월 14일)을 앞두고 이 발의안들은 실질적인 정치적 반대와 명확한 선거 전 포지셔닝 모두를 구성한다. 가장 중요한 전선: (1) 제안 238의 환경허가청(S, MP, V, C가 각기 다른 이유로 반대); (2) 형사책임 연령을 13세로 인하(제안 246, S는 14세 수용 但 13세 거부); (3) 풍력 에너지에 대한 지방자치단체 거부권 개혁(제안 239, 야당이 광범위하게 더 신속한 조치 요구).
+
+### 이 브리프가 지원하는 결정
+
+1. **편집팀**: 형사 연령/청소년 범죄와 환경허가를 가장 영향력 높은 두 갈등으로 선두에 내세우기
+2. **정책 분석가**: 야당 요구를 선거책임 함의를 지닌 선거 전 정책 공약으로 매핑
+3. **위험 모니터링**: 쟁점이 되는 수정 포인트에 대한 위원회/본회의 정부 패배 가능성 평가
+4. **해외 분석가**: 주요 투자 결정 전 스웨덴 에너지 전환 거버넌스 신뢰성 평가
+
+### 60초 리드
+
+- **17개 발의안** (16개 활성, 1개 철회): 2025/26 국회 회기에 2026년 4월 29일 제출
+- **선거 근접 승수**: DIW 점수 ×1.5 (선거 ≤132일) — 야당 발의안은 절차적 소음이 아닌 정책 공약
+- **청소년 범죄**: S는 형사 연령을 14세로 인하 수용(13세 아님), 제안 246의 핵심 명령에 반대; SD 이탈 없이 13세 기준에 반대하는 다당 다수 형성 어려울 것
+- **환경허가**: S는 새 청과 함께 실질적 개혁 요구; V는 거부 요구; MP와 C는 수정 추구 — 정부는 통일된 블록 없이 분열된 반대에 직면
+- **에너지/풍력**: S, MP, C 모두 지방자치단체 거부권 개혁을 포함한 보다 과감한 풍력 에너지 정책 요구; 이는 2021-22년 S 주도의 이전 발의안 패배와 일치
+- **HD024127 철회**: 미설명 — 전략적 재포지셔닝 신호
+- **IMF 데이터 이용 불가** (네트워크 출구 차단); 경제 맥락은 이전 캐시 데이터에서 추정
+
+### 주요 미래 트리거
+
+사법위원회(JuU)가 13세로의 인하에 대한 다수를 만들어내지 못한다면, 정부는 선거 최종 스프린트에서 임기 중 가장 중요한 입법적 패배에 직면하게 된다.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16개 활성 발의안<br/>2026-04-29] --> B[환경허가<br/>4개 발의안 MJU]
+    A --> C[에너지/풍력<br/>6개 발의안 NU]
+    A --> D[청소년 범죄<br/>1개 발의안 JuU]
+    A --> E[항만/세제/GBV<br/>5개 발의안]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-05-04 | **Classificatie**: OPENBAAR | **Betrouwbaarheid**: HOOG [B2]
+
+### BLUF
+
+Zestien actieve oppositiemotie's ingediend op 2026-04-29 dagen zes regeringsvoorstellen uit op het gebied van energie, milieu, strafjustitie, vervoer en belastingbeleid. Socialdemokraterna (S) leidt met negen motie's, geflankeerd door Miljöpartiet (MP), Vänsterpartiet (V) en Centerpartiet (C). Met de Zweedse algemene verkiezingen 132 dagen weg (14 september 2026) vormen deze motie's zowel substantiële politieke oppositie als expliciete pre-verkiezingspositionering. De meest significante strijd: (1) de voorgestelde milieuvergunninsautoriteit (prop. 238) waartegen S, MP, V en C zich om verschillende redenen verzetten; (2) verlaging van de strafrechtelijke aansprakelijkheidsleeftijd naar 13 (prop. 246) waarbij S 14 accepteert maar 13 verwerpt; en (3) hervorming van het gemeentelijk windenergiveto (prop. 239) waarbij de oppositie generaal snellere actie eist.
+
+### Beslissingen die dit briefing ondersteunt
+
+1. **Redactiezaam**: Leid met criminele leeftijd/jeugddelinquentie en milieuvergunnin als de twee hoogste-impact-conflicten
+2. **Beleidsanalisten**: Breng oppositie-eisen in kaart als pre-verkiezingspolitieke verplichtingen met electorale aansprakelijkheidsimplicaties
+3. **Risicomonitoren**: Beoordeel de kans op regeringsnederlagen in commissie/plenaire vergadering op betwiste wijzigingspunten
+4. **Buitenlandse analisten**: Beoordeel de geloofwaardigheid van Zweden's energietransitiegovernance vóór belangrijke investeringsbeslissingen
+
+### 60-seconden lezing
+
+- **17 motie's** (16 actief, 1 ingetrokken): ingediend op 2026-04-29 in Riksmöte 2025/26
+- **Verkiezingsnabijheidsmultiplikator**: DIW-scores ×1,5 (verkiezingen ≤132 dagen weg) — oppositiemotie's zijn politieke verplichtingen, geen procedureruis
+- **Jeugddelinquentie**: S accepteert verlaging van de strafrechtelijke leeftijd naar 14 (niet 13), in strijd met de kernbepaling van prop. 246; meerpartijenmeerderheid tegen de 13-jaarsdrempel onwaarschijnlijk zonder SD-defectie
+- **Milieuvergunning**: S eist materiële hervormingen naast de nieuwe autoriteit; V eist verwerping; MP en C zoeken modificaties — de regering staat tegenover een gefragmenteerde oppositie zonder eensgezind blok
+- **Energie/wind**: S, MP, C eisen allen een ambitieuzer windkrachtbeleid inclusief eerdere gemeentelijke vetohervorrning; dit sluit aan bij eerder S-geleide motienederlagen in 2021-22
+- **Intrekking van HD024127**: onverklaard — signaal voor strategische herpositionering
+- **IMF-gegevens niet beschikbaar** (netwerkegressie geblokkeerd); economische context geschat uit eerder gecachte gegevens
+
+### Belangrijkste toekomstige trigger
+
+Als de Commissie Justitie (JuU) er niet in slaagt een meerderheid te produceren voor verlaging van de leeftijd naar 13, zal de regering in de laatste sprint naar de verkiezingen haar meest significante wetgevingsnederlaag van de ambtstermijn ondervinden.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 actieve motie's<br/>2026-04-29] --> B[Milieuvergunning<br/>4 motie's MJU]
+    A --> C[Energie/wind<br/>6 motie's NU]
+    A --> D[Jeugddelinquentie<br/>1 motie JuU]
+    A --> E[Haven/Belasting/GBV<br/>5 motie's]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-04 | **Klassifisering**: OFFENTLIG | **Konfidensgrad**: HØY [B2]
+
+### BLUF
+
+Seksten aktive opposisjonsforslag innlevert 2026-04-29 utfordrer seks regjeringsforslag innen energi, miljø, strafferett, transport og skattepolitikk. Socialdemokraterna (S) leder med ni forslag, flankert av Miljøpartiet (MP), Venstresiden (V) og Centerpartiet (C). Med Sveriges stortingsvalg 132 dager unna (14. september 2026) utgjør disse forslagene både substansiell politisk opposisjon og eksplisitt pre-valgsposisjonering. De viktigste kampene: (1) det foreslåtte miljøtillatelseorganet (prop. 238) som S, MP, V og C motsetter seg av ulike grunner; (2) senking av den strafferettslige lavalderen til 13 (prop. 246) der S aksepterer 14 men avviser 13; og (3) reform av kommunalt vindkraftsveto (prop. 239) der opposisjonen bredt krever raskere handling.
+
+### Beslutninger dette briefet støtter
+
+1. **Redaksjonsteam**: Innled med kriminell alder/ungdomskriminalitet og miljøtillatelse som de to høyest-impact-konfliktene
+2. **Politikkanalytikere**: Kartlegg opposisjonskrav som pre-valgspolitiske forpliktelser med valgansvarsmessige implikasjoner
+3. **Risikomonitorer**: Vurder sannsynligheten for regjeringsnederlag i komité/plenum på omstridte endringsforslag
+4. **Utenlandske analytikere**: Vurder Sveriges energiomstillingsstyringskredibilitet før viktige investeringsbeslutninger
+
+### 60-sekunders lesning
+
+- **17 forslag** (16 aktive, 1 trukket tilbake): innlevert 2026-04-29 i Riksmöte 2025/26
+- **Valgærhetsmultiplikator**: DIW-skårer ×1,5 (valg ≤132 dager unna) — opposisjonsforslag er politiske forpliktelser, ikke prosedyremessig støy
+- **Ungdomskriminalitet**: S aksepterer senking av kriminalitetsalderen til 14 (ikke 13), mot prop. 246's kjerneparagraf; tverr-parti-flertall mot 13-årsgrensen usannsynlig uten SD-frafall
+- **Miljøtillatelse**: S krever materielle reformer parallelt med det nye organet; V krever avvisning; MP og C søker modifikasjoner — regjeringen møter en fragmentert opposisjon uten samlet blokk
+- **Energi/vind**: S, MP, C krever alle mer ambisiøs vindkraftpolitikk inkludert tidligere kommunalt vetoreform; dette sammenfaller med tidligere S-ledede forslagnederlag 2021-22
+- **Tilbaketrekning av HD024127**: uforklart — signal om strategisk omposisjonering
+- **IMF-data utilgjengelig** (nettverksegress blokkert); økonomisk kontekst estimert fra tidligere bufrede data
+
+### Topp fremtidig trigger
+
+Hvis Justiskomiteen (JuU) mislykkes med å produsere et flertall for senking av alderen til 13, vil regjeringen stå overfor sitt mest signifikante lovgivningsnederlag i mandatperioden i det siste spurten til valgene.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 aktive forslag<br/>2026-04-29] --> B[Miljøtillatelse<br/>4 forslag MJU]
+    A --> C[Energi/vind<br/>6 forslag NU]
+    A --> D[Ungdomskriminalitet<br/>1 forslag JuU]
+    A --> E[Havn/Skatt/GBV<br/>5 forslag]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-05-04 | **Klassificering**: OFFENTLIG | **Konfidensgrad**: HÖG [B2]
+
+### BLUF
+
+Sexton aktiva oppositionsmotioner inlämnade 2026-04-29 utmanar sex regeringspropositioner inom energi, miljö, kriminaljustis, transport och skattepolitik. Socialdemokraterna (S) leder med nio motioner, flankerade av Miljöpartiet (MP), Vänsterpartiet (V) och Centerpartiet (C). Med Sveriges riksdagsval 132 dagar bort (14 september 2026) utgör dessa motioner både sakpolitisk opposition och tydlig förvalpositionering. De viktigaste striderna: (1) förslaget om ny tillståndsmyndighet för miljö (prop. 238) som S, MP, V och C motsätter sig av olika skäl; (2) sänkning av straffmyndighetsåldern till 13 år (prop. 246) där S accepterar 14 men avvisar 13; och (3) reform av kommunalt vindkraftsveto (prop. 239) där oppositionen brett kräver snabbare åtgärder.
+
+### Beslut som detta underlag stöder
+
+1. **Redaktionsteam**: Led med brottslighet mot unga/kriminalålder och miljötillstånd som de två mest impactfulla konflikterna
+2. **Policyanalytiker**: Kartlägg oppositionskrav som förvalspolitiska åtaganden med valansvarsmässiga implikationer
+3. **Riskmonitorer**: Bedöm sannolikheten för regeringsnederlag i utskott/plenum på omtvistade ändringsförslag
+4. **Utländska analytiker**: Bedöm Sveriges trovärdighet inom energiomställningsförvaltning inför viktiga investeringsbeslut
+
+### 60-sekundersläsning
+
+- **17 motioner** (16 aktiva, 1 återdragen): inlämnade 2026-04-29 i riksmöte 2025/26
+- **Valnärhetsmultiplikator**: DIW-poäng ×1,5 (val ≤132 dagar borta) — oppositionsmotioner är politiska åtaganden, inte procedurell brus
+- **Ungdomsbrottslighet**: S accepterar sänkning av straffmyndighetsåldern till 14 (inte 13), och motsätter sig prop. 246:s kärnbestämmelse; tvärblockmajoritet mot 13-årsgränsen osannolik utan SD-avfall
+- **Miljötillstånd**: S kräver materiella reformer parallellt med den nya myndigheten; V kräver avslag; MP och C söker modifieringar — regeringen möter en fragmenterad opposition utan enat block
+- **Energi/vind**: S, MP, C kräver alla modigare vindkraftspolitik inklusive tidigare kommunalt vetoreform; detta stämmer med tidigare S-ledda motionsnederlag 2021-22
+- **Återdragande av HD024127**: oförklarat — signal om strategisk ompositionering
+- **IMF-data otillgänglig** (nätverksegress blockerad); ekonomisk kontext uppskattad från tidigare cachade data
+
+### Viktigaste framtidssignal
+
+Om Justitieutskottet (JuU) misslyckas med att producera en majoritet för att sänka åldern till 13, kommer regeringen att möta sitt mest signifikanta lagstiftningsnederlag under mandatperioden i det sista skörden inför valet.
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16 aktiva motioner<br/>2026-04-29] --> B[Miljötillstånd<br/>4 motioner MJU]
+    A --> C[Energi/vind<br/>6 motioner NU]
+    A --> D[Ungdomsbrottslighet<br/>1 motion JuU]
+    A --> E[Hamn/Skatt/GBV<br/>5 motioner]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_zh.md -->
+
+**作者**: 詹姆斯·佩瑟·索林 | **日期**: 2026-05-04 | **分类**: 公开 | **可信度**: 高 [B2]
+
+### BLUF
+
+2026年4月29日提交的16项有效反对党动议在能源、环境、刑事司法、交通和税收政策领域挑战6项政府提案。Socialdemokraterna（S）以9项动议领先，Miljöpartiet（MP）、Vänsterpartiet（V）和Centerpartiet（C）紧随其后。距离瑞典大选132天（2026年9月14日），这些动议既是实质性政治反对，也是明确的选前定位。最重要的争论焦点：（1）提案238的环境许可当局（S、MP、V、C出于不同原因反对）；（2）将刑事责任年龄降至13岁（提案246，S接受14岁但拒绝13岁）；（3）风能市政否决权改革（提案239，反对党普遍要求采取更迅速的行动）。
+
+### 本简报支持的决策
+
+1. **编辑团队**: 将刑事年龄/青少年犯罪与环境许可作为影响最高的两大冲突置于报道前沿
+2. **政策分析师**: 将反对党诉求映射为具有选举问责意义的选前政策承诺
+3. **风险监测**: 评估委员会/全体会议在争议修正点上政府失败的可能性
+4. **海外分析师**: 在重大投资决策前评估瑞典能源转型治理可信度
+
+### 60秒摘要
+
+- **17项动议**（16项有效，1项撤回）：于2025/26议会届期的2026年4月29日提交
+- **选举临近乘数**: DIW得分×1.5（距选举≤132天）—反对党动议是政策承诺，而非程序性噪音
+- **青少年犯罪**: S接受将刑事年龄降至14岁（非13岁），反对提案246的核心命令；没有SD分裂，反对13岁门槛的多党多数难以形成
+- **环境许可**: S要求新当局之外的实质性改革；V要求否决；MP和C寻求修改——政府面临无统一阵营的分散反对
+- **能源/风力**: S、MP、C均要求更大胆的风能政策，包括更早进行市政否决权改革；这与2021-22年S主导的早期动议失败一致
+- **HD024127撤回**: 无说明——战略重新定位信号
+- **IMF数据不可用**（网络出口受阻）；经济背景从此前缓存数据估算
+
+### 主要前瞻触发因素
+
+若司法委员会（JuU）未能就降至13岁形成多数，政府将在选举最后冲刺阶段面临任期内最重大的立法失败。
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b
+    style D fill:#1a1e3d,color:#00d9ff
+    A[16项有效动议<br/>2026-04-29] --> B[环境许可<br/>4项动议 MJU]
+    A --> C[能源/风力<br/>6项动议 NU]
+    A --> D[青少年犯罪<br/>1项动议 JuU]
+    A --> E[港口/税收/GBV<br/>5项动议]
+    style E fill:#1a1e3d,color:#00d9ff
+```
+
+<!-- source-sha: 857e6ce8cee827920506c3007d3eb16dde3ed1ec -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 16 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 18 | Linked in Article Sources, not expanded inline |
 
@@ -1394,6 +1996,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

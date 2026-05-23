@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: evening-analysis
 slug: 2026-05-04-evening-analysis
 source_folder: analysis/daily/2026-05-04/evening-analysis
-generated_at: 2026-05-22T13:53:53.776Z
+generated_at: 2026-05-23T08:06:00.473Z
 language: en
 layout: article
 ---
@@ -104,6 +104,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2533,13 +2546,914 @@ Sibling analyses read for Tier-C cross-synthesis:
 }
 ```
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_ar.md -->
+
+&#x200F;# ملخص تنفيذي — تحليل المساء، 4 مايو 2026
+
+**المؤلف**: James Pether Sörling | **مستوى الثقة**: عالٍ [Admiralty B2] | **أيام حتى الانتخابات**: 132  
+**مصدر بيانات صندوق النقد الدولي**: WEO أبريل 2026 | NGDP_RPCH_2026: 2.1% | GGXWDG_NGDP: ~34% | تاريخ الاسترداد: 2026-05-04
+
+---
+
+### الخلاصة التنفيذية
+
+دخل البرلمان السويدي (الريكسداغ) في 4 مايو 2026 — قبل 132 يومًا من انتخابات 13 سبتمبر — مرحلة إغلاق تشريعية متسارعة: سجّلت لجنة الشؤون الدستورية (KU) التقرير KU39 حول شفافية العملية السياسية تمهيدًا لتصويت في 16 يونيو، فيما سجّلت لجنة المالية (FiU) تقرير FiU49 لتقييم خمس سنوات من إدارة الديون في مكتب إدارة الديون الوطني (Riksgälden). قدّمت أحزاب المعارضة تسعة اقتراحات جديدة ضد مشاريع قوانين الحكومة بشأن إدارة الغابات وجرائم الشباب، وشدّدت الاشتراكية الديمقراطية إيفا ليندح الهجوم على وزير البنية التحتية الكريستي ديموكراتي كارلسون بشأن خط أوستلانكن. الإشارة الاستخباراتية المهيمنة: الحكومة تُحكم إرثها التشريعي بينما تبني المعارضة محفظة هجمات مستهدفة لما قبل الانتخابات — وكلاهما يعمل في إطار زمني مكثّف يمتد 132 يومًا.
+
+---
+
+### ثلاثة قرارات يدعمها هذا الملخص
+
+1. **تقييم الجدول الزمني التشريعي**: تؤكد مناقشة KU39 في 16 يونيو أن الحكومة قادرة على إقرار قانون الشفافية HD03258 قبل عطلة الصيف — انتصار حوكمة للائتلاف قبيل الانتخابات.
+2. **تقييم تنسيق المعارضة**: تسعة اقتراحات MJU/JuU المقدمة اليوم تمثل استجابة حزبية منسقة — V مع مطالب الرفض الكامل، S مع القبول المشروط، أحزاب أخرى مع تعديلات مستهدفة — تكشف عن الحسابات التشريعية قبل جلسات اللجان.
+3. **هشاشة البنية التحتية**: أطلقت استجواب أوستلانكن (HD10463) أزمة مساءلة إقليمية في أوستيريوتلاند — دائرة انتخابية ذات كثافة عالية من المقاعد الهامشية — ستبقى قائمة حتى الموعد النهائي لرد وزير KD كارلسون في 25 مايو.
+
+---
+
+### قراءة في 60 ثانية
+
+- **شفافية KU39** (تصويت 16 يونيو): مشروع قانون HD03258 الحكومي لكشف التمويل السياسي على المسار الصحيح — آثار على شفافية تمويل جميع الأحزاب قبيل الانتخابات.
+- **تقييم ديون FiU49**: تسجيل تقييم خماسي لأداء Riksgälden؛ الدين العام السويدي (~34% من الناتج المحلي الإجمالي، الحد الأدنى في الاتحاد الأوروبي) يُضع أي نقاش في السياسة المالية في سياقه.
+- **تسعة اقتراحات جديدة**: إدارة الغابات (prop 242، خمسة اقتراحات MJU) وجرائم الشباب (prop 246، ثلاثة اقتراحات JuU) تواجه تحديات معارضة منسقة. V تطالب بالرفض الكامل؛ S تطالب بحد سن المسؤولية الجنائية 14 عامًا وليس 13.
+- **استجواب أوستلانكن (HD10463)**: تستهدف إيفا ليندح من S الوزير KD كارلسون بشأن محطة لينشوبينغ الملغاة — تؤثر على سوق عمل يضم 500,000 شخص وتولّد حرارة إقليمية في أربعة مقاعد هامشية.
+- **استجواب ضريبة المبيدات (HD10462)**: تستهدف مونيكا هايدر من S وزير المالية سفانتسون بشأن ضريبة مواد تعقيم الرعاية الصحية — أهمية عامة منخفضة لكن أهمية عالية لنقابات الرعاية الصحية.
+
+---
+
+### المحفز الأبرز على المدى المنظور
+
+**سماع لجنة KU39 (26 مايو–4 يونيو)**: يدخل قانون الشفافية KU39 في مداولات اللجنة في 26 مايو. إذا حاول أي حزب تعديل HD03258 لتغطية الإعلان السياسي الرقمي (المستبعد حاليًا من المقترح)، قد ينشأ خلاف ائتلافي بين L (المؤيد للشفافية الرقمية) وSD (المعارض لقواعد الإفصاح الإعلاني). مراقبة بروتوكول أغلبية اللجنة.
+
+---
+
+### تحليل مستوى الثقة
+
+| المجال | مستوى الثقة | الأساس |
+|--------|-----------|-------|
+| الجدول الزمني التشريعي (KU39/FiU49) | عالٍ [A2] | بيانات التقرير المباشرة، تقويم اللجنة |
+| محتوى اقتراحات المعارضة | عالٍ [B2] | استرداد النص الكامل لـ HD024142؛ ملخصات جزئية للأخرى |
+| الأهمية الانتخابية | متوسط [B3] | حسابات الائتلاف من التحليلات الشقيقة |
+| السياق الاقتصادي | متوسط [A3] | IMF WEO أبريل 2026 (مخزّن من التحليلات الشقيقة) |
+
+---
+
+### نظرة عامة Mermaid
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Konfidens**: HØJ [Admiralty B2] | **Dage til valget**: 132  
+**IMF-provenienz**: WEO apr-2026 | NGDP_RPCH_2026: 2,1 % | GGXWDG_NGDP: ~34 % | hentet: 2026-05-04
+
+---
+
+### KONKLUSION
+
+Sveriges Riksdag den 4. maj 2026 — 132 dage før valget den 13. september — gik ind i en accelereret lovgivningsafslutningsfase: det konstitutionelle udvalg (KU) registrerede betænkning KU39 om transparens i den politiske proces inden en afstemning den 16. juni, mens finansudvalget (FiU) registrerede FiU49 med evaluering af fem år af Riksgäldens gældsforvaltning. Oppositionspartier indgav ni nye forslag til oppositionsbeslutninger mod regeringspropositioner om skovforvaltning og ungdomskriminalitet, og socialdemokraten Eva Lindh skærpede Ostlänken-ansvarsangrebet på KD's infrastrukturminister Carlson. Det dominerende efterretningssignal: regeringen låser sit lovgivningsmæssige arvegods, mens oppositionen opbygger en målrettet valgkampsattackportefølje — og begge opererer inden for en komprimeret tidslinje på 132 dage.
+
+---
+
+### Tre beslutninger dette resumé støtter
+
+1. **Vurdering af lovgivningskalender**: KU39-debatten den 16. juni bekræfter, at regeringen kan vedtage transparensloven HD03258 inden sommerpausen — en styringsmæssig sejr for koalitionen før valget.
+2. **Vurdering af oppositionskoordinering**: De ni MJU/JuU-forslag indgivet i dag repræsenterer et koordineret partisvar — V med maksimale afvisningskrav, S med betinget accept, andre partier med målrettede ændringsforslag — som afslører den lovgivningsmæssige aritmetik inden udvalgets høringer.
+3. **Infrastrukturel sårbarhed**: Ostlänken-interpellationen (HD10463) har aktiveret en regional ansvarslighedskrise i Østergötland — et tæt på marginalt valgdistrikt — som vil forblive aktiv frem til KD's infrastrukturminister Carlsons svarfrist den 25. maj.
+
+---
+
+### 60-sekunders læsning
+
+- **KU39-transparens** (afstemning 16. juni): Regeringens HD03258-forslag om politisk finansieringstransparens er på rette spor — konsekvenser for alle partiers finansieringsgennemsigtighed inden valget.
+- **FiU49-gældevaluering**: Femårsevaluering af Riksgäldens drift registreret; Sveriges offentlige gæld (~34 % af BNP, EU's minimum) kontekstualiserer enhver finanspolitisk debat.
+- **Ni nye forslag**: Skovforvaltning (prop 242, fem MJU-forslag) og ungdomskriminalitet (prop 246, tre JuU-forslag) møder koordinerede oppositionsudfordringer. V kræver afvisning; S kræver 14-årsgrænsen, ikke 13.
+- **Ostlänken-interpellation (HD10463)**: S's Eva Lindh retter sig mod KD-minister Carlson om den aflyste Linköping-station — berører et arbejdsmarked på 500.000 personer og skaber regional varme i fire marginale valgkredse.
+- **Pesticidskat-interpellation (HD10462)**: S's Monica Haider retter sig mod finansminister Svantesson om beskatning af sundhedsdesinfektionsmidler — lav generel relevans men høj relevans for sundhedsfagforeninger.
+
+---
+
+### Vigtigste fremadrettede udløser
+
+**KU39-udvalgets høring (26. maj–4. juni)**: Transparensloven KU39 indleder udvalgsbehandling den 26. maj. Hvis et parti forsøger at ændre HD03258 til at dække digital politisk reklame (i øjeblikket undtaget fra forslaget), kan en koalitionskonflikt opstå mellem L (pro digital transparens) og SD (modstand mod reklameoplysniskrav). Hold øje med udvalgets flertalprotokol.
+
+---
+
+### Konfidensanalyse
+
+| Domæne | Konfidens | Grundlag |
+|--------|-----------|-------|
+| Lovgivningskalender (KU39/FiU49) | HØJ [A2] | Direkte betænkningsmetadata, udvalgskalender |
+| Oppositionsforslagsindhold | HØJ [B2] | Fuldtekst-hentning af HD024142; delsammenfattninger af øvrige |
+| Valgmæssig betydning | MIDDEL [B3] | Koalitionsaritmetik fra søsteranalyser |
+| Økonomisk kontekst | MIDDEL [A3] | IMF WEO apr-2026 (cachet fra søsteranalyser) |
+
+---
+
+### Mermaid-oversigt
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Konfidenz**: HOCH [Admiralty B2] | **Tage bis zur Wahl**: 132  
+**IWF-Provenienz**: WEO Apr-2026 | NGDP_RPCH_2026: 2,1 % | GGXWDG_NGDP: ~34 % | abgerufen: 2026-05-04
+
+---
+
+### KERNAUSSAGE
+
+Schwedens Riksdag am 4. Mai 2026 — 132 Tage vor der Wahl am 13. September — trat in eine beschleunigte Gesetzgebungsabschlussphase ein: Der Verfassungsausschuss (KU) registrierte das Gutachten KU39 zur Transparenz im politischen Prozess für eine Abstimmung am 16. Juni, während der Finanzausschuss (FiU) FiU49 registrierte, das fünf Jahre Riksgälden-Schuldenmanagement bewertet. Oppositionsparteien reichten neun neue Anträge gegen Regierungspropositionn zur Forstwirtschaft und Jugendkriminalität ein, und die Sozialdemokratin Eva Lindh verschärfte den Ostlänken-Verantwortlichkeitsangriff auf KD-Infrastrukturminister Carlson. Das dominierende Geheimdienstsignal: Die Regierung sichert ihr legislatives Erbe, während die Opposition ein gezieltes Vorwahlangriffs-Portfolio aufbaut — und beide agieren auf einer komprimierten 132-Tage-Zeitlinie.
+
+---
+
+### Drei durch diesen Bericht unterstützte Entscheidungen
+
+1. **Bewertung des Gesetzgebungskalenders**: Die KU39-Debatte am 16. Juni bestätigt, dass die Regierung das Transparenzgesetz HD03258 vor der Sommerpause verabschieden kann — ein Regierungserfolg für die Koalition vor der Wahl.
+2. **Bewertung der Oppositionskoordinierung**: Die heute eingereichten neun MJU/JuU-Anträge repräsentieren eine koordinierte Parteireaktion — V mit maximalen Ablehnungsforderungen, S mit bedingter Zustimmung, andere Parteien mit gezielten Änderungsanträgen — und enthüllen die legislarische Arithmetik vor den Ausschussanhörungen.
+3. **Infrastrukturelle Verwundbarkeit**: Die Ostlänken-Interpellation (HD10463) hat eine regionale Verantwortlichkeitskrise in Östergötland ausgelöst — ein Wahlkreis mit hoher Marginalmandat-Dichte — die bis zum Antworttermin von KD-Minister Carlson am 25. Mai aktiv bleibt.
+
+---
+
+### 60-Sekunden-Lektüre
+
+- **KU39-Transparenz** (Abstimmung 16. Juni): Regierungsvorschlag HD03258 zur Offenlegung der Parteienfinanzierung auf Kurs — Auswirkungen auf die Finanzierungstransparenz aller Parteien vor der Wahl.
+- **FiU49-Schuldenauswertung**: Fünfjahresbewertung des Riksgälden-Betriebs registriert; Schwedens Staatsverschuldung (~34 % des BIP, EU-Minimum) kontextualisiert jede haushaltspolitische Debatte.
+- **Neun neue Anträge**: Forstwirtschaft (Prop. 242, fünf MJU-Anträge) und Jugendkriminalität (Prop. 246, drei JuU-Anträge) stoßen auf koordinierte Oppositionsherausforderungen. V fordert vollständige Ablehnung; S fordert die 14-Jahres-Strafverfolgungsgrenze, nicht 13.
+- **Ostlänken-Interpellation (HD10463)**: S's Eva Lindh zielt auf KD-Minister Carlson wegen der abgesagten Linköping-Station — betrifft einen Arbeitsmarkt mit 500.000 Einwohnern und erzeugt regionale Spannung in vier Randwahlkreisen.
+- **Pestizid-Steuer-Interpellation (HD10462)**: S's Monica Haider zielt auf Finanzminister Svantesson wegen der Besteuerung von medizinischen Desinfektionsmitteln — geringe allgemeine Relevanz, aber hohe Relevanz für Gewerkschaften im Gesundheitswesen.
+
+---
+
+### Wichtigster vorausschauender Auslöser
+
+**KU39-Ausschussanhörung (26. Mai–4. Juni)**: Das Transparenzgesetz KU39 tritt am 26. Mai in die Ausschussbehandlung ein. Wenn eine Partei versucht, HD03258 auf digitale politische Werbung auszuweiten (derzeit aus dem Vorschlag ausgeschlossen), könnte ein Koalitionskonflikt zwischen L (für digitale Transparenz) und SD (gegen Werbetransparenzanforderungen) entstehen. Ausschuss-Mehrheitsprotokoll beobachten.
+
+---
+
+### Konfidenzanalyse
+
+| Bereich | Konfidenz | Grundlage |
+|--------|-----------|-------|
+| Gesetzgebungskalender (KU39/FiU49) | HOCH [A2] | Direkte Gutachtenmetadaten, Ausschusskalender |
+| Oppositionsantragsinhalte | HOCH [B2] | Volltext-Abruf von HD024142; Teilzusammenfassungen der anderen |
+| Wahlpolitische Bedeutung | MITTEL [B3] | Koalitionsarithmetik aus Schwesteranalysen |
+| Wirtschaftlicher Kontext | MITTEL [A3] | IWF WEO Apr-2026 (aus Schwesteranalysen gecacht) |
+
+---
+
+### Mermaid-Übersicht
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Confianza**: ALTA [Admiralty B2] | **Días para las elecciones**: 132  
+**Proveniencia FMI**: WEO abr-2026 | NGDP_RPCH_2026: 2,1 % | GGXWDG_NGDP: ~34 % | obtenido: 2026-05-04
+
+---
+
+### CONCLUSIÓN CLAVE
+
+El Riksdag sueco el 4 de mayo de 2026 — 132 días antes de las elecciones del 13 de septiembre — entró en una fase acelerada de cierre legislativo: la comisión constitucional (KU) registró el dictamen KU39 sobre transparencia del proceso político para una votación el 16 de junio, mientras que la comisión de finanzas (FiU) registró FiU49 que evalúa cinco años de gestión de la deuda del Riksgälden. Los partidos de oposición presentaron nueve nuevas mociones contra las proposiciones del gobierno sobre gestión forestal y delincuencia juvenil, y la socialdemócrata Eva Lindh intensificó el ataque de responsabilidad sobre Ostlänken contra el ministro de Infraestructuras del KD, Carlson. La señal de inteligencia dominante: el gobierno está consolidando su legado legislativo mientras la oposición construye un portafolio de ataques preelectorales dirigidos — y ambos operan en una línea temporal comprimida de 132 días.
+
+---
+
+### Tres decisiones que apoya este resumen
+
+1. **Evaluación del calendario legislativo**: El debate sobre KU39 el 16 de junio confirma que el gobierno puede aprobar el proyecto de ley de transparencia HD03258 antes del receso veraniego — una victoria de gobernanza para la coalición antes de las elecciones.
+2. **Evaluación de la coordinación de la oposición**: Las nueve mociones MJU/JuU presentadas hoy representan una respuesta partidaria coordinada — V con demandas de rechazo máximo, S con aceptación condicional, otros partidos con enmiendas específicas — revelando la aritmética legislativa antes de las audiencias de comisión.
+3. **Vulnerabilidad de infraestructura**: La interpelación de Ostlänken (HD10463) ha activado una crisis de responsabilidad regional en Östergötland — una circunscripción con alta densidad de escaños marginales — que permanecerá vigente hasta el plazo de respuesta del ministro KD Carlson el 25 de mayo.
+
+---
+
+### Lectura de 60 segundos
+
+- **Transparencia KU39** (votación 16 de junio): El proyecto de ley HD03258 del gobierno sobre divulgación de financiación política está en camino — implicaciones para la transparencia de financiación de todos los partidos antes de las elecciones.
+- **Evaluación de deuda FiU49**: Evaluación quinquenal del funcionamiento del Riksgälden registrada; la deuda pública sueca (~34 % del PIB, mínimo de la UE) contextualiza cualquier debate de política fiscal.
+- **Nueve nuevas mociones**: Gestión forestal (prop 242, cinco mociones MJU) y delincuencia juvenil (prop 246, tres mociones JuU) enfrentan desafíos coordinados de la oposición. V exige rechazo total; S exige el umbral de edad penal de 14 años, no 13.
+- **Interpelación Ostlänken (HD10463)**: Eva Lindh del S apunta al ministro KD Carlson por la estación de Linköping cancelada — afecta un mercado laboral de 500.000 personas y genera calor regional en cuatro escaños marginales.
+- **Interpelación sobre impuesto a pesticidas (HD10462)**: Monica Haider del S apunta al ministro de Finanzas Svantesson sobre la tributación de desinfectantes médicos — baja relevancia general pero alta relevancia para los sindicatos de salud.
+
+---
+
+### Principal desencadenante prospectivo
+
+**Audiencia de la comisión KU39 (26 de mayo–4 de junio)**: El proyecto de ley de transparencia KU39 entra en deliberación en comisión el 26 de mayo. Si algún partido intenta enmendar HD03258 para cubrir la publicidad política digital (actualmente excluida de la propuesta), podría surgir un conflicto de coalición entre L (a favor de la transparencia digital) y SD (reticente a las reglas de divulgación publicitaria). Vigilar el protocolo de mayoría de la comisión.
+
+---
+
+### Análisis de confianza
+
+| Dominio | Confianza | Base |
+|--------|-----------|-------|
+| Calendario legislativo (KU39/FiU49) | ALTA [A2] | Metadatos directos del dictamen, calendario de comisión |
+| Contenido de mociones de oposición | ALTA [B2] | Recuperación del texto completo de HD024142; resúmenes parciales de los demás |
+| Significado electoral | MEDIA [B3] | Aritmética de coalición de análisis hermanos |
+| Contexto económico | MEDIA [A3] | FMI WEO abr-2026 (en caché de análisis hermanos) |
+
+---
+
+### Visión general Mermaid
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Luotettavuus**: KORKEA [Admiralty B2] | **Päiviä vaaleihin**: 132  
+**IMF-provenanssi**: WEO huhti-2026 | NGDP_RPCH_2026: 2,1 % | GGXWDG_NGDP: ~34 % | haettu: 2026-05-04
+
+---
+
+### TIIVISTELMÄ
+
+Ruotsin riksdag 4. toukokuuta 2026 — 132 päivää ennen 13. syyskuuta pidettäviä vaaleja — siirtyi kiihdytettyyn lainsäädännön päätösvaiheeseen: perustuslakivaliokunta (KU) rekisteröi mietinnön KU39 poliittisen prosessin avoimuudesta 16. kesäkuuta pidettävää äänestystä varten, kun taas valtiovarainvaliokunta (FiU) rekisteröi FiU49:n, joka arvioi Riksgäldenin viiden vuoden velkahallintaa. Oppositiopuolueet jättivät yhdeksän uutta motioita hallituksen metsänhoito- ja nuorisorikollisuuspropositioita vastaan, ja sosiaalidemokraatti Eva Lindh terävöitti Ostlänken-vastuuhyökkäystä KD:n infrastruktuuriministeri Carlsonia vastaan. Hallitseva tiedustelusignaali: hallitus lukitsee lainsäädäntöperintönsä samalla kun oppositio rakentaa kohdennettua ennakkovaalikampanjahyökkäysportfoliota — molemmat toimivat tiivistetyn 132 päivän aikajanalla.
+
+---
+
+### Kolme päätöstä, joita tämä tietopaketti tukee
+
+1. **Lainsäädäntökalenterin arviointi**: KU39-debatti 16. kesäkuuta vahvistaa, että hallitus voi saada läpi avoimuuslain HD03258 ennen kesälomaa — koalitioon ennakkovaalivaltiotaito.
+2. **Opposition koordinoinnin arviointi**: Tänään jätetyt yhdeksän MJU/JuU-motiota edustavat koordinoitua puoluereaktiota — V maksimaalisia hylkäysvaatimuksia, S ehdollinen hyväksyntä, muut puolueet kohdennetut muutosehdotukset — paljastaa lainsäädäntöaritmetiikan ennen valiokuntakuulemisia.
+3. **Infrastruktuurihaavoittuvuus**: Ostlänken-interpellaatio (HD10463) on aktivoinut alueellisen vastuukriisin Östergötlandissa — korkea marginaalipaikkavaalipiirimäärä — joka pysyy aktiivisena KD:n infrastruktuuriministeri Carlsonin vastauksen määräaikaan 25. toukokuuta asti.
+
+---
+
+### 60 sekunnin lukeminen
+
+- **KU39-avoimuus** (äänestys 16. kesäkuuta): Hallituksen HD03258-ehdotus puoluerahoituksen avoimuudesta on oikealla tiellä — kaikkien puolueiden rahoituksen avoimuuteen vaikuttaminen ennen vaaleja.
+- **FiU49-velka-arviointi**: Riksgäldenin viisivuotinen toiminnan arviointi rekisteröity; Ruotsin julkinen velka (~34 % BKT:sta, EU:n vähimmäismäärä) kontekstualisoi kaikki finanssipoliittiset väittelyt.
+- **Yhdeksän uutta motiota**: Metsänhoito (prop 242, viisi MJU-motiota) ja nuorisorikollisuus (prop 246, kolme JuU-motiota) kohtaavat koordinoituja oppositiohaasteita. V vaatii hylkäämistä; S vaatii 14 vuoden ikärajaa, ei 13.
+- **Ostlänken-interpellaatio (HD10463)**: S:n Eva Lindh kohdistuu KD:n ministeriin Carlsoniin peruutetusta Linköpingin asemasta — vaikuttaa 500 000 hengen työmarkkina-alueeseen ja synnyttää alueellista kuumuutta neljässä marginaalivaalipiirisessä.
+- **Torjunta-ainesverotusinterpellaatio (HD10462)**: S:n Monica Haider kohdistuu valtiovarainministeri Svantessoniin terveydenhuollon desinfiointiaineverotuksesta — alhainen yleinen merkitys, mutta korkea relevanssi terveydenhuoltoliitoille.
+
+---
+
+### Tärkein ennakoiva laukaisin
+
+**KU39-valiokunnan kuuleminen (26. toukokuuta–4. kesäkuuta)**: Avoimuuslaki KU39 siirtyy valiokuntakäsittelyyn 26. toukokuuta. Jos jokin puolue yrittää muuttaa HD03258:aa kattamaan digitaalinen poliittinen mainonta (tällä hetkellä ehdotuksen ulkopuolella), voi L (digitaalisen avoimuuden puolesta) ja SD (vastustavat mainontailmoitusvaatimuksia) välille syntyä koalitioristiriita. Seuraa valiokunnan enemmistöpöytäkirjaa.
+
+---
+
+### Luotettavuusanalyysi
+
+| Alue | Luotettavuus | Perusta |
+|--------|-----------|-------|
+| Lainsäädäntökalenteri (KU39/FiU49) | KORKEA [A2] | Suora mietintömetadata, valiokuntakalenteri |
+| Opposition motiosisältö | KORKEA [B2] | Kokotekstihaku HD024142; muiden osittaistiivistelmät |
+| Vaalipoliittinen merkitys | KESKITASO [B3] | Koalitioaritmetiikka sisaranalyyseistä |
+| Taloudellinen konteksti | KESKITASO [A3] | IMF WEO huhti-2026 (välimuistissa sisaranalyyseistä) |
+
+---
+
+### Mermaid-yleiskatsaus
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **Confiance** : HAUTE [Admiralty B2] | **Jours avant les élections** : 132  
+**Provenance FMI** : WEO avr-2026 | NGDP_RPCH_2026 : 2,1 % | GGXWDG_NGDP : ~34 % | récupéré : 2026-05-04
+
+---
+
+### SYNTHÈSE
+
+Le Riksdag suédois le 4 mai 2026 — 132 jours avant les élections du 13 septembre — est entré dans une phase accélérée de clôture législative : la commission constitutionnelle (KU) a enregistré le rapport KU39 sur la transparence du processus politique pour un vote le 16 juin, tandis que la commission des finances (FiU) a enregistré FiU49 évaluant cinq ans de gestion de la dette par le Riksgälden. Les partis d'opposition ont déposé neuf nouvelles motions contre les propositions gouvernementales sur la gestion forestière et la délinquance juvénile, et la socialiste Eva Lindh a renforcé l'attaque de responsabilisation sur Ostlänken contre le ministre KD des Infrastructures Carlson. Le signal de renseignement dominant : le gouvernement consolide son héritage législatif tandis que l'opposition construit un portefeuille d'attaques pré-électorales ciblées — et les deux opèrent sur une chronologie compressée de 132 jours.
+
+---
+
+### Trois décisions soutenues par ce résumé
+
+1. **Évaluation du calendrier législatif** : Le débat sur KU39 le 16 juin confirme que le gouvernement peut faire adopter le projet de loi sur la transparence HD03258 avant la pause estivale — une victoire de gouvernance pour la coalition avant les élections.
+2. **Évaluation de la coordination de l'opposition** : Les neuf motions MJU/JuU déposées aujourd'hui représentent une réponse coordonnée des partis — V avec des demandes de rejet maximal, S avec acceptation conditionnelle, d'autres partis avec des amendements ciblés — révélant l'arithmétique législative avant les auditions en commission.
+3. **Vulnérabilité infrastructurelle** : L'interpellation sur Ostlänken (HD10463) a activé une crise de responsabilité régionale en Östergötland — une circonscription à haute densité de sièges marginaux — qui restera active jusqu'à l'échéance de réponse du ministre KD Carlson le 25 mai.
+
+---
+
+### Lecture en 60 secondes
+
+- **Transparence KU39** (vote le 16 juin) : Le projet de loi HD03258 du gouvernement sur la divulgation du financement politique est en bonne voie — implications pour la transparence du financement de tous les partis avant les élections.
+- **Évaluation de la dette FiU49** : Évaluation quinquennale du fonctionnement du Riksgälden enregistrée ; la dette publique suédoise (~34 % du PIB, minimum de l'UE) contextualise tout débat de politique budgétaire.
+- **Neuf nouvelles motions** : Gestion forestière (prop 242, cinq motions MJU) et délinquance juvénile (prop 246, trois motions JuU) font face à des oppositions coordonnées. V exige un rejet total ; S exige que le seuil d'âge pénal soit 14 ans et non 13.
+- **Interpellation Ostlänken (HD10463)** : Eva Lindh du S cible le ministre KD Carlson sur la station de Linköping annulée — affectant un bassin d'emploi de 500 000 personnes et générant de la chaleur régionale dans quatre sièges marginaux.
+- **Interpellation sur la taxe pesticides (HD10462)** : Monica Haider du S cible le ministre des Finances Svantesson sur la taxation des désinfectants médicaux — faible saillance générale mais haute pertinence pour les syndicats de santé.
+
+---
+
+### Principal déclencheur prospectif
+
+**Audition de la commission KU39 (26 mai–4 juin)** : Le projet de loi sur la transparence KU39 entre en délibération en commission le 26 mai. Si un parti tente d'amender HD03258 pour couvrir la publicité politique numérique (actuellement exclue de la proposition), un conflit de coalition pourrait émerger entre L (pour la transparence numérique) et SD (réfractaire aux règles de divulgation publicitaire). Surveiller le protocole de majorité en commission.
+
+---
+
+### Analyse de confiance
+
+| Domaine | Confiance | Base |
+|--------|-----------|-------|
+| Calendrier législatif (KU39/FiU49) | HAUTE [A2] | Métadonnées directes du rapport, calendrier de commission |
+| Contenu des motions d'opposition | HAUTE [B2] | Récupération du texte intégral de HD024142 ; résumés partiels des autres |
+| Signification électorale | MOYENNE [B3] | Arithmétique de coalition issues des analyses sœurs |
+| Contexte économique | MOYENNE [A3] | FMI WEO avr-2026 (en cache des analyses sœurs) |
+
+---
+
+### Vue d'ensemble Mermaid
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_he.md -->
+
+&#x200F;# סיכום מנהלים — ניתוח ערב, 4 במאי 2026
+
+**מחבר**: James Pether Sörling | **רמת ביטחון**: גבוהה [Admiralty B2] | **ימים לבחירות**: 132  
+**מקור נתוני קרן המטבע**: WEO אפריל 2026 | NGDP_RPCH_2026: 2.1% | GGXWDG_NGDP: ~34% | נשלף: 2026-05-04
+
+---
+
+### תמצית מנהלים
+
+הריקסדאג השוודי ב-4 במאי 2026 — 132 ימים לפני הבחירות ב-13 בספטמבר — נכנס לשלב סיום חקיקה מואץ: ועדת החוקה (KU) רשמה את דו"ח KU39 על שקיפות התהליך הפוליטי לקראת הצבעה ב-16 ביוני, בעוד ועדת האוצר (FiU) רשמה את FiU49 המעריך חמש שנות ניהול חוב של Riksgälden. מפלגות האופוזיציה הגישו תשעה הצעות חוק חדשות נגד הצעות החוק הממשלתיות בנושאי ניהול יערות ופשיעת נוער, ואיבה לינד מהסוציאל-דמוקרטים החריפה את מתקפת האחריות על Ostlänken נגד שר התשתיות של KD, קרלסון. האות המודיעיני הדומיננטי: הממשלה מבצרת את מורשתה החקיקתית בעוד האופוזיציה בונה תיק תקיפה מכוון לפני הבחירות — ושניהם פועלים בציר זמן דחוס של 132 ימים.
+
+---
+
+### שלוש החלטות שתדרוך זה תומך בהן
+
+1. **הערכת לוח הזמנים החקיקתי**: הדיון ב-KU39 ב-16 ביוני מאשר שהממשלה יכולה לאשר את חוק השקיפות HD03258 לפני פגרת הקיץ — ניצחון ממשלי לקואליציה לפני הבחירות.
+2. **הערכת תיאום האופוזיציה**: תשע הצעות MJU/JuU שהוגשו היום מייצגות תגובה מתואמת של מפלגות — V עם דרישות דחייה מקסימליות, S עם הסכמה מותנית, מפלגות אחרות עם תיקונים ממוקדים — חושפות את האריתמטיקה החקיקתית לפני שימועי הוועדות.
+3. **פגיעות תשתיתית**: בקשת ההסבר על Ostlänken (HD10463) הפעילה משבר אחריות אזורי בAustergötland — מחוז בחירות עם צפיפות גבוהה של מושבים שוליים — שיישאר פעיל עד לתאריך האחרון לתשובת שר KD קרלסון ב-25 במאי.
+
+---
+
+### קריאת 60 שניות
+
+- **שקיפות KU39** (הצבעה 16 ביוני): הצעת החוק HD03258 של הממשלה לגילוי מימון פוליטי במסלול — השלכות על שקיפות המימון של כל המפלגות לפני הבחירות.
+- **הערכת חוב FiU49**: נרשמה הערכה חמש-שנתית של פעילות Riksgälden; החוב הציבורי השוודי (~34% מהתמ"ג, מינימום האיחוד האירופי) מציב בהקשר כל דיון במדיניות פיסקלית.
+- **תשע הצעות חדשות**: ניהול יערות (prop 242, חמש הצעות MJU) ופשיעת נוער (prop 246, שלוש הצעות JuU) מתמודדות עם אתגרים מתואמים של האופוזיציה. V דורשת דחייה מוחלטת; S דורשת סף גיל פלילי של 14 ולא 13.
+- **בקשת הסבר Ostlänken (HD10463)**: איבה לינד מ-S מכוונת נגד שר KD קרלסון על תחנת לינשופינג שבוטלה — משפיעה על שוק עבודה של 500,000 איש ויוצרת חום אזורי בארבעה מושבים שוליים.
+- **בקשת הסבר מס חומרי הדברה (HD10462)**: מוניקה היידר מ-S מכוונת נגד שר האוצר סוואנטסון על מיסוי חומרי חיטוי רפואיים — רלוונטיות כללית נמוכה אך רלוונטיות גבוהה לאיגודי הבריאות.
+
+---
+
+### הגורם המעורר העיקרי לקראת
+
+**שימוע ועדת KU39 (26 במאי–4 ביוני)**: חוק השקיפות KU39 נכנס לדיוני ועדה ב-26 במאי. אם מפלגה כלשהי תנסה לתקן את HD03258 כדי לכסות פרסום פוליטי דיגיטלי (שכיום מוחרג מהצעה), עלול להתפתח קונפליקט קואליציוני בין L (בעד שקיפות דיגיטלית) ל-SD (מתנגד לכללי גילוי פרסומי). לעקוב אחר פרוטוקול רוב הוועדה.
+
+---
+
+### ניתוח רמת ביטחון
+
+| תחום | רמת ביטחון | בסיס |
+|--------|-----------|-------|
+| לוח הזמנים החקיקתי (KU39/FiU49) | גבוהה [A2] | מטא-נתוני דו"ח ישירים, לוח ועדה |
+| תוכן הצעות האופוזיציה | גבוהה [B2] | אחזור טקסט מלא של HD024142; תקצירים חלקיים של האחרים |
+| משמעות בחירותית | בינונית [B3] | אריתמטיקת קואליציה מניתוחים אחים |
+| הקשר כלכלי | בינונית [A3] | IMF WEO אפריל 2026 (שמור ממטמון מניתוחים אחים) |
+
+---
+
+### סקירה כללית Mermaid
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling | **信頼度**: 高 [Admiralty B2] | **選挙まで**: 132日  
+**IMF出典**: WEO 2026年4月 | NGDP_RPCH_2026: 2.1% | GGXWDG_NGDP: ~34% | 取得日: 2026-05-04
+
+---
+
+### 要旨
+
+2026年5月4日のスウェーデン国会（リクスダーグ）は——9月13日の選挙まで132日——立法の加速的終了フェーズに入った：憲法委員会（KU）は政治的プロセスの透明性に関する報告書KU39を6月16日の採決に向けて登録し、財務委員会（FiU）はリクスガルデンの5年間の債務管理を評価するFiU49を登録した。野党は森林管理および青少年犯罪に関する政府提案に対して9件の新しい動議を提出し、社会民主党のエーヴァ・リンドがKD党インフラ担当大臣カールソンへのオストレンケン説明責任攻撃を強化した。支配的な情報シグナル：政府は立法的遺産を固めており、野党は選挙前の標的を絞った攻撃ポートフォリオを構築している——両者とも132日という圧縮されたタイムラインで動いている。
+
+---
+
+### このブリーフが支援する3つの意思決定
+
+1. **立法カレンダー評価**：6月16日のKU39討議により、政府は夏季休会前に透明性法案HD03258を通過させられることが確認される——連立政権にとっての選挙前ガバナンスの勝利。
+2. **野党調整評価**：本日提出された9件のMJU/JuU動議は協調的な政党対応を示す——Vは最大限の否決要求、Sは条件付き受容、他党は標的を絞った修正案——委員会聴聞前に立法的算術を明らかにする。
+3. **インフラの脆弱性**：Ostlänken質問状（HD10463）が東ウェーテルゴータランドで地域的説明責任危機を活性化した——限界議席密度が高い選挙区——KD大臣カールソンの5月25日期限まで継続。
+
+---
+
+### 60秒読み
+
+- **KU39透明性**（6月16日採決）：政府のHD03258政治資金開示法案が軌道通り——選挙前の全政党の資金透明性への影響。
+- **FiU49債務評価**：リクスガルデン運営の5年間評価が登録；スウェーデンの公的債務（GDP比約34%、EU最低）がすべての財政政策議論を文脈化する。
+- **9件の新動議**：森林管理（prop 242、MJU動議5件）と青少年犯罪（prop 246、JuU動議3件）が協調野党の挑戦に直面。Vは完全否決を要求；Sは刑事責任年齢14歳（13ではなく）を要求。
+- **Ostlänken質問状（HD10463）**：SのエーヴァリンドがKD大臣カールソンに対し中止されたリンシェーピング駅をめぐって標的——50万人規模の労働市場に影響し、4つの限界議席で地域的緊張を生む。
+- **殺虫剤税質問状（HD10462）**：SのモニカハイダーがSvantesson財務大臣に対し医療用消毒液課税をめぐって標的——一般的な顕著性は低いが医療労組への関連性は高い。
+
+---
+
+### 主要な先行シグナル
+
+**KU39委員会聴聞（5月26日–6月4日）**：透明性法案KU39が5月26日に委員会審議に入る。L（デジタル透明性を支持）とSD（広告開示規則に反対）との間でHD03258をデジタル政治広告をカバーするよう修正しようとする試みがあれば、連立の対立が生じる可能性がある。委員会の多数派プロトコルを監視。
+
+---
+
+### 信頼度評価
+
+| 領域 | 信頼度 | 根拠 |
+|--------|-----------|-------|
+| 立法カレンダー（KU39/FiU49） | 高 [A2] | 報告書メタデータの直接確認、委員会カレンダー |
+| 野党動議の内容 | 高 [B2] | HD024142の全文取得；他のものの部分的要約 |
+| 選挙的重要性 | 中 [B3] | 姉妹分析からの連立算術 |
+| 経済的文脈 | 中 [A3] | IMF WEO 2026年4月（姉妹分析からキャッシュ済み） |
+
+---
+
+### Mermaid概要
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **신뢰도**: 높음 [Admiralty B2] | **선거까지**: 132일  
+**IMF 출처**: WEO 2026년 4월 | NGDP_RPCH_2026: 2.1% | GGXWDG_NGDP: ~34% | 수집일: 2026-05-04
+
+---
+
+### 핵심 요약
+
+2026년 5월 4일 스웨덴 의회(릭스다그)——9월 13일 선거 132일 전——는 가속화된 입법 마무리 단계에 진입했다: 헌법위원회(KU)가 정치 과정 투명성에 관한 보고서 KU39를 6월 16일 투표를 위해 등록한 반면, 재정위원회(FiU)는 릭스갈덴의 5년간 부채 관리를 평가하는 FiU49를 등록했다. 야당들은 산림 관리와 청소년 범죄에 관한 정부 제안에 반대하는 9개의 새로운 동의를 제출했고, 사회민주당의 에바 린드가 KD 인프라장관 칼슨에 대한 Ostlänken 책임 공격을 강화했다. 지배적인 정보 신호: 정부는 입법적 유산을 굳히고 있으며 야당은 선거 전 표적화된 공격 포트폴리오를 구축하고 있다——양측 모두 132일이라는 압축된 타임라인에서 작동한다.
+
+---
+
+### 이 보고서가 지원하는 세 가지 결정
+
+1. **입법 일정 평가**: 6월 16일 KU39 토론은 정부가 여름 휴회 전에 투명성 법안 HD03258을 통과시킬 수 있음을 확인——선거 전 연립의 거버넌스 승리.
+2. **야당 조정 평가**: 오늘 제출된 9개의 MJU/JuU 동의는 조율된 정당 대응을 나타낸다——V는 최대 거부 요구, S는 조건부 수용, 다른 정당은 표적화된 수정안——위원회 청문 전 입법 산술을 드러낸다.
+3. **인프라 취약성**: Ostlänken 질문(HD10463)이 Östergötland에서 지역 책임 위기를 활성화했다——한계 의석 밀도가 높은 선거구——5월 25일 KD 장관 칼슨의 답변 마감까지 지속된다.
+
+---
+
+### 60초 요약
+
+- **KU39 투명성** (6월 16일 투표): 정부의 HD03258 정치 자금 공개 법안이 순조롭게 진행 중——선거 전 모든 정당의 자금 투명성에 대한 영향.
+- **FiU49 부채 평가**: 릭스갈덴 운영 5년 평가 등록; 스웨덴의 공공 부채(~GDP의 34%, EU 최저)가 모든 재정 정책 토론을 맥락화.
+- **9개의 새로운 동의**: 산림 관리 (prop 242, 5개 MJU 동의)와 청소년 범죄 (prop 246, 3개 JuU 동의)가 야당의 조율된 도전에 직면. V는 완전 거부 요구; S는 14세 기준 요구(13세 아닌).
+- **Ostlänken 질문 (HD10463)**: S의 에바 린드가 취소된 린셰핑 역을 놓고 KD 장관 칼슨을 표적——50만 명 노동 시장 영향, 4개 한계 의석에서 지역 갈등 촉발.
+- **살충제 세금 질문 (HD10462)**: S의 모니카 하이더가 의료 소독제 과세를 놓고 스반테손 재무장관을 표적——일반적 현저성은 낮지만 의료 노조와의 관련성은 높음.
+
+---
+
+### 주요 선행 트리거
+
+**KU39 위원회 청문 (5월 26일–6월 4일)**: 투명성 법안 KU39가 5월 26일 위원회 심의에 들어간다. 어떤 정당이 디지털 정치 광고를 포함하도록 HD03258을 수정하려 할 경우(현재 제안에서 제외), L(디지털 투명성 지지)과 SD(광고 공개 규칙에 반대) 사이에 연립 갈등이 발생할 수 있다. 위원회 다수결 의정서 모니터링.
+
+---
+
+### 신뢰도 평가
+
+| 영역 | 신뢰도 | 근거 |
+|--------|-----------|-------|
+| 입법 일정 (KU39/FiU49) | 높음 [A2] | 보고서 메타데이터 직접 확인, 위원회 일정 |
+| 야당 동의 내용 | 높음 [B2] | HD024142 전문 수집; 다른 것들의 부분 요약 |
+| 선거적 중요성 | 중간 [B3] | 자매 분석의 연립 산술 |
+| 경제적 맥락 | 중간 [A3] | IMF WEO 2026년 4월 (자매 분석에서 캐시됨) |
+
+---
+
+### Mermaid 개요
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Betrouwbaarheid**: HOOG [Admiralty B2] | **Dagen tot de verkiezingen**: 132  
+**IMF-proveniëntie**: WEO apr-2026 | NGDP_RPCH_2026: 2,1 % | GGXWDG_NGDP: ~34 % | opgehaald: 2026-05-04
+
+---
+
+### KERNBOODSCHAP
+
+De Zweedse Riksdag op 4 mei 2026 — 132 dagen voor de verkiezingen van 13 september — trad in een versnelde wetgevingsafrondingsfase: de constitutionele commissie (KU) registreerde rapport KU39 over transparantie van het politieke proces voor een stemming op 16 juni, terwijl de financiële commissie (FiU) FiU49 registreerde ter evaluatie van vijf jaar schuldbeheer door het Riksgälden. Oppositiepartijen dienden negen nieuwe moties in tegen regeringsproposities over bosbeheer en jeugdcriminaliteit, en sociaaldemocrate Eva Lindh verscherpte de Ostlänken-verantwoordelijkheidsaanval op KD-infrastructuurminister Carlson. Het dominante inlichtingensignaal: de regering legt haar wetgevend erfgoed vast terwijl de oppositie een gericht voorverkiezingsaanvalsportfolio opbouwt — en beide opereren op een gecomprimeerde tijdlijn van 132 dagen.
+
+---
+
+### Drie beslissingen die dit rapport ondersteunt
+
+1. **Beoordeling van de wetgevingsagenda**: Het debat over KU39 op 16 juni bevestigt dat de regering de transparantiewet HD03258 vóór de zomerpauze kan aannemen — een bestuurssucces voor de coalitie vóór de verkiezingen.
+2. **Beoordeling van oppositiecoördinatie**: De negen MJU/JuU-moties die vandaag zijn ingediend vertegenwoordigen een gecoördineerde partijreactie — V met maximale afwijzingseisen, S met voorwaardelijke instemming, andere partijen met gerichte amendementen — en onthullen de wetgevingsaritmetiek vóór de commissiehearings.
+3. **Infrastructurele kwetsbaarheid**: De Ostlänken-interpellatie (HD10463) heeft een regionale verantwoordelijkheidscrisis in Östergötland geactiveerd — een kiesdistrict met een hoge dichtheid aan marginale zetels — die actief blijft tot de antwoordtermijn van KD-minister Carlson op 25 mei.
+
+---
+
+### 60-seconden lezing
+
+- **KU39-transparantie** (stemming 16 juni): Regeringsvoorstel HD03258 voor openbaarmaking van partijfinanciering ligt op koers — gevolgen voor de financieringstransparantie van alle partijen vóór de verkiezingen.
+- **FiU49-schuldevaluatie**: Vijfjarige evaluatie van de Riksgälden-werking geregistreerd; Zweden's staatsschuld (~34% van het BBP, EU-minimum) contextualiseert elk begrotingsbeleidsdebat.
+- **Negen nieuwe moties**: Bosbeheer (prop 242, vijf MJU-moties) en jeugdcriminaliteit (prop 246, drie JuU-moties) staan voor gecoördineerde oppositie-uitdagingen. V eist volledige afwijzing; S eist een strafrechtelijke leeftijdsgrens van 14, niet 13.
+- **Ostlänken-interpellatie (HD10463)**: Eva Lindh van S richt zich op KD-minister Carlson over het geannuleerde Linköping-station — treft een arbeidsmarkt van 500.000 mensen en veroorzaakt regionale spanning in vier marginale zetels.
+- **Pesticide-belasting-interpellatie (HD10462)**: Monica Haider van S richt zich op minister van Financiën Svantesson over de belasting van medische desinfectiemiddelen — lage algemene relevantie maar hoge relevantie voor gezondheidsvakbonden.
+
+---
+
+### Belangrijkste vooruitblikkende trigger
+
+**KU39-commissiehearing (26 mei–4 juni)**: Het transparantiewet KU39 treedt op 26 mei in commissiedeliberatie. Als een partij probeert HD03258 te amenderen om digitale politieke reclame te bestrijken (momenteel uitgesloten van het voorstel), kan er een coalitieconflict ontstaan tussen L (voor digitale transparantie) en SD (weerstands tegen reclamedivulgatieregels). Commissiemeerderheidsprotocol volgen.
+
+---
+
+### Betrouwbaarheidsanalyse
+
+| Domein | Betrouwbaarheid | Basis |
+|--------|-----------|-------|
+| Wetgevingskalender (KU39/FiU49) | HOOG [A2] | Directe rapportmetadata, commissiekalender |
+| Inhoud oppositiemoties | HOOG [B2] | Volledige tekst-ophaling van HD024142; gedeeltelijke samenvattingen van andere |
+| Electorale betekenis | GEMIDDELD [B3] | Coalitiearitmetiek uit zusteranalyses |
+| Economische context | GEMIDDELD [A3] | IMF WEO apr-2026 (uit zusteranalyses gecacht) |
+
+---
+
+### Mermaid-overzicht
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Konfidens**: HØY [Admiralty B2] | **Dager til valget**: 132  
+**IMF-proveniens**: WEO apr-2026 | NGDP_RPCH_2026: 2,1 % | GGXWDG_NGDP: ~34 % | hentet: 2026-05-04
+
+---
+
+### KONKLUSJON
+
+Sveriges Riksdag 4. mai 2026 — 132 dager før valget 13. september — gikk inn i en akselerert lovgivningsavslutningsfase: den konstitusjonelle komiteen (KU) registrerte betenkningsinnstillingen KU39 om transparens i den politiske prosessen for en 16. juni-avstemning, mens finanskomiteen (FiU) registrerte FiU49 som evaluerer fem år med Riksgäldens gjeldsforvaltning. Opposisjonspartier leverte inn ni nye motioner mot regjeringens proposisjoner om skogforvaltning og ungdomskriminalitet, og Sosialdemokraten Eva Lindh skjerpet Ostlänken-ansvarsangrepet mot KD-infrastrukturminister Carlson. Det dominerende etterretningssignalet: regjeringen låser inn sin lovgivningsarv mens opposisjonen bygger en målrettet forhåndsvalgangrepmappe — og begge opererer på en komprimert 132-dagers tidslinje.
+
+---
+
+### Tre beslutninger dette sammendraget støtter
+
+1. **Vurdering av lovgivningskalender**: KU39-debatten 16. juni bekrefter at regjeringen kan vedta transparensloven HD03258 før sommerferien — en forvaltningsgevinst for koalisjonen før valget.
+2. **Vurdering av opposisjonskoordinering**: De ni MJU/JuU-motionene levert inn i dag representerer et koordinert partisvar — V med maksimale avvisningskrav, S med betinget aksept, andre partier med målrettede endringsforslag — som avslører lovgivningsaritmetikken før komitéhøringene.
+3. **Infrastrukturell sårbarhet**: Ostlänken-interpellasjonen (HD10463) har aktivert en regional ansvarslighetskrise i Östergötland — et valgdistrikt med høy andel marginalseter — som vil forbli aktiv frem til KD-minister Carlsons svarfrist 25. mai.
+
+---
+
+### 60-sekunders lesning
+
+- **KU39-transparens** (avstemning 16. juni): Regjeringens HD03258-forslag om partifinansieringens åpenhet er på rett spor — konsekvenser for alle partiers finansieringstransparens før valget.
+- **FiU49-gjeldsevaluering**: Femårsevaluering av Riksgäldens drift registrert; Sveriges offentlige gjeld (~34 % av BNP, EUs minimum) kontekstualiserer enhver finanspolitisk debatt.
+- **Ni nye motioner**: Skogsskjøtsel (prop 242, fem MJU-motioner) og ungdomskriminalitet (prop 246, tre JuU-motioner) møter koordinerte opposisjonsutfordringer. V krever avvisning; S krever 14-årsgrensen, ikke 13.
+- **Ostlänken-interpellasjonen (HD10463)**: S' Eva Lindh retter seg mot KD-minister Carlson om den avlyste Linköping-stasjonen — påvirker et arbeidsmarked med 500 000 innbyggere og skaper regional varme i fire marginalseter.
+- **Pesticisskatt-interpellasjonen (HD10462)**: S' Monica Haider retter seg mot finansminister Svantesson om beskatning av helsemessige desinfeksjonsmidler — lav generell relevans men høy relevans for helsearbeiderfagforeningene.
+
+---
+
+### Viktigste fremtidige utløser
+
+**KU39-komitéhøringen (26. mai–4. juni)**: Transparensloven KU39 går inn i komitébehandling 26. mai. Hvis et parti forsøker å endre HD03258 til å dekke digital politisk reklame (for øyeblikket unntatt fra forslaget), kan en koalisjonskonflikt oppstå mellom L (for digital transparens) og SD (motstand mot krav om reklameopplysning). Følg med på komiteens flertallsprotokoll.
+
+---
+
+### Konfidensanalyse
+
+| Domene | Konfidens | Grunnlag |
+|--------|-----------|-------|
+| Lovgivningskalender (KU39/FiU49) | HØY [A2] | Direkte betenkningsmetadata, komitékalender |
+| Opposisjonsmosjonsinnhold | HØY [B2] | Fulltext-henting av HD024142; delsammendrag av øvrige |
+| Valgmessig betydning | MIDDELS [B3] | Koalisjonsaritmetikk fra søsteranalyser |
+| Økonomisk kontekst | MIDDELS [A3] | IMF WEO apr-2026 (cachet fra søsteranalyser) |
+
+---
+
+### Mermaid-oversikt
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Konfidens**: HÖG [Admiralty B2] | **Dagar till valet**: 132  
+**IMF-proveniens**: WEO apr-2026 | NGDP_RPCH_2026: 2,1 % | GGXWDG_NGDP: ~34 % | hämtad: 2026-05-04
+
+---
+
+### SLUTSATS I KORTHET
+
+Sveriges riksdag den 4 maj 2026 — 132 dagar före valet den 13 september — gick in i en accelererad lagstiftningsavslutningsfas: konstitutionsutskottet (KU) registrerade betänkande KU39 om transparens i den politiska processen inför en omröstning den 16 juni, medan finansutskottet (FiU) registrerade FiU49 som utvärderar fem år av Riksgäldens skuldförvaltning. Oppositionspartier lämnade in nio nya motioner mot regeringspropositioner om skogsskötsel och ungdomsbrottslighet, och socialdemokraten Eva Lindh skärpte Ostlänken-ansvarskravet mot KD:s infrastrukturminister Carlson. Den dominerande underrättelsesignalen: regeringen låser in sitt lagstiftningsarv medan oppositionen bygger upp en riktad valkampanjsattackportfölj — och båda agerar inom en komprimerad tidslinje på 132 dagar.
+
+---
+
+### Tre beslut som detta underlag stöder
+
+1. **Bedömning av lagstiftningskalender**: KU39-debatten den 16 juni bekräftar att regeringen kan driva igenom transparenslagen HD03258 före sommaruppehållet — en förvaltningsseger för koalitionen inför valet.
+2. **Bedömning av oppositionssamordning**: De nio MJU/JuU-motioner som lämnades in i dag representerar ett samordnat partirespons — V med maximala avslagskrav, S med villkorligt godkännande, övriga partier med riktade ändringsförslag — vilket avslöjar den lagstiftningsaritmetiska bilden inför utskottshearingarna.
+3. **Infrastrukturell sårbarhet**: Ostlänken-interpellationen (HD10463) har aktiverat en regional ansvarskris i Östergötland — ett valkrets med hög marginalmandat-densitet — som förblir levande till KD:s infrastrukturminister Carlsons svarsfrist den 25 maj.
+
+---
+
+### 60-sekundersinformation
+
+- **KU39-transparens** (omröstning 16 juni): Regeringens HD03258-förslag om redovisning av partifinansiering är på rätt spår — konsekvenser för alla partiers finansieringstransparens inför valet.
+- **FiU49-skuldutvärdering**: Femårsutvärdering av Riksgäldens verksamhet registrerad; Sveriges statsskuld (~34 % av BNP, EU:s lägsta) kontextualiserar alla fiskalpolitiska debatter.
+- **Nio nya motioner**: Skogsbruk (prop 242, fem MJU-motioner) och ungdomsbrottslighet (prop 246, tre JuU-motioner) möter samordnat oppositionsutmaningar. V kräver avslag; S kräver 14-årsgränsen, inte 13.
+- **Ostlänken-interpellation (HD10463)**: S:s Eva Lindh riktar in sig på KD:s minister Carlson om det inställda Linköpings-stoppet — påverkar en arbetsmarknadsregion med 500 000 invånare och skapar regional värme i fyra marginalvalkretsar.
+- **Bekämpningsmedels-skatteinterpellation (HD10462)**: S:s Monica Haider riktar in sig på finansminister Svantesson om skatteregler för sjukvårdsdesinfektionsmedel — låg allmän saliens men hög relevans för sjukvårdsfacken.
+
+---
+
+### Viktigaste framåtblickande utlösare
+
+**KU39-utskottshearing (26 maj–4 juni)**: Transparenslagen KU39 inleder utskottsbehandling den 26 maj. Om något parti försöker ändra HD03258 för att täcka digital politisk reklam (för närvarande undantagen från förslaget), kan en koalitionskonflikt uppstå mellan L (för digital transparens) och SD (motståndare till krav på reklamredovisning). Bevaka utskottets majoritetsprotokoll.
+
+---
+
+### Konfidensanalys
+
+| Domän | Konfidens | Grund |
+|--------|-----------|-------|
+| Lagstiftningskalender (KU39/FiU49) | HÖG [A2] | Direkt betänkandemetadata, utskottskalender |
+| Oppositionsmotionernas innehåll | HÖG [B2] | Fulltext-hämtning av HD024142; delsammanfattningar av övriga |
+| Valmässig betydelse | MEDEL [B3] | Koalitionsaritmetik från systerstudier |
+| Ekonomisk kontext | MEDEL [A3] | IMF WEO apr-2026 (cachad från systerstudier) |
+
+---
+
+### Mermaid-översikt
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling | **置信度**：高 [Admiralty B2] | **距离选举**：132天  
+**IMF数据来源**：WEO 2026年4月 | NGDP_RPCH_2026: 2.1% | GGXWDG_NGDP: ~34% | 获取日期：2026-05-04
+
+---
+
+### 核心结论
+
+2026年5月4日，瑞典议会（议会）——距9月13日选举132天——进入立法加速收尾阶段：宪法委员会（KU）为6月16日的投票登记了关于政治过程透明度的报告KU39，而财务委员会（FiU）登记了FiU49，评估Riksgälden五年的债务管理工作。反对党提交了九项反对政府关于森林管理和青少年犯罪提案的新动议，社民党的伊娃·林德加强了对KD基础设施部长卡尔松在奥斯特兰肯铁路问题上的问责攻势。主要情报信号：政府正在巩固其立法遗产，而反对党正在构建精准的选前攻击组合——双方都在132天的紧张时间表下运作。
+
+---
+
+### 本简报支持的三项决策
+
+1. **立法日程评估**：6月16日的KU39辩论确认政府可在夏季休会前通过透明度法案HD03258——联合政府选前治理的胜利。
+2. **反对党协调评估**：今日提交的九项MJU/JuU动议代表协调一致的政党回应——V提出最大限度否决要求，S附条件接受，其他政党提出针对性修正案——在委员会听证前揭示立法格局。
+3. **基础设施脆弱性**：Ostlänken质询（HD10463）在Östergötland激活了地区问责危机——边缘席位密集的选区——将持续到KD部长卡尔松5月25日的答复截止日期。
+
+---
+
+### 60秒速览
+
+- **KU39透明度**（6月16日投票）：政府的HD03258政治资金披露法案进展顺利——对选前所有政党资金透明度的影响。
+- **FiU49债务评估**：Riksgälden五年运营评估已登记；瑞典公共债务（约占GDP的34%，欧盟最低）为任何财政政策辩论提供背景。
+- **九项新动议**：森林管理（prop 242，五项MJU动议）和青少年犯罪（prop 246，三项JuU动议）面临反对党的协调挑战。V要求彻底否决；S要求刑事责任年龄为14岁而非13岁。
+- **Ostlänken质询（HD10463）**：S党的伊娃·林德就取消的林雪平车站质询KD部长卡尔松——影响50万人的就业市场，在四个边缘席位产生地区热度。
+- **杀虫剂税质询（HD10462）**：S党的莫妮卡·海德尔就医疗消毒剂税收问题质询财政部长斯万特松——总体显著性低，但对卫生工会的关联性高。
+
+---
+
+### 最重要的前瞻性触发因素
+
+**KU39委员会听证（5月26日–6月4日）**：透明度法案KU39于5月26日进入委员会审议。如果某党试图修改HD03258以覆盖数字政治广告（目前被排除在提案之外），L（支持数字透明度）与SD（抵制广告披露规定）之间可能出现联合政府冲突。关注委员会多数派议事录。
+
+---
+
+### 置信度评估
+
+| 领域 | 置信度 | 依据 |
+|--------|-----------|-------|
+| 立法日程（KU39/FiU49） | 高 [A2] | 直接报告元数据、委员会日历 |
+| 反对党动议内容 | 高 [B2] | HD024142全文获取；其他文件的部分摘要 |
+| 选举意义 | 中 [B3] | 来自同类分析的联合算术 |
+| 经济背景 | 中 [A3] | IMF WEO 2026年4月（从同类分析缓存） |
+
+---
+
+### Mermaid概览
+
+```mermaid
+graph LR
+    style KU39 fill:#1a1e3d,color:#00d9ff
+    style FiU49 fill:#1a1e3d,color:#00d9ff
+    style V_motions fill:#1a1e3d,color:#cc0000
+    style S_motions fill:#1a1e3d,color:#ff6666
+    style Ostlanken fill:#0a0e27,color:#ff006e
+    style Election fill:#0a0e27,color:#ffbe0b
+
+    KU39["KU39: Transparency betänkande\nJune 16 vote"] --> Election["September 13 Election\n132 days"]
+    FiU49["FiU49: Debt evaluation 2021–25\nFiscal legacy review"] --> Election
+    V_motions["V: Reject forest mgmt + youth crime\nHD024141, HD024142"] --> Election
+    S_motions["S: 14yr threshold, not 13\nHD024142, HD10463 Ostlänken"] --> Election
+    Ostlanken["Ostlänken interpellation\nHD10463 → Carlson deadline May 25"] --> Election
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2580,6 +3494,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

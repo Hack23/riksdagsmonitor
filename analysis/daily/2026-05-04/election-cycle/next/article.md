@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: election-cycle/next
 slug: 2026-05-04-election-cycle/next
 source_folder: analysis/daily/2026-05-04/election-cycle/next
-generated_at: 2026-05-22T13:53:53.770Z
+generated_at: 2026-05-23T08:06:00.461Z
 language: en
 layout: article
 ---
@@ -90,6 +90,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Comparative Context](#rm-comparative-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Confidence Calibration](#rm-confidence-calibration) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Forecast](#rm-electoral-forecast) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Forward Look](#rm-forward-look) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Institutional Constraints](#rm-institutional-constraints) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [International Context](#rm-international-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -883,6 +896,893 @@ Forecasting an election 4+ years out is inherently uncertain. This analysis proj
 
 **The defining 2030 question**: Will Sweden normalise a right-wing government with SD in cabinet (as Finland, Italy, Austria have done) or will it find a new centrist formula?
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_ar.md -->
+
+&#x200F;# دورة الانتخابات السويدية القادمة (2026–2030): تفويض التحول
+
+**المؤلف**: James Pether Sörling
+**التاريخ**: 2026-05-04
+**التصنيف**: عام — المادة 9(2)(ه)(و) من اللائحة العامة لحماية البيانات
+**عمق التحليل**: شامل (2.5× Tier-C دورة انتخابية)
+**مستوى الثقة**: متوسط [Admiralty C3]
+
+---
+
+### الخلاصة التنفيذية
+
+ستتشكل الفترة الانتدابية 2026–2030 بفعل أربع قوى هيكلية عملاقة تتجاوز نتائج الانتخابات: التزام الناتو الملزم بالإنفاق الدفاعي بنسبة 2.4% من الناتج المحلي الإجمالي، وقرار بناء محطات الطاقة النووية (ضرورة فرضتها حسابات الطاقة)، وأزمة الإسكان (عجز متراكم)، والشيخوخة الديموغرافية (ارتفاع الطلب على رعاية المسنين بنسبة 18% بحلول عام 2030). السؤال السياسي الحاسم ليس أي حكومة ستتشكل، بل هل ستحل مسألة انضمام SD إلى الحكومة — وهي أهم سؤال دستوري في السويد خلال هذا العقد. يتوقع صندوق النقد الدولي (آفاق الاقتصاد العالمي أبريل 2026) نموًا اقتصاديًا بنسبة 2.4% عام 2026 مع تعافٍ مستدام حتى 2030.
+
+### القرارات التي يدعمها هذا التقرير
+
+1. **التخطيط لسيناريوهات تشكيل الحكومة**: A1/A2 (Tidö) مقابل B1/B2/B3 (تكتل S) — ما السياسات والفاعلون والمخاطر المترتبة؟
+2. **التحضير لقرار الطاقة النووية**: اختيار الموقع، قرار الاستثمار، الجدول الزمني — ماذا يجب أن يحدث ومتى؟
+3. **تصميم سياسة الإسكان**: الاستثمار الحكومي مقابل تنشيط السوق — ما الأدوات وبأي حجم؟
+4. **تقييم انضمام SD إلى الحكومة**: الشروط والضمانات والمخاطر وتداعيات الصمود الديمقراطي.
+5. **التموضع الانتخابي لعام 2030**: ما مؤشرات أداء الانتداب التي ستحدد انتخابات 2030؟
+
+### قراءة استخباراتية في 60 ثانية
+
+- **تشكيل الحكومة (T+0 إلى T+90 يومًا)**: مسألة حكومة SD فورية؛ يُتوقع التشكيل خلال 30–90 يومًا؛ لا ائتلاف مستقر رياضيًا دون دعم SD.
+- **الطاقة النووية (T+365–T+730 يومًا)**: نافذة القرار 2027–2028؛ دعم حزبي واسع موجود؛ رأس المال واختيار الموقع هما العائقان.
+- **الإسكان**: عجز يتجاوز 150,000 وحدة؛ جميع السيناريوهات تستلزم تدخلًا سياسيًا؛ استثمار حكومي (سيناريوهات B) مقابل سوق (سيناريوهات A).
+- **الرعاية الاجتماعية**: الطلب على رعاية المسنين يرتفع 18% بحلول 2030 بغض النظر عن النتيجة؛ إصلاح مالي بلدي مطلوب في كل سيناريو.
+- **الاقتصاد**: يتوقع صندوق النقد الدولي نموًا بين 2.0–2.5% في الناتج المحلي الإجمالي 2027–2030؛ تتفوق السويد على متوسط الاتحاد الأوروبي؛ مضاعف استثمارات الدفاع يضيف ~0.5% من الناتج المحلي الإجمالي.
+
+### المحفز الأبرز على المدى المنظور
+
+**حل مسألة الحكومة SD (T+90 يومًا)**: ما إذا كان SD سيدخل الحكومة (A2) أم يبقى حزبًا داعمًا (A1) سيحدد طابع فترة الانتداب وتلقيها الدولي والسابقة الديمقراطية طوال الفترة 2026–2030.
+
+### مصفوفة المعاينة للانتداب القادم
+
+| المجال | A1 (Tidö+) | A2 (SD في الحكومة) | B1 (S أقلية) | B2 (S ائتلاف كبير) |
+|---|---|---|---|---|
+| الإسكان | تدريجي | مختلط | استثمار حكومي | كلا الآليتين |
+| الطاقة النووية | بناء | بناء | قبول خط الأساس | أغلبية موسعة |
+| الدفاع | 2.4% | 2.4% | 2.4% | 2.4% |
+| الهجرة | صارمة | صارمة جدًا | معتدلة | براغماتية |
+| موقع SD | حزب داعم | حكومة | معارضة | معارضة |
+
+### علامة الثقة
+
+ثقة متوسطة (نتيجة الانتخابات غير مؤكدة؛ التوقعات لأربع سنوات ذات طبيعة تكهنية بطبيعتها)؛ ثقة عالية في القيود الهيكلية (الدفاع، منطق الطاقة النووية، عجز الإسكان).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-04
+**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e)(g)
+**Analyseniveau**: omfattende (2,5× Tier-C valgcyklus)
+**Konfidens**: MIDDEL [Admiralty C3]
+
+---
+
+### KONKLUSION
+
+Mandatperioden 2026–2030 vil blive formet af fire strukturelle megakræfter, der overskrider valgresultater: NATO's bindende forsvarsforpligtelse på 2,4 % af BNP, beslutning om kernekraft (krævet af energimæssige hensyn), boligkrise (eskalerende underskud) og demografisk aldring (efterspørgsel på ældrepleje +18 % inden 2030). Det afgørende politiske spørgsmål er ikke hvilken regering der dannes, men om den løser SD's kabinetsspørgsmål — årtiers vigtigste konstitutionelle spørgsmål i Sverige. IMF WEO apr-2026 forudsiger 2,4 % BNP-vækst for 2026 med vedvarende genopretning frem til 2030.
+
+### Beslutninger dette underlag understøtter
+
+1. **Koalitionsscenarieplanlægning**: A1/A2 (Tidö) mod B1/B2/B3 (S-blokken) — hvilke politikker, aktører og risici følger?
+2. **Forberedelse af kernekraftbeslutning**: Lokaliseringsvalg, investeringsbeslutning, tidslinje — hvad skal ske hvornår?
+3. **Boligpolitisk udformning**: Statslige investeringer mod markedsaktivering — hvilke instrumenter og i hvilken skala?
+4. **Vurdering af SD i kabinettet**: Betingelser, sikkerhedsforanstaltninger, risici og implikationer for demokratisk resiliens.
+5. **Valpositionering frem mod 2030**: Hvilke mandatpræstationsmål vil definere valget i 2030?
+
+### 60-sekunders efterretningslæsning
+
+- **Regeringsdannelse (T+0 til T+90d)**: SD's kabinetsspørgsmål er umiddelbart; dannelse forventes inden 30–90 dage; ingen koalition er aritmetisk stabil uden SD's støtte.
+- **Kernekraft (T+365–T+730d)**: Beslutningsvindue 2027–2028; bred partilig opbakning eksisterer; kapital og lokalisering er blokaderne.
+- **Boliger**: Underskud på 150.000+ enheder; alle scenarier medfører politisk handling; statslige investeringer (B-scenarier) mod marked (A-scenarier).
+- **Velfærd**: Efterspørgsel på ældrepleje stiger 18 % inden 2030 uanset udfald; kommunal finansreform er nødvendig i hvert scenarie.
+- **Økonomi**: IMF forudsiger 2,0–2,5 % BNP-vækst 2027–2030; Sverige overgår EU-gennemsnittet; forsvarsinvesteringernes multiplikatoreffekt tilføjer ~0,5 % BNP.
+
+### Vigtigste fremadrettede udløser
+
+**SD's kabinetsspørgsmåls løsning (T+90d)**: Om SD indtræder i kabinettet (A2) eller forbliver som støtteparti (A1) vil definere mandatperiodens karakter, internationale modtagelse og demokratiske præcedens for hele perioden 2026–2030.
+
+### Næste mandatperiodes forhåndsmatrix
+
+| Domæne | A1 (Tidö+) | A2 (SD i kabinet) | B1 (S-mindretal) | B2 (S-stor koalition) |
+|---|---|---|---|---|
+| Boliger | Inkrementel | Blandet | Statslig investering | Begge mekanismer |
+| Kernekraft | Bygning | Bygning | Acceptér baseline | Supermajoritet |
+| Forsvar | 2,4 % | 2,4 % | 2,4 % | 2,4 % |
+| Migration | Streng | Meget streng | Moderat | Pragmatisk |
+| SD's position | Støtteparti | Kabinet | Opposition | Opposition |
+
+### Konfidensmarkering
+
+MIDDEL konfidens (valgresultat usikkert; 4-årig projektion er i sagens natur spekulativ); HØJ konfidens for strukturelle begrænsninger (forsvar, kernekraftlogik, boligunderskud).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Datum**: 2026-05-04
+**Einstufung**: ÖFFENTLICH — DSGVO Art. 9(2)(e)(g)
+**Analysetiefe**: umfassend (2,5× Tier-C Wahlzyklus)
+**Konfidenz**: MITTEL [Admiralty C3]
+
+---
+
+### KERNAUSSAGE
+
+Die Mandatsperiode 2026–2030 wird von vier strukturellen Megakräften geprägt, die Wahlergebnisse übersteigen: NATOs verbindliche Verteidigungspflicht von 2,4 % des BIP, Entscheidung zum Kernkraftbau (durch Energiemathematik erforderlich), Wohnungskrise (zunehmendes Defizit) und demografische Alterung (Nachfrage nach Altenpflege +18 % bis 2030). Die entscheidende politische Frage ist nicht, welche Regierung gebildet wird, sondern ob sie die SD-Kabinettsfrage löst — Schwedens folgenreichste Verfassungsfrage des Jahrzehnts. Der IWF WEO Apr-2026 prognostiziert 2,4 % BIP-Wachstum für 2026 mit anhaltender Erholung bis 2030.
+
+### Von diesem Bericht unterstützte Entscheidungen
+
+1. **Koalitionsszenarioplanung**: A1/A2 (Tidö) vs. B1/B2/B3 (S-Block) — welche Politiken, Akteure und Risiken folgen?
+2. **Vorbereitung der Kernkraftentscheidung**: Standortwahl, Investitionsentscheidung, Zeitplan — was muss wann geschehen?
+3. **Wohnungspolitische Gestaltung**: Staatliche Investitionen vs. Marktaktivierung — welche Instrumente und in welchem Umfang?
+4. **Bewertung der SD-Kabinettsbeteiligung**: Bedingungen, Schutzmaßnahmen, Risiken und Auswirkungen auf die demokratische Resilienz.
+5. **Wahlpositionierung für 2030**: Welche Mandatsleistungskennzahlen werden die Wahl 2030 definieren?
+
+### 60-Sekunden-Nachrichtenüberblick
+
+- **Regierungsbildung (T+0 bis T+90d)**: SD-Kabinettsfrage ist unmittelbar; Bildung wird innerhalb von 30–90 Tagen erwartet; keine Koalition ist ohne SD-Unterstützung arithmetisch stabil.
+- **Kernkraft (T+365–T+730d)**: Entscheidungsfenster 2027–2028; breite Parteiunterstützung vorhanden; Kapital und Standortwahl sind die Blocker.
+- **Wohnungen**: Defizit von 150.000+ Einheiten; alle Szenarien erfordern politische Maßnahmen; staatliche Investitionen (B-Szenarien) vs. Markt (A-Szenarien).
+- **Wohlfahrt**: Nachfrage nach Altenpflege steigt bis 2030 um 18 % unabhängig vom Ausgang; kommunale Finanzreform in jedem Szenario notwendig.
+- **Wirtschaft**: IWF prognostiziert 2,0–2,5 % BIP-Wachstum 2027–2030; Schweden übertrifft den EU-Durchschnitt; Multiplikatoreffekt der Verteidigungsinvestitionen fügt ~0,5 % BIP hinzu.
+
+### Wichtigster vorausschauender Auslöser
+
+**Lösung der SD-Kabinettsfrage (T+90d)**: Ob SD in das Kabinett eintritt (A2) oder als Stützpartei bleibt (A1), wird den Charakter der Mandatsperiode, die internationale Rezeption und den demokratischen Präzedenzfall für den gesamten Zeitraum 2026–2030 bestimmen.
+
+### Vorschaumatrix für das nächste Mandat
+
+| Bereich | A1 (Tidö+) | A2 (SD im Kabinett) | B1 (S-Minderheit) | B2 (S große Koalition) |
+|---|---|---|---|---|
+| Wohnungen | Inkrementell | Gemischt | Staatliche Investition | Beide Mechanismen |
+| Kernkraft | Bau | Bau | Basislinie akzeptieren | Supermehrheit |
+| Verteidigung | 2,4 % | 2,4 % | 2,4 % | 2,4 % |
+| Migration | Streng | Sehr streng | Moderat | Pragmatisch |
+| SD-Position | Stützpartei | Kabinett | Opposition | Opposition |
+
+### Konfidenzmarkierung
+
+MITTLERE Konfidenz (Wahlergebnis ungewiss; 4-Jahres-Projektion ist inhärent spekulativ); HOHE Konfidenz für strukturelle Einschränkungen (Verteidigung, Kernkraftlogik, Wohnungsdefizit).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Fecha**: 2026-05-04
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e)(g)
+**Profundidad de análisis**: integral (2,5× Tier-C ciclo electoral)
+**Confianza**: MEDIA [Admiralty C3]
+
+---
+
+### CONCLUSIÓN CLAVE
+
+El mandato 2026–2030 estará determinado por cuatro megafuerzas estructurales que trascienden los resultados electorales: la obligación de defensa vinculante de la OTAN del 2,4 % del PIB, la decisión sobre energía nuclear (requerida por la lógica energética), la crisis de vivienda (déficit creciente) y el envejecimiento demográfico (demanda de atención a mayores +18 % para 2030). La pregunta política determinante no es qué gobierno se forma, sino si resuelve la cuestión del Gabinete SD — la pregunta constitucional más consecuente de la década en Suecia. El FMI WEO abr-2026 proyecta un crecimiento del PIB del 2,4 % para 2026 con recuperación sostenida hasta 2030.
+
+### Decisiones que este informe apoya
+
+1. **Planificación de escenarios de formación**: A1/A2 (Tidö) frente a B1/B2/B3 (bloque S) — ¿qué políticas, actores y riesgos se derivan?
+2. **Preparación de la decisión nuclear**: Selección del emplazamiento, decisión de inversión, cronograma — ¿qué debe ocurrir cuándo?
+3. **Diseño de política de vivienda**: Inversión estatal frente a activación del mercado — ¿qué instrumentos y a qué escala?
+4. **Evaluación de la inclusión del SD en el Gabinete**: Condiciones, salvaguardas, riesgos e implicaciones para la resiliencia democrática.
+5. **Posicionamiento electoral para 2030**: ¿Qué métricas de desempeño del mandato definirán las elecciones de 2030?
+
+### Lectura de inteligencia de 60 segundos
+
+- **Formación de gobierno (T+0 a T+90d)**: La cuestión del Gabinete SD es inmediata; se espera formación en 30–90 días; ninguna coalición es aritméticamente estable sin el apoyo del SD.
+- **Nuclear (T+365–T+730d)**: Ventana de decisión 2027–2028; existe amplio apoyo multipartidista; el capital y la selección del emplazamiento son los bloqueadores.
+- **Vivienda**: Déficit de 150.000+ unidades; todos los escenarios generan acción política; inversión estatal (escenarios B) frente a mercado (escenarios A).
+- **Bienestar**: La demanda de atención a mayores crece un 18 % para 2030 independientemente del resultado; reforma de las finanzas municipales necesaria en cada escenario.
+- **Economía**: El FMI proyecta un crecimiento del PIB del 2,0–2,5 % de 2027 a 2030; Suecia supera la media de la UE; el efecto multiplicador de las inversiones en defensa añade ~0,5 % del PIB.
+
+### Principal desencadenante prospectivo
+
+**Resolución de la cuestión del Gabinete SD (T+90d)**: Si el SD entra en el Gabinete (A2) o permanece como partido de apoyo (A1) definirá el carácter del mandato, la recepción internacional y el precedente democrático para todo el período 2026–2030.
+
+### Matriz de previsión del próximo mandato
+
+| Dominio | A1 (Tidö+) | A2 (SD en Gabinete) | B1 (S minoría) | B2 (S gran coalición) |
+|---|---|---|---|---|
+| Vivienda | Incremental | Mixta | Inversión estatal | Ambos mecanismos |
+| Nuclear | Construcción | Construcción | Aceptar línea base | Supermayoría |
+| Defensa | 2,4 % | 2,4 % | 2,4 % | 2,4 % |
+| Migración | Estricta | Muy estricta | Moderada | Pragmática |
+| Posición SD | Partido de apoyo | Gabinete | Oposición | Oposición |
+
+### Etiqueta de confianza
+
+Confianza MEDIA (resultado electoral incierto; proyección a 4 años inherentemente especulativa); ALTA para restricciones estructurales (defensa, lógica nuclear, déficit de vivienda).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling
+**Päivämäärä**: 2026-05-04
+**Luokitus**: JULKINEN — GDPR Art 9(2)(e)(g)
+**Analyysisyvyys**: kattava (2,5× Tier-C vaalikausi)
+**Luotettavuus**: KESKITASO [Admiralty C3]
+
+---
+
+### TIIVISTELMÄ
+
+Toimikausi 2026–2030 muotoutuu neljän rakenteellisen megavoiman ohjaamana, jotka ylittävät vaalitulokset: NATOn sitova puolustusvelvoite 2,4 % BKT:sta, ydinvoimapäätös (energiamatematiikan vaatima), asuntopula (paheneva vajaus) ja väestön ikääntyminen (vanhustenhoitopalvelujen kysyntä +18 % vuoteen 2030 mennessä). Ratkaiseva poliittinen kysymys ei ole se, mikä hallitus muodostetaan, vaan ratkaiseeko se SD:n ministerikysymyksen — vuosikymmenen tärkeimmän perustuslaillisen kysymyksen Ruotsissa. IMF WEO huhti-2026 ennustaa 2,4 % BKT-kasvua vuodelle 2026 ja tasaista elpymistä vuoteen 2030 asti.
+
+### Päätökset, joita tämä tietopaketti tukee
+
+1. **Koalitioskenaarion suunnittelu**: A1/A2 (Tidö) vs B1/B2/B3 (S-blokki) — mitkä politiikat, toimijat ja riskit seuraavat?
+2. **Ydinvoimapäätöksen valmistelu**: Paikan valinta, investointipäätös, aikataulu — mitä on tapahduttava milloin?
+3. **Asuntopolitiikan suunnittelu**: Valtion investoinnit vs markkinoiden aktivointi — mitkä välineet ja missä laajuudessa?
+4. **SD:n hallitusosallisuuden arviointi**: Ehdot, suojatoimet, riskit ja demokraattisen resilienssin vaikutukset.
+5. **Vaalipositiointi vuoteen 2030**: Mitkä toimikauden suoritusmittarit määrittävät vuoden 2030 vaalit?
+
+### 60 sekunnin tiedustelukatsaus
+
+- **Hallitusmuodostus (T+0–T+90d)**: SD:n ministerikysymys on välitön; hallituksen muodostaminen odotetaan 30–90 päivän kuluessa; mikään koalitio ei ole aritmeettisesti vakaa ilman SD:n tukea.
+- **Ydinvoima (T+365–T+730d)**: Päätösikkuna 2027–2028; laaja puoluetuki olemassa; pääoma ja sijainnin valinta ovat esteet.
+- **Asunnot**: Vajaus yli 150 000 yksikköä; kaikissa skenaarioissa poliittisia toimia; valtion investoinnit (B-skenaariot) vs markkinat (A-skenaariot).
+- **Hyvinvointi**: Vanhustenhoitopalvelujen kysyntä kasvaa 18 % vuoteen 2030 mennessä tuloksesta riippumatta; kuntien talousreformi tarvitaan jokaisessa skenaariossa.
+- **Talous**: IMF ennustaa 2,0–2,5 % BKT-kasvua 2027–2030; Ruotsi ylittää EU:n keskiarvon; puolustusinvestointien kerroinvaikutus lisää ~0,5 % BKT:ta.
+
+### Tärkein ennakoiva laukaisin
+
+**SD:n ministerikysymyksen ratkaisu (T+90d)**: Se, astuuko SD hallitukseen (A2) vai jääkö se tukipuolueeksi (A1), määrittää toimikauden luonteen, kansainvälisen vastaanoton ja demokraattisen ennakkotapauksen koko kaudelle 2026–2030.
+
+### Seuraavan toimikauden ennakkoanalyysimatriisi
+
+| Ala | A1 (Tidö+) | A2 (SD hallituksessa) | B1 (S-vähemmistö) | B2 (S suuri koalitio) |
+|---|---|---|---|---|
+| Asunnot | Inkrementaalinen | Sekalaiset | Valtion investointi | Molemmat mekanismit |
+| Ydinvoima | Rakentaminen | Rakentaminen | Hyväksy peruslinja | Supermajoriteetti |
+| Puolustus | 2,4 % | 2,4 % | 2,4 % | 2,4 % |
+| Maahanmuutto | Tiukka | Erittäin tiukka | Kohtalainen | Pragmaattinen |
+| SD:n asema | Tukipuolue | Hallitus | Oppositio | Oppositio |
+
+### Luotettavuusmerkintä
+
+KESKITASON luotettavuus (vaalitulos epävarma; 4-vuotinen ennuste on luonteeltaan spekulatiivinen); KORKEA luotettavuus rakenteellisille rajoitteille (puolustus, ydinvoimalogiikka, asuntovajaus).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling
+
+**Niveau d'analyse** : complet (2,5× Tier-C cycle électoral)
+**Confiance** : MOYEN [Admiralty C3]
+
+---
+
+### SYNTHÈSE
+
+Le mandat 2026–2030 sera façonné par quatre méga-forces structurelles qui transcendent les résultats électoraux : l'obligation défensive contraignante de l'OTAN à 2,4 % du PIB, la décision sur le nucléaire (exigée par la logique énergétique), la crise du logement (déficit croissant) et le vieillissement démographique (demande de soins aux personnes âgées +18 % d'ici 2030). La question politique déterminante n'est pas quelle gouvernement se formera, mais si elle résoudra la question de la présence des SD au Cabinet — la question constitutionnelle la plus importante de la décennie en Suède. Le FMI WEO avr-2026 projette une croissance du PIB de 2,4 % pour 2026 avec une reprise soutenue jusqu'en 2030.
+
+### Décisions que ce rapport soutient
+
+1. **Planification de scénarios de formation** : A1/A2 (Tidö) contre B1/B2/B3 (bloc S) — quelles politiques, acteurs et risques s'ensuivent ?
+2. **Préparation à la décision nucléaire** : Sélection du site, décision d'investissement, calendrier — que doit-il se passer quand ?
+3. **Conception de la politique du logement** : Investissements d'État contre activation du marché — quels instruments et à quelle échelle ?
+4. **Évaluation de l'inclusion des SD au Cabinet** : Conditions, garde-fous, risques et implications pour la résilience démocratique.
+5. **Positionnement électoral pour 2030** : Quels indicateurs de performance du mandat définiront les élections de 2030 ?
+
+### Lecture de renseignement en 60 secondes
+
+- **Formation du gouvernement (T+0 à T+90j)** : La question du Cabinet SD est immédiate ; la formation est attendue dans 30 à 90 jours ; aucune coalition n'est arithmétiquement stable sans le soutien du SD.
+- **Nucléaire (T+365–T+730j)** : Fenêtre de décision 2027–2028 ; soutien multipartite existant ; le capital et le choix du site sont les obstacles.
+- **Logement** : Déficit de 150 000+ unités ; tous les scénarios entraînent une action politique ; investissements d'État (scénarios B) contre marché (scénarios A).
+- **Protection sociale** : La demande de soins aux personnes âgées augmente de 18 % d'ici 2030 quel que soit le résultat ; réforme des finances municipales nécessaire dans chaque scénario.
+- **Économie** : Le FMI projette une croissance du PIB de 2,0 à 2,5 % de 2027 à 2030 ; la Suède surperforme la moyenne européenne ; l'effet multiplicateur des investissements défensifs ajoute ~0,5 % du PIB.
+
+### Principal déclencheur prospectif
+
+**Résolution de la question du Cabinet SD (T+90j)** : Que le SD entre au Cabinet (A2) ou demeure comme parti de soutien (A1) définira le caractère du mandat, la réception internationale et le précédent démocratique pour toute la période 2026–2030.
+
+### Matrice de prévisualisation du prochain mandat
+
+| Domaine | A1 (Tidö+) | A2 (SD au Cabinet) | B1 (S minorité) | B2 (S grande coalition) |
+|---|---|---|---|---|
+| Logement | Incrémental | Mixte | Investissement d'État | Les deux mécanismes |
+| Nucléaire | Construction | Construction | Accepter la base | Supermajorité |
+| Défense | 2,4 % | 2,4 % | 2,4 % | 2,4 % |
+| Migration | Stricte | Très stricte | Modérée | Pragmatique |
+| Position SD | Parti de soutien | Cabinet | Opposition | Opposition |
+
+### Étiquette de confiance
+
+Confiance MOYENNE (résultat électoral incertain ; projection sur 4 ans intrinsèquement spéculative) ; HAUTE pour les contraintes structurelles (défense, logique nucléaire, déficit de logement).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_he.md -->
+
+&#x200F;# המחזור הבחירותי הבא בשוודיה (2026–2030): המנדט לשינוי
+
+**מחבר**: James Pether Sörling
+**תאריך**: 2026-05-04
+**סיווג**: ציבורי — GDPR סעיף 9(2)(ה)(ו)
+**עומק ניתוח**: מקיף (2.5× Tier-C מחזור בחירות)
+**רמת ביטחון**: בינונית [Admiralty C3]
+
+---
+
+### תמצית מנהלים
+
+תקופת הכהונה 2026–2030 תעוצב על ידי ארבע כוחות מבניות ענקיות החורגות מתוצאות הבחירות: מחויבות ההגנה המחייבת של נאט"ו של 2.4% מהתמ"ג, ההחלטה על בניית כורים גרעיניים (הנדרשת מחישובי האנרגיה), משבר הדיור (גירעון מצטבר) והזדקנות דמוגרפית (ביקוש לשירותי סיעוד +18% עד 2030). השאלה הפוליטית הקריטית אינה איזו ממשלה תקום, אלא האם היא תפתור את שאלת הכניסה של SD לממשלה — השאלה החוקתית המשמעותית ביותר של העשור בשוודיה. קרן המטבע הבינלאומית (WEO אפריל 2026) צופה צמיחה של 2.4% בתמ"ג לשנת 2026 עם התאוששות מתמשכת עד 2030.
+
+### החלטות שתדרוך זה תומך בהן
+
+1. **תכנון תרחישי הרכבת ממשלה**: A1/A2 (Tidö) לעומת B1/B2/B3 (גוש S) — אילו מדיניות, שחקנים וסיכונים נובעים?
+2. **הכנה להחלטה הגרעינית**: בחירת אתר, החלטת השקעה, לוח זמנים — מה חייב לקרות מתי?
+3. **עיצוב מדיניות הדיור**: השקעות ממשלתיות לעומת הפעלת השוק — אילו כלים ובאיזה היקף?
+4. **הערכת הכנסת SD לממשלה**: תנאים, מנגנוני הגנה, סיכונים ומשמעויות לחוסן הדמוקרטי.
+5. **מיצוב בחירות לקראת 2030**: אילו מדדי ביצוע של הכהונה יגדירו את בחירות 2030?
+
+### קריאת מודיעין של 60 שניות
+
+- **הרכבת ממשלה (T+0 עד T+90 ימים)**: שאלת כניסת SD לממשלה היא מיידית; ההרכבה צפויה תוך 30–90 ימים; אין קואליציה יציבה מתמטית ללא תמיכת SD.
+- **גרעין (T+365–T+730 ימים)**: חלון ההחלטה 2027–2028; קיימת תמיכה רחבה מהמפלגות; הון ובחירת אתר הם החסמים.
+- **דיור**: גירעון של יותר מ-150,000 יחידות; כל התרחישים מייצרים פעולה מדינית; השקעות ממשלתיות (תרחישי B) לעומת שוק (תרחישי A).
+- **רווחה**: ביקוש לשירותי סיעוד עולה ב-18% עד 2030 ללא קשר לתוצאה; רפורמה בפיננסים העירוניים נדרשת בכל תרחיש.
+- **כלכלה**: קרן המטבע צופה צמיחה של 2.0–2.5% בתמ"ג בשנים 2027–2030; שוודיה עולה על ממוצע האיחוד האירופי; אפקט המכפיל של השקעות הגנה מוסיף ~0.5% תמ"ג.
+
+### הגורם המעורר העיקרי לקראת
+
+**פתרון שאלת כניסת SD לממשלה (T+90 ימים)**: האם SD תכנס לממשלה (A2) או תישאר כמפלגת תמיכה (A1) יגדיר את אופי תקופת הכהונה, הקבלה הבינלאומית והתקדים הדמוקרטי לכל התקופה 2026–2030.
+
+### מטריצת תצוגה מקדימה לכהונה הבאה
+
+| תחום | A1 (Tidö+) | A2 (SD בממשלה) | B1 (S מיעוט) | B2 (S קואליציה גדולה) |
+|---|---|---|---|---|
+| דיור | הדרגתי | מעורב | השקעת מדינה | שני המנגנונים |
+| גרעין | בנייה | בנייה | קבל קו בסיס | רוב מיוחד |
+| הגנה | 2.4% | 2.4% | 2.4% | 2.4% |
+| הגירה | מחמיר | מחמיר מאוד | מתון | פרגמטי |
+| עמדת SD | מפלגת תמיכה | ממשלה | אופוזיציה | אופוזיציה |
+
+### רמת ביטחון
+
+ביטחון בינוני (תוצאת הבחירות אינה וודאית; תחזית ל-4 שנים ספקולטיבית מטבעה); ביטחון גבוה לגבי אילוצים מבניים (הגנה, היגיון גרעיני, גירעון דיור).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling
+**日付**: 2026-05-04
+**分類**: 公開 — GDPR 第9条(2)(e)(g)
+**分析深度**: 包括的（2.5× Tier-C 選挙サイクル）
+**信頼度**: 中程度 [Admiralty C3]
+
+---
+
+### 要旨
+
+2026–2030年の任期は、選挙結果を超えた4つの構造的メガフォースによって形成される：NATOの拘束力のある国防義務（GDP比2.4%）、原子力建設決定（エネルギー数学的必要性）、住宅危機（複利的赤字）、人口高齢化（2030年までに高齢者介護需要+18%）。決定的な政治的問題は、どの政府が形成されるかではなく、SD閣議問題を解決できるかどうかである——スウェーデンの10年間における最も重要な憲法上の問題。IMF WEO 2026年4月は、2026年のGDP成長率2.4%を予測し、2030年まで持続的な回復を見込む。
+
+### この報告書が支援する意思決定
+
+1. **連立シナリオ計画**: A1/A2（Tidö）対B1/B2/B3（Sブロック）——どの政策、アクター、リスクが続くか？
+2. **原子力決定の準備**: サイト選定、投資決定、タイムライン——何をいつ行う必要があるか？
+3. **住宅政策の設計**: 国家投資対市場活性化——どの手段をどの規模で？
+4. **SD閣議参加の評価**: 条件、ガードレール、リスク、民主的レジリエンスへの含意。
+5. **2030年に向けた選挙ポジショニング**: どの任期パフォーマンス指標が2030年選挙を定義するか？
+
+### 60秒インテリジェンス読み
+
+- **政府形成（T+0〜T+90日）**: SD閣議問題は即座；30〜90日以内に組閣が見込まれる；SDの支持なしに算術的に安定した連立はない。
+- **原子力（T+365–T+730日）**: 意思決定ウィンドウ2027–2028；幅広い政党支持が存在；資本とサイト選定が障壁。
+- **住宅**: 15万戸以上の不足；全シナリオで政策行動が発生；国家投資（Bシナリオ）対市場（Aシナリオ）。
+- **福祉**: 高齢者介護需要は2030年までに18%増加（結果にかかわらず）；各シナリオで地方財政改革が必要。
+- **経済**: IMFは2027–2030年にGDP成長率2.0〜2.5%を予測；スウェーデンはEU平均を上回る；防衛投資の乗数効果がGDP約0.5%を追加。
+
+### 主要な先行シグナル
+
+**SD閣議問題の解決（T+90日）**: SDが閣議に入るか（A2）、閣外協力にとどまるか（A1）により、2026–2030年全体の任期の性格、国際的評価、民主的先例が決まる。
+
+### 次期任期プレビューマトリクス
+
+| 領域 | A1（Tidö+） | A2（SD入閣） | B1（S少数） | B2（S大連立） |
+|---|---|---|---|---|
+| 住宅 | 漸進的 | 混合 | 国家投資 | 両メカニズム |
+| 原子力 | 建設 | 建設 | ベースライン受容 | 超多数 |
+| 防衛 | 2.4% | 2.4% | 2.4% | 2.4% |
+| 移民 | 厳格 | 非常に厳格 | 穏健 | プラグマティック |
+| SD立場 | 閣外協力 | 閣議参加 | 反対党 | 反対党 |
+
+### 信頼度ラベル
+
+中程度の信頼度（選挙結果は不確実；4年予測は本質的に推測的）；構造的制約（防衛、原子力の論理、住宅不足）についての信頼度は高い。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**날짜**: 2026-05-04
+**분류**: 공개 — GDPR 제9조(2)(e)(g)
+**분석 수준**: 포괄적 (2.5× Tier-C 선거 주기)
+**신뢰도**: 중간 [Admiralty C3]
+
+---
+
+### 핵심 요약
+
+2026–2030년 임기는 선거 결과를 초월한 네 가지 구조적 메가포스에 의해 형성될 것이다: NATO의 구속력 있는 GDP 2.4% 국방 의무, 원자력 건설 결정(에너지 수학상 필요), 주택 위기(복리적 적자), 인구 고령화(2030년까지 노인 돌봄 수요 +18%). 결정적인 정치적 질문은 어떤 정부가 구성되느냐가 아니라, SD 내각 문제를 해결할 수 있느냐이다 — 스웨덴의 10년간 가장 중요한 헌법적 질문. IMF WEO 2026년 4월은 2026년 GDP 성장률 2.4%를 예상하며 2030년까지 지속적인 회복을 전망한다.
+
+### 이 보고서가 지원하는 결정
+
+1. **연립 시나리오 계획**: A1/A2 (Tidö) 대 B1/B2/B3 (S 블록) — 어떤 정책, 행위자, 위험이 따르는가?
+2. **원자력 결정 준비**: 부지 선정, 투자 결정, 타임라인 — 무엇을 언제 해야 하는가?
+3. **주택 정책 설계**: 국가 투자 대 시장 활성화 — 어떤 수단을 어떤 규모로?
+4. **SD 내각 포함 평가**: 조건, 안전장치, 위험, 민주적 회복력 함의.
+5. **2030년 선거 포지셔닝**: 어떤 임기 성과 지표가 2030년 선거를 정의할 것인가?
+
+### 60초 정보 요약
+
+- **정부 구성 (T+0~T+90일)**: SD 내각 문제는 즉각적; 30–90일 이내 구성 예상; SD 지지 없이는 어떤 연립도 수학적으로 안정적이지 않음.
+- **원자력 (T+365–T+730일)**: 결정 창구 2027–2028; 광범위한 정당 지지 존재; 자본과 부지 선정이 장벽.
+- **주택**: 150,000+ 유닛 부족; 모든 시나리오에서 정책 조치 발생; 국가 투자(B 시나리오) 대 시장(A 시나리오).
+- **복지**: 노인 돌봄 수요 2030년까지 18% 증가(결과와 무관); 각 시나리오에서 지방 재정 개혁 필요.
+- **경제**: IMF는 2027–2030년 GDP 성장률 2.0–2.5% 예상; 스웨덴은 EU 평균 초과; 국방 투자 승수 효과로 GDP ~0.5% 추가.
+
+### 주요 선행 트리거
+
+**SD 내각 문제 해결 (T+90일)**: SD가 내각에 입각하느냐(A2) 지지 정당으로 남느냐(A1)에 따라 임기의 성격, 국제적 수용, 2026–2030년 전체 기간의 민주적 선례가 결정된다.
+
+### 다음 임기 미리보기 매트릭스
+
+| 영역 | A1 (Tidö+) | A2 (SD 내각) | B1 (S 소수) | B2 (S 대연립) |
+|---|---|---|---|---|
+| 주택 | 점진적 | 혼합 | 국가 투자 | 두 메커니즘 모두 |
+| 원자력 | 건설 | 건설 | 기본선 수용 | 초다수 |
+| 국방 | 2.4% | 2.4% | 2.4% | 2.4% |
+| 이민 | 엄격 | 매우 엄격 | 온건 | 실용적 |
+| SD 위치 | 지지 정당 | 내각 | 야당 | 야당 |
+
+### 신뢰도 레이블
+
+중간 신뢰도(선거 결과 불확실; 4년 전망은 본질적으로 추측적); 구조적 제약(국방, 원자력 논리, 주택 적자)에 대한 신뢰도는 높음.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Datum**: 2026-05-04
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e)(g)
+**Analyseniveau**: uitgebreid (2,5× Tier-C verkiezingscyclus)
+**Betrouwbaarheid**: GEMIDDELD [Admiralty C3]
+
+---
+
+### KERNBOODSCHAP
+
+De mandaatperiode 2026–2030 zal worden gevormd door vier structurele megakrachten die electorale uitkomsten overstijgen: de bindende NAVO-defensieverplichtingen van 2,4% van het BBP, de beslissing over kernenergie (vereist door energiematematica), de woningcrisis (oplopend tekort) en demografische vergrijzing (vraag naar ouderenzorg +18% tegen 2030). De bepalende politieke vraag is niet welke regering wordt gevormd, maar of zij de SD-kabinetsvraag oplost — de meest bepalende constitutionele vraag van het decennium in Zweden. Het IMF WEO apr-2026 projecteert 2,4% bbp-groei voor 2026 met aanhoudend herstel tot 2030.
+
+### Beslissingen die dit rapport ondersteunt
+
+1. **Planning van coalitiesscenario's**: A1/A2 (Tidö) versus B1/B2/B3 (S-blok) — welk beleid, welke actoren en risico's volgen?
+2. **Voorbereiding op de kernenergiebeslissing**: Locatiekeuze, investeringsbeslissing, tijdlijn — wat moet wanneer gebeuren?
+3. **Ontwerp van woningbeleid**: Staatsinvesteringen versus marktactivering — welke instrumenten en op welke schaal?
+4. **Beoordeling van SD-kabinetsbetrokkenheid**: Voorwaarden, waarborgen, risico's en gevolgen voor democratische veerkracht.
+5. **Electorale positionering voor 2030**: Welke mandaatprestatie-indicatoren zullen de verkiezingen van 2030 bepalen?
+
+### 60-seconden inlichtingenlecture
+
+- **Kabinetsformatie (T+0 tot T+90d)**: SD-kabinetsvraag is onmiddellijk; formatie verwacht binnen 30–90 dagen; geen coalitie is rekenkundig stabiel zonder SD-steun.
+- **Kernenergie (T+365–T+730d)**: Beslissingsvenster 2027–2028; brede partijsteun aanwezig; kapitaal en locatiekeuze zijn de blokkades.
+- **Woningbouw**: Tekort van 150.000+ wooneenheden; alle scenario's leiden tot beleidsactie; staatsinvesteringen (B-scenario's) versus markt (A-scenario's).
+- **Welzijn**: Vraag naar ouderenzorg stijgt met 18% tegen 2030 ongeacht uitkomst; gemeentelijke financiële hervorming nodig in elk scenario.
+- **Economie**: IMF projecteert 2,0–2,5% bbp-groei 2027–2030; Zweden overtreft het EU-gemiddelde; multiplicatoreffect van defensie-investeringen voegt ~0,5% bbp toe.
+
+### Belangrijkste vooruitblikkende trigger
+
+**Oplossing van de SD-kabinetsvraag (T+90d)**: Of SD toetreedt tot het kabinet (A2) of steunpartij blijft (A1) zal het karakter van het mandaat, de internationale ontvangst en het democratisch precedent voor de gehele periode 2026–2030 bepalen.
+
+### Vooruitblikmatrix volgend mandaat
+
+| Domein | A1 (Tidö+) | A2 (SD in kabinet) | B1 (S minderheid) | B2 (S grote coalitie) |
+|---|---|---|---|---|
+| Woningbouw | Incrementeel | Gemengd | Staatsinvestering | Beide mechanismen |
+| Kernenergie | Bouw | Bouw | Basislijn accepteren | Supermeerderheid |
+| Defensie | 2,4% | 2,4% | 2,4% | 2,4% |
+| Migratie | Streng | Zeer streng | Gematigd | Pragmatisch |
+| SD-positie | Steunpartij | Kabinet | Oppositie | Oppositie |
+
+### Betrouwbaarheidsmarkering
+
+GEMIDDELDE betrouwbaarheid (verkiezingsuitkomst onzeker; 4-jarige projectie inherent speculatief); HOOG voor structurele beperkingen (defensie, kernenergie-logica, woningtekort).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-04
+**Klassifisering**: OFFENTLIG — GDPR Art 9(2)(e)(g)
+**Analysedybde**: omfattende (2,5× Tier-C valgperiode)
+**Konfidens**: MIDDELS [Admiralty C3]
+
+---
+
+### KONKLUSJON
+
+Mandatperioden 2026–2030 vil bli formet av fire strukturelle megakrefter som overgår valgutfall: NATOs bindende forsvarsforpliktelse på 2,4 % av BNP, beslutning om kjernekraft (nødvendig ut fra energimatematikk), boligkrise (eskalerende underskudd) og demografisk aldring (etterspørsel etter eldreomsorg +18 % innen 2030). Det avgjørende politiske spørsmålet er ikke hvilken regjering som dannes, men om den løser SD-kabinettssspørsmålet — Sveriges viktigste konstitusjonelle spørsmål i tiåret. IMF WEO apr-2026 anslår 2,4 % BNP-vekst for 2026 med vedvarende gjenoppretting frem til 2030.
+
+### Beslutninger dette underlag støtter
+
+1. **Koalisjonsscenarioplanlegging**: A1/A2 (Tidö) mot B1/B2/B3 (S-blokken) — hvilke politikker, aktører og risikoer følger?
+2. **Forberedelse av kjernekraftbeslutning**: Lokalisering, investeringsbeslutning, tidslinje — hva må skje når?
+3. **Boligpolitisk utforming**: Statlige investeringer mot markedsaktivering — hvilke instrumenter og i hvilken skala?
+4. **Vurdering av SD i kabinettet**: Betingelser, sikringstiltak, risikoer og konsekvenser for demokratisk motstandsdyktighet.
+5. **Valgposisjonering frem mot 2030**: Hvilke mandatprestasjonsmål vil definere valget i 2030?
+
+### 60-sekunders etterretningslesning
+
+- **Regjeringsdannelse (T+0 til T+90d)**: SD-kabinettssspørsmålet er umiddelbart; dannelse forventes innen 30–90 dager; ingen koalisjon er aritmetisk stabil uten SD-støtte.
+- **Kjernekraft (T+365–T+730d)**: Beslutningsvindu 2027–2028; bred partistøtte eksisterer; kapital og lokalisering er blokkene.
+- **Boliger**: Underskudd på 150 000+ enheter; alle scenarier fører til politisk handling; statlige investeringer (B-scenarier) mot marked (A-scenarier).
+- **Velferd**: Etterspørsel etter eldreomsorg øker 18 % innen 2030 uavhengig av utfall; kommunal finansreform er nødvendig i hvert scenario.
+- **Økonomi**: IMF anslår 2,0–2,5 % BNP-vekst 2027–2030; Sverige overgår EU-gjennomsnittet; forsvarsinvesteringenes multiplikatoreffekt tilfører ~0,5 % BNP.
+
+### Viktigste fremtidige utløser
+
+**SD-kabinettssspørsmålets løsning (T+90d)**: Om SD går inn i kabinettet (A2) eller forblir som støtteparti (A1) vil definere mandatperiodens karakter, internasjonale mottakelse og demokratiske presedens for hele perioden 2026–2030.
+
+### Neste mandatperiodes forhåndsmatrise
+
+| Domene | A1 (Tidö+) | A2 (SD i kabinett) | B1 (S-mindretall) | B2 (S-stor koalisjon) |
+|---|---|---|---|---|
+| Boliger | Inkrementell | Blandet | Statlig investering | Begge mekanismer |
+| Kjernekraft | Bygging | Bygging | Aksepter baseline | Supermajoritet |
+| Forsvar | 2,4 % | 2,4 % | 2,4 % | 2,4 % |
+| Migrasjon | Streng | Meget streng | Moderat | Pragmatisk |
+| SD-posisjon | Støtteparti | Kabinett | Opposisjon | Opposisjon |
+
+### Konfidensmarkering
+
+MIDDELS konfidens (valgutfall usikkert; 4-årig prognose er i seg selv spekulativ); HØY konfidens for strukturelle begrensninger (forsvar, kjernekraftlogikk, boligunderskudd).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Datum**: 2026-05-04
+**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e)(g)
+**Analysnivå**: komprehensiv (2,5× Tier-C valcykel)
+**Konfidens**: MEDEL [Admiralty C3]
+
+---
+
+### SLUTSATS I KORTHET
+
+Mandatperioden 2026–2030 kommer att formas av fyra strukturella megakrafter som överskriver valets utgång: NATO:s bindande försvarsmål om 2,4 % av BNP, kärnkraftsbeslut (nödvändigt ur energimatematikens perspektiv), bostadskris (eskalerande underskott) och demografiskt åldrande (äldreomsorgsefterfrågan +18 % till 2030). Den avgörande politiska frågan är inte vilken regering som bildas, utan om den löser SD:s kabinettsfråga — decenniets viktigaste konstitutionella fråga i Sverige. IMF WEO apr-2026 prognostiserar 2,4 % BNP-tillväxt för 2026 med stabil återhämtning till 2030.
+
+### Beslut som detta underlag stöder
+
+1. **Koalitionsscenarioplanering**: A1/A2 (Tidö) kontra B1/B2/B3 (S-blocket) — vilka politikområden, aktörer och risker följer?
+2. **Kärnkraftsförberedelser**: Lokalisering, investeringsbeslut, tidslinje — vad måste ske när?
+3. **Bostadspolitisk utformning**: Statliga investeringar kontra marknadsaktivering — vilka instrument och i vilken skala?
+4. **Bedömning av SD i regeringen**: Villkor, skyddsmekanismer, risker och konsekvenser för demokratisk motståndskraft.
+5. **Valpositionering inför 2030**: Vilka mandatprestationsmått kommer att definiera valet 2030?
+
+### 60-sekundersinformation
+
+- **Regeringsbildning (T+0 till T+90d)**: SD:s kabinettsfråga är omedelbar; bildning väntas inom 30–90 dagar; ingen koalition är aritmetiskt stabil utan SD:s stöd.
+- **Kärnkraft (T+365–T+730d)**: Beslutsfönster 2027–2028; brett partistöd finns; kapital och lokaliseringsval är blockerarna.
+- **Bostäder**: Underskott på 150 000+ enheter; alla scenarier ger politisk åtgärd; statliga investeringar (B-scenarier) kontra marknad (A-scenarier).
+- **Välfärd**: Äldreomsorgsefterfrågan stiger 18 % till 2030 oavsett utfall; kommunal ekonomireform krävs i varje scenario.
+- **Ekonomi**: IMF prognostiserar 2,0–2,5 % BNP-tillväxt 2027–2030; Sverige överträffar EU-snittet; försvarsinvesteringarnas multiplikatoreffekt tillför ~0,5 % BNP.
+
+### Viktigaste framåtblickande utlösare
+
+**SD:s kabinettsfrågans lösning (T+90d)**: Om SD går in i regeringen (A2) eller stannar som stödparti (A1) kommer att definiera mandatperiodens karaktär, internationella mottagande och demokratiska prejudikat för hela perioden 2026–2030.
+
+### Kommande mandatperiods förhandsmatris
+
+| Domän | A1 (Tidö+) | A2 (SD i kabinett) | B1 (S-minoritet) | B2 (S-stor koalition) |
+|---|---|---|---|---|
+| Bostäder | Inkrementell | Blandad | Statlig investering | Båda mekanismerna |
+| Kärnkraft | Byggnation | Byggnation | Acceptera baslinje | Supermajoritet |
+| Försvar | 2,4 % | 2,4 % | 2,4 % | 2,4 % |
+| Migration | Strikt | Mycket strikt | Måttlig | Pragmatisk |
+| SD:s position | Stödparti | Kabinett | Opposition | Opposition |
+
+### Konfidensmarkering
+
+MEDEL konfidens (valets utgång osäker; 4-årig prognos är i sig spekulativ); HÖG konfidens gällande strukturella begränsningar (försvar, kärnkraftslogik, bostadsunderskott).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling
+**日期**：2026-05-04
+**分类**：公开 — GDPR 第9条(2)(e)(g)
+**分析深度**：全面（2.5× Tier-C 选举周期）
+**置信度**：中等 [Admiralty C3]
+
+---
+
+### 核心结论
+
+2026–2030年任期将由四种超越选举结果的结构性巨型力量塑造：北约具有约束力的国防义务（GDP的2.4%）、核电建设决定（能源数学的必然要求）、住房危机（不断累积的赤字）和人口老龄化（2030年前老年护理需求增加18%）。决定性的政治问题不是哪个政府会组建，而是它能否解决SD入阁问题——瑞典这十年最重要的宪法问题。IMF WEO 2026年4月预测2026年GDP增长2.4%，并在2030年前保持持续复苏。
+
+### 本报告支持的决策
+
+1. **执政联盟情景规划**：A1/A2（Tidö）对B1/B2/B3（S阵营）——什么政策、行为者和风险随之而来？
+2. **核电决策准备**：选址、投资决定、时间表——什么时候必须做什么？
+3. **住房政策设计**：国家投资对市场激活——哪些工具，规模多大？
+4. **SD入阁评估**：条件、护栏、风险和对民主韧性的影响。
+5. **2030年选举定位**：哪些任期绩效指标将定义2030年选举？
+
+### 60秒情报解读
+
+- **组阁（T+0至T+90天）**：SD入阁问题迫在眉睫；预计30–90天内组阁；没有SD支持，任何联盟都无法在算术上稳定。
+- **核电（T+365–T+730天）**：决策窗口2027–2028；存在广泛的跨党派支持；资本和选址是障碍。
+- **住房**：缺口超过15万套；所有情景均需要政策行动；国家投资（B情景）对市场（A情景）。
+- **福利**：无论结果如何，老年护理需求到2030年将增加18%；每种情景都需要地方财政改革。
+- **经济**：IMF预测2027–2030年GDP增长2.0–2.5%；瑞典超过欧盟平均水平；国防投资乘数效应增加约GDP 0.5%。
+
+### 最重要的前瞻性触发因素
+
+**SD入阁问题解决（T+90天）**：SD是否进入内阁（A2）或仍为支持党（A1）将决定整个2026–2030年任期的性格、国际接受度和民主先例。
+
+### 下一任期预览矩阵
+
+| 领域 | A1（Tidö+） | A2（SD入阁） | B1（S少数） | B2（S大联合） |
+|---|---|---|---|---|
+| 住房 | 渐进 | 混合 | 国家投资 | 两种机制 |
+| 核电 | 建设 | 建设 | 接受基线 | 绝对多数 |
+| 国防 | 2.4% | 2.4% | 2.4% | 2.4% |
+| 移民 | 严格 | 非常严格 | 温和 | 务实 |
+| SD立场 | 支持党 | 内阁 | 反对党 | 反对党 |
+
+### 置信度标签
+
+中等置信度（选举结果不确定；4年预测本质上具有推测性）；对结构性制约（国防、核电逻辑、住房赤字）的置信度高。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+flowchart TD
+  E["🗳️ Election Result<br/>Sept 2026"] --> Q["SD Cabinet Question<br/>T+90d resolution"]
+  Q --> SD_IN["SD enters cabinet<br/>A2: 9%<br/>Transformative"]
+  Q --> SD_OUT["SD stays C&S<br/>A1: 27%<br/>Status quo"]
+  Q --> S_WINS["S wins<br/>B-scenarios: 45%"]
+  SD_IN --> NUC1["Nuclear YES<br/>Housing: mixed<br/>SD normalised"]
+  SD_OUT --> NUC2["Nuclear YES<br/>Housing: incremental<br/>SD still pivotal"]
+  S_WINS --> NUC3["Nuclear ACCEPTED<br/>Housing: investment<br/>SD in opposition"]
+  style E fill:#ff006e,color:#fff
+  style Q fill:#9900cc,color:#fff
+  style SD_IN fill:#1a4a8a,color:#fff
+  style SD_OUT fill:#2a5a9a,color:#fff
+  style S_WINS fill:#cc0000,color:#fff
+```
+
+<!-- source-sha: 5d8da0c335b7b753c6fbbb72731875bcfd25910e -->
+
 ## Forward Look
 <!-- source: forward-look.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/forward-look.md -->
 
@@ -1433,7 +2333,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 41 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1461,6 +2361,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`comparative-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/comparative-context.md)
 - [`confidence-calibration.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/confidence-calibration.md)
 - [`electoral-forecast.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/electoral-forecast.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief_zh.md)
 - [`forward-look.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/forward-look.md)
 - [`institutional-constraints.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/institutional-constraints.md)
 - [`international-context.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/international-context.md)

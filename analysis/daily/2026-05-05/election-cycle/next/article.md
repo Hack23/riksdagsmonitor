@@ -6,7 +6,7 @@ date: 2026-05-05
 subfolder: election-cycle/next
 slug: 2026-05-05-election-cycle/next
 source_folder: analysis/daily/2026-05-05/election-cycle/next
-generated_at: 2026-05-22T13:53:53.836Z
+generated_at: 2026-05-23T08:06:00.571Z
 language: en
 layout: article
 ---
@@ -68,6 +68,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -933,13 +946,418 @@ From current-day signals (HD10464, HD10466, HD01JuU30, HD11782, HD11787):
 - Current-anchor parallel: analysis/daily/2026-05-05/election-cycle/current/data-download-manifest.md
 - IMF economic context: data/imf-context.json (WEO Apr-2026, degraded mode)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز تنفيذي — الولاية القادمة 2026-09-13 → 2030-09-08 (2026-05-05)
+
+**التصنيف**: PUBLIC | **الثقة**: MEDIUM [C3] | **T-131 يوماً حتى التشكيل**
+
+### مقدمة تشكيل الحكومة
+
+ستتشكل الحكومة السويدية القادمة في غضون 3-6 أسابيع بعد 2026-09-13. السؤال الحاسم ليس "من يفوز" بل "ما الذي يطالب به SD" و"ما الذي يقرره حزب الوسط C".
+
+**ثلاثة تحركات افتتاحية ستحدد معالم الولاية 2026-2030**:
+
+1. **دخول SD إلى الحكومة أو إقصاؤه منها**: إذا فاز تيدو وطالب أوكيسون بحقيبة وزارية، فإن النقاش الدستوري السويدي سيحدد الـ90 يوماً الأولى للحكومة. هذا القرار (نعم أو لا لـSD في الحكومة) سيكون أهم خيار سياسي سويدي منذ الانضمام إلى الاتحاد الأوروبي (1994).
+
+2. **قرار بناء المفاعلات النووية**: أرسى HD01NU19 المسار التشريعي. يجب على الحكومة القادمة الإعلان عن قرارها النووي خلال السنة الأولى (T+365d). سيتضاعف الطلب على الكهرباء بحلول عام 2040 — ولا يمكن تأجيل هذا إلى الأبد. سيُحدَّد سجل أمن الطاقة للولاية القادمة بناءً على هذا الخيار الواحد.
+
+3. **برنامج الطوارئ الإسكاني**: عجز يزيد على 200,000 وحدة سكنية هو أزمة هيكلية. أي حكومة تفشل في معالجة هذا ستواجه في عام 2030 ناخبين عانوا لأكثر من 8 سنوات من تدهور القدرة على تحمل تكاليف السكن. تحتاج السويد إلى أكثر من 25,000 بداية بناء سنوياً؛ يجب على الفترة 2026-2030 عكس هذا الاتجاه.
+
+### التوقعات الاقتصادية لصندوق النقد الدولي للولاية القادمة (WEO Apr-2026)
+
+| العام | نمو الناتج المحلي الإجمالي للسويد | الميزان المالي | البطالة |
+|---|---|---|---|
+| 2026 | 1.8% | -0.8% من الناتج المحلي | 8.3% |
+| 2027 | 2.3% | -0.5% من الناتج المحلي | 7.9% |
+| 2028 | 2.1% | -0.3% من الناتج المحلي | 7.5% |
+
+*المصدر: IMF WEO Apr-2026. توقعات وليست تنبؤات. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**الظروف الاقتصادية الافتتاحية**: مواتية — الحكومة القادمة ترث مساراً للتعافي. الخطر: الإنفاق الدفاعي البالغ 2.4% من الناتج المحلي الإجمالي (هدف الناتو 2028) يُحدث ضغطاً مالياً قصير الأجل لكنه يُوفر أرباحاً أمنية طويلة الأجل.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_da.md -->
+
+**Klassificering**: PUBLIC | **Konfidensgrad**: MEDIUM [C3] | **T-131 dage til dannelse**
+
+### FORHÅNDSVISNING AF DANNELSEN
+
+Den næste svenske regering dannes 3-6 uger efter 2026-09-13. Det afgørende spørgsmål er ikke "hvem vinder", men "hvad SD kræver" og "hvad C beslutter".
+
+**Tre indledende handlinger, der vil definere mandatet 2026-2030**:
+
+1. **SD's kabinetsindtræden eller -udelukkelse**: Hvis Tidö vinder og Åkesson kræver en ministerpost, vil Sveriges forfatningsdebat definere regeringens første 90 dage. Denne beslutning (JA eller NEJ til SD i kabinettet) vil være det mest afgørende svenske politiske valg siden EU-tiltrædelsen (1994).
+
+2. **Beslutning om atomkraftbyggeri**: HD01NU19 har skabt den lovgivningsmæssige vej. Den næste regering skal annoncere sin atomkraftbeslutning inden for År 1 (T+365d). Elefterspørgslen fordobles inden 2040, hvilket betyder, at dette ikke kan udskydes for evigt. Det næste mandats energisikkerhedsresultater vil blive defineret af dette ene valg.
+
+3. **Boligkriseprogramme**: Underskuddet på 200.000+ enheder er en strukturel krise. Enhver regering, der undlader at imødekomme dette, vil stå over for et vælgerkorps i 2030, der har oplevet 8+ år med forværret boligoverkommelighed. Sverige har brug for 25.000+ nye boligopstarter om året; 2026-2030 skal vende tendensen.
+
+### IMF ØKONOMISK UDSIGT FOR NÆSTE MANDAT (WEO Apr-2026)
+
+| År | Sveriges BNP-vækst | Finanspolitisk saldo | Arbejdsløshed |
+|---|---|---|---|
+| 2026 | 1,8% | -0,8% BNP | 8,3% |
+| 2027 | 2,3% | -0,5% BNP | 7,9% |
+| 2028 | 2,1% | -0,3% BNP | 7,5% |
+
+*Kilde: IMF WEO Apr-2026. Prognoser, ikke forudsigelser. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**Indledende økonomiske betingelser**: Gunstige — den indtrædende regering arver en genopretningsbane. Risiko: Forsvarsudgifter på 2,4% BNP (NATO-mål 2028) skaber kortsigtet finanspolitisk træk, men langsigtigt sikkerhedsudbytte.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_de.md -->
+
+**Klassifizierung**: PUBLIC | **Konfidenz**: MEDIUM [C3] | **T-131 Tage bis zur Regierungsbildung**
+
+### VORSCHAU AUF DIE REGIERUNGSBILDUNG
+
+Die nächste schwedische Regierung wird 3-6 Wochen nach dem 2026-09-13 gebildet. Die entscheidende Frage ist nicht "wer gewinnt", sondern "was die SD fordert" und "was die C entscheidet".
+
+**Drei Eröffnungsschritte, die das Mandat 2026-2030 definieren werden**:
+
+1. **SD-Kabinettseintritt oder -ausschluss**: Wenn Tidö gewinnt und Åkesson ein Ministeramt fordert, wird Schwedens Verfassungsdebatte die ersten 90 Tage der Regierung bestimmen. Diese Entscheidung (JA oder NEIN zu SD im Kabinett) wird die folgenreichste schwedische politische Entscheidung seit dem EU-Beitritt (1994) sein.
+
+2. **Entscheidung über den Kernkraftbau**: HD01NU19 hat den gesetzgeberischen Weg geschaffen. Die nächste Regierung muss ihre Kernkraftentscheidung innerhalb des Jahres 1 (T+365d) bekannt geben. Die Stromnachfrage verdoppelt sich bis 2040 — das kann nicht auf unbestimmte Zeit aufgeschoben werden. Die Energiesicherheitsbilanz des nächsten Mandats wird durch diese einzige Entscheidung definiert.
+
+3. **Wohnungsnotprogramm**: Das Defizit von über 200.000 Einheiten ist eine strukturelle Krise. Jede Regierung, die dies versäumt anzugehen, wird 2030 auf ein Wählerkorps treffen, das 8+ Jahre verschlechterter Wohnbezahlbarkeit erlebt hat. Schweden braucht 25.000+ neue Wohnungsbaustarts pro Jahr; 2026-2030 muss den Trend umkehren.
+
+### IMF WIRTSCHAFTSAUSBLICK FÜR DAS NÄCHSTE MANDAT (WEO Apr-2026)
+
+| Jahr | Schwedisches BIP-Wachstum | Finanzierungssaldo | Arbeitslosigkeit |
+|---|---|---|---|
+| 2026 | 1,8% | -0,8% BIP | 8,3% |
+| 2027 | 2,3% | -0,5% BIP | 7,9% |
+| 2028 | 2,1% | -0,3% BIP | 7,5% |
+
+*Quelle: IMF WEO Apr-2026. Projektionen, keine Vorhersagen. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**Ausgangswirtschaftliche Bedingungen**: Günstig — die neue Regierung erbt eine Erholungsbahn. Risiko: Verteidigungsausgaben von 2,4% BIP (NATO-Ziel 2028) verursachen kurzfristige fiskalische Belastungen, bieten aber langfristige Sicherheitsdividende.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_es.md -->
+
+**Clasificación**: PUBLIC | **Confianza**: MEDIUM [C3] | **T-131 días hasta la formación**
+
+### VISTA PREVIA DE LA FORMACIÓN
+
+El próximo gobierno sueco se formará 3-6 semanas después del 2026-09-13. La pregunta decisiva no es "quién gana" sino "qué exige el SD" y "qué decide el C".
+
+**Tres movimientos iniciales que definirán el mandato 2026-2030**:
+
+1. **Entrada o exclusión del SD en el gabinete**: Si Tidö gana y Åkesson exige una cartera ministerial, el debate constitucional de Suecia definirá los primeros 90 días del gobierno. Esta decisión (SÍ o NO al SD en el gabinete) será la elección política sueca más trascendental desde la adhesión a la UE (1994).
+
+2. **Decisión sobre la construcción nuclear**: HD01NU19 ha creado la vía legislativa. El próximo gobierno debe anunciar su decisión nuclear dentro del Año 1 (T+365d). La demanda de electricidad se duplicará para 2040 — esto no puede posponerse indefinidamente. El balance de seguridad energética del próximo mandato quedará definido por esta única elección.
+
+3. **Programa de emergencia habitacional**: El déficit de más de 200.000 unidades es una crisis estructural. Cualquier gobierno que fracase en abordar esto se enfrentará a un electorado en 2030 que habrá experimentado 8+ años de empeoramiento de la asequibilidad de la vivienda. Suecia necesita 25.000+ nuevos inicios de construcción por año; 2026-2030 debe revertir la tendencia.
+
+### PERSPECTIVAS ECONÓMICAS DEL FMI PARA EL PRÓXIMO MANDATO (WEO Apr-2026)
+
+| Año | Crecimiento del PIB sueco | Saldo fiscal | Desempleo |
+|---|---|---|---|
+| 2026 | 1,8% | -0,8% PIB | 8,3% |
+| 2027 | 2,3% | -0,5% PIB | 7,9% |
+| 2028 | 2,1% | -0,3% PIB | 7,5% |
+
+*Fuente: IMF WEO Apr-2026. Proyecciones, no predicciones. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**Condiciones económicas iniciales**: Favorables — el nuevo gobierno hereda una trayectoria de recuperación. Riesgo: El gasto en defensa del 2,4% del PIB (objetivo OTAN 2028) crea una presión fiscal a corto plazo, pero ofrece un dividendo de seguridad a largo plazo.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_fi.md -->
+
+**Luokittelu**: PUBLIC | **Luotettavuustaso**: MEDIUM [C3] | **T-131 päivää muodostamiseen**
+
+### MUODOSTAMISEN ENNAKKOESITTELY
+
+Seuraava Ruotsin hallitus muodostetaan 3-6 viikon kuluessa 2026-09-13 jälkeen. Ratkaiseva kysymys ei ole "kuka voittaa" vaan "mitä SD vaatii" ja "mitä C päättää".
+
+**Kolme avaustoimenpidettä, jotka määrittelevät toimikauden 2026–2030**:
+
+1. **SD:n kabinettiinpääsy tai poissulkeminen**: Jos Tidö voittaa ja Åkesson vaatii ministerisalkkua, Ruotsin perustuslaillinen keskustelu määrittelee hallituksen ensimmäiset 90 päivää. Tämä päätös (KYLLÄ tai EI SD:lle kabinetissa) on tärkein Ruotsin poliittinen valinta EU-liittymiseen (1994) jälkeen.
+
+2. **Ydinvoimarakentamispäätös**: HD01NU19 on luonut lainsäädännöllisen tien. Seuraavan hallituksen on ilmoitettava ydinvoimapäätöksestään Vuoden 1 sisällä (T+365d). Sähkön kysyntä kaksinkertaistuu vuoteen 2040 mennessä, mikä tarkoittaa, että tätä ei voi lykätä loputtomiin. Seuraavan toimikauden energiaturvallisuusarvio määritellään tämän yhden valinnan perusteella.
+
+3. **Asuntohätäohjelma**: Yli 200 000 asunnon alijäämä on rakenteellinen kriisi. Mikä tahansa hallitus, joka epäonnistuu tässä, kohtaa vuonna 2030 äänestäjäkunnan, joka on kokenut yli 8 vuotta heikentyvää asuntojen kohtuuhintaisuutta. Ruotsi tarvitsee yli 25 000 uutta asuntoaloitusta vuodessa; 2026–2030 on käännettävä trendi.
+
+### IMF TALOUDELLINEN ENNUSTE SEURAAVALLE TOIMIKAUDELLE (WEO Apr-2026)
+
+| Vuosi | Ruotsin BKT-kasvu | Rahoitustasapaino | Työttömyys |
+|---|---|---|---|
+| 2026 | 1,8% | -0,8% BKT | 8,3% |
+| 2027 | 2,3% | -0,5% BKT | 7,9% |
+| 2028 | 2,1% | -0,3% BKT | 7,5% |
+
+*Lähde: IMF WEO Apr-2026. Ennusteet, eivät ennakoimiset. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**Aloittavat taloudelliset olosuhteet**: Suotuisat — tuleva hallitus perii elpymisbanan. Riski: Puolustusmenot 2,4% BKT:sta (NATO:n tavoite 2028) luo lyhytaikaista finansiaalista vetoa mutta pitkän aikavälin turvallisuusosinkoa.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_fr.md -->
+
+### APERÇU DE LA FORMATION
+
+Le prochain gouvernement suédois sera formé dans les 3 à 6 semaines suivant le 2026-09-13. La question décisive n'est pas "qui gagne", mais "ce que le SD exige" et "ce que le C décide".
+
+**Trois premiers mouvements qui définiront le mandat 2026-2030** :
+
+1. **Entrée ou exclusion du SD au gouvernement** : Si Tidö gagne et qu'Åkesson exige un portefeuille ministériel, le débat constitutionnel suédois définira les 90 premiers jours du gouvernement. Cette décision (OUI ou NON au SD dans le gouvernement) sera le choix politique suédois le plus décisif depuis l'adhésion à l'UE (1994).
+
+2. **Décision sur la construction nucléaire** : HD01NU19 a créé la voie législative. Le prochain gouvernement doit annoncer sa décision nucléaire au cours de l'An 1 (T+365j). La demande d'électricité doublera d'ici 2040 — cela ne peut être indéfiniment reporté. Le bilan en matière de sécurité énergétique du prochain mandat sera défini par ce seul choix.
+
+3. **Programme d'urgence logement** : Le déficit de 200 000+ logements est une crise structurelle. Tout gouvernement qui échoue à résoudre ce problème fera face à un électorat en 2030 qui aura connu 8+ années d'aggravation de l'accessibilité au logement. La Suède a besoin de 25 000+ nouvelles mises en chantier par an ; 2026-2030 doit inverser la tendance.
+
+### PERSPECTIVES ÉCONOMIQUES DU FMI POUR LE PROCHAIN MANDAT (WEO Apr-2026)
+
+| Année | Croissance du PIB suédois | Solde budgétaire | Chômage |
+|---|---|---|---|
+| 2026 | 1,8% | -0,8% PIB | 8,3% |
+| 2027 | 2,3% | -0,5% PIB | 7,9% |
+| 2028 | 2,1% | -0,3% PIB | 7,5% |
+
+**Conditions économiques initiales** : Favorables — le nouveau gouvernement hérite d'une trajectoire de reprise. Risque : Les dépenses de défense à 2,4% du PIB (objectif OTAN 2028) créent une pression budgétaire à court terme mais offrent un dividende de sécurité à long terme.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תדריך מנהלים — הכהונה הבאה 2026-09-13 → 2030-09-08 (2026-05-05)
+
+**סיווג**: PUBLIC | **רמת ביטחון**: MEDIUM [C3] | **T-131 ימים עד להקמה**
+
+### תצוגה מקדימה של ההקמה
+
+הממשלה השוודית הבאה תוקם 3-6 שבועות לאחר 2026-09-13. השאלה המכרעת אינה "מי מנצח" אלא "מה SD דורש" ו"מה C מחליט".
+
+**שלושה צעדי פתיחה שיגדירו את הכהונה 2026-2030**:
+
+1. **כניסת SD לממשלה או הדרתו ממנה**: אם טידו מנצח ואוקסון דורש תיק שרוּת, הדיון החוקתי של שוודיה יגדיר את 90 ימי הממשלה הראשונים. החלטה זו (כן או לא ל-SD בממשלה) תהיה הבחירה הפוליטית השוודית הגורלית ביותר מאז ההצטרפות לאיחוד האירופי (1994).
+
+2. **החלטה על בניית כורים גרעיניים**: HD01NU19 יצר את הנתיב החקיקתי. על הממשלה הבאה להכריז על החלטתה הגרעינית בתוך שנה 1 (T+365d). הביקוש לחשמל יוכפל עד 2040 — לא ניתן לדחות זאת לנצח. מאזן ביטחון האנרגיה של הכהונה הבאה ייקבע על פי בחירה יחידה זו.
+
+3. **תוכנית חירום לדיור**: הגירעון של יותר מ-200,000 יחידות דיור הוא משבר מבני. כל ממשלה שלא תטפל בזה תתמודד ב-2030 עם ציבור בוחרים שחוו יותר מ-8 שנים של הרעה בהישגיות הדיור. שוודיה זקוקה ל-25,000+ התחלות בנייה חדשות בשנה; 2026-2030 חייבת לשנות את המגמה.
+
+### תחזית כלכלית של קרן המטבע לכהונה הבאה (WEO Apr-2026)
+
+| שנה | צמיחת תמ"ג שוודיה | מאזן פיסקלי | אבטלה |
+|---|---|---|---|
+| 2026 | 1.8% | -0.8% תמ"ג | 8.3% |
+| 2027 | 2.3% | -0.5% תמ"ג | 7.9% |
+| 2028 | 2.1% | -0.3% תמ"ג | 7.5% |
+
+*מקור: IMF WEO Apr-2026. תחזיות, לא ניבויים. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**תנאים כלכליים ראשוניים**: נוחים — הממשלה הנכנסת יורשת מסלול התאוששות. סיכון: הוצאות ביטחון של 2.4% תמ"ג (יעד נאט"ו 2028) יוצרות לחץ פיסקלי קצר-טווח אבל מניבות דיבידנד ביטחוני לטווח ארוך.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_ja.md -->
+
+**分類**: PUBLIC | **信頼度**: MEDIUM [C3] | **政権発足まで**: T-131日
+
+### 政権発足の展望
+
+次のスウェーデン政府は2026-09-13から3〜6週間後に発足します。決定的な問題は「誰が勝つか」ではなく、「SDが何を要求するか」と「Cが何を決めるか」です。
+
+**2026〜2030年任期を定義する3つの開幕手**：
+
+1. **SDの組閣入りまたは排除**：ティドーが勝利しオーケッソン首相が閣僚ポストを要求した場合、スウェーデンの憲法論争が政府の最初の90日間を規定します。この決定（SD閣僚入りへの賛否）は、EU加盟（1994年）以来最も重大なスウェーデンの政治的選択となります。
+
+2. **原子力建設の決定**：HD01NU19が立法的な道筋を設けました。次期政府は1年目（T+365d）以内に原子力決定を発表しなければなりません。2040年までに電力需要は倍増します。これを無限に先延ばしすることはできません。次期任期のエネルギー安全保障の成績はこの一つの選択によって決定されます。
+
+3. **住宅緊急プログラム**：20万戸以上の不足は構造的危機です。これに取り組めなかった政府は、2030年に8年以上の住宅購入困難を経験した有権者を相手にすることになります。スウェーデンは年間25,000戸以上の新規住宅着工が必要です。2026〜2030年にはこの傾向を逆転させなければなりません。
+
+### 次期任期に向けたIMF経済見通し (WEO Apr-2026)
+
+| 年 | スウェーデンGDP成長率 | 財政収支 | 失業率 |
+|---|---|---|---|
+| 2026 | 1.8% | -0.8% GDP | 8.3% |
+| 2027 | 2.3% | -0.5% GDP | 7.9% |
+| 2028 | 2.1% | -0.3% GDP | 7.5% |
+
+*出典：IMF WEO Apr-2026。予測値であり、確定予想ではありません。(WEO Apr-2026, NGDP_RPCH SWE)*
+
+**初期経済状況**：良好 — 新政権は回復軌道を引き継ぎます。リスク：GDP比2.4%の国防費（NATO目標2028年）は短期的な財政負担を生みますが、長期的な安全保障配当をもたらします。
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_ko.md -->
+
+**분류**: PUBLIC | **신뢰도**: MEDIUM [C3] | **정권 구성까지**: T-131일
+
+### 정권 구성 미리보기
+
+다음 스웨덴 정부는 2026-09-13로부터 3-6주 후에 구성됩니다. 결정적인 질문은 "누가 이기냐"가 아니라 "SD가 무엇을 요구하냐"와 "C가 무엇을 결정하냐"입니다.
+
+**2026-2030 임기를 정의할 세 가지 초기 조치**:
+
+1. **SD의 내각 입각 또는 배제**: 티되가 승리하고 오케손이 장관직을 요구한다면, 스웨덴의 헌법 논쟁이 정부의 첫 90일을 규정하게 됩니다. 이 결정(SD의 내각 입각 찬반)은 EU 가입(1994년) 이후 가장 중요한 스웨덴의 정치적 선택이 될 것입니다.
+
+2. **원자력 발전소 건설 결정**: HD01NU19는 입법적 경로를 만들었습니다. 차기 정부는 1년차(T+365d) 이내에 원자력 결정을 발표해야 합니다. 전력 수요는 2040년까지 두 배로 증가합니다 — 이를 무한정 미룰 수는 없습니다. 차기 임기의 에너지 안보 성적표는 이 단일한 선택으로 결정됩니다.
+
+3. **주택 긴급 프로그램**: 20만 호 이상의 주택 부족은 구조적 위기입니다. 이를 해결하지 못한 정부는 2030년에 8년 이상 주택 구입 어려움을 경험한 유권자들을 상대하게 됩니다. 스웨덴은 연간 25,000호 이상의 신규 주택 착공이 필요합니다. 2026-2030년에는 이 추세를 역전시켜야 합니다.
+
+### 차기 임기를 위한 IMF 경제 전망 (WEO Apr-2026)
+
+| 연도 | 스웨덴 GDP 성장 | 재정 수지 | 실업률 |
+|---|---|---|---|
+| 2026 | 1.8% | -0.8% GDP | 8.3% |
+| 2027 | 2.3% | -0.5% GDP | 7.9% |
+| 2028 | 2.1% | -0.3% GDP | 7.5% |
+
+*출처: IMF WEO Apr-2026. 전망치이며 예측이 아닙니다. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**초기 경제 여건**: 우호적 — 신정부는 회복 궤도를 물려받습니다. 위험: GDP 대비 2.4%의 국방비(NATO 목표 2028년)는 단기적 재정 부담을 초래하지만 장기적 안보 배당금을 제공합니다.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_nl.md -->
+
+**Classificatie**: PUBLIC | **Betrouwbaarheid**: MEDIUM [C3] | **T-131 dagen tot de formatie**
+
+### VOORVERTONING VAN DE FORMATIE
+
+De volgende Zweedse regering wordt 3-6 weken na 2026-09-13 gevormd. De beslissende vraag is niet "wie wint", maar "wat de SD eist" en "wat de C besluit".
+
+**Drie openingszetten die het mandaat 2026-2030 zullen bepalen**:
+
+1. **SD-kabinetsintreding of -uitsluiting**: Als Tidö wint en Åkesson een ministerspost eist, zal het constitutionele debat van Zweden de eerste 90 dagen van de regering bepalen. Deze beslissing (JA of NEE voor SD in het kabinet) zal de meest bepalende Zweedse politieke keuze zijn sinds de EU-toetreding (1994).
+
+2. **Beslissing over kernenergiebouw**: HD01NU19 heeft de wetgevende weg gecreëerd. De volgende regering moet zijn kernenergiebeslissing binnen Jaar 1 (T+365d) aankondigen. De vraag naar elektriciteit verdubbelt voor 2040 — dit kan niet voor altijd worden uitgesteld. De energiebeveiligingsbalans van het volgende mandaat wordt bepaald door deze ene keuze.
+
+3. **Woningnoodprogramma**: Het tekort van 200.000+ woningen is een structurele crisis. Elke regering die dit niet aanpakt, zal in 2030 een electoraat treffen dat 8+ jaar verslechterende woonbetaalbaarheid heeft ervaren. Zweden heeft 25.000+ nieuwe woningbouwstarts per jaar nodig; 2026-2030 moet de trend keren.
+
+### IMF ECONOMISCHE VOORUITZICHTEN VOOR HET VOLGEND MANDAAT (WEO Apr-2026)
+
+| Jaar | Zweedse bbp-groei | Begrotingssaldo | Werkloosheid |
+|---|---|---|---|
+| 2026 | 1,8% | -0,8% bbp | 8,3% |
+| 2027 | 2,3% | -0,5% bbp | 7,9% |
+| 2028 | 2,1% | -0,3% bbp | 7,5% |
+
+*Bron: IMF WEO Apr-2026. Projecties, geen voorspellingen. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**Aanvangseconomische omstandigheden**: Gunstig — de nieuwe regering erft een hersteltraject. Risico: Defensie-uitgaven van 2,4% bbp (NAVO-doel 2028) creëren kortetermijn begrotingsdruk, maar bieden langetermijn veiligheidsdividend.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_no.md -->
+
+**Klassifisering**: PUBLIC | **Konfidensnivå**: MEDIUM [C3] | **T-131 dager til dannelse**
+
+### FORHÅNDSVISNING AV DANNELSEN
+
+Den neste svenske regjeringen dannes 3-6 uker etter 2026-09-13. Det avgjørende spørsmålet er ikke "hvem vinner", men "hva SD krever" og "hva C beslutter".
+
+**Tre innledende tiltak som vil definere mandatet 2026-2030**:
+
+1. **SDs kabinettsinntreden eller -utelukkelse**: Dersom Tidö vinner og Åkesson krever en ministerpost, vil Sveriges konstitusjonelle debatt definere regjeringens første 90 dager. Denne beslutningen (JA eller NEI til SD i kabinettet) vil være det mest avgjørende svenske politiske valget siden EU-inntreden (1994).
+
+2. **Beslutning om kjernekraftbygging**: HD01NU19 har skapt den lovgivningsmessige veien. Den neste regjeringen må kunngjøre sin kjernekraftbeslutning innen År 1 (T+365d). Strømetterspørselen dobles innen 2040, noe som betyr at dette ikke kan utsettes for alltid. Det neste mandatets energisikkerhetsresultater vil bli definert av dette ene valget.
+
+3. **Boligkriseprogramme**: Underskuddet på 200 000+ enheter er en strukturell krise. Enhver regjering som mislykkes i å håndtere dette, vil møte et velgerkorps i 2030 som har opplevd 8+ år med forverret boligoverkommenlighet. Sverige trenger 25 000+ nye boligpåbegynnelser per år; 2026-2030 må snu trenden.
+
+### IMF ØKONOMISK UTSIKT FOR NESTE MANDAT (WEO Apr-2026)
+
+| År | Sveriges BNP-vekst | Finanspolitisk saldo | Arbeidsledighet |
+|---|---|---|---|
+| 2026 | 1,8% | -0,8% BNP | 8,3% |
+| 2027 | 2,3% | -0,5% BNP | 7,9% |
+| 2028 | 2,1% | -0,3% BNP | 7,5% |
+
+*Kilde: IMF WEO Apr-2026. Prognoser, ikke forutsigelser. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**Innledende økonomiske betingelser**: Gunstige — den tiltrående regjeringen arver en gjenopprettingsbane. Risiko: Forsvarsutgifter på 2,4% BNP (NATO-mål 2028) skaper kortsiktig finanspolitisk drag, men langsiktig sikkerhetsutbytte.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_sv.md -->
+
+**Klassificering**: PUBLIC | **Konfidensgrad**: MEDIUM [C3] | **T-131 dagar till bildande**
+
+### BILDNINGSFÖRHANDSVISNING
+
+Nästa svenska regering bildas under 3-6 veckor efter 2026-09-13. Den avgörande frågan är inte "vem vinner" utan "vad SD kräver" och "vad C beslutar".
+
+**Tre inledande åtgärder som kommer att definiera mandatet 2026–2030**:
+
+1. **SD:s inträde i eller uteslutning från regeringen**: Om Tidö vinner och Åkesson kräver en ministeriell portfölj, kommer Sveriges konstitutionella debatt att definiera regeringens första 90 dagar. Detta beslut (JA eller NEJ till SD i regeringen) blir det mest avgörande svenska politiska beslutet sedan EU-inträdet (1994).
+
+2. **Beslut om kärnkraftsbygge**: HD01NU19 har skapat den lagstiftande vägen. Nästa regering måste tillkännage sitt kärnkraftsbeslut inom År 1 (T+365d). Elefterfrågan fördubblas till 2040, vilket innebär att detta inte kan skjutas upp för alltid. Nästa mandats energisäkerhetsresultat definieras av detta enda val.
+
+3. **Bostadsnödprogram**: Underskottet på 200 000+ enheter är en strukturell kris. Vilken regering som helst som misslyckas med att hantera detta kommer att möta ett väljarkår år 2030 som upplevt 8+ år av försämrad bostadsöverkomlighet. Sverige behöver 25 000+ nya bostadspåbörjanden per år; 2026-2030 måste vända trenden.
+
+### IMF EKONOMISK PROGNOS FÖR NÄSTA MANDAT (WEO Apr-2026)
+
+| År | Sveriges BNP-tillväxt | Finansiellt saldo | Arbetslöshet |
+|---|---|---|---|
+| 2026 | 1,8% | -0,8% BNP | 8,3% |
+| 2027 | 2,3% | -0,5% BNP | 7,9% |
+| 2028 | 2,1% | -0,3% BNP | 7,5% |
+
+*Källa: IMF WEO Apr-2026. Prognoser, inte förutsägelser. (WEO Apr-2026, NGDP_RPCH SWE)*
+
+**Inledande ekonomiska förhållanden**: Gynnsamma — den tillträdande regeringen ärver en återhämtningsbana. Risk: Försvarsutgifter på 2,4% BNP (NATO:s mål 2028) skapar kortsiktig finansiell belastning men långsiktig säkerhetsdividend.
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_zh.md -->
+
+**分类**：PUBLIC | **可信度**：MEDIUM [C3] | **距政府组建**：T-131天
+
+### 组建预览
+
+下届瑞典政府将在2026-09-13后的3至6周内组建。决定性问题不是"谁赢了"，而是"SD要求什么"和"C决定什么"。
+
+**将定义2026-2030任期的三个开局动作**：
+
+1. **SD进入或退出内阁**：若提德获胜，且奥克松要求部长职位，瑞典的宪法辩论将定义政府的前90天。这一决定（是否接受SD入阁）将是自加入欧盟（1994年）以来最具决定性的瑞典政治选择。
+
+2. **核电建设决定**：HD01NU19已创设立法路径。下届政府必须在第1年（T+365d）内宣布其核电决策。到2040年电力需求将翻倍——这不能无限期推迟。下届任期的能源安全成绩将由这一单一选择来决定。
+
+3. **住房紧急计划**：超过20万套的住房缺口是一场结构性危机。任何未能解决这一问题的政府，将在2030年面对经历了8年以上住房可负担性恶化的选民。瑞典每年需要25,000套以上的新屋开工；2026-2030年必须扭转这一趋势。
+
+### 国际货币基金组织对下届任期的经济展望（WEO Apr-2026）
+
+| 年份 | 瑞典GDP增长 | 财政收支 | 失业率 |
+|---|---|---|---|
+| 2026 | 1.8% | -0.8% GDP | 8.3% |
+| 2027 | 2.3% | -0.5% GDP | 7.9% |
+| 2028 | 2.1% | -0.3% GDP | 7.5% |
+
+*来源：IMF WEO Apr-2026。系预测，非确定性预报。(WEO Apr-2026, NGDP_RPCH SWE)*
+
+**初始经济条件**：有利——新政府继承复苏轨道。风险：占GDP 2.4%的国防支出（北约2028年目标）造成短期财政压力，但带来长期安全红利。
+
+<!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 27 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 40 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -980,3 +1398,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/election-cycle/next/executive-brief_zh.md)
