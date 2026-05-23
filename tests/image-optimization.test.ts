@@ -8,6 +8,13 @@ import { IMAGE_VARIANT_MANIFEST, variantName } from '../scripts/optimize-images.
 
 const REPO_ROOT = path.resolve(__dirname, '..');
 const IMAGE_DIR = path.join(REPO_ROOT, 'public', 'images');
+// The top-level `news/` directory holds tens of thousands of generated
+// article pages; scanning every one of them inflates this test's runtime
+// past the Vitest timeout. The image-pipeline guarantees we care about
+// (srcset / <picture> wrapping) are enforced at render time for the news
+// corpus via the article renderer's own tests, so we deliberately exclude
+// `news/` here and limit this suite to hand-authored HTML elsewhere in
+// the repo. Update the test names below if you change this scope.
 const SKIP_HTML_DIRS = new Set(['node_modules', 'dist', 'docs', 'builds', 'scripts', '.git', 'news']);
 
 async function collectHtmlFiles(dir: string): Promise<string[]> {
@@ -64,7 +71,7 @@ describe('responsive image variants', () => {
     }
   });
 
-  it('serves every local HTML image through srcset or a picture fallback', async () => {
+  it('serves every local HTML image (excluding generated news/ pages) through srcset or a picture fallback', async () => {
     const failures: string[] = [];
     for (const htmlFile of await collectHtmlFiles(REPO_ROOT)) {
       const html = await fs.readFile(htmlFile, 'utf8');
@@ -78,7 +85,7 @@ describe('responsive image variants', () => {
     expect(failures).toEqual([]);
   });
 
-  it('keeps all local HTML srcset image URLs backed by generated files', async () => {
+  it('keeps all local HTML srcset image URLs (excluding generated news/ pages) backed by generated files', async () => {
     const missing: string[] = [];
     for (const htmlFile of await collectHtmlFiles(REPO_ROOT)) {
       const html = await fs.readFile(htmlFile, 'utf8');

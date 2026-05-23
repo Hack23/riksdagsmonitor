@@ -39,6 +39,15 @@ export function brandTitle(title: string): string {
 }
 
 /**
+ * Canonical default for `article:section` / `articleSection`.
+ *
+ * Exported so that {@link ../article-head-metadata.ts | computeArticleHeadMetadata}
+ * can mirror the exact value emitted by `renderChromeHead` without duplicating
+ * the string literal — eliminating the drift risk flagged in PR review.
+ */
+export const DEFAULT_ARTICLE_SECTION = 'Political Intelligence';
+
+/**
  * Render the complete `<!DOCTYPE html><html…><head>…</head>` block.
  *
  * This function is synchronous and deterministic for identical inputs
@@ -123,7 +132,7 @@ export function renderChromeHead(opts: ChromeOptions): string {
   const ogType = opts.ogType ?? 'article';
   const articleMetaBlock = ogType === 'article'
     ? `    <meta property="article:publisher" content="https://www.hack23.com">
-    <meta property="article:section" content="${escapeHtml(opts.section ?? 'Political Intelligence')}">
+    <meta property="article:section" content="${escapeHtml(opts.section ?? DEFAULT_ARTICLE_SECTION)}">
     <meta property="article:modified_time" content="${modified}">
     <meta property="article:published_time" content="${published}">
 `

@@ -129,26 +129,6 @@ export function rewriteMarkdownHrefsInHtml(
 }
 
 /**
- * Hard-coded fallback labels — kept only for legacy article types not yet
- * in the registry. New types should ONLY add a registry entry.
- *
- * @deprecated The authoritative copy now lives in `article-head-metadata.ts`
- *             and drives the shared {@link inferArticleType} helper. This
- *             constant is retained only as documentation of the legacy
- *             type IDs the article pipeline still recognises.
- */
-const ARTICLE_TYPE_LABELS_FALLBACK: Record<string, string> = {
-  'deep-inspection': 'Deep inspection',
-  realtime: 'Realtime pulse',
-  'realtime-pulse': 'Realtime pulse',
-  breaking: 'Breaking intelligence',
-  'parliament-agenda': 'Parliament agenda',
-};
-// Referenced to prevent dead-code analysers (knip) from removing it. The
-// runtime lookup is owned by `getArticleTypeLabel` inside `article-head-metadata.ts`.
-void ARTICLE_TYPE_LABELS_FALLBACK;
-
-/**
  * Strip the markdown-based "Reader Intelligence Guide" table and the
  * "Article Sources" appendix from the article body. These sections are
  * injected by the aggregator in English-only; the renderer emits

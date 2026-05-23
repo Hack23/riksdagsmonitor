@@ -35,7 +35,7 @@ import { articleTypeLabel } from './article-type-i18n.js';
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
 import type { ArticleSeoMetadata } from './article-seo.js';
 import { buildArticleSeoMetadata } from './article-seo.js';
-import { brandTitle } from './chrome/head.js';
+import { brandTitle, DEFAULT_ARTICLE_SECTION } from './chrome/head.js';
 
 /**
  * Hard-coded fallback labels — kept only for legacy article types not yet
@@ -228,8 +228,10 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
   });
   const computedBrandedTitle = brandTitle(seo.title);
   // Mirror the section value passed to buildChrome so the audit CLI
-  // reports exactly what ships in the rendered HTML.
-  const articleSection = 'Political Intelligence';
+  // reports exactly what ships in the rendered HTML. Sourced from the
+  // shared `DEFAULT_ARTICLE_SECTION` constant in chrome/head.ts so the
+  // two derivations cannot drift.
+  const articleSection = DEFAULT_ARTICLE_SECTION;
   return {
     rawTitle,
     rawDescription,
