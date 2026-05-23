@@ -50,7 +50,6 @@ jobs:
   prepare:
     name: Prepare Release
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     permissions:
       contents: write # Required for git auto-commit
     outputs:
@@ -122,7 +121,6 @@ jobs:
     name: Build Application
     needs: [prepare]
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     permissions:
       contents: read
     steps:
@@ -186,7 +184,6 @@ jobs:
     name: Unit Tests
     needs: [prepare]
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     permissions:
       contents: read
     steps:
