@@ -66,6 +66,20 @@
 3. Expand comparative-international.md with OECD education data
 4. Add more specific Statskontoret reference on agency capacity
 
+## Re-Run Delta (Pass 2 — Improvement Run, 2026-05-23 09:22Z)
+
+**Run**: 26329074071 attempt 1 | **Mode**: IMPROVEMENT_MODE=true (all 23 artifacts present)
+
+| Artifact | Change | Rationale |
+|---------|--------|-----------|
+| `forward-indicators.md` | Added F-9 (S/opposition coordination on security) and F-10 (Skolinspektionen UbU22 monitoring); PIR status table updated | ≥ 10 indicators required; gaps F-9 and F-10 identified in Pass 1 self-audit |
+| `comparative-international.md` | Expanded VET/vocational section with OECD Education at a Glance 2024 data, per-country apprenticeship share table, EU VET Recommendation 2020/C 417/01 citation | Specific OECD data required vs. generic references; provenance added |
+| `media-framing-analysis.md` | Added Outlet Bias Audit table (SVT, SvD, DN, Aftonbladet, Expressen, SR/Ekot) with ownership/funding/trust/PO-PON data; DISARM TTP assessment; RRPA impact table; renamed Frame 3 and Frame 4 per v2.1 no-neutral-media doctrine | v2.1 compliance requirements: Outlet Bias Audit, DISARM TTP map, RRPA block |
+
+**New dok_ids discovered**: None (rerun confirmed same 26 documents as Pass 1).
+**Flags closed**: Forward-indicators gap (< 10 indicators → closed to 10); media-framing v2.1 compliance gap.
+**Vintage refresh**: IMF WEO Apr-2026 (vintage WEO-2026-04) — live IMF fetch failed (network); WEO context from `data/imf-context.json` (status: ok, vintageAgeMonths: 1) confirms non-stale.
+
 ## GDPR Art. 9 Compliance
 
 - All named individuals cited in public parliamentary capacity only

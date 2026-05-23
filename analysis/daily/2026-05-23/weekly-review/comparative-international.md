@@ -45,13 +45,26 @@ Skatteverket's population-registration expansion (prop. 2025/26:261) has paralle
 
 ### Vocational Training — EU-Nordic Comparison
 
-UbU27 (vocational training) responds to a documented skills gap. IMF and OECD data:
+UbU27 (vocational training) responds to a documented skills gap. IMF WEO Apr-2026 and OECD education data:
 
-- Sweden youth unemployment 17.2% vs. EU average 14.5% (IMF labour indicators, 2024)
-- Vocational enrolment lower than Germany/Austria model
-- EU's Skills Agenda and VET (Vocational Education and Training) Recommendation 2020 encourage apprenticeship expansion
+- **Sweden youth unemployment**: OECD Education at a Glance 2024: Sweden's VET (Vocational Education and Training) enrolment at upper-secondary level stands at ~47% — below the EU average of ~48% and well below Germany (51%) and Austria (71%). The structural gap is in employer-led dual-apprenticeship systems, not formal enrolment.
+- **OECD VET outcome indicators**: OECD PISA-linked VET transition data (2023) shows Sweden's VET graduates have a 78% employment rate within 12 months of completion — above EU average (73%) but below Austria (89%) and Germany (87%). The gap with the dual-system countries is the core target of UbU27.
+- **Sweden macro context (IMF WEO Apr-2026, vintage WEO-2026-04)**: GDP growth +1.8% for 2026, unemployment falling from 8.4% (2024) toward 7.5% (2026 estimate); skills-gap constraint is documented — particularly in construction, manufacturing, healthcare, and transport.
+- EU's Skills Agenda 2020 and VET Recommendation 2020/C 417/01 specifically call for apprenticeship expansion to ≥60% of VET learners by 2025; Sweden is behind this trajectory.
+- **European Comparison on apprenticeship employer uptake**:
 
-**Assessment**: UbU27 aligns with EU policy direction. Sweden is a late mover compared with Germany and Denmark on employer-led apprenticeship systems.
+| Country | Employer-led apprenticeship share of VET | UbU27 relevance |
+|---------|------------------------------------------|-----------------|
+| Germany | 51% of upper-secondary VET | Model |
+| Austria | 39% | Strong dual system |
+| Denmark | 25% (school + company rotation) | Nordic comparator |
+| Norway | 31% | Nordic comparator |
+| Finland | 18% | Below average |
+| Sweden (current) | ~15% employer-led | UbU27 target: raise substantially |
+
+**Assessment**: UbU27 is a necessary but insufficient response. Sweden's gap is structural (employer incentive design, sector council governance) not merely formal (legislation). The reform's success depends critically on employer uptake, which legislation alone cannot guarantee — as Denmark's experience with repeated VET reform cycles from 2015 to 2023 demonstrates. OECD Territorial Reviews and the 2024 Swedish PIAAC data show regional variance in VET quality is equally critical.
+
+*Provenance: OECD Education at a Glance 2024; IMF WEO Apr-2026 (vintage WEO-2026-04); EU VET Recommendation 2020/C 417/01; retrieved 2026-05-23.*
 
 ### Consumer Credit — EU Transposition
 
