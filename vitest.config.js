@@ -254,6 +254,10 @@ export default defineConfig({
         // exercised end-to-end by the news workflows, not by unit tests).
         'scripts/aggregate-analysis.ts',
         'scripts/render-articles.ts',
+        // QA audit CLI — shebang + top-level process.argv parsing + file I/O
+        // on import; exercised by the "Test Article Headers" manual workflow,
+        // not by unit tests. Same precedent as scripts/render-articles.ts.
+        'scripts/test-article-headers.ts',
         // Supporting library for the two CLIs above; dedicated unit tests
         // tracked as follow-up work.
         'scripts/render-lib/**',
