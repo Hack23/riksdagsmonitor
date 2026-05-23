@@ -265,8 +265,8 @@ function decodeHtmlEntities(text: string): string {
 
 function stripDescriptionMarkup(text: string): string {
   return collapseWhitespace(decodeHtmlEntities(text
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/giu, ' ')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/giu, ' ')
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/giu, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/giu, ' ')
     .replace(/<[^>]+>/gu, ' ')
     .replace(/!\[[^\]]*\]\([^)]*\)/gu, ' ')
     .replace(/\[([^\]]+)\]\([^)]*\)/gu, '$1')
