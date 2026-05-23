@@ -34,9 +34,9 @@ import { buildArticleSeoMetadata } from './article-seo.js';
  * Hard-coded fallback labels — kept only for legacy article types not yet
  * in the registry. New types should ONLY add a registry entry.
  *
- * Kept in sync with the identically-named map in {@link ./article.ts} —
- * exported here because both the renderer and the head-metadata helper
- * consume it.
+ * This is the single authoritative source for legacy article-type labels;
+ * the renderer delegates all article-type label resolution to this module
+ * via {@link computeArticleHeadMetadata}.
  */
 const ARTICLE_TYPE_LABELS_FALLBACK: Record<string, string> = {
   'deep-inspection': 'Deep inspection',
@@ -92,9 +92,14 @@ export function inferArticleType(canonicalPath: string, title: string): { type: 
   ];
   const match = legacyCandidates.find((candidate) => source.includes(candidate.toLowerCase()));
   const type = normalizeArticleType(match ?? 'political-intelligence');
+  // Always look up the label with the *normalized* type slug so that
+  // camelCase legacy candidate names (e.g. `committeeReports`) map to
+  // the same registry/fallback entry as their hyphenated equivalents
+  // (`committee-reports`).  Using the raw `match` string here would
+  // miss registry entries and fall through to the generic default.
   return {
     type,
-    label: getArticleTypeLabel(match ?? type),
+    label: getArticleTypeLabel(type),
   };
 }
 
@@ -133,6 +138,13 @@ export interface ArticleHeadMetadataInput {
    * front-matter `date:` is missing or malformed. Defaults to `new Date()`.
    */
   readonly now?: Date;
+  /**
+   * Pre-parsed front-matter data (the `.data` record returned by
+   * `gray-matter`). When provided, the internal `matter()` call is
+   * skipped, avoiding a duplicate parse in callers (e.g.
+   * `renderArticleHtml`) that have already parsed the markdown.
+   */
+  readonly parsedData?: Record<string, unknown>;
 }
 
 /**
@@ -156,6 +168,13 @@ export interface ArticleHeadMetadata {
   readonly articleTypeId: string;
   /** Localized article-type label (`Propositions`, `Komitéindstillinger`, …). */
   readonly articleTypeLabel: string;
+  /**
+   * The `article:section` / `articleSection` value passed to chrome
+   * and JSON-LD by the renderer. Exposed here so the audit CLI reports
+   * exactly what ships in the rendered HTML without re-implementing
+   * the same derivation.
+   */
+  readonly articleSection: string;
   /**
    * Computed SEO `<title>` / `<meta description>` / `<meta keywords>`
    * triple from {@link buildArticleSeoMetadata} — i.e. exactly what the
@@ -183,8 +202,7 @@ export interface ArticleHeadMetadata {
  * never drift from what is actually rendered into HTML.
  */
 export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): ArticleHeadMetadata {
-  const parsed = matter(input.markdown);
-  const fm = parsed.data as Record<string, unknown>;
+  const fm = (input.parsedData ?? matter(input.markdown).data) as Record<string, unknown>;
   const rawTitle = String(fm.title ?? 'Political Intelligence');
   const rawDescription = String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
   const rawKeywords = typeof fm.keywords === 'string' ? fm.keywords : undefined;
@@ -204,6 +222,9 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
   const brandedTitle = /riksdagsmonitor/i.test(seo.title)
     ? seo.title
     : `${seo.title} — Riksdagsmonitor`;
+  // Mirror the section value passed to buildChrome so the audit CLI
+  // reports exactly what ships in the rendered HTML.
+  const articleSection = 'Political Intelligence';
   return {
     rawTitle,
     rawDescription,
@@ -213,5 +234,6 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
     articleTypeLabel: localizedArticleTypeLabel,
     seo,
     brandedTitle,
+    articleSection,
   };
 }

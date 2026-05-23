@@ -42,12 +42,13 @@ import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BRE
 
 import { articleTypeIcon } from './article-type-i18n.js';
 import { computeArticleHeadMetadata } from './article-head-metadata.js';
-// `parseFrontMatterDate` and `inferArticleType` historically lived in
-// this module — they are now defined in `article-head-metadata.ts` so
-// the renderer and the test/QA tools share a single source of truth
-// for the `<head>` derivation. Re-export them so existing imports
-// (e.g. `tests/render-lib-architecture.test.ts`) keep working without
-// churn.
+/**
+ * @deprecated Re-exported from `article-head-metadata.ts`. The function
+ * body lives there now so the renderer, regenerator and QA tooling all
+ * call exactly one implementation. This export only exists to preserve
+ * the historical `import { parseFrontMatterDate } from './article.js'`
+ * import sites (notably `tests/render-lib-architecture.test.ts`).
+ */
 export { parseFrontMatterDate, inferArticleType } from './article-head-metadata.js';
 import {
   renderReaderNavigation,
@@ -217,14 +218,6 @@ export function splitBodyAtSecondH2(bodyHtml: string): { lead: string; rest: str
   };
 }
 
-/**
- * @deprecated Re-exported from `article-head-metadata.ts`. The function
- * body lives there now so the renderer, regenerator and QA tooling all
- * call exactly one implementation. This export only exists to preserve
- * the historical `import { parseFrontMatterDate } from './article.js'`
- * import sites (notably `tests/render-lib-architecture.test.ts`).
- */
-
 export async function renderArticleHtml(input: RenderArticleInput): Promise<string> {
   const parsed = matter(input.markdown);
   // Delegate every `<head>`-relevant derivation to the shared helper so
@@ -233,6 +226,9 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     markdown: input.markdown,
     lang: input.lang,
     canonicalPath: input.canonicalPath,
+    // Pass the already-parsed front-matter data so `computeArticleHeadMetadata`
+    // can skip a second `matter()` call on the same string.
+    parsedData: parsed.data as Record<string, unknown>,
   });
   const { rawTitle: title, date, articleTypeId, articleTypeLabel: localizedArticleTypeLabel, seo } = head;
   const publishedIso = `${date}T00:00:00Z`;
@@ -297,7 +293,7 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     publishedIso,
     modifiedIso,
     jsonLd: [newsArticleLd, breadcrumbLd, speakableLd],
-    section: 'Political Intelligence',
+    section: head.articleSection,
     heroBannerImage: 'images/riksdagsmonitornews-banner.webp',
     bodyClass: 'news-article',
   });

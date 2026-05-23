@@ -170,7 +170,7 @@ function formatBlock(index: number, total: number, ac: ArticleCase, lang: 'en'):
   const ogTitle = head.brandedTitle;
   const ogDescription = head.seo.description;
   const ogLocale = langMeta.locale;
-  const articleSection = head.articleTypeLabel;
+  const articleSection = head.articleSection;
   const twitterTitle = head.brandedTitle;
   const twitterDescription = head.seo.description;
 
