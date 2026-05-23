@@ -273,8 +273,12 @@ function stripDescriptionMarkup(text: string): string {
     .replace(/^[\s>#+*_`-]+/gmu, ' ');
   // Decode entities after initial tag strip, then strip again to catch
   // entity-encoded markup (e.g. &lt;script&gt;) that becomes real tags.
+  // Re-run script/style block removal first so their contents are also removed.
   const decoded = decodeHtmlEntities(stripped);
-  const reStripped = decoded.replace(/<[^>]+>/gu, ' ');
+  const reStripped = decoded
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/giu, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/giu, ' ')
+    .replace(/<[^>]+>/gu, ' ');
   return collapseWhitespace(reStripped);
 }
 
@@ -413,7 +417,7 @@ function formatPublicationUpdateKeyword(date: string, lang: Language): string {
 }
 
 function uniqueTitleSuffix(input: ArticleSeoMetadataInput): string {
-  return ` — ${input.date} · ${input.lang}`;
+  return ` — ${input.date} · ${LANGUAGE_META[input.lang].hreflang}`;
 }
 
 export interface ArticleSeoMetadataInput {
