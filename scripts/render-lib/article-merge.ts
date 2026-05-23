@@ -16,19 +16,23 @@
  *
  * `mergeLocalizedWithEnglish` produces a single Markdown document that:
  *
- *  1. **Carries the localized front-matter** (title, description, language,
+ *  1. **Carries the localized front-matter** (title, language,
  *     etc.) so SEO, JSON-LD `inLanguage` and the article header remain
  *     correctly localized. Front-matter fields the localized file omits
  *     fall back to the English values so canonical metadata
  *     (`date`, `subfolder`, `slug`, `source_folder`) stays stable.
+ *     The `description` field is stricter: it stays sourced from the
+ *     English executive brief unless a localized `executive-brief_<lang>.md`
+ *     provides a publishable BLUF. Per-type localized article descriptions
+ *     are intentionally ignored so SERP snippets always come from an
+ *     executive brief.
  *     When a localized `executive-brief_<lang>.md` markdown is passed in
  *     (cascade chain step #2 per
  *     `Article-Generation.md § "Per-language precedence chain"`), its
- *     publishable H1 and BLUF override the localized article front-matter
- *     `title:` / `description:`. Banned-phrase H1s and empty BLUFs are
- *     rejected so the merger silently falls through to chain step #3
- *     (localized article front-matter) rather than shipping a template
- *     stub as the SERP `<title>`.
+ *     publishable H1 and BLUF override the merged `title:` /
+ *     `description:`. Banned-phrase H1s and empty BLUFs are rejected so
+ *     title falls through to chain step #3 (localized article front-matter)
+ *     while description falls back to the English executive brief.
  *  2. **Starts the body with the localized executive summary** so the
  *     reader gets a first-page experience in their own language.
  *  3. **Appends the full English body** under a localized "Detailed
@@ -106,7 +110,6 @@ const ENGLISH_ONLY_FRONT_MATTER_KEYS: ReadonlySet<string> = new Set([
  */
 const LOCALIZED_FIRST_FRONT_MATTER_KEYS: ReadonlySet<string> = new Set([
   'title',
-  'description',
   'language',
 ]);
 
@@ -147,8 +150,9 @@ export function buildEnglishCoverageBoundary(lang: Language): string {
  *    intact).
  *  - Overlays *every* field present in the localized front-matter
  *    *except* the keys in `ENGLISH_ONLY_FRONT_MATTER_KEYS` (date, slug,
- *    layout, etc.). This keeps title/description localized while
- *    preventing accidental drift on canonical identity fields.
+ *    layout, etc.) and `description`. This keeps localized metadata while
+ *    preventing canonical drift and ensuring descriptions only come from
+ *    executive briefs.
  *  - Forces `language: <lang>` so JSON-LD `inLanguage` and SEO match.
  */
 export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
@@ -165,6 +169,7 @@ export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
   const mergedData: Record<string, unknown> = { ...englishData };
   for (const [key, value] of Object.entries(localizedData)) {
     if (ENGLISH_ONLY_FRONT_MATTER_KEYS.has(key)) continue;
+    if (key === 'description') continue;
     if (value === undefined || value === null || value === '') continue;
     mergedData[key] = value;
   }

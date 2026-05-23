@@ -102,7 +102,7 @@ describe('mergeLocalizedWithEnglish', () => {
     expect(out).toBe(englishMarkdown);
   });
 
-  it('overlays localized title/description/language onto English front matter', () => {
+  it('overlays localized title/language but keeps English executive-brief description', () => {
     const out = mergeLocalizedWithEnglish({
       englishMarkdown,
       localizedMarkdown: germanMarkdown,
@@ -110,7 +110,7 @@ describe('mergeLocalizedWithEnglish', () => {
     });
     const { data } = matter(out);
     expect(data.title).toBe('Regierungspropositionspakete');
-    expect(data.description).toBe('DIW Gesamt: 10,0/10');
+    expect(data.description).toBe('Three interlocking propositions');
     expect(data.language).toBe('de');
   });
 
@@ -252,9 +252,10 @@ describe('mergeLocalizedWithEnglish', () => {
   // `Article-Generation.md § "Per-language precedence chain"`. When the
   // brief markdown is forwarded into the merger AND it yields a
   // publishable H1 / BLUF, those fields override the per-type agent's
-  // `article.<lang>.md` front-matter. Banned-phrase H1s and missing
-  // BLUFs leave the article-front-matter values in place so the page
-  // still ships with the localized (chain step #3) title/description.
+  // `article.<lang>.md` front-matter. Banned-phrase H1s leave the
+  // article-front-matter title in place, while missing BLUFs leave the
+  // English executive-brief description in place. Meta descriptions must
+  // never come from fixed suffixes or localized article front-matter.
 
   it('overrides localized FM title with the localized brief H1 when it is publishable', () => {
     const briefDe = [
@@ -302,7 +303,7 @@ describe('mergeLocalizedWithEnglish', () => {
     expect(data.description).toContain('Faktische BLUF');
   });
 
-  it('keeps both localized FM fields when the brief is bare boilerplate with empty BLUF', () => {
+  it('keeps localized FM title but falls back to English brief description when localized BLUF is empty', () => {
     const boilerplateBrief = [
       '# 📰 Executive Brief',
       '',
@@ -319,10 +320,10 @@ describe('mergeLocalizedWithEnglish', () => {
     });
     const { data } = matter(out);
     expect(data.title).toBe('Regierungspropositionspakete');
-    expect(data.description).toBe('DIW Gesamt: 10,0/10');
+    expect(data.description).toBe('Three interlocking propositions');
   });
 
-  it('falls through to localized FM when localizedBriefMarkdown is undefined', () => {
+  it('uses localized FM title and English brief description when localizedBriefMarkdown is undefined', () => {
     const out = mergeLocalizedWithEnglish({
       englishMarkdown,
       localizedMarkdown: germanMarkdown,
@@ -332,10 +333,10 @@ describe('mergeLocalizedWithEnglish', () => {
     });
     const { data } = matter(out);
     expect(data.title).toBe('Regierungspropositionspakete');
-    expect(data.description).toBe('DIW Gesamt: 10,0/10');
+    expect(data.description).toBe('Three interlocking propositions');
   });
 
-  it('falls through to localized FM when localizedBriefMarkdown is empty', () => {
+  it('uses localized FM title and English brief description when localizedBriefMarkdown is empty', () => {
     const out = mergeLocalizedWithEnglish({
       englishMarkdown,
       localizedMarkdown: germanMarkdown,
@@ -345,7 +346,7 @@ describe('mergeLocalizedWithEnglish', () => {
     });
     const { data } = matter(out);
     expect(data.title).toBe('Regierungspropositionspakete');
-    expect(data.description).toBe('DIW Gesamt: 10,0/10');
+    expect(data.description).toBe('Three interlocking propositions');
   });
 
   // --- No localized article, only localized executive-brief ----------------

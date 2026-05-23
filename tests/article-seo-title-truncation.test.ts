@@ -38,9 +38,10 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     const longH1 =
       "Riksdag Enshrines Constitutional Protection for Abortion — and Expands the Security State's Toolkit";
     const result = buildSeoTitle({ ...baseInput, title: longH1 });
-    expect(result).not.toMatch(/\band…$/);
-    expect(result).not.toMatch(/—\s*and…$/);
-    expect(result).toMatch(/…$/); // still indicates truncation
+    expect(result).not.toMatch(/\band…\s+—\s+2026-05-15/);
+    expect(result).not.toMatch(/—\s*and…\s+—\s+2026-05-15/);
+    expect(result).toContain('…'); // still indicates truncation
+    expect(result).toContain('2026-05-15 · en');
     expect(result.length).toBeLessThanOrEqual(70);
   });
 
@@ -52,19 +53,13 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     expect(result).not.toMatch(/\band…$/);
   });
 
-  it('preserves trailing connector when H1 + site suffix fits the budget (no truncation path)', () => {
-    // buildSeoTitle only runs truncateAtWord when "<title> — <suffix>"
-    // exceeds the 70-char SERP budget. With a short H1 + the
-    // " — Riksdagsmonitor" suffix the title stays well under 70 chars,
-    // so the connector-strip never runs and the dangling "and" is
-    // preserved verbatim. The real guard for this case is the Phase-1
-    // analysis-gate H1 dangling-connector check, not the renderer.
-    // This test documents that contract so a future refactor doesn't
-    // accidentally start truncating short titles.
+  it('adds compact date/language context to short titles that fit the budget', () => {
     const shortH1 = 'Riksdag Approves FiU48 Fuel-Tax Cut and';
     const result = buildSeoTitle({ ...baseInput, title: shortH1 });
     expect(result).toMatch(/Riksdagsmonitor$/);
-    expect(result).toMatch(/and — Riksdagsmonitor$/);
+    expect(result).toContain('2026-05-15 · en');
+    expect(result).toContain('Riksdag Approves');
+    expect(result.length).toBeLessThanOrEqual(70);
   });
 
   it('strips Swedish connector "och" when truncating a Swedish H1', () => {

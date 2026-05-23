@@ -247,6 +247,41 @@ function collapseWhitespace(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
 }
 
+/** Single-pass HTML entity decode map — avoids double-unescaping. */
+const HTML_ENTITY_MAP: Readonly<Record<string, string>> = {
+  '&nbsp;': ' ',
+  '&amp;': '&',
+  '&quot;': '"',
+  '&#39;': "'",
+  '&apos;': "'",
+  '&lt;': '<',
+  '&gt;': '>',
+};
+const HTML_ENTITY_RE = /&(?:nbsp|amp|quot|lt|gt|apos|#39);/giu;
+
+function decodeHtmlEntities(text: string): string {
+  return text.replace(HTML_ENTITY_RE, (match) => HTML_ENTITY_MAP[match.toLowerCase()] ?? match);
+}
+
+function stripDescriptionMarkup(text: string): string {
+  const stripped = text
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/giu, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/giu, ' ')
+    .replace(/<[^>]+>/gu, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/gu, ' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/gu, '$1')
+    .replace(/^[\s>#+*_`-]+/gmu, ' ');
+  // Decode entities after initial tag strip, then strip again to catch
+  // entity-encoded markup (e.g. &lt;script&gt;) that becomes real tags.
+  // Re-run script/style block removal first so their contents are also removed.
+  const decoded = decodeHtmlEntities(stripped);
+  const reStripped = decoded
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/giu, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/giu, ' ')
+    .replace(/<[^>]+>/gu, ' ');
+  return collapseWhitespace(reStripped);
+}
+
 function trimTrailingPunctuation(text: string): string {
   return text.replace(/[\s,;:—–-]+$/u, '').replace(/[.。؟?!…]+$/u, '').trim();
 }
@@ -304,6 +339,14 @@ function truncateAtWord(text: string, maxLen: number): string {
   const cut = lastSpace > Math.floor(maxLen * 0.55) ? sliced.slice(0, lastSpace) : sliced;
   const stripped = trimTrailingConnectors(trimTrailingPunctuation(cut));
   return stripped + '…';
+}
+
+function truncateWithinBudget(text: string, maxLen: number): string {
+  const clean = collapseWhitespace(text);
+  if (clean.length <= maxLen) return clean;
+  if (maxLen <= 1) return '…'.slice(0, maxLen);
+  const truncated = truncateAtWord(clean, maxLen - 1);
+  return truncated.length <= maxLen ? truncated : `${clean.slice(0, maxLen - 1).trim()}…`;
 }
 
 function normaliseKeyword(raw: string): string {
@@ -373,6 +416,10 @@ function formatPublicationUpdateKeyword(date: string, lang: Language): string {
   return `${formatPublicationContext(date, lang)} ${LANG_UPDATE_WORD[lang]}`;
 }
 
+function uniqueTitleSuffix(input: ArticleSeoMetadataInput): string {
+  return ` — ${input.date} · ${LANGUAGE_META[input.lang].hreflang}`;
+}
+
 export interface ArticleSeoMetadataInput {
   readonly title: string;
   readonly description: string;
@@ -412,23 +459,27 @@ export interface ArticleSeoMetadata {
 export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
   const SERP_TITLE_BUDGET = 70;
   const SITE_SUFFIX = ' — Riksdagsmonitor';
+  const uniqueSuffix = uniqueTitleSuffix(input);
   const base = collapseWhitespace(input.title);
   if (base.length === 0) {
-    return `${input.articleTypeLabel} — Riksdagsmonitor`;
+    return truncateWithinBudget(`${input.articleTypeLabel}${uniqueSuffix}${SITE_SUFFIX}`, SERP_TITLE_BUDGET);
   }
-  // If the brief H1 already advertises the platform, return it as-is.
+  // Every article title carries date + locale context so legacy pages with
+  // reused H1s (or untranslated fallback H1s) stay unique in webmaster tools.
   if (/riksdagsmonitor/i.test(base)) {
-    return truncateAtWord(base, SERP_TITLE_BUDGET);
+    if (base.length + uniqueSuffix.length <= SERP_TITLE_BUDGET) {
+      return `${base}${uniqueSuffix}`;
+    }
+    return `${truncateWithinBudget(base, SERP_TITLE_BUDGET - uniqueSuffix.length)}${uniqueSuffix}`;
   }
-  // Append the site signature only when it fits without truncating
-  // the brief H1 mid-word.
-  if (base.length + SITE_SUFFIX.length <= SERP_TITLE_BUDGET) {
-    return `${base}${SITE_SUFFIX}`;
+  const tail = `${uniqueSuffix}${SITE_SUFFIX}`;
+  // Append the site signature with the unique date/lang suffix and truncate
+  // only the brief H1 when needed. Returning a branded title prevents
+  // chrome/head.ts from appending a second suffix outside the SERP budget.
+  if (base.length + tail.length <= SERP_TITLE_BUDGET) {
+    return `${base}${tail}`;
   }
-  // Otherwise the brief H1 is itself near the budget — keep it pristine
-  // (truncated to the SERP budget) so search engines never see
-  // duplicated boilerplate suffixes.
-  return truncateAtWord(base, SERP_TITLE_BUDGET);
+  return `${truncateWithinBudget(base, SERP_TITLE_BUDGET - tail.length)}${tail}`;
 }
 
 /**
@@ -448,12 +499,8 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  *    plumbing.
  */
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
-  const base = collapseWhitespace(input.description);
-  if (base.length === 0) {
-    return `${input.articleTypeLabel} — ${formatPublicationContext(input.date, input.lang)}`;
-  }
-  if (base.length <= DESCRIPTION_HARD_MAX) return base;
-  return truncateAtWord(base, DESCRIPTION_HARD_MAX);
+  const base = stripDescriptionMarkup(input.description);
+  return truncateWithinBudget(base, DESCRIPTION_HARD_MAX);
 }
 
 /**
