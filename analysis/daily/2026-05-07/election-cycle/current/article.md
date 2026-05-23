@@ -6,7 +6,7 @@ date: 2026-05-07
 subfolder: election-cycle/current
 slug: 2026-05-07-election-cycle/current
 source_folder: analysis/daily/2026-05-07/election-cycle/current
-generated_at: 2026-05-23T08:06:00.671Z
+generated_at: 2026-05-23T22:05:56.631Z
 language: en
 layout: article
 ---
@@ -90,6 +90,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1519,13 +1532,671 @@ None identified in this batch.
 | PIR-6 | open | NATO second-mandate integration (2026–2030 defence spending commitments) |
 | PIR-7 | open | Gaza/Middle East foreign policy — coalition stress test with SD and L |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص تنفيذي — الولاية الحالية لـ Tidø 2026-05-07
+
+**التصنيف**: عام | **الثقة**: عالية [Admiralty B2] | **الوقت حتى الانتخابات**: T-129 يومًا  
+**المؤلف**: James Pether Sörling | **التشغيل**: 25461045016 | **بيانات IMF**: WEO أبريل-2026
+
+### 🎯 ملخص
+
+ائتلاف Tidø السويدي (M+KD+L+SD) يُنفّذ أخير سباق تشريعي بخمسة تقارير رئيسية للجان في 2026-05-07، تؤكد الرواية الجوهرية للولاية: **تسليم النظام الجنائي، وتحديث الدفاع، وحوكمة نتائج الرعاية** تتقدم بينما يختبر **الضغط السياسي الخارجي** (غزة/إسرائيل، المساءلة عن جرائم الحرب) تماسك الائتلاف في أسوأ لحظة ممكنة قبل الانتخابات. مع 129 يومًا حتى يوم التصويت، بطاقة أداء الولاية هي: **النظام الجنائي ✓ | الدفاع ✓ | الهجرة ⚠ | الرعاية جزئيًا | التوطيد المالي جزئيًا**.
+
+### 🧭 3 قرارات يدعمها هذا الوثيقة
+
+1. **تقييم توقيت الانتخابات**: تسليم قانون توسيع السجون (HD01CU25) وإصلاح SIGINT (HD01FöU18) يؤكد أن كتلة Tidø تدخل الحملة الانتخابية بسرد أمني قوي؛ يجب على الأحمر-الأخضر الرد على الرعاية والسياسة الخارجية.
+
+2. **مراقبة عتبة L (Liberalerna) الانتخابية**: مع قياس L بـ 4.2٪ (هامش 0.2 نقطة مئوية فوق العتبة)، يمكن لإصلاحات التأمين الاجتماعي والإسكان اليوم (HD01SfU21, HD01SfU24) تثبيت قاعدة ناخبي الطبقة الوسطى لـ L — مراقبة ردود الفعل على استطلاعات الرأي.
+
+3. **خطر غزة/جرائم الحرب**: HD10470 (مسألة هجوم أسطول إسرائيل) و HD11789 (مواطنون سويديون يُحقق معهم بتهمة جرائم حرب) يخلقان تعرضًا سياسيًا. يجب أن يميز التواصل الائتلافي موقف SD القومي عن إطار NATO/دولة القانون لـ M+KD+L.
+
+### الإشارات الرئيسية: 2026-05-07
+
+| الترتيب | الوثيقة | الأهمية | التأثير الانتخابي |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — توسيع السجون | حرجة | ✅ التسليم الجوهري لـ Tidø |
+| 2 | HD01FöU18 — إصلاح SIGINT | حرجة | ✅ ولاية الدفاع |
+| 3 | HD01SfU21 — التأمين الاجتماعي | عالية | ⚠ تثبيت ناخبي L |
+| 4 | HD01SfU24 — إعانة السكن | عالية | ⚠ حوكمة نتائج الرعاية |
+| 5 | HD10470 — أسطول غزة | عالية | ❌ ضغط الائتلاف |
+| 6 | HD11789 — جرائم الحرب | عالية | ❌ خطر السياسة الخارجية |
+| 7 | HD11790 — Kammarkollegiet | متوسطة | ✅ إشارة مكافحة الفساد |
+
+### السياق الاقتصادي لصندوق النقد الدولي (WEO أبريل-2026، نقل مخفَّض)
+
+الملف الاقتصادي لـ Sweden قبل المرحلة النهائية للحملة:
+- **نمو الناتج المحلي الإجمالي الحقيقي**: 1.8٪ (2026)، 2.3٪ (2027) — التعافي جارٍ [IMF WEO أبريل-2026 T+1]
+- **التضخم (KPI)**: 2.1٪ (2026) — في المستهدف [WEO أبريل-2026]
+- **الرصيد المالي**: -0.8٪ من الناتج المحلي الإجمالي (2026) — ضمن إطار Tidø [WEO أبريل-2026]
+- **الدين العام**: 33.8٪ من الناتج المحلي الإجمالي — من بين الأدنى في الاتحاد الأوروبي [WEO أبريل-2026 T+1]
+- **البطالة**: 8.4٪ (AKU) — فوق النظراء الشماليين (الدنمارك 5.1٪، النرويج 4.0٪) — أقوى متجه هجوم للأحمر-الأخضر
+
+> ℹ️ **نقل مساعدة IMF مخفَّض** — WEO/FM Datamapper بخير؛ IFS/SDMX غير متاح. التصريحات الاقتصادية مستندة إلى بيانات WEO أبريل-2026. جميع اقتباسات IMF تستخدم economicProvenance.
+
+### استنتاج النتيجة الانتخابية
+
+**توزيع المقاعد (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175 مقعدًا** (العتبة: 175).  
+الأحمر-الأخضر: S 96 + V 24 + C 22 + MP 12 = **154 مقعدًا** (لا أغلبية بدون M أو SD).
+
+**الهامش الحرج**: ائتلاف Tidø عند 175 مقعدًا بالضبط (أغلبية ضيقة). بقاء L عند 4.0٪ هو نقطة الضعف الأكثر احتمالاً لـ Tidø.
+
+**تحسينات Pass 2**: إضافة تحديد كمي لمخاطر غزة/جرائم الحرب؛ تحديث توقعات المقاعد لتعكس أحدث استطلاعات الرأي؛ تضمين استنتاج اقتصادي IMF مع علامات البيانات؛ تعزيز تحليل عتبة L الانتخابية.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_da.md -->
+
+### 🎯 KORT SAMMENFATNING
+
+Sveriges Tidø-koalition (M+KD+L+SD) gennemfører sin afsluttende lovgivningssprint med fem store udvalgsrapporter den 2026-05-07, der bekræfter mandatets kernefortælling: **levering af strafferetlig orden, forsvarsopdatering og velfærdsmålstyring** skrider frem, mens **udenrigspolitisk stress** (Gaza/Israel, krigsforbrydelsesansvar) sætter koalitionssammenhæng på prøve på det værst tænkelige tidspunkt før valget. Med 129 dage til valgdag lyder mandatscorekortet: **strafferetlig orden ✓ | forsvar ✓ | migration ⚠ | velfærd delvis | finansiel konsolidering delvis**.
+
+### 🧭 3 beslutninger dette notat understøtter
+
+1. **Vurdering af valtidspunkt**: Leveringen af fængselsudvidelsesloven (HD01CU25) og SIGINT-reformen (HD01FöU18) bekræfter, at Tidø-blokken går ind i valgkampen med en stærk sikkerhedsfortælling; Rød-Grøn skal modsvare på velfærd og udenrigspolitik.
+
+2. **Overvåg L (Liberalerna)s spærregrænse**: Med L der måler 4,2 % (margin 0,2 procentpoint over spærregrænsen), kan dagens socialforsikrings- og boligydelsesreformer (HD01SfU21, HD01SfU24) stabilisere L's middelklassevælgerbasis — overvåg meningsmålingsrespons.
+
+3. **Gaza/krigsforbrydelsesrisiko**: HD10470 (Israel-flotiljeangrebsspørgsmål) og HD11789 (svenske statsborgere efterforsket for krigsforbrydelser) skaber politisk eksponering. Koalitionskommunikationen skal adskille SD's nationalistiske position fra M+KD+L's NATO/retsstatsindrammning.
+
+### NØGLESIGNALER: 2026-05-07
+
+| Rang | Dokument | Betydning | Valgeffekt |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — Fængselsudvidelse | Kritisk | ✅ Kerne Tidø-levering |
+| 2 | HD01FöU18 — SIGINT-reform | Kritisk | ✅ Forsvarsmandat |
+| 3 | HD01SfU21 — Socialforsikring | Høj | ⚠ L-vælgerstabilisering |
+| 4 | HD01SfU24 — Boligydelse | Høj | ⚠ Velfærdsmålstyring |
+| 5 | HD10470 — Gaza-flotille | Høj | ❌ Koalitionsstress |
+| 6 | HD11789 — Krigsforbrydelser | Høj | ❌ Udenrigspolitisk risiko |
+| 7 | HD11790 — Kammarkollegiet | Medium | ✅ Anti-spildssignal |
+
+### IMF ØKONOMISK KONTEKST (WEO Apr-2026, degraderet transport)
+
+Sveriges økonomiske profil inden den endelige kampagnefase:
+- **Reel BNP-vækst**: 1,8 % (2026), 2,3 % (2027) — genopretning i gang [IMF WEO Apr-2026 T+1]
+- **Inflation (KPI)**: 2,1 % (2026) — på mål [WEO Apr-2026]
+- **Finanspolitisk saldo**: -0,8 % BNP (2026) — inden for Tidø-rammen [WEO Apr-2026]
+- **Offentlig gæld**: 33,8 % BNP — blandt laveste i EU [WEO Apr-2026 T+1]
+- **Arbejdsløshed**: 8,4 % (AKU) — over nordiske jævnaldrende (Danmark 5,1 %, Norge 4,0 %) — Rød-Grøns stærkeste angrebsvektor
+
+> ℹ️ **IMF-hjælpetransport degraderet** — WEO/FM Datamapper ok; IFS/SDMX utilgængelig. Økonomiske påstande baseret på WEO Apr-2026-årgång. Alle IMF-citater bruger economicProvenance.
+
+### VALRESULTATETS KONKLUSION
+
+**Mandatfordeling (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175 mandater** (tærskel: 175).  
+Rød-Grøn: S 96 + V 24 + C 22 + MP 12 = **154 mandater** (ingen majoritet uden M eller SD).
+
+**Kritisk margin**: Tidø-koalitionen er på præcis 175 mandater (knap majoritet). L's overlevelse ved 4,0 % er det enkelt højst sandsynlige svaghedspunkt for Tidø.
+
+**Pass 2-forbedringer**: Tilføjede Gaza/krigsforbrydelsesrisikokvantificering; opdaterede mandatprognosen til at afspejle de seneste meningsmålinger; inkluderede IMF's økonomiske konklusion med årgangsmærker; styrkede L-spærregrænsanalyse.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_de.md -->
+
+### 🎯 ZUSAMMENFASSUNG
+
+Schwedens Tidø-Koalition (M+KD+L+SD) absolviert ihren abschließenden Gesetzgebungssprint mit fünf großen Ausschussberichten am 2026-05-07, die das Kernnarrativ des Mandats bestätigen: **Lieferung strafrechtlicher Ordnung, Verteidigungsmodernisierung und Wohlfahrts-Outcome-Steuerung** schreiten voran, während **außenpolitischer Stress** (Gaza/Israel, Kriegsverbrechensverantwortlichkeit) die Koalitionskohäsion zum denkbar schlechtesten Zeitpunkt vor den Wahlen testet. Mit 129 Tagen bis zum Wahltag lautet die Mandat-Scorecard: **strafrechtliche Ordnung ✓ | Verteidigung ✓ | Migration ⚠ | Wohlfahrt teilweise | fiskalische Konsolidierung teilweise**.
+
+### 🧭 3 Entscheidungen, die dieses Dokument unterstützt
+
+1. **Bewertung des Wahltimings**: Die Lieferung des Gefängniserweiterungsgesetzes (HD01CU25) und der SIGINT-Reform (HD01FöU18) bestätigt, dass der Tidø-Block mit einer starken Sicherheitserzählung in den Wahlkampf geht; Rot-Grün muss bei Wohlfahrt und Außenpolitik kontern.
+
+2. **L (Liberalerna) Sperrklausel-Grenze beobachten**: Da L bei 4,2 % liegt (Abstand 0,2 Prozentpunkte zur Sperrklausel), können die heutigen Sozialversicherungs- und Wohnbeihilfereformen (HD01SfU21, HD01SfU24) L's Mittelschichtwählerbasis stabilisieren — Meinungsumfragereaktion beobachten.
+
+3. **Gaza/Kriegsverbrechen-Risiko**: HD10470 (Israel-Flottilenangriffsanfrage) und HD11789 (schwedische Staatsbürger wegen Kriegsverbrechen untersucht) schaffen politische Exponierung. Die Koalitionskommunikation muss SD's nationalistische Position von M+KD+L's NATO/Rechtsstaatsrahmen trennen.
+
+### SCHLÜSSELSIGNALE: 2026-05-07
+
+| Rang | Dokument | Bedeutung | Wahlwirkung |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — Gefängniserweiterung | Kritisch | ✅ Kern-Tidø-Lieferung |
+| 2 | HD01FöU18 — SIGINT-Reform | Kritisch | ✅ Verteidigungsmandat |
+| 3 | HD01SfU21 — Sozialversicherung | Hoch | ⚠ L-Wählerstabilisierung |
+| 4 | HD01SfU24 — Wohnbeihilfe | Hoch | ⚠ Wohlfahrts-Outcome-Steuerung |
+| 5 | HD10470 — Gaza-Flottille | Hoch | ❌ Koalitionsstress |
+| 6 | HD11789 — Kriegsverbrechen | Hoch | ❌ Außenpolitisches Risiko |
+| 7 | HD11790 — Kammarkollegiet | Mittel | ✅ Anti-Korruptionssignal |
+
+### IMF WIRTSCHAFTLICHER KONTEXT (WEO Apr-2026, degradierter Transport)
+
+Schwedens Wirtschaftsprofil vor der abschließenden Kampagnenphase:
+- **Reales BIP-Wachstum**: 1,8 % (2026), 2,3 % (2027) — Erholung im Gange [IMF WEO Apr-2026 T+1]
+- **Inflation (KPI)**: 2,1 % (2026) — auf Ziel [WEO Apr-2026]
+- **Fiskalsaldo**: -0,8 % BIP (2026) — innerhalb des Tidø-Rahmens [WEO Apr-2026]
+- **Öffentliche Schulden**: 33,8 % BIP — unter den niedrigsten in der EU [WEO Apr-2026 T+1]
+- **Arbeitslosigkeit**: 8,4 % (AKU) — über nordischen Peers (Dänemark 5,1 %, Norwegen 4,0 %) — stärkster Angriffsvektor von Rot-Grün
+
+> ℹ️ **IMF-Hilfstransport degradiert** — WEO/FM Datamapper ok; IFS/SDMX nicht verfügbar. Wirtschaftliche Aussagen basieren auf WEO Apr-2026-Jahrgang. Alle IMF-Zitate verwenden economicProvenance.
+
+### WAHLERGEBNIS-SCHLUSSFOLGERUNG
+
+**Mandatsverteilung (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175 Mandate** (Schwelle: 175).  
+Rot-Grün: S 96 + V 24 + C 22 + MP 12 = **154 Mandate** (keine Mehrheit ohne M oder SD).
+
+**Kritische Marge**: Die Tidø-Koalition steht bei genau 175 Mandaten (knappe Mehrheit). L's Überleben bei 4,0 % ist die mit Abstand wahrscheinlichste Schwachstelle für Tidø.
+
+**Pass 2-Verbesserungen**: Gaza/Kriegsverbrechen-Risikokvantifizierung hinzugefügt; Mandatsprognose aktualisiert, um neueste Umfragen widerzuspiegeln; IMF-Wirtschaftsschlussfolgerung mit Jahrgangsetiketten einbezogen; L-Sperrklauselanalyse gestärkt.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_es.md -->
+
+### 🎯 RESUMEN
+
+La coalición sueca Tidø (M+KD+L+SD) completa su último sprint legislativo con cinco grandes informes de comisiones el 2026-05-07, confirmando la narrativa central del mandato: **entrega de orden penal, modernización de defensa y gobernanza de resultados de bienestar** avanzan mientras el **estrés de política exterior** (Gaza/Israel, responsabilidad por crímenes de guerra) pone a prueba la cohesión de la coalición en el peor momento posible antes de las elecciones. Con 129 días hasta el día de votación, el cuadro de mando del mandato es: **orden penal ✓ | defensa ✓ | migración ⚠ | bienestar parcial | consolidación fiscal parcial**.
+
+### 🧭 3 decisiones que este documento apoya
+
+1. **Evaluación del momento electoral**: La entrega de la ley de expansión carcelaria (HD01CU25) y la reforma SIGINT (HD01FöU18) confirma que el bloque Tidø entra en campaña electoral con una sólida narrativa de seguridad; los Rojos-Verdes deben contraatacar en bienestar y política exterior.
+
+2. **Vigilar el umbral electoral de L (Liberalerna)**: Con L midiendo 4,2 % (margen de 0,2 puntos porcentuales por encima del umbral), las reformas de seguridad social y subsidio de vivienda de hoy (HD01SfU21, HD01SfU24) pueden estabilizar la base de votantes de clase media de L — monitorear la respuesta de las encuestas.
+
+3. **Riesgo Gaza/crímenes de guerra**: HD10470 (cuestión del ataque a la flotilla de Israel) y HD11789 (ciudadanos suecos investigados por crímenes de guerra) crean exposición política. La comunicación de la coalición debe distinguir la posición nacionalista de SD del marco NATO/Estado de derecho de M+KD+L.
+
+### SEÑALES CLAVE: 2026-05-07
+
+| Rango | Documento | Importancia | Impacto electoral |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — Expansión carcelaria | Crítica | ✅ Entrega central de Tidø |
+| 2 | HD01FöU18 — Reforma SIGINT | Crítica | ✅ Mandato de defensa |
+| 3 | HD01SfU21 — Seguridad social | Alta | ⚠ Estabilización de votantes de L |
+| 4 | HD01SfU24 — Subsidio de vivienda | Alta | ⚠ Gobernanza de resultados de bienestar |
+| 5 | HD10470 — Flotilla Gaza | Alta | ❌ Estrés de coalición |
+| 6 | HD11789 — Crímenes de guerra | Alta | ❌ Riesgo de política exterior |
+| 7 | HD11790 — Kammarkollegiet | Media | ✅ Señal anticorrupción |
+
+### CONTEXTO ECONÓMICO DEL FMI (WEO Abr-2026, transporte degradado)
+
+Perfil económico de Suecia antes de la fase final de campaña:
+- **Crecimiento PIB real**: 1,8 % (2026), 2,3 % (2027) — recuperación en curso [IMF WEO Abr-2026 T+1]
+- **Inflación (IPC)**: 2,1 % (2026) — en el objetivo [WEO Abr-2026]
+- **Saldo fiscal**: -0,8 % PIB (2026) — dentro del marco Tidø [WEO Abr-2026]
+- **Deuda pública**: 33,8 % PIB — entre las más bajas de la UE [WEO Abr-2026 T+1]
+- **Desempleo**: 8,4 % (AKU) — por encima de pares nórdicos (Dinamarca 5,1 %, Noruega 4,0 %) — vector de ataque más fuerte de los Rojos-Verdes
+
+> ℹ️ **Transporte de ayuda del FMI degradado** — WEO/FM Datamapper ok; IFS/SDMX no disponible. Las afirmaciones económicas se basan en el año IMF WEO Abr-2026. Todas las citas del FMI utilizan economicProvenance.
+
+### CONCLUSIÓN DEL RESULTADO ELECTORAL
+
+**Distribución de mandatos (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175 mandatos** (umbral: 175).  
+Rojo-Verde: S 96 + V 24 + C 22 + MP 12 = **154 mandatos** (sin mayoría sin M o SD).
+
+**Margen crítico**: La coalición Tidø está en exactamente 175 mandatos (mayoría corta). La supervivencia de L al 4,0 % es el punto de vulnerabilidad más probable para Tidø.
+
+**Mejoras Pass 2**: Se añadió cuantificación del riesgo Gaza/crímenes de guerra; se actualizaron las proyecciones de mandatos para reflejar las últimas encuestas; se incluyó la conclusión económica del FMI con etiquetas de año; se fortaleció el análisis del umbral electoral de L.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_fi.md -->
+
+### 🎯 LYHYESTI
+
+Ruotsin Tidø-koalitio (M+KD+L+SD) toteuttaa viimeisen lainsäädäntösprinttinsä viidellä suurella valiokuntamietinnöllä 2026-05-07, jotka vahvistavat toimikauden ydinkertomuksen: **rikosoikeudellisen järjestyksen toimittaminen, puolustuksen modernisointi ja hyvinvoinnin tulosohjaus** etenevät, kun taas **ulkopoliittinen stressi** (Gaza/Israel, sotarikosvastuullisuus) testaa koalition yhtenäisyyttä pahimpaan mahdolliseen aikaan ennen vaaleja. 129 päivää vaalipäivään toimikauden tuloskortti kuuluu: **rikosoikeudellinen järjestys ✓ | puolustus ✓ | maahanmuutto ⚠ | hyvinvointi osittain | finanssinen konsolidointi osittain**.
+
+### 🧭 3 päätöstä, joita tämä muistio tukee
+
+1. **Vaaliajankohdan arviointi**: Vankilalaajennus lain (HD01CU25) ja SIGINT-uudistuksen (HD01FöU18) toimittaminen vahvistaa, että Tidø-blokki astuu vaalikampanjaan vahvalla turvallisuuskertomuksella; Punaisvihreät on vastattava hyvinvoinnilla ja ulkopolitiikalla.
+
+2. **Seuraa L:n (Liberalerna) vaalikiynnysmargineita**: L:n mittaessa 4,2 % (marginaali 0,2 prosenttiyksikköä kynnyksestä), tämänpäiväiset sosiaaliturva- ja asumistukiuudistukset (HD01SfU21, HD01SfU24) voivat vakauttaa L:n keskiluokan äänestäjäpohjaa — seuraa mielipidekyselyvastauksia.
+
+3. **Gaza/sotarikosriski**: HD10470 (Israelin laivastohyökkäyskysymys) ja HD11789 (ruotsalaisia kansalaisia tutkittu sotarikoksista) luovat poliittista altistumista. Koalitiokommunikaation on erotettava SD:n nationalistinen kanta M+KD+L:n NATO/oikeusvaltiokehyksestä.
+
+### TÄRKEIMMÄT SIGNAALIT: 2026-05-07
+
+| Sijoitus | Asiakirja | Merkitys | Vaalipaikka |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — Vankilalaajennus | Kriittinen | ✅ Tidøn ydintoimitus |
+| 2 | HD01FöU18 — SIGINT-uudistus | Kriittinen | ✅ Puolustustoimeksianto |
+| 3 | HD01SfU21 — Sosiaaliturva | Korkea | ⚠ L:n äänestäjävakauttaminen |
+| 4 | HD01SfU24 — Asumistuki | Korkea | ⚠ Hyvinvoinnin tulosohjaus |
+| 5 | HD10470 — Gaza-laivasto | Korkea | ❌ Koalitiostressiä |
+| 6 | HD11789 — Sotarikokset | Korkea | ❌ Ulkopoliittinen riski |
+| 7 | HD11790 — Kammarkollegiet | Keski | ✅ Korruption vastainen signaali |
+
+### IMF:N TALOUDELLINEN KONTEKSTI (WEO Huhti-2026, alennettu siirto)
+
+Ruotsin talousprofiili ennen viimeistä kampanjavaihetta:
+- **Reaalinen BKT-kasvu**: 1,8 % (2026), 2,3 % (2027) — elpyminen käynnissä [IMF WEO Huhti-2026 T+1]
+- **Inflaatio (KPI)**: 2,1 % (2026) — tavoitteessa [WEO Huhti-2026]
+- **Finanssinen tase**: -0,8 % BKT (2026) — Tidøn kehyksen sisällä [WEO Huhti-2026]
+- **Julkinen velka**: 33,8 % BKT — EU:n alhaisimpia [WEO Huhti-2026 T+1]
+- **Työttömyys**: 8,4 % (AKU) — pohjoismaisia vertaisia enemmän (Tanska 5,1 %, Norja 4,0 %) — Punaisvihreän vahvin hyökkäysvektori
+
+> ℹ️ **IMF:n apusiirto alennettu** — WEO/FM Datamapper ok; IFS/SDMX ei saatavilla. Taloudelliset väitteet perustuvat WEO Huhti-2026 -vuosikertaan. Kaikki IMF-viittaukset käyttävät economicProvenance.
+
+### VAALITULOSJOHTOPÄÄTÖS
+
+**Mandaattijako (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175 mandaattia** (kynnys: 175).  
+Punaisvihreät: S 96 + V 24 + C 22 + MP 12 = **154 mandaattia** (ei enemmistöä ilman M:ää tai SD:tä).
+
+**Kriittinen marginaali**: Tidø-koalitio on täsmälleen 175 mandaatilla (niukka enemmistö). L:n selviytyminen 4,0 %:lla on yksinkertaisesti todennäköisin heikko kohta Tidølle.
+
+**Pass 2 -parannukset**: Lisättiin Gaza/sotarikosriskikvantifiointi; päivitettiin mandaattiennuste heijastamaan viimeisimpiä mielipidekyselyjä; sisällytettiin IMF:n taloudellinen johtopäätös vuosikertaetiketein; vahvistettiin L-kynnysanalyysiä.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_fr.md -->
+
+### 🎯 RÉSUMÉ
+
+La coalition suédoise Tidø (M+KD+L+SD) réalise son dernier sprint législatif avec cinq grands rapports de commissions le 2026-05-07, confirmant le récit central du mandat : **livraison de l'ordre pénal, modernisation de la défense et pilotage par les résultats du bien-être** progressent tandis que **le stress de politique étrangère** (Gaza/Israël, responsabilité pour crimes de guerre) met à l'épreuve la cohésion de la coalition au pire moment possible avant les élections. Avec 129 jours avant le jour de vote, le tableau de bord du mandat est : **ordre pénal ✓ | défense ✓ | migration ⚠ | bien-être partiel | consolidation fiscale partielle**.
+
+### 🧭 3 décisions que ce document soutient
+
+1. **Évaluation du calendrier électoral** : La livraison de la loi d'extension pénitentiaire (HD01CU25) et de la réforme SIGINT (HD01FöU18) confirme que le bloc Tidø entre en campagne électorale avec un récit sécuritaire fort ; les Rouges-Verts doivent riposter sur le bien-être et la politique étrangère.
+
+2. **Surveiller le seuil électoral de L (Liberalerna)** : Avec L à 4,2 % (marge de 0,2 point de pourcentage au-dessus du seuil), les réformes d'assurance sociale et d'aide au logement d'aujourd'hui (HD01SfU21, HD01SfU24) peuvent stabiliser la base d'électeurs de classe moyenne de L — surveiller la réaction des sondages.
+
+3. **Risque Gaza/crimes de guerre** : HD10470 (question de l'attaque de la flottille d'Israël) et HD11789 (citoyens suédois enquêtés pour crimes de guerre) créent une exposition politique. La communication de la coalition doit distinguer la position nationaliste de SD du cadre NATO/État de droit de M+KD+L.
+
+### SIGNAUX CLÉS : 2026-05-07
+
+| Rang | Document | Importance | Impact électoral |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — Extension pénitentiaire | Critique | ✅ Livraison centrale Tidø |
+| 2 | HD01FöU18 — Réforme SIGINT | Critique | ✅ Mandat de défense |
+| 3 | HD01SfU21 — Assurance sociale | Élevée | ⚠ Stabilisation des électeurs de L |
+| 4 | HD01SfU24 — Aide au logement | Élevée | ⚠ Pilotage bien-être |
+| 5 | HD10470 — Flottille Gaza | Élevée | ❌ Stress de coalition |
+| 6 | HD11789 — Crimes de guerre | Élevée | ❌ Risque de politique étrangère |
+| 7 | HD11790 — Kammarkollegiet | Moyen | ✅ Signal anti-corruption |
+
+### CONTEXTE ÉCONOMIQUE FMI (WEO Avr-2026, transport dégradé)
+
+Profil économique de la Suède avant la phase de campagne finale :
+- **Croissance PIB réel** : 1,8 % (2026), 2,3 % (2027) — reprise en cours [IMF WEO Avr-2026 T+1]
+- **Inflation (IPC)** : 2,1 % (2026) — dans la cible [WEO Avr-2026]
+- **Solde budgétaire** : -0,8 % PIB (2026) — dans le cadre Tidø [WEO Avr-2026]
+- **Dette publique** : 33,8 % PIB — parmi les plus faibles en UE [WEO Avr-2026 T+1]
+- **Chômage** : 8,4 % (AKU) — au-dessus des pairs nordiques (Danemark 5,1 %, Norvège 4,0 %) — vecteur d'attaque le plus fort des Rouges-Verts
+
+> ℹ️ **Transport d'aide FMI dégradé** — WEO/FM Datamapper ok ; IFS/SDMX non disponible. Les affirmations économiques sont basées sur le millésime WEO Avr-2026. Toutes les citations FMI utilisent economicProvenance.
+
+### CONCLUSION SUR LE RÉSULTAT ÉLECTORAL
+
+**Répartition des mandats (2026-05-07)** : M 66 + KD 19 + L 16 + SD 74 = **175 mandats** (seuil : 175).  
+Rouges-Verts : S 96 + V 24 + C 22 + MP 12 = **154 mandats** (pas de majorité sans M ou SD).
+
+**Marge critique** : La coalition Tidø est à exactement 175 mandats (majorité courte). La survie de L à 4,0 % est de loin le point de vulnérabilité le plus probable pour Tidø.
+
+**Améliorations Pass 2** : Ajout de la quantification du risque Gaza/crimes de guerre ; mise à jour des projections de mandats pour refléter les derniers sondages ; inclusion de la conclusion économique FMI avec étiquettes de millésime ; renforcement de l'analyse du seuil électoral de L.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מנהלים — המנדט הנוכחי של Tidø 2026-05-07
+
+**סיווג**: ציבורי | **ביטחון**: גבוה [Admiralty B2] | **זמן לבחירות**: T-129 ימים  
+**מחבר**: James Pether Sörling | **הרצה**: 25461045016 | **נתוני IMF**: WEO אפר-2026
+
+### 🎯 סיכום
+
+הקואליציה השוודית Tidø (M+KD+L+SD) מבצעת את ספרינט החקיקה הסופי שלה עם חמישה דוחות ועדה גדולים ב-2026-05-07, המאשרים את הנרטיב המרכזי של המנדט: **מסירת סדר פלילי, מודרניזציה של הגנה וניהול תוצאות רווחה** מתקדמים בעוד **לחץ במדיניות חוץ** (עזה/ישראל, אחריות לפשעי מלחמה) בוחן את לכידות הקואליציה בזמן הגרוע ביותר האפשרי לפני הבחירות. עם 129 ימים ליום ההצבעה, כרטיס הניקוד של המנדט הוא: **סדר פלילי ✓ | הגנה ✓ | הגירה ⚠ | רווחה חלקית | איחוד פיסקלי חלקי**.
+
+### 🧭 3 החלטות שמסמך זה תומך בהן
+
+1. **הערכת תזמון הבחירות**: מסירת חוק הרחבת בתי הכלא (HD01CU25) ורפורמת SIGINT (HD01FöU18) מאשרת שגוש Tidø נכנס למסע הבחירות עם נרטיב ביטחוני חזק; האדומים-הירוקים חייבים להגיב על רווחה ומדיניות חוץ.
+
+2. **מעקב אחר ספירת L (Liberalerna) בסף הבחירות**: כאשר L נמדד ב-4.2% (שוליים של 0.2 נקודות אחוז מעל הסף), הרפורמות של ביטוח סוציאלי ודמי דיור של היום (HD01SfU21, HD01SfU24) יכולות לייצב את בסיס המצביעים של המעמד הבינוני של L — לנטר את תגובות סקרי דעת קהל.
+
+3. **סיכון עזה/פשעי מלחמה**: HD10470 (שאלת מתקפת הצי של ישראל) ו-HD11789 (אזרחים שוודים הנחקרים בגין פשעי מלחמה) יוצרים חשיפה פוליטית. התקשורת הקואליציונית חייבת להבדיל את עמדת SD הלאומנית ממסגרת NATO/שלטון החוק של M+KD+L.
+
+### אותות מפתח: 2026-05-07
+
+| דירוג | מסמך | חשיבות | השפעה בחירותית |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — הרחבת בתי כלא | קריטית | ✅ מסירה מרכזית של Tidø |
+| 2 | HD01FöU18 — רפורמת SIGINT | קריטית | ✅ מנדט הגנה |
+| 3 | HD01SfU21 — ביטוח סוציאלי | גבוהה | ⚠ ייצוב מצביעי L |
+| 4 | HD01SfU24 — דמי דיור | גבוהה | ⚠ ניהול תוצאות רווחה |
+| 5 | HD10470 — צי עזה | גבוהה | ❌ לחץ קואליציוני |
+| 6 | HD11789 — פשעי מלחמה | גבוהה | ❌ סיכון מדיניות חוץ |
+| 7 | HD11790 — Kammarkollegiet | בינוני | ✅ אות נגד שחיתות |
+
+### הקשר כלכלי של IMF (WEO אפר-2026, תחבורה פחותה)
+
+פרופיל כלכלי של שוודיה לפני שלב הקמפיין הסופי:
+- **צמיחת תמ"ג ריאלית**: 1.8% (2026), 2.3% (2027) — התאוששות בעיצומה [IMF WEO אפר-2026 T+1]
+- **אינפלציה (KPI)**: 2.1% (2026) — ביעד [WEO אפר-2026]
+- **יתרת פיסקלית**: -0.8% תמ"ג (2026) — במסגרת Tidø [WEO אפר-2026]
+- **חוב ציבורי**: 33.8% תמ"ג — מהנמוכים ב-EU [WEO אפר-2026 T+1]
+- **אבטלה**: 8.4% (AKU) — מעל עמיתים נורדיים (דנמרק 5.1%, נורווגיה 4.0%) — וקטור ההתקפה החזק ביותר של האדומים-הירוקים
+
+> ℹ️ **תחבורת עזרת IMF פחותה** — WEO/FM Datamapper תקין; IFS/SDMX לא זמין. טענות כלכליות מבוססות על בציר WEO אפר-2026. כל ציטוטי IMF משתמשים ב-economicProvenance.
+
+### מסקנת תוצאת הבחירות
+
+**חלוקת מושבים (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175 מושבים** (סף: 175).  
+אדומים-ירוקים: S 96 + V 24 + C 22 + MP 12 = **154 מושבים** (אין רוב ללא M או SD).
+
+**שוליים קריטיים**: קואליציית Tidø עומדת על בדיוק 175 מושבים (רוב צר). הישרדות L ב-4.0% היא נקודת התורפה הסבירה ביותר של Tidø.
+
+**שיפורי Pass 2**: הוספת כימות סיכון עזה/פשעי מלחמה; עדכון תחזיות מושבים לשקף סקרים אחרונים; הכללת מסקנה כלכלית של IMF עם תוויות בציר; חיזוק ניתוח סף L הבחירותי.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_ja.md -->
+
+**分類**: 公開 | **信頼度**: 高 [Admiralty B2] | **選挙まで**: T-129日  
+**著者**: James Pether Sörling | **実行番号**: 25461045016 | **IMFデータ**: WEO 2026年4月
+
+### 🎯 要約
+
+スウェーデンのTidø連立政権 (M+KD+L+SD) は2026-05-07に5つの大型委員会報告書で最終立法スプリントを実施し、任期の中核的な物語を確認する：**刑事秩序の提供、防衛近代化、福祉成果のガバナンス**が進む一方、**外交政策のストレス** (ガザ/イスラエル、戦争犯罪の説明責任) が選挙前の最悪なタイミングで連立の結束を試す。投票日まで129日、任期スコアカードは：**刑事秩序 ✓ | 防衛 ✓ | 移民 ⚠ | 福祉 一部達成 | 財政統合 一部達成**。
+
+### 🧭 本文書が支援する3つの決定
+
+1. **選挙タイミングの評価**: 刑務所拡張法 (HD01CU25) とSIGINT改革 (HD01FöU18) の提供は、Tidøブロックが強力な安全保障の物語で選挙キャンペーンに臨むことを確認する；レッド-グリーンは福祉と外交政策で反撃しなければならない。
+
+2. **L (Liberalerna) の選挙得票率閾値を監視**: Lが4.2%を測定し (閾値を0.2ポイント上回るマージン)、本日の社会保険および住宅給付改革 (HD01SfU21, HD01SfU24) がLの中産階級有権者基盤を安定させ得る — 世論調査の反応を監視。
+
+3. **ガザ/戦争犯罪リスク**: HD10470 (イスラエル船団攻撃質問) とHD11789 (戦争犯罪で捜査されるスウェーデン市民) は政治的露出を生む。連立のコミュニケーションはSDの民族主義的立場とM+KD+LのNATO/法の支配の枠組みを区別しなければならない。
+
+### 主要シグナル：2026-05-07
+
+| 順位 | 文書 | 重要度 | 選挙への影響 |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — 刑務所拡張 | 重大 | ✅ Tidøの中核的提供 |
+| 2 | HD01FöU18 — SIGINT改革 | 重大 | ✅ 防衛任務 |
+| 3 | HD01SfU21 — 社会保険 | 高 | ⚠ L有権者安定化 |
+| 4 | HD01SfU24 — 住宅給付 | 高 | ⚠ 福祉成果ガバナンス |
+| 5 | HD10470 — ガザ船団 | 高 | ❌ 連立ストレス |
+| 6 | HD11789 — 戦争犯罪 | 高 | ❌ 外交政策リスク |
+| 7 | HD11790 — Kammarkollegiet | 中 | ✅ 汚職防止シグナル |
+
+### IMF経済コンテキスト (WEO 2026年4月、輸送低下)
+
+最終選挙キャンペーン段階前のスウェーデンの経済プロファイル：
+- **実質GDP成長率**: 1.8% (2026年)、2.3% (2027年) — 回復進行中 [IMF WEO 2026年4月 T+1]
+- **インフレ (KPI)**: 2.1% (2026年) — 目標値内 [WEO 2026年4月]
+- **財政収支**: -0.8% GDP (2026年) — Tidø枠組み内 [WEO 2026年4月]
+- **公的債務**: 33.8% GDP — EU内で最低水準 [WEO 2026年4月 T+1]
+- **失業率**: 8.4% (AKU) — 北欧諸国を上回る (デンマーク5.1%、ノルウェー4.0%) — レッド-グリーンの最強攻撃ベクトル
+
+> ℹ️ **IMF補助輸送低下** — WEO/FM Datamapperは正常；IFS/SDMXは利用不可。経済的主張はWEO 2026年4月ヴィンテージに基づく。すべてのIMF引用はeconomicProvenanceを使用。
+
+### 選挙結果の結論
+
+**議席配分 (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175議席** (閾値：175)。  
+レッド-グリーン：S 96 + V 24 + C 22 + MP 12 = **154議席** (MまたはSDなしでは過半数なし)。
+
+**重要マージン**: Tidø連立はちょうど175議席 (わずかな過半数)。Lが4.0%での生き残りがTidøにとって最も可能性の高い弱点。
+
+**Pass 2改善点**: ガザ/戦争犯罪リスク定量化を追加；最新の世論調査を反映した議席予測に更新；ヴィンテージラベル付きIMF経済結論を含める；L閾値分析を強化。
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_ko.md -->
+
+**분류**: 공개 | **신뢰도**: 높음 [Admiralty B2] | **선거까지**: T-129일  
+**저자**: James Pether Sörling | **실행 번호**: 25461045016 | **IMF 데이터**: WEO 2026년 4월
+
+### 🎯 요약
+
+스웨덴 Tidø 연립 (M+KD+L+SD)은 2026-05-07에 5개의 주요 위원회 보고서로 최종 입법 스프린트를 수행하며, 임기의 핵심 서사를 확인한다: **형사 질서 제공, 국방 현대화, 복지 성과 거버넌스**가 진전되는 가운데 **외교 정책 스트레스** (가자/이스라엘, 전쟁 범죄 책임)가 선거 전 최악의 시점에 연립의 결속을 시험한다. 투표일까지 129일, 임기 성과표는: **형사 질서 ✓ | 국방 ✓ | 이민 ⚠ | 복지 부분 달성 | 재정 통합 부분 달성**.
+
+### 🧭 이 문서가 지원하는 3가지 결정
+
+1. **선거 타이밍 평가**: 교도소 확장법 (HD01CU25) 및 SIGINT 개혁 (HD01FöU18) 제공은 Tidø 블록이 강력한 안보 서사로 선거 캠페인에 임함을 확인한다; 레드-그린은 복지와 외교 정책에서 반격해야 한다.
+
+2. **L (Liberalerna) 선거 득표율 임계값 모니터링**: L이 4.2%를 기록하며 (임계값 0.2%p 상회 마진), 오늘의 사회보험 및 주거급여 개혁 (HD01SfU21, HD01SfU24)이 L의 중산층 유권자 기반을 안정시킬 수 있다 — 여론조사 반응 모니터링.
+
+3. **가자/전쟁 범죄 위험**: HD10470 (이스라엘 선단 공격 질문) 및 HD11789 (전쟁 범죄로 수사받는 스웨덴 시민)이 정치적 노출을 만든다. 연립 소통은 SD의 민족주의적 입장과 M+KD+L의 NATO/법치 프레임워크를 구분해야 한다.
+
+### 핵심 신호: 2026-05-07
+
+| 순위 | 문서 | 중요도 | 선거 영향 |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — 교도소 확장 | 심각 | ✅ Tidø 핵심 제공 |
+| 2 | HD01FöU18 — SIGINT 개혁 | 심각 | ✅ 국방 임무 |
+| 3 | HD01SfU21 — 사회보험 | 높음 | ⚠ L 유권자 안정화 |
+| 4 | HD01SfU24 — 주거급여 | 높음 | ⚠ 복지 성과 거버넌스 |
+| 5 | HD10470 — 가자 선단 | 높음 | ❌ 연립 스트레스 |
+| 6 | HD11789 — 전쟁 범죄 | 높음 | ❌ 외교 정책 위험 |
+| 7 | HD11790 — Kammarkollegiet | 중간 | ✅ 반부패 신호 |
+
+### IMF 경제 맥락 (WEO 2026년 4월, 수송 저하)
+
+최종 선거 캠페인 단계 이전 스웨덴 경제 프로파일:
+- **실질 GDP 성장률**: 1.8% (2026년), 2.3% (2027년) — 회복 진행 중 [IMF WEO 2026년 4월 T+1]
+- **인플레이션 (KPI)**: 2.1% (2026년) — 목표치 내 [WEO 2026년 4월]
+- **재정 수지**: -0.8% GDP (2026년) — Tidø 프레임워크 내 [WEO 2026년 4월]
+- **공공 부채**: 33.8% GDP — EU 내 최저 수준 [WEO 2026년 4월 T+1]
+- **실업률**: 8.4% (AKU) — 북유럽 동료 국가 상회 (덴마크 5.1%, 노르웨이 4.0%) — 레드-그린의 최강 공격 벡터
+
+> ℹ️ **IMF 보조 수송 저하** — WEO/FM Datamapper 정상; IFS/SDMX 이용 불가. 경제적 주장은 WEO 2026년 4월 빈티지에 기반. 모든 IMF 인용은 economicProvenance 사용.
+
+### 선거 결과 결론
+
+**의석 배분 (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175석** (임계값: 175).  
+레드-그린: S 96 + V 24 + C 22 + MP 12 = **154석** (M 또는 SD 없이는 과반수 없음).
+
+**핵심 마진**: Tidø 연립은 정확히 175석 (아슬아슬한 과반수). L의 4.0%에서 생존이 Tidø에 가장 가능성 높은 약점.
+
+**Pass 2 개선 사항**: 가자/전쟁 범죄 위험 정량화 추가; 최신 여론조사를 반영한 의석 예측 업데이트; 빈티지 레이블 포함 IMF 경제 결론 포함; L 임계값 분석 강화.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_nl.md -->
+
+### 🎯 SAMENVATTING
+
+De Zweedse Tidø-coalitie (M+KD+L+SD) voert haar laatste wetgevingssprint uit met vijf grote commissierapporten op 2026-05-07, die het kernverhaal van het mandaat bevestigen: **levering van strafrechtelijke orde, defensiemodernisering en welzijnsresultaatbeheer** schrijden voort terwijl **buitenlandspolitieke stress** (Gaza/Israël, oorlogsmisdaadverantwoordelijkheid) de coalitiesaamhorigheid test op het slechtst denkbare moment voor de verkiezingen. Met 129 dagen tot de stemdag luidt de mandaatscorecard: **strafrechtelijke orde ✓ | defensie ✓ | migratie ⚠ | welzijn gedeeltelijk | fiscale consolidatie gedeeltelijk**.
+
+### 🧭 3 beslissingen die dit document ondersteunt
+
+1. **Beoordeling van het verkiezingstijdstip**: De levering van de gevangenisuitbreidingswet (HD01CU25) en de SIGINT-hervorming (HD01FöU18) bevestigt dat het Tidø-blok de verkiezingscampagne ingaat met een sterk veiligheidsverhaal; Rood-Groen moet terugslaan op welzijn en buitenlandse politiek.
+
+2. **L (Liberalerna) drempelgrens bewaken**: Met L op 4,2 % (marge van 0,2 procentpunt boven de drempel), kunnen de huidige sociale zekerheids- en woningtoeslaghervormingen (HD01SfU21, HD01SfU24) de middenklasse kiezersbasis van L stabiliseren — de reactie van peilingen monitoren.
+
+3. **Gaza/oorlogsmisdaden-risico**: HD10470 (Israel-vlootaanvalsvraag) en HD11789 (Zweedse burgers onderzocht voor oorlogsmisdaden) creëren politieke blootstelling. De coalitiecommunicatie moet de nationalistische positie van SD onderscheiden van het NATO/rechtsstaatraamwerk van M+KD+L.
+
+### SLEUTELSIGNALEN: 2026-05-07
+
+| Rang | Document | Belang | Verkiezingseffect |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — Gevangenisuitbreiding | Kritiek | ✅ Kern Tidø-levering |
+| 2 | HD01FöU18 — SIGINT-hervorming | Kritiek | ✅ Defensiemandaat |
+| 3 | HD01SfU21 — Sociale zekerheid | Hoog | ⚠ L-kiezerstabilisering |
+| 4 | HD01SfU24 — Woningtoeslag | Hoog | ⚠ Welzijnsresultaatbeheer |
+| 5 | HD10470 — Gaza-vloot | Hoog | ❌ Coalitiedruk |
+| 6 | HD11789 — Oorlogsmisdaden | Hoog | ❌ Buitenlandspolitiek risico |
+| 7 | HD11790 — Kammarkollegiet | Middel | ✅ Anti-corruptiesignaal |
+
+### IMF ECONOMISCHE CONTEXT (WEO Apr-2026, gedegradeerd transport)
+
+Zweedse economische profiel voor de laatste campagnefase:
+- **Reëel bbp-groei**: 1,8 % (2026), 2,3 % (2027) — herstel gaande [IMF WEO Apr-2026 T+1]
+- **Inflatie (KPI)**: 2,1 % (2026) — op doel [WEO Apr-2026]
+- **Fiscaal saldo**: -0,8 % bbp (2026) — binnen het Tidø-kader [WEO Apr-2026]
+- **Overheidsschuld**: 33,8 % bbp — onder de laagste in de EU [WEO Apr-2026 T+1]
+- **Werkloosheid**: 8,4 % (AKU) — boven Noordse peers (Denemarken 5,1 %, Noorwegen 4,0 %) — sterkste aanvalsvector van Rood-Groen
+
+> ℹ️ **IMF-hulptransport gedegradeerd** — WEO/FM Datamapper ok; IFS/SDMX niet beschikbaar. Economische beweringen gebaseerd op WEO Apr-2026 jaargang. Alle IMF-citaten gebruiken economicProvenance.
+
+### CONCLUSIE VERKIEZINGSRESULTAAT
+
+**Mandaatverdeling (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175 mandaten** (drempel: 175).  
+Rood-Groen: S 96 + V 24 + C 22 + MP 12 = **154 mandaten** (geen meerderheid zonder M of SD).
+
+**Kritieke marge**: De Tidø-coalitie staat op precies 175 mandaten (krappe meerderheid). L's overleven bij 4,0 % is verreweg het meest waarschijnlijke kwetsbaarheids punt voor Tidø.
+
+**Pass 2-verbeteringen**: Gaza/oorlogsmisdaden-risicokvantificering toegevoegd; mandaatprognoses bijgewerkt om de laatste peilingen te weerspiegelen; IMF-economische conclusie met jaargangetiketten opgenomen; L-drempelanalyse versterkt.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_no.md -->
+
+### 🎯 KORTFATTET
+
+Sveriges Tidø-koalisjon (M+KD+L+SD) gjennomfører sin avsluttende lovgivningssprint med fem store utvalgsrapporter 2026-05-07 som bekrefter mandatets kjernefortelling: **levering av strafferettslig orden, forsvaroppdatering og velferdsmålstyring** skrider frem, mens **utenrikspolitisk stress** (Gaza/Israel, krigsforbrytelsesansvar) setter koalisjonssamholdet på prøve på det verst tenkelige tidspunktet før valget. Med 129 dager til valgdag lyder mandatscorekort: **strafferettslig orden ✓ | forsvar ✓ | migrasjon ⚠ | velferd delvis | finansiell konsolidering delvis**.
+
+### 🧭 3 beslutninger dette notatet støtter
+
+1. **Vurdering av valtidspunkt**: Leveringen av fengselsutvidelsesloven (HD01CU25) og SIGINT-reformen (HD01FöU18) bekrefter at Tidø-blokken går inn i valgkampen med en sterk sikkerhetsfortelling; Rødgrønn skal motsvare på velferd og utenrikspolitikk.
+
+2. **Overvåk L (Liberalerna)s sperregrense**: Med L som måler 4,2 % (margin 0,2 prosentpoeng over sperregrensen), kan dagens trygde- og bostøttereformer (HD01SfU21, HD01SfU24) stabilisere L's middelklassevelgerbasis — overvåk meningsmålingssvar.
+
+3. **Gaza/krigsforbrytelsesrisiko**: HD10470 (Israel-flotiljeangrepsspørsmål) og HD11789 (svenske statsborgere etterforsket for krigsforbrytelser) skaper politisk eksponering. Koalisionskommunikasjonen må skille SD's nasjonalistiske posisjon fra M+KD+L's NATO/rettsstatsinnramning.
+
+### NØKKELSIGNALER: 2026-05-07
+
+| Rangering | Dokument | Betydning | Valgeffekt |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — Fengselsutvidelse | Kritisk | ✅ Kjerne Tidø-levering |
+| 2 | HD01FöU18 — SIGINT-reform | Kritisk | ✅ Forsvarsmandat |
+| 3 | HD01SfU21 — Trygd | Høy | ⚠ L-velgerstabilisering |
+| 4 | HD01SfU24 — Bostøtte | Høy | ⚠ Velferdsmålstyring |
+| 5 | HD10470 — Gaza-flotille | Høy | ❌ Koalisjonsstress |
+| 6 | HD11789 — Krigsforbrytelser | Høy | ❌ Utenrikspolitisk risiko |
+| 7 | HD11790 — Kammarkollegiet | Middels | ✅ Antikorrupsjonssignal |
+
+### IMF ØKONOMISK KONTEKST (WEO Apr-2026, degradert transport)
+
+Sveriges økonomiske profil før den avsluttende kampanjefasen:
+- **Reell BNP-vekst**: 1,8 % (2026), 2,3 % (2027) — gjenoppretting pågår [IMF WEO Apr-2026 T+1]
+- **Inflasjon (KPI)**: 2,1 % (2026) — på mål [WEO Apr-2026]
+- **Finanspolitisk saldo**: -0,8 % BNP (2026) — innen Tidø-rammeverket [WEO Apr-2026]
+- **Offentlig gjeld**: 33,8 % BNP — blant laveste i EU [WEO Apr-2026 T+1]
+- **Arbeidsledighet**: 8,4 % (AKU) — over nordiske sammenlignbare (Danmark 5,1 %, Norge 4,0 %) — Rødgrønns sterkeste angrepssvektor
+
+> ℹ️ **IMF-hjelptransport degradert** — WEO/FM Datamapper ok; IFS/SDMX utilgjengelig. Økonomiske påstander basert på WEO Apr-2026-årgång. Alle IMF-siteringer bruker economicProvenance.
+
+### VALGRESULTATETS KONKLUSJON
+
+**Mandatfordeling (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175 mandater** (terskel: 175).  
+Rødgrønn: S 96 + V 24 + C 22 + MP 12 = **154 mandater** (ingen majoritet uten M eller SD).
+
+**Kritisk margin**: Tidø-koalisjonen er på nøyaktig 175 mandater (knapp majoritet). L's overlevelse ved 4,0 % er det enkelt mest sannsynlige svakhetspunktet for Tidø.
+
+**Pass 2-forbedringer**: La til Gaza/krigsforbrytelsesrisikokvantifisering; oppdaterte mandatprognosen til å reflektere de siste meningsmålingene; inkluderte IMF's økonomiske konklusjon med årgangsetiketter; styrket L-spærrgränsanalyse.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_sv.md -->
+
+### 🎯 KORTFATTNING
+
+Sveriges Tidö-koalition (M+KD+L+SD) genomför sin sista lagstiftningssprint med fem stora utskottsbetänkanden den 2026-05-07 som bekräftar mandatets kärn narrativ: **leverans av straffrättslig ordning, försvarsmodernisering och välfärdsmålstyrning** avancerar medan **utrikespolitisk stress** (Gaza/Israel, ansvarsskyldighet för krigsbrott) prövar koalitionssammanhållningen vid sämsta möjliga tidpunkt inför valet. Med 129 dagar kvar till valdagen lyder mandat-scorekortet: **straffrättslig ordning ✓ | försvar ✓ | migration ⚠ | välfärd delvis | finanspolitisk konsolidering delvis**.
+
+### 🧭 3 beslut som detta underlag stödjer
+
+1. **Bedömning av valtiming**: Leveransen av fängelseexpansionslagen (HD01CU25) och SIGINT-reformen (HD01FöU18) bekräftar att Tidö-blocket går in i valkampanjen med en stark säkerhetsberättelse; Rödgröna måste motangripa på välfärd och utrikespolitik.
+
+2. **Bevaka L (Liberalerna)s spärrgräns**: Med L som mäter 4,2 % (marginal 0,2 procentenheter över spärrgräns), kan dagens socialförsäkrings- och bostadsbidragsreformer (HD01SfU21, HD01SfU24) stabilisera L:s medelklassväljarbas — övervaka opinionsmätningsrespons.
+
+3. **Gaza/krigsbrott-risk**: HD10470 (Israelflodelattackfråga) och HD11789 (svenska medborgare utredda för krigsbrott) skapar politisk exponering. Koalitionens kommunikation måste skilja SD:s nationalistiska ståndpunkt från M+KD+L:s NATO/rättsstatsinramning.
+
+### VIKTIGA SIGNALER: 2026-05-07
+
+| Rangordning | Dokument | Betydelse | Valeffekt |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — Fängelseexpansion | Kritisk | ✅ Kärn-Tidö-leverans |
+| 2 | HD01FöU18 — SIGINT-reform | Kritisk | ✅ Försvarsmandat |
+| 3 | HD01SfU21 — Socialförsäkring | Hög | ⚠ L:s väljarstabilisering |
+| 4 | HD01SfU24 — Bostadsbidrag | Hög | ⚠ Välfärdsmålstyrning |
+| 5 | HD10470 — Gaza-flottilja | Hög | ❌ Koalitionsstress |
+| 6 | HD11789 — Krigsbrott | Hög | ❌ Utrikespolitisk risk |
+| 7 | HD11790 — Kammarkollegiet | Medel | ✅ Antikorruptionssignal |
+
+### IMF EKONOMISK KONTEXT (WEO Apr-2026, degraderad transport)
+
+Sveriges ekonomiska profil inför den sista kampanjfasen:
+- **Real BNP-tillväxt**: 1,8 % (2026), 2,3 % (2027) — återhämtning pågår [IMF WEO Apr-2026 T+1]
+- **Inflation (KPI)**: 2,1 % (2026) — på mål [WEO Apr-2026]
+- **Finansiellt saldo**: -0,8 % BNP (2026) — inom Tidö-ramverket [WEO Apr-2026]
+- **Offentlig skuld**: 33,8 % BNP — bland lägsta i EU [WEO Apr-2026 T+1]
+- **Arbetslöshet**: 8,4 % (AKU) — över nordiska jämförelseländer (Danmark 5,1 %, Norge 4,0 %) — Rödgrönas starkaste attackvektor
+
+> ℹ️ **IMF:s hjälptransport degraderad** — WEO/FM Datamapper ok; IFS/SDMX ej tillgänglig. Ekonomiska påståenden baseras på WEO Apr-2026-årgång. Alla IMF-citat använder economicProvenance.
+
+### VALRESULTATETS SLUTSATS
+
+**Mandatfördelning (2026-05-07)**: M 66 + KD 19 + L 16 + SD 74 = **175 mandat** (spärrgräns: 175).  
+Rödgröna: S 96 + V 24 + C 22 + MP 12 = **154 mandat** (ingen majoritet utan M eller SD).
+
+**Kritisk marginal**: Tidö-koalitionen har exakt 175 mandat (knapp majoritet). L:s överlevnad vid 4,0 % är den enskilt mest sannolika svaghetspunkten för Tidö.
+
+**Pass 2-förbättringar**: Lade till riskkvantifiering för Gaza/krigsbrott; uppdaterade mandatprognos att återspegla senaste opinionsundersökningar; inkluderade IMF:s ekonomiska slutsats med årgångsetiketter; stärkte L-spärrgränsanalys.
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_zh.md -->
+
+**分类**: 公开 | **置信度**: 高 [Admiralty B2] | **距选举**: T-129天  
+**作者**: James Pether Sörling | **运行编号**: 25461045016 | **IMF数据**: WEO 2026年4月
+
+### 🎯 摘要
+
+瑞典Tidø联合政府 (M+KD+L+SD) 于2026-05-07以五份重大委员会报告执行最终立法冲刺，确认任期核心叙事：**刑事秩序交付、国防现代化和福利结果治理**稳步推进，而**外交政策压力** (加沙/以色列、战争罪问责) 在选举前最糟糕的时刻考验联合政府的凝聚力。距投票日129天，任期成绩单为：**刑事秩序 ✓ | 国防 ✓ | 移民 ⚠ | 福利 部分完成 | 财政整合 部分完成**。
+
+### 🧭 本文件支持的3个决策
+
+1. **选举时机评估**：监狱扩张法 (HD01CU25) 和SIGINT改革 (HD01FöU18) 的交付确认Tidø阵营以强大的安全叙事进入选举活动；红绿联盟必须在福利和外交政策上进行反击。
+
+2. **监控L (Liberalerna) 选举门槛**：L测量值为4.2%（高于门槛0.2个百分点），今日社会保险和住房补贴改革 (HD01SfU21, HD01SfU24) 可能稳定L的中产阶级选民基础 — 监控民调反应。
+
+3. **加沙/战争罪风险**：HD10470（以色列船队袭击问题）和HD11789（被调查战争罪的瑞典公民）制造政治敞口。联合政府沟通必须区分SD的民族主义立场与M+KD+L的北约/法治框架。
+
+### 关键信号：2026-05-07
+
+| 排名 | 文件 | 重要性 | 选举影响 |
+|------|----------|-------------|-----------------|
+| 1 | HD01CU25 — 监狱扩张 | 关键 | ✅ Tidø核心交付 |
+| 2 | HD01FöU18 — SIGINT改革 | 关键 | ✅ 国防任务 |
+| 3 | HD01SfU21 — 社会保险 | 高 | ⚠ L选民稳定化 |
+| 4 | HD01SfU24 — 住房补贴 | 高 | ⚠ 福利结果治理 |
+| 5 | HD10470 — 加沙船队 | 高 | ❌ 联合政府压力 |
+| 6 | HD11789 — 战争罪 | 高 | ❌ 外交政策风险 |
+| 7 | HD11790 — Kammarkollegiet | 中 | ✅ 反腐信号 |
+
+### IMF经济背景 (WEO 2026年4月，传输降级)
+
+最终竞选阶段前瑞典经济概况：
+- **实际GDP增长率**：1.8%（2026年），2.3%（2027年）— 复苏进行中 [IMF WEO 2026年4月 T+1]
+- **通货膨胀 (KPI)**：2.1%（2026年）— 达标 [WEO 2026年4月]
+- **财政余额**：-0.8% GDP（2026年）— 在Tidø框架内 [WEO 2026年4月]
+- **公共债务**：33.8% GDP — 欧盟中最低之列 [WEO 2026年4月 T+1]
+- **失业率**：8.4%（AKU）— 高于北欧同行（丹麦5.1%，挪威4.0%）— 红绿联盟最强攻击矢量
+
+> ℹ️ **IMF辅助传输降级** — WEO/FM Datamapper正常；IFS/SDMX不可用。经济主张基于WEO 2026年4月年份。所有IMF引用使用economicProvenance。
+
+### 选举结果结论
+
+**席位分配 (2026-05-07)**：M 66 + KD 19 + L 16 + SD 74 = **175席** (门槛：175)。  
+红绿联盟：S 96 + V 24 + C 22 + MP 12 = **154席**（没有M或SD则无法获得多数）。
+
+**关键边际**：Tidø联合政府恰好175席（勉强多数）。L在4.0%的存活是Tidø最可能的弱点。
+
+**Pass 2改进**：添加加沙/战争罪风险量化；更新席位预测以反映最新民调；包含带年份标签的IMF经济结论；加强L门槛分析。
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 27 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 40 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1569,6 +2240,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/current/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

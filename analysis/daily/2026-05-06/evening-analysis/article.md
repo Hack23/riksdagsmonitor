@@ -6,7 +6,7 @@ date: 2026-05-06
 subfolder: evening-analysis
 slug: 2026-05-06-evening-analysis
 source_folder: analysis/daily/2026-05-06/evening-analysis
-generated_at: 2026-05-23T08:06:00.640Z
+generated_at: 2026-05-23T22:05:56.576Z
 language: en
 layout: article
 ---
@@ -80,6 +80,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -1247,13 +1260,754 @@ JuU30 individual votes confirmed from API (20 sample records). Party grouping no
 - IMF WEO: April 2026 vintage (< 6 months) ✅ Valid with annotation
 - Sibling analyses: Generated same day 2026-05-06 ✅ Fresh
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_ar.md -->
+
+&#x202B;# موجز استخباراتي: الاستخبارات البرلمانية المسائية — 6 مايو 2026
+
+**التصنيف**: 🟢 عام | **مستوى الثقة**: B2 | **المستوى**: تجميع C  
+**التاريخ**: 2026-05-06 | **الدورة البرلمانية**: 2025/26
+
+### الخلاصة (BLUF)
+
+**6 مايو 2026 هو أهم يوم تشريعي منفرد في عهد حكومة تيدو.** أرست أربعة قرارات تاريخية في آنٍ واحد تغييرات هيكلية في العدالة الجنائية والرفاه الاجتماعي واستخبارات الدفاع. صوّت الريكسداغ اليوم على: (1) سجن الأطفال من 15-17 سنة كبالغين اعتباراً من 1 يوليو 2026 (JuU30 — يحل سجن الشباب محل sluten ungdomsvård)؛ (2) تجاوز قانون التخطيط لتسريع بناء السجون (CU25)؛ (3) اشتراط فترات تأهيل قبل حصول المهاجرين على مزايا الرفاه (SfU21)؛ و(4) تحديث تشريعات SIGINT (FöU18) للعمل الكامل في حقبة الناتو. في الوقت ذاته، قدّمت الحكومة تصديقات شراكة الاتحاد الأوروبي–آسيا الوسطى (HD03249/48)، وتواجه 8 مقترحات معارضة منسقة حول الغابات وجرائم الشباب، حيث يمثل الانشقاق المزدوج لحزب Centerpartiet أهم إشارة لإعادة تشكيل التحالفات الانتخابية.
+
+### مصفوفة الأولويات
+
+| الترتيب | الوثيقة | الموضوع | الأهمية | النتيجة |
+|---------|---------|---------|---------|---------|
+| 1 | HD01JuU30 | سجن الشباب يحل محل sluten ungdomsvård | 🔴 بالغ الأهمية | مُعتمَد 2026-05-06 (ساري من 2026-07-01) |
+| 2 | HD01SfU21 | فترة تأهيل لمزايا الرفاه للمهاجرين | 🔴 بالغ الأهمية | مُعتمَد (S، تحفظات V+MP) |
+| 3 | HD01CU25 | توسيع السجون بالمسار السريع PBL | 🟠 مرتفع | مُعتمَد (تحفظ MP) |
+| 4 | HD01FöU18 | تحديث SIGINT | 🟠 مرتفع | مُعتمَد بالإجماع |
+| 5 | HD03262 | إلغاء تصاريح الإقامة الدائمة | 🟠 مرتفع | مقدَّم 2026-04-30 |
+| 6 | HD03258 | زيادة الشفافية في العمليات السياسية | 🟡 متوسط | مقدَّم 2026-04-30 |
+| 7 | HD03249/48 | اتفاقيات EPCA الاتحاد الأوروبي–آسيا الوسطى | 🟡 متوسط | مقدَّم 2026-05-06 |
+| 8 | 8 مقترحات معارضة | الغابات + تحدي جرائم الشباب | 🟡 متوسط | ستفشل (أغلبية 175 مقعداً) |
+
+### تقرير الوضع في 3 أسطر
+
+**ماذا**: اعتمد الريكسداغ السويدي في 6 مايو 2026 أشمل حزمة إصلاحات جنائية واجتماعية منذ جيل في يوم واحد — أُقرّت أحكام سجن الشباب، والمسار السريع للسجون، وتأهيل الرفاه، وتحديث SIGINT جميعها.
+
+**لماذا يهم**: أحكمت ائتلاف تيدو قفل التغييرات الهيكلية التي لا يمكن عكسها قبل انتخابات سبتمبر 2026. حتى لو فازت المعارضة في سبتمبر، فإن التراجع عن JuU30 وSfU21 وFöU18 سيستلزم تشريعاً صريحاً للإلغاء في المرحلة التالية — عتبة سياسية عالية في ضوء الدعم الحزبي الواسع لـ JuU30 (S وM وSD وC وL وKD صوتوا جميعاً بنعم؛ MP وحده صوت بلا).
+
+**ماذا الآن**: راقب دخول JuU30 حيز التنفيذ في 1 يوليو 2026 (أول سجناء 15-17 سنة)، وتعامل Försäkringskassan مع تصنيف تأهيل SfU21، وانشقاق Centerpartiet المزدوج في المقترحين HD024145/46 كإشارة إعادة تشكيل التحالف الانتخابي.
+
+### السياق الاقتصادي الرئيسي
+
+صندوق النقد الدولي — آفاق الاقتصاد العالمي أبريل 2026 (إصدار: 2026-04): نمو الناتج المحلي الإجمالي السويدي 2026 مُقدَّر بـ ~1.7%. يتيح الوضع المالي توسيع طاقة Kriminalvården وتحديث أنظمة Försäkringskassan دون تدابير طارئة. المحركات السياسية لتشريعات اليوم أيديولوجية وانتخابية، لا مالية. تبقى الجريمة والهجرة أعلى القضايا انتخابية أهمية لدى ائتلاف تيدو قُبيل انتخابات سبتمبر 2026.
+
+### الرصد المستقبلي (T+30 يوم)
+
+| التاريخ | الإشارة | PIR |
+|---------|---------|-----|
+| 2026-05-20 | استطلاع Novus عقب JuU30 | PIR-POLL-01 |
+| 2026-06-01 | رأي Lagrådet في مقترح 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | دخول JuU30 حيز التنفيذ | PIR-IMPL-JuU30 |
+| 2026-08-01 | دخول FöU18 وSfU21 حيز التنفيذ | PIR-IMPL-SfU21 |
+| 2026-09-13 | الانتخابات البرلمانية السويدية | الجميع |
+
+### تحسينات المرور 2
+
+#### تحسين الاستخبارات الرئيسي: تصويت S على JuU30 هو الإشارة الاستخباراتية الأبرز اليوم
+
+إن معرفة أن الاشتراكيين الديمقراطيين صوّتوا **بنعم** على JuU30 (سجن الأطفال من 15-17 سنة) يستحق الإبراز باعتباره أكثر النقاط الاستخباراتية أهمية استراتيجية اليوم — حتى على القانون نفسه. إليك الأسباب:
+
+1. **S هو حزب الحكومة المنتظر من انتخابات 2022**: بـ 94 مقعداً، يتصدر S المعارضة. تصويتهم بنعم على JuU30 يُنشئ سجلاً برلمانياً دائماً.
+
+2. **لا يمكن لـ S حملة انتخابية موثوقة للإلغاء**: بعد التصويت لصالح إنشاء قانون، يقع S في فخ منطقي: سيتعين عليهم الجدال بأنهم أخطأوا في التصويت عليه، أو أن الظروف تغيّرت. كلاهما مكلف سياسياً.
+
+3. **أقوى أوراق المعارضة في ملف الجريمة تضعف**: V وMP (كلاهما لا) يقفان الآن وحدهما بوصفهما اليسار الحامي لاتفاقية حقوق الطفل. يوافق S ضمنياً على إطار مكافحة الجريمة لدى الحكومة.
+
+4. **إشارة إعادة التوازن السياسي السويدي**: تعكس خطوة S الاستراتيجية موقف توني بلير 1994-1997 — التحرك يميناً في الجريمة للفوز بالوسط. يوحي هذا بأن S قبل داخلياً إطار العدالة الجنائية لحكومة تيدو وسيتنافس على جودة التنفيذ لا على المبدأ.
+
+**النتيجة الاستخباراتية الرئيسية المنقحة**: أبرز حدث في 6 مايو 2026 ليس اعتماد JuU30 في حد ذاته، بل قرار الاشتراكيين الديمقراطيين التصويت لصالحه — قبول هيكلي لنموذج العدالة الجنائية لحكومة تيدو، وتخلٍّ طوعي عن أوضح نقطة تمايز للمعارضة في جرائم الشباب.
+
+### المصدر الاقتصادي
+
+```yaml
+economicProvenance:
+  provider: imf
+  dataflow: WEO
+  indicator: NGDP_RPCH
+  country: SWE
+  vintage: "2026-04 (April 2026 WEO)"
+  retrieved_at: "2026-05-06"
+  note: "SDMX endpoint degraded; WEO Datamapper figure 1.7% used"
+```
+
+<!-- source-sha: 215d03e02ff7af33e95ff32888a799a81633820d -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_da.md -->
+
+**Klassificering**: 🟢 OFFENTLIG | **Konfidensniveau**: B2 | **Niveau**: C Aggregering  
+**Dato**: 2026-05-06 | **Riksmøde**: 2025/26
+
+### Konklusion på forhånd (BLUF)
+
+**6. maj 2026 er den mest afgørende enkeltlovgivningsdag i Tidø-regeringens era.** Fire milepælsbeslutninger fastlåste strukturelle ændringer i strafferet, velfærd og forsvarsefterretning samtidigt. Riksdagen stemte i dag for: (1) at fængsle børn i alderen 15-17 år som voksne fra 1. juli 2026 (JuU30 — ungdomsfængsel erstatter sluten ungdomsvård); (2) at omgå planlægningsloven for at fremskynde fængselsbyggeri (CU25); (3) at kræve kvalificeringsperioder, inden migranter kan få adgang til velfærdsydelser (SfU21); og (4) at modernisere SIGINT-lovgivningen (FöU18) til fuld NATO-æra-drift. Samtidig forelagde regeringen EU–Centralasien-partnerskabsratifikationer (HD03249/48) og møder 8 koordinerede oppositionsmotioner om skovbrug og ungdomskriminalitet, hvor Centerpartiets dobbelte afvigelse er det vigtigste valrealignementssignal.
+
+### Prioritetsmatrix
+
+| Rang | Dokument | Emne | Relevans | Udfald |
+|------|----------|------|----------|--------|
+| 1 | HD01JuU30 | Ungdomsfængsel erstatter sluten ungdomsvård | 🔴 Kritisk | Vedtaget 2026-05-06 (ikrafttr. 2026-07-01) |
+| 2 | HD01SfU21 | Kvalificeringsperiode for migranters velfærd | 🔴 Kritisk | Vedtaget (S, V+MP-reservationer) |
+| 3 | HD01CU25 | Fængselsudvidelse PBL-hurtigsporet | 🟠 Høj | Vedtaget (MP-reservation) |
+| 4 | HD01FöU18 | SIGINT-modernisering | 🟠 Høj | Vedtaget enstemmigt |
+| 5 | HD03262 | Afskaffelse af permanente opholdstilladelser | 🟠 Høj | Indgivet 2026-04-30 |
+| 6 | HD03258 | Øget gennemsigtighed i politiske processer | 🟡 Middel | Indgivet 2026-04-30 |
+| 7 | HD03249/48 | EU–Centralasien EPCA'er | 🟡 Middel | Indgivet 2026-05-06 |
+| 8 | 8 oppositionsmotioner | Skovbrug + udfordring om ungdomskriminalitet | 🟡 Middel | Vil falde (175-pladsmajoritet) |
+
+### 3-linjes situationsrapport
+
+**HVAD**: Sveriges Riksdag vedtog den mest omfattende pakke af strafferetlige reformer og velfærdsreformer i en generation på en enkelt dag — ungdomsfængsel, fængsels-hurtigsporet, velfærdskvalificering og SIGINT-modernisering blev alle vedtaget den 6. maj 2026.
+
+**HVORFOR DET BETYDER NOGET**: Tidø-koalitionen har fastlåst irreversible strukturelle ændringer inden valget i september 2026. Selv hvis oppositionen vinder i september, vil det kræve udtrykkelig ophævelselovgivning i næste valgperiode at rulle JuU30, SfU21 og FöU18 tilbage — en høj politisk barriere givet bred tværpartistøtte til JuU30 (S, M, SD, C, L, KD stemte alle Ja; kun MP stemte Nej).
+
+**HVAD NU**: Overvåg ikrafttrædelsen af JuU30 den 1. juli 2026 (første 15-17-årige fanger), Försäkringskassans håndtering af SfU21-kvalificeringstriage og Centerpartiets dobbelte afvigelse på motionerne HD024145/46 som valgkoalitions-realignementssignal.
+
+### Nøgletal i økonomi
+
+IMF WEO april 2026 (årgång: 2026-04): Sveriges BNP-vækst 2026 anslået til ~1,7 %. Den finanspolitiske position tillader både Kriminalvårdens kapacitetsudvidelse og Försäkringskassans systemopgraderinger uden nødforanstaltninger. De politiske drivkræfter bag dagens lovgivning er ideologiske og valgstrategiske, ikke finanspolitiske. Kriminalitet og migration forbliver Tidø-koalitionens højeste vælgersaliens-spørgsmål forud for valget i september 2026.
+
+### Forudovervågning (T+30d)
+
+| Dato | Signal | PIR |
+|------|--------|-----|
+| 2026-05-20 | Novus-meningsmåling efter JuU30 | PIR-POLL-01 |
+| 2026-06-01 | Lagrådets udtalelse om prop. 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30 træder i kraft | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18, SfU21 træder i kraft | PIR-IMPL-SfU21 |
+| 2026-09-13 | Svenske parlamentsvalg | ALLE |
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_de.md -->
+
+**Einstufung**: 🟢 ÖFFENTLICH | **Konfidenzgrad**: B2 | **Stufe**: C Aggregierung  
+**Datum**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Kurzfazit (BLUF)
+
+**Der 6. Mai 2026 ist der folgenreichste einzelne Gesetzgebungstag der Tidö-Regierungsära.** Vier Meilensteinentscheidungen haben gleichzeitig strukturelle Veränderungen in Strafrecht, Sozialleistungen und Verteidigungsgeheimdienst festgeschrieben. Der Riksdag stimmte heute ab für: (1) die Inhaftierung von Kindern im Alter von 15–17 Jahren als Erwachsene ab dem 1. Juli 2026 (JuU30 — Jugendgefängnis ersetzt sluten ungdomsvård); (2) die Umgehung des Planungsgesetzes zur Beschleunigung des Gefängnisbaus (CU25); (3) die Forderung nach Qualifikationszeiten, bevor Migranten Zugang zu Sozialleistungen erhalten (SfU21); und (4) die Modernisierung der SIGINT-Gesetzgebung (FöU18) für den vollen NATO-Ära-Betrieb. Gleichzeitig legte die Regierung EU–Zentralasien-Partnerschaftsratifizierungen (HD03249/48) vor und sieht sich 8 koordinierten Oppositionsmotionen zu Forstwirtschaft und Jugendkriminalität gegenüber, bei denen die doppelte Abweichung der Centerpartiet das wichtigste Wahlneuausrichtungssignal ist.
+
+### Prioritätsmatrix
+
+| Rang | Dokument | Thema | Relevanz | Ergebnis |
+|------|----------|-------|----------|---------|
+| 1 | HD01JuU30 | Jugendgefängnis ersetzt sluten ungdomsvård | 🔴 Kritisch | Angenommen 2026-05-06 (Inkrafttr. 2026-07-01) |
+| 2 | HD01SfU21 | Qualifikationszeitraum für Migrantensozialleistungen | 🔴 Kritisch | Angenommen (S, V+MP-Vorbehalte) |
+| 3 | HD01CU25 | Gefängniserweiterung PBL-Schnellspur | 🟠 Hoch | Angenommen (MP-Vorbehalt) |
+| 4 | HD01FöU18 | SIGINT-Modernisierung | 🟠 Hoch | Einstimmig angenommen |
+| 5 | HD03262 | Abschaffung unbefristeter Aufenthaltserlaubnisse | 🟠 Hoch | Eingereicht 2026-04-30 |
+| 6 | HD03258 | Erhöhte Transparenz in politischen Prozessen | 🟡 Mittel | Eingereicht 2026-04-30 |
+| 7 | HD03249/48 | EU–Zentralasien-EPCA | 🟡 Mittel | Eingereicht 2026-05-06 |
+| 8 | 8 Oppositionsmotionen | Forstwirtschaft + Herausforderung Jugendkriminalität | 🟡 Mittel | Wird scheitern (175-Sitze-Mehrheit) |
+
+### 3-zeiliger Lagebericht
+
+**WAS**: Schwedens Riksdag verabschiedete am 6. Mai 2026 das umfassendste Paket strafrechtlicher Reformen und Sozialreformen einer Generation an einem einzigen Tag — Jugendgefängnis, Gefängnis-Schnellspur, Sozialhilfekvalifikation und SIGINT-Modernisierung wurden alle verabschiedet.
+
+**WARUM ES WICHTIG IST**: Die Tidö-Koalition hat vor den Wahlen im September 2026 unumkehrbare strukturelle Veränderungen festgeschrieben. Selbst wenn die Opposition im September gewinnt, würde die Rückabwicklung von JuU30, SfU21 und FöU18 eine ausdrückliche Aufhebungsgesetzgebung in der nächsten Amtszeit erfordern — eine hohe politische Hürde angesichts der breiten fraktionsübergreifenden Unterstützung für JuU30 (S, M, SD, C, L, KD stimmten alle Ja; nur MP stimmte Nein).
+
+**WAS JETZT**: Beobachten Sie das Inkrafttreten von JuU30 am 1. Juli 2026 (erste 15–17-jährige Häftlinge), die Bearbeitung der SfU21-Qualifikationstriage durch die Försäkringskassan und die doppelte Abweichung der Centerpartiet bei den Motionen HD024145/46 als Wahlkoalitions-Neuausrichtungssignal.
+
+### Wichtiger wirtschaftlicher Kontext
+
+IWF WEO April 2026 (Jahrgang: 2026-04): Schwedens BIP-Wachstum 2026 auf ~1,7 % geschätzt. Die Haushaltslage erlaubt sowohl die Kapazitätserweiterung der Kriminalvården als auch System-Upgrades der Försäkringskassan ohne Notmaßnahmen. Die politischen Treiber der heutigen Gesetzgebung sind ideologischer und wahlstrategischer Natur, nicht haushaltspolitischer. Kriminalität und Migration bleiben die Wählerrelevanzthemen mit der höchsten Priorität der Tidö-Koalition vor den Wahlen im September 2026.
+
+### Vorausschau (T+30d)
+
+| Datum | Signal | PIR |
+|-------|--------|-----|
+| 2026-05-20 | Novus-Umfrage nach JuU30 | PIR-POLL-01 |
+| 2026-06-01 | Lagrådets Gutachten zu Prop. 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30 tritt in Kraft | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18, SfU21 treten in Kraft | PIR-IMPL-SfU21 |
+| 2026-09-13 | Schwedische Parlamentswahl | ALLE |
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_es.md -->
+
+**Clasificación**: 🟢 PÚBLICO | **Nivel de confianza**: B2 | **Nivel**: Agregación C  
+**Fecha**: 2026-05-06 | **Sesión parlamentaria**: 2025/26
+
+### Conclusión anticipada (BLUF)
+
+**El 6 de mayo de 2026 es el día legislativo más trascendental de la era del gobierno Tidö.** Cuatro decisiones históricas anclaron cambios estructurales en justicia penal, bienestar y servicios de inteligencia de defensa simultáneamente. El Riksdag votó hoy para: (1) encarcelar a niños de 15 a 17 años como adultos a partir del 1 de julio de 2026 (JuU30 — el encarcelamiento juvenil reemplaza al sluten ungdomsvård); (2) eludir la legislación de planificación para agilizar la construcción de prisiones (CU25); (3) exigir períodos de calificación antes de que los migrantes accedan a las prestaciones sociales (SfU21); y (4) modernizar la legislación SIGINT (FöU18) para la operación plena en la era OTAN. Simultáneamente, el gobierno presentó las ratificaciones de la asociación UE–Asia Central (HD03249/48) y enfrenta 8 mociones de oposición coordinadas sobre silvicultura y delincuencia juvenil, donde la doble defección del Centerpartiet es la señal clave de realineamiento electoral.
+
+### Matriz de prioridades
+
+| Rango | Documento | Tema | Relevancia | Resultado |
+|-------|-----------|------|------------|-----------|
+| 1 | HD01JuU30 | Encarcelamiento juvenil reemplaza sluten ungdomsvård | 🔴 Crítico | Adoptado 2026-05-06 (en vigor 2026-07-01) |
+| 2 | HD01SfU21 | Período de calificación para prestaciones sociales de migrantes | 🔴 Crítico | Adoptado (S, reservas V+MP) |
+| 3 | HD01CU25 | Expansión penitenciaria vía rápida PBL | 🟠 Alto | Adoptado (reserva MP) |
+| 4 | HD01FöU18 | Modernización SIGINT | 🟠 Alto | Adoptado por unanimidad |
+| 5 | HD03262 | Abolición de permisos de residencia permanentes | 🟠 Alto | Presentado 2026-04-30 |
+| 6 | HD03258 | Mayor transparencia en procesos políticos | 🟡 Medio | Presentado 2026-04-30 |
+| 7 | HD03249/48 | AEPC UE–Asia Central | 🟡 Medio | Presentado 2026-05-06 |
+| 8 | 8 mociones de oposición | Silvicultura + desafío sobre delincuencia juvenil | 🟡 Medio | Fracasará (mayoría de 175 escaños) |
+
+### Informe de situación en 3 líneas
+
+**QUÉ**: El Riksdag sueco adoptó el 6 de mayo de 2026 el paquete más completo de reformas penales y del bienestar de una generación en un solo día — encarcelamiento juvenil, vía rápida para prisiones, calificación al bienestar y modernización SIGINT fueron todos adoptados.
+
+**POR QUÉ IMPORTA**: La coalición Tidö ha asegurado cambios estructurales irreversibles antes de las elecciones de septiembre de 2026. Incluso si la oposición gana en septiembre, revertir JuU30, SfU21 y FöU18 requeriría legislación de derogación explícita en la próxima legislatura — una barrera política elevada dado el amplio apoyo multipartidario a JuU30 (S, M, SD, C, L, KD votaron todos Sí; solo MP votó No).
+
+**QUÉ AHORA**: Vigilar la entrada en vigor de JuU30 el 1 de julio de 2026 (primeros presos de 15 a 17 años), el manejo por parte de la Försäkringskassan del triaje de calificación SfU21, y la doble defección del Centerpartiet en las mociones HD024145/46 como señal de realineamiento de la coalición electoral.
+
+### Contexto económico clave
+
+FMI Perspectivas Económicas Mundiales abril 2026 (cosecha: 2026-04): Crecimiento del PIB sueco 2026 estimado en ~1,7 %. La posición fiscal permite tanto la expansión de capacidad de la Kriminalvården como las actualizaciones del sistema de la Försäkringskassan sin medidas de emergencia. Los motores políticos de la legislación de hoy son ideológicos y electorales, no fiscales. La delincuencia y la migración siguen siendo los temas de mayor relevancia electoral para la coalición Tidö de cara a las elecciones de septiembre de 2026.
+
+### Vigilancia prospectiva (T+30d)
+
+| Fecha | Señal | PIR |
+|-------|-------|-----|
+| 2026-05-20 | Encuesta Novus post-JuU30 | PIR-POLL-01 |
+| 2026-06-01 | Dictamen del Lagrådet sobre prop. 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | Entrada en vigor de JuU30 | PIR-IMPL-JuU30 |
+| 2026-08-01 | Entrada en vigor de FöU18, SfU21 | PIR-IMPL-SfU21 |
+| 2026-09-13 | Elecciones parlamentarias suecas | TODOS |
+
+### Mejoras del Paso 2
+
+#### Refinamiento de inteligencia clave: El voto de S en JuU30 es la señal de inteligencia más importante del día
+
+El hallazgo de que los Socialdemócratas votaron **Sí** en JuU30 (encarcelamiento de niños de 15 a 17 años) merece ser elevado como el elemento de inteligencia estratégicamente más significativo del día — incluso por encima de la propia ley. He aquí por qué:
+
+1. **S es el partido de gobierno en espera de las elecciones de 2022**: Con 94 escaños, S lidera la oposición. Su voto Sí en JuU30 crea un registro parlamentario permanente.
+
+2. **S no puede hacer campaña creíblemente por la derogación**: Habiendo votado para crear una ley, S se encuentra en una trampa lógica: tendrían que argumentar que se equivocaron al votar a favor, o que las circunstancias han cambiado. Ambas opciones son políticamente costosas.
+
+3. **El activo más fuerte de la oposición en materia de delincuencia se debilita**: V y MP (ambos No) ahora se quedan solos como la izquierda protectora de la CDN. S aprueba implícitamente el marco anticriminalidad del gobierno.
+
+4. **Señal de realineamiento político sueco**: El movimiento estratégico de S refleja el posicionamiento de Tony Blair en 1994-1997 — moverse a la derecha en materia de delincuencia para ganar el centro. Esto sugiere que S ha aceptado internamente el marco de justicia penal del gobierno Tidö y competirá en calidad de implementación, no en principios.
+
+**Hallazgo de inteligencia clave revisado**: El desarrollo más trascendental del 6 de mayo de 2026 no es la aprobación de JuU30 en sí misma, sino la decisión de los Socialdemócratas de votar a favor — una aceptación estructural del paradigma de justicia penal del gobierno Tidö y la renuncia voluntaria al punto de diferenciación más claro de la oposición en delincuencia juvenil.
+
+### Procedencia económica
+
+```yaml
+economicProvenance:
+  provider: imf
+  dataflow: WEO
+  indicator: NGDP_RPCH
+  country: SWE
+  vintage: "2026-04 (April 2026 WEO)"
+  retrieved_at: "2026-05-06"
+  note: "SDMX endpoint degraded; WEO Datamapper figure 1.7% used"
+```
+
+<!-- source-sha: 215d03e02ff7af33e95ff32888a799a81633820d -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_fi.md -->
+
+**Luokittelu**: 🟢 JULKINEN | **Luottamustaso**: B2 | **Taso**: C Koostaminen  
+**Päivämäärä**: 2026-05-06 | **Valtiopäiväkausi**: 2025/26
+
+### Lyhyt johtopäätös (BLUF)
+
+**6. toukokuuta 2026 on Tidö-hallituksen aikakauden merkittävin yksittäinen lainsäädäntöpäivä.** Neljä merkittävää päätöstä lukitsi samaan aikaan rakenteelliset muutokset rikosoikeuteen, sosiaaliturvaan ja puolustustiedusteluun. Riksdag äänesti tänään: (1) 15–17-vuotiaiden lasten vankitsemisesta aikuisina 1. heinäkuuta 2026 alkaen (JuU30 — nuorisovankila korvaa sluten ungdomsvård); (2) kaavoituslain ohittamisesta vankilarakentamisen nopeuttamiseksi (CU25); (3) siirtymäaikojen vaatimisesta ennen siirtolaisten pääsyä sosiaaliturvaetuksiin (SfU21); sekä (4) SIGINT-lainsäädännön modernisoimisesta (FöU18) täyttä Nato-aikakauden toimintaa varten. Samaan aikaan hallitus toi EU–Keski-Aasia-kumppanuusratifikaatiot (HD03249/48) eduskuntaan ja kohtaa 8 koordinoitua oppositiomotiota metsätaloudesta ja nuorisorikollisuudesta, joissa Centerpartietin kaksoispoikkeama on tärkein vaaliliittojen uudistumissignaali.
+
+### Prioriteettimatriisi
+
+| Sija | Asiakirja | Aihe | Merkittävyys | Tulos |
+|------|-----------|------|--------------|-------|
+| 1 | HD01JuU30 | Nuorisovankila korvaa sluten ungdomsvård | 🔴 Kriittinen | Hyväksytty 2026-05-06 (voimaan 2026-07-01) |
+| 2 | HD01SfU21 | Siirtymäaika siirtolaisten sosiaaliturvaan | 🔴 Kriittinen | Hyväksytty (S, V+MP-varaukset) |
+| 3 | HD01CU25 | Vankilalaajennuksen PBL-pikakaista | 🟠 Korkea | Hyväksytty (MP-varaus) |
+| 4 | HD01FöU18 | SIGINT-modernisointi | 🟠 Korkea | Hyväksytty yksimielisesti |
+| 5 | HD03262 | Pysyvien oleskelulupien poistaminen | 🟠 Korkea | Jätetty 2026-04-30 |
+| 6 | HD03258 | Lisääntynyt avoimuus poliittisissa prosesseissa | 🟡 Keskitaso | Jätetty 2026-04-30 |
+| 7 | HD03249/48 | EU–Keski-Aasia EPCA:t | 🟡 Keskitaso | Jätetty 2026-05-06 |
+| 8 | 8 oppositiomotiota | Metsätalous + nuorisorikollisuushaaste | 🟡 Keskitaso | Kaatuu (175 paikan enemmistö) |
+
+### 3-rivinen tilannekatsaus
+
+**MITÄ**: Ruotsin riksdag hyväksyi sukupolven kattavimman rikosoikeudellisten uudistusten ja sosiaaliturvauudistusten paketin yhdessä päivässä — nuorisovankila, vankiloiden pikakaista, sosiaaliturvakelpoisuus ja SIGINT-modernisointi hyväksyttiin kaikki 6. toukokuuta 2026.
+
+**MIKSI SE MERKITSEE**: Tidö-koalitio on lukinnut peruuttamattomia rakenteellisia muutoksia ennen syyskuun 2026 vaaleja. Vaikka oppositio voittaisi syyskuussa, JuU30:n, SfU21:n ja FöU18:n purkaminen vaatisi nimenomaista kumoamislainsäädäntöä seuraavalla kaudella — korkea poliittinen kynnys ottaen huomioon laajan puolueenvälisen tuen JuU30:lle (S, M, SD, C, L, KD äänestivät kaikki Kyllä; ainoastaan MP äänesti Ei).
+
+**MITÄ NYT**: Seuraa JuU30:n voimaantuloa 1. heinäkuuta 2026 (ensimmäiset 15–17-vuotiaat vangit), Försäkringskassanin SfU21-kelpoisuusluokittelun käsittelyä ja Centerpartietin kaksoispoikkeamaa motioissa HD024145/46 vaaliliittojen uudelleenjärjestymissignaalina.
+
+### Keskeinen taloudellinen asiayhteys
+
+IMF WEO huhtikuu 2026 (vuosikerta: 2026-04): Ruotsin BKT-kasvu 2026 arvioitu ~1,7 %. Finanssipoliittinen asema sallii sekä Kriminalvårdenin kapasiteetin laajentamisen että Försäkringskassanin järjestelmäpäivitykset ilman hätätoimia. Tämän päivän lainsäädännön poliittiset ajurit ovat ideologisia ja vaalistrategisia, eivät finanssipoliittisia. Rikollisuus ja maahanmuutto pysyvät Tidö-koalition tärkeimpinä äänestäjien kannalta syyskuun 2026 vaalien alla.
+
+### Tulevaisuuden seuranta (T+30d)
+
+| Päivämäärä | Signaali | PIR |
+|------------|----------|-----|
+| 2026-05-20 | Novus-mielipidekysely JuU30:n jälkeen | PIR-POLL-01 |
+| 2026-06-01 | Lagrådets lausunto prop. 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30 tulee voimaan | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18, SfU21 tulevat voimaan | PIR-IMPL-SfU21 |
+| 2026-09-13 | Ruotsin parlamenttivaalit | KAIKKI |
+
+### 2. kierroksen parannukset
+
+#### Keskeinen tiedustelutarkistus: S:n JuU30-äänestys on päivän tärkein tiedustelusinnaali
+
+Havainto, että Sosiaalidemokraatit äänestivät **Kyllä** JuU30:lle (15–17-vuotiaiden lasten vankitseminen), ansaitsee nostaa esiin päivän yksittäisesti strategisesti merkittävimpänä tiedustelupistinä — jopa itse lakia tärkeämpänä. Tässä ovat syyt:
+
+1. **S on vuoden 2022 vaalin odottava hallituspuolue**: 94 mandaatilla S johtaa oppositiota. Heidän Kyllä-äänensä JuU30:lle luo pysyvän parlamentaarisen pöytäkirjan.
+
+2. **S ei pysty uskottavasti kampanjoimaan kumoamisen puolesta**: Koska he äänestivät lain luomisen puolesta, S on logiikkaansassa: heidän täytyisi väittää, että he olivat väärässä äänestäessään sen puolesta, tai että olosuhteet ovat muuttuneet. Molemmat ovat poliittisesti kalliita.
+
+3. **Opposition vahvin kortti rikollisuudessa heikkenee**: V ja MP (molemmat Ei) seisovat nyt yksin lapsen oikeuksien sopimuksen suojelevana vasemmistona. S hyväksyy implisiittisesti hallituksen rikostorjunnan kehyksen.
+
+4. **Ruotsalainen poliittinen uudelleenjärjestymissignaali**: S:n strateginen liike heijastaa Tony Blairin asennoitumista 1994–1997 — siirtyminen oikealle rikollisuudessa voittaakseen keskustan. Tämä viittaa siihen, että S on sisäisesti hyväksynyt Tidö-hallituksen rikosoikeudellisen kehyksen ja kilpailee toimeenpanon laadusta, ei periaatteesta.
+
+**Tarkistettu keskeinen tiedustelulöytö**: 6. toukokuuta 2026 merkittävin tapahtuma ei ole JuU30:n hyväksyminen itsessään, vaan Sosiaalidemokraattien päätös äänestää sen puolesta — rakenteellinen hyväksyntä Tidö-hallituksen rikosoikeudelliselle paradigmalle ja vapaaehtoinen luopuminen selkeimmästä opposition erottautumispisteestä nuorisorikollisuudessa.
+
+### Taloudellinen alkuperä
+
+```yaml
+economicProvenance:
+  provider: imf
+  dataflow: WEO
+  indicator: NGDP_RPCH
+  country: SWE
+  vintage: "2026-04 (April 2026 WEO)"
+  retrieved_at: "2026-05-06"
+  note: "SDMX endpoint degraded; WEO Datamapper figure 1.7% used"
+```
+
+<!-- source-sha: 215d03e02ff7af33e95ff32888a799a81633820d -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_fr.md -->
+
+### Conclusion préliminaire (BLUF)
+
+**Le 6 mai 2026 est la journée législative la plus déterminante de l'ère du gouvernement Tidö.** Quatre décisions historiques ont simultanément ancré des changements structurels dans la justice pénale, la protection sociale et le renseignement de défense. Le Riksdag a voté aujourd'hui pour : (1) incarcérer les enfants de 15 à 17 ans en tant qu'adultes à partir du 1er juillet 2026 (JuU30 — l'emprisonnement des mineurs remplace le sluten ungdomsvård) ; (2) contourner le droit de l'urbanisme pour accélérer la construction de prisons (CU25) ; (3) exiger des périodes de qualification avant que les migrants puissent accéder aux prestations sociales (SfU21) ; et (4) moderniser la législation SIGINT (FöU18) pour un fonctionnement en ère OTAN. Parallèlement, le gouvernement a déposé les ratifications du partenariat UE–Asie centrale (HD03249/48) et fait face à 8 motions d'opposition coordonnées sur la sylviculture et la délinquance juvénile, où la double défection du Centerpartiet est le signal clé de réalignement électoral.
+
+### Matrice de priorités
+
+| Rang | Document | Sujet | Importance | Résultat |
+|------|----------|-------|------------|---------|
+| 1 | HD01JuU30 | Emprisonnement des mineurs remplace sluten ungdomsvård | 🔴 Critique | Adopté le 2026-05-06 (entrée en vigueur 2026-07-01) |
+| 2 | HD01SfU21 | Période de qualification pour les prestations sociales des migrants | 🔴 Critique | Adopté (S, réserves V+MP) |
+| 3 | HD01CU25 | Extension des prisons voie rapide PBL | 🟠 Élevé | Adopté (réserve MP) |
+| 4 | HD01FöU18 | Modernisation SIGINT | 🟠 Élevé | Adopté à l'unanimité |
+| 5 | HD03262 | Suppression des titres de séjour permanents | 🟠 Élevé | Déposé le 2026-04-30 |
+| 6 | HD03258 | Transparence accrue dans les processus politiques | 🟡 Moyen | Déposé le 2026-04-30 |
+| 7 | HD03249/48 | AEPC UE–Asie centrale | 🟡 Moyen | Déposé le 2026-05-06 |
+| 8 | 8 motions d'opposition | Sylviculture + défi sur la délinquance juvénile | 🟡 Moyen | Échouera (majorité de 175 sièges) |
+
+### Rapport de situation en 3 lignes
+
+**QUOI** : Le Riksdag suédois a adopté le 6 mai 2026 le plus complet paquet de réformes pénales et sociales d'une génération en une seule journée — emprisonnement des mineurs, voie rapide pour les prisons, qualification aux prestations sociales et modernisation SIGINT ont tous été adoptés.
+
+**POURQUOI C'EST IMPORTANT** : La coalition Tidö a verrouillé des changements structurels irréversibles avant les élections de septembre 2026. Même si l'opposition gagne en septembre, le retour en arrière sur JuU30, SfU21 et FöU18 nécessiterait une législation d'abrogation explicite lors de la prochaine législature — une barrière politique élevée compte tenu du large soutien multipartite à JuU30 (S, M, SD, C, L, KD ont tous voté Oui ; seul MP a voté Non).
+
+**ET MAINTENANT** : Surveiller l'entrée en vigueur de JuU30 le 1er juillet 2026 (premiers détenus de 15 à 17 ans), le traitement par la Försäkringskassan du tri de qualification SfU21, et la double défection du Centerpartiet sur les motions HD024145/46 comme signal de réalignement de la coalition électorale.
+
+### Contexte économique clé
+
+FMI Perspectives économiques mondiales avril 2026 (millésime : 2026-04) : Croissance du PIB suédois 2026 estimée à ~1,7 %. La position budgétaire permet à la fois l'extension de la capacité de la Kriminalvården et les mises à niveau du système de la Försäkringskassan sans mesures d'urgence. Les moteurs politiques de la législation d'aujourd'hui sont idéologiques et électoraux, pas budgétaires. La criminalité et la migration restent les thèmes électoraux les plus saillants de la coalition Tidö avant les élections de septembre 2026.
+
+### Surveillance prospective (T+30j)
+
+| Date | Signal | PIR |
+|------|--------|-----|
+| 2026-05-20 | Sondage Novus post-JuU30 | PIR-POLL-01 |
+| 2026-06-01 | Avis du Lagrådet sur le projet de loi 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | Entrée en vigueur de JuU30 | PIR-IMPL-JuU30 |
+| 2026-08-01 | Entrée en vigueur de FöU18, SfU21 | PIR-IMPL-SfU21 |
+| 2026-09-13 | Élections législatives suédoises | TOUS |
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_he.md -->
+
+&#x202B;# מסמך מודיעין: מודיעין פרלמנטרי ערב — 6 במאי 2026
+
+**סיווג**: 🟢 ציבורי | **רמת אמינות**: B2 | **רמה**: צבירה C  
+**תאריך**: 2026-05-06 | **מושב פרלמנטרי**: 2025/26
+
+### סיכום קצר (BLUF)
+
+**6 במאי 2026 הוא יום החקיקה המכריע ביותר בעידן ממשלת טידו.** ארבעה החלטות היסטוריות עיגנו בו-זמנית שינויים מבניים במשפט פלילי, רווחה ומודיעין ביטחוני. הריקסדאג הצביע היום: (1) לכליאת ילדים בגיל 15-17 כמבוגרים החל מ-1 ביולי 2026 (JuU30 — מאסר נוער מחליף את sluten ungdomsvård); (2) לעקוף את דיני התכנון לזירוז בניית בתי סוהר (CU25); (3) לדרוש תקופות כשירות לפני שמהגרים יגיעו לגמלאות רווחה (SfU21); ו-(4) לעדכן את חקיקת ה-SIGINT (FöU18) לפעולה מלאה בעידן הנאט"ו. במקביל, הגישה הממשלה אישרורי שותפות האיחוד האירופי–אסיה המרכזית (HD03249/48), ומתמודדת עם 8 הצעות אופוזיציה מתואמות על ייעור ועבריינות נוער, כאשר הסטייה הכפולה של ה-Centerpartiet היא אות מיישור הברית הבחירותי המרכזי.
+
+### מטריצת עדיפויות
+
+| דירוג | מסמך | נושא | חשיבות | תוצאה |
+|-------|-------|------|---------|--------|
+| 1 | HD01JuU30 | מאסר נוער מחליף sluten ungdomsvård | 🔴 קריטי | אושר 2026-05-06 (בתוקף מ-2026-07-01) |
+| 2 | HD01SfU21 | תקופת כשירות לגמלאות רווחה למהגרים | 🔴 קריטי | אושר (S, הסתייגויות V+MP) |
+| 3 | HD01CU25 | הרחבת בתי סוהר במסלול מהיר PBL | 🟠 גבוה | אושר (הסתייגות MP) |
+| 4 | HD01FöU18 | מודרניזציה של SIGINT | 🟠 גבוה | אושר פה אחד |
+| 5 | HD03262 | ביטול רישיונות שהייה קבועים | 🟠 גבוה | הוגש 2026-04-30 |
+| 6 | HD03258 | שקיפות מוגברת בתהליכים פוליטיים | 🟡 בינוני | הוגש 2026-04-30 |
+| 7 | HD03249/48 | הסכמי EPCA האיחוד האירופי–אסיה המרכזית | 🟡 בינוני | הוגש 2026-05-06 |
+| 8 | 8 הצעות אופוזיציה | ייעור + אתגר עבריינות נוער | 🟡 בינוני | ייכשל (רוב 175 מושבים) |
+
+### דו"ח מצב ב-3 שורות
+
+**מה**: הריקסדאג השוודי אימץ ב-6 במאי 2026 את חבילת הרפורמות הפלילית והרווחתית המקיפה ביותר מזה דור ביום אחד — מאסר נוער, מסלול מהיר לבתי סוהר, כשירות לרווחה ומודרניזציה של SIGINT אושרו כולם.
+
+**מדוע זה חשוב**: קואליציית טידו נעלה שינויים מבניים בלתי הפיכים לפני בחירות ספטמבר 2026. אפילו אם האופוזיציה תנצח בספטמבר, ביטול JuU30, SfU21 ו-FöU18 ידרוש חקיקת ביטול מפורשת בכהונה הבאה — מחסום פוליטי גבוה לאור התמיכה הרחבה מעבר לחוצות המפלגות ב-JuU30 (S, M, SD, C, L, KD הצביעו כולם כן; רק MP הצביע לא).
+
+**מה עכשיו**: עקוב אחר כניסת JuU30 לתוקף ב-1 ביולי 2026 (כולאים ראשונים בגילאי 15-17), טיפול Försäkringskassan בסינון כשירות SfU21, ועל הסטייה הכפולה של Centerpartiet בהצעות HD024145/46 כאות מיישור קואליציה בחירותי.
+
+### הקשר כלכלי מרכזי
+
+קרן המטבע הבינלאומית WEO אפריל 2026 (גרסה: 2026-04): צמיחת התמ"ג של שוודיה 2026 מוערכת ב-~1.7%. המצב הפיסקלי מאפשר גם הרחבת הקיבולת של Kriminalvården וגם שדרוגי המערכת של Försäkringskassan ללא אמצעי חירום. הגורמים הפוליטיים של חקיקת היום הם אידיאולוגיים ובחירותיים, לא פיסקליים. פשע ומהגרות ממשיכים להיות נושאי ה-salience הגבוה ביותר בקרב הבוחרים של קואליציית טידו לקראת בחירות ספטמבר 2026.
+
+### מעקב קדימה (T+30 ימים)
+
+| תאריך | אות | PIR |
+|-------|-----|-----|
+| 2026-05-20 | סקר Novus לאחר JuU30 | PIR-POLL-01 |
+| 2026-06-01 | חוות דעת Lagrådet על prop. 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30 נכנס לתוקף | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18, SfU21 נכנסים לתוקף | PIR-IMPL-SfU21 |
+| 2026-09-13 | בחירות לפרלמנט השוודי | הכל |
+
+### שיפורי מעבר 2
+
+#### חידוד מודיעין מרכזי: הצבעת S על JuU30 היא האות המודיעיני החשוב ביותר של היום
+
+הממצא שהסוציאל-דמוקרטים הצביעו **כן** על JuU30 (כליאת ילדים בני 15-17) ראוי להיות מועלה כנקודת המודיעין האסטרטגית החשובה ביותר של היום — אפילו מעל החוק עצמו. הנה הסיבות:
+
+1. **S הוא מפלגת הממשלה הממתינה מבחירות 2022**: עם 94 מנדטים, S מוביל את האופוזיציה. הצבעתם בכן על JuU30 יוצרת פרוטוקול פרלמנטרי קבוע.
+
+2. **S אינו יכול לנהל קמפיין אמין לביטול**: לאחר שהצביעו ליצירת חוק, S נמצא במלכודת לוגית: הם יצטרכו לטעון שטעו בהצבעה עליו, או שהנסיבות השתנו. שניהם יקרים פוליטית.
+
+3. **הקלף החזק ביותר של האופוזיציה בנושא פשע נחלש**: V ו-MP (שניהם לא) עומדים כעת לבד כשמאל המגן על אמנת זכויות הילד. S מאשר באופן מרומז את מסגרת מאבק הפשיעה של הממשלה.
+
+4. **אות יישור מחדש פוליטי שוודי**: הצעד האסטרטגי של S משקף את המיצוב של טוני בלייר 1994-1997 — לנוע ימינה בנושא פשע כדי לזכות בהמרכז. זה מרמז שS קיבל פנימית את מסגרת המשפט הפלילי של ממשלת טידו ויתחרה על איכות היישום, לא על עקרון.
+
+**ממצא מודיעין מרכזי מתוקן**: ההתפתחות המכרעת ביותר של 6 במאי 2026 אינה אישור JuU30 כשלעצמו, אלא החלטת הסוציאל-דמוקרטים להצביע לטובתו — קבלה מבנית של פרדיגמת המשפט הפלילי של ממשלת טידו וויתור רצוני על נקודת הבידול הברורה ביותר של האופוזיציה בעבריינות נוער.
+
+### מקור כלכלי
+
+```yaml
+economicProvenance:
+  provider: imf
+  dataflow: WEO
+  indicator: NGDP_RPCH
+  country: SWE
+  vintage: "2026-04 (April 2026 WEO)"
+  retrieved_at: "2026-05-06"
+  note: "SDMX endpoint degraded; WEO Datamapper figure 1.7% used"
+```
+
+<!-- source-sha: 215d03e02ff7af33e95ff32888a799a81633820d -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_ja.md -->
+
+**分類**: 🟢 公開 | **信頼度**: B2 | **レベル**: C 集約  
+**日付**: 2026-05-06 | **国会会期**: 2025/26
+
+### 結論（BLUF）
+
+**2026年5月6日は、ティドー政権時代において最も重大な単一立法日である。** 4つの画期的な決定が、刑事司法、福祉、防衛情報において同時に構造的変化を確立した。リクスダーグは本日、以下を可決した：(1) 2026年7月1日より15〜17歳の子どもを成人として収監（JuU30 — 少年刑務所がsluten ungdomsvårdに代わる）；(2) 刑務所建設を加速するための計画法の回避（CU25）；(3) 移民が福祉給付を受ける前の資格期間の要件（SfU21）；(4) NATOの時代に対応したSIGINT法制の近代化（FöU18）。同時に、政府はEU・中央アジア・パートナーシップ批准（HD03249/48）を提出し、林業と少年犯罪に関する8つの調整された野党動議に直面している。この中でCenterpartietの二重離脱が、選挙連立再編の重要シグナルとなっている。
+
+### 優先マトリクス
+
+| 順位 | 文書 | テーマ | 重要度 | 結果 |
+|------|------|--------|--------|------|
+| 1 | HD01JuU30 | 少年刑務所がsluten ungdomsvårdに代わる | 🔴 緊急 | 2026-05-06可決（2026-07-01施行）|
+| 2 | HD01SfU21 | 移民の福祉資格期間 | 🔴 緊急 | 可決（S、V+MP留保）|
+| 3 | HD01CU25 | 刑務所拡張PBL特急ルート | 🟠 高 | 可決（MP留保）|
+| 4 | HD01FöU18 | SIGINT近代化 | 🟠 高 | 全会一致で可決 |
+| 5 | HD03262 | 永住許可廃止 | 🟠 高 | 2026-04-30提出 |
+| 6 | HD03258 | 政治プロセスの透明性向上 | 🟡 中 | 2026-04-30提出 |
+| 7 | HD03249/48 | EU・中央アジアEPCA | 🟡 中 | 2026-05-06提出 |
+| 8 | 野党動議8件 | 林業＋少年犯罪への異議申し立て | 🟡 中 | 否決見通し（175議席多数）|
+
+### 3行状況報告
+
+**何が起きたか**：スウェーデンのリクスダーグは2026年5月6日、1日で一世代に渡る最も包括的な刑事司法・福祉改革パッケージを可決した。少年収監、刑務所特急ルート、福祉資格審査、SIGINT近代化がすべて採択された。
+
+**なぜ重要か**：ティドー連立は2026年9月の選挙前に不可逆的な構造的変化を固定した。たとえ野党が9月に勝利しても、JuU30、SfU21、FöU18を撤回するには次の任期に明示的な廃止立法が必要となる。JuU30に対する幅広い超党派支持（S、M、SD、C、L、KDはすべて賛成票、MPのみ反対）を考えると、政治的ハードルは高い。
+
+**今後は**：2026年7月1日のJuU30施行（最初の15〜17歳の収容者）、SfU21資格審査のFörsäkringskassan対応、選挙連立再編シグナルとしてのCenterpartietのHD024145/46動議での二重離脱を注視せよ。
+
+### 主要経済的背景
+
+IMF世界経済見通し2026年4月版（ヴィンテージ：2026-04）：スウェーデンGDP成長率2026年は~1.7%と推計。財政状況は、緊急措置なしにKriminalvårdenの収容能力拡大とFörsäkringskassanのシステム改修を両立できる。本日の立法の政治的原動力はイデオロギー的・選挙的なものであり、財政的ではない。犯罪と移民は、2026年9月の選挙に向けてティドー連立の最も高い有権者重要課題であり続ける。
+
+### 将来的な監視（T+30日）
+
+| 日付 | シグナル | PIR |
+|------|--------|-----|
+| 2026-05-20 | JuU30後のNovus世論調査 | PIR-POLL-01 |
+| 2026-06-01 | prop. 2025/26:246に関するLagrådets意見 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30施行 | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18、SfU21施行 | PIR-IMPL-SfU21 |
+| 2026-09-13 | スウェーデン総選挙 | 全て |
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_ko.md -->
+
+**분류**: 🟢 공개 | **신뢰도**: B2 | **수준**: C 집계  
+**날짜**: 2026-05-06 | **국회 회기**: 2025/26
+
+### 결론 요약 (BLUF)
+
+**2026년 5월 6일은 티도 정부 시대에서 가장 중요한 단일 입법일이다.** 네 가지 획기적인 결정이 동시에 형사사법, 복지, 국방 정보 분야에 구조적 변화를 확립했다. 릭스다그는 오늘 다음 사항에 투표했다: (1) 2026년 7월 1일부터 15-17세 아동을 성인으로 수감 (JuU30 — 소년 교도소가 sluten ungdomsvård를 대체); (2) 교도소 건설 가속화를 위한 계획법 우회 (CU25); (3) 이민자가 복지 혜택을 받기 전 자격 기간 요건 (SfU21); (4) NATO 시대 운용을 위한 SIGINT 법제 현대화 (FöU18). 동시에, 정부는 EU-중앙아시아 파트너십 비준 (HD03249/48)을 제출했으며, 산림업과 청소년 범죄에 관한 8개의 조율된 야당 동의를 직면하고 있다. 이 중 Centerpartiet의 이중 이탈이 선거 연합 재편의 핵심 신호다.
+
+### 우선순위 매트릭스
+
+| 순위 | 문서 | 주제 | 중요도 | 결과 |
+|------|------|------|--------|------|
+| 1 | HD01JuU30 | 소년 교도소가 sluten ungdomsvård 대체 | 🔴 긴급 | 2026-05-06 채택 (2026-07-01 시행) |
+| 2 | HD01SfU21 | 이민자 복지 자격 기간 | 🔴 긴급 | 채택 (S, V+MP 유보) |
+| 3 | HD01CU25 | 교도소 확장 PBL 급행 루트 | 🟠 높음 | 채택 (MP 유보) |
+| 4 | HD01FöU18 | SIGINT 현대화 | 🟠 높음 | 만장일치 채택 |
+| 5 | HD03262 | 영구 거주 허가 폐지 | 🟠 높음 | 2026-04-30 제출 |
+| 6 | HD03258 | 정치 과정 투명성 강화 | 🟡 중간 | 2026-04-30 제출 |
+| 7 | HD03249/48 | EU-중앙아시아 EPCA | 🟡 중간 | 2026-05-06 제출 |
+| 8 | 야당 동의 8건 | 산림업 + 청소년 범죄 도전 | 🟡 중간 | 부결 예상 (175석 다수) |
+
+### 3줄 상황 보고
+
+**무엇이**: 스웨덴 릭스다그는 2026년 5월 6일 하루 만에 한 세대에 걸친 가장 포괄적인 형사사법 및 복지 개혁 패키지를 채택했다 — 소년 수감, 교도소 급행 루트, 복지 자격, SIGINT 현대화가 모두 통과되었다.
+
+**왜 중요한가**: 티도 연립은 2026년 9월 선거 전 되돌릴 수 없는 구조적 변화를 고정했다. 야당이 9월에 이긴다 해도 JuU30, SfU21, FöU18을 되돌리려면 다음 임기에 명시적인 폐지 입법이 필요하다 — JuU30에 대한 광범위한 초당적 지지(S, M, SD, C, L, KD 모두 찬성, MP만 반대)를 고려하면 정치적 장벽이 높다.
+
+**지금 해야 할 것**: 2026년 7월 1일 JuU30 시행(최초 15-17세 수용자), SfU21 자격 심사에 대한 Försäkringskassan 처리, 그리고 선거 연합 재편 신호로서 HD024145/46 동의에서 Centerpartiet의 이중 이탈을 주시하라.
+
+### 주요 경제적 맥락
+
+IMF 세계경제전망 2026년 4월판 (빈티지: 2026-04): 스웨덴 GDP 성장률 2026년 약 1.7% 추정. 재정 상태는 긴급 조치 없이 Kriminalvården의 수용 능력 확장과 Försäkringskassan의 시스템 업그레이드를 모두 허용한다. 오늘 입법의 정치적 동인은 이데올로기적·선거적이며, 재정적이 아니다. 범죄와 이민은 2026년 9월 선거를 앞두고 티도 연립의 가장 높은 유권자 관련 이슈로 남아 있다.
+
+### 미래 모니터링 (T+30일)
+
+| 날짜 | 신호 | PIR |
+|------|------|-----|
+| 2026-05-20 | JuU30 이후 Novus 여론조사 | PIR-POLL-01 |
+| 2026-06-01 | prop. 2025/26:246에 대한 Lagrådet 의견 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30 시행 | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18, SfU21 시행 | PIR-IMPL-SfU21 |
+| 2026-09-13 | 스웨덴 총선 | 전체 |
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_nl.md -->
+
+**Classificatie**: 🟢 OPENBAAR | **Betrouwbaarheidsniveau**: B2 | **Niveau**: C Aggregatie  
+**Datum**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Conclusie vooraf (BLUF)
+
+**6 mei 2026 is de meest beslissende afzonderlijke wetgevingsdag in het tijdperk van de Tidö-regering.** Vier mijlpaalbeslissingen verankelden tegelijkertijd structurele veranderingen in strafrecht, sociale zekerheid en defensie-inlichtingen. De Riksdag stemde vandaag voor: (1) het opsluiten van kinderen van 15-17 jaar als volwassenen per 1 juli 2026 (JuU30 — jeugdgevangenis vervangt sluten ungdomsvård); (2) het omzeilen van de ruimtelijke ordening voor het versnellen van de gevangenisbouw (CU25); (3) het vereisen van kwalificatieperiodes voordat migranten toegang krijgen tot uitkeringen (SfU21); en (4) het moderniseren van de SIGINT-wetgeving (FöU18) voor volledige NAVO-tijdperk-operatie. Tegelijkertijd diende de regering EU–Centraal-Azië-partnerschapsratificaties (HD03249/48) in en staat voor 8 gecoördineerde oppositiemoties over bosbouw en jeugdcriminaliteit, waarbij de dubbele defectie van de Centerpartiet het belangrijkste electorale realignementssignaal is.
+
+### Prioriteitsmatrix
+
+| Rang | Document | Onderwerp | Relevantie | Uitkomst |
+|------|----------|-----------|------------|---------|
+| 1 | HD01JuU30 | Jeugdgevangenis vervangt sluten ungdomsvård | 🔴 Kritiek | Aangenomen 2026-05-06 (inwerkingtr. 2026-07-01) |
+| 2 | HD01SfU21 | Kwalificatieperiode voor migrantenuitkeringen | 🔴 Kritiek | Aangenomen (S, V+MP-voorbehouden) |
+| 3 | HD01CU25 | Gevangenisuitbreiding PBL-snelspoor | 🟠 Hoog | Aangenomen (MP-voorbehoud) |
+| 4 | HD01FöU18 | SIGINT-modernisering | 🟠 Hoog | Unaniem aangenomen |
+| 5 | HD03262 | Afschaffing van permanente verblijfsvergunningen | 🟠 Hoog | Ingediend 2026-04-30 |
+| 6 | HD03258 | Verhoogde transparantie in politieke processen | 🟡 Gemiddeld | Ingediend 2026-04-30 |
+| 7 | HD03249/48 | EU–Centraal-Azië-EPCA's | 🟡 Gemiddeld | Ingediend 2026-05-06 |
+| 8 | 8 oppositiemoties | Bosbouw + uitdaging over jeugdcriminaliteit | 🟡 Gemiddeld | Zal falen (175-zetelmeerderheid) |
+
+### 3-regels situatierapport
+
+**WAT**: De Zweedse Riksdag nam op 6 mei 2026 het meest uitgebreide pakket van strafrechtelijke hervormingen en sociale hervormingen van een generatie op één dag aan — jeugdgevangenis, gevangenissnelspoor, welzijnskwalificatie en SIGINT-modernisering werden allemaal aangenomen.
+
+**WAAROM HET BELANGRIJK IS**: De Tidö-coalitie heeft onomkeerbare structurele veranderingen vastgelegd voor de verkiezingen van september 2026. Zelfs als de oppositie in september wint, zou het terugdraaien van JuU30, SfU21 en FöU18 expliciete afschaffingswetgeving in de volgende termijn vereisen — een hoge politieke drempel gezien de brede fractiebrede steun voor JuU30 (S, M, SD, C, L, KD stemden allemaal Ja; alleen MP stemde Nee).
+
+**WAT NU**: Volg de inwerkingtreding van JuU30 op 1 juli 2026 (eerste 15-17-jarige gevangenen), de verwerking van de SfU21-kwalificatietriage door de Försäkringskassan, en de dubbele defectie van de Centerpartiet bij de moties HD024145/46 als electoraal coalitierealignementssignaal.
+
+### Belangrijke economische context
+
+IMF WEO april 2026 (vintage: 2026-04): Zweedse bbp-groei 2026 geschat op ~1,7 %. De begrotingspositie staat zowel de capaciteitsuitbreiding van de Kriminalvården als de systeemupgrades van de Försäkringskassan toe zonder noodmaatregelen. De politieke drijfveren van de wetgeving van vandaag zijn ideologisch en electoraal, niet budgettair. Criminaliteit en migratie blijven de kiezers-salience-onderwerpen met de hoogste prioriteit van de Tidö-coalitie voor de verkiezingen van september 2026.
+
+### Vooruitkijken (T+30d)
+
+| Datum | Signaal | PIR |
+|-------|---------|-----|
+| 2026-05-20 | Novus-opiniepeiling na JuU30 | PIR-POLL-01 |
+| 2026-06-01 | Advies van de Lagrådet over prop. 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30 treedt in werking | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18, SfU21 treden in werking | PIR-IMPL-SfU21 |
+| 2026-09-13 | Zweedse parlementsverkiezingen | ALLEN |
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_no.md -->
+
+**Klassifisering**: 🟢 OFFENTLIG | **Konfidensnivå**: B2 | **Nivå**: C Aggregering  
+**Dato**: 2026-05-06 | **Riksmøte**: 2025/26
+
+### Konklusjon på forhånd (BLUF)
+
+**6. mai 2026 er den mest avgjørende enkeltlovgivningsdagen i Tidø-regjeringens æra.** Fire milepælsbeslutninger låste inn strukturelle endringer i strafferett, velferd og forsvarsettereretning samtidig. Riksdagen stemte i dag for: (1) å fengsle barn i alderen 15-17 år som voksne fra 1. juli 2026 (JuU30 — ungdomsfengsel erstatter sluten ungdomsvård); (2) å omgå planleggingsloven for å fremskynde fengselsbygging (CU25); (3) å kreve kvalifikasjonsperioder før migranter får tilgang til velferdsytelser (SfU21); og (4) å modernisere SIGINT-lovgivningen (FöU18) for full NATO-æra-drift. Samtidig la regjeringen frem EU–Sentral-Asia-partnerskapsratifikasjoner (HD03249/48) og møter 8 koordinerte opposisjonsmotioner om skogbruk og ungdomskriminalitet der Senterpartiets doble avvik er det viktigste valg-realokaliseringssignalet.
+
+### Prioritetsmatrise
+
+| Rang | Dokument | Emne | Relevans | Utfall |
+|------|----------|------|----------|--------|
+| 1 | HD01JuU30 | Ungdomsfengsel erstatter sluten ungdomsvård | 🔴 Kritisk | Vedtatt 2026-05-06 (ikrafttr. 2026-07-01) |
+| 2 | HD01SfU21 | Kvalifikasjonsperiode for migranters velferd | 🔴 Kritisk | Vedtatt (S, V+MP-reservasjoner) |
+| 3 | HD01CU25 | Fengselsutvidelse PBL-hurtigsporet | 🟠 Høy | Vedtatt (MP-reservasjon) |
+| 4 | HD01FöU18 | SIGINT-modernisering | 🟠 Høy | Vedtatt enstemmig |
+| 5 | HD03262 | Avskaffelse av permanente oppholdstillatelser | 🟠 Høy | Innlevert 2026-04-30 |
+| 6 | HD03258 | Økt åpenhet i politiske prosesser | 🟡 Middels | Innlevert 2026-04-30 |
+| 7 | HD03249/48 | EU–Sentral-Asia EPCA-er | 🟡 Middels | Innlevert 2026-05-06 |
+| 8 | 8 opposisjonsmotioner | Skogbruk + utfordring om ungdomskriminalitet | 🟡 Middels | Vil falle (175-setesmajoritet) |
+
+### 3-linjes situasjonsrapport
+
+**HVA**: Sveriges riksdag vedtok den mest omfattende pakken med strafferettslige reformer og velfærdsreformer på en generasjon på en enkelt dag — ungdomsfengsel, fengsel-hurtigsporet, velferdskvalifisering og SIGINT-modernisering ble alle vedtatt den 6. mai 2026.
+
+**HVORFOR DET BETYR NOE**: Tidø-koalisjonen har låst inn irreversible strukturelle endringer før valget i september 2026. Selv om opposisjonen vinner i september, vil det kreve eksplisitt opphevingslovgivning i neste valgperiode å rulle tilbake JuU30, SfU21 og FöU18 — en høy politisk terskel gitt bred tverrpartistøtte til JuU30 (S, M, SD, C, L, KD stemte alle Ja; kun MP stemte Nei).
+
+**HVA NÅ**: Følg ikrafttredelsen av JuU30 den 1. juli 2026 (de første 15-17-årige fangene), Försäkringskassans håndtering av SfU21-kvalifiseringstriage og Centerpartiets doble avvik på motionene HD024145/46 som valgkoalisjons-reallokeringssignal.
+
+### Viktig økonomisk kontekst
+
+IMF WEO april 2026 (årgång: 2026-04): Sveriges BNP-vekst 2026 anslått til ~1,7 %. Den finanspolitiske posisjonen tillater både Kriminalvårdens kapasitetsutvidelse og Försäkringskassans systemoppgraderinger uten nødtiltak. De politiske drivkreftene bak dagens lovgivning er ideologiske og valgstrategiske, ikke finanspolitiske. Kriminalitet og migrasjon forblir Tidø-koalisjonens høyeste velgerrelevans-spørsmål foran valget i september 2026.
+
+### Fremtidsovervåkning (T+30d)
+
+| Dato | Signal | PIR |
+|------|--------|-----|
+| 2026-05-20 | Novus-meningsmåling etter JuU30 | PIR-POLL-01 |
+| 2026-06-01 | Lagrådets uttalelse om prop. 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30 trer i kraft | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18, SfU21 trer i kraft | PIR-IMPL-SfU21 |
+| 2026-09-13 | Svenske stortingsvalg | ALLE |
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_sv.md -->
+
+**Klassificering**: 🟢 OFFENTLIG | **Konfidensgrad**: B2 | **Nivå**: C Aggregering  
+**Datum**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Slutsats i korthet (BLUF)
+
+**6 maj 2026 är den mest avgörande enskilda lagstiftningsdagen under Tidöregeringens era.** Fyra historiska beslut fastlade strukturella förändringar i straffrätt, välfärd och försvarsunderrättelse samtidigt. Riksdagen röstade idag för att: (1) fängsla barn i åldern 15–17 år som vuxna från 1 juli 2026 (JuU30 — ungdomsfängelse ersätter sluten ungdomsvård); (2) kringgå planlagstiftningen för att snabbspåra fängelsebyggande (CU25); (3) kräva kvalificeringsperioder innan migranter får tillgång till välfärdsförmåner (SfU21); samt (4) modernisera SIGINT-lagstiftningen (FöU18) för full NATO-era-operation. Samtidigt förelade regeringen EU–Centralasien-partnerskapsratifikationer (HD03249/48) och möter 8 samordnade oppositionsmotioner om skogsbruk och ungdomsbrottslighet där Centerpartiets dubbla avvikelse är det viktigaste valsignalen för koalitionsomformering.
+
+### Prioritetsmatris
+
+| Rang | Dokument | Ämne | Relevans | Utfall |
+|------|----------|------|----------|--------|
+| 1 | HD01JuU30 | Ungdomsfängelse ersätter sluten ungdomsvård | 🔴 Kritisk | Antagen 2026-05-06 (ikraftträdande 2026-07-01) |
+| 2 | HD01SfU21 | Kvalificeringsperiod för migranters välfärd | 🔴 Kritisk | Antagen (S, V+MP reservationer) |
+| 3 | HD01CU25 | Fängelseexpansion PBL snabbspår | 🟠 Hög | Antagen (MP reservation) |
+| 4 | HD01FöU18 | SIGINT-modernisering | 🟠 Hög | Antagen enhälligt |
+| 5 | HD03262 | Avskaffande av permanenta uppehållstillstånd | 🟠 Hög | Inlämnad 2026-04-30 |
+| 6 | HD03258 | Ökad transparens i politiska processer | 🟡 Medel | Inlämnad 2026-04-30 |
+| 7 | HD03249/48 | EU–Centralasien EPCA | 🟡 Medel | Inlämnad 2026-05-06 |
+| 8 | 8 oppositionsmotioner | Skogsbruk + utmaning om ungdomsbrottslighet | 🟡 Medel | Kommer att falla (175-platsmajoritet) |
+
+### 3-radigs lägesrapport
+
+**VAD**: Sveriges riksdag antog det mest omfattande paketet med straffrättsliga reformer och välfärdsreformer på en generation under en enda dag — ungdomsfängelse, fängelse snabbspår, välfärdskvalificering och SIGINT-modernisering antogs alla den 6 maj 2026.
+
+**VARFÖR SPELAR DET ROLL**: Tidökoalitionen har låst in irreversibla strukturella förändringar inför valet i september 2026. Även om oppositionen vinner i september skulle det krävas uttrycklig upphävandelagstiftning under nästa mandatperiod för att rulla tillbaka JuU30, SfU21 och FöU18 — en hög politisk tröskel med tanke på det breda tvärpartiliga stödet för JuU30 (S, M, SD, C, L, KD röstade alla Ja; endast MP röstade Nej).
+
+**VAD NU**: Bevaka ikraftträdandet av JuU30 den 1 juli 2026 (de första fångarna 15–17 år), Försäkringskassans hantering av SfU21-kvalificeringstriage, och Centerpartiets dubbla avvikelse på motionerna HD024145/46 som valkonstellation-omformeringssignal.
+
+### Ekonomiskt sammanhang
+
+IMF WEO april 2026 (årgång: 2026-04): Sveriges BNP-tillväxt 2026 uppskattad till ~1,7 %. Det finanspolitiska läget tillåter både Kriminalvårdens kapacitetsutbyggnad och Försäkringskassans systemuppgraderingar utan nödåtgärder. De politiska drivkrafterna bakom dagens lagstiftning är ideologiska och valstrategiska, inte finanspolitiska. Brott och migration är fortfarande Tidökoalitionens frågor med högst valrelevans inför valet i september 2026.
+
+### Framåtbevakning (T+30d)
+
+| Datum | Signal | PIR |
+|-------|--------|-----|
+| 2026-05-20 | Novus-undersökning efter JuU30 | PIR-POLL-01 |
+| 2026-06-01 | Lagrådets yttrande om prop. 2025/26:246 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30 träder i kraft | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18, SfU21 träder i kraft | PIR-IMPL-SfU21 |
+| 2026-09-13 | Allmänna val i Sverige | ALLA |
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_zh.md -->
+
+**分类**：🟢 公开 | **可信度**：B2 | **级别**：C 汇总  
+**日期**：2026-05-06 | **议会会期**：2025/26
+
+### 结论摘要（BLUF）
+
+**2026年5月6日是蒂多政府执政以来最具决定性的单一立法日。** 四项里程碑式决定同时确立了刑事司法、社会福利和国防情报领域的结构性变革。今日议会投票通过：(1) 自2026年7月1日起将15-17岁儿童作为成人监禁（JuU30——青少年监禁取代sluten ungdomsvård）；(2) 绕过规划法加速监狱建设（CU25）；(3) 要求移民在获得福利救助前满足资格期（SfU21）；(4) 现代化SIGINT立法（FöU18）以适应北约时代的全面运作。与此同时，政府提交了欧盟-中亚伙伴关系批准文件（HD03249/48），并面临8项关于林业和青少年犯罪的协调反对党动议，其中Centerpartiet的双重背离是最重要的选举联盟重组信号。
+
+### 优先级矩阵
+
+| 排名 | 文件 | 主题 | 重要性 | 结果 |
+|------|------|------|--------|------|
+| 1 | HD01JuU30 | 青少年监禁取代sluten ungdomsvård | 🔴 紧急 | 2026-05-06通过（2026-07-01生效）|
+| 2 | HD01SfU21 | 移民福利资格期 | 🔴 紧急 | 通过（S、V+MP保留意见）|
+| 3 | HD01CU25 | 监狱扩建PBL快速通道 | 🟠 高 | 通过（MP保留意见）|
+| 4 | HD01FöU18 | SIGINT现代化 | 🟠 高 | 一致通过 |
+| 5 | HD03262 | 废除永久居留许可 | 🟠 高 | 2026-04-30提交 |
+| 6 | HD03258 | 提高政治进程透明度 | 🟡 中 | 2026-04-30提交 |
+| 7 | HD03249/48 | 欧盟-中亚EPCA | 🟡 中 | 2026-05-06提交 |
+| 8 | 8项反对党动议 | 林业+青少年犯罪挑战 | 🟡 中 | 将失败（175席多数）|
+
+### 三行态势报告
+
+**发生了什么**：2026年5月6日，瑞典议会在一天之内通过了一代人以来最全面的刑事司法和社会福利改革套餐——青少年监禁、监狱快速通道、福利资格审查和SIGINT现代化全部获得通过。
+
+**为何重要**：蒂多联盟在2026年9月选举前锁定了不可逆的结构性变革。即便反对党在9月获胜，撤销JuU30、SfU21和FöU18也需要在下一任期明确立法废除——考虑到JuU30获得广泛的跨党派支持（S、M、SD、C、L、KD均投赞成票，仅MP投反对票），政治门槛极高。
+
+**接下来如何**：关注2026年7月1日JuU30生效（首批15-17岁囚犯），Försäkringskassan处理SfU21资格分诊，以及Centerpartiet在动议HD024145/46上的双重背离作为选举联盟重组信号。
+
+### 关键经济背景
+
+国际货币基金组织世界经济展望2026年4月版（数据年份：2026-04）：瑞典2026年GDP增长估计约1.7%。财政状况允许Kriminalvården扩充容量、Försäkringskassan进行系统升级，无需采取紧急措施。今日立法的政治驱动因素是意识形态和选举性质的，并非财政性质。犯罪和移民问题在2026年9月选举前仍是蒂多联盟最重要的选民关切事项。
+
+### 前瞻性监测（T+30天）
+
+| 日期 | 信号 | PIR |
+|------|------|-----|
+| 2026-05-20 | JuU30后Novus民调 | PIR-POLL-01 |
+| 2026-06-01 | Lagrådet就prop. 2025/26:246的意见 | PIR-LAGRÅDET-246 |
+| 2026-07-01 | JuU30生效 | PIR-IMPL-JuU30 |
+| 2026-08-01 | FöU18、SfU21生效 | PIR-IMPL-SfU21 |
+| 2026-09-13 | 瑞典大选 | 全部 |
+
+### 第二遍改进
+
+#### 核心情报提炼：S对JuU30的投票是当天最重要的情报信号
+
+社会民主党对JuU30（监禁15-17岁儿童）投**赞成**票的发现，值得被提升为当天战略上最重要的情报要点——甚至超过法律本身。原因如下：
+
+1. **S是2022年选举的待任执政党**：拥有94席的S领导反对党。他们对JuU30投赞成票创造了永久性的议会记录。
+
+2. **S无法可信地为废除展开竞选**：既然他们投票创建了一项法律，S就陷入了逻辑陷阱：他们要么必须论证投票赞成是错误的，要么情况已经改变。两者在政治上都代价高昂。
+
+3. **反对党在犯罪问题上最强的王牌减弱了**：V和MP（均反对）现在孤立地站在保护《儿童权利公约》的左翼立场上。S隐性地认可了政府的犯罪应对框架。
+
+4. **瑞典政治重组信号**：S的战略举动反映了托尼·布莱尔1994-1997年的定位——在犯罪问题上右移以赢得中间选民。这表明S已内部接受了蒂多政府的刑事司法框架，将在实施质量而非原则上展开竞争。
+
+**修订后的核心情报发现**：2026年5月6日最决定性的发展不是JuU30本身的通过，而是社会民主党投票赞成的决定——这是对蒂多政府刑事司法范式的结构性接受，也是自愿放弃反对党在青少年犯罪上最明确的差异化立场。
+
+### 经济来源
+
+```yaml
+economicProvenance:
+  provider: imf
+  dataflow: WEO
+  indicator: NGDP_RPCH
+  country: SWE
+  vintage: "2026-04 (April 2026 WEO)"
+  retrieved_at: "2026-05-06"
+  note: "SDMX endpoint degraded; WEO Datamapper figure 1.7% used"
+```
+
+<!-- source-sha: 215d03e02ff7af33e95ff32888a799a81633820d -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1289,6 +2043,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -6,7 +6,7 @@ date: 2026-05-07
 subfolder: election-cycle/next
 slug: 2026-05-07-election-cycle/next
 source_folder: analysis/daily/2026-05-07/election-cycle/next
-generated_at: 2026-05-23T08:06:00.675Z
+generated_at: 2026-05-23T22:05:56.636Z
 language: en
 layout: article
 ---
@@ -68,6 +68,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -664,13 +677,394 @@ The `next` cycle analyzes implications of 2026-05-07 documents for the post-Sept
 | NC-PIR-003 | Will foreign policy alignment shift on Gaza/Israel? | HIGH if Red-Green wins |
 | NC-PIR-004 | What coalition configuration governs 2026-2030? | Defining structural question |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز استخباراتي — تحليل الائتلاف ما بعد انتخابات 2026 (2026-2030)
+
+**التاريخ**: 2026-05-07 | **الدورة**: التالية | **الأفق الزمني**: [horizon:cycle]
+
+### الملخص التنفيذي
+
+ستُحكم دورة الانتخابات 2026-2030 من قِبل أحد ائتلافين مختلفَين جوهريًا — استمرار ائتلاف تيدو (WEP محتمل) أو الكتلة الحمراء-الخضراء (WEP غير محتمل). تكشف وثائق 2026-05-07 ساحة التنافس السياسي لهذه الولاية القادمة: إصلاح التأمين الاجتماعي، وصلاحيات SIGINT، والتوجه في السياسة الخارجية (غزة) هي ثلاثة ساحات صراع سياسي رئيسية بين الدورتين.
+
+### ثلاثة قرارات محورية للحكومة القادمة
+
+1. **إطار التأمين الاجتماعي (HD01SfU21)**: يجب على الحكومة القادمة أن تقرر ما إذا كانت ستحافظ على إصلاحات مايو 2026 أو توسعها أو تراجعها. احتمالية التراجع الأحمر-الأخضر: WEP متكافئ تقريبًا [horizon:cycle].
+
+2. **نطاق صلاحيات SIGINT (HD01FöU18)**: الصلاحيات الموسعة لـ FRA ذات طابع مشترك بين الأحزاب وتشغيلية — لا توجد احتمالية واقعية للتراجع، لكن النطاق والرقابة قد تكون موضع خلاف. احتمالية التعديل من قِبل الحكومة القادمة: WEP غير محتمل [horizon:cycle].
+
+3. **التوجه الخارجي تجاه غزة/فلسطين (HD10470/HD11789)**: في حال فوز الحمر-الخضر، من المرجح أن تتبنى السويد موقفًا أكثر صراحةً مؤيدًا للفلسطينيين/للقانون الدولي. أما في حال استمرار تيدو، فتبقى الموقف السياسي الحالي ثابتًا.
+
+### الخط الأساسي الاقتصادي للفترة 2026-2030
+
+| المؤشر | 2026 (حالي) | 2027 (توقع) | 2028 (توقع) | المصدر |
+|-----------|---------------|-------------|-------------|--------|
+| نمو الناتج المحلي الإجمالي | 1.8% | 2.2% | 2.3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| البطالة | 8.4% | 7.9% | 7.5% | IMF WEO Apr-2026 LUR |
+| الرصيد المالي | -0.8% | -0.5% | -0.2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_da.md -->
+
+**Dato**: 2026-05-07 | **Cyklus**: Næste | **Horisont**: [horizon:cycle]
+
+### Kortfattet vurdering
+
+Valgcyklussen 2026–2030 vil blive styret af en af to fundamentalt forskellige koalitioner — Tidö-koalitionens fortsættelse (WEP SANDSYNLIGT) eller det rødgrønne blok (WEP USANDSYNLIGT). Dokumenterne fra 2026-05-07 afslører den politiske kampterræn for dette næste mandat: socialforsikringsreform, SIGINT-beføjelser og udenrigspolitisk orientering (Gaza) er de tre primære politiske kamparenaer mellem cyklusserne.
+
+### Tre nøglebeslutninger for næste regering
+
+1. **Socialforsikringsramme (HD01SfU21)**: Næste regering skal beslutte, om den vil opretholde, udvide eller tilbagerulle reformerne fra maj 2026. Rødgrøn tilbagerulningssandsynlighed: WEP NOGENLUNDE JÆVNT [horizon:cycle].
+
+2. **SIGINT-beføjelsernes omfang (HD01FöU18)**: FRA's udvidede beføjelser er tværpolitiske og operationelle — ingen realistisk tilbagevenden, men rækkevidde og tilsyn kan anfægtes. Sandsynlighed for næste regerings justering: WEP USANDSYNLIGT [horizon:cycle].
+
+3. **Gaza/Palæstinas udenrigspolitiske orientering (HD10470/HD11789)**: Hvis rødgrønne vinder, vil Sverige sandsynligvis anlægge en mere eksplicit pro-palæstinensisk/folkeretslig holdning. Hvis Tidö fortsætter, opretholdes den nuværende politiske linje.
+
+### Økonomisk baseline for 2026-2030
+
+| Indikator | 2026 (aktuelt) | 2027 (prog) | 2028 (prog) | Kilde |
+|-----------|---------------|-------------|-------------|--------|
+| BNP-vækst | 1,8% | 2,2% | 2,3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| Arbejdsløshed | 8,4% | 7,9% | 7,5% | IMF WEO Apr-2026 LUR |
+| Finansielt saldo | -0,8% | -0,5% | -0,2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_de.md -->
+
+**Datum**: 2026-05-07 | **Zyklus**: Nächste | **Horizont**: [horizon:cycle]
+
+### Kurzbewertung
+
+Der Wahlzyklus 2026–2030 wird von einer von zwei grundlegend verschiedenen Koalitionen regiert — Fortsetzung der Tidö-Koalition (WEP WAHRSCHEINLICH) oder Rot-Grüner Block (WEP UNWAHRSCHEINLICH). Die Dokumente vom 2026-05-07 enthüllen das politische Wettbewerbsterrain für dieses nächste Mandat: Sozialversicherungsreform, SIGINT-Befugnisse und außenpolitische Ausrichtung (Gaza) sind die drei primären politischen Konfliktfelder zwischen den Zyklen.
+
+### Drei zentrale Entscheidungen für die nächste Regierung
+
+1. **Sozialversicherungsrahmen (HD01SfU21)**: Die nächste Regierung muss entscheiden, ob sie die Reformen vom Mai 2026 beibehält, ausbaut oder zurücknimmt. Wahrscheinlichkeit einer rot-grünen Rücknahme: WEP ETWA AUSGEGLICHEN [horizon:cycle].
+
+2. **Umfang der SIGINT-Befugnisse (HD01FöU18)**: FRAs erweiterte Befugnisse sind überparteilich und operativ — keine realistische Rücknahme, aber Reichweite und Aufsicht können umstritten sein. Wahrscheinlichkeit einer Anpassung durch die nächste Regierung: WEP UNWAHRSCHEINLICH [horizon:cycle].
+
+3. **Außenpolitische Ausrichtung Gaza/Palästina (HD10470/HD11789)**: Bei einem rot-grünen Sieg würde Schweden wahrscheinlich eine explizit pro-palästinensische/völkerrechtliche Haltung einnehmen. Bei Tidö-Fortsetzung bleibt die aktuelle Haltung bestehen.
+
+### Wirtschaftliche Basislinie für 2026-2030
+
+| Indikator | 2026 (aktuell) | 2027 (Prog) | 2028 (Prog) | Quelle |
+|-----------|---------------|-------------|-------------|--------|
+| BIP-Wachstum | 1,8% | 2,2% | 2,3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| Arbeitslosigkeit | 8,4% | 7,9% | 7,5% | IMF WEO Apr-2026 LUR |
+| Haushaltssaldo | -0,8% | -0,5% | -0,2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_es.md -->
+
+**Fecha**: 2026-05-07 | **Ciclo**: Próximo | **Horizonte**: [horizon:cycle]
+
+### Valoración ejecutiva
+
+El ciclo electoral 2026–2030 estará gobernado por una de dos coaliciones fundamentalmente diferentes — la continuación de la coalición Tidö (WEP PROBABLE) o el bloque rojo-verde (WEP IMPROBABLE). Los documentos del 2026-05-07 revelan el terreno de disputa política para este próximo mandato: reforma del seguro social, autoridades SIGINT y orientación de política exterior (Gaza) son los tres principales campos de batalla políticos entre ciclos.
+
+### Tres decisiones clave para el próximo gobierno
+
+1. **Marco del seguro social (HD01SfU21)**: El próximo gobierno deberá decidir si mantiene, amplía o revierte las reformas de mayo 2026. Probabilidad de reversión rojo-verde: WEP APROXIMADAMENTE EQUILIBRADO [horizon:cycle].
+
+2. **Alcance de las autoridades SIGINT (HD01FöU18)**: Los poderes ampliados de la FRA son bipartidistas y operativos — ningún retroceso realista, pero el alcance y la supervisión podrían cuestionarse. Probabilidad de ajuste por el próximo gobierno: WEP IMPROBABLE [horizon:cycle].
+
+3. **Orientación de política exterior Gaza/Palestina (HD10470/HD11789)**: Si los rojo-verdes ganan, Suecia probablemente adoptará una postura más explícitamente pro-palestina/derecho internacional. Si Tidö continúa, se mantiene la posición actual.
+
+### Línea de base económica para 2026-2030
+
+| Indicador | 2026 (actual) | 2027 (proy) | 2028 (proy) | Fuente |
+|-----------|---------------|-------------|-------------|--------|
+| Crecimiento del PIB | 1,8% | 2,2% | 2,3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| Desempleo | 8,4% | 7,9% | 7,5% | IMF WEO Apr-2026 LUR |
+| Saldo fiscal | -0,8% | -0,5% | -0,2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_fi.md -->
+
+**Päiväys**: 2026-05-07 | **Sykli**: Seuraava | **Horisontti**: [horizon:cycle]
+
+### Lyhyt arvio
+
+Vaalisykli 2026–2030 tulee olemaan toisen täysin erilaisen koalition hallitsema — joko Tidö-koalitio jatkaa (WEP TODENNÄKÖISTÄ) tai punavihreiden ryhmittymä nousee valtaan (WEP EPÄTODENNÄKÖISTÄ). Päivän 2026-05-07 asiakirjat paljastavat poliittisen kilpailun maaston tällä tulevalla toimikaudella: sosiaaliturvauudistus, SIGINT-valtuudet ja ulkopolitiikan suuntautuminen (Gaza) ovat kolme keskeistä politiikan taistelukenttää syklien välillä.
+
+### Kolme keskeistä päätöstä seuraavalle hallitukselle
+
+1. **Sosiaaliturvakehys (HD01SfU21)**: Seuraavan hallituksen on päätettävä, ylläpitääkö, laajentaako vai peruttaako se toukokuun 2026 uudistukset. Punavihreän peruuttamisen todennäköisyys: WEP SUUNNILLEEN TASAN [horizon:cycle].
+
+2. **SIGINT-valtuuksien laajuus (HD01FöU18)**: FRA:n laajennetut valtuudet ovat puolueettomat ja operatiiviset — ei realistista peruuttamista, mutta laajuus ja valvonta saattavat olla kiistanalaisia. Seuraavan hallituksen muutoksen todennäköisyys: WEP EPÄTODENNÄKÖISTÄ [horizon:cycle].
+
+3. **Gazan/Palestiinan ulkopoliittinen suuntautuminen (HD10470/HD11789)**: Jos punavihreet voittaa, Ruotsi todennäköisesti omaksuu selkeämmin Palestiinaa tukevan/kansainvälistä oikeutta korostavan kannan. Jos Tidö jatkaa, nykyinen politiikka säilyy.
+
+### Taloudellinen lähtötaso vuosille 2026-2030
+
+| Indikaattori | 2026 (nykyinen) | 2027 (enn) | 2028 (enn) | Lähde |
+|-----------|---------------|-------------|-------------|--------|
+| BKT-kasvu | 1,8% | 2,2% | 2,3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| Työttömyys | 8,4% | 7,9% | 7,5% | IMF WEO Apr-2026 LUR |
+| Finanssitasapaino | -0,8% | -0,5% | -0,2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_fr.md -->
+
+### Synthèse
+
+Le cycle électoral 2026–2030 sera gouverné par l'une de deux coalitions fondamentalement différentes — la continuation de la coalition Tidö (WEP PROBABLE) ou le bloc rouge-vert (WEP IMPROBABLE). Les documents du 2026-05-07 révèlent le terrain de contestation politique pour ce prochain mandat : réforme de l'assurance sociale, autorités SIGINT, et orientation de politique étrangère (Gaza) sont les trois principaux champs de bataille politiques entre les cycles.
+
+### Trois décisions clés pour le prochain gouvernement
+
+1. **Cadre d'assurance sociale (HD01SfU21)** : Le prochain gouvernement devra décider s'il maintient, étend ou annule les réformes de mai 2026. Probabilité d'annulation rouge-verte : WEP APPROXIMATIVEMENT ÉQUILIBRÉ [horizon:cycle].
+
+2. **Portée des autorités SIGINT (HD01FöU18)** : Les pouvoirs élargis de la FRA sont bipartisans et opérationnels — pas de retour arrière réaliste, mais la portée et la supervision pourraient être contestées. Probabilité d'ajustement par le prochain gouvernement : WEP IMPROBABLE [horizon:cycle].
+
+3. **Orientation de politique étrangère Gaza/Palestine (HD10470/HD11789)** : En cas de victoire rouge-verte, la Suède adopterait probablement une posture plus explicitement pro-palestinienne/droit international. Si Tidö continue, la position actuelle est maintenue.
+
+### Base économique pour 2026-2030
+
+| Indicateur | 2026 (actuel) | 2027 (proj) | 2028 (proj) | Source |
+|-----------|---------------|-------------|-------------|--------|
+| Croissance du PIB | 1,8% | 2,2% | 2,3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| Chômage | 8,4% | 7,9% | 7,5% | IMF WEO Apr-2026 LUR |
+| Solde budgétaire | -0,8% | -0,5% | -0,2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מודיעיני — ניתוח קואליציה אחרי בחירות 2026 (2026-2030)
+
+**תאריך**: 2026-05-07 | **מחזור**: הבא | **אופק**: [horizon:cycle]
+
+### סיכום מנהלים
+
+מחזור הבחירות 2026-2030 ינוהל על ידי אחת משתי קואליציות שונות מהותית — המשך קואליציית טידו (WEP סביר) או הגוש האדום-ירוק (WEP לא סביר). המסמכים מ-2026-05-07 חושפים את שדה הקרב הפוליטי לקדנציה הבאה: רפורמת ביטוח לאומי, סמכויות SIGINT וכיוון המדיניות החוץ (עזה) הם שלושת זירות הפוליטית העיקריות בין המחזורים.
+
+### שלושה החלטות מפתח לממשלה הבאה
+
+1. **מסגרת הביטוח הלאומי (HD01SfU21)**: הממשלה הבאה תצטרך להחליט האם לשמר, להרחיב או לבטל את הרפורמות של מאי 2026. הסתברות לביטול אדום-ירוק: WEP בערך שווה [horizon:cycle].
+
+2. **היקף סמכויות SIGINT (HD01FöU18)**: הסמכויות המורחבות של ה-FRA הן דו-מפלגתיות ומבצעיות — אין ביטול ריאלי, אך היקף והפיקוח עשויים להיות שנויים במחלוקת. הסתברות להתאמה על ידי הממשלה הבאה: WEP לא סביר [horizon:cycle].
+
+3. **כיוון מדיניות חוץ עזה/פלסטין (HD10470/HD11789)**: אם האדום-ירוק ינצח, שבדיה תאמץ כנראה עמדה פרו-פלסטינית/משפט בינלאומי מפורשת יותר. אם טידו ימשיך, תישמר העמדה הנוכחית.
+
+### קו הבסיס הכלכלי לשנים 2026-2030
+
+| מדד | 2026 (נוכחי) | 2027 (תחזית) | 2028 (תחזית) | מקור |
+|-----------|---------------|-------------|-------------|--------|
+| צמיחת תמ"ג | 1.8% | 2.2% | 2.3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| אבטלה | 8.4% | 7.9% | 7.5% | IMF WEO Apr-2026 LUR |
+| יתרת תקציב | -0.8% | -0.5% | -0.2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_ja.md -->
+
+**日付**: 2026-05-07 | **サイクル**: 次期 | **時間軸**: [horizon:cycle]
+
+### 要約
+
+2026年から2030年の選挙サイクルは、根本的に異なる二つの連立のいずれかによって統治される見込み — ティドー連立の継続（WEP 可能性高）または赤緑ブロック（WEP 可能性低）。2026-05-07の文書は、次の任期における政策上の争点を明らかにする：社会保険改革、SIGINT権限、対外政策の方向性（ガザ）がサイクル間における三つの主要な政策対立軸となっている。
+
+### 次期政府の三つの重要決断
+
+1. **社会保険の枠組み（HD01SfU21）**: 次期政府は、2026年5月の改革を維持・拡大・廃止するか決断しなければならない。赤緑による廃止の可能性：WEP ほぼ互角 [horizon:cycle]。
+
+2. **SIGINT権限の範囲（HD01FöU18）**: FRAの拡大された権限は超党派的かつ実務的なもの — 現実的な廃止の可能性はないが、範囲と監視の在り方が争点となる可能性がある。次期政府による調整の可能性：WEP 可能性低 [horizon:cycle]。
+
+3. **ガザ/パレスチナに関する外交政策の方向性（HD10470/HD11789）**: 赤緑が勝利すれば、スウェーデンはより明示的な親パレスチナ/国際法重視の立場を採用する可能性が高い。ティドーが継続する場合、現在の政策立場が維持される。
+
+### 2026-2030年の経済基準線
+
+| 指標 | 2026年（現在） | 2027年（予測） | 2028年（予測） | 出典 |
+|-----------|---------------|-------------|-------------|--------|
+| GDP成長率 | 1.8% | 2.2% | 2.3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| 失業率 | 8.4% | 7.9% | 7.5% | IMF WEO Apr-2026 LUR |
+| 財政収支 | -0.8% | -0.5% | -0.2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_ko.md -->
+
+**날짜**: 2026-05-07 | **사이클**: 다음 | **시간 지평**: [horizon:cycle]
+
+### 핵심 요약
+
+2026~2030년 선거 사이클은 두 가지 근본적으로 다른 연립 중 하나에 의해 통치될 것이다 — 티도 연립의 지속(WEP 가능성 높음) 또는 적록 블록(WEP 가능성 낮음). 2026-05-07 문서는 다음 임기의 정책 경쟁 지형을 드러낸다: 사회보험 개혁, SIGINT 권한, 대외정책 방향(가자)이 사이클 간 세 가지 주요 정책 전쟁터이다.
+
+### 다음 정부의 세 가지 핵심 결정
+
+1. **사회보험 체계 (HD01SfU21)**: 다음 정부는 2026년 5월 개혁을 유지, 확대 또는 폐기할지 결정해야 한다. 적록 폐기 가능성: WEP 대략 균형 [horizon:cycle].
+
+2. **SIGINT 권한 범위 (HD01FöU18)**: FRA의 확대된 권한은 초당파적이며 실무적 — 현실적인 폐기 가능성은 없으나 범위와 감독이 쟁점이 될 수 있다. 다음 정부 조정 가능성: WEP 가능성 낮음 [horizon:cycle].
+
+3. **가자/팔레스타인 대외정책 방향 (HD10470/HD11789)**: 적록이 승리하면 스웨덴은 더 명시적인 친팔레스타인/국제법 지지 입장을 채택할 가능성이 높다. 티도가 지속되면 현재 정책 입장이 유지된다.
+
+### 2026-2030년 경제 기준선
+
+| 지표 | 2026년 (현재) | 2027년 (전망) | 2028년 (전망) | 출처 |
+|-----------|---------------|-------------|-------------|--------|
+| GDP 성장률 | 1.8% | 2.2% | 2.3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| 실업률 | 8.4% | 7.9% | 7.5% | IMF WEO Apr-2026 LUR |
+| 재정수지 | -0.8% | -0.5% | -0.2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_nl.md -->
+
+**Datum**: 2026-05-07 | **Cyclus**: Volgende | **Horizon**: [horizon:cycle]
+
+### Beknopte beoordeling
+
+De verkiezingscyclus 2026–2030 wordt geregeerd door een van twee fundamenteel verschillende coalities — voorzetting van de Tidö-coalitie (WEP WAARSCHIJNLIJK) of het rood-groene blok (WEP ONWAARSCHIJNLIJK). De documenten van 2026-05-07 onthullen het politieke strijdterrein voor dit volgende mandaat: sociale zekerheidshervorming, SIGINT-bevoegdheden en buitenlandspolitieke oriëntatie (Gaza) zijn de drie primaire politieke strijdpunten tussen de cycli.
+
+### Drie sleutelbeslissingen voor de volgende regering
+
+1. **Kader voor sociale zekerheid (HD01SfU21)**: De volgende regering moet beslissen of zij de hervormingen van mei 2026 handhaaft, uitbreidt of terugdraait. Kans op rood-groene terugdraaiing: WEP ONGEVEER GELIJK [horizon:cycle].
+
+2. **Reikwijdte van SIGINT-bevoegdheden (HD01FöU18)**: De uitgebreide bevoegdheden van de FRA zijn bipartijdig en operationeel — geen realistische terugdraaiing, maar reikwijdte en toezicht kunnen worden betwist. Kans op aanpassing door de volgende regering: WEP ONWAARSCHIJNLIJK [horizon:cycle].
+
+3. **Buitenlandspolitieke oriëntatie Gaza/Palestina (HD10470/HD11789)**: Als rood-groen wint, zal Zweden waarschijnlijk een meer expliciet pro-Palestijnse/internationaal-rechtelijke houding aannemen. Als Tidö doorgaat, blijft de huidige beleidshouding gehandhaafd.
+
+### Economische basislijn voor 2026-2030
+
+| Indicator | 2026 (huidig) | 2027 (proj) | 2028 (proj) | Bron |
+|-----------|---------------|-------------|-------------|--------|
+| BBP-groei | 1,8% | 2,2% | 2,3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| Werkloosheid | 8,4% | 7,9% | 7,5% | IMF WEO Apr-2026 LUR |
+| Begrotingssaldo | -0,8% | -0,5% | -0,2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_no.md -->
+
+**Dato**: 2026-05-07 | **Syklus**: Neste | **Horisont**: [horizon:cycle]
+
+### Kortfattet vurdering
+
+Valgsyklusen 2026–2030 vil bli styrt av en av to fundamentalt forskjellige koalisjoner — Tidö-koalisjonens fortsettelse (WEP SANNSYNLIG) eller det rødgrønne blokket (WEP USANNSYNLIG). Dokumentene fra 2026-05-07 avslører det politiske kampterrenet for dette neste mandatet: sosialforsikringsreform, SIGINT-fullmakter og utenrikspolitisk orientering (Gaza) er de tre primære politiske stridsspørsmålene mellom syklusene.
+
+### Tre nøkkelbeslutninger for neste regjering
+
+1. **Sosialforsikringsrammeverk (HD01SfU21)**: Neste regjering må beslutte om den skal opprettholde, utvide eller reversere mai 2026-reformene. Rødgrønn reverseringssannsynlighet: WEP OMTRENT JEVNT [horizon:cycle].
+
+2. **SIGINT-fullmaktenes omfang (HD01FöU18)**: FRAs utvidede fullmakter er tverrpolitiske og operative — ingen realistisk reversering, men rekkevidde og tilsyn kan bli bestridt. Sannsynlighet for neste regjerings justering: WEP USANNSYNLIG [horizon:cycle].
+
+3. **Gaza/Palestinas utenrikspolitiske orientering (HD10470/HD11789)**: Hvis rødgrønne vinner, vil Sverige sannsynligvis innta en mer eksplitt pro-palestinsk/folkerettslig holdning. Hvis Tidö fortsetter, opprettholdes nåværende politiske linje.
+
+### Økonomisk basislinje for 2026-2030
+
+| Indikator | 2026 (nåværende) | 2027 (prog) | 2028 (prog) | Kilde |
+|-----------|---------------|-------------|-------------|--------|
+| BNP-vekst | 1,8% | 2,2% | 2,3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| Arbeidsledighet | 8,4% | 7,9% | 7,5% | IMF WEO Apr-2026 LUR |
+| Finansielt saldo | -0,8% | -0,5% | -0,2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_sv.md -->
+
+**Datum**: 2026-05-07 | **Cykel**: Nästa | **Horisont**: [horizon:cycle]
+
+### Kortfattad bedömning
+
+Valcykeln 2026–2030 kommer att styras av en av två fundamentalt olika koalitioner — Tidökoalitionens fortsättning (WEP TROLIGT) eller det rödgröna blocket (WEP OSANNOLIKT). Dokumenten från 2026-05-07 avslöjar den politiska kamp som förväntas prägla nästa mandatperiod: socialförsäkringsreform, SIGINT-befogenheter och utrikespolitisk inriktning (Gaza) är de tre primära politiska stridsfrågor inför nästa mandatperiod.
+
+### Tre nyckelbeslutt för nästa regering
+
+1. **Socialförsäkringsramverket (HD01SfU21)**: Nästa regering måste besluta om den ska bibehålla, utöka eller backa maj 2026-reformerna. Sannolikhet för rödgrönt reversal: WEP UNGEFÄR JÄMNT [horizon:cycle].
+
+2. **SIGINT-befogenheternas omfattning (HD01FöU18)**: FRA:s utökade befogenheter är tvärpolitiska och operativa — ingen realistisk reversering, men räckvidd och tillsyn kan komma att ifrågasättas. Sannolikhet för nästa regerings justering: WEP OSANNOLIKT [horizon:cycle].
+
+3. **Gaza/Palestinas utrikespolitiska inriktning (HD10470/HD11789)**: Om rödgröna vinner kommer Sverige sannolikt att anta en mer explicit pro-palestinsk/folkrättslig hållning. Om Tidö fortsätter bibehålls nuvarande politiska linje.
+
+### Ekonomisk baslinje för 2026-2030
+
+| Indikator | 2026 (aktuell) | 2027 (prog) | 2028 (prog) | Källa |
+|-----------|---------------|-------------|-------------|--------|
+| BNP-tillväxt | 1,8% | 2,2% | 2,3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| Arbetslöshet | 8,4% | 7,9% | 7,5% | IMF WEO Apr-2026 LUR |
+| Finansiellt saldo | -0,8% | -0,5% | -0,2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_zh.md -->
+
+**日期**: 2026-05-07 | **周期**: 下一届 | **时间范围**: [horizon:cycle]
+
+### 执行摘要
+
+2026至2030年选举周期将由两个根本不同的联合政府之一执政 — 提多联合政府的延续（WEP 可能）或红绿联盟（WEP 不太可能）。2026-05-07的文件揭示了下届任期的政策竞争地形：社会保险改革、SIGINT权限及对外政策取向（加沙）是两届政府之间的三个主要政策争夺领域。
+
+### 下届政府的三项关键决定
+
+1. **社会保险框架（HD01SfU21）**：下届政府必须决定是维持、扩大还是撤销2026年5月的改革。红绿联盟撤销的可能性：WEP 大致均等 [horizon:cycle]。
+
+2. **SIGINT权限范围（HD01FöU18）**：FRA扩大的权限具有跨党派性且已付诸实施 — 实际撤销的可能性极低，但范围与监督可能存在争议。下届政府调整的可能性：WEP 不太可能 [horizon:cycle]。
+
+3. **加沙/巴勒斯坦外交政策取向（HD10470/HD11789）**：若红绿联盟获胜，瑞典可能会采取更加明确的亲巴勒斯坦/国际法立场。若提多延续，则维持现有政策立场。
+
+### 2026-2030年经济基准线
+
+| 指标 | 2026年（当前） | 2027年（预测） | 2028年（预测） | 来源 |
+|-----------|---------------|-------------|-------------|--------|
+| GDP增长率 | 1.8% | 2.2% | 2.3% | IMF WEO Apr-2026 T+1,T+2,T+3 |
+| 失业率 | 8.4% | 7.9% | 7.5% | IMF WEO Apr-2026 LUR |
+| 财政余额 | -0.8% | -0.5% | -0.2% | IMF FM Apr-2026 |
+
+> economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-07"}
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 27 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 40 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -711,6 +1105,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/election-cycle/next/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -6,7 +6,7 @@ date: 2026-05-07
 subfolder: evening-analysis
 slug: 2026-05-07-evening-analysis
 source_folder: analysis/daily/2026-05-07/evening-analysis
-generated_at: 2026-05-23T08:06:00.682Z
+generated_at: 2026-05-23T22:05:56.646Z
 language: en
 layout: article
 ---
@@ -100,6 +100,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2016,13 +2029,926 @@ These figures are used for contextual framing only, not for driving substantive 
 
 All documents sourced from official riksdag-regering-mcp API.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز استخباراتي — تحليل المساء 2026-05-07
+
+**التصنيف**: 🟢 PUBLIC  
+
+**مجمع DIW**: 8.4  
+**الأفق الزمني**: T+72 ساعة إلى T+90 يوم  
+**وقت القراءة**: ~5 دقائق
+
+---
+
+### العنوان الرئيسي
+
+**سباق التشريعات السويدي لدولة الأمن: ثلاثة مقترحات تنفيذية + ستة تقارير لجان تتقدم في آنٍ واحد — 125 يومًا قبل الانتخابات**
+
+---
+
+### الوضع الراهن
+
+تناول Riksdag اليوم أكثر مجموعة تشريعات أمنية تركيزًا في الفترة الحالية للولاية. ثلاثة مقترحات تنفيذية — نظام هوية رقمي حكومي (HD03250)، صلاحيات موسعة لتسجيل السكان لصالح Skatteverket (HD03261)، وصلاحيات ترحيل معززة للأجانب الذين يشكلون تهديدات أمنية (HD03267) — تتقدم في آنٍ واحد عبر المسار التشريعي. وتعقب ذلك ستة betänkanden من اللجان: تحديث SIGINT (FöU18)، توسعة السجون (CU25)، إصلاح أسواق رأس المال (CU35)، إدارة الأزمات المالية (FiU37)، التنفيذ الجنائي الشمالي المشترك (JuU34)، وتجريم العنف النفسي (JuU39).
+
+لا تمثل المجموعة التشريعية استجابةً طارئة لحدث بعينه. بل تمثل التحويل المنهجي للبرنامج الرباعي لتحالف تيدو (2022-2026) إلى قانون معمول به قبل انتخابات سبتمبر 2026. سرعة سنّ التشريعات مقصودة وذات دوافع سياسية.
+
+---
+
+### النتائج الرئيسية (مرتبة وفق أولويات DIW)
+
+#### 1. تحديث SIGINT + الأجانب ذوو التهديدات الأمنية [DIW 9.0 / L3]
+تقرير اللجنة FöU18 (تحديث SIGINT) + المقترح HD03267 (تهديدات أمنية) يشكلان مجموعة أمنية مزدوجة. يسد FöU18 الفجوة بين الإطار القانوني للاستخبارات الإشارية السويدية (FRA) ومتطلبات التشغيل البيني مع الناتو. يعزز HD03267 صلاحيات الترحيل للرعايا الأجانب الذين يمثلون تهديدات أمنية مؤهَّلة. كلاهما خاضعان لمراجعة Lagrådet. المخاطر الدستورية: المادة 8 من ECHR (الحياة الخاصة)، المادة 5 (الحرية). الإطار الانتخابي: "السويد جادة في أمنها" — العلامة المحورية لحكومة تيدو.
+
+#### 2. حزمة تنظيم أسواق رأس المال والقطاع المالي [DIW 7.8 / L2]
+تغطي تقارير لجنة FiU قواعد منصات تداول MTF (CU35)، المقاصة المركزية لمشتقات OTC (FiU38)، وظيفة إدارة الأزمات المالية (FiU37)، وإدارة الممتلكات الحكومية (FiU31). هذه تطبيقات تنظيمية مدفوعة من الاتحاد الأوروبي ذات جدل حزبي منخفض لكن ذات تأثير مؤسسي وسوقي كبير. إتمام هذه الحزمة قبل الانتخابات يعزز رواية الحكومة عن "الإدارة الاقتصادية المسؤولة".
+
+#### 3. تشريعات العدالة الجنائية [DIW 8.2 / L2+]
+تقارير لجنة JuU بشأن أمن التجمعات العامة (JuU32)، التنفيذ الجنائي الشمالي (JuU34)، وتجريم العنف النفسي (JuU39) تتقدم في آنٍ واحد. يتميز تجريم العنف النفسي سياسيًا: فهو يمتد بالقانون الجنائي ليشمل السلوك في العلاقات الحميمة الذي كان خارج نطاق التجريم سابقًا، ومن المتوقع أن يُفضي إلى 400-600 ملاحقة قضائية جديدة سنويًا.
+
+#### 4. البنية التحتية الرقمية للدولة [DIW 7.5 / L2]
+يمثل HD03250 (بطاقة الهوية الإلكترونية الحكومية) مشروعًا يمتد لعقد كامل لإنشاء نظام هوية رقمي تديره الحكومة لمنافسة BankID. الجدل السياسي: مخاوف محتملة من القطاع الخاص بشأن المنافسة في القطاع المصرفي السويدي.
+
+#### 5. حملة المساءلة الدولية للمعارضة [DIW 6.5 / L2]
+تستخدم حزبا S و MP الاستجوابات حول منظمة العمل الدولية (HD10475)، الوصول الإنساني لغزة (HD10476, HD10478)، وسياسة الأقليات (HD10479) لفتح بُعد دولي في حملتهما الانتخابية. لن تغير هذه الاستجوابات التشريعات لكنها ستُنتج محتوى إعلاميًا يُصوّر الحكومة غير ملتزمة بما يكفي بالتعددية والالتزامات الإنسانية.
+
+---
+
+### التوقعات المستقبلية (T+72 ساعة – T+30 يوم)
+
+| القضية | الحدث المُحرِّك | T المتوقع |
+|-------|---------------|-----------|
+| تصويت JuU32 (التجمعات العامة) | المناقشة في الجلسة العامة | T+5–10d |
+| تصويت JuU34 (التنفيذ الجنائي الشمالي) | الجلسة العامة | T+5–10d |
+| تصويت JuU39 (العنف النفسي) | الجلسة العامة | T+5–10d |
+| HD03267 (التهديدات الأمنية) — Lagrådets yttrande | نشر Lagrådet | T+7–14d |
+| تصويت FöU18 SIGINT | المناقشة في الجلسة العامة | T+14–21d |
+| إحالة HD03250 للبطاقة الإلكترونية للجنة | إحالة FiU | T+7d |
+| رد وزير HD10476 بشأن غزة | الموعد النهائي 22 يومًا | T+22d |
+
+---
+
+### تقييم الثقة
+
+**مستوى الثقة الإجمالي**: عالٍ — تجميع من المستوى C لوثائق Riksdag المؤكدة. هويات الوثائق متحقق منها عبر riksdag-regering MCP. تحمل توقعات الجداول الزمنية التشريعية ثقة [B2] — تصنيف القدمية B (مصدر موثوق عادةً)، تصنيف الدليل 2 (مؤكد من مصادر مستقلة). التحديات الدستورية مقدَّرة بـ [B3] (موثوق عادةً، غير مؤكد بصورة مستقلة).
+
+---
+
+### الأهمية الاستراتيجية
+
+هذا سباق تشريعي ما قبل الانتخابات سيحدد منصتَي حملة الحزبين. الحكومة تُنجز برنامجها. المعارضة تبني سجلات مساءلة. كلا الجانبين يُعظِّمان مواقفهما قبل انتخابات سبتمبر 2026، على بُعد 125 يومًا.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_da.md -->
+
+**Klassificering**: 🟢 PUBLIC  
+
+**DIW Aggregat**: 8,4  
+**Horisont**: T+72h til T+90d  
+**Læsetid**: ~5 minutter
+
+---
+
+### OVERSKRIFT
+
+**Sveriges lovgivningssprint for sikkerhedsstaten: Tre propositioner + seks udvalgsrapporter rykker frem simultant — 125 dage før valget**
+
+---
+
+### SITUATION
+
+Riksdag behandlede i dag den mest koncentrerede sikkerhedslovgivningsklynge i den nuværende mandatperiode. Tre propositioner — et statsligt digitalt ID-system (HD03250), udvidede folkeregistreringsbefugenheder til Skatteverket (HD03261) og styrkede udvisningsbefogenheder for sikkerhedstruende udlændinge (HD03267) — bevæger sig simultant gennem lovgivningsprocessen. Disse følger seks udvalgs betænkninger: SIGINT-modernisering (FöU18), fængselsudvidelse (CU25), kapitalmarkedsreform (CU35), finanskrisestyring (FiU37), nordisk straffemyndighed (JuU34) og kriminalisering af psykologisk vold (JuU39).
+
+Lovgivningsklyngen repræsenterer ikke et svar på en enkelt hændelse. Det repræsenterer i stedet den systematiske omsætning af Tidö-koalitionens fireårige program (2022–2026) til vedtagen lov inden valet i september 2026. Hastigheden af vedtagelserne er bevidst og politisk.
+
+---
+
+### VIGTIGSTE FUND (prioriteret efter DIW)
+
+#### 1. SIGINT-modernisering + sikkerhedstruende udlændinge [DIW 9,0 / L3]
+Udvalgsrapport FöU18 (SIGINT-modernisering) + proposition HD03267 (sikkerhedstrusler) udgør en parret sikkerhedsklynge. FöU18 lukker kløften mellem Sveriges FRA-signalefterretningslove og NATO-interoperabilitetskrav. HD03267 styrker udvisningsbefogenhederne for udenlandske statsborgere, der udgør kvalificerede sikkerhedstrusler. Begge er underlagt Lagrådets vurdering. Forfatningsmæssig risiko: ECHR art. 8 (privatliv), art. 5 (frihed). Valgperspektiv: "Sverige tager sikkerheden alvorligt" — Tidö-regeringens kernebranding.
+
+#### 2. Kapitalmarkeds- og finansreguleringspaket [DIW 7,8 / L2]
+FiU-udvalgets rapporter dækker MTF-handelsplatformregler (CU35), OTC-derivater centralklearings regler (FiU38), finanskrisestyringsfunktion (FiU37) og statslig ejendomsforvaltning (FiU31). Disse er EU-drevne regulatoriske implementeringer med lav partipolitisk kontrovers men betydelig institutionel og markedsmæssig indvirkning. Fuldførelse af denne pakke inden valget styrker regeringens "ansvarlig økonomisk styring"-fortælling.
+
+#### 3. Strafferetslovgivning [DIW 8,2 / L2+]
+JuU-udvalgets rapporter om sikkerhed ved offentlige forsamlinger (JuU32), nordisk straffemyndighed (JuU34) og kriminalisering af psykologisk vold (JuU39) rykker frem simultant. Kriminalisering af psykologisk vold er politisk bemærkelsesværdig: den udvider strafferetten til adfærd i nære relationer, der tidligere var uden for strafferetslig rækkevidde, og forventes at generere 400–600 nye retsforfølgelser årligt.
+
+#### 4. Digital statsinfrastruktur [DIW 7,5 / L2]
+HD03250 (statslig e-legitimation) repræsenterer et årtiers projekt for at skabe et statsligt digitalt identitetssystem til at konkurrere med BankID. Politisk kontrovers: potentielle privatsektor-konkurrencehensyn fra den svenske banksektor.
+
+#### 5. Oppositionens internationale ansvarslighedskampagne [DIW 6,5 / L2]
+S og MP bruger interpellationer om ILO (HD10475), humanitær adgang til Gaza (HD10476, HD10478) og minoritetspolitik (HD10479) til at åbne en international dimension i deres valgkampagne. Disse vil ikke ændre lovgivningen men vil generere medieindhold, der indrammes som at regeringen ikke er tilstrækkeligt forpligtet over for multilateralisme og humanitære forpligtelser.
+
+---
+
+### FREMTIDSPERSPEKTIV (T+72h – T+30d)
+
+| Spørgsmål | Udløsende begivenhed | Forventet T |
+|-------|---------------|-----------|
+| JuU32-afstemning (offentlige forsamlinger) | Plenum-behandling | T+5–10d |
+| JuU34-afstemning (nordisk straffemyndighed) | Plenum | T+5–10d |
+| JuU39-afstemning (psykologisk vold) | Plenum | T+5–10d |
+| HD03267 (sikkerhedstrusler) — Lagrådets yttrande | Lagrådets offentliggørelse | T+7–14d |
+| FöU18 SIGINT-afstemning | Plenum-behandling | T+14–21d |
+| HD03250 e-ID-henvisning til udvalg | FiU-henvisning | T+7d |
+| HD10476 Gaza minister-svar | 22-dages frist | T+22d |
+
+---
+
+### TILLIDSVURDERING
+
+**Samlet tillidsniveau**: HØJ — Niveau-C-aggregering af bekræftede Riksdag-dokumenter. Dokumentidentiteter verificeret via riksdag-regering MCP. Lovgivningstidslinjeprognoser bærer [B2] tillid — Admiralitetsklassificering B (normalt pålidelig kilde), bevisklassificering 2 (bekræftet af uafhængige kilder). Forfatningsmæssige udfordringer vurderet [B3] (normalt pålidelig, ikke uafhængigt bekræftet).
+
+---
+
+### STRATEGISK BETYDNING
+
+Dette er en lovgivningssprint op til valget, der vil definere begge partiers valgplatforme. Regeringen gennemfører sit program. Oppositionen skaber ansvarsregistre. Begge sider maksimerer deres positioner inden valget i september 2026, 125 dage væk.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_de.md -->
+
+**Einstufung**: 🟢 PUBLIC  
+
+**DIW Aggregat**: 8,4  
+**Horizont**: T+72h bis T+90d  
+**Lesedauer**: ~5 Minuten
+
+---
+
+### SCHLAGZEILE
+
+**Schwedens Gesetzgebungssprint des Sicherheitsstaates: Drei Regierungsproposita + sechs Ausschussberichte rücken gleichzeitig vor — 125 Tage vor der Wahl**
+
+---
+
+### LAGE
+
+Der Riksdag behandelte heute das konzentrierteste sicherheitsgesetzgeberische Cluster der laufenden Mandatsperiode. Drei Regierungsproposita — ein staatliches digitales Ausweissystem (HD03250), erweiterte Melderegisterbefugnisse für Skatteverket (HD03261) und gestärkte Abschiebungsbefugnisse für sicherheitsgefährdende Ausländer (HD03267) — durchlaufen gleichzeitig den Gesetzgebungsprozess. Diesen folgen sechs Ausschussgutachten: SIGINT-Modernisierung (FöU18), Gefängnisausbau (CU25), Kapitalmarktreform (CU35), Finanzkrisenbewältigung (FiU37), nordische Strafverfolgung (JuU34) und Kriminalisierung psychischer Gewalt (JuU39).
+
+Das Gesetzgebungscluster stellt keine Notfallreaktion auf ein einzelnes Ereignis dar. Es steht vielmehr für die systematische Überführung des Vierjahresprogramms der Tidö-Koalition (2022–2026) in geltendes Recht vor der Wahl im September 2026. Die Geschwindigkeit der Verabschiedung ist bewusst und politisch.
+
+---
+
+### WICHTIGSTE ERKENNTNISSE (nach DIW priorisiert)
+
+#### 1. SIGINT-Modernisierung + sicherheitsgefährdende Ausländer [DIW 9,0 / L3]
+Ausschussbericht FöU18 (SIGINT-Modernisierung) + Regierungsproposita HD03267 (Sicherheitsbedrohungen) bilden ein verknüpftes Sicherheitscluster. FöU18 schließt die Lücke zwischen Schwedens FRA-Nachrichtendienstgesetz und den NATO-Interoperabilitätsanforderungen. HD03267 stärkt die Abschiebungsbefugnisse für Ausländer, die qualifizierte Sicherheitsbedrohungen darstellen. Beide unterliegen der Überprüfung durch den Lagrådet. Verfassungsrechtliches Risiko: EMRK Art. 8 (Privatleben), Art. 5 (Freiheit). Wahlkampfrahmen: "Schweden nimmt Sicherheit ernst" — Kernmarke der Tidö-Regierung.
+
+#### 2. Kapitalmarkt- und Finanzregulierungspaket [DIW 7,8 / L2]
+FiU-Ausschussberichte behandeln MTF-Handelsplattformregeln (CU35), OTC-Derivate-Zentralclearing (FiU38), Finanzkrisenbewältigungsfunktion (FiU37) und staatliche Immobilienverwaltung (FiU31). Dies sind EU-gesteuerte Regulierungsimplementierungen mit geringer parteipolitischer Kontroverse, aber erheblichen institutionellen und marktlichen Auswirkungen. Die Fertigstellung dieses Pakets vor der Wahl stärkt das Narrativ der Regierung über "verantwortungsvolles Wirtschaftsmanagement".
+
+#### 3. Strafjustizgesetzgebung [DIW 8,2 / L2+]
+JuU-Ausschussberichte zur Sicherheit bei öffentlichen Versammlungen (JuU32), nordischer Strafverfolgung (JuU34) und Kriminalisierung psychischer Gewalt (JuU39) rücken gleichzeitig vor. Die Kriminalisierung psychischer Gewalt ist politisch besonders: Sie dehnt das Strafrecht auf Partnerverhalten aus, das bisher außerhalb des strafrechtlichen Rahmens lag, und soll jährlich 400–600 neue Strafverfolgungen generieren.
+
+#### 4. Digitale Staatsinfrastruktur [DIW 7,5 / L2]
+HD03250 (staatliche E-Legitimation) repräsentiert ein jahrzehntelanges Projekt zur Schaffung eines staatlich verwalteten digitalen Identitätssystems in Konkurrenz zu BankID. Politische Kontroverse: potenzielle Privatsektor-Wettbewerbsbedenken des schwedischen Bankensektors.
+
+#### 5. Internationale Rechenschaftspflichtkampagne der Opposition [DIW 6,5 / L2]
+S und MP nutzen Interpellationen zu ILO (HD10475), humanitärem Zugang zu Gaza (HD10476, HD10478) und Minderheitenpolitik (HD10479), um eine internationale Dimension in ihren Wahlkampf zu bringen. Diese werden keine Gesetzgebung ändern, aber Medieninhalte erzeugen, die die Regierung als unzureichend dem Multilateralismus und humanitären Verpflichtungen gegenüber darstellen.
+
+---
+
+### AUSBLICK (T+72h – T+30d)
+
+| Thema | Auslösende Ereignis | Erwartetes T |
+|-------|---------------|-----------|
+| JuU32-Abstimmung (öffentliche Versammlungen) | Plenarberatung | T+5–10d |
+| JuU34-Abstimmung (nordische Strafverfolgung) | Plenum | T+5–10d |
+| JuU39-Abstimmung (psychische Gewalt) | Plenum | T+5–10d |
+| HD03267 (Sicherheitsbedrohungen) — Lagrådets yttrande | Veröffentlichung Lagrådets | T+7–14d |
+| FöU18 SIGINT-Abstimmung | Plenarberatung | T+14–21d |
+| HD03250 E-ID-Verweisung an Ausschuss | FiU-Verweisung | T+7d |
+| HD10476 Gaza-Ministerantwort | 22-Tage-Frist | T+22d |
+
+---
+
+### VERTRAUENSBEWERTUNG
+
+**Gesamtvertrauen**: HOCH — Tier-C-Aggregation bestätigter Riksdag-Dokumente. Dokumentidentitäten verifiziert via riksdag-regering MCP. Gesetzgebungszeitplanprognosen mit [B2]-Konfidenz — Admiralitätseinstufung B (üblicherweise zuverlässige Quelle), Beweiseinstufung 2 (durch unabhängige Quellen bestätigt). Verfassungsrechtliche Anfechtungen mit [B3] bewertet (üblicherweise zuverlässig, nicht unabhängig bestätigt).
+
+---
+
+### STRATEGISCHE BEDEUTUNG
+
+Dies ist ein Vorwahl-Gesetzgebungssprint, der die Wahlkampfplattformen beider Parteien definieren wird. Die Regierung schließt ihr Programm ab. Die Opposition erstellt Rechenschaftsberichte. Beide Seiten maximieren ihre Positionen vor der Wahl im September 2026, noch 125 Tage entfernt.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_es.md -->
+
+**Clasificación**: 🟢 PUBLIC  
+
+**DIW Agregado**: 8,4  
+**Horizonte**: T+72h a T+90d  
+**Tiempo de lectura**: ~5 minutos
+
+---
+
+### TITULAR
+
+**El sprint legislativo del estado de seguridad de Suecia: Tres proposiciones ejecutivas + seis informes de comités avanzan simultáneamente — 125 días antes de las elecciones**
+
+---
+
+### SITUACIÓN
+
+El Riksdag procesó hoy el clúster legislativo de seguridad más concentrado del período de mandato actual. Tres proposiciones ejecutivas — un sistema de identificación digital estatal (HD03250), poderes ampliados de registro de población para Skatteverket (HD03261) y poderes reforzados de deportación para extranjeros que representen amenazas de seguridad (HD03267) — avanzan simultáneamente por el proceso legislativo. Estos siguen a seis betänkanden de comités: modernización SIGINT (FöU18), ampliación de prisiones (CU25), reforma de mercados de capitales (CU35), gestión de crisis financieras (FiU37), aplicación de justicia penal nórdica (JuU34) y criminalización de la violencia psicológica (JuU39).
+
+El clúster legislativo no representa una respuesta de emergencia a ningún evento singular. En cambio, representa la conversión sistemática del programa cuatrienal de la coalición Tidö (2022–2026) en ley promulgada antes de las elecciones de septiembre de 2026. La velocidad de promulgación es deliberada y política.
+
+---
+
+### HALLAZGOS CLAVE (priorizados por DIW)
+
+#### 1. Modernización SIGINT + Amenazas de seguridad de extranjeros [DIW 9,0 / L3]
+El informe de comité FöU18 (modernización SIGINT) + la proposición HD03267 (amenazas de seguridad) forman un clúster de seguridad emparejado. FöU18 cierra la brecha entre el marco legal de inteligencia de señales de la FRA sueca y los requisitos de interoperabilidad de la OTAN. HD03267 refuerza los poderes de expulsión para nacionales extranjeros que representen amenazas de seguridad cualificadas. Ambas están sujetas al escrutinio del Lagrådet. Riesgo constitucional: CEDH Art. 8 (vida privada), Art. 5 (libertad). Marco electoral: "Suecia se toma en serio la seguridad" — marca central del gobierno Tidö.
+
+#### 2. Paquete de regulación de mercados de capitales y finanzas [DIW 7,8 / L2]
+Los informes del comité FiU cubren las reglas de plataformas de negociación MTF (CU35), compensación central de derivados OTC (FiU38), función de gestión de crisis financieras (FiU37) y gestión de propiedades estatales (FiU31). Estas son implementaciones regulatorias impulsadas por la UE con baja controversia partidista pero impacto institucional y de mercado significativo. La finalización de este paquete antes de las elecciones refuerza la narrativa del gobierno sobre "gestión económica responsable".
+
+#### 3. Legislación de justicia penal [DIW 8,2 / L2+]
+Los informes del comité JuU sobre seguridad en reuniones públicas (JuU32), aplicación de justicia penal nórdica (JuU34) y criminalización de la violencia psicológica (JuU39) avanzan simultáneamente. La criminalización de la violencia psicológica es políticamente distintiva: extiende el derecho penal a comportamientos en parejas íntimas previamente fuera del ámbito penal, y se espera que genere 400–600 nuevos enjuiciamientos anuales.
+
+#### 4. Infraestructura digital del Estado [DIW 7,5 / L2]
+HD03250 (e-legitimation estatal) representa un proyecto de una década para crear un sistema de identidad digital gestionado por el gobierno para competir con BankID. Controversia política: posibles preocupaciones de competencia del sector privado del sector bancario sueco.
+
+#### 5. Campaña de rendición de cuentas internacional de la oposición [DIW 6,5 / L2]
+S y MP están utilizando interpelaciones sobre la OIT (HD10475), acceso humanitario a Gaza (HD10476, HD10478) y política de minorías (HD10479) para abrir una dimensión internacional en su campaña electoral. Estas no cambiarán la legislación pero generarán contenido mediático que enmarca al gobierno como insuficientemente comprometido con el multilateralismo y las obligaciones humanitarias.
+
+---
+
+### PERSPECTIVA (T+72h – T+30d)
+
+| Cuestión | Evento desencadenante | T esperado |
+|-------|---------------|-----------|
+| Votación JuU32 (reuniones públicas) | Consideración plenaria | T+5–10d |
+| Votación JuU34 (justicia penal nórdica) | Pleno | T+5–10d |
+| Votación JuU39 (violencia psicológica) | Pleno | T+5–10d |
+| HD03267 (amenazas de seguridad) — Lagrådets yttrande | Publicación del Lagrådet | T+7–14d |
+| Votación SIGINT FöU18 | Consideración plenaria | T+14–21d |
+| Remisión HD03250 e-ID a comité | Remisión FiU | T+7d |
+| Respuesta ministerial Gaza HD10476 | Plazo 22 días | T+22d |
+
+---
+
+### EVALUACIÓN DE CONFIANZA
+
+**Confianza global**: ALTA — Agregación Tier-C de documentos Riksdag confirmados. Identidades documentales verificadas vía riksdag-regering MCP. Las previsiones del calendario legislativo tienen confianza [B2] — calificación Almirantazgo B (fuente generalmente fiable), calificación de evidencia 2 (confirmada por fuentes independientes). Impugnaciones constitucionales evaluadas [B3] (generalmente fiable, no confirmado independientemente).
+
+---
+
+### RELEVANCIA ESTRATÉGICA
+
+Este es un sprint legislativo de víspera electoral que definirá las plataformas de campaña de ambos partidos. El gobierno está completando su programa. La oposición está creando registros de rendición de cuentas. Ambos lados están maximizando sus posiciones antes de las elecciones de septiembre de 2026, a 125 días de distancia.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_fi.md -->
+
+**Luokitus**: 🟢 PUBLIC  
+
+**DIW Aggregaatti**: 8,4  
+**Horisontti**: T+72t – T+90d  
+**Lukemisaika**: ~5 minuuttia
+
+---
+
+### OTSIKKO
+
+**Ruotsin turvallisuusvaltion lainsäädäntösprintti: Kolme hallituksen esitystä + kuusi valiokunnan mietintöä etenee samanaikaisesti — 125 päivää ennen vaaleja**
+
+---
+
+### TILANNEKUVA
+
+Riksdag käsitteli tänään nykyisen toimikauden tiheimmän turvallisuuslainsäädäntöryppään. Kolme hallituksen esitystä — valtion digitaalinen henkilökorttijärjestelmä (HD03250), Skatteverketin laajennetut väestörekisteribefogenheder (HD03261) ja vahvistetut karkottamistoimivaltuudet turvallisuusuhkia edustaville ulkomaalaisille (HD03267) — etenevät samanaikaisesti lainsäädäntöprosessissa. Näitä seuraa kuusi valiokunnan mietintöä: SIGINT-modernisaatio (FöU18), vankilakapasiteetin laajentaminen (CU25), pääomamarkkina-uudistus (CU35), finanssikriisinhallinta (FiU37), pohjoismainen rikosoikeudellinen yhteistyö (JuU34) ja psykologisen väkivallan kriminalisointi (JuU39).
+
+Lainsäädäntörypäs ei ole vastaus yhdellekään yksittäiselle tapahtumalle. Se edustaa sen sijaan Tidö-koalition nelivuotisen ohjelman (2022–2026) järjestelmällistä muuttamista laiksi ennen syyskuun 2026 vaaleja. Lainsäädäntövauhti on tarkoituksellinen ja poliittinen.
+
+---
+
+### TÄRKEIMMÄT HAVAINNOT (DIW-prioriteetin mukaan)
+
+#### 1. SIGINT-modernisaatio + turvallisuusuhkia edustavat ulkomaalaiset [DIW 9,0 / L3]
+Valiokunnan mietintö FöU18 (SIGINT-modernisaatio) + hallituksen esitys HD03267 (turvallisuusuhat) muodostavat yhdistetyn turvallisuusryppään. FöU18 sulkee aukon Ruotsin FRA-tiedustelulain ja NATO-yhteentoimivuusvaatimusten välillä. HD03267 vahvistaa karkottamistoimivaltuuksia ulkomaisille kansalaisille, jotka edustavat laadullisia turvallisuusuhkia. Molempia tarkastelee Lagrådet. Perustuslaillinen riski: ECHR art. 8 (yksityiselämä), art. 5 (vapaus). Vaalikehys: "Ruotsi suhtautuu turvallisuuteen vakavasti" — Tidö-hallituksen ydinen brändi.
+
+#### 2. Pääomamarkkinoiden ja finanssialan sääntelypaketti [DIW 7,8 / L2]
+FiU-valiokunnan mietinnöt kattavat MTF-kaupankäyntialustan säännöt (CU35), OTC-johdannaiskaupan keskusvastapuoliklirinki (FiU38), finanssikriisinhallintafunktio (FiU37) ja valtion kiinteistöjenhoito (FiU31). Nämä ovat EU-lähtöisiä sääntelytoteutuksia, joissa puoluepolitiinen kiistanalasuus on vähäistä mutta institutionaalinen ja markkinallinen vaikutus merkittävä. Tämän paketin viimeistely ennen vaaleja vahvistaa hallituksen "vastuullinen taloudenhallinta" -kertomusta.
+
+#### 3. Rikoslainsäädäntö [DIW 8,2 / L2+]
+JuU-valiokunnan mietinnöt yleisön turvallisuudesta julkisissa kokoontumisissa (JuU32), pohjoismaisesta rikosoikeudellisesta yhteistyöstä (JuU34) ja psykologisen väkivallan kriminalisoinnista (JuU39) etenevät samanaikaisesti. Psykologisen väkivallan kriminalisointi on poliittisesti erityinen: se laajentaa rikosoikeuden käyttäytymiseen lähisuhteissa, joka aiemmin jäi sen soveltamisalan ulkopuolelle, ja sen odotetaan synnyttävän 400–600 uutta syytettä vuosittain.
+
+#### 4. Digitaalinen valtion infrastruktuuri [DIW 7,5 / L2]
+HD03250 (valtion sähköinen henkilöllisyystodistus) edustaa vuosikymmenten hanketta luoda valtion hallitsema digitaalinen henkilöllisyysjärjestelmä kilpailemaan BankID:n kanssa. Poliittinen kiista: mahdolliset yksityissektorin kilpailuhuolet Ruotsin pankkisektorilta.
+
+#### 5. Opposition kansainvälinen vastuunkantokampanja [DIW 6,5 / L2]
+S ja MP käyttävät interpellaatioita ILO:sta (HD10475), humanitaarisesta Gazan pääsystä (HD10476, HD10478) ja vähemmistöpolitiikasta (HD10479) avatakseen kansainvälisen ulottuvuuden vaalikampanjassaan. Nämä eivät muuta lainsäädäntöä, mutta tuottavat mediasisältöä, joka kehystää hallituksen riittämättömästi sitoutuneeksi multilateralismiin ja humanitaarisiin velvoitteisiin.
+
+---
+
+### ETEENPÄIN KATSOVA (T+72t – T+30d)
+
+| Asia | Laukaiseva tapahtuma | Odotettu T |
+|-------|---------------|-----------|
+| JuU32-äänestys (julkiset kokoukset) | Täysistuntokäsittely | T+5–10d |
+| JuU34-äänestys (pohjoismainen rikosyhteistyö) | Täysistunto | T+5–10d |
+| JuU39-äänestys (psykologinen väkivalta) | Täysistunto | T+5–10d |
+| HD03267 (turvallisuusuhat) — Lagrådets yttrande | Lagrådets julkaisu | T+7–14d |
+| FöU18 SIGINT-äänestys | Täysistuntokäsittely | T+14–21d |
+| HD03250 sähköinen henkilökortti valiokunnalle | FiU-lähete | T+7d |
+| HD10476 Gazan ministerin vastaus | 22 päivän määräaika | T+22d |
+
+---
+
+### LUOTTAMUSARVIO
+
+**Kokonaisluottamus**: KORKEA — Tasoll C aggregoitu vahvistettujen Riksdag-asiakirjojen pohjalta. Asiakirjaidentiteetit vahvistettu riksdag-regering MCP:n kautta. Lainsäädäntöaikataulu­ennusteet kantavat [B2]-luottamustasoa — Admiraliteettikoodisto B (yleensä luotettava lähde), todistusluokka 2 (vahvistettu riippumattomista lähteistä). Perustuslailliset haasteet arvioitu [B3] (yleensä luotettava, ei riippumattomasti vahvistettu).
+
+---
+
+### STRATEGINEN MERKITYS
+
+Tämä on vaaleja edeltävä lainsäädäntösprintti, joka määrittää molempien puolueiden vaalikampanjaplatformit. Hallitus toteuttaa ohjelmaansa. Oppositio rakentaa vastuukirjanpitoaan. Molemmat osapuolet maksimoivat asemiaan ennen syyskuun 2026 vaaleja, 125 päivää jäljellä.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_fr.md -->
+
+**DIW Agrégat** : 8,4  
+**Horizon** : T+72h à T+90d  
+**Durée de lecture** : ~5 minutes
+
+---
+
+### MANCHETTE
+
+**Le sprint législatif de l'État sécuritaire suédois : Trois propositions gouvernementales + six rapports de commissions avancent simultanément — 125 jours avant les élections**
+
+---
+
+### SITUATION
+
+Le Riksdag a traité aujourd'hui le cluster législatif sécuritaire le plus concentré de la période de mandat en cours. Trois propositions gouvernementales — un système d'identité numérique d'État (HD03250), des pouvoirs élargis d'enregistrement de la population pour Skatteverket (HD03261) et des pouvoirs d'expulsion renforcés pour les étrangers représentant des menaces sécuritaires (HD03267) — progressent simultanément dans le processus législatif. Celles-ci font suite à six rapports de commissions : modernisation SIGINT (FöU18), extension des prisons (CU25), réforme des marchés de capitaux (CU35), gestion des crises financières (FiU37), répression pénale nordique (JuU34) et criminalisation de la violence psychologique (JuU39).
+
+Le cluster législatif ne représente pas une réponse d'urgence à un événement unique. Il représente au contraire la conversion systématique du programme quadriennal de la coalition Tidö (2022–2026) en droit positif avant les élections de septembre 2026. La rapidité de l'adoption est délibérée et politique.
+
+---
+
+### PRINCIPALES CONCLUSIONS (priorisées par DIW)
+
+#### 1. Modernisation SIGINT + étrangers représentant des menaces sécuritaires [DIW 9,0 / L3]
+Le rapport de commission FöU18 (modernisation SIGINT) + la proposition HD03267 (menaces sécuritaires) forment un cluster sécuritaire couplé. FöU18 comble le fossé entre le cadre juridique du renseignement électronique suédois (FRA) et les exigences d'interopérabilité de l'OTAN. HD03267 renforce les pouvoirs d'expulsion pour les ressortissants étrangers qui représentent des menaces sécuritaires qualifiées. Les deux sont soumis à l'examen du Lagrådet. Risque constitutionnel : CEDH Art. 8 (vie privée), Art. 5 (liberté). Cadrage électoral : "La Suède est sérieuse en matière de sécurité" — marque centrale du gouvernement Tidö.
+
+#### 2. Paquet réglementation des marchés de capitaux et finance [DIW 7,8 / L2]
+Les rapports de la commission FiU couvrent les règles des plateformes de négociation MTF (CU35), la compensation centrale des dérivés OTC (FiU38), la fonction de gestion des crises financières (FiU37) et la gestion des biens d'État (FiU31). Ce sont des mises en œuvre réglementaires pilotées par l'UE avec une faible controverse partisane mais un impact institutionnel et de marché significatif. L'achèvement de ce paquet avant les élections renforce le récit du gouvernement sur la "gestion économique responsable".
+
+#### 3. Législation pénale [DIW 8,2 / L2+]
+Les rapports de la commission JuU sur la sécurité lors des rassemblements publics (JuU32), la répression pénale nordique (JuU34) et la criminalisation de la violence psychologique (JuU39) avancent simultanément. La criminalisation de la violence psychologique est politiquement distinctive : elle étend le droit pénal aux comportements au sein des couples intimes précédemment hors du champ pénal, et devrait générer 400 à 600 nouvelles poursuites par an.
+
+#### 4. Infrastructure numérique de l'État [DIW 7,5 / L2]
+HD03250 (e-legitimation d'État) représente un projet décennal de création d'un système d'identité numérique géré par l'État pour concurrencer BankID. Controverse politique : préoccupations potentielles du secteur privé concernant la concurrence du secteur bancaire suédois.
+
+#### 5. Campagne de responsabilisation internationale de l'opposition [DIW 6,5 / L2]
+S et MP utilisent des interpellations sur l'OIT (HD10475), l'accès humanitaire à Gaza (HD10476, HD10478) et la politique des minorités (HD10479) pour ouvrir une dimension internationale dans leur campagne électorale. Celles-ci ne modifieront pas la législation mais généreront du contenu médiatique encadrant le gouvernement comme insuffisamment engagé envers le multilatéralisme et les obligations humanitaires.
+
+---
+
+### PERSPECTIVES (T+72h – T+30d)
+
+| Enjeu | Événement déclencheur | T attendu |
+|-------|---------------|-----------|
+| Vote JuU32 (rassemblements publics) | Examen en séance plénière | T+5–10d |
+| Vote JuU34 (répression pénale nordique) | Plénière | T+5–10d |
+| Vote JuU39 (violence psychologique) | Plénière | T+5–10d |
+| HD03267 (menaces sécuritaires) — Lagrådets yttrande | Publication du Lagrådet | T+7–14d |
+| Vote SIGINT FöU18 | Examen en séance plénière | T+14–21d |
+| HD03250 renvoi en commission e-ID | Renvoi FiU | T+7d |
+| Réponse du ministre sur Gaza HD10476 | Délai 22 jours | T+22d |
+
+---
+
+### ÉVALUATION DE LA CONFIANCE
+
+**Niveau de confiance global** : ÉLEVÉ — Agrégation de niveau C de documents Riksdag confirmés. Identités documentaires vérifiées via riksdag-regering MCP. Les prévisions de calendrier législatif portent une confiance [B2] — classement Amirauté B (source généralement fiable), classement des preuves 2 (confirmé par des sources indépendantes). Contestations constitutionnelles évaluées [B3] (généralement fiable, non confirmé indépendamment).
+
+---
+
+### SIGNIFICATION STRATÉGIQUE
+
+Il s'agit d'un sprint législatif d'avant-élection qui définira les plateformes de campagne des deux partis. Le gouvernement achève son programme. L'opposition crée des registres de responsabilité. Les deux camps maximisent leurs positions avant les élections de septembre 2026, dans 125 jours.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תדריך מנהלים — ניתוח ערב 2026-05-07
+
+**סיווג**: 🟢 PUBLIC  
+
+**אופק זמן**: T+72 שעות עד T+90 ימים  
+**זמן קריאה**: ~5 דקות
+
+---
+
+### כותרת ראשית
+
+**ריצת חקיקה של מדינת הביטחון השוודית: שלוש הצעות ממשלתיות + שישה דוחות ועדות מתקדמות בו-זמנית — 125 ימים לפני הבחירות**
+
+---
+
+### המצב הנוכחי
+
+הריקסדאג התמודד היום עם צרור חקיקת הביטחון הממוקד ביותר של הפגישה הנוכחית. שלוש הצעות ממשלתיות — מערכת זיהוי דיגיטלית ממשלתית (HD03250), הרחבת סמכויות רישום אוכלוסין לשקאטוורקט (HD03261), וסמכויות גירוש מוגברות לזרים שמהווים איומי ביטחון (HD03267) — מתקדמות בו-זמנית בנתיב החקיקתי. אחריהן שישה betänkanden ועדתיים: מודרניזציה של SIGINT (FöU18), הרחבת בתי הסוהר (CU25), רפורמת שוק ההון (CU35), ניהול משברים פיננסיים (FiU37), אכיפה פלילית נורדית משותפת (JuU34), ועיצוב מחדש של אלימות פסיכולוגית כעבירה (JuU39).
+
+הצרור החקיקתי אינו מהווה תגובת חירום לאירוע ספציפי. הוא מייצג העברה שיטתית של תוכנית ממשלת טידו לארבע שנים (2022-2026) לחוק תקף לפני בחירות ספטמבר 2026. קצב החקיקה מכוון ומונע פוליטית.
+
+---
+
+### ממצאים עיקריים (לפי עדיפות DIW)
+
+#### 1. מודרניזציה של SIGINT + זרים עם איומי ביטחון [DIW 9.0 / L3]
+דוח הוועדה FöU18 (מודרניזציה של SIGINT) + HD03267 (איומי ביטחון) מרכיבים צרור ביטחון כפול. FöU18 סוגר את הפער בין המסגרת החוקית של FRA לאינטליגנציה אותות לבין דרישות האינטרופרביליות של נאט"ו. HD03267 מחזק סמכויות גירוש לאזרחים זרים המהווים איומי ביטחון מוסמכים. שניהם כפופים לבדיקת לגרודט. סיכונים חוקתיים: סעיף 8 ל-ECHR (פרטיות), סעיף 5 (חירות). מסגרת בחירות: "שוודיה רצינית לגבי ביטחונה" — מיתוג ליבה של ממשלת טידו.
+
+#### 2. צרור רגולציה של שוק ההון והסקטור הפיננסי [DIW 7.8 / L2]
+דוחות ועדת FiU מכסים כללי פלטפורמת מסחר MTF (CU35), קליירינג מרכזי לנגזרות OTC (FiU38), פונקציית ניהול משברים פיננסיים (FiU37), וניהול נכסי המדינה (FiU31). אלה יישומים רגולטוריים מונעי EU עם מחלוקת מפלגתית נמוכה אך השפעה מוסדית ושוקית משמעותית. השלמת הצרור לפני הבחירות מחזקת את הנרטיב של הממשלה על "ניהול כלכלי אחראי".
+
+#### 3. חקיקת שיפוט פלילי [DIW 8.2 / L2+]
+דוחות ועדת JuU על ביטחון התקהלויות ציבוריות (JuU32), אכיפה פלילית נורדית (JuU34), ועיצוב מחדש של אלימות פסיכולוגית (JuU39) מתקדמים בו-זמנית. עיצוב מחדש של אלימות פסיכולוגית בולט פוליטית: הוא מרחיב את המשפט הפלילי לכסות התנהגות ביחסים אינטימיים שהייתה בעבר מחוץ לתחום האיסור, ומצפה לייצר 400-600 תביעות חדשות בשנה.
+
+#### 4. תשתית דיגיטלית ממשלתית [DIW 7.5 / L2]
+HD03250 (כרטיס זיהוי אלקטרוני ממשלתי) מייצג פרויקט עשור ליצירת מערכת זיהוי דיגיטלית מנוהלת ממשלתית כחלופה ל-BankID. מחלוקת פוליטית: חששות אפשריים מהמגזר הפרטי לגבי תחרות בסקטור הבנקאות השוודי.
+
+#### 5. מסע אחריותיות בינלאומית של האופוזיציה [DIW 6.5 / L2]
+S ו-MP משתמשים בשאלות פרלמנטריות על ארגון העבודה הבינלאומי (HD10475), גישה הומניטרית לעזה (HD10476, HD10478), ומדיניות מיעוטים (HD10479) כדי לפתוח ממד בינלאומי במסע שלהם. השאלות לא ישנו חקיקה אך ייצרו תוכן מדיה המציג את הממשלה כבלתי-מחויבת דיה לרב-תרבותיות ומחויבויות הומניטריות.
+
+---
+
+### תחזית קדימה (T+72 שעות – T+30 ימים)
+
+| נושא | טריגר אירוע | T צפוי |
+|-------|-------------|--------|
+| הצבעה JuU32 (התקהלויות ציבוריות) | דיון במליאה | T+5–10d |
+| הצבעה JuU34 (אכיפה פלילית נורדית) | מליאה | T+5–10d |
+| הצבעה JuU39 (אלימות פסיכולוגית) | מליאה | T+5–10d |
+| HD03267 (איומי ביטחון) — Lagrådets yttrande | פרסום לגרודט | T+7–14d |
+| הצבעה FöU18 SIGINT | דיון במליאה | T+14–21d |
+| הפנייה של HD03250 כרטיס אלקטרוני לוועדה | הפניית FiU | T+7d |
+| תגובת שר לHD10476 עזה | מועד אחרון 22 יום | T+22d |
+
+---
+
+### הערכת ביטחון
+
+**רמת ביטחון כוללת**: גבוה — אגרגציה ב-C-tier של מסמכי ריקסדאג שאומתו. זהויות מסמכים אומתו דרך riksdag-regering MCP. תחזיות לוח זמנים חקיקתי נושאות ביטחון [B2] — דירוג מקור B (בדרך כלל אמין), דירוג ראיה 2 (מאושר ממקורות עצמאיים). אתגרים חוקתיים מוערכים ב-[B3] (בדרך כלל אמין, לא מאושר באופן עצמאי).
+
+---
+
+### משמעות אסטרטגית
+
+זוהי ריצת חקיקה טרום-בחירות שתגדיר את פלטפורמות המסע של שני המחנות. הממשלה מממשת את תוכניתה. האופוזיציה בונה תיקי אחריותיות. שני הצדדים ממקסמים עמדות לקראת בחירות ספטמבר 2026, הרחוקות 125 ימים.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_ja.md -->
+
+**分類**: 🟢 PUBLIC  
+
+**DIW総合**: 8.4  
+**時間軸**: T+72時間〜T+90日  
+**読了時間**: 約5分
+
+---
+
+### 見出し
+
+**スウェーデン安全保障国家立法ラッシュ：3つの政府提案＋6つの委員会報告書が同時進行 — 選挙まで125日**
+
+---
+
+### 現状
+
+本日、リクスダーゲンは現会期で最も集中した安全保障立法群を審議した。政府提案3件——国家デジタルID制度（HD03250）、スカッテヴェルケットへの住民登録権限拡大（HD03261）、安全保障上の脅威となる外国人の強制退去権限強化（HD03267）——が立法経路を同時に進行している。これに続いて6つの委員会betänkanden：SIGINT近代化（FöU18）、刑務所拡張（CU25）、資本市場改革（CU35）、金融危機管理（FiU37）、北欧共同刑事執行（JuU34）、心理的暴力の犯罪化（JuU39）が審議されている。
+
+この立法群は特定の出来事への緊急対応ではない。2022-2026年のティデウ連立政権4年間のプログラムを、2026年9月選挙前に有効法に転換する体系的作業を表している。立法ペースは意図的であり、政治的動機に基づいている。
+
+---
+
+### 主要所見（DIW優先順位順）
+
+#### 1. SIGINT近代化＋安全保障脅威外国人 [DIW 9.0 / L3]
+委員会報告FöU18（SIGINT近代化）＋HD03267（安全保障脅威）がデュアルセキュリティ束を形成する。FöU18はFRAの信号情報法的枠組みとNATOの相互運用要件のギャップを埋める。HD03267は資格認定された安全保障上の脅威をもたらす外国籍者の強制退去権限を強化する。いずれもラグロードによる審査対象。憲法上のリスク：ECHR第8条（プライバシー）、第5条（自由）。選挙的フレーミング：「スウェーデンは安全保障に本気」——ティデウ政権の核心ブランド。
+
+#### 2. 資本市場・金融セクター規制束 [DIW 7.8 / L2]
+FiU委員会報告はMTF取引プラットフォームのルール（CU35）、OTCデリバティブの中央清算（FiU38）、金融危機管理機能（FiU37）、国有財産管理（FiU31）をカバーする。これらはEU主導の規制実施であり、政党間の論争は少ないが機関・市場への影響は大きい。選挙前にこの束を完成させることで、政府の「責任ある経済運営」のナラティブが強化される。
+
+#### 3. 刑事司法立法 [DIW 8.2 / L2+]
+公共集会の安全（JuU32）、北欧刑事執行（JuU34）、心理的暴力の犯罪化（JuU39）に関するJuU委員会報告が同時進行する。心理的暴力の犯罪化は政治的に際立つ：これは以前は犯罪化の対象外だった親密な関係における行動まで刑法を拡大するもので、年間400-600件の新規訴追が見込まれる。
+
+#### 4. 国家デジタルインフラ [DIW 7.5 / L2]
+HD03250（政府デジタルIDカード）は、BankIDに対抗する政府管理のデジタルID制度を構築する10年プロジェクトを代表する。政治的論点：スウェーデン銀行セクターにおける競争に関する民間セクターの懸念の可能性。
+
+#### 5. 野党の国際的説明責任キャンペーン [DIW 6.5 / L2]
+SとMPはILO（HD10475）、ガザへの人道的アクセス（HD10476, HD10478）、少数者政策（HD10479）に関する質問を用いて、自らのキャンペーンに国際的次元を開いている。これらの質問は法律を変えないが、政府が多元主義と人道的コミットメントに十分に取り組んでいないとするメディアコンテンツを生み出す。
+
+---
+
+### 先行予測（T+72時間〜T+30日）
+
+| 案件 | イベントトリガー | 想定T |
+|------|----------------|-------|
+| JuU32投票（公共集会） | 本会議討論 | T+5–10d |
+| JuU34投票（北欧刑事執行） | 本会議 | T+5–10d |
+| JuU39投票（心理的暴力） | 本会議 | T+5–10d |
+| HD03267（安全保障脅威）— Lagrådets yttrande | ラグロード公示 | T+7–14d |
+| FöU18 SIGINT投票 | 本会議討論 | T+14–21d |
+| HD03250 e-cardの委員会付託 | FiU付託 | T+7d |
+| HD10476 ガザへの大臣回答 | 22日期限 | T+22d |
+
+---
+
+### 信頼度評価
+
+**総合信頼度**: 高 — 検証済みリクスダーゲン文書のCティア集約。文書IDはriksdag-regering MCP経由で確認済み。立法スケジュール予測は[B2]信頼度——情報源格付けB（通常信頼できる）、証拠格付け2（独立した情報源から確認）。憲法的異議申立ては[B3]と推定（通常信頼できる、独立した確認なし）。
+
+---
+
+### 戦略的意義
+
+これは両陣営のキャンペーンプラットフォームを定義する選挙前立法ラッシュである。政府はプログラムを実行している。野党は説明責任の記録を構築している。両陣営とも、125日後の2026年9月選挙に向けてポジションを最大化している。
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_ko.md -->
+
+**분류**: 🟢 PUBLIC  
+
+**DIW 종합**: 8.4  
+**시간 지평**: T+72시간 ~ T+90일  
+**읽기 시간**: 약 5분
+
+---
+
+### 헤드라인
+
+**스웨덴 안보 국가 입법 러시: 정부 제안 3건 + 위원회 보고서 6건 동시 진행 — 선거까지 125일**
+
+---
+
+### 현황
+
+오늘 리크스다겐은 현 의회 회기 중 가장 집중된 안보 입법 묶음을 처리했다. 정부 제안 3건——국가 디지털 신분증 시스템(HD03250), 스카테베르케트의 인구 등록 권한 확대(HD03261), 안보 위협이 되는 외국인에 대한 추방 권한 강화(HD03267)——이 입법 경로를 동시에 진행하고 있다. 이어서 위원회 betänkanden 6건: SIGINT 현대화(FöU18), 교도소 확장(CU25), 자본시장 개혁(CU35), 금융 위기 관리(FiU37), 북유럽 공동 형사 집행(JuU34), 심리적 폭력 범죄화(JuU39).
+
+이 입법 묶음은 특정 사건에 대한 비상 대응이 아니다. 2026년 9월 선거 전에 티데우 연립 4년(2022-2026) 프로그램을 현행법으로 전환하는 체계적 작업을 나타낸다. 입법 속도는 의도적이며 정치적 동기에서 비롯된 것이다.
+
+---
+
+### 주요 발견 사항 (DIW 우선순위 순)
+
+#### 1. SIGINT 현대화 + 안보 위협 외국인 [DIW 9.0 / L3]
+위원회 보고서 FöU18(SIGINT 현대화) + HD03267(안보 위협)이 이중 안보 묶음을 형성한다. FöU18은 FRA 신호 정보 법적 프레임워크와 NATO 상호 운용성 요건 사이의 격차를 해소한다. HD03267은 자격을 갖춘 안보 위협이 되는 외국 국적자에 대한 추방 권한을 강화한다. 둘 다 라그로데트 검토 대상. 헌법적 위험: ECHR 제8조(프라이버시), 제5조(자유). 선거적 프레이밍: "스웨덴은 안보에 진지하다" — 티데우 정부의 핵심 브랜딩.
+
+#### 2. 자본시장 및 금융 섹터 규제 묶음 [DIW 7.8 / L2]
+FiU 위원회 보고서는 MTF 거래 플랫폼 규정(CU35), OTC 파생상품 중앙 청산(FiU38), 금융 위기 관리 기능(FiU37), 국유 재산 관리(FiU31)를 포함한다. 이것들은 EU 주도의 규제 시행으로 정당 간 논쟁은 적지만 기관 및 시장 영향은 크다. 선거 전에 이 묶음을 완성하면 정부의 "책임 있는 경제 운용" 내러티브가 강화된다.
+
+#### 3. 형사 사법 입법 [DIW 8.2 / L2+]
+공공 집회 안전(JuU32), 북유럽 형사 집행(JuU34), 심리적 폭력 범죄화(JuU39)에 관한 JuU 위원회 보고서가 동시 진행한다. 심리적 폭력 범죄화는 정치적으로 두드러진다: 이전에는 범죄화 범위 밖이었던 친밀한 관계에서의 행동을 형법으로 확장하며, 연간 400-600건의 새로운 기소가 예상된다.
+
+#### 4. 국가 디지털 인프라 [DIW 7.5 / L2]
+HD03250(정부 디지털 신분증)은 BankID에 대항하는 정부 관리 디지털 신분 시스템을 구축하는 10년 프로젝트를 대표한다. 정치적 논점: 스웨덴 은행 섹터의 경쟁에 관한 민간 부문의 잠재적 우려.
+
+#### 5. 야당의 국제 책임 캠페인 [DIW 6.5 / L2]
+S와 MP는 ILO(HD10475), 가자 인도적 접근(HD10476, HD10478), 소수자 정책(HD10479)에 관한 질문을 활용해 캠페인에 국제적 차원을 열고 있다. 이 질문들은 법률을 바꾸지 않겠지만 정부가 다원주의와 인도적 약속에 충분히 전념하지 않는다는 미디어 콘텐츠를 생성할 것이다.
+
+---
+
+### 전망 예측 (T+72시간 ~ T+30일)
+
+| 사안 | 이벤트 트리거 | 예상 T |
+|------|------------|--------|
+| JuU32 투표(공공 집회) | 본회의 토론 | T+5–10d |
+| JuU34 투표(북유럽 형사 집행) | 본회의 | T+5–10d |
+| JuU39 투표(심리적 폭력) | 본회의 | T+5–10d |
+| HD03267(안보 위협) — Lagrådets yttrande | 라그로데트 발표 | T+7–14d |
+| FöU18 SIGINT 투표 | 본회의 토론 | T+14–21d |
+| HD03250 e-card 위원회 회부 | FiU 회부 | T+7d |
+| HD10476 가자 관련 장관 답변 | 22일 기한 | T+22d |
+
+---
+
+### 신뢰도 평가
+
+**전체 신뢰도**: 높음 — 검증된 리크스다겐 문서의 C-tier 집계. 문서 ID는 riksdag-regering MCP를 통해 확인됨. 입법 일정 예측은 [B2] 신뢰도——출처 등급 B(일반적으로 신뢰할 수 있음), 증거 등급 2(독립 출처로 확인). 헌법적 이의제기는 [B3]로 추정(일반적으로 신뢰할 수 있음, 독립 확인 없음).
+
+---
+
+### 전략적 의의
+
+이것은 양 진영의 선거 캠페인 플랫폼을 정의할 선거 전 입법 러시다. 정부는 프로그램을 실행하고 있다. 야당은 책임 기록을 구축하고 있다. 양 진영 모두 125일 후인 2026년 9월 선거를 앞두고 포지션을 극대화하고 있다.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_nl.md -->
+
+**Classificatie**: 🟢 PUBLIC  
+
+**DIW Aggregaat**: 8,4  
+**Horizon**: T+72u tot T+90d  
+**Leestijd**: ~5 minuten
+
+---
+
+### KOPTEKST
+
+**Zweden's wetgevingssprint voor de veiligheidsstaat: Drie uitvoeringsproposities + zes commissierapporten gaan simultaan vooruit — 125 dagen voor de verkiezingen**
+
+---
+
+### SITUATIE
+
+De Riksdag verwerkten vandaag het meest geconcentreerde veiligheidswetgevingscluster van de huidige mandaatperiode. Drie uitvoeringsproposities — een staatlijk digitaal ID-systeem (HD03250), uitgebreide bevolkingsregistratiebevoegdheden voor Skatteverket (HD03261) en versterkte deportatiebevoegdheden voor veiligheidsbedreigende buitenlanders (HD03267) — bewegen zich simultaan door het wetgevingsproces. Deze volgen op zes commissie betänkanden: SIGINT-modernisering (FöU18), gevangenisuitbreiding (CU25), hervorming van de kapitaalmarkten (CU35), financieel crisisbeheer (FiU37), Noordse strafrechtelijke handhaving (JuU34) en criminalisering van psychologisch geweld (JuU39).
+
+Het wetgevingscluster vertegenwoordigt geen noodreactie op een enkel incident. Het vertegenwoordigt in plaats daarvan de systematische omzetting van het vierjarig programma van de Tidö-coalitie (2022–2026) in wet vóór de verkiezingen van september 2026. De snelheid van implementatie is opzettelijk en politiek.
+
+---
+
+### BELANGRIJKSTE BEVINDINGEN (geprioriteerd naar DIW)
+
+#### 1. SIGINT-modernisering + veiligheidsbedreigende buitenlanders [DIW 9,0 / L3]
+Commissierapport FöU18 (SIGINT-modernisering) + propositie HD03267 (veiligheidsbedreigingen) vormen een gekoppeld veiligheidscluster. FöU18 sluit het gat tussen Zweden's FRA-wetgeving voor signaalinlichtingen en de NATO-interoperabiliteitseisen. HD03267 versterkt de uitzetbevoegdheden voor buitenlandse onderdanen die gekwalificeerde veiligheidsbedreigingen vormen. Beide zijn onderworpen aan de toetsing van de Lagrådet. Grondwettelijk risico: EVRM Art. 8 (privéleven), Art. 5 (vrijheid). Electoraal kader: "Zweden neemt veiligheid serieus" — het kernmerk van de Tidö-regering.
+
+#### 2. Pakket kapitaalmarkt- en financiële regelgeving [DIW 7,8 / L2]
+FiU-commissierapporten behandelen MTF-handelsplatformregels (CU35), OTC-derivaten centrale clearing (FiU38), financieel crisisbeheerfunctie (FiU37) en staatsbeheer van onroerend goed (FiU31). Dit zijn EU-gestuurde regelgevingsimplementaties met lage partijpolitieke controverse maar aanzienlijke institutionele en marktimpact. De voltooiing van dit pakket vóór de verkiezingen versterkt het narratief van de regering over "verantwoord economisch beheer".
+
+#### 3. Strafrechtswetgeving [DIW 8,2 / L2+]
+JuU-commissierapporten over openbare vergaderingsveiligheid (JuU32), Noordse strafrechtelijke handhaving (JuU34) en criminalisering van psychologisch geweld (JuU39) gaan simultaan vooruit. De criminalisering van psychologisch geweld is politiek onderscheidend: het breidt het strafrecht uit naar gedrag van intieme partners dat eerder buiten het strafrechtelijk kader viel, en zal naar verwachting 400–600 nieuwe vervolgingen per jaar genereren.
+
+#### 4. Digitale staatsinfrastructuur [DIW 7,5 / L2]
+HD03250 (staatlijke e-legitimatie) vertegenwoordigt een decennialang project om een staatsgeleid digitaal identiteitssysteem te creëren dat concurreert met BankID. Politieke controverse: mogelijke bezorgdheid van de private sector over concurrentie vanuit de Zweedse banksector.
+
+#### 5. Internationale verantwoordingscampagne van de oppositie [DIW 6,5 / L2]
+S en MP gebruiken interpellaties over de IAO (HD10475), humanitaire toegang tot Gaza (HD10476, HD10478) en minderhedenbeleid (HD10479) om een internationale dimensie aan hun verkiezingscampagne toe te voegen. Deze zullen de wetgeving niet veranderen maar zullen media-inhoud genereren die de regering afschildert als onvoldoende betrokken bij multilateralisme en humanitaire verplichtingen.
+
+---
+
+### VOORUITBLIK (T+72u – T+30d)
+
+| Kwestie | Triggerevenement | Verwacht T |
+|-------|---------------|-----------|
+| JuU32-stemming (openbare vergaderingen) | Plenaire behandeling | T+5–10d |
+| JuU34-stemming (Noordse strafrechtelijke handhaving) | Plenum | T+5–10d |
+| JuU39-stemming (psychologisch geweld) | Plenum | T+5–10d |
+| HD03267 (veiligheidsbedreigingen) — Lagrådets yttrande | Publicatie Lagrådet | T+7–14d |
+| FöU18 SIGINT-stemming | Plenaire behandeling | T+14–21d |
+| HD03250 e-ID verwijzing naar commissie | FiU-verwijzing | T+7d |
+| HD10476 Gaza ministerantwoord | 22-daagse termijn | T+22d |
+
+---
+
+### BETROUWBAARHEIDSBEOORDELING
+
+**Algehele betrouwbaarheid**: HOOG — Tier-C-aggregatie van bevestigde Riksdag-documenten. Documentidentiteiten geverifieerd via riksdag-regering MCP. Wetgevingstijdlijnprognoses dragen [B2] betrouwbaarheid — Admiraliteitsclassificatie B (doorgaans betrouwbare bron), bewijs classificatie 2 (bevestigd door onafhankelijke bronnen). Grondwettelijke uitdagingen beoordeeld [B3] (doorgaans betrouwbaar, niet onafhankelijk bevestigd).
+
+---
+
+### STRATEGISCHE BETEKENIS
+
+Dit is een pre-verkiezingen wetgevingssprint die de campagneplatformen van beide partijen zal bepalen. De regering rondt haar programma af. De oppositie stelt verantwoordingsregisters op. Beide partijen maximaliseren hun posities voor de verkiezingen van september 2026, nog 125 dagen weg.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_no.md -->
+
+**Klassifisering**: 🟢 PUBLIC  
+
+**DIW Aggregat**: 8,4  
+**Horisont**: T+72t til T+90d  
+**Lesetid**: ~5 minutter
+
+---
+
+### OVERSKRIFT
+
+**Sveriges lovgivningssprint for sikkerhetsstaten: Tre proposisjoner + seks komitérapporter rykker frem simultant — 125 dager før valget**
+
+---
+
+### SITUASJON
+
+Riksdagen behandlet i dag den mest konsentrerte sikkerhetslovgivningsklyngen i inneværende mandatperiode. Tre proposisjoner — et statlig digitalt ID-system (HD03250), utvidede folkeregistreringsfullmakter til Skatteverket (HD03261) og styrkede utvisningsfullmakter for sikkerhets­truende utlendinger (HD03267) — beveger seg simultant gjennom lovgivningsprosessen. Disse følges av seks komitébetenkninger: SIGINT-modernisering (FöU18), fengselsutvidelse (CU25), kapitalmarkedsreform (CU35), finanskrisehåndtering (FiU37), nordisk strafforfølgelse (JuU34) og kriminalisering av psykologisk vold (JuU39).
+
+Lovgivningsklyngen er ikke et svar på én enkelt hendelse. Den representerer i stedet den systematiske omsettingen av Tidö-koalisjonens fireårsprogram (2022–2026) til vedtatt lov før valet i september 2026. Hastigheten er bevisst og politisk.
+
+---
+
+### VIKTIGSTE FUNN (prioritert etter DIW)
+
+#### 1. SIGINT-modernisering + sikkerhets­truende utlendinger [DIW 9,0 / L3]
+Komitérapport FöU18 (SIGINT-modernisering) + proposisjon HD03267 (sikkerhetstrusler) utgjør en paret sikkerhetsklynge. FöU18 lukker gapet mellom Sveriges FRA-signalettretningslov og NATO-interoperabilitetskrav. HD03267 styrker utvisnings­fullmaktene for utenlandske statsborgere som utgjør kvalifiserte sikkerhetstrusler. Begge er underlagt Lagrådets vurdering. Konstitusjonell risiko: ECHR art. 8 (privatliv), art. 5 (frihet). Valgperspektiv: "Sverige tar sikkerheten på alvor" — Tidö-regjeringens kjernebranding.
+
+#### 2. Kapitalmarkeds- og finansreguleringspaket [DIW 7,8 / L2]
+FiU-komiteens rapporter dekker MTF-handelsplattformregler (CU35), OTC-derivater sentralclearing (FiU38), finanskrisehåndteringsfunksjon (FiU37) og statlig eiendomsforvaltning (FiU31). Dette er EU-drevne regulatoriske implementeringer med lav partipolitisk kontrovers men betydelig institusjonell og markedsmessig virkning. Gjennomføringen av pakken før valget styrker regjeringens fortelling om "ansvarlig økonomisk forvaltning".
+
+#### 3. Strafferettslovgivning [DIW 8,2 / L2+]
+JuU-komiteens rapporter om sikkerhet ved offentlige samlinger (JuU32), nordisk strafforfølgelse (JuU34) og kriminalisering av psykologisk vold (JuU39) rykker frem simultant. Kriminalisering av psykologisk vold er politisk særegen: den utvider strafferetten til adferd i nære relasjoner som tidligere var utenfor strafferettens rekkevidde, og forventes å generere 400–600 nye rettsforfølgelser årlig.
+
+#### 4. Digital statsinfrastruktur [DIW 7,5 / L2]
+HD03250 (statlig e-legitimasjon) representerer et tiårs prosjekt for å opprette et statlig digitalt identitetssystem i konkurranse med BankID. Politisk kontrovers: potensielle privatsektor-konkurransehensyn fra den svenske banksektoren.
+
+#### 5. Opposisjonens internasjonale ansvarlighets­kampanje [DIW 6,5 / L2]
+S og MP bruker interpellasjoner om ILO (HD10475), humanitær tilgang til Gaza (HD10476, HD10478) og minoritetspolitikk (HD10479) for å åpne en internasjonal dimensjon i sin valgkampanje. Disse vil ikke endre lovgivningen, men vil generere medieinnhold som rammer inn regjeringen som utilstrekkelig forpliktet til multilateralisme og humanitære forpliktelser.
+
+---
+
+### FREMTIDSUTSIKTER (T+72t – T+30d)
+
+| Sak | Utløsende hendelse | Forventet T |
+|-------|---------------|-----------|
+| JuU32-avstemning (offentlige samlinger) | Plenumsbehandling | T+5–10d |
+| JuU34-avstemning (nordisk strafforfølgelse) | Plenum | T+5–10d |
+| JuU39-avstemning (psykologisk vold) | Plenum | T+5–10d |
+| HD03267 (sikkerhetstrusler) — Lagrådets yttrande | Lagrådets publisering | T+7–14d |
+| FöU18 SIGINT-avstemning | Plenumsbehandling | T+14–21d |
+| HD03250 e-legitimasjon til komité | FiU-henstilling | T+7d |
+| HD10476 Gaza minister­svar | 22-dagers frist | T+22d |
+
+---
+
+### TILLITVURDERING
+
+**Samlet tillit**: HØY — Nivå-C-aggregering av bekreftede Riksdag-dokumenter. Dokumentidentiteter verifisert via riksdag-regering MCP. Lovgivningstidslinjeprognoner bærer [B2] tillit — Admiralitetskode B (vanligvis pålitelig kilde), bevisvurdering 2 (bekreftet av uavhengige kilder). Konstitusjonelle utfordringer vurdert [B3] (vanligvis pålitelig, ikke uavhengig bekreftet).
+
+---
+
+### STRATEGISK BETYDNING
+
+Dette er en lovgivningssprint foran valget som vil definere begge parters valgplattformer. Regjeringen gjennomfører sitt program. Opposisjonen lager ansvarsregistre. Begge sider maksimerer sine posisjoner før valget i september 2026, 125 dager unna.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_sv.md -->
+
+**Klassificering**: 🟢 PUBLIC  
+
+**DIW Aggregat**: 8,4  
+**Horisont**: T+72h till T+90d  
+**Lästid**: ~5 minuter
+
+---
+
+### RUBRIK
+
+**Sveriges lagstiftningssprint för säkerhetsstaten: Tre propositioner + sex utskottsbetänkanden avancerar simultaneously — 125 dagar före valet**
+
+---
+
+### LÄGESBILD
+
+Riksdagen behandlade idag det mest koncentrerade säkerhetspolitiska lagstiftningsklustret under innevarande mandatperiod. Tre propositioner — ett statligt digitalt ID-system (HD03250), utökade folkbokföringsbefogenheter för Skatteverket (HD03261) och stärkta utvisningsbefogenheter för utlänningar som utgör säkerhetshot (HD03267) — rör sig simultant genom lagstiftningspipelinen. Dessa följer sex utskottsbetänkanden: SIGINT-modernisering (FöU18), fängelsekapacitetsutökning (CU25), kapitalmarknadsreform (CU35), hantering av finanskriser (FiU37), nordiskt straffrättssamarbete (JuU34), och kriminalisering av psykologiskt våld (JuU39).
+
+Lagstiftningsklustret utgör inget svar på en enstaka händelse. Det representerar istället den systematiska omvandlingen av Tidökoalitionens fyraårsprogram (2022–2026) till antagen lag inför valet i september 2026. Lagstiftningshastigheten är avsiktlig och politisk.
+
+---
+
+### VIKTIGASTE FYND (prioriterade efter DIW)
+
+#### 1. SIGINT-modernisering + säkerhetshot mot utlänningar [DIW 9,0 / L3]
+Utskottsbetänkande FöU18 (SIGINT-modernisering) + proposition HD03267 (säkerhetshot) bildar ett parat säkerhetskluster. FöU18 stänger gapet mellan Sveriges FRA-signalspaningslagar och NATO-interoperabilitetskrav. HD03267 stärker utvisningsbefogenheterna för utländska medborgare som utgör kvalificerade säkerhetshot. Båda granskas av Lagrådet. Konstitutionell risk: ECHR art. 8 (privatliv), art. 5 (frihet). Valramsättning: "Sverige tar säkerheten på allvar" — Tidöregeringens kärnvarumärke.
+
+#### 2. Kapitalmarknads- och finansregleringspaketet [DIW 7,8 / L2]
+FiU-utskottets betänkanden täcker MTF-handelsplattformsregler (CU35), OTC-derivatcentralclearing (FiU38), finanskrisfunktion (FiU37) och statlig fastighetsförvaltning (FiU31). Dessa är EU-drivna regulatoriska implementeringar med låg partipolitisk kontroversnivå men stor institutionell och marknadsmässig påverkan. Genomförandet av detta paket inför valet stärker regeringens berättelse om "ansvarsfullt ekonomisk förvaltning".
+
+#### 3. Straffrättslagstiftning [DIW 8,2 / L2+]
+JuU-utskottets betänkanden om ordningshållning vid allmänna sammankomster (JuU32), nordiskt straffrättssamarbete (JuU34) och kriminalisering av psykologiskt våld (JuU39) avancerar simultant. Kriminalisering av psykologiskt våld är politiskt utmärkande: det utvidgar straffrätten till intim partners beteende som tidigare stod utanför straffrättens räckvidd, och förväntas generera 400–600 nya åtal per år.
+
+#### 4. Digital statlig infrastruktur [DIW 7,5 / L2]
+HD03250 (statlig e-legitimation) representerar ett decennielångt projekt för att skapa ett statligt digitalt identitetssystem i konkurrens med BankID. Politisk kontrovers: potentiella privatsektor-konkurrensbekymmer från den svenska banksektorn.
+
+#### 5. Oppositionens internationella ansvarstagandekampanj [DIW 6,5 / L2]
+S och MP utnyttjar interpellationer om ILO (HD10475), humanitär tillgång till Gaza (HD10476, HD10478) och minoritetspolitik (HD10479) för att öppna en internationell dimension i sin valkampanj. Dessa kommer inte att förändra lagstiftningen men generera medieinnehåll som ramar in regeringen som otillräckligt engagerad i multilateralism och humanitära åtaganden.
+
+---
+
+### FRAMTIDSUTSIKTER (T+72h – T+30d)
+
+| Fråga | Utlösande händelse | Förväntat T |
+|-------|---------------|-----------|
+| JuU32-omröstning (allmänna sammankomster) | Kammarbehandling | T+5–10d |
+| JuU34-omröstning (nordiskt straffrättssamarbete) | Kammarmöte | T+5–10d |
+| JuU39-omröstning (psykologiskt våld) | Kammarmöte | T+5–10d |
+| HD03267 (säkerhetshot) — Lagrådets yttrande | Lagrådets publicering | T+7–14d |
+| FöU18 SIGINT-omröstning | Kammarbehandling | T+14–21d |
+| HD03250 e-legitimations hänvisning till utskott | FiU-hänvisning | T+7d |
+| HD10476 Gaza ministerssvar | 22-dagarsfrist | T+22d |
+
+---
+
+### KONFIDENSBEDÖMNING
+
+**Övergripande konfidensgrad**: HÖG — Nivå-C-aggregering av bekräftade riksdagsdokument. Dokumentidentiteter verifierade via riksdag-regering MCP. Lagstiftningstidslinjeprognoser bär [B2]-konfidensgrad — Admiralikoden B (vanligtvis pålitlig källa), bevisgrad 2 (bekräftad av oberoende källori). Konstitutionella utmaningar bedömda [B3] (vanligtvis pålitlig, ej oberoende bekräftad).
+
+---
+
+### STRATEGISK BETYDELSE
+
+Detta är en lagstiftningssprint inför valet som definierar båda partiers kampanjplattformar. Regeringen genomför sitt program. Oppositionen skapar ansvarighetsregister. Bägge sidor maximerar sina positioner inför valet i september 2026, 125 dagar bort.
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_zh.md -->
+
+**分类**: 🟢 PUBLIC  
+
+**DIW综合**: 8.4  
+**时间范围**: T+72小时至T+90天  
+**阅读时间**: 约5分钟
+
+---
+
+### 标题
+
+**瑞典安全国家立法冲刺：3项政府提案+6份委员会报告同步推进 — 距大选125天**
+
+---
+
+### 当前状况
+
+今天，议会处理了本届会议最为集中的安全立法一揽子方案。三项政府提案——国家数字身份系统（HD03250）、扩大Skatteverket的人口登记权限（HD03261）以及强化对构成安全威胁外国人的驱逐权限（HD03267）——正同步推进立法程序。随后是六份委员会betänkanden：SIGINT现代化（FöU18）、监狱扩建（CU25）、资本市场改革（CU35）、金融危机管理（FiU37）、北欧联合刑事执行（JuU34）以及心理暴力入罪（JuU39）。
+
+这一立法组合并非针对特定事件的紧急回应。它代表着将蒂德约联合政府四年（2022-2026）施政纲领在2026年9月大选前转化为有效法律的系统性工作。立法节奏是蓄意的、具有政治动机的。
+
+---
+
+### 主要发现（按DIW优先级排序）
+
+#### 1. SIGINT现代化+安全威胁外国人 [DIW 9.0 / L3]
+委员会报告FöU18（SIGINT现代化）+ HD03267（安全威胁）构成双重安全套餐。FöU18填补了FRA信号情报法律框架与北约互操作性要求之间的差距。HD03267强化了对构成合格安全威胁的外国公民的驱逐权限。两项均须接受法律委员会审查。宪法风险：《欧洲人权公约》第8条（隐私）、第5条（自由）。选举框架："瑞典认真对待安全" ——蒂德约政府的核心品牌。
+
+#### 2. 资本市场与金融部门监管套餐 [DIW 7.8 / L2]
+FiU委员会报告涵盖MTF交易平台规则（CU35）、场外衍生品中央清算（FiU38）、金融危机管理职能（FiU37）以及国有资产管理（FiU31）。这些是欧盟驱动的监管执行，党派争议较少，但机构和市场影响重大。在大选前完成这一套餐强化了政府"负责任的经济管理"叙事。
+
+#### 3. 刑事司法立法 [DIW 8.2 / L2+]
+关于公共集会安全（JuU32）、北欧刑事执行（JuU34）以及心理暴力入罪（JuU39）的JuU委员会报告同步推进。心理暴力入罪具有政治显著性：它将刑法扩展至涵盖以前不属于入罪范围的亲密关系中的行为，预计每年新增400-600件起诉。
+
+#### 4. 国家数字基础设施 [DIW 7.5 / L2]
+HD03250（政府数字身份证）代表着创建政府管理数字身份系统以与BankID竞争的十年项目。政治争议：瑞典银行业竞争方面的私营部门潜在关切。
+
+#### 5. 反对党国际问责运动 [DIW 6.5 / L2]
+社民党和绿党利用关于国际劳工组织（HD10475）、加沙人道主义通道（HD10476、HD10478）以及少数民族政策（HD10479）的质询，为其竞选活动开辟国际维度。这些质询不会改变立法，但将产生将政府描绘为对多元主义和人道主义承诺投入不足的媒体内容。
+
+---
+
+### 前瞻预测（T+72小时 – T+30天）
+
+| 议题 | 事件触发 | 预计T |
+|------|---------|-------|
+| JuU32投票（公共集会） | 全体讨论 | T+5–10d |
+| JuU34投票（北欧刑事执行） | 全体会议 | T+5–10d |
+| JuU39投票（心理暴力） | 全体会议 | T+5–10d |
+| HD03267（安全威胁）— Lagrådets yttrande | 法律委员会发布 | T+7–14d |
+| FöU18 SIGINT投票 | 全体讨论 | T+14–21d |
+| HD03250 电子证件委员会转介 | FiU转介 | T+7d |
+| HD10476 加沙部长回复 | 22天截止 | T+22d |
+
+---
+
+### 置信度评估
+
+**总体置信度**: 高 — C级别经验证的议会文件汇总。文件ID通过riksdag-regering MCP验证。立法时间表预测置信度[B2]——信源评级B（通常可靠），证据评级2（经独立来源确认）。宪法挑战估计为[B3]（通常可靠，未经独立确认）。
+
+---
+
+### 战略意义
+
+这是一场大选前立法冲刺，将定义两个阵营的竞选纲领。政府正在落实其施政纲领。反对党正在构建问责记录。双方都在为125天后的2026年9月大选最大化己方定位。
+
+<!-- source-sha: 5a2ba3ab06b74a5fb87d6c59af5a83eedc44bede -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 23 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2081,6 +3007,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

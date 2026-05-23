@@ -6,7 +6,7 @@ date: 2026-05-07
 subfolder: monthly-review
 slug: 2026-05-07-monthly-review
 source_folder: analysis/daily/2026-05-07/monthly-review
-generated_at: 2026-05-23T08:06:00.696Z
+generated_at: 2026-05-23T22:05:56.664Z
 language: en
 layout: article
 ---
@@ -84,6 +84,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1541,13 +1554,679 @@ Sibling analysis folders checked (last 30 days):
 - analysis/daily/2026-04-30/propositions/ — not yet present
 - Prior monthly sibling data: committee report analyses referenced from downloaded data
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_ar.md -->
+
+&#x200F;# تقرير — المراجعة الشهرية، مايو 2026
+
+**التصنيف**: عام | **التاريخ**: 2026-05-07 | **الفترة**: أبريل–مايو 2026
+**مستوى الثقة**: مرتفع للحقائق التشريعية؛ متوسط للتوقعات الانتخابية
+
+### الخلاصة في ثلاث جمل
+
+تنهي حكومة تيدو دورة البرلمان 2025/26 بسباق تشريعي يُركّز على السيطرة الرقمية للدولة (التعريف الإلكتروني الحكومي، Skatteverket)، وتوسيع منظومة الأمن (تهديدات أمنية-أجانب، أمن التجمعات العامة)، والتوافق التنظيمي المالي مع الولايات الأوروبية (EMIR، الإدارة التشغيلية للأزمات). مع اقتراب انتخابات سبتمبر 2026، جاء كل قانون مُعايَرًا لإيصال رسالة الكفاءة في النظام والأمن والتحديث إلى قاعدة الناخبين الأساسية للائتلاف، في حين كشفت استجوابات المعارضة حول غزة وإغلاقات بوستنورد في المناطق الريفية عن نقاط ضعف في السياسة الخارجية والتضامن الإقليمي. أبرز التدابير الاستراتيجية بُعدًا HD03250 (الهوية الإلكترونية الحكومية): إذا صدر، ستصبح السويد أول دولة إسكندنافية تعتمد هوية رقمية وطنية إلزامية، مما يُعيد تشكيل التفاعل الرقمي بين المواطن والدولة لعقود.
+
+### عناصر الاستخبارات ذات الأولوية (حلول PIR — مايو 2026)
+
+| PIR | الحل | مستوى الثقة |
+|-----|------|------------|
+| PIR-1: استقرار الائتلاف | ائتلاف تيدو متماسك حتى آخر شهر في الدورة البرلمانية؛ لا انشقاقات | مرتفع |
+| PIR-2: تأثير سياسة حزب SD | بصمات SD واضحة في HD03267 (تهديد أمني/أجانب) وHD01JuU32 (أمن التجمعات) | مرتفع |
+| PIR-3: انتخابات 2026 | تأكيد التأشير التشريعي قبيل الانتخابات؛ محاور الحملة: الأمن، الدولة الرقمية، الامتثال للمعايير الأوروبية | مرتفع |
+| PIR-4: الناتو/الأمن | HD03267 يُعزز قدرات الجهاز الأمني بما يتوافق مع تهديدات الناتو | متوسط |
+| PIR-5: التعافي الاقتصادي | IMF WEO أبريل-2026 متدهور عند الاسترداد؛ نمو SWE إيجابي لكن دون متوسط الاتحاد الأوروبي | منخفض (فجوة بيانات) |
+
+### أبرز خمسة إجراءات تشريعية (مايو 2026)
+
+1. **HD03250 — الهوية الإلكترونية الحكومية** (حرج): هوية رقمية حكومية إلزامية للوصول إلى الخدمات الحكومية. انعكاسات على الخصوصية بموجب RF الفصل الثاني والمادة 8 من ECHR؛ رأي مجلس التشريع قيد الانتظار.
+2. **HD03267 — التهديد الأمني/الأجانب** (مرتفع): صلاحيات ترحيل موسّعة للأشخاص الذين يُمثّلون "تهديدًا أمنيًا مؤهَّلًا". يمسّ المادتين 3 و6 من ECHR — رأي مجلس التشريع قيد الانتظار. تشريع رائد لحزب SD.
+3. **HD01FiU37 — وظيفة جديدة للإدارة التشغيلية للأزمات** (مرتفع): ينشئ كيانًا جديدًا لإدارة الأزمات التشغيلية في القطاع المالي — يتوافق مع أطر EU DORA/Bank Recovery.
+4. **HD01JuU39 — العنف النفسي** (مرتفع): جريمة جنائية مخصصة جديدة للعنف النفسي — تسدّ ثغرة في قانون العنف الأسري.
+5. **HD03261 — سجل الإقامة لدى Skatteverket** (متوسط-مرتفع): صلاحيات موسّعة لهيئة الضرائب للتحقق من تسجيل الإقامة — أثارت المعارضة مخاوف المراقبة.
+
+### السياق الاقتصادي
+
+**بيانات IMF WEO أبريل-2026 (الاسترداد متدهور — الجلب الخام فارغ)**:
+- تقدير نمو الناتج المحلي الإجمالي للسويد 2026: ~1.8٪ (توقعات بنك Riksbank Q1 2026 مُستخدمة كوكيل في ظل فجوة بيانات IMF)
+- مقارنة الأقران الإسكندنافيين: النرويج > السويد > الدنمارك > فنلندا بناءً على ديناميكيات أسعار الطاقة وسوق العمل
+- المساحة المالية: السويد تحافظ على تصنيف AAA، نسبة الدين للناتج ~35٪؛ موازنة ائتلاف تيدو 2026 حافظت على التوازن الأساسي
+
+**انضباط المصادر**: IMF WEO أبريل-2026 مفضَّل؛ IFS متدهور — الادعاءات أعلاه مُستمَدّة من مصادر بديلة حيث أعاد استرداد IMF قيمًا فارغة؛ مُوضَّح ذلك في الهوامش.
+
+### البُعد الدولي
+
+- **أزمة غزة**: استجوابان لنائبَي البرلمان (HD10476, HD10478) واستجواب لحزب V (HD10470 — هجوم أسطول إسرائيل Global Sumud) يُشيران إلى تصاعد الضغط اليساري والأخضر على موقف السويد من غزة. يُتوقع أن يُركّز رد الحكومة على القانون الإنساني دون توجيه انتقادات سياسية مباشرة لإسرائيل.
+- **حوكمة ILO** (HD10475): يُشكّك S/Magnusson في التزام الحكومة باتفاقيات ILO — يربط ذلك بالنقاش الأوروبي الأوسع حول الركيزة الاجتماعية.
+
+### التوقعات (T+30 يومًا → يوم الاقتراع)
+
+احتمال مرتفع: الائتلاف يحكم حتى انتخابات البرلمان في سبتمبر 2026 دون انتخابات مبكرة. خط أنابيب التشريع يُغلق. الحملة تنطلق في يونيو 2026.
+
+---
+*ملاحظة تحسين الخطوة الثانية*: تم تحديث القسم الاقتصادي ليشمل توضيحًا صريحًا لفجوة بيانات IMF. توقعات بنك Riksbank Q1 2026 مُستخدمة كوكيل لنمو الناتج المحلي الإجمالي السويدي ~1.8٪؛ المصدر: تقرير السياسة النقدية لبنك Riksbank فبراير 2026 (عام). جميع محاولات استرداد IMF WEO أبريل-2026 أعادت قيمًا فارغة في 2026-05-07T15:08:00Z — موضَّح وفق ECONOMIC_DATA_CONTRACT.md v3.0 (لم يُفعَّل بند >6 أشهر؛ مُوثَّق فشل الاسترداد بدلًا من ذلك). التوقعات الانتخابية مستندة إلى اتجاه مقياس الناخبين SVT Väljarbarometern ودورة استطلاعات Sifo مارس–أبريل 2026.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_da.md -->
+
+**Klassifikation**: OFFENTLIG | **Dato**: 2026-05-07 | **Periode**: April–maj 2026
+**Konfidensgrad**: HØJ for lovgivningsfakta; MEDIUM for valgprognoser
+
+### Konklusion i tre sætninger
+
+Tidö-regeringen afslutter riksmöte 2025/26 med en lovgivningssprint, der lægger vægt på statslig digital kontrol (e-legitimation, Skatteverket), sikkerhedsudvidelser (sikkerhedstrusler-udlændinge, sikkerhed ved offentlige forsamlinger) og finansiel reguleringstilpasning til EU-mandater (EMIR, operativ krisestyring). Med et kommende valg i september 2026 er hver lov kalibreret til at signalere lov-og-orden og moderniseringskompetence til koalitionens kernevælgere, mens oppositionens interpellationer om Gaza og Postnords landdistriktslukninger afslører omstridte flanker vedrørende udenrigspolitik og regional solidaritet. Den mest konsekvente langsigtede foranstaltning er HD03250 (statlig e-legitimation): hvis den vedtages, bliver Sverige det første nordiske land med et obligatorisk statsligt digitalt identifikationssystem, som grundlæggende omformer borger-statsdig interaktion i årtier fremover.
+
+### Prioriterede efterretningspunkter (PIR-løsninger — maj 2026)
+
+| PIR | Løsning | Konfidensgrad |
+|-----|---------|--------------|
+| PIR-1: Koalitionsstabilitet | Tidö-koalitionen intakt til den sidste riksmöte-måned; ingen afhopp | HØJ |
+| PIR-2: SD's politiske indflydelse | SD's fingeraftryk synlige i HD03267 (sikkerhedstrusler/udlændinge) og HD01JuU32 (forsamlingssikkerhed) | HØJ |
+| PIR-3: Valg 2026 | Prævalg lovgivningssignalering bekræftet; kampagnetemaer: sikkerhed, digital stat, EU-overholdelse | HØJ |
+| PIR-4: NATO/sikkerhed | HD03267 styrker sikkerhedsapparatets kapacitet i overensstemmelse med NATO's trusselsbillede | MEDIUM |
+| PIR-5: Økonomisk genopretning | IMF WEO apr-2026 forringet ved hentning; SWE-vækst positiv men under EU-gennemsnittet | LAV (datagab) |
+
+### Top fem lovgivningstiltag (maj 2026)
+
+1. **HD03250 — Statlig e-legitimation** (KRITISK): Statsligt digitalt ID obligatorisk for adgang til offentlige tjenester. Privatlivsimplikationer under RF 2 kap. og EMRK art. 8; afventer lovudvalgets høring.
+2. **HD03267 — Sikkerhedstrusler/udlændinge** (HØJ): Udvidede udvisningsbeføjelser for personer, der udgør en "kvalificeret sikkerhedstrussel." Berører EMRK art. 3 og art. 6 — afventer lovudvalgets høring. SD's flagskibslovgivning.
+3. **HD01FiU37 — Ny funktion for operativ krisestyring** (HØJ): Opretter ny enhed for operativ krisestyring i finanssektoren — tilpasses EU DORA/Bank Recovery-rammerne.
+4. **HD01JuU39 — Psykisk vold** (HØJ): Nyt dedikeret straffelovsovertrædelse for psykisk vold — udfylder et hul i lovgivningen om intimt partnervold.
+5. **HD03261 — Skatteverket folkbokföring** (MEDIUM-HØJ): Udvidede beføjelser til skattemyndigheden til at verificere folkeregisterregistrering — overvågningsbekymringer rejst af oppositionen.
+
+### Økonomisk kontekst
+
+**IMF WEO apr-2026 (hentning forringet — råfetch null)**:
+- Sveriges BNP-vækstestimering 2026: ~1,8 % (prognose fra Riksbankens estimater Q1 2026 brugt som proxy givet IMF-datagab)
+- Nordisk sammenligningsgruppe: Norge > Sverige > Danmark > Finland baseret på energipris- og arbejdsmarkedsdynamik
+- Finanspolitisk råderum: Sverige opretholder AAA-rating, gæld-til-BNP ~35 %; Tidö-koalitionens budget 2026 opretholdt primær balance
+
+**Kildedisciplin**: IMF WEO apr-2026 foretrukket; IFS forringet — ovenstående påstande proxy-kildet, hvor IMF-hentning returnerede null; annoteret tilsvarende.
+
+### International dimension
+
+- **Gazakrisen**: To MP-interpellationer (HD10476, HD10478) og én V-interpellation (HD10470 — Israel-flotille Global Sumud-angreb) signalerer voksende venstre/grønt pres på Sveriges Gazaposition. Regeringens svar forventes at lægge vægt på humanitær ret frem for direkte politisk kritik af Israel.
+- **ILO-styring** (HD10475): S/Magnusson sætter spørgsmålstegn ved regeringens engagement for ILO-konventioner — forbinder til bredere EU-debat om den sociale søjle.
+
+### Udsigter (T+30d → valgdag)
+
+Høj sandsynlighed: koalitionen regerer til riksdagsvalget i september 2026 uden ekstravalg. Lovgivningspipelinen lukkes. Kampagnen lanceres juni 2026.
+
+---
+*Forbedringsnote Pass 2*: Økonomiafsnit opdateret med eksplicit annotation af IMF-datagab. Riksbankens Q1 2026-prognose brugt som proxy for SWE BNP-vækst ~1,8 %; kilde: Riksbankens pengepolitiske rapport februar 2026 (offentlig). Alle IMF WEO apr-2026-hentningsforsøg returnerede null ved 2026-05-07T15:08:00Z — annoteret i henhold til ECONOMIC_DATA_CONTRACT.md v3.0 (>6 måneder annotation ikke udløst; hentningsfejl annoteret i stedet). Valprognoser baseret på SVT Väljarbarometerns tendens og Sifos marts–april 2026 meningsmålingscyklus.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_de.md -->
+
+**Klassifizierung**: ÖFFENTLICH | **Datum**: 2026-05-07 | **Zeitraum**: April–Mai 2026
+**Konfidenzniveau**: HOCH für Gesetzgebungsfakten; MITTEL für Wahlprojektionen
+
+### Fazit in drei Sätzen
+
+Die Tidö-Regierung beendet den Riksdag 2025/26 mit einem Gesetzgebungssprint, der staatliche digitale Kontrolle (E-Identifizierung, Skatteverket), Sicherheitserweiterungen (Sicherheitsbedrohungen-Ausländer, Sicherheit bei öffentlichen Versammlungen) und finanzielle regulatorische Angleichung an EU-Mandate (EMIR, operative Krisenmanagement) betont. Vor den bevorstehenden Wahlen im September 2026 ist jedes Gesetz darauf ausgerichtet, der Kernwählerschaft der Koalition Kompetenz in Recht-und-Ordnung und Modernisierung zu signalisieren, während Oppositionsinterpellationen zu Gaza und Postnords Schließungen im ländlichen Raum angreifbare Flanken in der Außenpolitik und regionalen Solidarität aufdecken. Die folgenreichste langfristige Maßnahme ist HD03250 (staatliche E-Identifizierung): Wenn sie umgesetzt wird, wäre Schweden das erste nordische Land mit einer obligatorischen staatlichen digitalen Identität, die die digitale Bürger-Staat-Interaktion für Jahrzehnte grundlegend umgestaltet.
+
+### Prioritäre Geheimdienstpunkte (PIR-Lösungen — Mai 2026)
+
+| PIR | Lösung | Konfidenzniveau |
+|-----|--------|----------------|
+| PIR-1: Koalitionsstabilität | Tidö-Koalition bis zum letzten Riksdag-Monat intakt; keine Abspaltungen | HOCH |
+| PIR-2: SD-Politikeinfluss | SD-Fingerabdrücke in HD03267 (Sicherheitsbedrohung/Ausländer) und HD01JuU32 (Versammlungssicherheit) sichtbar | HOCH |
+| PIR-3: Wahl 2026 | Vorwahlgesetzgebungssignalgebung bestätigt; Kampagnenthemen: Sicherheit, digitaler Staat, EU-Compliance | HOCH |
+| PIR-4: NATO/Sicherheit | HD03267 stärkt die Kapazität des Sicherheitsapparats im Einklang mit dem NATO-Bedrohungsbild | MITTEL |
+| PIR-5: Wirtschaftliche Erholung | IMF WEO Apr-2026 bei Abruf verschlechtert; SWE-Wachstum positiv, aber unter EU-Durchschnitt | NIEDRIG (Datenlücke) |
+
+### Top fünf Gesetzgebungsmaßnahmen (Mai 2026)
+
+1. **HD03250 — Staatliche E-Legitimation** (KRITISCH): Staatliche digitale ID obligatorisch für den Zugang zu Behördendienstleistungen. Datenschutzimplikationen nach RF 2 Kap. und EMRK Art. 8; Gutachten des Gesetzgebungsrats ausstehend.
+2. **HD03267 — Sicherheitsbedrohung/Ausländer** (HOCH): Erweiterte Ausweisungsbefugnisse für Personen, die eine „qualifizierte Sicherheitsbedrohung" darstellen. Berührt EMRK Art. 3 und Art. 6 — Gutachten des Gesetzgebungsrats ausstehend. SD-Flaggschiffgesetzgebung.
+3. **HD01FiU37 — Neue Funktion für operatives Krisenmanagement** (HOCH): Schafft eine neue Einheit für operatives Krisenmanagement im Finanzsektor — im Einklang mit EU DORA/Bank Recovery-Rahmenwerken.
+4. **HD01JuU39 — Psychische Gewalt** (HOCH): Neuer eigenständiger Straftatbestand für psychische Gewalt — schließt eine Lücke im Gesetz über häusliche Partnergewalt.
+5. **HD03261 — Skatteverket Meldewesen** (MITTEL-HOCH): Erweiterte Befugnisse für das Finanzamt zur Überprüfung der Wohnsitzmeldung — Überwachungsbedenken von der Opposition geäußert.
+
+### Wirtschaftlicher Kontext
+
+**IMF WEO Apr-2026 (Abruf verschlechtert — Raw-Fetch null)**:
+- Schweden BIP-Wachstumsschätzung 2026: ~1,8 % (Prognose aus Riksbank-Schätzungen Q1 2026 als Proxy bei IMF-Datenlücke verwendet)
+- Nordischer Vergleich: Norwegen > Schweden > Dänemark > Finnland auf Basis von Energiepreis- und Arbeitsmarktdynamik
+- Fiskalpolitischer Spielraum: Schweden hält AAA-Rating, Schulden-BIP-Verhältnis ~35 %; Tidö-Koalitions Budget 2026 hielt Primärsaldo aufrecht
+
+**Quellendisziplin**: IMF WEO Apr-2026 bevorzugt; IFS verschlechtert — obige Behauptungen proxy-quellengestützt, wo IMF-Abruf null zurückgab; entsprechend annotiert.
+
+### Internationale Dimension
+
+- **Gaza-Krise**: Zwei MP-Interpellationen (HD10476, HD10478) und eine V-Interpellation (HD10470 — Israel-Flottille Global Sumud-Angriff) signalisieren wachsenden links-/grünen Druck auf Schwedens Gaza-Position. Die Antwort der Regierung soll humanitäres Recht betonen statt direkter politischer Kritik an Israel.
+- **ILO-Governance** (HD10475): S/Magnusson hinterfragt das Engagement der Regierung für ILO-Konventionen — knüpft an die breitere EU-Debatte über die soziale Säule an.
+
+### Ausblick (T+30d → Wahltag)
+
+Hohe Wahrscheinlichkeit: Die Koalition regiert bis zu den Riksdagswahlen im September 2026 ohne Sonderwahlen. Die Gesetzgebungspipeline schließt. Kampagne startet Juni 2026.
+
+---
+*Pass-2-Verbesserungshinweis*: Wirtschaftsabschnitt aktualisiert, um die IMF-Datenlücke explizit zu annotieren. Riksbank-Prognose Q1 2026 als Proxy für SWE-BIP-Wachstum ~1,8 % verwendet; Quelle: Riksbank-Geldpolitikbericht Februar 2026 (öffentlich). Alle IMF-WEO-Apr-2026-Abrufversuche gaben null zurück bei 2026-05-07T15:08:00Z — gemäß ECONOMIC_DATA_CONTRACT.md v3.0 Vintage-Disziplin annotiert (>6 Monate Annotation nicht ausgelöst; Abruffehler stattdessen annotiert). Wahlprognosen basieren auf dem SVT-Väljarbarometer-Trend und dem Sifo März–April 2026 Umfragezyklus.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICO | **Fecha**: 2026-05-07 | **Período**: Abril–mayo 2026
+**Nivel de confianza**: ALTO para hechos legislativos; MEDIO para proyecciones electorales
+
+### Conclusión en tres oraciones
+
+El gobierno Tidö concluye el período parlamentario 2025/26 con un sprint legislativo que enfatiza el control digital estatal (identidad electrónica, Skatteverket), expansiones de seguridad (amenaza de seguridad-extranjeros, seguridad en reuniones públicas) y alineación regulatoria financiera con los mandatos de la UE (EMIR, gestión operativa de crisis). Ante las próximas elecciones de septiembre de 2026, cada ley está calibrada para señalar competencia en ley-y-orden y modernización a la base de votantes central de la coalición, mientras que las interpelaciones de la oposición sobre Gaza y los cierres rurales de Postnord exponen flancos controvertidos en política exterior y solidaridad regional. La medida más consecuente a largo plazo es HD03250 (identidad electrónica estatal): si se aprueba, Suecia se convertiría en el primer país nórdico con una identidad digital estatal obligatoria, remodelando fundamentalmente la interacción digital ciudadano-Estado por décadas.
+
+### Puntos de inteligencia prioritarios (resoluciones PIR — mayo 2026)
+
+| PIR | Resolución | Nivel de confianza |
+|-----|-----------|-------------------|
+| PIR-1: Estabilidad de la coalición | Coalición Tidö intacta durante el último mes parlamentario; sin deserciones | ALTO |
+| PIR-2: Influencia política del SD | Huellas del SD visibles en HD03267 (amenaza de seguridad/extranjeros) y HD01JuU32 (seguridad de reuniones) | ALTO |
+| PIR-3: Elecciones 2026 | Señalización legislativa pre-electoral confirmada; temas de campaña: seguridad, Estado digital, cumplimiento UE | ALTO |
+| PIR-4: OTAN/seguridad | HD03267 refuerza la capacidad del aparato de seguridad alineada con la postura de amenaza de la OTAN | MEDIO |
+| PIR-5: Recuperación económica | FMI WEO abr-2026 degradado en la recuperación; crecimiento SWE positivo pero por debajo del promedio UE | BAJO (brecha de datos) |
+
+### Las cinco principales acciones legislativas (mayo 2026)
+
+1. **HD03250 — Identidad electrónica estatal** (CRÍTICO): Identidad digital estatal obligatoria para el acceso a servicios gubernamentales. Implicaciones de privacidad bajo RF 2 cap. y CEDH art. 8; dictamen del Consejo de Legislación pendiente.
+2. **HD03267 — Amenaza de seguridad/extranjeros** (ALTO): Poderes de expulsión ampliados para personas que constituyen una "amenaza de seguridad calificada". Toca CEDH art. 3 y art. 6 — dictamen del Consejo de Legislación pendiente. Legislación insignia del SD.
+3. **HD01FiU37 — Nueva función para la gestión operativa de crisis** (ALTO): Crea una nueva entidad de gestión operativa de crisis en el sector financiero — alineada con los marcos EU DORA/Bank Recovery.
+4. **HD01JuU39 — Violencia psicológica** (ALTO): Nuevo delito penal dedicado a la violencia psicológica — llena un vacío en la ley de violencia de pareja.
+5. **HD03261 — Registro de domicilio de Skatteverket** (MEDIO-ALTO): Poderes ampliados para la Agencia Tributaria para verificar el registro de residencia — preocupaciones de vigilancia planteadas por la oposición.
+
+### Contexto económico
+
+**Cosecha FMI WEO abr-2026 (recuperación degradada — fetch bruto nulo)**:
+- Estimación de crecimiento del PIB de Suecia 2026: ~1,8 % (proyección de estimaciones del Riksbank Q1 2026 usada como proxy por brecha de datos del FMI)
+- Comparación entre pares nórdicos: Noruega > Suecia > Dinamarca > Finlandia basada en dinámica de precios de energía y mercado laboral
+- Espacio fiscal: Suecia mantiene calificación AAA, deuda-PIB ~35 %; el presupuesto 2026 de la coalición Tidö mantuvo el balance primario
+
+**Disciplina de fuentes**: FMI WEO abr-2026 preferido; IFS degradado — las afirmaciones anteriores con fuentes proxy donde la recuperación FMI devolvió nulo; anotado en consecuencia.
+
+### Dimensión internacional
+
+- **Crisis de Gaza**: Dos interpelaciones de parlamentarios (HD10476, HD10478) y una interpelación V (HD10470 — ataque a la flotilla israelí Global Sumud) señalan una creciente presión de izquierdas/verdes sobre la posición de Suecia en Gaza. Se espera que la respuesta del gobierno enfatice el derecho humanitario en lugar de la crítica política directa a Israel.
+- **Gobernanza de la OIT** (HD10475): S/Magnusson cuestiona el compromiso del gobierno con los convenios de la OIT — vincula con el debate más amplio sobre el pilar social europeo.
+
+### Perspectivas (T+30d → día de elecciones)
+
+Alta probabilidad: la coalición gobierna hasta las elecciones del Riksdag en septiembre de 2026 sin voto anticipado. La cartera legislativa se cierra. La campaña se lanza en junio de 2026.
+
+---
+*Nota de mejora del Paso 2*: Sección económica actualizada para anotar explícitamente la brecha de datos del FMI. Proyección del Riksbank Q1 2026 utilizada como proxy para el crecimiento del PIB SWE ~1,8 %; fuente: Informe de política monetaria del Riksbank de febrero de 2026 (público). Todos los intentos de recuperación de FMI WEO abr-2026 devolvieron nulo a 2026-05-07T15:08:00Z — anotado conforme a ECONOMIC_DATA_CONTRACT.md v3.0 (anotación >6 meses no activada; fallo de recuperación anotado en su lugar). Proyecciones electorales basadas en la tendencia del barómetro electoral de SVT y el ciclo de sondeos Sifo de marzo-abril de 2026.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_fi.md -->
+
+**Luokitus**: JULKINEN | **Päivämäärä**: 2026-05-07 | **Kausi**: Huhtikuu–toukokuu 2026
+**Luottamustaso**: KORKEA lainsäädäntötosiseikoilla; KESKI vaaliennusteissa
+
+### Kolmen lauseen johtopäätös
+
+Tidö-hallitus päättää riksmöten 2025/26 lainsäädäntösprintillä, joka korostaa valtion digitaalista kontrollia (e-legitimaatio, Skatteverket), turvallisuuslaajennuksia (turvallisuusuhka-ulkomaalaiset, yleisten kokousten turvallisuus) ja finanssialan sääntelylinjauksia EU:n mandaatteihin (EMIR, operatiivinen kriisinhallinta). Lähestyvän syyskuun 2026 vaalien myötä jokainen laki on kalibroitu signaloimaan laki-ja-järjestys- ja modernisointiosaamisesta koalition ydänäänestäjille, kun taas oppositioin interpellaatiot Gazasta ja Postnordin maaseutupalveluiden lopettamisesta paljastavat kiistanalaisia sivustoja ulkopolitiikassa ja alueellisessa solidaarisuudessa. Merkittävin pitkän aikavälin toimenpide on HD03250 (valtion e-legitimaatio): toteutuessaan Ruotsista tulee ensimmäinen Pohjoismaa, jossa on pakollinen valtion digitaalinen henkilöllisyys, mikä muuttaa perusteellisesti kansalaisten ja valtion digitaalista vuorovaikutusta vuosikymmeniksi.
+
+### Prioriteettiset tiedustelupisteet (PIR-ratkaisut — toukokuu 2026)
+
+| PIR | Ratkaisu | Luottamustaso |
+|-----|----------|--------------|
+| PIR-1: Koalition vakaus | Tidö-koalitio ehjä viimeisen riksmöte-kuukauden läpi; ei hajoamisia | KORKEA |
+| PIR-2: SD:n politiikkavaikutus | SD:n jälki näkyvissä HD03267:ssä (turvallisuusuhka/ulkomaalaiset) ja HD01JuU32:ssa (kokousturvallisuus) | KORKEA |
+| PIR-3: Vaalit 2026 | Ennakkovaalilainsäädäntösignalointi vahvistettu; kampanjateemat: turvallisuus, digitaalinen valtio, EU-vaatimustenmukaisuus | KORKEA |
+| PIR-4: NATO/turvallisuus | HD03267 vahvistaa turvallisuusaparatin kapasiteettia NATO:n uhkakuvan mukaisesti | KESKI |
+| PIR-5: Taloudellinen elpyminen | IMF WEO huhtikuu-2026 heikentyi haussa; SWE-kasvu positiivinen mutta alle EU-keskiarvon | MATALA (tietoaukko) |
+
+### Viisi tärkeintä lainsäädäntötoimenpidettä (toukokuu 2026)
+
+1. **HD03250 — Valtion e-legitimaatio** (KRIITTINEN): Valtion digitaalinen henkilöllisyys pakollinen viranomaistiedostoihin pääsyyn. Yksityisyysvaikutukset RF 2 luvun ja ECHR 8 artiklan nojalla; Lakineuvoksen lausunto odottaa.
+2. **HD03267 — Turvallisuusuhka/ulkomaalaiset** (KORKEA): Laajennetut karkotusvallat henkilöille, jotka muodostavat "laadullisen turvallisuusuhan." Koskee ECHR 3 artiklaa ja 6 artiklaa — Lakineuvoksen lausunto odottaa. SD:n lippulaivaölainsäädäntö.
+3. **HD01FiU37 — Uusi operatiivisen kriisinhallinnon toiminto** (KORKEA): Luo uuden rahoitussektorin operatiivisen kriisinhallintoyksikön — yhdensuuntaistettu EU DORA/Bank Recovery -kehysten kanssa.
+4. **HD01JuU39 — Psyykkinen väkivalta** (KORKEA): Uusi erillinen rikoslakirikkomus psyykkiselle väkivallalle — täyttää aukon lähisuhdeväkivallan lainsäädännössä.
+5. **HD03261 — Skatteverket folkbokföring** (KESKI-KORKEA): Laajennetut valtuudet Verohallinnolle asuinpaikan rekisteröinnin tarkistamiseen — oppositio nosti valvontahuolet.
+
+### Taloudellinen asiayhteys
+
+**IMF WEO huhtikuu-2026 (haku heikentyi — raakahaku nolla)**:
+- Ruotsin BKT-kasvuennuste 2026: ~1,8 % (Riksbankin Q1 2026 -arvio käytetty välitysarvona IMF-tietoaukon vuoksi)
+- Pohjoismainen vertailuryhmä: Norja > Ruotsi > Tanska > Suomi energiahintojen ja työmarkkinadynamiikan perusteella
+- Finanssipolitiikka tila: Ruotsi ylläpitää AAA-luokituksen, velka-suhde BKT:hen ~35 %; Tidö-koalition 2026 budjetti ylläpiti perusteellisen tasapainon
+
+**Lähdekuri**: IMF WEO huhtikuu-2026 ensisijainen; IFS heikentyi — yllä olevat väitteet välityslähteiden avulla siltä osin kuin IMF-haku palautti nollan; merkitty vastaavasti.
+
+### Kansainvälinen ulottuvuus
+
+- **Gazan kriisi**: Kaksi MP-interpellaatiota (HD10476, HD10478) ja yksi V-interpellaatio (HD10470 — Israel-laivastoprojekti Global Sumud -hyökkäys) signaloivat kasvavaa vasemmiston/vihreiden painetta Ruotsin Gaza-kannanotosta. Hallituksen vastauksen odotetaan korostavan humanitääristä oikeutta pikemmin kuin suoraa poliittista kritiikkiä Israelia kohtaan.
+- **ILO-hallinto** (HD10475): S/Magnusson kyseenalaistaa hallituksen sitoutumisen ILO-sopimuksiin — liittää laajempaan EU-keskusteluun sosiaalisesta pilarista.
+
+### Näkymät (T+30d → vaalipäivä)
+
+Suuri todennäköisyys: koalitio hallitsee syyskuun 2026 riksdagsvaaleihin asti ilman ylimääräisiä vaaleja. Lainsäädäntöpipeline suljetaan. Kampanja käynnistyy kesäkuussa 2026.
+
+---
+*Pass 2 parannushuomio*: Talousosio päivitetty sisältämään eksplisiittinen merkintä IMF-tietoaukosta. Riksbankin Q1 2026 -ennustetta käytetty välitysarvona SWE BKT-kasvulle ~1,8 %; lähde: Riksbankin rahapolitiikkaraportti helmikuu 2026 (julkinen). Kaikki IMF WEO huhtikuu-2026 -hakuyritykset palauttivat nollan 2026-05-07T15:08:00Z — merkitty ECONOMIC_DATA_CONTRACT.md v3.0 vinoviinen kuriin (>6 kuukauden merkintä ei laukaistu; hakuvirhe merkitty sen sijaan). Vaaliennusteet perustuvat SVT Väljarbarometerin trendiin ja Sifon maalis–huhtikuu 2026 mielipidemittaussykliin.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_fr.md -->
+
+**Niveau de confiance** : ÉLEVÉ pour les faits législatifs ; MOYEN pour les projections électorales
+
+### Conclusion en trois phrases
+
+Le gouvernement Tidö achève la session parlementaire 2025/26 avec un sprint législatif mettant l'accent sur le contrôle numérique de l'État (identité numérique, Skatteverket), des extensions sécuritaires (menaces à la sécurité-étrangers, sécurité des rassemblements publics) et l'alignement réglementaire financier sur les mandats européens (EMIR, gestion opérationnelle des crises). À l'approche des élections de septembre 2026, chaque loi est calibrée pour signaler compétence en matière de loi-et-ordre et de modernisation à la base électorale centrale de la coalition, tandis que les interpellations de l'opposition sur Gaza et les fermetures de Postnord en zones rurales exposent des flancs contestés en politique étrangère et en solidarité régionale. La mesure la plus conséquente à long terme est HD03250 (identité numérique d'État) : si adoptée, la Suède deviendrait le premier pays nordique doté d'une identité numérique d'État obligatoire, remodelant fondamentalement l'interaction numérique citoyen-État pour des décennies.
+
+### Points prioritaires de renseignement (résolutions PIR — mai 2026)
+
+| PIR | Résolution | Niveau de confiance |
+|-----|-----------|---------------------|
+| PIR-1 : Stabilité de la coalition | Coalition Tidö intacte jusqu'au dernier mois de session ; aucune défection | ÉLEVÉ |
+| PIR-2 : Influence politique du SD | Empreintes du SD visibles dans HD03267 (menace sécuritaire/étrangers) et HD01JuU32 (sécurité des rassemblements) | ÉLEVÉ |
+| PIR-3 : Élections 2026 | Signalisation législative pré-électorale confirmée ; thèmes de campagne : sécurité, État numérique, conformité UE | ÉLEVÉ |
+| PIR-4 : OTAN/sécurité | HD03267 renforce la capacité de l'appareil sécuritaire alignée sur la posture de menace de l'OTAN | MOYEN |
+| PIR-5 : Reprise économique | IMF WEO avr-2026 dégradé lors de la récupération ; croissance SWE positive mais sous la moyenne UE | FAIBLE (lacune de données) |
+
+### Cinq actions législatives majeures (mai 2026)
+
+1. **HD03250 — Identité numérique d'État** (CRITIQUE) : Identité numérique d'État obligatoire pour l'accès aux services publics. Implications pour la vie privée au titre du RF 2e chapitre et de l'art. 8 CEDH ; avis du Conseil de la législation en attente.
+2. **HD03267 — Menaces à la sécurité/étrangers** (ÉLEVÉ) : Pouvoirs d'expulsion élargis pour les personnes constituant une « menace sécuritaire qualifiée ». Touche les art. 3 et 6 de la CEDH — avis du Conseil de la législation en attente. Loi phare du SD.
+3. **HD01FiU37 — Nouvelle fonction de gestion opérationnelle des crises** (ÉLEVÉ) : Crée une nouvelle entité de gestion opérationnelle des crises dans le secteur financier — en conformité avec les cadres EU DORA/Bank Recovery.
+4. **HD01JuU39 — Violence psychologique** (ÉLEVÉ) : Nouvelle infraction pénale dédiée à la violence psychologique — comble une lacune dans la législation sur la violence des partenaires intimes.
+5. **HD03261 — Skatteverket registre de domicile** (MOYEN-ÉLEVÉ) : Pouvoirs élargis pour l'Agence fiscale de vérifier l'enregistrement de résidence — préoccupations de surveillance soulevées par l'opposition.
+
+### Contexte économique
+
+**Millésime IMF WEO avr-2026 (récupération dégradée — fetch brut nul)** :
+- Estimation de croissance du PIB suédois 2026 : ~1,8 % (projection des estimations de la Riksbank T1 2026 utilisée comme proxy en raison de la lacune de données IMF)
+- Comparaison nordique : Norvège > Suède > Danemark > Finlande sur la base de la dynamique des prix de l'énergie et du marché du travail
+- Espace budgétaire : La Suède maintient une notation AAA, dette-PIB ~35 % ; le budget 2026 de la coalition Tidö a maintenu l'équilibre primaire
+
+**Discipline des sources** : IMF WEO avr-2026 préféré ; IFS dégradé — les affirmations ci-dessus provenant de sources proxy là où la récupération IMF a renvoyé nul ; annotées en conséquence.
+
+### Dimension internationale
+
+- **Crise de Gaza** : Deux interpellations MP (HD10476, HD10478) et une interpellation V (HD10470 — attaque de flottille israélienne Global Sumud) signalent une pression croissante des gauches/verts sur la position de la Suède à Gaza. La réponse du gouvernement devrait mettre l'accent sur le droit humanitaire plutôt que sur la critique politique directe d'Israël.
+- **Gouvernance de l'OIT** (HD10475) : S/Magnusson remet en question l'engagement du gouvernement envers les conventions de l'OIT — lien avec le débat plus large sur le pilier social européen.
+
+### Perspectives (T+30j → jour du scrutin)
+
+Forte probabilité : la coalition gouverne jusqu'aux élections du Riksdag en septembre 2026 sans vote anticipé. La pipeline législative se ferme. La campagne se lance en juin 2026.
+
+---
+*Note d'amélioration du Passage 2* : La section économique mise à jour pour annoter explicitement la lacune de données IMF. Projection Riksbank T1 2026 utilisée comme proxy pour la croissance du PIB SWE ~1,8 % ; source : Rapport de politique monétaire de la Riksbank de février 2026 (public). Toutes les tentatives de récupération IMF WEO avr-2026 ont renvoyé nul à 2026-05-07T15:08:00Z — annoté conformément à ECONOMIC_DATA_CONTRACT.md v3.0 (annotation >6 mois non déclenchée ; échec de récupération annoté à la place). Projections électorales basées sur la tendance du baromètre électoral SVT et le cycle de sondages Sifo de mars–avril 2026.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_he.md -->
+
+&#x200F;# תדריך — סקירה חודשית, מאי 2026
+
+**סיווג**: פומבי | **תאריך**: 2026-05-07 | **תקופה**: אפריל–מאי 2026
+**רמת ביטחון**: גבוהה לעובדות חקיקתיות; בינונית לתחזיות בחירות
+
+### מסקנה בשלוש משפטות
+
+ממשלת טידה מסיימת את מושב הריקסדאג 2025/26 עם ספרינט חקיקתי המדגיש שליטה רקמית דיגיטלית של המדינה (זהות אלקטרונית ממשלתית, Skatteverket), הרחבות ביטחוניות (איום ביטחוני-זרים, בטיחות במפגשים ציבוריים) ויישור רגולטורי פיננסי למנדטים אירופיים (EMIR, ניהול משברים תפעולי). לקראת בחירות ספטמבר 2026, כל חוק מכוּיָּן להעביר מסר כשירות בנושאי סדר-חוק ומודרניזציה לבסיס המצביעים הליבתי של הקואליציה, בעוד שאינטרפלציות האופוזיציה על עזה וסגירות Postnord בכפר חושפות נקודות חולשה במדיניות חוץ וסולידריות אזורית. האמצעי המשמעותי ביותר לטווח ארוך הוא HD03250 (זהות אלקטרונית ממשלתית): אם יאושר, שבדיה תהיה המדינה הסקנדינבית הראשונה עם זהות דיגיטלית ממשלתית חובה, שתשנה מהותית את האינטראקציה הדיגיטלית בין אזרח ומדינה לעשורים.
+
+### נושאי מודיעין בעדיפות (פתרונות PIR — מאי 2026)
+
+| PIR | פתרון | רמת ביטחון |
+|-----|-------|------------|
+| PIR-1: יציבות קואליציה | קואליציית טידה שלמה לאורך חודש הריקסדאג האחרון; אין פרישות | גבוהה |
+| PIR-2: השפעת מדיניות SD | טביעות אצבע של SD גלויות ב-HD03267 (איום ביטחוני/זרים) וב-HD01JuU32 (בטיחות מפגשים) | גבוהה |
+| PIR-3: בחירות 2026 | איתות חקיקתי לפני בחירות מאושר; נושאי קמפיין: ביטחון, מדינה דיגיטלית, עמידה ביישות אירופית | גבוהה |
+| PIR-4: נאט"ו/ביטחון | HD03267 מחזק יכולות המנגנון הביטחוני בהתאם לאיום נאט"ו | בינוני |
+| PIR-5: התאוששות כלכלית | IMF WEO אפר-2026 נפגע בשליפה; צמיחת SWE חיובית אך מתחת לממוצע האיחוד האירופי | נמוך (פער נתונים) |
+
+### חמשת הפעולות החקיקתיות המובילות (מאי 2026)
+
+1. **HD03250 — זהות אלקטרונית ממשלתית** (קריטי): זהות דיגיטלית ממשלתית חובה לגישה לשירותי ממשל. השלכות פרטיות לפי RF פרק 2 ו-ECHR סעיף 8; חוות דעת המועצה החקיקתית בהמתנה.
+2. **HD03267 — איום ביטחוני/זרים** (גבוה): סמכויות גירוש מורחבות לאנשים המהווים "איום ביטחוני מוסמך". נוגע ל-ECHR סעיפים 3 ו-6 — חוות דעת המועצה החקיקתית בהמתנה. חקיקה דגלית של SD.
+3. **HD01FiU37 — פונקציה חדשה לניהול משברים תפעולי** (גבוה): יוצר ישות חדשה לניהול משברים תפעוליים במגזר הפיננסי — בהלימה עם מסגרות EU DORA/Bank Recovery.
+4. **HD01JuU39 — אלימות נפשית** (גבוה): עבירה פלילית חדשה ייחודית לאלימות נפשית — ממלאת פרצה בחקיקת אלימות במשפחה.
+5. **HD03261 — רישום תושבים Skatteverket** (בינוני-גבוה): סמכויות מורחבות לרשות המסים לאמת רישום מגורים — האופוזיציה הביעה חששות מעקב.
+
+### הקשר כלכלי
+
+**IMF WEO אפריל-2026 (שליפה נפגעה — שליפה גולמית אפס)**:
+- הערכת צמיחת תמ"ג שבדיה 2026: ~1.8% (תחזיות Riksbank Q1 2026 שימשו כפרוקסי בפער נתוני ה-IMF)
+- השוואת עמיתים סקנדינביים: נורווגיה > שבדיה > דנמרק > פינלנד על בסיס דינמיקת מחירי אנרגיה ושוק עבודה
+- מרחב פיסקלי: שבדיה שומרת על דירוג AAA, חוב-תמ"ג ~35%; תקציב קואליציית טידה 2026 שמר על יתרה ראשונית
+
+**משמעת מקורות**: IMF WEO אפריל-2026 מועדף; IFS נפגע — טענות לעיל מסתמכות על מקורות פרוקסי כאשר שליפת IMF החזירה אפס; מסומן בהתאם.
+
+### המימד הבינלאומי
+
+- **משבר עזה**: שתי אינטרפלציות של חברי כנסת (HD10476, HD10478) ואחת של V (HD10470 — מתקפת הצי הישראלי Global Sumud) מאותתות על לחץ עולה מהשמאל והירוקים על עמדת שבדיה בנושא עזה. תגובת הממשלה צפויה להדגיש את המשפט ההומניטרי ולא ביקורת פוליטית ישירה על ישראל.
+- **ממשל ILO** (HD10475): S/Magnusson מטיל ספק במחויבות הממשלה לאמנות ILO — מקשר לדיון האירופי הרחב יותר על העמוד החברתי.
+
+### תחזית (T+30 יום → יום הבחירות)
+
+סבירות גבוהה: הקואליציה שולטת עד לבחירות ריקסדאג בספטמבר 2026 ללא בחירות ביניים. צינור החקיקה נסגר. הקמפיין מתחיל ביוני 2026.
+
+---
+*הערת שיפור סיבוב 2*: הסעיף הכלכלי עודכן כדי לתעד במפורש את פער נתוני ה-IMF. תחזיות Riksbank Q1 2026 שמשו כפרוקסי לצמיחת תמ"ג שבדי ~1.8%; מקור: דוח מדיניות מוניטרית של Riksbank פברואר 2026 (פומבי). כל ניסיונות שליפת IMF WEO אפריל-2026 החזירו אפס ב-2026-05-07T15:08:00Z — מתועד בהתאם ל-ECONOMIC_DATA_CONTRACT.md v3.0 (בנד >6 חודשים לא הופעל; שגיאת שליפה מתועדת במקום). תחזיות בחירות מסתמכות על מגמת SVT Väljarbarometern ומחזור סקרי Sifo מרץ–אפריל 2026.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_ja.md -->
+
+**分類**: 公開 | **日付**: 2026-05-07 | **期間**: 2026年4月〜5月
+**信頼度**: 立法事実は高；選挙予測は中
+
+### 3文による結論
+
+ティドー政権は、国家デジタル管理（政府電子ID、Skatteverket）、セキュリティ拡充（安全保障上の脅威・外国人、公共集会の安全）、EU命令（EMIR、オペレーショナル危機管理）への財務規制の整合を軸とした立法スプリントで2025/26年度会期を締めくくる。2026年9月の選挙を見据え、各法律は法と秩序・近代化の有能さを連立の核心支持層に示すよう設計されており、一方で野党のガザ問題とポストノルドの農村閉鎖に関する質問は外交政策と地域連帯における争点を浮き彫りにしている。最も重要な長期策はHD03250（政府電子ID）：可決されれば、スウェーデンは強制的な国家デジタルIDを持つ最初の北欧諸国となり、市民と国家のデジタル関係を何十年にもわたって根本的に変える。
+
+### 優先情報要求（PIR決着 — 2026年5月）
+
+| PIR | 決着 | 信頼度 |
+|-----|------|--------|
+| PIR-1: 連立の安定性 | ティドー連立は最終会期月を通じて維持；分裂なし | 高 |
+| PIR-2: SDの政策影響力 | SD の痕跡がHD03267（安全保障上の脅威/外国人）とHD01JuU32（集会安全）に見える | 高 |
+| PIR-3: 2026年選挙 | 選挙前の立法シグナリング確認；選挙キャンペーンの軸：安全保障、デジタル国家、EU準拠 | 高 |
+| PIR-4: NATO/安全保障 | HD03267はNATOの脅威評価に沿ってセキュリティ機構の能力を強化 | 中 |
+| PIR-5: 経済回復 | IMF WEO 2026年4月は取得時に劣化；SWEの成長はプラスだがEU平均以下 | 低（データ欠如） |
+
+### 立法トップ5アクション（2026年5月）
+
+1. **HD03250 — 政府電子ID**（重大）：政府サービスへのアクセスに政府のデジタルIDが義務化。RF第2章およびECHR第8条下のプライバシーへの影響；立法評議会の意見は保留中。
+2. **HD03267 — 安全保障上の脅威/外国人**（高）：「適格な安全保障上の脅威」をなす人物への退去強制権限の拡充。ECHR第3条・第6条に抵触 — 立法評議会の意見保留中。SD の目玉法案。
+3. **HD01FiU37 — 新たなオペレーショナル危機管理機能**（高）：金融セクターにおけるオペレーショナル危機管理の新機関を創設 — EU DORA/銀行再建枠組みに整合。
+4. **HD01JuU39 — 精神的暴力**（高）：精神的暴力に特化した新たな刑事犯罪類型 — 家庭内暴力立法の欠陥を補完。
+5. **HD03261 — Skatteverket人口登録**（中〜高）：税務当局が居住地登録を確認する権限を拡充 — 野党から監視への懸念が表明された。
+
+### 経済的文脈
+
+**IMF WEO 2026年4月（取得劣化 — 生取得ゼロ）**：
+- スウェーデンGDP成長率予測2026年：~1.8%（IMFデータ欠如のためRiksbank Q1 2026予測をプロキシとして使用）
+- 北欧諸国比較：ノルウェー > スウェーデン > デンマーク > フィンランド（エネルギー価格・労働市場の動態に基づく）
+- 財政余地：スウェーデンはAAAを維持、債務GDP比~35%；ティドー連立の2026年予算は基礎収支黒字を維持
+
+**出典規律**：IMF WEO 2026年4月を優先；IFSは劣化 — IMF取得がゼロを返した箇所はプロキシ出典を使用；適宜注記。
+
+### 国際的側面
+
+- **ガザ危機**：議員による2件の質問（HD10476、HD10478）とV党の1件（HD10470 — イスラエル艦隊攻撃 Global Sumud）が、スウェーデンのガザへの立場に対する左派・緑の党の圧力の高まりを示す。政府の回答は人道法を強調し、イスラエルへの直接的な政治的批判は避ける見通し。
+- **ILOガバナンス**（HD10475）：S/MagnussonがILO条約への政府のコミットメントに疑問を呈 — 社会的柱に関するより広範なEU議論につながる。
+
+### 展望（T+30日 → 選挙日）
+
+高確率：連立は中間選挙なしに2026年9月の国会議員選挙まで政権を維持。立法パイプラインが閉じる。キャンペーンは2026年6月に開始。
+
+---
+*パス2改善ノート*：経済セクションを更新し、IMFデータ欠如を明示的に注記した。Riksbank Q1 2026予測をスウェーデンGDP成長率~1.8%のプロキシとして使用；出典：Riksbank金融政策報告2026年2月（公開）。IMF WEO 2026年4月の全取得試行が2026-05-07T15:08:00Zにゼロを返した — ECONOMIC_DATA_CONTRACT.md v3.0に従い注記（>6ヶ月の注記トリガーは発動せず；代わりに取得エラーを注記）。選挙予測はSVT Väljarbarometern動向と2026年3月〜4月のSifo世論調査サイクルに基づく。
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_ko.md -->
+
+**분류**: 공개 | **날짜**: 2026-05-07 | **기간**: 2026년 4월~5월
+**신뢰도**: 입법 사실 높음; 선거 예측 보통
+
+### 세 문장 결론
+
+티도 정부는 국가 디지털 통제(정부 전자 ID, Skatteverket), 안보 확장(보안 위협-외국인, 공공 집회 안전) 및 EU 명령(EMIR, 운영 위기 관리)에 대한 금융 규제 조정을 강조하는 입법 스프린트로 2025/26년 회기를 마무리한다. 2026년 9월 선거를 앞두고 각 법률은 연립의 핵심 유권자들에게 법질서와 현대화에 관한 역량을 신호하도록 설계되었으며, 한편 가자 지구와 포스트노르드 농촌 폐쇄에 관한 야당의 대정부 질문은 외교 정책과 지역 연대의 논쟁 지점을 드러낸다. 가장 결과가 중대한 장기 조치는 HD03250(정부 전자 ID)으로, 가결 시 스웨덴은 강제 국가 디지털 ID를 갖춘 최초의 북유럽 국가가 되어 수십 년간 시민-국가 디지털 상호 작용을 근본적으로 재편할 것이다.
+
+### 우선 정보 요구(PIR 해결 — 2026년 5월)
+
+| PIR | 해결 | 신뢰도 |
+|-----|------|--------|
+| PIR-1: 연립 안정성 | 티도 연립은 마지막 국회 달 내내 유지; 이탈 없음 | 높음 |
+| PIR-2: SD 정책 영향 | SD의 흔적이 HD03267(보안 위협/외국인)과 HD01JuU32(집회 안전)에서 확인됨 | 높음 |
+| PIR-3: 2026년 선거 | 선거 전 입법 신호 확인; 선거 주제: 안보, 디지털 국가, EU 준수 | 높음 |
+| PIR-4: NATO/안보 | HD03267은 NATO 위협 평가에 맞춰 보안 기구 역량 강화 | 보통 |
+| PIR-5: 경제 회복 | IMF WEO 2026년 4월 검색 시 성능 저하; SWE 성장 양호하나 EU 평균 이하 | 낮음(데이터 공백) |
+
+### 입법 상위 5개 조치(2026년 5월)
+
+1. **HD03250 — 정부 전자 ID**(위급): 정부 서비스 접근에 정부 디지털 ID 의무화. RF 제2장 및 ECHR 제8조 하의 개인정보 영향; 입법위원회 의견 보류 중.
+2. **HD03267 — 보안 위협/외국인**(높음): "적격한 보안 위협"을 구성하는 자에 대한 추방 권한 확대. ECHR 제3조·제6조 관련 — 입법위원회 의견 보류 중. SD의 핵심 법안.
+3. **HD01FiU37 — 새로운 운영 위기 관리 기능**(높음): 금융 부문 운영 위기 관리를 위한 새 기관 설립 — EU DORA/은행 회생 체계에 부합.
+4. **HD01JuU39 — 심리적 폭력**(높음): 심리적 폭력에 특화된 새 형사 범죄 — 가정 폭력 입법의 공백 보완.
+5. **HD03261 — Skatteverket 거주 등록**(보통~높음): 세무 당국의 거주지 등록 확인 권한 확대 — 야당이 감시 우려 제기.
+
+### 경제적 맥락
+
+**IMF WEO 2026년 4월(검색 저하 — 원시 검색 결과 없음)**:
+- 스웨덴 GDP 성장률 전망 2026년: ~1.8%(IMF 데이터 공백으로 Riksbank Q1 2026 예측을 대리 사용)
+- 북유럽 동료 비교: 노르웨이 > 스웨덴 > 덴마크 > 핀란드(에너지 가격 및 노동 시장 역학 기준)
+- 재정 여력: 스웨덴 AAA 등급 유지, 부채-GDP ~35%; 티도 연립 2026 예산은 기초 흑자 유지
+
+**출처 규율**: IMF WEO 2026년 4월 우선; IFS 저하 — IMF 검색이 결과 없음을 반환한 경우 대리 출처 사용; 적절히 주석 처리.
+
+### 국제적 차원
+
+- **가자 위기**: 의원 2건(HD10476, HD10478) 및 V당 1건(HD10470 — 이스라엘 함대 공격 Global Sumud)의 대정부 질문이 스웨덴의 가자 입장에 대한 좌파·녹색의 압박 증가를 보여준다. 정부 답변은 인도법을 강조하고 이스라엘에 대한 직접적 정치 비판은 피할 것으로 예상.
+- **ILO 거버넌스**(HD10475): S/Magnusson이 ILO 협약에 대한 정부 헌신에 의문 제기 — 사회적 지주에 관한 더 넓은 EU 논쟁과 연결.
+
+### 전망(T+30일 → 선거일)
+
+높은 확률: 연립은 중간 선거 없이 2026년 9월 국회의원 선거까지 집권 유지. 입법 파이프라인 종료. 선거운동 2026년 6월 개시.
+
+---
+*패스2 개선 메모*: 경제 섹션 업데이트하여 IMF 데이터 공백을 명시적으로 주석 처리함. Riksbank Q1 2026 전망을 스웨덴 GDP 성장률 ~1.8% 대리 지표로 사용; 출처: Riksbank 통화정책 보고서 2026년 2월(공개). IMF WEO 2026년 4월 전체 검색 시도가 2026-05-07T15:08:00Z에 결과 없음 반환 — ECONOMIC_DATA_CONTRACT.md v3.0에 따라 주석 처리(>6개월 주석 트리거 미발동; 대신 검색 오류 주석). 선거 예측은 SVT Väljarbarometern 추세 및 2026년 3월~4월 Sifo 여론조사 주기에 기반.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR | **Datum**: 2026-05-07 | **Periode**: April–mei 2026
+**Betrouwbaarheidsniveau**: HOOG voor wetgevingsfeiten; GEMIDDELD voor verkiezingsprognoses
+
+### Conclusie in drie zinnen
+
+De Tidö-regering sluit de Riksdag 2025/26 af met een wetgevingssprint die nadruk legt op staatsdigitale controle (e-legitimatie, Skatteverket), beveiligingsuitbreidingen (veiligheidsdreiging-buitenlanders, veiligheid bij openbare bijeenkomsten) en financiële regulatoire afstemming op EU-mandaten (EMIR, operationeel crisismanagement). Met het oog op de naderende verkiezingen van september 2026 is elke wet gecalibreerd om de kernkiezers van de coalitie competentie op het gebied van recht-en-orde en modernisering te signaleren, terwijl interpellaties van de oppositie over Gaza en Postnords sluitingen op het platteland betwiste flanken blootleggen in buitenlands beleid en regionale solidariteit. De meest consequente langetermijnmaatregel is HD03250 (staatse e-legitimatie): indien aangenomen, zou Zweden het eerste Scandinavische land zijn met een verplichte staatse digitale identiteit, die de digitale burger-staat interactie voor decennia fundamenteel hervormt.
+
+### Prioritaire inlichtingenpunten (PIR-resoluties — mei 2026)
+
+| PIR | Resolutie | Betrouwbaarheidsniveau |
+|-----|-----------|----------------------|
+| PIR-1: Coalitie stabiliteit | Tidö-coalitie intact gedurende de laatste Riksdag-maand; geen afsplitsingen | HOOG |
+| PIR-2: SD-beleidsbeïnvloeding | SD-vingerafdrukken zichtbaar in HD03267 (veiligheidsdreiging/buitenlanders) en HD01JuU32 (bijeenkomstveiligheid) | HOOG |
+| PIR-3: Verkiezingen 2026 | Pre-verkiezingswetgevingssignalering bevestigd; campagnethema's: veiligheid, digitale staat, EU-naleving | HOOG |
+| PIR-4: NAVO/veiligheid | HD03267 versterkt de capaciteit van het veiligheidsapparaat in lijn met het NAVO-dreigingsbeeld | GEMIDDELD |
+| PIR-5: Economisch herstel | IMF WEO apr-2026 degradeerde bij ophalen; SWE-groei positief maar onder EU-gemiddelde | LAAG (datagap) |
+
+### Top vijf wetgevingsacties (mei 2026)
+
+1. **HD03250 — Staatse e-legitimatie** (KRITIEK): Staatse digitale ID verplicht voor toegang tot overheidsdiensten. Privacy-implicaties onder RF 2 Hfdst. en EVRM art. 8; advies van de Wetgevingsraad in afwachting.
+2. **HD03267 — Veiligheidsdreiging/buitenlanders** (HOOG): Uitgebreide uitzettingsbevoegdheden voor personen die een "gekwalificeerde veiligheidsdreiging" vormen. Raakt EVRM art. 3 en art. 6 — advies van de Wetgevingsraad in afwachting. SD-vlaggenschipwetgeving.
+3. **HD01FiU37 — Nieuwe functie voor operationeel crisismanagement** (HOOG): Creëert een nieuwe entiteit voor operationeel crisismanagement in de financiële sector — in lijn met EU DORA/Bank Recovery-kaders.
+4. **HD01JuU39 — Psychisch geweld** (HOOG): Nieuw specifiek strafbaar feit voor psychisch geweld — vult een leemte in de wetgeving inzake partnergeweld.
+5. **HD03261 — Skatteverket bevolkingsregistratie** (GEMIDDELD-HOOG): Uitgebreide bevoegdheden voor de Belastingdienst om woonplaatsregistratie te verifiëren — bewakingsbezwaren geuit door de oppositie.
+
+### Economische context
+
+**IMF WEO apr-2026 (ophalen gedegradeerd — raw fetch nul)**:
+- Zweden BNP-groeiraming 2026: ~1,8 % (prognose van Riksbank-schattingen Q1 2026 als proxy gebruikt bij IMF-datagap)
+- Noordse peer-vergelijking: Noorwegen > Zweden > Denemarken > Finland op basis van energieprijzen en arbeidsmarktdynamiek
+- Budgettaire ruimte: Zweden handhaaft AAA-rating, schuld-BBP ~35 %; Tidö-coalitie budget 2026 handhaafde primair saldo
+
+**Brondiscipline**: IMF WEO apr-2026 de voorkeur; IFS gedegradeerd — bovenstaande beweringen proxy-bronnen waar IMF-ophaling nul retourneerde; dienovereenkomstig geannoteerd.
+
+### Internationale dimensie
+
+- **Gaza-crisis**: Twee MP-interpellaties (HD10476, HD10478) en één V-interpellatie (HD10470 — Israëlische vlootaanval Global Sumud) signaleren toenemende links/groene druk op Zweden's Gaza-positie. Het antwoord van de regering wordt verwacht het humanitaire recht te benadrukken in plaats van directe politieke kritiek op Israël.
+- **ILO-governance** (HD10475): S/Magnusson stelt het engagement van de regering voor ILO-conventies in vraag — koppelt aan bredere EU-debat over de sociale pijler.
+
+### Vooruitzichten (T+30d → verkiezingsdag)
+
+Grote kans: de coalitie regeert tot de Riksdag-verkiezingen in september 2026 zonder tussentijdse verkiezingen. De wetgevingspipeline sluit. De campagne lanceert in juni 2026.
+
+---
+*Pass 2 verbeteringsnotitie*: Economische sectie bijgewerkt om de IMF-datagap expliciet te annoteren. Riksbank Q1 2026-prognose als proxy voor SWE BBP-groei ~1,8 % gebruikt; bron: Riksbank Monetair Beleidsrapport februari 2026 (openbaar). Alle IMF WEO apr-2026-ophaalspogingen retourneerden nul op 2026-05-07T15:08:00Z — geannoteerd conform ECONOMIC_DATA_CONTRACT.md v3.0 (>6 maanden annotatie niet geactiveerd; ophalfout in plaats daarvan geannoteerd). Verkiezingsprognoses gebaseerd op de SVT Väljarbarometer-trend en de Sifo maart–april 2026 opiniepeilingcyclus.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_no.md -->
+
+**Klassifisering**: OFFENTLIG | **Dato**: 2026-05-07 | **Periode**: April–mai 2026
+**Konfidensnivå**: HØY for lovgivningsfakta; MEDIUM for valgprognoser
+
+### Konklusjon i tre setninger
+
+Tidö-regjeringen avslutter riksmöte 2025/26 med et lovgivningsløp som vektlegger statlig digital kontroll (e-legitimasjon, Skatteverket), sikkerhetsutvidelser (sikkerhetstrussel-utlendinger, sikkerhet ved offentlige forsamlinger) og finansiell regulatorisk tilpasning til EU-mandater (EMIR, operativ krisehåndtering). Mot et nærtstående stortingsvalg i september 2026 er hver lov kalibrert for å signalisere lov-og-orden og moderniseringskompetanse til koalisjonens kjernevelgere, mens opposisjonens interpellasjoner om Gaza og Postnords landdistriktstengninger avslører omstridte flanker innen utenrikspolitikk og regional solidaritet. Det mest konsekvente langsiktige tiltaket er HD03250 (statlig e-legitimasjon): dersom vedtatt, blir Sverige det første nordiske landet med et obligatorisk statlig digitalt identitetssystem, som fundamentalt omformer borger-stat digital interaksjon i tiår fremover.
+
+### Prioriterte etterretningspunkter (PIR-løsninger — mai 2026)
+
+| PIR | Løsning | Konfidensnivå |
+|-----|---------|--------------|
+| PIR-1: Koalisjonsstabilitet | Tidö-koalisjonen intakt gjennom siste riksmöte-måned; ingen avhoppere | HØY |
+| PIR-2: SDs politikkinnflytelse | SDs fingeravtrykk synlige i HD03267 (sikkerhetstrussel/utlendinger) og HD01JuU32 (forsamlingssikkerhet) | HØY |
+| PIR-3: Valg 2026 | Forvalglovgivningssignalisering bekreftet; kampanjetemaer: sikkerhet, digital stat, EU-etterlevelse | HØY |
+| PIR-4: NATO/sikkerhet | HD03267 styrker sikkerhetsapparatets kapasitet i samsvar med NATOs trusselbilde | MEDIUM |
+| PIR-5: Økonomisk gjenoppretting | IMF WEO apr-2026 degradert ved henting; SWE-vekst positiv men under EU-snittet | LAV (datagap) |
+
+### Topp fem lovgivningstiltak (mai 2026)
+
+1. **HD03250 — Statlig e-legitimasjon** (KRITISK): Statlig digital ID obligatorisk for tilgang til offentlige tjenester. Personvernimplikasjoner under RF 2 kap. og EMK art. 8; Lagrådets uttalelse avventes.
+2. **HD03267 — Sikkerhetstrussel/utlendinger** (HØY): Utvidede utvisningsbeføyelser for personer som utgjør en "kvalifisert sikkerhetstrussel." Berører EMK art. 3 og art. 6 — Lagrådets uttalelse avventes. SDs flaggskipslovgivning.
+3. **HD01FiU37 — Ny funksjon for operativ krisehåndtering** (HØY): Oppretter ny enhet for operativ krisehåndtering i finanssektoren — i samsvar med EU DORA/Bank Recovery-rammene.
+4. **HD01JuU39 — Psykisk vold** (HØY): Ny dedikert straffebestemmelse for psykisk vold — fyller et gap i lovgivningen om partnervold.
+5. **HD03261 — Skatteverket folkbokföring** (MEDIUM-HØY): Utvidede fullmakter for Skatteetaten til å verifisere folkeregisterregistrering — overvåkingsbekymringer reist av opposisjonen.
+
+### Økonomisk kontekst
+
+**IMF WEO apr-2026 (henting degradert — råfetch null)**:
+- Sveriges BNP-vekstestimat 2026: ~1,8 % (prognose fra Riksbankens estimater Q1 2026 brukt som proxy gitt IMF-datagap)
+- Nordisk sammenligningsgruppe: Norge > Sverige > Danmark > Finland basert på energipris- og arbeidsmarkedsdynamikk
+- Finanspolitisk handlingsrom: Sverige opprettholder AAA-rating, gjeld-til-BNP ~35 %; Tidö-koalisjonens budsjett 2026 opprettholdt primær balanse
+
+**Kildedisiplin**: IMF WEO apr-2026 foretrukket; IFS degradert — påstander ovenfor proxy-kildeinformasjon der IMF-henting returnerte null; annotert tilsvarende.
+
+### Internasjonal dimensjon
+
+- **Gazakrisen**: To MP-interpellasjoner (HD10476, HD10478) og én V-interpellasjon (HD10470 — Israel-flotille Global Sumud-angrep) signaliserer voksende venstre/grønt press på Sveriges Gaza-posisjon. Regjeringens svar forventes å vektlegge humanitær rett snarere enn direkte politisk kritikk av Israel.
+- **ILO-styring** (HD10475): S/Magnusson stiller spørsmål ved regjeringens engasjement for ILO-konvensjoner — knytter til bredere EU-debatt om den sosiale pilaren.
+
+### Utsikter (T+30d → valgdag)
+
+Høy sannsynlighet: koalisjonen styrer til riksdagsvalget i september 2026 uten ekstravalg. Lovgivningspipelinen lukkes. Kampanjen lanseres juni 2026.
+
+---
+*Forbedringsnote Pass 2*: Økonomiavsnitt oppdatert med eksplisitt annotering av IMF-datagap. Riksbankens Q1 2026-prognose brukt som proxy for SWE BNP-vekst ~1,8 %; kilde: Riksbankens pengepolitiske rapport februar 2026 (offentlig). Alle IMF WEO apr-2026-hentingsforsøk returnerte null ved 2026-05-07T15:08:00Z — annotert i henhold til ECONOMIC_DATA_CONTRACT.md v3.0 (>6 måneder annotering ikke utløst; hentingsfeil annotert i stedet). Valprognoser basert på SVT Väljarbarometerns trend og Sifos mars–april 2026 meningsmålingsyklus.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG | **Datum**: 2026-05-07 | **Period**: April–maj 2026
+**Konfidensgrad**: HÖG för lagstiftningsfakta; MEDIUM för valprognoser
+
+### Slutsats i tre meningar
+
+Tidöregeringen avslutar riksmöte 2025/26 med en lagstiftningssprint som betonar statlig digital kontroll (e-legitimation, Skatteverket), säkerhetsutvidgningar (säkerhetshot-utlänningar, säkerhet vid allmänna sammankomster) och finansiell regulatorisk anpassning till EU-mandat (EMIR, operativ krishantering). Mot bakgrund av det närmande riksdagsvalet i september 2026 är varje lag kalibrerad för att signalera lag-och-ordning och moderniseringskompetens till koalitionens kärnväljarebas, medan oppositionens interpellationer om Gaza och Postnords landsbygdsstängningar blottlägger omstridda flanker vad gäller utrikespolitik och regional solidaritet. Den mest konsekventa långsiktiga åtgärden är HD03250 (statlig e-legitimation): om den antas blir Sverige det första nordiska landet med en obligatorisk statlig digital identitet, vilket fundamentalt omformar den digitala interaktionen mellan medborgare och stat under decennier framöver.
+
+### Prioriterade underrättelsepunkter (PIR-lösningar — maj 2026)
+
+| PIR | Lösning | Konfidensgrad |
+|-----|---------|--------------|
+| PIR-1: Koalitionsstabilitet | Tidökoalitionen intakt till sista riksmötemånaden; inga avhopp | HÖG |
+| PIR-2: SD:s policyinflytande | SD:s avtryck synliga i HD03267 (säkerhetshot/utlänningar) och HD01JuU32 (säkerhet vid sammankomster) | HÖG |
+| PIR-3: Val 2026 | Förvalstiftande signalering bekräftad; kampanjteman: säkerhet, digital stat, EU-efterlevnad | HÖG |
+| PIR-4: NATO/säkerhet | HD03267 stärker säkerhetsapparatens kapacitet i linje med NATO:s hotbild | MEDIUM |
+| PIR-5: Ekonomisk återhämtning | IMF WEO apr-2026 försämrad vid hämtning; SWE-tillväxt positiv men under EU-snittet | LÅG (dataklunga) |
+
+### De fem viktigaste lagstiftningsåtgärderna (maj 2026)
+
+1. **HD03250 — Statlig e-legitimation** (KRITISK): Statlig digital ID obligatorisk för tillgång till myndighetstjänster. Integritetsaspekter under RF 2 kap. och EKMR art. 8; Lagrådets remiss avvaktas.
+2. **HD03267 — Säkerhetshot/utlänningar** (HÖG): Utvidgade utvisningsbefogenheter för personer som utgör ett "kvalificerat säkerhetshot". Berör EKMR art. 3 och art. 6 — Lagrådets remiss avvaktas. SD:s flaggskeppslagstiftning.
+3. **HD01FiU37 — Ny funktion för operativ krishantering** (HÖG): Skapar ny enhet för operativ krishantering i finanssektorn — i linje med EU DORA/Bank Recovery-ramverken.
+4. **HD01JuU39 — Psykiskt våld** (HÖG): Nytt separat straffbrott för psykiskt våld — fyller ett gap i lagstiftningen om intimt partnervåld.
+5. **HD03261 — Skatteverket folkbokföring** (MEDIUM-HÖG): Utökade befogenheter för Skatteverket att kontrollera folkbokföring — oppositionen har rest övervakningsinvändningar.
+
+### Ekonomiskt sammanhang
+
+**IMF WEO apr-2026 (hämtning försämrad — råfetch null)**:
+- Sveriges BNP-tillväxtprognos 2026: ~1,8 % (prognos från Riksbankens uppskattningar Q1 2026 används som proxy givet IMF-dataklunga)
+- Nordisk jämförelse: Norge > Sverige > Danmark > Finland baserat på energipris- och arbetsmarknadsdynamik
+- Finanspolitiskt utrymme: Sverige upprätthåller AAA-betyg, skuld-till-BNP ~35 %; Tidökoalitionens budget 2026 upprätthöll primär balans
+
+**Källdisciplin**: IMF WEO apr-2026 föredragen; IFS försämrad — ovanstående påståenden proxykällade där IMF-hämtning returnerade null; annoterat i enlighet härmed.
+
+### Internationell dimension
+
+- **Gazakrisen**: Två MP-interpellationer (HD10476, HD10478) och en V-interpellation (HD10470 — Israel-flottilja Global Sumud-attack) signalerar växande vänster/grön press på Sveriges Gazaposition. Regeringens svar förväntas betona humanitär rätt snarare än direkt politisk kritik mot Israel.
+- **ILO-styrning** (HD10475): S/Magnusson ifrågasätter regeringens engagemang för ILO-konventioner — kopplar till bredare EU-debatt om den sociala pelaren.
+
+### Utsikter (T+30d → valdag)
+
+Hög sannolikhet: koalitionen styr till riksdagsvalet i september 2026 utan extraval. Lagstiftningspipelinen stängs. Kampanjen inleds juni 2026.
+
+---
+*Förbättringsnotering Pass 2*: Ekonomiavsnitt uppdaterat med explicit annotering av IMF-dataklunga. Riksbankens Q1 2026-prognos används som proxy för SWE BNP-tillväxt ~1,8 %; källa: Riksbankens penningpolitiska rapport februari 2026 (offentlig). Alla IMF WEO apr-2026-hämtningsförsök returnerade null vid 2026-05-07T15:08:00Z — annoterat enligt ECONOMIC_DATA_CONTRACT.md v3.0 vinturedisciplin (>6 månaders annotering ej utlöst; hämtningsfel annoterat istället). Valprognoser baserade på SVT Väljarbarometerns trend och Sifos mars–april 2026 opinionsmätningscykel.
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_zh.md -->
+
+**分类**: 公开 | **日期**: 2026-05-07 | **期间**: 2026年4月–5月
+**信心等级**: 立法事实高；选举预测中
+
+### 三句话结论
+
+蒂多政府以一场立法冲刺为2025/26年议期画上句号，重点涵盖国家数字管控（政府电子身份证、Skatteverket）、安全扩展（安全威胁-外国人、公共集会安全）以及与欧盟授权（EMIR、运营危机管理）的财务监管对接。着眼于2026年9月大选，每部法律均经过精心设计，向联合政府的核心选民传递法律秩序与现代化能力，与此同时，反对派就加沙和波斯特诺德农村关闭提出的质询则揭示外交政策与区域团结方面的争议。影响最为深远的长期举措是HD03250（政府电子身份证）：若获通过，瑞典将成为北欧第一个强制推行国家数字身份的国家，在未来数十年内从根本上重塑公民与国家的数字互动。
+
+### 优先情报要求（PIR决议 — 2026年5月）
+
+| PIR | 决议 | 信心等级 |
+|-----|------|----------|
+| PIR-1: 联合政府稳定性 | 蒂多联合政府在议会最后一个月保持完整；无脱离 | 高 |
+| PIR-2: SD政策影响力 | SD的印记在HD03267（安全威胁/外国人）和HD01JuU32（集会安全）中清晰可见 | 高 |
+| PIR-3: 2026年选举 | 选前立法信号发送确认；竞选主题：安全、数字国家、欧盟合规 | 高 |
+| PIR-4: 北约/安全 | HD03267强化安全机构能力，与北约威胁评估方向一致 | 中 |
+| PIR-5: 经济复苏 | IMF WEO 2026年4月获取时受损；SWE增长为正但低于欧盟平均 | 低（数据缺口） |
+
+### 五大立法行动（2026年5月）
+
+1. **HD03250 — 政府电子身份证**（关键）：强制推行政府数字身份证以访问政府服务。RF第2章及ECHR第8条下的隐私影响；立法委员会意见待定。
+2. **HD03267 — 安全威胁/外国人**（高）：扩大对构成"合格安全威胁"人员的驱逐权力。涉及ECHR第3条和第6条 — 立法委员会意见待定。SD的旗舰立法。
+3. **HD01FiU37 — 新设运营危机管理职能**（高）：在金融部门设立新的运营危机管理实体 — 与EU DORA/银行恢复框架保持一致。
+4. **HD01JuU39 — 心理暴力**（高）：新增针对心理暴力的专项刑事罪行 — 填补家庭暴力立法空白。
+5. **HD03261 — Skatteverket居民登记**（中高）：扩大税务局核查住所登记的权力 — 反对党就此提出监控方面的担忧。
+
+### 经济背景
+
+**IMF WEO 2026年4月（获取降级 — 原始获取为零）**：
+- 瑞典2026年GDP增长预测：约1.8%（因IMF数据缺口，使用Riksbank 2026年第一季度预测作为代理）
+- 北欧同行比较：挪威 > 瑞典 > 丹麦 > 芬兰（基于能源价格和劳动力市场动态）
+- 财政空间：瑞典维持AAA评级，债务/GDP约35%；蒂多联合政府2026年预算维持基础盈余
+
+**来源纪律**：优先使用IMF WEO 2026年4月；IFS降级 — 上述声明在IMF获取返回零的情况下使用代理来源；已相应注释。
+
+### 国际维度
+
+- **加沙危机**：两项议员质询（HD10476、HD10478）及V党一项质询（HD10470 — 以色列舰队袭击 Global Sumud）表明左派和绿党就瑞典在加沙问题立场施加的压力持续上升。政府回应预计将强调人道主义法律，而非直接对以色列提出政治批评。
+- **ILO治理**（HD10475）：S/Magnusson质疑政府对ILO公约的承诺 — 关联欧盟关于社会支柱的更广泛讨论。
+
+### 展望（T+30天 → 选举日）
+
+高概率：联合政府在无提前选举的情况下执政至2026年9月议会选举。立法管道关闭。竞选活动于2026年6月启动。
+
+---
+*第二轮改进说明*：经济部分已更新，明确注释IMF数据缺口。使用Riksbank 2026年第一季度预测作为瑞典GDP增长约1.8%的代理；来源：Riksbank 2026年2月货币政策报告（公开）。所有IMF WEO 2026年4月获取尝试均于2026-05-07T15:08:00Z返回零 — 依据ECONOMIC_DATA_CONTRACT.md v3.0注释（>6个月注释触发未激活；改为注释获取错误）。选举预测基于SVT Väljarbarometern趋势和2026年3月–4月Sifo民调周期。
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1588,3 +2267,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/monthly-review/executive-brief_zh.md)

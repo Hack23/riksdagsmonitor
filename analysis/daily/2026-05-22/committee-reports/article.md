@@ -6,7 +6,7 @@ date: 2026-05-22
 subfolder: committee-reports
 slug: 2026-05-22-committee-reports
 source_folder: analysis/daily/2026-05-22/committee-reports
-generated_at: 2026-05-23T08:06:01.616Z
+generated_at: 2026-05-23T22:05:57.424Z
 language: en
 layout: article
 ---

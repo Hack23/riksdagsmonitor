@@ -6,7 +6,7 @@ date: 2026-05-07
 subfolder: interpellations
 slug: 2026-05-07-interpellations
 source_folder: analysis/daily/2026-05-07/interpellations
-generated_at: 2026-05-23T08:06:00.689Z
+generated_at: 2026-05-23T22:05:56.654Z
 language: en
 layout: article
 ---
@@ -79,6 +79,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1409,13 +1422,640 @@ None.
 
 No prior PIRs found for `interpellations` subfolder within last 14 days. Fresh cycle.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_ar.md -->
+
+&#x200F;# الديمقراطيون الاجتماعيون يتحدون الحكومة بشأن التزام السويد تجاه منظمة العمل الدولية
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-07  
+**التصنيف**: عام  
+**مستوى الثقة**: متوسط [B2]
+
+### الملخص التنفيذي
+
+تحدّى حزب الديمقراطيين الاجتماعيين المعارض السويدي حكومة ائتلاف تيدو بشأن ما إذا كانت قد حافظت على الدور التاريخي للسويد بوصفها بطلةً لحقوق العمال في منظمة العمل الدولية (ILO). الاستجواب HD10475 — المقدَّم من Adrian Magnusson (S) إلى وزير سوق العمل بالنيابة Johan Britz (L) بتاريخ 7 مايو 2026 — يكشف عن فجوة في المساءلة السياسية: تملك الحكومة 22 يومًا للإجابة عمّا إذا كان الانخراط في منظمة العمل الدولية لا يزال أولوية في حقبة تشهد خفضًا في الميزانيات الإنمائية وتحوّلًا في التحالفات متعددة الأطراف. تحمل هذه المسألة ثقلًا استراتيجيًا لانتخابات 2026: يُعيد حزب S تموضعه حول حقوق العمال في مقابل ما يُوصف بتراجع حكومة تيدو عن الاتجاه متعدد الأطراف.
+
+### القرارات التي يدعمها هذا التقرير
+
+1. **الاستراتيجيون البرلمانيون** (S والأحزاب الائتلافية): رصد رد الحكومة على منظمة العمل الدولية قبل 29 مايو للاستفادة منه في الرسائل الانتخابية المتعلقة بحقوق العمال والتعددية.
+2. **المراقبون المدنيون والصحفيون**: متابعة ما إذا كان الوزير يقدّم نتائج ملموسة تخص منظمة العمل الدولية أم يلجأ إلى اللغة الدبلوماسية العامة — مؤشر قابل للقياس على العمق السياسي.
+3. **المحللون السياسيون**: تقييم ما إذا كانت مساهمات السويد في منظمة العمل الدولية، بما فيها الالتزامات المالية وعلى مستوى التفويض، قد تغيّرت منذ تولّي حكومة تيدو السلطة عام 2022.
+
+### القراءة في 60 ثانية
+
+- 📋 **استجواب واحد اليوم**: HD10475 "Regeringens arbete i ILO" من Adrian Magnusson (S) إلى الوزير Johan Britz (L)
+- 🌍 **المسألة الجوهرية**: هل حافظت حكومة تيدو على دور السويد القيادي في منظمة العمل الدولية، أم أن خفض المساعدات والسياسة الواقعية أعادا توجيه الأولويات؟
+- ⚠️ **الجدول الزمني**: الموعد النهائي للرد 2026-05-29؛ يُتوقع انعقاد نقاش في مجلس النواب في سياق الحملة الانتخابية
+- 🗳️ **البُعد الانتخابي**: يُقدّم حزب S نفسه بطلًا لحقوق العمال؛ الائتلاف مكشوف أمام تساؤلات حول الاتساق متعدد الأطراف
+- 📊 **سياق منظمة العمل الدولية**: السويد عضو مؤسس (1919)، Hjalmar Branting شخصية محورية؛ حقوق العمال العالمية تحت الضغط 2025-26 (قومية التعريفات الجمركية الأمريكية، التوكيد الصيني في هيئات الأمم المتحدة)
+- 🔴 **الخطر**: إذا قدّمت الحكومة إجابةً مبهمة أو إجرائية → سيُصعّد حزب S الأمر إلى روايةٍ حملاتية أشمل حول تخلّي السويد عن منظمة العمل الدولية
+
+### أبرز المحفزات المستقبلية
+
+**2026-05-29**: يجب على الوزير Britz الإجابة على HD10475 وإلا يسقط الاستجواب. إن جاءت الإجابة مبهمة، سيطرح حزب S المسألة على الأرجح في لجنة AU ويوظّفها في الحملة الانتخابية.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-07  
+**Klassifikation**: OFFENTLIG  
+**Konfidensgrad**: MEDIUM [B2]
+
+### RESUMÉ
+
+Sveriges oppositionsparti Socialdemokraterne har udfordret Tidö-koalitionsregeringen om, hvorvidt den har opretholdt Sveriges historiske rolle som forkæmper for arbejdstagernes rettigheder i Den Internationale Arbejdsorganisation (ILO). Interpellation HD10475 — indgivet af Adrian Magnusson (S) til fungerende arbejdsmarkedsminister Johan Britz (L) den 7. maj 2026 — afslører et politisk ansvarsgab: regeringen har 22 dage til at svare på, om ILO-engagement fortsat er en prioritet i en tid med bistandsbesparelser og forskydning af multilaterale alliancer. Spørgsmålet har strategisk vægt for valget i 2026: S positionerer sig om arbejdstagerrettigheder over for Tidö-regeringens opfattede tilbagetrækning fra multilateralisme.
+
+### Beslutninger dette underlag understøtter
+
+1. **Parlamentariske strateger** (S og koalitionspartier): Overvåg regeringens ILO-svar inden den 29. maj for budskaber om arbejdstagerrettigheder og multilateralisme i valgkampagnen.
+2. **Civile observatører og journalister**: Følg op på, om ministeren leverer konkrete ILO-resultater eller falder tilbage til generelt diplomatisk sprog — en målbar indikator for politisk dybde.
+3. **Politiske analytikere**: Vurdér, om Sveriges ILO-bidrag, herunder finansielle og mandatniveauforpligtelser, har ændret sig, siden Tidö-regeringen tiltrådte i 2022.
+
+### 60-sekunders læsning
+
+- 📋 **Én interpellation i dag**: HD10475 "Regeringens arbete i ILO" af Adrian Magnusson (S) til minister Johan Britz (L)
+- 🌍 **Kernespørgsmål**: Har Tidö-regeringen opretholdt Sveriges ILO-lederrolle, eller har bistandsbesparelser og realpolitik forskudt prioriteterne?
+- ⚠️ **Tidslinje**: Svarfrist 2026-05-29; debat forventes i kammeret med valgkampagnekontekst
+- 🗳️ **Valgdimension**: S fremstiller sig selv som forkæmper for arbejdstagerrettigheder; koalitionen er eksponeret på multilateral konsekvens
+- 📊 **ILO-kontekst**: Sverige er stiftende medlem (1919), Hjalmar Branting en nøglefigur; globale arbejdstagerrettigheder under pres i 2025-26 (USA-toldnationalisme, kinesisk assertivitet i FN-organer)
+- 🔴 **Risiko**: Regeringen giver et vagt eller proceduremæssigt svar → S eskalerer til bredere kampagnefortælling om, at Sverige forlader ILO
+
+### Vigtigste fremadrettede udløser
+
+**2026-05-29**: Minister Britz skal besvare HD10475, ellers bortfalder interpellationen. Hvis svaret er vagt, vil S sandsynligvis rejse spørgsmålet i AU-udvalget og bruge det i valgkampagnen.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-07  
+**Klassifizierung**: ÖFFENTLICH  
+**Konfidenzniveau**: MITTEL [B2]
+
+### ZUSAMMENFASSUNG
+
+Schwedens Oppositionspartei Sozialdemokraten hat die Tidö-Koalitionsregierung herausgefordert, ob sie Schwedens historische Rolle als Verfechter von Arbeitnehmerrechten in der Internationalen Arbeitsorganisation (ILO) aufrechterhalten hat. Interpellation HD10475 — eingereicht von Adrian Magnusson (S) an den amtierenden Arbeitsmarktminister Johan Britz (L) am 7. Mai 2026 — legt eine politische Rechenschaftslücke offen: Die Regierung hat 22 Tage Zeit zu antworten, ob das ILO-Engagement in einer Ära von Hilfskürzungen und sich verschiebenden multilateralen Allianzen weiterhin Priorität hat. Die Frage hat strategisches Gewicht für die Wahl 2026: S positioniert sich in Bezug auf Arbeitnehmerrechte gegenüber dem wahrgenommenen Rückzug der Tidö-Regierung vom Multilateralismus.
+
+### Entscheidungen, die dieses Briefing unterstützt
+
+1. **Parlamentarische Strategen** (S und Koalitionsparteien): Beobachten Sie die ILO-Antwort der Regierung vor dem 29. Mai für Wahlkampfbotschaften zu Arbeitnehmerrechten und Multilateralismus.
+2. **Zivilbeobachter und Journalisten**: Verfolgen Sie, ob der Minister konkrete ILO-Ergebnisse liefert oder auf allgemeine diplomatische Sprache ausweicht — ein messbarer Indikator für politische Tiefe.
+3. **Politikanalysten**: Bewerten Sie, ob Schwedens ILO-Beiträge, einschließlich finanzieller und mandatsbezogener Verpflichtungen, sich seit dem Amtsantritt der Tidö-Regierung 2022 verändert haben.
+
+### 60-Sekunden-Lektüre
+
+- 📋 **Eine Interpellation heute**: HD10475 "Regeringens arbete i ILO" von Adrian Magnusson (S) an Minister Johan Britz (L)
+- 🌍 **Kernfrage**: Hat die Tidö-Regierung Schwedens ILO-Führungsrolle aufrechterhalten, oder haben Hilfskürzungen und Realpolitik die Prioritäten verschoben?
+- ⚠️ **Zeitplan**: Antwortfrist 2026-05-29; Debatte im Plenum mit Wahlkampfkontext erwartet
+- 🗳️ **Wahldimension**: S präsentiert sich als Verfechter der Arbeitnehmerrechte; Koalition ist in Bezug auf multilaterale Konsistenz exponiert
+- 📊 **ILO-Kontext**: Schweden ist Gründungsmitglied (1919), Hjalmar Branting eine Schlüsselfigur; globale Arbeitnehmerrechte stehen 2025-26 unter Druck (US-Zollnationalismus, chinesische Assertivität in UN-Gremien)
+- 🔴 **Risiko**: Regierung gibt vage oder prozedurale Antwort → S eskaliert zu breiterem Kampagnennarrativ über Schwedens Aufgabe der ILO
+
+### Wichtigster vorausschauender Auslöser
+
+**2026-05-29**: Minister Britz muss HD10475 beantworten, oder die Interpellation verfällt. Wenn die Antwort vage ist, wird S die Frage wahrscheinlich im AU-Ausschuss aufgreifen und sie im Wahlkampf nutzen.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-07  
+**Clasificación**: PÚBLICO  
+**Nivel de confianza**: MEDIO [B2]
+
+### RESUMEN
+
+El partido de oposición Socialdemócrata sueco ha desafiado al gobierno de coalición Tidö sobre si ha mantenido el papel histórico de Suecia como campeón de los derechos de los trabajadores en la Organización Internacional del Trabajo (OIT). La interpelación HD10475 — presentada por Adrian Magnusson (S) al ministro de trabajo interino Johan Britz (L) el 7 de mayo de 2026 — expone una brecha de responsabilidad política: el gobierno tiene 22 días para responder si el compromiso con la OIT sigue siendo una prioridad en una era de recortes a la ayuda y alianzas multilaterales cambiantes. La pregunta tiene peso estratégico para las elecciones de 2026: S se posiciona en torno a los derechos laborales frente a la percibida retirada del gobierno Tidö del multilateralismo.
+
+### Decisiones que este informe apoya
+
+1. **Estrategas parlamentarios** (S y partidos de la coalición): Vigilar la respuesta del gobierno a la OIT antes del 29 de mayo para los mensajes de campaña electoral sobre derechos laborales y multilateralismo.
+2. **Observadores cívicos y periodistas**: Hacer un seguimiento de si el ministro proporciona resultados concretos de la OIT o recurre a un lenguaje diplomático genérico — un indicador medible de profundidad política.
+3. **Analistas políticos**: Evaluar si las contribuciones de Suecia a la OIT, incluyendo compromisos financieros y de nivel de mandato, han cambiado desde que el gobierno Tidö asumió el cargo en 2022.
+
+### Lectura en 60 segundos
+
+- 📋 **Una interpelación hoy**: HD10475 "Regeringens arbete i ILO" de Adrian Magnusson (S) al ministro Johan Britz (L)
+- 🌍 **Cuestión central**: ¿Ha mantenido el gobierno Tidö el papel de liderazgo de Suecia en la OIT, o los recortes a la ayuda y la realpolitik han desplazado las prioridades?
+- ⚠️ **Cronograma**: Plazo de respuesta 2026-05-29; se espera debate en la cámara en contexto de campaña electoral
+- 🗳️ **Dimensión electoral**: S se presenta como campeón de los derechos laborales; la coalición está expuesta en cuanto a coherencia multilateral
+- 📊 **Contexto OIT**: Suecia es miembro fundador (1919), Hjalmar Branting figura clave; derechos laborales globales bajo presión en 2025-26 (nacionalismo arancelario de EEUU, asertividad china en organismos de la ONU)
+- 🔴 **Riesgo**: El gobierno da una respuesta vaga o procesal → S escala a una narrativa de campaña más amplia sobre Suecia abandonando la OIT
+
+### Principal desencadenante prospectivo
+
+**2026-05-29**: El ministro Britz debe responder a HD10475 o la interpelación caduca. Si la respuesta es vaga, S probablemente planteará el asunto en el comité AU y lo utilizará en la campaña electoral.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-07  
+**Luokitus**: JULKINEN  
+**Luottamustaso**: MEDIUM [B2]
+
+### TIIVISTELMÄ
+
+Ruotsin oppositiopuolue Sosiaalidemokraatit on haastanut Tidö-koalitiohallituksen siitä, onko se ylläpitänyt Ruotsin historiallista roolia työntekijöiden oikeuksien puolestapuhujana Kansainvälisessä työjärjestössä (ILO). Kyselytunti HD10475 — Adrian Magnussonin (S) jättämä vt. työmarkkina­ministeri Johan Britzille (L) 7. toukokuuta 2026 — paljastaa poliittisen vastuuaukon: hallituksella on 22 päivää aikaa vastata, onko ILO-sitoutuminen edelleen etusijalla kehitysapuleikkausten ja muuttuneiden monenvälisten liittoutumien aikakaudella. Kysymyksellä on strateginen paino vuoden 2026 vaaleja ajatellen: S asemoituu työntekijänoikeuksiin Tidö-hallituksen koetun monenvälistyksestä vetäytymisen vastakohtana.
+
+### Tiedotteen tukemat päätökset
+
+1. **Parlamentaariset strategit** (S ja koalitiопuolueet): Seuraa hallituksen ILO-vastausta ennen 29. toukokuuta vaaliviestin kannalta työntekijänoikeuksista ja monenvälistyksestä.
+2. **Kansalaishavainnoijat ja toimittajat**: Seuraa, toimittaako ministeri konkreettisia ILO-tuloksia vai vetäytyykö yleiseen diplomaattiseen kieleen — mitattava poliittisen syvyyden indikaattori.
+3. **Politiikan analyytikot**: Arvioi, ovatko Ruotsin ILO-panokset, mukaan lukien taloudelliset ja mandaattitason sitoumukset, muuttuneet sitten kun Tidö-hallitus aloitti tehtävänsä vuonna 2022.
+
+### 60 sekunnin lukeminen
+
+- 📋 **Yksi kyselytunti tänään**: HD10475 "Regeringens arbete i ILO" — Adrian Magnusson (S) ministerille Johan Britz (L)
+- 🌍 **Ydinkysymys**: Onko Tidö-hallitus ylläpitänyt Ruotsin ILO-johtajuusroolia, vai ovatko kehitysapuleikkaukset ja reaalipolitiikka siirtäneet prioriteetteja?
+- ⚠️ **Aikataulu**: Vastausmääräaika 2026-05-29; väittely odotetaan salissa vaalikauden kontekstissa
+- 🗳️ **Vaalidimensio**: S esittää itsensä työntekijänoikeuksien puolestapuhujana; koalitio on alttiina monenvälisen johdonmukaisuuden suhteen
+- 📊 **ILO-konteksti**: Ruotsi on perustajaijäsen (1919), Hjalmar Branting avainhenkilö; maailmanlaajuiset työntekijänoikeudet paineessa 2025-26 (Yhdysvaltain tullitullioikeuksissa, Kiinan assertiivisuus YK:n elimissä)
+- 🔴 **Riski**: Hallitus antaa epämääräisen tai menettelyllisen vastauksen → S laajentaa kampanjatarinaksi Ruotsin ILO:sta luopumisesta
+
+### Tärkein ennakoiva laukaisu
+
+**2026-05-29**: Ministeri Britzin on vastattava HD10475:een tai kyselytunti raukeaa. Jos vastaus on epämääräinen, S nostaa todennäköisesti asian AU-valiokunnassa ja käyttää sitä vaalikampanjassa.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Niveau de confiance** : MOYEN [B2]
+
+### RÉSUMÉ
+
+Le parti d'opposition social-démocrate suédois a défié le gouvernement de coalition Tidö sur la question de savoir s'il a maintenu le rôle historique de la Suède en tant que champion des droits des travailleurs à l'Organisation internationale du travail (OIT). L'interpellation HD10475 — déposée par Adrian Magnusson (S) auprès du ministre intérimaire du marché du travail Johan Britz (L) le 7 mai 2026 — expose une lacune de responsabilité politique : le gouvernement dispose de 22 jours pour répondre si l'engagement envers l'OIT reste une priorité à une époque de réductions de l'aide et d'alliances multilatérales changeantes. La question revêt un poids stratégique pour les élections de 2026 : S se positionne sur les droits des travailleurs face au retrait perçu du gouvernement Tidö du multilatéralisme.
+
+### Décisions que ce briefing soutient
+
+1. **Stratèges parlementaires** (S et partis de coalition) : Surveillez la réponse du gouvernement à l'OIT avant le 29 mai pour les messages de campagne électorale sur les droits des travailleurs et le multilatéralisme.
+2. **Observateurs civiques et journalistes** : Suivez si le ministre fournit des résultats concrets de l'OIT ou se retranche derrière un langage diplomatique générique — un indicateur mesurable de la profondeur politique.
+3. **Analystes politiques** : Évaluez si les contributions de la Suède à l'OIT, y compris les engagements financiers et de niveau de mandat, ont changé depuis l'entrée en fonctions du gouvernement Tidö en 2022.
+
+### Lecture en 60 secondes
+
+- 📋 **Une interpellation aujourd'hui** : HD10475 "Regeringens arbete i ILO" d'Adrian Magnusson (S) au ministre Johan Britz (L)
+- 🌍 **Question centrale** : Le gouvernement Tidö a-t-il maintenu le rôle de leadership de la Suède à l'OIT, ou les réductions de l'aide et la realpolitik ont-elles déplacé les priorités ?
+- ⚠️ **Calendrier** : Date limite de réponse 2026-05-29 ; débat attendu en séance plénière dans le contexte de la campagne électorale
+- 🗳️ **Dimension électorale** : S se présente comme champion des droits des travailleurs ; la coalition est exposée sur la cohérence multilatérale
+- 📊 **Contexte OIT** : La Suède est membre fondateur (1919), Hjalmar Branting figure clé ; droits des travailleurs mondiaux sous pression en 2025-26 (nationalisme tarifaire américain, assertivité chinoise dans les organes de l'ONU)
+- 🔴 **Risque** : Le gouvernement donne une réponse vague ou procédurale → S fait escalader vers un récit de campagne plus large sur l'abandon de l'OIT par la Suède
+
+### Principal déclencheur prospectif
+
+**2026-05-29** : Le ministre Britz doit répondre à HD10475 ou l'interpellation expire. Si la réponse est vague, S soulèvera probablement la question au sein du comité AU et l'utilisera dans la campagne électorale.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_he.md -->
+
+&#x200F;# הסוציאל-דמוקרטים מאתגרים את הממשלה על מחויבות שוודיה ל-ILO
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-07  
+**סיווג**: ציבורי  
+**רמת ביטחון**: בינונית [B2]
+
+### סיכום מנהלים
+
+מפלגת האופוזיציה הסוציאל-דמוקרטית בשוודיה אתגרה את ממשלת קואליציית טידו בשאלה האם שמרה על תפקידה ההיסטורי של שוודיה כאלופת זכויות העובדים בארגון העבודה הבינלאומי (ILO). שאילתת HD10475 — שהגיש Adrian Magnusson (S) לשר העבודה הממלא מקום Johan Britz (L) ב-7 במאי 2026 — חושפת פער אחריות פוליטית: לממשלה יש 22 ימים להשיב האם מעורבות ILO עדיין בראש סדר העדיפויות בעידן של קיצוצי סיוע וברית רב-צדדיות משתנות. לשאלה יש משקל אסטרטגי לבחירות 2026: S מציבה עצמה סביב זכויות עובדים לעומת הנסיגה הנתפסת של ממשלת טידו מרב-צדדיות.
+
+### החלטות שתדריך זה תומך בהן
+
+1. **אסטרטגים פרלמנטריים** (S ומפלגות הקואליציה): עקבו אחר תשובת הממשלה בנושא ILO לפני ה-29 במאי לצורך מסרי מסע בחירות על זכויות עובדים ורב-צדדיות.
+2. **משקיפים אזרחיים ועיתונאים**: עקבו האם השר מספק תוצאות ILO קונקרטיות או נסוג לשפה דיפלומטית כללית — מחוון מדיד לעומק מדיני.
+3. **אנליסטים פוליטיים**: העריכו האם תרומותיה של שוודיה ל-ILO, כולל התחייבויות פיננסיות ועל רמת מנדט, השתנו מאז ממשלת טידו התמנתה ב-2022.
+
+### קריאה של 60 שניות
+
+- 📋 **שאילתא אחת היום**: HD10475 "Regeringens arbete i ILO" מאת Adrian Magnusson (S) לשר Johan Britz (L)
+- 🌍 **השאלה המרכזית**: האם ממשלת טידו שמרה על תפקיד ההנהגה של שוודיה ב-ILO, או שקיצוצי סיוע ורזון מדיני הסיטו את העדיפויות?
+- ⚠️ **לוח זמנים**: מועד אחרון לתשובה 2026-05-29; צפוי ויכוח במליאה בהקשר של קמפיין בחירות
+- 🗳️ **ממד בחירות**: S מציגה עצמה כאלופת זכויות עובדים; הקואליציה חשופה לשאלות עקביות רב-צדדית
+- 📊 **הקשר ILO**: שוודיה חברת מייסד (1919), Hjalmar Branting דמות מפתח; זכויות עובדים גלובליות תחת לחץ ב-2025-26 (לאומנות מכסים אמריקאית, נחרצות סינית בגופי האו"ם)
+- 🔴 **סיכון**: הממשלה נותנת תשובה עמומה או פרוצדורלית → S מסלימה לנרטיב קמפיין רחב יותר על נטישת שוודיה את ILO
+
+### הטריגר הצופה העיקרי
+
+**2026-05-29**: שר Britz חייב לענות על HD10475 או השאילתא פוקעת. אם התשובה עמומה, S תעלה כנראה את הנושא בוועדת AU ותשתמש בו בקמפיין הבחירות.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-05-07  
+**分類**: 公開  
+**信頼度**: 中程度 [B2]
+
+### 要旨
+
+スウェーデンの野党・社会民主党は、チドー連立政権が国際労働機関（ILO）における労働者の権利の擁護者としてのスウェーデンの歴史的役割を維持してきたかどうかについて問いただした。代表質問HD10475 — 2026年5月7日にAdrian Magnusson（S）が労働市場担当代理大臣Johan Britz（L）に提出 — は政治的説明責任のギャップを露わにしている：政府は、援助予算削減と多国間同盟の変容の時代においてILOへの関与が引き続き優先事項であるかどうかについて22日以内に答える必要がある。この問題は2026年選挙に向けて戦略的な重みを持つ：Sは労働者の権利について、多国主義からの後退とみなされるチドー政権に対し立場を明確にしている。
+
+### このブリーフィングが支援する決定
+
+1. **議会戦略家**（Sおよび連立政党）：労働者の権利と多国主義に関する選挙サイクルのメッセージのために、5月29日前の政府のILO回答を監視する。
+2. **市民観察者および記者**：大臣が具体的なILO成果を提供するか、一般的な外交的言語に退却するかを追跡する — 政策の深さの測定可能な指標。
+3. **政策アナリスト**：チドー政権が2022年に発足して以来、財政的および権限レベルのコミットメントを含め、スウェーデンのILOへの貢献が変化したかどうかを評価する。
+
+### 60秒要約
+
+- 📋 **本日の代表質問**: HD10475「Regeringens arbete i ILO」— Adrian Magnusson（S）から大臣Johan Britz（L）へ
+- 🌍 **核心的問題**: チドー政権はスウェーデンのILOリーダーシップ役割を維持してきたか、それとも援助削減と現実政治が優先事項を転換したか？
+- ⚠️ **タイムライン**: 回答期限 2026-05-29；選挙キャンペーンの文脈で議会討論が予想される
+- 🗳️ **選挙的側面**: Sは労働者の権利の擁護者として自らを位置づける；連立政権は多国間の一貫性に関して露呈している
+- 📊 **ILOの文脈**: スウェーデンは創設メンバー（1919年）、Hjalmar Brantingが重要人物；2025-26年に世界的な労働者の権利が圧力下（米国の関税ナショナリズム、国連機関における中国の主張）
+- 🔴 **リスク**: 政府が曖昧または手続き的な回答をする → Sはスウェーデンがを見捨てたという広範な選挙運動の物語にエスカレートする
+
+### 最重要の先行トリガー
+
+**2026-05-29**: 大臣Britzは HD10475に回答しなければならず、さもなければ代表質問は失効する。回答が曖昧であれば、SはAU委員会でその問題を提起し、選挙運動で使用する可能性が高い。
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-07  
+**분류**: 공개  
+**신뢰도**: 중간 [B2]
+
+### 요약
+
+스웨덴 야당 사회민주당이 티도 연립정부를 상대로, 스웨덴이 국제노동기구(ILO)에서 노동자 권리의 옹호자로서의 역사적 역할을 유지해왔는지 추궁했다. 대정부질문 HD10475 — Adrian Magnusson(S)이 2026년 5월 7일 노동시장부 대행장관 Johan Britz(L)에게 제출 — 는 정치적 책임 공백을 드러낸다: 정부는 개발원조 예산 삭감과 다자 동맹 변화의 시대에 ILO 참여가 여전히 우선순위인지에 대해 22일 이내에 답해야 한다. 이 문제는 2026년 선거에서 전략적 무게를 갖는다: S는 다자주의에서 후퇴하는 것으로 인식되는 티도 정부에 맞서 노동자 권리를 두고 입장을 정하고 있다.
+
+### 이 브리핑이 지원하는 결정
+
+1. **의회 전략가들** (S 및 연립 정당들): 노동자 권리와 다자주의에 관한 선거 주기 메시지를 위해 5월 29일 이전 정부의 ILO 답변을 모니터링한다.
+2. **시민 관찰자 및 기자들**: 장관이 구체적인 ILO 성과물을 제공하는지 아니면 일반적인 외교적 언어로 후퇴하는지 추적한다 — 정책 깊이의 측정 가능한 지표.
+3. **정책 분석가들**: 2022년 티도 정부 출범 이후 재정적·위임 수준 약속을 포함한 스웨덴의 ILO 기여가 변화했는지 평가한다.
+
+### 60초 요약
+
+- 📋 **오늘의 대정부질문**: HD10475 "Regeringens arbete i ILO" — Adrian Magnusson(S)이 장관 Johan Britz(L)에게
+- 🌍 **핵심 문제**: 티도 정부가 ILO에서 스웨덴의 리더십 역할을 유지해왔는가, 아니면 원조 삭감과 현실 정치가 우선순위를 바꿨는가?
+- ⚠️ **일정**: 답변 마감 2026-05-29; 선거 운동 맥락에서 의회 토론 예상
+- 🗳️ **선거적 차원**: S는 노동자 권리의 옹호자로 자신을 내세우고; 연립은 다자 일관성에서 노출됨
+- 📊 **ILO 맥락**: 스웨덴은 창설 회원국(1919), Hjalmar Branting 핵심 인물; 세계 노동자 권리가 2025-26년 압박 하에 있음 (미국 관세 민족주의, UN 기구에서의 중국 주장)
+- 🔴 **위험**: 정부가 모호하거나 절차적인 답변을 제공 → S가 스웨덴의 ILO 포기에 관한 광범위한 캠페인 내러티브로 확대
+
+### 최우선 전향적 트리거
+
+**2026-05-29**: 장관 Britz는 HD10475에 답해야 하며 그렇지 않으면 대정부질문이 소멸된다. 답변이 모호하면, S는 AU 위원회에서 이 문제를 제기하고 선거 운동에 활용할 가능성이 높다.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-07  
+**Classificatie**: OPENBAAR  
+**Betrouwbaarheidsniveau**: GEMIDDELD [B2]
+
+### SAMENVATTING
+
+De Zweedse oppositiepartij Sociaal-Democraten heeft de Tidö-coalitieregering uitgedaagd over de vraag of zij de historische rol van Zweden als kampioen van de rechten van werknemers in de Internationale Arbeidsorganisatie (ILO) heeft gehandhaafd. Interpellatie HD10475 — ingediend door Adrian Magnusson (S) bij waarnemend minister van Arbeidsmarkt Johan Britz (L) op 7 mei 2026 — legt een politiek verantwoordingsgebrek bloot: de regering heeft 22 dagen om te antwoorden of ILO-engagement prioriteit blijft in een tijdperk van bezuinigingen op hulpverlening en verschuivende multilaterale allianties. De vraag heeft strategisch gewicht voor de verkiezingen van 2026: S positioneert zich op het gebied van arbeidsrechten tegenover de waargenomen terugtrekking van de Tidö-regering uit het multilateralisme.
+
+### Beslissingen die dit briefing ondersteunt
+
+1. **Parlementaire strategen** (S en coalitiepartijen): Volg het ILO-antwoord van de regering vóór 29 mei voor campagneboodschappen over arbeidsrechten en multilateralisme.
+2. **Burgerobservatoren en journalisten**: Volg of de minister concrete ILO-resultaten levert of terugvalt op generieke diplomatieke taal — een meetbare indicator van politieke diepgang.
+3. **Beleidsanalisten**: Beoordeel of Zweden's ILO-bijdragen, inclusief financiële en mandaatniveauverplichtingen, zijn veranderd sinds de Tidö-regering in 2022 aantrad.
+
+### 60-seconden lezing
+
+- 📋 **Één interpellatie vandaag**: HD10475 "Regeringens arbete i ILO" door Adrian Magnusson (S) aan minister Johan Britz (L)
+- 🌍 **Kernvraag**: Heeft de Tidö-regering de leiderschapsrol van Zweden bij de ILO gehandhaafd, of hebben bezuinigingen op hulp en realpolitiek de prioriteiten verschoven?
+- ⚠️ **Tijdlijn**: Antwoorddeadline 2026-05-29; debat in de kamer verwacht in de context van de verkiezingscampagne
+- 🗳️ **Verkiezingsdimensie**: S presenteert zichzelf als kampioen van arbeidsrechten; coalitie is blootgesteld aan multilaterale consistentie
+- 📊 **ILO-context**: Zweden is oprichtend lid (1919), Hjalmar Branting sleutelfiguur; mondiale arbeidsrechten onder druk in 2025-26 (Amerikaans tariefnationalisme, Chinese assertiviteit in VN-organen)
+- 🔴 **Risico**: Regering geeft vaag of procedureel antwoord → S escaleert naar breder campagnenarrativum over Zweden dat de ILO verlaat
+
+### Belangrijkste vooruitkijkende trigger
+
+**2026-05-29**: Minister Britz moet HD10475 beantwoorden of de interpellatie vervalt. Als het antwoord vaag is, zal S de kwestie waarschijnlijk in de AU-commissie aan de orde stellen en deze gebruiken in de verkiezingscampagne.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-07  
+**Klassifisering**: OFFENTLIG  
+**Konfidensnivå**: MEDIUM [B2]
+
+### SAMMENDRAG
+
+Sveriges opposisjonsparti Sosialdemokratene har utfordret Tidö-koalisjonsregjeringen om hvorvidt den har opprettholdt Sveriges historiske rolle som forkjemper for arbeidstakerrettigheter i Den internasjonale arbeidsorganisasjonen (ILO). Interpellasjon HD10475 — innlevert av Adrian Magnusson (S) til konstituert arbeidsmarkedsminister Johan Britz (L) den 7. mai 2026 — avdekker et politisk ansvarsgap: regjeringen har 22 dager på seg til å svare på om ILO-engasjement fortsatt er en prioritet i en tid med bistandskutt og skiftende multilaterale allianser. Spørsmålet har strategisk vekt for valget i 2026: S posisjonerer seg rundt arbeidstakerrettigheter mot Tidö-regjeringens oppfattede tilbaketrekning fra multilateralisme.
+
+### Beslutninger dette underlaget støtter
+
+1. **Parlamentariske strateger** (S og koalisjonspartier): Overvåk regjeringens ILO-svar innen 29. mai for valgkampanjebudskap om arbeidstakerrettigheter og multilateralisme.
+2. **Sivile observatører og journalister**: Følg opp om statsråden leverer konkrete ILO-resultater eller tyr til generelt diplomatisk språk — en målbar indikator for politisk dybde.
+3. **Politiske analytikere**: Vurder om Sveriges ILO-bidrag, inkludert finansielle og mandatnivåforpliktelser, har endret seg siden Tidö-regjeringen tiltrådte i 2022.
+
+### 60-sekunders lesning
+
+- 📋 **Én interpellasjon i dag**: HD10475 "Regeringens arbete i ILO" av Adrian Magnusson (S) til statsråd Johan Britz (L)
+- 🌍 **Kjernespørsmål**: Har Tidö-regjeringen opprettholdt Sveriges ILO-lederrolle, eller har bistandskutt og realpolitikk forskjøvet prioriteringene?
+- ⚠️ **Tidslinje**: Svarfrist 2026-05-29; debatt forventes i stortingssalen med valgkampanjekontekst
+- 🗳️ **Valgdimensjon**: S fremstiller seg selv som forkjemper for arbeidstakerrettigheter; koalisjonen er eksponert på multilateral konsistens
+- 📊 **ILO-kontekst**: Sverige er grunnleggende medlem (1919), Hjalmar Branting en nøkkelfigur; globale arbeidstakerrettigheter under press i 2025-26 (USA-tollnasjonalisme, kinesisk assertivitet i FN-organer)
+- 🔴 **Risiko**: Regjeringen gir et vagt eller prosessuelt svar → S eskalerer til bredere kampanjefortelling om at Sverige forlater ILO
+
+### Viktigste fremadrettede utløser
+
+**2026-05-29**: Statsråd Britz må besvare HD10475 eller interpellasjonen bortfaller. Hvis svaret er vagt, vil S sannsynligvis reise spørsmålet i AU-komiteen og bruke det i valgkampanjen.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-07  
+**Klassificering**: OFFENTLIG  
+**Konfidensgrad**: MEDIUM [B2]
+
+### SAMMANFATTNING
+
+Sveriges oppositionsparti Socialdemokraterna har utmanat Tidökoalitionens regering om huruvida den har upprätthållit Sveriges historiska roll som en förkämpe för arbetstagarrättigheter i Internationella arbetsorganisationen (ILO). Interpellation HD10475 — inlämnad av Adrian Magnusson (S) till tf. arbetsmarknadsminister Johan Britz (L) den 7 maj 2026 — blottlägger en politisk ansvarsgap: regeringen har 22 dagar på sig att svara om ILO-engagemanget fortfarande är en prioritet i en era med biståndsnedskärningar och förskjutna multilaterala allianser. Frågan bär strategisk vikt inför valet 2026: S positionerar sig kring arbetstagarrättigheter kontra Tidöregeringens upplevda tillbakadragande från multilateralism.
+
+### Beslut som detta underlag stödjer
+
+1. **Parlamentariska strateger** (S och koalitionspartier): Bevaka regeringens ILO-svar innan den 29 maj för valcykelsbudskap om arbetstagarrättigheter och multilateralism.
+2. **Civila observatörer och journalister**: Följ upp om ministern tillhandahåller konkreta ILO-leverabler eller retretar till generellt diplomatspråk — en mätbar indikator på politiskt djup.
+3. **Politiska analytiker**: Bedöm om Sveriges ILO-bidrag, inklusive finansiella åtaganden och mandatnivå, har förändrats sedan Tidöregeringen tillträdde 2022.
+
+### 60-sekunders läsning
+
+- 📋 **En interpellation idag**: HD10475 "Regeringens arbete i ILO" av Adrian Magnusson (S) till minister Johan Britz (L)
+- 🌍 **Kärnfråga**: Har Tidöregeringen upprätthållit Sveriges ILO-ledarroll, eller har biståndsnedskärningar och realpolitik förskjutit prioriteringarna?
+- ⚠️ **Tidslinje**: Svarsfrist 2026-05-29; debatt förväntas i kammaren med valkampanjskontext
+- 🗳️ **Valaspekt**: S framställer sig som förkämpe för arbetstagarrättigheter; koalitionen är exponerad vad gäller multilateral konsekvens
+- 📊 **ILO-kontext**: Sverige är grundande medlem (1919), Hjalmar Branting en nyckelfigur; globala arbetstagarrättigheter under press 2025-26 (US-tariffdrivet nationalism, kinesisk assertivitet i FN-organ)
+- 🔴 **Risk**: Regeringen ger ett vagt eller procedurellt svar → S eskalerar till bredare kampanjnarrativ om att Sverige överger ILO
+
+### Viktigaste framåtblickande utlösare
+
+**2026-05-29**: Minister Britz måste besvara HD10475 eller interpellationen förfaller. Om svaret är vagt kommer S sannolikt att väcka frågan i AU-utskottet och använda den i valkampanjen.
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**日期**: 2026-05-07  
+**分类**: 公开  
+**可信度**: 中等 [B2]
+
+### 执行摘要
+
+瑞典反对党社会民主党已就蒂多联合政府是否维持了瑞典在国际劳工组织（ILO）中作为工人权利倡导者的历史性角色提出质疑。质询 HD10475 — 由 Adrian Magnusson（S）于2026年5月7日向劳动市场代理部长 Johan Britz（L）提交 — 揭示了政治问责空缺：政府有22天时间回答在援助预算削减和多边联盟转变的时代，国际劳工组织参与是否仍是优先事项。这一问题对2026年大选具有战略意义：社会党正在劳工权利议题上进行定位，对抗蒂多政府被认为从多边主义退缩的立场。
+
+### 本简报支持的决策
+
+1. **议会战略家**（S及联合政党）：在5月29日之前监测政府对国际劳工组织的答复，以掌握有关劳工权利和多边主义的选举周期信息。
+2. **公民观察员及记者**：追踪部长是否提供具体的国际劳工组织成果，还是退守通用外交语言 — 衡量政策深度的可测量指标。
+3. **政策分析人士**：评估自2022年蒂多政府上台以来，包括财务和任务层面承诺在内的瑞典对国际劳工组织的贡献是否发生了变化。
+
+### 60秒摘要
+
+- 📋 **今日一项质询**: HD10475《Regeringens arbete i ILO》— Adrian Magnusson（S）向部长 Johan Britz（L）提出
+- 🌍 **核心问题**: 蒂多政府是否维持了瑞典在国际劳工组织中的领导角色，还是援助削减和现实政治已使优先事项转向？
+- ⚠️ **时间线**: 答复截止日期 2026-05-29；预计将在议会就选举背景展开辩论
+- 🗳️ **选举维度**: S将自身定位为劳工权利的捍卫者；联合政府在多边一致性方面暴露弱点
+- 📊 **国际劳工组织背景**: 瑞典为创始成员国（1919年），Hjalmar Branting 为关键人物；2025-26年全球劳工权利承压（美国关税民族主义、中国在联合国机构中的强硬姿态）
+- 🔴 **风险**: 政府给出含糊或程序性答复 → S将此升级为关于瑞典放弃国际劳工组织的更广泛竞选叙事
+
+### 最重要的前瞻性触发因素
+
+**2026-05-29**: 部长 Britz 必须回答 HD10475，否则质询失效。如果答复模糊，S可能会在AU委员会提出该问题并在选举活动中加以利用。
+
+```mermaid
+flowchart LR
+    A["HD10475 Filed\n2026-05-06"] --> B["Answer Deadline\n2026-05-29"]
+    B --> C{Quality of\nAnswer}
+    C -->|Substantive ILO\ndeliverables| D["S acknowledges,\nshifts attack elsewhere"]
+    C -->|Generic/\nprocedural| E["S escalates:\nelection campaign\nlabor rights narrative"]
+    E --> F["2026 Election\ncampaign ammunition"]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+```
+
+<!-- source-sha: 2609a9ed259812c2115622a78da9175f9fbea8ad -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 1 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
 
@@ -1452,6 +2092,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

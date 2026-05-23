@@ -6,7 +6,7 @@ date: 2026-05-06
 subfolder: committeeReports
 slug: 2026-05-06-committeeReports
 source_folder: analysis/daily/2026-05-06/committeeReports
-generated_at: 2026-05-23T08:06:00.625Z
+generated_at: 2026-05-23T22:05:56.553Z
 language: en
 layout: article
 ---
@@ -84,6 +84,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1317,13 +1330,693 @@ No prior-cycle PIRs found within 14-day lookback window for committeeReports sub
 - IMF: Degraded (WEO/FM Datamapper OK; SDMX/IFS unavailable — standard warning block applied)
 - World Bank: Not queried (governance/WGI indicators not primary for this article type)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+---
+title: "ملخص — قرارات اللجان 2026-05-06"
+
+subfolder: committeeReports
+
+---
+
+# ملخص: قرارات اللجان البرلمانية — 6 مايو 2026
+
+**التصنيف**: 🟢 عام | **الثقة**: B2 (مصادر مؤكدة، تحقق متعدد)
+**التاريخ**: 2026-05-06 | **الريكسموتي**: 2025/26
+
+### الخلاصة (BLUF)
+
+اعتُمدت خمسة قرارات للجان البرلمانية في 6 مايو 2026 ضمن أربعة مجالات سياسية. الأكثر أهمية هو **SfU21** — الذي يُدخل فترة تأهيل للمزايا الاجتماعية القائمة على الإقامة (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). يمثل هذا أشد تقييد لشمولية دولة الرفاه السويدية منذ جيل، تم اعتماده رغم معارضة S وV وMP. إلى جانب **FöU18** (تحديث الاستخبارات الإشارية)، و**CU25** (استثناءات PBL لطاقة السجون)، وتعديلين تقنيين (FöU16, SfU24)، تعكس القرارات استمرار تيدو-الائتلاف في إيلاء الأولوية للإصلاحات المتعلقة بالهجرة والجريمة والدفاع على حساب بنية الرفاه الاجتماعي الديمقراطي.
+
+### القرارات الرئيسية (ترتيب الأولوية)
+
+| الترتيب | الوثيقة | اللجنة | الموضوع | الأهمية السياسية | النتيجة |
+|---------|--------|--------|--------|-----------------|---------|
+| 1 | HD01SfU21 | SfU | التأهيل للتأمين الاجتماعي | 🔴 عالية | مُعتمَد (تحفظات S، V+MP) |
+| 2 | HD01FöU18 | FöU | تحديث SIGINT | 🟠 عالية | مُعتمَد بالإجماع |
+| 3 | HD01CU25 | CU | طاقة السجون (استثناء PBL) | 🟠 متوسطة-عالية | مُعتمَد (تحفظ MP) |
+| 4 | HD01SfU24 | SfU | الحساب الشهري لإعانة السكن | 🟡 متوسطة | مُعتمَد (إفادة S) |
+| 5 | HD01FöU16 | FöU | تناسق الإشراف على FOI | 🟢 منخفضة | مُعتمَد بالإجماع |
+
+### التقييم الاستخباراتي (SITREP)
+
+**ماذا**: اعتمد الريكسداغ السويدي اشتراط تأهيل للرفاه (SfU21) وحدّث قانون الاستخبارات الإشارية في وقت الحرب (FöU18)، مما يشير إلى تسارع مزدوج في تقييد مزايا الهجرة والرفاه وتحديث التشريعات الدفاعية.
+
+**إذن ماذا**: يمثل SfU21 انقطاعاً هيكلياً مع المواطنة الاجتماعية الشاملة — لم يعد الإقامة وحدها تمنح حق الوصول التلقائي للمزايا. يوسع FöU18 الأساس القانوني لـ FRA في أنشطة التدريب ويوسع تعريفات الإرهاب والجريمة العابرة للحدود، مما يعزز البنية الأمنية السويدية قبيل الاندماج الكامل في الناتو.
+
+**الآن ماذا**: يتركز خطر التنفيذ على Försäkringskassan (تحديد أولويات المزايا من 2026-Q3/Q4) وFRA (الامتثال للقانون الجديد من 2026-08-01). بالنسبة لانتخابات سبتمبر 2026، يُعدّ SfU21 نقطة تعبئة للمعارضة من S وV وMP.
+
+### السياق الاقتصادي
+
+حالة صندوق النقد الدولي: متدهورة (نقطة وصول SDMX غير متاحة). استناداً إلى بيانات WEO المخزنة مؤقتاً:
+- توقعات نمو الناتج المحلي الإجمالي السويدي 2026: ~1.7% (WEO أبريل 2026)
+- يوجد هامش مالي؛ SfU21 هو في المقام الأول خيار سياسي للسيادة/الهوية وليس إجراءً طارئاً مالياً
+- قد يقلل إصلاح إعانة السكن (SfU24) بشكل هامشي من مدفوعات Försäkringskassan الزائدة (يُقدَّر بمئات الملايين من الكرون سنوياً وفق الاقتراح)
+
+### تواريخ المراقبة الهامة (T+14d إلى T+90d)
+
+| التاريخ (تقريباً) | إشارة المراقبة | الوثيقة |
+|------------------|---------------|---------|
+| 2026-05-20 | تحركات الرأي (Novus/Sifo) بعد SfU21 | PIR-05 |
+| 2026-06-05 | نشر لائحة تنفيذ SfU21 | PIR-01 |
+| 2026-07-02 | دخول FöU16 حيز التنفيذ | FöU16 |
+| 2026-07-15 | طلب اعتماد Försäkringskassan | PIR-02 |
+| 2026-08-01 | دخول FöU18 حيز التنفيذ | FöU18 |
+| 2026-08-01 | الدخول المتوقع لـ SfU21/SfU24 | SfU21/SfU24 |
+| 2026-09-13 | الانتخابات العامة السويدية | كل الخمسة |
+
+> ⚠️ بيانات صندوق النقد الدولي غير متوفرة جزئياً (SDMX متدهورة). الأرقام الاقتصادية من WEO Datamapper؛ المؤشرات التابعة لـ SDMX (سلسلة CPI الشهرية) مُستبعَدة.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_da.md -->
+
+**Klassifikation**: 🟢 OFFENTLIG | **Konfidens**: B2 (Bekræftede kilder, multiple korroborationer)
+**Dato**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Konklusion (BLUF)
+
+Fem parlamentariske udvalgsafgørelser blev vedtaget den 6. maj 2026 inden for fire politikområder. Den mest afgørende er **SfU21** — som indfører en kvalificeringsperiode for bopælsbaserede sociale forsikringsydelser (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). Dette udgør den skarpeste indskrænkning af den svenske velfærdsstats universalitet i en generation og vedtaget trods indsigelser fra S, V og MP. Samlet med **FöU18** (modernisering af signalefterforskning), **CU25** (PBL-undtagelser for fængselskapacitet) og to tekniske ændringer (FöU16, SfU24) afspejler beslutningerne Tidö-koalitionens fortsatte prioritering af migrations-, kriminalitets- og forsvarsreformer frem for socialdemokratisk velfærdsarkitektur.
+
+### Nøgleafgørelser (prioritetsrækkefølge)
+
+| Rang | Dok | Udvalg | Emne | Politisk relevans | Resultat |
+|------|-----|--------|------|-------------------|---------|
+| 1 | HD01SfU21 | SfU | Kvalificering til socialforsikring | 🔴 Høj | Vedtaget (S, V+MP forbehold) |
+| 2 | HD01FöU18 | FöU | SIGINT-modernisering | 🟠 Høj | Vedtaget enstemmigt |
+| 3 | HD01CU25 | CU | Fængselskapacitet (PBL-undtagelse) | 🟠 Moderat-Høj | Vedtaget (MP forbehold) |
+| 4 | HD01SfU24 | SfU | Månedlig boligstotsberegning | 🟡 Moderat | Vedtaget (S-erklæring) |
+| 5 | HD01FöU16 | FöU | FOI-tilsynsharmonisering | 🟢 Lav | Vedtaget enstemmigt |
+
+### Efterretningsvurdering (SITREP)
+
+**HVAD**: Sveriges Riksdag vedtog et velfærdskvalificeringskrav (SfU21) og opdaterede sin lov om signalefterforskning i krigstid (FöU18), der signalerer dobbelt acceleration inden for indvandrings-velfærdsrestriktioner og forsvarspolitisk modernisering.
+
+**HVAD SÅ**: SfU21 udgør et strukturelt brud med det universelle sociale medborgerskab — bopæl alene giver ikke længere automatisk adgang til ydelser. FöU18 udvider FRA's lovgrundlag for øvelsesaktiviteter og udvider definitionerne af terrorisme og grænseoverskridende kriminalitet, der styrker den svenske overvågningsarkitektur forud for fuld NATO-integration.
+
+**HVAD NU**: Implementeringsrisikoen koncentreres hos Försäkringskassan (ydelsestriage fra 2026-Q3/Q4) og FRA (overholdelse af ny lov fra 2026-08-01). Til valget i september 2026 udgør SfU21 et mobiliseringspunkt for opposition fra S, V og MP.
+
+### Økonomisk kontekst
+
+IMF-status: forringet (SDMX-endpoint utilgængeligt). Baseret på cachede WEO-data:
+- Sveriges BNP-vækstprognose 2026: ~1,7% (WEO april 2026-vintage)
+- Finanspolitisk råderum eksisterer; SfU21 er primært et suverænitets-/identitetspolitisk valg snarere end en finansiel nødforanstaltning
+- Boligstotsreformen (SfU24) kan marginalt reducere Försäkringskassans overbetalinger (anslået hundredvis af millioner svenske kroner årligt ifølge propositionen)
+
+### Vigtige overvågningsdatoer (T+14d til T+90d)
+
+| Dato (ca.) | Signal | Dokument |
+|------------|--------|---------|
+| 2026-05-20 | Meningsændringer (Novus/Sifo) efter SfU21 | PIR-05 |
+| 2026-06-05 | Offentliggørelse af SfU21 gennemførelsesforordning | PIR-01 |
+| 2026-07-02 | FöU16 træder i kraft | FöU16 |
+| 2026-07-15 | Försäkringskassans bevillingsanmodning | PIR-02 |
+| 2026-08-01 | FöU18 træder i kraft | FöU18 |
+| 2026-08-01 | SfU21/SfU24 forventet ikrafttræden | SfU21/SfU24 |
+| 2026-09-13 | Svenske parlamentsvalg | Alle 5 |
+
+> ⚠️ IMF-data delvist utilgængeligt (SDMX forringet). Økonomiske tal fra WEO Datamapper; SDMX-afhængige indikatorer (CPI månedsserie) udeladt.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_de.md -->
+
+**Klassifizierung**: 🟢 ÖFFENTLICH | **Konfidenz**: B2 (Bestätigte Quellen, mehrfache Korroboration)
+**Datum**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Fazit (BLUF)
+
+Fünf parlamentarische Ausschussentscheidungen wurden am 6. Mai 2026 in vier Politikbereichen verabschiedet. Die folgenschwerste ist **SfU21** — die eine Qualifizierungsperiode für wohnsitzbasierte Sozialversicherungsleistungen (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd) einführt. Dies stellt die schärfste Einschränkung der Universalität des schwedischen Wohlfahrtsstaats seit einer Generation dar und wurde trotz Widerstand von S, V und MP verabschiedet. Zusammen mit **FöU18** (Modernisierung der Signalaufklärung), **CU25** (PBL-Ausnahmen für Gefängniskapazität) und zwei technischen Änderungen (FöU16, SfU24) spiegeln die Entscheidungen die weitere Priorisierung der Tidö-Koalition von Migrations-, Kriminalitäts- und Verteidigungsreformen gegenüber sozialdemokratischer Wohlfahrtsarchitektur wider.
+
+### Schlüsselentscheidungen (Prioritätsreihenfolge)
+
+| Rang | Dok | Ausschuss | Thema | Politische Relevanz | Ergebnis |
+|------|-----|----------|-------|--------------------|---------| 
+| 1 | HD01SfU21 | SfU | Sozialversicherungsqualifizierung | 🔴 Hoch | Angenommen (S, V+MP Vorbehalte) |
+| 2 | HD01FöU18 | FöU | SIGINT-Modernisierung | 🟠 Hoch | Einstimmig angenommen |
+| 3 | HD01CU25 | CU | Gefängniskapazität (PBL-Ausnahme) | 🟠 Mittel-Hoch | Angenommen (MP Vorbehalt) |
+| 4 | HD01SfU24 | SfU | Monatliche Wohnbeihilfeberechnung | 🟡 Mittel | Angenommen (S-Erklärung) |
+| 5 | HD01FöU16 | FöU | FOI-Aufsichtsharmonisierung | 🟢 Niedrig | Einstimmig angenommen |
+
+### Nachrichtendienstliche Bewertung (SITREP)
+
+**WAS**: Schwedens Riksdag verabschiedete eine Wohlfahrtsqualifizierungsanforderung (SfU21) und aktualisierte sein Kriegszeiten-Signalaufklärungsgesetz (FöU18), was eine doppelte Beschleunigung bei Migrations-Wohlfahrtsbeschränkungen und verteidigungspolitischer Modernisierung signalisiert.
+
+**UND SO**: SfU21 stellt einen strukturellen Bruch mit dem universellen sozialen Staatsbürgerschaft dar — Wohnsitz allein gewährt keinen automatischen Leistungsanspruch mehr. FöU18 erweitert die Rechtsgrundlage der FRA für Übungsaktivitäten und weitet die Definitionen von Terrorismus und grenzüberschreitender Kriminalität aus, was die schwedische Überwachungsarchitektur vor der vollständigen NATO-Integration stärkt.
+
+**JETZT**: Das Umsetzungsrisiko konzentriert sich auf die Försäkringskassan (Leistungspriorisierung ab 2026-Q3/Q4) und die FRA (Einhaltung des neuen Gesetzes ab 2026-08-01). Für die Wahl im September 2026 ist SfU21 ein Mobilisierungspunkt für die Opposition von S, V und MP.
+
+### Wirtschaftlicher Kontext
+
+IMF-Status: beeinträchtigt (SDMX-Endpunkt nicht verfügbar). Basierend auf zwischengespeicherten WEO-Daten:
+- BIP-Wachstumsprognose Schwedens 2026: ~1,7 % (WEO April 2026-Vintage)
+- Fiskalpolitischer Spielraum vorhanden; SfU21 ist primär eine Souveränitäts-/Identitätspolitik, keine Notfallmaßnahme
+- Die Wohnbeihilfereform (SfU24) könnte Überzahlungen der Försäkringskassan marginal reduzieren (geschätzt Hunderte Millionen Kronen jährlich laut Proposition)
+
+### Wichtige Beobachtungsdaten (T+14d bis T+90d)
+
+| Datum (ca.) | Signal | Dokument |
+|-------------|--------|---------|
+| 2026-05-20 | Meinungsbewegungen (Novus/Sifo) nach SfU21 | PIR-05 |
+| 2026-06-05 | Veröffentlichung der SfU21-Durchführungsverordnung | PIR-01 |
+| 2026-07-02 | FöU16 tritt in Kraft | FöU16 |
+| 2026-07-15 | Försäkringskassans Mittelbeantragung | PIR-02 |
+| 2026-08-01 | FöU18 tritt in Kraft | FöU18 |
+| 2026-08-01 | Erwartetes Inkrafttreten SfU21/SfU24 | SfU21/SfU24 |
+| 2026-09-13 | Schwedische Parlamentswahl | Alle 5 |
+
+> ⚠️ IMF-Daten teilweise nicht verfügbar (SDMX beeinträchtigt). Wirtschaftliche Zahlen aus WEO Datamapper; SDMX-abhängige Indikatoren (VPI-Monatsserie) weggelassen.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_es.md -->
+
+**Clasificación**: 🟢 PÚBLICO | **Confianza**: B2 (Fuentes confirmadas, corroboración múltiple)
+**Fecha**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Conclusión (BLUF)
+
+Cinco decisiones de comisiones parlamentarias fueron adoptadas el 6 de mayo de 2026 en cuatro ámbitos políticos. La más trascendental es **SfU21** — que introduce un período de calificación para las prestaciones del seguro social basadas en la residencia (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). Esto representa la restricción más severa de la universalidad del estado de bienestar sueco en una generación, aprobada pese a la oposición de S, V y MP. Junto con **FöU18** (modernización de inteligencia de señales), **CU25** (exenciones PBL para capacidad penitenciaria) y dos enmiendas técnicas (FöU16, SfU24), las decisiones reflejan la continua priorización de la coalición Tidö de reformas migratorias, de seguridad y de defensa sobre la arquitectura del bienestar socialdemócrata.
+
+### Decisiones clave (orden de prioridad)
+
+| Rango | Doc | Comisión | Tema | Relevancia política | Resultado |
+|-------|-----|---------|------|---------------------|---------|
+| 1 | HD01SfU21 | SfU | Calificación al seguro social | 🔴 Alta | Aprobado (reservas S, V+MP) |
+| 2 | HD01FöU18 | FöU | Modernización SIGINT | 🟠 Alta | Aprobado por unanimidad |
+| 3 | HD01CU25 | CU | Capacidad penitenciaria (exención PBL) | 🟠 Moderada-Alta | Aprobado (reserva MP) |
+| 4 | HD01SfU24 | SfU | Cálculo mensual subsidio habitacional | 🟡 Moderada | Aprobado (declaración S) |
+| 5 | HD01FöU16 | FöU | Armonización supervisión FOI | 🟢 Baja | Aprobado por unanimidad |
+
+### Evaluación de inteligencia (SITREP)
+
+**QUÉ**: El Riksdag sueco adoptó un requisito de calificación de bienestar (SfU21) y actualizó su ley de inteligencia de señales en tiempos de guerra (FöU18), señalando una doble aceleración tanto en restricciones migratorias-sociales como en modernización legislativa de defensa.
+
+**Y ENTONCES**: SfU21 representa una ruptura estructural con la ciudadanía social universal — la residencia por sí sola ya no otorga acceso automático a las prestaciones. FöU18 amplía la base legal de la FRA para actividades de entrenamiento y amplía las definiciones de terrorismo y delincuencia transfronteriza, reforzando la arquitectura de vigilancia sueca ante la plena integración en la OTAN.
+
+**AHORA QUÉ**: El riesgo de implementación se concentra en la Försäkringskassan (priorización de prestaciones desde 2026-Q3/Q4) y la FRA (cumplimiento de la nueva ley desde 2026-08-01). Para las elecciones de septiembre de 2026, SfU21 es un punto de movilización de la oposición de S, V y MP.
+
+### Contexto económico
+
+Estado del FMI: degradado (punto de acceso SDMX no disponible). Basado en datos WEO en caché:
+- Proyección de crecimiento del PIB sueco 2026: ~1,7 % (WEO abril 2026)
+- Existe espacio fiscal; SfU21 es principalmente una elección de política de soberanía/identidad, no una medida de emergencia fiscal
+- La reforma del subsidio habitacional (SfU24) podría reducir marginalmente los pagos en exceso de la Försäkringskassan (estimado en cientos de millones de coronas anuales según la proposición)
+
+### Fechas de vigilancia importantes (T+14d a T+90d)
+
+| Fecha (aprox.) | Señal | Documento |
+|----------------|-------|---------|
+| 2026-05-20 | Movimientos de opinión (Novus/Sifo) tras SfU21 | PIR-05 |
+| 2026-06-05 | Publicación del reglamento de aplicación SfU21 | PIR-01 |
+| 2026-07-02 | FöU16 entra en vigor | FöU16 |
+| 2026-07-15 | Solicitud de asignación de la Försäkringskassan | PIR-02 |
+| 2026-08-01 | FöU18 entra en vigor | FöU18 |
+| 2026-08-01 | Entrada en vigor esperada SfU21/SfU24 | SfU21/SfU24 |
+| 2026-09-13 | Elecciones legislativas suecas | Todos 5 |
+
+> ⚠️ Datos del FMI parcialmente no disponibles (SDMX degradado). Cifras económicas del Datamapper WEO; indicadores dependientes del SDMX (serie mensual IPC) omitidos.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_fi.md -->
+
+**Luokittelu**: 🟢 JULKINEN | **Luotettavuus**: B2 (Vahvistetut lähteet, moninkertainen korroboraatio)
+**Päivämäärä**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Johtopäätös (BLUF)
+
+Kuusi parlamentaarista valiokuntapäätöstä hyväksyttiin 6. toukokuuta 2026 neljällä politiikka-alueella. Merkittävin on **SfU21** — joka ottaa käyttöön karsintajakson asuinpaikkapohjaisille sosiaalivakuutusetuuksille (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). Tämä edustaa ankarinta rajoitusta Ruotsin hyvinvointivaltion universaaliudessa sukupolveen, ja se hyväksyttiin S:n, V:n ja MP:n vastalauseista huolimatta. Yhdessä **FöU18** (signaalitiedustelun uudistaminen), **CU25** (PBL-poikkeus vankilakapasiteettiin) ja kahden teknisen muutoksen (FöU16, SfU24) kanssa päätökset heijastavat Tidö-koalition jatkuvaa maahanmuutto-, rikollisuus- ja puolustusreformien priorisointia sosiaalidemokraattisen hyvinvointiarkkitehtuurin sijaan.
+
+### Avainpäätökset (prioriteettijärjestys)
+
+| Sija | Dok | Valiokunta | Aihe | Poliittinen merkitys | Tulos |
+|------|-----|-----------|------|---------------------|-------|
+| 1 | HD01SfU21 | SfU | Sosiaalivakuutuksen karsinta | 🔴 Korkea | Hyväksytty (S, V+MP varaumat) |
+| 2 | HD01FöU18 | FöU | SIGINT-uudistus | 🟠 Korkea | Hyväksytty yksimielisesti |
+| 3 | HD01CU25 | CU | Vankilakapasiteetti (PBL-poikkeus) | 🟠 Kohtalainen-Korkea | Hyväksytty (MP varaus) |
+| 4 | HD01SfU24 | SfU | Asumistuen kuukausilaskenta | 🟡 Kohtalainen | Hyväksytty (S-lausuma) |
+| 5 | HD01FöU16 | FöU | FOI-valvonnan harmonisointi | 🟢 Matala | Hyväksytty yksimielisesti |
+
+### Tiedusteluarvio (SITREP)
+
+**MITÄ**: Ruotsin Riksdag hyväksyi hyvinvointikarsintavaatimuksen (SfU21) ja päivitti sodanaikaisen signaalitiedustelulakinsa (FöU18), mikä signaloi kaksoisvauhditusta sekä maahanmuutto-hyvinvointirajoituksissa että puolustuslainsäädännön uudistamisessa.
+
+**NIIN MITÄ**: SfU21 edustaa rakenteellista murtumaa universaalisessa sosiaalisessa kansalaisuudessa — asuminen yksinään ei enää anna automaattista pääsyä etuuksiin. FöU18 laajentaa FRA:n lakivaltuuksia harjoitustoimintaan ja laajentaa terrorismin ja rajat ylittävän rikollisuuden määritelmiä, tiukentaen Ruotsin valvontaarkkitehtuuria ennen täyttä NATO-integraatiota.
+
+**NYT MITÄ**: Toteutusriski tiivistyy Försäkringskassaniin (etuuksien triage 2026-Q3/Q4) ja FRA:han (uuden lain noudattaminen 2026-08-01). Syyskuun 2026 vaalikierroksen osalta SfU21 on S:n, V:n ja MP:n oppositiomobilisaation polttopiste.
+
+### Taloudellinen konteksti
+
+IMF-tila: heikentynyt (SDMX-päätepisteeseen ei pääsyä). WEO:n välimuistidataan perustuen:
+- Ruotsin BKT-kasvuennuste 2026: ~1,7 % (WEO huhtikuu 2026 -vintage)
+- Finanssipoliittista liikkumavaraa on; SfU21 on ensisijaisesti suvereenisuus-/identiteettipoliittinen valinta eikä finanssihätätoimenpide
+- Asumistukiuudistus (SfU24) voi marginaalisesti vähentää Försäkringskassanin ylimaksuja (arviolta satoja miljoonia kruunuja vuodessa propositionin mukaan)
+
+### Tärkeät seurantapäivämäärät (T+14d–T+90d)
+
+| Päivämäärä (n.) | Seurantasignaali | Asiakirja |
+|----------------|-----------------|---------|
+| 2026-05-20 | Mielipiteen muutokset (Novus/Sifo) SfU21:n jälkeen | PIR-05 |
+| 2026-06-05 | SfU21-toimeenpanoasetuksen julkaiseminen | PIR-01 |
+| 2026-07-02 | FöU16 tulee voimaan | FöU16 |
+| 2026-07-15 | Försäkringskassanin määrärahaesitys | PIR-02 |
+| 2026-08-01 | FöU18 tulee voimaan | FöU18 |
+| 2026-08-01 | SfU21/SfU24 odotettu voimaantulo | SfU21/SfU24 |
+| 2026-09-13 | Ruotsin parlamenttivaalit | Kaikki 5 |
+
+> ⚠️ IMF-data osittain saatavilla (SDMX heikentynyt). Taloudelliset luvut WEO Datamapperista; SDMX-riippuvaiset indikaattorit (KHI kuukausisarjat) jätetty pois.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_fr.md -->
+
+### Conclusion (BLUF)
+
+Cinq décisions de commissions parlementaires ont été adoptées le 6 mai 2026 dans quatre domaines politiques. La plus déterminante est **SfU21** — instaurant une période de qualification pour les prestations sociales basées sur la résidence (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). Cela représente la restriction la plus sévère de l'universalité de l'État-providence suédois depuis une génération, adoptée malgré l'opposition de S, V et MP. Conjointement avec **FöU18** (modernisation du renseignement électromagnétique), **CU25** (exemptions PBL pour la capacité pénitentiaire) et deux amendements techniques (FöU16, SfU24), ces décisions reflètent la priorité continue de la coalition Tidö accordée aux réformes migratoires, sécuritaires et de défense au détriment de l'architecture sociale-démocrate.
+
+### Décisions clés (ordre de priorité)
+
+| Rang | Doc | Commission | Sujet | Importance politique | Résultat |
+|------|-----|-----------|-------|---------------------|---------|
+| 1 | HD01SfU21 | SfU | Qualification aux assurances sociales | 🔴 Élevée | Adopté (réserves S, V+MP) |
+| 2 | HD01FöU18 | FöU | Modernisation SIGINT | 🟠 Élevée | Adopté à l'unanimité |
+| 3 | HD01CU25 | CU | Capacité carcérale (exemption PBL) | 🟠 Modérée-Élevée | Adopté (réserve MP) |
+| 4 | HD01SfU24 | SfU | Calcul mensuel allocation logement | 🟡 Modérée | Adopté (déclaration S) |
+| 5 | HD01FöU16 | FöU | Harmonisation supervision FOI | 🟢 Faible | Adopté à l'unanimité |
+
+### Évaluation du renseignement (SITREP)
+
+**QUOI** : Le Riksdag suédois a adopté une exigence de qualification sociale (SfU21) et mis à jour sa loi sur le renseignement électromagnétique en temps de guerre (FöU18), signalant une double accélération des restrictions migratoires-sociales et de la modernisation législative de la défense.
+
+**ET ALORS** : SfU21 représente une rupture structurelle avec la citoyenneté sociale universelle — la résidence seule ne donne plus automatiquement accès aux prestations. FöU18 étend la base légale de la FRA pour les exercices et élargit les définitions du terrorisme et de la criminalité transfrontalière, renforçant l'architecture de surveillance suédoise avant l'intégration complète à l'OTAN.
+
+**MAINTENANT QUOI** : Le risque d'implémentation se concentre sur la Försäkringskassan (triage des prestations à partir de 2026-Q3/Q4) et la FRA (conformité à la nouvelle loi à partir du 2026-08-01). Pour les élections de septembre 2026, SfU21 est un point de mobilisation de l'opposition pour S, V et MP.
+
+### Contexte économique
+
+Statut FMI : dégradé (point d'accès SDMX indisponible). Sur la base des données WEO en cache :
+- Prévision de croissance du PIB suédois 2026 : ~1,7 % (WEO avril 2026)
+- Marge budgétaire disponible ; SfU21 est principalement un choix de politique identitaire/souveraineté plutôt qu'une mesure d'urgence fiscale
+- La réforme de l'allocation logement (SfU24) pourrait marginalement réduire les trop-perçus de la Försäkringskassan (estimés à des centaines de millions de couronnes par an selon la proposition)
+
+### Dates de surveillance importantes (T+14j à T+90j)
+
+| Date (approx.) | Signal | Document |
+|----------------|--------|---------|
+| 2026-05-20 | Mouvements d'opinion (Novus/Sifo) post-SfU21 | PIR-05 |
+| 2026-06-05 | Publication du règlement d'application SfU21 | PIR-01 |
+| 2026-07-02 | FöU16 entre en vigueur | FöU16 |
+| 2026-07-15 | Demande de crédit de la Försäkringskassan | PIR-02 |
+| 2026-08-01 | FöU18 entre en vigueur | FöU18 |
+| 2026-08-01 | Entrée en vigueur attendue SfU21/SfU24 | SfU21/SfU24 |
+| 2026-09-13 | Élections législatives suédoises | Tous 5 |
+
+> ⚠️ Données FMI partiellement indisponibles (SDMX dégradé). Chiffres économiques issus du Datamapper WEO ; indicateurs dépendant du SDMX (série mensuelle IPC) omis.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+---
+title: "סיכום — החלטות ועדות 2026-05-06"
+
+subfolder: committeeReports
+
+---
+
+# סיכום: החלטות ועדות פרלמנטריות — 6 במאי 2026
+
+**סיווג**: 🟢 ציבורי | **ביטחון**: B2 (מקורות מאומתים, קורובורציה מרובה)
+**תאריך**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### מסקנה (BLUF)
+
+חמש החלטות ועדות פרלמנטריות אומצו ב-6 במאי 2026 בארבעה תחומי מדיניות. המשמעותית ביותר היא **SfU21** — המכניסה תקופת כשירות לגמלאות ביטוח לאומי המבוססות על מגורים (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). זה מייצג את ההגבלה החריפה ביותר על אוניברסליות מדינת הרווחה השבדית בדור, שהתקבלה חרף התנגדות S, V ו-MP. יחד עם **FöU18** (מודרניזציה של מודיעין אותות), **CU25** (פטורי PBL לקיבולת כלאות) ושני תיקונים טכניים (FöU16, SfU24), ההחלטות משקפות את תעדוף הקואליציה טידו של רפורמות הגירה, פשע והגנה על פני ארכיטקטורת רווחה סוציאל-דמוקרטית.
+
+### החלטות מרכזיות (סדר עדיפויות)
+
+| דירוג | מסמך | ועדה | נושא | חשיבות פוליטית | תוצאה |
+|-------|------|------|------|---------------|-------|
+| 1 | HD01SfU21 | SfU | כשירות לביטוח לאומי | 🔴 גבוהה | אומץ (הסתייגויות S, V+MP) |
+| 2 | HD01FöU18 | FöU | מודרניזציה SIGINT | 🟠 גבוהה | אומץ פה אחד |
+| 3 | HD01CU25 | CU | קיבולת כלאות (פטור PBL) | 🟠 בינונית-גבוהה | אומץ (הסתייגות MP) |
+| 4 | HD01SfU24 | SfU | חישוב חודשי קצבת דיור | 🟡 בינונית | אומץ (הצהרת S) |
+| 5 | HD01FöU16 | FöU | הרמוניזציה פיקוח FOI | 🟢 נמוכה | אומץ פה אחד |
+
+### הערכת מודיעין (SITREP)
+
+**מה**: הריקסדאג השבדי אימץ דרישת כשירות לרווחה (SfU21) ועדכן את חוק מודיעין האותות בזמן מלחמה (FöU18), המסמן האצה כפולה הן בהגבלות הגירה-רווחה והן במודרניזציה של חקיקת הגנה.
+
+**אז מה**: SfU21 מייצג קרע מבני עם אזרחות חברתית אוניברסלית — מגורים בלבד אינם מעניקים עוד גישה אוטומטית לגמלאות. FöU18 מרחיב את הבסיס החוקי של FRA לפעילויות תרגיל ומרחיב הגדרות של טרור ופשע חוצה גבולות, מחזק את ארכיטקטורת הפיקוח השבדית לפני אינטגרציה מלאה בנאט"ו.
+
+**עכשיו מה**: סיכון היישום מתרכז ב-Försäkringskassan (תעדוף גמלאות מ-2026-Q3/Q4) וב-FRA (ציות לחוק החדש מ-2026-08-01). לבחירות ספטמבר 2026, SfU21 הוא נקודת גיוס אופוזיציה עבור S, V ו-MP.
+
+### הקשר כלכלי
+
+מצב קרן המטבע: פגוע (נקודת גישת SDMX לא זמינה). בהתבסס על נתוני WEO שמורים:
+- תחזית צמיחת תמ"ג שבדיה 2026: ~1.7% (WEO אפריל 2026)
+- קיים מרחב פיסקלי; SfU21 הוא בעיקרו בחירה של מדיניות ריבונות/זהות, לא אמצעי חירום פיסקלי
+- רפורמת קצבת הדיור (SfU24) עשויה להפחית בצורה שולית תשלומי יתר של Försäkringskassan (מוערך במאות מיליוני כתרים שנתי לפי ההצעה)
+
+### תאריכי מעקב חשובים (T+14d עד T+90d)
+
+| תאריך (בערך) | אות מעקב | מסמך |
+|-------------|---------|------|
+| 2026-05-20 | תנועות דעת קהל (Novus/Sifo) לאחר SfU21 | PIR-05 |
+| 2026-06-05 | פרסום תקנות יישום SfU21 | PIR-01 |
+| 2026-07-02 | FöU16 נכנס לתוקף | FöU16 |
+| 2026-07-15 | בקשת הקצבה של Försäkringskassan | PIR-02 |
+| 2026-08-01 | FöU18 נכנס לתוקף | FöU18 |
+| 2026-08-01 | כניסה צפויה לתוקף SfU21/SfU24 | SfU21/SfU24 |
+| 2026-09-13 | הבחירות הכלליות בשבדיה | כל 5 |
+
+> ⚠️ נתוני קרן המטבע אינם זמינים חלקית (SDMX פגוע). נתונים כלכליים מ-WEO Datamapper; מדדים תלויי SDMX (סדרת CPI חודשית) הושמטו.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_ja.md -->
+
+**分類**: 🟢 公開 | **信頼度**: B2（確認済み情報源、複数の裏付け）
+**日付**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### 結論（BLUF）
+
+2026年5月6日、4つの政策分野で5件の議会委員会決定が採択された。最も重要なのは**SfU21** — 居住ベースの社会保険給付（barnbidrag、föräldrapenning、bostadsbidrag、äldreförsörjningsstöd）に資格要件期間を導入するもの。これは一世代で最も厳しいスウェーデン福祉国家の普遍性への制限を表し、S、V、MPの反対を押し切って採択された。**FöU18**（信号情報近代化）、**CU25**（刑務所収容能力へのPBL免除）、2件の技術的改正（FöU16、SfU24）とともに、これらの決定はティデ連立政権が社会民主主義的福祉アーキテクチャよりも移民、犯罪、防衛改革を継続して優先していることを反映している。
+
+### 主要決定（優先順位順）
+
+| 順位 | 文書 | 委員会 | 議題 | 政治的重要性 | 結果 |
+|------|------|-------|------|------------|-----|
+| 1 | HD01SfU21 | SfU | 社会保険資格 | 🔴 高 | 採択（S、V+MP留保） |
+| 2 | HD01FöU18 | FöU | SIGINT近代化 | 🟠 高 | 全会一致で採択 |
+| 3 | HD01CU25 | CU | 刑務所収容能力（PBL免除） | 🟠 中高 | 採択（MP留保） |
+| 4 | HD01SfU24 | SfU | 住宅手当月次計算 | 🟡 中 | 採択（S声明） |
+| 5 | HD01FöU16 | FöU | FOI監督調和化 | 🟢 低 | 全会一致で採択 |
+
+### 情報評価（SITREP）
+
+**何が**: スウェーデン国会は福祉資格要件（SfU21）を採択し、戦時信号情報法（FöU18）を更新した。これは移民・福祉制限と防衛立法近代化の両面での加速を示している。
+
+**それで**: SfU21は普遍的社会市民権との構造的断絶を意味する——居住だけでは給付へのアクセスが自動的に与えられなくなった。FöU18はFRAの訓練活動への法的権限を拡大し、テロリズムと国境を越えた犯罪の定義を広げ、NATO完全統合に向けてスウェーデンの監視アーキテクチャを強化する。
+
+**今後**: 実施リスクはFörsäkringskassan（2026年Q3/Q4からの給付優先順位付け）とFRA（2026-08-01からの新法遵守）に集中する。2026年9月選挙に向けて、SfU21はS、V、MPの野党動員の焦点となる。
+
+### 経済的背景
+
+IMF状況：劣化（SDMXエンドポイント利用不可）。キャッシュされたWEOデータに基づく：
+- スウェーデンGDP成長率予測2026年：約1.7%（WEO 2026年4月）
+- 財政余力は存在する；SfU21は主権・アイデンティティ政策の選択であり、財政的緊急措置ではない
+- 住宅手当改革（SfU24）はFörsäkringskassanの過払いを僅かに削減できる可能性がある（提案によれば年間数億クローナと推定）
+
+### 重要な監視日（T+14日からT+90日）
+
+| 日付（概算） | 監視シグナル | 文書 |
+|------------|-----------|-----|
+| 2026-05-20 | SfU21後の世論動向（Novus/Sifo） | PIR-05 |
+| 2026-06-05 | SfU21施行令の公布 | PIR-01 |
+| 2026-07-02 | FöU16施行 | FöU16 |
+| 2026-07-15 | Försäkringskassan予算要求 | PIR-02 |
+| 2026-08-01 | FöU18施行 | FöU18 |
+| 2026-08-01 | SfU21/SfU24施行予定 | SfU21/SfU24 |
+| 2026-09-13 | スウェーデン総選挙 | 全5件 |
+
+> ⚠️ IMFデータが一部利用不可（SDMX劣化）。経済数値はWEO Datamapperから；SDMX依存指標（CPI月次系列）は除外。
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_ko.md -->
+
+**분류**: 🟢 공개 | **신뢰도**: B2 (확인된 출처, 다중 코로보레이션)
+**날짜**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### 결론 (BLUF)
+
+2026년 5월 6일 네 개의 정책 분야에서 다섯 건의 의회 위원회 결정이 채택되었다. 가장 중요한 것은 **SfU21** — 거주지 기반 사회보험 급여(barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd)에 자격 요건 기간을 도입하는 것이다. 이는 한 세대 만에 가장 엄격한 스웨덴 복지국가 보편성 제한을 나타내며, S, V, MP의 반대에도 불구하고 채택되었다. **FöU18**(신호 정보 현대화), **CU25**(교도소 수용 능력 PBL 면제), 두 건의 기술적 수정안(FöU16, SfU24)과 함께, 이 결정들은 티되 연립 정권이 사회민주주의적 복지 아키텍처보다 이민, 범죄, 국방 개혁을 지속적으로 우선시하고 있음을 반영한다.
+
+### 핵심 결정 (우선순위 순)
+
+| 순위 | 문서 | 위원회 | 주제 | 정치적 중요성 | 결과 |
+|------|------|-------|------|------------|-----|
+| 1 | HD01SfU21 | SfU | 사회보험 자격 | 🔴 높음 | 채택 (S, V+MP 유보) |
+| 2 | HD01FöU18 | FöU | SIGINT 현대화 | 🟠 높음 | 만장일치 채택 |
+| 3 | HD01CU25 | CU | 교도소 수용 능력 (PBL 면제) | 🟠 중상 | 채택 (MP 유보) |
+| 4 | HD01SfU24 | SfU | 주거급여 월별 계산 | 🟡 중간 | 채택 (S 성명) |
+| 5 | HD01FöU16 | FöU | FOI 감독 조화화 | 🟢 낮음 | 만장일치 채택 |
+
+### 정보 평가 (SITREP)
+
+**무엇이**: 스웨덴 리크스다겐은 복지 자격 요건(SfU21)을 채택하고 전시 신호 정보법(FöU18)을 업데이트했다. 이는 이민-복지 제한과 국방 입법 현대화 모두에서 이중 가속을 나타낸다.
+
+**그래서**: SfU21은 보편적 사회 시민권과의 구조적 단절을 나타낸다 — 거주지만으로는 더 이상 자동으로 급여에 접근할 수 없다. FöU18은 훈련 활동에 대한 FRA의 법적 권한을 확대하고 테러리즘과 국경을 초월한 범죄의 정의를 확장하여 NATO 완전 통합을 앞두고 스웨덴의 감시 아키텍처를 강화한다.
+
+**이제**: 구현 위험은 Försäkringskassan(2026년 Q3/Q4부터 급여 우선순위 결정)과 FRA(2026-08-01부터 새 법률 준수)에 집중된다. 2026년 9월 선거를 위해 SfU21은 S, V, MP의 야당 동원 포인트이다.
+
+### 경제적 맥락
+
+IMF 상태: 저하됨 (SDMX 엔드포인트 이용 불가). 캐시된 WEO 데이터 기반:
+- 스웨덴 GDP 성장률 전망 2026년: ~1.7% (WEO 2026년 4월)
+- 재정 공간 존재; SfU21은 주로 주권/정체성 정책 선택으로 재정 긴급 조치가 아님
+- 주거급여 개혁(SfU24)은 Försäkringskassan의 초과 지급을 소폭 줄일 수 있음 (제안에 따르면 연간 수억 크로나로 추정)
+
+### 중요 모니터링 날짜 (T+14일~T+90일)
+
+| 날짜 (약) | 모니터링 신호 | 문서 |
+|----------|------------|-----|
+| 2026-05-20 | SfU21 이후 여론 동향 (Novus/Sifo) | PIR-05 |
+| 2026-06-05 | SfU21 시행 규정 공표 | PIR-01 |
+| 2026-07-02 | FöU16 발효 | FöU16 |
+| 2026-07-15 | Försäkringskassan 예산 요청 | PIR-02 |
+| 2026-08-01 | FöU18 발효 | FöU18 |
+| 2026-08-01 | SfU21/SfU24 예상 발효 | SfU21/SfU24 |
+| 2026-09-13 | 스웨덴 총선 | 전체 5건 |
+
+> ⚠️ IMF 데이터 일부 이용 불가 (SDMX 저하). 경제 수치는 WEO Datamapper에서; SDMX 의존 지표 (CPI 월별 계열) 제외.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_nl.md -->
+
+**Classificatie**: 🟢 OPENBAAR | **Betrouwbaarheid**: B2 (Bevestigde bronnen, meervoudige corroboratie)
+**Datum**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Conclusie (BLUF)
+
+Vijf parlementaire commissiebeslissingen werden op 6 mei 2026 aangenomen in vier beleidsdomeinen. De meest ingrijpende is **SfU21** — die een kwalificatieperiode invoert voor op verblijf gebaseerde sociale verzekeringsuitkeringen (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). Dit vertegenwoordigt de scherpste beperking van de universaliteit van de Zweedse verzorgingsstaat in een generatie, aangenomen ondanks oppositie van S, V en MP. Samen met **FöU18** (modernisering van signalinformatie), **CU25** (PBL-uitzonderingen voor gevangeniscapaciteit) en twee technische wijzigingen (FöU16, SfU24) weerspiegelen de beslissingen de aanhoudende prioritering van de Tidö-coalitie van migratie-, veiligheids- en defensiehervormingen boven socialdemocratische welzijnsarchitectuur.
+
+### Kernbeslissingen (prioriteitsvolgorde)
+
+| Rang | Doc | Commissie | Onderwerp | Politieke relevantie | Resultaat |
+|------|-----|----------|-----------|---------------------|---------|
+| 1 | HD01SfU21 | SfU | Sociale verzekeringskwalificatie | 🔴 Hoog | Aangenomen (S, V+MP voorbehouden) |
+| 2 | HD01FöU18 | FöU | SIGINT-modernisering | 🟠 Hoog | Unaniem aangenomen |
+| 3 | HD01CU25 | CU | Gevangeniscapaciteit (PBL-uitzondering) | 🟠 Matig-Hoog | Aangenomen (MP voorbehoud) |
+| 4 | HD01SfU24 | SfU | Maandelijkse woontoeslagberekening | 🟡 Matig | Aangenomen (S-verklaring) |
+| 5 | HD01FöU16 | FöU | FOI-toezichtharmonisatie | 🟢 Laag | Unaniem aangenomen |
+
+### Inlichtingenbeoordeling (SITREP)
+
+**WAT**: Het Zweedse Riksdag nam een welzijnskwalificatie-eis (SfU21) aan en actualiseerde zijn oorlogstijdse wet op signalinformatie (FöU18), wat duidt op een dubbele versnelling bij zowel migratie-welzijnsbeperkingen als defensiewetgevingsmodernisering.
+
+**EN DAN**: SfU21 vertegenwoordigt een structurele breuk met het universeel sociaal burgerschap — verblijf alleen geeft niet langer automatisch toegang tot uitkeringen. FöU18 breidt de wettelijke basis van FRA uit voor oefenactiviteiten en verbreedt de definities van terrorisme en grensoverschrijdende criminaliteit, waardoor de Zweedse surveillancearchitectuur wordt versterkt vóór volledige NAVO-integratie.
+
+**NU WAT**: Het implementatierisico concentreert zich bij de Försäkringskassan (uitkeringstriage vanaf 2026-Q3/Q4) en FRA (naleving van de nieuwe wet vanaf 2026-08-01). Voor de verkiezingen van september 2026 is SfU21 een mobilisatiepunt voor oppositie van S, V en MP.
+
+### Economische context
+
+IMF-status: verslechterd (SDMX-eindpunt niet beschikbaar). Gebaseerd op gecachte WEO-gegevens:
+- Prognose BBP-groei Zweden 2026: ~1,7% (WEO april 2026)
+- Begrotingsruimte bestaat; SfU21 is primair een soevereiniteits-/identiteitspolitieke keuze, geen fiscale noodmaatregel
+- De woontoeslaghervorming (SfU24) kan de overbetalingen van de Försäkringskassan marginaal verminderen (geraamd op honderden miljoenen kronen jaarlijks per propositie)
+
+### Belangrijke bewakingsdata (T+14d tot T+90d)
+
+| Datum (ca.) | Signaal | Document |
+|-------------|--------|---------|
+| 2026-05-20 | Opiniebeweging (Novus/Sifo) na SfU21 | PIR-05 |
+| 2026-06-05 | Publicatie SfU21 uitvoeringsverordening | PIR-01 |
+| 2026-07-02 | FöU16 treedt in werking | FöU16 |
+| 2026-07-15 | Begrotingsaanvraag Försäkringskassan | PIR-02 |
+| 2026-08-01 | FöU18 treedt in werking | FöU18 |
+| 2026-08-01 | Verwachte inwerkingtreding SfU21/SfU24 | SfU21/SfU24 |
+| 2026-09-13 | Zweedse parlementsverkiezingen | Alle 5 |
+
+> ⚠️ IMF-gegevens gedeeltelijk niet beschikbaar (SDMX verslechterd). Economische cijfers uit WEO Datamapper; SDMX-afhankelijke indicatoren (CPI maandserie) weggelaten.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_no.md -->
+
+**Klassifisering**: 🟢 OFFENTLIG | **Konfidens**: B2 (Bekreftede kilder, multiple korraborasjoner)
+**Dato**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Konklusjon (BLUF)
+
+Fem parlamentariske komitébeslutninger ble vedtatt 6. mai 2026 innenfor fire politikkområder. Den mest avgjørende er **SfU21** — som innfører en kvalifiseringsperiode for bostedsbaserte trygdeytelser (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). Dette representerer den skarpeste begrensningen av den svenske velferdsstatens universalitet på en generasjon og ble vedtatt til tross for innvendinger fra S, V og MP. Samlet med **FöU18** (modernisering av etterretning), **CU25** (PBL-unntak for fengselskapasitet) og to tekniske endringer (FöU16, SfU24) gjenspeiler beslutningene Tidö-koalisjonens fortsatte prioritering av innvandrings-, kriminalitets- og forsvarsreformer fremfor sosialdemokratisk velferdsarkitektur.
+
+### Nøkkelbeslutninger (prioritetsrekkefølge)
+
+| Rang | Dok | Komité | Emne | Politisk relevans | Utfall |
+|------|-----|--------|------|-------------------|--------|
+| 1 | HD01SfU21 | SfU | Trygdekvalifisering | 🔴 Høy | Vedtatt (S, V+MP forbehold) |
+| 2 | HD01FöU18 | FöU | SIGINT-modernisering | 🟠 Høy | Vedtatt enstemmig |
+| 3 | HD01CU25 | CU | Fengselskapasitet (PBL-unntak) | 🟠 Moderat-Høy | Vedtatt (MP forbehold) |
+| 4 | HD01SfU24 | SfU | Månedlig boligstøtteberegning | 🟡 Moderat | Vedtatt (S-erklæring) |
+| 5 | HD01FöU16 | FöU | FOI-tilsynsharmonisering | 🟢 Lav | Vedtatt enstemmig |
+
+### Etterretningsvurdering (SITREP)
+
+**HVA**: Sveriges Riksdag vedtok et velfærdskvalifiseringskrav (SfU21) og oppdaterte sin krigstidens signalettretningslov (FöU18), noe som signaliserer dobbel akselerasjon innen innvandrings-velferdsrestriksjoner og forsvarspolitisk modernisering.
+
+**SÅ HVA**: SfU21 representerer et strukturelt brudd med universelt sosialt statsborgerskap — bosted alene gir ikke lenger automatisk tilgang til ytelser. FöU18 utvider FRA sitt lovgrunnlag for øvingsaktiviteter og utvider definisjonene av terrorisme og grensekryssende kriminalitet, og styrker Norges overvåkningsarkitektur foran full NATO-integrasjon.
+
+**NÅ HVA**: Implementeringsrisikoen konsentreres hos Försäkringskassan (ytelsestriage fra 2026-Q3/Q4) og FRA (overholdelse av ny lov fra 2026-08-01). For valget i september 2026 er SfU21 et mobiliseringspunkt for opposisjon fra S, V og MP.
+
+### Økonomisk kontekst
+
+IMF-status: degradert (SDMX-endepunkt utilgjengelig). Basert på bufrede WEO-data:
+- Sveriges BNP-vekstprognose 2026: ~1,7 % (WEO april 2026-vintage)
+- Finanspolitisk handlingsrom eksisterer; SfU21 er primært et suverenitetspolitisk valg heller enn et finansielt nødtiltak
+- Boligstøttereformen (SfU24) kan marginalt redusere Försäkringskassans overbetalinger (estimert hundrevis av millioner svenske kroner årlig ifølge proposisjonen)
+
+### Viktige overvåkningsdatoer (T+14d til T+90d)
+
+| Dato (ca.) | Signal | Dokument |
+|------------|--------|---------|
+| 2026-05-20 | Meningsbevegelser (Novus/Sifo) etter SfU21 | PIR-05 |
+| 2026-06-05 | Publikasjon av SfU21 gjennomføringsforordning | PIR-01 |
+| 2026-07-02 | FöU16 trer i kraft | FöU16 |
+| 2026-07-15 | Försäkringskassans bevilgningsanmodning | PIR-02 |
+| 2026-08-01 | FöU18 trer i kraft | FöU18 |
+| 2026-08-01 | SfU21/SfU24 forventet ikrafttredelse | SfU21/SfU24 |
+| 2026-09-13 | Svenske stortingsvalg | Alle 5 |
+
+> ⚠️ IMF-data delvis utilgjengelig (SDMX degradert). Økonomiske tall fra WEO Datamapper; SDMX-avhengige indikatorer (KPI månedsserie) utelatt.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_sv.md -->
+
+**Klassificering**: 🟢 OFFENTLIG | **Konfidensgrad**: B2 (Bekräftade källor, multipel korroboration)
+**Datum**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### Slutsats (BLUF)
+
+Fem parlamentariska utskottsbeslut antogs den 6 maj 2026 inom fyra politikområden. Det mest avgörande är **SfU21** — som inför en kvalificeringsperiod för boendebaserade socialförsäkringsförmåner (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). Detta utgör den skarpaste inskränkningen av den svenska välfärdsstatens universalitet på en generation och antogs trots invändningar från S, V och MP. Tillsammans med **FöU18** (modernisering av signalspaning), **CU25** (PBL-undantag för fängelsekapacitet) och två tekniska ändringar (FöU16, SfU24) speglar besluten Tidökoalitionens fortsatta prioritering av migrations-, brotts- och försvarspolitiska reformer framför socialdemokratisk välfärdsarkitektur.
+
+### Nyckelsbeslut (prioritetsordning)
+
+| Rang | Dok | Utskott | Ämne | Politisk relevans | Utfall |
+|------|-----|---------|------|-------------------|--------|
+| 1 | HD01SfU21 | SfU | Kvalificering för socialförsäkring | 🔴 Hög | Antaget (S, V+MP reservationer) |
+| 2 | HD01FöU18 | FöU | Modernisering av SIGINT | 🟠 Hög | Antaget enhälligt |
+| 3 | HD01CU25 | CU | Fängelsekapacitet (PBL-undantag) | 🟠 Medel-Hög | Antaget (MP reservation) |
+| 4 | HD01SfU24 | SfU | Månadsberäkning av bostadsbidrag | 🟡 Medel | Antaget (S-uttalande) |
+| 5 | HD01FöU16 | FöU | Harmonisering av FOI-tillsyn | 🟢 Låg | Antaget enhälligt |
+
+### Underrättelsebedömning (SITREP)
+
+**VAD**: Sveriges riksdag antog ett välfärdskvalificeringskrav (SfU21) och uppdaterade lagstiftningen för signalspaning i krigstid (FöU18), vilket signalerar dubbel acceleration inom både invandring-välfärdsbegränsning och försvarspolitisk modernisering.
+
+**SÅ VAD**: SfU21 innebär ett strukturellt brott med universellt socialt medborgarskap — boende allena ger inte längre automatisk tillgång till förmåner. FöU18 utvidgar FRA:s lagstiftningsstöd för övningsverksamhet och breddar definitionerna av terrorism och gränsöverskridande brottslighet, vilket stärker den svenska övervakningsarkitekturen inför full NATO-integration.
+
+**NU VAD**: Implementeringsrisken koncentreras till Försäkringskassan (förmånstriage från 2026-Q3/Q4) och FRA (efterlevnad av ny lag från 2026-08-01). Inför valet i september 2026 utgör SfU21 en mobiliseringspunkt för opposition från S, V och MP.
+
+### Ekonomisk kontext
+
+IMF-status: degraderad (SDMX-endpoint otillgänglig). Baserat på cachade WEO-data:
+- Prognos för Sveriges BNP-tillväxt 2026: ~1,7 % (WEO april 2026)
+- Finanspolitiskt utrymme finns; SfU21 är primärt ett suveränitets-/identitetspolitiskt val snarare än ett finansiellt nödläge
+- Bostadsbidragsreformen (SfU24) kan marginellt minska Försäkringskassans överbetalnigngar (uppskattningsvis hundratals miljoner kronor per år enligt propositionen)
+
+### Viktiga bevakningsdatum (T+14d till T+90d)
+
+| Datum (ca.) | Signal | Dokument |
+|-------------|--------|---------|
+| 2026-05-20 | Opinionsrörelser (Novus/Sifo) efter SfU21 | PIR-05 |
+| 2026-06-05 | Publicering av SfU21 genomförandeförordning | PIR-01 |
+| 2026-07-02 | FöU16 träder i kraft | FöU16 |
+| 2026-07-15 | Försäkringskassans anslagsframställan | PIR-02 |
+| 2026-08-01 | FöU18 träder i kraft | FöU18 |
+| 2026-08-01 | SfU21/SfU24 förväntas träda i kraft | SfU21/SfU24 |
+| 2026-09-13 | Sveriges riksdagsval | Alla 5 |
+
+> ⚠️ IMF-data delvis otillgänglig (SDMX degraderad). Ekonomiska siffror från WEO Datamapper; SDMX-beroende indikatorer (KPI månadsserier) utelämnade.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_zh.md -->
+
+**分类**: 🟢 公开 | **置信度**: B2（已确认来源，多重佐证）
+**日期**: 2026-05-06 | **Riksmöte**: 2025/26
+
+### 结论（BLUF）
+
+2026年5月6日，在四个政策领域通过了五项议会委员会决定。最具影响力的是**SfU21** — 为基于居住的社会保险福利（barnbidrag、föräldrapenning、bostadsbidrag、äldreförsörjningsstöd）引入资格认定期。这代表了一代人中对瑞典福利国家普遍性的最严格限制，尽管S、V和MP反对仍获通过。与**FöU18**（信号情报现代化）、**CU25**（监狱容量PBL豁免）及两项技术修正（FöU16、SfU24）一起，这些决定反映了提多联合政府持续优先考虑移民、犯罪和国防改革而非社会民主主义福利架构。
+
+### 关键决定（优先顺序）
+
+| 排名 | 文件 | 委员会 | 主题 | 政治重要性 | 结果 |
+|-----|------|-------|------|----------|-----|
+| 1 | HD01SfU21 | SfU | 社会保险资格 | 🔴 高 | 通过（S、V+MP保留意见） |
+| 2 | HD01FöU18 | FöU | SIGINT现代化 | 🟠 高 | 一致通过 |
+| 3 | HD01CU25 | CU | 监狱容量（PBL豁免） | 🟠 中高 | 通过（MP保留意见） |
+| 4 | HD01SfU24 | SfU | 住房津贴月度计算 | 🟡 中 | 通过（S声明） |
+| 5 | HD01FöU16 | FöU | FOI监督协调化 | 🟢 低 | 一致通过 |
+
+### 情报评估（SITREP）
+
+**什么**：瑞典国会通过了福利资格要求（SfU21）并更新了战时信号情报法（FöU18），在移民-福利限制和国防立法现代化两个方面都发出加速信号。
+
+**那么**：SfU21代表着与普遍社会公民权的结构性断裂——仅凭居住不再自动获得福利。FöU18扩大了FRA的训练活动法律授权，扩展了恐怖主义和跨境犯罪的定义，在完全融入北约之前加强了瑞典的监控架构。
+
+**现在怎样**：实施风险集中在Försäkringskassan（2026年Q3/Q4起的福利优先排序）和FRA（2026-08-01起遵守新法）。对于2026年9月选举，SfU21是S、V和MP的反对派动员焦点。
+
+### 经济背景
+
+IMF状态：降级（SDMX端点不可用）。基于缓存的WEO数据：
+- 2026年瑞典GDP增长预测：约1.7%（WEO 2026年4月）
+- 存在财政空间；SfU21主要是主权/身份政策选择，而非财政紧急措施
+- 住房津贴改革（SfU24）可能小幅减少Försäkringskassan的超额支付（根据提案估计每年数亿克朗）
+
+### 重要监控日期（T+14天至T+90天）
+
+| 日期（约） | 监控信号 | 文件 |
+|----------|--------|-----|
+| 2026-05-20 | SfU21后民意动向（Novus/Sifo） | PIR-05 |
+| 2026-06-05 | SfU21实施条例发布 | PIR-01 |
+| 2026-07-02 | FöU16生效 | FöU16 |
+| 2026-07-15 | Försäkringskassan预算申请 | PIR-02 |
+| 2026-08-01 | FöU18生效 | FöU18 |
+| 2026-08-01 | SfU21/SfU24预期生效 | SfU21/SfU24 |
+| 2026-09-13 | 瑞典大选 | 全部5项 |
+
+> ⚠️ IMF数据部分不可用（SDMX降级）。经济数字来自WEO Datamapper；SDMX依赖指标（CPI月度序列）已略去。
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 7 | Linked in Article Sources, not expanded inline |
 
@@ -1364,6 +2057,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

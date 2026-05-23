@@ -6,7 +6,7 @@ date: 2026-05-07
 subfolder: propositions
 slug: 2026-05-07-propositions
 source_folder: analysis/daily/2026-05-07/propositions
-generated_at: 2026-05-23T08:06:00.709Z
+generated_at: 2026-05-23T22:05:56.684Z
 language: en
 layout: article
 ---
@@ -116,6 +116,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1244,13 +1257,1091 @@ Data sourced from 2026-05-07 via lookback fallback — check freshness indicator
 
 No prior PIRs open from previous proposition runs relating to EU-Central Asia partnership series.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_ar.md -->
+
+**التصنيف**: الأدميرالية [B2] | **الأفق الزمني**: T+72h / T+90d  
+**ثقة WEP**: شبه مؤكد (نتيجة التصديق) | محتمل (المسار الجيوسياسي)  
+
+---
+
+### 🔴 أبرز الاستنتاجات الاستخباراتية
+
+**تقدّم السويد في 2026-05-07 تصويتات التصديق على اتفاقيتَي EPCA بين الاتحاد الأوروبي وآسيا الوسطى.** كلا الاتفاقيتين (الاتحاد الأوروبي-قيرغيزستان: HD03248؛ الاتحاد الأوروبي-أوزبكستان: HD03249) عبارة عن اقتراحات تصديق على معاهدات من وزارة الخارجية، محالة إلى لجنة الشؤون الخارجية. الموافقة البرلمانية **شبه مؤكدة** (ثقة: 95%+) — هذه التزامات معاهدية للاتحاد الأوروبي غير حزبية. القيمة الاستخباراتية الاستراتيجية تكمن في السياق الجيوسياسي، وليس في التصويتات ذاتها.
+
+---
+
+### 📋 ما هو مطروح أمام الريكسداغ
+
+| الاقتراح | البلد | التوقيع | الأحكام الرئيسية |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | قيرغيزستان | 2023 | الحوار السياسي، التجارة، سيادة القانون، الترابط |
+| 2025/26:249 (HD03249) | أوزبكستان | 2023 | التجارة، المواد الخام الحرجة، الاقتصاد الرقمي، المناخ |
+
+كلتاهما **اتفاقيتا شراكة وتعاون معززتان** (EPCA) — أشمل إطار قانوني ثنائي يستخدمه الاتحاد الأوروبي خارج نطاق اتفاقيات الشراكة. تحلّان محل اتفاقيات الشراكة السوفيتية من عام 1999.
+
+---
+
+### 🌍 السياق الجيوسياسي
+
+```mermaid
+graph LR
+    EU["🇪🇺 الاتحاد الأوروبي<br/>الإطار القانوني EPCA"] --> KG["🇰🇬 قيرغيزستان<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 أوزبكستان<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 روسيا<br/>نفوذ منخفض بعد 2022"] -.->|"ضغط"| KG
+    RU -.->|"ضغط"| UZ
+    CN["🇨🇳 الصين<br/>الحزام والطريق"]-.-|"استثمار"| KG
+    CN -.->|"استثمار"| UZ
+    
+    EU2026["EU Global Gateway<br/>ممر عبر بحر قزوين"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**إعادة التوجه الجيوسياسي لآسيا الوسطى بعد 2022**: سرّعت كلٌّ من قيرغيزستان وأوزبكستان انخراطهما مع الاتحاد الأوروبي منذ الغزو الروسي الشامل لأوكرانيا. الصعوبات الاقتصادية الروسية، وخطر العقوبات الثانوية، وتراجع مصداقية منظمة معاهدة الأمن الجماعي، كلها خلقت فرصة لتعميق الشراكة مع الاتحاد الأوروبي. تُمثّل سلسلة EPCA (التصديق على كازاخستان وقيرغيزستان وأوزبكستان وطاجيكستان جارٍ) أهم توسع لإطار الاتحاد الأوروبي القانوني في آسيا الوسطى منذ الاستقلال.
+
+---
+
+### 🎯 التقييم الاستخباراتي الاستراتيجي
+
+**EPCA أوزبكستان (HD03249) ذات قيمة استراتيجية أعلى** بسبب:
+1. عدد السكان 38 مليون — أكثر دول آسيا الوسطى اكتظاظاً
+2. المواد الخام الحرجة: اليورانيوم (المرتبة 7 عالمياً)، الذهب، النحاس، استكشاف الليثيوم
+3. تسمّي لائحة الاتحاد الأوروبي للمواد الخام الحرجة (2024) آسيا الوسطى ممراً استراتيجياً للإمدادات
+4. وتيرة الإصلاحات في عهد ميرزيوييف — الزعيم الأكثر توجهاً نحو الغرب في آسيا الوسطى منذ 2016
+
+**EPCA قيرغيزستان (HD03248)** أقل أهمية لكنها غير هامشية:
+1. بوابة جغرافية نحو ترابط أوسع في آسيا الوسطى
+2. تحدي نفوذ مزدوج صيني/روسي
+3. تركيز السلطة في دستور 2021 يستوجب التزامات مراقبة حقوق الإنسان
+
+---
+
+### ⏱️ الجدول الزمني للإجراءات الفورية
+
+| اليوم | الإجراء |
+|-----|--------|
+| **2026-05-07** | تقديم الاقتراحات HD03248 + HD03249 إلى الريكسداغ |
+| **2026-06** | جلسات استماع لجنة UU (ربما جلسة مشتركة) |
+| **2026-09** | توصية تقرير لجنة UU |
+| **2026-10** | التصويت في الجلسة العامة — موافقة شبه مؤكدة |
+| **2026-11** | إيداع التصديق السويدي؛ دخول EPCA حيز التنفيذ مؤقتاً |
+
+---
+
+*الموجز الاستخباراتي | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_da.md -->
+
+**Klassificering**: Admiralitet [B2] | **Horisont**: T+72h / T+90d  
+**WEP Konfidens**: Næsten sikkert (ratificeringsresultat) | Sandsynligt (geopolitisk bane)  
+
+---
+
+### 🔴 Nøgleeftretningsfund
+
+**Sverige fremlægger ratificeringsafstemninger for to EU-Centralasien-EPCA'er den 2026-05-07.** Begge aftaler (EU-Kirgisistan: HD03248; EU-Usbekistan: HD03249) er traktatratificeringsforslag fra Udenrigsministeriet, henvist til Udenrigsudvalget. Parlamentarisk godkendelse er **næsten sikkert** (konfidens: 95%+) — disse er ikke-partipolitiske EU-traktatforpligtelser. Den strategiske efterretningsværdi ligger i den geopolitiske kontekst, ikke i selve afstemningerne.
+
+---
+
+### 📋 Hvad der ligger foran Riksdagen
+
+| Proposition | Land | Underskrevet | Vigtige bestemmelser |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | Kirgisistan | 2023 | Politisk dialog, handel, retsstatsprincippet, konnektivitet |
+| 2025/26:249 (HD03249) | Usbekistan | 2023 | Handel, kritiske råmaterialer, digital økonomi, klima |
+
+Begge er **Forstærkede partnerskabs- og samarbejdsaftaler** (EPCA) — den mest omfattende bilaterale retlige ramme EU anvender ud over associeringsaftaler. De erstatter Sovjet-ærens partnerskabsaftaler fra 1999.
+
+---
+
+### 🌍 Geopolitisk kontekst
+
+```mermaid
+graph LR
+    EU["🇪🇺 Den Europæiske Union<br/>EPCA retlig ramme"] --> KG["🇰🇬 Kirgisistan<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 Usbekistan<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 Rusland<br/>Reduceret indflydelse efter 2022"] -.->|"pres"| KG
+    RU -.->|"pres"| UZ
+    CN["🇨🇳 Kina<br/>Bælte og vej"]-.-|"investering"| KG
+    CN -.->|"investering"| UZ
+    
+    EU2026["EU Global Gateway<br/>Transkaспisk korridor"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**Geopolitisk omstilling i Centralasien efter 2022**: Både Kirgisistan og Usbekistan har accelereret EU-samarbejdet siden Ruslands fuldskala invasion af Ukraine. Ruslands økonomiske vanskeligheder, risikoen for sekundære sanktioner og reduceret CSTO-troværdighed skabte et vindue for dybere EU-partnerskab. EPCA-serien (ratificeringer af Kasakhstan, Kirgisistan, Usbekistan, Tadsjikistan er i gang) repræsenterer den mest betydelige EU-retslige rammeudvidelse i Centralasien siden uafhængigheden.
+
+---
+
+### 🎯 Strategisk efterretningsvurdering
+
+**Usbekistans EPCA (HD03249) har højere strategisk værdi** på grund af:
+1. Befolkning 38 mio. — Centralasiens mest folkerige stat
+2. Kritiske råmaterialer: uran (verden #7), guld, kobber, lithiumefterforskninger
+3. EU's lov om kritiske råmaterialer (2024) nævner Centralasien som strategisk forsyningskorridor
+4. Reformtempo under Mirziyoyev — mest vestvendte CA-leder siden 2016
+
+**Kirgisistans EPCA (HD03248)** er lavere men ikke ubetydelig:
+1. Geografisk gateway til bredere CA-konnektivitet
+2. Kinas/Ruslands dobbelte indflydelsesudfordring
+3. Magtkoncentration i grundloven 2021 skaber forpligtelser til menneskerettighedsovervågning
+
+---
+
+### ⏱️ Umiddelbar handlingsbar tidslinje
+
+| Dag | Handling |
+|-----|--------|
+| **2026-05-07** | Forslag HD03248 + HD03249 indgivet til Riksdagen |
+| **2026-06** | UU-udvalgsforhøringer (sandsynligvis fælles session) |
+| **2026-09** | UU-betænkning med anbefaling |
+| **2026-10** | Plenumafstemning — næsten sikkert godkendelse |
+| **2026-11** | Svensk ratificering deponeret; EPCA'er træder i kraft provisorisk |
+
+---
+
+*Efterretningsoversigt | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_de.md -->
+
+**Klassifizierung**: Admiralität [B2] | **Horizont**: T+72h / T+90d  
+**WEP Konfidenz**: Fast sicher (Ratifizierungsergebnis) | Wahrscheinlich (geopolitische Entwicklung)  
+
+---
+
+### 🔴 Wichtigste Geheimdiensterkenntnisse
+
+**Schweden legt am 2026-05-07 Ratifizierungsabstimmungen für zwei EU-Zentralasien-EPCAs vor.** Beide Abkommen (EU-Kirgisistan: HD03248; EU-Usbekistan: HD03249) sind Vertragsratifizierungsvorlagen des Außenministeriums, an den Auswärtigen Ausschuss verwiesen. Parlamentarische Genehmigung ist **fast sicher** (Konfidenz: 95%+) — dies sind überparteiliche EU-Vertragsobligation. Der strategische Geheimdienstwert liegt im geopolitischen Kontext, nicht in den Abstimmungen selbst.
+
+---
+
+### 📋 Was vor dem Reichstag liegt
+
+| Vorlage | Land | Unterzeichnet | Wichtige Bestimmungen |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | Kirgisistan | 2023 | Politischer Dialog, Handel, Rechtsstaat, Konnektivität |
+| 2025/26:249 (HD03249) | Usbekistan | 2023 | Handel, kritische Rohstoffe, digitale Wirtschaft, Klima |
+
+Beide sind **Verstärkte Partnerschafts- und Kooperationsabkommen** (EPCA) — der umfassendste bilaterale Rechtsrahmen, den die EU neben Assoziierungsabkommen verwendet. Sie ersetzen die Partnerschaftsabkommen aus der Sowjetära von 1999.
+
+---
+
+### 🌍 Geopolitischer Kontext
+
+```mermaid
+graph LR
+    EU["🇪🇺 Europäische Union<br/>EPCA Rechtsrahmen"] --> KG["🇰🇬 Kirgisistan<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 Usbekistan<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 Russland<br/>Verminderter Einfluss nach 2022"] -.->|"Druck"| KG
+    RU -.->|"Druck"| UZ
+    CN["🇨🇳 China<br/>Gürtel und Straße"]-.-|"Investition"| KG
+    CN -.->|"Investition"| UZ
+    
+    EU2026["EU Global Gateway<br/>Transkaspischer Korridor"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**Geopolitische Neuausrichtung Zentralasiens nach 2022**: Sowohl Kirgisistan als auch Usbekistan haben die EU-Zusammenarbeit seit Russlands vollständiger Invasion in der Ukraine beschleunigt. Russlands wirtschaftliche Schwierigkeiten, das Risiko sekundärer Sanktionen und verminderte CSTO-Glaubwürdigkeit schufen ein Fenster für eine vertiefte EU-Partnerschaft. Die EPCA-Serie (Ratifizierungen Kasachstans, Kirgisistans, Usbekistans, Tadschikistans laufend) stellt die bedeutendste EU-Rechtsrahmen-Expansion in Zentralasien seit der Unabhängigkeit dar.
+
+---
+
+### 🎯 Strategische Geheimdienstbewertung
+
+**Usbekistans EPCA (HD03249) hat höheren strategischen Wert** aufgrund:
+1. Bevölkerung 38 Mio. — bevölkerungsreichster Staat Zentralasiens
+2. Kritische Rohstoffe: Uran (Welt #7), Gold, Kupfer, Lithiumerkundung
+3. EU-Verordnung über kritische Rohstoffe (2024) nennt Zentralasien als strategischen Versorgungskorridor
+4. Reformtempo unter Mirziyoyev — westlichster CA-Führer seit 2016
+
+**Kirgisistans EPCA (HD03248)** ist geringer, aber nicht unbedeutend:
+1. Geografisches Gateway zur breiteren CA-Konnektivität
+2. Chinas/Russlands doppelte Einflussherausforderung
+3. Machtkonzentration in der Verfassung von 2021 schafft Menschenrechtsüberwachungspflichten
+
+---
+
+### ⏱️ Unmittelbare Aktionszeitleiste
+
+| Tag | Aktion |
+|-----|--------|
+| **2026-05-07** | Vorlagen HD03248 + HD03249 beim Reichstag eingereicht |
+| **2026-06** | UU-Ausschussanhörungen (wahrscheinlich gemeinsame Sitzung) |
+| **2026-09** | UU-Ausschussgutachten |
+| **2026-10** | Plenarabs­timmung — fast sicher Genehmigung |
+| **2026-11** | Schwedische Ratifizierung hinterlegt; EPCAs treten vorläufig in Kraft |
+
+---
+
+*Geheimdienstbriefing | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_es.md -->
+
+**Clasificación**: Almirantazgo [B2] | **Horizonte**: T+72h / T+90d  
+**Confianza WEP**: Casi seguro (resultado de ratificación) | Probable (trayectoria geopolítica)  
+
+---
+
+### 🔴 Hallazgo clave de inteligencia
+
+**Suecia presenta votaciones de ratificación para dos EPCA UE-Asia Central el 2026-05-07.** Ambos acuerdos (UE-Kirguistán: HD03248; UE-Uzbekistán: HD03249) son proposiciones de ratificación de tratados del Ministerio de Asuntos Exteriores, remitidas al Comité de Asuntos Exteriores. La aprobación parlamentaria es **casi segura** (confianza: 95%+) — estas son obligaciones de tratados de la UE no partidistas. El valor estratégico de inteligencia está en el contexto geopolítico, no en las votaciones en sí.
+
+---
+
+### 📋 Lo que está ante el Riksdag
+
+| Proposición | País | Firmado | Disposiciones clave |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | Kirguistán | 2023 | Diálogo político, comercio, estado de derecho, conectividad |
+| 2025/26:249 (HD03249) | Uzbekistán | 2023 | Comercio, materias primas críticas, economía digital, clima |
+
+Ambos son **Acuerdos de Asociación y Cooperación Reforzados** (EPCA) — el marco jurídico bilateral más completo que utiliza la UE aparte de los acuerdos de asociación. Reemplazan los acuerdos de colaboración de la era soviética de 1999.
+
+---
+
+### 🌍 Contexto geopolítico
+
+```mermaid
+graph LR
+    EU["🇪🇺 Unión Europea<br/>Marco jurídico EPCA"] --> KG["🇰🇬 Kirguistán<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 Uzbekistán<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 Rusia<br/>Influencia reducida tras 2022"] -.->|"presión"| KG
+    RU -.->|"presión"| UZ
+    CN["🇨🇳 China<br/>Cinturón y Ruta"]-.-|"inversión"| KG
+    CN -.->|"inversión"| UZ
+    
+    EU2026["EU Global Gateway<br/>Corredor transcaspiano"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**Reorientación geopolítica en Asia Central tras 2022**: Tanto Kirguistán como Uzbekistán han acelerado su compromiso con la UE desde la invasión a gran escala de Ucrania por Rusia. Las dificultades económicas de Rusia, el riesgo de sanciones secundarias y la reducida credibilidad de la OTSC crearon una ventana para la profundización de la asociación con la UE. La serie EPCA (ratificaciones de Kazajistán, Kirguistán, Uzbekistán, Tayikistán en curso) representa la expansión más significativa del marco jurídico de la UE en Asia Central desde la independencia.
+
+---
+
+### 🎯 Evaluación estratégica de inteligencia
+
+**El EPCA de Uzbekistán (HD03249) tiene mayor valor estratégico** debido a:
+1. Población 38 millones — el estado más poblado de Asia Central
+2. Materias primas críticas: uranio (mundial n.º 7), oro, cobre, exploración de litio
+3. El Reglamento de la UE sobre materias primas críticas (2024) designa a Asia Central como corredor estratégico de suministro
+4. Ritmo de reformas bajo Mirziyoyev — el líder de AC más pro-occidental desde 2016
+
+**El EPCA de Kirguistán (HD03248)** es menor pero no irrelevante:
+1. Puerta de entrada geográfica a la conectividad más amplia de AC
+2. Doble desafío de influencia de China/Rusia
+3. La concentración de poder en la constitución de 2021 crea obligaciones de seguimiento de derechos humanos
+
+---
+
+### ⏱️ Calendario de acción inmediata
+
+| Día | Acción |
+|-----|--------|
+| **2026-05-07** | Proposiciones HD03248 + HD03249 presentadas al Riksdag |
+| **2026-06** | Audiencias del comité UU (probablemente sesión conjunta) |
+| **2026-09** | Recomendación de la comisión UU |
+| **2026-10** | Votación plenaria — aprobación casi segura |
+| **2026-11** | Ratificación sueca depositada; EPCAs entran en vigor provisionalmente |
+
+---
+
+*Informe de inteligencia | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_fi.md -->
+
+**Luokittelu**: Admiraliteetti [B2] | **Horisontti**: T+72h / T+90d  
+**WEP Luottamus**: Lähes varma (ratifiointitulos) | Todennäköinen (geopoliittinen kehityssuunta)  
+
+---
+
+### 🔴 Tärkeimmät tiedusteluhavainnot
+
+**Ruotsi esittää kahden EU-Keski-Aasia-EPCA:n ratifiointiäänestykset 2026-05-07.** Molemmat sopimukset (EU-Kirgisia: HD03248; EU-Uzbekistan: HD03249) ovat Ulkoasiainministeriön sopimusratifiointiesityksiä, jotka on lähetetty Ulkoasiainvaliokunnalle. Parlamentaarinen hyväksyminen on **lähes varmaa** (luottamus: 95%+) — nämä ovat epäpuoluepoliittisia EU-sopimusvelvoitteita. Strateginen tiedusteluarvo on geopoliittisessa kontekstissa, ei itse äänestyksissä.
+
+---
+
+### 📋 Mitä on Riksdagenin edessä
+
+| Esitys | Maa | Allekirjoitettu | Tärkeimmät määräykset |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | Kirgisia | 2023 | Poliittinen vuoropuhelu, kauppa, oikeusvaltioperiaate, yhteydet |
+| 2025/26:249 (HD03249) | Uzbekistan | 2023 | Kauppa, kriittiset raaka-aineet, digitaalinen talous, ilmasto |
+
+Molemmat ovat **Tehostettuja kumppanuus- ja yhteistyösopimuksia** (EPCA) — kattavin kahdenvälinen oikeudellinen kehys, jota EU käyttää assosiaatiosopimusten ohella. Ne korvaavat Neuvostoliiton aikakauden 1999 kumppanuussopimukset.
+
+---
+
+### 🌍 Geopoliittinen konteksti
+
+```mermaid
+graph LR
+    EU["🇪🇺 Euroopan unioni<br/>EPCA oikeudellinen kehys"] --> KG["🇰🇬 Kirgisia<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 Uzbekistan<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 Venäjä<br/>Vähentynyt vaikutusvalta 2022 jälkeen"] -.->|"paine"| KG
+    RU -.->|"paine"| UZ
+    CN["🇨🇳 Kiina<br/>Vyö ja tie"]-.-|"investointi"| KG
+    CN -.->|"investointi"| UZ
+    
+    EU2026["EU Global Gateway<br/>Transkaaspian käytävä"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**Keski-Aasian geopoliittinen muutos 2022 jälkeen**: Sekä Kirgisia että Uzbekistan ovat kiihdyttäneet EU-yhteistyötä Venäjän täysimittaisen Ukrainan hyökkäyksen jälkeen. Venäjän taloudelliset vaikeudet, sekundaariset pakoteriskit ja heikentynyt CSTO-uskottavuus loivat ikkunan syventyneelle EU-kumppanuudelle. EPCA-sarja (Kazakstanin, Kirgisian, Uzbekistanin, Tadžikistanin ratifioinnit käynnissä) edustaa merkittävintä EU-oikeudellisen kehyksen laajentumista Keski-Aasiassa itsenäistymisen jälkeen.
+
+---
+
+### 🎯 Strateginen tiedusteluarvio
+
+**Uzbekistanin EPCA (HD03249) on strategisesti arvokkaampaa** johtuen:
+1. Väestö 38 milj. — Keski-Aasian väkirikkain valtio
+2. Kriittiset raaka-aineet: uraani (maailman 7.), kulta, kupari, litiumprospektointi
+3. EU:n kriittisten raaka-aineiden laki (2024) nimeää Keski-Aasian strategiseksi toimitusketjukäytäväksi
+4. Uudistustahti Mirziyojevin johdolla — länsimyönteisin KA-johtaja vuodesta 2016
+
+**Kirgisian EPCA (HD03248)** on alhaisempi mutta merkittävä:
+1. Maantieteellinen yhdyskäytävä laajemmalle KA-yhteyksille
+2. Kiinan/Venäjän kaksoisvaikutuksen haaste
+3. Vallan keskittyminen perustuslakiin 2021 luo ihmisoikeusseurantavelvoitteita
+
+---
+
+### ⏱️ Välitön toimintakalenteri
+
+| Päivä | Toiminta |
+|-----|--------|
+| **2026-05-07** | Esitykset HD03248 + HD03249 toimitettu Riksdagenille |
+| **2026-06** | UU-valiokunnan kuulemiset (todennäköisesti yhteisistunto) |
+| **2026-09** | UU:n mietintösuositus |
+| **2026-10** | Täysistuntoäänestys — lähes varma hyväksyminen |
+| **2026-11** | Ruotsin ratifiointi talletettu; EPCA:t tulevat väliaikaisesti voimaan |
+
+---
+
+*Tiedusteluyhteenveto | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_fr.md -->
+
+**Confiance WEP**: Presque certain (résultat de ratification) | Probable (trajectoire géopolitique)  
+
+---
+
+### 🔴 Constat de renseignement clé
+
+**La Suède soumet des votes de ratification pour deux EPCA UE-Asie centrale le 2026-05-07.** Les deux accords (UE-Kirghizistan : HD03248 ; UE-Ouzbékistan : HD03249) sont des propositions de ratification de traités du Ministère des affaires étrangères, renvoyées à la Commission des affaires étrangères. L'approbation parlementaire est **presque certaine** (confiance : 95%+) — ce sont des obligations de traités UE non partisanes. La valeur stratégique du renseignement réside dans le contexte géopolitique, pas dans les votes eux-mêmes.
+
+---
+
+### 📋 Ce qui est devant le Riksdag
+
+| Proposition | Pays | Signé | Dispositions clés |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | Kirghizistan | 2023 | Dialogue politique, commerce, état de droit, connectivité |
+| 2025/26:249 (HD03249) | Ouzbékistan | 2023 | Commerce, matières premières critiques, économie numérique, climat |
+
+Les deux sont des **Accords de partenariat et de coopération renforcés** (EPCA) — le cadre juridique bilatéral le plus complet que l'UE utilise en dehors des accords d'association. Ils remplacent les accords de partenariat de l'ère soviétique de 1999.
+
+---
+
+### 🌍 Contexte géopolitique
+
+```mermaid
+graph LR
+    EU["🇪🇺 Union européenne<br/>Cadre juridique EPCA"] --> KG["🇰🇬 Kirghizistan<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 Ouzbékistan<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 Russie<br/>Influence réduite après 2022"] -.->|"pression"| KG
+    RU -.->|"pression"| UZ
+    CN["🇨🇳 Chine<br/>Ceinture et Route"]-.-|"investissement"| KG
+    CN -.->|"investissement"| UZ
+    
+    EU2026["EU Global Gateway<br/>Corridor transcaspien"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**Réalignement géopolitique en Asie centrale après 2022** : Le Kirghizistan et l'Ouzbékistan ont tous deux accéléré leur engagement avec l'UE depuis l'invasion à grande échelle de l'Ukraine par la Russie. Les difficultés économiques de la Russie, le risque de sanctions secondaires et la crédibilité réduite de l'OTSC ont créé une fenêtre pour un approfondissement du partenariat UE. La série EPCA (ratifications du Kazakhstan, Kirghizistan, Ouzbékistan, Tadjikistan en cours) représente l'expansion du cadre juridique UE la plus significative en Asie centrale depuis l'indépendance.
+
+---
+
+### 🎯 Évaluation stratégique du renseignement
+
+**L'EPCA de l'Ouzbékistan (HD03249) a une valeur stratégique plus élevée** en raison de :
+1. Population 38 millions — État le plus peuplé d'Asie centrale
+2. Matières premières critiques : uranium (mondial n°7), or, cuivre, exploration lithium
+3. Le Règlement UE sur les matières premières critiques (2024) désigne l'Asie centrale comme corridor d'approvisionnement stratégique
+4. Rythme des réformes sous Mirziyoyev — dirigeant CA le plus pro-occidental depuis 2016
+
+**L'EPCA du Kirghizistan (HD03248)** est moindre mais non négligeable :
+1. Porte d'entrée géographique vers la connectivité CA plus large
+2. Défi d'influence double Chine/Russie
+3. Concentration des pouvoirs dans la constitution de 2021 crée des obligations de surveillance des droits humains
+
+---
+
+### ⏱️ Calendrier d'action immédiat
+
+| Jour | Action |
+|-----|--------|
+| **2026-05-07** | Propositions HD03248 + HD03249 soumises au Riksdag |
+| **2026-06** | Auditions de la commission UU (probablement session commune) |
+| **2026-09** | Rapport de recommandation de la commission UU |
+| **2026-10** | Vote en séance plénière — approbation presque certaine |
+| **2026-11** | Ratification suédoise déposée ; EPCAs entrent en vigueur à titre provisoire |
+
+---
+
+*Note de renseignement | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_he.md -->
+
+**סיווג**: אדמירליות [B2] | **אופק**: T+72h / T+90d  
+**אמינות WEP**: כמעט ודאי (תוצאת האשרור) | סביר (מסלול גיאופוליטי)  
+
+---
+
+### 🔴 ממצא מודיעיני מרכזי
+
+**שוודיה מגישה ב-2026-05-07 הצבעות אשרור על שני הסכמי EPCA של האיחוד האירופי עם מרכז אסיה.** שני ההסכמים (האיחוד האירופי–קירגיזסטן: HD03248; האיחוד האירופי–אוזבקיסטן: HD03249) הם הצעות אשרור אמנות ממשרד החוץ, שהופנו לוועדת החוץ. אישור פרלמנטרי **כמעט ודאי** (אמינות: 95%+) — אלו התחייבויות אמנה לא-מפלגתיות של האיחוד האירופי. הערך המודיעיני האסטרטגי נמצא בהקשר הגיאופוליטי, לא בהצבעות עצמן.
+
+---
+
+### 📋 מה מוגש לריקסדאגן
+
+| הצעה | מדינה | חתימה | הוראות מרכזיות |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | קירגיזסטן | 2023 | דיאלוג פוליטי, סחר, שלטון חוק, קישוריות |
+| 2025/26:249 (HD03249) | אוזבקיסטן | 2023 | סחר, חומרי גלם קריטיים, כלכלה דיגיטלית, אקלים |
+
+שניהם **הסכמי שותפות ושיתוף פעולה מוגברים** (EPCA) — המסגרת המשפטית הדו-צדדית המקיפה ביותר שהאיחוד האירופי משתמש בה מחוץ להסכמי שיתוף פעולה. הם מחליפים את הסכמי השותפות הסובייטיים משנת 1999.
+
+---
+
+### 🌍 הקשר גיאופוליטי
+
+```mermaid
+graph LR
+    EU["🇪🇺 האיחוד האירופי<br/>מסגרת משפטית EPCA"] --> KG["🇰🇬 קירגיזסטן<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 אוזבקיסטן<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 רוסיה<br/>השפעה מופחתת אחרי 2022"] -.->|"לחץ"| KG
+    RU -.->|"לחץ"| UZ
+    CN["🇨🇳 סין<br/>חגורה ודרך"]-.-|"השקעה"| KG
+    CN -.->|"השקעה"| UZ
+    
+    EU2026["EU Global Gateway<br/>מסדרון טרנס-כספי"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**שינוי כיוון גיאופוליטי של מרכז אסיה אחרי 2022**: קירגיזסטן ואוזבקיסטן האיצו את שיתוף הפעולה עם האיחוד האירופי מאז הפלישה הרוסית המלאה לאוקראינה. הקשיים הכלכליים של רוסיה, הסיכון לסנקציות משניות, ואמינות מופחתת של ה-CSTO יצרו חלון להעמקת שיתוף הפעולה עם האיחוד האירופי. סדרת EPCA (אשרור של קזחסטן, קירגיזסטן, אוזבקיסטן, טג'יקיסטן בתהליך) מייצגת את ההרחבה המשמעותית ביותר של המסגרת המשפטית של האיחוד האירופי במרכז אסיה מאז עצמאות אלו.
+
+---
+
+### 🎯 הערכה מודיעינית אסטרטגית
+
+**EPCA של אוזבקיסטן (HD03249) בעלת ערך אסטרטגי גבוה יותר** בשל:
+1. אוכלוסייה 38 מיליון — המדינה המאוכלסת ביותר במרכז אסיה
+2. חומרי גלם קריטיים: אורניום (מקום 7 בעולם), זהב, נחושת, חיפושי ליתיום
+3. תקנת חומרי הגלם הקריטיים של האיחוד האירופי (2024) מציינת את מרכז אסיה כמסדרון אסטרטגי לאספקה
+4. קצב הרפורמות תחת מירזייייב — המנהיג הפרו-מערבי ביותר במרכז אסיה מאז 2016
+
+**EPCA של קירגיזסטן (HD03248)** פחות חשובה אך לא זניחה:
+1. שער גיאוגרפי לקישוריות רחבה יותר במרכז אסיה
+2. אתגר השפעה כפול של סין/רוסיה
+3. ריכוז סמכויות בחוקת 2021 מייצר התחייבויות ניטור זכויות אדם
+
+---
+
+### ⏱️ לוח זמנים לפעולה מיידית
+
+| יום | פעולה |
+|-----|--------|
+| **2026-05-07** | הגשת הצעות HD03248 + HD03249 לריקסדאגן |
+| **2026-06** | דיוני ועדת UU (ייתכן ישיבה משותפת) |
+| **2026-09** | המלצת דוח ועדת UU |
+| **2026-10** | הצבעה במליאה — אישור כמעט ודאי |
+| **2026-11** | הפקדת האשרור השוודי; EPCA נכנס לתוקף באופן זמני |
+
+---
+
+*תדריך מודיעיני | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_ja.md -->
+
+**分類**: 提督評価 [B2] | **時間軸**: T+72h / T+90d  
+**WEP信頼度**: ほぼ確実（批准結果）| おそらく（地政学的展開）  
+
+---
+
+### 🔴 主要情報調査結果
+
+**スウェーデンは2026-05-07に、EU・中央アジア間の2件のEPCA批准投票を提出する。** 両合意（EU・キルギスタン：HD03248；EU・ウズベキスタン：HD03249）は外務省による条約批准提案であり、外交委員会に付託されている。議会承認は**ほぼ確実**（信頼度：95%以上）— これらは超党派のEU条約義務である。戦略的な情報価値は投票そのものではなく地政学的文脈にある。
+
+---
+
+### 📋 リクスダーゲンに提出される事項
+
+| 提案 | 対象国 | 署名 | 主要条項 |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | キルギスタン | 2023 | 政治対話、貿易、法の支配、接続性 |
+| 2025/26:249 (HD03249) | ウズベキスタン | 2023 | 貿易、重要原材料、デジタル経済、気候 |
+
+両協定とも**強化パートナーシップ・協力協定**（EPCA）— EUが連合協定以外で使用する最も包括的な二国間法的枠組みである。1999年のソビエト時代のパートナーシップ協定に取って代わる。
+
+---
+
+### 🌍 地政学的背景
+
+```mermaid
+graph LR
+    EU["🇪🇺 欧州連合<br/>EPCA法的枠組み"] --> KG["🇰🇬 キルギスタン<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 ウズベキスタン<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 ロシア<br/>2022年以降影響力低下"] -.->|"圧力"| KG
+    RU -.->|"圧力"| UZ
+    CN["🇨🇳 中国<br/>一帯一路"]-.-|"投資"| KG
+    CN -.->|"投資"| UZ
+    
+    EU2026["EU グローバルゲートウェイ<br/>トランスカスピアン回廊"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**2022年以降の中央アジアの地政学的方向転換**：キルギスタンとウズベキスタンはいずれも、ロシアによるウクライナへの全面侵攻以来、EU協力を加速させた。ロシアの経済的困難、二次制裁リスク、CSTO信頼性の低下により、EU協力の深化に向けた機会の窓が開かれた。EPCAシリーズ（カザフスタン、キルギスタン、ウズベキスタン、タジキスタンの批准進行中）は、独立以来、中央アジアにおけるEU法的枠組みの最も重要な拡大を表している。
+
+---
+
+### 🎯 戦略的情報評価
+
+**ウズベキスタンのEPCA（HD03249）の戦略的価値がより高い**理由：
+1. 人口3,800万 — 中央アジア最多人口の国
+2. 重要原材料：ウラン（世界第7位）、金、銅、リチウム探査
+3. EU重要原材料規則（2024年）が中央アジアを戦略的供給回廊と明記
+4. ミルジョエフ政権下の改革ペース — 2016年以降、中央アジアで最も親西洋的な指導者
+
+**キルギスタンのEPCA（HD03248）**は優先度は低いが無視できない：
+1. 広範な中央アジア接続性への地理的関門
+2. 中国・ロシアによる二重影響力への挑戦
+3. 2021年憲法での権力集中が人権監視義務を生じさせる
+
+---
+
+### ⏱️ 即時行動タイムライン
+
+| 日付 | 行動 |
+|-----|--------|
+| **2026-05-07** | 提案HD03248 + HD03249をリクスダーゲンに提出 |
+| **2026-06** | UU委員会公聴会（おそらく合同会議） |
+| **2026-09** | UU委員会報告書の勧告 |
+| **2026-10** | 本会議採決 — 承認はほぼ確実 |
+| **2026-11** | スウェーデン批准書の寄託；EPCA暫定発効 |
+
+---
+
+*情報ブリーフィング | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_ko.md -->
+
+**분류**: 어드미럴티 [B2] | **지평선**: T+72h / T+90d  
+**WEP 신뢰도**: 거의 확실(비준 결과) | 가능성 높음(지정학적 전개)  
+
+---
+
+### 🔴 주요 정보 조사 결과
+
+**스웨덴은 2026-05-07에 두 건의 EU-중앙아시아 EPCA 비준 투표를 제출한다.** 두 협정(EU-키르기스스탄: HD03248; EU-우즈베키스탄: HD03249) 모두 외교부의 조약 비준 제안으로 외교위원회에 회부되었다. 의회 승인은 **거의 확실**하다(신뢰도: 95% 이상) — 초당파적 EU 조약 의무이다. 전략적 정보 가치는 투표 자체가 아니라 지정학적 맥락에 있다.
+
+---
+
+### 📋 릭스다겐에 제출되는 사항
+
+| 제안 | 국가 | 서명 | 주요 조항 |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | 키르기스스탄 | 2023 | 정치 대화, 무역, 법치, 연결성 |
+| 2025/26:249 (HD03249) | 우즈베키스탄 | 2023 | 무역, 핵심 원자재, 디지털 경제, 기후 |
+
+두 협정 모두 **강화 파트너십 및 협력 협정**(EPCA) — EU가 연합 협정 이외에 사용하는 가장 포괄적인 양자 법적 프레임워크이다. 1999년 소비에트 시대 파트너십 협정을 대체한다.
+
+---
+
+### 🌍 지정학적 맥락
+
+```mermaid
+graph LR
+    EU["🇪🇺 유럽연합<br/>EPCA 법적 프레임워크"] --> KG["🇰🇬 키르기스스탄<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 우즈베키스탄<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 러시아<br/>2022년 이후 영향력 감소"] -.->|"압력"| KG
+    RU -.->|"압력"| UZ
+    CN["🇨🇳 중국<br/>일대일로"]-.-|"투자"| KG
+    CN -.->|"투자"| UZ
+    
+    EU2026["EU 글로벌 게이트웨이<br/>트랜스카스피안 회랑"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**2022년 이후 중앙아시아의 지정학적 방향 전환**: 키르기스스탄과 우즈베키스탄 모두 러시아의 우크라이나 전면 침공 이후 EU 협력을 가속화했다. 러시아의 경제적 어려움, 2차 제재 리스크, CSTO 신뢰성 저하로 EU 협력 심화를 위한 기회의 창이 열렸다. EPCA 시리즈(카자흐스탄, 키르기스스탄, 우즈베키스탄, 타지키스탄 비준 진행 중)는 독립 이래 중앙아시아에서 EU 법적 프레임워크의 가장 중요한 확대를 대표한다.
+
+---
+
+### 🎯 전략적 정보 평가
+
+**우즈베키스탄 EPCA(HD03249)의 전략적 가치가 더 높다** 이유:
+1. 인구 3,800만 — 중앙아시아에서 가장 인구가 많은 국가
+2. 핵심 원자재: 우라늄(세계 7위), 금, 구리, 리튬 탐사
+3. EU 핵심 원자재 규정(2024)이 중앙아시아를 전략적 공급 회랑으로 명시
+4. 미르지요예프 체제하의 개혁 속도 — 2016년 이후 중앙아시아에서 가장 친서방적 지도자
+
+**키르기스스탄 EPCA(HD03248)**는 우선순위가 낮지만 무시할 수 없다:
+1. 광범위한 중앙아시아 연결성으로의 지리적 관문
+2. 중국·러시아의 이중 영향력 도전
+3. 2021년 헌법의 권력 집중이 인권 모니터링 의무를 발생시킴
+
+---
+
+### ⏱️ 즉각적인 행동 타임라인
+
+| 날짜 | 행동 |
+|-----|--------|
+| **2026-05-07** | 릭스다겐에 제안 HD03248 + HD03249 제출 |
+| **2026-06** | UU 위원회 청문회(아마도 합동 회의) |
+| **2026-09** | UU 위원회 보고서 권고 |
+| **2026-10** | 본회의 표결 — 승인 거의 확실 |
+| **2026-11** | 스웨덴 비준서 기탁; EPCA 잠정 발효 |
+
+---
+
+*정보 브리핑 | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_nl.md -->
+
+**Classificatie**: Admiraliteit [B2] | **Horizon**: T+72h / T+90d  
+**WEP Betrouwbaarheid**: Bijna zeker (ratificatieresultaat) | Waarschijnlijk (geopolitieke ontwikkeling)  
+
+---
+
+### 🔴 Belangrijkste inlichtingenbevinding
+
+**Zweden legt op 2026-05-07 ratificatiestemmen voor voor twee EU-Centraal-Azië-EPCA's.** Beide overeenkomsten (EU-Kirgizstan: HD03248; EU-Oezbekistan: HD03249) zijn verdragsratificatievoorstellen van het Ministerie van Buitenlandse Zaken, verwezen naar de Vaste Commissie voor Buitenlandse Zaken. Parlementaire goedkeuring is **bijna zeker** (betrouwbaarheid: 95%+) — dit zijn niet-partijpolitieke EU-verdragsverplichtingen. De strategische inlichtingenwaarde ligt in de geopolitieke context, niet in de stemmingen zelf.
+
+---
+
+### 📋 Wat er voor de Riksdag ligt
+
+| Voorstel | Land | Ondertekend | Wichtigste bepalingen |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | Kirgizstan | 2023 | Politieke dialoog, handel, rechtsstaat, connectiviteit |
+| 2025/26:249 (HD03249) | Oezbekistan | 2023 | Handel, kritieke grondstoffen, digitale economie, klimaat |
+
+Beide zijn **Versterkte Partnerschaps- en Samenwerkingsovereenkomsten** (EPCA) — het meest uitgebreide bilaterale juridische kader dat de EU gebruikt naast associatieovereenkomsten. Ze vervangen de Sovjet-era partnerschapsovereenkomsten van 1999.
+
+---
+
+### 🌍 Geopolitieke context
+
+```mermaid
+graph LR
+    EU["🇪🇺 Europese Unie<br/>EPCA juridisch kader"] --> KG["🇰🇬 Kirgizstan<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 Oezbekistan<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 Rusland<br/>Verminderde invloed na 2022"] -.->|"druk"| KG
+    RU -.->|"druk"| UZ
+    CN["🇨🇳 China<br/>Gordel en Weg"]-.-|"investering"| KG
+    CN -.->|"investering"| UZ
+    
+    EU2026["EU Global Gateway<br/>Transcaspische corridor"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**Geopolitieke heroriëntatie van Centraal-Azië na 2022**: Zowel Kirgizstan als Oezbekistan hebben de EU-samenwerking versneld na Ruslands volledige invasie van Oekraïne. Ruslands economische moeilijkheden, het risico op secundaire sancties en verminderde CSTO-geloofwaardigheid creëerden een venster voor verdiepte EU-samenwerking. De EPCA-serie (ratificaties van Kazachstan, Kirgizstan, Oezbekistan, Tadzjikistan lopend) vertegenwoordigt de meest significante EU-rechtskaderuitbreiding in Centraal-Azië sinds de onafhankelijkheid.
+
+---
+
+### 🎯 Strategische inlichtingenbeoordeling
+
+**Oezbekistans EPCA (HD03249) heeft hogere strategische waarde** vanwege:
+1. Bevolking 38 mln. — meest bevolkte staat in Centraal-Azië
+2. Kritieke grondstoffen: uranium (wereld #7), goud, koper, lithiumverkenning
+3. EU-verordening inzake kritieke grondstoffen (2024) noemt Centraal-Azië als strategische aanvoerkorridor
+4. Hervormingstempo onder Mirziyoyev — meest pro-westerse CA-leider sinds 2016
+
+**Kirgizstans EPCA (HD03248)** is lager maar niet onbeduidend:
+1. Geografische gateway naar bredere CA-connectiviteit
+2. China/Russische dubbele invloedsuitdaging
+3. Machtsconcentratie in de grondwet van 2021 schept mensenrechtstoezichtsverplichtingen
+
+---
+
+### ⏱️ Onmiddellijke actietijdlijn
+
+| Dag | Actie |
+|-----|--------|
+| **2026-05-07** | Voorstellen HD03248 + HD03249 ingediend bij de Riksdag |
+| **2026-06** | UU-commissiehooringen (waarschijnlijk gezamenlijke zitting) |
+| **2026-09** | UU-commissieadvies |
+| **2026-10** | Plenaire stemming — goedkeuring bijna zeker |
+| **2026-11** | Zweedse ratificatie gedeponeerd; EPCA's treden voorlopig in werking |
+
+---
+
+*Inlichtingenbriefing | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_no.md -->
+
+**Klassifisering**: Admiralitetet [B2] | **Horisont**: T+72h / T+90d  
+**WEP Konfidens**: Nesten sikkert (ratifiseringsutfall) | Sannsynlig (geopolitisk bane)  
+
+---
+
+### 🔴 Nøkkeletterretningsfunn
+
+**Sverige legger frem ratifiseringsavstemninger for to EU-Sentral-Asia-EPCA-er den 2026-05-07.** Begge avtalene (EU-Kirgisistan: HD03248; EU-Usbekistan: HD03249) er traktatratifiseringsproposisjoner fra Utenriksdepartementet, henvist til Utenrikskomiteen. Parlamentarisk godkjenning er **nesten sikkert** (konfidens: 95%+) — disse er ikke-partipolitiske EU-traktatforpliktelser. Den strategiske etterretningsverdien ligger i den geopolitiske konteksten, ikke i selve avstemningene.
+
+---
+
+### 📋 Hva som ligger foran Riksdagen
+
+| Proposisjon | Land | Undertegnet | Viktige bestemmelser |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | Kirgisistan | 2023 | Politisk dialog, handel, rettsstaten, konnektivitet |
+| 2025/26:249 (HD03249) | Usbekistan | 2023 | Handel, kritiske råmaterialer, digital økonomi, klima |
+
+Begge er **Forsterkede partnerskaps- og samarbeidsavtaler** (EPCA) — det mest omfattende bilaterale rettslige rammeverket EU bruker ved siden av assosieringsavtaler. De erstatter Sovjet-tidens partnerskapsavtaler fra 1999.
+
+---
+
+### 🌍 Geopolitisk kontekst
+
+```mermaid
+graph LR
+    EU["🇪🇺 Den europeiske union<br/>EPCA rettslig rammeverk"] --> KG["🇰🇬 Kirgisistan<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 Usbekistan<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 Russland<br/>Redusert innflytelse etter 2022"] -.->|"press"| KG
+    RU -.->|"press"| UZ
+    CN["🇨🇳 Kina<br/>Belte og vei"]-.-|"investering"| KG
+    CN -.->|"investering"| UZ
+    
+    EU2026["EU Global Gateway<br/>Transskaspisk korridor"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**Geopolitisk omstilling i Sentral-Asia etter 2022**: Både Kirgisistan og Usbekistan har akselerert EU-samarbeidet siden Russlands fullskala invasjon av Ukraina. Russlands økonomiske vanskeligheter, risikoen for sekundære sanksjoner og redusert CSTO-troverdighet skapte et vindu for dypere EU-partnerskap. EPCA-serien (ratifiseringer av Kasakhstan, Kirgisistan, Usbekistan, Tadsjikistan pågår) representerer den mest betydelige EU-rettslige rammeekspansjonen i Sentral-Asia siden uavhengigheten.
+
+---
+
+### 🎯 Strategisk etterretningsvurdering
+
+**Usbekistans EPCA (HD03249) har høyere strategisk verdi** på grunn av:
+1. Befolkning 38 millioner — Sentral-Asias mest folkerike stat
+2. Kritiske råmaterialer: uran (verdens #7), gull, kobber, lithiumprospektering
+3. EUs lov om kritiske råmaterialer (2024) nevner Sentral-Asia som strategisk forsyningskorridor
+4. Reformtempo under Mirziyoyev — mest vestvendte CA-leder siden 2016
+
+**Kirgisistans EPCA (HD03248)** er lavere men ikke ubetydelig:
+1. Geografisk inngangsport til bredere CA-konnektivitet
+2. Kinas/Russlands doble innflytelsesutfordring
+3. Maktkonsentrasjon i grunnloven 2021 skaper forpliktelser til menneskerettighetsovervåking
+
+---
+
+### ⏱️ Umiddelbar handlingsbar tidslinje
+
+| Dag | Handling |
+|-----|--------|
+| **2026-05-07** | Proposisjoner HD03248 + HD03249 innlevert til Riksdagen |
+| **2026-06** | UU-komitéhøringer (sannsynligvis felles sesjon) |
+| **2026-09** | UU-betenkningsanbefaling |
+| **2026-10** | Plenumsavstemning — nesten sikkert godkjenning |
+| **2026-11** | Svensk ratifisering deponert; EPCA-er trer i kraft provisorisk |
+
+---
+
+*Etterretningsoversikt | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_sv.md -->
+
+**Klassificering**: Admiralitet [B2] | **Horisont**: T+72h / T+90d  
+**WEP Konfidens**: Nästan säkert (ratificeringsutfall) | Troligt (geopolitisk bana)  
+
+---
+
+### 🔴 Nyckelunderrättelsefynd
+
+**Sverige lägger fram ratificeringsomröstningar för två EU-Centralasien-EPCA:er den 2026-05-07.** Båda avtalen (EU-Kirgizistan: HD03248; EU-Uzbekistan: HD03249) är fördragsratificeringspropositioner från Utrikesdepartementet, remitterade till Utrikesutskottet. Parlamentariskt godkännande är **nästan säkert** (konfidens: 95%+) — dessa är icke-partipolitiska EU-fördragsförpliktelser. Det strategiska underrättelsevärdet ligger i det geopolitiska sammanhanget, inte i omröstningarna som sådana.
+
+---
+
+### 📋 Vad som ligger inför Riksdagen
+
+| Proposition | Land | Undertecknad | Viktiga bestämmelser |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | Kirgizistan | 2023 | Politisk dialog, handel, rättsstatsprincipen, konnektivitet |
+| 2025/26:249 (HD03249) | Uzbekistan | 2023 | Handel, kritiska råmaterial, digital ekonomi, klimat |
+
+Båda är **Förstärkta partnerskaps- och samarbetsavtal** (EPCA) — det mest heltäckande bilaterala rättsliga ramverket EU använder vid sidan av associeringsavtal. De ersätter Soviettidens partnerskapsavtal från 1999.
+
+---
+
+### 🌍 Geopolitiskt sammanhang
+
+```mermaid
+graph LR
+    EU["🇪🇺 Europeiska unionen<br/>EPCA rättsligt ramverk"] --> KG["🇰🇬 Kirgizistan<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 Uzbekistan<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 Ryssland<br/>Minskat inflytande efter 2022"] -.->|"tryck"| KG
+    RU -.->|"tryck"| UZ
+    CN["🇨🇳 Kina<br/>Bältes- och väginitiativet"]-.-|"investering"| KG
+    CN -.->|"investering"| UZ
+    
+    EU2026["EU Global Gateway<br/>Transkaспien-korridor"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**Geopolitisk omställning i Centralasien efter 2022**: Både Kirgizistan och Uzbekistan har accelererat EU-samarbetet sedan Rysslands fullskaliga invasion av Ukraina. Rysslands ekonomiska svårigheter, risken för sekundära sanktioner och minskad CSTO-trovärdighet skapade ett fönster för fördjupat EU-partnerskap. EPCA-serien (ratificeringar av Kazakstan, Kirgizistan, Uzbekistan, Tadzjikistan pågår) representerar den mest betydande EU-rättsliga ramverksexpansionen i Centralasien sedan självständigheten.
+
+---
+
+### 🎯 Strategisk underrättelsebedömning
+
+**Uzbekistans EPCA (HD03249) har högre strategiskt värde** på grund av:
+1. Befolkning 38 miljoner — Centralasiens folkrikaste stat
+2. Kritiska råmaterial: uran (världens 7:e), guld, koppar, litiumprospektering
+3. EU:s lag om kritiska råmaterial (2024) namnger Centralasien som strategisk försörjningskorridor
+4. Reformtakt under Mirziyoyev — mest västvänlige CA-ledaren sedan 2016
+
+**Kirgizistans EPCA (HD03248)** är lägre men inte obetydlig:
+1. Geografisk ingång till bredare CA-konnektivitet
+2. Kinas/Rysslands dubbla inflytandeutmaning
+3. Maktkoncentration i grundlagen 2021 skapar förpliktelser för mänskliga rättigheter
+
+---
+
+### ⏱️ Omedelbar handlingsbar tidslinje
+
+| Dag | Åtgärd |
+|-----|--------|
+| **2026-05-07** | Propositioner HD03248 + HD03249 inlämnade till Riksdagen |
+| **2026-06** | UU-utskottsutfrågningar (troligen gemensam session) |
+| **2026-09** | UU-betänkande med rekommendation |
+| **2026-10** | Pleniomröstning — nästan säkert godkännande |
+| **2026-11** | Svensk ratificering deponerad; EPCA:er träder i kraft provisoriskt |
+
+---
+
+*Underrättelsesammanfattning | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_zh.md -->
+
+**分类**: 海军部评级 [B2] | **时间视野**: T+72h / T+90d  
+**WEP可信度**: 几乎确定（批准结果）| 可能（地缘政治进程）  
+
+---
+
+### 🔴 核心情报发现
+
+**瑞典于2026-05-07提交两项欧盟-中亚EPCA批准投票。** 两项协议（欧盟-吉尔吉斯斯坦：HD03248；欧盟-乌兹别克斯坦：HD03249）均为外交部提交的条约批准提案，已转交外交事务委员会审查。议会批准**几乎确定**（可信度：95%以上）——这些是超党派的欧盟条约义务。战略情报价值在于地缘政治背景，而非投票本身。
+
+---
+
+### 📋 提交里克斯达根的事项
+
+| 提案 | 国家 | 签署 | 主要条款 |
+|------------|---------|--------|----------------|
+| 2025/26:248 (HD03248) | 吉尔吉斯斯坦 | 2023 | 政治对话、贸易、法治、互联互通 |
+| 2025/26:249 (HD03249) | 乌兹别克斯坦 | 2023 | 贸易、关键原材料、数字经济、气候 |
+
+两项均为**强化伙伴关系与合作协议**（EPCA）——这是欧盟在联系协议之外使用的最全面的双边法律框架。取代1999年苏联时代的伙伴关系协议。
+
+---
+
+### 🌍 地缘政治背景
+
+```mermaid
+graph LR
+    EU["🇪🇺 欧盟<br/>EPCA法律框架"] --> KG["🇰🇬 吉尔吉斯斯坦<br/>Prop. 2025/26:248"]
+    EU --> UZ["🇺🇿 乌兹别克斯坦<br/>Prop. 2025/26:249"]
+    
+    RU["🇷🇺 俄罗斯<br/>2022年后影响力下降"] -.->|"压力"| KG
+    RU -.->|"压力"| UZ
+    CN["🇨🇳 中国<br/>一带一路"]-.-|"投资"| KG
+    CN -.->|"投资"| UZ
+    
+    EU2026["EU全球门户<br/>跨里海走廊"] --> KG
+    EU2026 --> UZ
+    
+    style EU fill:#003399,color:#FFD700
+    style KG fill:#E8132A,color:#FFFFFF
+    style UZ fill:#1EB53A,color:#FFFFFF
+    style RU fill:#CC0000,color:#FFFFFF
+    style CN fill:#DE2910,color:#FFFFFF
+    style EU2026 fill:#0066CC,color:#FFFFFF
+```
+
+**2022年后中亚地缘政治重新定向**：自俄罗斯全面入侵乌克兰以来，吉尔吉斯斯坦和乌兹别克斯坦均加快了与欧盟的合作。俄罗斯的经济困难、次级制裁风险以及集安组织可信度下降，为深化欧盟合作提供了机会窗口。EPCA系列（哈萨克斯坦、吉尔吉斯斯坦、乌兹别克斯坦、塔吉克斯坦批准进行中）代表了自独立以来欧盟法律框架在中亚最重要的扩展。
+
+---
+
+### 🎯 战略情报评估
+
+**乌兹别克斯坦EPCA（HD03249）具有更高战略价值**，原因如下：
+1. 人口3800万——中亚人口最多的国家
+2. 关键原材料：铀（全球第7位）、黄金、铜、锂勘探
+3. 欧盟《关键原材料法》（2024）明确将中亚列为战略供应走廊
+4. 米尔济约耶夫执政下的改革步伐——2016年以来中亚最亲西方的领导人
+
+**吉尔吉斯斯坦EPCA（HD03248）**优先级较低但不可忽视：
+1. 通向更广泛中亚互联互通的地理门户
+2. 中国/俄罗斯双重影响力挑战
+3. 2021年宪法的权力集中产生人权监督义务
+
+---
+
+### ⏱️ 即时行动时间表
+
+| 日期 | 行动 |
+|-----|--------|
+| **2026-05-07** | 向里克斯达根提交提案HD03248 + HD03249 |
+| **2026-06** | UU委员会听证会（可能为联合会议） |
+| **2026-09** | UU委员会报告建议 |
+| **2026-10** | 全体会议表决——批准几乎确定 |
+| **2026-11** | 瑞典批准书交存；EPCA暂时生效 |
+
+---
+
+*情报简报 | Riksdagsmonitor | 2026-05-07*
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 4 | Linked in Article Sources, not expanded inline |
 
@@ -1288,6 +2379,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

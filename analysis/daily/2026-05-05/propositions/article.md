@@ -6,7 +6,7 @@ date: 2026-05-05
 subfolder: propositions
 slug: 2026-05-05-propositions
 source_folder: analysis/daily/2026-05-05/propositions
-generated_at: 2026-05-23T08:06:00.607Z
+generated_at: 2026-05-23T22:05:56.527Z
 language: en
 layout: article
 ---
@@ -90,6 +90,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1389,13 +1402,751 @@ None. No withdrawal notices for HD03255.
 
 No prior `pir-status.json` found for propositions subfolder in the last 14 days (first run). PIRs initialised in this run.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# السويد تعزز ترسانتها الاحترازية الكلية بقانون مسوحات ديون الأسر المعيشية
+
+**المؤلف**: جيمس بيثر سورلينج  
+**التاريخ**: 2026-05-05  
+**التصنيف**: عام  
+**الثقة**: عالية — أميرالية A1 (مصادر أولية مؤسسية)  
+**سير العمل**: news-propositions  
+
+---
+
+### الملخص
+
+قدّمت الحكومة السويدية في الخامس من مايو 2026 الاقتراح 2025/26:255 (HD03255)، الذي يُنشئ أساساً قانونياً يُتيح لـ Finansinspektion إجراء مسوحات عينية إلزامية لبيانات ديون الأسر المعيشية من مؤسسات الائتمان. تعالج هذه المبادرة ثغرة استمرت عقداً كاملاً في منظومة الرصد الاحترازي الكلي السويدية — أقرّت بها كل من Riksbank وصندوق النقد الدولي — في ظل امتلاك السويد أعلى نسب الديون إلى الدخل المتاح للأسر في أوروبا. ومن المقرر إجراء التصويت في الغرفة في 15 يونيو 2026 عبر تقرير اللجنة FiU45.
+
+---
+
+### القرارات التي يدعمها هذا المستند
+
+1. **قرار تحريري**: ما إذا كان هذا الاقتراح يستحق مقالاً مخصصاً أو تمييزاً جانبياً في تغطية تطوير السياسة الاحترازية الكلية السويدية
+2. **قرار تحليلي**: كيف ترتبط هذه البنية التحتية للبيانات بالنقاشات الجارية بين FI/Riksbank حول تشديد التدابير القائمة على المقترضين (DSTI، ومتطلبات الاستهلاك)
+3. **قرار المتابعة**: ما إذا كان ينبغي تتبع رأي Lagrådet (المتوقع في الربع الثاني من 2026) وتقرير اللجنة FiU45 بحثاً عن تعديلات جوهرية قد تُضعف ضمانات الخصوصية أو منهجية أخذ العينات
+
+---
+
+### القراءة في 60 ثانية
+
+- 🏦 **ماذا**: صلاحية قانونية لـ FI لطلب بيانات الديون/الدخل على مستوى الأسرة من البنوك لمسوحات العينات — وليس سجلاً شاملاً
+- 📊 **لماذا الآن**: يفتقر الإطار الاحترازي الكلي السويدي إلى بيانات تفصيلية على مستوى المقترض؛ توصيات المجلس الأوروبي للمخاطر النظامية (ESRB) والمادة الرابعة لصندوق النقد الدولي أشارت إلى هذه الثغرة
+- 🔒 **الخصوصية**: يتجنب التصميم القائم على العينات المتناسبة الإبلاغ الإلزامي الشامل؛ الأساس القانوني للائحة حماية البيانات GDPR م. 6(1)(e)؛ مراجعة Lagrådet محتملة
+- ⚡ **الائتلاف**: الوزيران لوتا إيدهولم (L) ونيكلاس ويكمان (M) — حكومة تيدو؛ الإحالة إلى FiU؛ دعم متعدد الأحزاب متوقع
+- 🗓️ **الجدول الزمني**: تصويت الغرفة 2026-06-15؛ أول مسح لـ FI في الربع الثالث من 2026؛ البيانات ستُغذي تقرير الاستقرار المالي القادم
+
+---
+
+### المحفز الاستشرافي الرئيسي
+
+**رأي Lagrådet في HD03255** (المتوقع قبل تصويت الغرفة في 2026-06-15): ستُحدد تقييم مجلس التشريع لتناسب الخصوصية/RF 2:6 ما إذا كانت التعديلات مطلوبة وما إذا كان مشروع القانون سيُقرّ بصيغته الأصلية.
+
+---
+
+### إقرار ثقة التحليل
+
+ثقة عالية مبنية على: الوثيقة الرسمية للريكسداغ HD03255 [A1]؛ تخطيط تقرير اللجنة FiU45 في وثيقة التخطيط H6D1plan؛ السياق الراسخ للسياسة الاحترازية الكلية السويدية. بيانات WEO الاقتصادية لصندوق النقد الدولي غير متاحة في هذه الدورة (API غير متاح) — تقرير الاستقرار المالي 2025 لـ Riksbank (مصدر عام) استُخدم كسياق لديون الأسر.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_da.md -->
+
+---
+
+### Resumé
+
+Sveriges regering fremsatte den 5. maj 2026 Proposition 2025/26:255 (HD03255), der skaber et lovbestemt grundlag for Finansinspektionen til at gennemføre obligatoriske stikprøveundersøgelser af husholdningsgældsdata fra kreditinstitutter. Foranstaltningen adresserer et årti-langt hul i Sveriges makroprudentielle overvågningsværktøj — anerkendt af både Riksbank og IMF — da landet bærer en af Europas højeste husholdningsgæld-til-indkomst-kvoter. Kammervotering er planlagt til den 15. juni 2026 via betænkning FiU45.
+
+---
+
+### Beslutninger dette dokument understøtter
+
+1. **Redaktionel beslutning**: Hvorvidt denne proposition berettiger en dedikeret artikel eller sidestykke i dækningen af Sveriges makroprudentielle politikudvikling
+2. **Analytisk beslutning**: Hvordan denne datainfrastruktur relaterer til igangværende FI/Riksbank-diskussioner om at stramme låntagerbaserede foranstaltninger (DSTI, afdragskrav)
+3. **Overvågningsbeslutning**: Hvorvidt man skal følge Lagrådet-udtalelsen (forventet Q2 2026) og FiU45-udvalgsrapporten for væsentlige ændringer, der kan svække privatlivsbeskyttelse eller stikprøvemetodologi
+
+---
+
+### 60-sekunders læsning
+
+- 🏦 **Hvad**: Lovbestemt bemyndigelse for FI til at anmode om husholdningsniveau gælds/indkomstdata fra banker til stikprøveundersøgelser — ikke fuldt register
+- 📊 **Hvorfor nu**: Sveriges makroprudentielle ramme mangler granulære data på låntagerniveau; EU ESRB-anbefalinger og IMF Artikel IV har markeret dette hul
+- 🔒 **Privatliv**: Proportionel udformning med stikprøver undgår fuld obligatorisk rapportering; GDPR art. 6(1)(e) retsgrundlag; Lagrådet-gennemgang sandsynlig
+- ⚡ **Koalition**: Ministrene Lotta Edholm (L) + Niklas Wykman (M) — Tidö-regeringen; FiU-høring; tværpolitisk støtte forventet
+- 🗓️ **Tidslinje**: Kammervotering 2026-06-15; første FI-undersøgelse Q3 2026; data der informerer næste FSR
+
+---
+
+### Vigtigste fremadskuende udløser
+
+**Lagrådet-udtalelse om HD03255** (forventet inden kammervoteringen 2026-06-15): Lovgivningsrådets vurdering af privatliv/RF 2:6-proportionalitet vil afgøre, om ændringer er nødvendige, og om lovforslaget vedtages i sin ursprunglige form.
+
+---
+
+### Analytisk konfidensredegørelse
+
+Konfidens HØJ baseret på: officielt Riksdag-dokument HD03255 [A1]; betænkning FiU45-planlægning i planlægningsdokument H6D1plan; etableret svensk makroprudentiel politisk kontekst. IMF WEO-data ikke tilgængelige denne cyklus (API utilgængeligt) — Riksbankens FSR 2025 (offentlig kilde) anvendes til husholdningsgælds-kontekst.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_de.md -->
+
+---
+
+### Zusammenfassung
+
+Die schwedische Regierung brachte am 5. Mai 2026 die Proposition 2025/26:255 (HD03255) ein, die eine gesetzliche Grundlage für die Finansinspektion schafft, um obligatorische Stichprobenerhebungen von Haushaltsverschuldungsdaten bei Kreditinstituten durchzuführen. Die Maßnahme behebt eine jahrzehntelange Lücke in Schwedens makroprudenziellem Überwachungsinstrumentarium — anerkannt von Riksbank und IWF —, da das Land eine der höchsten Haushaltsschulden-zu-Einkommens-Quoten Europas trägt. Die Kammerabstimmung ist für den 15. Juni 2026 über den Ausschussbericht FiU45 vorgesehen.
+
+---
+
+### Entscheidungen, die dieses Dokument unterstützt
+
+1. **Redaktionelle Entscheidung**: Ob diese Proposition einen eigenen Artikel oder eine Randnotiz in der Berichterstattung über Schwedens makroprudenzielle Politikentwicklung rechtfertigt
+2. **Analytische Entscheidung**: Wie diese Dateninfrastruktur mit laufenden FI/Riksbank-Diskussionen über die Verschärfung kreditnehmerbezogener Maßnahmen (DSTI, Tilgungsanforderungen) zusammenhängt
+3. **Überwachungsentscheidung**: Ob der Lagrådet-Gutachten (erwartet Q2 2026) und der FiU45-Ausschussbericht auf wesentliche Änderungen hin verfolgt werden sollten, die Datenschutzvorkehrungen oder die Stichprobenmethodik schwächen könnten
+
+---
+
+### 60-Sekunden-Lektüre
+
+- 🏦 **Was**: Gesetzliche Befugnis für FI, von Banken haushaltsbezogene Schulden/Einkommensdaten für Stichprobenerhebungen anzufordern — kein vollständiges Register
+- 📊 **Warum jetzt**: Schwedens makroprudenzielles Rahmenwerk fehlt granulare kreditnehmerspezifische Daten; EU ESRB-Empfehlungen und IWF Artikel IV haben diese Lücke aufgezeigt
+- 🔒 **Datenschutz**: Proportionales Stichprobendesign vermeidet vollständige Meldepflicht; DSGVO Art. 6(1)(e) Rechtsgrundlage; Lagrådet-Überprüfung wahrscheinlich
+- ⚡ **Koalition**: Minister Lotta Edholm (L) + Niklas Wykman (M) — Tidö-Regierung; FiU-Befassung; parteiübergreifende Unterstützung erwartet
+- 🗓️ **Zeitplan**: Kammerabstimmung 2026-06-15; erste FI-Erhebung Q3 2026; Daten informieren nächsten FSR
+
+---
+
+### Wichtigster vorausschauender Auslöser
+
+**Lagrådet-Gutachten zu HD03255** (erwartet vor der Kammerabstimmung 2026-06-15): Die Einschätzung des Gesetzgebungsrats zur Datenschutz/RF 2:6-Verhältnismäßigkeit wird bestimmen, ob Änderungen erforderlich sind und ob das Gesetz in seiner ursprünglichen Form verabschiedet wird.
+
+---
+
+### Analytische Konfidenzerklärung
+
+Konfidens HOCH basierend auf: offiziellem Riksdag-Dokument HD03255 [A1]; Ausschussbericht FiU45-Planung im Planungsdokument H6D1plan; etabliertem schwedischen makroprudenziellen politischen Kontext. IWF WEO-Wirtschaftsdaten in diesem Zyklus nicht verfügbar (API nicht erreichbar) — Riksbankens FSR 2025 (öffentliche Quelle) für Haushaltsverschuldungskontext.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_es.md -->
+
+---
+
+### Resumen
+
+El gobierno sueco presentó el 5 de mayo de 2026 la Proposición 2025/26:255 (HD03255), que crea una base legal para que la Finansinspektion realice encuestas muestrales obligatorias sobre datos de deuda de hogares de entidades de crédito. La medida aborda una brecha de una década en el conjunto de herramientas de seguimiento macroprudencial de Suecia —reconocida por el Riksbank y el FMI— ya que el país tiene una de las ratios de deuda de hogares en relación con la renta disponible más altas de Europa. La votación en el Parlamento está prevista para el 15 de junio de 2026 a través del dictamen de la comisión FiU45.
+
+---
+
+### Decisiones que apoya este documento
+
+1. **Decisión editorial**: Si esta proposición justifica un artículo dedicado o un recuadro en la cobertura del desarrollo de la política macroprudencial de Suecia
+2. **Decisión analítica**: Cómo esta infraestructura de datos se relaciona con las discusiones en curso entre FI/Riksbank sobre el endurecimiento de las medidas basadas en el prestatario (DSTI, requisitos de amortización)
+3. **Decisión de seguimiento**: Si seguir el dictamen del Lagrådet (esperado Q2 2026) y el informe de la comisión FiU45 en busca de enmiendas significativas que puedan debilitar las salvaguardas de privacidad o la metodología de muestreo
+
+---
+
+### Lectura en 60 segundos
+
+- 🏦 **Qué**: Autoridad legal para que FI solicite datos de deuda/renta a nivel de hogar a los bancos para encuestas muestrales —no un registro completo
+- 📊 **Por qué ahora**: El marco macroprudencial sueco carece de datos granulares a nivel de prestatario; las recomendaciones de la JERS de la UE y el Artículo IV del FMI han señalado esta brecha
+- 🔒 **Privacidad**: El diseño proporcional mediante muestreo evita la notificación obligatoria completa; base jurídica del RGPD art. 6(1)(e); revisión probable del Lagrådet
+- ⚡ **Coalición**: Ministros Lotta Edholm (L) + Niklas Wykman (M) —gobierno Tidö; remisión a FiU; apoyo transpartidista esperado
+- 🗓️ **Cronograma**: Votación en el Parlamento 2026-06-15; primera encuesta de FI Q3 2026; datos que informan el próximo FSR
+
+---
+
+### Principal detonante prospectivo
+
+**Dictamen del Lagrådet sobre HD03255** (esperado antes de la votación parlamentaria del 2026-06-15): La evaluación del Consejo de Legislación sobre la proporcionalidad privacidad/RF 2:6 determinará si se requieren enmiendas y si el proyecto de ley se aprueba en su forma original.
+
+---
+
+### Declaración de confianza analítica
+
+Confianza ALTA basada en: documento oficial del Riksdag HD03255 [A1]; planificación del dictamen FiU45 en el documento de planificación H6D1plan; contexto macroprudencial sueco establecido. Datos económicos del WEO del FMI no disponibles en este ciclo (API inaccesible) —FSR 2025 del Riksbank (fuente pública) utilizado para el contexto de deuda de hogares.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_fi.md -->
+
+---
+
+### Tiivistelmä
+
+Ruotsin hallitus esitteli 5. toukokuuta 2026 Proposition 2025/26:255 (HD03255), joka luo lakisääteisen perustan Finansinspektionenille kotitalouksien velkatietojen pakollisten otostutkimusten suorittamiseksi luottolaitoksilta. Toimenpide korjaa vuosikymmenen mittaisen aukon Ruotsin makrovakauden seurantatyökaluissa — jonka sekä Riksbank että IMF ovat tunnustaneet — sillä maalla on yksi Euroopan korkeimmista kotitalouksien velka-tulosuhteista. Täysistuntoäänestys on aikataulutettu 15. kesäkuuta 2026 mietinnön FiU45 kautta.
+
+---
+
+### Päätökset, joita tämä asiakirja tukee
+
+1. **Toimituksellinen päätös**: Onko tämä esitys ansainnut erillisen artikkelin tai sivupalstan Ruotsin makrovakauspoliittisen kehityksen seurannassa
+2. **Analyyttinen päätös**: Miten tämä tietoinfrastruktuuri liittyy meneillään oleviin FI/Riksbank-keskusteluihin lainaajapohjaisista toimenpiteistä (DSTI, lyhennysnäkymät)
+3. **Seurantapäätös**: Seurataanko Lagrådets lausuntoa (odotettavissa Q2 2026) ja FiU45:n valiokuntamietintöä merkittävistä muutoksista, jotka saattaisivat heikentää yksityisyydensuojaa tai otosmetodologiaa
+
+---
+
+### 60 sekunnin lukeminen
+
+- 🏦 **Mitä**: Lakisääteinen toimivalta FI:lle pyytää kotitalouksien tason velka/tulodata pankeilta otostutkimuksia varten — ei täyttä rekisteriä
+- 📊 **Miksi nyt**: Ruotsin makrovakausrakenteelta puuttuu granulaarinen lainaajakohtainen data; EU ESRB-suositukset ja IMF:n IV artikla ovat korostaneet tätä aukkoa
+- 🔒 **Yksityisyys**: Suhteellinen otantasuunnittelu välttää täydellisen pakollisen raportoinnin; GDPR art. 6(1)(e) oikeudellinen peruste; Lagrådets-tarkistus todennäköinen
+- ⚡ **Koalitio**: Ministerit Lotta Edholm (L) + Niklas Wykman (M) — Tidö-hallitus; FiU-lausuntokierros; puolueiden välinen tuki odotettavissa
+- 🗓️ **Aikataulu**: Täysistuntoäänestys 2026-06-15; ensimmäinen FI-tutkimus Q3 2026; data seuraavaa FSR:ää varten
+
+---
+
+### Tärkein eteenpäin katsova laukaisin
+
+**Lagrådets lausunto HD03255:stä** (odotettavissa ennen täysistuntoäänestystä 2026-06-15): Lainsäädäntöneuvoston arviointi yksityisyyden suoja/RF 2:6 -suhteellisuudesta ratkaisee, tarvitaanko muutoksia ja hyväksytäänkö lakiehdotus alkuperäisessä muodossaan.
+
+---
+
+### Analyyttinen luottamuslausunto
+
+Luottamus KORKEA perustuen: virallinen Riksdag-asiakirja HD03255 [A1]; mietintö FiU45 -suunnittelu suunnitteludokumentissa H6D1plan; vakiintunut ruotsalainen makrovakauspoliittinen konteksti. IMF WEO -taloudelliset tiedot eivät ole saatavilla tällä kierroksella (API ei tavoitettavissa) — Riksbankin FSR 2025 (julkinen lähde) kotitalousvelkakontekstiin.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_fr.md -->
+
+---
+
+### Résumé
+
+Le gouvernement suédois a présenté le 5 mai 2026 la Proposition 2025/26:255 (HD03255), créant une base légale pour que la Finansinspektion mène des enquêtes par sondage obligatoires sur les données d'endettement des ménages auprès des établissements de crédit. La mesure comble une lacune vieille d'une décennie dans la boîte à outils de surveillance macroprudentielle de la Suède — reconnue par la Riksbank et le FMI — alors que le pays porte l'un des ratios endettement des ménages/revenu disponible les plus élevés d'Europe. Le vote en chambre est prévu pour le 15 juin 2026 via le rapport de commission FiU45.
+
+---
+
+### Décisions que ce document soutient
+
+1. **Décision éditoriale** : Si cette proposition justifie un article dédié ou un encadré dans la couverture de l'évolution de la politique macroprudentielle suédoise
+2. **Décision analytique** : Comment cette infrastructure de données se rapporte aux discussions en cours entre FI/Riksbank sur le durcissement des mesures fondées sur l'emprunteur (DSTI, exigences d'amortissement)
+3. **Décision de suivi** : S'il faut suivre l'avis du Lagrådet (attendu T2 2026) et le rapport de commission FiU45 pour des amendements significatifs qui pourraient affaiblir les garanties de confidentialité ou la méthodologie d'échantillonnage
+
+---
+
+### Lecture en 60 secondes
+
+- 🏦 **Quoi** : Autorité légale pour FI de demander des données ménage-niveau sur les dettes/revenus aux banques pour des enquêtes par sondage — pas de registre complet
+- 📊 **Pourquoi maintenant** : Le cadre macroprudentiel suédois manque de données granulaires au niveau de l'emprunteur ; les recommandations EU ESRB et l'Article IV du FMI ont signalé cette lacune
+- 🔒 **Confidentialité** : Conception proportionnée par sondage évite la déclaration obligatoire complète ; base juridique RGPD art. 6(1)(e) ; examen Lagrådet probable
+- ⚡ **Coalition** : Ministres Lotta Edholm (L) + Niklas Wykman (M) — gouvernement Tidö ; saisine FiU ; soutien transpartisan attendu
+- 🗓️ **Calendrier** : Vote en chambre 2026-06-15 ; première enquête FI T3 2026 ; données informant le prochain FSR
+
+---
+
+### Principal déclencheur prospectif
+
+**Avis du Lagrådet sur HD03255** (attendu avant le vote en chambre du 2026-06-15) : L'évaluation du Conseil de la législation sur la proportionnalité confidentialité/RF 2:6 déterminera si des amendements sont requis et si la proposition est adoptée dans sa forme originale.
+
+---
+
+### Déclaration de confiance analytique
+
+Confiance ÉLEVÉE basée sur : document officiel Riksdag HD03255 [A1] ; planification du rapport FiU45 dans le document de planification H6D1plan ; contexte macroprudentiel suédois établi. Données économiques IMF WEO indisponibles pour ce cycle (API inaccessible) — FSR 2025 de la Riksbank (source publique) utilisé pour le contexte d'endettement des ménages.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# שוודיה מחזקת את ארסנל האמצעים הפרודנציאלי-מאקרו שלה עם חוק סקרי חובות משקי הבית
+
+**מחבר**: ג'יימס פת'ר סורלינג  
+**תאריך**: 2026-05-05  
+**סיווג**: ציבורי  
+**ביטחון**: גבוה — אדמירליות A1 (מקורות ראשוניים מוסדיים)  
+**תהליך עבודה**: news-propositions  
+
+---
+
+### תקציר
+
+הממשלה השוודית הגישה ב-5 במאי 2026 את הצעת החוק 2025/26:255 (HD03255), היוצרת בסיס חוקי ל-Finansinspektion לקיים סקרי דגימה חובה של נתוני חובות משקי בית ממוסדות אשראי. הצעד מטפל בפערת עשור בארסנל הניטור הפרודנציאלי-מאקרו של שוודיה — שהוכרה על ידי ה-Riksbank וקרן המטבע הבינלאומית — כאשר המדינה נושאת אחת מיחסות החוב הגבוהות ביותר להכנסה פנויה של משקי בית באירופה. הצבעת הכנסת מתוכננת ל-15 ביוני 2026 באמצעות דוח ועדת FiU45.
+
+---
+
+### החלטות שמסמך זה תומך בהן
+
+1. **החלטה עריכתית**: האם הצעה זו מצדיקה מאמר ייעודי או תיבה בסיקור פיתוח המדיניות הפרודנציאלית-מאקרו של שוודיה
+2. **החלטה אנליטית**: כיצד תשתית הנתונים הזאת קשורה לדיוני ה-FI/Riksbank השוטפים על הידוק אמצעים מבוססי לווים (DSTI, דרישות פירעון)
+3. **החלטת מעקב**: האם לעקוב אחרי חוות דעת ה-Lagrådet (צפויה ברבעון 2 2026) ודוח ועדת FiU45 לאיתור תיקונים משמעותיים שעשויים להחליש אמצעי הגנת פרטיות או מתודולוגיית דגימה
+
+---
+
+### קריאה של 60 שניות
+
+- 🏦 **מה**: סמכות חוקית ל-FI לבקש מהבנקים נתוני חוב/הכנסה ברמת משק הבית לסקרי דגימה — לא רגיסטר מלא
+- 📊 **למה עכשיו**: המסגרת הפרודנציאלית-מאקרו של שוודיה חסרה נתונים גרנולריים ברמת הלווה; המלצות ה-ESRB של האיחוד האירופי וסעיף IV של קרן המטבע הבינלאומית סימנו פער זה
+- 🔒 **פרטיות**: עיצוב דגימה פרופורציונלי מונע דיווח חובה מקיף; בסיס משפטי GDPR סעיף 6(1)(e); בדיקת Lagrådet צפויה
+- ⚡ **קואליציה**: שרים לוטה אדהולם (L) + ניקלאס ויקמן (M) — ממשלת Tidö; הפניה ל-FiU; תמיכה חוצת-מפלגות צפויה
+- 🗓️ **לוח זמנים**: הצבעת כנסת 2026-06-15; סקר ה-FI הראשון ברבעון 3 2026; נתונים מחזקים את ה-FSR הבא
+
+---
+
+### הטריגר העתידי העיקרי
+
+**חוות דעת Lagrådet על HD03255** (צפויה לפני הצבעת הכנסת ב-2026-06-15): הערכת מועצת החקיקה לגבי פרטיות/RF 2:6 מידתיות תקבע האם נדרשים תיקונים והאם ייחקק הצעת החוק בצורתה המקורית.
+
+---
+
+### הצהרת אמינות אנליטית
+
+ביטחון גבוה מבוסס על: מסמך Riksdag רשמי HD03255 [A1]; תכנון דוח ועדת FiU45 במסמך תכנון H6D1plan; הקשר מדיניות פרודנציאלית-מאקרו שוודי מבוסס. נתוני IMF WEO כלכליים אינם זמינים במחזור זה (API לא נגיש) — FSR 2025 של Riksbank (מקור ציבורי) שימש להקשר חובות משקי בית.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_ja.md -->
+
+**著者**: ジェームス・ペター・ソーリング  
+**日付**: 2026-05-05  
+**分類**: 公開  
+**信頼度**: 高 — アドミラルティA1（機関一次資料）  
+**ワークフロー**: news-propositions  
+
+---
+
+### 概要
+
+スウェーデン政府は2026年5月5日、提案2025/26:255（HD03255）を提出した。本提案は、Finansinspektionが金融機関から家計負債データのサンプル調査を義務的に実施するための法的根拠を創設するものである。この措置は、スウェーデンのマクロプルーデンシャル・モニタリング体制における10年来の空白を埋めるものであり、リクスバンクとIMFの双方が認識していた課題に対応する。スウェーデンは欧州で最も高い家計債務対可処分所得比率の一つを抱えている。議会での採決は、委員会報告FiU45を通じて2026年6月15日に予定されている。
+
+---
+
+### 本文書が支援する意思決定
+
+1. **編集上の決定**: 本提案がスウェーデンのマクロプルーデンシャル政策の動向に関する専用記事やサイドバーに値するか否か
+2. **分析上の決定**: このデータ基盤が、借り手ベースの措置（DSTI、償還要件）の強化に関するFI/リクスバンクの現在進行中の議論とどのように関連するか
+3. **モニタリング上の決定**: ラーグローデット意見書（2026年第2四半期に予定）とFiU45委員会報告書を追跡し、プライバシー保護やサンプリング手法を弱体化させる可能性のある重大な修正を確認するべきか否か
+
+---
+
+### 60秒で読む
+
+- 🏦 **内容**: FIが完全な登録制度ではなくサンプル調査のため、銀行から家計単位の負債・所得データを要求する法的権限
+- 📊 **今なぜ**: スウェーデンのマクロプルーデンシャル枠組みは借り手レベルの詳細データを欠いており、EU ESRB勧告とIMF第4条協議がこの空白を指摘していた
+- 🔒 **プライバシー**: 比例的なサンプリング設計により全面的な義務的報告を回避；GDPR第6条(1)(e)法的根拠；ラーグローデットによる審査が見込まれる
+- ⚡ **連立**: ロッタ・エドホルム（L）+ニクラス・ウィクマン（M）両大臣 — ティドー政権；FiU委員会付託；超党派的支持が予想される
+- 🗓️ **スケジュール**: 議会採決 2026-06-15；FI初回調査 2026年第3四半期；次期FSRへのデータ提供
+
+---
+
+### 主要な将来的トリガー
+
+**HD03255に関するラーグローデット意見書**（2026-06-15の議会採決前に予定）：立法評議会によるプライバシー/RF 2:6の比例性評価が、修正が必要かどうか、および法案が原形のまま可決されるかどうかを決定する。
+
+---
+
+### 分析的確信の表明
+
+高い信頼度。根拠：公式リクスダーグ文書HD03255 [A1]；計画文書H6D1planにおけるFiU45委員会報告計画；確立されたスウェーデンのマクロプルーデンシャル政策文脈。IMF WEO経済データは本サイクルでは利用不可（API到達不可）—家計負債文脈にはリクスバンクFSR 2025（公開資料）を使用。
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_ko.md -->
+
+**저자**: 제임스 페터 소링  
+**날짜**: 2026-05-05  
+**분류**: 공개  
+**신뢰도**: 높음 — 어드미럴티 A1 (기관 1차 자료)  
+**워크플로**: news-propositions  
+
+---
+
+### 요약
+
+스웨덴 정부는 2026년 5월 5일 제안 2025/26:255 (HD03255)를 제출했다. 이 제안은 Finansinspektion이 신용기관으로부터 가계부채 데이터에 대한 의무적 표본조사를 실시할 수 있는 법적 근거를 만든다. 이 조치는 스웨덴의 거시건전성 모니터링 체계에서 10년간 존재해온 공백을 해소하는 것으로, 릭스방크와 IMF 모두가 인정한 과제이다. 스웨덴은 유럽에서 가장 높은 가계 부채-가처분소득 비율 중 하나를 보유하고 있다. 의회 표결은 위원회 보고서 FiU45를 통해 2026년 6월 15일로 예정되어 있다.
+
+---
+
+### 본 문서가 지원하는 의사결정
+
+1. **편집 결정**: 이 제안이 스웨덴의 거시건전성 정책 발전 관련 전용 기사나 사이드바에 값하는지 여부
+2. **분석 결정**: 이 데이터 인프라가 차입자 기반 조치(DSTI, 상환 요건) 강화에 관한 FI/릭스방크의 진행 중인 논의와 어떻게 연관되는지
+3. **모니터링 결정**: 라그로데트 의견서(2026년 2분기 예상)와 FiU45 위원회 보고서를 추적하여 개인정보 보호장치나 표본추출 방법론을 약화시킬 수 있는 중대한 수정안 여부 확인 필요성
+
+---
+
+### 60초 요약
+
+- 🏦 **내용**: FI가 완전한 레지스터가 아닌 표본조사를 위해 은행으로부터 가계단위 부채/소득 데이터를 요청할 수 있는 법적 권한
+- 📊 **지금 왜**: 스웨덴 거시건전성 체계는 차입자 수준의 세부 데이터가 부족했으며, EU ESRB 권고사항과 IMF 4조 협의가 이 공백을 지적했음
+- 🔒 **개인정보**: 비례적 표본 설계로 전면 의무 보고 회피; GDPR 6조(1)(e) 법적 근거; 라그로데트 심사 예상
+- ⚡ **연립**: 롯타 에드홀름(L) + 니클라스 비크만(M) 장관 — 티도 정부; FiU 회부; 초당적 지지 예상
+- 🗓️ **일정**: 의회 표결 2026-06-15; FI 첫 조사 2026년 3분기; 차기 FSR 데이터 반영
+
+---
+
+### 주요 선행 트리거
+
+**HD03255에 대한 라그로데트 의견서** (2026-06-15 의회 표결 전 예상): 입법 평의회의 개인정보/RF 2:6 비례성 평가가 수정안 필요 여부와 법안의 원안 통과 여부를 결정한다.
+
+---
+
+### 분석 신뢰도 선언
+
+높은 신뢰도. 근거: 공식 릭스다그 문서 HD03255 [A1]; 계획 문서 H6D1plan의 FiU45 위원회 보고서 계획; 확립된 스웨덴 거시건전성 정책 맥락. IMF WEO 경제 데이터는 이번 주기 미이용 가능(API 접속 불가) — 가계부채 맥락으로 릭스방크 FSR 2025(공개 자료) 사용.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_nl.md -->
+
+---
+
+### Samenvatting
+
+De Zweedse regering diende op 5 mei 2026 Propositie 2025/26:255 (HD03255) in, waarmee een wettelijke basis wordt gecreëerd voor de Finansinspektion om verplichte steekproefonderzoeken van huishoudensschuldgegevens bij kredietinstellingen uit te voeren. De maatregel pakt een tien jaar lange lacune aan in het macroprudentiële monitoringinstrumentarium van Zweden — erkend door zowel de Riksbank als het IMF — aangezien het land een van de hoogste schuld-inkomensratio's van huishoudens in Europa draagt. De kammerstemming is gepland voor 15 juni 2026 via het commissierapport FiU45.
+
+---
+
+### Beslissingen die dit document ondersteunt
+
+1. **Redactionele beslissing**: Of deze propositie een apart artikel of zijbalk rechtvaardigt in de berichtgeving over de macroprudentiële beleidsontwikkeling van Zweden
+2. **Analytische beslissing**: Hoe deze data-infrastructuur zich verhoudt tot lopende FI/Riksbank-discussies over het aanscherpen van lenergebaseerde maatregelen (DSTI, aflossingsverplichtingen)
+3. **Monitoringbeslissing**: Of het Lagrådet-advies (verwacht Q2 2026) en het FiU45-commissierapport worden gevolgd op significante wijzigingen die privacywaarborgen of steekproefmethodologie kunnen verzwakken
+
+---
+
+### 60 seconden lezen
+
+- 🏦 **Wat**: Wettelijke bevoegdheid voor FI om huishoudensdata over schulden/inkomens bij banken op te vragen voor steekproefonderzoeken — geen volledig register
+- 📊 **Waarom nu**: Het Zweedse macroprudentiële raamwerk mist granulaire lenerspecifieke data; EU ESRB-aanbevelingen en IMF Artikel IV hebben deze lacune gesignaleerd
+- 🔒 **Privacy**: Proportioneel steekproefontwerp vermijdt volledige verplichte rapportage; AVG art. 6(1)(e) rechtsgrondslag; Lagrådet-beoordeling waarschijnlijk
+- ⚡ **Coalitie**: Ministers Lotta Edholm (L) + Niklas Wykman (M) — Tidö-regering; FiU-verwijzing; transpartijdige steun verwacht
+- 🗓️ **Tijdlijn**: Kammerstemming 2026-06-15; eerste FI-onderzoek Q3 2026; data die het volgende FSR informeren
+
+---
+
+### Belangrijkste vooruitkijkende trigger
+
+**Lagrådet-advies over HD03255** (verwacht vóór de kammerstemming 2026-06-15): De beoordeling van de Wetgevingsraad over de privacy/RF 2:6-proportionaliteit zal bepalen of wijzigingen vereist zijn en of het wetsvoorstel in zijn oorspronkelijke vorm wordt aangenomen.
+
+---
+
+### Analytische betrouwbaarheidsverklaring
+
+Betrouwbaarheid HOOG gebaseerd op: officieel Riksdag-document HD03255 [A1]; commissierapport FiU45-planning in planningsdocument H6D1plan; gevestigde Zweedse macroprudentiële beleidscontext. IMF WEO-economische gegevens niet beschikbaar in deze cyclus (API onbereikbaar) — Riksbankens FSR 2025 (publieke bron) gebruikt voor huishoudensschuldcontext.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_no.md -->
+
+---
+
+### Sammendrag
+
+Sveriges regjering la frem Proposisjon 2025/26:255 (HD03255) den 5. mai 2026, som skaper et lovfestet grunnlag for Finansinspektionen til å gjennomføre obligatoriske stikkprøveundersøkelser av husholdningsgjelddata fra kredittinstitusjoner. Tiltaket adresserer et tiår-langt hull i Sveriges makroprudensielle overvåkingsverktøy — anerkjent av både Riksbank og IMF — ettersom landet bærer en av Europas høyeste husholdningsgjeld-til-inntekt-kvoter. Kammervoteringen er planlagt til 15. juni 2026 via betenkning FiU45.
+
+---
+
+### Beslutninger dette dokumentet støtter
+
+1. **Redaksjonell beslutning**: Om denne proposisjonen berettiger en dedikert artikkel eller sidespalte i dekningen av Sveriges makroprudensielle politikk
+2. **Analytisk beslutning**: Hvordan denne datainfrastrukturen relaterer til pågående FI/Riksbank-diskusjoner om å stramme inn låntakerbaserte tiltak (DSTI, avdragskrav)
+3. **Overvåkingsbeslutning**: Om man skal følge Lagrådet-uttalelsen (forventet Q2 2026) og FiU45-utvalgsrapporten for vesentlige endringer som kan svekke personvernsikringer eller stikkprøvemetodologien
+
+---
+
+### 60-sekunders lesning
+
+- 🏦 **Hva**: Lovfestet myndighet for FI til å be om husholdningsnivå gjelds/inntektsdata fra banker til stikkprøveundersøkelser — ikke fullt register
+- 📊 **Hvorfor nå**: Sveriges makroprudensielle rammeverk mangler granulære data på låntakernivå; EU ESRB-anbefalinger og IMF Artikkel IV har flagget dette hullet
+- 🔒 **Personvern**: Proporsjonal utforming med stikkprøver unngår fullstendig obligatorisk rapportering; GDPR art. 6(1)(e) rettslig grunnlag; Lagrådet-gjennomgang sannsynlig
+- ⚡ **Koalisjon**: Ministrene Lotta Edholm (L) + Niklas Wykman (M) — Tidö-regjeringen; FiU-høring; tverrpolitisk støtte forventet
+- 🗓️ **Tidslinje**: Kammervotering 2026-06-15; første FI-undersøkelse Q3 2026; data som informerer neste FSR
+
+---
+
+### Viktigste fremtidige utløser
+
+**Lagrådet-uttalelse om HD03255** (forventet før kammervoteringen 2026-06-15): Lovgivningsrådets vurdering av personvern/RF 2:6-proporsjonalitet vil avgjøre om endringer er nødvendige og om lovforslaget vedtas i sin opprinnelige form.
+
+---
+
+### Analytisk tillitserklæring
+
+Tillit HØY basert på: offisielt Riksdag-dokument HD03255 [A1]; betenkning FiU45-planlegging i planleggingsdokument H6D1plan; etablert svensk makroprudensielt politisk kontekst. IMF WEO-data ikke tilgjengelige denne syklusen (API utilgjengelig) — Riksbankens FSR 2025 (offentlig kilde) brukes til husholdningsgjeld-kontekst.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_sv.md -->
+
+---
+
+### Sammanfattning
+
+Sveriges regering lade den 5 maj 2026 fram Proposition 2025/26:255 (HD03255) som skapar en lagstiftad grund för Finansinspektionen att genomföra obligatoriska stickprovsundersökningar av hushållsskuldsdata från kreditinstitut. Åtgärden åtgärdar ett decennielångt gap i Sveriges makrotillsynsverktyg — erkänt av både Riksbanken och IMF — då landet bär ett av Europas högsta hushållsskuldkvoter i förhållande till disponibel inkomst. Kammaromröstning är planerad till den 15 juni 2026 via betänkande FiU45.
+
+---
+
+### Beslut som detta underlag stöder
+
+1. **Redaktionellt beslut**: Huruvida denna proposition motiverar en dedikerad artikel eller sidospalt i bevakningen av Sveriges makrotillsynspolitik
+2. **Analytiskt beslut**: Hur denna datainfrastruktur relaterar till pågående FI/Riksbank-diskussioner om att skärpa låntagarbaserade åtgärder (DSTI, amorteringskrav)
+3. **Övervakningsbeslut**: Huruvida man ska följa Lagrådets yttrande (förväntat kvartal 2 2026) och FiU45:s utskottsbetänkande för väsentliga ändringar som kan försvaga integritetsskyddet eller urvalsmetodiken
+
+---
+
+### 60-sekundersläsning
+
+- 🏦 **Vad**: Lagstiftad befogenhet för FI att begära hushållsnivådata om skulder/inkomst från banker för stickprovsundersökningar — inte fullständigt register
+- 📊 **Varför nu**: Sveriges makrotillsynsramverk saknar granulär data på låntagarnivå; EU ESRB-rekommendationer och IMF Artikel IV har uppmärksammat detta gap
+- 🔒 **Integritet**: Proportionerlig utformning med urval undviker fullständig obligatorisk rapportering; GDPR art. 6(1)(e) rättslig grund; Lagrådsgranskning trolig
+- ⚡ **Koalition**: Ministrarna Lotta Edholm (L) + Niklas Wykman (M) — Tidöregeringen; FiU-remiss; tvärpolitiskt stöd förväntat
+- 🗓️ **Tidslinje**: Kammarvotering 2026-06-15; första FI-undersökning kvartal 3 2026; data som informerar nästa FSR
+
+---
+
+### Viktigaste framåtblickande utlösare
+
+**Lagrådets yttrande om HD03255** (förväntat före kammaromröstningen 2026-06-15): Lagstiftningsrådets bedömning av integritets/RF 2:6-proportionalitet avgör om ändringar krävs och om lagförslaget går igenom i sin ursprungliga form.
+
+---
+
+### Analytisk konfidensdeklaration
+
+Konfidens HÖG baserat på: officiellt riksdagsdokument HD03255 [A1]; betänkande FiU45-planering i planeringsdokument H6D1plan; etablerat makrotillsynspolitiskt sammanhang i Sverige. IMF WEO ekonomiska data otillgängliga detta cykel (API ej nåbart) — Riksbankens FSR 2025 (offentlig källa) används för hushållsskuldskontext.
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_zh.md -->
+
+**作者**: 詹姆斯·彼得·索林  
+**日期**: 2026-05-05  
+**分类**: 公开  
+**置信度**: 高 — 海军部A1（机构一次资料）  
+**工作流**: news-propositions  
+
+---
+
+### 摘要
+
+瑞典政府于2026年5月5日提交了第2025/26:255号提案（HD03255），为Finansinspektion从信贷机构开展强制性家庭债务数据抽样调查创造法律依据。此举填补了瑞典宏观审慎监控工具箱中长达十年的空白——瑞典央行（Riksbank）和国际货币基金组织（IMF）均已认识到这一不足——因为瑞典家庭债务与可支配收入之比是欧洲最高之一。议会表决定于2026年6月15日通过委员会报告FiU45进行。
+
+---
+
+### 本文件支持的决策
+
+1. **编辑决策**: 本提案是否值得在瑞典宏观审慎政策发展报道中撰写专题文章或旁注
+2. **分析决策**: 这一数据基础设施如何与FI/瑞典央行正在进行的关于加强借款人层面措施（DSTI、还款要求）的讨论相关联
+3. **监测决策**: 是否需要跟踪Lagrådet意见书（预计2026年第二季度）和FiU45委员会报告，关注可能削弱隐私保障或抽样方法论的重大修订
+
+---
+
+### 60秒速读
+
+- 🏦 **内容**: FI可向银行索取家庭层面债务/收入数据用于抽样调查的法律授权——而非完整登记制度
+- 📊 **为何是现在**: 瑞典宏观审慎框架缺乏借款人层面的精细数据；欧盟欧洲系统性风险委员会（ESRB）建议及IMF第四条磋商均指出了这一缺口
+- 🔒 **隐私**: 比例抽样设计避免了全面强制报告；GDPR第6条(1)(e)法律依据；Lagrådet审查可能进行
+- ⚡ **联合政府**: 洛塔·埃德霍尔姆（L）+ 尼克拉斯·维克曼（M）部长 — 蒂多政府；提交FiU委员会；预期获得跨党派支持
+- 🗓️ **时间表**: 议会表决 2026-06-15；FI首次调查 2026年第三季度；数据将纳入下一份金融稳定报告（FSR）
+
+---
+
+### 主要前瞻性触发因素
+
+**Lagrådet就HD03255发布的意见书**（预计在2026-06-15议会表决前）：立法委员会对隐私/RF 2:6比例性的评估将决定是否需要修订，以及法案能否以原始形式获得通过。
+
+---
+
+### 分析置信度声明
+
+高置信度。依据：瑞典议会官方文件HD03255 [A1]；规划文件H6D1plan中的FiU45委员会报告规划；已确立的瑞典宏观审慎政策背景。IMF WEO经济数据在本周期不可用（API无法访问）——家庭债务背景采用瑞典央行2025年金融稳定报告（公开资料）。
+
+```mermaid
+quadrantChart
+    title Significance vs. Political Controversy
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Monitor closely
+    quadrant-2 Priority coverage
+    quadrant-3 Background
+    quadrant-4 Political story
+    Prop 2025/26:255 HD03255: [0.2, 0.7]
+    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+```
+
+<!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 1 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
@@ -1432,6 +2183,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

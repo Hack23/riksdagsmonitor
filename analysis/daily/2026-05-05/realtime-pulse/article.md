@@ -6,7 +6,7 @@ date: 2026-05-05
 subfolder: realtime-pulse
 slug: 2026-05-05-realtime-pulse
 source_folder: analysis/daily/2026-05-05/realtime-pulse
-generated_at: 2026-05-23T08:06:00.618Z
+generated_at: 2026-05-23T22:05:56.543Z
 language: en
 layout: article
 ---
@@ -106,6 +106,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -3116,13 +3129,1656 @@ Three additional documents identified via re-download scan in Run 3:
 | Run 3 | +3 | HD10468, HD10469, HD024136 |
 | **Total** | **~31** | (some overlap between passes) |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# سباق التشريع السويدي قبيل الانتخابات يكشف خطوط الشقوق في الائتلاف
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-05  
+**التصنيف**: عام — المادة 9(2)(ه)(و) من اللائحة العامة لحماية البيانات  
+**الثقة**: عالية [A2]  
+**سير العمل**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### الخلاصة التنفيذية
+
+يكشف النبض البرلماني في 2026-05-05 عن حكومة تيدو التي تُمضي أجندتها التشريعية بوتيرة متسارعة — مراقبة ديون الأسر المعيشية (HD03255)، وإلغاء تنظيم قطاع الغابات (prop. 2025/26:242)، وخفض سن المسؤولية الجنائية (prop. 2025/26:246) — في حين تمتص في آن واحد ضغط المعارضة للمحاسبة على مؤشرات جرائم العصابات، وإعادة توجيه البنية التحتية لمشروع Ostlänken، وتراجع تمويل الفضاء لدى وكالة الفضاء الأوروبية. أبرز تطور منفرد هو KU39 (إصلاح الشفافية الدستورية)، الذي سيحدد قواعد المساءلة الديمقراطية لانتخابات البرلمان في 13 سبتمبر 2026.
+
+---
+
+### القرارات التي تدعمها هذه الموجزة
+
+1. **الأولوية التحريرية**: يستحق النطاق الدستوري لشفافية KU39 تغطية معمقة مخصصة — القواعد الدستورية لحملة انتخابية على بعد 131 يومًا تُمثل معلومات استخباراتية من الدرجة الأولى
+2. **قرار المراقبة**: مراجعة Lagrådet لـ HD03246 (خفض سن المسؤولية الجنائية، حوالي 2026-06-01) وHD03255 (حوالي الربع الثاني 2026) هما الحدثان التمييزيان الأكثر أهمية على المدى القريب
+3. **الاستخبارات الانتخابية**: انشقاق حزب C عن الحكومة في قضية الجريمة بين الشباب (HD024146) — شريك ائتلافي يكسر الصفوف — يُشير إلى توتر داخلي في ائتلاف تيدو قد يؤثر على ديناميكيات سبتمبر 2026
+
+---
+
+### قراءة 60 ثانية
+
+- 🏦 **الاحترازي الكلي (عالٍ)**: يمنح HD03255 هيئة Finansinspektionen صلاحية قانونية لإجراء مسوحات ديون الأسر — يسد ثغرة عقدٍ من الزمن أشار إليها Riksbanken وصندوق النقد الدولي؛ kammarvotering لـ FiU45 مجدولة في 2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **دستوري (حرج)**: يخطط KU39 لـ"زيادة الشفافية في العمليات السياسية" — أُعلن عنه قبل 131 يومًا من انتخابات 13 سبتمبر؛ النطاق (اللوبي، تمويل الأحزاب، الإعلان الرقمي) يحدد قواعد المساءلة الدستورية ما قبل الانتخابات؛ betänkande متوقع 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **الغابات (عالٍ)**: تباين خمسة أحزاب حول prop. 2025/26:242 — SD وC تريدان *مزيدًا* من إلغاء التنظيم مقارنةً بالحكومة؛ V+MP+S تعارضان؛ أغلبية 176 مقعدًا للحكومة تنتصر لكن خطر انتهاك توجيه الموائل الأوروبي يتراكم عبر T+12–24m
+- 👥 **جريمة الشباب (عالٍ)**: C تتخلى عن موقف تيدو في HD024146 (سن المسؤولية الجنائية 13)؛ V+C+MP تشكّل ائتلافًا قائمًا على اتفاقية حقوق الطفل؛ مراجعة Lagrådet حوالي 2026-06-01 نقطة رافعة حاسمة
+- 🚨 **المساءلة (متوسط-عالٍ)**: خمسة استجوابات تستهدف في آنٍ واحد محافظ العدالة (جرائم العصابات)، والبنية التحتية (Ostlänken)، والمدني (نشاط الوكالات)، والبحث (ESA)، والمالية (ضريبة المبيدات)
+- 🛸 **ESA/الفضاء (متوسط)**: تراجعت السويد إلى المرتبة #17 في الوكالة الأوروبية للفضاء؛ يطالب HD10461 بردٍّ من وزير البحث Edholm — مخاطر تتعلق بالمشتريات المرتبطة بالدفاع
+
+---
+
+### أبرز محفز مستقبلي
+
+**[2026-06-09 | حرج | KU39]** — نشر تقرير لجنة KU39: النطاق الدستوري لإصلاح الشفافية السياسية يحدد آليات المساءلة التي ستحكم حملة انتخابات 2026. إذا تضمّن سجلًا إلزاميًا للوبيين، فتوقع هجومًا مضادًا فوريًا من SD/S وعاصفة إعلامية. أولوية قصوى لجمع المعلومات الاستخباراتية.
+
+---
+
+### إفصاح تحليلي عن الثقة
+
+ثقة عالية [A2]: جميع المصادر الأولية من قواعد البيانات الرسمية للريكسداغ/الحكومة (data.riksdagen.se، riksdagen.se). التحليلات التكميلية لمشاريع القوانين والتقارير اللجنية والعرائض والاستجوابات استُكملت في اليوم نفسه بحسابات برلمانية متسقة. البيانات الحية لصندوق النقد الدولي غير متوفرة جزئيًا في هذه الدورة؛ السياق الاقتصادي مرتكز على تقرير الاستقرار المالي العام للريكسبانك ومرجعية WEO أكتوبر 2025.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### تحديث استخباراتي — الجولة الثانية
+
+**تقييم ثقة WEP** (أفق T+72h):
+- مساءلة جرائم العصابات (HD10458): نُقدّر **بثقة متوسطة-عالية** أن الرد على الاستجواب لن يُرضي مطالب المعارضة — تصعيد محتمل خلال يونيو.
+- شفافية KU39 الدستورية: نُقدّر **بثقة عالية** أن توصية ملزمة ستصدر قبيل الانتخابات.
+- Lagrådet HD03246 (جريمة الشباب): نُقدّر **بثقة متوسطة** أن Lagrådet سيُصدر رأيًا مشروطًا بالامتثال (غير حاجب) — السيناريو أ (P=0.50) مدعوم.
+
+**كتلة المصدر الاقتصادي لصندوق النقد الدولي**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### جولة التحسين — معلومات استخباراتية إضافية (9 وثائق جديدة)
+
+**تحديث الخلاصة**: وُسّع التحليل الأولي بـ 9 وثائق (4 استجوابات، 1 تقرير لجنة، 4 عرائض) اكتُشفت في تحديث بيانات لاحق. أبرز الإضافات:
+
+- 🏛️ **الهجوم المؤسسي لـ SD (حرج)**: HD10464 (إلغاء Sida) + HD10466 (مساءلة موظفي وزارة الخارجية) يكشفان عن استراتيجية SD منسّقة تستهدف الأجهزة الحكومية باعتبارها مُتنازعًا عليها سياسيًا قبيل الانتخابات. ماركوس فيكيل (SD) يهاجم في آنٍ واحد وزيرة التنمية Dousa (M) ووزيرة الخارجية Malmer Stenergard (M). يُؤطَّر إلغاء Sida عبر فضيحة مدفوعات مرتبطة بحماس بقيمة 55 مليون كرونة [A2 غير مؤكد].
+- ⚖️ **إطار الاحتجاز JuU30 (عالٍ)**: تقرير لجنة العدالة بشأن احتجاز الأطفال/الشباب يوفر أساسًا دستوريًا مباشرًا وفق اتفاقية حقوق الطفل/الاتفاقية الأوروبية لحقوق الإنسان، يدعم انشقاق C عن HD024146 ويُغذّي مراجعة Lagrådet (حوالي 2026-06-01).
+- 🏢 **انسحاب الخدمات الحكومية (متوسط-عالٍ)**: HD10465 + HD10467 يكشفان عن حملة مساءلة منسّقة من S — 148 → 125 مكتب خدمة، تخفيض ميزانية 130 مليون كرونة — تستهدف وزير الشؤون المدنية KD Slottner.
+
+**المحفزات المستقبلية الرئيسية المحدّثة**:
+1. **[2026-05-26 | عالٍ | PIR-NEW-10464]**: يحصل SD على نقاش رسمي في الغرفة بشأن إلغاء Sida — يُجبر M على إعلان موقفه من بنية المساعدات الرسمية السويدية للتنمية
+2. **[2026-05-26 | عالٍ | PIR-NEW-10466]**: يجب على وزيرة الخارجية Malmer Stenergard الردّ على مطلب مساءلة موظفي الخارجية — نقطة اشتعال معايير ديمقراطية
+3. **[2026-06-01 | حرج | JUU30-LAGRADET]**: رأي Lagrådet في HD03246 (سن المسؤولية الجنائية 13) — قد يؤثر إطار JuU30 مباشرةً على التحليل الدستوري لـ Lagrådet
+
+---
+
+### تحديث الجولة الثالثة (الجولة الثانية — ثلاث وثائق جديدة)
+
+**أبرز النتائج الجديدة**:
+
+1. **سن المسؤولية الجنائية 13 — هزيمة الحكومة مؤكدة** (HD024136/S ينضم إلى V+C+MP). الأغلبية المعارضة في لجنة العدل المؤلفة من أربعة أحزاب موثقة عبر جميع الأحزاب الآن. ستخسر الحكومة هذا التصويت (متوقع أواخر مايو/يونيو 2026). انعكاس قضائي بارز في عام انتخابي. **أُضيف +DIW 0.82 إلى عنقود جريمة الشباب → يسجّل العنقود الآن 0.89**
+
+2. **مخاطر الامتثال للاتحاد الأوروبي بشأن تأمين الوالدين** (HD10469/S → Larsson L). حزبان مقرّبان من الائتلاف (على الأرجح SD+C) يريدان إلغاء أشهر إجازة الأبوة المحجوزة إلزاميًا — مما يُثير انتهاكًا محتملًا لتوجيه الاتحاد الأوروبي 2019/1158 (التوازن بين العمل والحياة). وزيرة Larsson محاصرة بين ضغط الائتلاف والالتزامات الأوروبية. الردّ مستحق 2026-05-26. **عامل مخاطر استراتيجي جديد — قيد قانوني أوروبي**
+
+3. **حقيبة البنية التحتية لدى Carlson (KD) تتراكم عليها ضغوط** (HD10468 سيارات الأجرة + HD10463 Ostlänken). استجوابان مفتوحان ضد الوزير ذاته من S. نمط S يبني ملف مساءلة ضد مسار البنية التحتية لـ KD.
+
+**توقيع الجلسة المحدّث**: يُؤكَّد الآن أن 2026-05-05 من أكثر الأيام تشريعيًا أهمية في دورة ريكسموتي 2025/26. قُدّمت سبعة استجوابات (464–469 + فيتلاندا)، ووُثّق ائتلاف المعارضة حول سن الثالثة عشرة بالكامل، وصدر تقرير لجنة الشفافية الدستورية (KU39) وتبلور ساحة معركة إلغاء تنظيم الغابات. ثلاثة أشهر قبيل يوم الاقتراع: يُبنى هيكل المساءلة اليوم.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-05  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
+**Konfidens**: HØJ [A2]  
+**Arbejdsgang**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### BLUF
+
+Den parlamentariske puls 2026-05-05 afslører en Tidö-regering, der driver sin lovgivningsmæssige dagsorden i højt tempo — husstandsgældsovervågning (HD03255), skovlig afregulering (prop. 2025/26:242), sænkning af den kriminelle lavalder (prop. 2025/26:246) — mens den samtidig absorberer oppositionens ansvarspres på gangkriminalitetsnøgletal, Ostlänken infrastrukturomlægning og ESA:s faldende rumfinansiering. Den enkelt vigtigste begivenhed er KU39 (konstitutionel gennemsigtigheds reform), som vil definere de demokratiske ansvarsregler forud for parlamentsvalget den 13. september 2026.
+
+---
+
+### Beslutninger dette resumé understøtter
+
+1. **Redaktionel prioritering**: KU39:s konstitutionelle gennemsigtighedsomfang fortjener dedikeret dybdegående dækning — konstitutionelle regler for en kampagne 131 dage væk er førsteklasses efterretning
+2. **Overvågningsbeslutning**: Lagrådets gennemgang af HD03246 (sænkning af den kriminelle lavalder, ca. 2026-06-01) og HD03255 (ca. kvartal 2 2026) er de mest kritiske diskriminerende begivenheder på kort sigt
+3. **Valgefterforskning**: C-partiets frafald fra regeringen i ungdomskriminalitetsspørgsmålet (HD024146) — en koalitionspartner der bryder rækkerne — signalerer intern stress i Tidö-koalitionen, som kan påvirke dynamikken i september 2026
+
+---
+
+### 60-sekunders læsning
+
+- 🏦 **Makroprudentielt (HØJ)**: HD03255 giver Finansinspektionen lovfæstet beføjelse til at udføre husstandsgældsundersøgelser — lukker et årtiers langt hul påpeget af Riksbanken og IMF; FiU45 planlagt kammarvotering 2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **Konstitutionelt (KRITISK)**: KU39 planlægger "øget gennemsigtighed i politiske processer" — annonceret 131 dage før valget 13. september; omfang (lobbyisme, partifinansering, digital annoncering) afgør de prævalgs-konstitutionelle regler; betänkande forventet 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **Skovbrug (HØJ)**: Fem-partis-divergens på prop. 2025/26:242 afregulering — SD og C ønsker *mere* afregulering end regeringen; V+MP+S modsætter sig; regeringens 176-mandat-majoritet sejrer, men EU's habitatdirektivrisiko opbygges under T+12–24m
+- 👥 **Ungdomskriminalitet (HØJ)**: C forlader Tidö-positionen om HD024146 (kriminel lavalder 13); V+C+MP danner børnekonventionsbaseret koalition; Lagrådets gennemgang ca. 2026-06-01 er kritisk løftestangspunkt
+- 🚨 **Ansvarsplacering (MIDDEL-HØJ)**: Fem interpellationer retter sig samtidig mod Justits (gangkriminalitet), Infrastruktur (Ostlänken), Civil (myndigheds-aktivisme), Forskning (ESA) og Finans (pesticidafgift) porteføljer
+- 🛸 **ESA/Rum (MIDDEL)**: Sverige er faldet til ESA-rang #17; HD10461 kræver svar fra Forskningsminister Edholm — forsvarsrelateret indkøbsrisiko
+
+---
+
+### Vigtigste fremadrettede udløser
+
+**[2026-06-09 | KRITISK | KU39]** — KU39:s betænkningspublikation: konstitutionelt omfang for den politiske gennemsigtighedsreform afgør hvilke ansvarmekanismer der vil gælde under valgkampagnen 2026. Hvis det inkluderer et bindende lobbyregister, forventes øjeblikkelig SD/S-modoffensiv og mediestorm. Højprioriteret efterretningsindsamlingsopgave.
+
+---
+
+### Analytisk konfidenserklæring
+
+Konfidens HØJ [A2]: Alle primærkilder fra officielle Riksdag/Regering-databaser (data.riksdagen.se, riksdagen.se). Søsteranalyser for propositioner, udvalgsbetænkninger, motioner og interpellationer afsluttet samme dag med konsekvent parlamentarisk matematik. IMF live-data delvist utilgængelig denne omgang; økonomisk kontekst forankret i offentlig Riksbankens FSR og WEO okt-2025 årgangdata.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### Efterretningsopdatering omgang 2
+
+**WEP-konfidensvurdering** (T+72h-horisont):
+- Gangkriminalitetsansvar (HD10458): Vi vurderer med **MIDDEL-HØJ KONFIDENS** at interpellationssvaret ikke vil tilfredsstille oppositionens krav — eskalering sandsynlig i juni.
+- KU39 konstitutionel gennemsigtighed: Vi vurderer med **HØJ KONFIDENS** at en bindende anbefaling vil fremkomme før valget.
+- Lagrådet HD03246 (ungdomskriminalitet): Vi vurderer med **MIDDEL KONFIDENS** at Lagrådet vil afgive en betinget efterlevelsesudtalelse (ikke blokerende) — scenarie A (P=0,50) understøttes.
+
+**IMF:s økonomiske provenansblok**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### Forbedringsomdrejning — Yderligere efterretning (9 nye dokumenter)
+
+**BLUF-opdatering**: Den indledende analyse er udvidet med 9 dokumenter (4 interpellationer, 1 udvalgsbetænkning, 4 motioner) opdaget ved en efterfølgende dataopdatering. De vigtigste tilføjelser er:
+
+- 🏛️ **SD:s institutionelle offensiv (KRITISK)**: HD10464 (afvikling af Sida) + HD10466 (UD-embedsmænd ansvar) afslører en koordineret SD-strategi rettet mod statsorganer som politisk kompromitterede forud for valget. SD:s Markus Wiechel angriber simultant Biståndsminister Dousa (M) og UD-minister Malmer Stenergard (M). Sidas afvikling indrammes via en 55 MSEK Hamas-linket betalingsskandale [A2 ubekræftet].
+- ⚖️ **JuU30 frihedsberøvelsesramme (HØJ)**: Justitsudvalgets betænkning om frihedsberøvelse af børn/unge yder direkte støtte til børnekonventionens/ECHR:s konstitutionelle grundlag, C:s frafald ved HD024146 og tilfører Lagrådets gennemgang (ca. 2026-06-01).
+- 🏢 **Statslig servicetilbagetrækning (MIDDEL-HØJ)**: HD10465 + HD10467 afslører koordineret S-ansvarskampagne — 148 → 125 servicekontorer, 130 MSEK budgetnedskæring — rettet mod KD:s Civilminister Slottner.
+
+**Opdaterede vigtigste fremadrettede udløsere**:
+1. **[2026-05-26 | HØJ | PIR-NEW-10464]**: SD får formel kammarvotering om Sidas afvikling — tvinger M:s position på dansk bistandsarkitektur
+2. **[2026-05-26 | HØJ | PIR-NEW-10466]**: UD-minister Malmer Stenergard skal besvare UD-embedsmænd ansvars kravet — demokratinormers flashpoint
+3. **[2026-06-01 | KRITISK | JUU30-LAGRADET]**: Lagrådets yttrande om HD03246 (kriminel lavalder 13) — JuU30-rammen kan direkte påvirke Lagrådets konstitutionelle analyse
+
+---
+
+### Omgang 3 efterretningsopdatering (omgang 2 — tre nye dokumenter)
+
+**Vigtigste nye fund**:
+
+1. **Kriminel lavalder 13 — regeringsnederlag bekræftet** (HD024136/S tilslutter sig V+C+MP). Firepartis JuU-oppositionsflertal nu dokumenteret på tværs af alle partier. Regeringen vil tabe denne afstemning (forventet sen maj/juni 2026). Høj profilering retsreversering i valgår. **+DIW 0,82 tilføjet til ungdomskriminalitetsklynge → klynge scorer nu 0,89**
+
+2. **EU-overensstemmelsesrisiko vedrørende barselsorlov** (HD10469/S → Larsson L). To koalitionsnære partier (sandsynligvis SD+C) ønsker at afskaffe obligatoriske reserverede forældreuger — udløser potentiel EU-direktiv 2019/1158 (balance mellem arbejds- og privatliv) overtrædelse. Minister Larsson fanget mellem koalitionspres og EU-forpligtelser. Svar forfalder 2026-05-26. **Ny strategisk risikofaktor — EU-retsbegrænsning**
+
+3. **Carlsons (KD) infrastrukturportefølje akkumulerer pres** (HD10468 taxi + HD10463 Ostlänken). To åbne interpellationer mod samme minister fra S. Mønster af S der opbygger en ansvarsdossier mod KD:s infrastrukturspor.
+
+**Opdateret sessionssignatur**: 2026-05-05 bekræftes nu som en af de lovgivningsmæssigt vigtigste enkeltdage i 2025/26 riksmødet. Syv interpellationer indgivet (464–469 + Vetlanda), oppositionskoalitionen ved 13-årsalderen fuldt dokumenteret, en konstitutionel gennemsigtighedsbetænkning (KU39) og et afklaret slagfelt for skovafregulering. Tre måneder før valgdagen: ansvarsarkitekturen bygges i dag.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-05  
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e)(g)  
+**Konfidenz**: HOCH [A2]  
+**Workflow**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### BLUF
+
+Der parlamentarische Puls vom 2026-05-05 offenbart eine Tidö-Regierung, die ihre Gesetzgebungsagenda in rasantem Tempo vorantreibt — Haushaltsschuldenüberwachung (HD03255), forstwirtschaftliche Deregulierung (prop. 2025/26:242), Absenkung des Strafmündigkeitsalters (prop. 2025/26:246) — während sie gleichzeitig den Rechenschaftsdruck der Opposition zu Gangkriminalitäts-KPIs, der Ostlänken-Infrastrukturumlenkung und dem sinkenden ESA-Raumfahrtfinanzierung absorbiert. Die bedeutendste Einzelentwicklung ist KU39 (konstitutionelle Transparenzreform), die die demokratischen Rechenschaftsregeln für die Parlamentswahl am 13. September 2026 festlegen wird.
+
+---
+
+### Entscheidungen, die dieses Briefing unterstützt
+
+1. **Redaktionelle Priorität**: Der konstitutionelle Transparenzumfang von KU39 verdient dedizierte vertiefende Berichterstattung — Verfassungsregeln für eine Kampagne in 131 Tagen sind erstklassige Erkenntnisse
+2. **Überwachungsentscheidung**: Die Lagrådet-Überprüfung von HD03246 (Absenkung des Strafmündigkeitsalters, ca. 2026-06-01) und HD03255 (ca. Q2 2026) sind die kritischsten diskriminierenden Ereignisse in naher Zukunft
+3. **Wahlnachrichtendienst**: Der Abgang der C-Partei von der Regierungsposition bei Jugendbriminalität (HD024146) — ein Koalitionspartner bricht die Reihen — signalisiert internen Stress in der Tidö-Koalition, der die Dynamik im September 2026 beeinflussen könnte
+
+---
+
+### 60-Sekunden-Lektüre
+
+- 🏦 **Makroprudenziell (HOCH)**: HD03255 gibt der Finansinspektionen gesetzliche Befugnis zur Haushaltsschuldenerhebung — schließt eine jahrzehntelange Lücke, auf die Riksbanken und IWF hingewiesen haben; FiU45 geplante kammarvotering 2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **Konstitutionell (KRITISCH)**: KU39 plant "erhöhte Transparenz in politischen Prozessen" — angekündigt 131 Tage vor der Wahl am 13. September; Umfang (Lobbying, Parteienfinanzierung, digitale Werbung) bestimmt die vorwahlpolitischen Verfassungsregeln; betänkande erwartet 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **Forstwirtschaft (HOCH)**: Fünfparteien-Divergenz bei prop. 2025/26:242 Deregulierung — SD und C wollen *mehr* Deregulierung als die Regierung; V+MP+S lehnen ab; die 176-Mandate-Mehrheit der Regierung siegt, aber das EU-Habitatrichtlinien-Verletzungsrisiko baut sich über T+12–24m auf
+- 👥 **Jugendkriminalität (HOCH)**: C verlässt die Tidö-Position zu HD024146 (Strafmündigkeit Alter 13); V+C+MP bilden KRK-basierte Koalition; Lagrådet-Überprüfung ca. 2026-06-01 ist kritischer Hebelpunkt
+- 🚨 **Rechenschaftspflicht (MITTEL-HOCH)**: Fünf Interpellationen richten sich gleichzeitig gegen Justiz- (Gangkriminalität), Infrastruktur- (Ostlänken), Zivil- (Behördenaktivismus), Forschungs- (ESA) und Finanzportfolios (Pestizidsteuer)
+- 🛸 **ESA/Raumfahrt (MITTEL)**: Schweden ist auf ESA-Rang #17 gesunken; HD10461 fordert Antwort von Forschungsminister Edholm — verteidigungsnahe Beschaffungsrisiken
+
+---
+
+### Wichtigster Vorwärtsauslöser
+
+**[2026-06-09 | KRITISCH | KU39]** — KU39 Ausschussberichtspublikation: der konstitutionelle Umfang der politischen Transparenzreform bestimmt, welche Rechenschaftsmechanismen die Wahlkampagne 2026 regeln werden. Wenn es ein verbindliches Lobbying-Register umfasst, ist eine sofortige SD/S-Gegenoffensive und ein Mediensturm zu erwarten. Erstklassige nachrichtendienstliche Sammelpriorität.
+
+---
+
+### Analytische Konfidenzerklärung
+
+Konfidenz HOCH [A2]: Alle Primärquellen aus offiziellen Riksdag/Regering-Datenbanken (data.riksdagen.se, riksdagen.se). Schwesteranalysen für Propositioner, Ausschussberichte, Motionen und Interpellationen am selben Tag mit konsistenter parlamentarischer Arithmetik abgeschlossen. IWF-Live-Daten in diesem Zyklus teilweise nicht verfügbar; wirtschaftlicher Kontext verankert in öffentlichem Riksbankens FSR und WEO Okt-2025-Jahrgang.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### Nachrichtendienstliche Aktualisierung Runde 2
+
+**WEP-Konfidenzeinschätzung** (T+72h-Horizont):
+- Gangkriminalitäts-Rechenschaftspflicht (HD10458): Wir schätzen mit **MITTEL-HOHER KONFIDENZ**, dass die Interpellationsantwort die Forderungen der Opposition nicht befriedigen wird — Eskalation wahrscheinlich bis Juni.
+- KU39 konstitutionelle Transparenz: Wir schätzen mit **HOHER KONFIDENZ**, dass eine bindende Empfehlung vor der Wahl vorgelegt wird.
+- Lagrådet HD03246 (Jugendkriminalität): Wir schätzen mit **MITTLERER KONFIDENZ**, dass Lagrådet eine bedingte Compliance-Stellungnahme (nicht blockierend) abgeben wird — Szenario A (P=0,50) unterstützt.
+
+**IWF Wirtschaftlicher Herkunftsblock**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### Verbesserungsrunde — Zusätzliche Erkenntnisse (9 neue Dokumente)
+
+**BLUF-Aktualisierung**: Die ursprüngliche Analyse wurde um 9 Dokumente (4 Interpellationen, 1 Ausschussbericht, 4 Motionen) erweitert, die bei einer nachfolgenden Datenaktualisierung entdeckt wurden. Die bedeutendsten Ergänzungen sind:
+
+- 🏛️ **SD-institutionelle Offensive (KRITISCH)**: HD10464 (Sida-Abschaffung) + HD10466 (AA-Beamtenverantwortlichkeit) enthüllen eine koordinierte SD-Strategie, die staatliche Organe als politisch kompromittiert vor der Wahl ins Visier nimmt. SD-Markus Wiechel greift gleichzeitig Entwicklungsministerin Dousa (M) und AM Malmer Stenergard (M) an. Die Sida-Abschaffung wird über einen 55-MSEK Hamas-verbundenen Zahlungsskandal gerahmt [A2 unbestätigt].
+- ⚖️ **JuU30 Freiheitsentzugsrahmen (HOCH)**: Das Bericht des Justizausschusses über Freiheitsentzug für Kinder/Jugendliche liefert direkte KRK/EMRK-konstitutionelle Grundlage für C's Abgang bei HD024146 und füttert die Lagrådet-Überprüfung (ca. 2026-06-01).
+- 🏢 **Staatliche Dienstleistungsrückzug (MITTEL-HOCH)**: HD10465 + HD10467 enthüllen eine koordinierte S-Rechenschaftskampagne — 148 → 125 Servicebüros, 130-MSEK-Haushaltssenkung — gegen KD-Zivilminister Slottner.
+
+**Aktualisierte wichtigste Vorwärtsauslöser**:
+1. **[2026-05-26 | HOCH | PIR-NEW-10464]**: SD erhält formelle kammarvotering zur Sida-Abschaffung — zwingt M's Position zur schwedischen ODA-Architektur
+2. **[2026-05-26 | HOCH | PIR-NEW-10466]**: AM Malmer Stenergard muss auf AA-Beamtenverantwortlichkeitsforderung antworten — demokratische Normen-Flashpoint
+3. **[2026-06-01 | KRITISCH | JUU30-LAGRADET]**: Lagrådet-Stellungnahme zu HD03246 (Strafmündigkeit Alter 13) — JuU30-Rahmen kann Lagradets Verfassungsanalyse direkt beeinflussen
+
+---
+
+### Runde 3 nachrichtendienstliche Aktualisierung (Runde 2 — Drei neue Dokumente)
+
+**Wichtigste neue Erkenntnisse**:
+
+1. **Strafmündigkeit 13 — Regierungsniederlage bestätigt** (HD024136/S schließt sich V+C+MP an). Vierparteien-JuU-Oppositionsmehrheit nun über alle Parteien hinweg dokumentiert. Die Regierung wird diese Abstimmung verlieren (erwartet Ende Mai/Juni 2026). Hochprofilierte Justizumkehr im Wahljahr. **+DIW 0,82 zum Jugendkriminalitätscluster hinzugefügt → Cluster bewertet jetzt 0,89**
+
+2. **EU-Compliance-Risiko bei Elternversicherung** (HD10469/S → Larsson L). Zwei koalitionsnahe Parteien (wahrscheinlich SD+C) wollen obligatorische reservierte Elternmonate abschaffen — löst mögliche EU-Richtlinien-Verletzung 2019/1158 (Vereinbarkeit von Beruf und Privatleben) aus. Minister Larsson gefangen zwischen Koalitionsdruck und EU-Verpflichtungen. Antwort fällig 2026-05-26. **Neuer strategischer Risikofaktor — EU-rechtliche Einschränkung**
+
+3. **Carlsons (KD) Infrastrukturportfolio häuft Druck an** (HD10468 Taxi + HD10463 Ostlänken). Zwei offene Interpellationen gegen denselben Minister von S. Muster von S beim Aufbau einer Rechenschaftsdossier gegen KD's Infrastrukturspor.
+
+**Aktualisierte Sitzungssignatur**: 2026-05-05 wird nun als einer der gesetzgebungstechnisch bedeutendsten Einzeltage des 2025/26 Riksmöte bestätigt. Sieben Interpellationen eingereicht (464–469 + Vetlanda), die Oppositionskoalition beim 13-jährigen Alter vollständig dokumentiert, eine konstitutionelle Transparenz-Ausschussstellungnahme (KU39) und ein geklärtes Schlachtfeld für Forstderegulierung. Drei Monate vor dem Wahltag: Die Rechenschaftsarchitektur wird heute aufgebaut.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-05  
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e)(g)  
+**Confianza**: ALTA [A2]  
+**Flujo de trabajo**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### BLUF
+
+El pulso parlamentario del 2026-05-05 revela un gobierno Tidö que impulsa su agenda legislativa a buen ritmo — vigilancia de la deuda de los hogares (HD03255), desregulación forestal (prop. 2025/26:242), reducción de la edad de responsabilidad penal (prop. 2025/26:246) — mientras absorbe la presión de rendición de cuentas de la oposición sobre los KPI de la criminalidad organizada, el redireccionamiento de la infraestructura Ostlänken y el declive de la financiación espacial de la ESA. El desarrollo más significativo es KU39 (reforma de transparencia constitucional), que definirá las normas de responsabilidad democrática para las elecciones parlamentarias del 13 de septiembre de 2026.
+
+---
+
+### Decisiones que apoya este resumen
+
+1. **Prioridad editorial**: El alcance de la transparencia constitucional de KU39 merece cobertura de análisis dedicada — las normas constitucionales para una campaña que comienza en 131 días son inteligencia de primer orden
+2. **Decisión de vigilancia**: La revisión del Lagrådet de HD03246 (reducción de la edad de responsabilidad penal, ca. 2026-06-01) y HD03255 (ca. Q2 2026) son los eventos discriminantes más críticos a corto plazo
+3. **Inteligencia electoral**: La deserción del partido C del gobierno en criminalidad juvenil (HD024146) — un socio de coalición rompiendo filas — señala estrés interno en la coalición Tidö que podría afectar la dinámica de septiembre 2026
+
+---
+
+### Lectura de 60 segundos
+
+- 🏦 **Macroprudencial (ALTA)**: HD03255 otorga a Finansinspektionen autoridad legal para realizar encuestas sobre deuda de hogares — cierra una brecha de una década señalada por el Riksbanken y el FMI; FiU45 con kammarvotering planificada para 2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **Constitucional (CRÍTICO)**: KU39 planea "mayor transparencia en los procesos políticos" — anunciado 131 días antes de las elecciones del 13 de septiembre; el alcance (lobbying, financiación de partidos, publicidad digital) determina las reglas de responsabilidad preelectoral constitucional; betänkande esperado 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **Forestal (ALTA)**: Divergencia de cinco partidos en la prop. 2025/26:242 desregulación — SD y C quieren *más* desregulación que el gobierno; V+MP+S se oponen; la mayoría de 176 mandatos del gobierno prevalece pero el riesgo de infracción de la Directiva Hábitats de la UE se acumula en T+12–24m
+- 👥 **Criminalidad juvenil (ALTA)**: C abandona la posición Tidö sobre HD024146 (responsabilidad penal a los 13 años); V+C+MP forman coalición basada en la CDN; la revisión del Lagrådet ca. 2026-06-01 es punto de apalancamiento crítico
+- 🚨 **Rendición de cuentas (MEDIO-ALTA)**: Cinco interpelaciones se dirigen simultáneamente a los portfolios de Justicia (criminalidad organizada), Infraestructura (Ostlänken), Civil (activismo de agencias), Investigación (ESA) y Finanzas (impuesto a pesticidas)
+- 🛸 **ESA/Espacio (MEDIO)**: Suecia cayó al rango ESA #17; HD10461 exige respuesta del Ministro de Investigación Edholm — riesgo de adquisición vinculado a la defensa
+
+---
+
+### Principal desencadenante prospectivo
+
+**[2026-06-09 | CRÍTICO | KU39]** — Publicación del informe de comisión KU39: el alcance constitucional de la reforma de transparencia política define qué mecanismos de rendición de cuentas regirán la campaña electoral de 2026. Si incluye un registro de lobbying vinculante, espere una inmediata contraofensiva SD/S y tormenta mediática. Prioridad de recopilación de inteligencia de primer orden.
+
+---
+
+### Declaración de confianza analítica
+
+Confianza ALTA [A2]: Todas las fuentes primarias de las bases de datos oficiales del Riksdag/Regering (data.riksdagen.se, riksdagen.se). Análisis hermanos para propositioner, informes de comisiones, motioner e interpellationer completados el mismo día con aritmética parlamentaria consistente. Datos en vivo del FMI parcialmente no disponibles en este ciclo; contexto económico anclado en el FSR público del Riksbanken y el vintage WEO oct-2025.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### Actualización de inteligencia — Ronda 2
+
+**Evaluación de confianza WEP** (horizonte T+72h):
+- Responsabilidad por criminalidad organizada (HD10458): Evaluamos con **CONFIANZA MEDIO-ALTA** que la respuesta a la interpelación no satisfará las demandas de la oposición — escalada probable durante junio.
+- Transparencia constitucional KU39: Evaluamos con **CONFIANZA ALTA** que surgirá alguna recomendación vinculante antes de las elecciones.
+- Lagrådet HD03246 (criminalidad juvenil): Evaluamos con **CONFIANZA MEDIA** que el Lagrådet emitirá un dictamen de cumplimiento condicional (no bloqueante) — escenario A (P=0,50) respaldado.
+
+**Bloque de procedencia económica del FMI**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### Ronda de mejora — Inteligencia adicional (9 nuevos documentos)
+
+**Actualización del BLUF**: El análisis inicial se ha ampliado con 9 documentos (4 interpelaciones, 1 informe de comisión, 4 mociones) descubiertos en una actualización posterior de datos. Las adiciones más significativas son:
+
+- 🏛️ **Ofensiva institucional del SD (CRÍTICO)**: HD10464 (abolición de Sida) + HD10466 (responsabilidad de funcionarios del MAE) revelan una estrategia SD coordinada que apunta a órganos del Estado como políticamente comprometidos antes de las elecciones. SD Markus Wiechel ataca simultáneamente a la Ministra de Desarrollo Dousa (M) y a la MAE Malmer Stenergard (M). La abolición de Sida se encuadra a través de un escándalo de pago de 55 MSEK vinculado a Hamas [A2 no verificado].
+- ⚖️ **Marco de detención JuU30 (ALTA)**: El informe de la Comisión de Justicia sobre detención de niños/jóvenes proporciona base constitucional directa CDN/CEDH apoyando la deserción de C en HD024146 y alimentando la revisión del Lagrådet (ca. 2026-06-01).
+- 🏢 **Retirada de servicios estatales (MEDIO-ALTA)**: HD10465 + HD10467 revelan una campaña de responsabilidad coordinada de S — 148 → 125 oficinas de servicio, reducción presupuestaria de 130 MSEK — dirigida contra el Ministro Civil KD Slottner.
+
+**Principales desencadenantes prospectivos actualizados**:
+1. **[2026-05-26 | ALTA | PIR-NEW-10464]**: SD obtiene debate formal en cámara sobre abolición de Sida — fuerza la posición de M sobre arquitectura sueca de AOD
+2. **[2026-05-26 | ALTA | PIR-NEW-10466]**: La MAE Malmer Stenergard debe responder a la demanda de responsabilidad de funcionarios del MAE — punto de ruptura de normas democráticas
+3. **[2026-06-01 | CRÍTICO | JUU30-LAGRADET]**: Dictamen del Lagrådet sobre HD03246 (responsabilidad penal a los 13 años) — el marco JuU30 puede influir directamente en el análisis constitucional del Lagrådet
+
+---
+
+### Actualización de inteligencia Ronda 3 (Ronda 2 — Tres nuevos documentos)
+
+**Principales nuevos hallazgos**:
+
+1. **Responsabilidad penal a los 13 — derrota del gobierno confirmada** (HD024136/S se une a V+C+MP). Mayoría de oposición JuU de cuatro partidos ahora documentada en todos los partidos. El gobierno perderá esta votación (esperada finales de mayo/junio 2026). Reversión judicial de alto perfil en año electoral. **+DIW 0,82 añadido al clúster de criminalidad juvenil → el clúster puntúa ahora 0,89**
+
+2. **Riesgo de cumplimiento de la UE en seguro parental** (HD10469/S → Larsson L). Dos partidos próximos a la coalición (probablemente SD+C) quieren abolir los meses de licencia parental reservados obligatorios — desencadenando una posible infracción de la Directiva UE 2019/1158 (conciliación de la vida laboral y familiar). La Ministra Larsson atrapada entre la presión de la coalición y las obligaciones europeas. Respuesta vence el 2026-05-26. **Nuevo factor de riesgo estratégico — restricción jurídica de la UE**
+
+3. **La cartera de infraestructuras de Carlson (KD) acumula presión** (HD10468 taxi + HD10463 Ostlänken). Dos interpelaciones abiertas contra el mismo ministro de S. Patrón de S construyendo un expediente de responsabilidad contra el historial de infraestructuras de KD.
+
+**Firma de sesión actualizada**: 2026-05-05 se confirma ahora como uno de los días legislativamente más significativos del Riksmöte 2025/26. Siete interpelaciones presentadas (464–469 + Vetlanda), la coalición de oposición sobre la edad de 13 años completamente documentada, una betänkande de transparencia constitucional (KU39) y un campo de batalla clarificado para la desregulación forestal. Tres meses antes del día de las elecciones: la arquitectura de rendición de cuentas se construye hoy.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-05  
+**Luokitus**: JULKINEN — GDPR Art. 9(2)(e)(g)  
+**Luottamus**: KORKEA [A2]  
+**Työnkulku**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### BLUF
+
+Parlamentaarinen pulssi 2026-05-05 paljastaa Tidö-hallituksen, joka ajaa lainsäädäntöagendaansa ripeässä tahdissa — kotitalouksien velkavalvonta (HD03255), metsätalouden sääntelyn purku (prop. 2025/26:242), rikosoikeudellisen vastuun ikärajan laskeminen (prop. 2025/26:246) — samalla kun se absorboi opposition vastuunvaatimuksia jengirikollisuuden KPI-luvuista, Ostlänkenin infrastruktuurin uudelleenreitityksestä ja ESA:n laskevan avaruusrahoituksen osalta. Merkittävin yksittäinen tapahtuma on KU39 (perustuslaillinen läpinäkyvyysreformi), joka määrittää demokraattiset vastuusäännöt 13. syyskuuta 2026 pidettäviä valtiopäivävaaleja varten.
+
+---
+
+### Päätökset, joita tämä tiivistelmä tukee
+
+1. **Toimituksellinen prioriteetti**: KU39:n perustuslaillinen läpinäkyvyyslaajuus ansaitsee omistetun syvällisen raportoinnin — perustuslailliset säännöt 131 päivää kestävälle kampanjalle ovat ensimmäisen luokan tiedustelutietoa
+2. **Seurantapäätös**: Lagrådets granskning av HD03246 (rikosoikeudellisen vastuun ikärajan lasku, n. 2026-06-01) ja HD03255 (n. Q2 2026) ovat lähitulevaisuuden kriittisimmät erottelevat tapahtumat
+3. **Vaalitieto**: C-puolueen irtiottaminen hallituksesta nuorisorikollisuuskysymyksessä (HD024146) — koalitiokumppani murtaa rivit — signaloi Tidö-koalition sisäistä stressiä, joka voi vaikuttaa syyskuun 2026 dynamiikkaan
+
+---
+
+### 60 sekunnin lukeminen
+
+- 🏦 **Makroprudentiaalinen (KORKEA)**: HD03255 antaa Finansinspektionenille lakisääteisen kotitalouksien velkatutkimusvaltuuden — sulkee vuosikymmenen vanhan aukon, jonka Riksbanken ja IMF ovat huomauttaneet; FiU45 suunniteltu kammarvotering 2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **Perustuslaillinen (KRIITTINEN)**: KU39 suunnittelee "lisääntynyttä läpinäkyvyyttä poliittisissa prosesseissa" — ilmoitettu 131 päivää ennen 13. syyskuun vaalia; laajuus (lobbaus, puolueen rahoitus, digitaalinen mainonta) määrittää vaaleja edeltävät perustuslailliset vastuusäännöt; betänkande odotetaan 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **Metsätalous (KORKEA)**: Viiden puolueen hajaannus prop. 2025/26:242 sääntelyn purun suhteen — SD ja C haluavat *enemmän* sääntelyä kuin hallitus; V+MP+S vastustavat; hallituksen 176-mandaatin enemmistö voittaa, mutta EU:n habitaattidirektiivin rikkomisriski kasvaa T+12–24m aikana
+- 👥 **Nuorisorikollisuus (KORKEA)**: C hylkää Tidö-kantansa HD024146:sta (rikosvastuu-ikä 13); V+C+MP muodostavat YK:n lapsen oikeuksien sopimukseen perustuvan koalition; Lagrådets granskning n. 2026-06-01 on kriittinen vipuvaikutuspiste
+- 🚨 **Vastuunvaatiminen (KESKISUURI-KORKEA)**: Viisi interpellaatiota kohdistuu samanaikaisesti Oikeus- (jengirikollisuus), Infrastruktuuri- (Ostlänken), Sivistys- (virastoaktivismi), Tutkimus- (ESA) ja Rahoitusportfolioihin (torjunta-ainemaksu)
+- 🛸 **ESA/Avaruus (KESKISUURI)**: Ruotsi on pudonnut ESA-sijoitukselle #17; HD10461 vaatii vastausta Tutkimusministeri Edholmilta — puolustukseen liittyvä hankintariski
+
+---
+
+### Tärkein eteenpäin katsova laukaisin
+
+**[2026-06-09 | KRIITTINEN | KU39]** — KU39:n mietinnön julkaisu: poliittisen läpinäkyvyysreformin perustuslaillinen laajuus määrittää, mitkä vastuumekanismit ohjaavat vuoden 2026 vaalikampanjaa. Jos se sisältää sitovan lobbaajien rekisterin, odota välitöntä SD/S-vastatoimea ja mediakohua. Ensisijainen tiedustelutiedon keruupriorititeetti.
+
+---
+
+### Analyyttinen luottamusilmoitus
+
+Luottamus KORKEA [A2]: Kaikki primäärilähteet virallisista Riksdag/Regering-tietokannoista (data.riksdagen.se, riksdagen.se). Sisaranalyysit ehdotuksista, valiokunnan mietinnöistä, motioista ja interpellaatioista valmistuneet samana päivänä johdonmukaisella parlamentaarisella matematiikalla. IMF:n reaaliaikainen data osittain saatavilla tällä kierroksella; taloudellinen konteksti ankkuroitu julkiseen Riksbankens FSR:ään ja WEO Okt-2025-vuositietoon.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### Tiedustelupäivitys kierros 2
+
+**WEP-luottamusarvio** (T+72h-horisontti):
+- Jengirikollisuusvastuu (HD10458): Arvioimme **KESKEISEN KORKEALLA LUOTTAMUKSELLA**, että interpellaatiovastaus ei tyydytä opposition vaatimuksia — eskalaatio todennäköistä kesäkuun aikana.
+- KU39 perustuslaillinen läpinäkyvyys: Arvioimme **KORKEALLA LUOTTAMUKSELLA**, että jokin sitova suositus esitetään ennen vaalia.
+- Lagrådet HD03246 (nuorisorikollisuus): Arvioimme **KESKEISELLÄ LUOTTAMUKSELLA**, että Lagrådet antaa ehdollisen vaatimustenmukaisuuslausunnon (ei estävä) — skenaario A (P=0,50) tukee.
+
+**IMF:n taloudellinen provenanssilohko**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### Parannuskierros — Lisätiedustelu (9 uutta asiakirjaa)
+
+**BLUF-päivitys**: Alkuperäistä analyysia on laajennettu 9 asiakirjalla (4 interpellaatiota, 1 valiokunnan mietintö, 4 motiota), jotka löydettiin myöhemmän tietopäivityksen yhteydessä. Tärkeimmät lisäykset ovat:
+
+- 🏛️ **SD:n institutionaalinen hyökkäys (KRIITTINEN)**: HD10464 (Sidan lakkauttaminen) + HD10466 (UM-virkamiesvastuullisuus) paljastavat koordinoidun SD-strategian, joka kohdistuu valtion elimiin poliittisesti kompromissina ennen vaalia. SD:n Markus Wiechel hyökkää samanaikaisesti Kehitysyhteistyöministeri Dousaa (M) ja UM-ministeri Malmer Stenergardiakohtaan (M). Sidan lakkauttaminen kehystetään 55 MSEK Hamas-kytköksisen maksurikolikun kautta [A2 vahvistamaton].
+- ⚖️ **JuU30 vapaudenmenetyspuite (KORKEA)**: Oikeusvaliokunnan mietintö lasten/nuorten vapaudenmenetyksestä antaa suoran tuen YK:n lapsen oikeuksien sopimuksen/ECHR:n perustuslailliselle perustalle, C:n irtiottamiselle HD024146:ssa ja syöttää Lagrådets granskningiin (n. 2026-06-01).
+- 🏢 **Valtion palvelujen vetäytyminen (KESKEINEN-KORKEA)**: HD10465 + HD10467 paljastavat koordinoidun S-vastuukampanjan — 148 → 125 palvelutoimistoa, 130 MSEK budjettiviilaus — kohdistuen KD:n Siviiliministeri Slottneriin.
+
+**Päivitetyt tärkeimmät eteenpäin katsovat laukaisijat**:
+1. **[2026-05-26 | KORKEA | PIR-NEW-10464]**: SD saa virallisen kammarvotering Sidan lakkauttamisesta — pakottaa M:n kannan Ruotsin kehitysapuarkkitehtuuriin
+2. **[2026-05-26 | KORKEA | PIR-NEW-10466]**: UM-ministeri Malmer Stenergard joutuu vastaamaan UM-virkamiesvastuuvaatimukseen — demokratianormien leimahduspiste
+3. **[2026-06-01 | KRIITTINEN | JUU30-LAGRADET]**: Lagrådets yttrande HD03246:sta (rikosvastuu-ikä 13) — JuU30-puite voi suoraan vaikuttaa Lagrådets perustuslailliseen analyysiin
+
+---
+
+### Kierros 3 tiedustelupäivitys (kierros 2 — kolme uutta asiakirjaa)
+
+**Tärkeimmät uudet löydöt**:
+
+1. **Rikosvastuu-ikä 13 — hallituksen tappio vahvistettu** (HD024136/S liittyy V+C+MP:iin). Neljän puolueen JuU-oppositioenemmistö nyt dokumentoitu kaikkien puolueiden välillä. Hallitus häviää tämän äänestyksen (odotettu toukokuun loppu/kesäkuu 2026). Korkean profiilin oikeudellinen kumoaminen vaalivuonna. **+DIW 0,82 lisätty nuorisorikollisuusklusteriin → klusteri pisteytyy nyt 0,89**
+
+2. **EU:n noudattamisriski vanhempainvakuutuksen osalta** (HD10469/S → Larsson L). Kaksi koalitiolähettä olevaa puoluetta (todennäköisesti SD+C) haluaa poistaa pakolliset varatut vanhempainpäivät — laukaisee mahdollisen EU-direktiivin 2019/1158 (työ- ja yksityiselämän tasapaino) rikkomuksen. Ministeri Larsson jäänyt koalitiopaineen ja EU-velvoitteiden väliin. Vastaus erääntyy 2026-05-26. **Uusi strateginen riskitekijä — EU-oikeudellinen rajoitus**
+
+3. **Carlsonin (KD) infrastruktuuriportfolio kerää paineita** (HD10468 taksi + HD10463 Ostlänken). Kaksi avointa interpellaatiota samaa ministeriä vastaan S:ltä. Kuvio S:stä rakentamassa vastuudosseria KD:n infrastruktuursporista.
+
+**Päivitetty istuntosignatuuri**: 2026-05-05 vahvistetaan nyt yhdeksi 2025/26 valtiopäivien lainsäädännöllisesti merkittävimmistä yksittäisistä päivistä. Seitsemän interpellaatiota jätetty (464–469 + Vetlanda), oppositionskoalitio 13-vuotiaan ikärajan osalta täysin dokumentoitu, perustuslaillinen läpinäkyvyysmietintö (KU39) ja metsäsääntelynpurun taistelukenttä selkiytynyt. Kolme kuukautta ennen vaalipäivää: vastuuarkkitehtuuria rakennetaan tänään.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : ÉLEVÉE [A2]  
+**Flux de travail** : news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### BLUF
+
+Le pouls parlementaire du 2026-05-05 révèle un gouvernement Tidö qui avance son agenda législatif à vive allure — surveillance de l'endettement des ménages (HD03255), dérégulation forestière (prop. 2025/26:242), abaissement de l'âge de la responsabilité pénale (prop. 2025/26:246) — tout en absorbant la pression de responsabilisation de l'opposition sur les KPIs de la criminalité des gangs, le réacheminement de l'infrastructure Ostlänken et le déclin du financement spatial de l'ESA. Le développement le plus significatif est KU39 (réforme de la transparence constitutionnelle), qui définira les règles de responsabilité démocratique pour les élections législatives du 13 septembre 2026.
+
+---
+
+### Décisions que ce briefing soutient
+
+1. **Priorité éditoriale** : L'étendue de la transparence constitutionnelle de KU39 mérite une couverture approfondie dédiée — les règles constitutionnelles pour une campagne à 131 jours sont des renseignements de premier ordre
+2. **Décision de surveillance** : L'examen par le Lagrådet de HD03246 (abaissement de l'âge de responsabilité pénale, ca. 2026-06-01) et HD03255 (ca. T2 2026) sont les événements discriminants les plus critiques à court terme
+3. **Renseignement électoral** : La défection du parti C du gouvernement sur la criminalité juvénile (HD024146) — un partenaire de coalition qui rompt les rangs — signale un stress interne dans la coalition Tidö qui pourrait affecter la dynamique de septembre 2026
+
+---
+
+### Lecture de 60 secondes
+
+- 🏦 **Macro-prudentiel (ÉLEVÉ)** : HD03255 donne à Finansinspektionen l'autorité légale pour mener des enquêtes sur l'endettement des ménages — comble un écart de dix ans signalé par la Riksbanken et le FMI ; FiU45 planifié kammarvotering 2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **Constitutionnel (CRITIQUE)** : KU39 prévoit une « transparence accrue dans les processus politiques » — annoncé 131 jours avant les élections du 13 septembre ; la portée (lobbying, financement des partis, publicité numérique) détermine les règles de responsabilité préélectorales ; betänkande attendu 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **Forestier (ÉLEVÉ)** : Divergence de cinq partis sur la prop. 2025/26:242 — SD et C veulent *plus* de dérégulation que le gouvernement ; V+MP+S s'y opposent ; la majorité de 176 mandats du gouvernement prévaut mais le risque de violation de la Directive Habitats de l'UE s'accumule à T+12–24m
+- 👥 **Criminalité juvénile (ÉLEVÉ)** : C abandonne la position Tidö sur HD024146 (responsabilité pénale à 13 ans) ; V+C+MP forment une coalition basée sur la Convention des droits de l'enfant ; l'examen du Lagrådet ca. 2026-06-01 est un point de levier critique
+- 🚨 **Responsabilité (MOYEN-ÉLEVÉ)** : Cinq interpellations ciblent simultanément les portefeuilles Justice (criminalité des gangs), Infrastructure (Ostlänken), Civil (activisme des agences), Recherche (ESA) et Finances (taxe sur les pesticides)
+- 🛸 **ESA/Espace (MOYEN)** : La Suède a glissé au rang ESA #17 ; HD10461 exige une réponse du Ministre de la Recherche Edholm — risque d'approvisionnement lié à la défense
+
+---
+
+### Déclencheur prospectif principal
+
+**[2026-06-09 | CRITIQUE | KU39]** — Publication du rapport de commission KU39 : la portée constitutionnelle de la réforme de la transparence politique définit quels mécanismes de responsabilité régiront la campagne électorale 2026. S'il inclut un registre de lobbying contraignant, attendez-vous à une contre-offensive immédiate SD/S et une tempête médiatique. Priorité de collecte de renseignements de premier ordre.
+
+---
+
+### Déclaration de confiance analytique
+
+Confiance ÉLEVÉE [A2] : Toutes les sources primaires issues des bases de données officielles du Riksdag/Regering (data.riksdagen.se, riksdagen.se). Analyses sœurs pour les propositioner, rapports de commissions, motioner et interpellationer terminées le même jour avec une arithmétique parlementaire cohérente. Données en direct du FMI partiellement indisponibles ce cycle ; contexte économique ancré dans le FSR public de la Riksbanken et le millésime WEO oct-2025.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### Mise à jour du renseignement — Tour 2
+
+**Évaluation de confiance WEP** (horizon T+72h) :
+- Responsabilité de la criminalité des gangs (HD10458) : Nous estimons avec **UNE CONFIANCE MOYEN-ÉLEVÉE** que la réponse à l'interpellation ne satisfera pas les demandes de l'opposition — escalade probable en juin.
+- Transparence constitutionnelle KU39 : Nous estimons avec **UNE CONFIANCE ÉLEVÉE** qu'une recommandation contraignante émergera avant les élections.
+- Lagrådet HD03246 (criminalité juvénile) : Nous estimons avec **UNE CONFIANCE MOYENNE** que le Lagrådet émettra un avis de conformité conditionnel (non bloquant) — scénario A (P=0,50) soutenu.
+
+**Bloc de provenance économique du FMI** :
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### Tour d'amélioration — Renseignement supplémentaire (9 nouveaux documents)
+
+**Mise à jour du BLUF** : L'analyse initiale a été élargie avec 9 documents (4 interpellations, 1 rapport de commission, 4 motions) découverts lors d'une actualisation de données ultérieure. Les ajouts les plus significatifs sont :
+
+- 🏛️ **Offensive institutionnelle du SD (CRITIQUE)** : HD10464 (abolition de Sida) + HD10466 (responsabilité des fonctionnaires du MAE) révèlent une stratégie SD coordonnée ciblant les organes d'État comme politiquement compromis avant les élections. SD Markus Wiechel cible simultanément la Ministre du Développement Dousa (M) et la MAE Malmer Stenergard (M). L'abolition de Sida est cadrée via un scandale de paiement de 55 MSEK lié au Hamas [A2 non vérifié].
+- ⚖️ **Cadre de détention JuU30 (ÉLEVÉ)** : Le rapport de la Commission judiciaire sur la détention d'enfants/jeunes fournit une base constitutionnelle directe CDE/CEDH soutenant la défection de C sur HD024146 et alimentant l'examen du Lagrådet (ca. 2026-06-01).
+- 🏢 **Retrait des services de l'État (MOYEN-ÉLEVÉ)** : HD10465 + HD10467 révèlent une campagne de responsabilisation coordonnée de S — 148 → 125 bureaux de services, réduction budgétaire de 130 MSEK — ciblant le Ministre Civil KD Slottner.
+
+**Déclencheurs prospectifs principaux mis à jour** :
+1. **[2026-05-26 | ÉLEVÉ | PIR-NEW-10464]** : SD obtient un débat formel à l'assemblée sur l'abolition de Sida — force la position de M sur l'architecture suédoise d'aide publique au développement
+2. **[2026-05-26 | ÉLEVÉ | PIR-NEW-10466]** : La MAE Malmer Stenergard doit répondre à la demande de responsabilité des fonctionnaires du MAE — point de rupture des normes démocratiques
+3. **[2026-06-01 | CRITIQUE | JUU30-LAGRADET]** : Avis du Lagrådet sur HD03246 (responsabilité pénale à 13 ans) — le cadre JuU30 peut directement influencer l'analyse constitutionnelle du Lagrådet
+
+---
+
+### Mise à jour du renseignement Tour 3 (Tour 2 — Trois nouveaux documents)
+
+**Principales nouvelles conclusions** :
+
+1. **Responsabilité pénale à 13 ans — défaite du gouvernement confirmée** (HD024136/S rejoint V+C+MP). Majorité d'opposition JuU à quatre partis maintenant documentée à travers tous les partis. Le gouvernement perdra ce vote (attendu fin mai/juin 2026). Inversion judiciaire à haute visibilité en année électorale. **+DIW 0,82 ajouté au cluster criminalité juvénile → le cluster score maintenant 0,89**
+
+2. **Risque de conformité UE sur l'assurance parentale** (HD10469/S → Larsson L). Deux partis proches de la coalition (probablement SD+C) veulent abolir les mois de congé parental réservés obligatoires — déclenchant une violation potentielle de la Directive UE 2019/1158 (équilibre vie professionnelle-vie privée). La Ministre Larsson coincée entre la pression de la coalition et les obligations européennes. Réponse attendue le 2026-05-26. **Nouveau facteur de risque stratégique — contrainte juridique de l'UE**
+
+3. **Le portefeuille infrastructure de Carlson (KD) accumule des pressions** (HD10468 taxi + HD10463 Ostlänken). Deux interpellations ouvertes contre le même ministre de S. Schéma de S construisant un dossier de responsabilisation contre le parcours d'infrastructure de KD.
+
+**Signature de session mise à jour** : 2026-05-05 est maintenant confirmée comme l'une des journées législativement les plus significatives du Riksmöte 2025/26. Sept interpellations déposées (464–469 + Vetlanda), la coalition d'opposition sur l'âge de 13 ans entièrement documentée, un rapport de commission sur la transparence constitutionnelle (KU39) et un champ de bataille clarifié pour la dérégulation forestière. Trois mois avant le jour du scrutin : l'architecture de responsabilisation est construite aujourd'hui.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# הספרינט החקיקתי השבדי לפני הבחירות חושף קווי שבר בקואליציה
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-05  
+**סיווג**: ציבורי — תקנה 9(2)(ה)(ו) GDPR  
+**ביטחון**: גבוה [A2]  
+**זרימת עבודה**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### תקציר מנהלים
+
+פולס הפרלמנטרי ב-2026-05-05 חושף ממשלת טידו הדוחפת את אג'נדה החקיקה שלה בקצב מואץ — פיקוח על חובות משקי בית (HD03255), ביטול רגולציה ביערנות (prop. 2025/26:242), הפחתת גיל האחריות הפלילית (prop. 2025/26:246) — תוך ספיגה בו-זמנית של לחץ אופוזיציה על מדדי פשיעת כנופיות, הכוונה מחדש של תשתיות אוסטלונקן, ונסיגת מימון ESA. ההתפתחות הבולטת ביותר היא KU39 (רפורמת שקיפות חוקתית), שתקבע כללי אחריותיות לבחירות הפרלמנט ב-13 בספטמבר 2026.
+
+---
+
+### החלטות הנתמכות על ידי תקציר זה
+
+1. **עדיפות עריכתית**: היקף KU39 החוקתי של שקיפות מצדיק סיקור מעמיק ייעודי — כללים חוקתיים ל-131 ימים לפני מערכת בחירות מהווים מודיעין מדרגה ראשונה
+2. **החלטת מעקב**: ביקורת לגרודת על HD03246 (~2026-06-01) ועל HD03255 (~Q2 2026) הם האירועים המבחינים הקרובים המשמעותיים ביותר
+3. **מודיעין בחירות**: C עוזבת עמדת טידו בנושא פשע נוער (HD024146) — שותפה קואליציונית שוברת שורות — מאותת על מתח פנימי בקואליציית טידו שעשוי להשפיע על דינמיקות ספטמבר 2026
+
+---
+
+### קריאה של 60 שניות
+
+- 🏦 **מאקרו-פרודנציאלי (גבוה)**: HD03255 מעניק ל-Finansinspektionen סמכות חוקית לסקרי חובות משקי בית — סוגר פער עשור שעליו הצביע Riksbanken וקרן המטבע; kammarvotering ל-FiU45 קבועה ל-2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **חוקתי (קריטי)**: KU39 מתכנן "הגדלת שקיפות בתהליכים פוליטיים" — הוכרז 131 יום לפני בחירות 13 בספטמבר; היקף (לוביינג, מימון מפלגות, פרסום דיגיטלי) קובע מנגנוני אחריותיות חוקתיים לפני בחירות; betänkande צפוי 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **יערנות (גבוה)**: חמישה מפלגות חלוקות על prop. 2025/26:242 — SD וC רוצים *יותר* ביטול רגולציה ביחס לממשלה; V+MP+S מתנגדות; רוב 176 המושבים של הממשלה מנצח אך סיכון הפרת הנחיית בתי הגידול האירופאית מצטבר ב-T+12–24m
+- 👥 **פשע נוער (גבוה)**: C עוזבת עמדת טידו ב-HD024146 (גיל אחריות 13); V+C+MP יוצרות קואליציה המבוססת על אמנת זכויות הילד; ביקורת לגרודת ~2026-06-01 נקודת מינוף מכרעת
+- 🚨 **אחריותיות (בינוני-גבוה)**: חמישה שאילתות מכוונות בו-זמנית למשרד המשפטים (פשיעת כנופיות), תשתיות (אוסטלונקן), אזרחי (פעילות סוכנויות), מחקר (ESA), ופיננסי (מס קוטלי)
+- 🛸 **ESA/חלל (בינוני)**: שוודיה נסוגה למקום 17 ב-ESA; HD10461 דורש תגובה ממשרד המחקר Edholm — סיכונים הקשורים לרכישות ביטחוניות
+
+---
+
+### מניע עתידי עיקרי
+
+**[2026-06-09 | קריטי | KU39]** — פרסום דוח ועדת KU39: היקף החוקתי של רפורמת שקיפות פוליטית קובע מנגנוני אחריותיות שישלטו על מערכת בחירות 2026. אם יכלול רישום לוביינג חובה, צפה להתנגדות מיידית מ-SD/S ולסערת תקשורת. עדיפות ראשונה לאיסוף מודיעין.
+
+---
+
+### גילוי ניתוחי ביטחון
+
+ביטחון גבוה [A2]: כל המקורות הראשוניים ממסדי הנתונים הרשמיים של ריקסדאגן/ממשלה (data.riksdagen.se, riksdagen.se). ניתוחים משלימים להצעות חוק, דוחות ועדות, עתירות ושאילתות הושלמו באותו יום עם חשבונות פרלמנטריים עקביים. נתוני קרן המטבע החיים אינם זמינים חלקית בסבב זה; ההקשר הכלכלי מעוגן בדוח יציבות פיננסים Riksbank שנתי ובסקירת WEO אוקטובר 2025.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### עדכון מודיעיני — סבב שני
+
+**הערכת ביטחון WEP** (אופק T+72h):
+- אחריותיות פשיעת כנופיות (HD10458): מעריכים **בביטחון בינוני-גבוה** שהתגובה לשאילתה לא תספק את דרישות האופוזיציה — הסלמה אפשרית ביוני.
+- שקיפות חוקתית KU39: מעריכים **בביטחון גבוה** שהמלצה מחייבת תונפק לפני הבחירות.
+- לגרודת HD03246 (פשע נוער): מעריכים **בביטחון בינוני** שלגרודת יפרסם חוות דעת מותנית (לא חוסמת) — תרחיש א' (P=0.50) נתמך.
+
+**בלוק מקור כלכלי IMF**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### סבב שיפור — מודיעין נוסף (9 מסמכים חדשים)
+
+**עדכון תקציר**: הניתוח הראשוני הורחב ב-9 מסמכים (4 שאילתות, 1 דוח ועדה, 4 עתירות) שהתגלו בעדכון נתונים מאוחר. ההוספות הבולטות:
+
+- 🏛️ **המתקפה המוסדית של SD (קריטי)**: HD10464 (ביטול Sida) + HD10466 (אחריות עובדי משרד החוץ) חושפים אסטרטגיית SD מתואמת המכוונת לרשויות ממשלתיות כבר-מחלוקת פוליטי לפני הבחירות. Markus Wiechel (SD) תוקף בו-זמנית את שרת הפיתוח Dousa (M) ואת שרת החוץ Malmer Stenergard (M). ביטול Sida מסגור דרך שערוריית תשלומים קשורים לחמאס ב-55 מיליון קרונה [A2 לא מאומת].
+- ⚖️ **מסגרת עצור JuU30 (גבוה)**: דוח ועדת המשפטים בנושא מעצר ילדים/נוער מספק בסיס חוקתי ישיר UNCRC/ECHR, תומך בנטישת C מ-HD024146 ומזין את ביקורת לגרודת (~2026-06-01).
+- 🏢 **נסיגת שירותי ממשלה (בינוני-גבוה)**: HD10465 + HD10467 חושפים מסע אחריותיות מתואם של S — 148→125 סניפי שירות, קיצוץ תקציב 130 מיליון קרונה — המכוון לשר ענייני אזרחים KD Slottner.
+
+**מניעים עתידיים עיקריים מעודכנים**:
+1. **[2026-05-26 | גבוה | PIR-NEW-10464]**: SD זוכה לדיון פרלמנטרי רשמי בנושא ביטול Sida — מאלץ M להכריז על עמדתה לגבי מבנה ODA השבדי
+2. **[2026-05-26 | גבוה | PIR-NEW-10466]**: שרת החוץ Malmer Stenergard חייבת להגיב לדרישת אחריות עובדי חוץ — נקודת הצתה לסטנדרטים דמוקרטיים
+3. **[2026-06-01 | קריטי | JUU30-LAGRADET]**: חוות דעת לגרודת על HD03246 (גיל אחריות 13) — מסגרת JuU30 עשויה להשפיע ישירות על ניתוח חוקתי של לגרודת
+
+---
+
+### עדכון סבב שלישי (סבב שני — שלושה מסמכים חדשים)
+
+**ממצאים חדשים בולטים**:
+
+1. **גיל אחריות פלילית 13 — תבוסת ממשלה מאושרת** (HD024136/S מצטרפת ל-V+C+MP). רוב אופוזיציוני מ-4 מפלגות בוועדת המשפטים מתועד בכל המפלגות כעת. הממשלה תפסיד את ההצבעה הזו (צפוי סוף מאי/יוני 2026). היפוך שיפוטי בולט בשנת בחירות. **נוסף +DIW 0.82 לאשכול פשע נוער → האשכול רושם כעת 0.89**
+
+2. **סיכוני תאימות EU על ביטוח הורות** (HD10469/S → Larsson L). שתי מפלגות קרובות לקואליציה (כנראה SD+C) רוצות לבטל חודשי חופשת אבהות שמורים חובה — מעורר הפרה פוטנציאלית של הנחיית EU 2019/1158 (איזון עבודה-חיים). שרה Larsson לכודה בין לחץ קואליציה להתחייבויות אירופאיות. תגובה נדרשת 2026-05-26. **גורם סיכון אסטרטגי חדש — מגבלה משפטית אירופאית**
+
+3. **תיק תשתיות Carlson (KD) צובר לחצים** (HD10468 מוניות + HD10463 אוסטלונקן). שתי שאילתות פתוחות כנגד אותו שר מ-S. דפוס S בונה תיק אחריות נגד מסלול תשתיות KD.
+
+**חתימת הסבב המעודכנת**: 2026-05-05 מאושרת כיום כאחד הימים החקיקתיים המשמעותיים ביותר בריקסמוטה 2025/26. שבע שאילתות הוגשו (464–469 + וויטלנדה), קואליציית האופוזיציה סביב גיל 13 תועדה במלואה, דוח ועדת שקיפות חוקתית (KU39) יצא וזירת הקרב לביטול רגולציה ביערנות התבהרה. שלושה חודשים לפני יום הקלפי: מבנה האחריות נבנה כיום.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-05-05  
+**分類**: 公開 — GDPR 第9条(2)(e)(g)  
+**信頼度**: 高 [A2]  
+**ワークフロー**: news-realtime-monitor（Tier-C aggregation）  
+
+---
+
+### エグゼクティブサマリー
+
+2026年5月5日の議会パルスは、家計債務監視（HD03255）、林業規制緩和（prop. 2025/26:242）、刑事責任年齢引き下げ（prop. 2025/26:246）を加速させるチドー政権の立法推進を示す一方、ギャング犯罪指標、Ostlänken交通インフラの方向転換、ESA宇宙資金の後退をめぐる野党の圧力を同時に吸収している。最重要の展開はKU39（憲法的透明性改革）で、2026年9月13日の総選挙の民主的責任ルールを確定させる。
+
+---
+
+### 本ブリーフが支援する意思決定
+
+1. **編集上の優先事項**: KU39の憲法的透明性スコープは専用の詳細報道に値する——131日後の選挙に向けた憲法ルールは第一級の政治情報である
+2. **監視の決定**: Lagrådetによるまず HD03246（~2026-06-01）、次にHD03255（~Q2 2026）の審査は、近未来において最も重要な弁別的イベントである
+3. **選挙情報**: C党がHD024146の少年犯罪でチドーの立場を離脱——連立パートナーが隊列を破り、2026年9月のダイナミクスに影響を与えかねないチドー連立内部の緊張を示す
+
+---
+
+### 60秒まとめ
+
+- 🏦 **マクロプルーデンシャル（高）**: HD03255はFinansinspektionenに家計債務調査の法的権限を付与——RiksbankとIMFが指摘してきた10年来のギャップを解消。FiU45のkammarvoteringは2026-06-15に予定（data.riksdagen.se [A1]）
+- ⚖️ **憲法（重要）**: KU39は「政治プロセスの透明性向上」を計画——9月13日の選挙131日前に発表。スコープ（ロビイング、政党資金、デジタル広告）が選挙前の憲法的説明責任メカニズムを決定。betänkande予定日2026-06-09（data.riksdagen.se [A1]）
+- 🌲 **林業（高）**: prop. 2025/26:242をめぐって5党が分裂——SDとCは政府より*さらなる*規制緩和を求め、V+MP+Sが反対。政府の176議席多数派が勝利するが、EU生息地指令違反リスクがT+12–24mで蓄積
+- 👥 **少年犯罪（高）**: CはHD024146（責任年齢13歳）でチドーの立場を離脱。V+C+MPが子どもの権利条約に基づく連合を形成。Lagrådet審査~2026-06-01が重要な梃入れ点
+- 🚨 **説明責任（中高）**: 5件の質問状が法務省（ギャング犯罪）、交通（Ostlänken）、市民（機関活動）、研究（ESA）、財政（農薬税）に同時照準
+- 🛸 **ESA/宇宙（中）**: スウェーデンがESAで第17位に後退。HD10461は研究大臣Edholmへの回答を求める——防衛調達関連リスク
+
+---
+
+### 主要な将来の起爆剤
+
+**[2026-06-09 | 重要 | KU39]** — KU39委員会報告書の公表: 政治的透明性改革の憲法的スコープが2026年選挙運動を規定する説明責任メカニズムを決定。ロビイスト登録義務を含む場合、SD/Sからの即時反発とメディアの嵐を予測。情報収集の最高優先事項。
+
+---
+
+### 分析的信頼度の開示
+
+高信頼度 [A2]: すべての一次情報源はリクスダーグ/政府公式データベース（data.riksdagen.se、riksdagen.se）から。法案、委員会報告書、請願書、質問状の補完分析は一貫した議会計算で当日完了。IMFライブデータはこのサイクルで一部未入手。経済コンテキストはRiksbank年次金融安定報告書と2025年10月WEO基準。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### 情報更新 — 第2ラウンド
+
+**WEP信頼度評価** （T+72hホライズン）:
+- ギャング犯罪説明責任（HD10458）: **中高信頼度**で、質問状への回答は野党の要求を満足させないと評価——6月に上昇の可能性。
+- KU39憲法的透明性: **高信頼度**で、選挙前に拘束力ある勧告が発表されると評価。
+- Lagrådet HD03246（少年犯罪）: **中信頼度**で、Lagrådetは条件付き（非阻止）意見を発出と評価——シナリオA（P=0.50）支持。
+
+**IMF経済ソースブロック**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### 改善ラウンド — 追加情報（9件の新文書）
+
+**ブリーフ更新**: 初期分析が、後続データ更新で発見された9件の文書（質問状4件、委員会報告書1件、請願書4件）で拡張された。主な追加事項:
+
+- 🏛️ **SDの機関攻勢（重要）**: HD10464（Sida廃止）+ HD10466（外務省職員説明責任）がSD の協調戦略を露呈——選挙前に政府機関を政治的争点として標的にする。Markus Wiechel（SD）が開発大臣Dousa（M）と外務大臣Malmer Stenergard（M）を同時攻撃。Sida廃止はハマス関連支払い5500万クローナスキャンダル経由でフレーミング [A2 未確認]。
+- ⚖️ **留置枠組みJuU30（高）**: 司法委員会の子供・若者留置報告書が直接のUNCRC/ECHR憲法的基盤を提供し、HD024146からのCの離脱を支持してLagrådet審査（~2026-06-01）に供給。
+- 🏢 **政府サービスの後退（中高）**: HD10465 + HD10467 がS の協調説明責任キャンペーンを露呈——148→125サービス拠点、1億3000万クローナ予算削減——KD市民大臣Slottnerを標的に。
+
+**更新された主要将来起爆剤**:
+1. **[2026-05-26 | 高 | PIR-NEW-10464]**: SDがSida廃止の正式議会討議を獲得——MにスウェーデンODA構造に関する立場表明を強制
+2. **[2026-05-26 | 高 | PIR-NEW-10466]**: 外務大臣Malmer Stenergardが外務省職員説明責任要求に回答必要——民主的基準の点火点
+3. **[2026-06-01 | 重要 | JUU30-LAGRADET]**: Lagrådetによる HD03246（責任年齢13歳）の意見——JuU30枠組みがLagrådetの憲法分析に直接影響する可能性
+
+---
+
+### 第3ラウンド更新（ラウンド2 — 3件の新文書）
+
+**注目すべき新発見**:
+
+1. **刑事責任年齢13歳——政府敗北確認**（HD024136/SがV+C+MPに合流）。4党の野党多数派が全党で司法委員会に文書化。政府はこの票決で敗北（2026年5月末/6月予定）。選挙年における顕著な司法的逆転。**少年犯罪クラスターに+DIW 0.82追加→クラスターは現在0.89を記録**
+
+2. **育児保険のEU準拠リスク**（HD10469/S → Larsson L）。連立に近い2党（おそらくSD+C）が義務的父親休暇月の廃止を望む——EU指令2019/1158（ワーク・ライフバランス）の潜在的違反を引き起こす。Larsson大臣は連立圧力と欧州的コミットメントの間で板挟み。回答期限2026-05-26。**新たな戦略的リスク要因——欧州法的制約**
+
+3. **Carlson（KD）の交通インフラ課題が積み上がる**（HD10468タクシー + HD10463 Ostlänken）。Sからの同一大臣への2件の質問状。SがKDの交通インフラ軌跡に対する説明責任ファイルを構築するパターン。
+
+**更新されたセッションシグネチャ**: 2026-05-05は2025/26リクスモテで最も立法的に重要な日の一つとして確認。7件の質問状提出（464–469 + Vithanda）、13歳をめぐる野党連合が全員文書化、憲法的透明性委員会報告書（KU39）発表、林業規制緩和の戦場が明確化。投票日3ヶ月前: 今日、説明責任の構造が構築されている。
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-05  
+**분류**: 공개 — GDPR 제9조(2)(e)(g)  
+**신뢰도**: 높음 [A2]  
+**워크플로우**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### 핵심 요약
+
+2026년 5월 5일의 의회 현황은 가계 부채 모니터링(HD03255), 산림업 규제 완화(prop. 2025/26:242), 형사 책임 연령 인하(prop. 2025/26:246)를 가속화하는 티되 정부의 입법 추진을 보여준다. 동시에 갱단 범죄 지표, Ostlänken 교통 인프라 방향 전환, ESA 우주 자금 후퇴에 관한 야당 압력도 흡수하고 있다. 가장 중요한 발전은 KU39(헌법적 투명성 개혁)로, 2026년 9월 13일 총선의 민주적 책임 규칙을 결정할 것이다.
+
+---
+
+### 이 브리프가 지원하는 의사결정
+
+1. **편집 우선순위**: KU39의 헌법적 투명성 범위는 전용 심층 보도가 필요하다——131일 후 선거를 앞둔 헌법 규칙은 최우선 정보다
+2. **모니터링 결정**: HD03246(~2026-06-01)과 HD03255(~2026년 2분기)에 대한 Lagrådet 검토는 가장 중요한 근미래 식별 이벤트다
+3. **선거 정보**: C당이 HD024146 청소년 범죄에서 티되 입장 이탈——연립 파트너가 대열을 이탈, 2026년 9월 역학에 영향을 미칠 수 있는 티되 연립 내부 긴장을 나타낸다
+
+---
+
+### 60초 요약
+
+- 🏦 **거시건전성(높음)**: HD03255는 Finansinspektionen에 가계 부채 조사 법적 권한 부여——Riksbank와 IMF가 지적한 10년간의 격차 해소. FiU45의 kammarvotering은 2026-06-15 예정(data.riksdagen.se [A1])
+- ⚖️ **헌법(중요)**: KU39는 "정치 프로세스의 투명성 증가" 계획——9월 13일 선거 131일 전 발표. 범위(로비, 정당 자금, 디지털 광고)가 선거 전 헌법적 책임 메커니즘을 결정. betänkande 예정일 2026-06-09(data.riksdagen.se [A1])
+- 🌲 **산림업(높음)**: prop. 2025/26:242를 둘러싸고 5개 정당 분열——SD와 C는 정부보다 *더 많은* 규제 완화 요구, V+MP+S 반대. 정부의 176석 다수가 승리하지만 EU 서식지 지침 위반 위험이 T+12–24m에서 누적
+- 👥 **청소년 범죄(높음)**: C는 HD024146(책임 연령 13세)에서 티되 입장 이탈. V+C+MP가 아동권리협약 기반 연합 형성. Lagrådet 검토 ~2026-06-01이 결정적 레버리지 포인트
+- 🚨 **책임성(중상)**: 5건의 질의서가 법무부(갱단 범죄), 교통(Ostlänken), 시민(기관 활동), 연구(ESA), 재정(농약세)에 동시 조준
+- 🛸 **ESA/우주(중간)**: 스웨덴이 ESA에서 17위로 후퇴. HD10461은 연구부 장관 Edholm에게 답변 요구——국방 조달 관련 위험
+
+---
+
+### 주요 미래 촉매제
+
+**[2026-06-09 | 중요 | KU39]** — KU39 위원회 보고서 발표: 정치적 투명성 개혁의 헌법적 범위가 2026년 선거 운동을 지배할 책임 메커니즘을 결정. 로비스트 의무 등록 포함 시 SD/S의 즉각 반발과 미디어 폭풍 예상. 정보 수집 최우선 과제.
+
+---
+
+### 분석적 신뢰도 공개
+
+높은 신뢰도 [A2]: 모든 일차 출처는 리크스다겐/정부 공식 데이터베이스(data.riksdagen.se, riksdagen.se). 법안, 위원회 보고서, 청원서, 질의서에 대한 보완 분석은 일관된 의회 계산으로 당일 완료. IMF 실시간 데이터는 이 주기에서 일부 미입수. 경제 맥락은 Riksbank 연간 금융 안정 보고서와 2025년 10월 WEO 기준.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### 정보 업데이트 — 2라운드
+
+**WEP 신뢰도 평가** (T+72h 지평):
+- 갱단 범죄 책임성(HD10458): **중상 신뢰도**로, 질의서 답변이 야당 요구를 충족시키지 못할 것으로 평가——6월 상승 가능성.
+- KU39 헌법적 투명성: **높은 신뢰도**로, 선거 전 구속력 있는 권고안 발표 평가.
+- Lagrådet HD03246(청소년 범죄): **중간 신뢰도**로, Lagrådet이 조건부(비차단) 의견 발표 평가——시나리오 A(P=0.50) 지지.
+
+**IMF 경제 출처 블록**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### 개선 라운드 — 추가 정보(9건의 새 문서)
+
+**브리프 업데이트**: 초기 분석이 후속 데이터 업데이트에서 발견된 9건의 문서(질의서 4건, 위원회 보고서 1건, 청원서 4건)로 확장됨. 주요 추가 사항:
+
+- 🏛️ **SD의 기관 공세(중요)**: HD10464(Sida 폐지) + HD10466(외무부 직원 책임)이 SD의 선거 전 정부 기관 정치적 쟁점화 협조 전략 노출. Markus Wiechel(SD)이 개발부 장관 Dousa(M)와 외무부 장관 Malmer Stenergard(M) 동시 공격. Sida 폐지는 하마스 관련 5500만 크로나 지불 스캔들 경유 프레이밍 [A2 미확인].
+- ⚖️ **구금 프레임워크 JuU30(높음)**: 아동·청소년 구금에 관한 법사위원회 보고서가 직접적인 UNCRC/ECHR 헌법적 기반 제공, HD024146에서 C의 이탈 지지 및 Lagrådet 검토(~2026-06-01) 공급.
+- 🏢 **정부 서비스 후퇴(중상)**: HD10465 + HD10467이 S의 협조 책임 캠페인 노출——148→125 서비스 거점, 1억 3천만 크로나 예산 삭감——KD 시민부 장관 Slottner 표적.
+
+**업데이트된 주요 미래 촉매제**:
+1. **[2026-05-26 | 높음 | PIR-NEW-10464]**: SD가 Sida 폐지에 대한 공식 의회 토론 확보——M에게 스웨덴 ODA 구조에 대한 입장 선언 강요
+2. **[2026-05-26 | 높음 | PIR-NEW-10466]**: 외무부 장관 Malmer Stenergard가 외무부 직원 책임 요구에 답변 필요——민주적 기준 점화점
+3. **[2026-06-01 | 중요 | JUU30-LAGRADET]**: Lagrådet의 HD03246(책임 연령 13세) 의견——JuU30 프레임워크가 Lagrådet의 헌법적 분석에 직접 영향 가능성
+
+---
+
+### 3라운드 업데이트(2라운드 — 3건의 새 문서)
+
+**주목할 만한 새 발견**:
+
+1. **형사 책임 연령 13세 — 정부 패배 확인** (HD024136/S가 V+C+MP에 합류). 4당 야당 다수가 법사위원회 전원에서 문서화. 정부는 이 표결에서 패배(2026년 5월 말/6월 예정). 선거 연도의 주목할 만한 사법적 역전. **청소년 범죄 클러스터에 +DIW 0.82 추가 → 클러스터 현재 0.89 기록**
+
+2. **육아 보험 EU 준수 위험** (HD10469/S → Larsson L). 연립에 근접한 2개 정당(아마도 SD+C)이 의무적 부성 휴가 월 폐지 원함——EU 지침 2019/1158(일·생활 균형) 잠재적 위반 유발. Larsson 장관이 연립 압력과 유럽 공약 사이에 포위. 답변 기한 2026-05-26. **새로운 전략적 리스크 요인——유럽 법적 제약**
+
+3. **Carlson(KD)의 교통 인프라 과제 누적** (HD10468 택시 + HD10463 Ostlänken). S에서 동일 장관에게 2건의 질의서. S가 KD의 교통 인프라 궤도에 대한 책임 파일 구축 패턴.
+
+**업데이트된 세션 시그니처**: 2026-05-05는 2025/26 리크스모테에서 가장 입법적으로 중요한 날 중 하나로 확인. 질의서 7건 제출(464–469 + Vithanda), 13세를 둘러싼 야당 연합 전원 문서화, 헌법적 투명성 위원회 보고서(KU39) 발표, 산림 규제 완화 전장 명확화. 투표일 3개월 전: 오늘 책임 구조가 구축되고 있다.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-05  
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e)(g)  
+**Betrouwbaarheid**: HOOG [A2]  
+**Workflow**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### BLUF
+
+De parlementaire pols van 2026-05-05 onthult een Tidö-regering die haar wetgevingsagenda in hoog tempo vooruit duwt — huishoudensschuldbewaking (HD03255), bosbouwderegulering (prop. 2025/26:242), verlaging van de minimumleeftijd voor strafrechtelijke aansprakelijkheid (prop. 2025/26:246) — terwijl ze tegelijkertijd de verantwoordingsdruk van de oppositie absorbeert over KPI's voor bendemisdrijven, herleiding van de Ostlänken-infrastructuur en het afnemende ESA-ruimtefinanciering. De meest significante ontwikkeling is KU39 (constitutionele transparantiehervorm), die de democratische verantwoordingsregels zal bepalen voor de parlementsverkiezingen van 13 september 2026.
+
+---
+
+### Beslissingen die dit briefing ondersteunt
+
+1. **Redactionele prioriteit**: De constitutionele transparantiereikwijdte van KU39 verdient toegewijde diepgaande berichtgeving — grondwettelijke regels voor een campagne 131 dagen weg zijn eersteklas inlichtingen
+2. **Bewakingsbeslissing**: De Lagrådet-toetsing van HD03246 (verlaging minimumleeftijd strafrechtelijke aansprakelijkheid, ca. 2026-06-01) en HD03255 (ca. Q2 2026) zijn de meest kritische discriminerende gebeurtenissen op korte termijn
+3. **Verkiezingsinlichtingen**: Het vertrek van partij C van de regeringspositie inzake jeugdcriminaliteit (HD024146) — een coalitiegenoot die de rijen doorbreekt — signaleert interne spanning in de Tidö-coalitie die de dynamiek van september 2026 kan beïnvloeden
+
+---
+
+### 60-secondenlezing
+
+- 🏦 **Macroprudentieel (HOOG)**: HD03255 geeft de Finansinspektionen wettelijke bevoegdheid voor huishoudensschuldenquêtes — sluit een tienjarig hiaat aangewezen door de Riksbanken en het IMF; FiU45 geplande kammarvotering 2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **Constitutioneel (KRITIEK)**: KU39 plant "verhoogde transparantie in politieke processen" — aangekondigd 131 dagen voor de verkiezingen van 13 september; reikwijdte (lobbyen, partijfinanciering, digitale reclame) bepaalt de pre-electorale constitutionele verantwoordingsregels; betänkande verwacht 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **Bosbouw (HOOG)**: Vijfpartijen-divergentie over prop. 2025/26:242 deregulering — SD en C willen *meer* deregulering dan de regering; V+MP+S verzetten zich; de 176-mandaat-meerderheid van de regering prevaleert maar het EU-habitatrichtlijnrisico bouwt op over T+12–24m
+- 👥 **Jeugdcriminaliteit (HOOG)**: C verlaat de Tidö-positie over HD024146 (strafrechtelijke aansprakelijkheid leeftijd 13); V+C+MP vormen IVRK-gebaseerde coalitie; Lagrådet-toetsing ca. 2026-06-01 is kritiek hefboompunt
+- 🚨 **Verantwoording (MIDDEL-HOOG)**: Vijf interpellaties richten zich gelijktijdig op Justitie- (bendemisdrijven), Infrastructuur- (Ostlänken), Civiel- (agentschapsactivisme), Onderzoeks- (ESA) en Financiën-portefeuilles (pesticidentaks)
+- 🛸 **ESA/Ruimte (MIDDEL)**: Zweden is gezakt naar ESA-rang #17; HD10461 eist antwoord van Onderzoeksminister Edholm — defensiegerelateerd inkooprisico
+
+---
+
+### Belangrijkste vooruitkijkende trigger
+
+**[2026-06-09 | KRITIEK | KU39]** — KU39-commissierapportpublicatie: de grondwettelijke reikwijdte van de politieke transparantiehervorm bepaalt welke verantwoordingsmechanismen de verkiezingscampagne 2026 zullen regelen. Als het een bindend lobbyregister omvat, verwacht een onmiddellijke SD/S-tegenoffensief en mediastorm. Eerste prioriteit voor informatieverzameling.
+
+---
+
+### Analytische betrouwbaarheidsverklaring
+
+Betrouwbaarheid HOOG [A2]: Alle primaire bronnen uit officiële Riksdag/Regering-databases (data.riksdagen.se, riksdagen.se). Zusteranalyses voor propositioner, commissierapporten, motioner en interpellationer dezelfde dag afgesloten met consistente parlementaire rekenkunde. IMF live-gegevens gedeeltelijk niet beschikbaar in deze cyclus; economische context verankerd in de publieke Riksbankens FSR en WEO okt-2025-vintage.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### Inlichtingenupdate — Ronde 2
+
+**WEP-betrouwbaarheidsbeoordeling** (T+72u-horizon):
+- Verantwoording voor bendemisdrijven (HD10458): Wij beoordelen met **MIDDEL-HOGE BETROUWBAARHEID** dat het interpellatie-antwoord de eisen van de oppositie niet zal bevredigen — escalatie waarschijnlijk tot juni.
+- KU39 constitutionele transparantie: Wij beoordelen met **HOGE BETROUWBAARHEID** dat er vóór de verkiezingen een bindende aanbeveling zal komen.
+- Lagrådet HD03246 (jeugdcriminaliteit): Wij beoordelen met **MIDDEL BETROUWBAARHEID** dat Lagrådet een voorwaardelijk nalevingsadvies (niet-blokkerend) zal uitbrengen — scenario A (P=0,50) ondersteund.
+
+**IMF Economisch herkomstblok**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### Verbeteringsronde — Aanvullende inlichtingen (9 nieuwe documenten)
+
+**BLUF-update**: De oorspronkelijke analyse is uitgebreid met 9 documenten (4 interpellaties, 1 commissierapport, 4 moties) ontdekt bij een navolgende gegevensupdate. De meest significante toevoegingen zijn:
+
+- 🏛️ **SD-institutionele offensief (KRITIEK)**: HD10464 (afschaffing van Sida) + HD10466 (BuZa-ambtenarenaansprakelijkheid) onthullen een gecoördineerde SD-strategie gericht op staatsorganen als politiek gecompromitteerd vóór de verkiezingen. SD Markus Wiechel valt simultaan Ontwikkelingsminister Dousa (M) en BuZa-minister Malmer Stenergard (M) aan. De Sida-afschaffing wordt ingekaderd via een 55-MSEK Hamas-gekoppelde betalingsschandaal [A2 niet geverifieerd].
+- ⚖️ **JuU30 vrijheidsbeneming-kader (HOOG)**: Het rapport van de Justitiecommissie over vrijheidsbeneming van kinderen/jongeren biedt directe IVRK/EVRM-constitutionele grondslag ter ondersteuning van C's afvalligheid bij HD024146 en voedt de Lagrådet-toetsing (ca. 2026-06-01).
+- 🏢 **Terugtrekking staatsdiensten (MIDDEL-HOOG)**: HD10465 + HD10467 onthullen een gecoördineerde S-verantwoordingscampagne — 148 → 125 servicekantoren, 130-MSEK-bezuiniging — gericht op KD-Civielminister Slottner.
+
+**Bijgewerkte belangrijkste vooruitkijkende triggers**:
+1. **[2026-05-26 | HOOG | PIR-NEW-10464]**: SD krijgt formeel kamerdebat over Sida-afschaffing — dwingt M's positie op Zweedse ODA-architectuur
+2. **[2026-05-26 | HOOG | PIR-NEW-10466]**: BuZa-minister Malmer Stenergard moet antwoorden op de eis voor BuZa-ambtenarenaansprakelijkheid — democratische normen-flashpunt
+3. **[2026-06-01 | KRITIEK | JUU30-LAGRADET]**: Lagrådet-advies over HD03246 (strafrechtelijke aansprakelijkheid leeftijd 13) — het JuU30-kader kan Lagrådets constitutionele analyse direct beïnvloeden
+
+---
+
+### Ronde 3 inlichtingenupdate (Ronde 2 — Drie nieuwe documenten)
+
+**Belangrijkste nieuwe bevindingen**:
+
+1. **Strafrechtelijke aansprakelijkheid 13 — regeringsnederlaag bevestigd** (HD024136/S sluit zich aan bij V+C+MP). Vierpartijen-JuU-oppositiemeerderheid nu gedocumenteerd over alle partijen heen. De regering zal deze stemming verliezen (verwacht eind mei/juni 2026). Spraakmakende juridische ommekeer in een verkiezingsjaar. **+DIW 0,82 toegevoegd aan jeugdcriminaliteitscluster → cluster scoort nu 0,89**
+
+2. **EU-nalevingsrisico bij ouderschapsverzekering** (HD10469/S → Larsson L). Twee coalitie-nabije partijen (waarschijnlijk SD+C) willen verplichte gereserveerde ouderschapsverlofmaanden afschaffen — triggert mogelijke EU-richtlijnschending 2019/1158 (evenwicht tussen werk en privéleven). Minister Larsson gevangen tussen coalitiedruk en EU-verplichtingen. Antwoord vervalt 2026-05-26. **Nieuw strategisch risicofactor — EU-juridische beperking**
+
+3. **Carlsons (KD) infrastructuurportfolio accumuleert druk** (HD10468 taxi + HD10463 Ostlänken). Twee open interpellaties tegen dezelfde minister van S. Patroon van S dat een verantwoordingsdossier opbouwt tegen KD's infrastructuurspoor.
+
+**Bijgewerkte sessiehandtekening**: 2026-05-05 wordt nu bevestigd als een van de wetgevend meest significante afzonderlijke dagen van het Riksmöte 2025/26. Zeven interpellaties ingediend (464–469 + Vetlanda), de oppositiecoalitie over de 13-jarige leeftijd volledig gedocumenteerd, een constitutionele transparantie-commissierapport (KU39) en een verhelderd strijdterrein voor bosbouwderegulering. Drie maanden voor verkiezingsdag: de verantwoordingsarchitectuur wordt vandaag gebouwd.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-05  
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
+**Konfidens**: HØY [A2]  
+**Arbeidsflyt**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### BLUF
+
+Den parlamentariske pulsen 2026-05-05 avdekker en Tidö-regjering som driver sin lovgivningsagenda i raskt tempo — husholdningsgjeldsovervåking (HD03255), skoglig deregulering (prop. 2025/26:242), senket kriminell lavalder (prop. 2025/26:246) — mens den samtidig absorberer opposisjonens ansvarspress på gjengkriminalitetsnøkkeltall, Ostlänken infrastrukturomlegging og ESA:s synkende romfinansiering. Den enkelt viktigste hendelsen er KU39 (konstitusjonell åpenhetsreform), som vil definere de demokratiske ansvarsreglene foran riksdagsvalget 13. september 2026.
+
+---
+
+### Beslutninger dette resuméet støtter
+
+1. **Redaksjonell prioritering**: KU39:s konstitusjonelle åpenhetsomfang fortjener dedikert dybdedekking — konstitusjonelle regler for en kampanje 131 dager unna er førsteklasses etterretning
+2. **Overvåkningsbeslutning**: Lagrådets gjennomgang av HD03246 (senket kriminell lavalder, ca. 2026-06-01) og HD03255 (ca. kvartal 2 2026) er de mest kritiske diskriminerende hendelsene på kort sikt
+3. **Valgetterretning**: C-partiets frafall fra regjeringen i ungdomskriminalitetsspørsmålet (HD024146) — en koalisjonspartner som bryter rekkene — signalerer intern stress i Tidö-koalisjonen som kan påvirke dynamikken i september 2026
+
+---
+
+### 60-sekunders lesing
+
+- 🏦 **Makroprudensielt (HØY)**: HD03255 gir Finansinspektionen lovfestet myndighet til å utføre husholdningsgjeldsundersøkelser — lukker et tiår langt gap påpekt av Riksbanken og IMF; FiU45 planlagt kammarvotering 2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **Konstitusjonelt (KRITISK)**: KU39 planlegger "økt åpenhet i politiske prosesser" — annonsert 131 dager før valget 13. september; omfang (lobbyisme, partifinansering, digital annonsering) avgjør de prevalgskonstitusjonelle reglene; betänkande forventet 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **Skogbruk (HØY)**: Fem-partis-divergens på prop. 2025/26:242 deregulering — SD og C ønsker *mer* deregulering enn regjeringen; V+MP+S motsetter seg; regjeringens 176-mandat-flertall seirer men EU:s habitatdirektivrisiko bygges opp under T+12–24m
+- 👥 **Ungdomskriminalitet (HØY)**: C forlater Tidö-posisjonen om HD024146 (kriminell lavalder 13); V+C+MP danner barnekonvensjonsbasert koalisjon; Lagrådets gjennomgang ca. 2026-06-01 er kritisk løftestangspunkt
+- 🚨 **Ansvarsplassering (MIDDEL-HØY)**: Fem interpellasjoner retter seg samtidig mot Justis (gjengkriminalitet), Infrastruktur (Ostlänken), Sivil (myndighetsaktivisme), Forskning (ESA) og Finans (pesticidavgift) porteføljer
+- 🛸 **ESA/Rom (MIDDEL)**: Sverige har falt til ESA-rang #17; HD10461 krever svar fra Forskningsminister Edholm — forsvarsrelatert innkjøpsrisiko
+
+---
+
+### Viktigste fremoverrettede utløser
+
+**[2026-06-09 | KRITISK | KU39]** — KU39:s betänkandepublikasjon: konstitusjonelt omfang for den politiske åpenhetsreformen avgjør hvilke ansvarsmekanismer som vil gjelde under valgkampanjen 2026. Hvis det inkluderer et bindende lobbyregister, forventes umiddelbar SD/S-motoffensiv og mediestorm. Høyprioritert etterretningsinnsamlingsoppdrag.
+
+---
+
+### Analytisk konfidenserklæring
+
+Konfidens HØY [A2]: Alle primærkilder fra offisielle Riksdag/Regering-databaser (data.riksdagen.se, riksdagen.se). Søsteranalyser for proposisjoner, komiteebetenkninger, motioner og interpellasjoner fullført samme dag med konsekvent parlamentarisk matematikk. IMF live-data delvis utilgjengelig denne omgangen; økonomisk kontekst forankret i offentlig Riksbankens FSR og WEO okt-2025 årgangdata.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### Etterretningsoppdatering runde 2
+
+**WEP-konfidensivurdering** (T+72h-horisont):
+- Gjengkriminalitetsansvar (HD10458): Vi vurderer med **MIDDEL-HØY KONFIDENS** at interpellasjonsvaret ikke vil tilfredsstille opposisjonens krav — eskalering sannsynlig i juni.
+- KU39 konstitusjonell åpenhet: Vi vurderer med **HØY KONFIDENS** at en bindende anbefaling vil fremkomme før valget.
+- Lagrådet HD03246 (ungdomskriminalitet): Vi vurderer med **MIDDEL KONFIDENS** at Lagrådet vil avgi en betinget etterlevelsesuttalelse (ikke blokkerende) — scenario A (P=0,50) støttes.
+
+**IMF:s økonomiske provenansblokk**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### Forbedringsomdreining — Ytterligere etterretning (9 nye dokumenter)
+
+**BLUF-oppdatering**: Den innledende analysen er utvidet med 9 dokumenter (4 interpellasjoner, 1 komiteebetankning, 4 motioner) oppdaget ved en etterfølgende dataoppdatering. De viktigste tilleggene er:
+
+- 🏛️ **SD:s institusjonelle offensiv (KRITISK)**: HD10464 (avvikling av Sida) + HD10466 (UD-tjenestemenn ansvar) avslører en koordinert SD-strategi rettet mot statsorganer som politisk kompromitterte foran valget. SD:s Markus Wiechel angriper simultant Biståndsminister Dousa (M) og UD-minister Malmer Stenergard (M). Sidas avvikling innrammes via en 55 MSEK Hamas-koblet betalingsskandale [A2 ubekreftet].
+- ⚖️ **JuU30 frihetsberøvelsesramme (HØY)**: Justiskomiteens betankning om frihetsberøvelse av barn/ungdom gir direkte støtte til barnekonvensjonens/ECHR:s konstitusjonelle grunnlag, C:s frafall ved HD024146 og tilfører Lagrådets gjennomgang (ca. 2026-06-01).
+- 🏢 **Statlig servicetilbaketrekking (MIDDEL-HØY)**: HD10465 + HD10467 avslører koordinert S-ansvarskampanje — 148 → 125 servicekontorer, 130 MSEK budsjettreduksjon — rettet mot KD:s Sivilminister Slottner.
+
+**Oppdaterte viktigste fremoverrettede utløsere**:
+1. **[2026-05-26 | HØY | PIR-NEW-10464]**: SD får formell kammarvotering om Sidas avvikling — tvinger M:s posisjon på svensk bistandsarkitektur
+2. **[2026-05-26 | HØY | PIR-NEW-10466]**: UD-minister Malmer Stenergard må svare på UD-tjenestemenn ansvarskravet — demokratinormer-flashpoint
+3. **[2026-06-01 | KRITISK | JUU30-LAGRADET]**: Lagrådets yttrande om HD03246 (kriminell lavalder 13) — JuU30-rammen kan direkte påvirke Lagrådets konstitusjonelle analyse
+
+---
+
+### Runde 3 etterretningsoppdatering (runde 2 — tre nye dokumenter)
+
+**Viktigste nye funn**:
+
+1. **Kriminell lavalder 13 — regjerings-tap bekreftet** (HD024136/S slutter seg til V+C+MP). Firepartis JuU-opposisjonsflertal nå dokumentert på tvers av alle partier. Regjeringen vil tape denne avstemningen (forventet sen mai/juni 2026). Høy profilering rettsreversering i valgår. **+DIW 0,82 tilføyd til ungdomskriminalitetsklynge → klynge scorer nå 0,89**
+
+2. **EU-etterlevelsesrisiko vedrørende foreldrepermisjon** (HD10469/S → Larsson L). To koalisjons-nære partier (sannsynligvis SD+C) ønsker å avskaffe obligatoriske reserverte foreldremåneder — utløser potensiell EU-direktiv 2019/1158 (balanse mellom arbeid og privatliv) overtredelse. Minister Larsson fanget mellom koalisjonspress og EU-forpliktelser. Svar forfaller 2026-05-26. **Ny strategisk risikofaktor — EU-rettslig begrensning**
+
+3. **Carlsons (KD) infrastrukturportefølje akkumulerer press** (HD10468 taxi + HD10463 Ostlänken). To åpne interpellasjoner mot samme minister fra S. Mønster av S som bygger en ansvarsdossier mot KD:s infrastrukturspor.
+
+**Oppdatert sesjonssignatur**: 2026-05-05 bekreftes nå som en av de lovgivningsmessig viktigste enkeltdagene i 2025/26 riksmøtet. Syv interpellasjoner innlevert (464–469 + Vetlanda), opposisjonskoalisjonen ved 13-årsalderen fullt dokumentert, en konstitusjonell åpenhetsbetankning (KU39) og et avklart slagfelt for skogderegulering. Tre måneder før valgdagen: ansvarsarkitekturen bygges i dag.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-05  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
+**Konfidensgrad**: HÖG [A2]  
+**Arbetsflöde**: news-realtime-monitor (Tier-C aggregation)  
+
+---
+
+### BLUF
+
+Den parlamentariska pulsen 2026-05-05 visar att Tidöregeringen driver sin lagstiftningsagenda i rask takt — hushållsskuldövervakning (HD03255), skoglig avreglering (prop. 2025/26:242), sänkt straffbarhetsålder (prop. 2025/26:246) — samtidigt som den absorberar oppositionens ansvarskrav kring gängbrottslighets-KPI:er, Ostlänkens infrastrukturomledning och ESA:s minskade rymdfinansiering. Den enskilt viktigaste händelsen är KU39 (konstitutionell öppenhetsreform), som kommer att definiera de demokratiska ansvarreglerna inför riksdagsvalet den 13 september 2026.
+
+---
+
+### Beslut detta underlag stöder
+
+1. **Redaktionell prioritering**: KU39:s konstitutionella öppenhetsomfång förtjänar dedikerad fördjupad rapportering — konstitutionella regler för en valkampanj 131 dagar bort är förstklassig underrättelse
+2. **Bevakningsbeslut**: Lagrådets granskning av HD03246 (sänkt straffbarhetsålder, ca 2026-06-01) och HD03255 (ca kvartal 2 2026) är de mest kritiska diskriminerande händelserna på kort sikt
+3. **Valunderrättelse**: C-partiets avhopp från regeringen i ungdomsbrottsfrågan (HD024146) — en koalitionspartner som bryter leden — signalerar intern stress i Tidökoalitionen som kan påverka dynamiken i september 2026
+
+---
+
+### 60-sekundersläsning
+
+- 🏦 **Makroprudentiellt (HÖG)**: HD03255 ger Finansinspektionen lagstadgad befogenhet att utföra hushållsskuldundersökningar — täpper ett decennium gammalt glapp påtalat av Riksbanken och IMF; FiU45 planerat kammarvotering 2026-06-15 (data.riksdagen.se [A1])
+- ⚖️ **Konstitutionellt (KRITISKT)**: KU39 planerar "ökad öppenhet i politiska processer" — aviserat 131 dagar före valet 13 september; omfång (lobbyism, partifinansering, digital annonsering) avgör de förvalskonstitutionella reglerna; betänkande förväntat 2026-06-09 (data.riksdagen.se [A1])
+- 🌲 **Skogsbruk (HÖG)**: Fem-partis-divergens på prop. 2025/26:242 avreglering — SD och C vill ha *mer* avreglering än regeringen; V+MP+S motsätter sig; regeringens 176-mandat-majoritet segrar men EU:s habitatdirektivrisk byggs upp under T+12–24m
+- 👥 **Ungdomsbrottslighet (HÖG)**: C hoppar av Tidöposition om HD024146 (straffbarhet ålder 13); V+C+MP bildar barnkonventionsbaserad koalition; Lagrådets granskning ca 2026-06-01 är kritisk hävstångspunkt
+- 🚨 **Ansvarsutkrävande (MEDEL-HÖG)**: Fem interpellationer riktar sig samtidigt mot Justitie (gängbrott), Infrastruktur (Ostlänken), Civil (myndighetaktivism), Forskning (ESA) och Finans (pesticidskatt) portföljer
+- 🛸 **ESA/Rymden (MEDEL)**: Sverige har sjunkit till ESA-rang #17; HD10461 kräver svar från Forskningsminister Edholm — försvarsrelaterad upphandlingsrisk
+
+---
+
+### Viktigaste framåtdrivande utlösare
+
+**[2026-06-09 | KRITISKT | KU39]** — KU39:s betänkandepublicering: konstitutionellt omfång för den politiska öppenhetsreformen avgör vilka ansvarmekanismer som kommer att gälla under valrörelsen 2026. Om det inkluderar ett bindande lobbyregister, förvänta omedelbar SD/S-motoffensiv och mediastorm. Högprioriterat underrättelseinsamlingsuppdrag.
+
+---
+
+### Analytisk konfidensdeklaration
+
+Konfidensgrad HÖG [A2]: Alla primärkällor från officiella Riksdag/Regering-databaser (data.riksdagen.se, riksdagen.se). Syskonanalyser för propositioner, utskottsbetänkanden, motioner och interpellationer slutförda samma dag med konsekvent parlamentarisk matematik. IMF-livedata delvis otillgänglig denna omgång; ekonomisk kontext förankrad i offentlig Riksbankens FSR och WEO okt-2025 årgång.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### Underrättelseuppdatering omgång 2
+
+**WEP-konfidensbedömning** (T+72h-horisont):
+- Gängbrottsansvar (HD10458): Vi bedömer med **MEDEL-HÖG KONFIDENSGRAD** att interpellationssvaret inte kommer att tillfredsställa oppositionens krav — eskalering trolig under juni.
+- KU39 konstitutionell öppenhet: Vi bedömer med **HÖG KONFIDENSGRAD** att någon bindande rekommendation kommer att läggas fram före valet.
+- Lagrådet HD03246 (ungdomsbrottslighet): Vi bedömer med **MEDEL KONFIDENSGRAD** att Lagrådet kommer att avge ett villkorligt efterlevnadsutlåtande (ej blockerande) — scenario A (P=0,50) stöds.
+
+**IMF:s ekonomiska provenansblock**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### Förbättringsomgång — Ytterligare underrättelse (9 nya dokument)
+
+**BLUF-uppdatering**: Den inledande analysen har utvidgats med 9 dokument (4 interpellationer, 1 utskottsbetänkande, 4 motioner) som hittades vid ett efterföljande datauppdateringstillfälle. De viktigaste tilläggen är:
+
+- 🏛️ **SD:s institutionella offensiv (KRITISKT)**: HD10464 (avveckling av Sida) + HD10466 (UD-tjänstemannaansvar) avslöjar en samordnad SD-strategi som riktar sig mot statliga organ som politiskt komprometterade inför valet. SD:s Markus Wiechel angriper simultant Biståndsminister Dousa (M) och UD-minister Malmer Stenergard (M). Sidas avveckling framas via en 55 MSEK Hamas-länkad betalningsskandal [A2 ej verifierat].
+- ⚖️ **JuU30 frihetsberövanderam (HÖG)**: Justitieutskottets betänkande om frihetsberövande för barn/ungdomar ger barnkonventionens/ECHR:s konstitutionella grund direkt stöd till C:s avhopp vid HD024146 och matar in i Lagrådets granskning (ca 2026-06-01).
+- 🏢 **Statlig serviceindragning (MEDEL-HÖG)**: HD10465 + HD10467 avslöjar samordnad S-ansvarskampanj — 148 → 125 servicekontor, 130 MSEK budgetskärning — som riktar sig mot KD:s Civilminister Slottner.
+
+**Uppdaterade viktigaste framåtdrivande utlösare**:
+1. **[2026-05-26 | HÖG | PIR-NEW-10464]**: SD får formell kammarvotering om Sidas avveckling — tvingar M:s position på svensk biståndsarkitektur
+2. **[2026-05-26 | HÖG | PIR-NEW-10466]**: UD-minister Malmer Stenergard måste svara på UD-tjänstemannaansvarskravet — demokratinormers flashpoint
+3. **[2026-06-01 | KRITISKT | JUU30-LAGRADET]**: Lagrådets yttrande om HD03246 (straffbarhet ålder 13) — JuU30-ramen kan direkt påverka Lagrådets konstitutionella analys
+
+---
+
+### Omgång 3 underrättelseuppdatering (omgång 2 — tre nya dokument)
+
+**Viktigaste nya fynd**:
+
+1. **Straffbarhet vid 13 — regeringsförlust bekräftad** (HD024136/S ansluter sig till V+C+MP). Fyrapartis JuU-oppositionsmajoritet nu dokumenterad bland alla partier. Regeringen kommer att förlora den här omröstningen (förväntat sen maj/juni 2026). Hög synlighet rättsreversering i valår. **+DIW 0,82 tilllagt till ungdomsbrottsklustret → klustret poängar nu 0,89**
+
+2. **EU-efterlevnadsrisk gällande föräldraförsäkring** (HD10469/S → Larsson L). Två koalitionsnära partier (troligen SD+C) vill avskaffa obligatoriska reserverade föräldramånader — utlöser potentiell EU-direktiv 2019/1158 (balans arbets- och privatliv) överträdelse. Minister Larsson fastklämd mellan koalitionstryck och EU-skyldigheter. Svar förfaller 2026-05-26. **Ny strategisk riskfaktor — EU-rättsbegränsning**
+
+3. **Carlsons (KD) infrastrukturportfölj ackumulerar tryck** (HD10468 taxi + HD10463 Ostlänken). Två öppna interpellationer mot samma minister från S. Mönster av S som bygger en ansvarsdossier mot KD:s infrastrukturspår.
+
+**Uppdaterad sessionssignatur**: 2026-05-05 bekräftas nu som en av de lagstiftningsmässigt viktigaste enskilda dagarna under 2025/26 riksmötet. Sju interpellationer lämnade in (464–469 + Vetlanda), oppositionskoalitionen vid 13-årsåldern fullt dokumenterad, ett konstitutionellt öppenhetsbetänkande (KU39) och ett klarlagt slagfält för skogsavreglering. Tre månader före valdagen: ansvararkitekturen byggs i dag.
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**日期**: 2026-05-05  
+**分类**: 公开 — GDPR 第9条(2)(e)(g)  
+**置信度**: 高 [A2]  
+**工作流**: news-realtime-monitor（Tier-C aggregation）  
+
+---
+
+### 执行摘要
+
+2026年5月5日的议会脉冲显示，提多政府正在加速推进家庭债务监控（HD03255）、林业放松管制（prop. 2025/26:242）、降低刑事责任年龄（prop. 2025/26:246）等立法议程，同时吸收反对派在黑帮犯罪指标、Ostlänken交通基础设施改向及ESA航天经费退缩等方面施加的压力。最重要的进展是KU39（宪法透明度改革），将为2026年9月13日议会选举确立民主问责规则。
+
+---
+
+### 本简报支持的决策
+
+1. **编辑优先级**: KU39宪法透明度的范围值得专项深度报道——距选举131天的宪法规则是一级政治情报
+2. **监控决策**: Lagrådet对HD03246（~2026-06-01）和HD03255（~2026年Q2）的审查是近期最重要的甄别事件
+3. **选举情报**: C党在HD024146青少年犯罪问题上脱离提多立场——联合伙伴打破阵线，表明提多联合内部张力，可能影响2026年9月格局
+
+---
+
+### 60秒速览
+
+- 🏦 **宏观审慎（高）**: HD03255赋予Finansinspektionen家庭债务调查法定权力——填补Riksbank和IMF指出的长达十年的监管缺口。FiU45的kammarvotering定于2026-06-15（data.riksdagen.se [A1]）
+- ⚖️ **宪法（关键）**: KU39计划"增加政治进程透明度"——在9月13日选举前131天宣布。范围（游说、政党资金、数字广告）决定选举前宪法问责机制。betänkande预计2026-06-09（data.riksdagen.se [A1]）
+- 🌲 **林业（高）**: 五党在prop. 2025/26:242上分歧——SD和C要求比政府*更多*放松管制，V+MP+S反对。政府176席多数获胜，但EU栖息地指令违规风险在T+12–24m积累
+- 👥 **青少年犯罪（高）**: C在HD024146（责任年龄13岁）上脱离提多立场。V+C+MP组成基于联合国儿童权利公约的联盟。Lagrådet审查~2026-06-01是关键杠杆点
+- 🚨 **问责性（中高）**: 五份质询书同时瞄准司法部（黑帮犯罪）、交通（Ostlänken）、市民（机构活动）、研究（ESA）和财政（农药税）
+- 🛸 **ESA/航天（中）**: 瑞典在ESA退至第17位。HD10461要求研究部长Edholm做出回应——与国防采购相关的风险
+
+---
+
+### 主要未来催化剂
+
+**[2026-06-09 | 关键 | KU39]** — KU39委员会报告发布：政治透明度改革的宪法范围决定将主导2026年选举活动的问责机制。若包含强制游说登记，预计SD/S立即反弹和媒体风暴。情报收集最高优先级。
+
+---
+
+### 分析置信度披露
+
+高置信度 [A2]：所有一手来源均来自议会/政府官方数据库（data.riksdagen.se、riksdagen.se）。法案、委员会报告、请愿书和质询书的补充分析在当日以一致的议会计算完成。IMF实时数据在本轮次中部分不可用。经济背景基于Riksbank年度金融稳定报告和2025年10月WEO基准。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title Significance vs. Political Controversy — 2026-05-05 Pulse
+    x-axis Low Controversy --> High Controversy
+    y-axis Low Significance --> High Significance
+    quadrant-1 Priority coverage
+    quadrant-2 Crisis watch
+    quadrant-3 Background
+    quadrant-4 Political battle
+    KU39 Transparency: [0.65, 0.85]
+    Youth Crime HD03246: [0.75, 0.75]
+    HD03255 FI Survey: [0.25, 0.70]
+    Forestry HD03242: [0.60, 0.65]
+    Gang Crime KPI: [0.80, 0.60]
+    Ostlänken HD10463: [0.55, 0.55]
+    ESA HD10461: [0.35, 0.50]
+    style KU39 Transparency fill:#ff006e,stroke:#ff006e
+    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
+    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
+    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
+    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
+    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
+    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
+```
+
+---
+
+### 情报更新 — 第二轮
+
+**WEP置信度评估**（T+72h时域）:
+- 黑帮犯罪问责性（HD10458）：**中高置信度**评估质询答复将无法满足反对派要求——六月可能升级。
+- KU39宪法透明度：**高置信度**评估选举前将发布有约束力的建议。
+- Lagrådet HD03246（青少年犯罪）：**中等置信度**评估Lagrådet将发布有条件（非阻断）意见——支持方案A（P=0.50）。
+
+**IMF经济来源块**:
+```json
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "GGXWDG_NGDP",
+    "vintage": "WEO-Oct-2025",
+    "retrieved_at": "2026-05-05",
+    "annotation": "Vintage >6 months — treat as directional only"
+  }
+}
+```
+
+---
+
+### 改进轮次 — 额外情报（9份新文件）
+
+**简报更新**：初始分析通过后续数据更新发现的9份文件（4份质询书、1份委员会报告、4份请愿书）得到扩展。主要新增内容：
+
+- 🏛️ **SD的机构进攻（关键）**: HD10464（废除Sida）+ HD10466（外交部人员问责）揭示SD协调战略——在选举前将政府机构作为政治争议目标。Markus Wiechel（SD）同时攻击发展部长Dousa（M）和外交部长Malmer Stenergard（M）。Sida废除通过哈马斯相关支付5500万克朗丑闻进行框架定性 [A2 未核实]。
+- ⚖️ **羁押框架JuU30（高）**: 司法委员会关于儿童/青少年羁押的报告提供直接UNCRC/ECHR宪法基础，支持C从HD024146脱离，并为Lagrådet审查（~2026-06-01）提供依据。
+- 🏢 **政府服务退缩（中高）**: HD10465 + HD10467揭示S的协调问责运动——148→125服务站点，1.3亿克朗预算削减——瞄准KD市民部长Slottner。
+
+**更新的主要未来催化剂**:
+1. **[2026-05-26 | 高 | PIR-NEW-10464]**: SD获得关于废除Sida的正式议会辩论——迫使M宣布对瑞典ODA结构的立场
+2. **[2026-05-26 | 高 | PIR-NEW-10466]**: 外交部长Malmer Stenergard需回应外交部人员问责要求——民主标准引爆点
+3. **[2026-06-01 | 关键 | JUU30-LAGRADET]**: Lagrådet关于HD03246（责任年龄13岁）的意见——JuU30框架可能直接影响Lagrådet的宪法分析
+
+---
+
+### 第三轮更新（第二轮 — 三份新文件）
+
+**值得注意的新发现**:
+
+1. **刑事责任年龄13岁——政府失败确认**（HD024136/S加入V+C+MP）。4党反对派多数在司法委员会全体中记录在案。政府将在此次表决中失败（预计2026年5月底/6月）。选举年中引人注目的司法逆转。**向青少年犯罪集群增加+DIW 0.82 → 集群现记录0.89**
+
+2. **育儿保险EU合规风险**（HD10469/S → Larsson L）。与联合政府相近的两个政党（可能为SD+C）希望废除强制性父亲假月份——引发潜在违反EU指令2019/1158（工作与生活平衡）。Larsson部长被联合压力和欧洲承诺夹击。答复截止日期2026-05-26。**新战略风险因素——欧洲法律约束**
+
+3. **Carlson（KD）的交通基础设施挑战积累**（HD10468出租车 + HD10463 Ostlänken）。S向同一部长提出两份质询书。S针对KD交通基础设施轨迹建立问责档案的模式。
+
+**更新的会议签名**：2026-05-05现已确认为2025/26里克斯莫特最具立法重要性的日子之一。提交了7份质询书（464–469 + Vithanda），13岁问题反对派联盟全员记录在案，宪法透明度委员会报告（KU39）发布，林业去监管战场明朗化。距投票日三个月：今天，问责结构正在构建中。
+
+<!-- source-sha: 9fb3258eb00c5a522a5dc3dfc64c572e9185ad9e -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 28 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -3186,6 +4842,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

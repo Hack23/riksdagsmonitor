@@ -6,7 +6,7 @@ date: 2026-05-07
 subfolder: committeeReports
 slug: 2026-05-07-committeeReports
 source_folder: analysis/daily/2026-05-07/committeeReports
-generated_at: 2026-05-23T08:06:00.666Z
+generated_at: 2026-05-23T22:05:56.623Z
 language: en
 layout: article
 ---
@@ -108,6 +108,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1877,13 +1890,955 @@ Initial PIRs for this cycle:
 - PIR-CR-002: What is the implementation timeline and capacity gap for prison expansion (CU25)?
 - PIR-CR-003: Will SfU social insurance qualification changes affect immigration-linked benefit access?
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# السويد توسّع صلاحيات SIGINT وطاقة السجون وإصلاحات التأمين الاجتماعي — تقارير اللجان مايو 2026
+
+---
+
+### ملخص
+
+قدّمت لجنة الدفاع في الريكسداغ (FöU) مقترح betänkande تاريخياً يُحدّث القانون السويدي للاستخبارات الإشارية (SIGINT) — أهم إصلاح للإطار القانوني منذ قانون FRA عام 2008 — مع الموافقة في الوقت ذاته على صلاحيات بناء سجون مُسرَّعة وتشديد شروط الأهلية للتأمين الاجتماعي. تُعيد هذه التقارير الخمس للجان، المؤرخة في 2026-05-06، مجتمعةً تشكيل الهندسة الأمنية لشوودية، وطاقة قضاء الجنايات، وقواعد أهلية دولة الرفاه في دورة تشريعية واحدة.
+
+---
+
+### القرارات التي يدعمها هذا الموجز
+
+1. **محللو السياسات ومنظمات الحريات المدنية**: يوجد FöU18 الخاص بتحديث SIGINT الآن في مرحلة النقاش الرسمي ("Debatt om förslag") — نافذة الرقابة العامة قبل التصويت النهائي مفتوحة. تقييم مخاطر المراقبة الجماعية غير المُقيَّدة في مقابل متطلبات التشغيل المتبادل لحلف الناتو.
+
+2. **قيادة Kriminalvården ومسؤولو وزارة العدل**: تمّ تمرير CU25 — تسري تصاريح البناء المؤقتة للسجون/مراكز الاحتجاز في 1 يوليو 2026. التسريع في تخطيط مواقع طاقة جديدة لاستيعاب الزيادات في مدد الأحكام الناجمة عن إصلاحات العقوبات.
+
+3. **مسؤولو إدارة التأمين الاجتماعي (Försäkringskassan) ومستفيدو دعم الإسكان**: تُشير SfU21 وSfU24 إلى إجراءات تأهيل أكثر صرامة ودقة في المنافع — توقّع زيادة في أعباء العمل للطعون وإعادة الحسابات.
+
+---
+
+### ملخص في 60 ثانية
+
+- **تحديث SIGINT (HD01FöU18)**: يقترح FöU إطاراً قانونياً "حديثاً وملائماً" لعمليات SIGINT الاستخباراتية الدفاعية. الحالة: مرحلة النقاش. التداعيات: صلاحيات موسّعة لجمع البيانات تؤثر محتملاً على جميع حركة الإنترنت العابرة للحدود. مخاطر الامتثال بالمادة 8 من الاتفاقية الأوروبية لحقوق الإنسان مسألة تدقيق نشطة أمام Lagrådet.
+- **توسيع السجون مُعتمَد (HD01CU25)**: صوّت الريكسداغ بـ"نعم" — تصاريح بناء مؤقتة للسجون/مراكز الاحتجاز، وإضافة صلاحية حكومية لإصدار إعفاءات طارئة من قانون التخطيط والبناء (PBL). السريان: 1 يوليو 2026. السبب: نقص حاد في أماكن السجون مقترن بزيادات مدد الأحكام المُقنَّنة.
+- **إصلاح الإشراف على FOI (HD01FöU16)**: تعديلات في قواعد التصاريح والإشراف على معهد أبحاث الدفاع (FOI/Totalförsvarets forskningsinstitut). يُعزّز الرقابة على أبحاث الدفاع الحساسة.
+- **أهلية التأمين الاجتماعي (HD01SfU21)**: تشديد شروط الوصول إلى نظام التأمين الاجتماعي السويدي. يُرجَّح التأثير على المهاجرين الحديثين وأصحاب الوظائف غير المتواصلة.
+- **دقة دعم الإسكان (HD01SfU24)**: قواعد دعم إسكان (`bostadsbidrag`) أكثر استهدافاً ودقة — متوقّع تقليل المدفوعات الخاطئة.
+
+---
+
+### أبرز المحفزات القادمة
+
+**تصويت SIGINT في الجلسة العامة**: يوجد FöU18 في مرحلة "Debatt om förslag". مراقبة تاريخ التصويت في الجلسة العامة — متوقع خلال 2–4 أسابيع. سيكون رأي Lagrådet (yttrande) قبل التصويت حاسماً في إطار الحريات المدنية.
+
+---
+
+### المصدر الاقتصادي
+
+> ℹ️ **وسيلة النقل الإضافية لصندوق النقد الدولي متدهورة** — WEO/FM Datamapper متاح؛ مسبار IFS SDMX أعاد 404. تستخدم الادعاءات الاقتصادية إصدار WEO Apr-2026. (الحالة: متدهورة، vintageAgeMonths: 1)
+
+نمو الناتج المحلي الإجمالي السويدي: يتوقع صندوق النقد الدولي WEO Apr-2026 نسبة 1.9٪ لعام 2026، مع التعافي نحو 2.3٪ في 2027 (T+1). تقع نفقات البنية التحتية للسجون ضمن فئة GFS_COFOG G04 (النظام العام والأمن). تؤثر تغييرات التأمين الاجتماعي على تحويلات الأسر والعرض العمالي.
+
+---
+
+### Mermaid: نظرة عامة على مسار التشريع
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_da.md -->
+
+---
+
+### KORT SAMMENFATNING
+
+Riksdagens Forsvarsudvalg (FöU) har fremlagt et banebrydende betänkande, der moderniserer Sveriges lov om signalefterforskning (SIGINT) — den mest betydningsfulde reform af rammen siden FRA-loven fra 2008 — mens det samtidig godkendte accelererede beføjelser til fængselsbyggeri og stramning af kvalificeringsbetingelserne for socialforsikring. Disse fem udvalgsrapporter, dateret 2026-05-06, omformer samlet Sveriges sikkerhedsarkitektur, strafferetskapacitet og velfærdsstatens adgangsbetingelser i én lovgivningssession.
+
+---
+
+### Beslutninger dette notat understøtter
+
+1. **Politikanalytikere og borgerrettighedsorganisationer**: FöU18 om SIGINT-modernisering er nu i formel debat ("Debatt om förslag") — vinduet for offentlig granskning inden den endelige afstemning er åbent. Vurder risikoen ved ukontrolleret masseovervågning over for NATOs krav om interoperabilitet.
+
+2. **Kriminalvårdens ledelse og justitsministeriets embedsmænd**: CU25 er vedtaget — midlertidige byggetilladelser til fængsler/detentionscentre træder i kraft 1. juli 2026. Fremskynde planlægningen af nye kapacitetssteder for at absorbere straffelængdeforøgelser som følge af strafferetlige reformer.
+
+3. **Socialforsikringsadministratorer (Försäkringskassan) og boligydelsesmodtagere**: SfU21 og SfU24 signalerer strammere kvalificerings- og ydelsesnøjagtighedsforanstaltninger — forvent øget sagsmængde til klager og genberegninger.
+
+---
+
+### Resumé i 60 sekunder
+
+- **SIGINT-modernisering (HD01FöU18)**: FöU foreslår en "moderne og formålstjenlig" retslig ramme for forsvarsefterretningens SIGINT-operationer. Status: debatfase. Implikationer: udvidede dataindsamlingsbeføjelser, der potentielt berører al grænseoverskridende internettrafik. ECHR artikel 8-overholdelserisiko er et aktivt Lagrådet-kontrolspørgsmål.
+- **Fængselsudvidelse godkendt (HD01CU25)**: Riksdagen stemte JA — tidsbegrænsede byggetilladelser til fængsler/detentionscentre, plus regeringens beføjelse til at udstede nødundtagelser fra Plan- og Byggeloven (PBL). Ikrafttræden: 1. juli 2026. Driver: akut mangel på fængselspladser kombineret med lovfæstede strafskærpelser.
+- **FOI-tilsynsreform (HD01FöU16)**: Ændringer i tilladelse og tilsynsregler for Totalförsvarets forskningsinstitut (FOI/FOI). Styrker tilsynet med følsom forsvarsforskning.
+- **Socialforsikringskvalificering (HD01SfU21)**: Stramning af kvalificeringsbetingelserne for adgang til det svenske socialforsikringssystem. Sandsynligvis til at påvirke nylige immigranter og indehavere af ikke-kontinuerlig beskæftigelse.
+- **Boligydelsesnøjagtighed (HD01SfU24)**: Mere målrettede og nøjagtige boligydelsesregler (`bostadsbidrag`) — forventet at reducere fejludbetalinger.
+
+---
+
+### Vigtigste fremtidige udløser
+
+**SIGINT-afstemning i plenum**: FöU18 er i "Debatt om förslag"-fasen. Hold øje med datoen for plenarafstemning — forventet inden for 2–4 uger. En Lagrådet-rådgivning (yttrande) inden afstemningen ville være afgørende for borgerrettighedsindramningen.
+
+---
+
+### Økonomisk oprindelse
+
+> ℹ️ **IMF-hjælpetransport degraderet** — WEO/FM Datamapper nåbar; IFS SDMX-sonde returnerede 404. Økonomiske påstande anvender WEO Apr-2026-årgång. (Status: degraderet, vintageAgeMonths: 1)
+
+Svensk BNP-vækst: IMF WEO Apr-2026 projicerer 1,9 % for 2026, med genopretning mod 2,3 % i 2027 (T+1). Fængselsinfrastrukturudgifter falder under GFS_COFOG kategori G04 (offentlig orden og sikkerhed). Socialforsikringsændringer påvirker husholdningsoverførsler og arbejdsudbud.
+
+---
+
+### Mermaid: Lovgivningsprocessoversigt
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_de.md -->
+
+---
+
+### ZUSAMMENFASSUNG
+
+Der Verteidigungsausschuss des Riksdag (FöU) hat ein wegweisendes betänkande vorgelegt, das Schwedens Gesetz über Signalaufklärung (SIGINT) modernisiert — die bedeutendste Reform des Rahmens seit dem FRA-Gesetz von 2008 — und gleichzeitig beschleunigte Gefängnisbaukompetenzen sowie eine Verschärfung der Qualifikationsbedingungen für die Sozialversicherung genehmigt. Diese fünf Ausschussberichte vom 2026-05-06 gestalten gemeinsam Schwedens Sicherheitsarchitektur, strafjustizielle Kapazität und Anspruchsregeln des Wohlfahrtsstaates in einer einzigen Gesetzgebungssitzung um.
+
+---
+
+### Entscheidungen, die diese Kurzzusammenfassung unterstützt
+
+1. **Politikanalysten und Bürgerrechtsorganisationen**: FöU18 zur SIGINT-Modernisierung befindet sich jetzt in formeller Debatte ("Debatt om förslag") — das Fenster für öffentliche Kontrolle vor der endgültigen Abstimmung ist offen. Bewerten Sie das Risiko unkontrollierter Massenüberwachung gegenüber NATOs Interoperabilitätsanforderungen.
+
+2. **Kriminalvårdens Führung und Beamte des Justizministeriums**: CU25 ist verabschiedet — befristete Baugenehmigungen für Gefängnisse/Abschiebehaftzentren treten am 1. Juli 2026 in Kraft. Beschleunigen Sie die Planung neuer Kapazitätsstandorte, um die durch Strafrechtsreformen bedingten Straflängenerhöhungen aufzufangen.
+
+3. **Sozialversicherungsadministratoren (Försäkringskassan) und Wohngeldbezieher**: SfU21 und SfU24 signalisieren strengere Qualifizierungs- und Leistungsgenauigkeitsmaßnahmen — erwarten Sie eine erhöhte Fallzahl bei Widersprüchen und Neuberechnungen.
+
+---
+
+### 60-Sekunden-Zusammenfassung
+
+- **SIGINT-Modernisierung (HD01FöU18)**: Der FöU schlägt einen "modernen und zwecktauglichen" Rechtsrahmen für SIGINT-Operationen des Nachrichtendienstes der Streitkräfte vor. Status: Debattephase. Auswirkungen: erweiterte Datenerhebungskompetenzen, die potenziell den gesamten grenzüberschreitenden Internetverkehr betreffen. EMRK Artikel 8 Compliance-Risiko ist eine aktuell offene Lagrådets-Prüfungsfrage.
+- **Gefängniserweiterung genehmigt (HD01CU25)**: Der Riksdag stimmte JA — befristete Baugenehmigungen für Gefängnisse/Abschiebehaftzentren sowie Regierungsbefugnis zur Erteilung von Notfallausnahmen vom Bau- und Planungsgesetz (PBL). Wirksamkeit: 1. Juli 2026. Treiber: akuter Mangel an Gefängnisplätzen kombiniert mit gesetzlich verankerten Straflängenerhöhungen.
+- **FOI-Aufsichtsreform (HD01FöU16)**: Änderungen der Genehmigungs- und Aufsichtsregeln für das Forschungsinstitut des Gesamtverteidigung (FOI/Totalförsvarets forskningsinstitut). Stärkt die Aufsicht über sensible Verteidigungsforschung.
+- **Sozialversicherungsqualifizierung (HD01SfU21)**: Verschärft die Qualifikationsbedingungen für den Zugang zum schwedischen Sozialversicherungssystem. Wahrscheinlich werden jüngste Einwanderer und Inhaber nicht-kontinuierlicher Beschäftigungsverhältnisse betroffen.
+- **Wohngeldgenauigkeit (HD01SfU24)**: Zielgerichtetere und genauere Wohngeldregeln (`bostadsbidrag`) — erwartet werden reduzierte Fehlzahlungen.
+
+---
+
+### Wichtigster kommender Auslöser
+
+**SIGINT-Abstimmung im Plenum**: FöU18 befindet sich in der "Debatt om förslag"-Phase. Verfolgen Sie das Datum der Plenarsitzungsabstimmung — voraussichtlich innerhalb von 2–4 Wochen. Eine Lagrådets-Stellungnahme (yttrande) vor der Abstimmung wäre entscheidend für die zivilrechtliche Rahmung.
+
+---
+
+### Wirtschaftliche Herkunft
+
+> ℹ️ **IMF-Hilfstransport degradiert** — WEO/FM Datamapper erreichbar; IFS SDMX-Sonde gab 404 zurück. Wirtschaftliche Behauptungen verwenden WEO Apr-2026-Jahrgang. (Status: degradiert, vintageAgeMonths: 1)
+
+Schwedisches BIP-Wachstum: IMF WEO Apr-2026 prognostiziert 1,9 % für 2026, mit Erholung auf 2,3 % im Jahr 2027 (T+1). Gefängnisinfrastrukturausgaben fallen unter GFS_COFOG-Kategorie G04 (öffentliche Ordnung und Sicherheit). Sozialversicherungsänderungen beeinflussen Haushaltsgeldtransfers und Arbeitsangebot.
+
+---
+
+### Mermaid: Übersicht der Legislativpipeline
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_es.md -->
+
+---
+
+### RESUMEN
+
+La Comisión de Defensa del Riksdag (FöU) ha presentado un betänkande histórico que moderniza la ley sueca de inteligencia de señales (SIGINT) — la reforma más significativa del marco desde la ley FRA de 2008 — aprobando simultáneamente poderes acelerados para la construcción penitenciaria y el endurecimiento de las condiciones de acceso al seguro social. Estos cinco informes de comités, fechados el 2026-05-06, reconfiguran colectivamente la arquitectura de seguridad sueca, la capacidad de justicia penal y las normas de elegibilidad del Estado de bienestar en una única sesión legislativa.
+
+---
+
+### Decisiones que apoya este informe
+
+1. **Analistas de políticas y organizaciones de libertades civiles**: FöU18 sobre la modernización SIGINT se encuentra ahora en debate formal ("Debatt om förslag") — el período de escrutinio público antes de la votación final está abierto. Evalúe el riesgo de vigilancia masiva sin control frente a los requisitos de interoperabilidad de la OTAN.
+
+2. **Dirección de la Kriminalvården y funcionarios del ministerio de justicia**: CU25 ha sido aprobado — los permisos de construcción temporales para prisiones/centros de detención entran en vigor el 1 de julio de 2026. Acelerar la planificación de nuevos sitios de capacidad para absorber los aumentos en la duración de las penas impulsados por las reformas penales.
+
+3. **Administradores del seguro social (Försäkringskassan) y beneficiarios de subsidios de vivienda**: SfU21 y SfU24 señalan medidas más estrictas de calificación y precisión de prestaciones — anticipe una mayor carga de trabajo en apelaciones y recálculos.
+
+---
+
+### Resumen en 60 segundos
+
+- **Modernización SIGINT (HD01FöU18)**: FöU propone un marco jurídico "moderno y adecuado" para las operaciones SIGINT de inteligencia de defensa. Estado: fase de debate. Implicaciones: poderes ampliados de recopilación de datos que potencialmente afectan todo el tráfico de Internet transfronterizo. El riesgo de cumplimiento del artículo 8 del CEDH es una cuestión activa de escrutinio del Lagrådet.
+- **Expansión penitenciaria aprobada (HD01CU25)**: El Riksdag votó SÍ — permisos de construcción temporales para prisiones/centros de detención, más poder gubernamental para emitir exenciones de emergencia de la Ley de Planificación y Construcción (PBL). Efectivo: 1 de julio de 2026. Motivo: escasez aguda de plazas penitenciarias combinada con aumentos de penas de prisión establecidos por ley.
+- **Reforma de supervisión del FOI (HD01FöU16)**: Cambios en las reglas de permisos y supervisión del Instituto de Investigación para la Defensa (FOI/Totalförsvarets forskningsinstitut). Fortalece la supervisión de la investigación de defensa sensible.
+- **Calificación del seguro social (HD01SfU21)**: Endurece las condiciones de acceso al sistema de seguro social sueco. Es probable que afecte a inmigrantes recientes y a titulares de empleos no continuos.
+- **Precisión del subsidio de vivienda (HD01SfU24)**: Normas de subsidio de vivienda (`bostadsbidrag`) más específicas y precisas — se espera reducir los pagos incorrectos.
+
+---
+
+### Principal detonante próximo
+
+**Votación SIGINT en el pleno**: FöU18 se encuentra en la fase "Debatt om förslag". Vigilar la fecha de la votación plenaria — se espera en 2–4 semanas. Un dictamen del Lagrådet (yttrande) antes de la votación sería decisivo para el encuadramiento de las libertades civiles.
+
+---
+
+### Procedencia económica
+
+> ℹ️ **Transporte auxiliar del FMI degradado** — WEO/FM Datamapper accesible; sonda IFS SDMX devolvió 404. Las afirmaciones económicas utilizan el vintage WEO Apr-2026. (Estado: degradado, vintageAgeMonths: 1)
+
+Crecimiento del PIB sueco: el FMI WEO Apr-2026 proyecta 1,9 % para 2026, con recuperación hacia 2,3 % en 2027 (T+1). Los gastos en infraestructura penitenciaria caen bajo la categoría GFS_COFOG G04 (orden público y seguridad). Los cambios en el seguro social afectan las transferencias a los hogares y la oferta laboral.
+
+---
+
+### Mermaid: Descripción general del proceso legislativo
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_fi.md -->
+
+---
+
+### LYHYESTI
+
+Riksdagenin puolustusvaliokunnan (FöU) on esittänyt merkittävän betänkanden, joka modernisoi Ruotsin signaalitiedustelulakia (SIGINT) — merkittävin uudistus kehykseen sitten vuoden 2008 FRA-lain — hyväksyessään samalla nopeutetut valtuudet vankiloiden rakentamiseen ja sosiaalivakuutuksen pätevyysehtojen tiukentamiseen. Nämä viisi valiokuntamietintöä, päivätty 2026-05-06, muokkaavat yhdessä Ruotsin turvallisuusarkkitehtuuria, rikoslainkäyttökapasiteettia ja hyvinvointivaltion kelpoisuussääntöjä yhdessä lainsäädäntöistunnossa.
+
+---
+
+### Päätökset, joita tämä tiedote tukee
+
+1. **Politiikka-analyytikot ja kansalaisvapauksien järjestöt**: FöU18 SIGINT-modernisointiasta on nyt virallisessa väittelyssä ("Debatt om förslag") — ikkuna julkiseen tarkasteluun ennen lopullista äänestystä on auki. Arvioi hallitsemattoman massakelvalvonnan riski NATOn yhteentoimivuusvaatimusten suhteen.
+
+2. **Kriminalvårdenin johto ja oikeusministeriön virkamiehet**: CU25 on hyväksytty — määräaikaiset rakennusluvat vankiloille/säilöönottokeskuksille tulevat voimaan 1. heinäkuuta 2026. Nopeuta uusien kapasiteettipaikkojen suunnittelua ottaaksesi vastaan rangaistusuudistusten aiheuttamat tuomioajan pidennykset.
+
+3. **Sosiaalivakuutushallintoviranomaiset (Försäkringskassan) ja asumistuen saajat**: SfU21 ja SfU24 merkitsevät tiukempia pätevyys- ja etuustarkkuustoimenpiteitä — odota lisääntynyttä asiamäärää valituksissa ja uudelleenlaskelmissa.
+
+---
+
+### 60 sekunnin yhteenveto
+
+- **SIGINT-modernisointi (HD01FöU18)**: FöU ehdottaa "modernia ja tarkoituksenmukaista" oikeudellista kehystä puolustustiedustelun SIGINT-operaatioille. Tila: väittelyvaihe. Vaikutukset: laajennetut tiedonkeruuvaltuudet, jotka mahdollisesti vaikuttavat kaikkeen rajat ylittävään internetliikenteeseen. ECHR 8 artiklan noudattamisriski on aktiivinen Lagrådets-tarkastuskysymys.
+- **Vankilalaajennus hyväksytty (HD01CU25)**: Riksdagen äänesti KYLLÄ — määräaikaiset rakennusluvat vankiloille/säilöönottokeskuksille sekä hallituksen valta myöntää hätäpoikkeuksia rakennus- ja kaavoituslain (PBL) soveltamisesta. Voimaantulo: 1. heinäkuuta 2026. Syy: akuutti vankilapaikkojen puute yhdistettynä lainsäätämisiin tuomioiden korotuksiin.
+- **FOI-valvontauudistus (HD01FöU16)**: Muutokset Puolustusvoimien tutkimuslaitoksen (FOI/Totalförsvarets forskningsinstitut) lupa- ja valvontasääntöihin. Vahvistaa arkaluonteisen puolustustutkimuksen valvontaa.
+- **Sosiaalivakuutuksen pätevyys (HD01SfU21)**: Tiukentaa pääsyehtoja Ruotsin sosiaalivakuutusjärjestelmään. Todennäköisesti vaikuttaa äskettäin maahanmuuttaneisiin ja epäjatkuvassa työsuhteessa oleviin.
+- **Asumistuen tarkkuus (HD01SfU24)**: Kohdennetummat ja tarkemmat asumistukisäännöt (`bostadsbidrag`) — odotetaan vähentävän virheellisiä maksuja.
+
+---
+
+### Tärkein tuleva laukaisin
+
+**SIGINT-äänestys täysistunnossa**: FöU18 on "Debatt om förslag"-vaiheessa. Seuraa täysistuntoäänestyksen päivämäärää — odotetaan 2–4 viikon sisällä. Lagrådets-neuvoa (yttrande) ennen äänestystä olisi ratkaiseva kansalaisvapauksien kehystämisen kannalta.
+
+---
+
+### Taloudellinen lähde
+
+> ℹ️ **IMF:n apuliikenne heikentynyt** — WEO/FM Datamapper tavoitettavissa; IFS SDMX-koettimen palautti 404. Taloudelliset väitteet käyttävät WEO Apr-2026-vuosikertaa. (Status: heikentynyt, vintageAgeMonths: 1)
+
+Ruotsin BKT-kasvu: IMF WEO Apr-2026 ennustaa 1,9 % vuodelle 2026 ja palautumisen 2,3 %:iin vuonna 2027 (T+1). Vankilainfrastruktuurimenot kuuluvat GFS_COFOG-luokkaan G04 (yleinen järjestys ja turvallisuus). Sosiaalivakuutusmuutokset vaikuttavat kotitalouksien siirtoihin ja työvoimatarjontaan.
+
+---
+
+### Mermaid: Lainsäädäntöprosessin yleiskatsaus
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_fr.md -->
+
+---
+
+### RÉSUMÉ
+
+La commission de la défense du Riksdag (FöU) a présenté un betänkande historique modernisant la loi suédoise sur le renseignement d'origine électromagnétique (SIGINT) — la réforme la plus significative du cadre depuis la loi FRA de 2008 — tout en approuvant simultanément des pouvoirs accélérés de construction pénitentiaire et un resserrement des conditions d'accès à l'assurance sociale. Ces cinq rapports de commissions, datés du 2026-05-06, remodèlent collectivement l'architecture sécuritaire suédoise, la capacité de justice pénale et les règles d'éligibilité à l'État-providence en une seule session législative.
+
+---
+
+### Décisions que ce résumé appuie
+
+1. **Analystes politiques et organisations de défense des libertés civiles**: FöU18 sur la modernisation SIGINT est désormais en débat formel ("Debatt om förslag") — la fenêtre de contrôle public avant le vote final est ouverte. Évaluer le risque de surveillance de masse incontrôlée face aux exigences d'interopérabilité de l'OTAN.
+
+2. **Direction de la Kriminalvården et fonctionnaires du ministère de la justice**: CU25 a été adopté — des permis de construction temporaires pour prisons/centres de détention entrent en vigueur le 1er juillet 2026. Accélérer la planification de nouveaux sites de capacité pour absorber les augmentations de durée de peine entraînées par les réformes pénales.
+
+3. **Administrateurs de l'assurance sociale (Försäkringskassan) et bénéficiaires d'allocations logement**: SfU21 et SfU24 signalent des mesures de qualification plus strictes et de précision des prestations — anticipez une charge accrue pour les recours et les recalculs.
+
+---
+
+### Résumé en 60 secondes
+
+- **Modernisation SIGINT (HD01FöU18)**: Le FöU propose un cadre juridique "moderne et adapté" pour les opérations SIGINT du renseignement de défense. Statut : phase de débat. Implications : pouvoirs de collecte de données étendus pouvant affecter l'ensemble du trafic Internet transfrontalier. Le risque de conformité à l'article 8 de la CEDH est une question de contrôle active du Lagrådet.
+- **Expansion pénitentiaire approuvée (HD01CU25)**: Le Riksdag a voté OUI — permis de construction temporaires pour prisons/centres de détention, plus pouvoir gouvernemental d'accorder des dérogations d'urgence à la loi sur la planification et la construction (PBL). Entrée en vigueur : 1er juillet 2026. Moteur : pénurie aiguë de places de prison combinée à des augmentations de durée de peine légalement prévues.
+- **Réforme de la supervision du FOI (HD01FöU16)**: Modifications des règles d'autorisation et de supervision pour l'Institut de recherche pour la défense (FOI/Totalförsvarets forskningsinstitut). Renforce la supervision de la recherche de défense sensible.
+- **Qualification à l'assurance sociale (HD01SfU21)**: Resserre les conditions d'accès au système d'assurance sociale suédois. Susceptible d'affecter les immigrants récents et les détenteurs d'emplois non continus.
+- **Précision des allocations logement (HD01SfU24)**: Règles d'allocation logement (`bostadsbidrag`) plus ciblées et précises — réduction attendue des paiements incorrects.
+
+---
+
+### Principal déclencheur à venir
+
+**Vote SIGINT en séance plénière**: FöU18 est en phase "Debatt om förslag". Surveiller la date du vote en séance plénière — attendu dans 2 à 4 semaines. Un avis du Lagrådet (yttrande) avant le vote serait décisif pour le cadrage des libertés civiles.
+
+---
+
+### Provenance économique
+
+> ℹ️ **Transport auxiliaire FMI dégradé** — WEO/FM Datamapper accessible ; sonde IFS SDMX retournée 404. Les affirmations économiques utilisent le millésime WEO Apr-2026. (Statut : dégradé, vintageAgeMonths: 1)
+
+Croissance du PIB suédois : le FMI WEO Apr-2026 projette 1,9 % pour 2026, avec reprise vers 2,3 % en 2027 (T+1). Les dépenses en infrastructures pénitentiaires relèvent de la catégorie GFS_COFOG G04 (ordre public et sécurité). Les modifications de l'assurance sociale affectent les transferts aux ménages et l'offre de travail.
+
+---
+
+### Mermaid : Aperçu du pipeline législatif
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# שוודיה מרחיבה סמכויות SIGINT, כושר הכלא ורפורמות הביטוח הלאומי — דוחות ועדות מאי 2026
+
+---
+
+### סיכום
+
+ועדת ההגנה של הריקסדאג (FöU) הגישה betänkande פורץ דרך המחדש את חוק המודיעין הסיגנלי (SIGINT) של שוודיה — הרפורמה המשמעותית ביותר למסגרת מאז חוק FRA משנת 2008 — תוך אישור בו-זמנית של סמכויות בנייה מואצות לבתי סוהר והידוק תנאי הזכאות לביטוח הלאומי. חמשת דוחות הוועדות הללו, מתוארכים ל-2026-05-06, מעצבים מחדש במשותף את ארכיטקטורת הביטחון של שוודיה, כושר אכיפת החוק הפלילי וכללי הזכאות למדינת הרווחה במסגרת מושב חקיקתי אחד.
+
+---
+
+### החלטות שמסמך זה תומך בהן
+
+1. **אנליסטי מדיניות וארגוני חירויות אזרחיות**: FöU18 בנושא מודרניזציה של SIGINT נמצא כעת בדיון רשמי ("Debatt om förslag") — חלון המעקב הציבורי לפני ההצבעה הסופית פתוח. הערך את הסיכון של פיקוח המוני בלתי מבוקר מול דרישות יכולת הפעולה ההדדית של נאט"ו.
+
+2. **הנהלת Kriminalvården ופקידי משרד המשפטים**: CU25 אושר — היתרי בנייה זמניים לבתי סוהר/מרכזי מעצר נכנסים לתוקף ב-1 ביולי 2026. זרז את תכנון אתרי קיבולת חדשים לספיגת הארכות תקופות המאסר הנגזרות מרפורמות עונשין.
+
+3. **מנהלי ביטוח לאומי (Försäkringskassan) ומקבלי סיוע בשכר דירה**: SfU21 ו-SfU24 מסמנים אמצעי כשירות ודיוק הטבות מחמירים יותר — צפה עומס מוגבר בערעורים ובחישובים מחדש.
+
+---
+
+### סיכום ב-60 שניות
+
+- **מודרניזציה של SIGINT (HD01FöU18)**: FöU מציע מסגרת משפטית "מודרנית ומתאימה למטרה" לפעולות SIGINT של מודיעין ההגנה. סטטוס: שלב דיון. השלכות: סמכויות איסוף נתונים מורחבות העשויות להשפיע על כל תנועת האינטרנט החוצה גבולות. סיכון עמידה בסעיף 8 של ECHR הוא שאלת ביקורת פעילה של Lagrådet.
+- **הרחבת בתי סוהר אושרה (HD01CU25)**: הריקסדאג הצביע בעד — היתרי בנייה זמניים לבתי סוהר/מרכזי מעצר, בתוספת סמכות ממשלתית להעניק פטורים חירומיים מחוק תכנון ובנייה (PBL). תחילת תוקף: 1 ביולי 2026. הגורם: מחסור חריף במקומות כליאה בשילוב עם הארכות תקופות מאסר שנחקקו.
+- **רפורמת פיקוח FOI (HD01FöU16)**: שינויים בכללי היתרים ופיקוח על מכון המחקר לביטחון (FOI/Totalförsvarets forskningsinstitut). מחזק את הפיקוח על מחקר הגנה רגיש.
+- **כשירות ביטוח לאומי (HD01SfU21)**: מהדק את תנאי הגישה למערכת הביטוח הלאומי השוודית. צפוי להשפיע על מהגרים חדשים ועל בעלי תעסוקה לא-רציפה.
+- **דיוק סיוע בשכר דירה (HD01SfU24)**: כללים ממוקדים ומדויקים יותר לסיוע בשכר דירה (`bostadsbidrag`) — צפויה הפחתה בתשלומים שגויים.
+
+---
+
+### הטריגר הקרוב החשוב ביותר
+
+**הצבעת SIGINT במליאה**: FöU18 נמצא בשלב "Debatt om förslag". עקוב אחר מועד ההצבעה במליאה — צפוי תוך 2–4 שבועות. חוות דעת של Lagrådet (yttrande) לפני ההצבעה תהיה מכרעת לניסוח זכויות האזרח.
+
+---
+
+### מקור כלכלי
+
+> ℹ️ **הובלת העזר של קרן המטבע הבינלאומית נחלשה** — WEO/FM Datamapper נגיש; בדיקת IFS SDMX החזירה 404. הטענות הכלכליות משתמשות בגרסת WEO Apr-2026. (סטטוס: נחלש, vintageAgeMonths: 1)
+
+צמיחת תמ"ג שוודי: IMF WEO Apr-2026 חוזה 1.9% לשנת 2026, עם התאוששות ל-2.3% ב-2027 (T+1). הוצאות תשתית בתי סוהר נכנסות תחת קטגוריית GFS_COFOG G04 (סדר ציבורי ובטחון). שינויים בביטוח הלאומי משפיעים על העברות משקי בית ועל היצע העבודה.
+
+---
+
+### Mermaid: סקירת צינור החקיקה
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_ja.md -->
+
+---
+
+### 要約
+
+スウェーデン国会（Riksdag）の国防委員会（FöU）は、2008年FRA法以来最も重要な改革となるスウェーデンの信号情報（SIGINT）法を近代化する画期的なbetänkandeを提出し、同時に刑務所建設の加速権限と社会保険の資格要件の厳格化を承認した。2026-05-06付けのこれら5つの委員会報告は、1つの立法会期でスウェーデンの安全保障アーキテクチャ、刑事司法能力、福祉国家の適格性規則を一括して再編する。
+
+---
+
+### このブリーフが支援する決定事項
+
+1. **政策アナリストおよび市民自由権団体**: SIGINT近代化に関するFöU18は現在、正式な討論段階（"Debatt om förslag"）にある — 最終投票前の公開審査の窓口は開かれている。NATOの相互運用性要件に対する大規模監視のリスクを評価すること。
+
+2. **Kriminalvården幹部および法務省当局者**: CU25が可決された — 刑務所・拘置所の仮設建設許可が2026年7月1日に発効する。刑事改革によって生じた刑期延長分を吸収するため、新規収容施設の計画を早急に進めること。
+
+3. **社会保険行政担当者（Försäkringskassan）および住宅手当受給者**: SfU21とSfU24は、より厳しい資格要件と給付精度措置を示唆している — 不服申立および再計算の増加を見込むこと。
+
+---
+
+### 60秒サマリー
+
+- **SIGINT近代化（HD01FöU18）**: FöUは国防情報のSIGINT業務向けの「近代的かつ目的適合型」法的枠組みを提案。状況：討論段階。影響：国境を越えるすべてのインターネットトラフィックに潜在的に影響する拡大されたデータ収集権限。ECHR第8条の遵守リスクはLagrådetsの現行審査事項。
+- **刑務所拡張承認（HD01CU25）**: Riksdagenは賛成票を投じた — 刑務所・拘置所の期間限定建設許可に加え、建設・計画法（PBL）の緊急免除を政府が発令する権限。発効：2026年7月1日。要因：刑事改革による刑期延長と相まった刑務所不足の深刻化。
+- **FOI監督改革（HD01FöU16）**: 総合防衛研究所（FOI/Totalförsvarets forskningsinstitut）の許可・監督規則の変更。機密防衛研究への監督を強化。
+- **社会保険資格（HD01SfU21）**: スウェーデン社会保険制度へのアクセス資格要件を厳格化。最近の移民や断続的雇用者に影響する可能性が高い。
+- **住宅手当精度（HD01SfU24）**: より的を絞った正確な住宅手当（`bostadsbidrag`）規則 — 誤支給の削減が期待される。
+
+---
+
+### 最重要の今後のトリガー
+
+**本会議でのSIGINT投票**: FöU18は"Debatt om förslag"段階にある。本会議投票日程に注目 — 2〜4週間以内の見込み。投票前のLagrådet意見書（yttrande）は市民的自由のフレーミングにとって決定的となる。
+
+---
+
+### 経済データの出典
+
+> ℹ️ **IMF補助輸送が劣化** — WEO/FM Datamapper到達可能；IFS SDMXプローブが404を返した。経済的主張はWEO Apr-2026ヴィンテージを使用。（状態：劣化、vintageAgeMonths: 1）
+
+スウェーデンGDP成長率：IMF WEO Apr-2026は2026年に1.9%、2027年（T+1）には2.3%への回復を予測。刑務所インフラ支出はGFS_COFOG区分G04（公共秩序と安全）に該当。社会保険の変更は家計移転と労働供給に影響する。
+
+---
+
+### Mermaid: 立法パイプラインの概要
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_ko.md -->
+
+---
+
+### 요약
+
+스웨덴 의회(Riksdag) 국방위원회(FöU)는 2008년 FRA법 이후 가장 중요한 개혁인 스웨덴 신호정보(SIGINT)법을 현대화하는 획기적인 betänkande를 제출하는 동시에, 교도소 건설 가속 권한 및 사회보험 자격 요건 강화를 승인했다. 2026-05-06자 이들 5개 위원회 보고서는 한 입법 회기 내에 스웨덴의 안보 아키텍처, 형사 사법 역량, 복지 국가 자격 규정을 전반적으로 재편한다.
+
+---
+
+### 이 브리핑이 지원하는 결정
+
+1. **정책 분석가 및 시민 자유 단체**: SIGINT 현대화에 관한 FöU18은 현재 공식 토론("Debatt om förslag") 단계에 있다 — 최종 투표 전 공개 심사의 창이 열려 있다. NATO 상호운용성 요건 대비 통제되지 않는 대규모 감시 위험을 평가할 것.
+
+2. **Kriminalvården 지도부 및 법무부 관리**: CU25가 통과되었다 — 교도소·구치소에 대한 임시 건축 허가가 2026년 7월 1일 발효된다. 형사 개혁으로 인한 형기 연장을 수용하기 위해 신규 수용 시설 계획을 가속화할 것.
+
+3. **사회보험 담당자(Försäkringskassan) 및 주거수당 수급자**: SfU21과 SfU24는 더 엄격한 자격 및 급여 정확성 조치를 시사한다 — 이의 신청 및 재산정 업무량 증가에 대비할 것.
+
+---
+
+### 60초 요약
+
+- **SIGINT 현대화(HD01FöU18)**: FöU는 국방 정보 SIGINT 운용을 위한 "현대적이고 목적에 적합한" 법적 프레임워크를 제안. 상태: 토론 단계. 시사점: 모든 국경을 초월한 인터넷 트래픽에 잠재적으로 영향을 미치는 확대된 데이터 수집 권한. ECHR 제8조 준수 위험은 Lagrådet의 현안 심사 문제.
+- **교도소 확장 승인(HD01CU25)**: 의회 찬성 투표 — 교도소·구치소에 대한 기한부 건축 허가와 계획건축법(PBL) 긴급 면제 발령 정부 권한 부여. 발효: 2026년 7월 1일. 원인: 형사 개혁으로 인한 형기 연장과 맞물린 심각한 교도소 부족.
+- **FOI 감독 개혁(HD01FöU16)**: 총합방위연구소(FOI/Totalförsvarets forskningsinstitut) 허가·감독 규정 변경. 민감한 국방 연구에 대한 감독 강화.
+- **사회보험 자격(HD01SfU21)**: 스웨덴 사회보험 시스템 접근 자격 요건 강화. 최근 이민자 및 비연속 고용자에 영향을 미칠 가능성이 높음.
+- **주거수당 정확성(HD01SfU24)**: 더 표적화되고 정확한 주거수당(`bostadsbidrag`) 규정 — 부당 지급 감소 기대.
+
+---
+
+### 주요 향후 트리거
+
+**본회의 SIGINT 투표**: FöU18은 "Debatt om förslag" 단계에 있다. 본회의 투표 일정에 주목 — 2–4주 내 예정. 투표 전 Lagrådet 의견서(yttrande)는 시민 자유 프레이밍에 결정적이 될 것.
+
+---
+
+### 경제 데이터 출처
+
+> ℹ️ **IMF 보조 전송 저하** — WEO/FM Datamapper 접근 가능; IFS SDMX 프로브가 404를 반환. 경제적 주장은 WEO Apr-2026 빈티지를 사용. (상태: 저하, vintageAgeMonths: 1)
+
+스웨덴 GDP 성장률: IMF WEO Apr-2026은 2026년 1.9%를 예측하며, 2027년(T+1)에는 2.3%로 회복될 전망. 교도소 인프라 지출은 GFS_COFOG 범주 G04(공공 질서 및 안전)에 해당. 사회보험 변경은 가계 이전과 노동 공급에 영향을 미침.
+
+---
+
+### Mermaid: 입법 파이프라인 개요
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_nl.md -->
+
+---
+
+### SAMENVATTING
+
+De Defensiecommissie van de Riksdag (FöU) heeft een baanbrekend betänkande gepresenteerd dat de Zweedse wet op signaalintelligentie (SIGINT) moderniseert — de meest ingrijpende hervorming van het kader sinds de FRA-wet van 2008 — en tegelijkertijd versnelde bevoegdheden voor gevangenisbouw en aanscherping van de kwalificatievoorwaarden voor sociale verzekering heeft goedgekeurd. Deze vijf commissierapporten, gedateerd 2026-05-06, hervormen gezamenlijk Zwedens veiligheidsarchitectuur, strafrechtscapaciteit en toelatingsregels van de verzorgingsstaat in één wetgevingszitting.
+
+---
+
+### Beslissingen die dit overzicht ondersteunt
+
+1. **Beleidsanalisten en burgerrechtenorganisaties**: FöU18 over SIGINT-modernisering bevindt zich nu in formeel debat ("Debatt om förslag") — het venster voor publieke controle vóór de eindstemming is open. Beoordeel het risico van ongecontroleerde massasurveillance versus NATOs interoperabiliteitsvereisten.
+
+2. **De leiding van Kriminalvården en functionarissen van het ministerie van justitie**: CU25 is aangenomen — tijdelijke bouwvergunningen voor gevangenissen/detentiecentra treden in werking op 1 juli 2026. Versnel de planning van nieuwe capaciteitslocaties om de door strafrechthervormingen veroorzaakte strafverlengingen op te vangen.
+
+3. **Sociale verzekeringsadministrators (Försäkringskassan) en ontvangers van woonsubsidie**: SfU21 en SfU24 signaleren strengere kwalificerings- en uitkeringsnauwkeuringsmaatregelen — verwacht een hogere caseload voor bezwaren en herberekeningen.
+
+---
+
+### Samenvatting in 60 seconden
+
+- **SIGINT-modernisering (HD01FöU18)**: FöU stelt een "modern en doeltreffend" juridisch kader voor voor SIGINT-operaties van defensieinlichtingen. Status: debatfase. Implicaties: uitgebreide gegevensverzamelingsbevoegdheden die mogelijk alle grensoverschrijdend internetverkeer raken. Nalevingsrisico van EVRM Artikel 8 is een actieve Lagrådet-toetsingskwestie.
+- **Gevangenisuitbreiding goedgekeurd (HD01CU25)**: De Riksdag stemde JA — tijdelijke bouwvergunningen voor gevangenissen/detentiecentra, plus regeringsbevoegdheid voor noodvrijstellingen van de Wet ruimtelijke ordening en bouw (PBL). Inwerkingtreding: 1 juli 2026. Aanleiding: acute tekort aan gevangenisplaatsen gecombineerd met wettelijk vastgelegde strafverhogingen.
+- **FOI-toezichtshervorming (HD01FöU16)**: Wijzigingen in vergunning- en toezichtsregels voor het Instituut voor Defensieonderzoek (FOI/Totalförsvarets forskningsinstitut). Versterkt het toezicht op gevoelig defensieonderzoek.
+- **Kwalificatie sociale verzekering (HD01SfU21)**: Verscherpt de kwalificatievoorwaarden voor toegang tot het Zweedse sociale verzekeringssysteem. Zal waarschijnlijk recente immigranten en houders van niet-doorlopende dienstverbanden treffen.
+- **Nauwkeurigheid woonsubsidie (HD01SfU24)**: Meer gerichte en nauwkeurige woonsubsidieregels (`bostadsbidrag`) — verwacht worden minder onjuiste betalingen.
+
+---
+
+### Belangrijkste aankomende trigger
+
+**SIGINT-stemming in plenaire vergadering**: FöU18 bevindt zich in de "Debatt om förslag"-fase. Let op de datum van de plenaire stemming — verwacht binnen 2–4 weken. Een Lagrådet-advies (yttrande) vóór de stemming zou beslissend zijn voor de burgerrechtelijke framing.
+
+---
+
+### Economische herkomst
+
+> ℹ️ **IMF-hulptransport gedegradeerd** — WEO/FM Datamapper bereikbaar; IFS SDMX-sonde retourneerde 404. Economische beweringen gebruiken WEO Apr-2026-jaargang. (Status: gedegradeerd, vintageAgeMonths: 1)
+
+Zweedse bbp-groei: IMF WEO Apr-2026 projecteert 1,9 % voor 2026, met herstel naar 2,3 % in 2027 (T+1). Gevangenisinfrastructuuruitgaven vallen onder GFS_COFOG-categorie G04 (openbare orde en veiligheid). Wijzigingen in de sociale verzekering beïnvloeden huishoudenstransfers en arbeidsaanbod.
+
+---
+
+### Mermaid: Overzicht wetgevingspijplijn
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_no.md -->
+
+---
+
+### KORTFATTET
+
+Riksdagens forsvarskomité (FöU) har fremlagt et banebrytende betänkande som moderniserer Sveriges lov om signaletterforskning (SIGINT) — den mest betydningsfulle reformen av rammeverket siden FRA-loven fra 2008 — mens den samtidig godkjente akselererte fengselskonstruksjonsfullmakter og innstramming av kvalifikasjonsbetingelsene for trygd. Disse fem komitérapportene, datert 2026-05-06, omformer til sammen Sveriges sikkerhetsarkitektur, strafferettslig kapasitet og velferdsstatsregelverk i én lovgivningssesjon.
+
+---
+
+### Beslutninger dette brifingen støtter
+
+1. **Policyanalytikere og sivil-frihetsorganisasjoner**: FöU18 om SIGINT-modernisering er nå i formell debatt ("Debatt om förslag") — vinduet for offentlig granskning før endelig avstemning er åpent. Vurder risikoen ved ukontrollert masseovervåking mot NATOs krav om interoperabilitet.
+
+2. **Kriminalvårdens ledelse og justisdepartementets embetsmenn**: CU25 er vedtatt — midlertidige byggetillatelser for fengsler/interneringssentre trer i kraft 1. juli 2026. Fremskynde planlegging av nye kapasitetssteder for å absorbere straffetidsøkninger drevet av straffereformer.
+
+3. **Trygdeadministratorer (Försäkringskassan) og boligstøttemottakere**: SfU21 og SfU24 signalerer strengere kvalifiserings- og ytelsesnøyaktighetstiltak — forvent økt saksmengde for klager og omberegninger.
+
+---
+
+### 60-sekunders oppsummering
+
+- **SIGINT-modernisering (HD01FöU18)**: FöU foreslår et "moderne og formålstjenlig" rettslig rammeverk for forsvarsettretningens SIGINT-operasjoner. Status: debattfase. Implikasjoner: utvidede datainnsamlingsfullmakter som potensielt påvirker all grenseoverskridende internettrafikk. ECHR artikkel 8-overholdelsesrisiko er et levende Lagrådet-kontrollspørsmål.
+- **Fengselsutvidelse godkjent (HD01CU25)**: Riksdagen stemte JA — tidsbegrensede byggetillatelser for fengsler/interneringssentre, pluss regjeringens makt til å utstede nødunntak fra Plan- og bygningsloven (PBL). Ikrafttredelse: 1. juli 2026. Driver: akut mangel på fengselsplasser kombinert med lovfestede straffeskjerpelser.
+- **FOI-tilsynsreform (HD01FöU16)**: Endringer i tillatelse og tilsynsregler for Totalförsvarets forskningsinstitut (FOI). Styrker tilsynet med sensitiv forsvarsforskning.
+- **Trygdekvalifisering (HD01SfU21)**: Strammer kvalifiseringsbetingelsene for tilgang til det svenske trygdesystemet. Sannsynlig å påvirke nyere innvandrere og innehavere av ikke-kontinuerlig sysselsetting.
+- **Boligstøttenøyaktighet (HD01SfU24)**: Mer målrettede og nøyaktige boligstøtteregler (`bostadsbidrag`) — forventet å redusere feilutbetalinger.
+
+---
+
+### Viktigste fremtidige utløser
+
+**SIGINT-avstemning i plenum**: FöU18 er i "Debatt om förslag"-fasen. Følg med på datoen for plenaravstemning — forventet innen 2–4 uker. Et Lagrådet-råd (yttrande) før avstemningen ville være avgjørende for de sivile rettighetenes innrammingen.
+
+---
+
+### Økonomisk kilde
+
+> ℹ️ **IMF-hjelpetransport degradert** — WEO/FM Datamapper nåbar; IFS SDMX-sonde returnerte 404. Økonomiske påstander bruker WEO Apr-2026-årgång. (Status: degradert, vintageAgeMonths: 1)
+
+Svensk BNP-vekst: IMF WEO Apr-2026 projiserer 1,9 % for 2026, med gjenoppretting mot 2,3 % i 2027 (T+1). Fengselsinfrastrukturutgifter faller under GFS_COFOG kategori G04 (offentlig orden og sikkerhet). Trygdeendringer påvirker husholdsoverføringer og arbeidstilbud.
+
+---
+
+### Mermaid: Lovgivningsprosessoversikt
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_sv.md -->
+
+---
+
+### KORTFATTNING
+
+Riksdagens försvarsutskott (FöU) har presenterat ett banbrytande betänkande som moderniserar Sveriges signalspaningslag (SIGINT) — den mest betydande reformen av ramverket sedan 2008 års FRA-lag — och godkände samtidigt accelererade befogenheter för fängelsebyggande och skärpta kvalifikationsvillkor för socialförsäkring. Dessa fem utskottsbetänkanden, daterade 2026-05-06, omformar sammantaget Sveriges säkerhetsarkitektur, straffrättsliga kapacitet och välfärdsstatens behörighetsregler i en enda lagstiftningssession.
+
+---
+
+### Beslut som detta underlag stödjer
+
+1. **Policyanalytiker och medborgerliga fri- och rättighetsorganisationer**: FöU18 om SIGINT-modernisering är nu i formell debatt ("Debatt om förslag") — fönstret för offentlig granskning före omröstning är öppet. Bedöm risken med okontrollerad massövervakning mot NATOs krav på interoperabilitet.
+
+2. **Kriminalvårdens ledning och justitiedepartementets tjänstemän**: CU25 har passerat — tidsbegränsade bygglov för fängelser/häkten träder i kraft 1 juli 2026. Påskynda planering av nya kapacitetsplatser för att absorbera strafflängdsökningar drivna av straffreformer.
+
+3. **Socialförsäkringsadministratörer (Försäkringskassan) och bostadsbidragstagare**: SfU21 och SfU24 signalerar stramare kvalificerings- och bidragsnoggrannhetskrav — förvänta ökad ärendemängd för överklaganden och omräkningar.
+
+---
+
+### 60-sekunders sammanfattning
+
+- **SIGINT-modernisering (HD01FöU18)**: FöU föreslår ett "modernt och ändamålsenligt" rättsligt ramverk för försvarsunderrättelsetjänstens SIGINT-verksamhet. Status: debattfas. Implikationer: utvidgade datainsamlingsbehörigheter som potentiellt påverkar all gränsöverskridande internettrafik. ECHR artikel 8-efterlevnadsrisk är en levande Lagrådetgranskningsfråga.
+- **Fängelseexpansion godkänd (HD01CU25)**: Riksdagen röstade JA — tidsbegränsade bygglov för fängelser/häkten, plus regeringsmakt att utfärda nöddispenser från Plan- och bygglagen (PBL). Träder i kraft: 1 juli 2026. Drivkraft: akut brist på fängelseplatser kombinerat med lagstiftade straffskärpningar.
+- **FOI-tillsynsreform (HD01FöU16)**: Ändringar i tillstånds- och tillsynsregler för Totalförsvarets forskningsinstitut (FOI). Stärker tillsynen av känslig försvarsforskning.
+- **Socialförsäkringskvalificering (HD01SfU21)**: Skärper villkoren för tillgång till det svenska socialförsäkringssystemet. Sannolikt att påverka nyanlända och innehavare av icke-kontinuerliga anställningar.
+- **Bostadsbidragsnoggrannhet (HD01SfU24)**: Mer riktade och exakta regler för bostadsbidrag (`bostadsbidrag`) — förväntas minska felaktiga utbetalningar.
+
+---
+
+### Viktigaste kommande utlösare
+
+**SIGINT-omröstning i kammaren**: FöU18 är i "Debatt om förslag"-fasen. Bevaka datumet för kammaromröstning — förväntas inom 2–4 veckor. Ett Lagrådetsyttrande före omröstningen skulle vara avgörande för den medborgerliga rättighetsinriktningen.
+
+---
+
+### Ekonomisk källa
+
+> ℹ️ **IMF:s hjälptransport degraderad** — WEO/FM Datamapper nåbar; IFS SDMX-sondage returnerade 404. Ekonomiska påståenden använder WEO Apr-2026-årgång. (Status: degraderad, vintageAgeMonths: 1)
+
+Svensk BNP-tillväxt: IMF WEO Apr-2026 projicerar 1,9 % för 2026, med återhämtning mot 2,3 % 2027 (T+1). Fängelseinfrastrukturutgifter faller under GFS_COFOG kategori G04 (allmän ordning och säkerhet). Förändringar i socialförsäkringen påverkar hushållsöverföringar och arbetskraftsutbud.
+
+---
+
+### Mermaid: Lagstiftningsprocessöversikt
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_zh.md -->
+
+---
+
+### 摘要
+
+瑞典议会（Riksdag）国防委员会（FöU）提交了一份具有里程碑意义的betänkande，对瑞典信号情报（SIGINT）法律进行现代化改革——这是自2008年FRA法以来对该框架最重大的改革——同时批准了加快监狱建设的权力并收紧了社会保险资格条件。这五份委员会报告（日期为2026-05-06）在一次立法会议中共同重塑了瑞典的安全架构、刑事司法能力和福利国家资格规则。
+
+---
+
+### 本简报支持的决策
+
+1. **政策分析师和公民自由组织**: 关于SIGINT现代化的FöU18目前处于正式辩论阶段（"Debatt om förslag"）——最终投票前的公众监督窗口已开放。评估不受控大规模监控与北约互操作性要求之间的风险。
+
+2. **Kriminalvården领导层和司法部官员**: CU25已通过——监狱/拘留中心的临时建筑许可于2026年7月1日生效。加快新增容量地点的规划，以吸收刑事改革带来的刑期延长。
+
+3. **社会保险管理人员（Försäkringskassan）和住房补贴受益人**: SfU21和SfU24预示着更严格的资格认定和福利准确性措施——预期上诉和重新计算的工作量将增加。
+
+---
+
+### 60秒摘要
+
+- **SIGINT现代化（HD01FöU18）**: FöU提议为国防情报SIGINT行动建立"现代化且切实可行"的法律框架。状态：辩论阶段。影响：扩大的数据收集权限可能影响所有跨境互联网流量。ECHR第8条合规风险是Lagrådet的现行审查问题。
+- **监狱扩建获批（HD01CU25）**: 议会投票赞成——监狱/拘留中心的限时建筑许可，以及政府发布《规划建筑法》（PBL）紧急豁免的权力。生效：2026年7月1日。原因：监狱位置严重短缺，加上法定刑期延长。
+- **FOI监督改革（HD01FöU16）**: 对瑞典国防研究总局（FOI/Totalförsvarets forskningsinstitut）许可和监督规则的变更。加强对敏感国防研究的监督。
+- **社会保险资格（HD01SfU21）**: 收紧进入瑞典社会保险体系的资格条件。可能影响近期移民和非连续就业者。
+- **住房补贴准确性（HD01SfU24）**: 更具针对性和准确性的住房补贴（`bostadsbidrag`）规则——预计减少错误支付。
+
+---
+
+### 最重要的前瞻性触发因素
+
+**全体会议SIGINT投票**: FöU18处于"Debatt om förslag"阶段。关注全体会议投票日期——预计在2–4周内。投票前的Lagrådet咨询意见（yttrande）将对公民自由框架具有决定性意义。
+
+---
+
+### 经济数据来源
+
+> ℹ️ **IMF辅助传输降级** — WEO/FM Datamapper可访问；IFS SDMX探针返回404。经济主张使用WEO Apr-2026年份数据。（状态：降级，vintageAgeMonths: 1）
+
+瑞典GDP增长：IMF WEO Apr-2026预测2026年增长1.9%，2027年（T+1）恢复至2.3%。监狱基础设施支出属于GFS_COFOG类别G04（公共秩序与安全）。社会保险变更影响家庭转移支付和劳动供给。
+
+---
+
+### Mermaid: 立法流程概览
+
+```mermaid
+flowchart LR
+    FöU18["HD01FöU18\nSIGINT Modernisation\nDebatt om förslag"]
+    CU25["HD01CU25\nPrison Expansion\n✅ APPROVED"]
+    FöU16["HD01FöU16\nFOI Supervision\nDebatt om förslag"]
+    SfU21["HD01SfU21\nSocial Insurance Qualification\nDebatt om förslag"]
+    SfU24["HD01SfU24\nHousing Benefit Accuracy\nDebatt om förslag"]
+
+    FöU18 --> Vote1["Plenary Vote\n~2-4 weeks"]
+    CU25 --> Effect["Effect: 1 July 2026"]
+    FöU16 --> Vote2["Plenary Vote"]
+    SfU21 --> Vote3["Plenary Vote"]
+    SfU24 --> Vote4["Plenary Vote"]
+
+    style CU25 fill:#00ff88,color:#000
+    style FöU18 fill:#ff4466,color:#fff
+    style FöU16 fill:#ffbe0b,color:#000
+    style SfU21 fill:#00d9ff,color:#000
+    style SfU24 fill:#00d9ff,color:#000
+    style Vote1 fill:#ff4466,color:#fff
+    style Effect fill:#00ff88,color:#000
+```
+
+<!-- source-sha: fe71ff7a060499c9abe756eed962dcf32b9a3e02 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 6 | Linked in Article Sources, not expanded inline |
 
@@ -1924,6 +2879,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

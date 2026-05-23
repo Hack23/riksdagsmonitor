@@ -6,7 +6,7 @@ date: 2026-05-07
 subfolder: motions
 slug: 2026-05-07-motions
 source_folder: analysis/daily/2026-05-07/motions
-generated_at: 2026-05-23T08:06:00.703Z
+generated_at: 2026-05-23T22:05:56.674Z
 language: en
 layout: article
 ---
@@ -87,6 +87,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1647,13 +1660,752 @@ From prior cycles (2026-04-30, 2026-05-01, 2026-05-04, 2026-05-05, 2026-05-06):
 
 **New PIRs added this cycle**: See intelligence-assessment.md.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_ar.md -->
+
+**التصنيف**: غير مصنَّف // مصدر عام // اللائحة الأوروبية للبيانات GDPR Art. 9(2)(e,g)
+**التاريخ**: 2026-05-07
+**المؤلف**: James Pether Sörling
+**مستوى الثقة**: B3 — مصدر موثوق، معلومة محتملة الصحة (مقياس الأدميرالية)
+**معرّف الجلسة**: 25482566277
+
+### الخلاصة التنفيذية (BLUF)
+
+ثماني مقترحات من لجان المعارضة قُدِّمت في 2026-05-04 لتنظيم مقاومة منسقة ضد اقتراحَي حكوميين: أربعة أحزاب معارضة (V, SD, S, C, MP) تطعن عبر MJU في الاقتراح prop. 2025/26:242 الخاص بإلغاء تنظيم قطاع الغابات، فيما تطالب V وC وMP عبر JuU برفض خفض سن المسؤولية الجنائية إلى 13 عاماً في الاقتراح prop. 2025/26:246. مع اقتراب انتخابات سبتمبر 2026 بنحو 125 يوماً، تحمل المعركتان التشريعيتان أعلى درجات الأهمية الانتخابية. أغلبية 165 مقعداً للحكومة تواجه أشد مواجهة دستورية في الربيع البرلماني.
+
+### القراءة الاستخباراتية في 60 ثانية
+
+- **مجموعة الغابات (MJU, prop. 242)**: V تطالب برفض شبه كامل؛ MP تطالب بالرفض التام؛ S تطالب بتحليل شامل للتأثير وتقييم مستقل؛ C تطالب بسياسة غابات وطنية متماسكة؛ SD (الشريك في الائتلاف) تُقدّم تعديلات — مما يخلق توتراً داخل الائتلاف يُعدّ المتغير الحاسم.
+- **مجموعة السن الجنائي (JuU, prop. 246)**: C (الفاعل المحوري) تطالب مباشرةً برفض تخفيض السن إلى 13 عاماً، ورفع الحد الأقصى للعقوبات، وتعديلات في رعاية الشباب والسجل الجنائي. V تطالب كذلك برفض شبه كامل. MP ترفض تخفيض السن إلى 13 عاماً وأحكام العقوبات. ثلاثة أحزاب معارضة تستند إلى اتفاقية الأمم المتحدة لحقوق الطفل (CRC) المادة 40(3)(a) — تحدٍّ لشرعية الدستور.
+- **رأي Lagrådet في prop. 246**: لم يُنشر بعد (حتى 2026-05-07). إذا أشار Lagrådet إلى عدم التوافق مع CRC، ترتفع احتمالية تراجع الحكومة من ~15% إلى ~30-40%.
+- **موقف S من السن الجنائي**: لم تُقدّم S حتى الآن أي اقتراح JuU — الفجوة الحاسمة. تصريح S يُحدد ما إذا كانت المعارضة ستصل إلى 163 مقعداً في هذا التصويت.
+- **التأطير الانتخابي**: يتموضع الكتلتان للانتخابات: تعديلات SD على قطاع الغابات تُحدث انشقاقاً ائتلافياً مرئياً؛ مقاومة V/MP/C للسن الجنائي تُؤطّر حقوق الطفل كقضية انتخابية.
+- **السياق الاقتصادي**: نمو الناتج المحلي الإجمالي السويدي 0.82% (2024، البنك الدولي)؛ البطالة 8.69% (2025، البنك الدولي). الضغوط المالية تُعمّق حساسية الناخبين تجاه كفاءة القطاع العام وتكاليف الجريمة.
+
+### أبرز القرارات المدعومة
+
+1. **استراتيجية توقيت JuU**: متى تضغط C على اللجنة لانتزاع تنازلات قبل رأي Lagrådet — أم تنتظره رافعةً للتفاوض؟
+2. **إعلان موقف S**: هل ستُقدّم S تعديلاً على prop. 246 قبل الموعد النهائي للجنة JuU (~2026-05-20)؟
+3. **متجه تفاوض MJU**: هل تُشير مقترحات SD إلى توتر ائتلافي حقيقي أم إلى تموضع تكتيكي لانتزاع تنازلات من M/KD؟
+
+### أبرز المحفزات المستقبلية
+
+**رأي Lagrådet في prop. 2025/26:246** — متوقع ~2026-06-05. إذا أشار Lagrådet إلى عدم التوافق مع CRC المادة 40(3)(a)، يتحوّل الحساب السياسي بشكل حاسم. تواجه الحكومة خياراً: الاستمرار وتحمّل مخاطر الرقابة الدستورية، أو التراجع وتحمّل خسارة انتخابية في سياسة الأمن الجنائي.
+
+### ملخص ثقة الآفاق الزمنية
+
+| الأفق | التقييم | صياغة WEP |
+|---------|-----------|-------------|
+| T+72h | بدء مداولات اللجنة؛ لا تصويتات | نقدّر بثقة عالية |
+| T+7d | إعلان S بشأن prop. 246 محتمل | نتوقع على الأرجح اقتراحاً أو بياناً من S |
+| T+30d | رأي Lagrådet؛ تقرير لجنة MJU | نرى من المحتمل أن ينشر Lagrådet رأيه |
+| T+انتخابات | تعديل اقتراح واحد أو كليهما أو هزيمته | فرص متقاربة لتنازلات حكومية |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["توتر داخل الائتلاف\nتعديلات SD مقابل M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — تحدي CRC"]
+    E --> F["Lagrådet في انتظار الرأي\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_da.md -->
+
+**Klassificering**: IKKE KLASSIFICERET // OFFENTLIG KILDE // GDPR Art. 9(2)(e,g)
+**Dato**: 2026-05-07
+**Forfatter**: James Pether Sörling
+**Konfidens**: B3 — Pålidelig kilde, muligvis sand (Admiralitetsskalaen)
+**Kørsels-ID**: 25482566277
+
+### BLUF
+
+Otte oppositionsudvalgsforslag indgivet 2026-05-04 monterer koordineret modstand mod to regeringsforslag: fire oppositionspartier (V, SD, S, C, MP) udfordrer prop. 2025/26:242 om skovbrugsderegulering via MJU, mens V, C og MP kræver afvisning af nedsættelse af den strafferetlige lavalder til 13 år i prop. 2025/26:246 via JuU. Med valget i september 2026 ca. 125 dage væk bærer begge lovgivningskampe maksimal valgmæssig relevans. Regeringens 165-mandatsflertal møder sin mest konstitutionelt afgørende konfrontation i den parlamentariske forårssamling.
+
+### 60-sekunders efterretningslæsning
+
+- **Skovbrugskluster (MJU, prop. 242)**: V kræver nærmest total afvisning; MP kræver total afvisning; S kræver omfattende konsekvensanalyse og uafhængig evaluering; C kræver sammenhængende national skovpolitik; SD (koalitionspartner) indsender ændringsforslag — hvilket skaber en intrakoalitionsspænding, der er den kritiske variabel.
+- **Kriminalitetsalderkluster (JuU, prop. 246)**: C (nøgleaktør) kræver direkte afvisning af aldersnedsættelsen til 13 år, maksimal strafskærpelse, ændringer i ungdomspleje og strafferegister. V kræver ligeledes nærmest total afvisning. MP afviser aldersnedsættelse til 13 år og strafudmålingsbestemmelserne. Tre oppositionspartier påberåber sig FN's Børnekonvention (CRC) Art. 40(3)(a) — en konstitutionel legitimitetsudfordring.
+- **Lagrådets udtalelse om prop. 246**: Endnu ikke offentliggjort (pr. 2026-05-07). Hvis Lagrådet markerer CRC-uforligelighed, stiger sandsynligheden for et regeringstilbagetog fra ~15% til ~30-40%.
+- **S's holdning til kriminalitetsalder**: S har endnu ikke indsendt en JuU-motion — det afgørende hul. S's erklæring afgør, om oppositionen når 163 mandater i denne afstemning.
+- **Valgframing**: Begge klustrer positionerer sig til valget: SD's skovbrugsændringer skaber synlig intrakoalitionsdissens; V/MP/C's modstand mod kriminalitetsalderen indrammes som et valgemne om børnerettigheder.
+- **Økonomisk baggrund**: Sverige BNP-vækst 0,82% (2024, Verdensbanken); arbejdsløshed 8,69% (2025, Verdensbanken). Finansielt pres intensiverer vælgernes følsomhed over for offentlig effektivitet og kriminalitetsomkostninger.
+
+### Top understøttede beslutninger
+
+1. **JuU-tidsstrategi**: Hvornår presser C på udvalgsmedgivelser før Lagrådets udtalelse — eller afventer den som løftestang?
+2. **S's holdningserklæring**: Vil S indsende et ændringsforslag om prop. 246 inden JuU's udvalgsdeadline (~2026-05-20)?
+3. **MJU-forhandlingsvektor**: Signalerer SD's motion ægte intrakoalitionsspænding eller taktisk positionering for at opnå indrømmelser fra M/KD?
+
+### Top fremadrettet udløser
+
+**Lagrådets udtalelse om prop. 2025/26:246** — forventet ~2026-06-05. Hvis Lagrådet markerer CRC Art. 40(3)(a)-uforligelighed, forskydes den politiske kalkule afgørende. Regeringen står over for et valg: fortsæt og risiker konstitutionel censur, eller træk tilbage og led en elektoral tab på flagskibs-kriminalpolitik.
+
+### Horisont konfidensoversigt
+
+| Horisont | Vurdering | WEP-formulering |
+|---------|-----------|-------------|
+| T+72h | Udvalgsforhandlinger begynder; ingen afstemninger | Vi vurderer med høj konfidens |
+| T+7d | S's erklæring om prop. 246 sandsynlig | Vi forventer sandsynligvis S's motion eller udtalelse |
+| T+30d | Lagrådets udtalelse; MJU-udvalgsrapport | Vi vurderer det sandsynligt, at Lagrådet offentliggør |
+| T+valg | Et eller begge forslag ændret eller nedstemt | Omtrent lige chancer for, at regeringen giver indrømmelser |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["Intrakoalitionsspænding\nSD-ændringer vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — CRC-udfordring"]
+    E --> F["Lagrådet afventes\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_de.md -->
+
+**Klassifizierung**: NICHT KLASSIFIZIERT // ÖFFENTLICHE QUELLE // DSGVO Art. 9(2)(e,g)
+**Datum**: 2026-05-07
+**Autor**: James Pether Sörling
+**Konfidenz**: B3 — Zuverlässige Quelle, möglicherweise wahr (Admiralitätsskala)
+**Lauf-ID**: 25482566277
+
+### BLUF
+
+Acht Oppositionsausschussanträge, eingereicht am 2026-05-04, organisieren koordinierten Widerstand gegen zwei Regierungsvorlagen: Vier Oppositionsparteien (V, SD, S, C, MP) fordern via MJU prop. 2025/26:242 zur Deregulierung der Forstwirtschaft heraus, während V, C und MP via JuU die Ablehnung der Senkung des Strafmündigkeitsalters auf 13 Jahre in prop. 2025/26:246 fordern. Mit der Wahl im September 2026 ca. 125 Tage entfernt tragen beide Gesetzgebungskämpfe maximale Wahlrelevanz. Die 165-Sitze-Mehrheit der Regierung steht vor ihrer verfassungsrechtlich folgenreichsten Konfrontation des parlamentarischen Frühjahrs.
+
+### 60-Sekunden-Geheimdienstlektüre
+
+- **Forstwirtschaftscluster (MJU, prop. 242)**: V fordert nahezu vollständige Ablehnung; MP fordert vollständige Ablehnung; S fordert umfassende Folgenabschätzung und unabhängige Bewertung; C fordert eine kohärente nationale Forstpolitik; SD (Koalitionspartner) reicht Änderungsanträge ein — was eine innerkoalitionäre Spannung schafft, die die kritische Variable ist.
+- **Strafmündigkeitsalter-Cluster (JuU, prop. 246)**: C (Schlüsselakteur) fordert direkt die Ablehnung der Alterssenkung auf 13 Jahre, maximale Straferhöhung, Änderungen in der Jugendfürsorge und im Strafregister. V fordert ebenfalls nahezu vollständige Ablehnung. MP lehnt die Alterssenkung auf 13 Jahre und die Strafzumessungsbestimmungen ab. Drei Oppositionsparteien berufen sich auf die UN-Kinderrechtskonvention (CRC) Art. 40(3)(a) — eine verfassungsrechtliche Legitimitätsherausforderung.
+- **Gutachten des Lagrådets zu prop. 246**: Noch nicht veröffentlicht (Stand 2026-05-07). Falls Lagrådet CRC-Unvereinbarkeit markiert, steigt die Wahrscheinlichkeit eines Regierungsrückzugs von ~15% auf ~30-40%.
+- **S-Position zum Strafmündigkeitsalter**: S hat noch keinen JuU-Antrag gestellt — die entscheidende Lücke. S' Erklärung bestimmt, ob die Opposition 163 Sitze bei dieser Abstimmung erreicht.
+- **Wahlframing**: Beide Cluster positionieren sich für die Wahl: SDs Forstwirtschaftsänderungen schaffen sichtbare innerkoalitionäre Uneinigkeit; V/MP/Cs Widerstand gegen das Strafmündigkeitsalter rahmt Kinderrechte als Wahlthema ein.
+- **Wirtschaftlicher Hintergrund**: Schwedens BIP-Wachstum 0,82% (2024, Weltbank); Arbeitslosigkeit 8,69% (2025, Weltbank). Finanzdruck intensiviert die Empfindlichkeit der Wähler gegenüber öffentlicher Effizienz und Kriminalitätskosten.
+
+### Top unterstützte Entscheidungen
+
+1. **JuU-Zeitstrategie**: Wann drängt C auf Ausschusszugeständnisse vor dem Lagrådet-Gutachten — oder wartet darauf als Hebel?
+2. **S-Positionserklärung**: Wird S vor der JuU-Ausschlussfrist (~2026-05-20) einen Änderungsantrag zu prop. 246 einreichen?
+3. **MJU-Verhandlungsvektor**: Signalisiert SDs Antrag echte innerkoalitionäre Spannung oder taktische Positionierung, um Zugeständnisse von M/KD herauszupressen?
+
+### Top Vorwärtsauslöser
+
+**Lagrådet-Gutachten zu prop. 2025/26:246** — erwartet ~2026-06-05. Falls Lagrådet CRC Art. 40(3)(a)-Unvereinbarkeit markiert, verschiebt sich das politische Kalkül entscheidend. Die Regierung steht vor einer Wahl: weitermachen und Verfassungskritik riskieren, oder zurückziehen und eine Wahlniederlage bei der Flaggschiff-Kriminalpolitik erleiden.
+
+### Horizontkonfidenz-Zusammenfassung
+
+| Horizont | Einschätzung | WEP-Formulierung |
+|---------|-----------|-------------|
+| T+72h | Ausschussberatungen beginnen; keine Abstimmungen | Wir schätzen mit hoher Konfidenz ein |
+| T+7d | S-Erklärung zu prop. 246 wahrscheinlich | Wir erwarten wahrscheinlich S-Antrag oder -Erklärung |
+| T+30d | Lagrådet-Gutachten; MJU-Ausschussbericht | Wir schätzen es als wahrscheinlich ein, dass Lagrådet veröffentlicht |
+| T+Wahl | Eine oder beide Vorlagen geändert oder abgelehnt | Ungefähr gleiche Chancen für Regierungszugeständnisse |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["Innerkoalitionäre Spannung\nSD-Änderungen vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — CRC-Herausforderung"]
+    E --> F["Lagrådet ausstehend\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_es.md -->
+
+**Clasificación**: SIN CLASIFICAR // FUENTE PÚBLICA // RGPD Art. 9(2)(e,g)
+**Fecha**: 2026-05-07
+**Autor**: James Pether Sörling
+**Confianza**: B3 — Fuente fiable, posiblemente cierta (Escala Almirantazgo)
+**ID de ejecución**: 25482566277
+
+### BLUF
+
+Ocho mociones de comisión de la oposición presentadas el 2026-05-04 montan resistencia coordinada contra dos proposiciones gubernamentales: cuatro partidos de oposición (V, SD, S, C, MP) desafían vía MJU la prop. 2025/26:242 sobre desregulación forestal, mientras que V, C y MP exigen vía JuU el rechazo de la reducción de la edad de responsabilidad penal a 13 años en la prop. 2025/26:246. Con las elecciones de septiembre de 2026 a aproximadamente 125 días, ambas batallas legislativas tienen máxima relevancia electoral. La mayoría de 165 escaños del gobierno enfrenta su confrontación constitucionalmente más trascendente de la primavera parlamentaria.
+
+### Lectura de inteligencia en 60 segundos
+
+- **Clúster silvicultura (MJU, prop. 242)**: V exige un rechazo casi total; MP exige rechazo total; S exige un análisis de impacto exhaustivo y evaluación independiente; C exige una política forestal nacional coherente; SD (socio de coalición) presenta enmiendas — creando una tensión intracoalición que es la variable crítica.
+- **Clúster edad penal (JuU, prop. 246)**: C (actor pivotal) exige directamente el rechazo de la reducción de edad a 13 años, aumento máximo de penas, cambios en atención a jóvenes y antecedentes penales. V exige igualmente un rechazo casi total. MP rechaza la reducción de edad a 13 años y las disposiciones sobre sentencias. Tres partidos de oposición invocan la Convención de la ONU sobre los Derechos del Niño (CRC) Art. 40(3)(a) — un desafío de legitimidad constitucional.
+- **Dictamen de Lagrådet sobre prop. 246**: Aún no publicado (a 2026-05-07). Si Lagrådet marca incompatibilidad con la CRC, la probabilidad de retirada gubernamental sube de ~15% a ~30-40%.
+- **Posición de S sobre la edad penal**: S aún no ha presentado una moción JuU — la brecha decisiva. La declaración de S determina si la oposición alcanza 163 escaños en esta votación.
+- **Encuadre electoral**: Ambos clústeres se posicionan para las elecciones: las enmiendas forestales de SD crean disenso intracoalición visible; la resistencia de V/MP/C a la edad penal encuadra los derechos del niño como tema electoral.
+- **Contexto económico**: Crecimiento del PIB de Suecia 0,82% (2024, Banco Mundial); desempleo 8,69% (2025, Banco Mundial). Las presiones fiscales intensifican la sensibilidad del electorado ante la eficiencia del sector público y los costos del crimen.
+
+### Principales decisiones respaldadas
+
+1. **Estrategia de tiempo JuU**: ¿Cuándo presiona C por concesiones de comisión antes del dictamen de Lagrådet — o lo espera como palanca?
+2. **Declaración de posición de S**: ¿Presentará S una enmienda sobre prop. 246 antes del plazo de comisión JuU (~2026-05-20)?
+3. **Vector de negociación MJU**: ¿La moción de SD señala tensión intracoalición genuina o posicionamiento táctico para extraer concesiones de M/KD?
+
+### Principal desencadenante prospectivo
+
+**Dictamen de Lagrådet sobre prop. 2025/26:246** — esperado ~2026-06-05. Si Lagrådet marca incompatibilidad con CRC Art. 40(3)(a), el cálculo político se desplaza decisivamente. El gobierno enfrenta una elección: continuar y arriesgar censura constitucional, o retirar y sufrir una pérdida electoral en su política insignia de seguridad ciudadana.
+
+### Resumen de confianza por horizonte
+
+| Horizonte | Evaluación | Lenguaje WEP |
+|---------|-----------|-------------|
+| T+72h | Las deliberaciones de comisión comienzan; sin votaciones | Evaluamos con alta confianza |
+| T+7d | Declaración de S sobre prop. 246 probable | Probablemente veremos moción o declaración de S |
+| T+30d | Dictamen de Lagrådet; informe de comisión MJU | Evaluamos como probable que Lagrådet publique |
+| T+elección | Una o ambas proposiciones modificadas o rechazadas | Aproximadamente iguales posibilidades de concesiones gubernamentales |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["Tensión intracoalición\nEnmiendas SD vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — desafío CRC"]
+    E --> F["Lagrådet pendiente\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_fi.md -->
+
+**Luokittelu**: LUOKITTELEMATON // JULKINEN LÄHDE // GDPR Art. 9(2)(e,g)
+**Päivämäärä**: 2026-05-07
+**Tekijä**: James Pether Sörling
+**Luottamus**: B3 — Luotettava lähde, mahdollisesti totta (Admiraliteettiasteikko)
+**Ajoaika**: 25482566277
+
+### BLUF
+
+Kahdeksan oppositiovaliokunnan motioota jätettiin 2026-05-04 koordinoidun vastustuksen järjestämiseksi kahta hallituksen esitystä vastaan: neljä oppositiopuoluetta (V, SD, S, C, MP) haastaa prop. 2025/26:242 metsätalouden sääntelyn purkamisesta MJU:n kautta, kun taas V, C ja MP vaativat prop. 2025/26:246 rikosoikeudellisen ikärajan alentamisen hylkäämistä 13 vuoteen JuU:n kautta. Syyskuun 2026 vaalien ollessa noin 125 päivän päässä, molemmilla lainsäädäntötaisteluilla on maksimaalinen vaalipoliittinen merkitys. Hallituksen 165 paikan enemmistö kohtaa parlamentaarisen kevätkauden perustuslaillisesti merkittävimmän konfrontaationsa.
+
+### 60 sekunnin tiedustelulukeminen
+
+- **Metsätalousrypäs (MJU, prop. 242)**: V vaatii lähes täydellistä hylkäämistä; MP vaatii täydellistä hylkäämistä; S vaatii kattavaa vaikutusanalyysia ja riippumatonta arviointia; C vaatii johdonmukaista kansallista metsäpolitiikkaa; SD (koalitionkumppani) jättää muutosesityksiä — luoden koalition sisäisen jännitteen, joka on kriittinen muuttuja.
+- **Rikosoikeudellisen iän rypäs (JuU, prop. 246)**: C (keskeinen toimija) vaatii suoraan ikärajan alentamisen hylkäämistä 13 vuoteen, enimmäisrangaistuksen korottamista, nuorisohoidon muutoksia ja rikosrekisterin muutoksia. V vaatii samoin lähes täydellistä hylkäämistä. MP hylkää ikärajan alentamisen 13 vuoteen ja rangaistussäännökset. Kolme oppositiopuoluetta vetoaa YK:n lapsen oikeuksien sopimukseen (CRC) Art. 40(3)(a) — perustuslaillinen legitimiteettihaaste.
+- **Lainvalmisteluneuvosto (Lagrådet) prop. 246:sta**: Ei vielä julkaistu (per 2026-05-07). Jos Lagrådet merkitsee CRC-yhteensopimattomuuden, hallituksen vetäytymisen todennäköisyys nousee ~15%:sta ~30-40%:iin.
+- **S:n kanta rikosoikeudelliseen ikään**: S ei ole vielä jättänyt JuU-motiota — ratkaiseva aukko. S:n julistus määrittää, saavuttaako oppositio 163 paikkaa tässä äänestyksessä.
+- **Vaaliframing**: Molemmat rypäät asemoituvat vaaleja varten: SD:n metsätalousmuutokset luovat näkyvää koalition sisäistä erimielisyyttä; V/MP/C:n vastustus rikosoikeudellista ikää kohtaan kehystää lapsen oikeudet vaalikysymykseksi.
+- **Taloudellinen tausta**: Ruotsin BKT-kasvu 0,82% (2024, Maailmanpankki); työttömyys 8,69% (2025, Maailmanpankki). Taloudellinen paine voimistaa äänestäjien herkkyyttä julkisen sektorin tehokkuudelle ja rikollisuuden kustannuksille.
+
+### Tärkeimmät tuetut päätökset
+
+1. **JuU-ajoitusstrategia**: Milloin C painostaa valiokunnan myönnytyksiä ennen Lagrådets lausuntoa — vai odottaa sitä vipuvoimana?
+2. **S:n kannanotto**: Jättääkö S muutosesityksen prop. 246:sta ennen JuU:n valiokuntamääräaikaa (~2026-05-20)?
+3. **MJU-neuvotteluvektori**: Signaloiko SD:n motio aitoa koalition sisäistä jännitettä vai taktista asemoitumista myönnytysten puristamiseksi M/KD:ltä?
+
+### Tärkein eteenpäinkatsova laukaisin
+
+**Lagrådets lausunto prop. 2025/26:246:sta** — odotetaan ~2026-06-05. Jos Lagrådet merkitsee CRC Art. 40(3)(a) -yhteensopimattomuuden, poliittinen laskenta muuttuu ratkaisevasti. Hallitus kohtaa valinnan: jatka ja riskeeraa perustuslaillinen moite, tai vedä takaisin ja kärsi vaalipoliittinen tappio lippulaivarikosoikeuspolitiikassaan.
+
+### Horisontin luottamusyhteenveto
+
+| Horisontti | Arvio | WEP-muotoilu |
+|---------|-----------|-------------|
+| T+72h | Valiokuntaneuvottelut alkavat; ei äänestyksiä | Arvioimme suurella luottamuksella |
+| T+7d | S:n julistus prop. 246:sta todennäköinen | Odotamme todennäköisesti S:n motiota tai lausuntoa |
+| T+30d | Lagrådets lausunto; MJU-valiokuntaraportti | Arvioimme sen todennäköiseksi, että Lagrådet julkaisee |
+| T+vaali | Yksi tai molemmat esitykset muutettu tai hylätty | Suunnilleen yhtä suuret mahdollisuudet hallituksen myönnytyksille |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["Koalition sisäinen jännite\nSD-muutokset vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — CRC-haaste"]
+    E --> F["Lagrådet odottaa\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling
+**Confiance**: B3 — Source fiable, peut-être vraie (Échelle Amirauté)
+**ID d'exécution**: 25482566277
+
+### BLUF
+
+Huit motions des commissions d'opposition déposées le 2026-05-04 organisent une résistance coordonnée contre deux propositions gouvernementales : quatre partis d'opposition (V, SD, S, C, MP) contestent via MJU la prop. 2025/26:242 sur la déréglementation forestière, tandis que V, C et MP exigent via JuU le rejet de l'abaissement de l'âge de responsabilité pénale à 13 ans dans la prop. 2025/26:246. Avec les élections de septembre 2026 à environ 125 jours, les deux batailles législatives revêtent une importance électorale maximale. La majorité de 165 sièges du gouvernement fait face à sa confrontation constitutionnellement la plus conséquente du printemps parlementaire.
+
+### Lecture de renseignement en 60 secondes
+
+- **Cluster sylviculture (MJU, prop. 242)** : V exige un rejet quasi total ; MP exige un rejet total ; S exige une analyse d'impact complète et une évaluation indépendante ; C exige une politique forestière nationale cohérente ; SD (partenaire de coalition) dépose des amendements — créant une tension intra-coalition qui est la variable critique.
+- **Cluster âge pénal (JuU, prop. 246)** : C (acteur pivot) exige directement le rejet de l'abaissement de l'âge à 13 ans, l'augmentation maximale des peines, des modifications de la prise en charge des jeunes et du casier judiciaire. V exige de même un rejet quasi total. MP rejette l'abaissement de l'âge à 13 ans et les dispositions sur la peine. Trois partis d'opposition invoquent la Convention des Nations Unies relative aux droits de l'enfant (CRC) Art. 40(3)(a) — un défi à la légitimité constitutionnelle.
+- **Avis du Lagrådet sur la prop. 246** : Non encore publié (au 2026-05-07). Si le Lagrådet signale une incompatibilité avec la CRC, la probabilité d'un retrait gouvernemental passe de ~15% à ~30-40%.
+- **Position du S sur l'âge pénal** : Le S n'a pas encore déposé de motion JuU — l'écart décisif. La déclaration du S détermine si l'opposition atteint 163 sièges sur ce vote.
+- **Cadrage électoral** : Les deux clusters se positionnent pour les élections : les amendements forestiers du SD créent une dissension intra-coalition visible ; la résistance de V/MP/C à l'âge pénal cadre les droits de l'enfant comme enjeu électoral.
+- **Contexte économique** : Croissance du PIB suédois 0,82% (2024, Banque mondiale) ; chômage 8,69% (2025, Banque mondiale). Les pressions budgétaires intensifient la sensibilité des électeurs à l'efficacité du secteur public et aux coûts de la criminalité.
+
+### Principales décisions soutenues
+
+1. **Stratégie temporelle JuU** : Quand C pousse-t-il pour des concessions de commission avant l'avis du Lagrådet — ou attend-il pour en faire un levier ?
+2. **Déclaration de position du S** : Le S déposera-t-il un amendement à la prop. 246 avant la date limite de commission JuU (~2026-05-20) ?
+3. **Vecteur de négociation MJU** : La motion du SD signale-t-elle une tension intra-coalition réelle ou un positionnement tactique pour obtenir des concessions de M/KD ?
+
+### Principal déclencheur prospectif
+
+**Avis du Lagrådet sur la prop. 2025/26:246** — attendu ~2026-06-05. Si le Lagrådet signale une incompatibilité avec l'Art. 40(3)(a) de la CRC, le calcul politique se déplace de façon décisive. Le gouvernement fait face à un choix : continuer et risquer une censure constitutionnelle, ou se retirer et subir une perte électorale sur sa politique phare en matière de criminalité.
+
+### Résumé de confiance par horizon
+
+| Horizon | Évaluation | Langage WEP |
+|---------|-----------|-------------|
+| T+72h | Les délibérations de commission commencent ; pas de votes | Nous estimons avec une haute confiance |
+| T+7d | Déclaration du S sur la prop. 246 probable | Nous prévoyons probablement une motion ou déclaration du S |
+| T+30d | Avis du Lagrådet ; rapport de commission MJU | Nous estimons probable que le Lagrådet publie |
+| T+élection | Une ou les deux propositions modifiées ou rejetées | Chances approximativement égales de concessions gouvernementales |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["Tension intra-coalition\nAmendements SD vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — défi CRC"]
+    E --> F["Lagrådet en attente\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_he.md -->
+
+**סיווג**: לא מסווג // מקור ציבורי // GDPR Art. 9(2)(e,g)
+**תאריך**: 2026-05-07
+**מחבר**: James Pether Sörling
+**רמת ביטחון**: B3 — מקור אמין, ייתכן שנכון (סולם האדמירליות)
+**מזהה הרצה**: 25482566277
+
+### BLUF
+
+שמונה הצעות ועדה אופוזיציוניות שהוגשו ב-2026-05-04 מגייסות התנגדות מתואמת נגד שני הצעות חוק ממשלתיות: ארבע מפלגות אופוזיציה (V, SD, S, C, MP) מערערות דרך MJU על prop. 2025/26:242 בדבר ביטול הסדרת הייעור, בעוד V, C ו-MP דורשות דרך JuU לדחות את הורדת גיל האחריות הפלילית ל-13 בפרופ. 2025/26:246. כאשר בחירות ספטמבר 2026 נמצאות כ-125 ימים קדימה, לשתי הקרבות החקיקתיות יש רלוונטיות בחירתית מקסימלית. רוב של 165 מנדטים של הממשלה עומד בפני העימות החוקתי המשמעותי ביותר של האביב הפרלמנטרי.
+
+### קריאת מודיעין של 60 שניות
+
+- **אשכול הייעור (MJU, prop. 242)**: V דורשת דחייה כמעט מוחלטת; MP דורשת דחייה מוחלטת; S דורשת ניתוח השפעות מקיף והערכה עצמאית; C דורשת מדיניות יערות לאומית קוהרנטית; SD (שותפת הקואליציה) מגישה תיקונים — ויוצרת מתח תוך-קואליציוני שהוא המשתנה הקריטי.
+- **אשכול גיל פלילי (JuU, prop. 246)**: C (שחקן מרכזי) דורשת ישירות לדחות את הורדת הגיל ל-13, העלאת עונש מקסימלי, שינויים בטיפול בנוער ובפנקס הפלילי. V דורשת אף היא דחייה כמעט מוחלטת. MP דוחה הורדת גיל ל-13 וסעיפי הענישה. שלוש מפלגות אופוזיציה מפנות לאמנת האו"ם לזכויות הילד (CRC) Art. 40(3)(a) — אתגר לגיטימיות חוקתי.
+- **חוות דעת Lagrådet על prop. 246**: טרם פורסמה (נכון ל-2026-05-07). אם Lagrådet מסמן חוסר תאימות ל-CRC, הסתברות נסיגת הממשלה עולה מ-~15% ל-~30-40%.
+- **עמדת S על גיל פלילי**: S טרם הגישה הצעה ל-JuU — הפער המכריע. הצהרת S קובעת האם האופוזיציה מגיעה ל-163 מנדטים בהצבעה זו.
+- **מסגור בחירתי**: שני האשכולות מתמצבים לקראת הבחירות: תיקוני SD לייעור יוצרים חוסר הסכמה גלוי בתוך הקואליציה; התנגדות V/MP/C לגיל הפלילי ממסגרת זכויות ילדים כנושא בחירות.
+- **רקע כלכלי**: צמיחת תוצר ישראל שוודיה 0.82% (2024, הבנק העולמי); אבטלה 8.69% (2025, הבנק העולמי). לחצים פיסקליים מגבירים את רגישות הבוחרים ליעילות המגזר הציבורי ועלויות הפשיעה.
+
+### ההחלטות המרכזיות הנתמכות
+
+1. **אסטרטגיית תזמון JuU**: מתי לוחץ C על ועדה לוויתורים לפני חוות דעת Lagrådet — או ממתין לה כמנוף?
+2. **הצהרת עמדת S**: האם S תגיש תיקון על prop. 246 לפני מועד הוועדה של JuU (~2026-05-20)?
+3. **וקטור משא ומתן MJU**: האם הצעת SD מאותתת מתח קואליציוני אמיתי או מיצוב טקטי לסחיטת ויתורים מ-M/KD?
+
+### הגורם המניע העתידי המרכזי
+
+**חוות דעת Lagrådet על prop. 2025/26:246** — צפויה ~2026-06-05. אם Lagrådet מסמן חוסר תאימות עם CRC Art. 40(3)(a), החשבון הפוליטי משתנה באופן מכריע. הממשלה עומדת בפני בחירה: להמשיך ולסכן ביקורת חוקתית, או לסגת ולסבול הפסד בחירתי במדיניות הפשיעה הדגלית.
+
+### סיכום רמות ביטחון לפי אופקים
+
+| אופק | הערכה | ניסוח WEP |
+|---------|-----------|-------------|
+| T+72h | דיוני ועדה מתחילים; ללא הצבעות | אנו מעריכים בביטחון גבוה |
+| T+7d | הצהרת S על prop. 246 סבירה | אנו צופים ככל הנראה הצעה או הצהרה מ-S |
+| T+30d | חוות דעת Lagrådet; דוח ועדת MJU | אנו מעריכים סביר ש-Lagrådet יפרסם |
+| T+בחירות | הצעה אחת או שתיהן יתוקנו או יידחו | סיכויים בערך שווים לויתורי ממשלה |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["מתח תוך-קואליציוני\nתיקוני SD מול M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — אתגר CRC"]
+    E --> F["Lagrådet ממתין\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_ja.md -->
+
+**分類**: 未分類 // 公開情報源 // GDPR Art. 9(2)(e,g)
+**日付**: 2026-05-07
+**著者**: James Pether Sörling
+**信頼度**: B3 — 信頼できる情報源、おそらく真実（海軍省尺度）
+**実行ID**: 25482566277
+
+### BLUF
+
+2026-05-04に提出された8つの野党委員会動議が、二つの政府提案に対する協調抵抗を組織した。四野党（V、SD、S、C、MP）はMJUを通じてprop. 2025/26:242の林業規制緩和に反対し、V、C、MPはJuUを通じてprop. 2025/26:246における刑事責任年齢の13歳への引き下げの否決を求める。2026年9月の選挙まで約125日となり、両立法闘争は最大の選挙的重要性を帯びる。政府の165議席多数は、議会春季の最も憲法的に重要な対立に直面している。
+
+### 60秒インテリジェンス読み取り
+
+- **林業クラスター（MJU、prop. 242）**: Vはほぼ完全な否決を要求；MPは完全否決を要求；Sは包括的影響分析と独立評価を要求；Cは一貫した国家林業政策を要求；SD（連立パートナー）は修正案を提出 — 重要変数である連立内部緊張を生む。
+- **刑事年齢クラスター（JuU、prop. 246）**: C（ピボット的行為者）は13歳への年齢引き下げの否決、最高刑の引き上げ、少年ケアの変更、前科記録の変更を直接要求。Vも同様にほぼ完全否決を要求。MPは13歳への年齢引き下げと量刑規定を否決。三野党は国連子どもの権利条約（CRC）Art. 40(3)(a)を援用 — 憲法的正当性への挑戦。
+- **prop. 246に関するLagrådets意見**: 2026-05-07時点で未発表。LagrådatがCRC非適合を指摘すれば、政府後退の確率が~15%から~30-40%に上昇する。
+- **刑事年齢に関するSの立場**: SはまだJuU動議を提出していない — 決定的な空白。Sの宣言が、この票決で野党が163議席に達するかどうかを決定する。
+- **選挙的フレーミング**: 両クラスターが選挙に向けて布石を打つ：SDの林業修正案は連立内の可視的不和を生む；V/MP/Cの刑事年齢への抵抗は子どもの権利を選挙争点として位置づける。
+- **経済的背景**: スウェーデンGDP成長率0.82%（2024年、世界銀行）；失業率8.69%（2025年、世界銀行）。財政圧力が公共部門効率と犯罪コストへの有権者の感受性を強める。
+
+### 主要な支持決定事項
+
+1. **JuU時間戦略**: LagrådetsのアドバイスCが委員会の譲歩を求めるタイミング — それとも交渉のテコとして待つのか？
+2. **Sの立場表明**: SはJuU委員会期限（~2026-05-20）前にprop. 246への修正案を提出するか？
+3. **MJU交渉ベクトル**: SDの動議は本物の連立内緊張を示すのか、それともM/KDから譲歩を引き出すための戦術的布石か？
+
+### 主要な将来トリガー
+
+**prop. 2025/26:246に関するLagrådets意見** — ~2026-06-05に予想。LagrådatsがCRC Art. 40(3)(a)の不適合を指摘すれば、政治的計算が決定的に変わる。政府は選択を迫られる：続行して憲法的非難のリスクを負うか、撤退して主力犯罪政策で選挙的損失を被るか。
+
+### 時間軸信頼度サマリー
+
+| 時間軸 | 評価 | WEP表現 |
+|---------|-----------|-------------|
+| T+72h | 委員会審議開始；採決なし | 高い確信を持って評価 |
+| T+7d | prop. 246に関するSの宣言の可能性 | おそらくSの動議または声明を見込む |
+| T+30d | Lagrådets意見；MJU委員会報告 | Lagrådatsが発表するものと評価 |
+| T+選挙 | 一方または両方の提案が修正または否決 | 政府譲歩の確率はほぼ五分五分 |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["連立内部緊張\nSD修正案 vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — CRC挑戦"]
+    E --> F["Lagrådet待ち\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_ko.md -->
+
+**분류**: 비밀 해제 // 공개 출처 // GDPR Art. 9(2)(e,g)
+**날짜**: 2026-05-07
+**저자**: James Pether Sörling
+**신뢰도**: B3 — 신뢰할 수 있는 출처, 사실일 가능성 있음 (해군부 척도)
+**실행 ID**: 25482566277
+
+### BLUF
+
+2026-05-04에 제출된 야당 위원회 동의 8건이 두 가지 정부 제안에 대한 조율된 저항을 조직했다. 네 야당(V, SD, S, C, MP)은 MJU를 통해 prop. 2025/26:242의 임업 규제 완화에 이의를 제기하고, V, C, MP는 JuU를 통해 prop. 2025/26:246의 형사 책임 연령 13세 인하 거부를 요구한다. 2026년 9월 선거가 약 125일 앞으로 다가와, 두 입법 투쟁은 최대 선거적 중요성을 띤다. 정부의 165석 다수는 의회 봄의 가장 헌법적으로 중대한 대결에 직면해 있다.
+
+### 60초 정보 읽기
+
+- **임업 클러스터 (MJU, prop. 242)**: V는 거의 전면 거부를 요구; MP는 전면 거부 요구; S는 포괄적 영향 분석과 독립 평가 요구; C는 일관된 국가 임업 정책 요구; SD(연립 파트너)는 수정안 제출 — 핵심 변수인 연립 내부 긴장을 초래.
+- **형사 연령 클러스터 (JuU, prop. 246)**: C(핵심 행위자)는 13세 연령 인하 거부, 최대 형량 인상, 청소년 보호 변경, 전과 기록 변경을 직접 요구. V도 거의 전면 거부를 요구. MP는 13세 연령 인하와 양형 조항을 거부. 세 야당은 유엔 아동 권리 협약(CRC) Art. 40(3)(a)을 원용 — 헌법적 정당성에 대한 도전.
+- **prop. 246에 관한 Lagrådet 의견**: 2026-05-07 기준 아직 미발표. Lagrådet이 CRC 불일치를 표시하면, 정부 후퇴 가능성이 ~15%에서 ~30-40%로 상승.
+- **형사 연령에 관한 S의 입장**: S는 아직 JuU 동의를 제출하지 않았다 — 결정적인 공백. S의 선언이 이 표결에서 야당이 163석에 도달할지를 결정한다.
+- **선거적 프레이밍**: 두 클러스터는 선거를 위해 포지셔닝: SD의 임업 수정안은 연립 내 가시적 불화를 초래; V/MP/C의 형사 연령 저항은 아동 권리를 선거 이슈로 프레이밍.
+- **경제적 배경**: 스웨덴 GDP 성장률 0.82% (2024, 세계은행); 실업률 8.69% (2025, 세계은행). 재정 압력이 공공 부문 효율성과 범죄 비용에 대한 유권자 민감도를 강화.
+
+### 주요 지원 결정 사항
+
+1. **JuU 타이밍 전략**: C가 Lagrådet 의견 전에 위원회 양보를 압박하는 시점 — 아니면 지렛대로 기다리는가?
+2. **S의 입장 선언**: S가 JuU 위원회 기한(~2026-05-20) 전에 prop. 246에 대한 수정안을 제출할 것인가?
+3. **MJU 협상 벡터**: SD의 동의가 진정한 연립 내부 긴장을 신호하는가, 아니면 M/KD에서 양보를 얻어내기 위한 전술적 포지셔닝인가?
+
+### 주요 미래 트리거
+
+**prop. 2025/26:246에 관한 Lagrådet 의견** — ~2026-06-05 예상. Lagrådet이 CRC Art. 40(3)(a) 불일치를 표시하면, 정치적 계산이 결정적으로 바뀐다. 정부는 선택에 직면: 계속하며 헌법적 비판 위험을 감수하거나, 철회하여 주력 범죄 정책에서 선거적 손실을 입거나.
+
+### 시간적 신뢰도 요약
+
+| 시간축 | 평가 | WEP 표현 |
+|---------|-----------|-------------|
+| T+72h | 위원회 심의 시작; 표결 없음 | 높은 신뢰도로 평가 |
+| T+7d | prop. 246에 관한 S의 선언 가능성 | S의 동의 또는 성명이 있을 것으로 예상 |
+| T+30d | Lagrådet 의견; MJU 위원회 보고서 | Lagrådet이 발표할 것으로 평가 |
+| T+선거 | 하나 또는 두 제안이 수정 또는 거부 | 정부 양보 가능성이 거의 동등 |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["연립 내부 긴장\nSD 수정안 vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — CRC 도전"]
+    E --> F["Lagrådet 대기 중\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_nl.md -->
+
+**Classificatie**: NIET GERUBRICEERD // PUBLIEKE BRON // AVG Art. 9(2)(e,g)
+**Datum**: 2026-05-07
+**Auteur**: James Pether Sörling
+**Betrouwbaarheid**: B3 — Betrouwbare bron, mogelijk waar (Admiraliteitsschaal)
+**Uitvoerings-ID**: 25482566277
+
+### BLUF
+
+Acht commissiemotities van de oppositie ingediend op 2026-05-04 organiseren gecoördineerde weerstand tegen twee regeringsvoorstellen: vier oppositiepartijen (V, SD, S, C, MP) betwisten via MJU prop. 2025/26:242 over bosbouwderegulering, terwijl V, C en MP via JuU de afwijzing eisen van de verlaging van de strafrechtelijke leeftijd naar 13 jaar in prop. 2025/26:246. Met de verkiezingen van september 2026 ongeveer 125 dagen weg, dragen beide wetgevingsstrijd de maximale electorale relevantie. De 165-zetelmeerderheid van de regering staat voor haar meest constitutioneel consequente confrontatie van de parlementaire lente.
+
+### 60-seconden inlichtingenlezing
+
+- **Bosbouwcluster (MJU, prop. 242)**: V eist bijna volledige afwijzing; MP eist volledige afwijzing; S eist uitgebreide impactanalyse en onafhankelijke evaluatie; C eist een coherent nationaal bosbeleid; SD (coalitiegenoot) dient amendementen in — wat een intracoalitionele spanning creëert die de kritische variabele is.
+- **Strafrechtelijke leeftijdscluster (JuU, prop. 246)**: C (spilfiguur) eist direct de afwijzing van de leeftijdsverlaging naar 13 jaar, maximale strafverzwaring, wijzigingen in jeugdzorg en strafregister. V eist eveneens bijna volledige afwijzing. MP verwerpt de leeftijdsverlaging naar 13 jaar en de strafbepalingsbepalingen. Drie oppositiepartijen beroepen zich op het VN-Verdrag inzake de rechten van het kind (CRC) Art. 40(3)(a) — een constitutionele legitimiteitsvraag.
+- **Lagrådet-advies over prop. 246**: Nog niet gepubliceerd (per 2026-05-07). Als Lagrådet CRC-onverenigbaarheid signaleert, stijgt de kans op een regeringsterugtrekking van ~15% naar ~30-40%.
+- **S-positie over de strafrechtelijke leeftijd**: S heeft nog geen JuU-motie ingediend — de beslissende leemte. S' verklaring bepaalt of de oppositie 163 zetels bereikt bij deze stemming.
+- **Electorale framing**: Beide clusters positioneren zich voor de verkiezingen: SD's bosbouwamendemeenten creëren zichtbare intracoalitionele onenigheid; V/MP/C's weerstand tegen de strafrechtelijke leeftijd kaadert kinderrechten als verkiezingsthema.
+- **Economische achtergrond**: Zweedse bbp-groei 0,82% (2024, Wereldbank); werkloosheid 8,69% (2025, Wereldbank). Budgettaire druk intensiveert de gevoeligheid van kiezers voor efficiëntie van de publieke sector en misdaadkosten.
+
+### Belangrijkste ondersteunde beslissingen
+
+1. **JuU-tijdsstrategie**: Wanneer dringt C aan op commissieconcessies vóór het Lagrådet-advies — of wacht het erop als hefboom?
+2. **S-positieverklaring**: Zal S vóór de JuU-commissiedeadline (~2026-05-20) een amendement op prop. 246 indienen?
+3. **MJU-onderhandelingsvector**: Signaleert SD's motie echte intracoalitionele spanning of tactische positionering om concessies van M/KD af te dwingen?
+
+### Belangrijkste voorwaartse trigger
+
+**Lagrådet-advies over prop. 2025/26:246** — verwacht ~2026-06-05. Als Lagrådet CRC Art. 40(3)(a)-onverenigbaarheid signaleert, verschuift het politieke kalkul beslissend. De regering staat voor een keuze: doorgaan en constitutionele afkeuring riskeren, of terugtrekken en een electoraal verlies lijden op haar vlaggeschip-criminaliteitsbeleid.
+
+### Horizontvertrouwenssamenvatting
+
+| Horizon | Beoordeling | WEP-taal |
+|---------|-----------|-------------|
+| T+72h | Commissiebesprekingen beginnen; geen stemmingen | Wij schatten in met hoge zekerheid |
+| T+7d | S-verklaring over prop. 246 waarschijnlijk | Wij verwachten waarschijnlijk S-motie of verklaring |
+| T+30d | Lagrådet-advies; MJU-commissierapport | Wij schatten het in als waarschijnlijk dat Lagrådet publiceert |
+| T+verkiezing | Een of beide voorstellen gewijzigd of verworpen | Ongeveer gelijke kansen op regeringsconcessies |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["Intracoalitionele spanning\nSD-amendementen vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — CRC-uitdaging"]
+    E --> F["Lagrådet in behandeling\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_no.md -->
+
+**Klassifisering**: UGRADERT // OFFENTLIG KILDE // GDPR Art. 9(2)(e,g)
+**Dato**: 2026-05-07
+**Forfatter**: James Pether Sörling
+**Konfidens**: B3 — Pålitelig kilde, muligens sann (Admiralitetsskalaen)
+**Kjøring-ID**: 25482566277
+
+### BLUF
+
+Åtte opposisjonsutvalgsforslag innlevert 2026-05-04 monterer koordinert motstand mot to regjeringsproposisjoner: fire opposisjonspartier (V, SD, S, C, MP) utfordrer prop. 2025/26:242 om skogbruksderegulering via MJU, mens V, C og MP krever avslag på nedsettelse av den strafferettslige lavalderen til 13 år i prop. 2025/26:246 via JuU. Med valget i september 2026 ca. 125 dager unna bærer begge lovgivningskampene maksimal valgmessig relevans. Regjeringens 165-mandat flertall møter sin mest konstitusjonelt avgjørende konfrontasjon i den parlamentariske vårsesjonen.
+
+### 60-sekunders etterretningslesing
+
+- **Skogbrukskluster (MJU, prop. 242)**: V krever nesten totalt avslag; MP krever totalt avslag; S krever omfattende konsekvensanalyse og uavhengig evaluering; C krever en sammenhengende nasjonal skogpolitikk; SD (koalisjonspartner) leverer endringsforslag — noe som skaper en intrakoalitionsspenning som er den kritiske variabelen.
+- **Kriminalitetsalderkluster (JuU, prop. 246)**: C (nøkkelaktør) krever direkte avslag på aldersnedsettelsen til 13 år, maksimal straffskjerpelse, endringer i ungdomsomsorg og strafferegister. V krever likeledes nesten totalt avslag. MP avviser aldersnedsettelse til 13 år og straffeutmålingsbestemmelsene. Tre opposisjonspartier påberoper seg FNs barnekonvensjon (CRC) Art. 40(3)(a) — en konstitusjonell legitimitetsutfordring.
+- **Lagrådets uttalelse om prop. 246**: Ennå ikke publisert (per 2026-05-07). Hvis Lagrådet markerer CRC-uforenlighet, øker sannsynligheten for et regjeringstilbaketog fra ~15% til ~30-40%.
+- **S's holdning til kriminalitetsalder**: S har ennå ikke levert en JuU-forslag — det avgjørende gapet. S's erklæring avgjør om opposisjonen når 163 mandater i denne avstemningen.
+- **Valgframing**: Begge klustrer posisjonerer seg for valget: SD's skogbruksendringer skaper synlig intrakoalisjons-dissens; V/MP/C's motstand mot kriminalitetsalderen innrammes som et valgspørsmål om barnerettigheter.
+- **Økonomisk bakgrunn**: Sverige BNP-vekst 0,82% (2024, Verdensbanken); arbeidsledighet 8,69% (2025, Verdensbanken). Finansielt press intensiverer velgernes følsomhet for offentlig effektivitet og kriminalitetskostnader.
+
+### Topp understøttede beslutninger
+
+1. **JuU-tidsstrategi**: Når presser C på utvalgsinnrømmelser før Lagrådets uttalelse — eller avventer den som løftestang?
+2. **S's holdningserklæring**: Vil S levere et endringsforslag om prop. 246 innen JuU's utvalgsfrist (~2026-05-20)?
+3. **MJU-forhandlingsvektor**: Signaliserer SD's forslag ekte intrakoalisjons-spenning eller taktisk posisjonering for å presse ut innrømmelser fra M/KD?
+
+### Topp fremadrettet utløser
+
+**Lagrådets uttalelse om prop. 2025/26:246** — forventet ~2026-06-05. Hvis Lagrådet markerer CRC Art. 40(3)(a)-uforenlighet, forskyves den politiske kalkylen avgjørende. Regjeringen står overfor et valg: fortsett og risiker konstitusjonell sensur, eller trekk tilbake og lider et valgmessig tap på flaggskips kriminalpolitikk.
+
+### Horisontkonfidensoversikt
+
+| Horisont | Vurdering | WEP-formulering |
+|---------|-----------|-------------|
+| T+72h | Utvalgsforhandlinger begynner; ingen avstemninger | Vi vurderer med høy konfidens |
+| T+7d | S's erklæring om prop. 246 sannsynlig | Vi forventer sannsynligvis S's forslag eller uttalelse |
+| T+30d | Lagrådets uttalelse; MJU-utvalgsrapport | Vi vurderer det sannsynlig at Lagrådet publiserer |
+| T+valg | Et eller begge forslag endret eller nedstemt | Omtrent like sjanser for at regjeringen gir innrømmelser |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["Intrakoalitionsspenning\nSD-endringer vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — CRC-utfordring"]
+    E --> F["Lagrådet avventes\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_sv.md -->
+
+**Klassificering**: HEMLIGHETSSTÄMPLAT EJ // OFFENTLIG KÄLLA // GDPR Art. 9(2)(e,g)
+**Datum**: 2026-05-07
+**Författare**: James Pether Sörling
+**Konfidens**: B3 — Tillförlitlig källa, möjligen sant (Admiralitetsskalan)
+**Körnings-ID**: 25482566277
+
+### BLUF
+
+Åtta oppositionsutskottsmotioner inlämnade 2026-05-04 monterar koordinerat motstånd mot två regeringspropositioner: fyra oppositionspartier (V, SD, S, C, MP) utmanar prop. 2025/26:242 om skogsbruksavreglering via MJU, medan V, C och MP kräver avslag på sänkning av straffansvarsåldern till 13 år i prop. 2025/26:246 via JuU. Med riksdagsvalet i september 2026 ungefär 125 dagar bort, bär båda lagstiftningssllagen maximal elektoral relevans. Regeringens 165-mandasjövikt möter sin mest konstitutionellt avgörande konfrontation under den parlamentariska våren.
+
+### 60-sekunders underrättelseläsning
+
+- **Skogsbrukskluster (MJU, prop. 242)**: V kräver nästan totalt avslag; MP kräver totalt avslag; S kräver omfattande konsekvensanalys och oberoende utvärdering; C kräver en sammanhängande nationell skogspolitik; SD (koalitionspartner) lämnar ändringsyrkanden — vilket skapar en intrakoalitionsspänning som är den kritiska variabeln.
+- **Kriminalålderskluster (JuU, prop. 246)**: C (pivotal aktör) kräver direkt avslag på sänkning av åldern till 13 år, maximalt straffhöjning, ändringar i ungdomsvård och kriminalregister. V kräver likaså nästan totalt avslag. MP avvisar ålderssänkning till 13 år och straffsatsningsbestämmelserna. Tre oppositionspartier åberopar FN:s barnkonvention (CRC) Art. 40(3)(a) — en konstitutionell legitimitetsutmaning.
+- **Lagrådsyttrande om prop. 246**: Ännu inte publicerat (per 2026-05-07). Om Lagrådet flaggar CRC-inkompatibilitet ökar sannolikheten för ett regeringsreträtt från ~15% till ~30-40%.
+- **S position om kriminalålder**: S har ännu inte lämnat en JuU-motion — det avgörande gapet. S:s deklaration avgör om oppositionen når 163 mandat i denna omröstning.
+- **Valframing**: Båda klustren positionerar inför valet: SD:s skogsbruksändringar skapar synlig intrakoalitionsdissens; V/MP/C-motståndet mot kriminalåldern ramar in barnrättigheter som en valfråga.
+- **Ekonomisk bakgrund**: Sveriges BNP-tillväxt 0,82% (2024, Världsbanken); arbetslöshet 8,69% (2025, Världsbanken). Finanstryck intensifierar väljarnas känslighet för offentlig sektors effektivitet och brottskostnader.
+
+### Topp beslut som stöds
+
+1. **JuU-tidsstrategi**: När pressar C på utskottsmedgivanden före Lagrådets yttrande — eller inväntar det som hävstång?
+2. **S positionsdeklaration**: Kommer S att lämna ett ändringsyrkande om prop. 246 före JuU:s utskottsdeadline (~2026-05-20)?
+3. **MJU-förhandlingsvektor**: Signalerar SD:s motion äkta intrakoalitionsspänning eller taktisk positionering för att pressa ut medgivanden från M/KD?
+
+### Topp framåtutlösare
+
+**Lagrådets yttrande om prop. 2025/26:246** — förväntas ~2026-06-05. Om Lagrådet flaggar CRC Art. 40(3)(a)-inkompatibilitet förskjuts den politiska kalkylen avgörande. Regeringen står inför ett val: fortsätt och riskera konstitutionell censur, eller dra tillbaka och drabbas av en elektoral förlust på flaggskeppsbrott policy.
+
+### Horisontkonfidenssummering
+
+| Horisont | Bedömning | WEP-formulering |
+|---------|-----------|-------------|
+| T+72h | Utskottsöverläggningar inleds; inga omröstningar | Vi bedömer med hög konfidens |
+| T+7d | S:s deklaration om prop. 246 trolig | Vi förväntar oss sannolikt S:s motion eller uttalande |
+| T+30d | Lagrådets yttrande; MJU-utskottsrapport | Vi bedömer det som sannolikt att Lagrådet publicerar |
+| T+val | En eller båda propositioner ändrade eller besegrade | Ungefär lika chans för att regeringen ger efter |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["Intrakoalitionsspänning\nSD-ändringar vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — CRC-utmaning"]
+    E --> F["Lagrådet inväntas\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_zh.md -->
+
+**分类**: 非保密 // 公开来源 // GDPR Art. 9(2)(e,g)
+**日期**: 2026-05-07
+**作者**: James Pether Sörling
+**可信度**: B3 — 可靠来源，可能属实（海军部量表）
+**运行ID**: 25482566277
+
+### BLUF
+
+2026-05-04提交的八项反对党委员会动议协调对两项政府提案的抵制：四个反对党（V、SD、S、C、MP）通过MJU挑战prop. 2025/26:242关于林业放松管制的提案，而V、C和MP则通过JuU要求否决prop. 2025/26:246中将刑事责任年龄降低至13岁的议案。距2026年9月大选约125天，两场立法斗争具有最高的选举重要性。政府的165席多数面临议会春季最具宪法影响力的对抗。
+
+### 60秒情报速读
+
+- **林业集群（MJU，prop. 242）**：V要求几乎全面否决；MP要求全面否决；S要求全面影响分析和独立评估；C要求连贯的国家林业政策；SD（联合执政伙伴）提交修正案——制造联盟内部紧张，这是关键变量。
+- **刑事年龄集群（JuU，prop. 246）**：C（关键行为者）直接要求否决年龄降至13岁、最高刑期增加、青少年保护修改及犯罪记录修改。V同样要求几乎全面否决。MP拒绝年龄降至13岁及量刑条款。三个反对党援引联合国儿童权利公约（CRC）第40(3)(a)条——宪法合法性挑战。
+- **关于prop. 246的Lagrådet意见**：尚未发布（截至2026-05-07）。若Lagrådet标记CRC不兼容，政府退让概率从~15%上升至~30-40%。
+- **S在刑事年龄问题上的立场**：S尚未提交JuU动议——决定性空缺。S的声明决定反对派能否在此次投票中达到163席。
+- **选举框架**：两个集群均为选举定位：SD的林业修正案制造可见的联盟内部不和；V/MP/C对刑事年龄的抵制将儿童权利框架为选举议题。
+- **经济背景**：瑞典GDP增长0.82%（2024年，世界银行）；失业率8.69%（2025年，世界银行）。财政压力加剧选民对公共部门效率和犯罪成本的敏感性。
+
+### 主要支持决策
+
+1. **JuU时机策略**：C何时在Lagrådet意见发布前向委员会施压获取让步——还是等待其作为筹码？
+2. **S的立场声明**：S是否会在JuU委员会截止日期（~2026-05-20）前就prop. 246提交修正案？
+3. **MJU谈判向量**：SD的动议是否预示真正的联盟内部紧张，还是为从M/KD获取让步的战术定位？
+
+### 主要前瞻触发因素
+
+**Lagrådet关于prop. 2025/26:246的意见**——预计~2026-06-05。若Lagrådet标记CRC第40(3)(a)条不兼容，政治计算将决定性地转变。政府面临选择：继续并承担宪法批评风险，或撤回并在旗舰犯罪政策上蒙受选举失败。
+
+### 时间轴可信度摘要
+
+| 时间轴 | 评估 | WEP表述 |
+|---------|-----------|-------------|
+| T+72h | 委员会审议开始；无投票 | 我们以高可信度评估 |
+| T+7d | S关于prop. 246的声明可能 | 我们认为S可能提交动议或声明 |
+| T+30d | Lagrådet意见；MJU委员会报告 | 我们评估Lagrådet很可能发布 |
+| T+大选 | 一项或两项提案被修改或否决 | 政府让步的可能性大致相当 |
+
+```mermaid
+graph LR
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    style C fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
+    style D fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style E fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+    A["Prop. 242\nSkogsbruk"] --> B["MJU: 5 oppositionsmotioner\nV+SD+S+C+MP"]
+    A --> C["联盟内部紧张\nSD修正案 vs M/KD"]
+    D["Prop. 246\nKriminalålder"] --> E["JuU: 3 oppositionsmotioner\nV+C+MP — CRC挑战"]
+    E --> F["Lagrådet待审\nPIR LAGRÅDET-246"]
+    style F fill:#1a1e3d,color:#ff006e,stroke:#ff006e
+```
+
+<!-- source-sha: 763faff7f9c94520ee112d9155becca626ed9add -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 8 | Linked in Article Sources, not expanded inline |
 
@@ -1697,6 +2449,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
