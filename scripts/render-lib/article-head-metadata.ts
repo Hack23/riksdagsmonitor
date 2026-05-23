@@ -4,9 +4,10 @@
  * @name Article `<head>` metadata composer (shared between renderer & QA tools)
  *
  * @description
- * Pure helper that, given an aggregated `article.md` (with front-matter
- * + body) plus a target language and canonical path, produces the
- * **exact** set of `<head>` metadata values that
+ * Deterministic helper (side-effect free aside from a one-time memoised
+ * registry load) that, given an aggregated `article.md` (with
+ * front-matter + body) plus a target language and canonical path,
+ * produces the **exact** set of `<head>` metadata values that
  * {@link ./article.ts | renderArticleHtml} embeds into a rendered news
  * page — title, branded title, description, keywords, article-type
  * label and parsed publication date.
@@ -17,6 +18,11 @@
  * `test-article-headers` CLI can call this function and be sure they
  * are observing exactly what the shipped corpus sees — no drift, no
  * forked SEO logic.
+ *
+ * Note: `loadArticleTypesRegistry()` reads `analysis/article-types.json`
+ * on first call and caches the result — the module is therefore not
+ * purely functional in the strict sense, but all subsequent calls are
+ * fully deterministic for the same inputs.
  *
  * @author Hack23 AB (Infrastructure Team)
  * @license Apache-2.0

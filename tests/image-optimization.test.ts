@@ -8,7 +8,7 @@ import { IMAGE_VARIANT_MANIFEST, variantName } from '../scripts/optimize-images.
 
 const REPO_ROOT = path.resolve(__dirname, '..');
 const IMAGE_DIR = path.join(REPO_ROOT, 'public', 'images');
-const SKIP_HTML_DIRS = new Set(['node_modules', 'dist', 'docs', 'builds', 'scripts', '.git']);
+const SKIP_HTML_DIRS = new Set(['node_modules', 'dist', 'docs', 'builds', 'scripts', '.git', 'news']);
 
 async function collectHtmlFiles(dir: string): Promise<string[]> {
   const entries = await fs.readdir(dir, { withFileTypes: true });
