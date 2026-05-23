@@ -98,6 +98,13 @@ Forward indicator F-1 in forward-indicators.md: Lagrådet yttrande expected with
 
 No prior PIRs from earlier runs (first generation for weekly-review subfolder). All PIRs initiated this run:
 - PIR-1: Lagrådet opinion (OPEN)
-- PIR-2: SD escalation on SfU37 (OPEN)
-- PIR-3: Skolverket implementation plan (OPEN)
+- PIR-2: SD escalation on SfU37 / S opposition coordination (OPEN) — F-9 added in improvement run
+- PIR-3: Skolverket implementation plan (OPEN) — F-10 (Skolinspektionen monitoring) added in improvement run
 - PIR-4: ECHR admissibility (WATCH)
+
+## Improvement Run Record
+
+| Run | Timestamp | Mode | New dok_ids | Artifacts extended |
+|-----|-----------|------|------------|-------------------|
+| 26328188865 | 2026-05-23T08:36:11Z | First generation | 26 documents | All 23 created |
+| 26329074071 | 2026-05-23T09:22:08Z | Improvement | 0 new | forward-indicators (+F-9/F-10), comparative-international (OECD VET data), media-framing (v2.1 Outlet Bias + DISARM + RRPA), methodology-reflection (re-run delta) |

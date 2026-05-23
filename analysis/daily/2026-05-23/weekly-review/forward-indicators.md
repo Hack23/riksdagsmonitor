@@ -48,6 +48,24 @@
 - **What to watch**: First individual case at ECtHR challenging detention under the new law
 - **Note**: This indicator will likely materialise after the election and is therefore a long-range governance indicator rather than an electoral one
 
+### F-9: Opposition Coordination and S Electoral Positioning on Security Package
+- **Type**: Political / Coalition dynamics
+- **Expected**: 2–6 weeks (before and during chamber debates, June 2026)
+- **Trigger**: S leadership public statement specifically addressing prop. 2025/26:267 child-detention provisions
+- **What to watch**: Does S break from its typical "tough but rights-respecting" formulation to explicitly align with MP's rights-based critique? A clear S shift would signal the left-of-centre bloc is converging on a coordinated pre-election security narrative
+- **WEP coordination materialises**: 35% (historically S has preferred independent positioning on security)
+- **PIR link**: PIR-2 (SD escalation; monitors whether S coordination triggers a SD counter-escalation)
+- **Significance**: Would markedly sharpen the security/rights electoral cleavage heading into September campaign
+
+### F-10: Skolinspektionen Compliance Monitoring for UbU22 Implementation
+- **Type**: Administrative / Institutional
+- **Expected**: Q4 2026 – Q1 2027 (first post-enactment school year report)
+- **Trigger**: Skolinspektionen publishing its first school-safety compliance monitoring data under the UbU22 (1 August 2026) rules
+- **What to watch**: Proportion of schools that have adopted mobile-phone bans and new disciplinary procedures within the first semester; municipal variation index; number of appeals filed by excluded students
+- **Risk indicator**: Low adoption rate → government implementation narrative undermined before any subsequent election (2030); high complaint rate → legal challenge pathway opens
+- **Note**: This is a long-range effectiveness indicator; primary relevance for post-2026 parliamentary oversight cycle
+- **PIR link**: PIR-3 (Skolverket implementation plan)
+
 ## Closed Indicators
 
 None from prior cycles (first run for weekly-review subfolder).
@@ -57,6 +75,6 @@ None from prior cycles (first run for weekly-review subfolder).
 | PIR | Status | Target indicator |
 |-----|--------|-----------------|
 | PIR-1: Lagrådet opinion | 🟡 OPEN | F-1 |
-| PIR-2: SD escalation | 🟡 OPEN | F-2 |
-| PIR-3: Skolverket plan | 🟡 OPEN | F-4 |
+| PIR-2: SD escalation / opposition coordination | 🟡 OPEN | F-2, F-9 |
+| PIR-3: Skolverket plan | 🟡 OPEN | F-4, F-10 |
 | PIR-4: ECHR admissibility | 🟡 WATCH (pre-condition) | F-8 |
