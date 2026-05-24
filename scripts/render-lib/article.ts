@@ -42,6 +42,22 @@ import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BRE
 
 import { articleTypeIcon } from './article-type-i18n.js';
 import { computeArticleHeadMetadata } from './article-head-metadata.js';
+import {
+  readFirstHeading,
+  cleanArticleTitle,
+} from './aggregator/seo/title.js';
+import {
+  composeRichDescription,
+  readBlufParagraph,
+  readFirstParagraph,
+  truncateToSentenceBoundary,
+  descriptionWindowForLanguage,
+} from './aggregator/seo/description.js';
+import { extractLocalizedBriefSeo } from './aggregator/seo/localized-brief.js';
+import {
+  extractBriefEntities,
+  flattenBriefEntities,
+} from './aggregator/seo/brief-extractor.js';
 /**
  * @deprecated Re-exported from `article-head-metadata.ts`. The function
  * body lives there now so the renderer, regenerator and QA tooling all
@@ -80,6 +96,44 @@ export interface RenderArticleInput {
   readonly subfolderRepoRelPath?: string;
   /** Ordered list of artifacts used (shown in the footer). */
   readonly artifactsUsed?: readonly string[];
+  /**
+   * Raw English `executive-brief.md` markdown adjacent to `article.md`.
+   * When provided, the renderer derives `<title>` (from the brief H1
+   * via {@link cleanArticleTitle}) and `<meta description>` (from the
+   * BLUF via {@link composeRichDescription} / {@link readBlufParagraph}
+   * → {@link truncateToSentenceBoundary}) **directly from the brief**,
+   * bypassing the (now back-compat-only) `article.md` frontmatter
+   * `title:` / `description:` lines.
+   *
+   * When omitted (the 278 pre-`2026-03-26` legacy `news/*-en.html`
+   * articles whose `analysis/daily/<date>/` source directories have
+   * been deleted), the renderer gracefully falls back to whatever
+   * `article.md` frontmatter is available — keeps existing legacy
+   * SEO intact without throwing.
+   *
+   * The subfolder slug (`propositions`, `committee-reports`, …) is
+   * sourced from {@link subfolderSlug}; defaults to the empty string
+   * which simply skips the article-type boilerplate scrub inside
+   * {@link cleanArticleTitle}.
+   */
+  readonly englishBriefMarkdown?: string;
+  /**
+   * Raw localized `executive-brief_<lang>.md` markdown when one exists
+   * for `input.lang`. When provided and `lang !== 'en'`, the renderer
+   * derives title + description from the localized brief (per the
+   * cascade-chain step #2 in `Article-Generation.md § "Per-language
+   * precedence chain"`); when the localized brief has a banned /
+   * missing H1 / BLUF, fields independently fall through to the
+   * {@link englishBriefMarkdown} cascade.
+   */
+  readonly localizedBriefMarkdown?: string;
+  /**
+   * Subfolder slug (`propositions`, `committee-reports`, …). Forwarded
+   * to {@link cleanArticleTitle} so brief H1s that simply repeat the
+   * article-type label are scrubbed before truncation. Optional; an
+   * empty string disables that scrub.
+   */
+  readonly subfolderSlug?: string;
 }
 
 function canonicalizeMarkdownHrefTarget(
@@ -198,8 +252,121 @@ export function splitBodyAtSecondH2(bodyHtml: string): { lead: string; rest: str
   };
 }
 
+/**
+ * Derive `<title>` / `<meta description>` / keyword-entity overrides
+ * from the executive-brief markdown adjacent to `article.md`. Pure
+ * function — no I/O, no clock.
+ *
+ * Resolution order:
+ *
+ *  1. For non-EN, prefer {@link RenderArticleInput.localizedBriefMarkdown}
+ *     via {@link extractLocalizedBriefSeo}. Title and description are
+ *     resolved **independently**: a banned title with a clean BLUF
+ *     still localizes the description, and a clean title with an
+ *     empty BLUF still localizes the title.
+ *  2. Whatever field is still `null` after step 1 falls through to the
+ *     English brief — title via {@link readFirstHeading} →
+ *     {@link cleanArticleTitle}; description via
+ *     {@link composeRichDescription} ∥ {@link readBlufParagraph} ∥
+ *     {@link readFirstParagraph}, capped by per-language SERP window
+ *     in {@link truncateToSentenceBoundary}.
+ *  3. Entities are mined from the brief (localized first, EN
+ *     fallback) — universal-Swedish identifiers (HD03267, JuU/SfU)
+ *     carry across locales.
+ *
+ * Returns `{ title: undefined, description: undefined, entities: [] }`
+ * when no brief markdown is provided so the head-metadata helper falls
+ * back to the legacy frontmatter-only audit path (covers the 278 pre-
+ * `2026-03-26` `news/*-en.html` files whose source `analysis/daily/`
+ * directories have been deleted).
+ *
+ * Exported for testability.
+ */
+export function deriveBriefSeoOverrides(input: {
+  readonly lang: Language;
+  readonly englishBriefMarkdown?: string;
+  readonly localizedBriefMarkdown?: string;
+  readonly subfolderSlug?: string;
+}): {
+  readonly title: string | undefined;
+  readonly description: string | undefined;
+  readonly entities: readonly string[];
+} {
+  const subfolder = input.subfolderSlug ?? '';
+  const hasEn = !!input.englishBriefMarkdown && input.englishBriefMarkdown.trim().length > 0;
+  const hasLoc = !!input.localizedBriefMarkdown
+    && input.localizedBriefMarkdown!.trim().length > 0;
+  if (!hasEn && !hasLoc) {
+    return { title: undefined, description: undefined, entities: [] };
+  }
+
+  let title: string | null = null;
+  let description: string | null = null;
+  let entities: readonly string[] = [];
+
+  // Step 1 — localized brief (non-EN only).
+  if (input.lang !== 'en' && hasLoc) {
+    const briefSeo = extractLocalizedBriefSeo({
+      briefMarkdown: input.localizedBriefMarkdown!,
+      subfolder,
+      lang: input.lang,
+    });
+    if (briefSeo.title) title = briefSeo.title;
+    if (briefSeo.description) description = briefSeo.description;
+    if (briefSeo.keywords.length > 0) entities = briefSeo.keywords;
+  }
+
+  // Step 2 — English brief fallback for any field still unresolved.
+  if (hasEn) {
+    if (title === null) {
+      const rawH1 = readFirstHeading(input.englishBriefMarkdown!);
+      const cleaned = cleanArticleTitle(rawH1, subfolder);
+      if (cleaned && cleaned.length > 0) title = cleaned;
+    }
+    if (description === null) {
+      // Rich description (BLUF + headline-section bullets) — mirrors
+      // the aggregator's English path.
+      const composed = composeRichDescription(input.englishBriefMarkdown!, 'en');
+      if (composed && composed.length > 0) {
+        description = composed;
+      } else {
+        const bluf = readBlufParagraph(input.englishBriefMarkdown!)
+          ?? readFirstParagraph(input.englishBriefMarkdown!);
+        if (bluf && bluf.trim().length > 0) {
+          const { softMin, hardMax } = descriptionWindowForLanguage(input.lang);
+          const truncated = truncateToSentenceBoundary(bluf, softMin, hardMax);
+          if (truncated.length > 0) description = truncated;
+        }
+      }
+    }
+    if (entities.length === 0) {
+      entities = flattenBriefEntities(extractBriefEntities(input.englishBriefMarkdown!, 'en'));
+    }
+  }
+
+  return {
+    title: title ?? undefined,
+    description: description ?? undefined,
+    entities,
+  };
+}
+
 export async function renderArticleHtml(input: RenderArticleInput): Promise<string> {
   const parsed = matter(input.markdown);
+  // Cascade-chain step #1+#2 — pull SEO directly from executive-brief.md
+  // (localized brief beats EN brief for non-EN, EN brief is canonical
+  // for EN). The brief is the single source of truth for `<title>` /
+  // `<meta description>` / JSON-LD `headline` / JSON-LD `description`.
+  // `article.md` frontmatter `title:` / `description:` / `keywords:`
+  // lines are back-compat-only fallback for the 278 pre-`2026-03-26`
+  // legacy `news/*-en.html` files whose source directories have been
+  // deleted (see `deriveBriefSeoOverrides`).
+  const briefOverrides = deriveBriefSeoOverrides({
+    lang: input.lang,
+    englishBriefMarkdown: input.englishBriefMarkdown,
+    localizedBriefMarkdown: input.localizedBriefMarkdown,
+    subfolderSlug: input.subfolderSlug,
+  });
   // Delegate every `<head>`-relevant derivation to the shared helper so
   // the renderer and the `test-article-headers` CLI can never drift.
   const head = computeArticleHeadMetadata({
@@ -209,6 +376,9 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     // Pass the already-parsed front-matter data so `computeArticleHeadMetadata`
     // can skip a second `matter()` call on the same string.
     parsedData: parsed.data as Record<string, unknown>,
+    briefDerivedTitle: briefOverrides.title,
+    briefDerivedDescription: briefOverrides.description,
+    briefDerivedEntities: briefOverrides.entities,
   });
   const { rawTitle: title, date, articleTypeId, articleTypeLabel: localizedArticleTypeLabel, seo } = head;
   const publishedIso = `${date}T00:00:00Z`;

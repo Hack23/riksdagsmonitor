@@ -1,12 +1,9 @@
 ---
-title: "Sweden Month-Ahead Strategic Outlook (19 April → 19 May 2026)"
-description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
-keywords: "HD03100, HD0399, HD03236, HD03231, HD03232, HD03229, HD03235, HD01SfU22, HD03246, HD03237, HD01KU32, HD01KU33, HD024079, HD024097, HD10438, HD03245, KU32, KU33, JuU15, KU, JuU, KD, News Journalist, James Pether Sörling"
 date: 2026-04-19
 subfolder: month-ahead
 slug: 2026-04-19-month-ahead
 source_folder: analysis/daily/2026-04-19/month-ahead
-generated_at: 2026-05-24T18:59:04.075Z
+generated_at: 2026-05-24T20:55:26.741Z
 language: en
 layout: article
 ---

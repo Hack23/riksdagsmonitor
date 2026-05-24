@@ -1,12 +1,9 @@
 ---
-title: "Riksdag Presses Government on Welfare Equality and Climate Inaction — May 13, 2026"
-description: "Two interpellations submitted to the Tidö government on May 13 expose a governance accountability gap: the Social Democrats challenge Civilminister Erik Slottner (KD) over the stalled municipal…"
-keywords: "HD10487, HD10488, KD, MP, Social Democrats, Civilminister Erik Slottner, Acting Climate Minister Johan, IMF Context, With Riksdagen, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-05-13
 subfolder: interpellations
 slug: 2026-05-13-interpellations
 source_folder: analysis/daily/2026-05-13/interpellations
-generated_at: 2026-05-24T18:59:06.325Z
+generated_at: 2026-05-24T20:55:28.727Z
 language: en
 layout: article
 ---

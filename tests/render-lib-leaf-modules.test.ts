@@ -765,7 +765,7 @@ describe('aggregator/frontmatter — YAML escape + assembly', () => {
     expect(escapeInlineMd('foo*bar')).toBe('foo\\*bar');
   });
 
-  it('buildFrontMatter assembles a 9-key block with auto slug', () => {
+  it('buildFrontMatter assembles a body-only block with auto slug and omits SEO fields', () => {
     const fm = buildFrontMatter({
       title: 'Hello',
       description: 'Body',
@@ -774,7 +774,10 @@ describe('aggregator/frontmatter — YAML escape + assembly', () => {
       source_folder: 'analysis/daily/2026-04-27/propositions',
       generated_at: '2026-04-27T18:00:00.000Z',
     });
-    expect(fm).toContain('title: "Hello"');
+    // SEO fields are derived from executive-brief.md at render time, not emitted to article.md frontmatter
+    expect(fm).not.toContain('title:');
+    expect(fm).not.toContain('description:');
+    expect(fm).not.toContain('keywords:');
     expect(fm).toContain('slug: 2026-04-27-propositions');
     expect(fm).toContain('language: en');
     expect(fm).toContain('layout: article');

@@ -184,8 +184,16 @@ describe('runArticlePipeline — happy path', () => {
     };
     const value = requireOk(runArticlePipeline(input));
     expect(value.markdown).toMatch(/^---\n/);
-    expect(value.markdown).toContain('title:');
-    expect(value.markdown).toContain('description:');
+    // Post-`2026-05-24` SEO contract — `title:` / `description:` lines
+    // are no longer written to the article.md front-matter; the
+    // renderer sources both directly from executive-brief.md via
+    // `deriveBriefSeoOverrides`. The in-memory pipeline result still
+    // exposes them on `value.title` / `value.description` for callers
+    // (see runArticlePipeline result type).
+    expect(value.markdown).not.toMatch(/^title:/m);
+    expect(value.markdown).not.toMatch(/^description:/m);
+    expect(value.title.length).toBeGreaterThan(0);
+    expect(value.description.length).toBeGreaterThan(0);
     expect(value.markdown).toContain('date: 2026-05-06');
     expect(value.markdown).toContain('subfolder: propositions');
     expect(value.markdown).toContain('language: en');

@@ -1,12 +1,9 @@
 ---
-title: "Sweden Evening Analysis"
-description: "Sweden's ruling coalition today advanced the most comprehensive migration policy overhaul in a decade, filing four linked propositions (2025/26:262–265) that collectively abolish permanent residence…"
-keywords: "HD024176, HD024180, HD01CU30, HD03, HD024152, HD024161, HD024163, HD024164, HD01KU35, HD01NU21, prop 2025/26:254, CU30, KU35, NU21, CU, KU, NU, SfU, TU, FöU, Centre Party, Open PIR, Migration Mega-Package, Election Proximity Multiplier"
 date: 2026-05-13
 subfolder: evening-analysis
 slug: 2026-05-13-evening-analysis
 source_folder: analysis/daily/2026-05-13/evening-analysis
-generated_at: 2026-05-24T18:59:06.304Z
+generated_at: 2026-05-24T20:55:28.714Z
 language: en
 layout: article
 ---

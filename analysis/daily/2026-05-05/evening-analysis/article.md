@@ -1,12 +1,9 @@
 ---
-title: "SD fires two coordinated state-reform salvos: Interpellations HD10464"
-description: "SD fires two coordinated state-reform salvos: Interpellations HD10464 (abolish Sida) and HD10466 (non-political Regeringskansliet civil servants) signal a pre-election campaign to reframe the Swedish…"
-keywords: "HD10464, HD10466, HD10465, HD11787, HD03255, HD10458, HD10459, Prop. 2025/26:99, JuU30, KU39, JuU, KU, Malmer Stenergard, KD Minister, Public Administration, Björn Wiechel, Tobias Dousa, Maria Malmer Stenergard, Eric Slottner, Peter Björk, Håkan Svenneling, NPT Swedish, FM Datamapper, Riksdagsmonitor"
 date: 2026-05-05
 subfolder: evening-analysis
 slug: 2026-05-05-evening-analysis
 source_folder: analysis/daily/2026-05-05/evening-analysis
-generated_at: 2026-05-24T18:59:05.505Z
+generated_at: 2026-05-24T20:55:28.040Z
 language: en
 layout: article
 ---

@@ -1,12 +1,9 @@
 ---
-title: "Sweden's 30-day legislative window closes with the Kristersson"
-description: "Sweden's 30-day legislative window closes with the Kristersson government (M–SD–KD–L) completing its pre-election regulatory portfolio."
-keywords: "HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24, HD01FiU48, HD10448, HD11747, HD11749, HD11748, HD03100, HD0399, HD03240, HD03238, HD03239, HD03214, HD03228, UFöU3, SfU18, SoU17, UFöU, SfU, SoU, MP, James Pether Sörling"
 date: 2026-04-25
 subfolder: monthly-review
 slug: 2026-04-25-monthly-review
 source_folder: analysis/daily/2026-04-25/monthly-review
-generated_at: 2026-05-24T18:59:04.472Z
+generated_at: 2026-05-24T20:55:27.106Z
 language: en
 layout: article
 ---

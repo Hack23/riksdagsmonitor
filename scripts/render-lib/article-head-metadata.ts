@@ -152,6 +152,31 @@ export interface ArticleHeadMetadataInput {
    * `renderArticleHtml`) that have already parsed the markdown.
    */
   readonly parsedData?: Record<string, unknown>;
+  /**
+   * Brief-derived title — when set (non-empty), this trumps the
+   * `fm.title` frontmatter line. Sourced directly from the executive
+   * brief by `renderArticleHtml` (see {@link ./article.ts}). Leaving
+   * this unset preserves the legacy frontmatter-only audit path so the
+   * 278 pre-`2026-03-26` legacy `news/*-en.html` files (whose
+   * `analysis/daily/<date>/` sources have been deleted) keep their
+   * existing SEO without throwing.
+   */
+  readonly briefDerivedTitle?: string;
+  /**
+   * Brief-derived description — when set (non-empty), this trumps the
+   * `fm.description` frontmatter line. Companion to
+   * {@link briefDerivedTitle}.
+   */
+  readonly briefDerivedDescription?: string;
+  /**
+   * Brief-derived entity tokens (bill IDs, committee codes, party
+   * codes, named entities) — when provided, these seed the SERP
+   * `keywords` string in `buildArticleSeoMetadata` *instead of*
+   * re-parsing the (now-deprecated) `fm.keywords` line. The aggregator
+   * no longer writes `keywords:` into `article.md` since 2026-05-24;
+   * the renderer mines entities directly from the brief markdown.
+   */
+  readonly briefDerivedEntities?: readonly string[];
 }
 
 /**
@@ -210,23 +235,31 @@ export interface ArticleHeadMetadata {
  */
 export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): ArticleHeadMetadata {
   const fm = (input.parsedData ?? matter(input.markdown).data) as Record<string, unknown>;
-  const rawTitle = String(fm.title ?? 'Political Intelligence');
-  const rawDescription = String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
+  // Brief-derived values trump frontmatter when set (post-2026-05-24
+  // cascade: executive-brief.md is the single source of truth for
+  // `<title>` / `<meta description>` / JSON-LD `headline` /
+  // `description`). Legacy frontmatter-only audit path is preserved
+  // for the 278 pre-`2026-03-26` `news/*-en.html` files whose
+  // `analysis/daily/<date>/` source directories have been deleted.
+  const briefTitle = input.briefDerivedTitle?.trim();
+  const briefDescription = input.briefDerivedDescription?.trim();
+  const rawTitle = briefTitle && briefTitle.length > 0
+    ? briefTitle
+    : String(fm.title ?? 'Political Intelligence');
+  const rawDescription = briefDescription && briefDescription.length > 0
+    ? briefDescription
+    : String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
   const rawKeywords = typeof fm.keywords === 'string' ? fm.keywords : undefined;
   const date = parseFrontMatterDate(fm.date, input.now);
   const articleType = inferArticleType(input.canonicalPath, rawTitle);
   const localizedArticleTypeLabel = articleTypeLabel(articleType.type, input.lang, articleType.label);
-  // The aggregator (and article-merge for non-EN) writes a rich
-  // `keywords:` front-matter line whose head is the brief-extractor
-  // entities (HD03267, JuU, SÄPO, …). Re-derive those entities by
-  // splitting the front-matter string and pass them as `briefEntities`
-  // so `buildArticleKeywords` can re-build the canonical keyword string
-  // for ANY language — not just English. Without this hand-off, non-EN
-  // pages would lose the entity-seed tokens (the legacy code dropped
-  // the EN frontmatter seed for non-EN locales to avoid prose-token
-  // leakage; we keep that guard for the plain `keywords` parameter and
-  // expose entities via the dedicated `briefEntities` channel instead).
-  const briefEntities = parseKeywordsString(rawKeywords);
+  // Brief entities seed the SERP `keywords` string. Prefer the
+  // explicit brief-derived list passed by the renderer (post-2026-05-24
+  // path); fall back to parsing `fm.keywords` for the legacy audit
+  // path that has no live brief.
+  const briefEntities = input.briefDerivedEntities && input.briefDerivedEntities.length > 0
+    ? input.briefDerivedEntities
+    : parseKeywordsString(rawKeywords);
   const seo = buildArticleSeoMetadata({
     title: rawTitle,
     description: rawDescription,

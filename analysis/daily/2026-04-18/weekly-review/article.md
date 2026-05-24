@@ -1,12 +1,9 @@
 ---
-title: "Riksdag Week 16, 2026"
-description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
-keywords: "HD03100, HD0399, HD03236, HD01KU32, HD01KU33, HD03231, HD03232, JuU15, KU33, SfU22, KU32, JuU, KU, SfU, KD, SD, MP, News Journalist, James Pether Sörling, PM Ulf Kristersson, Spring Fiscal Trilogy, World Bank, Foreign Minister, Maria Malmer Stenergard"
 date: 2026-04-18
 subfolder: weekly-review
 slug: 2026-04-18-weekly-review
 source_folder: analysis/daily/2026-04-18/weekly-review
-generated_at: 2026-05-24T18:59:04.034Z
+generated_at: 2026-05-24T20:55:26.701Z
 language: en
 layout: article
 ---

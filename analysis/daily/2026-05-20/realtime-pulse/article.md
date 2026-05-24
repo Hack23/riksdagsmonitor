@@ -1,12 +1,9 @@
 ---
-title: "Sweden votes to constitutionalize abortion right — the most consequential Riksdag day of 2026"
-description: "Sweden's Riksdag is today voting on the most constitutionally significant legislation of the 2022-2026 term: a three-component constitutional amendment (bet HD01KU34, KU, prop 2025/26:78) enshrining…"
-keywords: "HD01KU34, HD01SoU30, HD01SoU29, HD01JuU43, HD01FiU38, prop 2025/26:78, prop 2025/26:201, SoU29, KU34, SoU30, JuU43, SoU, KU, JuU, EU-nämnden FAC Handel, Middle East, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen"
 date: 2026-05-20
 subfolder: realtime-pulse
 slug: 2026-05-20-realtime-pulse
 source_folder: analysis/daily/2026-05-20/realtime-pulse
-generated_at: 2026-05-24T18:59:06.846Z
+generated_at: 2026-05-24T20:55:29.194Z
 language: en
 layout: article
 ---

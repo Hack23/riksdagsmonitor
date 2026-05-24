@@ -1,12 +1,9 @@
 ---
-title: "Sweden Passes AI Facial Recognition Law as Riksdag Advances Five Committee Reports"
-description: "Sweden's Justice Committee (JuU) has endorsed the government's bill granting Polismyndigheten and SÄPO authority to deploy real-time AI facial recognition in law enforcement — Sweden's most…"
-keywords: "HD01JuU28, HD01CU36, HD01FiU39, HD01FiU40, HD01CU41, Prop. 2025/26:150, Prop. 2025/26:157, JuU28, CU36, FiU40, FiU39, JuU, CU, FiU, Capital Markets Union, Constitutional Court, Engage AMF, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency"
 date: 2026-05-22
 subfolder: committee-reports
 slug: 2026-05-22-committee-reports
 source_folder: analysis/daily/2026-05-22/committee-reports
-generated_at: 2026-05-24T18:59:06.953Z
+generated_at: 2026-05-24T20:55:29.293Z
 language: en
 layout: article
 ---

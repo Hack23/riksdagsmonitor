@@ -52,6 +52,7 @@ import { fileURLToPath } from 'url';
 
 import { LANGUAGE_META } from './sitemap-html/index.js';
 import { computeArticleHeadMetadata, type ArticleHeadMetadata } from './render-lib/article-head-metadata.js';
+import { deriveBriefSeoOverrides } from './render-lib/article.js';
 import { renderChromeHead } from './render-lib/chrome.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -436,10 +437,34 @@ function main(): void {
   for (let i = 0; i < articles.length; i++) {
     try {
       const markdown = fs.readFileSync(articles[i].articleMdPath, 'utf8');
+      // Cascade-chain step #1 — load the executive-brief.md adjacent to
+      // article.md and feed it into `computeArticleHeadMetadata` so the
+      // audit report reflects what the renderer actually ships. Post-
+      // `2026-05-24` SEO contract: `<title>` and `<meta description>`
+      // come from the brief, not from article.md frontmatter.
+      const articleDir = path.dirname(articles[i].articleMdPath);
+      const briefPath = path.join(articleDir, 'executive-brief.md');
+      let briefDerivedTitle: string | undefined;
+      let briefDerivedDescription: string | undefined;
+      let briefDerivedEntities: readonly string[] | undefined;
+      if (fs.existsSync(briefPath)) {
+        const briefMarkdown = fs.readFileSync(briefPath, 'utf8');
+        const overrides = deriveBriefSeoOverrides({
+          lang: 'en',
+          englishBriefMarkdown: briefMarkdown,
+          subfolderSlug: articles[i].subfolder,
+        });
+        briefDerivedTitle = overrides.title;
+        briefDerivedDescription = overrides.description;
+        briefDerivedEntities = overrides.entities;
+      }
       const head = computeArticleHeadMetadata({
         markdown,
         lang: 'en',
         canonicalPath: articles[i].canonicalPath,
+        briefDerivedTitle,
+        briefDerivedDescription,
+        briefDerivedEntities,
       });
       chunks.push(formatBlock(i, articles.length, articles[i], head, 'en'));
       updateStats(stats, head, articles[i].canonicalPath);

@@ -1,12 +1,9 @@
 ---
-title: "Socialdemokraterna Intensifierar Valoppsitionens Ansvarsutmaning med Sju Interpellationer"
-description: "Social Democrats filed seven interpellations on 22 May 2026 targeting four Tidögovernment portfolios — a coordinated pre-election accountability strategy with svarsdatum 5 June and 115 days to the…"
-keywords: "HD10505, HD10502, HD10503, HD10504, HD10506, HD10508, HD10507, KD, Erik Ezelius, Gustaf Lantz, Carina Ödebrink, Eva Lindh, Pål Jonson, Lotta Edholm, Camilla Waltersson Grönvall, Andreas Carlson, Ebba Busch, Social Democrats, Social Services Minister Waltersson, Waltersson Grönvall, Ekot HVB-hem, Försvarsminister Jonson, Utbildningsminister Edholm, Socialtjänstminister Waltersson Grönvall"
 date: 2026-05-22
 subfolder: interpellations
 slug: 2026-05-22-interpellations
 source_folder: analysis/daily/2026-05-22/interpellations
-generated_at: 2026-05-24T18:59:06.990Z
+generated_at: 2026-05-24T20:55:29.325Z
 language: en
 layout: article
 ---

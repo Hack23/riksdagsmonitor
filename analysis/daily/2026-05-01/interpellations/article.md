@@ -1,12 +1,9 @@
 ---
-title: "BLUF (Bottom Line Up Front): Five interpellations filed 22-30 April"
-description: "BLUF (Bottom Line Up Front): Five interpellations filed 22-30 April 2026 reveal three converging crises — Sweden's criminal economy (352 GSEK/5.5% GDP), gang violence accountability, and declining…"
-keywords: "HD10458, HD10461, HD10451, HD10459, HD10460, EU, KD, Justice Minister Strömmer, Minister Edholm, Civil Minister Slottner, Agentic Intelligence Pipeline, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-05-01
 subfolder: interpellations
 slug: 2026-05-01-interpellations
 source_folder: analysis/daily/2026-05-01/interpellations
-generated_at: 2026-05-24T18:59:05.132Z
+generated_at: 2026-05-24T20:55:27.708Z
 language: en
 layout: article
 ---

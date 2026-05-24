@@ -1,12 +1,9 @@
 ---
-title: "May 2026 Swedish Parliamentary Month Ahead: Security, Justice & Infrastructure at the Forefront"
-description: "Sweden's Riksdag enters May 2026 with a legislative agenda dominated by criminal justice expansion, infrastructure investment conflicts, and social insurance reform pressure."
-keywords: "HD01JuU10, HD01SfU23, HD10449, HD01CU25, HD03246, HD10450, HD11753, HD11752, HD03231, HD10448, HD01JuU31, HD03237, KD, SD, Monitor SfU, Anna Tenje, Andreas Carlson, WEO Apr, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
 date: 2026-04-27
 subfolder: month-ahead
 slug: 2026-04-27-month-ahead
 source_folder: analysis/daily/2026-04-27/month-ahead
-generated_at: 2026-05-24T18:59:04.699Z
+generated_at: 2026-05-24T20:55:27.324Z
 language: en
 layout: article
 ---

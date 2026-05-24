@@ -1,12 +1,9 @@
 ---
-title: "Sweden Tightens Municipal Governance: Digital Meetings Clarified, Welfare Fraud Oversight Strengthened"
-description: "The Swedish Riksdag's Committee on the Constitution (KU) has unanimously recommended approving Proposition 2025/26:164, which amends Kommunallagen to eliminate the legal grey zone around remote…"
-keywords: "KU35, KU, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, CommitteeReports, English"
 date: 2026-05-18
 subfolder: committeeReports
 slug: 2026-05-18-committeeReports
 source_folder: analysis/daily/2026-05-18/committeeReports
-generated_at: 2026-05-24T18:59:06.655Z
+generated_at: 2026-05-24T20:55:29.023Z
 language: en
 layout: article
 ---

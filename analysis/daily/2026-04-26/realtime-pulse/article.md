@@ -1,12 +1,9 @@
 ---
-title: "Sweden's Pre-Election Legislative Sprint: Security, Fiscal Relief, and Banking Reform Converge"
-description: "Sweden's Riksdag enters the final 140-day pre-election stretch with an unprecedented convergence of legislative streams: a 4.1 billion SEK emergency fuel and energy tax relief package (HD01FiU48)…"
-keywords: "HD01FiU48, HD03253, HD01JuU10, HD01CU25, HD10444, HD10447, HD10434, HD10448, HD01FiU23, Middle East, Basel IV, Social Democrat, Basel III, Building Act, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Realtime Pulse, English"
 date: 2026-04-26
 subfolder: realtime-pulse
 slug: 2026-04-26-realtime-pulse
 source_folder: analysis/daily/2026-04-26/realtime-pulse
-generated_at: 2026-05-24T18:59:04.604Z
+generated_at: 2026-05-24T20:55:27.233Z
 language: en
 layout: article
 ---

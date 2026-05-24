@@ -1,12 +1,9 @@
 ---
-title: "Sweden's Riksdag Votes on AI Police Surveillance: A Constitutional Moment 115 Days Before Election"
-description: "Sweden's parliament today holds plenary debate on JuU28 — the Justice Committee's approval of police use of AI-based real-time facial recognition — marking the first legislative authorisation of…"
-keywords: "HD01JuU28, HD01FiU40, HD01CU36, HD01CU41, HD10499, HD10500, HD10501, HD11822, HD11827, JuU28, FiU40, CU36, CU41, JuU, FiU, CU, MP Widding, Track SD, If SD, Assess Köping, AI Facial Recognition, Fund Market, Strengthened Finansinspektionen, UCITS VI"
 date: 2026-05-21
 subfolder: realtime-pulse
 slug: 2026-05-21-realtime-pulse
 source_folder: analysis/daily/2026-05-21/realtime-pulse
-generated_at: 2026-05-24T18:59:06.939Z
+generated_at: 2026-05-24T20:55:29.280Z
 language: en
 layout: article
 ---

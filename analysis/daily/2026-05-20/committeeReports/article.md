@@ -1,12 +1,9 @@
 ---
-title: "Sweden Tightens Security Shield and Food Stockpile Rules as Five Major Laws Near Enactment"
-description: "The Riksdag's committees on 19 May 2026 advanced nine betänkanden spanning national security infrastructure, food preparedness, housing market innovation, social insurance reform, and education…"
-keywords: "JuU36, MJU25, CU32, CU33, CU39, SfU26, UbU29, SkU28, MJU26, JuU, MJU, CU, SfU, UbU, SkU, SD, Henrik Vinge, Help-to-Buy Shared Ownership, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
 date: 2026-05-20
 subfolder: committeeReports
 slug: 2026-05-20-committeeReports
 source_folder: analysis/daily/2026-05-20/committeeReports
-generated_at: 2026-05-24T18:59:06.768Z
+generated_at: 2026-05-24T20:55:29.125Z
 language: en
 layout: article
 ---

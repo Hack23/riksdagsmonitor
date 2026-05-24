@@ -154,45 +154,46 @@ async function renderOne(
 
   const artifactsUsed = resolveArtifactList(rc);
 
+  // Cascade chain step #1 — load the English `executive-brief.md`
+  // adjacent to `article.md`. The renderer derives `<title>` and
+  // `<meta description>` **directly from the brief** (post-2026-05-24
+  // SEO contract); `article.md` frontmatter `title:` / `description:`
+  // lines are no longer emitted by the aggregator and only matter as
+  // back-compat fallback for the 278 pre-`2026-03-26` legacy
+  // `news/*-en.html` files whose source directories have been deleted.
+  const articleDir = path.dirname(rc.articleMdPath);
+  const briefPath = path.join(articleDir, 'executive-brief.md');
+  const englishBriefMarkdown = fs.existsSync(briefPath)
+    ? fs.readFileSync(briefPath, 'utf8')
+    : undefined;
+
   let count = 0;
   for (const lang of langs) {
-    // Cascade chain step #2: feed the localized executive-brief markdown
-    // into the merger so a publishable H1 + BLUF in
-    // `executive-brief_<lang>.md` overrides the canonical English title
-    // / description. See `Article-Generation.md § "Per-language
-    // precedence chain"` and `scripts/render-lib/aggregator/seo/localized-brief.ts`.
-    //
-    // The localized brief is consulted for every non-EN language —
-    // independently of whether a (now-forbidden) `article.<lang>.md`
-    // exists — because the brief is the canonical localized SEO source.
-    // Historical `article.<lang>.md` files in the repo are intentionally
-    // IGNORED (not read) so stale per-language translations cannot
-    // override the cascade; the file-ownership validator blocks any new
-    // ones (see `scripts/validate-file-ownership.ts:isLocalizedArticleMd`).
-    // When the localized brief is also absent the merger falls through to
-    // the English brief title/description (already baked into the English
-    // `article.md` front-matter by `aggregator/aggregate.ts`) and only
-    // forces `language: <lang>` so JSON-LD `inLanguage` and the
-    // `<html lang>` attribute match the rendered HTML.
+    // Cascade chain step #2 — `executive-brief_<lang>.md` provides the
+    // localized SEO. The renderer reads it directly via
+    // `localizedBriefMarkdown`; the merger is only needed when a body
+    // overlay is required (now a no-op since `article.<lang>.md` is a
+    // forbidden artifact — see `validate-file-ownership.ts`). The
+    // merger no longer rewrites title/description from the brief; that
+    // moved to the renderer in `deriveBriefSeoOverrides`.
     let mdForLang: string;
+    let localizedBriefMarkdown: string | undefined;
     if (lang === 'en') {
       mdForLang = markdown;
     } else {
-      const briefLangPath = path.join(
-        path.dirname(rc.articleMdPath),
-        `executive-brief_${lang}.md`,
-      );
-      const localizedBriefMarkdown = fs.existsSync(briefLangPath)
+      const briefLangPath = path.join(articleDir, `executive-brief_${lang}.md`);
+      localizedBriefMarkdown = fs.existsSync(briefLangPath)
         ? fs.readFileSync(briefLangPath, 'utf8')
         : undefined;
-      // Intentionally pass '' — never read article.<lang>.md from disk
-      // (forbidden artifact; the cascade owns localized prose).
+      // The merger still runs to force `language: <lang>` in the
+      // front-matter (so JSON-LD `inLanguage` matches `<html lang>`)
+      // and to apply the body overlay when a localized body exists.
+      // Title/description/keywords frontmatter overlay has been removed
+      // — the renderer now owns those via the brief inputs below.
       mdForLang = mergeLocalizedWithEnglish({
         englishMarkdown: markdown,
         localizedMarkdown: '',
         lang,
-        localizedBriefMarkdown,
-        subfolder: rc.subfolder,
       });
     }
     const canonicalPath = canonicalPathFor(rc.date, rc.subfolder, lang, rc.date);
@@ -203,6 +204,9 @@ async function renderOne(
       hreflangAlternates,
       subfolderRepoRelPath: rc.subfolderRepoRelPath,
       artifactsUsed,
+      englishBriefMarkdown,
+      localizedBriefMarkdown,
+      subfolderSlug: rc.subfolder,
     });
     const outPath = path.join(ROOT_DIR, canonicalPath);
     ensureDir(path.dirname(outPath));

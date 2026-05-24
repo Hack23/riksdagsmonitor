@@ -1,12 +1,9 @@
 ---
-title: "Swedish Opposition Motions Spring 2026"
-description: "Twenty-nine opposition motions filed by V, MP, and S between April 7–17, 2026 (riksmöte 2025/26) target the Tidö government's spring legislative programme on criminal deportation, housing…"
-keywords: "HD024090, HD024086, prop. 2025/26:235, MP, Monitor SfU Committee Vote, Social Affairs Committees, Any KD, MP Electoral Operationalisation, Assess EU Law Pathway, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-04-27
 subfolder: motions
 slug: 2026-04-27-motions
 source_folder: analysis/daily/2026-04-27/motions
-generated_at: 2026-05-24T18:59:04.737Z
+generated_at: 2026-05-24T20:55:27.357Z
 language: en
 layout: article
 ---

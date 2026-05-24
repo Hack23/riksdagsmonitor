@@ -1,12 +1,9 @@
 ---
-title: "Riksdag Committee Reports: Konstitutionell reform, suicidprevention och hyresmarknad"
-description: "Konstitutionsutskottet (KU) presenterar ett historiskt dubbelbetänkande (HD01KU34) som söker grundlagsskydda aborträtten och samtidigt utöka möjligheterna att begränsa föreningsfriheten och…"
-keywords: "HD01KU34, HD01SoU31, HD01CU31, KU34, SoU31, CU31, FiU37, JuU39, KU, SoU, CU, FiU, JuU, James Pether Sörling, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, CommitteeReports, English"
 date: 2026-05-12
 subfolder: committeeReports
 slug: 2026-05-12-committeeReports
 source_folder: analysis/daily/2026-05-12/committeeReports
-generated_at: 2026-05-24T18:59:06.200Z
+generated_at: 2026-05-24T20:55:28.623Z
 language: en
 layout: article
 ---

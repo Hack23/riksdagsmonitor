@@ -1,12 +1,9 @@
 ---
-title: "Week Ahead: Aid Accountability"
-description: "Sweden's Tidö government faces two scheduled interpellation debates (2026-05-18) on its dismantling of the aid architecture — HD10492 (consequences for children) and HD10493 (consequences of…"
-keywords: "HD10492, HD10493, Lotta Johnsson Fornarve, Minister Benjamin Dousa, Minister Dousa, US USAID, Two Swedish-language, Decision-Grade BLUF Rubric, Self-Audit Checklist, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Week Ahead, English"
 date: 2026-05-15
 subfolder: week-ahead
 slug: 2026-05-15-week-ahead
 source_folder: analysis/daily/2026-05-15/week-ahead
-generated_at: 2026-05-24T18:59:06.601Z
+generated_at: 2026-05-24T20:55:28.978Z
 language: en
 layout: article
 ---

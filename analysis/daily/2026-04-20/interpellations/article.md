@@ -1,12 +1,9 @@
 ---
-title: "Between April 7 and April 17, 2026, the Swedish Riksdag received"
-description: "Between April 7 and April 17, 2026, the Swedish Riksdag received approximately 15 interpellations across the period — of which 10 are in scope for this analysis (HD10429–HD10438, including one…"
-keywords: "HD10429, HD10438, HD10436, HD10437, HD10435, HD10434, HD10426, HD10433, HD10427, HD10432, HD10415, HD10431, HD10430, EU, KD, Between April, Gender Equality Minister Nina, Infrastructure Minister Andreas Carlson, Foreign Minister Malmer Stenergard, Documented EU-directive, Malmer Stenergard, Quantified Länsstyrelsen, Andreas Carlson, Nina Larsson"
 date: 2026-04-20
 subfolder: interpellations
 slug: 2026-04-20-interpellations
 source_folder: analysis/daily/2026-04-20/interpellations
-generated_at: 2026-05-24T18:59:04.153Z
+generated_at: 2026-05-24T20:55:26.811Z
 language: en
 layout: article
 ---

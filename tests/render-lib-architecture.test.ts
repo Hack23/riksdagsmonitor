@@ -217,7 +217,10 @@ describe('aggregator.ts (leaf, isolated from markdown/chrome)', () => {
       expect(result.description).toMatch(/Lead paragraph/);
       expect(Array.isArray(result.artifactsUsed)).toBe(true);
       expect(result.artifactsUsed).toContain('executive-brief.md');
-      expect(result.markdown).toMatch(/^---\ntitle: "Sweden ratifies landmark policy reform"/);
+      // SEO fields are derived from executive-brief.md at render time, not emitted to article.md frontmatter
+      expect(result.markdown).toMatch(/^---\ndate: 2026-04-24\n/);
+      expect(result.markdown).not.toMatch(/^---[\s\S]*?\ntitle:/);
+      expect(result.markdown).not.toMatch(/^---[\s\S]*?\ndescription:/);
     } finally {
       fs.rmSync(tmp, { recursive: true, force: true });
     }

@@ -1,12 +1,9 @@
 ---
-title: "Sweden's parliament entered a decisive pre-election week with three"
-description: "Sweden's parliament entered a decisive pre-election week with three simultaneous high-stakes policy developments."
-keywords: "HD10442, HD11732, HD01FiU48, HD10440, HD10441, HD11731, FiU48, FiU, KD, Finance Committee, Finance Minister Elisabeth Svantesson, Foreign Minister Margot Wallström, Gender Equality Minister Nina, Flag EU Pay Directive, Finance Minister Svantesson AND, Foreign Minister Wallström, Nina Larsson, Denis Begic, Foreign Minister Malmer Stenergard, Significance Today, Elisabeth Svantesson, Finance Minister, Johan Britz, Acting Climate"
 date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-05-24T18:59:04.209Z
+generated_at: 2026-05-24T20:55:26.864Z
 language: en
 layout: article
 ---

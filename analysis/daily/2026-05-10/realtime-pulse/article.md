@@ -1,12 +1,9 @@
 ---
-title: "The Tidö government submitted three high-significance propositions"
-description: "On 7 May 2026, the Tidö government submitted three high-significance propositions: (1) expanded SÄPO-linked expulsion powers for security-threat foreigners (JuU), (2) extended Skatteverket…"
-keywords: "HD03267, HD03261, HD03250, prop 2025/26:246, JuU, SkU, TU, MP, Monitor JuU, Track Lagrådet, Observe SkU, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Realtime Pulse, English"
 date: 2026-05-10
 subfolder: realtime-pulse
 slug: 2026-05-10-realtime-pulse
 source_folder: analysis/daily/2026-05-10/realtime-pulse
-generated_at: 2026-05-24T18:59:06.070Z
+generated_at: 2026-05-24T20:55:28.508Z
 language: en
 layout: article
 ---

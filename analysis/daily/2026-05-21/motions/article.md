@@ -1,12 +1,9 @@
 ---
-title: "S (HD024185) demands full rejection of prop 255 on GDPR/privacy"
-description: "S (HD024185) demands full rejection of prop 255 on GDPR/privacy grounds; MP (HD024186) accepts the household debt sampling framework but demands corporate debt extension and Riksbank co-analysis."
-keywords: "HD024185, HD024186, HD024184, FiU, KU, SfU, FöU, TU, SoU, MP, Decision-Grade BLUF, Opposition Motions, Monitor KU, IMF WEO, Mikael Damberg, Janine Alm Ericson, Malin Björk, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency"
 date: 2026-05-21
 subfolder: motions
 slug: 2026-05-21-motions
 source_folder: analysis/daily/2026-05-21/motions
-generated_at: 2026-05-24T18:59:06.907Z
+generated_at: 2026-05-24T20:55:29.249Z
 language: en
 layout: article
 ---

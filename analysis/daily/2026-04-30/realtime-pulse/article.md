@@ -1,12 +1,9 @@
 ---
-title: "Swedish Parliament Realtime Pulse, 30 April 2026"
-description: "Sweden's Kristersson government has mounted an extraordinary legislative surge on 30 April 2026, submitting a second major batch of propositions that concentrates enforcement power in three…"
-keywords: "HD03263, HD03254, HD03258, HD03264, HD03265, HD03251, KD, Pål Jonson, Defense Ministry, Gunnar Strömmer, Justice Ministry, Jakob Forssmed, Social Ministry, AI Act, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Realtime Pulse, English"
 date: 2026-04-30
 subfolder: realtime-pulse
 slug: 2026-04-30-realtime-pulse
 source_folder: analysis/daily/2026-04-30/realtime-pulse
-generated_at: 2026-05-24T18:59:05.099Z
+generated_at: 2026-05-24T20:55:27.684Z
 language: en
 layout: article
 ---

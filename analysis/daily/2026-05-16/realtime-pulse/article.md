@@ -1,12 +1,9 @@
 ---
-title: "Den 13 maj 2026 antog Rysslands statsduma"
-description: "Den 13 maj 2026 antog Rysslands statsduma en lag som institutionaliserar Putins befogenhet att insätta ryska väpnade styrkor i utlandet för att \"skydda\" ryska medborgare från internationella…"
-keywords: "Markus Wiechel, Russias Extraterritorial Force Law, State Duma, Baltic Sea, Drone Gap, Ichkeria Recognition Pressure, Chechen Republic Ichkeria, Transparency Package Split, Centre Party, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Realtime Pulse, English"
 date: 2026-05-16
 subfolder: realtime-pulse
 slug: 2026-05-16-realtime-pulse
 source_folder: analysis/daily/2026-05-16/realtime-pulse
-generated_at: 2026-05-24T18:59:06.615Z
+generated_at: 2026-05-24T20:55:28.991Z
 language: en
 layout: article
 ---

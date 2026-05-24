@@ -515,14 +515,22 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     // contract): institutional mandatory floor leads
     // (`Riksdagsmonitor, Swedish Parliament, Riksdag, …`), then the
     // localized article-type label (`Widgets`), then the native language
-    // name. The frontmatter must therefore expose the topic keyword
-    // somewhere in the comma list AND must never leak admin-byline
+    // name. The in-memory `result.keywords` string must expose the topic
+    // keyword somewhere in the comma list AND must never leak admin-byline
     // tokens — `Test Runner` (from `**Author**: Test Runner`) and
     // `Run ID` (from `**Run ID**: 42`) historically leaked because the
     // brief-extractor mined them as Title-Case multi-word named entities.
-    expect(result.markdown).toMatch(/^keywords:\s*"Riksdagsmonitor,\s*Swedish Parliament/m);
-    expect(result.markdown).toMatch(/keywords:\s*"[^"]*\bWidgets\b/m);
-    expect(result.markdown).not.toMatch(/keywords:\s*"[^"]*\b(?:Test Runner|Run ID|Author|Classification|Confidence)\b/m);
+    //
+    // Note: post-`2026-05-24` SEO contract no longer writes `keywords:`
+    // (or `title:` / `description:`) to article.md frontmatter — those
+    // values flow directly from `executive-brief.md` into the renderer.
+    // We therefore assert on the in-memory `result.keywords` string only.
+    expect(result.keywords).toMatch(/^Riksdagsmonitor,\s*Swedish Parliament/);
+    expect(result.keywords).toMatch(/\bWidgets\b/);
+    expect(result.keywords).not.toMatch(/\b(?:Test Runner|Run ID|Author|Classification|Confidence)\b/);
+    expect(result.markdown).not.toMatch(/^title:/m);
+    expect(result.markdown).not.toMatch(/^description:/m);
+    expect(result.markdown).not.toMatch(/^keywords:/m);
 
     // Aggregated markdown must carry real content but no Pass-2 / no admin byline.
     expect(result.markdown).toContain('## Reader Intelligence Guide');

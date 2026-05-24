@@ -1,12 +1,9 @@
 ---
-title: "Sweden's Parliamentary Week Delivers Education Overhaul and Security Debate Amid Pre-Election Tension"
-description: "Sweden's Riksdag delivers its largest single-day committee output of the 2025/26 session on 22 May 2026: a three-report education reform cluster (mobile phone ban UbU22, vocational exams UbU27,…"
-keywords: "HD024192, HD024191, HD01, HD024, prop. 2025/26:267, UbU22, UbU27, UbU19, SfU37, FiU42, CU26, UU12, UU11, UbU, SfU, FiU, CU, UU, MP, Intelligence Brief, Evening Analysis, IMF Vintage, Whether UNICEF Sweden, Green Party"
 date: 2026-05-22
 subfolder: evening-analysis
 slug: 2026-05-22-evening-analysis
 source_folder: analysis/daily/2026-05-22/evening-analysis
-generated_at: 2026-05-24T18:59:06.970Z
+generated_at: 2026-05-24T20:55:29.310Z
 language: en
 layout: article
 ---

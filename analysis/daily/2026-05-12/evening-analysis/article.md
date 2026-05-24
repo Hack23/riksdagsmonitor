@@ -1,12 +1,9 @@
 ---
-title: "Evening Analysis 12 maj 2026"
-description: "Tisdagen den 12 maj 2026 är en av den innevarande riksmötets parlamentariskt tätaste dagar inför riksdagsvalet den 13 september 2026. Tre regeringspropositioner (HD03250, HD03261, HD03267) avancerar…"
-keywords: "HD03250, HD03261, HD03267, HD01KU34, HD10484, HD10486, HD024149, HD024150, HD10481, HD10482, HD01CU31, KU34, KU, Betänkanden SfU, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Evening Analysis, English"
 date: 2026-05-12
 subfolder: evening-analysis
 slug: 2026-05-12-evening-analysis
 source_folder: analysis/daily/2026-05-12/evening-analysis
-generated_at: 2026-05-24T18:59:06.212Z
+generated_at: 2026-05-24T20:55:28.631Z
 language: en
 layout: article
 ---

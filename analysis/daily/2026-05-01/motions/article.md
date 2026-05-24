@@ -1,12 +1,9 @@
 ---
-title: "Swedish Opposition Mounts Coordinated Challenge to Government's Energy and Environmental Agend"
-description: "Sweden's Social Democratic opposition filed 16 committee motions on 2026-04-29 — the final pre-summer submission day — spanning five government propositions covering energy system reform,…"
-keywords: "HD024127, HD024124, HD024140, HD024131, HD024134, HD024139, HD024126, HD024129, HD024130, HD024132, HD024137, HD024138, HD024133, prop. 2025/26:240, prop. 2025/26:239, prop. 2025/26:238, prop. 2025/26:246, prop. 2025/26:243, MJU, SD, KD, Lorena Delgado Varas, If MJU, Fredrik Olovsson"
 date: 2026-05-01
 subfolder: motions
 slug: 2026-05-01-motions
 source_folder: analysis/daily/2026-05-01/motions
-generated_at: 2026-05-24T18:59:05.166Z
+generated_at: 2026-05-24T20:55:27.740Z
 language: en
 layout: article
 ---

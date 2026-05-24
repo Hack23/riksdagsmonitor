@@ -1,12 +1,9 @@
 ---
-title: "The Riksdag's Finance (FiU) and Justice (JuU) committees"
-description: "The Riksdag's Finance (FiU) and Justice (JuU) committees have advanced eight legislative items this week. Three deserve immediate attention: (1) a new financial-sector crisis management function…"
-keywords: "HD01FiU37, HD01JuU39, HD01JuU32, HD01UbU28, FiU37, JuU39, JuU32, FiU31, JuU34, FiU38, FiU43, CU35, FiU, JuU, CU, MP, Election Weight, UK Serious Crime Act, Education Committee, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-05-08
 subfolder: committeeReports
 slug: 2026-05-08-committeeReports
 source_folder: analysis/daily/2026-05-08/committeeReports
-generated_at: 2026-05-24T18:59:05.867Z
+generated_at: 2026-05-24T20:55:28.333Z
 language: en
 layout: article
 ---

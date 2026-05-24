@@ -1,12 +1,9 @@
 ---
-title: "Three government propositions submitted 7 May 2026 advance the Tidö"
-description: "Three government propositions submitted 7 May 2026 advance the Tidö coalition's state-capacity agenda in the final parliamentary stretch before the September 2026 election."
-keywords: "HD03267, HD03261, HD03250, Security Threats, HIGH SALIENCE, Skatteverket Powers, MEDIUM-HIGH SALIENCE, Gives Skatteverket, MEDIUM SALIENCE, Monitor JuU, Track SkU, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
 date: 2026-05-12
 subfolder: propositions
 slug: 2026-05-12-propositions
 source_folder: analysis/daily/2026-05-12/propositions
-generated_at: 2026-05-24T18:59:06.240Z
+generated_at: 2026-05-24T20:55:28.657Z
 language: en
 layout: article
 ---

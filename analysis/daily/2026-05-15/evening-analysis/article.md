@@ -1,12 +1,9 @@
 ---
-title: "Russia Legalises Aggression — Sweden Faces Three Decision Deadlines Within 7 Days"
-description: "Russia has adopted legislation that explicitly enables unilateral military aggression against neighbouring states (HD11813, SD/Wiechel → Foreign Ministry/Stenergard)."
-keywords: "HD11813, HD03262, HD11812, HD024184, HD10494, HD03267, KU34, CU31, KU, CU, SD, Foreign Ministry, Common European Asylum System, Centre Party, Chechen Ichkeria, SHORT TERM, MEDIUM TERM, Await Lagrådet, Exekutivt Briefing, Evening Analysis, TOP PRIORITY, Decision-Grade BLUF Rubric, Self-Audit Checklist, Riksdagsmonitor"
 date: 2026-05-15
 subfolder: evening-analysis
 slug: 2026-05-15-evening-analysis
 source_folder: analysis/daily/2026-05-15/evening-analysis
-generated_at: 2026-05-24T18:59:06.528Z
+generated_at: 2026-05-24T20:55:28.914Z
 language: en
 layout: article
 ---

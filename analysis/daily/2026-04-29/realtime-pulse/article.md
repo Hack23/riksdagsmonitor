@@ -1,12 +1,9 @@
 ---
-title: "Sweden's Legislative Pulse: Weapons Law, China Threat, and Water Security — 29 April 2026"
-description: "[CONFIRMED — VOTE RESULTS 16:13–16:21 STOCKHOLM] Sweden's Riksdag adopted two landmark bills on 29 April: (1) JuU10 (En ny vapenlag) passed at 16:13 with Tidöblock + Socialdemokraterna in majority;…"
-keywords: "HD12744, HD12746, HD10456, HD12743, HD12745, HD10454, HD01NU19, JuU10, SfU28, NU19, JuU, SfU, NU, SD, MP, VOTE RESULTS, Social Services Act, New Weapons Law, Adam Marttinen, Petter Löberg, Sten Bergheden, Criminal HVB, Social Services Minister Waltersson, State Secretary Lybeck Lilja"
 date: 2026-04-29
 subfolder: realtime-pulse
 slug: 2026-04-29-realtime-pulse
 source_folder: analysis/daily/2026-04-29/realtime-pulse
-generated_at: 2026-05-24T18:59:04.987Z
+generated_at: 2026-05-24T20:55:27.576Z
 language: en
 layout: article
 ---

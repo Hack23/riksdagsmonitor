@@ -1,12 +1,9 @@
 ---
-title: "The 30-day window 2026-03-27 → 2026-04-26 marks the legislative"
-description: "The 30-day window 2026-03-27 → 2026-04-26 marks the legislative completion phase of the Tidö coalition's 2025/26 portfolio. Four April-24 committee reports (HD01JuU10 vapenlag, HD01JuU31…"
-keywords: "HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24, HD03252, HD03253, HD03256, HD10448, HD11747, HD03104, HD11748, HD11749, HD01FiU48, EU, James Pether Sörling, Four April, Three April, AI FIRST, Monthly Review, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-04-26
 subfolder: monthly-review
 slug: 2026-04-26-monthly-review
 source_folder: analysis/daily/2026-04-26/monthly-review
-generated_at: 2026-05-24T18:59:04.557Z
+generated_at: 2026-05-24T20:55:27.188Z
 language: en
 layout: article
 ---

@@ -1,12 +1,9 @@
 ---
-title: "Sweden's Riksdag Finance Committee approved an extra budget amendment"
-description: "Sweden's Riksdag Finance Committee approved an extra budget amendment (FiU48) today cutting fuel taxes and providing electricity/gas price support — directly benefiting ~9M citizens."
-keywords: "HD10442, HD01FiU48, HD10440, HD10441, FiU48, FiU, Finance Committee, Finance Minister Elisabeth Svantesson, FM Margot Wallström, Elisabeth Svantesson, Finance Minister, Johan Britz, Acting Climate, Environment Minister, Margot Wallström, Former FM, Gunnar Strömmer, Justice Minister, Markus Kallifatides, Probing Svantesson, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence"
 date: 2026-04-21
 subfolder: realtime-1353
 slug: 2026-04-21-realtime-1353
 source_folder: analysis/daily/2026-04-21/realtime-1353
-generated_at: 2026-05-24T18:59:04.246Z
+generated_at: 2026-05-24T20:55:26.898Z
 language: en
 layout: article
 ---

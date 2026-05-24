@@ -57,7 +57,6 @@ import matter from 'gray-matter';
 
 import type { Language } from '../types/language.js';
 import { LANGUAGE_META } from '../sitemap-html/index.js';
-import { extractLocalizedBriefSeo } from './aggregator/seo/localized-brief.js';
 
 export interface MergeLocalizedInput {
   /** Canonical English `article.md` contents (front-matter + body). */
@@ -67,24 +66,16 @@ export interface MergeLocalizedInput {
   /** Target language. Used to pick the localized fallback heading + note. */
   readonly lang: Language;
   /**
-   * Optional localized executive-brief markdown contents
-   * (`analysis/daily/$DATE/$SUB/executive-brief_<lang>.md`). When provided
-   * AND the brief yields a publishable H1 / BLUF, those values override
-   * the corresponding fields in the localized article front-matter —
-   * this implements cascade chain step #2 documented in
-   * `Article-Generation.md § "Per-language precedence chain"`.
-   *
-   * Pass `undefined` / empty string when the file does not exist; the
-   * merger then falls through to chain step #3 (localized article
-   * front-matter) without code-path changes.
+   * @deprecated Cascade-chain step #2 (localized executive-brief →
+   * title/description/keywords overlay) moved to the renderer in
+   * `scripts/render-lib/article.ts` (`deriveBriefSeoOverrides`). This
+   * field is accepted but ignored — kept for back-compat with any
+   * external caller. Will be removed in a future cleanup.
    */
   readonly localizedBriefMarkdown?: string | null;
   /**
-   * The analysis subfolder slug (e.g. `propositions`). Forwarded to
-   * {@link extractLocalizedBriefSeo} so its boilerplate-equality check
-   * for the brief H1 matches the English-side rule. Optional — when
-   * absent (legacy callers), the brief title check skips the slug
-   * comparison.
+   * @deprecated Forwarded to the (now-removed) brief overlay. Accepted
+   * but ignored. See {@link localizedBriefMarkdown}.
    */
   readonly subfolder?: string;
 }
@@ -156,7 +147,7 @@ export function buildEnglishCoverageBoundary(lang: Language): string {
  *  - Forces `language: <lang>` so JSON-LD `inLanguage` and SEO match.
  */
 export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
-  const { englishMarkdown, localizedMarkdown, lang, localizedBriefMarkdown, subfolder } = input;
+  const { englishMarkdown, localizedMarkdown, lang } = input;
 
   if (lang === 'en') return englishMarkdown;
 
@@ -180,47 +171,13 @@ export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
     }
   }
 
-  // Cascade chain step #2 — localized executive-brief beats article.<lang>.md
-  // front-matter for title + description when the brief is publishable
-  // (non-banned, non-empty H1 / BLUF). Fields are resolved independently
-  // so a banned title with a clean BLUF still localizes the description.
-  if (localizedBriefMarkdown && localizedBriefMarkdown.trim().length > 0) {
-    const briefSeo = extractLocalizedBriefSeo({
-      briefMarkdown: localizedBriefMarkdown,
-      subfolder: subfolder ?? '',
-      // Forward the page language so the description gets truncated
-      // using the per-language SERP window (RTL 120-170, CJK 70-120,
-      // Latin LTR 140-200). See `seo-metadata-contract.md` §4 +
-      // `descriptionWindowForLanguage`.
-      lang,
-    });
-    if (briefSeo.title) mergedData.title = briefSeo.title;
-    if (briefSeo.description) mergedData.description = briefSeo.description;
-    // Localized brief entities seed the keyword string with universal
-    // bill IDs (HD03267) + committee codes (JuU/SfU) + locale-script
-    // named entities — exposed via the rendered front-matter so the
-    // renderer-side `buildArticleKeywords` can consume them downstream.
-    // We prepend instead of overwrite to give brief entities priority
-    // over any agent-supplied frontmatter `keywords:` line.
-    if (briefSeo.keywords.length > 0) {
-      const existingKeywords = typeof mergedData.keywords === 'string'
-        ? mergedData.keywords
-        : '';
-      const merged = [...briefSeo.keywords, ...existingKeywords.split(',')]
-        .map((s) => s.trim())
-        .filter(Boolean);
-      // De-duplicate case-insensitively while preserving first-seen order.
-      const seen = new Set<string>();
-      const out: string[] = [];
-      for (const k of merged) {
-        const key = k.toLocaleLowerCase();
-        if (seen.has(key)) continue;
-        seen.add(key);
-        out.push(k);
-      }
-      mergedData.keywords = out.join(', ');
-    }
-  }
+  // Cascade-chain step #2 (localized brief → title / description /
+  // keywords overlay) used to live here. It moved to the renderer in
+  // commit "Wire renderArticleHtml to read SEO from executive-brief.md"
+  // — see `deriveBriefSeoOverrides` in `scripts/render-lib/article.ts`.
+  // The merger now only handles (a) the body overlay (localized BLUF
+  // lede + EN deep-dive below the boundary H2) and (b) forcing
+  // `language: <lang>` so JSON-LD `inLanguage` matches `<html lang>`.
 
   mergedData.language = lang;
 

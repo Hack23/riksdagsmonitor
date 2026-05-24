@@ -1,12 +1,9 @@
 ---
-title: "Sweden's Most Radical Migration Overhaul in Decades: Tidöalliansen Files Four-Bill Asylum Package"
-description: "The Tidöalliansen government submitted four simultaneous propositions on 30 April 2026 that together constitute Sweden's most sweeping restriction of asylum and migration rights since the temporary…"
-keywords: "HD03262, HD03263, HD03264, HD03265, HD03254, HD03251, HD03258, HD03260, MP, Aliens Act, Asylum Pact, DG HOME, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
 date: 2026-05-01
 subfolder: propositions
 slug: 2026-05-01-propositions
 source_folder: analysis/daily/2026-05-01/propositions
-generated_at: 2026-05-24T18:59:05.181Z
+generated_at: 2026-05-24T20:55:27.757Z
 language: en
 layout: article
 ---
