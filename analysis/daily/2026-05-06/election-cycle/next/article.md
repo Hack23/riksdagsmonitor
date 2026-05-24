@@ -1,12 +1,12 @@
 ---
 title: "Post-2026 Coalition Intelligence (2026-2030)"
 description: "The post-2026 election cycle (2026-2030) will be governed by one of two fundamentally different coalitions — Tidö continuation (WEP LIKELY) or Red-Green bloc (WEP UNLIKELY)."
-keywords: "Next, election cycle next, English, May 6, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Post-2026 Coalition 2026-2030 election cycle, Post-2026, Coalition, Intelligence, 2026-2030, election, cycle, will, governed, fundamentally, different, coalitions, Tidö"
+keywords: "HD01SfU21, HD10470, HD11789, WEP LIKELY, WEP UNLIKELY, WEP ROUGHLY EVEN, If Red-Green, If Tid, IMF WEO Apr-, IMF FM Apr-, WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Next, election cycle next, English"
 date: 2026-05-06
 subfolder: election-cycle/next
 slug: 2026-05-06-election-cycle/next
 source_folder: analysis/daily/2026-05-06/election-cycle/next
-generated_at: 2026-05-23T22:05:56.567Z
+generated_at: 2026-05-24T12:19:34.097Z
 language: en
 layout: article
 ---

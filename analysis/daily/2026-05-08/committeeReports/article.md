@@ -1,12 +1,12 @@
 ---
 title: "The Riksdag's Finance (FiU) and Justice (JuU) committees"
 description: "The Riksdag's Finance (FiU) and Justice (JuU) committees have advanced eight legislative items this week. Three deserve immediate attention: (1) a new financial-sector crisis management function…"
-keywords: "CommitteeReports, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Finance Justice committees advanced eight, Finance, Justice, committees, have, advanced, eight, legislative, items, this, week, Three, deserve, immediate"
+keywords: "HD01FiU37, HD01JuU39, HD01JuU32, HD01UbU28, FiU37, JuU39, JuU32, FiU31, JuU34, FiU38, FiU43, CU35, FiU, JuU, CU, MP, EU s DORA, Election Weight, Riksbanken s RIX, UK Serious Crime Act, Education Committee, Riksdagsmonitor, Swedish Parliament, Riksdag"
 date: 2026-05-08
 subfolder: committeeReports
 slug: 2026-05-08-committeeReports
 source_folder: analysis/daily/2026-05-08/committeeReports
-generated_at: 2026-05-23T22:05:56.709Z
+generated_at: 2026-05-24T12:19:34.205Z
 language: en
 layout: article
 ---
@@ -101,6 +101,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2323,13 +2336,1117 @@ JuU32 contains provisions touching RF chapter 2 §1 (freedom of assembly). Lagr�
 
 **full-text-fallback: HD01UbU28 — full text unavailable from MCP server at analysis time; metadata+summary used**
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_ar.md -->
+
+**التصنيف**: 🟢 عام  
+**أُعدّ في**: 2026-05-08  
+**الأفق الزمني**: T+72 ساعة إلى T+90 يوماً  
+**معامل DIW**: 1.5× (الانتخابات خلال ≤6 أشهر: 2026-09-13)
+
+---
+
+### BLUF (الخلاصة في المقدمة)
+
+أحرزت لجنتا المالية (FiU) والعدل (JuU) في البرلمان السويدي (ريكسداغ) تقدماً في ثمانية بنود تشريعية هذا الأسبوع. **ثلاثة منها تستحق الاهتمام الفوري**: (1) وظيفة جديدة لإدارة الأزمات في القطاع المالي تحت قيادة بنك ريكس-بانك تعيد تشكيل بنية المخاطر النظامية في السويد، (2) قانون عقوبات بارز بشأن العنف النفسي يُنشئ جريمة جديدة من الفئة أ، (3) وتوسيع صلاحيات الشرطة في التجمعات العامة بتداعيات دستورية يجب أن تفحصها هيئة لاغرودت رسمياً.
+
+تدخل الثلاثة جميعها حيز التنفيذ في **1 يوليو 2026** — أي ستة أسابيع قبل دخول الحملة الانتخابية السويدية مرحلتها الأخيرة. من غير المرجح أن يكون توافق الجدول التشريعي مع الدورة الانتخابية مجرد مصادفة.
+
+---
+
+### عناصر الاستخبارات ذات الأولوية
+
+#### P1 — HD01FiU37: إدارة الأزمات في القطاع المالي (L3)
+**الموضوع**: تتولى ريكس-بانك قيادة التنسيق لإدارة الأزمات التشغيلية في القطاع المالي السويدي. تشارك في ذلك Finansinspektionen (FI) وRiksgäldskontoret.  
+**الأهمية**: تُفعِّل السويد إطار DORA الأوروبي للمرونة على المستوى النظامي. تُنشئ هيئة دائمة مشتركة بين الجهات مع ريكس-بانك بوصفها المحرك الرئيسي. لا معارضة تذكر — موقف لجنة بالإجماع.  
+**الخطر**: تركيز سلطة إدارة الأزمات في ريكس-بانك يثير تساؤلات حول المساءلة (ريكس-بانك غير مسؤولة أمام الوزير عبر القنوات الاعتيادية). الاختبار الأول في ظروف الضغط الفعلي سيكشف عن فجوات القدرة المؤسسية.  
+**الزاوية الانتخابية**: خطاب مؤيد للاستقرار، لا جدل شعبي؛ مفيد للحكومة كدليل على الحصافة المالية والاقتصادية.
+
+#### P2 — HD01JuU39: العنف النفسي جريمة جنائية (L2+)
+**الموضوع**: إدراج جريمة جديدة "العنف النفسي" (psykiskt våld) في القانون الجنائي السويدي (brottsbalken)، بحد أقصى 4 سنوات سجناً. تشمل الإذلال المتكرر والتهديدات والإكراه والمراقبة التي تسبب خطراً جسيماً بإيذاء النفس.  
+**الأهمية**: يوسع قانون العنف الأسري توسعاً ملحوظاً. متسق مع الاتجاه الاسكندنافي (النرويج 2005، الدنمارك 2012). معارضة أربعة أحزاب (S, V, C, MP) بتحفظات على ثلاثة محاور: العنف الاقتصادي، ومحاولات التحويل، ومتطلبات التدريب.  
+**الخطر**: عبء إثبات "النمط المتكرر + الضرر النفسي" يُلقى على عاتق الشرطة والنيابة — فجوة تطبيقية محتملة لمدة 2–3 سنوات.  
+**الزاوية الانتخابية**: صراع الأطر: الحكومة تدّعي حماية المرأة؛ المعارضة تؤكد ضيق القانون (غياب الإكراه الاقتصادي والعلاج التحويلي).
+
+#### P3 — HD01JuU32: صلاحيات الشرطة في التجمعات العامة (L2+)
+**الموضوع**: ترفض JuU غالبية مقترحات المعارضة بشأن صلاحيات الشرطة في المظاهرات. تُبقى أحكام ordningslagen وpolislagen القائمة أو تشديدها.  
+**الأهمية**: توتر دستوري مع الفصل الثاني §1 من دستور RF (حرية التجمع). لم تفحص لاغرودت جميع التعديلات رسمياً — فجوة للمتابعة.  
+**الخطر**: خطر طعن أوروبي/ECHR (المادة 11 من الاتفاقية الأوروبية — حرية التجمع السلمي) إذا طُبِّقت الصلاحيات بصورة غير متناسبة في عام الانتخابات.  
+**الزاوية الانتخابية**: أهمية عالية: SD وKD يطالبان بصلاحيات شرطية أقوى؛ S وMP يدافعان عن حرية التجمع. استخدام متوقع في الحملة الانتخابية.
+
+---
+
+### مصفوفة الملخص
+
+| الوثيقة | الموضوع | تاريخ النفاذ | المعارضة | الوزن الانتخابي |
+|---------|---------|------------|---------|----------------|
+| FiU37 | إدارة أزمات القطاع المالي | 2026-07-01 | لا شيء | منخفض (تقني) |
+| JuU39 | العنف النفسي كجريمة | 2026-07-01 | S,V,C,MP (4 تحفظات) | مرتفع |
+| JuU32 | الشرطة في المظاهرات | 2026-07-01 | قائم على مقترحات (5 تحفظات) | مرتفع |
+| FiU31 | إدارة أملاك الدولة | (Riksrevisionens) | V, MP | متوسط |
+| JuU34 | إنفاذ الجنائي الاسكندنافي | TBD | لا شيء | منخفض |
+| FiU38 | مقاصة المشتقات OTC | محدد أوروبياً | لا شيء | منخفض |
+| FiU43 | منع احتيال الرعاية البلدية | TBD | لا شيء | منخفض |
+| CU35 | أسهم منصات MTF | TBD | لا شيء | منخفض |
+
+---
+
+### الإجراءات الموصى بها (T+72 ساعة)
+
+1. **متابعة النقاش** حول JuU39 وJuU32 في تصويتات الجلسة العامة (متوقع خلال 1–2 أسبوع من نشر betänkande).
+2. **تتبع** لاغرودت لأي طلب رأي رجعي بشأن الأحكام الدستورية في JuU32.
+3. **تسجيل** تصويت البرلمان على FiU37 — موافقة بالإجماع محتملة، مع مراقبة أي تعديلات إجرائية من SD.
+4. **الإشارة** إلى استخدام أحزاب المعارضة لتحفظات JuU39 (محاولات التحويل) بوصفه إشارة انتخابية مبكرة.
+
+---
+
+### إضافات الجولة الثانية — أدلة محددة
+
+#### FiU37 تفاصيل مؤسسية
+استُحدثت وظيفة إدارة الأزمات الجديدة تحت مظلة ريكس-بانك استناداً تحديداً إلى تجربة السويد خلال 2015–2020 (إخفاقات Swedbank في مكافحة غسيل الأموال + التعرض للمصارف البلطيقية) وفترة كوفيد-19 التي كشفت عن ثغرات مرونة تشغيلية في البنية التحتية للمدفوعات السويدية. شهد نظام RIX للمدفوعات التابع لريكس-بانك حوادث كادت تقع في الربع الثاني من 2020. يُرسي FiU37 الأساس القانوني لريكس-بانك للعمل بوصفها جهة تنسيق — إذ لم تكن تمتلك هذه الصلاحية من قبل.
+
+#### JuU39 خريطة التحفظات — تفاصيل محددة
+- **التحفظ 1 (S+MP)**: يطالب بأن يكون العنف الاقتصادي فئة فرعية صريحة. يعكس ذلك المادة 282 النرويجية التي تشمل صراحةً "الحرمان الاقتصادي الشديد". يتضمن قانون الجرائم الخطيرة البريطاني s.76 ضمنياً السيطرة المالية. JuU39 السويدي أضيق نطاقاً.
+- **التحفظ 2 (S+V+C+MP)**: أربعة أحزاب، يشير إلى إجماع أحزاب الوسط-اليسار على حظر العلاج التحويلي. هذا التحفظ الأكثر انفجاراً سياسياً لتعارضه المباشر مع بعض المواقف المحافظة اجتماعياً لـ KD/SD.
+- **التحفظان 3+4 (S وMP بشكل مستقل)**: كلاهما يطالب بتفويض دراسة Brå. رفض الحكومة ربط التنفيذ بمراجعة Brå قانونية لافت — يُشير إلى ثقة أو تحفظ سياسي من إنشاء آلية مساءلة بعد الانتخابات.
+
+#### JuU32 الآلية الدستورية
+يسمح الفصل الثاني §20 من دستور RF بتقييد حرية التجمع بموجب القانون (lag) فحسب، ويشترط §21 أن يكون التقييد "ضرورياً في مجتمع ديمقراطي". اختبار التناسب في §21 هو استيعاب السويد لنص المادة 11 §2 من الاتفاقية الأوروبية. أحكام JuU32 المتعلقة بالفرز المسبق والمراقبة القائمة على المخاطر تحتاج اجتياز هذا الاختبار المزدوج. المخاوف لا تتعلق باستحالة التقييد — بل بغياب تحليل التناسب من لاغرودت مما يجعل جودة الصياغة موضع شك.
+
+---
+
+### تحديث المراجعة — 2026-05-08 (وثيقة جديدة: HD01UbU28)
+
+#### P4 — HD01UbU28: اعتماد المعلمين للمدرسة الابتدائية ذات 10 سنوات (L2)
+**الموضوع**: تُقرّ لجنة التعليم (UbU) بالإجماع التعديل الإداري لاعتمادات المعلمين قبيل إدخال المدرسة الابتدائية ذات العشر سنوات (tioårig grundskola) في عام 2028/29.  
+**الأهمية**: يسدّ آخر ثغرة تشريعية في إصلاح التعليم الرائد لحكومة تيدو. يُعبّر القبول الإجماعي متعدد الأحزاب (دون تحفظات من S وV وC وMP) عن توافق تشغيلي حتى في المجالات التي شهدت معارضة سياسية في مرحلة التصميم.  
+**الزاوية الانتخابية**: متوسط. يمكن للحكومة الادعاء بـ"إتمام إصلاح المدرسة ذات 10 سنوات" حزمةً تشريعية كاملة. الموافقة الإجماعية تحول دون مهاجمة المعارضة لهذا العنصر.  
+**تاريخ النفاذ**: العام الدراسي 2028/29 — بعد الانتخابات، لكن الاستكمال التشريعي يتم قبل الانتخابات.
+
+#### مصفوفة الملخص المحدّثة
+
+| الوثيقة | الموضوع | تاريخ النفاذ | المعارضة | الوزن الانتخابي |
+|---------|---------|------------|---------|----------------|
+| FiU37 | إدارة أزمات القطاع المالي | 2026-07-01 | لا شيء | منخفض (تقني) |
+| JuU39 | العنف النفسي كجريمة | 2026-07-01 | S,V,C,MP (4 تحفظات) | مرتفع |
+| JuU32 | الشرطة في المظاهرات | 2026-07-01 | قائم على مقترحات (5 تحفظات) | مرتفع |
+| FiU31 | إدارة أملاك الدولة | (Riksrevisionens) | V, MP | متوسط |
+| JuU34 | إنفاذ الجنائي الاسكندنافي | TBD | لا شيء | منخفض |
+| FiU38 | مقاصة المشتقات OTC | محدد أوروبياً | لا شيء | منخفض |
+| FiU43 | منع احتيال الرعاية البلدية | TBD | لا شيء | منخفض |
+| CU35 | أسهم منصات MTF | TBD | لا شيء | منخفض |
+| **HD01UbU28** | **اعتماد المعلمين / مدرسة 10 سنوات** | **2028/29** | **لا شيء (إجماع)** | **متوسط** |
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_da.md -->
+
+**Klassifikation**: 🟢 OFFENTLIG  
+**Udarbejdet**: 2026-05-08  
+**Horisont**: T+72h til T+90d  
+**DIW-multiplikator**: 1,5× (valg ≤6 måneder: 2026-09-13)
+
+---
+
+### BLUF (Bundlinjen op front)
+
+Riksdagens økonomi- (FiU) og retsudvalg (JuU) har fremmet otte lovgivningspunkter denne uge. **Tre fortjener øjeblikkelig opmærksomhed**: (1) en ny funktion for krisehåndtering i finanssektoren under Riksbankens ledelse, som omformer Sveriges systemiske risikoarkitektur, (2) en banebrydende straffelov om psykisk vold, der skaber en ny kategori A-kriminel lovovertrædelse, og (3) skærpede politibeføjelser ved offentlige demonstrationer med forfatningsmæssige implikationer, som Lagrådet bør gennemgå formelt.
+
+Alle tre træder i kraft **1. juli 2026** — seks uger inden Sveriges valgkampagne går ind i sin afsluttende sprint. At lovgivningskalenderen er på linje med valgcyklussen er sandsynligvis ikke tilfældigt.
+
+---
+
+### Prioriterede efterretningspunkter
+
+#### P1 — HD01FiU37: Krisehåndtering i finanssektoren (L3)
+**Emne**: Riksbanken overtager koordinationsledelsen for operationel krisehåndtering i den svenske finanssektor. Finansinspektionen (FI) og Riksgäldskontoret deltager.  
+**Betydning**: Sverige operationaliserer EU's DORA-modstandsdygtighedsramme på systemniveau. Skaber et nyt permanent tværstatsligt organ med Riksbanken som primus motor. Ingen væsentlig modstand — enig udvalgsposition.  
+**Risiko**: Koncentration af krisemyndighed i Riksbanken rejser spørgsmål om ansvarlighed (Riksbanken er ikke ansvarlig over for minister i normale kanaler). Den første test under faktisk pres vil afsløre institutionelle kapacitetsgab.  
+**Valgvinkel**: Pro-stabilitetsfortælling, ingen vælgerkontrovers; nyttigt for regeringen som bevis for finanspolitisk forsigtighed.
+
+#### P2 — HD01JuU39: Psykisk vold som kriminelt forhold (L2+)
+**Emne**: Ny lovovertrædelse "psykisk vold" (psykiskt våld) indføres i brottsbalken, max 4 års fængsel. Dækker gentagen ydmygelse, trusler, tvang, overvågning der forårsager alvorlig risiko for selvskade.  
+**Betydning**: Udvider loven om vold i nære relationer væsentligt. I overensstemmelse med nordisk tendens (Norge 2005, Danmark 2012). Fire-partis opposition (S, V, C, MP) forbehold om tre delområder: økonomisk vold, konverteringsforsøg, uddannelseskrav.  
+**Risiko**: Implementeringsbyrde på politi/anklagere for at bevise "gentaget mønster + psykisk skade"-tærskel — implementeringsgab sandsynligt i 2–3 år.  
+**Valgvinkel**: Indramningskonflikt: regeringen hævder beskyttelse af kvinder; oppositionen hævder loven er for snæver (mangler økonomisk tvang og konverteringsterapi).
+
+#### P3 — HD01JuU32: Politibeføjelser ved offentlige forsamlinger (L2+)
+**Emne**: JuU afviser de fleste oppositionsforslag om politibeføjelser ved demonstrationer. Eksisterende bestemmelser i ordningslagen og polislagen opretholdes eller strammes.  
+**Betydning**: Forfatningsmæssig spænding med RF kapitel 2 §1 (forsamlingsfrihed). Lagrådet gennemgik ikke formelt alle ændringer — et gab at overvåge.  
+**Risiko**: Risiko for EU/ECHR-udfordring (Art. 11 ECHR — fredelig forsamlingsfrihed), hvis beføjelserne anvendes uforholdsmæssigt i valgåret.  
+**Valgvinkel**: Høj saliency: SD og KD kræver stærkere politibeføjelser; S og MP forsvarer forsamlingsfrihed. Forventede kampagnebrug.
+
+---
+
+### Sammenfatningsmatrix
+
+| Dok | Emne | Ikrafttrædelse | Opposition | Valvægt |
+|-----|------|---------------|-----------|--------|
+| FiU37 | Krisehåndtering finanssektor | 2026-07-01 | Ingen | Lav (teknisk) |
+| JuU39 | Psykisk vold som lovovertrædelse | 2026-07-01 | S,V,C,MP (4 forbehold) | HØJ |
+| JuU32 | Politi ved demonstrationer | 2026-07-01 | Forslagsbaseret (5 forbehold) | HØJ |
+| FiU31 | Statlig ejendomsforvaltning | (Riksrevisionens) | V, MP | Middel |
+| JuU34 | Nordisk strafferetshåndhævelse | TBD | Ingen | Lav |
+| FiU38 | OTC-derivatoprensning | EU-tidsbestemt | Ingen | Lav |
+| FiU43 | Kommunal forebyggelse af velfærdssvindel | TBD | Ingen | Lav |
+| CU35 | MTF-platformsaktier | TBD | Ingen | Lav |
+
+---
+
+### Anbefalede handlinger (T+72h)
+
+1. **Overvåg debat** om JuU39 og JuU32 ved kammerafstemninger (forventet inden for 1–2 uger efter betænkandets offentliggørelse).
+2. **Følg** Lagrådet for eventuel retroaktiv udtalelsesanmodning om JuU32's forfatningsmæssige bestemmelser.
+3. **Notér** FiU37's parlamentsafstemning — enigt godkendelse sandsynligt, men overvåg eventuelle SD-proceduremæssige ændringsforslag.
+4. **Markér** oppositionspartiernes brug af JuU39-forbehold (konverteringsforsøg) som tidligt kampagnesignal.
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_de.md -->
+
+**Klassifizierung**: 🟢 ÖFFENTLICH  
+**Erstellt**: 2026-05-08  
+**Horizont**: T+72h bis T+90d  
+**DIW-Multiplikator**: 1,5× (Wahl ≤6 Monate: 2026-09-13)
+
+---
+
+### BLUF (Kernaussage vorab)
+
+Die Finanz- (FiU) und Justizausschüsse (JuU) des Riksdag haben diese Woche acht Gesetzgebungspunkte vorangebracht. **Drei verdienen sofortige Aufmerksamkeit**: (1) eine neue Funktion zur Krisenprävention im Finanzsektor unter Riksbankens Führung, die Schwedens systemisches Risikoarchitektur umgestaltet, (2) ein wegweisendes Strafgesetz zu psychischer Gewalt, das einen neuen Straftatbestand der Kategorie A schafft, und (3) verschärfte Polizeibefugnisse bei öffentlichen Demonstrationen mit verfassungsrechtlichen Implikationen, die Lagrådet formal prüfen sollte.
+
+Alle drei treten am **1. Juli 2026** in Kraft — sechs Wochen vor dem Endspurt der schwedischen Wahlkampagne. Es ist kaum ein Zufall, dass der Gesetzgebungskalender mit dem Wahlzyklus übereinstimmt.
+
+---
+
+### Prioritäre Geheimdienstpunkte
+
+#### P1 — HD01FiU37: Krisenmanagement im Finanzsektor (L3)
+**Thema**: Riksbanken übernimmt die Koordinierungsführung für das operative Krisenmanagement im schwedischen Finanzsektor. Finansinspektionen (FI) und Riksgäldskontoret nehmen teil.  
+**Bedeutung**: Schweden setzt den EU-DORA-Resilienzrahmen auf Systemebene um. Schafft ein neues permanentes behördenübergreifendes Gremium mit Riksbanken als primus motor. Kein nennenswerter Widerstand — einmütige Ausschussposition.  
+**Risiko**: Die Konzentration der Krisenbefugnis bei Riksbanken wirft Fragen zur Rechenschaftspflicht auf (Riksbanken ist nicht dem Minister in normalen Kanälen verantwortlich). Der erste Test unter tatsächlichem Stress wird institutionelle Kapazitätslücken aufzeigen.  
+**Wahlwinkel**: Pro-Stabilitätsnarrativ, keine Wählerkontroversiell; nützlich für die Regierung als Beweis für fiskalische/finanzielle Vorsicht.
+
+#### P2 — HD01JuU39: Psychische Gewalt als Straftatbestand (L2+)
+**Thema**: Neue Straftat "psychische Gewalt" (psykiskt våld) im brottsbalken eingeführt, max. 4 Jahre Haft. Umfasst wiederholte Demütigung, Drohungen, Zwang, Überwachung, die ernsthaftes Selbstverletzungsrisiko verursacht.  
+**Bedeutung**: Erweitert das Gesetz gegen häusliche Gewalt erheblich. Konsistent mit nordischem Trend (Norwegen 2005, Dänemark 2012). Vier-Parteien-Opposition (S, V, C, MP) Vorbehalte zu drei Teilbereichen: wirtschaftliche Gewalt, Konversionsversuche, Schulungsanforderungen.  
+**Risiko**: Umsetzungslast für Polizei/Staatsanwaltschaft, die Schwelle "Wiederholtes Muster + psychische Schädigung" zu beweisen — Durchsetzungslücke wahrscheinlich für 2–3 Jahre.  
+**Wahlwinkel**: Framing-Konflikt: Regierung behauptet Schutz für Frauen; Opposition behauptet, das Gesetz sei zu eng (keine wirtschaftliche Nötigung und Konversionstherapie).
+
+#### P3 — HD01JuU32: Polizeibefugnisse bei öffentlichen Versammlungen (L2+)
+**Thema**: JuU lehnt die meisten Oppositionsanträge zu Polizeibefugnissen bei Demonstrationen ab. Bestehende Bestimmungen in ordningslagen und polislagen werden beibehalten oder verschärft.  
+**Bedeutung**: Verfassungsrechtliche Spannung mit RF Kapitel 2 §1 (Versammlungsfreiheit). Lagrådet hat nicht alle Änderungen formal geprüft — eine zu beobachtende Lücke.  
+**Risiko**: Risiko einer EU/ECHR-Anfechtung (Art. 11 ECHR — friedliche Versammlungsfreiheit), wenn Befugnisse im Wahljahr unverhältnismäßig angewendet werden.  
+**Wahlwinkel**: Hohe Salienz: SD und KD fordern stärkere Polizeibefugnisse; S und MP verteidigen Versammlungsfreiheit. Kampagneneinsatz erwartet.
+
+---
+
+### Zusammenfassungsmatrix
+
+| Dok | Thema | Inkrafttreten | Opposition | Wahlgewicht |
+|-----|-------|--------------|-----------|------------|
+| FiU37 | Krisenmanagement Finanzsektor | 2026-07-01 | Keine | Niedrig (technisch) |
+| JuU39 | Psychische Gewalt als Straftat | 2026-07-01 | S,V,C,MP (4 Vorbehalte) | HOCH |
+| JuU32 | Polizei bei Demonstrationen | 2026-07-01 | Antragsbasiert (5 Vorbehalte) | HOCH |
+| FiU31 | Staatliche Liegenschaftsverwaltung | (Riksrevisionens) | V, MP | Mittel |
+| JuU34 | Nordische Strafverfolgung | TBD | Keine | Niedrig |
+| FiU38 | OTC-Derivate-Clearing | EU-zeitgesteuert | Keine | Niedrig |
+| FiU43 | Kommunale Sozialleistungsbetrugsverhinderung | TBD | Keine | Niedrig |
+| CU35 | MTF-Plattformaktien | TBD | Keine | Niedrig |
+
+---
+
+### Empfohlene Maßnahmen (T+72h)
+
+1. **Debatte beobachten** zu JuU39 und JuU32 bei Kammerabstimmungen (innerhalb von 1–2 Wochen nach Betänkande-Veröffentlichung erwartet).
+2. **Lagrådet verfolgen** auf eventuelle rückwirkende Stellungnahmeanfragen zu JuU32s verfassungsrechtlichen Bestimmungen.
+3. **FiU37-Parlamentsabstimmung notieren** — einstimmige Verabschiedung wahrscheinlich, aber auf SD-Verfahrensänderungsanträge achten.
+4. **Oppositionsparteien-Nutzung** von JuU39-Vorbehalten (Konversionsversuche) als frühes Kampagnensignal kennzeichnen.
+
+---
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_es.md -->
+
+**Clasificación**: 🟢 PÚBLICO  
+**Preparado**: 2026-05-08  
+**Horizonte**: T+72h a T+90d  
+**Multiplicador DIW**: 1,5× (elección ≤6 meses: 2026-09-13)
+
+---
+
+### BLUF (Conclusión al frente)
+
+Las comisiones de Finanzas (FiU) y Justicia (JuU) del Riksdag han avanzado ocho puntos legislativos esta semana. **Tres merecen atención inmediata**: (1) una nueva función de gestión de crisis del sector financiero bajo el liderazgo de Riksbanken que remodela la arquitectura de riesgo sistémico de Suecia, (2) una ley penal pionera sobre violencia psicológica que crea un nuevo delito de categoría A, y (3) mayores poderes policiales en manifestaciones públicas con implicaciones constitucionales que el Lagrådet debería examinar formalmente.
+
+Los tres entran en vigor el **1 de julio de 2026** — seis semanas antes de que la campaña electoral sueca entre en su sprint final. La alineación del calendario legislativo con el ciclo electoral es poco probable que sea coincidental.
+
+---
+
+### Puntos de inteligencia prioritarios
+
+#### P1 — HD01FiU37: Gestión de crisis del sector financiero (L3)
+**Asunto**: Riksbanken asume el liderazgo de coordinación para la gestión operativa de crisis en el sector financiero sueco. Finansinspektionen (FI) y Riksgäldskontoret participan.  
+**Importancia**: Suecia operacionaliza el marco de resiliencia DORA de la UE a nivel sistémico. Crea un nuevo órgano interinstitucional permanente con Riksbanken como primus motor. Sin oposición significativa — posición unánime del comité.  
+**Riesgo**: La concentración de autoridad de crisis en Riksbanken plantea preguntas sobre rendición de cuentas (Riksbanken no responde ante el ministro por canales normales). El primer test bajo estrés real revelará brechas de capacidad institucional.  
+**Ángulo electoral**: Narrativa pro-estabilidad, sin controversia electoral; útil para el gobierno como evidencia de prudencia fiscal/financiera.
+
+#### P2 — HD01JuU39: Violencia psicológica como delito (L2+)
+**Asunto**: Nuevo delito de "violencia psicológica" (psykiskt våld) introducido en brottsbalken, máx. 4 años de prisión. Cubre humillaciones repetidas, amenazas, coerción, vigilancia que causa grave riesgo de autolesión.  
+**Importancia**: Amplía significativamente la ley de violencia doméstica. Consistente con la tendencia nórdica (Noruega 2005, Dinamarca 2012). Oposición de cuatro partidos (S, V, C, MP) con reservas sobre tres subáreas: violencia económica, intentos de conversión, requisitos de formación.  
+**Riesgo**: Carga probatoria para la policía/fiscales para probar el umbral "patrón repetido + daño psicológico" — brecha de aplicación probable durante 2–3 años.  
+**Ángulo electoral**: Conflicto de enmarcamiento: el gobierno afirma proteger a las mujeres; la oposición afirma que la ley es demasiado estrecha (sin coerción económica y terapia de conversión).
+
+#### P3 — HD01JuU32: Poderes policiales en reuniones públicas (L2+)
+**Asunto**: JuU rechaza la mayoría de las mociones de oposición sobre poderes policiales en manifestaciones. Las disposiciones existentes de ordningslagen y polislagen se mantienen o endurecen.  
+**Importancia**: Tensión constitucional con el RF capítulo 2 §1 (libertad de reunión). El Lagrådet no revisó formalmente todos los cambios — una brecha a vigilar.  
+**Riesgo**: Riesgo de impugnación EU/CEDH (Art. 11 CEDH — libertad de reunión pacífica) si los poderes se aplican desproporcionadamente en el año electoral.  
+**Ángulo electoral**: Alta relevancia: SD y KD piden mayores poderes policiales; S y MP defienden la libertad de reunión. Se espera uso en campaña.
+
+---
+
+### Matriz resumen
+
+| Doc | Tema | Entrada en vigor | Oposición | Peso electoral |
+|-----|------|-----------------|-----------|---------------|
+| FiU37 | Gestión de crisis sector financiero | 2026-07-01 | Ninguna | Bajo (técnico) |
+| JuU39 | Violencia psicológica como delito | 2026-07-01 | S,V,C,MP (4 reservas) | ALTO |
+| JuU32 | Policía en manifestaciones | 2026-07-01 | Moción (5 reservas) | ALTO |
+| FiU31 | Gestión de propiedad estatal | (Riksrevisionens) | V, MP | Medio |
+| JuU34 | Aplicación penal nórdica | TBD | Ninguna | Bajo |
+| FiU38 | Compensación derivados OTC | Calendario UE | Ninguna | Bajo |
+| FiU43 | Prevención fraude bienestar municipal | TBD | Ninguna | Bajo |
+| CU35 | Acciones plataformas MTF | TBD | Ninguna | Bajo |
+
+---
+
+### Acciones recomendadas (T+72h)
+
+1. **Supervisar el debate** sobre JuU39 y JuU32 en las votaciones en cámara (esperado dentro de 1–2 semanas tras la publicación del betänkande).
+2. **Seguir** al Lagrådet para cualquier solicitud retroactiva de dictamen sobre las disposiciones constitucionales de JuU32.
+3. **Anotar** la votación parlamentaria de FiU37 — aprobación unánime probable, pero vigilar posibles enmiendas de procedimiento del SD.
+4. **Señalar** el uso por partidos de oposición de las reservas JuU39 (intentos de conversión) como señal de campaña temprana.
+
+---
+
+### Adiciones del Pase 2 — Evidencia específica
+
+#### FiU37 Detalle institucional
+La nueva función de gestión de crisis bajo Riksbanken está motivada específicamente por la experiencia sueca de 2015–2020 (fallos de antilavado de dinero de Swedbank + exposición bancaria báltica) y el período COVID-19 en que las brechas de resiliencia operativa en la infraestructura de pagos sueca se volvieron evidentes. El sistema de pagos RIX de Riksbanken tuvo cuasi-incidentes en el T2 2020. FiU37 crea la base legal para que Riksbanken actúe como coordinador — esta autoridad no la tenía antes.
+
+#### JuU39 Mapa de reservas — Detalle específico
+- **Reserva 1 (S+MP)**: Exige que la violencia económica sea una subcategoría explícita. Esto refleja el § 282 noruego que incluye explícitamente la "privación económica grave". UK Serious Crime Act s.76 incluye implícitamente el control financiero. El JuU39 de Suecia es más estrecho.
+- **Reserva 2 (S+V+C+MP)**: 4 partidos, señalando que todos los partidos de centro-izquierda coinciden en la prohibición de la terapia de conversión. Esta es la reserva políticamente más explosiva ya que contradice directamente algunas posiciones socialmente conservadoras de KD/SD.
+- **Reservas 3+4 (S, MP por separado)**: Ambos exigen el mandato de estudio de Brå. La negativa del gobierno a vincular la implementación con una revisión estatutaria de Brå es notable — sugiere confianza o reticencia política a crear un mecanismo de rendición de cuentas post-electoral.
+
+#### JuU32 Mecanismo constitucional
+RF capítulo 2 §20 permite restricciones a la libertad de reunión solo mediante ley (lag), y §21 requiere que la restricción sea "necesaria en una sociedad democrática". El test de proporcionalidad del §21 es la domesticación sueca del lenguaje del Art. 11 §2 del CEDH. Las disposiciones específicas de JuU32 sobre preselección y vigilancia basada en riesgos deben pasar este test de dos partes. La preocupación no es que las restricciones sean imposibles — es que sin el análisis de proporcionalidad del Lagrådet, la calidad de redacción es incierta.
+
+---
+
+### Actualización de revisión — 2026-05-08 (Nuevo documento: HD01UbU28)
+
+#### P4 — HD01UbU28: Acreditación de docentes para la escuela primaria de 10 años (L2)
+**Asunto**: UbU (Comisión de Educación) aprueba por unanimidad el ajuste administrativo de las acreditaciones de maestros antes de la introducción de la tioårig grundskola en 2028/29.  
+**Importancia**: Cierra el último vacío legislativo en la reforma educativa insignia del gobierno Tidö. La adopción unánime multipartidista (sin reservas de S, V, C, MP) señala consenso operativo incluso donde existía oposición política en la fase de diseño de políticas.  
+**Ángulo electoral**: Medio. El gobierno puede reclamar "reforma escolar de 10 años completada" como paquete legislativo completo. La adopción unánime impide que la oposición ataque este elemento.  
+**Entrada en vigor**: Año escolar 2028/29 — tras las elecciones, pero la finalización legislativa ocurre antes de las elecciones.
+
+#### Matriz resumen actualizada
+
+| Doc | Tema | Entrada en vigor | Oposición | Peso electoral |
+|-----|------|-----------------|-----------|---------------|
+| FiU37 | Gestión de crisis sector financiero | 2026-07-01 | Ninguna | Bajo (técnico) |
+| JuU39 | Violencia psicológica como delito | 2026-07-01 | S,V,C,MP (4 reservas) | ALTO |
+| JuU32 | Policía en manifestaciones | 2026-07-01 | Moción (5 reservas) | ALTO |
+| FiU31 | Gestión de propiedad estatal | (Riksrevisionens) | V, MP | Medio |
+| JuU34 | Aplicación penal nórdica | TBD | Ninguna | Bajo |
+| FiU38 | Compensación derivados OTC | Calendario UE | Ninguna | Bajo |
+| FiU43 | Prevención fraude bienestar municipal | TBD | Ninguna | Bajo |
+| CU35 | Acciones plataformas MTF | TBD | Ninguna | Bajo |
+| **HD01UbU28** | **Acreditación docentes / 10 años** | **2028/29** | **Ninguna (unánime)** | **Medio** |
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_fi.md -->
+
+**Luokittelu**: 🟢 JULKINEN  
+**Laadittu**: 2026-05-08  
+**Horisontti**: T+72h–T+90d  
+**DIW-kerroin**: 1,5× (vaalit ≤6 kuukautta: 2026-09-13)
+
+---
+
+### BLUF (Ydinviesti)
+
+Riksdagenin rahoitus- (FiU) ja oikeusvaliokunnat (JuU) ovat edistäneet kahdeksaa lainsäädäntökohtaa tällä viikolla. **Kolme ansaitsee välitöntä huomiota**: (1) uusi rahoitussektorin kriisinhallintarakenne Riksbankenin johdolla, joka muuttaa Ruotsin systeemistä riskiarkkitehtuuria, (2) merkittävä psyykkistä väkivaltaa koskeva rikoslaki, joka luo uuden A-kategorian rikostyyppi, ja (3) tiukennetut poliisivaltuudet julkisissa kokoontumisissa perustuslaillisine vaikutuksineen, joita Lagrådetin tulisi tutkia virallisesti.
+
+Kaikki kolme tulevat voimaan **1. heinäkuuta 2026** — kuusi viikkoa ennen kuin Ruotsin vaalikampanja siirtyy loppukiriinsä. Lainsäädäntökalenterin yhdenmukaistuminen vaalikierron kanssa ei todennäköisesti ole sattumaa.
+
+---
+
+### Prioriteettiset tiedustelupisteet
+
+#### P1 — HD01FiU37: Rahoitussektorin kriisinhallinta (L3)
+**Aihe**: Riksbanken ottaa koordinointijohtajuuden Ruotsin rahoitussektorin operatiivisesta kriisinhallinnasta. Finansinspektionen (FI) ja Riksgäldskontoret osallistuvat.  
+**Merkitys**: Ruotsi toteuttaa EU:n DORA-vastustuskykyviitekehyksen systeemitasolla. Luo uuden pysyvän virastojenvälisen elimen, jossa Riksbanken on primus motor. Ei merkittävää vastustusta — yksimielinen valiokunnan kanta.  
+**Riski**: Kriisinhallinnan auktoriteetin keskittäminen Riksbankenille herättää kysymyksiä vastuullisuudesta (Riksbanken ei vastaa ministerille normaaleissa kanavissa). Ensimmäinen testi todellisessa stressitilanteessa paljastaa institutionaaliset kapasiteettiaukot.  
+**Vaalikulma**: Pro-vakausnarraatiivi, ei äänestäjäkontroverssia; hyödyllinen hallitukselle todisteena fiskaalisesta/taloudellisesta varovaisuudesta.
+
+#### P2 — HD01JuU39: Psyykkinen väkivalta rikoksena (L2+)
+**Aihe**: Uusi rikos "psyykkinen väkivalta" (psykiskt våld) otetaan käyttöön brottsbalkenissa, enintään 4 vuoden vankilatuomio. Kattaa toistuvan nöyryyttämisen, uhkailun, pakottamisen, valvonnan, joka aiheuttaa vakavan itsensä vahingoittamisen riskin.  
+**Merkitys**: Laajentaa lähisuhdeväkivaltalakia merkittävästi. Yhdenmukainen pohjoismaisen kehityssuunnan kanssa (Norja 2005, Tanska 2012). Neljän puolueen oppositio (S, V, C, MP) varaumat kolmesta osa-alueesta: taloudellinen väkivalta, konversiopyrkimykset, koulutusvaatimukset.  
+**Riski**: Poliisin/syyttäjien todistustaakka "toistuva malli + psyykkinen vahinko" -kynnyksen osoittamisessa — toimeenpanoaukko todennäköinen 2–3 vuodeksi.  
+**Vaalikulma**: Kehystyskonflikti: hallitus väittää suojelevansa naisia; oppositio väittää lain olevan liian kapea (puuttuu taloudellinen pakottaminen ja konversiohoidot).
+
+#### P3 — HD01JuU32: Poliisivaltuudet julkisissa kokoontumisissa (L2+)
+**Aihe**: JuU hylkää suurimman osan oppositioehdotuksista koskien poliisivaltuuksia mielenosoituksissa. Ordningslagenin ja polislagenin olemassa olevat säännökset säilytetään tai tiukennetaan.  
+**Merkitys**: Perustuslaillinen jännite RF luvun 2 §1:n kanssa (kokoontumsvapaus). Lagrådet ei virallisesti tarkastanut kaikkia muutoksia — seurattava aukko.  
+**Riski**: EU/ECHR-haasteen riski (Art. 11 ECHR — rauhanomaiset kokoontumisvapaudet), jos valtuuksia sovelletaan suhteettomasti vaalivuonna.  
+**Vaalikulma**: Korkea merkitys: SD ja KD vaativat vahvempia poliisivaltuuksia; S ja MP puolustavat kokoontumisoikeutta. Odotetaan kampanjankäyttöä.
+
+---
+
+### Yhteenvetomatriisi
+
+| Dok | Aihe | Voimaantulo | Oppositio | Vaalipainö |
+|-----|------|------------|----------|-----------|
+| FiU37 | Rahoitussektorin kriisinhallinta | 2026-07-01 | Ei | Matala (tekninen) |
+| JuU39 | Psyykkinen väkivalta rikoksena | 2026-07-01 | S,V,C,MP (4 varaumaa) | KORKEA |
+| JuU32 — | Poliisi mielenosoituksissa | 2026-07-01 | Ehdotuspohjainen (5 varaumaa) | KORKEA |
+| FiU31 | Valtion kiinteistöhallinto | (Riksrevisionens) | V, MP | Keskitaso |
+| JuU34 | Pohjoismainen rikosoikeuden toimeenpano | TBD | Ei | Matala |
+| FiU38 | OTC-johdannaiskliraus | EU-aikataulutettu | Ei | Matala |
+| FiU43 | Kuntien hyvinvointipetosten ennaltaehkäisy | TBD | Ei | Matala |
+| CU35 | MTF-alustaosakkeet | TBD | Ei | Matala |
+
+---
+
+### Suositellut toimenpiteet (T+72h)
+
+1. **Seuraa debattia** JuU39:stä ja JuU32:sta täysistuntoäänestyksissä (odotetaan 1–2 viikon kuluessa betänkanden julkaisemisesta).
+2. **Seuraa** Lagrådetia mahdollisen jälkikäteisen lausuntopyynnön varalta JuU32:n perustuslaillisista säännöksistä.
+3. **Huomaa** FiU37:n parlamenttiäänestys — yksimielinen hyväksyminen todennäköinen, mutta seuraa SD:n mahdollisia menettelytapaehdotuksia.
+4. **Merkitse** oppositiopuolueiden JuU39-varaumien (konversiopyrkimykset) käyttö varhaisena kampanjasignaalina.
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_fr.md -->
+
+**Établi** : 2026-05-08  
+**Horizon** : T+72h à T+90j  
+**Multiplicateur DIW** : 1,5× (élection ≤6 mois : 2026-09-13)
+
+---
+
+### BLUF (Conclusion en tête)
+
+Les commissions des finances (FiU) et de la justice (JuU) du Riksdag ont fait progresser huit points législatifs cette semaine. **Trois méritent une attention immédiate** : (1) une nouvelle fonction de gestion de crise du secteur financier sous la direction de Riksbanken qui remodèle l'architecture des risques systémiques de la Suède, (2) une loi pénale historique sur la violence psychologique créant une nouvelle infraction pénale de catégorie A, et (3) des pouvoirs de police renforcés lors des manifestations publiques aux implications constitutionnelles que le Lagrådet devrait examiner formellement.
+
+Les trois entrent en vigueur le **1er juillet 2026** — six semaines avant que la campagne électorale suédoise n'entre dans sa dernière ligne droite. L'alignement du calendrier législatif avec le cycle électoral est peu susceptible d'être fortuit.
+
+---
+
+### Points de renseignement prioritaires
+
+#### P1 — HD01FiU37 : Gestion de crise du secteur financier (L3)
+**Sujet** : Riksbanken assume la direction de la coordination pour la gestion opérationnelle des crises dans le secteur financier suédois. Finansinspektionen (FI) et Riksgäldskontoret participent.  
+**Importance** : La Suède opérationnalise le cadre de résilience DORA de l'UE au niveau systémique. Crée un nouvel organe interinstitutionnel permanent avec Riksbanken comme primus motor. Aucune opposition significative — position unanime de la commission.  
+**Risque** : La concentration de l'autorité de crise chez Riksbanken soulève des questions de responsabilité (Riksbanken ne répond pas au ministre par les canaux normaux). Le premier test sous stress réel révélera des lacunes de capacité institutionnelle.  
+**Angle électoral** : Narratif pro-stabilité, aucune controverse auprès des électeurs ; utile au gouvernement comme preuve de prudence budgétaire/financière.
+
+#### P2 — HD01JuU39 : Violence psychologique comme infraction pénale (L2+)
+**Sujet** : Nouvelle infraction de « violence psychologique » (psykiskt våld) introduite dans brottsbalken, max. 4 ans d'emprisonnement. Couvre les humiliations répétées, menaces, contraintes, surveillance causant un risque grave d'automutilation.  
+**Importance** : Étend considérablement la loi sur la violence domestique. Cohérent avec la tendance nordique (Norvège 2005, Danemark 2012). Opposition de quatre partis (S, V, C, MP) réserves sur trois sous-domaines : violence économique, tentatives de conversion, exigences de formation.  
+**Risque** : Charge de la preuve pour la police/les procureurs afin de prouver le seuil « schéma répété + préjudice psychologique » — lacune d'application probable pendant 2–3 ans.  
+**Angle électoral** : Conflit de cadrage : le gouvernement affirme protéger les femmes ; l'opposition affirme que la loi est trop étroite (absence de coercition économique et thérapie de conversion).
+
+#### P3 — HD01JuU32 : Pouvoirs de police lors de rassemblements publics (L2+)
+**Sujet** : JuU rejette la plupart des motions d'opposition sur les pouvoirs de police lors des manifestations. Les dispositions existantes d'ordningslagen et de polislagen sont maintenues ou renforcées.  
+**Importance** : Tension constitutionnelle avec le RF chapitre 2 §1 (liberté de réunion). Le Lagrådet n'a pas formellement examiné tous les changements — une lacune à surveiller.  
+**Risque** : Risque de contestation EU/CEDH (Art. 11 CEDH — liberté de réunion pacifique) si les pouvoirs sont appliqués de manière disproportionnée en année électorale.  
+**Angle électoral** : Haute saillance : SD et KD réclament des pouvoirs de police renforcés ; S et MP défendent la liberté de réunion. Utilisation en campagne attendue.
+
+---
+
+### Matrice de synthèse
+
+| Doc | Sujet | Entrée en vigueur | Opposition | Poids électoral |
+|-----|-------|-------------------|-----------|----------------|
+| FiU37 | Gestion de crise secteur financier | 2026-07-01 | Aucune | Faible (technique) |
+| JuU39 | Violence psychologique | 2026-07-01 | S,V,C,MP (4 réserves) | ÉLEVÉ |
+| JuU32 | Police lors des manifestations | 2026-07-01 | Motion (5 réserves) | ÉLEVÉ |
+| FiU31 | Gestion des biens d'État | (Riksrevisionens) | V, MP | Moyen |
+| JuU34 | Application pénale nordique | TBD | Aucune | Faible |
+| FiU38 | Compensation dérivés OTC | Calendrier UE | Aucune | Faible |
+| FiU43 | Prévention fraude sociale municipale | TBD | Aucune | Faible |
+| CU35 | Actions plateformes MTF | TBD | Aucune | Faible |
+
+---
+
+### Actions recommandées (T+72h)
+
+1. **Surveiller le débat** sur JuU39 et JuU32 lors des votes en chambre (attendu dans 1–2 semaines après la publication du betänkande).
+2. **Suivre** le Lagrådet pour toute demande d'avis rétroactif sur les dispositions constitutionnelles de JuU32.
+3. **Noter** le vote parlementaire de FiU37 — adoption unanime probable, mais surveiller d'éventuels amendements de procédure du SD.
+4. **Signaler** l'utilisation par les partis d'opposition des réserves JuU39 (tentatives de conversion) comme signal de campagne précoce.
+
+---
+
+### Ajouts du Passage 2 — Preuves spécifiques
+
+#### FiU37 Détail institutionnel
+La nouvelle fonction de gestion de crise sous Riksbanken est spécifiquement motivée par l'expérience suédoise de 2015–2020 (défaillances anti-blanchiment de Swedbank + exposition bancaire baltique) et la période COVID-19 où des lacunes de résilience opérationnelle dans l'infrastructure de paiement suédoise sont devenues évidentes. Le système de paiement RIX de Riksbanken a subi des quasi-incidents au T2 2020. FiU37 crée la base légale pour que Riksbanken agisse comme coordinateur — elle ne disposait pas de cette autorité auparavant.
+
+#### JuU39 Carte des réserves — Détail spécifique
+- **Réserve 1 (S+MP)** : Exige que la violence économique soit une sous-catégorie explicite. Cela reflète le § 282 norvégien qui inclut explicitement la « privation économique grave ». UK Serious Crime Act s.76 inclut implicitement le contrôle financier. JuU39 de la Suède est plus étroit.
+- **Réserve 2 (S+V+C+MP)** : 4 partis, signalant que tous les partis du centre-gauche s'accordent sur l'interdiction de la thérapie de conversion. C'est la réserve politiquement la plus explosive car elle contredit directement certaines positions social-conservatrices de KD/SD.
+- **Réserves 3+4 (S, MP séparément)** : Les deux exigent un mandat d'étude Brå. Le refus du gouvernement de lier la mise en œuvre à un examen Brå statutaire est notable — suggère une confiance ou une réticence politique à créer un mécanisme de responsabilité post-électoral.
+
+#### JuU32 Mécanisme constitutionnel
+RF chapitre 2 §20 permet des restrictions à la liberté de réunion uniquement par loi (lag), et §21 exige que la restriction soit « nécessaire dans une société démocratique ». Le test de proportionnalité du §21 est la domestication suédoise du langage de l'Art. 11 §2 de la CEDH. Des dispositions spécifiques de JuU32 sur le pré-filtrage et la surveillance basée sur les risques doivent passer ce test en deux parties. La préoccupation n'est pas que les restrictions soient impossibles — c'est que sans l'analyse de proportionnalité du Lagrådet, la qualité de rédaction est incertaine.
+
+---
+
+### Mise à jour après révision — 2026-05-08 (Nouveau document : HD01UbU28)
+
+#### P4 — HD01UbU28 : Accréditation des enseignants pour l'école primaire de 10 ans (L2)
+**Sujet** : UbU (Commission de l'éducation) approuve à l'unanimité l'ajustement administratif des accréditations d'enseignants avant l'introduction de la tioårig grundskola en 2028/29.  
+**Importance** : Comble la dernière lacune législative dans la réforme éducative phare du gouvernement Tidö. L'adoption unanime par les partis (aucune réserve de S, V, C, MP) signale un consensus opérationnel même là où une opposition politique existait lors de la phase de conception des politiques.  
+**Angle électoral** : Moyen. Le gouvernement peut revendiquer « réforme scolaire de 10 ans complétée » comme package législatif complet. L'adoption unanime empêche l'opposition d'attaquer cet élément.  
+**Entrée en vigueur** : Année scolaire 2028/29 — après les élections, mais l'achèvement législatif intervient avant les élections.
+
+#### Matrice de synthèse mise à jour
+
+| Doc | Sujet | Entrée en vigueur | Opposition | Poids électoral |
+|-----|-------|-------------------|-----------|----------------|
+| FiU37 | Gestion de crise secteur financier | 2026-07-01 | Aucune | Faible (technique) |
+| JuU39 | Violence psychologique | 2026-07-01 | S,V,C,MP (4 réserves) | ÉLEVÉ |
+| JuU32 | Police lors des manifestations | 2026-07-01 | Motion (5 réserves) | ÉLEVÉ |
+| FiU31 | Gestion des biens d'État | (Riksrevisionens) | V, MP | Moyen |
+| JuU34 | Application pénale nordique | TBD | Aucune | Faible |
+| FiU38 | Compensation dérivés OTC | Calendrier UE | Aucune | Faible |
+| FiU43 | Prévention fraude sociale municipale | TBD | Aucune | Faible |
+| CU35 | Actions plateformes MTF | TBD | Aucune | Faible |
+| **HD01UbU28** | **Accréditation enseignants / 10 ans** | **2028/29** | **Aucune (unanime)** | **Moyen** |
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_he.md -->
+
+**סיווג**: 🟢 ציבורי  
+**הוכן**: 2026-05-08  
+**אופק**: T+72 שעות עד T+90 ימים  
+**מכפיל DIW**: 1.5× (בחירות ≤6 חודשים: 2026-09-13)
+
+---
+
+### BLUF (מסקנה בפתיחה)
+
+ועדות האוצר (FiU) והמשפטים (JuU) בפרלמנט השוודי (ריקסדאג) קידמו שמונה פריטי חקיקה השבוע. **שלושה מהם ראויים לתשומת לב מיידית**: (1) פונקציית ניהול משבר חדשה במגזר הפיננסי תחת הנהגת Riksbanken הרוקמת מחדש את ארכיטקטורת הסיכון המערכתי בשוודיה, (2) חוק פלילי פורץ דרך בנושא אלימות נפשית היוצר עבירה פלילית חדשה מקטגוריה א', ו-(3) הרחבת סמכויות המשטרה בהפגנות פומביות עם השלכות חוקתיות שה-Lagrådet צריך לבחון רשמית.
+
+כל שלושתם נכנסים לתוקף ב**1 ביולי 2026** — שישה שבועות לפני כניסת מסע הבחירות השוודי לגמר שלו. ישור קו לוח הזמנים החקיקתי עם מחזור הבחירות אינו צפוי להיות מקרי.
+
+---
+
+### נקודות מודיעין בעדיפות גבוהה
+
+#### P1 — HD01FiU37: ניהול משבר במגזר הפיננסי (L3)
+**נושא**: Riksbanken לוקחת על עצמה את הובלת הקוורדינציה לניהול משבר תפעולי במגזר הפיננסי השוודי. Finansinspektionen (FI) ו-Riksgäldskontoret משתתפים.  
+**חשיבות**: שוודיה מפעילה את מסגרת החוסן DORA של האיחוד האירופי ברמה מערכתית. יוצרת גוף בין-סוכנותי קבוע חדש עם Riksbanken כמניע ראשי. ללא התנגדות משמעותית — עמדת ועדה פה אחד.  
+**סיכון**: ריכוז סמכות ניהול המשבר ב-Riksbanken מעלה שאלות של אחריותיות (Riksbanken אינה כפופה לשר בערוצים רגילים). המבחן הראשון בלחץ אמיתי יחשוף פערי קיבולת מוסדיים.  
+**זווית בחירות**: נרטיב פרו-יציבות, ללא מחלוקת ציבורית; שימושי לממשלה כראיה לזהירות פיסקלית/פיננסית.
+
+#### P2 — HD01JuU39: אלימות נפשית כעבירה פלילית (L2+)
+**נושא**: עבירה חדשה "אלימות נפשית" (psykiskt våld) מוכנסת ל-brottsbalken, עד 4 שנות מאסר. מכסה השפלה חוזרת, איומים, כפייה, מעקב הגורמים לסיכון רציני לפגיעה עצמית.  
+**חשיבות**: מרחיבה את חוק האלימות הביתית באופן משמעותי. עקבי עם המגמה הנורדית (נורווגיה 2005, דנמרק 2012). ארבעה מפלגות באופוזיציה (S, V, C, MP) עם הסתייגויות על שלושה תת-תחומים: אלימות כלכלית, ניסיונות המרה, דרישות הכשרה.  
+**סיכון**: נטל הוכחה על המשטרה/תביעה להוכיח את הסף "דפוס חוזר + נזק נפשי" — פער אכיפה צפוי למשך 2–3 שנים.  
+**זווית בחירות**: קונפליקט מיסגור: הממשלה טוענת שהיא מגנה על נשים; האופוזיציה טוענת שהחוק צר מדי (חסרים כפייה כלכלית וטיפול המרה).
+
+#### P3 — HD01JuU32: סמכויות משטרה בהתכנסויות ציבוריות (L2+)
+**נושא**: JuU דוחה את רוב הצעות האופוזיציה בנוגע לסמכויות משטרה בהפגנות. ההוראות הקיימות ב-ordningslagen וב-polislagen נשמרות או מחמירות.  
+**חשיבות**: מתח חוקתי עם פרק 2 §1 ב-RF (חופש ההתכנסות). ה-Lagrådet לא בחן רשמית את כל השינויים — פער למעקב.  
+**סיכון**: סיכון לאתגר EU/ECHR (סעיף 11 ECHR — חופש ההתכנסות השלווה) אם הסמכויות יופעלו באופן בלתי-מידתי בשנת הבחירות.  
+**זווית בחירות**: מהותיות גבוהה: SD ו-KD דורשים סמכויות משטרה חזקות יותר; S ו-MP מגינים על חופש ההתכנסות. שימוש בקמפיין צפוי.
+
+---
+
+### מטריצת סיכום
+
+| מסמך | נושא | כניסה לתוקף | אופוזיציה | משקל בחירות |
+|------|------|------------|---------|------------|
+| FiU37 | ניהול משבר מגזר פיננסי | 2026-07-01 | ללא | נמוך (טכני) |
+| JuU39 | אלימות נפשית כעבירה | 2026-07-01 | S,V,C,MP (4 הסתייגויות) | גבוה |
+| JuU32 | משטרה בהפגנות | 2026-07-01 | מבוסס-הצעות (5 הסתייגויות) | גבוה |
+| FiU31 | ניהול נכסי מדינה | (Riksrevisionens) | V, MP | בינוני |
+| JuU34 | אכיפה פלילית נורדית | TBD | ללא | נמוך |
+| FiU38 | קיזוז נגזרות OTC | לוח זמנים אירופי | ללא | נמוך |
+| FiU43 | מניעת הונאת רווחה עירונית | TBD | ללא | נמוך |
+| CU35 | מניות פלטפורמת MTF | TBD | ללא | נמוך |
+
+---
+
+### פעולות מומלצות (T+72 שעות)
+
+1. **לעקוב אחר הדיון** ב-JuU39 וב-JuU32 בהצבעות המליאה (צפוי תוך 1–2 שבועות מפרסום ה-betänkande).
+2. **לעקוב** אחר Lagrådet לאחר בקשת חוות דעת רטרואקטיבית על הוראות החוקתיות של JuU32.
+3. **לציין** את הצבעת הפרלמנט ב-FiU37 — אישור פה אחד צפוי, אך לעקוב אחר הצעות שינוי פרוצדורליות של SD.
+4. **לסמן** שימוש מפלגות האופוזיציה בהסתייגויות JuU39 (ניסיונות המרה) כאות קמפיין מוקדם.
+
+---
+
+### תוספות סיבוב 2 — ראיות ספציפיות
+
+#### FiU37 פרטים מוסדיים
+פונקציית ניהול המשבר החדשה תחת Riksbanken מונעת ספציפית מניסיון שוודיה ב-2015–2020 (כשלי Swedbank נגד הלבנת הון + חשיפה בנקאית בלטית) ותקופת COVID-19 שבה פערי חוסן תפעוליים בתשתית התשלומים השוודית הפכו ברורים. מערכת התשלומים RIX של Riksbanken חוותה כמעט-אירועים ברבעון השני של 2020. FiU37 יוצר את הבסיס החוקי ל-Riksbanken לפעול כרכז — לא הייתה לה סמכות זו לפני כן.
+
+#### JuU39 מפת ההסתייגויות — פרט ספציפי
+- **הסתייגות 1 (S+MP)**: דורשת שאלימות כלכלית תהיה תת-קטגוריה מפורשת. זה משקף את §282 הנורווגי הכולל במפורש "קיפוח כלכלי חמור". חוק הפשעים החמורים הבריטי s.76 כולל שליטה פיננסית במשתמע. JuU39 השוודי צר יותר.
+- **הסתייגות 2 (S+V+C+MP)**: 4 מפלגות, מאותת שכל מפלגות המרכז-שמאל מסכימות על איסור טיפול ההמרה. זוהי ההסתייגות הפוליטית הנפיצה ביותר שכן היא סותרת ישירות עמדות שמרניות חברתיות מסוימות של KD/SD.
+- **הסתייגויות 3+4 (S, MP בנפרד)**: שניהם דורשים מנדט מחקר Brå. סירוב הממשלה לקשור את היישום לסקירת Brå חוקית הוא בולט — מרמז על ביטחון או היסוס פוליטי ליצור מנגנון אחריותיות לאחר הבחירות.
+
+#### JuU32 המנגנון החוקתי
+פרק 2 §20 ב-RF מאפשר הגבלות על חופש ההתכנסות רק באמצעות חוק (lag), ו-§21 דורש שההגבלה תהיה "נחוצה בחברה דמוקרטית". בחינת המידתיות ב-§21 היא ההתאמה השוודית לשפת סעיף 11 §2 של ECHR. הוראות JuU32 הספציפיות בנושא סינון מוקדם ומעקב מבוסס-סיכון צריכות לעבור את הבחינה הדו-חלקית הזו. הדאגה אינה שהגבלות בלתי-אפשריות — אלא שבלי ניתוח המידתיות של Lagrådet, איכות הניסוח אינה ודאית.
+
+---
+
+### עדכון סקירה — 2026-05-08 (מסמך חדש: HD01UbU28)
+
+#### P4 — HD01UbU28: הסמכת מורים לבית ספר יסודי של 10 שנים (L2)
+**נושא**: UbU (ועדת החינוך) מאשר פה אחד התאמה מינהלית של אישורי הסמכת מורים לקראת הכנסת tioårig grundskola בשנת 2028/29.  
+**חשיבות**: סוגר את הפער החקיקתי האחרון ברפורמת החינוך הדגלית של ממשלת תידו. האימוץ הפה-אחד הרב-מפלגתי (ללא הסתייגויות מ-S, V, C, MP) מאותת על קונצנזוס תפעולי גם כאשר הייתה התנגדות פוליטית בשלב עיצוב המדיניות.  
+**זווית בחירות**: בינוני. הממשלה יכולה לטעון "רפורמת ה-10 שנים הושלמה" כחבילה חקיקתית שלמה. האימוץ הפה-אחד מונע מהאופוזיציה לתקוף את המרכיב הזה.  
+**כניסה לתוקף**: שנת הלימודים 2028/29 — לאחר הבחירות, אך השלמת החקיקה מתרחשת לפני הבחירות.
+
+#### מטריצת סיכום מעודכנת
+
+| מסמך | נושא | כניסה לתוקף | אופוזיציה | משקל בחירות |
+|------|------|------------|---------|------------|
+| FiU37 | ניהול משבר מגזר פיננסי | 2026-07-01 | ללא | נמוך (טכני) |
+| JuU39 | אלימות נפשית כעבירה | 2026-07-01 | S,V,C,MP (4 הסתייגויות) | גבוה |
+| JuU32 | משטרה בהפגנות | 2026-07-01 | מבוסס-הצעות (5 הסתייגויות) | גבוה |
+| FiU31 | ניהול נכסי מדינה | (Riksrevisionens) | V, MP | בינוני |
+| JuU34 | אכיפה פלילית נורדית | TBD | ללא | נמוך |
+| FiU38 | קיזוז נגזרות OTC | לוח זמנים אירופי | ללא | נמוך |
+| FiU43 | מניעת הונאת רווחה עירונית | TBD | ללא | נמוך |
+| CU35 | מניות פלטפורמת MTF | TBD | ללא | נמוך |
+| **HD01UbU28** | **הסמכת מורים / בי"ס 10 שנים** | **2028/29** | **ללא (פה אחד)** | **בינוני** |
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_ja.md -->
+
+**分類**: 🟢 公開  
+**作成日**: 2026-05-08  
+**時間軸**: T+72時間〜T+90日  
+**DIW乗数**: 1.5×（選挙まで≤6ヶ月: 2026-09-13）
+
+---
+
+### BLUF（結論を先に）
+
+スウェーデン議会（リクスダーグ）の財務（FiU）・司法（JuU）委員会は今週、8つの立法案を前進させた。**3つが即座の注意を要する**: (1) リクスバンクが主導するスウェーデンの金融セクター危機管理機能の新設（システムリスクの構造を再編）、(2) 心理的暴力を新たな刑事犯罪として創設する画期的な刑事法（カテゴリーA）、(3) 憲法上の含意を持つ公共集会における警察権限の強化（ラグローデットの正式審査が必要）。
+
+3つすべてが**2026年7月1日**に施行される——スウェーデンの選挙キャンペーンが最終スパートに入る6週間前だ。立法カレンダーが選挙サイクルと一致していることは、偶然とは考えにくい。
+
+---
+
+### 優先情報項目
+
+#### P1 — HD01FiU37: 金融セクター危機管理（L3）
+**主題**: リクスバンクがスウェーデン金融セクターの業務上危機管理の調整主導権を担う。フィナンスインスペクティオネン（FI）とリクスゲルズコントルが参加。  
+**重要性**: スウェーデンがEUのDORAレジリエンス・フレームワークをシステムレベルで具現化。リクスバンクを筆頭とする新たな恒久的省庁間機関を創設。大きな反対なし——委員会の全会一致の立場。  
+**リスク**: 危機権限のリクスバンクへの集中は、説明責任の問題を提起（リクスバンクは通常チャネルでは大臣に対して説明責任を負わない）。実際のストレス下での初のテストが制度的な能力ギャップを露わにする。  
+**選挙角度**: 安定促進のナラティブ、有権者の論争なし；財政・金融の慎重さの証拠として政府に有用。
+
+#### P2 — HD01JuU39: 刑事犯罪としての心理的暴力（L2+）
+**主題**: 新犯罪「心理的暴力」（psykiskt våld）がブロッツバルケンに導入、最長4年の懲役。深刻な自傷リスクを引き起こす繰り返しの屈辱、脅迫、強制、監視を包含。  
+**重要性**: 家庭内暴力法を大幅に拡大。北欧のトレンドと一致（ノルウェー2005年、デンマーク2012年）。4党の野党（S, V, C, MP）が3分野で留保: 経済的暴力、転向療法の試み、研修要件。  
+**リスク**: 「繰り返しのパターン＋精神的損害」の立証責任が警察・検察に課せられる——2〜3年間の執行ギャップの可能性。  
+**選挙角度**: フレーミング競争: 政府は女性保護を主張；野党は法律が狭すぎる（経済的強要と転向療法の欠落）と主張。
+
+#### P3 — HD01JuU32: 公共集会における警察権限（L2+）
+**主題**: JuUはデモにおける警察権限に関するほとんどの野党動議を却下。オルドニングスラーゲンとポリスラーゲンの既存規定が維持または強化。  
+**重要性**: RF第2章§1（集会の自由）との憲法上の緊張。ラグローデットはすべての変更を正式に審査していない——監視が必要なギャップ。  
+**リスク**: EU/ECHR（ECHR第11条——平和的集会の自由）への挑戦のリスク（選挙年に権限が不相応に適用された場合）。  
+**選挙角度**: 高い顕著性: SDとKDが警察権限の強化を要求；SとMPが集会の自由を擁護。キャンペーン利用が見込まれる。
+
+---
+
+### 要約マトリクス
+
+| 文書 | 主題 | 施行日 | 野党 | 選挙ウェイト |
+|------|------|--------|------|------------|
+| FiU37 | 金融セクター危機管理 | 2026-07-01 | なし | 低（技術的） |
+| JuU39 | 心理的暴力（犯罪化） | 2026-07-01 | S,V,C,MP（4留保） | 高 |
+| JuU32 | デモでの警察 | 2026-07-01 | 動議ベース（5留保） | 高 |
+| FiU31 | 国有財産管理 | （Riksrevisionens） | V, MP | 中 |
+| JuU34 | 北欧刑事施行 | TBD | なし | 低 |
+| FiU38 | OTCデリバティブ清算 | EU時間指定 | なし | 低 |
+| FiU43 | 市町村福祉詐欺防止 | TBD | なし | 低 |
+| CU35 | MTFプラットフォーム株式 | TBD | なし | 低 |
+
+---
+
+### 推奨アクション（T+72時間）
+
+1. **討論監視** JuU39とJuU32の本会議採決（betänkande公表後1〜2週間以内に予定）。
+2. **ラグローデット追跡** JuU32の憲法規定に関する遡及的意見請求の有無。
+3. **FiU37採決確認** 全会一致承認の見込みだが、SDの手続き修正動議を監視。
+4. **野党フラグ** JuU39留保（転向療法の試み）の利用を早期キャンペーンシグナルとしてマーク。
+
+---
+
+### パス2追記 — 具体的証拠
+
+#### FiU37 制度的詳細
+リクスバンク傘下の新危機管理機能は、特にスウェーデンの2015〜2020年の経験（スウェドバンクのマネーロンダリング対策の失敗＋バルト諸国の銀行エクスポージャー）とCOVID-19期間にスウェーデンの決済インフラの運用上のレジリエンスギャップが明白になったことを動機としている。リクスバンクのRIX決済システムは2020年第2四半期にほぼ事故を起こした。FiU37はリクスバンクが調整者として行動するための法的根拠を創設する——以前はこの権限がなかった。
+
+#### JuU39 留保マップ — 具体的詳細
+- **留保1 (S+MP)**: 経済的暴力が明示的なサブカテゴリーであることを要求。これはノルウェーの§282を反映しており、「深刻な経済的剥奪」を明示的に含む。英国の重大犯罪法s.76は財政的管理を暗黙的に含む。スウェーデンのJuU39はより狭い。
+- **留保2 (S+V+C+MP)**: 4党、すべての中道左派政党が転向療法の禁止に同意していることを示す。これはKD/SDの一部の社会的保守的立場に直接反するため、政治的に最も爆発力のある留保だ。
+- **留保3+4 (S, MP別々)**: 両方ともBrå調査委託を要求。法定のBrå審査に実施を拘束することへの政府の拒否は注目に値する——選挙後の説明責任メカニズムを作ることへの自信または政治的不本意を示唆する。
+
+#### JuU32 憲法上のメカニズム
+RF第2章§20は集会の自由の制限を法律（lag）によってのみ認め、§21は制限が「民主主義社会において必要である」ことを要求する。§21の比例性テストは、スウェーデンのECHR第11条§2の言語の国内化だ。前スクリーニングとリスクベースの監視に関するJuU32の特定条項はこの2段階テストに合格する必要がある。懸念は制限が不可能だということではない——ラグローデットの比例性分析なしに起草品質が不確かだということだ。
+
+---
+
+### 再実行更新 — 2026-05-08（新文書: HD01UbU28）
+
+#### P4 — HD01UbU28: 10年制小学校の教師資格認定（L2）
+**主題**: UbU（教育委員会）が2028/29年のtioårig grundskolans導入前に教師資格認定の行政調整を全会一致で承認。  
+**重要性**: ティドー政府の旗艦教育改革の最後の法的ギャップを閉じる。全会一致の超党派採択（S, V, C, MPからの留保なし）は、政策立案段階で政治的反対があったとしても、運営上の合意を示す。  
+**選挙角度**: 中。政府は完全な立法パッケージとして「10年制学校改革完成」を主張できる。全会一致の採択は野党がこの要素を攻撃することを防ぐ。  
+**施行日**: 2028/29学年度——選挙後だが、立法完了は選挙前に行われる。
+
+#### 更新された要約マトリクス
+
+| 文書 | 主題 | 施行日 | 野党 | 選挙ウェイト |
+|------|------|--------|------|------------|
+| FiU37 | 金融セクター危機管理 | 2026-07-01 | なし | 低（技術的） |
+| JuU39 | 心理的暴力（犯罪化） | 2026-07-01 | S,V,C,MP（4留保） | 高 |
+| JuU32 | デモでの警察 | 2026-07-01 | 動議ベース（5留保） | 高 |
+| FiU31 | 国有財産管理 | （Riksrevisionens） | V, MP | 中 |
+| JuU34 | 北欧刑事施行 | TBD | なし | 低 |
+| FiU38 | OTCデリバティブ清算 | EU時間指定 | なし | 低 |
+| FiU43 | 市町村福祉詐欺防止 | TBD | なし | 低 |
+| CU35 | MTFプラットフォーム株式 | TBD | なし | 低 |
+| **HD01UbU28** | **教師資格認定 / 10年制学校** | **2028/29** | **なし（全会一致）** | **中** |
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_ko.md -->
+
+**분류**: 🟢 공개  
+**작성일**: 2026-05-08  
+**시간 지평**: T+72시간~T+90일  
+**DIW 승수**: 1.5×(선거까지 ≤6개월: 2026-09-13)
+
+---
+
+### BLUF(결론 먼저)
+
+스웨덴 의회(릭스다그)의 재무(FiU)·법무(JuU) 위원회는 이번 주 8개의 입법안을 진전시켰다. **3개가 즉각적인 주목을 요한다**: (1) 릭스방켄 주도의 스웨덴 금융부문 위기관리 기능 신설(시스템 리스크 구조 재편), (2) 심리적 폭력을 새로운 형사범죄로 신설하는 획기적인 형사법(카테고리 A), (3) 헌법적 함의를 지닌 공공 집회에서의 경찰 권한 강화(라그로데트의 공식 심사 필요).
+
+세 가지 모두 **2026년 7월 1일** 발효된다——스웨덴 선거 캠페인이 최종 단계에 접어드는 6주 전이다. 입법 달력이 선거 주기와 일치하는 것은 우연이라고 보기 어렵다.
+
+---
+
+### 우선 정보 항목
+
+#### P1 — HD01FiU37: 금융부문 위기관리(L3)
+**주제**: 릭스방켄이 스웨덴 금융부문의 운영 위기관리 조율 주도권을 맡는다. 피난스인스펙티오넨(FI)과 릭스겔즈콘토레트가 참여.  
+**중요성**: 스웨덴이 EU DORA 회복력 프레임워크를 시스템 수준에서 구현. 릭스방켄을 수장으로 하는 새로운 영구적 부처 간 기구 창설. 큰 반대 없음——위원회 만장일치 입장.  
+**리스크**: 위기 권한의 릭스방켄 집중은 책임성 문제를 제기(릭스방켄은 일반 채널로는 장관에게 책임지지 않음). 실제 스트레스 상황에서의 첫 테스트가 제도적 역량 격차를 드러낼 수 있음.  
+**선거 관점**: 안정 촉진 서사, 유권자 논란 없음; 재정·금융 신중성의 증거로 정부에 유용.
+
+#### P2 — HD01JuU39: 형사범죄로서의 심리적 폭력(L2+)
+**주제**: 새 범죄 "심리적 폭력"(psykiskt våld)이 브로츠발켄에 도입, 최대 4년 징역. 심각한 자해 위험을 일으키는 반복적인 굴욕, 위협, 강제, 감시를 포함.  
+**중요성**: 가정폭력법을 대폭 확대. 북유럽 트렌드와 일치(노르웨이 2005년, 덴마크 2012년). 4개 야당(S, V, C, MP)이 3개 분야에서 유보: 경제적 폭력, 전환 치료 시도, 교육 요건.  
+**리스크**: "반복 패턴 + 정신적 피해"의 입증 책임이 경찰·검찰에 부과됨——2~3년간의 집행 격차 가능성.  
+**선거 관점**: 프레이밍 경쟁: 정부는 여성 보호를 주장; 야당은 법이 너무 좁다(경제적 강요와 전환 치료 누락)고 주장.
+
+#### P3 — HD01JuU32: 공공 집회에서의 경찰 권한(L2+)
+**주제**: JuU는 시위에서의 경찰 권한에 관한 대부분의 야당 발의를 기각. 오르드닝스라겐과 폴리스라겐의 기존 규정 유지 또는 강화.  
+**중요성**: RF 제2장 §1(집회의 자유)과의 헌법적 긴장. 라그로데트가 모든 변경을 공식 심사하지 않음——모니터링이 필요한 격차.  
+**리스크**: EU/ECHR(ECHR 제11조——평화적 집회의 자유)에 대한 도전 위험(선거 연도에 권한이 불균형하게 적용된 경우).  
+**선거 관점**: 높은 현저성: SD와 KD가 경찰 권한 강화 요구; S와 MP가 집회의 자유 옹호. 캠페인 활용이 예상됨.
+
+---
+
+### 요약 매트릭스
+
+| 문서 | 주제 | 발효일 | 야당 | 선거 비중 |
+|------|------|--------|------|----------|
+| FiU37 | 금융부문 위기관리 | 2026-07-01 | 없음 | 낮음(기술적) |
+| JuU39 | 심리적 폭력(범죄화) | 2026-07-01 | S,V,C,MP(4유보) | 높음 |
+| JuU32 | 시위에서의 경찰 | 2026-07-01 | 발의 기반(5유보) | 높음 |
+| FiU31 | 국유재산 관리 | (릭스레비시오넨) | V, MP | 중간 |
+| JuU34 | 북유럽 형사 집행 | 미정 | 없음 | 낮음 |
+| FiU38 | OTC 파생상품 청산 | EU 일정 | 없음 | 낮음 |
+| FiU43 | 지자체 복지 사기 방지 | 미정 | 없음 | 낮음 |
+| CU35 | MTF 플랫폼 주식 | 미정 | 없음 | 낮음 |
+
+---
+
+### 권고 조치(T+72시간)
+
+1. **토론 모니터링** JuU39와 JuU32의 본회의 표결(베탄칸데 공표 후 1~2주 내 예정).
+2. **라그로데트 추적** JuU32의 헌법 규정에 관한 소급적 의견 요청 여부.
+3. **FiU37 표결 확인** 만장일치 승인 예상이지만 SD의 절차적 수정 발의 모니터링.
+4. **야당 플래그** JuU39 유보(전환 치료 시도)의 활용을 초기 캠페인 신호로 표시.
+
+---
+
+### 패스 2 추가 — 구체적 증거
+
+#### FiU37 제도적 세부 사항
+릭스방켄 산하 새 위기관리 기능은 특히 스웨덴의 2015~2020년 경험(스웨드방크 자금세탁 방지 실패 + 발트 국가 은행 익스포저)과 COVID-19 기간에 스웨덴 결제 인프라의 운영 회복력 격차가 명백해진 것을 동기로 한다. 릭스방켄의 RIX 결제 시스템은 2020년 2분기에 거의 사고가 발생할 뻔했다. FiU37은 릭스방켄이 조율자로 행동하기 위한 법적 근거를 창설한다——이전에는 이 권한이 없었다.
+
+#### JuU39 유보 맵 — 구체적 세부 사항
+- **유보 1 (S+MP)**: 경제적 폭력이 명시적 하위 범주임을 요구. 이는 노르웨이의 §282를 반영하며 "심각한 경제적 박탈"을 명시적으로 포함. 영국 중대범죄법 s.76은 재정적 통제를 암묵적으로 포함. 스웨덴의 JuU39는 더 좁음.
+- **유보 2 (S+V+C+MP)**: 4개 정당, 모든 중도좌파 정당이 전환 치료 금지에 동의함을 보여줌. 이는 KD/SD 일부의 사회적 보수 입장에 직접 반하므로 정치적으로 가장 폭발력 있는 유보다.
+- **유보 3+4 (S, MP 별도)**: 둘 다 Brå 조사 위탁을 요구. 법정 Brå 심사에 실행을 구속하는 것에 대한 정부의 거부는 주목할 만함——선거 후 책임 메커니즘을 만드는 것에 대한 자신감 또는 정치적 거부감을 시사.
+
+#### JuU32 헌법적 메커니즘
+RF 제2장 §20은 집회의 자유 제한을 법률(lag)로만 허용하고 §21은 제한이 "민주사회에서 필요"함을 요구. §21의 비례성 테스트는 스웨덴의 ECHR 제11조 §2 언어의 국내화다. 사전 선별과 위험 기반 모니터링에 관한 JuU32의 특정 조항은 이 2단계 테스트를 통과해야 한다. 우려는 제한이 불가능하다는 것이 아님——라그로데트의 비례성 분석 없이 초안 품질이 불확실하다는 것이다.
+
+---
+
+### 재실행 업데이트 — 2026-05-08(신규 문서: HD01UbU28)
+
+#### P4 — HD01UbU28: 10년제 초등학교 교사 자격 인증(L2)
+**주제**: UbU(교육위원회)가 2028/29년 티오아리그 그룬드스콜란 도입 전 교사 자격 인증의 행정 조율을 만장일치로 승인.  
+**중요성**: 티되 정부의 핵심 교육 개혁의 마지막 법적 격차를 닫음. 만장일치의 초당파 채택(S, V, C, MP로부터 유보 없음)은 정책 수립 단계에서 정치적 반대가 있었더라도 운영상 합의를 보여줌.  
+**선거 관점**: 중간. 정부는 완전한 입법 패키지로서 "10년제 학교 개혁 완성"을 주장할 수 있음. 만장일치 채택으로 야당이 이 요소를 공격하기 어려움.  
+**발효일**: 2028/29학년도——선거 후이지만 입법 완료는 선거 전.
+
+#### 업데이트된 요약 매트릭스
+
+| 문서 | 주제 | 발효일 | 야당 | 선거 비중 |
+|------|------|--------|------|----------|
+| FiU37 | 금융부문 위기관리 | 2026-07-01 | 없음 | 낮음(기술적) |
+| JuU39 | 심리적 폭력(범죄화) | 2026-07-01 | S,V,C,MP(4유보) | 높음 |
+| JuU32 | 시위에서의 경찰 | 2026-07-01 | 발의 기반(5유보) | 높음 |
+| FiU31 | 국유재산 관리 | (릭스레비시오넨) | V, MP | 중간 |
+| JuU34 | 북유럽 형사 집행 | 미정 | 없음 | 낮음 |
+| FiU38 | OTC 파생상품 청산 | EU 일정 | 없음 | 낮음 |
+| FiU43 | 지자체 복지 사기 방지 | 미정 | 없음 | 낮음 |
+| CU35 | MTF 플랫폼 주식 | 미정 | 없음 | 낮음 |
+| **HD01UbU28** | **교사 자격 인증 / 10년제 학교** | **2028/29** | **없음(만장일치)** | **중간** |
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_nl.md -->
+
+**Classificatie**: 🟢 OPENBAAR  
+**Opgesteld**: 2026-05-08  
+**Horizon**: T+72u tot T+90d  
+**DIW-vermenigvuldiger**: 1,5× (verkiezing ≤6 maanden: 2026-09-13)
+
+---
+
+### BLUF (Conclusie voorop)
+
+De Financiën (FiU) en Justitie (JuU) commissies van de Riksdag hebben deze week acht wetgevingspunten vooruit geholpen. **Drie verdienen onmiddellijke aandacht**: (1) een nieuwe crisisbeheerfunctie in de financiële sector onder leiding van Riksbanken die de systemische risicoarchitectuur van Zweden hervormt, (2) een baanbrekende strafwet over psychisch geweld die een nieuw categorie A-strafbaar feit creëert, en (3) strikter politiebevoegdheden bij publieke demonstraties met constitutionele implicaties die de Lagrådet formeel zou moeten onderzoeken.
+
+Alle drie treden in werking op **1 juli 2026** — zes weken voordat de Zweedse verkiezingscampagne haar eindspurt ingaat. De afstemming van de wetgevingskalender met de verkiezingscyclus is waarschijnlijk niet toevallig.
+
+---
+
+### Prioritaire inlichtingenpunten
+
+#### P1 — HD01FiU37: Crisisbeheer in de financiële sector (L3)
+**Onderwerp**: Riksbanken neemt de coördinatieleiding voor operationeel crisisbeheer in de Zweedse financiële sector. Finansinspektionen (FI) en Riksgäldskontoret nemen deel.  
+**Belang**: Zweden operationaliseert het EU-DORA-veerkrachtskader op systeemniveau. Creëert een nieuw permanent interinstitutioneel orgaan met Riksbanken als primus motor. Geen noemenswaardige oppositie — unaniem commissiestandpunt.  
+**Risico**: Concentratie van crisisautoriteit bij Riksbanken roept vragen op over verantwoording (Riksbanken verantwoordt zich niet aan de minister via normale kanalen). De eerste test onder werkelijke stress zal institutionele capaciteitstekorten onthullen.  
+**Verkiezingshoek**: Pro-stabiliteitsverhaal, geen kiezerscontroversiell; nuttig voor de regering als bewijs van fiscale/financiële voorzichtigheid.
+
+#### P2 — HD01JuU39: Psychisch geweld als strafbaar feit (L2+)
+**Onderwerp**: Nieuw strafbaar feit "psychisch geweld" (psykiskt våld) ingevoerd in brottsbalken, max. 4 jaar gevangenisstraf. Omvat herhaaldelijke vernedering, bedreigingen, dwang, toezicht dat ernstig risico op zelfverwonding veroorzaakt.  
+**Belang**: Breidt de wet op huiselijk geweld aanzienlijk uit. Consistent met de Noordse trend (Noorwegen 2005, Denemarken 2012). Vier-partijen-oppositie (S, V, C, MP) voorbehouden over drie deelgebieden: economisch geweld, conversiepogingen, opleidingsvereisten.  
+**Risico**: Bewijslast op politie/openbaar ministerie om de drempel "herhaald patroon + psychische schade" te bewijzen — handhavingsgap waarschijnlijk gedurende 2–3 jaar.  
+**Verkiezingshoek**: Frameconflict: de regering beweert vrouwen te beschermen; de oppositie beweert dat de wet te smal is (geen economische dwang en conversietherapie).
+
+#### P3 — HD01JuU32: Politiebevoegdheden bij openbare vergaderingen (L2+)
+**Onderwerp**: JuU verwerpt de meeste oppositiemoties over politiebevoegdheden bij demonstraties. Bestaande bepalingen in ordningslagen en polislagen worden gehandhaafd of aangescherpt.  
+**Belang**: Constitutionele spanning met RF hoofdstuk 2 §1 (vergadervrijheid). De Lagrådet heeft niet alle wijzigingen formeel beoordeeld — een te bewaken lacune.  
+**Risico**: Risico op EU/EVRM-aanvechting (Art. 11 EVRM — vrijheid van vreedzame vergadering) als bevoegdheden in het verkiezingsjaar disproportioneel worden toegepast.  
+**Verkiezingshoek**: Hoge saliëntie: SD en KD eisen sterkere politiebevoegdheden; S en MP verdedigen vergadervrijheid. Campagnegebruik verwacht.
+
+---
+
+### Overzichtsmatrix
+
+| Doc | Onderwerp | Inwerkingtreding | Oppositie | Verkiezingsgewicht |
+|-----|-----------|-----------------|-----------|-------------------|
+| FiU37 | Crisisbeheer financiële sector | 2026-07-01 | Geen | Laag (technisch) |
+| JuU39 | Psychisch geweld als strafbaar feit | 2026-07-01 | S,V,C,MP (4 voorbehouden) | HOOG |
+| JuU32 | Politie bij demonstraties | 2026-07-01 | Motiegebaseerd (5 voorbehouden) | HOOG |
+| FiU31 | Staatsvastgoedbeheer | (Riksrevisionens) | V, MP | Gemiddeld |
+| JuU34 | Noordse strafrechtelijke handhaving | TBD | Geen | Laag |
+| FiU38 | OTC-derivatenverrekening | EU-tijdgebonden | Geen | Laag |
+| FiU43 | Gemeentelijke preventie welzijnsfraude | TBD | Geen | Laag |
+| CU35 | MTF-platformaandelen | TBD | Geen | Laag |
+
+---
+
+### Aanbevolen acties (T+72u)
+
+1. **Debat bewaken** over JuU39 en JuU32 bij kamerstemmingen (verwacht binnen 1–2 weken na publicatie betänkande).
+2. **Lagrådet volgen** op mogelijke retroactieve adviesverzoeken over JuU32's constitutionele bepalingen.
+3. **FiU37-parlementsstemming noteren** — unaniem goedkeuring waarschijnlijk, maar SD-procedurele amendementen monitoren.
+4. **Oppossitiepartijen-gebruik** van JuU39-voorbehouden (conversiepogingen) als vroeg campagnesignaal markeren.
+
+---
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_no.md -->
+
+**Klassifisering**: 🟢 OFFENTLIG  
+**Utarbeidet**: 2026-05-08  
+**Horisont**: T+72h til T+90d  
+**DIW-multiplikator**: 1,5× (valg ≤6 måneder: 2026-09-13)
+
+---
+
+### BLUF (Bunnlinjen frem)
+
+Riksdagens finans- (FiU) og justisutvalg (JuU) har fremmet åtte lovgivningssaker denne uken. **Tre fortjener umiddelbar oppmerksomhet**: (1) en ny funksjon for krisehåndtering i finanssektoren under Riksbankens ledelse som omformer Sveriges systemiske risikoarkitektur, (2) en banebrytende straffelov om psykisk vold som skaper en ny kategori A-kriminell lovbrudd, og (3) skjerpede politibeføyelser ved offentlige demonstrasjoner med konstitusjonelle implikasjoner som Lagrådet bør gjennomgå formelt.
+
+Alle tre trer i kraft **1. juli 2026** — seks uker før Sveriges valgkampanje går inn i sin avsluttende spurt. At lovgivningskalenderen er i tråd med valgsyklusen er sannsynligvis ikke tilfeldig.
+
+---
+
+### Prioriterte etterretningspunkter
+
+#### P1 — HD01FiU37: Krisehåndtering i finanssektoren (L3)
+**Emne**: Riksbanken overtar koordineringsledelsen for operasjonell krisehåndtering i den svenske finanssektoren. Finansinspektionen (FI) og Riksgäldskontoret deltar.  
+**Betydning**: Sverige operasjonaliserer EUs DORA-rammeverk for motstandsdyktighet på systemnivå. Skaper et nytt permanent tverretatlig organ med Riksbanken som primus motor. Ingen vesentlig motstand — enstemmig utvalgsposisjon.  
+**Risiko**: Konsentrasjon av kriseautoritet i Riksbanken reiser spørsmål om ansvarlighet (Riksbanken er ikke ansvarlig overfor minister i normale kanaler). Den første testen under faktisk stress vil avsløre institusjonelle kapasitetsgap.  
+**Valgvinkel**: Pro-stabilitetsnarrativ, ingen velgerkontrovers; nyttig for regjeringen som bevis på finanspolitisk forsiktighet.
+
+#### P2 — HD01JuU39: Psykisk vold som kriminelt forhold (L2+)
+**Emne**: Ny forbrytelse "psykisk vold" (psykiskt våld) innføres i brottsbalken, maks 4 års fengsel. Dekker gjentatt ydmykelse, trusler, tvang, overvåking som forårsaker alvorlig risiko for selvskade.  
+**Betydning**: Utvider loven om vold i nære relasjoner vesentlig. I samsvar med nordisk tendens (Norge 2005, Danmark 2012). Firepartiets opposisjon (S, V, C, MP) forbehold om tre delområder: økonomisk vold, konverteringsforsøk, opplæringskrav.  
+**Risiko**: Implementeringsbyrde på politi/påtalemyndigheten for å bevise "gjentatt mønster + psykisk skade"-terskel — implementeringsgap sannsynlig i 2–3 år.  
+**Valgvinkel**: Innrammingskonflikt: regjeringen hevder beskyttelse av kvinner; opposisjonen hevder loven er for snever (mangler økonomisk tvang og konverteringsterapi).
+
+#### P3 — HD01JuU32: Politibeføyelser ved offentlige forsamlinger (L2+)
+**Emne**: JuU avviser de fleste opposisjonsforslag om politibeføyelser ved demonstrasjoner. Eksisterende bestemmelser i ordningslagen og polislagen opprettholdes eller skjerpes.  
+**Betydning**: Konstitusjonell spenning med RF kapittel 2 §1 (forsamlingsfrihet). Lagrådet gjennomgikk ikke formelt alle endringer — et gap å overvåke.  
+**Risiko**: Risiko for EU/ECHR-utfordring (Art. 11 ECHR — fredelig forsamlingsfrihet) hvis beføyelsene brukes uforholdsmessig i valgåret.  
+**Valgvinkel**: Høy saliency: SD og KD krever sterkere politibeføyelser; S og MP forsvarer forsamlingsfrihet. Forventet kampanjebruk.
+
+---
+
+### Sammendragsmatrise
+
+| Dok | Emne | Ikrafttreden | Opposisjon | Valvekt |
+|-----|------|-------------|-----------|--------|
+| FiU37 | Krisehåndtering finanssektor | 2026-07-01 | Ingen | Lav (teknisk) |
+| JuU39 | Psykisk vold som lovbrudd | 2026-07-01 | S,V,C,MP (4 forbehold) | HØY |
+| JuU32 | Politi ved demonstrasjoner | 2026-07-01 | Forslagsbasert (5 forbehold) | HØY |
+| FiU31 | Statlig eiendomsforvaltning | (Riksrevisionens) | V, MP | Middels |
+| JuU34 | Nordisk strafferettshåndhevelse | TBD | Ingen | Lav |
+| FiU38 | OTC-derivatclearing | EU-tidsbestemt | Ingen | Lav |
+| FiU43 | Kommunal forebygging av velferdssvindel | TBD | Ingen | Lav |
+| CU35 | MTF-plattformaksjer | TBD | Ingen | Lav |
+
+---
+
+### Anbefalte handlinger (T+72h)
+
+1. **Overvåk debatt** om JuU39 og JuU32 ved kammeravstemninger (forventet innen 1–2 uker etter betänkandets publisering).
+2. **Følg** Lagrådet for eventuell retroaktiv uttalelsesanmodning om JuU32s konstitusjonelle bestemmelser.
+3. **Notér** FiU37s parlamentsavstemning — enstemmig godkjenning sannsynlig, men overvåk eventuelle SD-prosedyremessige endringsforslag.
+4. **Flagg** opposisjonspartienes bruk av JuU39-forbehold (konverteringsforsøk) som tidlig kampanjesignal.
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_sv.md -->
+
+**Klassificering**: 🟢 OFFENTLIG  
+**Upprättad**: 2026-05-08  
+**Horisont**: T+72h till T+90d  
+**DIW-multiplikator**: 1,5× (val ≤6 månader: 2026-09-13)
+
+---
+
+### BLUF (Slutsats i korthet)
+
+Riksdagens finans- (FiU) och justitieutskott (JuU) har befordrat åtta lagstiftningsärenden denna vecka. **Tre förtjänar omedelbar uppmärksamhet**: (1) en ny funktion för krishantering inom finanssektorn under Riksbankens ledning som omformar Sveriges systemriskarkitektur, (2) en banbrytande strafflag om psykiskt våld som skapar ett nytt kriminellt brott av kategori A, och (3) skärpta polisbefogenheter vid offentliga demonstrationer med konstitutionella implikationer som Lagrådet bör granska formellt.
+
+Samtliga tre träder i kraft **1 juli 2026** — sex veckor innan Sveriges riksdagsvalkampanj går in i sin slutspurt. Att lagstiftningskalendern sammanfaller med valcykeln är sannolikt inte en tillfällighet.
+
+---
+
+### Prioriterade underrättelsepunkter
+
+#### P1 — HD01FiU37: Krishantering inom finanssektorn (L3)
+**Ämne**: Riksbanken tar över samordningsansvaret för operativ krishantering i den svenska finanssektorn. Finansinspektionen (FI) och Riksgäldskontoret deltar.  
+**Betydelse**: Sverige genomför EU:s DORA-ramverk för motståndskraft på systemnivå. Skapar ett nytt permanent myndighetsgemensamt organ med Riksbanken som primus motor. Inget väsentligt motstånd — enigt utskottsläge.  
+**Risk**: Koncentration av krishanteringsauktoritet till Riksbanken väcker frågor om ansvarsskyldighet (Riksbanken svarar inte inför minister i normala kanaler). Det första testet under verklig stress avslöjar institutionella kapacitetsluckor.  
+**Valvinkel**: Stabiliserande narrativ, ingen väljarkontroversi; användbart för regeringen som bevis på finansiell/fiskal försiktighet.
+
+#### P2 — HD01JuU39: Psykiskt våld som brott (L2+)
+**Ämne**: Nytt brott "psykiskt våld" (psykiskt våld) införs i brottsbalken, max 4 års fängelse. Täcker upprepade kränkningar, hot, tvång, övervakning som orsakar allvarlig risk för självskada.  
+**Betydelse**: Utvidgar lagen om våld i nära relationer väsentligt. Förenligt med nordisk trend (Norge 2005, Danmark 2012). Fyrapartiets opposition (S, V, C, MP) reservationer om tre delområden: ekonomiskt våld, konverteringsförsök, utbildningskrav.  
+**Risk**: Genomförandebörda på polis/åklagare att bevisa "upprepat mönster + psykisk skada"-tröskeln — genomförandegap sannolikt under 2–3 år.  
+**Valvinkel**: Inramningskonflikt: regeringen hävdar skydd för kvinnor; oppositionen hävdar att lagen är för smal (saknar ekonomiskt tvång och konverteringsterapi).
+
+#### P3 — HD01JuU32: Polisbefogenheter vid allmänna sammankomster (L2+)
+**Ämne**: JuU avslår de flesta oppositionsmotioner om polisbefogenheter vid demonstrationer. Befintliga bestämmelser i ordningslagen och polislagen bibehålls eller skärps.  
+**Betydelse**: Konstitutionell spänning med RF kapitel 2 §1 (mötesfrihet). Lagrådet granskade inte formellt alla ändringar — ett gap att bevaka.  
+**Risk**: Risk för EU/ECHR-utmaning (Art. 11 ECHR — fredlig församlingsfrihet) om befogenheterna tillämpas oproportionerligt under valåret.  
+**Valvinkel**: Hög saliens: SD och KD kräver starkare polisbefogenheter; S och MP försvarar mötesfrihet. Förväntas utnyttjas i valrörelsen.
+
+---
+
+### Sammanfattningsmatris
+
+| Dok | Ämne | Ikraftträdande | Opposition | Valvikt |
+|-----|------|---------------|-----------|--------|
+| FiU37 | Krishantering finanssektorn | 2026-07-01 | Ingen | Låg (teknisk) |
+| JuU39 | Psykiskt våld som brott | 2026-07-01 | S,V,C,MP (4 reservationer) | HÖG |
+| JuU32 | Polis vid demonstrationer | 2026-07-01 | Motionsbaserad (5 reservationer) | HÖG |
+| FiU31 | Statlig fastighetsförvaltning | (Riksrevisionens) | V, MP | Medium |
+| JuU34 | Nordiskt straffrättssamarbete | TBD | Ingen | Låg |
+| FiU38 | OTC-derivatclearing | EU-tidsbestämt | Ingen | Låg |
+| FiU43 | Förebyggande av välfärdsbrott i kommuner | TBD | Ingen | Låg |
+| CU35 | MTF-plattformsaktier | TBD | Ingen | Låg |
+
+---
+
+### Rekommenderade åtgärder (T+72h)
+
+1. **Bevaka debatten** om JuU39 och JuU32 vid kammarvoteringar (förväntas inom 1–2 veckor efter betänkandets publicering).
+2. **Följ** Lagrådet för eventuell retroaktiv begäran om yttrande om JuU32:s konstitutionella bestämmelser.
+3. **Notera** FiU37:s riksdagsomröstning — enhälligt godkännande sannolikt, men bevaka eventuella SD-procedurella ändringsförslag.
+4. **Flagga** oppositionspartiernas användning av JuU39-reservationer (konverteringsförsök) som tidigt kampanjsignal.
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_zh.md -->
+
+**分类**: 🟢 公开  
+**日期**: 2026-05-08  
+**时间跨度**: T+72小时~T+90天  
+**DIW倍增器**: 1.5×（距选举≤6个月：2026-09-13）
+
+---
+
+### BLUF（结论先行）
+
+瑞典议会（里克斯达格）财务（FiU）和司法（JuU）委员会本周推进了8项立法事项。**3项需要立即关注**：(1) 由里克斯班肯主导的瑞典金融部门运营危机管理新职能（重构系统风险架构），(2) 将心理暴力创设为新刑事罪行的里程碑刑事法（A类），(3) 具有宪法含义的公共集会警察权力强化（需要拉格罗德特正式审查）。
+
+三项均于**2026年7月1日**生效——距瑞典选举竞选进入最后冲刺还有6周。立法日历与选举周期的契合不太可能是巧合。
+
+---
+
+### 优先情报项目
+
+#### P1 — HD01FiU37：金融部门危机管理（L3）
+**主题**：里克斯班肯承担领导瑞典金融部门运营危机管理协调职责。金融监管局（FI）和里克斯格尔兹孔托雷特参与。  
+**重要性**：瑞典在系统层面落实EU DORA韧性框架。创建以里克斯班肯为首的新永久性跨部委机构。无重大反对意见——委员会一致立场。  
+**风险**：危机权力集中于里克斯班肯引发问责问题（里克斯班肯通常渠道不向部长负责）。实际压力下的首次测试可能暴露制度能力缺口。  
+**选举角度**：促稳定叙事，无选民争议；对政府有用，作为财政金融审慎性证据。
+
+#### P2 — HD01JuU39：心理暴力刑事罪行（L2+）
+**主题**：新罪行"心理暴力"（psykiskt våld）写入《刑法典》，最高4年有期徒刑。涵盖造成严重自伤风险的反复凌辱、威胁、强迫和监控。  
+**重要性**：大幅扩展家庭暴力法律。与北欧趋势一致（挪威2005年，丹麦2012年）。4个反对党（S、V、C、MP）在3个领域保留意见：经济暴力、性取向转化治疗尝试、培训要求。  
+**风险**："重复模式+精神损害"的举证责任落在警察和检察官身上——可能存在2~3年的执法差距。  
+**选举角度**：框架竞争：政府主张保护妇女；反对党称法律过窄（缺少经济强迫和转化治疗条款）。
+
+#### P3 — HD01JuU32：公共集会中的警察权力（L2+）
+**主题**：JuU否决了大多数关于示威警察权力的反对党提案。《秩序法》和《警察法》现有规定予以维持或强化。  
+**重要性**：与《政府基本法》第2章第1条（集会自由）的宪法紧张关系。拉格罗德特未正式审查所有变更——需要监测的缺口。  
+**风险**：EU/《欧洲人权公约》（第11条——和平集会自由）挑战风险（如选举年权力使用不成比例）。  
+**选举角度**：高显著性：SD和KD要求加强警察权力；S和MP捍卫集会自由。预计将用于竞选。
+
+---
+
+### 摘要矩阵
+
+| 文件 | 主题 | 生效日 | 反对 | 选举权重 |
+|------|------|--------|------|---------|
+| FiU37 | 金融部门危机管理 | 2026-07-01 | 无 | 低（技术性） |
+| JuU39 | 心理暴力（入罪） | 2026-07-01 | S,V,C,MP（4项保留） | 高 |
+| JuU32 | 示威中的警察 | 2026-07-01 | 提案型（5项保留） | 高 |
+| FiU31 | 国有资产管理 | （里克斯修订） | V, MP | 中 |
+| JuU34 | 北欧刑事执行 | 待定 | 无 | 低 |
+| FiU38 | 场外衍生品清算 | EU时间表 | 无 | 低 |
+| FiU43 | 市政福利欺诈防治 | 待定 | 无 | 低 |
+| CU35 | MTF平台股票 | 待定 | 无 | 低 |
+
+---
+
+### 建议行动（T+72小时）
+
+1. **辩论监测** JuU39和JuU32的全体会议投票（预计在贝坦肯德发布后1~2周内）。
+2. **拉格罗德特追踪** JuU32宪法条款是否有追溯性意见请求。
+3. **FiU37投票确认** 预计一致通过，但监测SD的程序修正提案。
+4. **反对党标记** 将JuU39保留意见（转化治疗尝试）的使用标记为早期竞选信号。
+
+---
+
+### 第二轮补充 — 具体证据
+
+#### FiU37 制度性细节
+里克斯班肯下设的新危机管理职能，其动因特别来自瑞典2015~2020年的经历（斯韦德方克反洗钱失败+波罗的海银行敞口）以及COVID-19期间瑞典支付基础设施运营韧性缺口的暴露。里克斯班肯的RIX支付系统在2020年第二季度险些发生事故。FiU37为里克斯班肯担任协调者创建了法律依据——此前它没有这一权限。
+
+#### JuU39保留意见图——具体细节
+- **保留1（S+MP）**：要求经济暴力作为明确的子类别。这反映了挪威§282，明确包含"严重经济剥夺"。英国《重大犯罪法》s.76隐含包括财务控制。瑞典JuU39更窄。
+- **保留2（S+V+C+MP）**：4个政党，所有中间偏左政党均同意禁止转化治疗。这直接与KD/SD部分人士的社会保守立场相悖——因此是政治上最具爆炸性的保留意见。
+- **保留3+4（S、MP分别）**：均要求委托Brå调查。政府拒绝将执行与法定Brå审查挂钩，值得关注——暗示对创建选举后问责机制的自信或政治不情愿。
+
+#### JuU32宪法机制
+《政府基本法》第2章第20条仅允许通过法律（lag）限制集会自由，第21条要求限制在"民主社会中必要"。第21条比例性检验是瑞典对《欧洲人权公约》第11条第2款语言的国内化。JuU32涉及预先筛查和基于风险监控的具体条款需通过这一两步检验。关切不在于限制不可能——而在于没有拉格罗德特比例性分析，起草质量不确定。
+
+---
+
+### 重新运行更新 — 2026-05-08（新文件：HD01UbU28）
+
+#### P4 — HD01UbU28：十年制小学教师资质认证（L2）
+**主题**：UbU（教育委员会）一致批准2028/29年提尤阿里格·格伦德斯科兰引入前的教师资质认证行政协调。  
+**重要性**：关闭了提德政府旗舰教育改革的最后一个法律缺口。全票超党派通过（S、V、C、MP无保留意见）表明，即使政策制定阶段存在政治反对，运营层面已达成共识。  
+**选举角度**：中等。政府可以将"十年制学校改革完成"作为完整立法包主张。全票通过使反对党难以攻击这一要素。  
+**生效日**：2028/29学年——选举后，但立法完成在选举前。
+
+#### 更新摘要矩阵
+
+| 文件 | 主题 | 生效日 | 反对 | 选举权重 |
+|------|------|--------|------|---------|
+| FiU37 | 金融部门危机管理 | 2026-07-01 | 无 | 低（技术性） |
+| JuU39 | 心理暴力（入罪） | 2026-07-01 | S,V,C,MP（4项保留） | 高 |
+| JuU32 | 示威中的警察 | 2026-07-01 | 提案型（5项保留） | 高 |
+| FiU31 | 国有资产管理 | （里克斯修订） | V, MP | 中 |
+| JuU34 | 北欧刑事执行 | 待定 | 无 | 低 |
+| FiU38 | 场外衍生品清算 | EU时间表 | 无 | 低 |
+| FiU43 | 市政福利欺诈防治 | 待定 | 无 | 低 |
+| CU35 | MTF平台股票 | 待定 | 无 | 低 |
+| **HD01UbU28** | **教师资质认证 / 十年制学校** | **2028/29** | **无（全票）** | **中** |
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 9 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 9 | Linked in Article Sources, not expanded inline |
 
@@ -2374,6 +3491,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

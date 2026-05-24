@@ -1,12 +1,12 @@
 ---
 title: "The Tidö government (M–SD–KD–L) submitted three interlocking"
 description: "On 7 May 2026, the Tidö government (M–SD–KD–L) submitted three interlocking propositions that collectively advance a state digital-security architecture with significant civil liberties implications."
-keywords: "Propositions, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Tidö government submitted three interlocking, Tidö, government, submitted, three, interlocking, 2026, that, collectively, advance, state, digital-security, architecture, with"
+keywords: "HD03267, HD03250, HD03261, Prop. 2025/26:267, Prop. 2025/26:250, Prop. 2025/26:261, KD, Probably True, Almost Certainly, Gunnar Strömmer, Civil Rights Defenders, Erik Slottner, Extends Skatteverket s, Niklas Wykman, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
 date: 2026-05-08
 subfolder: propositions
 slug: 2026-05-08-propositions
 source_folder: analysis/daily/2026-05-08/propositions
-generated_at: 2026-05-23T22:05:56.749Z
+generated_at: 2026-05-24T12:19:34.236Z
 language: en
 layout: article
 ---

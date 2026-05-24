@@ -1,12 +1,12 @@
 ---
 title: "Sweden's 30-day legislative window closes with the Kristersson"
-description: "Sweden's 30-day legislative window closes with the Kristersson government (M–SD–KD–L) completing its pre-election regulatory portfolio. The April 24 committee batch — HD01JuU10 (new firearms law),…"
-keywords: "Monthly Review, English, April 25, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden 30-day legislative window closes, Sweden, 30-day, legislative, window, closes, with, Kristersson, government, completing, pre-election, regulatory, portfolio, April"
+description: "Sweden's 30-day legislative window closes with the Kristersson government (M–SD–KD–L) completing its pre-election regulatory portfolio."
+keywords: "HD01JuU10, HD01JuU31, HD01SoU25, HD01CU24, HD01FiU48, HD10448, HD11747, HD11749, HD11748, HD03100, HD0399, HD03240, HD03238, HD03239, HD03214, HD03228, UFöU3, SfU18, SoU17, UFöU, SfU, SoU, MP, James Pether Sörling"
 date: 2026-04-25
 subfolder: monthly-review
 slug: 2026-04-25-monthly-review
 source_folder: analysis/daily/2026-04-25/monthly-review
-generated_at: 2026-05-23T22:05:55.809Z
+generated_at: 2026-05-24T12:19:33.528Z
 language: en
 layout: article
 ---

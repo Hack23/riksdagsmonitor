@@ -1,12 +1,12 @@
 ---
 title: "Post-2026 Coalition: Next Mandate 2026-2030 ( )"
 description: "The next Swedish government (forming September 2026) will inherit nine durable institutional anchors — including NATO, SIGINT reform, state e-ID, and security threat legislation — making significant…"
-keywords: "Next, election cycle next, English, May 9, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Post-2026 Coalition Next Mandate 2026-2030, Post-2026, Coalition, Mandate, 2026-2030, Swedish, government, forming, September, 2026, will, inherit, nine"
+keywords: "James Pether Sörling, WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Next, election cycle next, English"
 date: 2026-05-09
 subfolder: election-cycle/next
 slug: 2026-05-09-election-cycle/next
 source_folder: analysis/daily/2026-05-09/election-cycle/next
-generated_at: 2026-05-23T22:05:56.774Z
+generated_at: 2026-05-24T12:19:34.254Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Pre-Election Legislative Sprint: AI Surveillance, Migration Hardening, and Digital Identity Under Week-22 Scrutiny"
 description: "Week 22 (2026-05-22–29) marks Sweden's most consequential pre-summer legislative burst: the Justice Committee's JuU28 report on police AI facial recognition (HD01JuU28) reaches the chamber floor…"
-keywords: "Week Ahead, English, May 22, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Pre-Election Legislative Sprint Surveillance, Sweden, Pre-Election, Legislative, Sprint, Surveillance, Migration, Hardening, Digital, Identity, Under, Week-22, Scrutiny, Week"
+keywords: "HD01JuU28, HD03262, HD03264, HD03265, HD03267, HD03250, HD01UbU27, HD01UU11, HD01UU12, HD01FiU39, JuU28, FiU39, JuU, FiU, Justice Committee s, Russia s OSCE, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen"
 date: 2026-05-22
 subfolder: week-ahead
 slug: 2026-05-22-week-ahead
 source_folder: analysis/daily/2026-05-22/week-ahead
-generated_at: 2026-05-23T22:05:57.487Z
+generated_at: 2026-05-24T12:19:34.769Z
 language: en
 layout: article
 ---

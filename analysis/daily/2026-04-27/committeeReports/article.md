@@ -1,12 +1,12 @@
 ---
 title: "Swedish Parliamentary Committee Reports, 27 April 2026"
 description: "The Swedish Riksdag's committee reports dated 24 April 2026 present a triple legislative front of immediate fiscal, criminal-justice and social significance."
-keywords: "CommitteeReports, English, April 27, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Parliamentary Committee Reports April dated, Swedish, Parliamentary, Committee, Reports, April, 2026, dated, present, triple, legislative, front, immediate, fiscal"
+keywords: "HD01FiU48, HD01JuU10, HD01SoU25, HD01FiU23, FiU48, JuU10, SoU25, FiU23, FiU, JuU, SoU, SD, KD, James Pether Sörling, Centre Party, New Weapons Law, Implements EU Directive, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency"
 date: 2026-04-27
 subfolder: committeeReports
 slug: 2026-04-27-committeeReports
 source_folder: analysis/daily/2026-04-27/committeeReports
-generated_at: 2026-05-23T22:05:55.937Z
+generated_at: 2026-05-24T12:19:33.621Z
 language: en
 layout: article
 ---

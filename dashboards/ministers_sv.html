@@ -131,50 +131,121 @@
 }
 </script>
 </head>
-<body class="rm-dashboard-page rm-dashboard-ministers">
-<a href="#main-content" class="skip-to-content">Hoppa till huvudinnehåll</a>
-<nav aria-label="Breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item">
-<a href="../index_sv.html">Hem</a>
-</li>
-<li class="breadcrumb-item">
-<a href="../dashboard/index_sv.html">Paneler</a>
-</li>
-<li class="breadcrumb-item" aria-current="page">
-🎖️ Ministersrisk och inflytande
-</li>
-</ol>
-</nav>
-
-<header>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="Byt tema"
-        title="Byt tema"
-        data-label-dark="Byt till ljust tema"
-        data-label-light="Byt till mörkt tema"
-        data-rm-static-theme-toggle="true">
-  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
-  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
-  <span class="theme-toggle-label">Tema</span>
-</button>
-
-<!-- Hero Banner -->
-<div class="hero-banner">
-  <picture class="hero-banner-picture">
-        <source type="image/avif" srcset="images/riksdagsmonitor-banner-480w.avif 480w, images/riksdagsmonitor-banner-768w.avif 768w, images/riksdagsmonitor-banner-1024w.avif 1024w, images/riksdagsmonitor-banner-1536w.avif 1536w" sizes="100vw">
-        <source type="image/webp" srcset="images/riksdagsmonitor-banner-480w.webp 480w, images/riksdagsmonitor-banner-768w.webp 768w, images/riksdagsmonitor-banner-1024w.webp 1024w, images/riksdagsmonitor-banner-1536w.webp 1536w" sizes="100vw">
+<body class="rm-article-body rm-dashboard-page rm-dashboard-ministers">
+    <a class="skip-link" href="#main-content">Hoppa till huvudinnehåll</a>
+    <header class="rm-site-header" role="banner">
+      <div class="rm-site-header-inner">
+        <a class="rm-logo" href="../index_sv.html" aria-label="Riksdagsmonitor Hem">
+          <img class="rm-logo-img" data-rm-logo-img="true" src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-48w.webp 48w, ../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="48px" alt="" width="48" height="48" loading="eager" decoding="async">
+          <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
+          <span class="rm-logo-text">
+            <span class="rm-logo-brand">Riksdagsmonitor</span>
+            <span class="rm-logo-tagline">Svensk parlamentarisk underrättelse · Öppen källkod · Apache-2.0</span>
+          </span>
+        </a>
+        <nav class="rm-site-nav" aria-label="Huvudplattform">
+          <a href="../index_sv.html">Hem</a>
+          <a href="../news/index_sv.html">Nyheter</a>
+          <a href="../dashboard/index_sv.html">Instrumentpanel</a>
+          <a href="../politician-dashboard_sv.html">👤 Politiker</a>
+          <a href="../political-intelligence_sv.html">🧠 Politisk underrättelse</a>
+          <a href="../sitemap_sv.html">Webbplatskarta</a>
+          <a href="https://riksdagsmonitor.com/docs/api/index.html">API-dokumentation</a>
+        </nav>
+        <details class="rm-lang-switcher">
+          <summary aria-label="Byt språk">
+            <span aria-hidden="true">🇸🇪</span>
+            <span class="rm-lang-current-label">Svenska</span>
+            <span class="rm-lang-switcher-caret" aria-hidden="true">▾</span>
+          </summary>
+          <div class="rm-lang-switcher-dropdown" role="menu">
+          <a href="../dashboards/ministers.html" lang="en" title="English" role="menuitem"><span aria-hidden="true">🇬🇧</span> English</a>
+          <a href="../dashboards/ministers_da.html" lang="da" title="Dansk" role="menuitem"><span aria-hidden="true">🇩🇰</span> Dansk</a>
+          <a href="../dashboards/ministers_no.html" lang="nb" title="Norsk" role="menuitem"><span aria-hidden="true">🇳🇴</span> Norsk</a>
+          <a href="../dashboards/ministers_fi.html" lang="fi" title="Suomi" role="menuitem"><span aria-hidden="true">🇫🇮</span> Suomi</a>
+          <a href="../dashboards/ministers_de.html" lang="de" title="Deutsch" role="menuitem"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
+          <a href="../dashboards/ministers_fr.html" lang="fr" title="Français" role="menuitem"><span aria-hidden="true">🇫🇷</span> Français</a>
+          <a href="../dashboards/ministers_es.html" lang="es" title="Español" role="menuitem"><span aria-hidden="true">🇪🇸</span> Español</a>
+          <a href="../dashboards/ministers_nl.html" lang="nl" title="Nederlands" role="menuitem"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
+          <a href="../dashboards/ministers_ar.html" lang="ar" title="العربية" role="menuitem"><span aria-hidden="true">🇸🇦</span> العربية</a>
+          <a href="../dashboards/ministers_he.html" lang="he" title="עברית" role="menuitem"><span aria-hidden="true">🇮🇱</span> עברית</a>
+          <a href="../dashboards/ministers_ja.html" lang="ja" title="日本語" role="menuitem"><span aria-hidden="true">🇯🇵</span> 日本語</a>
+          <a href="../dashboards/ministers_ko.html" lang="ko" title="한국어" role="menuitem"><span aria-hidden="true">🇰🇷</span> 한국어</a>
+          <a href="../dashboards/ministers_zh.html" lang="zh" title="中文" role="menuitem"><span aria-hidden="true">🇨🇳</span> 中文</a>
+          </div>
+        </details>
+        <a class="rm-header-cta rm-header-cta-pi"
+           href="../political-intelligence_sv.html"
+           title="Djupgående politisk analys och underrättelserapporter"
+           aria-label="Djupgående politisk analys och underrättelserapporter">
+          <span class="rm-header-cta-icon" aria-hidden="true">🧠</span>
+          <span class="rm-header-cta-label">Politisk underrättelse</span>
+        </a>
+        <a class="rm-header-cta rm-header-cta-transparency"
+           href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md"
+           target="_blank" rel="noopener noreferrer"
+           title="Hack23:s åtagande för transparens och säkerhet"
+           aria-label="Hack23:s åtagande för transparens och säkerhet">
+          <span class="rm-header-cta-icon" aria-hidden="true">🔐</span>
+          <span class="rm-header-cta-label">Transparens &amp; Säkerhet</span>
+        </a>
+        <a class="rm-header-cta rm-header-cta-sponsor"
+           href="https://github.com/sponsors/Hack23"
+           target="_blank" rel="noopener noreferrer"
+           title="Bli sponsor för Hack23 på GitHub"
+           aria-label="Bli sponsor för Hack23 på GitHub">
+          <span class="rm-header-cta-icon" aria-hidden="true">💖</span>
+          <span class="rm-header-cta-label">Sponsra Hack23</span>
+        </a>
+        <button id="theme-toggle" class="rm-theme-toggle" type="button"
+                aria-pressed="false"
+                aria-label="Byt tema"
+                title="Byt tema"
+                data-label-dark="Byt till ljust tema"
+                data-label-light="Byt till mörkt tema">
+          <span class="rm-theme-toggle-icon" aria-hidden="true">🌓</span>
+          <span class="rm-theme-toggle-label">Tema</span>
+        </button>
+      </div>
+      <div class="rm-site-subnav" aria-label="Sidkontext">
+        <nav class="rm-breadcrumb" aria-label="Brödsmulor">
+          <ol>
+            <li><a href="../index_sv.html">Hem</a></li>
+            <li><a href="../dashboard/index_sv.html">Instrumentpanel</a></li>
+            <li aria-current="page">🎖️ Ministersrisk och inflytande | Riksdagsmonitor</li>
+          </ol>
+        </nav>
+        
+      </div>
+    </header>
+    <div class="hero-banner" aria-hidden="true">
+      <picture class="hero-banner-picture">
+        <source type="image/avif" srcset="../images/riksdagsmonitor-banner-480w.avif 480w, ../images/riksdagsmonitor-banner-768w.avif 768w, ../images/riksdagsmonitor-banner-1024w.avif 1024w, ../images/riksdagsmonitor-banner-1536w.avif 1536w" sizes="100vw">
+        <source type="image/webp" srcset="../images/riksdagsmonitor-banner-480w.webp 480w, ../images/riksdagsmonitor-banner-768w.webp 768w, ../images/riksdagsmonitor-banner-1024w.webp 1024w, ../images/riksdagsmonitor-banner-1536w.webp 1536w" sizes="100vw">
         <img src="../images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high">
       </picture>
-</div>
+    </div>
+    <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="Denna sida på andra språk">
+      <a href="../dashboards/ministers.html" class="lang-link" hreflang="en" lang="en" title="English"><span aria-hidden="true">🇬🇧</span> English</a>
+      <span class="lang-link active" lang="sv" title="Svenska" aria-current="page"><span aria-hidden="true">🇸🇪</span> Svenska</span>
+      <a href="../dashboards/ministers_da.html" class="lang-link" hreflang="da" lang="da" title="Dansk"><span aria-hidden="true">🇩🇰</span> Dansk</a>
+      <a href="../dashboards/ministers_no.html" class="lang-link" hreflang="nb" lang="nb" title="Norsk"><span aria-hidden="true">🇳🇴</span> Norsk</a>
+      <a href="../dashboards/ministers_fi.html" class="lang-link" hreflang="fi" lang="fi" title="Suomi"><span aria-hidden="true">🇫🇮</span> Suomi</a>
+      <a href="../dashboards/ministers_de.html" class="lang-link" hreflang="de" lang="de" title="Deutsch"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
+      <a href="../dashboards/ministers_fr.html" class="lang-link" hreflang="fr" lang="fr" title="Français"><span aria-hidden="true">🇫🇷</span> Français</a>
+      <a href="../dashboards/ministers_es.html" class="lang-link" hreflang="es" lang="es" title="Español"><span aria-hidden="true">🇪🇸</span> Español</a>
+      <a href="../dashboards/ministers_nl.html" class="lang-link" hreflang="nl" lang="nl" title="Nederlands"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
+      <a href="../dashboards/ministers_ar.html" class="lang-link" hreflang="ar" lang="ar" title="العربية"><span aria-hidden="true">🇸🇦</span> العربية</a>
+      <a href="../dashboards/ministers_he.html" class="lang-link" hreflang="he" lang="he" title="עברית"><span aria-hidden="true">🇮🇱</span> עברית</a>
+      <a href="../dashboards/ministers_ja.html" class="lang-link" hreflang="ja" lang="ja" title="日本語"><span aria-hidden="true">🇯🇵</span> 日本語</a>
+      <a href="../dashboards/ministers_ko.html" class="lang-link" hreflang="ko" lang="ko" title="한국어"><span aria-hidden="true">🇰🇷</span> 한국어</a>
+      <a href="../dashboards/ministers_zh.html" class="lang-link" hreflang="zh" lang="zh" title="中文"><span aria-hidden="true">🇨🇳</span> 中文</a>
+    </nav>
 
-<!-- Hero Title -->
 <div class="hero-header-text">
   <h1> Riksdagsmonitor<br><span class="h1-subtitle">Svensk valunderrättelseplattform 2026</span></h1>
   <p class="tagline">Riksdagsövervakning i realtid · Koalitionsförutsägelser · 45 riskregler · 50+ års data</p>
 </div>
-
 
 <div class="election-countdown">
 <h2>Val om: <span id="countdown">13 september 2026 (Andra söndagen i september)</span></h2>
@@ -203,34 +274,7 @@
 <span class="label"><span aria-hidden="true">🏛️</span> Utskottsbeslut</span>
 </div>
 </div>
-<nav class="site-header-nav" aria-label="Huvudplattform" data-rm-static-primary-nav="true">
-  <a href="../index_sv.html">Hem</a>
-  <a href="news/index_sv.html">Nyheter</a>
-  <a href="dashboard/index_sv.html">Instrumentpanel</a>
-  <a href="politician-dashboard_sv.html"><span aria-hidden="true">👤</span> Politiker</a>
-  <a href="political-intelligence_sv.html"><span aria-hidden="true">🧠</span> Politisk underrättelse</a>
-  <a href="sitemap_sv.html"><span aria-hidden="true">🗺️</span> Webbplatskarta</a>
-  <a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> API-dokumentation</a>
-  <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="Hack23:s åtagande för transparens och säkerhet" aria-label="Hack23:s åtagande för transparens och säkerhet"><span aria-hidden="true">🔐</span> Transparens &amp; Säkerhet</a>
-  <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="Bli sponsor för Hack23 på GitHub" aria-label="Bli sponsor för Hack23 på GitHub"><span aria-hidden="true">💖</span> Sponsra Hack23</a>
-</nav>
-<nav class="language-switcher site-language-switcher" aria-label="Denna sida på andra språk" data-rm-static-language-switcher="true">
-        <a href="../dashboards/ministers.html" lang="en" hreflang="en" title="English" aria-label="Byt språk: English"><span aria-hidden="true">🇬🇧</span> EN</a>
-        <a href="../dashboards/ministers_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Byt språk: Swedish" aria-current="page" class="active"><span aria-hidden="true">🇸🇪</span> SV</a>
-        <a href="../dashboards/ministers_da.html" lang="da" hreflang="da" title="Dansk" aria-label="Byt språk: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
-        <a href="../dashboards/ministers_no.html" lang="no" hreflang="nb" title="Norsk" aria-label="Byt språk: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
-        <a href="../dashboards/ministers_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="Byt språk: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
-        <a href="../dashboards/ministers_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="Byt språk: German"><span aria-hidden="true">🇩🇪</span> DE</a>
-        <a href="../dashboards/ministers_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="Byt språk: French"><span aria-hidden="true">🇫🇷</span> FR</a>
-        <a href="../dashboards/ministers_es.html" lang="es" hreflang="es" title="Español" aria-label="Byt språk: Spanish"><span aria-hidden="true">🇪🇸</span> ES</a>
-        <a href="../dashboards/ministers_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="Byt språk: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
-        <a href="../dashboards/ministers_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="Byt språk: Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
-        <a href="../dashboards/ministers_he.html" lang="he" hreflang="he" title="עברית" aria-label="Byt språk: Hebrew"><span aria-hidden="true">🇮🇱</span> HE</a>
-        <a href="../dashboards/ministers_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="Byt språk: Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
-        <a href="../dashboards/ministers_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="Byt språk: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
-        <a href="../dashboards/ministers_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="Byt språk: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
-</nav>
-</header>
+
 
 <main id="main-content" role="main">
 <nav class="dashboard-page-back" aria-label="← Tillbaka till startsidan">

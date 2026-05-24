@@ -1,12 +1,12 @@
 ---
 title: "Three simultaneous pressure points are converging on the Tidö"
 description: "Three simultaneous pressure points are converging on the Tidö coalition in the final parliamentary sprint before the summer recess. The week of 2026-05-16 closes with constitutional reform in its…"
-keywords: "Weekly Review, English, May 16, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Three simultaneous pressure points converging, Three, simultaneous, pressure, points, converging, Tidö, coalition, final, parliamentary, sprint, before, summer, recess"
+keywords: "HD024184, HD11813, HD10494, HD11812, HD10492, prop. 2025/26:258, KU34, KU, SD, With KU, Russian State Duma, Foreign Minister Malmer Stenergard, Sweden s NATO-era, Defence Minister Pål Jonson, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Weekly Review, English"
 date: 2026-05-16
 subfolder: weekly-review
 slug: 2026-05-16-weekly-review
 source_folder: analysis/daily/2026-05-16/weekly-review
-generated_at: 2026-05-23T22:05:57.204Z
+generated_at: 2026-05-24T12:19:34.565Z
 language: en
 layout: article
 ---

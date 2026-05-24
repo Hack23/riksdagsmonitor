@@ -1,12 +1,12 @@
 ---
 title: "May 20, 2026 delivered Sweden's most constitutionally significant"
 description: "May 20, 2026 delivered Sweden's most constitutionally significant parliamentary session of the 2025/26 term. Three landmark votes at 16:00 reshaped the Riksdag's legislative record:"
-keywords: "Evening Analysis, English, May 20, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, delivered Sweden most constitutionally significant, 2026, delivered, Sweden, most, constitutionally, significant, parliamentary, session, 2025, term, Three, landmark, votes"
+keywords: "KU34, SoU29, JuU43, SoU30, UbU30, UU3, KU, SoU, JuU, UbU, UU, SD, KD, CONSTITUTIONAL ABORTION RIGHT, FIRST VILANDE ADOPTION, Jimmie Åkesson s, WELFARE REFORM, CONTESTED ADOPTION, HONOUR-BASED VIOLENCE, STRENGTHENED LAW, WEO Apr-, SVT Agenda, Riksdagsmonitor, Swedish Parliament"
 date: 2026-05-20
 subfolder: evening-analysis
 slug: 2026-05-20-evening-analysis
 source_folder: analysis/daily/2026-05-20/evening-analysis
-generated_at: 2026-05-23T22:05:57.302Z
+generated_at: 2026-05-24T12:19:34.636Z
 language: en
 layout: article
 ---

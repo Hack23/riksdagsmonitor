@@ -1,12 +1,12 @@
 ---
 title: "Produced a cluster of domestic legislation in housing, education"
 description: "The week of 2–9 May 2026 produced a cluster of domestic legislation in housing, education, social welfare and the rule of law, while foreign-policy questions exposed a sharp cross-party fissure over…"
-keywords: "Weekly Review, English, May 9, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Produced cluster domestic legislation housing, Produced, cluster, domestic, legislation, housing, education, week, 2026, social, welfare, rule, while, foreign-policy"
+keywords: "HD01CU31, HD01UbU28, HD01SoU36, HD11803, HD11801, HD11802, CU31, CU, SD, KD, MP, Lead Judgment, Foreign Minister, IMF WEO Apr-, FM Datamapper, IMF WEO-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen"
 date: 2026-05-09
 subfolder: weekly-review
 slug: 2026-05-09-weekly-review
 source_folder: analysis/daily/2026-05-09/weekly-review
-generated_at: 2026-05-23T22:05:56.799Z
+generated_at: 2026-05-24T12:19:34.271Z
 language: en
 layout: article
 ---

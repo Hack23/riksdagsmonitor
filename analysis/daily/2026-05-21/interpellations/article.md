@@ -1,12 +1,12 @@
 ---
 title: "Swedish Riksdag Interpellations"
 description: "Twenty interpellations filed in the 2025/26 riksmöte crystallise the opposition's pre-election accountability offensive. The highest-priority signals are: (1) an escalating parliamentary demand for…"
-keywords: "Interpellations, English, May 21, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Interpellations Twenty filed riksmöte crystallise, Swedish, Twenty, filed, 2025, riksmöte, crystallise, opposition, pre-election, accountability, offensive, highest-priority, signals, escalating"
+keywords: "HD10499, HD10498, HD10497, HD10494, HD10490, HD10489, HD10493, HD10492, KD, Water Crisis Escalation, Eva Lindh, Johan Britz, Southern Sweden, Finnish Language Rights Pressure, Mirja Räih, Lotta Edholm, Social Democratic MP, Umeå University, North Sweden, SME Payment Terms, Rashid Farivar, Ebba Busch, Foreign Policy Cluster, Malmer Stenergard"
 date: 2026-05-21
 subfolder: interpellations
 slug: 2026-05-21-interpellations
 source_folder: analysis/daily/2026-05-21/interpellations
-generated_at: 2026-05-23T22:05:57.381Z
+generated_at: 2026-05-24T12:19:34.693Z
 language: en
 layout: article
 ---

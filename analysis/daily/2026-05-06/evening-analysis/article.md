@@ -1,12 +1,12 @@
 ---
 title: "Parliamentary Evening Intelligence — 6 May 2026"
 description: "6 May 2026 is the most consequential single legislative day of the Tidö government era. Four landmark decisions locked in structural changes to criminal justice, welfare, and defence intelligence…"
-keywords: "Evening Analysis, English, May 6, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Parliamentary Evening most consequential single, Parliamentary, Evening, Intelligence, 2026, most, consequential, single, legislative, Tidö, government, Four, landmark, decisions"
+keywords: "HD03249, HD01JuU30, HD01SfU21, HD01CU25, HD03262, HD03258, HD024145, prop. 2025/26:246, JuU30, CU25, SfU21, FöU18, JuU, CU, SfU, FöU, SD, EU-Central Asia, EU-Central Asia EPCAs, Sweden s Riksdag, SO WHAT, NOW WHAT, IMF WEO April, Social Democrats"
 date: 2026-05-06
 subfolder: evening-analysis
 slug: 2026-05-06-evening-analysis
 source_folder: analysis/daily/2026-05-06/evening-analysis
-generated_at: 2026-05-23T22:05:56.576Z
+generated_at: 2026-05-24T12:19:34.103Z
 language: en
 layout: article
 ---

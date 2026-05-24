@@ -1,12 +1,12 @@
 ---
 title: "Centerpartiet (C) — 8 MPs led by Malin Björk (intressentid"
 description: "Centerpartiet (C) — 8 MPs led by Malin Björk (intressentid 0770363683317) — filed Kommittémotion 2025/26:4184 on 2026-05-15, referred to KU on 2026-05-20."
-keywords: "Motions, English, May 20, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Centerpartiet Malin Björk intressentid filed, Centerpartiet, Malin, Björk, intressentid, 0770363683317, filed, Kommittémotion, 2025, 4184, referred"
+keywords: "HD024184, Prop. 2025/26:258, Decision-Grade BLUF, KU Motion, Malin Björk, Sole KU, Monitor KU, Flag C s, Sweden s Advisory Council, European Court, Human Rights, Social Democrats, Muharrem Demirok, VERY HIGH, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-05-20
 subfolder: motions
 slug: 2026-05-20-motions
 source_folder: analysis/daily/2026-05-20/motions
-generated_at: 2026-05-23T22:05:57.320Z
+generated_at: 2026-05-24T12:19:34.650Z
 language: en
 layout: article
 ---

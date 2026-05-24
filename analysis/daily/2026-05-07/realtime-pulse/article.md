@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Tidö coalition is executing a coordinated end-of-session"
 description: "Sweden's Tidö coalition is executing a coordinated end-of-session security-state consolidation before the September 2026 election. In a single legislative day, the government submitted three major…"
-keywords: "Realtime Pulse, English, May 7, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Tidö coalition executing coordinated, Sweden, Tidö, coalition, executing, coordinated, end-of-session, security-state, consolidation, before, September, 2026, election, single"
+keywords: "HD03267, HD03262, HD03265, HD03261, HD01FiU43, HD03250, HD01FiU37, HD01FiU38, HD10475, HD10479, HD10476, HD10478, HD11793, HD11795, HD11796, Prop 2025/26:267, Prop 2025/26:261, Prop 2025/26:250, FiU37, JuU32, JuU39, NU19, KU39, FiU"
 date: 2026-05-07
 subfolder: realtime-pulse
 slug: 2026-05-07-realtime-pulse
 source_folder: analysis/daily/2026-05-07/realtime-pulse
-generated_at: 2026-05-23T22:05:56.692Z
+generated_at: 2026-05-24T12:19:34.186Z
 language: en
 layout: article
 ---
@@ -137,6 +137,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -2067,13 +2080,1740 @@ No voting records for 2026-05-07 (documents submitted today, not yet voted). Pri
 - **Unavailable**: Monthly CPI, employment, exchange rate from IFS
 - **Annotation**: `economicProvenance.provider: imf; dataflow: WEO; vintage: 2026-04; degraded_probe: IFS-SDMX-404`
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_ar.md -->
+
+**التصنيف**: عام | **مستوى الثقة**: عالٍ | **الأفق الزمني**: T+72h / T+30d / T+128d (الانتخابات)
+
+---
+
+### الحكم الاستخباراتي الرئيسي
+
+**تُنفّذ الائتلاف السويدي تيدو توطيداً منسقاً لدولة الأمن قبيل انتخابات سبتمبر 2026.** في يوم تشريعي واحد، قدّمت الحكومة ثلاثة مقترحات رئيسية تشمل الاحتجاز الأمني والمراقبة الرقمية وبنية تحتية للهوية — في حين تتقدم تقريران من لجنة JuU حول الأمن العام والعنف النفسي نحو تصويتات في مجلس النواب. يُعدّ هذا توطيداً تشريعياً ما قبل الانتخابات: إكمال برنامج الأمن قبل الإجازة الصيفية يُرسّخ الميزة السردية المركزية للائتلاف في مواجهة الكتلة اليسارية الخضراء.
+
+---
+
+### أبرز البنود — 7 مايو 2026
+
+#### 🔴 بالغ الأهمية: HD03267 — توسيع الاحتجاز الأمني
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+وقّعته رئيسة الوزراء إيبا بوش ووزير العدل غونار ستروميه، يتضمن هذا المقترح:
+- **إلغاء القيد الزمني للاحتجاز** للأجانب البالغين المصنّفين على أنهم تهديدات أمنية مؤهَّلة (حالات مستوى SÄPO)
+- **خفض معيار الإثبات** للاحتجاز (من مصطلح "sannolikt" إلى عتبة أدنى)
+- **تمديد حدود احتجاز الأطفال** مع اشتراطات مراجعة دورية جديدة
+- **السماح بإيداع الأطفال المحتجزين في الأجنحة الأمنية**
+- **تشديد العقوبات** على انتهاكات حظر الدخول ومساعدة الأشخاص المحظورين
+- **توضيح أساس الترحيل** للأمن القومي (يستبدل "allvarligt hot" بلغة أكثر عمليةً)
+
+يتضمن المقترح رأي Lagrådets yttrande (Bilaga 5)، مما يوفر إغلاقاً جزئياً لـ PIR-RT-001 فيما يخص خط الاحتجاز الأمني، إلا أن مقترحي الهجرة المنفصلين HD03262/HD03265 لا يزالان ينتظران مراجعة Lagrådet.
+
+**تاريخ السريان**: 2027-03-01.
+
+**القراءة السياسية**: مع وجود SD شريكاً في الائتلاف والانتخابات على بُعد 128 يوماً، يُمثّل هذا المقترح في آنٍ واحد سياسةً أمنية وتموضعاً انتخابياً. سيطعن كل حزب معارض في الاحتجاز غير المحدد بدواعي حقوق الإنسان؛ وستردّ الحكومة بتقييمات تهديدات SÄPO وحجج الامتثال للاتفاقية الأوروبية لحقوق الإنسان (المُعالَجة بالفعل في §4.3.2).
+
+---
+
+#### 🟠 مرتفع: HD03261 — توسيع صلاحيات المراقبة لـ Skatteverket
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+تحصل Skatteverket (مصلحة الضرائب) على صلاحيات موسَّعة لإجراء **مطابقة بيانات متعددة الأنظمة** في مجال التسجيل السكاني (folkbokföring) — نظام الهوية الأساسي الذي يدعم جميع أشكال الوصول إلى دولة الرعاية الاجتماعية السويدية.
+
+مخاوف رئيسية:
+- ستطعن منظمات الحريات المدنية في اتساع نطاق الوصول إلى البيانات
+- مرتبط بـ HD01FiU43 (منع الاحتيال في الرعاية الاجتماعية البلدية) — توسع منسَّق في صلاحيات التحقق الحكومية
+- مخاطر على خصوصية الفئات الهشة التي قد تمتلك أسباباً مشروعة لتسجيل غير نمطي (مثل ضحايا العنف الأسري، عديمي الجنسية)
+
+---
+
+#### 🟠 مرتفع: HD03250 — الهوية الإلكترونية الحكومية
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+تتقدم السويد نحو إنشاء **هوية رقمية صادرة عن الدولة** لاستكمال/استبدال نظام BankID الصادر عن البنوك. يُعدّ هذا معلماً بنيوياً هاماً:
+- يُقلّص مخاطر الاحتكار من النظام البيئي الخاص لـ BankID
+- يُتيح الوصول إلى الخدمات الحكومية الرقمية لمن ليس لديهم حسابات مصرفية
+- يُثير تساؤلات حول المراقبة والاحتفاظ بالبيانات والوصول الحكومي إلى سجلات المصادقة
+- مرتبط بـ HD03261 — التوسع ذاته في بنية دولة البيانات
+
+---
+
+#### 🟠 مرتفع: HD01FiU37 — إدارة الأزمات المالية
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+توصي لجنة المالية بإنشاء **وظيفة تشغيلية جديدة لإدارة الأزمات** في القطاع المالي. يأتي هذا في أعقاب مخاوف المخاطر النظامية على مستوى الاتحاد الأوروبي بعد SVB (مارس 2023) ويعكس التعرّض السويدي عبر تعرّض Riksbank للضغط المصرفي الأوروبي. مرتبط بـ HD01FiU38 (قواعد مقاصة المشتقات OTC — تطبيق EMIR الأوروبي).
+
+---
+
+### إشارات المعارضة
+
+تكشف الأسئلة المكتوبة اليوم عن أولويات معارضة منسَّقة:
+- **S** (HD10475, HD10479): معايير العمل في منظمة العمل الدولية وسياسة الأقليات — تأطير حقوق العمل والتماسك الاجتماعي قبيل الانتخابات
+- **MP** (HD10476, HD10478): الوصول الإنساني لغزة × 2 — الحفاظ على ملف إنساني في مواجهة صمت تيدو
+- **SD** (HD11793, HD11795): تدريب الصحفيين ودعم الشعب الإيراني — SD تُعزز علامتها الثقافية-الأمنية داخل إطار الائتلاف
+- **MP** (HD11796): مدرسة في السجن لمن هم في الـ 13 من العمر — ارتباط مباشر بـ LAGRÅDET-246 PIR المفتوحة حول سن المسؤولية الجنائية
+
+---
+
+### تقييم WEP (72h)
+
+*ثقة مؤهَّلة — جيل WEO-2026-04، IMF IFS SDMX متدهور*
+
+سيصل مجموع تشريعات الأمن (HD03267, JuU32, JuU39) إلى أرضية مجلس النواب في يونيو قبل الإجازة الصيفية. **تماسك الائتلاف عالٍ** في التصويتات الأمنية — يُتوقع أن تصوت M وKD وSD وL معاً. **تشتت المعارضة محتمل** — ستعارض S من حيث المبدأ توسيع الاحتجاز لكن قد تواجه توترات داخلية على بعض الجوانب الأمنية؛ ستعارض V بشكل شامل؛ تركّز MP على احتجاز الأطفال.
+
+**احتمالية إقرار HD03267**: 85% (WEP-عالٍ) قبل الإجازة.  
+**احتمالية إقرار HD03250**: 75% (WEP-متوسط-مرتفع) — دعم حزبي متقاطع لبنية تحتية للهوية الإلكترونية محتمل.  
+**احتمالية إقرار HD03261**: 80% (WEP-عالٍ) — تأطير مكافحة الاحتيال في الرعاية شائع على نطاق واسع.
+
+---
+
+### تحديثات PIR
+
+| PIR | الإجراء خلال 72h |
+|-----|-----------|
+| PIR-RT-001 | إغلاق جزئي لخط الأمن عبر HD03267 Bil.5 — أصدر Lagrådet رأياً في الاحتجاز. مقترحا الهجرة HD03262/65 لا يزالان مفتوحَين. |
+| LAGRÅDET-246 | نشط — ضغط MP عبر HD11796 يرفع التكلفة السياسية للتأخير |
+| PIR-RT-005 | رصد نافذة استجابة كارلسون (الموعد النهائي 2026-05-25) |
+| PIR-RT-006 | الطاقة النووية NU19 نافذة في 2026-06-17 — 41 يوماً. مراقبة تقدمات شركات الطاقة |
+| PIR-3/KU39 | تصويت دستوري مقرر في 2026-06-16 — 40 يوماً |
+
+---
+
+*المصادر: riksdag-regering-mcp (مباشر)، النص الكامل لـ HD03267، سلسلة PIR السابقة 2026-04-29—2026-05-05*  
+*السياق الاقتصادي IMF: WEO-2026-04 (جيل شهر واحد، غير قديم). IFS SDMX متدهور — لا يوجد تحديث اقتصادي كلي شهري سويدي متاح.*
+
+---
+
+### المرور 2 — التحسينات الجوهرية (2026-05-07)
+
+#### صياغة WEP المشددة
+
+**لغة الاحتمالية المصحَّحة (لتحل محل المصطلحات غير الرسمية)**:
+
+| التأكيد | مصطلح WEP | % |
+|-------|---------|---|
+| إقرار HD03267 قبل الإجازة الصيفية | WEP-عالٍ | 85% |
+| رأي Lagrådets yttrande بشأن HD03267 مقبول إجمالاً | WEP-متوسط-مرتفع | 75% |
+| تُقدم L تحفظاً على الاحتجاز غير المحدد | WEP-متوسط | 35% (مرفوع من 10% الأولية) |
+| تنجو MP من عتبة 4% | WEP-متوسط | 55% |
+| الائتلاف سليم حتى يوم الانتخابات | WEP-عالٍ | 92% |
+
+#### التقييم المعزَّز: الثلاثي البياني
+
+يُؤكد المرور 2 أن تقييم الثلاثي البياني في synthesis-summary.md متين تحليلياً. ثلاثة مبررات سياسية مستقلة قائمة (الامتثال لـ eIDAS، نتائج Riksrevisionen المتعلقة بالاحتيال، فجوات القدرة البلدية) — تفسير "التنسيق" استنتاجي. يقوم التقييم المُحافَظ عليه على أن البنية التشريعية تكشف عن تصميم متسق بصرف النظر عما إذا كان التنسيق صريحاً. تحدي محامي الشيطان (devils-advocate.md، التحدي 2) مُدوَّن بشكل صحيح.
+
+#### مُصحَّح: حالة PIR-RT-001
+
+المرور 2: ينبغي التعامل مع ادعاء أن "HD03267 Bilaga 5 يغلق خط الأمن" بثقة معتدلة. لم نستخرج النص الفعلي لـ Lagrådets yttrande من Bilaga 5 حتى الآن. الاستدلال بأن الحكومة مضت دون مراجعة جوهرية "يوحي" بقبول اليترانده هو استنتاج غير مباشر. الصياغة المعدَّلة:
+
+*"PIR-RT-001 خط الأمن: حل جزئي محتمل — يُشير HD03267 Bilaga 5 إلى Lagrådets yttrande. قرار الحكومة بالمضي قدماً دون الإشارة إلى تغييرات جوهرية يوحي بأن اليترانده كان مقبولاً إجمالاً. ثغرة في الجمع: النص الفعلي لليترانده لم يُستخرج. يوجد متغير FI-01 لمقترحات الهجرة؛ ينبغي استخراج النص الكامل لـ Bil.5 في الجلسة القادمة."*
+
+#### معزَّز: مخاطر تطبيق احتجاز الأطفال
+
+ينبغي للقسم المتعلق بـ HD03267 الإشارة إلى أن احتجاز الأطفال في الأجنحة الأمنية قد يواجه طعناً قانونياً متسارعاً من منظمة Rädda Barnen/UNICEF قبل التطبيق، مما قد يُفضي إلى أمر تقييدي مؤقت. يمنح الجدول الزمني 2027-03-01 عشرة أشهر، لكن الطعن الدستوري في أحكام الأطفال قد يتقدم أسرع من أي تعديل تشريعي.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_da.md -->
+
+**Klassifikation**: OFFENTLIG | **Konfidens**: HØJ | **Horisont**: T+72h / T+30d / T+128d (valg)
+
+---
+
+### Ledende efterretningsvurdering
+
+**Sveriges Tidø-koalition gennemfører en koordineret sikkerhedsstatlig konsolidering inden september 2026-valget.** I løbet af en enkelt lovgivningsdag indsendte regeringen tre store lovforslag om sikkerhedsforvaring, digital overvågning og identitetsinfrastruktur — mens to JuU-udvalgsrapporter om offentlig sikkerhed og psykologisk vold bevæger sig mod afstemninger i Riksdag-kammeret. Dette er præ-elektoral lovgivningsbanking: at fuldføre sikkerhedsprogrammet inden sommerferien låser koalitionens centrale narrative fordel over for venstre-grønne blokken.
+
+---
+
+### Topemner — 7. maj 2026
+
+#### 🔴 KRITISK: HD03267 — Udvidget sikkerhedsforvaring
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+Underskrevet af statsminister Ebba Busch og justitsminister Gunnar Strömmer indeholder dette lovforslag:
+- **Fjerner tidsgrænsen for forvaring** af voksne udlændinge klassificeret som kvalificerede sikkerhedstrusler (SÄPO-kategori-sager)
+- **Sænker bevisbyrden** for forvaring (fra "sannolikt" til lavere tærskel)
+- **Forlænger forvaringsgrænser for børn** med nye periodiske prøvningskrav
+- **Tillader anbringelse af forvaring af børn på sikkerhedsafdelinger**
+- **Skærper straffe** for overtrædelse af indrejseforbud og for at bistå forbudte personer
+- **Præciserer udvisningsgrundlaget** for national sikkerhed (erstatter "allvarligt hot" med mere operationelt sprog)
+
+Lagrådets yttrande er inkluderet (Bilaga 5), hvilket giver delvis PIR-RT-001-lukning vedrørende sikkerhedsforvaringssporet, men de separate migrationslovforslag HD03262/HD03265 afventer stadig Lagrådets behandling.
+
+**Ikrafttrædelsesdato**: 2027-03-01.
+
+**Politisk læsning**: Med SD som koalitionspartner og valget 128 dage væk er dette lovforslag på én gang sikkerhedspolitik og valgpositionering. Alle oppositionspartier vil udfordre forvaring uden tidsbegrænsning på grundlag af menneskerettigheder; regeringen vil svare med SÄPO's trusselvurderinger og EMRK-overensstemmelsesargumenter (allerede behandlet i §4.3.2).
+
+---
+
+#### 🟠 HØJ: HD03261 — Udvidet Skatteverket-overvågningsbefugtigelse
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket (Skatteforvaltningen) opnår udvidede beføjelser til at gennemføre **tværgående datamatching** i folkeregistreringsdomænet (folkbokföring) — det grundlæggende identitetssystem, der underbygger al adgang til den svenske velfærdsstat.
+
+Centrale bekymringer:
+- Borgerrettighedsorganisationer vil bestride bredden af dataadgang
+- Forbinder til HD01FiU43 (kommunalt velfærdssvindelbekæmpelse) — en koordineret udvidelse af statens verifikationsbefugtiger
+- Privatlivsrisici for sårbare grupper, der måske har legitime grunde til ikke-standardregistrering (f.eks. ofre for vold i nære relationer, statsløse personer)
+
+---
+
+#### 🟠 HØJ: HD03250 — Statslig e-legitimation
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+Sverige bevæger sig mod at etablere en **statsudstedt digital identitet** som supplement/erstatning for det bankudstedte BankID-system. Dette er en vigtig infrastrukturmilesten:
+- Reducerer monopolrisikoen fra det private BankID-økosystem
+- Giver adgang til digitale offentlige tjenester for dem uden bankkonti
+- Rejser spørgsmål om overvågning, dataopbevaring og statens adgang til autentificeringsregistreringer
+- Forbinder til HD03261 — samme udvidelse af datastyrkens arkitektur
+
+---
+
+#### 🟠 HØJ: HD01FiU37 — Finansiel krisehåndtering
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+Finansudvalget anbefaler at etablere en ny **operativ krisehåndteringsfunktion** for den finansielle sektor. Dette følger EU-dækkende systemiske risikobekymringer efter SVB (marts 2023) og afspejler svensk eksponering via Riksbankens eksponering over for europæisk bankstress. Forbinder til HD01FiU38 (OTC-derivatrydningsregler — EU EMIR-implementering).
+
+---
+
+### Oppositionssignaler
+
+Dagens skriftlige spørgsmål afslører koordinerede oppositionsprioriteter:
+- **S** (HD10475, HD10479): ILO-arbejdsstandards og minoritetspolitik — arbejdsrettigheders og social samhørighedsframing forud for valget
+- **MP** (HD10476, HD10478): Gaza humanitær adgang × 2 — opretholder humanitær profil vs. Tidøs tavshed
+- **SD** (HD11793, HD11795): Journalistuddannelse og støtte til det iranske folk — SD styrker sit kultur-sikkerhedsmærke inden for koalitionsrammen
+- **MP** (HD11796): Fængselsskole for 13-årige — direkte forbindelse til LAGRÅDET-246 åben PIR om den strafferetlige lavalder
+
+---
+
+### WEP-vurdering (72h)
+
+*Kvalificeret konfidens — WEO-2026-04 årgangsdato, IMF IFS SDMX degraderet*
+
+Sikkerhedslovgivningsklyngen (HD03267, JuU32, JuU39) vil nå kammerets gulv i juni inden sommerferien. **Koalitionssamhørighed er HØJ** for sikkerhedsafstemninger — M, KD, SD og L forventes at stemme samlet. **Oppositionsfragmentering er sandsynlig** — S vil principielt modstå forvaringsudvidelsen, men kan møde intern spænding om visse sikkerhedsaspekter; V vil modstå samlet; MP fokuserer på børneforvaring.
+
+**Sandsynlighed for passage af HD03267**: 85% (WEP-HØJ) inden ferien.  
+**Sandsynlighed for passage af HD03250**: 75% (WEP-MODERAT-HØJ) — tværpolitisk støtte til e-legitimationsinfrastruktur sandsynlig.  
+**Sandsynlighed for passage af HD03261**: 80% (WEP-HØJ) — velfærdssvindelsbekæmpelsesframing bredt populær.
+
+---
+
+### PIR-opdateringer
+
+| PIR | 72h-handling |
+|-----|-----------|
+| PIR-RT-001 | DELVIS LUKNING af sikkerhedssporet via HD03267 Bil.5 — Lagrådet har ytret sig om forvaring. Migrationslovforslag HD03262/65 stadig åbne. |
+| LAGRÅDET-246 | AKTIV — MP-pres via HD11796 øger de politiske omkostninger ved forsinkelse |
+| PIR-RT-005 | Overvåg Carlsons svartidsvindue (deadline 2026-05-25) |
+| PIR-RT-006 | Atomkraft NU19 ikrafttrædende 2026-06-17 — 41 dage. Hold øje med energiselskabernes indleveringer |
+| PIR-3/KU39 | Forfatningsmæssig afstemning planlagt 2026-06-16 — 40 dage |
+
+---
+
+*Kilder: riksdag-regering-mcp (live), HD03267 fuld tekst, tidligere PIR-kæde 2026-04-29—2026-05-05*  
+*IMF økonomisk kontekst: WEO-2026-04 (1 måneds årgangsdato, ikke forældet). IFS SDMX degraderet — ingen månedlig svensk makroøkonomisk opdatering tilgængelig.*
+
+---
+
+### Gennemgang 2 — Kritiske forbedringer (2026-05-07)
+
+#### Skærpet WEP-sprog
+
+**Korrigeret sandsynlighedssprog (erstatter uformelle begreber)**:
+
+| Påstand | WEP-term | % |
+|-------|---------|---|
+| HD03267 passerer inden sommerferien | WEP-HØJ | 85% |
+| Lagrådets yttrande om HD03267 er i store træk accepterende | WEP-MODERAT-HØJ | 75% |
+| L indgiver forbehold mod ubegrænset forvaring | WEP-MODERAT | 35% (hævet fra indledende 10%) |
+| MP overlever 4%-spærren | WEP-MODERAT | 55% |
+| Koalitionen intakt frem til valgdagen | WEP-HØJ | 92% |
+
+#### Styrket vurdering: Datatriaden
+
+Gennemgang 2 bekræfter, at datatriaden-vurderingen i synthesis-summary.md er analytisk solid. Tre uafhængige politiske begrundelser eksisterer (eIDAS-overholdelse, Riksrevisionens svindelfund, kommunale kapacitetsgab) — "koordinerings"-fortolkningen er inferentiel. Den opretholdede vurdering er, at den lovgivende arkitektur afslører et sammenhængende design uanset om koordineringen var eksplicit. Djævelens advokatudfordring (devils-advocate.md, Udfordring 2) er korrekt noteret.
+
+#### Korrigeret: PIR-RT-001-status
+
+Gennemgang 2: Påstanden om, at "HD03267 Bilaga 5 lukker sikkerhedssporet", bør behandles med moderat konfidens. Vi har IKKE ekstraheret den faktiske tekst i Lagrådets yttrande fra Bilaga 5. Ræsonnementet om, at regeringen gik videre uden stor revision "antyder" et accepterende yttrande, er indirekte slutning. Revideret sprog:
+
+*"PIR-RT-001 sikkerhedssporet: SANDSYNLIG DELVIS LØSNING — HD03267 Bilaga 5 refererer til Lagrådets yttrande. Regeringens beslutning om at gå videre uden at markere store ændringer antyder, at yttrandet var i store træk accepterende. INDSAMLINGSGAB: Ytrandets faktiske tekst ikke ekstraheret. FI-01-variant eksisterer for migrationslovforslag; Bil.5 fuld tekst bør ekstraheres i næste session."*
+
+#### Styrket: Implementeringsrisiko for børneforvaring
+
+Afsnittet om HD03267 bør bemærke, at børneforvaring på sikkerhedsafdelinger kan møde fremskyndet juridisk udfordring fra Rädda Barnen/UNICEF inden implementeringen, hvilket potentielt resulterer i et foreløbigt forbud. Tidslinjen 2027-03-01 giver 10 måneder, men en forfatningsmæssig udfordring af børnebestemmelserne kan ske hurtigere end lovgivningsændring.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_de.md -->
+
+**Klassifizierung**: ÖFFENTLICH | **Konfidenz**: HOCH | **Horizont**: T+72h / T+30d / T+128d (Wahl)
+
+---
+
+### Führendes Geheimdiensturteil
+
+**Schwedens Tidö-Koalition vollzieht eine koordinierte sicherheitsstaatliche Konsolidierung vor der Wahl im September 2026.** An einem einzigen Gesetzgebungstag reichte die Regierung drei wichtige Gesetzesvorlagen zu Sicherheitshaft, digitaler Überwachung und Identitätsinfrastruktur ein — während zwei JuU-Ausschussberichte zur öffentlichen Sicherheit und psychologischen Gewalt auf Abstimmungen in der Kammer zusteuern. Dies ist präelektionale Gesetzgebungsbanking: das Sicherheitsprogramm vor der Sommerpause abzuschließen sichert den zentralen narrativen Vorteil der Koalition gegenüber dem Links-Grün-Block.
+
+---
+
+### Topthemen — 7. Mai 2026
+
+#### 🔴 KRITISCH: HD03267 — Ausweitung der Sicherheitshaft
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+Unterzeichnet von Ministerpräsidentin Ebba Busch und Justizminister Gunnar Strömmer enthält dieser Gesetzentwurf:
+- **Hebt die Zeitbegrenzung für die Inhaftierung** erwachsener Ausländer auf, die als qualifizierte Sicherheitsbedrohungen eingestuft sind (SÄPO-Kategoriesachen)
+- **Senkt den Beweisstandard** für die Inhaftierung (von "sannolikt" auf eine niedrigere Schwelle)
+- **Verlängert die Inhaftierungsgrenzen für Kinder** mit neuen periodischen Überprüfungsanforderungen
+- **Erlaubt die Unterbringung inhaftierter Kinder auf Sicherheitsabteilungen**
+- **Verschärft die Strafen** für Verstöße gegen das Wiedereinreiseverbot und für die Unterstützung verbotener Personen
+- **Klärt den Ausweisungsgrund** für die nationale Sicherheit (ersetzt "allvarligt hot" durch operativere Sprache)
+
+Das Lagrådets yttrande ist enthalten (Bilaga 5), was eine teilweise PIR-RT-001-Schließung bezüglich des Sicherheitshaftstrangs bietet, obwohl die separaten Migrationsvorlagen HD03262/HD03265 noch auf die Lagrådet-Prüfung warten.
+
+**Inkrafttretensdatum**: 2027-03-01.
+
+**Politische Einschätzung**: Mit SD als Koalitionspartner und der Wahl 128 Tage entfernt ist dieser Gesetzentwurf zugleich Sicherheitspolitik und Wahlpositionierung. Jede Oppositionspartei wird die unbefristete Haft auf der Grundlage der Menschenrechte anfechten; die Regierung wird mit SÄPO-Bedrohungsbewertungen und EMRK-Konformitätsargumenten kontern (bereits in §4.3.2 behandelt).
+
+---
+
+#### 🟠 HOCH: HD03261 — Ausweitung der Überwachungsbefugnisse von Skatteverket
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket (Steuerbehörde) erhält erweiterte Befugnisse zur Durchführung **systemübergreifender Datenabgleichung** im Bereich der Einwohnermelderegistrierung (folkbokföring) — dem grundlegenden Identitätssystem, das den Zugang zu allen Leistungen des schwedischen Wohlfahrtsstaates ermöglicht.
+
+Zentrale Bedenken:
+- Bürgerrechtsorganisationen werden die Breite des Datenzugangs anfechten
+- Verbindet sich mit HD01FiU43 (kommunale Sozialbetrugsbekämpfung) — eine koordinierte Ausweitung staatlicher Verifikationsbefugnisse
+- Datenschutzrisiken für gefährdete Gruppen, die möglicherweise legitime Gründe für eine nicht standardmäßige Registrierung haben (z. B. Opfer häuslicher Gewalt, Staatenlose)
+
+---
+
+#### 🟠 HOCH: HD03250 — Staatliches E-ID
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+Schweden schreitet zur Einrichtung einer **staatlich ausgestellten digitalen Identität** als Ergänzung/Ersatz zum bankausgestellten BankID-System voran. Dies ist ein bedeutender Infrastrukturmeilenstein:
+- Reduziert das Monopolrisiko des privaten BankID-Ökosystems
+- Ermöglicht den Zugang zu digitalen öffentlichen Diensten für Personen ohne Bankkonten
+- Wirft Fragen zur Überwachung, Datenspeicherung und staatlichem Zugang zu Authentifizierungsaufzeichnungen auf
+- Verbindet sich mit HD03261 — dieselbe Ausweitung der Datenstaat-Architektur
+
+---
+
+#### 🟠 HOCH: HD01FiU37 — Finanzkrisenverwaltung
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+Der Finanzausschuss empfiehlt die Einrichtung einer neuen **operativen Krisenverwaltungsfunktion** für den Finanzsektor. Dies folgt EU-weiten systemischen Risikobedenken nach SVB (März 2023) und spiegelt die schwedische Exposition durch die Exponierung der Riksbank gegenüber europäischem Bankenstress wider. Verbindet sich mit HD01FiU38 (OTC-Derivat-Clearingregeln — EU EMIR-Umsetzung).
+
+---
+
+### Oppositionssignale
+
+Die heutigen schriftlichen Fragen enthüllen koordinierte Oppositionsprioritäten:
+- **S** (HD10475, HD10479): ILO-Arbeitsstandards und Minderheitenpolitik — Rahmung von Arbeits- und sozialer Zusammengehörigkeit vor der Wahl
+- **MP** (HD10476, HD10478): Gaza humanitärer Zugang × 2 — Aufrechterhaltung des humanitären Profils gegenüber Tidøs Schweigen
+- **SD** (HD11793, HD11795): Journalistenausbildung und Unterstützung des iranischen Volkes — SD stärkt seine Kultur-Sicherheitsmarke innerhalb des Koalitionsrahmens
+- **MP** (HD11796): Gefängnisschule für 13-Jährige — direkte Verbindung zu LAGRÅDET-246 offene PIR zur Strafmündigkeitsgrenze
+
+---
+
+### WEP-Bewertung (72h)
+
+*Qualifiziertes Konfidenzniveau — WEO-2026-04 Jahrgang, IMF IFS SDMX degradiert*
+
+Das Sicherheitsgesetzgebungscluster (HD03267, JuU32, JuU39) wird im Juni vor der Sommerpause das Kammerplenum erreichen. **Koalitionszusammenhalt ist HOCH** bei Sicherheitsabstimmungen — M, KD, SD und L werden voraussichtlich gemeinsam stimmen. **Oppositionsfragmentierung ist wahrscheinlich** — S wird der Haftausweitung prinzipiell widersprechen, könnte aber bei bestimmten Sicherheitsaspekten internen Spannungen begegnen; V wird umfassend widersprechen; MP konzentriert sich auf Kinderinhaftierung.
+
+**Wahrscheinlichkeit für die Verabschiedung von HD03267**: 85% (WEP-HOCH) vor der Pause.  
+**Wahrscheinlichkeit für die Verabschiedung von HD03250**: 75% (WEP-MODERAT-HOCH) — parteiübergreifende Unterstützung für die e-ID-Infrastruktur wahrscheinlich.  
+**Wahrscheinlichkeit für die Verabschiedung von HD03261**: 80% (WEP-HOCH) — Rahmung der Sozialbetrugsbekämpfung breiter Beliebtheit.
+
+---
+
+### PIR-Aktualisierungen
+
+| PIR | 72h-Maßnahme |
+|-----|-----------|
+| PIR-RT-001 | TEILSCHLIESSEN des Sicherheitsstrangs über HD03267 Bil.5 — Lagrådet hat sich zur Haft geäußert. Migrationsvorlagen HD03262/65 noch offen. |
+| LAGRÅDET-246 | AKTIV — MP-Druck über HD11796 erhöht die politischen Kosten von Verzögerungen |
+| PIR-RT-005 | Carlson-Antwortfenster überwachen (Frist 2026-05-25) |
+| PIR-RT-006 | Kernenergie NU19 Inkrafttreten 2026-06-17 — 41 Tage. Auf Einreichungen von Energieunternehmen achten |
+| PIR-3/KU39 | Verfassungsabstimmung geplant 2026-06-16 — 40 Tage |
+
+---
+
+*Quellen: riksdag-regering-mcp (live), HD03267 Volltext, frühere PIR-Kette 2026-04-29—2026-05-05*  
+*IMF Wirtschaftskontext: WEO-2026-04 (1 Monat Jahrgang, nicht veraltet). IFS SDMX degradiert — keine monatliche schwedische Makrowirtschaftsaktualisierung verfügbar.*
+
+---
+
+### Durchlauf 2 — Kritische Verbesserungen (2026-05-07)
+
+#### Geschärfte WEP-Sprache
+
+**Korrigierte Wahrscheinlichkeitssprache (ersetzt informelle Begriffe)**:
+
+| Behauptung | WEP-Begriff | % |
+|-------|---------|---|
+| HD03267 wird vor der Sommerpause verabschiedet | WEP-HOCH | 85% |
+| Lagrådets yttrande zu HD03267 ist weitgehend zustimmend | WEP-MODERAT-HOCH | 75% |
+| L reicht Vorbehalt gegen unbefristete Haft ein | WEP-MODERAT | 35% (erhöht vom anfänglichen 10%) |
+| MP überlebt die 4%-Sperrklausel | WEP-MODERAT | 55% |
+| Koalition bis zum Wahltag intakt | WEP-HOCH | 92% |
+
+#### Gestärkte Bewertung: Datentrias
+
+Durchlauf 2 bestätigt, dass die Datentrias-Bewertung in synthesis-summary.md analytisch fundiert ist. Drei unabhängige politische Begründungen existieren (eIDAS-Konformität, Riksrevisionen-Betrugsbefunde, kommunale Kapazitätslücken) — die "Koordinierungs"-Interpretation ist inferenziell. Die aufrechterhaltene Bewertung ist, dass die Gesetzgebungsarchitektur ein kohärentes Design offenbart, unabhängig davon, ob die Koordinierung explizit war. Die Advocatus-Diaboli-Herausforderung (devils-advocate.md, Herausforderung 2) ist korrekt vermerkt.
+
+#### Korrigiert: PIR-RT-001-Status
+
+Durchlauf 2: Die Behauptung, dass "HD03267 Bilaga 5 den Sicherheitsstrang schließt", sollte mit moderatem Konfidenzniveau behandelt werden. Wir haben den tatsächlichen Text von Lagrådets yttrande aus Bilaga 5 NICHT extrahiert. Das Reasoning, dass die Regierung ohne wesentliche Überarbeitung fortfuhr, "suggeriert" ein zustimmendes Yttrande, ist indirekter Schluss. Revidierte Sprache:
+
+*"PIR-RT-001 Sicherheitsstrang: WAHRSCHEINLICHE TEILAUFLÖSUNG — HD03267 Bilaga 5 verweist auf Lagrådets yttrande. Die Entscheidung der Regierung, ohne Markierung wesentlicher Änderungen fortzufahren, suggeriert, dass das Yttrande weitgehend zustimmend war. SAMMLUNGSLÜCKE: Tatsächlicher Text des Yttrande nicht extrahiert. FI-01-Variante existiert für Migrationsvorlagen; Bil.5 Volltext sollte in der nächsten Sitzung extrahiert werden."*
+
+#### Gestärkt: Umsetzungsrisiko bei Kinderinhaftierung
+
+Der Abschnitt über HD03267 sollte anmerken, dass die Unterbringung von Kindern auf Sicherheitsabteilungen vor der Umsetzung möglicherweise einem beschleunigten rechtlichen Anfechtungsverfahren von Rädda Barnen/UNICEF ausgesetzt sein könnte, das potenziell zu einer einstweiligen Verfügung führt. Der Zeitplan 2027-03-01 gibt 10 Monate, aber eine Verfassungsanfechtung der Kinderbestimmungen kann schneller verlaufen als eine Gesetzesänderung.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICO | **Confianza**: ALTA | **Horizonte**: T+72h / T+30d / T+128d (elecciones)
+
+---
+
+### Juicio de inteligencia principal
+
+**La coalición sueca Tidö está ejecutando una consolidación coordinada del Estado de seguridad antes de las elecciones de septiembre de 2026.** En un único día legislativo, el gobierno presentó tres proposiciones mayores sobre detención de seguridad, vigilancia digital e infraestructura de identidad — mientras que dos informes del comité JuU sobre seguridad pública y violencia psicológica avanzan hacia votaciones en la cámara. Se trata de una capitalización legislativa preelectoral: completar el programa de seguridad antes del receso estival bloquea la ventaja narrativa central de la coalición sobre el bloque izquierda-verde.
+
+---
+
+### Puntos principales — 7 de mayo de 2026
+
+#### 🔴 CRÍTICO: HD03267 — Ampliación de la detención de seguridad
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+Firmado por la Primera Ministra Ebba Busch y el Ministro de Justicia Gunnar Strömmer, esta proposición:
+- **Elimina el límite de tiempo para la detención** de extranjeros adultos clasificados como amenazas de seguridad calificadas (casos del nivel SÄPO)
+- **Reduce el estándar probatorio** para la detención (del término "sannolikt" a un umbral menos exigente)
+- **Extiende los límites de detención para niños** con nuevos requisitos de revisión periódica
+- **Permite la colocación de niños detenidos en alas de seguridad**
+- **Endurece las penas** por violaciones de prohibición de reingreso y por asistir a personas prohibidas
+- **Aclara el motivo de expulsión** para la seguridad nacional (reemplaza "allvarligt hot" con lenguaje más operativo)
+
+El Lagrådets yttrande está incluido (Bilaga 5), proporcionando cierre parcial de PIR-RT-001 en la vertiente de detención de seguridad, aunque las proposiciones de migración separadas HD03262/HD03265 aún esperan revisión del Lagrådet.
+
+**Fecha de entrada en vigor**: 2027-03-01.
+
+**Lectura política**: Con SD como socio de coalición y las elecciones a 128 días, esta proposición es simultáneamente política de seguridad y posicionamiento electoral. Cada partido de oposición impugnará la detención sin límite de tiempo por motivos de derechos humanos; el gobierno responderá con evaluaciones de amenazas de SÄPO y argumentos de cumplimiento del CEDH (ya abordados en §4.3.2).
+
+---
+
+#### 🟠 ALTO: HD03261 — Ampliación de las facultades de vigilancia de Skatteverket
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket (la Agencia Tributaria) obtiene facultades ampliadas para realizar **cotejo de datos entre sistemas** en el ámbito del registro de población (folkbokföring) — el sistema de identidad fundamental que sustenta todo acceso al Estado de bienestar sueco.
+
+Preocupaciones clave:
+- Las organizaciones de libertades civiles impugnarán la amplitud del acceso a los datos
+- Conectado con HD01FiU43 (prevención del fraude de bienestar municipal) — una expansión coordinada de la autoridad de verificación estatal
+- Riesgos de privacidad para poblaciones vulnerables que pueden tener razones legítimas para un registro no estándar (p. ej., víctimas de violencia doméstica, personas apátridas)
+
+---
+
+#### 🟠 ALTO: HD03250 — Identidad electrónica estatal
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+Suecia avanza hacia el establecimiento de una **identidad digital emitida por el Estado** para complementar/reemplazar el sistema BankID emitido por los bancos. Este es un hito importante de infraestructura:
+- Reduce el riesgo de monopolio del ecosistema privado BankID
+- Permite el acceso a los servicios gubernamentales digitales para quienes no tienen cuentas bancarias
+- Plantea preguntas sobre vigilancia, retención de datos y acceso estatal a los registros de autenticación
+- Conectado con HD03261 — misma expansión de la arquitectura del Estado de datos
+
+---
+
+#### 🟠 ALTO: HD01FiU37 — Gestión de crisis financieras
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+El Comité de Finanzas recomienda establecer una nueva **función operativa de gestión de crisis** para el sector financiero. Esto sigue las preocupaciones de riesgo sistémico en toda la UE después del SVB (marzo de 2023) y refleja la exposición sueca a través de la exposición del Riksbank al estrés bancario europeo. Conectado con HD01FiU38 (normas de compensación de derivados OTC — implementación de EMIR de la UE).
+
+---
+
+### Señales de la oposición
+
+Las preguntas escritas de hoy revelan prioridades de oposición coordinadas:
+- **S** (HD10475, HD10479): Normas laborales de la OIT y política de minorías — encuadre de derechos laborales y cohesión social antes de las elecciones
+- **MP** (HD10476, HD10478): Acceso humanitario a Gaza × 2 — mantener el perfil humanitario frente al silencio de Tidö
+- **SD** (HD11793, HD11795): Formación de periodistas y apoyo al pueblo iraní — SD reforzando su marca cultura-seguridad dentro del marco de la coalición
+- **MP** (HD11796): Escuela en prisión para menores de 13 años — conexión directa con LAGRÅDET-246 PIR abierta sobre la edad de responsabilidad penal
+
+---
+
+### Evaluación WEP (72h)
+
+*Confianza calificada — cosecha WEO-2026-04, IMF IFS SDMX degradado*
+
+El conjunto de legislación de seguridad (HD03267, JuU32, JuU39) alcanzará el plenario de la cámara en junio antes del receso estival. **La cohesión de la coalición es ALTA** para los votos de seguridad — M, KD, SD y L se esperan que voten juntos. **La fragmentación de la oposición es probable** — S se opondrá en principio a la extensión de la detención pero puede enfrentar tensiones internas en algunos aspectos de seguridad; V se opondrá de manera integral; MP se centra en la detención de niños.
+
+**Probabilidad de aprobación de HD03267**: 85% (WEP-ALTA) antes del receso.  
+**Probabilidad de aprobación de HD03250**: 75% (WEP-MODERADA-ALTA) — apoyo bipartidista a la infraestructura de e-ID probable.  
+**Probabilidad de aprobación de HD03261**: 80% (WEP-ALTA) — el encuadre de lucha contra el fraude de bienestar es ampliamente popular.
+
+---
+
+### Actualizaciones PIR
+
+| PIR | Acción 72h |
+|-----|-----------|
+| PIR-RT-001 | CIERRE PARCIAL en la vertiente de seguridad mediante HD03267 Bil.5 — Lagrådet ha emitido dictamen sobre la detención. Proposiciones de migración HD03262/65 aún abiertas. |
+| LAGRÅDET-246 | ACTIVO — La presión de MP a través de HD11796 aumenta el coste político del retraso |
+| PIR-RT-005 | Supervisar la ventana de respuesta de Carlson (plazo 2026-05-25) |
+| PIR-RT-006 | Nuclear NU19 vigente el 2026-06-17 — 41 días. Vigilar presentaciones de compañías energéticas |
+| PIR-3/KU39 | Votación constitucional programada el 2026-06-16 — 40 días |
+
+---
+
+*Fuentes: riksdag-regering-mcp (en vivo), HD03267 texto completo, cadena PIR anterior 2026-04-29—2026-05-05*  
+*Contexto económico FMI: WEO-2026-04 (cosecha de 1 mes, no obsoleta). IFS SDMX degradado — no hay actualización macroeconómica sueca mensual disponible.*
+
+---
+
+### Pasada 2 — Mejoras críticas (2026-05-07)
+
+#### Lenguaje WEP afinado
+
+**Lenguaje de probabilidad corregido (reemplazando términos informales)**:
+
+| Afirmación | Término WEP | % |
+|-------|---------|---|
+| HD03267 aprobada antes del receso estival | WEP-ALTA | 85% |
+| El Lagrådets yttrande sobre HD03267 es ampliamente favorable | WEP-MODERADA-ALTA | 75% |
+| L presenta reserva contra la detención ilimitada | WEP-MODERADA | 35% (elevado del 10% inicial) |
+| MP supera el umbral del 4% | WEP-MODERADA | 55% |
+| Coalición intacta hasta el día de las elecciones | WEP-ALTA | 92% |
+
+#### Evaluación reforzada: El trío de datos
+
+El pasada 2 confirma que la evaluación del trío de datos en synthesis-summary.md es analíticamente sólida. Existen tres justificaciones políticas independientes (cumplimiento de eIDAS, hallazgos de fraude de Riksrevisionen, brechas de capacidad municipal) — la interpretación de la "coordinación" es inferencial. La evaluación mantenida es que la arquitectura legislativa revela un diseño coherente independientemente de si la coordinación fue explícita. El desafío del abogado del diablo (devils-advocate.md, Desafío 2) está correctamente anotado.
+
+#### Corregido: Estado de PIR-RT-001
+
+Pasada 2: La afirmación de que "HD03267 Bilaga 5 cierra la vertiente de seguridad" debe tratarse con confianza moderada. NO hemos extraído el texto real del Lagrådets yttrande de Bilaga 5. El razonamiento de que el gobierno procedió sin revisión importante "sugiere" un yttrande favorable es inferencia indirecta. Lenguaje revisado:
+
+*"PIR-RT-001 vertiente de seguridad: RESOLUCIÓN PARCIAL PROBABLE — HD03267 Bilaga 5 hace referencia al Lagrådets yttrande. La decisión del gobierno de proceder sin señalar cambios importantes sugiere que el yttrande era ampliamente favorable. BRECHA DE RECOPILACIÓN: El texto real del yttrande no ha sido extraído. La variante FI-01 existe para proposiciones de migración; el texto completo de Bil.5 debe extraerse en la próxima sesión."*
+
+#### Reforzado: Riesgo de implementación de la detención de menores
+
+La sección sobre HD03267 debe señalar que la detención de menores en alas de seguridad puede enfrentar un desafío legal acelerado de Rädda Barnen/UNICEF antes de la implementación, lo que potencialmente podría resultar en una medida cautelar. El cronograma 2027-03-01 da 10 meses, pero un desafío constitucional a las disposiciones sobre menores podría avanzar más rápido que una enmienda legislativa.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_fi.md -->
+
+**Luokitus**: JULKINEN | **Luottamus**: KORKEA | **Horisontti**: T+72h / T+30d / T+128d (vaalit)
+
+---
+
+### Johtava tiedusteluarvio
+
+**Ruotsin Tidö-koalitio toteuttaa koordinoitua turvallisuusvaltion konsolidointia ennen syyskuun 2026 vaaleja.** Yhdellä lainsäädäntöpäivällä hallitus jätti kolme suurta esitystä koskien turvallisuussäilöönottoa, digitaalista valvontaa ja identitetti-infrastruktuuria — samalla kun kaksi JuU-valiokunnan mietintöä yleisestä turvallisuudesta ja psyykkisestä väkivallasta etenee täysistuntoäänestyksiin. Tämä on ennakkoedunsäätämistä: turvallisuusohjelman saattaminen päätökseen ennen kesätaukoa lukitsee koalition keskeisen narratiivisen edun vasemmisto-vihreää blokkia vastaan.
+
+---
+
+### Tärkeimmät asiat — 7. toukokuuta 2026
+
+#### 🔴 KRIITTINEN: HD03267 — Laajennettu turvallisuussäilöönotto
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+Pääministeri Ebba Buschin ja oikeusministeri Gunnar Strömmerin allekirjoittama esitys sisältää:
+- **Poistaa aikarajan säilöönotolle** aikuisilta ulkomaalaisilta, jotka luokitellaan päteviksi turvallisuusuhiksi (SÄPO-tason tapaukset)
+- **Alentaa todistusstandardia** säilöönotolle (sanasta "sannolikt" matalampaan kynnykseen)
+- **Pidentää säilöönottoa koskevia lasten rajoja** uusin säännöllisine tarkistusvaatimuksineen
+- **Sallii lasten säilöönottamisen turvallisuusosastoille**
+- **Tiukentaa rangaistuksia** maahantulokieltojen rikkomisesta ja kiellettyjen henkilöiden avustamisesta
+- **Selventää karkottamisperustetta** kansalliselle turvallisuudelle (korvaa "allvarligt hot" operatiivisemmalla kielellä)
+
+Lagrådets yttrande sisältyy esitykseen (Bilaga 5), mikä sulkee osittain PIR-RT-001:n turvallisuussäilöönottolinjalta, mutta erilliset maahanmuuttoesitykset HD03262/HD03265 odottavat edelleen Lagrådets-käsittelyä.
+
+**Voimaantulopäivä**: 2027-03-01.
+
+**Poliittinen tulkinta**: SD:n ollessa koalitiokumppani ja vaalien ollessa 128 päivän päässä, tämä esitys on sekä turvallisuuspolitiikkaa että vaalipositiointia. Jokainen oppositiopuolue haastaa aikarajoittamattoman säilöönoton ihmisoikeusperustein; hallitus vastaa SÄPO:n uhka-arvioilla ja ECHR-noudattamisargumenteilla (jo käsitelty §4.3.2:ssa).
+
+---
+
+#### 🟠 KORKEA: HD03261 — Laajennettu Skatteverketin valvontavaltuus
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket (Verohallinto) saa laajennettuja valtuuksia toteuttaa **järjestelmien välistä tietojen yhdistelyä** väestörekisterin (folkbokföring) toimialueella — keskeinen identiteettijärjestelmä, joka on kaiken pääsyn perusta Ruotsin hyvinvointivaltioon.
+
+Keskeiset huolenaiheet:
+- Kansalaisvapauksien järjestöt kiistävät tietojen käytön laajuuden
+- Yhteys HD01FiU43:een (kunnallinen sosiaaliturvaepetosrintama) — koordinoitu laajennus valtion tarkistusviranomaisuuteen
+- Yksityisyyden riskit haavoittuville ryhmille, joilla voi olla oikeutettuja syitä ei-standardirekisteröintiin (esim. lähisuhdeväkivallan uhrit, kansalaisuudettomat henkilöt)
+
+---
+
+#### 🟠 KORKEA: HD03250 — Valtion sähköinen tunnistautuminen
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+Ruotsi etenee **valtion myöntämän digitaalisen henkilöllisyyden** luomisessa pankin myöntämän BankID-järjestelmän täydentämiseksi/korvaamiseksi. Tämä on merkittävä infrastrukturivirstanpylväs:
+- Vähentää yksityisen BankID-ekosysteemin monopoliriskiä
+- Mahdollistaa digitaalisten julkisten palveluiden pääsyn niille, joilla ei ole pankkitilejä
+- Herättää kysymyksiä valvonnasta, tietojen säilyttämisestä ja valtion pääsystä todentamistietoihin
+- Yhteys HD03261:een — sama tietovaltion arkkitehtuurin laajentaminen
+
+---
+
+#### 🟠 KORKEA: HD01FiU37 — Rahoituskriisinhallinta
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+Valtiovarainvaliokunta suosittaa uuden **operatiivisen kriisinhallintafunktion** perustamista rahoitussektorille. Tämä seuraa EU:n laajuisia systeemisiä riskihuolia SVB:n jälkeen (maaliskuu 2023) ja heijastaa Ruotsin altistumista Riksbankin altistumisen kautta eurooppalaiseen pankkistressiin. Yhteys HD01FiU38:aan (OTC-johdannaiskliraussäännöt — EU EMIR-täytäntöönpano).
+
+---
+
+### Oppositiosignaalit
+
+Päivän kirjalliset kysymykset paljastavat koordinoidut oppositioprioriteetit:
+- **S** (HD10475, HD10479): ILO-työnormit ja vähemmistöpolitiikka — työ- ja sosiaalisen yhteenkuuluvuuden kehystäminen ennen vaaleja
+- **MP** (HD10476, HD10478): Gazan humanitaarinen pääsy × 2 — humanitaarisen profiilin ylläpitäminen Tidön hiljaisuutta vastaan
+- **SD** (HD11793, HD11795): Journalistikoulutus ja iranilaisten ihmisten tuki — SD vahvistaa kulttuuri-turvallisuusmerkkiään koalitiorakenteen sisällä
+- **MP** (HD11796): Vankilakoulu 13-vuotiaille — suora yhteys LAGRÅDET-246:n avoimeen PIR:iin rikosvastuuiästä
+
+---
+
+### WEP-arvio (72h)
+
+*Pätevä luottamus — WEO-2026-04 vuosikerta, IMF IFS SDMX heikentynyt*
+
+Turvallisuuslainsäädäntörypäs (HD03267, JuU32, JuU39) saavuttaa täysistuntokeskuksen kesäkuussa ennen kesälomaa. **Koalition yhteenkuuluvuus on KORKEA** turvallisuusäänestyksissä — M, KD, SD ja L:n odotetaan äänestävän yhdessä. **Opposition pirstoutuminen on todennäköistä** — S vastustaa säilöönoton laajentamista periaatteessa mutta voi kohdata sisäistä jännitystä joistakin turvallisuusnäkökohdista; V vastustaa kokonaisuudessaan; MP keskittyy lapsia koskevaan säilöönottoon.
+
+**Todennäköisyys HD03267 hyväksymiselle**: 85% (WEP-KORKEA) ennen lomaa.  
+**Todennäköisyys HD03250 hyväksymiselle**: 75% (WEP-KOHTALAISESTI-KORKEA) — puolueiden välinen tuki sähköisen tunnistautumisen infrastruktuurille todennäköinen.  
+**Todennäköisyys HD03261 hyväksymiselle**: 80% (WEP-KORKEA) — sosiaaliturvaepetosrintaman kehystäminen laajasti suosittu.
+
+---
+
+### PIR-päivitykset
+
+| PIR | 72h-toimenpide |
+|-----|-----------|
+| PIR-RT-001 | OSITTAINEN SULKEMINEN turvallisuuslinjasta HD03267 Bil.5 kautta — Lagrådet on antanut lausunnon säilöönottosta. Maahanmuuttoesitykset HD03262/65 edelleen avoimina. |
+| LAGRÅDET-246 | AKTIIVINEN — MP:n paine HD11796:n kautta lisää viivästymisen poliittisia kustannuksia |
+| PIR-RT-005 | Seuraa Carlsonin vastausaikaikkunaa (määräaika 2026-05-25) |
+| PIR-RT-006 | Ydinvoima NU19 voimaantulo 2026-06-17 — 41 päivää. Seuraa energiayhtiöiden ilmoituksia |
+| PIR-3/KU39 | Perustuslaillinen äänestys suunniteltu 2026-06-16 — 40 päivää |
+
+---
+
+*Lähteet: riksdag-regering-mcp (live), HD03267 koko teksti, aiempi PIR-ketju 2026-04-29—2026-05-05*  
+*IMF:n taloudellinen konteksti: WEO-2026-04 (1 kuukauden vuosikerta, ei vanhentunut). IFS SDMX heikentynyt — ei kuukausittaista Ruotsin makrotalouspäivitystä saatavilla.*
+
+---
+
+### Läpikäynti 2 — Kriittiset parannukset (2026-05-07)
+
+#### Tarkennettu WEP-kielenkäyttö
+
+**Korjattu todennäköisyyskieli (korvaa epämuodolliset termit)**:
+
+| Väite | WEP-termi | % |
+|-------|---------|---|
+| HD03267 hyväksytään ennen kesälomaa | WEP-KORKEA | 85% |
+| Lagrådets yttrande HD03267:stä on pääosin hyväksyvä | WEP-KOHTALAISESTI-KORKEA | 75% |
+| L jättää varauksen rajoittamatonta säilöönottoa vastaan | WEP-KOHTALAINEN | 35% (nostettu alkuperäisestä 10%) |
+| MP selviää 4 prosentin kynnyksestä | WEP-KOHTALAINEN | 55% |
+| Koalitio eheänä vaalipäivään saakka | WEP-KORKEA | 92% |
+
+#### Vahvistettu arvio: Datatriadi
+
+Läpikäynti 2 vahvistaa, että datatriadin arvio synthesis-summary.md:ssä on analyyttisesti perusteltu. Kolme itsenäistä poliittista perustetta on olemassa (eIDAS-noudattaminen, Riksrevisionin petosnlöydökset, kunnalliset kapasiteettivajeet) — "koordinointi"-tulkinta on päätelmäpohjainen. Ylläpidetty arvio on, että lainsäädäntöarkkitehtuuri paljastaa johdonmukaisen suunnittelun riippumatta siitä, oliko koordinointi eksplisiittistä. Paholaisen asianajan haaste (devils-advocate.md, Haaste 2) on asianmukaisesti huomioitu.
+
+#### Korjattu: PIR-RT-001-tila
+
+Läpikäynti 2: Väite "HD03267 Bilaga 5 sulkee turvallisuuslinjan" tulisi käsitellä kohtalaisella luottamuksella. Emme ole EROTTANEET Lagrådets yttranden todellista tekstiä Bilaga 5:stä. Päättely siitä, että hallitus eteni ilman suurta tarkistusta "viittaa" hyväksyvään yttranden, on epäsuoraa päättelyä. Tarkistettu kielenkäyttö:
+
+*"PIR-RT-001 turvallisuuslinja: TODENNÄKÖINEN OSITTAINEN RATKAISU — HD03267 Bilaga 5 viittaa Lagrådets yttranden. Hallituksen päätös edetä ilman suurten muutosten merkitsemistä viittaa siihen, että yttrande oli pääosin hyväksyvä. KERUUVAJE: Yttranden todellista tekstiä ei ole eritetty. FI-01-muunnos on olemassa maahanmuuttoesityksille; Bil.5 koko teksti tulisi kerätä seuraavassa istunnossa."*
+
+#### Vahvistettu: Lasten säilöönottamisen täytäntöönpanoriski
+
+HD03267:ää koskevassa osiossa tulisi mainita, että lasten säilöönotto turvallisuusosastoilla saattaa kohdata nopeutetun oikeudellisen haasteen Rädda Barnenilta/UNICEFilta ennen täytäntöönpanoa, mikä saattaa johtaa väliaikaiseen kieltomääräykseen. Aikataulu 2027-03-01 antaa 10 kuukautta, mutta lapsimääräysten perustuslaillinen haaste voi edetä nopeammin kuin lainsäädäntömuutos.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_fr.md -->
+
+---
+
+### Jugement de renseignement principal
+
+**La coalition suédoise Tidö exécute une consolidation coordonnée de l'État sécuritaire avant les élections de septembre 2026.** En une seule journée législative, le gouvernement a soumis trois propositions majeures couvrant la détention sécuritaire, la surveillance numérique et l'infrastructure d'identité — tandis que deux rapports de comité JuU sur la sécurité publique et la violence psychologique progressent vers des votes en chambre. Il s'agit d'une capitalisation législative préélectorale : achever le programme sécuritaire avant la pause estivale verrouille l'avantage narratif central de la coalition sur le bloc gauche-vert.
+
+---
+
+### Points principaux — 7 mai 2026
+
+#### 🔴 CRITIQUE : HD03267 — Extension de la détention sécuritaire
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+Signée par la Première ministre Ebba Busch et le ministre de la Justice Gunnar Strömmer, cette proposition :
+- **Supprime la limite de durée de la détention** pour les étrangers adultes classifiés comme menaces sécuritaires qualifiées (cas du niveau SÄPO)
+- **Abaisse le standard de preuve** pour la détention (du terme "sannolikt" à un seuil moins exigeant)
+- **Prolonge les limites de détention pour les enfants** avec de nouvelles exigences d'examen périodique
+- **Autorise le placement d'enfants détenus dans des ailes de sécurité**
+- **Renforce les sanctions** pour les violations d'interdiction de retour et pour l'assistance à des personnes interdites
+- **Précise le motif d'expulsion** pour la sécurité nationale (remplace "allvarligt hot" par un langage plus opérationnel)
+
+Le Lagrådets yttrande est inclus (Bilaga 5), offrant une fermeture partielle de PIR-RT-001 sur le volet détention sécuritaire, bien que les propositions de migration séparées HD03262/HD03265 attendent encore l'examen du Lagrådet.
+
+**Date d'entrée en vigueur** : 2027-03-01.
+
+**Lecture politique** : Avec SD comme partenaire de coalition et l'élection à 128 jours, cette proposition est à la fois politique sécuritaire et positionnement électoral. Chaque parti d'opposition contestera la détention sans limite de durée sur la base des droits de l'homme ; le gouvernement répondra avec les évaluations de menaces de la SÄPO et les arguments de conformité CEDH (déjà traités au §4.3.2).
+
+---
+
+#### 🟠 ÉLEVÉ : HD03261 — Extension des pouvoirs de surveillance de Skatteverket
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket (l'Agence fiscale) obtient des pouvoirs étendus pour effectuer **un appariement de données entre systèmes** dans le domaine de l'enregistrement de la population (folkbokföring) — le système d'identité fondamental sous-tendant tout accès à l'État-providence suédois.
+
+Préoccupations clés :
+- Les organisations de libertés civiles contesteront l'étendue de l'accès aux données
+- Lié à HD01FiU43 (prévention de la fraude sociale communale) — une expansion coordonnée de l'autorité de vérification de l'État
+- Risques pour la vie privée des populations vulnérables qui peuvent avoir des raisons légitimes d'avoir un enregistrement non standard (p. ex. victimes de violence domestique, personnes apatrides)
+
+---
+
+#### 🟠 ÉLEVÉ : HD03250 — Identité électronique d'État
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+La Suède s'achemine vers l'établissement d'une **identité numérique émise par l'État** pour compléter/remplacer le système BankID émis par les banques. Il s'agit d'une étape importante en matière d'infrastructure :
+- Réduit le risque de monopole de l'écosystème BankID privé
+- Permet l'accès aux services gouvernementaux numériques pour ceux qui n'ont pas de comptes bancaires
+- Soulève des questions sur la surveillance, la conservation des données et l'accès de l'État aux enregistrements d'authentification
+- Lié à HD03261 — même expansion de l'architecture de l'État des données
+
+---
+
+#### 🟠 ÉLEVÉ : HD01FiU37 — Gestion de crise financière
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+Le comité des finances recommande l'établissement d'une nouvelle **fonction opérationnelle de gestion de crise** pour le secteur financier. Cela fait suite aux préoccupations de risque systémique à l'échelle de l'UE après SVB (mars 2023) et reflète l'exposition suédoise via l'exposition de la Riksbank au stress bancaire européen. Lié à HD01FiU38 (règles de compensation des dérivés OTC — mise en œuvre de l'EMIR européen).
+
+---
+
+### Signaux de l'opposition
+
+Les questions écrites d'aujourd'hui révèlent des priorités de l'opposition coordonnées :
+- **S** (HD10475, HD10479) : Normes du travail de l'OIT et politique des minorités — cadrage des droits du travail et de la cohésion sociale avant les élections
+- **MP** (HD10476, HD10478) : Accès humanitaire à Gaza × 2 — maintien du profil humanitaire vs. le silence de Tidö
+- **SD** (HD11793, HD11795) : Formation des journalistes et soutien au peuple iranien — SD renforçant sa marque culture-sécurité dans le cadre de la coalition
+- **MP** (HD11796) : École en prison pour les 13 ans — lien direct avec LAGRÅDET-246 PIR ouverte sur l'âge de responsabilité pénale
+
+---
+
+### Évaluation WEP (72h)
+
+*Confiance qualifiée — millésime WEO-2026-04, IMF IFS SDMX dégradé*
+
+L'ensemble de la législation sécuritaire (HD03267, JuU32, JuU39) atteindra le plancher de la chambre en juin avant la pause estivale. **La cohésion de la coalition est ÉLEVÉE** pour les votes sécuritaires — M, KD, SD et L devraient voter ensemble. **La fragmentation de l'opposition est probable** — S s'opposera au principe de l'extension de la détention mais pourrait faire face à des tensions internes sur certains aspects sécuritaires ; V s'y opposera de manière globale ; MP se concentre sur la détention des enfants.
+
+**Probabilité d'adoption de HD03267** : 85% (WEP-ÉLEVÉE) avant la pause.  
+**Probabilité d'adoption de HD03250** : 75% (WEP-MODÉRÉE-ÉLEVÉE) — soutien bipartite à l'infrastructure e-ID probable.  
+**Probabilité d'adoption de HD03261** : 80% (WEP-ÉLEVÉE) — le cadrage de la lutte contre la fraude sociale est largement populaire.
+
+---
+
+### Mises à jour PIR
+
+| PIR | Action 72h |
+|-----|-----------|
+| PIR-RT-001 | FERMETURE PARTIELLE sur le volet sécuritaire via HD03267 Bil.5 — Lagrådet a émis un avis sur la détention. Propositions de migration HD03262/65 encore ouvertes. |
+| LAGRÅDET-246 | ACTIF — La pression MP via HD11796 augmente le coût politique des retards |
+| PIR-RT-005 | Surveiller la fenêtre de réponse de Carlson (délai 2026-05-25) |
+| PIR-RT-006 | Nucléaire NU19 en vigueur le 2026-06-17 — 41 jours. Surveiller les dépôts des compagnies énergétiques |
+| PIR-3/KU39 | Vote constitutionnel prévu le 2026-06-16 — 40 jours |
+
+---
+
+*Sources : riksdag-regering-mcp (en direct), HD03267 texte intégral, chaîne PIR précédente 2026-04-29—2026-05-05*  
+*Contexte économique IMF : WEO-2026-04 (millésime d'1 mois, non périmé). IFS SDMX dégradé — aucune mise à jour macroéconomique suédoise mensuelle disponible.*
+
+---
+
+### Passage 2 — Améliorations critiques (2026-05-07)
+
+#### Langage WEP affiné
+
+**Langage de probabilité corrigé (remplaçant les termes informels)** :
+
+| Affirmation | Terme WEP | % |
+|-------|---------|---|
+| HD03267 adoptée avant la pause estivale | WEP-ÉLEVÉE | 85% |
+| Le Lagrådets yttrande sur HD03267 est globalement favorable | WEP-MODÉRÉE-ÉLEVÉE | 75% |
+| L dépose une réserve contre la détention illimitée | WEP-MODÉRÉE | 35% (relevé de 10% initial) |
+| MP survit au seuil de 4% | WEP-MODÉRÉE | 55% |
+| Coalition intacte jusqu'au jour du scrutin | WEP-ÉLEVÉE | 92% |
+
+#### Évaluation renforcée : Le triptyque des données
+
+Le passage 2 confirme que l'évaluation du triptyque des données dans synthesis-summary.md est analytiquement solide. Trois justifications politiques indépendantes existent (conformité eIDAS, résultats de fraude du Riksrevisionen, lacunes de capacité communale) — l'interprétation de la "coordination" est inférentielle. L'évaluation maintenue est que l'architecture législative révèle une conception cohérente indépendamment du fait que la coordination était explicite. Le défi de l'avocat du diable (devils-advocate.md, Défi 2) est correctement noté.
+
+#### Corrigé : Statut de PIR-RT-001
+
+Passage 2 : L'affirmation que "HD03267 Bilaga 5 ferme le volet sécuritaire" devrait être traitée avec une confiance modérée. Nous n'avons PAS extrait le texte réel du Lagrådets yttrande de Bilaga 5. Le raisonnement selon lequel le gouvernement a procédé sans révision majeure "suggère" un yttrande favorable est une inférence indirecte. Langage révisé :
+
+*"PIR-RT-001 volet sécuritaire : RÉSOLUTION PARTIELLE PROBABLE — HD03267 Bilaga 5 fait référence au Lagrådets yttrande. La décision du gouvernement de procéder sans signaler de modifications majeures suggère que l'yttrande était globalement favorable. LACUNE DE COLLECTE : Le texte réel de l'yttrande n'a pas été extrait. La variante FI-01 existe pour les propositions de migration ; le texte intégral de Bil.5 devrait être extrait lors de la prochaine session."*
+
+#### Renforcé : Risque d'implémentation de la détention des enfants
+
+La section sur HD03267 devrait noter que la détention d'enfants dans des ailes de sécurité pourrait faire face à un défi juridique accéléré de Rädda Barnen/UNICEF avant la mise en œuvre, pouvant potentiellement entraîner une injonction provisoire. La date limite du 2027-03-01 donne 10 mois, mais un défi constitutionnel des dispositions relatives aux enfants pourrait progresser plus rapidement qu'une modification législative.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_he.md -->
+
+**סיווג**: ציבורי | **אמינות**: גבוהה | **אופק**: T+72h / T+30d / T+128d (בחירות)
+
+---
+
+### הערכת מודיעין מובילה
+
+**קואליציית טידו השוודית מבצעת איחוד מתואם של מדינת הביטחון לפני בחירות ספטמבר 2026.** ביום חקיקה אחד, הגישה הממשלה שלושה הצעות חוק מרכזיות הכוללות מעצר ביטחוני, מעקב דיגיטלי ותשתית זהות — בעוד שני דוחות ועדת JuU בנושא ביטחון הציבור ואלימות פסיכולוגית מתקדמים לקראת הצבעות בלשכה. מדובר בבנקאות חקיקתית לפני הבחירות: השלמת תוכנית הביטחון לפני הפסקת הקיץ נועלת את היתרון הסיפורי המרכזי של הקואליציה מול גוש שמאל-ירוק.
+
+---
+
+### נושאים מובילים — 7 במאי 2026
+
+#### 🔴 קריטי: HD03267 — הרחבת מעצר ביטחוני
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+חתומה על-ידי ראשת הממשלה אבה בוש ושר המשפטים גונאר סטרומר, הצעת חוק זו:
+- **מסירה את המגבלה הזמנית על המעצר** של אזרחים זרים בוגרים המסווגים כאיומים ביטחוניים מוסמכים (תיקי רמת SÄPO)
+- **מורידה את רף הראיות** למעצר (מהמונח "sannolikt" לסף נמוך יותר)
+- **מאריכה מגבלות מעצר לקטינים** עם דרישות בדיקה תקופתית חדשות
+- **מתירה הכנסת קטינים עצורים לכנפי ביטחון**
+- **מחמירה עונשים** על הפרות צו איסור כניסה ועל סיוע לאנשים אסורים
+- **מבהירה את עילת הגירוש** לביטחון לאומי (מחליפה "allvarligt hot" בשפה מבצעית יותר)
+
+Lagrådets yttrande כלול (Bilaga 5), ומספק סגירה חלקית של PIR-RT-001 בקו המעצר הביטחוני, אם כי הצעות ההגירה הנפרדות HD03262/HD03265 עדיין ממתינות לבדיקת Lagrådet.
+
+**תאריך כניסה לתוקף**: 2027-03-01.
+
+**קריאה פוליטית**: עם SD כשותף קואליציה והבחירות 128 ימים קדימה, הצעה זו היא בו זמנית מדיניות ביטחון ומיצוב בחירות. כל מפלגת אופוזיציה תאתגר מעצר ללא הגבלת זמן על בסיס זכויות אדם; הממשלה תגיב עם הערכות האיום של SÄPO וטיעוני ציות ל-ECHR (כבר נדון ב-§4.3.2).
+
+---
+
+#### 🟠 גבוה: HD03261 — הרחבת סמכויות המעקב של Skatteverket
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket (רשות המסים) מקבלת סמכויות מורחבות לביצוע **התאמת נתונים בין מערכות** בתחום רישום האוכלוסין (folkbokföring) — מערכת הזהות הבסיסית המשמשת בסיס לגישה לכל שירותי מדינת הרווחה השוודית.
+
+חששות מרכזיים:
+- ארגוני חירויות האזרח יאתגרו את רוחב הגישה לנתונים
+- קשור ל-HD01FiU43 (מניעת הונאת רווחה עירונית) — הרחבה מתואמת של סמכות האימות הממלכתית
+- סיכוני פרטיות לאוכלוסיות פגיעות שעשויות להיות להן סיבות לגיטימיות לרישום לא-סטנדרטי (למשל קורבנות אלימות במשפחה, חסרי אזרחות)
+
+---
+
+#### 🟠 גבוה: HD03250 — זהות אלקטרונית ממלכתית
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+שוודיה מתקדמת לכינון **זהות דיגיטלית שהממשלה מנפיקה** להשלמת/החלפת מערכת BankID שהבנקים מנפיקים. זהו אבן דרך תשתיתית משמעותית:
+- מפחית סיכון מונופול מהמערכת האקולוגית הפרטית של BankID
+- מאפשר גישה לשירותים ממשלתיים דיגיטליים לאלה שאין להם חשבונות בנק
+- מעלה שאלות לגבי מעקב, שמירת נתונים וגישת הממשלה לרשומות אימות
+- קשור ל-HD03261 — אותה הרחבה של ארכיטקטורת מדינת הנתונים
+
+---
+
+#### 🟠 גבוה: HD01FiU37 — ניהול משבר פיננסי
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+ועדת האוצר ממליצה על הקמת **פונקציה תפעולית חדשה לניהול משבר** לסקטור הפיננסי. הדבר עוקב אחרי חששות סיכון מערכתי ברחבי האיחוד האירופי לאחר SVB (מרץ 2023) ומשקף חשיפה שוודית דרך חשיפת Riksbank ללחץ בנקאי אירופי. קשור ל-HD01FiU38 (כללי סילוק נגזרים OTC — יישום EMIR האירופי).
+
+---
+
+### אותות האופוזיציה
+
+השאלות הכתובות של היום חושפות עדיפויות אופוזיציה מתואמות:
+- **S** (HD10475, HD10479): תקני עבודה של ארגון העבודה הבינלאומי ומדיניות מיעוטים — מסגור זכויות עבודה וסולידריות חברתית לפני הבחירות
+- **MP** (HD10476, HD10478): גישה הומניטרית לעזה × 2 — שמירה על פרופיל הומניטרי לעומת שתיקת טידו
+- **SD** (HD11793, HD11795): הכשרת עיתונאים ותמיכה בעם האיראני — SD מחזקת את מותגה תרבות-ביטחון בתוך מסגרת הקואליציה
+- **MP** (HD11796): בית ספר בכלא לבני 13 — קשר ישיר ל-LAGRÅDET-246 PIR פתוח בנושא גיל אחריות פלילית
+
+---
+
+### הערכת WEP (72h)
+
+*אמינות מוסמכת — וינטאג' WEO-2026-04, IMF IFS SDMX מדורדר*
+
+אשכול חקיקת הביטחון (HD03267, JuU32, JuU39) יגיע לרצפת הלשכה ביוני לפני הפסקת הקיץ. **לכידות הקואליציה גבוהה** להצבעות ביטחון — צפוי ש-M, KD, SD ו-L יצביעו יחד. **פיצול האופוזיציה סביר** — S תתנגד להרחבת המעצר מתוך עיקרון אך עלולה להתמודד עם מתחים פנימיים בנושאי ביטחון מסוימים; V תתנגד מקיפה; MP מתמקדת במעצר ילדים.
+
+**הסתברות לאישור HD03267**: 85% (WEP-גבוה) לפני ההפסקה.  
+**הסתברות לאישור HD03250**: 75% (WEP-בינוני-גבוה) — תמיכה דו-מפלגתית לתשתית e-ID סבירה.  
+**הסתברות לאישור HD03261**: 80% (WEP-גבוה) — מסגור מניעת הונאת רווחה פופולרי בהרחבה.
+
+---
+
+### עדכוני PIR
+
+| PIR | פעולה 72h |
+|-----|-----------|
+| PIR-RT-001 | סגירה חלקית על קו הביטחון דרך HD03267 Bil.5 — Lagrådet נתן דעתו על המעצר. הצעות הגירה HD03262/65 עדיין פתוחות. |
+| LAGRÅDET-246 | פעיל — לחץ MP דרך HD11796 מגדיל את העלות הפוליטית של העיכוב |
+| PIR-RT-005 | לנטר חלון תגובת קרלסון (מועד אחרון 2026-05-25) |
+| PIR-RT-006 | אנרגיה גרעינית NU19 נכנסת לתוקף 2026-06-17 — 41 ימים. לצפות בהגשות חברות האנרגיה |
+| PIR-3/KU39 | הצבעה חוקתית מתוכננת 2026-06-16 — 40 ימים |
+
+---
+
+*מקורות: riksdag-regering-mcp (ישיר), HD03267 טקסט מלא, שרשרת PIR קודמת 2026-04-29—2026-05-05*  
+*הקשר כלכלי IMF: WEO-2026-04 (וינטאג' של חודש אחד, לא מיושן). IFS SDMX מדורדר — אין עדכון מקרו-כלכלי חודשי שוודי זמין.*
+
+---
+
+### מעבר 2 — שיפורים קריטיים (2026-05-07)
+
+#### שפת WEP מחודדת
+
+**שפת הסתברות מתוקנת (מחליפה מונחים בלתי-רשמיים)**:
+
+| טענה | מונח WEP | % |
+|-------|---------|---|
+| HD03267 מאושרת לפני הפסקת הקיץ | WEP-גבוה | 85% |
+| Lagrådets yttrande על HD03267 מקבל ברובו | WEP-בינוני-גבוה | 75% |
+| L מגישה הסתייגות נגד מעצר ללא הגבלה | WEP-בינוני | 35% (עלה מ-10% ראשוני) |
+| MP עוברת את רף 4% | WEP-בינוני | 55% |
+| קואליציה שלמה עד יום הבחירות | WEP-גבוה | 92% |
+
+#### הערכה מחוזקת: שלישיית הנתונים
+
+מעבר 2 מאשש שהערכת שלישיית הנתונים ב-synthesis-summary.md מוצקה מבחינה אנליטית. קיימות שלוש הצדקות מדיניות עצמאיות (עמידה ב-eIDAS, ממצאי הונאת Riksrevisionen, פערי קיבולת עירוניים) — פרשנות ה"תיאום" היא מסקנתית. ההערכה השמורה היא שהארכיטקטורה החקיקתית חושפת תכנון עקבי בין אם התיאום היה מפורש ובין אם לאו. אתגר סנגור השטן (devils-advocate.md, אתגר 2) מצוין כראוי.
+
+#### מתוקן: מצב PIR-RT-001
+
+מעבר 2: יש להתייחס לטענה ש"HD03267 Bilaga 5 סוגר את קו הביטחון" באמינות בינונית. לא חילצנו את הטקסט הממשי של Lagrådets yttrande מ-Bilaga 5. ההיסק שהממשלה המשיכה ללא עדכון מהותי "מרמז" על yttrande מקבל הוא מסקנה עקיפה. שפה מעודכנת:
+
+*"PIR-RT-001 קו ביטחון: פתרון חלקי סביר — HD03267 Bilaga 5 מפנה ל-Lagrådets yttrande. החלטת הממשלה להמשיך ללא סימון שינויים משמעותיים מרמזת ש-yttrande היה מקבל ברובו. פער איסוף: טקסט ה-yttrande בפועל לא חולץ. קיים וריאנט FI-01 להצעות הגירה; יש לחלץ טקסט מלא של Bil.5 בהפעלה הבאה."*
+
+#### מחוזק: סיכון יישום מעצר ילדים
+
+הסעיף בנושא HD03267 צריך לציין שמעצר ילדים בכנפי ביטחון עשוי להתמודד עם אתגר משפטי מזורז מ-Rädda Barnen/UNICEF לפני היישום, העלול להביא לצו מניעה זמני. ציר הזמן 2027-03-01 נותן 10 חודשים, אך אתגר חוקתי על הוראות הילדים עשוי להתקדם מהר יותר מתיקון חקיקתי.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_ja.md -->
+
+**分類**: 公開 | **信頼度**: 高 | **ホライズン**: T+72h / T+30d / T+128d（選挙）
+
+---
+
+### 主要情報判断
+
+**スウェーデンのティドー連立政権は、2026年9月の選挙前に協調的な安全保障国家強化を実施している。** 一日の立法活動で、政府は安全拘留、デジタル監視、身元確認インフラに関する3件の主要法案を提出し、JuU委員会による公安と心理的暴力に関する2件の委員会報告が本会議での採決に向けて進んでいる。これは選挙前の立法バンキングであり、夏季休会前に安全保障プログラムを完成させることで、左翼・緑の連合に対する連立政権の中核的な言説上の優位を確保することを目的としている。
+
+---
+
+### 主要事項 — 2026年5月7日
+
+#### 🔴 重大: HD03267 — 安全拘留の拡大
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+エッバ・ブッシュ首相とグンナル・ストロンメル法務大臣が署名したこの法案は以下を含む：
+- **拘留時間制限の撤廃**: 資格のある安全保障上の脅威（SAP0レベル案件）として分類された成人外国人の拘留
+- **証拠基準の引き下げ**: 拘留のための証拠基準を「sannolikt」から低い閾値へ
+- **子どもの拘留期間制限の延長**: 新たな定期的な審査要件を伴う
+- **安全部門への拘留中の子どもの収容許可**
+- **再入国禁止違反および禁止者への支援に対する刑罰の強化**
+- **国家安全保障に関する退去強制根拠の明確化**（「allvarligt hot」をより実施的な言語に変更）
+
+Lagrådets yttrande が添付されており（Bilaga 5）、安全拘留ラインにおいてPIR-RT-001の部分的な終結をもたらしているが、移民関連の別法案HD03262/HD03265はLagrådetの審査を待ち続けている。
+
+**施行日**: 2027-03-01。
+
+**政治的解釈**: SDを連立パートナーとし、選挙128日前という状況で、この法案は安全保障政策と選挙戦略の両面を持つ。すべての野党が人権の観点から時間制限のない拘留を争う。政府はSÄPOの脅威評価とECHRコンプライアンス論（§4.3.2で既述）で反論する。
+
+---
+
+#### 🟠 高: HD03261 — Skatteverketの監視権限拡大
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket（国税局）は、スウェーデン福祉国家へのすべてのアクセスの基盤となる住民登録（folkbokföring）領域での**クロスシステム・データマッチング**を実施するための拡大された権限を得る。
+
+主要な懸念点：
+- 市民的自由団体はデータアクセスの広さを争う
+- HD01FiU43（市区町村の福祉詐欺防止）に連結 — 国家の検証権限の協調的な拡大
+- 非標準的な登録に正当な理由がある可能性のある脆弱な人口（家庭内暴力の被害者、無国籍者など）のプライバシーリスク
+
+---
+
+#### 🟠 高: HD03250 — 国家e-ID
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+スウェーデンは、銀行発行のBankIDシステムを補完・代替するための**政府発行デジタルID**の確立に向けて動いている。これは重要なインフラのマイルストーンである：
+- 民間BankIDエコシステムからの独占リスクを低減
+- 銀行口座を持たない人々へのデジタル行政サービスへのアクセスを可能にする
+- 監視、データ保管、認証記録への国家アクセスに関する疑問を提起
+- HD03261に連結 — データ国家アーキテクチャの同様の拡張
+
+---
+
+#### 🟠 高: HD01FiU37 — 金融危機管理
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+財政委員会は金融セクターの新たな**運営上の危機管理機能**の設立を勧告している。これはSVB後（2023年3月）のEU全体の組織的リスク懸念に続くものであり、欧州銀行ストレスへのリクスバンクの暴露を通じたスウェーデンの暴露を反映している。HD01FiU38（OTCデリバティブ清算規則 — EU EMIR実施）に連結。
+
+---
+
+### 野党シグナル
+
+今日の書面質問は調整された野党の優先事項を明らかにしている：
+- **S**（HD10475、HD10479）：ILO労働基準と少数民族政策 — 選挙前の労働権と社会的結束のフレーミング
+- **MP**（HD10476、HD10478）：ガザ人道的アクセス × 2 — ティドーの沈黙に対する人道的プロフィールの維持
+- **SD**（HD11793、HD11795）：ジャーナリスト研修とイラン人民への支持 — 連立の枠組み内でSDが文化・安全保障ブランドを強化
+- **MP**（HD11796）：13歳のための刑務所学校 — 刑事責任年齢に関するLAGRÅDET-246オープンPIRとの直接的な連結
+
+---
+
+### WEP評価（72h）
+
+*資格のある信頼度 — WEO-2026-04ヴィンテージ、IMF IFS SDMX劣化*
+
+安全保障立法クラスター（HD03267、JuU32、JuU39）は夏季休会前の6月に本会議フロアに到達する。安全保障投票における**連立の結束は高い** — M、KD、SD、Lが共に投票することが見込まれる。**野党の分裂は可能性が高い** — SはD拘留拡大に原則として反対するが、一部の安全保障側面で内部緊張に直面する可能性がある；Vは包括的に反対；MPは子どもの拘留に集中。
+
+**HD03267採択の確率**: 85%（WEP-高）休会前。  
+**HD03250採択の確率**: 75%（WEP-中程度-高）— e-IDインフラへの超党派的支持が見込まれる。  
+**HD03261採択の確率**: 80%（WEP-高）— 福祉詐欺防止フレーミングが広く人気。
+
+---
+
+### PIRアップデート
+
+| PIR | 72h行動 |
+|-----|-----------|
+| PIR-RT-001 | HD03267 Bil.5経由で安全ラインの部分的終結 — Lagrådetが拘留について意見を表明。移民法案HD03262/65はまだ未解決。 |
+| LAGRÅDET-246 | 活発 — HD11796経由のMP圧力が遅延の政治的コストを高める |
+| PIR-RT-005 | カールソンの回答期限ウィンドウを監視（期限2026-05-25） |
+| PIR-RT-006 | 原子力NU19が2026-06-17施行 — 41日。エネルギー企業の申請を監視 |
+| PIR-3/KU39 | 憲法的投票が2026-06-16に予定 — 40日 |
+
+---
+
+*出典：riksdag-regering-mcp（ライブ）、HD03267全文、以前のPIRチェーン2026-04-29—2026-05-05*  
+*IMF経済的背景：WEO-2026-04（1ヶ月ヴィンテージ、陳腐化なし）。IFS SDMX劣化 — スウェーデンの月次マクロ経済更新利用不可。*
+
+---
+
+### パス2 — 重大な改善（2026-05-07）
+
+#### 精緻化されたWEP言語
+
+**修正された確率言語（非公式用語の代替）**：
+
+| 主張 | WEP用語 | % |
+|-------|---------|---|
+| HD03267が夏季休会前に採択 | WEP-高 | 85% |
+| HD03267に関するLagrådets yttrande が概ね受け入れ的 | WEP-中程度-高 | 75% |
+| Lが無制限拘留に留保を提出 | WEP-中程度 | 35%（最初の10%から引き上げ） |
+| MPが4%のハードルを超える | WEP-中程度 | 55% |
+| 連立が選挙日まで維持 | WEP-高 | 92% |
+
+#### 強化された評価：データトリアド
+
+パス2はsynthesis-summary.mdのデータトリアド評価が分析的に健全であることを確認。3つの独立した政策的根拠が存在する（eIDASコンプライアンス、Riksrevisionenの詐欺調査結果、市区町村の能力ギャップ）— 「調整」の解釈は推論的。維持された評価は、協調が明示的であったかどうかに関わらず、立法アーキテクチャが一貫したデザインを示しているというもの。悪魔の代弁者の挑戦（devils-advocate.md、挑戦2）が正しく注記されている。
+
+#### 修正：PIR-RT-001状況
+
+パス2：「HD03267 Bilaga 5が安全保障ラインを閉じる」という主張は中程度の信頼度で扱うべきである。我々はBilaga 5からLagrådets yttrande の実際のテキストを抽出していない。政府が大きな修正なしに進んだことが「承認的な yttrande を示唆する」という推論は間接的な推論。修正された言語：
+
+*「PIR-RT-001安全保障ライン：おそらく部分的な解決 — HD03267 Bilaga 5はLagrådets yttrande を参照。政府が大きな変更を示すことなく進んだ決定は、yttrande が概ね受け入れ的であったことを示唆。収集ギャップ：yttrande の実際のテキストが抽出されていない。移民法案にはFI-01バリアントが存在する；Bil.5の全文は次のセッションで抽出すべき。」*
+
+#### 強化：子どもの拘留実施リスク
+
+HD03267に関するセクションは、安全部門への子どもの拘留は実施前にRädda Barnen/UNICEFからの迅速な法的挑戦に直面する可能性があり、暫定差止命令につながる可能性があることに言及すべき。タイムライン2027-03-01は10ヶ月を与えるが、子どもの条項への憲法的挑戦は立法的修正よりも速く進む可能性がある。
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_ko.md -->
+
+**분류**: 공개 | **신뢰도**: 높음 | **지평**: T+72h / T+30d / T+128d (선거)
+
+---
+
+### 핵심 정보 판단
+
+**스웨덴의 티되 연립정권이 2026년 9월 선거를 앞두고 협조적인 안보국가 강화를 실시하고 있다.** 단 하루의 입법 활동에서 정부는 안전 구금, 디지털 감시, 신원 확인 인프라에 관한 3건의 주요 법안을 제출했으며, JuU 위원회의 공공 안전 및 심리적 폭력에 관한 2건의 위원회 보고서가 본회의 표결을 향해 나아가고 있다. 이는 선거 전 입법 선점으로, 여름 휴회 전에 안보 프로그램을 완성하여 좌파-녹색 연합에 대한 연립의 핵심 담론적 우위를 확보하려는 것이다.
+
+---
+
+### 주요 사항 — 2026년 5월 7일
+
+#### 🔴 중요: HD03267 — 안전 구금 확대
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+에바 부쉬 총리와 군나르 스트뢰메르 법무장관이 서명한 이 법안은 다음을 포함한다:
+- **구금 기간 제한 폐지**: 자격을 갖춘 안보 위협(SÄPO 수준 사건)으로 분류된 성인 외국인 구금
+- **증거 기준 완화**: 구금을 위한 증거 기준을 「sannolikt」에서 낮은 임계값으로
+- **아동 구금 기간 제한 연장**: 새로운 정기적 심사 요건 포함
+- **안전 부문에서의 구금 중 아동 수용 허가**
+- **재입국 금지 위반 및 금지 대상자 지원에 대한 처벌 강화**
+- **국가 안보 관련 추방 근거 명확화** ('allvarligt hot'를 더 실행 가능한 언어로 변경)
+
+Lagrådets yttrande가 첨부되어 있으며(Bilaga 5), 안보 구금 라인에서 PIR-RT-001의 부분적 종결을 가져오지만, 이민 관련 별도 법안 HD03262/HD03265는 Lagrådet 심사를 계속 기다리고 있다.
+
+**시행일**: 2027-03-01.
+
+**정치적 해석**: SD를 연립 파트너로 하고 선거 128일 전이라는 상황에서, 이 법안은 안보 정책과 선거 전략 모두를 담당한다. 모든 야당이 인권 관점에서 무제한 구금에 이의를 제기한다. 정부는 SÄPO 위협 평가와 ECHR 준수 논거(§4.3.2에 이미 기술)로 반박한다.
+
+---
+
+#### 🟠 높음: HD03261 — Skatteverket 감시 권한 확대
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket(국세청)은 스웨덴 복지국가의 모든 접근의 기반이 되는 주민 등록(folkbokföring) 영역에서 **교차 시스템 데이터 매칭**을 실시하기 위한 확대된 권한을 얻는다.
+
+주요 우려 사항:
+- 시민 자유 단체는 데이터 접근 범위에 이의를 제기
+- HD01FiU43(지방자치단체 복지 사기 방지)과 연결 — 국가 검증 권한의 협조적 확대
+- 비표준적 등록에 정당한 이유가 있을 수 있는 취약 인구(가정폭력 피해자, 무국적자 등)의 프라이버시 위험
+
+---
+
+#### 🟠 높음: HD03250 — 국가 e-ID
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+스웨덴은 은행 발급 BankID 시스템을 보완하거나 대체하기 위한 **정부 발급 디지털 신분증** 수립을 향해 나아가고 있다. 이는 중요한 인프라 마일스톤이다:
+- 민간 BankID 생태계로부터의 독점 위험 감소
+- 은행 계좌가 없는 사람들이 디지털 행정 서비스에 접근 가능
+- 감시, 데이터 보관, 인증 기록에 대한 국가 접근에 관한 의문 제기
+- HD03261과 연결 — 데이터 국가 아키텍처의 유사한 확장
+
+---
+
+#### 🟠 높음: HD01FiU37 — 금융 위기 관리
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+재정위원회는 금융 부문의 새로운 **운영 위기 관리 기능** 설립을 권고하고 있다. 이는 SVB 이후(2023년 3월) EU 전반의 체계적 위험 우려에 이어지는 것으로, 유럽 은행 스트레스에 대한 Riksbank의 노출을 통한 스웨덴의 노출을 반영한다. HD01FiU38(OTC 파생상품 청산 규칙 — EU EMIR 시행)과 연결.
+
+---
+
+### 야당 신호
+
+오늘의 서면 질문은 조율된 야당 우선순위를 드러낸다:
+- **S** (HD10475, HD10479): ILO 노동 기준 및 소수 민족 정책 — 선거 전 노동권과 사회적 결속 프레이밍
+- **MP** (HD10476, HD10478): 가자 인도적 접근 × 2 — 티되의 침묵에 대한 인도적 프로필 유지
+- **SD** (HD11793, HD11795): 저널리스트 훈련 및 이란 인민 지지 — 연립 틀 내에서 SD가 문화·안보 브랜드 강화
+- **MP** (HD11796): 13세를 위한 교도소 학교 — 형사 책임 연령에 관한 LAGRÅDET-246 열린 PIR과의 직접적 연결
+
+---
+
+### WEP 평가 (72h)
+
+*자격 신뢰도 — WEO-2026-04 빈티지, IMF IFS SDMX 성능 저하*
+
+안보 입법 클러스터(HD03267, JuU32, JuU39)는 여름 휴회 전 6월에 본회의에 도달한다. 안보 표결에서 **연립의 결속은 높음** — M, KD, SD, L이 함께 투표할 것으로 예상. **야당의 분열 가능성** — S는 원칙적으로 무제한 구금 확대에 반대하지만 일부 안보 측면에서 내부 긴장에 직면할 수 있음; V는 포괄적으로 반대; MP는 아동 구금에 집중.
+
+**HD03267 채택 확률**: 85% (WEP-높음) 휴회 전.  
+**HD03250 채택 확률**: 75% (WEP-중간-높음) — e-ID 인프라에 대한 초당파적 지지 예상.  
+**HD03261 채택 확률**: 80% (WEP-높음) — 복지 사기 방지 프레이밍이 광범위하게 인기.
+
+---
+
+### PIR 업데이트
+
+| PIR | 72h 행동 |
+|-----|-----------|
+| PIR-RT-001 | HD03267 Bil.5를 통해 안보 라인 부분 종결 — Lagrådet가 구금에 대해 의견 표명. 이민 법안 HD03262/65는 여전히 미해결. |
+| LAGRÅDET-246 | 활성 — HD11796을 통한 MP 압력이 지연의 정치적 비용 증가 |
+| PIR-RT-005 | 칼손의 응답 기한 창을 모니터링 (기한 2026-05-25) |
+| PIR-RT-006 | 원자력 NU19가 2026-06-17 시행 — 41일. 에너지 기업의 신청 모니터링 |
+| PIR-3/KU39 | 헌법 투표가 2026-06-16 예정 — 40일 |
+
+---
+
+*출처: riksdag-regering-mcp(라이브), HD03267 전문, 이전 PIR 체인 2026-04-29—2026-05-05*  
+*IMF 경제적 배경: WEO-2026-04 (1개월 빈티지, 구식 없음). IFS SDMX 성능 저하 — 스웨덴 월간 거시경제 업데이트 이용 불가.*
+
+---
+
+### 패스 2 — 주요 개선 사항 (2026-05-07)
+
+#### 정제된 WEP 언어
+
+**수정된 확률 언어 (비공식 용어 대체)**:
+
+| 주장 | WEP 용어 | % |
+|-------|---------|---|
+| HD03267이 여름 휴회 전 채택 | WEP-높음 | 85% |
+| HD03267에 관한 Lagrådets yttrande가 대체로 수용적 | WEP-중간-높음 | 75% |
+| L이 무제한 구금에 유보 제출 | WEP-중간 | 35% (초기 10%에서 상향) |
+| MP가 4% 기준을 초과 | WEP-중간 | 55% |
+| 연립이 선거일까지 유지 | WEP-높음 | 92% |
+
+#### 강화된 평가: 데이터 트라이어드
+
+패스 2는 synthesis-summary.md의 데이터 트라이어드 평가가 분석적으로 건전함을 확인. 세 가지 독립적인 정책적 근거가 존재한다 (eIDAS 준수, Riksrevisionen 사기 조사 결과, 지방자치단체 역량 격차) — '조율'의 해석은 추론적이다. 유지된 평가는, 조율이 명시적이었는지 여부에 관계없이, 입법 아키텍처가 일관된 디자인을 보여준다는 것이다. 악마의 대변자 도전(devils-advocate.md, 도전 2)이 올바르게 기록되어 있다.
+
+#### 수정: PIR-RT-001 상황
+
+패스 2: 'HD03267 Bilaga 5가 안보 라인을 닫는다'는 주장은 중간 신뢰도로 처리해야 한다. 우리는 Bilaga 5에서 Lagrådets yttrande의 실제 텍스트를 추출하지 않았다. 정부가 주요 수정 없이 진행했다는 것이 '수용적인 yttrande를 시사한다'는 추론은 간접적인 추론이다. 수정된 언어:
+
+*"PIR-RT-001 안보 라인: 아마도 부분적 해결 — HD03267 Bilaga 5는 Lagrådets yttrande를 참조. 정부가 주요 변경 없이 진행한 결정은 yttrande가 대체로 수용적이었음을 시사. 수집 격차: yttrande의 실제 텍스트가 추출되지 않음. 이민 법안에는 FI-01 변이가 존재; Bil.5의 전문은 다음 세션에서 추출해야 함."*
+
+#### 강화: 아동 구금 실시 위험
+
+HD03267에 관한 섹션은 안전 부문에서의 아동 구금이 Rädda Barnen/UNICEF로부터의 신속한 법적 도전에 직면하여 임시 금지 명령으로 이어질 수 있다는 점을 언급해야 한다. 타임라인 2027-03-01은 10개월을 부여하지만, 아동 조항에 대한 헌법적 도전은 입법적 수정보다 빠르게 진행될 수 있다.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR | **Betrouwbaarheid**: HOOG | **Horizon**: T+72h / T+30d / T+128d (verkiezingen)
+
+---
+
+### Leidend inlichtingsoordeel
+
+**De Zweedse Tidö-coalitie voert een gecoördineerde consolidatie van de veiligheidsstaat uit vóór de verkiezingen van september 2026.** Op één enkele wetgevende dag diende de regering drie grote voorstellen in over veiligheidsbewaring, digitale bewaking en identiteitsinfrastructuur — terwijl twee JuU-commissierapporten over openbare veiligheid en psychologisch geweld naar kamerstemmingen bewegen. Dit is pre-electorale wetgevende bankvorming: het veiligheidsprogramma afronden vóór het zomerreces vergrendelt het centrale narratieve voordeel van de coalitie ten opzichte van het links-groene blok.
+
+---
+
+### Hoofdpunten — 7 mei 2026
+
+#### 🔴 KRITIEK: HD03267 — Uitbreiding van veiligheidsbewaring
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+Ondertekend door premier Ebba Busch en minister van Justitie Gunnar Strömmer bevat dit voorstel:
+- **Heft de tijdslimiet voor bewaring op** voor volwassen buitenlanders die zijn ingedeeld als gekwalificeerde veiligheidsrisico's (SÄPO-niveau zaken)
+- **Verlaagt de bewijsstandaard** voor bewaring (van "sannolikt" naar een minder strenge drempel)
+- **Verlengt de bewaringslimieten voor kinderen** met nieuwe periodieke herzieningseisen
+- **Staat de plaatsing van bewaarde kinderen op beveiligingsafdelingen toe**
+- **Verscherpt de straffen** voor overtredingen van terugkeerverboden en voor het bijstaan van verboden personen
+- **Verduidelijkt de uitwijzingsgrond** voor nationale veiligheid (vervangt "allvarligt hot" door meer operationele taal)
+
+Het Lagrådets yttrande is opgenomen (Bilaga 5), wat een gedeeltelijke PIR-RT-001-sluiting oplevert op het veiligheidsbewaring-spoor, hoewel de afzonderlijke migratievoorstellen HD03262/HD03265 nog steeds wachten op Lagrådet-beoordeling.
+
+**Datum van inwerkingtreding**: 2027-03-01.
+
+**Politieke lezing**: Met SD als coalitiegenoot en de verkiezingen 128 dagen weg is dit voorstel tegelijkertijd veiligheidsbeleid en electorale positionering. Elke oppositiepartij zal bewaring zonder tijdslimiet aanvechten op grond van mensenrechten; de regering zal reageren met SÄPO-dreigingsevaluaties en EVRM-nalevingsargumenten (al behandeld in §4.3.2).
+
+---
+
+#### 🟠 HOOG: HD03261 — Uitbreiding van bewakingsbevoegdheden van Skatteverket
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket (de Belastingdienst) verkrijgt uitgebreide bevoegdheden om **systeemoverschrijdende gegevensvergelijking** uit te voeren in het domein van bevolkingsregistratie (folkbokföring) — het fundamentele identiteitssysteem dat alle toegang tot de Zweedse verzorgingsstaat ondersteunt.
+
+Belangrijkste zorgen:
+- Burgerrechtenorganisaties zullen de breedte van de gegevenstoegang aanvechten
+- Verbonden met HD01FiU43 (preventie van gemeentelijke welzijnsfraude) — een gecoördineerde uitbreiding van de staatsbevoegdheid voor verificatie
+- Privacyrisico's voor kwetsbare bevolkingsgroepen die mogelijk legitieme redenen hebben voor niet-standaard registratie (bijv. slachtoffers van huiselijk geweld, staatlozen)
+
+---
+
+#### 🟠 HOOG: HD03250 — Staatse e-identiteit
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+Zweden beweegt naar de oprichting van een **door de staat uitgegeven digitale identiteit** als aanvulling/vervanging van het door banken uitgegeven BankID-systeem. Dit is een belangrijke infrastructuurmijlpaal:
+- Vermindert het monopolierisico van het private BankID-ecosysteem
+- Maakt toegang tot digitale overheidsdiensten mogelijk voor mensen zonder bankrekeningen
+- Roept vragen op over bewaking, gegevensbewaring en staatstoegang tot authenticatieregistraties
+- Verbonden met HD03261 — dezelfde uitbreiding van de gegevensstaat-architectuur
+
+---
+
+#### 🟠 HOOG: HD01FiU37 — Financieel crisismanagement
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+De Financiële Commissie beveelt de oprichting aan van een nieuwe **operationele crisismanagementfunctie** voor de financiële sector. Dit volgt op EU-brede systemische risicobedenken na SVB (maart 2023) en weerspiegelt de Zweedse blootstelling via de blootstelling van de Riksbank aan Europese bankspanning. Verbonden met HD01FiU38 (OTC-derivaatverrekeningsregels — EU EMIR-implementatie).
+
+---
+
+### Oppositiesignalen
+
+De schriftelijke vragen van vandaag onthullen gecoördineerde oppositieprioriteiten:
+- **S** (HD10475, HD10479): ILO-arbeidsstandaarden en minderheidsbeleid — framing van arbeidsrechten en sociale cohesie vóór de verkiezingen
+- **MP** (HD10476, HD10478): Gaza humanitaire toegang × 2 — handhaving van humanitair profiel vs. de stilte van Tidö
+- **SD** (HD11793, HD11795): Journalistenopleiding en steun aan het Iraanse volk — SD versterkt zijn cultuur-veiligheidsmerk binnen het coalitiekader
+- **MP** (HD11796): Gevangenis school voor 13-jarigen — directe verbinding met LAGRÅDET-246 open PIR over leeftijd van strafrechtelijke verantwoordelijkheid
+
+---
+
+### WEP-beoordeling (72h)
+
+*Gekwalificeerd vertrouwen — WEO-2026-04 jaargang, IMF IFS SDMX gedegradeerd*
+
+Het veiligheidswetgevingscluster (HD03267, JuU32, JuU39) zal in juni vóór het zomerreces de kammervloer bereiken. **Coalitiecohesie is HOOG** voor veiligheidsstemmen — M, KD, SD en L worden verwacht samen te stemmen. **Oppositiefragmentatie is waarschijnlijk** — S zal principieel bezwaar maken tegen de uitbreiding van bewaring maar kan interne spanning tegenkomen over bepaalde veiligheidsaspecten; V zal uitgebreid bezwaar maken; MP richt zich op kinderopsluit.
+
+**Waarschijnlijkheid van doorvoering van HD03267**: 85% (WEP-HOOG) vóór het reces.  
+**Waarschijnlijkheid van doorvoering van HD03250**: 75% (WEP-MATIG-HOOG) — partijoverstijgende steun voor e-ID-infrastructuur waarschijnlijk.  
+**Waarschijnlijkheid van doorvoering van HD03261**: 80% (WEP-HOOG) — fraudepreventieframing breed populair.
+
+---
+
+### PIR-updates
+
+| PIR | 72h-actie |
+|-----|-----------|
+| PIR-RT-001 | GEDEELTELIJKE SLUITING op het veiligheidsspoor via HD03267 Bil.5 — Lagrådet heeft advies uitgebracht over bewaring. Migratievoorstellen HD03262/65 nog steeds open. |
+| LAGRÅDET-246 | ACTIEF — MP-druk via HD11796 verhoogt de politieke kosten van vertraging |
+| PIR-RT-005 | Carlson-reactievenster bewaken (deadline 2026-05-25) |
+| PIR-RT-006 | Kernenergie NU19 van kracht op 2026-06-17 — 41 dagen. Let op inzendingen van energiebedrijven |
+| PIR-3/KU39 | Grondwettelijke stemming gepland op 2026-06-16 — 40 dagen |
+
+---
+
+*Bronnen: riksdag-regering-mcp (live), HD03267 volledige tekst, eerdere PIR-keten 2026-04-29—2026-05-05*  
+*IMF economische context: WEO-2026-04 (1 maand jaargang, niet verouderd). IFS SDMX gedegradeerd — geen maandelijkse Zweedse macro-economische update beschikbaar.*
+
+---
+
+### Doorloop 2 — Kritieke verbeteringen (2026-05-07)
+
+#### Verfijnd WEP-taalgebruik
+
+**Gecorrigeerde waarschijnlijkheidstaal (ter vervanging van informele termen)**:
+
+| Claim | WEP-term | % |
+|-------|---------|---|
+| HD03267 aangenomen vóór het zomerreces | WEP-HOOG | 85% |
+| Lagrådets yttrande over HD03267 is grotendeels gunstig | WEP-MATIG-HOOG | 75% |
+| L dient bezwaar in tegen onbeperkte bewaring | WEP-MATIG | 35% (verhoogd van aanvankelijk 10%) |
+| MP overleeft de 4%-drempel | WEP-MATIG | 55% |
+| Coalitie intact tot op verkiezingsdag | WEP-HOOG | 92% |
+
+#### Versterkte beoordeling: De datatriade
+
+Doorloop 2 bevestigt dat de datatriade-beoordeling in synthesis-summary.md analytisch deugdelijk is. Er bestaan drie onafhankelijke politieke rechtvaardigingen (eIDAS-naleving, bevindingen van Riksrevisionen-fraude, gemeentelijke capaciteitskloven) — de "coördinatie"-interpretatie is inferentieel. De gehandhaafde beoordeling is dat de wetgevende architectuur een coherent ontwerp onthult ongeacht of coördinatie expliciet was. De uitdaging van de advocaat van de duivel (devils-advocate.md, Uitdaging 2) is correct opgemerkt.
+
+#### Gecorrigeerd: PIR-RT-001-status
+
+Doorloop 2: De bewering dat "HD03267 Bilaga 5 het veiligheidsspoor sluit" moet worden behandeld met matige betrouwbaarheid. We hebben de werkelijke tekst van Lagrådets yttrande uit Bilaga 5 NIET geëxtraheerd. Het redeneren dat de regering zonder grote herziening doorging "suggereert" een gunstig yttrande is indirecte gevolgtrekking. Herziene taal:
+
+*"PIR-RT-001 veiligheidsspoor: WAARSCHIJNLIJKE GEDEELTELIJKE OPLOSSING — HD03267 Bilaga 5 verwijst naar Lagrådets yttrande. De beslissing van de regering om door te gaan zonder grote wijzigingen te markeren suggereert dat het yttrande grotendeels gunstig was. VERZAMELKLOOF: Werkelijke tekst van yttrande niet geëxtraheerd. FI-01-variant bestaat voor migratievoorstellen; volledige tekst Bil.5 moet worden geëxtraheerd in de volgende sessie."*
+
+#### Versterkt: Implementatierisico kinderopsluit
+
+De sectie over HD03267 moet vermelden dat kinderopsluit op beveiligingsafdelingen vóór de implementatie mogelijk een versnelde juridische aanvechting van Rädda Barnen/UNICEF kan ondergaan, wat potentieel kan resulteren in een voorlopige maatregel. De tijdlijn 2027-03-01 geeft 10 maanden, maar een constitutionele aanvechting van de kinderbepalingen kan sneller verlopen dan een wetgevingswijziging.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_no.md -->
+
+**Klassifikasjon**: OFFENTLIG | **Konfidens**: HØY | **Horisont**: T+72h / T+30d / T+128d (valg)
+
+---
+
+### Ledende etterretningsvurdering
+
+**Sveriges Tidø-koalisjon gjennomfører en koordinert sikkerhetsstatlig konsolidering i forkant av valget i september 2026.** I løpet av en enkelt lovgivningsdag la regjeringen fram tre store proposisjoner om sikkerhetsforvaring, digital overvåking og identitetsinfrastruktur — mens to JuU-komitérapporter om offentlig sikkerhet og psykologisk vold beveger seg mot kammervotering. Dette er pre-elektoral lovgivningsbanking: å fullføre sikkerhetsprogrammet før sommerferien låser inn koalisjonens sentrale narrative fordel over venstre-grønne blokken.
+
+---
+
+### Toppunkt — 7. mai 2026
+
+#### 🔴 KRITISK: HD03267 — Utvidet sikkerhetsforvaring
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+Underskrevet av statsminister Ebba Busch og justisminister Gunnar Strömmer inneholder denne proposisjonen:
+- **Fjerner tidsgrensen for forvaring** av voksne utlendinger klassifisert som kvalifiserte sikkerhetstrusler (SÄPO-saker)
+- **Senker bevisstandarden** for forvaring (fra "sannolikt" til lavere terskel)
+- **Forlenger forvaringsgrenser for barn** med nye periodiske prøvningskrav
+- **Tillater plassering av forvarte barn på sikkerhetsavdelinger**
+- **Skjerper straffene** for brudd på innreiseforbud og for å bistå forbudte personer
+- **Presiserer utvisningsgrunnlaget** for nasjonal sikkerhet (erstatter "allvarligt hot" med mer operativt språk)
+
+Lagrådets yttrande er inkludert (Bilaga 5), og gir delvis PIR-RT-001-lukking angående sikkerhetsforvaringssporet, men de separate migrasjonsproposisjonene HD03262/HD03265 avventer fortsatt Lagrådets behandling.
+
+**Ikrafttredelsesdato**: 2027-03-01.
+
+**Politisk lesning**: Med SD som koalisjonspartner og valget 128 dager unna, er denne proposisjonen på én gang sikkerhetspolitikk og valgposisjonering. Hvert opposisjonsparti vil utfordre forvaring uten tidsbegrensning på grunnlag av menneskerettigheter; regjeringen vil svare med SÄPO-trusselvurderinger og EMRK-samsvarargumenter (allerede behandlet i §4.3.2).
+
+---
+
+#### 🟠 HØY: HD03261 — Utvidet overvåkingsbefugtning for Skatteverket
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket (Skatteforvaltningen) får utvidede fullmakter til å gjennomføre **tverrsystemisk datamatching** i folkeregistreringsdomenet (folkbokföring) — det grunnleggende identitetssystemet som underbygger all tilgang til den svenske velferdsstaten.
+
+Sentrale bekymringer:
+- Borgerrettighetsorganisasjoner vil bestride bredden av datatilgang
+- Kobles til HD01FiU43 (kommunal velferdsbedrageribekjempelse) — en koordinert utvidelse av statens verifiserende myndighet
+- Personvernrisici for sårbare grupper som kan ha legitime grunner til ikke-standardregistrering (f.eks. ofre for vold i nære relasjoner, statsløse personer)
+
+---
+
+#### 🟠 HØY: HD03250 — Statlig e-legitimasjon
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+Sverige beveger seg mot å etablere en **statlig utstedt digital identitet** som supplement/erstatning for det bankutstedte BankID-systemet. Dette er en viktig infrastrukturmilepæl:
+- Reduserer monopolrisikoen fra det private BankID-økosystemet
+- Gir tilgang til digitale offentlige tjenester for dem uten bankkontoer
+- Reiser spørsmål om overvåking, datalagring og statens tilgang til autentiseringsposter
+- Kobles til HD03261 — samme utvidelse av datastatens arkitektur
+
+---
+
+#### 🟠 HØY: HD01FiU37 — Finansiell krisehåndtering
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+Finanskomiteen anbefaler opprettelse av en ny **operativ krisehåndteringsfunksjon** for finanssektoren. Dette følger EU-dekkende systemrisikobekymringer etter SVB (mars 2023) og gjenspeiler svensk eksponering gjennom Riksbankens eksponering mot europeisk bankstress. Kobles til HD01FiU38 (OTC-derivatklargjeringsregler — EU EMIR-gjennomføring).
+
+---
+
+### Opposisjonssignaler
+
+Dagens skriftlige spørsmål avslører koordinerte opposisjonsprioriteringer:
+- **S** (HD10475, HD10479): ILO-arbeidsstandarder og minoritetspolitikk — arbeidsrettigheters og sosial samhørighetsframing i forkant av valget
+- **MP** (HD10476, HD10478): Gaza humanitær tilgang × 2 — opprettholder humanitær profil mot Tidøs taushet
+- **SD** (HD11793, HD11795): Journalistutdanning og støtte til det iranske folket — SD styrker sitt kultur-sikkerhetsmerke innenfor koalisjonsrammen
+- **MP** (HD11796): Fengselssskole for 13-åringer — direkte forbindelse til LAGRÅDET-246 åpen PIR om den kriminelle lavalder
+
+---
+
+### WEP-vurdering (72h)
+
+*Kvalifisert konfidens — WEO-2026-04 årgangsdato, IMF IFS SDMX degradert*
+
+Sikkerhetslovgivningsklyngen (HD03267, JuU32, JuU39) vil nå kammergolvet i juni før sommerferien. **Koalisjonssamhørighet er HØY** for sikkerhetsvoter — M, KD, SD og L forventes å stemme samlet. **Opposisjonsfragmentering er sannsynlig** — S vil prinsipielt motsette seg forvaringsutvidelsen men kan møte intern spenning om visse sikkerhetsaspekter; V vil motsette seg helhetlig; MP fokuserer på barneforvaring.
+
+**Sannsynlighet for passage av HD03267**: 85% (WEP-HØY) før ferien.  
+**Sannsynlighet for passage av HD03250**: 75% (WEP-MODERAT-HØY) — tverrpolitisk støtte til e-legitimasjonsinfrastruktur sannsynlig.  
+**Sannsynlighet for passage av HD03261**: 80% (WEP-HØY) — velferdsbedrageribekjempelsesframing bredt populær.
+
+---
+
+### PIR-oppdateringer
+
+| PIR | 72h-handling |
+|-----|-----------|
+| PIR-RT-001 | DELVIS LUKKING av sikkerhetssporet via HD03267 Bil.5 — Lagrådet har ytret seg om forvaring. Migrasjonsproposisjoner HD03262/65 fortsatt åpne. |
+| LAGRÅDET-246 | AKTIV — MP-press via HD11796 øker de politiske kostnadene ved forsinkelse |
+| PIR-RT-005 | Overvåk Carlsons svarvindu (frist 2026-05-25) |
+| PIR-RT-006 | Kjernekraft NU19 ikrafttredende 2026-06-17 — 41 dager. Følg med på energiselskapenes innleveringer |
+| PIR-3/KU39 | Konstitusjonell votering planlagt 2026-06-16 — 40 dager |
+
+---
+
+*Kilder: riksdag-regering-mcp (live), HD03267 fulltekst, tidligere PIR-kjede 2026-04-29—2026-05-05*  
+*IMF økonomisk kontekst: WEO-2026-04 (1 måneds årgangsdato, ikke foreldet). IFS SDMX degradert — ingen månedlig svensk makroøkonomisk oppdatering tilgjengelig.*
+
+---
+
+### Gjennomgang 2 — Kritiske forbedringer (2026-05-07)
+
+#### Skjerpet WEP-terminologi
+
+**Korrigert sannsynlighetsspråk (erstatter uformelle begreper)**:
+
+| Påstand | WEP-term | % |
+|-------|---------|---|
+| HD03267 passerer før sommerferien | WEP-HØY | 85% |
+| Lagrådets yttrande om HD03267 er i store trekk aksepterende | WEP-MODERAT-HØY | 75% |
+| L legger inn forbehold mot ubegrenset forvaring | WEP-MODERAT | 35% (hevet fra innledende 10%) |
+| MP overlever 4%-sperregrensen | WEP-MODERAT | 55% |
+| Koalisjonen intakt frem til valgdagen | WEP-HØY | 92% |
+
+#### Styrket vurdering: Datatriaden
+
+Gjennomgang 2 bekrefter at datatriads-vurderingen i synthesis-summary.md er analytisk solid. Tre uavhengige politiske begrunnelser eksisterer (eIDAS-overholdelse, Riksrevisjonens bedrageriresultater, kommunale kapasitetsgap) — "koordinerings"-tolkingen er inferensiell. Den opprettholdte vurderingen er at den lovgivende arkitekturen avslører et sammenhengende design uavhengig av om koordineringen var eksplisitt. Djevelens advokatutfordring (devils-advocate.md, Utfordring 2) er korrekt notert.
+
+#### Korrigert: PIR-RT-001-status
+
+Gjennomgang 2: Påstanden om at "HD03267 Bilaga 5 lukker sikkerhetssporet" bør behandles med moderat konfidens. Vi har IKKE ekstrahert den faktiske teksten til Lagrådets yttrande fra Bilaga 5. Resonnementet om at regjeringen gikk videre uten større revisjon "antyder" et aksepterende yttrande er indirekte slutning. Revidert språk:
+
+*"PIR-RT-001 sikkerhetssporet: SANNSYNLIG DELVIS LØSNING — HD03267 Bilaga 5 refererer til Lagrådets yttrande. Regjeringens beslutning om å gå videre uten å flagge store endringer antyder at yttrandet var i store trekk aksepterende. INNSAMLINGSGAP: Ytrandets faktiske tekst ikke ekstrahert. FI-01-variant eksisterer for migrasjonsproposisjoner; Bil.5 fulltekst bør ekstraheres ved neste sesjon."*
+
+#### Styrket: Implementeringsrisiko for barneforvaring
+
+Avsnittet om HD03267 bør merke at barneforvaring på sikkerhetsavdelinger kan møte fremskyndet juridisk utfordring fra Rädda Barnen/UNICEF før implementeringen, noe som potensielt resulterer i et midlertidig forbud. Tidslinjen 2027-03-01 gir 10 måneder, men en konstitusjonell utfordring av barnebestemmelsene kan skje raskere enn lovgivningsendring.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG | **Konfidensgrad**: HÖG | **Horisont**: T+72h / T+30d / T+128d (val)
+
+---
+
+### Ledande underrättelsebedömning
+
+**Sveriges Tidökoalition genomför en samordnad säkerhetsstatlig konsolidering inför septembervalet 2026.** Under en enda lagstiftningsdag lämnade regeringen in tre stora propositioner om säkerhetsförvar, digital övervakning och identitetsinfrastruktur — samtidigt som JuU:s betänkanden om allmän säkerhet och psykologiskt våld rör sig mot kammarvoteringar. Detta är en pre-elektoral lagstiftningsbankning: att slutföra säkerhetsprogrammet före sommaruppehållet låser in koalitionens centrala narrativa fördel gentemot vänster-grönt blocket.
+
+---
+
+### Toppobjekt — 7 maj 2026
+
+#### 🔴 KRITISK: HD03267 — Utvidgad säkerhetsförvar
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+Undertecknad av statsminister Ebba Busch och justitieminister Gunnar Strömmer, innehåller denna proposition:
+- **Avskaffar tidsgränsen för förvar** av vuxna utlänningar klassificerade som kvalificerade säkerhetshot (SÄPO-ärenden)
+- **Sänker beviskravet** för förvar (från "sannolikt" till lägre tröskel)
+- **Förlänger förvarstidens gränser för barn** med nya periodiska prövningskrav
+- **Tillåter placering av förvarstagit barn på säkerhetsavdelningar**
+- **Skärper påföljderna** för brott mot återreseförbud och för att bistå förbjudna personer
+- **Förtydligar utvisningsgrunden** för nationell säkerhet (ersätter "allvarligt hot" med mer operativt språk)
+
+Lagrådets yttrande ingår (Bilaga 5), vilket ger partiell PIR-RT-001-avslutning avseende säkerhetsförvarslinjen, men de separata migrationspropositionerna HD03262/HD03265 inväntar fortfarande Lagrådets granskning.
+
+**Ikraftträdandedatum**: 2027-03-01.
+
+**Politisk läsning**: Med SD som koalitionspartner och valet 128 dagar bort är denna proposition på en gång säkerhetspolitik och valpositionering. Varje oppositionsparti kommer att ifrågasätta förvar utan tidsgräns utifrån mänskliga rättighetsperspektiv; regeringen kommer att bemöta med SÄPO:s hotbedömningar och EKMR-efterlevnadsargument (redan behandlat i §4.3.2).
+
+---
+
+#### 🟠 HÖG: HD03261 — Utvidgad Skatteverkets övervakningsbefogenhet
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket erhåller utvidgade befogenheter för **systemövergripande datamatchning** inom folkbokföringsdomänen — det grundläggande identitetssystemet som utgör underlag för all tillgång till den svenska välfärdsstaten.
+
+Centrala bekymmer:
+- Medborgarrättsorganisationer kommer att bestrida bredden av dataåtkomst
+- Kopplas till HD01FiU43 (kommunalt välfärdsbedrägeribekämpning) — en samordnad utvidgning av statens verifieringsbehörighet
+- Integritetsrisker för utsatta grupper som kan ha legitima skäl för icke-standardiserad registrering (t.ex. offer för våld i nära relationer, statslösa personer)
+
+---
+
+#### 🟠 HÖG: HD03250 — Statlig e-legitimation
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+Sverige inrättar en **statligt utfärdad digital identitet** som komplement/ersättning till det bankutfärdade BankID-systemet. Detta är en betydelsefull infrastrukturmilstolpe:
+- Minskar monopolrisken från det privata BankID-ekosystemet
+- Möjliggör tillgång till digitala offentliga tjänster för dem utan bankkonton
+- Väcker frågor om övervakning, datalagring och statens tillgång till autentiseringsuppgifter
+- Kopplas till HD03261 — samma utvidgning av datastatens arkitektur
+
+---
+
+#### 🟠 HÖG: HD01FiU37 — Finansiell krishantering
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+Finansutskottet rekommenderar inrättandet av en ny **operativ krishanteringsfunktion** för den finansiella sektorn. Detta följer EU-övergripande systemriskbekymmer efter SVB (mars 2023) och återspeglar svensk exponering via Riksbankens exponering mot europeisk bankstress. Kopplas till HD01FiU38 (OTC-derivatclearingregler — EU EMIR-genomförande).
+
+---
+
+### Oppositionssignaler
+
+Dagens skriftliga frågor avslöjar samordnade oppositionsprioriteringar:
+- **S** (HD10475, HD10479): ILO-arbetsrätt och minoritetspolitik — arbetsrätts- och social sammanhållningsframing inför valet
+- **MP** (HD10476, HD10478): Gaza humanitär tillgång × 2 — bibehåller humanitär profil mot Tidös tystnad
+- **SD** (HD11793, HD11795): Journalistutbildning och stöd till det iranska folket — SD stärker sitt kultur-säkerhetsmärke inom koalitionsramen
+- **MP** (HD11796): Fängelseskola för 13-åringar — direkt koppling till LAGRÅDET-246 öppen PIR om straffmyndighetens ålder
+
+---
+
+### WEP-bedömning (72h)
+
+*Kvalificerad konfidensgrad — WEO-2026-04 årgång, IMF IFS SDMX degraderad*
+
+Säkerhetslagstiftningsklustret (HD03267, JuU32, JuU39) når kammargolvet i juni före sommaruppehållet. **Koalitionssammanhållning är HÖG** för säkerhetsröster — M, KD, SD och L förväntas rösta gemensamt. **Oppositionsfragmentering är trolig** — S kommer att motsätta sig förvarsutvidgningen principiellt men kan möta intern spänning kring vissa säkerhetsaspekter; V kommer att motsätta sig heltäckande; MP fokuserar på barnförvar.
+
+**Sannolikhet för passage av HD03267**: 85% (WEP-HÖG) före uppehållet.  
+**Sannolikhet för passage av HD03250**: 75% (WEP-MÅTTLIGT-HÖG) — tvärpolitiskt stöd för e-ID-infrastruktur sannolikt.  
+**Sannolikhet för passage av HD03261**: 80% (WEP-HÖG) — framing kring välfärdsbedrägeribekämpning brett populär.
+
+---
+
+### PIR-uppdateringar
+
+| PIR | 72h-åtgärd |
+|-----|-----------|
+| PIR-RT-001 | PARTIELL AVSLUTNING avseende säkerhetslinje via HD03267 Bil.5 — Lagrådet har yttrat sig om förvar. Migrationspropositioner HD03262/65 fortfarande öppna. |
+| LAGRÅDET-246 | AKTIV — MP-tryck via HD11796 ökar den politiska kostnaden för dröjsmål |
+| PIR-RT-005 | Bevaka svarstiden för Carlson (deadline 2026-05-25) |
+| PIR-RT-006 | Kärnkraft NU19 ikraftträdande 2026-06-17 — 41 dagar. Bevaka energibolagens inlämningar |
+| PIR-3/KU39 | Konstitutionell omröstning planerad 2026-06-16 — 40 dagar |
+
+---
+
+*Källor: riksdag-regering-mcp (live), HD03267 fulltext, tidigare PIR-kedja 2026-04-29—2026-05-05*  
+*IMF ekonomisk kontext: WEO-2026-04 (1 månads årgång, ej inaktuell). IFS SDMX degraderad — ingen månatlig svensk makroekonomisk uppdatering tillgänglig.*
+
+---
+
+### Genomgång 2 — Kritiska förbättringar (2026-05-07)
+
+#### Skärpt WEP-terminologi
+
+**Korrigerat sannolikhetsspråk (ersätter informella termer)**:
+
+| Påstående | WEP-term | % |
+|-------|---------|---|
+| HD03267 passerar före sommaruppehållet | WEP-HÖG | 85% |
+| Lagrådets yttrande om HD03267 är i stort sett accepterande | WEP-MÅTTLIGT-HÖG | 75% |
+| L lämnar in reservation mot obegränsat förvar | WEP-MÅTTLIG | 35% (höjt från initiala 10%) |
+| MP överlever 4%-spärren | WEP-MÅTTLIG | 55% |
+| Koalitionen intakt fram till valdagen | WEP-HÖG | 92% |
+
+#### Stärkt bedömning: Datatriaden
+
+Genomgång 2 bekräftar att datatriadsanalysen i synthesis-summary.md är analytiskt välgrundad. Tre oberoende politiska motiveringar finns (eIDAS-efterlevnad, Riksrevisionens bedrägeriresultat, kommunala kapacitetsluckor) — "samordnings"-tolkningen är inferentiell. Den bibehållna bedömningen är att den lagstiftande arkitekturen avslöjar en sammanhängande design oberoende av om samordningen var explicit. Djävulens advokats utmaning (devils-advocate.md, Utmaning 2) noteras korrekt.
+
+#### Korrigerat: PIR-RT-001-status
+
+Genomgång 2: Påståendet att "HD03267 Bilaga 5 stänger säkerhetslinjen" bör behandlas med måttlig konfidensgrad. Vi har INTE extraherat den faktiska texten i Lagrådets yttrande från Bilaga 5. Resonemanget att regeringen gick vidare utan stor revidering "tyder på" ett accepterande yttrande är indirekt slutledning. Reviderat språk:
+
+*"PIR-RT-001 säkerhetslinje: SANNOLIK PARTIELL LÖSNING — HD03267 Bilaga 5 refererar till Lagrådets yttrande. Regeringens beslut att gå vidare utan att flagga för stora ändringar tyder på att yttrandet var i stort sett accepterande. INSAMLINGSLUCKA: Yttrandes faktiska text ej extraherad. FI-01-variant finns för migrationspropositioner; Bil.5 fulltext bör extraheras vid nästa session."*
+
+#### Stärkt: Implementeringsrisk för barnförvar
+
+Avsnittet om HD03267 bör notera att barnförvar på säkerhetsavdelningar kan möta skyndsam rättslig utmaning från Rädda Barnen/UNICEF innan genomförandet, vilket potentiellt resulterar i ett interimistiskt föreläggande. Tidslinjen 2027-03-01 ger 10 månader men en konstitutionell utmaning av barnbestämmelserna kan fortskrida snabbare än lagstiftningsändring.
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_zh.md -->
+
+**分类**: 公开 | **置信度**: 高 | **时间范围**: T+72h / T+30d / T+128d（选举）
+
+---
+
+### 核心情报判断
+
+**瑞典蒂德联合政府正在选举前128天协调推进国家安全强化立法。** 仅在一天的立法活动中，政府提交了关于安全羁押、数字监控和身份认证基础设施的三项主要法案，JuU委员会关于公共安全和心理暴力的两份委员会报告也向本届议会表决推进。这是选举前的立法布局——在夏季休会前完成安全议程，巩固联合政府相对于左翼-绿色联盟的核心话语优势。
+
+---
+
+### 主要事项 — 2026年5月7日
+
+#### 🔴 重要: HD03267 — 扩大安全羁押
+**Prop 2025/26:267 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot**
+
+由首相埃巴·布什和司法部长贡纳尔·斯特罗默签署，该法案包括：
+- **取消羁押时间限制**：对被认定为具有资格的安全威胁（SÄPO级案件）的成年外国人实施羁押
+- **降低证据标准**：将羁押的证据标准从「sannolikt」降至更低门槛
+- **延长儿童羁押期限**：附加新的定期审查要求
+- **允许安全部门在羁押期间收押儿童**
+- **加重再入境禁令违规及协助被禁止人员的处罚**
+- **明确国家安全驱逐依据**（将'allvarligt hot'改为更具可操作性的表述）
+
+Lagrådets yttrande附于Bilaga 5，就安全羁押方面促成PIR-RT-001的部分终结，但移民相关的独立法案HD03262/HD03265仍在等待Lagrådet审查。
+
+**生效日期**: 2027-03-01。
+
+**政治解读**: 以SD为联合伙伴、距选举128天的背景下，该法案同时兼具安全政策与选举战略双重目的。所有反对党均从人权角度对无限期羁押提出异议。政府以SÄPO威胁评估和ECHR合规论据反驳（§4.3.2已述）。
+
+---
+
+#### 🟠 较高: HD03261 — 扩大Skatteverket监控权限
+**Prop 2025/26:261 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten**
+
+Skatteverket（国税局）获得扩大权限，在folkbokföring（户籍登记）领域实施**跨系统数据匹配**——该领域是进入瑞典福利国家所有服务的基础。
+
+主要关切：
+- 公民自由团体对数据访问范围提出异议
+- 与HD01FiU43（市政福利欺诈预防）相关联——国家验证权限的协调扩张
+- 对可能有正当理由进行非标准登记的弱势群体（家暴受害者、无国籍者等）的隐私风险
+
+---
+
+#### 🟠 较高: HD03250 — 国家e-ID
+**Prop 2025/26:250 — En statlig e-legitimation**
+
+瑞典正向建立**政府颁发的数字身份证**迈进，以补充或替代银行发行的BankID系统。这是重要的基础设施里程碑：
+- 降低私营BankID生态系统的垄断风险
+- 使没有银行账户的人能够访问数字政务服务
+- 提出有关监控、数据保留和政府获取认证记录的疑问
+- 与HD03261相关联——数据国家架构的类似扩张
+
+---
+
+#### 🟠 较高: HD01FiU37 — 金融危机管理
+**Bet FiU37 — En ny funktion för operativ krishantering i den finansiella sektorn**
+
+财政委员会建议在金融部门建立新的**运营危机管理职能**。这是SVB事件后（2023年3月）欧盟范围内系统性风险关切的延续，反映了瑞典通过Riksbank对欧洲银行压力的敞口。与HD01FiU38（场外衍生品清算规则——EU EMIR实施）相关联。
+
+---
+
+### 反对党信号
+
+今日书面质询揭示了协调一致的反对党优先议题：
+- **S** (HD10475, HD10479)：ILO劳工标准和少数民族政策——选举前劳工权利和社会凝聚力的话语建构
+- **MP** (HD10476, HD10478)：加沙人道主义通道 × 2——在蒂德沉默的背景下维护人道主义形象
+- **SD** (HD11793, HD11795)：新闻记者培训和声援伊朗人民——在联合框架内SD强化文化·安全品牌
+- **MP** (HD11796)：13岁少年监狱学校——与LAGRÅDET-246开放PIR（刑事责任年龄）直接关联
+
+---
+
+### WEP评估（72h）
+
+*限定置信度 — WEO-2026-04时效，IMF IFS SDMX性能下降*
+
+安全立法群（HD03267，JuU32，JuU39）将于夏季休会前6月到达全体会议。安全投票中**联合政府凝聚力高** — M、KD、SD、L预计共同投票。**反对党分裂可能** — S原则上反对无限期羁押扩展，但可能在某些安全方面面临内部紧张；V全面反对；MP聚焦于儿童羁押。
+
+**HD03267通过概率**: 85%（WEP-高）休会前。  
+**HD03250通过概率**: 75%（WEP-中高）— e-ID基础设施预计获跨党派支持。  
+**HD03261通过概率**: 80%（WEP-高）— 福利欺诈防范框架广受欢迎。
+
+---
+
+### PIR更新
+
+| PIR | 72h行动 |
+|-----|-----------|
+| PIR-RT-001 | 通过HD03267 Bil.5部分终结安全线——Lagrådet对羁押表达意见。移民法案HD03262/65仍未解决。 |
+| LAGRÅDET-246 | 活跃——通过HD11796的MP压力增加延迟的政治成本 |
+| PIR-RT-005 | 监控卡尔松回应截止时间窗口（截止2026-05-25） |
+| PIR-RT-006 | 核能NU19于2026-06-17生效——41天。监控能源企业申请 |
+| PIR-3/KU39 | 宪法投票预定于2026-06-16——40天 |
+
+---
+
+*来源：riksdag-regering-mcp（实时），HD03267全文，此前PIR链 2026-04-29—2026-05-05*  
+*IMF经济背景：WEO-2026-04（1个月时效，无陈旧）。IFS SDMX性能下降——瑞典月度宏观经济更新不可用。*
+
+---
+
+### 第二轮审核 — 主要改进（2026-05-07）
+
+#### 精细化的WEP语言
+
+**修订的概率表述（替代非正式术语）**：
+
+| 主张 | WEP术语 | % |
+|-------|---------|---|
+| HD03267在夏季休会前通过 | WEP-高 | 85% |
+| HD03267相关Lagrådets yttrande大体接受 | WEP-中高 | 75% |
+| L对无限期羁押提出保留 | WEP-中 | 35%（从初始10%上调） |
+| MP超过4%门槛 | WEP-中 | 55% |
+| 联合政府维持至选举日 | WEP-高 | 92% |
+
+#### 强化评估：数据三元组
+
+第二轮审核确认synthesis-summary.md中的数据三元组评估在分析上是合理的。存在三个独立的政策依据（eIDAS合规、Riksrevisionen欺诈调查结果、市政能力缺口）——'协调'的解读是推断性的。维持的评估是：无论协调是否明确，立法架构展现出一致的设计。恶魔代言人挑战（devils-advocate.md，挑战2）已正确记录。
+
+#### 修正：PIR-RT-001状态
+
+第二轮审核：'HD03267 Bilaga 5终结安全线'的主张应以中等置信度处理。我们未从Bilaga 5中提取Lagrådets yttrande的实际文本。政府未经重大修改而推进这一事实'暗示接受性yttrande'的推断是间接推理。修订后的表述：
+
+*"PIR-RT-001安全线：可能部分解决——HD03267 Bilaga 5引用Lagrådets yttrande。政府未经重大变更推进的决定表明yttrande大体接受。收集缺口：yttrande实际文本未提取。移民法案存在FI-01变体；Bil.5全文应在下次会话中提取。"*
+
+#### 强化：儿童羁押实施风险
+
+关于HD03267的章节应指出，安全部门儿童羁押可能在实施前面临Rädda Barnen/UNICEF的迅速法律挑战，可能导致临时禁令。2027-03-01的时间线给予10个月，但针对儿童条款的宪法挑战可能比立法修正推进更快。
+
+<!-- source-sha: f3a65f3157ac3177c90bf06273aff6528e63cfad -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2109,6 +3849,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

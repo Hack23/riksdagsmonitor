@@ -1,12 +1,12 @@
 ---
 title: "Riksdagsmonitor Realtime Pulse — 15 May 2026: Defence Capability and the Aid Debt"
 description: "Sweden's political landscape on 15 May 2026 is defined by three parallel stressors: SD presses Defence Minister Pål Jonson on drone doctrine after the Aurora 26 exercise (HD11812, [A2]); the Left…"
-keywords: "Realtime Pulse, English, May 15, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Realtime Pulse Defence Capability Debt, Realtime, Pulse, 2026, Defence, Capability, Debt, Sweden, political, landscape, defined, three, parallel, stressors"
+keywords: "HD11812, HD10492, HD10493, HD03262, KU34, KU, MP, James Pether Sörling, Defence Minister Pål Jonson, Left Party, Pål Jonson s, SD s Markus Wiechel, V s Lotta Johnsson Fornarve, Benjamin Dousa, CRC Articles, WEO Apr-, Benjamin Dousa s, Strengthened CRC, UN Convention, General Comment No, WEO April, Decision-Grade BLUF Rubric, Self-Audit Checklist, Riksdagsmonitor"
 date: 2026-05-15
 subfolder: realtime-pulse
 slug: 2026-05-15-realtime-pulse
 source_folder: analysis/daily/2026-05-15/realtime-pulse
-generated_at: 2026-05-23T22:05:57.177Z
+generated_at: 2026-05-24T12:19:34.546Z
 language: en
 layout: article
 ---

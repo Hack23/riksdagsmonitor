@@ -15,8 +15,11 @@
 
 import type { Language } from '../types/language.js';
 import { LANGUAGE_META } from '../sitemap-html/index.js';
+import {
+  descriptionWindowForLanguage,
+  titleWindowForLanguage,
+} from './aggregator/seo/serp-budgets.js';
 
-const DESCRIPTION_HARD_MAX = 200;
 const KEYWORD_MAX = 24;
 
 /**
@@ -361,51 +364,80 @@ export interface ArticleSeoMetadata {
  *    snippet prefix without needing it in the `<title>`.
  *  - The language is already conveyed by `<html lang>`, `hreflang`
  *    alternates, and `og:locale`; carrying it again in the `<title>`
- *    eats ~5-6 chars of the 70-char SERP budget for zero CTR benefit.
+ *    eats ~5-6 chars of the SERP budget for zero CTR benefit.
  *  - Pre-2026-05 the boilerplate `— 2026-05-22 · en — Riksdagsmonitor`
- *    consumed ~40 chars and left only ~30 chars for the actual story,
- *    forcing rich 107-char H1s like `"Sweden Abolishes Permanent
- *    Residence and Expands Security Deportation: A Pre-Election
- *    Legislative Reckoning"` to ship as `"Sweden Abolishes Permanent…"`.
+ *    consumed ~40 chars and left only ~30 chars for the actual story.
+ *
+ * **Per-language SERP budgets** (since 2026-05-24, `seo-metadata-contract.md` §4):
+ *
+ *  - **Latin LTR** (`en sv da no fi de fr es nl`) — 55-70 chars (Google
+ *    desktop SERP; ~600 pixels). Pre-existing behaviour, unchanged.
+ *  - **RTL** (`ar he`) — 45-60 chars. Pre-2026-05-24 the renderer used
+ *    70 chars uniformly, causing Arabic / Hebrew SERP titles to ship
+ *    ~15 % over the visual budget and get truncated mid-word.
+ *  - **CJK** (`ja ko zh`) — 30-45 glyphs (CJK glyphs render ~2× Latin
+ *    width). Pre-2026-05-24 a CJK H1 like `センタパルティエット、労働
+ *    組合の政党献金法をめぐりティドーブロックから離脱` (36 glyphs) shipped
+ *    with the brand suffix and rendered as ~108 visual width in Google
+ *    SERP — 3× the CJK budget — and got truncated mid-glyph.
  *
  * The only suffix we keep is the site signature ` — Riksdagsmonitor`,
- * and only when the brief H1 plus suffix fits within the 70-char SERP
- * budget. When the H1 already mentions Riksdagsmonitor, we don't
- * duplicate it. When the H1 alone exceeds 70 chars we drop the suffix
+ * and only when the brief H1 plus suffix fits within the per-language
+ * `hardMax`. When the H1 already mentions Riksdagsmonitor, we don't
+ * duplicate it. When the H1 alone exceeds the budget we drop the suffix
  * entirely so the story title gets every available pixel.
  */
 export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
-  const SERP_TITLE_BUDGET = 70;
+  const serpTitleBudget = titleWindowForLanguage(input.lang).hardMax;
   const SITE_SUFFIX = ' — Riksdagsmonitor';
   const base = collapseWhitespace(input.title);
   if (base.length === 0) {
     // Empty title — synthesise from article-type label + brand.
     const fallback = `${input.articleTypeLabel}${SITE_SUFFIX}`;
-    return truncateWithinBudget(fallback, SERP_TITLE_BUDGET);
+    return truncateWithinBudget(fallback, serpTitleBudget);
   }
   // Avoid duplicating the brand when the H1 already mentions it.
   if (/riksdagsmonitor/i.test(base)) {
-    if (base.length <= SERP_TITLE_BUDGET) return base;
-    return truncateWithinBudget(base, SERP_TITLE_BUDGET);
+    if (base.length <= serpTitleBudget) return base;
+    return truncateWithinBudget(base, serpTitleBudget);
   }
   // Branded variant fits the SERP budget — ship the full story + brand.
-  if (base.length + SITE_SUFFIX.length <= SERP_TITLE_BUDGET) {
+  if (base.length + SITE_SUFFIX.length <= serpTitleBudget) {
     return `${base}${SITE_SUFFIX}`;
   }
   // H1 alone fits the SERP budget — drop the brand suffix so the story
   // title is the SERP signal (brand is already covered by `og:site_name`
   // and the canonical URL).
-  if (base.length <= SERP_TITLE_BUDGET) return base;
+  if (base.length <= serpTitleBudget) return base;
   // H1 overflows the SERP budget — truncate cleanly and ship without
   // brand suffix so every available char goes to the story.
-  return truncateWithinBudget(base, SERP_TITLE_BUDGET);
+  return truncateWithinBudget(base, serpTitleBudget);
 }
 
 /**
  * Build the SERP `<meta name="description">`. The executive-brief BLUF
  * IS the description — already localized, already story-specific,
- * already in the 140-200 char SERP window for every language thanks to
+ * already in the per-language SERP window for every language thanks to
  * the cascade in `aggregator/seo/description.ts § truncateToSentenceBoundary`.
+ *
+ * **Per-language SERP budgets** (since 2026-05-24, `seo-metadata-contract.md` §4):
+ *
+ *  - **Latin LTR** (`en sv da no fi de fr es nl`) — 140-200 chars.
+ *  - **RTL** (`ar he`) — 120-170 chars.
+ *  - **CJK** (`ja ko zh`) — 70-120 glyphs.
+ *
+ * Pre-2026-05-24 this function used the EN 200-char hard max uniformly
+ * across all 14 languages. The upstream cascade already truncates to
+ * the correct per-language window when a localized executive-brief
+ * exists, but this renderer-side cap also matters in three fallback
+ * paths: (1) when no localized brief exists and the EN description
+ * leaks through unchanged, (2) when an agent ships a long
+ * `description:` front-matter line that bypasses the cascade, and (3)
+ * when a downstream caller invokes `buildSeoMetadata` directly without
+ * pre-truncating. Capping at the per-language `hardMax` here closes
+ * those three gaps so CJK / RTL pages never overshoot their visual SERP
+ * budget regardless of where the description came from.
+ *
  * We never append `Coverage: <Type> on <topic>; <lang> edition update
  * for <date> with Riksdag/OSINT provenance.` boilerplate because:
  *
@@ -413,13 +445,14 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  *  - It collapses 14 hreflang siblings to near-identical snippets that
  *    only vary by the `Coverage:` translation — defeating the point of
  *    per-language BLUFs.
- *  - Search engines silently truncate >200 chars, so the boilerplate
- *    often replaced the actual analytical context with editorial
- *    plumbing.
+ *  - Search engines silently truncate beyond the per-language hardMax,
+ *    so the boilerplate often replaced the actual analytical context
+ *    with editorial plumbing.
  */
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
   const base = stripDescriptionMarkup(input.description);
-  return truncateWithinBudget(base, DESCRIPTION_HARD_MAX);
+  const { hardMax } = descriptionWindowForLanguage(input.lang);
+  return truncateWithinBudget(base, hardMax);
 }
 
 /**

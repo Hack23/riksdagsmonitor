@@ -1,12 +1,12 @@
 ---
 title: "Sweden's parliament entered a decisive pre-election week with three"
-description: "Sweden's parliament entered a decisive pre-election week with three simultaneous high-stakes policy developments. Finance Committee FiU48 — an extraordinary 4.1 billion SEK supplementary budget…"
-keywords: "Evening Analysis, English, April 21, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden entered decisive pre-election week, Sweden, parliament, entered, decisive, pre-election, week, with, three, simultaneous, high-stakes, policy, developments, Finance"
+description: "Sweden's parliament entered a decisive pre-election week with three simultaneous high-stakes policy developments."
+keywords: "HD10442, HD11732, HD01FiU48, HD10440, HD10441, HD11731, FiU48, FiU, KD, Finance Committee, Finance Minister Elisabeth Svantesson, Foreign Minister Margot Wallström, Gender Equality Minister Nina, Flag EU Pay Directive, Finance Minister Svantesson AND, Foreign Minister Wallström, Nina Larsson, Denis Begic, Foreign Minister Malmer Stenergard, Significance Today, Elisabeth Svantesson, Finance Minister, Johan Britz, Acting Climate"
 date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-05-23T22:05:55.612Z
+generated_at: 2026-05-24T12:19:33.396Z
 language: en
 layout: article
 ---

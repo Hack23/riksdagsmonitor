@@ -1,12 +1,12 @@
 ---
 title: "Opposition Motions Challenging Six Government Propositions in Sweden's Pre-Election Sprint"
 description: "Sixteen active opposition motions filed 2026-04-29 challenge six government propositions across energy, environment, criminal justice, transport, and taxation policy."
-keywords: "Motions, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Motions Challenging Government Propositions, Opposition, Challenging, Government, Propositions, Sweden, Pre-Election, Sprint, Sixteen, active, filed, challenge, across, energy"
+keywords: "HD024127, JuU, MP, James Pether Sörling, With Sweden s, Gauge Sweden s, Justice Committee, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-05-04
 subfolder: motions
 slug: 2026-05-04-motions
 source_folder: analysis/daily/2026-05-04/motions
-generated_at: 2026-05-23T22:05:56.413Z
+generated_at: 2026-05-24T12:19:33.990Z
 language: en
 layout: article
 ---

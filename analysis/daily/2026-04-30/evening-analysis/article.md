@@ -1,12 +1,12 @@
 ---
 title: "Evening Analysis — 30 April 2026: Sweden's Migration Law Overhaul and Defence Cooperation Advance"
 description: "Sweden's government delivered its most consequential single-day legislative package of the 2025/26 session on 30 April 2026: a four-proposition migration law transformation that phases out permanent…"
-keywords: "Evening Analysis, English, April 30, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Evening April Sweden Migration Overhaul, Evening, Analysis, April, 2026, Sweden, Migration, Overhaul, Defence, Cooperation, Advance, government, delivered, most"
+keywords: "HD03262, HD03254, HD03263, HD03264, HD03265, HD03251, HD03258, SfU, FöU, James Pether Sörling, Public Sources Only, Asylum Pact, NATO Article, Committee SfU, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Evening Analysis, English"
 date: 2026-04-30
 subfolder: evening-analysis
 slug: 2026-04-30-evening-analysis
 source_folder: analysis/daily/2026-04-30/evening-analysis
-generated_at: 2026-05-23T22:05:56.175Z
+generated_at: 2026-05-24T12:19:33.799Z
 language: en
 layout: article
 ---

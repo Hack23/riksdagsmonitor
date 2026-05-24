@@ -1,12 +1,12 @@
 ---
 title: "Riksdag Monthly Review: April–May 2026"
 description: "Lead story: HC01FiU20 Spring Fiscal Bill — four opposition parties (S, V, C, MP) contested the Tidö economic policy framework; US tariff shock revised GDP to 1.9% (2025)."
-keywords: "Monthly Review, English, April 29, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Monthly Review April Lead story, Monthly, Review, April, 2026, Lead, story, HC01FiU20, Spring, Fiscal, Bill, four, opposition, parties"
+keywords: "HD10448, HD03253, HD01JuU31, HD01SfU28, HD10449, HD10454, HD10455, MP, KD, SD, Brief ID, Coverage Window, James Pether Sörling, Upstream Continuity, Spring Fiscal Bill, Basel III, VERY HIGH, Before SD, Energy Minister, Non-discretionary EU, IMF WEO Apr-, SWE CPI, Riksdagsmonitor, Swedish Parliament"
 date: 2026-04-29
 subfolder: monthly-review
 slug: 2026-04-29-monthly-review
 source_folder: analysis/daily/2026-04-29/monthly-review
-generated_at: 2026-05-23T22:05:56.126Z
+generated_at: 2026-05-24T12:19:33.756Z
 language: en
 layout: article
 ---

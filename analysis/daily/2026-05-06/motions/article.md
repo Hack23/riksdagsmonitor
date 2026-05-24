@@ -1,12 +1,12 @@
 ---
 title: "Opposition Motions Challenge Forestry and Youth Justice Reforms"
 description: "Eight opposition motions filed 2026-05-04 mount coordinated legal-strategic challenges against two government propositions: the forestry deregulation (prop. 2025/26:242, HD024141–145/147) and the…"
-keywords: "Motions, English, May 6, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Motions Challenge Forestry Youth, Opposition, Challenge, Forestry, Youth, Justice, Reforms, Eight, filed, mount, coordinated, legal-strategic, challenges, against"
+keywords: "HD024141, HD024142, HD024145, HD024146, prop. 2025/26:242, prop. 2025/26:246, MJU, JuU, James Pether Sörling, UN Convention, NRL Regulation, Social Democrats, Pending Lagrådet, PIR LAGRÅDET-, Overall HIGH, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions"
 date: 2026-05-06
 subfolder: motions
 slug: 2026-05-06-motions
 source_folder: analysis/daily/2026-05-06/motions
-generated_at: 2026-05-23T22:05:56.601Z
+generated_at: 2026-05-24T12:19:34.118Z
 language: en
 layout: article
 ---
