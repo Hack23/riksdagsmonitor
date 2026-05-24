@@ -1,12 +1,12 @@
 ---
 title: "Executive Intelligence Brief — Swedish Government Propositions"
 description: "The Swedish government released 8 propositions on 30 April 2026, dominated by a four-proposition migration reform cluster that collectively eliminates permanent residence permits, implements the EU…"
-keywords: "Propositions, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Executive Brief Government Propositions released, Executive, Intelligence, Brief, Swedish, Government, released, April, 2026, dominated, four-proposition, migration, reform, cluster"
+keywords: "HD03262, HD03254, HD03258, HD03263, HD03265, HD03264, Election Proximity Multiplier, Asylum Pact, Asylum Procedures Regulation, Qualification Regulation, Reception Conditions Directive, Return Directive, Gunnar Strömmer, Justice Ministry s, IMF World Economic Outlook, IMF WEO April, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen"
 date: 2026-05-04
 subfolder: propositions
 slug: 2026-05-04-propositions
 source_folder: analysis/daily/2026-05-04/propositions
-generated_at: 2026-05-23T22:05:56.425Z
+generated_at: 2026-05-24T12:19:33.999Z
 language: en
 layout: article
 ---

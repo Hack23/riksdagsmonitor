@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Current Election Cycle (2022–2026): The Reckoning Mandate"
 description: "Sweden's 2022–2026 mandate is entering its final 132 days: a Tidö coalition of M+KD+L has governed with SD confidence-and-supply support, delivering the deepest shift in Swedish migration policy in a…"
-keywords: "Current, election cycle current, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Current Election Cycle Reckoning, Sweden, Election, Cycle, 2022, 2026, Reckoning, Mandate, entering, final, days, Tidö, coalition"
+keywords: "HD03262, HD01NU19, James Pether Sörling, IMF WEO Apr-, Is Sweden s, SAAB Gripen, IMF GDP, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Current, election cycle current, English"
 date: 2026-05-04
 subfolder: election-cycle/current
 slug: 2026-05-04-election-cycle/current
 source_folder: analysis/daily/2026-05-04/election-cycle/current
-generated_at: 2026-05-23T22:05:56.375Z
+generated_at: 2026-05-24T12:19:33.963Z
 language: en
 layout: article
 ---

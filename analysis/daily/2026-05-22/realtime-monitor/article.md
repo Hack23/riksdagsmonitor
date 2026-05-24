@@ -1,12 +1,12 @@
 ---
 title: "Swedish Riksdag Advances Security-State Laws Amid Civil-Liberties Challenge Before Summer Recess"
 description: "Sweden's Riksdag on 22 May 2026 is processing a coordinated late-spring legislative cluster. The top breaking signal is MP's civil-liberties challenge (dokid HD024192) to the government's…"
-keywords: "Realtime Monitor, English, May 22, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Advances Security-State Laws Amid Civil-Liberties, Swedish, Advances, Security-State, Laws, Amid, Civil-Liberties, Challenge, Before, Summer, Recess, Sweden, 2026, processing"
+keywords: "HD024192, HD01SfU37, HD024191, HD01FiU42, HD01UbU19, HD01UbU22, HD01UbU27, HD01CU26, HD01UU11, HD01UU12, HD01FiU47, prop. 2025/26:267, prop. 2025/26:261, FiU47, EU, FiU, MP, James Pether Sörling, Monitor JuU, Verify Lagrådet, Sweden s Riksdag, HIGH PRIORITY, Security Threat Foreigners Opposition, Ulrika Westerlund"
 date: 2026-05-22
 subfolder: realtime-monitor
 slug: 2026-05-22-realtime-monitor
 source_folder: analysis/daily/2026-05-22/realtime-monitor
-generated_at: 2026-05-23T22:05:57.475Z
+generated_at: 2026-05-24T12:19:34.761Z
 language: en
 layout: article
 ---

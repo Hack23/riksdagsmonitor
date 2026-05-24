@@ -1,12 +1,12 @@
 ---
 title: "Post-2026 Mandate Forecast"
 description: "Even-money (45–55% [horizon:election]) that the 2026-09-13 Riksdagsval produces a hung-parliament-style outcome requiring > 30 days of coalition formation."
-keywords: "Next, election cycle next, English, May 13, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Post-2026 Mandate Forecast Even-money horizon, Post-2026, Mandate, Forecast, Even-money, horizon, election, that, Riksdagsval, produces, hung-parliament-style, outcome, requiring"
+keywords: "HD10483, HD10484, HD10485, HD10486, HD01NU21, HD01CU30, HD01FiU38, HD03267, Within Scenario, IMF WEO Apr-, Mitigation Hook, Major KU-anmälan, Aggregated Sifo, Demoskop Apr, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Next, election cycle next"
 date: 2026-05-13
 subfolder: election-cycle/next
 slug: 2026-05-13-election-cycle/next
 source_folder: analysis/daily/2026-05-13/election-cycle/next
-generated_at: 2026-05-23T22:05:56.980Z
+generated_at: 2026-05-24T12:19:34.402Z
 language: en
 layout: article
 ---

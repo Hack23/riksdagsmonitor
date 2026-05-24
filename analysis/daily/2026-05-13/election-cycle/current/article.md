@@ -1,12 +1,12 @@
 ---
 title: "Tidö Mandate, T-123: EU Energy Compliance Closes While Security Pivot Holds"
 description: "The 2022–2026 Tidö mandate ends with a structurally transformed Swedish state — security architecture rebuilt, financial-stability framework rebooted, digital-identity stack codified, and immigration…"
-keywords: "Current, election cycle current, English, May 13, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Tidö Mandate T-123 Energy Compliance, Tidö, Mandate, T-123, Energy, Compliance, Closes, While, Security, Pivot, Holds, 2022, 2026"
+keywords: "HD01CU30, HD01NU21, HD03267, HD03261, HD03250, HD03249, HD03248, HD10483, HD10484, HD10485, HD10486, HD01JuU32, HD01JuU34, HD01JuU39, HD03263, CU30, NU21, JuU32, FiU37, FiU38, CU, NU, KU, EU"
 date: 2026-05-13
 subfolder: election-cycle/current
 slug: 2026-05-13-election-cycle/current
 source_folder: analysis/daily/2026-05-13/election-cycle/current
-generated_at: 2026-05-23T22:05:56.974Z
+generated_at: 2026-05-24T12:19:34.397Z
 language: en
 layout: article
 ---

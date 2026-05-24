@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Year Ahead: Election 2026, Defence Pivot, and Economic Recovery"
 description: "Sweden faces its most consequential year since NATO accession: the September 13, 2026 Riksdag election will determine whether the Tidö centre-right coalition continues or a Social Democrat–led bloc…"
-keywords: "Year Ahead, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Year Ahead Election Defence, Sweden, Year, Ahead, Election, 2026, Defence, Pivot, Economic, Recovery, faces, most, consequential, since"
+keywords: "James Pether Sörling, Social Democrat, IMF WEO Apr-, Is Sweden s, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Year Ahead, English"
 date: 2026-05-04
 subfolder: year-ahead
 slug: 2026-05-04-year-ahead
 source_folder: analysis/daily/2026-05-04/year-ahead
-generated_at: 2026-05-23T22:05:56.452Z
+generated_at: 2026-05-24T12:19:34.020Z
 language: en
 layout: article
 ---

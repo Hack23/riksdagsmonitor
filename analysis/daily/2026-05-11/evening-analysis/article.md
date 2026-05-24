@@ -1,12 +1,12 @@
 ---
 title: "Evening Analysis — 2026-05-11"
 description: "Evidence-based political intelligence analysis for evening-analysis on 2026-05-11."
-keywords: "Evening Analysis, English, May 11, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Evening Evidence-based evening-analysis, Evening, Analysis, Evidence-based, political, intelligence, evening-analysis"
+keywords: "HD024149, HD024150, HD10481, HD11810, prop. 2025/26:264, prop. 2025/26:263, SoU31, MJU23, KU34, KU, SoU, MJU, SD, Sweden s Riksdag, Under Sweden s, VERY HIGH, IMF WEO April, Monitor Riksdag, Track SfU, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-05-11
 subfolder: evening-analysis
 slug: 2026-05-11-evening-analysis
 source_folder: analysis/daily/2026-05-11/evening-analysis
-generated_at: 2026-05-23T22:05:56.869Z
+generated_at: 2026-05-24T12:19:34.323Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "On 2026-04-24 the Kristersson government tabled a four-bill"
 description: "On 2026-04-24 the Kristersson government tabled a four-bill pre-election delivery package (EU Banking Package HD03253, detainee benefit restriction HD03252, tachograph enforcement HD03256,…"
-keywords: "Evening Analysis, English, April 24, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Kristersson government tabled four-bill pre-election, Kristersson, government, tabled, four-bill, pre-election, delivery, package, Banking, HD03253, detainee, benefit, restriction, HD03252"
+keywords: "HD03253, HD03252, HD03256, HD03104, HD01FiU23, HD01CU25, HD10447, HD024091, HD024096, CU25, SfU23, FiU23, AU15, CU29, EU, CU, SfU, FiU, AU, James Pether Sörling, Public OSINT, First FiU, Specific RWA, Riksdagsmonitor"
 date: 2026-04-24
 subfolder: evening-analysis
 slug: 2026-04-24-evening-analysis
 source_folder: analysis/daily/2026-04-24/evening-analysis
-generated_at: 2026-05-23T22:05:55.737Z
+generated_at: 2026-05-24T12:19:33.483Z
 language: en
 layout: article
 ---

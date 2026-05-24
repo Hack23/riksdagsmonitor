@@ -1,12 +1,12 @@
 ---
 title: "Sweden's parliamentary accountability pulse on 5 May 2026"
 description: "Sweden's parliamentary accountability pulse on 5 May 2026 is dominated by five interpellations that collectively expose three structural fault lines in the Tidö coalition's second term:…"
-keywords: "Interpellations, English, May 5, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden parliamentary accountability pulse dominated, Sweden, parliamentary, accountability, pulse, 2026, dominated, five, that, collectively, expose, three, structural, fault"
+keywords: "HD10463, HD10458, HD10459, HD10461, HD10462, KD, Minister Carlson s, Justice Minister Strömmer, Civil Minister Slottner s, Research Minister Edholm, Finance Minister Svantesson, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-05-05
 subfolder: interpellations
 slug: 2026-05-05-interpellations
 source_folder: analysis/daily/2026-05-05/interpellations
-generated_at: 2026-05-23T22:05:56.499Z
+generated_at: 2026-05-24T12:19:34.055Z
 language: en
 layout: article
 ---

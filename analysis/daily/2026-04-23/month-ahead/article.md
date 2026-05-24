@@ -1,12 +1,12 @@
 ---
 title: "Sweden enters the final five weeks of the 2025/26 parliamentary"
 description: "Sweden enters the final five weeks of the 2025/26 parliamentary session with three interlocking packages dominating the legislative agenda: the 2026 Spring Fiscal Package (HD03100 vårproposition +…"
-keywords: "Month Ahead, English, April 23, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden enters final five weeks, Sweden, enters, final, five, weeks, 2025, parliamentary, session, with, three, interlocking, packages, dominating"
+keywords: "HD03100, HD0399, HD03236, HD01FiU48, HD03218, HD03246, HD03217, HD03235, HD03240, HD03239, HD03238, HD03220, HD01CU28, HD01CU27, FiU, James Pether Sörling, Spring Fiscal Package, Order Package, Energy Transition Package, Riksdagen s Finance Committee, World Bank, Admiralty Code, Riksdagsmonitor, Swedish Parliament"
 date: 2026-04-23
 subfolder: month-ahead
 slug: 2026-04-23-month-ahead
 source_folder: analysis/daily/2026-04-23/month-ahead
-generated_at: 2026-05-23T22:05:55.689Z
+generated_at: 2026-05-24T12:19:33.449Z
 language: en
 layout: article
 ---

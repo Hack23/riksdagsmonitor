@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Migration Overhaul and Digital Identity Pivot"
 description: "Sweden's Kristersson minority government submitted eight major propositions to the Riksdag in a single pre-election legislative sprint, including a landmark bill (HD03262 / Prop. 2025/26:262) that…"
-keywords: "Propositions, English, May 18, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Migration Overhaul Digital Identity, Sweden, Migration, Overhaul, Digital, Identity, Pivot, Kristersson, minority, government, submitted, eight, major, single"
+keywords: "HD03262, HD03250, HD03254, HD03258, HD03265, HD03264, HD03267, HD03263, HD03261, Prop. 2025/26:262, Prop. 2025/26:250, Prop. 2025/26:254, Prop. 2025/26:258, Prop. 2025/26:261, SfU, KD, Sweden s Kristersson, Common European Asylum System, Asylum Act, Asylum Pact, VERY HIGH, Sweden s September, Justice Minister Johan Forssell, Gunnar Strömmer"
 date: 2026-05-18
 subfolder: propositions
 slug: 2026-05-18-propositions
 source_folder: analysis/daily/2026-05-18/propositions
-generated_at: 2026-05-23T22:05:57.271Z
+generated_at: 2026-05-24T12:19:34.614Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Committee Reports Intelligence Brief — 28 April 2026"
 description: "Sweden's Finance Committee has approved the Tidö government's Spring Fiscal Bill economic guidelines amid US tariff-driven downward GDP revisions — projecting 1.9% growth in 2025 — while…"
-keywords: "CommitteeReports, English, April 28, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Committee Reports Brief April Sweden, Committee, Reports, Intelligence, Brief, April, 2026, Sweden, Finance, approved, Tidö, government, Spring, Fiscal"
+keywords: "KU20, FiU20, KU, FiU, SoU, SkU, MP, James Pether Sörling, Sweden s Finance Committee, Spring Fiscal Bill, Do MPs, Constitutional Committee, Ulf Kristersson, Spring Bill, Finance Committee, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, CommitteeReports"
 date: 2026-04-28
 subfolder: committeeReports
 slug: 2026-04-28-committeeReports
 source_folder: analysis/daily/2026-04-28/committeeReports
-generated_at: 2026-05-23T22:05:56.014Z
+generated_at: 2026-05-24T12:19:33.675Z
 language: en
 layout: article
 ---

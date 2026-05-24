@@ -1,12 +1,12 @@
 ---
 title: "Tidö Current Mandate"
 description: "The Tidö coalition delivered three major propositions on 2026-05-07 — state e-ID, foreign security threat expulsion, and Skatteverket address fraud powers — bringing mandate completion to 78% and…"
-keywords: "Current, election cycle current, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Tidö Current Mandate coalition delivered, Tidö, Mandate, coalition, delivered, three, major, propositions, state, e-ID, foreign, security, threat"
+keywords: "HD03267, HD03250, HD01UbU28, James Pether Sörling, WEO Apr-, Lotta Edholm s, PIR ID, ID Riksdag, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Current, election cycle current, English"
 date: 2026-05-08
 subfolder: election-cycle/current
 slug: 2026-05-08-election-cycle/current
 source_folder: analysis/daily/2026-05-08/election-cycle/current
-generated_at: 2026-05-23T22:05:56.714Z
+generated_at: 2026-05-24T12:19:34.210Z
 language: en
 layout: article
 ---
@@ -82,6 +82,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1630,13 +1643,596 @@ New PIRs introduced this cycle:
 Predecessor: analysis/daily/2026-05-07/election-cycle/current/data-download-manifest.md
 New documents since 2026-05-07: HD03267 (security threats), HD03250 (e-ID), HD03261 (Skatteverket), HD01UbU28 (teacher certs)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_ar.md -->
+
+**التصنيف**: عام | **الثقة**: عالية [Admiralty B2] | **الوقت حتى الانتخابات**: T-128 يوماً  
+**المؤلف**: James Pether Sörling | **الجولة**: 25547235893 | **بيانات صندوق النقد الدولي**: WEO أبريل-2026  
+**الدورة**: الحالية (2022-09-11 → 2026-09-13)
+
+---
+
+### تقييم في سطر واحد
+
+قدّمت ائتلاف تيدو ثلاثة مقترحات رئيسية في 2026-05-07 — الهوية الإلكترونية الحكومية، وترحيل التهديدات الأمنية الأجنبية، وصلاحيات Skatteverket لمكافحة الاحتيال في العناوين — مما رفع نسبة إنجاز الولاية إلى **78%** وبدأ الجري المحموم النهائي T-128 قبل الانتخابات من موقع قوة تشريعية.
+
+### الأحكام الرئيسية
+
+1. **استقرار الائتلاف: يُرجَّح أن يظل مستقراً** حتى يوم الانتخابات. Liberalerna عند 4.2% (0.2 نقطة مئوية فوق العتبة) هو سيناريو الفشل الوحيد الذي يمكن أن يفكك الائتلاف قبل يوم التصويت.
+
+2. **موجة التشريعات الأمنية**: HD03267 (ترحيل التهديدات الأمنية) وHD01FöU18 (الاستخبارات الإشارية، سابقاً) يشكلان معاً أهم إصلاح قانوني للأمن القومي في السويد منذ قانون FRA عام 2008. كلاهما تمت الموافقة عليه/اقتراحه بدعم عابر للكتل.
+
+3. **معلم رقمي**: HD03250 (الهوية الإلكترونية الحكومية) هو أعلى إنجاز في حوكمة رقمية في فترة تيدو. يخلق بديلاً لـBankID تحت سيطرة عامة مع قابلية تشغيل بيني وفق EU eIDAS 2.0.
+
+4. **إصلاح التعليم مكتمل**: HD01UbU28 يغلق الفجوة الإدارية الأخيرة في إصلاح المدرسة الابتدائية العشرية، ويحقق سياسة التعليم التوقيعية لـLotta Edholm (L).
+
+5. **الرياح الاقتصادية المعاكسة مستمرة**: البطالة 8.4% (AKU) هي العنصر الأضعف في رواية إرث تيدو. الكتلة الحمراء الخضراء ستهاجم هذا بشكل مستمر حتى سبتمبر.
+
+### ثغرات الاستخبارات
+
+| الثغرة | معرف PIR | الأولوية |
+|--------|---------|---------|
+| استقرار عتبة L بعد الصيف | PIR-001 | حرجة |
+| رأي Lagrådet في HD03267 (RF 2:4) | PIR-007 | عالية |
+| الجدول الزمني لتمرير e-ID الحكومية في Riksdag | PIR-006 | عالية |
+| توتر ائتلاف غزة/جرائم الحرب | PIR-004 | متوسطة |
+
+### الإجراءات المستقبلية
+
+- مراقبة: استطلاعات رأي Liberalerna الصيفية (العتبة PIR-001)
+- مراقبة: نشر Lagrådet حول HD03267 (متوقع يونيو 2026)
+- مراقبة: نقاش Riksdag حول HD03250 e-ID الحكومية (متوقع أسبوع 2026-05-11)
+- إجراء: تجميع مقاييس إنجاز الولاية للمقالات النهائية قبل الانتخابات في يونيو/يوليو
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_da.md -->
+
+**Klassifikation**: OFFENTLIG | **Konfidens**: HØJ [Admiralty B2] | **Tid til valg**: T-128 dage  
+**Forfatter**: James Pether Sörling | **Kørsel**: 25547235893 | **IMF-vintage**: WEO Apr-2026  
+**Cyklus**: Nuværende (2022-09-11 → 2026-09-13)
+
+---
+
+### Étnlinjebedømmelse
+
+Tidø-koalitionen leverede tre store propositioner den 2026-05-07 — statslig e-ID, udvisning ved udenlandske sikkerhedstrusler og Skatteverkets beføjelser mod adressesvindel — hvilket bragte mandatopfyldelsen til **78%** og indleder den sidste T-128-sprint inden valget fra en position af lovgivningsmæssig styrke.
+
+### Nøgledomme
+
+1. **Koalitionsstabilitet: SANDSYNLIGVIS stabil** frem til valgdagen. Liberalerna på 4,2% (0,2 procentpoint over tærsklen) er det eneste fejl-scenarie, der kan opløse koalitionen inden valgdagen.
+
+2. **Sikkerhedslovgivningssurge**: HD03267 (udvisning ved sikkerhedstrusler) og HD01FöU18 (signalefterforskning, tidligere) udgør tilsammen Sveriges mest betydningsfulde nationale sikkerheds-retsreform siden FRA-loven i 2008. Begge vedtaget/foreslået med støtte på tværs af blokke.
+
+3. **Digital milepæl**: HD03250 (statslig e-ID) er den højestværdi digitale styrningspræstation i Tidø-perioden. Den skaber et BankID-alternativ under offentlig kontrol med EU eIDAS 2.0-interoperabilitet.
+
+4. **Skolereform gennemført**: HD01UbU28 lukker det sidste administrative hul i 10-årig grundskolereform og leverer Lotta Edholms (L) signatur-uddannelsespolitik.
+
+5. **Økonomiske modvinde består**: 8,4% arbejdsløshed (AKU) er det svageste element i Tidøs arvsfortælling. Det rødgrønne blok vil angribe dette vedvarende frem til september.
+
+### Efterretningsgab
+
+| Gab | PIR-ID | Prioritet |
+|-----|--------|-----------|
+| L's tærskels stabilitet efter sommeren | PIR-001 | KRITISK |
+| Lagrådets yttrande om HD03267 (RF 2:4) | PIR-007 | HØJ |
+| Tidslinje for Riksdag-passage af statslig e-ID | PIR-006 | HØJ |
+| Gaza/krigsforbrydelse-koalitionsspænding | PIR-004 | MIDDEL |
+
+### Fremtidige Handlinger
+
+- Overvåg: Liberalernas sommerundersøgelser (tærsklen PIR-001)
+- Overvåg: Lagrådets publikation om HD03267 (forventes juni 2026)
+- Overvåg: Riksdag-debat om HD03250 statslig e-ID (forventes ugen 2026-05-11)
+- Handling: Sammenstil mandatfuldførelses-metrikker til endelige artikler inden valget i juni/juli
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_de.md -->
+
+**Klassifizierung**: ÖFFENTLICH | **Vertrauen**: HOCH [Admiralty B2] | **Zeit bis zur Wahl**: T-128 Tage  
+**Autor**: James Pether Sörling | **Lauf**: 25547235893 | **IMF-Jahrgang**: WEO Apr-2026  
+**Zyklus**: Aktuell (2022-09-11 → 2026-09-13)
+
+---
+
+### Einzeilige Bewertung
+
+Die Tidö-Koalition lieferte am 2026-05-07 drei große Gesetzesvorhaben — staatliche E-ID, Ausweisung bei ausländischen Sicherheitsbedrohungen und Befugnisse des Skatteverket gegen Adressbetrug — was die Mandatserfüllung auf **78%** brachte und den letzten T-128-Sprint vor der Wahl aus einer Position gesetzgeberischer Stärke einleitet.
+
+### Kernurteile
+
+1. **Koalitionsstabilität: WAHRSCHEINLICH stabil** bis zum Wahltag. Liberalerna bei 4,2% (0,2 Prozentpunkte über der Sperrklausel) ist das einzige Fehlerszhenario, das die Koalition vor dem Wahltag auflösen könnte.
+
+2. **Sicherheitsgesetzgebungswelle**: HD03267 (Ausweisung bei Sicherheitsbedrohungen) und HD01FöU18 (Signalaufklärung, früher) bilden zusammen Schwedens bedeutendste nationale Sicherheitsrechtsreform seit dem FRA-Gesetz 2008. Beide verabschiedet/vorgeschlagen mit blockübergreifender Unterstützung.
+
+3. **Digitaler Meilenstein**: HD03250 (staatliche E-ID) ist die wertvollste digitale Governance-Leistung der Tidö-Periode. Sie schafft eine BankID-Alternative unter öffentlicher Kontrolle mit EU eIDAS 2.0-Interoperabilität.
+
+4. **Schulreform abgeschlossen**: HD01UbU28 schließt die letzte administrative Lücke in der zehnjährigen Grundschulreform und liefert Lotta Edholms (L) Signaturbildungspolitik.
+
+5. **Wirtschaftlicher Gegenwind bleibt**: 8,4% Arbeitslosigkeit (AKU) ist das schwächste Element in der Tidö-Erbbotschaft. Der rot-grüne Block wird dies bis September beharrlich angreifen.
+
+### Nachrichtenlücken
+
+| Lücke | PIR-ID | Priorität |
+|-------|--------|----------|
+| Stabilitätsschwelle von L nach dem Sommer | PIR-001 | KRITISCH |
+| Lagrådet yttrande zu HD03267 (RF 2:4) | PIR-007 | HOCH |
+| Zeitplan für Riksdag-Passage der staatlichen E-ID | PIR-006 | HOCH |
+| Gaza/Kriegsverbrechen-Koalitionsspannung | PIR-004 | MITTEL |
+
+### Zukünftige Maßnahmen
+
+- Überwachen: Liberalernas Sommerumfragen (Schwelle PIR-001)
+- Überwachen: Lagrådets Veröffentlichung zu HD03267 (erwartet Juni 2026)
+- Überwachen: Riksdag-Debatte zu HD03250 staatliche E-ID (erwartet Woche 2026-05-11)
+- Maßnahme: Mandaterfüllungsmetriken für die endgültigen Artikel vor der Wahl im Juni/Juli zusammenstellen
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICO | **Confianza**: ALTA [Admiralty B2] | **Tiempo hasta las elecciones**: T-128 días  
+**Autor**: James Pether Sörling | **Ejecución**: 25547235893 | **Vintage FMI**: WEO abr-2026  
+**Ciclo**: Actual (2022-09-11 → 2026-09-13)
+
+---
+
+### Evaluación en una línea
+
+La coalición Tidö entregó tres grandes proposiciones el 2026-05-07 — identificación electrónica estatal, expulsión por amenaza de seguridad extranjera y poderes del Skatteverket contra el fraude de direcciones — llevando el cumplimiento del mandato al **78%** e iniciando el último sprint T-128 previo a las elecciones desde una posición de fortaleza legislativa.
+
+### Juicios clave
+
+1. **Estabilidad de la coalición: PROBABLEMENTE estable** hasta el día de las elecciones. Liberalerna al 4,2% (0,2 puntos porcentuales por encima del umbral) es el único modo de fallo que podría desintegrar la coalición antes del día de votación.
+
+2. **Oleada de legislación de seguridad**: HD03267 (expulsión por amenaza de seguridad) y HD01FöU18 (inteligencia de señales, anterior) constituyen juntos la reforma jurídica de seguridad nacional más significativa de Suecia desde la ley FRA de 2008. Ambas aprobadas/propuestas con apoyo entre bloques.
+
+3. **Hito digital**: HD03250 (identificación electrónica estatal) es el logro de gobernanza digital de mayor valor del período Tidö. Crea una alternativa al BankID bajo control público con interoperabilidad EU eIDAS 2.0.
+
+4. **Reforma educativa completada**: HD01UbU28 cierra la última brecha administrativa en la reforma de la escuela primaria de diez años, entregando la política educativa insignia de Lotta Edholm (L).
+
+5. **Los vientos económicos en contra persisten**: 8,4% de desempleo (AKU) es el elemento más débil en el relato del legado Tidö. El bloque rojo-verde atacará esto persistentemente hasta septiembre.
+
+### Brechas de inteligencia
+
+| Brecha | ID PIR | Prioridad |
+|--------|--------|----------|
+| Estabilidad del umbral de L tras el verano | PIR-001 | CRÍTICA |
+| Dictamen del Lagrådet sobre HD03267 (RF 2:4) | PIR-007 | ALTA |
+| Calendario de aprobación en el Riksdag del e-ID estatal | PIR-006 | ALTA |
+| Tensión de coalición Gaza/crímenes de guerra | PIR-004 | MEDIA |
+
+### Acciones futuras
+
+- Monitorear: Encuestas estivales de Liberalerna (umbral PIR-001)
+- Monitorear: Publicación del Lagrådet sobre HD03267 (esperada junio 2026)
+- Monitorear: Debate en el Riksdag sobre HD03250 e-ID estatal (esperado semana del 2026-05-11)
+- Acción: Compilar métricas de cumplimiento del mandato para los artículos finales previos a las elecciones en junio/julio
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_fi.md -->
+
+**Luokittelu**: JULKINEN | **Luottamus**: KORKEA [Admiralty B2] | **Aika vaaleihin**: T-128 päivää  
+**Tekijä**: James Pether Sörling | **Ajo**: 25547235893 | **IMF-vintage**: WEO Apr-2026  
+**Sykli**: Nykyinen (2022-09-11 → 2026-09-13)
+
+---
+
+### Yhden Rivin Arvio
+
+Tidö-koalitio toimitti kolme suurta esitystä 2026-05-07 — valtion sähköinen henkilöllisyystodistus, ulkomaisen turvallisuusuhan poistaminen maasta ja Verohallinnon valtuudet osoitepetoksia vastaan — mikä nosti toimeksiantojen täyttymisasteen **78 %:iin** ja aloittaa viimeisen T-128-sprintin ennen vaaleja lainsäädännöllisen vahvuuden asemasta.
+
+### Keskeiset Päätelmät
+
+1. **Koalition vakaus: TODENNÄKÖISESTI vakaa** vaaliipäivään asti. Liberalerna 4,2 %:ssa (0,2 prosenttiyksikköä yli kynnyksen) on ainoa epäonnistumistapa, joka voisi hajottaa koalition ennen vaaliipäivää.
+
+2. **Turvallisuuslainsäädännön lisääntyminen**: HD03267 (turvallisuusuhan poistaminen maasta) ja HD01FöU18 (signaalitiedustelu, aiemmin) muodostavat yhdessä Ruotsin merkittävimmän kansallisen turvallisuuden oikeudellisen uudistuksen vuoden 2008 FRA-lain jälkeen. Molemmat hyväksytty/ehdotettu yli puolirajojen tuella.
+
+3. **Digitaalinen virstanpylväs**: HD03250 (valtion sähköinen henkilöllisyystodistus) on Tidö-kauden arvokkain digitaalinen hallintosaavutus. Se luo julkisen valvonnan alaisen BankID-vaihtoehdon EU eIDAS 2.0 -yhteentoimivuudella.
+
+4. **Kouluuudistus valmis**: HD01UbU28 sulkee viimeisen hallinnollisen aukon kymmenvuotisessa peruskouluuudistuksessa ja toimittaa Lotta Edholmin (L) allekirjoituskoulutuspolitiikan.
+
+5. **Taloudelliset vastamäet jatkuvat**: 8,4 % työttömyys (AKU) on heikoin elementti Tidön perintökertomuksessa. Punaisvihreiden puolueiden ryhmittymä hyökkää tätä vastaan jatkuvasti syyskuuhun asti.
+
+### Tiedusteluaukot
+
+| Aukko | PIR-tunnus | Prioriteetti |
+|-------|-----------|-------------|
+| L:n kynnysvakaavuus kesän jälkeen | PIR-001 | KRIITTINEN |
+| Lagrådets yttrande HD03267:stä (RF 2:4) | PIR-007 | KORKEA |
+| Valtion sähköisen henkilöllisyystodistuksen Riksdag-käsittelyn aikataulu | PIR-006 | KORKEA |
+| Gaza/sotarikoskoalition jännite | PIR-004 | KESKITASO |
+
+### Tulevat Toimenpiteet
+
+- Seuraa: Liberalernanin kesäkyselyt (kynnys PIR-001)
+- Seuraa: Lagrådets julkaisu HD03267:sta (odotetaan kesäkuu 2026)
+- Seuraa: Riksdag-väittely HD03250 valtion sähköisestä henkilöllisyystodistuksesta (odotetaan viikolla 2026-05-11)
+- Toiminta: Kokoa toimeksiantojen täyttymismittarit kesä-/heinäkuun lopullisiin vaaleja edeltäviin artikkeleihin
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling | **Exécution**: 25547235893 | **Millésime FMI**: WEO avr-2026  
+
+---
+
+### Évaluation en une ligne
+
+La coalition Tidö a livré trois propositions majeures le 2026-05-07 — identité électronique étatique, expulsion pour menace sécuritaire étrangère et pouvoirs du Skatteverket contre la fraude aux adresses — portant l'exécution du mandat à **78%** et entrant dans le dernier sprint T-128 avant les élections depuis une position de force législative.
+
+### Jugements clés
+
+1. **Stabilité de la coalition: VRAISEMBLABLEMENT stable** jusqu'au jour du vote. Liberalerna à 4,2% (0,2 point de pourcentage au-dessus du seuil) est le seul scénario d'échec susceptible de désintégrer la coalition avant le scrutin.
+
+2. **Vague législative sécuritaire**: HD03267 (expulsion pour menace sécuritaire) et HD01FöU18 (renseignement de signaux, antérieur) constituent ensemble la réforme juridique la plus importante en matière de sécurité nationale en Suède depuis la loi FRA de 2008. Les deux adoptés/proposés avec le soutien de tous les blocs.
+
+3. **Jalon numérique**: HD03250 (identité électronique étatique) est la réalisation de gouvernance numérique de plus haute valeur de la période Tidö. Elle crée une alternative au BankID sous contrôle public avec interopérabilité EU eIDAS 2.0.
+
+4. **Réforme scolaire achevée**: HD01UbU28 ferme la dernière lacune administrative dans la réforme de l'école fondamentale de dix ans, livrant la politique éducative signature de Lotta Edholm (L).
+
+5. **Les vents contraires économiques persistent**: 8,4% de chômage (AKU) est l'élément le plus faible dans le récit de l'héritage Tidö. Le bloc rouge-vert attaquera cela avec persistance jusqu'en septembre.
+
+### Lacunes de renseignement
+
+| Lacune | ID PIR | Priorité |
+|--------|--------|---------|
+| Stabilité du seuil de L après l'été | PIR-001 | CRITIQUE |
+| Avis Lagrådet sur HD03267 (RF 2:4) | PIR-007 | ÉLEVÉE |
+| Calendrier de passage au Riksdag de l'e-ID étatique | PIR-006 | ÉLEVÉE |
+| Tension de coalition Gaza/crimes de guerre | PIR-004 | MOYENNE |
+
+### Actions futures
+
+- Surveiller: Sondages estivaux de Liberalerna (seuil PIR-001)
+- Surveiller: Publication du Lagrådet sur HD03267 (attendue juin 2026)
+- Surveiller: Débat au Riksdag sur HD03250 e-ID étatique (attendu semaine du 2026-05-11)
+- Action: Compiler les métriques d'accomplissement du mandat pour les articles finaux avant les élections en juin/juillet
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_he.md -->
+
+**סיווג**: ציבורי | **ביטחון**: גבוה [Admiralty B2] | **זמן לבחירות**: T-128 ימים  
+**מחבר**: James Pether Sörling | **ריצה**: 25547235893 | **נתוני IMF**: WEO אפריל-2026  
+**מחזור**: נוכחי (2022-09-11 → 2026-09-13)
+
+---
+
+### הערכה בשורה אחת
+
+קואליציית טידו מסרה שלושה הצעות חוק מרכזיות ב-2026-05-07 — תעודת זהות אלקטרונית ממשלתית, גירוש בגין איום ביטחוני זר וסמכויות Skatteverket לעיכוב הונאות כתובת — מה שהעלה את מימוש הכהונה ל-**78%** ומתחיל את הספרינט האחרון T-128 לקראת הבחירות ממצב כוח חקיקתי.
+
+### פסקי דין מרכזיים
+
+1. **יציבות הקואליציה: ככל הנראה יציבה** עד יום הבחירות. Liberalerna ב-4.2% (0.2 נקודות אחוז מעל הסף) הוא תרחיש הכישלון היחיד שיכול לפרק את הקואליציה לפני יום ההצבעה.
+
+2. **גל חקיקת ביטחון**: HD03267 (גירוש בגין איום ביטחוני) ו-HD01FöU18 (מודיעין אותות, קודם) מהווים יחדיו את הרפורמה המשפטית הלאומית הביטחונית המשמעותית ביותר של שוודיה מאז חוק FRA ב-2008. שניהם אושרו/הוצעו עם תמיכה חוצת בלוקים.
+
+3. **אבן דרך דיגיטלית**: HD03250 (תעודת זהות אלקטרונית ממשלתית) הוא הישג הממשל הדיגיטלי בעל הערך הגבוה ביותר בתקופת טידו. הוא יוצר חלופה ל-BankID תחת שליטה ציבורית עם יכולת פעולה הדדית EU eIDAS 2.0.
+
+4. **רפורמת החינוך הושלמה**: HD01UbU28 סוגר את הפער האדמיניסטרטיבי האחרון ברפורמת בית הספר היסודי העשרי, ומספק את מדיניות החינוך החתימה של Lotta Edholm (L).
+
+5. **הרוחות הכלכליות הנגדיות נמשכות**: 8.4% אבטלה (AKU) הוא האלמנט החלש ביותר בנרטיב המורשת של טידו. הגוש האדום-ירוק יתקוף זאת בהתמדה עד ספטמבר.
+
+### פערי מודיעין
+
+| פער | מזהה PIR | עדיפות |
+|-----|---------|-------|
+| יציבות הסף של L לאחר הקיץ | PIR-001 | קריטי |
+| חוות דעת Lagrådet על HD03267 (RF 2:4) | PIR-007 | גבוה |
+| לוח זמנים למעבר ב-Riksdag של תעודת זהות אלקטרונית ממשלתית | PIR-006 | גבוה |
+| מתח קואליציה עזה/פשעי מלחמה | PIR-004 | בינוני |
+
+### פעולות עתידיות
+
+- ניטור: סקרי הקיץ של Liberalerna (סף PIR-001)
+- ניטור: פרסום Lagrådet על HD03267 (צפוי יוני 2026)
+- ניטור: דיון Riksdag על HD03250 תעודת זהות אלקטרונית ממשלתית (צפוי שבוע 2026-05-11)
+- פעולה: קומפילציה של מדדי מימוש המנדט למאמרים הסופיים לפני הבחירות ביוני/יולי
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_ja.md -->
+
+**分類**: 公開 | **信頼度**: 高 [Admiralty B2] | **選挙まで**: T-128日  
+**著者**: James Pether Sörling | **実行**: 25547235893 | **IMFビンテージ**: WEO 2026年4月  
+**サイクル**: 現行 (2022-09-11 → 2026-09-13)
+
+---
+
+### 一行評価
+
+ティドー連合は2026年5月7日に3つの主要な法案を提出した——国家電子ID、外国安全保障脅威による追放、およびSkatteverketの住所詐欺対策権限——これにより任期達成率が**78%**となり、立法上の強さから選挙前最後のT-128スプリントに入った。
+
+### 主要判断
+
+1. **連立の安定性: おそらく安定**——選挙日まで。リベラレルナが4.2%（閾値を0.2ポイント上回る）は、選挙日前に連立を崩壊させる可能性のある唯一の失敗シナリオだ。
+
+2. **安全保障立法の急増**: HD03267（安全保障脅威による追放）とHD01FöU18（シグナル諜報、以前）は合わせて、2008年のFRA法以来のスウェーデンで最も重要な国家安全保障法改革を構成している。両方とも超党派支持で承認/提案された。
+
+3. **デジタルの節目**: HD03250（国家電子ID）は、ティドー期間において最も価値の高いデジタルガバナンスの成果だ。EU eIDAS 2.0の相互運用性を持つ公的管理下のBankID代替手段を創設する。
+
+4. **教育改革の完成**: HD01UbU28は10年制基礎学校改革の最後の行政的ギャップを閉じ、ロッタ・エドホルム(L)の象徴的な教育政策を実現する。
+
+5. **経済的逆風は続く**: 8.4%の失業率（AKU）はティドーの遺産物語において最も弱い要素だ。赤緑ブロックは9月まで継続的にこれを攻撃するだろう。
+
+### 情報ギャップ
+
+| ギャップ | PIR ID | 優先度 |
+|--------|--------|------|
+| 夏以降のL社の閾値安定性 | PIR-001 | 重大 |
+| HD03267のラグロデット意見（RF 2:4） | PIR-007 | 高 |
+| 国家電子IDのリクスダーグ通過タイムライン | PIR-006 | 高 |
+| ガザ/戦争犯罪連立緊張 | PIR-004 | 中 |
+
+### 今後のアクション
+
+- 監視: リベラレルナの夏の世論調査（閾値PIR-001）
+- 監視: HD03267についてのラグロデット公表（2026年6月予定）
+- 監視: HD03250国家電子IDについてのリクスダーグ討論（2026-05-11週予定）
+- 行動: 6/7月の選挙前最終記事のための任期達成指標のコンパイル
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_ko.md -->
+
+**분류**: 공개 | **신뢰도**: 높음 [Admiralty B2] | **선거까지**: T-128일  
+**저자**: James Pether Sörling | **실행**: 25547235893 | **IMF 빈티지**: WEO 2026년 4월  
+**주기**: 현행 (2022-09-11 → 2026-09-13)
+
+---
+
+### 한 줄 평가
+
+티되 연립은 2026년 5월 7일 세 가지 주요 제안을 제출했다——국가 전자 신분증, 외국 안보 위협 추방, 그리고 Skatteverket의 주소 사기 대응 권한——이를 통해 임기 이행률이 **78%**에 달해 입법적 강세에서 선거 전 마지막 T-128 스프린트를 시작한다.
+
+### 핵심 판단
+
+1. **연립 안정성: 아마도 안정적**——선거일까지. 리베라레르나가 4.2%(임계값 0.2%포인트 초과)로 선거일 이전에 연립을 해체할 수 있는 유일한 실패 시나리오다.
+
+2. **안보 입법 급증**: HD03267(안보 위협 추방)과 HD01FöU18(신호 정보, 이전)은 함께 2008년 FRA법 이후 스웨덴의 가장 중요한 국가 안보 법적 개혁을 구성한다. 두 가지 모두 블록을 초월한 지지로 승인/제안되었다.
+
+3. **디지털 이정표**: HD03250(국가 전자 신분증)은 티되 기간 최고 가치의 디지털 거버넌스 성과다. EU eIDAS 2.0 상호 운용성을 갖춘 공공 통제 하의 BankID 대안을 만든다.
+
+4. **교육 개혁 완료**: HD01UbU28은 10년제 기초학교 개혁의 마지막 행정적 공백을 닫고 로타 에드홀름(L)의 시그니처 교육 정책을 실현한다.
+
+5. **경제적 역풍 지속**: 8.4% 실업률(AKU)은 티되 유산 서사에서 가장 약한 요소다. 적녹 블록은 9월까지 지속적으로 이를 공격할 것이다.
+
+### 정보 공백
+
+| 공백 | PIR ID | 우선순위 |
+|-----|--------|---------|
+| 여름 이후 L의 임계값 안정성 | PIR-001 | 중요 |
+| HD03267에 대한 라그로데트 의견(RF 2:4) | PIR-007 | 높음 |
+| 국가 전자 신분증의 릭스다그 통과 일정 | PIR-006 | 높음 |
+| 가자/전쟁범죄 연립 긴장 | PIR-004 | 중간 |
+
+### 향후 조치
+
+- 모니터링: 리베라레르나 여름 여론조사(임계값 PIR-001)
+- 모니터링: HD03267에 대한 라그로데트 발표(2026년 6월 예상)
+- 모니터링: HD03250 국가 전자 신분증에 대한 릭스다그 토론(2026-05-11주 예상)
+- 조치: 6/7월 선거 전 최종 기사를 위한 임기 이행 지표 취합
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR | **Vertrouwen**: HOOG [Admiralty B2] | **Tijd tot de verkiezingen**: T-128 dagen  
+**Auteur**: James Pether Sörling | **Run**: 25547235893 | **IMF-vintage**: WEO apr-2026  
+**Cyclus**: Huidig (2022-09-11 → 2026-09-13)
+
+---
+
+### Éénregelbeoordeling
+
+De Tidö-coalitie leverde op 2026-05-07 drie grote wetsvoorstellen — staatse e-ID, uitzetting bij buitenlandse veiligheidsdreiging en bevoegdheden van de Skatteverket tegen adresfraude — waarmee de mandaatvervulling op **78%** uitkwam en de laatste T-128-sprint voor de verkiezingen wordt ingegaan vanuit een positie van wetgevende kracht.
+
+### Kernoordeelen
+
+1. **Coalitiesabiliteit: WAARSCHIJNLIJK stabiel** tot op de verkiezingsdag. Liberalerna op 4,2% (0,2 procentpunt boven de drempel) is het enige faalscenario dat de coalitie vóór verkiezingsdag zou kunnen ontbinden.
+
+2. **Golf van veiligheidswetgeving**: HD03267 (uitzetting bij veiligheidsdreiging) en HD01FöU18 (signaalintelligentie, eerder) vormen samen de meest significante nationale veiligheidswettelijke hervorming van Zweden sinds de FRA-wet van 2008. Beide aangenomen/voorgesteld met steun over blokken heen.
+
+3. **Digitale mijlpaal**: HD03250 (staatse e-ID) is de meestwaardige digitale governance-prestatie van de Tidö-periode. Ze creëert een BankID-alternatief onder publieke controle met EU eIDAS 2.0-interoperabiliteit.
+
+4. **Schoolhervorming voltooid**: HD01UbU28 sluit de laatste administratieve kloof in de tienjarige basisschoolhervorming en levert Lotta Edholms (L) kenmerkend onderwijsbeleid.
+
+5. **Economische tegenwind blijft**: 8,4% werkloosheid (AKU) is het zwakste element in het Tidö-erfenisverhaal. Het rood-groene blok zal dit aanhoudend aanvallen tot september.
+
+### Inlichtingslacunes
+
+| Lacune | PIR-ID | Prioriteit |
+|--------|--------|-----------|
+| Drempelstabiliteit van L na de zomer | PIR-001 | KRITIEK |
+| Lagrådet yttrande over HD03267 (RF 2:4) | PIR-007 | HOOG |
+| Tijdlijn Riksdag-passage staatse e-ID | PIR-006 | HOOG |
+| Gaza/oorlogsmisdaad-coalitie spanning | PIR-004 | GEMIDDELD |
+
+### Toekomstige Acties
+
+- Monitor: Liberalernas zomeropiniepeilingen (drempel PIR-001)
+- Monitor: Lagrådets publicatie over HD03267 (verwacht juni 2026)
+- Monitor: Riksdag-debat over HD03250 staatse e-ID (verwacht week van 2026-05-11)
+- Actie: Mandaatvervullingsstatistieken samenstellen voor de definitieve artikelen vóór de verkiezingen in juni/juli
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_no.md -->
+
+**Klassifisering**: OFFENTLIG | **Konfidens**: HØY [Admiralty B2] | **Tid til valg**: T-128 dager  
+**Forfatter**: James Pether Sörling | **Kjøring**: 25547235893 | **IMF-vintage**: WEO Apr-2026  
+**Syklus**: Nåværende (2022-09-11 → 2026-09-13)
+
+---
+
+### Énlinjevurdering
+
+Tidø-koalisjonen leverte tre store proposisjoner 2026-05-07 — statlig e-ID, utvisning ved utenlandske sikkerhetstrusler og Skatteverkets fullmakter mot adressesvindel — noe som brakte mandatoppfyllelsen til **78%** og innleder den siste T-128-sprinten før valget fra en posisjon av lovgivningsstyrke.
+
+### Nøkkelkonklusjoner
+
+1. **Koalisjonsstabilitet: SANNSYNLIGVIS stabil** frem til valgdagen. Liberalerna på 4,2% (0,2 prosentpoeng over terskelen) er det eneste feilscenariet som kan oppløse koalisjonen før valgdagen.
+
+2. **Sikkerhetslovgivningsøkning**: HD03267 (utvisning ved sikkerhetstrusler) og HD01FöU18 (signaletterforskning, tidligere) utgjør til sammen Sveriges mest betydningsfulle nasjonale sikkerhets-rettsreform siden FRA-loven i 2008. Begge vedtatt/foreslått med støtte på tvers av blokker.
+
+3. **Digital milepæl**: HD03250 (statlig e-ID) er den høyeste-verdi digitale styringsprestasjonen i Tidø-perioden. Den skaper et BankID-alternativ under offentlig kontroll med EU eIDAS 2.0-interoperabilitet.
+
+4. **Skolereform fullført**: HD01UbU28 lukker det siste administrative gapet i tiårig grunnskolereform og leverer Lotta Edholms (L) signatur-utdanningspolitikk.
+
+5. **Økonomisk motvind vedvarer**: 8,4% arbeidsledighet (AKU) er det svakeste elementet i Tidøs arvsfortelling. Det rødgrønne blokket vil angripe dette vedvarende frem til september.
+
+### Etterretningsgap
+
+| Gap | PIR-ID | Prioritet |
+|-----|--------|-----------|
+| L's terskels stabilitet etter sommeren | PIR-001 | KRITISK |
+| Lagrådets yttrande om HD03267 (RF 2:4) | PIR-007 | HØY |
+| Tidslinje for Riksdag-passage av statlig e-ID | PIR-006 | HØY |
+| Gaza/krigsforbrytelse-koalisjonstensjon | PIR-004 | MIDDELS |
+
+### Fremtidige Handlinger
+
+- Overvåk: Liberalernas sommerundersøkelser (terskelen PIR-001)
+- Overvåk: Lagrådets publikasjon om HD03267 (forventes juni 2026)
+- Overvåk: Riksdag-debatt om HD03250 statlig e-ID (forventes uken 2026-05-11)
+- Handling: Sammenstill mandatoppfyllelsesmålinger for endelige artikler før valget i juni/juli
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG | **Konfidens**: HÖG [Admiralty B2] | **Tid till val**: T-128 dagar  
+**Författare**: James Pether Sörling | **Körning**: 25547235893 | **IMF-vintage**: WEO Apr-2026  
+**Cykel**: Nuvarande (2022-09-11 → 2026-09-13)
+
+---
+
+### Ettradsbedömning
+
+Tidö-koalitionen levererade tre stora propositioner den 2026-05-07 — statlig e-legitimation, utvisning vid utländska säkerhetshot och Skatteverkets befogenheter mot adressbedrägerier — vilket förde mandatuppfyllelsen till **78%** och inleder den sista T-128-sprinten inför valet i en position av lagstiftningsstyrka.
+
+### Nyckeldomslutsatser
+
+1. **Koalitionsstabilitet: TROLIGEN stabil** fram till valdagen. Liberalerna på 4,2% (0,2 procentenheter över spärren) är det enda felläge som kan upplösa koalitionen innan valdagen.
+
+2. **Säkerhetslagstiftningsökning**: HD03267 (utvisning vid säkerhetshot) och HD01FöU18 (signalspaning, tidigare) utgör tillsammans den mest betydande nationella säkerhetsrättsliga reformen i Sverige sedan FRA-lagen 2008. Båda antogs/föreslogs med stöd tvärs blocken.
+
+3. **Digital milstolpe**: HD03250 (statlig e-legitimation) är den mest värdefulla digitala styrningsprestation under Tidö-perioden. Den skapar ett BankID-alternativ under offentlig kontroll med EU eIDAS 2.0-interoperabilitet.
+
+4. **Skolreform genomförd**: HD01UbU28 stänger det sista administrativa gapet i den tioåriga grundskolereformen och levererar Lotta Edholms (L) signatursutbildningspolitik.
+
+5. **Ekonomiska motvind kvarstår**: 8,4% arbetslöshet (AKU) är det svagaste elementet i Tidös arvsberättelse. Det rödgröna blocket kommer att attackera detta ihärdigt fram till september.
+
+### Underrättelseluckor
+
+| Lucka | PIR-ID | Prioritet |
+|-------|--------|-----------|
+| L:s tröskelstabilitet efter sommaren | PIR-001 | KRITISK |
+| Lagrådets yttrande om HD03267 (RF 2:4) | PIR-007 | HÖG |
+| Tidslinje för riksdagspassage av statlig e-legitimation | PIR-006 | HÖG |
+| Gaza/krigsbrott-koalitionsspänning | PIR-004 | MEDEL |
+
+### Framtida Åtgärder
+
+- Bevaka: Liberalernas sommarundersökningar (tröskeln PIR-001)
+- Bevaka: Lagrådets publikation om HD03267 (förväntas juni 2026)
+- Bevaka: Riksdagsdebatt om HD03250 statlig e-legitimation (förväntas veckan 2026-05-11)
+- Åtgärd: Sammanställ mandatfullföljande-mätvärden för slutliga artiklar inför valet i juni/juli
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_zh.md -->
+
+**分类**: 公开 | **置信度**: 高 [Admiralty B2] | **距选举**: T-128天  
+**作者**: James Pether Sörling | **运行**: 25547235893 | **IMF数据版本**: WEO 2026年4月  
+**周期**: 当前 (2022-09-11 → 2026-09-13)
+
+---
+
+### 一行评估
+
+蒂德联合政府于2026年5月7日提交了三项重要提案——国家电子身份证、驱逐外国安全威胁者以及Skatteverket应对地址欺诈的权力——将任期完成率提升至**78%**，并从立法强势位置进入选举前最后T-128冲刺阶段。
+
+### 核心判断
+
+1. **联合政府稳定性：很可能稳定**至选举日。自由党（Liberalerna）支持率4.2%（高于门槛0.2个百分点）是唯一可能在选举日前瓦解联合政府的失败情形。
+
+2. **安全立法浪潮**：HD03267（驱逐安全威胁者）和HD01FöU18（信号情报，先前）共同构成瑞典自2008年FRA法以来最重要的国家安全法律改革。两项均以跨党派支持获得通过/提出。
+
+3. **数字里程碑**：HD03250（国家电子身份证）是蒂德时期价值最高的数字治理成就。它创建了一个在公共控制下、具备EU eIDAS 2.0互操作性的BankID替代方案。
+
+4. **教育改革完成**：HD01UbU28填补了十年制义务教育改革最后一个行政空白，实现了洛塔·埃德霍尔姆（L）的标志性教育政策。
+
+5. **经济逆风持续**：8.4%失业率（AKU）是蒂德执政遗产叙事中最薄弱的环节。红绿联盟将在九月之前持续对此发起攻势。
+
+### 情报缺口
+
+| 缺口 | PIR编号 | 优先级 |
+|-----|--------|-------|
+| 夏后L党门槛稳定性 | PIR-001 | 关键 |
+| 拉格罗德特对HD03267的意见（RF 2:4） | PIR-007 | 高 |
+| 国家电子身份证国会通过时间线 | PIR-006 | 高 |
+| 加沙/战争罪联合政府紧张 | PIR-004 | 中等 |
+
+### 后续行动
+
+- 监测：自由党夏季民调（门槛PIR-001）
+- 监测：拉格罗德特发布HD03267意见（预期2026年6月）
+- 监测：里克斯达格对HD03250国家电子身份证的辩论（预期2026-05-11周）
+- 行动：汇总任期完成指标，用于6/7月选举前最终文章
+
+> economicProvenance: {provider: "imf", dataflow: "WEO", vintage: "WEO Apr-2026", retrieved_at: "2026-05-08"}
+
+<!-- source-sha: c3640cc38d1fa229418114ba7c810d3f86192d43 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 27 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 40 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1679,6 +2275,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

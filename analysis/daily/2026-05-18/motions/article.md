@@ -1,12 +1,12 @@
 ---
 title: "S och C har lämnat in oppositionsmotioner (HD024184, HD024151)"
 description: "S och C har lämnat in oppositionsmotioner (HD024184, HD024151) mot Tidö-koalitionens transparenslag prop. 2025/26:258 för politisk finansiering — en lag som kräver att fackförbund, inklusive LO,…"
-keywords: "Motions, English, May 18, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, lämnat oppositionsmotioner HD024184 HD024151 Tidö-koalitionens, lämnat, oppositionsmotioner, HD024184, HD024151, Tidö-koalitionens, transparenslag, prop, 2025, politisk, finansiering, kräver, fackförbund, inklusive"
+keywords: "HD024184, HD024151, prop. 2025/26:258, KU, Social Democrats, RF Chapter, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-05-18
 subfolder: motions
 slug: 2026-05-18-motions
 source_folder: analysis/daily/2026-05-18/motions
-generated_at: 2026-05-23T22:05:57.260Z
+generated_at: 2026-05-24T12:19:34.606Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Security-State Legislative Sprint: Three Executive"
 description: "Sweden's Security-State Legislative Sprint: Three Executive Propositions + Six Committee Reports Advance Simultaneously — 125 Days Before Election"
-keywords: "Evening Analysis, English, May 7, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Security-State Legislative Sprint Three, Sweden, Security-State, Legislative, Sprint, Three, Executive, Propositions, Committee, Reports, Advance, Simultaneously, Days, Before"
+keywords: "HD03250, HD03261, HD03267, HD10475, HD10476, HD10478, HD10479, FöU18, CU25, CU35, FiU37, JuU34, JuU39, FiU38, FiU31, JuU32, FöU, CU, FiU, JuU, Sweden s Security-State Legislative Sprint, Three Executive Propositions, Six Committee Reports Advance, Days Before Election"
 date: 2026-05-07
 subfolder: evening-analysis
 slug: 2026-05-07-evening-analysis
 source_folder: analysis/daily/2026-05-07/evening-analysis
-generated_at: 2026-05-23T22:05:56.646Z
+generated_at: 2026-05-24T12:19:34.148Z
 language: en
 layout: article
 ---

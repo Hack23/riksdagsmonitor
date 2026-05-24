@@ -1,12 +1,12 @@
 ---
 title: "On 2026-04-13 – 16, the Kristersson government tabled a coordinated"
 description: "On 2026-04-13 – 16, the Kristersson government tabled a coordinated four-document pre-election sprint: Vårproposition 2026 (HD03100, DIW 9.5) sets the macro frame, an extra supplementary budget…"
-keywords: "Realtime 1705, English, April 18, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Kristersson government tabled coordinated four-document, Kristersson, government, tabled, coordinated, four-document, pre-election, sprint, Vårproposition, 2026, HD03100, sets, macro, frame"
+keywords: "HD03100, HD03236, HD03246, HD01SfU22, HD03241, HD0399, MP, SD, Justice Minister Gunnar Strömmer s, Evidence Locus, Action Window, Fiscal Risk, Before Riksrevisionen, Why They Matter Now, Elisabeth Svantesson, Finance Minister, Gunnar Strömmer, Justice Minister, Owns SiS-capacity, Niklas Wykman, Financial Markets Minister, Johan Forssell, Migration Minister, Ulf Kristersson"
 date: 2026-04-18
 subfolder: realtime-1705
 slug: 2026-04-18-realtime-1705
 source_folder: analysis/daily/2026-04-18/realtime-1705
-generated_at: 2026-05-23T22:05:55.436Z
+generated_at: 2026-05-24T12:19:33.278Z
 language: en
 layout: article
 ---

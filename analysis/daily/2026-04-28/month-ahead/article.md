@@ -1,12 +1,12 @@
 ---
 title: "May 2026 Month Ahead: Sweden's Pre-Election Legislative Climax"
 description: "Sweden's Riksdag enters May 2026 with the Kristersson government's security-and-order programme nearing its legislative climax: a coordinated criminal-justice cluster (weapons law, prison…"
-keywords: "Month Ahead, English, April 28, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Month Ahead Sweden Pre-Election Legislative, 2026, Month, Ahead, Sweden, Pre-Election, Legislative, Climax, enters, with, Kristersson, government, security-and-order, programme"
+keywords: "HD01CU40, HD01JuU10, HD01CU25, HD03246, HD03237, HD10449, HD10450, HD10451, HD11752, HD11753, HD024099, JuU10, CU, JuU, James Pether Sörling, Tier-C Month-Ahead Aggregation, Sweden s Riksdag, Social Democrats, Justice Committee, Monitor PIR-, Centre Party, Criminal Justice Cluster, Infrastructure Gap, Andreas Carlson"
 date: 2026-04-28
 subfolder: month-ahead
 slug: 2026-04-28-month-ahead
 source_folder: analysis/daily/2026-04-28/month-ahead
-generated_at: 2026-05-23T22:05:56.044Z
+generated_at: 2026-05-24T12:19:33.697Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Riksdag Monthly Review: April 2026 (Spring Term Peak)"
 description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts — 30-day retrospective</em> </p>"
-keywords: "Monthly Review, English, April 19, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Monthly Review April Spring Term, Monthly, Review, April, 2026, Spring, Term, Peak, align, center, One-page, decision-maker, briefing, newsroom"
+keywords: "HD03100, HD0399, HD03236, HD03218, HD03217, HD03246, HD03245, HD03237, HD01KU32, HD01KU33, HD03220, HD03238, HD03242, HD03239, HD03240, HD03231, KU32, KU33, KU, KD, SD, MP, Coverage Window, News Journalist"
 date: 2026-04-19
 subfolder: monthly-review
 slug: 2026-04-19-monthly-review
 source_folder: analysis/daily/2026-04-19/monthly-review
-generated_at: 2026-05-23T22:05:55.510Z
+generated_at: 2026-05-24T12:19:33.328Z
 language: en
 layout: article
 ---

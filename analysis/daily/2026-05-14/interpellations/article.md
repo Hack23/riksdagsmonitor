@@ -1,12 +1,12 @@
 ---
 title: "Vänsterpartiet Demands Aid Impact Assessment for Children as Sweden Slashes OD"
 description: "Lotta Johnsson Fornarve (V) has filed Interpellation 2025/26:492 demanding that Bistånds- och utrikeshandelsminister Benjamin Dousa (M) account for the child-rights consequences of Sweden's dramatic…"
-keywords: "Interpellations, English, May 14, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Vänsterpartiet Demands Impact Assessment Children, Vänsterpartiet, Demands, Impact, Assessment, Children, Sweden, Slashes, Lotta, Johnsson, Fornarve, filed, Interpellation, 2025"
+keywords: "HD10492, James Pether Sörling, Lotta Johnsson Fornarve, Benjamin Dousa, Rädda Barnen, Minister Dousa, OECD DAC, Minister Benjamin Dousa, If Minister Dousa, Devil s Advocate, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-05-14
 subfolder: interpellations
 slug: 2026-05-14-interpellations
 source_folder: analysis/daily/2026-05-14/interpellations
-generated_at: 2026-05-23T22:05:57.076Z
+generated_at: 2026-05-24T12:19:34.471Z
 language: en
 layout: article
 ---
