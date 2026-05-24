@@ -77,6 +77,8 @@
     "validate-news": "npx tsx scripts/validate-news-translations.ts",
     "validate-exec-brief-translations": "npx tsx scripts/validate-executive-brief-translations.ts",
     "validate-article": "npx tsx scripts/validate-article.ts",
+    "validate:mermaid": "npx tsx scripts/validate-mermaid-diagrams.ts",
+    "fix:mermaid": "npx tsx scripts/fix-mermaid-diagrams.ts",
     "validate-all": "npm run htmlhint && npm run validate-translations && npm run validate-news && npm run validate-article",
     "generate-news": "npx tsx scripts/render-articles.ts --all --lang all",
     "aggregate-analysis": "npx tsx scripts/aggregate-analysis.ts --all",

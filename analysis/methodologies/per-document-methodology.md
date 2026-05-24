@@ -121,8 +121,8 @@ flowchart LR
 
     D{Near-duplicate or<br/>coordinated bundle?}
 
-    SI[Single-doc analysis<br/>{dok_id}-analysis.md]:::single
-    CL[Cluster analysis<br/>{theme}-cluster-analysis.md]:::cluster
+    SI["Single-doc analysis<br/>{dok_id}-analysis.md"]:::single
+    CL["Cluster analysis<br/>{theme}-cluster-analysis.md"]:::cluster
 
     UP[Upstream consumption<br/>Family A / B / C / D]:::out
 
@@ -329,8 +329,8 @@ flowchart TD
 
     D{Step 3 — Cluster?<br/>apply 4-rule decision}:::decide
 
-    S1[Step 4a — Write single-doc analysis<br/>→ {dok_id}-analysis.md]:::write
-    S2[Step 4b — Write cluster analysis<br/>→ {theme}-cluster-analysis.md]:::write
+    S1["Step 4a — Write single-doc analysis<br/>→ {dok_id}-analysis.md"]:::write
+    S2["Step 4b — Write cluster analysis<br/>→ {theme}-cluster-analysis.md"]:::write
 
     Sc[Step 5 — Score DIW across<br/>6 dimensions · assign tier]:::write
     Cx[Step 6 — Populate cross-references<br/>amends / rebuts / bundled]:::write
