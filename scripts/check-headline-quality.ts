@@ -173,8 +173,8 @@ export function hasIsoDateAffix(h1: string): { leading: boolean; trailing: boole
  * section header below.
  */
 const BOILERPLATE_PREFIXES: ReadonlyArray<{ readonly label: string; readonly re: RegExp }> = [
-  { label: 'Executive Brief', re: /^\s*(?:[#📋📰🎯⚡🧭]\s*)*executive\s+brief\b/i },
-  { label: 'Realtime Monitor', re: /^\s*(?:[#📋📰🎯⚡🧭]\s*)*realtime\s+monitor\b/i },
+  { label: 'Executive Brief', re: /^\s*(?:[#📋📰🎯⚡🧭]\s*)*executive\s+brief\b/iu },
+  { label: 'Realtime Monitor', re: /^\s*(?:[#📋📰🎯⚡🧭]\s*)*realtime\s+monitor\b/iu },
   { label: 'Methodology Reflection', re: /^\s*methodology\s+reflection\b/i },
   { label: 'Pass 1', re: /^\s*pass\s*1\b/i },
   { label: 'Pass 2', re: /^\s*pass\s*2\b/i },
