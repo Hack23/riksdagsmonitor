@@ -72,18 +72,21 @@ describe('computeArticleHeadMetadata', () => {
     expect(head.articleTypeLabel.length).toBeGreaterThan(0);
   });
 
-  it('produces a branded <title> with brand OR localized date prefix when seo.title omits the brand', () => {
+  it('produces a branded <title> with brand suffix and NO date prefix', () => {
     const head = computeArticleHeadMetadata({
       markdown: ARTICLE_MD,
       lang: 'en',
       canonicalPath: 'news/2026-05-22-committeeReports-en.html',
     });
-    // Under the date-prefix contract, either the brand suffix or the
-    // localized newsroom date prefix anchors the SERP title (whichever fits
-    // the per-language SERP budget). Both are valid uniqueness signals.
-    expect(
-      /riksdagsmonitor/i.test(head.brandedTitle) || /May 22, 2026/.test(head.brandedTitle),
-    ).toBe(true);
+    // Post-2026-05-24 contract: the brand suffix is the sole SERP-title
+    // anchor. The localized date prefix was removed because the date is
+    // already carried by the URL slug, og:article:published_time, JSON-LD
+    // datePublished, the visible byline, and the SERP auto-rendered date.
+    expect(/riksdagsmonitor/i.test(head.brandedTitle)).toBe(true);
+    expect(head.brandedTitle).not.toMatch(
+      /\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},\s+\d{4}\s*·/,
+    );
+    expect(head.brandedTitle).not.toMatch(/\d{4}-\d{2}-\d{2}/);
   });
 
   it('forwards keywords / description into the buildArticleSeoMetadata output', () => {
@@ -194,11 +197,11 @@ describe('computeArticleHeadMetadata — branded <title> respects per-language S
     expect(head.brandedTitle).not.toMatch(/…\s*[—-]\s*Riksdagsmonitor\s*$/i);
   });
 
-  it('short H1 keeps a brand-or-date anchor when it fits the budget', () => {
-    // 41-char H1 + 15-char localized date prefix " · May 22, 2026" + 18-char
-    // brand suffix = 74 chars > 70-char hardMax. Under the date-prefix
-    // contract, the date prefix wins (uniqueness signal preferred) and the
-    // brand drops — but the title still has an anchor (date OR brand).
+  it('short H1 ships with the brand suffix and NO date prefix', () => {
+    // Post-2026-05-24 contract: a 41-char H1 + 18-char brand suffix
+    // = 59 chars fits the 70-char SERP budget cleanly, so the SERP title
+    // ships as `{H1} — Riksdagsmonitor`. The localized date prefix is
+    // never injected.
     const shortH1 = 'Riksdag Sets Date for Constitutional Vote';
     const markdown = `---\ntitle: ${shortH1}\ndescription: x\nkeywords: x\ndate: 2026-05-22\n---\n\n# ${shortH1}\n`;
     const head = computeArticleHeadMetadata({
@@ -206,9 +209,8 @@ describe('computeArticleHeadMetadata — branded <title> respects per-language S
       lang: 'en',
       canonicalPath: 'news/2026-05-22-committeeReports-en.html',
     });
-    expect(
-      /riksdagsmonitor/i.test(head.brandedTitle) || /May 22, 2026/.test(head.brandedTitle),
-    ).toBe(true);
+    expect(head.brandedTitle).toBe(`${shortH1} — Riksdagsmonitor`);
+    expect(head.brandedTitle).not.toMatch(/May 22, 2026/);
     expect(head.brandedTitle.length).toBeLessThanOrEqual(70);
   });
 

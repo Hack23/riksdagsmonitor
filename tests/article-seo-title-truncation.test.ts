@@ -53,20 +53,74 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     expect(result).not.toMatch(/\band…$/);
   });
 
-  it('prepends a reader-friendly localized date prefix to short titles that fit the budget', () => {
-    // Under the date-prefix contract (uniqueness signal preferred over brand
-    // when budget is tight), a 39-char H1 + 15-char localized date + 18-char
-    // brand = 72 chars > 70-char hardMax, so the brand is dropped but the
-    // date prefix stays as the uniqueness signal.
-    const shortH1 = 'Riksdag Approves FiU48 Fuel-Tax Cut and';
+  it('ships short brief H1s as "{H1} — Riksdagsmonitor" with NO date prefix', () => {
+    // **Post-2026-05-24 contract** (renderer audit of 480 EN articles):
+    // The localized-date prefix (`May 15, 2026 · `) has been removed from
+    // the SERP `<title>` cascade because the publication date is already
+    // carried by five other signals (canonical URL slug,
+    // `og:article:published_time`, JSON-LD `datePublished`, visible byline,
+    // SERP auto-rendered snippet). Forcing the date into `<title>` ate
+    // ~15 chars of the 70-char budget and forced truncation of 143/480
+    // (30%) of EN titles whose brief H1s would otherwise have fit.
+    //
+    // Short H1s now ship as `{H1} — Riksdagsmonitor` (brand suffix
+    // visible, no date prefix). The H1 is sourced from the executive
+    // brief by `cleanArticleTitle` so editorial quality is policed at
+    // source.
+    const shortH1 = 'Riksdag Approves FiU48 Fuel-Tax Cut';
     const result = buildSeoTitle({ ...baseInput, title: shortH1 });
-    // Localized date prefix is present (newsroom date format, NOT ISO).
-    expect(result).toMatch(/May 15, 2026/);
-    // ISO YYYY-MM-DD form must NOT leak into the SERP title.
+    expect(result).toBe('Riksdag Approves FiU48 Fuel-Tax Cut — Riksdagsmonitor');
+    // No date prefix in any form must leak into the SERP title.
+    expect(result).not.toMatch(
+      /\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},\s+\d{4}/,
+    );
     expect(result).not.toMatch(/2026-05-15/);
-    expect(result).not.toMatch(/ · en/);
-    expect(result).toContain('Riksdag Approves');
     expect(result.length).toBeLessThanOrEqual(70);
+  });
+
+  it('strips trailing connector AND date prefix when H1 just fits without brand', () => {
+    // 58-char H1 + ` — Riksdagsmonitor` (18 chars) = 76 chars overshoots
+    // the 70-char budget → brand suffix dropped → bare H1 (58 chars) ships.
+    // No date prefix added, no truncation needed.
+    const h1 = 'Deep Inspection HD03231 (Russia · Cyber · Defence · Ukraine)';
+    const result = buildSeoTitle({ ...baseInput, date: '2026-04-19', title: h1 });
+    expect(result).toBe(h1);
+    expect(result).not.toMatch(/Apr 19, 2026/);
+    expect(result).not.toContain('…');
+    expect(result.length).toBeLessThanOrEqual(70);
+  });
+
+  it('never prepends a localized date prefix in any of the 14 supported languages', () => {
+    // Per-language SERP budgets accommodate the bare H1 in every locale.
+    // The renderer must never inject `Mon DD, YYYY · `, `D. Mai YYYY · `,
+    // `YYYY年M月D日 · `, etc. into the SERP title.
+    const inputs = [
+      { lang: 'en' as const, title: 'Riksdag Approves Budget Reform' },
+      { lang: 'sv' as const, title: 'Riksdagen Antar Budgetreform' },
+      { lang: 'da' as const, title: 'Folketinget Vedtager Budgetreform' },
+      { lang: 'no' as const, title: 'Stortinget Vedtar Budsjettreform' },
+      { lang: 'fi' as const, title: 'Eduskunta Hyväksyy Budjettiuudistuksen' },
+      { lang: 'de' as const, title: 'Reichstag Verabschiedet Haushaltsreform' },
+      { lang: 'fr' as const, title: 'Le Riksdag Adopte la Réforme Budgétaire' },
+      { lang: 'es' as const, title: 'El Riksdag Aprueba la Reforma Presupuestaria' },
+      { lang: 'nl' as const, title: 'Riksdag Keurt Begrotingshervorming Goed' },
+      { lang: 'ar' as const, title: 'البرلمان يعتمد إصلاح الميزانية' },
+      { lang: 'he' as const, title: 'הריקסדאג מאשר רפורמה בתקציב' },
+      { lang: 'ja' as const, title: '国会予算改革を承認' },
+      { lang: 'ko' as const, title: '의회가 예산 개혁을 승인' },
+      { lang: 'zh' as const, title: '国会通过预算改革' },
+    ];
+    for (const { lang, title } of inputs) {
+      const result = buildSeoTitle({ ...baseInput, lang, title });
+      // Latin-script newsroom prefix.
+      expect(result, `lang=${lang}`).not.toMatch(
+        /\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},\s+\d{4}\s*·/,
+      );
+      // CJK newsroom prefix (年 月 日).
+      expect(result, `lang=${lang}`).not.toMatch(/\d{4}年\d{1,2}月\d{1,2}日\s*·/);
+      // ISO form must never leak either.
+      expect(result, `lang=${lang}`).not.toMatch(/\d{4}-\d{2}-\d{2}/);
+    }
   });
 
   it('strips Swedish connector "och" when truncating a Swedish H1', () => {

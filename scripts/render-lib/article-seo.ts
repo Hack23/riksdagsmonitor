@@ -222,55 +222,6 @@ function stripEmptyBrackets(text: string): string {
   return text.replace(EMPTY_BRACKETS_RE, ' ');
 }
 
-/**
- * Reader-friendly localized short date — used as a SERP-title prefix
- * to disambiguate daily-series articles (Tidö Current Mandate,
- * Post-2026 Mandate Forecast, Year-Ahead Political Intelligence, …)
- * which otherwise ship with identical `<title>` strings across multiple
- * publication dates.
- *
- * Format: localized `{Month} {Day}, {Year}` via `Intl.DateTimeFormat`
- * with the language's BCP-47 primary subtag from
- * {@link LANGUAGE_META.hreflang}. Produces native renderings such as:
- *
- *  - en: `May 6, 2026`
- *  - sv: `6 maj 2026`
- *  - de: `6. Mai 2026`
- *  - fi: `6.5.2026`
- *  - ar: `6 مايو 2026`
- *  - he: `6 במאי 2026`
- *  - ja / zh: `2026年5月6日`
- *  - ko: `2026년 5월 6일`
- *
- * Returns an empty string for malformed / missing dates so callers can
- * skip prefix injection without an extra null check.
- */
-function formatLocalizedShortDate(isoDate: string, lang: Language): string {
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/u.exec(isoDate);
-  if (!match) return '';
-  const [, yy, mm, dd] = match;
-  const year = Number(yy);
-  const month = Number(mm);
-  const day = Number(dd);
-  if (!year || !month || !day || month < 1 || month > 12 || day < 1 || day > 31) return '';
-  const utc = new Date(Date.UTC(year, month - 1, day));
-  if (Number.isNaN(utc.getTime())) return '';
-  try {
-    const locale = LANGUAGE_META[lang]?.hreflang ?? 'en';
-    return new Intl.DateTimeFormat(locale, {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
-      timeZone: 'UTC',
-    }).format(utc);
-  } catch {
-    return isoDate;
-  }
-}
-
-/** Separator between the localized date prefix and the article title. */
-const DATE_PREFIX_SEPARATOR = ' · ';
-
 /** Single-pass HTML entity decode map — avoids double-unescaping. */
 const HTML_ENTITY_MAP: Readonly<Record<string, string>> = {
   '&nbsp;': ' ',
@@ -491,25 +442,34 @@ export interface ArticleSeoMetadata {
 
 /**
  * Build the SERP `<title>`. The executive-brief H1 — which the cascade
- * has already localized into 14 languages — IS the context. The
- * renderer prepends a reader-friendly **localized date** prefix
- * (`{Localized Date} · {H1}`) so daily-series articles never ship
- * identical `<title>` strings across multiple publication dates.
+ * has already localized into 14 languages — IS the SERP title. Per
+ * `seo-metadata-contract.md` §2.1, the title is **always** sourced
+ * from the executive brief (`cleanArticleTitle` strips boilerplate;
+ * `titleFromBluf` synthesises from BLUF when the H1 is unusable).
  *
- * **Date prefix format** ({@link formatLocalizedShortDate}):
+ * **No date prefix** (since 2026-05-24, audit on 480-article EN corpus):
  *
- *  - en: `May 6, 2026 · …`
- *  - sv: `6 maj 2026 · …`
- *  - de: `6. Mai 2026 · …`
- *  - fi: `6.5.2026 · …`
- *  - ar / he: `6 مايو 2026 · …` / `6 במאי 2026 · …` (RTL-safe via Intl)
- *  - ja / zh: `2026年5月6日 · …`
- *  - ko: `2026년 5월 6일 · …`
+ *  - 198/480 (41%) of EN titles shipped with an ugly `"Mon DD, 2026 · "`
+ *    prefix that ate ~15 chars of the 70-char SERP budget.
+ *  - 143/480 (30%) of EN titles shipped truncated mid-phrase (e.g.
+ *    `"Apr 19, 2026 · Deep Inspection HD03231 (Russia · Cyber · Defence ·…"`)
+ *    when the bare H1 would have fit the budget cleanly.
+ *  - The date is **already** carried by five other signals: the URL
+ *    slug (`2026-04-19-deep-inspection-en.html`), `og:article:published_time`,
+ *    JSON-LD `datePublished`, the visible page byline, and the SERP's
+ *    own auto-rendered date snippet. Forcing the date into `<title>` is
+ *    duplicative, destroys precious budget chars, and yields visually
+ *    broken truncated titles.
+ *  - Reader-friendly newsroom datelines remain on the `<meta description>`
+ *    (see {@link buildSeoDescription}) — that's where the convention
+ *    belongs.
+ *  - Daily-series articles (election-cycle/current, year-ahead, …) that
+ *    historically reused identical H1s across dates are now policed at
+ *    the content layer (`scripts/check-headline-quality.ts` + brief
+ *    generator prompts) — the renderer no longer papers over duplicate
+ *    H1s by glue-mounting a date prefix on top.
  *
- * The `Intl.DateTimeFormat` short-month-year format produces 8-11 chars
- * across all 14 locales, well inside the per-language SERP budget.
- *
- * **Per-language SERP budgets** (since 2026-05-24, `seo-metadata-contract.md` §4):
+ * **Per-language SERP budgets** (`seo-metadata-contract.md` §4):
  *
  *  - **Latin LTR** (`en sv da no fi de fr es nl`) — 55-70 chars.
  *  - **RTL** (`ar he`) — 45-60 chars.
@@ -517,22 +477,15 @@ export interface ArticleSeoMetadata {
  *
  * **Composition cascade** (richest form first, fall back step by step):
  *
- *  1. `{Date} · {H1} — Riksdagsmonitor` — date prefix + story + brand.
- *  2. `{Date} · {H1}` — date prefix + story (brand dropped).
- *  3. `{H1} — Riksdagsmonitor` — story + brand (date prefix dropped).
- *  4. `{H1}` — story only.
- *  5. truncated `{H1}` with `…` ellipsis.
+ *  1. `{H1} — Riksdagsmonitor` — story + brand (preferred).
+ *  2. `{H1}` — bare story (brand dropped to fit budget).
+ *  3. truncated `{H1}` with `…` ellipsis (last-resort).
  *
- * Date prefix beats brand suffix in the cascade because the brand is
- * already conveyed by the canonical URL, `og:site_name`, and the JSON-LD
- * `publisher` block — while the date is the unique disambiguator across
- * the daily article series. When the H1 itself already mentions
- * `Riksdagsmonitor` we skip the brand suffix entirely.
- *
- * Empty-bracket artefacts left behind by upstream brief-generator
- * template-substitution defects (`( )`, `[ ]`, `{ - }`) are scrubbed
- * by {@link stripEmptyBrackets} before any length / truncation logic
- * runs — see live regression on
+ * Brand suffix is dropped when the H1 already mentions `Riksdagsmonitor`
+ * (avoid duplication). Empty-bracket artefacts left behind by upstream
+ * brief-generator template-substitution defects (`( )`, `[ ]`, `{ - }`)
+ * are scrubbed by {@link stripEmptyBrackets} before any length /
+ * truncation logic runs — see live regression on
  * `analysis/daily/2026-05-08/election-cycle/next/article.md` which
  * shipped `title: "Post-2026 Coalition: Next Mandate 2026-2030 ( )"`.
  */
@@ -548,61 +501,22 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
     const fallback = `${input.articleTypeLabel}${SITE_SUFFIX}`;
     return truncateWithinBudget(fallback, serpTitleBudget);
   }
-  // Compute a reader-friendly localized date prefix. Daily-series article
-  // types (election-cycle/current, election-cycle/next, year-ahead, …)
-  // ship identical H1s across multiple dates — without the date prefix
-  // the SERP `<title>` would collide across distinct canonical URLs and
-  // search engines pick a single representative, suppressing the rest.
-  // The prefix is dropped when the title already mentions the localized
-  // date verbatim, or when the budget cannot fit it.
-  const localizedDate = formatLocalizedShortDate(input.date, input.lang);
-  const baseAlreadyMentionsDate = localizedDate.length > 0 && base.includes(localizedDate);
-  const datePrefix = localizedDate && !baseAlreadyMentionsDate
-    ? `${localizedDate}${DATE_PREFIX_SEPARATOR}`
-    : '';
-
-  // Avoid duplicating the brand when the H1 already mentions it. The
-  // date prefix is still useful here for daily-series uniqueness.
+  // Avoid duplicating the brand when the H1 already mentions it.
   if (/riksdagsmonitor/i.test(base)) {
-    const withDate = `${datePrefix}${base}`;
-    if (withDate.length <= serpTitleBudget) return withDate;
     if (base.length <= serpTitleBudget) return base;
     return truncateWithinBudget(base, serpTitleBudget);
   }
   // Composition cascade — try the richest form first, fall back step by
-  // step until something fits the per-language SERP `hardMax`. Date
-  // prefix beats brand suffix for uniqueness when only one fits because
-  // the brand is already conveyed by the canonical URL, `og:site_name`,
-  // and the JSON-LD `publisher` block while the date is the unique
-  // disambiguator across the daily article series.
-  const withDateAndBrand = `${datePrefix}${base}${SITE_SUFFIX}`;
-  if (withDateAndBrand.length <= serpTitleBudget) return withDateAndBrand;
-  const withDate = `${datePrefix}${base}`;
-  if (datePrefix.length > 0 && withDate.length <= serpTitleBudget) return withDate;
-  // Branded variant fits the SERP budget — ship the story + brand.
-  if (base.length + SITE_SUFFIX.length <= serpTitleBudget) {
-    return `${base}${SITE_SUFFIX}`;
-  }
-  // Date prefix present but `{Date} · {H1}` overflows AND `{H1} — Brand`
-  // overflows. Truncate the H1 to fit alongside the date so we keep the
-  // uniqueness signal (date) at the cost of a few H1 characters. Without
-  // this step, daily-series articles sharing an identical H1 across
-  // different dates would all ship the bare H1 and collide on the SERP.
-  if (datePrefix.length > 0) {
-    const h1Budget = serpTitleBudget - datePrefix.length;
-    if (h1Budget >= 16) {
-      // Sanity floor: refuse to ship a date prefix with an H1 shorter
-      // than 16 chars (would look like `May 24, 2026 · Tidö…` — useless).
-      // 16 ≈ shortest reader-meaningful H1 fragment after ellipsis.
-      return `${datePrefix}${truncateWithinBudget(base, h1Budget)}`;
-    }
-  }
-  // H1 alone fits the SERP budget — drop the brand suffix so the story
-  // title is the SERP signal (brand is already covered by `og:site_name`
-  // and the canonical URL).
+  // step until something fits the per-language SERP `hardMax`. Every
+  // available char goes to the executive-brief H1; the brand suffix is
+  // dropped first because the brand is already conveyed by the canonical
+  // URL, `og:site_name`, and the JSON-LD `publisher` block.
+  const withBrand = `${base}${SITE_SUFFIX}`;
+  if (withBrand.length <= serpTitleBudget) return withBrand;
   if (base.length <= serpTitleBudget) return base;
-  // H1 overflows the SERP budget — truncate cleanly and ship without
-  // brand suffix so every available char goes to the story.
+  // H1 overflows the SERP budget — truncate cleanly with `…` ellipsis.
+  // `truncateAtWord` strips dangling connectors / cardinals / hyphenated
+  // stubs so the truncation lands on a substantive word boundary.
   return truncateWithinBudget(base, serpTitleBudget);
 }
 
@@ -612,50 +526,20 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  * already in the per-language SERP window for every language thanks to
  * the cascade in `aggregator/seo/description.ts § truncateToSentenceBoundary`.
  *
- * **Reader-friendly newsroom dateline prefix** (since 2026-05-24):
- * The BLUF is preceded by a localized short date in the universal
- * newsroom dateline format `"{Date} — {BLUF}"` (e.g.
- * `"May 24, 2026 — Sweden's Riksdag closed the week …"`). This serves
- * two purposes:
- *
- *  1. **Reader signal** — newsroom datelines (`AP — `, `LONDON — `,
- *     `May 24 — `) are the single most-recognised "this is news"
- *     formatting convention across every Western news brand (Reuters,
- *     AP, BBC, Bloomberg, NYT, FT, …). The reader instantly knows the
- *     story's date before scanning the body.
- *  2. **Uniqueness signal** — daily-series articles
- *     (election-cycle/current, election-cycle/next, year-ahead, …)
- *     historically shipped identical BLUFs across multiple dates
- *     because the executive-brief generator reused stale briefs. The
- *     date prefix differentiates the SERP snippet across the corpus
- *     even when the BLUF body has not been refreshed.
- *
- * The prefix is **skipped** when:
- *  - the BLUF already starts with the localized date verbatim, or
- *  - the BLUF is empty.
- *
- * The prefix is **localized via the same {@link formatLocalizedShortDate}
- * helper as the title** so all 14 languages render reader-friendly
- * short dates (e.g. `sv: 6 maj 2026`, `de: 6. Mai 2026`, `ja: 2026年5月6日`,
- * `ar: 6 مايو 2026`).
- *
- * **Per-language SERP budgets** (since 2026-05-24, `seo-metadata-contract.md` §4):
+ * **Per-language SERP budgets** (`seo-metadata-contract.md` §4):
  *
  *  - **Latin LTR** (`en sv da no fi de fr es nl`) — 140-200 chars.
  *  - **RTL** (`ar he`) — 120-170 chars.
  *  - **CJK** (`ja ko zh`) — 70-120 glyphs.
  *
- * Pre-2026-05-24 this function used the EN 200-char hard max uniformly
- * across all 14 languages. The upstream cascade already truncates to
- * the correct per-language window when a localized executive-brief
- * exists, but this renderer-side cap also matters in three fallback
- * paths: (1) when no localized brief exists and the EN description
- * leaks through unchanged, (2) when an agent ships a long
- * `description:` front-matter line that bypasses the cascade, and (3)
- * when a downstream caller invokes `buildSeoMetadata` directly without
- * pre-truncating. Capping at the per-language `hardMax` here closes
- * those three gaps so CJK / RTL pages never overshoot their visual SERP
- * budget regardless of where the description came from.
+ * The renderer-side cap matters in three fallback paths: (1) when no
+ * localized brief exists and the EN description leaks through unchanged,
+ * (2) when an agent ships a long `description:` front-matter line that
+ * bypasses the cascade, and (3) when a downstream caller invokes
+ * `buildSeoMetadata` directly without pre-truncating. Capping at the
+ * per-language `hardMax` here closes those three gaps so CJK / RTL
+ * pages never overshoot their visual SERP budget regardless of where
+ * the description came from.
  *
  * We never append `Coverage: <Type> on <topic>; <lang> edition update
  * for <date> with Riksdag/OSINT provenance.` boilerplate because:
@@ -667,35 +551,25 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  *  - Search engines silently truncate beyond the per-language hardMax,
  *    so the boilerplate often replaced the actual analytical context
  *    with editorial plumbing.
+ *
+ * **No date dateline** (since 2026-05-24): pre-2026-05-24 this function
+ * prepended a localized newsroom dateline (`May 11, 2026 — …`) to every
+ * description. The 480-article EN audit showed the dateline burns
+ * 15-18 chars of the per-language budget on a signal that's already
+ * auto-rendered next to every SERP result, inflates 14 hreflang siblings
+ * with locale-varying dates (`May 11, 2026` / `11. Mai 2026` /
+ * `2026年5月11日`), and reduces room for the BLUF. Per the title-side
+ * rationale (see `buildSeoTitle`), publication date is already carried
+ * by the URL slug, `og:article:published_time`, JSON-LD `datePublished`,
+ * and the visible page byline. The description now ships the BLUF
+ * (truncated to the per-language `hardMax`) with **no** date prefix.
  */
-const DESCRIPTION_DATELINE_SEPARATOR = ' — ';
 
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
   const base = stripDescriptionMarkup(input.description);
   const { hardMax } = descriptionWindowForLanguage(input.lang);
   if (base.length === 0) return base;
-
-  // Try to prepend a newsroom dateline. Skip when the BLUF already
-  // begins with the localized date (rare — most BLUFs lead with an
-  // analytic claim, not a date — but we honour any upstream prefix).
-  const localizedDate = formatLocalizedShortDate(input.date, input.lang);
-  if (localizedDate.length === 0) return truncateWithinBudget(base, hardMax);
-  if (base.startsWith(localizedDate)) return truncateWithinBudget(base, hardMax);
-
-  const prefix = `${localizedDate}${DESCRIPTION_DATELINE_SEPARATOR}`;
-  // Budget the BLUF body to fit alongside the dateline. Floor at 40
-  // chars so we never ship a dateline with a useless one-word BLUF
-  // (e.g. `"May 24, 2026 — Brief…"`). 40 ≈ shortest reader-meaningful
-  // BLUF fragment.
-  const bodyBudget = hardMax - prefix.length;
-  if (bodyBudget < 40) {
-    // Budget too tight (CJK 70-char window + ~10-char prefix leaves 60
-    // — still fine; but a defensive floor keeps us safe if budgets
-    // shrink). Fall back to ship the bare BLUF.
-    return truncateWithinBudget(base, hardMax);
-  }
-  const body = truncateWithinBudget(base, bodyBudget);
-  return `${prefix}${body}`;
+  return truncateWithinBudget(base, hardMax);
 }
 
 /**
