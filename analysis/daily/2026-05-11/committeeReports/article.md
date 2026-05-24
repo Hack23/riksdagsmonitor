@@ -6,7 +6,7 @@ date: 2026-05-11
 subfolder: committeeReports
 slug: 2026-05-11-committeeReports
 source_folder: analysis/daily/2026-05-11/committeeReports
-generated_at: 2026-05-24T12:19:34.311Z
+generated_at: 2026-05-24T14:02:59.431Z
 language: en
 layout: article
 ---
@@ -780,6 +780,7 @@ style C fill:#ff006e,color:#fff
 style START fill:#1a1e3d,stroke:#00d9ff
 
 ```
+
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/election-2026-analysis.md -->
 
@@ -882,6 +883,7 @@ style R05 fill:#ffbe0b,color:#0a0e27
 style R06 fill:#00d9ff,color:#0a0e27
 
 ```
+
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/swot-analysis.md -->
 
@@ -1097,6 +1099,7 @@ quadrantChart
     "Sweden HD01CU34": [0.55, 0.65]
 
 ```
+
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/implementation-feasibility.md -->
 
@@ -1361,6 +1364,7 @@ style Opposition fill:#1a1e3d,stroke:#ff006e
 style Vote fill:#ffbe0b,color:#0a0e27
 
 ```
+
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/cross-reference-map.md -->
 

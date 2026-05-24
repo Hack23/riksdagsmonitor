@@ -6,7 +6,7 @@ date: 2026-04-27
 subfolder: motions
 slug: 2026-04-27-motions
 source_folder: analysis/daily/2026-04-27/motions
-generated_at: 2026-05-24T12:19:33.660Z
+generated_at: 2026-05-24T14:02:58.526Z
 language: en
 layout: article
 ---
@@ -1290,6 +1290,7 @@ quadrantChart
     HD024073: [0.55, 0.25]
 
 ```
+
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/threat-analysis.md -->
 

@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: weekly-review
 slug: 2026-04-26-weekly-review
 source_folder: analysis/daily/2026-04-26/weekly-review
-generated_at: 2026-05-24T12:19:33.614Z
+generated_at: 2026-05-24T14:02:58.463Z
 language: en
 layout: article
 ---
@@ -1557,6 +1557,7 @@ flowchart TD
     style H fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
 
 ```
+
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/devils-advocate.md -->
 

@@ -6,7 +6,7 @@ date: 2026-05-08
 subfolder: motions
 slug: 2026-05-08-motions
 source_folder: analysis/daily/2026-05-08/motions
-generated_at: 2026-05-24T12:19:34.229Z
+generated_at: 2026-05-24T14:02:59.316Z
 language: en
 layout: article
 ---
@@ -262,7 +262,9 @@ xychart-beta
     x-axis [HD024146, HD024144, HD024142, HD024141, HD024147, HD024148, HD024145, HD024143]
     y-axis "DIW Score" 0 --> 10
     bar [8.75, 8.70, 7.85, 7.10, 6.55, 6.55, 6.00, 5.25]
+
 ```
+
 ## Per-document intelligence
 
 ### hd024141
@@ -572,6 +574,7 @@ pie title Current Seat Distribution (349 total)
     "MP (18)" : 18
 
 ```
+
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/voter-segmentation.md -->
 
@@ -884,6 +887,7 @@ quadrantChart
     R06: [0.02, 0.04]
 
 ```
+
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/swot-analysis.md -->
 
@@ -984,6 +988,7 @@ flowchart TD
     style D fill:#1a1e3d,color:#ff006e
 
 ```
+
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/historical-parallels.md -->
 
@@ -1267,7 +1272,9 @@ For the election cycle (May–September 2026):
 pie title Policy Areas — 8 Motions
     "Forestry/Environment" : 5
     "Criminal Justice/Youth" : 3
+
 ```
+
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/cross-reference-map.md -->
 
@@ -1351,6 +1358,7 @@ flowchart LR
     style H146 fill:#ff006e,color:#fff
 
 ```
+
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/methodology-reflection.md -->
 

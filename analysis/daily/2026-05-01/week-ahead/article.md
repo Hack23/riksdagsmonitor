@@ -6,7 +6,7 @@ date: 2026-05-01
 subfolder: week-ahead
 slug: 2026-05-01-week-ahead
 source_folder: analysis/daily/2026-05-01/week-ahead
-generated_at: 2026-05-24T12:19:33.907Z
+generated_at: 2026-05-24T14:02:58.845Z
 language: en
 layout: article
 ---
@@ -173,6 +173,7 @@ mindmap
     style root fill:#ff006e,color:#fff
 
 ```
+
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/intelligence-assessment.md -->
 

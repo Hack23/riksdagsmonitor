@@ -6,7 +6,7 @@ date: 2026-05-05
 subfolder: motions
 slug: 2026-05-05-motions
 source_folder: analysis/daily/2026-05-05/motions
-generated_at: 2026-05-24T12:19:34.063Z
+generated_at: 2026-05-24T14:02:59.073Z
 language: en
 layout: article
 ---
@@ -228,6 +228,7 @@ flowchart LR
     style KJ5 fill:#1a1e3d,stroke:#ffbe0b
 
 ```
+
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/significance-scoring.md -->
 
@@ -313,6 +314,7 @@ xychart-beta
     line [8.6, 8.2, 7.8, 7.5, 6.8, 6.5, 5.8, 5.5]
 
 ```
+
 ## Per-document intelligence
 
 ### HD024141
@@ -639,6 +641,7 @@ flowchart LR
     style SD fill:#1a1e3d,stroke:#ffbe0b
 
 ```
+
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/coalition-mathematics.md -->
 
@@ -717,6 +720,7 @@ xychart-beta
     line [69, 163, 163]
 
 ```
+
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/voter-segmentation.md -->
 
@@ -795,6 +799,7 @@ pie title Voter Segment Distribution
     "Other" : 14
 
 ```
+
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/forward-indicators.md -->
 
@@ -842,6 +847,7 @@ gantt
         FI-10 EC Habitats report : 2027-03-01, 14d
 
 ```
+
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/scenario-analysis.md -->
 
@@ -916,6 +922,7 @@ flowchart TD
     style FB fill:#1a1e3d,stroke:#00d9ff
 
 ```
+
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/election-2026-analysis.md -->
 
@@ -1025,6 +1032,7 @@ quadrantChart
     R-06 Opposition fragmentation: [0.75, 0.55]
 
 ```
+
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/swot-analysis.md -->
 
@@ -1100,6 +1108,7 @@ quadrantChart
     C co-optation risk: [0.35, 0.70]
 
 ```
+
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/threat-analysis.md -->
 
@@ -1147,6 +1156,7 @@ flowchart TD
     style H fill:#1a1e3d,stroke:#ff006e
 
 ```
+
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/historical-parallels.md -->
 
@@ -1203,6 +1213,7 @@ timeline
     2026 : HD03242 + HD03246 proposed — all historical lessons applicable
 
 ```
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/comparative-international.md -->
 
@@ -1336,6 +1347,7 @@ flowchart LR
     style JI fill:#1a1e3d,stroke:#ffbe0b
 
 ```
+
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/media-framing-analysis.md -->
 
@@ -1493,6 +1505,7 @@ pie title Motion Distribution by Party
     "MP (2 motions)" : 2
 
 ```
+
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/cross-reference-map.md -->
 
@@ -1559,6 +1572,7 @@ flowchart TD
     style F fill:#1a1e3d,stroke:#00d9ff
 
 ```
+
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/methodology-reflection.md -->
 
