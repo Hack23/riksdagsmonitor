@@ -218,15 +218,15 @@ describe('extractLocalizedBriefSeo', () => {
     expect(out.description).toBeNull();
   });
 
-  it('returns both fields null when markdown is empty or absent', () => {
+  it('returns null title + null description + empty keywords when markdown is empty or absent', () => {
     expect(extractLocalizedBriefSeo({ briefMarkdown: '', subfolder: 'propositions' }))
-      .toEqual({ title: null, description: null });
+      .toEqual({ title: null, description: null, keywords: [] });
     expect(extractLocalizedBriefSeo({ briefMarkdown: '   \n  ', subfolder: 'propositions' }))
-      .toEqual({ title: null, description: null });
+      .toEqual({ title: null, description: null, keywords: [] });
     expect(extractLocalizedBriefSeo({ briefMarkdown: null, subfolder: 'propositions' }))
-      .toEqual({ title: null, description: null });
+      .toEqual({ title: null, description: null, keywords: [] });
     expect(extractLocalizedBriefSeo({ briefMarkdown: undefined, subfolder: 'propositions' }))
-      .toEqual({ title: null, description: null });
+      .toEqual({ title: null, description: null, keywords: [] });
   });
 
   it('truncates a very long BLUF to a sentence boundary', () => {

@@ -21,11 +21,13 @@
  * @license Apache-2.0
  */
 
+import type { Language } from '../../../types/language.js';
 import {
   ADMIN_FIELD_RE,
   ADMIN_FRAGMENT_SPLITTER,
 } from '../cleaning/admin-bylines.js';
 import { cleanArtifactBody } from '../cleaning/structural.js';
+import { extractHeadlineSection } from './brief-extractor.js';
 
 /**
  * Sentence-terminator set used by {@link truncateToSentenceBoundary}.
@@ -323,4 +325,127 @@ export function readFirstParagraph(markdown: string): string | null {
     return stripBlufLabel(markdownInlineToText(p));
   }
   return null;
+}
+
+/**
+ * Compose a rich `<meta description>` from the executive-brief markdown,
+ * combining the BLUF lead sentence with the top 2-3 bullet items from the
+ * brief's headline-summary section (`## 60-Second Read` in English, or
+ * the localized equivalent — see
+ * {@link ./brief-extractor.ts | extractHeadlineSection}).
+ *
+ * Editorial rationale: pre-2026-05 the description was the raw BLUF
+ * paragraph — well-written prose but generic across articles ("Sweden's
+ * Riksdag advances ... amid coalition tensions ..."). The brief's
+ * headline section carries the *specific* signal (bill IDs HD03267 /
+ * HD03262, committee codes JuU / SfU, DIW scores) that journalists and
+ * search engines should see in the SERP snippet. This composer prepends
+ * a single BLUF lead sentence (for prose context) and concatenates the
+ * cleaned bullet IDs/topics that fit in the language's SERP window.
+ *
+ * Falls back to the plain BLUF paragraph when no headline section is
+ * present (~75% of briefs use only the BLUF). Pure function — no I/O.
+ *
+ * @param briefMarkdown Full executive-brief.md contents (any language).
+ * @param lang          Language code for both the headline-section name
+ *                      lookup and the per-language SERP window.
+ */
+export function composeRichDescription(
+  briefMarkdown: string,
+  lang: Language,
+): string {
+  if (!briefMarkdown || briefMarkdown.trim().length === 0) return '';
+  const { softMin, hardMax } = descriptionWindowForLanguage(lang);
+
+  const blufParagraph = readBlufParagraph(briefMarkdown) ?? readFirstParagraph(briefMarkdown);
+  const headlineSection = extractHeadlineSection(briefMarkdown, lang);
+
+  // Pull the first sentence of the BLUF as the lede. Falls back to the
+  // truncated whole paragraph when the BLUF has no sentence terminator
+  // within the window.
+  let lede = '';
+  if (blufParagraph) {
+    const normalised = blufParagraph.replace(/\s+/g, ' ').trim();
+    SENTENCE_END_RE.lastIndex = 0;
+    const firstEnd = SENTENCE_END_RE.exec(normalised);
+    lede = firstEnd
+      ? normalised.slice(0, firstEnd.index + firstEnd[0].length).trim()
+      : normalised;
+  }
+
+  // When there's no headline section, ship the BLUF as-is (current
+  // behaviour, preserved for ~75% of briefs).
+  if (headlineSection.bullets.length === 0) {
+    if (!blufParagraph) return '';
+    return truncateToSentenceBoundary(blufParagraph, softMin, hardMax);
+  }
+
+  // Compose `<lede> <bullet-1>; <bullet-2>; …` adding bullets until the
+  // next bullet would push us past the hard max. Each bullet is reduced
+  // to its first clause (before the first `—`, `:`, or `.`) so we ship
+  // the bill-ID + topic, not the entire DIW rationale.
+  const bulletClauses: string[] = [];
+  for (const bullet of headlineSection.bullets) {
+    const clause = firstClauseOf(bullet);
+    if (clause.length === 0) continue;
+    bulletClauses.push(clause);
+  }
+
+  if (bulletClauses.length === 0) {
+    if (!blufParagraph) return '';
+    return truncateToSentenceBoundary(blufParagraph, softMin, hardMax);
+  }
+
+  // Sentence-style separator between lede and the bullet sequence.
+  const SEP = ' — ';
+  const BULLET_SEP = '; ';
+
+  let composed = lede;
+  for (const clause of bulletClauses) {
+    const next = composed.length === 0
+      ? clause
+      : `${composed}${composed === lede ? SEP : BULLET_SEP}${clause}`;
+    if (next.length > hardMax) break;
+    composed = next;
+  }
+
+  // If we never fit a single bullet, fall through to BLUF truncation —
+  // that's strictly better signal than nothing.
+  if (composed === lede && lede.length > hardMax) {
+    return truncateToSentenceBoundary(lede, softMin, hardMax);
+  }
+  if (composed.length === 0) {
+    if (!blufParagraph) return '';
+    return truncateToSentenceBoundary(blufParagraph, softMin, hardMax);
+  }
+  return truncateToSentenceBoundary(composed, softMin, hardMax);
+}
+
+/**
+ * Return the first clause of a bullet — text up to the first em-dash,
+ * en-dash, colon, or sentence-terminator. Drops trailing whitespace and
+ * any dangling DIW-score parenthetical (`— 132 DIW`) so the composed
+ * description carries the bill-ID + topic but not the editor-internal
+ * scoring metadata.
+ */
+function firstClauseOf(bullet: string): string {
+  // Strip trailing DIW-score / parenthetical scoring noise so the bullet
+  // reads as journalistic prose rather than editor metadata.
+  const withoutScore = bullet
+    .replace(/\s*[—–-]\s*\d+(?:\.\d+)?\s*DIW\b[^—–-]*$/i, '')
+    .replace(/\s*\([^()]*DIW[^()]*\)\s*$/i, '')
+    .trim();
+
+  // First clause boundary: em-dash, en-dash, colon, or sentence end.
+  // Period is allowed since brief authors use it inside bill-ID prose
+  // ("HD03267 (JuU): SÄPO-triggered fast-track deportation").
+  const m = /[—–]|:\s/u.exec(withoutScore);
+  if (!m) return withoutScore;
+  const head = withoutScore.slice(0, m.index).trim();
+  const tail = withoutScore.slice(m.index + m[0].length).trim();
+  // Re-join with `: ` so the bill ID stays attached to its topic; this
+  // gives "HD03267 (JuU): SÄPO-triggered fast-track deportation".
+  if (head.length === 0) return tail;
+  if (tail.length === 0) return head;
+  return `${head}: ${tail}`;
 }

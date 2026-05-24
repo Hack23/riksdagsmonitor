@@ -39,7 +39,13 @@ import { buildFrontMatter } from './frontmatter.js';
 import { aliasGroupFor, AGGREGATION_ORDER, prettifyFallbackTitle, titleForArtifact } from './order.js';
 import { expandPerDocumentAnalyses, hasPerDocumentAnalyses } from './per-document.js';
 import { buildReaderGuide } from './reader-guide.js';
-import { readBlufParagraph, readFirstParagraph, truncateToSentenceBoundary } from './seo/description.js';
+import {
+  composeRichDescription,
+  readBlufParagraph,
+  readFirstParagraph,
+  truncateToSentenceBoundary,
+} from './seo/description.js';
+import { extractBriefEntities, flattenBriefEntities } from './seo/brief-extractor.js';
 import { cleanArticleTitle, readFirstHeading, titleFromBluf } from './seo/title.js';
 import { buildArtifactCoverageReport, buildSourcesAppendix } from './sources-appendix.js';
 
@@ -159,7 +165,14 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
 
   const rawBlufParagraph = readBlufParagraph(briefRaw);
   const rawFirstParagraph = readFirstParagraph(briefRaw);
+  // Rich description prepends the BLUF lede with the top headline-section
+  // bullets (`## 60-Second Read`) so the SERP snippet carries bill IDs
+  // (HD03267), committee codes (JuU/SfU) and topic clauses — not just
+  // generic BLUF prose. Falls back to plain BLUF when no headline
+  // section is present (~75% of briefs).
+  const richDescription = composeRichDescription(briefRaw, 'en');
   const rawDescriptionSource =
+    richDescription ||
     rawBlufParagraph ||
     rawFirstParagraph ||
     `Evidence-based political intelligence analysis for ${subfolder} on ${date}.`;
@@ -169,6 +182,12 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     cleanArticleTitle(readFirstHeading(briefRaw), subfolder) ||
     titleFromBluf(rawBlufParagraph ?? rawFirstParagraph) ||
     `${prettifyFallbackTitle(subfolder)} — ${date}`;
+  // Mine bill IDs / proposition refs / committee codes / party codes /
+  // named entities ONCE from the EN brief — universal-Swedish identifiers
+  // (HD03267, JuU28, SÄPO) survive untranslated across all 14 locales,
+  // so the same entity set seeds the keyword list for every language
+  // page via `article-merge.ts` → `extractLocalizedBriefSeo`.
+  const briefEntities = flattenBriefEntities(extractBriefEntities(briefRaw, 'en'));
   const keywords = buildArticleKeywords({
     title,
     description,
@@ -176,6 +195,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     date,
     articleTypeLabel: prettifyFallbackTitle(subfolder),
     articleTypeId: subfolder.replace(/\//g, '-'),
+    briefEntities,
   });
 
   const rootArtifactSet = new Set(

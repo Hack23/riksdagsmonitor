@@ -38,10 +38,10 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     const longH1 =
       "Riksdag Enshrines Constitutional Protection for Abortion — and Expands the Security State's Toolkit";
     const result = buildSeoTitle({ ...baseInput, title: longH1 });
-    expect(result).not.toMatch(/\band…\s+—\s+2026-05-15/);
-    expect(result).not.toMatch(/—\s*and…\s+—\s+2026-05-15/);
+    expect(result).not.toMatch(/\band…\s+—\s+Riksdagsmonitor/);
+    expect(result).not.toMatch(/—\s*and…\s+—\s+Riksdagsmonitor/);
     expect(result).toContain('…'); // still indicates truncation
-    expect(result).toContain('2026-05-15 · en');
+    expect(result).not.toMatch(/2026-05-15/);
     expect(result.length).toBeLessThanOrEqual(70);
   });
 
@@ -53,11 +53,12 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     expect(result).not.toMatch(/\band…$/);
   });
 
-  it('adds compact date/language context to short titles that fit the budget', () => {
+  it('appends the brand suffix to short titles that fit the budget', () => {
     const shortH1 = 'Riksdag Approves FiU48 Fuel-Tax Cut and';
     const result = buildSeoTitle({ ...baseInput, title: shortH1 });
     expect(result).toMatch(/Riksdagsmonitor$/);
-    expect(result).toContain('2026-05-15 · en');
+    expect(result).not.toMatch(/2026-05-15/);
+    expect(result).not.toMatch(/ · en/);
     expect(result).toContain('Riksdag Approves');
     expect(result.length).toBeLessThanOrEqual(70);
   });
