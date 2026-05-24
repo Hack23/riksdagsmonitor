@@ -59,18 +59,18 @@ and when url &quot;[ &#39;http://localhost:4173&#39; ]&quot; is responding with 
 running tests using command &quot;npx cypress run --config video=false --spec &#39;cypress/e2e/homepage.cy.js,cypress/e2e/accessibility.cy.js,cypress/e2e/sitemap.cy.js&#39;&quot;
 
 
-&gt; riksdagsmonitor@0.9.29 preview
+&gt; riksdagsmonitor@0.9.31 preview
 &gt; vite preview
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m4173[22m/[39m
-  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.253:[1m4173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.212:[1m4173[22m/[39m
 It looks like this is your first time using Cypress: 15.15.0
 
 [33m❯[39m  Verifying Cypress can run /home/runner/.cache/Cypress/15.15.0/Cypress
 [32m✔[39m  Verified Cypress!       /home/runner/.cache/Cypress/15.15.0/Cypress
 
 Opening Cypress...
-(node:3413) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:3444) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 [35m[95mWarning:[39m[35m The [33mallowCypressEnv[39m[35m configuration option is enabled. This allows any browser code to read values from [33mCypress.env()[39m[35m. This is insecure and will be removed in a future major version.[39m
 [35m[39m
@@ -101,19 +101,19 @@ Opening Cypress...
 
 [0m[0m
 [0m  Riksdagsmonitor Homepage[0m
-  [32m  ✓[0m[90m should load homepage successfully[0m[90m (488ms)[0m
-  [32m  ✓[0m[90m should have proper document structure[0m[90m (239ms)[0m
-  [32m  ✓[0m[90m should display site logo/title[0m[90m (223ms)[0m
-  [32m  ✓[0m[90m should have navigation menu[0m[90m (199ms)[0m
-  [32m  ✓[0m[90m should be responsive on mobile[0m[90m (283ms)[0m
-  [32m  ✓[0m[90m should be responsive on tablet[0m[90m (215ms)[0m
-  [32m  ✓[0m[90m should be responsive on desktop[0m[90m (263ms)[0m
-  [32m  ✓[0m[90m should have language switcher[0m[90m (221ms)[0m
-  [32m  ✓[0m[90m should use system-ui font stack (no third-party font CDN)[0m[90m (210ms)[0m
-  [32m  ✓[0m[90m should have proper meta tags[0m[90m (179ms)[0m
-  [32m  ✓[0m[90m should have Open Graph tags[0m[90m (206ms)[0m
-  [32m  ✓[0m[90m should have Twitter Card tags[0m[90m (213ms)[0m
-  [32m  ✓[0m[90m should expose the Service Worker API for PWA install + offline support[0m[90m (219ms)[0m
+  [32m  ✓[0m[90m should load homepage successfully[0m[90m (731ms)[0m
+  [32m  ✓[0m[90m should have proper document structure[0m[90m (279ms)[0m
+  [32m  ✓[0m[90m should display site logo/title[0m[90m (246ms)[0m
+  [32m  ✓[0m[90m should have navigation menu[0m[90m (215ms)[0m
+  [32m  ✓[0m[90m should be responsive on mobile[0m[90m (263ms)[0m
+  [32m  ✓[0m[90m should be responsive on tablet[0m[90m (292ms)[0m
+  [32m  ✓[0m[90m should be responsive on desktop[0m[90m (229ms)[0m
+  [32m  ✓[0m[90m should have language switcher[0m[90m (195ms)[0m
+  [32m  ✓[0m[90m should use system-ui font stack (no third-party font CDN)[0m[90m (224ms)[0m
+  [32m  ✓[0m[90m should have proper meta tags[0m[90m (251ms)[0m
+  [32m  ✓[0m[90m should have Open Graph tags[0m[90m (231ms)[0m
+  [32m  ✓[0m[90m should have Twitter Card tags[0m[90m (194ms)[0m
+  [32m  ✓[0m[90m should expose the Service Worker API for PWA install + offline support[0m[90m (213ms)[0m
 
 
 [92m [0m[32m 13 passing[0m[90m (4s)[0m
@@ -129,7 +129,7 @@ Opening Cypress...
 [90m  │[39m [90mSkipped:[39m      [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mScreenshots:[39m  [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mVideo:[39m        [32mfalse[39m                                                                            [90m│[39m
-[90m  │[39m [90mDuration:[39m     [32m3 seconds[39m                                                                        [90m│[39m
+[90m  │[39m [90mDuration:[39m     [32m4 seconds[39m                                                                        [90m│[39m
 [90m  │[39m [90mSpec Ran:[39m     [32m[32mhomepage.cy.js[32m[39m                                                                   [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
 
@@ -140,39 +140,39 @@ Opening Cypress...
 
 [0m[0m
 [0m  Accessibility (WCAG 2.1 AA)[0m
-  [32m  ✓[0m[90m should have valid HTML structure[0m[90m (405ms)[0m
-  [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (221ms)[0m
-  [32m  ✓[0m[90m should have alt text on images[0m[90m (294ms)[0m
-  [32m  ✓[0m[90m should have labels for form inputs[0m[90m (179ms)[0m
-  [32m  ✓[0m[90m should have ARIA roles on interactive elements[0m[90m (187ms)[0m
-  [32m  ✓[0m[90m should have visible focus indicators[0m[90m (220ms)[0m
-  [32m  ✓[0m[90m should be keyboard navigable[0m[90m (250ms)[0m
-  [32m  ✓[0m[90m should have sufficient color contrast[0m[90m (201ms)[0m
-  [32m  ✓[0m[90m should have language attribute on HTML tag[0m[90m (241ms)[0m
-  [32m  ✓[0m[90m should have skip to content link[0m[90m (253ms)[0m
-  [32m  ✓[0m[90m should have skip link as first focusable element[0m[90m (276ms)[0m
-  [32m  ✓[0m[90m should support reduced motion preference[0m[90m (508ms)[0m
+  [32m  ✓[0m[90m should have valid HTML structure[0m[90m (403ms)[0m
+  [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (259ms)[0m
+  [32m  ✓[0m[90m should have alt text on images[0m[90m (300ms)[0m
+  [32m  ✓[0m[90m should have labels for form inputs[0m[90m (280ms)[0m
+  [32m  ✓[0m[90m should have ARIA roles on interactive elements[0m[90m (270ms)[0m
+  [32m  ✓[0m[90m should have visible focus indicators[0m[90m (302ms)[0m
+  [32m  ✓[0m[90m should be keyboard navigable[0m[90m (265ms)[0m
+  [32m  ✓[0m[90m should have sufficient color contrast[0m[90m (256ms)[0m
+  [32m  ✓[0m[90m should have language attribute on HTML tag[0m[90m (261ms)[0m
+  [32m  ✓[0m[90m should have skip to content link[0m[90m (228ms)[0m
+  [32m  ✓[0m[90m should have skip link as first focusable element[0m[90m (323ms)[0m
+  [32m  ✓[0m[90m should support reduced motion preference[0m[90m (546ms)[0m
 
 [0m  Multi-Language Support[0m
-  [32m  ✓[0m[90m should load SV version[0m[90m (240ms)[0m
-  [32m  ✓[0m[90m should load DA version[0m[90m (241ms)[0m
-  [32m  ✓[0m[90m should load NO version[0m[90m (267ms)[0m
-  [32m  ✓[0m[90m should load FI version[0m[90m (250ms)[0m
-  [32m  ✓[0m[90m should load DE version[0m[90m (271ms)[0m
-  [32m  ✓[0m[90m should load FR version[0m[90m (263ms)[0m
-  [32m  ✓[0m[90m should load ES version[0m[90m (259ms)[0m
-  [32m  ✓[0m[90m should load NL version[0m[90m (238ms)[0m
-  [32m  ✓[0m[90m should load AR version[0m[90m (357ms)[0m
-  [32m  ✓[0m[90m should load HE version[0m[90m (277ms)[0m
-  [32m  ✓[0m[90m should load JA version[0m[90m (657ms)[0m
-  [32m  ✓[0m[90m should load KO version[0m[90m (351ms)[0m
-  [32m  ✓[0m[90m should load ZH version[0m[90m (389ms)[0m
-  [32m  ✓[0m[90m should have proper RTL support for Arabic[0m[90m (287ms)[0m
-  [32m  ✓[0m[90m should have proper RTL support for Hebrew[0m[90m (269ms)[0m
-  [32m  ✓[0m[90m should have language switcher links[0m[90m (273ms)[0m
+  [32m  ✓[0m[90m should load SV version[0m[90m (222ms)[0m
+  [32m  ✓[0m[90m should load DA version[0m[90m (216ms)[0m
+  [32m  ✓[0m[90m should load NO version[0m[90m (296ms)[0m
+  [32m  ✓[0m[90m should load FI version[0m[90m (247ms)[0m
+  [32m  ✓[0m[90m should load DE version[0m[90m (250ms)[0m
+  [32m  ✓[0m[90m should load FR version[0m[90m (270ms)[0m
+  [32m  ✓[0m[90m should load ES version[0m[90m (281ms)[0m
+  [32m  ✓[0m[90m should load NL version[0m[90m (295ms)[0m
+  [32m  ✓[0m[90m should load AR version[0m[90m (323ms)[0m
+  [32m  ✓[0m[90m should load HE version[0m[90m (327ms)[0m
+  [32m  ✓[0m[90m should load JA version[0m[90m (749ms)[0m
+  [32m  ✓[0m[90m should load KO version[0m[90m (422ms)[0m
+  [32m  ✓[0m[90m should load ZH version[0m[90m (438ms)[0m
+  [32m  ✓[0m[90m should have proper RTL support for Arabic[0m[90m (310ms)[0m
+  [32m  ✓[0m[90m should have proper RTL support for Hebrew[0m[90m (255ms)[0m
+  [32m  ✓[0m[90m should have language switcher links[0m[90m (287ms)[0m
 
 
-[92m [0m[32m 28 passing[0m[90m (10s)[0m
+[92m [0m[32m 28 passing[0m[90m (11s)[0m
 
 
 [32m  ([4m[1mResults[22m[24m)[39m
@@ -185,7 +185,7 @@ Opening Cypress...
 [90m  │[39m [90mSkipped:[39m      [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mScreenshots:[39m  [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mVideo:[39m        [32mfalse[39m                                                                            [90m│[39m
-[90m  │[39m [90mDuration:[39m     [32m9 seconds[39m                                                                        [90m│[39m
+[90m  │[39m [90mDuration:[39m     [32m10 seconds[39m                                                                       [90m│[39m
 [90m  │[39m [90mSpec Ran:[39m     [32m[32maccessibility.cy.js[32m[39m                                                              [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
 
@@ -197,119 +197,119 @@ Opening Cypress...
 [0m[0m
 [0m  Sitemap Pages[0m
 [0m    English Sitemap[0m
-    [32m  ✓[0m[90m should load sitemap successfully[0m[90m (495ms)[0m
-    [32m  ✓[0m[90m should have proper document structure[0m[90m (286ms)[0m
-    [32m  ✓[0m[90m should have sitemap heading[0m[90m (261ms)[0m
-    [32m  ✓[0m[90m should have multiple links[0m[90m (259ms)[0m
-    [32m  ✓[0m[90m should have organized sections[0m[90m (247ms)[0m
-    [32m  ✓[0m[90m should have links to main pages[0m[90m (277ms)[0m
-    [32m  ✓[0m[90m should have valid internal links[0m[90m (289ms)[0m
-    [32m  ✓[0m[90m should have proper meta tags[0m[90m (260ms)[0m
-    [32m  ✓[0m[90m should be responsive on mobile[0m[90m (355ms)[0m
+    [32m  ✓[0m[90m should load sitemap successfully[0m[90m (503ms)[0m
+    [32m  ✓[0m[90m should have proper document structure[0m[90m (310ms)[0m
+    [32m  ✓[0m[90m should have sitemap heading[0m[90m (285ms)[0m
+    [32m  ✓[0m[90m should have multiple links[0m[90m (278ms)[0m
+    [32m  ✓[0m[90m should have organized sections[0m[90m (283ms)[0m
+    [32m  ✓[0m[90m should have links to main pages[0m[90m (298ms)[0m
+    [32m  ✓[0m[90m should have valid internal links[0m[90m (278ms)[0m
+    [32m  ✓[0m[90m should have proper meta tags[0m[90m (306ms)[0m
+    [32m  ✓[0m[90m should be responsive on mobile[0m[90m (354ms)[0m
 [0m    Multi-Language Sitemap Support[0m
 [0m      Swedish Sitemap (sv)[0m
-      [32m  ✓[0m[90m should load Swedish sitemap successfully[0m[90m (250ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Swedish[0m[90m (299ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Swedish[0m[90m (290ms)[0m
-      [32m  ✓[0m[90m should have links in Swedish[0m[90m (236ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Swedish[0m[90m (270ms)[0m
+      [32m  ✓[0m[90m should load Swedish sitemap successfully[0m[90m (315ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Swedish[0m[90m (272ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Swedish[0m[90m (257ms)[0m
+      [32m  ✓[0m[90m should have links in Swedish[0m[90m (288ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Swedish[0m[90m (298ms)[0m
 [0m      Danish Sitemap (da)[0m
-      [32m  ✓[0m[90m should load Danish sitemap successfully[0m[90m (235ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Danish[0m[90m (260ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Danish[0m[90m (218ms)[0m
-      [32m  ✓[0m[90m should have links in Danish[0m[90m (219ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Danish[0m[90m (225ms)[0m
+      [32m  ✓[0m[90m should load Danish sitemap successfully[0m[90m (251ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Danish[0m[90m (243ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Danish[0m[90m (239ms)[0m
+      [32m  ✓[0m[90m should have links in Danish[0m[90m (270ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Danish[0m[90m (245ms)[0m
 [0m      Norwegian Sitemap (no)[0m
-      [32m  ✓[0m[90m should load Norwegian sitemap successfully[0m[90m (281ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Norwegian[0m[90m (231ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Norwegian[0m[90m (239ms)[0m
-      [32m  ✓[0m[90m should have links in Norwegian[0m[90m (267ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Norwegian[0m[90m (262ms)[0m
+      [32m  ✓[0m[90m should load Norwegian sitemap successfully[0m[90m (315ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Norwegian[0m[90m (293ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Norwegian[0m[90m (252ms)[0m
+      [32m  ✓[0m[90m should have links in Norwegian[0m[90m (283ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Norwegian[0m[90m (267ms)[0m
 [0m      Finnish Sitemap (fi)[0m
-      [32m  ✓[0m[90m should load Finnish sitemap successfully[0m[90m (262ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Finnish[0m[90m (263ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Finnish[0m[90m (256ms)[0m
-      [32m  ✓[0m[90m should have links in Finnish[0m[90m (283ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Finnish[0m[90m (217ms)[0m
+      [32m  ✓[0m[90m should load Finnish sitemap successfully[0m[90m (240ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Finnish[0m[90m (267ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Finnish[0m[90m (264ms)[0m
+      [32m  ✓[0m[90m should have links in Finnish[0m[90m (293ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Finnish[0m[90m (246ms)[0m
 [0m      German Sitemap (de)[0m
-      [32m  ✓[0m[90m should load German sitemap successfully[0m[90m (248ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for German[0m[90m (219ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for German[0m[90m (225ms)[0m
-      [32m  ✓[0m[90m should have links in German[0m[90m (253ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in German[0m[90m (254ms)[0m
+      [32m  ✓[0m[90m should load German sitemap successfully[0m[90m (267ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for German[0m[90m (266ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for German[0m[90m (305ms)[0m
+      [32m  ✓[0m[90m should have links in German[0m[90m (238ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in German[0m[90m (302ms)[0m
 [0m      French Sitemap (fr)[0m
-      [32m  ✓[0m[90m should load French sitemap successfully[0m[90m (255ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for French[0m[90m (286ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for French[0m[90m (219ms)[0m
-      [32m  ✓[0m[90m should have links in French[0m[90m (222ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in French[0m[90m (252ms)[0m
+      [32m  ✓[0m[90m should load French sitemap successfully[0m[90m (292ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for French[0m[90m (319ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for French[0m[90m (253ms)[0m
+      [32m  ✓[0m[90m should have links in French[0m[90m (244ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in French[0m[90m (329ms)[0m
 [0m      Spanish Sitemap (es)[0m
-      [32m  ✓[0m[90m should load Spanish sitemap successfully[0m[90m (305ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Spanish[0m[90m (233ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Spanish[0m[90m (243ms)[0m
-      [32m  ✓[0m[90m should have links in Spanish[0m[90m (284ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Spanish[0m[90m (288ms)[0m
+      [32m  ✓[0m[90m should load Spanish sitemap successfully[0m[90m (284ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Spanish[0m[90m (236ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Spanish[0m[90m (237ms)[0m
+      [32m  ✓[0m[90m should have links in Spanish[0m[90m (235ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Spanish[0m[90m (290ms)[0m
 [0m      Dutch Sitemap (nl)[0m
-      [32m  ✓[0m[90m should load Dutch sitemap successfully[0m[90m (223ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Dutch[0m[90m (230ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Dutch[0m[90m (270ms)[0m
-      [32m  ✓[0m[90m should have links in Dutch[0m[90m (224ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Dutch[0m[90m (228ms)[0m
+      [32m  ✓[0m[90m should load Dutch sitemap successfully[0m[90m (268ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Dutch[0m[90m (281ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Dutch[0m[90m (245ms)[0m
+      [32m  ✓[0m[90m should have links in Dutch[0m[90m (283ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Dutch[0m[90m (292ms)[0m
 [0m      Arabic Sitemap (ar)[0m
-      [32m  ✓[0m[90m should load Arabic sitemap successfully[0m[90m (390ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Arabic[0m[90m (459ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Arabic[0m[90m (435ms)[0m
-      [32m  ✓[0m[90m should have links in Arabic[0m[90m (367ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Arabic[0m[90m (381ms)[0m
+      [32m  ✓[0m[90m should load Arabic sitemap successfully[0m[90m (470ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Arabic[0m[90m (425ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Arabic[0m[90m (432ms)[0m
+      [32m  ✓[0m[90m should have links in Arabic[0m[90m (395ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Arabic[0m[90m (431ms)[0m
 [0m      Hebrew Sitemap (he)[0m
-      [32m  ✓[0m[90m should load Hebrew sitemap successfully[0m[90m (323ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Hebrew[0m[90m (261ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Hebrew[0m[90m (273ms)[0m
-      [32m  ✓[0m[90m should have links in Hebrew[0m[90m (340ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Hebrew[0m[90m (331ms)[0m
+      [32m  ✓[0m[90m should load Hebrew sitemap successfully[0m[90m (334ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Hebrew[0m[90m (319ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Hebrew[0m[90m (288ms)[0m
+      [32m  ✓[0m[90m should have links in Hebrew[0m[90m (347ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Hebrew[0m[90m (300ms)[0m
 [0m      Japanese Sitemap (ja)[0m
-      [32m  ✓[0m[90m should load Japanese sitemap successfully[0m[90m (2203ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Japanese[0m[90m (1950ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Japanese[0m[90m (2106ms)[0m
-      [32m  ✓[0m[90m should have links in Japanese[0m[90m (1956ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Japanese[0m[90m (2007ms)[0m
+      [32m  ✓[0m[90m should load Japanese sitemap successfully[0m[90m (2960ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Japanese[0m[90m (2937ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Japanese[0m[90m (2689ms)[0m
+      [32m  ✓[0m[90m should have links in Japanese[0m[90m (2674ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Japanese[0m[90m (2742ms)[0m
 [0m      Korean Sitemap (ko)[0m
-      [32m  ✓[0m[90m should load Korean sitemap successfully[0m[90m (702ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Korean[0m[90m (571ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Korean[0m[90m (587ms)[0m
-      [32m  ✓[0m[90m should have links in Korean[0m[90m (559ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Korean[0m[90m (635ms)[0m
+      [32m  ✓[0m[90m should load Korean sitemap successfully[0m[90m (825ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Korean[0m[90m (816ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Korean[0m[90m (699ms)[0m
+      [32m  ✓[0m[90m should have links in Korean[0m[90m (751ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Korean[0m[90m (722ms)[0m
 [0m      Chinese Sitemap (zh)[0m
-      [32m  ✓[0m[90m should load Chinese sitemap successfully[0m[90m (581ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute for Chinese[0m[90m (529ms)[0m
-      [32m  ✓[0m[90m should have proper dir attribute for Chinese[0m[90m (519ms)[0m
-      [32m  ✓[0m[90m should have links in Chinese[0m[90m (591ms)[0m
-      [32m  ✓[0m[90m should have sitemap heading in Chinese[0m[90m (506ms)[0m
+      [32m  ✓[0m[90m should load Chinese sitemap successfully[0m[90m (771ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute for Chinese[0m[90m (716ms)[0m
+      [32m  ✓[0m[90m should have proper dir attribute for Chinese[0m[90m (641ms)[0m
+      [32m  ✓[0m[90m should have links in Chinese[0m[90m (638ms)[0m
+      [32m  ✓[0m[90m should have sitemap heading in Chinese[0m[90m (898ms)[0m
 [0m    RTL Sitemap Support[0m
-    [32m  ✓[0m[90m should have proper RTL layout for Arabic[0m[90m (375ms)[0m
-    [32m  ✓[0m[90m should have proper RTL layout for Hebrew[0m[90m (264ms)[0m
+    [32m  ✓[0m[90m should have proper RTL layout for Arabic[0m[90m (410ms)[0m
+    [32m  ✓[0m[90m should have proper RTL layout for Hebrew[0m[90m (319ms)[0m
 [0m    Sitemap Link Organization[0m
-    [32m  ✓[0m[90m should have dashboard links[0m[90m (320ms)[0m
-    [32m  ✓[0m[90m should have news links[0m[90m (309ms)[0m
-    [32m  ✓[0m[90m should have language variant links[0m[90m (246ms)[0m
+    [32m  ✓[0m[90m should have dashboard links[0m[90m (278ms)[0m
+    [32m  ✓[0m[90m should have news links[0m[90m (281ms)[0m
+    [32m  ✓[0m[90m should have language variant links[0m[90m (270ms)[0m
 [0m    Sitemap Accessibility[0m
-    [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (272ms)[0m
-    [32m  ✓[0m[90m should have keyboard navigable links[0m[90m (257ms)[0m
-    [32m  ✓[0m[90m should have descriptive link text[0m[90m (323ms)[0m
-    [32m  ✓[0m[90m should not have empty links[0m[90m (2108ms)[0m
+    [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (316ms)[0m
+    [32m  ✓[0m[90m should have keyboard navigable links[0m[90m (325ms)[0m
+    [32m  ✓[0m[90m should have descriptive link text[0m[90m (273ms)[0m
+    [32m  ✓[0m[90m should not have empty links[0m[90m (2242ms)[0m
 [0m    Sitemap Performance[0m
-    [32m  ✓[0m[90m should load quickly[0m[90m (335ms)[0m
-    [32m  ✓[0m[90m should not have broken internal links (sample)[0m[90m (464ms)[0m
+    [32m  ✓[0m[90m should load quickly[0m[90m (412ms)[0m
+    [32m  ✓[0m[90m should not have broken internal links (sample)[0m[90m (410ms)[0m
 [0m    Sitemap Responsive Design[0m
-    [32m  ✓[0m[90m should be responsive on Mobile[0m[90m (338ms)[0m
-    [32m  ✓[0m[90m should be responsive on Tablet[0m[90m (321ms)[0m
-    [32m  ✓[0m[90m should be responsive on Desktop[0m[90m (264ms)[0m
+    [32m  ✓[0m[90m should be responsive on Mobile[0m[90m (417ms)[0m
+    [32m  ✓[0m[90m should be responsive on Tablet[0m[90m (403ms)[0m
+    [32m  ✓[0m[90m should be responsive on Desktop[0m[90m (270ms)[0m
 [0m    Sitemap Navigation[0m
-    [32m  ✓[0m[90m should have link back to homepage[0m[90m (250ms)[0m
-    [32m  ✓[0m[90m should have navigation menu[0m[90m (269ms)[0m
+    [32m  ✓[0m[90m should have link back to homepage[0m[90m (290ms)[0m
+    [32m  ✓[0m[90m should have navigation menu[0m[90m (273ms)[0m
 
 
-[92m [0m[32m 90 passing[0m[90m (45s)[0m
+[92m [0m[32m 90 passing[0m[90m (52s)[0m
 
 
 [32m  ([4m[1mResults[22m[24m)[39m
@@ -322,7 +322,7 @@ Opening Cypress...
 [90m  │[39m [90mSkipped:[39m      [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mScreenshots:[39m  [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mVideo:[39m        [32mfalse[39m                                                                            [90m│[39m
-[90m  │[39m [90mDuration:[39m     [32m44 seconds[39m                                                                       [90m│[39m
+[90m  │[39m [90mDuration:[39m     [32m51 seconds[39m                                                                       [90m│[39m
 [90m  │[39m [90mSpec Ran:[39m     [32m[32msitemap.cy.js[32m[39m                                                                    [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
 
@@ -334,13 +334,13 @@ Opening Cypress...
 
 [90m   [39m    [90mSpec[39m                                              [90mTests[39m  [90mPassing[39m  [90mFailing[39m  [90mPending[39m  [90mSkipped[39m [90m [39m
 [90m  ┌[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┐[39m
-[90m  │[39m [32m✔[39m  [0mhomepage.cy.js[0m                           [90m00:03[39m       [0m13[0m       [32m13[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
+[90m  │[39m [32m✔[39m  [0mhomepage.cy.js[0m                           [90m00:04[39m       [0m13[0m       [32m13[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  ├[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┤[39m
-[90m  │[39m [32m✔[39m  [0maccessibility.cy.js[0m                      [90m00:09[39m       [0m28[0m       [32m28[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
+[90m  │[39m [32m✔[39m  [0maccessibility.cy.js[0m                      [90m00:10[39m       [0m28[0m       [32m28[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  ├[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┤[39m
-[90m  │[39m [32m✔[39m  [0msitemap.cy.js[0m                            [90m00:44[39m       [0m90[0m       [32m90[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
+[90m  │[39m [32m✔[39m  [0msitemap.cy.js[0m                            [90m00:51[39m       [0m90[0m       [32m90[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
-[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m00:58[39m      [0m131[0m      [32m131[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
+[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m01:06[39m      [0m131[0m      [32m131[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
 
 
 ===== e2e-output-dashboards-extra.log =====
@@ -349,18 +349,18 @@ and when url &quot;[ &#39;http://localhost:4173&#39; ]&quot; is responding with 
 running tests using command &quot;npx cypress run --config video=false --spec &#39;cypress/e2e/all-dashboards.cy.js,cypress/e2e/politician-dashboard.cy.js&#39;&quot;
 
 
-&gt; riksdagsmonitor@0.9.29 preview
+&gt; riksdagsmonitor@0.9.31 preview
 &gt; vite preview
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m4173[22m/[39m
-  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.70:[1m4173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.204:[1m4173[22m/[39m
 It looks like this is your first time using Cypress: 15.15.0
 
 [33m❯[39m  Verifying Cypress can run /home/runner/.cache/Cypress/15.15.0/Cypress
 [32m✔[39m  Verified Cypress!       /home/runner/.cache/Cypress/15.15.0/Cypress
 
 Opening Cypress...
-(node:3425) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:3487) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 [35m[95mWarning:[39m[35m The [33mallowCypressEnv[39m[35m configuration option is enabled. This allows any browser code to read values from [33mCypress.env()[39m[35m. This is insecure and will be removed in a future major version.[39m
 [35m[39m
@@ -391,222 +391,222 @@ Opening Cypress...
 [0m[0m
 [0m  All Dashboards - Comprehensive Coverage[0m
 [0m    Party Dashboard[0m
-    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (1104ms)[0m
-    [32m  ✓[0m[90m should have dashboard heading[0m[90m (376ms)[0m
-    [32m  ✓[0m[90m should have data attribution[0m[90m (299ms)[0m
+    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (904ms)[0m
+    [32m  ✓[0m[90m should have dashboard heading[0m[90m (239ms)[0m
+    [32m  ✓[0m[90m should have data attribution[0m[90m (242ms)[0m
 [0m      Chart.js Charts[0m
-      [32m  ✓[0m[90m should have partyEffectivenessChart canvas[0m[90m (270ms)[0m
-      [32m  ✓[0m[90m partyEffectivenessChart should be rendered by Chart.js[0m[90m (766ms)[0m
-      [32m  ✓[0m[90m should have partyComparisonChart canvas[0m[90m (313ms)[0m
-      [32m  ✓[0m[90m partyComparisonChart should be rendered by Chart.js[0m[90m (739ms)[0m
-      [32m  ✓[0m[90m should have partyMomentumChart canvas[0m[90m (335ms)[0m
-      [32m  ✓[0m[90m partyMomentumChart should be rendered by Chart.js[0m[90m (846ms)[0m
+      [32m  ✓[0m[90m should have partyEffectivenessChart canvas[0m[90m (269ms)[0m
+      [32m  ✓[0m[90m partyEffectivenessChart should be rendered by Chart.js[0m[90m (560ms)[0m
+      [32m  ✓[0m[90m should have partyComparisonChart canvas[0m[90m (244ms)[0m
+      [32m  ✓[0m[90m partyComparisonChart should be rendered by Chart.js[0m[90m (608ms)[0m
+      [32m  ✓[0m[90m should have partyMomentumChart canvas[0m[90m (242ms)[0m
+      [32m  ✓[0m[90m partyMomentumChart should be rendered by Chart.js[0m[90m (539ms)[0m
 [0m      D3.js Visualizations[0m
-      [32m  ✓[0m[90m should have coalitionAlignmentChart container[0m[90m (385ms)[0m
-      [32m  ✓[0m[90m coalitionAlignmentChart should render D3 SVG[0m[90m (368ms)[0m
-      [32m  ✓[0m[90m coalitionAlignmentChart SVG should have content[0m[90m (322ms)[0m
+      [32m  ✓[0m[90m should have coalitionAlignmentChart container[0m[90m (243ms)[0m
+      [32m  ✓[0m[90m coalitionAlignmentChart should render D3 SVG[0m[90m (231ms)[0m
+      [32m  ✓[0m[90m coalitionAlignmentChart SVG should have content[0m[90m (233ms)[0m
 [0m      Accessibility[0m
-      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (428ms)[0m
-      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (251ms)[0m
+      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (252ms)[0m
+      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (265ms)[0m
 [0m      Responsive Design[0m
-      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (333ms)[0m
-      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (309ms)[0m
-      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (294ms)[0m
+      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (282ms)[0m
+      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (414ms)[0m
+      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (287ms)[0m
 [0m    Election Cycle Dashboard[0m
-    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (279ms)[0m
-    [32m  ✓[0m[90m should have dashboard heading[0m[90m (263ms)[0m
-    [32m  ✓[0m[90m should have data attribution[0m[90m (265ms)[0m
-[0m      Chart.js Charts[0m
-      [32m  ✓[0m[90m should have cycle-timeline-chart canvas[0m[90m (306ms)[0m
-      [32m  ✓[0m[90m cycle-timeline-chart should be rendered by Chart.js[0m[90m (701ms)[0m
-      [32m  ✓[0m[90m should have risk-forecast-chart canvas[0m[90m (277ms)[0m
-      [32m  ✓[0m[90m risk-forecast-chart should be rendered by Chart.js[0m[90m (732ms)[0m
-      [32m  ✓[0m[90m should have temporal-trends-chart canvas[0m[90m (368ms)[0m
-      [32m  ✓[0m[90m temporal-trends-chart should be rendered by Chart.js[0m[90m (672ms)[0m
-      [32m  ✓[0m[90m should have party-tier-chart canvas[0m[90m (259ms)[0m
-      [32m  ✓[0m[90m party-tier-chart should be rendered by Chart.js[0m[90m (614ms)[0m
-[0m      D3.js Visualizations[0m
-      [32m  ✓[0m[90m should have decision-heatmap container[0m[90m (298ms)[0m
-      [32m  ✓[0m[90m decision-heatmap should render D3 SVG[0m[90m (307ms)[0m
-      [32m  ✓[0m[90m decision-heatmap SVG should have content[0m[90m (305ms)[0m
-[0m      Accessibility[0m
-      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (298ms)[0m
-      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (292ms)[0m
-[0m      Responsive Design[0m
-      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (298ms)[0m
-      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (333ms)[0m
-      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (301ms)[0m
-[0m    Committee Dashboard[0m
-    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (302ms)[0m
-    [32m  ✓[0m[90m should have dashboard heading[0m[90m (525ms)[0m
-    [32m  ✓[0m[90m should have data attribution[0m[90m (281ms)[0m
-[0m      Chart.js Charts[0m
-      [32m  ✓[0m[90m should have committeeComparisonChart canvas[0m[90m (273ms)[0m
-      [32m  ✓[0m[90m committeeComparisonChart should be rendered by Chart.js[0m[90m (2731ms)[0m
-      [32m  ✓[0m[90m should have decisionEffectivenessChart canvas[0m[90m (262ms)[0m
-      [32m  ✓[0m[90m decisionEffectivenessChart should be rendered by Chart.js[0m[90m (2717ms)[0m
-      [32m  ✓[0m[90m should have seasonalPatternsChart canvas[0m[90m (256ms)[0m
-      [32m  ✓[0m[90m seasonalPatternsChart should be rendered by Chart.js[0m[90m (2712ms)[0m
-[0m      D3.js Visualizations[0m
-      [32m  ✓[0m[90m should have committeeNetwork container[0m[90m (265ms)[0m
-      [32m  ✓[0m[90m committeeNetwork should render D3 SVG[0m[90m (272ms)[0m
-      [32m  ✓[0m[90m committeeNetwork SVG should have content[0m[90m (276ms)[0m
-[0m      Accessibility[0m
-      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (319ms)[0m
-      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (266ms)[0m
-[0m      Responsive Design[0m
-      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (308ms)[0m
-      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (286ms)[0m
-      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (367ms)[0m
-[0m    Coalition Dashboard[0m
-    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (268ms)[0m
-    [32m  ✓[0m[90m should have dashboard heading[0m[90m (265ms)[0m
+    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (284ms)[0m
+    [32m  ✓[0m[90m should have dashboard heading[0m[90m (221ms)[0m
     [32m  ✓[0m[90m should have data attribution[0m[90m (240ms)[0m
 [0m      Chart.js Charts[0m
-      [32m  ✓[0m[90m should have votingAnomalyChart canvas[0m[90m (256ms)[0m
-      [32m  ✓[0m[90m votingAnomalyChart should be rendered by Chart.js[0m[90m (573ms)[0m
-      [32m  ✓[0m[90m should have behavioralPatternsChart canvas[0m[90m (273ms)[0m
-      [32m  ✓[0m[90m behavioralPatternsChart should be rendered by Chart.js[0m[90m (690ms)[0m
-      [32m  ✓[0m[90m should have decisionTrendsChart canvas[0m[90m (272ms)[0m
-      [32m  ✓[0m[90m decisionTrendsChart should be rendered by Chart.js[0m[90m (671ms)[0m
+      [32m  ✓[0m[90m should have cycle-timeline-chart canvas[0m[90m (235ms)[0m
+      [32m  ✓[0m[90m cycle-timeline-chart should be rendered by Chart.js[0m[90m (646ms)[0m
+      [32m  ✓[0m[90m should have risk-forecast-chart canvas[0m[90m (272ms)[0m
+      [32m  ✓[0m[90m risk-forecast-chart should be rendered by Chart.js[0m[90m (632ms)[0m
+      [32m  ✓[0m[90m should have temporal-trends-chart canvas[0m[90m (268ms)[0m
+      [32m  ✓[0m[90m temporal-trends-chart should be rendered by Chart.js[0m[90m (629ms)[0m
+      [32m  ✓[0m[90m should have party-tier-chart canvas[0m[90m (239ms)[0m
+      [32m  ✓[0m[90m party-tier-chart should be rendered by Chart.js[0m[90m (758ms)[0m
 [0m      D3.js Visualizations[0m
-      [32m  ✓[0m[90m should have coalitionNetwork container[0m[90m (305ms)[0m
-      [32m  ✓[0m[90m coalitionNetwork should render D3 SVG[0m[90m (283ms)[0m
-      [32m  ✓[0m[90m coalitionNetwork SVG should have content[0m[90m (286ms)[0m
+      [32m  ✓[0m[90m should have decision-heatmap container[0m[90m (245ms)[0m
+      [32m  ✓[0m[90m decision-heatmap should render D3 SVG[0m[90m (233ms)[0m
+      [32m  ✓[0m[90m decision-heatmap SVG should have content[0m[90m (234ms)[0m
 [0m      Accessibility[0m
-      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (305ms)[0m
-      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (321ms)[0m
+      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (335ms)[0m
+      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (228ms)[0m
 [0m      Responsive Design[0m
-      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (317ms)[0m
-      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (304ms)[0m
-      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (360ms)[0m
+      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (294ms)[0m
+      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (263ms)[0m
+      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (253ms)[0m
+[0m    Committee Dashboard[0m
+    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (234ms)[0m
+    [32m  ✓[0m[90m should have dashboard heading[0m[90m (803ms)[0m
+    [32m  ✓[0m[90m should have data attribution[0m[90m (269ms)[0m
+[0m      Chart.js Charts[0m
+      [32m  ✓[0m[90m should have committeeComparisonChart canvas[0m[90m (238ms)[0m
+      [32m  ✓[0m[90m committeeComparisonChart should be rendered by Chart.js[0m[90m (3232ms)[0m
+      [32m  ✓[0m[90m should have decisionEffectivenessChart canvas[0m[90m (286ms)[0m
+      [32m  ✓[0m[90m decisionEffectivenessChart should be rendered by Chart.js[0m[90m (2603ms)[0m
+      [32m  ✓[0m[90m should have seasonalPatternsChart canvas[0m[90m (237ms)[0m
+      [32m  ✓[0m[90m seasonalPatternsChart should be rendered by Chart.js[0m[90m (2896ms)[0m
+[0m      D3.js Visualizations[0m
+      [32m  ✓[0m[90m should have committeeNetwork container[0m[90m (251ms)[0m
+      [32m  ✓[0m[90m committeeNetwork should render D3 SVG[0m[90m (251ms)[0m
+      [32m  ✓[0m[90m committeeNetwork SVG should have content[0m[90m (232ms)[0m
+[0m      Accessibility[0m
+      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (248ms)[0m
+      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (262ms)[0m
+[0m      Responsive Design[0m
+      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (308ms)[0m
+      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (264ms)[0m
+      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (260ms)[0m
+[0m    Coalition Dashboard[0m
+    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (230ms)[0m
+    [32m  ✓[0m[90m should have dashboard heading[0m[90m (230ms)[0m
+    [32m  ✓[0m[90m should have data attribution[0m[90m (269ms)[0m
+[0m      Chart.js Charts[0m
+      [32m  ✓[0m[90m should have votingAnomalyChart canvas[0m[90m (229ms)[0m
+      [32m  ✓[0m[90m votingAnomalyChart should be rendered by Chart.js[0m[90m (572ms)[0m
+      [32m  ✓[0m[90m should have behavioralPatternsChart canvas[0m[90m (252ms)[0m
+      [32m  ✓[0m[90m behavioralPatternsChart should be rendered by Chart.js[0m[90m (569ms)[0m
+      [32m  ✓[0m[90m should have decisionTrendsChart canvas[0m[90m (253ms)[0m
+      [32m  ✓[0m[90m decisionTrendsChart should be rendered by Chart.js[0m[90m (676ms)[0m
+[0m      D3.js Visualizations[0m
+      [32m  ✓[0m[90m should have coalitionNetwork container[0m[90m (249ms)[0m
+      [32m  ✓[0m[90m coalitionNetwork should render D3 SVG[0m[90m (248ms)[0m
+      [32m  ✓[0m[90m coalitionNetwork SVG should have content[0m[90m (243ms)[0m
+[0m      Accessibility[0m
+      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (274ms)[0m
+      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (231ms)[0m
+[0m      Responsive Design[0m
+      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (285ms)[0m
+      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (324ms)[0m
+      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (266ms)[0m
 [0m    Seasonal Patterns Dashboard[0m
-    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (268ms)[0m
-    [32m  ✓[0m[90m should have dashboard heading[0m[90m (306ms)[0m
-    [32m  ✓[0m[90m should have data attribution[0m[90m (347ms)[0m
+    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (325ms)[0m
+    [32m  ✓[0m[90m should have dashboard heading[0m[90m (250ms)[0m
+    [32m  ✓[0m[90m should have data attribution[0m[90m (299ms)[0m
 [0m      Chart.js Charts[0m
-      [32m  ✓[0m[90m should have zscore-timeline-chart canvas[0m[90m (275ms)[0m
-      [32m  ✓[0m[90m zscore-timeline-chart should be rendered by Chart.js[0m[90m (715ms)[0m
-      [32m  ✓[0m[90m should have quarter-comparison-chart canvas[0m[90m (290ms)[0m
-      [32m  ✓[0m[90m quarter-comparison-chart should be rendered by Chart.js[0m[90m (724ms)[0m
-      [32m  ✓[0m[90m should have classification-chart canvas[0m[90m (313ms)[0m
-      [32m  ✓[0m[90m classification-chart should be rendered by Chart.js[0m[90m (777ms)[0m
-      [32m  ✓[0m[90m should have qoq-change-chart canvas[0m[90m (260ms)[0m
-      [32m  ✓[0m[90m qoq-change-chart should be rendered by Chart.js[0m[90m (726ms)[0m
+      [32m  ✓[0m[90m should have zscore-timeline-chart canvas[0m[90m (260ms)[0m
+      [32m  ✓[0m[90m zscore-timeline-chart should be rendered by Chart.js[0m[90m (658ms)[0m
+      [32m  ✓[0m[90m should have quarter-comparison-chart canvas[0m[90m (236ms)[0m
+      [32m  ✓[0m[90m quarter-comparison-chart should be rendered by Chart.js[0m[90m (648ms)[0m
+      [32m  ✓[0m[90m should have classification-chart canvas[0m[90m (236ms)[0m
+      [32m  ✓[0m[90m classification-chart should be rendered by Chart.js[0m[90m (667ms)[0m
+      [32m  ✓[0m[90m should have qoq-change-chart canvas[0m[90m (311ms)[0m
+      [32m  ✓[0m[90m qoq-change-chart should be rendered by Chart.js[0m[90m (592ms)[0m
 [0m      D3.js Visualizations[0m
-      [32m  ✓[0m[90m should have seasonal-heatmap container[0m[90m (282ms)[0m
-      [32m  ✓[0m[90m seasonal-heatmap should render D3 SVG[0m[90m (310ms)[0m
-      [32m  ✓[0m[90m seasonal-heatmap SVG should have content[0m[90m (379ms)[0m
+      [32m  ✓[0m[90m should have seasonal-heatmap container[0m[90m (319ms)[0m
+      [32m  ✓[0m[90m seasonal-heatmap should render D3 SVG[0m[90m (242ms)[0m
+      [32m  ✓[0m[90m seasonal-heatmap SVG should have content[0m[90m (339ms)[0m
 [0m      Accessibility[0m
-      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (313ms)[0m
-      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (321ms)[0m
+      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (261ms)[0m
+      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (236ms)[0m
 [0m      Responsive Design[0m
-      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (387ms)[0m
-      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (375ms)[0m
-      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (312ms)[0m
+      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (368ms)[0m
+      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (306ms)[0m
+      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (261ms)[0m
 [0m    Pre-Election Dashboard[0m
-    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (280ms)[0m
-    [32m  ✓[0m[90m should have dashboard heading[0m[90m (277ms)[0m
-    [32m  ✓[0m[90m should have data attribution[0m[90m (322ms)[0m
+    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (233ms)[0m
+    [32m  ✓[0m[90m should have dashboard heading[0m[90m (243ms)[0m
+    [32m  ✓[0m[90m should have data attribution[0m[90m (234ms)[0m
 [0m      Chart.js Charts[0m
-      [32m  ✓[0m[90m should have q4-timeline-chart canvas[0m[90m (308ms)[0m
-      [32m  ✓[0m[90m q4-timeline-chart should be rendered by Chart.js[0m[90m (612ms)[0m
-      [32m  ✓[0m[90m should have election-comparison-chart canvas[0m[90m (286ms)[0m
-      [32m  ✓[0m[90m election-comparison-chart should be rendered by Chart.js[0m[90m (717ms)[0m
-      [32m  ✓[0m[90m should have deviation-radar-chart canvas[0m[90m (290ms)[0m
-      [32m  ✓[0m[90m deviation-radar-chart should be rendered by Chart.js[0m[90m (674ms)[0m
-      [32m  ✓[0m[90m should have party-trends-chart canvas[0m[90m (388ms)[0m
-      [32m  ✓[0m[90m party-trends-chart should be rendered by Chart.js[0m[90m (689ms)[0m
-      [32m  ✓[0m[90m should have yoy-waterfall-chart canvas[0m[90m (268ms)[0m
-      [32m  ✓[0m[90m yoy-waterfall-chart should be rendered by Chart.js[0m[90m (579ms)[0m
+      [32m  ✓[0m[90m should have q4-timeline-chart canvas[0m[90m (240ms)[0m
+      [32m  ✓[0m[90m q4-timeline-chart should be rendered by Chart.js[0m[90m (637ms)[0m
+      [32m  ✓[0m[90m should have election-comparison-chart canvas[0m[90m (261ms)[0m
+      [32m  ✓[0m[90m election-comparison-chart should be rendered by Chart.js[0m[90m (610ms)[0m
+      [32m  ✓[0m[90m should have deviation-radar-chart canvas[0m[90m (272ms)[0m
+      [32m  ✓[0m[90m deviation-radar-chart should be rendered by Chart.js[0m[90m (568ms)[0m
+      [32m  ✓[0m[90m should have party-trends-chart canvas[0m[90m (241ms)[0m
+      [32m  ✓[0m[90m party-trends-chart should be rendered by Chart.js[0m[90m (579ms)[0m
+      [32m  ✓[0m[90m should have yoy-waterfall-chart canvas[0m[90m (291ms)[0m
+      [32m  ✓[0m[90m yoy-waterfall-chart should be rendered by Chart.js[0m[90m (594ms)[0m
 [0m      Accessibility[0m
-      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (280ms)[0m
-      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (289ms)[0m
+      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (276ms)[0m
+      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (268ms)[0m
 [0m      Responsive Design[0m
-      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (325ms)[0m
-      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (452ms)[0m
-      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (308ms)[0m
+      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (295ms)[0m
+      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (268ms)[0m
+      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (296ms)[0m
 [0m    Anomaly Detection Dashboard[0m
-    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (368ms)[0m
-    [32m  ✓[0m[90m should have dashboard heading[0m[90m (273ms)[0m
-    [32m  ✓[0m[90m should have data attribution[0m[90m (275ms)[0m
+    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (237ms)[0m
+    [32m  ✓[0m[90m should have dashboard heading[0m[90m (237ms)[0m
+    [32m  ✓[0m[90m should have data attribution[0m[90m (248ms)[0m
 [0m      Chart.js Charts[0m
-      [32m  ✓[0m[90m should have anomaly-timeline-chart canvas[0m[90m (298ms)[0m
-      [32m  ✓[0m[90m anomaly-timeline-chart should be rendered by Chart.js[0m[90m (632ms)[0m
-      [32m  ✓[0m[90m should have zscore-distribution-chart canvas[0m[90m (298ms)[0m
-      [32m  ✓[0m[90m zscore-distribution-chart should be rendered by Chart.js[0m[90m (630ms)[0m
+      [32m  ✓[0m[90m should have anomaly-timeline-chart canvas[0m[90m (233ms)[0m
+      [32m  ✓[0m[90m anomaly-timeline-chart should be rendered by Chart.js[0m[90m (540ms)[0m
+      [32m  ✓[0m[90m should have zscore-distribution-chart canvas[0m[90m (239ms)[0m
+      [32m  ✓[0m[90m zscore-distribution-chart should be rendered by Chart.js[0m[90m (558ms)[0m
       [32m  ✓[0m[90m should have anomaly-type-chart canvas[0m[90m (271ms)[0m
-      [32m  ✓[0m[90m anomaly-type-chart should be rendered by Chart.js[0m[90m (638ms)[0m
-      [32m  ✓[0m[90m should have quarterly-frequency-chart canvas[0m[90m (341ms)[0m
-      [32m  ✓[0m[90m quarterly-frequency-chart should be rendered by Chart.js[0m[90m (634ms)[0m
+      [32m  ✓[0m[90m anomaly-type-chart should be rendered by Chart.js[0m[90m (603ms)[0m
+      [32m  ✓[0m[90m should have quarterly-frequency-chart canvas[0m[90m (256ms)[0m
+      [32m  ✓[0m[90m quarterly-frequency-chart should be rendered by Chart.js[0m[90m (567ms)[0m
 [0m      D3.js Visualizations[0m
-      [32m  ✓[0m[90m should have severity-heatmap container[0m[90m (295ms)[0m
-      [32m  ✓[0m[90m severity-heatmap should render D3 SVG[0m[90m (275ms)[0m
-      [32m  ✓[0m[90m severity-heatmap SVG should have content[0m[90m (378ms)[0m
+      [32m  ✓[0m[90m should have severity-heatmap container[0m[90m (298ms)[0m
+      [32m  ✓[0m[90m severity-heatmap should render D3 SVG[0m[90m (265ms)[0m
+      [32m  ✓[0m[90m severity-heatmap SVG should have content[0m[90m (237ms)[0m
 [0m      Accessibility[0m
-      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (408ms)[0m
-      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (258ms)[0m
+      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (252ms)[0m
+      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (250ms)[0m
 [0m      Responsive Design[0m
-      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (343ms)[0m
-      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (298ms)[0m
-      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (312ms)[0m
+      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (330ms)[0m
+      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (290ms)[0m
+      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (301ms)[0m
 [0m    Ministry Dashboard[0m
-    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (281ms)[0m
-    [32m  ✓[0m[90m should have dashboard heading[0m[90m (282ms)[0m
-    [32m  ✓[0m[90m should have data attribution[0m[90m (252ms)[0m
+    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (232ms)[0m
+    [32m  ✓[0m[90m should have dashboard heading[0m[90m (234ms)[0m
+    [32m  ✓[0m[90m should have data attribution[0m[90m (231ms)[0m
 [0m      Chart.js Charts[0m
-      [32m  ✓[0m[90m should have ministerInfluenceChart canvas[0m[90m (254ms)[0m
-      [32m  ✓[0m[90m ministerInfluenceChart should be rendered by Chart.js[0m[90m (695ms)[0m
-      [32m  ✓[0m[90m should have ministryProductivityChart canvas[0m[90m (274ms)[0m
-      [32m  ✓[0m[90m ministryProductivityChart should be rendered by Chart.js[0m[90m (698ms)[0m
-      [32m  ✓[0m[90m should have decisionImpactChart canvas[0m[90m (325ms)[0m
-      [32m  ✓[0m[90m decisionImpactChart should be rendered by Chart.js[0m[90m (758ms)[0m
+      [32m  ✓[0m[90m should have ministerInfluenceChart canvas[0m[90m (245ms)[0m
+      [32m  ✓[0m[90m ministerInfluenceChart should be rendered by Chart.js[0m[90m (826ms)[0m
+      [32m  ✓[0m[90m should have ministryProductivityChart canvas[0m[90m (264ms)[0m
+      [32m  ✓[0m[90m ministryProductivityChart should be rendered by Chart.js[0m[90m (586ms)[0m
+      [32m  ✓[0m[90m should have decisionImpactChart canvas[0m[90m (349ms)[0m
+      [32m  ✓[0m[90m decisionImpactChart should be rendered by Chart.js[0m[90m (541ms)[0m
 [0m      D3.js Visualizations[0m
-      [32m  ✓[0m[90m should have ministryRiskHeatMap container[0m[90m (288ms)[0m
-      [32m  ✓[0m[90m ministryRiskHeatMap should render D3 SVG[0m[90m (302ms)[0m
-      [32m  ✓[0m[90m ministryRiskHeatMap SVG should have content[0m[90m (286ms)[0m
+      [32m  ✓[0m[90m should have ministryRiskHeatMap container[0m[90m (258ms)[0m
+      [32m  ✓[0m[90m ministryRiskHeatMap should render D3 SVG[0m[90m (246ms)[0m
+      [32m  ✓[0m[90m ministryRiskHeatMap SVG should have content[0m[90m (256ms)[0m
 [0m      Accessibility[0m
-      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (279ms)[0m
-      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (292ms)[0m
+      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (246ms)[0m
+      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (234ms)[0m
 [0m      Responsive Design[0m
-      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (314ms)[0m
-      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (468ms)[0m
-      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (298ms)[0m
+      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (284ms)[0m
+      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (262ms)[0m
+      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (270ms)[0m
 [0m    Risk Dashboard[0m
-    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (301ms)[0m
-    [32m  ✓[0m[90m should have dashboard heading[0m[90m (288ms)[0m
-    [32m  ✓[0m[90m should have data attribution[0m[90m (259ms)[0m
+    [32m  ✓[0m[90m should mount the dashboard container and remain visible[0m[90m (254ms)[0m
+    [32m  ✓[0m[90m should have dashboard heading[0m[90m (258ms)[0m
+    [32m  ✓[0m[90m should have data attribution[0m[90m (314ms)[0m
 [0m      Chart.js Charts[0m
-      [32m  ✓[0m[90m should have riskDistributionChart canvas[0m[90m (288ms)[0m
-      [32m  ✓[0m[90m riskDistributionChart should be rendered by Chart.js[0m[90m (1330ms)[0m
-      [32m  ✓[0m[90m should have anomalyDetectionChart canvas[0m[90m (404ms)[0m
-      [32m  ✓[0m[90m anomalyDetectionChart should be rendered by Chart.js[0m[90m (1404ms)[0m
-      [32m  ✓[0m[90m should have crisisResilienceChart canvas[0m[90m (288ms)[0m
-      [32m  ✓[0m[90m crisisResilienceChart should be rendered by Chart.js[0m[90m (1330ms)[0m
-      [32m  ✓[0m[90m should have riskEvolutionChart canvas[0m[90m (278ms)[0m
-      [32m  ✓[0m[90m riskEvolutionChart should be rendered by Chart.js[0m[90m (1321ms)[0m
+      [32m  ✓[0m[90m should have riskDistributionChart canvas[0m[90m (234ms)[0m
+      [32m  ✓[0m[90m riskDistributionChart should be rendered by Chart.js[0m[90m (1260ms)[0m
+      [32m  ✓[0m[90m should have anomalyDetectionChart canvas[0m[90m (1020ms)[0m
+      [32m  ✓[0m[90m anomalyDetectionChart should be rendered by Chart.js[0m[90m (1246ms)[0m
+      [32m  ✓[0m[90m should have crisisResilienceChart canvas[0m[90m (263ms)[0m
+      [32m  ✓[0m[90m crisisResilienceChart should be rendered by Chart.js[0m[90m (1424ms)[0m
+      [32m  ✓[0m[90m should have riskEvolutionChart canvas[0m[90m (302ms)[0m
+      [32m  ✓[0m[90m riskEvolutionChart should be rendered by Chart.js[0m[90m (1349ms)[0m
 [0m      D3.js Visualizations[0m
-      [32m  ✓[0m[90m should have riskHeatMap container[0m[90m (317ms)[0m
-      [32m  ✓[0m[90m riskHeatMap should render D3 SVG[0m[90m (306ms)[0m
-      [32m  ✓[0m[90m riskHeatMap SVG should have content[0m[90m (280ms)[0m
+      [32m  ✓[0m[90m should have riskHeatMap container[0m[90m (258ms)[0m
+      [32m  ✓[0m[90m riskHeatMap should render D3 SVG[0m[90m (245ms)[0m
+      [32m  ✓[0m[90m riskHeatMap SVG should have content[0m[90m (246ms)[0m
 [0m      Accessibility[0m
-      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (289ms)[0m
-      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (254ms)[0m
+      [32m  ✓[0m[90m should have ARIA labels on charts (where present)[0m[90m (1096ms)[0m
+      [32m  ✓[0m[90m should have screen reader descriptions[0m[90m (245ms)[0m
 [0m      Responsive Design[0m
-      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (1088ms)[0m
-      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (337ms)[0m
-      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (300ms)[0m
+      [32m  ✓[0m[90m should be visible on mobile (375px)[0m[90m (391ms)[0m
+      [32m  ✓[0m[90m should be visible on tablet (768px)[0m[90m (283ms)[0m
+      [32m  ✓[0m[90m should be visible on desktop (1440px)[0m[90m (244ms)[0m
 [0m    Dashboard Integration[0m
-    [32m  ✓[0m[90m all 9 dashboards should have a unique slug + container ID[0m[90m (63ms)[0m
-    [32m  ✓[0m[90m home page hub should link to every dashboard slug[0m[90m (459ms)[0m
-    [32m  ✓[0m[90m every dashboard page should expose a back-to-home link[0m[90m (2942ms)[0m
-    [32m  ✓[0m[90m every dashboard page should link to the other 8 dashboards via related-dashboards aside[0m[90m (2871ms)[0m
+    [32m  ✓[0m[90m all 9 dashboards should have a unique slug + container ID[0m[90m (52ms)[0m
+    [32m  ✓[0m[90m home page hub should link to every dashboard slug[0m[90m (256ms)[0m
+    [32m  ✓[0m[90m every dashboard page should expose a back-to-home link[0m[90m (2815ms)[0m
+    [32m  ✓[0m[90m every dashboard page should link to the other 8 dashboards via related-dashboards aside[0m[90m (2788ms)[0m
 [0m    Performance[0m
-    [32m  ✓[0m[90m every dashboard page should mount its container within 5s[0m[90m (2863ms)[0m
-    [32m  ✓[0m[90m parties dashboard renders its first Chart.js canvas with Chart.js instance[0m[90m (679ms)[0m
+    [32m  ✓[0m[90m every dashboard page should mount its container within 5s[0m[90m (2353ms)[0m
+    [32m  ✓[0m[90m parties dashboard renders its first Chart.js canvas with Chart.js instance[0m[90m (573ms)[0m
 
 
-[92m [0m[32m 168 passing[0m[90m (4m)[0m
+[92m [0m[32m 168 passing[0m[90m (3m)[0m
 
 
 [32m  ([4m[1mResults[22m[24m)[39m
@@ -619,7 +619,7 @@ Opening Cypress...
 [90m  │[39m [90mSkipped:[39m      [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mScreenshots:[39m  [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mVideo:[39m        [32mfalse[39m                                                                            [90m│[39m
-[90m  │[39m [90mDuration:[39m     [32m3 minutes, 36 seconds[39m                                                            [90m│[39m
+[90m  │[39m [90mDuration:[39m     [32m3 minutes, 22 seconds[39m                                                            [90m│[39m
 [90m  │[39m [90mSpec Ran:[39m     [32m[32mall-dashboards.cy.js[32m[39m                                                             [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
 
@@ -631,51 +631,51 @@ Opening Cypress...
 [0m[0m
 [0m  Politician Dashboard[0m
 [0m    Page Loading and Structure[0m
-    [32m  ✓[0m[90m should load politician dashboard successfully[0m[90m (537ms)[0m
-    [32m  ✓[0m[90m should have proper document structure[0m[90m (240ms)[0m
-    [32m  ✓[0m[90m should have dashboard header[0m[90m (229ms)[0m
-    [32m  ✓[0m[90m should have chart cards container[0m[90m (253ms)[0m
-    [32m  ✓[0m[90m should have proper meta tags[0m[90m (225ms)[0m
-    [32m  ✓[0m[90m should have Open Graph tags[0m[90m (245ms)[0m
-    [32m  ✓[0m[90m should have canonical link[0m[90m (393ms)[0m
+    [32m  ✓[0m[90m should load politician dashboard successfully[0m[90m (482ms)[0m
+    [32m  ✓[0m[90m should have proper document structure[0m[90m (238ms)[0m
+    [32m  ✓[0m[90m should have dashboard header[0m[90m (235ms)[0m
+    [32m  ✓[0m[90m should have chart cards container[0m[90m (227ms)[0m
+    [32m  ✓[0m[90m should have proper meta tags[0m[90m (230ms)[0m
+    [32m  ✓[0m[90m should have Open Graph tags[0m[90m (219ms)[0m
+    [32m  ✓[0m[90m should have canonical link[0m[90m (215ms)[0m
 [0m    Chart and Visualization Elements[0m
-    [32m  ✓[0m[90m should have chart containers[0m[90m (215ms)[0m
-    [32m  ✓[0m[90m should load Chart.js library[0m[90m (321ms)[0m
-    [32m  ✓[0m[90m should have chart cards with proper styling[0m[90m (247ms)[0m
-    [32m  ✓[0m[90m should have chart titles[0m[90m (244ms)[0m
-    [32m  ✓[0m[90m should render canvas elements for charts[0m[90m (205ms)[0m
+    [32m  ✓[0m[90m should have chart containers[0m[90m (225ms)[0m
+    [32m  ✓[0m[90m should load Chart.js library[0m[90m (281ms)[0m
+    [32m  ✓[0m[90m should have chart cards with proper styling[0m[90m (255ms)[0m
+    [32m  ✓[0m[90m should have chart titles[0m[90m (192ms)[0m
+    [32m  ✓[0m[90m should render canvas elements for charts[0m[90m (232ms)[0m
 [0m    Politician Data Display[0m
-    [32m  ✓[0m[90m should display politician rankings or data[0m[90m (294ms)[0m
-    [32m  ✓[0m[90m should have top rankings section[0m[90m (208ms)[0m
+    [32m  ✓[0m[90m should display politician rankings or data[0m[90m (200ms)[0m
+    [32m  ✓[0m[90m should have top rankings section[0m[90m (366ms)[0m
 [0m    Responsive Design[0m
-    [32m  ✓[0m[90m should be responsive on Mobile (375x667)[0m[90m (307ms)[0m
-    [32m  ✓[0m[90m should be responsive on Tablet (768x1024)[0m[90m (245ms)[0m
-    [32m  ✓[0m[90m should be responsive on Desktop (1280x720)[0m[90m (213ms)[0m
-    [32m  ✓[0m[90m should be responsive on Large Desktop (1920x1080)[0m[90m (243ms)[0m
-    [32m  ✓[0m[90m should have mobile-friendly grid layout[0m[90m (305ms)[0m
+    [32m  ✓[0m[90m should be responsive on Mobile (375x667)[0m[90m (323ms)[0m
+    [32m  ✓[0m[90m should be responsive on Tablet (768x1024)[0m[90m (246ms)[0m
+    [32m  ✓[0m[90m should be responsive on Desktop (1280x720)[0m[90m (227ms)[0m
+    [32m  ✓[0m[90m should be responsive on Large Desktop (1920x1080)[0m[90m (185ms)[0m
+    [32m  ✓[0m[90m should have mobile-friendly grid layout[0m[90m (259ms)[0m
 [0m    Accessibility (WCAG 2.1 AA)[0m
-    [32m  ✓[0m[90m should have proper language attribute[0m[90m (223ms)[0m
-    [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (248ms)[0m
-    [32m  ✓[0m[90m should have ARIA labels on interactive elements[0m[90m (366ms)[0m
-    [32m  ✓[0m[90m should have alt text on images[0m[90m (289ms)[0m
-    [32m  ✓[0m[90m should be keyboard navigable[0m[90m (252ms)[0m
-    [32m  ✓[0m[90m should have sufficient color contrast[0m[90m (310ms)[0m
+    [32m  ✓[0m[90m should have proper language attribute[0m[90m (332ms)[0m
+    [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (234ms)[0m
+    [32m  ✓[0m[90m should have ARIA labels on interactive elements[0m[90m (206ms)[0m
+    [32m  ✓[0m[90m should have alt text on images[0m[90m (247ms)[0m
+    [32m  ✓[0m[90m should be keyboard navigable[0m[90m (219ms)[0m
+    [32m  ✓[0m[90m should have sufficient color contrast[0m[90m (204ms)[0m
 [0m    Navigation and Links[0m
-    [32m  ✓[0m[90m should have navigation back to homepage[0m[90m (242ms)[0m
-    [32m  ✓[0m[90m should have working internal links[0m[90m (232ms)[0m
+    [32m  ✓[0m[90m should have navigation back to homepage[0m[90m (221ms)[0m
+    [32m  ✓[0m[90m should have working internal links[0m[90m (213ms)[0m
 [0m    Performance[0m
-    [32m  ✓[0m[90m should load page within reasonable time[0m[90m (543ms)[0m
-    [32m  ✓[0m[90m should not have JavaScript errors[0m[90m (228ms)[0m
+    [32m  ✓[0m[90m should load page within reasonable time[0m[90m (614ms)[0m
+    [32m  ✓[0m[90m should not have JavaScript errors[0m[90m (215ms)[0m
 [0m    Data Loading States[0m
-    [32m  ✓[0m[90m should handle empty state gracefully[0m[90m (212ms)[0m
-    [32m  ✓[0m[90m should have loading indicators or data display[0m[90m (248ms)[0m
+    [32m  ✓[0m[90m should handle empty state gracefully[0m[90m (272ms)[0m
+    [32m  ✓[0m[90m should have loading indicators or data display[0m[90m (182ms)[0m
 [0m    CSS and Styling[0m
-    [32m  ✓[0m[90m should not load any third-party font CDN (system-ui font stack)[0m[90m (227ms)[0m
-    [32m  ✓[0m[90m should have custom styling loaded[0m[90m (199ms)[0m
-    [32m  ✓[0m[90m should have cyberpunk theme elements[0m[90m (216ms)[0m
+    [32m  ✓[0m[90m should not load any third-party font CDN (system-ui font stack)[0m[90m (176ms)[0m
+    [32m  ✓[0m[90m should have custom styling loaded[0m[90m (211ms)[0m
+    [32m  ✓[0m[90m should have cyberpunk theme elements[0m[90m (186ms)[0m
 
 
-[92m [0m[32m 34 passing[0m[90m (12s)[0m
+[92m [0m[32m 34 passing[0m[90m (11s)[0m
 
 
 [32m  ([4m[1mResults[22m[24m)[39m
@@ -688,7 +688,7 @@ Opening Cypress...
 [90m  │[39m [90mSkipped:[39m      [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mScreenshots:[39m  [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mVideo:[39m        [32mfalse[39m                                                                            [90m│[39m
-[90m  │[39m [90mDuration:[39m     [32m12 seconds[39m                                                                       [90m│[39m
+[90m  │[39m [90mDuration:[39m     [32m11 seconds[39m                                                                       [90m│[39m
 [90m  │[39m [90mSpec Ran:[39m     [32m[32mpolitician-dashboard.cy.js[32m[39m                                                       [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
 
@@ -700,11 +700,11 @@ Opening Cypress...
 
 [90m   [39m    [90mSpec[39m                                              [90mTests[39m  [90mPassing[39m  [90mFailing[39m  [90mPending[39m  [90mSkipped[39m [90m [39m
 [90m  ┌[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┐[39m
-[90m  │[39m [32m✔[39m  [0mall-dashboards.cy.js[0m                     [90m03:36[39m      [0m168[0m      [32m168[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
+[90m  │[39m [32m✔[39m  [0mall-dashboards.cy.js[0m                     [90m03:22[39m      [0m168[0m      [32m168[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  ├[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┤[39m
-[90m  │[39m [32m✔[39m  [0mpolitician-dashboard.cy.js[0m               [90m00:12[39m       [0m34[0m       [32m34[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
+[90m  │[39m [32m✔[39m  [0mpolitician-dashboard.cy.js[0m               [90m00:11[39m       [0m34[0m       [32m34[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
-[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m03:48[39m      [0m202[0m      [32m202[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
+[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m03:33[39m      [0m202[0m      [32m202[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
 
 
 ===== e2e-output-dashboards.log =====
@@ -713,18 +713,18 @@ and when url &quot;[ &#39;http://localhost:4173&#39; ]&quot; is responding with 
 running tests using command &quot;npx cypress run --config video=false --spec &#39;cypress/e2e/dashboard-page.cy.js,cypress/e2e/dashboards.cy.js,cypress/e2e/dashboards-no-scroll.cy.js&#39;&quot;
 
 
-&gt; riksdagsmonitor@0.9.29 preview
+&gt; riksdagsmonitor@0.9.31 preview
 &gt; vite preview
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m4173[22m/[39m
-  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.213:[1m4173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.211:[1m4173[22m/[39m
 It looks like this is your first time using Cypress: 15.15.0
 
 [33m❯[39m  Verifying Cypress can run /home/runner/.cache/Cypress/15.15.0/Cypress
 [32m✔[39m  Verified Cypress!       /home/runner/.cache/Cypress/15.15.0/Cypress
 
 Opening Cypress...
-(node:3422) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:3519) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 [35m[95mWarning:[39m[35m The [33mallowCypressEnv[39m[35m configuration option is enabled. This allows any browser code to read values from [33mCypress.env()[39m[35m. This is insecure and will be removed in a future major version.[39m
 [35m[39m
@@ -755,110 +755,110 @@ Opening Cypress...
 
 [0m[0m
 [0m  Dashboard Page - Main English Version[0m
-  [32m  ✓[0m[90m should load dashboard page successfully[0m[90m (846ms)[0m
-  [32m  ✓[0m[90m should have proper document structure[0m[90m (281ms)[0m
-  [32m  ✓[0m[90m should display page heading[0m[90m (420ms)[0m
-  [32m  ✓[0m[90m should have navigation menu[0m[90m (365ms)[0m
-  [32m  ✓[0m[90m should have language switcher for all 14 languages[0m[90m (453ms)[0m
-  [32m  ✓[0m[90m should have CIA data visualization containers[0m[90m (321ms)[0m
-  [32m  ✓[0m[90m should be responsive on mobile[0m[90m (390ms)[0m
-  [32m  ✓[0m[90m should be responsive on tablet[0m[90m (264ms)[0m
-  [32m  ✓[0m[90m should be responsive on desktop[0m[90m (295ms)[0m
-  [32m  ✓[0m[90m should have proper meta tags[0m[90m (356ms)[0m
-  [32m  ✓[0m[90m should have link back to homepage[0m[90m (332ms)[0m
-  [32m  ✓[0m[90m should load CSS styles[0m[90m (228ms)[0m
-  [32m  ✓[0m[90m should load JavaScript modules[0m[90m (261ms)[0m
+  [32m  ✓[0m[90m should load dashboard page successfully[0m[90m (1686ms)[0m
+  [32m  ✓[0m[90m should have proper document structure[0m[90m (318ms)[0m
+  [32m  ✓[0m[90m should display page heading[0m[90m (481ms)[0m
+  [32m  ✓[0m[90m should have navigation menu[0m[90m (275ms)[0m
+  [32m  ✓[0m[90m should have language switcher for all 14 languages[0m[90m (366ms)[0m
+  [32m  ✓[0m[90m should have CIA data visualization containers[0m[90m (280ms)[0m
+  [32m  ✓[0m[90m should be responsive on mobile[0m[90m (341ms)[0m
+  [32m  ✓[0m[90m should be responsive on tablet[0m[90m (381ms)[0m
+  [32m  ✓[0m[90m should be responsive on desktop[0m[90m (297ms)[0m
+  [32m  ✓[0m[90m should have proper meta tags[0m[90m (243ms)[0m
+  [32m  ✓[0m[90m should have link back to homepage[0m[90m (250ms)[0m
+  [32m  ✓[0m[90m should load CSS styles[0m[90m (341ms)[0m
+  [32m  ✓[0m[90m should load JavaScript modules[0m[90m (246ms)[0m
 
 [0m  Dashboard Page - All Language Variants[0m
 [0m    Swedish (SV)[0m
-    [32m  ✓[0m[90m should load Swedish dashboard page[0m[90m (399ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Swedish[0m[90m (247ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Swedish[0m[90m (276ms)[0m
-    [32m  ✓[0m[90m should be responsive for Swedish[0m[90m (455ms)[0m
+    [32m  ✓[0m[90m should load Swedish dashboard page[0m[90m (419ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Swedish[0m[90m (224ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Swedish[0m[90m (223ms)[0m
+    [32m  ✓[0m[90m should be responsive for Swedish[0m[90m (257ms)[0m
 [0m    Danish (DA)[0m
-    [32m  ✓[0m[90m should load Danish dashboard page[0m[90m (281ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Danish[0m[90m (343ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Danish[0m[90m (313ms)[0m
-    [32m  ✓[0m[90m should be responsive for Danish[0m[90m (418ms)[0m
+    [32m  ✓[0m[90m should load Danish dashboard page[0m[90m (261ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Danish[0m[90m (270ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Danish[0m[90m (246ms)[0m
+    [32m  ✓[0m[90m should be responsive for Danish[0m[90m (320ms)[0m
 [0m    Norwegian (NO)[0m
-    [32m  ✓[0m[90m should load Norwegian dashboard page[0m[90m (386ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Norwegian[0m[90m (296ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Norwegian[0m[90m (402ms)[0m
-    [32m  ✓[0m[90m should be responsive for Norwegian[0m[90m (301ms)[0m
+    [32m  ✓[0m[90m should load Norwegian dashboard page[0m[90m (404ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Norwegian[0m[90m (346ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Norwegian[0m[90m (299ms)[0m
+    [32m  ✓[0m[90m should be responsive for Norwegian[0m[90m (277ms)[0m
 [0m    Finnish (FI)[0m
-    [32m  ✓[0m[90m should load Finnish dashboard page[0m[90m (427ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Finnish[0m[90m (394ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Finnish[0m[90m (307ms)[0m
-    [32m  ✓[0m[90m should be responsive for Finnish[0m[90m (367ms)[0m
+    [32m  ✓[0m[90m should load Finnish dashboard page[0m[90m (282ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Finnish[0m[90m (374ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Finnish[0m[90m (284ms)[0m
+    [32m  ✓[0m[90m should be responsive for Finnish[0m[90m (284ms)[0m
 [0m    German (DE)[0m
-    [32m  ✓[0m[90m should load German dashboard page[0m[90m (336ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for German[0m[90m (366ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for German[0m[90m (378ms)[0m
-    [32m  ✓[0m[90m should be responsive for German[0m[90m (278ms)[0m
+    [32m  ✓[0m[90m should load German dashboard page[0m[90m (299ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for German[0m[90m (283ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for German[0m[90m (448ms)[0m
+    [32m  ✓[0m[90m should be responsive for German[0m[90m (305ms)[0m
 [0m    French (FR)[0m
-    [32m  ✓[0m[90m should load French dashboard page[0m[90m (324ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for French[0m[90m (209ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for French[0m[90m (251ms)[0m
-    [32m  ✓[0m[90m should be responsive for French[0m[90m (296ms)[0m
+    [32m  ✓[0m[90m should load French dashboard page[0m[90m (288ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for French[0m[90m (340ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for French[0m[90m (317ms)[0m
+    [32m  ✓[0m[90m should be responsive for French[0m[90m (338ms)[0m
 [0m    Spanish (ES)[0m
-    [32m  ✓[0m[90m should load Spanish dashboard page[0m[90m (331ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Spanish[0m[90m (354ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Spanish[0m[90m (249ms)[0m
-    [32m  ✓[0m[90m should be responsive for Spanish[0m[90m (253ms)[0m
+    [32m  ✓[0m[90m should load Spanish dashboard page[0m[90m (407ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Spanish[0m[90m (308ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Spanish[0m[90m (300ms)[0m
+    [32m  ✓[0m[90m should be responsive for Spanish[0m[90m (199ms)[0m
 [0m    Dutch (NL)[0m
-    [32m  ✓[0m[90m should load Dutch dashboard page[0m[90m (335ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Dutch[0m[90m (288ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Dutch[0m[90m (330ms)[0m
-    [32m  ✓[0m[90m should be responsive for Dutch[0m[90m (354ms)[0m
+    [32m  ✓[0m[90m should load Dutch dashboard page[0m[90m (275ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Dutch[0m[90m (300ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Dutch[0m[90m (355ms)[0m
+    [32m  ✓[0m[90m should be responsive for Dutch[0m[90m (200ms)[0m
 [0m    Arabic (AR)[0m
-    [32m  ✓[0m[90m should load Arabic dashboard page[0m[90m (339ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Arabic[0m[90m (272ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Arabic[0m[90m (333ms)[0m
-    [32m  ✓[0m[90m should be responsive for Arabic[0m[90m (421ms)[0m
+    [32m  ✓[0m[90m should load Arabic dashboard page[0m[90m (523ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Arabic[0m[90m (261ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Arabic[0m[90m (475ms)[0m
+    [32m  ✓[0m[90m should be responsive for Arabic[0m[90m (243ms)[0m
 [0m    Hebrew (HE)[0m
-    [32m  ✓[0m[90m should load Hebrew dashboard page[0m[90m (229ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Hebrew[0m[90m (281ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Hebrew[0m[90m (269ms)[0m
-    [32m  ✓[0m[90m should be responsive for Hebrew[0m[90m (432ms)[0m
+    [32m  ✓[0m[90m should load Hebrew dashboard page[0m[90m (266ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Hebrew[0m[90m (242ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Hebrew[0m[90m (292ms)[0m
+    [32m  ✓[0m[90m should be responsive for Hebrew[0m[90m (240ms)[0m
 [0m    Japanese (JA)[0m
-    [32m  ✓[0m[90m should load Japanese dashboard page[0m[90m (373ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Japanese[0m[90m (316ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Japanese[0m[90m (416ms)[0m
-    [32m  ✓[0m[90m should be responsive for Japanese[0m[90m (315ms)[0m
+    [32m  ✓[0m[90m should load Japanese dashboard page[0m[90m (359ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Japanese[0m[90m (334ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Japanese[0m[90m (319ms)[0m
+    [32m  ✓[0m[90m should be responsive for Japanese[0m[90m (307ms)[0m
 [0m    Korean (KO)[0m
-    [32m  ✓[0m[90m should load Korean dashboard page[0m[90m (339ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Korean[0m[90m (428ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Korean[0m[90m (269ms)[0m
-    [32m  ✓[0m[90m should be responsive for Korean[0m[90m (272ms)[0m
+    [32m  ✓[0m[90m should load Korean dashboard page[0m[90m (284ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Korean[0m[90m (345ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Korean[0m[90m (272ms)[0m
+    [32m  ✓[0m[90m should be responsive for Korean[0m[90m (270ms)[0m
 [0m    Chinese (ZH)[0m
-    [32m  ✓[0m[90m should load Chinese dashboard page[0m[90m (351ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Chinese[0m[90m (278ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Chinese[0m[90m (300ms)[0m
-    [32m  ✓[0m[90m should be responsive for Chinese[0m[90m (351ms)[0m
+    [32m  ✓[0m[90m should load Chinese dashboard page[0m[90m (338ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Chinese[0m[90m (275ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Chinese[0m[90m (272ms)[0m
+    [32m  ✓[0m[90m should be responsive for Chinese[0m[90m (260ms)[0m
 
 [0m  Dashboard Page - Accessibility[0m
-  [32m  ✓[0m[90m should have valid HTML lang attribute[0m[90m (243ms)[0m
-  [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (348ms)[0m
-  [32m  ✓[0m[90m should have alt text on images (if any)[0m[90m (336ms)[0m
-  [32m  ✓[0m[90m should have ARIA labels on charts (if any)[0m[90m (282ms)[0m
-  [32m  ✓[0m[90m should be keyboard navigable[0m[90m (245ms)[0m
-  [32m  ✓[0m[90m should have visible focus indicators[0m[90m (284ms)[0m
+  [32m  ✓[0m[90m should have valid HTML lang attribute[0m[90m (281ms)[0m
+  [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (240ms)[0m
+  [32m  ✓[0m[90m should have alt text on images (if any)[0m[90m (307ms)[0m
+  [32m  ✓[0m[90m should have ARIA labels on charts (if any)[0m[90m (338ms)[0m
+  [32m  ✓[0m[90m should be keyboard navigable[0m[90m (419ms)[0m
+  [32m  ✓[0m[90m should have visible focus indicators[0m[90m (242ms)[0m
 
 [0m  Dashboard Page - Navigation[0m
-  [32m  ✓[0m[90m should navigate from homepage to dashboard[0m[90m (778ms)[0m
-  [32m  ✓[0m[90m should navigate from dashboard back to homepage[0m[90m (751ms)[0m
-  [32m  ✓[0m[90m should support language switching on dashboard page[0m[90m (261ms)[0m
+  [32m  ✓[0m[90m should navigate from homepage to dashboard[0m[90m (834ms)[0m
+  [32m  ✓[0m[90m should navigate from dashboard back to homepage[0m[90m (827ms)[0m
+  [32m  ✓[0m[90m should support language switching on dashboard page[0m[90m (317ms)[0m
 
 [0m  Dashboard Page - Performance[0m
-  [32m  ✓[0m[90m should load dashboard page within reasonable time[0m[90m (521ms)[0m
-  [32m  ✓[0m[90m should handle missing data gracefully[0m[90m (445ms)[0m
+  [32m  ✓[0m[90m should load dashboard page within reasonable time[0m[90m (520ms)[0m
+  [32m  ✓[0m[90m should handle missing data gracefully[0m[90m (2418ms)[0m
 
 [0m  Dashboard Page - RTL Support[0m
-  [32m  ✓[0m[90m should have proper RTL layout for Arabic[0m[90m (341ms)[0m
-  [32m  ✓[0m[90m should have proper RTL layout for Hebrew[0m[90m (275ms)[0m
+  [32m  ✓[0m[90m should have proper RTL layout for Arabic[0m[90m (2151ms)[0m
+  [32m  ✓[0m[90m should have proper RTL layout for Hebrew[0m[90m (2145ms)[0m
 
 
-[92m [0m[32m 78 passing[0m[90m (38s)[0m
+[92m [0m[32m 78 passing[0m[90m (44s)[0m
 
 
 [32m  ([4m[1mResults[22m[24m)[39m
@@ -871,7 +871,7 @@ Opening Cypress...
 [90m  │[39m [90mSkipped:[39m      [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mScreenshots:[39m  [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mVideo:[39m        [32mfalse[39m                                                                            [90m│[39m
-[90m  │[39m [90mDuration:[39m     [32m38 seconds[39m                                                                       [90m│[39m
+[90m  │[39m [90mDuration:[39m     [32m43 seconds[39m                                                                       [90m│[39m
 [90m  │[39m [90mSpec Ran:[39m     [32m[32mdashboard-page.cy.js[32m[39m                                                             [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
 
@@ -883,46 +883,46 @@ Opening Cypress...
 [0m[0m
 [0m  Dashboard Functionality[0m
 [0m    Party Dashboard[0m
-    [32m  ✓[0m[90m should display party dashboard[0m[90m (800ms)[0m
-    [32m  ✓[0m[90m should have party effectiveness chart[0m[90m (306ms)[0m
-    [32m  ✓[0m[90m should have party comparison chart[0m[90m (210ms)[0m
-    [32m  ✓[0m[90m should have coalition alignment chart[0m[90m (204ms)[0m
-    [32m  ✓[0m[90m should have party momentum chart[0m[90m (255ms)[0m
-    [32m  ✓[0m[90m should render charts after data loads[0m[90m (1016ms)[0m
+    [32m  ✓[0m[90m should display party dashboard[0m[90m (374ms)[0m
+    [32m  ✓[0m[90m should have party effectiveness chart[0m[90m (207ms)[0m
+    [32m  ✓[0m[90m should have party comparison chart[0m[90m (183ms)[0m
+    [32m  ✓[0m[90m should have coalition alignment chart[0m[90m (219ms)[0m
+    [32m  ✓[0m[90m should have party momentum chart[0m[90m (198ms)[0m
+    [32m  ✓[0m[90m should render charts after data loads[0m[90m (825ms)[0m
 [0m    Anomaly Detection Dashboard[0m
     [32m  ✓[0m[90m should display anomaly dashboard[0m[90m (210ms)[0m
-    [32m  ✓[0m[90m should have severity filter[0m[90m (239ms)[0m
-    [32m  ✓[0m[90m should have type filter[0m[90m (183ms)[0m
-    [32m  ✓[0m[90m should filter anomalies by severity[0m[90m (826ms)[0m
-    [32m  ✓[0m[90m should display D3 heatmap[0m[90m (2225ms)[0m
+    [32m  ✓[0m[90m should have severity filter[0m[90m (216ms)[0m
+    [32m  ✓[0m[90m should have type filter[0m[90m (185ms)[0m
+    [32m  ✓[0m[90m should filter anomalies by severity[0m[90m (559ms)[0m
+    [32m  ✓[0m[90m should display D3 heatmap[0m[90m (2229ms)[0m
 [0m    Seasonal Patterns Dashboard[0m
-    [32m  ✓[0m[90m should display seasonal patterns dashboard[0m[90m (261ms)[0m
-    [32m  ✓[0m[90m should have year filter[0m[90m (236ms)[0m
-    [32m  ✓[0m[90m should have quarter filter[0m[90m (185ms)[0m
+    [32m  ✓[0m[90m should display seasonal patterns dashboard[0m[90m (205ms)[0m
+    [32m  ✓[0m[90m should have year filter[0m[90m (260ms)[0m
+    [32m  ✓[0m[90m should have quarter filter[0m[90m (291ms)[0m
 [0m    Pre-Election Dashboard[0m
-    [32m  ✓[0m[90m should display pre-election dashboard[0m[90m (191ms)[0m
-    [32m  ✓[0m[90m should show status cards[0m[90m (184ms)[0m
+    [32m  ✓[0m[90m should display pre-election dashboard[0m[90m (173ms)[0m
+    [32m  ✓[0m[90m should show status cards[0m[90m (236ms)[0m
 [0m    Dashboard Accessibility[0m
-    [32m  ✓[0m[90m should have ARIA labels on charts[0m[90m (201ms)[0m
-    [32m  ✓[0m[90m should have screen reader text[0m[90m (231ms)[0m
-    [32m  ✓[0m[90m should be keyboard navigable[0m[90m (235ms)[0m
+    [32m  ✓[0m[90m should have ARIA labels on charts[0m[90m (225ms)[0m
+    [32m  ✓[0m[90m should have screen reader text[0m[90m (257ms)[0m
+    [32m  ✓[0m[90m should be keyboard navigable[0m[90m (214ms)[0m
 [0m    Dashboard Performance[0m
-    [32m  ✓[0m[90m should load dashboards within reasonable time[0m[90m (191ms)[0m
-    [32m  ✓[0m[90m should handle data loading failures without crashing[0m[90m (298ms)[0m
+    [32m  ✓[0m[90m should load dashboards within reasonable time[0m[90m (254ms)[0m
+    [32m  ✓[0m[90m should handle data loading failures without crashing[0m[90m (228ms)[0m
 [0m    Dashboard Bundle Integration[0m
-    [32m  ✓[0m[90m /dashboards/parties.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (71ms)[0m
-    [32m  ✓[0m[90m /dashboards/pre-election.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (60ms)[0m
-    [32m  ✓[0m[90m /dashboards/coalitions.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (44ms)[0m
-    [32m  ✓[0m[90m /dashboards/committees.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (38ms)[0m
-    [32m  ✓[0m[90m /dashboards/seasonal-patterns.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (44ms)[0m
-    [32m  ✓[0m[90m /dashboards/anomaly-detection.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (40ms)[0m
+    [32m  ✓[0m[90m /dashboards/parties.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (49ms)[0m
+    [32m  ✓[0m[90m /dashboards/pre-election.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (48ms)[0m
+    [32m  ✓[0m[90m /dashboards/coalitions.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (43ms)[0m
+    [32m  ✓[0m[90m /dashboards/committees.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (65ms)[0m
+    [32m  ✓[0m[90m /dashboards/seasonal-patterns.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (77ms)[0m
+    [32m  ✓[0m[90m /dashboards/anomaly-detection.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (46ms)[0m
     [32m  ✓[0m[90m /dashboards/risk.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (45ms)[0m
-    [32m  ✓[0m[90m /dashboards/ministers.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (39ms)[0m
-    [32m  ✓[0m[90m /dashboards/election-cycle.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (40ms)[0m
-    [32m  ✓[0m[90m runs main.ts → registers Chart.js global on dashboard pages[0m[90m (355ms)[0m
+    [32m  ✓[0m[90m /dashboards/ministers.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (46ms)[0m
+    [32m  ✓[0m[90m /dashboards/election-cycle.html ships hashed main bundle (no /src/browser/main.ts)[0m[90m (42ms)[0m
+    [32m  ✓[0m[90m runs main.ts → registers Chart.js global on dashboard pages[0m[90m (374ms)[0m
 
 
-[92m [0m[32m 31 passing[0m[90m (12s)[0m
+[92m [0m[32m 31 passing[0m[90m (11s)[0m
 
 
 [32m  ([4m[1mResults[22m[24m)[39m
@@ -935,7 +935,7 @@ Opening Cypress...
 [90m  │[39m [90mSkipped:[39m      [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mScreenshots:[39m  [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mVideo:[39m        [32mfalse[39m                                                                            [90m│[39m
-[90m  │[39m [90mDuration:[39m     [32m11 seconds[39m                                                                       [90m│[39m
+[90m  │[39m [90mDuration:[39m     [32m10 seconds[39m                                                                       [90m│[39m
 [90m  │[39m [90mSpec Ran:[39m     [32m[32mdashboards.cy.js[32m[39m                                                                 [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
 
@@ -947,44 +947,44 @@ Opening Cypress...
 [0m[0m
 [0m  Dedicated dashboard pages — no-scroll lazy-load regression[0m
 [0m    /dashboards/parties.html[0m
-    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (606ms)[0m
-    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (679ms)[0m
-    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (301ms)[0m
+    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (473ms)[0m
+    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (297ms)[0m
+    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (376ms)[0m
 [0m    /dashboards/committees.html[0m
-    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (261ms)[0m
-    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (308ms)[0m
-    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (306ms)[0m
-[0m    /dashboards/coalitions.html[0m
-    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (638ms)[0m
-    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (574ms)[0m
-    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (346ms)[0m
-[0m    /dashboards/election-cycle.html[0m
-    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (331ms)[0m
-    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (290ms)[0m
-    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (307ms)[0m
-[0m    /dashboards/seasonal-patterns.html[0m
-    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (269ms)[0m
-    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (284ms)[0m
-    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (289ms)[0m
-[0m    /dashboards/pre-election.html[0m
-    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (418ms)[0m
-    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (310ms)[0m
-    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (289ms)[0m
-[0m    /dashboards/anomaly-detection.html[0m
     [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (287ms)[0m
-    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (311ms)[0m
-    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (307ms)[0m
-[0m    /dashboards/ministers.html[0m
-    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (268ms)[0m
-    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (322ms)[0m
-    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (296ms)[0m
-[0m    /dashboards/risk.html[0m
-    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (331ms)[0m
-    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (365ms)[0m
+    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (907ms)[0m
+    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (311ms)[0m
+[0m    /dashboards/coalitions.html[0m
+    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (385ms)[0m
+    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (333ms)[0m
+    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (303ms)[0m
+[0m    /dashboards/election-cycle.html[0m
+    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (275ms)[0m
+    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (285ms)[0m
+    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (297ms)[0m
+[0m    /dashboards/seasonal-patterns.html[0m
+    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (292ms)[0m
+    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (285ms)[0m
+    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (283ms)[0m
+[0m    /dashboards/pre-election.html[0m
+    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (340ms)[0m
+    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (308ms)[0m
+    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (271ms)[0m
+[0m    /dashboards/anomaly-detection.html[0m
+    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (279ms)[0m
+    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (305ms)[0m
     [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (288ms)[0m
+[0m    /dashboards/ministers.html[0m
+    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (222ms)[0m
+    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (290ms)[0m
+    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (291ms)[0m
+[0m    /dashboards/risk.html[0m
+    [32m  ✓[0m[90m serves the hashed main-*.js bundle (no dev /src/browser/main.ts)[0m[90m (279ms)[0m
+    [32m  ✓[0m[90m registers window.Chart and window.d3 without any user scroll[0m[90m (481ms)[0m
+    [32m  ✓[0m[90m does not show a visible error fallback on first paint[0m[90m (293ms)[0m
 
 
-[92m [0m[32m 27 passing[0m[90m (11s)[0m
+[92m [0m[32m 27 passing[0m[90m (12s)[0m
 
 
 [32m  ([4m[1mResults[22m[24m)[39m
@@ -1009,13 +1009,13 @@ Opening Cypress...
 
 [90m   [39m    [90mSpec[39m                                              [90mTests[39m  [90mPassing[39m  [90mFailing[39m  [90mPending[39m  [90mSkipped[39m [90m [39m
 [90m  ┌[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┐[39m
-[90m  │[39m [32m✔[39m  [0mdashboard-page.cy.js[0m                     [90m00:38[39m       [0m78[0m       [32m78[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
+[90m  │[39m [32m✔[39m  [0mdashboard-page.cy.js[0m                     [90m00:43[39m       [0m78[0m       [32m78[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  ├[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┤[39m
-[90m  │[39m [32m✔[39m  [0mdashboards.cy.js[0m                         [90m00:11[39m       [0m31[0m       [32m31[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
+[90m  │[39m [32m✔[39m  [0mdashboards.cy.js[0m                         [90m00:10[39m       [0m31[0m       [32m31[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  ├[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┤[39m
 [90m  │[39m [32m✔[39m  [0mdashboards-no-scroll.cy.js[0m               [90m00:11[39m       [0m27[0m       [32m27[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
-[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m01:01[39m      [0m136[0m      [32m136[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
+[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m01:06[39m      [0m136[0m      [32m136[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
 
 
 ===== e2e-output-i18n.log =====
@@ -1024,18 +1024,18 @@ and when url &quot;[ &#39;http://localhost:4173&#39; ]&quot; is responding with 
 running tests using command &quot;npx cypress run --config video=false --spec &#39;cypress/e2e/multi-language-sanity.cy.js&#39;&quot;
 
 
-&gt; riksdagsmonitor@0.9.29 preview
+&gt; riksdagsmonitor@0.9.31 preview
 &gt; vite preview
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m4173[22m/[39m
-  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.133:[1m4173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.105:[1m4173[22m/[39m
 It looks like this is your first time using Cypress: 15.15.0
 
 [33m❯[39m  Verifying Cypress can run /home/runner/.cache/Cypress/15.15.0/Cypress
 [32m✔[39m  Verified Cypress!       /home/runner/.cache/Cypress/15.15.0/Cypress
 
 Opening Cypress...
-(node:3440) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:3436) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 [35m[95mWarning:[39m[35m The [33mallowCypressEnv[39m[35m configuration option is enabled. This allows any browser code to read values from [33mCypress.env()[39m[35m. This is insecure and will be removed in a future major version.[39m
 [35m[39m
@@ -1066,121 +1066,121 @@ Opening Cypress...
 [0m[0m
 [0m  Multi-Language Sanity Tests[0m
 [0m    Homepage - Representative Languages[0m
-    [32m  ✓[0m[90m should load Swedish (sv) homepage[0m[90m (841ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for Swedish[0m[90m (292ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for Swedish[0m[90m (264ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for Swedish[0m[90m (234ms)[0m
-    [32m  ✓[0m[90m should load German (de) homepage[0m[90m (308ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for German[0m[90m (242ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for German[0m[90m (281ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for German[0m[90m (215ms)[0m
-    [32m  ✓[0m[90m should load Arabic (ar) homepage[0m[90m (379ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for Arabic[0m[90m (231ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for Arabic[0m[90m (277ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for Arabic[0m[90m (281ms)[0m
-    [32m  ✓[0m[90m should load Japanese (ja) homepage[0m[90m (670ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for Japanese[0m[90m (588ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for Japanese[0m[90m (573ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for Japanese[0m[90m (673ms)[0m
-    [32m  ✓[0m[90m should load Chinese (zh) homepage[0m[90m (414ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for Chinese[0m[90m (335ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for Chinese[0m[90m (425ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for Chinese[0m[90m (352ms)[0m
+    [32m  ✓[0m[90m should load Swedish (sv) homepage[0m[90m (935ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for Swedish[0m[90m (286ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for Swedish[0m[90m (275ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for Swedish[0m[90m (251ms)[0m
+    [32m  ✓[0m[90m should load German (de) homepage[0m[90m (291ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for German[0m[90m (251ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for German[0m[90m (283ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for German[0m[90m (301ms)[0m
+    [32m  ✓[0m[90m should load Arabic (ar) homepage[0m[90m (383ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for Arabic[0m[90m (271ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for Arabic[0m[90m (315ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for Arabic[0m[90m (294ms)[0m
+    [32m  ✓[0m[90m should load Japanese (ja) homepage[0m[90m (690ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for Japanese[0m[90m (609ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for Japanese[0m[90m (604ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for Japanese[0m[90m (734ms)[0m
+    [32m  ✓[0m[90m should load Chinese (zh) homepage[0m[90m (452ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for Chinese[0m[90m (390ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for Chinese[0m[90m (378ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for Chinese[0m[90m (378ms)[0m
 [0m    Dashboard - Representative Languages[0m
-    [32m  ✓[0m[90m should load Swedish (sv) dashboard[0m[90m (673ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for Swedish dashboard[0m[90m (589ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for Swedish dashboard[0m[90m (377ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for Swedish dashboard[0m[90m (400ms)[0m
-    [32m  ✓[0m[90m should load German (de) dashboard[0m[90m (695ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for German dashboard[0m[90m (337ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for German dashboard[0m[90m (346ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for German dashboard[0m[90m (324ms)[0m
-    [32m  ✓[0m[90m should load Arabic (ar) dashboard[0m[90m (1032ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for Arabic dashboard[0m[90m (360ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for Arabic dashboard[0m[90m (384ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for Arabic dashboard[0m[90m (457ms)[0m
-    [32m  ✓[0m[90m should load Japanese (ja) dashboard[0m[90m (1050ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for Japanese dashboard[0m[90m (426ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for Japanese dashboard[0m[90m (432ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for Japanese dashboard[0m[90m (360ms)[0m
-    [32m  ✓[0m[90m should load Chinese (zh) dashboard[0m[90m (799ms)[0m
-    [32m  ✓[0m[90m should have proper lang attribute for Chinese dashboard[0m[90m (321ms)[0m
-    [32m  ✓[0m[90m should have correct text direction for Chinese dashboard[0m[90m (330ms)[0m
-    [32m  ✓[0m[90m should have basic page structure for Chinese dashboard[0m[90m (404ms)[0m
+    [32m  ✓[0m[90m should load Swedish (sv) dashboard[0m[90m (496ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for Swedish dashboard[0m[90m (968ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for Swedish dashboard[0m[90m (360ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for Swedish dashboard[0m[90m (412ms)[0m
+    [32m  ✓[0m[90m should load German (de) dashboard[0m[90m (654ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for German dashboard[0m[90m (394ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for German dashboard[0m[90m (318ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for German dashboard[0m[90m (693ms)[0m
+    [32m  ✓[0m[90m should load Arabic (ar) dashboard[0m[90m (781ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for Arabic dashboard[0m[90m (354ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for Arabic dashboard[0m[90m (300ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for Arabic dashboard[0m[90m (627ms)[0m
+    [32m  ✓[0m[90m should load Japanese (ja) dashboard[0m[90m (900ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for Japanese dashboard[0m[90m (449ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for Japanese dashboard[0m[90m (474ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for Japanese dashboard[0m[90m (438ms)[0m
+    [32m  ✓[0m[90m should load Chinese (zh) dashboard[0m[90m (809ms)[0m
+    [32m  ✓[0m[90m should have proper lang attribute for Chinese dashboard[0m[90m (436ms)[0m
+    [32m  ✓[0m[90m should have correct text direction for Chinese dashboard[0m[90m (360ms)[0m
+    [32m  ✓[0m[90m should have basic page structure for Chinese dashboard[0m[90m (731ms)[0m
 [0m    News - Representative Languages[0m
 [0m      Swedish (sv)[0m
-      [32m  ✓[0m[90m should load news page[0m[90m (384ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (295ms)[0m
-      [32m  ✓[0m[90m should have correct text direction[0m[90m (292ms)[0m
-      [32m  ✓[0m[90m should have basic page structure[0m[90m (402ms)[0m
+      [32m  ✓[0m[90m should load news page[0m[90m (354ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (288ms)[0m
+      [32m  ✓[0m[90m should have correct text direction[0m[90m (252ms)[0m
+      [32m  ✓[0m[90m should have basic page structure[0m[90m (344ms)[0m
 [0m      German (de)[0m
-      [32m  ✓[0m[90m should load news page[0m[90m (350ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (258ms)[0m
-      [32m  ✓[0m[90m should have correct text direction[0m[90m (276ms)[0m
-      [32m  ✓[0m[90m should have basic page structure[0m[90m (297ms)[0m
+      [32m  ✓[0m[90m should load news page[0m[90m (403ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (252ms)[0m
+      [32m  ✓[0m[90m should have correct text direction[0m[90m (291ms)[0m
+      [32m  ✓[0m[90m should have basic page structure[0m[90m (314ms)[0m
 [0m      Arabic (ar)[0m
-      [32m  ✓[0m[90m should load news page[0m[90m (377ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (374ms)[0m
-      [32m  ✓[0m[90m should have correct text direction[0m[90m (327ms)[0m
-      [32m  ✓[0m[90m should have basic page structure[0m[90m (340ms)[0m
+      [32m  ✓[0m[90m should load news page[0m[90m (393ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (405ms)[0m
+      [32m  ✓[0m[90m should have correct text direction[0m[90m (365ms)[0m
+      [32m  ✓[0m[90m should have basic page structure[0m[90m (461ms)[0m
 [0m      Japanese (ja)[0m
-      [32m  ✓[0m[90m should load news page[0m[90m (621ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (588ms)[0m
-      [32m  ✓[0m[90m should have correct text direction[0m[90m (506ms)[0m
-      [32m  ✓[0m[90m should have basic page structure[0m[90m (605ms)[0m
+      [32m  ✓[0m[90m should load news page[0m[90m (651ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (556ms)[0m
+      [32m  ✓[0m[90m should have correct text direction[0m[90m (547ms)[0m
+      [32m  ✓[0m[90m should have basic page structure[0m[90m (565ms)[0m
 [0m      Chinese (zh)[0m
-      [32m  ✓[0m[90m should load news page[0m[90m (513ms)[0m
-      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (508ms)[0m
-      [32m  ✓[0m[90m should have correct text direction[0m[90m (398ms)[0m
-      [32m  ✓[0m[90m should have basic page structure[0m[90m (376ms)[0m
+      [32m  ✓[0m[90m should load news page[0m[90m (522ms)[0m
+      [32m  ✓[0m[90m should have proper lang attribute[0m[90m (413ms)[0m
+      [32m  ✓[0m[90m should have correct text direction[0m[90m (435ms)[0m
+      [32m  ✓[0m[90m should have basic page structure[0m[90m (434ms)[0m
 [0m    Language Consistency[0m
-    [32m  ✓[0m[90m should have consistent lang attribute across all pages for Swedish[0m[90m (1064ms)[0m
-    [32m  ✓[0m[90m should have consistent lang attribute across all pages for German[0m[90m (1075ms)[0m
-    [32m  ✓[0m[90m should have consistent lang attribute across all pages for Arabic[0m[90m (1356ms)[0m
-    [32m  ✓[0m[90m should have consistent lang attribute across all pages for Japanese[0m[90m (1902ms)[0m
-    [32m  ✓[0m[90m should have consistent lang attribute across all pages for Chinese[0m[90m (1386ms)[0m
+    [32m  ✓[0m[90m should have consistent lang attribute across all pages for Swedish[0m[90m (1203ms)[0m
+    [32m  ✓[0m[90m should have consistent lang attribute across all pages for German[0m[90m (1248ms)[0m
+    [32m  ✓[0m[90m should have consistent lang attribute across all pages for Arabic[0m[90m (1325ms)[0m
+    [32m  ✓[0m[90m should have consistent lang attribute across all pages for Japanese[0m[90m (2015ms)[0m
+    [32m  ✓[0m[90m should have consistent lang attribute across all pages for Chinese[0m[90m (1577ms)[0m
 [0m    RTL Language Specific Tests[0m
-    [32m  ✓[0m[90m should have RTL dir attribute on all pages for Arabic[0m[90m (1444ms)[0m
-    [32m  ✓[0m[90m should render RTL content properly for Arabic[0m[90m (263ms)[0m
-    [32m  ✓[0m[90m should have RTL dir attribute on all pages for Hebrew[0m[90m (1175ms)[0m
-    [32m  ✓[0m[90m should render RTL content properly for Hebrew[0m[90m (243ms)[0m
+    [32m  ✓[0m[90m should have RTL dir attribute on all pages for Arabic[0m[90m (1417ms)[0m
+    [32m  ✓[0m[90m should render RTL content properly for Arabic[0m[90m (300ms)[0m
+    [32m  ✓[0m[90m should have RTL dir attribute on all pages for Hebrew[0m[90m (1411ms)[0m
+    [32m  ✓[0m[90m should render RTL content properly for Hebrew[0m[90m (268ms)[0m
 [0m    LTR Language Specific Tests[0m
-    [32m  ✓[0m[90m should have LTR or default dir for Swedish on all pages[0m[90m (1051ms)[0m
-    [32m  ✓[0m[90m should have LTR or default dir for German on all pages[0m[90m (1036ms)[0m
-    [32m  ✓[0m[90m should have LTR or default dir for Japanese on all pages[0m[90m (2132ms)[0m
-    [32m  ✓[0m[90m should have LTR or default dir for Chinese on all pages[0m[90m (1343ms)[0m
+    [32m  ✓[0m[90m should have LTR or default dir for Swedish on all pages[0m[90m (1226ms)[0m
+    [32m  ✓[0m[90m should have LTR or default dir for German on all pages[0m[90m (1301ms)[0m
+    [32m  ✓[0m[90m should have LTR or default dir for Japanese on all pages[0m[90m (2048ms)[0m
+    [32m  ✓[0m[90m should have LTR or default dir for Chinese on all pages[0m[90m (1593ms)[0m
 [0m    Language Switcher Functionality[0m
-    [32m  ✓[0m[90m should have language switcher on all pages[0m[90m (1107ms)[0m
-    [32m  ✓[0m[90m should allow switching between languages on homepage[0m[90m (2459ms)[0m
+    [32m  ✓[0m[90m should have language switcher on all pages[0m[90m (1296ms)[0m
+    [32m  ✓[0m[90m should allow switching between languages on homepage[0m[90m (3016ms)[0m
 [0m    Responsive Design - All Languages[0m
-    [32m  ✓[0m[90m should be responsive on Mobile for Swedish homepage[0m[90m (229ms)[0m
-    [32m  ✓[0m[90m should be responsive on Desktop for Swedish homepage[0m[90m (212ms)[0m
-    [32m  ✓[0m[90m should be responsive on Mobile for Arabic homepage[0m[90m (333ms)[0m
-    [32m  ✓[0m[90m should be responsive on Desktop for Arabic homepage[0m[90m (280ms)[0m
-    [32m  ✓[0m[90m should be responsive on Mobile for Japanese homepage[0m[90m (566ms)[0m
-    [32m  ✓[0m[90m should be responsive on Desktop for Japanese homepage[0m[90m (575ms)[0m
+    [32m  ✓[0m[90m should be responsive on Mobile for Swedish homepage[0m[90m (255ms)[0m
+    [32m  ✓[0m[90m should be responsive on Desktop for Swedish homepage[0m[90m (264ms)[0m
+    [32m  ✓[0m[90m should be responsive on Mobile for Arabic homepage[0m[90m (287ms)[0m
+    [32m  ✓[0m[90m should be responsive on Desktop for Arabic homepage[0m[90m (284ms)[0m
+    [32m  ✓[0m[90m should be responsive on Mobile for Japanese homepage[0m[90m (711ms)[0m
+    [32m  ✓[0m[90m should be responsive on Desktop for Japanese homepage[0m[90m (601ms)[0m
 [0m    Meta Tags - All Languages[0m
-    [32m  ✓[0m[90m should have proper meta tags for Swedish[0m[90m (225ms)[0m
-    [32m  ✓[0m[90m should have proper meta tags for Arabic[0m[90m (267ms)[0m
-    [32m  ✓[0m[90m should have proper meta tags for Chinese[0m[90m (557ms)[0m
+    [32m  ✓[0m[90m should have proper meta tags for Swedish[0m[90m (254ms)[0m
+    [32m  ✓[0m[90m should have proper meta tags for Arabic[0m[90m (294ms)[0m
+    [32m  ✓[0m[90m should have proper meta tags for Chinese[0m[90m (421ms)[0m
 [0m    Accessibility - All Languages[0m
-    [32m  ✓[0m[90m should have accessible structure for Swedish[0m[90m (271ms)[0m
-    [32m  ✓[0m[90m should have accessible structure for Hebrew[0m[90m (260ms)[0m
-    [32m  ✓[0m[90m should have accessible structure for Korean[0m[90m (386ms)[0m
+    [32m  ✓[0m[90m should have accessible structure for Swedish[0m[90m (264ms)[0m
+    [32m  ✓[0m[90m should have accessible structure for Hebrew[0m[90m (342ms)[0m
+    [32m  ✓[0m[90m should have accessible structure for Korean[0m[90m (485ms)[0m
 [0m    Performance - All Languages[0m
-    [32m  ✓[0m[90m should load quickly for Swedish[0m[90m (217ms)[0m
-    [32m  ✓[0m[90m should load quickly for Arabic[0m[90m (256ms)[0m
-    [32m  ✓[0m[90m should load quickly for Japanese[0m[90m (589ms)[0m
+    [32m  ✓[0m[90m should load quickly for Swedish[0m[90m (242ms)[0m
+    [32m  ✓[0m[90m should load quickly for Arabic[0m[90m (250ms)[0m
+    [32m  ✓[0m[90m should load quickly for Japanese[0m[90m (664ms)[0m
 [0m    Content Validation - Sample Languages[0m
-    [32m  ✓[0m[90m should have meaningful content for Swedish[0m[90m (207ms)[0m
-    [32m  ✓[0m[90m should have meaningful content for Arabic[0m[90m (327ms)[0m
-    [32m  ✓[0m[90m should have meaningful content for Japanese[0m[90m (543ms)[0m
+    [32m  ✓[0m[90m should have meaningful content for Swedish[0m[90m (284ms)[0m
+    [32m  ✓[0m[90m should have meaningful content for Arabic[0m[90m (300ms)[0m
+    [32m  ✓[0m[90m should have meaningful content for Japanese[0m[90m (671ms)[0m
 
 [0m  Multi-Language Cross-Page Navigation[0m
-  [32m  ✓[0m[90m should maintain language when navigating for sv[0m[90m (1517ms)[0m
-  [32m  ✓[0m[90m should maintain language when navigating for de[0m[90m (1696ms)[0m
-  [32m  ✓[0m[90m should maintain language when navigating for ar[0m[90m (1623ms)[0m
-  [32m  ✓[0m[90m should maintain language when navigating for ja[0m[90m (2749ms)[0m
+  [32m  ✓[0m[90m should maintain language when navigating for sv[0m[90m (1515ms)[0m
+  [32m  ✓[0m[90m should maintain language when navigating for de[0m[90m (1525ms)[0m
+  [32m  ✓[0m[90m should maintain language when navigating for ar[0m[90m (2097ms)[0m
+  [32m  ✓[0m[90m should maintain language when navigating for ja[0m[90m (2837ms)[0m
 
 
 [92m [0m[32m 97 passing[0m[90m (1m)[0m
@@ -1196,7 +1196,7 @@ Opening Cypress...
 [90m  │[39m [90mSkipped:[39m      [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mScreenshots:[39m  [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mVideo:[39m        [32mfalse[39m                                                                            [90m│[39m
-[90m  │[39m [90mDuration:[39m     [32m1 minute, 9 seconds[39m                                                              [90m│[39m
+[90m  │[39m [90mDuration:[39m     [32m1 minute, 14 seconds[39m                                                             [90m│[39m
 [90m  │[39m [90mSpec Ran:[39m     [32m[32mmulti-language-sanity.cy.js[32m[39m                                                      [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
 
@@ -1208,9 +1208,9 @@ Opening Cypress...
 
 [90m   [39m    [90mSpec[39m                                              [90mTests[39m  [90mPassing[39m  [90mFailing[39m  [90mPending[39m  [90mSkipped[39m [90m [39m
 [90m  ┌[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┐[39m
-[90m  │[39m [32m✔[39m  [0mmulti-language-sanity.cy.js[0m              [90m01:09[39m       [0m97[0m       [32m97[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
+[90m  │[39m [32m✔[39m  [0mmulti-language-sanity.cy.js[0m              [90m01:14[39m       [0m97[0m       [32m97[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
-[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m01:09[39m       [0m97[0m       [32m97[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
+[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m01:14[39m       [0m97[0m       [32m97[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
 
 
 ===== e2e-output-news.log =====
@@ -1219,18 +1219,18 @@ and when url &quot;[ &#39;http://localhost:4173&#39; ]&quot; is responding with 
 running tests using command &quot;npx cypress run --config video=false --spec &#39;cypress/e2e/news-page.cy.js,cypress/e2e/news-articles.cy.js&#39;&quot;
 
 
-&gt; riksdagsmonitor@0.9.29 preview
+&gt; riksdagsmonitor@0.9.31 preview
 &gt; vite preview
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m4173[22m/[39m
-  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.16:[1m4173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.1.0.168:[1m4173[22m/[39m
 It looks like this is your first time using Cypress: 15.15.0
 
 [33m❯[39m  Verifying Cypress can run /home/runner/.cache/Cypress/15.15.0/Cypress
 [32m✔[39m  Verified Cypress!       /home/runner/.cache/Cypress/15.15.0/Cypress
 
 Opening Cypress...
-(node:3425) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:3448) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 [35m[95mWarning:[39m[35m The [33mallowCypressEnv[39m[35m configuration option is enabled. This allows any browser code to read values from [33mCypress.env()[39m[35m. This is insecure and will be removed in a future major version.[39m
 [35m[39m
@@ -1260,80 +1260,80 @@ Opening Cypress...
 
 [0m[0m
 [0m  News Page - Main English Version[0m
-  [32m  ✓[0m[90m should load news page successfully[0m[90m (582ms)[0m
-  [32m  ✓[0m[90m should have proper document structure[0m[90m (328ms)[0m
-  [32m  ✓[0m[90m should display page heading[0m[90m (247ms)[0m
-  [32m  ✓[0m[90m should have navigation menu[0m[90m (275ms)[0m
-  [32m  ✓[0m[90m should have language switcher for all 14 languages[0m[90m (255ms)[0m
-  [32m  ✓[0m[90m should display news articles or article list[0m[90m (275ms)[0m
-  [32m  ✓[0m[90m should have news article links[0m[90m (229ms)[0m
-  [32m  ✓[0m[90m should be responsive on mobile[0m[90m (354ms)[0m
-  [32m  ✓[0m[90m should be responsive on tablet[0m[90m (375ms)[0m
-  [32m  ✓[0m[90m should be responsive on desktop[0m[90m (331ms)[0m
-  [32m  ✓[0m[90m should have proper meta tags[0m[90m (315ms)[0m
-  [32m  ✓[0m[90m should have link back to homepage[0m[90m (285ms)[0m
-  [32m  ✓[0m[90m should load CSS styles[0m[90m (274ms)[0m
-  [32m  ✓[0m[90m should load JavaScript (if any)[0m[90m (256ms)[0m
+  [32m  ✓[0m[90m should load news page successfully[0m[90m (595ms)[0m
+  [32m  ✓[0m[90m should have proper document structure[0m[90m (275ms)[0m
+  [32m  ✓[0m[90m should display page heading[0m[90m (233ms)[0m
+  [32m  ✓[0m[90m should have navigation menu[0m[90m (309ms)[0m
+  [32m  ✓[0m[90m should have language switcher for all 14 languages[0m[90m (233ms)[0m
+  [32m  ✓[0m[90m should display news articles or article list[0m[90m (244ms)[0m
+  [32m  ✓[0m[90m should have news article links[0m[90m (237ms)[0m
+  [32m  ✓[0m[90m should be responsive on mobile[0m[90m (378ms)[0m
+  [32m  ✓[0m[90m should be responsive on tablet[0m[90m (326ms)[0m
+  [32m  ✓[0m[90m should be responsive on desktop[0m[90m (280ms)[0m
+  [32m  ✓[0m[90m should have proper meta tags[0m[90m (226ms)[0m
+  [32m  ✓[0m[90m should have link back to homepage[0m[90m (242ms)[0m
+  [32m  ✓[0m[90m should load CSS styles[0m[90m (279ms)[0m
+  [32m  ✓[0m[90m should load JavaScript (if any)[0m[90m (235ms)[0m
 
 [0m  News Page - All Language Variants[0m
 [0m    Swedish (SV)[0m
-    [32m  ✓[0m[90m should load Swedish news page[0m[90m (348ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Swedish[0m[90m (259ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Swedish[0m[90m (299ms)[0m
-    [32m  ✓[0m[90m should be responsive for Swedish[0m[90m (285ms)[0m
+    [32m  ✓[0m[90m should load Swedish news page[0m[90m (269ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Swedish[0m[90m (277ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Swedish[0m[90m (268ms)[0m
+    [32m  ✓[0m[90m should be responsive for Swedish[0m[90m (395ms)[0m
 [0m    German (DE)[0m
-    [32m  ✓[0m[90m should load German news page[0m[90m (297ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for German[0m[90m (311ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for German[0m[90m (261ms)[0m
-    [32m  ✓[0m[90m should be responsive for German[0m[90m (270ms)[0m
+    [32m  ✓[0m[90m should load German news page[0m[90m (311ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for German[0m[90m (272ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for German[0m[90m (277ms)[0m
+    [32m  ✓[0m[90m should be responsive for German[0m[90m (264ms)[0m
 [0m    Arabic (AR)[0m
-    [32m  ✓[0m[90m should load Arabic news page[0m[90m (367ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Arabic[0m[90m (363ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Arabic[0m[90m (344ms)[0m
-    [32m  ✓[0m[90m should be responsive for Arabic[0m[90m (413ms)[0m
+    [32m  ✓[0m[90m should load Arabic news page[0m[90m (365ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Arabic[0m[90m (355ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Arabic[0m[90m (365ms)[0m
+    [32m  ✓[0m[90m should be responsive for Arabic[0m[90m (335ms)[0m
 [0m    Hebrew (HE)[0m
-    [32m  ✓[0m[90m should load Hebrew news page[0m[90m (302ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Hebrew[0m[90m (310ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Hebrew[0m[90m (367ms)[0m
-    [32m  ✓[0m[90m should be responsive for Hebrew[0m[90m (299ms)[0m
+    [32m  ✓[0m[90m should load Hebrew news page[0m[90m (346ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Hebrew[0m[90m (324ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Hebrew[0m[90m (312ms)[0m
+    [32m  ✓[0m[90m should be responsive for Hebrew[0m[90m (327ms)[0m
 [0m    Japanese (JA)[0m
-    [32m  ✓[0m[90m should load Japanese news page[0m[90m (528ms)[0m
-    [32m  ✓[0m[90m should have correct dir attribute for Japanese[0m[90m (445ms)[0m
-    [32m  ✓[0m[90m should have proper page structure for Japanese[0m[90m (485ms)[0m
-    [32m  ✓[0m[90m should be responsive for Japanese[0m[90m (430ms)[0m
+    [32m  ✓[0m[90m should load Japanese news page[0m[90m (647ms)[0m
+    [32m  ✓[0m[90m should have correct dir attribute for Japanese[0m[90m (529ms)[0m
+    [32m  ✓[0m[90m should have proper page structure for Japanese[0m[90m (608ms)[0m
+    [32m  ✓[0m[90m should be responsive for Japanese[0m[90m (513ms)[0m
 
 [0m  News Page - Accessibility[0m
-  [32m  ✓[0m[90m should have valid HTML lang attribute[0m[90m (250ms)[0m
-  [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (224ms)[0m
-  [32m  ✓[0m[90m should have alt text on images (if any)[0m[90m (319ms)[0m
-  [32m  ✓[0m[90m should be keyboard navigable[0m[90m (265ms)[0m
-  [32m  ✓[0m[90m should have visible focus indicators[0m[90m (235ms)[0m
-  [32m  ✓[0m[90m should have semantic HTML for articles[0m[90m (257ms)[0m
+  [32m  ✓[0m[90m should have valid HTML lang attribute[0m[90m (240ms)[0m
+  [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (263ms)[0m
+  [32m  ✓[0m[90m should have alt text on images (if any)[0m[90m (325ms)[0m
+  [32m  ✓[0m[90m should be keyboard navigable[0m[90m (271ms)[0m
+  [32m  ✓[0m[90m should have visible focus indicators[0m[90m (225ms)[0m
+  [32m  ✓[0m[90m should have semantic HTML for articles[0m[90m (225ms)[0m
 
 [0m  News Page - Navigation[0m
-  [32m  ✓[0m[90m should navigate from homepage to news page[0m[90m (632ms)[0m
-  [32m  ✓[0m[90m should navigate from news page back to homepage[0m[90m (591ms)[0m
-  [32m  ✓[0m[90m should support language switching on news page[0m[90m (1543ms)[0m
-  [32m  ✓[0m[90m should link to individual news articles[0m[90m (582ms)[0m
+  [32m  ✓[0m[90m should navigate from homepage to news page[0m[90m (668ms)[0m
+  [32m  ✓[0m[90m should navigate from news page back to homepage[0m[90m (553ms)[0m
+  [32m  ✓[0m[90m should support language switching on news page[0m[90m (1637ms)[0m
+  [32m  ✓[0m[90m should link to individual news articles[0m[90m (678ms)[0m
 
 [0m  News Page - Performance[0m
-  [32m  ✓[0m[90m should load news page within reasonable time[0m[90m (257ms)[0m
-  [32m  ✓[0m[90m should handle errors gracefully[0m[90m (252ms)[0m
+  [32m  ✓[0m[90m should load news page within reasonable time[0m[90m (268ms)[0m
+  [32m  ✓[0m[90m should handle errors gracefully[0m[90m (293ms)[0m
 
 [0m  News Page - RTL Support[0m
-  [32m  ✓[0m[90m should have proper RTL layout for Arabic[0m[90m (313ms)[0m
-  [32m  ✓[0m[90m should have proper RTL layout for Hebrew[0m[90m (311ms)[0m
+  [32m  ✓[0m[90m should have proper RTL layout for Arabic[0m[90m (378ms)[0m
+  [32m  ✓[0m[90m should have proper RTL layout for Hebrew[0m[90m (426ms)[0m
 
 [0m  News Page - Content Validation[0m
-  [32m  ✓[0m[90m should have news metadata (dates, categories)[0m[90m (286ms)[0m
-  [32m  ✓[0m[90m should have proper article structure[0m[90m (325ms)[0m
-  [32m  ✓[0m[90m should have readable text content[0m[90m (307ms)[0m
+  [32m  ✓[0m[90m should have news metadata (dates, categories)[0m[90m (324ms)[0m
+  [32m  ✓[0m[90m should have proper article structure[0m[90m (266ms)[0m
+  [32m  ✓[0m[90m should have readable text content[0m[90m (351ms)[0m
 
 [0m  News Page - Article Categories[0m
-  [32m  ✓[0m[90m should show different news categories or types[0m[90m (264ms)[0m
+  [32m  ✓[0m[90m should show different news categories or types[0m[90m (283ms)[0m
 
 
-[92m [0m[32m 52 passing[0m[90m (21s)[0m
+[92m [0m[32m 52 passing[0m[90m (22s)[0m
 
 
 [32m  ([4m[1mResults[22m[24m)[39m
@@ -1346,7 +1346,7 @@ Opening Cypress...
 [90m  │[39m [90mSkipped:[39m      [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mScreenshots:[39m  [32m0[39m                                                                                [90m│[39m
 [90m  │[39m [90mVideo:[39m        [32mfalse[39m                                                                            [90m│[39m
-[90m  │[39m [90mDuration:[39m     [32m21 seconds[39m                                                                       [90m│[39m
+[90m  │[39m [90mDuration:[39m     [32m22 seconds[39m                                                                       [90m│[39m
 [90m  │[39m [90mSpec Ran:[39m     [32m[32mnews-page.cy.js[32m[39m                                                                  [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
 
@@ -1358,62 +1358,62 @@ Opening Cypress...
 [0m[0m
 [0m  News Articles[0m
 [0m    Sample Article Loading[0m
-    [32m  ✓[0m[90m should load article: /news/2026-02-14-committee-reports-en.html[0m[90m (369ms)[0m
-    [32m  ✓[0m[90m should load article: /news/2026-02-14-government-propositions-en.html[0m[90m (160ms)[0m
-    [32m  ✓[0m[90m should load article: /news/2026-02-14-opposition-motions-en.html[0m[90m (175ms)[0m
-    [32m  ✓[0m[90m should load article: /news/2026-02-14-week-ahead-feb-15-21-en.html[0m[90m (127ms)[0m
-    [32m  ✓[0m[90m should load article: /news/2026-02-13-evening-analysis-en.html[0m[90m (121ms)[0m
+    [32m  ✓[0m[90m should load article: /news/2026-02-14-committee-reports-en.html[0m[90m (319ms)[0m
+    [32m  ✓[0m[90m should load article: /news/2026-02-14-government-propositions-en.html[0m[90m (177ms)[0m
+    [32m  ✓[0m[90m should load article: /news/2026-02-14-opposition-motions-en.html[0m[90m (165ms)[0m
+    [32m  ✓[0m[90m should load article: /news/2026-02-14-week-ahead-feb-15-21-en.html[0m[90m (157ms)[0m
+    [32m  ✓[0m[90m should load article: /news/2026-02-13-evening-analysis-en.html[0m[90m (181ms)[0m
 [0m    Article Page Structure[0m
-    [32m  ✓[0m[90m should have proper document structure[0m[90m (165ms)[0m
-    [32m  ✓[0m[90m should have article heading[0m[90m (173ms)[0m
-    [32m  ✓[0m[90m should have article content[0m[90m (134ms)[0m
-    [32m  ✓[0m[90m should have proper meta tags[0m[90m (135ms)[0m
-    [32m  ✓[0m[90m should have Open Graph tags for social sharing[0m[90m (198ms)[0m
-    [32m  ✓[0m[90m should have article metadata[0m[90m (127ms)[0m
-    [32m  ✓[0m[90m should have readable typography[0m[90m (152ms)[0m
+    [32m  ✓[0m[90m should have proper document structure[0m[90m (156ms)[0m
+    [32m  ✓[0m[90m should have article heading[0m[90m (144ms)[0m
+    [32m  ✓[0m[90m should have article content[0m[90m (136ms)[0m
+    [32m  ✓[0m[90m should have proper meta tags[0m[90m (141ms)[0m
+    [32m  ✓[0m[90m should have Open Graph tags for social sharing[0m[90m (148ms)[0m
+    [32m  ✓[0m[90m should have article metadata[0m[90m (138ms)[0m
+    [32m  ✓[0m[90m should have readable typography[0m[90m (137ms)[0m
 [0m    Article Content Validation[0m
-    [32m  ✓[0m[90m should have paragraphs[0m[90m (131ms)[0m
-    [32m  ✓[0m[90m should have headings hierarchy[0m[90m (128ms)[0m
-    [32m  ✓[0m[90m should not have Lorem Ipsum placeholder text[0m[90m (133ms)[0m
-    [32m  ✓[0m[90m should have substantial content[0m[90m (168ms)[0m
+    [32m  ✓[0m[90m should have paragraphs[0m[90m (155ms)[0m
+    [32m  ✓[0m[90m should have headings hierarchy[0m[90m (192ms)[0m
+    [32m  ✓[0m[90m should not have Lorem Ipsum placeholder text[0m[90m (173ms)[0m
+    [32m  ✓[0m[90m should have substantial content[0m[90m (148ms)[0m
 [0m    Multi-Language Article Support[0m
-    [32m  ✓[0m[90m should load English article version[0m[90m (119ms)[0m
-    [32m  ✓[0m[90m should load Swedish article version[0m[90m (170ms)[0m
-    [32m  ✓[0m[90m should load Danish article version[0m[90m (70ms)[0m
-    [32m  ✓[0m[90m should load Norwegian article version[0m[90m (68ms)[0m
-    [32m  ✓[0m[90m should load Finnish article version[0m[90m (116ms)[0m
-    [32m  ✓[0m[90m should have language switcher or alternatives[0m[90m (142ms)[0m
+    [32m  ✓[0m[90m should load English article version[0m[90m (141ms)[0m
+    [32m  ✓[0m[90m should load Swedish article version[0m[90m (130ms)[0m
+    [32m  ✓[0m[90m should load Danish article version[0m[90m (134ms)[0m
+    [32m  ✓[0m[90m should load Norwegian article version[0m[90m (130ms)[0m
+    [32m  ✓[0m[90m should load Finnish article version[0m[90m (144ms)[0m
+    [32m  ✓[0m[90m should have language switcher or alternatives[0m[90m (133ms)[0m
 [0m    RTL Article Support[0m
-    [32m  ✓[0m[90m should have proper RTL layout for Arabic[0m[90m (194ms)[0m
-    [32m  ✓[0m[90m should have proper RTL layout for Hebrew[0m[90m (149ms)[0m
+    [32m  ✓[0m[90m should have proper RTL layout for Arabic[0m[90m (184ms)[0m
+    [32m  ✓[0m[90m should have proper RTL layout for Hebrew[0m[90m (116ms)[0m
 [0m    Article Navigation[0m
-    [32m  ✓[0m[90m should have navigation back to news index[0m[90m (136ms)[0m
-    [32m  ✓[0m[90m should have navigation to homepage[0m[90m (155ms)[0m
-    [32m  ✓[0m[90m should have header navigation[0m[90m (167ms)[0m
+    [32m  ✓[0m[90m should have navigation back to news index[0m[90m (121ms)[0m
+    [32m  ✓[0m[90m should have navigation to homepage[0m[90m (163ms)[0m
+    [32m  ✓[0m[90m should have header navigation[0m[90m (142ms)[0m
 [0m    Article Responsive Design[0m
-    [32m  ✓[0m[90m should be readable on Mobile (375x667)[0m[90m (212ms)[0m
-    [32m  ✓[0m[90m should be readable on Tablet (768x1024)[0m[90m (119ms)[0m
-    [32m  ✓[0m[90m should be readable on Desktop (1280x720)[0m[90m (109ms)[0m
-    [32m  ✓[0m[90m should be readable on Large Desktop (1920x1080)[0m[90m (154ms)[0m
-    [32m  ✓[0m[90m should have mobile-optimized reading experience[0m[90m (189ms)[0m
+    [32m  ✓[0m[90m should be readable on Mobile (375x667)[0m[90m (207ms)[0m
+    [32m  ✓[0m[90m should be readable on Tablet (768x1024)[0m[90m (183ms)[0m
+    [32m  ✓[0m[90m should be readable on Desktop (1280x720)[0m[90m (197ms)[0m
+    [32m  ✓[0m[90m should be readable on Large Desktop (1920x1080)[0m[90m (161ms)[0m
+    [32m  ✓[0m[90m should have mobile-optimized reading experience[0m[90m (263ms)[0m
 [0m    Article Accessibility[0m
-    [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (143ms)[0m
-    [32m  ✓[0m[90m should have alt text on images[0m[90m (176ms)[0m
-    [32m  ✓[0m[90m should have keyboard navigable links[0m[90m (140ms)[0m
-    [32m  ✓[0m[90m should have semantic HTML[0m[90m (199ms)[0m
+    [32m  ✓[0m[90m should have proper heading hierarchy[0m[90m (137ms)[0m
+    [32m  ✓[0m[90m should have alt text on images[0m[90m (188ms)[0m
+    [32m  ✓[0m[90m should have keyboard navigable links[0m[90m (148ms)[0m
+    [32m  ✓[0m[90m should have semantic HTML[0m[90m (147ms)[0m
 [0m    Article Performance[0m
-    [32m  ✓[0m[90m should load quickly[0m[90m (135ms)[0m
-    [32m  ✓[0m[90m should not have JavaScript errors[0m[90m (159ms)[0m
+    [32m  ✓[0m[90m should load quickly[0m[90m (140ms)[0m
+    [32m  ✓[0m[90m should not have JavaScript errors[0m[90m (131ms)[0m
 [0m    Article SEO[0m
-    [32m  ✓[0m[90m should have canonical URL[0m[90m (152ms)[0m
-    [32m  ✓[0m[90m should have description meta tag[0m[90m (129ms)[0m
-    [32m  ✓[0m[90m should have relevant keywords[0m[90m (158ms)[0m
+    [32m  ✓[0m[90m should have canonical URL[0m[90m (153ms)[0m
+    [32m  ✓[0m[90m should have description meta tag[0m[90m (141ms)[0m
+    [32m  ✓[0m[90m should have relevant keywords[0m[90m (141ms)[0m
 [0m    Article Categories[0m
-    [32m  ✓[0m[90m should load committee-reports article[0m[90m (132ms)[0m
+    [32m  ✓[0m[90m should load committee-reports article[0m[90m (188ms)[0m
     [32m  ✓[0m[90m should load government-propositions article[0m[90m (147ms)[0m
-    [32m  ✓[0m[90m should load opposition-motions article[0m[90m (147ms)[0m
-    [32m  ✓[0m[90m should load week-ahead article[0m[90m (185ms)[0m
-    [32m  ✓[0m[90m should load evening-analysis article[0m[90m (177ms)[0m
+    [32m  ✓[0m[90m should load opposition-motions article[0m[90m (150ms)[0m
+    [32m  ✓[0m[90m should load week-ahead article[0m[90m (130ms)[0m
+    [32m  ✓[0m[90m should load evening-analysis article[0m[90m (140ms)[0m
 
 
 [92m [0m[32m 46 passing[0m[90m (9s)[0m
@@ -1441,11 +1441,11 @@ Opening Cypress...
 
 [90m   [39m    [90mSpec[39m                                              [90mTests[39m  [90mPassing[39m  [90mFailing[39m  [90mPending[39m  [90mSkipped[39m [90m [39m
 [90m  ┌[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┐[39m
-[90m  │[39m [32m✔[39m  [0mnews-page.cy.js[0m                          [90m00:21[39m       [0m52[0m       [32m52[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
+[90m  │[39m [32m✔[39m  [0mnews-page.cy.js[0m                          [90m00:22[39m       [0m52[0m       [32m52[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  ├[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┤[39m
 [90m  │[39m [32m✔[39m  [0mnews-articles.cy.js[0m                      [90m00:09[39m       [0m46[0m       [32m46[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m│[39m
 [90m  └[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m─[39m[90m┘[39m
-[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m00:30[39m       [0m98[0m       [32m98[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
+[90m   [39m [32m✔[39m  [32mAll specs passed![39m                        [90m00:31[39m       [0m98[0m       [32m98[39m        [90m-[39m        [90m-[39m        [90m-[39m [90m [39m
 
 
 </pre>
