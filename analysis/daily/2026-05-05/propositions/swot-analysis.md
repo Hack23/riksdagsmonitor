@@ -44,9 +44,9 @@
 
 ```mermaid
 quadrantChart
-    title SWOT Matrix — Macro-Prudential vs. Implementation Risk
-    x-axis Internal (W/S) --> External (O/T)
-    y-axis Negative --> Positive
+    title "SWOT Matrix — Macro-Prudential vs. Implementation Risk"
+ x-axis Internal W/S --> External O/T
+ y-axis Negative --> Positive
     quadrant-1 Opportunities to capture
     quadrant-2 Strengths to leverage
     quadrant-3 Threats to mitigate
@@ -57,10 +57,4 @@ quadrantChart
     Bank compliance burden: [0.75, 0.3]
     Enhanced precision: [0.8, 0.8]
     Limited API text: [0.25, 0.4]
-    style Data gap closure HD03255 fill:#00d9ff,stroke:#00d9ff
-    style EU compliance HD03255 fill:#00d9ff,stroke:#00d9ff
-    style Privacy litigation risk fill:#ff006e,stroke:#ff006e
-    style Bank compliance burden fill:#ff006e,stroke:#ff006e
-    style Enhanced precision fill:#ffbe0b,stroke:#ffbe0b
-    style Limited API text fill:#1a1e3d,stroke:#ffbe0b
 ```

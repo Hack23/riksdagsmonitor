@@ -43,9 +43,9 @@ Evidence: Multiple dok_ids above, riksdagen.se.
 
 ```mermaid
 quadrantChart
-    title Risk Matrix (Likelihood vs Impact)
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix (Likelihood vs Impact)"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical Priority
     quadrant-2 High Impact Unlikely
     quadrant-3 Background Risks
@@ -60,7 +60,4 @@ quadrantChart
     R10 Tax Exploit: [0.55, 0.55]
     R7 Social Dumping Legal: [0.55, 0.50]
     R9 Death Declarations: [0.35, 0.45]
-    style R1 color:#ff0000
-    style R2 color:#ff0000
-    style R4 color:#ff6600
 ```

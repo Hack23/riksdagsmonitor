@@ -271,7 +271,6 @@ xychart-beta
   x-axis ["Depth (D)", "Impact (I)", "Width (W)", "Composite"]
   y-axis "Score (0-10)" 0 --> 10
   bar [5, 7, 6, 6.2]
-  style 1 fill:#00d9ff
 ```
 
 ### Analytical Implications

@@ -49,16 +49,14 @@
 ```mermaid
 quadrantChart
     title Implementation Risk vs. Political Priority
-    x-axis Low Political Priority --> High Political Priority
-    y-axis Low Implementation Risk --> High Implementation Risk
-    quadrant-1 Critical: High priority, high risk
-    quadrant-2 Monitor: Low priority, high risk
-    quadrant-3 Standard: Low priority, low risk
-    quadrant-4 Easy wins: High priority, low risk
+ x-axis Low Political Priority --> High Political Priority
+ y-axis Low Implementation Risk --> High Implementation Risk
+    quadrant-1 Critical High priority, high risk
+    quadrant-2 Monitor Low priority, high risk
+    quadrant-3 Standard Low priority, low risk
+    quadrant-4 Easy wins High priority, low risk
     "FiU48 Energy Relief": [0.85, 0.20]
     "JuU10 Weapons Registry": [0.75, 0.80]
     "SoU25 Elder Care": [0.65, 0.55]
     "FiU23 Riksbank": [0.30, 0.10]
-    style "JuU10 Weapons Registry" fill:#ff006e,stroke:#ff006e
-    style "FiU48 Energy Relief" fill:#00d9ff,stroke:#00d9ff
 ```

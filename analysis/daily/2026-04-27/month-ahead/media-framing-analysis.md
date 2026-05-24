@@ -33,18 +33,17 @@
 
 ```mermaid
 quadrantChart
-    title Framing Reach vs Intensity (May 2026)
-    x-axis Low Electoral Reach --> High Electoral Reach
-    y-axis Low Issue Intensity --> High Issue Intensity
+    title "Framing Reach vs Intensity (May 2026)"
+ x-axis Low Electoral Reach --> High Electoral Reach
+ y-axis Low Issue Intensity --> High Issue Intensity
     quadrant-1 High Reach + High Intensity
     quadrant-2 Low Reach + High Intensity
     quadrant-3 Low Reach + Low Intensity
     quadrant-4 High Reach + Low Intensity
-    "Justice Delivery (M/SD)": [0.78, 0.82]
-    "Welfare Attack (S)": [0.65, 0.75]
-    "Sweden Steps Up (Tidö)": [0.45, 0.55]
-    "Rural vs Urban (SD)": [0.35, 0.65]
-    style quadrantChart fill:#0a0e27
+   "#quot;Justice Delivery (M/SD)#quot;": [0.78, 0.82]
+   "#quot;Welfare Attack (S)#quot;": [0.65, 0.75]
+   "#quot;Sweden Steps Up (Tidö)#quot;": [0.45, 0.55]
+   "#quot;Rural vs Urban (SD)#quot;": [0.35, 0.65]
 ```
 
 ## Media Outlet Alignment (Structural)

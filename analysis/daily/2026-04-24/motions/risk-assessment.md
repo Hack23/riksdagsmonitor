@@ -44,13 +44,13 @@ R-6 (MP krigsmateriel instrumentalised) → S-MP alignment breach → post-elect
 ```mermaid
 %%{init: {'theme':'dark'}}%%
 quadrantChart
-    title Risk heat map — Likelihood × Impact
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk heat map — Likelihood × Impact"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical
-    quadrant-2 High (monitor)
+    quadrant-2 High monitor
     quadrant-3 Low
-    quadrant-4 Elevated (prevent)
+    quadrant-4 Elevated prevent
     "R-1 drivmedel lock-in": [0.80, 0.80]
     "R-2 V soft-on-crime frame": [0.80, 0.60]
     "R-3 committee backlog": [0.60, 0.60]
@@ -61,7 +61,6 @@ quadrantChart
     "R-8 distributional self-contradict": [0.60, 0.60]
     "R-9 ECHR": [0.40, 0.80]
     "R-10 extra-budget compression": [0.60, 0.60]
-    style R-1 fill:#ff006e
 ```
 
 ## Posterior-probability update (Bayesian)

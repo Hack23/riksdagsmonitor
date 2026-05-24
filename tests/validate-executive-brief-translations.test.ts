@@ -136,6 +136,31 @@ describe('executive-brief structural counters', () => {
     expect(ids.size).toBe(3);
   });
 
+  it('extractDokIds ignores plain English / translated words that start with H (no digit)', () => {
+    // Regression: the old `\bH[0-9A-Za-z]{4,11}\b` regex misclassified plain
+    // words like "Housing", "Hvilken", "HAUTE", "Holzmasten", "Hallituksen",
+    // "Haushaltsst", "Halten" as dok_ids, causing dok-id-preservation false
+    // positives whenever a translation introduced one of these in prose.
+    const md = [
+      'Housing policy update.',
+      'Hvilken proposition gjelder?',
+      'Le rapport HAUTE Autorité.',
+      'Holzmasten in der Forstwirtschaft.',
+      'Hallituksen esitys.',
+      'Haushaltsstabilisierungsgesetz.',
+      'Halten der Frist.',
+      '',
+      'Real id: `H901FiU1`.',
+    ].join('\n');
+    const ids = extractDokIds(md);
+    expect(ids.has('Housing')).toBe(false);
+    expect(ids.has('Hvilken')).toBe(false);
+    expect(ids.has('HAUTE')).toBe(false);
+    expect(ids.has('Holzmasten')).toBe(false);
+    expect(ids.has('Hallituksen')).toBe(false);
+    expect(ids.has('H901FiU1')).toBe(true);
+  });
+
   it('extractUrls returns absolute URLs in link targets and bare text', () => {
     const urls = extractUrls(SOURCE);
     expect(urls.has('https://www.riksdagen.se/sv/dokument-lagar/')).toBe(true);

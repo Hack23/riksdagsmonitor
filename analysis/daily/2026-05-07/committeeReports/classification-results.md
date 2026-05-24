@@ -83,8 +83,8 @@
 ```mermaid
 quadrantChart
     title Policy Domain vs Controversy Level
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Urgency --> High Urgency
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Urgency --> High Urgency
     quadrant-1 High Urgency, High Controversy
     quadrant-2 High Urgency, Low Controversy
     quadrant-3 Low Urgency, Low Controversy
@@ -95,10 +95,5 @@ quadrantChart
     FöU16-FOI: [0.20, 0.55]
     SfU24-Housing: [0.30, 0.45]
 
-    style FöU18-SIGINT fill:#ff4466,color:#fff
-    style CU25-Prison fill:#00ff88,color:#000
-    style SfU21-Insurance fill:#ffbe0b,color:#000
-    style FöU16-FOI fill:#00d9ff,color:#000
-    style SfU24-Housing fill:#9966ff,color:#fff
 ```
 

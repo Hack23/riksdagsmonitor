@@ -57,13 +57,13 @@ The opposition's tactical problem: energy opponents (V, MP) and migration oppone
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
-    title SWOT Quadrant — Opposition Motion Strategy
-    x-axis Internal Focus --> External Focus
-    y-axis Negative --> Positive
-    quadrant-1 External Positive (Opportunities)
-    quadrant-2 Internal Positive (Strengths)
-    quadrant-3 Internal Negative (Weaknesses)
-    quadrant-4 External Negative (Threats)
+    title "SWOT Quadrant — Opposition Motion Strategy"
+ x-axis Internal Focus --> External Focus
+ y-axis Negative --> Positive
+    quadrant-1 External Positive Opportunities
+    quadrant-2 Internal Positive Strengths
+    quadrant-3 Internal Negative Weaknesses
+    quadrant-4 External Negative Threats
     Expert consensus: [0.85, 0.85]
     Lagrådet backing: [0.80, 0.88]
     Fragmentation: [0.20, 0.15]

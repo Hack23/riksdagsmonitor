@@ -46,9 +46,9 @@ Luottamus KORKEA [A2]: Kaikki primäärilähteet virallisista Riksdag/Regering-t
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -60,13 +60,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---

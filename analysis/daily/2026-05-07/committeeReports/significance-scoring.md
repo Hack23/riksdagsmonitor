@@ -42,10 +42,5 @@ xychart-beta
     y-axis "DIW Score" 0 --> 10
     bar [8.9, 8.2, 7.1, 6.5, 5.8]
 
-    style FöU18 SIGINT fill:#ff4466
-    style CU25 Prison fill:#00ff88
-    style SfU21 Insurance fill:#ffbe0b
-    style FöU16 FOI fill:#00d9ff
-    style SfU24 Housing fill:#9966ff
 ```
 

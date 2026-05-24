@@ -39,13 +39,13 @@ Two simultaneous social policy risks create a compound exposure: (1) electricity
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
-    title Risk Heat Map — Opposition Motions 2026-04-23
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 High Likelihood + High Impact (CRITICAL)
-    quadrant-2 Low Likelihood + High Impact (MONITOR)
-    quadrant-3 Low Likelihood + Low Impact (ACCEPT)
-    quadrant-4 High Likelihood + Low Impact (MANAGE)
+    title "Risk Heat Map — Opposition Motions 2026-04-23"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
+    quadrant-1 High Likelihood + High Impact CRITICAL
+    quadrant-2 Low Likelihood + High Impact MONITOR
+    quadrant-3 Low Likelihood + Low Impact ACCEPT
+    quadrant-4 High Likelihood + Low Impact MANAGE
     R-04 Fragmentation: [0.65, 0.95]
     R-02 Electricity gap: [0.80, 0.65]
     R-03 Court challenges: [0.62, 0.80]

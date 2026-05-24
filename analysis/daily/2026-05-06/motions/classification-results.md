@@ -41,5 +41,5 @@
 pie title Policy Areas — 8 Motions
     "Forestry/Environment" : 5
     "Criminal Justice/Youth" : 3
-    style Forestry fill:#228b22
-    style Criminal fill:#8b0000
+
+```

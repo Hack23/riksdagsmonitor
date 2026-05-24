@@ -261,9 +261,9 @@ Significance scored on Democratic Impact (D), Institutional Weight (I), and Welf
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
 quadrantChart
-    title Significance Matrix: Democratic Impact vs Institutional Weight
-    x-axis Low Institutional Weight --> High Institutional Weight
-    y-axis Low Democratic Impact --> High Democratic Impact
+    title "Significance Matrix: Democratic Impact vs Institutional Weight"
+ x-axis Low Institutional Weight --> High Institutional Weight
+ y-axis Low Democratic Impact --> High Democratic Impact
     quadrant-1 Intelligence-grade
     quadrant-2 Priority — Monitor
     quadrant-3 Surface — Archive
@@ -276,8 +276,6 @@ quadrantChart
     HD03258: [0.60, 0.70]
     HD03251: [0.55, 0.50]
     HD03260: [0.45, 0.35]
-    style HD03262 color:#ff006e
-    style HD03263 color:#ff006e
 ```
 
 ## Per-document intelligence
@@ -1090,9 +1088,9 @@ HD03262 removes permanent permits → CJEU referral from Swedish administrative 
 ```mermaid
 %%{init: {"theme": "dark"}}%%
 quadrantChart
-    title Risk Matrix: Likelihood vs Impact
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix: Likelihood vs Impact"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical Risks — Immediate Action
     quadrant-2 Monitor Closely
     quadrant-3 Low Priority
@@ -1105,8 +1103,6 @@ quadrantChart
     R-7 Election Reversal: [0.55, 0.75]
     R-5 S Party Fracture: [0.55, 0.55]
     R-8 EU Pact Conflict: [0.40, 0.75]
-    style R-1 ECHR Detention color:#ff006e
-    style R-2 CJEU Challenge color:#ff006e
 ```
 
 ## SWOT Analysis
@@ -1158,8 +1154,8 @@ The dominant cross-SWOT dynamic: **Electoral Strength × ECHR Threat**. The dete
 %%{init: {"theme": "dark"}}%%
 quadrantChart
     title SWOT Strategic Assessment
-    x-axis Low Strategic Exposure --> High Strategic Exposure
-    y-axis Low Political Gain --> High Political Gain
+ x-axis Low Strategic Exposure --> High Strategic Exposure
+ y-axis Low Political Gain --> High Political Gain
     quadrant-1 High Value — Manage Risk
     quadrant-2 Quick Win — Exploit
     quadrant-3 Low Priority
@@ -1168,8 +1164,6 @@ quadrantChart
     Defence HD03254: [0.30, 0.75]
     Transparency HD03258: [0.25, 0.60]
     Detention HD03265: [0.90, 0.85]
-    style Migration Package color:#ff006e
-    style Detention HD03265 color:#ffbe0b
 ```
 
 ## Threat Analysis
@@ -1390,7 +1384,6 @@ xychart-beta
     x-axis ["Denmark", "Germany", "Netherlands", "Sweden (proposed)"]
     y-axis "Days" 0 --> 200
     bar [0, 28, 18, 182]
-    style bar fill:#ff006e
 ```
 
 ## Implementation Feasibility
@@ -1477,8 +1470,8 @@ Implementation feasibility assessed across: Legal readiness, Agency capacity, Bu
 %%{init: {"theme": "dark"}}%%
 quadrantChart
     title Implementation Feasibility vs Political Priority
-    x-axis Low Feasibility --> High Feasibility
-    y-axis Low Priority --> High Priority
+ x-axis Low Feasibility --> High Feasibility
+ y-axis Low Priority --> High Priority
     quadrant-1 High Priority — Deliver
     quadrant-2 Priority but Needs Work
     quadrant-3 Low Priority — Defer
@@ -1491,8 +1484,6 @@ quadrantChart
     HD03258 Transparency: [0.80, 0.60]
     HD03251 Health: [0.75, 0.55]
     HD03260 Research: [0.85, 0.30]
-    style HD03263 Deportation color:#ff006e
-    style HD03265 Detention color:#ff006e
 ```
 
 ## Media Framing Analysis
@@ -1745,7 +1736,6 @@ pie title Document Priority Distribution
     "L2+ Priority" : 3
     "L2 Strategic" : 2
     "L1 Surface" : 1
-    style text fill:#e0e0e0
 ```
 
 ## Cross-Reference Map

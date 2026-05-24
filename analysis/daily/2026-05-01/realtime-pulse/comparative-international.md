@@ -77,11 +77,11 @@
 ```mermaid
 %%{init: {"theme": "dark"}}%%
 quadrantChart
-    title Migration Restrictiveness vs Economic Buffer (IMF 2026)
-    x-axis Low Restrictiveness --> High Restrictiveness
-    y-axis Low GDP Growth --> High GDP Growth
+    title "Migration Restrictiveness vs Economic Buffer (IMF 2026)"
+ x-axis Low Restrictiveness --> High Restrictiveness
+ y-axis Low GDP Growth --> High GDP Growth
     quadrant-1 Strong Base + Restrictive
-    quadrant-2 Restrictive Low Growth (Risk Zone)
+    quadrant-2 Restrictive Low Growth Risk Zone
     quadrant-3 Low Growth + Low Restriction
     quadrant-4 High Growth + Low Restriction
     Denmark: [0.75, 0.55]

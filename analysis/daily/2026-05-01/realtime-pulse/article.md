@@ -51,8 +51,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 ## Reader Intelligence Guide
@@ -1600,11 +1598,11 @@ Goal: Turn criminal economy into government-fatal issue
 ```mermaid
 %%{init: {"theme": "dark"}}%%
 quadrantChart
-    title Migration Restrictiveness vs Economic Buffer (IMF 2026)
-    x-axis Low Restrictiveness --> High Restrictiveness
-    y-axis Low GDP Growth --> High GDP Growth
+    title "Migration Restrictiveness vs Economic Buffer (IMF 2026)"
+ x-axis Low Restrictiveness --> High Restrictiveness
+ y-axis Low GDP Growth --> High GDP Growth
     quadrant-1 Strong Base + Restrictive
-    quadrant-2 Restrictive Low Growth (Risk Zone)
+    quadrant-2 Restrictive Low Growth Risk Zone
     quadrant-3 Low Growth + Low Restriction
     quadrant-4 High Growth + Low Restriction
     Denmark: [0.75, 0.55]
@@ -2286,8 +2284,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2337,8 +2333,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2388,8 +2382,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2439,8 +2431,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2490,8 +2480,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2541,8 +2529,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2594,8 +2580,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2645,8 +2629,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2696,8 +2678,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2747,8 +2727,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2798,8 +2776,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2849,8 +2825,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->
@@ -2900,8 +2874,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->

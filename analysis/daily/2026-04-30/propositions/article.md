@@ -278,7 +278,6 @@ xychart-beta
     x-axis ["HD03259 Transport", "HD03253 Banking", "HD03252 Prison", "HD03247 OTC"]
     y-axis "DIW Score" 0 --> 10
     bar [9.0, 8.0, 8.0, 6.5]
-    style bar fill:#00d9ff
 ```
 
 ### Priority Tier Summary
@@ -878,7 +877,6 @@ xychart-beta
     x-axis ["HD03259 Infrastructure", "HD03252 Prison Benefits", "HD03253 Banking", "HD03247 OTC"]
     y-axis "Electoral Impact" 0 --> 10
     bar [8, 9, 2, 3]
-    style bar fill:#00d9ff
 ```
 
 ### Party Positioning Matrix
@@ -1233,7 +1231,6 @@ xychart-beta
     x-axis ["Sweden", "Norway", "Denmark", "Finland", "Germany"]
     y-axis "Billion EUR" 0 --> 300
     bar [88, 96, 13.5, 10, 270]
-    style bar fill:#00d9ff
 ```
 
 ## Implementation Feasibility

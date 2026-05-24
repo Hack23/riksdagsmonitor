@@ -87,14 +87,14 @@ graph TD
 ```mermaid
 timeline
     title April 17 2026 — Parliamentary Day
-    section Morning (08-12)
-        08:38 : CU22 published (guardianship)
-        08:49 : CU27 published (property deed)
-        08:58 : CU28 published (housing register)
-        09:10 : CU42 published (estate audit)
-        10:02 : KU32 published (media accessibility)
-        10:06 : KU33 published (seizure secrecy)
-    section Afternoon (12-18)
+ section Morning 08-12
+ 08.38 : CU22 published guardianship
+ 08.49 : CU27 published property deed
+ 08.58 : CU28 published housing register
+ 09.10 : CU42 published estate audit
+ 10.02 : KU32 published media accessibility
+ 10.06 : KU33 published seizure secrecy
+ section Afternoon 12-18
         Committee debates scheduled on CU22/27/28/42/KU32/33
         IP437/IP438 in interpellation queue
         Q718/Q719 written questions registered

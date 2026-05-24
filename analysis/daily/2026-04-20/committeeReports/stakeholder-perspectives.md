@@ -80,19 +80,19 @@ graph TB
 
 ```mermaid
 quadrantChart
-    title Stakeholder Power/Interest Grid — Committee Reports 2026-04-20
-    x-axis Low Interest --> High Interest
-    y-axis Low Power --> High Power
-    quadrant-1 Key Players (Manage Closely)
+    title "Stakeholder Power/Interest Grid — Committee Reports 2026-04-20"
+ x-axis Low Interest --> High Interest
+ y-axis Low Power --> High Power
+    quadrant-1 Key Players Manage Closely
     quadrant-2 Keep Satisfied
     quadrant-3 Monitor
     quadrant-4 Keep Informed
     
     "Government Coalition": [0.85, 0.95]
     "Opposition Bloc": [0.80, 0.75]
-    "Media/Press": [0.75, 0.45]
-    "Citizens/Voters": [0.70, 0.25]
-    "Business/Banks": [0.60, 0.55]
+   "#quot;Media/Press#quot;": [0.75, 0.45]
+   "#quot;Citizens/Voters#quot;": [0.70, 0.25]
+   "#quot;Business/Banks#quot;": [0.60, 0.55]
     "EU Institutions": [0.50, 0.65]
     "Civil Society NGOs": [0.65, 0.35]
     "Judiciary": [0.40, 0.70]

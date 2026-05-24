@@ -56,7 +56,6 @@ mindmap
       Journalisten
       Skolvärlden
 
-style root fill:#00d9ff,color:#0a0e27
 ```
 
 ## Anticipated Coverage Timeline

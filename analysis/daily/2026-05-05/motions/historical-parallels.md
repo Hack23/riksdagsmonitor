@@ -53,3 +53,5 @@ timeline
     2012 : SOU 2012:34 rejects criminal age cut — current proposals contradict
     2024 : EU Nature Restoration Law Reg. 2024/1991 — new binding constraint
     2026 : HD03242 + HD03246 proposed — all historical lessons applicable
+
+```

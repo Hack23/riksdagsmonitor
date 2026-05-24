@@ -62,8 +62,5 @@ timeline
     2025 : FöU18 committee report published
     2026 : FöU18 in debate phase (this report)
 
-    style 2026 fill:#ff4466
-    style 2022 fill:#00ff88
-    style 2008 fill:#ffbe0b
 ```
 

@@ -19,9 +19,9 @@
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map — Probability vs Impact
-    x-axis "Low Probability" --> "High Probability"
-    y-axis "Low Impact" --> "High Impact"
+    title "Risk Heat Map — Probability vs Impact"
+ x-axis "Low Probability" --> "High Probability"
+ y-axis "Low Impact" --> "High Impact"
     quadrant-1 Critical
     quadrant-2 Strategic
     quadrant-3 Monitor
@@ -33,10 +33,6 @@ quadrantChart
     R5-LantmäteriDelay: [0.20, 0.40]
     R6-UkraineEscalation: [0.20, 0.60]
     R7-CorpCrimeCoalition: [0.35, 0.50]
-    style R1-SDAmendment fill:#ff006e
-    style R2-MediaStorm fill:#ffbe0b
-    style R3-CentreSignal fill:#ff006e
-    style R4-SickPayPressure fill:#ffbe0b
 ```
 
 ## Cascading Risk Chains

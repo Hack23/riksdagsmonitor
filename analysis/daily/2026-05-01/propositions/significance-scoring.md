@@ -32,9 +32,9 @@ Significance scored on Democratic Impact (D), Institutional Weight (I), and Welf
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
 quadrantChart
-    title Significance Matrix: Democratic Impact vs Institutional Weight
-    x-axis Low Institutional Weight --> High Institutional Weight
-    y-axis Low Democratic Impact --> High Democratic Impact
+    title "Significance Matrix: Democratic Impact vs Institutional Weight"
+ x-axis Low Institutional Weight --> High Institutional Weight
+ y-axis Low Democratic Impact --> High Democratic Impact
     quadrant-1 Intelligence-grade
     quadrant-2 Priority — Monitor
     quadrant-3 Surface — Archive
@@ -47,6 +47,4 @@ quadrantChart
     HD03258: [0.60, 0.70]
     HD03251: [0.55, 0.50]
     HD03260: [0.45, 0.35]
-    style HD03262 color:#ff006e
-    style HD03263 color:#ff006e
 ```

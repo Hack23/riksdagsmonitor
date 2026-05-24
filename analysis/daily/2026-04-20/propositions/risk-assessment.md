@@ -177,13 +177,13 @@ Swedbank and SEB commercial real estate exposure. Tail risk but potentially seve
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map — Spring 2026 Package
-    x-axis Low Probability --> High Probability
-    y-axis Low Impact --> High Impact
-    quadrant-1 CRITICAL (monitor intensely)
-    quadrant-2 HIGH (priority watch)
-    quadrant-3 LOW (baseline)
-    quadrant-4 MEDIUM (contingency)
+    title "Risk Heat Map — Spring 2026 Package"
+ x-axis Low Probability --> High Probability
+ y-axis Low Impact --> High Impact
+    quadrant-1 CRITICAL monitor intensely
+    quadrant-2 HIGH priority watch
+    quadrant-3 LOW baseline
+    quadrant-4 MEDIUM contingency
     US tariff: [0.60, 0.90]
     Pass-through: [0.60, 0.70]
     SD shift: [0.40, 0.90]

@@ -74,9 +74,4 @@ mindmap
             t2["Bank capital strain B2"]
             t3["S narrative capture B2"]
 
-    style root fill:#1a1e3d,color:#00d9ff
-    style S fill:#0a2040,color:#00d9ff
-    style W fill:#2d0a0a,color:#ff006e
-    style O fill:#0a2d0a,color:#00d9ff
-    style T fill:#2d0a1a,color:#ffbe0b
 ```

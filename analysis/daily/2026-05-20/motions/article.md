@@ -328,15 +328,19 @@ Centerpartiet's stance exposes an ideological fault line within the Swedish cent
 ### Scoring rationale
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27', 'background': '#0a0e27'}}}%%
-radar
-    title DIW Significance Profile — HD024184
-    "Parliamentary" : 7
-    "Policy Impact" : 8
-    "Public Interest" : 7
-    "Urgency" : 7
-    "Cross-party" : 6
-    "Evidence" : 9
+flowchart LR
+    unsupported["⚠️ Mermaid radar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: radar
+%% original-source:
+%% %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27', 'background': '#0a0e27'}}}%%
+%% radar
+%%     title DIW Significance Profile — HD024184
+%%     "Parliamentary" : 7
+%%     "Policy Impact" : 8
+%%     "Public Interest" : 7
+%%     "Urgency" : 7
+%%     "Cross-party" : 6
+%%     "Evidence" : 9
 ```
 
 **Why parliamentary significance = 7 (not higher):**
@@ -1457,12 +1461,16 @@ quadrantChart
 ### Frame strength assessment
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
-bar title Media Frame Strength Assessment
-    "Transparency reform" : 8
-    "Attack on unions" : 6
-    "C defends civil liberties" : 5
-    "Lagrådet rebukes government" : 7
+flowchart LR
+    unsupported["⚠️ Mermaid bar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: bar
+%% original-source:
+%% %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
+%% bar title Media Frame Strength Assessment
+%%     "Transparency reform" : 8
+%%     "Attack on unions" : 6
+%%     "C defends civil liberties" : 5
+%%     "Lagrådet rebukes government" : 7
 ```
 
 ---

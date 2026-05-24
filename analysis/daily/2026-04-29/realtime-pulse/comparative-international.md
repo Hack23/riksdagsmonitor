@@ -58,7 +58,7 @@
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
 xychart-beta
-    title Sweden vs Peers: Policy Readiness Score (1-10)
+    title "Sweden vs Peers: Policy Readiness Score (1-10)"
     x-axis ["FDI/China Screening", "Water Security Planning", "Weapons Law EU Alignment", "Nuclear Permitting Speed"]
     y-axis 0 --> 10
     bar [4, 4, 7, 5]

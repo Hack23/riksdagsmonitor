@@ -63,16 +63,16 @@
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ffbe0b"}}}%%
 quadrantChart
     title Competing Hypothesis Assessment
-    x-axis Low Evidence --> High Evidence
-    y-axis Low Credibility --> High Credibility
+ x-axis Low Evidence --> High Evidence
+ y-axis Low Credibility --> High Credibility
     quadrant-1 Likely
     quadrant-2 Emerging
     quadrant-3 Discard
     quadrant-4 Watch
-    H1 "Full package delivered": [0.55, 0.55]
-    H2 "Lagrådet blockage": [0.80, 0.85]
-    H3 "Electoral softening": [0.15, 0.15]
-    H4 "EU withdrawal": [0.20, 0.10]
+    "H1 — Full package delivered": [0.55, 0.55]
+    "H2 — Lagrådet blockage": [0.80, 0.85]
+    "H3 — Electoral softening": [0.15, 0.15]
+    "H4 — EU withdrawal": [0.20, 0.10]
 ```
 
 **Key Judgment**: H2 (Lagrådet negative yttrande on HD03265) is the dominant hypothesis with HIGH confidence. Analysts anchored on H1 (full delivery) should revisit with Lagrådet timeline in view.

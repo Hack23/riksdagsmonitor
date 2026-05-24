@@ -30,9 +30,9 @@
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map — April 2026 Committee Reports
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Heat Map — April 2026 Committee Reports"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical
     quadrant-2 Monitor
     quadrant-3 Low Priority
@@ -42,9 +42,4 @@ quadrantChart
     "R3 EU Fiscal review": [0.30, 0.75]
     "R4 Weapons registry gaps": [0.55, 0.55]
     "R5 Elder-care delay": [0.55, 0.35]
-    style "R1 C Party withdrawal" fill:#ff006e,stroke:#ff006e
-    style "R3 EU Fiscal review" fill:#ff006e,stroke:#ff006e
-    style "R2 Climate backlash" fill:#ffbe0b,stroke:#ffbe0b
-    style "R4 Weapons registry gaps" fill:#ffbe0b,stroke:#ffbe0b
-    style "R5 Elder-care delay" fill:#00d9ff,stroke:#00d9ff
 ```

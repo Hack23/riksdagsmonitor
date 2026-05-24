@@ -91,5 +91,4 @@ pie title Document Priority Distribution
     "L2+ Priority" : 3
     "L2 Strategic" : 2
     "L1 Surface" : 1
-    style text fill:#e0e0e0
 ```

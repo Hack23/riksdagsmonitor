@@ -10,9 +10,9 @@
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#1565C0", "primaryTextColor": "#FFFFFF", "lineColor": "#666"}}}%%
 quadrantChart
-    title Risk Matrix — Likelihood × Impact
-    x-axis "Low Impact" --> "High Impact"
-    y-axis "Low Likelihood" --> "High Likelihood"
+    title "Risk Matrix — Likelihood × Impact"
+ x-axis "Low Impact" --> "High Impact"
+ y-axis "Low Likelihood" --> "High Likelihood"
     quadrant-1 Critical Risks
     quadrant-2 Monitor
     quadrant-3 Low Priority
@@ -23,11 +23,6 @@ quadrantChart
     Social dumping escalation HD10443: [0.60, 0.55]
     Pre-emption rights vacuum HD10445: [0.55, 0.65]
 
-    style KU Anmälan HD10442 fill:#F44336,color:#FFFFFF
-    style Election narrative erosion fill:#E53935,color:#FFFFFF
-    style Employer subsidy policy collapse HD10444 fill:#FF9800,color:#000000
-    style Social dumping escalation HD10443 fill:#FFC107,color:#000000
-    style Pre-emption rights vacuum HD10445 fill:#FFC107,color:#000000
 ```
 
 ---

@@ -159,7 +159,6 @@ mindmap
       ("UNCAC compliance")
       ("EU anti-corruption\ndirective alignment")
       ("Nordic peer\ncomparison")
-  style root fill:#00d9ff,color:#0a0e27
 ```
 
 ## Intelligence Assessment — Key Judgments
@@ -861,9 +860,9 @@ Most critical interaction: **S Strength (legal argument) + SD Opportunity (voter
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title SWOT Strategic Quadrant — HD024099
-    x-axis "Negative (Weakness/Threat)" --> "Positive (Strength/Opportunity)"
-    y-axis "Internal" --> "External"
+    title "SWOT Strategic Quadrant — HD024099"
+ x-axis "Negative Weakness/Threat" --> "Positive Strength/Opportunity"
+ y-axis "Internal" --> "External"
     quadrant-1 Strengths
     quadrant-2 Opportunities
     quadrant-3 Weaknesses
@@ -873,11 +872,6 @@ quadrantChart
     Oppositional Optics: [0.25, 0.75]
     Fast Timeline: [0.2, 0.15]
     Chapter10Reform: [0.8, 0.25]
-    style "Legal Argument" fill:#00d9ff
-    style "SD Vulnerability" fill:#00d9ff
-    style "Oppositional Optics" fill:#ff006e
-    style "Fast Timeline" fill:#ff006e
-    style "Chapter10Reform" fill:#ffbe0b
 ```
 
 ## Threat Analysis
@@ -1037,19 +1031,17 @@ Finland's integrated approach (comprehensive Chapter 40 reform) produces better 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title Comparative: Intent Threshold vs Scope of Officials
-    x-axis "Narrow Scope" --> "Broad Scope"
-    y-axis "Low Intent Bar" --> "High Intent Bar"
+    title "Comparative: Intent Threshold vs Scope of Officials"
+ x-axis "Narrow Scope" --> "Broad Scope"
+ y-axis "Low Intent Bar" --> "High Intent Bar"
     quadrant-1 Comprehensive
     quadrant-2 Broad-Low Risk
     quadrant-3 Narrow-Strict
     quadrant-4 Broad-Strict
-    "Finland 40:7": [0.7, 0.75]
+   "#quot;Finland 40:7#quot;": [0.7, 0.75]
     "Norway §172": [0.5, 0.8]
     "Denmark §155": [0.2, 0.85]
     "Sweden proposed": [0.85, 0.25]
-    style "Sweden proposed" fill:#ff006e
-    style "Finland 40:7" fill:#00d9ff
 ```
 
 ## Implementation Feasibility
@@ -1166,9 +1158,9 @@ Motion HD024099 offers sharply different framing opportunities for different pol
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title Media Frames: Accountability vs Protection × Government vs Opposition
-    x-axis "Opposition aligned" --> "Government aligned"
-    y-axis "Worker protection focus" --> "Accountability focus"
+    title "Media Frames: Accountability vs Protection × Government vs Opposition"
+ x-axis "Opposition aligned" --> "Government aligned"
+ y-axis "Worker protection focus" --> "Accountability focus"
     quadrant-1 Government-Accountability
     quadrant-2 Opposition-Accountability
     quadrant-3 Opposition-Protection
@@ -1178,8 +1170,6 @@ quadrantChart
     "SvD": [0.8, 0.7]
     "DN": [0.45, 0.65]
     "SVT": [0.5, 0.5]
-    style "Aftonbladet" fill:#ff006e
-    style "Expressen" fill:#00d9ff
 ```
 
 ## Devil's Advocate
@@ -1279,15 +1269,14 @@ Three competing hypotheses about the political significance of Motion HD024099.
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title Classification Matrix — HD024099
-    x-axis "Low Controversy" --> "High Controversy"
-    y-axis "Low Urgency" --> "High Urgency"
+    title "Classification Matrix — HD024099"
+ x-axis "Low Controversy" --> "High Controversy"
+ y-axis "Low Urgency" --> "High Urgency"
     quadrant-1 Priority
     quadrant-2 Watch
     quadrant-3 Background
     quadrant-4 Emerging
     HD024099: [0.82, 0.88]
-    style HD024099 fill:#ff006e
 ```
 
 ## Cross-Reference Map

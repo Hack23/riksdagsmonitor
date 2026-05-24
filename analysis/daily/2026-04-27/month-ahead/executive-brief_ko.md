@@ -40,9 +40,6 @@ gantt
     CU40 lantmäteri 청문회              :active, 2026-05-19, 10d
     section 예산
     Riksbank 면책 표결 (FiU23)          :milestone, 2026-05-07, 0d
-    style 법무 fill:#ff006e,stroke:#ff006e
-    style 민사 fill:#00d9ff,stroke:#00d9ff
-    style 인프라 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 주요 미래 촉발 요인

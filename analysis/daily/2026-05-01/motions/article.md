@@ -893,18 +893,18 @@ This document is part of the Gender-2 cluster. Analysis is provided at the clust
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Stakeholder Map: Power vs Support for S Motions
-    x-axis Oppose --> Support
-    y-axis Low Power --> High Power
+    title "Stakeholder Map: Power vs Support for S Motions"
+ x-axis Oppose --> Support
+ y-axis Low Power --> High Power
     quadrant-1 High Power Supporters
     quadrant-2 High Power Opponents
     quadrant-3 Low Power Opponents
     quadrant-4 Low Power Supporters
-    "S Opposition Bloc" [0.90, 0.90]
-    "Government Coalition" [0.10, 0.90]
-    "Energy Industry" [0.60, 0.55]
-    "Municipal Governments" [0.65, 0.50]
-    "Civil Society Gender" [0.85, 0.30]
+    "S Opposition Bloc": [0.90, 0.90]
+    "Government Coalition": [0.10, 0.90]
+    "Energy Industry": [0.60, 0.55]
+    "Municipal Governments": [0.65, 0.50]
+    "Civil Society Gender": [0.85, 0.30]
 ```
 
 ## Coalition Mathematics
@@ -1364,23 +1364,23 @@ xychart-beta
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title SWOT Quadrants — S Opposition Motion Strategy
-    x-axis Internal --> External
-    y-axis Negative --> Positive
+    title "SWOT Quadrants — S Opposition Motion Strategy"
+ x-axis Internal --> External
+ y-axis Negative --> Positive
     quadrant-1 Opportunities
     quadrant-2 Strengths
     quadrant-3 Weaknesses
     quadrant-4 Threats
-    "Coordinated coverage" [0.2, 0.85]
-    "Anchor motion quality" [0.15, 0.75]
-    "Election narrative" [0.25, 0.90]
-    "HD024127 withdrawal" [0.2, 0.30]
-    "Party attrib. gaps" [0.15, 0.25]
-    "Minority position" [0.25, 0.15]
-    "Election positioning" [0.8, 0.90]
-    "Cross-bloc alliance" [0.75, 0.80]
-    "Committee deferral" [0.8, 0.30]
-    "Govt pre-emption" [0.85, 0.20]
+    "Coordinated coverage": [0.2, 0.85]
+    "Anchor motion quality": [0.15, 0.75]
+    "Election narrative": [0.25, 0.90]
+    "HD024127 withdrawal": [0.2, 0.30]
+    "Party attrib. gaps": [0.15, 0.25]
+    "Minority position": [0.25, 0.15]
+    "Election positioning": [0.8, 0.90]
+    "Cross-bloc alliance": [0.75, 0.80]
+    "Committee deferral": [0.8, 0.30]
+    "Govt pre-emption": [0.85, 0.20]
 ```
 
 ## Threat Analysis
@@ -1645,17 +1645,17 @@ xychart-beta
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
     title Implementation Feasibility vs Political Feasibility
-    x-axis Low Political --> High Political
-    y-axis Low Technical --> High Technical
+ x-axis Low Political --> High Political
+ y-axis Low Technical --> High Technical
     quadrant-1 Easiest to implement
     quadrant-2 Technically easy, politically hard
     quadrant-3 Hardest overall
     quadrant-4 Politically viable, technically complex
-    "Env. Authority HD024124" [0.15, 0.80]
-    "Honour Violence HD024133/140" [0.65, 0.85]
-    "Wind Power HD024126" [0.30, 0.55]
-    "Electricity HD024129" [0.15, 0.30]
-    "Juvenile Justice HD024136" [0.25, 0.65]
+    "Env. Authority HD024124": [0.15, 0.80]
+   "#quot;Honour Violence HD024133/140#quot;": [0.65, 0.85]
+    "Wind Power HD024126": [0.30, 0.55]
+    "Electricity HD024129": [0.15, 0.30]
+    "Juvenile Justice HD024136": [0.25, 0.65]
 ```
 
 ## Media Framing Analysis

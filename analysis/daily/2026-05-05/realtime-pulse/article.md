@@ -53,9 +53,9 @@ Confidence HIGH [A2]: All primary sources from official Riksdag/Regering reposit
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -67,13 +67,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -1050,12 +1043,12 @@ Wiechel asks the minister to clarify the government's position on Sida's future.
 - **PIR**: PIR-NEW-10464 (Sida dissolution trajectory — OPEN, answer deadline 2026-05-26)
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {"'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'"}}}%%
 flowchart TD
-    Hamas[55 MSEK\nHamas-linked payment\n[A2 unverified]] --> HD10464
-    Afghanistan[14 BSEK\nAfghanistan failure] --> HD10464
-    HD10464[HD10464\nWiechel SD\nAvveckla Sida] -->|answer by| BESV[2026-05-26\nFloor debate]
-    BESV -->|pre-election| E26[Sept 2026\nValet]
+    Hamas["55 MSEK\nHamas-linked payment\n[A2 unverified]"] --> HD10464
+    Afghanistan["14 BSEK\nAfghanistan failure"] --> HD10464
+    HD10464["HD10464\nWiechel SD\nAvveckla Sida"] -->|answer by| BESV["2026-05-26\nFloor debate"]
+    BESV -->|pre-election| E26["Sept 2026\nValet"]
     style HD10464 fill:#ff006e,stroke:#ff006e,color:#fff
     style BESV fill:#ffbe0b,stroke:#ffbe0b,color:#000
     style E26 fill:#00d9ff,stroke:#00d9ff,color:#000
@@ -1440,7 +1433,7 @@ Links to the HD024141-HD024148 infrastructure cluster and the government's infra
 ### Coalition Stakeholder Mapping
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {"'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'"}}}%%
 graph LR
     M["🔵 M (68)\nKristersson"] -->|"Tidö core"| TID["TIDÖ GOVERNMENT\n176 seats"]
     SD["🔵 SD (73)\nÅkesson"] -->|"Tidö core"| TID
@@ -1450,8 +1443,8 @@ graph LR
     TID -->|"Majority votes\nall bills"| GOV["GOVERNMENT MAJORITY\n176 vs 173"]
     S["🔴 S (107)\nAndersson"] -->|"Opposition"| OPP["OPPOSITION\n173 seats"]
     V["🔴 V (24)\nDadgostar"] -->|"Opposition"| OPP
-    MP["🔴 MP (18)\nNohrén"| OPP
-    C2["🟡 C (CRC cluster)\nHD024146"| OPP
+    MP["🔴 MP (18)\nNohrén"] --> OPP
+    C2["🟡 C (CRC cluster)\nHD024146"] --> OPP
     style TID fill:#1a1e3d,stroke:#00d9ff
     style GOV fill:#00d9ff,stroke:#00d9ff
     style OPP fill:#ff006e,stroke:#ff006e
@@ -2054,8 +2047,8 @@ xychart-beta
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
     title SWOT Factor Positioning
-    x-axis Internal --> External
-    y-axis Negative --> Positive
+ x-axis Internal --> External
+ y-axis Negative --> Positive
     Majority capacity: [0.15, 0.88]
     FI HD03255: [0.20, 0.78]
     KU39 opportunity: [0.75, 0.82]
@@ -2063,13 +2056,6 @@ quadrantChart
     Gang crime trap: [0.25, 0.12]
     Lagrådet risk: [0.80, 0.15]
     EU infringement: [0.85, 0.22]
-    style Majority capacity fill:#00d9ff,stroke:#00d9ff
-    style FI HD03255 fill:#00d9ff,stroke:#00d9ff
-    style KU39 opportunity fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken weakness fill:#ff006e,stroke:#ff006e
-    style Gang crime trap fill:#ff006e,stroke:#ff006e
-    style Lagrådet risk fill:#ff006e,stroke:#ff006e
-    style EU infringement fill:#ff006e,stroke:#ff006e
 ```
 
 ---
@@ -2400,18 +2386,13 @@ Sweden's constitutional protection for civil servant neutrality is among the str
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
     title Implementation Feasibility vs. Political Will
-    x-axis Low Political Will --> High Political Will
-    y-axis Low Feasibility --> High Feasibility
+ x-axis Low Political Will --> High Political Will
+ y-axis Low Feasibility --> High Feasibility
     HD03255 FI mandate: [0.80, 0.78]
     KU39 lobbying register: [0.70, 0.45]
     HD03246 youth crime: [0.85, 0.55]
     MSB preparedness: [0.65, 0.50]
     Forestry oversight: [0.50, 0.40]
-    style HD03255 FI mandate fill:#00d9ff,stroke:#00d9ff
-    style HD03246 youth crime fill:#ffbe0b,stroke:#ffbe0b
-    style KU39 lobbying register fill:#ffbe0b,stroke:#ffbe0b
-    style MSB preparedness fill:#ffbe0b,stroke:#ffbe0b
-    style Forestry oversight fill:#ff006e,stroke:#ff006e
 ```
 
 ---
@@ -3181,9 +3162,9 @@ Three additional documents identified via re-download scan in Run 3:
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -3195,13 +3176,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -3307,9 +3281,9 @@ Konfidens HØJ [A2]: Alle primærkilder fra officielle Riksdag/Regering-database
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -3321,13 +3295,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -3433,9 +3400,9 @@ Konfidenz HOCH [A2]: Alle Primärquellen aus offiziellen Riksdag/Regering-Datenb
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -3447,13 +3414,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -3559,9 +3519,9 @@ Confianza ALTA [A2]: Todas las fuentes primarias de las bases de datos oficiales
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -3573,13 +3533,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -3685,9 +3638,9 @@ Luottamus KORKEA [A2]: Kaikki primäärilähteet virallisista Riksdag/Regering-t
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -3699,13 +3652,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -3810,9 +3756,9 @@ Confiance ÉLEVÉE [A2] : Toutes les sources primaires issues des bases de donn�
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -3824,13 +3770,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -3939,9 +3878,9 @@ quadrantChart
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -3953,13 +3892,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -4065,9 +3997,9 @@ quadrantChart
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -4079,13 +4011,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -4191,9 +4116,9 @@ quadrantChart
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -4205,13 +4130,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -4317,9 +4235,9 @@ Betrouwbaarheid HOOG [A2]: Alle primaire bronnen uit officiële Riksdag/Regering
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -4331,13 +4249,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -4443,9 +4354,9 @@ Konfidens HØY [A2]: Alle primærkilder fra offisielle Riksdag/Regering-database
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -4457,13 +4368,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -4569,9 +4473,9 @@ Konfidensgrad HÖG [A2]: Alla primärkällor från officiella Riksdag/Regering-d
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -4583,13 +4487,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---
@@ -4695,9 +4592,9 @@ quadrantChart
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Significance vs. Political Controversy — 2026-05-05 Pulse
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+    title "Significance vs. Political Controversy — 2026-05-05 Pulse"
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Priority coverage
     quadrant-2 Crisis watch
     quadrant-3 Background
@@ -4709,13 +4606,6 @@ quadrantChart
     Gang Crime KPI: [0.80, 0.60]
     Ostlänken HD10463: [0.55, 0.55]
     ESA HD10461: [0.35, 0.50]
-    style KU39 Transparency fill:#ff006e,stroke:#ff006e
-    style Youth Crime HD03246 fill:#ffbe0b,stroke:#ffbe0b
-    style HD03255 FI Survey fill:#00d9ff,stroke:#00d9ff
-    style Forestry HD03242 fill:#00d9ff,stroke:#00d9ff
-    style Gang Crime KPI fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken HD10463 fill:#1a1e3d,stroke:#00d9ff
-    style ESA HD10461 fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ---

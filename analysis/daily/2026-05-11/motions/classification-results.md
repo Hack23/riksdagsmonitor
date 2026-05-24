@@ -33,20 +33,20 @@
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
 quadrantChart
     title "Ideological Positioning — 2026-05-11 Motions"
-    x-axis "Left" --> "Right"
-    y-axis "Libertarian" --> "Authoritarian"
+ x-axis "Left" --> "Right"
+ y-axis "Libertarian" --> "Authoritarian"
     quadrant-1 Conservative-Auth
     quadrant-2 Progressive-Auth
     quadrant-3 Progressive-Lib
     quadrant-4 Conservative-Lib
-    MP (HD024147): [0.15, 0.2]
-    V (HD024141): [0.2, 0.3]
-    V (HD024142): [0.2, 0.25]
-    MP (HD024148): [0.15, 0.22]
-    S (HD024144): [0.35, 0.5]
-    C (HD024145): [0.5, 0.35]
-    C (HD024146): [0.5, 0.3]
-    SD (HD024143): [0.75, 0.65]
+    "MP (HD024147)": [0.15, 0.2]
+    "V (HD024141)": [0.2, 0.3]
+    "V (HD024142)": [0.2, 0.25]
+    "MP (HD024148)": [0.15, 0.22]
+    "S (HD024144)": [0.35, 0.5]
+    "C (HD024145)": [0.5, 0.35]
+    "C (HD024146)": [0.5, 0.3]
+    "SD (HD024143)": [0.75, 0.65]
 ```
 
 **Evidence Anchors**:

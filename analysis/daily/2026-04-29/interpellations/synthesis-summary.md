@@ -35,9 +35,9 @@ Three convergent threat vectors appear across the interpellation batch:
 
 ```mermaid
 quadrantChart
-    title Interpellations Priority Matrix (Impact vs Political Salience)
-    x-axis Low Impact --> High Impact
-    y-axis Low Salience --> High Salience
+    title "Interpellations Priority Matrix (Impact vs Political Salience)"
+ x-axis Low Impact --> High Impact
+ y-axis Low Salience --> High Salience
     quadrant-1 Monitor Closely
     quadrant-2 Priority Intelligence
     quadrant-3 Background Tracking
@@ -50,6 +50,4 @@ quadrantChart
     HD10439 Polisbrist: [0.60, 0.68]
     HD10444 Arbetsgivaravgift: [0.58, 0.65]
     HD10443 Social dumpning: [0.50, 0.60]
-    style HD10454 color:#ff0000
-    style HD10451 color:#ff4400
 ```

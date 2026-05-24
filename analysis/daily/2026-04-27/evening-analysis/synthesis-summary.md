@@ -59,8 +59,8 @@ HD10448 (SD's Fransson interpellating KD's Busch on energy) is the most analytic
 ```mermaid
 quadrantChart
     title Riksdag Legislative Activity 27 April 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Political Controversy --> High Political Controversy
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Political Controversy --> High Political Controversy
     quadrant-1 High Impact, High Controversy
     quadrant-2 Low Impact, High Controversy
     quadrant-3 Low Impact, Low Controversy
@@ -74,10 +74,6 @@ quadrantChart
     hd11752 Russia Fly: [0.40, 0.50]
     hd10449 Stambanan: [0.60, 0.40]
 
-    style HD03253 EU Banking fill:#1a1e3d,color:#00d9ff
-    style HD01FiU48 Fuel Tax fill:#1a1e3d,color:#ffbe0b
-    style HD03252 Prisoners fill:#1a1e3d,color:#ff006e
-    style HD10448 SD-KD Energy fill:#3d0a1a,color:#ff006e
 ```
 
 ---

@@ -42,9 +42,6 @@ gantt
     דיון CU40 lantmäteri                   :active, 2026-05-19, 10d
     section תקציב
     הצבעת הפטור Riksbank (FiU23)           :milestone, 2026-05-07, 0d
-    style משפט fill:#ff006e,stroke:#ff006e
-    style אזרחי fill:#00d9ff,stroke:#00d9ff
-    style תשתיות fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 מניע מרכזי לעתיד

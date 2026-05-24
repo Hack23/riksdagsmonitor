@@ -53,14 +53,6 @@ xychart-beta
     y-axis "Net Vote Impact (%)" -1.5 --> 2.5
     bar [1.1, 2.3, 0.7, -0.1, -0.3, -0.8, 0.1, -0.3]
 
-    style M fill:#00d9ff
-    style SD fill:#00ff88
-    style KD fill:#ffbe0b
-    style L fill:#9966ff
-    style S fill:#ff4466
-    style V fill:#ff0044
-    style C fill:#44ff44
-    style MP fill:#00ff88
 ```
 
 *Note: Estimates are analytical inference [C2]. Error margin ±0.5 percentage points. Not a polling citation.*

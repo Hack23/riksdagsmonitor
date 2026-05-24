@@ -57,11 +57,15 @@ Active forestry deregulation (HD03242) removing restrictions on clear-cutting an
 ## Political Stability Assessment
 
 ```mermaid
-gauge
-    title "Coalition Stability Index — April 2026"
-    accDescr "Coalition stability measured 0-100"
-    key [stable, watch, critical]
-    "Stability" : 72
+flowchart LR
+    unsupported["⚠️ Mermaid gauge diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: gauge
+%% original-source:
+%% gauge
+%%     title "Coalition Stability Index — April 2026"
+%%     accDescr "Coalition stability measured 0-100"
+%%     key [stable, watch, critical]
+%%     "Stability" : 72
 ```
 
 **Overall assessment**: Coalition STABLE through election. Budget discipline, crime agenda alignment, and electoral incentives keep M–SD–KD–L unified. Primary risk is any SD demand that L or KD cannot accept in the final pre-election session.

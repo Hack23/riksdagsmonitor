@@ -103,14 +103,14 @@
 ```mermaid
 quadrantChart
     title Frame Strength vs Political Controversy
-    x-axis "Minimal controversy" --> "High controversy"
-    y-axis "Weak framing" --> "Strong framing"
-    quadrant-1 Dominant (fight here)
-    quadrant-2 Contested (manage)
+ x-axis "Minimal controversy" --> "High controversy"
+ y-axis "Weak framing" --> "Strong framing"
+    quadrant-1 Dominant fight here
+    quadrant-2 Contested manage
     quadrant-3 Monitor
     quadrant-4 Narrative anchor
-    "F1 Security/Order": [0.75, 0.80]
-    "F2 Rights/Rule of Law": [0.72, 0.62]
+   "#quot;F1 Security/Order#quot;": [0.75, 0.80]
+   "#quot;F2 Rights/Rule of Law#quot;": [0.72, 0.62]
     "F3 Electoral Theater": [0.55, 0.45]
     "F4 NATO Credibility": [0.20, 0.70]
 ```

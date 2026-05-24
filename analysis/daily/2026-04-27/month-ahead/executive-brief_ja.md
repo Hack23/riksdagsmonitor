@@ -40,9 +40,6 @@ gantt
     CU40 lantmäteri公聴会              :active, 2026-05-19, 10d
     section 予算
     Riksbank免責採決 (FiU23)            :milestone, 2026-05-07, 0d
-    style 司法 fill:#ff006e,stroke:#ff006e
-    style 民事 fill:#00d9ff,stroke:#00d9ff
-    style インフラ fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 主要な将来トリガー

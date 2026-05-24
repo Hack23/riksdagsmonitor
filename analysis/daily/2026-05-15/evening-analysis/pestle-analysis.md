@@ -60,14 +60,18 @@ xychart-beta
 ## PESTLE-sammanfattning
 
 ```mermaid
-%%{init: {'theme': 'dark'}}%%
-radar
-    title PESTLE Påverkansnivåer
-    Political  9
-    Economic   6
-    Social     7
-    Technological  5
-    Legal      8
-    Environmental  5
+flowchart LR
+    unsupported["⚠️ Mermaid radar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: radar
+%% original-source:
+%% %%{init: {'theme': 'dark'}}%%
+%% radar
+%%     title PESTLE Påverkansnivåer
+%%     Political  9
+%%     Economic   6
+%%     Social     7
+%%     Technological  5
+%%     Legal      8
+%%     Environmental  5
 ```
 

@@ -92,22 +92,21 @@ The dominant cross-SWOT pattern is **W1/T1 convergence**: the S accountability o
 
 ```mermaid
 quadrantChart
-    title SWOT Strategic Position — Kristersson Government 2026-04-22
-    x-axis Weakness --> Strength
-    y-axis Threat --> Opportunity
-    quadrant-1 Leverage (SO)
-    quadrant-2 Develop (WO)
-    quadrant-3 Defend (WT)
-    quadrant-4 Monitor (ST)
-    Energy narrative (S1+O1): [0.85, 0.82]
-    Legislative productivity (S2): [0.78, 0.72]
-    Ukraine solidarity (O2): [0.70, 0.88]
-    HD01FiU48 enacted (S1): [0.90, 0.60]
-    Accountability offensive (W1): [0.12, 0.18]
-    Employer contribution scandal (W2): [0.15, 0.25]
-    Social dumping (W3): [0.20, 0.35]
-    Climate credibility (T2): [0.30, 0.10]
-    Housing segregation (T3): [0.35, 0.20]
+    title "SWOT Strategic Position — Kristersson Government 2026-04-22"
+ x-axis Weakness --> Strength
+ y-axis Threat --> Opportunity
+    quadrant-1 Leverage SO
+    quadrant-2 Develop WO
+    quadrant-3 Defend WT
+    quadrant-4 Monitor ST
+    "Energy narrative (S1+O1)": [0.85, 0.82]
+    "Legislative productivity (S2)": [0.78, 0.72]
+    "Ukraine solidarity (O2)": [0.70, 0.88]
+    "HD01FiU48 enacted (S1)": [0.90, 0.60]
+    "Accountability offensive (W1)": [0.12, 0.18]
+    "Employer contribution scandal (W2)": [0.15, 0.25]
+    "Social dumping (W3)": [0.20, 0.35]
+    "Climate credibility (T2)": [0.30, 0.10]
+    "Housing segregation (T3)": [0.35, 0.20]
 
-    style Energy fill:#2e7d32,color:#fff
 ```

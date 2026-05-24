@@ -57,11 +57,6 @@ xychart-beta
     y-axis "Oversight Score" 0 --> 10
     bar [8, 8.5, 9, 5, 7]
 
-    style Norway E-tj fill:#00d9ff
-    style Germany BND fill:#00ff88
-    style UK IPA fill:#00ff88
-    style Sweden FöU18 draft fill:#ff4466
-    style Netherlands Wiv fill:#ffbe0b
 ```
 
 **Note**: Sweden FöU18 scores 5 under current draft — below Nordic peers. Adopting judicial pre-authorisation would raise score to ~8.

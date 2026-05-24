@@ -58,5 +58,4 @@ mindmap
       ("UNCAC compliance")
       ("EU anti-corruption\ndirective alignment")
       ("Nordic peer\ncomparison")
-  style root fill:#00d9ff,color:#0a0e27
 ```

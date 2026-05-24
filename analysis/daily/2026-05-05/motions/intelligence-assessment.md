@@ -56,6 +56,7 @@ flowchart LR
     style KJ4 fill:#1a1e3d,stroke:#ffbe0b
     style KJ5 fill:#1a1e3d,stroke:#ffbe0b
 
+```
 ## Pass 2 enhancement: Confidence calibration update
 
 ### Revised KJ confidence after Pass 2 full review

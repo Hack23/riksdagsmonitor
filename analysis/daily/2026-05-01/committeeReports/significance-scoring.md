@@ -38,6 +38,4 @@ xychart-beta
     x-axis ["FiU33","FiU20","SfU22","SoU29","FiU24","SkU18","CU18","TU15","KU22","KU21"]
     y-axis "DIW Score" 0 --> 15
     bar [14, 12, 11, 10, 9, 8, 7, 6, 4, 3]
-    style FiU33 fill:#ff006e
-    style FiU20 fill:#ffbe0b
 ```

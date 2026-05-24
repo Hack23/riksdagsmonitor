@@ -56,9 +56,9 @@
 
 ```mermaid
 quadrantChart
-    title Competing Hypotheses — 27 April 2026
-    x-axis Low Plausibility --> High Plausibility
-    y-axis Low Impact if True --> High Impact if True
+    title "Competing Hypotheses — 27 April 2026"
+ x-axis Low Plausibility --> High Plausibility
+ y-axis Low Impact if True --> High Impact if True
     quadrant-1 Critical re-evaluation needed
     quadrant-2 Worth tracking
     quadrant-3 Discard
@@ -67,6 +67,4 @@ quadrantChart
     DA2 S Weakness Signal: [0.60, 0.65]
     DA3 Fuel Tax Ambiguous: [0.75, 0.55]
 
-    style DA1 SD Coalition Signal fill:#ff006e,color:#ffffff
-    style DA3 Fuel Tax Ambiguous fill:#ffbe0b,color:#000000
 ```

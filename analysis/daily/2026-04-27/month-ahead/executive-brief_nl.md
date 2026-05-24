@@ -40,9 +40,6 @@ gantt
     CU40 lantmäteri-hoorzitting               :active, 2026-05-19, 10d
     section Begroting
     Riksbank-decharge-stemming (FiU23)        :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-laadnorm fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 Belangrijkste voorwaartse trigger

@@ -57,9 +57,9 @@
 
 ```mermaid
 quadrantChart
-    title PIR Priority Map — Evening Analysis 2026-04-27
-    x-axis Low Urgency --> High Urgency
-    y-axis Low Impact --> High Impact
+    title "PIR Priority Map — Evening Analysis 2026-04-27"
+ x-axis Low Urgency --> High Urgency
+ y-axis Low Impact --> High Impact
     quadrant-1 Act now
     quadrant-2 Monitor closely
     quadrant-3 Low priority
@@ -70,7 +70,4 @@ quadrantChart
     PIR-4 Lagrådet: [0.40, 0.70]
     PIR-5 SD Energy: [0.65, 0.80]
 
-    style PIR-1 Busch Response fill:#ff006e,color:#ffffff
-    style PIR-2 FiU Banking fill:#ffbe0b,color:#000000
-    style PIR-5 SD Energy fill:#ff006e,color:#ffffff
 ```

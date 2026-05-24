@@ -34,25 +34,20 @@ Konstitutionsutskottet (KU) presenterar ett historiskt dubbelbetänkande (HD01KU
 
 ```mermaid
 quadrantChart
-    title Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk
-    x-axis Låg implementeringsrisk --> Hög implementeringsrisk
-    y-axis Låg politisk vikt --> Hög politisk vikt
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
     quadrant-1 Hög vikt / Hög risk
     quadrant-2 Hög vikt / Låg risk
     quadrant-3 Låg vikt / Låg risk
     quadrant-4 Låg vikt / Hög risk
-    HD01KU34 (Grundlag abortskydd+föreningsfrihet): [0.75, 0.95]
-    HD01CU31 (Hyresmarknad flexibel): [0.65, 0.70]
-    HD01FiU37 (Finansiell krishantering): [0.55, 0.68]
-    HD01SoU31 (Suicidutredningsfunktion): [0.60, 0.55]
-    HD01JuU39 (Psykiskt våld): [0.30, 0.50]
-    HD01JuU34 (Nordisk brottmål): [0.25, 0.35]
-    HD01JuU32 (Allmänna sammankomster): [0.40, 0.40]
-    HD01FiU43 (Välfärdsutbetalningar): [0.35, 0.38]
-    style HD01KU34 fill:#ff006e,color:#fff
-    style HD01CU31 fill:#ffbe0b,color:#000
-    style HD01FiU37 fill:#00d9ff,color:#000
-    style HD01SoU31 fill:#00d9ff,color:#000
-    style HD01JuU39 fill:#4caf50,color:#fff
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
 ```
 

@@ -285,7 +285,7 @@ NU22's new investigative tools for Konkurrensverket are assessed at LOW confiden
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'lineColor': '#00d9ff', 'bar': '#00d9ff'}}}%%
 xychart-beta
     title "DIW Composite Scores — Committee Reports 2026-04-29"
-    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
+    x-axis ["KU36", "JuU9", "NU22", "NU19", "FöU13", "CU37", "SoU33", "JuU46"]
     y-axis "DIW Score" 0 --> 1
     bar [0.88, 0.81, 0.76, 0.72, 0.70, 0.64, 0.38, 0.28]
 ```
@@ -847,7 +847,7 @@ The **Tidökoalitionen** (M+SD+KD+L = 176 seats) holds a bare majority for purel
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
 xychart-beta
     title "Estimated Ja-votes by Report"
-    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
+    x-axis ["KU36", "JuU9", "NU22", "NU19", "FöU13", "CU37", "SoU33", "JuU46"]
     y-axis "Seats voting Ja (max 349)" 0 --> 350
     bar [347, 340, 290, 325, 320, 347, 330, 349]
 ```
@@ -1082,7 +1082,7 @@ This is a **knife-edge election** where 2-4 seat nuclear positioning is genuinel
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
 xychart-beta
     title "Electoral Salience by Report (1–10 scale)"
-    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
+    x-axis ["KU36", "JuU9", "NU22", "NU19", "FöU13", "CU37", "SoU33", "JuU46"]
     y-axis "Electoral salience" 0 --> 10
     bar [4.5, 3.5, 5.0, 8.5, 3.5, 6.0, 2.5, 1.0]
 ```
@@ -1461,7 +1461,7 @@ KU36 recommendations are not automatically legally binding — they require eith
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
 xychart-beta
     title "Implementation Delivery Risk (1=LOW to 5=HIGH)"
-    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
+    x-axis ["KU36", "JuU9", "NU22", "NU19", "FöU13", "CU37", "SoU33", "JuU46"]
     y-axis "Risk level" 0 --> 5
     bar [4.0, 2.5, 2.5, 2.5, 2.0, 4.5, 1.0, 1.0]
 ```

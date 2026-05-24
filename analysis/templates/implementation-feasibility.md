@@ -96,14 +96,7 @@ ANTI-TEMPLATE — DO NOT:
 
 ## 🧭 Feasibility Overview
 
-```mermaid
-radar
-    title Feasibility score by dimension (1–5)
-    axis Legal, Administrative, Technical, Fiscal, Workforce, Timeline
-    curve Current[4, 3, 4, 3, 2, 3]
-```
-
-> If Mermaid `radar` is unavailable in the renderer, replace with the following graph:
+> **Rendering note:** Mermaid 11 core does not ship the `radar` diagram type. The canonical fallback below is a `graph LR` "spoke" chart that conveys the same per-dimension score (1–5) and colour-codes each spoke by traffic-light status. Restore a `radar` variant only once the renderer enables the plugin and the validator (`npm run validate:mermaid`) accepts it.
 
 ```mermaid
 graph LR

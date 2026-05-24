@@ -61,8 +61,5 @@ timeline
     Nov 2026   : FI-07 LO convention response to SfU21
     Feb 2027   : FI-04 First Försäkringskassan statistics (SfU21)
 
-    style June 2026 fill:#ff4466
-    style Aug-Sep 2026 fill:#00ff88
-    style Feb 2027 fill:#00d9ff
 ```
 

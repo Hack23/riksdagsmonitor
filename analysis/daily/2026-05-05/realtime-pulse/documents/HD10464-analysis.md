@@ -63,12 +63,12 @@ Wiechel asks the minister to clarify the government's position on Sida's future.
 - **PIR**: PIR-NEW-10464 (Sida dissolution trajectory — OPEN, answer deadline 2026-05-26)
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {"'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'"}}}%%
 flowchart TD
-    Hamas[55 MSEK\nHamas-linked payment\n[A2 unverified]] --> HD10464
-    Afghanistan[14 BSEK\nAfghanistan failure] --> HD10464
-    HD10464[HD10464\nWiechel SD\nAvveckla Sida] -->|answer by| BESV[2026-05-26\nFloor debate]
-    BESV -->|pre-election| E26[Sept 2026\nValet]
+    Hamas["55 MSEK\nHamas-linked payment\n[A2 unverified]"] --> HD10464
+    Afghanistan["14 BSEK\nAfghanistan failure"] --> HD10464
+    HD10464["HD10464\nWiechel SD\nAvveckla Sida"] -->|answer by| BESV["2026-05-26\nFloor debate"]
+    BESV -->|pre-election| E26["Sept 2026\nValet"]
     style HD10464 fill:#ff006e,stroke:#ff006e,color:#fff
     style BESV fill:#ffbe0b,stroke:#ffbe0b,color:#000
     style E26 fill:#00d9ff,stroke:#00d9ff,color:#000

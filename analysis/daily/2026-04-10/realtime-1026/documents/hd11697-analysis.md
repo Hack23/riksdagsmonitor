@@ -30,7 +30,7 @@ graph LR
     A[HD11697] --> B{{Sensitivity}}
     B -->|PUBLIC| E[PUBLIC Level]
     A --> G{{Domain}}
-    G --> H[Agriculture / Rural (AGR)]
+    G --> H["Agriculture / Rural (AGR)"]
     A --> I{{Urgency}}
     I -->|ROUTINE| M[ROUTINE processing]
     style E fill:#4CAF50,color:#FFFFFF

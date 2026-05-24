@@ -40,9 +40,9 @@
 ```mermaid
 %%{init: {"theme": "dark"}}%%
 quadrantChart
-    title Media Frame Map — Prominence vs. Sentiment
-    x-axis Negative Framing --> Positive Framing
-    y-axis Low Media Prominence --> High Media Prominence
+    title "Media Frame Map — Prominence vs. Sentiment"
+ x-axis Negative Framing --> Positive Framing
+ y-axis Low Media Prominence --> High Media Prominence
     quadrant-1 Prominent positive coverage
     quadrant-2 Prominent negative coverage
     quadrant-3 Low-prominence negative
@@ -51,8 +51,6 @@ quadrantChart
     Privacy Concern Frame: [0.35, 0.55]
     EU Compliance Frame: [0.6, 0.35]
     Election Timing Frame: [0.4, 0.5]
-    style Financial Safety Frame fill:#00d9ff,color:#0a0e27,stroke:#00d9ff
-    style Privacy Concern Frame fill:#ff006e,color:#fff,stroke:#ff006e
 ```
 
 ## Editorial Positioning Predictions

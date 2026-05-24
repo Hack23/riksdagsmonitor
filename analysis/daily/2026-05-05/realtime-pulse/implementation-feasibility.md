@@ -45,18 +45,13 @@
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
     title Implementation Feasibility vs. Political Will
-    x-axis Low Political Will --> High Political Will
-    y-axis Low Feasibility --> High Feasibility
+ x-axis Low Political Will --> High Political Will
+ y-axis Low Feasibility --> High Feasibility
     HD03255 FI mandate: [0.80, 0.78]
     KU39 lobbying register: [0.70, 0.45]
     HD03246 youth crime: [0.85, 0.55]
     MSB preparedness: [0.65, 0.50]
     Forestry oversight: [0.50, 0.40]
-    style HD03255 FI mandate fill:#00d9ff,stroke:#00d9ff
-    style HD03246 youth crime fill:#ffbe0b,stroke:#ffbe0b
-    style KU39 lobbying register fill:#ffbe0b,stroke:#ffbe0b
-    style MSB preparedness fill:#ffbe0b,stroke:#ffbe0b
-    style Forestry oversight fill:#ff006e,stroke:#ff006e
 ```
 
 

@@ -68,14 +68,14 @@
 
 ```mermaid
 quadrantChart
-    title SWOT Analysis — Tidökoalitionen Spring 2026
-    x-axis Internal --> External
-    y-axis Negative (W/T) --> Positive (S/O)
+    title "SWOT Analysis — Tidökoalitionen Spring 2026"
+ x-axis Internal --> External
+ y-axis Negative W/T --> Positive S/O
     quadrant-1 "Opportunities"
     quadrant-2 "Strengths"
     quadrant-3 "Weaknesses"
     quadrant-4 "Threats"
-    S1 Law&Order Coherence: [0.2, 0.9]
+    "S1 Law&Order Coherence": [0.2, 0.9]
     S2 Budget Delivered: [0.15, 0.85]
     S3 Energy Reform: [0.25, 0.75]
     O1 Recovery Narrative: [0.75, 0.85]
@@ -85,13 +85,4 @@ quadrantChart
     T1 Opposition Unity: [0.8, 0.2]
     T3 Climate Gap: [0.75, 0.25]
 
-    style S1 fill:#1B5E20,color:#FFFFFF
-    style S2 fill:#1B5E20,color:#FFFFFF
-    style S3 fill:#1B5E20,color:#FFFFFF
-    style O1 fill:#0D47A1,color:#FFFFFF
-    style O2 fill:#0D47A1,color:#FFFFFF
-    style W1 fill:#B71C1C,color:#FFFFFF
-    style W3 fill:#B71C1C,color:#FFFFFF
-    style T1 fill:#E65100,color:#FFFFFF
-    style T3 fill:#E65100,color:#FFFFFF
 ```

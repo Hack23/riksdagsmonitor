@@ -49,9 +49,9 @@ Most critical interaction: **S Strength (legal argument) + SD Opportunity (voter
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title SWOT Strategic Quadrant — HD024099
-    x-axis "Negative (Weakness/Threat)" --> "Positive (Strength/Opportunity)"
-    y-axis "Internal" --> "External"
+    title "SWOT Strategic Quadrant — HD024099"
+ x-axis "Negative Weakness/Threat" --> "Positive Strength/Opportunity"
+ y-axis "Internal" --> "External"
     quadrant-1 Strengths
     quadrant-2 Opportunities
     quadrant-3 Weaknesses
@@ -61,9 +61,4 @@ quadrantChart
     Oppositional Optics: [0.25, 0.75]
     Fast Timeline: [0.2, 0.15]
     Chapter10Reform: [0.8, 0.25]
-    style "Legal Argument" fill:#00d9ff
-    style "SD Vulnerability" fill:#00d9ff
-    style "Oppositional Optics" fill:#ff006e
-    style "Fast Timeline" fill:#ff006e
-    style "Chapter10Reform" fill:#ffbe0b
 ```

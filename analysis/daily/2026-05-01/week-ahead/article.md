@@ -172,6 +172,7 @@ mindmap
       Coalition pre-positioning
     style root fill:#ff006e,color:#fff
 
+```
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/intelligence-assessment.md -->
 
@@ -1039,11 +1040,11 @@ The 40-year trend shows a migration policy cycle: liberalization → crisis → 
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0"}}}%%
 timeline
     title Swedish Migration Policy 40-Year Arc
-    section 1986-1994 : Carlsson Government : Original UtlL 1989:529
-    section 1994-2006 : Persson Government : Managed generosity UtlL 2005:716
-    section 2006-2014 : Reinfeldt Alliance : Maximum openness — FP driver
-    section 2015-2022 : Löfven/Andersson S : Reluctant restriction 2016:752
-    section 2022-2026 : Tidöalliansen : Structural restriction HD03262-65
+    1986-1994 : Carlsson Government : Original UtlL 1989:529
+    1994-2006 : Persson Government : Managed generosity UtlL 2005:716
+    2006-2014 : Reinfeldt Alliance : Maximum openness — FP driver
+    2015-2022 : Löfven/Andersson S : Reluctant restriction 2016:752
+    2022-2026 : Tidöalliansen : Structural restriction HD03262-65
 ```
 
 ## Comparative International

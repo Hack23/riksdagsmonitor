@@ -82,13 +82,17 @@
 **Watch dimensions**: Environmental (HC03203/HC03168 tension) + Economic (household debt risk)
 
 ```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
-radar
-  title PESTLE Risk Intensity (1=Low, 5=Critical)
-  Political: 5
-  Economic: 3
-  Social: 4
-  Technological: 3
-  Legal: 4
-  Environmental: 3
+flowchart LR
+    unsupported["⚠️ Mermaid radar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: radar
+%% original-source:
+%% %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+%% radar
+%%   title PESTLE Risk Intensity (1=Low, 5=Critical)
+%%   Political: 5
+%%   Economic: 3
+%%   Social: 4
+%%   Technological: 3
+%%   Legal: 4
+%%   Environmental: 3
 ```

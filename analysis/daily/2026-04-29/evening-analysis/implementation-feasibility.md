@@ -79,13 +79,13 @@
 ```mermaid
 %%{init: {"theme": "base"}}%%
 quadrantChart
-    title Implementation: Feasibility vs Political Priority
-    x-axis Low Feasibility --> High Feasibility
-    y-axis Low Political Priority --> High Political Priority
-    quadrant-1 High priority, low feasibility (risky)
-    quadrant-2 High priority, high feasibility (deliver)
-    quadrant-3 Low priority, low feasibility (deprioritise)
-    quadrant-4 Low priority, high feasibility (easy wins)
+    title "Implementation: Feasibility vs Political Priority"
+ x-axis Low Feasibility --> High Feasibility
+ y-axis Low Political Priority --> High Political Priority
+    quadrant-1 High priority, low feasibility risky
+    quadrant-2 High priority, high feasibility deliver
+    quadrant-3 Low priority, low feasibility deprioritise
+    quadrant-4 Low priority, high feasibility easy wins
     Transport Plan: [0.25, 0.75]
     Citizenship Law: [0.3, 0.8]
     Critical Infrastructure: [0.7, 0.85]

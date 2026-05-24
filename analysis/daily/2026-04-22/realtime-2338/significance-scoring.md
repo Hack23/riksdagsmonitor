@@ -67,9 +67,6 @@ gantt
     HD03246 Unga lagöverträdare [A1] :crit, 0, 70
     HD01KU33 Husrannsakan secrecy [A1] :crit, 0, 67
 
-    style HD10444 fill:#c62828
-    style HD01FiU48 fill:#e65100
-    style HD10443 fill:#b71c1c
 ```
 
 ---

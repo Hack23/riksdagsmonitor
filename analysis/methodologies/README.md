@@ -511,10 +511,10 @@ quadrantChart
     title 🎯 POLITICAL SWOT STRATEGIC QUADRANT
     x-axis Internal Weaknesses --> Internal Strengths
     y-axis External Threats --> External Opportunities
-    quadrant-1 SO Strategies (Leverage)
-    quadrant-2 WO Strategies (Improve)
-    quadrant-3 WT Strategies (Defend)
-    quadrant-4 ST Strategies (Diversify)
+    quadrant-1 SO Strategies — Leverage
+    quadrant-2 WO Strategies — Improve
+    quadrant-3 WT Strategies — Defend
+    quadrant-4 ST Strategies — Diversify
 ```
 
 ---

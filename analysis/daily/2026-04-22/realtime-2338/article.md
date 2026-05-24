@@ -187,9 +187,9 @@ On deportation (HD024095) and medical care (HD024094), Centerpartiet is attempti
 
 ```mermaid
 quadrantChart
-    title Signal vs. Urgency — Realtime Monitor 2026-04-22
-    x-axis Low Urgency --> High Urgency
-    y-axis Low Signal --> High Signal
+    title "Signal vs. Urgency — Realtime Monitor 2026-04-22"
+ x-axis Low Urgency --> High Urgency
+ y-axis Low Signal --> High Signal
     quadrant-1 Monitor
     quadrant-2 Act Now
     quadrant-3 Deprioritise
@@ -204,9 +204,6 @@ quadrantChart
     HD03246: [0.45, 0.65]
     HD01KU33: [0.40, 0.60]
 
-    style HD10444 fill:#c62828,color:#fff
-    style HD01FiU48 fill:#e65100,color:#fff
-    style HD10443 fill:#b71c1c,color:#fff
 ```
 
 ### AI-Recommended Article Metadata
@@ -360,9 +357,6 @@ gantt
     HD03246 Unga lagöverträdare [A1] :crit, 0, 70
     HD01KU33 Husrannsakan secrecy [A1] :crit, 0, 67
 
-    style HD10444 fill:#c62828
-    style HD01FiU48 fill:#e65100
-    style HD10443 fill:#b71c1c
 ```
 
 ---
@@ -1308,24 +1302,23 @@ The dominant cross-SWOT pattern is **W1/T1 convergence**: the S accountability o
 
 ```mermaid
 quadrantChart
-    title SWOT Strategic Position — Kristersson Government 2026-04-22
-    x-axis Weakness --> Strength
-    y-axis Threat --> Opportunity
-    quadrant-1 Leverage (SO)
-    quadrant-2 Develop (WO)
-    quadrant-3 Defend (WT)
-    quadrant-4 Monitor (ST)
-    Energy narrative (S1+O1): [0.85, 0.82]
-    Legislative productivity (S2): [0.78, 0.72]
-    Ukraine solidarity (O2): [0.70, 0.88]
-    HD01FiU48 enacted (S1): [0.90, 0.60]
-    Accountability offensive (W1): [0.12, 0.18]
-    Employer contribution scandal (W2): [0.15, 0.25]
-    Social dumping (W3): [0.20, 0.35]
-    Climate credibility (T2): [0.30, 0.10]
-    Housing segregation (T3): [0.35, 0.20]
+    title "SWOT Strategic Position — Kristersson Government 2026-04-22"
+ x-axis Weakness --> Strength
+ y-axis Threat --> Opportunity
+    quadrant-1 Leverage SO
+    quadrant-2 Develop WO
+    quadrant-3 Defend WT
+    quadrant-4 Monitor ST
+    "Energy narrative (S1+O1)": [0.85, 0.82]
+    "Legislative productivity (S2)": [0.78, 0.72]
+    "Ukraine solidarity (O2)": [0.70, 0.88]
+    "HD01FiU48 enacted (S1)": [0.90, 0.60]
+    "Accountability offensive (W1)": [0.12, 0.18]
+    "Employer contribution scandal (W2)": [0.15, 0.25]
+    "Social dumping (W3)": [0.20, 0.35]
+    "Climate credibility (T2)": [0.30, 0.10]
+    "Housing segregation (T3)": [0.35, 0.20]
 
-    style Energy fill:#2e7d32,color:#fff
 ```
 
 ## Threat Analysis
@@ -1697,8 +1690,8 @@ gantt
 ```mermaid
 quadrantChart
     title Media Framing Risk vs. Coalition Electoral Impact
-    x-axis Low Risk --> High Risk
-    y-axis Low Impact --> High Impact
+ x-axis Low Risk --> High Risk
+ y-axis Low Impact --> High Impact
     quadrant-1 Manage proactively
     quadrant-2 Crisis response needed
     quadrant-3 Monitor passively
@@ -1706,7 +1699,7 @@ quadrantChart
     HD10444 employer contributions: [0.7, 0.8]
     HD10442 eating disorder: [0.65, 0.75]
     HD10446 false death records: [0.8, 0.8]
-    HD01FiU48 fuel cut (positive): [0.2, 0.6]
+    "HD01FiU48 fuel cut (positive)": [0.2, 0.6]
     Energy legislation: [0.2, 0.4]
     HD03246 youth crime reform: [0.3, 0.5]
 ```

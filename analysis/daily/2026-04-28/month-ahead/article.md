@@ -302,9 +302,9 @@ pie title Priority Distribution May 2026
 
 ```mermaid
 quadrantChart
-    title Significance vs Urgency — May 2026 Documents
-    x-axis "Low Urgency" --> "High Urgency"
-    y-axis "Low Significance" --> "High Significance"
+    title "Significance vs Urgency — May 2026 Documents"
+ x-axis "Low Urgency" --> "High Urgency"
+ y-axis "Low Significance" --> "High Significance"
     quadrant-1 Act Now
     quadrant-2 Plan Strategically
     quadrant-3 Monitor
@@ -317,10 +317,6 @@ quadrantChart
     HD10451: [0.7, 0.62]
     HD11752: [0.4, 0.52]
     HD11753: [0.4, 0.52]
-    style HD01JuU10 fill:#ff006e
-    style HD10449 fill:#ffbe0b
-    style HD10450 fill:#00d9ff
-    style HD024099 fill:#7c3aed
 ```
 
 ## Per-document intelligence
@@ -1075,9 +1071,9 @@ xychart-beta
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map — Probability vs Impact
-    x-axis "Low Probability" --> "High Probability"
-    y-axis "Low Impact" --> "High Impact"
+    title "Risk Heat Map — Probability vs Impact"
+ x-axis "Low Probability" --> "High Probability"
+ y-axis "Low Impact" --> "High Impact"
     quadrant-1 Critical
     quadrant-2 Strategic
     quadrant-3 Monitor
@@ -1089,10 +1085,6 @@ quadrantChart
     R5-LantmäteriDelay: [0.20, 0.40]
     R6-UkraineEscalation: [0.20, 0.60]
     R7-CorpCrimeCoalition: [0.35, 0.50]
-    style R1-SDAmendment fill:#ff006e
-    style R2-MediaStorm fill:#ffbe0b
-    style R3-CentreSignal fill:#ff006e
-    style R4-SickPayPressure fill:#ffbe0b
 ```
 
 ### Cascading Risk Chains
@@ -1167,9 +1159,9 @@ The May 2026 month presents a classic political **peak-and-vulnerability** patte
 
 ```mermaid
 quadrantChart
-    title SWOT Priority Matrix — Government Position
-    x-axis "Internal Factor" --> "External Factor"
-    y-axis "Risk/Weakness" --> "Strength/Opportunity"
+    title "SWOT Priority Matrix — Government Position"
+ x-axis "Internal Factor" --> "External Factor"
+ y-axis "Risk/Weakness" --> "Strength/Opportunity"
     quadrant-1 Leverageable
     quadrant-2 Watch
     quadrant-3 Address
@@ -1181,12 +1173,6 @@ quadrantChart
     SDAmendmentRisk: [0.8, 0.25]
     SInterpellations: [0.85, 0.30]
     CPartySignal: [0.9, 0.35]
-    style JusticeCluster fill:#059669
-    style SD-Alignment fill:#059669
-    style InfrastructureGap fill:#dc2626
-    style SickPayGap fill:#dc2626
-    style SDAmendmentRisk fill:#d97706
-    style SInterpellations fill:#d97706
 ```
 
 ## Threat Analysis
@@ -1616,7 +1602,6 @@ pie title Priority Tier Distribution
     "P2 Significant (3)" : 3
     "P3 Monitoring (3)" : 3
     "P4 Routine (4)" : 4
-    style P0 fill:#ff006e
 ```
 
 ```mermaid

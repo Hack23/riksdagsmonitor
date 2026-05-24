@@ -31,17 +31,14 @@ Named individuals: Adrian Magnusson (S, MP), Johan Britz (L, Minister) — both 
 
 ```mermaid
 quadrantChart
-  title Political Positioning — HD10475 ILO Interpellation
-  x-axis National Sovereignty --> Multilateral Engagement
-  y-axis Market Flexibility --> Worker Protection
-  quadrant-1 "Labor Multilateralism (S position)"
+  title "Political Positioning — HD10475 ILO Interpellation"
+ x-axis National Sovereignty --> Multilateral Engagement
+ y-axis Market Flexibility --> Worker Protection
+  quadrant-1 "Labor Multilateralism S position"
   quadrant-2 "Protectionist Labor"
   quadrant-3 "Market/Sovereignty"
   quadrant-4 "Technocratic Multilateral"
-  "S (Interpellant)": [0.8, 0.85]
-  "L Minister (Expected)": [0.65, 0.6]
-  "Tidö Coalition (aggregate)": [0.45, 0.45]
-  style "S (Interpellant)" color:#e0e0e0
-  style "L Minister (Expected)" color:#e0e0e0
-  style "Tidö Coalition (aggregate)" color:#e0e0e0
+ "#quot;S (Interpellant)#quot;": [0.8, 0.85]
+ "#quot;L Minister (Expected)#quot;": [0.65, 0.6]
+ "#quot;Tidö Coalition (aggregate)#quot;": [0.45, 0.45]
 ```

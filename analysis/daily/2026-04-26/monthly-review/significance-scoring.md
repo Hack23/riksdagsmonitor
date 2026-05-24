@@ -38,19 +38,19 @@ Perturbing each dimension by ±1:
 
 ```mermaid
 quadrantChart
-  title Significance — Decisional Impact vs Implementation Weight
-  x-axis "Implementation Weight (1–5)" 1 --> 5
-  y-axis "Decisional Impact (1–5)" 1 --> 5
+  title "Significance — Decisional Impact vs Implementation Weight"
+ x-axis "Implementation Weight 1–5" 1 --> 5
+ y-axis "Decisional Impact 1–5" 1 --> 5
   quadrant-1 High Impact + High Implementation
   quadrant-2 High Impact Only
   quadrant-3 Low Impact Low Implementation
   quadrant-4 High Implementation Only
-  HD01FiU48: [0.80, 1.00]
-  HD03100: [0.80, 1.00]
+  HD01FiU48: [0.80, 1]
+  HD03100: [0.80, 1]
   HD01SoU25: [0.80, 0.80]
   HD01JuU10: [0.80, 0.80]
   HD01JuU31: [0.80, 0.80]
-  UFöU3: [0.60, 1.00]
+  UFöU3: [0.60, 1]
   HD03240: [0.80, 0.80]
   HD03252: [0.80, 0.60]
   HD03253: [0.80, 0.60]

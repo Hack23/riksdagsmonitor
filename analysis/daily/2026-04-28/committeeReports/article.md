@@ -2122,7 +2122,7 @@ graph TD
 ---
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {"'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#0a0e27', 'tertiaryColor': '#1a1e3d'"}}}%%
 graph TD
     A["🏛️ דוחות ועדה<br/>Riksmöte 2024/25"] --> B["💰 HC01FiU20<br/>הנחיות מדיניות פיסקלית"]
     A --> C["🏦 HC01FiU24<br/>מדיניות מוניטרית Riksbanken"]
@@ -2130,7 +2130,7 @@ graph TD
     A --> E["🎟️ HC01SoU29<br/>כרטיס פנאי לצעירים"]
     A --> F["📋 HC01SkU18<br/>רפורמות מס F"]
     B --> G["תמג 1.9% (2025)<br/>אבטלה 8.7%"]
-    B --> H["תיקון מכסים אמריקניים<br/>תחזית תמ\"ג כלפי מטה"]
+    B --> H["תיקון מכסים אמריקניים<br/>תחזית תמ#quot;ג כלפי מטה"]
     C --> I["KPIF 1.9% ממוצע<br/>הורדות ריבית מוצדקות"]
     D --> J["אחריות ממשלתית<br/>ביקורת חוקתית"]
     style A fill:#0a0e27,stroke:#00d9ff

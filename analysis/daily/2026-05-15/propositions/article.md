@@ -273,8 +273,6 @@ xychart-beta
   x-axis [HD03262, HD03250, HD03267, HD03264, HD03261]
   y-axis "DIW Score" 0 --> 100
   bar [81, 72, 56, 49, 42]
-  style HD03262 fill:#ff006e
-  style HD03250 fill:#00d9ff
 ```
 
 ### Totalt DIW-aggregat
@@ -1427,9 +1425,9 @@ graph LR
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e'}}}%%
 quadrantChart
-  title Propositionspaket: Politisk kontroversnivå vs Implementationskomplexitet
-  x-axis "Låg kontroversnivå" --> "Hög kontroversnivå"
-  y-axis "Låg implementationskomplexitet" --> "Hög implementationskomplexitet"
+  title "Propositionspaket: Politisk kontroversnivå vs Implementationskomplexitet"
+ x-axis "Låg kontroversnivå" --> "Hög kontroversnivå"
+ y-axis "Låg implementationskomplexitet" --> "Hög implementationskomplexitet"
   quadrant-1 Kritisk granskning krävs
   quadrant-2 Genomföranderisker
   quadrant-3 Rutinlagstiftning
@@ -1439,8 +1437,6 @@ quadrantChart
   HD03267 Säkerhetshot: [0.75, 0.45]
   HD03264 Vandelskrav: [0.80, 0.50]
   HD03261 Skatteverket: [0.55, 0.45]
-  style HD03262 color:#ff006e
-  style HD03250 color:#00d9ff
 ```
 
 ## Cross-Reference Map

@@ -41,9 +41,9 @@ Anti-corruption defeat (R5) → combined with corporate crime gap (R6) → S run
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
 quadrantChart
-    title Risk Heatmap — Likelihood vs Impact
-    x-axis Low Impact --> High Impact
-    y-axis Low Likelihood --> High Likelihood
+    title "Risk Heatmap — Likelihood vs Impact"
+ x-axis Low Impact --> High Impact
+ y-axis Low Likelihood --> High Likelihood
     quadrant-1 Critical
     quadrant-2 Monitor Closely
     quadrant-3 Low Priority
@@ -56,8 +56,4 @@ quadrantChart
     R6 Corporate Crime Gap: [0.60, 0.60]
     R7 KU20 Accountability: [0.80, 0.40]
     R8 Sickness Insurance: [0.60, 0.40]
-    style R1 Fiscal Vote Defeat fill:#ff006e
-    style R2 L Defection fill:#ff006e
-    style R3 US Tariff GDP fill:#ffbe0b
-    style R4 Banking Capital Crunch fill:#ffbe0b
 ```

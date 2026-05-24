@@ -30,7 +30,7 @@ graph LR
     A[HD11696] --> B{{Sensitivity}}
     B -->|PUBLIC| E[PUBLIC Level]
     A --> G{{Domain}}
-    G --> H[Foreign Affairs (FOR)]
+    G --> H["Foreign Affairs (FOR)"]
     A --> I{{Urgency}}
     I -->|ROUTINE| M[ROUTINE processing]
     style E fill:#4CAF50,color:#FFFFFF

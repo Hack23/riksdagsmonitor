@@ -30,7 +30,7 @@ graph LR
     A[HD11700] --> B{{Sensitivity}}
     B -->|PUBLIC| E[PUBLIC Level]
     A --> G{{Domain}}
-    G --> H[Labour Market (LAB)]
+    G --> H["Labour Market (LAB)"]
     A --> I{{Urgency}}
     I -->|ROUTINE| M[ROUTINE processing]
     style E fill:#4CAF50,color:#FFFFFF

@@ -63,3 +63,5 @@ flowchart LR
 style Coalition fill:#1a1e3d,stroke:#00d9ff
 style Opposition fill:#1a1e3d,stroke:#ff006e
 style Vote fill:#ffbe0b,color:#0a0e27
+
+```

@@ -26,11 +26,15 @@
 ## Priority Ranking
 
 ```mermaid
-bar
-    title Document Significance Scores (out of 40)
-    x-axis [KU Granskning, KU-Svantesson, KU-Wallström, IP-Women Shelters, CU-Property ID, CU-Condo Reg, IP-Wages, CU-Guardianship, KU-SearchSeizure, KU-Media, Mass Committee]
-    y-axis "Score" 0 --> 40
-    bar [38, 37, 32, 28, 26, 26, 25, 24, 22, 21, 21]
+flowchart LR
+    unsupported["⚠️ Mermaid bar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: bar
+%% original-source:
+%% bar
+%%     title Document Significance Scores (out of 40)
+%%     x-axis [KU Granskning, KU-Svantesson, KU-Wallström, IP-Women Shelters, CU-Property ID, CU-Condo Reg, IP-Wages, CU-Guardianship, KU-SearchSeizure, KU-Media, Mass Committee]
+%%     y-axis "Score" 0 --> 40
+%%     bar [38, 37, 32, 28, 26, 26, 25, 24, 22, 21, 21]
 ```
 
 ---

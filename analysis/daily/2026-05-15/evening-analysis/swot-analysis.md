@@ -9,13 +9,13 @@
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'edgeLabelBackground': '#0a0e27', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title SWOT-matris: Tidökoalitionen 2026-05-15
-    x-axis Interna faktorer --> Externa faktorer
-    y-axis Negativa faktorer --> Positiva faktorer
-    quadrant-1 Möjligheter (extern+positiv)
-    quadrant-2 Styrkor (intern+positiv)
-    quadrant-3 Svagheter (intern+negativ)
-    quadrant-4 Hot (extern+negativ)
+    title "SWOT-matris: Tidökoalitionen 2026-05-15"
+ x-axis Interna faktorer --> Externa faktorer
+ y-axis Negativa faktorer --> Positiva faktorer
+    quadrant-1 Möjligheter extern+positiv
+    quadrant-2 Styrkor intern+positiv
+    quadrant-3 Svagheter intern+negativ
+    quadrant-4 Hot extern+negativ
     KU34 abort 84% stöd: [0.25, 0.82]
     Migrationsrestriktioner SD-kärna: [0.20, 0.75]
     Ekonomisk stabilitet WEO: [0.30, 0.70]

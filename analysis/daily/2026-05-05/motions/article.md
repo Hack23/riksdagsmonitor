@@ -153,9 +153,9 @@ Both proposition clusters share a common structural vulnerability: **EU and inte
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Parliamentary Positions on Both Propositions (seats vs opposition strength)
-    x-axis "Pro-proposition" --> "Anti-proposition"
-    y-axis "Few seats" --> "Many seats"
+    title "Parliamentary Positions on Both Propositions (seats vs opposition strength)"
+ x-axis "Pro-proposition" --> "Anti-proposition"
+ y-axis "Few seats" --> "Many seats"
     quadrant-1 Low-impact opposition
     quadrant-2 High-impact opposition
     quadrant-3 Low-impact support
@@ -168,11 +168,6 @@ quadrantChart
     V-JuU: [0.9, 0.22]
     MP-JuU: [0.85, 0.17]
     M-Gov: [0.1, 0.55]
-    style S-Forestry fill:#ff6b35,stroke:#ff006e
-    style V-Forestry fill:#8b0000,stroke:#ff006e
-    style MP-Forestry fill:#228b22,stroke:#00d9ff
-    style SD-Forestry fill:#ffbe0b,stroke:#0a0e27
-    style C-Both fill:#00d9ff,stroke:#0a0e27
 ```
 
 ## Intelligence Assessment — Key Judgments
@@ -232,6 +227,7 @@ flowchart LR
     style KJ4 fill:#1a1e3d,stroke:#ffbe0b
     style KJ5 fill:#1a1e3d,stroke:#ffbe0b
 
+```
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/significance-scoring.md -->
 
@@ -315,8 +311,8 @@ xychart-beta
     y-axis "Composite Score" 0 --> 10
     bar [8.6, 8.2, 7.8, 7.5, 6.8, 6.5, 5.8, 5.5]
     line [8.6, 8.2, 7.8, 7.5, 6.8, 6.5, 5.8, 5.5]
-    style bar fill:#00d9ff
 
+```
 ## Per-document intelligence
 
 ### HD024141
@@ -642,6 +638,7 @@ flowchart LR
     style Ct fill:#1a1e3d,stroke:#00d9ff
     style SD fill:#1a1e3d,stroke:#ffbe0b
 
+```
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/coalition-mathematics.md -->
 
@@ -719,6 +716,7 @@ xychart-beta
     bar [165, 165, 149]
     line [69, 163, 163]
 
+```
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/voter-segmentation.md -->
 
@@ -796,6 +794,7 @@ pie title Voter Segment Distribution
     "Youth first-time" : 4
     "Other" : 14
 
+```
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/forward-indicators.md -->
 
@@ -842,6 +841,7 @@ gantt
     section EU
         FI-10 EC Habitats report : 2027-03-01, 14d
 
+```
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/scenario-analysis.md -->
 
@@ -915,6 +915,7 @@ flowchart TD
     style JC fill:#1a1e3d,stroke:#00d9ff
     style FB fill:#1a1e3d,stroke:#00d9ff
 
+```
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/election-2026-analysis.md -->
 
@@ -1023,6 +1024,7 @@ quadrantChart
     R-05 CBD 30x30: [0.55, 0.80]
     R-06 Opposition fragmentation: [0.75, 0.55]
 
+```
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/swot-analysis.md -->
 
@@ -1097,6 +1099,7 @@ quadrantChart
     Government cohesion: [0.20, 0.65]
     C co-optation risk: [0.35, 0.70]
 
+```
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/threat-analysis.md -->
 
@@ -1143,6 +1146,7 @@ flowchart TD
     style F fill:#1a1e3d,stroke:#00d9ff
     style H fill:#1a1e3d,stroke:#ff006e
 
+```
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/historical-parallels.md -->
 
@@ -1198,6 +1202,7 @@ timeline
     2024 : EU Nature Restoration Law Reg. 2024/1991 — new binding constraint
     2026 : HD03242 + HD03246 proposed — all historical lessons applicable
 
+```
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/comparative-international.md -->
 
@@ -1330,6 +1335,7 @@ flowchart LR
     style FI fill:#1a1e3d,stroke:#00d9ff
     style JI fill:#1a1e3d,stroke:#ffbe0b
 
+```
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/media-framing-analysis.md -->
 
@@ -1485,12 +1491,8 @@ pie title Motion Distribution by Party
     "SD (1 motion)" : 1
     "C (2 motions)" : 2
     "MP (2 motions)" : 2
-    style V fill:#8b0000
-    style S fill:#ff6b35
-    style SD fill:#ffbe0b
-    style C fill:#00d9ff
-    style MP fill:#228b22
 
+```
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/cross-reference-map.md -->
 
@@ -1556,6 +1558,7 @@ flowchart TD
     style P2 fill:#1a1e3d,stroke:#ff006e
     style F fill:#1a1e3d,stroke:#00d9ff
 
+```
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/motions/methodology-reflection.md -->
 

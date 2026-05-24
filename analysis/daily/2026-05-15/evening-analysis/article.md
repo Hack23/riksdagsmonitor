@@ -1064,8 +1064,8 @@ pie title "Valprognos september 2026 (SOM-baserad)"
 %%{init: {'theme': 'dark'}}%%
 quadrantChart
     title Riskmatris 2026-05-15
-    x-axis Låg sannolikhet --> Hög sannolikhet
-    y-axis Låg konsekvens --> Hög konsekvens
+ x-axis Låg sannolikhet --> Hög sannolikhet
+ y-axis Låg konsekvens --> Hög konsekvens
     quadrant-1 Kritisk risk - Hantera omedelbart
     quadrant-2 Bevaka intensivt
     quadrant-3 Acceptabel risk
@@ -1077,7 +1077,7 @@ quadrantChart
     R-7 Oppositionspakt: [0.50, 0.50]
     R-5 e-legitimation: [0.30, 0.50]
     R-8 Transparens Lagrådet: [0.40, 0.50]
-    R-2 Ryssland angrepp: [0.10, 1.00]
+    R-2 Ryssland angrepp: [0.10, 1]
 ```
 
 ### Riskmildringsåtgärder
@@ -1102,13 +1102,13 @@ quadrantChart
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'edgeLabelBackground': '#0a0e27', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title SWOT-matris: Tidökoalitionen 2026-05-15
-    x-axis Interna faktorer --> Externa faktorer
-    y-axis Negativa faktorer --> Positiva faktorer
-    quadrant-1 Möjligheter (extern+positiv)
-    quadrant-2 Styrkor (intern+positiv)
-    quadrant-3 Svagheter (intern+negativ)
-    quadrant-4 Hot (extern+negativ)
+    title "SWOT-matris: Tidökoalitionen 2026-05-15"
+ x-axis Interna faktorer --> Externa faktorer
+ y-axis Negativa faktorer --> Positiva faktorer
+    quadrant-1 Möjligheter extern+positiv
+    quadrant-2 Styrkor intern+positiv
+    quadrant-3 Svagheter intern+negativ
+    quadrant-4 Hot extern+negativ
     KU34 abort 84% stöd: [0.25, 0.82]
     Migrationsrestriktioner SD-kärna: [0.20, 0.75]
     Ekonomisk stabilitet WEO: [0.30, 0.70]
@@ -1215,12 +1215,12 @@ quadrantChart
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
 quadrantChart
     title SWOT Kvantitativ Matris
-    x-axis Intern --> Extern
-    y-axis Negativ --> Positiv
-    quadrant-1 Möjligheter (extern+)
-    quadrant-2 Styrkor (intern+)
-    quadrant-3 Svagheter (intern-)
-    quadrant-4 Hot (extern-)
+ x-axis Intern --> Extern
+ y-axis Negativ --> Positiv
+    quadrant-1 Möjligheter extern+
+    quadrant-2 Styrkor intern+
+    quadrant-3 Svagheter intern-
+    quadrant-4 Hot extern-
     KU34 Aborträtt: [0.15, 0.90]
     Tidömajoritet: [0.20, 0.80]
     JuU39 Bred uppslutning: [0.30, 0.70]
@@ -1466,15 +1466,19 @@ xychart-beta
 ### PESTLE-sammanfattning
 
 ```mermaid
-%%{init: {'theme': 'dark'}}%%
-radar
-    title PESTLE Påverkansnivåer
-    Political  9
-    Economic   6
-    Social     7
-    Technological  5
-    Legal      8
-    Environmental  5
+flowchart LR
+    unsupported["⚠️ Mermaid radar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: radar
+%% original-source:
+%% %%{init: {'theme': 'dark'}}%%
+%% radar
+%%     title PESTLE Påverkansnivåer
+%%     Political  9
+%%     Economic   6
+%%     Social     7
+%%     Technological  5
+%%     Legal      8
+%%     Environmental  5
 ```
 
 ## Historical Parallels

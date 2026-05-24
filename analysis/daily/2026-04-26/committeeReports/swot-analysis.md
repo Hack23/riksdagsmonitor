@@ -52,9 +52,9 @@ The April 2026 committee cluster reveals a coalition in active pre-election legi
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ffbe0b'}}}%%
 quadrantChart
-    title SWOT Matrix — April 2026 Committee Reports
-    x-axis Internal (Weakness) --> Internal (Strength)
-    y-axis External (Threat) --> External (Opportunity)
+    title "SWOT Matrix — April 2026 Committee Reports"
+ x-axis Internal Weakness --> Internal Strength
+ y-axis External Threat --> External Opportunity
     quadrant-1 SO Strategy
     quadrant-2 WO Strategy
     quadrant-3 WT Strategy
@@ -70,9 +70,5 @@ quadrantChart
     Fuel cut permanence pressure: [0.45, 0.20]
     Prison planning conflicts: [0.55, 0.15]
 
-style "Multi-domain delivery" fill:#00d9ff,color:#000000
-style "Police reform gap" fill:#ff006e,color:#ffffff
-style "Electoral positioning" fill:#00d9ff,color:#000000
-style "Fuel cut permanence pressure" fill:#ffbe0b,color:#000000
 ```
 

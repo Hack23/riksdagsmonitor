@@ -54,16 +54,16 @@
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Stakeholder Map: Power vs Support for S Motions
-    x-axis Oppose --> Support
-    y-axis Low Power --> High Power
+    title "Stakeholder Map: Power vs Support for S Motions"
+ x-axis Oppose --> Support
+ y-axis Low Power --> High Power
     quadrant-1 High Power Supporters
     quadrant-2 High Power Opponents
     quadrant-3 Low Power Opponents
     quadrant-4 Low Power Supporters
-    "S Opposition Bloc" [0.90, 0.90]
-    "Government Coalition" [0.10, 0.90]
-    "Energy Industry" [0.60, 0.55]
-    "Municipal Governments" [0.65, 0.50]
-    "Civil Society Gender" [0.85, 0.30]
+    "S Opposition Bloc": [0.90, 0.90]
+    "Government Coalition": [0.10, 0.90]
+    "Energy Industry": [0.60, 0.55]
+    "Municipal Governments": [0.65, 0.50]
+    "Civil Society Gender": [0.85, 0.30]
 ```

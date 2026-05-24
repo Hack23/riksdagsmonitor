@@ -189,9 +189,6 @@ mindmap
       HD01CU30:::low
         EPBD implementation
         Renovation investment
-classDef high fill:#ff006e,stroke:#ff006e,color:#fff
-classDef medium fill:#ff8c00,stroke:#ff8c00,color:#fff
-classDef low fill:#00d9ff,stroke:#00d9ff,color:#000
 ```
 
 ## Intelligence Assessment — Key Judgments
@@ -305,7 +302,6 @@ xychart-beta
     x-axis ["KU34", "CU31", "JuU39", "NU21", "CU30", "KU35", "FiU37", "JuU32", "SoU31", "FiU43"]
     y-axis "DIW Score" 0 --> 10
     bar [8.75, 7.65, 7.35, 6.95, 6.85, 6.45, 6.30, 6.20, 5.95, 5.60]
-style KU34 fill:#ff006e
 ```
 
 ## Per-document intelligence

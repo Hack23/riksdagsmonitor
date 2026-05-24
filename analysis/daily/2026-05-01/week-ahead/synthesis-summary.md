@@ -74,3 +74,5 @@ mindmap
       Two-front migration dilemma
       Coalition pre-positioning
     style root fill:#ff006e,color:#fff
+
+```

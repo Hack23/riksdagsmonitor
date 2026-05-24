@@ -32,13 +32,13 @@ S-party has filed coordinated interpellations (HD10449, HD10450, HD10451, HD1044
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map: Likelihood vs Impact
-    x-axis "Low Likelihood" --> "High Likelihood"
-    y-axis "Low Impact" --> "High Impact"
-    quadrant-1 Critical: Monitor & Mitigate
-    quadrant-2 Significant: Active Management
+    title "Risk Heat Map: Likelihood vs Impact"
+ x-axis "Low Likelihood" --> "High Likelihood"
+ y-axis "Low Impact" --> "High Impact"
+    quadrant-1 Critical Monitor & Mitigate
+    quadrant-2 Significant Active Management
     quadrant-3 Low Priority
-    quadrant-4 Watch: High Probability
+    quadrant-4 Watch High Probability
     "R-01 SD Weapons Law": [0.55, 0.80]
     "R-02 Stambanan Crisis": [0.35, 0.85]
     "R-03 S Barrage": [0.60, 0.55]
@@ -46,7 +46,6 @@ quadrantChart
     "R-08 Wind Culture War": [0.40, 0.55]
     "R-04 Ukraine Delay": [0.25, 0.80]
     "R-07 Prison Legality": [0.20, 0.75]
-    style quadrantChart fill:#0a0e27,color:#e0e0e0
 ```
 
 ## Institutional Risk Assessment

@@ -219,17 +219,17 @@ graph TD
 ```mermaid
 quadrantChart
     title Intelligence Judgment Confidence vs Impact
-    x-axis "Low Confidence" --> "High Confidence"
-    y-axis "Low Impact" --> "High Impact"
-    quadrant-1 Act on (high confidence, high impact)
-    quadrant-2 Investigate (low confidence, high impact)
-    quadrant-3 Monitor (low confidence, low impact)
-    quadrant-4 Accept (high confidence, low impact)
-    "KJ-3 L is swing factor [80%,HIGH]": [0.80, 0.90]
-    "KJ-2 Structural shift [80%,HIGH]": [0.82, 0.75]
-    "KJ-1 Modified package [60%,HIGH]": [0.60, 0.85]
-    "KJ-4 Healthcare delays [65%,MED]": [0.65, 0.50]
-    "KJ-5 S loses election [55%,HIGH]": [0.55, 0.80]
+ x-axis "Low Confidence" --> "High Confidence"
+ y-axis "Low Impact" --> "High Impact"
+    quadrant-1 Act on high confidence, high impact
+    quadrant-2 Investigate low confidence, high impact
+    quadrant-3 Monitor low confidence, low impact
+    quadrant-4 Accept high confidence, low impact
+   "#quot;KJ-3 L is swing factor [80%, HIGH]#quot;": [0.80, 0.90]
+   "#quot;KJ-2 Structural shift [80%, HIGH]#quot;": [0.82, 0.75]
+   "#quot;KJ-1 Modified package [60%, HIGH]#quot;": [0.60, 0.85]
+   "#quot;KJ-4 Healthcare delays [65%, MED]#quot;": [0.65, 0.50]
+   "#quot;KJ-5 S loses election [55%, HIGH]#quot;": [0.55, 0.80]
 ```
 
 ### Dissemination Note
@@ -1283,20 +1283,20 @@ Sweden's GDP growth recovery is modest (~2.1–2.3% 2026). If unemployment rises
 ```mermaid
 quadrantChart
     title SWOT Risk-Opportunity Matrix
-    x-axis "Weakness" --> "Strength"
-    y-axis "Threat" --> "Opportunity"
-    quadrant-1 Leverage (S+O)
-    quadrant-2 Invest/Mitigate (W+O)
-    quadrant-3 Defend (W+T)
-    quadrant-4 Monitor (S+T)
-    "Migration narrative (S1+O1)": [0.75, 0.80]
-    "Defense credibility (S2+O3)": [0.82, 0.72]
-    "ECHR risk (W1+T1)": [0.20, 0.25]
-    "L loyalty (W2+T3)": [0.15, 0.20]
-    "Agency capacity (W3)": [0.25, 0.45]
-    "S counter-narrative (T2)": [0.55, 0.30]
-    "Healthcare (S3+O4)": [0.70, 0.65]
-    "Fiscal strength (S4)": [0.80, 0.55]
+ x-axis "Weakness" --> "Strength"
+ y-axis "Threat" --> "Opportunity"
+    quadrant-1 Leverage S+O
+    quadrant-2 Invest/Mitigate W+O
+    quadrant-3 Defend W+T
+    quadrant-4 Monitor S+T
+   "#quot;Migration narrative (S1+O1)#quot;": [0.75, 0.80]
+   "#quot;Defense credibility (S2+O3)#quot;": [0.82, 0.72]
+   "#quot;ECHR risk (W1+T1)#quot;": [0.20, 0.25]
+   "#quot;L loyalty (W2+T3)#quot;": [0.15, 0.20]
+   "#quot;Agency capacity (W3)#quot;": [0.25, 0.45]
+   "#quot;S counter-narrative (T2)#quot;": [0.55, 0.30]
+   "#quot;Healthcare (S3+O4)#quot;": [0.70, 0.65]
+   "#quot;Fiscal strength (S4)#quot;": [0.80, 0.55]
 ```
 
 ## Threat Analysis
@@ -1774,14 +1774,14 @@ xychart-beta
 ```mermaid
 quadrantChart
     title Frame Strength vs Political Controversy
-    x-axis "Minimal controversy" --> "High controversy"
-    y-axis "Weak framing" --> "Strong framing"
-    quadrant-1 Dominant (fight here)
-    quadrant-2 Contested (manage)
+ x-axis "Minimal controversy" --> "High controversy"
+ y-axis "Weak framing" --> "Strong framing"
+    quadrant-1 Dominant fight here
+    quadrant-2 Contested manage
     quadrant-3 Monitor
     quadrant-4 Narrative anchor
-    "F1 Security/Order": [0.75, 0.80]
-    "F2 Rights/Rule of Law": [0.72, 0.62]
+   "#quot;F1 Security/Order#quot;": [0.75, 0.80]
+   "#quot;F2 Rights/Rule of Law#quot;": [0.72, 0.62]
     "F3 Electoral Theater": [0.55, 0.45]
     "F4 NATO Credibility": [0.20, 0.70]
 ```

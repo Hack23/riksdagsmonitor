@@ -626,7 +626,7 @@ flowchart TD
 
     TC[Family A + B complete<br/>→ produce all 7 Family D files]:::core
 
-    E1[election-2026-analysis<br/>(alias: election-cycle-analysis)]:::step
+    E1["election-2026-analysis<br/>(alias: election-cycle-analysis)"]:::step
     E2[voter-segmentation]:::step
     E3[coalition-mathematics]:::step
     H[historical-parallels]:::step

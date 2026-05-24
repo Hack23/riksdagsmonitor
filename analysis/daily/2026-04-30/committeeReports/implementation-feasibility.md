@@ -47,7 +47,7 @@ KU36 recommendations are not automatically legally binding — they require eith
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
 xychart-beta
     title "Implementation Delivery Risk (1=LOW to 5=HIGH)"
-    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
+    x-axis ["KU36", "JuU9", "NU22", "NU19", "FöU13", "CU37", "SoU33", "JuU46"]
     y-axis "Risk level" 0 --> 5
     bar [4.0, 2.5, 2.5, 2.5, 2.0, 4.5, 1.0, 1.0]
 ```

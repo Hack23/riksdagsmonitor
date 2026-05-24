@@ -48,7 +48,7 @@ CU endorsed **HD01CU41**: exceptions from EU Art and Habitats Directive requirem
 graph TD
     A[Governing Coalition M+SD+KD+L] -->|Supports all 5 bills| B[JuU28 ✅ CU36 ✅ CU41 ✅ FiU39 ✅ FiU40 ✅]
     C[S — Socialdemokraterna] -->|Splits| D[JuU28 ✅ FiU39 ✅ FiU40 ✅ CU41 ✅ but CU36 ❌]
-    E[V — Vänsterpartiet] -->|Opposition on rights] F[JuU28 ❌ CU36 ❌]
+    E[V — Vänsterpartiet] -->|Opposition on rights| F[JuU28 ❌ CU36 ❌]
     G[C — Centerpartiet] -->|Liberal privacy stance| H[JuU28 ❌ CU36 ❌]
     I[MP — Miljöpartiet] -->|Rights + Environment| J[JuU28 ❌ CU36 ❌ CU41 split]
 

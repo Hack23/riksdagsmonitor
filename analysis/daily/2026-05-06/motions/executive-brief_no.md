@@ -41,8 +41,6 @@ timeline
     2026-06-01 : Lagrådet yttrande forventet (PIR LAGRÅDET-246)
     2026-06-08 : Post-Lagrådet C-uttalelse forventet (PIR COALITION-C-JuU)
     2027-03-01 : EU/EK årsrapport om skogbruksderegulering (PIR EU-HABITATS-SE)
-    style 2026-05-04 fill:#1a1e3d,color:#00d9ff
-    style 2026-06-01 fill:#8b0000,color:#ffbe0b
 ```
 
 <!-- source-sha: 83ab95c995e928d2f484c02aef7ab0bee0f03535 -->

@@ -40,6 +40,4 @@ xychart-beta
     x-axis ["HD10493", "HD10492"]
     y-axis "Score" 0 --> 10
     bar [8.2, 7.8]
-    style HD10493 fill:#cc3300
-    style HD10492 fill:#ff6600
 ```

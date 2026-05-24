@@ -66,22 +66,22 @@ flowchart TD
 
   Start --> C_Position["C Position\n(by 2026-06-01)"]
 
-  C_Position --> |C accepts (60%)| SD_Check["SD accepts\nall 10 props?"]
-  C_Position --> |C demands amendment (35%)| Negotiation["Negotiation\nAmendment to HD03262"]
-  C_Position --> |C blocks (5%)| CBlock["C + S + V + MP\nMajority inverted"]
+  C_Position --> |"C accepts (60%)"| SD_Check["SD accepts\nall 10 props?"]
+  C_Position --> |"C demands amendment (35%)"| Negotiation["Negotiation\nAmendment to HD03262"]
+  C_Position --> |"C blocks (5%)"| CBlock["C + S + V + MP\nMajority inverted"]
 
-  SD_Check --> |Yes (90%)| S1["S1: Full Enactment\n35%"]
-  SD_Check --> |No (10%)| S3_alt["Early election risk\n↑ to 15%"]
+  SD_Check --> |"Yes (90%)"| S1["S1: Full Enactment\n35%"]
+  SD_Check --> |"No (10%)"| S3_alt["Early election risk\n↑ to 15%"]
 
-  Negotiation --> |SD accepts (70%)| S2["S2: Partial Enactment\n40%"]
-  Negotiation --> |SD rejects (30%)| S3["S3: Deadlock\n15%"]
+  Negotiation --> |"SD accepts (70%)"| S2["S2: Partial Enactment\n40%"]
+  Negotiation --> |"SD rejects (30%)"| S3["S3: Deadlock\n15%"]
 
   CBlock --> S3
 
   S1 --> |Sept 2026 election\nincumbent bloc wins| S1a["Full implementation\npost-election"]
   S2 --> |Sept 2026 election\nnear-toss| S2a["Amended implementation\nor partial reversal"]
   S3 --> |Early election\nhigh volatility| S3a["Caretaker + new election"]
-  S2a --> |S+C wins (30%)| S4["S4: Post-election Reversal\n10%"]
+  S2a --> |"S+C wins (30%)"| S4["S4: Post-election Reversal\n10%"]
 
   style S1 fill:#004400,color:#aaffaa
   style S2 fill:#1a3300,color:#ccffaa

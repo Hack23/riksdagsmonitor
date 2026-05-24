@@ -38,9 +38,9 @@ Housing benefit recipients are already experiencing housing cost inflation press
 
 ```mermaid
 quadrantChart
-    title Risk Matrix (Likelihood vs Impact)
-    x-axis Low Impact --> High Impact
-    y-axis Low Likelihood --> High Likelihood
+    title "Risk Matrix (Likelihood vs Impact)"
+ x-axis Low Impact --> High Impact
+ y-axis Low Likelihood --> High Likelihood
     quadrant-1 High Likelihood, High Impact
     quadrant-2 High Likelihood, Low Impact
     quadrant-3 Low Likelihood, Low Impact
@@ -52,11 +52,5 @@ quadrantChart
     R2-PBL: [0.50, 0.50]
     R5-FOI: [0.30, 0.25]
 
-    style R1-ECtHR fill:#ff4466,color:#fff
-    style R3-BenefitCliff fill:#ffbe0b,color:#000
-    style R6-Housing fill:#ffbe0b,color:#000
-    style R4-Coalition fill:#00d9ff,color:#000
-    style R2-PBL fill:#9966ff,color:#fff
-    style R5-FOI fill:#00ff88,color:#000
 ```
 

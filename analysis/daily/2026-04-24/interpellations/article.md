@@ -1297,7 +1297,7 @@ Comparative/Nordic frame — Sweden as Nordic outlier on SME-sick-pay buffer.
 
 ```mermaid
 xychart-beta
-  title Expected coverage volume per frame (articles, D0–D7)
+  title "Expected coverage volume per frame (articles, D0–D7)"
   x-axis [D0, D1, D2, D3, D5, D7]
   y-axis "articles" 0 --> 12
   line [2, 5, 7, 6, 3, 2]

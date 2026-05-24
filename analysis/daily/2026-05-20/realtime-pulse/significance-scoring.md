@@ -34,14 +34,13 @@
 ```mermaid
 quadrantChart
     title KU34 DIW Significance
-    x-axis Low Impact --> High Impact
-    y-axis Low Willingness --> High Willingness
+ x-axis Low Impact --> High Impact
+ y-axis Low Willingness --> High Willingness
     quadrant-1 "High Priority"
     quadrant-2 "Potential"
     quadrant-3 "Low Priority"
     quadrant-4 "Monitor"
     KU34: [0.90, 0.95]
-    style KU34 fill:#ff006e,color:#fff
 ```
 
 **Detectability** (D): 1.6/2.0 — High public salience; extensive parliamentary documentation. Full committee text (105.8KB) retrieved. Constitutional significance universally recognized.  

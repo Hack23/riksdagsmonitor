@@ -72,17 +72,17 @@
 ```mermaid
 quadrantChart
     title Intelligence Judgment Confidence vs Impact
-    x-axis "Low Confidence" --> "High Confidence"
-    y-axis "Low Impact" --> "High Impact"
-    quadrant-1 Act on (high confidence, high impact)
-    quadrant-2 Investigate (low confidence, high impact)
-    quadrant-3 Monitor (low confidence, low impact)
-    quadrant-4 Accept (high confidence, low impact)
-    "KJ-3 L is swing factor [80%,HIGH]": [0.80, 0.90]
-    "KJ-2 Structural shift [80%,HIGH]": [0.82, 0.75]
-    "KJ-1 Modified package [60%,HIGH]": [0.60, 0.85]
-    "KJ-4 Healthcare delays [65%,MED]": [0.65, 0.50]
-    "KJ-5 S loses election [55%,HIGH]": [0.55, 0.80]
+ x-axis "Low Confidence" --> "High Confidence"
+ y-axis "Low Impact" --> "High Impact"
+    quadrant-1 Act on high confidence, high impact
+    quadrant-2 Investigate low confidence, high impact
+    quadrant-3 Monitor low confidence, low impact
+    quadrant-4 Accept high confidence, low impact
+   "#quot;KJ-3 L is swing factor [80%, HIGH]#quot;": [0.80, 0.90]
+   "#quot;KJ-2 Structural shift [80%, HIGH]#quot;": [0.82, 0.75]
+   "#quot;KJ-1 Modified package [60%, HIGH]#quot;": [0.60, 0.85]
+   "#quot;KJ-4 Healthcare delays [65%, MED]#quot;": [0.65, 0.50]
+   "#quot;KJ-5 S loses election [55%, HIGH]#quot;": [0.55, 0.80]
 ```
 
 ## Dissemination Note

@@ -1027,18 +1027,18 @@ xychart-beta
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
 quadrantChart
-    title Risk Heat Map (Likelihood vs Impact)
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Heat Map (Likelihood vs Impact)"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 "Critical"
     quadrant-2 "Monitor"
     quadrant-3 "Accept"
     quadrant-4 "Contingency"
-    R-02 Civil defence gap: [0.8, 1.0]
+    R-02 Civil defence gap: [0.8, 1]
     R-01 Unemployment: [0.8, 0.8]
-    R-07 Municipal crisis: [0.6, 1.0]
-    R-03 Coalition fracture: [0.6, 1.0]
-    R-08 Recession: [0.4, 1.0]
+    R-07 Municipal crisis: [0.6, 1]
+    R-03 Coalition fracture: [0.6, 1]
+    R-08 Recession: [0.4, 1]
     R-04 Nordic friction: [0.6, 0.6]
     R-05 Riksbanken SEK: [0.4, 0.8]
     R-06 APL supply: [0.4, 0.8]
@@ -1556,6 +1556,7 @@ flowchart TD
     style G fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
     style H fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
 
+```
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/devils-advocate.md -->
 

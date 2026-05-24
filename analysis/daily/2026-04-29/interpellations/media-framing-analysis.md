@@ -61,8 +61,8 @@
 ```mermaid
 quadrantChart
     title Media Frame Resonance vs Duration
-    x-axis Short Duration --> Long Duration
-    y-axis Low Resonance --> High Resonance
+ x-axis Short Duration --> Long Duration
+ y-axis Low Resonance --> High Resonance
     quadrant-1 High Impact Stories
     quadrant-2 Slow Burn Stories
     quadrant-3 Background Noise
@@ -72,6 +72,4 @@ quadrantChart
     Womens Shelters: [0.55, 0.72]
     Organ Harvesting: [0.40, 0.55]
     Wind Disinformation: [0.25, 0.42]
-    style HVB Crime color:#ff4444
-    style Criminal Economy color:#ff6600
 ```

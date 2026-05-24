@@ -37,7 +37,6 @@ pie title Voter Segment Distribution (May 2026)
     "S4 Infrastructure-Regionals" : 12
     "S5 Cultural Nationalists" : 14
     "Other/Undecided" : 19
-    style pie fill:#0a0e27
 ```
 
 ## Segment Shift Dynamics

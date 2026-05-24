@@ -501,13 +501,13 @@ mindmap
         Katarina Luhr - climate interpellation
         PIR-CLIM-2026 collection
       C
-        Rural policy beneficiary (NU21)
+        ["Rural policy beneficiary (NU21)"]
         ambiguous on migration
     Civil Society
       LO/Kommunal
-        V gender pay (HD10486) will amplify
+        ["V gender pay (HD10486) will amplify"]
       Arbetsgivarorganisationer
-        oppose Prop 258 (trade union interference)
+        ["oppose Prop 258 (trade union interference)"]
       Hyresgästföreningen
         CU30 energy renovation impact on rents
     Institutions
@@ -1040,20 +1040,20 @@ The most dangerous political configuration for the current coalition is **L fall
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0d1b2a", "edgeLabelBackground": "#0d1b2a", "nodeTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
 quadrantChart
-    title Risk Matrix — 2026-05-13 Realtime Pulse
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 High Priority (act now)
+    title "Risk Matrix — 2026-05-13 Realtime Pulse"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
+    quadrant-1 High Priority act now
     quadrant-2 Monitor Closely
     quadrant-3 Low Priority
     quadrant-4 Contingency Planning
     "Constitutional invalidation of Prop 258": [0.35, 0.85]
-    "EU challenge on Prop 262 (permanent UT)": [0.30, 0.90]
+   "#quot;EU challenge on Prop 262 (permanent UT)#quot;": [0.30, 0.90]
     "L drops below 4% threshold": [0.25, 0.95]
     "Eldercare scandal escalates pre-election": [0.60, 0.70]
     "Klimatproposition missed entirely": [0.75, 0.60]
     "Coalition split on migration": [0.15, 0.90]
-    "S+V+MP gain >50% seat projection": [0.30, 0.85]
+   "#quot;S+V+MP gain >50% seat projection#quot;": [0.30, 0.85]
     "Private eldercare fraud prosecution": [0.40, 0.55]
 ```
 

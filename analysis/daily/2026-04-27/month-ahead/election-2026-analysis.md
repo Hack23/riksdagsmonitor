@@ -57,7 +57,6 @@ gantt
     section Election
     Election day            :milestone, 2026-09-13, 0d
 
-    style 2026-09-13 stroke:#ff006e,fill:#ff006e
 ```
 
 ## Key Electoral Uncertainties

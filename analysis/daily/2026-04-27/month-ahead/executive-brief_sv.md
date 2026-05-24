@@ -40,9 +40,6 @@ gantt
     CU40 lantmäteriutfrågning                     :active, 2026-05-19, 10d
     section Budget
     Riksbankens ansvarsfrihet (FiU23)             :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-laddningsregler fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 Viktigaste framåtblickande trigger

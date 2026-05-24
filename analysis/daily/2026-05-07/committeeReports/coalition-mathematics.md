@@ -66,14 +66,6 @@ pie title "Riksdag Composition 2025/26 (approx)"
     "MP (Opposition)" : 18
     "L (Coalition)" : 16
 
-    style S (Opposition) fill:#ff4466
-    style SD (Coalition) fill:#00ff88
-    style M (Coalition) fill:#00d9ff
-    style C (Opposition) fill:#ffbe0b
-    style V (Opposition) fill:#ff0044
-    style KD (Coalition) fill:#9966ff
-    style MP (Opposition) fill:#44ff44
-    style L (Coalition) fill:#9900ff
 ```
 
 ---

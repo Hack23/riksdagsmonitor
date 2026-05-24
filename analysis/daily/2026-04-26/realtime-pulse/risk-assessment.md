@@ -46,9 +46,9 @@ Probability × Impact (P×I) framework applied to the legislative cluster identi
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0"}}}%%
 quadrantChart
-    title Risk Matrix — Probability vs Impact
-    x-axis Low Probability --> High Probability
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix — Probability vs Impact"
+ x-axis Low Probability --> High Probability
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical — Act Immediately
     quadrant-2 Monitor Closely
     quadrant-3 Low Priority
@@ -61,5 +61,4 @@ quadrantChart
     R-06 Civil Defence: [0.55, 0.70]
     R-07 Weapons Backlash: [0.25, 0.45]
     R-08 Riksbank Divergence: [0.20, 0.50]
-    style A fill:#00d9ff,color:#0a0e27
 ```

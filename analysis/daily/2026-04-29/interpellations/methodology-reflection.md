@@ -99,6 +99,4 @@ sequenceDiagram
     P2->>P2: Iterate all artifacts
     P2->>GATE: Validate 11 gate checks
     GATE->>A: PASS
-    style GATE fill:#00aa00,color:#fff
-    style P2 fill:#1a1e3d,color:#fff
 ```

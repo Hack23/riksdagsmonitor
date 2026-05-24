@@ -39,13 +39,6 @@ xychart-beta
     y-axis "DIW Score" 0 --> 10
     bar [9.2, 9.0, 8.1, 7.9, 7.4, 6.3, 5.8, 5.2, 4.8]
 
-style NU19 fill:#ff006e
-style SfU28 fill:#ff006e
-style FöU14 fill:#ff8c00
-style FöU20 fill:#ff8c00
-style JuU9 fill:#ffbe0b
-style KU36 fill:#00d9ff
-style NU22 fill:#00d9ff
 ```
 
 ## Pass-2 Addition: Aggregate Assessment

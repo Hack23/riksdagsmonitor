@@ -10,10 +10,14 @@
 ## Impact Radar
 
 ```mermaid
-radar
-    title Stakeholder Impact Assessment — April 17 2026
-    axis Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion
-    "Overall Impact" : [4, 3, 4, 3, 5, 4, 4, 5]
+flowchart LR
+    unsupported["⚠️ Mermaid radar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: radar
+%% original-source:
+%% radar
+%%     title Stakeholder Impact Assessment — April 17 2026
+%%     axis Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion
+%%     "Overall Impact" : [4, 3, 4, 3, 5, 4, 4, 5]
 ```
 
 ---

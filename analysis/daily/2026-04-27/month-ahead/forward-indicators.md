@@ -62,23 +62,22 @@ Twenty dated forward indicators across four time horizons: immediate (May 2026),
 ```mermaid
 timeline
     title Forward Indicators Timeline May–September 2026
-    section May (Immediate)
+ section May Immediate
         2026-05-06 : FI-04 Södra stambanan response
         2026-05-07 : FI-03 Sick-pay response
         2026-05-10 : FI-01 Weapons law vote
         2026-05-12 : FI-02 Prison construction vote
         2026-05-15 : FI-05 SCB unemployment
-    section June–July (Near-Term)
+ section June–July Near-Term
         2026-06-05 : FI-06 Sifo polling
         2026-06-15 : FI-07 Kriminalvården report, FI-09 Polismyndigheten
         2026-06-30 : FI-08 LO wage settlement
         2026-07-01 : FI-10 Ukraine RCRPA report
-    section August–September (Election)
+ section August–September Election
         2026-08-15 : FI-11 Pre-election polls
         2026-08-20 : FI-13 C coalition signal
         2026-08-24 : FI-12 Leader debate
         2026-09-13 : FI-14 Election day
-    style 2026-09-13 stroke:#ff006e,fill:#ff006e
 ```
 
 ## Assessment

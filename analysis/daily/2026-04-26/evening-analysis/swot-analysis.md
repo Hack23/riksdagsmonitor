@@ -8,18 +8,18 @@
 ```mermaid
 %%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#1a1e3d'}}}%%
 quadrantChart
-    title SWOT — Tidö Legislative Wave Apr-24 Evening Analysis
-    x-axis "Weaknesses → Strengths" 0 --> 100
-    y-axis "Threats → Opportunities" 0 --> 100
+    title "SWOT — Tidö Legislative Wave Apr-24 Evening Analysis"
+ x-axis "Weaknesses → Strengths" 0 --> 100
+ y-axis "Threats → Opportunities" 0 --> 100
     quadrant-1 Exploit
     quadrant-2 Invest
     quadrant-3 Eliminate
     quadrant-4 Mitigate
-    "Weapons law delivery [HD01JuU10]": [72, 76]
-    "Elder care [HD01SoU25]": [65, 78]
-    "Building reform [HD01CU24]": [60, 65]
-    "Police audit liability [HD01JuU31]": [25, 35]
-    "Pre-election timing": [80, 70]
+   "#quot;Weapons law delivery [HD01JuU10]#quot;": [0.72, 0.76]
+   "#quot;Elder care [HD01SoU25]#quot;": [0.65, 0.78]
+   "#quot;Building reform [HD01CU24]#quot;": [0.6, 0.65]
+   "#quot;Police audit liability [HD01JuU31]#quot;": [0.25, 0.35]
+    "Pre-election timing": [0.8, 0.7]
 ```
 
 ### Strengths

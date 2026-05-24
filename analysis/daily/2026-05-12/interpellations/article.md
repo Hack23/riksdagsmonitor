@@ -960,13 +960,13 @@ This narrative is:
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map — 12 May 2026 Interpellations
-    x-axis "Low Probability" --> "High Probability"
-    y-axis "Low Severity" --> "High Severity"
-    quadrant-1 Critical (High/High)
-    quadrant-2 Watch (Low/High)
-    quadrant-3 Monitor (Low/Low)
-    quadrant-4 Urgent (High/Low)
+    title "Risk Heat Map — 12 May 2026 Interpellations"
+ x-axis "Low Probability" --> "High Probability"
+ y-axis "Low Severity" --> "High Severity"
+    quadrant-1 Critical High/High
+    quadrant-2 Watch Low/High
+    quadrant-3 Monitor Low/Low
+    quadrant-4 Urgent High/Low
     Svartarbete fiscal leakage: [0.75, 0.85]
     Gang crime financing: [0.70, 0.80]
     Accountability gap HD10481: [0.85, 0.55]
@@ -1038,14 +1038,14 @@ quadrantChart
 
 ```mermaid
 quadrantChart
-    title SWOT — 12 May 2026 Interpellations
-    x-axis "Internal (S position)" --> "External (Government position)"
-    y-axis "Negative" --> "Positive"
+    title "SWOT — 12 May 2026 Interpellations"
+ x-axis "Internal S position" --> "External Government position"
+ y-axis "Negative" --> "Positive"
     quadrant-1 Opportunities
     quadrant-2 Strengths
     quadrant-3 Weaknesses
     quadrant-4 Threats
-    ESO 2026:1 evidence: [0.15, 0.85]
+    "ESO 2026:1 evidence": [0.15, 0.85]
     Gang crime link: [0.20, 0.75]
     Pre-election timing: [0.30, 0.80]
     HD10481 withdrawal removes record: [0.25, 0.20]
@@ -1054,8 +1054,6 @@ quadrantChart
     Media saturation threat: [0.80, 0.25]
     Cross-sector ally opportunity: [0.35, 0.70]
 
-    style ESO 2026:1 evidence color:#1a4a8a
-    style Gang crime link color:#1a4a8a
 ```
 
 ## Threat Analysis

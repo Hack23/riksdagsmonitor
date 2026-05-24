@@ -211,8 +211,8 @@ HD10448 (SD's Fransson interpellating KD's Busch on energy) is the most analytic
 ```mermaid
 quadrantChart
     title Riksdag Legislative Activity 27 April 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Political Controversy --> High Political Controversy
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Political Controversy --> High Political Controversy
     quadrant-1 High Impact, High Controversy
     quadrant-2 Low Impact, High Controversy
     quadrant-3 Low Impact, Low Controversy
@@ -226,10 +226,6 @@ quadrantChart
     hd11752 Russia Fly: [0.40, 0.50]
     hd10449 Stambanan: [0.60, 0.40]
 
-    style HD03253 EU Banking fill:#1a1e3d,color:#00d9ff
-    style HD01FiU48 Fuel Tax fill:#1a1e3d,color:#ffbe0b
-    style HD03252 Prisoners fill:#1a1e3d,color:#ff006e
-    style HD10448 SD-KD Energy fill:#3d0a1a,color:#ff006e
 ```
 
 ---
@@ -290,9 +286,9 @@ quadrantChart
 
 ```mermaid
 quadrantChart
-    title PIR Priority Map — Evening Analysis 2026-04-27
-    x-axis Low Urgency --> High Urgency
-    y-axis Low Impact --> High Impact
+    title "PIR Priority Map — Evening Analysis 2026-04-27"
+ x-axis Low Urgency --> High Urgency
+ y-axis Low Impact --> High Impact
     quadrant-1 Act now
     quadrant-2 Monitor closely
     quadrant-3 Low priority
@@ -303,9 +299,6 @@ quadrantChart
     PIR-4 Lagrådet: [0.40, 0.70]
     PIR-5 SD Energy: [0.65, 0.80]
 
-    style PIR-1 Busch Response fill:#ff006e,color:#ffffff
-    style PIR-2 FiU Banking fill:#ffbe0b,color:#000000
-    style PIR-5 SD Energy fill:#ff006e,color:#ffffff
 ```
 
 ## Significance Scoring
@@ -364,11 +357,6 @@ xychart-beta
     y-axis "DIW Score" 0 --> 10
     bar [9.0, 8.5, 7.8, 7.0, 6.5, 5.0, 5.0, 5.0, 4.5, 4.5]
 
-    style HD03253 fill:#00d9ff
-    style HD01FiU48 fill:#ffbe0b
-    style HD01JuU10 fill:#ff006e
-    style HD03252 fill:#ff006e
-    style HD10448 fill:#ff006e
 ```
 
 ## Per-document intelligence
@@ -1136,9 +1124,6 @@ xychart-beta
     y-axis "L×I Score" 0 --> 15
     bar [10, 9, 10, 12, 6]
 
-    style R4 Narrative fill:#ff006e
-    style R1 Coalition fill:#ffbe0b
-    style R3 Banking fill:#ffbe0b
 ```
 
 ## SWOT Analysis
@@ -1215,11 +1200,6 @@ mindmap
             t2["Bank capital strain B2"]
             t3["S narrative capture B2"]
 
-    style root fill:#1a1e3d,color:#00d9ff
-    style S fill:#0a2040,color:#00d9ff
-    style W fill:#2d0a0a,color:#ff006e
-    style O fill:#0a2d0a,color:#00d9ff
-    style T fill:#2d0a1a,color:#ffbe0b
 ```
 
 ## Threat Analysis
@@ -1638,9 +1618,9 @@ graph TD
 
 ```mermaid
 quadrantChart
-    title Competing Hypotheses — 27 April 2026
-    x-axis Low Plausibility --> High Plausibility
-    y-axis Low Impact if True --> High Impact if True
+    title "Competing Hypotheses — 27 April 2026"
+ x-axis Low Plausibility --> High Plausibility
+ y-axis Low Impact if True --> High Impact if True
     quadrant-1 Critical re-evaluation needed
     quadrant-2 Worth tracking
     quadrant-3 Discard
@@ -1649,8 +1629,6 @@ quadrantChart
     DA2 S Weakness Signal: [0.60, 0.65]
     DA3 Fuel Tax Ambiguous: [0.75, 0.55]
 
-    style DA1 SD Coalition Signal fill:#ff006e,color:#ffffff
-    style DA3 Fuel Tax Ambiguous fill:#ffbe0b,color:#000000
 ```
 
 ## Classification Results

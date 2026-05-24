@@ -886,9 +886,9 @@ Both parties are supporting government propositions without filing their own opp
 
 ```mermaid
 quadrantChart
-    title Risk Matrix (Likelihood vs. Impact)
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix (Likelihood vs. Impact)"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical
     quadrant-2 Monitor Closely
     quadrant-3 Low Priority
@@ -900,12 +900,6 @@ quadrantChart
     R005 Macroprudential Gap: [0.5, 0.45]
     R006 Electoral Mobilisation: [0.8, 0.45]
 
-    style R001 Constitutional Overreach fill:#ff006e,stroke:#ff006e
-    style R002 Coalition Fracture SfU fill:#ff006e,stroke:#ff006e
-    style R003 GDPR Biometric fill:#ffbe0b,stroke:#ffbe0b
-    style R004 Union Transparency Defeat fill:#ffbe0b,stroke:#ffbe0b
-    style R005 Macroprudential Gap fill:#ffbe0b,stroke:#ffbe0b
-    style R006 Electoral Mobilisation fill:#00d9ff,stroke:#00d9ff
 ```
 
 ### Institutional Dimension
@@ -970,25 +964,19 @@ The opposition faces a structural paradox: on migration, it can build broad coal
 ```mermaid
 quadrantChart
     title Opposition Motion Impact vs. Feasibility of Victory
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Win Probability --> High Win Probability
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Win Probability --> High Win Probability
     quadrant-1 High Impact High Win
     quadrant-2 High Impact Low Win
     quadrant-3 Low Impact Low Win
     quadrant-4 Low Impact High Win
-    Transparency (KU): [0.7, 0.55]
-    Migration (SfU): [0.85, 0.4]
-    Debt Registry (FiU): [0.5, 0.45]
-    Security/LSU (JuU): [0.75, 0.2]
-    Biometric (SkU): [0.6, 0.25]
-    EU Foreign (UU): [0.3, 0.2]
+    "Transparency (KU)": [0.7, 0.55]
+    "Migration (SfU)": [0.85, 0.4]
+    "Debt Registry (FiU)": [0.5, 0.45]
+    "Security/LSU (JuU)": [0.75, 0.2]
+    "Biometric (SkU)": [0.6, 0.25]
+    "EU Foreign (UU)": [0.3, 0.2]
 
-    style Transparency (KU) fill:#00d9ff,stroke:#00d9ff
-    style Migration (SfU) fill:#ff006e,stroke:#ff006e
-    style Security/LSU (JuU) fill:#ffbe0b,stroke:#ffbe0b
-    style Debt Registry (FiU) fill:#00d9ff,stroke:#00d9ff
-    style Biometric (SkU) fill:#ffbe0b,stroke:#ffbe0b
-    style EU Foreign (UU) fill:#888888,stroke:#888888
 ```
 
 ## Threat Analysis

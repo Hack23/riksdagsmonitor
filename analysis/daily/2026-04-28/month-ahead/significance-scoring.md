@@ -85,9 +85,9 @@ pie title Priority Distribution May 2026
 
 ```mermaid
 quadrantChart
-    title Significance vs Urgency — May 2026 Documents
-    x-axis "Low Urgency" --> "High Urgency"
-    y-axis "Low Significance" --> "High Significance"
+    title "Significance vs Urgency — May 2026 Documents"
+ x-axis "Low Urgency" --> "High Urgency"
+ y-axis "Low Significance" --> "High Significance"
     quadrant-1 Act Now
     quadrant-2 Plan Strategically
     quadrant-3 Monitor
@@ -100,8 +100,4 @@ quadrantChart
     HD10451: [0.7, 0.62]
     HD11752: [0.4, 0.52]
     HD11753: [0.4, 0.52]
-    style HD01JuU10 fill:#ff006e
-    style HD10449 fill:#ffbe0b
-    style HD10450 fill:#00d9ff
-    style HD024099 fill:#7c3aed
 ```

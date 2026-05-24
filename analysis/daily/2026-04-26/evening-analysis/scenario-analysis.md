@@ -63,17 +63,17 @@ This scenario analysis covers the **90-day outlook** (to ~2026-07-26) for the le
 ```mermaid
 %%{init: {'theme':'dark'}}%%
 quadrantChart
-    title Scenarios — Impact vs. Probability
-    x-axis "Low Impact → High Impact" 0 --> 100
-    y-axis "Low Probability → High Probability" 0 --> 100
+    title "Scenarios — Impact vs. Probability"
+ x-axis "Low Impact → High Impact" 0 --> 100
+ y-axis "Low Probability → High Probability" 0 --> 100
     quadrant-1 Monitor
     quadrant-2 Primary Focus
     quadrant-3 Low priority
     quadrant-4 Contingency
-    "S1 Managed Delivery": [35, 55]
-    "S2 Police-Audit Escalation": [75, 25]
-    "S3 Weapons Backlash": [55, 12]
-    "S4 Elder-Care Crisis": [85, 8]
+    "S1 Managed Delivery": [0.35, 0.55]
+    "S2 Police-Audit Escalation": [0.75, 0.25]
+    "S3 Weapons Backlash": [0.55, 0.12]
+    "S4 Elder-Care Crisis": [0.85, 0.08]
 ```
 
 ## Recommended Decision

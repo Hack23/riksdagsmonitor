@@ -7,9 +7,9 @@
 
 ```mermaid
 quadrantChart
-    title SWOT Analysis — Tidö May 2026 Legislative Sprint
-    x-axis Negative --> Positive
-    y-axis External --> Internal
+    title "SWOT Analysis — Tidö May 2026 Legislative Sprint"
+ x-axis Negative --> Positive
+ y-axis External --> Internal
     quadrant-1 Strengths
     quadrant-2 Weaknesses
     quadrant-3 Opportunities
@@ -22,14 +22,6 @@ quadrantChart
     Gaza Pressure: [0.20, 0.20]
     Rural Equity Gap: [0.25, 0.25]
     Nordic Model Brand: [0.80, 0.30]
-    style HD01CU31 Housing Reform fill:#00d9ff
-    style Security Trilogy fill:#00d9ff
-    style Education Reform fill:#00d9ff
-    style ECHR Risk HD03267 fill:#ff006e
-    style C Party Cohesion fill:#ff006e
-    style Gaza Pressure fill:#ffbe0b
-    style Rural Equity Gap fill:#ffbe0b
-    style Nordic Model Brand fill:#00d9ff
 ```
 
 ---

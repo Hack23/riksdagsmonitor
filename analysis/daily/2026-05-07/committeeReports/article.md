@@ -296,11 +296,6 @@ xychart-beta
     y-axis "DIW Score" 0 --> 10
     bar [8.9, 8.2, 7.1, 6.5, 5.8]
 
-    style FöU18 SIGINT fill:#ff4466
-    style CU25 Prison fill:#00ff88
-    style SfU21 Insurance fill:#ffbe0b
-    style FöU16 FOI fill:#00d9ff
-    style SfU24 Housing fill:#9966ff
 ```
 
 ## Per-document intelligence
@@ -728,14 +723,6 @@ pie title "Riksdag Composition 2025/26 (approx)"
     "MP (Opposition)" : 18
     "L (Coalition)" : 16
 
-    style S (Opposition) fill:#ff4466
-    style SD (Coalition) fill:#00ff88
-    style M (Coalition) fill:#00d9ff
-    style C (Opposition) fill:#ffbe0b
-    style V (Opposition) fill:#ff0044
-    style KD (Coalition) fill:#9966ff
-    style MP (Opposition) fill:#44ff44
-    style L (Coalition) fill:#9900ff
 ```
 
 ---
@@ -820,24 +807,19 @@ Segments drawn from SCB demographic data and Riksdag election analysis. [B2 — 
 
 ```mermaid
 quadrantChart
-    title Voter Segment Response (Pro vs Anti Legislative Package)
-    x-axis Opposed --> Supportive
-    y-axis Low Electoral Engagement --> High Engagement
+    title "Voter Segment Response (Pro vs Anti Legislative Package)"
+ x-axis Opposed --> Supportive
+ y-axis Low Electoral Engagement --> High Engagement
     quadrant-1 High Engagement, Supportive
     quadrant-2 High Engagement, Opposed
     quadrant-3 Low Engagement, Opposed
     quadrant-4 Low Engagement, Supportive
     "Security Voters": [0.85, 0.90]
-    "Labour/Union": [0.30, 0.75]
+   "#quot;Labour/Union#quot;": [0.30, 0.75]
     "Civil Liberties": [0.20, 0.80]
     "Pensioners": [0.65, 0.65]
     "Recent Immigrants": [0.10, 0.40]
 
-    style Security Voters fill:#00ff88,color:#000
-    style Labour/Union fill:#ff4466,color:#fff
-    style Civil Liberties fill:#ff4466,color:#fff
-    style Pensioners fill:#ffbe0b,color:#000
-    style Recent Immigrants fill:#9966ff,color:#fff
 ```
 
 ## Forward Indicators
@@ -902,9 +884,6 @@ timeline
     Nov 2026   : FI-07 LO convention response to SfU21
     Feb 2027   : FI-04 First Försäkringskassan statistics (SfU21)
 
-    style June 2026 fill:#ff4466
-    style Aug-Sep 2026 fill:#00ff88
-    style Feb 2027 fill:#00d9ff
 ```
 
 ## Scenario Analysis
@@ -1030,14 +1009,6 @@ xychart-beta
     y-axis "Net Vote Impact (%)" -1.5 --> 2.5
     bar [1.1, 2.3, 0.7, -0.1, -0.3, -0.8, 0.1, -0.3]
 
-    style M fill:#00d9ff
-    style SD fill:#00ff88
-    style KD fill:#ffbe0b
-    style L fill:#9966ff
-    style S fill:#ff4466
-    style V fill:#ff0044
-    style C fill:#44ff44
-    style MP fill:#00ff88
 ```
 
 *Note: Estimates are analytical inference [C2]. Error margin ±0.5 percentage points. Not a polling citation.*
@@ -1097,9 +1068,9 @@ Housing benefit recipients are already experiencing housing cost inflation press
 
 ```mermaid
 quadrantChart
-    title Risk Matrix (Likelihood vs Impact)
-    x-axis Low Impact --> High Impact
-    y-axis Low Likelihood --> High Likelihood
+    title "Risk Matrix (Likelihood vs Impact)"
+ x-axis Low Impact --> High Impact
+ y-axis Low Likelihood --> High Likelihood
     quadrant-1 High Likelihood, High Impact
     quadrant-2 High Likelihood, Low Impact
     quadrant-3 Low Likelihood, Low Impact
@@ -1111,12 +1082,6 @@ quadrantChart
     R2-PBL: [0.50, 0.50]
     R5-FOI: [0.30, 0.25]
 
-    style R1-ECtHR fill:#ff4466,color:#fff
-    style R3-BenefitCliff fill:#ffbe0b,color:#000
-    style R6-Housing fill:#ffbe0b,color:#000
-    style R4-Coalition fill:#00d9ff,color:#000
-    style R2-PBL fill:#9966ff,color:#fff
-    style R5-FOI fill:#00ff88,color:#000
 ```
 
 ## SWOT Analysis
@@ -1320,9 +1285,6 @@ timeline
     2025 : FöU18 committee report published
     2026 : FöU18 in debate phase (this report)
 
-    style 2026 fill:#ff4466
-    style 2022 fill:#00ff88
-    style 2008 fill:#ffbe0b
 ```
 
 ## Comparative International
@@ -1383,11 +1345,6 @@ xychart-beta
     y-axis "Oversight Score" 0 --> 10
     bar [8, 8.5, 9, 5, 7]
 
-    style Norway E-tj fill:#00d9ff
-    style Germany BND fill:#00ff88
-    style UK IPA fill:#00ff88
-    style Sweden FöU18 draft fill:#ff4466
-    style Netherlands Wiv fill:#ffbe0b
 ```
 
 **Note**: Sweden FöU18 scores 5 under current draft — below Nordic peers. Adopting judicial pre-authorisation would raise score to ~8.
@@ -1544,9 +1501,9 @@ Social Democrats will struggle to oppose directly (security consensus). Expected
 
 ```mermaid
 quadrantChart
-    title Media Frames — Support vs Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Government Framing --> Opposition Framing
+    title "Media Frames — Support vs Controversy"
+ x-axis Low Controversy --> High Controversy
+ y-axis Government Framing --> Opposition Framing
     quadrant-1 High Controversy, Opposition Frame
     quadrant-2 High Controversy, Government Frame
     quadrant-3 Low Controversy, Government Frame
@@ -1557,11 +1514,6 @@ quadrantChart
     "SfU21 in DN": [0.45, 0.55]
     "FöU18 DFRI": [0.95, 0.90]
 
-    style FöU18 in tabloids fill:#ff4466,color:#fff
-    style FöU18 in broadsheets fill:#ffbe0b,color:#000
-    style CU25 official fill:#00ff88,color:#000
-    style SfU21 in DN fill:#9966ff,color:#fff
-    style FöU18 DFRI fill:#ff0044,color:#fff
 ```
 
 ## Devil's Advocate
@@ -1693,8 +1645,8 @@ quadrantChart
 ```mermaid
 quadrantChart
     title Policy Domain vs Controversy Level
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Urgency --> High Urgency
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Urgency --> High Urgency
     quadrant-1 High Urgency, High Controversy
     quadrant-2 High Urgency, Low Controversy
     quadrant-3 Low Urgency, Low Controversy
@@ -1705,11 +1657,6 @@ quadrantChart
     FöU16-FOI: [0.20, 0.55]
     SfU24-Housing: [0.30, 0.45]
 
-    style FöU18-SIGINT fill:#ff4466,color:#fff
-    style CU25-Prison fill:#00ff88,color:#000
-    style SfU21-Insurance fill:#ffbe0b,color:#000
-    style FöU16-FOI fill:#00d9ff,color:#000
-    style SfU24-Housing fill:#9966ff,color:#fff
 ```
 
 ## Cross-Reference Map

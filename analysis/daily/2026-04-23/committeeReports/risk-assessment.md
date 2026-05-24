@@ -21,13 +21,13 @@
 ```mermaid
 %%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","primaryBorderColor":"#0A3F7F","lineColor":"#90CAF9","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
 quadrantChart
-    title Risk Matrix — Likelihood × Impact (Committee Reports April 2026)
-    x-axis Low Impact --> High Impact
-    y-axis Low Likelihood --> High Likelihood
-    quadrant-1 Critical (Monitor closely)
-    quadrant-2 High Risk (Manage actively)
-    quadrant-3 Low Priority (Accept/Watch)
-    quadrant-4 Moderate Risk (Mitigate)
+    title "Risk Matrix — Likelihood × Impact (Committee Reports April 2026)"
+ x-axis Low Impact --> High Impact
+ y-axis Low Likelihood --> High Likelihood
+    quadrant-1 Critical Monitor closely
+    quadrant-2 High Risk Manage actively
+    quadrant-3 Low Priority Accept/Watch
+    quadrant-4 Moderate Risk Mitigate
     R1 - Inflation-Riksbank: [0.7, 0.6]
     R3 - Constitutional second vote fails: [0.9, 0.5]
     R4 - Opposition fiscal framing: [0.7, 0.6]

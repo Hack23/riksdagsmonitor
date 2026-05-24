@@ -40,6 +40,5 @@ xychart-beta
     x-axis ["KU34", "FiU37", "CU31", "SoU31", "JuU39", "JuU32", "JuU34", "FiU43"]
     y-axis "DIW Score (0-10)" 0 --> 10
     bar [9.2, 7.8, 7.5, 6.8, 6.4, 5.2, 4.9, 4.7]
-    style KU34 fill:#ff006e
 ```
 

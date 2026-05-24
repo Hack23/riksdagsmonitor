@@ -46,9 +46,9 @@
 
 ```mermaid
 quadrantChart
-    title SWOT Quadrant — April 2026 Committee Reports
-    x-axis Low Threat --> High Threat
-    y-axis Low Strength --> High Strength
+    title "SWOT Quadrant — April 2026 Committee Reports"
+ x-axis Low Threat --> High Threat
+ y-axis Low Strength --> High Strength
     quadrant-1 Manage Threats
     quadrant-2 Leverage Strengths
     quadrant-3 Monitor Risks
@@ -59,6 +59,4 @@ quadrantChart
     "Climate regression": [0.75, 0.30]
     "Fiscal surplus risk": [0.70, 0.40]
     "Election dividend": [0.40, 0.60]
-    style "Climate regression" fill:#ff006e,stroke:#ff006e
-    style "Coalition discipline" fill:#00d9ff,stroke:#00d9ff
 ```

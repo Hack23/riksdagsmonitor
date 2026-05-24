@@ -7,14 +7,14 @@
 
 ```mermaid
 quadrantChart
-    title Risk Matrix: Ministerial Accountability Risks
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 CRITICAL: Act Now
-    quadrant-2 HIGH: Monitor
-    quadrant-3 LOW: Accept
-    quadrant-4 MEDIUM: Watch
-    "EU infringement (Pay Directive)": [0.85, 0.95]
+    title "Risk Matrix: Ministerial Accountability Risks"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
+    quadrant-1 CRITICAL Act Now
+    quadrant-2 HIGH Monitor
+    quadrant-3 LOW Accept
+    quadrant-4 MEDIUM Watch
+   "#quot;EU infringement (Pay Directive)#quot;": [0.85, 0.95]
     "Stockholm police deficit escalates": [0.80, 0.85]
     "Women's shelters mass closure": [0.90, 0.88]
     "Carlson infrastructure overload": [0.75, 0.65]

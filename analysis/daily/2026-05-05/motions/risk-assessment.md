@@ -59,3 +59,5 @@ quadrantChart
     R-04 C defection: [0.50, 0.55]
     R-05 CBD 30x30: [0.55, 0.80]
     R-06 Opposition fragmentation: [0.75, 0.55]
+
+```

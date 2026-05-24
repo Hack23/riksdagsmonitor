@@ -328,22 +328,21 @@ DIW (Dimension · Intensity · Weight) composite scoring per [`ai-driven-analysi
 ```mermaid
 %%{init: {'theme':'dark'}}%%
 quadrantChart
-    title Significance — Political vs Electoral axis
-    x-axis Low Electoral salience --> High Electoral salience
-    y-axis Low Political intensity --> High Political intensity
-    quadrant-1 Tier L3 (priority)
+    title "Significance — Political vs Electoral axis"
+ x-axis Low Electoral salience --> High Electoral salience
+ y-axis Low Political intensity --> High Political intensity
+    quadrant-1 Tier L3 priority
     quadrant-2 Latent bloc signal
     quadrant-3 Routine opposition
     quadrant-4 Tactical positioning
-    "HD024082 S drivmedel [S8.05]": [0.95, 0.9]
-    "HD024098 MP drivmedel [7.35]": [0.85, 0.8]
-    "HD024092 V drivmedel [7.35]": [0.85, 0.8]
-    "HD024096 MP krigsmat [6.10]": [0.55, 0.7]
-    "HD024090 V utvisn [6.00]": [0.65, 0.8]
-    "HD024097 MP utvisn [5.35]": [0.55, 0.7]
-    "HD024089 C mottag [5.65]": [0.55, 0.6]
-    "HD024081 S med kompet [5.65]": [0.65, 0.6]
-    style HD024082 fill:#ff006e
+   "#quot;HD024082 S drivmedel [S8.05]#quot;": [0.95, 0.9]
+   "#quot;HD024098 MP drivmedel [7.35]#quot;": [0.85, 0.8]
+   "#quot;HD024092 V drivmedel [7.35]#quot;": [0.85, 0.8]
+   "#quot;HD024096 MP krigsmat [6.10]#quot;": [0.55, 0.7]
+   "#quot;HD024090 V utvisn [6.00]#quot;": [0.65, 0.8]
+   "#quot;HD024097 MP utvisn [5.35]#quot;": [0.55, 0.7]
+   "#quot;HD024089 C mottag [5.65]#quot;": [0.55, 0.6]
+   "#quot;HD024081 S med kompet [5.65]#quot;": [0.65, 0.6]
 ```
 
 ### Methodology notes
@@ -1475,13 +1474,13 @@ R-6 (MP krigsmateriel instrumentalised) → S-MP alignment breach → post-elect
 ```mermaid
 %%{init: {'theme':'dark'}}%%
 quadrantChart
-    title Risk heat map — Likelihood × Impact
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk heat map — Likelihood × Impact"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical
-    quadrant-2 High (monitor)
+    quadrant-2 High monitor
     quadrant-3 Low
-    quadrant-4 Elevated (prevent)
+    quadrant-4 Elevated prevent
     "R-1 drivmedel lock-in": [0.80, 0.80]
     "R-2 V soft-on-crime frame": [0.80, 0.60]
     "R-3 committee backlog": [0.60, 0.60]
@@ -1492,7 +1491,6 @@ quadrantChart
     "R-8 distributional self-contradict": [0.60, 0.60]
     "R-9 ECHR": [0.40, 0.80]
     "R-10 extra-budget compression": [0.60, 0.60]
-    style R-1 fill:#ff006e
 ```
 
 ### Posterior-probability update (Bayesian)

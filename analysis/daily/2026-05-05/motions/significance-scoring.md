@@ -82,4 +82,5 @@ xychart-beta
     y-axis "Composite Score" 0 --> 10
     bar [8.6, 8.2, 7.8, 7.5, 6.8, 6.5, 5.8, 5.5]
     line [8.6, 8.2, 7.8, 7.5, 6.8, 6.5, 5.8, 5.5]
-    style bar fill:#00d9ff
+
+```

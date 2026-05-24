@@ -10,17 +10,17 @@
 ```mermaid
 graph TD
     subgraph Critical["🔴 Critical Risk (P=High, I=Severe)"]
-        R1[ECHR challenge on HD03267<br/>Prob: 35% | Impact: Catastrophic]
-        R2[C party defection on CU31<br/>Prob: 25% | Impact: Severe]
+        R1["ECHR challenge on HD03267<br/>Prob: 35% | Impact: Catastrophic"]
+        R2["C party defection on CU31<br/>Prob: 25% | Impact: Severe"]
     end
     subgraph High["🟠 High Risk (P=Medium, I=High)"]
-        R3[Hyresnämnden capacity crisis<br/>Prob: 60% | Impact: High]
-        R4[Gaza consular escalation<br/>Prob: 30% | Impact: High]
-        R5[Teacher shortage — K-10 shortage<br/>Prob: 70% | Impact: High]
+        R3["Hyresnämnden capacity crisis<br/>Prob: 60% | Impact: High"]
+        R4["Gaza consular escalation<br/>Prob: 30% | Impact: High"]
+        R5["Teacher shortage — K-10 shortage<br/>Prob: 70% | Impact: High"]
     end
     subgraph Medium["🟡 Medium Risk"]
-        R6[Rural telecom political backlash<br/>Prob: 50% | Impact: Medium]
-        R7[Full-veil ban coalition tension<br/>Prob: 40% | Impact: Medium]
+        R6["Rural telecom political backlash<br/>Prob: 50% | Impact: Medium"]
+        R7["Full-veil ban coalition tension<br/>Prob: 40% | Impact: Medium"]
     end
     style Critical fill:#ff006e,color:#fff
     style High fill:#ffbe0b,color:#000

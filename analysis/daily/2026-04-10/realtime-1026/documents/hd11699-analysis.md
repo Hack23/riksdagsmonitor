@@ -30,7 +30,7 @@ graph LR
     A[HD11699] --> B{{Sensitivity}}
     B -->|PUBLIC| E[PUBLIC Level]
     A --> G{{Domain}}
-    G --> H[Climate / Environment (ENV)]
+    G --> H["Climate / Environment (ENV)"]
     A --> I{{Urgency}}
     I -->|ELEVATED| M[ELEVATED processing]
     style E fill:#4CAF50,color:#FFFFFF

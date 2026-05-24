@@ -36,12 +36,12 @@
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
 quadrantChart
     title SWOT Kvantitativ Matris
-    x-axis Intern --> Extern
-    y-axis Negativ --> Positiv
-    quadrant-1 Möjligheter (extern+)
-    quadrant-2 Styrkor (intern+)
-    quadrant-3 Svagheter (intern-)
-    quadrant-4 Hot (extern-)
+ x-axis Intern --> Extern
+ y-axis Negativ --> Positiv
+    quadrant-1 Möjligheter extern+
+    quadrant-2 Styrkor intern+
+    quadrant-3 Svagheter intern-
+    quadrant-4 Hot extern-
     KU34 Aborträtt: [0.15, 0.90]
     Tidömajoritet: [0.20, 0.80]
     JuU39 Bred uppslutning: [0.30, 0.70]

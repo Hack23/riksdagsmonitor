@@ -290,8 +290,6 @@ xychart-beta
     x-axis ["HD10493", "HD10492"]
     y-axis "Score" 0 --> 10
     bar [8.2, 7.8]
-    style HD10493 fill:#cc3300
-    style HD10492 fill:#ff6600
 ```
 
 ## Per-document intelligence
@@ -917,11 +915,11 @@ graph TD
 
 ```mermaid
 quadrantChart
-    title SWOT Position Matrix — V Biståndsinterpellationer
-    x-axis "Svag position" --> "Stark position"
-    y-axis "Låg impact" --> "Hög impact"
+    title "SWOT Position Matrix — V Biståndsinterpellationer"
+ x-axis "Svag position" --> "Stark position"
+ y-axis "Låg impact" --> "Hög impact"
     quadrant-1 Kritiska styrkor
-    quadrant-2 Strategiska möjligheter  
+    quadrant-2 Strategiska möjligheter
     quadrant-3 Managerbara svagheter
     quadrant-4 Risker
     Barnrättsargument: [0.85, 0.90]
@@ -931,8 +929,6 @@ quadrantChart
     Koalitionsmajoritet: [0.15, 0.70]
     Val2026 agenda: [0.80, 0.85]
     KU-anmälningsrisk: [0.60, 0.65]
-    style "Barnrättsargument" color:#00cc00
-    style "Val2026 agenda" color:#0066ff
 ```
 
 ## Threat Analysis

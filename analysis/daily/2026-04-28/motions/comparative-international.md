@@ -57,17 +57,15 @@ Finland's integrated approach (comprehensive Chapter 40 reform) produces better 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title Comparative: Intent Threshold vs Scope of Officials
-    x-axis "Narrow Scope" --> "Broad Scope"
-    y-axis "Low Intent Bar" --> "High Intent Bar"
+    title "Comparative: Intent Threshold vs Scope of Officials"
+ x-axis "Narrow Scope" --> "Broad Scope"
+ y-axis "Low Intent Bar" --> "High Intent Bar"
     quadrant-1 Comprehensive
     quadrant-2 Broad-Low Risk
     quadrant-3 Narrow-Strict
     quadrant-4 Broad-Strict
-    "Finland 40:7": [0.7, 0.75]
+   "#quot;Finland 40:7#quot;": [0.7, 0.75]
     "Norway §172": [0.5, 0.8]
     "Denmark §155": [0.2, 0.85]
     "Sweden proposed": [0.85, 0.25]
-    style "Sweden proposed" fill:#ff006e
-    style "Finland 40:7" fill:#00d9ff
 ```

@@ -46,7 +46,7 @@
 ## Coalition Stakeholder Mapping
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {"'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'"}}}%%
 graph LR
     M["🔵 M (68)\nKristersson"] -->|"Tidö core"| TID["TIDÖ GOVERNMENT\n176 seats"]
     SD["🔵 SD (73)\nÅkesson"] -->|"Tidö core"| TID
@@ -56,8 +56,8 @@ graph LR
     TID -->|"Majority votes\nall bills"| GOV["GOVERNMENT MAJORITY\n176 vs 173"]
     S["🔴 S (107)\nAndersson"] -->|"Opposition"| OPP["OPPOSITION\n173 seats"]
     V["🔴 V (24)\nDadgostar"] -->|"Opposition"| OPP
-    MP["🔴 MP (18)\nNohrén"| OPP
-    C2["🟡 C (CRC cluster)\nHD024146"| OPP
+    MP["🔴 MP (18)\nNohrén"] --> OPP
+    C2["🟡 C (CRC cluster)\nHD024146"] --> OPP
     style TID fill:#1a1e3d,stroke:#00d9ff
     style GOV fill:#00d9ff,stroke:#00d9ff
     style OPP fill:#ff006e,stroke:#ff006e

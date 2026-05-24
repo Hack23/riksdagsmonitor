@@ -237,39 +237,52 @@ export function validateFileList(
  * Auto-detect the workflow category from a list of changed file paths.
  *
  * Detection rules:
- *   - If any file is an `executive-brief_<lang>.md` translation → `translation`.
- *   - If any file is on the ownership surface (news/*.html or English
- *     executive-brief.md) but not a translation → `content`.
+ *   - If only translation surface files (`executive-brief_<lang>.md`) are
+ *     present → `translation`.
+ *   - If only content surface files (news/*.html, English `executive-brief.md`,
+ *     or forbidden `article.<lang>.md`) are present → `content`.
+ *   - If BOTH surfaces are present → `null` (mixed PR, skip enforcement).
+ *     Mixed PRs typically originate from non-workflow sources (manual edits,
+ *     utility/refactor PRs, merge commits carrying passenger files from main)
+ *     where the single-category contract does not apply. Workflow-originated
+ *     PRs that need strict enforcement must pass `--category` explicitly.
  *   - Otherwise → `null` (no ownership-surface files; caller treats as no-op pass).
  *
  * Note: `news/*.html` changes NEVER imply "translation" because per-type
  * content workflows own all 14 HTML language variants.
  *
  * @param files - Array of repo-relative file paths to inspect
- * @returns The inferred workflow category, or `null` if no surface files
+ * @returns The inferred workflow category, or `null` if no surface files / mixed
  */
 export function detectCategoryFromFiles(
   files: readonly string[],
 ): WorkflowCategory | null {
-  let sawSurfaceFile = false;
+  let sawTranslation = false;
+  let sawContent = false;
   for (const f of files) {
-    if (isExecutiveBriefTranslation(f)) return 'translation';
+    if (isExecutiveBriefTranslation(f)) {
+      sawTranslation = true;
+      continue;
+    }
     if (isEnglishExecutiveBriefSource(f)) {
-      sawSurfaceFile = true;
+      sawContent = true;
       continue;
     }
     // article.<lang>.md is a category-independent violation — treat it as a
-    // surface file so the validator can reject it instead of silently skipping.
+    // content surface file so the validator can reject it instead of silently skipping.
     if (isLocalizedArticleMd(f)) {
-      sawSurfaceFile = true;
+      sawContent = true;
       continue;
     }
     if (f.startsWith('news/') && f.endsWith('.html')) {
       // All news/*.html is owned by content workflows — never implies translation.
-      sawSurfaceFile = true;
+      sawContent = true;
     }
   }
-  return sawSurfaceFile ? 'content' : null;
+  if (sawTranslation && sawContent) return null;
+  if (sawTranslation) return 'translation';
+  if (sawContent) return 'content';
+  return null;
 }
 
 /** Parse CLI category values, including short aliases advertised by --help. */
