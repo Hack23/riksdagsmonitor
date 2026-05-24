@@ -110,11 +110,13 @@ function discoverArticles(): ArticleCase[] {
 interface CliArgs {
   readonly out: string | null;
   readonly limit: number | null;
+  readonly strict: boolean;
 }
 
 function parseArgs(argv: readonly string[]): CliArgs {
   let out: string | null = null;
   let limit: number | null = null;
+  let strict = false;
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--out' && i + 1 < argv.length) {
@@ -122,12 +124,22 @@ function parseArgs(argv: readonly string[]): CliArgs {
     } else if (a === '--limit' && i + 1 < argv.length) {
       const n = Number.parseInt(argv[++i], 10);
       if (Number.isFinite(n) && n > 0) limit = n;
+    } else if (a === '--strict') {
+      // Promote SERP budget violations + content issues into a CI gate.
+      // Without `--strict` the audit is informational only (legacy default
+      // for local iteration). With `--strict` we exit non-zero whenever
+      // any of `brandedTitleOver70`, `descriptionOver200`,
+      // `emptyDescription`, `keywordsMissing`, or `brandSuffixMissing`
+      // is non-zero — so the .github/workflows/test-article-headers.yml
+      // run can fail the build instead of silently emitting a report
+      // nobody reads.
+      strict = true;
     } else if (a === '--help' || a === '-h') {
-      console.log('Usage: test-article-headers.ts [--out <path>] [--limit <N>]');
+      console.log('Usage: test-article-headers.ts [--out <path>] [--limit <N>] [--strict]');
       process.exit(0);
     }
   }
-  return { out, limit };
+  return { out, limit, strict };
 }
 
 interface Stats {
@@ -343,6 +355,35 @@ function main(): void {
   } else {
     process.stdout.write(report);
     process.stdout.write('\n');
+  }
+
+  // Strict mode: promote SERP budget violations and content issues into a
+  // non-zero exit so CI can fail the build. Counted violations:
+  //  - `brandedTitleOver70`     — `<title>` over the Google SERP truncation
+  //                                budget (70 chars).
+  //  - `descriptionOver200`     — `<meta description>` over Google's 200-char
+  //                                budget.
+  //  - `emptyDescription`       — articles shipping with no description at
+  //                                all (BLUF extraction failure).
+  //  - `keywordsMissing`        — articles shipping with no
+  //                                `<meta keywords>` content.
+  //  - `brandSuffixMissing`     — `<title>` missing the `Riksdagsmonitor`
+  //                                brand suffix (`chrome/head.ts` contract).
+  if (args.strict) {
+    const violations: string[] = [];
+    if (stats.brandedTitleOver70 > 0) violations.push(`brandedTitleOver70=${stats.brandedTitleOver70}`);
+    if (stats.descriptionOver200 > 0) violations.push(`descriptionOver200=${stats.descriptionOver200}`);
+    if (stats.emptyDescription > 0) violations.push(`emptyDescription=${stats.emptyDescription}`);
+    if (stats.keywordsMissing > 0) violations.push(`keywordsMissing=${stats.keywordsMissing}`);
+    if (stats.brandSuffixMissing > 0) violations.push(`brandSuffixMissing=${stats.brandSuffixMissing}`);
+    if (violations.length > 0) {
+      console.error('');
+      console.error('❌ test-article-headers --strict: SEO budget / content violations detected:');
+      for (const v of violations) console.error(`   • ${v}`);
+      console.error('   See the audit report above for the offending articles.');
+      process.exit(1);
+    }
+    console.log('✅ test-article-headers --strict: no SEO budget or content violations.');
   }
 }
 
