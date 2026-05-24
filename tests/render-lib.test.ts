@@ -511,7 +511,18 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.description).toContain('widget committee reported five actionable findings');
     expect(result.description).not.toMatch(/Classification|Run ID|Author/i);
     expect(result.keywords).toContain('Widgets');
-    expect(result.markdown).toContain('keywords: "Widgets');
+    // Keyword ordering (per article-seo.ts `buildArticleKeywords` ordering
+    // contract): institutional mandatory floor leads
+    // (`Riksdagsmonitor, Swedish Parliament, Riksdag, …`), then the
+    // localized article-type label (`Widgets`), then the native language
+    // name. The frontmatter must therefore expose the topic keyword
+    // somewhere in the comma list AND must never leak admin-byline
+    // tokens — `Test Runner` (from `**Author**: Test Runner`) and
+    // `Run ID` (from `**Run ID**: 42`) historically leaked because the
+    // brief-extractor mined them as Title-Case multi-word named entities.
+    expect(result.markdown).toMatch(/^keywords:\s*"Riksdagsmonitor,\s*Swedish Parliament/m);
+    expect(result.markdown).toMatch(/keywords:\s*"[^"]*\bWidgets\b/m);
+    expect(result.markdown).not.toMatch(/keywords:\s*"[^"]*\b(?:Test Runner|Run ID|Author|Classification|Confidence)\b/m);
 
     // Aggregated markdown must carry real content but no Pass-2 / no admin byline.
     expect(result.markdown).toContain('## Reader Intelligence Guide');
@@ -1438,7 +1449,15 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">📜</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
     expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions.</p>');
-    expect(html).toContain('<meta name="keywords" content="Propositions');
+    // Keywords meta follows the `buildArticleKeywords` ordering contract:
+    // mandatory institutional floor leads (`Riksdagsmonitor, Swedish
+    // Parliament, …`), then the localized article-type label
+    // (`Propositions`), then the native language name. Assert the
+    // *content* attribute carries the topic anchor in the comma list,
+    // not that it leads the list — the floor's lead position was added
+    // for SERP signal stability across all 14 locales.
+    expect(html).toMatch(/<meta name="keywords" content="Riksdagsmonitor,\s*Swedish Parliament/);
+    expect(html).toMatch(/<meta name="keywords" content="[^"]*\bPropositions\b/);
     expect(html).toContain('Traceable artifacts');
     expect(html).toContain('class="rm-article-sources"');
     expect(html).toContain('executive-brief.md');
