@@ -212,7 +212,22 @@ jobs:
       - name: Run unit tests with coverage
         run: |
           mkdir -p builds/test-results builds/coverage
-          npm run coverage
+          # Pass coverage output dir explicitly so files land in builds/
+          # (default is coverage/, which is NOT included in the artifact).
+          # The json reporter writes a machine-readable summary alongside
+          # the coverage HTML/lcov for the deploy-docs job to consume.
+          npx vitest run --coverage \
+            --coverage.reportsDirectory=builds/coverage \
+            --reporter=verbose \
+            --reporter=json \
+            --outputFile=builds/test-results/vitest-results.json
+
+          # Fail fast here so the error is attributed to Unit Tests, not
+          # to the downstream deploy-docs job ("Artifact not found").
+          if ! find builds -type f | grep -q .; then
+            echo "::error::No unit-test or coverage files found under builds/ — check vitest/coverage configuration."
+            exit 1
+          fi
 
       - name: Upload coverage + test reports
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -221,7 +236,7 @@ jobs:
           name: unit-test-reports
           path: builds/
           retention-days: 7
-          if-no-files-found: warn
+          if-no-files-found: error
 
   # --------------------------------------------------------------------------
   # 4. typedoc — API docs (parallel with build, ≤5 min)
