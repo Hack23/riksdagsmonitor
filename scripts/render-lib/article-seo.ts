@@ -282,10 +282,52 @@ function trimTrailingPunctuation(text: string): string {
 const TRAILING_CONNECTOR_RE =
   /[\s,;:—–-]+(?:and|or|but|with|as|in|of|to|for|on|at|by|from|that|which|who|when|where|while|after|before|the|a|an|have|has|had|is|are|was|were|will|would|can|may|might|should|must|och|men|eller|med|som|av|till|för|på|i|att|der|die|das|und|oder|aber|mit|als|für|in|auf|et|ou|mais|avec|comme|de|à|pour|en|sur)$/iu;
 
+/**
+ * Dangling cardinal / ordinal numerals left at the end of a truncated
+ * title — `truncateAtWord` happily cuts at a word boundary after a
+ * cardinal, producing reader-hostile prose like
+ *
+ *   "Sweden Passes AI Facial Recognition Law as Riksdag Advances Five…"
+ *
+ * The cardinal "Five" carries no semantic value once the noun it modified
+ * ("Five Committee Reports") has been chopped off. Strip trailing
+ * cardinals / ordinals in the major languages we ship: EN + SV + DA + NO
+ * + DE + FR + ES + NL + FI. Numerals 1–12 plus common round numbers
+ * (twenty, fifty, hundred) cover the practical cases seen in audit
+ * #26364730339; we only strip when preceded by a space + leading
+ * separator so we never eat a numeral that is the title's only token
+ * (e.g. a chart-only headline like "Top 5").
+ *
+ * The aggregator's EN trailing-connector list never strips numerals so
+ * upstream cuts ending in a cardinal still leak through to the renderer
+ * — this regex is the second line of defence.
+ */
+const TRAILING_DANGLING_CARDINAL_RE =
+  /[\s,;:—–-]+(?:two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|thirty|forty|fifty|hundred|thousand|million|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|två|tre|fyra|fem|sex|sju|åtta|nio|tio|elva|tolv|tjugo|trettio|fyrtio|femtio|hundra|tusen|miljon|to|tre|fire|fem|seks|syv|otte|ni|ti|elleve|tolv|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwanzig|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|vingt|trente|quarante|cinquante|cent|mille|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta|cuarenta|cincuenta|cien|mil|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|twaalf|twintig|dertig|veertig|vijftig|honderd|duizend|kaksi|kolme|neljä|viisi|kuusi|seitsemän|kahdeksan|yhdeksän|kymmenen|kaksitoista|kaksikymmentä|kolmekymmentä|sata|tuhat)$/iu;
+
+/**
+ * Dangling token that ends with a hyphen — `truncateAtWord` slicing at
+ * a word boundary inside a hyphenated compound noun leaves trailing
+ * stubs like `Civil-Liberties` (when the original was `Civil-Liberties
+ * Backlash`). The hyphen is a strong reader signal that more text was
+ * lost; strip the whole compound token plus its leading separator.
+ *
+ * Conservative: only strips tokens whose **last character before the
+ * boundary** is a hyphen (`-`). Compound nouns that survived the cut
+ * intact (e.g. `Civil-Liberties Backlash` → "Civil-Liberties") are
+ * never matched because they end on a letter.
+ */
+const TRAILING_HYPHENATED_STUB_RE = /[\s,;:—–]+\S*-$/u;
+
 function trimTrailingConnectors(text: string): string {
   let prev = text;
-  for (let i = 0; i < 5; i += 1) {
-    const next = prev.replace(TRAILING_CONNECTOR_RE, '').replace(/[\s,;:—–-]+$/u, '').trim();
+  for (let i = 0; i < 8; i += 1) {
+    const next = prev
+      .replace(TRAILING_CONNECTOR_RE, '')
+      .replace(TRAILING_DANGLING_CARDINAL_RE, '')
+      .replace(TRAILING_HYPHENATED_STUB_RE, '')
+      .replace(/[\s,;:—–-]+$/u, '')
+      .trim();
     if (next === prev) break;
     prev = next;
   }

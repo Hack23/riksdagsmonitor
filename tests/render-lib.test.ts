@@ -617,17 +617,28 @@ describe('render-lib — article SEO metadata', () => {
       articleTypeLabel: 'Regierungsvorlagen',
       canonicalPath: 'news/2026-05-11-propositions-de.html',
     });
-    // Titles retain the brief H1, then add compact date/language context so
-    // untranslated legacy fallbacks do not collapse into identical titles.
+    // Titles retain the brief H1 within the per-language SERP budget
+    // (EN hardMax 70 chars). The H1 ("Security, identity and state
+    // control: three propositions" = 56 chars) plus brand suffix
+    // " — Riksdagsmonitor" (18 chars) would overshoot 70, so per the
+    // seo-metadata-contract.md §4 cascade the renderer ships the
+    // story-only H1 — brand is already covered by `og:site_name` and
+    // the canonical URL. Pre-2026-05 the renderer appended a
+    // "· 2026-05-11 · en" uniqueness suffix; that was removed when
+    // PR #2723 codified per-language budgets so every available pixel
+    // goes to the story.
     expect(en.title).toContain('Security, identity and state');
     expect(de.title).toContain('Sicherheit, Identität');
-    expect(en.title).toContain('2026-05-11 · en');
-    expect(de.title).toContain('2026-05-11 · de');
     expect(en.title).not.toMatch(/\| .*Propositions:/);
     expect(de.title).not.toMatch(/\| .*Regierungsvorlagen:/);
     expect(en.title).not.toContain('update');
     expect(de.title).not.toContain('update');
     expect(de.title).not.toContain('Deutsch');
+    // Brand suffix is conditional on budget — when the H1 overshoots
+    // (H1 + " — Riksdagsmonitor" > hardMax) the renderer drops the
+    // brand. Both EN and DE H1s here are >52 chars so brand is dropped.
+    expect(en.title).not.toContain(' — Riksdagsmonitor');
+    expect(de.title).not.toContain(' — Riksdagsmonitor');
     // Descriptions are the executive-brief BLUF only: no fixed suffix,
     // context boilerplate, or generated fallback string.
     expect(en.description).toBe(base.description);
@@ -678,7 +689,15 @@ describe('render-lib — article SEO metadata', () => {
     expect(seo.description.length).toBeLessThanOrEqual(200);
   });
 
-  it('does not alter otherwise identical executive-brief descriptions with fixed uniqueness suffixes', () => {
+  it('keeps identical-H1 EN/DE titles identical (brand suffix when budget allows) — canonical URL disambiguates per-language pages', () => {
+    // Pre-2026-05-24 the renderer appended a "· en" / "· de"
+    // uniqueness suffix to avoid identical SERP titles when an
+    // untranslated EN H1 was reused across languages. PR #2723
+    // removed that suffix per `seo-metadata-contract.md` §4 — every
+    // available SERP pixel goes to the story headline, and
+    // per-language disambiguation is handled by `<link rel="canonical">`,
+    // `og:url`, and `<html lang="…">` (all of which differ between
+    // localized pages even when the H1 is identical).
     const base = {
       title: 'Tidö Current Mandate',
       description: 'The same untranslated fallback summary appears on more than one generated legacy HTML article page.',
@@ -696,10 +715,16 @@ describe('render-lib — article SEO metadata', () => {
       canonicalPath: 'news/2026-05-11-election-cycle-current-de.html',
     });
 
-    expect(en.title).not.toBe(de.title);
+    // Short H1 (20 chars) + brand suffix (18 chars) = 38 ≤ 70 EN hardMax
+    // and ≤ 70 DE hardMax — brand is appended for both locales.
+    expect(en.title).toBe('Tidö Current Mandate — Riksdagsmonitor');
+    expect(de.title).toBe('Tidö Current Mandate — Riksdagsmonitor');
+    // Descriptions are byte-equal because the untranslated brief was
+    // re-used as the localized fallback — that's the legacy-collapse
+    // case this test originally guarded against; the editorial fix
+    // belongs upstream in the news-translate pipeline, not in the
+    // SERP renderer.
     expect(en.description).toBe(de.description);
-    expect(en.title).toContain('· en');
-    expect(de.title).toContain('· de');
     expect(en.description).not.toContain('(en).');
     expect(de.description).not.toContain('(de).');
   });

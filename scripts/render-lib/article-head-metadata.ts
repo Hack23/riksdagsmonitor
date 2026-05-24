@@ -238,7 +238,7 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
     articleTypeId: articleType.type,
     canonicalPath: input.canonicalPath,
   });
-  const computedBrandedTitle = brandTitle(seo.title);
+  const computedBrandedTitle = brandTitle(seo.title, input.lang);
   // Mirror the section value passed to buildChrome so the audit CLI
   // reports exactly what ships in the rendered HTML. Sourced from the
   // shared `DEFAULT_ARTICLE_SECTION` constant in chrome/head.ts so the
