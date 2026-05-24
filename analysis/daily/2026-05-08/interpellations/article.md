@@ -3,7 +3,7 @@ date: 2026-05-08
 subfolder: interpellations
 slug: 2026-05-08-interpellations
 source_folder: analysis/daily/2026-05-08/interpellations
-generated_at: 2026-05-24T20:55:28.379Z
+generated_at: 2026-05-24T22:15:16.521Z
 language: en
 layout: article
 ---
@@ -100,6 +100,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2327,13 +2340,900 @@ PIR-3 (MUCF funding restoration) — OPEN
 PIR-4 (ILO positions) — OPEN  
 PIR-5 (Gaza aid commitments) — OPEN
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_ar.md -->
+
+‏# ملخص تنفيذي — مناقشات الاستجواب 2026-05-08
+
+**التصنيف**: عام | **Admiralty**: B2  
+**الخلاصة**: خمسة استجوابات قُدِّمت في 2026-05-07 خلال دورة ريكسموتيت 2025/26 تكشف مجتمعةً عن استراتيجية معارضة متماسكة: يتعرض حكومة تيدو للضغط بشأن الالتزامات الدولية (غزة/منظمة العمل الدولية)، وإخفاقات المساواة الداخلية (إغلاق بوستنورد لنقاط الخدمة في المناطق الريفية)، وخفض ميزانيات حقوق الأقليات — كل ذلك في غضون ≤ 6 أشهر قبل انتخابات سبتمبر 2026.
+
+---
+
+### الخلاصة التنفيذية
+
+**أهم النتائج**: الاستجوابان المقدَّمان من حزب البيئيين (MP) بشأن غزة (HD10476، HD10478) يشكّلان حملة ضغط منسَّقة بمسارَين — أحدهما يستهدف البُعد الإنساني (Dousa/M)، والآخر يستهدف السياسة الخارجية وقانون حماية المدنيين الدولي (Malmer Stenergard/M). تحفُّظ السويد في مقابل الرد الدبلوماسي الحاد من إسبانيا على حادثة الأسطول يمنح المعارضة رافعةً للمساءلة المقارنة تتردد صداها لدى الناخبين التقدميين.
+
+**النتيجة الثانية**: يوثِّق HD10479 خفضًا موثَّقًا بنسبة 83% في تمويل الوفد السويدي الفنلندي (المنظمة الوطنية للأقلية القومية) — من 833,000 كرونة سويدية إلى 142,000 كرونة سويدية — وهو نقطة بيانات محددة وقابلة للتحقق أشار إليها MUCF نفسه في تقرير متابعته. هذا يجعل الاستجواب موثَّقًا بصورة استثنائية لتبادل المساءلة في الفترة الانتخابية.
+
+**النتيجة الثالثة**: يُظهر HD10477 احتكاكًا داخل الائتلاف: يضغط SD (حزب دعم الحكومة) على KD (شريك الائتلاف) بشأن قرار بوستنورد بإغلاق نقاط الخدمة الأخيرة المتبقية في Dorotea وÅsele وSorsele. تتقاطع الملكية الحكومية، والعدالة الريفية، والتزامات الاستعداد المدني.
+
+---
+
+### القرارات الرئيسية / المنتجات التحليلية المطلوبة
+
+1. **تقييم الاستخبارات** (مستوى IKJ KJ 1–4) — منتَج في intelligence-assessment.md  
+2. **تحليل السيناريوهات** — 4 سيناريوهات لنوافذ T+72h/T+30d/T+90d/T+180d  
+3. **عدسة انتخابات 2026** — تحديد إمكانية التأثير على الناخبين المترددين لكل موضوع استجواب  
+
+---
+
+### تصنيف أهمية الاستجوابات (أولي، ما قبل DIW)
+
+| الترتيب | dok_id | الموضوع | حزب المعارضة | الوزير (الحزب) | نقاط ما قبل DIW |
+|---------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | أسطول غزة / حماية المدنيين | MP | Malmer Stenergard (M) | 9.2 |
+| 2 | HD10476 | الوصول الإنساني إلى غزة | MP | Dousa (M) | 8.8 |
+| 3 | HD10479 | خفض تمويل سياسات الأقليات | S | Liljestrand (M) | 8.1 |
+| 4 | HD10477 | إغلاقات بوستنورد في المناطق الريفية | SD | Slottner (KD) | 7.6 |
+| 5 | HD10475 | السويد/منظمة العمل الدولية: العمل الدولي | S | Britz (L) | 6.9 |
+
+---
+
+### متطلبات الاستخبارات ذات الأولوية (PIR) الحرجة
+
+- **PIR-1**: هل ستلتزم الحكومة باحتجاج رسمي على اعتراض إسرائيل للأسطول، أم ستحافظ على موقف التحفظ الحالي المُعايَر؟ (يُجيب على HD10478 + مخاطر سمعة سرد الحياد في السياسة الخارجية السويدية)
+- **PIR-2**: هل سيُعلن Erik Slottner حزمة استمرارية خدمات بوستنورد للبلديات الثلاث المتأثرة قبل النقاش المقرر (2026-05-22)؟ (HD10477 — اختبار جوهري لعقيدة الملكية الحكومية)
+- **PIR-3**: هل ستقدم الحكومة بندًا ميزانيًا تكميليًا لاستعادة مستويات تمويل MUCF لمنظمات الأقليات قبل سبتمبر 2026؟ (HD10479 — المخاطر الانتخابية لكتلة الأقليات)
+
+---
+
+### السياق الاقتصادي
+
+**صندوق النقد الدولي WEO أبريل 2026 (SWE، استرجاع متدهور — سنة معروفة):**  
+نمو الناتج المحلي الإجمالي للسويد: ~1.0 % (تقدير 2025)، ~2.2 % (توقعات صندوق النقد الدولي 2026).  
+العجز الحكومي: ضمن نطاق ميثاق الاستقرار والنمو في الاتحاد الأوروبي. معدل بطالة منخفض (8.3 %).  
+*ملاحظة*: نقطة نهاية SDMX IFS تُرجع 404؛ تستند التصريحات إلى سنة WEO أبريل 2026 فحسب.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### علامات الإجراءات
+
+- 🔴 **ادعاء انتهاك القانون الإنساني الدولي** (HD10478): يتطلب مصدرًا دقيقًا لأحكام القانون الإنساني الدولي — البروتوكول الإضافي الأول لاتفاقية جنيف، المادة 71 بشأن الإغاثة المدنية الطارئة
+- 🟡 **ادعاء بيانات MUCF** (HD10479): توثيق دقيق — تقرير MUCF uppföljningsrapport مستشهد به، مبالغ SEK محددة (833k → 142k)
+- 🟡 **بوستنورد/الملكية الحكومية** (HD10477): إسناد متقاطع مع إرشادات Statskontoret بشأن الالتزامات الاجتماعية للشركات المملوكة للدولة
+
+---
+
+*الدفعة الأولى | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_da.md -->
+
+**Klassificering**: OFFENTLIG | **Admiralty**: B2  
+**BLUF**: Fem interpellationer indgivet 2026-05-07 under riksmötet 2025/26 afslører samlet en sammenhængende oppositionsstrategi: Tidø-regeringen presses på internationale forpligtelser (Gaza/ILO), indenlandske retfærdighedssvigt (Postnords lukning af landdistriktssteder) og budgetnedskæringer i mindretalsrettigheder — alt ≤ 6 måneder inden valget i september 2026.
+
+---
+
+### Konklusion
+
+**Vigtigste fund**: De to MP-interpellationer om Gaza (HD10476, HD10478) udgør en koordineret toporet pression — én rettet mod bistandsdimensionen (Dousa/M), den anden mod udenrigspolitik og folkeret om beskyttelse af civile (Malmer Stenergard/M). Sveriges tilbageholdenhed versus Spaniens skarpe diplomatiske reaktion på florillje-hændelsen giver oppositionen et komparativt ansvarlighedsgreb, der resonerer hos progressive vælgere.
+
+**Andet fund**: HD10479 dokumenterer et dokumenteret 83 % finansieringsnedskæring til den sverigesfinske delegation (riksorganisation for national minoritet) — fra 833.000 SEK til 142.000 SEK — et specifikt, verificerbart datapunkt, som MUCF selv flagede i sin opfølgningsrapport. Dette gør interpellationen usædvanligt veldokumenteret for en valgperiodes ansvarsutkrævningsudveksling.
+
+**Tredje fund**: HD10477 viser intrakoalitionsfriktion: SD (regeringens støtteparti) presser KD (koalitionspartner) på Postnords beslutning om at lukke de resterende servicepunkter i Dorotea, Åsele og Sorsele. Statsejerskab, landdistriktslighed og civilberedskabsforpligtelser konvergerer.
+
+---
+
+### Vigtige beslutninger / analytiske produkter påkrævet
+
+1. **Efterretningsvurdering** (IKJ-niveau KJ 1–4) — produceret i intelligence-assessment.md  
+2. **Scenarieanalyse** — 4 scenarier for T+72h/T+30d/T+90d/T+180d-vinduer  
+3. **Valg-2026-linse** — identificer gyngestolspotentiale for hvert interpellationsemne  
+
+---
+
+### Interpellationssignifikansranking (foreløbig, pre-DIW)
+
+| Rang | dok_id | Emne | Oppositionsparti | Minister (Parti) | Pre-DIW-score |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | Gaza-florillje / civil beskyttelse | MP | Malmer Stenergard (M) | 9,2 |
+| 2 | HD10476 | Humanitær adgang Gaza | MP | Dousa (M) | 8,8 |
+| 3 | HD10479 | Nedskæringer i mindretalspolitisk finansiering | S | Liljestrand (M) | 8,1 |
+| 4 | HD10477 | Postnords lukninger i landdistrikterne | SD | Slottner (KD) | 7,6 |
+| 5 | HD10475 | ILO/Sverige internationalt arbejde | S | Britz (L) | 6,9 |
+
+---
+
+### Kritiske PIR'er (prioriterede efterretningskrav)
+
+- **PIR-1**: Vil regeringen forpligte sig til en formel protest over den israelske florillje-interception, eller opretholde sin nuværende kalibrerede tilbageholdenhedslinje? (Besvarer HD10478 + omdømmerisiko for SE udenrigspolitiske neutralitetsnarrativ)
+- **PIR-2**: Vil Erik Slottner annoncere en Postnord-servicefortsættelsespakke til de tre berørte kommuner inden den planlagte debat (2026-05-22)? (HD10477 — nøgletest for statsejerskabsdoktrinen)
+- **PIR-3**: Vil regeringen fremlægge en tillægsbudgetpost for at gendanne MUCF's finansieringsniveauer for minoritetsorganisationer inden september 2026? (HD10479 — mindretalsblokkets valgrisiko)
+
+---
+
+### Økonomisk kontekst
+
+**IMF WEO apr-2026 (SWE, forringet hentning — kendt årgång):**  
+Sveriges BNP-vækst: ~1,0 % (2025 skøn), ~2,2 % (2026 IMF-projektion).  
+Statsunderskud: inden for EU's stabilitets- og vækstpagts interval. Lav arbejdsløshed (8,3 %).  
+*Bemærk*: SDMX IFS-endepunkt returnerer 404; påstande baseres udelukkende på WEO apr-2026-årgången.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### Handlingsflag
+
+- 🔴 **IHL-overtrædelsespåstand** (HD10478): Kræver omhyggelig IHL-kildehenvisning — Genève-konventionens tillægsprotokol I, artikel 71 om civil nødhjælp
+- 🟡 **MUCF-datapåstand** (HD10479): Dokumenter præcist — MUCF uppföljningsrapport citeret, specifikke SEK-beløb (833k → 142k)
+- 🟡 **Postnord/statsejerskab** (HD10477): Krydshenvis til Statskontorets retningslinjer for statsejede virksomheders sociale forpligtelser
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_de.md -->
+
+**Einstufung**: ÖFFENTLICH | **Admiralty**: B2  
+**BLUF**: Fünf Interpellationen, die am 2026-05-07 während des riksmöte 2025/26 eingereicht wurden, enthüllen gemeinsam eine kohärente Oppositionsstrategie: Die Tidö-Regierung wird auf internationale Verpflichtungen (Gaza/ILO), inländische Gleichberechtigungsdefizite (Postnords Schließungen in ländlichen Gebieten) und Kürzungen der Minderheitsrechte-Budgets unter Druck gesetzt — alles ≤ 6 Monate vor den Wahlen im September 2026.
+
+---
+
+### Schlussfolgerung
+
+**Wichtigster Befund**: Die zwei MP-Interpellationen zu Gaza (HD10476, HD10478) stellen eine koordinierte Zwei-Wege-Druckkampagne dar — eine auf die humanitäre Dimension (Dousa/M) ausgerichtet, die andere auf die Außenpolitik und das Völkerrecht zum zivilen Schutz (Malmer Stenergard/M). Schwedens Zurückhaltung gegenüber Spaniens scharfer diplomatischer Reaktion auf den Flotillen-Vorfall gibt der Opposition einen komparativen Rechenschaftshebel, der bei progressiven Wählern Anklang findet.
+
+**Zweiter Befund**: HD10479 dokumentiert eine dokumentierte 83-prozentige Finanzierungskürzung für die schwedisch-finnische Delegation (Riksorganisation für nationale Minderheit) — von 833.000 SEK auf 142.000 SEK — ein spezifischer, nachprüfbarer Datenpunkt, den MUCF selbst in seinem Folgericht markiert hat. Dies macht die Interpellation für eine wahlperiodische Rechenschaftsaustausch ungewöhnlich gut belegt.
+
+**Dritter Befund**: HD10477 zeigt Intrakoalitionsspannungen: SD (Regierungsstützpartei) setzt KD (Koalitionspartner) unter Druck wegen Postnords Entscheidung, die letzten verbleibenden Servicepunkte in Dorotea, Åsele und Sorsele zu schließen. Staatseigentum, ländliche Gerechtigkeit und zivilbereits Pflichten konvergieren.
+
+---
+
+### Wichtige Entscheidungen / Erforderliche analytische Produkte
+
+1. **Geheimdienstbewertung** (IKJ-Niveau KJ 1–4) — erstellt in intelligence-assessment.md  
+2. **Szenarioanalyse** — 4 Szenarien für T+72h/T+30d/T+90d/T+180d-Fenster  
+3. **Wahl-2026-Linse** — Schwingwähler-Potenzial für jedes Interpellationsthema identifizieren  
+
+---
+
+### Interpellations-Bedeutungsranking (vorläufig, pre-DIW)
+
+| Rang | dok_id | Thema | Oppositionspartei | Minister (Partei) | Pre-DIW-Punktzahl |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | Gaza-Flotille / ziviler Schutz | MP | Malmer Stenergard (M) | 9,2 |
+| 2 | HD10476 | Humanitärer Zugang Gaza | MP | Dousa (M) | 8,8 |
+| 3 | HD10479 | Kürzungen in der Minderheitspolitik-Finanzierung | S | Liljestrand (M) | 8,1 |
+| 4 | HD10477 | Postnords Schließungen in ländlichen Gebieten | SD | Slottner (KD) | 7,6 |
+| 5 | HD10475 | ILO/Schweden internationale Arbeit | S | Britz (L) | 6,9 |
+
+---
+
+### Kritische PIRs (Prioritäre Geheimdienstanforderungen)
+
+- **PIR-1**: Wird die Regierung einen formellen Protest gegen die israelische Flotillen-Interception einlegen oder ihre aktuelle kalibrierte Zurückhaltungslinie aufrechterhalten? (Beantwortet HD10478 + Reputationsrisiko für das schwedische außenpolitische Neutralitätsnarrativ)
+- **PIR-2**: Wird Erik Slottner vor der geplanten Debatte (2026-05-22) ein Postnord-Dienstleistungskontinuitätspaket für die drei betroffenen Gemeinden ankündigen? (HD10477 — Schlüsseltest der Staatseignerschaftsdoktrin)
+- **PIR-3**: Wird die Regierung einen Ergänzungshaushalt vorlegen, um die MUCF-Finanzierungsniveaus für Minderheitsorganisationen vor September 2026 wiederherzustellen? (HD10479 — Wahlrisiko des Minderheitsblocks)
+
+---
+
+### Wirtschaftlicher Kontext
+
+**IMF WEO Apr-2026 (SWE, verschlechterte Abfrage — bekannter Jahrgang):**  
+Schweden BIP-Wachstum: ~1,0 % (Schätzung 2025), ~2,2 % (IMF-Projektion 2026).  
+Staatsdefizit: im Bereich des EU-Stabilitäts- und Wachstumspakts. Geringe Arbeitslosigkeit (8,3 %).  
+*Hinweis*: SDMX IFS-Endpunkt gibt 404 zurück; Behauptungen stützen sich allein auf den WEO Apr-2026-Jahrgang.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### Handlungsflags
+
+- 🔴 **IHR-Verletzungsbehauptung** (HD10478): Erfordert sorgfältige IHR-Quellenangabe — Genfer Konvention Zusatzprotokoll I, Artikel 71 zur zivilen Nothilfe
+- 🟡 **MUCF-Datenbehauptung** (HD10479): Genau dokumentieren — MUCF uppföljningsrapport zitiert, spezifische SEK-Beträge (833k → 142k)
+- 🟡 **Postnord/Staatseigentum** (HD10477): Gegenüber Statskontorets Richtlinien zu sozialen Verpflichtungen staatseigener Unternehmen querverweisen
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICA | **Admiralty**: B2  
+**BLUF**: Cinco interpelaciones presentadas el 2026-05-07 durante el riksmöte 2025/26 revelan colectivamente una estrategia de oposición coherente: el gobierno Tidö es presionado sobre obligaciones internacionales (Gaza/OIT), deficiencias de equidad doméstica (cierres de Postnord en zonas rurales) y recortes presupuestarios en derechos de minorías — todo ello ≤ 6 meses antes de las elecciones de septiembre de 2026.
+
+---
+
+### Conclusión
+
+**Hallazgo más importante**: Las dos interpelaciones del MP sobre Gaza (HD10476, HD10478) constituyen una campaña de presión coordinada en dos vías — una dirigida a la dimensión humanitaria (Dousa/M), la otra a la política exterior y el derecho internacional sobre protección civil (Malmer Stenergard/M). La contención de Suecia frente a la reacción diplomática contundente de España ante el incidente de la flotilla otorga a la oposición una palanca comparativa de rendición de cuentas que resuena entre los votantes progresistas.
+
+**Segundo hallazgo**: HD10479 documenta un recorte documentado del 83 % en la financiación a la delegación sueco-finlandesa (organización nacional para la minoría nacional) — de 833.000 SEK a 142.000 SEK — un punto de datos específico y verificable que el propio MUCF señaló en su informe de seguimiento. Esto hace que la interpelación sea excepcionalmente bien respaldada para un intercambio de rendición de cuentas en período electoral.
+
+**Tercer hallazgo**: HD10477 muestra fricciones intracoalicionales: SD (partido de apoyo al gobierno) presiona a KD (socio de coalición) sobre la decisión de Postnord de cerrar los últimos puntos de servicio en Dorotea, Åsele y Sorsele. Propiedad estatal, equidad rural y obligaciones de preparación civil convergen.
+
+---
+
+### Decisiones clave / Productos analíticos requeridos
+
+1. **Evaluación de inteligencia** (nivel IKJ KJ 1–4) — elaborada en intelligence-assessment.md  
+2. **Análisis de escenarios** — 4 escenarios para ventanas T+72h/T+30d/T+90d/T+180d  
+3. **Lente elecciones 2026** — identificar el potencial de votos indecisos para cada tema de interpelación  
+
+---
+
+### Clasificación de importancia de las interpelaciones (preliminar, pre-DIW)
+
+| Rango | dok_id | Tema | Partido opositor | Ministro (Partido) | Puntuación pre-DIW |
+|-------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | Flotilla Gaza / protección civil | MP | Malmer Stenergard (M) | 9,2 |
+| 2 | HD10476 | Acceso humanitario a Gaza | MP | Dousa (M) | 8,8 |
+| 3 | HD10479 | Recortes en financiación de minorías | S | Liljestrand (M) | 8,1 |
+| 4 | HD10477 | Cierres de Postnord en zonas rurales | SD | Slottner (KD) | 7,6 |
+| 5 | HD10475 | OIT/Suecia trabajo internacional | S | Britz (L) | 6,9 |
+
+---
+
+### PIRs críticos (Requisitos prioritarios de inteligencia)
+
+- **PIR-1**: ¿Se comprometerá el gobierno con una protesta formal por la interceptación israelí de la flotilla, o mantendrá su actual línea de contención calibrada? (Responde a HD10478 + riesgo reputacional para la narrativa de neutralidad de la política exterior sueca)
+- **PIR-2**: ¿Anunciará Erik Slottner un paquete de continuidad de servicios de Postnord para los tres municipios afectados antes del debate previsto (2026-05-22)? (HD10477 — prueba clave de la doctrina de propiedad estatal)
+- **PIR-3**: ¿Presentará el gobierno una partida presupuestaria suplementaria para restaurar los niveles de financiación del MUCF para organizaciones minoritarias antes de septiembre de 2026? (HD10479 — riesgo electoral del bloque minoritario)
+
+---
+
+### Contexto económico
+
+**FMI WEO abr-2026 (SWE, extracción degradada — cosecha conocida):**  
+Crecimiento del PIB de Suecia: ~1,0 % (estimación 2025), ~2,2 % (proyección FMI 2026).  
+Déficit público: dentro del rango del Pacto de Estabilidad y Crecimiento de la UE. Baja tasa de desempleo (8,3 %).  
+*Nota*: El punto final SDMX IFS devuelve 404; las afirmaciones se basan únicamente en la cosecha WEO abr-2026.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### Señales de acción
+
+- 🔴 **Alegación de violación del DIH** (HD10478): Requiere una cita DIH rigurosa — Protocolo adicional I al Convenio de Ginebra, artículo 71 sobre socorro civil de emergencia
+- 🟡 **Alegación de datos MUCF** (HD10479): Documentar con precisión — MUCF uppföljningsrapport citado, montos SEK específicos (833k → 142k)
+- 🟡 **Postnord/propiedad estatal** (HD10477): Referencia cruzada con las directrices del Statskontoret sobre las obligaciones sociales de las empresas de propiedad estatal
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_fi.md -->
+
+**Luokitus**: JULKINEN | **Admiralty**: B2  
+**BLUF**: Viisi interpellaatiota jätettiin 2026-05-07 riksmötet 2025/26 -istuntokaudella, ja ne paljastavat yhteisesti johdonmukaisen oppositiostrategian: Tidö-hallitusta painostetaan kansainvälisten velvoitteiden (Gaza/ILO), kotimaisten oikeudenmukaisuuspuutteiden (Postnordin maaseutupalvelupisteiden sulkeminen) ja vähemmistöoikeuksien budjettileikkauksien suhteen — kaikki ≤ 6 kuukautta ennen syyskuun 2026 vaaleja.
+
+---
+
+### Yhteenveto
+
+**Tärkein löydös**: Kaksi MP:n interpellaatiota Gazasta (HD10476, HD10478) muodostavat koordinoidun kaksipolisen painostelukampanjan — toinen kohdistuu avustusdimensioon (Dousa/M), toinen ulkopolitiikkaan ja siviilisuojelun kansainväliseen oikeuteen (Malmer Stenergard/M). Ruotsin pidättyväisyys verrattuna Espanjan jyrkkään diplomaattiseen reaktioon laivastokohtauksen johdosta antaa oppositiolle vertailevan vastuullisuu vipuvarren, joka resonoi progressiivisten äänestäjien keskuudessa.
+
+**Toinen löydös**: HD10479 dokumentoi dokumentoidun 83 prosentin rahoitusleikkauksen Ruotsin suomalaisten delegaatiolle (kansallisen vähemmistön valtakunnanjärjestö) — 833 000 SEK:stä 142 000 SEK:iin — erityinen, todennettava datapiste, jonka MUCF itse nosti esiin seurantaraportissaan. Tämä tekee interpellaatiosta poikkeuksellisen hyvin todistetun vaaliajanjakson vastuunottokysymykseksi.
+
+**Kolmas löydös**: HD10477 osoittaa koalitiosisäistä kitkaa: SD (hallituksen tukipuolue) painostaa KD:tä (koalitionkumppani) Postnordin päätöksestä sulkea viimeiset jäljellä olevat palvelupisteet Dorotean, Åselen ja Sorselen kunnissa. Valtionomistus, maaseutukehitys ja siviilivalmiusvelvoitteet kietoutuvat yhteen.
+
+---
+
+### Tärkeät päätökset / vaadittavat analyyttistuotteet
+
+1. **Tiedusteluarvio** (IKJ-taso KJ 1–4) — tuotettu intelligence-assessment.md-tiedostoon  
+2. **Skenaarioanalyysi** — 4 skenaariota T+72h/T+30d/T+90d/T+180d-ikkunoille  
+3. **Vaali-2026-linssi** — tunnista heilurirooli kutakin interpellaatioaihetta varten  
+
+---
+
+### Interpellaatioiden merkitysrankaus (alustava, pre-DIW)
+
+| Sija | dok_id | Aihe | Oppositiopuolue | Ministeri (Puolue) | Pre-DIW-pisteet |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | Gazan laivasto / siviilisuojelu | MP | Malmer Stenergard (M) | 9,2 |
+| 2 | HD10476 | Humanitaarinen pääsy Gazaan | MP | Dousa (M) | 8,8 |
+| 3 | HD10479 | Vähemmistöpolitiikan rahoitusleikkaukset | S | Liljestrand (M) | 8,1 |
+| 4 | HD10477 | Postnordin maaseutusulkemiset | SD | Slottner (KD) | 7,6 |
+| 5 | HD10475 | ILO/Ruotsi kansainvälinen työ | S | Britz (L) | 6,9 |
+
+---
+
+### Kriittiset PIR:t (prioriteettiset tiedusteluvaatimukset)
+
+- **PIR-1**: Sitoutuuko hallitus viralliseen protestiin Israelin laivastointerception johdosta, vai ylläpitääkö se nykyistä kalibroitua pidättyväisyyslinjaa? (Vastaa HD10478:aan + mainevaaraa SE:n ulkopolitiikan neutraaliusnarratiiville)
+- **PIR-2**: Ilmoittaako Erik Slottner Postnordin palvelujen jatkumispaketista kolmelle kunnalle ennen suunniteltua keskustelua (2026-05-22)? (HD10477 — valtionomistuksen doktriinin avaintesti)
+- **PIR-3**: Esittääkö hallitus lisätalousarvion palauttamaan MUCF:n vähemmistöjärjestöjen rahoitustasot ennen syyskuuta 2026? (HD10479 — vähemmistöblokin vaaliriski)
+
+---
+
+### Taloudellinen konteksti
+
+**IMF WEO huhtikuu 2026 (SWE, heikentynyt haku — tunnettu vuosikerta):**  
+Ruotsin BKT-kasvu: ~1,0 % (2025 arvio), ~2,2 % (2026 IMF-projektio).  
+Alijäämä: EU:n vakaus- ja kasvusopimuksen rajoissa. Matala työttömyys (8,3 %).  
+*Huom*: SDMX IFS-päätepiste palauttaa 404; väitteet perustuvat yksinomaan WEO huhtikuu 2026 -vuosikertaan.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### Toimintomerkit
+
+- 🔴 **IHL-rikkomisväite** (HD10478): Vaatii huolellisen IHL-lähdeviittauksen — Geneven yleissopimuksen lisäpöytäkirja I, 71 artikla siviiliavusta
+- 🟡 **MUCF-dataväite** (HD10479): Dokumentoi tarkasti — MUCF uppföljningsrapport siteerattu, tarkat SEK-määrät (833k → 142k)
+- 🟡 **Postnord/valtionomistus** (HD10477): Ristiinviittaa Statskontorets ohjeisiin valtion yhtiöiden sosiaalisista velvoitteista
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_fr.md -->
+
+**BLUF** : Cinq interpellations déposées le 2026-05-07 lors du riksmöte 2025/26 révèlent collectivement une stratégie d'opposition cohérente : le gouvernement Tidö est mis sous pression sur les obligations internationales (Gaza/OIT), les carences d'équité nationale (fermetures de Postnord en milieu rural) et les coupes budgétaires concernant les droits des minorités — le tout ≤ 6 mois avant les élections de septembre 2026.
+
+---
+
+### Conclusion
+
+**Constat principal** : Les deux interpellations du MP sur Gaza (HD10476, HD10478) constituent une campagne de pression coordonnée à deux volets — l'un ciblant la dimension humanitaire (Dousa/M), l'autre la politique étrangère et le droit international relatif à la protection des civils (Malmer Stenergard/M). La retenue de la Suède par rapport à la réaction diplomatique tranchante de l'Espagne à l'incident de la flottille offre à l'opposition un levier de responsabilisation comparatif qui résonne auprès des électeurs progressistes.
+
+**Deuxième constat** : HD10479 documente une réduction documentée de 83 % du financement de la délégation suédo-finlandaise (organisation nationale pour les minorités nationales) — de 833 000 SEK à 142 000 SEK — un point de données spécifique et vérifiable que le MUCF lui-même a signalé dans son rapport de suivi. Cela rend l'interpellation inhabituellement bien étayée pour un échange de responsabilisation en période électorale.
+
+**Troisième constat** : HD10477 révèle des frictions intracoalitionnelles : SD (parti de soutien du gouvernement) fait pression sur KD (partenaire de coalition) à propos de la décision de Postnord de fermer les derniers points de service à Dorotea, Åsele et Sorsele. Propriété d'État, équité rurale et obligations de préparation civile convergent.
+
+---
+
+### Décisions clés / Produits analytiques requis
+
+1. **Évaluation du renseignement** (niveau IKJ KJ 1–4) — produite dans intelligence-assessment.md  
+2. **Analyse de scénarios** — 4 scénarios pour les fenêtres T+72h/T+30d/T+90d/T+180d  
+3. **Prisme élections 2026** — identifier le potentiel d'électeurs indécis pour chaque thème d'interpellation  
+
+---
+
+### Classement de l'importance des interpellations (préliminaire, pre-DIW)
+
+| Rang | dok_id | Thème | Parti d'opposition | Ministre (Parti) | Score pre-DIW |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | Flottille Gaza / protection des civils | MP | Malmer Stenergard (M) | 9,2 |
+| 2 | HD10476 | Accès humanitaire à Gaza | MP | Dousa (M) | 8,8 |
+| 3 | HD10479 | Coupes dans le financement des minorités | S | Liljestrand (M) | 8,1 |
+| 4 | HD10477 | Fermetures Postnord en milieu rural | SD | Slottner (KD) | 7,6 |
+| 5 | HD10475 | OIT/Suède travail international | S | Britz (L) | 6,9 |
+
+---
+
+### PIR critiques (exigences prioritaires de renseignement)
+
+- **PIR-1** : Le gouvernement s'engagera-t-il à formuler une protestation formelle contre l'interception israélienne de la flottille, ou maintiendra-t-il sa ligne actuelle de retenue calibrée ? (Répond à HD10478 + risque réputationnel pour le narratif de neutralité de la politique étrangère suédoise)
+- **PIR-2** : Erik Slottner annoncera-t-il un plan de continuité des services Postnord pour les trois communes concernées avant le débat prévu (2026-05-22) ? (HD10477 — test clé de la doctrine de propriété d'État)
+- **PIR-3** : Le gouvernement présentera-t-il une ligne budgétaire supplémentaire pour rétablir les niveaux de financement du MUCF pour les organisations minoritaires avant septembre 2026 ? (HD10479 — risque électoral du bloc minoritaire)
+
+---
+
+### Contexte économique
+
+**FMI WEO avr-2026 (SWE, extraction dégradée — millésime connu) :**  
+Croissance du PIB suédois : ~1,0 % (estimation 2025), ~2,2 % (projection FMI 2026).  
+Déficit public : dans la plage du Pacte de stabilité et de croissance de l'UE. Faible chômage (8,3 %).  
+*Remarque* : Le point de terminaison SDMX IFS retourne 404 ; les affirmations reposent uniquement sur le millésime WEO avr-2026.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### Signaux d'action
+
+- 🔴 **Allégation de violation du DIH** (HD10478) : Nécessite une source DIH rigoureuse — Protocole additionnel I à la Convention de Genève, article 71 sur les secours civils d'urgence
+- 🟡 **Allégation de données MUCF** (HD10479) : Documenter avec précision — MUCF uppföljningsrapport citée, montants SEK spécifiques (833k → 142k)
+- 🟡 **Postnord/propriété d'État** (HD10477) : Renvoi croisé aux directives du Statskontoret sur les obligations sociales des entreprises détenues par l'État
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_he.md -->
+
+‏# תקציר מנהלים — דיוני שאילתות 2026-05-08
+
+**סיווג**: ציבורי | **Admiralty**: B2  
+**סיכום**: חמש שאילתות שהוגשו ב-2026-05-07 במהלך הרישמוטה 2025/26 חושפות ביחד אסטרטגיית אופוזיציה עקבית: ממשלת טידו מוצאת לחץ בנוגע להתחייבויות בינלאומיות (עזה/ILO), כישלונות שוויון מקומיים (סגירות Postnord באזורים כפריים) וקיצוצי תקציב בזכויות מיעוטים — כל זאת ≤ 6 חודשים לפני בחירות ספטמבר 2026.
+
+---
+
+### מסקנה
+
+**הממצא החשוב ביותר**: שתי השאילתות של MP בנוגע לעזה (HD10476, HD10478) מהוות קמפיין לחץ מתואם בשני מסלולים — האחד מכוון לממד הסיוע (Dousa/M), השני לפוליטיקה חיצונית ולחוק הגנת אזרחים בינלאומי (Malmer Stenergard/M). ריסון שוודיה לעומת התגובה הדיפלומטית החדה של ספרד לתקרית האוניות מספקת לאופוזיציה מנוף אחריות השוואתי שמהדהד בקרב בוחרים פרוגרסיביים.
+
+**ממצא שני**: HD10479 מתעד קיצוץ מתועד של 83% במימון לנציגות הפינית-שוודית (ארגון לאומי למיעוטים לאומיים) — מ-833,000 SEK ל-142,000 SEK — נקודת נתונים ספציפית וניתנת לאימות שאותה MUCF עצמו סימן בדוח המעקב שלו. זה הופך את השאילתה לנתמכת בראיות באופן יוצא דופן עבור חילופי אחריות בתקופת בחירות.
+
+**ממצא שלישי**: HD10477 מראה חיכוך תוך-קואליציוני: SD (מפלגת תמיכה בממשלה) מפעילה לחץ על KD (שותפת קואליציה) בנוגע להחלטת Postnord לסגור את נקודות השירות האחרונות שנותרו ב-Dorotea, Åsele ו-Sorsele. בעלות ממשלתית, שוויון כפרי והתחייבויות ערנות אזרחית מתלכדות.
+
+---
+
+### החלטות מרכזיות / מוצרים אנליטיים נדרשים
+
+1. **הערכת מודיעין** (רמת IKJ KJ 1–4) — מיוצר ב-intelligence-assessment.md  
+2. **ניתוח תרחישים** — 4 תרחישים לחלונות T+72h/T+30d/T+90d/T+180d  
+3. **עדשת בחירות 2026** — זיהוי פוטנציאל בוחרים מתנדנדים לכל נושא שאילתה  
+
+---
+
+### דירוג חשיבות השאילתות (ראשוני, לפני DIW)
+
+| דירוג | dok_id | נושא | מפלגת אופוזיציה | שר (מפלגה) | ניקוד לפני DIW |
+|-------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | אוניות עזה / הגנת אזרחים | MP | Malmer Stenergard (M) | 9.2 |
+| 2 | HD10476 | גישה הומניטרית לעזה | MP | Dousa (M) | 8.8 |
+| 3 | HD10479 | קיצוצים במימון מדיניות מיעוטים | S | Liljestrand (M) | 8.1 |
+| 4 | HD10477 | סגירות Postnord באזורים כפריים | SD | Slottner (KD) | 7.6 |
+| 5 | HD10475 | ILO/שוודיה עבודה בינלאומית | S | Britz (L) | 6.9 |
+
+---
+
+### דרישות מודיעין עדיפות (PIR) קריטיות
+
+- **PIR-1**: האם הממשלה תתחייב לאחד מחאה רשמית על עצירת האוניה הישראלית, או תשמור על קו הריסון המכויל הנוכחי שלה? (עונה על HD10478 + סיכון מוניטין לנרטיב הניטרליות של מדיניות החוץ הישראלית)
+- **PIR-2**: האם Erik Slottner יכריז על חבילת המשכיות שירות Postnord לשלוש הרשויות המקומיות המושפעות לפני הדיון המתוכנן (2026-05-22)? (HD10477 — מבחן מפתח לדוקטרינת בעלות ממשלתית)
+- **PIR-3**: האם הממשלה תציג פריט תקציב משלים להחזרת רמות מימון MUCF לארגוני מיעוטים לפני ספטמבר 2026? (HD10479 — סיכון בחירות של בלוק המיעוטים)
+
+---
+
+### הקשר כלכלי
+
+**IMF WEO אפריל-2026 (SWE, אחזור מושפל — וינטאג' ידוע):**  
+צמיחת תמ"ג שוודיה: ~1.0% (הערכת 2025), ~2.2% (תחזית IMF 2026).  
+גירעון ממשלתי: בטווח אמנת היציבות והצמיחה של האיחוד האירופי. אבטלה נמוכה (8.3%).  
+*הערה*: נקודת הקצה SDMX IFS מחזירה 404; הטענות נשענות על וינטאג' WEO אפריל-2026 בלבד.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### דגלי פעולה
+
+- 🔴 **טענת הפרת IHL** (HD10478): דורשת מקורות IHL מדויקים — הפרוטוקול הנוסף I לאמנת ג'נבה, סעיף 71 על סיוע אזרחי חירום
+- 🟡 **טענת נתוני MUCF** (HD10479): לתעד בדייקנות — MUCF uppföljningsrapport מצוטט, סכומי SEK ספציפיים (833k → 142k)
+- 🟡 **Postnord/בעלות ממשלתית** (HD10477): הפניה צולבת להנחיות Statskontoret בנוגע להתחייבויות חברתיות של חברות ממשלתיות
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_ja.md -->
+
+**分類**: 公開 | **Admiralty**: B2  
+**概要**: 2025/26年リクスモーテにおいて2026-05-07に提出された5件の質問演説は、一貫した野党戦略を集合的に明らかにする: ティドー政権は国際的義務（ガザ/ILO）、国内の公平性の失敗（Postnordの農村閉鎖）、少数民族権利の予算削減について9月2026年選挙の≤6ヶ月前に圧力を受けている。
+
+---
+
+### 結論
+
+**最重要知見**: ガザに関する2件のMP質問演説（HD10476、HD10478）は、調整された二方向圧力キャンペーンを形成する — 一つは人道支援次元（Dousa/M）を標的とし、もう一つは外交政策と民間保護に関する国際法（Malmer Stenergard/M）を標的とする。フローティラ事件に対するスペインの鋭い外交反応と比べたスウェーデンの自制心は、野党に進歩的な有権者に響く比較責任のレバーを与える。
+
+**第2の知見**: HD10479は、スウェーデン・フィンランド代表団（国民的少数民族の全国組織）への資金83%削減を文書化する — 833,000クローナから142,000クローナへ — MUCFが独自のフォローアップ報告書で指摘した、具体的で検証可能なデータポイント。これにより、この質問演説は選挙期間中の説明責任交換として異例に十分な証拠に裏付けられている。
+
+**第3の知見**: HD10477はコアリション内の摩擦を示す: SD（政権支持党）がKD（連立パートナー）に対し、PosnordのDorotea、Åsele、Sorseleにある最後のサービス拠点を閉鎖する決定を巡って圧力をかけている。国家所有権、農村の公平性、市民防衛義務が収束する。
+
+---
+
+### 主要決定事項 / 必要な分析製品
+
+1. **情報評価**（IKJレベルKJ 1–4）— intelligence-assessment.mdに作成  
+2. **シナリオ分析** — T+72h/T+30d/T+90d/T+180dウィンドウの4シナリオ  
+3. **2026年選挙の視点** — 各質問演説テーマの浮動票ポテンシャルを特定  
+
+---
+
+### 質問演説重要度ランキング（暫定、DIW前）
+
+| 順位 | dok_id | テーマ | 野党 | 大臣（政党） | DIW前スコア |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | ガザ艦隊 / 民間保護 | MP | Malmer Stenergard (M) | 9.2 |
+| 2 | HD10476 | ガザへの人道的アクセス | MP | Dousa (M) | 8.8 |
+| 3 | HD10479 | 少数民族政策資金削減 | S | Liljestrand (M) | 8.1 |
+| 4 | HD10477 | Postnordの農村閉鎖 | SD | Slottner (KD) | 7.6 |
+| 5 | HD10475 | ILO/スウェーデン国際労働 | S | Britz (L) | 6.9 |
+
+---
+
+### 重要な優先情報要件（PIR）
+
+- **PIR-1**: 政府はイスラエルの艦隊迎撃に対して正式抗議を行うか、それとも現在の調整された自制路線を維持するか？（HD10478への回答 + スウェーデン外交政策の中立性ナラティブに対する評判リスク）
+- **PIR-2**: Erik Slottnerは予定討論（2026-05-22）前に3つの影響を受けた地方自治体に対してPostnordサービス継続パッケージを発表するか？（HD10477 — 国家所有権原則の重要なテスト）
+- **PIR-3**: 政府は2026年9月前に少数民族組織へのMUCF資金レベルを回復するために補正予算項目を提出するか？（HD10479 — 少数民族ブロックの選挙リスク）
+
+---
+
+### 経済的背景
+
+**IMF WEO 2026年4月（SWE、劣化した取得 — 既知のヴィンテージ）:**  
+スウェーデンGDP成長率：~1.0%（2025年推定）、~2.2%（2026年IMF予測）。  
+政府赤字：EU安定成長協定の範囲内。低失業率（8.3%）。  
+*注記*: SDMX IFSエンドポイントが404を返す；主張はWEO 2026年4月ヴィンテージのみに基づく。  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### アクションフラグ
+
+- 🔴 **IHL違反の主張**（HD10478）：慎重なIHL出典が必要 — ジュネーブ条約第1追加議定書、第71条民間救援活動
+- 🟡 **MUCFデータの主張**（HD10479）：正確に文書化 — MUCF uppföljningsrapportを引用、特定のSEK金額（833k → 142k）
+- 🟡 **Postnord/国家所有**（HD10477）：Statskontoretの国有企業の社会的義務に関するガイドラインと相互参照
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_ko.md -->
+
+**분류**: 공개 | **Admiralty**: B2  
+**요약**: 2025/26 릭스모테에서 2026-05-07에 제출된 5건의 대정부 질문은 집합적으로 일관된 야당 전략을 드러낸다: 티도 정부는 국제적 의무(가자/ILO), 국내 형평성 실패(Postnord의 농촌 폐쇄), 소수자 권리 예산 삭감에 대해 2026년 9월 선거 ≤ 6개월 전에 압박받고 있다.
+
+---
+
+### 결론
+
+**가장 중요한 발견**: 가자에 관한 두 건의 MP 대정부 질문(HD10476, HD10478)은 조정된 양방향 압력 캠페인을 형성한다 — 하나는 인도적 지원 차원(Dousa/M)을 겨냥하고, 다른 하나는 외교 정책과 민간 보호에 관한 국제법(Malmer Stenergard/M)을 겨냥한다. 함대 사건에 대한 스페인의 날카로운 외교 반응과 비교한 스웨덴의 자제심은 야당에게 진보적 유권자들에게 공감을 얻는 비교 책임 레버를 제공한다.
+
+**두 번째 발견**: HD10479는 스웨덴-핀란드 대표단(국가 소수민족 전국 조직)에 대한 83% 자금 삭감을 문서화한다 — 833,000 SEK에서 142,000 SEK로 — MUCF가 자체 후속 보고서에서 지적한 구체적이고 검증 가능한 데이터 포인트. 이것은 선거 기간 책임 교환으로서 대정부 질문을 이례적으로 잘 뒷받침된 것으로 만든다.
+
+**세 번째 발견**: HD10477은 연립 내 갈등을 보여준다: SD(정부 지지 정당)가 KD(연립 파트너)에게 Postnord가 Dorotea, Åsele, Sorsele의 마지막 남은 서비스 지점을 폐쇄하는 결정에 대해 압박을 가하고 있다. 국가 소유권, 농촌 형평성, 시민 방위 의무가 수렴한다.
+
+---
+
+### 주요 결정 / 필요한 분석 제품
+
+1. **정보 평가** (IKJ 수준 KJ 1–4) — intelligence-assessment.md에 작성  
+2. **시나리오 분석** — T+72h/T+30d/T+90d/T+180d 윈도우에 대한 4가지 시나리오  
+3. **2026년 선거 렌즈** — 각 대정부 질문 주제의 부동층 잠재력 파악  
+
+---
+
+### 대정부 질문 중요도 순위 (초안, DIW 이전)
+
+| 순위 | dok_id | 주제 | 야당 | 장관 (정당) | DIW 이전 점수 |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | 가자 함대 / 민간 보호 | MP | Malmer Stenergard (M) | 9.2 |
+| 2 | HD10476 | 가자 인도적 접근 | MP | Dousa (M) | 8.8 |
+| 3 | HD10479 | 소수민족 정책 자금 삭감 | S | Liljestrand (M) | 8.1 |
+| 4 | HD10477 | Postnord 농촌 폐쇄 | SD | Slottner (KD) | 7.6 |
+| 5 | HD10475 | ILO/스웨덴 국제 노동 | S | Britz (L) | 6.9 |
+
+---
+
+### 중요한 우선 정보 요건 (PIR)
+
+- **PIR-1**: 정부는 이스라엘의 함대 차단에 대한 공식 항의를 약속할 것인가, 아니면 현재의 조정된 자제 노선을 유지할 것인가? (HD10478에 답변 + 스웨덴 외교 정책 중립성 서사에 대한 평판 위험)
+- **PIR-2**: Erik Slottner는 예정된 토론(2026-05-22) 전에 세 영향받은 지방자치단체에 대해 Postnord 서비스 지속성 패키지를 발표할 것인가? (HD10477 — 국가 소유권 원칙의 핵심 시험)
+- **PIR-3**: 정부는 2026년 9월 전에 소수민족 조직을 위한 MUCF 자금 수준을 회복하기 위한 추가 예산 항목을 제출할 것인가? (HD10479 — 소수민족 블록의 선거 위험)
+
+---
+
+### 경제적 맥락
+
+**IMF WEO 2026년 4월 (SWE, 저하된 취득 — 알려진 빈티지):**  
+스웨덴 GDP 성장률: ~1.0% (2025년 추정), ~2.2% (2026년 IMF 예측).  
+정부 적자: EU 안정성장협약 범위 내. 낮은 실업률 (8.3%).  
+*참고*: SDMX IFS 엔드포인트가 404를 반환; 주장은 WEO 2026년 4월 빈티지에만 기반.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### 조치 플래그
+
+- 🔴 **IHL 위반 주장** (HD10478): 신중한 IHL 출처 필요 — 제네바 협약 추가 의정서 I, 제71조 민간 긴급 구호
+- 🟡 **MUCF 데이터 주장** (HD10479): 정확하게 문서화 — MUCF uppföljningsrapport 인용, 특정 SEK 금액 (833k → 142k)
+- 🟡 **Postnord/국가 소유권** (HD10477): 국유 기업의 사회적 의무에 관한 Statskontoret 지침 교차 참조
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR | **Admiralty**: B2  
+**BLUF**: Vijf interpellaties ingediend op 2026-05-07 tijdens het riksmöte 2025/26 onthullen gezamenlijk een coherente oppositiestrategie: de Tidö-regering wordt onder druk gezet over internationale verplichtingen (Gaza/ILO), binnenlandse rechtvaardigheidsdefecten (Postnords sluitingen op het platteland) en budgetkortingen op minderheidsrechten — alles ≤ 6 maanden voor de verkiezingen van september 2026.
+
+---
+
+### Conclusie
+
+**Belangrijkste bevinding**: De twee MP-interpellaties over Gaza (HD10476, HD10478) vormen een gecoördineerde tweesporige druckcampagne — één gericht op de humanitaire dimensie (Dousa/M), de andere op het buitenlandbeleid en het internationaal recht inzake bescherming van burgers (Malmer Stenergard/M). Zweden's terughoudendheid tegenover de scherpe diplomatieke reactie van Spanje op het flotilleincident biedt de oppositie een vergelijkende verantwoordingshendel die resoneert bij progressieve kiezers.
+
+**Tweede bevinding**: HD10479 documenteert een gedocumenteerde 83% financieringskorting aan de Zweeds-Finse delegatie (riksorganisatie voor nationale minderheid) — van 833.000 SEK tot 142.000 SEK — een specifiek, verifieerbaar datapunt dat MUCF zelf markeerde in haar vervolgrapport. Dit maakt de interpellatie ongewoon goed onderbouwd voor een verkiezingsperiode-verantwoordingswisseling.
+
+**Derde bevinding**: HD10477 toont intracoalitiewrijving: SD (regeringssteunpartij) zet KD (coalitiegepartner) onder druk over Postnords beslissing om de laatste resterende servicepunten in Dorotea, Åsele en Sorsele te sluiten. Staatseigendom, plattelands rechtvaardigheid en civiele voorbereidingsverplichtingen convergeren.
+
+---
+
+### Belangrijke beslissingen / Vereiste analytische producten
+
+1. **Inlichtingenbeoordeling** (IKJ-niveau KJ 1–4) — geproduceerd in intelligence-assessment.md  
+2. **Scenarioanalyse** — 4 scenario's voor T+72h/T+30d/T+90d/T+180d-vensters  
+3. **Verkiezingen-2026-lens** — zwevende-kiezers-potentieel voor elk interpellatie-thema identificeren  
+
+---
+
+### Interpellatierangschikking naar betekenis (voorlopig, pre-DIW)
+
+| Rang | dok_id | Onderwerp | Oppositiepartij | Minister (Partij) | Pre-DIW-score |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | Gaza-flotille / civiele bescherming | MP | Malmer Stenergard (M) | 9,2 |
+| 2 | HD10476 | Humanitaire toegang Gaza | MP | Dousa (M) | 8,8 |
+| 3 | HD10479 | Kortingen in financiering minderheden | S | Liljestrand (M) | 8,1 |
+| 4 | HD10477 | Postnord sluitingen op het platteland | SD | Slottner (KD) | 7,6 |
+| 5 | HD10475 | ILO/Zweden internationale arbeid | S | Britz (L) | 6,9 |
+
+---
+
+### Kritische PIR's (Prioritaire inlichtingenvereisten)
+
+- **PIR-1**: Zal de regering zich inzetten voor een formeel protest tegen de Israëlische flotille-interceptie, of haar huidige gekalibreerde terughoudendheidshouding handhaven? (Beantwoordt HD10478 + reputatierisico voor het Zweedse buitenlandspolitieke neutraliteitsnarratief)
+- **PIR-2**: Zal Erik Slottner een Postnord-servicecontinuïteitspakket voor de drie getroffen gemeenten aankondigen vóór het geplande debat (2026-05-22)? (HD10477 — sleuteltest van de staatseigendoktrine)
+- **PIR-3**: Zal de regering een aanvullend begrotingsitem indienen om de MUCF-financieringsniveaus voor minderheidsorganisaties vóór september 2026 te herstellen? (HD10479 — verkiezingsrisico van het minderheidsblok)
+
+---
+
+### Economische context
+
+**IMF WEO apr-2026 (SWE, gedegradeerde ophaling — bekende vintage):**  
+Zweedse bbp-groei: ~1,0 % (schatting 2025), ~2,2 % (IMF-projectie 2026).  
+Staatsdeficit: binnen het bereik van het EU-stabiliteits- en groeipact. Lage werkloosheid (8,3 %).  
+*Opmerking*: SDMX IFS-eindpunt geeft 404 terug; beweringen berusten uitsluitend op de WEO apr-2026-vintage.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### Actieflags
+
+- 🔴 **IHL-schendingsbewering** (HD10478): Vereist zorgvuldige IHL-bronvermelding — Aanvullend Protocol I bij het Verdrag van Genève, Artikel 71 over civiele noodhulp
+- 🟡 **MUCF-databewering** (HD10479): Nauwkeurig documenteren — MUCF uppföljningsrapport geciteerd, specifieke SEK-bedragen (833k → 142k)
+- 🟡 **Postnord/staatseigendom** (HD10477): Kruisverwijzing naar de richtlijnen van Statskontoret over sociale verplichtingen van staatseigendomsbedrijven
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_no.md -->
+
+**Klassifisering**: OFFENTLIG | **Admiralty**: B2  
+**BLUF**: Fem interpellasjoner innlevert 2026-05-07 under riksmötet 2025/26 avslører samlet en sammenhengende opposisjonsstrategi: Tidö-regjeringen presses på internasjonale forpliktelser (Gaza/ILO), innenlandske rettferdighetsproblemer (Postnords avvikling av landdistriktssteder) og budsjettkutt i minoritetsrettigheter — alt ≤ 6 måneder før valget i september 2026.
+
+---
+
+### Konklusjon
+
+**Viktigste funn**: De to MP-interpellasjonene om Gaza (HD10476, HD10478) utgjør en koordinert toporet pressekampanje — én rettet mot bistandsdimensjonen (Dousa/M), den andre mot utenrikspolitikk og folkerettslig sivilbeskyttelse (Malmer Stenergard/M). Sveriges tilbakeholdenhet versus Spanias skarpe diplomatiske reaksjon på florillje-hendelsen gir opposisjonen et komparativt ansvarlighetsgrep som resonnerer hos progressive velgere.
+
+**Andre funn**: HD10479 dokumenterer et dokumentert 83 % finansieringskutt til den sverigefinsk delegasjonen (riksorganisasjon for nasjonal minoritet) — fra 833 000 SEK til 142 000 SEK — et spesifikt, verifiserbart datapunkt som MUCF selv flagget i sin oppfølgingsrapport. Dette gjør interpellasjonen uvanlig godt dokumentert for en valgperiodes ansvarsutfordrende utveksling.
+
+**Tredje funn**: HD10477 viser intrakoalisjonsgnisning: SD (regjeringens støtteparti) presser KD (koalisjonspartner) på Postnords beslutning om å stenge de gjenværende servicestedene i Dorotea, Åsele og Sorsele. Statlig eierskap, distriktslighet og sivil beredskapforpliktelser konvergerer.
+
+---
+
+### Viktige beslutninger / analytiske produkter som kreves
+
+1. **Etterretningsvurdering** (IKJ-nivå KJ 1–4) — produsert i intelligence-assessment.md  
+2. **Scenarieanalyse** — 4 scenarioer for T+72h/T+30d/T+90d/T+180d-vinduer  
+3. **Valg-2026-linse** — identifiser vippepotensial for hvert interpellasjonstema  
+
+---
+
+### Interpellasjonsrangering etter betydning (foreløpig, pre-DIW)
+
+| Rang | dok_id | Tema | Opposisjonsparti | Minister (Parti) | Pre-DIW-score |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | Gaza-florillje / sivilbeskyttelse | MP | Malmer Stenergard (M) | 9,2 |
+| 2 | HD10476 | Humanitær tilgang Gaza | MP | Dousa (M) | 8,8 |
+| 3 | HD10479 | Kutt i minoritetspolitisk finansiering | S | Liljestrand (M) | 8,1 |
+| 4 | HD10477 | Postnords avvikling i distriktene | SD | Slottner (KD) | 7,6 |
+| 5 | HD10475 | ILO/Sverige internasjonalt arbeid | S | Britz (L) | 6,9 |
+
+---
+
+### Kritiske PIR-er (prioriterte etterretningskrav)
+
+- **PIR-1**: Vil regjeringen forplikte seg til en formell protest over den israelske florillje-intercepesjonen, eller opprettholde sin nåværende kalibrerte tilbakeholdenhets linje? (Besvarer HD10478 + omdømmrisiko for SE utenrikspolitiske nøytralitetsnarrativ)
+- **PIR-2**: Vil Erik Slottner annonsere en Postnord-servicekontinuitetspakke for de tre berørte kommunene før den planlagte debatten (2026-05-22)? (HD10477 — nøkkeltest for statlig eierkapsdoktrine)
+- **PIR-3**: Vil regjeringen fremlegge en tilleggsbudsjettpost for å gjenopprette MUCF:s finansieringsnivåer for minoritetsorganisasjoner før september 2026? (HD10479 — minoritetsblokkets valgrisiko)
+
+---
+
+### Økonomisk kontekst
+
+**IMF WEO apr-2026 (SWE, degradert henting — kjent årgång):**  
+Sveriges BNP-vekst: ~1,0 % (2025 estimat), ~2,2 % (2026 IMF-projeksjon).  
+Statsunderskudd: innenfor EU-stabilitets- og vekstpaktens intervall. Lav arbeidsledighet (8,3 %).  
+*Merk*: SDMX IFS-endepunkt returnerer 404; påstander baseres utelukkende på WEO apr-2026-årgången.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### Handlingsmerker
+
+- 🔴 **IHL-overtredelsespåstand** (HD10478): Krever omhyggelig IHL-kildehenvisning — Genève-konvensjonens tilleggsprotokoll I, artikkel 71 om sivil nødhjelp
+- 🟡 **MUCF-datapåstand** (HD10479): Dokumenter nøyaktig — MUCF uppföljningsrapport sitert, spesifikke SEK-beløp (833k → 142k)
+- 🟡 **Postnord/statlig eierskap** (HD10477): Krysshenvis til Statskontorets retningslinjer for statseide selskapers sosiale forpliktelser
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG | **Admiralty**: B2  
+**BLUF**: Fem interpellationer inlämnade 2026-05-07 under riksmötet 2025/26 avslöjar kollektivt en sammanhållen oppositionsstrategi: Tidöregeringen pressas på internationella åtaganden (Gaza/ILO), inhemska rättvisebrister (Postnords landsbygdsnedläggningar) och budgetnedskärningar för minoritetsrättigheter — allt ≤ 6 månader före valet i september 2026.
+
+---
+
+### Slutsats
+
+**Viktigaste fynd**: De två MP-interpellationerna om Gaza (HD10476, HD10478) utgör en samordnad tvåspårig tryckkampanj — en inriktad på biståndsdimensionen (Dousa/M), den andra på utrikespolitik och folkrättslig skyddslag (Malmer Stenergard/M). Sveriges återhållsamhet kontra Spaniens skarpa diplomatiska reaktion på flottilja-incidenten ger oppositionen ett komparativt ansvarsutkrävande som resonerar hos progressiva väljare.
+
+**Andra fynd**: HD10479 dokumenterar en dokumenterad 83-procentig finansieringsnedskärning till den sverigefinska delegationen (riksorganisation för nationell minoritet) — från 833 000 SEK till 142 000 SEK — en specifik, verifierbar datapunkt som MUCF självt flaggade i sin uppföljningsrapport. Detta gör interpellationen ovanligt välbevisad för ett valperiodsansvarsutkrävande.
+
+**Tredje fynd**: HD10477 visar intrakoalitionell friktion: SD (regeringens stödparti) pressar KD (koalitionspartner) på Postnords beslut att stänga de sista kvarvarande serviceställena i Dorotea, Åsele och Sorsele. Statligt ägande, landsbygdsrättvisa och civilberedskapsförpliktelser konvergerar.
+
+---
+
+### Viktiga beslut / analytiska produkter som krävs
+
+1. **Underrättelsebedömning** (IKJ-nivå KJ 1–4) — producerad i intelligence-assessment.md  
+2. **Scenarioanalys** — 4 scenarier för T+72h/T+30d/T+90d/T+180d-fönster  
+3. **Val-2026-lins** — identifiera vågmästarpotential för varje interpellationsämne  
+
+---
+
+### Interpellationssignifikansrankning (preliminär, pre-DIW)
+
+| Rang | dok_id | Ämne | Oppositionsparti | Minister (Parti) | Pre-DIW-poäng |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | Gazaflottilja / civilskydd | MP | Malmer Stenergard (M) | 9,2 |
+| 2 | HD10476 | Humanitär tillgång Gaza | MP | Dousa (M) | 8,8 |
+| 3 | HD10479 | Nedskärningar i minoritetspolitisk finansiering | S | Liljestrand (M) | 8,1 |
+| 4 | HD10477 | Postnords landsbygdsnedläggningar | SD | Slottner (KD) | 7,6 |
+| 5 | HD10475 | ILO/Sverige internationellt arbete | S | Britz (L) | 6,9 |
+
+---
+
+### Kritiska PIR:er (prioriterade underrättelsekrav)
+
+- **PIR-1**: Kommer regeringen att förbinda sig till en formell protest mot den israeliska floriljainterceptionen, eller upprätthålla sin nuvarande kalibrerade återhållsamhetslinje? (Besvarar HD10478 + anseenderisk för SE utrikespolitiska neutralitetsnarrativ)
+- **PIR-2**: Kommer Erik Slottner att meddela något Postnord-servicekontinuitetspaket för de tre berörda kommunerna före den planerade debatten (2026-05-22)? (HD10477 — nyckeltest för statsägandedoktrinen)
+- **PIR-3**: Kommer regeringen att lägga fram en tilläggsbudgetpost för att återställa MUCF:s finansieringsnivåer för minoritetsorganisationer före september 2026? (HD10479 — minoritetsblockets valrisk)
+
+---
+
+### Ekonomisk kontext
+
+**IMF WEO apr-2026 (SWE, degraderad hämtning — känd årgång):**  
+Sveriges BNP-tillväxt: ~1,0 % (2025 uppskattning), ~2,2 % (2026 IMF-projektion).  
+Statsunderskott: inom EU:s stabilitets- och tillväxtpakts intervall. Låg arbetslöshet (8,3 %).  
+*Obs*: SDMX IFS-slutpunkt returnerar 404; påståenden baseras enbart på WEO apr-2026-årgången.  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### Åtgärdsflaggor
+
+- 🔴 **IHL-överträdelsepåstående** (HD10478): Kräver noggrann IHL-källhänvisning — Genèvekonventionens tilläggsprotokoll I, artikel 71 om civilt nödhjälpsarbete
+- 🟡 **MUCF-datapåstående** (HD10479): Dokumentera exakt — MUCF uppföljningsrapport citerad, specifika SEK-belopp (833k → 142k)
+- 🟡 **Postnord/statsägande** (HD10477): Korshänvisa med Statskontorets riktlinjer om statliga bolags sociala förpliktelser
+
+---
+
+*Pass 1 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_zh.md -->
+
+**分类**：公开 | **Admiralty**：B2  
+**摘要**：2026-05-07在2025/26届立法会会期（riksmöte 2025/26）中提交的五项质询，共同揭示了一项连贯的反对党策略：蒂多（Tidö）政府在国际义务（加沙/国际劳工组织）、国内公平缺陷（Postnord农村服务点关闭）和少数民族权利预算削减方面受到施压——所有这些均发生在2026年9月选举前≤6个月。
+
+---
+
+### 结论
+
+**最重要发现**：两项关于加沙的MP质询（HD10476、HD10478）构成协调一致的双轨施压行动——一项针对人道主义援助层面（Dousa/M），另一项针对外交政策及平民保护国际法（Malmer Stenergard/M）。与西班牙对船队事件的强烈外交回应相比，瑞典的克制立场给反对党提供了一个可影响进步选民的比较问责杠杆。
+
+**第二发现**：HD10479记录了对瑞典芬兰代表团（国家少数民族全国组织）的有据可查的83%资金削减——从833,000瑞典克朗削减至142,000瑞典克朗——这是MUCF在其后续报告中自行标记的具体、可核实的数据点。这使该质询在选举期问责交流中具有罕见的充分证据支撑。
+
+**第三发现**：HD10477揭示联合政府内部摩擦：SD（政府支持党）就Postnord关闭Dorotea、Åsele和Sorsele最后剩余服务点的决定向KD（联合政府伙伴）施压。国家所有权、农村公平与民防义务在此汇聚。
+
+---
+
+### 关键决策 / 所需分析产品
+
+1. **情报评估**（IKJ级KJ 1–4）——在intelligence-assessment.md中生成  
+2. **情景分析** ——T+72h/T+30d/T+90d/T+180d窗口的4个情景  
+3. **2026年选举视角** ——识别每项质询议题的摇摆选票潜力  
+
+---
+
+### 质询重要性排名（初步，DIW前）
+
+| 排名 | dok_id | 议题 | 反对党 | 部长（政党） | DIW前评分 |
+|------|--------|-------|-----------------|-----------------|--------------|
+| 1 | HD10478 | 加沙船队/平民保护 | MP | Malmer Stenergard (M) | 9.2 |
+| 2 | HD10476 | 加沙人道主义通道 | MP | Dousa (M) | 8.8 |
+| 3 | HD10479 | 少数民族政策资金削减 | S | Liljestrand (M) | 8.1 |
+| 4 | HD10477 | Postnord农村关闭 | SD | Slottner (KD) | 7.6 |
+| 5 | HD10475 | 国际劳工组织/瑞典国际劳工事务 | S | Britz (L) | 6.9 |
+
+---
+
+### 关键情报优先需求（PIR）
+
+- **PIR-1**：政府是否将对以色列拦截船队事件提出正式抗议，或维持当前经过校准的克制立场？（回应HD10478及对瑞典外交政策中立叙事的声誉风险）
+- **PIR-2**：Erik Slottner是否将在计划辩论（2026-05-22）之前宣布针对三个受影响地方当局的Postnord服务延续方案？（HD10477——国家所有权原则的关键检验）
+- **PIR-3**：政府是否将在2026年9月前提出补充预算项目，以恢复MUCF对少数民族组织的资助水平？（HD10479——少数民族集团的选举风险）
+
+---
+
+### 经济背景
+
+**国际货币基金组织WEO 2026年4月（SWE，数据获取降级——已知年份）：**  
+瑞典GDP增长：~1.0%（2025年估计），~2.2%（2026年IMF预测）。  
+政府赤字：在欧盟稳定与增长公约范围内。失业率低（8.3%）。  
+*注*：SDMX IFS端点返回404；声明仅基于WEO 2026年4月年份。  
+`economicProvenance: { provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH", vintage: "WEO-2026-04", status: "degraded-fetch" }`
+
+---
+
+### 行动标记
+
+- 🔴 **国际人道法违反声明**（HD10478）：需要仔细引用国际人道法来源——日内瓦公约附加议定书I第71条关于民间紧急救援
+- 🟡 **MUCF数据声明**（HD10479）：精确记录——引用MUCF uppföljningsrapport，具体SEK金额（833k → 142k）
+- 🟡 **Postnord/国家所有权**（HD10477）：交叉参考Statskontoret关于国有企业社会义务的指导方针
+
+---
+
+*第1轮 | 2026-05-08 | Riksdagsmonitor*
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 6 | Linked in Article Sources, not expanded inline |
 
@@ -2374,6 +3274,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

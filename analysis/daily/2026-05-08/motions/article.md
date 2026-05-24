@@ -3,7 +3,7 @@ date: 2026-05-08
 subfolder: motions
 slug: 2026-05-08-motions
 source_folder: analysis/daily/2026-05-08/motions
-generated_at: 2026-05-24T20:55:28.389Z
+generated_at: 2026-05-24T22:15:16.532Z
 language: en
 layout: article
 ---
@@ -79,6 +79,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1497,13 +1510,653 @@ No withdrawn or återtagna documents in this batch.
 
 **Election-proximity update** (2026-05-08): 128 days to general election 2026-09-13. All PIRs now carry elevated electoral-stakes assessment. C defection positions and S legal objections are being watched by media for campaign narrative formation.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_ar.md -->
+
+‏# اقتراحات المعارضة تتحدى إصلاحات الغابات وقضاء الأحداث
+
+**المؤلف**: جيمس بيتر سورلينج | **التاريخ**: 2026-05-08 | **الثقة**: عالية [B2]
+**التصنيف**: عام | **اللائحة العامة لحماية البيانات**: المادة 9(2)(ه،ز) — المواقف السياسية التي أُعلنت للعموم
+
+### الاستنتاج
+
+ثمانية اقتراحات معارضة قُدِّمت في 2026-05-04 تمثل تحديات قانونية-استراتيجية منسقة ضد اقتراحين حكوميين: تحرير قانون الغابات (prop. 2025/26:242, HD024141–145/147) وإصلاح قضاء الأحداث الجنائي (prop. 2025/26:246, HD024142/146/148). الأغلبية الحكومية (175 مقعداً) ستمرر كلا الإجراءين، لكن الانشقاق المزدوج لحزب سينترربارتييت — رفض الدعم غير الكافي لإنتاج الغابات مع حجب خفض سن المسؤولية الجنائية استناداً لاتفاقية الأمم المتحدة لحقوق الطفل — هو الإشارة الاستخباراتية الحاسمة لإعادة التوازن الانتخابي لعام 2026. **سياق القرب الانتخابي**: مع 128 يوماً المتبقية حتى الانتخابات العامة السويدية (2026-09-13)، تخدم هذه الاقتراحات في آنٍ واحد كأدوات تشريعية ووثائق تموضع حملات. يُطبَّق معامل DIW للقرب الانتخابي 1.5×: المواقف المعارضة المتخذة الآن ستتبلور في التزامات منصة الحزب قبل انطلاق حملة الخريف.
+
+### القرارات التي يدعمها هذا الإحاطة
+
+1. **مراقبة الائتلاف**: رصد ما إذا كانت S (94 مقعداً) تؤيد صراحةً اعتراض اتفاقية حقوق الطفل على prop. 2025/26:246 — وفي هذه الحالة تنكمش الأغلبية الحكومية إلى 175-163 على إجراء مكشوف دستورياً.
+2. **مراقبة الامتثال الأوروبي**: تقييم ما إذا كانت ناتيرفوردسفيركت تقدم مخاوف امتثال بشأن prop. 2025/26:242 فيما يتعلق بالتزامات المادة 6 من توجيه الموائل الأوروبي ولائحة NRL رقم 2024/1991.
+3. **رأي لاغرودت**: يُعدُّ Lagrådets yttrande بشأن prop. 2025/26:246 البوابة القرارية الحرجة — نتيجة سلبية ترفع احتمال تراجع الحكومة من 15% إلى 30-40% في أحكام خفض السن.
+4. **إعادة تموضع C**: نمذجة ما إذا كان الانشقاق المزدوج لحزب C في مايو 2026 مناورة تكتيكية قبيل الانتخابات أم تحولاً سياسياً هيكلياً يؤثر على حسابات الائتلاف بعد 2026.
+
+### نقاط في 60 ثانية
+
+- **8 اقتراحات، اقتراحان حكوميان**: قطاع الغابات (MJU، 5 أحزاب) وجرائم الأحداث (JuU، 3 أحزاب) يواجهان معارضة منسقة بمطالب متعارضة.
+- **128 يوماً حتى الانتخابات**: جميع مواقف المعارضة المتخذة الآن تتضاعف كالتزامات منصة الحملة. معامل DIW للقرب الانتخابي 1.5× يرفع كل إشارة انشقاق.
+- **محور C**: ينحرف سينترربارتييت في كلا الملفين من اتجاهات مختلفة — يطالب بمزيد من دعم إنتاج الغابات (HD024145) ويعارض خفض سن المسؤولية الجنائية (HD024146، أساس اتفاقية حقوق الطفل). الأثر الصافي: C يعظِّم المرونة ما بعد الانتخابات.
+- **التعرض القانوني**: كلا الاقتراحين يواجهان نقاط ضعف قانونية دولية تعمل باستقلالية عن الأغلبية البرلمانية — مخالفة أوروبية (الغابات) وتحدي اتفاقية حقوق الطفل/الاتفاقية الأوروبية لحقوق الإنسان (قضاء الأحداث).
+- **موقف S لا يزال معلقاً**: لم يلتزم الاشتراكيون الديمقراطيون بشأن خفض السن. مقاعدهم الـ94 حاسمة لتحديد ما إذا كان ذلك تصويتاً متقارباً (175-163) أم أغلبية مريحة.
+- **لاغرودت المسار الحرج**: Lagrådets yttrande المعلق على prop. 2025/26:246 هو الحدث المقيد الأرجح في المدى القريب (PIR LAGRÅDET-246).
+- **لا مخاطر أغلبية على أي اقتراح**: تمرر الحكومة كلا الإجراءين ما لم تحدث انشقاقات ائتلافية مثيرة — انتخابات 2026، لا دورة الريكسداغ الحالية، هي المكان الذي تحط فيه التبعات السياسية.
+
+### المحفز المستقبلي الأكثر أهمية
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande بشأن prop. 2025/26:246 (خفض سن المسؤولية الجنائية للأحداث إلى 13 عاماً). متوقع في غضون أسابيع. نتيجة سلبية تُفجِّر فوراً نقاشاً حول توافق اتفاقية حقوق الطفل في اللجنة، والبيان الرسمي لمكتب مفوض الأطفال (Barnombudsmannen)، وتعديل حكومي محتمل.
+
+### تقييم الثقة
+
+عالية إجمالاً [B2] — الاقتراحات الثمانية وثائق أولية من data.riksdagen.se؛ مواقف الأحزاب ومعرفات المستندات dok_ids ومسارات التوجيه اللجني مؤكدة. السياق الاقتصادي مُخفَّض من صندوق النقد الدولي؛ اختبارات SDMX فشلت. بيانات WEO/FM المالية مُستشهد بها حيثما ينطبق مع ختم نضج.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-08 | **Konfidensgrad**: HØJ [B2]
+**Klassificering**: OFFENTLIG | **GDPR**: Art. 9(2)(e,g) — offentliggjorte politiske holdninger
+
+### Konklusion
+
+Otte oppositionsforslag indgivet 2026-05-04 monterer koordinerede juridisk-strategiske udfordringer mod to regeringsforslag: skovlovgivningsdereguleringen (prop. 2025/26:242, HD024141–145/147) og reformen af ungdomsstrafferet (prop. 2025/26:246, HD024142/146/148). Regeringsflertallet (175 mandater) vil vedtage begge foranstaltninger, men Centerpartiets dobbelte afhopp — mod utilstrækkelig skovproduktionsstøtte og blockering af strafmyndighetsalderssænkningen på FN's Børnekonventionsgrundlag — er det afgørende efterretningssignal for valgrealignmentet i 2026. **Valgperiodekontekst**: Med 128 dage til det svenske valg (2026-09-13) fungerer disse forslag simultant som lovgivningsinstrumenter og kampagnepositioneringsdokumenter. 1,5×-DIW-valgperiodsmultiplikatoren gælder: oppositionens holdninger fastlagt nu vil krystallisere sig i partiplatformsforpligtelser inden efterårskampagnen åbner.
+
+### Beslutninger dette notat understøtter
+
+1. **Koalitionsovervågning**: Spor om S (94 mandater) eksplicit tilslutter sig FN's Børnekonventionsindsigelsen mod prop. 2025/26:246 — i så fald indsnævres regeringsflertallet til 175-163 på en konstitutionelt eksponeret foranstaltning.
+2. **EU-overholdelsesovervågning**: Vurder om Naturvårdsverket indgiver en overholdelsesproblematik vedrørende prop. 2025/26:242 angående EU's habitatdirektiv art. 6 og NRL-forordningen 2024/1991.
+3. **Lagrådets udtalelse**: Lagrådets yttrande om prop. 2025/26:246 er det kritiske beslutningsgate — et negativt fund øger tilbagetræningssandsynlighed for regeringen fra 15% til 30-40% på aldersnedsættelsesbestemmelsen.
+4. **C's repositionering**: Model, om C's dobbelte afhopp i maj 2026 er et taktisk valformanøvreskytte eller et strukturelt politikskifte, der påvirker koalitionsmatematikken efter 2026.
+
+### 60-sekunders punkter
+
+- **8 forslag, 2 propositioner**: Skovbrug (MJU, 5 partier) og ungdomskriminalitet (JuU, 3 partier) møder koordineret opposition med uforenlige krav.
+- **128 dage til valg**: Alle oppositionsholdninger fastlagt nu fordobles som kampagneplatformsforpligtelser. 1,5×-DIW-valgperiodsmultiplikatoren forhøjer ethvert afhoppssignal.
+- **C's omdrejningspunkt**: Centerpartiet afviger på begge spørgsmål fra forskellige retninger — kræver mere skovproduktionsstøtte (HD024145) OG modsætter sig kriminalstrafmyndighed (HD024146, FN's Børnekonventionsgrundlag). Nettoeffekt: C maksimerer fleksibilitet efter valget.
+- **Retlig eksponering**: Begge propositioner møder internationale retslige sårbarheder, der virker uafhængigt af parlamentarisk flertal — EU-overtrædelse (skovbrug) og FN's Børnekonvention/EMRK-udfordring (ungdomsjustits).
+- **S's holdning afventende**: Socialdemokraterne har ikke forpligtet sig på strafmyndighed. Deres 94 mandater er afgørende for, om dette bliver en tæt afstemning (175-163) eller et komfortabelt flertal.
+- **Lagrådet kritisk vej**: Afventende Lagrådets yttrande om prop. 2025/26:246 er den mest sandsynlige nærliggende tvangshændelse (PIR LAGRÅDET-246).
+- **Ingen flertalrisiko på nogen proposition**: Regeringen vedtager begge foranstaltninger, medmindre et dramatisk koalitionsafhopp opstår — valget 2026, ikke denne Riksdag-periode, er, hvor de politiske konsekvenser lander.
+
+### Vigtigste fremtidige udløser
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande om prop. 2025/26:246 (nedsættelse af ungdomsstraffemyndighed til 13). Forventet inden for uger. Et negativt fund udløser øjeblikkelig FN's Børnekonventionskompatibilitetsdebat i udvalg, Barnombudsmannens formelle udtalelse og sandsynlig regeringsændring.
+
+### Konfidensgrad
+
+Samlet HØJ [B2] — alle otte forslag er primærdokumenter fra data.riksdagen.se; partipositioner, dok_ids og udvalgsrouting bekræftet. IMF-nedgraderet økonomisk kontekst; SDMX-prober mislykkedes. WEO/FM finansdata citeret, hvor det er relevant, med årgangsstempel.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-05-08 | **Konfidenz**: HOCH [B2]
+**Einstufung**: ÖFFENTLICH | **DSGVO**: Art. 9(2)(e,g) — öffentlich gemachte politische Positionen
+
+### Schlussfolgerung
+
+Acht Oppositionsanträge vom 2026-05-04 stellen koordinierte rechtlich-strategische Herausforderungen gegen zwei Regierungspropositionenen dar: die Forstrechtsderegulierung (prop. 2025/26:242, HD024141–145/147) und die Jugendstrafrechtsreform (prop. 2025/26:246, HD024142/146/148). Die Regierungsmehrheit (175 Sitze) wird beide Maßnahmen durchsetzen, aber die doppelte Abweichung des Centerpartiet — Ablehnung mangelhafter Forstproduktionsunterstützung und gleichzeitig Blockierung des Absenkens der Strafmündigkeit auf UN-Kinderrechtskonventionsbasis — ist das entscheidende Nachrichtensignal für die Wahlneujustierung 2026. **Wahlnähekontex**: Mit 128 Tagen bis zur schwedischen Rikstagswahl (2026-09-13) dienen diese Anträge gleichzeitig als Gesetzgebungsinstrumente und Kampagnenpositionierungsdokumente. Der 1,5×-DIW-Wahlnähemultiplikator gilt: Oppositionspositionen, die jetzt eingenommen werden, werden zu Parteiplatformverpflichtungen vor dem Herbstwahlkampf kristallisieren.
+
+### Entscheidungen, die dieses Briefing unterstützt
+
+1. **Koalitionsüberwachung**: Verfolgen, ob S (94 Sitze) explizit dem UN-Kinderrechtseinwand gegen prop. 2025/26:246 beitritt — in diesem Fall verengt sich die Regierungsmehrheit auf 175-163 bei einer verfassungsrechtlich exponierten Maßnahme.
+2. **EU-Compliance-Überwachung**: Beurteilen, ob Naturvårdsverket eine Compliance-Besorgnis bezüglich prop. 2025/26:242 bezüglich EU-Habitatrichtlinie Art. 6 und NRL-Verordnung 2024/1991 einreicht.
+3. **Lagrådet-Stellungnahme**: Das Lagrådets yttrande zu prop. 2025/26:246 ist das kritische Entscheidungstor — ein negativer Befund erhöht die Rückzugswahrscheinlichkeit der Regierung von 15% auf 30-40% bei der Altersabsenkungsbestimmung.
+4. **C-Repositionierung**: Modellieren, ob Cs doppelte Abweichung im Mai 2026 ein taktischer Vorwahlmanöver oder ein struktureller Politikwechsel ist, der die Koalitionsmathematik nach 2026 beeinflusst.
+
+### 60-Sekunden-Punkte
+
+- **8 Anträge, 2 Propositionen**: Forstwirtschaft (MJU, 5 Parteien) und Jugendkriminalität (JuU, 3 Parteien) begegnen koordinierter Opposition mit unvereinbaren Forderungen.
+- **128 Tage bis zur Wahl**: Alle jetzt eingenommenen Oppositionspositionen verdoppeln sich zu Kampagnenplattformverpflichtungen. Der 1,5×-DIW-Wahlnähemultiplikator erhöht jedes Abweichungssignal.
+- **C-Pivotpunkt**: Centerpartiet weicht bei beiden Fragen aus unterschiedlichen Richtungen ab — fordert mehr Forstproduktionsunterstützung (HD024145) UND widersetzt sich der Strafmündigkeitsabsenkung (HD024146, UN-Kinderrechtsbasis). Nettoeffekt: C maximiert Flexibilität nach der Wahl.
+- **Rechtliche Exponierung**: Beide Propositionen stehen vor internationalen Rechtsschwächen, die unabhängig von der parlamentarischen Mehrheit wirken — EU-Verletzung (Forstwirtschaft) und UN-Kinderrechtskonvention/EMRK-Herausforderung (Jugendgerechtigkeit).
+- **S-Position ausstehend**: Die Sozialdemokraten haben sich nicht zur Strafmündigkeitsabsenkung bekannt. Ihre 94 Sitze sind entscheidend dafür, ob dies eine knappe Abstimmung wird (175-163) oder eine komfortable Mehrheit.
+- **Lagrådet kritischer Weg**: Das ausstehende Lagrådets yttrande zu prop. 2025/26:246 ist das wahrscheinlichste nahzeitige zwingende Ereignis (PIR LAGRÅDET-246).
+- **Kein Mehrheitsrisiko bei keiner Proposition**: Die Regierung setzt beide Maßnahmen durch, sofern kein dramatischer Koalitionsabbruch erfolgt — die Wahl 2026, nicht diese Riksdag-Periode, ist der Ort, wo die politischen Konsequenzen landen.
+
+### Wichtigster zukünftiger Auslöser
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande zu prop. 2025/26:246 (Absenkung des strafrechtlichen Alters der Jugend auf 13). Innerhalb von Wochen erwartet. Ein negativer Befund löst sofort eine UN-Kinderrechtskompatibilitätsdebatte im Ausschuss aus, die formelle Stellungnahme des Barnombudsmannen und wahrscheinliche Regierungsänderung.
+
+### Konfidenzbeurteilung
+
+Gesamt HOCH [B2] — alle acht Anträge sind Primärdokumente von data.riksdagen.se; Parteipositionen, dok_ids und Ausschussweiterleitung bestätigt. IMF-herabgesetzter wirtschaftlicher Kontext; SDMX-Prüfungen fehlgeschlagen. WEO/FM-Finanzdaten wo anwendbar mit Jahrgangsstempel zitiert.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-05-08 | **Confianza**: ALTA [B2]
+**Clasificación**: PÚBLICA | **RGPD**: Art. 9(2)(e,g) — posiciones políticas hechas públicas
+
+### Conclusión
+
+Ocho mociones de oposición presentadas el 2026-05-04 constituyen desafíos jurídico-estratégicos coordinados contra dos proposiciones gubernamentales: la desregulación forestal (prop. 2025/26:242, HD024141–145/147) y la reforma de la justicia penal juvenil (prop. 2025/26:246, HD024142/146/148). La mayoría gubernamental (175 escaños) adoptará ambas medidas, pero la doble disidencia del Centerpartiet — rechazo del apoyo insuficiente a la producción forestal y simultáneamente bloqueo de la reducción de la edad de responsabilidad penal sobre la base de la Convención de la ONU sobre los Derechos del Niño — es la señal de inteligencia decisiva para el realineamiento electoral de 2026. **Contexto de proximidad electoral**: Con 128 días restantes hasta las elecciones generales suecas (2026-09-13), estas mociones sirven simultáneamente como instrumentos legislativos y documentos de posicionamiento de campaña. El multiplicador DIW de proximidad electoral de 1,5× se aplica: las posiciones de la oposición adoptadas ahora se cristalizarán en compromisos de plataforma de partido antes de que comience la campaña de otoño.
+
+### Decisiones que apoya este informe
+
+1. **Monitoreo de coalición**: Rastrear si S (94 escaños) respalda explícitamente la objeción de la Convención sobre los Derechos del Niño contra prop. 2025/26:246 — en ese caso, la mayoría gubernamental se reduce a 175-163 en una medida constitucionalmente expuesta.
+2. **Monitoreo de cumplimiento de la UE**: Evaluar si Naturvårdsverket presenta una preocupación de cumplimiento sobre prop. 2025/26:242 respecto a las obligaciones del artículo 6 de la Directiva Hábitats de la UE y el Reglamento NRL 2024/1991.
+3. **Dictamen del Lagrådet**: El Lagrådets yttrande sobre prop. 2025/26:246 es la puerta de decisión crítica — un dictamen negativo aumenta la probabilidad de retirada gubernamental del 15% al 30-40% en la disposición de reducción de edad.
+4. **Reposicionamiento de C**: Modelar si la doble disidencia de C en mayo de 2026 es una maniobra táctica preelectoral o un cambio de política estructural que afecta la matemática de coalición post-2026.
+
+### Puntos en 60 segundos
+
+- **8 mociones, 2 proposiciones**: Silvicultura (MJU, 5 partidos) y delincuencia juvenil (JuU, 3 partidos) enfrentan oposición coordinada con demandas incompatibles.
+- **128 días para las elecciones**: Todas las posiciones de la oposición adoptadas ahora se duplican como compromisos de plataforma de campaña. El multiplicador DIW de proximidad electoral de 1,5× eleva cada señal de disidencia.
+- **Pivote de C**: El Centerpartiet se desvía en ambos temas desde direcciones diferentes — exige más apoyo a la producción forestal (HD024145) Y se opone a la reducción de la edad de responsabilidad penal (HD024146, base Convención sobre los Derechos del Niño). Efecto neto: C maximiza la flexibilidad post-electoral.
+- **Exposición legal**: Ambas proposiciones enfrentan vulnerabilidades jurídicas internacionales que operan independientemente de la mayoría parlamentaria — infracción de la UE (silvicultura) y desafío Convención sobre los Derechos del Niño/CEDH (justicia juvenil).
+- **Posición de S pendiente**: Los socialdemócratas no se han comprometido sobre la reducción de edad. Sus 94 escaños son determinantes para saber si esto se convierte en una votación ajustada (175-163) o una mayoría cómoda.
+- **Lagrådet ruta crítica**: El Lagrådets yttrande pendiente sobre prop. 2025/26:246 es el evento restrictivo más probable a corto plazo (PIR LAGRÅDET-246).
+- **Sin riesgo para la mayoría en ninguna proposición**: El gobierno adopta ambas medidas a menos que se produzca una defección dramática de coalición — las elecciones 2026, no este período del Riksdag, es donde aterrizan las consecuencias políticas.
+
+### Principal desencadenante futuro
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande sobre prop. 2025/26:246 (reducción de la edad penal juvenil a 13 años). Esperado en semanas. Un dictamen negativo desencadena inmediatamente un debate sobre compatibilidad con la Convención sobre los Derechos del Niño en comisión, la declaración formal del Barnombudsmannen y probable enmienda gubernamental.
+
+### Evaluación de confianza
+
+ALTA global [B2] — las ocho mociones son documentos primarios de data.riksdagen.se; posiciones de partidos, dok_ids y enrutamiento a comisión confirmados. Contexto económico degradado por el FMI; las pruebas SDMX fallaron. Datos financieros WEO/FM citados donde corresponde con sello de cosecha.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-05-08 | **Luotettavuus**: KORKEA [B2]
+**Luokitus**: JULKINEN | **GDPR**: Art. 9(2)(e,g) — julkisesti esitetyt poliittiset kannanotot
+
+### Yhteenveto
+
+Kahdeksan 2026-05-04 jätettyä oppositioesitystä muodostavat koordinoidut oikeudellisstrategiset haasteet kahta hallituksen lakiesitystä vastaan: metsälain vapautus (prop. 2025/26:242, HD024141–145/147) ja nuorisorikoslainsäädännön uudistus (prop. 2025/26:246, HD024142/146/148). Hallituksen enemmistö (175 paikkaa) tulee hyväksymään molemmat toimenpiteet, mutta Centerpartiets kaksoispoikkeama — vastustus riittämättömälle metsätuotantotuelle ja samanaikainen rikosoikeuden ikärajanlasku-estäminen YK:n lapsen oikeuksien sopimuksen perusteella — on ratkaiseva tiedustelusignaali vuoden 2026 vaalien uudelleenlinjauksessa. **Vaalilähestyvyystilanne**: 128 päivää jäljellä Ruotsin yleisvaaleisiin (2026-09-13), nämä esitykset toimivat samanaikaisesti sekä lainsäädäntöinstrumentteina että kampanjasijoittautumisasiakirjoina. 1,5×-DIW-vaalinähelmultiplikaattori pätee: nyt otetut oppositiokannat kiteytyivät puolueohjelman sitoumuksiksi ennen syksyn kampanjan avautumista.
+
+### Päätökset, joita tämä katsaus tukee
+
+1. **Koalitionvalvonta**: Seuraa, liittyykö S (94 paikkaa) nimenomaisesti YK:n lapsen oikeuksien sopimuksen vastustamiseen prop. 2025/26:246 osalta — jos niin tapahtuu, hallituksen enemmistö kapenee 175–163:een perustuslaillisesti alttiissa toimenpiteessä.
+2. **EU-noudattamisvalvonta**: Arvioi, toimittaako Naturvårdsverket noudattamishäiriön prop. 2025/26:242:n osalta koskien EU:n habitatidirektiivin 6. artiklaa ja NRL-asetusta 2024/1991.
+3. **Lakineuvosto**: Lagrådets yttrande prop. 2025/26:246:sta on kriittinen päätöskohta — kielteinen lausunto nostaa hallituksen peräytymistodennäköisyyden 15 %:sta 30–40 %:iin ikärajan alentamissäännöksessä.
+4. **C:n uudelleenasemointi**: Mallinna, onko C:n kaksoispoikkeama toukokuussa 2026 taktinen ennakkovaalisiirto vai rakenteellinen poliittinen muutos, joka vaikuttaa vuoden 2026 jälkeiseen koalitioaritmetiikkaan.
+
+### 60 sekunnin tiivistelmä
+
+- **8 esitystä, 2 lakiesitystä**: Metsätalous (MJU, 5 puoluetta) ja nuorisorikokset (JuU, 3 puoluetta) kohtaavat koordinoidun opposition ristiriitaisten vaatimusten kanssa.
+- **128 päivää vaaleihin**: Kaikki nyt otetut oppositiokannat kaksinkertaistuvat kampanjaohjelman sitoumuksiksi. 1,5×-DIW-vaalilähestyvyysmultiplikaattori korottaa jokaisen poikkeamasignaalin.
+- **C:n keskeinen asema**: Centerpartiet poikkeaa molemmissa asioissa eri suunnista — vaatii enemmän metsätuotantotukea (HD024145) JA vastustaa rikollisvastuun ikärajaa (HD024146, YK:n lapsen oikeuksien sopimuksen perusta). Nettovaiku tus: C maksimoi joustavuuden vaalien jälkeen.
+- **Oikeudellinen altistuminen**: Molemmat lakiesitykset kohtaavat kansainvälisiä oikeudellisia haavoittuvuuksia, jotka toimivat riippumatta parlamentaarisesta enemmistöstä — EU-rikkomus (metsätalous) ja YK:n lapsen oikeuksien sopimus/ECHR-haaste (nuorisoikeudenmukaisuus).
+- **S:n kanta odottaa**: Sosiaalidemokraatit eivät ole sitoutuneet rikollisvastuun ikärajaan. Heidän 94 paikkansa on ratkaiseva sen suhteen, onko tämä tasainen äänestys (175-163) vai mukava enemmistö.
+- **Lagrådet kriittinen polku**: Odottava Lagrådets yttrande prop. 2025/26:246:sta on todennäköisin lähitulevaisuuden pakottava tapahtuma (PIR LAGRÅDET-246).
+- **Ei enemmistöriskiä kummallakaan lakiesityksellä**: Hallitus hyväksyy molemmat toimenpiteet, ellei dramaattinen koalitiopoikkeama tapahdu — vuoden 2026 vaalit, ei tämä riksmöte-kausi, on missä poliittiset seuraukset laskeutuvat.
+
+### Tärkein tuleva laukaisin
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande prop. 2025/26:246:sta (nuorten rikosoikeudellisen vastuun ikärajan lasku 13 vuoteen). Odotetaan viikojen sisällä. Kielteinen lausunto käynnistää välittömästi YK:n lapsen oikeuksien sopimuksen yhteensopivuuskeskustelun valiokunnassa, Barnombudsmannenin virallisen lausunnon ja todennäköisen hallituksen muutoksen.
+
+### Luotettavuusarviointi
+
+Kokonainen KORKEA [B2] — kaikki kahdeksan esitystä ovat ensisijaiset asiakirjat data.riksdagen.se:stä; puoluekannat, dok_ids ja valiokuntareitit vahvistettu. IMF-alennettu taloudellinen konteksti; SDMX-testaukset epäonnistuivat. WEO/FM-talouspata lainautettuna soveltuvin osin vuosikertaleimalla.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **Date** : 2026-05-08 | **Confiance** : HAUTE [B2]
+
+### Conclusion
+
+Huit motions d'opposition déposées le 2026-05-04 constituent des défis coordonnés juridico-stratégiques contre deux propositions gouvernementales : la déréglementation forestière (prop. 2025/26:242, HD024141–145/147) et la réforme de la justice pénale des mineurs (prop. 2025/26:246, HD024142/146/148). La majorité gouvernementale (175 sièges) adoptera les deux mesures, mais la double défection du Centerpartiet — opposé au soutien insuffisant à la production forestière tout en bloquant l'abaissement de l'âge de la responsabilité pénale sur la base de la Convention des Nations Unies relative aux droits de l'enfant — est le signal de renseignement décisif pour le réalignement électoral de 2026. **Contexte de proximité électorale** : Avec 128 jours restant jusqu'aux élections générales suédoises (2026-09-13), ces motions servent simultanément d'instruments législatifs et de documents de positionnement de campagne. Le multiplicateur DIW de proximité électorale de 1,5× s'applique : les positions de l'opposition prises maintenant se cristalliseront en engagements de plateforme de parti avant l'ouverture de la campagne d'automne.
+
+### Décisions que ce briefing appuie
+
+1. **Surveillance de coalition** : Suivre si S (94 sièges) endosse explicitement l'objection de la Convention relative aux droits de l'enfant contre prop. 2025/26:246 — dans ce cas, la majorité gouvernementale se réduit à 175-163 sur une mesure constitutionnellement exposée.
+2. **Surveillance de conformité UE** : Évaluer si Naturvårdsverket dépose une préoccupation de conformité sur prop. 2025/26:242 concernant les obligations de l'article 6 de la Directive Habitats de l'UE et du Règlement NRL 2024/1991.
+3. **Avis du Lagrådet** : Le Lagrådets yttrande sur prop. 2025/26:246 est la porte de décision critique — un avis négatif augmente la probabilité de retraite gouvernementale de 15% à 30-40% sur la disposition d'abaissement de l'âge.
+4. **Repositionnement de C** : Modéliser si la double défection de C en mai 2026 est un manœuvre tactique pré-électorale ou un changement de politique structurel affectant les mathématiques de coalition post-2026.
+
+### Points en 60 secondes
+
+- **8 motions, 2 propositions** : La foresterie (MJU, 5 partis) et la criminalité juvénile (JuU, 3 partis) font face à une opposition coordonnée avec des demandes incompatibles.
+- **128 jours avant les élections** : Toutes les positions de l'opposition prises maintenant doublent comme engagements de plateforme de campagne. Le multiplicateur DIW de proximité électorale de 1,5× élève chaque signal de défection.
+- **Pivot de C** : Le Centerpartiet dévie sur les deux dossiers depuis des directions différentes — exige davantage de soutien à la production forestière (HD024145) ET s'oppose à l'abaissement de l'âge de la responsabilité pénale (HD024146, base Convention relative aux droits de l'enfant). Effet net : C maximise la flexibilité post-électorale.
+- **Exposition juridique** : Les deux propositions font face à des vulnérabilités juridiques internationales qui opèrent indépendamment de la majorité parlementaire — infraction UE (foresterie) et défi Convention relative aux droits de l'enfant/CEDH (justice juvénile).
+- **Position de S en attente** : Les sociaux-démocrates ne se sont pas engagés sur l'abaissement de l'âge. Leurs 94 sièges sont déterminants pour savoir si cela devient un vote serré (175-163) ou une majorité confortable.
+- **Lagrådet voie critique** : L'avis en attente du Lagrådets yttrande sur prop. 2025/26:246 est l'événement contraignant le plus probable à court terme (PIR LAGRÅDET-246).
+- **Aucun risque pour la majorité sur les deux propositions** : Le gouvernement adopte les deux mesures à moins qu'une défection dramatique de coalition ne se produise — l'élection 2026, non cette période du Riksdag, est là où les conséquences politiques atterrissent.
+
+### Principal déclencheur futur
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande sur prop. 2025/26:246 (abaissement de l'âge pénal des jeunes à 13 ans). Attendu dans les semaines. Un avis négatif déclenche immédiatement un débat sur la compatibilité avec la Convention relative aux droits de l'enfant en commission, la déclaration formelle du Barnombudsmannen et un amendement probable du gouvernement.
+
+### Évaluation de la confiance
+
+HAUTE globale [B2] — les huit motions sont des documents primaires de data.riksdagen.se ; positions des partis, dok_ids et routage en commission confirmés. Contexte économique dégradé par le FMI ; les sondes SDMX ont échoué. Les données financières WEO/FM citées le cas échéant avec un cachet de millésime.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_he.md -->
+
+‏# הצעות האופוזיציה מאתגרות רפורמות ביערנות ובשפיטת קטינים
+
+**מחבר**: ג'יימס פתר סורלינג | **תאריך**: 2026-05-08 | **ביטחון**: גבוה [B2]
+**סיווג**: ציבורי | **GDPR**: סעיף 9(2)(ה,ז) — עמדות פוליטיות שפורסמו לציבור
+
+### מסקנה
+
+שמונה הצעות אופוזיציה שהוגשו ב-2026-05-04 מהוות אתגרים משפטיים-אסטרטגיים מתואמים נגד שני הצעות ממשלתיות: הפחתת הרגולציה ביערות (prop. 2025/26:242, HD024141–145/147) ורפורמת המשפט הפלילי לנוער (prop. 2025/26:246, HD024142/146/148). הרוב הממשלתי (175 מושבים) יאשר את שתי המדידות, אך הסטייה הכפולה של Centerpartiet — דחיית התמיכה הבלתי מספקת בייצור יערות ובמקביל חסימת הורדת גיל האחריות הפלילית בבסיס אמנת האו"ם לזכויות הילד — היא האות המודיעיני המכריע ליישור מחדש לבחירות 2026. **הקשר קרבה לבחירות**: עם 128 ימים שנותרו לבחירות הכלליות בשוודיה (2026-09-13), הצעות אלה משמשות בו-זמנית כמכשירים חקיקתיים ומסמכי מיצוב קמפיין. מכפיל DIW קרבה לבחירות של 1.5× חל: עמדות אופוזיציה שמתקבלות כעת יתגבשו בהתחייבויות פלטפורמה מפלגתית לפני פתיחת קמפיין הסתיו.
+
+### החלטות שהתדריך הזה תומך בהן
+
+1. **ניטור קואליציה**: מעקב האם S (94 מושבים) מאמצת במפורש את ההתנגדות לאמנת זכויות הילד נגד prop. 2025/26:246 — במקרה זה הרוב הממשלתי מתכווץ ל-175-163 במדידה חשופה חוקתית.
+2. **ניטור ציות אירופי**: הערכה האם Naturvårdsverket מגישה חשש ציות על prop. 2025/26:242 לגבי התחייבויות סעיף 6 של הנחיית בתי הגידול האירופית ותקנת NRL 2024/1991.
+3. **חוות דעת Lagrådet**: ה-Lagrådets yttrande על prop. 2025/26:246 הוא שער ההחלטה הקריטי — ממצא שלילי מעלה את הסתברות נסיגת הממשלה מ-15% ל-30-40% בהוראת הורדת הגיל.
+4. **מיצוב מחדש של C**: מידול האם הסטייה הכפולה של C במאי 2026 היא תמרון טקטי לפני בחירות או שינוי מדיניות מבני המשפיע על חשבון הקואליציה לאחר 2026.
+
+### נקודות ב-60 שניות
+
+- **8 הצעות, 2 הצעות ממשלתיות**: יערנות (MJU, 5 מפלגות) ועבריינות נוער (JuU, 3 מפלגות) מתמודדות עם אופוזיציה מתואמת עם דרישות בלתי מתיישבות.
+- **128 ימים לבחירות**: כל עמדות האופוזיציה שמתקבלות כעת מוכפלות כהתחייבויות פלטפורמת קמפיין. מכפיל DIW קרבה לבחירות של 1.5× מגביר כל אות סטייה.
+- **ציר C**: Centerpartiet סוטה בשני הנושאים מכיוונים שונים — דורשת יותר תמיכה בייצור יערות (HD024145) ומתנגדת להורדת גיל האחריות הפלילית (HD024146, בסיס אמנת זכויות הילד). אפקט נטו: C ממקסמת גמישות לאחר הבחירות.
+- **חשיפה משפטית**: שתי ההצעות מתמודדות עם פגיעויות משפטיות בינלאומיות הפועלות ללא תלות ברוב הפרלמנטרי — הפרת האיחוד האירופי (יערנות) ואתגר אמנת זכויות הילד/ECHR (שפיטת נוער).
+- **עמדת S ממתינה**: הסוציאל-דמוקרטים לא התחייבו בנושא הורדת הגיל. 94 מושביהם מכריעים לשאלה האם זה יהיה הצבעה צמודה (175-163) או רוב נוח.
+- **Lagrådet מסלול קריטי**: ה-Lagrådets yttrande הממתין על prop. 2025/26:246 הוא האירוע המגביל הסביר ביותר בטווח הקרוב (PIR LAGRÅDET-246).
+- **אין סיכון לרוב בשום הצעה**: הממשלה מאשרת שתי המדידות אלא אם כן מתרחשת ריחוק קואליציוני דרמטי — בחירות 2026, לא תקופת הריקסדאג הנוכחית, היא מקום נחיתת ההשלכות הפוליטיות.
+
+### הטריגר העתידי החשוב ביותר
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande על prop. 2025/26:246 (הורדת גיל העונשין הנוער ל-13). צפוי תוך שבועות. ממצא שלילי מפעיל מיד ויכוח תאימות לאמנת זכויות הילד בוועדה, ההצהרה הרשמית של Barnombudsmannen ותיקון ממשלתי סביר.
+
+### הערכת ביטחון
+
+גבוה כולל [B2] — שמונת ההצעות הם מסמכים ראשוניים מ-data.riksdagen.se; עמדות מפלגות, dok_ids וניתוב ועדה מאושרים. הקשר כלכלי מופחת על-ידי קרן המטבע הבינלאומית; בדיקות SDMX נכשלו. נתוני WEO/FM פיננסיים מצוטטים במקרה הצורך עם חותמת בציר.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_ja.md -->
+
+**著者**: ジェームス・ペター・ソーリング | **日付**: 2026-05-08 | **信頼度**: 高 [B2]
+**分類**: 公開 | **GDPR**: 第9条(2)(e,g) — 公開された政治的立場
+
+### 結論
+
+2026-05-04に提出された8つの野党提案は、2つの政府提案に対する協調的な法的・戦略的挑戦を構成する：森林法規制緩和（prop. 2025/26:242, HD024141–145/147）と少年刑事司法改革（prop. 2025/26:246, HD024142/146/148）。政府多数派（175議席）は両措置を可決するが、センタープリエットの二重の逸脱—不十分な森林生産支援の拒否と同時に国連子どもの権利条約を根拠とした刑事責任年齢引き下げの阻止—が2026年選挙再編における決定的な情報シグナルである。**選挙近接コンテキスト**: スウェーデン総選挙（2026-09-13）まで128日を残し、これらの提案は立法手段と選挙キャンペーン位置付け文書として同時に機能する。DIW選挙近接乗数1.5×が適用される：現在採用される野党立場は秋のキャンペーン開始前に政党プラットフォームの公約として結晶化する。
+
+### このブリーフィングが支援する決定事項
+
+1. **連立監視**: S（94議席）がprop. 2025/26:246に対する国連子どもの権利条約の異議を明示的に支持するかどうかを追跡—その場合、政府多数派は憲法的に露出した措置において175-163に縮小する。
+2. **EU準拠監視**: Naturvårdsverketがprop. 2025/26:242に関するEU生息地指令第6条およびNRL規則2024/1991の義務についてのコンプライアンス懸念を提出するかどうかを評価する。
+3. **Lagrådet意見**: prop. 2025/26:246に関するLagrådets yttrande（法制諮問機関意見）は重要な決定の関門—否定的な調査結果は年齢引き下げ条項における政府撤退の確率を15%から30-40%に引き上げる。
+4. **Cの再位置付け**: 2026年5月のCの二重逸脱が2026年以降の連立計算に影響を与える戦術的な選挙前の動きか構造的な政策変換かをモデル化する。
+
+### 60秒のポイント
+
+- **8つの提案、2つの政府提案**: 林業（MJU、5政党）と少年犯罪（JuU、3政党）は相互に相容れない要求による協調的反対に直面する。
+- **選挙まで128日**: 現在採用される全ての野党立場はキャンペーンプラットフォームの公約として二倍化する。DIW選挙近接乗数1.5×は各逸脱シグナルを高める。
+- **Cのピボット**: センタープリエットは異なる方向から両問題で逸脱する—より多くの森林生産支援を要求（HD024145）かつ刑事責任年齢引き下げに反対（HD024146、国連子どもの権利条約根拠）。純効果：Cは選挙後の柔軟性を最大化する。
+- **法的露出**: 両提案は議会多数派とは独立して機能する国際法的脆弱性に直面する—EU違反（林業）と国連子どもの権利条約/ECHR挑戦（少年司法）。
+- **Sの立場保留**: 社会民主党は年齢引き下げについてコミットしていない。94議席はこれが接戦投票（175-163）か快適な多数派になるかを決定する。
+- **Lagrådetクリティカルパス**: prop. 2025/26:246に関する保留中のLagrådets yttrande（法制諮問機関意見）は最も可能性の高い近時制約イベントである（PIR LAGRÅDET-246）。
+- **どちらの提案も多数派リスクなし**: 劇的な連立離脱がない限り政府は両措置を可決する—政治的結果が着地するのは今このリクスダーグ会期ではなく2026年選挙である。
+
+### 最重要の将来トリガー
+
+**PIR LAGRÅDET-246** — prop. 2025/26:246（少年刑事責任年齢の13歳への引き下げ）に関するLagrådets yttrande。数週間以内に予想される。否定的な調査結果は、委員会での国連子どもの権利条約適合性討論、Barnombudsmannenの正式声明、および政府修正の可能性を即座に引き起こす。
+
+### 信頼度評価
+
+全体として高 [B2] — 8つの提案はすべてdata.riksdagen.seの一次文書；政党立場、dok_ids、委員会ルーティングが確認済み。IMFによって格下げされた経済コンテキスト；SDMXプローブが失敗。WEO/FM財務データは該当する場合ヴィンテージスタンプ付きで引用。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_ko.md -->
+
+**저자**: 제임스 페터 소를링 | **날짜**: 2026-05-08 | **신뢰도**: 높음 [B2]
+**분류**: 공개 | **GDPR**: 제9조(2)(e,g) — 공개된 정치적 입장
+
+### 결론
+
+2026-05-04에 제출된 8개의 야당 발의안은 두 가지 정부 제안에 대한 조율된 법적·전략적 도전을 구성한다: 산림법 규제 완화(prop. 2025/26:242, HD024141–145/147)와 소년 형사 사법 개혁(prop. 2025/26:246, HD024142/146/148). 정부 다수파(175석)는 두 조치를 모두 통과시킬 것이지만, 센터르파르티엣의 이중 이탈—불충분한 산림 생산 지원 거부와 동시에 유엔 아동권리협약을 근거로 형사 책임 연령 인하 저지—은 2026년 선거 재편에서 결정적인 정보 신호이다. **선거 근접 맥락**: 스웨덴 총선(2026-09-13)까지 128일이 남은 가운데, 이 발의안들은 입법 수단과 선거 캠페인 포지셔닝 문서로 동시에 기능한다. DIW 선거 근접 배수 1.5×가 적용된다: 현재 채택되는 야당 입장은 가을 캠페인 개시 전에 정당 플랫폼 공약으로 결정화될 것이다.
+
+### 이 브리핑이 지원하는 결정 사항
+
+1. **연립 모니터링**: S(94석)가 prop. 2025/26:246에 대한 유엔 아동권리협약 이의를 명시적으로 지지하는지 추적—그 경우 정부 다수파는 헌법적으로 노출된 조치에서 175-163으로 축소된다.
+2. **EU 준수 모니터링**: Naturvårdsverket이 prop. 2025/26:242에 관한 EU 서식지 지침 제6조 및 NRL 규정 2024/1991 의무에 대한 준수 우려를 제출하는지 평가한다.
+3. **Lagrådet 의견**: prop. 2025/26:246에 관한 Lagrådets yttrande는 중요한 결정 관문—부정적인 결론은 연령 인하 조항에서 정부 철수 확률을 15%에서 30-40%로 높인다.
+4. **C의 재포지셔닝**: 2026년 5월 C의 이중 이탈이 2026년 이후 연립 산수에 영향을 미치는 전술적 선거 전 기동인지 구조적 정책 변환인지 모델링한다.
+
+### 60초 포인트
+
+- **8개 발의안, 2개 정부 제안**: 산림업(MJU, 5개 정당)과 소년 범죄(JuU, 3개 정당)는 상호 양립할 수 없는 요구를 가진 조율된 반대에 직면한다.
+- **선거까지 128일**: 현재 채택되는 모든 야당 입장은 캠페인 플랫폼 공약으로 두 배가 된다. DIW 선거 근접 배수 1.5×는 각 이탈 신호를 높인다.
+- **C의 피벗**: 센터르파르티엣은 다른 방향에서 두 현안 모두에서 이탈한다—더 많은 산림 생산 지원 요구(HD024145)와 형사 책임 연령 인하 반대(HD024146, 유엔 아동권리협약 근거). 순효과: C는 선거 후 유연성을 극대화한다.
+- **법적 노출**: 두 제안 모두 의회 다수파와 무관하게 작동하는 국제 법적 취약성에 직면한다—EU 위반(산림업)과 유엔 아동권리협약/유럽인권협약 도전(소년 사법).
+- **S의 입장 보류**: 사회민주당은 연령 인하에 대해 약속하지 않았다. 94석은 이것이 접전 투표(175-163)가 될지 편안한 다수파가 될지를 결정한다.
+- **Lagrådet 임계 경로**: prop. 2025/26:246에 관한 보류 중인 Lagrådets yttrande는 가장 가능성 높은 근시일 내 제약 이벤트이다(PIR LAGRÅDET-246).
+- **어느 제안에서도 다수파 위험 없음**: 극적인 연립 이탈이 없는 한 정부는 두 조치를 모두 통과시킨다—정치적 결과가 착지하는 곳은 현재 이 릭스다그 회기가 아니라 2026년 선거이다.
+
+### 가장 중요한 미래 트리거
+
+**PIR LAGRÅDET-246** — prop. 2025/26:246(소년 형사 연령을 13세로 인하)에 관한 Lagrådets yttrande. 수 주 내 예상. 부정적인 결론은 위원회에서 유엔 아동권리협약 적합성 토론, Barnombudsmannen의 공식 성명, 그리고 정부 수정안 가능성을 즉시 촉발한다.
+
+### 신뢰도 평가
+
+전체적으로 높음 [B2] — 8개 발의안 모두 data.riksdagen.se의 1차 문서; 정당 입장, dok_ids, 위원회 라우팅 확인됨. IMF에 의해 강등된 경제적 맥락; SDMX 프로브 실패. WEO/FM 재무 데이터는 해당되는 경우 빈티지 스탬프와 함께 인용됨.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-05-08 | **Vertrouwen**: HOOG [B2]
+**Classificatie**: OPENBAAR | **AVG**: Art. 9(2)(e,g) — openbaar gemaakte politieke standpunten
+
+### Conclusie
+
+Acht oppositiemoties ingediend op 2026-05-04 vormen gecoördineerde juridisch-strategische uitdagingen tegen twee regeringsproposities: de bosrechtderegulering (prop. 2025/26:242, HD024141–145/147) en de jeugdstrafrechtshervorming (prop. 2025/26:246, HD024142/146/148). De regeringsmeerderheid (175 zetels) zal beide maatregelen doorvoeren, maar de dubbele afwijking van Centerpartiet — afwijzing van onvoldoende bosproductiesteun terwijl tegelijkertijd de verlaging van de strafrechtelijke aansprakelijkheidsleeftijd wordt geblokkeerd op basis van het VN-Kinderrechtenverdrag — is het bepalende inlichtingensignaal voor de kiezersheroriëntatie van 2026. **Electorale nabijheidscontext**: Met nog 128 dagen tot de Zweedse algemene verkiezingen (2026-09-13) dienen deze moties tegelijkertijd als wetgevende instrumenten en campagnepositioneringsdocumenten. De DIW-verkiezingsnabijheidsmultiplier van 1,5× is van toepassing: oppositieposities die nu worden ingenomen, zullen kristalliseren in partijplatformverplichtingen voordat de herfstcampagne begint.
+
+### Beslissingen die dit briefing ondersteunt
+
+1. **Coalitietoezicht**: Bijhouden of S (94 zetels) de VN-Kinderrechtenverdragbezwaar tegen prop. 2025/26:246 expliciet onderschrijft — in dat geval krimpt de regeringsmeerderheid tot 175-163 op een constitutioneel blootgestelde maatregel.
+2. **EU-nalevingstoezicht**: Beoordelen of Naturvårdsverket een nalevingsbekommernis indient over prop. 2025/26:242 met betrekking tot EU Habitatrichtlijn Art. 6 en NRL-verordening 2024/1991 verplichtingen.
+3. **Lagrådet-advies**: Het Lagrådets yttrande over prop. 2025/26:246 is de kritische beslissingspoort — een negatief bevinding verhoogt de kans op regeringsterugtrekking van 15% naar 30-40% voor de leeftijdsverlagingsbepaling.
+4. **C-herpositionering**: Modelleren of de dubbele afwijking van C in mei 2026 een tactische pre-verkiezingsmanoeuvre is of een structurele beleidswijziging die de coalitiewiskunde na 2026 beïnvloedt.
+
+### Punten in 60 seconden
+
+- **8 moties, 2 proposities**: Bosbouw (MJU, 5 partijen) en jeugdcriminaliteit (JuU, 3 partijen) staan voor gecoördineerde oppositie met onverenigbare eisen.
+- **128 dagen tot de verkiezingen**: Alle nu ingenomen oppositieposities verdubbelen als campagneplatformverplichtingen. De DIW-verkiezingsnabijheidsmultiplier van 1,5× verhoogt elk afwijkingssignaal.
+- **C-spilpunt**: Centerpartiet wijkt op beide kwesties af vanuit verschillende richtingen — eist meer bosproductiesteun (HD024145) EN verzet zich tegen de verlaging van de strafrechtelijke aansprakelijkheidsleeftijd (HD024146, VN-Kinderrechtenverdragbasis). Netto-effect: C maximaliseert post-verkiezingsflexibiliteit.
+- **Juridische blootstelling**: Beide proposities staan voor internationale juridische kwetsbaarheden die onafhankelijk van de parlementaire meerderheid werken — EU-inbreuk (bosbouw) en VN-Kinderrechtenverdrag/EVRM-uitdaging (jeugdrecht).
+- **S-positie in afwachting**: De sociaaldemocraten hebben zich niet uitgesproken over de leeftijdsverlaging. Hun 94 zetels zijn bepalend voor de vraag of dit een krappe stemming wordt (175-163) of een comfortabele meerderheid.
+- **Lagrådet kritisch pad**: Het in afwachting zijnde Lagrådets yttrande over prop. 2025/26:246 is het meest waarschijnlijke nabije beperkende evenement (PIR LAGRÅDET-246).
+- **Geen meerderheidsrisico bij beide proposities**: De regering voert beide maatregelen door tenzij er een dramatische coalitie-afvalligheid plaatsvindt — de verkiezingen 2026, niet deze Riksdag-periode, is waar de politieke gevolgen landen.
+
+### Meest kritieke toekomstige trigger
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande over prop. 2025/26:246 (verlaging van de strafrechtelijke jeugdleeftijd naar 13). Binnen weken verwacht. Een negatief bevinding triggert onmiddellijk een debat over VN-Kinderrechtenverdragcompatibiliteit in de commissie, de formele verklaring van de Barnombudsmannen en waarschijnlijke regeringswijziging.
+
+### Vertrouwensbeoordeling
+
+Totaal HOOG [B2] — alle acht moties zijn primaire documenten van data.riksdagen.se; partijposities, dok_ids en commissierouting bevestigd. IMF-gedegradeerde economische context; SDMX-probes mislukt. WEO/FM financiële gegevens indien van toepassing geciteerd met jaargangsmarkering.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-08 | **Konfidens**: HØY [B2]
+**Klassifisering**: OFFENTLIG | **GDPR**: Art. 9(2)(e,g) — offentliggjorte politiske standpunkter
+
+### Konklusjon
+
+Åtte opposisjonsforslag innlevert 2026-05-04 monterer koordinerte juridisk-strategiske utfordringer mot to regjeringsproposasjoner: skoglovgivningsdereguleringen (prop. 2025/26:242, HD024141–145/147) og ungdomsstrafferettsreformen (prop. 2025/26:246, HD024142/146/148). Regjeringsflertallet (175 seter) vil vedta begge tiltakene, men Senterpartiets (Centerpartiet) doble frafall — motstand mot utilstrekkelig skogproduksjonsstøtte og blokkering av kriminell lavalderssenkingen på FN-barnekonvensjonsgrunnlag — er det avgjørende etterretningssignalet for valgrealignment i 2026. **Valgperiodekontekst**: Med 128 dager til det svenske valget (2026-09-13) fungerer disse forslagene simultant som lovgivningsinstrumenter og kampanjeposisjoneringsdokumenter. 1,5×-DIW-valgperiodsmultiplikatoren gjelder: opposisjonens standpunkter satt nå vil krystallisere seg i partiplattformforpliktelser før høstkampanjen åpner.
+
+### Beslutninger dette notatet støtter
+
+1. **Koalisjonsovervåking**: Spor om S (94 seter) eksplisitt slutter seg til FN-barnekonvensjonsinnsigelsen mot prop. 2025/26:246 — i så fall snevrer regjeringsflertallet inn til 175-163 på et konstitusjonelt eksponert tiltak.
+2. **EU-etterlevelsesovervåking**: Vurder om Naturvårdsverket inn sender en etterlevelsesbekymring for prop. 2025/26:242 om EU habitatdirektiv art. 6 og NRL-forordningen 2024/1991.
+3. **Lagrådets uttalelse**: Lagrådets yttrande om prop. 2025/26:246 er det kritiske beslutningsgaten — et negativt funn øker regjeringens tilbaketrekningssannsynlighet fra 15% til 30-40% på lavalderssenkningsbestemmelsen.
+4. **C-repositionering**: Modelér om Cs doble frafall i mai 2026 er et taktisk forhåndsvalgtrekk eller et strukturelt politikkskifte som påvirker koalisjonsmatematikken etter 2026.
+
+### 60-sekunders punkter
+
+- **8 forslag, 2 proposisjoner**: Skog (MJU, 5 partier) og ungdomskriminalitet (JuU, 3 partier) møter koordinert opposisjon med uforenlige krav.
+- **128 dager til valg**: Alle opposisjonsstandpunkter satt nå dobles som kampanjeplattformforpliktelser. 1,5×-DIW-valgperiodsmultiplikatoren hever ethvert frafallssignal.
+- **Cs sentralpunkt**: Centerpartiet avviker på begge spørsmål fra forskjellige retninger — krever mer skogproduksjonsstøtte (HD024145) OG motsetter seg kriminell lavalder (HD024146, FN-barnekonvensjonsgrunnlag). Nettoeffekt: C maksimerer fleksibilitet etter valget.
+- **Rettslig eksponering**: Begge proposisjonene møter internasjonale juridiske sårbarheter som virker uavhengig av parlamentarisk flertall — EU-brudd (skog) og FN-barnekonvensjon/EMK-utfordring (ungdomsjustis).
+- **S-standpunkt utestående**: Sosialdemokratene har ikke forpliktet seg på kriminell lavalder. Deres 94 seter er avgjørende for om dette blir en jevn avstemning (175-163) eller et komfortabelt flertall.
+- **Lagrådet kritisk vei**: Avventende Lagrådets yttrande om prop. 2025/26:246 er den mest sannsynlige nære fremtidige tvangshendelsen (PIR LAGRÅDET-246).
+- **Ingen flertallsrisiko på noen proposisjon**: Regjeringen vedtar begge tiltakene med mindre et dramatisk koalisjonsavfall oppstår — valget 2026, ikke denne riksdagsperioden, er der de politiske konsekvensene lander.
+
+### Viktigste fremtidige utløser
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande om prop. 2025/26:246 (senkelse av ungdoms kriminelle lavalder til 13). Forventet innen uker. Et negativt funn utløser umiddelbar FN-barnekonvensjonskompatibilitetsdebatt i komiteen, Barnombudsmannens formelle uttalelse og sannsynlig regjeringsendring.
+
+### Konfidensgrad
+
+Samlet HØY [B2] — alle åtte forslag er primærdokumenter fra data.riksdagen.se; partistandpunkter, dok_ids og komitérouting bekreftet. IMF-nedgradert økonomisk kontekst; SDMX-prober mislyktes. WEO/FM finansdata sitert der relevant med årgangsstempel.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-05-08 | **Konfidensgrad**: HÖG [B2]
+**Klassificering**: OFFENTLIG | **GDPR**: Art. 9(2)(e,g) — offentliggjorda politiska ståndpunkter
+
+### Slutsats
+
+Åtta oppositionsmotioner inlämnade 2026-05-04 monterar samordnade rättslig-strategiska utmaningar mot två regeringspropositioner: skogsavregleringen (prop. 2025/26:242, HD024141–145/147) och ungdomsstraffrättsreformen (prop. 2025/26:246, HD024142/146/148). Regeringens majoritet (175 platser) kommer att passera båda åtgärderna, men Centerpartiets dubbla avhopp — motstånd mot otillräckligt stöd för skogsproduktion och ett samtidigt blockande av straffmyndighetsålderssänkningen på FN:s barnkonventionsgrunder — är den avgörande underrättelsesignalen för 2026 års valrealignment. **Valperiodkontext**: Med 128 dagar kvar till det svenska riksdagsvalet (2026-09-13) fungerar dessa motioner samtidigt som lagstiftningsinstrument och kampanjpositioneringsdokument. 1,5×-DIW-valperiodsmultiplikatorn gäller: oppositionens ståndpunkter som staks ut nu kommer att kristalliseras i partiplatformsåtaganden innan höstkampanjen öppnar.
+
+### Beslut detta underlag stöder
+
+1. **Koalitionsövervakning**: Spåra om S (94 platser) uttryckligen stödjer FN:s barnkonventionsinvändningen mot prop. 2025/26:246 — i så fall minskar regeringsmajoriteten till 175-163 på en konstitutionellt exponerad åtgärd.
+2. **EU-efterlevnadsövervakning**: Bedöm om Naturvårdsverket lämnar in en efterlevnadshänsyn angående prop. 2025/26:242 beträffande skyldigheterna i EU:s habitatdirektiv art. 6 och NRL-förordningen 2024/1991.
+3. **Lagrådets yttrande**: Lagrådets yttrande om prop. 2025/26:246 är det kritiska beslutssteget — ett negativt utlåtande ökar sannolikheten för regeringens reträtt från 15% till 30-40% avseende ålderssänkningsbestämmelsen.
+4. **C:s ompositionering**: Modellera huruvida C:s dubbla avhopp i maj 2026 är ett taktiskt val-förval-val eller ett strukturellt politikskifte som påverkar koalitionsmatematikmöjligheterna efter 2026.
+
+### 60-sekunders sammanfattning
+
+- **8 motioner, 2 propositioner**: Skogen (MJU, 5 partier) och ungdomsbrottslighet (JuU, 3 partier) möter samordnad opposition med oförenliga krav.
+- **128 dagar till valet**: Alla oppositionsståndpunkter som staks ut nu fördubblas som kampanjplatformsåtaganden. 1,5×-DIW-valperiodsmultiplikatorn höjer varje avhoppssignal.
+- **C:s vridpunkt**: Centerpartiet avviker på båda frågorna från olika håll — kräver mer stöd för skogsproduktion (HD024145) OCH motsätter sig kriminell straffmyndighetsålder (HD024146, FN:s barnkonventionsgrunds). Nettoeffekt: C maximerar flexibilitet efter valet.
+- **Rättslig exponering**: Båda propositionerna möter internationella rättsliga sårbarheter som verkar oberoende av parlamentarisk majoritet — EU-intrång (skog) och FN:s barnkonvention/ECHR-utmaning (ungdomsrättvisa).
+- **S:s ståndpunkt oklar**: Socialdemokraterna har inte åtagit sig angående kriminell straffmyndighetsålder. Deras 94 platser är avgörande för om detta blir en jämn omröstning (175-163) eller en bekväm majoritet.
+- **Lagrådet kritisk väg**: Lagrådets yttrande om prop. 2025/26:246 är den mest sannolika nära framtida tvingande händelsen (PIR LAGRÅDET-246).
+- **Ingen majoritetsrisk på någon proposition**: Regeringen passerar båda åtgärderna om inte ett dramatiskt koalitionsavhopp sker — valet 2026, inte den här riksdagsperioden, är där de politiska konsekvenserna landar.
+
+### Viktigaste framtida trigger
+
+**PIR LAGRÅDET-246** — Lagrådets yttrande om prop. 2025/26:246 (sänkning av ungdomens straffrättsliga ålder till 13). Förväntas inom veckor. Ett negativt utlåtande utlöser omedelbar FN:s barnkonventionskompatibilitetsdebatt i utskottet, Barnombudsmannens formella uttalande och trolig regeringsändring.
+
+### Konfidensgrad
+
+Övergripande HÖG [B2] — alla åtta motioner är primärdokument från data.riksdagen.se; partiståndpunkter, dok_ids och utskottsrouting bekräftade. IMF-nedgraderat ekonomiskt sammanhang; SDMX-prober misslyckades. WEO/FM finansdata citerad där tillämpligt med årgångsstämpel.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_zh.md -->
+
+**作者**：詹姆斯·彼得·索尔林 | **日期**：2026-05-08 | **可信度**：高 [B2]
+**分类**：公开 | **GDPR**：第9条(2)(e,g) — 已公开的政治立场
+
+### 结论
+
+2026-05-04提交的八项反对党提案构成了针对两项政府提案的协调法律-战略挑战：林业法规放松（prop. 2025/26:242, HD024141–145/147）和少年刑事司法改革（prop. 2025/26:246, HD024142/146/148）。政府多数派（175席）将通过这两项措施，但中间党的双重背离——拒绝不足的林业生产支持，同时以联合国《儿童权利公约》为由阻止降低刑事责任年龄——是2026年选举重新排列的决定性情报信号。**选举临近背景**：距瑞典大选（2026-09-13）还有128天，这些提案同时充当立法工具和竞选定位文件。DIW选举临近乘数1.5×适用：现在采取的反对党立场将在秋季竞选开始前结晶为政党平台承诺。
+
+### 本简报支持的决策
+
+1. **联盟监控**：追踪S（94席）是否明确认可对prop. 2025/26:246的联合国儿童权利公约异议——如是，政府多数派在宪法暴露的措施上缩减至175-163。
+2. **欧盟合规监控**：评估Naturvårdsverket是否就prop. 2025/26:242提交关于欧盟栖息地指令第6条和NRL法规2024/1991义务的合规关切。
+3. **Lagrådet意见**：关于prop. 2025/26:246的Lagrådets yttrande是关键决策门户——负面发现将政府在年龄降低条款上撤退的可能性从15%提升至30-40%。
+4. **C的重新定位**：建模2026年5月C的双重背离是影响2026年后联盟算术的选举前战术机动还是结构性政策转变。
+
+### 60秒要点
+
+- **8项提案，2项政府提案**：林业（MJU，5个政党）和少年犯罪（JuU，3个政党）面临要求不相容的协调反对。
+- **距选举128天**：所有现在采取的反对党立场都将作为竞选平台承诺翻倍。DIW选举临近乘数1.5×提升每个背离信号。
+- **C的轴转**：中间党从不同方向在两个问题上背离——要求更多林业生产支持（HD024145）并反对降低刑事责任年龄（HD024146，儿童权利公约依据）。净效果：C最大化选举后灵活性。
+- **法律暴露**：两项提案都面临独立于议会多数派运作的国际法律脆弱性——欧盟违规（林业）和儿童权利公约/欧洲人权公约挑战（少年司法）。
+- **S立场待定**：社会民主党尚未就年龄降低表态。其94席对这是否成为接近投票（175-163）或舒适多数起决定性作用。
+- **Lagrådet关键路径**：关于prop. 2025/26:246的待发布Lagrådets yttrande是最可能的近期制约事件（PIR LAGRÅDET-246）。
+- **两项提案均无多数风险**：除非发生戏剧性的联盟背叛，政府将通过两项措施——政治后果落地的地方是2026年选举而非当前议会届期。
+
+### 最重要的未来触发器
+
+**PIR LAGRÅDET-246** — 关于prop. 2025/26:246（将少年刑事年龄降至13岁）的Lagrådets yttrande。预计在数周内。负面发现立即触发委员会关于儿童权利公约兼容性的辩论、Barnombudsmannen的正式声明和可能的政府修正案。
+
+### 可信度评估
+
+总体高 [B2] — 八项提案均为data.riksdagen.se的原始文件；政党立场、dok_ids和委员会路由已确认。IMF降级的经济背景；SDMX探测失败。WEO/FM财务数据在适用时以年份戳记引用。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+timeline
+    title Motions Intelligence Timeline — 2026-05-08
+    2026-05-04 : 8 motions filed
+    2026-05-08 : Analysis run (this brief)
+    2026-05-20 : S position expected on JuU age cut (PIR S-CRC-JOIN)
+    2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
+    2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
+    2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
+```
+
+<!-- source-sha: f606888bcd73f924a651e60009818030e9af3c63 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 10 | Linked in Article Sources, not expanded inline |
 
@@ -1547,6 +2200,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
