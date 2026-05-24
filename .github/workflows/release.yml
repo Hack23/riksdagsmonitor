@@ -245,7 +245,6 @@ jobs:
     name: Generate TypeDoc
     needs: [prepare]
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     permissions:
       contents: read
     steps:
@@ -291,7 +290,6 @@ jobs:
     name: E2E (${{ matrix.shard.name }})
     needs: [prepare, build]
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     permissions:
       contents: read
     strategy:
@@ -383,7 +381,6 @@ jobs:
     name: Build Release Package
     needs: [prepare, build]
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     permissions:
       contents: read
       id-token: write # Required for OIDC
@@ -445,7 +442,6 @@ jobs:
     name: Deploy Documentation
     needs: [prepare, build, unit-tests, typedoc, e2e]
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     permissions:
       contents: write # Required for github-pages-deploy-action
     steps:
@@ -669,7 +665,6 @@ jobs:
     name: Create GitHub Release
     needs: [prepare, build, package, unit-tests, e2e]
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     permissions:
       contents: write # Required to create releases
     steps:
@@ -774,7 +769,6 @@ jobs:
     name: Publish to npm
     needs: [prepare, build, unit-tests, typedoc, e2e, package, deploy-docs, release]
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     permissions:
       contents: read
       id-token: write # Required for npm provenance
@@ -837,7 +831,6 @@ jobs:
     needs: [prepare, release, deploy-docs, npm-publish]
     if: always()
     runs-on: ubuntu-latest
-    timeout-minutes: 2
     steps:
       - name: Print summary
         run: |
