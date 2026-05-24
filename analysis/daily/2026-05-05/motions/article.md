@@ -1,12 +1,12 @@
 ---
 title: "Opposition Parties Challenge Forestry Deregulation and Youth Crime Age Cut"
 description: "Eight opposition committee motions filed on 2026-05-04 mount a broad, cross-party challenge to two government propositions: five parties contest the Ulf Kristersson government's forestry deregulation…"
-keywords: "Motions, English, May 5, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Parties Challenge Forestry Deregulation, Opposition, Parties, Challenge, Forestry, Deregulation, Youth, Crime, Eight, committee, filed, mount, broad, cross-party"
+keywords: "HD024141, HD024145, HD024147, HD024142, HD024146, HD024148, HD03246, prop. 2025/26:242, prop. 2025/26:246, James Pether Sörling, Ulf Kristersson, Habitats Directive Art, UN Convention, If Lagrådet, Scenario J-B, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions"
 date: 2026-05-05
 subfolder: motions
 slug: 2026-05-05-motions
 source_folder: analysis/daily/2026-05-05/motions
-generated_at: 2026-05-23T22:05:56.514Z
+generated_at: 2026-05-24T12:19:34.063Z
 language: en
 layout: article
 ---

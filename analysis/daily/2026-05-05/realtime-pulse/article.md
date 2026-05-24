@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Pre-Election Legislative Sprint Exposes Coalition Fault Lines"
-description: "The 2026-05-05 parliamentary pulse reveals a Tidö government prosecuting its legislative agenda at pace — household debt surveillance (HD03255), forestry deregulation (prop. 2025/26:242), criminal…"
-keywords: "Realtime Pulse, English, May 5, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Pre-Election Legislative Sprint Exposes, Sweden, Pre-Election, Legislative, Sprint, Exposes, Coalition, Fault, Lines, parliamentary, pulse, reveals, Tidö, government"
+description: "The 2026-05-05 parliamentary pulse reveals a Tidö government prosecuting its legislative agenda at pace — household debt surveillance (HD03255), forestry deregulation (prop."
+keywords: "HD03255, HD03246, HD024146, HD10461, HD10458, HD10464, HD10466, HD10465, HD10467, HD024136, HD10469, HD10468, HD10463, prop. 2025/26:242, prop. 2025/26:246, KU39, FiU45, JuU30, KU, FiU, JuU, KD, James Pether Sörling, Research Minister Edholm"
 date: 2026-05-05
 subfolder: realtime-pulse
 slug: 2026-05-05-realtime-pulse
 source_folder: analysis/daily/2026-05-05/realtime-pulse
-generated_at: 2026-05-23T22:05:56.543Z
+generated_at: 2026-05-24T12:19:34.080Z
 language: en
 layout: article
 ---

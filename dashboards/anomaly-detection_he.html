@@ -131,50 +131,121 @@
 }
 </script>
 </head>
-<body class="rm-dashboard-page rm-dashboard-anomaly-detection">
-<a href="#main-content" class="skip-to-content">דלג לתוכן הראשי</a>
-<nav aria-label="Breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item">
-<a href="../index_he.html">בית</a>
-</li>
-<li class="breadcrumb-item">
-<a href="../dashboard/index_he.html">לוחות מחוונים</a>
-</li>
-<li class="breadcrumb-item" aria-current="page">
-🚨 זיהוי אנומליות ומערכת התרעה מוקדמת
-</li>
-</ol>
-</nav>
-
-<header>
-<button id="theme-toggle" class="theme-toggle-btn" type="button"
-        aria-pressed="false"
-        aria-label="החלפת ערכת נושא"
-        title="החלפת ערכת נושא"
-        data-label-dark="החלף לערכת נושא בהירה"
-        data-label-light="החלף לערכת נושא כהה"
-        data-rm-static-theme-toggle="true">
-  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
-  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
-  <span class="theme-toggle-label">ערכת נושא</span>
-</button>
-
-<!-- Hero Banner -->
-<div class="hero-banner">
-  <picture class="hero-banner-picture">
-        <source type="image/avif" srcset="images/riksdagsmonitor-banner-480w.avif 480w, images/riksdagsmonitor-banner-768w.avif 768w, images/riksdagsmonitor-banner-1024w.avif 1024w, images/riksdagsmonitor-banner-1536w.avif 1536w" sizes="100vw">
-        <source type="image/webp" srcset="images/riksdagsmonitor-banner-480w.webp 480w, images/riksdagsmonitor-banner-768w.webp 768w, images/riksdagsmonitor-banner-1024w.webp 1024w, images/riksdagsmonitor-banner-1536w.webp 1536w" sizes="100vw">
+<body class="rm-article-body rm-dashboard-page rm-dashboard-anomaly-detection">
+    <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
+    <header class="rm-site-header" role="banner">
+      <div class="rm-site-header-inner">
+        <a class="rm-logo" href="../index_he.html" aria-label="Riksdagsmonitor דף הבית">
+          <img class="rm-logo-img" data-rm-logo-img="true" src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-48w.webp 48w, ../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="48px" alt="" width="48" height="48" loading="eager" decoding="async">
+          <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
+          <span class="rm-logo-text">
+            <span class="rm-logo-brand">Riksdagsmonitor</span>
+            <span class="rm-logo-tagline">מודיעין פרלמנטרי שוודי · קוד פתוח · Apache-2.0</span>
+          </span>
+        </a>
+        <nav class="rm-site-nav" aria-label="פלטפורמה ראשית">
+          <a href="../index_he.html">דף הבית</a>
+          <a href="../news/index_he.html">חדשות</a>
+          <a href="../dashboard/index_he.html">לוח מחוונים</a>
+          <a href="../politician-dashboard_he.html">👤 פוליטיקאים</a>
+          <a href="../political-intelligence_he.html">🧠 מודיעין פוליטי</a>
+          <a href="../sitemap_he.html">מפת האתר</a>
+          <a href="https://riksdagsmonitor.com/docs/api/index.html">תיעוד API</a>
+        </nav>
+        <details class="rm-lang-switcher">
+          <summary aria-label="החלפת שפה">
+            <span aria-hidden="true">🇮🇱</span>
+            <span class="rm-lang-current-label">עברית</span>
+            <span class="rm-lang-switcher-caret" aria-hidden="true">▾</span>
+          </summary>
+          <div class="rm-lang-switcher-dropdown" role="menu">
+          <a href="../dashboards/anomaly-detection.html" lang="en" title="English" role="menuitem"><span aria-hidden="true">🇬🇧</span> English</a>
+          <a href="../dashboards/anomaly-detection_sv.html" lang="sv" title="Svenska" role="menuitem"><span aria-hidden="true">🇸🇪</span> Svenska</a>
+          <a href="../dashboards/anomaly-detection_da.html" lang="da" title="Dansk" role="menuitem"><span aria-hidden="true">🇩🇰</span> Dansk</a>
+          <a href="../dashboards/anomaly-detection_no.html" lang="nb" title="Norsk" role="menuitem"><span aria-hidden="true">🇳🇴</span> Norsk</a>
+          <a href="../dashboards/anomaly-detection_fi.html" lang="fi" title="Suomi" role="menuitem"><span aria-hidden="true">🇫🇮</span> Suomi</a>
+          <a href="../dashboards/anomaly-detection_de.html" lang="de" title="Deutsch" role="menuitem"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
+          <a href="../dashboards/anomaly-detection_fr.html" lang="fr" title="Français" role="menuitem"><span aria-hidden="true">🇫🇷</span> Français</a>
+          <a href="../dashboards/anomaly-detection_es.html" lang="es" title="Español" role="menuitem"><span aria-hidden="true">🇪🇸</span> Español</a>
+          <a href="../dashboards/anomaly-detection_nl.html" lang="nl" title="Nederlands" role="menuitem"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
+          <a href="../dashboards/anomaly-detection_ar.html" lang="ar" title="العربية" role="menuitem"><span aria-hidden="true">🇸🇦</span> العربية</a>
+          <a href="../dashboards/anomaly-detection_ja.html" lang="ja" title="日本語" role="menuitem"><span aria-hidden="true">🇯🇵</span> 日本語</a>
+          <a href="../dashboards/anomaly-detection_ko.html" lang="ko" title="한국어" role="menuitem"><span aria-hidden="true">🇰🇷</span> 한국어</a>
+          <a href="../dashboards/anomaly-detection_zh.html" lang="zh" title="中文" role="menuitem"><span aria-hidden="true">🇨🇳</span> 中文</a>
+          </div>
+        </details>
+        <a class="rm-header-cta rm-header-cta-pi"
+           href="../political-intelligence_he.html"
+           title="ניתוח פוליטי מעמיק ודוחות מודיעין"
+           aria-label="ניתוח פוליטי מעמיק ודוחות מודיעין">
+          <span class="rm-header-cta-icon" aria-hidden="true">🧠</span>
+          <span class="rm-header-cta-label">מודיעין פוליטי</span>
+        </a>
+        <a class="rm-header-cta rm-header-cta-transparency"
+           href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md"
+           target="_blank" rel="noopener noreferrer"
+           title="מחויבות Hack23 לשקיפות ואבטחה"
+           aria-label="מחויבות Hack23 לשקיפות ואבטחה">
+          <span class="rm-header-cta-icon" aria-hidden="true">🔐</span>
+          <span class="rm-header-cta-label">שקיפות ואבטחה</span>
+        </a>
+        <a class="rm-header-cta rm-header-cta-sponsor"
+           href="https://github.com/sponsors/Hack23"
+           target="_blank" rel="noopener noreferrer"
+           title="הפכו לתומכים של Hack23 ב-GitHub"
+           aria-label="הפכו לתומכים של Hack23 ב-GitHub">
+          <span class="rm-header-cta-icon" aria-hidden="true">💖</span>
+          <span class="rm-header-cta-label">תמכו ב-Hack23</span>
+        </a>
+        <button id="theme-toggle" class="rm-theme-toggle" type="button"
+                aria-pressed="false"
+                aria-label="החלפת ערכת נושא"
+                title="החלפת ערכת נושא"
+                data-label-dark="החלף לערכת נושא בהירה"
+                data-label-light="החלף לערכת נושא כהה">
+          <span class="rm-theme-toggle-icon" aria-hidden="true">🌓</span>
+          <span class="rm-theme-toggle-label">ערכת נושא</span>
+        </button>
+      </div>
+      <div class="rm-site-subnav" aria-label="הקשר הדף">
+        <nav class="rm-breadcrumb" aria-label="נתיב ניווט">
+          <ol>
+            <li><a href="../index_he.html">דף הבית</a></li>
+            <li><a href="../dashboard/index_he.html">לוח מחוונים</a></li>
+            <li aria-current="page">🚨 זיהוי אנומליות ומערכת התרעה מוקדמת | Riksdagsmonitor</li>
+          </ol>
+        </nav>
+        
+      </div>
+    </header>
+    <div class="hero-banner" aria-hidden="true">
+      <picture class="hero-banner-picture">
+        <source type="image/avif" srcset="../images/riksdagsmonitor-banner-480w.avif 480w, ../images/riksdagsmonitor-banner-768w.avif 768w, ../images/riksdagsmonitor-banner-1024w.avif 1024w, ../images/riksdagsmonitor-banner-1536w.avif 1536w" sizes="100vw">
+        <source type="image/webp" srcset="../images/riksdagsmonitor-banner-480w.webp 480w, ../images/riksdagsmonitor-banner-768w.webp 768w, ../images/riksdagsmonitor-banner-1024w.webp 1024w, ../images/riksdagsmonitor-banner-1536w.webp 1536w" sizes="100vw">
         <img src="../images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high">
       </picture>
-</div>
+    </div>
+    <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="דף זה בשפות אחרות">
+      <a href="../dashboards/anomaly-detection.html" class="lang-link" hreflang="en" lang="en" title="English"><span aria-hidden="true">🇬🇧</span> English</a>
+      <a href="../dashboards/anomaly-detection_sv.html" class="lang-link" hreflang="sv" lang="sv" title="Svenska"><span aria-hidden="true">🇸🇪</span> Svenska</a>
+      <a href="../dashboards/anomaly-detection_da.html" class="lang-link" hreflang="da" lang="da" title="Dansk"><span aria-hidden="true">🇩🇰</span> Dansk</a>
+      <a href="../dashboards/anomaly-detection_no.html" class="lang-link" hreflang="nb" lang="nb" title="Norsk"><span aria-hidden="true">🇳🇴</span> Norsk</a>
+      <a href="../dashboards/anomaly-detection_fi.html" class="lang-link" hreflang="fi" lang="fi" title="Suomi"><span aria-hidden="true">🇫🇮</span> Suomi</a>
+      <a href="../dashboards/anomaly-detection_de.html" class="lang-link" hreflang="de" lang="de" title="Deutsch"><span aria-hidden="true">🇩🇪</span> Deutsch</a>
+      <a href="../dashboards/anomaly-detection_fr.html" class="lang-link" hreflang="fr" lang="fr" title="Français"><span aria-hidden="true">🇫🇷</span> Français</a>
+      <a href="../dashboards/anomaly-detection_es.html" class="lang-link" hreflang="es" lang="es" title="Español"><span aria-hidden="true">🇪🇸</span> Español</a>
+      <a href="../dashboards/anomaly-detection_nl.html" class="lang-link" hreflang="nl" lang="nl" title="Nederlands"><span aria-hidden="true">🇳🇱</span> Nederlands</a>
+      <a href="../dashboards/anomaly-detection_ar.html" class="lang-link" hreflang="ar" lang="ar" title="العربية"><span aria-hidden="true">🇸🇦</span> العربية</a>
+      <span class="lang-link active" lang="he" title="עברית" aria-current="page"><span aria-hidden="true">🇮🇱</span> עברית</span>
+      <a href="../dashboards/anomaly-detection_ja.html" class="lang-link" hreflang="ja" lang="ja" title="日本語"><span aria-hidden="true">🇯🇵</span> 日本語</a>
+      <a href="../dashboards/anomaly-detection_ko.html" class="lang-link" hreflang="ko" lang="ko" title="한국어"><span aria-hidden="true">🇰🇷</span> 한국어</a>
+      <a href="../dashboards/anomaly-detection_zh.html" class="lang-link" hreflang="zh" lang="zh" title="中文"><span aria-hidden="true">🇨🇳</span> 中文</a>
+    </nav>
 
-<!-- Hero Title -->
 <div class="hero-header-text">
   <h1> Riksdagsmonitor<br><span class="h1-subtitle">פלטפורמת מודיעין לבחירות שוודיה 2026</span></h1>
   <p class="tagline">ניטור פרלמנטרי בזמן אמת · תחזיות קואליציה · 45 כללי סיכון · נתונים של 50+ שנים</p>
 </div>
-
 
 <div class="election-countdown">
 <h2>הבחירות בעוד: <span id="countdown">13 בספטמבר 2026 (יום ראשון השני בספטמבר)</span></h2>
@@ -203,34 +274,7 @@
 <span class="label"><span aria-hidden="true">🏛️</span> החלטות ועדות</span>
 </div>
 </div>
-<nav class="site-header-nav" aria-label="פלטפורמה ראשית" data-rm-static-primary-nav="true">
-  <a href="../index_he.html">דף הבית</a>
-  <a href="news/index_he.html">חדשות</a>
-  <a href="dashboard/index_he.html">לוח מחוונים</a>
-  <a href="politician-dashboard_he.html"><span aria-hidden="true">👤</span> פוליטיקאים</a>
-  <a href="political-intelligence_he.html"><span aria-hidden="true">🧠</span> מודיעין פוליטי</a>
-  <a href="sitemap_he.html"><span aria-hidden="true">🗺️</span> מפת האתר</a>
-  <a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> תיעוד API</a>
-  <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="מחויבות Hack23 לשקיפות ואבטחה" aria-label="מחויבות Hack23 לשקיפות ואבטחה"><span aria-hidden="true">🔐</span> שקיפות ואבטחה</a>
-  <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="הפכו לתומכים של Hack23 ב-GitHub" aria-label="הפכו לתומכים של Hack23 ב-GitHub"><span aria-hidden="true">💖</span> תמכו ב-Hack23</a>
-</nav>
-<nav class="language-switcher site-language-switcher" aria-label="דף זה בשפות אחרות" data-rm-static-language-switcher="true">
-        <a href="../dashboards/anomaly-detection.html" lang="en" hreflang="en" title="English" aria-label="החלפת שפה: English"><span aria-hidden="true">🇬🇧</span> EN</a>
-        <a href="../dashboards/anomaly-detection_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="החלפת שפה: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
-        <a href="../dashboards/anomaly-detection_da.html" lang="da" hreflang="da" title="Dansk" aria-label="החלפת שפה: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
-        <a href="../dashboards/anomaly-detection_no.html" lang="no" hreflang="nb" title="Norsk" aria-label="החלפת שפה: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
-        <a href="../dashboards/anomaly-detection_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="החלפת שפה: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
-        <a href="../dashboards/anomaly-detection_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="החלפת שפה: German"><span aria-hidden="true">🇩🇪</span> DE</a>
-        <a href="../dashboards/anomaly-detection_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="החלפת שפה: French"><span aria-hidden="true">🇫🇷</span> FR</a>
-        <a href="../dashboards/anomaly-detection_es.html" lang="es" hreflang="es" title="Español" aria-label="החלפת שפה: Spanish"><span aria-hidden="true">🇪🇸</span> ES</a>
-        <a href="../dashboards/anomaly-detection_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="החלפת שפה: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
-        <a href="../dashboards/anomaly-detection_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="החלפת שפה: Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
-        <a href="../dashboards/anomaly-detection_he.html" lang="he" hreflang="he" title="עברית" aria-label="החלפת שפה: Hebrew" aria-current="page" class="active"><span aria-hidden="true">🇮🇱</span> HE</a>
-        <a href="../dashboards/anomaly-detection_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="החלפת שפה: Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
-        <a href="../dashboards/anomaly-detection_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="החלפת שפה: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
-        <a href="../dashboards/anomaly-detection_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="החלפת שפה: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
-</nav>
-</header>
+
 
 <main id="main-content" role="main">
 <nav class="dashboard-page-back" aria-label="→ חזרה לדף הבית">

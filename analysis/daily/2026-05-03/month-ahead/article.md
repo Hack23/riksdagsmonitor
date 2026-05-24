@@ -1,12 +1,12 @@
 ---
 title: "Sweden Month Ahead: June 2026"
 description: "Sweden's Tidö coalition (M-SD-KD-L, 176/349 seats) has fired a pre-election legislative salvo with four simultaneous migration propositions filed April 30, 2026 — including the abolition of permanent…"
-keywords: "Month Ahead, English, May 3, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Month Ahead June Tidö, Sweden, Month, Ahead, June, 2026, Tidö, coalition, M-SD-KD-L, seats, fired, pre-election, legislative, salvo"
+keywords: "HD03254, HD03251, HD03262, HD03258, James Pether Sörling, Sweden s Tid, MIGRATION SPRINT, DEFENSE POSTURE, Pål Jonson, HEALTHCARE REFORM, Jakob Forssmed, OPPOSITION MOTIONS, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Month Ahead, English"
 date: 2026-05-03
 subfolder: month-ahead
 slug: 2026-05-03-month-ahead
 source_folder: analysis/daily/2026-05-03/month-ahead
-generated_at: 2026-05-23T22:05:56.327Z
+generated_at: 2026-05-24T12:19:33.927Z
 language: en
 layout: article
 ---

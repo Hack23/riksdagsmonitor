@@ -1,12 +1,12 @@
 ---
 title: "Opposition Unites Against Sweden's Migration Restriction Package as Election Approaches"
 description: "On 13 May 2026 — four months before Sweden's general election — all four opposition parties filed 13 simultaneous motions rejecting the Tidö coalition's four-bill migration restriction package, which…"
-keywords: "Motions, English, May 15, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Unites Against Sweden Migration, Opposition, Unites, Against, Sweden, Migration, Restriction, Package, Election, Approaches, 2026, four, months, before"
+keywords: "HD024152, HD024151, HD024167, SfU, MP, James Pether Sörling, VERY HIGH, WEO Apr-, Sweden s GDP, Two Swedish, Decision-Grade BLUF Rubric, Self-Audit Checklist, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-05-15
 subfolder: motions
 slug: 2026-05-15-motions
 source_folder: analysis/daily/2026-05-15/motions
-generated_at: 2026-05-23T22:05:57.159Z
+generated_at: 2026-05-24T12:19:34.532Z
 language: en
 layout: article
 ---

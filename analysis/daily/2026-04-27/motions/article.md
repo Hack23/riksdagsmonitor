@@ -1,12 +1,12 @@
 ---
 title: "Swedish Opposition Motions Spring 2026"
 description: "Twenty-nine opposition motions filed by V, MP, and S between April 7–17, 2026 (riksmöte 2025/26) target the Tidö government's spring legislative programme on criminal deportation, housing…"
-keywords: "Motions, English, April 27, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Motions Spring Twenty-nine filed, Swedish, Opposition, Spring, 2026, Twenty-nine, filed, between, April, riksmöte, 2025, target, Tidö, government"
+keywords: "HD024090, HD024086, prop. 2025/26:235, MP, James Pether Sörling, AI FIRST, Monitor SfU Committee Vote, Social Affairs Committees, Any KD, MP Electoral Operationalisation, Assess EU Law Pathway, V s EU, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-04-27
 subfolder: motions
 slug: 2026-04-27-motions
 source_folder: analysis/daily/2026-04-27/motions
-generated_at: 2026-05-23T22:05:55.992Z
+generated_at: 2026-05-24T12:19:33.660Z
 language: en
 layout: article
 ---

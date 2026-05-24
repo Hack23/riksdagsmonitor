@@ -1,12 +1,12 @@
 ---
 title: "Social Democrats Challenge Government's Anti-Corruption Overreach"
-description: "The Social Democrats (S) have filed Motion 2025/26:4099 (HD024099) rejecting the government's flagship anti-corruption proposition (prop. 2025/26:217), arguing the new crime \"missbruk av offentlig…"
-keywords: "Motions, English, April 28, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Social Democrats Challenge Government Anti-Corruption, Social, Democrats, Challenge, Government, Anti-Corruption, Overreach, have, filed, Motion, 2025, 4099, HD024099, rejecting"
+description: "The Social Democrats (S) have filed Motion 2025/26:4099 (HD024099) rejecting the government's flagship anti-corruption proposition (prop."
+keywords: "HD024099, prop. 2025/26:217, James Pether Sörling, Opposition Motions, Corruption Investigation Committee, Justice Minister Strömmer s, Teresa Carvalho s, Expected May, If SD, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-04-28
 subfolder: motions
 slug: 2026-04-28-motions
 source_folder: analysis/daily/2026-04-28/motions
-generated_at: 2026-05-23T22:05:56.054Z
+generated_at: 2026-05-24T12:19:33.704Z
 language: en
 layout: article
 ---

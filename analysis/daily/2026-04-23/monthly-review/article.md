@@ -1,12 +1,12 @@
 ---
 title: "Monthly Review April 2026"
-description: "Sweden's April 2026 parliamentary sprint delivered the Kristersson government's final pre-election legislative package. The month's political signature is a fiscal-electoral pivot: HD01FiU48 (4.1…"
-keywords: "Monthly Review, English, April 23, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Monthly Review April Sweden parliamentary, Monthly, Review, April, 2026, Sweden, parliamentary, sprint, delivered, Kristersson, government, final, pre-election, legislative"
+description: "Sweden's April 2026 parliamentary sprint delivered the Kristersson government's final pre-election legislative package."
+keywords: "HD01FiU48, HD03240, HD03239, HD03214, HD03228, HD03100, HD0399, HD03238, UFöU3, SfU18, SoU16, SoU17, FiU48, UFöU, SfU, SoU, FiU, James Pether Sörling, Sweden s April, Analyst Recommendation, Monitor SfU, Watch SD-KD, Sweden s NATO, VERY HIGH"
 date: 2026-04-23
 subfolder: monthly-review
 slug: 2026-04-23-monthly-review
 source_folder: analysis/daily/2026-04-23/monthly-review
-generated_at: 2026-05-23T22:05:55.700Z
+generated_at: 2026-05-24T12:19:33.457Z
 language: en
 layout: article
 ---

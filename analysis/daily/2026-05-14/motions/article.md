@@ -1,12 +1,12 @@
 ---
 title: "Opposition Motions: Sweden's Migration Package Under Fire"
 description: "Sweden's Riksdag received a landmark cluster of 15 opposition motions on 2026-05-13, with S, C, and V simultaneously challenging a four-proposition migration tightening package — propositions 262–265…"
-keywords: "Motions, English, May 14, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Motions Sweden Migration Package, Opposition, Sweden, Migration, Package, Under, Fire, received, landmark, cluster, with, simultaneously, challenging, four-proposition"
+keywords: "HD024160, HD024162, HD024153, prop. 2025/26:262, SD, James Pether Sörling, Probably True, Admiralty Code, Run ID, Analysis Depth, Sweden s Riksdag, CRC Art, AMR Pact, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-05-14
 subfolder: motions
 slug: 2026-05-14-motions
 source_folder: analysis/daily/2026-05-14/motions
-generated_at: 2026-05-23T22:05:57.087Z
+generated_at: 2026-05-24T12:19:34.478Z
 language: en
 layout: article
 ---

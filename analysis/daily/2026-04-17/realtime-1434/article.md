@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Konstitutionsutskottet advanced two grundlag amendments"
 description: "Sweden's Konstitutionsutskottet advanced two grundlag amendments (HD01KU32 + HD01KU33) on 2026-04-17 — the first substantive narrowing of Tryckfrihetsförordningen (1766) in the digital-evidence…"
-keywords: "Realtime 1434, English, April 17, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Konstitutionsutskottet advanced grundlag amendments, Sweden, Konstitutionsutskottet, advanced, grundlag, amendments, HD01KU32, HD01KU33, first, substantive, narrowing, Tryckfrihetsförordningen, 1766, digital-evidence"
+keywords: "HD01KU32, HD01KU33, HD03231, HD03232, KU33, KU32, KU, MP, Sweden s Konstitutionsutskottet, FM Maria Malmer Stenergard, PM Ulf Kristersson, Special Tribunal, International Compensation Commission, Evidence Locus, Action Window, Publication Decision, Press-freedom NGO, Before Lagrådet, Kill Chain, Why They Matter Now, Ulf Kristersson, Maria Malmer Stenergard, Gunnar Strömmer, Justice Minister"
 date: 2026-04-17
 subfolder: realtime-1434
 slug: 2026-04-17-realtime-1434
 source_folder: analysis/daily/2026-04-17/realtime-1434
-generated_at: 2026-05-23T22:05:55.416Z
+generated_at: 2026-05-24T12:19:33.265Z
 language: en
 layout: article
 ---

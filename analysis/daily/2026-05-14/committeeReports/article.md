@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Constitutional Affairs Committee (KU) has advanced"
 description: "Sweden's Constitutional Affairs Committee (KU) has advanced two landmark reports. The dominant event is adoption of KU34 — a package of constitutional amendments (vilande) that must survive September…"
-keywords: "CommitteeReports, English, May 14, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Constitutional Affairs Committee advanced, Sweden, Constitutional, Affairs, Committee, advanced, landmark, reports, dominant, event, adoption, KU34, package, amendments"
+keywords: "HD01KU34, HD01KU35, HD01KU43, KU34, KU35, KU, MP, Sweden s Constitutional Affairs Committee, Effect Date, New Riksdagen, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, CommitteeReports, English"
 date: 2026-05-14
 subfolder: committeeReports
 slug: 2026-05-14-committeeReports
 source_folder: analysis/daily/2026-05-14/committeeReports
-generated_at: 2026-05-23T22:05:57.041Z
+generated_at: 2026-05-24T12:19:34.446Z
 language: en
 layout: article
 ---

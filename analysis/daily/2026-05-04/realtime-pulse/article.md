@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Riksdag on 4 May 2026 produced its most concentrated"
 description: "Sweden's Riksdag on 4 May 2026 produced its most concentrated pre-election legislative output to date: the Industry Committee (NU) recommended approval of direct-track nuclear facility permitting…"
-keywords: "Realtime Pulse, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden produced most concentrated pre-election, Sweden, 2026, produced, most, concentrated, pre-election, legislative, output, date, Industry, Committee, recommended, approval"
+keywords: "HD01NU19, HD01JuU9, HD10463, HD01KU39, HD03258, HD03262, HD03265, HD01FiU49, NU, KD, IMF WEO Apr, Sweden s Riksdag, Industry Committee, Social Democrat, Eva Lindh, KD Infrastructure Minister, Andreas Carlson, Ostlänken Linköping, Who Decides, Carlson s Ostlänken, Infrastructure Minister, Linköping Ostlänken, Defence Committee, Justice Committee"
 date: 2026-05-04
 subfolder: realtime-pulse
 slug: 2026-05-04-realtime-pulse
 source_folder: analysis/daily/2026-05-04/realtime-pulse
-generated_at: 2026-05-23T22:05:56.441Z
+generated_at: 2026-05-24T12:19:34.013Z
 language: en
 layout: article
 ---

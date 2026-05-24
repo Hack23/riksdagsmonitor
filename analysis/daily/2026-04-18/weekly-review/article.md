@@ -1,12 +1,12 @@
 ---
 title: "Riksdag Week 16, 2026"
 description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
-keywords: "Weekly Review, English, April 18, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Week align center One-page decision-maker, Week, 2026, align, center, One-page, decision-maker, briefing, newsroom, editors, policy, advisors, senior, analysts"
+keywords: "HD03100, HD0399, HD03236, HD01KU32, HD01KU33, HD03231, HD03232, JuU15, KU33, SfU22, KU32, JuU, KU, SfU, KD, SD, MP, News Journalist, James Pether Sörling, Sweden s Riksdag, PM Ulf Kristersson, Spring Fiscal Trilogy, World Bank, Foreign Minister"
 date: 2026-04-18
 subfolder: weekly-review
 slug: 2026-04-18-weekly-review
 source_folder: analysis/daily/2026-04-18/weekly-review
-generated_at: 2026-05-23T22:05:55.454Z
+generated_at: 2026-05-24T12:19:33.289Z
 language: en
 layout: article
 ---

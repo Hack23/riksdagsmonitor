@@ -1,12 +1,12 @@
 ---
 title: "Sweden Abolishes Permanent Residence and Expands Security Deportation: A Pre-Election Legislative Reckoning"
 description: "The Busch government has submitted ten propositions constituting Sweden's most far-reaching migration enforcement overhaul since 1989, abolishing permanent residence permits for non-EU nationals,…"
-keywords: "Propositions, English, May 22, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Abolishes Permanent Residence Expands, Sweden, Abolishes, Permanent, Residence, Expands, Security, Deportation, Pre-Election, Legislative, Reckoning, Busch, government, submitted"
+keywords: "HD03262, HD03250, HD03254, HD03267, HD03265, HD03261, HD03258, HD03263, HD03264, HD03251, JuU, SfU, FöU, SkU, TU, KU, SoU, MP, James Pether Sörling, IMF WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence"
 date: 2026-05-22
 subfolder: propositions
 slug: 2026-05-22-propositions
 source_folder: analysis/daily/2026-05-22/propositions
-generated_at: 2026-05-23T22:05:57.467Z
+generated_at: 2026-05-24T12:19:34.755Z
 language: en
 layout: article
 ---

@@ -15,8 +15,11 @@
 
 import type { Language } from '../types/language.js';
 import { LANGUAGE_META } from '../sitemap-html/index.js';
+import {
+  descriptionWindowForLanguage,
+  titleWindowForLanguage,
+} from './aggregator/seo/serp-budgets.js';
 
-const DESCRIPTION_HARD_MAX = 200;
 const KEYWORD_MAX = 24;
 
 /**
@@ -176,72 +179,30 @@ const LANG_CORE_KEYWORDS: Readonly<Record<Language, readonly string[]>> = {
 };
 
 /**
- * Per-language word for "update" appended after the publication-date
- * keyword (e.g. `15 maj 2026 uppdatering`, `15. Mai 2026 Aktualisierung`,
- * `2026年5月15日 更新`). Previously the English string `"update"` was
- * hard-coded into every locale.
+ * Per-language word for the Swedish government ("Regeringen" / cabinet
+ * / executive branch) — the second canonical institutional keyword that
+ * must appear in every article's keyword string alongside "Riksdag" /
+ * "Riksdagsmonitor" / "political intelligence". Mandatory floor item
+ * per the news-journalism editorial brief (2026-05-24): every page
+ * targeting Swedish political SERPs must surface BOTH chambers
+ * (legislature + government).
  */
-const LANG_UPDATE_WORD: Readonly<Record<Language, string>> = {
-  en: 'update',
-  sv: 'uppdatering',
-  da: 'opdatering',
-  no: 'oppdatering',
-  fi: 'päivitys',
-  de: 'Aktualisierung',
-  fr: 'mise à jour',
-  es: 'actualización',
-  nl: 'update',
-  ar: 'تحديث',
-  he: 'עדכון',
-  ja: '更新',
-  ko: '업데이트',
-  zh: '更新',
+const LANG_GOVERNMENT_KEYWORD: Readonly<Record<Language, string>> = {
+  en: 'Regeringen',
+  sv: 'Regeringen',
+  da: 'Regeringen',
+  no: 'Regjeringen',
+  fi: 'Ruotsin hallitus',
+  de: 'Schwedische Regierung',
+  fr: 'Gouvernement suédois',
+  es: 'Gobierno sueco',
+  nl: 'Zweedse regering',
+  ar: 'الحكومة السويدية',
+  he: 'הממשלה השוודית',
+  ja: 'スウェーデン政府',
+  ko: '스웨덴 정부',
+  zh: '瑞典政府',
 };
-
-/**
- * Tokens to skip when mining keywords from the article title /
- * description. Covers function words / pronouns / common verbs in every
- * supported language plus the platform-name family — these are
- * universally low-signal in keyword form. Keep additions broad: any
- * token that appears in >50% of articles regardless of topic should go
- * here.
- */
-const TOPIC_STOPWORDS = new Set([
-  // ── EN
-  'the', 'and', 'for', 'with', 'from', 'that', 'this', 'into', 'over', 'under',
-  'today', 'coverage', 'edition', 'riksdagsmonitor', 'riksdag', 'riksdagen',
-  'swedish', 'parliament', 'political', 'intelligence', 'analysis', 'osint',
-  'have', 'been', 'will', 'their', 'there', 'these', 'those', 'about',
-  'than', 'them', 'they', 'when', 'what', 'which', 'while', 'after',
-  // ── SV / DA / NO / FI
-  'och', 'att', 'med', 'från', 'som', 'det', 'den', 'ett', 'över', 'under',
-  'aren', 'inte', 'eller', 'efter', 'sedan', 'eller', 'både', 'när',
-  'eller', 'samt', 'mellan', 'genom', 'utan', 'hade', 'kommer',
-  'oller', 'efter', 'siden',
-  // ── DE
-  'eine', 'einer', 'und', 'der', 'die', 'das', 'mit', 'auf', 'für',
-  'zwischen', 'durch', 'ohne', 'beim', 'nach', 'vor', 'wenn', 'aber',
-  'auch', 'noch', 'schon', 'sowohl', 'sowie',
-  // ── FR / ES / NL
-  'pour', 'avec', 'dans', 'sur', 'sans', 'mais', 'aussi', 'comme',
-  'les', 'des', 'une', 'del', 'con', 'para', 'het', 'een', 'van', 'voor',
-  'sobre', 'entre', 'desde', 'hasta', 'cuando', 'donde', 'sino',
-  'door', 'tussen', 'zonder', 'omdat', 'wanneer', 'maar', 'ook',
-  // ── AR (definite article + common particles; CJK / RTL stopwords stay
-  // short because mining strategies in those scripts prefer character
-  // n-grams over whitespace tokens, but BLUF sentences in our corpus
-  // routinely use whitespace separation for political-actor names).
-  'في', 'من', 'إلى', 'على', 'عن', 'مع', 'هذا', 'هذه', 'التي', 'الذي',
-  'أن', 'إن', 'كما', 'لكن', 'كل', 'بعض',
-  // ── HE
-  'של', 'את', 'עם', 'על', 'אל', 'מן', 'אשר', 'אבל', 'גם', 'כאשר',
-  'בין', 'כמו', 'אך', 'כדי',
-  // ── JA / KO / ZH function words rarely appear as whitespace-separated
-  // tokens but we add the most common script-mixed leak cases.
-  'について', 'および', 'および',
-  '그리고', '또는', '하지만', '이것', '저것',
-  '以及', '或者', '但是', '这个', '那个',
-]);
 
 function collapseWhitespace(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
@@ -365,61 +326,6 @@ function pushKeyword(out: string[], seen: Set<string>, raw: string): void {
   out.push(keyword);
 }
 
-function wordsFrom(text: string): string[] {
-  return collapseWhitespace(text)
-    .split(/[^\p{L}\p{N}-]+/u)
-    .map((w) => w.trim())
-    .filter((w) => w.length >= 4 && !/^\d{4}-\d{2}-\d{2}$/.test(w));
-}
-
-function topicPhrase(input: ArticleSeoMetadataInput, maxWords = 5): string {
-  const candidates = [...wordsFrom(input.title), ...wordsFrom(input.description)];
-  const out: string[] = [];
-  const seen = new Set<string>();
-  for (const raw of candidates) {
-    const normalised = raw
-      .replace(/^\d{1,4}[./:-]\d{1,2}(?:[./:-]\d{1,4})?$/u, '')
-      .replace(/^\d+$/u, '')
-      .trim();
-    if (!normalised) continue;
-    const key = normalised.toLocaleLowerCase();
-    if (TOPIC_STOPWORDS.has(key) || seen.has(key)) continue;
-    seen.add(key);
-    out.push(normalised);
-    if (out.length >= maxWords) break;
-  }
-  if (out.length > 0) return out.join(' ');
-  return input.articleTypeId.replace(/-/g, ' ');
-}
-
-function formatPublicationContext(date: string, lang: Language): string {
-  const parsed = new Date(`${date}T00:00:00Z`);
-  if (Number.isNaN(parsed.getTime())) return date;
-  try {
-    return new Intl.DateTimeFormat(LANGUAGE_META[lang].hreflang, {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-      timeZone: 'UTC',
-    }).format(parsed);
-  } catch {
-    return date;
-  }
-}
-
-/**
- * Build the localized `"<date> <update-word>"` keyword fragment used in
- * the keyword string. Previously the English word `"update"` was
- * hard-coded into every locale; now we honour {@link LANG_UPDATE_WORD}.
- */
-function formatPublicationUpdateKeyword(date: string, lang: Language): string {
-  return `${formatPublicationContext(date, lang)} ${LANG_UPDATE_WORD[lang]}`;
-}
-
-function uniqueTitleSuffix(input: ArticleSeoMetadataInput): string {
-  return ` — ${input.date} · ${LANGUAGE_META[input.lang].hreflang}`;
-}
-
 export interface ArticleSeoMetadataInput {
   readonly title: string;
   readonly description: string;
@@ -429,6 +335,17 @@ export interface ArticleSeoMetadataInput {
   readonly articleTypeId: string;
   readonly canonicalPath?: string;
   readonly keywords?: string;
+  /**
+   * Pre-computed, story-specific keywords mined from the executive-brief
+   * (bill IDs, proposition refs, committee codes/reports, party codes,
+   * named entities). When present these are seeded FIRST so the
+   * highest-signal SERP tokens (`HD03267`, `JuU28`, `SÄPO`,
+   * `Migrationsverket`) lead the keyword string. Universal-Swedish
+   * identifiers (bill IDs, committee codes) survive untranslated across
+   * all 14 languages, so the same set is supplied to every locale's
+   * page. See `scripts/render-lib/aggregator/seo/brief-extractor.ts`.
+   */
+  readonly briefEntities?: readonly string[];
 }
 
 export interface ArticleSeoMetadata {
@@ -440,53 +357,87 @@ export interface ArticleSeoMetadata {
 /**
  * Build the SERP `<title>`. The executive-brief H1 — which the cascade
  * has already localized into 14 languages — IS the context. We do not
- * append article-type / topic / "edition update" boilerplate, because:
+ * append `— DATE · LANG` boilerplate, because:
  *
- *  - The brief H1 is already rich, story-specific, and unique per day
- *    AND per article type AND per language (the cascade in
- *    `article-merge.ts` and `aggregator/aggregate.ts` guarantees it).
- *  - Boilerplate appendages caused near-identical SERP titles to repeat
- *    across days ("Deutsch Regierungsvorlagen: …", "Français Projets
- *    de loi: …") even when the underlying brief was completely
- *    different — see `Article-Generation.md § "Per-language precedence
- *    chain"`.
+ *  - The publication date is already conveyed by `article:published_time`
+ *    OG meta and the per-article URL slug; Google renders it as a SERP
+ *    snippet prefix without needing it in the `<title>`.
+ *  - The language is already conveyed by `<html lang>`, `hreflang`
+ *    alternates, and `og:locale`; carrying it again in the `<title>`
+ *    eats ~5-6 chars of the SERP budget for zero CTR benefit.
+ *  - Pre-2026-05 the boilerplate `— 2026-05-22 · en — Riksdagsmonitor`
+ *    consumed ~40 chars and left only ~30 chars for the actual story.
+ *
+ * **Per-language SERP budgets** (since 2026-05-24, `seo-metadata-contract.md` §4):
+ *
+ *  - **Latin LTR** (`en sv da no fi de fr es nl`) — 55-70 chars (Google
+ *    desktop SERP; ~600 pixels). Pre-existing behaviour, unchanged.
+ *  - **RTL** (`ar he`) — 45-60 chars. Pre-2026-05-24 the renderer used
+ *    70 chars uniformly, causing Arabic / Hebrew SERP titles to ship
+ *    ~15 % over the visual budget and get truncated mid-word.
+ *  - **CJK** (`ja ko zh`) — 30-45 glyphs (CJK glyphs render ~2× Latin
+ *    width). Pre-2026-05-24 a CJK H1 like `センタパルティエット、労働
+ *    組合の政党献金法をめぐりティドーブロックから離脱` (36 glyphs) shipped
+ *    with the brand suffix and rendered as ~108 visual width in Google
+ *    SERP — 3× the CJK budget — and got truncated mid-glyph.
  *
  * The only suffix we keep is the site signature ` — Riksdagsmonitor`,
- * and only when the brief H1 plus suffix fits within the 70-char
- * SERP budget. When the H1 already mentions Riksdagsmonitor, we do
- * not duplicate it.
+ * and only when the brief H1 plus suffix fits within the per-language
+ * `hardMax`. When the H1 already mentions Riksdagsmonitor, we don't
+ * duplicate it. When the H1 alone exceeds the budget we drop the suffix
+ * entirely so the story title gets every available pixel.
  */
 export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
-  const SERP_TITLE_BUDGET = 70;
+  const serpTitleBudget = titleWindowForLanguage(input.lang).hardMax;
   const SITE_SUFFIX = ' — Riksdagsmonitor';
-  const uniqueSuffix = uniqueTitleSuffix(input);
   const base = collapseWhitespace(input.title);
   if (base.length === 0) {
-    return truncateWithinBudget(`${input.articleTypeLabel}${uniqueSuffix}${SITE_SUFFIX}`, SERP_TITLE_BUDGET);
+    // Empty title — synthesise from article-type label + brand.
+    const fallback = `${input.articleTypeLabel}${SITE_SUFFIX}`;
+    return truncateWithinBudget(fallback, serpTitleBudget);
   }
-  // Every article title carries date + locale context so legacy pages with
-  // reused H1s (or untranslated fallback H1s) stay unique in webmaster tools.
+  // Avoid duplicating the brand when the H1 already mentions it.
   if (/riksdagsmonitor/i.test(base)) {
-    if (base.length + uniqueSuffix.length <= SERP_TITLE_BUDGET) {
-      return `${base}${uniqueSuffix}`;
-    }
-    return `${truncateWithinBudget(base, SERP_TITLE_BUDGET - uniqueSuffix.length)}${uniqueSuffix}`;
+    if (base.length <= serpTitleBudget) return base;
+    return truncateWithinBudget(base, serpTitleBudget);
   }
-  const tail = `${uniqueSuffix}${SITE_SUFFIX}`;
-  // Append the site signature with the unique date/lang suffix and truncate
-  // only the brief H1 when needed. Returning a branded title prevents
-  // chrome/head.ts from appending a second suffix outside the SERP budget.
-  if (base.length + tail.length <= SERP_TITLE_BUDGET) {
-    return `${base}${tail}`;
+  // Branded variant fits the SERP budget — ship the full story + brand.
+  if (base.length + SITE_SUFFIX.length <= serpTitleBudget) {
+    return `${base}${SITE_SUFFIX}`;
   }
-  return `${truncateWithinBudget(base, SERP_TITLE_BUDGET - tail.length)}${tail}`;
+  // H1 alone fits the SERP budget — drop the brand suffix so the story
+  // title is the SERP signal (brand is already covered by `og:site_name`
+  // and the canonical URL).
+  if (base.length <= serpTitleBudget) return base;
+  // H1 overflows the SERP budget — truncate cleanly and ship without
+  // brand suffix so every available char goes to the story.
+  return truncateWithinBudget(base, serpTitleBudget);
 }
 
 /**
  * Build the SERP `<meta name="description">`. The executive-brief BLUF
  * IS the description — already localized, already story-specific,
- * already in the 140-200 char SERP window for every language thanks to
+ * already in the per-language SERP window for every language thanks to
  * the cascade in `aggregator/seo/description.ts § truncateToSentenceBoundary`.
+ *
+ * **Per-language SERP budgets** (since 2026-05-24, `seo-metadata-contract.md` §4):
+ *
+ *  - **Latin LTR** (`en sv da no fi de fr es nl`) — 140-200 chars.
+ *  - **RTL** (`ar he`) — 120-170 chars.
+ *  - **CJK** (`ja ko zh`) — 70-120 glyphs.
+ *
+ * Pre-2026-05-24 this function used the EN 200-char hard max uniformly
+ * across all 14 languages. The upstream cascade already truncates to
+ * the correct per-language window when a localized executive-brief
+ * exists, but this renderer-side cap also matters in three fallback
+ * paths: (1) when no localized brief exists and the EN description
+ * leaks through unchanged, (2) when an agent ships a long
+ * `description:` front-matter line that bypasses the cascade, and (3)
+ * when a downstream caller invokes `buildSeoMetadata` directly without
+ * pre-truncating. Capping at the per-language `hardMax` here closes
+ * those three gaps so CJK / RTL pages never overshoot their visual SERP
+ * budget regardless of where the description came from.
+ *
  * We never append `Coverage: <Type> on <topic>; <lang> edition update
  * for <date> with Riksdag/OSINT provenance.` boilerplate because:
  *
@@ -494,95 +445,100 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  *  - It collapses 14 hreflang siblings to near-identical snippets that
  *    only vary by the `Coverage:` translation — defeating the point of
  *    per-language BLUFs.
- *  - Search engines silently truncate >200 chars, so the boilerplate
- *    often replaced the actual analytical context with editorial
- *    plumbing.
+ *  - Search engines silently truncate beyond the per-language hardMax,
+ *    so the boilerplate often replaced the actual analytical context
+ *    with editorial plumbing.
  */
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
   const base = stripDescriptionMarkup(input.description);
-  return truncateWithinBudget(base, DESCRIPTION_HARD_MAX);
+  const { hardMax } = descriptionWindowForLanguage(input.lang);
+  return truncateWithinBudget(base, hardMax);
 }
 
 /**
- * Build article-specific keywords from front-matter, editorial headline,
- * BLUF description, article lens, extracted story topic and language.
- * This replaces the former global keyword fallback that made many
- * article pages identical.
+ * Build article-specific keywords. Editorial floor (2026-05-24 brief):
+ * every page MUST surface the four institutional anchors —
+ * `Riksdagsmonitor`, `Riksdag`, `Regeringen`, `political intelligence` —
+ * in the page's own language, then layer story-specific signal on top.
  *
- * **Per-language localization rule (since 2026-05):**
+ * **Ordering (highest signal first):**
+ *  1. **Brief entities** (`input.briefEntities`) — bill IDs (HD03267),
+ *     proposition refs (prop. 2025/26:267), committee report IDs (JuU28),
+ *     committee codes (JuU, SfU), party codes (M, SD), named entities
+ *     (SÄPO, Migrationsverket, Tidöavtalet). Mined upstream by
+ *     `brief-extractor.ts` from the executive-brief; universal-Swedish
+ *     identifiers carry across all 14 locales unchanged.
+ *  2. **Localized mandatory floor** — `LANG_CORE_KEYWORDS[lang]` (already
+ *     includes localized Riksdagsmonitor / parliament / political
+ *     intelligence) + `LANG_GOVERNMENT_KEYWORD[lang]` (Regeringen).
+ *  3. **Localized article-type label** (`Propositions` → `Lagförslag` /
+ *     `Regierungsvorlagen` / …). The localized label, not the English
+ *     `articleTypeId` slug, so non-EN pages don't leak EN tokens.
+ *  4. **Native language name** (`Svenska`, `Deutsch`, `日本語`) — surfaces
+ *     the locale in its own script for multilingual SERP routing.
  *
- *  - For `lang === 'en'` the function still seeds the keyword list from
- *    `input.keywords` (the EN article-frontmatter `keywords:` line set
- *    by the aggregator in `aggregator/aggregate.ts`).
- *  - For every non-English language the EN-frontmatter seed is dropped
- *    so the localized title + description + canonical-path slugs +
- *    {@link LANG_CORE_KEYWORDS}`[lang]` drive the keyword string. Without
- *    this guard the EN frontmatter (`Sweden, Committee, tabled,
- *    interlocked, …`) leaked into every German / Arabic / Japanese
- *    article and diluted multilingual SERP signal — a hard violation of
- *    `seo-metadata-contract.md` §4 charset budgets.
- *  - The localized H1 + BLUF have already been cascade-merged into
- *    `input.title` + `input.description` by `article-merge.ts` (cascade
- *    chain step #2), so mining those two fields IS mining the localized
- *    executive brief.
- *  - The article-type ID (`committee-reports`, `propositions`, …) is an
- *    English hyphen-slug — we keep the *localized* `articleTypeLabel`
- *    (translated upstream via `article-type-i18n.ts`) but skip the raw
- *    English ID for non-EN languages.
- *  - The canonical-path slug parts (`committeeReports`, `realtime`, …)
- *    are skipped for non-EN languages for the same reason: they are
- *    English subfolder names and would re-introduce the same leak we
- *    just guarded against.
+ * **Removed (was leakage / boilerplate):**
+ *  - `formatPublicationUpdateKeyword(date, lang)` — `"22 maj 2026
+ *    uppdatering"` is calendar boilerplate, not story signal. The
+ *    publication date already lives in `article:published_time` OG
+ *    meta, the URL slug, and the rendered byline.
+ *  - `topicPhrase` + `wordsFrom(title) + wordsFrom(description)` — these
+ *    were chopping rich H1s (`"Sweden Abolishes Permanent Residence
+ *    …"`) into junk single-word tokens (`Sweden`, `Abolishes`,
+ *    `Permanent`). Brief entities carry the same semantic ground
+ *    without prose fragmentation.
+ *  - Canonical-path slug parts and English Language-Meta name — both
+ *    leaked EN tokens into non-EN keyword strings.
+ *  - EN frontmatter `keywords:` seed — historically mixed in via the
+ *    aggregator's `buildArticleKeywords` upstream call, which itself
+ *    used this function. Now seeded purely via `briefEntities` to keep
+ *    the pipeline single-source-of-truth.
+ *
+ * The English path still accepts the `input.keywords` seed (the EN
+ * frontmatter line) for backward-compat with EN-only tests, but it is
+ * appended AFTER brief entities and the mandatory floor, so the
+ * deterministic high-signal tokens always lead.
  */
 export function buildArticleKeywords(input: ArticleSeoMetadataInput): string {
   const out: string[] = [];
   const seen = new Set<string>();
   const isEnglish = input.lang === 'en';
 
-  // English path keeps the original ordering for backward-compatibility
-  // with the existing keyword string (and the EN-only test snapshots).
-  if (isEnglish) {
-    for (const keyword of (input.keywords ?? '').split(',')) pushKeyword(out, seen, keyword);
+  // 1. Brief entities first — highest SERP signal, universal across
+  //    languages. These are normalised by the upstream extractor; we
+  //    just push them in order so the cap preserves story priority.
+  for (const ent of input.briefEntities ?? []) {
+    if (out.length >= KEYWORD_MAX) break;
+    pushKeyword(out, seen, ent);
   }
 
+  // 2. Mandatory institutional floor — every page surfaces both chambers
+  //    of Swedish power (legislature + government) in its own language.
+  for (const keyword of LANG_CORE_KEYWORDS[input.lang]) pushKeyword(out, seen, keyword);
+  pushKeyword(out, seen, LANG_GOVERNMENT_KEYWORD[input.lang]);
+
+  // 3. Localized article-type label (e.g. "Lagförslag", "Comités",
+  //    "Komiteeraportit"). Skip the raw English slug for non-EN locales.
   pushKeyword(out, seen, input.articleTypeLabel);
-  // The English hyphenated article-type ID is English regardless of
-  // `lang` — skip it for non-EN locales so we don't seed EN tokens
-  // (`committee reports`, `realtime pulse`) into a non-EN keyword
-  // string. The localized `articleTypeLabel` (pushed above) already
-  // covers the same semantic ground.
   if (isEnglish) {
     pushKeyword(out, seen, input.articleTypeId.replace(/-/g, ' '));
   }
-  // For non-EN locales, surface only the native language name in the
-  // keyword string (the English Language-Meta `name`, e.g. `Swedish`,
-  // is a leak in `<meta keywords>` under `<html lang="sv">`). For EN
-  // we keep both `English` and `English` (a no-op duplicate that the
-  // `seen` set collapses).
-  if (isEnglish) {
-    pushKeyword(out, seen, LANGUAGE_META[input.lang].name);
-  }
-  pushKeyword(out, seen, LANGUAGE_META[input.lang].nativeName);
-  pushKeyword(out, seen, formatPublicationUpdateKeyword(input.date, input.lang));
 
-  if (input.canonicalPath) {
-    for (const part of input.canonicalPath.replace(/\.html$/i, '').split(/[/-]+/)) {
-      if (/^\d{4}$|^\d{2}$|^[a-z]{2}$/i.test(part)) continue;
-      // Canonical path is `news/$DATE-$SUBFOLDER-$LANG.html` — the
-      // subfolder segments (`committeeReports`, `realtime`, …) are
-      // English slugs. Skip them for non-EN locales so they don't
-      // re-seed EN tokens.
-      if (!isEnglish) continue;
-      pushKeyword(out, seen, part);
+  // 4. Native language name in its own script — surfaces locale for
+  //    multilingual SERP routing without leaking EN ("Swedish" under
+  //    `<html lang="sv">` is a hard contract violation).
+  pushKeyword(out, seen, LANGUAGE_META[input.lang].nativeName);
+
+  // 5. EN frontmatter seed appended last (EN-only) for backward compat
+  //    with the EN article keyword line. Non-EN locales never seed from
+  //    EN frontmatter.
+  if (isEnglish) {
+    for (const keyword of (input.keywords ?? '').split(',')) {
+      if (out.length >= KEYWORD_MAX) break;
+      pushKeyword(out, seen, keyword);
     }
   }
 
-  for (const keyword of LANG_CORE_KEYWORDS[input.lang]) pushKeyword(out, seen, keyword);
-  pushKeyword(out, seen, topicPhrase(input, 5));
-  for (const word of [...wordsFrom(input.title), ...wordsFrom(input.description)]) {
-    if (out.length >= KEYWORD_MAX) break;
-    pushKeyword(out, seen, word);
-  }
   return out.slice(0, KEYWORD_MAX).join(', ');
 }
 

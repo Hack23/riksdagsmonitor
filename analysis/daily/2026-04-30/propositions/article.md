@@ -1,12 +1,12 @@
 ---
 title: "Swedish Government Propositions, 30 April 2026"
 description: "Sweden's Kristersson government has submitted four significant propositions to the Riksdag in late April 2026, spanning infrastructure investment, criminal justice reform, EU financial regulation,…"
-keywords: "Propositions, English, April 30, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Government Propositions April Sweden Kristersson, Swedish, Government, April, 2026, Sweden, Kristersson, submitted, four, significant, late, spanning, infrastructure, investment"
+keywords: "HD03259, HD03252, HD03253, HD03247, James Pether Sörling, Run ID, Sweden s Kristersson, National Transport Infrastructure Plan, Basel III, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
 date: 2026-04-30
 subfolder: propositions
 slug: 2026-04-30-propositions
 source_folder: analysis/daily/2026-04-30/propositions
-generated_at: 2026-05-23T22:05:56.219Z
+generated_at: 2026-05-24T12:19:33.836Z
 language: en
 layout: article
 ---

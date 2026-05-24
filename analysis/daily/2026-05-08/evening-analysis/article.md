@@ -1,12 +1,12 @@
 ---
 title: "Friday 8 May 2026 marks a legislative heavy-load day in the Riksdag"
 description: "Friday 8 May 2026 marks a legislative heavy-load day in the Riksdag, with six committee reports (betänkanden) from CU, SoU, and UbU advancing toward chamber vote while five written questions to…"
-keywords: "Evening Analysis, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Friday marks legislative heavy-load committee, Friday, 2026, marks, legislative, heavy-load, with, committee, reports, betänkanden, from, advancing, toward, chamber"
+keywords: "HD11802, HD11803, HD10476, HD11800, HD11801, CU31, UbU28, UbU20, SoU36, CU, UbU, SoU, SD, Probably True, AI Political Intelligence Synthesis, Almost Certainly, Time Horizon, Flexible Rent Market, Teacher Licensing, State Personnel Deployment, Full-Veil Ban, Malmer Stenergard, Nima Gholam Ali Pour, Simona Mohamsson"
 date: 2026-05-08
 subfolder: evening-analysis
 slug: 2026-05-08-evening-analysis
 source_folder: analysis/daily/2026-05-08/evening-analysis
-generated_at: 2026-05-23T22:05:56.724Z
+generated_at: 2026-05-24T12:19:34.218Z
 language: en
 layout: article
 ---

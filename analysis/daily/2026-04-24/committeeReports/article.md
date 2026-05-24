@@ -1,12 +1,12 @@
 ---
 title: "Five committee reports tabled 2026-04-23 cluster along the Tidö"
 description: "Five committee reports tabled 2026-04-23 cluster along the Tidö coalition's three pre-election signature pillars — criminal-justice capacity (HD01CU25), migration enforcement with a research-mobility…"
-keywords: "CommitteeReports, English, April 24, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Five committee reports tabled cluster, Five, committee, reports, tabled, cluster, along, Tidö, coalition, three, pre-election, signature, pillars, criminal-justice"
+keywords: "HD01CU25, HD01SfU23, HD01FiU23, HD01AU15, HD01CU29, CU25, SfU23, FiU23, AU15, CU, SfU, FiU, AU, James Pether Sörling, Run ID, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, CommitteeReports"
 date: 2026-04-24
 subfolder: committeeReports
 slug: 2026-04-24-committeeReports
 source_folder: analysis/daily/2026-04-24/committeeReports
-generated_at: 2026-05-23T22:05:55.725Z
+generated_at: 2026-05-24T12:19:33.475Z
 language: en
 layout: article
 ---

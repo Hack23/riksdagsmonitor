@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Rural Policy Overhaul and Energy Efficiency Reorientation: Two Committee Reports Signal Pre-Election Legislative Sprint"
 description: "On 12 May 2026, Sweden's Riksdag received two betänkanden of high political significance: Betänkande 2025/26:NU21 on comprehensive rural policy (prop. 2025/26:158) and Betänkande 2025/26:CU30 on a…"
-keywords: "CommitteeReports, English, May 13, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Rural Policy Overhaul Energy, Sweden, Rural, Policy, Overhaul, Energy, Efficiency, Reorientation, Committee, Reports, Signal, Pre-Election, Legislative, Sprint"
+keywords: "HD01NU21, HD01CU30, prop. 2025/26:158, prop. 2025/26:159, NU21, CU30, NU, CU, SD, KD, MP, Sweden s Riksdag, Andreas Lennkvist Manriquez, If SD, IMF WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, CommitteeReports"
 date: 2026-05-13
 subfolder: committeeReports
 slug: 2026-05-13-committeeReports
 source_folder: analysis/daily/2026-05-13/committeeReports
-generated_at: 2026-05-23T22:05:56.965Z
+generated_at: 2026-05-24T12:19:34.391Z
 language: en
 layout: article
 ---

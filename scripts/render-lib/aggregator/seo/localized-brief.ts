@@ -59,12 +59,18 @@
  * @license Apache-2.0
  */
 
+import type { Language } from '../../../types/language.js';
 import {
+  composeRichDescription,
   descriptionWindowForLanguage,
   readBlufParagraph,
   readFirstParagraph,
   truncateToSentenceBoundary,
 } from './description.js';
+import {
+  extractBriefEntities,
+  flattenBriefEntities,
+} from './brief-extractor.js';
 import {
   cleanArticleTitle,
   readFirstHeading,
@@ -109,10 +115,10 @@ export interface LocalizedBriefSeoInput {
 }
 
 /**
- * Output contract — two independent optional fields. The caller (the
+ * Output contract — three independent optional fields. The caller (the
  * `article-merge.ts` merger) overlays whichever fields are non-null over
  * the per-type agent's `article.<lang>.md` front-matter title /
- * description.
+ * description / keywords.
  */
 export interface LocalizedBriefSeo {
   /**
@@ -124,10 +130,24 @@ export interface LocalizedBriefSeo {
 
   /**
    * Localized `<meta description>` candidate, post-{@link truncateToSentenceBoundary}.
+   * Composed via {@link composeRichDescription} which combines the BLUF
+   * lede with the top headline-section bullets (bill IDs + topics) when
+   * the localized brief has a `## 60-Second Read` / native equivalent.
    * `null` when the brief is missing or has no usable BLUF/first
    * paragraph.
    */
   readonly description: string | null;
+
+  /**
+   * Story-specific keyword tokens mined from the localized brief —
+   * universal-Swedish identifiers (bill IDs `HD03267`, committee
+   * codes `JuU`, party codes `M`/`SD`) plus locale-script named
+   * entities. These are pre-flattened and ready to seed the keyword
+   * builder via `ArticleSeoMetadataInput.briefEntities`. Empty array
+   * (not `null`) when the brief is missing — keeps the consumer-side
+   * spread `[...localizedSeo.keywords]` safe.
+   */
+  readonly keywords: readonly string[];
 }
 
 /**
@@ -191,7 +211,7 @@ export function extractLocalizedBriefSeo(
 ): LocalizedBriefSeo {
   const { briefMarkdown, subfolder, lang } = input;
   if (!briefMarkdown || briefMarkdown.trim().length === 0) {
-    return { title: null, description: null };
+    return { title: null, description: null, keywords: [] };
   }
 
   // Title — readFirstHeading + isBannedLocalizedBriefH1 + cleanArticleTitle.
@@ -201,19 +221,52 @@ export function extractLocalizedBriefSeo(
     title = cleanArticleTitle(rawH1, subfolder);
   }
 
-  // Description — readBlufParagraph || readFirstParagraph, sentence-truncated
-  // using the per-language SERP window (see `descriptionWindowForLanguage`
-  // and `seo-metadata-contract.md` §4). Callers that omit `lang` get the
-  // canonical EN 140-200 window (pre-2026-05 behaviour).
+  // Description — `composeRichDescription` combines the BLUF lede with
+  // the localized headline-section bullets (`## 60-Second Read` → `##
+  // Nyckelrön` / `## Wesentliche Erkenntnisse` etc.) so per-language
+  // SERP snippets carry the same bill-ID + topic signal as the English
+  // page. Falls back to plain BLUF when no headline section is present.
+  // The per-language SERP window is enforced inside the composer.
   let description: string | null = null;
-  const blufParagraph = readBlufParagraph(briefMarkdown);
-  const fallbackParagraph = blufParagraph ? null : readFirstParagraph(briefMarkdown);
-  const rawDescription = blufParagraph ?? fallbackParagraph;
-  if (rawDescription && rawDescription.trim().length > 0) {
-    const { softMin, hardMax } = descriptionWindowForLanguage(lang);
-    const truncated = truncateToSentenceBoundary(rawDescription, softMin, hardMax);
-    if (truncated.length > 0) description = truncated;
+  const langKey = normaliseLangKey(lang);
+  const composed = composeRichDescription(briefMarkdown, langKey);
+  if (composed && composed.length > 0) {
+    description = composed;
+  } else {
+    // Defensive fallback for legacy callers / unknown languages — keep
+    // the pre-rich-composer behaviour so nothing regresses to empty.
+    const blufParagraph = readBlufParagraph(briefMarkdown);
+    const fallbackParagraph = blufParagraph ? null : readFirstParagraph(briefMarkdown);
+    const rawDescription = blufParagraph ?? fallbackParagraph;
+    if (rawDescription && rawDescription.trim().length > 0) {
+      const { softMin, hardMax } = descriptionWindowForLanguage(lang);
+      const truncated = truncateToSentenceBoundary(rawDescription, softMin, hardMax);
+      if (truncated.length > 0) description = truncated;
+    }
   }
 
-  return { title, description };
+  // Keywords — mine bill IDs / committee codes / party codes / named
+  // entities from the localized brief. Universal-Swedish identifiers
+  // (HD03267, JuU, SfU) carry identically across locales; only the
+  // named-entity miner is Latin-script-gated upstream.
+  const keywords = flattenBriefEntities(extractBriefEntities(briefMarkdown, langKey));
+
+  return { title, description, keywords };
+}
+
+/**
+ * Normalise a raw lang input (BCP-47 string, `null`, or `undefined`) to
+ * a known {@link Language} key, defaulting to `en` for unknown inputs.
+ * The `composeRichDescription` and `extractBriefEntities` modules use
+ * per-language section-header / stopword tables keyed by the primary
+ * BCP-47 subtag — pass the canonicalised form so e.g. `zh-CN` → `zh`.
+ */
+function normaliseLangKey(lang: string | null | undefined): Language {
+  if (!lang) return 'en';
+  const primary = lang.toString().trim().toLowerCase().split(/[-_]/)[0];
+  const SUPPORTED: ReadonlySet<string> = new Set([
+    'en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl',
+    'ar', 'he', 'ja', 'ko', 'zh',
+  ]);
+  return (primary && SUPPORTED.has(primary) ? primary : 'en') as Language;
 }

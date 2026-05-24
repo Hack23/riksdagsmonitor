@@ -1,12 +1,12 @@
 ---
 title: "Opposition Motions 28 April 2026: Economic Contestation, Defence Fault Lines, and Justice Reform Battles"
 description: "On 28 April 2026, all four opposition parties — Socialdemokraterna (S), Vänsterpartiet (V), Centerpartiet (C), and Miljöpartiet (MP) — filed 24 motions spanning five policy clusters: the Spring…"
-keywords: "Motions, English, April 29, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Motions April Economic Contestation, Opposition, April, 2026, Economic, Contestation, Defence, Fault, Lines, Justice, Reform, Battles, four, parties"
+keywords: "HD024120, HD024111, HD024107, HD024114, HD024116, HD024119, HD024121, HD024123, HD024106, HD024102, HD024122, HD024115, HD024113, HD024117, HD024105, HD024109, prop. 2025/26:100, prop. 2025/26:99, prop. 2025/26:220, prop. 2025/26:218, MP, SD, James Pether Sörling, Run ID"
 date: 2026-04-29
 subfolder: motions
 slug: 2026-04-29-motions
 source_folder: analysis/daily/2026-04-29/motions
-generated_at: 2026-05-23T22:05:56.137Z
+generated_at: 2026-05-24T12:19:33.772Z
 language: en
 layout: article
 ---

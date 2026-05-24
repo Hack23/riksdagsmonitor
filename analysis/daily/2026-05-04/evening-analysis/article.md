@@ -1,12 +1,12 @@
 ---
 title: "Evening Analysis, 4 May 2026"
 description: "Sweden's Riksdag on 4 May 2026 — 132 days before the September 13 election — entered an accelerated legislative closure phase: the constitutional committee (KU) registered betänkande KU39 on…"
-keywords: "Evening Analysis, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Evening Sweden days before September, Evening, Analysis, 2026, Sweden, days, before, September, election, entered, accelerated, legislative, closure, phase"
+keywords: "HD03258, HD10463, HD10462, HD024142, KU39, FiU49, KU, FiU, James Pether Sörling, IMF Provenance, WEO Apr-, Sweden s Riksdag, Social Democrat Eva Lindh, KD Infrastructure Minister Carlson, Five-year Riksgälden, S s Eva Lindh, S s Monica Haider, Finance Minister Svantesson, IMF WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-05-04
 subfolder: evening-analysis
 slug: 2026-05-04-evening-analysis
 source_folder: analysis/daily/2026-05-04/evening-analysis
-generated_at: 2026-05-23T22:05:56.393Z
+generated_at: 2026-05-24T12:19:33.976Z
 language: en
 layout: article
 ---

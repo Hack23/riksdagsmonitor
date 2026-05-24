@@ -1,12 +1,12 @@
 ---
 title: "Month Ahead: June–July 2026"
 description: "Sweden's Tidö coalition (M-SD-KD-L, 176/349 seats) is executing a pre-election legislative sprint with migration policy as its electoral centrepiece."
-keywords: "Month Ahead, English, May 11, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Month Ahead June July Sweden, Month, Ahead, June, July, 2026, Sweden, Tidö, coalition, M-SD-KD-L, seats, executing, pre-election, legislative"
+keywords: "HD03262, HD03254, HD03265, Sweden s Tid, Before JuU, PM Edholm s, Post-election ECHR, European Court, Human Rights, IMF WEO-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Month Ahead, English"
 date: 2026-05-11
 subfolder: month-ahead
 slug: 2026-05-11-month-ahead
 source_folder: analysis/daily/2026-05-11/month-ahead
-generated_at: 2026-05-23T22:05:56.884Z
+generated_at: 2026-05-24T12:19:34.331Z
 language: en
 layout: article
 ---

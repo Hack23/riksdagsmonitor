@@ -196,6 +196,30 @@ export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
     });
     if (briefSeo.title) mergedData.title = briefSeo.title;
     if (briefSeo.description) mergedData.description = briefSeo.description;
+    // Localized brief entities seed the keyword string with universal
+    // bill IDs (HD03267) + committee codes (JuU/SfU) + locale-script
+    // named entities — exposed via the rendered front-matter so the
+    // renderer-side `buildArticleKeywords` can consume them downstream.
+    // We prepend instead of overwrite to give brief entities priority
+    // over any agent-supplied frontmatter `keywords:` line.
+    if (briefSeo.keywords.length > 0) {
+      const existingKeywords = typeof mergedData.keywords === 'string'
+        ? mergedData.keywords
+        : '';
+      const merged = [...briefSeo.keywords, ...existingKeywords.split(',')]
+        .map((s) => s.trim())
+        .filter(Boolean);
+      // De-duplicate case-insensitively while preserving first-seen order.
+      const seen = new Set<string>();
+      const out: string[] = [];
+      for (const k of merged) {
+        const key = k.toLocaleLowerCase();
+        if (seen.has(key)) continue;
+        seen.add(key);
+        out.push(k);
+      }
+      mergedData.keywords = out.join(', ');
+    }
   }
 
   mergedData.language = lang;

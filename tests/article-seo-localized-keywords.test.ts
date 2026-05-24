@@ -126,10 +126,21 @@ describe('buildArticleKeywords — non-EN path drops EN seed leaks', () => {
     expect(out).toContain('OSINT');
   });
 
-  it('uses the German word for "update" in the publication-date keyword', () => {
+  it('does NOT inject any English `update` word in the publication keyword', () => {
     const out = buildArticleKeywords(DE_INPUT);
-    expect(out).toContain('Aktualisierung');
-    expect(out).not.toMatch(/\bupdate\b/);
+    // The legacy `formatPublicationUpdateKeyword` helper has been removed
+    // entirely — `Aktualisierung`, `update`, `uppdatering` etc. no longer
+    // appear in the keyword list. Date is conveyed via `article:published_time`.
+    expect(out).not.toMatch(/\bupdate\b/i);
+    expect(out).not.toMatch(/\bAktualisierung\b/);
+    expect(out).not.toMatch(/\buppdatering\b/);
+  });
+
+  it('includes the German government keyword (institutional floor)', () => {
+    const out = buildArticleKeywords(DE_INPUT);
+    // The mandatory floor pairs Riksdag with the executive branch in
+    // every locale ("Regeringen" / "Schwedische Regierung" / "瑞典政府"…).
+    expect(out).toMatch(/Schwedische Regierung|Regeringen/);
   });
 
   it('surfaces the localized article-type label', () => {
@@ -137,12 +148,8 @@ describe('buildArticleKeywords — non-EN path drops EN seed leaks', () => {
     expect(out).toContain('Ausschussberichte');
   });
 
-  it('mines tokens from the localized title (not the EN one)', () => {
+  it('does NOT leak EN title tokens (Enshrines / Protection / Abortion) under DE', () => {
     const out = buildArticleKeywords(DE_INPUT);
-    // German content tokens
-    expect(out).toContain('Riksdag');
-    expect(out.toLowerCase()).toMatch(/verankert|verfassungsrechtlichen|abtreibung/);
-    // Make sure none of the EN-only content tokens slipped through.
     expect(out).not.toMatch(/Enshrines/);
     expect(out).not.toMatch(/Protection/);
     expect(out).not.toMatch(/Abortion/);

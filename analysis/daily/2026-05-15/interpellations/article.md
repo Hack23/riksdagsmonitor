@@ -1,12 +1,12 @@
 ---
 title: "Left Party Forces Dousa to Defend 30 Discontinued Aid Strategies on 29 May — Impact Assessments Missing"
 description: "Between 2022 and 2025, Sweden carried out historically large aid cuts — reducing ODA from ~1% to 0.8–0.9% of GNI — and discontinued ~30 country strategies, including five countries exited in December…"
-keywords: "Interpellations, English, May 15, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Left Party Forces Dousa Defend, Left, Party, Forces, Dousa, Defend, Discontinued, Strategies, Impact, Assessments, Missing, Between, 2022, 2025"
+keywords: "HD10492, HD10493, KU, Minister Dousa, Minister Benjamin Dousa, Constitutional Committee, Social Democrats, Retroactive Sida, General Election, IMF WEO-, Executive Brief, Decision-Grade BLUF Rubric, Self-Audit Checklist, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-05-15
 subfolder: interpellations
 slug: 2026-05-15-interpellations
 source_folder: analysis/daily/2026-05-15/interpellations
-generated_at: 2026-05-23T22:05:57.148Z
+generated_at: 2026-05-24T12:19:34.524Z
 language: en
 layout: article
 ---

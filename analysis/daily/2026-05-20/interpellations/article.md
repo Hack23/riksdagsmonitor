@@ -1,12 +1,12 @@
 ---
 title: "Swedish Riksdag Interpellations"
 description: "Five interpellations tabled on 2026-05-19 (HD10494, HD10496, HD10497, HD10493, HD10495) set the pre-election accountability terrain 116 days before Sweden's September 13, 2026 election: SD presses…"
-keywords: "Interpellations, English, May 20, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Interpellations Five tabled HD10494 HD10496, Swedish, Five, tabled, HD10494, HD10496, HD10497, HD10493, HD10495, pre-election, accountability, terrain, days, before"
+keywords: "HD10494, HD10496, HD10497, HD10493, HD10495, KD, Sweden s September, Foreign Minister Malmer Stenergard, Lithuania s Seimas, Chechen Ichkeria, Energy Minister Busch, SD s Mikael Strandman, Foreign Minister Maria Malmer, Chechen Republic Ichkeria, With Sweden, S s Isak From, KD Elderly Care Minister, Elisabet Lann, SD s Rashid Farivar, KD Energy, Enterprise Minister Ebba Busch, V s Håkan Svenneling, Riksdagsmonitor, Swedish Parliament"
 date: 2026-05-20
 subfolder: interpellations
 slug: 2026-05-20-interpellations
 source_folder: analysis/daily/2026-05-20/interpellations
-generated_at: 2026-05-23T22:05:57.310Z
+generated_at: 2026-05-24T12:19:34.643Z
 language: en
 layout: article
 ---

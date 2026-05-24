@@ -1,12 +1,12 @@
 ---
 title: "Swedish opposition parties filed a concentrated wave of motions"
 description: "Swedish opposition parties filed a concentrated wave of motions in Riksdagen during 19–21 May 2026, challenging the government's legislative agenda across four domains: national security law,…"
-keywords: "Motions, English, May 22, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, opposition parties filed concentrated wave, Swedish, opposition, parties, filed, concentrated, wave, Riksdagen, during, 2026, challenging, government, legislative, agenda"
+keywords: "HD024187, prop. 2025/26:267, prop. 2025/26:262, prop. 2025/26:265, prop. 2025/26:258, JuU, SfU, SkU, KU, FiU, Policy Analysts, James Pether Sörling, Any Lagrådet, Centre Party, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-05-22
 subfolder: motions
 slug: 2026-05-22-motions
 source_folder: analysis/daily/2026-05-22/motions
-generated_at: 2026-05-23T22:05:57.455Z
+generated_at: 2026-05-24T12:19:34.748Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Propositions ( batch)"
 description: "On 23 April 2026 the Kristersson government (Tidö coalition — M, KD, L + SD confidence partner) tabled 4 parliamentary documents dominated by two strategic priorities: (1) EU-driven financial…"
-keywords: "Propositions, English, April 24, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Propositions batch April Kristersson government, batch, April, 2026, Kristersson, government, Tidö, coalition, confidence, partner, tabled, parliamentary, documents, dominated"
+keywords: "HD03252, HD03253, Prop. 2025/26:253, Prop. 2025/26:252, Prop. 2025/26:256, EU, KD, MP, Public OSINT, James Pether Sörling, SEB IRB, Riksbanken MPC, Prepare Advokatsamfundet, PM Kristersson, Finance Minister Wykman, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions"
 date: 2026-04-24
 subfolder: propositions
 slug: 2026-04-24-propositions
 source_folder: analysis/daily/2026-04-24/propositions
-generated_at: 2026-05-23T22:05:55.777Z
+generated_at: 2026-05-24T12:19:33.510Z
 language: en
 layout: article
 ---

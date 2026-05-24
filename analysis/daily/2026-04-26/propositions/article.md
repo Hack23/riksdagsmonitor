@@ -1,12 +1,12 @@
 ---
 title: "EU Bank Package + Welfare Restrictions: Swedish Government Propositions 23 April 2026"
 description: "Sweden's Kristersson government submitted four significant legislative items on 23 April 2026: implementation of the EU bank package (HD03253, CRD6/CRR3) representing the most sweeping…"
-keywords: "Propositions, English, April 26, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Bank Package Welfare Restrictions Government, Bank, Package, Welfare, Restrictions, Swedish, Government, April, 2026, Sweden, Kristersson, submitted, four, significant"
+keywords: "HD03253, HD03252, HD03256, HD03104, FiU, EU, SfU, TU, James Pether Sörling, Run ID, PUBLIC SOURCE, Sweden s Kristersson, Basel III, Basel IV, Managing EU, Niklas Wykman, Gunnar Strömmer, Andreas Carlson, If FiU, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-04-26
 subfolder: propositions
 slug: 2026-04-26-propositions
 source_folder: analysis/daily/2026-04-26/propositions
-generated_at: 2026-05-23T22:05:55.892Z
+generated_at: 2026-05-24T12:19:33.586Z
 language: en
 layout: article
 ---

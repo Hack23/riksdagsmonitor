@@ -216,10 +216,22 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
   const date = parseFrontMatterDate(fm.date, input.now);
   const articleType = inferArticleType(input.canonicalPath, rawTitle);
   const localizedArticleTypeLabel = articleTypeLabel(articleType.type, input.lang, articleType.label);
+  // The aggregator (and article-merge for non-EN) writes a rich
+  // `keywords:` front-matter line whose head is the brief-extractor
+  // entities (HD03267, JuU, SÄPO, …). Re-derive those entities by
+  // splitting the front-matter string and pass them as `briefEntities`
+  // so `buildArticleKeywords` can re-build the canonical keyword string
+  // for ANY language — not just English. Without this hand-off, non-EN
+  // pages would lose the entity-seed tokens (the legacy code dropped
+  // the EN frontmatter seed for non-EN locales to avoid prose-token
+  // leakage; we keep that guard for the plain `keywords` parameter and
+  // expose entities via the dedicated `briefEntities` channel instead).
+  const briefEntities = parseKeywordsString(rawKeywords);
   const seo = buildArticleSeoMetadata({
     title: rawTitle,
     description: rawDescription,
     keywords: rawKeywords,
+    briefEntities,
     lang: input.lang,
     date,
     articleTypeLabel: localizedArticleTypeLabel,
@@ -243,4 +255,19 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
     brandedTitle: computedBrandedTitle,
     articleSection,
   };
+}
+
+/**
+ * Split a `keywords:` front-matter line into trimmed, non-empty tokens.
+ * Treats both ASCII `,` and the wide CJK `、`/`，` separators as splits
+ * so localized keyword strings (mostly Latin commas, but some translator
+ * outputs use native punctuation) round-trip correctly. Returns `[]` for
+ * `undefined` / empty inputs.
+ */
+function parseKeywordsString(raw: string | undefined): readonly string[] {
+  if (!raw) return [];
+  return raw
+    .split(/[,，、]/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
 }

@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Next Election Cycle (2026–2030): The Transformation Mandate"
 description: "The 2026–2030 Swedish mandate will be shaped by four structural megaforces that transcend electoral outcomes: NATO 2.4% GDP defence obligation (binding), nuclear construction decision (required by…"
-keywords: "Next, election cycle next, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Next Election Cycle Transformation, Sweden, Election, Cycle, 2026, 2030, Transformation, Mandate, Swedish, will, shaped, four, structural"
+keywords: "James Pether Sörling, IMF WEO Apr-, Whether SD, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Next, election cycle next, English"
 date: 2026-05-04
 subfolder: election-cycle/next
 slug: 2026-05-04-election-cycle/next
 source_folder: analysis/daily/2026-05-04/election-cycle/next
-generated_at: 2026-05-23T22:05:56.383Z
+generated_at: 2026-05-24T12:19:33.969Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Opposition Motions (April 14–17, 2026)"
 description: "Between 2026-04-13 and 2026-04-17 Sweden's four major opposition parties (S, V, MP, C) filed 21 coordinated counter-motions against the government's spring legislative package — the most…"
-keywords: "Motions, English, April 21, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Motions April Between Sweden, Opposition, April, 2026, Between, Sweden, four, major, parties, filed, coordinated, counter-motions, against, government"
+keywords: "HD024080, HD024079, HD024082, HD024076, HD024090, HD024091, HD024095, prop. 2025/26:229, prop. 2025/26:235, MP, New Reception Law, Watch Out For, Reception Law, Fuel Tax, Only Germany, Arms Export, Labour Force Survey, Full ACH, Next Review, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-04-21
 subfolder: motions
 slug: 2026-04-21-motions
 source_folder: analysis/daily/2026-04-21/motions
-generated_at: 2026-05-23T22:05:55.628Z
+generated_at: 2026-05-24T12:19:33.407Z
 language: en
 layout: article
 ---
