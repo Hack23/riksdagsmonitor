@@ -376,18 +376,93 @@ export function stripParensFromQuadrantAxisLabels(body: string): string {
 }
 
 /**
- * Strip parens from `section …` headers in `timeline` diagrams.
- * Mermaid 11 parses `section Morning (08-12)` as `section Morning` +
- * an extra token `(08-12)` and bails with a parse error. The label
- * survives without the brackets (e.g. `section Morning 08-12`).
+ * Strip parens from `section …` headers **and** event lines in
+ * `timeline` diagrams. Mermaid 11 parses `section Morning (08-12)` as
+ * `section Morning` + an extra token `(08-12)` and bails with a parse
+ * error; the same applies to event lines such as
+ * `08:38 : CU22 published (guardianship)`. The label survives without
+ * the brackets (e.g. `section Morning 08-12`,
+ * `08:38 : CU22 published guardianship`).
+ *
+ * The `timeline` keyword line, `title …` headers, directives and
+ * comments are left untouched — they accept parens fine.
  */
-export function stripParensFromTimelineSections(body: string): string {
+export function stripParensFromTimelineLines(body: string): string {
   if (detectMermaidDiagramType(body) !== 'timeline') return body;
   return body
     .split('\n')
     .map((line) => {
-      if (!/^[\t ]*section\b/.test(line)) return line;
+      if (/^[\t ]*timeline\b/.test(line)) return line;
+      if (/^[\t ]*title\b/.test(line)) return line;
+      if (/^[\t ]*%%/.test(line)) return line;
+      if (line.indexOf('(') === -1 && line.indexOf(')') === -1) return line;
       return line.replace(/[()]/g, '').replace(/[\t ]{2,}/g, ' ').trimEnd();
+    })
+    .join('\n');
+}
+
+/**
+ * Backwards-compatible alias for {@link stripParensFromTimelineLines}.
+ * Earlier versions of the pipeline only stripped `section …` header
+ * lines, so the old name is kept for any external imports.
+ *
+ * @deprecated Use {@link stripParensFromTimelineLines} instead.
+ */
+export const stripParensFromTimelineSections = stripParensFromTimelineLines;
+
+/**
+ * Repair `timeline` `section <title> : <event> : <details>` lines —
+ * Mermaid 11's timeline parser expects `section <title>` on its own
+ * line (events follow on the next, indented line as
+ * `<time> : <event>`). When the author squashed everything onto the
+ * `section` line with `:` separators the parser crashes with
+ * `Cannot read properties of undefined (reading 'events')`.
+ *
+ * The safest semantics-preserving fix is to drop the `section`
+ * keyword — the remaining `<title> : <event> : <details>` becomes a
+ * valid timeline event line (the visual grouping is lost but every
+ * datum survives).
+ */
+export function repairTimelineSectionWithEvents(body: string): string {
+  if (detectMermaidDiagramType(body) !== 'timeline') return body;
+  return body
+    .split('\n')
+    .map((line) => {
+      const m = /^(\s*)section[\t ]+(.+:.+)$/.exec(line);
+      if (m === null) return line;
+      return `${m[1]}${m[2]}`;
+    })
+    .join('\n');
+}
+
+/**
+ * Repair `timeline` event lines that lead with an `HH:MM` clock time:
+ *
+ *     08:38 : CU22 published        ⇒   08.38 : CU22 published
+ *
+ * Mermaid's timeline grammar treats `:` as the *separator* between
+ * `<title>` and `<event>`. An event line `08:38 : CU22 published`
+ * therefore parses as `title=08`, `event=38`, and the third colon
+ * triggers a "Parse error". Replacing the colon between the two
+ * leading digit pairs with `.` keeps the clock readable for humans
+ * and parseable for Mermaid.
+ *
+ * Only triggers on lines that are not the `timeline` keyword,
+ * `title …`, `section …`, comments, or directives.
+ */
+export function normaliseTimelineEventTimeColon(body: string): string {
+  if (detectMermaidDiagramType(body) !== 'timeline') return body;
+  return body
+    .split('\n')
+    .map((line) => {
+      if (/^[\t ]*timeline\b/.test(line)) return line;
+      if (/^[\t ]*title\b/.test(line)) return line;
+      if (/^[\t ]*section\b/.test(line)) return line;
+      if (/^[\t ]*%%/.test(line)) return line;
+      // Match leading optional whitespace, then HH:MM with the colon
+      // between two digit pairs, followed by whitespace + `:` (the
+      // mermaid title/event separator) — rewrite the inner colon.
+      return line.replace(/^([\t ]*)(\d{2}):(\d{2})([\t ]+:)/, '$1$2.$3$4');
     })
     .join('\n');
 }
@@ -448,6 +523,13 @@ export function stripInvalidStyleDirectives(body: string): string {
     'packet-beta',
     'kanban',
     'architecture-beta',
+    // sequenceDiagram does not accept `style`/`classDef`/`linkStyle`
+    // directives — the v11 grammar reserves those tokens for the
+    // flowchart family. Authors occasionally copy a `style GATE
+    // fill:#00aa00,color:#fff` block from a flowchart and it crashes
+    // the parser; dropping the directive is loss-less (the diagram
+    // already inherits the dark-theme defaults from `themeVariables`).
+    'sequenceDiagram',
   ]);
   if (!TYPES_THAT_REJECT_STYLE.has(type)) return body;
   return body
@@ -510,6 +592,284 @@ export function disableUnsupportedDiagramType(body: string): string {
 }
 
 /**
+ * Repair the **closing-bracket-as-pipe typo** seen in flowchart /
+ * graph node-label declarations: the author meant to close a quoted
+ * node label with `"]` but typed `"|` instead. Two failure modes
+ * occur in the wild:
+ *
+ *   A. `B2["SfU16<br/>Migration debate"| -.->|"…"| M3`
+ *      — followed by an edge operator; the orphan `|` confuses the
+ *      lexer. Fix: `"|` ⇒ `"]`.
+ *
+ *   B. `MP["🔴 MP (18)\nNohrén"| OPP`
+ *      — followed by a bare identifier (no edge operator). The
+ *      author both mistyped the bracket *and* dropped the edge.
+ *      Fix: `"|` ⇒ `"] -->` so the dangling node connects to the
+ *      following identifier.
+ *
+ * Applies only to `flowchart`/`graph`. Idempotent: a correctly closed
+ * `"]` is never touched.
+ */
+export function repairFlowchartLabelClosingPipe(body: string): string {
+  const type = detectMermaidDiagramType(body);
+  if (type !== 'flowchart' && type !== 'graph') return body;
+  return body
+    .split('\n')
+    .map((line) => {
+      let next = line;
+      // Case B first (more specific): `"|` followed by whitespace and
+      // an identifier at end-of-line. We do this BEFORE case A so the
+      // generic `"|` ⇒ `"]` rewrite doesn't strand the trailing ID.
+      next = next.replace(
+        /(\["[^"\n]*?")\|([\t ]+)([A-Za-z_][\w]*)(\s*)$/u,
+        '$1]$2-->$2$3$4',
+      );
+      // Case A: `"|` followed by an edge operator (-, =, .).
+      next = next.replace(/(\["[^"\n]*?")\|(\s*[-=.])/g, '$1]$2');
+      return next;
+    })
+    .join('\n');
+}
+
+/**
+ * Replace `\"` (backslash-escaped quote) inside flowchart / graph
+ * `["…"]` node labels with the Mermaid-safe `#quot;` entity. The
+ * backslash escape is **not** recognised by the Mermaid 11 lexer: a
+ * `\"` inside a quoted string terminates the string and the trailing
+ * characters become orphan tokens (typical failure: Hebrew/RTL
+ * labels copied from a JSON source — `["…תחזית תמ\"ג כלפי מטה"]`).
+ *
+ * Applies only to `flowchart` / `graph`. Idempotent — labels with no
+ * `\"` are returned unchanged.
+ */
+export function escapeBackslashQuoteInFlowchartLabels(body: string): string {
+  const type = detectMermaidDiagramType(body);
+  if (type !== 'flowchart' && type !== 'graph') return body;
+  return body
+    .split('\n')
+    .map((line) =>
+      line.replace(/\["((?:[^"\n\\]|\\[^"]|\\")*?)"\]/g, (match, inner: string) => {
+        if (!inner.includes('\\"')) return match;
+        return `["${inner.replace(/\\"/g, '#quot;')}"]`;
+      }),
+    )
+    .join('\n');
+}
+
+/**
+ * Strip the bracketed label re-declaration from `style <id>[…]` lines
+ * in flowchart / graph diagrams. Mermaid 11's `style` directive
+ * accepts only `style <ID> <prop>:<value>[, <prop>:<value>]*` — a
+ * bracketed label suffix (`style C["Centerpartiet"] fill:#006600`) is
+ * a parse error. The bracketed payload is redundant with the node's
+ * original declaration, so dropping it is loss-less.
+ *
+ * Applies only to `flowchart` / `graph`. Handles `[…]`, `(…)`,
+ * `{…}`, and the compound shapes `[(…)]`, `((…))`, `{{…}}`.
+ */
+export function stripBracketLabelFromStyleReference(body: string): string {
+  const type = detectMermaidDiagramType(body);
+  if (type !== 'flowchart' && type !== 'graph') return body;
+  return body
+    .split('\n')
+    .map((line) => {
+      if (!/^[\t ]*style[\t ]+/.test(line)) return line;
+      // `style ID[label] fill:…` (any shape) ⇒ `style ID fill:…`
+      return line.replace(
+        /^([\t ]*style[\t ]+[A-Za-z_][\w-]*)(?:\[\(.+?\)\]|\(\(.+?\)\)|\{\{.+?\}\}|\[.+?\]|\(.+?\)|\{.+?\})([\t ]+)/,
+        '$1$2',
+      );
+    })
+    .join('\n');
+}
+
+/**
+ * Quote flowchart / graph node labels that contain an **inner** `[`
+ * inside the outer bracketed payload — e.g.
+ *
+ *     Hamas[55 MSEK\nHamas-linked payment\n[A2 unverified]]
+ *
+ * The Mermaid 11 lexer reads the first `]` as the node closer and
+ * bails on the trailing `]`. Wrapping the whole content in `"…"` and
+ * preserving the inner `[…]` text fixes the parse — quoted node
+ * labels accept `[` and `]` as literal text.
+ *
+ * Idempotent: labels that are already quoted or that have no nested
+ * `[` are returned unchanged. Runs before `quoteFlowchartNodeLabels`
+ * so that pipeline does not see the malformed bracket nesting.
+ */
+export function quoteFlowchartLabelsWithInnerBracket(body: string): string {
+  const type = detectMermaidDiagramType(body);
+  if (type !== 'flowchart' && type !== 'graph') return body;
+  return body
+    .split('\n')
+    .map((line) => {
+      // Skip directive lines.
+      if (/^[\t ]*(?:style|classDef|linkStyle|class|click|subgraph|end)\b/.test(line)) {
+        return line;
+      }
+      // Match `<id>[…[inner]…]` (exactly one nested `[…]` inside the
+      // outer brackets). The inner content must not itself contain
+      // unbalanced brackets, so we capture greedily but require the
+      // outer payload to start with non-quote text.
+      return line.replace(
+        /([A-Za-z_][\w-]*)\[([^"\[\]\n]*\[[^\[\]\n]*\][^\[\]\n]*)\]/g,
+        (_match, id: string, inner: string) =>
+          `${id}["${inner.replace(/"/g, '#quot;')}"]`,
+      );
+    })
+    .join('\n');
+}
+
+/**
+ * Quote flowchart / graph **edge labels** (`-->|…|`, `==>|…|`,
+ * `-.->|…|`) when their inner payload contains characters the
+ * Mermaid 11 lexer rejects unquoted: `(`, `)`, `{`, `}`, `:`, `,`,
+ * `#`. The fix wraps the inner text in `"…"` which the lexer accepts
+ * as an opaque string literal.
+ *
+ *     C_Position --> |C accepts (60%)| SD_Check
+ *       ⇒ C_Position --> |"C accepts (60%)"| SD_Check
+ *
+ * Idempotent: payloads already wrapped in `"…"` are left alone.
+ */
+export function quoteFlowchartEdgeLabelsWithSpecials(body: string): string {
+  const type = detectMermaidDiagramType(body);
+  if (type !== 'flowchart' && type !== 'graph') return body;
+  const NEEDS_QUOTE_RE = /[(){}:,#]/;
+  return body
+    .split('\n')
+    .map((line) => {
+      // The line must contain an edge operator immediately before the
+      // pipe pair (so we don't accidentally quote node-shape pipes).
+      // Match operators `-->`, `==>`, `-.->`, `===>`, `--x`, `--o`,
+      // `~~~`, possibly preceded by whitespace.
+      return line.replace(
+        /(--+>|==+>|-\.+->|=\.+=>|--[xo]|~~~)([\t ]*)\|([^"|\n][^|\n]*)\|/g,
+        (match, op: string, sp: string, inner: string) => {
+          if (!NEEDS_QUOTE_RE.test(inner)) return match;
+          const trimmed = inner.trim();
+          if (trimmed.startsWith('"') && trimmed.endsWith('"')) return match;
+          return `${op}${sp}|"${trimmed.replace(/"/g, '#quot;')}"|`;
+        },
+      );
+    })
+    .join('\n');
+}
+
+/**
+ * Quote mindmap node-label payloads when they contain characters the
+ * Mermaid 11 mindmap parser treats as control tokens — specifically
+ * `(`, `)`, `:`, and `#`. The `:` is the icon-syntax delimiter
+ * (`::icon(fa fa-…)`); a bare colon in human text (e.g.
+ * `HD11726: constitutional knowledge question`) crashes the parser
+ * with `Expecting 'NL', got ':' ` even though no icon was intended.
+ *
+ * The fix wraps the affected line content in the bracketed-shape
+ * form `["…"]`, which the mindmap grammar accepts as an opaque
+ * label. Indentation (which carries the mindmap tree depth) is
+ * preserved verbatim.
+ *
+ * Skips:
+ *   * the `mindmap` keyword line,
+ *   * the `root((…))` line (intentional double parens),
+ *   * comments (`%%…`),
+ *   * blank lines,
+ *   * lines already wrapped in `[…]`, `(…)`, `((…))`, `[(…)]`, or
+ *     `{…}` — these were authored explicitly and need no quoting.
+ *
+ * Applies only to `mindmap`.
+ */
+export function quoteMindmapNodeLabels(body: string): string {
+  if (detectMermaidDiagramType(body) !== 'mindmap') return body;
+  const NEEDS_QUOTE_RE = /[():#]/;
+  return body
+    .split('\n')
+    .map((line) => {
+      if (/^[\t ]*mindmap\b/.test(line)) return line;
+      if (/^[\t ]*%%/.test(line)) return line;
+      if (/^[\t ]*$/.test(line)) return line;
+      if (/^[\t ]*root\s*\(\(/.test(line)) return line;
+      const m = /^([\t ]+)(.+)$/.exec(line);
+      if (m === null) return line;
+      const indent = m[1]!;
+      const content = m[2]!.trimEnd();
+      // Skip if already wrapped in a shape.
+      if (/^\[.*\]$/.test(content)) return line;
+      if (/^\(\(.*\)\)$/.test(content)) return line;
+      if (/^\[\(.*\)\]$/.test(content)) return line;
+      if (/^\(.*\)$/.test(content)) return line;
+      if (/^\{.*\}$/.test(content)) return line;
+      if (/^"[^"]*"$/.test(content)) return line;
+      if (!NEEDS_QUOTE_RE.test(content)) return line;
+      return `${indent}["${content.replace(/"/g, '#quot;')}"]`;
+    })
+    .join('\n');
+}
+
+/**
+ * Normalise quadrantChart data-point coordinates that were authored
+ * on a **signed** axis (range `[-1, 1]`, e.g.
+ * `Implementation bottleneck: [0.75, -0.65]`) into the required
+ * `[0, 1]` range using the affine map `v ⇒ (v + 1) / 2`.
+ *
+ * Mermaid 11's quadrantChart lexer rejects negative numerics, so the
+ * authoring convention "negative = threat / down-left quadrant" is
+ * mechanically incompatible with the renderer. Rescaling preserves
+ * the spatial layout: a value of `-1` lands at `0` (origin edge),
+ * `0` lands at `0.5` (centre), `+1` lands at `1` (far edge).
+ *
+ * Trigger conditions (all must hold; otherwise body returned
+ * unchanged):
+ *
+ *   1. Top-level diagram type is `quadrantChart`.
+ *   2. At least one numeric coordinate is `< 0`.
+ *   3. **Every** numeric coordinate is in `[-1, 1]` (so we never
+ *      silently rescale a mixed-percentage / mixed-fraction block).
+ *
+ * Numbers are emitted with at most two decimal places, trailing
+ * zeros trimmed, identical to the convention in
+ * {@link normaliseQuadrantPercentageCoords}.
+ */
+export function normaliseQuadrantSignedCoords(body: string): string {
+  if (detectMermaidDiagramType(body) !== 'quadrantChart') return body;
+  const dataLineRe = /^(\s*[^:\n]+:\s*\[)([^\]]*)(\]\s*)$/;
+  const lines = body.split('\n');
+  const numericCoords: number[] = [];
+  for (const line of lines) {
+    const m = dataLineRe.exec(line);
+    if (m === null) continue;
+    for (const part of m[2]!.split(',')) {
+      const n = Number(part.trim());
+      if (Number.isFinite(n)) numericCoords.push(n);
+    }
+  }
+  if (numericCoords.length === 0) return body;
+  const allInSigned = numericCoords.every((n) => n >= -1 && n <= 1);
+  const hasNegative = numericCoords.some((n) => n < 0);
+  if (!allInSigned || !hasNegative) return body;
+  return lines
+    .map((line) => {
+      const m = dataLineRe.exec(line);
+      if (m === null) return line;
+      const scaled = m[2]!
+        .split(',')
+        .map((part) => {
+          const trimmed = part.trim();
+          const n = Number(trimmed);
+          if (!Number.isFinite(n)) return trimmed;
+          const v = Math.max(0, Math.min(1, (n + 1) / 2));
+          if (v === 0 || v === 1) return String(v);
+          return v.toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
+        })
+        .join(', ');
+      return `${m[1]}${scaled}${m[3]}`;
+    })
+    .join('\n');
+}
+
+
+/**
  * Repair pipeline used by the orchestrator. Applies the safe fixes in
  * the order that yields the most converging behaviour observed during
  * the corpus scan:
@@ -535,11 +895,23 @@ export function repairMermaidBlock(body: string): string {
   next = insertQuadrantDataPointColon(next);
   next = normaliseQuadrantDataPointFloats(next);
   next = normaliseQuadrantPercentageCoords(next);
+  next = normaliseQuadrantSignedCoords(next);
   next = quoteQuadrantDataPointLabels(next);
   next = quoteChartTitle(next);
   next = quoteXychartAxisItems(next);
-  next = stripParensFromTimelineSections(next);
+  next = stripParensFromTimelineLines(next);
+  next = repairTimelineSectionWithEvents(next);
+  next = normaliseTimelineEventTimeColon(next);
+  // Flowchart label structural repairs MUST precede the generic
+  // node-label quoter — that function assumes balanced `[…]` shapes
+  // and well-formed `"…"` payloads.
+  next = repairFlowchartLabelClosingPipe(next);
+  next = escapeBackslashQuoteInFlowchartLabels(next);
+  next = stripBracketLabelFromStyleReference(next);
+  next = quoteFlowchartLabelsWithInnerBracket(next);
   next = quoteFlowchartNodeLabels(next);
+  next = quoteFlowchartEdgeLabelsWithSpecials(next);
+  next = quoteMindmapNodeLabels(next);
   next = repairDottedEdgeLabel(next);
   next = stripInvalidStyleDirectives(next);
   next = repairEdgeLabelClosingBracket(next);

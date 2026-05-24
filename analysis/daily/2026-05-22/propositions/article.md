@@ -768,7 +768,7 @@ graph LR
 
   style PM fill:#0044aa,color:#ffffff
   style SD fill:#ffee00,color:#000000
-  style C["Centerpartiet\n⚠️ Fracture Risk"] fill:#006600,color:#ffffff
+  style C fill:#006600,color:#ffffff
   style ECtHR fill:#aa0000,color:#ffffff
   style IMY fill:#aa6600,color:#ffffff
   style EC fill:#003388,color:#ffffff

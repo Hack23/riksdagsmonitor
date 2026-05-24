@@ -1043,12 +1043,12 @@ Wiechel asks the minister to clarify the government's position on Sida's future.
 - **PIR**: PIR-NEW-10464 (Sida dissolution trajectory — OPEN, answer deadline 2026-05-26)
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {"'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'"}}}%%
 flowchart TD
-    Hamas[55 MSEK\nHamas-linked payment\n[A2 unverified]] --> HD10464
-    Afghanistan[14 BSEK\nAfghanistan failure] --> HD10464
-    HD10464[HD10464\nWiechel SD\nAvveckla Sida] -->|answer by| BESV[2026-05-26\nFloor debate]
-    BESV -->|pre-election| E26[Sept 2026\nValet]
+    Hamas["55 MSEK\nHamas-linked payment\n[A2 unverified]"] --> HD10464
+    Afghanistan["14 BSEK\nAfghanistan failure"] --> HD10464
+    HD10464["HD10464\nWiechel SD\nAvveckla Sida"] -->|answer by| BESV["2026-05-26\nFloor debate"]
+    BESV -->|pre-election| E26["Sept 2026\nValet"]
     style HD10464 fill:#ff006e,stroke:#ff006e,color:#fff
     style BESV fill:#ffbe0b,stroke:#ffbe0b,color:#000
     style E26 fill:#00d9ff,stroke:#00d9ff,color:#000
@@ -1433,7 +1433,7 @@ Links to the HD024141-HD024148 infrastructure cluster and the government's infra
 ### Coalition Stakeholder Mapping
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {'theme': 'dark', 'themeVariables': {"'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'"}}}%%
 graph LR
     M["🔵 M (68)\nKristersson"] -->|"Tidö core"| TID["TIDÖ GOVERNMENT\n176 seats"]
     SD["🔵 SD (73)\nÅkesson"] -->|"Tidö core"| TID
@@ -1443,8 +1443,8 @@ graph LR
     TID -->|"Majority votes\nall bills"| GOV["GOVERNMENT MAJORITY\n176 vs 173"]
     S["🔴 S (107)\nAndersson"] -->|"Opposition"| OPP["OPPOSITION\n173 seats"]
     V["🔴 V (24)\nDadgostar"] -->|"Opposition"| OPP
-    MP["🔴 MP (18)\nNohrén"| OPP
-    C2["🟡 C (CRC cluster)\nHD024146"| OPP
+    MP["🔴 MP (18)\nNohrén"] --> OPP
+    C2["🟡 C (CRC cluster)\nHD024146"] --> OPP
     style TID fill:#1a1e3d,stroke:#00d9ff
     style GOV fill:#00d9ff,stroke:#00d9ff
     style OPP fill:#ff006e,stroke:#ff006e

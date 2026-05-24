@@ -262,8 +262,7 @@ xychart-beta
     x-axis [HD024146, HD024144, HD024142, HD024141, HD024147, HD024148, HD024145, HD024143]
     y-axis "DIW Score" 0 --> 10
     bar [8.75, 8.70, 7.85, 7.10, 6.55, 6.55, 6.00, 5.25]
-    style bar fill:#00d9ff
-
+```
 ## Per-document intelligence
 
 ### hd024141
@@ -1268,9 +1267,7 @@ For the election cycle (May–September 2026):
 pie title Policy Areas — 8 Motions
     "Forestry/Environment" : 5
     "Criminal Justice/Youth" : 3
-    style Forestry fill:#228b22
-    style Criminal fill:#8b0000
-
+```
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/cross-reference-map.md -->
 

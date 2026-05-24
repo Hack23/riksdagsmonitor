@@ -31,7 +31,7 @@ graph TD
 
     subgraph "Committee Reports (Active)"
         B1["SfU22<br/>Inhibition"] -.->|"Migration cluster"| M1
-        B2["SfU16<br/>Migration debate"| -.->|"Migration cluster"| M3
+        B2["SfU16<br/>Migration debate"] -.->|"Migration cluster"| M3
         B3["CU23<br/>Rural housing"] -.->|"Housing theme"| M3
     end
 

@@ -73,21 +73,21 @@
 
 ```mermaid
 quadrantChart
-  title SWOT Quadrants — Impact vs Probability
-  x-axis "Probability of materialising" 0 --> 1
-  y-axis "Political impact (negative=threat)" -1 --> 1
+  title "SWOT Quadrants — Impact vs Probability"
+ x-axis "Probability of materialising" 0 --> 1
+ y-axis "Political impact negative=threat" -1 --> 1
   quadrant-1 High-impact high-probability strengths
   quadrant-2 High-impact low-probability opportunity
   quadrant-3 Low-impact low-probability
   quadrant-4 High-impact high-probability threat
-  Legislative completeness: [0.95, 0.85]
-  Fiscal credibility: [0.90, 0.75]
-  SD discipline: [0.80, 0.60]
-  Implementation bottleneck: [0.75, -0.65]
-  Opposition framing quad: [0.85, -0.50]
-  SD pivot risk: [0.50, -0.70]
-  L threshold risk: [0.40, -0.60]
-  Construction acceleration: [0.55, 0.55]
+  Legislative completeness: [0.97, 0.93]
+  Fiscal credibility: [0.95, 0.88]
+  SD discipline: [0.9, 0.8]
+  Implementation bottleneck: [0.88, 0.17]
+  Opposition framing quad: [0.93, 0.25]
+  SD pivot risk: [0.75, 0.15]
+  L threshold risk: [0.7, 0.2]
+  Construction acceleration: [0.78, 0.78]
 ```
 style Legislative completeness color:#00d9ff, stroke:#00d9ff
 style Fiscal credibility color:#00d9ff, stroke:#00d9ff

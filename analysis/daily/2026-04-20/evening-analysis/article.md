@@ -774,7 +774,7 @@ mindmap
         KU43 medal law modernisation
         Cross-party support
       Security Narrative
-        NATO contributions confirmed (sibling props)
+        ["NATO contributions confirmed (sibling props)"]
         Ukraine accountability measures tabled
     Weaknesses
       Agricultural Climate Gap
@@ -782,12 +782,12 @@ mindmap
         Sweden behind Nordic peers on farm emissions
         No immediate remediation plan
       Stockholm Police Distribution
-        HD10439: quality vs quantity exposed
+        ["HD10439: quality vs quantity exposed"]
         Metropolitan policing gap persists
       Infrastructure Accountability Deficit
-        Minister Carlson most-targeted (6th+ IP)
-        Trafikverket NGO funding cut (HD11722)
-        Strada database concerns (HD11724)
+        ["Minister Carlson most-targeted (6th+ IP)"]
+        ["Trafikverket NGO funding cut (HD11722)"]
+        ["Strada database concerns (HD11724)"]
       Ministerial Bandwidth
         8 portfolios challenged in one day
         S filing pace 50% above average
@@ -806,12 +806,12 @@ mindmap
         Municipal wind revenue sharing shows pragmatism
     Threats
       Climate Accountability Escalation
-        MJU21 + fuel tax cut (HD03236) = double front
+        ["MJU21 + fuel tax cut (HD03236) = double front"]
         Klimatpolitiska rådet likely to comment
         S/MP/C can cite Riksrevisionen in election
       Constitutional Trap
-        HD11726: constitutional knowledge question
-        Timed post-vilande amendments (KU33/KU32)
+        ["HD11726: constitutional knowledge question"]
+        ["Timed post-vilande amendments (KU33/KU32)"]
         Education minister on record before election
       S Escalation Risk
         Current interpellation pace → week-3 surge late April

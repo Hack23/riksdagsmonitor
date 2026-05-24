@@ -501,13 +501,13 @@ mindmap
         Katarina Luhr - climate interpellation
         PIR-CLIM-2026 collection
       C
-        Rural policy beneficiary (NU21)
+        ["Rural policy beneficiary (NU21)"]
         ambiguous on migration
     Civil Society
       LO/Kommunal
-        V gender pay (HD10486) will amplify
+        ["V gender pay (HD10486) will amplify"]
       Arbetsgivarorganisationer
-        oppose Prop 258 (trade union interference)
+        ["oppose Prop 258 (trade union interference)"]
       Hyresgästföreningen
         CU30 energy renovation impact on rents
     Institutions

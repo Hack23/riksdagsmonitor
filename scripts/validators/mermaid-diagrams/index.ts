@@ -190,6 +190,38 @@ export async function repairMermaidFile(
     const parseResult = await parseMermaidBlock(block.body);
     if (parseResult === null) continue;
 
+    // If the body parsed as Mermaid contains narrative markdown lines
+    // (headings, blockquotes, tables, …), it likely means the author
+    // forgot a closing fence and a later ``` from an unrelated code
+    // block was treated as the close. Truncate the body at the first
+    // narrative line, attempt repair on just the Mermaid prefix, and
+    // splice both the truncated body AND a fresh closing fence so the
+    // narrative is restored to plain markdown context.
+    {
+      const bodyLines = block.body.split('\n');
+      const narrativeOffset = findFirstNarrativeOffset(bodyLines);
+      if (narrativeOffset !== null && narrativeOffset > 0) {
+        const mermaidPrefix = bodyLines.slice(0, narrativeOffset).join('\n');
+        const trailingNarrative = bodyLines.slice(narrativeOffset);
+        const repairedPrefix = repairMermaidBlock(mermaidPrefix);
+        const prefixParse = await parseMermaidBlock(repairedPrefix);
+        if (prefixParse === null) {
+          const prefixLines = repairedPrefix.split('\n');
+          // Drop trailing empty lines from the mermaid prefix to keep
+          // a clean separation before the inserted close fence.
+          while (prefixLines.length > 0 && prefixLines[prefixLines.length - 1]!.trim() === '') {
+            prefixLines.pop();
+          }
+          const startIdx = block.startLineNumber;
+          const endIdx = block.endLineNumber - 1;
+          lines.splice(startIdx, endIdx - startIdx, ...prefixLines, '```', ...trailingNarrative);
+          mutated = true;
+          repairedBlocks.push(block.startLineNumber);
+          continue;
+        }
+      }
+    }
+
     const repaired = repairMermaidBlock(block.body);
     if (repaired === block.body) {
       unrepaired.push({
