@@ -23,7 +23,8 @@
  * @license Apache-2.0
  */
 
-import { glob } from 'glob';
+import { readdirSync, statSync } from 'node:fs';
+import { join, sep } from 'node:path';
 
 import { repairMermaidFile } from './validators/mermaid-diagrams/index.js';
 
@@ -52,11 +53,51 @@ function parseArgs(argv: readonly string[]): Args {
   };
 }
 
+/**
+ * Minimal glob substitute for the only pattern shape these CLIs ever
+ * use: `<dir>/**\/*.<ext>` or a literal file path. Walks `<dir>`
+ * recursively (synchronously) and returns every file whose extension
+ * matches `<ext>`. Avoids pulling in the `glob` package which isn't a
+ * declared production dependency (only an `overrides` entry).
+ */
+function expandPattern(pattern: string): readonly string[] {
+  const match = /^(.*?)\/\*\*\/\*\.([A-Za-z0-9]+)$/.exec(pattern);
+  if (!match) {
+    // Literal file path — only include if it exists as a file.
+    try {
+      if (statSync(pattern).isFile()) return [pattern];
+    } catch {
+      return [];
+    }
+    return [];
+  }
+  const root = match[1] ?? '.';
+  const ext = `.${match[2]!.toLowerCase()}`;
+  const out: string[] = [];
+  const walk = (dir: string): void => {
+    let entries: ReturnType<typeof readdirSync>;
+    try {
+      entries = readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const entry of entries) {
+      const full = join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(full);
+      } else if (entry.isFile() && entry.name.toLowerCase().endsWith(ext)) {
+        // Normalise to forward slashes for cross-platform CLI output.
+        out.push(full.split(sep).join('/'));
+      }
+    }
+  };
+  walk(root);
+  return out;
+}
+
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
-  const files = (
-    await Promise.all(args.patterns.map((p) => glob(p, { nodir: true })))
-  ).flat();
+  const files = args.patterns.flatMap(expandPattern);
   const unique = Array.from(new Set(files)).sort();
 
   let filesChanged = 0;

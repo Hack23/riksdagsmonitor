@@ -39,7 +39,6 @@
   "ignoreDependencies": [
     "htmlhint",
     "js-yaml",
-    "mermaid",
     "chartjs-plugin-annotation",
     "worldbank-mcp"
   ],

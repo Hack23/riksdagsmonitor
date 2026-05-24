@@ -118,7 +118,7 @@ export function quoteQuadrantDataPointLabels(body: string): string {
       const label = m[2]!.trim();
       const coords = m[3]!;
       if (/^(title|x-axis|y-axis|quadrant-[1-4])\b/i.test(label)) return line;
-      if (!/[(){}\[\]<>:,#&!\\/]/.test(label)) return line;
+      if (!/[(){}[\]<>:,#&!\\/]/.test(label)) return line;
       const escaped = label.replace(/"/g, '#quot;');
       return `${indent}"${escaped}": [${coords}]`;
     })
@@ -400,15 +400,6 @@ export function stripParensFromTimelineLines(body: string): string {
     })
     .join('\n');
 }
-
-/**
- * Backwards-compatible alias for {@link stripParensFromTimelineLines}.
- * Earlier versions of the pipeline only stripped `section …` header
- * lines, so the old name is kept for any external imports.
- *
- * @deprecated Use {@link stripParensFromTimelineLines} instead.
- */
-export const stripParensFromTimelineSections = stripParensFromTimelineLines;
 
 /**
  * Repair `timeline` `section <title> : <event> : <details>` lines —
@@ -713,7 +704,7 @@ export function quoteFlowchartLabelsWithInnerBracket(body: string): string {
       // unbalanced brackets, so we capture greedily but require the
       // outer payload to start with non-quote text.
       return line.replace(
-        /([A-Za-z_][\w-]*)\[([^"\[\]\n]*\[[^\[\]\n]*\][^\[\]\n]*)\]/g,
+        /([A-Za-z_][\w-]*)\[([^"[\]\n]*\[[^[\]\n]*\][^[\]\n]*)\]/g,
         (_match, id: string, inner: string) =>
           `${id}["${inner.replace(/"/g, '#quot;')}"]`,
       );

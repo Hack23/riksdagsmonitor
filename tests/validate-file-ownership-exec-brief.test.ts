@@ -158,17 +158,24 @@ describe('detectCategoryFromFiles', () => {
     ).toBe('content');
   });
 
-  it('prefers "translation" when content and translation surfaces both appear', async () => {
-    // Mixed PRs are themselves ownership violations; the function still has a
-    // deterministic answer so that the validator can flag them as translation
-    // category (which then surfaces the content file as the violation).
+  it('returns null for mixed content + translation surfaces (skip enforcement)', async () => {
+    // Mixed PRs typically come from non-workflow sources (manual edits,
+    // utility/refactor PRs, merge commits). The single-category contract does
+    // not apply — auto-detect returns null so the validator skips. Workflow
+    // PRs that need strict enforcement pass --category explicitly.
     const { detectCategoryFromFiles } = await import('../scripts/validate-file-ownership.js');
     expect(
       detectCategoryFromFiles([
         'news/2026-05-15-propositions-en.html',
         'analysis/daily/2026-05-15/propositions/executive-brief_sv.md',
       ]),
-    ).toBe('translation');
+    ).toBeNull();
+    expect(
+      detectCategoryFromFiles([
+        'analysis/daily/2026-05-15/propositions/executive-brief.md',
+        'analysis/daily/2026-05-15/propositions/executive-brief_sv.md',
+      ]),
+    ).toBeNull();
   });
 
   it('returns "content" when only article.<lang>.md is present (forbidden but detected)', async () => {
