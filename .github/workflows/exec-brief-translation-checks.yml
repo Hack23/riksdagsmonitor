@@ -107,6 +107,8 @@ jobs:
           npx tsx scripts/validate-file-ownership.ts --files-from /tmp/changed.txt
 
       - name: Validate executive-brief structural parity (per changed English source)
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           set -euo pipefail
           if [ ! -s /tmp/changed-briefs.txt ]; then
@@ -128,7 +130,14 @@ jobs:
             fi
           done < /tmp/changed-briefs.txt
 
-          echo "Validating ${#SOURCES[@]} English source(s):"
+          # Resolve a base SHA for the mermaid-only-diff pre-filter. PR runs
+          # always have `pull_request.base.sha`; workflow_dispatch falls back
+          # to the merge-base with origin/main.
+          if [ -z "${BASE_SHA:-}" ]; then
+            BASE_SHA=$(git merge-base HEAD origin/main 2>/dev/null || echo "")
+          fi
+
+          echo "Validating ${#SOURCES[@]} English source(s) (base=${BASE_SHA:-<none>}):"
           printf '  %s\n' "${SOURCES[@]}"
 
           FAIL=0
@@ -139,6 +148,27 @@ jobs:
             fi
             echo ""
             echo "── $src ──"
+            # Pre-filter: skip parity enforcement when the source's diff vs the
+            # PR base is confined entirely to ```mermaid fenced code blocks
+            # (e.g. a `fix-mermaid-diagrams` autofix). Translations cannot have
+            # drifted in any way the parity validator can detect, and re-running
+            # against stale `<!-- source-sha: -->` trailers only surfaces noise.
+            # Exit code 3 from the checker means "mermaid-only diff → skip".
+            if [ -n "${BASE_SHA:-}" ]; then
+              set +e
+              npx tsx scripts/check-brief-narrative-drift.ts --base "$BASE_SHA" --file "$src"
+              drift_rc=$?
+              set -e
+              if [ "$drift_rc" -eq 3 ]; then
+                echo "ℹ️  Parity validator skipped for $src (mermaid-only diff)."
+                continue
+              fi
+              if [ "$drift_rc" -ne 0 ]; then
+                echo "❌ brief-narrative-drift classifier failed unexpectedly (rc=$drift_rc) for $src."
+                FAIL=1
+                continue
+              fi
+            fi
             if ! npx tsx scripts/validate-executive-brief-translations.ts --source "$src"; then
               FAIL=1
             fi
