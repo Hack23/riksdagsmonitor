@@ -1,12 +1,12 @@
 ---
 title: "Social Democrats Challenge Government's Anti-Corruption Overreach"
 description: "The Social Democrats (S) have filed Motion 2025/26:4099 (HD024099) rejecting the government's flagship anti-corruption proposition (prop."
-keywords: "HD024099, prop. 2025/26:217, Corruption Investigation Committee, Justice Minister Strömmer s, Teresa Carvalho s, Expected May, If SD, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
+keywords: "HD024099, prop. 2025/26:217, Corruption Investigation Committee, Expected May, If SD, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-04-28
 subfolder: motions
 slug: 2026-04-28-motions
 source_folder: analysis/daily/2026-04-28/motions
-generated_at: 2026-05-24T17:19:39.345Z
+generated_at: 2026-05-24T18:59:04.825Z
 language: en
 layout: article
 ---

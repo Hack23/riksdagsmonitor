@@ -1,12 +1,12 @@
 ---
 title: "Sweden's parliamentary opposition filed 19 counter-motions"
 description: "Sweden's parliamentary opposition filed 19 counter-motions in the week of 2026-05-07 to 2026-05-13, targeting five government propositions across political party funding transparency, migration…"
-keywords: "HD024151, HD024150, HD024149, HD024148, HD024146, HD024142, HD024147, HD024127, prop. 2025/26:258, MP, SD, Jennie Nilsson, Tony Haddou, IMF WEO-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
+keywords: "HD024151, HD024150, HD024149, HD024148, HD024146, HD024142, HD024147, HD024127, prop. 2025/26:258, MP, SD, Jennie Nilsson, Tony Haddou, IMF WEO, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-05-13
 subfolder: motions
 slug: 2026-05-13-motions
 source_folder: analysis/daily/2026-05-13/motions
-generated_at: 2026-05-24T17:19:40.262Z
+generated_at: 2026-05-24T18:59:06.340Z
 language: en
 layout: article
 ---

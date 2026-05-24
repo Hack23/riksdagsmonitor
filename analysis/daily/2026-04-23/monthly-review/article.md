@@ -1,12 +1,12 @@
 ---
 title: "Monthly Review April 2026"
 description: "Sweden's April 2026 parliamentary sprint delivered the Kristersson government's final pre-election legislative package."
-keywords: "HD01FiU48, HD03240, HD03239, HD03214, HD03228, HD03100, HD0399, HD03238, UFöU3, SfU18, SoU16, SoU17, FiU48, UFöU, SfU, SoU, FiU, James Pether Sörling, Sweden s April, Analyst Recommendation, Monitor SfU, Watch SD-KD, Sweden s NATO, VERY HIGH"
+keywords: "HD01FiU48, HD03240, HD03239, HD03214, HD03228, HD03100, HD0399, HD03238, UFöU3, SfU18, SoU16, SoU17, FiU48, UFöU, SfU, SoU, FiU, James Pether Sörling, Analyst Recommendation, Monitor SfU, Watch SD-KD, VERY HIGH, Synthesis Summary, Significance Scoring"
 date: 2026-04-23
 subfolder: monthly-review
 slug: 2026-04-23-monthly-review
 source_folder: analysis/daily/2026-04-23/monthly-review
-generated_at: 2026-05-24T17:19:39.036Z
+generated_at: 2026-05-24T18:59:04.334Z
 language: en
 layout: article
 ---

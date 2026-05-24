@@ -1,12 +1,12 @@
 ---
 title: "Parliamentary Committee Decisions — 6 May 2026"
 description: "Five parliamentary committee decisions were adopted on 6 May 2026, spanning four policy domains. The most consequential is SfU21 — introducing a qualifying period for residence-based social insurance…"
-keywords: "HD01SfU21, HD01CU25, HD01SfU24, SfU21, FöU18, CU25, FöU16, SfU24, SfU, FöU, CU, Political Salience, Sweden s Riksdag, SO WHAT, NOW WHAT, WEO April, Watch Signal, WEO Datamapper, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
+keywords: "HD01SfU21, HD01CU25, HD01SfU24, SfU21, FöU18, CU25, FöU16, SfU24, SfU, FöU, CU, Political Salience, SO WHAT, NOW WHAT, WEO April, Watch Signal, WEO Datamapper, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency"
 date: 2026-05-06
 subfolder: committeeReports
 slug: 2026-05-06-committeeReports
 source_folder: analysis/daily/2026-05-06/committeeReports
-generated_at: 2026-05-24T17:19:39.808Z
+generated_at: 2026-05-24T18:59:05.602Z
 language: en
 layout: article
 ---

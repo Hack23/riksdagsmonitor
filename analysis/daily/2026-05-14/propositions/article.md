@@ -1,12 +1,12 @@
 ---
 title: "Three Propositions Signal Pre-Election Security and Digital Governance Push"
 description: "The Tidö government delivered three propositions on 7 May 2026 that collectively define its pre-election policy narrative: a state e-identity system (HD03250) anchoring Sweden's digital sovereignty,…"
-keywords: "HD03250, HD03261, HD03267, Tax Agency, Justice Minister Gunnar Strömmer, IMF WEO Apr-, Special Advocate, Abu Qatada, ECtHR Rule, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
+keywords: "HD03250, HD03261, HD03267, Tax Agency, Justice Minister Gunnar Strömmer, IMF WEO Apr, Special Advocate, Abu Qatada, ECtHR Rule, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
 date: 2026-05-14
 subfolder: propositions
 slug: 2026-05-14-propositions
 source_folder: analysis/daily/2026-05-14/propositions
-generated_at: 2026-05-24T17:19:40.341Z
+generated_at: 2026-05-24T18:59:06.466Z
 language: en
 layout: article
 ---

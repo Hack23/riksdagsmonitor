@@ -1,12 +1,12 @@
 ---
 title: "Riksdagen Realtime Pulse: Hyresreform, Skolpolitik och Utrikespolitiska Spänningar"
 description: "With 127 days to the September 2026 general election, Friday 8 May saw Riksdagen's Civilutskott approve a landmark rental market flexibility report (HD01CU31) that constitutes the most significant…"
-keywords: "HD01CU31, HD10480, HD11801, HD11802, HD11803, CU31, UbU28, CU, UbU, MP, KD, SD, Riksdagen s Civilutskott, Apply Admiralty, IMF WEO Apr-, IFS SDMX, FM OK, CPI April, FM Datamapper, Sweden s GDP, Stina Larsson, Riksdagsmonitor, Swedish Parliament, Riksdag"
+keywords: "HD01CU31, HD10480, HD11801, HD11802, HD11803, CU31, UbU28, CU, UbU, MP, KD, SD, Apply Admiralty, IMF WEO Apr, IFS SDMX, FM OK, CPI April, FM Datamapper, Stina Larsson, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-05-09
 subfolder: realtime-pulse
 slug: 2026-05-09-realtime-pulse
 source_folder: analysis/daily/2026-05-09/realtime-pulse
-generated_at: 2026-05-24T17:19:40.060Z
+generated_at: 2026-05-24T18:59:06.012Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Tidö coalition advances its most consequential security"
 description: "Sweden's Tidö coalition advances its most consequential security and energy legislation of the parliamentary session: the renaming of MSB to Myndigheten för civilt försvar (HC03205) signals a wartime…"
-keywords: "FiU20, FiU24, FiU33, FiU, Civil Defence Carl-Oskar Bohlin, Sweden s Tid, Social Democrat, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Realtime Pulse, English"
+keywords: "FiU20, FiU24, FiU33, FiU, Civil Defence Carl-Oskar Bohlin, Social Democrat, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Realtime Pulse, English"
 date: 2026-05-17
 subfolder: realtime-pulse
 slug: 2026-05-17-realtime-pulse
 source_folder: analysis/daily/2026-05-17/realtime-pulse
-generated_at: 2026-05-24T17:19:40.449Z
+generated_at: 2026-05-24T18:59:06.643Z
 language: en
 layout: article
 ---

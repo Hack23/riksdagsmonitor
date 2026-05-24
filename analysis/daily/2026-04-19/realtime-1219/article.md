@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Konstitutionsutskottet (KU) on 2026-04-17 advanced a second"
 description: "Sweden's Konstitutionsutskottet (KU) on 2026-04-17 advanced a second Tryckfrihetsförordningen (TF) amendment in the same riksmöte — betänkande 2025/26:KU33 — narrowing offentlighetsprincipen by…"
-keywords: "HD03231, HD03232, HD01KU33, HD03246, HD0399, HD03100, HD01KU32, KU33, KU32, CU28, KU, CU, MP, SD, Analyst Confidence, Sweden s Konstitutionsutskottet, PM Ulf Kristersson, FM Maria Malmer Stenergard, Special Tribunal, International Compensation Commission, King Carl Gustaf, FM Malmer Stenergard, Evidence Locus, Action Window"
+keywords: "HD03231, HD03232, HD01KU33, HD03246, HD0399, HD03100, HD01KU32, KU33, KU32, CU28, KU, CU, MP, SD, Analyst Confidence, PM Ulf Kristersson, FM Maria Malmer Stenergard, Special Tribunal, International Compensation Commission, King Carl Gustaf, FM Malmer Stenergard, Evidence Locus, Action Window, Publication Decision"
 date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-05-24T17:19:38.889Z
+generated_at: 2026-05-24T18:59:04.119Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Opposition Parliamentary Activity"
 description: "Swedish opposition MPs are targeting three distinct government accountability gaps: dangerous workplaces receiving wage subsidies for disabled workers, incarcerated children lacking educational legal…"
-keywords: "JuU10, JuU31, CU24, SoU25, JuU, CU, SoU, Malmer Stenergard, Christophe Sahabo, Three Socialdemokraterna MPs, Johanna Haraldsson, Labour Minister Britz, IF Metall, Anna Wallentheim, Education Minister Mohamsson, Olle Thorell, Foreign Minister Malmer Stenergard, SD s Josef Fransson, Energy Minister Busch, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
+keywords: "JuU10, JuU31, CU24, SoU25, JuU, CU, SoU, Malmer Stenergard, Christophe Sahabo, Three Socialdemokraterna MPs, Johanna Haraldsson, Labour Minister Britz, IF Metall, Anna Wallentheim, Education Minister Mohamsson, Olle Thorell, Foreign Minister Malmer Stenergard, Energy Minister Busch, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
 date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-05-24T17:19:39.188Z
+generated_at: 2026-05-24T18:59:04.572Z
 language: en
 layout: article
 ---

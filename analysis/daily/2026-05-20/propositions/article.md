@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Security-State Acceleration: Busch Government Advances Migration Clampdown and Digital Surveillance Architecture"
 description: "Sweden's Busch government submitted seven major propositions between 30 April and 7 May 2026 that collectively represent the most ambitious expansion of state security powers in a decade."
-keywords: "HD03267, HD03263, HD03264, HD03261, HD03250, HD03258, HD03255, MP, Sweden s Busch, Lotta Edholm, Ebba Busch, IMF WEO Apr-, Civil Rights Defenders, Amnesty Sweden, Tech Sweden, Venice Commission, Ebba Busch PM, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency"
+keywords: "HD03267, HD03263, HD03264, HD03261, HD03250, HD03258, HD03255, MP, Lotta Edholm, Ebba Busch, IMF WEO Apr, Civil Rights Defenders, Amnesty Sweden, Tech Sweden, Venice Commission, Ebba Busch PM, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen"
 date: 2026-05-20
 subfolder: propositions
 slug: 2026-05-20-propositions
 source_folder: analysis/daily/2026-05-20/propositions
-generated_at: 2026-05-24T17:19:40.561Z
+generated_at: 2026-05-24T18:59:06.821Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Security-First Legislative Sprint: Civil Defence Overhaul, Uranium Reversal, and Rising Unemployment"
 description: "Sweden concluded riksmöte 2024/25 with a concentrated security-focused legislative agenda: the Kristersson government simultaneously renamed MSB to \"Myndigheten för civilt försvar\" (HC03205),…"
-keywords: "Monitor Statsrådet Bohlin s, SCB AKU, FiU Riksbank, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Weekly Review, English"
+keywords: "SCB AKU, FiU Riksbank, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Weekly Review, English"
 date: 2026-04-26
 subfolder: weekly-review
 slug: 2026-04-26-weekly-review
 source_folder: analysis/daily/2026-04-26/weekly-review
-generated_at: 2026-05-24T17:19:39.230Z
+generated_at: 2026-05-24T18:59:04.636Z
 language: en
 layout: article
 ---

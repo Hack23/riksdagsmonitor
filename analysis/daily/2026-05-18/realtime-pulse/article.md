@@ -1,12 +1,12 @@
 ---
 title: "Sweden enshrines abortion right in constitution while unveiling strictest migration law in modern history"
 description: "Sweden's Riksdag is simultaneously advancing the most expansive constitutional rights provision in decades — enshrining abortion as a fundamental right in Regeringsformen (bet HD01KU34, KU,…"
-keywords: "HD01KU34, HD03262, HD03267, HD03261, HD03250, KU34, KU, SfU, Sweden s Riksdag, PM Ebba Busch s, Track ECHR Art, Riksdag s Konstitutionsutskottet, Asylum Pact, PM Ebba Busch, Justice Minister Gunnar Strömmer, Expanded Skatteverket, Ebba Busch, Ulf Kristersson, Strasbourg Convention, For Swedish, Stockholm District Court, Admiralty Code, Riksdagsmonitor, Swedish Parliament"
+keywords: "HD01KU34, HD03262, HD03267, HD03261, HD03250, KU34, KU, SfU, Track ECHR Art, Asylum Pact, PM Ebba Busch, Justice Minister Gunnar Strömmer, Expanded Skatteverket, Ebba Busch, Ulf Kristersson, Strasbourg Convention, For Swedish, Stockholm District Court, Admiralty Code, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-05-18
 subfolder: realtime-pulse
 slug: 2026-05-18-realtime-pulse
 source_folder: analysis/daily/2026-05-18/realtime-pulse
-generated_at: 2026-05-24T17:19:40.519Z
+generated_at: 2026-05-24T18:59:06.753Z
 language: en
 layout: article
 ---

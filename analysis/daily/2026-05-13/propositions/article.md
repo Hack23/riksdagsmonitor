@@ -1,12 +1,12 @@
 ---
 title: "The Swedish Government on 7 May 2026 submitted three propositions"
 description: "The Swedish Government on 7 May 2026 submitted three propositions spanning digital identity infrastructure, administrative law enforcement, and national security detention law."
-keywords: "HD03267, HD03250, HD03261, Prop. 2025/26:267, Prop. 2025/26:250, Prop. 2025/26:261, Gunnar Strömmer, Expands Skatteverket s, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
+keywords: "HD03267, HD03250, HD03261, Prop. 2025/26:267, Prop. 2025/26:250, Prop. 2025/26:261, Gunnar Strömmer, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
 date: 2026-05-13
 subfolder: propositions
 slug: 2026-05-13-propositions
 source_folder: analysis/daily/2026-05-13/propositions
-generated_at: 2026-05-24T17:19:40.273Z
+generated_at: 2026-05-24T18:59:06.356Z
 language: en
 layout: article
 ---

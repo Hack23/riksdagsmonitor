@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Constitutional Moment and Pre-Election Policy Sprint — Evening Intelligence, 14 May 2026"
 description: "Sweden's parliamentary record for 14 May 2026 is defined by three intersecting crises that will shape the September election: a historic constitutional amendment package (vilande) protecting abortion…"
-keywords: "HD03267, HD10492, HD03250, HD03261, KU34, KU, Minister Dousa s, Lagrådet CRC Art, WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Evening Analysis, English"
+keywords: "HD03267, HD10492, HD03250, HD03261, KU34, KU, Lagrådet CRC Art, WEO Apr, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Evening Analysis, English"
 date: 2026-05-14
 subfolder: evening-analysis
 slug: 2026-05-14-evening-analysis
 source_folder: analysis/daily/2026-05-14/evening-analysis
-generated_at: 2026-05-24T17:19:40.313Z
+generated_at: 2026-05-24T18:59:06.423Z
 language: en
 layout: article
 ---

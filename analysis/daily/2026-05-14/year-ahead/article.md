@@ -1,12 +1,12 @@
 ---
 title: "Sweden Year-Ahead → +365"
 description: "Constitutional change of magnitude — KU34 (HD01KU34) brings the abortion right toward grundlagsskydd while simultaneously expanding state powers to limit freedom of association (RF 2:24) and…"
-keywords: "HD024149, HD024150, HD01KU34, HD03267, HD03250, HD01FiU43, HD01FiU38, HD11804, HD11807, HD11810, HD01MJU23, HD01SoU31, prop. 2025/26:263, KU34, KU, IMF WEO Apr-, NATO Summit, Final SCB, Updated Nordic-peer, Quantitative SWOT, Sundsvall NTM, Riksdagsmonitor, Swedish Parliament, Riksdag"
+keywords: "HD024149, HD024150, HD01KU34, HD03267, HD03250, HD01FiU43, HD01FiU38, HD11804, HD11807, HD11810, HD01MJU23, HD01SoU31, prop. 2025/26:263, KU34, KU, IMF WEO Apr, NATO Summit, Final SCB, Updated Nordic-peer, Quantitative SWOT, Sundsvall NTM, Riksdagsmonitor, Swedish Parliament, Riksdag"
 date: 2026-05-14
 subfolder: year-ahead
 slug: 2026-05-14-year-ahead
 source_folder: analysis/daily/2026-05-14/year-ahead
-generated_at: 2026-05-24T17:19:40.362Z
+generated_at: 2026-05-24T18:59:06.498Z
 language: en
 layout: article
 ---

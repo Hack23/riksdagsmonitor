@@ -1,12 +1,12 @@
 ---
 title: "Between 2026-04-15 and 2026-04-17, the four opposition parties"
 description: "Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V, MP, C) filed 20 counter-motions against 9 Tidö-government propositions — a coordinated legislative response concentrated in three…"
-keywords: "HD024082, HD024096, HD024092, HD024098, HD024090, HD024095, HD024097, HD024091, prop 2025/26:236, prop 2025/26:235, FiU, MP, S s Nato-era, Zero SD, Full Tid, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions"
+keywords: "HD024082, HD024096, HD024092, HD024098, HD024090, HD024095, HD024097, HD024091, prop 2025/26:236, prop 2025/26:235, FiU, MP, Zero SD, Full Tid, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-05-24T17:19:39.092Z
+generated_at: 2026-05-24T18:59:04.421Z
 language: en
 layout: article
 ---

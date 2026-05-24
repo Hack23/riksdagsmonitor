@@ -1,12 +1,12 @@
 ---
 title: "Swedish Election Cycle 2022–2030"
 description: "Sweden's Tidö government enters its final 132 days before the September 13, 2026 riksdag election. The M+KD+L minority government, sustained by Sverigedemokraterna (SD) confidence and supply since…"
-keywords: "HD03262, HD03265, HD03263, HD03264, HD03254, HD01SfU28, HD01KU39, HD03258, HD10458, HD10463, HD10461, Prop. 2025/26:262, Prop. 2025/26:265, Prop. 2025/26:263, Prop. 2025/26:264, Prop. 2025/26:254, KU39, KU, SD, Sweden s Tid, Asylum Pact, Social Democrats, Riksdagsmonitor, Swedish Parliament"
+keywords: "HD03262, HD03265, HD03263, HD03264, HD03254, HD01SfU28, HD01KU39, HD03258, HD10458, HD10463, HD10461, Prop. 2025/26:262, Prop. 2025/26:265, Prop. 2025/26:263, Prop. 2025/26:264, Prop. 2025/26:254, KU39, KU, SD, Asylum Pact, Social Democrats, Riksdagsmonitor, Swedish Parliament, Riksdag"
 date: 2026-05-04
 subfolder: election-cycle
 slug: 2026-05-04-election-cycle
 source_folder: analysis/daily/2026-05-04/election-cycle
-generated_at: 2026-05-24T17:19:39.639Z
+generated_at: 2026-05-24T18:59:05.308Z
 language: en
 layout: article
 ---

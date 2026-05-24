@@ -1,12 +1,12 @@
 ---
 title: "Eight opposition motions filed against two government propositions"
 description: "Eight opposition motions filed against two government propositions expose deep cross-party fractures on forestry deregulation and juvenile criminal justice with 125 days to election."
-keywords: "HD024141, HD024147, HD024144, HD024145, HD024143, HD024142, HD024146, HD024148, Prop. 2025/26:242, Prop. 2025/26:246, MJU, IMF Vintage, Publication Decision, Coverage Framing, Forward Watch, Monitor MJU, IMF WEO-, Habitats Directive, If SD, Monitor SD s Martin Kinnunen s, SCB Skogsdata, Riksdagsmonitor, Swedish Parliament, Riksdag"
+keywords: "HD024141, HD024147, HD024144, HD024145, HD024143, HD024142, HD024146, HD024148, Prop. 2025/26:242, Prop. 2025/26:246, MJU, IMF Vintage, Publication Decision, Coverage Framing, Forward Watch, Monitor MJU, IMF WEO, Habitats Directive, If SD, SCB Skogsdata, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence"
 date: 2026-05-11
 subfolder: motions
 slug: 2026-05-11-motions
 source_folder: analysis/daily/2026-05-11/motions
-generated_at: 2026-05-24T17:19:40.153Z
+generated_at: 2026-05-24T18:59:06.155Z
 language: en
 layout: article
 ---

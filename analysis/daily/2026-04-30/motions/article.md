@@ -1,12 +1,12 @@
 ---
 title: "Opposition Motions Challenge Government on Environmental Permitting, Energy Transition and Youth Justice"
 description: "Swedish opposition parties have filed seventeen motions (2026-04-29) challenging the government's energy and environmental legislative agenda across four major areas: the creation of a new…"
-keywords: "HD024124, HD024126, HD024129, HD024136, HD024138, prop. 2025/26:238, JuU, MJU, NU, TU, AU, SD, KD, Social Democrats, Centre Party, WEO Apr-, IMF Economic Provenance, IMF WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
+keywords: "HD024124, HD024126, HD024129, HD024136, HD024138, prop. 2025/26:238, JuU, MJU, NU, TU, AU, SD, KD, Social Democrats, Centre Party, WEO Apr, IMF Economic Provenance, IMF WEO Apr, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
 date: 2026-04-30
 subfolder: motions
 slug: 2026-04-30-motions
 source_folder: analysis/daily/2026-04-30/motions
-generated_at: 2026-05-24T17:19:39.497Z
+generated_at: 2026-05-24T18:59:05.068Z
 language: en
 layout: article
 ---

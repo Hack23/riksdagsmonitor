@@ -1,12 +1,12 @@
 ---
 title: "Tidö Current Mandate"
 description: "The Tidö coalition delivered three major propositions on 2026-05-07 — state e-ID, foreign security threat expulsion, and Skatteverket address fraud powers — bringing mandate completion to 78% and…"
-keywords: "HD03267, HD03250, HD01UbU28, James Pether Sörling, WEO Apr-, Lotta Edholm s, PIR ID, ID Riksdag, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Current, election cycle current, English"
+keywords: "HD03267, HD03250, HD01UbU28, James Pether Sörling, WEO Apr, PIR ID, ID Riksdag, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Current, election cycle current, English"
 date: 2026-05-08
 subfolder: election-cycle/current
 slug: 2026-05-08-election-cycle/current
 source_folder: analysis/daily/2026-05-08/election-cycle/current
-generated_at: 2026-05-24T17:19:39.984Z
+generated_at: 2026-05-24T18:59:05.882Z
 language: en
 layout: article
 ---

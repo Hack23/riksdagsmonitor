@@ -53,10 +53,16 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     expect(result).not.toMatch(/\band…$/);
   });
 
-  it('appends the brand suffix to short titles that fit the budget', () => {
+  it('prepends a reader-friendly localized date prefix to short titles that fit the budget', () => {
+    // Under the date-prefix contract (uniqueness signal preferred over brand
+    // when budget is tight), a 39-char H1 + 15-char localized date + 18-char
+    // brand = 72 chars > 70-char hardMax, so the brand is dropped but the
+    // date prefix stays as the uniqueness signal.
     const shortH1 = 'Riksdag Approves FiU48 Fuel-Tax Cut and';
     const result = buildSeoTitle({ ...baseInput, title: shortH1 });
-    expect(result).toMatch(/Riksdagsmonitor$/);
+    // Localized date prefix is present (newsroom date format, NOT ISO).
+    expect(result).toMatch(/May 15, 2026/);
+    // ISO YYYY-MM-DD form must NOT leak into the SERP title.
     expect(result).not.toMatch(/2026-05-15/);
     expect(result).not.toMatch(/ · en/);
     expect(result).toContain('Riksdag Approves');

@@ -1,12 +1,12 @@
 ---
 title: "Riksdag Week Ahead: Housing Reform, School Policy, and Diplomatic Strain — 10–16 May 2026"
 description: "The week of 10–16 May 2026 sees the Swedish Riksdag's Civil Affairs Committee (CU) advancing landmark rental-market liberalisation through the new privatuthyrningslag (HD01CU31) and enforcement…"
-keywords: "HD01CU31, HD01CU34, HD11802, HD10480, HD11803, CU31, CU, UbU, Education Committee, Social Democrats, Finance Minister, European Affairs Council, Foreign Minister Stenergard s, Foreign Minister Stenergard, IMF Sweden GDP, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Week Ahead"
+keywords: "HD01CU31, HD01CU34, HD11802, HD10480, HD11803, CU31, CU, UbU, Education Committee, Social Democrats, Finance Minister, European Affairs Council, Foreign Minister Stenergard, IMF Sweden GDP, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Week Ahead, English"
 date: 2026-05-10
 subfolder: week-ahead
 slug: 2026-05-10-week-ahead
 source_folder: analysis/daily/2026-05-10/week-ahead
-generated_at: 2026-05-24T17:19:40.104Z
+generated_at: 2026-05-24T18:59:06.080Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Sweden's Pre-Election Legislative Sprint: Migration, Crime, and Economic Bind"
 description: "Five months before Sweden's September 2026 general election, the Tidöalliansen government has launched its most ambitious pre-election legislative sprint: a four-bill migration mega-package…"
-keywords: "HD03262, HD03265, HD024124, HD10451, HD10458, HD03254, Sweden s September, Lagrådet ECHR, Monitor Lagrådet, Assess IMF, IMF WEO Apr-, Fresh IMF IFS, UK ELSA, US DCA, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Realtime Pulse, English"
+keywords: "HD03262, HD03265, HD024124, HD10451, HD10458, HD03254, Lagrådet ECHR, Monitor Lagrådet, Assess IMF, IMF WEO Apr, Fresh IMF IFS, UK ELSA, US DCA, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Realtime Pulse, English"
 date: 2026-05-01
 subfolder: realtime-pulse
 slug: 2026-05-01-realtime-pulse
 source_folder: analysis/daily/2026-05-01/realtime-pulse
-generated_at: 2026-05-24T17:19:39.574Z
+generated_at: 2026-05-24T18:59:05.206Z
 language: en
 layout: article
 ---

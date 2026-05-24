@@ -1,12 +1,12 @@
 ---
 title: "Opposition Targets Infrastructure, Welfare, and Corporate Crime Gaps in Latest Interpellations"
 description: "Three Social Democrat MPs filed interpellations (HD10449, HD10450, HD10451) on 2026-04-27, challenging the Tidö coalition government across three politically charged domains: railway infrastructure…"
-keywords: "HD10449, HD10450, HD10451, KD, Three Social Democrat MPs, Minister Carlson, Jessica Rodén s, Justice Minister Strömmer, Minister Andreas Carlson, Sickness Insurance, Minister Anna Tenje, Corporate Crime, Minister Gunnar Strömmer, Cross-referenced DIW, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
+keywords: "HD10449, HD10450, HD10451, KD, Three Social Democrat MPs, Minister Carlson, Justice Minister Strömmer, Minister Andreas Carlson, Sickness Insurance, Minister Anna Tenje, Corporate Crime, Minister Gunnar Strömmer, Cross-referenced DIW, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-04-28
 subfolder: interpellations
 slug: 2026-04-28-interpellations
 source_folder: analysis/daily/2026-04-28/interpellations
-generated_at: 2026-05-24T17:19:39.326Z
+generated_at: 2026-05-24T18:59:04.795Z
 language: en
 layout: article
 ---

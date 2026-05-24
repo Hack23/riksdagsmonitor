@@ -72,15 +72,18 @@ describe('computeArticleHeadMetadata', () => {
     expect(head.articleTypeLabel.length).toBeGreaterThan(0);
   });
 
-  it('produces a brand-suffixed branded <title> when seo.title omits the brand', () => {
+  it('produces a branded <title> with brand OR localized date prefix when seo.title omits the brand', () => {
     const head = computeArticleHeadMetadata({
       markdown: ARTICLE_MD,
       lang: 'en',
       canonicalPath: 'news/2026-05-22-committeeReports-en.html',
     });
-    // Either the SEO composer or the chrome-suffix rule ensures the
-    // branded `<title>` contains "Riksdagsmonitor".
-    expect(/riksdagsmonitor/i.test(head.brandedTitle)).toBe(true);
+    // Under the date-prefix contract, either the brand suffix or the
+    // localized newsroom date prefix anchors the SERP title (whichever fits
+    // the per-language SERP budget). Both are valid uniqueness signals.
+    expect(
+      /riksdagsmonitor/i.test(head.brandedTitle) || /May 22, 2026/.test(head.brandedTitle),
+    ).toBe(true);
   });
 
   it('forwards keywords / description into the buildArticleSeoMetadata output', () => {
@@ -191,8 +194,11 @@ describe('computeArticleHeadMetadata — branded <title> respects per-language S
     expect(head.brandedTitle).not.toMatch(/…\s*[—-]\s*Riksdagsmonitor\s*$/i);
   });
 
-  it('short H1 keeps the brand suffix when it fits the budget', () => {
-    // 41-char H1 + 18-char brand suffix = 59 chars ≤ 70 → brand fits.
+  it('short H1 keeps a brand-or-date anchor when it fits the budget', () => {
+    // 41-char H1 + 15-char localized date prefix " · May 22, 2026" + 18-char
+    // brand suffix = 74 chars > 70-char hardMax. Under the date-prefix
+    // contract, the date prefix wins (uniqueness signal preferred) and the
+    // brand drops — but the title still has an anchor (date OR brand).
     const shortH1 = 'Riksdag Sets Date for Constitutional Vote';
     const markdown = `---\ntitle: ${shortH1}\ndescription: x\nkeywords: x\ndate: 2026-05-22\n---\n\n# ${shortH1}\n`;
     const head = computeArticleHeadMetadata({
@@ -200,7 +206,9 @@ describe('computeArticleHeadMetadata — branded <title> respects per-language S
       lang: 'en',
       canonicalPath: 'news/2026-05-22-committeeReports-en.html',
     });
-    expect(/riksdagsmonitor/i.test(head.brandedTitle)).toBe(true);
+    expect(
+      /riksdagsmonitor/i.test(head.brandedTitle) || /May 22, 2026/.test(head.brandedTitle),
+    ).toBe(true);
     expect(head.brandedTitle.length).toBeLessThanOrEqual(70);
   });
 

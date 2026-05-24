@@ -1,12 +1,12 @@
 ---
 title: "Tidö Mandate Closes: Four-Year Security Pivot Defines 2026 Election Stakes"
 description: "The 2022–2026 Tidö mandate ends with a structurally transformed Swedish state — security architecture rebuilt, financial-stability framework rebooted, digital-identity stack codified, and immigration…"
-keywords: "HD03267, HD03261, HD03250, HD03249, HD03248, HD01JuU32, HD01JuU34, HD01JuU39, HD03263, HD01FiU37, JuU32, FiU37, KU, JuU, FiU, WEO Apr-, Cycle-Rollover Snapshot, Open PIRs, IMF WEO Apr-, WEP Confidence, Horizon Tag, World Bank WGI Sweden, No PII, Riksdagsmonitor"
+keywords: "HD03267, HD03261, HD03250, HD03249, HD03248, HD01JuU32, HD01JuU34, HD01JuU39, HD03263, HD01FiU37, JuU32, FiU37, KU, JuU, FiU, WEO Apr, Cycle-Rollover Snapshot, Open PIRs, IMF WEO Apr, WEP Confidence, Horizon Tag, World Bank WGI Sweden, No PII, Riksdagsmonitor"
 date: 2026-05-11
 subfolder: election-cycle/current
 slug: 2026-05-11-election-cycle/current
 source_folder: analysis/daily/2026-05-11/election-cycle/current
-generated_at: 2026-05-24T17:19:40.127Z
+generated_at: 2026-05-24T18:59:06.116Z
 language: en
 layout: article
 ---
