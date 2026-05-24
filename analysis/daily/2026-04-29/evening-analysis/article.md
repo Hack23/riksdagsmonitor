@@ -967,9 +967,9 @@ Implementation-feasibility considerations for HVB enforcement: Statskontoret has
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
 quadrantChart
-    title Risk Heat Map — 29 April 2026
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Heat Map — 29 April 2026"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Immediate Action
     quadrant-2 Escalation Watch
     quadrant-3 Background
@@ -979,8 +979,6 @@ quadrantChart
     Transport Inflation: [0.47, 0.60]
     SD-KD Energi: [0.25, 0.80]
     Kina Infrastruktur: [0.50, 0.65]
-    style HVB Scandalen fill:#ff006e
-    style C Vapenlag fill:#ff006e
 ```
 
 ## SWOT Analysis
@@ -1042,9 +1040,9 @@ quadrantChart
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d"}}}%%
 quadrantChart
-    title SWOT Position — 29 April 2026 Political Actors
-    x-axis Low Internal Strength --> High Internal Strength
-    y-axis Hostile Environment --> Favourable Environment
+    title "SWOT Position — 29 April 2026 Political Actors"
+ x-axis Low Internal Strength --> High Internal Strength
+ y-axis Hostile Environment --> Favourable Environment
     quadrant-1 Consolidate
     quadrant-2 Invest Selectively
     quadrant-3 Retreat
@@ -1054,9 +1052,6 @@ quadrantChart
     Centerpartiet: [0.48, 0.55]
     Vänsterpartiet: [0.35, 0.38]
     Miljöpartiet: [0.30, 0.45]
-    style Tidökoalitionen fill:#00d9ff
-    style Socialdemokraterna fill:#ff006e
-    style Centerpartiet fill:#ffbe0b
 ```
 
 ## Threat Analysis
@@ -1372,13 +1367,13 @@ quadrantChart
 ```mermaid
 %%{init: {"theme": "base"}}%%
 quadrantChart
-    title Implementation: Feasibility vs Political Priority
-    x-axis Low Feasibility --> High Feasibility
-    y-axis Low Political Priority --> High Political Priority
-    quadrant-1 High priority, low feasibility (risky)
-    quadrant-2 High priority, high feasibility (deliver)
-    quadrant-3 Low priority, low feasibility (deprioritise)
-    quadrant-4 Low priority, high feasibility (easy wins)
+    title "Implementation: Feasibility vs Political Priority"
+ x-axis Low Feasibility --> High Feasibility
+ y-axis Low Political Priority --> High Political Priority
+    quadrant-1 High priority, low feasibility risky
+    quadrant-2 High priority, high feasibility deliver
+    quadrant-3 Low priority, low feasibility deprioritise
+    quadrant-4 Low priority, high feasibility easy wins
     Transport Plan: [0.25, 0.75]
     Citizenship Law: [0.3, 0.8]
     Critical Infrastructure: [0.7, 0.85]

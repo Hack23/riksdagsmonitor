@@ -1145,7 +1145,6 @@ gantt
     section Election
     Election day             :milestone, 2026-09-13, 1d
     Government formation     :     2026-09-14, 2026-11-15
-    style crit fill:#ff006e
 ```
 
 ---
@@ -1247,17 +1246,17 @@ The 1.5× DIW multiplier correctly reflects this amplification effect. Applied c
 ```mermaid
 graph TD
     subgraph Critical["🔴 Critical Risk (P=High, I=Severe)"]
-        R1[ECHR challenge on HD03267<br/>Prob: 35% | Impact: Catastrophic]
-        R2[C party defection on CU31<br/>Prob: 25% | Impact: Severe]
+        R1["ECHR challenge on HD03267<br/>Prob: 35% | Impact: Catastrophic"]
+        R2["C party defection on CU31<br/>Prob: 25% | Impact: Severe"]
     end
     subgraph High["🟠 High Risk (P=Medium, I=High)"]
-        R3[Hyresnämnden capacity crisis<br/>Prob: 60% | Impact: High]
-        R4[Gaza consular escalation<br/>Prob: 30% | Impact: High]
-        R5[Teacher shortage — K-10 shortage<br/>Prob: 70% | Impact: High]
+        R3["Hyresnämnden capacity crisis<br/>Prob: 60% | Impact: High"]
+        R4["Gaza consular escalation<br/>Prob: 30% | Impact: High"]
+        R5["Teacher shortage — K-10 shortage<br/>Prob: 70% | Impact: High"]
     end
     subgraph Medium["🟡 Medium Risk"]
-        R6[Rural telecom political backlash<br/>Prob: 50% | Impact: Medium]
-        R7[Full-veil ban coalition tension<br/>Prob: 40% | Impact: Medium]
+        R6["Rural telecom political backlash<br/>Prob: 50% | Impact: Medium"]
+        R7["Full-veil ban coalition tension<br/>Prob: 40% | Impact: Medium"]
     end
     style Critical fill:#ff006e,color:#fff
     style High fill:#ffbe0b,color:#000
@@ -1322,9 +1321,9 @@ graph TD
 
 ```mermaid
 quadrantChart
-    title SWOT Analysis — Tidö May 2026 Legislative Sprint
-    x-axis Negative --> Positive
-    y-axis External --> Internal
+    title "SWOT Analysis — Tidö May 2026 Legislative Sprint"
+ x-axis Negative --> Positive
+ y-axis External --> Internal
     quadrant-1 Strengths
     quadrant-2 Weaknesses
     quadrant-3 Opportunities
@@ -1337,14 +1336,6 @@ quadrantChart
     Gaza Pressure: [0.20, 0.20]
     Rural Equity Gap: [0.25, 0.25]
     Nordic Model Brand: [0.80, 0.30]
-    style HD01CU31 Housing Reform fill:#00d9ff
-    style Security Trilogy fill:#00d9ff
-    style Education Reform fill:#00d9ff
-    style ECHR Risk HD03267 fill:#ff006e
-    style C Party Cohesion fill:#ff006e
-    style Gaza Pressure fill:#ffbe0b
-    style Rural Equity Gap fill:#ffbe0b
-    style Nordic Model Brand fill:#00d9ff
 ```
 
 ---

@@ -39,19 +39,19 @@ R03 (Migrationsverket overrun) → enforcement backlog grows → HD03263 fast-tr
 
 ```mermaid
 quadrantChart
-  title Risk Matrix (Likelihood vs Impact)
-  x-axis Low Likelihood --> High Likelihood
-  y-axis Low Impact --> High Impact
-  quadrant-1 Critical (monitor daily)
-  quadrant-2 High (monitor weekly)
-  quadrant-3 Low (quarterly review)
-  quadrant-4 Medium (monthly review)
+  title "Risk Matrix (Likelihood vs Impact)"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
+  quadrant-1 Critical monitor daily
+  quadrant-2 High monitor weekly
+  quadrant-3 Low quarterly review
+  quadrant-4 Medium monthly review
   R02_ECtHR: [0.80, 0.80]
   R03_Capacity: [0.80, 0.80]
-  R01_C_fracture: [0.60, 1.00]
+  R01_C_fracture: [0.60, 1]
   R09_Lagrådet: [0.60, 0.80]
   R04_IMY: [0.60, 0.80]
-  R06_PostElection: [0.40, 1.00]
+  R06_PostElection: [0.40, 1]
   R05_Digg: [0.60, 0.60]
   R07_Russia: [0.40, 0.80]
   R08_Resistance: [0.40, 0.60]

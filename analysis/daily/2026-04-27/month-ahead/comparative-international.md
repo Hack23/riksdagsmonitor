@@ -27,14 +27,17 @@ Sweden joins Norway, Denmark, Finland and Germany in the international reparatio
 Sweden's wind energy cultural conflict (HD10448, SD framing) contrasts sharply with Denmark where wind energy is broadly accepted across parties. Norway's oil wealth creates a different energy politics. Finland has moved forward with nuclear (Olkiluoto 3). Sweden's SD-driven skepticism of wind energy is regionally exceptional and creates friction with EU Green Deal commitments.
 
 ```mermaid
-radar
-    title Nordic Policy Profile — Sweden May 2026
-    "Justice Reform" : [9, 6, 5, 5, 6]
-    "Infrastructure" : [5, 7, 7, 6, 8]
-    "Social Insurance" : [6, 8, 7, 7, 7]
-    "Ukraine Commitment" : [8, 8, 8, 9, 8]
-    "Energy Transition" : [5, 7, 9, 8, 6]
-    style radar fill:#0a0e27,color:#e0e0e0
+flowchart LR
+    unsupported["⚠️ Mermaid radar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: radar
+%% original-source:
+%% radar
+%%     title Nordic Policy Profile — Sweden May 2026
+%%     "Justice Reform" : [9, 6, 5, 5, 6]
+%%     "Infrastructure" : [5, 7, 7, 6, 8]
+%%     "Social Insurance" : [6, 8, 7, 7, 7]
+%%     "Ukraine Commitment" : [8, 8, 8, 9, 8]
+%%     "Energy Transition" : [5, 7, 9, 8, 6]
 ```
 
 ## Assessment

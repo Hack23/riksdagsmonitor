@@ -67,8 +67,8 @@
 %%{init: {'theme': 'dark'}}%%
 quadrantChart
     title Implementeringsfeasibilitet
-    x-axis Låg politisk vilja --> Hög politisk vilja
-    y-axis Låg kapacitet --> Hög kapacitet
+ x-axis Låg politisk vilja --> Hög politisk vilja
+ y-axis Låg kapacitet --> Hög kapacitet
     quadrant-1 Implementering trolig
     quadrant-2 Kapacitetsgap
     quadrant-3 Strukturellt problem
@@ -78,7 +78,5 @@ quadrantChart
     FiU37 DORA: [0.90, 0.65]
     SoU31 Suicid: [0.80, 0.60]
     JuU39 Psykvåld: [0.85, 0.55]
-    style KU34 fill:#ffbe0b,color:#000
-    style FiU37 fill:#4caf50,color:#fff
 ```
 

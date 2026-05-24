@@ -29,9 +29,9 @@ Prior: RF-revision misslyckas = 25%. Update på basis av historisk koalitionsstr
 
 ```mermaid
 quadrantChart
-    title Risk Register — Likelihood × Impact
-    x-axis Låg sannolikhet --> Hög sannolikhet
-    y-axis Lågt impact --> Högt impact
+    title "Risk Register — Likelihood × Impact"
+ x-axis Låg sannolikhet --> Hög sannolikhet
+ y-axis Lågt impact --> Högt impact
     quadrant-1 Prioritera åtgärd
     quadrant-2 Bevaka
     quadrant-3 Acceptera
@@ -42,9 +42,5 @@ quadrantChart
     R4 SoU31 GDPR: [0.35, 0.75]
     R5 JuU39 Bevisning: [0.60, 0.60]
     R6 Intelligence-gap: [0.65, 0.80]
-    style R1 fill:#ff006e,color:#fff
-    style R2 fill:#ff006e,color:#fff
-    style R3 fill:#ff006e,color:#fff
-    style R6 fill:#ffbe0b,color:#000
 ```
 

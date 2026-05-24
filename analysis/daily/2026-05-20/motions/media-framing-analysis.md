@@ -22,12 +22,16 @@
 ## Frame strength assessment
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
-bar title Media Frame Strength Assessment
-    "Transparency reform" : 8
-    "Attack on unions" : 6
-    "C defends civil liberties" : 5
-    "Lagrådet rebukes government" : 7
+flowchart LR
+    unsupported["⚠️ Mermaid bar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: bar
+%% original-source:
+%% %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
+%% bar title Media Frame Strength Assessment
+%%     "Transparency reform" : 8
+%%     "Attack on unions" : 6
+%%     "C defends civil liberties" : 5
+%%     "Lagrådet rebukes government" : 7
 ```
 
 ---

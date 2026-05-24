@@ -45,15 +45,15 @@ Given prior government legislative successes in riksmöte 2025/26:
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "lineColor": "#00d9ff"}}}%%
 quadrantChart
-    title Risk Matrix — Opposition Motion Consequences
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix — Opposition Motion Consequences"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical Monitor
     quadrant-2 High Priority
     quadrant-3 Low Priority
     quadrant-4 Contingency
     R1 Legal Challenge: [0.6, 0.8]
-    R2 Coalition Fissure: [0.4, 1.0]
+    R2 Coalition Fissure: [0.4, 1]
     R4 Implementation: [0.8, 0.6]
     R5 Election Platform: [0.8, 0.6]
     R3 Climate Targets: [0.6, 0.6]

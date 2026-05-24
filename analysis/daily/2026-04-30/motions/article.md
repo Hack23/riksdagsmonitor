@@ -1225,18 +1225,18 @@ Statskontoret assessment cross-reference: No Statskontoret report specifically a
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
 quadrantChart
     title Implementation Feasibility vs. Political Feasibility
-    x-axis Low Political Feasibility --> High Political Feasibility
-    y-axis Low Implementation Feasibility --> High Implementation Feasibility
+ x-axis Low Political Feasibility --> High Political Feasibility
+ y-axis Low Implementation Feasibility --> High Implementation Feasibility
     quadrant-1 High Priority Wins
     quadrant-2 Technically Ready, Needs Coalition
     quadrant-3 Long-Term Projects
     quadrant-4 Political Wins, Technical Work Needed
-    MJU oversight (HD024124-series): [0.6, 0.85]
-    Consumer protection (HD024138): [0.55, 0.80]
-    Wind faster permits (HD024126): [0.45, 0.70]
-    Municipal veto (HD024137): [0.35, 0.60]
-    Youth rehabilitation (HD024136): [0.25, 0.45]
-    Public grid ownership (HD024130): [0.20, 0.30]
+    "MJU oversight (HD024124-series)": [0.6, 0.85]
+    "Consumer protection (HD024138)": [0.55, 0.80]
+    "Wind faster permits (HD024126)": [0.45, 0.70]
+    "Municipal veto (HD024137)": [0.35, 0.60]
+    "Youth rehabilitation (HD024136)": [0.25, 0.45]
+    "Public grid ownership (HD024130)": [0.20, 0.30]
 ```
 
 _Evidence: HD024124–HD024140 — riksdagen.se. No Statskontoret report found for this specific reform cluster (statskontoret.se, 2026-04-30)._

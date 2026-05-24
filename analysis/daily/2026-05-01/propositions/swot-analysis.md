@@ -49,8 +49,8 @@ The dominant cross-SWOT dynamic: **Electoral Strength × ECHR Threat**. The dete
 %%{init: {"theme": "dark"}}%%
 quadrantChart
     title SWOT Strategic Assessment
-    x-axis Low Strategic Exposure --> High Strategic Exposure
-    y-axis Low Political Gain --> High Political Gain
+ x-axis Low Strategic Exposure --> High Strategic Exposure
+ y-axis Low Political Gain --> High Political Gain
     quadrant-1 High Value — Manage Risk
     quadrant-2 Quick Win — Exploit
     quadrant-3 Low Priority
@@ -59,6 +59,4 @@ quadrantChart
     Defence HD03254: [0.30, 0.75]
     Transparency HD03258: [0.25, 0.60]
     Detention HD03265: [0.90, 0.85]
-    style Migration Package color:#ff006e
-    style Detention HD03265 color:#ffbe0b
 ```

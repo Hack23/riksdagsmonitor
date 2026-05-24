@@ -42,7 +42,6 @@ xychart-beta
     x-axis ["HD03259 Infrastructure", "HD03252 Prison Benefits", "HD03253 Banking", "HD03247 OTC"]
     y-axis "Electoral Impact" 0 --> 10
     bar [8, 9, 2, 3]
-    style bar fill:#00d9ff
 ```
 
 ## Party Positioning Matrix

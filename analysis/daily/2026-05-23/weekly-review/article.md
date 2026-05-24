@@ -750,9 +750,9 @@ Sweden's fiscal position (WEO Apr-2026) provides buffer: general government gros
 
 ```mermaid
 quadrantChart
-    title Tidö Coalition SWOT — Week of 23 May 2026
-    x-axis Internal --> External
-    y-axis Negative --> Positive
+    title "Tidö Coalition SWOT — Week of 23 May 2026"
+ x-axis Internal --> External
+ y-axis Negative --> Positive
     quadrant-1 Opportunities
     quadrant-2 Strengths
     quadrant-3 Weaknesses
@@ -763,12 +763,6 @@ quadrantChart
     Narrow majority: [0.2, 0.3]
     Rights litigation risk: [0.75, 0.2]
     SD escalation pressure: [0.3, 0.2]
-    style Security delivery fill:#00ff88
-    style Fiscal space fill:#00ff88
-    style Education crowding fill:#00ff88
-    style Narrow majority fill:#ff4444
-    style Rights litigation risk fill:#ff4444
-    style SD escalation pressure fill:#ff4444
 ```
 
 ### Strengths (Internal, Positive)

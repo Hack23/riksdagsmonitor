@@ -43,7 +43,7 @@ The deportation and reception-law battles (HD024090, HD024076 riksdagen.se) crea
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
 xychart-beta
-    title Current Seat Distribution — Swedish Riksdag 2022
+    title "Current Seat Distribution — Swedish Riksdag 2022"
     x-axis ["S", "SD", "M", "C", "V", "KD", "MP", "L"]
     y-axis "Seats" 0 --> 120
     bar [107, 73, 68, 24, 24, 19, 18, 16]

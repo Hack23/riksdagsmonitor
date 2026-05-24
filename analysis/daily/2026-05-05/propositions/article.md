@@ -52,14 +52,13 @@ Confidence HIGH based on: official Riksdag document HD03255 [A1]; betänkande Fi
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 ## Reader Intelligence Guide
@@ -245,7 +244,6 @@ xychart-beta
     x-axis ["Direct Impact", "Institutional Weight", "Wider Implications", "Composite"]
     y-axis "Score" 0 --> 10
     bar [7, 8, 7, 7.3]
-    style Direct Impact fill:#00d9ff,stroke:#00d9ff
 ```
 
 ---
@@ -763,9 +761,9 @@ timeline
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "primaryTextColor": "#e0e0e0", "lineColor": "#00d9ff"}}}%%
 quadrantChart
-    title Risk Matrix — Probability vs. Impact
-    x-axis Low Impact --> High Impact
-    y-axis Low Probability --> High Probability
+    title "Risk Matrix — Probability vs. Impact"
+ x-axis Low Impact --> High Impact
+ y-axis Low Probability --> High Probability
     quadrant-1 Critical risk
     quadrant-2 Monitor
     quadrant-3 Accept
@@ -774,10 +772,6 @@ quadrantChart
     R2 Opposition amendment HD03255: [0.55, 0.5]
     R3 Bank lobbying HD03255: [0.5, 0.35]
     R4 FI implementation delay HD03255: [0.5, 0.3]
-    style R1 Lagrådet block HD03255 fill:#ff006e,stroke:#ff006e
-    style R2 Opposition amendment HD03255 fill:#ffbe0b,stroke:#ffbe0b
-    style R3 Bank lobbying HD03255 fill:#1a1e3d,stroke:#00d9ff
-    style R4 FI implementation delay HD03255 fill:#1a1e3d,stroke:#00d9ff
 ```
 
 ## SWOT Analysis
@@ -823,9 +817,9 @@ quadrantChart
 
 ```mermaid
 quadrantChart
-    title SWOT Matrix — Macro-Prudential vs. Implementation Risk
-    x-axis Internal (W/S) --> External (O/T)
-    y-axis Negative --> Positive
+    title "SWOT Matrix — Macro-Prudential vs. Implementation Risk"
+ x-axis Internal W/S --> External O/T
+ y-axis Negative --> Positive
     quadrant-1 Opportunities to capture
     quadrant-2 Strengths to leverage
     quadrant-3 Threats to mitigate
@@ -836,12 +830,6 @@ quadrantChart
     Bank compliance burden: [0.75, 0.3]
     Enhanced precision: [0.8, 0.8]
     Limited API text: [0.25, 0.4]
-    style Data gap closure HD03255 fill:#00d9ff,stroke:#00d9ff
-    style EU compliance HD03255 fill:#00d9ff,stroke:#00d9ff
-    style Privacy litigation risk fill:#ff006e,stroke:#ff006e
-    style Bank compliance burden fill:#ff006e,stroke:#ff006e
-    style Enhanced precision fill:#ffbe0b,stroke:#ffbe0b
-    style Limited API text fill:#1a1e3d,stroke:#ffbe0b
 ```
 
 ## Threat Analysis
@@ -1090,9 +1078,9 @@ gantt
 ```mermaid
 %%{init: {"theme": "dark"}}%%
 quadrantChart
-    title Media Frame Map — Prominence vs. Sentiment
-    x-axis Negative Framing --> Positive Framing
-    y-axis Low Media Prominence --> High Media Prominence
+    title "Media Frame Map — Prominence vs. Sentiment"
+ x-axis Negative Framing --> Positive Framing
+ y-axis Low Media Prominence --> High Media Prominence
     quadrant-1 Prominent positive coverage
     quadrant-2 Prominent negative coverage
     quadrant-3 Low-prominence negative
@@ -1101,8 +1089,6 @@ quadrantChart
     Privacy Concern Frame: [0.35, 0.55]
     EU Compliance Frame: [0.6, 0.35]
     Election Timing Frame: [0.4, 0.5]
-    style Financial Safety Frame fill:#00d9ff,color:#0a0e27,stroke:#00d9ff
-    style Privacy Concern Frame fill:#ff006e,color:#fff,stroke:#ff006e
 ```
 
 ### Editorial Positioning Predictions
@@ -1200,9 +1186,9 @@ The dominant hypothesis (A) is supported by the preponderance of available evide
 ```mermaid
 %%{init: {"theme": "dark"}}%%
 quadrantChart
-    title Party Support vs. Salience — HD03255
-    x-axis Low Salience --> High Salience
-    y-axis Opposition --> Support
+    title "Party Support vs. Salience — HD03255"
+ x-axis Low Salience --> High Salience
+ y-axis Opposition --> Support
     quadrant-1 High profile supporters
     quadrant-2 Low profile supporters
     quadrant-3 Low profile opponents
@@ -1215,9 +1201,6 @@ quadrantChart
     Sverigedemokraterna SD: [0.35, 0.68]
     Vänsterpartiet V: [0.45, 0.55]
     Miljöpartiet MP: [0.35, 0.6]
-    style Moderaterna M fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
-    style Liberalerna L fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
-    style Socialdemokraterna S fill:#ff006e,stroke:#ff006e,color:#fff
 ```
 
 #### Signal Intelligence Classification
@@ -1453,14 +1436,13 @@ No prior `pir-status.json` found for propositions subfolder in the last 14 days 
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -1507,14 +1489,13 @@ Konfidens HØJ baseret på: officielt Riksdag-dokument HD03255 [A1]; betænkning
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -1561,14 +1542,13 @@ Konfidens HOCH basierend auf: offiziellem Riksdag-Dokument HD03255 [A1]; Ausschu
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -1615,14 +1595,13 @@ Confianza ALTA basada en: documento oficial del Riksdag HD03255 [A1]; planificac
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -1669,14 +1648,13 @@ Luottamus KORKEA perustuen: virallinen Riksdag-asiakirja HD03255 [A1]; mietintö
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -1723,14 +1701,13 @@ Confiance ÉLEVÉE basée sur : document officiel Riksdag HD03255 [A1] ; planifi
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -1786,14 +1763,13 @@ quadrantChart
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -1846,14 +1822,13 @@ quadrantChart
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -1906,14 +1881,13 @@ quadrantChart
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -1960,14 +1934,13 @@ Betrouwbaarheid HOOG gebaseerd op: officieel Riksdag-document HD03255 [A1]; comm
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -2014,14 +1987,13 @@ Tillit HØY basert på: offisielt Riksdag-dokument HD03255 [A1]; betenkning FiU4
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -2068,14 +2040,13 @@ Konfidens HÖG baserat på: officiellt riksdagsdokument HD03255 [A1]; betänkand
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->
@@ -2128,14 +2099,13 @@ quadrantChart
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->

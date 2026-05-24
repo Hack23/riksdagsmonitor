@@ -26,16 +26,16 @@
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map — Likelihood × Impact (April–May 2026)
-    x-axis Low Impact (1) --> High Impact (5)
-    y-axis Low Likelihood (1) --> High Likelihood (5)
+    title "Risk Heat Map — Likelihood × Impact (April–May 2026)"
+ x-axis Low Impact 1 --> High Impact 5
+ y-axis Low Likelihood 1 --> High Likelihood 5
     quadrant-1 "CRITICAL"
     quadrant-2 "HIGH"
     quadrant-3 "LOW"
     quadrant-4 "MONITOR"
     R02 Deportation Legal: [0.75, 0.50]
-    R01 Budget Defeat: [1.00, 0.25]
-    R08 NATO Security: [1.00, 0.25]
+    R01 Budget Defeat: [1, 0.25]
+    R08 NATO Security: [1, 0.25]
     R03 Energy Prices: [0.50, 0.50]
     R05 Sentencing Court: [0.50, 0.50]
     R07 Shelter Crisis: [0.50, 0.50]
@@ -44,16 +44,6 @@ quadrantChart
     R09 GDP Revision: [0.75, 0.25]
     R10 Wind Revenue: [0.25, 0.50]
 
-    style R01 fill:#C62828,color:#FFFFFF
-    style R08 fill:#C62828,color:#FFFFFF
-    style R02 fill:#E65100,color:#FFFFFF
-    style R03 fill:#1565C0,color:#FFFFFF
-    style R05 fill:#1565C0,color:#FFFFFF
-    style R07 fill:#1565C0,color:#FFFFFF
-    style R04 fill:#4CAF50,color:#FFFFFF
-    style R06 fill:#4CAF50,color:#FFFFFF
-    style R09 fill:#4CAF50,color:#FFFFFF
-    style R10 fill:#757575,color:#FFFFFF
 ```
 
 ---

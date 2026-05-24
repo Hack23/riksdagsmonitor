@@ -69,23 +69,18 @@ Segments drawn from SCB demographic data and Riksdag election analysis. [B2 — 
 
 ```mermaid
 quadrantChart
-    title Voter Segment Response (Pro vs Anti Legislative Package)
-    x-axis Opposed --> Supportive
-    y-axis Low Electoral Engagement --> High Engagement
+    title "Voter Segment Response (Pro vs Anti Legislative Package)"
+ x-axis Opposed --> Supportive
+ y-axis Low Electoral Engagement --> High Engagement
     quadrant-1 High Engagement, Supportive
     quadrant-2 High Engagement, Opposed
     quadrant-3 Low Engagement, Opposed
     quadrant-4 Low Engagement, Supportive
     "Security Voters": [0.85, 0.90]
-    "Labour/Union": [0.30, 0.75]
+   "#quot;Labour/Union#quot;": [0.30, 0.75]
     "Civil Liberties": [0.20, 0.80]
     "Pensioners": [0.65, 0.65]
     "Recent Immigrants": [0.10, 0.40]
 
-    style Security Voters fill:#00ff88,color:#000
-    style Labour/Union fill:#ff4466,color:#fff
-    style Civil Liberties fill:#ff4466,color:#fff
-    style Pensioners fill:#ffbe0b,color:#000
-    style Recent Immigrants fill:#9966ff,color:#fff
 ```
 

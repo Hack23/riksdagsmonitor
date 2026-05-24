@@ -73,14 +73,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 ## Reader Intelligence Guide
@@ -2108,14 +2100,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2183,14 +2167,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2258,14 +2234,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2333,14 +2301,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2408,14 +2368,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2483,14 +2435,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2561,14 +2505,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2636,14 +2572,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2711,14 +2639,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2786,14 +2706,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2861,14 +2773,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -2936,14 +2840,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->
@@ -3011,14 +2907,6 @@ mindmap
         HouseholdDebt
         Macroprudential
 
-classDef high fill:#ff4444,color:#fff
-classDef medium fill:#ff8800,color:#fff
-classDef low fill:#44aa44,color:#fff
-
-style SecurityCluster fill:#330000,color:#ffaaaa
-style DigitalGovernance fill:#002200,color:#aaffaa
-style Transparency fill:#000033,color:#aaaaff
-style Fiscal fill:#222200,color:#ffffaa
 ```
 
 <!-- source-sha: b23cd950c7dc1d61ab6255591f285cdfd3441ba4 -->

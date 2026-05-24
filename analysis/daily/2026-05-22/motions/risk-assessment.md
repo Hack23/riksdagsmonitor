@@ -56,9 +56,9 @@
 
 ```mermaid
 quadrantChart
-    title Risk Matrix (Likelihood vs. Impact)
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix (Likelihood vs. Impact)"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical
     quadrant-2 Monitor Closely
     quadrant-3 Low Priority
@@ -70,12 +70,6 @@ quadrantChart
     R005 Macroprudential Gap: [0.5, 0.45]
     R006 Electoral Mobilisation: [0.8, 0.45]
 
-    style R001 Constitutional Overreach fill:#ff006e,stroke:#ff006e
-    style R002 Coalition Fracture SfU fill:#ff006e,stroke:#ff006e
-    style R003 GDPR Biometric fill:#ffbe0b,stroke:#ffbe0b
-    style R004 Union Transparency Defeat fill:#ffbe0b,stroke:#ffbe0b
-    style R005 Macroprudential Gap fill:#ffbe0b,stroke:#ffbe0b
-    style R006 Electoral Mobilisation fill:#00d9ff,stroke:#00d9ff
 ```
 
 ## Institutional Dimension

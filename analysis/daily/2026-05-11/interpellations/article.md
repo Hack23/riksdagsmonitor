@@ -635,19 +635,19 @@ Baserat på MJU-briefingen 2026-05-05 (HDA1MJU44p) där Johan Britz informerade 
 
 ```mermaid
 quadrantChart
-    title SWOT-position: Klimatproposition HD10481
-    x-axis "Interna faktorer (S→W)" --> ""
-    y-axis "Externa faktorer (O→T)" --> ""
-    quadrant-1 Strategi: Utnyttja
-    quadrant-2 Strategi: Stärk & Utnyttja
-    quadrant-3 Strategi: Bygg upp
-    quadrant-4 Strategi: Försvara
-    "Brett partistöd (S1)": [0.85, 0.75]
-    "Klimatlagen (S2)": [0.80, 0.65]
-    "EU-förpliktelse (O2)": [0.30, 0.85]
-    "S valrörelseattack (T1)": [0.25, 0.15]
-    "Vikariat = låg prio (W1)": [0.15, 0.50]
-    "Propositionsfönster (W2)": [0.20, 0.60]
+    title "SWOT-position: Klimatproposition HD10481"
+ x-axis "Interna faktorer S→W" --> ""
+ y-axis "Externa faktorer O→T" --> ""
+    quadrant-1 Strategi Utnyttja
+    quadrant-2 Strategi Stärk & Utnyttja
+    quadrant-3 Strategi Bygg upp
+    quadrant-4 Strategi Försvara
+   "#quot;Brett partistöd (S1)#quot;": [0.85, 0.75]
+   "#quot;Klimatlagen (S2)#quot;": [0.80, 0.65]
+   "#quot;EU-förpliktelse (O2)#quot;": [0.30, 0.85]
+   "#quot;S valrörelseattack (T1)#quot;": [0.25, 0.15]
+   "#quot;Vikariat = låg prio (W1)#quot;": [0.15, 0.50]
+   "#quot;Propositionsfönster (W2)#quot;": [0.20, 0.60]
 ```
 
 ## Threat Analysis

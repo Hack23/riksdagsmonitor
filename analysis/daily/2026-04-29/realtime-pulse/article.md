@@ -1132,13 +1132,13 @@ graph TD
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
 quadrantChart
-    title Risk Heatmap: Likelihood vs Impact (29 Apr 2026)
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical (Monitor + Act)
-    quadrant-2 Strategic (Plan + Mitigate)
-    quadrant-3 Watch (Track)
-    quadrant-4 Background (Accept)
+    title "Risk Heatmap: Likelihood vs Impact (29 Apr 2026)"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
+    quadrant-1 Critical Monitor + Act
+    quadrant-2 Strategic Plan + Mitigate
+    quadrant-3 Watch Track
+    quadrant-4 Background Accept
     HVB Criminal Gangs R1: [0.80, 0.80]
     China Industry R2: [0.65, 0.85]
     Water Crisis R3: [0.55, 0.75]
@@ -1192,13 +1192,13 @@ quadrantChart
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
 quadrantChart
-    title SWOT Positioning — 29 April 2026 Swedish Politics
-    x-axis Internal Weakness --> Internal Strength
-    y-axis External Threat --> External Opportunity
-    quadrant-1 Leverage (SO)
-    quadrant-2 Develop (WO)
-    quadrant-3 Defend (ST)
-    quadrant-4 Mitigate (WT)
+    title "SWOT Positioning — 29 April 2026 Swedish Politics"
+ x-axis Internal Weakness --> Internal Strength
+ y-axis External Threat --> External Opportunity
+    quadrant-1 Leverage SO
+    quadrant-2 Develop WO
+    quadrant-3 Defend ST
+    quadrant-4 Mitigate WT
     JuU10 Weapons Law: [0.85, 0.80]
     Nuclear HD01NU19: [0.80, 0.75]
     HVB Criminal Gangs: [0.20, 0.20]
@@ -1406,7 +1406,7 @@ timeline
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
 xychart-beta
-    title Sweden vs Peers: Policy Readiness Score (1-10)
+    title "Sweden vs Peers: Policy Readiness Score (1-10)"
     x-axis ["FDI/China Screening", "Water Security Planning", "Weapons Law EU Alignment", "Nuclear Permitting Speed"]
     y-axis 0 --> 10
     bar [4, 4, 7, 5]
@@ -1486,7 +1486,7 @@ xychart-beta
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
 xychart-beta
-    title Implementation Feasibility Score (1-10 scale)
+    title "Implementation Feasibility Score (1-10 scale)"
     x-axis ["JuU10 Legal", "JuU10 Admin", "NU19 Nuclear", "CU37 Housing", "HVB Reform", "Water Security"]
     y-axis 0 --> 10
     bar [9, 5, 9, 5, 6, 4]

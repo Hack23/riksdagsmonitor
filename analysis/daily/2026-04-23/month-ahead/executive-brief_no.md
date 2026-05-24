@@ -41,9 +41,9 @@ Sverige går inn i de siste fem ukene av parlamentssesjonen 2025/26 med tre samm
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -57,14 +57,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---

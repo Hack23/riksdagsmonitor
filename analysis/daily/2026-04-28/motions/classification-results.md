@@ -32,13 +32,12 @@
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title Classification Matrix — HD024099
-    x-axis "Low Controversy" --> "High Controversy"
-    y-axis "Low Urgency" --> "High Urgency"
+    title "Classification Matrix — HD024099"
+ x-axis "Low Controversy" --> "High Controversy"
+ y-axis "Low Urgency" --> "High Urgency"
     quadrant-1 Priority
     quadrant-2 Watch
     quadrant-3 Background
     quadrant-4 Emerging
     HD024099: [0.82, 0.88]
-    style HD024099 fill:#ff006e
 ```

@@ -33,5 +33,4 @@ xychart-beta
   x-axis ["Issue Salience", "Political Sensitivity", "Institutional Weight", "Societal Breadth", "Temporal Urgency"]
   y-axis "Score" 0 --> 20
   bar [16, 18, 12, 14, 12]
-  style bar fill:#00d9ff
 ```

@@ -30,15 +30,15 @@ Coalition demonstrates moderate risk across 20 committee reports. Defence and cl
 ```mermaid
 quadrantChart
     title Risk Assessment Matrix
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Monitor
     quadrant-2 Critical
     quadrant-3 Low Priority
     quadrant-4 Manage
     Climate Target Dilution: [0.6, 0.8]
     Housing Crisis: [0.8, 0.6]
-    Defence Gaps: [0.4, 1.0]
+    Defence Gaps: [0.4, 1]
     EU Subsidiarity Friction: [0.6, 0.6]
     Opposition Coordination: [0.6, 0.6]
     Minority Language Erosion: [0.6, 0.4]

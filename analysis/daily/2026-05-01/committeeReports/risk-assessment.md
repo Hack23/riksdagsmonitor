@@ -42,5 +42,4 @@ xychart-beta
     x-axis ["R1","R3","R2","R6","R8","R4","R5","R7"]
     y-axis "Risk Score (L x I)" 0 --> 22
     bar [20, 15, 12, 12, 10, 9, 6, 6]
-    style xychart fill:#0a0e27,color:#e0e0e0
 ```

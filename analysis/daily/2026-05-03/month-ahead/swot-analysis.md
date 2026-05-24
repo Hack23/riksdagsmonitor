@@ -68,18 +68,18 @@ Sweden's GDP growth recovery is modest (~2.1–2.3% 2026). If unemployment rises
 ```mermaid
 quadrantChart
     title SWOT Risk-Opportunity Matrix
-    x-axis "Weakness" --> "Strength"
-    y-axis "Threat" --> "Opportunity"
-    quadrant-1 Leverage (S+O)
-    quadrant-2 Invest/Mitigate (W+O)
-    quadrant-3 Defend (W+T)
-    quadrant-4 Monitor (S+T)
-    "Migration narrative (S1+O1)": [0.75, 0.80]
-    "Defense credibility (S2+O3)": [0.82, 0.72]
-    "ECHR risk (W1+T1)": [0.20, 0.25]
-    "L loyalty (W2+T3)": [0.15, 0.20]
-    "Agency capacity (W3)": [0.25, 0.45]
-    "S counter-narrative (T2)": [0.55, 0.30]
-    "Healthcare (S3+O4)": [0.70, 0.65]
-    "Fiscal strength (S4)": [0.80, 0.55]
+ x-axis "Weakness" --> "Strength"
+ y-axis "Threat" --> "Opportunity"
+    quadrant-1 Leverage S+O
+    quadrant-2 Invest/Mitigate W+O
+    quadrant-3 Defend W+T
+    quadrant-4 Monitor S+T
+   "#quot;Migration narrative (S1+O1)#quot;": [0.75, 0.80]
+   "#quot;Defense credibility (S2+O3)#quot;": [0.82, 0.72]
+   "#quot;ECHR risk (W1+T1)#quot;": [0.20, 0.25]
+   "#quot;L loyalty (W2+T3)#quot;": [0.15, 0.20]
+   "#quot;Agency capacity (W3)#quot;": [0.25, 0.45]
+   "#quot;S counter-narrative (T2)#quot;": [0.55, 0.30]
+   "#quot;Healthcare (S3+O4)#quot;": [0.70, 0.65]
+   "#quot;Fiscal strength (S4)#quot;": [0.80, 0.55]
 ```

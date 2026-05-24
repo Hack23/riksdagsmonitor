@@ -72,15 +72,15 @@
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
     title Implementation Feasibility vs Political Feasibility
-    x-axis Low Political --> High Political
-    y-axis Low Technical --> High Technical
+ x-axis Low Political --> High Political
+ y-axis Low Technical --> High Technical
     quadrant-1 Easiest to implement
     quadrant-2 Technically easy, politically hard
     quadrant-3 Hardest overall
     quadrant-4 Politically viable, technically complex
-    "Env. Authority HD024124" [0.15, 0.80]
-    "Honour Violence HD024133/140" [0.65, 0.85]
-    "Wind Power HD024126" [0.30, 0.55]
-    "Electricity HD024129" [0.15, 0.30]
-    "Juvenile Justice HD024136" [0.25, 0.65]
+    "Env. Authority HD024124": [0.15, 0.80]
+   "#quot;Honour Violence HD024133/140#quot;": [0.65, 0.85]
+    "Wind Power HD024126": [0.30, 0.55]
+    "Electricity HD024129": [0.15, 0.30]
+    "Juvenile Justice HD024136": [0.25, 0.65]
 ```

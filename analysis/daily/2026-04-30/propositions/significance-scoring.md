@@ -42,7 +42,6 @@ xychart-beta
     x-axis ["HD03259 Transport", "HD03253 Banking", "HD03252 Prison", "HD03247 OTC"]
     y-axis "DIW Score" 0 --> 10
     bar [9.0, 8.0, 8.0, 6.5]
-    style bar fill:#00d9ff
 ```
 
 ## Priority Tier Summary

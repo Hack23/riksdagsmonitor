@@ -42,13 +42,13 @@
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
 quadrantChart
-    title SWOT Positioning — 29 April 2026 Swedish Politics
-    x-axis Internal Weakness --> Internal Strength
-    y-axis External Threat --> External Opportunity
-    quadrant-1 Leverage (SO)
-    quadrant-2 Develop (WO)
-    quadrant-3 Defend (ST)
-    quadrant-4 Mitigate (WT)
+    title "SWOT Positioning — 29 April 2026 Swedish Politics"
+ x-axis Internal Weakness --> Internal Strength
+ y-axis External Threat --> External Opportunity
+    quadrant-1 Leverage SO
+    quadrant-2 Develop WO
+    quadrant-3 Defend ST
+    quadrant-4 Mitigate WT
     JuU10 Weapons Law: [0.85, 0.80]
     Nuclear HD01NU19: [0.80, 0.75]
     HVB Criminal Gangs: [0.20, 0.20]

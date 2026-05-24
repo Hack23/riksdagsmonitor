@@ -77,8 +77,8 @@ The five-party opposition coalition on welfare (S+V+C+MP) creates an unusually b
 ```mermaid
 quadrantChart
     title SWOT Significance Matrix
-    x-axis Internal --> External
-    y-axis Negative --> Positive
+ x-axis Internal --> External
+ y-axis Negative --> Positive
     quadrant-1 "Opportunities"
     quadrant-2 "Strengths"
     quadrant-3 "Weaknesses"
@@ -91,10 +91,6 @@ quadrantChart
     O2-PostElection: [0.8, 0.65]
     T1-Constitutional: [0.75, 0.1]
     T2-Municipal: [0.65, 0.2]
-    style S1-Constitutional fill:#00d9ff
-    style T1-Constitutional fill:#ff006e
-    style O1-Legacy fill:#ffbe0b
-    style W1-Vilande fill:#a855f7
 ```
 
 *Evidence: HD01KU34, HD01SoU29, HD01SoU30, HD01JuU43. Methodology: analysis/methodologies/political-swot-framework.md.*

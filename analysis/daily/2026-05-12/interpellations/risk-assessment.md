@@ -42,13 +42,13 @@
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map — 12 May 2026 Interpellations
-    x-axis "Low Probability" --> "High Probability"
-    y-axis "Low Severity" --> "High Severity"
-    quadrant-1 Critical (High/High)
-    quadrant-2 Watch (Low/High)
-    quadrant-3 Monitor (Low/Low)
-    quadrant-4 Urgent (High/Low)
+    title "Risk Heat Map — 12 May 2026 Interpellations"
+ x-axis "Low Probability" --> "High Probability"
+ y-axis "Low Severity" --> "High Severity"
+    quadrant-1 Critical High/High
+    quadrant-2 Watch Low/High
+    quadrant-3 Monitor Low/Low
+    quadrant-4 Urgent High/Low
     Svartarbete fiscal leakage: [0.75, 0.85]
     Gang crime financing: [0.70, 0.80]
     Accountability gap HD10481: [0.85, 0.55]

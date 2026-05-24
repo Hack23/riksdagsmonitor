@@ -53,8 +53,8 @@
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
     title SWOT Factor Positioning
-    x-axis Internal --> External
-    y-axis Negative --> Positive
+ x-axis Internal --> External
+ y-axis Negative --> Positive
     Majority capacity: [0.15, 0.88]
     FI HD03255: [0.20, 0.78]
     KU39 opportunity: [0.75, 0.82]
@@ -62,13 +62,6 @@ quadrantChart
     Gang crime trap: [0.25, 0.12]
     Lagrådet risk: [0.80, 0.15]
     EU infringement: [0.85, 0.22]
-    style Majority capacity fill:#00d9ff,stroke:#00d9ff
-    style FI HD03255 fill:#00d9ff,stroke:#00d9ff
-    style KU39 opportunity fill:#ffbe0b,stroke:#ffbe0b
-    style Ostlänken weakness fill:#ff006e,stroke:#ff006e
-    style Gang crime trap fill:#ff006e,stroke:#ff006e
-    style Lagrådet risk fill:#ff006e,stroke:#ff006e
-    style EU infringement fill:#ff006e,stroke:#ff006e
 ```
 
 ---

@@ -34,7 +34,6 @@ pie title Significance Distribution by Category
     "Social Insurance" : 15
     "Infrastructure" : 10
     "Other" : 5
-    style pie fill:#0a0e27,stroke:#00d9ff
 ```
 
 ## DIW Score Chart
@@ -45,5 +44,4 @@ xychart-beta
     x-axis ["JuU10 Vapen", "UkraineTrib", "StambananIP", "SjukIP", "CU25Prison", "SfU23Migr"]
     y-axis "DIW Score" 0 --> 0.5
     bar [0.45, 0.38, 0.35, 0.33, 0.30, 0.27]
-    style xychart-beta fill:#0a0e27,color:#e0e0e0
 ```

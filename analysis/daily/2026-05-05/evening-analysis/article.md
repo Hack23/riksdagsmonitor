@@ -1136,19 +1136,19 @@ With present polling distribution and 131 days remaining:
 ```mermaid
 quadrantChart
     title Risk Assessment 2026-05-05
-    x-axis "Low Impact" --> "High Impact"
-    y-axis "Low Probability" --> "High Probability"
-    quadrant-1 "Monitor (Low P, Low I)"
-    quadrant-2 "Manage (High P, Low I)"
-    quadrant-3 "Mitigate (Low P, High I)"
-    quadrant-4 "Act (High P, High I)"
-    R-01 "Coalition rupture Sida": [0.65, 0.6]
-    R-03 "NPT/NATO declaration": [0.55, 0.8]
-    R-06 "Media SD narrative": [0.65, 0.6]
-    R-05 "Civil servant anxiety": [0.7, 0.4]
-    R-04 "KD seat loss regional": [0.55, 0.6]
-    R-07 "Early election trigger": [0.85, 0.2]
-    R-09 "V NPT platform": [0.35, 0.8]
+ x-axis "Low Impact" --> "High Impact"
+ y-axis "Low Probability" --> "High Probability"
+    quadrant-1 "Monitor Low P, Low I"
+    quadrant-2 "Manage High P, Low I"
+    quadrant-3 "Mitigate Low P, High I"
+    quadrant-4 "Act High P, High I"
+    "R-01 — Coalition rupture Sida": [0.65, 0.6]
+   "#quot;R-03 — NPT/NATO declaration#quot;": [0.55, 0.8]
+    "R-06 — Media SD narrative": [0.65, 0.6]
+    "R-05 — Civil servant anxiety": [0.7, 0.4]
+    "R-04 — KD seat loss regional": [0.55, 0.6]
+    "R-07 — Early election trigger": [0.85, 0.2]
+    "R-09 — V NPT platform": [0.35, 0.8]
 ```
 
 ### Scenario Risk Ladder

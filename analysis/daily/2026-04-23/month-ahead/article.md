@@ -49,9 +49,9 @@ Sweden enters the final five weeks of the 2025/26 parliamentary session with thr
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -65,14 +65,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -1050,16 +1042,16 @@ xychart-beta
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map — Likelihood × Impact (April–May 2026)
-    x-axis Low Impact (1) --> High Impact (5)
-    y-axis Low Likelihood (1) --> High Likelihood (5)
+    title "Risk Heat Map — Likelihood × Impact (April–May 2026)"
+ x-axis Low Impact 1 --> High Impact 5
+ y-axis Low Likelihood 1 --> High Likelihood 5
     quadrant-1 "CRITICAL"
     quadrant-2 "HIGH"
     quadrant-3 "LOW"
     quadrant-4 "MONITOR"
     R02 Deportation Legal: [0.75, 0.50]
-    R01 Budget Defeat: [1.00, 0.25]
-    R08 NATO Security: [1.00, 0.25]
+    R01 Budget Defeat: [1, 0.25]
+    R08 NATO Security: [1, 0.25]
     R03 Energy Prices: [0.50, 0.50]
     R05 Sentencing Court: [0.50, 0.50]
     R07 Shelter Crisis: [0.50, 0.50]
@@ -1068,16 +1060,6 @@ quadrantChart
     R09 GDP Revision: [0.75, 0.25]
     R10 Wind Revenue: [0.25, 0.50]
 
-    style R01 fill:#C62828,color:#FFFFFF
-    style R08 fill:#C62828,color:#FFFFFF
-    style R02 fill:#E65100,color:#FFFFFF
-    style R03 fill:#1565C0,color:#FFFFFF
-    style R05 fill:#1565C0,color:#FFFFFF
-    style R07 fill:#1565C0,color:#FFFFFF
-    style R04 fill:#4CAF50,color:#FFFFFF
-    style R06 fill:#4CAF50,color:#FFFFFF
-    style R09 fill:#4CAF50,color:#FFFFFF
-    style R10 fill:#757575,color:#FFFFFF
 ```
 
 ---
@@ -1176,14 +1158,14 @@ All risk assessments are based on public parliamentary documents. Likelihood sco
 
 ```mermaid
 quadrantChart
-    title SWOT Analysis — Tidökoalitionen Spring 2026
-    x-axis Internal --> External
-    y-axis Negative (W/T) --> Positive (S/O)
+    title "SWOT Analysis — Tidökoalitionen Spring 2026"
+ x-axis Internal --> External
+ y-axis Negative W/T --> Positive S/O
     quadrant-1 "Opportunities"
     quadrant-2 "Strengths"
     quadrant-3 "Weaknesses"
     quadrant-4 "Threats"
-    S1 Law&Order Coherence: [0.2, 0.9]
+    "S1 Law&Order Coherence": [0.2, 0.9]
     S2 Budget Delivered: [0.15, 0.85]
     S3 Energy Reform: [0.25, 0.75]
     O1 Recovery Narrative: [0.75, 0.85]
@@ -1193,15 +1175,6 @@ quadrantChart
     T1 Opposition Unity: [0.8, 0.2]
     T3 Climate Gap: [0.75, 0.25]
 
-    style S1 fill:#1B5E20,color:#FFFFFF
-    style S2 fill:#1B5E20,color:#FFFFFF
-    style S3 fill:#1B5E20,color:#FFFFFF
-    style O1 fill:#0D47A1,color:#FFFFFF
-    style O2 fill:#0D47A1,color:#FFFFFF
-    style W1 fill:#B71C1C,color:#FFFFFF
-    style W3 fill:#B71C1C,color:#FFFFFF
-    style T1 fill:#E65100,color:#FFFFFF
-    style T3 fill:#E65100,color:#FFFFFF
 ```
 
 ## Threat Analysis
@@ -2062,9 +2035,9 @@ This analysis applies OSINT methodology per ICD 203, using:
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2078,14 +2051,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2145,9 +2110,9 @@ Sverige går ind i de sidste fem uger af parlamentssessionen 2025/26 med tre sam
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2161,14 +2126,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2228,9 +2185,9 @@ Schweden tritt in die letzten fünf Wochen der Parlamentssitzung 2025/26 ein, wo
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2244,14 +2201,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2311,9 +2260,9 @@ Suecia entra en las últimas cinco semanas de la sesión parlamentaria 2025/26 c
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2327,14 +2276,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2394,9 +2335,9 @@ Ruotsi aloittaa valtiopäivien 2025/26 viimeiset viisi viikkoa kolmen toisiinsa 
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2410,14 +2351,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2476,9 +2409,9 @@ La Suède entre dans les cinq dernières semaines de la session parlementaire 20
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2492,14 +2425,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2562,9 +2487,9 @@ quadrantChart
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2578,14 +2503,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2645,9 +2562,9 @@ quadrantChart
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2661,14 +2578,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2728,9 +2637,9 @@ quadrantChart
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2744,14 +2653,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2811,9 +2712,9 @@ Zweden gaat de laatste vijf weken van de parlementaire sessie 2025/26 in met dri
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2827,14 +2728,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2894,9 +2787,9 @@ Sverige går inn i de siste fem ukene av parlamentssesjonen 2025/26 med tre samm
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2910,14 +2803,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -2977,9 +2862,9 @@ Sverige inleder de sista fem veckorna av riksmötet 2025/26 med tre sammanlänka
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -2993,14 +2878,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---
@@ -3060,9 +2937,9 @@ quadrantChart
 
 ```mermaid
 quadrantChart
-    title Document Significance — Month Ahead April-May 2026
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Legislative Urgency --> High Legislative Urgency
+    title "Document Significance — Month Ahead April-May 2026"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Legislative Urgency --> High Legislative Urgency
     quadrant-1 "Critical Watch"
     quadrant-2 "High Priority"
     quadrant-3 "Background"
@@ -3076,14 +2953,6 @@ quadrantChart
     HD03245 Våldsstrategi: [0.60, 0.65]
     HD03242 Skogsbruk: [0.40, 0.55]
 
-    style HD03100 fill:#C62828,color:#FFFFFF
-    style HD0399 fill:#C62828,color:#FFFFFF
-    style HD03218 fill:#E65100,color:#FFFFFF
-    style HD03240 fill:#1565C0,color:#FFFFFF
-    style HD03235 fill:#E65100,color:#FFFFFF
-    style HD03220 fill:#1B5E20,color:#FFFFFF
-    style HD03245 fill:#4A148C,color:#FFFFFF
-    style HD03242 fill:#00695C,color:#FFFFFF
 ```
 
 ---

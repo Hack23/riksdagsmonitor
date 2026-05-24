@@ -48,21 +48,21 @@
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title SWOT Quadrants — S Opposition Motion Strategy
-    x-axis Internal --> External
-    y-axis Negative --> Positive
+    title "SWOT Quadrants — S Opposition Motion Strategy"
+ x-axis Internal --> External
+ y-axis Negative --> Positive
     quadrant-1 Opportunities
     quadrant-2 Strengths
     quadrant-3 Weaknesses
     quadrant-4 Threats
-    "Coordinated coverage" [0.2, 0.85]
-    "Anchor motion quality" [0.15, 0.75]
-    "Election narrative" [0.25, 0.90]
-    "HD024127 withdrawal" [0.2, 0.30]
-    "Party attrib. gaps" [0.15, 0.25]
-    "Minority position" [0.25, 0.15]
-    "Election positioning" [0.8, 0.90]
-    "Cross-bloc alliance" [0.75, 0.80]
-    "Committee deferral" [0.8, 0.30]
-    "Govt pre-emption" [0.85, 0.20]
+    "Coordinated coverage": [0.2, 0.85]
+    "Anchor motion quality": [0.15, 0.75]
+    "Election narrative": [0.25, 0.90]
+    "HD024127 withdrawal": [0.2, 0.30]
+    "Party attrib. gaps": [0.15, 0.25]
+    "Minority position": [0.25, 0.15]
+    "Election positioning": [0.8, 0.90]
+    "Cross-bloc alliance": [0.75, 0.80]
+    "Committee deferral": [0.8, 0.30]
+    "Govt pre-emption": [0.85, 0.20]
 ```

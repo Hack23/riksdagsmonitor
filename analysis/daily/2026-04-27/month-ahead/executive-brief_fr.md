@@ -40,9 +40,6 @@ gantt
     Audition CU40 lantmäteri                       :active, 2026-05-19, 10d
     section Budget
     Vote décharge Riksbank (FiU23)                 :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style Norme fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 Principal déclencheur prospectif

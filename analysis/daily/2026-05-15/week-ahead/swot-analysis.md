@@ -39,13 +39,13 @@ language: "en"
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
 quadrantChart
-    title SWOT Impact-Likelihood Matrix (Week 21 Aid)
-    x-axis Low Impact --> High Impact
-    y-axis Low Likelihood --> High Likelihood
-    quadrant-1 Act Now (High Impact/High Likelihood)
-    quadrant-2 Monitor (Low Impact/High Likelihood)
-    quadrant-3 Low Priority (Low Impact/Low Likelihood)
-    quadrant-4 Strategic Risk (High Impact/Low Likelihood)
+    title "SWOT Impact-Likelihood Matrix (Week 21 Aid)"
+ x-axis Low Impact --> High Impact
+ y-axis Low Likelihood --> High Likelihood
+    quadrant-1 Act Now High Impact/High Likelihood
+    quadrant-2 Monitor Low Impact/High Likelihood
+    quadrant-3 Low Priority Low Impact/Low Likelihood
+    quadrant-4 Strategic Risk High Impact/Low Likelihood
     No impact assessment exposed: [0.85, 0.90]
     Election timing amplification: [0.75, 0.85]
     Global compound effect: [0.70, 0.80]

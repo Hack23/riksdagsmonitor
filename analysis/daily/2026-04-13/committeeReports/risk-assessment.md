@@ -23,8 +23,8 @@
 ```mermaid
 quadrantChart
     title Risk Matrix - Committee Reports April 2026
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Monitor
     quadrant-2 Critical
     quadrant-3 Low Priority
@@ -35,7 +35,7 @@ quadrantChart
     EU Migration Conflict: [0.6, 0.8]
     Healthcare Crisis: [0.8, 0.6]
     Civilian Protection Gaps: [0.8, 0.6]
-    SD Consensus Erosion: [0.4, 1.0]
+    SD Consensus Erosion: [0.4, 1]
     Detention Proportionality: [0.6, 0.6]
 ```
 

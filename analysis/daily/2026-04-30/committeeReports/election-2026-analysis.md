@@ -49,7 +49,7 @@ This is a **knife-edge election** where 2-4 seat nuclear positioning is genuinel
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
 xychart-beta
     title "Electoral Salience by Report (1–10 scale)"
-    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
+    x-axis ["KU36", "JuU9", "NU22", "NU19", "FöU13", "CU37", "SoU33", "JuU46"]
     y-axis "Electoral salience" 0 --> 10
     bar [4.5, 3.5, 5.0, 8.5, 3.5, 6.0, 2.5, 1.0]
 ```

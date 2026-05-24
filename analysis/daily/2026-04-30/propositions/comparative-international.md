@@ -53,5 +53,4 @@ xychart-beta
     x-axis ["Sweden", "Norway", "Denmark", "Finland", "Germany"]
     y-axis "Billion EUR" 0 --> 300
     bar [88, 96, 13.5, 10, 270]
-    style bar fill:#00d9ff
 ```

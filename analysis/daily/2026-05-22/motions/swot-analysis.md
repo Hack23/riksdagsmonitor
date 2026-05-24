@@ -55,23 +55,17 @@ The opposition faces a structural paradox: on migration, it can build broad coal
 ```mermaid
 quadrantChart
     title Opposition Motion Impact vs. Feasibility of Victory
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Win Probability --> High Win Probability
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Win Probability --> High Win Probability
     quadrant-1 High Impact High Win
     quadrant-2 High Impact Low Win
     quadrant-3 Low Impact Low Win
     quadrant-4 Low Impact High Win
-    Transparency (KU): [0.7, 0.55]
-    Migration (SfU): [0.85, 0.4]
-    Debt Registry (FiU): [0.5, 0.45]
-    Security/LSU (JuU): [0.75, 0.2]
-    Biometric (SkU): [0.6, 0.25]
-    EU Foreign (UU): [0.3, 0.2]
+    "Transparency (KU)": [0.7, 0.55]
+    "Migration (SfU)": [0.85, 0.4]
+    "Debt Registry (FiU)": [0.5, 0.45]
+    "Security/LSU (JuU)": [0.75, 0.2]
+    "Biometric (SkU)": [0.6, 0.25]
+    "EU Foreign (UU)": [0.3, 0.2]
 
-    style Transparency (KU) fill:#00d9ff,stroke:#00d9ff
-    style Migration (SfU) fill:#ff006e,stroke:#ff006e
-    style Security/LSU (JuU) fill:#ffbe0b,stroke:#ffbe0b
-    style Debt Registry (FiU) fill:#00d9ff,stroke:#00d9ff
-    style Biometric (SkU) fill:#ffbe0b,stroke:#ffbe0b
-    style EU Foreign (UU) fill:#888888,stroke:#888888
 ```

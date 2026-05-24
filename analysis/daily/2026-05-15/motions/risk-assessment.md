@@ -12,9 +12,9 @@ Per `political-risk-methodology.md`: risks assessed across Institutional, Operat
 
 ```mermaid
 quadrantChart
-    title Risk Matrix — Opposition Motions 2026-05-15
-    x-axis Low Probability --> High Probability
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix — Opposition Motions 2026-05-15"
+ x-axis Low Probability --> High Probability
+ y-axis Low Impact --> High Impact
     quadrant-1 "Monitor"
     quadrant-2 "Act / Escalate"
     quadrant-3 "Accept"
@@ -26,10 +26,6 @@ quadrantChart
     "Election migration as top issue" : [0.80, 0.70]
     "Transport rail underfunding" : [0.50, 0.40]
     "Mental health gaps persist" : [0.65, 0.55]
-    style quadrant-1 fill:#2ecc71,opacity:0.3
-    style quadrant-2 fill:#e74c3c,opacity:0.3
-    style quadrant-3 fill:#95a5a6,opacity:0.3
-    style quadrant-4 fill:#f39c12,opacity:0.3
 ```
 
 ## Risk Register

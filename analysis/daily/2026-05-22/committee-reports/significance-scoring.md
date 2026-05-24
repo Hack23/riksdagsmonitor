@@ -9,9 +9,9 @@
 
 ```mermaid
 quadrantChart
-    title Document Significance Matrix (Impact vs. Contestation)
-    x-axis Low Contestation --> High Contestation
-    y-axis Low Impact --> High Impact
+    title "Document Significance Matrix (Impact vs. Contestation)"
+ x-axis Low Contestation --> High Contestation
+ y-axis Low Impact --> High Impact
     quadrant-1 High Stakes / Contested
     quadrant-2 High Impact / Consensus
     quadrant-3 Low Profile / Routine
@@ -23,11 +23,6 @@ quadrantChart
     HD01FiU40: [0.25, 0.55]
     HD01CU41: [0.45, 0.50]
 
-    style HD01JuU28 color:#ff006e
-    style HD01CU36 color:#ffbe0b
-    style HD01FiU39 color:#00d9ff
-    style HD01FiU40 color:#00d9ff
-    style HD01CU41 color:#a0c4ff
 ```
 
 ---

@@ -59,9 +59,9 @@
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d"}}}%%
 quadrantChart
-    title SWOT Position — 29 April 2026 Political Actors
-    x-axis Low Internal Strength --> High Internal Strength
-    y-axis Hostile Environment --> Favourable Environment
+    title "SWOT Position — 29 April 2026 Political Actors"
+ x-axis Low Internal Strength --> High Internal Strength
+ y-axis Hostile Environment --> Favourable Environment
     quadrant-1 Consolidate
     quadrant-2 Invest Selectively
     quadrant-3 Retreat
@@ -71,7 +71,4 @@ quadrantChart
     Centerpartiet: [0.48, 0.55]
     Vänsterpartiet: [0.35, 0.38]
     Miljöpartiet: [0.30, 0.45]
-    style Tidökoalitionen fill:#00d9ff
-    style Socialdemokraterna fill:#ff006e
-    style Centerpartiet fill:#ffbe0b
 ```

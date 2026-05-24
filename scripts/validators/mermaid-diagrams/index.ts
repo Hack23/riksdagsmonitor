@@ -167,12 +167,20 @@ export async function repairMermaidFile(
   for (let bi = blocks.length - 1; bi >= 0; bi -= 1) {
     const block = blocks[bi]!;
 
-    // Unclosed fences: append ` ``` ` at the implied end.
+    // Unclosed fences: insert ` ``` ` right after the last line that
+    // still looks like Mermaid diagram content, rather than at the
+    // implied end (which is just before the next ```mermaid opener).
+    // This prevents narrative markdown (`## …`, tables, paragraphs)
+    // from being absorbed into the block.
     if (!block.closed) {
-      // Insert closing fence on its own line at endLineNumber - 1
-      // (which is 0-indexed insertion point matching the renderer's
-      // implicit-close behaviour).
-      const insertAt = block.endLineNumber - 1;
+      const bodyLines = block.body.split('\n');
+      const stopOffset = findFirstNarrativeOffset(bodyLines);
+      // `block.bodyStartLineNumber` is 1-indexed → 0-indexed start is
+      // `block.bodyStartLineNumber - 1`. Insertion index is the absolute
+      // line where the close fence should appear (0-indexed).
+      const bodyStartIdx = block.bodyStartLineNumber - 1;
+      const fallbackInsertAt = block.endLineNumber - 1;
+      const insertAt = stopOffset === null ? fallbackInsertAt : bodyStartIdx + stopOffset;
       lines.splice(insertAt, 0, '```');
       mutated = true;
       repairedBlocks.push(block.startLineNumber);
@@ -240,3 +248,36 @@ export async function repairMermaidFile(
 export { extractMermaidBlocks } from './extract.js';
 export { parseMermaidBlock, categoriseMermaidParseError } from './parse.js';
 export { repairMermaidBlock } from './repair.js';
+
+/**
+ * Heuristic: given the body lines of an unclosed Mermaid block,
+ * return the 0-indexed offset (into `bodyLines`) of the first line
+ * that is clearly narrative Markdown rather than diagram content.
+ *
+ * Returns `null` when no narrative line is found and the caller
+ * should fall back to inserting the close fence at the implied
+ * end-of-block (just before the next ```mermaid opener).
+ *
+ * Signals (any of these on a non-blank line ⇒ narrative):
+ *   - ATX heading: `^#{1,6} `
+ *   - Setext heading underline candidates are intentionally ignored
+ *     (too noisy with diagram `---` separators).
+ *   - Markdown table row: `^\|`
+ *   - Blockquote: `^> `
+ *   - Bold-paragraph opener: `^\*\*` on otherwise plain text
+ *
+ * The first matching line returns its offset; the caller will splice
+ * the close fence at that absolute file line, so the blank line
+ * before it (if any) ends up immediately after the fence — clean
+ * separation.
+ */
+function findFirstNarrativeOffset(bodyLines: readonly string[]): number | null {
+  for (let i = 0; i < bodyLines.length; i += 1) {
+    const line = bodyLines[i]!;
+    if (/^#{1,6}\s/.test(line)) return i;
+    if (/^\|/.test(line)) return i;
+    if (/^>\s/.test(line)) return i;
+    if (/^\*\*[A-Za-zÅÄÖåäö]/.test(line)) return i;
+  }
+  return null;
+}

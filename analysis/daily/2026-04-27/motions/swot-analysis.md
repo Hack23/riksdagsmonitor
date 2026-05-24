@@ -44,8 +44,8 @@
 %%{init: {"theme": "dark", "themeVariables": {"quadrantPointFill": "#00d9ff", "quadrantPointTextFill": "#fff"}}}%%
 quadrantChart
     title Opposition Motion Impact vs Political Risk
-    x-axis Low Impact --> High Impact
-    y-axis Low Risk --> High Risk
+ x-axis Low Impact --> High Impact
+ y-axis Low Risk --> High Risk
     quadrant-1 Monitor
     quadrant-2 High Value Targets
     quadrant-3 Background
@@ -57,4 +57,4 @@ quadrantChart
     HD024093: [0.60, 0.15]
     HD024073: [0.55, 0.25]
 
-style HD024090 fill:#ff006e,color:#fff
+```

@@ -62,17 +62,36 @@ async function main(): Promise<void> {
   let filesChanged = 0;
   let blocksRepaired = 0;
   const allUnrepaired: { file: string; line: number; category: string; message: string }[] = [];
+  // Multi-pass: closing an unclosed fence can reveal previously-absorbed
+  // mermaid blocks. Iterate per file until convergence (max 5 passes).
+  const MAX_PASSES = 5;
 
   for (const file of unique) {
-    const result = await repairMermaidFile(file, { write: args.write });
-    if (result.changed) {
-      filesChanged += 1;
-      blocksRepaired += result.repairedBlocks.length;
-      for (const line of result.repairedBlocks) {
-        process.stdout.write(`${args.write ? 'fixed' : 'would-fix'} ${file}:${line}\n`);
+    const changedFile = { value: false };
+    let finalUnrepaired: ReadonlyArray<{
+      readonly blockStartLineNumber: number;
+      readonly errorLineNumber?: number;
+      readonly category: string;
+      readonly message: string;
+    }> = [];
+    for (let pass = 0; pass < MAX_PASSES; pass += 1) {
+      const result = await repairMermaidFile(file, { write: args.write });
+      finalUnrepaired = result.unrepairedViolations;
+      if (result.changed) {
+        changedFile.value = true;
+        blocksRepaired += result.repairedBlocks.length;
+        for (const line of result.repairedBlocks) {
+          process.stdout.write(`${args.write ? 'fixed' : 'would-fix'} ${file}:${line}\n`);
+        }
+        // In dry-run mode, the file is never mutated, so a second pass
+        // would report the same blocks again. Break to avoid duplicates.
+        if (!args.write) break;
+        continue;
       }
+      break;
     }
-    for (const v of result.unrepairedViolations) {
+    if (changedFile.value) filesChanged += 1;
+    for (const v of finalUnrepaired) {
       allUnrepaired.push({
         file,
         line: v.errorLineNumber ?? v.blockStartLineNumber,

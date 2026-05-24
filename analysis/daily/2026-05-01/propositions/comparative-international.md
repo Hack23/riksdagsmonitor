@@ -69,5 +69,4 @@ xychart-beta
     x-axis ["Denmark", "Germany", "Netherlands", "Sweden (proposed)"]
     y-axis "Days" 0 --> 200
     bar [0, 28, 18, 182]
-    style bar fill:#ff006e
 ```

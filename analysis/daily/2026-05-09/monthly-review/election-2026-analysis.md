@@ -21,7 +21,6 @@ gantt
     section Election
     Election day             :milestone, 2026-09-13, 1d
     Government formation     :     2026-09-14, 2026-11-15
-    style crit fill:#ff006e
 ```
 
 ---

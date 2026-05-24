@@ -47,8 +47,8 @@ The most significant near-term intelligence indicator to watch is the release (o
 ```mermaid
 quadrantChart
     title Intelligence Confidence vs Evidence Weight
-    x-axis Low Evidence Weight --> High Evidence Weight
-    y-axis Low Confidence --> High Confidence
+ x-axis Low Evidence Weight --> High Evidence Weight
+ y-axis Low Confidence --> High Confidence
     quadrant-1 Key Judgments
     quadrant-2 Well Evidenced Need More Analysis
     quadrant-3 Speculative Background
@@ -58,6 +58,4 @@ quadrantChart
     KJ3 SD Energy Positioning: [0.65, 0.62]
     KJ4 Organ Harvesting Gap: [0.80, 0.82]
     KJ5 Social Safety Net Impact: [0.60, 0.65]
-    style KJ2 color:#ff4444
-    style KJ1 color:#ff4444
 ```

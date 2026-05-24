@@ -30,7 +30,7 @@ graph LR
     A[HD11701] --> B{{Sensitivity}}
     B -->|SENSITIVE| E[SENSITIVE Level]
     A --> G{{Domain}}
-    G --> H[Foreign Affairs (FOR) / Health (HEA)]
+    G --> H["Foreign Affairs (FOR) / Health (HEA)"]
     A --> I{{Urgency}}
     I -->|ELEVATED| M[ELEVATED processing]
     style E fill:#4CAF50,color:#FFFFFF

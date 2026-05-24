@@ -58,9 +58,9 @@ PESTLE: Political, Economic, Social, Technological, Legal, Environmental — app
 
 ```mermaid
 quadrantChart
-  title PESTLE: Pressure × Forward Horizon
-  x-axis Cycle Pressure (low → high)
-  y-axis Forward Horizon Persistence (short → long)
+  title "PESTLE: Pressure × Forward Horizon"
+ x-axis Cycle Pressure low → high
+ y-axis Forward Horizon Persistence short → long
   quadrant-1 Long-cycle priority
   quadrant-2 Highest priority
   quadrant-3 Background

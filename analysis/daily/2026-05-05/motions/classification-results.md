@@ -49,8 +49,5 @@ pie title Motion Distribution by Party
     "SD (1 motion)" : 1
     "C (2 motions)" : 2
     "MP (2 motions)" : 2
-    style V fill:#8b0000
-    style S fill:#ff6b35
-    style SD fill:#ffbe0b
-    style C fill:#00d9ff
-    style MP fill:#228b22
+
+```

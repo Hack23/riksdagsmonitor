@@ -64,8 +64,5 @@ xychart-beta
     y-axis "DIW Score" 0 --> 30
     bar [26, 25, 23, 20, 18, 16, 15, 14, 12, 9, 9, 6]
 
-style FiU48 fill:#ff006e,color:#ffffff
-style JuU10 fill:#ff006e,color:#ffffff
-style CU25 fill:#ffbe0b,color:#000000
 ```
 

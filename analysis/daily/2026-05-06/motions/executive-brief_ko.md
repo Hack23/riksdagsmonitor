@@ -41,8 +41,6 @@ timeline
     2026-06-01 : Lagrådet yttrande 예상 (PIR LAGRÅDET-246)
     2026-06-08 : Lagrådet 이후 C 성명 예상 (PIR COALITION-C-JuU)
     2027-03-01 : 임업 규제완화에 관한 EU/EC 연간 보고서 (PIR EU-HABITATS-SE)
-    style 2026-05-04 fill:#1a1e3d,color:#00d9ff
-    style 2026-06-01 fill:#8b0000,color:#ffbe0b
 ```
 
 <!-- source-sha: 83ab95c995e928d2f484c02aef7ab0bee0f03535 -->

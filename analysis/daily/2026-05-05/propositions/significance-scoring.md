@@ -25,7 +25,6 @@ xychart-beta
     x-axis ["Direct Impact", "Institutional Weight", "Wider Implications", "Composite"]
     y-axis "Score" 0 --> 10
     bar [7, 8, 7, 7.3]
-    style Direct Impact fill:#00d9ff,stroke:#00d9ff
 ```
 
 ---

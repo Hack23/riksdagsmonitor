@@ -25,9 +25,9 @@
 ```mermaid
 %%{init: {"theme": "dark"}}%%
 quadrantChart
-    title Party Support vs. Salience — HD03255
-    x-axis Low Salience --> High Salience
-    y-axis Opposition --> Support
+    title "Party Support vs. Salience — HD03255"
+ x-axis Low Salience --> High Salience
+ y-axis Opposition --> Support
     quadrant-1 High profile supporters
     quadrant-2 Low profile supporters
     quadrant-3 Low profile opponents
@@ -40,9 +40,6 @@ quadrantChart
     Sverigedemokraterna SD: [0.35, 0.68]
     Vänsterpartiet V: [0.45, 0.55]
     Miljöpartiet MP: [0.35, 0.6]
-    style Moderaterna M fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
-    style Liberalerna L fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
-    style Socialdemokraterna S fill:#ff006e,stroke:#ff006e,color:#fff
 ```
 
 ### Signal Intelligence Classification

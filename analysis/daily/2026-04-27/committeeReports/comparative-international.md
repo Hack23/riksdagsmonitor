@@ -44,6 +44,4 @@ xychart-beta
     x-axis [Sweden, Norway, Denmark, Finland, Germany]
     y-axis "% GDP" -3 --> 15
     bar [-1.2, 12.0, 2.0, -0.5, -0.8]
-    style Sweden fill:#00d9ff
-    style Norway fill:#ffbe0b
 ```

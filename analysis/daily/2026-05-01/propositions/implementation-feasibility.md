@@ -84,8 +84,8 @@ Implementation feasibility assessed across: Legal readiness, Agency capacity, Bu
 %%{init: {"theme": "dark"}}%%
 quadrantChart
     title Implementation Feasibility vs Political Priority
-    x-axis Low Feasibility --> High Feasibility
-    y-axis Low Priority --> High Priority
+ x-axis Low Feasibility --> High Feasibility
+ y-axis Low Priority --> High Priority
     quadrant-1 High Priority — Deliver
     quadrant-2 Priority but Needs Work
     quadrant-3 Low Priority — Defer
@@ -98,6 +98,4 @@ quadrantChart
     HD03258 Transparency: [0.80, 0.60]
     HD03251 Health: [0.75, 0.55]
     HD03260 Research: [0.85, 0.30]
-    style HD03263 Deportation color:#ff006e
-    style HD03265 Detention color:#ff006e
 ```

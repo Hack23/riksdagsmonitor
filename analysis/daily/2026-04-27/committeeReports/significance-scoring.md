@@ -31,6 +31,4 @@ xychart-beta
     x-axis [HD01FiU48, HD01JuU10, HD01SoU25, HD01FiU23, HD01CU24, HD01JuU31]
     y-axis "DIW Score" 0 --> 10
     bar [8.5, 7.8, 6.5, 5.0, 4.5, 4.0]
-    style HD01FiU48 fill:#ff006e
-    style HD01JuU10 fill:#00d9ff
 ```

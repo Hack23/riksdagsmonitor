@@ -172,6 +172,7 @@ mindmap
       Coalition pre-positioning
     style root fill:#ff006e,color:#fff
 
+```
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/week-ahead/intelligence-assessment.md -->
 

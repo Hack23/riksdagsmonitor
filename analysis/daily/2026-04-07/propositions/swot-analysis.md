@@ -15,17 +15,17 @@ SWOT analysis of the Kristersson government's 4-proposition legislative push cov
 
 ```mermaid
 quadrantChart
-    title Government Legislative Push — Strategic Position
-    x-axis Low Political Risk --> High Political Risk
-    y-axis Low Policy Impact --> High Policy Impact
+    title "Government Legislative Push — Strategic Position"
+ x-axis Low Political Risk --> High Political Risk
+ y-axis Low Policy Impact --> High Policy Impact
     quadrant-1 High Impact, High Risk
     quadrant-2 High Impact, Low Risk
     quadrant-3 Low Impact, Low Risk
     quadrant-4 Low Impact, High Risk
-    Deportation Rules (HD03235): [0.75, 0.85]
-    Cybersecurity Center (HD03214): [0.3, 0.7]
-    Arms Export (HD03228): [0.5, 0.65]
-    Healthcare Reform (HD03216): [0.35, 0.55]
+    "Deportation Rules (HD03235)": [0.75, 0.85]
+    "Cybersecurity Center (HD03214)": [0.3, 0.7]
+    "Arms Export (HD03228)": [0.5, 0.65]
+    "Healthcare Reform (HD03216)": [0.35, 0.55]
 ```
 
 ## Strengths

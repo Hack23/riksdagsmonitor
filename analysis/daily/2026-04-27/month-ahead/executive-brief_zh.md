@@ -40,9 +40,6 @@ gantt
     CU40 lantmäteri听证会              :active, 2026-05-19, 10d
     section 预算
     Riksbank免责投票 (FiU23)           :milestone, 2026-05-07, 0d
-    style 司法 fill:#ff006e,stroke:#ff006e
-    style 民事 fill:#00d9ff,stroke:#00d9ff
-    style 基础设施 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 主要前瞻触发因素

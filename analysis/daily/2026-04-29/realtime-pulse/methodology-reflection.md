@@ -65,12 +65,12 @@
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
 quadrantChart
     title Confidence vs Significance Matrix
-    x-axis Low Confidence --> High Confidence
-    y-axis Low Significance --> High Significance
-    quadrant-1 Act Now (High Conf, High Sig)
-    quadrant-2 Investigate (Low Conf, High Sig)
-    quadrant-3 Accept (Low Conf, Low Sig)
-    quadrant-4 Monitor (High Conf, Low Sig)
+ x-axis Low Confidence --> High Confidence
+ y-axis Low Significance --> High Significance
+    quadrant-1 Act Now High Conf, High Sig
+    quadrant-2 Investigate Low Conf, High Sig
+    quadrant-3 Accept Low Conf, Low Sig
+    quadrant-4 Monitor High Conf, Low Sig
     JuU10 Weapons Vote: [0.90, 0.90]
     China FDI Gap: [0.85, 0.80]
     HVB Crisis: [0.75, 0.75]

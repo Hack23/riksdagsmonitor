@@ -40,9 +40,6 @@ gantt
     CU40 lantmäteri-Anhörung                        :active, 2026-05-19, 10d
     section Haushalt
     Riksbank-Entlastungsabstimmung (FiU23)          :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-Ladestandard fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 Wichtigster Vorwärtstrigger

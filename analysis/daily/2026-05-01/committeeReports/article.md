@@ -289,8 +289,6 @@ xychart-beta
     x-axis ["FiU33","FiU20","SfU22","SoU29","FiU24","SkU18","CU18","TU15","KU22","KU21"]
     y-axis "DIW Score" 0 --> 15
     bar [14, 12, 11, 10, 9, 8, 7, 6, 4, 3]
-    style FiU33 fill:#ff006e
-    style FiU20 fill:#ffbe0b
 ```
 
 ## Per-document intelligence
@@ -1002,7 +1000,6 @@ xychart-beta
     x-axis ["R1","R3","R2","R6","R8","R4","R5","R7"]
     y-axis "Risk Score (L x I)" 0 --> 22
     bar [20, 15, 12, 12, 10, 9, 6, 6]
-    style xychart fill:#0a0e27,color:#e0e0e0
 ```
 
 ## SWOT Analysis

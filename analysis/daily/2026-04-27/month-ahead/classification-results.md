@@ -41,5 +41,4 @@ pie title Document Classification by Category
     "Social Policy" : 20
     "Infrastructure" : 10
     "Administration" : 5
-    style pie fill:#0a0e27
 ```

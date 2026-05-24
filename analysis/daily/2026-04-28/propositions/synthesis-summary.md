@@ -49,13 +49,13 @@ Lower DIW weight but signals increasing cross-border enforcement ambition. Tacho
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ff006e'}}}%%
 quadrantChart
-    title Proposition Significance Matrix — 2026-04-28
-    x-axis Low Electoral Impact --> High Electoral Impact
-    y-axis Low Systemic Impact --> High Systemic Impact
-    quadrant-1 High Priority (Electoral + Systemic)
-    quadrant-2 Monitor (Systemic)
+    title "Proposition Significance Matrix — 2026-04-28"
+ x-axis Low Electoral Impact --> High Electoral Impact
+ y-axis Low Systemic Impact --> High Systemic Impact
+    quadrant-1 High Priority Electoral + Systemic
+    quadrant-2 Monitor Systemic
     quadrant-3 Low Priority
-    quadrant-4 Watch (Electoral)
+    quadrant-4 Watch Electoral
     HD03253: [0.35, 0.85]
     HD03252: [0.82, 0.55]
     HD03104: [0.25, 0.45]

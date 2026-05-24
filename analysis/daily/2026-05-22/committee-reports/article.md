@@ -165,7 +165,7 @@ CU endorsed **HD01CU41**: exceptions from EU Art and Habitats Directive requirem
 graph TD
     A[Governing Coalition M+SD+KD+L] -->|Supports all 5 bills| B[JuU28 ✅ CU36 ✅ CU41 ✅ FiU39 ✅ FiU40 ✅]
     C[S — Socialdemokraterna] -->|Splits| D[JuU28 ✅ FiU39 ✅ FiU40 ✅ CU41 ✅ but CU36 ❌]
-    E[V — Vänsterpartiet] -->|Opposition on rights] F[JuU28 ❌ CU36 ❌]
+    E[V — Vänsterpartiet] -->|Opposition on rights| F[JuU28 ❌ CU36 ❌]
     G[C — Centerpartiet] -->|Liberal privacy stance| H[JuU28 ❌ CU36 ❌]
     I[MP — Miljöpartiet] -->|Rights + Environment| J[JuU28 ❌ CU36 ❌ CU41 split]
 
@@ -301,9 +301,9 @@ All sources in this analysis are public domain (OSINT level) — rated A or B fo
 
 ```mermaid
 quadrantChart
-    title Document Significance Matrix (Impact vs. Contestation)
-    x-axis Low Contestation --> High Contestation
-    y-axis Low Impact --> High Impact
+    title "Document Significance Matrix (Impact vs. Contestation)"
+ x-axis Low Contestation --> High Contestation
+ y-axis Low Impact --> High Impact
     quadrant-1 High Stakes / Contested
     quadrant-2 High Impact / Consensus
     quadrant-3 Low Profile / Routine
@@ -315,11 +315,6 @@ quadrantChart
     HD01FiU40: [0.25, 0.55]
     HD01CU41: [0.45, 0.50]
 
-    style HD01JuU28 color:#ff006e
-    style HD01CU36 color:#ffbe0b
-    style HD01FiU39 color:#00d9ff
-    style HD01FiU40 color:#00d9ff
-    style HD01CU41 color:#a0c4ff
 ```
 
 ---

@@ -30,7 +30,7 @@
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'lineColor': '#00d9ff', 'bar': '#00d9ff'}}}%%
 xychart-beta
     title "DIW Composite Scores — Committee Reports 2026-04-29"
-    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
+    x-axis ["KU36", "JuU9", "NU22", "NU19", "FöU13", "CU37", "SoU33", "JuU46"]
     y-axis "DIW Score" 0 --> 1
     bar [0.88, 0.81, 0.76, 0.72, 0.70, 0.64, 0.38, 0.28]
 ```

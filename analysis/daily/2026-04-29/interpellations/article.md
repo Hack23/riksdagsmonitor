@@ -143,9 +143,9 @@ Three convergent threat vectors appear across the interpellation batch:
 
 ```mermaid
 quadrantChart
-    title Interpellations Priority Matrix (Impact vs Political Salience)
-    x-axis Low Impact --> High Impact
-    y-axis Low Salience --> High Salience
+    title "Interpellations Priority Matrix (Impact vs Political Salience)"
+ x-axis Low Impact --> High Impact
+ y-axis Low Salience --> High Salience
     quadrant-1 Monitor Closely
     quadrant-2 Priority Intelligence
     quadrant-3 Background Tracking
@@ -158,8 +158,6 @@ quadrantChart
     HD10439 Polisbrist: [0.60, 0.68]
     HD10444 Arbetsgivaravgift: [0.58, 0.65]
     HD10443 Social dumpning: [0.50, 0.60]
-    style HD10454 color:#ff0000
-    style HD10451 color:#ff4400
 ```
 
 ## Intelligence Assessment — Key Judgments
@@ -212,8 +210,8 @@ The most significant near-term intelligence indicator to watch is the release (o
 ```mermaid
 quadrantChart
     title Intelligence Confidence vs Evidence Weight
-    x-axis Low Evidence Weight --> High Evidence Weight
-    y-axis Low Confidence --> High Confidence
+ x-axis Low Evidence Weight --> High Evidence Weight
+ y-axis Low Confidence --> High Confidence
     quadrant-1 Key Judgments
     quadrant-2 Well Evidenced Need More Analysis
     quadrant-3 Speculative Background
@@ -223,8 +221,6 @@ quadrantChart
     KJ3 SD Energy Positioning: [0.65, 0.62]
     KJ4 Organ Harvesting Gap: [0.80, 0.82]
     KJ5 Social Safety Net Impact: [0.60, 0.65]
-    style KJ2 color:#ff4444
-    style KJ1 color:#ff4444
 ```
 
 ## Significance Scoring
@@ -271,7 +267,6 @@ xychart-beta
     x-axis ["HD10454", "HD10451", "HD10453", "HD10456", "HD10439", "HD10438", "HD10444", "HD10450", "HD10443", "HD10457"]
     y-axis "DIW Score" 0 --> 10
     bar [9.2, 8.7, 7.8, 7.1, 6.8, 6.5, 6.2, 5.9, 5.7, 5.5]
-    style fill:#00d9ff
 ```
 
 ## Per-document intelligence
@@ -1184,7 +1179,7 @@ Current seat distribution (approximate 2022 result):
 
 ```mermaid
 xychart-beta
-    title Electoral Salience Score by Topic (0-10)
+    title "Electoral Salience Score by Topic (0-10)"
     x-axis ["Crime Gov.", "Social Net", "Healthcare", "Energy", "Infrastructure", "Admin/Proc."]
     y-axis "Electoral Salience (0=low, 10=high)" 0 --> 10
     bar [9.2, 8.1, 7.4, 6.5, 5.2, 3.8]
@@ -1258,9 +1253,9 @@ Evidence: Multiple dok_ids above, riksdagen.se.
 
 ```mermaid
 quadrantChart
-    title Risk Matrix (Likelihood vs Impact)
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix (Likelihood vs Impact)"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical Priority
     quadrant-2 High Impact Unlikely
     quadrant-3 Background Risks
@@ -1275,9 +1270,6 @@ quadrantChart
     R10 Tax Exploit: [0.55, 0.55]
     R7 Social Dumping Legal: [0.55, 0.50]
     R9 Death Declarations: [0.35, 0.45]
-    style R1 color:#ff0000
-    style R2 color:#ff0000
-    style R4 color:#ff6600
 ```
 
 ## SWOT Analysis
@@ -1748,8 +1740,8 @@ xychart-beta
 ```mermaid
 quadrantChart
     title Media Frame Resonance vs Duration
-    x-axis Short Duration --> Long Duration
-    y-axis Low Resonance --> High Resonance
+ x-axis Short Duration --> Long Duration
+ y-axis Low Resonance --> High Resonance
     quadrant-1 High Impact Stories
     quadrant-2 Slow Burn Stories
     quadrant-3 Background Noise
@@ -1759,8 +1751,6 @@ quadrantChart
     Womens Shelters: [0.55, 0.72]
     Organ Harvesting: [0.40, 0.55]
     Wind Disinformation: [0.25, 0.42]
-    style HVB Crime color:#ff4444
-    style Criminal Economy color:#ff6600
 ```
 
 ## Devil's Advocate

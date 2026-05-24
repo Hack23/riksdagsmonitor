@@ -75,7 +75,4 @@ mindmap
       HD01CU30:::low
         EPBD implementation
         Renovation investment
-classDef high fill:#ff006e,stroke:#ff006e,color:#fff
-classDef medium fill:#ff8c00,stroke:#ff8c00,color:#fff
-classDef low fill:#00d9ff,stroke:#00d9ff,color:#000
 ```

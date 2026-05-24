@@ -52,8 +52,6 @@ timeline
     2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
     2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
     2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
-    style 2026-05-04 fill:#1a1e3d,color:#00d9ff
-    style 2026-06-01 fill:#8b0000,color:#ffbe0b
 ```
 
 ## Reader Intelligence Guide
@@ -574,6 +572,7 @@ pie title Current Seat Distribution (349 total)
     "V (24)" : 24
     "MP (18)" : 18
 
+```
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/voter-segmentation.md -->
 
@@ -871,20 +870,21 @@ Economic context does not directly affect these motions. The relevant fiscal dim
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Risk Heat Map (Likelihood vs Impact)
-    x-axis "Likelihood" 0 --> 5
-    y-axis "Impact" 0 --> 5
+    title "Risk Heat Map (Likelihood vs Impact)"
+ x-axis "Likelihood" 0 --> 5
+ y-axis "Impact" 0 --> 5
     quadrant-1 Critical Monitor
     quadrant-2 Strategic Watch
     quadrant-3 Low Priority
     quadrant-4 Operational
-    R01: [3, 5]
-    R02: [3, 4]
-    R03: [4, 3]
-    R04: [2, 5]
-    R05: [3, 3]
-    R06: [2, 4]
+    R01: [0.03, 0.05]
+    R02: [0.03, 0.04]
+    R03: [0.04, 0.03]
+    R04: [0.02, 0.05]
+    R05: [0.03, 0.03]
+    R06: [0.02, 0.04]
 
+```
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/swot-analysis.md -->
 
@@ -984,6 +984,7 @@ flowchart TD
     style C fill:#1a1e3d,color:#ff006e
     style D fill:#1a1e3d,color:#ff006e
 
+```
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/historical-parallels.md -->
 
@@ -1352,6 +1353,7 @@ flowchart LR
     style H145 fill:#ff006e,color:#fff
     style H146 fill:#ff006e,color:#fff
 
+```
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/methodology-reflection.md -->
 

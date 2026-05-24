@@ -32,22 +32,20 @@ UK's 2024 academy disclosure regulations moved in the opposite direction to HD01
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title International Comparators — Policy Direction
-    x-axis Deregulation ← → Regulation
-    y-axis Less Transparency ← → More Transparency
+    title "International Comparators — Policy Direction"
+ x-axis Deregulation ← → Regulation
+ y-axis Less Transparency ← → More Transparency
     quadrant-1 Regulation + Transparency
     quadrant-2 Deregulation + Transparency
     quadrant-3 Deregulation + Less Transparency
     quadrant-4 Regulation + Less Transparency
-    "Germany (housing)": [0.80, 0.60]
-    "Netherlands (housing)": [0.75, 0.55]
-    "UK (schools)": [0.55, 0.85]
-    "Finland (enforcement)": [0.60, 0.70]
-    "Norway (overseas staff)": [0.50, 0.60]
+   "#quot;Germany (housing)#quot;": [0.80, 0.60]
+   "#quot;Netherlands (housing)#quot;": [0.75, 0.55]
+   "#quot;UK (schools)#quot;": [0.55, 0.85]
+   "#quot;Finland (enforcement)#quot;": [0.60, 0.70]
+   "#quot;Norway (overseas staff)#quot;": [0.50, 0.60]
     "Sweden HD01CU31": [0.30, 0.50]
     "Sweden HD01UbU20": [0.40, 0.25]
     "Sweden HD01CU34": [0.55, 0.65]
 
-style "Sweden HD01CU31" fill:#ff006e,color:#fff
-style "Sweden HD01UbU20" fill:#ffbe0b,color:#0a0e27
-style "Sweden HD01CU34" fill:#00d9ff,color:#0a0e27
+```

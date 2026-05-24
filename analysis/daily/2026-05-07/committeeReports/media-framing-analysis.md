@@ -61,9 +61,9 @@ Social Democrats will struggle to oppose directly (security consensus). Expected
 
 ```mermaid
 quadrantChart
-    title Media Frames — Support vs Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Government Framing --> Opposition Framing
+    title "Media Frames — Support vs Controversy"
+ x-axis Low Controversy --> High Controversy
+ y-axis Government Framing --> Opposition Framing
     quadrant-1 High Controversy, Opposition Frame
     quadrant-2 High Controversy, Government Frame
     quadrant-3 Low Controversy, Government Frame
@@ -74,10 +74,5 @@ quadrantChart
     "SfU21 in DN": [0.45, 0.55]
     "FöU18 DFRI": [0.95, 0.90]
 
-    style FöU18 in tabloids fill:#ff4466,color:#fff
-    style FöU18 in broadsheets fill:#ffbe0b,color:#000
-    style CU25 official fill:#00ff88,color:#000
-    style SfU21 in DN fill:#9966ff,color:#fff
-    style FöU18 DFRI fill:#ff0044,color:#fff
 ```
 

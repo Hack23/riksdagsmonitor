@@ -43,26 +43,21 @@ Konstitutionsutskottet (KU) presenterar ett historiskt dubbelbetänkande (HD01KU
 
 ```mermaid
 quadrantChart
-    title Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk
-    x-axis Låg implementeringsrisk --> Hög implementeringsrisk
-    y-axis Låg politisk vikt --> Hög politisk vikt
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
     quadrant-1 Hög vikt / Hög risk
     quadrant-2 Hög vikt / Låg risk
     quadrant-3 Låg vikt / Låg risk
     quadrant-4 Låg vikt / Hög risk
-    HD01KU34 (Grundlag abortskydd+föreningsfrihet): [0.75, 0.95]
-    HD01CU31 (Hyresmarknad flexibel): [0.65, 0.70]
-    HD01FiU37 (Finansiell krishantering): [0.55, 0.68]
-    HD01SoU31 (Suicidutredningsfunktion): [0.60, 0.55]
-    HD01JuU39 (Psykiskt våld): [0.30, 0.50]
-    HD01JuU34 (Nordisk brottmål): [0.25, 0.35]
-    HD01JuU32 (Allmänna sammankomster): [0.40, 0.40]
-    HD01FiU43 (Välfärdsutbetalningar): [0.35, 0.38]
-    style HD01KU34 fill:#ff006e,color:#fff
-    style HD01CU31 fill:#ffbe0b,color:#000
-    style HD01FiU37 fill:#00d9ff,color:#000
-    style HD01SoU31 fill:#00d9ff,color:#000
-    style HD01JuU39 fill:#4caf50,color:#fff
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
 ```
 
 ## Reader Intelligence Guide
@@ -259,7 +254,6 @@ xychart-beta
     x-axis ["KU34", "FiU37", "CU31", "SoU31", "JuU39", "JuU32", "JuU34", "FiU43"]
     y-axis "DIW Score (0-10)" 0 --> 10
     bar [9.2, 7.8, 7.5, 6.8, 6.4, 5.2, 4.9, 4.7]
-    style KU34 fill:#ff006e
 ```
 
 ## Per-document intelligence
@@ -1050,9 +1044,9 @@ Prior: RF-revision misslyckas = 25%. Update på basis av historisk koalitionsstr
 
 ```mermaid
 quadrantChart
-    title Risk Register — Likelihood × Impact
-    x-axis Låg sannolikhet --> Hög sannolikhet
-    y-axis Lågt impact --> Högt impact
+    title "Risk Register — Likelihood × Impact"
+ x-axis Låg sannolikhet --> Hög sannolikhet
+ y-axis Lågt impact --> Högt impact
     quadrant-1 Prioritera åtgärd
     quadrant-2 Bevaka
     quadrant-3 Acceptera
@@ -1063,10 +1057,6 @@ quadrantChart
     R4 SoU31 GDPR: [0.35, 0.75]
     R5 JuU39 Bevisning: [0.60, 0.60]
     R6 Intelligence-gap: [0.65, 0.80]
-    style R1 fill:#ff006e,color:#fff
-    style R2 fill:#ff006e,color:#fff
-    style R3 fill:#ff006e,color:#fff
-    style R6 fill:#ffbe0b,color:#000
 ```
 
 ## SWOT Analysis
@@ -1400,8 +1390,8 @@ graph TD
 %%{init: {'theme': 'dark'}}%%
 quadrantChart
     title Implementeringsfeasibilitet
-    x-axis Låg politisk vilja --> Hög politisk vilja
-    y-axis Låg kapacitet --> Hög kapacitet
+ x-axis Låg politisk vilja --> Hög politisk vilja
+ y-axis Låg kapacitet --> Hög kapacitet
     quadrant-1 Implementering trolig
     quadrant-2 Kapacitetsgap
     quadrant-3 Strukturellt problem
@@ -1411,8 +1401,6 @@ quadrantChart
     FiU37 DORA: [0.90, 0.65]
     SoU31 Suicid: [0.80, 0.60]
     JuU39 Psykvåld: [0.85, 0.55]
-    style KU34 fill:#ffbe0b,color:#000
-    style FiU37 fill:#4caf50,color:#fff
 ```
 
 ## Media Framing Analysis

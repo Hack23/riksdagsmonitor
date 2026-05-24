@@ -30,7 +30,7 @@ graph LR
     A[HD11698] --> B{{Sensitivity}}
     B -->|PUBLIC| E[PUBLIC Level]
     A --> G{{Domain}}
-    G --> H[Foreign Aid / Democracy (FOR/DEM)]
+    G --> H["Foreign Aid / Democracy (FOR/DEM)"]
     A --> I{{Urgency}}
     I -->|ROUTINE| M[ROUTINE processing]
     style E fill:#4CAF50,color:#FFFFFF

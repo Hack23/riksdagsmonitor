@@ -1392,10 +1392,10 @@ The S accountability offensive targeting Svantesson (Finance), housing minister,
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#B71C1C', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title Risk Matrix — Evening Analysis 2026-04-22
-    x-axis "Low Impact" --> "High Impact"
-    y-axis "Low Likelihood" --> "High Likelihood"
-    quadrant-1 High Priority (Act Now)
+    title "Risk Matrix — Evening Analysis 2026-04-22"
+ x-axis "Low Impact" --> "High Impact"
+ y-axis "Low Likelihood" --> "High Likelihood"
+    quadrant-1 High Priority Act Now
     quadrant-2 Monitor Closely
     quadrant-3 Low Priority
     quadrant-4 Contingency Plan

@@ -40,9 +40,6 @@ gantt
     Audiencia CU40 lantmäteri                  :active, 2026-05-19, 10d
     section Presupuesto
     Votación descargo Riksbank (FiU23)         :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style Norma fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 Principal disparador prospectivo

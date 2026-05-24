@@ -57,9 +57,9 @@ Both proposition clusters share a common structural vulnerability: **EU and inte
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Parliamentary Positions on Both Propositions (seats vs opposition strength)
-    x-axis "Pro-proposition" --> "Anti-proposition"
-    y-axis "Few seats" --> "Many seats"
+    title "Parliamentary Positions on Both Propositions (seats vs opposition strength)"
+ x-axis "Pro-proposition" --> "Anti-proposition"
+ y-axis "Few seats" --> "Many seats"
     quadrant-1 Low-impact opposition
     quadrant-2 High-impact opposition
     quadrant-3 Low-impact support
@@ -72,11 +72,6 @@ quadrantChart
     V-JuU: [0.9, 0.22]
     MP-JuU: [0.85, 0.17]
     M-Gov: [0.1, 0.55]
-    style S-Forestry fill:#ff6b35,stroke:#ff006e
-    style V-Forestry fill:#8b0000,stroke:#ff006e
-    style MP-Forestry fill:#228b22,stroke:#00d9ff
-    style SD-Forestry fill:#ffbe0b,stroke:#0a0e27
-    style C-Both fill:#00d9ff,stroke:#0a0e27
 ```
 
 ## Pass 2 enhancement: Cross-cluster synthesis

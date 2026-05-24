@@ -1031,13 +1031,13 @@ Sweden's 21 coordinated S/V/MP/C counter-motions (2026-04-21) on immigration and
 ```mermaid
 quadrantChart
     title EU Policy Benchmarks vs Sweden 2026
-    x-axis "Low Policy Ambition" --> "High Policy Ambition"
-    y-axis "Low EU Compliance Risk" --> "High EU Compliance Risk"
+ x-axis "Low Policy Ambition" --> "High Policy Ambition"
+ y-axis "Low EU Compliance Risk" --> "High EU Compliance Risk"
     quadrant-1 Ambitious but Risky
     quadrant-2 Ambitious and Compliant
     quadrant-3 Conservative and Compliant
     quadrant-4 Risky but Low Ambition
-    Fuel Tax Cut (FiU48): [0.75, 0.75]
+    "Fuel Tax Cut (FiU48)": [0.75, 0.75]
     Vindkraft Revenue Sharing: [0.65, 0.15]
     EU Pay Directive: [0.25, 0.80]
     KU Constitutional Scrutiny: [0.50, 0.10]

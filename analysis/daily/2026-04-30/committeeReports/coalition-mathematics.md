@@ -74,7 +74,7 @@ The **Tidökoalitionen** (M+SD+KD+L = 176 seats) holds a bare majority for purel
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
 xychart-beta
     title "Estimated Ja-votes by Report"
-    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
+    x-axis ["KU36", "JuU9", "NU22", "NU19", "FöU13", "CU37", "SoU33", "JuU46"]
     y-axis "Seats voting Ja (max 349)" 0 --> 350
     bar [347, 340, 290, 325, 320, 347, 330, 349]
 ```

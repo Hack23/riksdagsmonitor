@@ -21,10 +21,10 @@
 ```mermaid
 quadrantChart
   title Frame contest x salience x ownership
-  x-axis Low Salience --> High Salience
-  y-axis Tidö-aligned --> Opposition-aligned
+ x-axis Low Salience --> High Salience
+ y-axis Tidö-aligned --> Opposition-aligned
   Leverans: [0.7, 0.85]
-  Praktisk politik (S): [0.55, 0.25]
+  "Praktisk politik (S)": [0.55, 0.25]
   Trygghet: [0.75, 0.8]
   Polisens kapacitet: [0.5, 0.2]
   Anhörig: [0.65, 0.75]

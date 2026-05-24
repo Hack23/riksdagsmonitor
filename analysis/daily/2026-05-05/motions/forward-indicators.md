@@ -44,3 +44,5 @@ gantt
         FI-12 Floor votes : 2026-10-01, 14d
     section EU
         FI-10 EC Habitats report : 2027-03-01, 14d
+
+```

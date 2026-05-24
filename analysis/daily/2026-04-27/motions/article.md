@@ -1164,7 +1164,7 @@ The deportation and reception-law battles (HD024090, HD024076 riksdagen.se) crea
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
 xychart-beta
-    title Current Seat Distribution — Swedish Riksdag 2022
+    title "Current Seat Distribution — Swedish Riksdag 2022"
     x-axis ["S", "SD", "M", "C", "V", "KD", "MP", "L"]
     y-axis "Seats" 0 --> 120
     bar [107, 73, 68, 24, 24, 19, 18, 16]
@@ -1216,15 +1216,15 @@ Given prior government legislative successes in riksmöte 2025/26:
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "lineColor": "#00d9ff"}}}%%
 quadrantChart
-    title Risk Matrix — Opposition Motion Consequences
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix — Opposition Motion Consequences"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical Monitor
     quadrant-2 High Priority
     quadrant-3 Low Priority
     quadrant-4 Contingency
     R1 Legal Challenge: [0.6, 0.8]
-    R2 Coalition Fissure: [0.4, 1.0]
+    R2 Coalition Fissure: [0.4, 1]
     R4 Implementation: [0.8, 0.6]
     R5 Election Platform: [0.8, 0.6]
     R3 Climate Targets: [0.6, 0.6]
@@ -1276,8 +1276,8 @@ style R2 fill:#ff006e,color:#fff
 %%{init: {"theme": "dark", "themeVariables": {"quadrantPointFill": "#00d9ff", "quadrantPointTextFill": "#fff"}}}%%
 quadrantChart
     title Opposition Motion Impact vs Political Risk
-    x-axis Low Impact --> High Impact
-    y-axis Low Risk --> High Risk
+ x-axis Low Impact --> High Impact
+ y-axis Low Risk --> High Risk
     quadrant-1 Monitor
     quadrant-2 High Value Targets
     quadrant-3 Background
@@ -1289,8 +1289,7 @@ quadrantChart
     HD024093: [0.60, 0.15]
     HD024073: [0.55, 0.25]
 
-style HD024090 fill:#ff006e,color:#fff
-
+```
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/threat-analysis.md -->
 

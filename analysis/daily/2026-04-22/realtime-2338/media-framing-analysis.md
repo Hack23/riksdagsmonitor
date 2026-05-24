@@ -55,8 +55,8 @@
 ```mermaid
 quadrantChart
     title Media Framing Risk vs. Coalition Electoral Impact
-    x-axis Low Risk --> High Risk
-    y-axis Low Impact --> High Impact
+ x-axis Low Risk --> High Risk
+ y-axis Low Impact --> High Impact
     quadrant-1 Manage proactively
     quadrant-2 Crisis response needed
     quadrant-3 Monitor passively
@@ -64,7 +64,7 @@ quadrantChart
     HD10444 employer contributions: [0.7, 0.8]
     HD10442 eating disorder: [0.65, 0.75]
     HD10446 false death records: [0.8, 0.8]
-    HD01FiU48 fuel cut (positive): [0.2, 0.6]
+    "HD01FiU48 fuel cut (positive)": [0.2, 0.6]
     Energy legislation: [0.2, 0.4]
     HD03246 youth crime reform: [0.3, 0.5]
 ```

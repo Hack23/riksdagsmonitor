@@ -52,9 +52,9 @@
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "primaryTextColor": "#e0e0e0", "lineColor": "#00d9ff"}}}%%
 quadrantChart
-    title Risk Matrix — Probability vs. Impact
-    x-axis Low Impact --> High Impact
-    y-axis Low Probability --> High Probability
+    title "Risk Matrix — Probability vs. Impact"
+ x-axis Low Impact --> High Impact
+ y-axis Low Probability --> High Probability
     quadrant-1 Critical risk
     quadrant-2 Monitor
     quadrant-3 Accept
@@ -63,8 +63,4 @@ quadrantChart
     R2 Opposition amendment HD03255: [0.55, 0.5]
     R3 Bank lobbying HD03255: [0.5, 0.35]
     R4 FI implementation delay HD03255: [0.5, 0.3]
-    style R1 Lagrådet block HD03255 fill:#ff006e,stroke:#ff006e
-    style R2 Opposition amendment HD03255 fill:#ffbe0b,stroke:#ffbe0b
-    style R3 Bank lobbying HD03255 fill:#1a1e3d,stroke:#00d9ff
-    style R4 FI implementation delay HD03255 fill:#1a1e3d,stroke:#00d9ff
 ```

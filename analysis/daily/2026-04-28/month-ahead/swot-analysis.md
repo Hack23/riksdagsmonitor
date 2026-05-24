@@ -46,9 +46,9 @@ The May 2026 month presents a classic political **peak-and-vulnerability** patte
 
 ```mermaid
 quadrantChart
-    title SWOT Priority Matrix — Government Position
-    x-axis "Internal Factor" --> "External Factor"
-    y-axis "Risk/Weakness" --> "Strength/Opportunity"
+    title "SWOT Priority Matrix — Government Position"
+ x-axis "Internal Factor" --> "External Factor"
+ y-axis "Risk/Weakness" --> "Strength/Opportunity"
     quadrant-1 Leverageable
     quadrant-2 Watch
     quadrant-3 Address
@@ -60,10 +60,4 @@ quadrantChart
     SDAmendmentRisk: [0.8, 0.25]
     SInterpellations: [0.85, 0.30]
     CPartySignal: [0.9, 0.35]
-    style JusticeCluster fill:#059669
-    style SD-Alignment fill:#059669
-    style InfrastructureGap fill:#dc2626
-    style SickPayGap fill:#dc2626
-    style SDAmendmentRisk fill:#d97706
-    style SInterpellations fill:#d97706
 ```

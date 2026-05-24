@@ -236,8 +236,6 @@ xychart-beta
     x-axis [HD01FiU48, HD01JuU10, HD01SoU25, HD01FiU23, HD01CU24, HD01JuU31]
     y-axis "DIW Score" 0 --> 10
     bar [8.5, 7.8, 6.5, 5.0, 4.5, 4.0]
-    style HD01FiU48 fill:#ff006e
-    style HD01JuU10 fill:#00d9ff
 ```
 
 ## Per-document intelligence
@@ -873,9 +871,9 @@ pie title Swedish Riksdag — Approximate Current Distribution (349 seats)
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map — April 2026 Committee Reports
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Heat Map — April 2026 Committee Reports"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical
     quadrant-2 Monitor
     quadrant-3 Low Priority
@@ -885,11 +883,6 @@ quadrantChart
     "R3 EU Fiscal review": [0.30, 0.75]
     "R4 Weapons registry gaps": [0.55, 0.55]
     "R5 Elder-care delay": [0.55, 0.35]
-    style "R1 C Party withdrawal" fill:#ff006e,stroke:#ff006e
-    style "R3 EU Fiscal review" fill:#ff006e,stroke:#ff006e
-    style "R2 Climate backlash" fill:#ffbe0b,stroke:#ffbe0b
-    style "R4 Weapons registry gaps" fill:#ffbe0b,stroke:#ffbe0b
-    style "R5 Elder-care delay" fill:#00d9ff,stroke:#00d9ff
 ```
 
 ## SWOT Analysis
@@ -939,9 +932,9 @@ quadrantChart
 
 ```mermaid
 quadrantChart
-    title SWOT Quadrant — April 2026 Committee Reports
-    x-axis Low Threat --> High Threat
-    y-axis Low Strength --> High Strength
+    title "SWOT Quadrant — April 2026 Committee Reports"
+ x-axis Low Threat --> High Threat
+ y-axis Low Strength --> High Strength
     quadrant-1 Manage Threats
     quadrant-2 Leverage Strengths
     quadrant-3 Monitor Risks
@@ -952,8 +945,6 @@ quadrantChart
     "Climate regression": [0.75, 0.30]
     "Fiscal surplus risk": [0.70, 0.40]
     "Election dividend": [0.40, 0.60]
-    style "Climate regression" fill:#ff006e,stroke:#ff006e
-    style "Coalition discipline" fill:#00d9ff,stroke:#00d9ff
 ```
 
 ## Threat Analysis
@@ -1094,8 +1085,6 @@ xychart-beta
     x-axis [Sweden, Norway, Denmark, Finland, Germany]
     y-axis "% GDP" -3 --> 15
     bar [-1.2, 12.0, 2.0, -0.5, -0.8]
-    style Sweden fill:#00d9ff
-    style Norway fill:#ffbe0b
 ```
 
 ## Implementation Feasibility
@@ -1148,18 +1137,16 @@ xychart-beta
 ```mermaid
 quadrantChart
     title Implementation Risk vs. Political Priority
-    x-axis Low Political Priority --> High Political Priority
-    y-axis Low Implementation Risk --> High Implementation Risk
-    quadrant-1 Critical: High priority, high risk
-    quadrant-2 Monitor: Low priority, high risk
-    quadrant-3 Standard: Low priority, low risk
-    quadrant-4 Easy wins: High priority, low risk
+ x-axis Low Political Priority --> High Political Priority
+ y-axis Low Implementation Risk --> High Implementation Risk
+    quadrant-1 Critical High priority, high risk
+    quadrant-2 Monitor Low priority, high risk
+    quadrant-3 Standard Low priority, low risk
+    quadrant-4 Easy wins High priority, low risk
     "FiU48 Energy Relief": [0.85, 0.20]
     "JuU10 Weapons Registry": [0.75, 0.80]
     "SoU25 Elder Care": [0.65, 0.55]
     "FiU23 Riksbank": [0.30, 0.10]
-    style "JuU10 Weapons Registry" fill:#ff006e,stroke:#ff006e
-    style "FiU48 Energy Relief" fill:#00d9ff,stroke:#00d9ff
 ```
 
 ## Media Framing Analysis

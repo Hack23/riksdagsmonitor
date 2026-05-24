@@ -32,8 +32,6 @@ xychart-beta
   x-axis [HD03262, HD03250, HD03267, HD03264, HD03261]
   y-axis "DIW Score" 0 --> 100
   bar [81, 72, 56, 49, 42]
-  style HD03262 fill:#ff006e
-  style HD03250 fill:#00d9ff
 ```
 
 ## Totalt DIW-aggregat

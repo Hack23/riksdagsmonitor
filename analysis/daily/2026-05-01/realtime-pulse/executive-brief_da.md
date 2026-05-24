@@ -42,8 +42,6 @@ gantt
     section Economic
     IMF WEO Spring update             :imf1, 2026-05-01, 7d
     Riksbank rate decision            :rbk1, 2026-06-01, 3d
-    style lag1 fill:#ff006e
-    style camp1 fill:#ffbe0b
 ```
 
 <!-- source-sha: 0662dfda88b9d02453368e18ec4258559dd23f48 -->

@@ -45,14 +45,13 @@ Konfidens HÖG baserat på: officiellt riksdagsdokument HD03255 [A1]; betänkand
 ```mermaid
 quadrantChart
     title Significance vs. Political Controversy
-    x-axis Low Controversy --> High Controversy
-    y-axis Low Significance --> High Significance
+ x-axis Low Controversy --> High Controversy
+ y-axis Low Significance --> High Significance
     quadrant-1 Monitor closely
     quadrant-2 Priority coverage
     quadrant-3 Background
     quadrant-4 Political story
-    Prop 2025/26:255 HD03255: [0.2, 0.7]
-    style Prop 2025/26:255 HD03255 fill:#00d9ff,stroke:#00d9ff
+    "Prop 2025/26:255 HD03255": [0.2, 0.7]
 ```
 
 <!-- source-sha: 5591d3b185740d167f3a948b0f8e881cfaf357b9 -->

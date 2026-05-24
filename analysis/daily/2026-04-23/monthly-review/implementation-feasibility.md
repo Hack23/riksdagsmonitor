@@ -26,12 +26,12 @@
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
 quadrantChart
     title Implementation Feasibility vs. Political Priority
-    x-axis Low Priority --> High Priority
-    y-axis High Risk --> Low Risk
-    quadrant-1 High Priority + Low Risk (Deliver First)
+ x-axis Low Priority --> High Priority
+ y-axis High Risk --> Low Risk
+    quadrant-1 High Priority + Low Risk Deliver First
     quadrant-2 Low Priority + Low Risk
     quadrant-3 Low Priority + High Risk
-    quadrant-4 High Priority + High Risk (Critical Monitor)
+    quadrant-4 High Priority + High Risk Critical Monitor
     HD01FiU48 energy relief: [0.90, 0.85]
     UFöU3 NATO Finland: [0.85, 0.80]
     HD03235 criminal deportation: [0.80, 0.55]

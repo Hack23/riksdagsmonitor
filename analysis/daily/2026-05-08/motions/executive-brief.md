@@ -42,6 +42,4 @@ timeline
     2026-06-01 : Lagrådet yttrande expected (PIR LAGRÅDET-246)
     2026-06-08 : Post-Lagrådet C statement expected (PIR COALITION-C-JuU)
     2027-03-01 : EU/EC annual compliance report on forestry deregulation (PIR EU-HABITATS-SE)
-    style 2026-05-04 fill:#1a1e3d,color:#00d9ff
-    style 2026-06-01 fill:#8b0000,color:#ffbe0b
 ```

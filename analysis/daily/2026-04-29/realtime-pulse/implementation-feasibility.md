@@ -71,7 +71,7 @@
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
 xychart-beta
-    title Implementation Feasibility Score (1-10 scale)
+    title "Implementation Feasibility Score (1-10 scale)"
     x-axis ["JuU10 Legal", "JuU10 Admin", "NU19 Nuclear", "CU37 Housing", "HVB Reform", "Water Security"]
     y-axis 0 --> 10
     bar [9, 5, 9, 5, 6, 4]

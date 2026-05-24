@@ -39,7 +39,6 @@ pie title Priority Tier Distribution
     "P2 Significant (3)" : 3
     "P3 Monitoring (3)" : 3
     "P4 Routine (4)" : 4
-    style P0 fill:#ff006e
 ```
 
 ```mermaid

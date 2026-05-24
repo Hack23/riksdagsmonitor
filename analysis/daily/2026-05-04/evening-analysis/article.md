@@ -1410,17 +1410,17 @@ Impact: 4/5 — Any coalition rupture in the 132-day window would be catastrophi
 
 ```mermaid
 quadrantChart
-    title Risk Register — Likelihood vs Impact
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical (monitor closely)
+    title "Risk Register — Likelihood vs Impact"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
+    quadrant-1 Critical monitor closely
     quadrant-2 Manage proactively
-    quadrant-3 Accept (low priority)
+    quadrant-3 Accept low priority
     quadrant-4 High impact but low likelihood
     Criminal age defeat R1: [0.6, 0.75]
     Ostlänken electoral R2: [0.6, 0.75]
-    Lagrådet migration R3: [0.4, 1.0]
-    L threshold risk R4: [0.4, 1.0]
+    Lagrådet migration R3: [0.4, 1]
+    L threshold risk R4: [0.4, 1]
     SD coalition risk R5: [0.4, 0.75]
     Forest prop R6: [0.4, 0.6]
     Pesticide R7: [0.4, 0.35]

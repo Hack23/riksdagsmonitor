@@ -30,7 +30,7 @@ Current seat distribution (approximate 2022 result):
 
 ```mermaid
 xychart-beta
-    title Electoral Salience Score by Topic (0-10)
+    title "Electoral Salience Score by Topic (0-10)"
     x-axis ["Crime Gov.", "Social Net", "Healthcare", "Energy", "Infrastructure", "Admin/Proc."]
     y-axis "Electoral Salience (0=low, 10=high)" 0 --> 10
     bar [9.2, 8.1, 7.4, 6.5, 5.2, 3.8]

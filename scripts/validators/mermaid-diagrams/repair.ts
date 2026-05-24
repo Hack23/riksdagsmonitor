@@ -73,6 +73,26 @@ export function stripParensFromQuadrantLabels(body: string): string {
 }
 
 /**
+ * Insert the missing `:` separator in `quadrantChart` data points
+ * authored as `"Label" [x, y]` (space instead of colon between the
+ * label and the coordinate block). Idempotent — lines already in
+ * `"Label": [x, y]` shape are left untouched.
+ */
+export function insertQuadrantDataPointColon(body: string): string {
+  if (detectMermaidDiagramType(body) !== 'quadrantChart') return body;
+  return body
+    .split('\n')
+    .map((line) => {
+      // Already-correct shape ends `": [...]` — skip.
+      if (/":\s*\[[^\]\n]+\]\s*$/.test(line)) return line;
+      const m = /^([\t ]*)("[^"\n]+")[\t ]+(\[[^\]\n]+\])\s*$/.exec(line);
+      if (!m) return line;
+      return `${m[1]!}${m[2]!}: ${m[3]!}`;
+    })
+    .join('\n');
+}
+
+/**
  * Quote `quadrantChart` data-point labels that contain characters
  * Mermaid's lexer rejects when bare — most commonly `(` and `)` from
  * dok-id annotations:
@@ -92,7 +112,7 @@ export function quoteQuadrantDataPointLabels(body: string): string {
       // Data-point shape: `Label: [x, y]` with optional leading
       // whitespace. Reject lines whose head is already quoted, and
       // skip non-data lines (title / x-axis / y-axis / quadrant-N).
-      const m = /^([\t ]*)([^"\n][^:\n]*?):\s*\[([^\]\n]+)\]\s*$/.exec(line);
+      const m = /^([\t ]*)([^"\n].+):\s*\[([^\]\n]+)\]\s*$/.exec(line);
       if (!m) return line;
       const indent = m[1]!;
       const label = m[2]!.trim();
@@ -201,6 +221,76 @@ export function normaliseQuadrantDataPointFloats(body: string): string {
           .join(', ');
         return `[${fixed}]`;
       });
+    })
+    .join('\n');
+}
+
+/**
+ * Normalise quadrantChart data-point coordinates that were authored as
+ * **percentages** (`[35, 55]`, `[75, 25]`) rather than the required
+ * 0..1 fractions. Only applies when **every** finite numeric coord in
+ * the block is > 1 (so we don't accidentally rescale a block that mixes
+ * fractions and percentages — that's a content authoring bug the user
+ * must resolve). Negatives and out-of-range values that survive after
+ * scaling are clamped to [0, 1] so the renderer never crashes on
+ * out-of-axis points.
+ */
+export function normaliseQuadrantPercentageCoords(body: string): string {
+  if (detectMermaidDiagramType(body) !== 'quadrantChart') return body;
+  const dataLineRe = /^(\s*[^:\n]+:\s*\[)([^\]]*)(\]\s*)$/;
+  const lines = body.split('\n');
+  const numericCoords: number[] = [];
+  for (const line of lines) {
+    const m = dataLineRe.exec(line);
+    if (m === null) continue;
+    for (const part of m[2]!.split(',')) {
+      const n = Number(part.trim());
+      if (Number.isFinite(n)) numericCoords.push(n);
+    }
+  }
+  if (numericCoords.length === 0) return body;
+  const allOverOne = numericCoords.every((n) => n > 1);
+  if (!allOverOne) return body;
+  return lines
+    .map((line) => {
+      const m = dataLineRe.exec(line);
+      if (m === null) return line;
+      const scaled = m[2]!
+        .split(',')
+        .map((part) => {
+          const trimmed = part.trim();
+          const n = Number(trimmed);
+          if (!Number.isFinite(n)) return trimmed;
+          const v = Math.max(0, Math.min(1, n / 100));
+          // Two-decimal trim, dropping trailing zeros, but keep `0`/`1`
+          // as bare integers (lexer-clean).
+          if (v === 0 || v === 1) return String(v);
+          return v.toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
+        })
+        .join(', ');
+      return `${m[1]}${scaled}${m[3]}`;
+    })
+    .join('\n');
+}
+
+/**
+ * Collapse `R-01 "Long Label": [x, y]` data points (a bare identifier
+ * followed by a quoted label) into the canonical Mermaid 11 form
+ * `"R-01 — Long Label": [x, y]`. The bare-then-quoted pattern is a
+ * common author shortcut that the Mermaid 11 grammar does not accept.
+ */
+export function collapseQuadrantBareThenQuotedLabels(body: string): string {
+  if (detectMermaidDiagramType(body) !== 'quadrantChart') return body;
+  // `^<indent>(bare-id) "(quoted)": [x, y]$` — bare-id is a token of
+  // non-whitespace, non-quote characters that doesn't already start
+  // with `"`.
+  const re = /^(\s*)([^\s":][^\s":]*)\s+"([^"\n]+)"(\s*:\s*\[[^\]]*\]\s*)$/;
+  return body
+    .split('\n')
+    .map((line) => {
+      const m = re.exec(line);
+      if (m === null) return line;
+      return `${m[1]}"${m[2]} — ${m[3]}"${m[4]}`;
     })
     .join('\n');
 }
@@ -441,7 +531,10 @@ export function repairMermaidBlock(body: string): string {
   let next = body;
   next = stripParensFromQuadrantLabels(next);
   next = stripParensFromQuadrantAxisLabels(next);
+  next = collapseQuadrantBareThenQuotedLabels(next);
+  next = insertQuadrantDataPointColon(next);
   next = normaliseQuadrantDataPointFloats(next);
+  next = normaliseQuadrantPercentageCoords(next);
   next = quoteQuadrantDataPointLabels(next);
   next = quoteChartTitle(next);
   next = quoteXychartAxisItems(next);

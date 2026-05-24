@@ -40,19 +40,19 @@
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
 quadrantChart
-    title SWOT Quadrant — Swedish Tidö Coalition 28 Apr 2026
-    x-axis "Internal / Controllable" --> "External / Environmental"
-    y-axis "Negative" --> "Positive"
+    title "SWOT Quadrant — Swedish Tidö Coalition 28 Apr 2026"
+ x-axis "Internal / Controllable" --> "External / Environmental"
+ y-axis "Negative" --> "Positive"
     quadrant-1 Opportunities
     quadrant-2 Strengths
     quadrant-3 Weaknesses
     quadrant-4 Threats
-    Military-Pack[B2]: [0.25, 0.88]
-    EU-Frame[A2]: [0.30, 0.80]
-    Budget-Vulner[B2]: [0.20, 0.28]
-    SD-M-Tension[B2]: [0.15, 0.22]
-    Election-Frame[B1]: [0.75, 0.82]
-    CER-FirstMover[A2]: [0.80, 0.75]
-    Fiscal-Attack[B2]: [0.85, 0.22]
-    Constit-Challenge[B1]: [0.78, 0.18]
+    "Military-Pack[B2]": [0.25, 0.88]
+    "EU-Frame[A2]": [0.30, 0.80]
+    "Budget-Vulner[B2]": [0.20, 0.28]
+    "SD-M-Tension[B2]": [0.15, 0.22]
+    "Election-Frame[B1]": [0.75, 0.82]
+    "CER-FirstMover[A2]": [0.80, 0.75]
+    "Fiscal-Attack[B2]": [0.85, 0.22]
+    "Constit-Challenge[B1]": [0.78, 0.18]
 ```

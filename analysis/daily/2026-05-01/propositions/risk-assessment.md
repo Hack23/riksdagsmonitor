@@ -39,9 +39,9 @@ HD03262 removes permanent permits → CJEU referral from Swedish administrative 
 ```mermaid
 %%{init: {"theme": "dark"}}%%
 quadrantChart
-    title Risk Matrix: Likelihood vs Impact
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Matrix: Likelihood vs Impact"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Critical Risks — Immediate Action
     quadrant-2 Monitor Closely
     quadrant-3 Low Priority
@@ -54,6 +54,4 @@ quadrantChart
     R-7 Election Reversal: [0.55, 0.75]
     R-5 S Party Fracture: [0.55, 0.55]
     R-8 EU Pact Conflict: [0.40, 0.75]
-    style R-1 ECHR Detention color:#ff006e
-    style R-2 CJEU Challenge color:#ff006e
 ```

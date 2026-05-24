@@ -20,8 +20,8 @@
 %%{init: {'theme': 'dark'}}%%
 quadrantChart
     title Riskmatris 2026-05-15
-    x-axis Låg sannolikhet --> Hög sannolikhet
-    y-axis Låg konsekvens --> Hög konsekvens
+ x-axis Låg sannolikhet --> Hög sannolikhet
+ y-axis Låg konsekvens --> Hög konsekvens
     quadrant-1 Kritisk risk - Hantera omedelbart
     quadrant-2 Bevaka intensivt
     quadrant-3 Acceptabel risk
@@ -33,7 +33,7 @@ quadrantChart
     R-7 Oppositionspakt: [0.50, 0.50]
     R-5 e-legitimation: [0.30, 0.50]
     R-8 Transparens Lagrådet: [0.40, 0.50]
-    R-2 Ryssland angrepp: [0.10, 1.00]
+    R-2 Ryssland angrepp: [0.10, 1]
 ```
 
 ## Riskmildringsåtgärder

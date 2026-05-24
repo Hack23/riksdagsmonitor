@@ -43,13 +43,13 @@
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
 quadrantChart
-    title Voter Segment: Economic Concern vs. Cultural Conservatism
-    x-axis Low Economic Concern --> High Economic Concern
-    y-axis Progressive Cultural --> Conservative Cultural
-    quadrant-1 High Econ + Conservative (SD target)
-    quadrant-2 High Econ + Progressive (S/V target)
-    quadrant-3 Low Econ + Progressive (MP target)
-    quadrant-4 Low Econ + Conservative (M/KD target)
+    title "Voter Segment: Economic Concern vs. Cultural Conservatism"
+ x-axis Low Economic Concern --> High Economic Concern
+ y-axis Progressive Cultural --> Conservative Cultural
+    quadrant-1 High Econ + Conservative SD target
+    quadrant-2 High Econ + Progressive S/V target
+    quadrant-3 Low Econ + Progressive MP target
+    quadrant-4 Low Econ + Conservative M/KD target
     S core base: [0.45, 0.45]
     V target: [0.65, 0.25]
     MP target: [0.25, 0.15]

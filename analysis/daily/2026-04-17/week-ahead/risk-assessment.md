@@ -10,13 +10,13 @@
 
 ```mermaid
 quadrantChart
-    title Political Risk Matrix — Week Apr 17-24
-    x-axis Low Probability --> High Probability
-    y-axis Low Impact --> High Impact
-    quadrant-1 High Impact/High Probability (Critical)
-    quadrant-2 High Impact/Low Probability (Monitor)
-    quadrant-3 Low Impact/Low Probability (Acceptable)
-    quadrant-4 Low Impact/High Probability (Manage)
+    title "Political Risk Matrix — Week Apr 17-24"
+ x-axis Low Probability --> High Probability
+ y-axis Low Impact --> High Impact
+    quadrant-1 High Impact/High Probability Critical
+    quadrant-2 High Impact/Low Probability Monitor
+    quadrant-3 Low Impact/Low Probability Acceptable
+    quadrant-4 Low Impact/High Probability Manage
     "Svantesson KU misstep": [0.35, 0.80]
     "Coalition gender equality damage": [0.65, 0.70]
     "CU housing opposition amendments": [0.30, 0.45]

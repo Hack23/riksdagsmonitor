@@ -853,13 +853,13 @@ pie title Predicted Vote: prop 2025/26:236 (Fuel Tax)
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27"}}}%%
 quadrantChart
-    title Voter Segment: Economic Concern vs. Cultural Conservatism
-    x-axis Low Economic Concern --> High Economic Concern
-    y-axis Progressive Cultural --> Conservative Cultural
-    quadrant-1 High Econ + Conservative (SD target)
-    quadrant-2 High Econ + Progressive (S/V target)
-    quadrant-3 Low Econ + Progressive (MP target)
-    quadrant-4 Low Econ + Conservative (M/KD target)
+    title "Voter Segment: Economic Concern vs. Cultural Conservatism"
+ x-axis Low Economic Concern --> High Economic Concern
+ y-axis Progressive Cultural --> Conservative Cultural
+    quadrant-1 High Econ + Conservative SD target
+    quadrant-2 High Econ + Progressive S/V target
+    quadrant-3 Low Econ + Progressive MP target
+    quadrant-4 Low Econ + Conservative M/KD target
     S core base: [0.45, 0.45]
     V target: [0.65, 0.25]
     MP target: [0.25, 0.15]
@@ -1142,13 +1142,13 @@ Two simultaneous social policy risks create a compound exposure: (1) electricity
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
-    title Risk Heat Map — Opposition Motions 2026-04-23
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 High Likelihood + High Impact (CRITICAL)
-    quadrant-2 Low Likelihood + High Impact (MONITOR)
-    quadrant-3 Low Likelihood + Low Impact (ACCEPT)
-    quadrant-4 High Likelihood + Low Impact (MANAGE)
+    title "Risk Heat Map — Opposition Motions 2026-04-23"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
+    quadrant-1 High Likelihood + High Impact CRITICAL
+    quadrant-2 Low Likelihood + High Impact MONITOR
+    quadrant-3 Low Likelihood + Low Impact ACCEPT
+    quadrant-4 High Likelihood + Low Impact MANAGE
     R-04 Fragmentation: [0.65, 0.95]
     R-02 Electricity gap: [0.80, 0.65]
     R-03 Court challenges: [0.62, 0.80]
@@ -1217,13 +1217,13 @@ The opposition's tactical problem: energy opponents (V, MP) and migration oppone
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
-    title SWOT Quadrant — Opposition Motion Strategy
-    x-axis Internal Focus --> External Focus
-    y-axis Negative --> Positive
-    quadrant-1 External Positive (Opportunities)
-    quadrant-2 Internal Positive (Strengths)
-    quadrant-3 Internal Negative (Weaknesses)
-    quadrant-4 External Negative (Threats)
+    title "SWOT Quadrant — Opposition Motion Strategy"
+ x-axis Internal Focus --> External Focus
+ y-axis Negative --> Positive
+    quadrant-1 External Positive Opportunities
+    quadrant-2 Internal Positive Strengths
+    quadrant-3 Internal Negative Weaknesses
+    quadrant-4 External Negative Threats
     Expert consensus: [0.85, 0.85]
     Lagrådet backing: [0.80, 0.88]
     Fragmentation: [0.20, 0.15]

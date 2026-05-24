@@ -45,13 +45,13 @@
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
 quadrantChart
-    title Risk Heatmap: Likelihood vs Impact (29 Apr 2026)
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical (Monitor + Act)
-    quadrant-2 Strategic (Plan + Mitigate)
-    quadrant-3 Watch (Track)
-    quadrant-4 Background (Accept)
+    title "Risk Heatmap: Likelihood vs Impact (29 Apr 2026)"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
+    quadrant-1 Critical Monitor + Act
+    quadrant-2 Strategic Plan + Mitigate
+    quadrant-3 Watch Track
+    quadrant-4 Background Accept
     HVB Criminal Gangs R1: [0.80, 0.80]
     China Industry R2: [0.65, 0.85]
     Water Crisis R3: [0.55, 0.75]

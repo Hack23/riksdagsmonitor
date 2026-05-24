@@ -60,9 +60,9 @@ Subject: Tidö Coalition's pre-election legislative programme as executed on 202
 ```mermaid
 %%{init: {'theme': 'dark'}}%%
 quadrantChart
-    title SWOT Quadrant — Tidö Coalition 28 Apr 2026
-    x-axis Weakness --> Strength
-    y-axis Threat --> Opportunity
+    title "SWOT Quadrant — Tidö Coalition 28 Apr 2026"
+ x-axis Weakness --> Strength
+ y-axis Threat --> Opportunity
     quadrant-1 Leverage
     quadrant-2 Invest
     quadrant-3 Monitor
@@ -75,8 +75,4 @@ quadrantChart
     Fiscal Defeat Risk: [0.30, 0.20]
     Security Delivery: [0.78, 0.80]
     Banking Reform: [0.70, 0.65]
-    style Legislative Execution fill:#00d9ff
-    style Security Agenda fill:#00d9ff
-    style Fiscal Defeat Risk fill:#ff006e
-    style L-SD Tension fill:#ff006e
 ```

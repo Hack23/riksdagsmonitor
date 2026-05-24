@@ -8,16 +8,20 @@
 ## Impact Radar
 
 ```mermaid
-radar
-    title Stakeholder Impact Scores (0-10)
-    Citizens: 7
-    Government Coalition: 8
-    Opposition Bloc: 7
-    Business Industry: 5
-    Civil Society: 8
-    International EU: 9
-    Judiciary Constitutional: 9
-    Media Public Opinion: 9
+flowchart LR
+    unsupported["⚠️ Mermaid radar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: radar
+%% original-source:
+%% radar
+%%     title Stakeholder Impact Scores (0-10)
+%%     Citizens: 7
+%%     Government Coalition: 8
+%%     Opposition Bloc: 7
+%%     Business Industry: 5
+%%     Civil Society: 8
+%%     International EU: 9
+%%     Judiciary Constitutional: 9
+%%     Media Public Opinion: 9
 ```
 
 ## 8 Stakeholder Group Analysis
@@ -132,15 +136,15 @@ Citizens face two countervailing developments:
 
 ```mermaid
 graph TD
-    PM[Ulf Kristersson<br/>PM · M] --> FM[Maria Malmer Stenergard<br/>FM · M]
-    PM --> JM[Gunnar Strömmer<br/>Justitieminister · M]
-    PM --> FinM[Elisabeth Svantesson<br/>Finansminister · M]
-    PM -.coalition.-> SD[Jimmy Åkesson<br/>SD party leader]
-    PM -.coalition.-> L[Johan Pehrson<br/>L party leader]
-    PM -.coalition.-> KD[Ebba Busch<br/>KD party leader]
+    PM["Ulf Kristersson<br/>PM · M"] --> FM["Maria Malmer Stenergard<br/>FM · M"]
+    PM --> JM["Gunnar Strömmer<br/>Justitieminister · M"]
+    PM --> FinM["Elisabeth Svantesson<br/>Finansminister · M"]
+    PM -.coalition.-> SD["Jimmy Åkesson<br/>SD party leader"]
+    PM -.coalition.-> L["Johan Pehrson<br/>L party leader"]
+    PM -.coalition.-> KD["Ebba Busch<br/>KD party leader"]
 
-    FM --> KING[H.M. King Carl Gustaf<br/>Head of State]
-    KING -.2026-04-17 Kyiv visit.-> ZEL[Volodymyr Zelensky<br/>Ukraine]
+    FM --> KING["H.M. King Carl Gustaf<br/>Head of State"]
+    KING -.2026-04-17 Kyiv visit.-> ZEL["Volodymyr Zelensky<br/>Ukraine"]
 
     JM --> KU33[HD01KU33 betänkande]
     JM -.enforcement agenda.-> POL[Åklagarmyndigheten · Polisen]
@@ -148,13 +152,13 @@ graph TD
     FM --> HD232[HD03232 Commission]
     FinM --> HD232
 
-    KUchair[Ann-Sofie Alm<br/>KU chair · M] --> KU33
+    KUchair["Ann-Sofie Alm<br/>KU chair · M"] --> KU33
     KUchair --> KU32[HD01KU32 betänkande]
 
-    OPP_S[Magdalena Andersson<br/>S party leader] -.oppose-> KU33
+    OPP_S["Magdalena Andersson<br/>S party leader"] -.oppose.-> KU33
     OPP_S -.support.-> HD231
-    OPP_V[Nooshi Dadgostar<br/>V party leader] -.strongly oppose.-> KU33
-    OPP_MP[Daniel Helldén<br/>MP språkrör] -.oppose.-> KU33
+    OPP_V["Nooshi Dadgostar<br/>V party leader"] -.strongly oppose.-> KU33
+    OPP_MP["Daniel Helldén<br/>MP språkrör"] -.oppose.-> KU33
 
     LAG[Lagrådet] -.pre-vote yttrande.-> KU33
     JO[Erik Nymansson JO] -.post-impl monitoring.-> KU33
@@ -163,7 +167,7 @@ graph TD
     TU[TU · Utgivarna] -.campaign.-> KU33
     RSF[RSF-SE] -.campaign.-> KU33
 
-    CoE[Council of Europe<br/>Venice Commission] -.monitors Art 10.-> KU33
+    CoE["Council of Europe<br/>Venice Commission"] -.monitors Art 10.-> KU33
     CoE -.hosts secretariat.-> HD231
     EC[EU Commission] -.monitors EAA compliance.-> KU32
 

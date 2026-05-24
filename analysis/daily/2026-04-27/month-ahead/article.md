@@ -47,9 +47,6 @@ gantt
     CU40 lantmäteri hearing               :active, 2026-05-19, 10d
     section Budget
     Riksbank discharge vote (FiU23)       :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-laddning fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### �� Top Forward Trigger
@@ -247,7 +244,6 @@ pie title Significance Distribution by Category
     "Social Insurance" : 15
     "Infrastructure" : 10
     "Other" : 5
-    style pie fill:#0a0e27,stroke:#00d9ff
 ```
 
 ### DIW Score Chart
@@ -258,7 +254,6 @@ xychart-beta
     x-axis ["JuU10 Vapen", "UkraineTrib", "StambananIP", "SjukIP", "CU25Prison", "SfU23Migr"]
     y-axis "DIW Score" 0 --> 0.5
     bar [0.45, 0.38, 0.35, 0.33, 0.30, 0.27]
-    style xychart-beta fill:#0a0e27,color:#e0e0e0
 ```
 
 ## Per-document intelligence
@@ -783,7 +778,6 @@ pie title Voter Segment Distribution (May 2026)
     "S4 Infrastructure-Regionals" : 12
     "S5 Cultural Nationalists" : 14
     "Other/Undecided" : 19
-    style pie fill:#0a0e27
 ```
 
 ### Segment Shift Dynamics
@@ -856,23 +850,22 @@ Twenty dated forward indicators across four time horizons: immediate (May 2026),
 ```mermaid
 timeline
     title Forward Indicators Timeline May–September 2026
-    section May (Immediate)
+ section May Immediate
         2026-05-06 : FI-04 Södra stambanan response
         2026-05-07 : FI-03 Sick-pay response
         2026-05-10 : FI-01 Weapons law vote
         2026-05-12 : FI-02 Prison construction vote
         2026-05-15 : FI-05 SCB unemployment
-    section June–July (Near-Term)
+ section June–July Near-Term
         2026-06-05 : FI-06 Sifo polling
         2026-06-15 : FI-07 Kriminalvården report, FI-09 Polismyndigheten
         2026-06-30 : FI-08 LO wage settlement
         2026-07-01 : FI-10 Ukraine RCRPA report
-    section August–September (Election)
+ section August–September Election
         2026-08-15 : FI-11 Pre-election polls
         2026-08-20 : FI-13 C coalition signal
         2026-08-24 : FI-12 Leader debate
         2026-09-13 : FI-14 Election day
-    style 2026-09-13 stroke:#ff006e,fill:#ff006e
 ```
 
 ### Assessment
@@ -981,7 +974,6 @@ gantt
     section Election
     Election day            :milestone, 2026-09-13, 0d
 
-    style 2026-09-13 stroke:#ff006e,fill:#ff006e
 ```
 
 ### Key Electoral Uncertainties
@@ -1026,13 +1018,13 @@ S-party has filed coordinated interpellations (HD10449, HD10450, HD10451, HD1044
 
 ```mermaid
 quadrantChart
-    title Risk Heat Map: Likelihood vs Impact
-    x-axis "Low Likelihood" --> "High Likelihood"
-    y-axis "Low Impact" --> "High Impact"
-    quadrant-1 Critical: Monitor & Mitigate
-    quadrant-2 Significant: Active Management
+    title "Risk Heat Map: Likelihood vs Impact"
+ x-axis "Low Likelihood" --> "High Likelihood"
+ y-axis "Low Impact" --> "High Impact"
+    quadrant-1 Critical Monitor & Mitigate
+    quadrant-2 Significant Active Management
     quadrant-3 Low Priority
-    quadrant-4 Watch: High Probability
+    quadrant-4 Watch High Probability
     "R-01 SD Weapons Law": [0.55, 0.80]
     "R-02 Stambanan Crisis": [0.35, 0.85]
     "R-03 S Barrage": [0.60, 0.55]
@@ -1040,7 +1032,6 @@ quadrantChart
     "R-08 Wind Culture War": [0.40, 0.55]
     "R-04 Ukraine Delay": [0.25, 0.80]
     "R-07 Prison Legality": [0.20, 0.75]
-    style quadrantChart fill:#0a0e27,color:#e0e0e0
 ```
 
 ### Institutional Risk Assessment
@@ -1099,20 +1090,19 @@ IMF WEO Apr-2026 vintage context (caveat: retrieved from prior run, not this run
 
 ```mermaid
 quadrantChart
-    title SWOT Quadrant — May 2026 Key Documents
-    x-axis "Low Impact" --> "High Impact"
-    y-axis "Government Disadvantage" --> "Government Advantage"
+    title "SWOT Quadrant — May 2026 Key Documents"
+ x-axis "Low Impact" --> "High Impact"
+ y-axis "Government Disadvantage" --> "Government Advantage"
     quadrant-1 Leverage
     quadrant-2 Defend
     quadrant-3 Monitor
     quadrant-4 Address
-    "JuU10 Weapons Law (HD01JuU10)": [0.85, 0.90]
-    "Ukraine Tribunal (HD03231)": [0.75, 0.80]
-    "Prison Build (HD01CU25)": [0.65, 0.70]
-    "Södra Stambanan (HD10449)": [0.70, 0.30]
-    "Sjukförsäkring (HD10450)": [0.65, 0.25]
-    "Corporate Crime (HD10451)": [0.55, 0.30]
-    style quadrantChart fill:#0a0e27,color:#e0e0e0
+   "#quot;JuU10 Weapons Law (HD01JuU10)#quot;": [0.85, 0.90]
+   "#quot;Ukraine Tribunal (HD03231)#quot;": [0.75, 0.80]
+   "#quot;Prison Build (HD01CU25)#quot;": [0.65, 0.70]
+   "#quot;Södra Stambanan (HD10449)#quot;": [0.70, 0.30]
+   "#quot;Sjukförsäkring (HD10450)#quot;": [0.65, 0.25]
+   "#quot;Corporate Crime (HD10451)#quot;": [0.55, 0.30]
 ```
 
 ## Threat Analysis
@@ -1197,22 +1187,19 @@ Multiple of the May 2026 bills place significant new demands on implementing age
 ```mermaid
 timeline
     title Historical Parallels — Swedish Political Cycles
-    section 1994 Crisis
+ section 1994 Crisis
         1993 : Sick-pay cuts, currency crisis
         1994 : S wins on welfare restoration
         1994 : Yugoslavia accountability debate
-    section 2006 Transition
+ section 2006 Transition
         2006-S1 : Incumbent S legislative sprint
         2006-S2 : Alliance wins, minority government
         2006-S3 : Alliance forms four-party coalition
-    section 2026 Election Cycle
+ section 2026 Election Cycle
         2026-M1 : Tidö justice legislative cluster
         2026-M2 : S interpellation campaign (sick pay)
         2026-M3 : Ukraine accountability ratification
         2026-S1 : September 2026 election (TBC)
-    style 1994 fill:#00d9ff
-    style 2006 fill:#ffbe0b
-    style 2026 fill:#ff006e
 ```
 
 ### Assessment
@@ -1245,14 +1232,17 @@ Sweden joins Norway, Denmark, Finland and Germany in the international reparatio
 Sweden's wind energy cultural conflict (HD10448, SD framing) contrasts sharply with Denmark where wind energy is broadly accepted across parties. Norway's oil wealth creates a different energy politics. Finland has moved forward with nuclear (Olkiluoto 3). Sweden's SD-driven skepticism of wind energy is regionally exceptional and creates friction with EU Green Deal commitments.
 
 ```mermaid
-radar
-    title Nordic Policy Profile — Sweden May 2026
-    "Justice Reform" : [9, 6, 5, 5, 6]
-    "Infrastructure" : [5, 7, 7, 6, 8]
-    "Social Insurance" : [6, 8, 7, 7, 7]
-    "Ukraine Commitment" : [8, 8, 8, 9, 8]
-    "Energy Transition" : [5, 7, 9, 8, 6]
-    style radar fill:#0a0e27,color:#e0e0e0
+flowchart LR
+    unsupported["⚠️ Mermaid radar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: radar
+%% original-source:
+%% radar
+%%     title Nordic Policy Profile — Sweden May 2026
+%%     "Justice Reform" : [9, 6, 5, 5, 6]
+%%     "Infrastructure" : [5, 7, 7, 6, 8]
+%%     "Social Insurance" : [6, 8, 7, 7, 7]
+%%     "Ukraine Commitment" : [8, 8, 8, 9, 8]
+%%     "Energy Transition" : [5, 7, 9, 8, 6]
 ```
 
 ### Assessment
@@ -1364,18 +1354,17 @@ The government's legislative ambition is high but implementation realities will 
 
 ```mermaid
 quadrantChart
-    title Framing Reach vs Intensity (May 2026)
-    x-axis Low Electoral Reach --> High Electoral Reach
-    y-axis Low Issue Intensity --> High Issue Intensity
+    title "Framing Reach vs Intensity (May 2026)"
+ x-axis Low Electoral Reach --> High Electoral Reach
+ y-axis Low Issue Intensity --> High Issue Intensity
     quadrant-1 High Reach + High Intensity
     quadrant-2 Low Reach + High Intensity
     quadrant-3 Low Reach + Low Intensity
     quadrant-4 High Reach + Low Intensity
-    "Justice Delivery (M/SD)": [0.78, 0.82]
-    "Welfare Attack (S)": [0.65, 0.75]
-    "Sweden Steps Up (Tidö)": [0.45, 0.55]
-    "Rural vs Urban (SD)": [0.35, 0.65]
-    style quadrantChart fill:#0a0e27
+   "#quot;Justice Delivery (M/SD)#quot;": [0.78, 0.82]
+   "#quot;Welfare Attack (S)#quot;": [0.65, 0.75]
+   "#quot;Sweden Steps Up (Tidö)#quot;": [0.45, 0.55]
+   "#quot;Rural vs Urban (SD)#quot;": [0.35, 0.65]
 ```
 
 ### Media Outlet Alignment (Structural)
@@ -1500,7 +1489,6 @@ pie title Document Classification by Category
     "Social Policy" : 20
     "Infrastructure" : 10
     "Administration" : 5
-    style pie fill:#0a0e27
 ```
 
 ## Cross-Reference Map
@@ -1719,9 +1707,6 @@ gantt
     جلسة استماع CU40 lantmäteri               :active, 2026-05-19, 10d
     section الميزانية
     تصويت إبراء ذمة Riksbank (FiU23)           :milestone, 2026-05-07, 0d
-    style العدالة fill:#ff006e,stroke:#ff006e
-    style المدني fill:#00d9ff,stroke:#00d9ff
-    style البنية fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 المحفز المستقبلي الرئيسي
@@ -1773,9 +1758,6 @@ gantt
     CU40 lantmäteri-høring                       :active, 2026-05-19, 10d
     section Budget
     Riksbank-decharge-afstemning (FiU23)         :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-ladestandard fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 Vigtigste fremadrettede trigger
@@ -1825,9 +1807,6 @@ gantt
     CU40 lantmäteri-Anhörung                        :active, 2026-05-19, 10d
     section Haushalt
     Riksbank-Entlastungsabstimmung (FiU23)          :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-Ladestandard fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 Wichtigster Vorwärtstrigger
@@ -1877,9 +1856,6 @@ gantt
     Audiencia CU40 lantmäteri                  :active, 2026-05-19, 10d
     section Presupuesto
     Votación descargo Riksbank (FiU23)         :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style Norma fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 Principal disparador prospectivo
@@ -1929,9 +1905,6 @@ gantt
     CU40 lantmäteri-kuuleminen               :active, 2026-05-19, 10d
     section Budjetti
     Riksbankenin vastuuvapaus (FiU23)         :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-latauspisteiden fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 Tärkein tulevaisuuden laukaisin
@@ -1981,9 +1954,6 @@ gantt
     Audition CU40 lantmäteri                       :active, 2026-05-19, 10d
     section Budget
     Vote décharge Riksbank (FiU23)                 :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style Norme fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 Principal déclencheur prospectif
@@ -2043,9 +2013,6 @@ gantt
     דיון CU40 lantmäteri                   :active, 2026-05-19, 10d
     section תקציב
     הצבעת הפטור Riksbank (FiU23)           :milestone, 2026-05-07, 0d
-    style משפט fill:#ff006e,stroke:#ff006e
-    style אזרחי fill:#00d9ff,stroke:#00d9ff
-    style תשתיות fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 מניע מרכזי לעתיד
@@ -2103,9 +2070,6 @@ gantt
     CU40 lantmäteri公聴会              :active, 2026-05-19, 10d
     section 予算
     Riksbank免責採決 (FiU23)            :milestone, 2026-05-07, 0d
-    style 司法 fill:#ff006e,stroke:#ff006e
-    style 民事 fill:#00d9ff,stroke:#00d9ff
-    style インフラ fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 主要な将来トリガー
@@ -2161,9 +2125,6 @@ gantt
     CU40 lantmäteri 청문회              :active, 2026-05-19, 10d
     section 예산
     Riksbank 면책 표결 (FiU23)          :milestone, 2026-05-07, 0d
-    style 법무 fill:#ff006e,stroke:#ff006e
-    style 민사 fill:#00d9ff,stroke:#00d9ff
-    style 인프라 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 주요 미래 촉발 요인
@@ -2213,9 +2174,6 @@ gantt
     CU40 lantmäteri-hoorzitting               :active, 2026-05-19, 10d
     section Begroting
     Riksbank-decharge-stemming (FiU23)        :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-laadnorm fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 Belangrijkste voorwaartse trigger
@@ -2265,9 +2223,6 @@ gantt
     CU40 lantmäteri-høring                    :active, 2026-05-19, 10d
     section Budsjett
     Riksbankens ansvarsfrihet (FiU23)         :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-ladestandard fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 Viktigste fremadrettede trigger
@@ -2317,9 +2272,6 @@ gantt
     CU40 lantmäteriutfrågning                     :active, 2026-05-19, 10d
     section Budget
     Riksbankens ansvarsfrihet (FiU23)             :milestone, 2026-05-07, 0d
-    style JuU fill:#ff006e,stroke:#ff006e
-    style EV-laddningsregler fill:#00d9ff,stroke:#00d9ff
-    style CU40 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 Viktigaste framåtblickande trigger
@@ -2375,9 +2327,6 @@ gantt
     CU40 lantmäteri听证会              :active, 2026-05-19, 10d
     section 预算
     Riksbank免责投票 (FiU23)           :milestone, 2026-05-07, 0d
-    style 司法 fill:#ff006e,stroke:#ff006e
-    style 民事 fill:#00d9ff,stroke:#00d9ff
-    style 基础设施 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ### 🔭 主要前瞻触发因素

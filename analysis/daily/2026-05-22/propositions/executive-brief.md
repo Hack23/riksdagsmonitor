@@ -48,9 +48,9 @@ Sharpened BLUF with specific statute names; added explicit pir-status reference;
 
 ```mermaid
 quadrantChart
-  title Proposition Significance Matrix (Impact vs Election Salience)
-  x-axis Low Election Salience --> High Election Salience
-  y-axis Low Structural Impact --> High Structural Impact
+  title "Proposition Significance Matrix (Impact vs Election Salience)"
+ x-axis Low Election Salience --> High Election Salience
+ y-axis Low Structural Impact --> High Structural Impact
   quadrant-1 Monitor
   quadrant-2 Contested Core
   quadrant-3 Technical
@@ -66,7 +66,4 @@ quadrantChart
   HD03258: [0.55, 0.42]
   HD03251: [0.20, 0.58]
 
-  style HD03262 fill:#cc0000,color:#ffffff
-  style HD03267 fill:#cc0000,color:#ffffff
-  style HD03265 fill:#aa2200,color:#ffffff
 ```

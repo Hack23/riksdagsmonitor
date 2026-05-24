@@ -29,11 +29,15 @@ Scoring uses 5 dimensions (each 1-5): Constitutional Impact (CI), Policy Reach (
 ## Top Stories Analysis
 
 ```mermaid
-bar
-    title Composite Significance Scores (100-point scale)
-    x-axis "Document"
-    y-axis "Score" 0 --> 100
-    bar [80, 80, 72, 72, 72, 64, 64, 48, 48, 40, 36]
+flowchart LR
+    unsupported["⚠️ Mermaid bar diagram unsupported — see %% original-source below"]
+%% mermaid-unsupported-type: bar
+%% original-source:
+%% bar
+%%     title Composite Significance Scores (100-point scale)
+%%     x-axis "Document"
+%%     y-axis "Score" 0 --> 100
+%%     bar [80, 80, 72, 72, 72, 64, 64, 48, 48, 40, 36]
 ```
 
 ---

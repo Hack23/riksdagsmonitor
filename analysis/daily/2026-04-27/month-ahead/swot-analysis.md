@@ -45,18 +45,17 @@
 
 ```mermaid
 quadrantChart
-    title SWOT Quadrant — May 2026 Key Documents
-    x-axis "Low Impact" --> "High Impact"
-    y-axis "Government Disadvantage" --> "Government Advantage"
+    title "SWOT Quadrant — May 2026 Key Documents"
+ x-axis "Low Impact" --> "High Impact"
+ y-axis "Government Disadvantage" --> "Government Advantage"
     quadrant-1 Leverage
     quadrant-2 Defend
     quadrant-3 Monitor
     quadrant-4 Address
-    "JuU10 Weapons Law (HD01JuU10)": [0.85, 0.90]
-    "Ukraine Tribunal (HD03231)": [0.75, 0.80]
-    "Prison Build (HD01CU25)": [0.65, 0.70]
-    "Södra Stambanan (HD10449)": [0.70, 0.30]
-    "Sjukförsäkring (HD10450)": [0.65, 0.25]
-    "Corporate Crime (HD10451)": [0.55, 0.30]
-    style quadrantChart fill:#0a0e27,color:#e0e0e0
+   "#quot;JuU10 Weapons Law (HD01JuU10)#quot;": [0.85, 0.90]
+   "#quot;Ukraine Tribunal (HD03231)#quot;": [0.75, 0.80]
+   "#quot;Prison Build (HD01CU25)#quot;": [0.65, 0.70]
+   "#quot;Södra Stambanan (HD10449)#quot;": [0.70, 0.30]
+   "#quot;Sjukförsäkring (HD10450)#quot;": [0.65, 0.25]
+   "#quot;Corporate Crime (HD10451)#quot;": [0.55, 0.30]
 ```

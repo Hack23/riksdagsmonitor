@@ -29,16 +29,16 @@ IMF WEO Apr-2026 projects Sweden GDP growth at ~2.3% for 2026, public debt ~31% 
 
 ```mermaid
 quadrantChart
-    title Risk Register — Committee Reports 2026-05-13
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
+    title "Risk Register — Committee Reports 2026-05-13"
+ x-axis Low Likelihood --> High Likelihood
+ y-axis Low Impact --> High Impact
     quadrant-1 Monitor
     quadrant-2 Critical
     quadrant-3 Low Priority
     quadrant-4 High Probability
-    R1 EU compliance: [0.6, 1.0]
+    R1 EU compliance: [0.6, 1]
     R2 Rural implementation: [0.8, 0.8]
-    R3 Coalition fracture: [0.4, 1.0]
+    R3 Coalition fracture: [0.4, 1]
     R4 Opposition narrative: [0.6, 0.8]
     R5 Constitutional challenge: [0.4, 0.8]
     R6 Credibility gap: [0.8, 0.6]

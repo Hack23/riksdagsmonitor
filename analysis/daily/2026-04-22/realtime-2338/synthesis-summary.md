@@ -56,9 +56,9 @@ On deportation (HD024095) and medical care (HD024094), Centerpartiet is attempti
 
 ```mermaid
 quadrantChart
-    title Signal vs. Urgency — Realtime Monitor 2026-04-22
-    x-axis Low Urgency --> High Urgency
-    y-axis Low Signal --> High Signal
+    title "Signal vs. Urgency — Realtime Monitor 2026-04-22"
+ x-axis Low Urgency --> High Urgency
+ y-axis Low Signal --> High Signal
     quadrant-1 Monitor
     quadrant-2 Act Now
     quadrant-3 Deprioritise
@@ -73,9 +73,6 @@ quadrantChart
     HD03246: [0.45, 0.65]
     HD01KU33: [0.40, 0.60]
 
-    style HD10444 fill:#c62828,color:#fff
-    style HD01FiU48 fill:#e65100,color:#fff
-    style HD10443 fill:#b71c1c,color:#fff
 ```
 
 ## AI-Recommended Article Metadata

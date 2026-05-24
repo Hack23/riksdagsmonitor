@@ -40,16 +40,18 @@
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
 quadrantChart
-    title Risk Heat Map (Likelihood vs Impact)
-    x-axis "Likelihood" 0 --> 5
-    y-axis "Impact" 0 --> 5
+    title "Risk Heat Map (Likelihood vs Impact)"
+ x-axis "Likelihood" 0 --> 5
+ y-axis "Impact" 0 --> 5
     quadrant-1 Critical Monitor
     quadrant-2 Strategic Watch
     quadrant-3 Low Priority
     quadrant-4 Operational
-    R01: [3, 5]
-    R02: [3, 4]
-    R03: [4, 3]
-    R04: [2, 5]
-    R05: [3, 3]
-    R06: [2, 4]
+    R01: [0.03, 0.05]
+    R02: [0.03, 0.04]
+    R03: [0.04, 0.03]
+    R04: [0.02, 0.05]
+    R05: [0.03, 0.03]
+    R06: [0.02, 0.04]
+
+```

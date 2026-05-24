@@ -60,9 +60,9 @@ Motion HD024099 offers sharply different framing opportunities for different pol
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
 quadrantChart
-    title Media Frames: Accountability vs Protection × Government vs Opposition
-    x-axis "Opposition aligned" --> "Government aligned"
-    y-axis "Worker protection focus" --> "Accountability focus"
+    title "Media Frames: Accountability vs Protection × Government vs Opposition"
+ x-axis "Opposition aligned" --> "Government aligned"
+ y-axis "Worker protection focus" --> "Accountability focus"
     quadrant-1 Government-Accountability
     quadrant-2 Opposition-Accountability
     quadrant-3 Opposition-Protection
@@ -72,6 +72,4 @@ quadrantChart
     "SvD": [0.8, 0.7]
     "DN": [0.45, 0.65]
     "SVT": [0.5, 0.5]
-    style "Aftonbladet" fill:#ff006e
-    style "Expressen" fill:#00d9ff
 ```

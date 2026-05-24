@@ -75,3 +75,5 @@ xychart-beta
     y-axis "Seats" 0 --> 200
     bar [165, 165, 149]
     line [69, 163, 163]
+
+```

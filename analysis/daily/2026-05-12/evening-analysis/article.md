@@ -993,9 +993,9 @@ Not prominently active today, but climate withdrawal (HD10481) affects their coa
 
 ```mermaid
 quadrantChart
-    title Risk Assessment — 12 maj 2026 Evening Analysis
-    x-axis Låg sannolikhet --> Hög sannolikhet
-    y-axis Låg påverkan --> Hög påverkan
+    title "Risk Assessment — 12 maj 2026 Evening Analysis"
+ x-axis Låg sannolikhet --> Hög sannolikhet
+ y-axis Låg påverkan --> Hög påverkan
     quadrant-1 Hög sannolikhet / Hög påverkan
     quadrant-2 Låg sannolikhet / Hög påverkan
     quadrant-3 Låg sannolikhet / Låg påverkan
@@ -1006,12 +1006,6 @@ quadrantChart
     RISK-04 Svartarbete Delay: [0.55, 0.60]
     RISK-05 CU31 Coalition: [0.25, 0.55]
     RISK-06 e-ID Industry: [0.40, 0.25]
-    style RISK-01 fill:#ff006e,color:#fff
-    style RISK-02 fill:#ff006e,color:#fff
-    style RISK-03 fill:#ffbe0b,color:#000
-    style RISK-04 fill:#ffbe0b,color:#000
-    style RISK-05 fill:#00d9ff,color:#000
-    style RISK-06 fill:#4caf50,color:#fff
 ```
 
 ## SWOT Analysis

@@ -45,7 +45,4 @@ xychart-beta
     y-axis "L×I Score" 0 --> 15
     bar [10, 9, 10, 12, 6]
 
-    style R4 Narrative fill:#ff006e
-    style R1 Coalition fill:#ffbe0b
-    style R3 Banking fill:#ffbe0b
 ```

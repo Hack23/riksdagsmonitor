@@ -30,22 +30,19 @@
 ```mermaid
 timeline
     title Historical Parallels — Swedish Political Cycles
-    section 1994 Crisis
+ section 1994 Crisis
         1993 : Sick-pay cuts, currency crisis
         1994 : S wins on welfare restoration
         1994 : Yugoslavia accountability debate
-    section 2006 Transition
+ section 2006 Transition
         2006-S1 : Incumbent S legislative sprint
         2006-S2 : Alliance wins, minority government
         2006-S3 : Alliance forms four-party coalition
-    section 2026 Election Cycle
+ section 2026 Election Cycle
         2026-M1 : Tidö justice legislative cluster
         2026-M2 : S interpellation campaign (sick pay)
         2026-M3 : Ukraine accountability ratification
         2026-S1 : September 2026 election (TBC)
-    style 1994 fill:#00d9ff
-    style 2006 fill:#ffbe0b
-    style 2026 fill:#ff006e
 ```
 
 ## Assessment

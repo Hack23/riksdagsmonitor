@@ -42,9 +42,6 @@ gantt
     جلسة استماع CU40 lantmäteri               :active, 2026-05-19, 10d
     section الميزانية
     تصويت إبراء ذمة Riksbank (FiU23)           :milestone, 2026-05-07, 0d
-    style العدالة fill:#ff006e,stroke:#ff006e
-    style المدني fill:#00d9ff,stroke:#00d9ff
-    style البنية fill:#ffbe0b,stroke:#ffbe0b
 ```
 
 ## 🔭 المحفز المستقبلي الرئيسي
