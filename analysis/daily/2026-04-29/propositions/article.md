@@ -1,12 +1,12 @@
 ---
 title: "Infrastrukturinvestering, läkemedelssäkerhet och kommunal digitalisering: Tre propositioner den 28 april 2026"
 description: "Regeringen Kristersson presenterade den 28 april 2026 tre propositioner med skilda politiska tyngder: den nationella transportinfrastrukturplanen 2026–2037 (Skr. 2025/26:259, HD03259) avsätter 875…"
-keywords: "HD03259, HD03247, HD03257, Prop. 2025/26:247, Prop. 2025/26:257, TU, James Pether Sörling, IMF WEO Apr-, Om TU, Real BNP-tillväxt, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
+keywords: "HD03259, HD03247, HD03257, Prop. 2025/26:247, Prop. 2025/26:257, TU, IMF WEO Apr-, Om TU, Real BNP-tillväxt, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
 date: 2026-04-29
 subfolder: propositions
 slug: 2026-04-29-propositions
 source_folder: analysis/daily/2026-04-29/propositions
-generated_at: 2026-05-24T16:14:51.214Z
+generated_at: 2026-05-24T17:19:39.431Z
 language: en
 layout: article
 ---

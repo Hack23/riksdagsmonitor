@@ -1,12 +1,12 @@
 ---
 title: "Sweden Month Ahead: Final Pre-Election Sprint — May 2026 Intelligence Brief"
 description: "Sweden enters May 2026 with 137 days until the September 14 general election, making every Riksdag session from now through summer recess an electoral proving ground."
-keywords: "HD01SfU28, HD01JuU10, HD10454, HD10455, HD10456, HD11767, KD, SD, James Pether Sörling, Analysis Type, Tier-C Month-Ahead Aggregation, Spring Fiscal Bill, IMF WEO Apr-, WEO Apr-, Waltersson Grönvall, If Waltersson Grönvall, SVT Carema-pattern, Social Affairs Ministry, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
+keywords: "HD01SfU28, HD01JuU10, HD10454, HD10455, HD10456, HD11767, KD, SD, Spring Fiscal Bill, IMF WEO Apr-, WEO Apr-, Waltersson Grönvall, If Waltersson Grönvall, SVT Carema-pattern, Social Affairs Ministry, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Month Ahead"
 date: 2026-04-29
 subfolder: month-ahead
 slug: 2026-04-29-month-ahead
 source_folder: analysis/daily/2026-04-29/month-ahead
-generated_at: 2026-05-24T16:14:51.157Z
+generated_at: 2026-05-24T17:19:39.398Z
 language: en
 layout: article
 ---

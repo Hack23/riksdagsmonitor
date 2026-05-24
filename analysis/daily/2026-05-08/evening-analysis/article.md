@@ -1,12 +1,12 @@
 ---
 title: "Friday 8 May 2026 marks a legislative heavy-load day in the Riksdag"
 description: "Friday 8 May 2026 marks a legislative heavy-load day in the Riksdag, with six committee reports (betänkanden) from CU, SoU, and UbU advancing toward chamber vote while five written questions to…"
-keywords: "HD11802, HD11803, HD10476, HD11800, HD11801, CU31, UbU28, UbU20, SoU36, CU, UbU, SoU, SD, Probably True, AI Political Intelligence Synthesis, Almost Certainly, Time Horizon, Flexible Rent Market, Teacher Licensing, State Personnel Deployment, Full-Veil Ban, Malmer Stenergard, Nima Gholam Ali Pour, Simona Mohamsson"
+keywords: "HD11802, HD11803, HD10476, HD11800, HD11801, CU31, UbU28, UbU20, SoU36, CU, UbU, SoU, SD, Time Horizon, Flexible Rent Market, Teacher Licensing, State Personnel Deployment, Full-Veil Ban, Malmer Stenergard, Nima Gholam Ali Pour, Simona Mohamsson, Education Minister, MP Johan Büser, FM Malmer Stenergard"
 date: 2026-05-08
 subfolder: evening-analysis
 slug: 2026-05-08-evening-analysis
 source_folder: analysis/daily/2026-05-08/evening-analysis
-generated_at: 2026-05-24T16:14:52.184Z
+generated_at: 2026-05-24T17:19:39.999Z
 language: en
 layout: article
 ---

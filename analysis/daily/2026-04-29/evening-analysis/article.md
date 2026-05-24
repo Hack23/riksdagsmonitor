@@ -1,12 +1,12 @@
 ---
 title: "Evening Intelligence Brief — 29 April 2026: Democracy Under Stress"
 description: "Sweden's parliamentary session on 29 April 2026 delivered three confirmation signals that will shape the September 2026 election campaign: (1) Centerpartiet broke from both its natural coalition…"
-keywords: "HD01SfU28, HD03259, HD10454, HD10451, HD12744, HD12746, HD10456, HD10453, SfU28, JuU10, FöU12, CU25, CU29, MJU19, MJU20, FiU23, SfU23, SfU, JuU, FöU, CU, MJU, FiU, James Pether Sörling"
+keywords: "HD01SfU28, HD03259, HD10454, HD10451, HD12744, HD12746, HD10456, HD10453, SfU28, JuU10, FöU12, CU25, CU29, MJU19, MJU20, FiU23, SfU23, SfU, JuU, FöU, CU, MJU, FiU, Social Democrat"
 date: 2026-04-29
 subfolder: evening-analysis
 slug: 2026-04-29-evening-analysis
 source_folder: analysis/daily/2026-04-29/evening-analysis
-generated_at: 2026-05-24T16:14:51.123Z
+generated_at: 2026-05-24T17:19:39.379Z
 language: en
 layout: article
 ---

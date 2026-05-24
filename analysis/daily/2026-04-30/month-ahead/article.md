@@ -1,12 +1,12 @@
 ---
 title: "Sverige i maj 2026: Infrastruktur, rättssäkerhet och valpositionering i sista lagstiftarspurten"
 description: "May 2026 is the Tidöalliansen's final full legislative month before the September 2026 Riksdag election."
-keywords: "HD03259, HD03253, HD03252, HD01KU36, HD01JuU9, HD10461, HD11774, James Pether Sörling, SEK National Transport Infrastructure, SEK NTP, Basel III, AI Act, Infrastructure NTP, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Month Ahead, English"
+keywords: "HD03259, HD03253, HD03252, HD01KU36, HD01JuU9, HD10461, HD11774, SEK National Transport Infrastructure, SEK NTP, Basel III, AI Act, Infrastructure NTP, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Month Ahead, English"
 date: 2026-04-30
 subfolder: month-ahead
 slug: 2026-04-30-month-ahead
 source_folder: analysis/daily/2026-04-30/month-ahead
-generated_at: 2026-05-24T16:14:51.300Z
+generated_at: 2026-05-24T17:19:39.487Z
 language: en
 layout: article
 ---

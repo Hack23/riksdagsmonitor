@@ -1,12 +1,12 @@
 ---
 title: "The next Swedish government will be formed in the 3-6 weeks"
 description: "The next Swedish government will be formed in the 3-6 weeks after 2026-09-13. The decisive question is not \"who wins\" but \"what SD demands\" and \"what C decides.\""
-keywords: "HD01NU19, SD Cabinet Entry, If Tid, Nuclear Construction Decision, Housing Emergency Programme, IMF WEO Apr-, WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Next, election cycle next, English"
+keywords: "HD01NU19, SD Cabinet Entry, If Tid, Nuclear Construction Decision, Housing Emergency Programme, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Next, election cycle next, English"
 date: 2026-05-05
 subfolder: election-cycle/next
 slug: 2026-05-05-election-cycle/next
 source_folder: analysis/daily/2026-05-05/election-cycle/next
-generated_at: 2026-05-24T16:14:51.765Z
+generated_at: 2026-05-24T17:19:39.746Z
 language: en
 layout: article
 ---

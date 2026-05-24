@@ -1,12 +1,12 @@
 ---
 title: "Week Ahead: Riksdag Week 20 (May 11–17, 2026)"
 description: "Sweden's Riksdag enters week 20 (May 11–17, 2026) with a packed legislative calendar spanning defence intelligence modernisation, education reform, justice legislation, and EU-aligned financial…"
-keywords: "HD11803, HD03261, HD03250, HD03267, HD10480, UbU28, JuU39, FöU18, JuU32, JuU34, UbU, JuU, FöU, James Pether Sörling, Run ID, Sweden s Riksdag, Global Sumud Flotilla, Foreign Minister Maria Malmer, Strong KD, FAC Development, Finance Minister, Monday May, If Fö, FM Datamapper"
+keywords: "HD11803, HD03261, HD03250, HD03267, HD10480, UbU28, JuU39, FöU18, JuU32, JuU34, UbU, JuU, FöU, Sweden s Riksdag, Global Sumud Flotilla, Foreign Minister Maria Malmer, Strong KD, FAC Development, Finance Minister, Monday May, If Fö, FM Datamapper, Real GDP, WEO Apr-"
 date: 2026-05-08
 subfolder: week-ahead
 slug: 2026-05-08-week-ahead
 source_folder: analysis/daily/2026-05-08/week-ahead
-generated_at: 2026-05-24T16:14:52.244Z
+generated_at: 2026-05-24T17:19:40.037Z
 language: en
 layout: article
 ---

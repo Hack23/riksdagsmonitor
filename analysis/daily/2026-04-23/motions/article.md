@@ -1,12 +1,12 @@
 ---
 title: "Sweden's parliamentary opposition has filed 14 motions in the week"
 description: "Sweden's parliamentary opposition has filed 14 motions in the week of 13–17 April 2026 challenging the government's extra supplementary budget (prop."
-keywords: "HD024082, HD024092, HD024098, HD024090, HD024095, HD024097, HD024096, HD024089, HD024080, HD024087, prop. 2025/26:236, prop. 2025/26:235, prop. 2025/26:228, prop. 2025/26:229, FiU, PUBLIC DOMAIN, Parliamentary Records, James Pether Sörling, Mikael Damberg, Nooshi Dadgostar, Janine Alm Ericson, Tony Haddou, Niels Paarup-Petersen, Annika Hirvonen"
+keywords: "HD024082, HD024092, HD024098, HD024090, HD024095, HD024097, HD024096, HD024089, HD024080, HD024087, prop. 2025/26:236, prop. 2025/26:235, prop. 2025/26:228, prop. 2025/26:229, FiU, Mikael Damberg, Nooshi Dadgostar, Janine Alm Ericson, Tony Haddou, Niels Paarup-Petersen, Annika Hirvonen, Jacob Risberg, If SD, Riksdagsmonitor"
 date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-05-24T16:14:50.560Z
+generated_at: 2026-05-24T17:19:39.046Z
 language: en
 layout: article
 ---

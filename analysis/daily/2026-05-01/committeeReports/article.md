@@ -1,12 +1,12 @@
 ---
 title: "Riksdag Committee Reports: Sweden's Economic Course, Migration Controls, and Defence Readiness — 2024/25 Final Week"
 description: "The Riksdag's final week of the 2024/25 riksmöte produced a cluster of consequential committee reports that together define Sweden's economic framework for 2025–2026: the Finance Committee endorsed…"
-keywords: "SfU, James Pether Sörling, Finance Committee, Social Affairs Committee, Social Affairs, Finance Committee s, Monitor Lagrådet, IMF WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, CommitteeReports, English"
+keywords: "SfU, Finance Committee, Social Affairs Committee, Social Affairs, Finance Committee s, Monitor Lagrådet, IMF WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, CommitteeReports, English"
 date: 2026-05-01
 subfolder: committeeReports
 slug: 2026-05-01-committeeReports
 source_folder: analysis/daily/2026-05-01/committeeReports
-generated_at: 2026-05-24T16:14:51.382Z
+generated_at: 2026-05-24T17:19:39.523Z
 language: en
 layout: article
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Sweden Year-Ahead Political Intelligence"
 description: "Sweden is in its most compressed political-legislative cycle since EU accession. With the Riksdag election 129 days away (September 13, 2026), the Tidö coalition under PM Ulf Kristersson is executing…"
-keywords: "HD01JuU32, HD03267, HD01JuU34, HD01JuU39, HD03263, HD03250, HD03261, HD01FiU37, HD01FiU38, JuU32, JuU, WEO Apr-, PM Ulf Kristersson, Under Scenario, Horizon Band, Budget Spring Amendment, Election Day, IMF SDMX, FM Datamapper, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
+keywords: "HD01JuU32, HD03267, HD01JuU34, HD01JuU39, HD03263, HD03250, HD03261, HD01FiU37, HD01FiU38, JuU32, JuU, PM Ulf Kristersson, Under Scenario, Horizon Band, Budget Spring Amendment, Election Day, IMF SDMX, FM Datamapper, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
 date: 2026-05-07
 subfolder: year-ahead
 slug: 2026-05-07-year-ahead
 source_folder: analysis/daily/2026-05-07/year-ahead
-generated_at: 2026-05-24T16:14:52.122Z
+generated_at: 2026-05-24T17:19:39.963Z
 language: en
 layout: article
 ---

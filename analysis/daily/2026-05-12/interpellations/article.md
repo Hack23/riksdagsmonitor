@@ -1,12 +1,12 @@
 ---
 title: "Opposition Presses Government on Climate Delay and Shadow Economy Before 2026 Election"
 description: "Two Social Democratic interpellations on 11 May 2026 — HD10481 and HD10482 — expose the Tidö coalition's pre-election accountability gap on climate legislation and labour crime enforcement."
-keywords: "HD10481, HD10482, James Pether Sörling, Two Social Democratic, Marie Olsson, Finance Minister Svantesson, Will Finance Minister Svantesson, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
+keywords: "HD10481, HD10482, Two Social Democratic, Marie Olsson, Finance Minister Svantesson, Will Finance Minister Svantesson, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-05-12
 subfolder: interpellations
 slug: 2026-05-12-interpellations
 source_folder: analysis/daily/2026-05-12/interpellations
-generated_at: 2026-05-24T16:14:52.503Z
+generated_at: 2026-05-24T17:19:40.192Z
 language: en
 layout: article
 ---

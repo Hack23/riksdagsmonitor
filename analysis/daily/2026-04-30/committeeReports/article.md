@@ -1,12 +1,12 @@
 ---
 title: "Riksdag Committee Reports Advance Legislative Accountability and Security Frameworks"
 description: "The Riksdag's 2025/26 spring committee session delivers eight betänkanden spanning privacy oversight, judicial efficiency, explosive materials control, nuclear facility permitting reform, competition…"
-keywords: "HD01KU36, HD01JuU9, HD01NU22, HD01NU19, HD01CU37, HD01SoU33, HD01JuU46, JuU9, KU36, NU22, JuU, KU, NU, James Pether Sörling, Justice Committee s, Sweden s EU, AI Act, Energy Authority, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
+keywords: "HD01KU36, HD01JuU9, HD01NU22, HD01NU19, HD01CU37, HD01SoU33, HD01JuU46, JuU9, KU36, NU22, JuU, KU, NU, Justice Committee s, Sweden s EU, AI Act, Energy Authority, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency"
 date: 2026-04-30
 subfolder: committeeReports
 slug: 2026-04-30-committeeReports
 source_folder: analysis/daily/2026-04-30/committeeReports
-generated_at: 2026-05-24T16:14:51.248Z
+generated_at: 2026-05-24T17:19:39.448Z
 language: en
 layout: article
 ---

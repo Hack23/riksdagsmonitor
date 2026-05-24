@@ -1,12 +1,12 @@
 ---
 title: "Five interpellations filed 2026-05-06 reveal a Swedish opposition"
 description: "Five interpellations filed 2026-05-06 reveal a Swedish opposition (S, independents) pressing the Tidö government on three policy fronts simultaneously: (1) a politically explosive international…"
-keywords: "HD10470, HD10471, HD10472, HD10473, HD10474, James Pether Sörling, Global Sumud, Arlanda High Speed Rail, Lorena Delgado Varas, Foreign Minister Maria Malmer, Kadir Kasirga, Infrastructure Minister Andreas Carlson, Arlanda Express, Sanna Backeskog, Justice Minister Gunnar Strömmer, Eva Lindh, Infrastructure Minister Carlson, UN Security Council, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
+keywords: "HD10470, HD10471, HD10472, HD10473, HD10474, Global Sumud, Arlanda High Speed Rail, Lorena Delgado Varas, Foreign Minister Maria Malmer, Kadir Kasirga, Infrastructure Minister Andreas Carlson, Arlanda Express, Sanna Backeskog, Justice Minister Gunnar Strömmer, Eva Lindh, Infrastructure Minister Carlson, UN Security Council, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency"
 date: 2026-05-06
 subfolder: interpellations
 slug: 2026-05-06-interpellations
 source_folder: analysis/daily/2026-05-06/interpellations
-generated_at: 2026-05-24T16:14:51.920Z
+generated_at: 2026-05-24T17:19:39.846Z
 language: en
 layout: article
 ---

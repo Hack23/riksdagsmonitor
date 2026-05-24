@@ -1,12 +1,12 @@
 ---
 title: "Swedish Government Propositions Signal Banking Reform and Welfare Sanctions"
 description: "The Tidö government delivered four propositions on 2026-04-23, led by its implementation of the EU Banking Package (HD03253) — the most consequential financial regulation overhaul since 2014 —…"
-keywords: "HD03253, HD03252, HD03104, HD03256, HD03103, EU, James Pether Sörling, Run ID, Basel III, Finance Committee, Implements EU Reg, If Bankföreningen, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
+keywords: "HD03253, HD03252, HD03104, HD03256, HD03103, EU, Basel III, Finance Committee, Implements EU Reg, If Bankföreningen, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
 date: 2026-04-28
 subfolder: propositions
 slug: 2026-04-28-propositions
 source_folder: analysis/daily/2026-04-28/propositions
-generated_at: 2026-05-24T16:14:51.080Z
+generated_at: 2026-05-24T17:19:39.355Z
 language: en
 layout: article
 ---
