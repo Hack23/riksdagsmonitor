@@ -208,6 +208,20 @@ function collapseWhitespace(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
 }
 
+/**
+ * Strip empty bracket pairs left behind by upstream template-substitution
+ * defects — e.g. a brief that ships `title: "Next Mandate 2026-2030 ( )"`
+ * because a coalition-name placeholder was never filled. Also strips
+ * pairs that contain only punctuation / separators (`( - )`, `[…]`,
+ * `{ }`). Conservative: matches each bracket family separately so we
+ * never delete a legitimate `(party)` annotation.
+ */
+const EMPTY_BRACKETS_RE = /\s*(?:\(\s*[\s,;:.\-–—…]*\s*\)|\[\s*[\s,;:.\-–—…]*\s*\]|\{\s*[\s,;:.\-–—…]*\s*\})\s*/gu;
+
+function stripEmptyBrackets(text: string): string {
+  return text.replace(EMPTY_BRACKETS_RE, ' ');
+}
+
 /** Single-pass HTML entity decode map — avoids double-unescaping. */
 const HTML_ENTITY_MAP: Readonly<Record<string, string>> = {
   '&nbsp;': ' ',
@@ -282,10 +296,52 @@ function trimTrailingPunctuation(text: string): string {
 const TRAILING_CONNECTOR_RE =
   /[\s,;:—–-]+(?:and|or|but|with|as|in|of|to|for|on|at|by|from|that|which|who|when|where|while|after|before|the|a|an|have|has|had|is|are|was|were|will|would|can|may|might|should|must|och|men|eller|med|som|av|till|för|på|i|att|der|die|das|und|oder|aber|mit|als|für|in|auf|et|ou|mais|avec|comme|de|à|pour|en|sur)$/iu;
 
+/**
+ * Dangling cardinal / ordinal numerals left at the end of a truncated
+ * title — `truncateAtWord` happily cuts at a word boundary after a
+ * cardinal, producing reader-hostile prose like
+ *
+ *   "Sweden Passes AI Facial Recognition Law as Riksdag Advances Five…"
+ *
+ * The cardinal "Five" carries no semantic value once the noun it modified
+ * ("Five Committee Reports") has been chopped off. Strip trailing
+ * cardinals / ordinals in the major languages we ship: EN + SV + DA + NO
+ * + DE + FR + ES + NL + FI. Numerals 1–12 plus common round numbers
+ * (twenty, fifty, hundred) cover the practical cases seen in audit
+ * #26364730339; we only strip when preceded by a space + leading
+ * separator so we never eat a numeral that is the title's only token
+ * (e.g. a chart-only headline like "Top 5").
+ *
+ * The aggregator's EN trailing-connector list never strips numerals so
+ * upstream cuts ending in a cardinal still leak through to the renderer
+ * — this regex is the second line of defence.
+ */
+const TRAILING_DANGLING_CARDINAL_RE =
+  /[\s,;:—–-]+(?:two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|thirty|forty|fifty|hundred|thousand|million|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|två|tre|fyra|fem|sex|sju|åtta|nio|tio|elva|tolv|tjugo|trettio|fyrtio|femtio|hundra|tusen|miljon|to|tre|fire|fem|seks|syv|otte|ni|ti|elleve|tolv|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwanzig|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|vingt|trente|quarante|cinquante|cent|mille|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta|cuarenta|cincuenta|cien|mil|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|twaalf|twintig|dertig|veertig|vijftig|honderd|duizend|kaksi|kolme|neljä|viisi|kuusi|seitsemän|kahdeksan|yhdeksän|kymmenen|kaksitoista|kaksikymmentä|kolmekymmentä|sata|tuhat)$/iu;
+
+/**
+ * Dangling token that ends with a hyphen — `truncateAtWord` slicing at
+ * a word boundary inside a hyphenated compound noun leaves trailing
+ * stubs like `Civil-Liberties` (when the original was `Civil-Liberties
+ * Backlash`). The hyphen is a strong reader signal that more text was
+ * lost; strip the whole compound token plus its leading separator.
+ *
+ * Conservative: only strips tokens whose **last character before the
+ * boundary** is a hyphen (`-`). Compound nouns that survived the cut
+ * intact (e.g. `Civil-Liberties Backlash` → "Civil-Liberties") are
+ * never matched because they end on a letter.
+ */
+const TRAILING_HYPHENATED_STUB_RE = /[\s,;:—–]+\S*-$/u;
+
 function trimTrailingConnectors(text: string): string {
   let prev = text;
-  for (let i = 0; i < 5; i += 1) {
-    const next = prev.replace(TRAILING_CONNECTOR_RE, '').replace(/[\s,;:—–-]+$/u, '').trim();
+  for (let i = 0; i < 8; i += 1) {
+    const next = prev
+      .replace(TRAILING_CONNECTOR_RE, '')
+      .replace(TRAILING_DANGLING_CARDINAL_RE, '')
+      .replace(TRAILING_HYPHENATED_STUB_RE, '')
+      .replace(/[\s,;:—–-]+$/u, '')
+      .trim();
     if (next === prev) break;
     prev = next;
   }
@@ -314,12 +370,42 @@ function normaliseKeyword(raw: string): string {
   return raw
     .replace(/[<>"'`()[\]{}]/g, ' ')
     .replace(/\s+/g, ' ')
+    // Strip trailing dangling hyphens/dashes — upstream extractors that
+    // split on punctuation can leave incomplete tokens like
+    // `"WEO Apr-"` (truncated from "WEO Apr-Jun") or `"Core Tid-"`.
+    // The dangling hyphen is a strong reader-hostile signal that the
+    // token is incomplete; strip the hyphen and re-trim.
+    .replace(/[-–—]+\s*$/u, '')
     .trim();
+}
+
+/**
+ * Detect keyword tokens that survived the punctuation strip with an
+ * **isolated single-letter `s` in the middle** — the apostrophe-strip
+ * leftover from possessive prose like `"L's NATO Push"`, `"Sweden's
+ * Tidö Pact"`, `"Lotta Edholm's Reform"`. After `normaliseKeyword`
+ * strips the apostrophe, these collapse to `"L s NATO"`, `"Sweden s
+ * Tidö"`, `"Lotta Edholm s"` — reader-hostile and SERP-useless.
+ *
+ * The filter is intentionally narrow: it only rejects the token when
+ * the keyword contains 2+ words AND one of them is a solitary `s`.
+ * That preserves legitimate single-letter party codes (`S`,
+ * `V`, `M`, `C`, `L`, …) which always ship as standalone tokens.
+ */
+function isKeywordDebris(keyword: string): boolean {
+  if (keyword.length < 2) return true;
+  // Solitary `s` between word-boundaries (anywhere in the token) when
+  // the keyword has multiple words. Catches "L s NATO", "Sweden s Tid",
+  // "Lotta Edholm s" — never matches standalone "S" party code (single
+  // word, length 1, already rejected by the length check above).
+  if (/\s/.test(keyword) && /(?:^|\s)s(?:$|\s)/i.test(keyword)) return true;
+  return false;
 }
 
 function pushKeyword(out: string[], seen: Set<string>, raw: string): void {
   const keyword = normaliseKeyword(raw);
   if (keyword.length < 2) return;
+  if (isKeywordDebris(keyword)) return;
   const key = keyword.toLocaleLowerCase();
   if (seen.has(key)) return;
   seen.add(key);
@@ -356,41 +442,60 @@ export interface ArticleSeoMetadata {
 
 /**
  * Build the SERP `<title>`. The executive-brief H1 — which the cascade
- * has already localized into 14 languages — IS the context. We do not
- * append `— DATE · LANG` boilerplate, because:
+ * has already localized into 14 languages — IS the SERP title. Per
+ * `seo-metadata-contract.md` §2.1, the title is **always** sourced
+ * from the executive brief (`cleanArticleTitle` strips boilerplate;
+ * `titleFromBluf` synthesises from BLUF when the H1 is unusable).
  *
- *  - The publication date is already conveyed by `article:published_time`
- *    OG meta and the per-article URL slug; Google renders it as a SERP
- *    snippet prefix without needing it in the `<title>`.
- *  - The language is already conveyed by `<html lang>`, `hreflang`
- *    alternates, and `og:locale`; carrying it again in the `<title>`
- *    eats ~5-6 chars of the SERP budget for zero CTR benefit.
- *  - Pre-2026-05 the boilerplate `— 2026-05-22 · en — Riksdagsmonitor`
- *    consumed ~40 chars and left only ~30 chars for the actual story.
+ * **No date prefix** (since 2026-05-24, audit on 480-article EN corpus):
  *
- * **Per-language SERP budgets** (since 2026-05-24, `seo-metadata-contract.md` §4):
+ *  - 198/480 (41%) of EN titles shipped with an ugly `"Mon DD, 2026 · "`
+ *    prefix that ate ~15 chars of the 70-char SERP budget.
+ *  - 143/480 (30%) of EN titles shipped truncated mid-phrase (e.g.
+ *    `"Apr 19, 2026 · Deep Inspection HD03231 (Russia · Cyber · Defence ·…"`)
+ *    when the bare H1 would have fit the budget cleanly.
+ *  - The date is **already** carried by five other signals: the URL
+ *    slug (`2026-04-19-deep-inspection-en.html`), `og:article:published_time`,
+ *    JSON-LD `datePublished`, the visible page byline, and the SERP's
+ *    own auto-rendered date snippet. Forcing the date into `<title>` is
+ *    duplicative, destroys precious budget chars, and yields visually
+ *    broken truncated titles.
+ *  - Reader-friendly newsroom datelines remain on the `<meta description>`
+ *    (see {@link buildSeoDescription}) — that's where the convention
+ *    belongs.
+ *  - Daily-series articles (election-cycle/current, year-ahead, …) that
+ *    historically reused identical H1s across dates are now policed at
+ *    the content layer (`scripts/check-headline-quality.ts` + brief
+ *    generator prompts) — the renderer no longer papers over duplicate
+ *    H1s by glue-mounting a date prefix on top.
  *
- *  - **Latin LTR** (`en sv da no fi de fr es nl`) — 55-70 chars (Google
- *    desktop SERP; ~600 pixels). Pre-existing behaviour, unchanged.
- *  - **RTL** (`ar he`) — 45-60 chars. Pre-2026-05-24 the renderer used
- *    70 chars uniformly, causing Arabic / Hebrew SERP titles to ship
- *    ~15 % over the visual budget and get truncated mid-word.
- *  - **CJK** (`ja ko zh`) — 30-45 glyphs (CJK glyphs render ~2× Latin
- *    width). Pre-2026-05-24 a CJK H1 like `センタパルティエット、労働
- *    組合の政党献金法をめぐりティドーブロックから離脱` (36 glyphs) shipped
- *    with the brand suffix and rendered as ~108 visual width in Google
- *    SERP — 3× the CJK budget — and got truncated mid-glyph.
+ * **Per-language SERP budgets** (`seo-metadata-contract.md` §4):
  *
- * The only suffix we keep is the site signature ` — Riksdagsmonitor`,
- * and only when the brief H1 plus suffix fits within the per-language
- * `hardMax`. When the H1 already mentions Riksdagsmonitor, we don't
- * duplicate it. When the H1 alone exceeds the budget we drop the suffix
- * entirely so the story title gets every available pixel.
+ *  - **Latin LTR** (`en sv da no fi de fr es nl`) — 55-70 chars.
+ *  - **RTL** (`ar he`) — 45-60 chars.
+ *  - **CJK** (`ja ko zh`) — 30-45 glyphs.
+ *
+ * **Composition cascade** (richest form first, fall back step by step):
+ *
+ *  1. `{H1} — Riksdagsmonitor` — story + brand (preferred).
+ *  2. `{H1}` — bare story (brand dropped to fit budget).
+ *  3. truncated `{H1}` with `…` ellipsis (last-resort).
+ *
+ * Brand suffix is dropped when the H1 already mentions `Riksdagsmonitor`
+ * (avoid duplication). Empty-bracket artefacts left behind by upstream
+ * brief-generator template-substitution defects (`( )`, `[ ]`, `{ - }`)
+ * are scrubbed by {@link stripEmptyBrackets} before any length /
+ * truncation logic runs — see live regression on
+ * `analysis/daily/2026-05-08/election-cycle/next/article.md` which
+ * shipped `title: "Post-2026 Coalition: Next Mandate 2026-2030 ( )"`.
  */
 export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
   const serpTitleBudget = titleWindowForLanguage(input.lang).hardMax;
   const SITE_SUFFIX = ' — Riksdagsmonitor';
-  const base = collapseWhitespace(input.title);
+  // Pre-process: strip empty-bracket placeholders (e.g. `Next Mandate 2026-2030 ( )`
+  // from upstream brief generators that fail to substitute coalition-name
+  // placeholders) before any length / truncation logic runs.
+  const base = collapseWhitespace(stripEmptyBrackets(input.title));
   if (base.length === 0) {
     // Empty title — synthesise from article-type label + brand.
     const fallback = `${input.articleTypeLabel}${SITE_SUFFIX}`;
@@ -401,16 +506,17 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
     if (base.length <= serpTitleBudget) return base;
     return truncateWithinBudget(base, serpTitleBudget);
   }
-  // Branded variant fits the SERP budget — ship the full story + brand.
-  if (base.length + SITE_SUFFIX.length <= serpTitleBudget) {
-    return `${base}${SITE_SUFFIX}`;
-  }
-  // H1 alone fits the SERP budget — drop the brand suffix so the story
-  // title is the SERP signal (brand is already covered by `og:site_name`
-  // and the canonical URL).
+  // Composition cascade — try the richest form first, fall back step by
+  // step until something fits the per-language SERP `hardMax`. Every
+  // available char goes to the executive-brief H1; the brand suffix is
+  // dropped first because the brand is already conveyed by the canonical
+  // URL, `og:site_name`, and the JSON-LD `publisher` block.
+  const withBrand = `${base}${SITE_SUFFIX}`;
+  if (withBrand.length <= serpTitleBudget) return withBrand;
   if (base.length <= serpTitleBudget) return base;
-  // H1 overflows the SERP budget — truncate cleanly and ship without
-  // brand suffix so every available char goes to the story.
+  // H1 overflows the SERP budget — truncate cleanly with `…` ellipsis.
+  // `truncateAtWord` strips dangling connectors / cardinals / hyphenated
+  // stubs so the truncation lands on a substantive word boundary.
   return truncateWithinBudget(base, serpTitleBudget);
 }
 
@@ -420,23 +526,20 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  * already in the per-language SERP window for every language thanks to
  * the cascade in `aggregator/seo/description.ts § truncateToSentenceBoundary`.
  *
- * **Per-language SERP budgets** (since 2026-05-24, `seo-metadata-contract.md` §4):
+ * **Per-language SERP budgets** (`seo-metadata-contract.md` §4):
  *
  *  - **Latin LTR** (`en sv da no fi de fr es nl`) — 140-200 chars.
  *  - **RTL** (`ar he`) — 120-170 chars.
  *  - **CJK** (`ja ko zh`) — 70-120 glyphs.
  *
- * Pre-2026-05-24 this function used the EN 200-char hard max uniformly
- * across all 14 languages. The upstream cascade already truncates to
- * the correct per-language window when a localized executive-brief
- * exists, but this renderer-side cap also matters in three fallback
- * paths: (1) when no localized brief exists and the EN description
- * leaks through unchanged, (2) when an agent ships a long
- * `description:` front-matter line that bypasses the cascade, and (3)
- * when a downstream caller invokes `buildSeoMetadata` directly without
- * pre-truncating. Capping at the per-language `hardMax` here closes
- * those three gaps so CJK / RTL pages never overshoot their visual SERP
- * budget regardless of where the description came from.
+ * The renderer-side cap matters in three fallback paths: (1) when no
+ * localized brief exists and the EN description leaks through unchanged,
+ * (2) when an agent ships a long `description:` front-matter line that
+ * bypasses the cascade, and (3) when a downstream caller invokes
+ * `buildSeoMetadata` directly without pre-truncating. Capping at the
+ * per-language `hardMax` here closes those three gaps so CJK / RTL
+ * pages never overshoot their visual SERP budget regardless of where
+ * the description came from.
  *
  * We never append `Coverage: <Type> on <topic>; <lang> edition update
  * for <date> with Riksdag/OSINT provenance.` boilerplate because:
@@ -448,10 +551,24 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  *  - Search engines silently truncate beyond the per-language hardMax,
  *    so the boilerplate often replaced the actual analytical context
  *    with editorial plumbing.
+ *
+ * **No date dateline** (since 2026-05-24): pre-2026-05-24 this function
+ * prepended a localized newsroom dateline (`May 11, 2026 — …`) to every
+ * description. The 480-article EN audit showed the dateline burns
+ * 15-18 chars of the per-language budget on a signal that's already
+ * auto-rendered next to every SERP result, inflates 14 hreflang siblings
+ * with locale-varying dates (`May 11, 2026` / `11. Mai 2026` /
+ * `2026年5月11日`), and reduces room for the BLUF. Per the title-side
+ * rationale (see `buildSeoTitle`), publication date is already carried
+ * by the URL slug, `og:article:published_time`, JSON-LD `datePublished`,
+ * and the visible page byline. The description now ships the BLUF
+ * (truncated to the per-language `hardMax`) with **no** date prefix.
  */
+
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
   const base = stripDescriptionMarkup(input.description);
   const { hardMax } = descriptionWindowForLanguage(input.lang);
+  if (base.length === 0) return base;
   return truncateWithinBudget(base, hardMax);
 }
 

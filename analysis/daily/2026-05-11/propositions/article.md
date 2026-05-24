@@ -1,12 +1,9 @@
 ---
-title: "Säkerhet, identitet och statlig kontroll: Tre propositioner 7 maj 2026"
-description: "Den 7 maj 2026 presenterade Tidöregeringen tre propositioner med genomgående tema: utvidgad statlig kontroll över identitet, befolkningsregister och frihetsberövande av säkerhetshot."
-keywords: "HD03267, HD03250, HD03261, Prop. 2025/26:267, Prop. 2025/26:250, Prop. 2025/26:261, JuU, James Pether Sörling, Run ID, PIRs Served, Admiralty Floor, Structured Argumentation, IMF WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions, English"
 date: 2026-05-11
 subfolder: propositions
 slug: 2026-05-11-propositions
 source_folder: analysis/daily/2026-05-11/propositions
-generated_at: 2026-05-24T14:02:59.473Z
+generated_at: 2026-05-24T20:55:28.592Z
 language: en
 layout: article
 ---

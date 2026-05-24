@@ -1,12 +1,9 @@
 ---
-title: "PIR-1: Will the government's April 20 \"gang crime eradication\""
-description: "PIR-1: Will the government's April 20 \"gang crime eradication\" promise survive political and empirical scrutiny ahead of the election? PIR-2: How will Sweden's declining ESA contribution profile…"
-keywords: "HD10459, HD10458, HD10461, HD10460, HD10462, SD, KD, Probably True, Election Proximity, HIGH CONFIDENCE, Justice Minister Strömmer, MODERATE CONFIDENCE, Lotta Edholm, Erik Slottner, LOW-MEDIUM CONFIDENCE, IMF WEO April, Does Strömmer, Does Edholm, Does Slottner, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-05-04
 subfolder: interpellations
 slug: 2026-05-04-interpellations
 source_folder: analysis/daily/2026-05-04/interpellations
-generated_at: 2026-05-24T14:02:58.948Z
+generated_at: 2026-05-24T20:55:27.931Z
 language: en
 layout: article
 ---

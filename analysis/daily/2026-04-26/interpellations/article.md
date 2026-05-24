@@ -1,12 +1,9 @@
 ---
-title: "Swedish Riksdag Interpellations: Opposition Challenges Government on Energy Policy, Labour Market and Social Welfare — April 2026"
-description: "The final week of April 2026 saw a concentrated burst of opposition interpellations targeting the Tidö coalition government across five strategic fronts: energy misinformation (HD10448), employer…"
-keywords: "HD10448, HD10444, HD10447, HD10439, HD10443, HD10434, HD10445, SD, James Pether Sörling, Run ID, Finance Minister Svantesson, Employment Minister Britz, Minister Ebba Busch, Minister Carlson s, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-04-26
 subfolder: interpellations
 slug: 2026-04-26-interpellations
 source_folder: analysis/daily/2026-04-26/interpellations
-generated_at: 2026-05-24T14:02:58.384Z
+generated_at: 2026-05-24T20:55:27.158Z
 language: en
 layout: article
 ---

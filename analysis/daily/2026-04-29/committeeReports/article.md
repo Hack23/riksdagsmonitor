@@ -1,12 +1,9 @@
 ---
-title: "Riksdagen Committee Reports Intelligence Brief — 28 April 2026"
-description: "Sweden's Riksdag committee system approved eight (8) betänkanden on 28 April 2026, marking one of the most consequential legislative days of the 2025/26 session."
-keywords: "HD01SfU28, HD01UbU17, HD01SkU22, HD01SoU27, HD01SkU21, HD01FiU44, Prop 2025/26:175, EU, James Pether Sörling, Run ID, Sweden s Riksdag, CER Directive, European Single Access Point, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, CommitteeReports, English"
 date: 2026-04-29
 subfolder: committeeReports
 slug: 2026-04-29-committeeReports
 source_folder: analysis/daily/2026-04-29/committeeReports
-generated_at: 2026-05-24T14:02:58.618Z
+generated_at: 2026-05-24T20:55:27.476Z
 language: en
 layout: article
 ---

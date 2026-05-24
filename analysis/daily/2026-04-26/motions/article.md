@@ -1,12 +1,9 @@
 ---
-title: "Opposition Parliamentary Activity"
-description: "Swedish opposition MPs are targeting three distinct government accountability gaps: dangerous workplaces receiving wage subsidies for disabled workers, incarcerated children lacking educational legal…"
-keywords: "JuU10, JuU31, CU24, SoU25, JuU, CU, SoU, James Pether Sörling, Malmer Stenergard, Christophe Sahabo, Three Socialdemokraterna MPs, Johanna Haraldsson, Labour Minister Britz, IF Metall, Anna Wallentheim, Education Minister Mohamsson, Olle Thorell, Foreign Minister Malmer Stenergard, SD s Josef Fransson, Energy Minister Busch, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence"
 date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-05-24T14:02:58.416Z
+generated_at: 2026-05-24T20:55:27.202Z
 language: en
 layout: article
 ---

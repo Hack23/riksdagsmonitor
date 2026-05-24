@@ -1,12 +1,9 @@
 ---
-title: "On 30 April – 7 May 2026 the Kristersson government (Tidö coalition"
-description: "On 30 April – 7 May 2026 the Kristersson government (Tidö coalition — M, KD, L + SD confidence partner) tabled 10 parliamentary propositions in a coordinated pre-election legislative sprint."
-keywords: "HD03267, HD03262, HD03263, HD03265, HD03250, HD03261, HD03258, KD, Public OSINT, Prepare Amnesty, Refugee Convention, Data Protection Authority, Gunnar Strömmer s, If Lagrådet, IMF WEO-, If Tid, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen"
 date: 2026-05-21
 subfolder: propositions
 slug: 2026-05-21-propositions
 source_folder: analysis/daily/2026-05-21/propositions
-generated_at: 2026-05-24T14:02:59.983Z
+generated_at: 2026-05-24T20:55:29.266Z
 language: en
 layout: article
 ---

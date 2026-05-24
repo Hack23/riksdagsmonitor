@@ -1,12 +1,9 @@
 ---
-title: "Thursday 21 May 2026 closes with a defining civil-liberties"
-description: "Thursday 21 May 2026 closes with a defining civil-liberties watershed: the Justice Committee (JuU) approves Sweden's first AI facial recognition legislation for police in real time (HD01JuU28,…"
-keywords: "HD01JuU28, HD01FiU39, HD11822, HD11821, HD10500, HD03267, HD03250, HD024188, JuU28, FiU40, FiU39, JuU, FiU, Public OSINT, Evening Analysis, Justice Committee, File Lagrådet-review, FM Malmer Stenergard s, Sweden s SEK, IMF WEO-, Riksbank Financial Stability Report, Riksdagsmonitor, Swedish Parliament, Riksdag"
 date: 2026-05-21
 subfolder: evening-analysis
 slug: 2026-05-21-evening-analysis
 source_folder: analysis/daily/2026-05-21/evening-analysis
-generated_at: 2026-05-24T14:02:59.949Z
+generated_at: 2026-05-24T20:55:29.220Z
 language: en
 layout: article
 ---

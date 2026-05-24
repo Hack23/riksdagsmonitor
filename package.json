@@ -72,6 +72,7 @@
     "validate-data": "npx tsx scripts/validate-against-cia-schemas.ts",
     "check-updates": "npx tsx scripts/check-cia-schema-updates.ts",
     "check:analysis-language": "tsx scripts/check-analysis-language.ts",
+    "check:headline-quality": "tsx scripts/check-headline-quality.ts",
     "generate-types": "npx tsx scripts/generate-types-from-cia-schemas.ts",
     "validate-translations": "npx tsx scripts/validate-translations.ts",
     "validate-news": "npx tsx scripts/validate-news-translations.ts",

@@ -1,12 +1,9 @@
 ---
-title: "Riksdagen Realtime Pulse — 28 April 2026"
-description: "Sweden's Riksdag entered its final pre-election sprint on 28 April 2026 with a historically dense legislative agenda: the Tidö coalition simultaneously advanced tougher citizenship requirements…"
-keywords: "HD01SfU28, HD10452, HD024100, HD03259, prop. 2025/26:218, prop. 2025/26:99, prop. 2025/26:100, FöU14, FöU20, SkU21, SkU22, SfU28, FöU, SkU, SfU, MP, SD, KD, James Pether Sörling, Sweden s Riksdag, Economic Spring Proposition, Elsa Widding, Spring Budget, New CER Directive"
 date: 2026-04-28
 subfolder: realtime-pulse
 slug: 2026-04-28-realtime-pulse
 source_folder: analysis/daily/2026-04-28/realtime-pulse
-generated_at: 2026-05-24T14:02:58.609Z
+generated_at: 2026-05-24T20:55:27.463Z
 language: en
 layout: article
 ---

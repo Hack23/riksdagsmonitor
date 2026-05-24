@@ -17,7 +17,18 @@ Articles are 100% rendered from the analysis artifacts produced in [`04-analysis
 > echo "⏱  render-entry agent_minute=$ELAPSED_MIN  remaining_to_pr_deadline=$(( 45 - ELAPSED_MIN )) min"
 > ```
 
-### Step 1 — Aggregate
+### Step 1 — Headline QA
+
+Run the content-side headline validator against the current subfolder before aggregation so boilerplate/date/scaffolding never reaches `article.md` or the rendered HTML:
+
+```bash
+npx tsx scripts/check-headline-quality.ts \
+  "analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
+```
+
+Non-zero exit → fix `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief.md` (or the English source brief inside the scoped subtree), then re-run the validator. The path is intentionally scoped to the current article subtree, so the workflow blocks on newly generated content without scanning the full historical archive.
+
+### Step 2 — Aggregate
 
 ```bash
 npx tsx scripts/aggregate-analysis.ts \
@@ -69,7 +80,7 @@ What the aggregator does:
 
 When a required artifact is missing, the aggregator aborts with a non-zero exit code — return to [`04-analysis-pipeline.md`](04-analysis-pipeline.md) and produce the missing file. `article.md` is never hand-edited.
 
-#### Step 1b — Editorial QA re-check (post-aggregation)
+#### Step 2b — Editorial QA re-check (post-aggregation)
 
 The inline analysis gate ([`05-analysis-gate.md`](05-analysis-gate.md) Check 12) runs **before** aggregation, so the editorial validator is informational on the first pass. Immediately after `aggregate-analysis.ts` writes `article.md`, re-invoke the article validator to make editorial checks (banned phrases, citation density per `reference-quality-thresholds.json → aiFirst.citationDensity.perArticle`, `economicProvenance` ≤ 6-month vintage) blocking before staging:
 
@@ -80,7 +91,7 @@ npx tsx scripts/validate-article.ts \
 
 Non-zero exit → fix the offending claims in the upstream analysis artifacts, re-run `aggregate-analysis.ts`, re-validate. `article.md` is never hand-edited.
 
-### Step 2 — (No-op) Per-language Markdown translation is not performed
+### Step 3 — (No-op) Per-language Markdown translation is not performed
 
 Per-type workflows do not produce `article.<lang>.md` for any non-English language. The agent stops after writing the canonical English `article.md` from Step 1. Non-English HTML pages are produced by `scripts/render-articles.ts` via the localized executive-brief cascade — the renderer keeps the detailed **article body in English** and only swaps in the localized hero/SEO overlay from `executive-brief_<lang>.md` (H1, dek, BLUF, JSON-LD `headline`/`description`, `<title>`, `<meta name="description">`, `og:title`/`og:description`). `<html lang>` / JSON-LD `inLanguage` are forced to the target language even though body prose stays English. Contract: `scripts/render-lib/article-merge.ts` (`mergeLocalizedWithEnglish`).
 
@@ -88,7 +99,7 @@ Per-type workflows do not produce `article.<lang>.md` for any non-English langua
 
 Historical `article.<lang>.md` files in the repo are forbidden artifacts per `scripts/validate-file-ownership.ts` (category-independent reject) — per-type workflows do not recreate them.
 
-### Step 3 — Render
+### Step 4 — Render
 
 ```bash
 npx tsx scripts/render-articles.ts \

@@ -1,12 +1,9 @@
 ---
-title: "Opposition Mounts Multi-Front Challenge: Railways, Sick Insurance, and Energy Disinformation"
-description: "On 27 April 2026, the Swedish Riksdag received two new interpellations — on railway investment delays and sick insurance reform — while existing interpellations announced for debate include a…"
-keywords: "HD10448, HD10449, HD10450, HD10447, HD10446, HD10444, HD10443, KD, SD, James Pether Sörling, Ebba Busch, Social Democratic, Social Democrats, Josef Fransson, Wind Energy Dis, Energy Minister Busch, Robert Olesen, Infrastructure Minister Carlson, Jessica Rodén, Social Insurance Minister Anna, Patrik Lundqvist, Ebba Busch s, Riksdagsmonitor, Swedish Parliament"
 date: 2026-04-27
 subfolder: interpellations
 slug: 2026-04-27-interpellations
 source_folder: analysis/daily/2026-04-27/interpellations
-generated_at: 2026-05-24T14:02:58.494Z
+generated_at: 2026-05-24T20:55:27.309Z
 language: en
 layout: article
 ---

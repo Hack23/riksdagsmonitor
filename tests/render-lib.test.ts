@@ -511,7 +511,26 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.description).toContain('widget committee reported five actionable findings');
     expect(result.description).not.toMatch(/Classification|Run ID|Author/i);
     expect(result.keywords).toContain('Widgets');
-    expect(result.markdown).toContain('keywords: "Widgets');
+    // Keyword ordering (per article-seo.ts `buildArticleKeywords` ordering
+    // contract): institutional mandatory floor leads
+    // (`Riksdagsmonitor, Swedish Parliament, Riksdag, …`), then the
+    // localized article-type label (`Widgets`), then the native language
+    // name. The in-memory `result.keywords` string must expose the topic
+    // keyword somewhere in the comma list AND must never leak admin-byline
+    // tokens — `Test Runner` (from `**Author**: Test Runner`) and
+    // `Run ID` (from `**Run ID**: 42`) historically leaked because the
+    // brief-extractor mined them as Title-Case multi-word named entities.
+    //
+    // Note: post-`2026-05-24` SEO contract no longer writes `keywords:`
+    // (or `title:` / `description:`) to article.md frontmatter — those
+    // values flow directly from `executive-brief.md` into the renderer.
+    // We therefore assert on the in-memory `result.keywords` string only.
+    expect(result.keywords).toMatch(/^Riksdagsmonitor,\s*Swedish Parliament/);
+    expect(result.keywords).toMatch(/\bWidgets\b/);
+    expect(result.keywords).not.toMatch(/\b(?:Test Runner|Run ID|Author|Classification|Confidence)\b/);
+    expect(result.markdown).not.toMatch(/^title:/m);
+    expect(result.markdown).not.toMatch(/^description:/m);
+    expect(result.markdown).not.toMatch(/^keywords:/m);
 
     // Aggregated markdown must carry real content but no Pass-2 / no admin byline.
     expect(result.markdown).toContain('## Reader Intelligence Guide');
@@ -617,17 +636,28 @@ describe('render-lib — article SEO metadata', () => {
       articleTypeLabel: 'Regierungsvorlagen',
       canonicalPath: 'news/2026-05-11-propositions-de.html',
     });
-    // Titles retain the brief H1, then add compact date/language context so
-    // untranslated legacy fallbacks do not collapse into identical titles.
+    // Titles retain the brief H1 within the per-language SERP budget
+    // (EN hardMax 70 chars). The H1 ("Security, identity and state
+    // control: three propositions" = 56 chars) plus brand suffix
+    // " — Riksdagsmonitor" (18 chars) would overshoot 70, so per the
+    // seo-metadata-contract.md §4 cascade the renderer ships the
+    // story-only H1 — brand is already covered by `og:site_name` and
+    // the canonical URL. Pre-2026-05 the renderer appended a
+    // "· 2026-05-11 · en" uniqueness suffix; that was removed when
+    // PR #2723 codified per-language budgets so every available pixel
+    // goes to the story.
     expect(en.title).toContain('Security, identity and state');
     expect(de.title).toContain('Sicherheit, Identität');
-    expect(en.title).toContain('2026-05-11 · en');
-    expect(de.title).toContain('2026-05-11 · de');
     expect(en.title).not.toMatch(/\| .*Propositions:/);
     expect(de.title).not.toMatch(/\| .*Regierungsvorlagen:/);
     expect(en.title).not.toContain('update');
     expect(de.title).not.toContain('update');
     expect(de.title).not.toContain('Deutsch');
+    // Brand suffix is conditional on budget — when the H1 overshoots
+    // (H1 + " — Riksdagsmonitor" > hardMax) the renderer drops the
+    // brand. Both EN and DE H1s here are >52 chars so brand is dropped.
+    expect(en.title).not.toContain(' — Riksdagsmonitor');
+    expect(de.title).not.toContain(' — Riksdagsmonitor');
     // Descriptions are the executive-brief BLUF only: no fixed suffix,
     // context boilerplate, or generated fallback string.
     expect(en.description).toBe(base.description);
@@ -678,7 +708,15 @@ describe('render-lib — article SEO metadata', () => {
     expect(seo.description.length).toBeLessThanOrEqual(200);
   });
 
-  it('does not alter otherwise identical executive-brief descriptions with fixed uniqueness suffixes', () => {
+  it('keeps identical-H1 EN/DE titles identical (brand suffix when budget allows) — canonical URL disambiguates per-language pages', () => {
+    // Pre-2026-05-24 the renderer appended a "· en" / "· de"
+    // uniqueness suffix to avoid identical SERP titles when an
+    // untranslated EN H1 was reused across languages. PR #2723
+    // removed that suffix per `seo-metadata-contract.md` §4 — every
+    // available SERP pixel goes to the story headline, and
+    // per-language disambiguation is handled by `<link rel="canonical">`,
+    // `og:url`, and `<html lang="…">` (all of which differ between
+    // localized pages even when the H1 is identical).
     const base = {
       title: 'Tidö Current Mandate',
       description: 'The same untranslated fallback summary appears on more than one generated legacy HTML article page.',
@@ -696,10 +734,16 @@ describe('render-lib — article SEO metadata', () => {
       canonicalPath: 'news/2026-05-11-election-cycle-current-de.html',
     });
 
-    expect(en.title).not.toBe(de.title);
+    // Short H1 (20 chars) + brand suffix (18 chars) = 38 ≤ 70 EN hardMax
+    // and ≤ 70 DE hardMax — brand is appended for both locales.
+    expect(en.title).toBe('Tidö Current Mandate — Riksdagsmonitor');
+    expect(de.title).toBe('Tidö Current Mandate — Riksdagsmonitor');
+    // Descriptions are byte-equal because the untranslated brief was
+    // re-used as the localized fallback — that's the legacy-collapse
+    // case this test originally guarded against; the editorial fix
+    // belongs upstream in the news-translate pipeline, not in the
+    // SERP renderer.
     expect(en.description).toBe(de.description);
-    expect(en.title).toContain('· en');
-    expect(de.title).toContain('· de');
     expect(en.description).not.toContain('(en).');
     expect(de.description).not.toContain('(de).');
   });
@@ -1413,7 +1457,15 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">📜</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
     expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions.</p>');
-    expect(html).toContain('<meta name="keywords" content="Propositions');
+    // Keywords meta follows the `buildArticleKeywords` ordering contract:
+    // mandatory institutional floor leads (`Riksdagsmonitor, Swedish
+    // Parliament, …`), then the localized article-type label
+    // (`Propositions`), then the native language name. Assert the
+    // *content* attribute carries the topic anchor in the comma list,
+    // not that it leads the list — the floor's lead position was added
+    // for SERP signal stability across all 14 locales.
+    expect(html).toMatch(/<meta name="keywords" content="Riksdagsmonitor,\s*Swedish Parliament/);
+    expect(html).toMatch(/<meta name="keywords" content="[^"]*\bPropositions\b/);
     expect(html).toContain('Traceable artifacts');
     expect(html).toContain('class="rm-article-sources"');
     expect(html).toContain('executive-brief.md');

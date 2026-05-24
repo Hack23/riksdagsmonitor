@@ -1,12 +1,9 @@
 ---
-title: "Grundlagsskyddad aborträtt, migrationsmotstånd och klimatdeadlock: Riksdagen 11 maj 2026"
-description: "Riksdagens 11 maj innehåller tre tydliga politiska spänningspunkter som konvergerar fyra månader före septembervalet 2026:"
-keywords: "HD01KU34, HD10481, HD11810, HD024149, HD024150, HD01SoU31, prop. 2025/26:264, prop. 2025/26:263, KU34, KU, James Pether Sörling, Run ID, PIRs Served, Admiralty Floor, Scenario Analysis, Structured Argumentation, Begär SD, INGEN ÅTGÄRD, If SD, WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence"
 date: 2026-05-11
 subfolder: realtime-pulse
 slug: 2026-05-11-realtime-pulse
 source_folder: analysis/daily/2026-05-11/realtime-pulse
-generated_at: 2026-05-24T14:02:59.481Z
+generated_at: 2026-05-24T20:55:28.603Z
 language: en
 layout: article
 ---

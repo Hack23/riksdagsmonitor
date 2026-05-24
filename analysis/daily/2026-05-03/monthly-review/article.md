@@ -1,12 +1,9 @@
 ---
-title: "Sweden's Pre-Election Migration Reset: May 2026 Monthly Review"
-description: "Sweden enters the final campaign stretch (133 days to 13 September 2026) with the Tidöalliansen having executed a coordinated four-bill migration law transformation (HD03262–HD03265) that…"
-keywords: "HD03262, HD03265, HD03259, HD03253, HD03254, James Pether Sörling, Run ID, Election-proximity DIW, Does SD s, WEO Apr-, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Monthly Review, English"
 date: 2026-05-03
 subfolder: monthly-review
 slug: 2026-05-03-monthly-review
 source_folder: analysis/daily/2026-05-03/monthly-review
-generated_at: 2026-05-24T14:02:58.884Z
+generated_at: 2026-05-24T20:55:27.841Z
 language: en
 layout: article
 ---

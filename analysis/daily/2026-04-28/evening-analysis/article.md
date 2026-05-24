@@ -1,12 +1,9 @@
 ---
-title: "Tidö Coalition's Pre-Election Legislative Sprint: Security, Finance, and Welfare Reforms Define Sweden's 2026 Political Landscape"
-description: "April 28, 2026 marks Sweden's legislative peak of the riksmöte 2025/26: the Tidö coalition simultaneously advanced the EU Banking Package (HD03253), welfare sanctions for prisoners, citizenship…"
-keywords: "HD03253, HD01SfU28, HD024099, HD10449, HD10451, HD024100, prop. 2025/26:99, FiU20, FiU24, FiU, SD, KD, James Pether Sörling, Evening Analysis, Spring Fiscal Bill s GDP, Finance Committee s, Basel III, Finance Committee, Spring Fiscal Bill, CER Directive, Vote June, BrB Chapter, Spring Budget, Spring Fiscal Guidelines"
 date: 2026-04-28
 subfolder: evening-analysis
 slug: 2026-04-28-evening-analysis
 source_folder: analysis/daily/2026-04-28/evening-analysis
-generated_at: 2026-05-24T14:02:58.557Z
+generated_at: 2026-05-24T20:55:27.396Z
 language: en
 layout: article
 ---

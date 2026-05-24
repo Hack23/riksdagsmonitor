@@ -23,7 +23,7 @@
  * @license Apache-2.0
  */
 
-import { readdirSync, statSync } from 'node:fs';
+import { readdirSync, statSync, type Dirent } from 'node:fs';
 import { join, sep } from 'node:path';
 
 import { repairMermaidFile } from './validators/mermaid-diagrams/index.js';
@@ -75,9 +75,9 @@ function expandPattern(pattern: string): readonly string[] {
   const ext = `.${match[2]!.toLowerCase()}`;
   const out: string[] = [];
   const walk = (dir: string): void => {
-    let entries: ReturnType<typeof readdirSync>;
+    let entries: Dirent[];
     try {
-      entries = readdirSync(dir, { withFileTypes: true });
+      entries = readdirSync(dir, { withFileTypes: true }) as Dirent[];
     } catch {
       return;
     }
@@ -111,7 +111,7 @@ async function main(): Promise<void> {
     const changedFile = { value: false };
     let finalUnrepaired: ReadonlyArray<{
       readonly blockStartLineNumber: number;
-      readonly errorLineNumber?: number;
+      readonly errorLineNumber: number | null;
       readonly category: string;
       readonly message: string;
     }> = [];

@@ -1,12 +1,9 @@
 ---
-title: "Swedish Parliamentary Pulse"
-description: "Prepared for: Senior political analyst, editorial team"
-keywords: "HD024160, HD024153, HD03267, HD03250, HD03261, HD10492, HD10453, HD10448, HD10440, KU34, KU, SD, Lagrådet CRC, Special Advocate, If Lagrådet, ECtHR Rule, MP Lotta Johnsson Fornarve, Minister Dousa, CRC Art, VERY HIGH, Lagrådet June, KD s Ebba Busch, Riksdagsmonitor, Swedish Parliament"
 date: 2026-05-14
 subfolder: realtime-pulse
 slug: 2026-05-14-realtime-pulse
 source_folder: analysis/daily/2026-05-14/realtime-pulse
-generated_at: 2026-05-24T14:02:59.689Z
+generated_at: 2026-05-24T20:55:28.875Z
 language: en
 layout: article
 ---

@@ -1,12 +1,9 @@
 ---
-title: "Sweden Faces Pressure to Recognize Occupied Ichkeria as Russia Expands Military Doctrine"
-description: "Sweden Democrat MP Markus Wiechel has filed interpellation HD10494, demanding that Foreign Minister Maria Malmer Stenergard explain whether Sweden will recognize the Chechen Republic Ichkeria as a…"
-keywords: "HD10494, SD, James Pether Sörling, Foreign Minister Maria Malmer, Chechen Republic Ichkeria, Sweden s Russia, Whether Sweden, How Sweden, State Duma, Sweden s Ukraine, Markus Wiechel, IMF WEO, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-05-18
 subfolder: interpellations
 slug: 2026-05-18-interpellations
 source_folder: analysis/daily/2026-05-18/interpellations
-generated_at: 2026-05-24T14:02:59.835Z
+generated_at: 2026-05-24T20:55:29.066Z
 language: en
 layout: article
 ---

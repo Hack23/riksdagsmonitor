@@ -1,12 +1,9 @@
 ---
-title: "Security, Digital Identity and Migration Reforms: The Government's May 2026 Bill Package"
-description: "On 7 May 2026 the Kristersson government tabled three interconnected bills that deepen Sweden's security and control architecture: a national electronic-identification act (HD03250), expanded…"
-keywords: "HD03250, HD03261, HD03267, HD03262, HD03264, TU, SkU, MP, James Pether Sörling, Run ID, Erik Slottner, Major IT, Digital Government, Niklas Wykman, Tax Committee, Gunnar Strömmer, Johan Forssell, Admiralty Code, IMF WEO Apr-, Decision-Grade BLUF Rubric, Self-Audit Checklist, Riksdagsmonitor, Swedish Parliament, Riksdag"
 date: 2026-05-15
 subfolder: propositions
 slug: 2026-05-15-propositions
 source_folder: analysis/daily/2026-05-15/propositions
-generated_at: 2026-05-24T14:02:59.747Z
+generated_at: 2026-05-24T20:55:28.954Z
 language: en
 layout: article
 ---

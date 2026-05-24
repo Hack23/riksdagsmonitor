@@ -248,16 +248,21 @@ describe('mergeLocalizedWithEnglish', () => {
   });
 
   // --- Cascade chain step #2 — localized executive-brief overrides --------
-  // `executive-brief_<lang>.md` is the canonical localized SEO source per
-  // `Article-Generation.md § "Per-language precedence chain"`. When the
-  // brief markdown is forwarded into the merger AND it yields a
-  // publishable H1 / BLUF, those fields override the per-type agent's
-  // `article.<lang>.md` front-matter. Banned-phrase H1s leave the
-  // article-front-matter title in place, while missing BLUFs leave the
-  // English executive-brief description in place. Meta descriptions must
-  // never come from fixed suffixes or localized article front-matter.
+  // Historical note: the merger used to overlay localized
+  // `executive-brief_<lang>.md` H1 / BLUF onto title/description (chain
+  // step #2). That responsibility moved to the **renderer** in
+  // `scripts/render-lib/article.ts § deriveBriefSeoOverrides` post-
+  // `2026-05-24`. The merger now:
+  //   - ignores `localizedBriefMarkdown` and `subfolder` (kept as
+  //     deprecated parameters for back-compat),
+  //   - never rewrites `title:` / `description:` / `keywords:` from a
+  //     brief,
+  //   - still forces `language: <lang>`, still applies the body overlay
+  //     when a localized body exists, still falls through to the
+  //     English body when no localized body is present.
+  // The new tests below pin the simplified contract.
 
-  it('overrides localized FM title with the localized brief H1 when it is publishable', () => {
+  it('ignores localizedBriefMarkdown — does NOT rewrite title/description from the brief', () => {
     const briefDe = [
       '# Tidö-Regierung legt drei Vorlagen vor — Umverteilung von 12,4 Mrd Kronen',
       '',
@@ -269,99 +274,32 @@ describe('mergeLocalizedWithEnglish', () => {
       englishMarkdown,
       localizedMarkdown: germanMarkdown,
       lang: 'de',
+      // Forwarded for back-compat but ignored — the renderer owns
+      // brief-driven SEO now.
       localizedBriefMarkdown: briefDe,
       subfolder: 'propositions',
     });
     const { data } = matter(out);
-    expect(data.title).toContain('Tidö-Regierung');
-    expect(data.title).toContain('12,4 Mrd');
-    expect(data.description).toContain('Tidö-Regierung');
-    expect(data.description).toContain('12,4 Milliarden');
-    // Localized body content is untouched.
+    // Title/description survive from the localized article front-matter
+    // (chain step #3); the brief is no longer consulted by the merger.
+    expect(data.title).toBe('Regierungspropositionspakete');
+    expect(data.description).toBe('Three interlocking propositions');
+    expect(data.language).toBe('de');
+    // Localized body content is still applied above the boundary.
     expect(out).toContain('Am 7. Mai 2026 legte die Tidö-Regierung drei Vorlagen vor.');
   });
 
-  it('keeps the localized FM title when the brief H1 is banned (REPLACE THIS H1)', () => {
-    const placeholderBriefDe = [
-      '# 📰 Executive Brief Template — REPLACE THIS H1',
-      '',
-      '## BLUF',
-      '',
-      'Faktische BLUF mit Akteur und Verb über achtzig Zeichen für den Truncate-Filter.',
-    ].join('\n');
-    const out = mergeLocalizedWithEnglish({
-      englishMarkdown,
-      localizedMarkdown: germanMarkdown,
-      lang: 'de',
-      localizedBriefMarkdown: placeholderBriefDe,
-      subfolder: 'propositions',
-    });
-    const { data } = matter(out);
-    // Title falls through to article.<lang>.md front-matter (chain #3).
-    expect(data.title).toBe('Regierungspropositionspakete');
-    // Description still resolves from the brief BLUF (independent fields).
-    expect(data.description).toContain('Faktische BLUF');
-  });
-
-  it('keeps localized FM title but falls back to English brief description when localized BLUF is empty', () => {
-    const boilerplateBrief = [
-      '# 📰 Executive Brief',
-      '',
-      '## BLUF',
-      '',
-      // Empty BLUF body.
-    ].join('\n');
-    const out = mergeLocalizedWithEnglish({
-      englishMarkdown,
-      localizedMarkdown: germanMarkdown,
-      lang: 'de',
-      localizedBriefMarkdown: boilerplateBrief,
-      subfolder: 'propositions',
-    });
-    const { data } = matter(out);
-    expect(data.title).toBe('Regierungspropositionspakete');
-    expect(data.description).toBe('Three interlocking propositions');
-  });
-
-  it('uses localized FM title and English brief description when localizedBriefMarkdown is undefined', () => {
-    const out = mergeLocalizedWithEnglish({
-      englishMarkdown,
-      localizedMarkdown: germanMarkdown,
-      lang: 'de',
-      // localizedBriefMarkdown intentionally omitted.
-      subfolder: 'propositions',
-    });
-    const { data } = matter(out);
-    expect(data.title).toBe('Regierungspropositionspakete');
-    expect(data.description).toBe('Three interlocking propositions');
-  });
-
-  it('uses localized FM title and English brief description when localizedBriefMarkdown is empty', () => {
-    const out = mergeLocalizedWithEnglish({
-      englishMarkdown,
-      localizedMarkdown: germanMarkdown,
-      lang: 'de',
-      localizedBriefMarkdown: '',
-      subfolder: 'propositions',
-    });
-    const { data } = matter(out);
-    expect(data.title).toBe('Regierungspropositionspakete');
-    expect(data.description).toBe('Three interlocking propositions');
-  });
-
-  // --- No localized article, only localized executive-brief ----------------
-  // Covers the wire-up bug fixed in `scripts/render-articles.ts`: when a
-  // date ships `executive-brief_<lang>.md` for all 14 languages but no
-  // `article.<lang>.md` agent-translation, the renderer must still consume
-  // the localized brief to localize `<title>` / `<meta description>`. The
-  // merger receives `localizedMarkdown: ''` and the full localized brief.
-  it('overlays brief title/description on the English body when the localized article is missing', () => {
+  it('ignores localizedBriefMarkdown even when the localized article is missing', () => {
+    // No localized article body, only a localized brief — the merger
+    // must still NOT touch title/description from the brief (that's the
+    // renderer's job via `deriveBriefSeoOverrides`). The merger only
+    // forces `language: <lang>` and falls through to the English body.
     const briefDe = [
-      '# Tidö-Regierung legt drei Vorlagen vor — Umverteilung von 12,4 Mrd Kronen',
+      '# Tidö-Regierung legt drei Vorlagen vor',
       '',
       '## 🎯 BLUF',
       '',
-      'Am 7. Mai 2026 legte die Tidö-Regierung drei Vorlagen vor, die zusammen 12,4 Milliarden Kronen zwischen Forstwirtschaft und Verteidigung umverteilen.',
+      'Am 7. Mai 2026 legte die Tidö-Regierung drei Vorlagen vor.',
     ].join('\n');
     const out = mergeLocalizedWithEnglish({
       englishMarkdown,
@@ -371,28 +309,23 @@ describe('mergeLocalizedWithEnglish', () => {
       subfolder: 'propositions',
     });
     const { data, content } = matter(out);
-    expect(data.title).toContain('Tidö-Regierung');
-    expect(data.title).toContain('12,4 Mrd');
-    expect(data.description).toContain('12,4 Milliarden');
+    // English-side title/description survive because the merger no
+    // longer overlays the brief.
+    expect(data.title).toBe('Government propositions');
+    expect(data.description).toBe('Three interlocking propositions');
     expect(data.language).toBe('de');
-    // The English body is preserved verbatim (no merge boundary because
-    // there is no localized body to prepend).
+    // English body preserved verbatim (no localized body, no boundary).
     expect(content).toContain('On 7 May 2026 the Tidö government submitted three propositions.');
-    expect(content).toContain('Coalition Mathematics');
     expect(content).not.toContain('Detailed analysis (in English)');
   });
 
-  it('falls back to the English brief title/description when both localized inputs are missing', () => {
+  it('falls back to English title/description when both localized inputs are missing', () => {
     const out = mergeLocalizedWithEnglish({
       englishMarkdown,
       localizedMarkdown: '',
       lang: 'de',
-      // localizedBriefMarkdown intentionally omitted.
-      subfolder: 'propositions',
     });
     const { data, content } = matter(out);
-    // English title/description survive because the localized brief is
-    // missing and there is no localized article front-matter to consult.
     expect(data.title).toBe('Government propositions');
     expect(data.description).toBe('Three interlocking propositions');
     // …but `language` is forced to the target so `<html lang>` and

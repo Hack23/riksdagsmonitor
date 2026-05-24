@@ -1,12 +1,9 @@
 ---
-title: "Week Ahead: Sweden's Pre-Election Legislative Storm — 4–10 May 2026"
-description: "The week of 4–10 May 2026 arrives five months before Sweden's general election with the Tidöalliansen government having just tabled its most consequential — and constitutionally risky — legislative…"
-keywords: "HD03254, HD03262, HD03265, HD10451, HD10458, James Pether Sörling, Public Sources, Run ID, Riksdag s Finance Committee, Justitieminister Gunnar Strömmer, Försvarsminister Pål Jonson, Finansminister Elisabeth Svantesson, No Riksdag, Will Lagrådet, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Week Ahead, English"
 date: 2026-05-01
 subfolder: week-ahead
 slug: 2026-05-01-week-ahead
 source_folder: analysis/daily/2026-05-01/week-ahead
-generated_at: 2026-05-24T14:02:58.845Z
+generated_at: 2026-05-24T20:55:27.786Z
 language: en
 layout: article
 ---

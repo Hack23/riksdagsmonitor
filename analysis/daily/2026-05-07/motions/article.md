@@ -1,12 +1,9 @@
 ---
-title: "Opposition Storms Government's Twin Legislative Pillars: Forestry and Criminal Age Face Four-Party Resistance"
-description: "Eight opposition committee motions filed 2026-05-04 mount coordinated resistance across two government propositions: four opposition parties (V, SD, S, C, MP) challenge prop. 2025/26:242 on forestry…"
-keywords: "prop. 2025/26:242, prop. 2025/26:246, MJU, JuU, SD, MP, PUBLIC SOURCE, James Pether Sörling, Admiralty Scale, Run ID, UN Convention, If Lagrådet, World Bank, Does SD s, CRC Art, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions"
 date: 2026-05-07
 subfolder: motions
 slug: 2026-05-07-motions
 source_folder: analysis/daily/2026-05-07/motions
-generated_at: 2026-05-24T14:02:59.225Z
+generated_at: 2026-05-24T20:55:28.272Z
 language: en
 layout: article
 ---

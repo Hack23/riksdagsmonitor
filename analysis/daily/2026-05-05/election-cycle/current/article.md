@@ -1,12 +1,9 @@
 ---
-title: "Sweden's Tidö coalition enters its final 131-day stretch with five"
-description: "Sweden's Tidö coalition enters its final 131-day stretch with five critical signals from today's parliamentary record that require immediate analytical attention:"
-keywords: "HD10464, HD10466, HD01JuU30, HD11782, HD11787, HD01NU19, Sweden s Tid, NPT Review Conference, Track Liberalerna, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Current, election cycle current, English"
 date: 2026-05-05
 subfolder: election-cycle/current
 slug: 2026-05-05-election-cycle/current
 source_folder: analysis/daily/2026-05-05/election-cycle/current
-generated_at: 2026-05-24T14:02:59.029Z
+generated_at: 2026-05-24T20:55:28.019Z
 language: en
 layout: article
 ---

@@ -1,12 +1,9 @@
 ---
-title: "Organized Crime, Energy Transition, and Social System Pressures: Swedish Interpellation Storm"
-description: "Sweden's interpellation calendar on 2026-04-29 reveals a government under simultaneous pressure across three strategic fault lines: the penetration of organized crime into welfare and business…"
-keywords: "HD10454, HD10453, HD10450, HD10443, HD10438, HD10451, HD10456, HD10457, HD10452, SD, James Pether Sörling, Social Democrats, Josef Fransson, Ebba Busch s, Waltersson Grönvall, SD s Fransson, SD s Nima Gholam Ali, S s Magnusson, Independent Elsa Widding, Justice Minister Strömmer, If Waltersson Grönvall, Riksdagsmonitor, Swedish Parliament, Riksdag"
 date: 2026-04-29
 subfolder: interpellations
 slug: 2026-04-29-interpellations
 source_folder: analysis/daily/2026-04-29/interpellations
-generated_at: 2026-05-24T14:02:58.637Z
+generated_at: 2026-05-24T20:55:27.500Z
 language: en
 layout: article
 ---

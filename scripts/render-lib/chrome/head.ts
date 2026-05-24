@@ -13,9 +13,19 @@
  */
 
 import { LANGUAGE_META, escapeHtml } from '../../sitemap-html/index.js';
+import type { Language } from '../../types/language.js';
+import { titleWindowForLanguage } from '../aggregator/seo/serp-budgets.js';
 import { BASE_URL, LANGUAGES } from '../constants.js';
 import type { ChromeOptions } from './types.js';
 import { depth, renderHreflangBlock } from './helpers.js';
+
+/**
+ * Brand suffix appended to non-branded titles. Kept in sync with the
+ * `SITE_SUFFIX` constant in `article-seo.ts § buildSeoTitle` — both must
+ * use the same 18-char string so the budget arithmetic in this module
+ * and in `buildSeoTitle` agrees on whether the suffix fits.
+ */
+export const BRAND_TITLE_SUFFIX = ' — Riksdagsmonitor';
 
 /** JSON-LD node shape — typed replacement for `any` in findIndex. */
 interface JsonLdNode {
@@ -26,16 +36,50 @@ interface JsonLdNode {
 /**
  * Apply the canonical Riksdagsmonitor brand-suffix rule to a `<title>` string.
  *
- * If `title` already contains "Riksdagsmonitor" (case-insensitive) it is
- * returned unchanged; otherwise the brand suffix " — Riksdagsmonitor" is
- * appended.
+ * The brand suffix ` — Riksdagsmonitor` (18 chars) is appended **only**
+ * when all three conditions hold:
  *
- * Extracted as a standalone export so that `article-head-metadata.ts` (which
- * must report the *exact* branded title that `renderChromeHead` emits) can
- * reuse the same rule without duplicating it.
+ *  1. The title does not already contain "Riksdagsmonitor"
+ *     (case-insensitive) — avoids the literal `… — Riksdagsmonitor —
+ *     Riksdagsmonitor` double-brand bug.
+ *  2. The title does not end with the ellipsis character `…` —
+ *     `buildSeoTitle()` only emits a trailing `…` when it already
+ *     truncated at the per-language SERP `hardMax`. Appending the
+ *     brand to a truncated title would re-overshoot the budget and
+ *     ship `<title>` like `"Sweden Passes AI Facial Recognition Law as
+ *     Riksdag Advances Five… — Riksdagsmonitor"` (84 chars, > Google's
+ *     70-char EN cap). Pre-2026-05-24 audit `Test Article Headers` run
+ *     #26364730339 reported 145/202 EN titles overshooting because of
+ *     this regression.
+ *  3. `title.length + BRAND_TITLE_SUFFIX.length ≤
+ *     titleWindowForLanguage(lang).hardMax` — the suffix fits inside
+ *     the per-language Google SERP budget defined in
+ *     `serp-budgets.ts`.
+ *
+ * When any condition fails the original `title` is returned unchanged
+ * — the SERP signal of the story text always outranks the brand suffix
+ * (the brand is also surfaced through `og:site_name`, the canonical
+ * URL, and the JSON-LD `publisher` node, so dropping the suffix never
+ * costs brand SEO).
+ *
+ * The `lang` parameter defaults to `'en'` for backwards compatibility
+ * with the small number of internal callers that don't yet thread a
+ * locale through; all production article-render call sites pass the
+ * article's actual language.
+ *
+ * Exported so that `article-head-metadata.ts` (which must report the
+ * *exact* branded title that `renderChromeHead` emits) can reuse the
+ * same rule without duplicating it.
  */
-export function brandTitle(title: string): string {
-  return /riksdagsmonitor/i.test(title) ? title : `${title} — Riksdagsmonitor`;
+export function brandTitle(title: string, lang: Language = 'en'): string {
+  if (/riksdagsmonitor/i.test(title)) return title;
+  // `buildSeoTitle` only emits a trailing `…` when it has already
+  // hit the per-language SERP `hardMax`; appending the brand suffix
+  // would re-overshoot, so leave the truncated title alone.
+  if (title.endsWith('…')) return title;
+  const { hardMax } = titleWindowForLanguage(lang);
+  if (title.length + BRAND_TITLE_SUFFIX.length > hardMax) return title;
+  return `${title}${BRAND_TITLE_SUFFIX}`;
 }
 
 /**
@@ -118,7 +162,7 @@ export function renderChromeHead(opts: ChromeOptions): string {
   if (opts.relNext) pagerLinks.push(`    <link rel="next" href="${escapeHtml(opts.relNext)}">`);
   const pagerLinksHtml = pagerLinks.length > 0 ? pagerLinks.join('\n') + '\n' : '';
 
-  const brandedTitle = brandTitle(opts.title);
+  const brandedTitle = brandTitle(opts.title, opts.lang);
   const escapedTitle = escapeHtml(opts.title);
   const escapedBrandedTitle = escapeHtml(brandedTitle);
 

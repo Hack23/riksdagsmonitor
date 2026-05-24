@@ -1,12 +1,9 @@
 ---
-title: "Month Ahead — May 2026: Sweden at the Pre-Election Inflection Point"
-description: "Sweden enters May 2026 with the Tidö government deploying its largest pre-election legislative package: the 2026 Spring Budget (HD03100) projecting continued but slow economic recovery, an emergency…"
-keywords: "HD03100, HD03236, HD03237, HD03246, HD03252, HD03240, HD03239, HD03238, HD03231, HD03232, HD03242, FiU, James Pether Sörling, Spring Budget, Finance Committee, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Month Ahead"
 date: 2026-04-25
 subfolder: month-ahead
 slug: 2026-04-25-month-ahead
 source_folder: analysis/daily/2026-04-25/month-ahead
-generated_at: 2026-05-24T14:02:58.335Z
+generated_at: 2026-05-24T20:55:27.091Z
 language: en
 layout: article
 ---

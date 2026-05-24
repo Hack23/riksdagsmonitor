@@ -1,12 +1,9 @@
 ---
-title: "Riksdag Committee Reports 8 May 2026: Housing Reform, Enforcement Rules, and School Transparency Face Opposition Resistance"
-description: "Six Riksdag committee reports dated 8 May 2026 move significant legislation to chamber vote. The most contentious are the Civil Affairs Committee's (CU) housing market reform (HD01CU31) and the…"
-keywords: "HD01CU31, HD01UbU20, HD01CU34, HD01SoU36, HD01UbU28, HD01UU13, prop 2025/26:187, prop 2025/26:191, CU, UbU, SD, KD, MP, James Pether Sörling, Admiralty Code, Six Riksdag, Civil Affairs Committee s, Education Committee s, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
 date: 2026-05-11
 subfolder: committeeReports
 slug: 2026-05-11-committeeReports
 source_folder: analysis/daily/2026-05-11/committeeReports
-generated_at: 2026-05-24T14:02:59.431Z
+generated_at: 2026-05-24T20:55:28.537Z
 language: en
 layout: article
 ---

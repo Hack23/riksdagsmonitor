@@ -1,12 +1,9 @@
 ---
-title: "Realtime Political Pulse"
-description: "On 13 May 2026, the Swedish opposition (S + C + V + MP) launched a coordinated pre-election parliamentary offensive: Center Party (C) filed four migration counter-motions (HD024157/159/160/161)…"
-keywords: "HD024157, HD024151, HD024162, HD10484, HD01KU35, HD024159, HD024160, HD024161, HD024153, HD10486, HD10488, HD01NU21, KU35, NU21, KU, NU, MP, Center Party, Social Democrats, AND Center Party, Nadja Awad, Anna Tenje, Johan Britz, Katarina Luhr"
 date: 2026-05-13
 subfolder: realtime-pulse
 slug: 2026-05-13-realtime-pulse
 source_folder: analysis/daily/2026-05-13/realtime-pulse
-generated_at: 2026-05-24T14:02:59.610Z
+generated_at: 2026-05-24T20:55:28.771Z
 language: en
 layout: article
 ---

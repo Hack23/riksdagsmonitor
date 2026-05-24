@@ -1,12 +1,9 @@
 ---
-title: "Klimatmålen inför valet: Interpellation om proposition 2030"
-description: "Riksdagsledamoten Åsa Westlund (S) har riktat interpellation 2025/26:481 (HD10481) till arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz (L) med frågan om regeringen…"
-keywords: "HD10481, Riksdagsledamoten Åsa Westlund, Johan Britz, IMF WEO Apr-, Svensk BNP-tillväxt, Sverige EU-kommissionens, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-05-11
 subfolder: interpellations
 slug: 2026-05-11-interpellations
 source_folder: analysis/daily/2026-05-11/interpellations
-generated_at: 2026-05-24T14:02:59.453Z
+generated_at: 2026-05-24T20:55:28.565Z
 language: en
 layout: article
 ---

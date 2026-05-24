@@ -1,12 +1,9 @@
 ---
-title: "Riksdag Enshrines Constitutional Protection for Abortion — and Expands the Security State's Toolkit"
-description: "Sweden's Constitutional Committee (KU) has tabled two interlocked constitutional amendments requiring a 2/3 supermajority: one entrenching abortion rights in RF 2 kap., making reproductive rights…"
-keywords: "HD01CU31, HD01JuU39, HD01KU34, HD01NU21, HD01CU30, KU34, CU31, JuU39, CU30, NU21, KU, CU, JuU, NU, James Pether Sörling, Run ID, Sweden s Constitutional Committee, Civil Affairs Committee, Justice Committee, Passed JuU, VERY HIGH, Official KU, IMF WEO Apr-, Decision-Grade BLUF Rubric"
 date: 2026-05-15
 subfolder: committeeReports
 slug: 2026-05-15-committeeReports
 source_folder: analysis/daily/2026-05-15/committeeReports
-generated_at: 2026-05-24T14:02:59.709Z
+generated_at: 2026-05-24T20:55:28.900Z
 language: en
 layout: article
 ---

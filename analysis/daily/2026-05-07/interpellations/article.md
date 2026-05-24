@@ -1,12 +1,9 @@
 ---
-title: "Social Democrats Challenge Government on Sweden's ILO Commitment"
-description: "Sweden's opposition Social Democrats have challenged the Tidö coalition government on whether it has maintained Sweden's historic role as a champion of workers' rights in the International Labour…"
-keywords: "HD10475, James Pether Sörling, Social Democrats, International Labour Organisation, Adrian Magnusson, Labor Market Minister Johan, Sweden s ILO, Minister Johan Britz, Hjalmar Branting, Minister Britz, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations, English"
 date: 2026-05-07
 subfolder: interpellations
 slug: 2026-05-07-interpellations
 source_folder: analysis/daily/2026-05-07/interpellations
-generated_at: 2026-05-24T14:02:59.206Z
+generated_at: 2026-05-24T20:55:28.245Z
 language: en
 layout: article
 ---

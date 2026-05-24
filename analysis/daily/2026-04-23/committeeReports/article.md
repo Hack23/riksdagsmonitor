@@ -1,12 +1,9 @@
 ---
-title: "Sweden's Riksdag in April 2026 approved an emergency SEK 4.1 billion"
-description: "Sweden's Riksdag in April 2026 approved an emergency SEK 4.1 billion fiscal package (fuel tax cuts + energy support) and two dormant constitutional amendments (TF/YGL) with significant pre-election…"
-keywords: "HD01FiU48, HD01KU33, HD01KU32, HD01CU27, HD01CU28, FiU48, KU33, KU32, CU27, CU28, FiU, KU, CU, James Pether Sörling, Sweden s Riksdag, Supported By, Monitor Riksbank, VERY HIGH, WEP Quick Reference, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT"
 date: 2026-04-23
 subfolder: committeeReports
 slug: 2026-04-23-committeeReports
 source_folder: analysis/daily/2026-04-23/committeeReports
-generated_at: 2026-05-24T14:02:58.221Z
+generated_at: 2026-05-24T20:55:26.946Z
 language: en
 layout: article
 ---

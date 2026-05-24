@@ -1,12 +1,9 @@
 ---
-title: "Swedish Riksdag Weekly Review, Week of 23 May 2026"
-description: "Sweden's Riksdag closed the week of 22 May 2026 with a substantial legislative harvest spanning national security, tax authority expansion, education reform, and consumer protection."
-keywords: "HD024192, HD024191, HD01UbU27, HD01UbU22, HD01UbU19, HD01FiU42, HD01CU26, prop. 2025/26:267, prop. 2025/26:261, UbU27, UbU22, UbU19, FiU42, CU26, UU11, UU12, JuU, SkU, UbU, FiU, CU, UU, SD, KD"
 date: 2026-05-23
 subfolder: weekly-review
 slug: 2026-05-23-weekly-review
 source_folder: analysis/daily/2026-05-23/weekly-review
-generated_at: 2026-05-24T14:03:00.073Z
+generated_at: 2026-05-24T20:55:29.378Z
 language: en
 layout: article
 ---

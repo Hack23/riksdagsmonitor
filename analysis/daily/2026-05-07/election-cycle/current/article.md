@@ -1,12 +1,9 @@
 ---
-title: "Tidö Current Mandate"
-description: "Sweden's Tidö coalition (M+KD+L+SD) completes its final legislative sprint with five major committee reports on 2026-05-07 confirming the mandate's core narrative: criminal justice delivery, defence…"
-keywords: "HD01CU25, HD01SfU21, HD01SfU24, HD10470, HD11789, HD11790, James Pether Sörling, WEO Apr-, Sweden s Tid, L s NATO, Core Tid, Real GDP, IMF WEO Apr-, FM Datamapper, All IMF, Added Gaza, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen"
 date: 2026-05-07
 subfolder: election-cycle/current
 slug: 2026-05-07-election-cycle/current
 source_folder: analysis/daily/2026-05-07/election-cycle/current
-generated_at: 2026-05-24T14:02:59.182Z
+generated_at: 2026-05-24T20:55:28.211Z
 language: en
 layout: article
 ---

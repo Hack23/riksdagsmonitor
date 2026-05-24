@@ -1,12 +1,9 @@
 ---
-title: "Vänsterpartiet filed two committee motions on 2026-05-11 opposing"
-description: "Vänsterpartiet filed two committee motions on 2026-05-11 opposing the Tidö government's tightened immigration regime. Motion HD024149 demands full rejection of prop. 2025/26:264 on stricter character…"
-keywords: "HD024149, HD024150, prop. 2025/26:264, prop. 2025/26:263, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Motions, English"
 date: 2026-05-12
 subfolder: motions
 slug: 2026-05-12-motions
 source_folder: analysis/daily/2026-05-12/motions
-generated_at: 2026-05-24T14:02:59.517Z
+generated_at: 2026-05-24T20:55:28.649Z
 language: en
 layout: article
 ---

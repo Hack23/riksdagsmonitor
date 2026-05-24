@@ -1,12 +1,9 @@
 ---
-title: "Sweden Security, Elder Care & Regulatory Reform Evening Brief"
-description: "The Riksdag's April 24 tabling wave confirms the Tidö coalition is executing a multi-front pre-election legislative sprint: a landmark new weapons law banning certain semi-automatic hunting rifles…"
-keywords: "HD01JuU10, HD01SoU25, HD01CU24, HD01JuU31, James Pether Sörling, Police Reform, WEO Apr-, New Weapons Law, Elder Care Package, Police Reform Audit, Building Process, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Evening Analysis, English"
 date: 2026-04-26
 subfolder: evening-analysis
 slug: 2026-04-26-evening-analysis
 source_folder: analysis/daily/2026-04-26/evening-analysis
-generated_at: 2026-05-24T14:02:58.374Z
+generated_at: 2026-05-24T20:55:27.144Z
 language: en
 layout: article
 ---

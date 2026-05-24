@@ -1,12 +1,9 @@
 ---
-title: "Swedish Government Propositions"
-description: "Sweden's Kristersson government tabled four significant legislative instruments on 23 April 2026, led by the EU Banking Package (Prop. 2025/26:253) — Sweden's most consequential financial-regulation…"
-keywords: "HD03252, HD03104, HD03253, HD03256, Prop. 2025/26:253, Prop. 2025/26:252, Prop. 2025/26:256, FiU, SfU, MP, James Pether Sörling, Sweden s Kristersson, Finance Committee, IMF WEO Apr-, VERY HIGH, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Propositions"
 date: 2026-04-27
 subfolder: propositions
 slug: 2026-04-27-propositions
 source_folder: analysis/daily/2026-04-27/propositions
-generated_at: 2026-05-24T14:02:58.536Z
+generated_at: 2026-05-24T20:55:27.371Z
 language: en
 layout: article
 ---

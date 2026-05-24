@@ -1,12 +1,9 @@
 ---
-title: "Swedish Political Intelligence: Month-Ahead Outlook — May–June 2026"
-description: "Sweden's Riksdag enters May–June 2026 in final legislative acceleration before the September 2026 general election, with the Tidö coalition (M-SD-KD-L) pushing through a dense security, justice and…"
-keywords: "HD01JuU10, HD03246, HD03252, HD03253, HD01JuU31, HD10444, HD10447, HD10446, HD024098, HD024092, prop. 2025/26:236, JuU, James Pether Sörling, Sweden s Riksdag, Escalating S-opposition, Social Democrat, Finance Minister Svantesson, If SD, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics"
 date: 2026-04-26
 subfolder: month-ahead
 slug: 2026-04-26-month-ahead
 source_folder: analysis/daily/2026-04-26/month-ahead
-generated_at: 2026-05-24T14:02:58.394Z
+generated_at: 2026-05-24T20:55:27.173Z
 language: en
 layout: article
 ---

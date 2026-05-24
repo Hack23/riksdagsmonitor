@@ -1,12 +1,9 @@
 ---
-title: "April 20 marks a significant escalation in Sweden's pre-election"
-description: "Monday April 20 marks a significant escalation in Sweden's pre-election parliamentary accountability campaign."
-keywords: "HD01MJU21, HD03236, HD10439, HD11726, HD11722, HD11724, HD03237, HD11725, HD11720, HD11721, KU42, KU43, MJU21, MJU, KU, KD, Monday April, Agriculture Committee, National Audit Office s, Minister Andreas Carlson, Minister Gunnar Strömmer, S s Mattias Veps, S s Eva Lindh, Education Ministry"
 date: 2026-04-20
 subfolder: evening-analysis
 slug: 2026-04-20-evening-analysis
 source_folder: analysis/daily/2026-04-20/evening-analysis
-generated_at: 2026-05-24T14:02:58.083Z
+generated_at: 2026-05-24T20:55:26.790Z
 language: en
 layout: article
 ---

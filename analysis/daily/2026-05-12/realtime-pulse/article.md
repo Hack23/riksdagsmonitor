@@ -1,12 +1,9 @@
 ---
-title: "Riksdagen Realtime Pulse 12 maj 2026"
-description: "Tisdagen den 12 maj 2026 präglas av Vänsterpartiets tredubbla interpellationsoffensiv mot regeringen inom äldreomsorg, jämställda löner och välfärd — ett koordinerat pre-election signalblock riktat…"
-keywords: "HD10484, HD10486, HD10483, HD10485, HD01CU30, KU34, CU30, CU31, KU, CU, James Pether Sörling, HIGH SALIENCE, Nadja Awad, Anna Tenje, Johan Britz, MEDIUM SALIENCE, Katja Nyberg, Gunnar Strömmer, LOW-MEDIUM SALIENCE, Ida Ekeroth Clausson, Elisabeth Svantesson, Kopplar SOU, Energidirektivet EPBD, Socialminister Tenje"
 date: 2026-05-12
 subfolder: realtime-pulse
 slug: 2026-05-12-realtime-pulse
 source_folder: analysis/daily/2026-05-12/realtime-pulse
-generated_at: 2026-05-24T14:02:59.532Z
+generated_at: 2026-05-24T20:55:28.669Z
 language: en
 layout: article
 ---

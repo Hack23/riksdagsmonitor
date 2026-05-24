@@ -1,12 +1,9 @@
 ---
-title: "Swedish Riksdag Committee Reports, 21 May 2026"
-description: "Sweden's Riksdag committees published twelve reports (betänkanden) on 20 May 2026 in the most substantive single-day output of the 2025/26 session's pre-election sprint."
-keywords: "HD01SoU38, HD01SoU39, HD01JuU43, HD01SoU29, HD01SoU30, HD01UbU30, HD01UbU21, HD01UU3, HD01UU4, HD01MJU22, JuU43, SoU29, SoU30, SoU38, SoU39, MJU22, UU3, UU4, UbU21, UbU30, SoU40, SoU41, JuU, SoU"
 date: 2026-05-21
 subfolder: committee-reports
 slug: 2026-05-21-committee-reports
 source_folder: analysis/daily/2026-05-21/committee-reports
-generated_at: 2026-05-24T14:02:59.940Z
+generated_at: 2026-05-24T20:55:29.209Z
 language: en
 layout: article
 ---

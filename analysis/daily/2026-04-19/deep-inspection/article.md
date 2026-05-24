@@ -1,12 +1,9 @@
 ---
-title: "Deep Inspection HD03231 (Russia · Cyber · Defence · Ukraine)"
-description: "On 2026-04-16 Foreign Minister Maria Malmer Stenergard (M) and PM Ulf Kristersson (M) tabled Proposition 2025/26:231 (HD03231) proposing Sweden's founding membership in the Special Tribunal for the…"
-keywords: "HD03231, HD03232, UU, SD, Produced By, Copilot Opus, Confidence Ceiling, Foreign Minister Maria Malmer, PM Ulf Kristersson, Special Tribunal, GRU Sandworm, Evidence Locus, Action Window, Lead-Story Assessment, BAE Bofors, Europe EPA, No SÄPO, Baltic Sea, Stockholm Hague-convention, Saab AB, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence"
 date: 2026-04-19
 subfolder: deep-inspection
 slug: 2026-04-19-deep-inspection
 source_folder: analysis/daily/2026-04-19/deep-inspection
-generated_at: 2026-05-24T14:02:58.020Z
+generated_at: 2026-05-24T20:55:26.725Z
 language: en
 layout: article
 ---

@@ -1,12 +1,9 @@
 ---
-title: "The May 2026 monthly window reveals a Tidö government racing"
-description: "The May 2026 monthly window reveals a Tidö government racing to deliver structural legislative reforms in the final parliamentary sprint before the September election."
-keywords: "HD01CU31, HD01UbU28, HD01UbU20, HD11803, HD11802, HD11801, HD10480, HD01CU34, HD01UU13, James Pether Sörling, Does SD s, Does Israel s, Global Sumud Flotilla, Foreign Affairs, Minister Malmer Stenergard, Foreign Minister, Swedish-citizen-bearing Global Sumud Flotilla, Integration Minister Mohamsson, Finance Minister Svantesson, Inter-Parliamentary Union, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence"
 date: 2026-05-10
 subfolder: monthly-review
 slug: 2026-05-10-monthly-review
 source_folder: analysis/daily/2026-05-10/monthly-review
-generated_at: 2026-05-24T14:02:59.400Z
+generated_at: 2026-05-24T20:55:28.499Z
 language: en
 layout: article
 ---

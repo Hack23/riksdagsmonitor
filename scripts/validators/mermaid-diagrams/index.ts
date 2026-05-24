@@ -13,7 +13,7 @@
 
 import { readFile, writeFile } from 'node:fs/promises';
 
-import { extractMermaidBlocks, type MermaidBlock } from './extract.js';
+import { extractMermaidBlocks } from './extract.js';
 import { parseMermaidBlock, type MermaidParseViolation } from './parse.js';
 import { repairMermaidBlock } from './repair.js';
 

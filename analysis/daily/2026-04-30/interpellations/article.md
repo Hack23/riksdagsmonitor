@@ -1,12 +1,9 @@
 ---
-title: "Interpellation Debates 30 April 2026: Cultural Heritage Neglect and Sweden's Space Retreat"
-description: "Two interpellations filed 29–30 April 2026 spotlight contrasting governance failures in the Tidö coalition: SD holds coalition partner Culture Minister Liljestrand (M) accountable for deferred…"
-keywords: "HD10460, HD10461, KU, James Pether Sörling, Culture Minister Liljestrand, Riksrevisionen RiR, Social Democrat Mats Wiking, Research Minister Edholm, Minister Liljestrand, Minister Edholm, Sweden s ESA, SD s Pia Trollehjelm, M s Liljestrand, S s Mats Wiking, If Minister Edholm, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Interpellations"
 date: 2026-04-30
 subfolder: interpellations
 slug: 2026-04-30-interpellations
 source_folder: analysis/daily/2026-04-30/interpellations
-generated_at: 2026-05-24T14:02:58.717Z
+generated_at: 2026-05-24T20:55:27.612Z
 language: en
 layout: article
 ---

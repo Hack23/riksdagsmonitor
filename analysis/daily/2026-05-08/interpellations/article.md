@@ -1,12 +1,9 @@
 ---
-title: "Five interpellations filed 2026-05-07 in the 2025/26 riksmöte"
-description: "Five interpellations filed 2026-05-07 in the 2025/26 riksmöte collectively reveal a coherent opposition strategy: pressing the Tidö government on international obligations (Gaza/ILO), domestic equity…"
-keywords: "HD10476, HD10478, HD10479, HD10477, HD10475, KD, Malmer Stenergard, Intelligence Assessment, IKJ-level KJ, Scenario Analysis, Opposition Party, Will Erik Slottner, IMF WEO Apr-, SDMX IFS, WEO Apr-, Geneva Convention Additional Protocol, Cross-reference Statskontoret, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency"
 date: 2026-05-08
 subfolder: interpellations
 slug: 2026-05-08-interpellations
 source_folder: analysis/daily/2026-05-08/interpellations
-generated_at: 2026-05-24T14:02:59.309Z
+generated_at: 2026-05-24T20:55:28.379Z
 language: en
 layout: article
 ---

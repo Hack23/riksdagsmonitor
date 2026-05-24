@@ -1,12 +1,9 @@
 ---
-title: "Horizon: 365 days · Depth: comprehensive · Tier: C Election"
-description: "Horizon: 365 days · Depth: comprehensive · Tier: C Election countdown: 134 days to 2026-09-13 Confidence level: MEDIUM-HIGH for Q1–Q2 (months 1–6), MEDIUM for Q3–Q4 (months 7–12)"
-keywords: "HD03262, HD03265, HD10448, HD03254, FöU, Will SD, WEO Apr-, IMF API, Spring Fiscal Bill, If GDP, Spring Bill, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Regeringen, Year Ahead, English"
 date: 2026-05-02
 subfolder: year-ahead
 slug: 2026-05-02-year-ahead
 source_folder: analysis/daily/2026-05-02/year-ahead
-generated_at: 2026-05-24T14:02:58.859Z
+generated_at: 2026-05-24T20:55:27.807Z
 language: en
 layout: article
 ---

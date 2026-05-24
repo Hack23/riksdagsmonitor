@@ -23,15 +23,16 @@ import {
   inferArticleType,
   parseFrontMatterDate,
 } from '../scripts/render-lib/article-head-metadata.js';
+import { titleWindowForLanguage } from '../scripts/render-lib/aggregator/seo/serp-budgets.js';
 
 const ARTICLE_MD = `---
-title: Riksdag Schedules Spring Vote on Constitutional Reform
+title: Riksdag Sets Spring Vote on Constitutional Reform
 description: The Konstitutionsutskottet referred the proposal to a committee hearing on 2026-05-22 ahead of the planned vote in week 24.
 keywords: Riksdagsmonitor, Konstitutionsutskottet, constitutional reform, Swedish Parliament, committee reports
 date: 2026-05-22
 ---
 
-# Riksdag Schedules Spring Vote on Constitutional Reform
+# Riksdag Sets Spring Vote on Constitutional Reform
 
 Body content omitted.
 `;
@@ -43,7 +44,7 @@ describe('computeArticleHeadMetadata', () => {
       lang: 'en',
       canonicalPath: 'news/2026-05-22-committeeReports-en.html',
     });
-    expect(head.rawTitle).toBe('Riksdag Schedules Spring Vote on Constitutional Reform');
+    expect(head.rawTitle).toBe('Riksdag Sets Spring Vote on Constitutional Reform');
     expect(head.rawDescription).toBe(
       'The Konstitutionsutskottet referred the proposal to a committee hearing on 2026-05-22 ahead of the planned vote in week 24.',
     );
@@ -71,15 +72,21 @@ describe('computeArticleHeadMetadata', () => {
     expect(head.articleTypeLabel.length).toBeGreaterThan(0);
   });
 
-  it('produces a brand-suffixed branded <title> when seo.title omits the brand', () => {
+  it('produces a branded <title> with brand suffix and NO date prefix', () => {
     const head = computeArticleHeadMetadata({
       markdown: ARTICLE_MD,
       lang: 'en',
       canonicalPath: 'news/2026-05-22-committeeReports-en.html',
     });
-    // Either the SEO composer or the chrome-suffix rule ensures the
-    // branded `<title>` contains "Riksdagsmonitor".
+    // Post-2026-05-24 contract: the brand suffix is the sole SERP-title
+    // anchor. The localized date prefix was removed because the date is
+    // already carried by the URL slug, og:article:published_time, JSON-LD
+    // datePublished, the visible byline, and the SERP auto-rendered date.
     expect(/riksdagsmonitor/i.test(head.brandedTitle)).toBe(true);
+    expect(head.brandedTitle).not.toMatch(
+      /\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},\s+\d{4}\s*·/,
+    );
+    expect(head.brandedTitle).not.toMatch(/\d{4}-\d{2}-\d{2}/);
   });
 
   it('forwards keywords / description into the buildArticleSeoMetadata output', () => {
@@ -151,3 +158,89 @@ describe('inferArticleType (re-exported)', () => {
     expect(t.type).toBe('political-intelligence');
   });
 });
+
+/**
+ * Regression suite for the "branded `<title>` over-budget" defect
+ * reported by `Test Article Headers` workflow run #26364730339
+ * (audit: 145 of 202 EN titles shipped at > 70 chars, max=88, avg=73.7).
+ *
+ * The root cause was a two-step composition bug: `buildSeoTitle()`
+ * correctly respected the per-language SERP `hardMax` and dropped the
+ * ` — Riksdagsmonitor` suffix when story+brand overshot the budget, but
+ * `brandTitle()` then unconditionally re-appended that same 18-char
+ * suffix — re-introducing the overshoot the SEO composer had just
+ * eliminated. After the fix `brandTitle()` is per-language budget aware:
+ * it appends the brand suffix only when `title.length + 18 ≤
+ * titleWindowForLanguage(lang).hardMax` AND the title does not already
+ * end with `…` (which is `buildSeoTitle`'s explicit signal that it
+ * already hit the truncation ceiling).
+ */
+describe('computeArticleHeadMetadata — branded <title> respects per-language SERP budget', () => {
+  const LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'] as const;
+
+  // 83-char H1 from analysis/daily/2026-05-22/committee-reports — the
+  // canonical regression case from run #26364730339. Before the fix
+  // this shipped as a 84-char `<title>` ending `…Five — Riksdagsmonitor`.
+  const AUDIT_OVERSHOOT_H1 = 'Sweden Passes AI Facial Recognition Law as Riksdag Advances Five Committee Reports';
+
+  it('audit regression: max=88 EN title no longer overshoots the 70-char hardMax', () => {
+    const markdown = `---\ntitle: ${AUDIT_OVERSHOOT_H1}\ndescription: Sweden's Justice Committee endorsed the bill.\nkeywords: Riksdagsmonitor\ndate: 2026-05-22\n---\n\n# ${AUDIT_OVERSHOOT_H1}\n`;
+    const head = computeArticleHeadMetadata({
+      markdown,
+      lang: 'en',
+      canonicalPath: 'news/2026-05-22-committeeReports-en.html',
+    });
+    expect(head.brandedTitle.length).toBeLessThanOrEqual(70);
+    // Truncated branded titles must NOT end with " — Riksdagsmonitor"
+    // glued onto a dangling-ellipsis fragment — that's the exact
+    // anti-pattern the audit caught.
+    expect(head.brandedTitle).not.toMatch(/…\s*[—-]\s*Riksdagsmonitor\s*$/i);
+  });
+
+  it('short H1 ships with the brand suffix and NO date prefix', () => {
+    // Post-2026-05-24 contract: a 41-char H1 + 18-char brand suffix
+    // = 59 chars fits the 70-char SERP budget cleanly, so the SERP title
+    // ships as `{H1} — Riksdagsmonitor`. The localized date prefix is
+    // never injected.
+    const shortH1 = 'Riksdag Sets Date for Constitutional Vote';
+    const markdown = `---\ntitle: ${shortH1}\ndescription: x\nkeywords: x\ndate: 2026-05-22\n---\n\n# ${shortH1}\n`;
+    const head = computeArticleHeadMetadata({
+      markdown,
+      lang: 'en',
+      canonicalPath: 'news/2026-05-22-committeeReports-en.html',
+    });
+    expect(head.brandedTitle).toBe(`${shortH1} — Riksdagsmonitor`);
+    expect(head.brandedTitle).not.toMatch(/May 22, 2026/);
+    expect(head.brandedTitle.length).toBeLessThanOrEqual(70);
+  });
+
+  it.each(LANGUAGES)('over-budget H1 in lang=%s never overshoots titleWindowForLanguage(lang).hardMax', (lang) => {
+    // Long Latin-only H1 well over every per-language hardMax (70/60/45).
+    // The renderer must truncate to ≤ hardMax regardless of language.
+    const longH1 = 'Sweden Passes AI Facial Recognition Law as Riksdag Advances Five Committee Reports and Three Migration Bills';
+    const markdown = `---\ntitle: ${longH1}\ndescription: Body.\nkeywords: Riksdagsmonitor\ndate: 2026-05-22\nlanguage: ${lang}\n---\n\n# ${longH1}\n`;
+    const head = computeArticleHeadMetadata({
+      markdown,
+      lang,
+      canonicalPath: `news/2026-05-22-committeeReports-${lang}.html`,
+    });
+    const { hardMax } = titleWindowForLanguage(lang);
+    expect(head.brandedTitle.length).toBeLessThanOrEqual(hardMax);
+    // The over-budget path must NEVER carry the brand suffix because
+    // suffix-with-overshoot is precisely the audit defect.
+    expect(/riksdagsmonitor/i.test(head.brandedTitle)).toBe(false);
+  });
+
+  it('truncated branded title from the news/index card regression no longer reads "…Five… — Riksdagsmonitor"', () => {
+    const markdown = `---\ntitle: ${AUDIT_OVERSHOOT_H1}\ndescription: Body.\nkeywords: Riksdagsmonitor\ndate: 2026-05-22\n---\n\n# ${AUDIT_OVERSHOOT_H1}\n`;
+    const head = computeArticleHeadMetadata({
+      markdown,
+      lang: 'en',
+      canonicalPath: 'news/2026-05-22-committeeReports-en.html',
+    });
+    // Dangling cardinal "Five" must have been stripped before the
+    // ellipsis was glued on; the trailing word must be a content noun.
+    expect(head.brandedTitle).not.toMatch(/\bfive…?$/i);
+  });
+});
+

@@ -52,6 +52,7 @@ import { fileURLToPath } from 'url';
 
 import { LANGUAGE_META } from './sitemap-html/index.js';
 import { computeArticleHeadMetadata, type ArticleHeadMetadata } from './render-lib/article-head-metadata.js';
+import { deriveBriefSeoOverrides } from './render-lib/article.js';
 import { renderChromeHead } from './render-lib/chrome.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -89,6 +90,14 @@ function discoverArticles(): ArticleCase[] {
     const walk = (dir: string, prefix: string): void => {
       const entries = fs.readdirSync(dir, { withFileTypes: true }).filter((e) => e.isDirectory());
       for (const entry of entries) {
+        // `pass1/` and `full-text/` hold intermediate Pass-1 analysis
+        // artefacts (NarrativeFirst harness scratchpads, raw research
+        // dumps) that never ship to the production HTML. The
+        // `check-analysis-language` linter excludes them for the same
+        // reason. Including them in the audit produces phantom
+        // duplicate `<title>` collisions because each canonical
+        // article and its `pass1` sibling share the same H1.
+        if (entry.name === 'pass1' || entry.name === 'full-text') continue;
         const subfolder = prefix ? `${prefix}/${entry.name}` : entry.name;
         const md = locateArticleMd(date, subfolder);
         if (md) {
@@ -110,11 +119,13 @@ function discoverArticles(): ArticleCase[] {
 interface CliArgs {
   readonly out: string | null;
   readonly limit: number | null;
+  readonly strict: boolean;
 }
 
 function parseArgs(argv: readonly string[]): CliArgs {
   let out: string | null = null;
   let limit: number | null = null;
+  let strict = false;
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--out' && i + 1 < argv.length) {
@@ -122,12 +133,22 @@ function parseArgs(argv: readonly string[]): CliArgs {
     } else if (a === '--limit' && i + 1 < argv.length) {
       const n = Number.parseInt(argv[++i], 10);
       if (Number.isFinite(n) && n > 0) limit = n;
+    } else if (a === '--strict') {
+      // Promote SERP budget violations + content issues into a CI gate.
+      // Without `--strict` the audit is informational only (legacy default
+      // for local iteration). With `--strict` we exit non-zero whenever
+      // any of `brandedTitleOver70`, `descriptionOver200`,
+      // `emptyDescription`, `keywordsMissing`, or `brandSuffixMissing`
+      // is non-zero — so the .github/workflows/test-article-headers.yml
+      // run can fail the build instead of silently emitting a report
+      // nobody reads.
+      strict = true;
     } else if (a === '--help' || a === '-h') {
-      console.log('Usage: test-article-headers.ts [--out <path>] [--limit <N>]');
+      console.log('Usage: test-article-headers.ts [--out <path>] [--limit <N>] [--strict]');
       process.exit(0);
     }
   }
-  return { out, limit };
+  return { out, limit, strict };
 }
 
 interface Stats {
@@ -143,6 +164,36 @@ interface Stats {
   keywordsMissing: number;
   emptyDescription: number;
   brandSuffixMissing: number;
+  /**
+   * Map of branded `<title>` → list of canonical paths that ship that
+   * exact title. Populated as articles are processed; consulted in
+   * {@link formatSummary} (corpus-wide uniqueness) and in `--strict`
+   * (build fails when ≥ 1 distinct duplicate title exists). Duplicate
+   * `<title>` across distinct canonical URLs is a hard SEO defect —
+   * search engines pick a single representative and suppress the
+   * siblings, cratering CTR for the un-chosen articles.
+   */
+  titleOccurrences: Map<string, string[]>;
+  /**
+   * Map of `<meta description>` → list of canonical paths that ship
+   * that exact description. Same SEO failure mode as duplicate titles.
+   */
+  descriptionOccurrences: Map<string, string[]>;
+  /**
+   * Empty-bracket artefact counter — branded titles containing literal
+   * `( )`, `[ ]`, `{ }` or bracket pairs with only punctuation. The
+   * renderer's `stripEmptyBrackets` should eliminate this; a non-zero
+   * count means a new upstream defect bypassed the scrubber.
+   */
+  emptyBracketTitle: number;
+  /**
+   * Keyword-debris counter — articles whose `<meta keywords>` contains
+   * known apostrophe-strip leftovers (` s ` between words) or trailing
+   * dangling hyphens. The renderer's debris filter in `pushKeyword`
+   * should eliminate this; a non-zero count means a new debris pattern
+   * bypassed the filter.
+   */
+  keywordDebris: number;
 }
 
 function newStats(): Stats {
@@ -159,8 +210,18 @@ function newStats(): Stats {
     keywordsMissing: 0,
     emptyDescription: 0,
     brandSuffixMissing: 0,
+    titleOccurrences: new Map<string, string[]>(),
+    descriptionOccurrences: new Map<string, string[]>(),
+    emptyBracketTitle: 0,
+    keywordDebris: 0,
   };
 }
+
+/** Detect bracket-pair artefacts (`( )`, `[ ]`, `{ }`) in the shipped title. */
+const EMPTY_BRACKET_ARTEFACT_RE = /(?:\(\s*[\s,;:.\-–—…]*\s*\)|\[\s*[\s,;:.\-–—…]*\s*\]|\{\s*[\s,;:.\-–—…]*\s*\})/u;
+
+/** Detect keyword-string debris (stray ` s `, trailing dangling hyphens). */
+const KEYWORD_DEBRIS_RE = /(?:\s|^)s(?:\s|$)|[-–—]\s*(?:,|$)/u;
 
 function formatBlock(index: number, total: number, ac: ArticleCase, head: ArticleHeadMetadata, lang: 'en'): string {
   const langMeta = LANGUAGE_META[lang];
@@ -243,7 +304,7 @@ function formatBlock(index: number, total: number, ac: ArticleCase, head: Articl
   return lines.join('\n');
 }
 
-function updateStats(stats: Stats, head: ArticleHeadMetadata): void {
+function updateStats(stats: Stats, head: ArticleHeadMetadata, canonicalPath: string): void {
   stats.count += 1;
   stats.titleLenSum += head.brandedTitle.length;
   stats.titleLenMin = Math.min(stats.titleLenMin, head.brandedTitle.length);
@@ -256,6 +317,54 @@ function updateStats(stats: Stats, head: ArticleHeadMetadata): void {
   if (!head.seo.keywords.trim()) stats.keywordsMissing += 1;
   if (!head.seo.description.trim()) stats.emptyDescription += 1;
   if (!/riksdagsmonitor/i.test(head.brandedTitle)) stats.brandSuffixMissing += 1;
+  if (EMPTY_BRACKET_ARTEFACT_RE.test(head.brandedTitle)) stats.emptyBracketTitle += 1;
+  if (KEYWORD_DEBRIS_RE.test(head.seo.keywords)) stats.keywordDebris += 1;
+
+  // Corpus-wide uniqueness tracking — record every (value → path) pair so
+  // we can report duplicates AND list the offending URLs in the summary.
+  const titleList = stats.titleOccurrences.get(head.brandedTitle);
+  if (titleList) titleList.push(canonicalPath);
+  else stats.titleOccurrences.set(head.brandedTitle, [canonicalPath]);
+
+  const descList = stats.descriptionOccurrences.get(head.seo.description);
+  if (descList) descList.push(canonicalPath);
+  else stats.descriptionOccurrences.set(head.seo.description, [canonicalPath]);
+}
+
+/**
+ * Summarise corpus-wide uniqueness. Returns the number of distinct
+ * duplicate values (groups with ≥2 occurrences) AND the total number of
+ * articles involved, plus a human-readable block listing the top
+ * offenders. Used by both {@link formatSummary} and the `--strict`
+ * gate.
+ */
+function summariseDuplicates(
+  occurrences: Map<string, string[]>,
+  label: string,
+  topN: number,
+): { distinctDuplicates: number; articlesInvolved: number; block: string } {
+  const duplicates = [...occurrences.entries()]
+    .filter(([, paths]) => paths.length >= 2)
+    .sort((a, b) => b[1].length - a[1].length);
+  const distinctDuplicates = duplicates.length;
+  const articlesInvolved = duplicates.reduce((sum, [, paths]) => sum + paths.length, 0);
+  const lines: string[] = [];
+  lines.push(
+    `Duplicate ${label}: ${distinctDuplicates} distinct value${distinctDuplicates === 1 ? '' : 's'} ` +
+      `colliding across ${articlesInvolved} articles`,
+  );
+  if (distinctDuplicates > 0) {
+    const shown = duplicates.slice(0, topN);
+    for (const [value, paths] of shown) {
+      const valuePreview = value.length > 110 ? `${value.slice(0, 107)}…` : value;
+      lines.push(`  • ${paths.length}× "${valuePreview}"`);
+      for (const p of paths) lines.push(`      - ${p}`);
+    }
+    if (duplicates.length > topN) {
+      lines.push(`  … and ${duplicates.length - topN} more duplicate group${duplicates.length - topN === 1 ? '' : 's'}.`);
+    }
+  }
+  return { distinctDuplicates, articlesInvolved, block: lines.join('\n') };
 }
 
 function formatSummary(stats: Stats): string {
@@ -264,6 +373,8 @@ function formatSummary(stats: Stats): string {
   }
   const avgTitle = (stats.titleLenSum / stats.count).toFixed(1);
   const avgDesc = (stats.descLenSum / stats.count).toFixed(1);
+  const titleDup = summariseDuplicates(stats.titleOccurrences, '<title>', 10);
+  const descDup = summariseDuplicates(stats.descriptionOccurrences, 'descriptions', 5);
   const lines: string[] = [];
   lines.push('');
   lines.push('═'.repeat(78));
@@ -281,7 +392,14 @@ function formatSummary(stats: Stats): string {
   lines.push('Content issues:');
   lines.push(`  empty description        : ${stats.emptyDescription}`);
   lines.push(`  empty keywords           : ${stats.keywordsMissing}`);
-  lines.push(`  missing brand suffix     : ${stats.brandSuffixMissing}  (<title> does not contain "Riksdagsmonitor")`);
+  lines.push(`  empty-bracket artefact   : ${stats.emptyBracketTitle}  (titles containing literal "( )" / "[ ]" / "{ }")`);
+  lines.push(`  keyword debris           : ${stats.keywordDebris}  (apostrophe-strip leftovers / dangling hyphens)`);
+  lines.push(`  brand suffix dropped     : ${stats.brandSuffixMissing}  (informational — date prefix may push brand past budget)`);
+  lines.push('');
+  lines.push('Corpus-wide uniqueness:');
+  lines.push(`  ${titleDup.block}`);
+  lines.push('');
+  lines.push(`  ${descDup.block}`);
   lines.push('');
   lines.push(
     'NOTE: All values printed above come from `computeArticleHeadMetadata` ' +
@@ -319,13 +437,37 @@ function main(): void {
   for (let i = 0; i < articles.length; i++) {
     try {
       const markdown = fs.readFileSync(articles[i].articleMdPath, 'utf8');
+      // Cascade-chain step #1 — load the executive-brief.md adjacent to
+      // article.md and feed it into `computeArticleHeadMetadata` so the
+      // audit report reflects what the renderer actually ships. Post-
+      // `2026-05-24` SEO contract: `<title>` and `<meta description>`
+      // come from the brief, not from article.md frontmatter.
+      const articleDir = path.dirname(articles[i].articleMdPath);
+      const briefPath = path.join(articleDir, 'executive-brief.md');
+      let briefDerivedTitle: string | undefined;
+      let briefDerivedDescription: string | undefined;
+      let briefDerivedEntities: readonly string[] | undefined;
+      if (fs.existsSync(briefPath)) {
+        const briefMarkdown = fs.readFileSync(briefPath, 'utf8');
+        const overrides = deriveBriefSeoOverrides({
+          lang: 'en',
+          englishBriefMarkdown: briefMarkdown,
+          subfolderSlug: articles[i].subfolder,
+        });
+        briefDerivedTitle = overrides.title;
+        briefDerivedDescription = overrides.description;
+        briefDerivedEntities = overrides.entities;
+      }
       const head = computeArticleHeadMetadata({
         markdown,
         lang: 'en',
         canonicalPath: articles[i].canonicalPath,
+        briefDerivedTitle,
+        briefDerivedDescription,
+        briefDerivedEntities,
       });
       chunks.push(formatBlock(i, articles.length, articles[i], head, 'en'));
-      updateStats(stats, head);
+      updateStats(stats, head, articles[i].canonicalPath);
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       chunks.push(`!! ERROR processing ${articles[i].articleMdPath}: ${msg}`);
@@ -343,6 +485,57 @@ function main(): void {
   } else {
     process.stdout.write(report);
     process.stdout.write('\n');
+  }
+
+  // Strict mode: promote SERP budget violations, content issues, AND
+  // corpus-wide uniqueness defects into a non-zero exit so CI can fail
+  // the build. Counted violations:
+  //  - `brandedTitleOver70`     — `<title>` over the Google SERP truncation
+  //                                budget (70 chars).
+  //  - `descriptionOver200`     — `<meta description>` over Google's 200-char
+  //                                budget.
+  //  - `emptyDescription`       — articles shipping with no description at
+  //                                all (BLUF extraction failure).
+  //  - `keywordsMissing`        — articles shipping with no
+  //                                `<meta keywords>` content.
+  //  - `emptyBracketTitle`      — titles containing literal `( )` / `[ ]` /
+  //                                `{ }` (renderer scrubber bypass).
+  //  - `keywordDebris`          — `<meta keywords>` containing apostrophe-strip
+  //                                leftovers (stray ` s `) or dangling hyphens.
+  //  - duplicate `<title>`      — ≥1 distinct title shipped on multiple
+  //                                canonical URLs (SERP suppression risk).
+  //  - duplicate descriptions   — ≥1 distinct description shipped on multiple
+  //                                canonical URLs (SERP suppression risk).
+  //
+  // `brandSuffixMissing` is **informational only** — under the
+  // localized-date-prefix contract the renderer drops the brand
+  // suffix from `<title>` when the H1 + date prefix already fills the
+  // 70-char budget. The brand is still conveyed via `og:site_name`,
+  // canonical URL, and JSON-LD `publisher`.
+  if (args.strict) {
+    const titleDup = summariseDuplicates(stats.titleOccurrences, '<title>', 0);
+    const descDup = summariseDuplicates(stats.descriptionOccurrences, 'descriptions', 0);
+    const violations: string[] = [];
+    if (stats.brandedTitleOver70 > 0) violations.push(`brandedTitleOver70=${stats.brandedTitleOver70}`);
+    if (stats.descriptionOver200 > 0) violations.push(`descriptionOver200=${stats.descriptionOver200}`);
+    if (stats.emptyDescription > 0) violations.push(`emptyDescription=${stats.emptyDescription}`);
+    if (stats.keywordsMissing > 0) violations.push(`keywordsMissing=${stats.keywordsMissing}`);
+    if (stats.emptyBracketTitle > 0) violations.push(`emptyBracketTitle=${stats.emptyBracketTitle}`);
+    if (stats.keywordDebris > 0) violations.push(`keywordDebris=${stats.keywordDebris}`);
+    if (titleDup.distinctDuplicates > 0) {
+      violations.push(`duplicateTitles=${titleDup.distinctDuplicates} (${titleDup.articlesInvolved} articles)`);
+    }
+    if (descDup.distinctDuplicates > 0) {
+      violations.push(`duplicateDescriptions=${descDup.distinctDuplicates} (${descDup.articlesInvolved} articles)`);
+    }
+    if (violations.length > 0) {
+      console.error('');
+      console.error('❌ test-article-headers --strict: SEO budget / content / uniqueness violations detected:');
+      for (const v of violations) console.error(`   • ${v}`);
+      console.error('   See the audit report above for the offending articles.');
+      process.exit(1);
+    }
+    console.log('✅ test-article-headers --strict: no SEO budget, content, or uniqueness violations.');
   }
 }
 

@@ -1,12 +1,9 @@
 ---
-title: "Monthly Review, May 2026"
-description: "The Tidö coalition (M, SD, KD, L) is executing a disciplined pre-election legislative sprint with 128 days to the September 2026 election. May 2026's parliamentary output reveals a coherent electoral…"
-keywords: "HD03267, HD01CU31, HD01UbU28, HD01UbU20, HD01SoU36, HD11803, CU31, UbU20, UbU28, SoU36, CU, UbU, SoU, SD, KD, MP, James Pether Sörling, STABLE BUT FRAGILE, Centre Party, PRIMARILY DOMESTIC, Sweden s Ukraine, Foreign Minister Billström, WEO Apr-, Riksdagsmonitor"
 date: 2026-05-09
 subfolder: monthly-review
 slug: 2026-05-09-monthly-review
 source_folder: analysis/daily/2026-05-09/monthly-review
-generated_at: 2026-05-24T14:02:59.358Z
+generated_at: 2026-05-24T20:55:28.445Z
 language: en
 layout: article
 ---

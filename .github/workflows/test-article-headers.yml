@@ -28,6 +28,11 @@ on:
         description: 'Optional cap on the number of articles processed (smoke test). Leave blank to process all.'
         required: false
         default: ''
+      strict:
+        description: 'Fail the job when SEO budget violations (title>70, description>200) or content issues (empty description / keywords, missing brand suffix) are detected. Uncheck for a purely informational audit run.'
+        required: false
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -62,25 +67,35 @@ jobs:
       - name: Run `<head>` audit (English locale, all articles)
         env:
           AUDIT_LIMIT: ${{ inputs.limit }}
+          AUDIT_STRICT: ${{ inputs.strict }}
         run: |
           mkdir -p reports
+          STRICT_FLAG=""
+          if [ "${AUDIT_STRICT:-true}" = "true" ]; then
+            STRICT_FLAG="--strict"
+          fi
           if [ -n "${AUDIT_LIMIT:-}" ]; then
-            echo "Running with --limit ${AUDIT_LIMIT}"
+            echo "Running with --limit ${AUDIT_LIMIT} ${STRICT_FLAG}"
             npx tsx scripts/test-article-headers.ts \
               --out reports/test-article-headers-report.txt \
-              --limit "${AUDIT_LIMIT}"
+              --limit "${AUDIT_LIMIT}" \
+              ${STRICT_FLAG}
           else
+            echo "Running full corpus ${STRICT_FLAG}"
             npx tsx scripts/test-article-headers.ts \
-              --out reports/test-article-headers-report.txt
+              --out reports/test-article-headers-report.txt \
+              ${STRICT_FLAG}
           fi
 
       - name: Print summary tail to job log
+        if: always()
         run: |
           echo "::group::Report summary (last 40 lines)"
           tail -n 40 reports/test-article-headers-report.txt
           echo "::endgroup::"
 
       - name: Upload report artifact
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: test-article-headers-report

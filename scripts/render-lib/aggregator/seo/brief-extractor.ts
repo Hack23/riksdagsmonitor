@@ -63,6 +63,7 @@
  */
 
 import type { Language } from '../../../types/language.js';
+import { stripLeadingAdminBylines } from '../cleaning/admin-bylines.js';
 
 /**
  * Universal Swedish-administrative codes mined from the brief.
@@ -349,9 +350,20 @@ export function extractBriefEntities(
   }
 
   // Strip front-matter and code fences so we mine the body only.
-  const body = briefMarkdown
-    .replace(/^---\n[\s\S]*?\n---\n/, '')
-    .replace(/```[\s\S]*?```/g, ' ');
+  // Also strip admin-byline paragraphs (`**Author**: …`, `**Run ID**: …`,
+  // `**Classification**: …`) — the single `ADMIN_FIELD_NAMES` blocklist in
+  // `cleaning/admin-bylines.ts` is the source of truth for these, so any
+  // new admin label added there automatically protects keyword extraction.
+  // Without this step, Title-Case multi-word phrases like `Test Runner`
+  // (from `**Author**: Test Runner`) and `Run ID` (from `**Run ID**: 42`)
+  // get mined as named entities and displace real topic keywords on the
+  // SERP — see tests/render-lib.test.ts:461 (`keywords: "Widgets`) and
+  // :1427 (`<meta name="keywords" content="Proposition`).
+  const body = stripLeadingAdminBylines(
+    briefMarkdown
+      .replace(/^---\n[\s\S]*?\n---\n/, '')
+      .replace(/```[\s\S]*?```/g, ' '),
+  );
 
   const ENTITY_CAP = 16;
 

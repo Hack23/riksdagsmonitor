@@ -1,12 +1,9 @@
 ---
-title: "Swedish Political Intelligence: Evening Analysis"
-description: "Sweden's political landscape on 27 April 2026 is defined by three concurrent vectors converging ahead of the September 2026 general election: the Tidö coalition's aggressive fiscal and security…"
-keywords: "HD03253, HD01FiU48, HD11752, HD11753, HD10448, HD01JuU10, HD03252, prop. 2025/26:253, KD, James Pether Sörling, Run ID, Social Democratic, IMF WEO Apr-, Sweden s Finansinspektionen, May FiU, Josef Fransson, KD Energy Minister Ebba, Basel III, Centre Party, Maintained HIGH-confidence, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence"
 date: 2026-04-27
 subfolder: evening-analysis
 slug: 2026-04-27-evening-analysis
 source_folder: analysis/daily/2026-04-27/evening-analysis
-generated_at: 2026-05-24T14:02:58.482Z
+generated_at: 2026-05-24T20:55:27.293Z
 language: en
 layout: article
 ---

@@ -39,8 +39,29 @@ export function escapeInlineMd(text: string): string {
  * caller can concatenate the body verbatim.
  */
 export interface FrontMatterFields {
-  readonly title: string;
-  readonly description: string;
+  /**
+   * @deprecated Emitted by the aggregator in-memory but **no longer
+   * written to the `article.md` YAML front-matter** (post-`2026-05-24`
+   * SEO contract). The renderer now sources `<title>` directly from
+   * `executive-brief.md` via `deriveBriefSeoOverrides` in
+   * `scripts/render-lib/article.ts`. Field remains in the interface
+   * so the aggregator can return it in its in-memory result object
+   * for the test-article-headers CLI and unit tests.
+   */
+  readonly title?: string;
+  /**
+   * @deprecated Emitted by the aggregator in-memory but **no longer
+   * written to the `article.md` YAML front-matter**. See
+   * {@link FrontMatterFields.title}.
+   */
+  readonly description?: string;
+  /**
+   * @deprecated Emitted by the aggregator in-memory but **no longer
+   * written to the `article.md` YAML front-matter**. The renderer
+   * now derives keyword entities directly from
+   * `executive-brief.md` via `extractBriefEntities` /
+   * `flattenBriefEntities`. See {@link FrontMatterFields.title}.
+   */
   readonly keywords?: string;
   readonly date: string;
   readonly subfolder: string;
@@ -53,9 +74,13 @@ export interface FrontMatterFields {
 }
 
 /**
- * Build the canonical 9-key article front-matter block. Used by the
- * aggregator orchestrator; lives in this leaf module so tests can
- * exercise the YAML escape rules without spinning up filesystem fixtures.
+ * Build the canonical 6-key article front-matter block (date, subfolder,
+ * slug, source_folder, generated_at, language, layout). SEO-relevant
+ * keys (`title`, `description`, `keywords`) used to be emitted here but
+ * are now sourced **directly from `executive-brief.md`** by the
+ * renderer — see `scripts/render-lib/article.ts § deriveBriefSeoOverrides`.
+ * Live in this leaf module so tests can exercise the YAML escape rules
+ * without spinning up filesystem fixtures.
  */
 export function buildFrontMatter(fm: FrontMatterFields): string {
   const slug = fm.slug ?? `${fm.date}-${fm.subfolder}`;
@@ -63,9 +88,6 @@ export function buildFrontMatter(fm: FrontMatterFields): string {
   const layout = fm.layout ?? 'article';
   return [
     '---',
-    `title: "${escapeYaml(fm.title)}"`,
-    `description: "${escapeYaml(fm.description)}"`,
-    ...(fm.keywords ? [`keywords: "${escapeYaml(fm.keywords)}"`] : []),
     `date: ${fm.date}`,
     `subfolder: ${fm.subfolder}`,
     `slug: ${slug}`,
