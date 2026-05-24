@@ -184,6 +184,7 @@ jobs:
     name: Unit Tests
     needs: [prepare]
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     permissions:
       contents: read
     steps:
@@ -212,15 +213,16 @@ jobs:
       - name: Run unit tests with coverage
         run: |
           mkdir -p builds/test-results builds/coverage
-          # Pass coverage output dir explicitly so files land in builds/
-          # (default is coverage/, which is NOT included in the artifact).
-          # The json reporter writes a machine-readable summary alongside
-          # the coverage HTML/lcov for the deploy-docs job to consume.
+          # Persist console output so artifact upload has at least one
+          # non-hidden file even when Vitest only emits hidden coverage temp
+          # files under builds/coverage/.tmp.
+          set -o pipefail
           npx vitest run --coverage \
             --coverage.reportsDirectory=builds/coverage \
             --reporter=verbose \
             --reporter=json \
-            --outputFile=builds/test-results/vitest-results.json
+            --outputFile=builds/test-results/vitest-results.json \
+            | tee builds/test-results/vitest-output.log
 
           # Fail fast here so the error is attributed to Unit Tests, not
           # to the downstream deploy-docs job ("Artifact not found").
