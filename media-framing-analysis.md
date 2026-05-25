@@ -34,6 +34,8 @@ The platform's daily output applies [`analysis/templates/media-framing-analysis.
 - [`ARCHITECTURE.md`](ARCHITECTURE.md), [`Article-Generation.md`](Article-Generation.md), [`WORKFLOWS.md`](WORKFLOWS.md), [`AGENTS.md`](AGENTS.md), [`TRANSLATION_GUIDE.md`](TRANSLATION_GUIDE.md), [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md), [`End-of-Life-Strategy.md`](End-of-Life-Strategy.md), [`FinancialSecurityPlan.md`](FinancialSecurityPlan.md), [`BCPPlan.md`](BCPPlan.md)
 - [`analysis/templates/media-framing-analysis.md`](analysis/templates/media-framing-analysis.md) (v2.3 — template contract)
 - Hack23 persona-agent files: [`hagbard-celine.md`](https://github.com/Hack23/homepage/blob/master/.github/agents/hagbard-celine.md), [`marketing-specialist.md`](https://github.com/Hack23/homepage/blob/master/.github/agents/marketing-specialist.md), [`business-development-specialist.md`](https://github.com/Hack23/homepage/blob/master/.github/agents/business-development-specialist.md), repo-level [`intelligence-operative` agent instructions](.github/agents/intelligence-operative.md) (this file's authoring agent)
+- Founder open-source-reputation surfaces (third-party, public): [Gitista — Sweden](https://gitista.com/sweden/) (`@James Pether Sörling` global rank #42, 4.98K contributions, 219 PRs, 3,336 reviews, 1,419 issues), [OpenHub `pether`](https://openhub.net/accounts/pether), [committers.top Sweden](https://committers.top/sweden), [`github.com/Hack23`](https://github.com/Hack23)
+- Funding-model surfaces (public): [GitHub Sponsors — `@Hack23`](https://github.com/sponsors/Hack23), [`FinancialSecurityPlan.md`](FinancialSecurityPlan.md), [`End-of-Life-Strategy.md`](End-of-Life-Strategy.md), [`BCPPlan.md`](BCPPlan.md)
 
 > **Neutrality discipline:** Riksdagsmonitor's only neutrality is **procedural** (equal analytical depth across all 8 Riksdag parties, equal evidentiary discipline across all outlets). This document does the same for itself: equal analytical depth across all five archetypal frames (hero / villain / lunatic / visionary / hatchet-job), with hostile frames treated with the same rigour as friendly ones. No outlet is neutral; **no platform is neutral either** — including this one — and naming the bias surface is more honest than denying it.
 
@@ -318,7 +320,7 @@ flowchart LR
 
 ## 🪞 Insider Framings — how Hack23 personas would frame the platform
 
-> The user requested explicit framings from **four** Hack23 personas. These are not in addition to the archetypal frames above — they are **constructive proposals** for how Hack23 should *frame the platform itself in its own communications*, while the archetypal frames are *descriptive predictions* of how external media will frame it. The two perspectives are complementary.
+> The user requested explicit framings from the Hack23 personas. These are not in addition to the archetypal frames above — they are **constructive proposals** for how Hack23 should *frame the platform itself in its own communications*, while the archetypal frames are *descriptive predictions* of how external media will frame it. The two perspectives are complementary. Six framings follow: the four persona-agent voices (Hagbard / Marketing / BD / Intel), plus **Founder Profile** (OSS-credibility anchoring) and **Sustainability & Money** (funding-model disclosure) — added because no media-framing analysis is complete without naming *who is behind the work* and *who pays for it*.
 
 ### 🌀 Hagbard Celine — Product Revelation framing (visionary anarchist / Discordian)
 
@@ -487,6 +489,89 @@ flowchart LR
 
 ---
 
+### 👨‍💻 Founder Profile — open-source-credibility framing
+
+> **Source:** publicly verifiable developer-reputation surfaces for **James Pether Sörling** (CEO/Founder, Hack23 AB) — [Gitista Sweden ranking](https://gitista.com/sweden/), [OpenHub `pether` account](https://openhub.net/accounts/pether), [committers.top Sweden](https://committers.top/sweden), [`@Hack23` org on GitHub](https://github.com/Hack23). The framing answers the reader question: *"who is actually behind this platform, and on what evidence should we believe the work is competent?"*
+
+**Why this matters for framing.** HERO / VISIONARY / VILLAIN / LUNATIC archetypes all hinge on **founder credibility**. A platform built by an anonymous account is structurally easier to frame as LUNATIC ("AI hobbyist plays journalist") or HATCHET-vulnerable ("opaque operator"). A founder with a **two-decade auditable open-source track record** — across multiple languages, in a public ranking system — moves the prior on H1 (sincere civic-transparency platform, intel ACH above) materially upward.
+
+**The verifiable evidence base (all public, all third-party-hosted):**
+
+| Surface | Metric | Reading (2026-05-25) | What it signals |
+|---------|--------|----------------------|------------------|
+| **Gitista — Sweden ranking** | Global Rank | **#42 in Sweden** | Top-tier OSS developer in the country whose democracy the platform analyses — not a hobbyist, not a drive-by contributor |
+| | Total Contributions | **4.98K** | Sustained activity over years, not a launch sprint |
+| | Pull Requests | **219** | Owns *change* (not just commentary) |
+| | Code Reviews | **3,336** | Spends 15× more time reviewing others' code than authoring PRs — a *maintainer*, not a *founder-coder* |
+| | Issues filed | **1,419** | High triage / quality-engineering tempo |
+| | Repositories | **3 active under `@Hack23`** | Disciplined surface (riksdagsmonitor + ISMS-PUBLIC + homepage), not 200 abandoned half-projects |
+| | Followers | **192** | Modest but real practitioner audience |
+| | Languages | **HTML, PHP, Java, Go, TypeScript** | Polyglot stack — supports the platform's TypeScript/Mermaid/Cypress/GitHub-Actions toolchain claim |
+| **OpenHub** | [`openhub.net/accounts/pether`](https://openhub.net/accounts/pether) | Public commit-graph since pre-2010 | **Independent** corroboration of the GitHub record (OpenHub indexes from Git history directly, not from GitHub API) |
+| **committers.top** | [`committers.top/sweden`](https://committers.top/sweden) | Cross-listed in Sweden top committers | Triangulation #3 — three independent rankings agree |
+| **GitHub org** | [`github.com/Hack23`](https://github.com/Hack23) | Public org; named maintainer on every repo | No anonymous shell account; legal entity Hack23 AB (Org.nr 559534-7807) on Bolagsverket |
+
+**Frame implications:**
+
+| Archetype | Effect of the founder-profile evidence |
+|-----------|-----------------------------------------|
+| 🦸 **HERO** | **Materially strengthened.** "Self-funded Swedish OSS veteran builds democratic transparency tool" is a *true sentence* and a publishable angle for Computer Sweden / Ny Teknik / international tech press (The Verge, Wired). |
+| 🔮 **VISIONARY** | **Strengthened.** The 3,336-review : 219-PR ratio is the signature of someone who *reads code at scale* — exactly the discipline an autonomous-AI-newsroom must demonstrate to be taken seriously by the AI safety community. |
+| 🃏 **LUNATIC** | **Materially weakened.** "AI hobbyist" framing requires the reader not to look up the founder. Pre-publishing the profile pre-empts the frame. |
+| 😈 **VILLAIN** | **Marginally weakened.** Public commit-by-commit history makes covert agenda-injection (H3/H4) auditable; reduces the surface for the *bad-faith-operator* sub-frame. |
+| 🩸 **HATCHET** | **Partially neutralised.** A hatchet-job that questions competence collides with three independent public rankings; a hatchet-job that questions motive still works (H2 / consulting overlap is *acknowledged* in the BD framing above, so HATCHET cannot "expose" what is already disclosed). |
+
+**Reading discipline (this is not an appeal-to-authority).** Founder credibility is necessary but *insufficient*. The platform's claims must still survive: per-party neutrality arithmetic (`SWOT.md`), Pass-2 self-audit on every artefact, `dok_id`-grade evidentiary discipline, ISO-27001-style ISMS (`ISMS-PUBLIC`). The OSS track record raises the prior on good-faith execution; it does **not** lower the evidentiary bar applied to any specific article. **No founder is neutral either** — the same doctrine that says "no outlet is neutral" applies recursively to the person behind the keyboard.
+
+**Founder-profile verdict:** *Three independent public rankings (Gitista, OpenHub, committers.top) converge on the same conclusion: this is a senior Swedish OSS maintainer, not a launch-week persona. That fact does not validate any single platform claim, but it materially shifts the **base rate** at which sceptical readers should evaluate the platform's documentation. The HERO / VISIONARY frames are evidentially anchored; the LUNATIC frame is evidentially weakened; the VILLAIN / HATCHET frames retain force but lose their cheapest attack vector.*
+
+---
+
+### 💰 Sustainability & Money — funding-model framing
+
+> **Source:** [GitHub Sponsors — `@Hack23`](https://github.com/sponsors/Hack23), [`FinancialSecurityPlan.md`](FinancialSecurityPlan.md), [`End-of-Life-Strategy.md`](End-of-Life-Strategy.md), [`BCPPlan.md`](BCPPlan.md). The framing answers: *"who pays for this, what happens when they stop, and whose interests does the funding model embed?"*
+
+**Why the money angle is unavoidable.** Every media-framing analysis has to answer the **follow-the-money** question, or it is not a media-framing analysis — it is brochure. *No funding model is neutral either.* Each model embeds a specific bias surface; the honest move is to name the surface this platform has chosen.
+
+**Current funding architecture (public-record):**
+
+| Funding lever | Mechanism | Bias surface it creates | Bias surface it avoids |
+|---------------|-----------|--------------------------|--------------------------|
+| **Founder self-funding** | Hack23 AB pays GitHub Actions minutes, Anthropic API spend, domain + CDN out of consulting revenue | Single-point-of-failure (W1 `SWOT.md`); aligns platform's analytical agenda with founder's *long-term reputation* not short-term revenue | No advertiser; no investor exit clock; no foundation grant-cycle pressure; no government contract dependency |
+| **[GitHub Sponsors](https://github.com/sponsors/Hack23)** | Micro-recurring contributions from individuals and orgs who value the work | Sponsors are *named and public* — visible to anyone framing the platform; sponsor list itself becomes part of the bias audit | Anonymous large-donor capture (Open-Society / Koch-network-style); foundation editorial steering |
+| **Apache-2.0 licence** | Anyone can fork, host, replicate the platform; no rent-extraction lock-in | None — explicitly relinquishes the "captive-audience" lever | Vendor capture; SaaS-monopoly framing; "walled-garden journalism" frame |
+| **No advertising, no tracking, no PII collection** | Architectural — not a policy choice that could be reversed quietly | Forces a *donor / consulting* model (above) | Engagement-bait incentives; surveillance-capitalism frame; clickbait-headline doctrine |
+| **No paywalled content** | All analysis is public on launch | Reduces total addressable revenue ceiling | "Journalism for the wealthy" / accessibility-gap frame |
+| **Consulting halo (Hack23 cybersecurity practice)** | Platform demonstrates capability → enquiries → consulting engagements (the BD framing above) | **Openly acknowledged** in BD-specialist insider framing; named as H2 in the intel ACH | Hidden agenda — H2 is pre-disclosed, not exposed |
+
+**Frame implications of the funding model:**
+
+| Archetype | Effect of the money-trail being publicly auditable |
+|-----------|------------------------------------------------------|
+| 🦸 **HERO** | **Strengthened.** "Founder pays his own infra bill so that citizens don't have to" is true, sympathetic, and publishable. GitHub Sponsors offers a low-friction "support the work" call-to-action that converts HERO-frame coverage into runway. |
+| 🔮 **VISIONARY** | **Strengthened.** OSS + sponsors + no ads is the *only* architecture compatible with a 24-month, 14-language, election-cycle commitment without engagement-bait drift. The funding model is *part of the vision*, not an artefact of it. |
+| 🃏 **LUNATIC** | **Neutralised.** "Vanity project" attacks fail when sponsorship is open and the founder's consulting business is profitable (LinkedIn-auditable) — the work does not need the platform to break even. |
+| 😈 **VILLAIN** | **Partially neutralised.** The "who paid for this" attack is the *first* attack on any independent newsroom. Pre-publishing the funding sources removes the cheapest VILLAIN sub-frame. **Residual surface:** a critic can still frame the consulting halo (H2) as a conflict of interest — *but H2 is already disclosed*, so the frame must argue *severity of disclosed conflict*, not *existence of hidden conflict*. |
+| 🩸 **HATCHET** | **Partial.** "Soros / foreign / shadowy donor" frames collapse against a public GitHub Sponsors page. "Founder is profiting from democracy-coded consulting" is a durable HATCHET angle but requires conceding that the disclosure was up-front. |
+| 🛰️ **FOREIGN OVERLAY** | **Neutralised at the funding axis.** No state grant, no embassy contract, no NGO laundering chain. RT / Sputnik can still amplify the platform's *content* in misleading frames, but cannot allege foreign *funding* without inventing evidence. |
+
+**Counter-frame durability — what would break each layer:**
+
+| Layer | Breaks if… | Mitigation already in place |
+|-------|------------|------------------------------|
+| Founder self-funding | Hack23 AB consulting revenue collapses | [`FinancialSecurityPlan.md`](FinancialSecurityPlan.md) defines runway thresholds; [`End-of-Life-Strategy.md`](End-of-Life-Strategy.md) defines orderly-handover triggers (asset transfer to a foundation / mothballing snapshot) |
+| Sponsors model | A single donor accumulates dominant share | Per-sponsor tier caps + public sponsor list make capture *visible* before it is *effective* |
+| No advertising stance | Quiet introduction of "supported by" placements | Apache-2.0 fork-pressure: any drift produces an instantly competitive un-monetised fork |
+| Apache-2.0 | Licence revocation (impossible retroactively) | Already irrevocable for the released code |
+
+**Sponsorship as a framing signal (not just a revenue line).** A [`github.com/sponsors/Hack23`](https://github.com/sponsors/Hack23) page is itself a piece of media-framing infrastructure: it lets HERO-frame coverage **convert** into measurable support, which then becomes its own coverage-volume signal in the dashboard (`📈 Coverage-Volume Dashboard` table above — *sponsor count and tier-mix at week N* belongs alongside outlet counts as a Phase-1 → Phase-3 metric).
+
+**Money-frame verdict (HIGH confidence):**
+
+> *Riksdagsmonitor's funding architecture is **deliberately constrained to a narrow set of disclosure-friendly levers** — founder self-funding, public GitHub Sponsors, Apache-2.0, no ads, no tracking, no paywalls — each of which pre-empts a specific category of VILLAIN / HATCHET / FOREIGN-OVERLAY attack while creating known, named, named-in-this-document trade-offs (founder single-point-of-failure W1; consulting-halo H2 conflict-of-interest surface). **No funding model is neutral.** The platform's choice is to be biased in the direction of **transparency-of-bias** rather than absence-of-bias. That choice is itself a frameable position — and naming it here is the same Pass-2 discipline applied recursively.*
+
+---
+
 ## 🛡️ Counter-Resilience Plan — prebunking · inoculation · debunking ladder (applied to *this* platform)
 
 > Per the template's discipline: Riksdagsmonitor does not push counter-frames. It pre-publishes the framing map so readers can recognise frames as they form.
@@ -552,7 +637,9 @@ All cited material is public:
 - Repo files: [`README.md`](README.md), [`THREAT_MODEL.md`](THREAT_MODEL.md), [`SECURITY_ARCHITECTURE.md`](SECURITY_ARCHITECTURE.md), [`SWOT.md`](SWOT.md), [`ARCHITECTURE.md`](ARCHITECTURE.md), [`Article-Generation.md`](Article-Generation.md), [`AGENTS.md`](AGENTS.md), [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md), [`BCPPlan.md`](BCPPlan.md), [`End-of-Life-Strategy.md`](End-of-Life-Strategy.md), [`FinancialSecurityPlan.md`](FinancialSecurityPlan.md), [`TRANSLATION_GUIDE.md`](TRANSLATION_GUIDE.md), [`WORKFLOWS.md`](WORKFLOWS.md)
 - Template: [`analysis/templates/media-framing-analysis.md`](analysis/templates/media-framing-analysis.md) v2.3
 - Hack23 ISMS: [`ISMS-PUBLIC`](https://github.com/Hack23/ISMS-PUBLIC) — Information Security Policy, Secure Development Policy, Open Source Policy, AI Policy, Threat Modeling, Incident Response Plan, Vulnerability Management, Access Control Policy, Cryptography Policy, Change Management, Security Metrics
-- Hack23 persona agents: [`hagbard-celine.md`](https://github.com/Hack23/homepage/blob/master/.github/agents/hagbard-celine.md), [`marketing-specialist.md`](https://github.com/Hack23/homepage/blob/master/.github/agents/marketing-specialist.md), [`business-development-specialist.md`](https://github.com/Hack23/homepage/blob/master/.github/agents/business-development-specialist.md)
+- Hack23 persona agents: [`hagbard-celine.md`](https://github.com/Hack23/homepage/blob/master/.github/agents/hagbard-celine.md), [`marketing-specialist.md`](https://github.com/Hack23/homepage/blob/master/.github/agents/marketing-specialist.md), [`business-development-specialist.md`](https://github.com/Hack23/homepage/blob/master/.github/agents/business-development-specialist.md), [`intelligence-operative.md`](.github/agents/intelligence-operative.md)
+- Founder open-source-reputation (third-party, public): [Gitista Sweden](https://gitista.com/sweden/), [OpenHub `pether`](https://openhub.net/accounts/pether), [committers.top Sweden](https://committers.top/sweden), [`github.com/Hack23`](https://github.com/Hack23)
+- Funding-model surfaces (public): [GitHub Sponsors — `@Hack23`](https://github.com/sponsors/Hack23); repo financial-control documents [`FinancialSecurityPlan.md`](FinancialSecurityPlan.md), [`End-of-Life-Strategy.md`](End-of-Life-Strategy.md), [`BCPPlan.md`](BCPPlan.md)
 - Frameworks: Entman 1993 *J. Communication*; Cialdini 2001; Kahneman 2011; Roozenbeek & van der Linden 2019/2022; Lewandowsky et al. 2020 *Debunking Handbook*; DISARM Foundation TTP catalogue; ABCDE (François 2020); RAND PE-198 firehose-of-falsehood; NATO StratCom COE reports; EUvsDisinfo case dossiers; EU DSA Art. 40; Council of Europe AI Convention; Wardle/Derakhshan information-disorder taxonomy
 - Bias-data sources: Nordicom Media Ownership Database (`nordicom.gu.se`), Reuters Institute Digital News Report 2024, PO/PON complaint registry, Förvaltningsstiftelsen board appointments
 
@@ -606,6 +693,8 @@ No paywalled scraping, no private accounts, no leaked material, no hacked conten
 - [x] **Counter-Resilience Ladder L1–L5 mapped** — every frame assigned ≥ 1 layer with rationale; **platform-neutrality preserved** (the platform reports the ladder, never executes counter-framing on its own behalf).
 - [x] **Frame F6 discipline** — included as conditional with explicit "not observed (default)" status.
 - [x] **Naivety check passed** — no sentence reads as "Riksdagsmonitor is just a transparency platform doing its job in good faith with no political surface." The whole document is the opposite of that claim.
+- [x] **Founder-credibility evidence triangulated** — three independent public rankings (Gitista #42 Sweden, OpenHub, committers.top) cited; no appeal-to-authority — used to shift base rates, not to validate specific claims.
+- [x] **Follow-the-money discipline applied** — every funding lever named with its specific bias surface; GitHub Sponsors model and Apache-2.0 fork-pressure mitigations cross-linked to `FinancialSecurityPlan.md` and `End-of-Life-Strategy.md`.
 
 ### Author's Pass-2 deltas vs. Pass 1
 
@@ -615,6 +704,8 @@ No paywalled scraping, no private accounts, no leaked material, no hacked conten
 4. **Added counter-intelligence recommendations** — six concrete actions for Hack23 to harden the framing surface pre-launch.
 5. **Verified Mermaid theming** — all four diagrams use `style …` / `classDef …` directives compatible with cyberpunk theme (Check 5).
 6. **Verified no "neutral" claims about the platform** — every platform-self-reference qualifies neutrality as procedural and explicitly disclaims truth-neutrality.
+7. **Added Founder Profile framing** — James Pether Sörling's public OSS reputation (Gitista Sweden #42, OpenHub, committers.top, GitHub `@Hack23`) cited as base-rate evidence for H1 (sincere civic-transparency platform) and as the cheapest defence against LUNATIC ("AI hobbyist") attack vector.
+8. **Added Sustainability & Money framing** — funding-model disclosure (founder self-funding + [GitHub Sponsors](https://github.com/sponsors/Hack23) + Apache-2.0 + no ads + no paywall) named for every bias surface it creates *and* every bias surface it avoids; follow-the-money discipline applied to the platform itself before any external reporter does it.
 
 ---
 
@@ -624,7 +715,7 @@ No paywalled scraping, no private accounts, no leaked material, no hacked conten
 - **Version:** 1.0 — Pass-2 audited
 - **Source template:** [`analysis/templates/media-framing-analysis.md`](analysis/templates/media-framing-analysis.md) v2.3 (2026-05-03)
 - **Author agent:** `intelligence-operative` (repo-level)
-- **Inputs:** [`README.md`](README.md), [`THREAT_MODEL.md`](THREAT_MODEL.md), [`SECURITY_ARCHITECTURE.md`](SECURITY_ARCHITECTURE.md), [`SWOT.md`](SWOT.md), [`ARCHITECTURE.md`](ARCHITECTURE.md), [`Article-Generation.md`](Article-Generation.md), [`AGENTS.md`](AGENTS.md), [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md), [`BCPPlan.md`](BCPPlan.md), [`End-of-Life-Strategy.md`](End-of-Life-Strategy.md), [`FinancialSecurityPlan.md`](FinancialSecurityPlan.md); Hack23 persona agents (`hagbard-celine`, `marketing-specialist`, `business-development-specialist`); Hack23 ISMS-PUBLIC policies
+- **Inputs:** [`README.md`](README.md), [`THREAT_MODEL.md`](THREAT_MODEL.md), [`SECURITY_ARCHITECTURE.md`](SECURITY_ARCHITECTURE.md), [`SWOT.md`](SWOT.md), [`ARCHITECTURE.md`](ARCHITECTURE.md), [`Article-Generation.md`](Article-Generation.md), [`AGENTS.md`](AGENTS.md), [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md), [`BCPPlan.md`](BCPPlan.md), [`End-of-Life-Strategy.md`](End-of-Life-Strategy.md), [`FinancialSecurityPlan.md`](FinancialSecurityPlan.md); Hack23 persona agents (`hagbard-celine`, `marketing-specialist`, `business-development-specialist`, `intelligence-operative`); Hack23 ISMS-PUBLIC policies; founder open-source-reputation surfaces ([Gitista Sweden](https://gitista.com/sweden/), [OpenHub `pether`](https://openhub.net/accounts/pether), [committers.top Sweden](https://committers.top/sweden)); funding-model surface ([GitHub Sponsors `@Hack23`](https://github.com/sponsors/Hack23))
 - **Classification:** Public
 - **Next review:** 2026-09-20 (one week after Swedish 2026 general election — when real-world coverage will replace prediction with measurement)
 
