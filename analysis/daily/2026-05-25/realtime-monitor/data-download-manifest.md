@@ -76,3 +76,24 @@ All documents sourced from official riksdag-regering-mcp API.
 | processed | resolved | retained | expired | enqueued |
 |----------:|---------:|---------:|--------:|---------:|
 | 0 | 0 | 0 | 0 | 0 |
+---
+
+## Re-run 2026-05-25 16:24 UTC
+
+**Trigger**: IMPROVEMENT_MODE — re-discovery query for new dok_ids published after original run
+
+### New Documents Discovered
+
+| dok_id | type | date | title | author | status |
+|--------|------|------|-------|--------|--------|
+| HD10513 | ip | 2026-05-25 | Sjukersättning för personer som saknar arbetsförmåga | Jessica Rodén (S) → Tenje (M) | full_text retrieved |
+
+### Re-run Coverage State
+
+| dok_id | coverage_state | retrieval | chars | notes |
+|--------|----------------|-----------|-------|-------|
+| HD10513 | full_text | live | 1893 | New — retrieved in re-run; persisted to documents/HD10513-analysis.md |
+
+**Original corpus**: 10 documents  
+**Re-run additions**: 1 document (HD10513)  
+**Total corpus**: 11 documents
