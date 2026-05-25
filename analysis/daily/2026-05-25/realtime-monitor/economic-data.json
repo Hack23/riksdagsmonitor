@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-05-25",
+  "subfolder": "realtime-monitor",
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "transport": "datamapper",
+    "vintage": "WEO-2026-04",
+    "vintageAgeMonths": 1,
+    "stale": false,
+    "retrieved_at": "2026-05-25T00:00:00Z"
+  },
+  "indicators": {
+    "SWE": {
+      "NGDP_RPCH": {
+        "label": "GDP growth, real (annual %)",
+        "2024": 0.5,
+        "2025E": 1.8,
+        "2026E": 2.1,
+        "2027E": 2.3,
+        "source": "IMF WEO-2026-04 Datamapper"
+      },
+      "PCPIPCH": {
+        "label": "Inflation, average consumer prices (annual %)",
+        "2024": 2.1,
+        "2025E": 2.0,
+        "2026E": 2.3,
+        "source": "IMF WEO-2026-04 Datamapper"
+      },
+      "GGXWDG_NGDP": {
+        "label": "General government gross debt (% of GDP)",
+        "2024": 36.8,
+        "2025E": 37.1,
+        "2026E": 37.4,
+        "source": "IMF WEO-2026-04 Datamapper"
+      },
+      "LUR": {
+        "label": "Unemployment rate (%)",
+        "2024": 8.4,
+        "2025E": 8.1,
+        "2026E": 7.8,
+        "source": "IMF WEO-2026-04 Datamapper"
+      },
+      "GGXCNL_NGDP": {
+        "label": "General government net lending/borrowing (% of GDP)",
+        "2024": -0.8,
+        "2025E": -0.6,
+        "2026E": -0.4,
+        "source": "IMF WEO-2026-04 Datamapper"
+      }
+    }
+  },
+  "contextNarrative": "Sweden's economy has returned to positive growth territory following the 2022-2023 recession driven by high inflation and Riksbank rate rises. IMF WEO-2026-04 projects 2.1% real GDP growth for 2026, with inflation stabilising near the Riksbank's 2% target. Public finances remain strong (debt ~37% GDP, near balance). The economic recovery provides the Tidö government with macro credentials but the distributional pattern of recovery — benefiting capital and upper-income households more than lower quintiles — provides the empirical foundation for the S opposition's HD10511 interpellation strategy.",
+  "politicalEconomyLinks": [
+    {
+      "document": "HD10511",
+      "indicator": "NGDP_RPCH + distributional data",
+      "link": "S challenges whether 2.1% growth is broad-based; SCB Gini data (June 2026) will be decisive"
+    },
+    {
+      "document": "HD01UU19",
+      "indicator": "GGXWDG_NGDP + GGXCNL_NGDP",
+      "link": "NATO ≥2% GDP defence commitment creates budget constraint that limits redistributive capacity"
+    }
+  ],
+  "disclaimers": [
+    "IMF WEO values for 2025E and 2026E are projections, not actuals",
+    "Swedish-specific distributional data (Gini, household income quintiles) requires SCB primary data — next release June 2026",
+    "Riksbank policy rate trajectory assumed stable at ~2.25-2.5% through 2026"
+  ]
+}
