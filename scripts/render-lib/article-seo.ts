@@ -19,6 +19,11 @@ import {
   descriptionWindowForLanguage,
   titleWindowForLanguage,
 } from './aggregator/seo/serp-budgets.js';
+import {
+  expandAgencyAcronyms,
+  expandCommitteeDomains,
+} from './aggregator/seo/sv-keyword-mappings.js';
+import { RIKSDAG_COMMITTEE_CODES } from './aggregator/seo/brief-extractor.js';
 
 const KEYWORD_MAX = 24;
 
@@ -693,9 +698,34 @@ export function buildArticleKeywords(input: ArticleSeoMetadataInput): string {
   // 1. Brief entities first — highest SERP signal, universal across
   //    languages. These are normalised by the upstream extractor; we
   //    just push them in order so the cap preserves story priority.
-  for (const ent of input.briefEntities ?? []) {
+  const briefEnts = input.briefEntities ?? [];
+  for (const ent of briefEnts) {
     if (out.length >= KEYWORD_MAX) break;
     pushKeyword(out, seen, ent);
+  }
+
+  // 1b. Institutional synonyms — emit agency acronym ↔ canonical-name
+  //     pairings (Försäkringskassan ↔ FK) and per-language policy-domain
+  //     words for any committee codes mined from the brief (JuU → Justice
+  //     / rättsväsen / justice / 司法). These widen the keyword surface
+  //     without sacrificing precision: the original entity is already in
+  //     `out`, so the synonym slots in directly after it.
+  const committeeCodeSet = new Set<string>(RIKSDAG_COMMITTEE_CODES);
+  const mentionedCommittees: string[] = [];
+  for (const ent of briefEnts) {
+    // Codes like `JuU28` (committee report ID) still expand by stripping
+    // the digits to recover the committee code itself.
+    const codeMatch = ent.match(/^([A-Za-zÅÄÖåäöéü]+?)(?:\d{1,3})?$/);
+    const code = codeMatch?.[1];
+    if (code && committeeCodeSet.has(code)) mentionedCommittees.push(code);
+  }
+  for (const acronym of expandAgencyAcronyms(briefEnts)) {
+    if (out.length >= KEYWORD_MAX) break;
+    pushKeyword(out, seen, acronym);
+  }
+  for (const domain of expandCommitteeDomains(mentionedCommittees, input.lang)) {
+    if (out.length >= KEYWORD_MAX) break;
+    pushKeyword(out, seen, domain);
   }
 
   // 2. Mandatory institutional floor — every page surfaces both chambers

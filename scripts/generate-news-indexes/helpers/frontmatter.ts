@@ -184,6 +184,8 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
     );
     const relativePath: string = path.relative(NEWS_DIR, filePath).split(path.sep).join('/');
     const topics = extractTopics(content, fileName);
+    const rawKeywords = extractMetaContent(content, 'keywords');
+    const keywords = rawKeywords ? decodeHtmlEntities(rawKeywords).trim() : undefined;
     const metadata: NewsArticleMetadata = {
       slug: fileName,
       lang,
@@ -198,6 +200,7 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
       type: classifyArticleType(content, fileName, relativePath),
       topics,
       tags: decodeHtmlEntities(extractTags(content, fileName, topics).join('|||')).split('|||').filter(Boolean),
+      ...(keywords ? { keywords } : {}),
     };
 
     return metadata;
