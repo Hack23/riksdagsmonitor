@@ -3,7 +3,7 @@ date: 2026-05-09
 subfolder: weekly-review
 slug: 2026-05-09-weekly-review
 source_folder: analysis/daily/2026-05-09/weekly-review
-generated_at: 2026-05-25T09:05:41.698Z
+generated_at: 2026-05-25T15:59:53.744Z
 language: en
 layout: article
 ---
@@ -109,6 +109,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2830,13 +2843,1059 @@ Plus: `pir-status.json` (required sidecar; to be created) + 11 per-document anal
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-05-08 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+---
+title: "التقرير الأسبوعي — المراجعة الأسبوعية 2026-05-09"
+
+subfolder: weekly-review
+slug: weekly-review-2026-05-09
+language: ar
+
+konfidensgrad: MEDIUM-HIGH [B2]
+
+---
+
+# التقرير الأسبوعي — المراجعة الأسبوعية 2026-05-09
+
+**التصنيف**: PUBLIC | **مستوى الثقة**: MEDIUM-HIGH [B2] | **الأفق الزمني**: T+72h / T+7d
+**المؤلف**: نظام الاستخبارات الاصطناعية Riksdagsmonitor | **Riksmöte**: 2025/26
+
+---
+
+### الملخص التنفيذي
+
+أسفرت الفترة من 2 إلى 9 مايو 2026 عن حزمة من التشريعات المحلية في مجالات الإسكان والتعليم والرعاية الاجتماعية وسيادة القانون، فيما كشفت القضايا السياسية الخارجية عن انقسام حاد بين الأحزاب حول مصادرة إسرائيل لسفينة تحمل أفراداً من طاقم سويدي في المياه الدولية. مع اقتراب الانتخابات السويدية لعام 2026 بنحو 16 أسبوعاً، يحمل كل نقاش كبير إشارة حملة انتخابية تتجاوز غرضه التشريعي الفوري.
+
+**التقييم الرئيسي**: تدخل تحالف Tidö (M, SD, KD, L) في سباق تشريعي مصمم لترسيخ المكاسب السياسية الرئيسية قبل عطلة الصيف وانتخابات سبتمبر 2026. تعزز حزمة مرونة سوق الإسكان (HD01CU31) وإصلاح مؤهلات التعليم (HD01UbU28) وتحسين موظفي الرعاية الاجتماعية (HD01SoU36) مجتمعةً رواية الحكومة عن "تقديم الإصلاحات". غير أن حادثة أسطول إسرائيل/غزة (HD11803) وجدل إزالة الإضاءة الريفية (HD11801) وقضية حظر الحجاب بقيادة SD (HD11802) تخاطر بتشتيت الرسائل العامة للتحالف وتحفيز المعارضة.
+
+---
+
+### أبرز 5 تقييمات
+
+| # | التقييم | مستوى الثقة | الأفق |
+|---|---------|-------------|-------|
+| J1 | إصلاح مرونة الإسكان HD01CU31 **سيهيمن على وسائل الإعلام السياسية الأسبوعية** إذ يؤثر مباشرة على ملايين المستأجرين السويديين؛ ستضخم المعارضة (S, V, MP) مخاطر ارتفاع الإيجارات | HIGH [A2] | T+72h |
+| J2 | HD11803 (إسرائيل تعتقل مواطنين سويديين) **سيضغط على وزير الخارجية** لإصدار تصريح علني يتجاوز الإجراءات البرلمانية؛ مطلب عابر للأحزاب | HIGH [A2] | T+72h |
+| J3 | HD11802 (حظر الحجاب، SD→L) **يكشف التمركز السياسي للهوية** قبل الانتخابات من قِبل SD مستهدفاً سجل التكامل لدى L؛ تواجه الوزيرة L موهامسون اختباراً للمصداقية أمام تصريحاتها السابقة | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (مؤهلات المعلمين في مدرسة السنوات العشر) **سيواجه احتكاكاً في التنفيذ** — يفتقر مديرو المدارس إلى مسار الموظفين لتلبية متطلبات الكفاءة الجديدة | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (إزالة إضاءة المناطق الريفية) **سيحفز ضغط الدوائر الريفية** على ممثلي KD و C؛ الدعم الريفي للتحالف هو ثغرة هيكلية قبيل الانتخابات | MEDIUM [B3] | T+7d |
+
+---
+
+### خريطة الاستخبارات الوثائقية
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 أهمية عالية"]
+        A["🏠 HD01CU31<br/>مرونة سوق الإسكان<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>مصادرة إسرائيل<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 متوسط-عالٍ"]
+        C["📚 HD01UbU20/28<br/>إصلاح التعليم<br/>[B2] L2"]
+        D["🧕 HD11802<br/>حظر الحجاب SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>الجريمة ضد الشركات الصغيرة<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 متوسط-منخفض"]
+        F["💼 HD01SoU36<br/>موظفو الدولة<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>قواعد التطبيق<br/>[B3] L1"]
+        H["🌑 HD11801<br/>الإضاءة الريفية<br/>[B3] L1"]
+        I["💰 HD10480<br/>الموطن الضريبي<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>تقرير الاتحاد البرلماني الدولي<br/>[D2] L0"]
+    end
+    A -->|"مخاطر ارتفاع الإيجار"| K["انتخابات 2026<br/>رواية الإسكان"]
+    B -->|"ضغط دبلوماسي"| L["مصداقية السياسة الخارجية"]
+    C -->|"فجوة الكفاءات"| M["مخاطر تنفيذ التعليم"]
+    D -->|"تمركز SD"| N["اختبار مصداقية L"]
+```
+
+---
+
+### السياق الاقتصادي الكلي
+
+**صندوق النقد الدولي WEO أبريل-2026 (SWE)** — الحالة: متدهورة (WEO/FM Datamapper يعمل؛ SDMX 404):
+- نمو الناتج المحلي الإجمالي 2026: **~1,2%** (يبقى التعافي خافتاً)
+- معدل البطالة: **~8,1%** (هضبة هيكلية فوق المستوى السابق لجائحة كوفيد)
+- سعر الفائدة (Riksbanken): **2,25%** (دورة خفض أسعار الفائدة يونيو 2025 اكتملت إلى حد بعيد)
+- هدف عجز الموازنة: ضمن حدود ميثاق الاستقرار والنمو الأوروبي
+
+يعزز بيئة النمو المنخفض المطولة الأهمية السياسية لقدرة الإسكان على تحمل التكاليف (CU31) وتخفيضات الخدمات الريفية (HD11801) لأن الدخل المتاح للأسر يبقى تحت الضغط. توقيت قضية حجاب SD (HD11802) مصمم للتحصيل على قلق سياسة الهوية الذي يتكثف في دورات النمو المنخفض.
+
+---
+
+### تقييم الاستخبارات: دليل القراءة
+
+يغطي هذا التحليل **6 تقارير لجان** (bet) و**5 أسئلة برلمانية/استجوابات** (fråga/interpellation) من Riksmöte 2025/26. جميع الوثائق مستردة من riksdag-regering MCP بتاريخ 2026-05-09؛ البيانات من 2026-05-08 (استرجاع ليوم واحد). لم تُسجَّل أي تصويتات (voteringar) لهذا التاريخ.
+
+**عدم اليقين المحوري**: وثائق الأسبوع في مرحلة النقاش — التصويتات النهائية في الغرفة غير مسجلة بعد. يعتمد مستوى ثقة النتيجة على انضباط التحالف والتحركات الانحرافية المحتملة.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_da.md -->
+
+**Klassificering**: PUBLIC | **Konfidensgrad**: MEDIUM-HIGH [B2] | **Horisont**: T+72h / T+7d
+**Forfatter**: Riksdagsmonitor AI-efterretningssystem | **Riksmöte**: 2025/26
+
+---
+
+### Resumé
+
+Ugen 2–9. maj 2026 producerede en klynge af indenlandsk lovgivning inden for bolig, uddannelse, social velfærd og retsstat, mens udenrigspolitiske spørgsmål afslørede en skarp tværpartipolitisk kløft om Israels anholdelse af et fartøj med svenske besætningsmedlemmer i internationalt farvand. Med det svenske valg 2026 cirka 16 uger væk bærer enhver større debat et valgkampssignal ud over sit umiddelbare lovgivningsmæssige formål.
+
+**Ledende vurdering**: Tidö-koalitionen (M, SD, KD, L) indleder en lovgivningssprint designet til at låse centrale politiske gevinster fast inden sommerferien og valget i september 2026. Boligmarkedsfleksibilitetspakken (HD01CU31), uddannelseskvalificeringsreformen (HD01UbU28) og forbedringen af socialtjenestepersonale (HD01SoU36) understøtter samlet regeringens "reformleverance"-fortælling. Det israelske/Gazas flåtilleincident (HD11803), landdistriktslysningskontroversen (HD11801) og det SD-drevne slørspørgsmål (HD11802) risikerer dog at fragmentere koalitionens offentlige budskab og energisere oppositionen.
+
+---
+
+### Top-5 Konklusioner
+
+| # | Vurdering | Konfidensgrad | Horisont |
+|---|-----------|---------------|---------|
+| J1 | HD01CU31 boligfleksibilitetsreform **vil dominere ugens politiske medier** da den direkte påvirker millioner af svenske lejere; oppositionen (S, V, MP) vil forstærke risikoen for huslejestigninger | HIGH [A2] | T+72h |
+| J2 | HD11803 (Israel anholdelse af svenske borgere) **vil lægge pres på udenrigsministeren** for at give en offentlig erklæring ud over parlamentarisk procedure; tværpartistisk krav | HIGH [A2] | T+72h |
+| J3 | HD11802 (slørforbud, SD→L) **afslører identitetspolitisk positionering** forud for valget af SD rettet mod L's integrationsrekord; L-minister Mohamsson møder en troværdighedstest mod tidligere udtalelser | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (lærerkvalifikationer i 10-årig skole) **vil møde implementeringsfriktion** — skoleledere mangler personalpipeline til at opfylde nye kompetencekrav | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (fjernelse af landdistriktslys) **vil energisere pres fra landdistriktsvalgkredse** på KD- og C-parlamentarikere; koalitionens landdistriktsstøtte er en strukturel sårbarhed forud for valget | MEDIUM [B3] | T+7d |
+
+---
+
+### Dokumenteftretningskort
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 HØJ Signifikans"]
+        A["🏠 HD01CU31<br/>Boligmarkedsfleksibilitet<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>Israel-anholdelse<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 MEDIUM-HØJ"]
+        C["📚 HD01UbU20/28<br/>Uddannelsesreform<br/>[B2] L2"]
+        D["🧕 HD11802<br/>Slørforbud SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>Kriminalitet mod SMV<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 MEDIUM-LAV"]
+        F["💼 HD01SoU36<br/>Statspersonale<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>Håndhævelsesregler<br/>[B3] L1"]
+        H["🌑 HD11801<br/>Landdistriktslys<br/>[B3] L1"]
+        I["💰 HD10480<br/>Skattemæssigt domicil<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>IPU-rapport<br/>[D2] L0"]
+    end
+    A -->|"Lejerprisprisrisiko"| K["Valg 2026<br/>Boligfortælling"]
+    B -->|"Diplomatisk pres"| L["Udenrigspolitisk troværdighed"]
+    C -->|"Kompetencegab"| M["Uddannelsesimplementeringsrisiko"]
+    D -->|"SD-positionering"| N["L troværdighedstest"]
+```
+
+---
+
+### Makroøkonomisk Kontekst
+
+**IMF WEO apr-2026 (SWE)** — status: degraderet (WEO/FM Datamapper fungerer; SDMX 404):
+- BNP-vækst 2026: **~1,2%** (genopretningen forbliver afdæmpet)
+- Arbejdsløshed: **~8,1%** (strukturelt plateau over pre-pandemisk niveau)
+- Rentesats (Riksbanken): **2,25%** (rentesænkningscyklus juni 2025 stort set afsluttet)
+- Budgetunderskudsmål: inden for EU's SGP-grænser
+
+Det forlængede lavvækstmiljø forstærker den politiske relevans af boligoverkommelighed (CU31) og nedskæringer i landdistriktserviceydelser (HD11801), da husholdningernes disponible indkomst forbliver under pres. SD's slørspørgsmål (HD11802) er tidsmæssigt afstemt til at høste identitetspolitiske angster, der intensiveres i lavvækstcyklusser.
+
+---
+
+### Efterretningsvurdering: Læseguide
+
+Denne analyse dækker **6 udvalgsrapporter** (bet) og **5 parlamentariske spørgsmål/interpellationer** (fråga/interpellation) fra Riksmöte 2025/26. Alle dokumenter hentet fra riksdag-regering MCP den 2026-05-09; data fra 2026-05-08 (1-dags lookback). Ingen afstemninger (voteringar) registreret for denne dato.
+
+**Central usikkerhed**: Ugens dokumenter er debatstadiet udvalgsrapporter — endelige kammerstemmer endnu ikke registreret. Udfaldskonfidens er betinget af koalitionsdisciplin og eventuelle afvigelsesmotioner.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_de.md -->
+
+**Klassifizierung**: PUBLIC | **Konfidenz**: MEDIUM-HIGH [B2] | **Horizont**: T+72h / T+7d
+**Autor**: Riksdagsmonitor KI-Geheimdienstsystem | **Riksmöte**: 2025/26
+
+---
+
+### Zusammenfassung
+
+Die Woche vom 2. bis 9. Mai 2026 brachte eine Häufung von Inlandsgesetzen zu Wohnungswesen, Bildung, Sozialfürsorge und Rechtsstaat, während außenpolitische Fragen eine scharfe parteiübergreifende Kluft über Israels Beschlagnahme eines Schiffes mit schwedischen Besatzungsmitgliedern in internationalen Gewässern offenbarten. Da die schwedischen Wahlen 2026 etwa 16 Wochen entfernt sind, trägt jede große Debatte ein wahlkampfpolitisches Signal über ihren unmittelbaren legislativen Zweck hinaus.
+
+**Führende Bewertung**: Die Tidö-Koalition (M, SD, KD, L) tritt in einen Gesetzgebungssprint ein, der darauf ausgelegt ist, wichtige politische Gewinne vor der Sommerpause und der Wahl im September 2026 festzuschreiben. Das Wohnungsmarkt-Flexibilitätspaket (HD01CU31), die Bildungsqualifikationsreform (HD01UbU28) und die Verbesserung des Sozialfürsorgepersonals (HD01SoU36) stärken kollektiv die Erzählung der Regierung zur "Reformlieferung". Der Israel/Gaza-Flottenvorfall (HD11803), die umstrittene Entfernung von Landbeleuchtung (HD11801) und die von SD angetriebene Schleierverbotsfrage (HD11802) riskieren jedoch, die öffentlichen Botschaften der Koalition zu fragmentieren und die Opposition zu energetisieren.
+
+---
+
+### Top-5-Einschätzungen
+
+| # | Einschätzung | Konfidenz | Horizont |
+|---|-------------|-----------|---------|
+| J1 | HD01CU31 Wohnungsflexibilitätsreform **dominiert die Wochenpolitikmedien**, da sie Millionen schwedischer Mieter direkt betrifft; die Opposition (S, V, MP) verstärkt Mietpreisrisiken | HIGH [A2] | T+72h |
+| J2 | HD11803 (Israel verhaftet schwedische Staatsangehörige) **übt Druck auf den Außenminister** für eine öffentliche Erklärung über parlamentarische Verfahren hinaus; parteiübergreifende Forderung | HIGH [A2] | T+72h |
+| J3 | HD11802 (Schleierverbot, SD→L) **enthüllt identitätspolitische Positionierung** vor der Wahl von SD, die auf L's Integrationsakte zielt; L-Ministerin Mohamsson sieht sich einem Glaubwürdigkeitstest gegen frühere Aussagen gegenüber | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (Lehrerqualifikationen in der 10-jährigen Schule) **sieht sich Implementierungsreibungen** gegenüber — Schulleiter mangelt an der Personalpipeline zur Erfüllung neuer Kompetenzanforderungen | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (Entfernung von Landbeleuchtung) **energetisiert Druck ländlicher Wahlkreise** auf KD- und C-Abgeordnete; die Landunterstützung der Koalition ist eine strukturelle Schwäche vor der Wahl | MEDIUM [B3] | T+7d |
+
+---
+
+### Dokumentengeheimdienst-Karte
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 HOHE Signifikanz"]
+        A["🏠 HD01CU31<br/>Wohnungsmarktflexibilität<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>Israel-Beschlagnahme<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 MEDIUM-HOCH"]
+        C["📚 HD01UbU20/28<br/>Bildungsreform<br/>[B2] L2"]
+        D["🧕 HD11802<br/>Schleierverbot SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>Kriminalität vs. KMU<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 MEDIUM-NIEDRIG"]
+        F["💼 HD01SoU36<br/>Staatspersonal<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>Vollzugsregeln<br/>[B3] L1"]
+        H["🌑 HD11801<br/>Ländliche Beleuchtung<br/>[B3] L1"]
+        I["💰 HD10480<br/>Steuerdomizil<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>IPU-Bericht<br/>[D2] L0"]
+    end
+    A -->|"Mietpreisrisiko"| K["Wahl 2026<br/>Wohnungsnarration"]
+    B -->|"Diplomatischer Druck"| L["Außenpolitische Glaubwürdigkeit"]
+    C -->|"Kompetenzlücke"| M["Bildungsimplementierungsrisiko"]
+    D -->|"SD-Positionierung"| N["L Glaubwürdigkeitstest"]
+```
+
+---
+
+### Makroökonomischer Kontext
+
+**IWF WEO Apr-2026 (SWE)** — Status: herabgestuft (WEO/FM Datamapper funktioniert; SDMX 404):
+- BIP-Wachstum 2026: **~1,2%** (Erholung bleibt gedämpft)
+- Arbeitslosigkeit: **~8,1%** (strukturelles Plateau über Vor-Pandemie-Niveau)
+- Leitzins (Riksbanken): **2,25%** (Zinssenkungszyklus Juni 2025 weitgehend abgeschlossen)
+- Haushaltsdefizitziel: innerhalb der EU-SGP-Grenzen
+
+Das anhaltende Niedrigwachstumsumfeld verstärkt die politische Relevanz der Wohnbezahlbarkeit (CU31) und der Kürzungen bei ländlichen Diensten (HD11801), da das verfügbare Einkommen der Haushalte unter Druck bleibt. SDs Schleierverbotsfrage (HD11802) ist zeitlich so ausgelegt, dass sie Identitätspolitikängste erntet, die sich in Niedrigwachstumszyklen intensivieren.
+
+---
+
+### Geheimdienstbewertung: Leserführung
+
+Diese Analyse deckt **6 Ausschussberichte** (bet) und **5 parlamentarische Fragen/Interpellationen** (fråga/interpellation) aus Riksmöte 2025/26 ab. Alle Dokumente am 2026-05-09 vom riksdag-regering MCP abgerufen; Daten von 2026-05-08 (1-tägiger Rückblick). Für dieses Datum wurden keine Abstimmungen (voteringar) registriert.
+
+**Zentrale Unsicherheit**: Die Dokumente der Woche sind im Debattenstadium — endgültige Kammerstimmen noch nicht registriert. Die Ergebniskonfidenz ist bedingt durch Koalitionsdisziplin und etwaige Abweichungsanträge.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_es.md -->
+
+**Clasificación**: PUBLIC | **Nivel de confianza**: MEDIUM-HIGH [B2] | **Horizonte**: T+72h / T+7d
+**Autor**: Sistema de Inteligencia IA Riksdagsmonitor | **Riksmöte**: 2025/26
+
+---
+
+### Resumen Ejecutivo
+
+La semana del 2 al 9 de mayo de 2026 produjo un conjunto de leyes nacionales sobre vivienda, educación, asistencia social y estado de derecho, mientras que las cuestiones de política exterior revelaron una aguda brecha transpartidista sobre el abordaje por Israel de un barco con miembros de la tripulación sueca en aguas internacionales. Con las elecciones suecas de 2026 a aproximadamente 16 semanas, cada gran debate lleva una señal de campaña electoral más allá de su propósito legislativo inmediato.
+
+**Evaluación principal**: La coalición Tidö (M, SD, KD, L) entra en un sprint legislativo diseñado para consolidar las principales ganancias políticas antes de las vacaciones de verano y las elecciones de septiembre de 2026. El paquete de flexibilidad del mercado de la vivienda (HD01CU31), la reforma de calificaciones educativas (HD01UbU28) y la mejora del personal de asistencia social (HD01SoU36) fortalecen colectivamente la narrativa del gobierno sobre la "entrega de reformas". Sin embargo, el incidente de la flotilla Israel/Gaza (HD11803), la controvertida eliminación del alumbrado rural (HD11801) y la cuestión del velo impulsada por el SD (HD11802) corren el riesgo de fragmentar los mensajes públicos de la coalición y energizar a la oposición.
+
+---
+
+### Top-5 Evaluaciones
+
+| # | Evaluación | Confianza | Horizonte |
+|---|-----------|-----------|----------|
+| J1 | La reforma de flexibilidad de vivienda HD01CU31 **dominará los medios políticos de la semana** ya que afecta directamente a millones de inquilinos suecos; la oposición (S, V, MP) amplificará los riesgos de subida de alquileres | HIGH [A2] | T+72h |
+| J2 | HD11803 (Israel arresta a ciudadanos suecos) **presionará al ministro de Asuntos Exteriores** para una declaración pública más allá del procedimiento parlamentario; demanda transpartidista | HIGH [A2] | T+72h |
+| J3 | HD11802 (prohibición del velo, SD→L) **revela el posicionamiento político de identidad** antes de las elecciones del SD apuntando al historial de integración de L; la ministra L Mohamsson enfrenta una prueba de credibilidad contra declaraciones anteriores | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (calificaciones docentes en la escuela de 10 años) **encontrará fricciones de implementación** — los directores escolares carecen del flujo de personal para cumplir con los nuevos requisitos de competencia | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (eliminación del alumbrado rural) **energizará la presión de los distritos rurales** sobre los representantes KD y C; el apoyo rural de la coalición es una vulnerabilidad estructural antes de las elecciones | MEDIUM [B3] | T+7d |
+
+---
+
+### Mapa de Inteligencia Documental
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 Significancia ALTA"]
+        A["🏠 HD01CU31<br/>Flexibilidad mercado vivienda<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>Abordaje israelí<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 MEDIUM-ALTA"]
+        C["📚 HD01UbU20/28<br/>Reforma educativa<br/>[B2] L2"]
+        D["🧕 HD11802<br/>Prohibición velo SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>Crimen vs PYME<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 MEDIUM-BAJA"]
+        F["💼 HD01SoU36<br/>Personal estatal<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>Reglas de aplicación<br/>[B3] L1"]
+        H["🌑 HD11801<br/>Alumbrado rural<br/>[B3] L1"]
+        I["💰 HD10480<br/>Domicilio fiscal<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>Informe UIP<br/>[D2] L0"]
+    end
+    A -->|"Riesgo subida alquiler"| K["Elecciones 2026<br/>Narrativa vivienda"]
+    B -->|"Presión diplomática"| L["Credibilidad política exterior"]
+    C -->|"Brecha competencias"| M["Riesgo implementación educativa"]
+    D -->|"Posicionamiento SD"| N["Prueba credibilidad L"]
+```
+
+---
+
+### Contexto Macroeconómico
+
+**FMI WEO abr-2026 (SWE)**: Crecimiento PIB 2026 **~1,2%**, desempleo **~8,1%**, tipo de interés Riksbanken **2,25%**. El prolongado entorno de bajo crecimiento amplifica la relevancia política de la asequibilidad de la vivienda (CU31) y los recortes rurales (HD11801) porque los ingresos disponibles de los hogares siguen bajo presión.
+
+---
+
+### Evaluación de Inteligencia: Guía de Lectura
+
+Este análisis cubre **6 informes de comisión** (bet) y **5 preguntas parlamentarias/interpelaciones** (fråga/interpellation) del Riksmöte 2025/26. Todos los documentos recuperados del riksdag-regering MCP el 2026-05-09; datos del 2026-05-08 (lookback 1 día). No se registraron votos (voteringar) para esta fecha.
+
+**Incertidumbre central**: Los documentos de la semana están en etapa de debate — los votos finales en cámara aún no registrados. La confianza en los resultados está condicionada a la disciplina de la coalición y a las posibles mociones de desviación.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_fi.md -->
+
+**Luokittelu**: PUBLIC | **Luottamustaso**: MEDIUM-HIGH [B2] | **Horisontti**: T+72h / T+7d
+**Tekijä**: Riksdagsmonitor AI-tiedustelupalvelu | **Riksmöte**: 2025/26
+
+---
+
+### Tiivistelmä
+
+Viikko 2.–9. toukokuuta 2026 tuotti joukon asumisen, koulutuksen, sosiaalihuollon ja oikeusvaltion inrikeslakeja, kun ulkopoliittiset kysymykset paljastivat terävän puolueiden välisen kuilun Israelin pidätettyä kansainvälisillä vesillä aluksen, jonka miehistössä oli ruotsalaisia. Ruotsin vuoden 2026 vaalien ollessa noin 16 viikon päässä kantaa jokainen suuri debatti vaalipoliittisen signaalin välittömän lainsäädännöllisen tarkoituksensa tuolle puolen.
+
+**Johtava arvio**: Tidö-koalitio (M, SD, KD, L) käynnistää lainsäädäntösprintin, jonka tarkoituksena on lukita tärkeimmät poliittiset saavutukset ennen kesälomaa ja syyskuun 2026 vaalia. Asuntomarkkinafleksibiliteettipaketti (HD01CU31), opettajankoulutuspätevyysreformi (HD01UbU28) ja sosiaalihuollon henkilöstön parantaminen (HD01SoU36) vahvistavat yhdessä hallituksen "uudistusten toimeenpano" -narratiivia. Israel/Gaza-flotillaincidentti (HD11803), maaseudun valaistusontroverssi (HD11801) ja SD-vetoinen slöjjakieltoasio (HD11802) saattavat kuitenkin hajauttaa koalition julkiset viestit ja energisoida opposition.
+
+---
+
+### Top-5-johtopäätökset
+
+| # | Arvio | Luottamustaso | Horisontti |
+|---|-------|---------------|-----------|
+| J1 | HD01CU31 asuntofleksibiliteettireformi **hallitsee viikon poliittista mediaa**, sillä se vaikuttaa suoraan miljooniin ruotsalaisiin vuokralaisiin; oppositio (S, V, MP) vahvistaa vuokrankorotusriskejä | HIGH [A2] | T+72h |
+| J2 | HD11803 (Israel pidätti ruotsalaisia kansalaisia) **asettaa ulkoministerin paineisiin** antaa julkinen lausunto parlamentaarisen menettelyn ulkopuolella; puolueiden välinen vaatimus | HIGH [A2] | T+72h |
+| J3 | HD11802 (slöjjakielto, SD→L) **paljastaa identiteettipolitiikan asemoinnin** ennen vaalia, SD kohdistaa L:n integraatiorekisteriä; L-ministeri Mohamsson kohtaa uskottavuustestin aiempia lausuntojaan vastaan | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (opettajapätevyydet 10-vuotisessa koulussa) **kohtaa toteutushaasteita** — koulunpitäjiltä puuttuu henkilöstöputki uusien pätevyysvaatimusten täyttämiseksi | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (maaseudun valaistuksen poisto) **energisoi maaseutuvaalipiirien paineen** KD- ja C-kansanedustajille; koalition maaseutukannatus on rakenteellinen haavoittuvuus ennen vaalia | MEDIUM [B3] | T+7d |
+
+---
+
+### Asiakirjatiedustelupaikka
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 KORKEA Merkittävyys"]
+        A["🏠 HD01CU31<br/>Asuntomarkkinafleksibiliteetti<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>Israel-pidätys<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 MEDIUM-KORKEA"]
+        C["📚 HD01UbU20/28<br/>Koulutusreformi<br/>[B2] L2"]
+        D["🧕 HD11802<br/>Slöjjakielto SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>Rikos pk-yrityksiä vastaan<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 MEDIUM-MATALA"]
+        F["💼 HD01SoU36<br/>Valtionhenkilöstö<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>Täytäntöönpanosäännöt<br/>[B3] L1"]
+        H["🌑 HD11801<br/>Maaseudun valaistus<br/>[B3] L1"]
+        I["💰 HD10480<br/>Veroasema<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>IPU-raportti<br/>[D2] L0"]
+    end
+    A -->|"Vuokralaisen hintariski"| K["Vaali 2026<br/>Asuntonarratiiivi"]
+    B -->|"Diplomatinen paine"| L["Ulkopolitiikan uskottavuus"]
+    C -->|"Osaamisvaje"| M["Koulutustoteutusriski"]
+    D -->|"SD-asemointi"| N["L uskottavuustesti"]
+```
+
+---
+
+### Makrotaloudellinen Konteksti
+
+**IMF WEO huhtikuu-2026 (SWE)** — tila: heikentynyt (WEO/FM Datamapper toimii; SDMX 404):
+- BKT-kasvu 2026: **~1,2%** (toipuminen pysyy vaimeana)
+- Työttömyys: **~8,1%** (rakenteellinen tasanko pre-pandemia-tason yläpuolella)
+- Ohjauskorko (Riksbanken): **2,25%** (kesäkuun 2025 koronlaskusykli pitkälti päättynyt)
+- Budjettivajeen tavoite: EU:n vakaus- ja kasvusopimuksen rajoissa
+
+Pitkittynyt matalankasvun ympäristö vahvistaa asumisen kohtuuhintaisuuden (CU31) ja maaseudun palveluiden leikkausten (HD11801) poliittista merkitystä, koska kotitalouksien käytettävissä olevat tulot pysyvät paineessa. SD:n slöjjakieltoasio (HD11802) on ajoitettu keräämään identiteettipolitiikan ahdistuksia, jotka voimistuvat matalankasvun sykleissä.
+
+---
+
+### Tiedusteluarviointi: Lukuohje
+
+Tämä analyysi kattaa **6 valiokuntabetänkandea** (bet) ja **5 parlamentaarista kysymystä/interpellaatiota** (fråga/interpellation) riksmötestä 2025/26. Kaikki asiakirjat haettu riksdag-regering MCP:stä 2026-05-09; data 2026-05-08:sta (1 päivän lookback). Tälle päivämäärälle ei rekisteröity äänestyksiä (voteringar).
+
+**Keskeinen epävarmuus**: Viikon asiakirjat ovat väitelavasteusvaiheen valiokuntabetänkandeita — lopulliset täysistuntoäänestykset eivät vielä rekisteröity. Tuloskonfidenssi on ehdollinen koalition kurille ja mahdollisille poikkeamismotioille.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_fr.md -->
+
+**Auteur**: Système de renseignement IA Riksdagsmonitor | **Riksmöte**: 2025/26
+
+---
+
+### Résumé
+
+La semaine du 2 au 9 mai 2026 a produit une grappe de lois intérieures sur le logement, l'éducation, la protection sociale et l'état de droit, tandis que les questions de politique étrangère ont révélé un fossé transpartisan aigu concernant l'arraisonnement par Israël d'un navire avec des membres d'équipage suédois en eaux internationales. Avec les élections suédoises 2026 à environ 16 semaines, chaque grand débat porte un signal de campagne électorale au-delà de son objectif législatif immédiat.
+
+**Évaluation principale**: La coalition Tidö (M, SD, KD, L) entre dans un sprint législatif conçu pour verrouiller les gains politiques clés avant les vacances d'été et les élections de septembre 2026. Le paquet de flexibilité du marché du logement (HD01CU31), la réforme des qualifications éducatives (HD01UbU28) et l'amélioration du personnel de protection sociale (HD01SoU36) renforcent collectivement le récit du gouvernement sur la "livraison des réformes". Cependant, l'incident de la flottille Israël/Gaza (HD11803), la controverse sur la suppression de l'éclairage rural (HD11801) et la question du voile intégral portée par le SD (HD11802) risquent de fragmenter les messages publics de la coalition et d'énergiser l'opposition.
+
+---
+
+### Top-5 Évaluations
+
+| # | Évaluation | Confiance | Horizon |
+|---|-----------|-----------|--------|
+| J1 | La réforme de flexibilité du logement HD01CU31 **dominera les médias politiques de la semaine** car elle affecte directement des millions de locataires suédois ; l'opposition (S, V, MP) amplifiera les risques de hausse des loyers | HIGH [A2] | T+72h |
+| J2 | HD11803 (Israël arrête des citoyens suédois) **exercera une pression sur le ministre des Affaires étrangères** pour une déclaration publique au-delà de la procédure parlementaire ; demande transpartisane | HIGH [A2] | T+72h |
+| J3 | HD11802 (interdiction du voile, SD→L) **révèle le positionnement politique identitaire** avant les élections de SD ciblant le bilan d'intégration de L ; la ministre L Mohamsson fait face à un test de crédibilité contre ses précédentes déclarations | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (qualifications des enseignants dans l'école à 10 ans) **rencontrera des frictions d'implémentation** — les directeurs d'école manquent du pipeline de personnel pour satisfaire les nouvelles exigences de compétences | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (suppression de l'éclairage rural) **énergisera la pression des circonscriptions rurales** sur les représentants KD et C ; le soutien rural de la coalition est une vulnérabilité structurelle avant les élections | MEDIUM [B3] | T+7d |
+
+---
+
+### Carte de Renseignement Documentaire
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 Signification ÉLEVÉE"]
+        A["🏠 HD01CU31<br/>Flexibilité du marché du logement<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>Arraisonnement israélien<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 MEDIUM-ÉLEVÉE"]
+        C["📚 HD01UbU20/28<br/>Réforme éducative<br/>[B2] L2"]
+        D["🧕 HD11802<br/>Interdiction du voile SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>Crime vs PME<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 MEDIUM-FAIBLE"]
+        F["💼 HD01SoU36<br/>Personnel d'État<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>Règles d'application<br/>[B3] L1"]
+        H["🌑 HD11801<br/>Éclairage rural<br/>[B3] L1"]
+        I["💰 HD10480<br/>Domicile fiscal<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>Rapport UIP<br/>[D2] L0"]
+    end
+    A -->|"Risque de hausse loyers"| K["Élections 2026<br/>Récit logement"]
+    B -->|"Pression diplomatique"| L["Crédibilité politique étrangère"]
+    C -->|"Lacune compétences"| M["Risque d'implémentation éducative"]
+    D -->|"Positionnement SD"| N["Test crédibilité L"]
+```
+
+---
+
+### Contexte Macroéconomique
+
+**FMI WEO avr-2026 (SWE)** : Croissance PIB 2026 **~1,2%**, chômage **~8,1%**, taux directeur Riksbanken **2,25%**. Le faible croissance prolongée renforce la pertinence politique de l'accessibilité au logement (CU31) et des coupes rurales (HD11801) car le revenu disponible des ménages reste sous pression.
+
+---
+
+### Évaluation du Renseignement : Guide de Lecture
+
+Cette analyse couvre **6 rapports de commission** (bet) et **5 questions parlementaires/interpellations** (fråga/interpellation) du Riksmöte 2025/26. Tous les documents récupérés depuis riksdag-regering MCP le 2026-05-09 ; données du 2026-05-08 (lookback 1 jour). Aucun vote (voteringar) enregistré pour cette date.
+
+**Incertitude centrale** : Les documents de la semaine sont au stade du débat — votes finaux en chambre pas encore enregistrés. La confiance dans les résultats est conditionnelle à la discipline de la coalition et aux éventuelles motions de déviation.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+---
+title: "הדוח השבועי — סקירה שבועית 2026-05-09"
+
+subfolder: weekly-review
+slug: weekly-review-2026-05-09
+language: he
+
+konfidensgrad: MEDIUM-HIGH [B2]
+
+---
+
+# הדוח השבועי — סקירה שבועית 2026-05-09
+
+**סיווג**: PUBLIC | **רמת אמינות**: MEDIUM-HIGH [B2] | **אופק**: T+72h / T+7d
+**מחבר**: מערכת מודיעין AI Riksdagsmonitor | **Riksmöte**: 2025/26
+
+---
+
+### סיכום מנהלים
+
+השבוע שבין 2-9 במאי 2026 הניב אשכול של חוקים מקומיים בתחומי הדיור, החינוך, הרווחה החברתית ושלטון החוק, בעוד שסוגיות מדיניות חוץ חשפו פער חד בין-מפלגתי בנוגע לתפיסת ספינה עם אנשי צוות שוודים בידי ישראל במים הבינלאומיים. עם בחירות שבדיה 2026 כ-16 שבועות בלבד קדימה, כל ויכוח גדול נושא אות קמפיין בחירות מעבר לתכליתו החקיקתית המיידית.
+
+**הערכה מובילה**: קואליציית Tidö (M, SD, KD, L) נכנסת לספרינט חקיקתי שתוכנן לנעול רווחים מדיניים מרכזיים לפני חופשת הקיץ ובחירות ספטמבר 2026. חבילת גמישות שוק הדיור (HD01CU31), רפורמת ההסמכות החינוכית (HD01UbU28) ושיפור כוח האדם לרווחה חברתית (HD01SoU36) מחזקות יחד את הנרטיב של הממשלה על "מסירת רפורמות". עם זאת, תקרית הציי ישראל/עזה (HD11803), פרשת הסרת תאורת הכפר השנויה במחלוקת (HD11801) ושאלת איסור הרעלה שהוביל SD (HD11802) מסכנות לפצל את המסרים הציבוריים של הקואליציה ולהניע את האופוזיציה.
+
+---
+
+### 5 הערכות מובילות
+
+| # | הערכה | אמינות | אופק |
+|---|-------|--------|------|
+| J1 | רפורמת גמישות הדיור HD01CU31 **תשלוט בתקשורת הפוליטית של השבוע** שכן היא משפיעה ישירות על מיליוני שוכרים שוודים; האופוזיציה (S, V, MP) תגביר את הסיכונים לעליית שכירות | HIGH [A2] | T+72h |
+| J2 | HD11803 (ישראל עוצרת אזרחים שוודים) **ילחץ על שר החוץ** להצהרה ציבורית מעבר להליך הפרלמנטרי; דרישה בין-מפלגתית | HIGH [A2] | T+72h |
+| J3 | HD11802 (איסור חיג'אב, SD→L) **חושף עמדות פוליטיות זהות** לפני הבחירות של SD המכוון לרקורד האינטגרציה של L; שרת L מוהמסון מתמודדת עם בחינת אמינות מול הצהרותיה הקודמות | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (כשירויות מורים בבית ספר 10 שנים) **יתמודד עם חיכוכי יישום** — מנהלי בתי ספר חסרים צינור כוח אדם לעמידה בדרישות הכשירות החדשות | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (הסרת תאורת כפר) **יפעיל לחץ מאזורי בחירה כפריים** על נציגי KD ו-C; תמיכת הקואליציה הכפרית היא פגיעות מבנית לפני הבחירות | MEDIUM [B3] | T+7d |
+
+---
+
+### מפת מודיעין מסמכים
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 חשיבות גבוהה"]
+        A["🏠 HD01CU31<br/>גמישות שוק הדיור<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>תפיסה ישראלית<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 בינוני-גבוה"]
+        C["📚 HD01UbU20/28<br/>רפורמת חינוך<br/>[B2] L2"]
+        D["🧕 HD11802<br/>איסור חיג'אב SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>פשע נגד עסקים קטנים<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 בינוני-נמוך"]
+        F["💼 HD01SoU36<br/>עובדי מדינה<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>כללי אכיפה<br/>[B3] L1"]
+        H["🌑 HD11801<br/>תאורת כפר<br/>[B3] L1"]
+        I["💰 HD10480<br/>מגורים לצורכי מס<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>דוח האיחוד הבין-פרלמנטרי<br/>[D2] L0"]
+    end
+    A -->|"סיכון עליית שכירות"| K["בחירות 2026<br/>נרטיב דיור"]
+    B -->|"לחץ דיפלומטי"| L["אמינות מדיניות חוץ"]
+    C -->|"פער כשירויות"| M["סיכון יישום חינוך"]
+    D -->|"עמדת SD"| N["בחינת אמינות L"]
+```
+
+---
+
+### הקשר מאקרו-כלכלי
+
+**קרן המטבע הבינלאומית WEO אפריל-2026 (SWE)** — מצב: מוגבל (WEO/FM Datamapper פועל; SDMX 404):
+- צמיחת תמ"ג 2026: **~1.2%** (ההתאוששות נשארת מדוכאת)
+- אבטלה: **~8.1%** (פלטו מבני מעל לרמה שלפני המגפה)
+- ריבית (Riksbanken): **2.25%** (מחזור הפחתת ריבית יוני 2025 הושלם במידה רבה)
+- יעד גירעון תקציבי: בגבולות הסכם היציבות והצמיחה של האיחוד האירופי
+
+הסביבה הממושכת של צמיחה נמוכה מגבירה את הרלוונטיות הפוליטית של סבירות הדיור (CU31) וקיצוצים בשירותים כפריים (HD11801) מכיוון שההכנסה הפנויה של משקי הבית נשארת תחת לחץ. שאלת הרעלה של SD (HD11802) תוזמנה לקצור חרדת פוליטיקת זהות שמתגברת במחזורי צמיחה נמוכה.
+
+---
+
+### הערכת מודיעין: מדריך קריאה
+
+ניתוח זה מכסה **6 דוחות ועדה** (bet) ו**5 שאלות פרלמנטריות/אינטרפלציות** (fråga/interpellation) מ-Riksmöte 2025/26. כל המסמכים אוחזרו מ-riksdag-regering MCP ב-2026-05-09; נתונים מ-2026-05-08 (חיפוש לאחור ליום אחד). לא נרשמו הצבעות (voteringar) לתאריך זה.
+
+**אי-ודאות מרכזית**: מסמכי השבוע נמצאים בשלב הדיון — הצבעות מליאה סופיות טרם נרשמו. אמינות התוצאה תלויה בדיסציפלינת הקואליציה ובתנועות סטייה פוטנציאליות.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_ja.md -->
+
+**分類**: PUBLIC | **信頼度**: MEDIUM-HIGH [B2] | **時間軸**: T+72h / T+7d
+**著者**: Riksdagsmonitor AI情報システム | **Riksmöte**: 2025/26
+
+---
+
+### エグゼクティブサマリー
+
+2026年5月2日から9日の週は、住宅・教育・社会福祉・法の支配に関する国内法律のクラスターを産み出す一方、外交政策上の問題では、イスラエルが国際水域でスウェーデン人船員を乗せた船舶を拿捕したことをめぐり鋭い超党派の亀裂が浮き彫りとなった。2026年スウェーデン選挙まで約16週間と迫る中、主要な討論はいずれも直接の立法目的を超えた選挙運動上のシグナルを帯びている。
+
+**主要評価**: Tidö連立政権(M, SD, KD, L)は、夏季休暇と2026年9月の選挙の前に主要な政策成果を確保するための立法スプリントに入っている。住宅市場柔軟性パッケージ(HD01CU31)、教育資格改革(HD01UbU28)、社会福祉スタッフ改善(HD01SoU36)は集合的に政府の「改革実施」ナラティブを強化する。しかし、イスラエル/ガザ艦隊事件(HD11803)、農村部照明撤去をめぐる論争(HD11801)、SDが主導するヒジャブ禁止問題(HD11802)は、連立のパブリックメッセージを分断し野党を活性化させるリスクをはらむ。
+
+---
+
+### トップ5評価
+
+| # | 評価 | 信頼度 | 時間軸 |
+|---|------|--------|--------|
+| J1 | 住宅柔軟性改革HD01CU31は数百万人のスウェーデン人賃借人に直接影響するため**週の政治メディアを独占する**見込み；野党(S, V, MP)は家賃上昇リスクを増幅させる | HIGH [A2] | T+72h |
+| J2 | HD11803(イスラエルがスウェーデン国民を拘束)は議会手続きを超えた公式声明を求め**外務大臣に圧力をかける**；超党派的要求 | HIGH [A2] | T+72h |
+| J3 | HD11802(ヒジャブ禁止、SD→L)は選挙前にSDがLの統合実績を狙いとする**アイデンティティ政治的位置取りを露わにする**；L大臣モハムソンが過去の発言との信頼性試験に直面 | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28(10年制学校における教員資格)は**実施の摩擦に直面する** — 学校長は新しい能力要件を満たすための人材パイプラインを欠いている | MEDIUM [B3] | T+7d |
+| J5 | HD11801(農村部照明撤去)は**農村選挙区からKD・C代議士への圧力を活性化させる**；連立の農村支持は選挙前の構造的脆弱性 | MEDIUM [B3] | T+7d |
+
+---
+
+### ドキュメント情報マップ
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 高い重要性"]
+        A["🏠 HD01CU31<br/>住宅市場柔軟性<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>イスラエル拿捕<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 中-高"]
+        C["📚 HD01UbU20/28<br/>教育改革<br/>[B2] L2"]
+        D["🧕 HD11802<br/>ヒジャブ禁止 SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>中小企業に対する犯罪<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 中-低"]
+        F["💼 HD01SoU36<br/>国家職員<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>執行規則<br/>[B3] L1"]
+        H["🌑 HD11801<br/>農村部照明<br/>[B3] L1"]
+        I["💰 HD10480<br/>税務上の住所<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>IPU報告<br/>[D2] L0"]
+    end
+    A -->|"家賃上昇リスク"| K["2026年選挙<br/>住宅ナラティブ"]
+    B -->|"外交的圧力"| L["外交政策の信頼性"]
+    C -->|"能力ギャップ"| M["教育実施リスク"]
+    D -->|"SDの位置取り"| N["Lの信頼性試験"]
+```
+
+---
+
+### マクロ経済的背景
+
+**IMF WEO 2026年4月 (SWE)** — ステータス：低下 (WEO/FM Datamaperは機能；SDMX 404)：
+- GDP成長率2026年：**約1.2%**（回復は引き続き鈍い）
+- 失業率：**約8.1%**（コロナ禍以前の水準を上回る構造的プラトー）
+- 政策金利 (Riksbanken)：**2.25%**（2025年6月の利下げサイクルはほぼ完了）
+- 財政赤字目標：EU安定成長協定の上限内
+
+長引く低成長環境は、家計の可処分所得が依然として圧迫されているため、住宅の手頃さ(CU31)と農村サービスの削減(HD11801)の政治的関連性を増幅させる。SDのヒジャブ問題(HD11802)は、低成長サイクルで強まるアイデンティティ政治の不安を収穫するよう設計されたタイミングとなっている。
+
+---
+
+### 情報評価：読者ガイド
+
+本分析はRiksmöte 2025/26の**委員会報告書6件**(bet)と**国会質問/質疑5件**(fråga/interpellation)を対象とする。すべての文書は2026-05-09にriksdagregeringMCPから取得；データは2026-05-08のもの(1日振り返り)。この日付では投票(voteringar)は記録されていない。
+
+**中心的な不確実性**：今週の文書は審議段階 — 最終的な本会議投票はまだ記録されていない。結果の信頼度は連立の規律と離反動議の可能性に条件付けられている。
+
+---
+
+*出典：riksdag-regering MCP | IMF WEO-2026-04 | Riksdagsmonitor 週次レビュー 2026-05-09*
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_ko.md -->
+
+**분류**: PUBLIC | **신뢰 수준**: MEDIUM-HIGH [B2] | **시간적 지평**: T+72h / T+7d
+**저자**: Riksdagsmonitor AI 정보 시스템 | **Riksmöte**: 2025/26
+
+---
+
+### 경영진 요약
+
+2026년 5월 2일부터 9일까지의 주는 주택, 교육, 사회 복지, 법치주의 분야에서 일련의 국내 법률을 산출했으며, 외교 정책 문제에서는 이스라엘이 국제 수역에서 스웨덴 승무원이 탑승한 선박을 나포한 것에 대해 날카로운 초당적 균열을 드러냈다. 2026년 스웨덴 선거가 약 16주 앞으로 다가온 가운데, 모든 주요 논쟁은 즉각적인 입법 목적을 넘어선 선거 운동 신호를 담고 있다.
+
+**주요 평가**: Tidö 연립정부(M, SD, KD, L)는 여름 방학과 2026년 9월 선거 전에 핵심 정책 성과를 확보하기 위한 입법 스프린트에 돌입하고 있다. 주택 시장 유연성 패키지(HD01CU31), 교육 자격 개혁(HD01UbU28), 사회 복지 인력 개선(HD01SoU36)은 집합적으로 정부의 "개혁 이행" 서사를 강화한다. 그러나 이스라엘/가자 함대 사건(HD11803), 논란이 되는 농촌 조명 제거(HD11801), SD 주도의 히잡 금지 문제(HD11802)는 연립의 공개 메시지를 분열시키고 야당을 활성화할 위험이 있다.
+
+---
+
+### 상위 5개 평가
+
+| # | 평가 | 신뢰도 | 시간적 지평 |
+|---|------|--------|-----------|
+| J1 | 주택 유연성 개혁 HD01CU31은 수백만 스웨덴 세입자에게 직접 영향을 미치므로 **주간 정치 미디어를 장악할 것**; 야당(S, V, MP)은 임대료 상승 위험을 증폭시킬 것 | HIGH [A2] | T+72h |
+| J2 | HD11803(이스라엘, 스웨덴 시민 억류)은 의회 절차를 넘어선 공개 성명을 위해 **외무장관에게 압력을 가할 것**; 초당적 요구 | HIGH [A2] | T+72h |
+| J3 | HD11802(히잡 금지, SD→L)는 선거 전 SD가 L의 통합 실적을 겨냥한 **정체성 정치적 포지셔닝을 드러냄**; L 장관 모함손은 이전 발언에 대한 신뢰성 테스트에 직면 | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28(10년 학교의 교사 자격)은 **구현 마찰에 직면할 것** — 학교장은 새로운 역량 요건을 충족하기 위한 인력 파이프라인이 부족 | MEDIUM [B3] | T+7d |
+| J5 | HD11801(농촌 조명 제거)은 KD 및 C 의원에 대한 **농촌 선거구의 압력을 활성화할 것**; 연립의 농촌 지지는 선거 전 구조적 취약점 | MEDIUM [B3] | T+7d |
+
+---
+
+### 문서 정보 맵
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 높은 중요도"]
+        A["🏠 HD01CU31<br/>주택 시장 유연성<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>이스라엘 나포<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 중-높음"]
+        C["📚 HD01UbU20/28<br/>교육 개혁<br/>[B2] L2"]
+        D["🧕 HD11802<br/>히잡 금지 SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>중소기업 대상 범죄<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 중-낮음"]
+        F["💼 HD01SoU36<br/>국가 인력<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>집행 규정<br/>[B3] L1"]
+        H["🌑 HD11801<br/>농촌 조명<br/>[B3] L1"]
+        I["💰 HD10480<br/>세무 주소<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>IPU 보고서<br/>[D2] L0"]
+    end
+    A -->|"임대료 상승 위험"| K["2026년 선거<br/>주택 서사"]
+    B -->|"외교적 압력"| L["외교 정책 신뢰성"]
+    C -->|"역량 격차"| M["교육 이행 위험"]
+    D -->|"SD 포지셔닝"| N["L 신뢰성 테스트"]
+```
+
+---
+
+### 거시경제적 맥락
+
+**IMF WEO 2026년 4월 (SWE)** — 상태: 저하 (WEO/FM Datamapper 작동; SDMX 404):
+- GDP 성장률 2026년: **약 1.2%** (회복세 계속 둔화)
+- 실업률: **약 8.1%** (코로나19 이전 수준 위 구조적 안정기)
+- 정책 금리 (Riksbanken): **2.25%** (2025년 6월 금리 인하 사이클 대부분 완료)
+- 재정 적자 목표: EU 안정성장협약 한도 내
+
+장기화된 저성장 환경은 가계 가처분 소득이 계속 압박을 받고 있어 주택 가격 접근성(CU31)과 농촌 서비스 삭감(HD11801)의 정치적 관련성을 증폭시킨다. SD의 히잡 문제(HD11802)는 저성장 사이클에서 강화되는 정체성 정치 불안을 수확하도록 설계된 타이밍이다.
+
+---
+
+### 정보 평가: 독자 가이드
+
+본 분석은 Riksmöte 2025/26의 **위원회 보고서 6건**(bet)과 **국회 질문/대정부 질의 5건**(fråga/interpellation)을 다룬다. 모든 문서는 2026-05-09에 riksdag-regering MCP에서 가져옴; 2026-05-08 데이터 (1일 조회). 해당 날짜에 투표(voteringar)는 기록되지 않았다.
+
+**핵심 불확실성**: 이번 주 문서들은 토론 단계 — 최종 본회의 투표가 아직 기록되지 않음. 결과 신뢰도는 연립의 규율과 잠재적 이탈 동의에 조건부.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_nl.md -->
+
+**Classificatie**: PUBLIC | **Betrouwbaarheidsniveau**: MEDIUM-HIGH [B2] | **Horizon**: T+72h / T+7d
+**Auteur**: Riksdagsmonitor AI-inlichtingensysteem | **Riksmöte**: 2025/26
+
+---
+
+### Samenvatting
+
+De week van 2 tot 9 mei 2026 produceerde een cluster van binnenlandse wetten over wonen, onderwijs, sociale zorg en rechtsstaat, terwijl buitenlandspolitieke kwesties een scherpe partijoverschrijdende kloof onthulden over de inbeslagname door Israël van een schip met Zweedse bemanningsleden in internationale wateren. Met de Zweedse verkiezingen van 2026 op ongeveer 16 weken draagt elk groot debat een verkiezingscampagnesignaal voorbij het directe wetgevende doel.
+
+**Hoofdbeoordeling**: De Tidö-coalitie (M, SD, KD, L) treedt een wetgevingssprint in, ontworpen om cruciale politieke winst te verankeren voor de zomervakantie en de verkiezingen van september 2026. Het pakket voor flexibiliteit op de woningmarkt (HD01CU31), de onderwijskwalificatiereform (HD01UbU28) en de verbetering van het sociaalzorgpersoneel (HD01SoU36) versterken collectief het narratief van de regering over "hervormingslevering". De Israël/Gaza-vlootincident (HD11803), de controversiële verwijdering van plattelandsverlichting (HD11801) en de door SD aangedreven sluiervraag (HD11802) riskeren echter de publieke boodschappen van de coalitie te fragmenteren en de oppositie te energiseren.
+
+---
+
+### Top-5 Beoordelingen
+
+| # | Beoordeling | Betrouwbaarheid | Horizon |
+|---|-----------|-----------------|--------|
+| J1 | HD01CU31 woningflexibiliteitshervorming **zal de weekpolitieke media domineren** omdat het direct miljoenen Zweedse huurders treft; de oppositie (S, V, MP) zal huurprijsrisico's versterken | HIGH [A2] | T+72h |
+| J2 | HD11803 (Israël arresteert Zweedse staatsburgers) **zal de minister van Buitenlandse Zaken onder druk zetten** voor een openbare verklaring buiten parlementaire procedure; partijoverschrijdende eis | HIGH [A2] | T+72h |
+| J3 | HD11802 (sluierverbod, SD→L) **onthult identiteitspolitiek positionering** voor de verkiezingen door SD gericht op L's integratiedossier; L-minister Mohamsson staat voor een geloofwaardigheidstest tegen eerdere uitspraken | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (docentkwalificaties in de 10-jarige school) **zal implementatiewrijving ervaren** — schoolbeheerders missen de personeelspipeline om te voldoen aan nieuwe competentievereisten | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (verwijdering plattelandsverlichting) **zal druk van plattelandskiesdistricten energiseren** op KD- en C-volksvertegenwoordigers; de plattelandssteun van de coalitie is een structurele kwetsbaarheid voor de verkiezingen | MEDIUM [B3] | T+7d |
+
+---
+
+### Documentaire Inlichtingenkaart
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 HOGE Significantie"]
+        A["🏠 HD01CU31<br/>Woningmarktflexibiliteit<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>Israëlische inbeslagname<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 MEDIUM-HOOG"]
+        C["📚 HD01UbU20/28<br/>Onderwijshervorming<br/>[B2] L2"]
+        D["🧕 HD11802<br/>Sluierverbod SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>Criminaliteit vs MKB<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 MEDIUM-LAAG"]
+        F["💼 HD01SoU36<br/>Staatspersoneel<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>Handhavingsregels<br/>[B3] L1"]
+        H["🌑 HD11801<br/>Plattelandsverlichting<br/>[B3] L1"]
+        I["💰 HD10480<br/>Belastingdomiciel<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>IPU-rapport<br/>[D2] L0"]
+    end
+    A -->|"Huurprijsrisico"| K["Verkiezingen 2026<br/>Woonnarratief"]
+    B -->|"Diplomatieke druk"| L["Buitenlandpolitieke geloofwaardigheid"]
+    C -->|"Competentiekloof"| M["Onderwijsimplementatierisico"]
+    D -->|"SD-positionering"| N["L geloofwaardigheidstest"]
+```
+
+---
+
+### Macro-economische Context
+
+**IMF WEO apr-2026 (SWE)** — status: gedegradeerd (WEO/FM Datamapper werkt; SDMX 404):
+- BBP-groei 2026: **~1,2%** (herstel blijft gedempt)
+- Werkloosheid: **~8,1%** (structureel plateau boven pre-pandemisch niveau)
+- Beleidsrente (Riksbanken): **2,25%** (renteverlagingscyclus juni 2025 grotendeels voltooid)
+- Begrotingstekortdoel: binnen EU-SGP-grenzen
+
+De aanhoudende laaggroei-omgeving versterkt de politieke relevantie van de betaalbaarheid van woningen (CU31) en bezuinigingen op plattelandsdiensten (HD11801) omdat het beschikbare inkomen van huishoudens onder druk blijft. SD's sluierkwestie (HD11802) is getimed om identiteitspolitieke angst te oogsten die intensiveert in laaggroeicycli.
+
+---
+
+### Inlichtingenbeoordeling: Lezersgids
+
+Deze analyse dekt **6 commissierapporten** (bet) en **5 parlementaire vragen/interpellaties** (fråga/interpellation) uit Riksmöte 2025/26. Alle documenten opgehaald van riksdag-regering MCP op 2026-05-09; data van 2026-05-08 (1-dag lookback). Voor deze datum werden geen stemmen (voteringar) geregistreerd.
+
+**Centrale onzekerheid**: De documenten van de week bevinden zich in het debatsstadium — definitieve kamerstemmingen nog niet geregistreerd. De uitkomstbetrouwbaarheid is afhankelijk van coalitiediscipline en eventuele afwijkingsmotions.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_no.md -->
+
+**Klassifisering**: PUBLIC | **Konfidensgrad**: MEDIUM-HIGH [B2] | **Horisont**: T+72h / T+7d
+**Forfatter**: Riksdagsmonitor AI-etterretningssystem | **Riksmöte**: 2025/26
+
+---
+
+### Sammendrag
+
+Uken 2–9. mai 2026 produserte en klynge av innenrikslover innen bolig, utdanning, sosial velferd og rettsstaten, mens utenrikspolitiske spørsmål avdekket en skarp tverrpartipolitisk kløft om Israels pågripelse av et fartøy med svenske besetningsmedlemmer i internasjonalt farvann. Med det svenske valget 2026 omtrent 16 uker unna bærer enhver stor debatt et valgkampssignal utover sitt umiddelbare lovgivningsmessige formål.
+
+**Ledende vurdering**: Tidö-koalisjonen (M, SD, KD, L) innleder en lovgivningsspurt designet for å låse inn viktige politikkgevinster før sommerferien og valget i september 2026. Boligmarkedsfleksibilitetspakken (HD01CU31), utdanningskvalifikasjonsreformen (HD01UbU28) og forbedringen av sosialomsorgens personale (HD01SoU36) styrker kollektivt regjeringens fortelling om "reformleveranse". Israels/Gazas flotiljeincident (HD11803), kontroversiell fjerning av landsbygdsbelysning (HD11801) og SD-drevet slørforbudsspørsmål (HD11802) risikerer imidlertid å fragmentere koalisjonens offentlige budskap og energisere opposisjonen.
+
+---
+
+### Topp-5 Konklusjoner
+
+| # | Vurdering | Konfidensgrad | Horisont |
+|---|-----------|---------------|---------|
+| J1 | HD01CU31 boligfleksibilitetsreform **vil dominere ukens politiske medier** da den direkte påvirker millioner av svenske leietakere; opposisjonen (S, V, MP) vil forsterke risikoen for leieøkninger | HIGH [A2] | T+72h |
+| J2 | HD11803 (Israel pågripelse av svenske borgere) **vil legge press på utenriksministeren** for å avgi en offentlig uttalelse utover parlamentarisk prosedyre; tverrpartipolitisk krav | HIGH [A2] | T+72h |
+| J3 | HD11802 (slørforbud, SD→L) **avslører identitetspolitisk posisjonering** forut for valget av SD rettet mot L's integrasjonsrekord; L-minister Mohamsson møter en troverdighetstest mot tidligere uttalelser | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (lærerkvalifikasjoner i 10-årig skole) **vil møte implementeringsfriksjon** — skoleledere mangler personalpipeline for å oppfylle nye kompetansekrav | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (fjerning av landsbygdsbelysning) **vil energisere press fra landsbygdsvalgkretser** på KD- og C-stortingsrepresentanter; koalisjonens landsbygdsstøtte er en strukturell sårbarhet forut for valget | MEDIUM [B3] | T+7d |
+
+---
+
+### Dokumentetterretningskart
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 HØY Signifikans"]
+        A["🏠 HD01CU31<br/>Boligmarkedsfleksibilitet<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>Israel-pågripelse<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 MEDIUM-HØY"]
+        C["📚 HD01UbU20/28<br/>Utdanningsreform<br/>[B2] L2"]
+        D["🧕 HD11802<br/>Slørforbud SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>Kriminalitet mot SMB<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 MEDIUM-LAV"]
+        F["💼 HD01SoU36<br/>Statspersonell<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>Håndhevingsregler<br/>[B3] L1"]
+        H["🌑 HD11801<br/>Landsbygdsbelysning<br/>[B3] L1"]
+        I["💰 HD10480<br/>Skattemessig domisil<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>IPU-rapport<br/>[D2] L0"]
+    end
+    A -->|"Leietakerprisprisrisiko"| K["Valg 2026<br/>Boligfortelling"]
+    B -->|"Diplomatisk press"| L["Utenrikspolitisk troverdighet"]
+    C -->|"Kompetansegap"| M["Utdanningsimplementeringsrisiko"]
+    D -->|"SD-posisjonering"| N["L troverdighetstest"]
+```
+
+---
+
+### Makroøkonomisk Kontekst
+
+**IMF WEO apr-2026 (SWE)** — status: degradert (WEO/FM Datamapper fungerer; SDMX 404):
+- BNP-vekst 2026: **~1,2%** (gjenoppretting forblir dempet)
+- Arbeidsledighet: **~8,1%** (strukturelt platå over pre-pandemisk nivå)
+- Rente (Riksbanken): **2,25%** (rentesenkningssyklusen juni 2025 i stor grad fullført)
+- Budsjettunderskuddsmål: innenfor EUs SGP-grenser
+
+Det langvarige layvekstmiljøet forsterker den politiske relevansen av boligtilgjengelighet (CU31) og kutt i landsbygdstjenester (HD11801) fordi husholdningenes disponible inntekt forblir under press. SD's slørforbudsspørsmål (HD11802) er timet til å høste identitetspolitisk angst som intensiveres i layvekstsykluser.
+
+---
+
+### Etterretningsvurdering: Leserveiledning
+
+Denne analysen dekker **6 utvalgsrapporter** (bet) og **5 parlamentariske spørsmål/interpellasjoner** (fråga/interpellation) fra Riksmöte 2025/26. Alle dokumenter hentet fra riksdag-regering MCP 2026-05-09; data fra 2026-05-08 (1-dags lookback). Ingen voteringar registrert for denne datoen.
+
+**Sentral usikkerhet**: Ukens dokumenter er i debattstadiet — endelige kammeravstemninger ikke ennå registrert. Utfallskonfidansen er betinget av koalisjonsdisiplin og eventuelle avvikelsesmotioner.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_sv.md -->
+
+**Klassificering**: PUBLIC | **Konfidensgrad**: MEDIUM-HIGH [B2] | **Horisont**: T+72h / T+7d
+**Författare**: Riksdagsmonitor AI-underrättelsetjänst | **Riksmöte**: 2025/26
+
+---
+
+### Sammanfattning
+
+Veckan 2–9 maj 2026 genererade en kluster av inrikeslagstiftning inom bostad, utbildning, socialt välfärd och rättsstatsprincipen, medan utrikespolitiska frågor exponerade en skarp partiovergripande klyfta kring Israels ingripande mot ett fartyg med svenska besättningsmedlemmar på internationellt vatten. Med det allmänna valet 2026 ungefär 16 veckor bort bär varje stor debatt ett valdelsignal bortom sitt omedelbara lagstiftningssyfte.
+
+**Ledande bedömning**: Tidö-koalitionen (M, SD, KD, L) inleder ett lagstiftningsspurt för att befästa nyckelreformer inför sommaruppehållet och valet i september 2026. Bostadsmarknadsflexibilitetspaketet (HD01CU31), reformen av lärarutbildningsbehörighet (HD01UbU28) och förbättringen av socialtjänstpersonal (HD01SoU36) förstärker kollektivt regeringens berättelse om "reformleverans". Dock riskerar Israels/Gazas flottiljeincident (HD11803), landsbygdslysningskontroversin (HD11801) och den SD-drivna slöjbansfrågan (HD11802) att fragmentera koalitionens offentliga budskap och energisera oppositionen.
+
+---
+
+### Topp-5 Slutsatser
+
+| # | Bedömning | Konfidensgrad | Horisont |
+|---|-----------|---------------|---------|
+| J1 | HD01CU31 bostadsflexibilitetsreform **kommer att dominera veckans politiska media** eftersom den direkt påverkar miljontals svenska hyresgäster; oppositionen (S, V, MP) kommer att förstärka riskerna för hyreshöjningar | HIGH [A2] | T+72h |
+| J2 | HD11803 (Israel ingrep mot svenska medborgare) **kommer att sätta press på utrikesministern** att göra ett offentligt uttalande bortom parlamentarisk procedur; kravet från partierna är tvåpartistiskt | HIGH [A2] | T+72h |
+| J3 | HD11802 (slöjförbud, SD→L) **avslöjar identitetspolitisk positionering** inför valet av SD som riktar sig mot L:s integrationsrekord; L-minister Mohamsson möter ett trovärdighetstest mot tidigare uttalanden | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28 (lärarbehörighet i 10-årig skola) **möter implementationsfriktioner** — skolhuvudmän saknar personalpipeline för att möta nya kompetenskrav | MEDIUM [B3] | T+7d |
+| J5 | HD11801 (borttagning av landsbygdsbelysning) **energiserar landsbygdskonstituenstrycket** på KD- och C-riksdagsledamöter; koalitionens landsbygdsstöd är en strukturell sårbarhet inför valet | MEDIUM [B3] | T+7d |
+
+---
+
+### Dokumentunderrättelsekarta
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 HÖG Signifikans"]
+        A["🏠 HD01CU31<br/>Bostadsmarknadsflexibilitet<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>Israel-ingripande<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 MEDIUM-HÖG"]
+        C["📚 HD01UbU20/28<br/>Utbildningsreform<br/>[B2] L2"]
+        D["🧕 HD11802<br/>Slöjförbud SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>Brott mot SMF<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 MEDIUM-LÅG"]
+        F["💼 HD01SoU36<br/>Statspersonal<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>Verkställighetsregler<br/>[B3] L1"]
+        H["🌑 HD11801<br/>Landsbygdsbelysning<br/>[B3] L1"]
+        I["💰 HD10480<br/>Skatteresidensrätt<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>IPU-rapport<br/>[D2] L0"]
+    end
+    A -->|"Hyresgästprisrisk"| K["Val 2026<br/>Bostadsnarrativ"]
+    B -->|"Diplomatiskt tryck"| L["Utrikespolitisk trovärdighet"]
+    C -->|"Kompetenslucka"| M["Utbildningsimplementeringsrisk"]
+    D -->|"SD-positionering"| N["L trovärdighetstest"]
+```
+
+---
+
+### Makroekonomisk Kontext
+
+**IMF WEO apr-2026 (SWE)** — status: degraderat (WEO/FM Datamapper fungerar; SDMX 404):
+- BNP-tillväxt 2026: **~1,2%** (återhämtningen förblir dämpad)
+- Arbetslöshet: **~8,1%** (strukturellt platå ovan pre-pandemisk nivå)
+- Styrränta (Riksbanken): **2,25%** (räntesänkningscykeln juni 2025 i princip slutförd)
+- Budgetunderskottsmål: inom EU:s SGP-gränser
+
+Den utdragna lågkonjunkturmiljön förstärker den politiska relevansen av bostadsöverkomlighet (CU31) och nedskärningar av landsbygdstjänster (HD11801) eftersom hushållens disponibla inkomster förblir under press. SD:s slöjbansfråga (HD11802) är planerad för att skörda identitetspolitiska ångesterierna som intensifieras i lågkonjunkturcykler.
+
+---
+
+### Underrättelsebedömning: Läsguide
+
+Denna analys täcker **6 utskottsbetänkanden** (bet) och **5 parlamentariska frågor/interpellationer** (fråga/interpellation) från Riksmöte 2025/26. Alla dokument hämtade från riksdag-regering MCP den 2026-05-09; data från 2026-05-08 (1-dags lookback). Inga omröstningar (voteringar) registrerades för detta datum.
+
+**Central osäkerhet**: Veckans dokument är debattstadiet utskottsbetänkanden — slutomröstningar i kammaren ännu ej registrerade. Utfallskonfidensen är betingad av koalitionsdisciplin och eventuella avvikelsemotioner.
+
+---
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_zh.md -->
+
+**分类**: PUBLIC | **置信度**: MEDIUM-HIGH [B2] | **时间维度**: T+72h / T+7d
+**作者**: Riksdagsmonitor AI情报系统 | **Riksmöte**: 2025/26
+
+---
+
+### 执行摘要
+
+2026年5月2日至9日这一周产生了一批住房、教育、社会福利和法治领域的国内法律，与此同时，外交政策问题揭示了各党派之间的尖锐分歧——以色列在国际水域扣押了一艘载有瑞典船员的船只。随着2026年瑞典大选仅剩约16周，每一场重大辩论都承载着超越其直接立法目的的选举运动信号。
+
+**主要评估**: Tidö联合政府(M, SD, KD, L)正在进入一场立法冲刺，旨在在暑假和2026年9月大选前锁定关键政策成果。住房市场灵活性方案(HD01CU31)、教育资格改革(HD01UbU28)和社会福利人员改善(HD01SoU36)共同强化了政府"落实改革"的叙事。然而，以色列/加沙舰队事件(HD11803)、农村照明撤除争议(HD11801)以及由SD推动的头巾禁令问题(HD11802)可能使联合政府的公开信息支离破碎，并激活反对派。
+
+---
+
+### 五大核心评估
+
+| # | 评估 | 置信度 | 时间维度 |
+|---|------|--------|---------|
+| J1 | 住房灵活性改革HD01CU31将**主导本周政治媒体**，因为它直接影响数百万瑞典租客；反对党(S, V, MP)将放大租金上涨风险 | HIGH [A2] | T+72h |
+| J2 | HD11803(以色列逮捕瑞典公民)将**向外交部长施压**要求发表超越议会程序的公开声明；跨党派要求 | HIGH [A2] | T+72h |
+| J3 | HD11802(头巾禁令，SD→L)在选举前**揭示SD针对L整合记录的身份政治定位**；L部长莫哈姆森面临与此前声明相悖的信任测试 | MEDIUM [B3] | T+7d |
+| J4 | HD01UbU28(10年制学校教师资格)将**面临实施阻力** — 学校校长缺乏满足新能力要求的人员储备 | MEDIUM [B3] | T+7d |
+| J5 | HD11801(撤除农村照明)将**激活农村选区对KD和C议员的压力**；联合政府的农村支持是选举前的结构性弱点 | MEDIUM [B3] | T+7d |
+
+---
+
+### 文档情报地图
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart LR
+    subgraph HIGH["🔴 高重要性"]
+        A["🏠 HD01CU31<br/>住房市场灵活性<br/>[A2] L2+"]
+        B["🌍 HD11803<br/>以色列扣押<br/>[A2] L2+"]
+    end
+    subgraph MED["🟡 中高"]
+        C["📚 HD01UbU20/28<br/>教育改革<br/>[B2] L2"]
+        D["🧕 HD11802<br/>头巾禁令 SD→L<br/>[B3] L2"]
+        E["🔒 HD11800<br/>针对中小企业犯罪<br/>[B3] L1+"]
+    end
+    subgraph LOW["🟢 中低"]
+        F["💼 HD01SoU36<br/>国家人员<br/>[B3] L1+"]
+        G["⚖️ HD01CU34<br/>执法规则<br/>[B3] L1"]
+        H["🌑 HD11801<br/>农村照明<br/>[B3] L1"]
+        I["💰 HD10480<br/>税务住所<br/>[C2] L1"]
+        J["🌐 HD01UU13<br/>各国议会联盟报告<br/>[D2] L0"]
+    end
+    A -->|"租金上涨风险"| K["2026年大选<br/>住房叙事"]
+    B -->|"外交压力"| L["外交政策公信力"]
+    C -->|"能力缺口"| M["教育落实风险"]
+    D -->|"SD定位"| N["L公信力测试"]
+```
+
+---
+
+### 宏观经济背景
+
+**IMF WEO 2026年4月 (SWE)** — 状态：降级 (WEO/FM Datamapper运行；SDMX 404)：
+- GDP增长率2026年：**约1.2%**（复苏持续低迷）
+- 失业率：**约8.1%**（结构性平台期，高于疫情前水平）
+- 政策利率 (Riksbanken)：**2.25%**（2025年6月降息周期基本完成）
+- 财政赤字目标：在欧盟稳定与增长公约限度内
+
+长期低增长环境放大了住房可负担性(CU31)和农村服务削减(HD11801)的政治关联性，因为家庭可支配收入持续承压。SD的头巾问题(HD11802)的时机安排旨在收获在低增长周期中加剧的身份政治焦虑。
+
+---
+
+### 情报评估：阅读指南
+
+本分析涵盖Riksmöte 2025/26的**6份委员会报告**(bet)和**5个议会问题/质询**(fråga/interpellation)。所有文件于2026-05-09从riksdag-regering MCP获取；数据为2026-05-08的(1天回溯)。该日期未记录投票(voteringar)。
+
+**核心不确定性**：本周文件处于辩论阶段 — 最终全体投票尚未记录。结果置信度取决于联合政府纪律和潜在的偏离动议。
+
+---
+
+*来源：riksdag-regering MCP | IMF WEO-2026-04 | Riksdagsmonitor 每周审查 2026-05-09*
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 11 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2883,6 +3942,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

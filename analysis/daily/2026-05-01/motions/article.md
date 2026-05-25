@@ -3,7 +3,7 @@ date: 2026-05-01
 subfolder: motions
 slug: 2026-05-01-motions
 source_folder: analysis/daily/2026-05-01/motions
-generated_at: 2026-05-25T09:05:41.121Z
+generated_at: 2026-05-25T15:59:53.144Z
 language: en
 layout: article
 ---

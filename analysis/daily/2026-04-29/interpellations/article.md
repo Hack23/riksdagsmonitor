@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: interpellations
 slug: 2026-04-29-interpellations
 source_folder: analysis/daily/2026-04-29/interpellations
-generated_at: 2026-05-25T09:05:40.942Z
+generated_at: 2026-05-25T15:59:52.957Z
 language: en
 layout: article
 ---

@@ -3,7 +3,7 @@ date: 2026-05-08
 subfolder: propositions
 slug: 2026-05-08-propositions
 source_folder: analysis/daily/2026-05-08/propositions
-generated_at: 2026-05-25T09:05:41.648Z
+generated_at: 2026-05-25T15:59:53.673Z
 language: en
 layout: article
 ---
@@ -85,6 +85,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2416,13 +2429,755 @@ This analysis follows `analysis/methodologies/ai-driven-analysis-guide.md`:
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-05-07 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_ar.md -->
+
+&#x200F;# ملخص تنفيذي — مقترحات الحكومة 2026-05-08
+
+**التصنيف**: B2 (صحيح على الأرجح / موثوق) | **WEP**: شبه مؤكد (AC، 90–95 %)  
+**DIW المركّب**: 10.0/10 (معدَّل لعام الانتخابات)  
+**المحلل**: تحليل استخباراتي سياسي بالذكاء الاصطناعي  
+**التاريخ**: 2026-05-08  
+
+---
+
+### ملخص في فقرة واحدة
+
+في 7 مايو 2026، قدّمت حكومة تيدو (M–SD–KD–L) ثلاثة مقترحات تشريعية متشابكة تهدف مجتمعةً إلى تعزيز **بنية تحتية رقمية أمنية حكومية** ذات تداعيات بالغة على الحريات المدنية. *Prop. 2025/26:267* يعزّز صلاحيات الاحتجاز والترحيل للأجانب الذين يُعدّون تهديدات أمنية مؤهَّلة، ويخفّض عتبة الإثبات ويمدّد فترة الاحتجاز القصوى قبل الترحيل وفق `lag (2022:700) om särskild kontroll av vissa utlänningar`. *Prop. 2025/26:250* يُنشئ إطاراً قانونياً جديداً لهوية إلكترونية حكومية (e-legitimation)، مؤسِّساً أول طبقة هوية رقمية سيادية للمقيمين في السويد. *Prop. 2025/26:261* يوسّع صلاحيات Skatteverket في التحقيق ومطابقة البيانات في سجل السكان (folkbokföring). وتمثّل هذه المقترحات مجتمعةً تسريعاً انتخابياً لالتزامات التحالف بالأمن والتحوّل الرقمي، ومن المرجح أن تستنهض معارضة S/V/MP على أسس حقوقية بينما ترحّب M و KD و L بها ترحيباً إيجابياً.
+
+---
+
+### الإجراءات الثلاثة
+
+#### الإجراء الأول — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **الماهية**: تعديل `lag (2022:700)` — عتبة إثبات أدنى للاحتجاز؛ فترات قصوى ممدَّدة؛ معايير ترحيل أكثر صرامة؛ عقوبات أشدّ على مخالفات بعينها.
+- **الوزير**: Gunnar Strömmer (M)، Justitiedepartementet
+- **اللجنة**: JuU
+- **النفاذ**: 1 مارس 2027
+- **الأهمية الانتخابية**: عالية — الهجرة/الأمن هو ساحة المعركة الانتخابية الفاصلة. تعزيز قاعدة SD؛ تصلّب M لليمين المعتدل؛ منافسة مباشرة مع S على القيم.
+- **مخاطر الحقوق المدنية**: الاحتجاز دون إدانة كاملة يثير تساؤلات بشأن المادة 5 من الاتفاقية الأوروبية لحقوق الإنسان؛ يُرجَّح أن تردّ منظمات حقوقية عدة (UNHCR، Civil Rights Defenders).
+
+#### الإجراء الثاني — En statlig e-legitimation (HD03250)
+- **الماهية**: قانون جديد يُنشئ بنية تحتية حكومية للهوية الرقمية؛ يسدّ الفراغ الذي أوجده هيمنة BankID على الهوية الرقمية في السويد.
+- **الوزير**: Erik Slottner (KD)، Finansdepartementet
+- **اللجنة**: TU
+- **الأهمية**: بنيوية — تمسّ جميع المقيمين في السويد؛ تقلّل الاعتماد على القطاع الخاص؛ احتمال تغيير في بنية بيانات الخصوصية وفق اللائحة الأوروبية GDPR.
+- **الأهمية الانتخابية**: متوسطة — قدرة الحكومة الرقمية ميزة دعائية للحكومة؛ جدل حزبي محدود.
+
+#### الإجراء الثالث — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **الماهية**: توسيع صلاحيات Skatteverket للتحقيق ومطابقة بيانات الأفراد في سجل السكان؛ يهدف إلى مكافحة التسجيل الاحتيالي والتلاعب بالهوية.
+- **الوزير**: Niklas Wykman (M)، Finansdepartementet
+- **اللجنة**: SkU
+- **الأهمية**: متوسطة–عالية — توسّع ملحوظ في قدرات المراقبة الإدارية؛ يُقدَّم بوصفه مكافحة للاحتيال لكنه يوسّع عملياً إنشاء ملفات البيانات.
+
+---
+
+### خلاصة القول
+
+تستغلّ حكومة تيدو فترة التشريع المكثّف الأخيرة قبيل انتخابات سبتمبر 2026 لترسيخ أجندة أمن صارم وسيادة رقمية حكومية. تمثّل المقترحات الثلاثة مجتمعةً أطموح توسّع في البنية التحتية لهوية ومراقبة الدولة السويدية منذ حزمة إصلاحات SÄPO في أعقاب الحادي عشر من سبتمبر (2001–2004). بخلاف إصلاحات 2001–2004 التي حازت توافقاً حزبياً واسعاً (S+M+C+KD)، تفتقر هذه المشاريع إلى دعم المعارضة على الأحكام المدنية الجوهرية، مما يُنشئ مخاطر تراجع في حال تشكيل الوسط اليساري حكومةً. توقّعوا **معارضة لجان قوية من S و V و MP** لكن قدرة محدودة على الحجب في ضوء الأغلبية التيدوية في JuU و SkU و TU. الاختبار القانوني الفاصل هو رأي Lagrådets في HD03267 — رأي سلبي صريح سيكون الحدث الأكثر أثراً في التقويم التشريعي القريب.
+
+---
+
+### مؤشرات مفتاحية للمتابعة
+
+1. جلسات استماع لجنة JuU بشأن HD03267 — مقترحات المعارضة مقدَّمة قبل 15 مايو
+2. ردود استشارية من Advokatsamfundet وAmnesty على أحكام الاحتجاز
+3. ردّ فعل BankID العلني على مقترح الهوية الإلكترونية الحكومية
+4. تقييم التوافق مع المادة 5 من الاتفاقية الأوروبية لحقوق الإنسان في lagrådsremiss
+5. رسائل SD بشأن HD03267 — يختبر ما إذا كانت SD ستقدّمه إنجازاً لها أم للتحالف
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_da.md -->
+
+**Klassificering**: B2 (Sandsynligvis sandt / Pålidelig) | **WEP**: Næsten sikkert (AC, 90–95 %)  
+**DIW Sammensat**: 10,0/10 (valgårs-justeret)  
+**Analytiker**: AI politisk efterretningssyntese  
+**Dato**: 2026-05-08  
+
+---
+
+### Resumé i ét afsnit
+
+Den 7. maj 2026 fremlagde Tidö-regeringen (M–SD–KD–L) tre indbyrdes forbundne forslag, der samlet fremmer en **statslig digital sikkerhedsarkitektur** med betydelige konsekvenser for borgerrettighederne. *Prop. 2025/26:267* styrker tilbageholdelse og udvisningskompetencer over for udlændinge, der anses for at udgøre kvalificerede sikkerhedstrusler, sænker bevisbyrden og forlænger den maksimale tilbageholdelsesperiode inden udvisning i henhold til `lag (2022:700) om särskild kontroll av vissa utlänningar`. *Prop. 2025/26:250* etablerer en ny lovmæssig ramme for en statsudstedt e-legitimation og skaber det første suveræne digitale identitetslag for svenske borgere. *Prop. 2025/26:261* udvider Skatteverkets undersøgelses- og datamatchningskompetencer inden for folkeregistrering (folkbokföring). Tilsammen signalerer disse forslag en valgårsacceleration af Tidö-koalitionens forpligtelser inden for sikkerhed og digitalisering, hvilket sandsynligvis vil møde opposition fra S/V/MP af borgerretlige grunde, mens M, KD og L overvejende vil modtage det positivt.
+
+---
+
+### De tre tiltag
+
+#### Tiltag 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **Hvad**: Ændrer `lag (2022:700)` — lavere bevistærskel for tilbageholdelse; forlængede maksimumsperioder; skærpede udvisningskriterier; højere sanktioner ved visse overtrædelser.
+- **Minister**: Gunnar Strömmer (M), Justitiedepartementet
+- **Udvalg**: JuU
+- **Ikrafttrædelse**: 1. marts 2027
+- **Valgpolitisk betydning**: HØJ — migration/sikkerhed er det afgørende valgkampemne. SD's basiskonsolidering; M's centerhøjre-hærdning; direkte konkurrence med S om værdier.
+- **Borgerretlig risiko**: Tilbageholdelse uden fuld domfældelse rejser ECHR art. 5-spørgsmål; adskillige menneskerettighedsorganisationer (UNHCR, Civil Rights Defenders) forventes at reagere.
+
+#### Tiltag 2 — En statlig e-legitimation (HD03250)
+- **Hvad**: Ny lov om statslig e-ID-infrastruktur; adresserer det hul, som BankID's dominans af digital identitet i Sverige har efterladt.
+- **Minister**: Erik Slottner (KD), Finansdepartementet
+- **Udvalg**: TU
+- **Betydning**: Strukturel — påvirker alle svenske borgere; reducerer afhængighed af den private sektor; potentielle GDPR/fortroligheds-arkitekturændringer.
+- **Valgpolitisk betydning**: MIDDEL — digital forvaltningskapacitet er en regeringsprofilering; begrænset partipolitisk kontrovers.
+
+#### Tiltag 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **Hvad**: Udvider Skatteverkets beføjelser til at undersøge og datamatch­e enkeltpersoner i folkeregisteret; sigtet mod at bekæmpe svigagtig registrering og identitetsmanipulation.
+- **Minister**: Niklas Wykman (M), Finansdepartementet
+- **Udvalg**: SkU
+- **Betydning**: MIDDEL–HØJ — betydelig udvidelse af den administrative overvågningskapacitet; fremstillet som svigbekæmpelse, men udvider funktionelt dataprofileringskompetencen.
+
+---
+
+### Konklusion
+
+Tidö-regeringen udnytter den sidste lovgivningssprint inden valget i september 2026 til at befæste en dagsorden for hård sikkerhedspolitik og statslig digital suverænitet. De tre forslag repræsenterer tilsammen den mest ambitiøse udvidelse af den svenske stats identitets- og sikkerhedsovervågningsinfrastruktur siden SÄPO-reformpakken efter 11. september (2001–2004). I modsætning til 2001–2004-reformerne, der opnåede bred partikonsensus (S+M+C+KD), mangler disse lovforslag oppositionsstøtte til de centrale borgerretlige bestemmelser — hvilket skaber risiko for tilbagerulning, hvis centrum-venstre danner regering. Forvent **stærk udvalgsopposition fra S, V, MP** men begrænset evne til at blokere i betragtning af Tidö-flertallet i JuU, SkU og TU. Den afgørende juridiske prøve vil være Lagrådets udtalelse om HD03267 — en stærkt negativ udtalelse ville være den enkelt mest afgørende begivenhed i den nærmeste lovgivningskalender.
+
+---
+
+### Nøgleindikatorer at følge
+
+1. JuU-udvalgets høringer om HD03267 — oppositionsmotioner indgivet inden 15. maj
+2. Høringssvar fra Advokatsamfundet og Amnesty om tilbageholdelsesbestemmelserne
+3. BankID's offentlige reaktion på forslaget om statslig e-legitimation
+4. ECHR art. 5-kompatibilitetsvurdering i lagrådsremissen
+5. SD's kommunikation om HD03267 — tester om SD fremstiller det som partiets eller koalitionens sejr
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_de.md -->
+
+**Klassifizierung**: B2 (Wahrscheinlich wahr / Zuverlässig) | **WEP**: Nahezu sicher (AC, 90–95 %)  
+**DIW Gesamt**: 10,0/10 (wahljahrsbereinigt)  
+**Analytiker**: KI-politische Geheimdienstsynthese  
+**Datum**: 2026-05-08  
+
+---
+
+### Zusammenfassung in einem Absatz
+
+Am 7. Mai 2026 legte die Tidö-Regierung (M–SD–KD–L) drei miteinander verknüpfte Gesetzesvorlagen vor, die gemeinsam eine **staatliche digitale Sicherheitsarchitektur** mit erheblichen Auswirkungen auf die bürgerlichen Freiheiten vorantreiben. *Prop. 2025/26:267* stärkt Inhaftierungs- und Ausweisungsbefugnisse gegenüber Ausländern, die als qualifizierte Sicherheitsbedrohungen eingestuft werden, senkt die Beweisschwelle und verlängert die maximale Vorabschiebungshaft gemäß `lag (2022:700) om särskild kontroll av vissa utlänningar`. *Prop. 2025/26:250* schafft einen neuen gesetzlichen Rahmen für eine staatliche E-Legitimation und errichtet die erste souveräne digitale Identitätsschicht für schwedische Einwohner. *Prop. 2025/26:261* erweitert die Ermittlungs- und Datenbankabgleichsbefugnisse von Skatteverket im Bereich der Einwohnermelderegistrierung (folkbokföring). Zusammen signalisieren diese Vorlagen eine wahljahrsmäßige Beschleunigung der Tidö-Koalitionsverpflichtungen zu Sicherheit und Digitalisierung, was voraussichtlich Widerstand von S/V/MP aus bürgerrechtlichen Gründen provozieren wird, während M, KD und L überwiegend positiv reagieren werden.
+
+---
+
+### Die drei Maßnahmen
+
+#### Maßnahme 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **Was**: Ändert `lag (2022:700)` — niedrigere Beweisschwelle für Inhaftierung; verlängerte Höchstfristen; verschärfte Ausweisungskriterien; höhere Strafen bei bestimmten Verstößen.
+- **Minister**: Gunnar Strömmer (M), Justitiedepartementet
+- **Ausschuss**: JuU
+- **Inkrafttreten**: 1. März 2027
+- **Wahlpolitische Bedeutung**: HOCH — Migration/Sicherheit ist das entscheidende Wahlkampfthema. SD-Basiskonsolidierung; M-Rechtshärtung; direkter Wettbewerb mit S um Werte.
+- **Bürgerrechtliches Risiko**: Inhaftierung ohne vollständige Verurteilung wirft EMRK Art. 5-Fragen auf; mehrere Menschenrechtsorganisationen (UNHCR, Civil Rights Defenders) werden voraussichtlich reagieren.
+
+#### Maßnahme 2 — En statlig e-legitimation (HD03250)
+- **Was**: Neues Gesetz zur staatlichen E-ID-Infrastruktur; schließt die Lücke, die BankIDs Dominanz bei der digitalen Identität in Schweden hinterlassen hat.
+- **Minister**: Erik Slottner (KD), Finansdepartementet
+- **Ausschuss**: TU
+- **Bedeutung**: Strukturell — betrifft alle schwedischen Einwohner; verringert die Abhängigkeit vom privaten Sektor; potenzielle DSGVO/Datenschutz-Architekturänderung.
+- **Wahlpolitische Bedeutung**: MITTEL — digitale Verwaltungskapazität ist ein Regierungsmarkenzeichen; begrenzte parteipolitische Kontroverse.
+
+#### Maßnahme 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **Was**: Erweitert Skatteverkets Befugnisse zur Untersuchung und zum Datenabgleich von Personen im Einwohnerregister; zielt auf die Bekämpfung betrügerischer Registrierung und Identitätsmanipulation ab.
+- **Minister**: Niklas Wykman (M), Finansdepartementet
+- **Ausschuss**: SkU
+- **Bedeutung**: MITTEL–HOCH — erhebliche Ausweitung der administrativen Überwachungskapazität; als Betrugsbekämpfung dargestellt, erweitert aber funktional die Datenprofilerstellung.
+
+---
+
+### Fazit
+
+Die Tidö-Regierung nutzt den letzten Gesetzgebungssprint vor der Wahl im September 2026, um eine Agenda für harte Sicherheitspolitik und staatliche digitale Souveränität zu festigen. Die drei Vorlagen zusammen stellen die ehrgeizigste Ausweitung der schwedischen staatlichen Identitäts- und Sicherheitsüberwachungsinfrastruktur seit dem SÄPO-Reformpaket nach dem 11. September (2001–2004) dar. Im Gegensatz zu den Reformen von 2001–2004, die einen breiten Parteienkonsens (S+M+C+KD) erzielten, fehlt diesen Gesetzentwürfen die Unterstützung der Opposition bei den zentralen bürgerrechtlichen Bestimmungen — was ein Rücknahmerisiko schafft, falls das Mitte-Links-Lager eine Regierung bildet. Erwarte **starke Ausschussopposition von S, V, MP**, aber begrenzte Blockierungsfähigkeit angesichts der Tidö-Mehrheit in JuU, SkU und TU. Der entscheidende Rechtstest wird das Gutachten des Lagrådets zu HD03267 sein — ein stark negatives Gutachten wäre das bei weitem folgenreichste Ereignis im unmittelbaren Gesetzgebungskalender.
+
+---
+
+### Schlüsselindikatoren
+
+1. JuU-Ausschussanhörungen zu HD03267 — Oppositionsanträge bis 15. Mai eingereicht
+2. Stellungnahmen von Advokatsamfundet und Amnesty zu den Haftbestimmungen
+3. BankIDs öffentliche Reaktion auf den Vorschlag zur staatlichen E-Legitimation
+4. EMRK Art. 5-Kompatibilitätsbewertung in der lagrådsremiss
+5. SD-Kommunikation zu HD03267 — testet, ob SD es als Partei- oder Koalitionserfolg darstellt
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_es.md -->
+
+**Clasificación**: B2 (Probablemente verdadero / Fiable) | **WEP**: Casi con certeza (AC, 90–95 %)  
+**DIW Compuesto**: 10,0/10 (ajustado por año electoral)  
+**Analista**: Síntesis de inteligencia política por IA  
+**Fecha**: 2026-05-08  
+
+---
+
+### Resumen en un párrafo
+
+El 7 de mayo de 2026, el gobierno Tidö (M–SD–KD–L) presentó tres proposiciones interrelacionadas que impulsan colectivamente una **arquitectura de seguridad digital estatal** con importantes implicaciones para las libertades civiles. *Prop. 2025/26:267* refuerza los poderes de detención y expulsión de extranjeros considerados amenazas de seguridad cualificadas, reduciendo el umbral probatorio y ampliando el período máximo de detención previa a la expulsión en virtud de `lag (2022:700) om särskild kontroll av vissa utlänningar`. *Prop. 2025/26:250* establece un nuevo marco legal para una e-legitimación estatal, creando la primera capa de identidad digital soberana para los residentes suecos. *Prop. 2025/26:261* amplía los poderes de investigación y cotejo de datos de Skatteverket en el registro de población (folkbokföring). En conjunto, estas proposiciones señalan una aceleración electoral de los compromisos de la coalición Tidö en seguridad y digitalización, que probablemente provocará oposición de S/V/MP por motivos de libertades civiles, mientras que M, KD y L las recibirán favorablemente.
+
+---
+
+### Las tres medidas
+
+#### Medida 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **Qué**: Modifica `lag (2022:700)` — umbral probatorio más bajo para la detención; períodos máximos ampliados; criterios de expulsión endurecidos; mayores sanciones por determinadas infracciones.
+- **Ministro**: Gunnar Strömmer (M), Justitiedepartementet
+- **Comisión**: JuU
+- **Entrada en vigor**: 1 de marzo de 2027
+- **Relevancia electoral**: ALTA — migración/seguridad es el campo de batalla electoral definitorio. Consolidación de la base de SD; endurecimiento de centro-derecha de M; competencia directa con S en valores.
+- **Riesgo para las libertades civiles**: La detención sin condena plena plantea cuestiones conforme al art. 5 del CEDH; es probable que varias organizaciones de derechos humanos (UNHCR, Civil Rights Defenders) respondan.
+
+#### Medida 2 — En statlig e-legitimation (HD03250)
+- **Qué**: Nueva ley que crea una infraestructura estatal de identidad digital; aborda el vacío dejado por el dominio de BankID en la identidad digital sueca.
+- **Ministro**: Erik Slottner (KD), Finansdepartementet
+- **Comisión**: TU
+- **Importancia**: Estructural — afecta a todos los residentes suecos; reduce la dependencia del sector privado; posible cambio en la arquitectura de protección de datos conforme al RGPD.
+- **Relevancia electoral**: MEDIA — la capacidad de gobierno digital es un activo de marca del gobierno; controversia partidista limitada.
+
+#### Medida 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **Qué**: Amplía los poderes de Skatteverket para investigar y cotejar datos de individuos en el padrón municipal; orientado a combatir el registro fraudulento y la manipulación de identidad.
+- **Ministro**: Niklas Wykman (M), Finansdepartementet
+- **Comisión**: SkU
+- **Importancia**: MEDIA–ALTA — expansión significativa de la capacidad de vigilancia administrativa; presentada como lucha contra el fraude, pero amplía funcionalmente la elaboración de perfiles de datos.
+
+---
+
+### Conclusión
+
+El gobierno Tidö aprovecha el último sprint legislativo antes de las elecciones de septiembre de 2026 para consolidar una agenda de seguridad dura y soberanía digital estatal. Las tres proposiciones representan conjuntamente la expansión más ambiciosa de la infraestructura sueca de identidad y vigilancia de seguridad estatal desde el paquete de reformas de la SÄPO tras el 11 de septiembre (2001–2004). A diferencia de las reformas de 2001–2004, que lograron un amplio consenso partidista (S+M+C+KD), estos proyectos de ley carecen del apoyo de la oposición en las disposiciones clave sobre libertades civiles, lo que crea riesgo de reversión si el centro-izquierda forma gobierno. Cabe esperar **una fuerte oposición en comisión de S, V, MP** pero una capacidad limitada para bloquear dado que la mayoría Tidö controla JuU, SkU y TU. La prueba jurídica decisiva será el dictamen del Lagrådet sobre HD03267 — un dictamen fuertemente negativo sería el acontecimiento más determinante en el próximo calendario legislativo.
+
+---
+
+### Indicadores clave a seguir
+
+1. Audiencias de la comisión JuU sobre HD03267 — mociones de oposición presentadas antes del 15 de mayo
+2. Respuestas en consulta de Advokatsamfundet y Amnesty sobre las disposiciones de detención
+3. Reacción pública de BankID ante la propuesta de e-legitimación estatal
+4. Evaluación de compatibilidad con el art. 5 del CEDH en la lagrådsremiss
+5. Comunicación de SD sobre HD03267 — pondrá a prueba si SD lo presenta como logro propio o de la coalición
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_fi.md -->
+
+**Luokitus**: B2 (Todennäköisesti totta / Luotettava) | **WEP**: Lähes varmasti (AC, 90–95 %)  
+**DIW Yhdistetty**: 10,0/10 (vaalivuosipainotettu)  
+**Analyytikko**: AI poliittinen tiedustelusynteesi  
+**Päivämäärä**: 2026-05-08  
+
+---
+
+### Tiivistelmä yhdessä kappaleessa
+
+Tidö-hallitus (M–SD–KD–L) antoi 7. toukokuuta 2026 kolme toisiinsa kytkeytyvää esitystä, jotka yhdessä edistävät **valtion digitaalista turvallisuusarkkitehtuuria** merkittävin kansalaisvapausvaikutuksin. *Prop. 2025/26:267* vahvistaa säilöönotto- ja karkottamisvaltuuksia ulkomaalaisia kohtaan, joiden katsotaan muodostavan merkittäviä turvallisuusuhkia, laskee todistamiskynnystä ja pidentää enimmäisaikaa säilöönotolle ennen karkottamista `lag (2022:700) om särskild kontroll av vissa utlänningar` -lain nojalla. *Prop. 2025/26:250* luo uuden lakisääteisen kehyksen valtion sähköiselle tunnistautumiselle (e-legitimation) ja perustaa ensimmäisen suvereenin digitaalisen henkilöllisyyskerroksen Ruotsin asukkaille. *Prop. 2025/26:261* laajentaa Skatteverketin tutkinta- ja tietojen yhdistämisvaltuuksia väestökirjanpidossa (folkbokföring). Nämä esitykset yhdessä merkitsevät Tidö-koalition turvallisuus- ja digitalisaatiositoumusten vaalivuosikiihdyttymistä, joka todennäköisesti herättää vastustusta S/V/MP:ltä kansalaisvapauksien näkökulmasta, kun taas M, KD ja L suhtautuvat siihen pääosin myönteisesti.
+
+---
+
+### Kolme toimenpidettä
+
+#### Toimenpide 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **Mitä**: Muuttaa `lag (2022:700)` -lakia — matalampi todistamiskynnys säilöönotolle; pidennetyt enimmäisajat; tiukennetut karkottamiskriteerit; ankarammat rangaistukset tietyistä rikkomuksista.
+- **Ministeri**: Gunnar Strömmer (M), Justitiedepartementet
+- **Valiokunta**: JuU
+- **Voimaantulo**: 1. maaliskuuta 2027
+- **Vaalipoliittinen merkitys**: KORKEA — maahanmuutto/turvallisuus on ratkaiseva vaalitaistelualue. SD:n kannatuspohjan vahvistaminen; M:n oikeistolaistuminen; suora kilpailu S:n kanssa arvoista.
+- **Kansalaisvapauksien riski**: Säilöönotto ilman täyttä tuomitsemista herättää ECHR 5 artiklan kysymyksiä; useiden ihmisoikeusjärjestöjen (UNHCR, Civil Rights Defenders) odotetaan reagoivan.
+
+#### Toimenpide 2 — En statlig e-legitimation (HD03250)
+- **Mitä**: Uusi laki valtion sähköisestä henkilöllisyysinfrastruktuurista; täyttää aukon, jonka BankID:n ylivalta Ruotsin digitaalisessa henkilöllisyydessä on jättänyt.
+- **Ministeri**: Erik Slottner (KD), Finansdepartementet
+- **Valiokunta**: TU
+- **Merkitys**: Rakenteellinen — koskee kaikkia Ruotsin asukkaita; vähentää yksityisen sektorin riippuvuutta; mahdollinen GDPR/tietosuojan arkkitehtuurimuutos.
+- **Vaalipoliittinen merkitys**: KESKITASO — digitaalinen hallintakapasiteetti on hallituksen profilointitekijä; vähäinen puoluepoliittinen kiistanalaisuus.
+
+#### Toimenpide 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **Mitä**: Laajentaa Skatteverketin valtuuksia tutkia ja datamatch­ata yksilöitä väestörekisterissä; tähtää petollisen rekisteröinnin ja henkilöllisyyden manipuloinnin torjuntaan.
+- **Ministeri**: Niklas Wykman (M), Finansdepartementet
+- **Valiokunta**: SkU
+- **Merkitys**: KESKI–KORKEA — hallinnollisen valvontakapasiteetin merkittävä laajennus; esitetään petostentorjuntana mutta laajentaa tosiasiallisesti dataprofiilin luomiskykyä.
+
+---
+
+### Johtopäätös
+
+Tidö-hallitus hyödyntää viimeistä lainsäädäntöspurttiaan ennen syyskuun 2026 vaaleja lujittaakseen kovan turvallisuuspolitiikan ja valtion digitaalisen suvereniteetin agendaansa. Kolme esitystä yhdessä edustavat Ruotsin valtion identiteetti- ja turvallisuusvalvontainfrastruktuurin kunnianhimoisinta laajentamista sitten 11. syyskuuta jälkeisen SÄPO-uudistuspaketin (2001–2004). Toisin kuin 2001–2004-uudistukset, jotka saavuttivat laajan puoluekonsensuksen (S+M+C+KD), näistä lakiesityksistä puuttuu oppositiosta tuki keskeisten kansalaisvapauksien osalta — mikä luo riskin peruuttamiselle, jos vasemmistokeskusta muodostaa hallituksen. Odota **voimakasta valiokuntaoppositiota S:ltä, V:ltä, MP:ltä**, mutta rajallista kykyä estää Tidö-enemmistö huomioiden JuU:ssa, SkU:ssa ja TU:ssa. Ratkaiseva oikeudellinen koe on Lagrådets yttrande HD03267:n osalta — voimakkaasti kielteinen lausunto olisi yksittäisesti merkittävin tapahtuma lähiaikojen lainsäädäntökalenterissa.
+
+---
+
+### Seurattavat avainmittarit
+
+1. JuU-valiokunnan kuulemiset HD03267:sta — oppositiomoottorit jätetty ennen 15. toukokuuta
+2. Advokatsamfundetin ja Amnestyn lausunnot säilöönottomääräyksistä
+3. BankID:n julkinen reaktio valtion e-legitimaatioehdotukseen
+4. ECHR 5 artiklan yhteensopivuusarviointi lagrådsremississa
+5. SD:n viestintä HD03267:sta — testaa, esittääkö SD sen puolueen vai koalition saavutuksena
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_fr.md -->
+
+**Analyste** : Synthèse de renseignement politique par IA  
+
+---
+
+### Résumé en un paragraphe
+
+Le 7 mai 2026, le gouvernement Tidö (M–SD–KD–L) a soumis trois propositions interdépendantes qui font progresser ensemble une **architecture de sécurité numérique étatique** aux implications importantes pour les libertés civiles. *Prop. 2025/26:267* renforce les pouvoirs de détention et d'expulsion à l'égard des étrangers considérés comme des menaces sécuritaires qualifiées, en abaissant le seuil probatoire et en prolongeant la durée maximale de détention avant expulsion conformément à `lag (2022:700) om särskild kontroll av vissa utlänningar`. *Prop. 2025/26:250* établit un nouveau cadre légal pour une e-légitimation d'État, créant la première couche d'identité numérique souveraine pour les résidents suédois. *Prop. 2025/26:261* étend les pouvoirs d'enquête et de mise en correspondance des données de Skatteverket dans le domaine de l'enregistrement de la population (folkbokföring). Ensemble, ces propositions signalent une accélération électorale des engagements de la coalition Tidö en matière de sécurité et de numérisation, susceptible de provoquer l'opposition de S/V/MP pour des raisons de libertés civiles, tandis que M, KD et L y répondront globalement favorablement.
+
+---
+
+### Les trois mesures
+
+#### Mesure 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **Quoi** : Modifie `lag (2022:700)` — seuil de preuve abaissé pour la détention ; périodes maximales prolongées ; critères d'expulsion renforcés ; sanctions plus lourdes pour certaines infractions.
+- **Ministre** : Gunnar Strömmer (M), Justitiedepartementet
+- **Commission** : JuU
+- **Entrée en vigueur** : 1er mars 2027
+- **Importance électorale** : ÉLEVÉE — migration/sécurité est le champ de bataille électoral décisif. Consolidation de la base SD ; durcissement centre-droit de M ; concurrence directe avec S sur les valeurs.
+- **Risque pour les libertés civiles** : La détention sans condamnation complète soulève des questions au regard de l'art. 5 CEDH ; plusieurs organisations de défense des droits humains (UNHCR, Civil Rights Defenders) devraient réagir.
+
+#### Mesure 2 — En statlig e-legitimation (HD03250)
+- **Quoi** : Nouvelle loi créant une infrastructure d'identité numérique étatique ; comble le vide laissé par la domination de BankID sur l'identité numérique en Suède.
+- **Ministre** : Erik Slottner (KD), Finansdepartementet
+- **Commission** : TU
+- **Importance** : Structurelle — concerne tous les résidents suédois ; réduit la dépendance au secteur privé ; potentielle modification de l'architecture RGPD/protection des données.
+- **Importance électorale** : MOYENNE — la capacité de gouvernement numérique est un atout pour la marque gouvernementale ; controverse partisane limitée.
+
+#### Mesure 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **Quoi** : Étend les pouvoirs de Skatteverket pour enquêter et mettre en correspondance des données sur des individus dans le registre de la population ; vise à combattre les enregistrements frauduleux et la manipulation d'identité.
+- **Ministre** : Niklas Wykman (M), Finansdepartementet
+- **Commission** : SkU
+- **Importance** : MOYENNE–ÉLEVÉE — expansion significative des capacités administratives de surveillance ; présenté comme une lutte contre la fraude mais élargit fonctionnellement le profilage des données.
+
+---
+
+### Conclusion
+
+Le gouvernement Tidö exploite le dernier sprint législatif avant les élections de septembre 2026 pour consolider un programme axé sur la sécurité dure et la souveraineté numérique de l'État. Les trois propositions représentent ensemble l'expansion la plus ambitieuse de l'infrastructure suédoise d'identité et de surveillance sécuritaire depuis le paquet de réformes de la SÄPO au lendemain du 11 septembre (2001–2004). Contrairement aux réformes de 2001–2004, qui avaient atteint un large consensus partisan (S+M+C+KD), ces projets de loi manquent du soutien de l'opposition sur les dispositions essentielles relatives aux libertés civiles — créant un risque d'abrogation si le centre-gauche forme un gouvernement. Attendez-vous à **une forte opposition en commission de S, V, MP** mais une capacité limitée de blocage compte tenu de la majorité Tidö au sein des commissions JuU, SkU et TU. Le test juridique décisif sera l'avis du Lagrådet sur HD03267 — un avis fortement négatif serait l'événement le plus conséquent à court terme dans le calendrier législatif.
+
+---
+
+### Indicateurs clés à surveiller
+
+1. Auditions de la commission JuU sur HD03267 — motions d'opposition déposées avant le 15 mai
+2. Réponses en consultation d'Advokatsamfundet et d'Amnesty sur les dispositions de détention
+3. Réaction publique de BankID à la proposition d'e-légitimation étatique
+4. Évaluation de compatibilité avec l'art. 5 CEDH dans la lagrådsremiss
+5. Communication de SD sur HD03267 — testant si SD présente cela comme son succès ou celui de la coalition
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_he.md -->
+
+&#x200F;# תקציר מנהלים — הצעות ממשלה 2026-05-08
+
+**סיווג**: B2 (נכון כנראה / אמין) | **WEP**: כמעט בוודאות (AC, 90–95%)  
+**DIW מורכב**: 10.0/10 (מותאם לשנת בחירות)  
+**אנליסט**: סינתזת מודיעין פוליטי בבינה מלאכותית  
+**תאריך**: 2026-05-08  
+
+---
+
+### תקציר בפסקה אחת
+
+ב-7 במאי 2026 הגישה ממשלת Tidö (M–SD–KD–L) שלוש הצעות חוק קשורות זו בזו שמטרתן המשותפת לקדם **ארכיטקטורת אבטחה דיגיטלית ממלכתית** עם השלכות מרחיקות לכת על חירויות האזרח. *Prop. 2025/26:267* מחזקת את סמכויות המעצר והגירוש כלפי זרים הנחשבים לאיומי ביטחון מוסמכים, מורידה את רף הראיות ומאריכה את תקופת המעצר המרבית לפני גירוש לפי `lag (2022:700) om särskild kontroll av vissa utlänningar`. *Prop. 2025/26:250* מבססת מסגרת חוקית חדשה לזיהוי אלקטרוני ממלכתי (e-legitimation), ויוצרת את שכבת הזהות הדיגיטלית הריבונית הראשונה עבור תושבי שוודיה. *Prop. 2025/26:261* מרחיבה את סמכויות החקירה והתאמת הנתונים של Skatteverket בתחום רישום האוכלוסין (folkbokföring). ביחד, הצעות אלו מאותתות על האצה בשנת בחירות של מחויבויות קואליציית Tidö בתחום הביטחון והדיגיטציה, צפויות לעורר התנגדות מ-S/V/MP על רקע חירויות האזרח, בעוד M, KD ו-L יקבלו זאת בברכה.
+
+---
+
+### שלושת הפעולות
+
+#### פעולה 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **מה**: תיקון `lag (2022:700)` — רף ראיות נמוך יותר למעצר; תקופות מרביות מורחבות; קריטריוני גירוש מחמירים יותר; עונשים כבדים יותר על עבירות מסוימות.
+- **שר**: Gunnar Strömmer (M), Justitiedepartementet
+- **ועדה**: JuU
+- **כניסה לתוקף**: 1 במרץ 2027
+- **משמעות בחירותית**: גבוהה — הגירה/ביטחון הוא שדה הקרב הבחירותי המכריע. גיבוש בסיס SD; התקשחות ימין-מרכז של M; תחרות ישירה עם S על ערכים.
+- **סיכון לחירויות אזרחיות**: מעצר ללא הרשעה מלאה מעלה חששות לפי סעיף 5 לאמנה האירופית לזכויות אדם; ארגוני זכויות אדם אחדים (UNHCR, Civil Rights Defenders) צפויים להגיב.
+
+#### פעולה 2 — En statlig e-legitimation (HD03250)
+- **מה**: חוק חדש להקמת תשתית זהות דיגיטלית ממלכתית; מטפל בפער שהותיר שלטון BankID על הזהות הדיגיטלית בשוודיה.
+- **שר**: Erik Slottner (KD), Finansdepartementet
+- **ועדה**: TU
+- **חשיבות**: מבנית — משפיעה על כל תושבי שוודיה; מפחיתה תלות במגזר הפרטי; שינוי אפשרי בארכיטקטורת GDPR/פרטיות.
+- **משמעות בחירותית**: בינונית — יכולת ממשל דיגיטלית היא נכס מיתוגי לממשלה; מחלוקת מפלגתית מוגבלת.
+
+#### פעולה 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **מה**: הרחבת סמכויות Skatteverket לחקור ולהתאים נתונים של יחידים בפנקס האוכלוסין; מכוון למלחמה ברישום מרמתי ובמניפולציית זהות.
+- **שר**: Niklas Wykman (M), Finansdepartementet
+- **ועדה**: SkU
+- **חשיבות**: בינונית–גבוהה — הרחבה ניכרת של יכולת המעקב המינהלי; מוצג כמלחמה בהונאה אך מרחיב פונקציונלית את יצירת פרופיל הנתונים.
+
+---
+
+### מסקנה
+
+ממשלת Tidö מנצלת את ספרינט החקיקה האחרון לפני בחירות ספטמבר 2026 לביסוס אג'נדה של ביטחון קשיח וריבונות דיגיטלית ממלכתית. שלוש ההצעות ביחד מייצגות את ההרחבה הנועזת ביותר של תשתית הזהות ופיקוח הביטחון של המדינה השוודית מאז חבילת הרפורמות של SÄPO לאחר ה-11 בספטמבר (2001–2004). בשונה מהרפורמות של 2001–2004 שזכו לקונסנסוס רחב (S+M+C+KD), הצעות חוק אלו חסרות תמיכת אופוזיציה בהוראות המרכזיות הנוגעות לחירויות האזרח — מה שיוצר סיכון לביטול אם השמאל-המרכז יהרכיב ממשלה. צפו **להתנגדות ועדות חזקה מ-S, V, MP** אך ביכולת חסימה מוגבלת לאור רוב Tidö ב-JuU, SkU ו-TU. המבחן המשפטי המכריע יהיה חוות דעת Lagrådet על HD03267 — חוות דעת שלילית חזקה תהיה האירוע המשמעותי ביותר בלוח הזמנים החקיקתי הקרוב.
+
+---
+
+### מדדים מרכזיים למעקב
+
+1. דיוני ועדת JuU בנוגע ל-HD03267 — הצעות אופוזיציה שהוגשו לפני 15 במאי
+2. תגובות להתייעצות מ-Advokatsamfundet ומ-Amnesty על הוראות המעצר
+3. תגובת BankID הפומבית להצעת הזיהוי האלקטרוני הממלכתי
+4. הערכת תאימות לסעיף 5 לאמנה האירופית לזכויות אדם ב-lagrådsremiss
+5. מסרי SD בנוגע ל-HD03267 — יבחן אם SD תציג זאת כהישג שלה או של הקואליציה
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_ja.md -->
+
+**分類**: B2（おそらく真実／信頼性高） | **WEP**: ほぼ確実（AC、90–95%）  
+**DIW 総合**: 10.0/10（選挙年調整済み）  
+**アナリスト**: AI政治インテリジェンス統合  
+**日付**: 2026-05-08  
+
+---
+
+### 1段落要約
+
+2026年5月7日、Tidö政権（M–SD–KD–L）は、市民的自由に重大な影響をもたらす**国家デジタルセキュリティアーキテクチャ**を共同で推進する3つの相互連関した法案を提出した。*Prop. 2025/26:267*は、適格な安全保障上の脅威とみなされる外国人に対する拘留・退去強制権限を強化し、`lag (2022:700) om särskild kontroll av vissa utlänningar`の下で証拠基準を引き下げ、退去強制前の最長拘留期間を延長する。*Prop. 2025/26:250*は、国家発行の電子証明（e-legitimation）に関する新たな法的枠組みを確立し、スウェーデン居住者向けに初の主権的デジタル身元確認レイヤーを創設する。*Prop. 2025/26:261*は、住民登録（folkbokföring）においてSkatteverketの調査・データ照合権限を拡大する。これらの提案はまとめて、Tidö連立政権のセキュリティおよびデジタル化へのコミットメントを選挙年に加速させるものであり、市民的自由を理由にS/V/MPの反対を引き起こす一方、M、KD、Lからは概ね好意的に受け止められる見込みである。
+
+---
+
+### 3つの措置
+
+#### 措置1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **内容**: `lag (2022:700)`改正 — 拘留のための証拠基準引き下げ；最長期間の延長；退去強制基準の厳格化；特定違反への刑罰強化。
+- **担当大臣**: Gunnar Strömmer (M)、Justitiedepartementet
+- **委員会**: JuU
+- **施行日**: 2027年3月1日
+- **選挙的重要性**: 高 — 移民・安全保障は決定的な選挙戦の争点。SDの支持基盤固め；Mの中道右派硬化；Sとの価値観をめぐる直接対立。
+- **市民的自由リスク**: 完全な有罪判決なしの拘留はECHR第5条の懸念を生む；複数の人権団体（UNHCR、Civil Rights Defenders）が反応する見込み。
+
+#### 措置2 — En statlig e-legitimation (HD03250)
+- **内容**: 国家的なeID基盤を創設する新法；スウェーデンのデジタル身元確認におけるBankIDの独占が残した空白を埋める。
+- **担当大臣**: Erik Slottner (KD)、Finansdepartementet
+- **委員会**: TU
+- **重要性**: 構造的 — すべてのスウェーデン居住者に影響；民間依存を低減；GDPR/プライバシーデータアーキテクチャの変更の可能性。
+- **選挙的重要性**: 中程度 — デジタル行政能力は政府ブランディングの強み；政党間論争は限定的。
+
+#### 措置3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **内容**: 住民登録においてSkatteverketが個人を調査・データ照合する権限を拡大；不正登録や身元情報の操作への対策を目的とする。
+- **担当大臣**: Niklas Wykman (M)、Finansdepartementet
+- **委員会**: SkU
+- **重要性**: 中高程度 — 行政的監視能力の大幅拡大；不正対策として提示されているが機能的にはデータプロファイリングを拡大。
+
+---
+
+### 結論
+
+Tidö政権は2026年9月の選挙前の最後の立法スプリントを活用し、強硬な安全保障と国家デジタル主権のアジェンダを固めようとしている。3つの提案は合わせて、9.11後のSÄPO改革パッケージ（2001–2004年）以来最も野心的なスウェーデン国家の身元確認・安全保障監視インフラの拡大を意味する。しかし、広範な党間合意（S+M+C+KD）を達成した2001–2004年の改革とは異なり、これらの2026年法案は市民的自由に関する核心条文で野党の支持を欠いており、中道左派が政権を組む場合には廃止リスクをはらむ。**S、V、MPによる委員会での強い反対**は予想されるが、JuU、SkU、TUでのTidö多数により阻止能力は限られる。決定的な法的試金石はHD03267に対するLagrådetsの意見であり、強く否定的な意見は近い将来の立法カレンダーで最も重大な出来事となるだろう。
+
+---
+
+### 注目すべき主要指標
+
+1. HD03267に関するJuU委員会公聴会 — 5月15日以前に提出された野党動議
+2. 拘留条項に関するAdvokatsamfundetとAmnesty の協議回答
+3. 国家eID提案に対するBankIDの公的反応
+4. lagrådsremissにおけるECHR第5条適合性評価
+5. HD03267に関するSDのメッセージ — SDがこれを党の成果として示すか連立の成果として示すかを試す
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_ko.md -->
+
+**분류**: B2 (아마도 사실 / 신뢰할 수 있음) | **WEP**: 거의 확실 (AC, 90–95%)  
+**DIW 종합**: 10.0/10 (선거연도 조정)  
+**분석가**: AI 정치 정보 종합  
+**날짜**: 2026-05-08  
+
+---
+
+### 한 문단 요약
+
+2026년 5월 7일, Tidö 정부(M–SD–KD–L)는 시민적 자유에 중대한 영향을 미치는 **국가 디지털 보안 아키텍처**를 공동으로 추진하는 세 개의 상호 연관된 법안을 제출했다. *Prop. 2025/26:267*은 적격 안보 위협으로 간주되는 외국인에 대한 구금 및 추방 권한을 강화하고, `lag (2022:700) om särskild kontroll av vissa utlänningar`에 따라 증거 기준을 낮추고 최대 구금 기간을 연장한다. *Prop. 2025/26:250*은 국가 발행 전자 신원확인(e-legitimation)을 위한 새로운 법적 틀을 수립하여 스웨덴 거주자를 위한 첫 번째 주권적 디지털 신원 계층을 창설한다. *Prop. 2025/26:261*은 주민 등록(folkbokföring)에서 Skatteverket의 조사 및 데이터 대조 권한을 확대한다. 이러한 법안들은 함께 Tidö 연립의 안보 및 디지털화 공약을 선거년도에 가속화하는 신호이며, 시민적 자유 이유로 S/V/MP의 반대를 유발할 것으로 예상되는 한편, M, KD, L은 대체로 긍정적으로 수용할 것이다.
+
+---
+
+### 세 가지 조치
+
+#### 조치 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **내용**: `lag (2022:700)` 개정 — 구금을 위한 낮아진 증거 기준; 연장된 최장 기간; 강화된 추방 기준; 특정 위반에 대한 가중 처벌.
+- **담당 장관**: Gunnar Strömmer (M), Justitiedepartementet
+- **위원회**: JuU
+- **시행일**: 2027년 3월 1일
+- **선거적 중요성**: 높음 — 이민/안보가 결정적인 선거 전쟁터. SD 지지 기반 공고화; M 중도우파 강경화; S와의 가치관 직접 경쟁.
+- **시민적 자유 위험**: 완전한 유죄 판결 없는 구금은 ECHR 제5조 문제를 야기; 여러 인권단체(UNHCR, Civil Rights Defenders)가 반응할 가능성.
+
+#### 조치 2 — En statlig e-legitimation (HD03250)
+- **내용**: 국가 eID 인프라를 구축하는 새 법률; 스웨덴의 디지털 신원에서 BankID 독점이 남긴 공백을 해결.
+- **담당 장관**: Erik Slottner (KD), Finansdepartementet
+- **위원회**: TU
+- **중요성**: 구조적 — 모든 스웨덴 거주자에 영향; 민간 의존도 감소; 잠재적 GDPR/개인정보 아키텍처 변화.
+- **선거적 중요성**: 중간 — 디지털 거버넌스 역량은 정부 브랜딩 자산; 제한적인 정파적 논쟁.
+
+#### 조치 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **내용**: 주민 등록부에서 개인을 조사하고 데이터 대조하는 Skatteverket의 권한 확대; 사기성 등록 및 신원 조작 방지 목적.
+- **담당 장관**: Niklas Wykman (M), Finansdepartementet
+- **위원회**: SkU
+- **중요성**: 중간–높음 — 행정적 감시 역량의 상당한 확대; 사기 방지로 제시되지만 기능적으로는 데이터 프로파일링 확대.
+
+---
+
+### 결론
+
+Tidö 정부는 2026년 9월 선거 전 마지막 입법 스프린트를 활용하여 강경 안보와 국가 디지털 주권 어젠다를 공고히 하고 있다. 세 법안은 합쳐서 9.11 이후 SÄPO 개혁 패키지(2001–2004) 이래 가장 야심 찬 스웨덴 국가 신원 및 보안 감시 인프라의 확대를 의미한다. 광범위한 당 간 합의(S+M+C+KD)를 이룬 2001–2004년 개혁과 달리, 이 2026년 법안들은 핵심 시민적 자유 조항에서 야당 지지가 부재하여, 중도좌파가 정부를 구성할 경우 폐지 위험을 내포한다. **S, V, MP의 강력한 위원회 반대**가 예상되지만, JuU, SkU, TU에서 Tidö 다수결로 인해 저지 능력은 제한적이다. 결정적인 법적 시험은 HD03267에 대한 Lagradets 의견이며, 강하게 부정적인 의견은 가까운 입법 일정에서 가장 중대한 사건이 될 것이다.
+
+---
+
+### 주목해야 할 핵심 지표
+
+1. HD03267에 관한 JuU 위원회 청문회 — 5월 15일 이전에 제출된 야당 동의
+2. 구금 조항에 관한 Advokatsamfundet와 Amnesty의 협의 의견
+3. 국가 eID 제안에 대한 BankID의 공개 반응
+4. lagrådsremiss에서 ECHR 제5조 호환성 평가
+5. HD03267에 관한 SD 메시지 — SD가 이를 당의 성과로 제시할지 연립의 성과로 제시할지 시험
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_nl.md -->
+
+**Classificatie**: B2 (Waarschijnlijk waar / Betrouwbaar) | **WEP**: Vrijwel zeker (AC, 90–95 %)  
+**DIW Samengesteld**: 10,0/10 (verkiezingsjaar-gecorrigeerd)  
+**Analist**: AI politieke inlichtingensynthese  
+**Datum**: 2026-05-08  
+
+---
+
+### Samenvatting in één alinea
+
+Op 7 mei 2026 diende de Tidö-regering (M–SD–KD–L) drie onderling verbonden wetsvoorstellen in die gezamenlijk een **staatlijke digitale veiligheidsarchitectuur** bevorderen met aanzienlijke gevolgen voor de burgerrechten. *Prop. 2025/26:267* versterkt de bevoegdheden voor detentie en uitzetting van vreemdelingen die worden beschouwd als gekwalificeerde veiligheidsrisico's, verlaagt de bewijslat en verlengt de maximale detentieperiode vóór uitzetting krachtens `lag (2022:700) om särskild kontroll av vissa utlänningar`. *Prop. 2025/26:250* schept een nieuw wettelijk kader voor een door de staat uitgeschreven e-legitimatie en creëert de eerste soevereine digitale identiteitslaag voor Zweedse inwoners. *Prop. 2025/26:261* breidt de onderzoeks- en gegevensvergleichingsbevoegdheden van Skatteverket uit op het gebied van bevolkingsregistratie (folkbokföring). Samen signaleren deze voorstellen een verkiezingsjaarversnelling van de Tidö-coalitieverplichting aan veiligheid en digitalisering, wat waarschijnlijk verzet van S/V/MP op grond van burgerrechten zal uitlokken, terwijl M, KD en L er overwegend positief op zullen reageren.
+
+---
+
+### De drie maatregelen
+
+#### Maatregel 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **Wat**: Wijzigt `lag (2022:700)` — lagere bewijsdrempel voor detentie; verlengde maximumtermijnen; aangescherpte uitzettingscriteria; hogere straffen bij bepaalde overtredingen.
+- **Minister**: Gunnar Strömmer (M), Justitiedepartementet
+- **Commissie**: JuU
+- **Inwerkingtreding**: 1 maart 2027
+- **Verkiezingspolitiek belang**: HOOG — migratie/veiligheid is het bepalende verkiezingsslagveld. SD-basisconsolidatie; M centrum-rechts-verharding; directe concurrentie met S over waarden.
+- **Risico voor burgerrechten**: Detentie zonder volledige veroordeling roept EVRM art. 5-vragen op; meerdere mensenrechtenorganisaties (UNHCR, Civil Rights Defenders) zullen waarschijnlijk reageren.
+
+#### Maatregel 2 — En statlig e-legitimation (HD03250)
+- **Wat**: Nieuwe wet die een staatlijke e-ID-infrastructuur schept; pakt het vacuüm aan dat BankIDs dominantie over digitale identiteit in Zweden heeft achtergelaten.
+- **Minister**: Erik Slottner (KD), Finansdepartementet
+- **Commissie**: TU
+- **Belang**: Structureel — raakt alle Zweedse inwoners; vermindert afhankelijkheid van de privésector; potentiële wijziging van de AVG/privacydataarchitectuur.
+- **Verkiezingspolitiek belang**: MIDDEL — digitale overheidscapaciteit is een regeringsmerk; beperkte partijpolitieke controverse.
+
+#### Maatregel 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **Wat**: Breidt de bevoegdheden van Skatteverket uit om individuen in het bevolkingsregister te onderzoeken en gegevens te vergelijken; gericht op bestrijding van frauduleuze registratie en identiteitsmanipulatie.
+- **Minister**: Niklas Wykman (M), Finansdepartementet
+- **Commissie**: SkU
+- **Belang**: MIDDEL–HOOG — aanzienlijke uitbreiding van de administratieve bewakingscapaciteit; gepresenteerd als fraudebestrijding maar breidt functioneel de gegevensprofilering uit.
+
+---
+
+### Conclusie
+
+De Tidö-regering maakt gebruik van de laatste wetgevingssprint vóór de verkiezingen van september 2026 om een agenda van harde veiligheid en staatlijke digitale soevereiniteit te consolideren. De drie voorstellen vertegenwoordigen samen de meest ambitieuze uitbreiding van de Zweedse staatlijke identiteits- en veiligheidstoezichtinfrastructuur sinds het SÄPO-hervormingspakket na 11 september (2001–2004). In tegenstelling tot de hervormingen van 2001–2004, die een breed partijconsensus (S+M+C+KD) bereikten, missen deze wetsvoorstellen oppositiesteun op de centrale bepalingen inzake burgerrechten — wat een risico op terugdraaiing creëert als centrum-links een regering vormt. Verwacht **sterke commissieopposities van S, V, MP** maar beperkte blokkeringscapaciteit gezien de Tidö-meerderheid in JuU, SkU en TU. De beslissende juridische toets zal het advies van het Lagrådet over HD03267 zijn — een sterk negatief advies zou de meest bepalende gebeurtenis in de nabije wetgevingskalender zijn.
+
+---
+
+### Sleutelindicatoren om te volgen
+
+1. JuU-commissievergaderingen over HD03267 — oppositiemoties ingediend vóór 15 mei
+2. Adviezen van Advokatsamfundet en Amnesty over de detentiebepalingen
+3. Publieke reactie van BankID op het voorstel voor staatlijke e-legitimatie
+4. EVRM art. 5-compatibiliteitsbeoordeling in de lagrådsremiss
+5. SD-communicatie over HD03267 — test of SD het als partij- of coalitieresultaat presenteert
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_no.md -->
+
+**Klassifisering**: B2 (Sannsynligvis sant / Pålitelig) | **WEP**: Nesten sikkert (AC, 90–95 %)  
+**DIW Sammensatt**: 10,0/10 (valgår-justert)  
+**Analytiker**: AI politisk etterretningssyntese  
+**Dato**: 2026-05-08  
+
+---
+
+### Sammendrag i ett avsnitt
+
+Den 7. mai 2026 la Tidö-regjeringen (M–SD–KD–L) frem tre sammenvevde proposisjoner som samlet fremmer en **statlig digital sikkerhetsarkitektur** med betydelige konsekvenser for borgerrettighetene. *Prop. 2025/26:267* styrker frihetsberøvelse og utvisningsfullmakter overfor utlendinger som anses å utgjøre kvalifiserte sikkerhetstrusler, senker beviskravet og forlenger maksimal frihetsberøvelsesperiode før utvisning i henhold til `lag (2022:700) om särskild kontroll av vissa utlänningar`. *Prop. 2025/26:250* oppretter et nytt lovfestet rammeverk for en statlig e-legitimasjon og etablerer det første suverene digitale identitetslaget for svenske innbyggere. *Prop. 2025/26:261* utvider Skatteverkets undersøkelses- og datamatchingsfullmakter innen folkeregistrering (folkbokföring). Samlet signaliserer disse proposisjonene en valgårsakselerasjon av Tidö-koalisjonens forpliktelser innen sikkerhet og digitalisering, noe som trolig vil provosere motstand fra S/V/MP på borgerrettslige grunnlag, mens M, KD og L i stor grad vil ta det positivt imot.
+
+---
+
+### De tre tiltakene
+
+#### Tiltak 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **Hva**: Endrer `lag (2022:700)` — lavere bevisterskel for frihetsberøvelse; forlengede maksimalperioder; skjerpede utvisningskriterier; høyere straffer ved visse overtredelser.
+- **Minister**: Gunnar Strömmer (M), Justitiedepartementet
+- **Komité**: JuU
+- **Ikrafttredelse**: 1. mars 2027
+- **Valgpolitisk betydning**: HØY — migrasjon/sikkerhet er det avgjørende valgkampemnet. SD's basiskonsolidering; M's sentrum-høyre-herding; direkte konkurranse med S om verdier.
+- **Borgerrettslig risiko**: Frihetsberøvelse uten fullstendig domfellelse reiser ECHR art. 5-spørsmål; flere menneskerettighetsorganisasjoner (UNHCR, Civil Rights Defenders) vil trolig reagere.
+
+#### Tiltak 2 — En statlig e-legitimation (HD03250)
+- **Hva**: Ny lov om statlig e-ID-infrastruktur; adresserer gapet som BankID's dominans av digital identitet i Sverige har etterlatt.
+- **Minister**: Erik Slottner (KD), Finansdepartementet
+- **Komité**: TU
+- **Betydning**: Strukturell — berører alle svenske innbyggere; reduserer avhengighet av privat sektor; potensielle GDPR/personvernarkitekturendringer.
+- **Valgpolitisk betydning**: MIDDELS — digital forvaltningskapasitet er en regjeringsprofilering; begrenset partipolitisk kontrovers.
+
+#### Tiltak 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **Hva**: Utvider Skatteverkets fullmakter til å undersøke og datamatch­e enkeltpersoner i folkeregisteret; siktet mot å bekjempe svikaktig registrering og identitetsmanipulasjon.
+- **Minister**: Niklas Wykman (M), Finansdepartementet
+- **Komité**: SkU
+- **Betydning**: MIDDELS–HØY — betydelig utvidelse av administrativ overvåkingskapasitet; fremstilt som svindelbekjempelse, men utvider funksjonelt dataprofileringskompetansen.
+
+---
+
+### Konklusjon
+
+Tidö-regjeringen utnytter den siste lovgivningsspurten før valget i september 2026 for å befeste en agenda for hard sikkerhetspolitikk og statlig digital suverenitet. De tre proposisjonene representerer samlet den mest ambisiøse utvidelsen av den svenske statens identitets- og sikkerhetsovervåkingsinfrastruktur siden SÄPO-reformpakken etter 11. september (2001–2004). I motsetning til 2001–2004-reformene, som oppnådde bred partikonsensus (S+M+C+KD), mangler disse lovforslagene opposisjonsstøtte til de sentrale borgerrettslige bestemmelsene — noe som skaper risiko for reversering dersom sentrum-venstre danner regjering. Forvent **sterk komitéopposisjon fra S, V, MP** men begrenset evne til å blokkere gitt Tidö-flertallet i JuU, SkU og TU. Den avgjørende juridiske prøven vil være Lagrådets uttalelse om HD03267 — en sterkt negativ uttalelse ville være den enkelt mest avgjørende hendelsen i den nærmeste lovgivningskalenderen.
+
+---
+
+### Nøkkelindikatorer å følge
+
+1. JuU-komiteens høringer om HD03267 — opposisjonsmotsjoner innlevert innen 15. mai
+2. Høringssvar fra Advokatsamfundet og Amnesty om frihetsberøvelsesbestemmelsene
+3. BankID's offentlige reaksjon på forslaget om statlig e-legitimasjon
+4. ECHR art. 5-kompatibilitetsvurdering i lagrådsremissen
+5. SD's kommunikasjon om HD03267 — tester om SD presenterer det som partiets eller koalisjonens seier
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_sv.md -->
+
+**Klassificering**: B2 (Troligtvis sant / Pålitlig) | **UEP**: Nästan säkert (AC, 90–95 %)  
+**DIW Sammansatt**: 10,0/10 (valårsanpassat)  
+**Analytiker**: AI politisk intelligenssyntese  
+**Datum**: 2026-05-08  
+
+---
+
+### Sammanfattning i ett stycke
+
+Den 7 maj 2026 lade Tidöregeringen (M–SD–KD–L) fram tre sammanlänkade propositioner som tillsammans bygger en **statlig digital säkerhetsarkitektur** med betydande konsekvenser för medborgerliga fri- och rättigheter. *Prop. 2025/26:267* stärker förvar och utvisningsbefogenheter för utlänningar som bedöms utgöra kvalificerade säkerhetshot, sänker beviströskeln och förlänger maximal förvarsperiod inför utvisning enligt `lag (2022:700) om särskild kontroll av vissa utlänningar`. *Prop. 2025/26:250* skapar ett nytt lagstadgat ramverk för en statlig e-legitimation och etablerar det första suveräna digitala identitetsskiktet för Sveriges invånare. *Prop. 2025/26:261* utvidgar Skatteverkets utrednings- och datamatchningsbefogenheter inom folkbokföringen. Sammantaget signalerar dessa propositioner en valårsacceleration av Tidökoalitionens åtaganden kring säkerhet och digitalisering, vilket sannolikt möter opposition från S/V/MP på medborgarrättsliga grunder medan M, KD och L i stort ser det positivt.
+
+---
+
+### De tre åtgärderna
+
+#### Åtgärd 1 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **Vad**: Ändrar `lag (2022:700)` — lägre beviskrav för förvar; förlängda maxtider; skärpta utvisningskriterier; höjda påföljder vid vissa överträdelser.
+- **Minister**: Gunnar Strömmer (M), Justitiedepartementet
+- **Utskott**: JuU
+- **Ikraftträdande**: 1 mars 2027
+- **Valbetydelse**: HÖG — migration/säkerhet är det avgörande valstridsområdet. SD:s baskonsolidering; M:s centerrättshärdning; direkt konkurrens med S om värdefrågorna.
+- **Risk för medborgerliga rättigheter**: Förvar utan fullständig fällande dom väcker ECHR art. 5-frågor; flera människorättsorganisationer (UNHCR, Civil Rights Defenders) förväntas reagera.
+
+#### Åtgärd 2 — En statlig e-legitimation (HD03250)
+- **Vad**: Ny lag om statlig e-ID-infrastruktur; täpper till det gap som BankID:s dominans av digital identitet i Sverige lämnat.
+- **Minister**: Erik Slottner (KD), Finansdepartementet
+- **Utskott**: TU
+- **Betydelse**: Strukturell — berör alla Sveriges invånare; minskar beroendet av privata aktörer; potentiella GDPR/integritetskonsekvenser.
+- **Valbetydelse**: MEDEL — digital förvaltningskapacitet är en regeringsprofilering; begränsad partipolitisk kontrovers.
+
+#### Åtgärd 3 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **Vad**: Utökar Skatteverkets befogenheter att utreda och datamatch­a individer i folkbokföringen; syftar till att bekämpa bedräglig registrering och identitetsmanipulation.
+- **Minister**: Niklas Wykman (M), Finansdepartementet
+- **Utskott**: SkU
+- **Betydelse**: MEDEL–HÖG — betydande utvidgning av administrativ övervakningskapacitet; framställs som bedrägeribekämpning men utökar i praktiken dataprofileringsförmågan.
+
+---
+
+### Slutsats
+
+Tidöregeringen utnyttjar den sista lagstiftningsspurten inför valet i september 2026 för att befästa en agenda för hård säkerhetspolitik och statlig digital suveränitet. De tre propositionerna är sammantaget den mest ambitiösa utvidgningen av den svenska statens identitets- och säkerhetsövervakningsinfrastruktur sedan SÄPO-reformpaketet efter 11 september (2001–2004). Till skillnad från 2001–2004 års reformer, som uppnådde brett partikonsensus (S+M+C+KD), saknar dessa lagförslag oppositionsstöd i de centrala medborgarrättsliga delarna — vilket skapar risk för upphävande om centervänstern bildar regering efter valet. Förvänta **stark utskottsopposition från S, V, MP** men begränsad förmåga att blockera med tanke på Tidömajoriteten i JuU, SkU och TU. Det avgörande juridiska provet är Lagrådets yttrande om HD03267 — ett starkt negativt yttrande vore den enskilt mest avgörande händelsen i det närmaste lagstiftningskalendern.
+
+---
+
+### Nyckelindikatorer att följa
+
+1. JuU:s utskottshörningar om HD03267 — oppositionsmotion inlämnade senast 15 maj
+2. Remissvar från Advokatsamfundet och Amnesty om förvarsbestämmelserna
+3. BankID:s offentliga reaktion på förslaget om statlig e-legitimation
+4. ECHR art. 5-kompatibilitetsbedömning i lagrådsremissen
+5. SD:s kommunikation om HD03267 — testar om SD presenterar det som partiets eller koalitionens framgång
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_zh.md -->
+
+**分类**：B2（可能属实／可靠）| **WEP**：几乎肯定（AC，90–95%）  
+**DIW综合**：10.0/10（选举年调整）  
+**分析员**：AI政治情报综合  
+**日期**：2026-05-08  
+
+---
+
+### 单段摘要
+
+2026年5月7日，Tidö政府（M–SD–KD–L）提交了三项相互关联的提案，共同推进一个对公民自由具有重大影响的**国家数字安全架构**。*Prop. 2025/26:267*加强了对被认定为合格安全威胁的外国人的拘留和驱逐出境权力，降低了证据门槛，并依据`lag (2022:700) om särskild kontroll av vissa utlänningar`延长了驱逐前的最长拘留期限。*Prop. 2025/26:250*为国家颁发的电子身份证（e-legitimation）建立了新的法定框架，为瑞典居民创建了第一个主权数字身份层。*Prop. 2025/26:261*扩大了Skatteverket在人口登记（folkbokföring）中的调查和数据比对权力。这三项提案合计标志着Tidö联合政府在安全和数字化承诺上的选举年加速，可能引发S/V/MP以公民自由为由的反对，而M、KD和L则将大体上积极回应。
+
+---
+
+### 三项措施
+
+#### 措施一 — Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot (HD03267)
+- **内容**：修订`lag (2022:700)` — 降低拘留的证据门槛；延长最长拘留期限；收紧驱逐标准；加重特定违规的处罚。
+- **负责部长**：Gunnar Strömmer (M)，Justitiedepartementet
+- **委员会**：JuU
+- **生效日期**：2027年3月1日
+- **选举政治重要性**：高 — 移民/安全是决定性的选举战场。SD基础选民整合；M中右派强硬化；与S就价值观展开直接竞争。
+- **公民自由风险**：未经完整定罪即拘留引发《欧洲人权公约》第5条担忧；多个人权机构（UNHCR、Civil Rights Defenders）预计将做出回应。
+
+#### 措施二 — En statlig e-legitimation (HD03250)
+- **内容**：新法律创建国家电子身份基础设施；解决BankID主导瑞典数字身份所留下的空白。
+- **负责部长**：Erik Slottner (KD)，Finansdepartementet
+- **委员会**：TU
+- **重要性**：结构性 — 影响瑞典所有居民；降低对私营部门的依赖；GDPR/隐私数据架构可能的变化。
+- **选举政治重要性**：中等 — 数字政府能力是政府品牌优势；党派争议有限。
+
+#### 措施三 — Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten (HD03261)
+- **内容**：扩大Skatteverket在人口登记册中调查和比对个人数据的权力；旨在打击欺诈性登记和身份操纵。
+- **负责部长**：Niklas Wykman (M)，Finansdepartementet
+- **委员会**：SkU
+- **重要性**：中等至高 — 行政监控能力的重大扩展；以打击欺诈为由但在功能上扩大了数据画像能力。
+
+---
+
+### 结论
+
+Tidö政府利用2026年9月大选前的最后立法冲刺，巩固强硬安全和国家数字主权议程。这三项提案合计代表了自9·11后SÄPO改革包（2001–2004年）以来瑞典国家身份和安全监控基础设施最雄心勃勃的扩张。然而，与实现广泛跨党共识（S+M+C+KD）的2001–2004年改革不同，这些2026年法案在公民自由核心条款上缺乏反对党支持——若中间偏左派组建政府则存在废除风险。预计**来自S、V、MP的委员会强烈反对**，但鉴于Tidö在JuU、SkU和TU中的多数席位，阻止能力有限。决定性法律考验将是Lagrådet就HD03267发表的意见——一份强烈负面的意见将是近期立法日程中最具决定性的事件。
+
+---
+
+### 需关注的关键指标
+
+1. JuU委员会就HD03267举行的听证会 — 反对党动议于5月15日前提交
+2. Advokatsamfundet和国际特赦组织就拘留条款提交的磋商回应
+3. BankID对国家电子身份证提案的公开反应
+4. lagrådsremiss中《欧洲人权公约》第5条相容性评估
+5. SD就HD03267的信息传达 — 测试SD是否将其定位为党的成就还是联合政府的成就
+
+<!-- source-sha: 79573300b3fef0c08df28642805856d487bfceea -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 5 | Linked in Article Sources, not expanded inline |
 
@@ -2461,6 +3216,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

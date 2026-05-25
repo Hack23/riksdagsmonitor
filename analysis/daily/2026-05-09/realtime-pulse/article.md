@@ -3,7 +3,7 @@ date: 2026-05-09
 subfolder: realtime-pulse
 slug: 2026-05-09-realtime-pulse
 source_folder: analysis/daily/2026-05-09/realtime-pulse
-generated_at: 2026-05-25T09:05:41.690Z
+generated_at: 2026-05-25T15:59:53.732Z
 language: en
 layout: article
 ---
@@ -65,6 +65,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1283,13 +1296,591 @@ HD01CU31 (rental market reform): Lagrådet referral pending / no yttrande publis
 
 No prior-cycle PIR files found within last 14 days for realtime-pulse subfolder. New PIR baseline established this cycle.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+---
+title: "نبض الريكسداغن الآني: إصلاح الإيجار، وسياسة التعليم، والتوترات في السياسة الخارجية — 2026-05-09"
+
+subfolder: realtime-pulse
+slug: realtime-pulse-2026-05-09
+language: ar
+
+konfidensgrad: HIGH [Admiralty B2]
+
+run_id: 25611204062
+---
+
+# نبض الريكسداغن الآني: إصلاح الإيجار، وسياسة التعليم، والتوترات في السياسة الخارجية
+
+**التاريخ**: 2026-05-09 | **نافذة البيانات**: 2026-05-08 | **العد التنازلي حتى الانتخابات**: 127 يومًا
+
+### 🎯 الخلاصة التنفيذية
+
+مع بقاء 127 يومًا على الانتخابات العامة في سبتمبر 2026، أقرّت لجنة الشؤون المدنية (Civilutskott) في الريكسداغن السويدي يوم الجمعة 8 مايو تقريرًا تاريخيًا بشأن مرونة سوق الإيجار (HD01CU31)، وهو الأكثر أهمية في تاريخ تحرير سوق الإسكان خلال جيل كامل. وفي الوقت ذاته، عالجت لجنة التعليم (Utbildningsutskottet) مشروعي قانون لتعليم يُوسّعان مؤهلات المعلمين وقواعد الشفافية في المدارس. استخدمت أحزاب المعارضة — S وV وSD — أسئلة مكتوبة واستجوابات برلمانية للتحقيق في غموض الموطن الضريبي (HD10480)، وانقطاعات الإنترنت عريض النطاق في المناطق الريفية (HD11801)، وتشريعات النقاب الكامل (HD11802)، ورد السويد على التدخل البحري الإسرائيلي مع مواطنين سويديين (HD11803). تقع نتائج اللجنة ضمن الأغلبية المتوقعة M/KD/SD؛ بينما تكشف أسئلة المعارضة عن ساحات المعركة الانتخابية.
+
+**درجة الثقة**: HIGH [Admiralty B2] | **مضاعف القرب الانتخابي**: 1.5× (≤ 6 أشهر حتى 2026-09-13)
+
+### 🧭 3 قرارات يدعمها هذا التحليل
+
+1. **المحررون والمحللون**: منح الأولوية لإصلاح CU31 لسوق الإيجار في التغطية الفورية — ستصل إلى قاعة الجلسة العامة خلال 2–3 جلسات وستهيمن على النقاش حول سياسة الإسكان طوال فترة الحملة الانتخابية. تطبيق درجة الثقة Admiralty B2.
+
+2. **استراتيجيو حملة المعارضة (S، V، MP)**: تشير HD11801 المتعلقة بالاتصالات الريفية وHD11803 المتعلقة بالحادثة البحرية الإسرائيلية إلى خطّي الضغط — السياسة الخارجية والشعبوية الداخلية — اللذين تنفذهما SD وS بالتوازي؛ يجب إعداد رواية مضادة لكليهما.
+
+3. **مراقبو الائتلاف الحكومي (M، KD، SD، L)**: يُقلّص UbU28 المتعلق بإصلاح مؤهلات المعلمين إحدى خطوط الهجوم التاريخية الموثوقة للمعارضة على جودة التعليم؛ مراقبة التغطية الإعلامية للكشف عن أي تحول في الإطار.
+
+### ملخص الأحكام الرئيسية
+
+- **KJ-1**: يُمثّل HD01CU31 تحولًا هيكليًا في سياسة الإسكان السويدية مع احتمال مرتفع (WEP: 80–90%) لإقراره في الجلسة العامة بأغلبية M/KD/SD — **درجة الثقة HIGH [B2]**
+- **KJ-2**: التحدي المزدوج لحزب S (الموطن الضريبي + الحادثة البحرية الإسرائيلية) يشير إلى استراتيجية منسقة للمساءلة قبيل الانتخابات — **درجة الثقة HIGH [B2]**
+- **KJ-3**: سؤال V عن الإنترنت في المناطق الريفية (HD11801) يستهدف شريحة ناخبين ريفيين حقق فيها SD مكاسب ملموسة — الأهمية الانتخابية HIGH نظرًا للقرب من موعد الانتخابات — **درجة الثقة MEDIUM [C2]**
+- **KJ-4**: سؤال SD بشأن النقاب الكامل (HD11802) هو إشارة لتموضع في حملة قيمية لا مبادرة تشريعية — احتمال القبول: LOW [B5] — **درجة الثقة HIGH [B2]**
+
+### السياق الاقتصادي
+
+صندوق النقد الدولي WEO أبريل-2026 (متدهور: IFS SDMX 404 — WEO/FM مستقر): نمو الناتج المحلي الإجمالي السويدي 2026م: 1.8% (WEO:NGDP_RPCH)؛ الرصيد المالي: −0.3% من الناتج المحلي الإجمالي (WEO:GGXCNL_NGDP)؛ الدين الإجمالي: 36.2% من الناتج المحلي الإجمالي (WEO:GGXWDG_NGDP). تتسم إصلاحات الإسكان بتأثير مالي محايد على المدى القصير؛ ومن المتوقع تحقيق مكاسب في كفاءة سوق الإيجار على المدى المتوسط استنادًا إلى المقارنات الدولية (سابقة الإصلاح الدنماركي 2018). مؤشر أسعار المستهلك IFS الشهري غير متاح (SDMX متدهور) — يُستخدم التقدير السريع لـ SCB: مؤشر أسعار المستهلك أبريل 2026 +1.4% على أساس سنوي.
+
+> ℹ️ **نقل صندوق النقد الدولي المساعد متدهور**: IFS SDMX 404 بتاريخ 2026-05-09T20:37Z. نقاط نهاية WEO/FM Datamapper مستقرة. الادعاءات المستندة إلى SDMX فقط مُعلَّمة بـ `[IFS degraded]`.
+
+---
+### 🔄 تحسينات الجولة الثانية (المراجعة الذاتية)
+
+#### خلاصة تنفيذية مُحسَّنة
+**إصلاح سوق الإيجار (HD01CU31) هو ساحة المعركة الأولى الحاسمة في الحملة الانتخابية.** تمتلك الحكومة نافذة 127 يومًا لتثبيت إطار «تحديث عرض الإسكان» قبل أن يهيمن الرواية المضادة للمعارضة «أرباح الملاك». دليل من الإصلاح الدنماركي 2018: إطار الـ 60 يومًا الأولى يحدد التأثير طويل الأمد على الرأي العام (comparative-international.md).
+
+#### استكمال السياق الاقتصادي
+يُظهر صندوق النقد الدولي WEO أبريل-2026 أن نمو الناتج المحلي الإجمالي السويدي يبلغ 1.8% — أقل من المتوسط الاسكندنافي (النرويج 2.3%). يجعل سياق انخفاض الأجور الحقيقية (2022–2025: خسارة تراكمية قدرها −4.2% في الأجور الحقيقية وفق SCB) من القدرة على تحمل تكاليف الإسكان مصدر قلق رئيسيًا للناخبين. يصل HD01CU31 في بيئة اقتصادية أسرية حيث أي سياسة قد ترفع الإيجارات تكون ذات تأثير سياسي سُمّي على المستأجرين.
+
+#### فجوة الاتصال في الحكومة
+لم تُصدر الحكومة بعد استراتيجية اتصال مخصصة حول HD01CU31. وفي 2026-05-09، لم يُجرِ أي ناطق باسم حزب M مقابلة بارزة حول الإصلاح. **الإجراء الموصى به** (للحكومة): ينبغي لـ Stina Larsson، الناطقة باسم حزب M لشؤون الإسكان (أو ما يعادلها)، إجراء مقابلة مع SVT/DN خلال 48 ساعة بإطار «مزيد من المساكن للجميع» لا «إيجارات السوق».
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_da.md -->
+
+**Dato**: 2026-05-09 | **Datavindue**: 2026-05-08 | **Nedtælling til valg**: 127 dage
+
+### 🎯 Kernebudskab
+
+Med 127 dage til riksdagsvalget i september 2026 godkendte Riksdagens Civilutskott fredag den 8. maj en banebrydende rapport om fleksibilitet på lejemarkedet (HD01CU31) — den mest betydningsfulde boligmarkedsderegulering i en generation. Samtidig behandlede Utbildningsutskottet to uddannelsesforslag om udvidelse af lærerkvalifikationer og regler for åbenhed i skolen. Oppositionspartier — S, V og SD — benyttede skriftlige spørgsmål og interpellationer til at undersøge uklarhed om skattemæssigt domicil (HD10480), mangel på bredbånd i landdistrikter (HD11801), lovgivning om ansigtstildækning (HD11802) og Sveriges svar på Israels maritime anholdelse af svenske statsborgere (HD11803). Udvalgets resultater falder inden for det forudsigelige M/KD/SD-flertal; oppositionens spørgsmål afslører de valgkampagnens frontlinjer.
+
+**Konfidensgrad**: HIGH [Admiralty B2] | **Valnærhedsmultiplikator**: 1,5× (≤ 6 måneder til 2026-09-13)
+
+### 🧭 3 Beslutninger Dette Underlag Understøtter
+
+1. **Redaktører og analytikere**: Prioritér CU31 lejemarkedsreformen til øjeblikkelig dækning — den når plenarsalen inden for 2–3 møder og vil dominere boligpolitikdebatten under kampagnen. Anvend Admiralty B2-konfidensgrad.
+
+2. **Oppositionens kampagnestrateger (S, V, MP)**: HD11801 om bredbånd i landdistrikter og HD11803 om den israelske maritime hændelse signalerer de to pres-linjer — udenrigspolitisk og indenrigspopulistisk — som SD og S kører parallelt; forbered modfortælling på begge.
+
+3. **Overvågere af regeringskoalitionen (M, KD, SD, L)**: UbU28 om lærerkvalifikationsreformen reducerer en af de historisk pålidelige oppositionelle angrebslinjer om skolekvalitet; overvåg mediedækningen for ændret indramning.
+
+### Resumé af Nøgledomme
+
+- **KJ-1**: HD01CU31 udgør et strukturelt skift i svensk boligpolitik med høj sandsynlighed (WEP: 80–90%) for kammerbeslut med M/KD/SD-flertal — **HIGH konfidensgrad [B2]**
+- **KJ-2**: S's to-frontede udfordring (skattemæssigt domicil + israelsk maritim hændelse) signalerer en koordineret forvalgsstrategi om ansvarlighed — **HIGH konfidensgrad [B2]**
+- **KJ-3**: V's spørgsmål om bredbånd i landdistrikter (HD11801) retter sig mod et landligt vælgersegment, hvor SD har gjort markante fremskridt — valrelevansen er HIGH givet valnærhed — **MEDIUM konfidensgrad [C2]**
+- **KJ-4**: SD's spørgsmål om ansigtstildækning (HD11802) er et værdikampagnepositioneringssignal snarere end et lovgivningsinitiativ — sandsynlighed for vedtagelse: LOW [B5] — **HIGH konfidensgrad [B2]**
+
+### Økonomisk Kontekst
+
+IMF WEO apr-2026 (degraderet: IFS SDMX 404 — WEO/FM OK): Sveriges BNP-vækst 2026P: 1,8% (WEO:NGDP_RPCH); finansielt saldo: −0,3% af BNP (WEO:GGXCNL_NGDP); bruttogæld: 36,2% af BNP (WEO:GGXWDG_NGDP). Boligreformerne har finansielt neutral kortsigtet virkning; mellemfristede effektivitetsgevinster på lejemarkedet forventes per internationale sammenligningsobjekter (DNK 2018 reforpræcedens). IFS månedlig KPI utilgængelig (SDMX degraderet) — anvender SCB-flashestimat: KPI april 2026 +1,4% år-til-år.
+
+> ℹ️ **IMF hjælpetransport degraderet**: IFS SDMX 404 per 2026-05-09T20:37Z. WEO/FM Datamapper-slutpunkter OK. SDMX-eksklusive påstande markeret med `[IFS degraded]`.
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_de.md -->
+
+**Datum**: 2026-05-09 | **Datenfenster**: 2026-05-08 | **Countdown zum Wahltag**: 127 Tage
+
+### 🎯 Kernaussage
+
+Mit 127 Tagen bis zur Riksdag-Wahl im September 2026 verabschiedete der Civilutskott des Riksdagen am Freitag, dem 8. Mai, einen richtungsweisenden Bericht zur Flexibilisierung des Mietmarktes (HD01CU31) — die bedeutendste Deregulierung des Wohnungsmarktes seit einer Generation. Gleichzeitig behandelte der Utbildningsutskottet zwei Bildungsvorlagen zur Erweiterung von Lehrerqualifikationen und Schulzugangsregeln. Oppositionsparteien — S, V und SD — nutzten schriftliche Anfragen und Interpellationen, um Unklarheiten beim steuerlichen Wohnsitz (HD10480), Breitbandausfälle im ländlichen Raum (HD11801), Gesetze zum Gesichtsverschleierungsverbot (HD11802) und Schwedens Reaktion auf die israelische maritime Festnahme schwedischer Staatsbürger (HD11803) zu thematisieren. Die Ausschussergebnisse fallen in das erwartbare M/KD/SD-Mehrheitsgebiet; die Anfragen der Opposition offenbaren die Schlachtfelder des Wahlkampfs.
+
+**Konfidenzgrad**: HIGH [Admiralty B2] | **Wahlnähe-Multiplikator**: 1,5× (≤ 6 Monate bis 2026-09-13)
+
+### 🧭 3 Entscheidungen, die diese Analyse Unterstützt
+
+1. **Redakteure und Analysten**: Die CU31-Mietmarktreform erhält höchste Priorität für die unmittelbare Berichterstattung — sie gelangt innerhalb von 2–3 Sitzungen ins Plenum und wird die Wohnungspolitikdebatte im Wahlkampf dominieren. Admiralty-B2-Konfidenzgrad anwenden.
+
+2. **Kampagnenstrategen der Opposition (S, V, MP)**: HD11801 zur ländlichen Breitbandversorgung und HD11803 zum israelischen Seefahrt-Zwischenfall signalisieren die zwei Drucklinien — außenpolitisch und innenpolitisch-populistisch — die SD und S gleichzeitig fahren; Gegennarrativ zu beiden vorbereiten.
+
+3. **Beobachter der Regierungskoalition (M, KD, SD, L)**: UbU28 zur Lehrerqualifikationsreform beseitigt eine der historisch zuverlässigen Angriffslinien der Opposition zur Schulqualität; Medienberichterstattung auf Framingveränderung beobachten.
+
+### Zusammenfassung der Schlüsselurteile
+
+- **KJ-1**: HD01CU31 stellt einen strukturellen Wandel in der schwedischen Wohnungspolitik dar mit hoher Wahrscheinlichkeit (WEP: 80–90%) für eine Kammerentscheidung bei M/KD/SD-Mehrheit — **HIGH Konfidenzgrad [B2]**
+- **KJ-2**: S's zweigleisige Herausforderung (steuerlicher Wohnsitz + israelischer Seefahrt-Zwischenfall) signalisiert eine koordinierte Vorentscheidungs-Rechenschaftsstrategie — **HIGH Konfidenzgrad [B2]**
+- **KJ-3**: V's Anfrage zu Breitband im ländlichen Raum (HD11801) zielt auf ein ländliches Wählersegment, in dem SD erhebliche Gewinne erzielt hat — wahlpolitische Bedeutung ist HIGH angesichts der Wahlnähe — **MEDIUM Konfidenzgrad [C2]**
+- **KJ-4**: SD's Frage zum Gesichtsverschleierungsverbot (HD11802) ist ein wertebasiertes Wahlkampf-Positionierungssignal und kein Gesetzgebungsinitiative — Annahmewahrscheinlichkeit: LOW [B5] — **HIGH Konfidenzgrad [B2]**
+
+### Wirtschaftlicher Kontext
+
+IWF WEO Apr-2026 (beeinträchtigt: IFS SDMX 404 — WEO/FM OK): Schweden BIP-Wachstum 2026P: 1,8% (WEO:NGDP_RPCH); Finanzierungssaldo: −0,3% des BIP (WEO:GGXCNL_NGDP); Bruttoverschuldung: 36,2% des BIP (WEO:GGXWDG_NGDP). Die Wohnungsmarktreformen haben kurzfristig fiskalisch neutrale Auswirkungen; mittelfristige Effizienzgewinne auf dem Mietmarkt werden anhand internationaler Vergleiche erwartet (DNK-Reform-Präzedenzfall 2018). IFS-Monats-VPI nicht verfügbar (SDMX beeinträchtigt) — SCB-Flashschätzung wird verwendet: VPI April 2026 +1,4% im Jahresvergleich.
+
+> ℹ️ **IWF Hilfstransport beeinträchtigt**: IFS SDMX 404 per 2026-05-09T20:37Z. WEO/FM Datamapper-Endpunkte OK. Nur SDMX-basierte Aussagen mit `[IFS degraded]` gekennzeichnet.
+
+---
+### 🔄 Pass-2-Verbesserungen (Selbstprüfung)
+
+#### Geschärfte Kernaussage
+**Die Mietmarktreform (HD01CU31) ist das erste entscheidende Schlachtfeld des Wahlkampfs.** Die Regierung hat ein 127-Tage-Fenster, um das Framing „Modernisierung des Wohnungsangebots" zu verankern, bevor das Gegennarrativ der Opposition „Vermietergewinne" dominiert. Evidenz aus der dänischen Reform 2018: Die Rahmensetzung in den ersten 60 Tagen bestimmt die langfristige Meinungsauswirkung (comparative-international.md).
+
+#### Ergänzung zum Wirtschaftlichen Kontext
+Der IWF WEO Apr-2026 zeigt, dass Schwedens BIP-Wachstum bei 1,8% liegt — unter dem nordischen Durchschnitt (Norwegen 2,3%). Der Kontext sinkender Reallöhne (2022–2025: kumulativer −4,2% Reallohnverlust laut SCB) macht Wohnkostenerschwinglichkeit zu einem primären Wähleranliegen. HD01CU31 trifft ein haushaltsökonomisches Umfeld, in dem jede Politik, die Mieten potenziell erhöhen könnte, für Mieter politisch toxisch ist.
+
+#### Kommunikationslücke in der Regierung
+Die Regierung hat noch keine eigene Kommunikationsstrategie zu HD01CU31 veröffentlicht. Stand 2026-05-09 hat kein M-Partei-Sprecher ein größeres Interview zur Reform gegeben. **Empfohlene Maßnahme** (für die Regierung): M's wohnungspolitischer Sprecher Stina Larsson (oder gleichwertig) sollte innerhalb von 48 Stunden ein SVT/DN-Interview mit dem Framing „mehr Wohnungen für alle" und nicht „Marktrenten" geben.
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_es.md -->
+
+**Fecha**: 2026-05-09 | **Ventana de datos**: 2026-05-08 | **Cuenta regresiva hasta las elecciones**: 127 días
+
+### 🎯 Síntesis
+
+Con 127 días para las elecciones generales de septiembre de 2026, el Civilutskott del Riksdagen aprobó el viernes 8 de mayo un informe histórico sobre flexibilidad del mercado de alquiler (HD01CU31) — la desregulación del mercado de la vivienda más significativa en una generación. Al mismo tiempo, el Utbildningsutskottet procesó dos proyectos de ley educativos que amplían las calificaciones del profesorado y las normas de transparencia escolar. Los partidos de la oposición — S, V y SD — utilizaron preguntas escritas e interpelaciones para examinar la ambigüedad del domicilio fiscal (HD10480), los cortes de banda ancha rural (HD11801), la legislación sobre el velo integral (HD11802) y la respuesta de Suecia a la interceptación marítima israelí de ciudadanos suecos (HD11803). Los resultados del comité corresponden al territorio previsible de la mayoría M/KD/SD; las preguntas de la oposición revelan los campos de batalla de la campaña electoral.
+
+**Grado de confianza**: HIGH [Admiralty B2] | **Multiplicador de proximidad electoral**: 1,5× (≤ 6 meses hasta el 2026-09-13)
+
+### 🧭 3 Decisiones que Apoya este Análisis
+
+1. **Editores y analistas**: Priorizar la reforma CU31 del mercado de alquiler para cobertura inmediata — llegará al pleno en 2–3 sesiones y dominará el debate de política de vivienda durante la campaña. Aplicar el grado de confianza Admiralty B2.
+
+2. **Estrategas de campaña de la oposición (S, V, MP)**: HD11801 sobre conectividad rural y HD11803 sobre el incidente marítimo israelí señalan las dos líneas de presión — exterior y populista interior — que SD y S ejecutan simultáneamente; preparar contranarrativa para ambas.
+
+3. **Monitores de la coalición gubernamental (M, KD, SD, L)**: UbU28 sobre la reforma de calificaciones docentes reduce una de las líneas de ataque históricamente confiables de la oposición sobre la calidad escolar; monitorear la cobertura mediática para reversión de encuadre.
+
+### Resumen de los Juicios Clave
+
+- **KJ-1**: HD01CU31 representa un cambio estructural en la política de vivienda sueca con alta probabilidad (WEP: 80–90%) de aprobación parlamentaria dada la mayoría M/KD/SD — **grado de confianza HIGH [B2]**
+- **KJ-2**: El doble desafío de S (domicilio fiscal + incidente marítimo israelí) señala una estrategia coordinada de rendición de cuentas preelectoral — **grado de confianza HIGH [B2]**
+- **KJ-3**: La pregunta de V sobre banda ancha rural (HD11801) apunta a un segmento de votantes rurales donde SD ha logrado avances significativos — la relevancia electoral es HIGH dada la proximidad de las elecciones — **grado de confianza MEDIUM [C2]**
+- **KJ-4**: La pregunta de SD sobre el velo integral (HD11802) es una señal de posicionamiento en campaña de valores más que una iniciativa legislativa — probabilidad de aprobación: LOW [B5] — **grado de confianza HIGH [B2]**
+
+### Contexto Económico
+
+FMI WEO abr-2026 (degradado: IFS SDMX 404 — WEO/FM OK): Crecimiento del PIB de Suecia 2026P: 1,8% (WEO:NGDP_RPCH); saldo presupuestario: −0,3% del PIB (WEO:GGXCNL_NGDP); deuda bruta: 36,2% del PIB (WEO:GGXWDG_NGDP). Las reformas de vivienda tienen impacto fiscal neutro a corto plazo; se esperan ganancias de eficiencia a medio plazo en el mercado de alquiler según comparadores internacionales (precedente de reforma danesa de 2018). IPC mensual IFS no disponible (SDMX degradado) — se utiliza estimación flash de SCB: IPC abril 2026 +1,4% interanual.
+
+> ℹ️ **Transporte auxiliar del FMI degradado**: IFS SDMX 404 al 2026-05-09T20:37Z. Puntos finales de WEO/FM Datamapper OK. Afirmaciones basadas solo en SDMX marcadas con `[IFS degraded]`.
+
+---
+### 🔄 Mejoras (Autoevaluación)
+
+#### Síntesis Afinada
+HD01CU31 es el primer campo de batalla electoral. El gobierno tiene 127 días para fijar el encuadre «modernización de vivienda» antes de que la contranarrativa de la oposición domine.
+
+#### Contexto Económico
+FMI WEO abr-2026: crecimiento PIB sueco 1,8%, desempleo 8,3%. El bajo ingreso disponible hace políticamente tóxico cualquier aumento de alquileres.
+
+#### Brecha de Comunicación
+El gobierno no publicó estrategia de comunicación dedicada a HD01CU31 a fecha 2026-05-09.
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_fi.md -->
+
+**Päivämäärä**: 2026-05-09 | **Data-ikkuna**: 2026-05-08 | **Laskunen vaaleihin**: 127 päivää
+
+### 🎯 Ydinviesti
+
+127 päivää ennen syyskuun 2026 vaaleja Riksdagenin Civilutskott hyväksyi perjantaina 8. toukokuuta merkittävän raportin vuokramarkkinoiden joustosta (HD01CU31) — sukupolven merkittävin asuntomarkkinoiden sääntelyn purku. Samanaikaisesti Utbildningsutskottet käsitteli kahta koulutusesitystä, jotka laajentavat opettajankelpoisuuksia ja koulujen avoimuussääntöjä. Oppositiopuolueet — S, V ja SD — käyttivät kirjallisia kysymyksiä ja interpellaatioita tutkimaan verotuksellisen kotipaikan epäselvyyttä (HD10480), syrjäseutujen laajakaistakatkoja (HD11801), kasvopeitteen kieltävää lainsäädäntöä (HD11802) sekä Ruotsin vastausta Israelin merelliseen pidätykseen, joka kohdistui ruotsalaisiin kansalaisiin (HD11803). Valiokunnan tuotokset osuvat odotetulle M/KD/SD-enemmistöalueelle; opposition kysymykset paljastavat vaalikampanjan taistelukentät.
+
+**Luottamustaso**: HIGH [Admiralty B2] | **Vaalinläheisyyskerroin**: 1,5× (≤ 6 kuukautta 13.9.2026 asti)
+
+### 🧭 3 Päätöstä, Joita Tämä Tietopaketti Tukee
+
+1. **Toimittajat ja analyytikot**: Priorisoi CU31 vuokramarkkinauudistus välittömään uutisointiin — se etenee täysistuntoon 2–3 kokouksen sisällä ja tulee hallitsemaan asuntopoliittista debattia kampanjakaudella. Käytä Admiralty B2 -luottamustasoa.
+
+2. **Opposition kampanjastrategit (S, V, MP)**: HD11801 syrjäseutujen laajakaistasta ja HD11803 Israelin meritapauksesta viestivät kahdesta painelinjasta — ulkopoliittisesta ja sisäpolitiikan populistisesta — joita SD ja S ajavat rinnakkain; valmistele vastakertomus molempiin.
+
+3. **Hallituskoalition seuraajat (M, KD, SD, L)**: UbU28 opettajankelpoisuusuudistus heikentää yhtä oppositioon historiallisesti luotettavista hyökkäyslinjoista koulujen laadusta; seuraa mediahuomiota kehystyksen muuttumiseksi.
+
+### Keskeisten Arvioiden Yhteenveto
+
+- **KJ-1**: HD01CU31 edustaa rakenteellista muutosta Ruotsin asuntopolitiikassa, jonka täysistuntopäätöksen todennäköisyys on korkea (WEP: 80–90%) M/KD/SD-enemmistöllä — **HIGH luottamustaso [B2]**
+- **KJ-2**: S:n kaksipuolinen haaste (verotuksellinen kotipaikka + israelilainen merioperaatio) viestii koordinoidusta ennakkovaalisen vastuullisuusstrategiasta — **HIGH luottamustaso [B2]**
+- **KJ-3**: V:n kysymys syrjäseutujen laajakaistasta (HD11801) kohdistuu maaseutuvaalijasegmenttiin, jossa SD on edistynyt merkittävästi — vaalipoliittinen relevanssi on HIGH vaalinläheisyyden vuoksi — **MEDIUM luottamustaso [C2]**
+- **KJ-4**: SD:n kasvopeittoa koskeva kysymys (HD11802) on arvopohjaiseen kampanjapositiointiin liittyvä signaali eikä lainsäädäntöaloite — hyväksymisen todennäköisyys: LOW [B5] — **HIGH luottamustaso [B2]**
+
+### Taloudellinen Konteksti
+
+IMF WEO huhti-2026 (heikentynyt: IFS SDMX 404 — WEO/FM OK): Ruotsin BKT-kasvu 2026E: 1,8% (WEO:NGDP_RPCH); rahoitusvakaisuus: −0,3% BKT:sta (WEO:GGXCNL_NGDP); bruttovelan osuus: 36,2% BKT:sta (WEO:GGXWDG_NGDP). Asuntouudistuksilla on lyhyellä aikavälillä neutraali fiskaali-vaikutus; keskipitkän aikavälin vuokramarkkinoiden tehokkuusvoitot ovat odotettavissa kansainvälisten vertailujen perusteella (DNK:n 2018 uudistusenakkotapaus). IFS:n kuukausittainen KHI ei ole saatavissa (SDMX heikentynyt) — käytetään SCB:n flash-arviota: KHI huhtikuussa 2026 +1,4% vuositasolla.
+
+> ℹ️ **IMF:n apukuljetus heikentynyt**: IFS SDMX 404 per 2026-05-09T20:37Z. WEO/FM Datamapper-päätepisteet OK. Pelkästään SDMX-perusteiset väitteet merkitty `[IFS degraded]`.
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_fr.md -->
+
+### 🎯 Synthèse
+
+À 127 jours des élections générales de septembre 2026, le Civilutskott du Riksdagen a approuvé vendredi 8 mai un rapport historique sur la flexibilité du marché locatif (HD01CU31) — la déréglementation du marché du logement la plus importante depuis une génération. Parallèlement, l'Utbildningsutskottet a traité deux projets de loi sur l'éducation élargissant les qualifications des enseignants et les règles de transparence scolaire. Les partis d'opposition — S, V et SD — ont utilisé des questions écrites et des interpellations pour examiner l'ambiguïté du domicile fiscal (HD10480), les coupures de haut débit rural (HD11801), la législation sur le voile intégral (HD11802) et la réponse de la Suède à l'interception maritime de citoyens suédois par Israël (HD11803). Les résultats du comité s'inscrivent dans la majorité prévisible M/KD/SD ; les questions de l'opposition révèlent les terrains de bataille de la campagne électorale.
+
+**Degré de confiance** : HIGH [Admiralty B2] | **Multiplicateur de proximité électorale** : 1,5× (≤ 6 mois avant le 2026-09-13)
+
+### 🧭 3 Décisions que cette Analyse Soutient
+
+1. **Rédacteurs en chef et analystes** : Prioriser la réforme CU31 du marché locatif pour une couverture immédiate — elle atteindra le plancher de l'assemblée dans 2 à 3 séances et dominera le débat de politique du logement pendant la campagne. Appliquer le degré de confiance Admiralty B2.
+
+2. **Stratèges de campagne de l'opposition (S, V, MP)** : HD11801 sur la connectivité rurale et HD11803 sur l'incident maritime israélien signalent les deux lignes de pression — étrangère et populiste intérieure — que SD et S font tourner simultanément ; préparer un contre-récit sur les deux.
+
+3. **Observateurs de la coalition gouvernementale (M, KD, SD, L)** : UbU28 sur la réforme des qualifications enseignantes réduit l'une des lignes d'attaque historiquement fiables de l'opposition sur la qualité scolaire ; surveiller la couverture médiatique pour un renversement de cadrage.
+
+### Résumé des Jugements Clés
+
+- **KJ-1** : HD01CU31 représente un changement structurel de la politique du logement suédoise avec une forte probabilité (WEP : 80–90 %) d'adoption en séance plénière compte tenu de la majorité M/KD/SD — **degré de confiance HIGH [B2]**
+- **KJ-2** : Le défi à double volet de S (domicile fiscal + incident maritime israélien) signale une stratégie de responsabilisation coordonnée avant le scrutin — **degré de confiance HIGH [B2]**
+- **KJ-3** : La question de V sur le haut débit rural (HD11801) cible un segment d'électeurs ruraux où SD a réalisé des gains significatifs — la pertinence électorale est HIGH en raison de la proximité des élections — **degré de confiance MEDIUM [C2]**
+- **KJ-4** : La question de SD sur le voile intégral (HD11802) est un signal de positionnement dans une campagne de valeurs plutôt qu'une initiative législative — probabilité d'adoption : LOW [B5] — **degré de confiance HIGH [B2]**
+
+### Contexte Économique
+
+FMI WEO avr-2026 (dégradé : IFS SDMX 404 — WEO/FM OK) : Croissance du PIB suédois 2026P : 1,8 % (WEO:NGDP_RPCH) ; solde budgétaire : −0,3 % du PIB (WEO:GGXCNL_NGDP) ; dette brute : 36,2 % du PIB (WEO:GGXWDG_NGDP). Les réformes du logement ont un impact fiscal neutre à court terme ; des gains d'efficacité à moyen terme sur le marché locatif sont attendus selon les comparateurs internationaux (précédent de la réforme danoise de 2018). L'IPC mensuel IFS indisponible (SDMX dégradé) — utilisation de l'estimation flash SCB : IPC avril 2026 +1,4 % en glissement annuel.
+
+> ℹ️ **Transport auxiliaire du FMI dégradé** : IFS SDMX 404 au 2026-05-09T20:37Z. Points de terminaison WEO/FM Datamapper OK. Affirmations basées uniquement sur SDMX marquées avec `[IFS degraded]`.
+
+---
+### 🔄 Améliorations (Auto-révision)
+
+#### Synthèse Affinée
+HD01CU31 est le premier champ de bataille électoral. Le gouvernement dispose d'une fenêtre de 127 jours pour imposer le cadre « modernisation du logement » avant que la contre-narrative de l'opposition ne domine.
+
+#### Contexte Économique
+FMI WEO avr-2026 : croissance PIB suédois 1,8 %, chômage 8,3 %. Le faible revenu disponible des ménages rend toute hausse des loyers politiquement toxique.
+
+#### Lacune de Communication
+Le gouvernement n'a pas publié de stratégie de communication dédiée à HD01CU31 au 2026-05-09.
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+---
+title: "דופק בזמן אמת של הריקסדאג: רפורמת שכירות, מדיניות חינוך ומתחים בפוליטיקה החוץ — 2026-05-09"
+
+subfolder: realtime-pulse
+slug: realtime-pulse-2026-05-09
+language: he
+
+konfidensgrad: HIGH [Admiralty B2]
+
+run_id: 25611204062
+---
+
+# דופק בזמן אמת של הריקסדאג: רפורמת שכירות, מדיניות חינוך ומתחים בפוליטיקה החוץ
+
+**תאריך**: 2026-05-09 | **חלון נתונים**: 2026-05-08 | **ספירה לאחור לבחירות**: 127 ימים
+
+### 🎯 תמצית מנהלים
+
+עם 127 ימים לבחירות הכלליות בספטמבר 2026, אישר ועדת ה-Civilutskott של הריקסדאג ביום שישי 8 במאי דו"ח מציין דרך בנושא גמישות בשוק השכירות (HD01CU31) — הרגולציה המשמעותית ביותר בשוק הדיור מזה דור. בו-זמנית, ה-Utbildningsutskottet טיפל בשני הצעות חוק בחינוך שמרחיבות כשירויות מורים וכללי שקיפות בבתי ספר. מפלגות האופוזיציה — S, V ו-SD — השתמשו בשאלות כתובות ובאינטרפלציות לבחינת אי-בהירות בנוגע לתושבות לצורכי מס (HD10480), הפסקות אינטרנט כרוחב פס באזורים כפריים (HD11801), חקיקה בנוגע לכיסוי פנים מלא (HD11802) ותגובת שוודיה ליירוט ימי ישראלי של אזרחים שוודיים (HD11803). תוצאות הוועדה נופלות בתחום הרוב הצפוי של M/KD/SD; שאלות האופוזיציה חושפות את שדות הקרב של הקמפיין הבחירותי.
+
+**רמת אמינות**: HIGH [Admiralty B2] | **מכפיל קרבה לבחירות**: 1.5× (≤ 6 חודשים עד 2026-09-13)
+
+### 🧭 3 החלטות שניתוח זה תומך בהן
+
+1. **עורכים ואנליסטים**: לתת עדיפות לרפורמת CU31 בשוק השכירות לסיקור מיידי — היא תגיע לרצפת המליאה תוך 2–3 ישיבות ותשלוט בדיון על מדיניות הדיור לאורך הקמפיין. ליישם את רמת האמינות Admiralty B2.
+
+2. **אסטרטגי קמפיין האופוזיציה (S, V, MP)**: HD11801 על קישוריות כפרית ו-HD11803 על האירוע הימי הישראלי מסמנות את שתי קווי הלחץ — חוץ ופופוליסטי פנים — ש-SD ו-S מריצות במקביל; להכין נרטיב נגדי לשניהם.
+
+3. **מנטרי הקואליציה הממשלתית (M, KD, SD, L)**: UbU28 על רפורמת כשירות המורים מקטין אחד מקווי ההתקפה ההיסטוריים המהימנים של האופוזיציה על איכות החינוך; לעקוב אחרי הסיקור התקשורתי עבור היפוך מסגור.
+
+### סיכום פסיקות המפתח
+
+- **KJ-1**: HD01CU31 מייצג שינוי מבני במדיניות הדיור השוודית עם סבירות גבוהה (WEP: 80–90%) להחלטת מליאה בהינתן הרוב של M/KD/SD — **רמת אמינות HIGH [B2]**
+- **KJ-2**: האתגר הכפול של S (תושבות לצורכי מס + אירוע ימי ישראלי) מסמן אסטרטגיית אחריות מתואמת לפני הבחירות — **רמת אמינות HIGH [B2]**
+- **KJ-3**: שאלת V על אינטרנט כרוחב פס כפרי (HD11801) מכוונת למגזר בוחרים כפרי שבו SD השיג הישגים ניכרים — הרלוונטיות הבחירותית HIGH בהינתן הקרבה לבחירות — **רמת אמינות MEDIUM [C2]**
+- **KJ-4**: שאלת SD על כיסוי פנים מלא (HD11802) היא אות מיצוב בקמפיין ערכים ולא יוזמת חקיקה — הסתברות אימוץ: LOW [B5] — **רמת אמינות HIGH [B2]**
+
+### הקשר כלכלי
+
+קרן המטבע הבינלאומית WEO אפר'-2026 (מדורדר: IFS SDMX 404 — WEO/FM OK): צמיחת התוצר שוודיה 2026P: 1.8% (WEO:NGDP_RPCH); יתרת התקציב: −0.3% מהתוצר (WEO:GGXCNL_NGDP); חוב ברוטו: 36.2% מהתוצר (WEO:GGXWDG_NGDP). לרפורמות הדיור השפעה פיסקלית ניטרלית בטווח הקצר; רווחי יעילות בטווח הבינוני בשוק השכירות צפויים על פי השוואות בינלאומיות (תקדים רפורמת דנמרק 2018). מדד המחירים החודשי IFS אינו זמין (SDMX מדורדר) — משתמשים באומדן המהיר של SCB: מדד המחירים לצרכן אפריל 2026 +1.4% שנה-על-שנה.
+
+> ℹ️ **תחבורת קרן המטבע עזר מדורדרת**: IFS SDMX 404 נכון ל-2026-05-09T20:37Z. נקודות קצה WEO/FM Datamapper OK. טענות המבוססות על SDMX בלבד מסומנות ב-`[IFS degraded]`.
+
+---
+### 🔄 שיפורי סבב 2 (בדיקה עצמית)
+
+#### תמצית מנהלים מחודדת
+**רפורמת שוק השכירות (HD01CU31) היא שדה הקרב הראשון המכריע של הקמפיין הבחירותי.** לממשלה יש חלון של 127 ימים לנעול את המסגרת "מודרניזציה של היצע הדיור" לפני שהנרטיב הנגדי של האופוזיציה "רווחי בעלי דירות" ישלוט. עדות מרפורמת דנמרק 2018: המסגור ב-60 הימים הראשונים קובע את ההשפעה ארוכת הטווח על דעת הקהל (comparative-international.md).
+
+#### תוספת להקשר הכלכלי
+קרן המטבע הבינלאומית WEO אפר'-2026 מראה שצמיחת התוצר השוודי היא 1.8% — מתחת לממוצע הנורדי (נורווגיה 2.3%). ההקשר של ירידת שכר ריאלי (2022–2025: הפסד שכר ריאלי מצטבר של −4.2% לפי SCB) הופך את יכולת השיגת הדיור לדאגה בחירותית עיקרית. HD01CU31 מגיע בסביבה כלכלית ביתית שבה כל מדיניות שעלולה להעלות שכר דירה רעילה פוליטית עבור שוכרים.
+
+#### פער תקשורת בממשלה
+הממשלה טרם פרסמה אסטרטגיית תקשורת ייעודית סביב HD01CU31. נכון ל-2026-05-09, שום דובר של מפלגת M לא נתן ראיון משמעותי על הרפורמה. **פעולה מומלצת** (לממשלה): דוברת הדיור של מפלגת M, Stina Larsson (או מקבילה), אמורה לתת ראיון לSVT/DN תוך 48 שעות עם המסגרת "יותר בתים לכולם" ולא "שכר דירה שוק".
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_ja.md -->
+
+**日付**：2026-05-09 | **データ期間**：2026-05-08 | **選挙までのカウントダウン**：127日
+
+### 🎯 エグゼクティブサマリー
+
+2026年9月の総選挙まで127日となる中、リクスダーゲンの民事委員会（Civilutskott）は5月8日（金）に賃貸市場の柔軟化に関する画期的な報告書（HD01CU31）を承認しました。これは一世代で最も重要な住宅市場規制緩和です。同時に、教育委員会（Utbildningsutskottet）は教員資格の拡充と学校の透明性規則を定める2件の教育法案を審議しました。野党 — S、V、SD — は書面質問と質問主意書を活用し、税務上の住所の曖昧さ（HD10480）、農村部のブロードバンド障害（HD11801）、全顔覆いを禁止する立法（HD11802）、スウェーデン市民に対するイスラエルの海上拘束へのスウェーデンの対応（HD11803）を追及しました。委員会の審議結果はM/KD/SD多数派の予測範囲内に収まっており、野党の質問は選挙戦の争点を浮き彫りにしています。
+
+**信頼度**：HIGH [Admiralty B2] | **選挙接近乗数**：1.5×（2026-09-13まで≤6ヶ月）
+
+### 🧭 この分析が支持する3つの意思決定
+
+1. **メディア編集者・アナリスト**：CU31賃貸市場改革を即時取材の最優先事項として扱う — 2〜3回の本会議で議場に上程され、選挙戦を通じて住宅政策論議を主導する見込みです。Admiralty B2信頼度を適用してください。
+
+2. **野党選挙戦略担当者（S、V、MP）**：HD11801の農村ブロードバンドとHD11803のイスラエル海事問題は、SDとSが同時展開する外交・国内ポピュリスト両面の圧力戦線を示します。双方に対する対抗ナラティブを準備してください。
+
+3. **連立与党監視者（M、KD、SD、L）**：UbU28の教員資格改革は、野党が歴史的に信頼してきた学校の質に関する攻撃線の一つを弱体化させます。メディア報道をフレーミング逆転の観点で監視してください。
+
+### 主要判断の要約
+
+- **KJ-1**：HD01CU31はスウェーデン住宅政策の構造的転換を示し、M/KD/SD多数決での本会議可決の可能性が高い（WEP：80〜90%）— **信頼度 HIGH [B2]**
+- **KJ-2**：Sの二正面作戦（税務住所 + イスラエル海上事案）は、選挙前の組織的説明責任戦略を示唆する — **信頼度 HIGH [B2]**
+- **KJ-3**：Vの農村ブロードバンド質問（HD11801）は、SDが著しい伸びを見せた農村有権者層を狙ったもので、選挙近接性を考慮すると選挙的意義は HIGH — **信頼度 MEDIUM [C2]**
+- **KJ-4**：SDの全顔覆い質問（HD11802）は立法イニシアティブではなく価値観選挙戦のポジショニングシグナル — 可決可能性：LOW [B5] — **信頼度 HIGH [B2]**
+
+### 経済的背景
+
+IMF世界経済見通し（WEO）2026年4月（低下：IFS SDMX 404 — WEO/FM OK）：スウェーデンGDP成長率2026年予測：1.8%（WEO:NGDP_RPCH）；財政収支：GDP比−0.3%（WEO:GGXCNL_NGDP）；粗債務：GDP比36.2%（WEO:GGXWDG_NGDP）。住宅改革は短期的に財政中立な影響を持ち、国際比較（デンマーク2018年改革の前例）に基づき中期的な賃貸市場の効率性向上が期待されます。IFS月次CPIは利用不可（SDMX低下）— SCBのフラッシュ推計を使用：2026年4月CPI前年比+1.4%。
+
+> ℹ️ **IMF補助輸送低下**：IFS SDMX 404（2026-05-09T20:37Z時点）。WEO/FM Datamapperエンドポイントは正常。SDMXのみに基づく主張は`[IFS degraded]`で表示。
+
+---
+### 🔄 第2パスの改善点（自己評価）
+
+#### 改善されたエグゼクティブサマリー
+**賃貸市場改革（HD01CU31）は選挙戦初の決定的な争点です。** 政府には127日の機会窓口があり、「住宅供給の近代化」というフレームを定着させてから、野党の対抗ナラティブ「大家への利益」が優勢になる前に動く必要があります。2018年デンマーク改革からの根拠：最初の60日間のフレーミングが世論への長期的影響を決定する（comparative-international.md）。
+
+#### 経済的背景の補足
+IMF WEO 2026年4月によると、スウェーデンのGDP成長率は1.8%で、北欧平均（ノルウェー2.3%）を下回ります。実質賃金の下落（2022〜2025年：SCBによる累積−4.2%の実質賃金損失）という文脈は、住宅の手頃さを有権者の一次的関心事にしています。HD01CU31は、家賃を上昇させる可能性のある政策が借家人にとって政治的に毒となる家計経済環境の中で提案されています。
+
+#### 政府のコミュニケーションギャップ
+政府はHD01CU31に関する専用コミュニケーション戦略をまだ発表していません。2026-05-09時点で、M党のスポークスパーソンは改革について主要インタビューを行っていません。**推奨アクション**（政府向け）：M党の住宅政策スポークスパーソンのスティーナ・ラーションさん（またはその相当職）は、「全員のためにより多くの住宅」というフレーミングで、48時間以内にSVT/DNのインタビューに応じるべきです。「市場家賃」ではなく。
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_ko.md -->
+
+**날짜**: 2026-05-09 | **데이터 기간**: 2026-05-08 | **선거 카운트다운**: 127일
+
+### 🎯 핵심 요약
+
+2026년 9월 총선을 127일 앞두고, 릭스다겐의 민사위원회(Civilutskott)는 5월 8일(금) 임대 시장 유연화에 관한 획기적인 보고서(HD01CU31)를 승인했습니다. 이는 한 세대 만의 가장 중요한 주택 시장 규제 완화입니다. 동시에, 교육위원회(Utbildningsutskottet)는 교원 자격 확대 및 학교 투명성 규칙을 담은 두 건의 교육 법안을 처리했습니다. 야당 — S, V, SD — 은 서면 질의와 대정부질문을 통해 세무상 주소지의 모호성(HD10480), 농촌 지역 광대역 중단(HD11801), 전면 베일 금지 입법(HD11802), 스웨덴 시민에 대한 이스라엘의 해상 나포에 대한 스웨덴의 대응(HD11803)을 추궁했습니다. 위원회 심의 결과는 예측 가능한 M/KD/SD 다수결 범위 안에 있으며, 야당의 질문들은 선거전의 핵심 쟁점을 드러냅니다.
+
+**신뢰도**: HIGH [Admiralty B2] | **선거 근접 승수**: 1.5×(2026-09-13까지 ≤6개월)
+
+### 🧭 이 분석이 지원하는 3가지 의사결정
+
+1. **편집장 및 분석가**: CU31 임대 시장 개혁을 즉각적인 보도의 최우선순위로 두십시오 — 2~3회 본회의 내에 의사당에 상정되어 선거 기간 내내 주택 정책 논쟁을 주도할 것입니다. Admiralty B2 신뢰도를 적용하십시오.
+
+2. **야당 선거 전략가(S, V, MP)**: HD11801의 농촌 통신 연결 및 HD11803의 이스라엘 해사 사건은 SD와 S가 동시에 구사하는 두 압박 노선 — 외교적 및 국내 포퓰리즘적 — 을 나타냅니다. 두 사안 모두에 대한 대항 서사를 준비하십시오.
+
+3. **연립 여당 감시자(M, KD, SD, L)**: UbU28의 교원 자격 개혁은 야당이 역사적으로 신뢰해온 학교 교육 질에 관한 공격 노선 중 하나를 약화시킵니다. 프레이밍 역전을 위해 언론 보도를 모니터링하십시오.
+
+### 핵심 판단 요약
+
+- **KJ-1**: HD01CU31은 스웨덴 주택 정책의 구조적 변화를 나타내며, M/KD/SD 다수결 하에 본회의 통과 가능성이 높습니다(WEP: 80~90%) — **신뢰도 HIGH [B2]**
+- **KJ-2**: S의 이중 도전(세무 주소지 + 이스라엘 해사 사건)은 선거 전 조직적인 책임 추궁 전략을 시사합니다 — **신뢰도 HIGH [B2]**
+- **KJ-3**: V의 농촌 광대역 질문(HD11801)은 SD가 상당한 지지를 확보한 농촌 유권자 세그먼트를 겨냥합니다 — 선거 근접성을 고려할 때 선거적 의미는 HIGH — **신뢰도 MEDIUM [C2]**
+- **KJ-4**: SD의 전면 베일 질문(HD11802)은 입법 이니셔티브가 아닌 가치 선거전 포지셔닝 신호입니다 — 채택 가능성: LOW [B5] — **신뢰도 HIGH [B2]**
+
+### 경제적 배경
+
+IMF 세계경제전망(WEO) 2026년 4월(저하: IFS SDMX 404 — WEO/FM OK): 스웨덴 GDP 성장률 2026년 예측: 1.8%(WEO:NGDP_RPCH); 재정 수지: GDP 대비 −0.3%(WEO:GGXCNL_NGDP); 총부채: GDP 대비 36.2%(WEO:GGXWDG_NGDP). 주택 개혁은 단기적으로 재정 중립적인 영향을 미치며, 국제 비교(덴마크 2018년 개혁 선례)에 따라 중기적으로 임대 시장 효율성 향상이 기대됩니다. IFS 월별 소비자물가지수 이용 불가(SDMX 저하) — SCB 속보 추정치 사용: 2026년 4월 CPI 전년 대비 +1.4%.
+
+> ℹ️ **IMF 보조 수송 저하**: IFS SDMX 404(2026-05-09T20:37Z 기준). WEO/FM Datamapper 엔드포인트 정상. SDMX 전용 기반 주장은 `[IFS degraded]`로 표시.
+
+---
+### 🔄 2단계 개선사항(자체 검토)
+
+#### 개선된 핵심 요약
+**임대 시장 개혁(HD01CU31)은 선거전의 첫 번째 결정적인 전장입니다.** 정부는 127일의 기회를 통해 야당의 반대 서사 '임대인 혜택'이 지배하기 전에 '주택 공급 현대화' 프레임을 정착시켜야 합니다. 2018년 덴마크 개혁의 증거: 첫 60일의 프레이밍이 장기적인 여론 영향을 결정합니다(comparative-international.md).
+
+#### 경제적 배경 보충
+IMF WEO 2026년 4월에 따르면 스웨덴의 GDP 성장률은 1.8%로 북유럽 평균(노르웨이 2.3%)을 하회합니다. 실질 임금 하락(2022~2025: SCB에 따르면 누적 −4.2% 실질 임금 손실)의 맥락은 주택 구입 가능성을 주요 유권자 관심사로 만듭니다. HD01CU31은 임대료를 올릴 수 있는 정책이 세입자에게 정치적으로 독이 되는 가계 경제 환경에서 제안됩니다.
+
+#### 정부 소통 공백
+정부는 아직 HD01CU31을 중심으로 한 전용 소통 전략을 발표하지 않았습니다. 2026-05-09 기준, M당 대변인은 개혁에 대해 주요 인터뷰를 하지 않았습니다. **권장 조치**(정부를 위해): M당 주택 정책 대변인 스티나 라손(Stina Larsson, 또는 동등한 역할)은 '시장 임대료'가 아닌 '모두를 위한 더 많은 주택'이라는 프레임으로 48시간 이내에 SVT/DN 인터뷰를 해야 합니다.
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_nl.md -->
+
+**Datum**: 2026-05-09 | **Datavenster**: 2026-05-08 | **Aftelling tot de verkiezingen**: 127 dagen
+
+### 🎯 Kernboodschap
+
+Met 127 dagen tot de Riksdag-verkiezingen van september 2026 keurde de Civilutskott van de Riksdagen op vrijdag 8 mei een baanbrekend rapport over flexibiliteit op de huurmarkt goed (HD01CU31) — de meest ingrijpende deregulering van de woningmarkt in een generatie. Tegelijkertijd behandelde de Utbildningsutskottet twee onderwijsvoorstellen ter uitbreiding van lerarenbevoegdheden en regels voor schooltransparantie. Oppositiepartijen — S, V en SD — maakten gebruik van schriftelijke vragen en interpellaties om de onduidelijkheid rondom fiscale woonplaats (HD10480), plattelandsbredbanduitval (HD11801), wetgeving inzake gezichtsbedekkende kleding (HD11802) en de Zweedse reactie op Israëls maritieme onderschepping van Zweedse burgers (HD11803) te onderzoeken. De uitkomsten van het comité vallen binnen het voorspelbare M/KD/SD-meerderheidsgebied; de vragen van de oppositie onthullen de strijdtonelen van de verkiezingscampagne.
+
+**Betrouwbaarheidsgraad**: HIGH [Admiralty B2] | **Verkiezingsnabijheidsmultiplikator**: 1,5× (≤ 6 maanden tot 2026-09-13)
+
+### 🧭 3 Beslissingen die deze Analyse Ondersteunt
+
+1. **Redacteuren en analisten**: Prioriteer de CU31-huurmarkthervorming voor onmiddellijke berichtgeving — ze bereikt de plenaire vergadering binnen 2–3 zittingen en zal het woningbeleidsdebat tijdens de campagne domineren. Admiralty B2-betrouwbaarheidsgraad toepassen.
+
+2. **Campagnestrategers van de oppositie (S, V, MP)**: HD11801 over plattelandsconnectiviteit en HD11803 over het Israëlische maritieme incident signaleren de twee druklijnen — buitenlands en binnenlands-populistisch — die SD en S gelijktijdig rijden; tegennarratief op beide voorbereiden.
+
+3. **Waarnemers van de regeringscoalitie (M, KD, SD, L)**: UbU28 over de leraarskwalificatiereform elimineert één van de historisch betrouwbare aanvalslijnen van de oppositie over schoolkwaliteit; mediadekking bewaken op framingomkering.
+
+### Samenvatting van de Sleuteloordelen
+
+- **KJ-1**: HD01CU31 vertegenwoordigt een structurele verschuiving in het Zweedse woonbeleid met een hoge waarschijnlijkheid (WEP: 80–90%) van een besluit in de plenaire vergadering gegeven de M/KD/SD-meerderheid — **betrouwbaarheidsgraad HIGH [B2]**
+- **KJ-2**: S's tweeledige uitdaging (fiscale woonplaats + Israëlisch maritiem incident) signaleert een gecoördineerde verantwoordingsstrategie vóór de verkiezingen — **betrouwbaarheidsgraad HIGH [B2]**
+- **KJ-3**: V's vraag over plattelandsbreedband (HD11801) richt zich op een landelijk kiezersegment waar SD aanzienlijke winst heeft geboekt — de electorale relevantie is HIGH gezien de verkiezingsnabijheid — **betrouwbaarheidsgraad MEDIUM [C2]**
+- **KJ-4**: SD's vraag over gezichtsbedekkende kleding (HD11802) is een waardegebaseerd campagnepositioneringssignaal in plaats van een wetgevingsinitiatief — aannamewaarschijnlijkheid: LOW [B5] — **betrouwbaarheidsgraad HIGH [B2]**
+
+### Economische Context
+
+IMF WEO apr-2026 (verslechterd: IFS SDMX 404 — WEO/FM OK): Zweedse bbp-groei 2026P: 1,8% (WEO:NGDP_RPCH); begrotingssaldo: −0,3% van het bbp (WEO:GGXCNL_NGDP); bruto schuld: 36,2% van het bbp (WEO:GGXWDG_NGDP). De woningmarkthervormen hebben op korte termijn een fiscaal neutrale impact; op de middellange termijn worden efficiëntiewinsten op de huurmarkt verwacht op basis van internationale vergelijkingen (DNK-hervormingsprecedent 2018). IFS-maandelijkse CPI niet beschikbaar (SDMX verslechterd) — SCB-flashraming wordt gebruikt: CPI april 2026 +1,4% op jaarbasis.
+
+> ℹ️ **IMF-hulptransport verslechterd**: IFS SDMX 404 per 2026-05-09T20:37Z. WEO/FM Datamapper-eindpunten OK. Alleen SDMX-gebaseerde beweringen gemarkeerd met `[IFS degraded]`.
+
+---
+### 🔄 Verbeteringen Doorgang 2 (Zelfbeoordeling)
+
+#### Aangescherpte Kernboodschap
+**De huurmarkthervorming (HD01CU31) is het eerste beslissende strijdtoneel van de verkiezingscampagne.** De regering heeft een venster van 127 dagen om het frame 'modernisering van het woningaanbod' te verankeren voordat het tegennarratief van de oppositie 'verhuurderswinstbejag' de overhand krijgt. Bewijs uit de Deense hervorming van 2018: het framing in de eerste 60 dagen bepaalt de langetermijnopinie-impact (comparative-international.md).
+
+#### Aanvulling op de Economische Context
+IMF WEO apr-2026 laat zien dat de bbp-groei van Zweden 1,8% bedraagt — onder het Noorse gemiddelde (Noorwegen 2,3%). De context van dalende reële lonen (2022–2025: cumulatief −4,2% reëel loonverlies volgens SCB) maakt woningbetaalbaarheid tot een primaire kiezerzorg. HD01CU31 landt in een huishoudelijke economische omgeving waar elk beleid dat mogelijk huren kan verhogen politiek toxisch is voor huurders.
+
+#### Communicatiekloof in de Regering
+De regering heeft nog geen toegewijde communicatiestrategie rond HD01CU31 gepubliceerd. Per 2026-05-09 heeft geen M-partijwoordvoerder een groot interview over de hervorming gegeven. **Aanbevolen actie** (voor de regering): M's woordvoerder wonen Stina Larsson (of equivalent) zou binnen 48 uur een SVT/DN-interview moeten geven met het framing 'meer woningen voor iedereen' in plaats van 'markthuren'.
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_no.md -->
+
+**Dato**: 2026-05-09 | **Datavindu**: 2026-05-08 | **Nedtelling til valg**: 127 dager
+
+### 🎯 Kjernebudskap
+
+Med 127 dager til riksdagsvalget i september 2026 godkjente Riksdagens Civilutskott fredag 8. mai en banebrytende rapport om fleksibilitet i leiemarkedet (HD01CU31) — den mest betydningsfulle boligmarkedsavreguleringen på en generasjon. Samtidig behandlet Utbildningsutskottet to utdanningsforslag som utvider lærerkvalifikasjoner og regler for åpenhet i skolen. Opposisjonspartier — S, V og SD — brukte skriftlige spørsmål og interpellasjoner til å undersøke uklarhet om skattemessig domisil (HD10480), mangel på bredbånd i grisgrendte strøk (HD11801), lovgivning om heldekkende slør (HD11802) og Sveriges svar på Israels maritime pågripelse av svenske statsborgere (HD11803). Utvalgets resultater faller innenfor det forutsigbare M/KD/SD-flertallet; opposisjonens spørsmål avslører valgkampanjens frontlinjer.
+
+**Konfidensgrad**: HIGH [Admiralty B2] | **Valnærhetsmultiplikator**: 1,5× (≤ 6 måneder til 2026-09-13)
+
+### 🧭 3 Beslutninger Dette Underlaget Støtter
+
+1. **Redaktører og analytikere**: Prioritér CU31 leiemarkedsreformen for umiddelbar dekning — den når plenumssalen innen 2–3 møter og vil dominere boligpolitikkdebatten under kampanjen. Bruk Admiralty B2-konfidensgrad.
+
+2. **Opposisjonens kampanjestrateger (S, V, MP)**: HD11801 om bredbånd i grisgrendte strøk og HD11803 om den israelske maritime hendelsen signalerer de to presslinjene — utenrikspolitisk og innenrikspopulistisk — som SD og S kjører parallelt; forbered motfortelling på begge.
+
+3. **Overvåkere av regjeringskoalisjonen (M, KD, SD, L)**: UbU28 om lærerkvalifikasjonsreformen reduserer en av de historisk pålitelige opposisjonelle angrepslinjene om skolekvalitet; følg mediedekningen for endret innramming.
+
+### Sammendrag av Nøkkeldommer
+
+- **KJ-1**: HD01CU31 representerer et strukturelt skifte i svensk boligpolitikk med høy sannsynlighet (WEP: 80–90%) for kammerbeslutning gitt M/KD/SD-flertall — **HIGH konfidensgrad [B2]**
+- **KJ-2**: S' tofrontede utfordring (skattemessig domisil + israelsk maritim hendelse) signalerer en koordinert forvalgsstrategi for ansvarlighet — **HIGH konfidensgrad [B2]**
+- **KJ-3**: V's spørsmål om bredbånd i grisgrendte strøk (HD11801) retter seg mot et rural velgersegment der SD har gjort markante fremskritt — valgmessig relevans er HIGH gitt valnærhet — **MEDIUM konfidensgrad [C2]**
+- **KJ-4**: SD's spørsmål om heldekkende slør (HD11802) er et verdikampanje-posisjoneringssignal snarere enn et lovgivningsinitiativ — sannsynlighet for vedtakelse: LOW [B5] — **HIGH konfidensgrad [B2]**
+
+### Økonomisk Kontekst
+
+IMF WEO apr-2026 (degradert: IFS SDMX 404 — WEO/FM OK): Sveriges BNP-vekst 2026P: 1,8% (WEO:NGDP_RPCH); finansielt saldo: −0,3% av BNP (WEO:GGXCNL_NGDP); bruttogjeld: 36,2% av BNP (WEO:GGXWDG_NGDP). Boligreformene har finansielt nøytral kortsiktig virkning; mellomfristede effektivitetsgevinster i leiemarkedet forventes per internasjonale sammenligningsobjekter (DNK 2018 reformpresedens). IFS månedlig KPI utilgjengelig (SDMX degradert) — bruker SCB-flashestimat: KPI april 2026 +1,4% år-til-år.
+
+> ℹ️ **IMF hjelpetransport degradert**: IFS SDMX 404 per 2026-05-09T20:37Z. WEO/FM Datamapper-endepunkter OK. SDMX-eksklusive påstander merket med `[IFS degraded]`.
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_sv.md -->
+
+**Datum**: 2026-05-09 | **Datafönster**: 2026-05-08 | **Nedräkning till valet**: 127 dagar
+
+### 🎯 Kärnbudskap
+
+Med 127 dagar kvar till riksdagsvalet i september 2026 godkände riksdagens Civilutskott på fredagen den 8 maj en historisk rapport om flexibilitet på hyresmarknaden (HD01CU31) — den mest betydande avregleringen av bostadsmarknaden på en generation. Samtidigt behandlade Utbildningsutskottet två utbildningsförslag som utvidgar lärarlegitimationen och reglerna för insyn i skolan. Oppositionspartier — S, V och SD — använde skriftliga frågor och interpellationer för att granska otydligheten kring skattemässig hemvist (HD10480), bredbandsutfall i glesbygd (HD11801), lagstiftning om heltäckande slöja (HD11802) samt Sveriges svar på Israels maritima ingripande mot svenska medborgare (HD11803). Utskottets beslut faller inom den förutsägbara M/KD/SD-majoriteten; oppositionens frågor avslöjar de valkampanjens stridsfält.
+
+**Konfidensgrad**: HIGH [Admiralty B2] | **Valnärhetskoefficient**: 1,5× (≤ 6 månader till 2026-09-13)
+
+### 🧭 3 Beslut Detta Underlag Stöder
+
+1. **Redaktörer och analytiker**: Prioritera CU31 hyresreformen för omedelbar bevakning — den når kammargolvet inom 2–3 sammanträden och kommer att dominera bostadspolitikdebatten under valkampanjen. Tillämpa Admiralty B2-konfidensgrad.
+
+2. **Oppositionens kampanjstrateger (S, V, MP)**: HD11801 om bredband i glesbygd och HD11803 om det israeliska sjöfartsincidenten signalerar de två trycklinjer — utrikespolitisk och inrikespopulistisk — som SD och S kör parallellt; förbered motnarrativ på båda.
+
+3. **Övervakare av regeringskoalitionen (M, KD, SD, L)**: UbU28 om lärarlegitimationen reducerar en av de historiskt pålitligaste oppositionella attacklinjerna om skolkvalitet; bevaka mediebevakningen för förändrad inramning.
+
+### Sammanfattning av Nyckeldomslut
+
+- **KJ-1**: HD01CU31 utgör ett strukturellt skifte i svensk bostadspolitik med hög sannolikhet (WEP: 80–90%) för kammarbeslut givet M/KD/SD-majoritet — **HIGH konfidensgrad [B2]**
+- **KJ-2**: S:s dubbelriktade utmaning (skattemässig hemvist + israelisk sjöfartsincident) signalerar en samordnad förvalsansvarsstrategi — **HIGH konfidensgrad [B2]**
+- **KJ-3**: V:s fråga om bredband i glesbygd (HD11801) riktar sig mot ett landsbygdsväljarssegment där SD gjort betydande framsteg — valrelevansen är HIGH givet valnärhet — **MEDIUM konfidensgrad [C2]**
+- **KJ-4**: SD:s fråga om heltäckande slöja (HD11802) är ett värderingskampanjpositioneringssignal snarare än ett lagstiftningsinitiativ — passagesannolikhet: LOW [B5] — **HIGH konfidensgrad [B2]**
+
+### Ekonomisk Kontext
+
+IMF WEO apr-2026 (degraderat: IFS SDMX 404 — WEO/FM OK): Sveriges BNP-tillväxt 2026P: 1,8% (WEO:NGDP_RPCH); finansiell balans: −0,3% av BNP (WEO:GGXCNL_NGDP); bruttoskuld: 36,2% av BNP (WEO:GGXWDG_NGDP). Bostadsreformerna har neutral kortsiktig finansiell påverkan; medelfristiga effektivitetsvinster på hyresmarknaden förväntas per internationella jämförelseobjekt (DNK 2018 reform-prejudikat). IFS månads-KPI ej tillgänglig (SDMX degraderat) — använder SCB:s flashuppskattning: KPI april 2026 +1,4% årsvis.
+
+> ℹ️ **IMF hjälptransport degraderad**: IFS SDMX 404 per 2026-05-09T20:37Z. WEO/FM Datamapper-slutpunkter OK. SDMX-exklusiva påståenden markerade med `[IFS degraded]`.
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_zh.md -->
+
+**日期**：2026-05-09 | **数据窗口**：2026-05-08 | **距选举倒计时**：127天
+
+### 🎯 执行摘要
+
+距2026年9月大选还有127天，瑞典议会（Riksdagen）民事委员会（Civilutskott）于5月8日（周五）通过了一份关于租赁市场灵活性的里程碑式报告（HD01CU31）——这是几十年来住房市场最重要的一次放松管制。与此同时，教育委员会（Utbildningsutskottet）审议了两项扩大教师资质和学校透明度规定的教育法案。反对党——S、V和SD——利用书面质询和质询动议，就税务住所不明（HD10480）、农村宽带中断（HD11801）、全脸遮挡立法（HD11802），以及瑞典对以色列在国际海域扣押瑞典公民的回应（HD11803）展开追问。委员会结果在M/KD/SD多数席位的可预期范围之内；反对党的质询揭示了选举战役的角力战场。
+
+**置信度**：HIGH [Admiralty B2] | **选举接近乘数**：1.5×（距2026-09-13 ≤6个月）
+
+### 🧭 本分析支持的3项决策
+
+1. **媒体编辑与分析师**：优先报道CU31租赁市场改革——该法案将在2~3次会议内提交全体会议，并将主导整个竞选期间的住房政策辩论。采用Admiralty B2置信度。
+
+2. **反对党竞选策略师（S、V、MP）**：HD11801农村宽带问题和HD11803以色列海事事件揭示了SD和S同时推进的两条施压线——外交与国内民粹主义。请针对两者准备反叙事。
+
+3. **执政联盟观察者（M、KD、SD、L）**：UbU28教师资质改革削弱了反对党历来可靠的学校教育质量攻击路线之一；请密切关注媒体报道的叙事框架转变。
+
+### 关键判断摘要
+
+- **KJ-1**：HD01CU31代表瑞典住房政策的结构性转变，在M/KD/SD多数席位下全体会议通过的可能性较高（WEP：80~90%）——**置信度 HIGH [B2]**
+- **KJ-2**：S的双管齐下挑战（税务住所+以色列海事事件）表明了一种协调一致的选前问责策略——**置信度 HIGH [B2]**
+- **KJ-3**：V关于农村宽带的质询（HD11801）针对SD已取得显著进展的农村选民群体——鉴于选举接近，选举相关性为 HIGH——**置信度 MEDIUM [C2]**
+- **KJ-4**：SD关于全脸遮挡的质询（HD11802）是价值观竞选定位信号，而非立法举措——通过可能性：LOW [B5]——**置信度 HIGH [B2]**
+
+### 经济背景
+
+国际货币基金组织WEO 2026年4月（降级：IFS SDMX 404——WEO/FM正常）：瑞典GDP增长率2026年预测：1.8%（WEO:NGDP_RPCH）；财政余额：GDP的−0.3%（WEO:GGXCNL_NGDP）；总债务：GDP的36.2%（WEO:GGXWDG_NGDP）。住房改革对短期财政影响中性；依据国际比较（丹麦2018年改革先例），预计中期租赁市场效率将提升。IFS月度CPI不可用（SDMX降级）——使用SCB快报估计：2026年4月CPI同比+1.4%。
+
+> ℹ️ **IMF辅助传输降级**：IFS SDMX 404（截至2026-05-09T20:37Z）。WEO/FM Datamapper端点正常。仅基于SDMX的声明标注`[IFS degraded]`。
+
+---
+### 🔄 第2轮改进（自我审查）
+
+#### 优化的执行摘要
+**租赁市场改革（HD01CU31）是竞选活动的第一个决定性战场。** 政府有127天的窗口期，在反对党"房东获益"的反叙事占据主导地位之前，锁定"住房供应现代化"的叙事框架。丹麦2018年改革的证据表明：前60天的框架塑造决定了民意的长期走向（comparative-international.md）。
+
+#### 经济背景补充
+IMF WEO 2026年4月显示瑞典GDP增长率为1.8%，低于北欧平均水平（挪威2.3%）。实际工资下降背景（2022~2025年：据SCB累计实际工资损失−4.2%）使住房可负担性成为选民的首要关切。HD01CU31在一个家庭经济环境中提出，在这一环境中任何可能推高租金的政策对租户而言都具有政治毒性。
+
+#### 政府传播差距
+政府尚未发布专门针对HD01CU31的传播策略。截至2026-05-09，没有M党发言人就该改革接受过重要采访。**建议措施**（对政府）：M党住房政策发言人斯蒂娜·拉尔森（Stina Larsson，或同等职位）应在48小时内接受SVT/DN采访，将改革定位为"为所有人创造更多住房"，而非"市场化租金"。
+
+<!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 11 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 24 | Linked in Article Sources, not expanded inline |
 
@@ -1336,6 +1927,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

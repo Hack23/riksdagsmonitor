@@ -3,7 +3,7 @@ date: 2026-05-09
 subfolder: monthly-review
 slug: 2026-05-09-monthly-review
 source_folder: analysis/daily/2026-05-09/monthly-review
-generated_at: 2026-05-25T09:05:41.681Z
+generated_at: 2026-05-25T15:59:53.720Z
 language: en
 layout: article
 ---
@@ -89,6 +89,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Cross Run Diff](#rm-cross-run-diff) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Cross Session Intelligence](#rm-cross-session-intelligence) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Session Baseline](#rm-session-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -2427,6 +2440,750 @@ Accumulated from: multiple prior sessions dating to proposition passage
 
 Priority: Chamber vote outcomes for CU31, HD03267, HD03250 (scheduled June session)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# ملخص تنفيذي — المراجعة الشهرية، مايو 2026
+
+---
+
+### 🎯 الخلاصة
+
+تنفذ ائتلاف Tidö (M, SD, KD, L) سباق مرحلة ما قبل الانتخابات بشكل منضبط مع 128 يوماً حتى انتخابات سبتمبر 2026. يكشف الإنتاج البرلماني للريكسداغ في مايو 2026 عن استراتيجية انتخابية متماسكة مبنية على ثلاثة محاور: **تحديث دولة الأمن** (الهوية الرقمية، تشديد قواعد الترحيل)، **إصلاح العقد الاجتماعي** (تحرير سوق الإسكان، هيكل المدارس) و**الانسجام مع التنظيمات الأوروبية** (الاستقرار المالي، العدالة الجنائية). توحّد المعارضة (S, V, MP) حول رواية مضادة عن "دولة المراقبة والتخلي الاجتماعي". يُعدّ الإسكان (CU31) القضية الأكثر إلحاحاً سياسياً — إذ يعالج مباشرة الطابور الذي يضم 600,000 شخص في سوق الإيجار، ويقسم الرأي العام 52:41 لصالح الإصلاح. بلغت استجوابات غزة/إسرائيل ذروة كثافة مماثلة للفترة التي أعقبت الحرب الأوكرانية عام 2022، مما يشير إلى تصاعد الضغط على الهوية السياسية الخارجية للسويد بوصفها عضواً في حلف الناتو.
+
+---
+
+### 🧭 3 قرارات يدعمها هذا الملخص
+
+1. **هل يجب على المحللين رفع درجة مخاطر ثلاثية الأمن الحكومي؟** نعم — أبدى Lagrådet مخاوف تتعلق بالتناسب بشأن HD03267 (المادة 8 من الاتفاقية الأوروبية لحقوق الإنسان)؛ قبلت الحكومة تعديلات طفيفة. الخطر: طعن قانوني أوروبي بعد سريان القانون. التوصية: رصد تطبيق BRÅ وقائمة الانتظار في المحكمة الأوروبية لحقوق الإنسان.
+
+2. **كيف يجب على المراقبين تقييم تماسك الائتلاف في إصلاح الإسكان CU31؟** مستقر لكن هش — C (حزب الوسط) هو عامل المخاطرة المتأرجح. تعارض قاعدة C الريفية الإيجارات السوقية (سوق الإيجار الريفي ضحل)؛ يدعم جناح C التكنوقراطي الحضري التحرير. تصمد أغلبية Tidö إذا بقي C، وتسقط إذا انشق. رصد تصويتات لجان الأسبوع 20 على نشاط تعديلات C.
+
+3. **هل موجة الاستجوابات حول غزة إشارة سياسة خارجية أم أداة تعبئة داخلية؟** داخلية في المقام الأول — ترتبط مجموعة الاستجوابات الخمسة (MP×2, V×1, S×2) بحاجة S+V+MP إلى إطار تضامني لشريحة ناخبين حساسة لقضية غزة. من غير المرجح أن تغير الحكومة سياستها؛ الاستجوابات ضغط موثق لا نفوذ حقيقي.
+
+---
+
+### ملخص الاستخبارات
+
+#### سياق الاندفاع التشريعي
+تنتهي دورة Riksdag 2025/26 السويدية بحوالي 18-20 يوم عمل قبل عطلة الصيف. قدّم ائتلاف Tidö أعلى حجم من الاقتراحات والتقارير (betänkanden) منذ دورة 2024/25 — بما يتسق مع التحميل المسبق لسنة الانتخابات الذي لوحظ في دورات 1994 و2002 و2010 و2014.
+
+#### إصلاح الإسكان (CU31) — أعلى أهمية سياسية
+يمثل **HD01CU31** أهم إصلاح في سياسة الإسكان منذ إصلاحات ضبط الإيجارات في التسعينيات. يُدخل القرار إيجارات سوقية متدرجة للمباني الجديدة، ويُعدّل نظام bruksvärde، ويوسّع مرونة الملاك. يُعدّ الطابور المؤلف من 600,000 شخص للحصول على شقق بالإيجار الخاضع للرقابة قضيةً انتخابية مستمرة؛ يعالجها الإصلاح مباشرةً عبر آلية السوق لا دعم العرض. تؤكد المعارضة (S+V+MP+C) أن هذا يصب أساساً في مصلحة أصحاب العقارات (المؤجرين) وسيضطر المستأجرين الحاليين إلى إيجارات سوقية باهظة. يُظهر استطلاع Demoskop (مايو 2026) أن 52% يؤيدون الإصلاح و41% يعارضونه. من المتوقع أن تصمد أغلبية Tidö للموافقة.
+
+#### إكمال الإصلاح التعليمي (UbU20, UbU28)
+يُشغَّل الانتقال إلى تعليم إلزامي مدته 10 سنوات (grundskolan) — أهم إصلاح هيكلي في التعليم منذ 30 عاماً — من خلال اثنين من betänkanden UbU. يحدد HD01UbU28 اشتراطات اعتماد المعلمين والكفاءات للهيكل الجديد؛ ويوسّع HD01UbU20 مبدأ الشفافية (offentlighetsprincipen) ليشمل المدارس المستقلة الكبرى (fristående skolor) مع بعض الاستثناءات للمزودين الصغار. يُوافق على كليهما بأغلبية Tidö؛ تعارض S قرار UbU20 بحجة أن الاستثناءات تقوّض الشفافية.
+
+#### الإطار القانوني للنشر المدني (SoU36)
+يوسّع HD01SoU36 الأساس القانوني لنشر موظفين مدنيين تابعين للدولة في المهام الدولية. في سياق الانضمام إلى الناتو والتزام السويد تجاه أوكرانيا، تُعدّ هذه إجراءات تأهّب ستُقرَّ بأغلبية واسعة تشمل S.
+
+#### الضغط على العلاقات الدولية
+خمسة استجوابات حول غزة خلال 72 ساعة (2026-05-06/07/08) يُمثّل أعلى كثافة لموضوع واحد منذ أوكرانيا (2022). تتمسك الحكومة بموقفها: "السويد تدعم القانون الإنساني الدولي؛ تمويل الأونروا يُراجع على أساس كل حالة على حدة." يُصعّد السؤال الكتابي HD11803 المتعلق بتدخل إسرائيل البحري ضد مواطنين سويديين من النقاش البرلماني إلى بُعد قنصلي/دبلوماسي — القضية الأكثر إلحاحاً في السياسة الخارجية لوزير الخارجية Billström.
+
+---
+
+### تقييم الثقة
+
+| القسم | جودة المصدر | Admiralty | WEP |
+|-------|------------|-----------|-----|
+| النقاط التشريعية (betänkanden) | A1 (بيانات مفتوحة للريكسداغ) | A1 | AC |
+| الأسئلة الكتابية (fragor) | A2 (MCP جزئي) | A2 | AC |
+| السياق الاقتصادي (صندوق النقد الدولي) | C3 (ذاكرة سياق متدهورة) | C3 | L (منخفض) |
+| التحليل الانتخابي | B2 (استنتاج تحليلي + استطلاعات) | B2 | M (متوسط) |
+
+> ℹ️ **نقل مساعد صندوق النقد الدولي متدهور** — الأرقام الاقتصادية مؤقتة من ذاكرة سياق WEO أبريل-2026. تم استرجاعها في 2026-05-07T08:00Z.
+
+</div>
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_da.md -->
+
+---
+
+### 🎯 Konklusion
+
+Tidö-koalitionen (M, SD, KD, L) gennemfører en disciplineret pre-valsspurt med 128 dage til valget i september 2026. Parlamentets produktion i maj 2026 afslører en sammenhængende valgstrategi opbygget på tre søjler: **modernisering af sikkerhedsstaten** (digital identitet, stramning af udvisningsregler), **reform af den sociale kontrakt** (boligmarkedsliberalisering, skolestruktur) og **EU-regulatorisk tilpasning** (finansiel stabilitet, strafferetslig retfærdighed). Oppositionen (S, V, MP) har konsolideret sig om en modfortælling om "overvågningsstat og social opgivelse". Boliger (CU31) er det eneste mest samfundsmæssigt relevante spørgsmål — det adresserer direkte kø med 600.000 personer på boligmarkedet og deler befolkningen 52:41 til fordel for reform. Gaza/Israel-interpellationerne nåede en densitetspeak sammenlignelig med perioden efter Ukraine 2022, hvilket signalerer eskalerende pres på Sveriges udenrigspolitiske identitet som NATO-medlem.
+
+---
+
+### 🧭 3 beslutninger denne brief understøtter
+
+1. **Bør analytikere hæve risikovurderingen for sikkerhedsstatstrillogien?** JA — Lagrådet rejste proportionalitetsproblemer vedrørende HD03267 (EMRK art. 8); regeringen accepterede mindre ændringer. Risiko: EU/EMRK retssag efter ikrafttrædelse. Anbefaling: Overvåg BRÅ-implementering og EMRK-sagsø.
+
+2. **Hvordan bør iagttagere vurdere koalitionens sammenhæng om CU31-boligreformen?** STABIL MEN SKRØBELIG — C (Centerpartiet) er svingrisikoen. C's landdistriktsbase modstår markedslejer (landdistrikters lejeboligmarked er tyndt); C's urbane teknokratfløj støtter liberalisering. Tidø-flertal holder, hvis C bliver, falder, hvis C bryder. Overvåg uge 20 udvalgsafstemninger for C-ændringsaktivitet.
+
+3. **Er Gaza-interpellationsstigningen et udenrigspolitisk signal eller et indenrigspolitisk mobiliseringsredskab?** PRIMÆRT INDENRIGSPOLITISK — Klyngen med fem interpellationer (MP×2, V×1, S×2) korrelerer med S+V+MP's behov for et solidaritetsramningsemne til et Gaza-sensitiv vælgersegment. Regeringen vil sandsynligvis ikke ændre politik; interpellationerne er dokumenteret pres, ikke reel gearing.
+
+---
+
+### Efterretningsoversigt
+
+#### Den lovgivningsmæssige spurts kontekst
+Sveriges Riksdag-session 2025/26 afslutter ca. 18–20 arbejdsdage før sommerferien. Tidø-koalitionen har indsendt den højeste volumen af propositioner og betænkninger siden sessionen 2024/25 — konsistent med den valgårsfrontbelastning, der blev observeret i cyklerne 1994, 2002, 2010 og 2014.
+
+#### Boligreformen (CU31) — højeste politiske relevans
+**HD01CU31** repræsenterer den mest betydningsfulde boligpolitiske reform siden 1990'ernes huslejekontrolreformer. Betænkningen indfører graduerede markedslejer for nyopførte ejendomme, ændrer bruksvärdessystemet og udvider udlejernes fleksibilitet. Køen med 600.000 personer til huslejekontrollerede lejligheder er et vedvarende valgspørgsmål; reformen adresserer det direkte med en markedsmekanisme frem for et udbudstilskud. Oppositionen (S+V+MP+C) hævder, at dette primært gavner ejendomsejere (udlejere) og vil drive eksisterende lejere mod uoverkommelige markedslejer. En Demoskop-undersøgelse (maj 2026) viser, at 52% støtter reformen og 41% er imod. Tidø-flertallet forventes at holde til vedtagelse.
+
+#### Uddannelsesreformens gennemførelse (UbU20, UbU28)
+Overgangen til en 10-årig obligatorisk skole (grundskolan) — den mest betydningsfulde strukturelle uddannelsesreform i 30 år — operationaliseres gennem to UbU-betænkninger. HD01UbU28 fastlægger lærercertificering og kompetencekrav til den nye struktur; HD01UbU20 udvider offentlighedsprincippet (offentlighetsprincipen) til større uafhængige skoler med visse undtagelser for mindre udbydere. Begge vedtages med Tidø-flertal; S modsætter sig UbU20 med den begrundelse, at undtagelserne underminerer gennemsigtighed.
+
+#### Civilt deploymentramme (SoU36)
+HD01SoU36 udvider det retslige grundlag for at indsætte civilt statspersonale til internationale missioner. I sammenhæng med NATO-tiltrædelsen og Sveriges Ukraine-engagement er dette en beredskabsforanstaltning, der vil blive vedtaget med bredt flertal inklusive S.
+
+#### Pres på internationale relationer
+Fem interpellationer om Gaza på 72 timer (2026-05-06/07/08) er den højeste enkelt-emne-densitet siden Ukraine (2022). Regeringen fastholder: "Sverige støtter international humanitær ret; UNRWA-finansiering gennemgås fra sag til sag." Det skriftlige spørgsmål HD11803 om Israels flådeintervention mod svenske statsborgere eskalerer fra parlamentarisk debat til en konsulær/diplomatisk dimension — den mest presserende udenrigspolitiske sag for udenrigsminister Billström.
+
+---
+
+### Konfidensanalyse
+
+| Afsnit | Kildekvalitet | Admiralty | WEP |
+|--------|--------------|-----------|-----|
+| Lovgivningsmæssige punkter (betænkninger) | A1 (Riksdag åbne data) | A1 | AC |
+| Skriftlige spørgsmål (fragor) | A2 (MCP delvis) | A2 | AC |
+| Økonomisk kontekst (IMF) | C3 (degraderet kontekthukommelse) | C3 | L (lav) |
+| Valganalyse | B2 (analytisk slutning + meningsmålinger) | B2 | M (middel) |
+
+> ℹ️ **IMF-hjælpetransport degraderet** — økonomiske tal er foreløbige fra WEO apr-2026 kontekthukommelse. Hentet 2026-05-07T08:00Z.
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-09  
+**Klassifizierung**: ÖFFENTLICH  
+**Konfidenz**: HOCH (A1/A2-Quellen)  
+
+---
+
+### 🎯 BLUF
+
+Die Tidö-Koalition (M, SD, KD, L) vollzieht einen disziplinierten Vor-Wahl-Spurt mit 128 Tagen bis zur Wahl im September 2026. Die parlamentarische Produktion des Riksdag im Mai 2026 offenbart eine kohärente Wahlstrategie auf drei Säulen: **Modernisierung des Sicherheitsstaates** (digitale Identität, Verschärfung von Ausweisungsregeln), **Reform des Gesellschaftsvertrages** (Liberalisierung des Wohnungsmarktes, Schulstruktur) und **EU-regulatorische Angleichung** (Finanzstabilität, Strafjustiz). Die Opposition (S, V, MP) hat sich auf eine Gegenerzählung von "Überwachungsstaat und sozialer Aufgabe" konsolidiert. Wohnen (CU31) ist das einzeln politisch brisanteste Thema — es adressiert direkt die Warteschlange mit 600.000 Personen auf dem Wohnungsmarkt und spaltet die Öffentlichkeit 52:41 für die Reform. Die Gaza/Israel-Interpellationen erreichten eine Dichtespitze vergleichbar mit der Periode nach der Ukraine 2022, was eskalierenden Druck auf Schwedens außenpolitische Identität als NATO-Mitglied signalisiert.
+
+---
+
+### 🧭 3 Entscheidungen, die dieser Brief unterstützt
+
+1. **Sollten Analysten die Risikobewertung für die Sicherheitsstaatstrillogie anheben?** JA — Der Lagrådet erhob Verhältnismäßigkeitsbedenken hinsichtlich HD03267 (EMRK Art. 8); die Regierung akzeptierte geringfügige Änderungen. Risiko: EU/EMRK-Rechtsklage nach Inkrafttreten. Empfehlung: BRÅ-Umsetzung und EMRK-Fallrückstau verfolgen.
+
+2. **Wie sollten Beobachter den Koalitionszusammenhalt bei der CU31-Wohnreform einschätzen?** STABIL ABER FRAGIL — C (Centerpartiet) ist das Schwingrisiko. C's ländliche Basis lehnt Marktmieten ab (ländlicher Mietmarkt ist dünn); C's städtischer Technokratenflügel unterstützt Liberalisierung. Tidö-Mehrheit hält, wenn C bleibt, fällt, wenn C bricht. Ausschussabstimmungen in Woche 20 auf C-Änderungsaktivität beobachten.
+
+3. **Ist der Gaza-Interpellationsanstieg ein außenpolitisches Signal oder ein innenpolitisches Mobilisierungsinstrument?** PRIMÄR INNENPOLITISCH — Das Fünfer-Cluster (MP×2, V×1, S×2) korreliert damit, dass S+V+MP ein Solidaritäts-Framing für ein Gaza-sensibles Wählersegment braucht. Die Regierung wird ihre Politik wahrscheinlich nicht ändern; die Interpellationen sind dokumentierter Druck, keine echte Hebelwirkung.
+
+---
+
+### Nachrichtendienstliche Zusammenfassung
+
+#### Kontext des Gesetzgebungssprints
+Die Riksdag-Sitzung 2025/26 Schwedens endet ca. 18–20 Arbeitstage vor der Sommerpause. Die Tidö-Koalition hat das höchste Volumen an Propositionern und Betänkandena seit der Sitzung 2024/25 vorgelegt — konsistent mit der in den Wahljahreszyklen 1994, 2002, 2010 und 2014 beobachteten Vorlaufbeladung.
+
+#### Die Wohnreform (CU31) — höchste politische Brisanz
+**HD01CU31** stellt die bedeutendste wohnungspolitische Reform seit den Mietpreisreformen der 1990er Jahre dar. Das Betänkande führt gestaffelte Marktmieten für neu errichtete Objekte ein, ändert das Bruksvärde-System und erweitert die Flexibilität der Vermieter. Die 600.000-Personen-Warteschlange für Mietpreisgebundene Wohnungen ist ein dauerhaftes Wahlthema; die Reform adressiert sie direkt mit einem Marktmechanismus statt einem Angebotssubvention. Die Opposition (S+V+MP+C) argumentiert, dass dies in erster Linie Eigentümer (Vermieter) begünstigt und bestehende Mieter zu unerschwinglichen Marktmieten treiben wird. Eine Demoskop-Umfrage (Mai 2026) zeigt, dass 52% die Reform unterstützen und 41% dagegen sind. Die Tidö-Mehrheit wird voraussichtlich für die Verabschiedung halten.
+
+#### Abschluss der Bildungsreform (UbU20, UbU28)
+Der Übergang zu einer 10-jährigen Schulpflicht (Grundschule) — die bedeutendste strukturelle Bildungsreform seit 30 Jahren — wird durch zwei UbU-Betänkanden umgesetzt. HD01UbU28 legt Lehrerzertifizierung und Qualifikationsanforderungen für die neue Struktur fest; HD01UbU20 erweitert das Öffentlichkeitsprinzip (offentlighetsprincipen) auf größere freie Schulen (fristående skolor) mit einigen Ausnahmen für kleine Anbieter. Beide werden mit Tidö-Mehrheit verabschiedet; S lehnt UbU20 mit dem Argument ab, die Ausnahmen untergraben die Transparenz.
+
+#### Zivilpersonaleinsatz-Rahmenwerk (SoU36)
+HD01SoU36 erweitert die Rechtsgrundlage für den Einsatz von zivilem Staatspersonal bei internationalen Missionen. Im Kontext des NATO-Beitritts und Schwedens Ukraine-Engagement ist dies eine Bereitschaftsmaßnahme, die mit breiter Mehrheit einschließlich S verabschiedet wird.
+
+#### Druck auf internationale Beziehungen
+Fünf Interpellationen zu Gaza in 72 Stunden (2026-05-06/07/08) ist die höchste Einzelthema-Dichte seit der Ukraine (2022). Die Regierung hält an ihrer Position fest: "Schweden unterstützt das humanitäre Völkerrecht; UNRWA-Finanzierung wird fallweise geprüft." Die schriftliche Anfrage HD11803 zu Israels Flotteintervention gegen schwedische Staatsbürger eskaliert von der parlamentarischen Debatte in eine konsular/diplomatische Dimension — die dringendste außenpolitische Angelegenheit für Außenminister Billström.
+
+---
+
+### Konfidenzanalyse
+
+| Abschnitt | Quellenqualität | Admiralty | WEP |
+|-----------|----------------|-----------|-----|
+| Gesetzgebungspunkte (Betänkanden) | A1 (Riksdag-offene Daten) | A1 | AC |
+| Schriftliche Anfragen (Fragor) | A2 (MCP partiell) | A2 | AC |
+| Wirtschaftlicher Kontext (IWF) | C3 (herabgesetztes Kontextgedächtnis) | C3 | L (niedrig) |
+| Wahlanalyse | B2 (analytische Schlussfolgerung + Umfragen) | B2 | M (mittel) |
+
+> ℹ️ **IWF-Hilfstransport herabgesetzt** — Wirtschaftszahlen sind vorläufig aus dem WEO Apr-2026-Kontextgedächtnis. Abgerufen 2026-05-07T08:00Z.
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-09  
+**Clasificación**: PÚBLICA  
+**Confianza**: ALTA (fuentes A1/A2)  
+**Almirantazgo**: A2 — Fuente fiable, confirmada por múltiples extracciones MCP  
+
+---
+
+### 🎯 Conclusión principal
+
+La coalición Tidö (M, SD, KD, L) está ejecutando un disciplinado sprint preelectoral con 128 días para las elecciones de septiembre de 2026. La producción parlamentaria del Riksdag en mayo de 2026 revela una estrategia electoral coherente basada en tres pilares: **modernización del Estado de seguridad** (identidad digital, endurecimiento de las expulsiones), **reforma del contrato social** (liberalización del mercado de la vivienda, estructura escolar) y **alineación regulatoria con la UE** (estabilidad financiera, justicia penal). La oposición (S, V, MP) se ha consolidado en torno a una contranarativa de "Estado de vigilancia y abandono social". La vivienda (CU31) es el asunto políticamente más saliente —responde directamente a la cola de 600.000 personas en el mercado de alquiler y divide a la opinión pública 52:41 a favor de la reforma. Las interpelaciones sobre Gaza/Israel alcanzaron un pico de densidad comparable al período posterior a Ucrania en 2022, lo que señala una presión escalante sobre la identidad de política exterior de Suecia como miembro de la OTAN.
+
+---
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **¿Deberían los analistas elevar la puntuación de riesgo de la trilogía del Estado de seguridad?** SÍ — El Lagrådet planteó preocupaciones de proporcionalidad sobre HD03267 (CEDH art. 8); el gobierno aceptó modificaciones menores. Riesgo: impugnación jurídica EU/CEDH tras la promulgación. Recomendación: seguir de cerca la implementación por el BRÅ y la cola de casos en la CEDH.
+
+2. **¿Cómo deben los observadores evaluar la cohesión de la coalición en la reforma de vivienda CU31?** ESTABLE PERO FRÁGIL — C (Centerpartiet) es el riesgo de oscilación. La base rural de C se opone a los alquileres de mercado (el mercado de alquiler rural es poco profundo); el ala tecnocrática urbana de C apoya la liberalización. La mayoría Tidö se mantiene si C permanece, cae si C rompe. Supervisar las votaciones en comisión de la semana 20 para la actividad de enmienda de C.
+
+3. **¿Es el aumento de interpelaciones sobre Gaza una señal de política exterior o una herramienta de movilización interna?** PRINCIPALMENTE INTERNO — El grupo de cinco interpelaciones (MP×2, V×1, S×2) se correlaciona con la necesidad de S+V+MP de un enmarcamiento de solidaridad para un segmento electoral sensible a Gaza. Es poco probable que el gobierno cambie su política; las interpelaciones son presión documentada, no influencia real.
+
+---
+
+### Resumen de inteligencia
+
+#### Contexto del sprint legislativo
+La sesión 2025/26 del Riksdag sueco concluye aproximadamente 18-20 días laborables antes del receso de verano. La coalición Tidö ha presentado el mayor volumen de proposiciones y betänkanden desde la sesión 2024/25 — coherente con la carga frontal de año electoral observada en los ciclos de 1994, 2002, 2010 y 2014.
+
+#### La reforma de vivienda (CU31) — mayor relevancia política
+**HD01CU31** representa la reforma de política de vivienda más significativa desde las reformas de control de alquileres de los años noventa. El betänkande introduce alquileres de mercado graduados para propiedades de nueva construcción, modifica el sistema bruksvärde y amplía la flexibilidad de los propietarios. La cola de 600.000 personas para pisos de alquiler regulado es un problema electoral persistente; la reforma lo aborda directamente con un mecanismo de mercado en lugar de un subsidio a la oferta. La oposición (S+V+MP+C) argumenta que esto beneficiará principalmente a los propietarios (hyresvärdar) y llevará a los inquilinos existentes hacia alquileres de mercado inasequibles. Una encuesta Demoskop (mayo 2026) muestra que el 52% apoya la reforma y el 41% se opone. Se espera que la mayoría Tidö se mantenga para la aprobación.
+
+#### Finalización de la reforma educativa (UbU20, UbU28)
+La transición a una educación obligatoria de 10 años (grundskolan) — la reforma estructural educativa más significativa en 30 años — se está operacionalizando mediante dos betänkanden UbU. HD01UbU28 establece la certificación docente y los requisitos de cualificación para la nueva estructura; HD01UbU20 amplía el principio de transparencia (offentlighetsprincipen) a las escuelas independientes más grandes (fristående skolor) con algunas exenciones para proveedores pequeños. Ambos se aprueban con mayoría Tidö; S se opone a UbU20 argumentando que las exenciones socavan la transparencia.
+
+#### Marco de despliegue civil (SoU36)
+HD01SoU36 amplía la base jurídica para desplegar personal estatal civil en misiones internacionales. En el contexto de la adhesión a la OTAN y el compromiso sueco con Ucrania, se trata de una medida de preparación que se aprobará con amplia mayoría, incluido S.
+
+#### Presión en las relaciones internacionales
+Cinco interpelaciones sobre Gaza en 72 horas (2026-05-06/07/08) es la mayor densidad por tema único desde Ucrania (2022). El gobierno mantiene: "Suecia apoya el derecho humanitario internacional; la financiación de UNRWA se revisa caso por caso." La pregunta escrita HD11803 sobre la intervención naval israelí contra ciudadanos suecos escala del debate parlamentario a una dimensión consular/diplomática — el asunto de política exterior más urgente para el ministro de Asuntos Exteriores Billström.
+
+---
+
+### Evaluación de la confianza
+
+| Sección | Calidad de la fuente | Almirantazgo | WEP |
+|---------|---------------------|-------------|-----|
+| Puntos legislativos (betänkanden) | A1 (datos abiertos del Riksdag) | A1 | AC |
+| Preguntas escritas (fragor) | A2 (MCP parcial) | A2 | AC |
+| Contexto económico (FMI) | C3 (memoria contextual degradada) | C3 | L (bajo) |
+| Análisis electoral | B2 (inferencia analítica + encuestas) | B2 | M (medio) |
+
+> ℹ️ **Transporte auxiliar del FMI degradado** — las cifras económicas son provisionales de la memoria contextual del WEO abr-2026. Recuperadas el 2026-05-07T08:00Z.
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-09  
+**Luokittelu**: JULKINEN  
+**Luotettavuus**: KORKEA (A1/A2-lähteet)  
+
+---
+
+### 🎯 Johtopäätös
+
+Tidö-koalitio (M, SD, KD, L) toteuttaa kurinalaisesti vaalisuoritusta 128 päivää ennen syyskuun 2026 vaaleja. Riksdagin tuotos toukokuussa 2026 paljastaa yhtenäisen vaalistrategian, joka rakentuu kolmelle pilarille: **turvallisuusvaltion modernisaatio** (digitaalinen henkilöllisyys, karkotuksen tiukentaminen), **sosiaalisen sopimuksen uudistus** (asuntomarkkinoiden vapauttaminen, koulurakenne) ja **EU-sääntelyn mukaistaminen** (rahoitusvakaus, rikosoikeus). Oppositio (S, V, MP) on konsolidoitunut "valvontavaltion ja sosiaalisen hylkäämisen" vastakertomusstrategiaan. Asuminen (CU31) on yksittäisesti merkittävin asia — se vastaa suoraan asuntomarkkinoiden 600 000 henkilön jonoon ja jakaa kansalaismielipiteen 52:41 uudistuksen hyväksi. Gaza/Israel-interpellaatiot saavuttivat tiheyshuipun, joka on verrattavissa Ukrainan jälkeiseen kauteen 2022, mikä viestii kasvavasta paineesta Ruotsin ulkopoliittiseen identiteettiin NATO-jäsenenä.
+
+---
+
+### 🧭 3 päätöstä, joita tämä katsaus tukee
+
+1. **Tulisiko analyytikoiden nostaa turvallisuusvaltion trilogian riskipisteitä?** KYLLÄ — Lagrådet nosti suhteellisuusongelmia HD03267:ssa (ECHR art. 8); hallitus hyväksyi pieniä muutoksia. Riski: EU/ECHR-oikeudellinen haaste voimaantulon jälkeen. Suositus: seuraa BRÅ:n toimeenpanoa ja ECHR-tapausjonoa.
+
+2. **Miten tarkkailijat arvioivat koalition yhtenäisyyttä CU31-asuntoreformissa?** VAKAA MUTTA HAURAS — C (Keskustapuolue) on heiluririski. C:n maaseutupohja vastustaa markkinavuokria (maaseudun vuokra-asuntomarkkina on ohut); C:n kaupunkiteknokraattisiipi tukee vapauttamista. Tidö-enemmistö kestää, jos C pysyy, kaatuu, jos C murtuu. Seuraa viikon 20 valiokuntaäänestyksiä C:n muutostoiminnan osalta.
+
+3. **Onko Gaza-interpellaatioaalto ulkopoliittinen signaali vai sisäpoliittinen mobilisaatioväline?** ENSISIJAISESTI SISÄPOLIITTINEN — Viiden interpellaation klusteri (MP×2, V×1, S×2) korreloi S+V+MP:n tarpeen kanssa saada solidaarisuusframingia Gaza-sensitiiviselle äänestäjäsegmentille. Hallitus tuskin muuttaa politiikkaansa; interpellaatiot ovat dokumentoitua painetta, ei todellista vipuvaikutusta.
+
+---
+
+### Tiedustelutiivistelmä
+
+#### Lainsäädäntösuorituksen konteksti
+Ruotsin Riksdag-istunto 2025/26 päättyy noin 18–20 työpäivää ennen kesätaukoa. Tidö-koalitio on esittänyt eniten esityksiä ja mietintöjä sitten istunnon 2024/25 — johdonmukainen vaalivuoden etupainotuksen kanssa, jota havaittiin 1994, 2002, 2010 ja 2014 sykleissä.
+
+#### Asuntouudistus (CU31) — korkein poliittinen merkitys
+**HD01CU31** edustaa merkittävintä asuntopoliittista uudistusta sitten 1990-luvun vuokrasääntelyuudistusten. Mietintö ottaa käyttöön asteittaiset markkinavuokrat uusille kiinteistöille, muuttaa bruksvärde-järjestelmää ja laajentaa vuokranantajien joustoa. 600 000 henkilön jono vuokrasääntelyn alaisiin asuntoihin on jatkuva vaalikysymys; uudistus vastaa siihen suoraan markkinamekanismilla eikä tarjontatuella. Oppositio (S+V+MP+C) väittää, että tämä hyödyttää ensisijaisesti kiinteistönomistajia (vuokranantajia) ja ajaa nykyiset vuokralaiset kohtuuttomiin markkinavuokriin. Demoskop-kysely (toukokuu 2026) osoittaa, että 52 % tukee uudistusta ja 41 % vastustaa. Tidö-enemmistön odotetaan pitävän hyväksynnässä.
+
+#### Koulutusreformin toteutus (UbU20, UbU28)
+Siirtymä 10-vuotiseen oppivelvollisuuteen (peruskouluun) — merkittävin koulutuksen rakenteellinen uudistus 30 vuoteen — toteutetaan kahden UbU-mietinnön kautta. HD01UbU28 vahvistaa uuden rakenteen opettajasertifioinnin ja pätevyysvaatimukset; HD01UbU20 laajentaa julkisuusperiaatteen (offentlighetsprincipen) suuremmille yksityiskouluille (fristående skolor) tietyin pienten toimijoiden poikkeuksin. Molemmat hyväksytään Tidö-enemmistöllä; S vastustaa UbU20:ta sillä perusteella, että poikkeukset heikentävät avoimuutta.
+
+#### Siviilihenkilöstön lähetyskehys (SoU36)
+HD01SoU36 laajentaa oikeusperustaa, jolla siviilivirkamiehistöä voidaan lähettää kansainvälisiin tehtäviin. NATO-jäsenyyden ja Ruotsin Ukraina-sitoutumisen yhteydessä tämä on valmiusmittaus, joka hyväksytään laajalla enemmistöllä mukaan lukien S.
+
+#### Kansainvälisten suhteiden paine
+Viisi interpellaatiota Gazasta 72 tunnissa (2026-05-06/07/08) on korkein yksittäisen aiheen tiheys sitten Ukrainan (2022). Hallitus pitää kiinni kannastaan: "Ruotsi tukee kansainvälistä humanitaarista oikeutta; UNRWA-rahoitus tarkistetaan tapauskohtaisesti." Kirjallinen kysymys HD11803 Israelin laiva-interventiosta ruotsalaisia kansalaisia kohtaan eskaloituu parlamentaarisesta väittelystä konsulaaris-/diplomaattiseen ulottuvuuteen — kiireellisin ulkopoliittinen kysymys ulkoministeri Billströmille.
+
+---
+
+### Luottavuusarvio
+
+| Osio | Lähteiden laatu | Admiralty | WEP |
+|------|----------------|-----------|-----|
+| Lainsäädäntöpisteet (mietinnöt) | A1 (Riksdag avoin data) | A1 | AC |
+| Kirjalliset kysymykset (fragor) | A2 (MCP osittainen) | A2 | AC |
+| Taloudellinen konteksti (IMF) | C3 (heikentynyt kontekstimuisti) | C3 | L (matala) |
+| Vaalianalyysi | B2 (analyyttinen päättely + kyselyt) | B2 | M (keskitaso) |
+
+> ℹ️ **IMF:n apuliikenne heikentynyt** — talousluvut ovat alustavia WEO huhti-2026 kontekstimuistista. Haettu 2026-05-07T08:00Z.
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : ÉLEVÉE (sources A1/A2)  
+**Amirauté** : A2 — Source fiable, confirmée par plusieurs extractions MCP  
+
+---
+
+### 🎯 Conclusion principale
+
+La coalition Tidö (M, SD, KD, L) mène un sprint pré-électoral discipliné avec 128 jours avant les élections de septembre 2026. La production parlementaire du Riksdag en mai 2026 révèle une stratégie électorale cohérente reposant sur trois piliers : **modernisation de l'État sécuritaire** (identité numérique, durcissement des expulsions), **réforme du contrat social** (libéralisation du marché du logement, structure scolaire) et **alignement réglementaire européen** (stabilité financière, justice pénale). L'opposition (S, V, MP) s'est consolidée autour d'un contre-récit d'« État de surveillance et abandon social ». Le logement (CU31) est le sujet le plus politiquement saillant — il répond directement à la file d'attente de 600 000 personnes sur le marché du logement et divise l'opinion à 52:41 en faveur de la réforme. Les interpellations Gaza/Israël ont atteint un pic de densité comparable à la période post-Ukraine 2022, signalant une pression croissante sur l'identité de politique étrangère de la Suède en tant que membre de l'OTAN.
+
+---
+
+### 🧭 3 décisions que ce bref soutient
+
+1. **Les analystes devraient-ils relever le score de risque de la trilogie sécuritaire ?** OUI — Le Lagrådet a soulevé des préoccupations de proportionnalité concernant HD03267 (CEDH art. 8) ; le gouvernement a accepté des modifications mineures. Risque : recours juridique EU/CEDH après adoption. Recommandation : surveiller la mise en œuvre par le BRÅ et la file de la CEDH.
+
+2. **Comment les observateurs doivent-ils évaluer la cohésion de la coalition sur la réforme du logement CU31 ?** STABLE MAIS FRAGILE — C (Centerpartiet) est le risque d'oscillation. La base rurale de C s'oppose aux loyers de marché (marché locatif rural peu profond) ; l'aile technocrate urbaine de C soutient la libéralisation. La majorité Tidö tient si C reste, s'effondre si C rompt. Surveiller les votes de commission de la semaine 20 pour l'activité d'amendement de C.
+
+3. **La vague d'interpellations sur Gaza est-elle un signal de politique étrangère ou un outil de mobilisation intérieure ?** ESSENTIELLEMENT INTÉRIEUR — Le groupe de cinq interpellations (MP×2, V×1, S×2) coïncide avec le besoin de S+V+MP d'un cadrage de solidarité pour un segment électoral sensible à Gaza. Le gouvernement est peu susceptible de modifier sa politique ; les interpellations constituent une pression documentée, non un levier réel.
+
+---
+
+### Résumé du renseignement
+
+#### Contexte du sprint législatif
+La session 2025/26 du Riksdag suédois se termine environ 18 à 20 jours ouvrables avant la pause estivale. La coalition Tidö a soumis le plus grand volume de propositions et de rapports parlementaires (betänkanden) depuis la session 2024/25 — cohérent avec la charge initiale observée lors des cycles électoraux de 1994, 2002, 2010 et 2014.
+
+#### La réforme du logement (CU31) — saillance politique la plus élevée
+**HD01CU31** représente la réforme de politique du logement la plus significative depuis les réformes de contrôle des loyers des années 1990. Le betänkande introduit des loyers de marché progressifs pour les nouvelles constructions, modifie le système du bruksvärde et étend la flexibilité des propriétaires. La file d'attente de 600 000 personnes pour des logements à loyers contrôlés est un enjeu électoral persistant ; la réforme y répond directement par un mécanisme de marché plutôt qu'une subvention à l'offre. L'opposition (S+V+MP+C) soutient que cela bénéficiera principalement aux propriétaires (hyresvärdar) et poussera les locataires existants vers des loyers de marché inabordables. Un sondage Demoskop (mai 2026) montre que 52 % soutiennent la réforme et 41 % s'y opposent. La majorité Tidö devrait tenir pour l'adoption.
+
+#### Achèvement de la réforme éducative (UbU20, UbU28)
+La transition vers une scolarité obligatoire de 10 ans (grundskolan) — la plus importante réforme structurelle de l'éducation depuis 30 ans — est opérationnalisée à travers deux betänkanden UbU. HD01UbU28 établit la certification des enseignants et les exigences de qualification pour la nouvelle structure ; HD01UbU20 étend le principe de transparence (offentlighetsprincipen) aux grandes écoles indépendantes (fristående skolor) avec quelques exemptions pour les petits fournisseurs. Les deux sont adoptés avec la majorité Tidö ; S s'oppose à UbU20 au motif que les exemptions sapent la transparence.
+
+#### Cadre de déploiement civil (SoU36)
+HD01SoU36 élargit la base juridique pour déployer du personnel d'État civil lors de missions internationales. Dans le contexte de l'adhésion à l'OTAN et de l'engagement suédois en Ukraine, il s'agit d'une mesure de préparation qui sera adoptée avec une large majorité incluant S.
+
+#### Pression sur les relations internationales
+Cinq interpellations sur Gaza en 72 heures (2026-05-06/07/08) constitue la plus forte densité sur un seul sujet depuis l'Ukraine (2022). Le gouvernement maintient : « La Suède soutient le droit humanitaire international ; le financement de l'UNRWA est examiné au cas par cas. » La question écrite HD11803 sur l'intervention navale israélienne contre des ressortissants suédois fait monter la discussion d'un débat parlementaire à une dimension consulaire/diplomatique — sujet de politique étrangère le plus urgent pour le ministre des Affaires étrangères Billström.
+
+---
+
+### Évaluation de la confiance
+
+| Section | Qualité des sources | Amirauté | WEP |
+|---------|---------------------|----------|-----|
+| Points législatifs (betänkanden) | A1 (données ouvertes Riksdag) | A1 | AC |
+| Questions écrites (fragor) | A2 (MCP partiel) | A2 | AC |
+| Contexte économique (FMI) | C3 (mémoire contextuelle dégradée) | C3 | L (faible) |
+| Analyse électorale | B2 (inférence analytique + sondages) | B2 | M (moyen) |
+
+> ℹ️ **Transport auxiliaire FMI dégradé** — les chiffres économiques sont provisoires depuis la mémoire contextuelle WEO avr-2026. Récupérés le 2026-05-07T08:00Z.
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# תקציר מנהלים — סקירה חודשית, מאי 2026
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-09  
+**סיווג**: ציבורי  
+**רמת ביטחון**: גבוהה (מקורות A1/A2)  
+
+---
+
+### 🎯 מסקנה
+
+קואליציית Tidö (M, SD, KD, L) מבצעת ספרינט ממוצע לפני בחירות עם 128 ימים לבחירות ספטמבר 2026. הפלט הפרלמנטרי של הריקסדאג במאי 2026 חושף אסטרטגיית בחירות קוהרנטית הבנויה על שלושה עמודים: **מודרניזציה של מדינת הביטחון** (זהות דיגיטלית, החמרת גירוש), **רפורמת החוזה החברתי** (ליברליזציה של שוק הדיור, מבנה בית הספר) ו**יישור עם רגולציה אירופאית** (יציבות פיננסית, צדק פלילי). האופוזיציה (S, V, MP) התאחדה סביב נרטיב נגד של "מדינת מעקב ונטישה חברתית". הדיור (CU31) הוא הנושא הפוליטי הבולט ביותר — הוא פונה ישירות לתור של 600,000 אנשים בשוק השכירות ומחלק את הציבור 52:41 לטובת הרפורמה. הביקורות הפרלמנטריות על עזה/ישראל הגיעו לשיא צפיפות הדומה לתקופה שלאחר אוקראינה ב-2022, המאותת על לחץ מתגבר על זהות המדיניות החוץ של שוודיה כחברה בנאט"ו.
+
+---
+
+### 🧭 3 החלטות שהסקירה תומכת בהן
+
+1. **האם אנליסטים צריכים להעלות את ציון הסיכון של טריאדת מדינת הביטחון?** כן — ה-Lagrådet העלה חששות מידתיות לגבי HD03267 (סעיף 8 ECHR); הממשלה קיבלה שינויים קלים. סיכון: עתירה משפטית EU/ECHR לאחר כניסה לתוקף. המלצה: לנטר יישום BRÅ ותור תיקי ECHR.
+
+2. **כיצד צריכים משקיפים להעריך את לכידות הקואליציה בנושא רפורמת הדיור CU31?** יציב אך שביר — C (מפלגת המרכז) הוא גורם הסיכון המתנדנד. הבסיס הכפרי של C מתנגד לשכר דירה שוקי (שוק שכירות כפרי רזה); כנף הטכנוקרטים העירוניים של C תומכת בליברליזציה. רוב Tidö מחזיק אם C נשאר, נופל אם C שובר. לנטר הצבעות ועדה בשבוע 20 על פעילות תיקוני C.
+
+3. **האם גל הביקורות הפרלמנטריות על עזה הוא אות מדיניות חוץ או כלי גיוס פנימי?** בעיקר פנימי — קלאסטר חמש הביקורות (MP×2, V×1, S×2) מתאים לצורך של S+V+MP בפריימינג סולידריות לפלח בוחרים רגיש לעזה. הממשלה לא צפויה לשנות מדיניות; הביקורות הן לחץ מתועד, לא מינוף אמיתי.
+
+---
+
+### סיכום מודיעיני
+
+#### הקשר הספרינט החקיקתי
+מושב הריקסדאג 2025/26 השוודי מסתיים בערך 18-20 ימי עבודה לפני החופש הקיץ. קואליציית Tidö הגישה את הנפח הגבוה ביותר של הצעות ו-betänkanden מאז המושב 2024/25 — עקבי עם העומס הקדמי של שנת בחירות שנצפה במחזורים 1994, 2002, 2010 ו-2014.
+
+#### רפורמת הדיור (CU31) — בולטות פוליטית גבוהה ביותר
+**HD01CU31** מייצג את הרפורמה המשמעותית ביותר במדיניות הדיור מאז רפורמות בקרת השכירות בשנות ה-90. ה-betänkande מכניס שכר דירה שוקי מדורג לנכסים שנבנו לאחרונה, משנה את מערכת ה-bruksvärde ומרחיב את גמישות בעלי הבתים. תור 600,000 האנשים לדירות בשכירות מבוקרת הוא נושא בחירות מתמשך; הרפורמה פונה אליו ישירות עם מנגנון שוק במקום סובסידיית היצע. האופוזיציה (S+V+MP+C) טוענת שזה יועיל בעיקר לבעלי נכסים (שוכרים) ויאלץ שוכרים קיימים לשכר דירה שוקי שאינם יכולים להרשות לעצמם. סקר Demoskop (מאי 2026) מראה ש-52% תומכים ברפורמה ו-41% מתנגדים. צפוי שרוב Tidö יחזיק לאישור.
+
+#### השלמת רפורמת החינוך (UbU20, UbU28)
+המעבר לחינוך חובה בן 10 שנים (grundskolan) — הרפורמה המבנית החינוכית המשמעותית ביותר ב-30 שנה — מפעיל דרך שני betänkanden של UbU. HD01UbU28 קובע הסמכת מורים ודרישות כישורים למבנה החדש; HD01UbU20 מרחיב את עיקרון השקיפות (offentlighetsprincipen) לבתי ספר עצמאיים גדולים יותר (fristående skolor) עם כמה חריגים לספקים קטנים. שניהם מאושרים עם רוב Tidö; S מתנגד לUbU20 בטענה שהחריגים מחלישים שקיפות.
+
+#### מסגרת פריסה אזרחית (SoU36)
+HD01SoU36 מרחיב את הבסיס המשפטי לפריסת עובדי מדינה אזרחיים במשימות בינלאומיות. בהקשר הצטרפות לנאט"ו ומחויבות שוודיה לאוקראינה, זוהי אמצעי מוכנות שיאושר ברוב רחב כולל S.
+
+#### לחץ על יחסים בינלאומיים
+חמש ביקורות פרלמנטריות על עזה ב-72 שעות (2026-05-06/07/08) היא הצפיפות הגבוהה ביותר לנושא יחיד מאז אוקראינה (2022). הממשלה דבקה בעמדתה: "שוודיה תומכת בחוק ההומניטרי הבינלאומי; מימון UNRWA נבדק מקרה לגופו." השאלה הכתובה HD11803 על התערבות הצי הישראלי נגד אזרחים שוודים מסלימה מדיון פרלמנטרי לממד קונסולרי/דיפלומטי — הנושא הדחוף ביותר במדיניות החוץ עבור שר החוץ Billström.
+
+---
+
+### הערכת ביטחון
+
+| סעיף | איכות המקור | Admiralty | WEP |
+|------|------------|-----------|-----|
+| נקודות חקיקה (betänkanden) | A1 (נתוני ריקסדאג פתוחים) | A1 | AC |
+| שאלות כתובות (fragor) | A2 (MCP חלקי) | A2 | AC |
+| הקשר כלכלי (קרן המטבע הבינלאומית) | C3 (זיכרון הקשר מוחלש) | C3 | L (נמוך) |
+| ניתוח בחירות | B2 (הסקה אנליטית + סקרים) | B2 | M (בינוני) |
+
+> ℹ️ **תחבורת IMF מוחלשת** — נתונים כלכליים זמניים מזיכרון הקשר WEO אפר-2026. אוחזרו ב-2026-05-07T08:00Z.
+
+</div>
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling  
+**日付**：2026-05-09  
+**分類**：公開  
+**信頼度**：高 (A1/A2情報源)  
+**アドミラルティ**：A2 — 信頼できる情報源、複数のMCP取得により確認済み  
+
+---
+
+### 🎯 結論
+
+Tidö連立政権（M、SD、KD、L）は、2026年9月の選挙まで128日を残し、規律ある選挙前スプリントを実施している。2026年5月のリクスダーグの立法成果は、三本柱に基づく一貫した選挙戦略を示している：**安全保障国家の近代化**（デジタル身分証、追放規定の厳格化）、**社会契約の改革**（住宅市場自由化、学校制度）、**EU規制との整合**（金融安定、刑事司法）。野党（S、V、MP）は「監視国家と社会的放棄」という対抗言説で結集している。住宅（CU31）は最も政治的に顕著な課題であり、賃貸市場の60万人待機者問題に直接対処し、改革支持52対反対41で世論を二分している。ガザ/イスラエル質問主意書は、2022年のウクライナ後に匹敵する密度のピークに達しており、NATO加盟国としてのスウェーデンの外交政策的アイデンティティへの圧力が高まっていることを示している。
+
+---
+
+### 🧭 この報告書が支援する3つの決断
+
+1. **アナリストは安全保障国家三部作のリスクスコアを引き上げるべきか？** はい — Lagrådetは HD03267（ECHR第8条）に関し比例性の問題を提起し、政府は軽微な修正を受け入れた。リスク：施行後のEU/ECHR法的異議申し立て。推奨事項：BRÅの実施状況とECHR案件待機状況を監視する。
+
+2. **観察者はCU31住宅改革に対する連立の結束をどう評価すべきか？** 安定しているが脆弱 — C（中央党）が揺れ動くリスク。C の農村支持基盤は市場家賃に反対（農村の賃貸市場は薄い）；C の都市部テクノクラート派は自由化を支持。C が留まれば Tidö 多数派は維持、C が離脱すれば崩壊。第20週の委員会投票でCの修正活動を監視すること。
+
+3. **ガザ質問主意書の急増は外交政策シグナルか国内動員手段か？** 主に国内 — 5件の質問主意書クラスター（MP×2、V×1、S×2）はS+V+MPがガザに敏感な有権者層のための連帯フレーミングを必要としていることと相関している。政府が政策を変更する可能性は低く、質問主意書は文書化された圧力であり、実際の影響力ではない。
+
+---
+
+### インテリジェンスサマリー
+
+#### 立法スプリントの文脈
+スウェーデンの2025/26リクスダーグ会期は夏季休暇の約18〜20営業日前に終了する。Tidö連立は2024/25会期以来最多の法案（propositioner）および委員会報告（betänkanden）を提出しており、1994年、2002年、2010年、2014年の選挙年サイクルで観察されたフロントローディングと一致している。
+
+#### 住宅改革（CU31）— 最高の政治的顕著性
+**HD01CU31**は、1990年代の家賃統制改革以来最も重要な住宅政策改革を代表する。当该betänkandeは新築物件への段階的市場家賃を導入し、bruksvärde制度を改正し、家主の柔軟性を拡大する。家賃統制住宅への60万人待機者列は持続的な選挙課題であり、改革は供給補助ではなく市場メカニズムで直接対処する。野党（S+V+MP+C）はこれが主に不動産オーナー（家主）に利益をもたらし、既存の入居者を手の届かない市場家賃に追い込むと主張する。Demoskop調査（2026年5月）では52%が改革を支持し、41%が反対している。Tidö多数派は可決のために維持される見込み。
+
+#### 教育改革の完了（UbU20、UbU28）
+10年間の義務教育（grundskolan）への移行 — 30年間で最も重要な教育構造改革 — は2つのUbU betänkandenaを通じて実施される。HD01UbU28は新構造における教員資格と能力要件を定める；HD01UbU20は公開性原則（offentlighetsprincipen）を一部の小規模事業者例外を設けながら大規模な独立学校（fristående skolor）に拡大する。どちらもTidö多数派で可決；Sは例外が透明性を損なうとしてUbU20に反対する。
+
+#### 民間人派遣枠組み（SoU36）
+HD01SoU36は国際ミッションへの民間国家職員派遣の法的根拠を拡大する。NATO加盟とスウェーデンのウクライナ関与の文脈で、これはSを含む幅広い多数派で可決される準備措置である。
+
+#### 国際関係への圧力
+72時間でガザに関する5件の質問主意書（2026-05-06/07/08）は2022年のウクライナ以来最高の単一トピック密度である。政府は一貫している：「スウェーデンは国際人道法を支持し、UNRWAへの資金援助は事例ごとに審査する。」スウェーデン市民に対するイスラエル艦隊介入に関する書面質問HD11803は、議会討論から領事/外交的次元へとエスカレートしており、外務大臣Billströmにとって最も緊急の外交政策案件である。
+
+---
+
+### 信頼性評価
+
+| セクション | 情報源の質 | アドミラルティ | WEP |
+|-----------|-----------|------------|-----|
+| 立法事項（betänkanden） | A1（リクスダーグ公開データ） | A1 | AC |
+| 書面質問（fragor） | A2（MCP部分的） | A2 | AC |
+| 経済的文脈（IMF） | C3（劣化したコンテキストメモリ） | C3 | L（低） |
+| 選挙分析 | B2（分析的推論＋世論調査） | B2 | M（中） |
+
+> ℹ️ **IMF補助トランスポート劣化** — 経済数値はWEO 2026年4月コンテキストメモリからの暫定値。2026-05-07T08:00Z取得。
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_ko.md -->
+
+---
+
+### 🎯 결론
+
+Tidö 연립정부(M, SD, KD, L)는 2026년 9월 선거를 128일 앞두고 규율 있는 선거 전 스프린트를 실행하고 있다. 2026년 5월 Riksdag의 입법 성과는 세 가지 기둥을 기반으로 한 일관된 선거 전략을 드러낸다: **안보 국가 현대화**(디지털 신원증, 추방 강화), **사회 계약 개혁**(주택 시장 자유화, 학교 구조) 및 **EU 규제 조화**(금융 안정, 형사 사법). 야당(S, V, MP)은 "감시 국가 및 사회적 방기"라는 반대 서사로 결집했다. 주택(CU31)은 단일 가장 중요한 정치 현안으로 — 임대 시장의 60만 명 대기자 문제를 직접 다루며 개혁 찬성 52:41로 여론을 양분하고 있다. 가자/이스라엘 대정부질문은 2022년 우크라이나 이후와 비교할 만한 밀도 최고점에 도달했으며, NATO 회원국으로서 스웨덴의 외교 정책 정체성에 대한 압력 증가를 시사한다.
+
+---
+
+### 🧭 이 보고서가 지원하는 3가지 결정
+
+1. **분석가들은 안보 국가 삼부작의 위험 점수를 높여야 하는가?** 예 — Lagrådet는 HD03267(ECHR 제8조)과 관련한 비례성 우려를 제기했으며; 정부는 경미한 수정을 수용했다. 위험: 발효 후 EU/ECHR 법적 이의 제기. 권고: BRÅ 이행 및 ECHR 사건 대기 현황 모니터링.
+
+2. **관찰자들은 CU31 주택 개혁에 대한 연립의 결속을 어떻게 평가해야 하는가?** 안정적이지만 취약 — C(중앙당)가 흔들림 위험 요소. C의 농촌 기반은 시장 임대료에 반대(농촌 임대 시장은 얇음); C의 도시 테크노크라트 파벌은 자유화를 지지. C가 유지되면 Tidö 다수결이 유지되고, C가 이탈하면 붕괴. 제20주 위원회 투표에서 C의 수정 활동 감시.
+
+3. **가자 대정부질문 급증은 외교 정책 신호인가 국내 동원 도구인가?** 주로 국내 — 5건 대정부질문 클러스터(MP×2, V×1, S×2)는 S+V+MP가 가자에 민감한 유권자 층을 위한 연대 프레이밍이 필요한 것과 상관관계. 정부가 정책을 변경할 가능성은 낮으며; 대정부질문은 문서화된 압력이지 실제 영향력이 아니다.
+
+---
+
+### 인텔리전스 요약
+
+#### 입법 스프린트의 맥락
+스웨덴 Riksdag 2025/26 회기는 여름 방학 약 18~20 영업일 전에 종료된다. Tidö 연립은 2024/25 회기 이후 가장 많은 량의 제안서 및 betänkanden을 제출했으며, 1994년, 2002년, 2010년, 2014년 주기에서 관찰된 선거 연도 조기 적재와 일관성 있다.
+
+#### 주택 개혁(CU31) — 가장 높은 정치적 현저성
+**HD01CU31**은 1990년대 임대료 통제 개혁 이후 가장 중요한 주택 정책 개혁을 대표한다. betänkande는 신축 부동산에 대한 단계적 시장 임대료를 도입하고, bruksvärde 시스템을 변경하며, 집주인의 유연성을 확대한다. 임대료 규제 아파트를 위한 60만 명 대기줄은 지속적인 선거 문제이며; 개혁은 공급 보조금이 아닌 시장 메커니즘으로 직접 다룬다. 야당(S+V+MP+C)은 이것이 주로 부동산 소유자(hyresvärdar)에게 유리하며 기존 세입자들을 감당할 수 없는 시장 임대료로 내몰 것이라고 주장한다. Demoskop 설문조사(2026년 5월)는 52%가 개혁을 지지하고 41%가 반대함을 보여준다. Tidö 다수결은 통과를 위해 유지될 것으로 예상된다.
+
+#### 교육 개혁 완료(UbU20, UbU28)
+10년 의무교육(grundskolan)으로의 전환 — 30년 만에 가장 중요한 교육 구조 개혁 — 은 두 UbU betänkanden을 통해 운영된다. HD01UbU28은 새 구조를 위한 교사 자격증 및 역량 요건을 확립하며; HD01UbU20은 일부 소규모 제공업체 예외를 두고 더 큰 사립학교(fristående skolor)에 공개성 원칙(offentlighetsprincipen)을 확대한다. 두 안건 모두 Tidö 다수결로 통과; S는 예외가 투명성을 약화시킨다는 이유로 UbU20에 반대한다.
+
+#### 민간인 파견 프레임워크(SoU36)
+HD01SoU36은 민간 국가 인력의 국제 임무 파견을 위한 법적 기반을 확대한다. NATO 가입 및 스웨덴의 우크라이나 공약 맥락에서, 이것은 S를 포함한 광범위한 다수결로 통과될 준비 조치이다.
+
+#### 국제 관계 압력
+72시간에 가자에 관한 5개의 대정부질문(2026-05-06/07/08)은 2022년 우크라이나 이후 단일 주제 최고 밀도이다. 정부는 입장을 유지한다: "스웨덴은 국제 인도법을 지지하며; UNRWA 자금 지원은 사례별로 검토된다." 스웨덴 시민에 대한 이스라엘 함대 개입에 관한 서면 질문 HD11803은 의회 토론에서 영사/외교적 차원으로 고조되며 — 외무장관 Billström에게 가장 긴급한 외교 정책 사안이다.
+
+---
+
+### 신뢰도 평가
+
+| 섹션 | 출처 품질 | Admiralty | WEP |
+|------|----------|-----------|-----|
+| 입법 사항(betänkanden) | A1(Riksdag 공개 데이터) | A1 | AC |
+| 서면 질문(fragor) | A2(MCP 부분적) | A2 | AC |
+| 경제적 맥락(IMF) | C3(저하된 맥락 메모리) | C3 | L(낮음) |
+| 선거 분석 | B2(분석적 추론 + 설문조사) | B2 | M(중간) |
+
+> ℹ️ **IMF 보조 전송 저하** — 경제 수치는 WEO 2026년 4월 맥락 메모리에서 잠정적임. 2026-05-07T08:00Z에 검색됨.
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-09  
+**Classificatie**: OPENBAAR  
+**Betrouwbaarheid**: HOOG (A1/A2-bronnen)  
+
+---
+
+### 🎯 Conclusie
+
+De Tidö-coalitie (M, SD, KD, L) voert een gedisciplineerde pre-verkiezingssprint uit met 128 dagen tot de verkiezingen van september 2026. De parlementaire productie van de Riksdag in mei 2026 onthult een samenhangende verkiezingsstrategie op drie pijlers: **modernisering van de veiligheidsstaat** (digitale identiteit, aanscherping van uitwijzingsregels), **hervorming van het sociaal contract** (liberalisering van de woningmarkt, schoolstructuur) en **EU-regulatorische afstemming** (financiële stabiliteit, strafjustitie). De oppositie (S, V, MP) heeft zich geconsolideerd rond een tegenvertelling van "surveillancestaat en sociale abandonment". Wonen (CU31) is het enkelvoudig politiek meest prominente onderwerp — het adresseert direct de rij van 600.000 personen op de huurwoningmarkt en verdeelt het publiek 52:41 ten gunste van hervorming. De Gaza/Israël-interpellaties bereikten een dichtheidspiek vergelijkbaar met de periode na Oekraïne 2022, wat wijst op toenemende druk op Zweden's buitenlandse-politieke identiteit als NAVO-lid.
+
+---
+
+### 🧭 3 beslissingen die deze briefing ondersteunt
+
+1. **Moeten analisten de risicoscore van de veiligheidsstaatstrillogie verhogen?** JA — De Lagrådet opperde evenredigheidszorgen over HD03267 (EVRM art. 8); de regering accepteerde kleine wijzigingen. Risico: EU/EVRM rechtszaak na inwerkingtreding. Aanbeveling: BRÅ-implementatie en EVRM-zaaksachterstand volgen.
+
+2. **Hoe moeten waarnemers de coalitiesamenhang over de CU31-woonhervorming beoordelen?** STABIEL MAAR FRAGIEL — C (Centerpartiet) is het slingerrisico. C's plattelandsachterban is tegen markthuurniveaus (landelijke huurmarkt is dun); C's stedelijke technocratenflügel steunt liberalisering. Tidö-meerderheid houdt stand als C blijft, valt als C breekt. Commissievotingen in week 20 volgen op C-amendementsactiviteit.
+
+3. **Is de Gaza-interpellatieopleving een buitenlands-politiek signaal of een binnenlands mobilisatiemiddel?** PRIMAIR BINNENLANDS — Het cluster van vijf interpellaties (MP×2, V×1, S×2) correleert met de behoefte van S+V+MP aan een solidariteitsframing voor een Gaza-gevoelig kiezersegment. De regering zal haar beleid waarschijnlijk niet wijzigen; de interpellaties zijn gedocumenteerde druk, geen echte hefboomwerking.
+
+---
+
+### Inlichtingenoverzicht
+
+#### Context van de wetgevingssprint
+De Riksdag-sessie 2025/26 van Zweden eindigt circa 18–20 werkdagen voor het zomerreces. De Tidö-coalitie heeft het hoogste volume aan proposities en betänkanden ingediend sinds de sessie 2024/25 — consistent met de verkiezingsjaars-frontbelasting die werd waargenomen in de cycli 1994, 2002, 2010 en 2014.
+
+#### De woonhervorming (CU31) — hoogste politieke prominentie
+**HD01CU31** vertegenwoordigt de meest significante volkshuisvestingshervorming sinds de huurprijsregulatiehervormingen van de jaren negentig. Het betänkande introduceert gedifferentieerde markthuurniveaus voor nieuw gebouwde panden, wijzigt het bruksvärde-systeem en vergroot de flexibiliteit van verhuurders. De rij van 600.000 personen voor huurgereguleerde appartementen is een blijvend verkiezingsprobleem; de hervorming pakt dit direct aan met een marktmechanisme in plaats van een aanbodsubsidie. De oppositie (S+V+MP+C) stelt dat dit vooral eigenaren (verhuurders) ten goede komt en bestaande huurders naar onbetaalbare markthuren zal drijven. Een Demoskop-peiling (mei 2026) toont dat 52% de hervorming steunt en 41% er tegen is. De Tidö-meerderheid wordt verwacht stand te houden voor aanvaarding.
+
+#### Voltooiing van de onderwijshervorming (UbU20, UbU28)
+De overgang naar een 10-jarige leerplicht (grundskolan) — de meest significante structurele onderwijshervorming in 30 jaar — wordt geoperationaliseerd via twee UbU-betänkanden. HD01UbU28 legt lerarencertificering en kwalificatievereisten vast voor de nieuwe structuur; HD01UbU20 breidt het openbaarheidsprincipe (offentlighetsprincipen) uit naar grotere onafhankelijke scholen (fristående skolor) met enkele uitzonderingen voor kleine aanbieders. Beide worden aangenomen met Tidö-meerderheid; S is tegen UbU20 omdat de uitzonderingen de transparantie ondermijnen.
+
+#### Civiel inzetskader (SoU36)
+HD01SoU36 vergroot de juridische grondslag voor het inzetten van civiel staatspersoneel bij internationale missies. In de context van de NAVO-toetreding en Zweden's betrokkenheid bij Oekraïne is dit een paraatheidsmaatregeling die wordt aangenomen met een brede meerderheid inclusief S.
+
+#### Druk op internationale betrekkingen
+Vijf interpellaties over Gaza in 72 uur (2026-05-06/07/08) is de hoogste single-topic-dichtheid sinds Oekraïne (2022). De regering houdt vast aan: "Zweden steunt het internationaal humanitair recht; UNRWA-financiering wordt per geval beoordeeld." De schriftelijke vraag HD11803 over Israëls vloot-interventie tegen Zweedse staatsburgers escaleert van parlementair debat naar een consulaire/diplomatieke dimensie — de meest urgente buitenlandse-politieke zaak voor minister van Buitenlandse Zaken Billström.
+
+---
+
+### Betrouwbaarheidsanalyse
+
+| Sectie | Kwaliteit bronnen | Admiralty | WEP |
+|--------|------------------|-----------|-----|
+| Wetgevingspunten (betänkanden) | A1 (Riksdag open data) | A1 | AC |
+| Schriftelijke vragen (fragor) | A2 (MCP gedeeltelijk) | A2 | AC |
+| Economische context (IMF) | C3 (gedegradeerd contextgeheugen) | C3 | L (laag) |
+| Verkiezingsanalyse | B2 (analytische gevolgtrekking + peilingen) | B2 | M (gemiddeld) |
+
+> ℹ️ **IMF-hulptransport gedegradeerd** — economische cijfers zijn voorlopig uit het WEO apr-2026-contextgeheugen. Opgehaald op 2026-05-07T08:00Z.
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_no.md -->
+
+---
+
+### 🎯 Konklusjon
+
+Tidö-koalisjonen (M, SD, KD, L) gjennomfører en disiplinert pre-valgspurt med 128 dager til valget i september 2026. Riksdagens produksjon i mai 2026 avslører en sammenhengende valgstrategi bygget på tre pilarer: **modernisering av sikkerhetsstaten** (digital identitet, skjerping av utvisningsregler), **reform av den sosiale kontrakten** (liberalisering av boligmarkedet, skolestruktur) og **EU-regulatorisk tilpasning** (finansiell stabilitet, strafferettslig rettferdighet). Opposisjonen (S, V, MP) har konsolidert seg rundt en motfortelling om "overvåkingsstat og sosial oppgivelse". Boliger (CU31) er det enkelt mest samfunnsmessig relevante spørsmålet — det adresserer direkte køen med 600 000 personer på boligmarkedet og deler befolkningen 52:41 til fordel for reform. Gaza/Israel-interpellasjonene nådde en tetthetspeak sammenlignbar med perioden etter Ukraina 2022, noe som signaliserer eskalerende press på Sveriges utenrikspolitiske identitet som NATO-medlem.
+
+---
+
+### 🧭 3 beslutninger denne briefen støtter
+
+1. **Bør analytikere heve risikovurderingen for sikkerhetsstatstrillogien?** JA — Lagrådet reiste proporsjonalitetsproblemer vedrørende HD03267 (EMK art. 8); regjeringen aksepterte mindre endringer. Risiko: EU/EMK-rettslig utfordring etter ikrafttreden. Anbefaling: Overvåk BRÅ-implementering og EMK-køen.
+
+2. **Hvordan bør observatører vurdere koalisjonens samhold om CU31-boligreformen?** STABIL MEN SKJØR — C (Senterpartiet) er svingrisikoen. C's landdistriktsbasis motstår markedsleier (landdistrikters leieboligmarked er tynt); C's urbane teknokratfløy støtter liberalisering. Tidö-flertall holder hvis C blir, faller hvis C bryter. Overvåk uke 20 utvalgsavstemninger for C-endringsaktivitet.
+
+3. **Er Gaza-interpellasjonssurgen et utenrikspolitisk signal eller et innenrikspolitisk mobiliseringsverktøy?** PRIMÆRT INNENRIKSPOLITISK — Klyngen med fem interpellasjoner (MP×2, V×1, S×2) korrelerer med S+V+MP's behov for et solidaritetsinnrammende tema for et Gaza-sensitivt velgersegment. Regjeringen vil sannsynligvis ikke endre politikk; interpellasjonene er dokumentert press, ikke reell innflytelse.
+
+---
+
+### Etterretningsoversikt
+
+#### Den lovgivningsmessige spurtens kontekst
+Sveriges Riksdag-sesjon 2025/26 avslutter ca. 18–20 arbeidsdager før sommerferien. Tidö-koalisjonen har levert det høyeste volumet av proposisjoner og betenkninger siden sesjonen 2024/25 — konsistent med den valgårsfrontbelastningen som ble observert i syklusene 1994, 2002, 2010 og 2014.
+
+#### Boligreformen (CU31) — høyeste politiske relevans
+**HD01CU31** representerer den mest betydningsfulle boligpolitiske reformen siden 1990-tallets husleiekontrollreformer. Betenkningen innfører graderte markedsleier for nyoppførte eiendommer, endrer bruksvärdessystemet og utvider utleierfleksibiliteten. Køen med 600 000 personer til husleiekontrollerte leiligheter er et vedvarende valgspørsmål; reformen adresserer det direkte med en markedsmekanisme fremfor et tilbudssubsidium. Opposisjonen (S+V+MP+C) hevder at dette primært gagner eiendomseierne (utleiere) og vil drive eksisterende leietakere mot uoverkommelige markedsleier. En Demoskop-undersøkelse (mai 2026) viser at 52 % støtter reformen og 41 % er imot. Tidö-flertallet forventes å holde for vedtakelse.
+
+#### Utdanningsreformens gjennomføring (UbU20, UbU28)
+Overgangen til en 10-årig obligatorisk skole (grundskolan) — den mest betydningsfulle strukturelle utdanningsreformen på 30 år — operasjonaliseres gjennom to UbU-betenkninger. HD01UbU28 fastlegger lærersertifisering og kompetansekrav for den nye strukturen; HD01UbU20 utvider offentlighetsprinsippet (offentlighetsprincipen) til større friskoler med visse unntak for mindre aktører. Begge vedtas med Tidö-flertall; S motsetter seg UbU20 med den begrunnelse at unntakene undergraver transparens.
+
+#### Sivilt deploymentrammeverk (SoU36)
+HD01SoU36 utvider det rettslige grunnlaget for å sette inn sivilt statspersonell på internasjonale oppdrag. I sammenheng med NATO-tilslutningen og Sveriges Ukraina-engasjement er dette et beredskapstiltak som vedtas med bredt flertall inkludert S.
+
+#### Press på internasjonale relasjoner
+Fem interpellasjoner om Gaza på 72 timer (2026-05-06/07/08) er den høyeste enkelt-tema-tettheten siden Ukraina (2022). Regjeringen holder fast ved: "Sverige støtter internasjonal humanitær rett; UNRWA-finansiering gjennomgås fra sak til sak." Det skriftlige spørsmålet HD11803 om Israels flåteintervensjon mot svenske statsborgere eskalerer fra parlamentarisk debatt til en konsulær/diplomatisk dimensjon — den mest presserende utenrikspolitiske saken for utenriksminister Billström.
+
+---
+
+### Konfidensanalyse
+
+| Seksjon | Kildekvalitet | Admiralty | WEP |
+|---------|--------------|-----------|-----|
+| Lovgivningsmessige punkter (betenkninger) | A1 (Riksdag åpne data) | A1 | AC |
+| Skriftlige spørsmål (fragor) | A2 (MCP delvis) | A2 | AC |
+| Økonomisk kontekst (IMF) | C3 (degradert kontekstminne) | C3 | L (lav) |
+| Valganalyse | B2 (analytisk slutning + meningsmålinger) | B2 | M (middel) |
+
+> ℹ️ **IMF-hjelpetransport degradert** — økonomiske tall er foreløpige fra WEO apr-2026 kontekstminne. Hentet 2026-05-07T08:00Z.
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_sv.md -->
+
+---
+
+### 🎯 Slutsats
+
+Tidökoalitionen (M, SD, KD, L) genomför en disciplinerad pre-valspurt med 128 dagar till valet i september 2026. Riksdagens produktion i maj 2026 avslöjar en sammanhållen valstrategi byggd på tre pelare: **modernisering av säkerhetsstaten** (digital identitet, utvisningsskärpning), **reform av det sociala kontraktet** (avreglering av bostadsmarknaden, skolstruktur) och **EU-regulatorisk anpassning** (finansiell stabilitet, straffrättslig rättvisa). Oppositionen (S, V, MP) har konsoliderat sig kring en motberättelse om "övervakningsstat och social övergivning". Bostäder (CU31) är den enskilt mest samhällsaktuella frågan — den adresserar direkt köerna med 600 000 personer på bostadsmarknaden och delar allmänheten 52:41 till förmån för reform. Gaza/Israel-interpellationerna nådde en täthetspeak jämförbar med perioden efter Ukraina 2022, vilket signalerar eskalerande tryck på Sveriges utrikespolitiska identitet som NATO-medlem.
+
+---
+
+### 🧭 3 beslut som denna brief stödjer
+
+1. **Bör analytiker höja risknivån för säkerhetsstats-trilogin?** JA — Lagrådet lyfte proportionalitetsfrågor avseende HD03267 (EKMR art. 8); regeringen accepterade mindre ändringar. Risk: EU/EKMR-rättslig utmaning efter ikraftträdande. Rekommendation: Bevaka BRÅ:s implementering och EKMR:s köhantering.
+
+2. **Hur ska iakttagare bedöma koalitionens sammanhållning i CU31-bostadsreformen?** STABIL MEN BRÄCKLIG — C (Centerpartiet) är svängrisken. C:s landsbygdsbas motsätter sig marknadshyror (landsbygdens hyresmarknad är tunn); C:s urbana teknokratvinge stöder avreglering. Tidömajoriteten håller om C stannar, faller om C bryter. Bevaka vecka 20 utskottsomröstningar för C:s ändringsaktivitet.
+
+3. **Är Gazainterpellationssurgen en utrikespolitisk signal eller ett inrikespolitiskt mobiliseringsverktyg?** PRIMÄRT INRIKES — Klustret med fem interpellationer (MP×2, V×1, S×2) sammanfaller med att S+V+MP behöver en solidaritetsframande fråga för ett Gazakänsligt väljarskikt. Regeringen lär inte ändra sin politik; interpellationerna är dokumenterat tryck, inte verklig hävstång.
+
+---
+
+### Underrättelsesummering
+
+#### Lagstiftningsspurtens kontext
+Sveriges riksdagssession 2025/26 avslutas ungefär 18–20 arbetsdagar före sommaruppehållet. Tidökoalitionen har lagt fram den högsta volymen propositioner och betänkanden sedan sessionen 2024/25 — konsistent med den valårsfrontladdning som observerades i cyklerna 1994, 2002, 2010 och 2014.
+
+#### Bostadsreformen (CU31) — högst politisk relevans
+**HD01CU31** representerar den mest betydande bostadspolitiska reformen sedan 1990-talets hyresregleringsreformer. Betänkandet inför graderade marknadshyror för nyproducerade fastigheter, ändrar bruksvärdessystemet och utökar hyresvärdarnas flexibilitet. Kön med 600 000 personer till hyresreglerade lägenheter är en bestående valfråga; reformen adresserar den direkt med en marknadsmekanik snarare än ett utbudssubsidium. Oppositionen (S+V+MP+C) hävdar att detta primärt gynnar fastighetsägare (hyresvärdar) och kommer att driva befintliga hyresgäster mot oöverkomliga marknadshyror. En Demoskop-undersökning (maj 2026) visar att 52 % stöder reformen och 41 % motsätter sig den. Tidömajoriteten förväntas hålla för antagande.
+
+#### Utbildningsreformens genomförande (UbU20, UbU28)
+Övergången till en 10-årig obligatorisk skola (grundskolan) — den mest betydande strukturella utbildningsreformen på 30 år — operationaliseras genom två UbU-betänkanden. HD01UbU28 fastställer lärarbehörighet och kompetenskrav för den nya strukturen; HD01UbU20 utvidgar offentlighetsprincipen till större fristående skolor med vissa undantag för småaktörer. Båda antas med Tidömajoritet; S motsätter sig UbU20 med hänvisning till att undantagen undergräver transparens.
+
+#### Civilavdelningens deploymentramverk (SoU36)
+HD01SoU36 utvidgar den rättsliga grunden för att sätta in civil statspersonal på internationella uppdrag. I sammanhanget med NATO-anslutning och Sveriges Ukrainaengagemang är detta en beredskapsmässig åtgärd som antas med bred majoritet inklusive S.
+
+#### Internationella relationstrycket
+Fem interpellationer om Gaza under 72 timmar (2026-05-06/07/08) är den högsta enkeltopikdensiteten sedan Ukraina (2022). Regeringen håller fast vid: "Sverige stöder internationell humanitär rätt; UNRWA-finansiering granskas fall för fall." Den skriftliga frågan HD11803 om Israels flottillainterventionen mot svenska medborgare eskalerar från parlamentarisk debatt till en konsulär/diplomatisk dimension — det mest brådskande utrikespolitiska ärendet för utrikesminister Billström.
+
+---
+
+### Konfidensanalys
+
+| Avsnitt | Källkvalitet | Admiralty | WEP |
+|---------|-------------|-----------|-----|
+| Lagstiftningsärenden (betänkanden) | A1 (riksdagens öppna data) | A1 | AC |
+| Skriftliga frågor (fragor) | A2 (MCP partiell) | A2 | AC |
+| Ekonomisk kontext (IMF) | C3 (degraderat kontextminne) | C3 | L (låg) |
+| Valanalys | B2 (analytisk slutledning + opinionsmätningar) | B2 | M (medel) |
+
+> ℹ️ **IMF:s hjälptransport degraderad** — ekonomiska siffror är preliminära från WEO apr-2026 kontextminne. Hämtade 2026-05-07T08:00Z.
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-05-09  
+**分类**：公开  
+**置信度**：高（A1/A2来源）  
+**Admiralty**：A2 — 可靠来源，经多次MCP检索确认  
+
+---
+
+### 🎯 结论
+
+Tidö联合政府（M、SD、KD、L）以距2026年9月大选128天的节点进行着有纪律的选前冲刺。议会2026年5月的立法成果揭示了建立在三大支柱之上的连贯选举策略：**安全国家现代化**（数字身份、驱逐出境规定收紧）、**社会契约改革**（住房市场自由化、学校结构）以及**欧盟监管一体化**（金融稳定、刑事司法）。反对党（S、V、MP）围绕"监控国家与社会遗弃"的对抗叙事巩固阵营。住房（CU31）是政治上最突出的单一议题——直接应对租赁市场60万人等待队列问题，以52:41的比例将民意对改革一分为二。加沙/以色列质询达到了与2022年乌克兰后期相当的密度峰值，表明作为北约成员国，瑞典外交政策身份所承受的压力持续升级。
+
+---
+
+### 🧭 本报告支持的3项决策
+
+1. **分析师是否应提高安全国家三部曲的风险评分？** 是 — Lagrådet就HD03267（ECHR第8条）提出了比例性问题；政府接受了轻微修改。风险：生效后遭受欧盟/ECHR法律挑战。建议：追踪BRÅ实施情况和ECHR案件积压情况。
+
+2. **观察人士应如何评估联合政府在CU31住房改革上的凝聚力？** 稳定但脆弱 — C（中央党）是摇摆风险因素。C的农村基础反对市场租金（农村租房市场稀薄）；C的城市技术官僚派系支持自由化。C留则Tidö多数派维持，C出走则崩溃。监测第20周委员会投票中C的修正案活动。
+
+3. **加沙质询数量激增是外交政策信号还是国内动员工具？** 主要是国内动员 — 五件质询集群（MP×2、V×1、S×2）与S+V+MP需要为对加沙敏感的选民群体提供团结叙事框架相关联。政府不太可能改变政策；质询是有记录的压力，而非真正的影响力。
+
+---
+
+### 情报摘要
+
+#### 立法冲刺背景
+瑞典2025/26年度议会会期在夏休前约18-20个工作日结束。Tidö联合政府提交的提案和betänkanden数量为2024/25会期以来最多——与1994年、2002年、2010年和2014年选举年周期中观察到的选前集中提交现象一致。
+
+#### 住房改革（CU31）——最高政治显著性
+**HD01CU31**代表了1990年代租金管制改革以来最重要的住房政策改革。betänkande对新建房产引入分级市场租金，修改bruksvärde制度，并扩大房东的灵活性。60万人等待租金管制公寓的队列是一个持续性选举问题；改革通过市场机制直接应对，而非提供供应补贴。反对党（S+V+MP+C）认为，这主要有利于房产所有者（租赁方），将迫使现有租户承受难以负担的市场租金。一项Demoskop民调（2026年5月）显示，52%支持改革，41%反对。Tidö多数派预计将维持以通过改革。
+
+#### 教育改革落实（UbU20、UbU28）
+向10年义务教育（grundskolan）的过渡——30年来最重要的教育结构改革——通过两份UbU betänkanden付诸实施。HD01UbU28为新结构确立教师资格和能力要求；HD01UbU20将公开原则（offentlighetsprincipen）扩展到规模较大的独立学校（fristående skolor），并对小型供应商设有部分豁免。两者均以Tidö多数通过；S反对UbU20，理由是豁免条款破坏透明度。
+
+#### 民事人员部署框架（SoU36）
+HD01SoU36扩大了向国际任务部署国家民事人员的法律基础。在加入北约和瑞典对乌克兰承诺的背景下，这是一项将以包括S党在内的广泛多数通过的战备措施。
+
+#### 国际关系压力
+72小时内就加沙提出五项质询（2026-05-06/07/08）是自2022年乌克兰以来单一主题最高密度。政府坚持立场："瑞典支持国际人道法；UNRWA资金按具体情况审查。"关于以色列舰队干预瑞典公民一事的书面质询HD11803从议会辩论升级至领事/外交层面——外交部长Billström面临的最紧迫外交政策事项。
+
+---
+
+### 置信度评估
+
+| 部分 | 来源质量 | Admiralty | WEP |
+|------|---------|-----------|-----|
+| 立法事项（betänkanden） | A1（Riksdag公开数据） | A1 | AC |
+| 书面质询（fragor） | A2（MCP部分） | A2 | AC |
+| 经济背景（IMF） | C3（上下文记忆降级） | C3 | L（低） |
+| 选举分析 | B2（分析性推断+民调） | B2 | M（中等） |
+
+> ℹ️ **IMF辅助传输降级** — 经济数字为WEO 2026年4月上下文记忆中的临时数据。检索于2026-05-07T08:00Z。
+
+<!-- source-sha: 8a5c5868256d32efc176c5e6b221b5d4c126e941 -->
+
 ## Mcp Reliability Audit
 <!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/mcp-reliability-audit.md -->
 
@@ -2589,7 +3346,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 29 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 42 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 11 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
@@ -2639,6 +3396,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/analysis-index.md)
 - [`cross-run-diff.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/cross-run-diff.md)
 - [`cross-session-intelligence.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/cross-session-intelligence.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_zh.md)
 - [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/reference-analysis-quality.md)
 - [`session-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/session-baseline.md)

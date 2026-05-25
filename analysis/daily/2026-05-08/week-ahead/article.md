@@ -3,7 +3,7 @@ date: 2026-05-08
 subfolder: week-ahead
 slug: 2026-05-08-week-ahead
 source_folder: analysis/daily/2026-05-08/week-ahead
-generated_at: 2026-05-25T09:05:41.663Z
+generated_at: 2026-05-25T15:59:53.695Z
 language: en
 layout: article
 ---
@@ -115,6 +115,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1632,13 +1645,1140 @@ Carrying forward from 2026-05-01/week-ahead:
 
 New PIRs generated this cycle — see `pir-status.json`.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+---
+title: "أجندة الأسبوع — الريكسداغ الأسبوع 20: استخبارات الدفاع، إصلاح التعليم، التشريع القضائي"
+
+subfolder: "week-ahead"
+
+language: "ar"
+---
+
+# أجندة الأسبوع: الريكسداغ الأسبوع 20 (11–17 مايو 2026)
+
+**المؤلف**: James Pether Sörling | **معرف التشغيل**: 25544675528 | **التصنيف**: PUBLIC | **مستوى الثقة**: HIGH [B2]
+
+### BLUF
+
+يدخل الريكسداغ السويدي الأسبوع 20 (11–17 مايو 2026) بأجندة تشريعية مكتظة تمتد عبر تحديث تشريعات استخبارات الدفاع، وإصلاح التعليم، والتشريع القضائي، والتنظيم المالي المتوافق مع الاتحاد الأوروبي — وكل ذلك يتجه نحو التصويت بينما تقدم الحكومة في الوقت ذاته ثلاثة مقترحات تشريعية ذات حساسية سياسية عالية (التوثيق الإلكتروني الحكومي، وتوسيع صلاحيات المراقبة لـSkatteverket، وتشديد قواعد ترحيل الأشخاص الذين يمثلون تهديداً أمنياً). يشير هذا التزامن إلى تسارع وتيرة التشريع مع اقتراب السويد من انتخابات سبتمبر 2026. أبرز نقطة سياسية هي **HD01FöU18** (إصلاح قانون استخبارات الإشارات)، الذي يختبر تماسك الائتلاف في الموازنة بين الحريات المدنية ومتطلبات الأمن. **البطاقة الجوكر لهذا الأسبوع هي اعتراض القوات الإسرائيلية لسفينة التضامن مع غزة "Global Sumud Flotilla" وعلى متنها مواطنون سويديون** (HD11803)، مما يضطر وزيرة الخارجية Maria Malmer Stenergard (M) إلى اتخاذ موقف علني من الصراع في غزة في لحظة حرجة قبيل الانتخابات.
+
+### القرارات التي يدعمها هذا الملخص
+
+1. **تخطيط الجدول التشريعي** — أيٌّ من betänkanden التسعة التي تصل إلى النقاش/التصويت في الأسبوع 20 تحمل أعلى مخاطر سياسية لانشقاق الائتلاف أو مناورة مضادة من المعارضة؟
+2. **تحديث متابعة السياسات** — هل أدى الاندفاع التشريعي للحكومة في 7 مايو (HD03261، HD03250، HD03267) إلى تغيير مسار إصلاح الدولة الأمنية الذي تأسس في مارس–أبريل 2026؟
+3. **معايرة السيناريو الانتخابي** — هل يمثل الضغط المتزامن على مؤهلات المعلمين (UbU28)، وتجريم العنف النفسي (JuU39)، واستخبارات الإشارات (FöU18) تموضعاً انتخابياً منسقاً للائتلاف؟
+
+### ملخص 60 ثانية
+
+- **استخبارات الدفاع**: تقرير لجنة FöU18 يحدّث تشريعات استخبارات الإشارات؛ التصويت المتوقع في الأسبوع 20. دعم قوي من KD/M/SD؛ MP على الأرجح لا؛ S منقسم [الأفق:أسبوع]
+- **التعليم**: UbU28 (مؤهلات المعلمين في المدرسة الابتدائية العشرية) — افتتح النقاش في 2026-05-08؛ دعم عريض متعدد الأحزاب متوقع لكن SD وV قد ينحرفان بشأن أحكام الاندماج [الأفق:أسبوع]
+- **الحزمة القضائية**: JuU32 (أمن الفعاليات العامة) + JuU39 (العنف النفسي كجريمة) + JuU34 (إنفاذ العدالة الجنائية الشمالية) — جميعها جاهزة للتصويت؛ أغلبية حكومية سليمة للأحكام الثلاثة [الأفق:أسبوع]
+- **مقترحات جديدة**: HD03267 (الأجانب كتهديد أمني) + HD03261 (صلاحيات تسجيل السكان لـSkatteverket) يدفعان أجندة دولة المراقبة؛ لا رأي من Lagrådet بعد — مخاطر دستورية [الأفق:أسبوع]
+- **الصلة بالاتحاد الأوروبي**: اجتماع مجلس الاتحاد الأوروبي للتعليم/الشباب/الثقافة 11–12 مايو؛ اجتماع FAC للتنمية 18 مايو؛ إحاطة EU-nämnden 13 مايو [الأفق:أسبوع]
+- **البطاقة الجوكر في السياسة الخارجية**: الاعتراض الإسرائيلي لسفينة التضامن مع غزة ومعها مواطنون سويديون يضطر الحكومة السويدية إلى الإدلاء بتصريح علني [الأفق:أسبوع]
+- **قانون الضرائب**: الاستجواب HD10480 (S→وزير المالية) يطعن في مفهوم "الإقامة الدائمة" — يختبر اتساق تفسير Skatteverket [الأفق:أسبوع]
+
+### المحفز المستقبلي الرئيسي
+
+**الاثنين 11 مايو**: إذا افتتح نقاش FöU18 في الكامارن، رصد أصوات المعارضة من MP وV — أول اختبار مرئي لما إذا كانت الشقوق الائتلافية حول الحريات المدنية ستصمد حتى انتخابات سبتمبر.
+
+### السياق الاقتصادي لصندوق النقد الدولي
+
+> ℹ️ **نقل صندوق النقد الدولي المساعد متردٍّ** — WEO/FM Datamapper متاح؛ نقطة نهاية SDMX ترجع 404. المتابعة ببيانات WEO/FM فقط.
+
+السويد: نمو الناتج المحلي الإجمالي الحقيقي 2026م: ~2.1% (WEO أبريل-2026)؛ الرصيد المالي: حوالي +0.2% من الناتج المحلي الإجمالي (FM أبريل-2026)؛ الدين العام: ~39% من الناتج المحلي الإجمالي (WEO أبريل-2026). يوفر الهامش المالي السويدي قدرة على الاستثمار في البنية التحتية الرقمية الذي يستلزمه HD03250 (التوثيق الإلكتروني الحكومي) دون المساس بأهداف الدين.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### المصدر الاقتصادي (صندوق النقد الدولي في وضع متردٍّ)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### التحكم في الإصدار
+
+- **Pass 1**: 2026-05-08 — وثيقة أولية
+- **Pass 2**: 2026-05-08 — إضافة المصدر الاقتصادي؛ تأكيد دقة لغة WEP
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Kørsels-ID**: 25544675528 | **Klassificering**: PUBLIC | **Konfidensgrad**: HIGH [B2]
+
+### BLUF
+
+Sveriges Riksdag indleder uge 20 (11.–17. maj 2026) med en stram lovgivningskalender der dækker modernisering af efterretningslovgivningen på forsvarsområdet, uddannelsesreform, retslovgivning og EU-tilpasset finansiel regulering — alt på vej mod afstemning, mens regeringen samtidig fremsætter tre politisk ladede propositioner (statslig e-legitimation, udvidede overvågningsbeføjelser til Skatteverket og strammet udvisning af sikkerhedstrusler). Kombinationen signalerer et accelererende lovgivningstempo, i takt med at Sverige nærmer sig valget i september 2026. Det enkeltpolitisk mest betydningsfulde punkt er **HD01FöU18** (reform af signalovervågningsloven), der tester koalitionens sammenhæng om afvejningen mellem borgerrettigheder og sikkerhedshensyn. **Ugens joker er den israelske boarding af Gaza-solidaritetsskibet Global Sumud Flotilla med svenske statsborgere om bord** (HD11803), som tvinger udenrigsminister Maria Malmer Stenergard (M) til en offentlig stillingtagen i Gazakonflikten på et kritisk tidspunkt forud for valget.
+
+### Beslutninger dette notat understøtter
+
+1. **Planlægning af lovgivningskalenderen** — Hvilke af de ni betänkanden der når debat/afstemning i uge 20, indebærer den højeste politiske risiko for koalitionsbrud eller modtræk fra oppositionen?
+2. **Opdatering af politiksporing** — Har regeringens propositionsburst den 7. maj (HD03261, HD03250, HD03267) ændret den sikkerhedsstatlige reformkurs etableret i marts–april 2026?
+3. **Kalibrering af valgscenarier** — Repræsenterer det samtidige pres på lærerkompetencer (UbU28), kriminalisering af psykisk vold (JuU39) og signalovervågning (FöU18) en koordineret koalitionspositionering forud for valget?
+
+### 60-sekunders resumé
+
+- **Forsvarsefterretning**: FöU18 udvalgsrapport moderniserer signalovervågningslovgivningen; afstemning ventes i uge 20. Stærk støtte fra KD/M/SD; MP sandsynligvis Nej; S delt [horisont:uge]
+- **Uddannelse**: UbU28 (lærerkompetencer i 10-årig grundskole) — debat åbnedes 2026-05-08; bred tværpartistisk støtte ventes, men SD og V kan afvige på integrationsbestemmelser [horisont:uge]
+- **Retspakke**: JuU32 (sikkerhed ved offentlige arrangementer) + JuU39 (psykisk vold som lovovertrædelse) + JuU34 (nordisk strafferetshåndhævelse) — alle klar til afstemning; regeringsflertal intakt for alle tre [horisont:uge]
+- **Nye propositioner**: HD03267 (udlændinge som sikkerhedstrusler) + HD03261 (Skatteverkets folkeregistreringsbeføjelser) driver overvågningsstatens dagsorden; ingen lagrådssvar endnu — forfatningsmæssig risiko [horisont:uge]
+- **EU-nexus**: EU-Rådets møde om uddannelse/ungdom/kultur 11.–12. maj; FAC-udviklingsmøde 18. maj; EU-nämndsbriefing 13. maj [horisont:uge]
+- **Udenrigspolitisk joker**: Israels boarding af Gaza-solidaritetsskib med svenske statsborgere tvinger den svenske regering til en offentlig stillingtagen [horisont:uge]
+- **Skattelovgivning**: Interpellation HD10480 (S→finansminister) udfordrer begrebet "fast bopæl" — tester Skatteverkets fortolkningskonsistens [horisont:uge]
+
+### Ledende fremtidig udløser
+
+**Mandag den 11. maj**: Hvis FöU18-debatten åbnes i kammaren, hold øje med afvigelsesstemmer fra MP og V — første synlige prøve på, om koalitionens sprækker om borgerrettigheder holder frem mod valget i september.
+
+### IMF økonomisk kontekst
+
+> ℹ️ **IMF's hjælpetransport forringet** — WEO/FM Datamapper tilgængelig; SDMX-slutpunkt returnerer 404. Fortsætter med kun WEO/FM-data.
+
+Sverige: Real BNP-vækst 2026P: ~2,1 % (WEO apr-2026); Finanspolitisk saldo: ca. +0,2 % af BNP (FM apr-2026); Offentlig gæld: ~39 % af BNP (WEO apr-2026). Sveriges finanspolitiske råderum giver kapacitet til den digitale infrastrukturinvestering, som HD03250 (statslig e-legitimation) forudsætter, uden risiko for gældsmål.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### Økonomisk proveniensdata (IMF forringet tilstand)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### Versionskontrol
+
+- **Pass 1**: 2026-05-08 — Initialt notat
+- **Pass 2**: 2026-05-08 — Tilføjede økonomisk proveniens; bekræftede WEP-sprogpræcision
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Lauf-ID**: 25544675528 | **Klassifizierung**: PUBLIC | **Konfidenzgrad**: HIGH [B2]
+
+### BLUF
+
+Der schwedische Riksdag tritt in Woche 20 (11.–17. Mai 2026) mit einem vollgepackten Gesetzgebungskalender ein, der die Modernisierung der Verteidigungsgeheimdienstgesetzgebung, Bildungsreform, Justizgesetzgebung und EU-konforme Finanzregulierung umfasst — all das auf dem Weg zur Abstimmung, während die Regierung gleichzeitig drei politisch brisante Propositioner einreicht (staatliche E-Legitimation, erweiterte Überwachungsbefugnisse für Skatteverket und verschärfte Ausweisungsregeln für Sicherheitsbedrohungen). Die Kombination signalisiert ein sich beschleunigendes Gesetzgebungstempo, während sich Schweden den Wahlen im September 2026 nähert. Der politisch bedeutsamste Einzelpunkt ist **HD01FöU18** (Reform des Signalaufklärungsgesetzes), das den Zusammenhalt der Koalition bei der Abwägung zwischen bürgerlichen Freiheiten und Sicherheitskompromissen testet. **Der Wildcard der Woche ist das israelische Entern des Gaza-Solidaritätsschiffes Global Sumud Flotilla mit schwedischen Staatsbürgern an Bord** (HD11803), was Außenministerin Maria Malmer Stenergard (M) zu einer öffentlichen Stellungnahme zum Gaza-Konflikt in einem kritischen Vorabend der Wahl zwingt.
+
+### Entscheidungen, die diese Analyse unterstützt
+
+1. **Planung des Gesetzgebungskalenders** — Welche der neun betänkanden, die in Woche 20 Debatte/Abstimmung erreichen, tragen das höchste politische Risiko eines Koalitionsbruchs oder eines Gegenzugs der Opposition?
+2. **Aktualisierung des Policy-Trackers** — Hat der Propositions-Burst der Regierung vom 7. Mai (HD03261, HD03250, HD03267) die im März–April 2026 etablierte Reformtrajektorie des Sicherheitsstaates verändert?
+3. **Kalibrierung des Wahlszenarios** — Stellt der gleichzeitige Druck auf Lehrerbefähigung (UbU28), Kriminalisierung psychischer Gewalt (JuU39) und Signalaufklärung (FöU18) eine koordinierte Vorwahl-Koalitionspositionierung dar?
+
+### 60-Sekunden-Zusammenfassung
+
+- **Verteidigungsgeheimdienst**: FöU18 Ausschussbericht modernisiert die Signalaufklärungsgesetzgebung; Abstimmung in Woche 20 erwartet. Starke Unterstützung von KD/M/SD; MP wahrscheinlich Nein; S gespalten [Horizont:Woche]
+- **Bildung**: UbU28 (Lehrerbefähigung in der 10-jährigen Grundschule) — Debatte eröffnet am 2026-05-08; breite überparteiliche Unterstützung erwartet, aber SD und V können bei Integrationsbestimmungen abweichen [Horizont:Woche]
+- **Justizpaket**: JuU32 (Sicherheit bei öffentlichen Veranstaltungen) + JuU39 (psychische Gewalt als Straftat) + JuU34 (nordische Strafverfolgung) — alle abstimmungsbereit; Regierungsmehrheit für alle drei intakt [Horizont:Woche]
+- **Neue Propositioner**: HD03267 (Ausländer als Sicherheitsbedrohung) + HD03261 (Meldebehördenbefugnisse für Skatteverket) treiben die Überwachungsstaats-Agenda voran; noch kein Lagrådsstellungnahme — Verfassungsrisiko [Horizont:Woche]
+- **EU-Nexus**: EU-Ratssitzung Bildung/Jugend/Kultur 11.–12. Mai; FAC-Entwicklungssitzung 18. Mai; EU-nämndenbriefing 13. Mai [Horizont:Woche]
+- **Außenpolitischer Wildcard**: Israels Entern des Gaza-Solidaritätsschiffes mit schwedischen Staatsangehörigen zwingt die schwedische Regierung zu einer öffentlichen Stellungnahme [Horizont:Woche]
+- **Steuerrecht**: Interpellation HD10480 (S→Finanzminister) fordert das Konzept "dauerhafter Wohnsitz" heraus — testet die Auslegungskonsistenz von Skatteverket [Horizont:Woche]
+
+### Führender zukünftiger Auslöser
+
+**Montag, 11. Mai**: Wenn die FöU18-Debatte im Kammaren eröffnet wird, auf abweichende Stimmen von MP und V achten — erste sichtbare Prüfung, ob die Koalitionsrisse bei bürgerlichen Freiheiten vor den Septemberwahlen halten.
+
+### IWF-Wirtschaftskontext
+
+> ℹ️ **IWF-Hilfstransport beeinträchtigt** — WEO/FM Datamapper verfügbar; SDMX-Endpunkt gibt 404 zurück. Weiterarbeit nur mit WEO/FM-Daten.
+
+Schweden: Reales BIP-Wachstum 2026S: ~2,1 % (WEO Apr-2026); Finanzierungssaldo: ca. +0,2 % des BIP (FM Apr-2026); Staatsschulden: ~39 % des BIP (WEO Apr-2026). Schwedens finanzpolitischer Spielraum bietet Kapazität für die digitale Infrastrukturinvestition, die HD03250 (staatliche E-Legitimation) impliziert, ohne das Schuldenziels zu gefährden.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### Wirtschaftliche Herkunft (IWF-beeinträchtigter Modus)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### Versionskontrolle
+
+- **Pass 1**: 2026-05-08 — Erstes Dokument
+- **Pass 2**: 2026-05-08 — Wirtschaftliche Herkunft hinzugefügt; WEP-Sprachpräzision bestätigt
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **ID de ejecución**: 25544675528 | **Clasificación**: PUBLIC | **Nivel de confianza**: HIGH [B2]
+
+### BLUF
+
+El Riksdag sueco entra en la semana 20 (11–17 de mayo de 2026) con un calendario legislativo repleto que abarca la modernización de la legislación sobre inteligencia de defensa, reforma educativa, legislación judicial y regulación financiera alineada con la UE — todo avanzando hacia votaciones mientras el gobierno presenta simultáneamente tres proposiciones políticamente cargadas (e-legitimación estatal, ampliación de poderes de vigilancia de Skatteverket y endurecimiento de las normas de expulsión de amenazas a la seguridad). La combinación señala un ritmo legislativo en aceleración a medida que Suecia se acerca a las elecciones de septiembre de 2026. El punto político más significativo es **HD01FöU18** (reforma de la ley de inteligencia de señales), que pone a prueba la cohesión de la coalición en el equilibrio entre libertades civiles y compromisos de seguridad. **El comodín de la semana es el abordaje israelí del buque de solidaridad con Gaza Global Sumud Flotilla con ciudadanos suecos a bordo** (HD11803), que obliga a la ministra de Asuntos Exteriores Maria Malmer Stenergard (M) a tomar posición pública sobre el conflicto de Gaza en un momento crítico antes de las elecciones.
+
+### Decisiones que apoya este informe
+
+1. **Planificación del calendario legislativo** — ¿Cuáles de los nueve betänkanden que alcanzan debate/votación en la semana 20 presentan el mayor riesgo político de fractura de la coalición o contramaniobra de la oposición?
+2. **Actualización del seguimiento de políticas** — ¿Ha cambiado el aluvión de proposiciones del gobierno del 7 de mayo (HD03261, HD03250, HD03267) la trayectoria de reforma del Estado de seguridad establecida en marzo–abril de 2026?
+3. **Calibración del escenario electoral** — ¿Representa la presión simultánea sobre las cualificaciones docentes (UbU28), la criminalización de la violencia psicológica (JuU39) y la inteligencia de señales (FöU18) un posicionamiento coordinado de la coalición antes de las elecciones?
+
+### Resumen en 60 segundos
+
+- **Inteligencia de defensa**: el informe del comité FöU18 moderniza la legislación sobre inteligencia de señales; votación esperada en la semana 20. Fuerte apoyo de KD/M/SD; MP probablemente No; S dividido [horizonte:semana]
+- **Educación**: UbU28 (cualificaciones docentes en escuela primaria de 10 años) — debate abierto el 2026-05-08; amplio apoyo transpartidista esperado pero SD y V pueden divergir en disposiciones de integración [horizonte:semana]
+- **Paquete judicial**: JuU32 (seguridad en eventos públicos) + JuU39 (violencia psicológica como delito) + JuU34 (cumplimiento penal nórdico) — todos listos para votación; mayoría gubernamental intacta para los tres [horizonte:semana]
+- **Nuevas proposiciones**: HD03267 (extranjeros como amenaza a la seguridad) + HD03261 (poderes de registro de población de Skatteverket) impulsan la agenda del Estado vigilante; sin opinión del Lagrådet aún — riesgo constitucional [horizonte:semana]
+- **Nexo UE**: reunión del Consejo de la UE educación/juventud/cultura 11–12 mayo; reunión FAC desarrollo 18 mayo; briefing EU-nämnden 13 mayo [horizonte:semana]
+- **Comodín de política exterior**: el abordaje israelí de un barco de solidaridad con Gaza con ciudadanos suecos obliga al gobierno sueco a pronunciarse públicamente [horizonte:semana]
+- **Derecho fiscal**: interpelación HD10480 (S→ministro de finanzas) cuestiona el concepto de «residencia permanente» — pone a prueba la coherencia interpretativa de Skatteverket [horizonte:semana]
+
+### Principal detonante prospectivo
+
+**Lunes 11 de mayo**: si el debate sobre FöU18 se abre en el kammaren, hay que vigilar los votos disidentes de MP y V — primera prueba visible de si las fracturas de la coalición sobre libertades civiles se mantienen antes de las elecciones de septiembre.
+
+### Contexto económico del FMI
+
+> ℹ️ **Transporte auxiliar del FMI degradado** — WEO/FM Datamapper disponible; punto final SDMX devolviendo 404. Continuando solo con datos WEO/FM.
+
+Suecia: Crecimiento del PIB real 2026P: ~2,1 % (WEO abr-2026); Saldo fiscal: aprox. +0,2 % del PIB (FM abr-2026); Deuda pública: ~39 % del PIB (WEO abr-2026). El margen fiscal de Suecia proporciona capacidad para la inversión en infraestructura digital implícita en HD03250 (e-legitimación estatal) sin riesgo para los objetivos de deuda.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### Procedencia económica (FMI en modo degradado)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### Control de versiones
+
+- **Pass 1**: 2026-05-08 — Documento inicial
+- **Pass 2**: 2026-05-08 — Procedencia económica añadida; precisión del lenguaje WEP confirmada
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_fi.md -->
+
+**Kirjoittaja**: James Pether Sörling | **Ajo-ID**: 25544675528 | **Luokittelu**: PUBLIC | **Luotettavuus**: HIGH [B2]
+
+### BLUF
+
+Ruotsin Riksdag aloittaa viikon 20 (11.–17. toukokuuta 2026) täyteen ahdetulla lainsäädäntökalenterilla, joka kattaa puolustustiedustelulainsäädännön uudistamisen, koulutusreformin, oikeuslainsäädännön ja EU:n mukaisen rahoitussääntelyn — kaikki etenemässä äänestykseen samalla kun hallitus jättää samanaikaisesti kolme poliittisesti latautunutta esitystä (valtion sähköinen henkilöllisyystodistus, Skatteverketin laajennetut valvontavaltuudet ja tiukennetut turvallisuusuhkien karkottamissäännöt). Yhdistelmä viestii kiihtyvästä lainsäädäntötahdista Ruotsin lähestyessä syyskuun 2026 vaaleja. Poliittisesti merkittävin yksittäinen asia on **HD01FöU18** (signalitiedustelulainsäädännön uudistus), joka testaa koalition yhtenäisyyttä kansalaisvapauksien ja turvallisuuskompromissien välillä. **Viikon villitkortti on Israelin hyökkäys Global Sumud Flotilla -alukseen, jossa oli ruotsalaisia kansalaisia** (HD11803), mikä pakottaa ulkoministeri Maria Malmer Stenergard (M) ottamaan julkisen kannan Gazan konfliktiin kriittisellä hetkellä ennen vaaleja.
+
+### Päätökset, joita tämä tiedote tukee
+
+1. **Lainsäädäntökalenterin suunnittelu** — Mitkä yhdeksästä viikolla 20 debattiin/äänestykseen etenevistä betänkandeneista kantavat suurimman poliittisen riskin koalition hajoamiselle tai opposition vastatoimille?
+2. **Politiikkaseurannan päivitys** — Muuttiko hallituksen 7. toukokuuta tekemä esityspaketti (HD03261, HD03250, HD03267) maalis–huhtikuussa 2026 vakiintunutta turvallisuusvaltion reformisuuntaa?
+3. **Vaaliskenaarion kalibrointi** — Edustaako samanaikainen paine opettajapätevyyteen (UbU28), psyykkisen väkivallan kriminalisointiin (JuU39) ja signalitiedusteluun (FöU18) koordinoitua koalition vaalipositionointia?
+
+### 60 sekunnin yhteenveto
+
+- **Puolustustiedustelu**: FöU18 valiokunnan mietintö uudistaa signalitiedustelulainsäädäntöä; äänestys odotetaan viikolla 20. Vahva KD/M/SD-tuki; MP todennäköisesti Ei; S jakautunut [horisontti:viikko]
+- **Koulutus**: UbU28 (opettajapätevyys 10-vuotisessa peruskoulussa) — debatti avattiin 2026-05-08; laaja puolueiden välinen tuki odotettavissa, mutta SD ja V saattavat poiketa integrointisäännöissä [horisontti:viikko]
+- **Oikeuspaketti**: JuU32 (yleisötapahtumien turvallisuus) + JuU39 (psyykkinen väkivalta rikoksena) + JuU34 (pohjoismainen rikosten täytäntöönpano) — kaikki valmiina äänestykseen; hallitusenemmistö ehjänä kaikissa kolmessa [horisontti:viikko]
+- **Uudet esitykset**: HD03267 (ulkomaalaiset turvallisuusuhkina) + HD03261 (Skatteverketin väestörekisteriintoimivaltuudet) ajavat valvontavaltion agendaa; ei vielä lagrådsin vastausta — perustuslaillinen riski [horisontti:viikko]
+- **EU-yhteys**: EU:n neuvoston koulutus/nuoriso/kulttuuri-kokous 11.–12. toukokuuta; FAC-kehityskokous 18. toukokuuta; EU-nämndenbriefing 13. toukokuuta [horisontti:viikko]
+- **Ulkopoliittinen villikortti**: Israelin hyökkäys Gazan solidaarisuuslaivaan, jossa ruotsalaisia kansalaisia, pakottaa Ruotsin hallituksen julkiseen kannanottoon [horisontti:viikko]
+- **Verolainsäädäntö**: Interpellaatio HD10480 (S→valtiovarainministeri) haastaa "vakituinen asuinpaikka" -käsitteen — testaa Skatteverketin tulkintajohdonmukaisuutta [horisontti:viikko]
+
+### Johtava tuleva laukaisija
+
+**Maanantai 11. toukokuuta**: Jos FöU18-debatti avautuu kammarissa, tarkkaile MP:n ja V:n poikkeavia ääniä — ensimmäinen näkyvä testi siitä, pitävätkö koalition kansalaisvapauksiin liittyvät hajoamisriskit ennen syyskuun vaaleja.
+
+### IMF:n taloudellinen konteksti
+
+> ℹ️ **IMF:n apuyhteysliikenne heikentynyt** — WEO/FM Datamapper saatavilla; SDMX-päätepiste palauttaa 404. Jatketaan pelkällä WEO/FM-aineistolla.
+
+Ruotsi: Reaalinen BKT-kasvu 2026E: ~2,1 % (WEO huhti-2026); Rahoitusjäämä: noin +0,2 % BKT:sta (FM huhti-2026); Julkinen velka: ~39 % BKT:sta (WEO huhti-2026). Ruotsin finanssipoliittinen liikkumavara antaa kapasiteettia HD03250:n (valtion sähköinen henkilöllisyystodistus) tarkoittamiin digitaalisiin infrastruktuuri-investointeihin ilman velkatason riskiä.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### Taloudellinen provenienssi (IMF heikentynyt tila)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### Versiohistoria
+
+- **Pass 1**: 2026-05-08 — Alkuperäinen tiedote
+- **Pass 2**: 2026-05-08 — Lisättiin taloudellinen provenienssi; vahvistettiin WEP-kielen tarkkuus
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **ID de traitement** : 25544675528 | **Classification** : PUBLIC | **Niveau de confiance** : HIGH [B2]
+
+### BLUF
+
+Le Riksdag suédois entame la semaine 20 (11–17 mai 2026) avec un calendrier législatif chargé couvrant la modernisation du renseignement défense, la réforme éducative, la législation judiciaire et la réglementation financière alignée sur l'UE — le tout progressant vers des votes tandis que le gouvernement soumet simultanément trois propositions politiquement sensibles (e-légitimation d'État, extension des pouvoirs de surveillance du Skatteverket et durcissement des règles d'expulsion des menaces sécuritaires). Cette combinaison signale une accélération du rythme législatif à l'approche des élections de septembre 2026. Le point politiquement le plus significatif est **HD01FöU18** (réforme de la loi sur le renseignement de signal), qui teste la cohésion de la coalition sur l'arbitrage entre libertés civiles et impératifs sécuritaires. **Le joker de la semaine est l'abordage israélien du navire de solidarité avec Gaza, le Global Sumud Flotilla, avec des citoyens suédois à bord** (HD11803), qui force la ministre des Affaires étrangères Maria Malmer Stenergard (M) à prendre position publiquement sur le conflit à Gaza à un moment critique avant les élections.
+
+### Décisions que cette note soutient
+
+1. **Planification du calendrier législatif** — Parmi les neuf betänkanden atteignant le débat ou le vote en semaine 20, lesquels présentent le risque politique le plus élevé de fracture de la coalition ou de contre-manœuvre de l'opposition ?
+2. **Mise à jour du suivi des politiques** — L'avalanche de propositions du gouvernement le 7 mai (HD03261, HD03250, HD03267) a-t-elle modifié la trajectoire de réforme de l'État sécuritaire établie en mars–avril 2026 ?
+3. **Calibrage du scénario électoral** — La pression simultanée sur les qualifications des enseignants (UbU28), la criminalisation des violences psychologiques (JuU39) et le renseignement de signal (FöU18) représente-t-elle un positionnement coordonné de la coalition avant les élections ?
+
+### Résumé en 60 secondes
+
+- **Renseignement défense** : rapport du comité FöU18 modernise la législation sur le renseignement de signal ; vote attendu en semaine 20. Fort soutien de KD/M/SD ; MP probablement Non ; S divisé [horizon:semaine]
+- **Éducation** : UbU28 (qualifications des enseignants en école primaire de 10 ans) — débat ouvert le 2026-05-08 ; large soutien transpartisan attendu mais SD et V peuvent diverger sur les dispositions d'intégration [horizon:semaine]
+- **Paquet judiciaire** : JuU32 (sécurité lors des événements publics) + JuU39 (violence psychologique comme crime) + JuU34 (exécution pénale nordique) — tous prêts pour le vote ; majorité gouvernementale intacte pour les trois [horizon:semaine]
+- **Nouvelles propositions** : HD03267 (étrangers comme menace sécuritaire) + HD03261 (pouvoirs d'enregistrement de population du Skatteverket) font avancer l'agenda de l'État surveillant ; aucun avis du Lagrådet encore — risque constitutionnel [horizon:semaine]
+- **Nexus UE** : réunion du Conseil UE éducation/jeunesse/culture 11–12 mai ; réunion FAC développement 18 mai ; briefing EU-nämnden 13 mai [horizon:semaine]
+- **Joker en politique étrangère** : l'abordage israélien d'un navire de solidarité avec Gaza avec des ressortissants suédois à bord force le gouvernement suédois à prendre position publiquement [horizon:semaine]
+- **Droit fiscal** : interpellation HD10480 (S→ministre des finances) conteste le concept de « résidence permanente » — teste la cohérence d'interprétation du Skatteverket [horizon:semaine]
+
+### Principal déclencheur prospectif
+
+**Lundi 11 mai** : si le débat sur FöU18 s'ouvre au kammaren, surveiller les votes dissidents de MP et V — premier test visible du maintien des fractures de la coalition sur les libertés civiles avant les élections de septembre.
+
+### Contexte économique du FMI
+
+> ℹ️ **Transport auxiliaire FMI dégradé** — WEO/FM Datamapper disponible ; point de terminaison SDMX retournant 404. Poursuite avec les seules données WEO/FM.
+
+Suède : Croissance du PIB réel 2026P : ~2,1 % (WEO avr-2026) ; Solde budgétaire : env. +0,2 % du PIB (FM avr-2026) ; Dette publique : ~39 % du PIB (WEO avr-2026). La marge de manœuvre budgétaire de la Suède offre la capacité d'investissement dans l'infrastructure numérique impliquée par HD03250 (e-légitimation d'État) sans risque pour les objectifs d'endettement.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### Provenance économique (FMI en mode dégradé)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### Contrôle de version
+
+- **Pass 1** : 2026-05-08 — Document initial
+- **Pass 2** : 2026-05-08 — Ajout de la provenance économique ; précision du langage WEP confirmée
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+---
+title: "מה לקראת השבוע — הריקסדאג שבוע 20: מודיעין ביטחוני, רפורמה בחינוך, חקיקה משפטית"
+
+subfolder: "week-ahead"
+
+language: "he"
+---
+
+# מה לקראת השבוע: הריקסדאג שבוע 20 (11–17 במאי 2026)
+
+**מחבר**: James Pether Sörling | **מזהה ריצה**: 25544675528 | **סיווג**: PUBLIC | **רמת ביטחון**: HIGH [B2]
+
+### BLUF
+
+הריקסדאג השוודי נכנס לשבוע 20 (11–17 במאי 2026) עם לוח שנה חקיקתי עמוס הכולל מודרניזציה של חקיקת מודיעין הביטחון, רפורמה בחינוך, חקיקה משפטית ורגולציה פיננסית מתואמת עם האיחוד האירופי — הכול מתקדם לקראת הצבעות בעוד הממשלה מגישה בו-זמנית שלוש הצעות חוק בעלות מטען פוליטי (זיהוי אלקטרוני ממלכתי, הרחבת סמכויות המעקב של Skatteverket, והחמרת כללי גירוש של איומי ביטחון). השילוב מסמן האצה בקצב החקיקתי ככל שהשוודים מתקרבים לבחירות ספטמבר 2026. הסעיף המשמעותי ביותר מבחינה פוליטית הוא **HD01FöU18** (רפורמה בחוק מודיעין האותות), שבוחן את לכידות הקואליציה בנושא האיזון בין חירויות אזרחיות לפשרות ביטחוניות. **הג'וקר של השבוע הוא עלייה ישראלית על ספינת הסולידריות עם עזה Global Sumud Flotilla עם אזרחים שוודים על סיפונה** (HD11803), שמכריחה את שרת החוץ Maria Malmer Stenergard (M) לנקוט עמדה פומבית בסכסוך עזה בצומת קריטי לפני הבחירות.
+
+### החלטות שתמצית זו תומכת בהן
+
+1. **תכנון לוח החקיקה** — אילו מתוך תשעת ה-betänkanden המגיעים לדיון/הצבעה בשבוע 20 נושאים את הסיכון הפוליטי הגבוה ביותר לשבירת הקואליציה או מהלך נגדי של האופוזיציה?
+2. **עדכון מעקב מדיניות** — האם שרשרת ההצעות של הממשלה מ-7 במאי (HD03261, HD03250, HD03267) שינתה את מסלול הרפורמה של מדינת הביטחון שנקבע במרץ–אפריל 2026?
+3. **כיול תרחיש בחירות** — האם הלחץ הסימולטני על כישורי מורים (UbU28), הפללת אלימות פסיכולוגית (JuU39) ומודיעין אותות (FöU18) מייצג מיצוב קואליציוני מתואם לפני הבחירות?
+
+### סיכום ב-60 שניות
+
+- **מודיעין ביטחוני**: דוח ועדת FöU18 מחדש את חקיקת מודיעין האותות; הצבעה צפויה בשבוע 20. תמיכה חזקה מ-KD/M/SD; MP כנראה לא; S מפולג [אופק:שבוע]
+- **חינוך**: UbU28 (כישורי מורים בבית ספר יסודי של 10 שנים) — דיון נפתח ב-2026-05-08; תמיכה רחבה מרובת מפלגות צפויה אך SD וV עשויים לסטות בסעיפי שילוב [אופק:שבוע]
+- **חבילה משפטית**: JuU32 (ביטחון באירועים ציבוריים) + JuU39 (אלימות פסיכולוגית כעבירה) + JuU34 (אכיפת דיני עונשין נורדית) — כולן מוכנות להצבעה; רוב ממשלתי שלם לשלושת הסעיפים [אופק:שבוע]
+- **הצעות חדשות**: HD03267 (זרים כאיום ביטחוני) + HD03261 (סמכויות רישום אוכלוסין של Skatteverket) מקדמות אג'נדת מדינת המעקב; עדיין אין חוות דעת Lagrådet — סיכון חוקתי [אופק:שבוע]
+- **קשר לאיחוד האירופי**: ישיבת מועצת האיחוד האירופי חינוך/נוער/תרבות 11–12 במאי; ישיבת FAC לפיתוח 18 במאי; תדרוך EU-nämnden 13 במאי [אופק:שבוע]
+- **ג'וקר במדיניות חוץ**: העלייה הישראלית על ספינת הסולידריות עם עזה עם אזרחים שוודים מכריחה את הממשלה השוודית להצהיר פומבית [אופק:שבוע]
+- **דיני מס**: שאלת הממשלה HD10480 (S→שר האוצר) מטילה ספק בתפיסת "מגורים קבועים" — בוחן את עקביות הפרשנות של Skatteverket [אופק:שבוע]
+
+### הגורם המעורר המוביל לעתיד
+
+**יום שני 11 במאי**: אם דיון FöU18 נפתח בקאמארן, לעקוב אחר קולות מחאה מ-MP ו-V — מבחן ראשון גלוי אם שסעי הקואליציה בנושא חירויות אזרחיות יחזיקו לפני בחירות ספטמבר.
+
+### הקשר כלכלי של קרן המטבע הבינלאומית
+
+> ℹ️ **תעבורת הסיוע של קרן המטבע הבינלאומית מדורדרת** — WEO/FM Datamapper זמין; נקודת הקצה SDMX מחזירה 404. ממשיכים עם נתוני WEO/FM בלבד.
+
+שוודיה: צמיחת תוצר מקומי גולמי ריאלי 2026א: ~2.1% (WEO אפר-2026); יתרת תקציב: כ-+0.2% מהתמ"ג (FM אפר-2026); חוב ציבורי: ~39% מהתמ"ג (WEO אפר-2026). המרחב הפיסקלי של שוודיה מספק קיבולת להשקעה בתשתית דיגיטלית שהמשתמעת מ-HD03250 (זיהוי אלקטרוני ממלכתי) ללא סיכון ליעדי החוב.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### מקור כלכלי (קרן המטבע הבינלאומית במצב מדורדר)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### בקרת גרסאות
+
+- **Pass 1**: 2026-05-08 — מסמך ראשוני
+- **Pass 2**: 2026-05-08 — נוסף מקור כלכלי; אושרה דיוק שפת WEP
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_ja.md -->
+
+**著者**：James Pether Sörling ｜ **実行ID**：25544675528 ｜ **分類**：PUBLIC ｜ **信頼度**：HIGH [B2]
+
+### BLUF
+
+スウェーデンのリクスダーグ（Riksdag）は、第20週（2026年5月11〜17日）において、防衛情報法制の近代化、教育改革、司法立法、EU準拠の金融規制にまたがる過密な立法カレンダーとともに臨みます。これらすべてが採決に向けて進む中、政府は同時に政治的に高度に重要な三つの提案（国家電子身分証、Skatteverketの監視権限拡大、安全保障上の脅威への国外退去規則強化）を提出しています。この組み合わせは、スウェーデンが2026年9月選挙に近づくにつれ立法ペースが加速していることを示しています。政治的に最も重要な単一案件は**HD01FöU18**（シグナル情報法改正）であり、市民的自由と安全保障上のトレードオフについて連立政権の結束を試すものです。**今週のワイルドカードは、スウェーデン人市民を乗せたガザ連帯船Global Sumud Flotillaへのイスラエルの乗船**（HD11803）であり、外務大臣Maria Malmer Stenergard（M）が選挙直前の重大局面でガザ紛争について公式な立場表明を迫られます。
+
+### 本ブリーフが支援する意思決定
+
+1. **立法カレンダーの計画策定** — 第20週に討議・採決に達する九つのbetänkandenのうち、連立崩壊または野党の対抗措置という政治的リスクが最も高いのはどれか？
+2. **政策追跡の更新** — 5月7日の政府提案ラッシュ（HD03261、HD03250、HD03267）は、2026年3〜4月に確立された安全保障国家改革の軌道を変えたか？
+3. **選挙シナリオの較正** — 教員資格（UbU28）、心理的暴力の犯罪化（JuU39）、シグナル情報（FöU18）への同時的な推進は、選挙前の連立による協調的ポジショニングを意味するか？
+
+### 60秒サマリー
+
+- **防衛情報**：FöU18委員会報告書がシグナル情報法制を近代化；第20週に採決予定。KD/M/SDから強い支持；MPはおそらく反対；Sは分裂 [地平:週]
+- **教育**：UbU28（10年制小学校における教員資格）— 2026-05-08に討議開始；幅広い超党派支持が見込まれるがSDとVは統合規定で乖離の可能性 [地平:週]
+- **司法パッケージ**：JuU32（公共イベントの安全）+ JuU39（心理的暴力の犯罪化）+ JuU34（北欧刑事司法執行）— すべて採決準備完了；三案とも政府過半数は維持 [地平:週]
+- **新規提案**：HD03267（安全保障上の脅威としての外国人）+ HD03261（Skatteverketの住民登録権限）が監視国家アジェンダを推進；まだLagrådsの意見なし — 憲法上のリスク [地平:週]
+- **EU連携**：EU理事会教育・青少年・文化会合5月11〜12日；FAC開発会合5月18日；EU-nämnden情報提供5月13日 [地平:週]
+- **外交政策のワイルドカード**：スウェーデン人市民乗船のガザ連帯船へのイスラエルの乗船がスウェーデン政府に公式表明を迫る [地平:週]
+- **税法**：質問HD10480（S→財務大臣）が「恒久的居住」概念に疑義を呈する — Skatteverketの解釈一貫性を試す [地平:週]
+
+### 主要な将来トリガー
+
+**5月11日（月）**：FöU18討議がkammarenで開始された場合、MPとVの異議票に注目 — 市民的自由をめぐる連立亀裂が9月選挙に向けて持ちこたえるかどうかの最初の可視テスト。
+
+### IMF経済コンテキスト
+
+> ℹ️ **IMF補助輸送が低下** — WEO/FM Datamapper利用可能；SDMXエンドポイントが404を返却。WEO/FMデータのみで継続。
+
+スウェーデン：実質GDP成長率2026年予測：約2.1%（WEO 2026年4月）；財政収支：GDP比約+0.2%（FM 2026年4月）；公的債務：GDP比約39%（WEO 2026年4月）。スウェーデンの財政的余裕は、HD03250（国家電子身分証）が示唆するデジタルインフラ投資に対して、債務目標を損なうことなく対応する能力を提供します。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### 経済的出所（IMF低下モード）
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### バージョン管理
+
+- **Pass 1**：2026-05-08 — 初期文書
+- **Pass 2**：2026-05-08 — 経済的出所を追加；WEP言語精度を確認
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **실행 ID**: 25544675528 | **분류**: PUBLIC | **신뢰도**: HIGH [B2]
+
+### BLUF
+
+스웨덴 리크스다그(Riksdag)는 국방 정보 법제 현대화, 교육 개혁, 사법 입법, EU 정합 금융 규제를 아우르는 빽빽한 입법 일정과 함께 20주차(2026년 5월 11일~17일)에 돌입합니다. 이 모든 사안이 표결로 나아가는 가운데 정부는 세 가지 정치적으로 민감한 제안(국가 전자 신원증, Skatteverket 감시 권한 확대, 안보 위협 추방 규정 강화)을 동시에 제출했습니다. 이 조합은 스웨덴이 2026년 9월 선거에 가까워지면서 입법 속도가 가속되고 있음을 시사합니다. 정치적으로 가장 중요한 단일 사안은 **HD01FöU18**(신호정보법 개혁)으로, 시민 자유와 안보 간 트레이드오프에 관한 연립 결속력을 시험합니다. **이번 주 와일드카드는 스웨덴 국민이 탑승한 가자 연대 선박 Global Sumud Flotilla에 대한 이스라엘의 승선**(HD11803)으로, 외무장관 Maria Malmer Stenergard(M)가 선거 직전 결정적 시점에 가자 분쟁에 관한 공식 입장을 표명하도록 강요받게 됩니다.
+
+### 이 브리핑이 지원하는 의사결정
+
+1. **입법 일정 계획** — 20주차에 토론·표결에 도달하는 아홉 개의 betänkanden 중 연립 붕괴 또는 야당 대항 조치의 정치적 위험이 가장 높은 것은 어느 것인가?
+2. **정책 추적 업데이트** — 5월 7일 정부의 제안 폭발(HD03261, HD03250, HD03267)이 2026년 3~4월에 확립된 안보 국가 개혁 궤적을 바꾸었는가?
+3. **선거 시나리오 보정** — 교원 자격(UbU28), 심리적 폭력 범죄화(JuU39), 신호정보(FöU18)에 대한 동시 추진이 선거 전 연립의 조율된 포지셔닝을 나타내는가?
+
+### 60초 요약
+
+- **국방 정보**: FöU18 위원회 보고서가 신호정보 법제를 현대화; 20주차 표결 예상. KD/M/SD의 강한 지지; MP 반대 가능성 높음; S 분열 [시야:주]
+- **교육**: UbU28(10년제 초등학교 교원 자격) — 2026-05-08 토론 개시; 폭넓은 초당파 지지 예상되나 SD와 V는 통합 조항에서 이탈 가능 [시야:주]
+- **사법 패키지**: JuU32(공공 행사 안전) + JuU39(심리적 폭력 범죄화) + JuU34(북유럽 형사 집행) — 모두 표결 준비 완료; 세 안건 모두 정부 과반 유지 [시야:주]
+- **신규 제안**: HD03267(안보 위협으로서의 외국인) + HD03261(Skatteverket 주민 등록 권한)이 감시 국가 의제를 추진; 아직 Lagrådet 의견 없음 — 헌법적 위험 [시야:주]
+- **EU 연계**: EU 이사회 교육·청소년·문화 회의 5월 11~12일; FAC 개발 회의 5월 18일; EU-nämnden 브리핑 5월 13일 [시야:주]
+- **외교 정책 와일드카드**: 스웨덴 국민 탑승 가자 연대 선박에 대한 이스라엘 승선으로 스웨덴 정부가 공식 입장 표명 강요 [시야:주]
+- **세법**: 질의 HD10480(S→재무장관)이 "상주 거주" 개념에 이의를 제기 — Skatteverket의 해석 일관성 시험 [시야:주]
+
+### 주요 미래 촉발 요인
+
+**5월 11일(월)**: FöU18 토론이 카마렌(kammaren)에서 개시되면 MP와 V의 반대표를 주목 — 시민 자유에 대한 연립 균열이 9월 선거 전에 유지되는지에 대한 첫 가시적 시험.
+
+### IMF 경제 맥락
+
+> ℹ️ **IMF 보조 전송 저하** — WEO/FM Datamapper 사용 가능; SDMX 엔드포인트 404 반환. WEO/FM 데이터만으로 계속.
+
+스웨덴: 실질 GDP 성장률 2026년 예상: ~2.1%(WEO 2026년 4월); 재정 수지: GDP 대비 약 +0.2%(FM 2026년 4월); 공공 부채: GDP 대비 ~39%(WEO 2026년 4월). 스웨덴의 재정 여력은 HD03250(국가 전자 신원증)이 시사하는 디지털 인프라 투자에 부채 목표를 위험에 빠뜨리지 않고 대응할 능력을 제공합니다.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### 경제적 출처 (IMF 저하 모드)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### 버전 관리
+
+- **Pass 1**: 2026-05-08 — 초기 문서
+- **Pass 2**: 2026-05-08 — 경제적 출처 추가; WEP 언어 정확성 확인
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Run-ID**: 25544675528 | **Classificatie**: PUBLIC | **Betrouwbaarheidsniveau**: HIGH [B2]
+
+### BLUF
+
+De Zweedse Riksdag gaat week 20 (11–17 mei 2026) in met een vol wetgevingskalender dat modernisering van de defensie-inlichtingenwetgeving, onderwijshervorming, justitiewetgeving en EU-geconformeerde financiële regelgeving omvat — dit alles op weg naar stemming terwijl de regering tegelijkertijd drie politiek geladen propositioner indient (staatse e-legitimatie, uitgebreide toezichtsbevoegdheden voor Skatteverket en aangescherpte uitwijzingsregels voor veiligheidsbedreigingen). De combinatie signaleert een versnellend wetgevingstempo nu Zweden de verkiezingen van september 2026 nadert. Het politiek meest significante punt is **HD01FöU18** (hervorming van de wet op signalinlichtingen), dat de coalitiecohesie test op de afweging tussen burgerlijke vrijheden en veiligheidscompromissen. **De wildcard van de week is het Israëlische enteren van het Gaza-solidariteitsschip Global Sumud Flotilla met Zweedse staatsburgers aan boord** (HD11803), wat minister van Buitenlandse Zaken Maria Malmer Stenergard (M) dwingt publiekelijk stelling te nemen over het Gaza-conflict op een kritiek moment voor de verkiezingen.
+
+### Beslissingen die dit rapport ondersteunt
+
+1. **Planning van de wetgevingsagenda** — Welke van de negen betänkanden die in week 20 debat/stemming bereiken, dragen het hoogste politieke risico van coalitiebreuk of tegenzet van de oppositie?
+2. **Update van de beleidsmonitor** — Heeft de propositionengolf van de regering op 7 mei (HD03261, HD03250, HD03267) de in maart–april 2026 gevestigde hervormingskoers van de veiligheidsstaat gewijzigd?
+3. **Kalibratie van het verkiezingsscenario** — Vertegenwoordigt de gelijktijdige druk op leraarsbevoegdheid (UbU28), criminalisering van psychisch geweld (JuU39) en signalinlichtingen (FöU18) een gecoördineerde verkiezingspositionering van de coalitie?
+
+### Samenvatting in 60 seconden
+
+- **Defensie-inlichtingen**: FöU18-commissierapport moderniseert de signalinlichtingenwetgeving; stemming verwacht in week 20. Sterke steun van KD/M/SD; MP waarschijnlijk Nee; S verdeeld [horizon:week]
+- **Onderwijs**: UbU28 (leeraarsbevoegdheid in 10-jarig basisonderwijs) — debat geopend op 2026-05-08; brede partijoverschrijdende steun verwacht maar SD en V kunnen afwijken op integratiebepalingen [horizon:week]
+- **Justitiepakket**: JuU32 (veiligheid bij publieke evenementen) + JuU39 (psychisch geweld als misdrijf) + JuU34 (Noordse strafrechtshandhaving) — alle klaar voor stemming; regeringsmeerderheid voor alle drie intact [horizon:week]
+- **Nieuwe propositioner**: HD03267 (buitenlanders als veiligheidsbedreiging) + HD03261 (bevolkingsregisterbevoegdheden van Skatteverket) drijven de surveillance-staatsagenda; nog geen Lagrådsadvies — constitutioneel risico [horizon:week]
+- **EU-nexus**: EU-raadsvergadering onderwijs/jeugd/cultuur 11–12 mei; FAC-ontwikkelingsvergadering 18 mei; EU-nämndenbriefing 13 mei [horizon:week]
+- **Buitenlandspolitieke wildcard**: Israëlisch enteren van Gaza-solidariteitsschip met Zweedse staatsburgers dwingt Zweedse regering tot publieke stellingname [horizon:week]
+- **Belastingrecht**: interpellatie HD10480 (S→minister van financiën) stelt het begrip "permanente verblijfplaats" ter discussie — test de interpretatieconsistentie van Skatteverket [horizon:week]
+
+### Leidende toekomstige trigger
+
+**Maandag 11 mei**: als het FöU18-debat opent in de kammaren, let op dissidente stemmen van MP en V — eerste zichtbare test of de coalitiebarsten rond burgerlijke vrijheden standhouden voor de Septemberverkiezingen.
+
+### IMF economische context
+
+> ℹ️ **IMF-hulptransport aangetast** — WEO/FM Datamapper beschikbaar; SDMX-eindpunt retourneert 404. Voortgang uitsluitend met WEO/FM-gegevens.
+
+Zweden: Reëel bbp-groei 2026V: ~2,1 % (WEO apr-2026); Begrotingssaldo: ca. +0,2 % van het bbp (FM apr-2026); Overheidsschuld: ~39 % van het bbp (WEO apr-2026). De fiscale ruimte van Zweden biedt capaciteit voor de digitale infrastructuurinvestering die HD03250 (staatse e-legitimatie) impliceert zonder risico voor de schulddoelstellingen.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### Economische herkomst (IMF aangetaste modus)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### Versiebeheer
+
+- **Pass 1**: 2026-05-08 — Initieel document
+- **Pass 2**: 2026-05-08 — Economische herkomst toegevoegd; WEP-taalprecisie bevestigd
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Kjøring-ID**: 25544675528 | **Klassifisering**: PUBLIC | **Konfidensgrad**: HIGH [B2]
+
+### BLUF
+
+Sveriges Riksdag innleder uke 20 (11.–17. mai 2026) med en travel lovgivningskalender som spenner over modernisering av forsvarsettretningslovgivningen, utdanningsreform, justislovgivning og EU-tilpasset finansiell regulering — alt på vei mot avstemning mens regjeringen samtidig legger frem tre politisk ladede proposisjoner (statlig e-legitimasjon, utvidede overvåkningsfullmakter til Skatteverket og innskrempede regler for utvisning av sikkerhets­trusler). Kombinasjonen signaliserer et akselererende lovgivningstempo i takt med at Sverige nærmer seg valget i september 2026. Det enkeltpolitisk mest betydningsfulle punktet er **HD01FöU18** (reform av loven om signalspaning), som tester koalisjonens samhold om avveiningen mellom borgerrettigheter og sikkerhetshensyn. **Ukens joker er den israelske bordingen av Gaza-solidaritetsskipet Global Sumud Flotilla med svenske statsborgere om bord** (HD11803), noe som tvinger utenriksminister Maria Malmer Stenergard (M) til en offentlig stillingtaken i Gazakonflikten på et kritisk tidspunkt før valget.
+
+### Beslutninger dette notatet understøtter
+
+1. **Planlegging av lovgivningskalenderen** — Hvilke av de ni betänkanden som når debatt/avstemning i uke 20, innebærer høyest politisk risiko for koalisjonsbrudd eller mottrekk fra opposisjonen?
+2. **Oppdatering av politikksporing** — Har regjeringens proposisjonsburst 7. mai (HD03261, HD03250, HD03267) endret sikkerhetsstatens reformkurs etablert i mars–april 2026?
+3. **Kalibrering av valgscenarier** — Representerer det samtidige trykket på lærerkompetanse (UbU28), kriminalisering av psykisk vold (JuU39) og signalspaning (FöU18) en koordinert koalisjonsposisjonering før valget?
+
+### 60-sekunders oppsummering
+
+- **Forsvarsettretning**: FöU18 utvalgsrapport moderniserer signalspaningslovgivningen; avstemning ventes i uke 20. Sterk støtte fra KD/M/SD; MP trolig Nei; S delt [horisont:uke]
+- **Utdanning**: UbU28 (lærerkompetanse i 10-årig grunnskole) — debatt åpnet 2026-05-08; bred tverrpartistisk støtte ventes men SD og V kan avvike på integrasjonsbestemmelser [horisont:uke]
+- **Justispakke**: JuU32 (sikkerhet ved offentlige arrangementer) + JuU39 (psykisk vold som lovbrudd) + JuU34 (nordisk strafferettshåndhevelse) — alle klare for avstemning; regjeringsflertallet intakt for alle tre [horisont:uke]
+- **Nye proposisjoner**: HD03267 (utlendinger som sikkerhetstrusler) + HD03261 (Skatteverkets folkeregistreringsfullmakter) driver overvåkningsstatens agenda; ingen lagrådssvar ennå — konstitusjonell risiko [horisont:uke]
+- **EU-nexus**: EU-rådets møte om utdanning/ungdom/kultur 11.–12. mai; FAC-utviklingsmøte 18. mai; EU-nämndsbriefing 13. mai [horisont:uke]
+- **Utenrikspolitisk joker**: Israels bording av Gaza-solidaritetsskip med svenske statsborgere tvinger den svenske regjering til offentlig stillingtaken [horisont:uke]
+- **Skattelovgivning**: Interpellasjon HD10480 (S→finansminister) utfordrer begrepet "fast bosted" — tester Skatteverkets fortolkningskonsistens [horisont:uke]
+
+### Ledende fremtidig utløser
+
+**Mandag 11. mai**: Hvis FöU18-debatten åpnes i kammaren, observer avvikende stemmer fra MP og V — første synlige prøve på om koalisjonens sprekker rundt borgerrettigheter holder frem mot valget i september.
+
+### IMF økonomisk kontekst
+
+> ℹ️ **IMFs hjelpetransport forringet** — WEO/FM Datamapper tilgjengelig; SDMX-endepunkt returnerer 404. Fortsetter med kun WEO/FM-data.
+
+Sverige: Real BNP-vekst 2026P: ~2,1 % (WEO apr-2026); Finanspolitisk saldo: ca. +0,2 % av BNP (FM apr-2026); Offentlig gjeld: ~39 % av BNP (WEO apr-2026). Sveriges finanspolitiske handlingsrom gir kapasitet til den digitale infrastrukturinvesteringen som HD03250 (statlig e-legitimasjon) forutsetter uten risiko for gjeldsmål.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### Økonomisk proveniens (IMF forringet modus)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### Versjonskontroll
+
+- **Pass 1**: 2026-05-08 — Opprinnelig notat
+- **Pass 2**: 2026-05-08 — La til økonomisk proveniens; bekreftet WEP-språkpresisjon
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Körnings-ID**: 25544675528 | **Klassificering**: PUBLIC | **Konfidensgrad**: HIGH [B2]
+
+### BLUF
+
+Sveriges riksdag inleder vecka 20 (11–17 maj 2026) med ett fullspäckat lagstiftningskalender som spänner över modernisering av försvarsunderrättelseverksamheten, utbildningsreform, rättslagstiftning och EU-anpassad finansiell reglering — allt på väg mot omröstning medan regeringen samtidigt lämnar in tre politiskt laddade propositioner (statlig e-legitimation, utökade övervakningsbefogenheter för Skatteverket och skärpta regler för utvisning av säkerhetshot). Kombinationen signalerar ett accelererande lagstiftningstempo i takt med att Sverige närmar sig valet i september 2026. Det enskilt politiskt mest betydelsefulla ärendet är **HD01FöU18** (reform av lagen om signalspaning), som testar koalitionens sammanhållning kring avvägningen mellan medborgerliga fri- och rättigheter och säkerhetsintressen. **Veckans jokertecken är Israels bordning av Gaza-solidaritetsfartyget Global Sumud Flotilla med svenska medborgare ombord** (HD11803), vilket tvingar utrikesminister Maria Malmer Stenergard (M) att ta offentlig ställning i Gazakonflikten i ett kritiskt skede inför valet.
+
+### Beslut som detta underlag stödjer
+
+1. **Planering av lagstiftningskalendern** — Vilka av de nio betänkanden som når debatt/omröstning under vecka 20 innebär störst politisk risk för koalitionsbrott eller motdrag från oppositionen?
+2. **Uppdatering av policyspårning** — Har regeringens propositionsburst den 7 maj (HD03261, HD03250, HD03267) förändrat den säkerhetsstatliga reformkurs som etablerades under mars–april 2026?
+3. **Kalibrering av valscenarier** — Representerar det simultana trycket på lärarbehörighet (UbU28), kriminalisering av psykiskt våld (JuU39) och signalspaning (FöU18) en samordnad koalitionspositionering inför valet?
+
+### 60-sekunders sammanfattning
+
+- **Försvarsunderrättelser**: FöU18 utskottsbetänkande moderniserar lagstiftningen om signalspaning; omröstning väntas under vecka 20. Starkt stöd från KD/M/SD; MP troligen Nej; S delat [horisont:vecka]
+- **Utbildning**: UbU28 (lärarbehörighet i 10-årig grundskola) — debatt öppnades 2026-05-08; brett tvärpartistiskt stöd väntas men SD och V kan avvika vad gäller integrationsparagrafer [horisont:vecka]
+- **Rättspaket**: JuU32 (säkerhet vid allmänna sammankomster) + JuU39 (psykiskt våld som brott) + JuU34 (nordisk brottsbekämpning) — alla redo för omröstning; regeringsmajoriteten intakt för samtliga tre [horisont:vecka]
+- **Nya propositioner**: HD03267 (utlänningar som säkerhetshot) + HD03261 (folkbokföringsbefogenheter för Skatteverket) driver övervakningsstatens agenda; inget lagrådssvar ännu — konstitutionell risk [horisont:vecka]
+- **EU-nexus**: EU-rådets möte om utbildning/ungdom/kultur 11–12 maj; FAC-möte om utveckling 18 maj; EU-nämndsbriefing 13 maj [horisont:vecka]
+- **Utrikespolitiskt jokertecken**: Israels bordning av Gaza-solidaritetsfartyg med svenska medborgare tvingar svenska regeringen till ett offentligt ställningstagande [horisont:vecka]
+- **Skattelagstiftning**: Interpellation HD10480 (S→finansminister) utmanar begreppet "stadigvarande bosättning" — testar Skatteverkets tolkningskonsistens [horisont:vecka]
+
+### Ledande framtida utlösare
+
+**Måndag 11 maj**: Om debatten om FöU18 öppnas i kammaren, bevaka avvikande röster från MP och V — första synliga prövning av om koalitionsspricker kring medborgerliga fri- och rättigheter håller inför valet i september.
+
+### IMF ekonomisk kontext
+
+> ℹ️ **IMF:s hjälptransport degraderad** — WEO/FM Datamapper tillgänglig; SDMX-slutpunkten returnerar 404. Fortsätter med enbart WEO/FM-underlag.
+
+Sverige: Real BNP-tillväxt 2026P: ~2,1 % (WEO apr-2026); Finansiellt saldo: ca +0,2 % av BNP (FM apr-2026); Offentlig skuld: ~39 % av BNP (WEO apr-2026). Sveriges finanspolitiska manöverutrymme ger kapacitet för de digitala infrastrukturinvesteringar som HD03250 (statlig e-legitimation) förutsätter utan risk för skuldmål.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### Ekonomisk proveniens (IMF degraderat läge)
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### Versionskontroll
+
+- **Pass 1**: 2026-05-08 — Initialt underlag
+- **Pass 2**: 2026-05-08 — Lade till ekonomisk proveniens; bekräftade WEP-språkprecision
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling | **运行ID**：25544675528 | **分类**：PUBLIC | **置信度**：HIGH [B2]
+
+### BLUF
+
+瑞典议会（Riksdag）以涵盖国防情报立法现代化、教育改革、司法立法和符合欧盟要求的金融监管的密集立法日程进入第20周（2026年5月11日至17日）——所有这些都在向表决推进，与此同时，政府同步提交三项政治敏感性高的提案（国家电子身份证、扩大Skatteverket监控权限、收紧安全威胁驱逐规则）。这一组合表明，随着瑞典接近2026年9月大选，立法节奏正在加快。政治上最具重要性的单项议题是**HD01FöU18**（信号情报法改革），该议题考验联合政府在公民自由与安全权衡上的凝聚力。**本周的意外变量是以色列登上载有瑞典公民的加沙声援船Global Sumud Flotilla**（HD11803），这迫使外交部长Maria Malmer Stenergard（M）在选举前关键节点公开表态加沙冲突立场。
+
+### 本简报支持的决策
+
+1. **立法日程规划** — 第20周进入辩论/表决的九项betänkanden中，哪项承担联合政府破裂或反对派反制的最高政治风险？
+2. **政策跟踪更新** — 政府5月7日的提案集中出台（HD03261、HD03250、HD03267）是否改变了2026年3至4月确立的安全国家改革轨迹？
+3. **选举情景校准** — 教师资质（UbU28）、心理暴力入罪（JuU39）和信号情报（FöU18）上的同步推进，是否代表联合政府在选举前的协调定位？
+
+### 60秒要点
+
+- **国防情报**：FöU18委员会报告现代化信号情报立法；预计第20周表决。KD/M/SD强力支持；MP可能投反对票；S内部分裂 [视野:周]
+- **教育**：UbU28（10年制小学教师资质）——2026-05-08辩论开启；预计获得广泛跨党派支持，但SD和V可能在融合条款上存在分歧 [视野:周]
+- **司法一揽子**：JuU32（公共活动安全）+ JuU39（心理暴力入罪）+ JuU34（北欧刑事执行）——均已准备就绪进行表决；政府过半数对三项均完整 [视野:周]
+- **新提案**：HD03267（外国人作为安全威胁）+ HD03261（Skatteverket户籍权限）推进监控国家议程；尚无Lagrådet意见——宪法风险 [视野:周]
+- **欧盟关联**：欧盟理事会教育/青年/文化会议5月11至12日；FAC发展会议5月18日；EU-nämnden简报5月13日 [视野:周]
+- **外交政策意外变量**：以色列登上载有瑞典公民的加沙声援船，迫使瑞典政府公开表态 [视野:周]
+- **税法**：质询HD10480（S→财政部长）挑战"永久居住"概念——检验Skatteverket解释一致性 [视野:周]
+
+### 主要未来触发因素
+
+**5月11日（周一）**：若FöU18辩论在kammareni开启，密切关注MP和V的异议票——这是市民自由联合裂痕能否在9月选举前维持的首次可见检验。
+
+### IMF经济背景
+
+> ℹ️ **IMF辅助传输降级** — WEO/FM Datamapper可用；SDMX端点返回404。仅凭WEO/FM数据继续。
+
+瑞典：2026年实际GDP增长率预测：约2.1%（WEO 2026年4月）；财政收支：占GDP约+0.2%（FM 2026年4月）；公共债务：占GDP约39%（WEO 2026年4月）。瑞典的财政空间为HD03250（国家电子身份证）所隐含的数字基础设施投资提供了能力，同时不危及债务目标。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+mindmap
+  root((Week 20 Riksdag))
+    Defence[FöU18 Signal Intelligence]
+      style Defence fill:#ff006e,color:#fff
+      Vote[Vote expected week 20]
+      Coalition[KD/M/SD: Ja | MP: Nej | S: split]
+    Education[UbU28 Teacher Credentials]
+      style Education fill:#00d9ff,color:#000
+      Debate[Debate opened 2026-05-08]
+      Broad[Broad support likely]
+    Justice[JuU Package]
+      style Justice fill:#ffbe0b,color:#000
+      JuU32[Public event security]
+      JuU39[Psychological violence]
+      JuU34[Nordic enforcement]
+    Propositions[New Gov Propositions]
+      style Propositions fill:#ff006e,color:#fff
+      HD03267[Security-threat deportation]
+      HD03250[State e-legitimation]
+      HD03261[Skatteverket expanded powers]
+    Wildcard[Foreign Policy Wildcard]
+      style Wildcard fill:#ff006e,color:#fff
+      Flotilla[Israeli boarding of flotilla]
+      SwedenCitizens[Swedish citizens aboard]
+```
+
+### 经济出处（IMF降级模式）
+
+```economicProvenance
+{
+  "provider": "imf",
+  "dataflow": "WEO|FM",
+  "vintage": "WEO Apr-2026, FM Apr-2026",
+  "status": "degraded",
+  "retrieved_at": "2026-05-08",
+  "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP", "GGXCNL_NGDP"],
+  "country": "SWE",
+  "notes": "IFS SDMX endpoint returning 404. Monthly CPI and labour market indicators unavailable."
+}
+```
+
+### 版本控制
+
+- **Pass 1**：2026-05-08 — 初始文档
+- **Pass 2**：2026-05-08 — 添加经济出处；确认WEP语言精确性
+
+<!-- source-sha: aaf8ef6d6b92d0946a98b667edd70ae3196c5278 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 6 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1680,6 +2820,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
