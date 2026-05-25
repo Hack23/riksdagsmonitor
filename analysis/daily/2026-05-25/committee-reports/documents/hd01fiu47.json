@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD01FiU47",
+  "titel": "Titel",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "organ": "FiU",
+  "summary": "",
+  "url": "https://data.riksdagen.se/dokument/HD01FiU47.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_betankanden",
+    "query": {
+      "limit": 20,
+      "rm": "2025/26"
+    },
+    "resultCount": 20,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-25T05:14:01.734Z"
+  }
+}

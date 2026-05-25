@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD01UbU22",
+  "titel": "Bättre förutsättningar för trygghet och studiero i skolan",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "organ": "UbU",
+  "summary": "<p>Utbildningsutskottet föreslår att riksdagen säger ja till regeringens förslag som syftar till att skapa bättre förutsättningar för trygghet och studiero i skolan genom flera samverkande åtgärder.</p>\n<p>Förslaget innebär bland annat att huvudmannens och rektorns ansvar för tryggheten och studieron på skolenheten ska förtydligas. Utöver ett förebyggande arbete ska huvudmannen och rektorn arbeta för att upprätthålla tryggheten och studieron. </p>\n<p>Regeringen föreslår att skolan ska göras mobilfri genom att elevernas mobiltelefoner samlas in vid skoldagens början och lämnas tillbaka vid skoldagens slut. Regeringens förslag innebär också att dagens ordningsregler ska byta namn till skolregler, bli skolgemensamma och innehålla en plan för konsekvenser vid överträdelser av reglerna. Möjligheterna ska även stärkas att använda de disciplinära åtgärderna utvisning ur undervisningslokalen, tillfällig omplacering inom den egna skolenheten och tillfällig placering utanför den egna skolenheten samt avstängning. </p>\n<p>Regeringen föreslår också att det i vissa fall ska bli möjligt att neka en elev tillträde till skolenheten om eleven hotar säkerheten för andra elever och personal. Skolans förväntningar på eleverna och deras vårdnadshavare ska tydliggöras genom ett förväntansdokument. </p>\n<p>Därutöver föreslås det bli möjligt att bedriva akutskola på entreprenad, det vill säga en verksamhet där elever tillfälligt ges undervisning utanför den egna skolenheten.</p>\n<p>Lagändringarna föreslås börja gälla den 1 augusti 2026.</p>",
+  "url": "https://data.riksdagen.se/dokument/HD01UbU22.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_betankanden",
+    "query": {
+      "limit": 20,
+      "rm": "2025/26"
+    },
+    "resultCount": 20,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-25T05:14:01.734Z"
+  }
+}

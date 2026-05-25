@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD01CU26",
+  "titel": "En ny konsumentkreditlag",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "organ": "CU",
+  "summary": "<p>Civilutskottet föreslår att riksdagen säger ja till regeringens förslag som handlar om att stärka konsumentskyddet på kreditmarknaden. Förslaget innebär bland annat en ny konsumentkreditlag.</p>\n<p>Den nya konsumentkreditlagen ska stärka konsumentskyddet och anpassa det efter de senaste årens utveckling på konsumentkreditmarknaden. Lagen reglerar många olika aspekter av kreditgivning till konsumenter. Det handlar bland annat om information, ångerrätt, marknadsföring och ränte- och kostnadstak. För att motverka överskuldsättning skärps reglerna för kreditprövning. Dessutom införs ett nytt tillståndskrav som innebär att fler näringsidkare som lämnar eller förmedlar krediter bland annat ska stå under tillsyn och uppfylla krav på tillräcklig kunskap och kompetens. </p>\n<p>Genom förslagen genomförs ett EU-direktiv om konsumentkrediter.</p>\n<p>Den nya konsumentkreditlagen och lagändringarna föreslås börjar gälla den 20 november 2026.</p>",
+  "url": "https://data.riksdagen.se/dokument/HD01CU26.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_betankanden",
+    "query": {
+      "limit": 20,
+      "rm": "2025/26"
+    },
+    "resultCount": 20,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-25T05:14:01.734Z"
+  }
+}

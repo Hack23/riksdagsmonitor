@@ -1,0 +1,128 @@
+{
+  "generated": "2026-05-25T05:12:50Z",
+  "article_date": "2026-05-25",
+  "subfolder": "committee-reports",
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "description": "Lagrådet yttrande on JuU43 (honour-violence legislation)",
+      "source_cycle": "2026-05-21",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "horizon": "T+14d",
+      "resolution_criteria": "Lagrådet publishes yttrande on JuU43",
+      "update": "Not addressed in 2026-05-22 committee batch; carry forward"
+    },
+    {
+      "id": "PIR-002",
+      "description": "Plenary vote dates for SoU38/SoU39",
+      "source_cycle": "2026-05-21",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "horizon": "T+14d",
+      "resolution_criteria": "Riksdag presiding officer announces SoU38/39 vote dates",
+      "update": "Not addressed in 2026-05-22 committee batch; carry forward"
+    },
+    {
+      "id": "PIR-003",
+      "description": "Centre Party formal position on SoU29/30 and SfU37 migration restrictions",
+      "source_cycle": "2026-05-21",
+      "status": "OPEN-UPDATED",
+      "priority": "HIGH",
+      "horizon": "T+21d",
+      "resolution_criteria": "C parliamentary group issues formal statement on SfU37 vote intention",
+      "update": "SfU37 now confirmed as this cycle's key migration document; C reservations on UbU27 funding noted; formal SfU37 position expected T+7d"
+    },
+    {
+      "id": "PIR-004",
+      "description": "SKR (Sveriges Kommuner och Regioner) formal response to SoU38/SoU39",
+      "source_cycle": "2026-05-21",
+      "status": "OPEN",
+      "priority": "MEDIUM-HIGH",
+      "horizon": "T+30d",
+      "resolution_criteria": "SKR publishes formal remissvar on SoU38/39",
+      "update": "Not addressed in 2026-05-22 committee batch; carry forward"
+    },
+    {
+      "id": "PIR-005",
+      "description": "Post-session polling reaction to legislative batch",
+      "source_cycle": "2026-05-21",
+      "status": "OPEN-PENDING",
+      "priority": "HIGH",
+      "horizon": "T+14d",
+      "resolution_criteria": "Novus/Demoskop/Sifo poll published post-SfU37 vote (2026-08-13)",
+      "update": "Polling cycle post-SfU37 vote expected 2026-08-16; this is the critical measurement point"
+    },
+    {
+      "id": "PIR-006",
+      "description": "Centre Party polling at 4% threshold — continuous monitor",
+      "source_cycle": "2026-05-21",
+      "status": "OPEN-CONTINUOUS",
+      "priority": "CRITICAL",
+      "horizon": "Continuous to election 2026-09-13",
+      "resolution_criteria": "C consistently above 5% (resolved safe) or below 3.5% (resolved at risk)",
+      "update": "C estimated at 5.4% in May 2026 — above threshold but within uncertainty range; UbU27 reservation may affect C-voter perception"
+    },
+    {
+      "id": "PIR-007",
+      "description": "SfU37 (skärpta villkor för anhöriginvandring) full text publication",
+      "source_cycle": "2026-05-25",
+      "status": "OPEN",
+      "priority": "CRITICAL",
+      "horizon": "T+77d (2026-08-10)",
+      "resolution_criteria": "riksdagen.se HD01SfU37 status changes to 'Webbpublicering'; full text accessible",
+      "update": "NEW PIR — document not yet published; analysis based on committee summary only"
+    },
+    {
+      "id": "PIR-008",
+      "description": "FiU47 substantive content",
+      "source_cycle": "2026-05-25",
+      "status": "OPEN",
+      "priority": "LOW",
+      "horizon": "T+14d",
+      "resolution_criteria": "HD01FiU47 published with substantive content",
+      "update": "NEW PIR — placeholder document in current batch"
+    },
+    {
+      "id": "PIR-009",
+      "description": "SfU37 Lagrådet yttrande — ECHR/EU compatibility assessment",
+      "source_cycle": "2026-05-25",
+      "status": "OPEN",
+      "priority": "CRITICAL",
+      "horizon": "T+7d to T+14d",
+      "resolution_criteria": "Lagrådet publishes yttrande on the proposition underlying SfU37; severity of legal concerns documented",
+      "update": "NEW PIR — most important legal intelligence gap for SfU37 analysis"
+    },
+    {
+      "id": "PIR-010",
+      "description": "Post-vote polling following SfU37 plenary vote (2026-08-13)",
+      "source_cycle": "2026-05-25",
+      "status": "PENDING",
+      "priority": "HIGH",
+      "horizon": "T+3d after vote (2026-08-16)",
+      "resolution_criteria": "Polling data shows MP above/below 4%; government/opposition polling shift following migration vote",
+      "update": "NEW PIR — expected to be the key electoral impact measurement point"
+    },
+    {
+      "id": "PIR-011",
+      "description": "UbU22 and UbU27 autumn budget appropriation confirmation",
+      "source_cycle": "2026-05-25",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "horizon": "September 2026 (post-election budget)",
+      "resolution_criteria": "Government autumn budget bill includes specific appropriations for UbU22/27 implementation (SEK 800M-1.2bn range)",
+      "update": "NEW PIR — implementation feasibility depends on budget; election outcome affects which government presents budget"
+    }
+  ],
+  "summary": {
+    "total_pirs": 11,
+    "open": 8,
+    "open_updated": 2,
+    "pending": 1,
+    "closed": 0,
+    "critical": 3,
+    "high": 4,
+    "medium": 3,
+    "low": 1
+  }
+}
