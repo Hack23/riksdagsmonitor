@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD01JuU48",
+  "titel": "Ett nytt straffrättsligt påföljdssystem",
+  "datum": "2026-05-25",
+  "rm": "2025/26",
+  "organ": "JuU",
+  "summary": "5290519\r\n HD01JuU48\r\n 2025/26\r\n JuU48\r\n bet\r\n bet\r\n bet\r\n Betänkande 2025/26:JuU48\r\n Betänkande\r\n Debatt om förslag\r\n \r\n JuU\r\n \r\n 48\r\n 0\r\n 2026-05-25 00:00:00\r\n 2026-05-25 09:48:46\r\n 2026-05-25 09:48:46\r\n Ett nytt straffrättsligt påföljdssystem\r\n \r\n planerat\r\n \r\n \r\n Brus\r\n 20742546-7f65-424e-8bbc-ac7e17fe24b4\r\n https://data.riksdagen.se/dokument/HD01JuU48/text\r\n https://data.riksdagen.se/dokume...",
+  "url": "https://data.riksdagen.se/dokument/HD01JuU48.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD01JuU48",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-25T18:40:11.651Z"
+  },
+  "fullContent": "5290519\r\n HD01JuU48\r\n 2025/26\r\n JuU48\r\n bet\r\n bet\r\n bet\r\n Betänkande 2025/26:JuU48\r\n Betänkande\r\n Debatt om förslag\r\n \r\n JuU\r\n \r\n 48\r\n 0\r\n 2026-05-25 00:00:00\r\n 2026-05-25 09:48:46\r\n 2026-05-25 09:48:46\r\n Ett nytt straffrättsligt påföljdssystem\r\n \r\n planerat\r\n \r\n \r\n Brus\r\n 20742546-7f65-424e-8bbc-ac7e17fe24b4\r\n https://data.riksdagen.se/dokument/HD01JuU48/text\r\n https://data.riksdagen.se/dokument/HD01JuU48\r\n https://data.riksdagen.se/dokumentstatus/HD01JuU48\r\n https://data.riksdagen.se/utskottsforslag/HD01JuU48\r\n <h2>Ett nytt straffrättsligt påföljdssystem</h2>\r\nDokumentet är inte publicerat\r\n\r\n\r\n\r\nUBE\r\nBeredning\r\n2026-08-11 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nB\r\nBordläggning\r\n2026-08-12 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nJUS\r\nJustering\r\n2026-08-12 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nTRY\r\nTrycklov\r\n2026-08-12 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBEH\r\nBehandling\r\n2026-08-13 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBES\r\nBeslut\r\n2026-08-13 00:00:00\r\nplanerat\r\n0",
+  "contentFetched": true
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "cycle": "evening-analysis",
+  "date": "2026-05-25",
+  "subfolder": "evening-analysis",
+  "generated_at": "2026-05-25T18:53:00Z",
+  "pirs": [
+    {
+      "id": "PIR-JuU48-PASS",
+      "statement": "Will JuU48 pass in substantially current form without amendment?",
+      "deadline": "2026-06-08",
+      "confidence_needed": "HIGH",
+      "status": "open",
+      "priority": 1
+    },
+    {
+      "id": "PIR-LAGR-JuU48",
+      "statement": "Has Lagrådet been formally consulted on JuU48 and published an opinion?",
+      "deadline": "2026-06-01",
+      "confidence_needed": "HIGH",
+      "status": "open",
+      "priority": 2
+    },
+    {
+      "id": "PIR-UU24-SCOPE",
+      "statement": "What is the exact scope of UU24 civil intelligence reform proposal?",
+      "deadline": "2026-05-28",
+      "confidence_needed": "HIGH",
+      "status": "open",
+      "priority": 3
+    },
+    {
+      "id": "PIR-NATO-GAP",
+      "statement": "Does UU19 identify any critical NATO capability gap for Sweden?",
+      "deadline": "2026-06-01",
+      "confidence_needed": "MEDIUM",
+      "status": "open",
+      "priority": 4
+    },
+    {
+      "id": "PIR-SHELTER-MEDIA",
+      "statement": "Does the women's shelter story (IP512) receive major national media coverage?",
+      "deadline": "2026-05-28",
+      "confidence_needed": "MEDIUM",
+      "status": "open",
+      "priority": 5
+    },
+    {
+      "id": "PIR-SD-BLOC",
+      "statement": "Does SD vote as a full bloc on JuU47/JuU48, or do any members defect?",
+      "deadline": "2026-06-08",
+      "confidence_needed": "MEDIUM",
+      "status": "open",
+      "priority": 6
+    }
+  ]
+}
