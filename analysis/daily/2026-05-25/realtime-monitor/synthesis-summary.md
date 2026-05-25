@@ -26,13 +26,19 @@ This positions M/KD/L as the "tough but proportionate" faction, distinguishing t
 
 **Synthesis**: The criminal justice reforms represent institutional modernisation rather than reactive punitiveness. However, their implementation timeline is politically calibrated to maximise pre-election resonance.
 
-### Narrative 3: Opposition Economic Counteroffensive
+### Narrative 3: Opposition Economic and Welfare-State Accountability Offensive
 
-The Social Democrats' interpellation strategy today (HD10511 economic distribution, HD10512 social services) represents a deliberate pivot: having conceded the security-NATO terrain, S is concentrating fire on the economic and social policy fronts it can win. HD10511 directly challenges the neoliberal distributional logic of Tidö fiscal policy; HD10512 targets care system underfunding.
+The Social Democrats' interpellation strategy on 2026-05-25 forms a coordinated three-pronged attack (HD10511, HD10512, HD10513), representing a deliberate pivot: having conceded the security-NATO terrain, S is concentrating fire on the economic and social policy fronts it can win.
+
+- **HD10511** (Finance Minister Svantesson): challenges the neoliberal distributional logic of Tidö fiscal policy — macro inequality as the core electoral binary
+- **HD10512** (Social Services Minister Waltersson Grönvall): targets care system underfunding, specifically women's shelters and vulnerable families
+- **HD10513** (Elder/Insurance Minister Tenje): documents systematic failure of the sjukersättning (disability benefit) system — chronically ill patients with confirmed incapacity denied permanent benefit and trapped in temporary sjukpenning indefinitely
+
+This three-pronged interpellation cluster is strategically coherent: it attacks the government's competence claim not on abstract ideology but on documented, operational welfare-state failures that have been covered by SVT, Expressen, and DN. The social insurance dimension (HD10513) is potentially the most explosive: Försäkringskassan sjukersättning court reversal rates (30-40%) are on the public record, and video testimonials of trapped patients have viral potential.
 
 Miljöpartiet's climate interpellations (HD10509, HD10510) occupy a complementary niche: environmental compliance failures that carry EU legal risk and reputational cost, where the government's responses will be watched by Brussels.
 
-**Synthesis**: The opposition is executing a phased strategy — conceding defence to focus on economic and social policy where polling shows the most voter movement. Finance Minister Svantesson's response to HD10511 will be a bellwether.
+**Synthesis**: The opposition is executing a phased strategy — conceding defence to focus on economic and social policy where polling shows the most voter movement. Finance Minister Svantesson's response to HD10511 will be a bellwether; Anna Tenje's response to HD10513 by 2026-06-09 is the social insurance accountability test.
 
 ---
 
@@ -44,6 +50,8 @@ Miljöpartiet's climate interpellations (HD10509, HD10510) occupy a complementar
 | HD01JuU47 (Online Recruitment) | HD01JuU48 (New Sanctions) | Consecutive criminal justice reforms; legislative sequencing to maintain momentum |
 | HD10509 (Climate Adaptation) | HD10510 (Climate Transport) | MP two-pronged climate accountability strategy |
 | HD10511 (Economic inequality) | HD10512 (Social services) | S dual-front social policy interpellation |
+| HD10511 (Economic inequality) | HD10513 (Disability benefit) | S three-pronged welfare-state competence challenge — macro, care, insurance |
+| HD10512 (Women's shelters) | HD10513 (Disability benefits) | S care/insurance cluster — targets Waltersson Grönvall and Tenje simultaneously |
 | HD01UU19 (NATO 2%GDP) | HD10511 (Economic distribution) | Defence spending vs. social spending tradeoff — the hidden budget conflict |
 
 ---

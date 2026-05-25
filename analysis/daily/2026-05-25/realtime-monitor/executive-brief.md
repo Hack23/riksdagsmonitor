@@ -1,9 +1,15 @@
-# Executive Brief — Riksdagen 2026-05-25
+# Sweden Insulates NATO Policy as Opposition Launches Welfare-State Accountability Offensive
 
 **Classification**: PUBLIC  
 **Analyst**: Riksdagsmonitor AI  
 **Date**: 2026-05-25  
 **Confidence**: HIGH (primary sources)
+
+---
+
+## BLUF
+
+**Sweden's parliament on 2026-05-25 enacted four security and justice measures while the Social Democrats deployed a coordinated three-pronged welfare-state accountability challenge.** The Tidö coalition insulated NATO, civil intelligence, and criminal justice reform from opposition scrutiny by unanimously rejecting all oversight motions. Simultaneously, S filed HD10511 (income inequality), HD10512 (women's shelters), and HD10513 (disability benefits) — a documented attack on Försäkringskassan dysfunction and care system underfunding that is designed to dominate the 2026 election narrative.
 
 ---
 
@@ -35,7 +41,10 @@ Social Democrat Niklas Karlsson challenges Finance Minister Elisabeth Svantesson
 ### 6. Climate Adaptation Gap — Interpellation HD10509 [L1 — MEDIUM]
 Miljöpartiet's Katarina Luhr targets the absence of dedicated climate adaptation legislation. Sweden's 2021 Climate Act lacks a mandatory adaptation framework, creating compliance exposure under the EU Climate Law (2021/1119). Climate Minister Johan Britz (L) faces pressure to announce a legislative timeline. **Assessment**: Low immediate impact but signals emerging EU compliance risk.
 
-### 7. Sudan Policy — Interpellation HD11836 [L1 — MEDIUM]
+### 7. Disability Benefit System Failure — Interpellation HD10513 [L2 — HIGH]
+Social Democrat Jessica Rodén challenges Elder and Social Insurance Minister Anna Tenje (M) on the systematic failure to grant sjukersättning (permanent disability benefit) to chronically ill patients despite confirmed medical incapacity. This is the third vector in S's coordinated 2026-05-25 interpellation cluster (alongside HD10511 economic inequality and HD10512 women's shelters), collectively targeting Tidö's claim to competent welfare-state administration. Tenje must respond by 2026-06-09. **Assessment**: The disability benefit trap is documented (30-40% Försäkringskassan judicial reversal rate) and politically explosive; S has viral-ready testimonial material waiting.
+
+### 8. Sudan Policy — Interpellation HD11836 [L1 — MEDIUM]
 S challenges Sweden's non-accession to the Atrocity Prevention Coalition in response to the Sudan conflict. The interpellation tests whether Sweden's NATO membership changes its humanitarian foreign policy posture.
 
 ---

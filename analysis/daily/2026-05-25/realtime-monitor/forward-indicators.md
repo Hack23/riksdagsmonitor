@@ -14,6 +14,12 @@
 **Confirmation of KJ-2** (election fought on economic equality): If Svantesson's response generates negative media coverage, S's framing strategy succeeds.  
 **Indicator status**: PENDING
 
+### FI-00: Elder/Insurance Minister Tenje Response to HD10513 (NEWLY ADDED — Re-run)
+**What to watch**: Will Tenje (a) defend the current sjukersättning system as functioning, (b) acknowledge the dysfunction, or (c) announce a reform package?  
+**Trigger event**: Response due by 2026-06-09; debate likely late June/early September  
+**Confirmation of S welfare-state cluster strategy**: If Tenje's language is defensive, S has documented evidence of governmental indifference to a documented Försäkringskassan failure.  
+**Indicator status**: PENDING — response deadline 2026-06-09
+
 ### FI-02: Media Coverage of UU19
 **What to watch**: Does the NATO report generate substantive coverage or only institutional acknowledgement?  
 **Trigger**: Press/media cycle 25-27 May  
@@ -103,6 +109,7 @@
 | PIR | Monitor via | Next Update |
 |---|---|---|
 | Finance Minister HD10511 response | Riksdag speech database | T+7d |
+| Elder/Insurance Minister HD10513 response (NEWLY ADDED) | Riksdag speech database | T+14d (deadline 2026-06-09) |
 | SCB Gini data | SCB.se statistics calendar | T+30d |
 | NATO 3% GDP discussion | NATO public affairs | T+90d |
 | JuU48 debate outcome | Riksdag vote record | T+90d |
