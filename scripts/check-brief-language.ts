@@ -83,19 +83,43 @@ export const ENGLISH_MARKERS: ReadonlySet<string> = new Set([
  * measured density exceeds this value AND the absolute count exceeds
  * {@link MIN_ENGLISH_MARKERS}.
  *
- * The 5 % floor mirrors `SWEDISH_DENSITY_THRESHOLD` in
- * `check-analysis-language.ts`. CJK targets (ja/ko/zh) use a tighter 3 %
- * threshold because legitimate English loanwords are even rarer in CJK
- * prose — a single untranslated paragraph stands out at lower density.
+ * Three per-script buckets, mirroring the per-language SERP budgets in
+ * `seo/serp-budgets.ts`:
+ *
+ *  - **Latin** (`sv`/`da`/`no`/`fi`/`de`/`fr`/`es`/`nl`): 5 % — mirrors
+ *    `SWEDISH_DENSITY_THRESHOLD` in `check-analysis-language.ts`.
+ *  - **RTL** (`ar`/`he`): 2 % — RTL prose tokenises into the empty Latin
+ *    word stream (Arabic / Hebrew script characters are non-Latin), so
+ *    *any* Latin English marker is a strong signal of leaked English.
+ *    The lower floor catches even a single untranslated sentence in
+ *    what should otherwise be a near-zero Latin-word brief.
+ *  - **CJK** (`ja`/`ko`/`zh`): 3 % — legitimate English loanwords are
+ *    rarer in CJK prose than in Latin scripts, so a single untranslated
+ *    paragraph stands out at lower density.
  */
 export const ENGLISH_DENSITY_THRESHOLD = 0.05;
+export const ENGLISH_DENSITY_THRESHOLD_RTL = 0.02;
 export const ENGLISH_DENSITY_THRESHOLD_CJK = 0.03;
 
 /** Minimum absolute English-marker count to trigger a violation. */
 export const MIN_ENGLISH_MARKERS = 5;
 
-/** CJK target languages — use the tighter threshold. */
+/** RTL target languages — use the tightest threshold. */
+const RTL_LANGS = new Set(['ar', 'he']);
+
+/** CJK target languages — use a tighter threshold than Latin. */
 const CJK_LANGS = new Set(['ja', 'ko', 'zh']);
+
+/**
+ * Resolve the density threshold for the given target language code.
+ * Falls back to the Latin threshold for any unrecognised code so
+ * unknown locales never silently bypass the gate.
+ */
+export function thresholdForLanguage(lang: string): number {
+  if (RTL_LANGS.has(lang)) return ENGLISH_DENSITY_THRESHOLD_RTL;
+  if (CJK_LANGS.has(lang)) return ENGLISH_DENSITY_THRESHOLD_CJK;
+  return ENGLISH_DENSITY_THRESHOLD;
+}
 
 // ─────────────────────────────────────────────────────────────────────────
 // Density calculation
@@ -128,7 +152,7 @@ export function calculateEnglishDensity(markdown: string): EnglishDensity {
  */
 export function exceedsEnglishThreshold(density: EnglishDensity, lang: string): boolean {
   if (density.englishMarkerCount < MIN_ENGLISH_MARKERS) return false;
-  const threshold = CJK_LANGS.has(lang) ? ENGLISH_DENSITY_THRESHOLD_CJK : ENGLISH_DENSITY_THRESHOLD;
+  const threshold = thresholdForLanguage(lang);
   return density.density > threshold;
 }
 

@@ -115,9 +115,18 @@ describe('check-brief-language — exceedsEnglishThreshold', () => {
     expect(exceedsEnglishThreshold({ totalWords: 200, englishMarkerCount: 8, density: 0.04 }, 'sv')).toBe(false);
   });
 
+  it('uses a tighter 2% threshold for RTL targets (ar, he)', () => {
+    // density 0.025 (above RTL 2%, below CJK 3% and Latin 5%) — fails for RTL only.
+    expect(exceedsEnglishThreshold({ totalWords: 400, englishMarkerCount: 10, density: 0.025 }, 'ar')).toBe(true);
+    expect(exceedsEnglishThreshold({ totalWords: 400, englishMarkerCount: 10, density: 0.025 }, 'he')).toBe(true);
+    expect(exceedsEnglishThreshold({ totalWords: 400, englishMarkerCount: 10, density: 0.025 }, 'ja')).toBe(false);
+    expect(exceedsEnglishThreshold({ totalWords: 400, englishMarkerCount: 10, density: 0.025 }, 'sv')).toBe(false);
+  });
+
   it('returns false at exactly the threshold (strict >)', () => {
     expect(exceedsEnglishThreshold({ totalWords: 100, englishMarkerCount: 5, density: 0.05 }, 'sv')).toBe(false);
     expect(exceedsEnglishThreshold({ totalWords: 100, englishMarkerCount: 5, density: 0.03 }, 'ja')).toBe(false);
+    expect(exceedsEnglishThreshold({ totalWords: 250, englishMarkerCount: 5, density: 0.02 }, 'ar')).toBe(false);
   });
 });
 

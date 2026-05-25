@@ -75,14 +75,60 @@ export function parseBriefPath(filepath: string): { lang: Language; subfolder: s
  * scrubber's veto, since the workflow won't synthesise a BLUF-based
  * replacement post-hoc.
  */
-export function postprocessBriefMarkdown(
-  markdown: string,
-  lang: Language,
-  subfolder: string,
-): { markdown: string; changed: boolean; originalH1: string | null; cleanedH1: string | null } {
-  const lines = markdown.split('\n');
-  // The first markdown H1 — skip YAML frontmatter and HTML comments.
-  let h1Index = -1;
+// ─────────────────────────────────────────────────────────────────────────
+// H1 discovery
+// ─────────────────────────────────────────────────────────────────────────
+
+/**
+ * Lines that wrap the title without being the title themselves.
+ * Translator output for RTL languages frequently leads with
+ * `<div dir="rtl">` so the rendered HTML aligns correctly; centered or
+ * attributed brief layouts use `<center>` / `<section>` / `<header>`;
+ * some templates emit a `<figure>` with a hero image before the title.
+ * These wrapper tags must be skipped so the scanner can reach the real
+ * heading instead of bailing out on the first non-`#` line.
+ */
+const HTML_WRAPPER_TAG_RE =
+  /^\s*<\/?(?:div|center|section|article|main|header|figure|figcaption|p|aside|nav)\b[^>]*\/?>\s*$/i;
+
+/** Standalone image lines — HTML `<img>` or Markdown `![alt](src)` form. */
+const IMAGE_LINE_RE = /^\s*(?:<img\b[^>]*\/?>|!\[[^\]]*\]\([^)]+\)(?:\s*\{[^}]*\})?)\s*$/i;
+
+/** Markdown H1 (`# Title`). */
+const MARKDOWN_H1_RE = /^#\s+/;
+
+/** Same-line HTML H1: `<h1 ...>Title</h1>`. */
+const HTML_H1_INLINE_RE = /^\s*<h1\b[^>]*>([\s\S]*?)<\/h1>\s*$/i;
+
+/** Opening `<h1>` tag at line start (multi-line H1). */
+const HTML_H1_OPEN_RE = /^\s*<h1\b[^>]*>(.*)$/i;
+
+/** Closing `</h1>` tag (multi-line H1). */
+const HTML_H1_CLOSE_RE = /^(.*?)<\/h1>\s*$/i;
+
+interface H1Match {
+  /** First line of the heading block (inclusive). */
+  readonly startLine: number;
+  /** Last line of the heading block (inclusive). */
+  readonly endLine: number;
+  /** Heading kind: markdown `#` form or HTML `<h1>` form. */
+  readonly kind: 'markdown' | 'html';
+  /** Heading inner text with any nested HTML tags stripped. */
+  readonly text: string;
+}
+
+/** Strip nested HTML tags from a fragment captured inside an `<h1>`. */
+function stripInnerTags(text: string): string {
+  return text.replace(/<[^>]+>/g, '').trim();
+}
+
+/**
+ * Locate the body H1 (markdown `#` form OR HTML `<h1>` form), skipping
+ * YAML frontmatter, HTML comments, blank lines, leading wrapper tags
+ * (`<div dir="rtl">`, `<center>`, `<section>`, …) and standalone
+ * image lines. Returns `null` when no H1 is present in the document.
+ */
+function findBodyH1(lines: readonly string[]): H1Match | null {
   let inFrontmatter = false;
   for (let i = 0; i < lines.length; i++) {
     const ln = lines[i];
@@ -94,22 +140,68 @@ export function postprocessBriefMarkdown(
       if (ln.trim() === '---') inFrontmatter = false;
       continue;
     }
-    // Skip HTML comments / blank lines at top of body
-    if (/^\s*<!--/.test(ln) || ln.trim() === '') continue;
-    if (/^#\s+/.test(ln)) {
-      h1Index = i;
-      break;
+    // Skip blank lines, HTML comments, wrapper tags, and standalone images.
+    if (
+      ln.trim() === '' ||
+      /^\s*<!--/.test(ln) ||
+      HTML_WRAPPER_TAG_RE.test(ln) ||
+      IMAGE_LINE_RE.test(ln)
+    ) {
+      continue;
     }
-    // First non-comment, non-blank, non-H1 line — no H1 to rewrite
-    break;
+    // Markdown H1
+    if (MARKDOWN_H1_RE.test(ln)) {
+      const text = ln.replace(MARKDOWN_H1_RE, '').trim();
+      return { startLine: i, endLine: i, kind: 'markdown', text };
+    }
+    // Inline HTML H1 — `<h1 ...>Title</h1>` on one line.
+    const inline = HTML_H1_INLINE_RE.exec(ln);
+    if (inline) {
+      return { startLine: i, endLine: i, kind: 'html', text: stripInnerTags(inline[1]) };
+    }
+    // Multi-line HTML H1 — opening `<h1>` here, closing `</h1>` later.
+    const open = HTML_H1_OPEN_RE.exec(ln);
+    if (open) {
+      // Gather inner text across subsequent lines until the closing tag.
+      const parts: string[] = [open[1]];
+      for (let j = i + 1; j < lines.length; j++) {
+        const inner = lines[j];
+        const close = HTML_H1_CLOSE_RE.exec(inner);
+        if (close) {
+          parts.push(close[1]);
+          return {
+            startLine: i,
+            endLine: j,
+            kind: 'html',
+            text: stripInnerTags(parts.join(' ')),
+          };
+        }
+        parts.push(inner);
+      }
+      // Unterminated `<h1>` — treat as no-match and let downstream
+      // markdown validation surface the malformed input.
+      return null;
+    }
+    // First content line is neither a wrapper, image, nor a heading —
+    // the document has no H1 we can safely rewrite.
+    return null;
   }
+  return null;
+}
 
-  if (h1Index < 0) {
+export function postprocessBriefMarkdown(
+  markdown: string,
+  lang: Language,
+  subfolder: string,
+): { markdown: string; changed: boolean; originalH1: string | null; cleanedH1: string | null } {
+  const lines = markdown.split('\n');
+  const match = findBodyH1(lines);
+
+  if (!match) {
     return { markdown, changed: false, originalH1: null, cleanedH1: null };
   }
 
-  const originalH1Raw = lines[h1Index];
-  const originalH1Text = originalH1Raw.replace(/^#\s+/, '').trim();
+  const originalH1Text = match.text;
   const cleaned = cleanArticleTitle(originalH1Text, subfolder, lang);
 
   // When cleanArticleTitle returns null OR a string identical to the
@@ -118,9 +210,17 @@ export function postprocessBriefMarkdown(
     return { markdown, changed: false, originalH1: originalH1Text, cleanedH1: cleaned };
   }
 
-  lines[h1Index] = `# ${cleaned}`;
+  // Rewrite the heading block in place. For markdown form we replace a
+  // single line; for HTML form we collapse the whole `<h1>...</h1>`
+  // block into a normalised single-line markdown `# ` heading so the
+  // downstream renderer's title-extraction logic (which expects
+  // markdown H1s) keeps working uniformly across languages.
+  const before = lines.slice(0, match.startLine);
+  const after = lines.slice(match.endLine + 1);
+  const newLines = [...before, `# ${cleaned}`, ...after];
+
   return {
-    markdown: lines.join('\n'),
+    markdown: newLines.join('\n'),
     changed: true,
     originalH1: originalH1Text,
     cleanedH1: cleaned,

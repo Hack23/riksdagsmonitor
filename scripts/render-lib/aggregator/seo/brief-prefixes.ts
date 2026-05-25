@@ -238,23 +238,50 @@ function escapeRegex(literal: string): string {
  * separators that the EN prefix strip in `title.ts §70` accepts.
  *
  * Returns `null` when the language has no entries (so callers can skip
- * the replace step). The compiled regex is **not** cached because
- * `cleanArticleTitle` runs per-article (O(thousands) per build) and
- * `new RegExp` is microseconds-cheap relative to the rest of the title
- * pipeline; caching adds memory pressure without observable benefit.
+ * the replace step).
+ *
+ * The compiled regex is cached per-language in
+ * {@link PREFIX_REGEX_CACHE}. `cleanArticleTitle` runs O(thousands of
+ * times) per full multi-language build, so the cache replaces a
+ * per-call sort + `new RegExp` (and the implicit literal-array
+ * allocation from the spread) with an `O(1)` Map lookup after the
+ * first call per language.
+ *
+ * The dictionary is frozen (typed `Readonly`) so we can safely cache by
+ * `Language` key without worrying about runtime mutation invalidating
+ * a previously compiled pattern.
  *
  * Exported for testability.
  */
+const PREFIX_REGEX_CACHE = new Map<Language, RegExp | null>();
+
 export function buildPrefixStripRegex(lang: Language): RegExp | null {
+  const cached = PREFIX_REGEX_CACHE.get(lang);
+  if (cached !== undefined) return cached;
+
   const entries = BRIEF_TITLE_PREFIXES[lang];
-  if (!entries || entries.length === 0) return null;
+  if (!entries || entries.length === 0) {
+    PREFIX_REGEX_CACHE.set(lang, null);
+    return null;
+  }
   // Sort by length (descending) so longer compound prefixes are matched
   // before their shorter substrings (e.g. `Riksdag Realtime Monitor`
   // must match before `Realtime Monitor`, otherwise the longer form
   // leaves `Riksdag — ` as a leading fragment).
   const sorted = [...entries].sort((a, b) => b.length - a.length);
   const alternation = sorted.map(escapeRegex).join('|');
-  return new RegExp(`^(?:${alternation})\\s*[—–\\-:]\\s*`, 'i');
+  const re = new RegExp(`^(?:${alternation})\\s*[—–\\-:]\\s*`, 'i');
+  PREFIX_REGEX_CACHE.set(lang, re);
+  return re;
+}
+
+/**
+ * Reset the per-language regex cache. Exported for tests that mutate
+ * the dictionary at runtime (production callers should never need
+ * this — the dictionary is module-level constant data).
+ */
+export function _resetPrefixRegexCacheForTests(): void {
+  PREFIX_REGEX_CACHE.clear();
 }
 
 /**

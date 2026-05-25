@@ -135,6 +135,117 @@ describe('postprocessBriefMarkdown', () => {
     expect(out.changed).toBe(true);
     expect(out.cleanedH1).toBe('Schwedisches Parlament Verabschiedet Migrationsreform');
   });
+
+  it('skips leading <div dir="rtl"> wrapper and rewrites the inner H1 (ar)', () => {
+    const md = [
+      '<div dir="rtl">',
+      '',
+      '# ملخص تنفيذي — البرلمان السويدي يقر إصلاح قانون الهجرة الجديد',
+      '',
+      'نص الموجز باللغة العربية.',
+      '',
+      '</div>',
+    ].join('\n');
+    const out = postprocessBriefMarkdown(md, 'ar', 'propositions');
+    expect(out.changed).toBe(true);
+    expect(out.cleanedH1).toBe('البرلمان السويدي يقر إصلاح قانون الهجرة الجديد');
+    // Wrapper must survive verbatim.
+    expect(out.markdown.split('\n')[0]).toBe('<div dir="rtl">');
+    expect(out.markdown).toContain('</div>');
+  });
+
+  it('skips leading <div dir="rtl"> wrapper and rewrites the inner H1 (he)', () => {
+    const md = [
+      '<div dir="rtl">',
+      '',
+      '# תקציר מנהלים — הפרלמנט השוודי מאשר רפורמה במדיניות ההגירה',
+      '',
+      'תוכן הסיכום בעברית.',
+      '',
+      '</div>',
+    ].join('\n');
+    const out = postprocessBriefMarkdown(md, 'he', 'propositions');
+    expect(out.changed).toBe(true);
+    expect(out.cleanedH1).toBe('הפרלמנט השוודי מאשר רפורמה במדיניות ההגירה');
+  });
+
+  it('rewrites an inline HTML <h1> as the title form', () => {
+    const md = [
+      '<h1 class="title">Exekutiv sammanfattning — Riksdagen Antar Migrationsreform Med Stor Majoritet</h1>',
+      '',
+      'Brödtext.',
+    ].join('\n');
+    const out = postprocessBriefMarkdown(md, 'sv', 'propositions');
+    expect(out.changed).toBe(true);
+    expect(out.cleanedH1).toBe('Riksdagen Antar Migrationsreform Med Stor Majoritet');
+    // HTML H1 collapses to a normalised markdown # heading.
+    expect(out.markdown.split('\n')[0]).toBe('# Riksdagen Antar Migrationsreform Med Stor Majoritet');
+  });
+
+  it('rewrites a multi-line HTML <h1> block', () => {
+    const md = [
+      '<h1>',
+      '  Zusammenfassung — Schwedisches Parlament Verabschiedet Migrationsreform',
+      '</h1>',
+      '',
+      'Inhalt.',
+    ].join('\n');
+    const out = postprocessBriefMarkdown(md, 'de', 'propositions');
+    expect(out.changed).toBe(true);
+    expect(out.cleanedH1).toBe('Schwedisches Parlament Verabschiedet Migrationsreform');
+    const lines = out.markdown.split('\n');
+    expect(lines[0]).toBe('# Schwedisches Parlament Verabschiedet Migrationsreform');
+    expect(lines[1]).toBe('');
+    expect(lines[2]).toBe('Inhalt.');
+  });
+
+  it('skips a leading hero image before the H1', () => {
+    const md = [
+      '![Riksdag chamber](hero.jpg)',
+      '',
+      '# Résumé exécutif — Le Parlement Suédois Adopte Une Réforme Migratoire',
+      '',
+      'Contenu en français.',
+    ].join('\n');
+    const out = postprocessBriefMarkdown(md, 'fr', 'propositions');
+    expect(out.changed).toBe(true);
+    expect(out.cleanedH1).toBe('Le Parlement Suédois Adopte Une Réforme Migratoire');
+  });
+
+  it('skips leading <center> wrapper and rewrites the inner H1', () => {
+    const md = [
+      '<center>',
+      '# 执行摘要 — 瑞典议会通过历史性移民改革法案并启动新的边境管理程序',
+      '</center>',
+      '',
+      '中文正文。',
+    ].join('\n');
+    const out = postprocessBriefMarkdown(md, 'zh', 'propositions');
+    expect(out.changed).toBe(true);
+    expect(out.cleanedH1).toBe('瑞典议会通过历史性移民改革法案并启动新的边境管理程序');
+  });
+
+  it('strips nested HTML tags from the heading text', () => {
+    const md = [
+      '<h1><span class="boilerplate">Executive Brief</span> — <strong>Sweden Passes Migration Reform Bill</strong></h1>',
+      '',
+      'Body.',
+    ].join('\n');
+    const out = postprocessBriefMarkdown(md, 'en', 'propositions');
+    expect(out.changed).toBe(true);
+    expect(out.cleanedH1).toBe('Sweden Passes Migration Reform Bill');
+  });
+
+  it('returns no H1 when leading content is plain prose (no wrapper or heading)', () => {
+    const md = [
+      'Plain prose line with no heading.',
+      '',
+      '# Later Heading Should Not Be Picked Up',
+    ].join('\n');
+    const out = postprocessBriefMarkdown(md, 'sv', 'propositions');
+    expect(out.changed).toBe(false);
+    expect(out.originalH1).toBeNull();
+  });
 });
 
 describe('postprocessBriefFile (integration)', () => {
