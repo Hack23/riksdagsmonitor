@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO%2FCISO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-0A66C2?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--25-success?style=for-the-badge" alt="Effective Date"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
+  <img src="https://img.shields.io/badge/Owner-CEO%2FCISO-0A66C2?style=for-the-badge" alt="Owner"/>
+  <img src="https://img.shields.io/badge/Version-1.0-0A66C2?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--25-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/>
 </p>
 
 **📋 Document Owner:** CEO/CISO (James Pether Sörling, Hack23 AB) · **📄 Version:** 1.0 · **📅 Last Updated:** 2026-05-25 (UTC)
@@ -564,7 +564,7 @@ flowchart LR
 | No advertising stance | Quiet introduction of "supported by" placements | Apache-2.0 fork-pressure: any drift produces an instantly competitive un-monetised fork |
 | Apache-2.0 | Licence revocation (impossible retroactively) | Already irrevocable for the released code |
 
-**Sponsorship as a framing signal (not just a revenue line).** A [`github.com/sponsors/Hack23`](https://github.com/sponsors/Hack23) page is itself a piece of media-framing infrastructure: it lets HERO-frame coverage **convert** into measurable support, which then becomes its own coverage-volume signal in the dashboard (`📈 Coverage-Volume Dashboard` table above — *sponsor count and tier-mix at week N* belongs alongside outlet counts as a Phase-1 → Phase-3 metric).
+**Sponsorship as a framing signal (not just a revenue line).** A [`github.com/sponsors/Hack23`](https://github.com/sponsors/Hack23) page is itself a piece of media-framing infrastructure: it lets HERO-frame coverage **convert** into measurable support, which then becomes its own coverage-volume signal in the dashboard (`📈 Coverage-Volume Dashboard` table below — *sponsor count and tier-mix at week N* belongs alongside outlet counts as a Phase-1 → Phase-3 metric).
 
 **Money-frame verdict (HIGH confidence):**
 
@@ -674,7 +674,7 @@ No paywalled scraping, no private accounts, no leaked material, no hacked conten
 - [x] **Election 2026 lens applied** — election anchor 2026-09-13 referenced in lifecycle, watchlist, and FOREIGN OVERLAY conditional.
 - [x] **No fabricated `dok_id` / vote / quote** — none used; this is a meta-framing artefact, not a parliamentary-story artefact, so the evidence anchor is repo-file citation.
 - [x] **Cross-references resolve** — every `[link](file.md)` resolves on disk; external persona links resolve to GitHub.
-- [x] **Mermaid renders** — all four blocks (Frame Package, Laundering Chain, Lifecycle, Frame Competition) carry colour theming (Check 5).
+- [x] **Mermaid renders** — all four blocks (Frame Package, Laundering Chain, Lifecycle, Frame Competition) render in GitHub's Mermaid pipeline; colour theming via `style` / `classDef` applied to the three flowchart/graph diagrams where Mermaid supports it (the `xychart-beta` lifecycle chart relies on Mermaid's built-in series colours, which don't accept `style` / `classDef` directives) (Check 5).
 - [x] **Line-floor check** — artefact is substantially above template floor for Family D.
 
 ### Framing-deep-dive items
@@ -702,7 +702,7 @@ No paywalled scraping, no private accounts, no leaked material, no hacked conten
 2. **Tightened HATCHET frame** — added the "trans-/identity-/lobby-/donor- innuendo dresses opinion as fact" mechanic, which the Pass 1 draft had hand-waved.
 3. **Added ACH on platform-identity** — H1/H2/H3/H4 probabilities, falsifiable claims.
 4. **Added counter-intelligence recommendations** — six concrete actions for Hack23 to harden the framing surface pre-launch.
-5. **Verified Mermaid theming** — all four diagrams use `style …` / `classDef …` directives compatible with cyberpunk theme (Check 5).
+5. **Verified Mermaid theming** — the three flowchart/graph diagrams (Frame Package, Laundering Chain, Frame Competition) use `style …` / `classDef …` directives compatible with the cyberpunk theme; the `xychart-beta` lifecycle diagram relies on Mermaid's built-in series colours (xychart does not accept the same `style` / `classDef` primitives) (Check 5).
 6. **Verified no "neutral" claims about the platform** — every platform-self-reference qualifies neutrality as procedural and explicitly disclaims truth-neutrality.
 7. **Added Founder Profile framing** — James Pether Sörling's public OSS reputation (Gitista Sweden #42, OpenHub, committers.top, GitHub `@Hack23`) cited as base-rate evidence for H1 (sincere civic-transparency platform) and as the cheapest defence against LUNATIC ("AI hobbyist") attack vector.
 8. **Added Sustainability & Money framing** — funding-model disclosure (founder self-funding + [GitHub Sponsors](https://github.com/sponsors/Hack23) + Apache-2.0 + no ads + no paywall) named for every bias surface it creates *and* every bias surface it avoids; follow-the-money discipline applied to the platform itself before any external reporter does it.
