@@ -28,9 +28,18 @@
  *      `Realtime Monitor — `, `Pass 2`, `Methodology Reflection`, etc.
  *      These are intended for the brief's *file* heading, never the
  *      shipped article H1.
+ *   E. **H1 equals prettified subfolder** — bare category labels like
+ *      `# Government Propositions` (for the `propositions/` subfolder)
+ *      or `# Election Cycle Current` (for `election-cycle/current/`).
+ *      These trigger the renderer's silent BLUF-fallback path; this rule
+ *      forces the editorial team to write a real actor+verb headline
+ *      rather than relying on the renderer to paper over the laziness.
+ *      Mirrors the content-side equivalent of `cleanArticleTitle`'s
+ *      subfolder-equality guard in
+ *      `scripts/render-lib/aggregator/seo/title.ts`.
  *
  * The validator walks every `analysis/daily/<date>/<subfolder>/executive-brief.md`
- * (the English source from which all 14 locales are translated). Rules A-D
+ * (the English source from which all 14 locales are translated). Rules A-E
  * apply to the EN brief only; translated `executive-brief_<lang>.md`
  * variants are *not* scanned because Swedish loanwords are legitimate in
  * `executive-brief_sv.md`, etc.
@@ -42,6 +51,8 @@
 
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+
+import { prettifyFallbackTitle } from './render-lib/aggregator/order.js';
 
 // ─────────────────────────────────────────────────────────────────────────
 // Rule A — Untranslated Swedish in EN H1
@@ -190,6 +201,79 @@ export function findBoilerplatePrefixes(h1: string): string[] {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
+// Rule E — H1 equals prettified subfolder slug
+// ─────────────────────────────────────────────────────────────────────────
+
+/**
+ * Lower-case, punctuation-stripped, whitespace-collapsed comparison form.
+ * Mirrors `normaliseTitleForCompare` in
+ * `scripts/render-lib/aggregator/seo/title.ts` so the content-side
+ * editorial gate fires on the same set of strings the renderer would
+ * silently null-out via its subfolder-equality guard.
+ */
+export function normaliseHeadlineForCompare(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Derive the "subfolder path" relative to `analysis/daily/<date>/` for a
+ * given brief filepath. Returns `null` when the brief is not inside the
+ * canonical `analysis/daily/<YYYY-MM-DD>/<subfolder...>/executive-brief.md`
+ * layout.
+ *
+ * Example: `analysis/daily/2026-05-08/election-cycle/current/executive-brief.md`
+ * → `election-cycle/current`.
+ */
+export function subfolderFromBriefPath(filepath: string): string | null {
+  const norm = filepath.split(/[\\/]/);
+  const idx = norm.indexOf('daily');
+  if (idx < 0 || idx + 2 >= norm.length) return null;
+  // norm[idx+1] is the YYYY-MM-DD bucket; the subfolder is everything between
+  // that and the final `executive-brief.md` filename.
+  const parts = norm.slice(idx + 2, -1);
+  if (parts.length === 0) return null;
+  return parts.join('/');
+}
+
+/**
+ * Build the prettified label for a multi-segment subfolder path. Joins
+ * each path segment via `prettifyFallbackTitle` so `election-cycle/current`
+ * → `Election Cycle Current`.
+ */
+export function prettifySubfolderPath(subfolder: string): string {
+  return subfolder
+    .split('/')
+    .filter(Boolean)
+    .map((seg) => prettifyFallbackTitle(seg))
+    .join(' ');
+}
+
+/**
+ * Detect a Rule-E violation: the H1 (after cosmetic normalisation) equals
+ * the prettified subfolder label (full path, or just the leaf segment).
+ *
+ * Both forms are checked because shallow briefs (`propositions/`) and
+ * nested briefs (`election-cycle/current/`) both fail the renderer's
+ * subfolder-equality guard but with different label forms.
+ */
+export function matchesPrettifiedSubfolder(h1: string, subfolder: string | null): boolean {
+  if (!subfolder) return false;
+  const headline = normaliseHeadlineForCompare(h1);
+  if (!headline) return false;
+  const fullLabel = normaliseHeadlineForCompare(prettifySubfolderPath(subfolder));
+  if (fullLabel && headline === fullLabel) return true;
+  const segments = subfolder.split('/').filter(Boolean);
+  const leaf = segments[segments.length - 1];
+  if (!leaf) return false;
+  const leafLabel = normaliseHeadlineForCompare(prettifyFallbackTitle(leaf));
+  return Boolean(leafLabel) && headline === leafLabel;
+}
+
+// ─────────────────────────────────────────────────────────────────────────
 // H1 extraction
 // ─────────────────────────────────────────────────────────────────────────
 
@@ -253,10 +337,16 @@ export interface HeadlineViolation {
 }
 
 /**
- * Validate a single H1 string against the four headline-quality rules.
+ * Validate a single H1 string against the five headline-quality rules.
  * Pure function — exported for unit testing without filesystem I/O.
+ *
+ * @param h1 — the trimmed H1 line text (without the leading `# `).
+ * @param subfolder — the brief's containing subfolder relative to
+ *   `analysis/daily/<date>/` (e.g. `propositions` or
+ *   `election-cycle/current`). When provided, Rule E fires if the H1
+ *   matches the prettified label of either the full path or its leaf.
  */
-export function validateH1(h1: string): string[] {
+export function validateH1(h1: string, subfolder?: string | null): string[] {
   const issues: string[] = [];
 
   // Rule A — Swedish-in-EN tokens
@@ -285,6 +375,13 @@ export function validateH1(h1: string): string[] {
     issues.push(`rule-D (boilerplate prefix): ${boilerplate.join(', ')}`);
   }
 
+  // Rule E — H1 equals prettified subfolder slug
+  if (subfolder && matchesPrettifiedSubfolder(h1, subfolder)) {
+    issues.push(
+      `rule-E (H1 == prettified subfolder): H1 is the bare category label for "${subfolder}"; write a real actor+verb headline`,
+    );
+  }
+
   return issues;
 }
 
@@ -302,7 +399,8 @@ export function validateHeadlines(analysisDir: string): HeadlineViolation[] {
     }
     const h1 = extractH1(markdown);
     if (!h1) continue;
-    const issues = validateH1(h1);
+    const subfolder = subfolderFromBriefPath(filepath);
+    const issues = validateH1(h1, subfolder);
     if (issues.length > 0) {
       violations.push({
         filepath,
@@ -373,7 +471,8 @@ export async function main(): Promise<void> {
         '  A — translate Swedish tokens (Socialdemokraterna → Social Democrats)\n' +
         '  B — drop weekday-date prefixes (URL slug + frontmatter `date:` already encode this)\n' +
         '  C — drop ISO-date leading/trailing slugs (not headlines)\n' +
-        '  D — drop scaffolding prefixes (Executive Brief — / Realtime Monitor — / Pass 2 / …)',
+        '  D — drop scaffolding prefixes (Executive Brief — / Realtime Monitor — / Pass 2 / …)\n' +
+        '  E — H1 must not be the bare prettified subfolder label (write a real actor+verb headline)',
     );
     process.exit(1);
   }
