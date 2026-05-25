@@ -3,7 +3,7 @@ date: 2026-05-05
 subfolder: election-cycle/next
 slug: 2026-05-05-election-cycle/next
 source_folder: analysis/daily/2026-05-05/election-cycle/next
-generated_at: 2026-05-24T22:15:16.244Z
+generated_at: 2026-05-25T09:05:41.357Z
 language: en
 layout: article
 ---
@@ -971,8 +971,6 @@ From current-day signals (HD10464, HD10466, HD01JuU30, HD11782, HD11787):
 | 2027 | 2.3% | -0.5% من الناتج المحلي | 7.9% |
 | 2028 | 2.1% | -0.3% من الناتج المحلي | 7.5% |
 
-*المصدر: IMF WEO Apr-2026. توقعات وليست تنبؤات. (WEO Apr-2026, NGDP_RPCH SWE)*
-
 **الظروف الاقتصادية الافتتاحية**: مواتية — الحكومة القادمة ترث مساراً للتعافي. الخطر: الإنفاق الدفاعي البالغ 2.4% من الناتج المحلي الإجمالي (هدف الناتو 2028) يُحدث ضغطاً مالياً قصير الأجل لكنه يُوفر أرباحاً أمنية طويلة الأجل.
 
 <!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
@@ -1001,8 +999,6 @@ Den næste svenske regering dannes 3-6 uger efter 2026-09-13. Det afgørende sp�
 | 2026 | 1,8% | -0,8% BNP | 8,3% |
 | 2027 | 2,3% | -0,5% BNP | 7,9% |
 | 2028 | 2,1% | -0,3% BNP | 7,5% |
-
-*Kilde: IMF WEO Apr-2026. Prognoser, ikke forudsigelser. (WEO Apr-2026, NGDP_RPCH SWE)*
 
 **Indledende økonomiske betingelser**: Gunstige — den indtrædende regering arver en genopretningsbane. Risiko: Forsvarsudgifter på 2,4% BNP (NATO-mål 2028) skaber kortsigtet finanspolitisk træk, men langsigtigt sikkerhedsudbytte.
 
@@ -1033,8 +1029,6 @@ Die nächste schwedische Regierung wird 3-6 Wochen nach dem 2026-09-13 gebildet.
 | 2027 | 2,3% | -0,5% BIP | 7,9% |
 | 2028 | 2,1% | -0,3% BIP | 7,5% |
 
-*Quelle: IMF WEO Apr-2026. Projektionen, keine Vorhersagen. (WEO Apr-2026, NGDP_RPCH SWE)*
-
 **Ausgangswirtschaftliche Bedingungen**: Günstig — die neue Regierung erbt eine Erholungsbahn. Risiko: Verteidigungsausgaben von 2,4% BIP (NATO-Ziel 2028) verursachen kurzfristige fiskalische Belastungen, bieten aber langfristige Sicherheitsdividende.
 
 <!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
@@ -1064,8 +1058,6 @@ El próximo gobierno sueco se formará 3-6 semanas después del 2026-09-13. La p
 | 2027 | 2,3% | -0,5% PIB | 7,9% |
 | 2028 | 2,1% | -0,3% PIB | 7,5% |
 
-*Fuente: IMF WEO Apr-2026. Proyecciones, no predicciones. (WEO Apr-2026, NGDP_RPCH SWE)*
-
 **Condiciones económicas iniciales**: Favorables — el nuevo gobierno hereda una trayectoria de recuperación. Riesgo: El gasto en defensa del 2,4% del PIB (objetivo OTAN 2028) crea una presión fiscal a corto plazo, pero ofrece un dividendo de seguridad a largo plazo.
 
 <!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
@@ -1094,8 +1086,6 @@ Seuraava Ruotsin hallitus muodostetaan 3-6 viikon kuluessa 2026-09-13 jälkeen. 
 | 2026 | 1,8% | -0,8% BKT | 8,3% |
 | 2027 | 2,3% | -0,5% BKT | 7,9% |
 | 2028 | 2,1% | -0,3% BKT | 7,5% |
-
-*Lähde: IMF WEO Apr-2026. Ennusteet, eivät ennakoimiset. (WEO Apr-2026, NGDP_RPCH SWE)*
 
 **Aloittavat taloudelliset olosuhteet**: Suotuisat — tuleva hallitus perii elpymisbanan. Riski: Puolustusmenot 2,4% BKT:sta (NATO:n tavoite 2028) luo lyhytaikaista finansiaalista vetoa mutta pitkän aikavälin turvallisuusosinkoa.
 
@@ -1155,8 +1145,6 @@ Le prochain gouvernement suédois sera formé dans les 3 à 6 semaines suivant l
 | 2026 | 1.8% | -0.8% תמ"ג | 8.3% |
 | 2027 | 2.3% | -0.5% תמ"ג | 7.9% |
 | 2028 | 2.1% | -0.3% תמ"ג | 7.5% |
-
-*מקור: IMF WEO Apr-2026. תחזיות, לא ניבויים. (WEO Apr-2026, NGDP_RPCH SWE)*
 
 **תנאים כלכליים ראשוניים**: נוחים — הממשלה הנכנסת יורשת מסלול התאוששות. סיכון: הוצאות ביטחון של 2.4% תמ"ג (יעד נאט"ו 2028) יוצרות לחץ פיסקלי קצר-טווח אבל מניבות דיבידנד ביטחוני לטווח ארוך.
 
@@ -1218,8 +1206,6 @@ Le prochain gouvernement suédois sera formé dans les 3 à 6 semaines suivant l
 | 2027 | 2.3% | -0.5% GDP | 7.9% |
 | 2028 | 2.1% | -0.3% GDP | 7.5% |
 
-*출처: IMF WEO Apr-2026. 전망치이며 예측이 아닙니다. (WEO Apr-2026, NGDP_RPCH SWE)*
-
 **초기 경제 여건**: 우호적 — 신정부는 회복 궤도를 물려받습니다. 위험: GDP 대비 2.4%의 국방비(NATO 목표 2028년)는 단기적 재정 부담을 초래하지만 장기적 안보 배당금을 제공합니다.
 
 <!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
@@ -1248,8 +1234,6 @@ De volgende Zweedse regering wordt 3-6 weken na 2026-09-13 gevormd. De beslissen
 | 2026 | 1,8% | -0,8% bbp | 8,3% |
 | 2027 | 2,3% | -0,5% bbp | 7,9% |
 | 2028 | 2,1% | -0,3% bbp | 7,5% |
-
-*Bron: IMF WEO Apr-2026. Projecties, geen voorspellingen. (WEO Apr-2026, NGDP_RPCH SWE)*
 
 **Aanvangseconomische omstandigheden**: Gunstig — de nieuwe regering erft een hersteltraject. Risico: Defensie-uitgaven van 2,4% bbp (NAVO-doel 2028) creëren kortetermijn begrotingsdruk, maar bieden langetermijn veiligheidsdividend.
 
@@ -1280,8 +1264,6 @@ Den neste svenske regjeringen dannes 3-6 uker etter 2026-09-13. Det avgjørende 
 | 2027 | 2,3% | -0,5% BNP | 7,9% |
 | 2028 | 2,1% | -0,3% BNP | 7,5% |
 
-*Kilde: IMF WEO Apr-2026. Prognoser, ikke forutsigelser. (WEO Apr-2026, NGDP_RPCH SWE)*
-
 **Innledende økonomiske betingelser**: Gunstige — den tiltrående regjeringen arver en gjenopprettingsbane. Risiko: Forsvarsutgifter på 2,4% BNP (NATO-mål 2028) skaper kortsiktig finanspolitisk drag, men langsiktig sikkerhetsutbytte.
 
 <!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
@@ -1310,8 +1292,6 @@ Nästa svenska regering bildas under 3-6 veckor efter 2026-09-13. Den avgörande
 | 2026 | 1,8% | -0,8% BNP | 8,3% |
 | 2027 | 2,3% | -0,5% BNP | 7,9% |
 | 2028 | 2,1% | -0,3% BNP | 7,5% |
-
-*Källa: IMF WEO Apr-2026. Prognoser, inte förutsägelser. (WEO Apr-2026, NGDP_RPCH SWE)*
 
 **Inledande ekonomiska förhållanden**: Gynnsamma — den tillträdande regeringen ärver en återhämtningsbana. Risk: Försvarsutgifter på 2,4% BNP (NATO:s mål 2028) skapar kortsiktig finansiell belastning men långsiktig säkerhetsdividend.
 

@@ -3,7 +3,7 @@ date: 2026-04-28
 subfolder: interpellations
 slug: 2026-04-28-interpellations
 source_folder: analysis/daily/2026-04-28/interpellations
-generated_at: 2026-05-24T22:15:15.745Z
+generated_at: 2026-05-25T09:05:40.870Z
 language: en
 layout: article
 ---
@@ -1831,11 +1831,6 @@ Data sourced from 2026-04-27 via lookback fallback — check freshness indicator
 
 &#x200F;# المعارضة تستهدف ثغرات البنية التحتية والرعاية الاجتماعية وجرائم الشركات في أحدث الاستجوابات
 
-**التاريخ**: 2026-04-28  
-**المؤلف**: James Pether Sörling  
-**التصنيف**: عام — اللائحة الأوروبية لحماية البيانات المادة 9(2)(هـ,و)  
-**الثقة**: متوسطة–عالية [B2]
-
 ### 🎯 الخلاصة التنفيذية
 
 قدّم ثلاثة نوّاب اشتراكيين ديمقراطيين في الريكسداج استجوابات (HD10449, HD10450, HD10451) بتاريخ 2026-04-27، يتحدّون فيها حكومة تحالف تيدو على ثلاثة مجالات محتقنة سياسياً: عجز الاستثمارات في البنية التحتية للسكك الحديدية، ومخاطر إصلاح التأمين الصحي، وفاعلية التدابير المتخذة ضد جرائم الشركات. والاستجوابات الثلاثة موجّهة إلى وزراء في تحالف تيدو (KD, M, M)، وتُجسّد استراتيجية S في المساءلة قبيل الانتخابات في مجالات ذات صلة عالية بالناخبين.
@@ -1897,11 +1892,6 @@ flowchart LR
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_da.md -->
-
-**Dato**: 2026-04-28  
-**Forfatter**: James Pether Sörling  
-**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e,g)  
-**Konfidens**: MEDIUM–HØJ [B2]
 
 ### 🎯 Kernevurdering
 
@@ -2032,11 +2022,6 @@ flowchart LR
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_es.md -->
 
-**Fecha**: 2026-04-28  
-**Autor**: James Pether Sörling  
-**Clasificación**: PÚBLICO — RGPD Art 9(2)(e,g)  
-**Confianza**: MEDIA–ALTA [B2]
-
 ### 🎯 Resumen Ejecutivo
 
 Tres diputados socialdemócratas del Riksdag presentaron interpelaciones (HD10449, HD10450, HD10451) el 2026-04-27, desafiando al gobierno de coalición Tidö en tres ámbitos políticamente cargados: déficits de inversión en infraestructura ferroviaria, riesgos de la reforma del seguro de enfermedad y la eficacia de las medidas contra la delincuencia empresarial. Las tres están dirigidas a ministros de la coalición Tidö (KD, M, M) y señalan la estrategia de responsabilidad preelectoral de S en áreas de alta relevancia para el electorado.
@@ -2165,10 +2150,6 @@ flowchart LR
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_fr.md -->
-
-**Auteur**: James Pether Sörling  
-
-**Confiance**: MOYEN–ÉLEVÉ [B2]
 
 ### 🎯 Synthèse
 
@@ -2301,11 +2282,6 @@ flowchart LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_ja.md -->
 
-**日付**: 2026-04-28  
-**著者**: James Pether Sörling  
-**分類**: 公開 — GDPR 第9条(2)(e,g)  
-**信頼度**: 中〜高 [B2]
-
 ### 🎯 要約
 
 社会民主党の3人のリクスダーグ議員が2026年4月27日に質問（HD10449、HD10450、HD10451）を提出し、ティドー連立政権に3つの政治的に重要な分野で挑戦した：鉄道インフラへの投資不足、疾病保険改革のリスク、企業犯罪対策の有効性。3件はいずれもティドー連立政権の閣僚（KD、M、M）に向けられており、有権者の関心が高い分野でSの選挙前説明責任戦略を示している。
@@ -2367,11 +2343,6 @@ flowchart LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_ko.md -->
-
-**날짜**: 2026-04-28  
-**저자**: James Pether Sörling  
-**분류**: 공개 — GDPR 제9조(2)(e,g)  
-**신뢰도**: 중간–높음 [B2]
 
 ### 🎯 핵심 요약
 
@@ -2502,11 +2473,6 @@ flowchart LR
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_no.md -->
 
-**Dato**: 2026-04-28  
-**Forfatter**: James Pether Sörling  
-**Klassifisering**: OFFENTLIG — GDPR Art 9(2)(e,g)  
-**Konfidens**: MEDIUM–HØY [B2]
-
 ### 🎯 Kjernevurdering
 
 Tre sosialdemokratiske riksdagsmedlemmer leverte interpellasjoner (HD10449, HD10450, HD10451) den 2026-04-27, og utfordrer Tidø-koalisjonsregjeringen på tre politisk ladede områder: investeringsunderskudd i jernbaneinfrastruktur, risiko ved trygdereformen og effektiviteten av tiltak mot foretakskriminalitet. Alle tre er rettet mot Tidø-koalisjonsministre (KD, M, M) og signaliserer S' ansvarsstrategien for valget innen områder med høy velgerrelevans.
@@ -2568,11 +2534,6 @@ flowchart LR
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_sv.md -->
-
-**Datum**: 2026-04-28  
-**Författare**: James Pether Sörling  
-**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e,g)  
-**Konfidens**: MEDEL–HÖG [B2]
 
 ### 🎯 Kärnbedömning
 

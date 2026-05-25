@@ -3,7 +3,7 @@ date: 2026-05-07
 subfolder: interpellations
 slug: 2026-05-07-interpellations
 source_folder: analysis/daily/2026-05-07/interpellations
-generated_at: 2026-05-24T22:15:16.409Z
+generated_at: 2026-05-25T09:05:41.520Z
 language: en
 layout: article
 ---
@@ -1757,11 +1757,6 @@ flowchart LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**日付**: 2026-05-07  
-**分類**: 公開  
-**信頼度**: 中程度 [B2]
-
 ### 要旨
 
 スウェーデンの野党・社会民主党は、チドー連立政権が国際労働機関（ILO）における労働者の権利の擁護者としてのスウェーデンの歴史的役割を維持してきたかどうかについて問いただした。代表質問HD10475 — 2026年5月7日にAdrian Magnusson（S）が労働市場担当代理大臣Johan Britz（L）に提出 — は政治的説明責任のギャップを露わにしている：政府は、援助予算削減と多国間同盟の変容の時代においてILOへの関与が引き続き優先事項であるかどうかについて22日以内に答える必要がある。この問題は2026年選挙に向けて戦略的な重みを持つ：Sは労働者の権利について、多国主義からの後退とみなされるチドー政権に対し立場を明確にしている。
@@ -1804,11 +1799,6 @@ flowchart LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**날짜**: 2026-05-07  
-**분류**: 공개  
-**신뢰도**: 중간 [B2]
 
 ### 요약
 
@@ -1996,11 +1986,6 @@ flowchart LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/interpellations/executive-brief_zh.md -->
-
-**作者**: James Pether Sörling  
-**日期**: 2026-05-07  
-**分类**: 公开  
-**可信度**: 中等 [B2]
 
 ### 执行摘要
 

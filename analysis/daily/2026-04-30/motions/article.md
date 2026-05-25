@@ -3,7 +3,7 @@ date: 2026-04-30
 subfolder: motions
 slug: 2026-04-30-motions
 source_folder: analysis/daily/2026-04-30/motions
-generated_at: 2026-05-24T22:15:15.937Z
+generated_at: 2026-05-25T09:05:41.059Z
 language: en
 layout: article
 ---
@@ -1629,8 +1629,6 @@ pie title SAT Techniques Applied
 <!-- dir: rtl -->
 # مقترحات المعارضة تتحدى الحكومة في مجالات تراخيص البيئة والتحول الطاقوي وقضاء الأحداث — 2026-04-29
 
-**المؤلف**: James Pether Sörling | **التاريخ**: 2026-04-30 | **التصنيف**: PUBLIC
-
 ---
 
 ### 🎯 BLUF
@@ -1682,8 +1680,6 @@ flowchart TD
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_da.md -->
-
-**Forfatter**: James Pether Sörling | **Dato**: 2026-04-30 | **Klassificering**: PUBLIC
 
 ---
 
@@ -1737,8 +1733,6 @@ flowchart TD
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling | **Datum**: 2026-04-30 | **Klassifizierung**: PUBLIC
-
 ---
 
 ### 🎯 BLUF
@@ -1790,8 +1784,6 @@ flowchart TD
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_es.md -->
-
-**Autor**: James Pether Sörling | **Fecha**: 2026-04-30 | **Clasificación**: PUBLIC
 
 ---
 
@@ -1899,8 +1891,6 @@ flowchart TD
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_fr.md -->
 
-**Auteur** : James Pether Sörling | **Date** : 2026-04-30 | **Classification** : PUBLIC
-
 ---
 
 ### 🎯 BLUF
@@ -1956,8 +1946,6 @@ flowchart TD
 <!-- dir: rtl -->
 # הצעות האופוזיציה מאתגרות את הממשלה בנושאי רישוי סביבתי, מעבר אנרגטי וצדק נוער — 2026-04-29
 
-**מחבר**: James Pether Sörling | **תאריך**: 2026-04-30 | **סיווג**: PUBLIC
-
 ---
 
 ### 🎯 BLUF
@@ -2009,8 +1997,6 @@ flowchart TD
 
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_ja.md -->
-
-**著者**: James Pether Sörling | **日付**: 2026-04-30 | **分類**: PUBLIC
 
 ---
 
@@ -2064,8 +2050,6 @@ flowchart TD
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_ko.md -->
 
-**저자**: James Pether Sörling | **날짜**: 2026-04-30 | **분류**: PUBLIC
-
 ---
 
 ### 🎯 BLUF
@@ -2117,8 +2101,6 @@ flowchart TD
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling | **Datum**: 2026-04-30 | **Classificatie**: PUBLIC
 
 ---
 
@@ -2172,8 +2154,6 @@ flowchart TD
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_no.md -->
 
-**Forfatter**: James Pether Sörling | **Dato**: 2026-04-30 | **Klassifisering**: PUBLIC
-
 ---
 
 ### 🎯 BLUF
@@ -2225,8 +2205,6 @@ flowchart TD
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/motions/executive-brief_sv.md -->
-
-**Författare**: James Pether Sörling | **Datum**: 2026-04-30 | **Klassificering**: PUBLIC
 
 ---
 

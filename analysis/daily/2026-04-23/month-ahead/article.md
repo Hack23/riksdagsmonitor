@@ -3,7 +3,7 @@ date: 2026-04-23
 subfolder: month-ahead
 slug: 2026-04-23-month-ahead
 source_folder: analysis/daily/2026-04-23/month-ahead
-generated_at: 2026-05-24T22:15:15.390Z
+generated_at: 2026-05-25T09:05:40.518Z
 language: en
 layout: article
 ---
@@ -2000,8 +2000,6 @@ This analysis applies OSINT methodology per ICD 203, using:
 
 تدخل السويد الأسابيع الخمسة الأخيرة من دورة البرلمان 2025/26 مع ثلاث حزم متشابكة تهيمن على الأجندة التشريعية: حزمة الميزانية الربيعية 2026 (HD03100 vårproposition + HD0399 ميزانية تكميلية)، وحزمة القانون والنظام التي تعزز أجندة العدالة الجنائية لـ Tidöavtalet، وحزمة انتقال الطاقة التي تُعيد هيكلة سوق الكهرباء. ستحظى الحزم الثلاث بتصويتات نهائية قبل العطلة الصيفية، إذ يُحدد الـ vårproposition المسار المالي للسويد خلال فترة ما قبل الانتخابات ذات التعافي الاقتصادي المعتدل وارتفاع الإنفاق الدفاعي.
 
-**الثقة**: عالية [B2 — وثائق حكومية رسمية، مصادر riksdagen.se]
-
 ---
 
 ### 🧭 ثلاثة قرارات يدعمها هذا الموجز
@@ -2150,8 +2148,6 @@ quadrantChart
 
 Schweden tritt in die letzten fünf Wochen der Parlamentssitzung 2025/26 ein, wobei drei miteinander verknüpfte Pakete die Gesetzgebungsagenda dominieren: das Frühjahrsfinanzpaket 2026 (HD03100 vårproposition + HD0399 Nachtragshaushalt), ein Recht-und-Ordnung-Paket zur Konsolidierung der kriminalpolitischen Agenda des Tidöavtalet und ein Energiewendepaket zur Neustrukturierung des Strommarkts. Alle drei Pakete erhalten vor der Sommerpause ihre abschließenden Abstimmungen, wobei die Vårproposition Schwedens finanzpolitischen Kurs in einer Vorwahlperiode mit moderater wirtschaftlicher Erholung und erhöhten Verteidigungsausgaben vorgibt.
 
-**Vertrauen**: HOCH [B2 — offizielle Regierungsdokumente, riksdagen.se-Quellen]
-
 ---
 
 ### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
@@ -2224,8 +2220,6 @@ quadrantChart
 ### 🎯 Conclusión
 
 Suecia entra en las últimas cinco semanas de la sesión parlamentaria 2025/26 con tres paquetes interconectados dominando la agenda legislativa: el Paquete Fiscal de Primavera 2026 (HD03100 vårproposition + HD0399 presupuesto suplementario), un Paquete de Ley y Orden que consolida la agenda de justicia penal del Tidöavtalet, y un Paquete de Transición Energética que reestructura el mercado eléctrico. Los tres paquetes recibirán sus votos finales antes del receso de verano, con la vårproposition estableciendo la trayectoria fiscal de Suecia a través de un período preelectoral de recuperación económica moderada y mayor gasto en defensa.
-
-**Confianza**: ALTA [B2 — documentos gubernamentales oficiales, fuentes riksdagen.se]
 
 ---
 
@@ -2373,8 +2367,6 @@ quadrantChart
 ### 🎯 Conclusion
 
 La Suède entre dans les cinq dernières semaines de la session parlementaire 2025/26 avec trois ensembles interconnectés dominant l'agenda législatif : le Budget de printemps 2026 (HD03100 vårproposition + HD0399 budget supplémentaire), un ensemble Loi et Ordre consolidant l'agenda de justice pénale du Tidöavtalet, et un ensemble de Transition énergétique restructurant le marché de l'électricité. Les trois ensembles recevront leurs votes finaux avant la pause estivale, la vårproposition définissant la trajectoire budgétaire de la Suède pour une période pré-électorale de reprise économique modérée et de dépenses de défense accrues.
-
-**Confiance** : HAUTE [B2 — documents gouvernementaux officiels, sources riksdagen.se]
 
 ---
 
@@ -2527,8 +2519,6 @@ quadrantChart
 
 スウェーデンは議会会期 2025/26 の最後の5週間に入り、三つの相互に連携したパッケージが立法アジェンダを支配しています：2026年春季財政パッケージ（HD03100 vårproposition + HD0399 補正予算）、Tidöavtaletの刑事司法アジェンダを統合する法と秩序パッケージ、および電力市場を再構築するエネルギー転換パッケージ。三つのパッケージすべてが夏季休会前に最終採決を受け、vårpropositionが中程度の経済回復と高まった防衛支出という選挙前期間を通じてスウェーデンの財政軌道を設定します。
 
-**信頼度**: 高 [B2 — 公式政府文書、riksdagen.se情報源]
-
 ---
 
 ### 🧭 本ブリーフが支援する3つの意思決定
@@ -2601,8 +2591,6 @@ quadrantChart
 ### 🎯 핵심 결론
 
 스웨덴은 의회 회기 2025/26의 마지막 5주에 접어들며 세 가지 상호 연결된 패키지가 입법 의제를 지배하고 있습니다: 2026년 봄 재정 패키지 (HD03100 vårproposition + HD0399 추경 예산), Tidöavtalet의 형사 사법 의제를 통합하는 법과 질서 패키지, 전력 시장을 재구축하는 에너지 전환 패키지. 세 패키지 모두 여름 휴회 전 최종 투표를 받게 되며, vårproposition이 완만한 경제 회복과 높아진 국방비 지출의 선거 전 기간을 통한 스웨덴의 재정 궤적을 설정합니다.
-
-**신뢰도**: 높음 [B2 — 공식 정부 문서, riksdagen.se 출처]
 
 ---
 
@@ -2818,16 +2806,11 @@ quadrantChart
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_sv.md -->
 
-**Klassificering**: Offentlig | **Författare**: James Pether Sörling | **Genererad**: 2026-04-23
-**Period**: 2026-04-23 → 2026-05-31 | **Session**: Riksmöte 2025/26 (slutet av vårfasen)
-
 ---
 
 ### 🎯 Slutsats
 
 Sverige inleder de sista fem veckorna av riksmötet 2025/26 med tre sammanlänkade paket som dominerar den lagstiftande agendan: 2026 års vårproposition (HD03100 vårproposition + HD0399 tilläggsbudget), ett lag-och-ordningspaket som konsoliderar Tidöavtalets kriminalpolitiska agenda, samt ett energiomställningspaket som omstrukturerar elmarknaden. Alla tre paketen ska få sina slutliga omröstningar före sommaruppehållet, med vårpropositionen som fastställer Sveriges finanspolitiska bana under en förvalperiod med måttlig ekonomisk återhämtning och förhöjda försvarsutgifter.
-
-**Konfidens**: HÖG [B2 — officiella regeringsdokument, riksdagen.se-källor]
 
 ---
 
@@ -2901,8 +2884,6 @@ quadrantChart
 ### 🎯 核心结论
 
 瑞典进入2025/26议会会期的最后五周，三个相互交织的一揽子方案主导着立法议程：2026年春季财政一揽子计划（HD03100 vårproposition + HD0399补充预算）、整合Tidöavtalet刑事司法议程的法律与秩序一揽子计划，以及重组电力市场的能源转型一揽子计划。三个方案将在暑假休会前接受最终表决，vårproposition将在经济温和复苏、国防支出增加的选前时期确立瑞典的财政轨迹。
-
-**可信度**: 高 [B2 — 官方政府文件，riksdagen.se来源]
 
 ---
 

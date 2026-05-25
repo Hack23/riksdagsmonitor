@@ -3,7 +3,7 @@ date: 2026-05-15
 subfolder: motions
 slug: 2026-05-15-motions
 source_folder: analysis/daily/2026-05-15/motions
-generated_at: 2026-05-24T22:15:16.977Z
+generated_at: 2026-05-25T09:05:42.072Z
 language: en
 layout: article
 ---
@@ -1842,8 +1842,6 @@ subfolder: "motions"
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_ja.md -->
 
-**著者**: ジェームス・ペテル・ソーリング | **日付**: 2026-05-15 | **分類**: 公開 | **信頼度**: 高 [B2]
-
 ### 🎯 要約
 
 2026年5月13日—スウェーデン選挙4か月前—野党4党が一斉に、ティドー連立の4法案からなる移民制限パッケージを否決する13本の動議を提出した。同パッケージは永住許可証の廃止、強制送還執行の強化、「良好な行状」に基づく退去基準の厳格化、拘禁の拡充を含む。共同野党戦線（S、C、V、MP）は、移民政策を中心的争点として2026年選挙戦を定義する根本的な政治的断層線を示している。
@@ -1872,8 +1870,6 @@ subfolder: "motions"
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_ko.md -->
-
-**저자**: 제임스 페터 소를링 | **날짜**: 2026-05-15 | **분류**: 공개 | **신뢰도**: 높음 [B2]
 
 ### �� 요약
 

@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: interpellations
 slug: 2026-04-29-interpellations
 source_folder: analysis/daily/2026-04-29/interpellations
-generated_at: 2026-05-24T22:15:15.817Z
+generated_at: 2026-05-25T09:05:40.942Z
 language: en
 layout: article
 ---
@@ -2184,11 +2184,6 @@ graph TD
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_da.md -->
 
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-04-29  
-**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
-**Konfidens**: HØJ [B2]
-
 ---
 
 ### 🎯 BLUF
@@ -2725,11 +2720,6 @@ graph TD
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/executive-brief_no.md -->
-
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-04-29  
-**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
-**Konfidens**: HØY [B2]
 
 ---
 

@@ -3,7 +3,7 @@ date: 2026-04-20
 subfolder: interpellations
 slug: 2026-04-20-interpellations
 source_folder: analysis/daily/2026-04-20/interpellations
-generated_at: 2026-05-24T22:15:15.252Z
+generated_at: 2026-05-25T09:05:40.394Z
 language: en
 layout: article
 ---
@@ -2396,8 +2396,6 @@ Calendar API returned HTML instead of JSON (known Riksdagen API issue). ANM date
 <!-- dir: rtl -->
 # ملخص تنفيذي لصانعي القرار — موجة الاستجوابات 2026-04-20
 
-**التصنيف**: عام · **تاريخ التحليل**: 2026-04-20 · **الأفق**: أسبوعان (29 أبريل – 5 مايو، نافذة الردود) · **مستوى الثقة**: مرتفع
-
 ---
 
 ### BLUF (الخلاصة أولاً)
@@ -2460,8 +2458,6 @@ Calendar API returned HTML instead of JSON (known Riksdagen API issue). ANM date
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_da.md -->
-
-**Klassificering**: Offentlig · **Analysedato**: 2026-04-20 · **Horisont**: 2 uger (29. april – 5. maj svarvindue) · **Konfidens**: HØJ
 
 ---
 
@@ -2526,8 +2522,6 @@ Mellem den 7. og 17. april 2026 modtog den svenske Riksdag cirka 15 interpellati
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_de.md -->
 
-**Klassifizierung**: Öffentlich · **Analysedatum**: 2026-04-20 · **Horizont**: 2 Wochen (29. April – 5. Mai Antwortfenster) · **Konfidenz**: HOCH
-
 ---
 
 ### BLUF (Schlussfolgerung zuerst)
@@ -2591,8 +2585,6 @@ Zwischen dem 7. und 17. April 2026 erhielt der schwedische Riksdag rund 15 Inter
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_es.md -->
 
-**Clasificación**: Público · **Fecha de análisis**: 2026-04-20 · **Horizonte**: 2 semanas (29 de abril – 5 de mayo, ventana de respuesta) · **Confianza**: ALTA
-
 ---
 
 ### BLUF (Conclusión primero)
@@ -2655,8 +2647,6 @@ Entre el 7 y el 17 de abril de 2026, el Riksdag sueco recibió aproximadamente 1
 
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_fi.md -->
-
-**Luokitus**: Julkinen · **Analyysipäivä**: 2026-04-20 · **Horisontti**: 2 viikkoa (29.4. – 5.5. vastausikkuna) · **Luottamustaso**: KORKEA
 
 ---
 
@@ -2982,8 +2972,6 @@ Entre le 7 et le 17 avril 2026, le Riksdag suédois a reçu environ 15 interpell
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_nl.md -->
 
-**Classificatie**: Openbaar · **Analysedatum**: 2026-04-20 · **Horizon**: 2 weken (29 april – 5 mei antwoordvenster) · **Vertrouwensniveau**: HOOG
-
 ---
 
 ### BLUF (Conclusie eerst)
@@ -3047,8 +3035,6 @@ Tussen 7 en 17 april 2026 ontving de Zweedse Riksdag circa 15 interpellaties —
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_no.md -->
 
-**Klassifisering**: Offentlig · **Analysedato**: 2026-04-20 · **Horisont**: 2 uker (29. april – 5. mai svarvinduer) · **Konfidens**: HØY
-
 ---
 
 ### BLUF (Konklusjonen først)
@@ -3111,8 +3097,6 @@ Mellom 7. og 17. april 2026 mottok den svenske Riksdagen cirka 15 interpellasjon
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_sv.md -->
-
-**Klassificering**: Offentlig · **Analysdatum**: 2026-04-20 · **Horisont**: 2 veckor (29 april – 5 maj svarsfönster) · **Konfidensgrad**: HÖG
 
 ---
 

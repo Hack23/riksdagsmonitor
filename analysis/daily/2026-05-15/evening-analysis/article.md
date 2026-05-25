@@ -3,7 +3,7 @@ date: 2026-05-15
 subfolder: evening-analysis
 slug: 2026-05-15-evening-analysis
 source_folder: analysis/daily/2026-05-15/evening-analysis
-generated_at: 2026-05-24T22:15:16.955Z
+generated_at: 2026-05-25T09:05:42.052Z
 language: en
 layout: article
 ---
@@ -728,8 +728,6 @@ pie title Riksdagsstöd 2026 (SOM jan-mars 2026)
     "MP 4.0%" : 4.0
 ```
 
-*Källa: SOM-institutet jan-mars 2026; gräns 4% för riksdagen. Mandat estimerade av election-2026-analysis.md.*
-
 ---
 
 ### Väljargrupp 1: Migrationspolitiska prioriterare (SD + M-höger, ~25–28%)
@@ -992,8 +990,6 @@ graph TB
 | KD | 5.5% | → | 5.3% |
 | L | 5.3% | → | 4.7% |
 | MP | 4.0% | ↗ | 5.1% |
-
-*Källa: SOM-institutet; gräns för riksdagen = 4%*
 
 ### Vad dagens händelser betyder för valet
 
@@ -1577,8 +1573,6 @@ flowchart LR
 | Inflation 2026f | 1.8% | 2.1% | 2.3% | 2.0% | 2.1% |
 | Statskuld/BNP | 34.5% | 29.4% | -303% (nettofordringsgivare) | 75.5% | 81.8% |
 | Arbetslöshet | 8.4% | 5.0% | 3.8% | 7.5% | 6.0% |
-
-*Källa: IMF WEO Apr-2026*
 
 **Analys**: Sverige har starkare tillväxt än EU-medianen men ovanligt hög arbetslöshet (8.4%) för en nordisk ekonomi. Hyresdereglering (CU31) kan förbättra rörlighetsindikatorerna på lång sikt men öka kortsiktig hyresbelastning.
 
@@ -2268,9 +2262,6 @@ subfolder: "evening-analysis"
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/executive-brief_da.md -->
 
-**Forfatter**: James Pether Sörling | **Distribution**: Beslutningstagere, borgere, journalister
-**Klassifikation**: 🟢 Offentlig | **Dato**: 2026-05-15
-
 ---
 
 ### 🎯 BLUF (Bundlinje)
@@ -2563,8 +2554,6 @@ Venäjä on hyväksynyt lainsäädännön, joka nimenomaisesti mahdollistaa yksi
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/executive-brief_fr.md -->
-
-**Auteur** : James Pether Sörling | **Distribution** : Décideurs, citoyens, journalistes
 
 ---
 
@@ -3015,9 +3004,6 @@ Russland har vedtatt lovgivning som eksplisitt muliggjør ensidig militær aggre
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/executive-brief_sv.md -->
-
-**Författare**: James Pether Sörling | **Distribution**: Beslutsfattare, medborgare, journalister
-**Klassificering**: 🟢 Offentlig | **Datum**: 2026-05-15
 
 ---
 

@@ -3,7 +3,7 @@ date: 2026-04-19
 subfolder: month-ahead
 slug: 2026-04-19-month-ahead
 source_folder: analysis/daily/2026-04-19/month-ahead
-generated_at: 2026-05-24T22:15:15.187Z
+generated_at: 2026-05-25T09:05:40.334Z
 language: en
 layout: article
 ---
@@ -1807,8 +1807,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 
 ---
 
-**التصنيف**: عام · **النطاق الزمني**: 2026-04-19 → 2026-05-19
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Da
@@ -1896,8 +1894,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/README.md) · [Syntese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/swot-analysis.md) · [Risiko](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/risk-assessment.md) · [Trussel](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/threat-analysis.md) · [Interessenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/stakeholder-perspectives.md) · [Scenarier](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/scenario-analysis.md) · [Data](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/data-download-manifest.md)
 
 ---
-
-**Klassifikation**: Offentlig · **Næste gennemgang**: 2026-04-26
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
@@ -1987,8 +1983,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 
 ---
 
-**Klassifizierung**: Öffentlich · **Nächste Überprüfung**: 2026-04-26
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Es
@@ -2077,8 +2071,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 
 ---
 
-**Clasificación**: Público · **Próxima revisión**: 2026-04-26
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Fi
@@ -2166,8 +2158,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/README.md) · [Synteesi](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/synthesis-summary.md) · [Merkittävyys](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/swot-analysis.md) · [Riski](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/risk-assessment.md) · [Uhka](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/threat-analysis.md) · [Sidosryhmät](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/stakeholder-perspectives.md) · [Skenaariot](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/scenario-analysis.md) · [Data](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/data-download-manifest.md)
 
 ---
-
-**Luokitus**: Julkinen · **Seuraava tarkistus**: 2026-04-26
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
@@ -2350,8 +2340,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 
 ---
 
-**סיווג**: ציבורי · **טווח זמן**: 2026-04-19 → 2026-05-19
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Ja
@@ -2441,8 +2429,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/README.md) · [総合分析](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/synthesis-summary.md) · [重要性](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/swot-analysis.md) · [リスク](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/risk-assessment.md) · [脅威](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/threat-analysis.md) · [ステークホルダー](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/stakeholder-perspectives.md) · [シナリオ](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/scenario-analysis.md) · [データ](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/data-download-manifest.md)
 
 ---
-
-**分類**: 公開 · **時間範囲**: 2026-04-19 → 2026-05-19
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
@@ -2534,8 +2520,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 
 ---
 
-**분류**: 공개 · **시간 범위**: 2026-04-19 → 2026-05-19
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Nl
@@ -2623,8 +2607,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/README.md) · [Synthese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/synthesis-summary.md) · [Significantie](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/swot-analysis.md) · [Risico](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/risk-assessment.md) · [Bedreiging](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/threat-analysis.md) · [Belanghebbenden](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/stakeholder-perspectives.md) · [Scenario's](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/scenario-analysis.md) · [Gegevens](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/data-download-manifest.md)
 
 ---
-
-**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-04-26
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
@@ -2715,8 +2697,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/README.md) · [Syntese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/swot-analysis.md) · [Risiko](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/risk-assessment.md) · [Trussel](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/threat-analysis.md) · [Interessenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/stakeholder-perspectives.md) · [Scenarier](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/scenario-analysis.md) · [Data](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/data-download-manifest.md)
 
 ---
-
-**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-26
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
@@ -2822,8 +2802,6 @@ through the live MCP channel above and cross-referenced to the upstream sibling 
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/README.md) · [Syntes](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/risk-assessment.md) · [Hot](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/threat-analysis.md) · [Intressenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/stakeholder-perspectives.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/scenario-analysis.md) · [Data](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/month-ahead/data-download-manifest.md)
 
 ---
-
-**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-26
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 

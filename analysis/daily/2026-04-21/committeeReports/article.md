@@ -3,7 +3,7 @@ date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-05-24T22:15:15.293Z
+generated_at: 2026-05-25T09:05:40.433Z
 language: en
 layout: article
 ---
@@ -3479,8 +3479,6 @@ All documents sourced from official riksdag-regering-mcp API.
 
 ---
 
-**التصنيف**: عام · **المراجعة التالية**: 2026-04-28
-
 </div>
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
@@ -3546,8 +3544,6 @@ Den 21. april 2026 vedtog Riksdagens udvalg en **14-rapportpakke**, der operatio
 
 ---
 
-**Klassificering**: Offentlig · **Næste gennemgang**: 2026-04-28
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief De
@@ -3611,8 +3607,6 @@ Am 21. April 2026 verabschiedeten die Ausschüsse des Riksdag ein **14-Berichte-
 
 ---
 
-**Klassifizierung**: Öffentlich · **Nächste Überprüfung**: 2026-04-28
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Es
@@ -3665,8 +3659,6 @@ El 21 de abril de 2026, las comisiones del Riksdag adoptaron un **paquete de 14 
 
 ---
 
-**Clasificación**: Público · **Próxima revisión**: 2026-04-28
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Fi
@@ -3718,8 +3710,6 @@ El 21 de abril de 2026, las comisiones del Riksdag adoptaron un **paquete de 14 
 | "Perustuslakimuutokset sitovat seuraavat valtiopäivät etukäteen" | KU32/KU33 + RF 8:14 | 🟩 KORKEA |
 
 ---
-
-**Luokitus**: Julkinen · **Seuraava arviointi**: 2026-04-28
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
@@ -3829,8 +3819,6 @@ Le 21 avril 2026, les commissions du Riksdag ont adopté un **paquet de 14 rappo
 
 ---
 
-**סיווג**: ציבורי · **סקירה הבאה**: 2026-04-28
-
 </div>
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
@@ -3939,8 +3927,6 @@ Le 21 avril 2026, les commissions du Riksdag ont adopté un **paquet de 14 rappo
 
 ---
 
-**분류**: 공개 · **다음 검토**: 2026-04-28
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Nl
@@ -3993,8 +3979,6 @@ Op 21 april 2026 namen de commissies van de Riksdag een **pakket van 14 rapporte
 
 ---
 
-**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-04-28
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief No
@@ -4046,8 +4030,6 @@ Op 21 april 2026 namen de commissies van de Riksdag een **pakket van 14 rapporte
 | "Grunnlovsendringer forhåndsforplikter neste Riksdag" | KU32/KU33 + RF 8:14 | 🟩 HØY |
 
 ---
-
-**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-28
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
@@ -4113,8 +4095,6 @@ Den 21 april 2026 antog riksdagens utskott ett **14-betänkandespaket** som oper
 | "Första ECHR-stresstestet av Tidöavtalets flaggskepp" | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/threat-analysis.md) §T1 | 🟩 HÖG |
 
 ---
-
-**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-28
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 

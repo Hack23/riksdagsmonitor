@@ -3,7 +3,7 @@ date: 2026-05-04
 subfolder: election-cycle
 slug: 2026-05-04-election-cycle
 source_folder: analysis/daily/2026-05-04/election-cycle
-generated_at: 2026-05-24T22:15:16.120Z
+generated_at: 2026-05-25T09:05:41.226Z
 language: en
 layout: article
 ---
@@ -2935,8 +2935,6 @@ Le gouvernement Tidö met en œuvre une stratégie de **sprint législatif** —
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/executive-brief_nl.md -->
-
-**Datum**: 2026-05-04 | **Classificatie**: OPENBAAR | **Horizon**: T+1460d
 
 ### Strategische samenvatting
 

@@ -3,7 +3,7 @@ date: 2026-05-13
 subfolder: motions
 slug: 2026-05-13-motions
 source_folder: analysis/daily/2026-05-13/motions
-generated_at: 2026-05-24T22:15:16.821Z
+generated_at: 2026-05-25T09:05:41.919Z
 language: en
 layout: article
 ---
@@ -2272,12 +2272,6 @@ graph TD
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling  
-**Classificatie**: 🟢 PUBLIC  
-**Vertrouwen**: HIGH (Admiralty B2)  
-**Run-ID**: 25785419647  
-**Datum**: 2026-05-13  
 
 ---
 

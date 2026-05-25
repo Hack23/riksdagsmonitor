@@ -3,7 +3,7 @@ date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-05-24T22:15:15.219Z
+generated_at: 2026-05-25T09:05:40.365Z
 language: en
 layout: article
 ---
@@ -2214,8 +2214,6 @@ All per-document files exist at the declared depth tier. See `methodology-reflec
 
 ---
 
-**التصنيف**: عام · **المراجعة التالية**: 2026-04-26 · **المنهجية**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
-
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
 ## Executive Brief Da
@@ -2333,8 +2331,6 @@ All per-document files exist at the declared depth tier. See `methodology-reflec
 Per dokument: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md) · [HD03231 + HD03232 (L2+)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md) · [HD01KU32 (L2+)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md)
 
 ---
-
-**Klassifikation**: Offentlig · **Næste gennemgang**: 2026-04-26 · **Metodologi**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
 
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
@@ -2454,8 +2450,6 @@ Pro Dokument: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/bl
 
 ---
 
-**Klassifikation**: Öffentlich · **Nächste Überprüfung**: 2026-04-26 · **Methodik**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
-
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
 ## Executive Brief Es
@@ -2574,8 +2568,6 @@ Por documento: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-**Clasificación**: Público · **Próxima revisión**: 2026-04-26 · **Metodología**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
-
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
 ## Executive Brief Fi
@@ -2693,8 +2685,6 @@ Por documento: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/b
 Per asiakirja: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md) · [HD03231 + HD03232 (L2+)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md) · [HD01KU32 (L2+)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md)
 
 ---
-
-**Luokitus**: Julkinen · **Seuraava tarkistus**: 2026-04-26 · **Metodologia**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
 
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
@@ -2935,8 +2925,6 @@ Par document : [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-**סיווג**: ציבורי · **סקירה הבאה**: 2026-04-26 · **מתודולוגיה**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
-
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
 ## Executive Brief Ja
@@ -3054,8 +3042,6 @@ Par document : [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/b
 文書別: [HD01KU33（主要、L3）](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md) · [HD03231＋HD03232（L2+）](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md) · [HD01KU32（L2+）](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md)
 
 ---
-
-**分類**: 公開 · **次回レビュー**: 2026-04-26 · **方法論**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
 
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
@@ -3175,8 +3161,6 @@ Par document : [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/b
 
 ---
 
-**분류**: 공개 · **다음 검토**: 2026-04-26 · **방법론**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
-
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
 ## Executive Brief Nl
@@ -3294,8 +3278,6 @@ Par document : [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/b
 Per document: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md) · [HD03231 + HD03232 (L2+)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md) · [HD01KU32 (L2+)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md)
 
 ---
-
-**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-04-26 · **Methodologie**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
 
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
@@ -3415,8 +3397,6 @@ Per dokument: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/bl
 
 ---
 
-**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-26 · **Metodologi**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
-
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 
 ## Executive Brief Sv
@@ -3534,8 +3514,6 @@ Per dokument: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/bl
 Per dokument: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md) · [HD03231 + HD03232 (L2+)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md) · [HD01KU32 (L2+)](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md)
 
 ---
-
-**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-26 · **Metodologi**: `ai-driven-analysis-guide.md` v5.1 + DIW v1.0
 
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 

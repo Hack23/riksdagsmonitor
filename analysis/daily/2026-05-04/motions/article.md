@@ -3,7 +3,7 @@ date: 2026-05-04
 subfolder: motions
 slug: 2026-05-04-motions
 source_folder: analysis/daily/2026-05-04/motions
-generated_at: 2026-05-24T22:15:16.175Z
+generated_at: 2026-05-25T09:05:41.287Z
 language: en
 layout: article
 ---
@@ -1396,8 +1396,6 @@ graph LR
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_da.md -->
 
-**Forfatter**: James Pether Sörling | **Dato**: 2026-05-04 | **Klassificering**: OFFENTLIG | **Konfidens**: HØJ [B2]
-
 ### BLUF
 
 Seksten aktive oppositionsforslag indgivet 2026-04-29 udfordrer seks regeringsforslag inden for energi, miljø, kriminaljustis, transport og skattepolitik. Socialdemokraterna (S) leder med ni forslag, flanket af Miljøpartiet (MP), Venstre (V) og Centerpartiet (C). Med Sveriges valg 132 dage væk (14. september 2026) udgør disse forslag både substantiel politisk opposition og eksplicit præ-valgpositionering. De vigtigste kampe: (1) det foreslåede miljøtilladelsesorgan (prop. 238) som S, MP, V og C modsætter sig af forskellige grunde; (2) kriminel aldersansvarssænkning til 13 (prop. 246), hvor S accepterer 14 men afviser 13; og (3) reform af kommunalt vindenergiveto (prop. 239), hvor oppositionen bredt kræver hurtigere handling.
@@ -1486,8 +1484,6 @@ graph LR
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_es.md -->
 
-**Autor**: James Pether Sörling | **Fecha**: 2026-05-04 | **Clasificación**: PÚBLICO | **Confianza**: ALTA [B2]
-
 ### BLUF
 
 Dieciséis mociones de oposición activas presentadas el 2026-04-29 desafían seis propuestas gubernamentales en política energética, medioambiental, de justicia penal, transporte y fiscal. Socialdemokraterna (S) lidera con nueve mociones, flanqueado por Miljöpartiet (MP), Vänsterpartiet (V) y Centerpartiet (C). Con las elecciones generales de Suecia 132 días (14 de septiembre de 2026), estas mociones constituyen tanto oposición política sustantiva como posicionamiento preelectoral explícito. Las batallas más significativas: (1) la propuesta autoridad de permisos medioambientales (prop. 238) a la que S, MP, V y C se oponen por diferentes razones; (2) reducción de la edad de responsabilidad penal a 13 años (prop. 246) donde S acepta 14 pero rechaza 13; y (3) reforma del veto municipal en energía eólica (prop. 239) donde la oposición ampliamente exige acción más rápida.
@@ -1575,8 +1571,6 @@ graph LR
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_fr.md -->
-
-**Auteur**: James Pether Sörling | **Date**: 2026-05-04 | **Classification**: PUBLIC | **Confiance**: ÉLEVÉE [B2]
 
 ### BLUF
 
@@ -1668,8 +1662,6 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ja.md -->
 
-**著者**: ジェームズ・ペシャー・セーリング | **日付**: 2026-05-04 | **分類**: 公開 | **信頼度**: 高 [B2]
-
 ### BLUF
 
 2026年4月29日に提出された16の有効な野党動議が、エネルギー、環境、刑事司法、交通、税制政策において6つの政府提案に挑戦している。Socialdemokraterna（S）が9動議でリードし、Miljöpartiet（MP）、Vänsterpartiet（V）、Centerpartiet（C）が続く。スウェーデン総選挙まで132日（2026年9月14日）と迫るなか、これらの動議は実質的な政治的反対意見と明確な選挙前ポジショニングの両方を構成する。最も重要な争点：（1）提案238の環境許可当局（S、MP、V、Cがそれぞれ異なる理由で反対）；（2）刑事責任年齢を13歳に引き下げ（提案246、Sは14歳を受け入れるが13歳は拒否）；（3）風力エネルギーの市町村拒否権改革（提案239、野党が広く一段と迅速な行動を要求）。
@@ -1712,8 +1704,6 @@ graph LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_ko.md -->
-
-**저자**: 제임스 페서 쇠를링 | **날짜**: 2026-05-04 | **분류**: 공개 | **신뢰도**: 높음 [B2]
 
 ### BLUF
 
@@ -1892,8 +1882,6 @@ graph LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_zh.md -->
-
-**作者**: 詹姆斯·佩瑟·索林 | **日期**: 2026-05-04 | **分类**: 公开 | **可信度**: 高 [B2]
 
 ### BLUF
 

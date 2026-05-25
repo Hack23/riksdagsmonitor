@@ -3,7 +3,7 @@ date: 2026-04-24
 subfolder: propositions
 slug: 2026-04-24-propositions
 source_folder: analysis/daily/2026-04-24/propositions
-generated_at: 2026-05-24T22:15:15.481Z
+generated_at: 2026-05-25T09:05:40.613Z
 language: en
 layout: article
 ---
@@ -1564,8 +1564,6 @@ All `dok_id` are resolvable at `https://data.riksdagen.se/dokument/{dok_id}.html
 <!-- dir: rtl -->
 # موجز تنفيذي — اقتراحات حكومية 2026-04-24 (دفعة 2026-04-23)
 
-**التصنيف**: معلومات مفتوحة عامة (OSINT) · **مستوى الثقة**: MEDIUM · **المؤلف**: James Pether Sörling
-
 ### 🎯 الخلاصة التنفيذية
 
 في 23 أبريل 2026، قدّمت حكومة كريسترسون (التحالف الرباعي Tidö — M وKD وL، مع SD كشريك داعم) **4 وثائق برلمانية** يهيمن عليها أولويتان استراتيجيتان: (1) **تنظيم مالي مدفوع من الاتحاد الأوروبي** عبر Prop. 2025/26:253 (حزمة الاتحاد الأوروبي المصرفية، نقل CRR3/CRD6 — Admiralty B2)، و(2) **التفعيل الجنائي لبرنامج Tidö** عبر Prop. 2025/26:252 (تقييد المزايا الاجتماعية للمحتجزين على ذمة المحاكمة). تُكمل الدفعةَ مذكرةُ تقييم إدارة الدين العام (Skr. 2025/26:104) ومشروع قانون إنفاذ أحكام جهاز التسجيل في المركبات (Prop. 2025/26:256). الوثيقة الأثقل وزناً هي Prop. 2025/26:253 (DIW **3.8**) — مسألة نظامية تُعيد تشكيل متطلبات رأس المال للبنوك الأربعة السويدية ذات الأهمية النظامية قبيل قرار الفائدة القادم لـ Riksbank.
@@ -1625,8 +1623,6 @@ flowchart LR
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/executive-brief_da.md -->
-
-**Klassifikation**: Offentlig OSINT · **Konfidens**: MEDIUM · **Forfatter**: James Pether Sörling
 
 ### 🎯 Konklusion
 
@@ -1750,8 +1746,6 @@ flowchart LR
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/executive-brief_es.md -->
 
-**Clasificación**: OSINT público · **Confianza**: MEDIUM · **Autor**: James Pether Sörling
-
 ### 🎯 Conclusión
 
 El 23 de abril de 2026 el gobierno Kristersson (coalición Tidö — M, KD, L + SD como partido de apoyo) presentó **4 documentos parlamentarios** dominados por dos prioridades estratégicas: (1) **regulación financiera impulsada por la UE** con la Prop. 2025/26:253 (paquete bancario europeo, transposición de CRR3/CRD6 — Admiralty B2) y (2) **operacionalización penal del programa Tidö** con la Prop. 2025/26:252 (restricciones de prestaciones para personas en prisión preventiva). Una comunicación de evaluación sobre gestión de la deuda pública (Skr. 2025/26:104) y un proyecto de ley sobre tacógrafos (Prop. 2025/26:256) completan el lote. El documento de mayor peso es la Prop. 2025/26:253 (DIW **3,8**) — una medida sistémica que remodela los requisitos de capital de los cuatro bancos suecos de importancia sistémica antes de la próxima decisión de tipos de la Riksbank.
@@ -1811,8 +1805,6 @@ flowchart LR
 
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/executive-brief_fi.md -->
-
-**Luokitus**: Julkinen OSINT · **Luottamustaso**: MEDIUM · **Tekijä**: James Pether Sörling
 
 ### 🎯 Tiivistelmä
 
@@ -1936,8 +1928,6 @@ flowchart LR
 
 <!-- dir: rtl -->
 # סיכום מנהלים — הצעות חוק 2026-04-24 (אצווה 2026-04-23)
-
-**סיווג**: OSINT ציבורי · **רמת אמון**: MEDIUM · **מחבר**: James Pether Sörling
 
 ### 🎯 מסקנה עיקרית
 
@@ -2072,8 +2062,6 @@ flowchart LR
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/executive-brief_ko.md -->
 
-**분류**: 공개 OSINT · **신뢰도**: MEDIUM · **저자**: James Pether Sörling
-
 ### 🎯 핵심 결론
 
 2026년 4월 23일, 크리스테르손 정부(Tidö 연립 — M, KD, L에 SD 신임지지)는 두 가지 전략적 우선순위를 중심으로 한 **4건의 의회 문서**를 제출했습니다: (1) Prop. 2025/26:253을 통한 **EU 주도 금융 규제** (EU 은행 패키지, CRR3/CRD6 전환 — Admiralty B2), (2) Prop. 2025/26:252를 통한 **Tidö 형사정책 운영화** (미결 구금자에 대한 급여 제한). 국채 관리 평가 스크리벨세(Skr. 2025/26:104)와 운행기록계 집행 법안(Prop. 2025/26:256)이 배치를 완성합니다. 가장 비중이 높은 문서는 Prop. 2025/26:253 (DIW **3.8**) — 스웨덴의 4대 시스템적 중요 은행에 대한 자본 요건을 재편하는 구조적 안건으로 Riksbank의 다음 금리 결정을 앞두고 있습니다.
@@ -2144,8 +2132,6 @@ flowchart LR
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/executive-brief_nl.md -->
-
-**Classificatie**: Openbaar OSINT · **Betrouwbaarheid**: MEDIUM · **Auteur**: James Pether Sörling
 
 ### 🎯 Conclusie
 
@@ -2268,8 +2254,6 @@ flowchart LR
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/executive-brief_sv.md -->
-
-**Klassificering**: Offentlig OSINT · **Konfidensgrad**: MEDIUM · **Författare**: James Pether Sörling
 
 ### 🎯 Slutsats
 

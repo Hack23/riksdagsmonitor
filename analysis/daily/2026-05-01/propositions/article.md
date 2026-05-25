@@ -3,7 +3,7 @@ date: 2026-05-01
 subfolder: propositions
 slug: 2026-05-01-propositions
 source_folder: analysis/daily/2026-05-01/propositions
-generated_at: 2026-05-24T22:15:16.027Z
+generated_at: 2026-05-25T09:05:41.133Z
 language: en
 layout: article
 ---
@@ -1958,11 +1958,6 @@ PIR-1 (Vårpropositionen agency capacity) carried forward from 2026-04-30 cycle.
 
 ‏# أكثر إصلاح جذري للهجرة في السويد منذ عقود: تيدوألليانسن يقدم حزمة تشريعية من أربعة قوانين للجوء
 
-**المؤلف**: James Pether Sörling  
-**التاريخ**: 2026-05-01  
-**التصنيف**: عام  
-**الثقة**: عالية [B2] — مصادر أولية متعددة (8 مقترحات حكومية، MCP riksdag-regering)
-
 ### الملخص التنفيذي
 
 قدّمت حكومة تيدوألليانسن أربعة مقترحات متزامنة في 30 أبريل 2026 تشكّل معاً أشمل تقييد لحقوق اللجوء والهجرة في السويد منذ قانون الأجانب المؤقت لعام 2016: الإلغاء الكامل لتصاريح الإقامة الدائمة (HD03262)، وتوسيع صلاحيات الترحيل القسري (HD03263)، واشتراطات سلوكية أكثر صرامة لجميع حاملي التصاريح (HD03264)، وتشديد الاحتجاز الإداري والمراقبة (HD03265). أُودعت الحزمة قبل ستة أشهر من انتخابات سبتمبر 2026، وتُشير إلى تصعيد انتخابي مقصود في ملف الهجرة، راهناً على عزل معارضة حزب S وحزب MP بينما يتوطد حزب SD وكتلة الائتلاف. كما قدّمت الحكومة مقترحات حول التعاون العسكري العملياتي (HD03254)، والرعاية المتكاملة لإدمان المخدرات (HD03251)، والشفافية السياسية (HD03258)، وأخلاقيات البحث العلمي (HD03260).
@@ -2012,11 +2007,6 @@ graph TD
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_da.md -->
-
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-05-01  
-**Klassificering**: OFFENTLIG  
-**Tillid**: HØJ [B2] — Flere primærkilder (8 regeringspropositioner, riksdag-regering MCP)
 
 ### BLUF
 
@@ -2068,11 +2058,6 @@ graph TD
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling  
-**Datum**: 2026-05-01  
-**Klassifizierung**: ÖFFENTLICH  
-**Vertrauen**: HOCH [B2] — Mehrere Primärquellen (8 Regierungspropositioner, riksdag-regering MCP)
-
 ### BLUF
 
 Die Tidöalliansen-Regierung reichte am 30. April 2026 vier gleichzeitige Propositioner ein, die zusammen Schwedens weitreichendste Einschränkung von Asyl- und Migrationsrechten seit dem befristeten Ausländergesetz von 2016 darstellen: vollständige Abschaffung unbefristeter Aufenthaltserlaubnisse (HD03262), Ausweitung von Abschiebungsbefugnissen (HD03263), strengere Charaktertests für alle Erlaubnisinhaber (HD03264) und Verschärfung der administrativen Abschiebehaft und Überwachung (HD03265). Das sechs Monate vor der Wahl im September 2026 eingereichte Paket signalisiert eine bewusste wahlkampfstrategische Eskalation beim Thema Einwanderung und setzt darauf, dass der Widerstand von S und MP isoliert wird, während SD und der Koalitionsblock sich konsolidieren. Die Regierung reichte auch Propositioner zum operativen militärischen Zusammenwirken (HD03254), zur integrierten Suchtbehandlung (HD03251), zur politischen Transparenz (HD03258) und zur Forschungsethik (HD03260) ein.
@@ -2122,11 +2107,6 @@ graph TD
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_es.md -->
-
-**Autor**: James Pether Sörling  
-**Fecha**: 2026-05-01  
-**Clasificación**: PÚBLICO  
-**Confianza**: ALTA [B2] — Múltiples fuentes primarias (8 proposiciones gubernamentales, MCP riksdag-regering)
 
 ### BLUF
 
@@ -2232,10 +2212,6 @@ graph TD
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_fr.md -->
-
-**Auteur** : James Pether Sörling  
-
-**Confiance** : ÉLEVÉE [B2] — Plusieurs sources primaires (8 propositions gouvernementales, MCP riksdag-regering)
 
 ### BLUF
 
@@ -2399,11 +2375,6 @@ graph TD
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_ko.md -->
 
-**저자**: James Pether Sörling  
-**날짜**: 2026-05-01  
-**분류**: 공개  
-**신뢰도**: 높음 [B2] — 복수 1차 출처 (정부 제안 8건, riksdag-regering MCP)
-
 ### BLUF
 
 티데알리안센 정부는 2026년 4월 30일 4건의 동시 제안을 제출했으며, 이는 2016년 임시 외국인법 이후 스웨덴에서 가장 광범위한 망명 및 이민권 제한을 구성한다: 영주권 허가의 완전 폐지(HD03262), 강제 추방 권한 확대(HD03263), 모든 허가증 소지자에 대한 더 엄격한 품성 검사(HD03264), 행정적 구금 및 감시 강화(HD03265). 2026년 9월 선거 6개월 전에 제출된 이 패키지는 이민 문제에 대한 의도적인 선거 전략적 에스컬레이션을 의미하며, SD와 연립 블록이 공고화되는 동안 S와 MP의 반대가 고립될 것이라는 판단이다. 정부는 또한 작전적 군사 협력(HD03254), 통합 약물 남용 치료(HD03251), 정치적 투명성(HD03258), 연구 윤리(HD03260)에 관한 제안도 제출했다.
@@ -2453,11 +2424,6 @@ graph TD
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling  
-**Datum**: 2026-05-01  
-**Classificatie**: OPENBAAR  
-**Vertrouwen**: HOOG [B2] — Meerdere primaire bronnen (8 regeringsproposities, riksdag-regering MCP)
 
 ### BLUF
 
@@ -2509,11 +2475,6 @@ graph TD
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_no.md -->
 
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-05-01  
-**Klassifisering**: OFFENTLIG  
-**Tillid**: HØY [B2] — Flere primærkilder (8 regjeringsproposisjoner, riksdag-regering MCP)
-
 ### BLUF
 
 Tidöalliansen-regjeringen sendte inn fire samtidige proposisjoner den 30. april 2026 som til sammen utgjør Sveriges mest vidtrekkende innskrenkning av asyl- og migrasjonsrettigheter siden den midlertidige utlendingsloven fra 2016: full avskaffelse av permanent oppholdstillatelse (HD03262), utvidelse av makter for tvangsutsendelse (HD03263), strengere vandelstest for alle tillatelsesinnehavere (HD03264) og innstramming av administrativ forvaring og overvåking (HD03265). Pakken, som ble sendt inn seks måneder før valget i september 2026, signaliserer en bevisst valgstrategisk eskalering på innvandringsfeltet og satser på at S's og MP's motstand vil bli isolert mens SD og koalisjonsblokken konsolideres. Regjeringen sendte også inn proposisjoner om operativt militært samarbeid (HD03254), integrert rusbehandling (HD03251), politisk åpenhet (HD03258) og forskningsetikk (HD03260).
@@ -2563,11 +2524,6 @@ graph TD
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_sv.md -->
-
-**Författare**: James Pether Sörling  
-**Datum**: 2026-05-01  
-**Klassificering**: OFFENTLIG  
-**Konfidens**: HÖG [B2] — Flera primärkällor (8 regeringspropositioner, riksdag-regering MCP)
 
 ### BLUF
 

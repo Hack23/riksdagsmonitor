@@ -3,7 +3,7 @@ date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-05-24T22:15:15.416Z
+generated_at: 2026-05-25T09:05:40.545Z
 language: en
 layout: article
 ---
@@ -1839,11 +1839,6 @@ graph LR
 <!-- lang: ar -->
 # ملخص تنفيذي — اقتراحات المعارضة 2026-04-23
 
-**التصنيف**: المجال العام — السجلات البرلمانية  
-**المؤلف**: James Pether Sörling  
-**التاريخ**: 2026-04-23  
-**الثقة**: عالية [B2]
-
 ---
 
 ### 🎯 الخلاصة التنفيذية
@@ -1896,8 +1891,6 @@ quadrantChart
     HD024098 MP-Budget: [0.70, 0.78]
 ```
 
-*الثقة: عالية بشكل عام [B2]؛ درجات الوثيقة الفردية تعكس بيانات البيان + النص الكامل حيث متاح.*
-
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 
 ## Executive Brief Da
@@ -1905,11 +1898,6 @@ quadrantChart
 
 <!-- lang: da -->
 # Eksekutiv sammenfatning — Oppositionsforslag 2026-04-23
-
-**Klassifikation**: OFFENTLIGT DOMÆNE — Parlamentariske optegnelser  
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-04-23  
-**Tillid**: HØJ [B2]
 
 ---
 
@@ -1962,8 +1950,6 @@ quadrantChart
     HD024089 C-Reception: [0.72, 0.70]
     HD024098 MP-Budget: [0.70, 0.78]
 ```
-
-*Tillid: HØJ overordnet [B2]; individuelle dokumentscorer afspejler manifestdata + fuld tekst, hvor tilgængelig.*
 
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 
@@ -2040,11 +2026,6 @@ quadrantChart
 <!-- lang: es -->
 # Resumen ejecutivo — Mociones de la oposición 2026-04-23
 
-**Clasificación**: DOMINIO PÚBLICO — Registros parlamentarios  
-**Autor**: James Pether Sörling  
-**Fecha**: 2026-04-23  
-**Confianza**: ALTA [B2]
-
 ---
 
 ### 🎯 BLUF
@@ -2096,8 +2077,6 @@ quadrantChart
     HD024089 C-Reception: [0.72, 0.70]
     HD024098 MP-Budget: [0.70, 0.78]
 ```
-
-*Confianza: ALTA general [B2]; las puntuaciones individuales de los documentos reflejan datos del manifiesto + texto completo donde esté disponible.*
 
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 
@@ -2164,8 +2143,6 @@ quadrantChart
     HD024098 MP-Budget: [0.70, 0.78]
 ```
 
-*Luottamus: KORKEA kokonaisuutena [B2]; yksittäiset asiakirjapisteet heijastavat manifesti-dataa + koko tekstiä saatavilla ollessa.*
-
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 
 ## Executive Brief Fr
@@ -2173,10 +2150,6 @@ quadrantChart
 
 <!-- lang: fr -->
 # Note de synthèse — Motions de l'opposition 2026-04-23
-
-**Auteur** : James Pether Sörling  
-
-**Confiance** : ÉLEVÉE [B2]
 
 ---
 
@@ -2229,8 +2202,6 @@ quadrantChart
     HD024089 C-Reception: [0.72, 0.70]
     HD024098 MP-Budget: [0.70, 0.78]
 ```
-
-*Confiance : ÉLEVÉE globale [B2] ; les scores individuels des documents reflètent les données du manifeste + le texte complet lorsque disponible.*
 
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 
@@ -2308,11 +2279,6 @@ quadrantChart
 <!-- lang: ja -->
 # エグゼクティブブリーフ — 野党動議 2026-04-23
 
-**分類**: 公開情報 — 議会記録  
-**著者**: James Pether Sörling  
-**日付**: 2026-04-23  
-**信頼度**: 高 [B2]
-
 ---
 
 ### 🎯 BLUF
@@ -2375,11 +2341,6 @@ quadrantChart
 <!-- lang: ko -->
 # 집행 브리핑 — 야당 동의안 2026-04-23
 
-**분류**: 공개 영역 — 의회 기록  
-**저자**: James Pether Sörling  
-**날짜**: 2026-04-23  
-**신뢰도**: 높음 [B2]
-
 ---
 
 ### 🎯 BLUF
@@ -2431,8 +2392,6 @@ quadrantChart
     HD024089 C-Reception: [0.72, 0.70]
     HD024098 MP-Budget: [0.70, 0.78]
 ```
-
-*신뢰도: 전반적으로 높음 [B2]; 개별 문서 점수는 매니페스트 데이터 + 전문(가능한 경우)을 반영.*
 
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 
@@ -2509,11 +2468,6 @@ quadrantChart
 <!-- lang: no -->
 # Beslutningsnotat — Opposisjonsforslag 2026-04-23
 
-**Klassifisering**: OFFENTLIG DOMENE — Parlamentariske optegnelser  
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-04-23  
-**Tillit**: HØY [B2]
-
 ---
 
 ### 🎯 BLUF
@@ -2565,8 +2519,6 @@ quadrantChart
     HD024089 C-Reception: [0.72, 0.70]
     HD024098 MP-Budget: [0.70, 0.78]
 ```
-
-*Tillit: HØY overordnet [B2]; individuelle dokumentscorer gjenspeiler manifestdata + full tekst der tilgjengelig.*
 
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 

@@ -3,7 +3,7 @@ date: 2026-05-11
 subfolder: propositions
 slug: 2026-05-11-propositions
 source_folder: analysis/daily/2026-05-11/propositions
-generated_at: 2026-05-24T22:15:16.700Z
+generated_at: 2026-05-25T09:05:41.802Z
 language: en
 layout: article
 ---
@@ -1825,8 +1825,6 @@ HD03250 (statlig e-legitimation) skapar ny digital identitetsinfrastruktur med p
 | MP | Nej (starkt — Barnkonventionen) | Sannolikt Ja | Sannolikt Ja |
 | C | Troligen Ja (säkerhet) med reservationer | Ja | Ja |
 
-*Källa: Partipositioner baserade på känd politisk profil; ej bekräftade officiella partiställningstaganden.*
-
 | Claim | Evidence | Retrieved at | Confidence |
 |-------|----------|--------------|------------|
 | HD03267 → JuU | dok_id HD03267, organ=Justitiedepartementet, utskott=JuU | 2026-05-11 | HIGH |
@@ -1936,8 +1934,6 @@ graph TD
 | Säkerhetshotutvisning | § X säkerhet och migration | HD03267 |
 | Digital identitet | § Y digital transformation | HD03250 |
 | Folkbokföringsprecision | § Z skatteförvaltning | HD03261 |
-
-*Källa: Känd Tidöavtalsstruktur; specifika § ej verifierade i denna körning.*
 
 | Claim | Evidence | Retrieved at | Confidence |
 |-------|----------|--------------|------------|

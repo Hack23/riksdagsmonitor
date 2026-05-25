@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: month-ahead
 slug: 2026-04-29-month-ahead
 source_folder: analysis/daily/2026-04-29/month-ahead
-generated_at: 2026-05-24T22:15:15.828Z
+generated_at: 2026-05-25T09:05:40.952Z
 language: en
 layout: article
 ---
@@ -1731,8 +1731,6 @@ graph TD
     style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
 ```
 
-**Konfidens**: HØJ [B2] — 3 adskilte bevisllinjer: riksdagen.se primærkilder, analyse fra tidligere cyklus, IMF makroøkonomisk baseline.
-
 <!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
 
 ## Executive Brief De
@@ -2318,8 +2316,6 @@ graph TD
     style C fill:#e63946,stroke:#e63946,color:#fff
     style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
 ```
-
-**Konfidens**: HØY [B2] — 3 distinkte bevislinjer: riksdagen.se primærkilder, analyse fra forrige syklus, IMF makroøkonomisk basislinje.
 
 <!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
 

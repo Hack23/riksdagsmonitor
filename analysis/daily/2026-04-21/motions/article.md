@@ -3,7 +3,7 @@ date: 2026-04-21
 subfolder: motions
 slug: 2026-04-21-motions
 source_folder: analysis/daily/2026-04-21/motions
-generated_at: 2026-05-24T22:15:15.323Z
+generated_at: 2026-05-25T09:05:40.458Z
 language: en
 layout: article
 ---
@@ -3626,8 +3626,6 @@ All documents sourced from official riksdag-regering-mcp API.
 
 ---
 
-**التصنيف**: عام · **المراجعة التالية**: 2026-04-27
-
 <!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
 
 ## Executive Brief Da
@@ -3733,8 +3731,6 @@ Mellem 2026-04-13 og 2026-04-17 indgav Sveriges fire store oppositionspartier (S
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/README.md) — Fuldt dossierfilindeks
 
 ---
-
-**Klassificering**: Offentlig · **Næste gennemgang**: 2026-04-27
 
 <!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
 
@@ -3949,8 +3945,6 @@ Entre el 2026-04-13 y el 2026-04-17, los cuatro grandes partidos de la oposició
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/README.md) — Índice completo de archivos del dossier
 
 ---
-
-**Clasificación**: Público · **Próxima revisión**: 2026-04-27
 
 <!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
 
@@ -4275,8 +4269,6 @@ Entre le 2026-04-13 et le 2026-04-17, les quatre grands partis d'opposition sué
 
 ---
 
-**סיווג**: ציבורי · **סקירה הבאה**: 2026-04-27
-
 <!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
 
 ## Executive Brief Ja
@@ -4382,8 +4374,6 @@ Entre le 2026-04-13 et le 2026-04-17, les quatre grands partis d'opposition sué
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/README.md) ——完全なドシエファイルインデックス
 
 ---
-
-**分類**: 公開 · **次回レビュー**: 2026-04-27
 
 <!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
 
@@ -4491,8 +4481,6 @@ Entre le 2026-04-13 et le 2026-04-17, les quatre grands partis d'opposition sué
 
 ---
 
-**분류**: 공개 · **다음 검토**: 2026-04-27
-
 <!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
 
 ## Executive Brief Nl
@@ -4598,8 +4586,6 @@ Tussen 2026-04-13 en 2026-04-17 dienden Zweden's vier grote oppositiepartijen (S
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/README.md) — Volledig dossierbestandsoverzicht
 
 ---
-
-**Classificatie**: Openbaar · **Volgende herziening**: 2026-04-27
 
 <!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
 
@@ -4707,8 +4693,6 @@ Mellom 2026-04-13 og 2026-04-17 leverte Sveriges fire store opposisjonspartier (
 
 ---
 
-**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-27
-
 <!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
 
 ## Executive Brief Sv
@@ -4814,8 +4798,6 @@ Mellan 2026-04-13 och 2026-04-17 lämnade Sveriges fyra stora oppositionspartier
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/motions/README.md) — Fullständigt dossierfilindex
 
 ---
-
-**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-27
 
 <!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
 

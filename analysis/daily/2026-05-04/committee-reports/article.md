@@ -3,7 +3,7 @@ date: 2026-05-04
 subfolder: committee-reports
 slug: 2026-05-04-committee-reports
 source_folder: analysis/daily/2026-05-04/committee-reports
-generated_at: 2026-05-24T22:15:16.107Z
+generated_at: 2026-05-25T09:05:41.215Z
 language: en
 layout: article
 ---
@@ -1962,8 +1962,6 @@ Priority Intelligence Requirements for this cycle:
 
 ### تقييم الثقة
 
-**الثقة: عالية** — جميع التقارير الثلاثة المنشورة تحتوي على النص الكامل ومواقف اللجان بوضوح.
-
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
@@ -2052,8 +2050,6 @@ Riksdagens udvalgsfase i riksmötet 2025/26 leverer to politisk jordrystende bet
 
 ### Tillidsgrad
 
-**Tillid: HØJ** — Alle tre publicerede betænkninger indeholder fuldtekst og klare udvalgsstillinger.
-
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
@@ -2139,8 +2135,6 @@ Die Ausschussphase des Riksdag im Riksmöte 2025/26 liefert zwei politisch ersch
 **Überwachen**: Wenn NU19's Kernkraftlizenzierungsgesetz vor Juli 2026 eine Verfassungsbeschwerde oder Verwaltungsgerichtsvorlage erzeugt, riskiert das gesamte Kernkrafterweiterungsprogramm eine Verzögerung.
 
 ### Vertrauensbewertung
-
-**Vertrauen: HOCH** — Alle drei veröffentlichten Betänkanden enthalten Volltext und klare Ausschusspositionen.
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
@@ -2228,8 +2222,6 @@ La fase en comisión del Riksdag en el riksmöte 2025/26 entrega dos betänkande
 
 ### Evaluación de confianza
 
-**Confianza: ALTA** — Los tres betänkanden publicados contienen texto completo y posiciones claras de la comisión.
-
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
@@ -2316,8 +2308,6 @@ Riksdagenin valiokuntavaihe riksmötet 2025/26 -istuntokaudella tuottaa kaksi po
 
 ### Luottamusarvio
 
-**Luottamus: KORKEA** — Kaikki kolme julkaistua mietintöä sisältävät koko tekstin ja selkeät valiokunnan kannanotot.
-
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
@@ -2403,8 +2393,6 @@ La phase en commission du Riksdag lors du riksmöte 2025/26 livre deux rapports 
 **Surveiller** : Si la loi de licence nucléaire NU19 génère une plainte constitutionnelle ou un renvoi au tribunal administratif avant juillet 2026, l'ensemble du programme d'expansion nucléaire risque d'être retardé.
 
 ### Évaluation de la confiance
-
-**Confiance : ÉLEVÉE** — Les trois rapports publiés contiennent le texte intégral et des positions claires de la commission.
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
@@ -2586,8 +2574,6 @@ Riksdag の委員会フェーズ（riksmötet 2025/26）は、2026年4月最終�
 
 ### 信頼性評価
 
-**信頼度: 高** — 公表された3本すべての betänkanden が全文と明確な委員会見解を含む。
-
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
@@ -2673,8 +2659,6 @@ Riksdag의 위원회 단계(riksmötet 2025/26)가 2026년 4월 마지막 주에
 **모니터링**: NU19 원자력 인허가법이 2026년 7월 전에 헌법 소원이나 행정법원 회부를 생성한다면, 전체 원자력 확장 프로그램은 지연될 위험이 있다.
 
 ### 신뢰도 평가
-
-**신뢰도: 높음** — 발행된 세 개의 betänkanden 모두 전체 텍스트와 명확한 위원회 입장을 포함.
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
@@ -2762,8 +2746,6 @@ De commissiefase van de Riksdag in riksmöte 2025/26 levert twee politiek aardbe
 
 ### Vertrouwensbeoordeling
 
-**Vertrouwen: HOOG** — Alle drie gepubliceerde betänkanden bevatten volledige tekst en duidelijke commissiestandpunten.
-
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
 quadrantChart
@@ -2849,8 +2831,6 @@ Riksdagens komitéfase i riksmøtet 2025/26 leverer to politisk jordskjelvende b
 **Overvåk**: Hvis NU19's atomlisensieringslov genererer konstitusjonell klage eller forvaltningsdomstolhenvisning før juli 2026, risikerer hele kjernekraftutvidelsesprogrammet forsinkelse.
 
 ### Tillitsvurdering
-
-**Tillit: HØY** — Alle tre publiserte betenkning inneholder fulltekst og tydelige komitéposisjoner.
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%

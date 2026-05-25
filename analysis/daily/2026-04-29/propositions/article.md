@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: propositions
 slug: 2026-04-29-propositions
 source_folder: analysis/daily/2026-04-29/propositions
-generated_at: 2026-05-24T22:15:15.864Z
+generated_at: 2026-05-25T09:05:40.994Z
 language: en
 layout: article
 ---
@@ -1178,8 +1178,6 @@ timeline
 | Bruttoskuld/BNP 2026 (FM Apr-2026) | 34,3 % | 49,8 % | 37,2 % | 28,9 % |
 | Finansiellt utrymme för infrasatsning | GOD | BEGRÄNSAT | GOD | GOD |
 
-Källa: IMF WEO Apr-2026, NGDP_RPCH; FM Apr-2026, GGXWDG_NGDP.
-
 ### HD03247 — Internationell jämförelse (OTC-läkemedel)
 
 | Jurisdiction | OTC-rådgivningssystem | Modell |
@@ -1665,8 +1663,6 @@ Data sourced from 2026-04-28 via lookback fallback — check freshness indicator
 <!-- dir: rtl -->
 # الاستثمار في البنية التحتية، وسلامة الأدوية، والتحول الرقمي البلدي: ثلاثة مشاريع قوانين في 28 أبريل 2026
 
-**المؤلف**: James Pether Sörling · **التاريخ**: 2026-04-29 · **التصنيف**: PUBLIC · **مستوى الثقة**: MEDIUM-HIGH
-
 ### 🎯 BLUF
 
 قدّمت حكومة كريسترسون في 28 أبريل 2026 ثلاثة مشاريع قوانين ذات أوزان سياسية متباينة: يُخصّص الخطة الوطنية لبنية النقل التحتية 2026–2037 (Skr. 2025/26:259, HD03259) مبلغ 875 مليار كرونة سويدية للاستثمار في الطرق والسكك الحديدية والملاحة البحرية — وهي من أضخم مخصصات البنية التحتية في التاريخ السويدي الحديث. وبالتوازي مع ذلك، تُنظَّم اشتراطات الإرشاد عند شراء الأدوية المتاحة دون وصفة طبية (Prop. 2025/26:247, HD03247)، فضلاً عن أنظمة تقنية المعلومات لدى الجهات البلدية لمساحة الأراضي (Prop. 2025/26:257, HD03257). ويعكس جدول الأعمال بمجمله نمطاً من الحوكمة والرقابة: تُجمَع مبادرة توحيد البنية التحتية لتقنية المعلومات البلدية وتعزيز سلامة الأدوية مع الإطار الاستراتيجي للتنقل المستدام.
@@ -1742,8 +1738,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_da.md -->
 
-**Forfatter**: James Pether Sörling · **Dato**: 2026-04-29 · **Klassifikation**: PUBLIC · **Konfidensgrad**: MEDIUM-HIGH
-
 ### 🎯 BLUF
 
 Regeringen Kristersson fremlagde den 28. april 2026 tre lovforslag med forskellige politiske tyngder: den nationale transportinfrastrukturplan 2026–2037 (Skr. 2025/26:259, HD03259) afsætter 875 milliarder svenske kroner til investeringer i veje, jernbaner og søfart — en af de mest omfattende infrastrukturbevillinger i moderne svensk historie. Parallelt reguleres krav om rådgivning ved køb af håndkøbslægemidler (Prop. 2025/26:247, HD03247) og it-systemer hos kommunale landinspektørmyndigheder (Prop. 2025/26:257, HD03257). Samlet demonstrerer dagsordenen et styre- og kontrolmønster: standardisering af kommunal IT-infrastruktur og styrket lægemiddelsikkerhed kombineres med den strategiske ramme for bæredygtig mobilitet.
@@ -1792,8 +1786,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling · **Datum**: 2026-04-29 · **Einstufung**: PUBLIC · **Konfidenzniveau**: MEDIUM-HIGH
-
 ### 🎯 BLUF
 
 Die Regierung Kristersson stellte am 28. April 2026 drei Gesetzentwürfe mit unterschiedlichen politischen Gewichten vor: Der nationale Transportinfrastrukturplan 2026–2037 (Skr. 2025/26:259, HD03259) stellt 875 Milliarden schwedische Kronen für Investitionen in Straßen, Eisenbahnen und Schifffahrt bereit — eine der umfangreichsten Infrastrukturbereitstellungen in der modernen schwedischen Geschichte. Parallel dazu werden die Beratungspflichten bei rezeptfreien Arzneimitteln (Prop. 2025/26:247, HD03247) und IT-Systeme kommunaler Vermessungsbehörden (Prop. 2025/26:257, HD03257) geregelt. Insgesamt zeigt die Tagesordnung ein Steuerungs- und Kontrollmuster: Die Standardisierung kommunaler IT-Infrastruktur und gestärkte Arzneimittelsicherheit werden mit dem strategischen Rahmen für nachhaltige Mobilität kombiniert.
@@ -1841,8 +1833,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_es.md -->
-
-**Autor**: James Pether Sörling · **Fecha**: 2026-04-29 · **Clasificación**: PUBLIC · **Nivel de confianza**: MEDIUM-HIGH
 
 ### 🎯 BLUF
 
@@ -1919,8 +1909,6 @@ FMI WEO abr-2026 para Suecia:
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_fi.md -->
 
-**Tekijä**: James Pether Sörling · **Päivämäärä**: 2026-04-29 · **Luokittelu**: PUBLIC · **Luottamustaso**: MEDIUM-HIGH
-
 ### 🎯 BLUF
 
 Kristersson-hallitus esitteli 28. huhtikuuta 2026 kolme lakiesitystä eri poliittisin painoarvoin: kansallinen liikenneinfrastruktuurisuunnitelma 2026–2037 (Skr. 2025/26:259, HD03259) varaa 875 miljardia Ruotsin kruunua teiden, rautateiden ja merenkulun investointeihin — yksi nykyaikaisen Ruotsin historian laajimmista infrastruktuurimäärärahoista. Samaan aikaan säännellään apteekissa myytävien lääkkeiden neuvontavaatimuksia (Prop. 2025/26:247, HD03247) ja kunnallisten maanmittausviranomaisten tietojärjestelmiä (Prop. 2025/26:257, HD03257). Kokonaisuudessaan esityslista osoittaa ohjaus- ja valvontamallin: kunnallisen IT-infrastruktuurin standardisointi ja lääketurvallisuuden vahvistaminen yhdistetään kestävän liikkumisen strategiseen viitekehykseen.
@@ -1968,8 +1956,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_fr.md -->
-
-**Auteur** : James Pether Sörling · **Date** : 2026-04-29 · **Classification** : PUBLIC · **Niveau de confiance** : MEDIUM-HIGH
 
 ### 🎯 BLUF
 
@@ -2021,8 +2007,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 
 <!-- dir: rtl -->
 # השקעה בתשתיות, בטיחות תרופות ודיגיטליזציה עירונית: שלושה הצעות חוק ב-28 באפריל 2026
-
-**מחבר**: James Pether Sörling · **תאריך**: 2026-04-29 · **סיווג**: PUBLIC · **רמת ביטחון**: MEDIUM-HIGH
 
 ### 🎯 BLUF
 
@@ -2149,8 +2133,6 @@ IMF WEO 2026年4月 スウェーデン：
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ko.md -->
 
-**저자**: James Pether Sörling · **날짜**: 2026-04-29 · **분류**: PUBLIC · **신뢰도**: MEDIUM-HIGH
-
 ### 🎯 BLUF
 
 크리스테르손 정부는 2026년 4월 28일 각기 다른 정치적 비중을 지닌 세 가지 법안을 발의하였습니다. 국가 교통인프라 계획 2026–2037(Skr. 2025/26:259, HD03259)은 도로·철도·해운 투자에 8,750억 스웨덴 크로나를 배정하며, 이는 스웨덴 현대사에서 가장 방대한 인프라 예산 중 하나입니다. 아울러 일반의약품 구매 시 약학적 상담 의무(Prop. 2025/26:247, HD03247)와 지자체 측량기관의 IT 시스템(Prop. 2025/26:257, HD03257)도 함께 규제됩니다. 전체적으로 볼 때, 이번 의제는 거버넌스 및 통제 패턴을 드러냅니다. 지자체 IT 인프라 표준화와 의약품 안전 강화가 지속 가능한 이동성을 위한 전략적 틀과 결합됩니다.
@@ -2198,8 +2180,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling · **Datum**: 2026-04-29 · **Classificatie**: PUBLIC · **Betrouwbaarheidsniveau**: MEDIUM-HIGH
 
 ### 🎯 BLUF
 
@@ -2249,8 +2229,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_no.md -->
 
-**Forfatter**: James Pether Sörling · **Dato**: 2026-04-29 · **Klassifisering**: PUBLIC · **Konfidensnivå**: MEDIUM-HIGH
-
 ### 🎯 BLUF
 
 Regjeringen Kristersson la 28. april 2026 frem tre lovforslag med ulik politisk tyngde: den nasjonale transportinfrastrukturplanen 2026–2037 (Skr. 2025/26:259, HD03259) avsetter 875 milliarder svenske kroner til investeringer i veier, jernbaner og sjøfart — et av de mest omfattende infrastrukturbevilgningene i moderne svensk historie. Parallelt reguleres krav om farmaceutisk rådgivning ved kjøp av reseptfrie legemidler (Prop. 2025/26:247, HD03247) og it-systemer hos kommunale landmålerinstanser (Prop. 2025/26:257, HD03257). Samlet demonstrerer dagsordenen et styrings- og kontrollmønster: standardisering av kommunal IT-infrastruktur og styrket legemiddelsikkerhet kombineres med det strategiske rammeverket for bærekraftig mobilitet.
@@ -2298,8 +2276,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_sv.md -->
-
-**Författare**: James Pether Sörling · **Datum**: 2026-04-29 · **Klassificering**: PUBLIC · **Konfidensgrad**: MEDIUM-HIGH
 
 ### 🎯 BLUF
 

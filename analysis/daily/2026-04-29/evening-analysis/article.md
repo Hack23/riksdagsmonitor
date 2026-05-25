@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: evening-analysis
 slug: 2026-04-29-evening-analysis
 source_folder: analysis/daily/2026-04-29/evening-analysis
-generated_at: 2026-05-24T22:15:15.807Z
+generated_at: 2026-05-25T09:05:40.930Z
 language: en
 layout: article
 ---
@@ -1870,11 +1870,6 @@ Sibling analyses from 2026-04-29 ingested:
 
 # استخبارات المساء — 29 أبريل 2026: الديمقراطية تحت الضغط
 
-**المؤلف**: جيمس بيثر سورلينغ  
-**التاريخ**: 2026-04-29  
-**التصنيف**: عام — اللائحة العامة لحماية البيانات المادة 9(2)(ه،ز)  
-**الثقة**: عالية [B2]
-
 ---
 
 ### 🎯 الملخص التنفيذي
@@ -1926,11 +1921,6 @@ flowchart TD
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_da.md -->
-
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-04-29  
-**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
-**Tillid**: HØJ [B2]
 
 ---
 
@@ -2037,11 +2027,6 @@ flowchart TD
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_es.md -->
 
-**Autor**: James Pether Sörling  
-**Fecha**: 2026-04-29  
-**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e,g)  
-**Confianza**: ALTA [B2]
-
 ---
 
 ### 🎯 Resumen ejecutivo
@@ -2146,10 +2131,6 @@ flowchart TD
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_fr.md -->
-
-**Auteur** : James Pether Sörling  
-
-**Confiance** : ÉLEVÉE [B2]
 
 ---
 
@@ -2317,11 +2298,6 @@ flowchart TD
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_ko.md -->
 
-**저자**: James Pether Sörling  
-**날짜**: 2026-04-29  
-**분류**: 공개 — GDPR 9조(2)(e,g)  
-**신뢰도**: 높음 [B2]
-
 ---
 
 ### 🎯 요약
@@ -2372,11 +2348,6 @@ flowchart TD
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_nl.md -->
 
-**Auteur**: James Pether Sörling  
-**Datum**: 2026-04-29  
-**Classificatie**: OPENBAAR — AVG Art. 9(2)(e,g)  
-**Vertrouwen**: HOOG [B2]
-
 ---
 
 ### 🎯 Uitvoerende samenvatting
@@ -2426,11 +2397,6 @@ flowchart TD
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_no.md -->
-
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-04-29  
-**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
-**Konfidens**: HØY [B2]
 
 ---
 
@@ -2513,8 +2479,6 @@ Riksdagens session den 29 april 2026 levererade tre bekräftelsesignaler som kom
 ### Viktigaste framåtblickande signal
 
 **PIR-EA-01** (ÖPPEN): Kommer C:s NEJ om vapenlagen att kvarstå som en kampanjdifferentierande position, eller är det en engångsavvikelse? Bevaka C:s positioner i NU, JuU och partimanifest.
-
-**Konfidens**: MEDEL [B3] — enstaka datapunkt men konsistent med Annie Lööfs ompositioneringsstrategi sedan 2024.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27","gridColor": "#1a1e3d","secondaryColor": "#1a1e3d","tertiaryColor": "#1a1e3d"}}}%%

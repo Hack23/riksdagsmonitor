@@ -3,7 +3,7 @@ date: 2026-05-20
 subfolder: interpellations
 slug: 2026-05-20-interpellations
 source_folder: analysis/daily/2026-05-20/interpellations
-generated_at: 2026-05-24T22:15:17.139Z
+generated_at: 2026-05-25T09:05:42.229Z
 language: en
 layout: article
 ---
@@ -1194,11 +1194,6 @@ Het linksocialistische V-S-blok bouwt een systematisch documentair dossier op va
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/interpellations/executive-brief_no.md -->
-
-**For:** Sjefspolitiske analytikere, observatører av demokratisk ansvarlighet
-**Dato:** 2026-05-20
-**Klassifisering:** OFFENTLIG
-**Type:** Politisk etterretningsanalyse (AI-generert fra parlamentariske oppføringer)
 
 ---
 

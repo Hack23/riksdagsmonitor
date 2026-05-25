@@ -3,7 +3,7 @@ date: 2026-05-03
 subfolder: month-ahead
 slug: 2026-05-03-month-ahead
 source_folder: analysis/daily/2026-05-03/month-ahead
-generated_at: 2026-05-24T22:15:16.083Z
+generated_at: 2026-05-25T09:05:41.185Z
 language: en
 layout: article
 ---
@@ -2286,8 +2286,6 @@ Standing PIRs for this cycle:
 
 &#x200F;# تقرير استخباراتي — السويد في الشهر القادم: يونيو 2026
 
-**التصنيف**: عام | **التاريخ**: 2026-05-03 | **المؤلف**: James Pether Sörling
-
 ---
 
 ### 🎯 الخلاصة التنفيذية
@@ -2330,8 +2328,6 @@ pie title توزيع الأولويات التشريعية (مُعدَّل DIW)
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_da.md -->
-
-**Klassifikation**: OFFENTLIG | **Dato**: 2026-05-03 | **Forfatter**: James Pether Sörling
 
 ---
 
@@ -2376,8 +2372,6 @@ pie title Lovgivningsprioritetsfordeling (DIW-justeret)
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_de.md -->
 
-**Klassifizierung**: ÖFFENTLICH | **Datum**: 2026-05-03 | **Autor**: James Pether Sörling
-
 ---
 
 ### 🎯 BLUF
@@ -2420,8 +2414,6 @@ pie title Gesetzgebungsprioritätsverteilung (DIW-bereinigt)
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_es.md -->
-
-**Clasificación**: PÚBLICO | **Fecha**: 2026-05-03 | **Autor**: James Pether Sörling
 
 ---
 
@@ -2556,8 +2548,6 @@ pie title Distribution des priorités législatives (ajustées DIW)
 
 &#x200F;# דוח מודיעיני — שוודיה בחודש הקרוב: יוני 2026
 
-**סיווג**: ציבורי | **תאריך**: 2026-05-03 | **מחבר**: James Pether Sörling
-
 ---
 
 ### 🎯 תמצית מנהלים
@@ -2645,8 +2635,6 @@ pie title 立法優先度分布（DIW補正）
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_ko.md -->
-
-**분류**: 공개 | **날짜**: 2026-05-03 | **저자**: James Pether Sörling
 
 ---
 
@@ -2736,8 +2724,6 @@ pie title Wetgevingsprioriteitsverdeling (DIW-gecorrigeerd)
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_no.md -->
 
-**Klassifisering**: OFFENTLIG | **Dato**: 2026-05-03 | **Forfatter**: James Pether Sörling
-
 ---
 
 ### 🎯 BLUF
@@ -2780,8 +2766,6 @@ pie title Lovgivningsprioritetfordeling (DIW-justert)
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_sv.md -->
-
-**Klassificering**: OFFENTLIG | **Datum**: 2026-05-03 | **Författare**: James Pether Sörling
 
 ---
 

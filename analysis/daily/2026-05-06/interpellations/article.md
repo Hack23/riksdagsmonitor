@@ -3,7 +3,7 @@ date: 2026-05-06
 subfolder: interpellations
 slug: 2026-05-06-interpellations
 source_folder: analysis/daily/2026-05-06/interpellations
-generated_at: 2026-05-24T22:15:16.344Z
+generated_at: 2026-05-25T09:05:41.456Z
 language: en
 layout: article
 ---
@@ -1988,8 +1988,6 @@ graph TD
 ### 가장 중요한 미래 촉발 요인
 
 **모니터링**: Global Sumud 선단에 억류된 스웨덴 국민에 대한 정부 대응(48시간 내 예상). 에스컬레이션 위험: 이스라엘이 억류자를 석방하지 않을 경우 스웨덴은 EU 외무이사회와 UN 안전보장이사회에서 행동하라는 압박을 받게 된다.
-
-**신뢰도**: B2 — 2026-05-06 제출된 공식 riksdag 대정부 질문 텍스트 HD10470의 직접 소스; riksdag-regering MCP를 통해 검증됨.
 
 ```mermaid
 graph TD

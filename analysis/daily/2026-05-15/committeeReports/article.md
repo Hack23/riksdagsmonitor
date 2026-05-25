@@ -3,7 +3,7 @@ date: 2026-05-15
 subfolder: committeeReports
 slug: 2026-05-15-committeeReports
 source_folder: analysis/daily/2026-05-15/committeeReports
-generated_at: 2026-05-24T22:15:16.946Z
+generated_at: 2026-05-25T09:05:42.043Z
 language: en
 layout: article
 ---
@@ -1965,9 +1965,6 @@ flowchart LR
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling | **Datum**: 2026-05-15 | **Classificatie**: PUBLIC  
-**Vertrouwen**: HIGH [B2] | **Run-ID**: news-committee-reports-2026-05-15
 
 ### BLUF
 

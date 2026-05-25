@@ -3,7 +3,7 @@ date: 2026-05-18
 subfolder: realtime-pulse
 slug: 2026-05-18-realtime-pulse
 source_folder: analysis/daily/2026-05-18/realtime-pulse
-generated_at: 2026-05-24T22:15:17.115Z
+generated_at: 2026-05-25T09:05:42.205Z
 language: en
 layout: article
 ---
@@ -2830,8 +2830,6 @@ Sources: API de données ouvertes du Riksdag (data.riksdagen.se), serveur MCP ri
 ---
 
 ### 출처 신뢰도
-
-출처: 리크스다그 개방 데이터 API(data.riksdagen.se), riksdag-regering MCP 서버(라이브), 공식 출처와 대조 확인된 리크스다그의 betänkanden과 propositioner. 정권 교체(에바 부쉬 총리)는 서명된 제안서에서 추론 — 정부 웹사이트 공식 기록으로부터 확인 필요.
 
 <!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
 

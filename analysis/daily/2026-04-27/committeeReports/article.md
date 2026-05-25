@@ -3,7 +3,7 @@ date: 2026-04-27
 subfolder: committeeReports
 slug: 2026-04-27-committeeReports
 source_folder: analysis/daily/2026-04-27/committeeReports
-generated_at: 2026-05-24T22:15:15.643Z
+generated_at: 2026-05-25T09:05:40.771Z
 language: en
 layout: article
 ---
@@ -1897,8 +1897,6 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling | **分類**: PUBLIC | **信頼度**: HIGH | **日付**: 2026-04-27
-
 ### 🎯 BLUF
 
 2026年4月24日付のRiksdagen委員会報告は、財政・刑事司法・社会分野において即時の重要性を持つ三つの立法課題を提示しています。財務委員会（FiU）は、燃料税の引き下げと電気・ガス価格支援を盛り込んだ政府の補正予算の承認を勧告しており、これはTidö連立（M, SD, KD, L）が支持する財政拡張的措置ですが、VとMPが反対しています。司法委員会（JuU）はEUディレクティブに沿った数十年ぶりの包括的な銃器法改革を推進し、許可要件を厳格化しています。半自動猟銃については中央党が反対しています。社会委員会（SoU）は、介護者認定権の拡大を含む高齢者介護規定の強化を承認しています。これらの決定は総じて、生活費政策の発動、安全保障の強化、2026年選挙に向けた社会契約の維持を示しています。
@@ -1953,8 +1951,6 @@ graph LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling | **분류**: PUBLIC | **신뢰도**: HIGH | **날짜**: 2026-04-27
 
 ### 🎯 BLUF
 

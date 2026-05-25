@@ -3,7 +3,7 @@ date: 2026-04-20
 subfolder: evening-analysis
 slug: 2026-04-20-evening-analysis
 source_folder: analysis/daily/2026-04-20/evening-analysis
-generated_at: 2026-05-24T22:15:15.232Z
+generated_at: 2026-05-25T09:05:40.377Z
 language: en
 layout: article
 ---
@@ -1518,8 +1518,6 @@ Konstitutionsudvalget (KU) planlagde debatter om budgetbevillingsstruktur (KU42)
 
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/evening-analysis/executive-brief_de.md -->
-
-**Datum**: 2026-04-20 | **Klassifizierung**: ÖFFENTLICH | **Erstellt von**: news-evening-analysis
 
 ---
 

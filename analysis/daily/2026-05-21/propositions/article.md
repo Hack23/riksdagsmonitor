@@ -3,7 +3,7 @@ date: 2026-05-21
 subfolder: propositions
 slug: 2026-05-21-propositions
 source_folder: analysis/daily/2026-05-21/propositions
-generated_at: 2026-05-24T22:15:17.232Z
+generated_at: 2026-05-25T09:05:42.322Z
 language: en
 layout: article
 ---
@@ -1525,8 +1525,6 @@ The proposition operates within the EU security framework:
 <!-- dir: rtl -->
 # موجز تنفيذي — مقترحات الحكومة السويدية 2026-05-21
 
-**التصنيف**: OSINT عام · **الثقة**: متوسطة إلى عالية · **المؤلف**: خط أنابيب استخبارات Riksdagsmonitor
-
 ### 🎯 تقييم الموقف الموجز
 
 في الفترة من 30 أبريل إلى 7 مايو 2026، قدّمت حكومة كريسترسون (تحالف تيدو — M، KD، L + SD كحزب داعم) **10 مقترحات برلمانية** في سباق تشريعي منسّق. يهيمن على الحزمة هيكلان استراتيجيان: **(1) هيكل هجرة من أربعة مقترحات** (HD03267، HD03262، HD03263، HD03265) يلغي تصريح الإقامة الدائم كمسار قياسي، ويعزز آلية الترحيل، ويُنشئ إجراءً سريعًا لترحيل التهديدات الأمنية — المرحلة الأخيرة من التقارب السويدي مع المعايير الاسكندنافية التقييدية؛ و**(2) تحديث الحوكمة الرقمية** (HD03250، HD03261) الذي يُنشئ هوية إلكترونية حكومية ويوسع رقابة Skatteverket على سجلات السكان. مع 115 يومًا حتى انتخابات سبتمبر 2026، يسري مُضاعف DIW ×1.5 على عنقود الهجرة بأكمله. أثقل العناصر هو HD03262 (إلغاء PUT + التكيف مع ميثاق اللجوء الأوروبي، DIW المقدّر ~4.2).
@@ -1626,8 +1624,6 @@ flowchart LR
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_da.md -->
 
-**Klassificering**: Offentlig OSINT · **Tillid**: MEDIUM-HØJ · **Forfatter**: Riksdagsmonitor Intelligence Pipeline
-
 ### 🎯 Kortfattet situationsvurdering
 
 Den 30. april – 7. maj 2026 fremsatte Kristersson-regeringen (Tidö-koalitionen — M, KD, L + SD som støtteparti) **10 parlamentariske propositioner** i et koordineret lovsprints inden valget. Pakken domineres af to strategiske arkitekturer: **(1) en fire-propositions migrationsarkitektur** (HD03267, HD03262, HD03263, HD03265), der afvikler den permanente opholdstilladelse som standardvej, forstærker udvisningsapparatet og skaber en hurtigsporudvisningsprocedure for sikkerhedstrusler — den endelige fase i Sveriges årtidlange konvergens mod nordiske restriktive normer; og **(2) en digital styrningsmodernisering** (HD03250, HD03261), der etablerer en statslig e-legitimation og udvider Skatteverkets befolkningsregistertilsyn. Med 115 dage til valget i september 2026 gælder 1,5× DIW-multiplikatoren for hele migrationsklyngen. Det tungestvejende element er HD03262 (afskaffelse af PUT + EU-asylpakttilpasning, estimeret DIW ~4,2), som er både den forfatningsmæssigt mest robuste og den politisk mest ladede proposition i pakken.
@@ -1710,8 +1706,6 @@ flowchart LR
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_de.md -->
 
-**Klassifizierung**: Öffentliches OSINT · **Konfidenz**: MITTEL-HOCH · **Autor**: Riksdagsmonitor Intelligence Pipeline
-
 ### 🎯 Kurze Lagebeurteilung
 
 Vom 30. April bis 7. Mai 2026 brachte die Kristersson-Regierung (Tidö-Koalition — M, KD, L + SD als Unterstützungspartei) **10 parlamentarische Propositionern** in einem koordinierten Gesetzgebungssprint ein. Das Paket wird von zwei strategischen Architekturen dominiert: **(1) einer Vier-Propositionern-Migrationsarchitektur** (HD03267, HD03262, HD03263, HD03265), die den permanenten Aufenthaltstitel als Standardweg abschafft, den Abschiebungsapparat stärkt und ein Schnellverfahren zur Ausweisung von Sicherheitsbedrohungen schafft — die Abschlussphase von Schwedens jahrzehntelanger Konvergenz zu nordischen restriktiven Normen; und **(2) eine Modernisierung der digitalen Verwaltung** (HD03250, HD03261), die eine staatliche eID einführt und die Bevölkerungsmeldeüberwachung von Skatteverket ausweitet. Mit 115 Tagen bis zur Wahl im September 2026 gilt der 1,5× DIW-Multiplikator für den gesamten Migrationscluster. Das gewichtigste Element ist HD03262 (PUT-Abschaffung + EU-Asylpakt-Anpassung, geschätztes DIW ~4,2).
@@ -1793,8 +1787,6 @@ flowchart LR
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_es.md -->
-
-**Clasificación**: OSINT público · **Confianza**: MEDIO-ALTO · **Autor**: Riksdagsmonitor Intelligence Pipeline
 
 ### 🎯 Evaluación de situación sintética
 
@@ -1887,8 +1879,6 @@ flowchart LR
 
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_fi.md -->
-
-**Luokitus**: Julkinen OSINT · **Varmuus**: MEDIUM-KORKEA · **Tekijä**: Riksdagsmonitor Intelligence Pipeline
 
 ### 🎯 Lyhyt tilannekatsaus
 
@@ -2067,8 +2057,6 @@ flowchart LR
 <!-- dir: rtl -->
 # תקציר מנהלים — הצעות חוק ממשלתיות 2026-05-21
 
-**סיווג**: OSINT ציבורי · **ביטחון**: בינוני-גבוה · **מחבר**: Riksdagsmonitor Intelligence Pipeline
-
 ### 🎯 הערכת מצב תמציתית
 
 בין 30 באפריל ל-7 במאי 2026, הגישה ממשלת קריסטרסון (קואליציית טידו — M, KD, L + SD כמפלגת תמיכה) **10 הצעות חוק פרלמנטריות** בספרינט חקיקתי מתואם. החבילה נשלטת על ידי שתי ארכיטקטורות אסטרטגיות: **(1) ארכיטקטורת הגירה של ארבע הצעות חוק** (HD03267, HD03262, HD03263, HD03265) המבטלת את היתר השהייה הקבוע כמסלול סטנדרטי, מחזקת את מנגנון הגירוש ויוצרת נוהל גירוש מואץ לאיומי ביטחון — השלב הסופי בהתכנסות שוודית של עשורים לנורמות סקנדינביות מגבילות; ו-**(2) מודרניזציה של ממשל דיגיטלי** (HD03250, HD03261) המקימה זהות אלקטרונית ממשלתית ומרחיבה את פיקוח Skatteverket על מרשם האוכלוסין. עם 115 ימים לבחירות ספטמבר 2026, מכפיל DIW ×1.5 חל על אשכול ההגירה כולו. האלמנט הכבד ביותר הוא HD03262 (ביטול PUT + התאמה לאמנת המקלט האירופאית, DIW משוערת ~4.2).
@@ -2168,8 +2156,6 @@ HD03250 (זהות אלקטרונית ממשלתית) מסיים את התלות 
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_ja.md -->
 
-**分類**: 公開OSINT · **信頼度**: 中高 · **著者**: Riksdagsmonitor インテリジェンス・パイプライン
-
 ### 🎯 状況評価の要約
 
 2026年4月30日～5月7日、クリスターソン政権（ティード連合 — M、KD、L + SD支持党）は**10件の議会法案**を調整済み立法スプリントで提出した。パッケージは2つの戦略的枠組みによって支配されている：**(1) 4法案の移民セキュリティ枠組み**（HD03267、HD03262、HD03263、HD03265）、永住許可を標準ルートとして廃止し、退去強制機構を強化し、安全保障上の脅威の迅速退去手続きを創設する――スウェーデンの数十年にわたる北欧制限規範への収斂の最終段階；と**(2) デジタルガバナンスの近代化**（HD03250、HD03261）、国家eIDを設立しSkatteverketの住民登録監視を拡大する。2026年9月選挙まで115日、移民クラスター全体にDIW 1.5×乗数が適用される。最重量項目はHD03262（PUT廃止 + EU庇護協定適応、推定DIW ~4.2）。
@@ -2261,8 +2247,6 @@ flowchart LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_ko.md -->
-
-**분류**: 공개 OSINT · **신뢰도**: 중간-높음 · **작성자**: Riksdagsmonitor 인텔리전스 파이프라인
 
 ### 🎯 상황 평가 요약
 
@@ -2366,8 +2350,6 @@ HD03250(국가 eID)은 스웨덴의 독특한 BankID 의존을 종식시키고 E
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_nl.md -->
 
-**Classificatie**: Publiek OSINT · **Betrouwbaarheid**: MIDDELHOOG · **Auteur**: Riksdagsmonitor Intelligence Pipeline
-
 ### 🎯 Korte situatiebeoordeling
 
 Van 30 april tot 7 mei 2026 diende de regering-Kristersson (Tidö-coalitie — M, KD, L + SD als steunpartij) **10 parlementaire proposities** in tijdens een gecoördineerde wetgevingssprint. Het pakket wordt gedomineerd door twee strategische architecturen: **(1) een vier-proposities migratiebeleid-architectuur** (HD03267, HD03262, HD03263, HD03265) die de permanente verblijfsvergunning als standaardroute afschaft, het uitzettingsapparaat versterkt en een spoedprocedure voor uitzetting van veiligheidsbedreigingen creëert — de eindfase van Zweden's tienjarige convergentie naar Noordse restrictieve normen; en **(2) een modernisering van digitaal bestuur** (HD03250, HD03261) die een staatse eID instelt en het bevolkingsregistertoe­zicht van Skatteverket uitbreidt. Met 115 dagen tot de verkiezingen in september 2026 geldt de 1,5× DIW-vermenigvuldiger voor het gehele migratiecluster. Het zwaarst wegende element is HD03262 (afschaffing PUT + aanpassing EU-asielpact, geschatte DIW ~4,2).
@@ -2450,8 +2432,6 @@ flowchart LR
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_no.md -->
 
-**Klassifisering**: Offentlig OSINT · **Tillitt**: MEDIUM-HØY · **Forfatter**: Riksdagsmonitor Intelligence Pipeline
-
 ### 🎯 Kort situasjonsvurdering
 
 30. april – 7. mai 2026 la Kristersson-regjeringen (Tidö-koalisjonen — M, KD, L + SD som støtteparti) frem **10 parlamentariske proposisjoner** i en koordinert lovgivningsspurt. Pakken domineres av to strategiske arkitekturer: **(1) en fire-proposisjons migrasjonsarkitektur** (HD03267, HD03262, HD03263, HD03265) som avvikler permanent oppholdstillatelse som standardvei, styrker utvisningsapparatet og skaper en hurtigspor-utvisningsprosedyre for sikkerhettrusler — den endelige fasen i Sveriges tiår-lange konvergens mot nordiske restriktive normer; og **(2) en digital styringsmodernisering** (HD03250, HD03261) som etablerer statlig e-legitimasjon og utvider Skatteverkets befolkningsregisterovervåking. Med 115 dager til valget i september 2026 gjelder 1,5× DIW-multiplikatoren for hele migrasjonsklyngen. Det tyngste elementet er HD03262 (avskaffelse av PUT + EU-asylpakttilpasning, estimert DIW ~4,2).
@@ -2533,8 +2513,6 @@ flowchart LR
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_sv.md -->
-
-**Klassificering**: Offentlig OSINT · **Konfidens**: MEDEL-HÖG · **Författare**: Riksdagsmonitor Intelligence Pipeline
 
 ### 🎯 Kortfattad lägesbedömning
 

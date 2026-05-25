@@ -3,7 +3,7 @@ date: 2026-04-26
 subfolder: weekly-review
 slug: 2026-04-26-weekly-review
 source_folder: analysis/daily/2026-04-26/weekly-review
-generated_at: 2026-05-24T22:15:15.632Z
+generated_at: 2026-05-25T09:05:40.761Z
 language: en
 layout: article
 ---
@@ -2889,12 +2889,6 @@ style HC03203 fill:#ffbe0b,stroke:#0a0e27
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling
-**Run-ID**: 24961123457
-**Datum**: 2026-04-26
-**Classificatie**: PUBLIC — AVG Art 9(2)(e)(g)
-**Vertrouwen**: HIGH [B2] — Overheids-API; officiële propositiedocumenten
 
 ---
 

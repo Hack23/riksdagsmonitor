@@ -3,7 +3,7 @@ date: 2026-05-16
 subfolder: realtime-pulse
 slug: 2026-05-16-realtime-pulse
 source_folder: analysis/daily/2026-05-16/realtime-pulse
-generated_at: 2026-05-24T22:15:17.016Z
+generated_at: 2026-05-25T09:05:42.111Z
 language: en
 layout: article
 ---
@@ -2278,8 +2278,6 @@ The principal assessments hold, but with the caveat that the Russian law's immed
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
 
-**التصنيف**: عام | **Admiralty**: B2 | **التاريخ**: 2026-05-16
-
 ---
 
 ### ملخص ثلاثي الجمل
@@ -2324,8 +2322,6 @@ The principal assessments hold, but with the caveat that the Russian law's immed
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
 
-**Klassifikation**: OFFENTLIG | **Admiralty**: B2 | **Dato**: 2026-05-16
-
 ---
 
 ### Trelinjers Resumé
@@ -2368,8 +2364,6 @@ Centerpartiet bryder med regeringskoalitionen i KU-udvalget over fagforeningspol
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
 
-**Klassifizierung**: ÖFFENTLICH | **Admiralty**: B2 | **Datum**: 2026-05-16
-
 ---
 
 ### Drei-Satz-Lede
@@ -2411,8 +2405,6 @@ Die Centerpartiet bricht im KU-Ausschuss mit der Regierungskoalition beim Abschn
 <!-- article-date: 2026-05-16 -->
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
-
-**Clasificación**: PÚBLICO | **Admiralty**: B2 | **Fecha**: 2026-05-16
 
 ---
 
@@ -2546,8 +2538,6 @@ Le Centerpartiet rompt avec la coalition gouvernementale au sein du comité KU s
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
 
-**סיווג**: ציבורי | **Admiralty**: B2 | **תאריך**: 2026-05-16
-
 ---
 
 ### סיכום בשלוש משפטות
@@ -2592,8 +2582,6 @@ Centerpartiet מנתקת את הקואליציה הממשלתית בוועדת K
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
 
-**分類**: 公開 | **Admiralty**: B2 | **日付**: 2026-05-16
-
 ---
 
 ### 三文要約
@@ -2635,8 +2623,6 @@ Centerpartietは法案258の労働組合の政治的支出開示条項をめぐ�
 <!-- article-date: 2026-05-16 -->
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
-
-**분류**: 공개 | **Admiralty**: B2 | **날짜**: 2026-05-16
 
 ---
 
@@ -2680,8 +2666,6 @@ Centerpartiet는 Prop. 258의 노동조합 정치 지출 공개 조항을 둘러
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
 
-**Classificatie**: OPENBAAR | **Admiralty**: B2 | **Datum**: 2026-05-16
-
 ---
 
 ### Drie-Zins Inleiding
@@ -2723,8 +2707,6 @@ Het Centerpartiet breekt met de regeringscoalitie in het KU-comité over de sect
 <!-- article-date: 2026-05-16 -->
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
-
-**Klassifisering**: OFFENTLIG | **Admiralty**: B2 | **Dato**: 2026-05-16
 
 ---
 
@@ -2768,8 +2750,6 @@ Centerpartiet bryter med regjeringskoalisjonen i KU-komiteen om fagforeningers p
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
 
-**Klassificering**: OFFENTLIG | **Admiralty**: B2 | **Datum**: 2026-05-16
-
 ---
 
 ### Treradslede
@@ -2811,8 +2791,6 @@ Centerpartiet bryter med regeringskoalitionen i KU-utskottet rörande avsnittet 
 <!-- article-date: 2026-05-16 -->
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
-
-**分类**: 公开 | **Admiralty**: B2 | **日期**: 2026-05-16
 
 ---
 

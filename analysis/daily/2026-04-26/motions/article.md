@@ -3,7 +3,7 @@ date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-05-24T22:15:15.585Z
+generated_at: 2026-05-25T09:05:40.711Z
 language: en
 layout: article
 ---
@@ -2203,8 +2203,6 @@ graph LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling | **날짜**: 2026-04-26
 
 ---
 

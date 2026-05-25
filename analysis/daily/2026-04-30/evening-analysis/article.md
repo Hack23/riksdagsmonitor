@@ -3,7 +3,7 @@ date: 2026-04-30
 subfolder: evening-analysis
 slug: 2026-04-30-evening-analysis
 source_folder: analysis/daily/2026-04-30/evening-analysis
-generated_at: 2026-05-24T22:15:15.896Z
+generated_at: 2026-05-25T09:05:41.023Z
 language: en
 layout: article
 ---
@@ -1983,11 +1983,6 @@ graph TD
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/executive-brief_da.md -->
 
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-04-30  
-**Konfidens**: HØJ [B2]  
-**Klassifikation**: OSINT — Kun offentlige kilder  
-
 ---
 
 ### Resumé
@@ -2107,11 +2102,6 @@ graph TD
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/executive-brief_es.md -->
 
-**Autor**: James Pether Sörling  
-**Fecha**: 2026-04-30  
-**Confianza**: ALTA [B2]  
-**Clasificación**: OSINT — Solo fuentes públicas  
-
 ---
 
 ### Resumen
@@ -2230,10 +2220,6 @@ graph TD
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/executive-brief_fr.md -->
-
-**Auteur**: James Pether Sörling  
-
-**Confiance**: ÉLEVÉE [B2]  
 
 ---
 
@@ -2357,11 +2343,6 @@ graph TD
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**日付**: 2026-04-30  
-**信頼度**: 高 [B2]  
-**分類**: OSINT — 公開情報源のみ  
-
 ---
 
 ### 要約
@@ -2418,11 +2399,6 @@ graph TD
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**날짜**: 2026-04-30  
-**신뢰도**: 높음 [B2]  
-**분류**: OSINT — 공개 출처만  
 
 ---
 
@@ -2604,11 +2580,6 @@ graph TD
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/executive-brief_sv.md -->
-
-**Författare**: James Pether Sörling  
-**Datum**: 2026-04-30  
-**Konfidens**: HÖG [B2]  
-**Klassificering**: OSINT — Endast offentliga källord  
 
 ---
 

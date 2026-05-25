@@ -3,7 +3,7 @@ date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-05-24T22:15:15.301Z
+generated_at: 2026-05-25T09:05:40.441Z
 language: en
 layout: article
 ---
@@ -1420,8 +1420,6 @@ Data freshness: Live (synced 2026-04-21T18:20:23Z)
 
 ---
 
-**التصنيف**: عام · **المراجعة التالية**: 2026-04-22
-
 </div>
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
@@ -1458,8 +1456,6 @@ Den svenske Riksdag indledte en afgørende forvalgsugen med tre samtidige politi
 
 ---
 
-**Klassificering**: Offentlig · **Næste gennemgang**: 2026-04-22
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief De
@@ -1493,8 +1489,6 @@ Schwedens Parlament trat in eine entscheidende Vorwahlwoche mit drei gleichzeiti
 - 🇪🇺 **EU-Lohnrichtlinie**: Nina Larsson, 47 Tage bis zur Umsetzung
 
 ---
-
-**Klassifizierung**: Öffentlich · **Nächste Überprüfung**: 2026-04-22
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
@@ -1530,8 +1524,6 @@ El parlamento sueco entró en una semana preelectoral decisiva con tres desarrol
 
 ---
 
-**Clasificación**: Público · **Próxima revisión**: 2026-04-22
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Fi
@@ -1565,8 +1557,6 @@ Ruotsin valtiopäivät aloittivat ratkaisevan vaaluviikon kolmella samanaikaisel
 - 🇪🇺 **EU-palkkadirektiivi**: Nina Larsson, 47 päivää täytäntöönpanoon
 
 ---
-
-**Luokitus**: Julkinen · **Seuraava arviointi**: 2026-04-22
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
@@ -1642,8 +1632,6 @@ Le parlement suédois a entamé une semaine pré-électorale décisive avec troi
 
 ---
 
-**סיווג**: ציבורי · **סקירה הבאה**: 2026-04-22
-
 </div>
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
@@ -1682,8 +1670,6 @@ Le parlement suédois a entamé une semaine pré-électorale décisive avec troi
 
 ---
 
-**分類**: 公開 · **次回レビュー**: 2026-04-22
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Ko
@@ -1720,8 +1706,6 @@ Le parlement suédois a entamé une semaine pré-électorale décisive avec troi
 
 ---
 
-**분류**: 공개 · **다음 검토**: 2026-04-22
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Nl
@@ -1756,8 +1740,6 @@ Het Zweedse parlement begon aan een beslissende week voor de verkiezingen met dr
 
 ---
 
-**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-04-22
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief No
@@ -1791,8 +1773,6 @@ Det svenske Riksdag gikk inn i en avgjørende forvalgsuken med tre samtidige hø
 - 🇪🇺 **EU-lønndirektiv**: Nina Larsson, 47 dager til implementering
 
 ---
-
-**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-22
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
@@ -1855,8 +1835,6 @@ Det konstitutionella landskapet var lika aktivt: finansminister Elisabeth Svante
 
 ---
 
-**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-22
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Zh
@@ -1892,8 +1870,6 @@ Det konstitutionella landskapet var lika aktivt: finansminister Elisabeth Svante
 - 🌍 **加沙船队**: 贝吉奇(S)向外交部长追问保护参与国际船队的瑞典公民
 
 ---
-
-**分类**: 公开 · **下次审查**: 2026-04-22
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 

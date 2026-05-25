@@ -3,7 +3,7 @@ date: 2026-04-27
 subfolder: motions
 slug: 2026-04-27-motions
 source_folder: analysis/daily/2026-04-27/motions
-generated_at: 2026-05-24T22:15:15.703Z
+generated_at: 2026-05-25T09:05:40.828Z
 language: en
 layout: article
 ---
@@ -2043,11 +2043,6 @@ pie title Opposition Motion Themes
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_da.md -->
 
-**Dato**: 2026-04-27
-**Forfatter**: James Pether Sörling
-**Klassifikation**: ÅBEN
-**Status**: Pass 2 (AI FIRST iterativ forbedring)
-
 ---
 
 ### 🎯 Kortfattet konklusion
@@ -2749,11 +2744,6 @@ pie title Opposition Motion Themes
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_nl.md -->
 
-**Datum**: 2026-04-27
-**Auteur**: James Pether Sörling
-**Classificatie**: OPENBAAR
-**Status**: Pass 2 (AI FIRST iteratieve verbetering)
-
 ---
 
 ### 🎯 Beknopte samenvatting
@@ -2837,11 +2827,6 @@ pie title Opposition Motion Themes
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_no.md -->
 
-**Dato**: 2026-04-27
-**Forfatter**: James Pether Sörling
-**Klassifisering**: ÅPEN
-**Status**: Pass 2 (AI FIRST iterativ forbedring)
-
 ---
 
 ### 🎯 Kortfattet konklusjon
@@ -2924,11 +2909,6 @@ pie title Opposition Motion Themes
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/motions/executive-brief_sv.md -->
-
-**Datum**: 2026-04-27
-**Författare**: James Pether Sörling
-**Klassificering**: ÖPPEN
-**Status**: Pass 2 (AI FIRST iterativ förbättring)
 
 ---
 

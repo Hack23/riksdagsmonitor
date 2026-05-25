@@ -3,7 +3,7 @@ date: 2026-05-20
 subfolder: committeeReports
 slug: 2026-05-20-committeeReports
 source_folder: analysis/daily/2026-05-20/committeeReports
-generated_at: 2026-05-24T22:15:17.123Z
+generated_at: 2026-05-25T09:05:42.214Z
 language: en
 layout: article
 ---
@@ -1312,11 +1312,6 @@ graph LR
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/committeeReports/executive-brief_da.md -->
 
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-05-20  
-**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e,g)  
-**Konfidens**: HØJ [B2]  
-
 ### BLUF
 
 Riksdagens udvalg fremlagde den 19. maj 2026 ni betänkanden inden for national sikkerhedsinfrastruktur, fødevareberedskab, boligmarkedsinnovation, socialforsikringsreform og skolesikkerhed. De to mest signifikante resultater — JuU36 (udvidede beføjelser til at gribe ind i sikkerhedsfølsomme forretningsforhold) og MJU25 (obligatoriske fødevarelagre til krig eller nødsituation) — træder begge i kraft den 1. juli 2026 og styrker Sveriges accelererende totalforsvarsoprustning. Tre boligmarkedslove (CU32 lejeindkøb, CU33 forbud mod fætter-kusine-ægteskab, CU39 bygningsregler) og socialforsikring (SfU26) indeholder synlige oppositionsforbehold, som vil præge 2026-valgkampens dagsorden.
@@ -1708,11 +1703,6 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/committeeReports/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**日付**: 2026-05-20  
-**分類**: 公開情報 — GDPR 第9条(2)(e,g)  
-**信頼度**: 高 [B2]  
-
 ### BLUF
 
 Riksdag（スウェーデン議会）の各委員会は2026年5月19日、国家安全保障インフラ、食料安全保障、住宅市場革新、社会保険改革、学校安全に関する9件のbetänkandenを提出しました。最も重要な2つの成果 — JuU36（安全保障上センシティブな取引関係への介入権限の拡大）とMJU25（戦争または非常事態に向けた食料備蓄の義務化）— はいずれも2026年7月1日に施行され、スウェーデンの加速する総合防衛再建プログラムを強化します。3つの住宅市場法（CU32 レント・トゥ・オウン、CU33 従妹婚禁止、CU39 建設規制）と社会保険（SfU26）には、2026年選挙キャンペーンの議題を形成する目立った野党留保事項が含まれています。
@@ -1790,11 +1780,6 @@ graph LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/committeeReports/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**날짜**: 2026-05-20  
-**분류**: 공개 — GDPR 제9조(2)(e,g)  
-**신뢰도**: 높음 [B2]  
 
 ### BLUF
 
@@ -1931,11 +1916,6 @@ graph LR
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/committeeReports/executive-brief_no.md -->
 
-**Forfatter**: James Pether Sörling  
-**Dato**: 2026-05-20  
-**Klassifisering**: OFFENTLIG — GDPR Art 9(2)(e,g)  
-**Konfidens**: HØY [B2]  
-
 ### BLUF
 
 Riksdagens komiteer la 19. mai 2026 frem ni betänkanden innen nasjonal sikkerhetsinfrastruktur, matvareberedskap, boligmarkedsinnovasjon, trygdereform og skolesikkerhet. De to mest signifikante utfallene — JuU36 (utvidede fullmakter til å gripe inn i sikkerhetssensitive forretningsforbindelser) og MJU25 (obligatoriske matvarelager for krig eller nødsituasjon) — trer begge i kraft 1. juli 2026 og styrker Sveriges akselererende totalforsvarsgjenoppbygging. Tre boligmarkedslover (CU32 leiekjøp, CU33 forbud mot fetterbarnekusine-ekteskap, CU39 bygningsregler) og trygd (SfU26) har synlige opposisjonsforbehold som vil prege valgkampdagsordenen i 2026.
@@ -1988,11 +1968,6 @@ graph LR
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/committeeReports/executive-brief_sv.md -->
 
-**Författare**: James Pether Sörling  
-**Datum**: 2026-05-20  
-**Klassificering**: OFFENTLIG — GDPR Art 9(2)(e,g)  
-**Konfidens**: HÖG [B2]  
-
 ### BLUF
 
 Riksdagens utskott lade den 19 maj 2026 fram nio betänkanden inom nationell säkerhetsinfrastruktur, livsmedelsförsörjning, bostadsmarknadsinnovation, socialförsäkringsreform och skolsäkerhet. De två mest signifikanta utfallen — JuU36 (utökade befogenheter att ingripa i säkerhetskänsliga affärsrelationer) och MJU25 (obligatoriska beredskapslager av livsmedel inför kris eller krig) — träder i kraft den 1 juli 2026 och förstärker Sveriges accelererande totalförsvarsuppbyggnad. Tre bostadsmarknadslagar (CU32 hyrköp, CU33 förbud mot kusinkusin-äktenskap, CU39 byggregler) och socialförsäkringen (SfU26) har synliga oppositionsreservationer som kommer att forma dagordningen inför valet 2026.
@@ -2044,11 +2019,6 @@ graph LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-20/committeeReports/executive-brief_zh.md -->
-
-**作者**: James Pether Sörling  
-**日期**: 2026-05-20  
-**分类**: 公开 — GDPR第9(2)(e,g)条  
-**可信度**: 高 [B2]  
 
 ### BLUF
 

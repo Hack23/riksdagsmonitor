@@ -3,7 +3,7 @@ date: 2026-05-18
 subfolder: committeeReports
 slug: 2026-05-18-committeeReports
 source_folder: analysis/daily/2026-05-18/committeeReports
-generated_at: 2026-05-24T22:15:17.043Z
+generated_at: 2026-05-25T09:05:42.137Z
 language: en
 layout: article
 ---
@@ -1566,11 +1566,6 @@ flowchart TD
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/committeeReports/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling  
-**Datum**: 2026-05-18  
-**Klassifizierung**: 🟢 Öffentlich  
-**Vertraulichkeit**: HOCH [B2]  
-
 ### KERNAUSSAGE
 
 Der Verfassungsausschuss (KU) des Riksdag hat einstimmig empfohlen, Proposition 2025/26:164 zu verabschieden, die das Kommunalgesetz ändert, um die rechtliche Grauzone bei der Fernbeteiligung an kommunalen Sitzungen zu beseitigen und die Aufsicht über private Wohlfahrtsdienstleister zu stärken. Ab dem 1. Juli 2026 erhalten alle 290 Kommunen und 21 Regionen klarere Regeln für digitale Verwaltung, während der Vorstand jährlich dem Gemeinderat über die Compliance privater Betreiber Bericht erstatten muss — ein direkter gesetzgeberischer Schlag gegen Sozialbetrug. Die Reform ist technisch unumstritten, aber administrativ bedeutsam.
@@ -1843,11 +1838,6 @@ flowchart TD
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/committeeReports/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**日付**: 2026-05-18  
-**分類**: 🟢 公開  
-**信頼度**: 高 [B2]  
-
 ### 要約
 
 リクスダーゲン（Riksdag）の憲法委員会（KU）は、自治体法（Kommunallagen）を改正する議案2025/26:164を全会一致で可決するよう勧告しました。この改正は、自治体会議への遠隔参加に関する法的グレーゾーンを解消し、民間福祉サービス事業者への監視を強化するものです。2026年7月1日から、290すべての自治体と21の地域は、デジタルガバナンスに関するより明確なルールを得る一方、理事会は民間事業者の法令遵守について毎年議会全体に報告する義務を負います——これは福祉不正に対する直接的な立法措置です。この改革は技術的には非論争的ですが、行政的に重要な意味を持ちます。
@@ -1897,11 +1887,6 @@ flowchart TD
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/committeeReports/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**날짜**: 2026-05-18  
-**분류**: 🟢 공개  
-**신뢰도**: 높음 [B2]  
 
 ### 핵심 요약
 

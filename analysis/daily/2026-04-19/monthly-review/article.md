@@ -3,7 +3,7 @@ date: 2026-04-19
 subfolder: monthly-review
 slug: 2026-04-19-monthly-review
 source_folder: analysis/daily/2026-04-19/monthly-review
-generated_at: 2026-05-24T22:15:15.202Z
+generated_at: 2026-05-25T09:05:40.347Z
 language: en
 layout: article
 ---
@@ -1809,8 +1809,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 
 ---
 
-**التصنيف**: عام · **المراجعة التالية**: 2026-05-19
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Da
@@ -1904,8 +1902,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/README.md) · [Syntese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md) · [Risiko](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md) · [Trussel](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/threat-analysis.md) · [Interessenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md) · [Scenarier](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/scenario-analysis.md) · [Data](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md)
 
 ---
-
-**Klassifikation**: Offentlig · **Næste gennemgang**: 2026-05-19
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
@@ -2001,8 +1997,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 
 ---
 
-**Klassifizierung**: Öffentlich · **Nächste Überprüfung**: 2026-05-19
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Es
@@ -2097,8 +2091,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 
 ---
 
-**Clasificación**: Público · **Próxima revisión**: 2026-05-19
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Fi
@@ -2191,8 +2183,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/README.md) · [Synteesi](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md) · [Merkittävyys](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md) · [Riski](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md) · [Uhka](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/threat-analysis.md) · [Sidosryhmät](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md) · [Skenaariot](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/scenario-analysis.md) · [Data](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md)
 
 ---
-
-**Luokitus**: Julkinen · **Seuraava tarkistus**: 2026-05-19
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
@@ -2385,8 +2375,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 
 ---
 
-**סיווג**: ציבורי · **סקירה הבאה**: 2026-05-19
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Ja
@@ -2480,8 +2468,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/README.md) · [総合分析](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md) · [重要性](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md) · [リスク](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md) · [脅威](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/threat-analysis.md) · [ステークホルダー](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md) · [シナリオ](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/scenario-analysis.md) · [データ](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md)
 
 ---
-
-**分類**: 公開 · **次回レビュー**: 2026-05-19
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
@@ -2577,8 +2563,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 
 ---
 
-**분류**: 공개 · **다음 검토**: 2026-05-19
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Nl
@@ -2672,8 +2656,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/README.md) · [Synthese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md) · [Significantie](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md) · [Risico](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md) · [Bedreiging](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/threat-analysis.md) · [Belanghebbenden](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md) · [Scenario's](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/scenario-analysis.md) · [Gegevens](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md)
 
 ---
-
-**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-05-19
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
@@ -2769,8 +2751,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 
 ---
 
-**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-05-19
-
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 
 ## Executive Brief Sv
@@ -2864,8 +2844,6 @@ Data sourced from 2026-04-17 via lookback fallback — check freshness indicator
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/README.md) · [Syntes](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/risk-assessment.md) · [Hot](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/threat-analysis.md) · [Intressenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/stakeholder-perspectives.md) · [Scenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/scenario-analysis.md) · [Data](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/monthly-review/data-download-manifest.md)
 
 ---
-
-**Klassificering**: Offentlig · **Nästa granskning**: 2026-05-19
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 

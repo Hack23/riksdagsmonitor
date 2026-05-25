@@ -3,7 +3,7 @@ date: 2026-05-04
 subfolder: realtime-pulse
 slug: 2026-05-04-realtime-pulse
 source_folder: analysis/daily/2026-05-04/realtime-pulse
-generated_at: 2026-05-24T22:15:16.205Z
+generated_at: 2026-05-25T09:05:41.318Z
 language: en
 layout: article
 ---
@@ -2959,8 +2959,6 @@ graph LR
 ---
 
 ### 📊 战略评估
-
-**可信度: 🟩 高 [A2]** — 来源包括议会公开数据（`HD01NU19`, `HD10463`, `HD01FöU13`, `HD01JuU9`, `HD01KU39`, `HD01FiU49`）、IMF WEO 2026年4月年份、质询登记。
 
 2026年5月4日的快照捕捉到**最高立法速度**的Tidö联合政府：7项联合改革在1周内取得进展，具体生效日期分散在2026年6月1日至7月1日之间。每个生效日都为4个联合政党创造了可在竞选活动中利用的政绩节奏。战略脆弱性是不对称的：M、KD、SD受益于这一连锁，而**L**承担负担——作为联合最小政党最接近4%阈值，承担着不成比例的议席损失风险。
 

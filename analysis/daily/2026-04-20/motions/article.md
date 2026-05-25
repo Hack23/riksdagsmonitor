@@ -3,7 +3,7 @@ date: 2026-04-20
 subfolder: motions
 slug: 2026-04-20-motions
 source_folder: analysis/daily/2026-04-20/motions
-generated_at: 2026-05-24T22:15:15.274Z
+generated_at: 2026-05-25T09:05:40.414Z
 language: en
 layout: article
 ---
@@ -3701,8 +3701,6 @@ Checked against ai-driven-analysis-guide v5.1 rules 1–10.
 
 ---
 
-**التصنيف**: عام · **المراجعة التالية**: 2026-04-27
-
 </div>
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
@@ -3810,8 +3808,6 @@ Mellem 2026-04-13 og 2026-04-17 indgav Sveriges fire store oppositionspartier (S
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Fuld dossierfilindeks
 
 ---
-
-**Klassifikation**: Offentlig · **Næste gennemgang**: 2026-04-27
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
@@ -4027,8 +4023,6 @@ Entre el 2026-04-13 y el 2026-04-17, los cuatro grandes partidos de la oposició
 
 ---
 
-**Clasificación**: Público · **Próxima revisión**: 2026-04-27
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Fi
@@ -4134,8 +4128,6 @@ Entre el 2026-04-13 y el 2026-04-17, los cuatro grandes partidos de la oposició
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Täydellinen dossierihakemisto
 
 ---
-
-**Luokitus**: Julkinen · **Seuraava tarkistus**: 2026-04-27
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
@@ -4353,8 +4345,6 @@ Entre le 2026-04-13 et le 2026-04-17, les quatre grands partis d'opposition sué
 
 ---
 
-**סיווג**: ציבורי · **סקירה הבאה**: 2026-04-27
-
 </div>
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
@@ -4463,8 +4453,6 @@ Entre le 2026-04-13 et le 2026-04-17, les quatre grands partis d'opposition sué
 
 ---
 
-**分類**: 公開 · **次回レビュー**: 2026-04-27
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Ko
@@ -4570,8 +4558,6 @@ Entre le 2026-04-13 et le 2026-04-17, les quatre grands partis d'opposition sué
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — 전체 도시에 파일 인덱스
 
 ---
-
-**분류**: 공개 · **다음 검토**: 2026-04-27
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
@@ -4679,8 +4665,6 @@ Tussen 2026-04-13 en 2026-04-17 dienden de vier grote Zweedse oppositiepartijen 
 
 ---
 
-**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-04-27
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief No
@@ -4787,8 +4771,6 @@ Mellom 2026-04-13 og 2026-04-17 leverte Sveriges fire store opposisjonspartier (
 
 ---
 
-**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-27
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Sv
@@ -4894,8 +4876,6 @@ Mellan 2026-04-13 och 2026-04-17 lämnade Sveriges fyra stora oppositionspartier
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Fullständigt dossierfilindex
 
 ---
-
-**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-27
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 

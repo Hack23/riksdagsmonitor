@@ -3,7 +3,7 @@ date: 2026-05-06
 subfolder: committeeReports
 slug: 2026-05-06-committeeReports
 source_folder: analysis/daily/2026-05-06/committeeReports
-generated_at: 2026-05-24T22:15:16.311Z
+generated_at: 2026-05-25T09:05:41.423Z
 language: en
 layout: article
 ---
@@ -1391,9 +1391,6 @@ subfolder: committeeReports
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_da.md -->
 
-**Klassifikation**: 🟢 OFFENTLIG | **Konfidens**: B2 (Bekræftede kilder, multiple korroborationer)
-**Dato**: 2026-05-06 | **Riksmöte**: 2025/26
-
 ### Konklusion (BLUF)
 
 Fem parlamentariske udvalgsafgørelser blev vedtaget den 6. maj 2026 inden for fire politikområder. Den mest afgørende er **SfU21** — som indfører en kvalificeringsperiode for bopælsbaserede sociale forsikringsydelser (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd). Dette udgør den skarpeste indskrænkning af den svenske velfærdsstats universalitet i en generation og vedtaget trods indsigelser fra S, V og MP. Samlet med **FöU18** (modernisering af signalefterforskning), **CU25** (PBL-undtagelser for fængselskapacitet) og to tekniske ændringer (FöU16, SfU24) afspejler beslutningerne Tidö-koalitionens fortsatte prioritering af migrations-, kriminalitets- og forsvarsreformer frem for socialdemokratisk velfærdsarkitektur.
@@ -1492,9 +1489,6 @@ IMF-Status: beeinträchtigt (SDMX-Endpunkt nicht verfügbar). Basierend auf zwis
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_es.md -->
-
-**Clasificación**: 🟢 PÚBLICO | **Confianza**: B2 (Fuentes confirmadas, corroboración múltiple)
-**Fecha**: 2026-05-06 | **Riksmöte**: 2025/26
 
 ### Conclusión (BLUF)
 
@@ -1704,9 +1698,6 @@ subfolder: committeeReports
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_ja.md -->
 
-**分類**: 🟢 公開 | **信頼度**: B2（確認済み情報源、複数の裏付け）
-**日付**: 2026-05-06 | **Riksmöte**: 2025/26
-
 ### 結論（BLUF）
 
 2026年5月6日、4つの政策分野で5件の議会委員会決定が採択された。最も重要なのは**SfU21** — 居住ベースの社会保険給付（barnbidrag、föräldrapenning、bostadsbidrag、äldreförsörjningsstöd）に資格要件期間を導入するもの。これは一世代で最も厳しいスウェーデン福祉国家の普遍性への制限を表し、S、V、MPの反対を押し切って採択された。**FöU18**（信号情報近代化）、**CU25**（刑務所収容能力へのPBL免除）、2件の技術的改正（FöU16、SfU24）とともに、これらの決定はティデ連立政権が社会民主主義的福祉アーキテクチャよりも移民、犯罪、防衛改革を継続して優先していることを反映している。
@@ -1754,9 +1745,6 @@ IMF状況：劣化（SDMXエンドポイント利用不可）。キャッシュ�
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_ko.md -->
-
-**분류**: 🟢 공개 | **신뢰도**: B2 (확인된 출처, 다중 코로보레이션)
-**날짜**: 2026-05-06 | **Riksmöte**: 2025/26
 
 ### 결론 (BLUF)
 
@@ -1856,9 +1844,6 @@ IMF-status: verslechterd (SDMX-eindpunt niet beschikbaar). Gebaseerd op gecachte
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_no.md -->
-
-**Klassifisering**: 🟢 OFFENTLIG | **Konfidens**: B2 (Bekreftede kilder, multiple korraborasjoner)
-**Dato**: 2026-05-06 | **Riksmöte**: 2025/26
 
 ### Konklusjon (BLUF)
 

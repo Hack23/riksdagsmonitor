@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: committeeReports
 slug: 2026-04-29-committeeReports
 source_folder: analysis/daily/2026-04-29/committeeReports
-generated_at: 2026-05-24T22:15:15.799Z
+generated_at: 2026-05-25T09:05:40.922Z
 language: en
 layout: article
 ---
@@ -1837,8 +1837,6 @@ flowchart LR
 
 **تابع**: تُجرى تصويتات مقررة في الجلسة العامة بشأن HD01SfU28 (الجنسية). يُتوقع صدور أول استطلاعات Novus/Ipsos بعد التصويت خلال 7 أيام. سيُؤكد تحوّل بمقدار ≥3 نقاط في توقعات مقاعد SD↔M أو S الأثرَ التعبوي الانتخابي لإصلاح الجنسية.
 
-**الثقة**: عالية [B2]
-
 </div>
 
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
@@ -1915,8 +1913,6 @@ flowchart LR
 ### 🔔 Vigtigste fremadskuende signal
 
 **Overvåg**: Afstemning planlagt i plenarsalen om HD01SfU28 (statsborgerskab). Første Novus/Ipsos-målinger efter afstemningen forventes inden for 7 dage. En ≥3-punkts ændring i SD↔M eller S mandatprojektioner ville bekræfte valgmobiliseringseffekten af statsborgerskabsreformen.
-
-**Konfidens**: HØJ [B2]
 
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
 
@@ -2070,8 +2066,6 @@ flowchart LR
 
 **Vigilar**: Votación prevista en el pleno sobre HD01SfU28 (ciudadanía). Las primeras encuestas Novus/Ipsos tras la votación se esperan en 7 días. Una variación de ≥3 puntos en las proyecciones de escaños SD↔M o S confirmaría el efecto de movilización electoral de la reforma de ciudadanía.
 
-**Confianza**: ALTA [B2]
-
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
 
 ## Executive Brief Fi
@@ -2222,8 +2216,6 @@ flowchart LR
 ### 🔔 Principal déclencheur prospectif
 
 **À surveiller** : Vote prévu en séance plénière sur HD01SfU28 (citoyenneté). Les premiers sondages Novus/Ipsos après le vote sont attendus dans les 7 jours. Une variation de ≥3 points dans les projections de sièges SD↔M ou S confirmerait l'effet de mobilisation électorale de la réforme de la citoyenneté.
-
-**Confiance** : HAUTE [B2]
 
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
 
@@ -2383,8 +2375,6 @@ flowchart LR
 
 **注視**: HD01SfU28（市民権）の本会議採決が予定されている。採決後7日以内に最初のNovus/Ipsos世論調査の発表が見込まれる。SD↔MまたはSの議席予測に≥3ポイントの変動があれば、市民権改革の選挙動員効果が確認される。
 
-**信頼度**: 高 [B2]
-
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
 
 ## Executive Brief Ko
@@ -2459,8 +2449,6 @@ flowchart LR
 ### 🔔 최상위 향후 트리거
 
 **주시**: HD01SfU28(시민권) 본회의 표결 예정. 표결 후 7일 이내 첫 Novus/Ipsos 여론조사 결과 발표 예상. SD↔M 또는 S 의석 예측에서 ≥3포인트 변동이 있다면 시민권 개혁의 선거 동원 효과 확인 가능.
-
-**신뢰도**: 높음 [B2]
 
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
 
@@ -2614,8 +2602,6 @@ flowchart LR
 
 **Følg med**: Avstemning planlagt i plenum om HD01SfU28 (statsborgerskap). Første Novus/Ipsos-målinger etter avstemningen forventes innen 7 dager. En ≥3-poengers endring i SD↔M eller S mandatprojeksjoner ville bekrefte valgmobiliseringseffekten av statsborgerskapsreformen.
 
-**Konfidens**: HØY [B2]
-
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
 
 ## Executive Brief Sv
@@ -2690,8 +2676,6 @@ flowchart LR
 ### 🔔 Viktigaste framåtblickande signal
 
 **Bevaka**: Omröstning planeras i kammaren om HD01SfU28 (medborgarskap). Första Novus/Ipsos-mätningar efter omröstningen väntas inom 7 dagar. En förändring på ≥3 procentenheter i SD↔M eller S mandatprojektioner skulle bekräfta valrörelsens mobiliseringseffekt av medborgarskapsreformen.
-
-**Konfidens**: HÖG [B2]
 
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
 

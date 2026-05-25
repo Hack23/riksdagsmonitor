@@ -3,7 +3,7 @@ date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-05-24T22:15:15.470Z
+generated_at: 2026-05-25T09:05:40.600Z
 language: en
 layout: article
 ---
@@ -2533,8 +2533,6 @@ All accessible at `https://data.riksdagen.se/dokument/{dok_id}.html`. Example: <
 <!-- dir: rtl -->
 # الملخص التنفيذي — مقترحات المعارضة — 2026-04-24
 
-**المؤلف**: James Pether Sörling · **الثقة**: عالية · **وقت القراءة**: 60 ثانية
-
 ### 🎯 الخلاصة
 
 بين 2026-04-15 و2026-04-17، قدّمت الأحزاب المعارضة الأربعة (S, V, MP, C) **20 مقترحاً مضاداً** ضد **9 مشاريع قوانين من حكومة Tidö** — استجابة تشريعية منسقة مركّزة في ثلاث لجان (FiU/SfU/SoU) ومرتكزة على ميزانية الوقود (prop 2025/26:236، [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **قدّمت Sverigedemokraterna صفراً من المقترحات المضادة**، محافظةً على الانضباط الكامل لكتلة Tidö. الموجة تُبرق تموضعاً انتخابياً حتى 2026: S تمتلك المحور المالي-المناخي؛ V تمتلك محور التوزيع؛ MP تمتلك محور تصدير الأسلحة؛ C تمتلك محور الإصلاح الإجرائي؛ SD تصمت.
@@ -2602,8 +2600,6 @@ flowchart TB
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_da.md -->
 
-**Forfatter**: James Pether Sörling · **Konfidens**: HØJ · **Læsetid**: 60 sekunder
-
 ### 🎯 BLUF
 
 Mellem 2026-04-15 og 2026-04-17 indgav de fire oppositionspartier (S, V, MP, C) **20 modmotioner** mod **9 Tidö-regeringsforslag** — et koordineret lovgivningssvar koncentreret i tre udvalg (FiU/SfU/SoU) og forankret i drivmedelsbudgetten (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna indgav nul modmotioner** og bevarede fuldstændig Tidö-blokdisciplin. Bølgen telegraferer valgpositionering frem til 2026: S ejer den finanspolitisk-klimatmæssige akse; V ejer fordelingsaxlen; MP ejer våbeneksportakslen; C ejer den proceduremæssige reformaxel; SD forbliver tavs.
@@ -2666,8 +2662,6 @@ flowchart TB
 
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_de.md -->
-
-**Autor**: James Pether Sörling · **Konfidenz**: HOCH · **Lesezeit**: 60 Sekunden
 
 ### 🎯 BLUF
 
@@ -2736,8 +2730,6 @@ Erneut gelesen und abgeschlossen 2026-04-24T01:23Z. Verifiziert: (1) alle 20 dok
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_es.md -->
 
-**Autor**: James Pether Sörling · **Confianza**: ALTA · **Tiempo de lectura**: 60 segundos
-
 ### 🎯 BLUF
 
 Entre el 2026-04-15 y el 2026-04-17, los cuatro partidos de la oposición (S, V, MP, C) presentaron **20 contramociones** contra **9 proposiciones del gobierno Tidö** — una respuesta legislativa coordinada concentrada en tres comisiones (FiU/SfU/SoU) y anclada en el presupuesto de combustibles (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna no presentó ninguna contramoción**, preservando la plena disciplina del bloque Tidö. La oleada telegrafía el posicionamiento electoral hasta 2026: S posee el eje fiscal-climático; V posee el eje distributivo; MP posee el eje de exportación de armas; C posee el eje de reforma procedimental; SD guarda silencio.
@@ -2801,8 +2793,6 @@ flowchart TB
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_fi.md -->
 
-**Tekijä**: James Pether Sörling · **Luottamus**: KORKEA · **Lukuaika**: 60 sekuntia
-
 ### 🎯 Ydintiivistelmä
 
 Välillä 2026-04-15–2026-04-17 neljä oppositiopuoluetta (S, V, MP, C) jätti **20 vastamietintöä** **9 Tidö-hallituksen esitystä** vastaan — koordinoitu lainsäädäntövastaus, joka on keskittynyt kolmeen valiokuntaan (FiU/SfU/SoU) ja ankkuroitunut polttoainebudjettiin (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna ei jättänyt yhtään vastamietintöä** ja säilytti täydellisen Tidö-blokkikurin. Aalto ennakoi vuoden 2026 vaaliasemointia: S omistaa finanssi-ilmastoakselin; V omistaa jakautumisakselin; MP omistaa asevienninakselin; C omistaa prosessuaalisen uudistuksen akselin; SD pysyy hiljaa.
@@ -2865,8 +2855,6 @@ flowchart TB
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_fr.md -->
-
-**Auteur** : James Pether Sörling · **Confiance** : ÉLEVÉE · **Durée de lecture** : 60 secondes
 
 ### 🎯 BLUF
 
@@ -2933,8 +2921,6 @@ flowchart TB
 
 <!-- dir: rtl -->
 # סיכום מנהלים — מוצעי האופוזיציה — 2026-04-24
-
-**מחבר**: James Pether Sörling · **רמת ביטחון**: גבוהה · **זמן קריאה**: 60 שניות
 
 ### 🎯 תמצית
 
@@ -3003,8 +2989,6 @@ flowchart TB
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling · **信頼度**: 高 · **読了時間**: 60秒
-
 ### 🎯 要点
 
 2026年4月15日から17日の間に、4つの野党(S, V, MP, C)が**9つのTidö政府法案**に対して**20件の対抗動議**を提出した — FiU/SfU/SoUの3委員会に集中し、燃料予算(prop 2025/26:236、[HD024082](https://data.riksdagen.se/dokument/HD024082.html))を軸とする協調した立法対応である。**Sverigedemokraternaは対抗動議ゼロ件**で、Tidöブロックの完全な規律を維持した。この波は2026年に向けた選挙ポジショニングを示す: SはFiUの財政-気候軸を保有; Vは分配軸を保有; MPは武器輸出軸を保有; Cは手続改革軸を保有; SDは沈黙を保つ。
@@ -3071,8 +3055,6 @@ flowchart TB
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling · **신뢰도**: 높음 · **읽기 시간**: 60초
 
 ### 🎯 핵심 요약
 
@@ -3141,8 +3123,6 @@ flowchart TB
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_nl.md -->
 
-**Auteur**: James Pether Sörling · **Betrouwbaarheid**: HOOG · **Leestijd**: 60 seconden
-
 ### 🎯 BLUF
 
 Tussen 2026-04-15 en 2026-04-17 dienden de vier oppositiepartijen (S, V, MP, C) **20 tegenmotie** in tegen **9 Tidö-regeringsvoorstellen** — een gecoördineerde wetgevingsreactie geconcentreerd in drie commissies (FiU/SfU/SoU) en verankerd in de brandstofbegroting (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna diende nul tegenmotie in** en bewaarde de volledige Tidö-blokdiscipline. De golf telegrafie verkiezingspositionering tot 2026: S bezit de fiscaal-klimaatas; V bezit de verdelingsas; MP bezit de wapexportas; C bezit de procedurehervormingsas; SD blijft stil.
@@ -3205,8 +3185,6 @@ flowchart TB
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_no.md -->
-
-**Forfatter**: James Pether Sörling · **Konfidens**: HØY · **Lesetid**: 60 sekunder
 
 ### 🎯 BLUF
 
@@ -3271,8 +3249,6 @@ flowchart TB
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_sv.md -->
 
-**Författare**: James Pether Sörling · **Konfidensgrad**: HÖG · **Lästid**: 60 sekunder
-
 ### 🎯 BLUF
 
 Mellan 2026-04-15 och 2026-04-17 lämnade de fyra oppositionspartierna (S, V, MP, C) in **20 följdmotioner** mot **9 Tidö-regeringspropositioner** — ett samordnat lagstiftningssvar koncentrerat till tre utskott (FiU/SfU/SoU) och förankrat i drivmedelsbudgeten (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna lämnade noll följdmotioner**, vilket bevarar fullständig Tidö-blockdisciplin. Vågen telegraferar valpositionering inför 2026: S äger den finanspolitisk-klimatmässiga axeln; V äger fördelningsaxeln; MP äger vapenexportaxeln; C äger axeln för processuell reform; SD håller tyst.
@@ -3335,8 +3311,6 @@ flowchart TB
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_zh.md -->
-
-**作者**: James Pether Sörling · **置信度**: 高 · **阅读时间**: 60秒
 
 ### 🎯 核心摘要
 

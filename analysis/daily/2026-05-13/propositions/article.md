@@ -3,7 +3,7 @@ date: 2026-05-13
 subfolder: propositions
 slug: 2026-05-13-propositions
 source_folder: analysis/daily/2026-05-13/propositions
-generated_at: 2026-05-24T22:15:16.833Z
+generated_at: 2026-05-25T09:05:41.930Z
 language: en
 layout: article
 ---
@@ -2583,11 +2583,6 @@ Samlet konfidensnivå: **HØY** (alle dokumenter fra offisielt Riksdagen-data-AP
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/propositions/executive-brief_sv.md -->
-
-**Klassificering**: OFFENTLIG  
-**Datum**: 2026-05-13  
-
-**Författare**: Riksdagsmonitor AI-analys
 
 ---
 

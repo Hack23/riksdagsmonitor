@@ -3,7 +3,7 @@ date: 2026-04-26
 subfolder: week-ahead
 slug: 2026-04-26-week-ahead
 source_folder: analysis/daily/2026-04-26/week-ahead
-generated_at: 2026-05-24T22:15:15.620Z
+generated_at: 2026-05-25T09:05:40.747Z
 language: en
 layout: article
 ---
@@ -2405,8 +2405,6 @@ timeline
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/executive-brief_sv.md -->
-
-**Författare**: James Pether Sörling | **Datum**: 2026-04-26 | **Period**: 2026-04-27 till 2026-05-03
 
 ---
 

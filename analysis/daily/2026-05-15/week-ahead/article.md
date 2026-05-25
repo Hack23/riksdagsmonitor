@@ -3,7 +3,7 @@ date: 2026-05-15
 subfolder: week-ahead
 slug: 2026-05-15-week-ahead
 source_folder: analysis/daily/2026-05-15/week-ahead
-generated_at: 2026-05-24T22:15:17.006Z
+generated_at: 2026-05-25T09:05:42.101Z
 language: en
 layout: article
 ---
@@ -1710,8 +1710,6 @@ Both documents selected as directly related thematic cluster (same author, same 
 
 <div dir="rtl">
 
-**المؤلف**: James Pether Sörling | **التصنيف**: عام
-
 ---
 
 ### 🎯 BLUF
@@ -1969,8 +1967,6 @@ La semaine 21 établit la responsabilité de l'aide comme thème central de camp
 
 <div dir="rtl">
 
-**מחבר**: James Pether Sörling | **סיווג**: ציבורי
-
 ---
 
 ### 🎯 BLUF
@@ -1996,8 +1992,6 @@ La semaine 21 établit la responsabilité de l'aide comme thème central de camp
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling | **分類**: 公開
-
 ---
 
 ### 🎯 BLUF
@@ -2020,8 +2014,6 @@ La semaine 21 établit la responsabilité de l'aide comme thème central de camp
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling | **분류**: 공개
 
 ---
 

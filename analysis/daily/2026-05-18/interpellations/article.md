@@ -3,7 +3,7 @@ date: 2026-05-18
 subfolder: interpellations
 slug: 2026-05-18-interpellations
 source_folder: analysis/daily/2026-05-18/interpellations
-generated_at: 2026-05-24T22:15:17.078Z
+generated_at: 2026-05-25T09:05:42.170Z
 language: en
 layout: article
 ---
@@ -1254,10 +1254,6 @@ Markus Wiechelin (SD) interpellaatio HD10494 ulkoministeri Maria Malmer Stenerga
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/interpellations/executive-brief_fr.md -->
-
-**Auteur** : James Pether Sörling  
-**Confiance** : HIGH [B1]  
-**Horizon** : T+11 jours (délai de réponse 2026-05-29) ; T+30 jours (signal politique tout au long de la saison électorale)
 
 ### BLUF
 
