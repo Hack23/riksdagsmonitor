@@ -1,9 +1,9 @@
 # Data Download Manifest — 2026-05-25
 
-**Generated**: 2026-05-25 12:21 UTC
-**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
-**Documents Downloaded**: 210
-**Documents Selected (date-filtered)**: 10
+**Generated**: 2026-05-25 18:39 UTC
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_dokument_innehall
+**Documents Downloaded**: 180
+**Documents Selected (date-filtered)**: 6
 **Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
@@ -21,7 +21,7 @@
 - **votes**: 30 documents
 - **speeches**: 30 documents
 - **questions**: 30 documents
-- **interpellations**: 30 documents
+- **interpellations**: 0 documents
 
 ## Data Quality Notes
 
@@ -37,7 +37,7 @@ All documents sourced from official riksdag-regering-mcp API.
 | search_voteringar | `{"limit":30,"rm":"2025/26"}` | 30 | metadata_only |  |
 | search_anforanden | `{"limit":30,"rm":"2025/26"}` | 30 | metadata_only |  |
 | get_fragor | `{"limit":30,"rm":"2025/26"}` | 30 | metadata_only |  |
-| get_interpellationer | `{"limit":30,"rm":"2025/26"}` | 30 | metadata_only |  |
+| get_interpellationer | `{"limit":30,"rm":"2025/26"}` | 0 | fetch_error | MCP request failed: MCP tool error: calling "tools/call": Internal error |
 
 ## MCP Coverage State
 
@@ -49,10 +49,6 @@ All documents sourced from official riksdag-regering-mcp API.
 | HD01UU19 | full_text | live | get_dokument_innehall | 1 | full-text/HD01UU19.md |
 | HD11836 | full_text | live | get_dokument_innehall | 1 | full-text/HD11836.md |
 | HD11837 | full_text | live | get_dokument_innehall | 1 | full-text/HD11837.md |
-| HD10511 | full_text | live | get_dokument_innehall | 1 | full-text/HD10511.md |
-| HD10512 | full_text | live | get_dokument_innehall | 1 | full-text/HD10512.md |
-| HD10510 | full_text | live | get_dokument_innehall | 1 | full-text/HD10510.md |
-| HD10509 | full_text | live | get_dokument_innehall | 1 | full-text/HD10509.md |
 
 ## Full-Text Fetch Outcomes
 
@@ -63,13 +59,9 @@ All documents sourced from official riksdag-regering-mcp API.
 | HD01JuU48 | full_text | true | 932 | live | persisted: full-text/HD01JuU48.md |
 | HD01UU19 | full_text | true | 78578 | live | persisted: full-text/HD01UU19.md |
 | HD11836 | full_text | true | 4175 | live | persisted: full-text/HD11836.md |
-| HD11837 | full_text | true | 3004 | live | persisted: full-text/HD11837.md |
-| HD10511 | full_text | true | 2477 | live | persisted: full-text/HD10511.md |
-| HD10512 | full_text | true | 2605 | live | persisted: full-text/HD10512.md |
-| HD10510 | full_text | true | 4325 | live | persisted: full-text/HD10510.md |
-| HD10509 | full_text | true | 3612 | live | persisted: full-text/HD10509.md |
+| HD11837 | full_text | true | 3086 | live | persisted: full-text/HD11837.md |
 
-**Full-text retrieved**: 10/10 top documents
+**Full-text retrieved**: 6/6 top documents
 
 ## Deferred Retrieval Queue
 

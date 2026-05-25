@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD01UU24",
+  "titel": "Civil underrättelsetjänst",
+  "datum": "2026-05-25",
+  "rm": "2025/26",
+  "organ": "UU",
+  "summary": "5290516\r\n HD01UU24\r\n 2025/26\r\n UU24\r\n bet\r\n bet\r\n bet\r\n Betänkande 2025/26:UU24\r\n Betänkande\r\n Debatt om förslag\r\n \r\n UU\r\n \r\n 24\r\n 0\r\n 2026-05-25 00:00:00\r\n 2026-05-25 08:42:36\r\n 2026-05-25 08:42:35\r\n Civil underrättelsetjänst\r\n \r\n planerat\r\n \r\n \r\n Brus\r\n 832277e9-f23a-43e6-86da-4a32f7a071f5\r\n https://data.riksdagen.se/dokument/HD01UU24/text\r\n https://data.riksdagen.se/dokument/HD01UU24\r\n https...",
+  "url": "https://data.riksdagen.se/dokument/HD01UU24.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD01UU24",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-25T18:40:11.651Z"
+  },
+  "fullContent": "5290516\r\n HD01UU24\r\n 2025/26\r\n UU24\r\n bet\r\n bet\r\n bet\r\n Betänkande 2025/26:UU24\r\n Betänkande\r\n Debatt om förslag\r\n \r\n UU\r\n \r\n 24\r\n 0\r\n 2026-05-25 00:00:00\r\n 2026-05-25 08:42:36\r\n 2026-05-25 08:42:35\r\n Civil underrättelsetjänst\r\n \r\n planerat\r\n \r\n \r\n Brus\r\n 832277e9-f23a-43e6-86da-4a32f7a071f5\r\n https://data.riksdagen.se/dokument/HD01UU24/text\r\n https://data.riksdagen.se/dokument/HD01UU24\r\n https://data.riksdagen.se/dokumentstatus/HD01UU24\r\n https://data.riksdagen.se/utskottsforslag/HD01UU24\r\n <h2>Civil underrättelsetjänst</h2>\r\nDokumentet är inte publicerat\r\n\r\n\r\n\r\nUBE\r\nBeredning\r\n2026-07-02 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nUBE\r\nBeredning\r\n2026-07-07 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nJUS\r\nJustering\r\n2026-07-09 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nTRY\r\nTrycklov\r\n2026-07-10 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nB\r\nBordläggning\r\n2026-08-12 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBEH\r\nBehandling\r\n2026-08-13 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBES\r\nBeslut\r\n2026-08-13 00:00:00\r\nplanerat\r\n0",
+  "contentFetched": true
+}
