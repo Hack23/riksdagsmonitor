@@ -210,20 +210,22 @@ jobs:
         run: npm ci
 
       - name: Run unit tests with coverage
+        # Coverage `reportsDirectory`, coverage reporters, and test
+        # reporter `outputFile`s are all configured in vitest.config.js
+        # (see test.coverage.reportsDirectory / test.reporters). Do not
+        # re-specify them on the CLI — passing `--reporter` here would
+        # replace the configured reporter array, silently dropping the
+        # html and json-with-outputFile reporters.
+        #
+        # `coverage.reportOnFailure: true` in vitest.config.js ensures
+        # `builds/coverage/` survives a failing run; without it Vitest
+        # calls `cleanAfterRun()` on failure and wipes the directory.
         run: |
           mkdir -p builds/test-results builds/coverage
-          # Pass coverage output dir explicitly so files land in builds/
-          # (default is coverage/, which is NOT included in the artifact).
-          # The json reporter writes a machine-readable summary alongside
-          # the coverage HTML/lcov for the deploy-docs job to consume.
-          npx vitest run --coverage \
-            --coverage.reportsDirectory=builds/coverage \
-            --reporter=verbose \
-            --reporter=json \
-            --outputFile=builds/test-results/vitest-results.json
+          npx vitest run --coverage
 
-          # Fail fast here so the error is attributed to Unit Tests, not
-          # to the downstream deploy-docs job ("Artifact not found").
+          # Defense-in-depth: fail attribution stays on Unit Tests rather
+          # than the downstream deploy-docs job ("Artifact not found").
           if ! find builds -type f | grep -q .; then
             echo "::error::No unit-test or coverage files found under builds/ — check vitest/coverage configuration."
             exit 1

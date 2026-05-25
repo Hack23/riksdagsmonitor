@@ -32,7 +32,16 @@ export default defineConfig({
       // the full path.
       reporter: [['text', { maxCols: 200 }], 'html', 'lcov', 'json'],
       reportsDirectory: './builds/coverage',
-      
+
+      // Persist the coverage report even when one or more tests fail.
+      // Vitest's default behaviour (`reportOnFailure: false`) calls
+      // `cleanAfterRun()` on a failing run, which wipes `builds/coverage/`
+      // entirely — that is the root cause of CI seeing "no coverage" and
+      // the artifact upload failing with `if-no-files-found: error`.
+      // See node_modules/vitest/dist/chunks/coverage.*.js:
+      //   `if (!this.options.reportOnFailure) await this.cleanAfterRun();`
+      reportOnFailure: true,
+
       // Enabled: include all source files so zero-coverage modules are visible
       all: true,
       
