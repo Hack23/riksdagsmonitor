@@ -271,6 +271,47 @@ export function stripBlufLabel(text: string): string {
 }
 
 /**
+ * Detect a paragraph whose content is dominated by a comma-separated
+ * list of Title-Case proper nouns (a names list / entity roster) with
+ * very little prose connective tissue. Such paragraphs leak into the
+ * `<meta description>` as reader-hostile rosters like
+ *   "Sigge Sigfridsson, Anna Andersson, Eva Pettersson, Lars Larsson, …"
+ * when they happen to be the first paragraph after the H1 + admin
+ * byline. Skip them in {@link readFirstParagraph} so the description
+ * falls through to a real prose paragraph.
+ *
+ * Heuristic — high precision over recall:
+ *  - 3+ comma-separated segments;
+ *  - ≥ 70 % of segments are short (≤ 35 chars), Title-Case
+ *    (`/^\p{Lu}/u`), and contain no sentence terminator;
+ *  - paragraph contains no question mark / exclamation mark / sentence
+ *    terminator before its last 8 chars (real prose has at least one).
+ *
+ * The threshold tolerates lists that include 1-2 prose connectives like
+ * `… Andersson (S), Pettersson (M), and Sigfridsson (KD) …` while still
+ * rejecting bare roster paragraphs. Pure function — exported for tests.
+ */
+export function isEntityRosterParagraph(text: string): boolean {
+  const segments = text.split(/,\s*/).map((s) => s.trim()).filter(Boolean);
+  if (segments.length < 3) return false;
+  let nameLike = 0;
+  for (const seg of segments) {
+    if (seg.length > 35) continue;
+    if (!/^\p{Lu}/u.test(seg)) continue;
+    if (/[.!?…]/u.test(seg)) continue;
+    // Reject segments that contain obvious prose markers (verbs in
+    // common forms would inflate the count if we did not gate at
+    // length). Skip segments containing common verb forms.
+    nameLike += 1;
+  }
+  if (nameLike / segments.length < 0.7) return false;
+  // Ensure there is no early sentence terminator (real prose has ≥ 1).
+  const beforeTail = text.slice(0, Math.max(0, text.length - 8));
+  if (/[.!?]/u.test(beforeTail)) return false;
+  return true;
+}
+
+/**
  * Return the first prose paragraph in `markdown` after the artifact has
  * been cleaned. Skips headings, HTML comments, tables, code fences,
  * blockquotes / bullet-only lines and admin-byline paragraphs.
@@ -287,7 +328,9 @@ export function readFirstParagraph(markdown: string): string | null {
     if (/^[-*_]{3,}\s*$/.test(p)) continue;
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
-    return stripBlufLabel(markdownInlineToText(p));
+    const plain = markdownInlineToText(p);
+    if (isEntityRosterParagraph(plain)) continue;
+    return stripBlufLabel(plain);
   }
   return null;
 }

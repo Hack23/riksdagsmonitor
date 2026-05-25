@@ -179,7 +179,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   const description = truncateToSentenceBoundary(rawDescriptionSource);
 
   const title =
-    cleanArticleTitle(readFirstHeading(briefRaw), subfolder) ||
+    cleanArticleTitle(readFirstHeading(briefRaw), subfolder, 'en') ||
     titleFromBluf(rawBlufParagraph ?? rawFirstParagraph) ||
     `${prettifyFallbackTitle(subfolder)} — ${date}`;
   // Mine bill IDs / proposition refs / committee codes / party codes /

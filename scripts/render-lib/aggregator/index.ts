@@ -157,7 +157,7 @@ export interface AggregatorTestApi {
   readonly readBlufParagraph: (markdown: string) => string | null;
   readonly truncateToSentenceBoundary: (text: string, softMin?: number, hardMax?: number) => string;
   readonly markdownInlineToText: (markdown: string) => string;
-  readonly cleanArticleTitle: (raw: string | null) => string | null;
+  readonly cleanArticleTitle: (raw: string | null, subfolder?: string, lang?: import('../../types/language.js').Language) => string | null;
   readonly titleFromBluf: (bluf: string | null, maxLen?: number) => string | null;
   readonly escapeYaml: (text: string) => string;
   readonly escapeInlineMd: (text: string) => string;

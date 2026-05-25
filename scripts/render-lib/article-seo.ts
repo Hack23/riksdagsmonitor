@@ -333,6 +333,47 @@ const TRAILING_DANGLING_CARDINAL_RE =
  */
 const TRAILING_HYPHENATED_STUB_RE = /[\s,;:—–]+\S*-$/u;
 
+/**
+ * Reader-hostile trailing fragments after the last comma — when the
+ * word-boundary truncate cuts a list mid-item like
+ *   "Sweden's Riksdag closed the week with security, tax authority"
+ * the trailing `tax authority` is a bare noun phrase with no verb /
+ * predicate and reads as a stub. Step back to the segment **before**
+ * the last comma so the title ends on a complete clause.
+ *
+ * Conservative: only triggers when
+ *   - there is a comma in the cut, AND
+ *   - the tail (text after the last comma) is short (≤ 30 chars) AND
+ *     contains 1–4 words AND has no trailing punctuation, AND
+ *   - the preceding segment is itself substantive (≥ 25 chars after
+ *     trim), so we never strip a title down to a meaningless fragment.
+ *
+ * Live cases (audit 2026-05-25):
+ *  - "Swedish Riksdag closed the week of 22 May 2026 with a substantial
+ *     legislative harvest spanning national security, tax authority…"
+ *    → cuts to "… spanning national security…" (drops `tax authority`).
+ *  - "Twenty interpellations filed in the 2025/26 riksmöte crystallise
+ *     the opposition's pre-election accountability offensive, the…"
+ *    → cuts before the trailing comma.
+ *
+ * Pure function — exported only for testability.
+ */
+export function stripTrailingCommaStub(text: string): string {
+  const lastComma = text.lastIndexOf(',');
+  if (lastComma < 0) return text;
+  const head = text.slice(0, lastComma).trim();
+  const tail = text.slice(lastComma + 1).trim();
+  if (head.length < 25) return text;
+  if (tail.length === 0 || tail.length > 30) return text;
+  // Tail must look like a bare noun phrase: 1-4 words, no terminal
+  // punctuation, no connector ending (the connector strip already ran
+  // upstream).
+  const tailWords = tail.split(/\s+/).filter(Boolean);
+  if (tailWords.length < 1 || tailWords.length > 4) return text;
+  if (/[.!?…]$/u.test(tail)) return text;
+  return head;
+}
+
 function trimTrailingConnectors(text: string): string {
   let prev = text;
   for (let i = 0; i < 8; i += 1) {
@@ -354,7 +395,15 @@ function truncateAtWord(text: string, maxLen: number): string {
   const sliced = clean.slice(0, maxLen);
   const lastSpace = sliced.lastIndexOf(' ');
   const cut = lastSpace > Math.floor(maxLen * 0.55) ? sliced.slice(0, lastSpace) : sliced;
-  const stripped = trimTrailingConnectors(trimTrailingPunctuation(cut));
+  // Two-stage cleanup: first strip dangling connectors / cardinals /
+  // hyphenated stubs (TRAILING_CONNECTOR_RE etc.); then step back over
+  // any comma-trailing list-item stub that survives the connector
+  // strip (live: `… spanning national security, tax authority` →
+  // `… spanning national security`). The comma-stub stripper is run
+  // after the connector strip so dangling connectors are not mistaken
+  // for the bare-noun tail.
+  const connectorStripped = trimTrailingConnectors(trimTrailingPunctuation(cut));
+  const stripped = trimTrailingConnectors(stripTrailingCommaStub(connectorStripped));
   return stripped + '…';
 }
 

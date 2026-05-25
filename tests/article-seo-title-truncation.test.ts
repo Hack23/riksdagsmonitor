@@ -22,7 +22,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { buildSeoTitle } from '../scripts/render-lib/article-seo.js';
+import { buildSeoTitle, stripTrailingCommaStub } from '../scripts/render-lib/article-seo.js';
 
 const baseInput = {
   description: '',
@@ -146,5 +146,56 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     const result = buildSeoTitle({ ...baseInput, title: h1 });
     expect(result).not.toMatch(/\b(and|or|with|the|a|an)…$/i);
     expect(result.length).toBeLessThanOrEqual(70);
+  });
+});
+
+// ──────────────────────────────────────────────────────────────────
+// Round 9 (2026-05-25) — comma-trailing-fragment guard in
+// truncateAtWord. Live audit of news/index.html cards showed
+// truncated descriptions ending on bare noun-phrase stubs after the
+// last comma (`… national security, tax authority`,
+// `… consequences, the…`), reading as list-mid cuts. The new
+// stripTrailingCommaStub helper steps back to the comma when the
+// tail is short and the head is substantive.
+// ──────────────────────────────────────────────────────────────────
+
+describe('stripTrailingCommaStub — comma-trailing fragment guard', () => {
+  it('strips a 2-word noun-phrase tail after the last comma', () => {
+    const input =
+      "Sweden's Riksdag closed the week with security legislation, tax authority";
+    expect(stripTrailingCommaStub(input)).toBe(
+      "Sweden's Riksdag closed the week with security legislation",
+    );
+  });
+
+  it('strips a 1-word noun tail (`the`-style determiner is a connector and is already stripped upstream)', () => {
+    const input = 'Twenty interpellations crystallise the opposition offensive, today';
+    expect(stripTrailingCommaStub(input)).toBe(
+      'Twenty interpellations crystallise the opposition offensive',
+    );
+  });
+
+  it('preserves the original text when the tail is too long (likely real clause)', () => {
+    const input =
+      'Riksdag advances three reform clusters, including education reform and security expansion';
+    // Tail after last comma is 64 chars — way over the 30-char threshold,
+    // so this looks like a substantive subordinate clause, not a stub.
+    expect(stripTrailingCommaStub(input)).toBe(input);
+  });
+
+  it('preserves the text when the head is short (would over-strip)', () => {
+    const input = 'Brief, today';
+    // Head is only 5 chars — stripping would leave nothing meaningful.
+    expect(stripTrailingCommaStub(input)).toBe(input);
+  });
+
+  it('preserves text with no comma', () => {
+    const input = "Sweden's Riksdag closes the week with security legislation";
+    expect(stripTrailingCommaStub(input)).toBe(input);
+  });
+
+  it('preserves a tail that ends with a sentence terminator (real prose)', () => {
+    const input = 'Riksdag advances reform, finally.';
+    expect(stripTrailingCommaStub(input)).toBe(input);
   });
 });

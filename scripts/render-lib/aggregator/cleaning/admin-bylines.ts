@@ -228,6 +228,159 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'Pass(?:\\s*\\d+)?',
   'AI[-\\s]?FIRST(?:\\s+iterations?)?',
   'ARTICLE_TYPE',
+  // Round 9 (2026-05-25) — multi-language admin-byline labels. The
+  // executive-brief is translated into 14 languages, and the per-
+  // language `executive-brief_<lang>.md` ships the admin block with
+  // the *translated* labels (`Klassificering: OFFENTLIG`, `Författare:
+  // Riksdagsmonitor`, `Datum: 2026-05-22`, …) in the SV/DA/NO/DE/FR/
+  // ES/NL/FI variants. Audit 2026-05-25 of news/index_sv.html
+  // confirmed pipe-separated SV admin lines like
+  //   `**Klassificering**: OFFENTLIG | **Datum**: 2026-05-22 | **Författare**: Riksdagsmonitor`
+  // leaked into the SERP `<meta description>` because the SV labels
+  // were not in this dictionary — only `Datum` was. The full
+  // translation table below covers the labels appearing in
+  // `analysis/templates/executive-brief_*.md` and observed in live
+  // translated briefs.
+  //
+  // Keep the regex narrow (still anchored to `^**LABEL**:`) so real
+  // prose words sharing a label spelling (e.g. SV `Datum` as a
+  // sentence-leading noun) are never matched without the trailing
+  // colon.
+  //
+  // ── Swedish (sv) ───────────────────────────────────────────────────
+  'F(?:ö|o)rfattare',         // Author
+  'K(?:ä|a)lla',              // Source
+  'Klassificering',           // Classification
+  'Tillf(?:ö|o)rlitlighet',   // Confidence
+  'Konfidens',                // Confidence (alt.)
+  'L(?:ä|a)stid',             // Read time
+  'Publicerad',               // Published
+  'Distribution',             // Distribution
+  'Granskad\\s*av',           // Reviewed by
+  'F(?:ö|o)rberedd\\s*av',    // Prepared by
+  'Genererad',                // Generated
+  'Genererad\\s*kl',          // Generated at
+  'Genererad\\s*den',         // Generated on
+  // ── Danish (da) ────────────────────────────────────────────────────
+  'Forfatter',                // Author
+  'Kilde',                    // Source
+  'Klassifikation',           // Classification
+  'Tillid',                   // Confidence
+  'Dato',                     // Date
+  'L(?:æ|ae)setid',           // Read time
+  'Udarbejdet\\s*af',         // Prepared by
+  'Gennemgået\\s*af',         // Reviewed by
+  // ── Norwegian (no) ─────────────────────────────────────────────────
+  'Forfatter',                // Author (shared with DA)
+  'Kilde',                    // Source (shared with DA)
+  'Klassifisering',           // Classification
+  'Tillit',                   // Confidence
+  'Lesetid',                  // Read time
+  'Utarbeidet\\s*av',         // Prepared by
+  'Gjennomgått\\s*av',        // Reviewed by
+  // ── Finnish (fi) ───────────────────────────────────────────────────
+  'Tekij(?:ä|a)',             // Author
+  'L(?:ä|a)hde',              // Source
+  'Luokitus',                 // Classification
+  'Luottamus',                // Confidence
+  'P(?:ä|a)iv(?:ä|a)ys',      // Date
+  'Lukuaika',                 // Read time
+  'Valmistellut',             // Prepared by
+  'Tarkastanut',              // Reviewed by
+  // ── German (de) ────────────────────────────────────────────────────
+  'Verfasser',                // Author
+  'Autor',                    // Author
+  'Quelle',                   // Source
+  'Klassifizierung',          // Classification
+  'Klassifikation',           // Classification (alt.)
+  'Vertraulichkeit',          // Confidence/Classification
+  'Vertrauen',                // Confidence
+  'Datum',                    // Date (shared with SV)
+  'Lesezeit',                 // Read time
+  'Erstellt\\s*von',          // Prepared by
+  'Erstellt\\s*am',           // Generated at
+  'Gepr(?:ü|u)ft\\s*von',     // Reviewed by
+  'Ver(?:ö|o)ffentlicht',     // Published
+  // ── French (fr) ────────────────────────────────────────────────────
+  'Auteur',                   // Author
+  'Source',                   // Source (shared with EN)
+  'Classification',           // already above
+  'Confiance',                // Confidence
+  'Date',                     // already above
+  'Temps\\s*de\\s*lecture',   // Read time
+  'Pr(?:é|e)par(?:é|e)\\s*par',   // Prepared by
+  'R(?:é|e)vis(?:é|e)\\s*par',    // Reviewed by
+  'Publi(?:é|e)',             // Published
+  // ── Spanish (es) ───────────────────────────────────────────────────
+  'Autor',                    // Author (shared with DE)
+  'Fuente',                   // Source
+  'Clasificaci(?:ó|o)n',      // Classification
+  'Confianza',                // Confidence
+  'Fecha',                    // Date
+  'Tiempo\\s*de\\s*lectura',  // Read time
+  'Preparado\\s*por',         // Prepared by
+  'Revisado\\s*por',          // Reviewed by
+  'Publicado',                // Published
+  // ── Dutch (nl) ─────────────────────────────────────────────────────
+  'Auteur',                   // Author
+  'Bron',                     // Source
+  'Classificatie',            // Classification
+  'Vertrouwen',               // Confidence
+  'Datum',                    // Date (shared)
+  'Leestijd',                 // Read time
+  'Opgesteld\\s*door',        // Prepared by
+  'Beoordeeld\\s*door',       // Reviewed by
+  'Gepubliceerd',             // Published
+  // ── Arabic (ar) ────────────────────────────────────────────────────
+  'المؤلف',                   // Author
+  'المصدر',                   // Source
+  'التصنيف',                  // Classification
+  'الثقة',                    // Confidence
+  'التاريخ',                  // Date
+  'وقت\\s*القراءة',           // Read time
+  'أعد\\s*بواسطة',            // Prepared by
+  'راجعه',                    // Reviewed by
+  // ── Hebrew (he) ────────────────────────────────────────────────────
+  'מחבר',                     // Author
+  'מקור',                     // Source
+  'סיווג',                    // Classification
+  'אמון',                     // Confidence
+  'תאריך',                    // Date
+  'זמן\\s*קריאה',             // Read time
+  'הוכן\\s*על\\s*ידי',        // Prepared by
+  'נסקר\\s*על\\s*ידי',        // Reviewed by
+  // ── Japanese (ja) ──────────────────────────────────────────────────
+  '著者',                      // Author
+  '出典',                      // Source
+  '分類',                      // Classification
+  '機密区分',                  // Confidence/Classification
+  '信頼度',                    // Confidence
+  '日付',                      // Date
+  '読了時間',                  // Read time
+  '作成者',                    // Prepared by
+  '査読者',                    // Reviewed by
+  '公開日',                    // Published
+  // ── Korean (ko) ────────────────────────────────────────────────────
+  '저자',                      // Author
+  '출처',                      // Source
+  '분류',                      // Classification
+  '신뢰도',                    // Confidence
+  '날짜',                      // Date
+  '읽기\\s*시간',              // Read time
+  '작성자',                    // Prepared by
+  '검토자',                    // Reviewed by
+  '게시일',                    // Published
+  // ── Chinese (zh) ───────────────────────────────────────────────────
+  '作者',                      // Author
+  '来源',                      // Source
+  '分类',                      // Classification
+  '机密等级',                  // Classification
+  '可信度',                    // Confidence
+  '日期',                      // Date
+  '阅读时间',                  // Read time
+  '编制者',                    // Prepared by
+  '审核者',                    // Reviewed by
+  '发布',                      // Published
 ];
 
 /**

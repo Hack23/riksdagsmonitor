@@ -213,12 +213,13 @@ export function extractLocalizedBriefSeo(
   if (!briefMarkdown || briefMarkdown.trim().length === 0) {
     return { title: null, description: null, keywords: [] };
   }
+  const langKey = normaliseLangKey(lang);
 
   // Title — readFirstHeading + isBannedLocalizedBriefH1 + cleanArticleTitle.
   let title: string | null = null;
   const rawH1 = readFirstHeading(briefMarkdown);
   if (rawH1 && !isBannedLocalizedBriefH1(rawH1)) {
-    title = cleanArticleTitle(rawH1, subfolder);
+    title = cleanArticleTitle(rawH1, subfolder, langKey);
   }
 
   // Description — `composeRichDescription` combines the BLUF lede with
@@ -228,7 +229,6 @@ export function extractLocalizedBriefSeo(
   // page. Falls back to plain BLUF when no headline section is present.
   // The per-language SERP window is enforced inside the composer.
   let description: string | null = null;
-  const langKey = normaliseLangKey(lang);
   const composed = composeRichDescription(briefMarkdown, langKey);
   if (composed && composed.length > 0) {
     description = composed;

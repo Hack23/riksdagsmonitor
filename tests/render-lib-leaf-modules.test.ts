@@ -528,6 +528,73 @@ describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
     ).toBe('Sweden joins NATO summit talks');
   });
 
+  // ──────────────────────────────────────────────────────────────────
+  // Round 9 (2026-05-25) — 14-language Executive-Brief prefix dictionary.
+  // Live audit of news/index_sv.html, _de.html, _fr.html, … showed
+  // localized briefs shipped with the upstream-translated boilerplate
+  // prefix (`Exekutiv sammanfattning —`, `Zusammenfassung —`,
+  // `Résumé exécutif —`, …) un-stripped. The new lang-aware path in
+  // cleanArticleTitle strips the prefix dictionary entries for the
+  // matching language before the editorial signal is exposed to
+  // buildSeoTitle.
+  // ──────────────────────────────────────────────────────────────────
+
+  it('cleanArticleTitle strips Swedish brief prefix `Exekutiv sammanfattning —`', () => {
+    expect(
+      cleanArticleTitle(
+        'Exekutiv sammanfattning — Riksdagen antar AI-lag om ansiktsigenkänning — 2026-05-22',
+        undefined,
+        'sv',
+      ),
+    ).toBe('Riksdagen antar AI-lag om ansiktsigenkänning');
+  });
+
+  it('cleanArticleTitle strips German brief prefix `Zusammenfassung —`', () => {
+    expect(
+      cleanArticleTitle(
+        'Zusammenfassung — Schwedens Reichstag verabschiedet KI-Gesetz — 2026-05-22',
+        undefined,
+        'de',
+      ),
+    ).toBe('Schwedens Reichstag verabschiedet KI-Gesetz');
+  });
+
+  it('cleanArticleTitle strips French brief prefix `Résumé exécutif —`', () => {
+    expect(
+      cleanArticleTitle(
+        'Résumé exécutif — Le Riksdag suédois adopte une loi de surveillance faciale',
+        undefined,
+        'fr',
+      ),
+    ).toBe('Le Riksdag suédois adopte une loi de surveillance faciale');
+  });
+
+  it('cleanArticleTitle strips Arabic brief prefix `ملخص تنفيذي —` (RTL)', () => {
+    // The dash is preserved as a single literal separator in the
+    // dictionary; verify the RTL prefix is removed cleanly.
+    const out = cleanArticleTitle(
+      'ملخص تنفيذي — البرلمان السويدي يقر قانون الذكاء الاصطناعي',
+      undefined,
+      'ar',
+    );
+    expect(out).not.toMatch(/^ملخص/);
+    expect(out).not.toBeNull();
+  });
+
+  it('cleanArticleTitle without lang param falls back to EN strip only (legacy callers)', () => {
+    // Legacy callers (rewriter.ts, executive-brief-h1.ts gate) call
+    // without a lang argument. The EN strip must still work; the SV
+    // prefix must NOT match (no false positives in EN-only paths).
+    expect(
+      cleanArticleTitle('Executive Brief — Sweden Tightens Migration Rules This Week'),
+    ).toBe('Sweden Tightens Migration Rules This Week');
+    // SV prefix without lang — left intact since cleanArticleTitle
+    // cannot disambiguate the language without the parameter.
+    expect(
+      cleanArticleTitle('Exekutiv sammanfattning — Sweden Tightens Migration Rules This Week'),
+    ).toBe('Exekutiv sammanfattning — Sweden Tightens Migration Rules This Week');
+  });
+
   it('cleanArticleTitle returns null when too short', () => {
     expect(cleanArticleTitle('Short')).toBeNull();
   });
