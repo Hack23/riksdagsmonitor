@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2025/26",
+  "date": "2026-05-25",
+  "subfolder": "realtime-monitor",
+  "pirs": [
+    {
+      "id": "PIR-01",
+      "question": "What is the parliamentary majority's strategy for insulating NATO/security decisions from democratic contestation?",
+      "status": "answered",
+      "confidence": "high",
+      "answer_summary": "Pattern confirmed in UU19 and UU24: all oversight motions rejected; committee functions as ratification body.",
+      "horizon": "T+0d",
+      "source_documents": ["HD01UU19", "HD01UU24"]
+    },
+    {
+      "id": "PIR-02",
+      "question": "Is the economic inequality narrative gaining electoral traction for S?",
+      "status": "partially_answered",
+      "confidence": "medium",
+      "answer_summary": "HD10511 filed; ministerial response pending. Electoral impact depends on SCB June 2026 income data.",
+      "horizon": "T+7d",
+      "source_documents": ["HD10511"]
+    },
+    {
+      "id": "PIR-03",
+      "question": "Is the Tidö coalition maintaining criminal justice reform cohesion against SD maximalist pressure?",
+      "status": "partially_answered",
+      "confidence": "medium",
+      "answer_summary": "JuU47 and JuU48 passed committee stage with coalition support. SD position on JuU48 proportionality framework at August chamber debate is the key test.",
+      "horizon": "T+90d",
+      "source_documents": ["HD01JuU47", "HD01JuU48"]
+    },
+    {
+      "id": "PIR-04",
+      "question": "Does Sweden face EU Climate Law enforcement risk from its climate adaptation legislation gap?",
+      "status": "partially_answered",
+      "confidence": "medium",
+      "answer_summary": "Gap confirmed by HD10509 interpellation. EU enforcement risk is real but horizon is 2027-28. Ministerial response timeline pending.",
+      "horizon": "T+7d",
+      "source_documents": ["HD10509", "HD10510"]
+    },
+    {
+      "id": "PIR-05",
+      "question": "Is Sweden's online radicalisation prosecution gap creating active criminal intelligence risk?",
+      "status": "confirmed",
+      "confidence": "high",
+      "answer_summary": "JuU47 confirms gap exists. Legislation not yet implemented. 12-18 month gap expected.",
+      "horizon": "T+360d",
+      "source_documents": ["HD01JuU47"]
+    }
+  ],
+  "generated_at": "2026-05-25T00:00:00Z"
+}

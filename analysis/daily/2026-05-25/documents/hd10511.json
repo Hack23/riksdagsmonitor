@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD10511",
+  "titel": "Den ekonomiska politikens fördelningseffekter",
+  "datum": "2026-05-25",
+  "rm": "2025/26",
+  "parti": "S",
+  "summary": "Interpellation 2025/26:511 Den ekonomiska politikens fördelningseffekter\n av  Niklas Karlsson (S)\n till Finansminister Elisabeth Svantesson (M)\n Enligt 1 kap. 2 regeringsformen ska den enskildes ekonomiska välfärd vara ett grundläggande mål för den offentliga verksamheten, och det allmänna ska särskilt trygga rätten till",
+  "url": "https://data.riksdagen.se/dokument/HD10511.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD10511",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-25T12:22:08.137Z"
+  },
+  "fullContent": "5290513\r\n HD10511\r\n 2025/26\r\n 511\r\n ip\r\n \r\n ip\r\n Interpellation 2025/26:511 av Niklas Karlsson (S)\r\n Interpellation\r\n Interpellationsdebatt\r\n S\r\n S\r\n Finansminister Elisabeth Svantesson (M)\r\n 511\r\n 0\r\n 2026-05-25 00:00:00\r\n 2026-05-25 08:18:31\r\n 2026-05-25 00:00:00\r\n Den ekonomiska politikens fördelningseffekter\r\n Niklas Karlsson (S)\r\n Skickad\r\n html\r\n \r\n Frips\r\n 2ecc4882-8634-4188-aca4-36538d9c7893\r\n https://data.riksdagen.se/dokument/HD10511/text\r\n https://data.riksdagen.se/dokument/HD10511\r\n https://data.riksdagen.se/dokumentstatus/HD10511\r\n <h2>Interpellation 2025/26:511 Den ekonomiska politikens fördelningseffekter</h2>\r\n<p class=\"Av\">av <i>Niklas Karlsson (S)</i></p>\r\n<p class=\"Till\">till Finansminister Elisabeth Svantesson (M)</p>\r\n<p>&nbsp;</p>\r\n<p>Enligt 1 kap. 2 § regeringsformen ska den enskildes ekonomiska välfärd vara ett grundläggande mål för den offentliga verksamheten, och det allmänna ska särskilt trygga rätten till arbete samt verka för social omsorg och trygghet.</p><p>Skattepolitiken är ett av de viktigaste verktygen för ekonomisk omfördelning och för att säkerställa finansieringen av gemensamma angelägenheter och samhällsfunktioner. Regeringens prioriteringar när det gäller skattesänkningar genomförs på ett sätt som riskerar att öka de ekonomiska klyftorna i samhället och därmed inte leva upp till regeringsformens krav på&#160;att det allmänna ska verka för social omsorg och trygghet.</p><p>Med hänvisning till ovanstående vill jag fråga finansminister Elisabeth Svantesson&#58;</p><p>&#160;</p><p>Bedömer ministern att regeringens ekonomiska politik är förenlig med regeringsformens formuleringar, och avser ministern att vidta någon åtgärd utifrån sin bedömning?</p>\r\n\r\n\r\n\r\nINL\r\nInlämnad\r\n2026-05-22 00:00:00\r\ninträffat\r\n0\r\nbehandling\r\n\r\n\r\nÖverlämnad\r\nÖverlämnad\r\n2026-05-25 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\nANM\r\nAnmäld\r\n2026-05-26 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\nSISVA\r\nSista svarsdatum\r\n2026-06-09 00:00:00\r\nplanerat\r\n0\r\nbehandling\r\n\r\n\r\n\r\n\r\n065105536026\r\nNiklas Karlsson\r\nS\r\n1\r\nundertecknare\r\n\r\n\r\n0899112324519\r\nFinansminister Elisabeth Svantesson\r\nM\r\n1\r\nbesvaradav\r\n\r\n\r\n0899112324519\r\nFinansminister Elisabeth Svantesson\r\nM\r\n1\r\nstalldtill\r\n\r\n\r\n\r\n\r\nstatustext\r\nstatustext\r\nInterpellationen är inlämnad\r\nHD10511\r\n2026-05-25 08:21:53\r\n\r\n\r\n\r\n\r\nHD10511\r\nNiklas Karlsson (S)\r\nip_202526__511.pdf\r\n79088\r\npdf\r\nDen ekonomiska politikens fördelningseffekter\r\nhttps://data.riksdagen.se/fil/60253FFF-F82D-47A4-8261-41A15A859D27",
+  "contentFetched": true
+}
