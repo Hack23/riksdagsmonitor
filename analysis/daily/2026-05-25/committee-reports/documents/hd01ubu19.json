@@ -1,0 +1,23 @@
+{
+  "dok_id": "HD01UbU19",
+  "titel": "Riksrevisionens rapport om utbildning på vetenskaplig grund",
+  "datum": "2026-05-22",
+  "rm": "2025/26",
+  "organ": "UbU",
+  "summary": "<p>Utbildningsutskottet har behandlat en skrivelse från regeringen som handlar om Riksrevisionens granskning av hur effektivt statens arbete är för att utbildningen ska vila på vetenskaplig grund och beprövad erfarenhet.</p>\n<p>Riksrevisionens övergripande slutsats är att statens arbete inte är effektivt. Riksrevisionen rekommenderar regeringen att bland annat genomföra en översyn av skolmyndigheternas uppgifter och ansvarsfördelning när det gäller stöd till skolväsendet samt att säkerställa att regeringsuppdrag till skolmyndigheterna har tidsramar som möjliggör att bästa tillgängliga kunskap ligger till grund för uppdragen.</p>\n<p>I sin skrivelse redovisar regeringen sin bedömning av de iakttagelser och slutsatser samt rekommendationer som Riksrevisionen lämnar till regeringen i granskningsrapporten.</p>\n<p>Regeringen instämmer i huvudsak i Riksrevisionens iakttagelser.</p>\n<p>I likhet med regeringen menar utskottet att Riksrevisionens iakttagelser utgör ett värdefullt underlag i det fortsatta arbetet med att stärka den vetenskapliga grunden i skolan. Utbildningsutskottet ser positivt på regeringens arbete på området och föreslår därmed att riksdagen lägger skrivelsen till handlingarna, det vill säga avslutar ärendet.</p>",
+  "url": "https://data.riksdagen.se/dokument/HD01UbU19.html",
+  "mcpCoverageState": "metadata_only",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_betankanden",
+    "query": {
+      "limit": 20,
+      "rm": "2025/26"
+    },
+    "resultCount": 20,
+    "coverageState": "metadata_only",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-25T05:14:01.734Z"
+  }
+}
