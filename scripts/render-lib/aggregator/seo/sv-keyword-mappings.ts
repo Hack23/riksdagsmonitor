@@ -24,10 +24,11 @@
  *     handle without sacrificing the precise admin identifier.
  *
  * Both tables are **pure data** — no side effects, no I/O. The expansion
- * is wired into the keyword pipeline via {@link expandBriefKeywords},
- * which takes the flattened brief-entity array and returns an extended
- * array with synonyms appended **after** the original entities so the
- * relative priority order is preserved (more specific signal first).
+ * is wired into the keyword pipeline via {@link buildArticleKeywords}
+ * in `article-seo.ts`, which takes the flattened brief-entity array and
+ * returns an extended array with synonyms appended **after** the original
+ * entities so the relative priority order is preserved (more specific
+ * signal first).
  *
  * @author Hack23 AB (Infrastructure Team)
  * @license Apache-2.0

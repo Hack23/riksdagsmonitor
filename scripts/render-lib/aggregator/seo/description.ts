@@ -299,9 +299,8 @@ export function isEntityRosterParagraph(text: string): boolean {
     if (seg.length > 35) continue;
     if (!/^\p{Lu}/u.test(seg)) continue;
     if (/[.!?…]/u.test(seg)) continue;
-    // Reject segments that contain obvious prose markers (verbs in
-    // common forms would inflate the count if we did not gate at
-    // length). Skip segments containing common verb forms.
+    // Segment passed all gates (≤35 chars, Title-Case start, no
+    // sentence-ending punctuation) — count it as name-like.
     nameLike += 1;
   }
   if (nameLike / segments.length < 0.7) return false;

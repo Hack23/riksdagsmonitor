@@ -30,9 +30,11 @@
  *     `tests/render-lib/aggregator/seo/brief-prefixes.test.ts` (or
  *     `tests/article-seo-title-truncation.test.ts`) with the live
  *     leaking H1 from `analysis/daily/<date>/<subfolder>/executive-brief_<lang>.md`.
- *  3. Do **not** add `Executive Brief` (English) here — keep the EN
- *     fallback list in {@link ./title.ts} so unilingual tooling still
- *     strips the canonical EN form even when no language is passed.
+ *  3. The `en` key contains the canonical English prefixes so that
+ *     language-aware callers using this dictionary (which iterate all
+ *     languages) strip the EN forms as well. The same list is
+ *     duplicated in {@link ./title.ts} for unilingual callers that
+ *     don't import the full dictionary.
  *
  * Each entry must be a literal string (escaped by
  * `buildPrefixStripRegex`); regex syntax in entries is intentionally

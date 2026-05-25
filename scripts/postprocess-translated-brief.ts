@@ -119,7 +119,16 @@ interface H1Match {
 
 /** Strip nested HTML tags from a fragment captured inside an `<h1>`. */
 function stripInnerTags(text: string): string {
-  return text.replace(/<[^>]+>/g, '').trim();
+  // Apply repeatedly to prevent incomplete sanitization (CWE-20/CWE-80):
+  // nested or malformed sequences like `<<b>script>` could survive a
+  // single pass.
+  let prev: string;
+  let result = text;
+  do {
+    prev = result;
+    result = result.replace(/<[^>]*>/g, '');
+  } while (result !== prev);
+  return result.trim();
 }
 
 /**
