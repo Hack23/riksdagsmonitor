@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "article_date": "2026-05-25",
+  "subfolder": "propositions",
+  "generated_at": "2026-05-25T07:45:00Z",
+  "election_proximity_multiplier": 1.5,
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "requirement": "What is Lagrådet's constitutional assessment of HD03267?",
+      "horizon": "2026-07-01",
+      "priority": "CRITICAL",
+      "status": "open",
+      "owner": "JuU monitor",
+      "trigger": "Lagrådet yttrande publication"
+    },
+    {
+      "id": "PIR-2",
+      "requirement": "Does L formally object to HD03261 before committee vote?",
+      "horizon": "2026-06-15",
+      "priority": "HIGH",
+      "status": "open",
+      "owner": "Coalition watch",
+      "trigger": "L party spokesperson statement"
+    },
+    {
+      "id": "PIR-3",
+      "requirement": "How do September 2026 polls shift post-migration-bill-announcement?",
+      "horizon": "2026-07-15",
+      "priority": "HIGH",
+      "status": "open",
+      "owner": "Electoral track",
+      "trigger": "Demoskop/Sifo July wave publication"
+    },
+    {
+      "id": "PIR-4",
+      "requirement": "What is ECHR jurisprudence on security-threat expulsions from 2024-2026?",
+      "horizon": "2026-09-01",
+      "priority": "HIGH",
+      "status": "open",
+      "owner": "Legal monitor",
+      "trigger": "Any new ECtHR security threat expulsion ruling"
+    },
+    {
+      "id": "PIR-5",
+      "requirement": "What is the adoption timeline for HD03250 state e-ID?",
+      "horizon": "2027-01-01",
+      "priority": "MEDIUM",
+      "status": "open",
+      "owner": "Digital state track",
+      "trigger": "DIGG implementation milestone publication"
+    }
+  ],
+  "forward_indicators_summary": {
+    "total": 15,
+    "critical": 3,
+    "high": 5,
+    "medium": 7,
+    "next_check": "2026-05-28",
+    "next_critical_date": "2026-06-25"
+  }
+}

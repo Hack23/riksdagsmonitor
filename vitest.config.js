@@ -354,7 +354,70 @@ export default defineConfig({
         'scripts/generate-rss.ts',
         'scripts/generate-news-indexes/index.ts',
         // Logger module exercised by browser entry; tiny helper, not gated.
-        'src/browser/shared/logger.ts'
+        'src/browser/shared/logger.ts',
+        // Additional CLI scripts that exec at module load (file I/O,
+        // process.argv parsing, or top-level await). Exercised end-to-end
+        // by the prebuild/postbuild pipeline, the article-validator and
+        // executive-brief-translation workflows, and the `mermaid-diagrams`
+        // gate — not by unit tests. Same precedent as the existing CLI
+        // exclusions above (refactored 2026-05).
+        'scripts/build-csv-contracts-fixture.ts',
+        'scripts/check-brief-narrative-drift.ts',
+        'scripts/fix-hreflang.ts',
+        'scripts/fix-mermaid-diagrams.ts',
+        'scripts/minify-dist.ts',
+        'scripts/strip-in-method-comments.ts',
+        'scripts/strip-legacy-chrome-script-tags.ts',
+        'scripts/validate-mermaid-diagrams.ts',
+        // Pure-type `.d.ts` declarations for the two Vite plugins above
+        // (no runtime code).
+        'scripts/vite-plugin-static-pages.d.ts',
+        'scripts/vite-plugin-sw-build-id.d.ts',
+        // Pure re-export shims that preserve the public surface of the
+        // bounded-context client subtrees (`scripts/imf/**`,
+        // `scripts/statskontoret/**`). The subtrees themselves are
+        // individually gated and ≥80% covered. Same precedent as
+        // `scripts/parliamentary-data/data-persistence.ts` above.
+        'scripts/imf-client.ts',
+        'scripts/statskontoret-client.ts',
+        // Mermaid corpus validator — supporting library for the two CLIs
+        // (`scripts/validate-mermaid-diagrams.ts`, `scripts/fix-mermaid-diagrams.ts`)
+        // and for the `gate-checks/mermaid-diagrams.ts` agentic gate-check.
+        // Exercised end-to-end by the news workflows and by the
+        // `Validate Mermaid Diagrams` job; dedicated unit tests tracked as
+        // follow-up work. Same precedent as `scripts/render-lib/**` above.
+        'scripts/validators/mermaid-diagrams/**',
+        // Pure-barrel / legacy compatibility shims under
+        // `scripts/generate-news-indexes/` — each entry is `export { … }
+        // from './<subdir>/index.js'`, no executable branching. Their
+        // leaves are individually gated and unit-tested. Mirrors the
+        // existing `scripts/political-intelligence/index.ts` / `scripts/rss/index.ts`
+        // / `scripts/sitemap-html/index.ts` / `scripts/sitemap-xml/index.ts`
+        // entries above.
+        'scripts/generate-news-indexes/constants.ts',
+        'scripts/generate-news-indexes/helpers.ts',
+        'scripts/generate-news-indexes/template.ts',
+        'scripts/generate-news-indexes/constants/index.ts',
+        'scripts/generate-news-indexes/helpers/index.ts',
+        'scripts/generate-news-indexes/template/client-script-runtime.ts',
+        // Pure-barrel agentic dispatch index — re-exports the gate-checks
+        // catalog (which is itself the orchestrator imported by the
+        // `news-*.lock.yml` workflows). No branching to gate.
+        'scripts/agentic/index.ts',
+        'scripts/agentic/gate-checks/index.ts',
+        // Pure-type modules (interfaces + type aliases only — no runtime
+        // code, therefore no runtime coverage to measure). Mirrors the
+        // existing `scripts/imf/types.ts` / `scripts/types/**` /
+        // `src/browser/cia/types.ts` exclusions above.
+        'scripts/agentic/gate-shared/types.ts',
+        'scripts/fetch-calendar/types.ts',
+        'scripts/parliamentary-data/mcp-retry-queue/types.ts',
+        'scripts/roll-forward-pirs/types.ts',
+        'scripts/statskontoret/types.ts',
+        // Pure re-export shim for the split `mcp-retry-queue/` subtree
+        // (re-exports `./mcp-retry-queue/index.js`). Same precedent as
+        // `scripts/parliamentary-data/data-persistence.ts` above.
+        'scripts/parliamentary-data/mcp-retry-queue.ts'
       ]
     },
     
