@@ -292,9 +292,28 @@ function trimTrailingPunctuation(text: string): string {
  * With this strip the SERP `<title>` ships as
  *   "Riksdag Enshrines Constitutional Protection for Abortion…"
  *   which is clean prose.
+ *
+ * **Single-letter exception** — Spanish / Catalan / Portuguese `a`,
+ * French `à`, and Swedish `i` are split into a separate
+ * {@link TRAILING_SINGLE_LETTER_CONNECTOR_RE} regex without the `i`
+ * flag. Without that split, the case-insensitive multi-letter pattern
+ * would also match uppercase `A` / `À` / `I` at the end of a real
+ * title (`Tax Class A`, `Group A`, `Plan A`, `Article I`, `Section A`,
+ * Roman numeral references), silently truncating the most informative
+ * trailing token. Single-letter prepositions render in lowercase in
+ * every language we ship, so requiring lowercase here is loss-free.
  */
 const TRAILING_CONNECTOR_RE =
-  /[\s,;:—–-]+(?:and|or|but|with|as|in|of|to|for|on|at|by|from|that|which|who|when|where|while|after|before|the|a|an|have|has|had|is|are|was|were|will|would|can|may|might|should|must|och|men|eller|med|som|av|till|för|på|i|att|der|die|das|und|oder|aber|mit|als|für|in|auf|et|ou|mais|avec|comme|de|à|pour|en|sur)$/iu;
+  /[\s,;:—–-]+(?:and|or|but|with|as|in|of|to|for|on|at|by|from|that|which|who|when|where|while|after|before|the|an|have|has|had|is|are|was|were|will|would|can|may|might|should|must|och|men|eller|med|som|av|till|för|på|att|der|die|das|und|oder|aber|mit|als|für|auf|et|ou|mais|avec|comme|de|pour|en|sur)$/iu;
+
+/**
+ * Single-letter trailing connectors — kept case-sensitive (no `i` flag)
+ * so titles ending in a bare uppercase initial like `Tax Class A`,
+ * `Plan A`, `Section A`, or `Article I` are NOT silently truncated to
+ * `Tax Class` / `Plan` / `Section` / `Article`. See the JSDoc on
+ * {@link TRAILING_CONNECTOR_RE} for the rationale.
+ */
+const TRAILING_SINGLE_LETTER_CONNECTOR_RE = /[\s,;:—–-]+(?:à|a|i)$/u;
 
 /**
  * Dangling cardinal / ordinal numerals left at the end of a truncated
@@ -379,6 +398,7 @@ function trimTrailingConnectors(text: string): string {
   for (let i = 0; i < 8; i += 1) {
     const next = prev
       .replace(TRAILING_CONNECTOR_RE, '')
+      .replace(TRAILING_SINGLE_LETTER_CONNECTOR_RE, '')
       .replace(TRAILING_DANGLING_CARDINAL_RE, '')
       .replace(TRAILING_HYPHENATED_STUB_RE, '')
       .replace(/[\s,;:—–-]+$/u, '')

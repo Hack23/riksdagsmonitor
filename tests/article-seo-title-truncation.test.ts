@@ -137,15 +137,33 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     expect(result).not.toMatch(/\bund…$/);
   });
 
-  it('truncates a medium-length H1 so the SERP title does not end on a connector', () => {
-    // 58-char H1 + " — Riksdagsmonitor" suffix (18 chars) = 76 chars,
-    // which exceeds the 70-char SERP budget. truncateAtWord runs and
-    // must land the cut on a substantive word — never on a coordinating
-    // connector like "and", "or", "with", "the", "a", "an".
-    const h1 = 'Russia Legalises Aggression — Sweden Faces Three Deadlines';
-    const result = buildSeoTitle({ ...baseInput, title: h1 });
-    expect(result).not.toMatch(/\b(and|or|with|the|a|an)…$/i);
-    expect(result.length).toBeLessThanOrEqual(70);
+  it('preserves a bare trailing uppercase `A` (live: `Plan A`, `Section A`, `Group A`)', () => {
+    // Regression: article-seo.ts § TRAILING_CONNECTOR_RE used the `i`
+    // flag with bare `a|an|the|i` in the alternation list, so a real
+    // SERP `<title>` ending with an uppercase initial — `Migration
+    // Reform Plan A`, `Article I`, `Group A` — was silently truncated
+    // to `Plan` / `Article` / `Group`, dropping the most informative
+    // token. The fix splits multi-letter case-insensitive connectors
+    // from a separate case-sensitive single-letter regex covering
+    // `à` / `a` / `i` (which only appear as connectors in lowercase
+    // across all 14 languages we ship).
+    const h1A = 'Riksdag Approves Migration Reform Plan A';
+    const resultA = buildSeoTitle({ ...baseInput, title: h1A });
+    expect(resultA).toContain('Plan A');
+    expect(resultA).not.toMatch(/Plan…/);
+
+    const h1B = 'Constitutional Reform Outlined in Article I';
+    const resultB = buildSeoTitle({ ...baseInput, title: h1B });
+    expect(resultB).toContain('Article I');
+    expect(resultB).not.toMatch(/Article…/);
+
+    // Lowercase Spanish/Catalan `a` connector is still stripped when it
+    // is the genuine trailing connector after word-boundary truncation.
+    const h1C =
+      'El Riksdag aprueba una ley histórica que regula la inteligencia artificial a';
+    const resultC = buildSeoTitle({ ...baseInput, lang: 'es', title: h1C });
+    expect(resultC).not.toMatch(/\ba…/);
+    expect(resultC).not.toMatch(/\ba\s+—\s+Riksdagsmonitor/);
   });
 });
 

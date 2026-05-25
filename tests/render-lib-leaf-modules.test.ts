@@ -723,6 +723,25 @@ describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
   // - Swedish "Den <day> <månad> <year>" date-prefix strip (multi-lingual).
   // ────────────────────────────────────────────────────────────────────
 
+  it('cleanArticleTitle preserves a bare trailing uppercase `A` (live: `Tax Class A`, `Plan A`)', () => {
+    // Regression: title.ts:92 connector regex used the `i` flag with bare
+    // single-letter `a`/`à` in the alternation list, so uppercase `A`/`À`
+    // at the end of a real title was silently stripped — `Tax Class A`
+    // → `Tax Class`, `Plan A` → `Plan`. The fix splits multi-letter
+    // case-insensitive connectors from single-letter case-sensitive
+    // (lowercase-only) ones, so genuine uppercase initials survive.
+    expect(
+      cleanArticleTitle('Riksdag Vote Approves Migration Reform Plan A'),
+    ).toBe('Riksdag Vote Approves Migration Reform Plan A');
+    expect(
+      cleanArticleTitle('New Tax Bracket Created for Income Category A'),
+    ).toBe('New Tax Bracket Created for Income Category A');
+    // Lowercase Spanish/Catalan `a` connector is still stripped.
+    expect(
+      cleanArticleTitle('El Riksdag aprueba una ley a'),
+    ).toBe('El Riksdag aprueba una ley');
+  });
+
   it('cleanArticleTitle strips a bare trailing comma (live: `Sweden Evening Analysis,`)', () => {
     expect(
       cleanArticleTitle('Sweden Evening Analysis, Constitutional Moment Builds,'),

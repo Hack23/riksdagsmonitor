@@ -89,7 +89,19 @@ export function cleanArticleTitle(
   }
   t = t.replace(/\s*[—–\-:]?\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*$/i, '');
   t = t.replace(/\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*/g, ' ');
-  t = t.replace(/[\s,;:]*(?:to|till|bis|à|a|إلى|から|til|–|—|-|:)\s*$/iu, '').trim();
+  // Trailing-connector strip — split into two regexes so the case-
+  // insensitive `i` flag does NOT extend to single-letter connectors
+  // `a` / `à`. With a unified case-insensitive list, real titles ending
+  // in a bare uppercase initial — `Tax Class A`, `Group À`, `Plan A`,
+  // `Section A` — were silently truncated to `Tax Class` / `Group` /
+  // `Plan` / `Section`, dropping the most informative token. Multi-
+  // letter connectors (`to` / `till` / `bis` / `إلى` / `から` / `til`)
+  // are still case-insensitive (they legitimately appear as `To` or
+  // `Till` at end of Title-Case headlines after mid-sentence cuts);
+  // the single-letter `a` / `à` are restricted to lowercase only,
+  // which is how Spanish / Catalan / French prepositions render.
+  t = t.replace(/[\s,;:]*(?:to|till|bis|إلى|から|til|–|—|-|:)\s*$/iu, '').trim();
+  t = t.replace(/[\s,;:]*(?:à|a)\s*$/u, '').trim();
   // Strip a bare trailing comma / semicolon / colon left after editor
   // truncation (live cases: `Sweden Evening Analysis,`, `Week Ahead: Aid
   // Accountability,`, `Swedish Parliamentary Pulse,`). The connector
