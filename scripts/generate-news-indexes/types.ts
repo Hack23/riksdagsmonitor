@@ -76,6 +76,15 @@ export interface NewsArticleMetadata {
   type: ArticleTypeValue;
   topics: string[];
   tags: string[];
+  /**
+   * SEO `<meta name="keywords">` content (comma-separated) from the rendered
+   * article HTML, when present. Emitted as the per-card JSON-LD `keywords`
+   * field so SERP crawlers see the same story-specific entity stream
+   * (bill IDs, committee codes, agency acronyms) that the article page
+   * itself exposes. Empty/undefined when the article HTML has no
+   * `<meta name="keywords">` tag.
+   */
+  keywords?: string;
   availableLanguages?: string[];
   baseSlug?: string;
 }

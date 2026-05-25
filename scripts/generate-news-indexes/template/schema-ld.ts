@@ -43,6 +43,12 @@ export function buildItemListLd(
           logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/android-chrome-512x512.png` },
         },
         articleSection: lang.breadcrumbs.news,
+        // Per-card story-specific keyword stream — surfaces the same
+        // bill IDs / committee codes / agency acronyms / named entities
+        // that the article page's `<meta name="keywords">` exposes, so
+        // SERP crawlers see consistent topic anchors across both
+        // the standalone article and the news-index card.
+        ...(article.keywords ? { keywords: article.keywords } : {}),
         about: {
           '@type': 'GovernmentOrganization',
           name: 'Riksdag',

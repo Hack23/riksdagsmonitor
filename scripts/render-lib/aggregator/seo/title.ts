@@ -20,6 +20,8 @@ import {
   stripBlufLabel,
 } from './description.js';
 import { prettifyFallbackTitle } from './../order.js';
+import { stripBriefPrefix } from './brief-prefixes.js';
+import type { Language } from '../../../types/language.js';
 
 /**
  * Read the first top-level H1 from a markdown body. Returns the trimmed
@@ -51,6 +53,10 @@ function normaliseTitleForCompare(text: string): string {
  *
  * - strip a leading `Executive Brief — ` / `Executive Brief - ` prefix
  *   (the template boilerplate that masks the story)
+ * - when `lang` is provided, also strip the *translated* boilerplate
+ *   prefix in that language (`Exekutiv sammanfattning — ` in SV,
+ *   `Zusammenfassung — ` in DE, `Synthèse exécutive — ` in FR, etc.).
+ *   See `./brief-prefixes.ts` for the per-language dictionary.
  * - strip a trailing ` — YYYY-MM-DD` / ` - YYYY-MM-DD` / ` YYYY-MM-DD`
  *   (dates belong in `article:published_time`, not the SERP title)
  * - if the cleaned title is < 20 chars — too short to be a real story
@@ -63,14 +69,39 @@ function normaliseTitleForCompare(text: string): string {
  *   this guard, lazy template H1s like `# Executive Brief — Government
  *   Propositions 2026-05-08` ship as the bare category label.
  */
-export function cleanArticleTitle(raw: string | null, subfolder?: string): string | null {
+export function cleanArticleTitle(
+  raw: string | null,
+  subfolder?: string,
+  lang?: Language,
+): string | null {
   if (!raw) return null;
   let t = raw.trim();
   t = t.replace(/^[\s\p{Emoji_Presentation}\p{Emoji}\p{Extended_Pictographic}\p{P}\p{S}]+/u, '').trim();
   t = t.replace(/^(?:Executive\s+Brief|Intelligence\s+Brief|Intelligence\s+Assessment|Realtime\s+Monitor|Riksdag\s+Realtime\s+Monitor|Daily\s+Brief|BLUF|TL;DR|Top\s+Line|Bottom\s+Line)\s*[—–\-:]\s*/i, '');
+  // Per-language Executive-Brief prefix strip — catches translated
+  // boilerplate (`Exekutiv sammanfattning — `, `Zusammenfassung — `,
+  // `Synthèse exécutive — `, `执行摘要：`, …) that the EN-only regex
+  // above leaves untouched. See `./brief-prefixes.ts` for the
+  // dictionary. When `lang` is unset / unknown, this is a no-op so
+  // unilingual callers / legacy tests stay unaffected.
+  if (lang) {
+    t = stripBriefPrefix(t, lang).trim();
+  }
   t = t.replace(/\s*[—–\-:]?\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*$/i, '');
   t = t.replace(/\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*/g, ' ');
-  t = t.replace(/[\s,;:]*(?:to|till|bis|à|a|إلى|から|til|–|—|-|:)\s*$/iu, '').trim();
+  // Trailing-connector strip — split into two regexes so the case-
+  // insensitive `i` flag does NOT extend to single-letter connectors
+  // `a` / `à`. With a unified case-insensitive list, real titles ending
+  // in a bare uppercase initial — `Tax Class A`, `Group À`, `Plan A`,
+  // `Section A` — were silently truncated to `Tax Class` / `Group` /
+  // `Plan` / `Section`, dropping the most informative token. Multi-
+  // letter connectors (`to` / `till` / `bis` / `إلى` / `から` / `til`)
+  // are still case-insensitive (they legitimately appear as `To` or
+  // `Till` at end of Title-Case headlines after mid-sentence cuts);
+  // the single-letter `a` / `à` are restricted to lowercase only,
+  // which is how Spanish / Catalan / French prepositions render.
+  t = t.replace(/[\s,;:]*(?:to|till|bis|إلى|から|til|–|—|-|:)\s*$/iu, '').trim();
+  t = t.replace(/[\s,;:]*(?:à|a)\s*$/u, '').trim();
   // Strip a bare trailing comma / semicolon / colon left after editor
   // truncation (live cases: `Sweden Evening Analysis,`, `Week Ahead: Aid
   // Accountability,`, `Swedish Parliamentary Pulse,`). The connector

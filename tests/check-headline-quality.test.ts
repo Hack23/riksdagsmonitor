@@ -15,6 +15,10 @@ import {
   findSwedishHeadlineTokens,
   hasIsoDateAffix,
   hasWeekdayDatePrefix,
+  matchesPrettifiedSubfolder,
+  normaliseHeadlineForCompare,
+  prettifySubfolderPath,
+  subfolderFromBriefPath,
   validateH1,
 } from '../scripts/check-headline-quality.js';
 
@@ -129,6 +133,74 @@ describe('check-headline-quality — Rule D (boilerplate prefix)', () => {
 
   it('does NOT flag headlines that mention "brief" mid-sentence', () => {
     expect(findBoilerplatePrefixes('Sweden Abolishes Permanent Residence — a brief look')).toEqual([]);
+  });
+});
+
+describe('check-headline-quality — Rule E (H1 equals prettified subfolder)', () => {
+  it('flags bare leaf-label H1 for shallow subfolder', () => {
+    expect(matchesPrettifiedSubfolder('Government Propositions', 'propositions')).toBe(false);
+    expect(matchesPrettifiedSubfolder('Propositions', 'propositions')).toBe(true);
+  });
+
+  it('flags full-path H1 for nested subfolder', () => {
+    expect(matchesPrettifiedSubfolder('Election Cycle Current', 'election-cycle/current')).toBe(true);
+    expect(matchesPrettifiedSubfolder('Current', 'election-cycle/current')).toBe(true);
+  });
+
+  it('ignores trailing/leading whitespace and punctuation when matching', () => {
+    expect(matchesPrettifiedSubfolder('  Propositions!  ', 'propositions')).toBe(true);
+    // "Election Cycle — Current" normalises to "election cycle current" which matches
+    // the full-path prettified label — the em-dash decoration alone is not a real headline.
+    expect(matchesPrettifiedSubfolder('Election Cycle — Current', 'election-cycle/current')).toBe(true);
+  });
+
+  it('does NOT flag a real actor+verb headline that mentions the category word', () => {
+    expect(matchesPrettifiedSubfolder("Sweden's Kristersson Government Submits 970 SEK Plan", 'propositions')).toBe(
+      false,
+    );
+    expect(
+      matchesPrettifiedSubfolder('Tidö Coalition Locks In 2026 Election Mandate', 'election-cycle/current'),
+    ).toBe(false);
+  });
+
+  it('returns false when subfolder is missing', () => {
+    expect(matchesPrettifiedSubfolder('Propositions', null)).toBe(false);
+    expect(matchesPrettifiedSubfolder('Propositions', '')).toBe(false);
+  });
+
+  it('prettifies multi-segment subfolder paths via space-join', () => {
+    expect(prettifySubfolderPath('election-cycle/current')).toBe('Election Cycle Current');
+    expect(prettifySubfolderPath('week-ahead/foreign-affairs')).toBe('Week Ahead Foreign Affairs');
+  });
+
+  it('normaliseHeadlineForCompare strips punctuation and lowercases', () => {
+    expect(normaliseHeadlineForCompare('Election Cycle — Current!')).toBe('election cycle current');
+  });
+
+  it('subfolderFromBriefPath extracts subfolder relative to analysis/daily/<date>', () => {
+    expect(subfolderFromBriefPath('analysis/daily/2026-05-08/propositions/executive-brief.md')).toBe('propositions');
+    expect(
+      subfolderFromBriefPath('analysis/daily/2026-05-08/election-cycle/current/executive-brief.md'),
+    ).toBe('election-cycle/current');
+    expect(
+      subfolderFromBriefPath('/abs/path/analysis/daily/2026-05-08/week-ahead/executive-brief.md'),
+    ).toBe('week-ahead');
+  });
+
+  it('subfolderFromBriefPath returns null for non-canonical paths', () => {
+    expect(subfolderFromBriefPath('analysis/daily/executive-brief.md')).toBeNull();
+    expect(subfolderFromBriefPath('some/other/path.md')).toBeNull();
+  });
+
+  it('validateH1 wires Rule E with subfolder argument', () => {
+    const issues = validateH1('Propositions', 'propositions');
+    expect(issues).toHaveLength(1);
+    expect(issues[0]).toContain('rule-E');
+    expect(issues[0]).toContain('propositions');
+  });
+
+  it('validateH1 does not fire Rule E when subfolder is omitted', () => {
+    expect(validateH1('Propositions')).toEqual([]);
   });
 });
 

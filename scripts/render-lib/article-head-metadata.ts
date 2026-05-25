@@ -243,14 +243,23 @@ export function computeArticleHeadMetadata(input: ArticleHeadMetadataInput): Art
   // `analysis/daily/<date>/` source directories have been deleted.
   const briefTitle = input.briefDerivedTitle?.trim();
   const briefDescription = input.briefDerivedDescription?.trim();
+  const fmTitleRaw = typeof fm.title === 'string' ? fm.title.trim() : '';
+  // Localized fallback for the absolute last-resort title. The previous
+  // implementation shipped the English literal `'Political Intelligence'`
+  // for every locale, which surfaced in news/index_sv.html, _de.html,
+  // _fr.html, … cards whenever neither the brief nor `fm.title:`
+  // resolved (audit 2026-05-25). Use the per-language label for the
+  // `political-intelligence` type and date-stamp it so the SERP carries
+  // a real signal even on the legacy frontmatter-only audit path.
+  const date = parseFrontMatterDate(fm.date, input.now);
+  const fallbackTitle = `${articleTypeLabel('political-intelligence', input.lang, 'Political Intelligence')} — ${date}`;
   const rawTitle = briefTitle && briefTitle.length > 0
     ? briefTitle
-    : String(fm.title ?? 'Political Intelligence');
+    : (fmTitleRaw.length > 0 ? fmTitleRaw : fallbackTitle);
   const rawDescription = briefDescription && briefDescription.length > 0
     ? briefDescription
     : String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
   const rawKeywords = typeof fm.keywords === 'string' ? fm.keywords : undefined;
-  const date = parseFrontMatterDate(fm.date, input.now);
   const articleType = inferArticleType(input.canonicalPath, rawTitle);
   const localizedArticleTypeLabel = articleTypeLabel(articleType.type, input.lang, articleType.label);
   // Brief entities seed the SERP `keywords` string. Prefer the

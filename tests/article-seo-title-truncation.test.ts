@@ -22,7 +22,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { buildSeoTitle } from '../scripts/render-lib/article-seo.js';
+import { buildSeoTitle, stripTrailingCommaStub } from '../scripts/render-lib/article-seo.js';
 
 const baseInput = {
   description: '',
@@ -137,14 +137,83 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     expect(result).not.toMatch(/\bund…$/);
   });
 
-  it('truncates a medium-length H1 so the SERP title does not end on a connector', () => {
-    // 58-char H1 + " — Riksdagsmonitor" suffix (18 chars) = 76 chars,
-    // which exceeds the 70-char SERP budget. truncateAtWord runs and
-    // must land the cut on a substantive word — never on a coordinating
-    // connector like "and", "or", "with", "the", "a", "an".
-    const h1 = 'Russia Legalises Aggression — Sweden Faces Three Deadlines';
-    const result = buildSeoTitle({ ...baseInput, title: h1 });
-    expect(result).not.toMatch(/\b(and|or|with|the|a|an)…$/i);
-    expect(result.length).toBeLessThanOrEqual(70);
+  it('preserves a bare trailing uppercase `A` (live: `Plan A`, `Section A`, `Group A`)', () => {
+    // Regression: article-seo.ts § TRAILING_CONNECTOR_RE used the `i`
+    // flag with bare `a|an|the|i` in the alternation list, so a real
+    // SERP `<title>` ending with an uppercase initial — `Migration
+    // Reform Plan A`, `Article I`, `Group A` — was silently truncated
+    // to `Plan` / `Article` / `Group`, dropping the most informative
+    // token. The fix splits multi-letter case-insensitive connectors
+    // from a separate case-sensitive single-letter regex covering
+    // `à` / `a` / `i` (which only appear as connectors in lowercase
+    // across all 14 languages we ship).
+    const h1A = 'Riksdag Approves Migration Reform Plan A';
+    const resultA = buildSeoTitle({ ...baseInput, title: h1A });
+    expect(resultA).toContain('Plan A');
+    expect(resultA).not.toMatch(/Plan…/);
+
+    const h1B = 'Constitutional Reform Outlined in Article I';
+    const resultB = buildSeoTitle({ ...baseInput, title: h1B });
+    expect(resultB).toContain('Article I');
+    expect(resultB).not.toMatch(/Article…/);
+
+    // Lowercase Spanish/Catalan `a` connector is still stripped when it
+    // is the genuine trailing connector after word-boundary truncation.
+    const h1C =
+      'El Riksdag aprueba una ley histórica que regula la inteligencia artificial a';
+    const resultC = buildSeoTitle({ ...baseInput, lang: 'es', title: h1C });
+    expect(resultC).not.toMatch(/\ba…/);
+    expect(resultC).not.toMatch(/\ba\s+—\s+Riksdagsmonitor/);
+  });
+});
+
+// ──────────────────────────────────────────────────────────────────
+// Round 9 (2026-05-25) — comma-trailing-fragment guard in
+// truncateAtWord. Live audit of news/index.html cards showed
+// truncated descriptions ending on bare noun-phrase stubs after the
+// last comma (`… national security, tax authority`,
+// `… consequences, the…`), reading as list-mid cuts. The new
+// stripTrailingCommaStub helper steps back to the comma when the
+// tail is short and the head is substantive.
+// ──────────────────────────────────────────────────────────────────
+
+describe('stripTrailingCommaStub — comma-trailing fragment guard', () => {
+  it('strips a 2-word noun-phrase tail after the last comma', () => {
+    const input =
+      "Sweden's Riksdag closed the week with security legislation, tax authority";
+    expect(stripTrailingCommaStub(input)).toBe(
+      "Sweden's Riksdag closed the week with security legislation",
+    );
+  });
+
+  it('strips a 1-word noun tail (`the`-style determiner is a connector and is already stripped upstream)', () => {
+    const input = 'Twenty interpellations crystallise the opposition offensive, today';
+    expect(stripTrailingCommaStub(input)).toBe(
+      'Twenty interpellations crystallise the opposition offensive',
+    );
+  });
+
+  it('preserves the original text when the tail is too long (likely real clause)', () => {
+    const input =
+      'Riksdag advances three reform clusters, including education reform and security expansion';
+    // Tail after last comma is 64 chars — way over the 30-char threshold,
+    // so this looks like a substantive subordinate clause, not a stub.
+    expect(stripTrailingCommaStub(input)).toBe(input);
+  });
+
+  it('preserves the text when the head is short (would over-strip)', () => {
+    const input = 'Brief, today';
+    // Head is only 5 chars — stripping would leave nothing meaningful.
+    expect(stripTrailingCommaStub(input)).toBe(input);
+  });
+
+  it('preserves text with no comma', () => {
+    const input = "Sweden's Riksdag closes the week with security legislation";
+    expect(stripTrailingCommaStub(input)).toBe(input);
+  });
+
+  it('preserves a tail that ends with a sentence terminator (real prose)', () => {
+    const input = 'Riksdag advances reform, finally.';
+    expect(stripTrailingCommaStub(input)).toBe(input);
   });
 });

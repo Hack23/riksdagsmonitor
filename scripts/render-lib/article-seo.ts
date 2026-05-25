@@ -19,6 +19,11 @@ import {
   descriptionWindowForLanguage,
   titleWindowForLanguage,
 } from './aggregator/seo/serp-budgets.js';
+import {
+  expandAgencyAcronyms,
+  expandCommitteeDomains,
+} from './aggregator/seo/sv-keyword-mappings.js';
+import { RIKSDAG_COMMITTEE_CODES } from './aggregator/seo/brief-extractor.js';
 
 const KEYWORD_MAX = 24;
 
@@ -292,9 +297,28 @@ function trimTrailingPunctuation(text: string): string {
  * With this strip the SERP `<title>` ships as
  *   "Riksdag Enshrines Constitutional Protection for Abortion…"
  *   which is clean prose.
+ *
+ * **Single-letter exception** — Spanish / Catalan / Portuguese `a`,
+ * French `à`, and Swedish `i` are split into a separate
+ * {@link TRAILING_SINGLE_LETTER_CONNECTOR_RE} regex without the `i`
+ * flag. Without that split, the case-insensitive multi-letter pattern
+ * would also match uppercase `A` / `À` / `I` at the end of a real
+ * title (`Tax Class A`, `Group A`, `Plan A`, `Article I`, `Section A`,
+ * Roman numeral references), silently truncating the most informative
+ * trailing token. Single-letter prepositions render in lowercase in
+ * every language we ship, so requiring lowercase here is loss-free.
  */
 const TRAILING_CONNECTOR_RE =
-  /[\s,;:—–-]+(?:and|or|but|with|as|in|of|to|for|on|at|by|from|that|which|who|when|where|while|after|before|the|a|an|have|has|had|is|are|was|were|will|would|can|may|might|should|must|och|men|eller|med|som|av|till|för|på|i|att|der|die|das|und|oder|aber|mit|als|für|in|auf|et|ou|mais|avec|comme|de|à|pour|en|sur)$/iu;
+  /[\s,;:—–-]+(?:and|or|but|with|as|in|of|to|for|on|at|by|from|that|which|who|when|where|while|after|before|the|an|have|has|had|is|are|was|were|will|would|can|may|might|should|must|och|men|eller|med|som|av|till|för|på|att|der|die|das|und|oder|aber|mit|als|für|auf|et|ou|mais|avec|comme|de|pour|en|sur)$/iu;
+
+/**
+ * Single-letter trailing connectors — kept case-sensitive (no `i` flag)
+ * so titles ending in a bare uppercase initial like `Tax Class A`,
+ * `Plan A`, `Section A`, or `Article I` are NOT silently truncated to
+ * `Tax Class` / `Plan` / `Section` / `Article`. See the JSDoc on
+ * {@link TRAILING_CONNECTOR_RE} for the rationale.
+ */
+const TRAILING_SINGLE_LETTER_CONNECTOR_RE = /[\s,;:—–-]+(?:à|a|i)$/u;
 
 /**
  * Dangling cardinal / ordinal numerals left at the end of a truncated
@@ -333,11 +357,53 @@ const TRAILING_DANGLING_CARDINAL_RE =
  */
 const TRAILING_HYPHENATED_STUB_RE = /[\s,;:—–]+\S*-$/u;
 
+/**
+ * Reader-hostile trailing fragments after the last comma — when the
+ * word-boundary truncate cuts a list mid-item like
+ *   "Sweden's Riksdag closed the week with security, tax authority"
+ * the trailing `tax authority` is a bare noun phrase with no verb /
+ * predicate and reads as a stub. Step back to the segment **before**
+ * the last comma so the title ends on a complete clause.
+ *
+ * Conservative: only triggers when
+ *   - there is a comma in the cut, AND
+ *   - the tail (text after the last comma) is short (≤ 30 chars) AND
+ *     contains 1–4 words AND has no trailing punctuation, AND
+ *   - the preceding segment is itself substantive (≥ 25 chars after
+ *     trim), so we never strip a title down to a meaningless fragment.
+ *
+ * Live cases (audit 2026-05-25):
+ *  - "Swedish Riksdag closed the week of 22 May 2026 with a substantial
+ *     legislative harvest spanning national security, tax authority…"
+ *    → cuts to "… spanning national security…" (drops `tax authority`).
+ *  - "Twenty interpellations filed in the 2025/26 riksmöte crystallise
+ *     the opposition's pre-election accountability offensive, the…"
+ *    → cuts before the trailing comma.
+ *
+ * Pure function — exported only for testability.
+ */
+export function stripTrailingCommaStub(text: string): string {
+  const lastComma = text.lastIndexOf(',');
+  if (lastComma < 0) return text;
+  const head = text.slice(0, lastComma).trim();
+  const tail = text.slice(lastComma + 1).trim();
+  if (head.length < 25) return text;
+  if (tail.length === 0 || tail.length > 30) return text;
+  // Tail must look like a bare noun phrase: 1-4 words, no terminal
+  // punctuation, no connector ending (the connector strip already ran
+  // upstream).
+  const tailWords = tail.split(/\s+/).filter(Boolean);
+  if (tailWords.length < 1 || tailWords.length > 4) return text;
+  if (/[.!?…]$/u.test(tail)) return text;
+  return head;
+}
+
 function trimTrailingConnectors(text: string): string {
   let prev = text;
   for (let i = 0; i < 8; i += 1) {
     const next = prev
       .replace(TRAILING_CONNECTOR_RE, '')
+      .replace(TRAILING_SINGLE_LETTER_CONNECTOR_RE, '')
       .replace(TRAILING_DANGLING_CARDINAL_RE, '')
       .replace(TRAILING_HYPHENATED_STUB_RE, '')
       .replace(/[\s,;:—–-]+$/u, '')
@@ -354,7 +420,15 @@ function truncateAtWord(text: string, maxLen: number): string {
   const sliced = clean.slice(0, maxLen);
   const lastSpace = sliced.lastIndexOf(' ');
   const cut = lastSpace > Math.floor(maxLen * 0.55) ? sliced.slice(0, lastSpace) : sliced;
-  const stripped = trimTrailingConnectors(trimTrailingPunctuation(cut));
+  // Two-stage cleanup: first strip dangling connectors / cardinals /
+  // hyphenated stubs (TRAILING_CONNECTOR_RE etc.); then step back over
+  // any comma-trailing list-item stub that survives the connector
+  // strip (live: `… spanning national security, tax authority` →
+  // `… spanning national security`). The comma-stub stripper is run
+  // after the connector strip so dangling connectors are not mistaken
+  // for the bare-noun tail.
+  const connectorStripped = trimTrailingConnectors(trimTrailingPunctuation(cut));
+  const stripped = trimTrailingConnectors(stripTrailingCommaStub(connectorStripped));
   return stripped + '…';
 }
 
@@ -624,9 +698,34 @@ export function buildArticleKeywords(input: ArticleSeoMetadataInput): string {
   // 1. Brief entities first — highest SERP signal, universal across
   //    languages. These are normalised by the upstream extractor; we
   //    just push them in order so the cap preserves story priority.
-  for (const ent of input.briefEntities ?? []) {
+  const briefEnts = input.briefEntities ?? [];
+  for (const ent of briefEnts) {
     if (out.length >= KEYWORD_MAX) break;
     pushKeyword(out, seen, ent);
+  }
+
+  // 1b. Institutional synonyms — emit agency acronym ↔ canonical-name
+  //     pairings (Försäkringskassan ↔ FK) and per-language policy-domain
+  //     words for any committee codes mined from the brief (JuU → Justice
+  //     / rättsväsen / justice / 司法). These widen the keyword surface
+  //     without sacrificing precision: the original entity is already in
+  //     `out`, so the synonym slots in directly after it.
+  const committeeCodeSet = new Set<string>(RIKSDAG_COMMITTEE_CODES);
+  const mentionedCommittees: string[] = [];
+  for (const ent of briefEnts) {
+    // Codes like `JuU28` (committee report ID) still expand by stripping
+    // the digits to recover the committee code itself.
+    const codeMatch = ent.match(/^([A-Za-zÅÄÖåäöéü]+?)(?:\d{1,3})?$/);
+    const code = codeMatch?.[1];
+    if (code && committeeCodeSet.has(code)) mentionedCommittees.push(code);
+  }
+  for (const acronym of expandAgencyAcronyms(briefEnts)) {
+    if (out.length >= KEYWORD_MAX) break;
+    pushKeyword(out, seen, acronym);
+  }
+  for (const domain of expandCommitteeDomains(mentionedCommittees, input.lang)) {
+    if (out.length >= KEYWORD_MAX) break;
+    pushKeyword(out, seen, domain);
   }
 
   // 2. Mandatory institutional floor — every page surfaces both chambers

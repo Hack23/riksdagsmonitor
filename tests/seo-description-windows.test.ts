@@ -22,6 +22,8 @@ import {
   LANG_DESCRIPTION_WINDOWS,
   descriptionWindowForLanguage,
   truncateToSentenceBoundary,
+  isEntityRosterParagraph,
+  readFirstParagraph,
 } from '../scripts/render-lib/aggregator/seo/description.js';
 import { extractLocalizedBriefSeo } from '../scripts/render-lib/aggregator/seo/localized-brief.js';
 
@@ -217,3 +219,67 @@ Die schwedische Regierung legt acht Vorschläge vor, die das Stromsystem reformi
     expect(seo.description!.length).toBeLessThanOrEqual(200);
   });
 });
+
+// ──────────────────────────────────────────────────────────────────
+// Round 9 (2026-05-25) — entity-roster paragraph skip in
+// readFirstParagraph. Live audit of news/index.html cards showed
+// descriptions starting with bare MP-name comma-lists (e.g.
+// 'Sigge Sigfridsson, Anna Andersson, Eva Pettersson, …'), which
+// read as roster dumps in the SERP. The new isEntityRosterParagraph
+// heuristic skips such paragraphs so the description falls through
+// to a real prose paragraph.
+// ──────────────────────────────────────────────────────────────────
+
+describe('isEntityRosterParagraph — bare name-list detection', () => {
+  it('flags a 5-name comma-separated MP roster', () => {
+    expect(
+      isEntityRosterParagraph(
+        'Anna Andersson, Lars Larsson, Eva Pettersson, Karin Karlsson, Per Persson',
+      ),
+    ).toBe(true);
+  });
+
+  it('flags a roster with parenthetical party suffixes', () => {
+    expect(
+      isEntityRosterParagraph(
+        'Anna Andersson (S), Lars Larsson (M), Eva Pettersson (KD), Karin Karlsson (V)',
+      ),
+    ).toBe(true);
+  });
+
+  it('does NOT flag a prose paragraph with a single comma', () => {
+    expect(
+      isEntityRosterParagraph(
+        "Sweden's Riksdag approved three reforms on Thursday, marking the largest single-day output of the session.",
+      ),
+    ).toBe(false);
+  });
+
+  it('does NOT flag a list of 2 names (below threshold)', () => {
+    expect(
+      isEntityRosterParagraph('Anna Andersson and Lars Larsson'),
+    ).toBe(false);
+  });
+
+  it('does NOT flag a list that contains a sentence terminator early', () => {
+    expect(
+      isEntityRosterParagraph(
+        'Anna Andersson. Lars Larsson and Eva Pettersson formed a committee, Karin Karlsson chaired.',
+      ),
+    ).toBe(false);
+  });
+
+  it('readFirstParagraph skips an entity-roster lead in favour of the next prose paragraph', () => {
+    const brief = [
+      '# Some Heading',
+      '',
+      'Anna Andersson, Lars Larsson, Eva Pettersson, Karin Karlsson, Per Persson',
+      '',
+      "Sweden's Riksdag approved three reforms on Thursday, marking a substantial output.",
+    ].join('\n');
+    const out = readFirstParagraph(brief);
+    expect(out).toContain('Sweden');
+    expect(out).not.toMatch(/^Anna Andersson/);
+  });
+});
+

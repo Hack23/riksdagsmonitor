@@ -320,7 +320,7 @@ export function deriveBriefSeoOverrides(input: {
   if (hasEn) {
     if (title === null) {
       const rawH1 = readFirstHeading(input.englishBriefMarkdown!);
-      const cleaned = cleanArticleTitle(rawH1, subfolder);
+      const cleaned = cleanArticleTitle(rawH1, subfolder, 'en');
       if (cleaned && cleaned.length > 0) title = cleaned;
     }
     if (description === null) {
