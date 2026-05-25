@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.21% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/23</span>
+                <span class='fraction'>23/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.54% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/20</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -166,36 +166,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -246,7 +246,7 @@ export function scanStaleProvenance(
     const diffMonths = diffMs / (1000 * 60 * 60 * 24 * 30.44);
     if (diffMonths &gt; 6) {
       const lineStart = text.lastIndexOf('\n', m.index) + 1;
-      const prevLineEnd = lineStart &gt; 0 ? lineStart - 1 : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+      const prevLineEnd = lineStart &gt; 0 ? lineStart - 1 : 0;
       const prevLineStart = text.lastIndexOf('\n', prevLineEnd - 1) + 1;
       const prevLine = text.slice(prevLineStart, prevLineEnd).trim();
       if (!prevLine.includes('&lt;!-- stale-vintage')) {
@@ -260,12 +260,12 @@ export function scanStaleProvenance(
 import type { ArticleViolation } from '../types.js';
 &nbsp;
 /** Stale-economic-provenance rule. */
-export function <span class="fstat-no" title="function not covered" >checkStaleProvenance(r</span>el: string, text: string): ArticleViolation[] {
-<span class="cstat-no" title="statement not covered" >  if (!text.includes('retrieved_at:')) <span class="cstat-no" title="statement not covered" >return [];</span></span>
-  const stale = <span class="cstat-no" title="statement not covered" >scanStaleProvenance(text);</span>
-<span class="cstat-no" title="statement not covered" >  if (stale.length === 0) <span class="cstat-no" title="statement not covered" >return [];</span></span>
-  const sample = <span class="cstat-no" title="statement not covered" >stale.slice(0, 2).<span class="fstat-no" title="function not covered" >map((e</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${e.retrievedAt} (${e.ageMonths}mo)`)</span>.join(', ');</span>
-<span class="cstat-no" title="statement not covered" >  return [</span>
+export function checkStaleProvenance(rel: string, text: string): ArticleViolation[] {
+  if (!text.includes('retrieved_at:')) return [];
+  const stale = scanStaleProvenance(text);
+  if (stale.length === 0) return [];
+  const sample = stale.slice(0, 2).map((e) =&gt; `${e.retrievedAt} (${e.ageMonths}mo)`).join(', ');
+  return [
     {
       file: rel,
       code: 'stale-economic-provenance',
@@ -280,7 +280,7 @@ export function <span class="fstat-no" title="function not covered" >checkStaleP
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-24T07:55:54.084Z
+                at 2026-05-25T09:36:38.192Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
