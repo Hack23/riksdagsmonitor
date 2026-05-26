@@ -176,19 +176,54 @@ For every downloaded document reference, fetch full text when available (`get_do
 
 **Top-N floor** (current download-order driven): full-text-fetch at least the **first 3 documents in the current filtered download order** (or all if < 3). For `comprehensive` / Tier-C runs the floor is **first 5**. Any L2+ Priority or L3 Intelligence-grade document MUST have full text — `metadata-only` for L2+ docs is an automatic Pass-2 improvement target and is reported in `methodology-reflection.md §Content Metrics`. Use `download-parliamentary-data.ts --auto-full-text-top-n=3` (`5` for Tier-C) where supported; the flag does **not** apply DIW significance ranking before selection (operates on current filtered array order — see `scripts/download-parliamentary-data.ts` parser comment). For DIW-ranked selection, determine the ordering separately. Gate check 10 enforces ≥ 2 successful retrievals when the manifest writes a `## Full-Text Fetch Outcomes` table.
 
+### Pre-publication committee documents (status `planerat` / `Dokumentet är inte publicerat`)
+
+Newly assigned betänkanden frequently appear in `get_betankanden` with `status: planerat` and a future scheduled date. Calling `get_dokument_innehall` on them returns a metadata stub or the literal string `Dokumentet är inte publicerat` rather than substantive text. Recurring example: `HD01JuU47` / `HD01JuU48` / `HD01UU24` on 2026-05-26 — three of four committee documents in the run.
+
+When this happens:
+
+1. **Detect** — treat any of the following as "pre-publication": (a) the body of `get_dokument_innehall` contains `Dokumentet är inte publicerat` (or similar Swedish phrasing for "not yet published"), (b) `status === "planerat"` and the response body is shorter than ~500 chars, (c) the schedulingDate is in the future.
+2. **Manifest tagging** — in `## MCP Coverage State` and `## Full-Text Fetch Outcomes`, set `coverage_state: pre_publication` (not `full_text`) and `full_text_available: false`. Add a notes column entry of the form `pre_publication — body unavailable until {scheduled_date}`.
+3. **Defer, do not retry within the same run** — record the document in `## Deferred Retrieval Queue` with `resourceType: document_fulltext`, `reason: pre_publication`, `retryAfter: {scheduled_date or scheduled_date + 1d}`. Do **not** repeatedly call `get_dokument_innehall` for the same dok_id in one run.
+4. **Methodology-reflection** — list pre-publication docs explicitly in `methodology-reflection.md §Analytical Limitations`. The analysis can proceed on title + committee + scheduling signals; mark every claim derived from them with confidence `LIKELY` / `POSSIBLE`, never `ALMOST CERTAIN`.
+
+### Proposition full-text — HTML wrapper extraction failure
+
+`get_dokument_innehall` on government propositions (e.g. `HD03250`, `HD03254`, `HD03265`, `HD03267`) frequently returns an HTML payload that wraps a PDF-converted body with extensive CSS, navigation chrome, and almost no extractable plaintext. Recurring example: propositions/2026-05-26 — *"HTML format returned but content embedded in CSS-heavy PDF-to-HTML conversion; substantive text extraction failed"* on 10/10 propositions.
+
+When this happens:
+
+1. **Detect** — the response is non-empty (so `full_text_available` looks `true`) but `stripHtmlTags(body).trim().length < 400` or the ratio of `<style>`/`<script>` bytes to plaintext bytes exceeds 5:1.
+2. **Manifest tagging** — set `coverage_state: pdf_html_wrapper` and `full_text_available: partial` (not `true`). Add a notes column entry: `pdf_html_wrapper — extracted {N} chars of plaintext; PDF fallback recommended`.
+3. **Fallback** — for propositions, the canonical text lives on `data.riksdagen.se/dokument/{dok_id}` as PDF. The current pipeline does not fetch PDFs; record the gap and use the title + committee + ministry signals plus any prior SOU report referenced in the proposition's metadata (`relateradedokument`).
+4. **Methodology-reflection** — list affected propositions explicitly in `methodology-reflection.md §Data Quality Assessment`; downgrade content-extraction confidence to 🟧 MEDIUM with an explicit `pdf_html_wrapper` reason rather than the vague `MEDIUM — analysis based on metadata`.
+
 ## Prior-voteringar enrichment
 
-For every committee-report, motion, or interpellation cycle, enrich the manifest with **prior-vote context** for the same committee + topic cluster. Call `search_voteringar` (riksdag-regering MCP) with the committee `bet` prefix (`KU`, `JuU`, `FöU`, `SoU`, `SfU`, `UbU`, `FiU`) and/or the proposition number a motion responds to, scoped to the **last 4 riksmöten** (`rm` filter). Record the 3–5 most relevant prior votes (Ja/Nej/Avstår tally + party split) under `## Prior-Voteringar Enrichment` in `data-download-manifest.md`. Required input for `historical-parallels.md`, `coalition-mathematics.md`, `swot-analysis.md` evidence rows. If no prior votes exist, state `Prior voteringar: no directly comparable vote found in last 4 riksmöten`.
+For every committee-report, motion, or interpellation cycle, enrich the manifest with **prior-vote context** for the same committee + topic cluster. Call `search_voteringar` (riksdag-regering MCP), scoped to the **last 4 riksmöten** (`rm` filter). Record the 3–5 most relevant prior votes (Ja/Nej/Avstår tally + party split) under `## Prior-Voteringar Enrichment` in `data-download-manifest.md`. Required input for `historical-parallels.md`, `coalition-mathematics.md`, `swot-analysis.md` evidence rows. If no prior votes exist, state `Prior voteringar: no directly comparable vote found in last 4 riksmöten`.
+
+### `search_voteringar` query shape — CRITICAL
+
+**Do NOT pass a committee prefix in `bet`.** The `bet` parameter is a *specific* document beteckning (e.g. `AU10`, `JuU17`, `2024/25:JuU17`), not a committee abbreviation. Passing `bet: "JuU"` will deterministically return 0 rows — this is the leading cause of the recurring "API returned 0 results — likely indexing lag or query format issue" line in methodology-reflection files. Use one of the following query patterns:
+
+1. **Topic keyword scoped to a riksmöte** — `{"avser": "brottslighet", "rm": "{CURRENT_RM}", "limit": 20}` (the `avser` field matches the vote subject). This is the preferred form for committee-scoped topic searches.
+2. **Parent proposition beteckning** — for motions/betänkanden responding to a proposition, use the full beteckning of that proposition: `{"bet": "{CURRENT_RM}:JuU17", "limit": 20}`.
+3. **Unfiltered window + post-filter** — `{"rm": "{CURRENT_RM}", "limit": 100}` then post-filter the returned `bet` field in your code/notes for the committee prefix (`bet.startsWith("JuU")`). Use this when the topic keyword is too narrow.
+4. **Party + riksmöte slice** — `{"parti": "S", "rm": "{CURRENT_RM}", "limit": 50}` when the analysis hinges on a single party's voting pattern.
+
+Never use `organ:` with `search_voteringar` — that parameter belongs to `search_dokument`, not `search_voteringar`.
 
 ### Voteringar fallback for new riksmöten
 
 When a new riksmöte has begun and no votes are yet indexed for the current session (common in September–November, occasionally until the first betänkande vote in a committee cycle), apply this fallback hierarchy:
 
 1. **Expand riksmöte scope** — widen `rm` filter from 4 to **6 riksmöten**.
-2. **Search by proposition parent** — for motions responding to a proposition, search by the parent proposition's beteckning (e.g. motion responds to prop. 2025/26:242 → search `bet: "2025/26:242"`).
-3. **Search by committee + keyword** — committee abbreviation plus a topic keyword from the document title (e.g. `organ: "JuU"` + `avser: "brottslighet"`).
-4. **Document the gap explicitly** — if all searches return empty, record: `Prior voteringar: new riksmöte — no votes indexed yet for {committee} in 2025/26; using {rm} cycle proxy (most recent: {dok_id}, {date})`. Cite specific prior vote `dok_id`s rather than "historical patterns".
+2. **Search by proposition parent** — for motions responding to a proposition, search by the parent proposition's full beteckning (e.g. motion responds to prop. {CURRENT_RM}:242 → search `bet: "{CURRENT_RM}:242"`). Use a full `<rm>:<bet>` string, never a committee prefix alone.
+3. **Search by topic keyword** — drop `bet` entirely and use `avser` plus the riksmöte (e.g. `avser: "brottslighet"`, `rm: "{CURRENT_RM}"`).
+4. **Document the gap explicitly** — if all searches return empty, record: `Prior voteringar: new riksmöte — no votes indexed yet for {committee} in {CURRENT_RM}; using {PRIOR_RM} cycle proxy (most recent: {dok_id}, {date})`. Cite specific prior vote `dok_id`s rather than "historical patterns".
 5. **Tag as methodology limitation** — mark `Prior-voteringar enrichment` row in `methodology-reflection.md §Content Metrics` as 🟡 (partial) with the fallback strategy.
+
+> **Self-check before writing the manifest row:** if `search_voteringar` returned 0 for the current riksmöte, did you retry with the patterns above (`avser` keyword, full beteckning, unfiltered + post-filter)? A bare zero result without those retries is a Pass-2 improvement target.
 
 ## Statskontoret enrichment
 
@@ -201,11 +236,32 @@ Statskontoret pre-warm is a **mandatory checklist evaluation** for every cycle �
 | Governance / public-sector-efficiency dimension | Government propositions touching authority structure, oversight, audit |
 | Implementation feasibility risk | Any bill assigning timeline/budget to one or more agencies |
 
-Use `web_fetch` against `https://www.statskontoret.se/` or `https://statskontoret.se/`, cite the report/page URL, record it in `data-download-manifest.md` under `## Statskontoret Cross-Source Enrichment`. When **no** trigger fires, state `Statskontoret pre-warm: no trigger matched (no agency named, no administrative dimension)`. When a trigger fires but no relevant report exists, state `Statskontoret: no directly relevant source found for {trigger}`.
+Use `web_fetch` to search the Statskontoret publications index — **do not** fetch the root domain `https://www.statskontoret.se/` and conclude "no relevant report found": the homepage is a marketing page and contains no searchable list of reports. Use the following concrete patterns instead:
+
+1. **Publications index** — `https://www.statskontoret.se/publikationer/` lists recent reports with title + date. Fetch this page first and scan for the triggered agency name or topic keyword.
+2. **Agency-scoped landing pages** — Statskontoret maintains topical landing pages such as `https://www.statskontoret.se/var-verksamhet/uppfoljning-av-statliga-myndigheter/` (agency-oversight reports) and `https://www.statskontoret.se/var-verksamhet/forvaltningspolitiska-utredningar/`. Use these when the trigger is "administrative capacity" or "governance".
+3. **Site search** — `https://www.statskontoret.se/?s={URL-encoded-keyword}` returns a results page; cite the first 1–3 hits whose title plausibly matches the trigger.
+4. **External fallback** — if `statskontoret.se` is unreachable, try `web_search` with `site:statskontoret.se {keyword}`. Cite the search result URL, not a Google search URL.
+
+Cite the specific report/page URL (not the root domain), record it in `data-download-manifest.md` under `## Statskontoret Cross-Source Enrichment`. When **no** trigger fires, state `Statskontoret pre-warm: no trigger matched (no agency named, no administrative dimension)`. When a trigger fires, the publications index was reached, and no report within the last 24 months matches the trigger, state `Statskontoret: no directly relevant 2024–2026 report found for {trigger} (publications index scanned {URL})`. Without an explicit reference to the publications index, a "no source found" line is a Pass-2 improvement target.
 
 ## Lagrådet enrichment
 
-When a downloaded document is a **government proposition** touching constitutional law, fundamental rights (RF / ECHR), criminal procedure, court organisation, secrecy / surveillance, taxation principles, or any matter where Lagrådet (Council on Legislation) review is statutorily required or politically expected, attempt one `web_fetch` against `https://www.lagradet.se/` for the proposition's referral and any published yttrande. The domain is allow-listed in every news workflow's `network.allowed`. If `lagradet.se` is unreachable (transient outage, firewall change), record `Lagrådet: site unreachable as of {retrieval timestamp}` under `## Lagrådet Tracking` in `data-download-manifest.md` and continue with the proposition text plus other reachable primary sources. Otherwise record the referral status (referred / yttrande published / not referred) under the same heading. The advisory text feeds `risk-assessment.md` (Institutional dimension), `threat-analysis.md` (procedural-legitimacy attack surface), `forward-indicators.md`. If reachable but no Lagrådet record exists yet, state `Lagrådet: referral pending / no yttrande published as of {retrieval timestamp}` and add a forward indicator dated to the expected referral window.
+When a downloaded document is a **government proposition** touching constitutional law, fundamental rights (RF / ECHR), criminal procedure, court organisation, secrecy / surveillance, taxation principles, or any matter where Lagrådet (Council on Legislation) review is statutorily required or politically expected, attempt one `web_fetch` for the proposition's referral and any published yttrande. The `lagradet.se` domain is allow-listed in every news workflow's `network.allowed`.
+
+Use these concrete endpoints — **do not** fetch the root domain `https://www.lagradet.se/` and conclude "referral pending":
+
+1. **Yttranden index** — `https://www.lagradet.se/yttranden/` lists Lagrådet's published yttranden in reverse-chronological order with the referring department and date. Scan for the proposition's title or related SOU/Ds keyword.
+2. **Year-filtered yttranden** — `https://www.lagradet.se/yttranden/?_yr={YEAR}` (e.g. `?_yr=2026`).
+3. **External fallback** — `web_search` with `site:lagradet.se "{proposition title or core keyword}"` if the on-site filter does not surface the referral.
+
+If `lagradet.se` is unreachable (transient outage, firewall change), record `Lagrådet: site unreachable as of {retrieval timestamp}` under `## Lagrådet Tracking` in `data-download-manifest.md` and continue with the proposition text plus other reachable primary sources. Otherwise record one of:
+
+- `Lagrådet: yttrande published {date} — {URL}` (with the yttrande PDF/page URL).
+- `Lagrådet: referral registered {date}, yttrande pending — yttranden index scanned {URL}` (only if the proposition appears in the referrals page but no yttrande yet).
+- `Lagrådet: no referral located for prop. {beteckning} as of {retrieval timestamp} (yttranden index scanned {URL})` — only after scanning the index, not based on a root-domain fetch.
+
+The advisory text feeds `risk-assessment.md` (Institutional dimension), `threat-analysis.md` (procedural-legitimacy attack surface), `forward-indicators.md`. Add a forward indicator dated to the expected yttrande window when the referral is registered but no yttrande is yet published.
 
 ## Withdrawn-document handling
 
