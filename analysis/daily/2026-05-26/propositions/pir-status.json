@@ -1,0 +1,71 @@
+{
+  "generated": "2026-05-26T07:20:00Z",
+  "workflow": "news-propositions",
+  "date": "2026-05-26",
+  "subfolder": "propositions",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Legislative outcome of HD03267 (security threat expulsion)",
+      "status": "OPEN",
+      "horizon": "T+30d",
+      "trigger_date": "2026-06-25",
+      "probability": 0.65,
+      "evidence_base": "Coalition JuU majority; Lagrådet opinion pending",
+      "last_updated": "2026-05-26"
+    },
+    {
+      "id": "PIR-2",
+      "title": "HD03250 state e-ID implementation start",
+      "status": "OPEN",
+      "horizon": "T+90d",
+      "trigger_date": "2026-08-31",
+      "probability": 0.70,
+      "evidence_base": "Passage expected; implementation timeline 2027-2028",
+      "last_updated": "2026-05-26"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Election 2026 bloc arithmetic impact",
+      "status": "OPEN",
+      "horizon": "T+110d",
+      "trigger_date": "2026-09-13",
+      "probability": null,
+      "evidence_base": "Polling approximately May 2026; L/KD/MP threshold risk",
+      "last_updated": "2026-05-26"
+    }
+  ],
+  "tripwires": [
+    {
+      "id": "TW-1",
+      "condition": "Lagrådet issues severe constitutional objection to HD03267",
+      "status": "WATCHING",
+      "action": "Escalate to Scenario C/D; downgrade PIR-1 passage probability"
+    },
+    {
+      "id": "TW-2",
+      "condition": "L announces opposition to HD03267",
+      "status": "WATCHING",
+      "action": "Update coalition-mathematics.md; assess majority risk"
+    },
+    {
+      "id": "TW-3",
+      "condition": "ECHR interim measure requested for pending deportee",
+      "status": "WATCHING",
+      "action": "Implementation pause signal; escalate to P0 immediate update"
+    },
+    {
+      "id": "TW-4",
+      "condition": "SD demands stronger HD03267 provisions publicly",
+      "status": "WATCHING",
+      "action": "Coalition discipline signal; update scenario analysis"
+    }
+  ],
+  "documents_covered": [
+    "HD03267", "HD03254", "HD03265", "HD03250",
+    "HD03261", "HD03251", "HD03260", "HD03255",
+    "HD03248", "HD03249"
+  ],
+  "analysis_pass": 2,
+  "artifacts_complete": 23
+}
