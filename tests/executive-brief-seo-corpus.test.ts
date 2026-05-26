@@ -83,10 +83,24 @@ import {
 
 /* -------------------------------------------------------------------------- */
 /*  Article-type test plan — 13 publishable types × 14 languages              */
+/*                                                                            */
+/*  Scope: this list is the SEO contract SSOT and intentionally covers both   */
+/*  (a) canonical types from `analysis/article-types.json` and                */
+/*  (b) legacy/published slugs that ship rendered `news/*.html` but have      */
+/*      not (yet) been promoted into the registry — currently                 */
+/*      `realtime-pulse`. When a legacy slug is added to the registry, its    */
+/*      entry here remains valid. Registry-only types that do not yet have    */
+/*      any corpus on disk (e.g. `quarter-ahead`) are deliberately omitted    */
+/*      until at least one brief has been produced, to avoid an empty-corpus  */
+/*      smoke-test failure that does not reflect a real SEO regression.      */
 /* -------------------------------------------------------------------------- */
 
 interface ArticleTypeTest {
-  /** Canonical id (matches `analysis/article-types.json#id`). */
+  /**
+   * Article-type id. Most ids match `analysis/article-types.json#id`, but
+   * legacy/published slugs not present in the registry (e.g.
+   * `realtime-pulse`) are also permitted — see scope note above.
+   */
   readonly id: string;
   /** Human-readable label for the `describe` block. */
   readonly label: string;

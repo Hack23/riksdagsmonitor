@@ -43,7 +43,15 @@ const DAILY_DIR = join(REPO_ROOT, 'analysis', 'daily');
 /**
  * Maps an on-disk subfolder name to its canonical article-type ID. The
  * left side is what `readdirSync(analysis/daily/<date>)` returns; the
- * right side matches `analysis/article-types.json#id`.
+ * right side is the article-type id used by the renderer pipeline.
+ *
+ * Most mapped IDs match `analysis/article-types.json#id`, but the set
+ * intentionally **also includes legacy/published slugs that are not in
+ * the registry** — currently `realtime-pulse` and `deep-inspection`.
+ * Both ship rendered `news/<date>-<slug>-<lang>.html` pages and need
+ * SEO-contract coverage even though they have not yet been promoted
+ * into `article-types.json`. When such a slug is later added to the
+ * registry, its entry here remains valid.
  *
  * `realtime-<HHMM>` timestamp variants and the bare `realtime-pulse` /
  * `realtime-monitor` folders all share the canonical `realtime-pulse`
@@ -62,6 +70,7 @@ const SUBFOLDER_TO_ARTICLE_TYPE: ReadonlyMap<string, string> = new Map([
   ['evening-analysis-2', 'evening-analysis'],
   ['realtime-monitor', 'realtime-monitor'],
   ['realtime-pulse', 'realtime-pulse'],
+  ['deep-inspection', 'deep-inspection'],
   ['week-ahead', 'week-ahead'],
   ['month-ahead', 'month-ahead'],
   ['quarter-ahead', 'quarter-ahead'],
@@ -78,7 +87,7 @@ const SUBFOLDER_TO_ARTICLE_TYPE: ReadonlyMap<string, string> = new Map([
  * skip them.
  */
 const NON_ARTICLE_SUBFOLDERS: ReadonlySet<string> = new Set([
-  'pass1', 'templates', 'deep-inspection', 'full-text', 'documents',
+  'pass1', 'templates', 'full-text', 'documents',
   'metadata-backfill',
 ]);
 
