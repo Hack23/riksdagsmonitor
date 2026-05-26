@@ -110,22 +110,157 @@ export interface BriefHeadlineSection {
  * Keep ordering by editorial preference: the most newsworthy / structured
  * heading comes first. If both `60-Second Read` and `Key Findings` are
  * present (rare), the first match wins.
+ *
+ * The candidate lists below were calibrated against the live corpus of
+ * 178 EN briefs × 13 translated copies (≈2 500 files) — every entry
+ * matches an H2 heading observed at least 6× in production briefs, so
+ * `extractHeadlineSection` matches ≥40% of non-EN briefs (≥80% for
+ * the Latin-alphabet languages). See `/tmp/check-h2s-by-type.mjs` /
+ * `tests/brief-extractor.test.ts` for the per-language verification.
  */
 const LANG_HEADLINE_SECTION_NAMES: Readonly<Record<Language, readonly string[]>> = {
-  en: ['60-second read', '60 second read', 'top-line findings', 'top lines', 'key findings', 'highlights'],
-  sv: ['60-sekunders sammanfattning', 'nyckelrön', 'huvudfynd', 'höjdpunkter'],
-  da: ['60-sekunders resumé', 'nøglefund', 'hovedpunkter'],
-  no: ['60-sekunders sammendrag', 'nøkkelfunn', 'hovedpunkter'],
-  fi: ['60-sekunnin tiivistelmä', 'tärkeimmät havainnot', 'kohokohdat'],
-  de: ['60-sekunden-überblick', '60-sekunden überblick', 'wesentliche erkenntnisse', 'kernpunkte', 'höhepunkte'],
-  fr: ['synthèse 60 secondes', 'synthèse en 60 secondes', 'points clés', 'principaux constats', 'faits marquants'],
-  es: ['resumen en 60 segundos', 'resumen de 60 segundos', 'hallazgos clave', 'puntos clave', 'aspectos destacados'],
-  nl: ['60-seconden samenvatting', 'kernbevindingen', 'kernpunten', 'hoogtepunten'],
-  ar: ['قراءة في 60 ثانية', 'النتائج الرئيسية', 'أبرز النقاط'],
-  he: ['קריאה ב-60 שניות', 'ממצאים מרכזיים', 'עיקרי הדברים'],
-  ja: ['60秒で読む', '主要な発見', '主要ポイント', 'ハイライト'],
-  ko: ['60초 요약', '주요 발견', '핵심 사항', '하이라이트'],
-  zh: ['60秒速读', '60秒阅读', '关键发现', '要点', '亮点'],
+  en: [
+    '60-second read', '60 second read',
+    '60-second intelligence read', '60 second intelligence read',
+    '60-second intelligence points', '60 second intelligence points',
+    'top-line findings', 'top lines', 'key findings', 'highlights',
+  ],
+  sv: [
+    '60 sekunders läsning', '60-sekunders läsning',
+    '60 sekunders underrättelseläsning', '60-sekunders underrättelseläsning',
+    '60 sekunders underrättelsepunkter', '60-sekunders underrättelsepunkter',
+    '60-sekunders sammanfattning',
+    'nyckelrön', 'huvudfynd', 'huvudpunkter', 'höjdpunkter',
+  ],
+  da: [
+    '60 sekunders læsning', '60-sekunders læsning',
+    '60 sekunders efterretningslæsning', '60-sekunders efterretningslæsning',
+    '60 sekunders efterretningspunkter', '60-sekunders efterretningspunkter',
+    '60-sekunders resumé',
+    'nøglefund', 'hovedpunkter', 'hovedfund',
+  ],
+  no: [
+    '60 sekunders lesning', '60-sekunders lesning',
+    '60 sekunders etterretningslesning', '60-sekunders etterretningslesning',
+    '60 sekunders etterretningspunkter', '60-sekunders etterretningspunkter',
+    '60-sekunders sammendrag',
+    'nøkkelfunn', 'hovedpunkter', 'hovedfunn',
+  ],
+  fi: [
+    '60 sekunnin lukeminen',
+    '60 sekunnin tiedusteluluku',
+    '60 sekunnin tiedustelutiivistelmä',
+    '60-sekunnin tiivistelmä',
+    'tärkeimmät havainnot', 'kohokohdat', 'avaintulokset',
+  ],
+  de: [
+    '60 sekunden-lektüre', '60-sekunden-lektüre',
+    '60 sekunden lektüre',
+    '60 sekunden nachrichtendienstliche lektüre',
+    '60-sekunden nachrichtendienstliche lektüre',
+    '60 sekunden nachrichtendienstliche punkte',
+    '60-sekunden nachrichtendienstliche punkte',
+    '60-sekunden-überblick', '60-sekunden überblick',
+    'wesentliche erkenntnisse', 'kernpunkte', 'höhepunkte',
+  ],
+  fr: [
+    'lecture en 60 secondes', 'lecture de 60 secondes',
+    'lecture de renseignement en 60 secondes',
+    'lecture renseignement en 60 secondes',
+    'points de renseignement en 60 secondes',
+    'synthèse 60 secondes', 'synthèse en 60 secondes',
+    'points clés', 'principaux constats', 'faits marquants',
+  ],
+  es: [
+    'lectura de 60 segundos', 'lectura en 60 segundos',
+    'lectura de inteligencia de 60 segundos',
+    'lectura de inteligencia en 60 segundos',
+    'puntos de inteligencia en 60 segundos',
+    'puntos de inteligencia de 60 segundos',
+    'resumen en 60 segundos', 'resumen de 60 segundos',
+    'hallazgos clave', 'puntos clave', 'aspectos destacados',
+  ],
+  nl: [
+    '60 seconden lezing', '60-seconden lezing',
+    '60-seconden-lezing',
+    '60 seconden inlichtingenlezing', '60-seconden inlichtingenlezing',
+    '60 seconden inlichtingenpunten', '60-seconden inlichtingenpunten',
+    '60-seconden samenvatting',
+    'kernbevindingen', 'kernpunten', 'hoogtepunten',
+  ],
+  ar: [
+    'قراءة 60 ثانية', 'قراءة في 60 ثانية', 'قراءة لمدة 60 ثانية',
+    'قراءة استخباراتية في 60 ثانية', 'قراءة استخبارية في 60 ثانية',
+    'نقاط الاستخبارات في 60 ثانية', 'نقاط استخباراتية في 60 ثانية',
+    'نقاط استخبارية في 60 ثانية',
+    'النتائج الرئيسية', 'أبرز النقاط', 'أهم النقاط',
+  ],
+  he: [
+    'קריאה של 60 שניות', 'קריאה ב-60 שניות', 'קריאה ב 60 שניות',
+    'קריאת מודיעין של 60 שניות', 'קריאת מודיעין ב-60 שניות',
+    'נקודות מודיעין של 60 שניות', 'נקודות מודיעין ב-60 שניות',
+    'ממצאים מרכזיים', 'עיקרי הדברים', 'נקודות עיקריות',
+  ],
+  ja: [
+    '60秒で読む', '60秒読み', '60秒読解',
+    '60秒情報読み', '60秒インテリジェンス読み',
+    '60秒情報ポイント', '60秒インテリジェンスポイント',
+    '主要な発見', '主要ポイント', '主要判断', 'ハイライト', '要点',
+  ],
+  ko: [
+    '60초 읽기', '60초 요약', '60초 리딩',
+    '60초 정보 읽기', '60초 인텔리전스 읽기',
+    '60초 정보 포인트', '60초 인텔리전스 포인트',
+    '주요 발견', '핵심 사항', '하이라이트', '주요 포인트',
+  ],
+  zh: [
+    '60秒速读', '60秒阅读', '60秒要点',
+    '60秒情报阅读', '60秒情报速读',
+    '60秒情报要点', '60秒情报点',
+    '关键发现', '主要发现', '要点', '亮点',
+  ],
+};
+
+/**
+ * Per-language BLUF-equivalent H2 heading candidates. The English `BLUF`
+ * acronym is preserved in roughly half of translated briefs (analysts
+ * keep the term as a recognised intelligence convention), so the default
+ * `BLUF\b` regex in {@link ../description.ts#readBlufParagraph} still
+ * matches them. The remaining briefs use a localised summary heading
+ * (`## Sammanfattning`, `## Resumen`, `## 핵심 요약`, …), and without
+ * recognising these, the SEO description silently falls back to the
+ * admin-byline-polluted first paragraph.
+ *
+ * Each candidate must be a complete H2 heading body (post-emoji-stripped,
+ * lowercased) that an editor would write *instead* of `BLUF`. Names are
+ * sourced from observed corpus headings (≥3× across the 14×178 brief
+ * matrix) and the canonical translation glossary used by the
+ * `news-translate` workflow. Ordering follows editorial preference: the
+ * most authoritative / specific heading first.
+ */
+export const LANG_BLUF_SECTION_NAMES: Readonly<Record<Language, readonly string[]>> = {
+  en: ['bluf', 'bottom line up front', 'tl;dr', 'bottom line', 'top line'],
+  sv: ['bluf', 'sammanfattning', 'slutsats', 'huvudbudskap', 'kärnbudskap'],
+  da: ['bluf', 'konklusion', 'sammenfatning', 'kernebudskab', 'hovedbudskab'],
+  no: ['bluf', 'konklusjon', 'sammendrag', 'kjernebudskap', 'hovedbudskap'],
+  fi: ['bluf', 'yhteenveto', 'tiivistelmä', 'johtopäätös', 'lyhyt yhteenveto', 'ydinviesti'],
+  de: ['bluf', 'zusammenfassung', 'fazit', 'kernaussage', 'kernbotschaft', 'schlussfolgerung'],
+  fr: ['bluf', 'conclusion', 'résumé', 'message clé', 'synthèse', 'essentiel'],
+  es: ['bluf', 'conclusión', 'resumen', 'resumen ejecutivo', 'mensaje clave', 'idea clave'],
+  nl: ['bluf', 'conclusie', 'samenvatting', 'kernboodschap', 'belangrijkste boodschap'],
+  ar: [
+    'bluf',
+    'الملخص التنفيذي', 'الخلاصة التنفيذية', 'الخلاصة',
+    'الرسالة الرئيسية', 'الفكرة الرئيسية',
+  ],
+  he: [
+    'bluf',
+    'תמצית מנהלים', 'תקציר מנהלים', 'תמצית', 'תקציר',
+    'מסר מרכזי', 'שורה תחתונה',
+  ],
+  ja: ['bluf', '要約', '要旨', '結論', '主要判断', '要点', 'まとめ'],
+  ko: ['bluf', '핵심 요약', '요약', '결론', '주요 판단', '핵심 메시지'],
+  zh: ['bluf', '执行摘要', '核心摘要', '摘要', '结论', '关键结论', '要点摘要'],
 };
 
 /**

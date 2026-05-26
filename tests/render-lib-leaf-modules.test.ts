@@ -512,6 +512,71 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
     const input = '## 🎯 BLUF\n\nBLUF: Five interpellations filed today.';
     expect(readBlufParagraph(input)).toBe('Five interpellations filed today.');
   });
+
+  // ──────────────────────────────────────────────────────────────────
+  // 14-language localised BLUF heading matchers (2026-05-26 audit).
+  //
+  // Roughly half of translated executive briefs drop the literal
+  // `BLUF` token in favour of a native-language summary heading
+  // (`## Sammanfattning`, `## 핵심 요약`, `## 执行摘要`,
+  // `## الخلاصة التنفيذية`, …). Without per-language matching, those
+  // briefs silently fall back to `readFirstParagraph` and ship the
+  // admin byline as the meta-description. Each fixture below was
+  // observed in the live corpus.
+  // ──────────────────────────────────────────────────────────────────
+
+  it.each([
+    ['sv', '## 📌 Sammanfattning'],
+    ['sv', '## 🎯 Slutsats'],
+    ['da', '## 🎯 Konklusion'],
+    ['da', '## 📌 Sammenfatning'],
+    ['no', '## 🎯 Konklusjon'],
+    ['no', '## 📌 Sammendrag'],
+    ['fi', '## 🎯 Yhteenveto'],
+    ['fi', '## 📌 Tiivistelmä'],
+    ['de', '## 🎯 Zusammenfassung'],
+    ['de', '## 📌 Fazit'],
+    ['fr', '## 🎯 Conclusion'],
+    ['fr', '## 📌 Résumé'],
+    ['es', '## 🎯 Conclusión'],
+    ['es', '## 📌 Resumen ejecutivo'],
+    ['nl', '## 🎯 Conclusie'],
+    ['nl', '## 📌 Samenvatting'],
+    ['ar', '## 🎯 الملخص التنفيذي'],
+    ['ar', '## 📌 الخلاصة التنفيذية'],
+    ['he', '## 🎯 תמצית מנהלים'],
+    ['he', '## 📌 תקציר מנהלים'],
+    ['ja', '## 🎯 要約'],
+    ['ja', '## 📌 要旨'],
+    ['ko', '## 🎯 핵심 요약'],
+    ['ko', '## 📌 요약'],
+    ['zh', '## 🎯 执行摘要'],
+    ['zh', '## 📌 核心摘要'],
+  ] as const)('[%s] readBlufParagraph matches localised heading "%s"', (lang, heading) => {
+    const input = `# Title\n\n${heading}\n\nThe lede sentence.\n\n## Next\n\nMore.`;
+    expect(readBlufParagraph(input, lang)).toBe('The lede sentence.');
+  });
+
+  it('readBlufParagraph(md, "en") still matches the literal `BLUF` token for translated briefs that preserve the English acronym', () => {
+    // Half of non-EN briefs keep `BLUF` as a recognised intelligence
+    // term — those must continue to match via the universal default
+    // alternation, no matter what `lang` we pass.
+    const input = '# Title\n\n## 🎯 BLUF\n\nThe lede.\n\n## Next';
+    expect(readBlufParagraph(input, 'sv')).toBe('The lede.');
+    expect(readBlufParagraph(input, 'ar')).toBe('The lede.');
+    expect(readBlufParagraph(input, 'zh')).toBe('The lede.');
+  });
+
+  it('readBlufParagraph(md) without a lang preserves legacy English-only behaviour', () => {
+    // Backward-compat regression guard: the no-lang call signature is
+    // used by `article.ts` and `aggregate.ts` when extracting from the
+    // English brief markdown. Localised headings must NOT match here
+    // (e.g. a Spanish prose paragraph containing the word "Resumen"
+    // in body text must not be promoted to BLUF when no `lang` is
+    // supplied).
+    const input = '# Title\n\n## 🎯 Sammanfattning\n\nSwedish lede.';
+    expect(readBlufParagraph(input)).toBeNull();
+  });
 });
 
 describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {

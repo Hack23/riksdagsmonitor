@@ -235,7 +235,7 @@ export function extractLocalizedBriefSeo(
   } else {
     // Defensive fallback for legacy callers / unknown languages — keep
     // the pre-rich-composer behaviour so nothing regresses to empty.
-    const blufParagraph = readBlufParagraph(briefMarkdown);
+    const blufParagraph = readBlufParagraph(briefMarkdown, langKey);
     const fallbackParagraph = blufParagraph ? null : readFirstParagraph(briefMarkdown);
     const rawDescription = blufParagraph ?? fallbackParagraph;
     if (rawDescription && rawDescription.trim().length > 0) {

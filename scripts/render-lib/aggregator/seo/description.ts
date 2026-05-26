@@ -27,7 +27,7 @@ import {
   ADMIN_FRAGMENT_SPLITTER,
 } from '../cleaning/admin-bylines.js';
 import { cleanArtifactBody } from '../cleaning/structural.js';
-import { extractHeadlineSection } from './brief-extractor.js';
+import { extractHeadlineSection, LANG_BLUF_SECTION_NAMES } from './brief-extractor.js';
 
 /**
  * Sentence-terminator set used by {@link truncateToSentenceBoundary}.
@@ -233,11 +233,21 @@ export function truncateToSentenceBoundary(
  * preferred over the first paragraph of the document (which is often the
  * admin-metadata block).
  *
- * Returns `null` if the brief has no BLUF heading.
+ * When `lang` is supplied, the matcher also accepts the localised
+ * BLUF-equivalent H2 heading names from
+ * {@link ./brief-extractor.ts#LANG_BLUF_SECTION_NAMES} (e.g.
+ * `## Sammanfattning` for `sv`, `## 핵심 요약` for `ko`,
+ * `## 执行摘要` for `zh`, `## الخلاصة التنفيذية` for `ar`).
+ * This is required because roughly half of translated briefs drop the
+ * literal `BLUF` token in favour of a native-language summary heading;
+ * without per-language matching, those briefs silently fall back to
+ * `readFirstParagraph` and ship the admin byline as the meta-description.
+ *
+ * Returns `null` if the brief has no recognised BLUF heading.
  */
-export function readBlufParagraph(markdown: string): string | null {
+export function readBlufParagraph(markdown: string, lang?: Language): string | null {
   const body = cleanArtifactBody(markdown);
-  const blufMatch = body.match(/^#{2,6}\s+(?:[^\n]*?\s)?BLUF\b[^\n]*\n+/im);
+  const blufMatch = body.match(buildBlufHeadingRegex(lang));
   if (!blufMatch || blufMatch.index === undefined) return null;
   const after = body.slice(blufMatch.index + blufMatch[0].length);
   const paragraphs = after.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
@@ -253,6 +263,53 @@ export function readBlufParagraph(markdown: string): string | null {
     return stripBlufLabel(markdownInlineToText(p));
   }
   return null;
+}
+
+/**
+ * Build the language-aware H2 BLUF-heading regex used by
+ * {@link readBlufParagraph}. The universal `BLUF\b` token is always
+ * accepted (preserved as an English acronym in roughly half of
+ * translated briefs); when `lang` is given, each entry from
+ * {@link LANG_BLUF_SECTION_NAMES} is added as an alternation, anchored
+ * to the heading line so it never matches an in-body mention.
+ *
+ * Strips Markdown emphasis markers (`*`, `_`) from emoji-suffixed
+ * heading bodies via the `[^\n]*?` lookahead before the name, so
+ * `## 🎯 *Sammanfattning*` still matches.
+ *
+ * Pure function — exported for tests.
+ */
+export function buildBlufHeadingRegex(lang?: Language): RegExp {
+  const localized = lang && LANG_BLUF_SECTION_NAMES[lang]
+    ? LANG_BLUF_SECTION_NAMES[lang]
+    : ['bluf'];
+  // Deduplicate, escape each candidate for regex inclusion, and join
+  // longest-first so multi-word names ("bottom line up front") win
+  // against their prefix subset ("bottom line").
+  const seen = new Set<string>();
+  const alternatives = [...localized]
+    .map((name) => name.toLowerCase().trim())
+    .filter((name) => {
+      if (name.length === 0) return false;
+      if (seen.has(name)) return false;
+      seen.add(name);
+      return true;
+    })
+    .sort((a, b) => b.length - a.length)
+    .map((name) => name.replace(/[\\.*+?^${}()|[\]]/g, '\\$&'));
+  // Always include `bluf` as the universal default — covers translated
+  // briefs that preserve the English acronym in their H2.
+  if (!seen.has('bluf')) alternatives.push('bluf');
+  const alt = alternatives.join('|');
+  // Heading line: `## …(optional emoji + spaces)…(NAME)…[end of line]`.
+  // The `(?:[^\n]*?\s)?` allows an emoji + space prefix before the name
+  // (`## 🎯 BLUF`, `## 📌 Sammanfattning`); the trailing `[^\n]*\n+`
+  // consumes any trailing parenthetical / punctuation up to the line
+  // terminator so the paragraph walker starts on the next blank line.
+  return new RegExp(
+    `^#{2,6}\\s+(?:[^\\n]*?\\s)?(?:${alt})(?=\\b|[\\s:—–\\-(),。、？！?!.…\\n])[^\\n]*\\n+`,
+    'im',
+  );
 }
 
 /**
@@ -364,14 +421,37 @@ export function composeRichDescription(
   if (!briefMarkdown || briefMarkdown.trim().length === 0) return '';
   const { softMin, hardMax } = descriptionWindowForLanguage(lang);
 
-  const blufParagraph = readBlufParagraph(briefMarkdown) ?? readFirstParagraph(briefMarkdown);
+  const blufParagraphPrimary = readBlufParagraph(briefMarkdown, lang);
+  const blufParagraph = blufParagraphPrimary ?? readFirstParagraph(briefMarkdown);
   const headlineSection = extractHeadlineSection(briefMarkdown, lang);
 
   // Pull the first sentence of the BLUF as the lede. Falls back to the
   // truncated whole paragraph when the BLUF has no sentence terminator
   // within the window.
+  //
+  // Critically, only the **editor-curated** BLUF paragraph
+  // (`blufParagraphPrimary`) is used as the lede. When `readBlufParagraph`
+  // returns `null` and we have headline bullets to anchor on, the
+  // `readFirstParagraph` fallback is deliberately dropped here: in
+  // translated briefs that pre-date the localised BLUF heading dictionary
+  // (or whose admin-byline detection misses a locale-specific shadda /
+  // bolding variant), `readFirstParagraph` can leak the admin byline as
+  // the lede, poisoning the composed description with
+  // `Author: … Classification: PUBLIC — GDPR Art.` (caught by the
+  // executive-brief-seo-corpus admin-leak guard). Bullets-only is
+  // strictly better signal than an admin-leaked lede.
   let lede = '';
-  if (blufParagraph) {
+  if (blufParagraphPrimary) {
+    const normalised = blufParagraphPrimary.replace(/\s+/g, ' ').trim();
+    SENTENCE_END_RE.lastIndex = 0;
+    const firstEnd = SENTENCE_END_RE.exec(normalised);
+    lede = firstEnd
+      ? normalised.slice(0, firstEnd.index + firstEnd[0].length).trim()
+      : normalised;
+  } else if (headlineSection.bullets.length === 0 && blufParagraph) {
+    // No BLUF heading AND no headline bullets — accept the
+    // `readFirstParagraph` fallback as the lede so briefs without any
+    // structured section still ship a description (legacy behaviour).
     const normalised = blufParagraph.replace(/\s+/g, ' ').trim();
     SENTENCE_END_RE.lastIndex = 0;
     const firstEnd = SENTENCE_END_RE.exec(normalised);
