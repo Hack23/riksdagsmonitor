@@ -29,6 +29,12 @@ on:
         required: false
         default: deep
 
+# Full git history needed by safe_outputs Checkout so the agent's git bundle can
+# apply cleanly even when main advances during the agent run. gh-aw v0.76.0 honours
+# `checkout.fetch-depth` for safe_outputs PR/push Checkouts (see compiler_safe_outputs_steps.go).
+checkout:
+  fetch-depth: 0
+
 permissions:
   contents: read
   issues: read

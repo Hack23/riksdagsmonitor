@@ -193,7 +193,7 @@ When this happens:
 
 When this happens:
 
-1. **Detect** — the response is non-empty (so `full_text_available` looks `true`) but `stripHtmlTags(body).trim().length < 400` or the ratio of `<style>`/`<script>` bytes to plaintext bytes exceeds 5:1.
+1. **Detect** — the response is non-empty (so `full_text_available` looks `true`) but `stripHtmlTags(body).trim().length < 400` or the ratio of inline-`style`/`script`-tag bytes to plaintext bytes exceeds 5:1.
 2. **Manifest tagging** — set `coverage_state: pdf_html_wrapper` and `full_text_available: partial` (not `true`). Add a notes column entry: `pdf_html_wrapper — extracted {N} chars of plaintext; PDF fallback recommended`.
 3. **Fallback** — for propositions, the canonical text lives on `data.riksdagen.se/dokument/{dok_id}` as PDF. The current pipeline does not fetch PDFs; record the gap and use the title + committee + ministry signals plus any prior SOU report referenced in the proposition's metadata (`relateradedokument`).
 4. **Methodology-reflection** — list affected propositions explicitly in `methodology-reflection.md §Data Quality Assessment`; downgrade content-extraction confidence to 🟧 MEDIUM with an explicit `pdf_html_wrapper` reason rather than the vague `MEDIUM — analysis based on metadata`.
