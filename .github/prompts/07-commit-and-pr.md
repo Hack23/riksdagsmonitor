@@ -22,8 +22,22 @@ Every run performs analysis **and** article generation end-to-end and produces *
 | Aggregated article markdown | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
 | Rendered articles (all 14 languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` |
 
-PR title: `📰 ${Article Type} — $ARTICLE_DATE`.
+PR title: `${TYPE_EMOJI} ${Article Type} — $ARTICLE_DATE` where `${TYPE_EMOJI}` is picked from the table below (defaults to `📰` if a new article type is added without updating this list).
 PR labels: `agentic-news` + article-type label.
+
+| Article-type slug | Emoji | Rationale |
+|-------------------|-------|-----------|
+| `propositions` | 📜 | Government bills (scrolls) |
+| `motions` | 📝 | Opposition motions (drafts) |
+| `committee-reports` | 🏛️ | Standing-committee betänkanden |
+| `interpellations` | 🗣️ | Oral debates / interpellation answers |
+| `evening-analysis` | 🌙 | End-of-day debrief |
+| `week-ahead` / `month-ahead` / `quarter-ahead` / `year-ahead` | 📅 | Forward-looking calendars |
+| `election-cycle` | 🗳️ | Multi-year electoral arc |
+| `week-in-review` / `monthly-review` | 🔍 | Retrospective audit |
+| `realtime-pulse` | 📡 | Live monitoring window |
+| `translate` (news-translate only) | 🌐 | Localized executive briefs |
+| *(any other / future type)* | 📰 | Default |
 
 The dedicated **`news-translate`** workflow owns markdown translation only: each daily run picks up untranslated `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief.md` files and produces `executive-brief_<lang>.md` siblings for the 13 non-English languages. It does not touch `news/*.html`. Per-type workflows produce **all 14 language HTML files** themselves in the same agentic run via the localized executive-brief cascade (see `06-article-generation.md`). Per-type workflows do **not** write `article.<lang>.md` — `scripts/validate-file-ownership.ts` forbids it.
 
@@ -118,7 +132,7 @@ The dedicated **`news-translate`** workflow owns markdown translation only: each
    Skipping this step leaves the run with **no recovery path** if `safeoutputs___create_pull_request` fails to publish. See `.github/aw/SANDBOX_COMMIT_HANDOFF.md` for the full contract and `.github/workflows/news-pat-pr-fallback.yml` for the host-side recovery job.
 
 5. **Call** `safeoutputs___create_pull_request` exactly once:
-   - Title: `📰 ${Article Type} — $ARTICLE_DATE`.
+   - Title: `${TYPE_EMOJI} ${Article Type} — $ARTICLE_DATE` (see emoji table above).
    - Body: use the PR template below.
    - Labels: `agentic-news` + article-type label.
    - Branch: handled automatically by safeoutputs (`news/content/$ARTICLE_DATE/$ARTICLE_TYPE`).
@@ -152,46 +166,92 @@ The **Sandbox commit handoff** in step 4 above is the third (and most important)
 
 ## Canonical PR body template
 
+Use the template below verbatim, replacing `$…` placeholders with run-observable values from the manifest, gate output, and on-disk artifacts. Keep every section heading and its icon — reviewers navigate by them. Sections that genuinely don't apply (e.g. no caveats) must still render the heading with a single `_None._` line so the structure stays stable across runs.
+
 ```markdown
-## Summary
+| Field | Value |
+|-------|-------|
+| Workflow | `$WORKFLOW_NAME` |
+| Article type | `$ARTICLE_TYPE` |
+| Article date | `$ARTICLE_DATE` |
+| Languages | $LANG_COUNT / 14 (en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh) |
+| Analysis depth | `$ANALYSIS_DEPTH` |
+| Iteration mode | `$ITERATION_MODE` (initial / improvement) |
+| Gate verdict | $GATE_VERDICT |
+| Agent run | [#$GITHUB_RUN_ID]($RUN_URL) |
+| Branch | `$BRANCH` |
+| Head SHA | `$HEAD_SHA` |
 
-- **Article type**: $ARTICLE_TYPE
-- **Article date**: $ARTICLE_DATE
-- **Languages**: all 14 (en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh)
-- **Analysis depth**: $ANALYSIS_DEPTH
-- **Scope**: <2–3 sentence human-readable scope>
+## 📋 Summary
 
-## Analysis artifacts
+<2–3 sentence human-readable scope summary — the BLUF for the article.>
 
-- [x] synthesis-summary.md
-- [x] swot-analysis.md
-- [x] risk-assessment.md
-- [x] threat-analysis.md
-- [x] stakeholder-perspectives.md
-- [x] significance-scoring.md
-- [x] classification-results.md
-- [x] cross-reference-map.md
-- [x] data-download-manifest.md
-- [x] documents/ (N files)
+### 📊 Stats
 
-## Articles
+| Metric | Value |
+|--------|-------|
+| Documents analyzed | $DOC_COUNT |
+| Unique `dok_id` citations | $CITATION_COUNT |
+| Longest evidence chain | $LONGEST_CHAIN_LEN hops |
+| Executive-brief languages produced | $BRIEF_LANG_COUNT / 14 |
+| Dashboard charts rendered | $CHART_COUNT |
+| Files staged | $STAGED_FILE_COUNT / 90 |
 
-- [x] news/$ARTICLE_DATE-$SUBFOLDER-en.html
-- [x] news/$ARTICLE_DATE-$SUBFOLDER-sv.html
-- [x] analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md (aggregated)
+## 🧠 Analysis artifacts
 
-## Methodology & compliance
+- [x] `synthesis-summary.md`
+- [x] `swot-analysis.md`
+- [x] `risk-assessment.md`
+- [x] `threat-analysis.md`
+- [x] `stakeholder-perspectives.md`
+- [x] `significance-scoring.md`
+- [x] `classification-results.md`
+- [x] `cross-reference-map.md`
+- [x] `data-download-manifest.md`
+- [x] `documents/` ($DOCUMENTS_COUNT files)
 
-- Methodology: `analysis/methodologies/ai-driven-analysis-guide.md`
-- Templates: `analysis/templates/`
-- Evidence: every claim cites `dok_id`, named actor, vote count, or primary-source URL.
-- GDPR / ISMS: public-source data only; neutrality applied; DPIA not required (no new high-risk processing).
+## 🌐 Localized articles
 
-## Iteration
+- [x] `news/$ARTICLE_DATE-$SUBFOLDER-en.html`
+- [x] `news/$ARTICLE_DATE-$SUBFOLDER-sv.html`
+- [x] `news/$ARTICLE_DATE-$SUBFOLDER-{da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html`
+- [x] `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` (aggregated source-of-truth)
 
-- Pass 1 analysis: ✅
-- Pass 2 improvement: ✅
-- Aggregate + render: ✅
+## 🔗 Top source citations
+
+Top 3–5 primary `dok_id` / URL citations driving the article's headline claims (one line of context each):
+
+1. `$DOK_ID_1` — $ONE_LINE_CONTEXT
+2. `$DOK_ID_2` — $ONE_LINE_CONTEXT
+3. `$DOK_ID_3` — $ONE_LINE_CONTEXT
+<!-- Add up to 5 entries; remove unused list items. -->
+
+## 🔍 Methodology & compliance
+
+- **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md`
+- **Templates**: `analysis/templates/`
+- **Evidence rule**: every claim cites a `dok_id`, named actor, vote count, or primary-source URL.
+- **GDPR / ISMS**: public-source data only; neutrality applied; DPIA not required (no new high-risk processing).
+
+## 🔁 Iteration
+
+- Pass 1 analysis: $PASS1_STATUS
+- Pass 2 improvement: $PASS2_STATUS
+- Aggregate + render: $RENDER_STATUS
+
+## ⚠️ Caveats & limits
+
+List every deviation from the methodology a reviewer would otherwise have to dig through the analysis files to discover. Examples: skipped sub-agents, capped downloads, missing languages, pre-publication committee docs, PDF-only propositions. If genuinely none apply:
+
+_None._
+
+## ▶️ Re-run
+
+```bash
+gh aw run $WORKFLOW_FILE --ref main \
+  -F article_date=$ARTICLE_DATE \
+  -F analysis_depth=$ANALYSIS_DEPTH
+```
 ```
 
 ## No-op policy
