@@ -324,9 +324,28 @@ if [ "$primary_active" -eq 1 ]; then
       title="news: ${GH_AW_PAT_FALLBACK_SLUG:-recovery} — $(date -u +%Y-%m-%d) (host-side fallback)"
     fi
   fi
+  # Canonical type → emoji map (mirrors .github/prompts/07-commit-and-pr.md §Article-type emoji table).
+  # Any of these prefixes (or the legacy `[news]` prefix) is left alone; otherwise the type-emoji is
+  # prepended so the host-fallback PR title matches the title safeoutputs would have written.
+  type_emoji_for_slug() {
+    case "$1" in
+      propositions)                        printf '📜' ;;
+      motions)                             printf '📝' ;;
+      committee-reports)                   printf '🏛️' ;;
+      interpellations)                     printf '🗣️' ;;
+      evening-analysis)                    printf '🌙' ;;
+      week-ahead|month-ahead|quarter-ahead|year-ahead) printf '📅' ;;
+      election-cycle)                      printf '🗳️' ;;
+      week-in-review|monthly-review)       printf '🔍' ;;
+      realtime-pulse)                      printf '📡' ;;
+      translate)                           printf '🌐' ;;
+      *)                                   printf '📰' ;;
+    esac
+  }
+  type_emoji=$(type_emoji_for_slug "${slug:-}")
   case "$title" in
-    "[news]"*|"📰 "*) ;;
-    *) title="📰 $title" ;;
+    "[news]"*|"📰 "*|"📜 "*|"📝 "*|"🏛️ "*|"🗣️ "*|"🌙 "*|"📅 "*|"🗳️ "*|"🔍 "*|"📡 "*|"🌐 "*) ;;
+    *) title="${type_emoji} ${title}" ;;
   esac
 
   log "primary handoff: branch=$branch head=$head_sha parent=$parent_sha"
@@ -430,40 +449,99 @@ if [ "$primary_active" -eq 1 ]; then
         "$(printf '%s' "$bad_paths" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.stringify(s.split(/\n/).filter(Boolean))))')")"
   fi
 
-  # Compose body.
+  # Compose body — mirrors the canonical PR body in
+  # .github/prompts/07-commit-and-pr.md §"Canonical PR body template" so reviewers
+  # navigate fallback PRs by the same section icons as primary safeoutputs PRs.
+  # Sections that the host job cannot populate from the manifest render `_None — host
+  # fallback path (see analysis dir on the branch)._` so the structure stays stable.
   body_file=$(mktemp)
   trap 'rm -f "$body_file"' EXIT
   workflow_name="${GH_AW_PAT_FALLBACK_WORKFLOW_NAME:-${slug:-news}}"
   run_url="${GH_AW_PAT_FALLBACK_RUN_URL:-$server_url/$repo/actions/runs/${GITHUB_RUN_ID:-unknown}}"
+  workflow_file=""
+  if [ -n "${slug:-}" ]; then
+    workflow_file="news-${slug}.lock.yml"
+  fi
   {
-    if [ -n "$body_summary" ]; then
-      printf '%s\n\n' "$body_summary"
-    fi
-    cat <<EOF_BODY
+    cat <<EOF_BANNER
 > 🛟 **Host-side PAT fallback PR.** The agent committed inside the gh-aw sandbox
 > but the safeoutputs MCP \`create_pull_request\` call failed (typically a
 > \`session not found\` after the ~30 min Streamable-HTTP idle TTL). The host
 > job replayed the agent commit from a portable git bundle and opened this PR
-> under the repo PAT.
+> under the repo PAT. The fallback never modifies the working tree of the host
+> runner — it pushes the bundle commit verbatim with \`--force-with-lease\`
+> after fail-closed gates (refuse-protected-branch + reject-protected-paths).
 
 | Field | Value |
 |-------|-------|
-| Workflow | $workflow_name |
+| Workflow | \`$workflow_name\` |
+| Article type | \`${slug:-?}\` |
+| Article date | \`${today:-?}\` |
+| Languages | host-fallback path — see analysis dir on the branch |
+| Analysis depth | host-fallback path — see analysis dir on the branch |
+| Iteration mode | host-fallback path — see analysis dir on the branch |
+| Gate verdict | \`${gate_result}\` |
 | Agent run | $run_url |
 | Branch | \`$branch\` |
 | Head SHA | \`$recovered_sha\` |
-| Article slug | \`${slug:-?}\` |
-| Article date | \`${today:-?}\` |
 | Analysis dir | \`${analysis_dir:-?}\` |
-| Gate result | \`${gate_result}\` |
 | Recovery path | primary (bundle handoff) |
 
-The fallback never modifies the working tree of the host runner — it pushes
-the bundle commit verbatim with \`--force-with-lease\`. Before push, the
-host-side script enforces fail-closed gates: it refuses to push to the
-default branch and rejects any diff touching protected paths
-(\`.github/\`, \`.agents/\`, \`package.json\`, lock files, build configs).
-EOF_BODY
+## 📋 Summary
+
+EOF_BANNER
+    if [ -n "$body_summary" ]; then
+      printf '%s\n\n' "$body_summary"
+    else
+      # shellcheck disable=SC2016 # literal markdown backticks in the format string
+      printf '_Host-fallback PR for \`%s\` on \`%s\`. See analysis dir on the branch for the full BLUF and section content; the agent commit was replayed verbatim from the sandbox bundle._\n\n' "${slug:-?}" "${today:-?}"
+    fi
+    cat <<EOF_SECTIONS
+### 📊 Stats
+
+| Metric | Value |
+|--------|-------|
+| Recovery source | bundle handoff |
+| Recovered SHA | \`$recovered_sha\` |
+| Parent SHA | \`${parent_sha:-?}\` |
+| Gate verdict | \`${gate_result}\` |
+
+## 🧠 Analysis artifacts
+
+_See \`${analysis_dir:-analysis/daily/${today}/${slug}}/\` on this branch — the host fallback replays the agent's commit verbatim, so every artifact the agent staged (summaries, SWOT, risk, threat, stakeholder, significance, classification, cross-reference, manifest, documents/) is present at \`$recovered_sha\`._
+
+## 🌐 Localized articles
+
+_See \`news/${today}-${slug}-*.html\` on this branch — present iff the agent ran the renderer before the safeoutputs MCP failure. Improvement-mode re-runs always re-render; first-pass failures before the renderer ran will land without HTML._
+
+## 🔗 Top source citations
+
+_Not extractable host-side. See \`${analysis_dir:-analysis/daily/${today}/${slug}}/article.md\` (top citations) and \`documents/\` (per-\`dok_id\` analysis) on this branch._
+
+## 🔍 Methodology & compliance
+
+- **Methodology**: \`analysis/methodologies/ai-driven-analysis-guide.md\`
+- **Templates**: \`analysis/templates/\`
+- **Evidence rule**: every claim cites a \`dok_id\`, named actor, vote count, or primary-source URL.
+- **GDPR / ISMS**: public-source data only; neutrality applied; DPIA not required.
+
+## 🔁 Iteration
+
+_Host-fallback path: see \`${analysis_dir:-analysis/daily/${today}/${slug}}/methodology-reflection.md\` on this branch for Pass 1 / Pass 2 / aggregate-render status (the rerun-log marker is appended on every improvement-mode run)._
+
+## ⚠️ Caveats & limits
+
+- This PR was opened by the host-side PAT fallback after \`safeoutputs___create_pull_request\` failed inside the agent sandbox. Treat the agent's MCP transcript as incomplete past the failure point.
+- The fallback runs fail-closed protected-paths and refuse-default-branch gates before push; this PR's diff is guaranteed to exclude \`.github/\`, \`.agents/\`, \`package.json\`, lock files, and build configs.
+- Manifest-derived fields above reflect what the agent wrote to \`/tmp/gh-aw/agent/aw-fallback.json\` before the MCP failure — any divergence from the actual commit content should be reconciled against the on-disk artifacts on this branch.
+
+## ▶️ Re-run
+
+\`\`\`bash
+gh aw run ${workflow_file:-news-<workflow>.lock.yml} --ref main \\
+  -F article_date=${today:-YYYY-MM-DD}
+\`\`\`
+EOF_SECTIONS
   } > "$body_file"
 
   if [ "${GH_AW_PAT_FALLBACK_DRY_RUN:-0}" = "1" ]; then
@@ -473,6 +551,27 @@ EOF_BODY
     audit "dry_run_success" "primary path" \
       "$(printf '{"branch":"%s","title":%s}' "$branch" "$(printf '%s' "$title" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>process.stdout.write(JSON.stringify(s.trim())))')")"
     exit 0
+  fi
+
+  # Pre-flight: if safeoutputs already opened the PR and the remote branch
+  # already points at the recovered SHA, the primary path succeeded — exit
+  # without pushing or editing so we never clobber the safeoutputs-authored
+  # title/body on a successful run. This is the fix for the "PAT fallback
+  # fires even when main hasn't changed" symptom (investigation Finding 3).
+  preflight_pr=$(gh pr list --repo "$repo" --head "$branch" --state open --json number,url,headRefOid --jq '.[0]' 2>/dev/null || true)
+  if [ -n "$preflight_pr" ] && [ "$preflight_pr" != "null" ]; then
+    preflight_number=$(printf '%s' "$preflight_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.number));})')
+    preflight_url=$(printf '%s' "$preflight_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(o.url);})')
+    preflight_oid=$(printf '%s' "$preflight_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(o.headRefOid||"");})')
+    if [ -n "$preflight_oid" ] && [ "$preflight_oid" = "$recovered_sha" ]; then
+      log "preflight: safeoutputs already opened PR #$preflight_number at recovered SHA $recovered_sha — fallback is a no-op"
+      echo "::notice title=PAT fallback no-op::safeoutputs primary path succeeded for branch $branch (PR #$preflight_number at $recovered_sha). Fallback skipped to avoid clobbering safeoutputs-authored PR metadata."
+      step_summary "🟢 Host-side PAT PR fallback skipped — safeoutputs primary path succeeded ([PR #$preflight_number]($preflight_url) at \`$recovered_sha\`)."
+      audit "primary_noop_safeoutputs_succeeded" "preflight matched recovered SHA" \
+        "$(printf '{"branch":"%s","pr":%s,"url":"%s","head_sha":"%s"}' "$branch" "$preflight_number" "$preflight_url" "$recovered_sha")"
+      exit 0
+    fi
+    log "preflight: open PR #$preflight_number exists for $branch but head ($preflight_oid) differs from recovered ($recovered_sha) — proceeding with bundle replay"
   fi
 
   push_url="https://x-access-token:${token}@${server_host}/${repo}.git"

@@ -432,4 +432,85 @@ describe('gh-aw-pat-pr-fallback.sh', () => {
     expect(result.audit).toMatch(/recovered commit touches protected paths/);
     expect(result.audit).not.toMatch(/"event":"primary_created"/);
   });
+
+  it('preflight: exits as a no-op when safeoutputs primary path already opened the PR at recovered SHA', () => {
+    // This guards Finding 3: previously the fallback always pushed and then
+    // `gh pr edit`-clobbered the safeoutputs-authored title/body. Now the
+    // script `gh pr list`s for the recovered branch BEFORE pushing; if a PR
+    // already exists with headRefOid === recovered_sha, the script exits 0
+    // without pushing or editing.
+    const hostRepoDir = makeHostRepo(rootTmp);
+    const ghAwDir = path.join(rootTmp, 'gh-aw');
+    fs.mkdirSync(ghAwDir, { recursive: true });
+    const branch = 'news/2026-04-28-week-in-review-run-preflight';
+    const handoff = makeBundleHandoff(rootTmp, hostRepoDir, branch);
+    fs.copyFileSync(handoff.bundlePath, path.join(ghAwDir, 'aw-fallback.bundle'));
+    fs.writeFileSync(path.join(ghAwDir, 'aw-fallback.json'), JSON.stringify(handoff.manifest));
+    // safeoutputs.jsonl is empty so the skip-when-PR-already-created branch
+    // does NOT take effect — the script must reach the preflight `gh pr list`
+    // call to detect that safeoutputs nevertheless succeeded.
+    fs.writeFileSync(path.join(ghAwDir, 'safeoutputs.jsonl'), '');
+
+    // PATH shim: fake `gh` that returns a PR whose headRefOid equals the
+    // recovered SHA. Real `git` is symlinked in alongside it so the rest of
+    // the script (rev-parse, bundle verify, etc.) functions normally.
+    const shimDir = path.join(rootTmp, 'shim');
+    fs.mkdirSync(shimDir, { recursive: true });
+    const ghShim = path.join(shimDir, 'gh');
+    fs.writeFileSync(
+      ghShim,
+      `#!/usr/bin/env bash\n` +
+        `# Fake gh: handle the preflight \`gh pr list\` call and \`gh auth status\`.\n` +
+        `if [ "$1" = "auth" ] && [ "$2" = "status" ]; then\n` +
+        `  echo "fake gh: authenticated"; exit 0\n` +
+        `fi\n` +
+        `if [ "$1" = "pr" ] && [ "$2" = "list" ]; then\n` +
+        `  printf '{"number":4242,"url":"https://github.com/Hack23/riksdagsmonitor/pull/4242","headRefOid":"${handoff.headSha}"}\\n'\n` +
+        `  exit 0\n` +
+        `fi\n` +
+        `echo "fake gh: unexpected args $*" >&2; exit 99\n`,
+    );
+    fs.chmodSync(ghShim, 0o755);
+    const realGit = spawnSync('which', ['git'], { encoding: 'utf8' }).stdout.trim();
+    fs.symlinkSync(realGit, path.join(shimDir, 'git'));
+
+    // Inline spawnSync (the shared runScript helper hardcodes DRY_RUN=1;
+    // we need DRY_RUN=0 here so the preflight check is reached).
+    const auditPath = path.join(ghAwDir, 'fallback-events.jsonl');
+    const summaryPath = path.join(ghAwDir, 'step-summary.md');
+    fs.writeFileSync(summaryPath, '');
+    const r = spawnSync('bash', [SCRIPT], {
+      cwd: hostRepoDir,
+      env: {
+        PATH: `${shimDir}:${process.env.PATH}`,
+        HOME: process.env.HOME,
+        GH_AW_PAT_FALLBACK_MANIFEST_PRIMARY: path.join(ghAwDir, 'agent', 'aw-fallback.json'),
+        GH_AW_PAT_FALLBACK_MANIFEST_LEGACY: path.join(ghAwDir, 'aw-fallback.json'),
+        GH_AW_PAT_FALLBACK_STDIO_LOG: path.join(ghAwDir, 'agent-stdio.log'),
+        GH_AW_PAT_FALLBACK_AUDIT_LOG: auditPath,
+        GH_AW_PAT_FALLBACK_SAFEOUTPUTS_FILE: path.join(ghAwDir, 'safeoutputs.jsonl'),
+        GH_AW_PAT_FALLBACK_MANIFEST: path.join(ghAwDir, 'aw-fallback.json'),
+        GH_AW_PAT_FALLBACK_BUNDLE: path.join(ghAwDir, 'aw-fallback.bundle'),
+        GH_AW_PAT_FALLBACK_DRY_RUN: '0',
+        GH_AW_PAT_PR_FALLBACK_TOKEN: 'ghp_dummytoken_for_test',
+        GITHUB_REPOSITORY: 'Hack23/riksdagsmonitor',
+        GITHUB_SERVER_URL: 'https://github.com',
+        GITHUB_RUN_ID: '999',
+        GITHUB_STEP_SUMMARY: summaryPath,
+        DEFAULT_BRANCH: 'main',
+      },
+      encoding: 'utf8',
+    });
+    const audit = fs.existsSync(auditPath) ? fs.readFileSync(auditPath, 'utf8') : '';
+
+    expect(r.status, `stderr was:\n${r.stderr}\naudit:\n${audit}`).toBe(0);
+    expect(audit).toMatch(/"event":"primary_start"/);
+    expect(audit).toMatch(/"event":"primary_noop_safeoutputs_succeeded"/);
+    expect(audit).toMatch(/"pr":4242/);
+    expect(audit).toMatch(new RegExp(`"head_sha":"${handoff.headSha}"`));
+    // Crucially: must NOT have reached the push or edit paths.
+    expect(audit).not.toMatch(/"event":"primary_created"/);
+    expect(audit).not.toMatch(/"event":"primary_updated"/);
+    expect(audit).not.toMatch(/"event":"dry_run_success"/);
+  });
 });

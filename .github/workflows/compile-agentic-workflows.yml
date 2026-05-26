@@ -62,14 +62,22 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
-      - name: Patch safe_outputs fetch-depth for bundle compatibility
-        # Delegates to a committed, tested, idempotent script. The workflow
-        # itself carries NO patching logic — see the script header for the
-        # full rationale (gh-aw v0.74.7 hardcodes fetch-depth: 1 in
-        # compiler_safe_outputs_steps.go with no frontmatter knob) and the
-        # tests/safeoutputs-fetch-depth-patch.test.ts regression guard that
-        # asserts every news-*.lock.yml is in the patched shape.
-        run: node scripts/agentic/patch-safeoutputs-fetch-depth.mjs
+      # safe_outputs fetch-depth is now controlled natively by each news-*.md
+      # `checkout: { fetch-depth: 0 }` frontmatter declaration (gh-aw v0.76.0+
+      # `pkg/workflow/compiler_safe_outputs_steps.go` propagates the value via
+      # `NewCheckoutManager(data.CheckoutConfigs).GetDefaultCheckoutOverride()`).
+      # No post-compile patch step is required. The
+      # `tests/safeoutputs-fetch-depth.test.ts` regression suite asserts every
+      # compiled news-*.lock.yml has fetch-depth: 0 on its safe_outputs Checkouts.
+
+      - name: Enforce PAT fallback coverage (workflow_run triggers ↮ news-*.md)
+        # Drift detector: every news-*.md `name:` must appear in the
+        # `workflow_run.workflows:` list AND in the slug_for_name() case map
+        # of .github/workflows/news-pat-pr-fallback.yml. Without this check,
+        # a typo (e.g. "News: Translate Articles" vs the actual "News:
+        # Translate Executive Briefs") silently disables the host-side PAT
+        # recovery path for that workflow.
+        run: node scripts/check-pat-fallback-coverage.mjs
 
       - name: Enforce prompt-module architecture
         run: |
