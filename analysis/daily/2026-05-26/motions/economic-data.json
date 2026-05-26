@@ -1,0 +1,86 @@
+{
+  "version": "2.0",
+  "generatedAt": "2026-05-26T08:30:00Z",
+  "articleDate": "2026-05-26",
+  "subfolder": "motions",
+  "provider": "imf",
+  "dataflows": {
+    "weo": {
+      "dataflow": "IMF.WEO",
+      "vintage": "Apr-2026",
+      "retrievedAt": "2026-05-26T08:01:21Z",
+      "country": "SWE",
+      "indicators": {
+        "NGDP_RPCH": {
+          "description": "Real GDP Growth Rate (%)",
+          "value_2025": 1.8,
+          "value_2026_est": 2.4,
+          "unit": "percent_change",
+          "source": "IMF World Economic Outlook Apr-2026"
+        },
+        "GGXWDG_NGDP": {
+          "description": "General Government Gross Debt (% of GDP)",
+          "value_2025": 31.4,
+          "value_2026_est": 30.8,
+          "unit": "percent_gdp",
+          "source": "IMF World Economic Outlook Apr-2026"
+        },
+        "PCPIPCH": {
+          "description": "Inflation Rate, Average Consumer Prices (%)",
+          "value_2025": 2.3,
+          "value_2026_est": 2.1,
+          "unit": "percent_change",
+          "source": "IMF World Economic Outlook Apr-2026"
+        },
+        "LUR": {
+          "description": "Unemployment Rate (% of total labor force)",
+          "value_2025": 8.4,
+          "value_2026_est": 8.1,
+          "unit": "percent",
+          "source": "IMF World Economic Outlook Apr-2026"
+        }
+      }
+    },
+    "fm": {
+      "dataflow": "IMF.FM",
+      "vintage": "Apr-2026",
+      "retrievedAt": "2026-05-26T08:01:21Z",
+      "country": "SWE",
+      "indicators": {
+        "GGXCNL_NGDP": {
+          "description": "General Government Net Lending/Borrowing (% of GDP)",
+          "value_2025": 0.8,
+          "value_2026_est": 0.5,
+          "unit": "percent_gdp",
+          "source": "IMF Fiscal Monitor Apr-2026"
+        }
+      }
+    }
+  },
+  "economicProvenance": {
+    "provider": "imf",
+    "primaryDataflow": "WEO",
+    "vintage": "Apr-2026",
+    "retrievedAt": "2026-05-26T08:01:21Z",
+    "vintageAgeMonths": 2,
+    "vintageAnnotation": null,
+    "contextFile": "data/imf-context.json"
+  },
+  "macroContext": {
+    "narrative": "Sweden's economy is in a moderately positive cycle. IMF projects 2.4% real GDP growth for 2026 (up from 1.8% in 2025). Fiscal position is sound: gross debt at ~31% GDP, near fiscal balance (net lending +0.5% GDP). Inflation is trending toward 2% target. These conditions mean both propositions (security detention and Skatteverket expansion) face no fiscal constraint — implementation cost is within budget.",
+    "relevanceToMotions": "Economic stability provides budgetary space for Migrationsverket detention expansion (prop. 2025/26:267) and Skatteverket IT investment (prop. 2025/26:261). Neither motion creates material fiscal risk. The primary implementation constraints are legal (ECHR, GDPR) rather than budgetary.",
+    "skatteverketContext": "Anti-fraud measures through expanded folkbokföring access are consistent with Sweden's high-trust administrative model. IMF has recognized Sweden's tax administration quality in Article IV consultations. Skatteverket expansion is fiscally efficient.",
+    "securityContext": "Swedish defense and security spending has been elevated since 2022 (NATO accession context). Security-threat migration detention is a marginal addition to existing security infrastructure costs."
+  },
+  "nordicComparison": {
+    "source": "IMF WEO Apr-2026",
+    "vintage": "Apr-2026",
+    "gdpGrowth2026": {
+      "SWE": 2.4,
+      "DNK": 2.1,
+      "NOR": 1.8,
+      "FIN": 1.5,
+      "DEU": 1.2
+    }
+  }
+}
