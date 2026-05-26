@@ -45,6 +45,7 @@ import { computeArticleHeadMetadata } from './article-head-metadata.js';
 import {
   readFirstHeading,
   cleanArticleTitle,
+  titleFromBluf,
 } from './aggregator/seo/title.js';
 import {
   composeRichDescription,
@@ -323,6 +324,16 @@ export function deriveBriefSeoOverrides(input: {
       const rawH1 = readFirstHeading(input.englishBriefMarkdown!);
       const cleaned = cleanArticleTitle(rawH1, subfolder, 'en');
       if (cleaned && cleaned.length > 0) title = cleaned;
+    }
+    // Step 2b — BLUF-synthesised title when H1 is boilerplate/missing.
+    // The brief body (## Headline, ## Intelligence Summary, or BLUF para)
+    // often contains story-specific first sentences that serve better as
+    // SERP titles than the generic category-label fallback.
+    if (title === null) {
+      const bluf = readBlufParagraph(input.englishBriefMarkdown!)
+        ?? readFirstParagraph(input.englishBriefMarkdown!);
+      const synthesised = titleFromBluf(bluf);
+      if (synthesised && synthesised.length > 0) title = synthesised;
     }
     if (description === null) {
       // Rich description (BLUF + headline-section bullets) — mirrors

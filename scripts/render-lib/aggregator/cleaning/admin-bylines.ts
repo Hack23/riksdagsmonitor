@@ -407,8 +407,8 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
  * caught. Case-insensitive.
  */
 export const ADMIN_FIELD_RE = new RegExp(
-  `^\\*{0,2}(?:${ADMIN_FIELD_NAMES.join('|')})\\*{0,2}\\s*[：:]`,
-  'i',
+  `^\\*{0,2}[\\p{Emoji_Presentation}\\p{Extended_Pictographic}\\s]*(?:${ADMIN_FIELD_NAMES.join('|')})\\*{0,2}\\s*[：:]`,
+  'iu',
 );
 
 /**

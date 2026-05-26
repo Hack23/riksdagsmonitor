@@ -329,6 +329,16 @@ function assertTitleLength(label: string, lang: Language, title: string): void {
     isBannedLocalizedBriefH1(title),
     `[${label}/${lang}] banned boilerplate H1 shipped: "${title}"`,
   ).toBe(false);
+  // Reject generic category-label-only titles. When the title extraction
+  // falls through, `buildSeoTitle` synthesises `<label> — Riksdagsmonitor`
+  // which is useless for SEO: it carries no story-specific content. This
+  // assertion catches that regression so every brief ships a real headline.
+  const normTitle = title.toLowerCase().replace(/\s*[—–-]\s*riksdagsmonitor\s*$/i, '').trim();
+  const normLabel = label.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
+  expect(
+    normTitle === normLabel,
+    `[${label}/${lang}] generic category-label title shipped (no story content): "${title}"`,
+  ).toBe(false);
 }
 
 function assertDescriptionLength(label: string, lang: Language, description: string): void {
@@ -338,6 +348,13 @@ function assertDescriptionLength(label: string, lang: Language, description: str
     `[${label}/${lang}] description too long: ${description.length} > ${hardMax} :: "${description.slice(0, 240)}…"`,
   ).toBeLessThanOrEqual(hardMax);
   expect(description.trim().length, `[${label}/${lang}] empty description`).toBeGreaterThan(0);
+  // Reject descriptions that leak admin template metadata (classification
+  // banners, analyst bylines, date stamps). These are editorial plumbing
+  // that should never reach the SERP snippet.
+  expect(
+    /(?:Classification\s*:\s*Public|Analyst\s*:\s*James|📋\s*Classification)/i.test(description),
+    `[${label}/${lang}] admin metadata leaked into description: "${description.slice(0, 120)}…"`,
+  ).toBe(false);
 }
 
 function assertKeywordsContract(

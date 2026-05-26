@@ -26,10 +26,22 @@ import type { Language } from '../../../types/language.js';
 /**
  * Read the first top-level H1 from a markdown body. Returns the trimmed
  * heading text without the leading `# ` token, or `null` if none found.
+ *
+ * Supports both markdown `# heading` and HTML `<h1>content</h1>` forms
+ * (some executive briefs use `<h1 align="center">` for formatting).
  */
 export function readFirstHeading(markdown: string): string | null {
-  const match = markdown.match(/^\s*#\s+(.+?)\s*$/m);
-  return match ? match[1].trim() : null;
+  // Try markdown H1 first.
+  const mdMatch = markdown.match(/^\s*#\s+(.+?)\s*$/m);
+  if (mdMatch) return mdMatch[1].trim();
+  // Fallback: HTML <h1> tag (single-line or multiline with attributes).
+  const htmlMatch = markdown.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+  if (htmlMatch) {
+    // Strip nested HTML tags (e.g. <img>, <a>, <em>) and leading emoji.
+    const text = htmlMatch[1].replace(/<[^>]+>/g, '').replace(/^\s*[\p{Emoji_Presentation}\p{Extended_Pictographic}]+\s*/u, '').trim();
+    return text.length > 0 ? text : null;
+  }
+  return null;
 }
 
 /**
