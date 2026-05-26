@@ -261,6 +261,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'Genererad',                // Generated
   'Genererad\\s*kl',          // Generated at
   'Genererad\\s*den',         // Generated on
+  'K(?:ö|o)rnings[-\\s]?ID',  // Run ID (sv) — used by news-translate
   // ── Danish (da) ────────────────────────────────────────────────────
   'Forfatter',                // Author
   'Kilde',                    // Source
@@ -270,6 +271,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'L(?:æ|ae)setid',           // Read time
   'Udarbejdet\\s*af',         // Prepared by
   'Gennemgået\\s*af',         // Reviewed by
+  'K(?:ø|o)rselsnummer',      // Run ID (da)
   // ── Norwegian (no) ─────────────────────────────────────────────────
   'Forfatter',                // Author (shared with DA)
   'Kilde',                    // Source (shared with DA)
@@ -278,15 +280,18 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'Lesetid',                  // Read time
   'Utarbeidet\\s*av',         // Prepared by
   'Gjennomgått\\s*av',        // Reviewed by
+  'Kj(?:ø|o)re[-\\s]?ID',     // Run ID (no)
   // ── Finnish (fi) ───────────────────────────────────────────────────
   'Tekij(?:ä|a)',             // Author
   'L(?:ä|a)hde',              // Source
   'Luokitus',                 // Classification
   'Luottamus',                // Confidence
   'P(?:ä|a)iv(?:ä|a)ys',      // Date
+  'P(?:ä|a)iv(?:ä|a)m(?:ä|a)(?:ä|a)r(?:ä|a)',  // Date (Päivämäärä)
   'Lukuaika',                 // Read time
   'Valmistellut',             // Prepared by
   'Tarkastanut',              // Reviewed by
+  'Ajo[-\\s]?ID',             // Run ID (fi)
   // ── German (de) ────────────────────────────────────────────────────
   'Verfasser',                // Author
   'Autor',                    // Author
@@ -295,12 +300,14 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'Klassifikation',           // Classification (alt.)
   'Vertraulichkeit',          // Confidence/Classification
   'Vertrauen',                // Confidence
+  'Konfidenz',                // Confidence (de)
   'Datum',                    // Date (shared with SV)
   'Lesezeit',                 // Read time
   'Erstellt\\s*von',          // Prepared by
   'Erstellt\\s*am',           // Generated at
   'Gepr(?:ü|u)ft\\s*von',     // Reviewed by
   'Ver(?:ö|o)ffentlicht',     // Published
+  'Lauf[-\\s]?ID',            // Run ID (de)
   // ── French (fr) ────────────────────────────────────────────────────
   'Auteur',                   // Author
   'Source',                   // Source (shared with EN)
@@ -311,6 +318,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'Pr(?:é|e)par(?:é|e)\\s*par',   // Prepared by
   'R(?:é|e)vis(?:é|e)\\s*par',    // Reviewed by
   'Publi(?:é|e)',             // Published
+  "ID\\s*d['’]ex(?:é|e)cution", // Run ID (fr) — `ID d'exécution`
   // ── Spanish (es) ───────────────────────────────────────────────────
   'Autor',                    // Author (shared with DE)
   'Fuente',                   // Source
@@ -321,16 +329,19 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'Preparado\\s*por',         // Prepared by
   'Revisado\\s*por',          // Reviewed by
   'Publicado',                // Published
+  'ID\\s*de\\s*ejecuci(?:ó|o)n', // Run ID (es)
   // ── Dutch (nl) ─────────────────────────────────────────────────────
   'Auteur',                   // Author
   'Bron',                     // Source
   'Classificatie',            // Classification
   'Vertrouwen',               // Confidence
+  'Betrouwbaarheid',          // Confidence (nl)
   'Datum',                    // Date (shared)
   'Leestijd',                 // Read time
   'Opgesteld\\s*door',        // Prepared by
   'Beoordeeld\\s*door',       // Reviewed by
   'Gepubliceerd',             // Published
+  'Run[-\\s]?ID',             // Run ID (nl/en)
   // ── Arabic (ar) ────────────────────────────────────────────────────
   'المؤلف',                   // Author
   'المصدر',                   // Source
@@ -340,6 +351,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'وقت\\s*القراءة',           // Read time
   'أعد\\s*بواسطة',            // Prepared by
   'راجعه',                    // Reviewed by
+  'معرف\\s*التشغيل',          // Run ID (ar)
   // ── Hebrew (he) ────────────────────────────────────────────────────
   'מחבר',                     // Author
   'מקור',                     // Source
@@ -349,6 +361,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'זמן\\s*קריאה',             // Read time
   'הוכן\\s*על\\s*ידי',        // Prepared by
   'נסקר\\s*על\\s*ידי',        // Reviewed by
+  'מזהה\\s*הרצה',             // Run ID (he)
   // ── Japanese (ja) ──────────────────────────────────────────────────
   '著者',                      // Author
   '出典',                      // Source
@@ -360,6 +373,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   '作成者',                    // Prepared by
   '査読者',                    // Reviewed by
   '公開日',                    // Published
+  '実行ID',                    // Run ID (ja)
   // ── Korean (ko) ────────────────────────────────────────────────────
   '저자',                      // Author
   '출처',                      // Source
@@ -370,6 +384,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   '작성자',                    // Prepared by
   '검토자',                    // Reviewed by
   '게시일',                    // Published
+  '실행\\s*ID',                // Run ID (ko)
   // ── Chinese (zh) ───────────────────────────────────────────────────
   '作者',                      // Author
   '来源',                      // Source
@@ -381,6 +396,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   '编制者',                    // Prepared by
   '审核者',                    // Reviewed by
   '发布',                      // Published
+  '运行ID',                    // Run ID (zh)
 ];
 
 /**
@@ -391,7 +407,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
  * caught. Case-insensitive.
  */
 export const ADMIN_FIELD_RE = new RegExp(
-  `^\\*{0,2}(?:${ADMIN_FIELD_NAMES.join('|')})\\*{0,2}\\s*:`,
+  `^\\*{0,2}(?:${ADMIN_FIELD_NAMES.join('|')})\\*{0,2}\\s*[：:]`,
   'i',
 );
 

@@ -63,7 +63,7 @@
  */
 
 import type { Language } from '../../../types/language.js';
-import { stripLeadingAdminBylines } from '../cleaning/admin-bylines.js';
+import { ADMIN_FIELD_RE, stripLeadingAdminBylines } from '../cleaning/admin-bylines.js';
 
 /**
  * Universal Swedish-administrative codes mined from the brief.
@@ -243,6 +243,53 @@ function cleanHeadingText(raw: string): string {
     .replace(/^[\s]*[\p{Emoji_Presentation}\p{Extended_Pictographic}]+\s*/u, '')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+/**
+ * Return true when a line is a markdown table row whose first
+ * non-empty cell is an admin field label (`| **Author** | … |`,
+ * `| **Run ID** | 42 |`, `| **Classification** | Public |`). These
+ * rows survive `stripLeadingAdminBylines` (which operates on
+ * paragraph-form admin lines only) yet contain author names and
+ * other admin VALUES that the named-entity miner would otherwise
+ * surface as lead SERP keywords for every brief in the corpus.
+ *
+ * Detection is conservative — only triggers when:
+ *  1. The line begins with `|` (table row).
+ *  2. The first non-empty cell, after stripping `**` markers and
+ *     whitespace, matches {@link ADMIN_FIELD_RE} (a label-only cell
+ *     like `**Author**` or `Author:`).
+ */
+function isAdminTableRow(line: string): boolean {
+  if (!line.trimStart().startsWith('|')) return false;
+  const cells = line.split('|').map((c) => c.trim()).filter(Boolean);
+  if (cells.length === 0) return false;
+  // First cell after the leading `|`. Strip bold markers and any
+  // trailing colon — the cell `**Author**` and `Author:` both label
+  // the row.
+  const firstLabel = cells[0]
+    .replace(/^\*+|\*+$/g, '')
+    .replace(/:\s*$/, '')
+    .trim();
+  if (!firstLabel) return false;
+  // ADMIN_FIELD_RE expects a leading `**` or bare label followed by `:`;
+  // reconstruct that shape so the same regex can match.
+  return ADMIN_FIELD_RE.test(`**${firstLabel}**:`) || ADMIN_FIELD_RE.test(`${firstLabel}:`);
+}
+
+/**
+ * Return true when a line is an inline admin-byline assignment
+ * (`**Author**: James Pether Sörling`, `**Run ID**: 42`) that
+ * `stripLeadingAdminBylines` failed to remove because the
+ * surrounding paragraph mixes admin and non-admin lines. Such
+ * mixed paragraphs are common in template-embedded briefs where
+ * `**Brief ID** \n **Author** \n **Methodology** \n …` is followed
+ * by free-form prose without a blank-line separator.
+ */
+function isAdminBoldLabelLine(line: string): boolean {
+  const trimmed = line.trim();
+  if (!trimmed.startsWith('**')) return false;
+  return ADMIN_FIELD_RE.test(trimmed);
 }
 
 /**
@@ -427,13 +474,22 @@ export function extractBriefEntities(
   // Named entities — Latin-script only. Strip heading lines first so
   // section-title Title-Case prose (`## Sharpened BLUF`, `### Second
   // Read`, `## Decisions This Brief Supports`) doesn't pollute the
-  // entity list with editorial structure words.
+  // entity list with editorial structure words. We also strip
+  // table-row admin lines (`| **Author** | James Pether Sörling … |`)
+  // which `stripLeadingAdminBylines` above can't strip because they
+  // live inside a markdown table — paragraph-level admin stripping
+  // only handles `**Field**: value` paragraphs, not table cells.
+  // Without this filter the named-entity miner picks up the author
+  // name + Hack23 AB + Run-ID-derived Title-Case tokens and ships
+  // them as the lead SERP keywords for every single brief.
   const namedEntities: string[] = [];
   const LATIN_LANGS = new Set<Language>(['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl']);
   if (LATIN_LANGS.has(lang)) {
     const proseOnly = body
       .split(/\r?\n/)
       .filter((ln) => !/^\s*#{1,6}\s/.test(ln))
+      .filter((ln) => !isAdminTableRow(ln))
+      .filter((ln) => !isAdminBoldLabelLine(ln))
       .join('\n');
     const namedSeen = new Set<string>();
     for (const m of proseOnly.matchAll(NAMED_ENTITY_RE)) {
