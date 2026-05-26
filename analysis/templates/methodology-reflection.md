@@ -329,6 +329,23 @@ flowchart LR
 
 ---
 
+## 🧪 Recurring Data-Quality Patterns — Pass-2 Scan
+
+> **[REQUIRED in Pass-2]** — Scan the run's `data-download-manifest.md` for the six recurring failure modes catalogued from prior reflections. For each pattern, record whether it was encountered and whether the prescribed remediation in `.github/prompts/03-data-download.md` was applied. A pattern that fired without the documented remediation is a Pass-2 improvement target and rolls forward to `§Improvement Opportunities → PIR Roll-Forward`.
+
+| # | Pattern | Symptom in manifest | Documented remediation | Encountered? | Remediation applied? |
+|:-:|---------|---------------------|------------------------|:------------:|:--------------------:|
+| 1 | `search_voteringar` 0-result with `bet`-prefix | "API returned 0 results — likely indexing lag" while other queries return votes | Use `avser` + `rm`, full `<rm>:<bet>`, or unfiltered + post-filter (`03-data-download.md §Prior-voteringar enrichment`) | ☐ yes ☐ no | ☐ yes ☐ no ☐ N/A |
+| 2 | Pre-publication committee documents | `Dokumentet är inte publicerat` body, `status: planerat`, future scheduled date | Tag `coverage_state: pre_publication`, add to Deferred Retrieval Queue with `retryAfter`, downgrade derived-claim confidence | ☐ yes ☐ no | ☐ yes ☐ no ☐ N/A |
+| 3 | Proposition HTML-wrapper extraction failure | `full_text_available: true` but extracted plaintext < 400 chars / dominated by CSS | Tag `coverage_state: pdf_html_wrapper`, set `full_text_available: partial`, downgrade content-extraction confidence to 🟧 MEDIUM with explicit `pdf_html_wrapper` reason | ☐ yes ☐ no | ☐ yes ☐ no ☐ N/A |
+| 4 | Statskontoret root-domain miss | `Statskontoret: no directly relevant source found` after a single `web_fetch https://www.statskontoret.se/` | Fetch `/publikationer/`, agency-scoped landing pages, or `?s={keyword}`; cite the specific page URL, not the root domain | ☐ yes ☐ no | ☐ yes ☐ no ☐ N/A |
+| 5 | Lagrådet "referral pending" without index scan | `Lagrådet: referral pending` recorded after only a root-domain fetch | Scan `/yttranden/` (year-filtered), then `site:lagradet.se` external fallback; cite the index URL in the manifest line | ☐ yes ☐ no | ☐ yes ☐ no ☐ N/A |
+| 6 | Manifest schema drift | Required sections (Coverage State, Full-Text Fetch Outcomes, Deferred Retrieval Queue, Prior-Voteringar, Statskontoret, Lagrådet, PIR Carry-Forward, Withdrawn) missing or renamed vs `analysis/templates/data-download-manifest.md` | Restore the canonical headings exactly; do not invent variant names | ☐ yes ☐ no | ☐ yes ☐ no ☐ N/A |
+
+> If any pattern is marked "Encountered: yes / Remediation applied: no", open a corresponding row in `§🧱 What to Improve` with the concrete fix and add a PIR row in `§🧭 Improvement Opportunities → PIR Roll-Forward`.
+
+---
+
 ## 🎓 What Worked
 
 - Pass-2 rewrite substantially sharpened `synthesis-summary.md` §Finding 1 by adding SEK-denominated figures and SIFO polling gap.
