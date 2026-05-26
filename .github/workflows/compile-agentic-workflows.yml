@@ -70,6 +70,15 @@ jobs:
       # `tests/safeoutputs-fetch-depth.test.ts` regression suite asserts every
       # compiled news-*.lock.yml has fetch-depth: 0 on its safe_outputs Checkouts.
 
+      - name: Enforce PAT fallback coverage (workflow_run triggers ↮ news-*.md)
+        # Drift detector: every news-*.md `name:` must appear in the
+        # `workflow_run.workflows:` list AND in the slug_for_name() case map
+        # of .github/workflows/news-pat-pr-fallback.yml. Without this check,
+        # a typo (e.g. "News: Translate Articles" vs the actual "News:
+        # Translate Executive Briefs") silently disables the host-side PAT
+        # recovery path for that workflow.
+        run: node scripts/check-pat-fallback-coverage.mjs
+
       - name: Enforce prompt-module architecture
         run: |
           set -e

@@ -11,7 +11,7 @@
 # recovered commit to origin under a host PAT — opening (or refreshing) the
 # PR that the in-sandbox safeoutputs call could not deliver.
 #
-# Single source of truth for all 11 news workflows. No per-workflow lock.yml
+# Single source of truth for all 14 news workflows. No per-workflow lock.yml
 # edits required; gh aw compile is unaffected.
 #
 # See `.github/aw/SANDBOX_COMMIT_HANDOFF.md` for the full contract.
@@ -22,16 +22,19 @@ on:
   workflow_run:
     workflows:
       - "News: Committee Reports"
+      - "News: Election Cycle"
       - "News Evening Analysis"
       - "News: Interpellation Debates"
       - "News: Month Ahead"
       - "News: Monthly Review"
       - "News: Opposition Motions"
       - "News: Government Propositions"
+      - "News: Quarter Ahead"
       - "News Realtime Monitor"
-      - "News: Translate Articles"
+      - "News: Translate Executive Briefs"
       - "News: Week Ahead"
       - "News: Weekly Review"
+      - "News: Year Ahead"
     types: [completed]
   workflow_dispatch:
     inputs:
@@ -75,24 +78,29 @@ jobs:
           WR_URL: ${{ github.event.workflow_run.html_url }}
         run: |
           set -euo pipefail
-          # Explicit name → slug mapping for the 11 news workflows.
+          # Explicit name → slug mapping for the 14 news workflows.
           # Keep this in sync with the article-type slugs used by Stage E in
           # each .github/workflows/news-*.md (the SUBFOLDER variable). When
           # the agent uploads a manifest the slug from the manifest wins; this
           # mapping is the fallback when only a bundle (or nothing) is present.
+          # Coverage is enforced by scripts/check-pat-fallback-coverage.mjs in
+          # compile-agentic-workflows.yml.
           slug_for_name() {
             case "$1" in
-              "News: Committee Reports")        echo "committee-reports" ;;
-              "News Evening Analysis")          echo "evening-analysis" ;;
-              "News: Interpellation Debates")   echo "interpellations" ;;
-              "News: Month Ahead")              echo "month-ahead" ;;
-              "News: Monthly Review")           echo "monthly-review" ;;
-              "News: Opposition Motions")       echo "motions" ;;
-              "News: Government Propositions")  echo "propositions" ;;
-              "News Realtime Monitor")          echo "realtime-pulse" ;;
-              "News: Translate Articles")       echo "translate" ;;
-              "News: Week Ahead")               echo "week-ahead" ;;
-              "News: Weekly Review")            echo "week-in-review" ;;
+              "News: Committee Reports")            echo "committee-reports" ;;
+              "News: Election Cycle")               echo "election-cycle" ;;
+              "News Evening Analysis")              echo "evening-analysis" ;;
+              "News: Interpellation Debates")       echo "interpellations" ;;
+              "News: Month Ahead")                  echo "month-ahead" ;;
+              "News: Monthly Review")               echo "monthly-review" ;;
+              "News: Opposition Motions")           echo "motions" ;;
+              "News: Government Propositions")      echo "propositions" ;;
+              "News: Quarter Ahead")                echo "quarter-ahead" ;;
+              "News Realtime Monitor")              echo "realtime-pulse" ;;
+              "News: Translate Executive Briefs")   echo "translate" ;;
+              "News: Week Ahead")                   echo "week-ahead" ;;
+              "News: Weekly Review")                echo "week-in-review" ;;
+              "News: Year Ahead")                   echo "year-ahead" ;;
               *) echo "" ;;
             esac
           }

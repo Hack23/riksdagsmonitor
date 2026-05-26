@@ -475,6 +475,27 @@ EOF_BODY
     exit 0
   fi
 
+  # Pre-flight: if safeoutputs already opened the PR and the remote branch
+  # already points at the recovered SHA, the primary path succeeded — exit
+  # without pushing or editing so we never clobber the safeoutputs-authored
+  # title/body on a successful run. This is the fix for the "PAT fallback
+  # fires even when main hasn't changed" symptom (investigation Finding 3).
+  preflight_pr=$(gh pr list --repo "$repo" --head "$branch" --state open --json number,url,headRefOid --jq '.[0]' 2>/dev/null || true)
+  if [ -n "$preflight_pr" ] && [ "$preflight_pr" != "null" ]; then
+    preflight_number=$(printf '%s' "$preflight_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(String(o.number));})')
+    preflight_url=$(printf '%s' "$preflight_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(o.url);})')
+    preflight_oid=$(printf '%s' "$preflight_pr" | node -e 'let s="";process.stdin.on("data",c=>s+=c).on("end",()=>{const o=JSON.parse(s);process.stdout.write(o.headRefOid||"");})')
+    if [ -n "$preflight_oid" ] && [ "$preflight_oid" = "$recovered_sha" ]; then
+      log "preflight: safeoutputs already opened PR #$preflight_number at recovered SHA $recovered_sha — fallback is a no-op"
+      echo "::notice title=PAT fallback no-op::safeoutputs primary path succeeded for branch $branch (PR #$preflight_number at $recovered_sha). Fallback skipped to avoid clobbering safeoutputs-authored PR metadata."
+      step_summary "🟢 Host-side PAT PR fallback skipped — safeoutputs primary path succeeded ([PR #$preflight_number]($preflight_url) at \`$recovered_sha\`)."
+      audit "primary_noop_safeoutputs_succeeded" "preflight matched recovered SHA" \
+        "$(printf '{"branch":"%s","pr":%s,"url":"%s","head_sha":"%s"}' "$branch" "$preflight_number" "$preflight_url" "$recovered_sha")"
+      exit 0
+    fi
+    log "preflight: open PR #$preflight_number exists for $branch but head ($preflight_oid) differs from recovered ($recovered_sha) — proceeding with bundle replay"
+  fi
+
   push_url="https://x-access-token:${token}@${server_host}/${repo}.git"
   if ! git push --force-with-lease "$push_url" "$recovered_ref:refs/heads/$branch" 2>&1; then
     step_summary "❌ Host-side PAT PR fallback failed — \`git push\` rejected (force-with-lease conflict or auth)."
