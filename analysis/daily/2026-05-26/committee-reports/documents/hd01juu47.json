@@ -1,0 +1,25 @@
+{
+  "dok_id": "HD01JuU47",
+  "titel": "Nya möjligheter att bekämpa onlinerekrytering",
+  "datum": "2026-05-25",
+  "rm": "2025/26",
+  "organ": "JuU",
+  "summary": "5290518\r\n HD01JuU47\r\n 2025/26\r\n JuU47\r\n bet\r\n bet\r\n bet\r\n Betänkande 2025/26:JuU47\r\n Betänkande\r\n Debatt om förslag\r\n \r\n JuU\r\n \r\n 47\r\n 0\r\n 2026-05-25 00:00:00\r\n 2026-05-25 09:43:56\r\n 2026-05-25 09:43:55\r\n Nya möjligheter att bekämpa onlinerekrytering\r\n \r\n planerat\r\n \r\n \r\n Brus\r\n 8323bdf5-a438-4e6a-936c-5dbd3e72f1a1\r\n https://data.riksdagen.se/dokument/HD01JuU47/text\r\n https://data.riksdagen.se/...",
+  "url": "https://data.riksdagen.se/dokument/HD01JuU47.html",
+  "mcpCoverageState": "full_text",
+  "mcpProvenance": {
+    "provider": "riksdag-regering",
+    "endpoint": "http://host.docker.internal:8080/mcp/riksdag-regering",
+    "tool": "get_dokument_innehall",
+    "query": {
+      "dok_id": "HD01JuU47",
+      "include_full_text": true
+    },
+    "resultCount": 1,
+    "coverageState": "full_text",
+    "retrieval": "live",
+    "retrievedAt": "2026-05-26T05:02:18.183Z"
+  },
+  "fullContent": "5290518\r\n HD01JuU47\r\n 2025/26\r\n JuU47\r\n bet\r\n bet\r\n bet\r\n Betänkande 2025/26:JuU47\r\n Betänkande\r\n Debatt om förslag\r\n \r\n JuU\r\n \r\n 47\r\n 0\r\n 2026-05-25 00:00:00\r\n 2026-05-25 09:43:56\r\n 2026-05-25 09:43:55\r\n Nya möjligheter att bekämpa onlinerekrytering\r\n \r\n planerat\r\n \r\n \r\n Brus\r\n 8323bdf5-a438-4e6a-936c-5dbd3e72f1a1\r\n https://data.riksdagen.se/dokument/HD01JuU47/text\r\n https://data.riksdagen.se/dokument/HD01JuU47\r\n https://data.riksdagen.se/dokumentstatus/HD01JuU47\r\n https://data.riksdagen.se/utskottsforslag/HD01JuU47\r\n <h2>Nya möjligheter att bekämpa onlinerekrytering</h2>\r\nDokumentet är inte publicerat\r\n\r\n\r\n\r\nUBE\r\nBeredning\r\n2026-06-11 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nB\r\nBordläggning\r\n2026-06-16 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nJUS\r\nJustering\r\n2026-06-16 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nTRY\r\nTrycklov\r\n2026-06-16 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBEH\r\nBehandling\r\n2026-06-17 00:00:00\r\nplanerat\r\n0\r\n\r\n\r\n\r\nBES\r\nBeslut\r\n2026-06-17 00:00:00\r\nplanerat\r\n0",
+  "contentFetched": true
+}

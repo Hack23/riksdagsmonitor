@@ -1,0 +1,105 @@
+{
+  "generated": "2026-05-26T05:01:20Z",
+  "article_date": "2026-05-26",
+  "subfolder": "committee-reports",
+  "pir_version": "pass1",
+  "priority_intelligence_requirements": [
+    {
+      "id": "PIR-1",
+      "title": "Civil Intelligence Agency — Institutional Design Decision",
+      "document": "HD01UU24",
+      "question": "What institutional home will the government choose for the new civil intelligence capability, and what oversight mechanism will be established?",
+      "status": "OPEN",
+      "priority": "CRITICAL",
+      "horizon": "T+3m (August 2026 vote + subsequent government decision)",
+      "watch_items": [
+        "Lagrådet website for yttrande on UU24",
+        "UU committee Beredning minutes July 2-7",
+        "Government press releases on institutional design",
+        "Statskontoret tasking announcements"
+      ],
+      "key_judgement_basis": "KJ-4 in intelligence-assessment.md",
+      "confidence": "LOW — document not yet published; institutional design unknown"
+    },
+    {
+      "id": "PIR-2",
+      "title": "JuU48 Evidence Base — Academic/Brå Counterchallenge",
+      "document": "HD01JuU48",
+      "question": "Will criminologists, Brå, or Advokatsamfundet publicly challenge the deterrence evidence base for JuU48 before the August 13 vote?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "horizon": "T+2m (by June 26, 2026)",
+      "watch_items": [
+        "Brå website for statements or reports on criminal sanctions reform",
+        "Criminology faculty press releases (Stockholm, Lund)",
+        "Advokatsamfundet committee reports or press statements",
+        "HD024114 motion debate in chamber"
+      ],
+      "key_judgement_basis": "KJ-2 in intelligence-assessment.md",
+      "confidence": "MEDIUM — JuU48 not published; counter-arguments from HD024114 known"
+    },
+    {
+      "id": "PIR-3",
+      "title": "JuU47 Platform Cooperation — Digital Actor Compliance",
+      "document": "HD01JuU47",
+      "question": "Will major digital platforms (Meta, TikTok, Telegram, Discord) signal compliance or resistance to the new online recruitment crime notification requirements?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "horizon": "T+3m (post-vote implementation signals)",
+      "watch_items": [
+        "EU DSA enforcement updates relevant to Sweden",
+        "Platform transparency reports (Meta, TikTok)",
+        "Swedish DPA (IMY) statements on scope",
+        "Europol Nordic cooperation updates"
+      ],
+      "key_judgement_basis": "KJ-1 in intelligence-assessment.md",
+      "confidence": "MEDIUM — document not published; EU DSA framework exists"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Document Publication Timeline — Pre-Vote Risk",
+      "document": "ALL",
+      "question": "Will all three unpublished committee reports (JuU47, JuU48, UU24) appear on riksdagen.se before July 1, 2026, enabling full public and parliamentary scrutiny ahead of the August 13 vote?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "horizon": "T+5w (by July 1, 2026)",
+      "watch_items": [
+        "riksdagen.se document registry for HD01JuU47",
+        "riksdagen.se document registry for HD01JuU48",
+        "riksdagen.se document registry for HD01UU24",
+        "UU/JuU committee calendar updates"
+      ],
+      "key_judgement_basis": "Gap analysis in intelligence-assessment.md",
+      "confidence": "HIGH — calendar dates confirmed for August 13 vote"
+    }
+  ],
+  "intelligence_gaps": [
+    {
+      "gap": "JuU47 full text unavailable",
+      "impact": "Cannot assess detailed scope of online recruitment crime definition or operator obligations",
+      "resolution": "Monitor riksdagen.se; expected publication June-July 2026"
+    },
+    {
+      "gap": "JuU48 full text unavailable",
+      "impact": "Cannot assess exact sanction levels, transition provisions, or proportionality analysis",
+      "resolution": "Monitor riksdagen.se; expected publication June-July 2026"
+    },
+    {
+      "gap": "UU24 full text unavailable",
+      "impact": "Cannot assess institutional design choices, oversight mechanisms, or constitutional safeguards",
+      "resolution": "Monitor riksdagen.se and Lagrådet website; expected publication July 2026"
+    },
+    {
+      "gap": "Voteringar for 2025/26 riksmöte not yet indexed",
+      "impact": "Cannot assess prior voting patterns on analogous legislation in current term",
+      "resolution": "Query voteringar API after August 13 vote; cross-reference with 2024/25 patterns"
+    }
+  ],
+  "collection_requirements": [
+    "Monitor riksdagen.se daily for document publication of HD01JuU47, HD01JuU48, HD01UU24",
+    "Check lagradet.se weekly for UU24 yttrande",
+    "Monitor Brå website for JuU48 deterrence research",
+    "Track party group statement registrations (partigruppsmotioner) for reservation signals",
+    "Watch voteringskalender for August 13 confirmation"
+  ]
+}
