@@ -375,6 +375,65 @@ function trimTrailingConnectors(text: string): string {
  * - trailing connector punctuation / coordinating words are removed so
  *   the title doesn't end on a dangling fragment
  */
+/**
+ * Read the first paragraph from a `## Headline` (or equivalent) section in
+ * an executive brief. Many briefs include a dedicated headline section with
+ * a purpose-written summary sentence that outperforms the generic BLUF
+ * paragraph for SERP titles.
+ *
+ * Recognised section headings (case-insensitive):
+ *   - `## Headline` / `## Headlines`
+ *   - `## Intelligence Summary`
+ *   - `## BLUF` / `## 🎯 BLUF`
+ *
+ * Returns the first non-empty paragraph text (not bullets) from the matched
+ * section, or `null` if no such section exists or contains no paragraph.
+ */
+export function readHeadlineParagraph(briefMarkdown: string | undefined): string | null {
+  if (!briefMarkdown) return null;
+  const lines = briefMarkdown.split(/\r?\n/);
+  const HEADING_NAMES = [
+    'headline', 'headlines',
+    'intelligence summary',
+    'bluf', '🎯 bluf',
+  ];
+  let inSection = false;
+  let paragraphLines: string[] = [];
+
+  for (const line of lines) {
+    const isH2 = /^##\s/.test(line);
+    const isH1OrHigher = /^#\s/.test(line);
+
+    if (isH2) {
+      if (inSection) break; // next H2 ends the section
+      const headingText = line.replace(/^##\s+/, '').replace(/[*_`#]/g, '').trim().toLowerCase();
+      if (HEADING_NAMES.some((n) => headingText === n || headingText.startsWith(n + ' '))) {
+        inSection = true;
+      }
+      continue;
+    }
+    if (inSection && isH1OrHigher) break;
+    if (!inSection) continue;
+
+    // Skip thematic breaks, blank lines, bullets, metadata lines
+    if (/^[-*_]{3,}\s*$/.test(line)) continue;
+    if (/^[\s>]*[-*•·]\s+/u.test(line)) continue;
+    if (/^\*\*[^*]+\*\*:?\s/.test(line) && line.length < 80) continue; // metadata like **Date:** ...
+    if (/^</.test(line.trim())) continue; // HTML tags
+
+    const trimmed = line.trim();
+    if (trimmed.length === 0) {
+      // Blank line: if we already collected paragraph text, we're done.
+      if (paragraphLines.length > 0) break;
+      continue;
+    }
+    paragraphLines.push(trimmed);
+  }
+
+  if (paragraphLines.length === 0) return null;
+  return paragraphLines.join(' ').trim() || null;
+}
+
 export function titleFromBluf(bluf: string | null, maxLen: number = 70): string | null {
   if (!bluf) return null;
   const cleanRaw = markdownInlineToText(bluf);
@@ -383,7 +442,16 @@ export function titleFromBluf(bluf: string | null, maxLen: number = 70): string 
   const stripped = stripLeadingDatePrefix(labelStripped).trim();
   const meaningful = stripped.replace(/^[\s.!?…。।,;:—–-]+/u, '').trim();
   if (meaningful.length < 5) return null;
-  const clean = capitaliseFirst(meaningful);
+  // Strip embedded date-appositive clauses that bloat the title without
+  // adding editorial value. Pattern: "... of DD Month YYYY — <appositive> —"
+  // e.g. "Sweden's Riksdag session of 26 May 2026 — approximately 100 days
+  // before the election — delivered ..." → "Sweden's Riksdag session delivered ..."
+  const dateAppositive = meaningful.replace(
+    /\s+of\s+\d{1,2}\s+[A-Z][a-z]+\s+\d{4}\s*[—–-]\s*[^—–-]+[—–-]\s*/,
+    ' ',
+  );
+  const effective = dateAppositive.length >= 20 ? dateAppositive : meaningful;
+  const clean = capitaliseFirst(effective);
   SENTENCE_END_RE.lastIndex = 0;
   const m = SENTENCE_END_RE.exec(clean);
   const firstSentence = m ? clean.slice(0, m.index + m[0].length) : clean;

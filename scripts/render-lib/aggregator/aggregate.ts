@@ -46,7 +46,7 @@ import {
   truncateToSentenceBoundary,
 } from './seo/description.js';
 import { extractBriefEntities, flattenBriefEntities } from './seo/brief-extractor.js';
-import { cleanArticleTitle, readFirstHeading, titleFromBluf } from './seo/title.js';
+import { cleanArticleTitle, readFirstHeading, readHeadlineParagraph, titleFromBluf } from './seo/title.js';
 import { buildArtifactCoverageReport, buildSourcesAppendix } from './sources-appendix.js';
 
 // Maximum number of supporting-data JSON artifacts surfaced in the
@@ -180,6 +180,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
 
   const title =
     cleanArticleTitle(readFirstHeading(briefRaw), subfolder, 'en') ||
+    titleFromBluf(readHeadlineParagraph(briefRaw)) ||
     titleFromBluf(rawBlufParagraph ?? rawFirstParagraph) ||
     `${prettifyFallbackTitle(subfolder)} — ${date}`;
   // Mine bill IDs / proposition refs / committee codes / party codes /

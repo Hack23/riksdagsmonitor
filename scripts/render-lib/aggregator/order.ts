@@ -187,12 +187,32 @@ const SECTION_TITLES: Record<string, string> = {
 };
 
 /**
+ * Curated, descriptive category-level fallback titles for known article
+ * subfolders. These fire only when both the H1 and BLUF-derived title
+ * extraction fail — the absolute last resort before showing a generic
+ * slug-to-title-case label. Written in an engaging, journalist style to
+ * maintain SERP quality even in degraded scenarios.
+ */
+const CATEGORY_FALLBACK_TITLES: Readonly<Record<string, string>> = {
+  'realtime-monitor': 'Swedish Parliament Live — Today in the Riksdag',
+  'propositions': 'Government Bills — Swedish Legislative Agenda',
+  'committee-reports': 'Committee Verdicts — Riksdag Policy Decisions',
+  'interpellations': 'Ministers Under Fire — Parliamentary Questions',
+  'motions': 'Opposition Plays — Riksdag Policy Proposals',
+  'evening-analysis': 'Evening Briefing — Swedish Political Intelligence',
+  'weekly-review': 'The Week in Swedish Politics',
+  'debates': 'Floor Fights — Riksdag Chamber Debates',
+};
+
+/**
  * Convert a filename like `pestle-analysis.md` into a human title
  * `Pestle Analysis`. Used as the fallback for any artifact not in
  * {@link SECTION_TITLES}.
  */
 export function prettifyFallbackTitle(file: string): string {
   const base = path.basename(file).replace(/\.md$/i, '');
+  // Check curated category titles first (for subfolder slugs).
+  if (CATEGORY_FALLBACK_TITLES[base]) return CATEGORY_FALLBACK_TITLES[base]!;
   return base
     .split(/[-_]/)
     .filter(Boolean)

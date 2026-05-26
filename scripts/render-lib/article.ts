@@ -46,6 +46,7 @@ import {
   readFirstHeading,
   cleanArticleTitle,
   titleFromBluf,
+  readHeadlineParagraph,
 } from './aggregator/seo/title.js';
 import {
   composeRichDescription,
@@ -325,16 +326,25 @@ export function deriveBriefSeoOverrides(input: {
       const cleaned = cleanArticleTitle(rawH1, subfolder, 'en');
       if (cleaned && cleaned.length > 0) title = cleaned;
     }
-    // Step 2b — BLUF-synthesised title when H1 is boilerplate/missing.
-    // The brief body (## Headline, ## Intelligence Summary, or BLUF para)
-    // often contains story-specific first sentences that serve better as
-    // SERP titles than the generic category-label fallback.
+   // Step 2a — Headline-section paragraph. Many briefs have a dedicated
+   // `## Headline` or `## Intelligence Summary` section whose first
+   // paragraph is a purpose-written headline sentence — far better than
+   // the generic BLUF truncation for SERP titles.
     if (title === null) {
-      const bluf = readBlufParagraph(input.englishBriefMarkdown!)
-        ?? readFirstParagraph(input.englishBriefMarkdown!);
-      const synthesised = titleFromBluf(bluf);
-      if (synthesised && synthesised.length > 0) title = synthesised;
-    }
+     const headlinePara = readHeadlineParagraph(input.englishBriefMarkdown!);
+     const synthesised = titleFromBluf(headlinePara);
+     if (synthesised && synthesised.length > 0) title = synthesised;
+   }
+   // Step 2b — BLUF-synthesised title when H1 is boilerplate/missing.
+   // The brief body (## Headline, ## Intelligence Summary, or BLUF para)
+   // often contains story-specific first sentences that serve better as
+   // SERP titles than the generic category-label fallback.
+   if (title === null) {
+     const bluf = readBlufParagraph(input.englishBriefMarkdown!)
+       ?? readFirstParagraph(input.englishBriefMarkdown!);
+     const synthesised = titleFromBluf(bluf);
+     if (synthesised && synthesised.length > 0) title = synthesised;
+   }
     if (description === null) {
       // Rich description (BLUF + headline-section bullets) — mirrors
       // the aggregator's English path. **Use `'en'` here** because we
