@@ -6,9 +6,13 @@
  * per publishable article type, each sampling 10 random real briefs from
  * `analysis/daily/<DATE>/<SUBFOLDER>/` and exercising the full SEO cascade
  * (`deriveBriefSeoOverrides` → `buildArticleSeoMetadata`) across all 14
- * supported languages. Combined with the rendered-HTML audit in
- * `tests/generated-html-seo-audit.test.ts` this gives 14 distinct test
- * blocks covering every SEO-shipping surface of the site.
+ * supported languages. This is the **single source of truth** for the
+ * site's SEO contract: it exercises the extraction functions
+ * (`deriveBriefSeoOverrides`, `buildArticleKeywords`, `buildArticleSeoMetadata`)
+ * directly on real brief markdown — never on rendered HTML — so a
+ * renderer-template regression is caught upstream at the extractor
+ * layer, where the assertion error pinpoints the failing function
+ * rather than a downstream byte difference.
  *
  * **Why corpus instead of fixtures?** Fixture-based tests only catch the
  * patterns the test-writer thought to encode. The shipped `news/*.html`
