@@ -402,6 +402,18 @@ for (const cfg of ARTICLE_TYPE_TESTS) {
     /*  Row-level invariants                                             */
     /* ----------------------------------------------------------------- */
 
+    it('English rows mostly produce non-null SEO', () => {
+      const enRows = rows.filter((r) => r.lang === 'en');
+      const nonNullCount = enRows.filter((r) => r.seo).length;
+      // At least half of sampled English briefs must produce valid SEO;
+      // if the cascade regresses broadly, this catches it while tolerating
+      // legitimately empty/malformed briefs on disk.
+      expect(
+        nonNullCount,
+        `Only ${nonNullCount}/${enRows.length} English rows produced SEO`,
+      ).toBeGreaterThanOrEqual(Math.ceil(enRows.length / 2));
+    });
+
     it('every row produces a non-empty, ceiling-bounded title', () => {
       for (const { sample, lang, seo } of rows) {
         if (!seo) continue;

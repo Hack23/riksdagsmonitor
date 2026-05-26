@@ -476,7 +476,7 @@ export function stripLeadingAdminBylines(body: string): string {
         if (!ft) return true;
         if (ADMIN_FIELD_RE.test(ft)) return true;
         if (ft.startsWith('**')) return false;
-        if (ft.includes(':')) return false;
+        if (ft.includes(':') || ft.includes('：')) return false;
         return true;
       });
     });

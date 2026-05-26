@@ -30,9 +30,8 @@
  */
 
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'node:path';
 import type { Language } from '../../scripts/types/language';
 import { LANGUAGES } from '../../scripts/render-lib/constants';
 
