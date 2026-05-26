@@ -326,11 +326,15 @@ export function deriveBriefSeoOverrides(input: {
     }
     if (description === null) {
       // Rich description (BLUF + headline-section bullets) — mirrors
-      // the aggregator's English path. **Use the caller's lang for the
-      // budget** so a non-EN page that falls back to EN content is at
-      // least sized to its own SERP window (AR/HE 170, CJK 120) rather
-      // than the 200-char EN default.
-      const composed = composeRichDescription(input.englishBriefMarkdown!, input.lang);
+      // the aggregator's English path. **Use `'en'` here** because we
+      // are extracting from the English brief markdown:
+      // `composeRichDescription` does language-specific section-heading
+      // lookup (`extractHeadlineSection(..., lang)`), and passing a
+      // non-EN lang would miss the English `## 60-Second Read` section
+      // and degrade rich descriptions for non-EN pages that fall back
+      // to EN content. The per-language SERP window is then enforced
+      // by the `capByWordBoundary` hardMax cap below for `input.lang`.
+      const composed = composeRichDescription(input.englishBriefMarkdown!, 'en');
       if (composed && composed.length > 0) {
         description = composed;
       } else {
