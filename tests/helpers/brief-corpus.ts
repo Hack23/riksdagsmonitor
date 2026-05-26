@@ -185,7 +185,7 @@ export function loadBriefCorpus(): ReadonlyMap<string, readonly BriefSample[]> {
       if (!articleTypeId) continue;
       const briefDir = join(dateDir, subfolder);
       const briefPath = join(briefDir, 'executive-brief.md');
-      let isFile = false;
+      let isFile: boolean;
       try { isFile = statSync(briefPath).isFile(); } catch { isFile = false; }
       if (!isFile) continue;
       const localizedBriefPaths: Record<Language, string | null> =

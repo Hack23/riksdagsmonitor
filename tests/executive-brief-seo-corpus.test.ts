@@ -60,7 +60,7 @@
 
 import { describe, expect, it } from 'vitest';
 import { deriveBriefSeoOverrides } from '../scripts/render-lib/article';
-import { buildArticleKeywords, buildArticleSeoMetadata } from '../scripts/render-lib/article-seo';
+import { buildArticleKeywords } from '../scripts/render-lib/article-seo';
 import {
   titleWindowForLanguage,
   descriptionWindowForLanguage,

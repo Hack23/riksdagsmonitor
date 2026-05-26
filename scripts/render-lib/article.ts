@@ -384,8 +384,35 @@ export function deriveBriefSeoOverrides(input: {
   return {
     title: title ?? undefined,
     description: description ?? undefined,
-    entities,
+    entities: entities.filter((e) => !isAdminLeakEntity(e)),
   };
+}
+
+/**
+ * Detector for individual entity strings that encode admin-byline VALUES
+ * (editorial byline name, run-ID, classification banner, confidence
+ * grade, Admiralty grade, GDPR article). The entity miner picks up
+ * capitalized phrases like `Confidence HIGH` / `Classification PUBLIC`
+ * from the leading admin block when its label is not in
+ * `ADMIN_FIELD_NAMES`; filtering them at the boundary of
+ * `deriveBriefSeoOverrides` guarantees they never reach the keyword
+ * line or JSON-LD `keywords` array.
+ */
+const ADMIN_LEAK_ENTITY_PATTERNS: readonly RegExp[] = [
+  /James\s+Pether\s+S(?:ö|o)rling/i,
+  /\bHack23\s+AB\b/i,
+  /\b(?:Run[-\s]?ID|K[öo]rnings[-\s]?ID|Lauf[-\s]?ID|Ajo[-\s]?ID|实行ID|実行ID|운영\s*ID|实例ID)\b/i,
+  /(?:Confidence|Konfidens(?:nivå)?|Konfidenz|Luottamustaso|信頼度|信心度|Niveau de confiance|Nivel de confianza|Betrouwbaarheid)\s*[:：]?\s*(?:HIGH|HØJ|HØY|KORKEA|高い|高|HOCH|Élevé|Alto|Hoog|عالٍ?|גבוה)/i,
+  /\bClassification\b\s*[:：]?\s*PUBLIC/i,
+  /\bAdmiralty\s+(?:Range|Baseline|Code|Grade|Scale)\b/i,
+  /\bGDPR\s+Art\b/i,
+];
+
+function isAdminLeakEntity(entity: string): boolean {
+  for (const re of ADMIN_LEAK_ENTITY_PATTERNS) {
+    if (re.test(entity)) return true;
+  }
+  return false;
 }
 
 /**
