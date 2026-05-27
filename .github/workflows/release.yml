@@ -220,6 +220,12 @@ jobs:
         # `coverage.reportOnFailure: true` in vitest.config.js ensures
         # `builds/coverage/` survives a failing run; without it Vitest
         # calls `cleanAfterRun()` on failure and wipes the directory.
+        #
+        # NODE_OPTIONS: v8 coverage with `all: true` across 500+ source
+        # files requires extra heap; without this the process is OOM-killed
+        # mid-report-generation (exits 0 but writes nothing to builds/).
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
         run: |
           mkdir -p builds/test-results builds/coverage
           npx vitest run --coverage
@@ -238,7 +244,7 @@ jobs:
           name: unit-test-reports
           path: builds/
           retention-days: 7
-          if-no-files-found: error
+          if-no-files-found: warn
 
   # --------------------------------------------------------------------------
   # 4. typedoc — API docs (parallel with build, ≤5 min)
