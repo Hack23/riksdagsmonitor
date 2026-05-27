@@ -10,7 +10,7 @@ horizon: cycle
 
 # Sammendrag — Prognose for mandat etter 2026
 
-## BLUF (Kjernekonklusjon)
+## Kjernekonklusjon
 
 **Omtrent like sjanser** (45–55% [horizon:election]) for at Riksdagsvalget 2026-09-13 gir et **hengt parlamentsresultat som krever > 30 dagers koalisjonsforhandling**. Den avgjørende strukturelle variabelen er **L's overlevelse av fireprosentssperre** (for øyeblikket *omtrent like* 50–65%; *usannsynlig* 30–45% at L overskrider 5%); den sekundære variabelen er **C's koalisijonspreferanse** (sentrum vs S-ledet rødgrønn-sentrum).
 
@@ -58,4 +58,4 @@ Full fordeling i `wildcards-blackswans.md`.
 
 [A1] IMF WEO apr-2026 [horizon:cycle] T+0; [A2] Aggregerte Sifo/Novus/Demoskop apr–mai 2026.
 
-<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

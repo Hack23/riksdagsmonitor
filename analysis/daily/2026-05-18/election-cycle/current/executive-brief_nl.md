@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 # Tidö-mandaat, T-118: EU-energie-naleving sluit terwijl de veiligheidspivot standhoudt
@@ -32,7 +31,7 @@ confidence: high
 
 ---
 
-## BLUF (Conclusie)
+## Conclusie
 
 Het Tidö-mandaat 2022–2026 eindigt met een structureel getransformeerde Zweedse staat — veiligheidsarchitectuur herbouwd, financieel stabiliteitskader opnieuw gestart, digitale identiteitsstack gecodificeerd en migratiehandhaving afgestemd op de Scandinavische buren. Vandaag, **123 dagen voor de septemberverkiezingen**, sluit de Kristersson-regering haar **EU-nalevingsachterstanden** stil via commissiebehandeling (HD01CU30 EU EED-omzetting, NU21 plattelandskader) in plaats van nieuwe politieke signalen. *Zeer waarschijnlijk* (80–90 % [horizon:cycle]) dat de kernsecurityhervormingen (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) de verkiezingen van 2026 overleven, ongeacht welke coalitie wint — ze hebben de *padafhankelijkheidsdrempel* overschreden waarbij omkeringkosten de onderhoudskosten overstijgen. [A2]
 
@@ -87,7 +86,7 @@ Dit briefing beoordeelt de gehele mandaatperiode 2022–2026 als één politieke
 ## Kruisverwijzingen
 
 - [`synthesis-summary.md`](synthesis-summary.md) — volledige hoofdverhaalbeslissing en DIW Top-10
-- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 BLUF + WEP per bevinding
+- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 Conclusie + WEP per bevinding
 - [`scenario-analysis.md`](scenario-analysis.md) — 12-blads-scenario-boom + 5 wildcard-scenario's
 - [`cycle-trajectory.md`](cycle-trajectory.md) — meerjaarlijkse SCB + IMF + Riksdag-doorvoertrend (24e artefact)
 - [`risk-assessment.md`](risk-assessment.md) — toprisico's met mitigatieringsmaatregelen

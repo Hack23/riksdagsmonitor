@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 # Tidö-Mandat, T-118: EU-Energiekonformität wird geschlossen, Sicherheitspivot hält
@@ -32,7 +31,7 @@ confidence: high
 
 ---
 
-## BLUF (Fazit)
+## Fazit
 
 Das Tidö-Mandat 2022–2026 endet mit einem strukturell transformierten schwedischen Staat — Sicherheitsarchitektur neu aufgebaut, Finanzstabilitätsrahmen neu gestartet, digitaler Identitätsstapel kodifiziert und Migrationsregelung an die nordischen Nachbarn angepasst. Heute, **123 Tage vor der Septemberwahl**, schließt die Kristersson-Regierung ihre **EU-Konformitätsrückstände** still über Ausschussbehandlung (HD01CU30 EU EED-Umsetzung, NU21 Landrahmen) statt neuer politischer Signale. *Sehr wahrscheinlich* (80–90 % [horizon:cycle]), dass die Kernsicherheitsreformen (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) die Wahl 2026 überleben, unabhängig davon, welche Koalition gewinnt — sie haben die *Pfadabhängigkeitsschwelle* überschritten, bei der Umkehrkosten die Wartungskosten übersteigen. [A2]
 
@@ -87,7 +86,7 @@ Dieses Briefing bewertet die gesamte Amtszeit 2022–2026 als einen einzigen pol
 ## Querverweise
 
 - [`synthesis-summary.md`](synthesis-summary.md) — vollständige Hauptgeschichtentscheidung und DIW Top-10
-- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 BLUF + WEP pro Befund
+- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 Fazit + WEP pro Befund
 - [`scenario-analysis.md`](scenario-analysis.md) — 12-Blatt-Szenariobaum + 5 Wildcard-Szenarien
 - [`cycle-trajectory.md`](cycle-trajectory.md) — mehrjähriger SCB + IMF + Riksdag-Durchsatztrend (24. Artefakt)
 - [`risk-assessment.md`](risk-assessment.md) — Top-Risiken mit Minderungsmaßnahmen

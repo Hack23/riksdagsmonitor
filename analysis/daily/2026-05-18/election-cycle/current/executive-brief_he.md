@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 <!-- dir: rtl -->
@@ -34,7 +33,7 @@ confidence: high
 
 ---
 
-## BLUF (שורה תחתונה)
+## שורה תחתונה
 
 מנדט טידו 2022–2026 מסתיים עם מדינה שוודית שעברה שינוי מבני — ארכיטקטורת הביטחון נבנתה מחדש, מסגרת היציבות הפיננסית הופעלה מחדש, ערימת הזהות הדיגיטלית קודדה, ואכיפת ההגירה הותאמה לשכנים הסקנדינביים. היום, **123 ימים לפני בחירות ספטמבר**, ממשלת קריסטרסון סוגרת בשקט את **פיגורי הציות שלה לאיחוד האירופי** דרך טיפול בוועדה (עיבוד EU EED HD01CU30, מסגרת כפרית NU21) ולא דרך אותות פוליטיים חדשים. *סביר מאוד* (80–90% [horizon:cycle]) שהרפורמות הביטחוניות הליבתיות (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) ישרדו את בחירות 2026 ללא קשר לאיזה קואליציה תנצח — הן חצו את *סף תלות המסלול* שבו עלויות ההיפוך עולות על עלויות התחזוקה. [A2]
 
@@ -89,7 +88,7 @@ confidence: high
 ## הפניות צולבות
 
 - [`synthesis-summary.md`](synthesis-summary.md) — החלטת סיפור הראשי המלאה ו-DIW Top-10
-- [`intelligence-assessment.md`](intelligence-assessment.md) — BLUF של ICD 203 + WEP לכל ממצא
+- [`intelligence-assessment.md`](intelligence-assessment.md) — תמצית ICD 203 + WEP לכל ממצא
 - [`scenario-analysis.md`](scenario-analysis.md) — עץ תרחישים של 12 עלים + 5 תרחישי ג'וקר
 - [`cycle-trajectory.md`](cycle-trajectory.md) — מגמת תפוקה רב-שנתית SCB + IMF + Riksdag (יצירה 24)
 - [`risk-assessment.md`](risk-assessment.md) — סיכונים עיקריים עם אמצעי הפחתה

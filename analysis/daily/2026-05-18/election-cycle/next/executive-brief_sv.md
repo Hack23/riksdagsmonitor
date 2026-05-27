@@ -10,7 +10,7 @@ horizon: cycle
 
 # Verkställande sammanfattning — Prognos för mandat efter 2026
 
-## BLUF (Kärnresultat)
+## Kärnresultat
 
 **Jämn chans** (45–55% [horizon:election]) att riksdagsvalet 2026-09-13 ger ett **parlamentsläge som kräver > 30 dagars koalitionsbildning**. Den avgörande strukturella variabeln är **L:s överlevnad av fyraprocentsspärren** (för närvarande *ungefär lika* 50–65%; *osannolikt* 30–45% att L överstiger 5%); den sekundära variabeln är **C:s koalitionspreferens** (center kontra S-ledd rödgrön-center).
 
@@ -58,4 +58,4 @@ Full fördelning i `wildcards-blackswans.md`.
 
 [A1] IMF WEO apr-2026 [horizon:cycle] T+0; [A2] Aggregerade Sifo/Novus/Demoskop apr–maj 2026.
 
-<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 # Tidö-mandaatti, T-118: EU:n energiavaatimustenmukaisuus sulkeutuu turvallisuuspivotti pitää
@@ -32,7 +31,7 @@ confidence: high
 
 ---
 
-## BLUF (Pohjasumma)
+## Pohjasumma
 
 2022–2026 Tidö-mandaatti päättyy rakenteellisesti muuttuneeseen ruotsalaiseen valtioon — turvallisuusarkkitehtuuri rakennettu uudelleen, rahoitusvakausmalli käynnistetty uudelleen, digitaalinen henkilöllisyyspino kodifioitu ja maahanmuuttovalvonta mukautettu pohjoismaisiin naapureihin. Tänään, **123 päivää ennen syyskuun vaaleja**, Kristersson-hallitus sulkee **EU-vaatimustenmukaisuuden rästinsä** hiljaisesti valiokuntakäsittelyn kautta (HD01CU30 EU EED:n saattaminen osaksi kansallista lainsäädäntöä, NU21 maaseutupuitekehys) uuden poliittisen signaloinnin sijaan. *Hyvin todennäköistä* (80–90 % [horizon:cycle]), että ydinturvallisuusuudistukset (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) selviävät vuoden 2026 vaaleista riippumatta siitä, mikä koalitio voittaa — ne ovat ylittäneet *polkuriippuvuuskynnyksen*, jossa peruutuskustannukset ylittävät ylläpitokustannukset. [A2]
 
@@ -87,7 +86,7 @@ Tämä briefing arvioi koko mandaattikauden 2022–2026 yhtenä poliittisena syk
 ## Ristiviittaukset
 
 - [`synthesis-summary.md`](synthesis-summary.md) — täydellinen johtamistarina-päätös ja DIW Top-10
-- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 BLUF + WEP per löydös
+- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 Pohjasumma + WEP per löydös
 - [`scenario-analysis.md`](scenario-analysis.md) — 12-lehtinen skenaariopuu + 5 villikortti-skenaariota
 - [`cycle-trajectory.md`](cycle-trajectory.md) — monivuotinen SCB + IMF + Riksdagenin läpivirtaustrendi (24. artefakti)
 - [`risk-assessment.md`](risk-assessment.md) — tärkeimmät riskit lieventämistoimenpitein

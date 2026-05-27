@@ -10,7 +10,7 @@ horizon: cycle
 
 # Samenvatting — Mandaatprognose na 2026
 
-## BLUF (Kernconclusie)
+## Kernconclusie
 
 **Ongeveer gelijk** (45–55% [horizon:election]) dat de Riksdag-verkiezingen van 2026-09-13 een **hangen-parlement-achtig resultaat opleveren dat > 30 dagen coalitievorming vereist**. De beslissende structurele variabele is **L's overleving van de vier-procentsdrempel** (momenteel *ongeveer gelijk* 50–65%; *onwaarschijnlijk* 30–45% dat L 5% overschrijdt); de secundaire variabele is **C's coalitiepreferentie** (centrum vs S-geleide rood-groen-centrum).
 
@@ -58,4 +58,4 @@ Volledige verdeling in `wildcards-blackswans.md`.
 
 [A1] IMF WEO apr-2026 [horizon:cycle] T+0; [A2] Geaggregeerde Sifo/Novus/Demoskop apr–mei 2026.
 
-<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
