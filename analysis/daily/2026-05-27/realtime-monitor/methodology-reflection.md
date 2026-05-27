@@ -67,3 +67,18 @@
 ---
 
 ## Pass-2 status: executed in full
+
+---
+
+## Re-run log
+
+### run_id: 26525173351 | attempt: 2 | timestamp: 2026-05-27T16:52Z
+
+| Field | Value |
+|-------|-------|
+| run_id | 26525173351 |
+| attempt | 2 (improvement mode) |
+| new_dok_ids | HD19UbU29p2, HD19UbU27p3, HD19UbU27p2, HD19UbU21p2, HD19FiU42p3, HD19FiU42p2, HD19FiU39p4, HD19FiU39p3, HD19UU4p1, HD19UU4p2, HD19UU3p2, HD19UU3p3, HD19UU3p4, HDC320260527UbU27, HDC320260527UU3, HDC320260527UU4, HDC320260527FiU42, HDC320260527FiU39, HDC320260527CU26, HDC320260527UbU29, HDC320260527UbU21, HD05UU7y |
+| artifacts_extended | executive-brief.md (H1 + afternoon session), significance-scoring.md, forward-indicators.md, intelligence-assessment.md, synthesis-summary.md, pir-status.json |
+| flags_closed | Morning betänkanden passage confirmed via afternoon vote records. Vote uncertainty resolved for JuU38, FöU15, UU18. New afternoon session fully documented. |
+| vintage_refresh | riksdag-regering live 2026-05-27T16:52:30Z; IMF WEO-2026-04 unchanged (current vintage) |

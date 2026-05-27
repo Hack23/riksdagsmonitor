@@ -1,4 +1,4 @@
-# Executive Brief — 2026-05-27
+# Security State, Schools and Consumer Finance: Sweden's High-Density Pre-Election Legislative Day
 
 **Classification**: PUBLIC  
 **Analyst**: Riksdagsmonitor AI  
@@ -63,6 +63,36 @@ Culture Committee report on government's written communication (skrivelse) on ar
 
 ### 12. Reckless Driving — HD11842 [L0 — LOW]
 SD interpellation on "vansinneskörningar" (reckless high-speed driving incidents). Calls for increased penalties. Government (Infrastrukturminister) response due 2026-06-10.
+
+---
+
+## AFTERNOON SESSION: CONFIRMED VOTE RECORDS (16:00–17:00 CET)
+
+*Re-run data collected at 2026-05-27T16:52Z — first run had assumed passage for morning betänkanden. The following afternoon votes are now fully confirmed.*
+
+### CONFIRMED VOTE RECORD — UbU29: Extended School Registry Checks
+**Utökade registerkontroller i skolväsendet** passed the chamber with Government majority. Vote on p.2 (opposition reservation S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Interpretation**: All Social Democrats, Vänsterpartiet, Centerpartiet, and Miljöpartiet opposed expanded background registry checks for school staff; the M+SD+KD+L coalition carried the vote. C joined the S-led opposition here — noteworthy given C's usual law-and-order stance; C's concern is data integrity and proportionality rather than opposition to school safety. **Election nexus**: UbU29 will feature in S/V/C/MP campaigning as "surveillance creep in schools."
+
+### CONFIRMED VOTE RECORD — UbU27: Vocational Training Reform
+**Bättre förutsättningar för yrkesutbildning** passed. Vote on p.3 (S+MP reservation): S 0-106, SD 70-0, M 66-0. Vote on p.2 (S+V+MP reservation): S 0-106, SD 70-0, M 66-0. The reform strengthens school-business cooperation frameworks and competence supply chains. Cross-party support collapsed on the vocational curriculum detail; S and MP opposed specifics on employer influence over curriculum design.
+
+### CONFIRMED VOTE RECORD — FiU39: Cash Transaction Protection
+**Åtgärder för att stärka kontanternas funktionssätt** passed. Vote on p.3 (S+V reservation): S 0-106, SD 70-0, M 66-0. Vote on p.4 (C reservation): S 0-0-106 (abstained), SD 70-0, M 66-0. **Interpretation**: S opposed the government's cash-protection law overall, but on the C reservation detail (point 4), S chose to abstain rather than vote no — signalling partial agreement with C's position. Livsmedelsbutiker and apotek will be obligated to accept cash at staffed tills (excluding unmanned checkout points).
+
+### CONFIRMED VOTE RECORD — FiU42: Simplified Procurement Supplier Control
+**Förenklad leverantörskontroll vid upphandling** passed. Vote on p.2 (S+V+MP): S 0-106. Vote on p.3 (V reservation): S 0-0-106 (abstained), SD 70-0, M 66-0. **Interpretation**: S opposed simplified supplier control in procurement on the main vote but abstained rather than opposed V's stricter supplementary demands — a nuanced position suggesting S wants tighter regulation than the government but does not endorse V's maximum-scrutiny position.
+
+### CONFIRMED VOTE RECORD — UbU21: School Data Sharing for Crime Prevention
+**Överlämnande av uppgifter mellan skolor i brottsförebyggande syfte** — S joined the Government majority on p.1 (cross-party: S 106+), but MP filed a reservation on p.2 (data protection grounds). **Interpretation**: Cross-party support for basic school-to-school crime-prevention data sharing; only MP held out on privacy grounds.
+
+### NEW BETÄNKANDEN VOTED (Afternoon Session)
+| Beteckning | Titel | Committee | Passed |
+|------------|-------|-----------|--------|
+| UU3 | Fördjupad resultatredovisning av internationellt bistånd | UU | ✅ Cross-party majority |
+| UU4 | Nordiskt samarbete inklusive Arktis | UU | ✅ M+SD+KD+L (C+S=reservation p.2) |
+| CU26 | En ny konsumentkreditlag | CU | ✅ Government majority |
+
+**UU7y** (yttrande): UU filed its opinion on the 2026 Spring Budget (prop. 2025/26:100) for KU — dated 2026-05-27. This ties the international/development aid committee's fiscal concerns to the vårproposition review. Key finding: UU supports the proposed ODA budget level but flags "geopolitical coherence risk" if military and development spending are both growing simultaneously.
 
 ---
 

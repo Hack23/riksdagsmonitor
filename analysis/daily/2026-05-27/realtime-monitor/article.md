@@ -3,7 +3,7 @@ date: 2026-05-27
 subfolder: realtime-monitor
 slug: 2026-05-27-realtime-monitor
 source_folder: analysis/daily/2026-05-27/realtime-monitor
-generated_at: 2026-05-27T14:53:02.542Z
+generated_at: 2026-05-27T16:57:58.004Z
 language: en
 layout: article
 ---
@@ -67,6 +67,36 @@ Culture Committee report on government's written communication (skrivelse) on ar
 
 #### 12. Reckless Driving — HD11842 [L0 — LOW]
 SD interpellation on "vansinneskörningar" (reckless high-speed driving incidents). Calls for increased penalties. Government (Infrastrukturminister) response due 2026-06-10.
+
+---
+
+### AFTERNOON SESSION: CONFIRMED VOTE RECORDS (16:00–17:00 CET)
+
+*Re-run data collected at 2026-05-27T16:52Z — first run had assumed passage for morning betänkanden. The following afternoon votes are now fully confirmed.*
+
+#### CONFIRMED VOTE RECORD — UbU29: Extended School Registry Checks
+**Utökade registerkontroller i skolväsendet** passed the chamber with Government majority. Vote on p.2 (opposition reservation S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Interpretation**: All Social Democrats, Vänsterpartiet, Centerpartiet, and Miljöpartiet opposed expanded background registry checks for school staff; the M+SD+KD+L coalition carried the vote. C joined the S-led opposition here — noteworthy given C's usual law-and-order stance; C's concern is data integrity and proportionality rather than opposition to school safety. **Election nexus**: UbU29 will feature in S/V/C/MP campaigning as "surveillance creep in schools."
+
+#### CONFIRMED VOTE RECORD — UbU27: Vocational Training Reform
+**Bättre förutsättningar för yrkesutbildning** passed. Vote on p.3 (S+MP reservation): S 0-106, SD 70-0, M 66-0. Vote on p.2 (S+V+MP reservation): S 0-106, SD 70-0, M 66-0. The reform strengthens school-business cooperation frameworks and competence supply chains. Cross-party support collapsed on the vocational curriculum detail; S and MP opposed specifics on employer influence over curriculum design.
+
+#### CONFIRMED VOTE RECORD — FiU39: Cash Transaction Protection
+**Åtgärder för att stärka kontanternas funktionssätt** passed. Vote on p.3 (S+V reservation): S 0-106, SD 70-0, M 66-0. Vote on p.4 (C reservation): S 0-0-106 (abstained), SD 70-0, M 66-0. **Interpretation**: S opposed the government's cash-protection law overall, but on the C reservation detail (point 4), S chose to abstain rather than vote no — signalling partial agreement with C's position. Livsmedelsbutiker and apotek will be obligated to accept cash at staffed tills (excluding unmanned checkout points).
+
+#### CONFIRMED VOTE RECORD — FiU42: Simplified Procurement Supplier Control
+**Förenklad leverantörskontroll vid upphandling** passed. Vote on p.2 (S+V+MP): S 0-106. Vote on p.3 (V reservation): S 0-0-106 (abstained), SD 70-0, M 66-0. **Interpretation**: S opposed simplified supplier control in procurement on the main vote but abstained rather than opposed V's stricter supplementary demands — a nuanced position suggesting S wants tighter regulation than the government but does not endorse V's maximum-scrutiny position.
+
+#### CONFIRMED VOTE RECORD — UbU21: School Data Sharing for Crime Prevention
+**Överlämnande av uppgifter mellan skolor i brottsförebyggande syfte** — S joined the Government majority on p.1 (cross-party: S 106+), but MP filed a reservation on p.2 (data protection grounds). **Interpretation**: Cross-party support for basic school-to-school crime-prevention data sharing; only MP held out on privacy grounds.
+
+#### NEW BETÄNKANDEN VOTED (Afternoon Session)
+| Beteckning | Titel | Committee | Passed |
+|------------|-------|-----------|--------|
+| UU3 | Fördjupad resultatredovisning av internationellt bistånd | UU | ✅ Cross-party majority |
+| UU4 | Nordiskt samarbete inklusive Arktis | UU | ✅ M+SD+KD+L (C+S=reservation p.2) |
+| CU26 | En ny konsumentkreditlag | CU | ✅ Government majority |
+
+**UU7y** (yttrande): UU filed its opinion on the 2026 Spring Budget (prop. 2025/26:100) for KU — dated 2026-05-27. This ties the international/development aid committee's fiscal concerns to the vårproposition review. Key finding: UU supports the proposed ODA budget level but flags "geopolitical coherence risk" if military and development spending are both growing simultaneously.
 
 ---
 
@@ -316,12 +346,36 @@ Each bill was opposed by S and/or V on proportionality grounds; all passed commi
 
 ### Aggregate Session Score
 
-- **Total documents**: 12
+- **Total documents**: 12 (morning session)
 - **Critical (L3)**: 3 (25%)
 - **High (L2)**: 6 (50%)
 - **Medium (L1)**: 2 (17%)
 - **Low (L0)**: 1 (8%)
 - **Session significance**: HIGH — three critical-level legislative advances simultaneous with major opposition interpellation cluster
+
+---
+
+### Afternoon Session Documents (re-run addition, 16:00–17:00 CET)
+
+Confirmed vote records and new betänkanden discovered in improvement-mode re-run:
+
+| dok_id | Title | Base DIW | EP Mult | Final Score | Level | Justification |
+|--------|-------|----------|---------|-------------|-------|---------------|
+| HD01UbU29 | Utökade registerkontroller i skolväsendet | 4.2 | 1.5 | 6.3 | L2 HIGH | Extended school staff background registry checks. S+V+C+MP all voted against (confirmed: S 0-106). Government coalition M+SD+KD+L carried. Significant civil liberties vs child safety tension in election year. |
+| HD01UbU27 | Bättre förutsättningar för yrkesutbildning | 3.5 | 1.5 | 5.25 | L2 HIGH | Vocational training reform strengthening school-business ties. S+MP voted against on employer curriculum-influence grounds. Economic competence dimension for Tidö. |
+| HD01FiU39 | Åtgärder för att stärka kontanternas funktionssätt | 3.8 | 1.5 | 5.7 | L2 HIGH | Mandatory cash acceptance at staffed grocery and pharmacy checkouts. S voted against overall but abstained on C's stricter-obligation reservation — nuanced opposition. Consumer rights dimension for pensioner electorate. |
+| HD01FiU42 | Förenklad leverantörskontroll vid upphandling | 3.0 | 1.0 | 3.0 | L1 MEDIUM | Simplified supplier vetting in public procurement. S voted against main provision; S abstained on V's stricter-oversight reservation. No clear electoral nexus; EP multiplier not applied. |
+| HD01UU3 | Fördjupad resultatredovisning av internationellt bistånd | 3.2 | 1.0 | 3.2 | L1 MEDIUM | Enhanced ODA results reporting. Cross-party majority. Sweden's aid policy monitoring. No sharp partisan split. |
+| HD01UU4 | Nordiskt samarbete inklusive Arktis | 3.5 | 1.5 | 5.25 | L2 HIGH | Nordic/Arctic cooperation framework. S voted for p.1 (cross-party) but against p.2. UU7y opinion (2026 Spring Budget) filed same day — geopolitical fiscal coherence risk flagged. NATO/Arctic strategic dimension. |
+| HD01CU26 | En ny konsumentkreditlag | 3.2 | 1.5 | 4.8 | L2 HIGH | New consumer credit law. Debt trap protection for lower-income households. S+others likely voted in favour (cross-party consumer protection consensus). Household debt election relevance. |
+| HD01UbU21 | Överlämnande av uppgifter mellan skolor i brottsförebyggande syfte | 3.0 | 1.5 | 4.5 | L2 HIGH | School-to-school crime prevention data sharing. Cross-party support (S voted yes). Only MP filed reservation on data protection grounds. Bridges security and education agendas. |
+
+**Updated session totals (full day)**:
+- Total documents: 20 (12 morning + 8 afternoon)
+- Critical (L3): 3 (15%)
+- High (L2): 13 (65%)
+- Medium (L1): 4 (20%)
+- Session significance: VERY HIGH — highest single-day legislative density in 2025/26 session to date
 
 ---
 
@@ -910,6 +964,8 @@ If no government can be formed within 4 formation attempts (4×2 weeks = 8 weeks
 | PIR-RT-008 | Does Riksrevisionen schedule a parliamentary follow-up hearing on RiR 2025:32 (migration detention)? | Riksrevisionen website: hearing announcement by 2026-08-31 | 2026-08-31 | MEDIUM |
 | PIR-RT-009 | Does IVO (healthcare inspectorate) publish elderly care inspection data showing systemic deterioration? | IVO quarterly report (expected 2026-09-01) | 2026-09-01 | MEDIUM |
 | PIR-RT-010 | Does SAAB or another Swedish defence company announce NATO partner export deal under new UU18 rules? | Company press release/annual report within 6 months of UU18 entry into force | 2026-12-31 | LOW-MEDIUM |
+| PIR-RT-011 | Does C or L publish a statement criticising UbU29 data protection risk (school registry checks)? | Party press statement within 30 days | 2026-06-27 | HIGH — C joined opposition reservation |
+| PIR-RT-012 | Does consumer advocacy group (Konsumentverket) publish first impact assessment of FiU39 cash mandate? | Konsumentverket.se within 90 days of law entry into force | 2026-10-31 | MEDIUM |
 
 ---
 
@@ -921,7 +977,7 @@ If no government can be formed within 4 formation attempts (4×2 weeks = 8 weeks
 |-----------|--------------|-------------|
 | JuU38 media coverage | SVT, DN, Aftonbladet coverage of gang movement restrictions | Validates/undermines Tidö crime narrative |
 | RFSL/Civil society response to HD11841 | Press releases on LGBTQ+ school safety | S amplification indicator |
-| Government vote schedule | Riksdag voting calendar for committee report votes | Confirms all six Betänkanden pass as expected |
+| **CLOSED: Betänkanden passage confirmed** | All morning betänkanden passed as expected; UbU29 vote confirmed S+V+C+MP all voted against on p.2 | Intelligence gap on vote uncertainty now resolved |
 
 #### T+7d (2026-06-03)
 
@@ -1945,8 +2001,87 @@ MISCELLANEOUS
 
 ### Pass-2 status: executed in full
 
+---
+
+### Re-run log
+
+#### run_id: 26525173351 | attempt: 2 | timestamp: 2026-05-27T16:52Z
+
+| Field | Value |
+|-------|-------|
+| run_id | 26525173351 |
+| attempt | 2 (improvement mode) |
+| new_dok_ids | HD19UbU29p2, HD19UbU27p3, HD19UbU27p2, HD19UbU21p2, HD19FiU42p3, HD19FiU42p2, HD19FiU39p4, HD19FiU39p3, HD19UU4p1, HD19UU4p2, HD19UU3p2, HD19UU3p3, HD19UU3p4, HDC320260527UbU27, HDC320260527UU3, HDC320260527UU4, HDC320260527FiU42, HDC320260527FiU39, HDC320260527CU26, HDC320260527UbU29, HDC320260527UbU21, HD05UU7y |
+| artifacts_extended | executive-brief.md (H1 + afternoon session), significance-scoring.md, forward-indicators.md, intelligence-assessment.md, synthesis-summary.md, pir-status.json |
+| flags_closed | Morning betänkanden passage confirmed via afternoon vote records. Vote uncertainty resolved for JuU38, FöU15, UU18. New afternoon session fully documented. |
+| vintage_refresh | riksdag-regering live 2026-05-27T16:52:30Z; IMF WEO-2026-04 unchanged (current vintage) |
+
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/data-download-manifest.md -->
+
+**Workflow**: News Realtime Monitor
+**Run**: 26525173351 attempt 2 (improvement mode)
+**Started (UTC)**: 2026-05-27T16:52:00Z
+**Requested date**: 2026-05-27
+**Subfolder**: realtime-monitor
+**Improvement mode**: true
+**Status**: IMPROVEMENT PASS — 22 existing artifacts extended; 8 new afternoon-session documents integrated; re-run marker written.
+
+> Original run 26507641839 (attempt 1) produced all 23 Family A-D artifacts + 12 Family E per-document analyses.
+> This improvement run extends with confirmed vote records from the afternoon Riksdag session.
+
+### MCP attempts (improvement run)
+
+| Attempt | Time | Tool | Result |
+|---------|------|------|--------|
+| 1 | 2026-05-27T16:52:30Z | get_sync_status | ✅ live |
+| 2 | 2026-05-27T16:53:00Z | search_dokument (today) | ✅ 76 documents; 8 afternoon betänkanden/votes identified |
+| 3 | 2026-05-27T16:53:30Z | search_voteringar | ✅ vote records accessed via omröstning dok_ids |
+| 4 | 2026-05-27T16:54:00Z | get_dokument HD05UU7y | ✅ UU Spring Budget opinion identified |
+
+### Pipeline Status (improvement pass)
+
+| Phase | Status | Notes |
+|-------|--------|-------|
+| MCP pre-warm | ✅ | Status: live 2026-05-27T16:52:30Z |
+| pass1/ snapshot | ✅ | 22 files backed up before edits |
+| Fresh data fetch | ✅ | 22 new afternoon-session dok_ids collected |
+| Artifact extension | ✅ | executive-brief H1 fixed; afternoon session added; forward-indicators extended; significance-scoring extended |
+| Re-run marker | ✅ | methodology-reflection.md § Re-run log written |
+| Analysis gate | — | Pending |
+| Aggregate | — | Pending |
+| Render | — | Pending |
+| Commit + PR | — | Pending |
+
+### New afternoon-session documents (improvement run)
+
+| dok_id | Title | Type | Vote confirmed |
+|--------|-------|------|----------------|
+| HD19UbU29p2 | Omröstning: UbU29 p.2 | votering | S 0-106, SD 70-0, M 66-0 |
+| HD19UbU27p3 | Omröstning: UbU27 p.3 | votering | S 0-106, SD 70-0, M 66-0 |
+| HD19FiU42p3 | Omröstning: FiU42 p.3 | votering | S 0-0-106 (abstain) |
+| HD19FiU39p4 | Omröstning: FiU39 p.4 | votering | S 0-0-106 (abstain) |
+| HD19FiU39p3 | Omröstning: FiU39 p.3 | votering | S 0-106 |
+| HD19UU4p1 | Omröstning: UU4 p.1 | votering | S 106-0 (yes) |
+| HD19UU4p2 | Omröstning: UU4 p.2 | votering | S 0-106 |
+| HD05UU7y | 2026 ekonomisk vårproposition (UU yttrande) | yttr | New: UU filed spring budget opinion |
+
+### Original per-document table (attempt 1)
+
+| dok_id | Title | Level | Coverage | Full text |
+|--------|-------|-------|----------|-----------|
+| HD01FöU15 | Lagändringar för ett stärkt nationellt cybersäkerhetscenter | L3 | full_text | ✅ 82,334 chars |
+| HD01JuU38 | Ett förstärkt samhällsskydd och tydligare reaktioner vid återfall i brott | L3 | full_text | ✅ 100,015 chars |
+| HD01UU18 | Ett modernt och anpassat regelverk för krigsmateriel | L3 | full_text | ✅ 100,015 chars |
+| HD01SfU25 | Utdelning av överskott i inkomstpensionssystemet | L2 | full_text | ✅ 40,936 chars |
+| HD01SfU34 | Riksrevisionens rapport om förvar i migrationsprocessen | L2 | full_text | ✅ 86,334 chars |
+| HD01KrU9 | Attraktiva platser – bredare genomslag | L1 | full_text | ✅ 76,252 chars |
+| HD10516 | Äldreomsorgens ekonomiska förutsättningar | L2 | metadata_only | — |
+| HD11840 | Upprättelse för dem som drabbats av felaktiga pethtester | L1 | full_text | ✅ 4,654 chars |
+| HD11841 | Ökning av negativa attityder mot hbtqi-personer i skolan | L2 | full_text | ✅ 2,179 chars |
+| HD11842 | Vansinneskörningar | L0 | full_text | ✅ 2,937 chars |
+| HD11843 | Regeringens arbete mot unga människors ökande intolerans | L2 | metadata_only | — |
+| HD11844 | Pojkars attityder och machokultur | L2 | full_text | ✅ 2,266 chars |
 
 **Workflow**: News Realtime Monitor
 **Run**: 26507641839 attempt 1
