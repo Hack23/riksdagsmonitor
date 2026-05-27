@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 # ティデー政権、T-118：EU エネルギー適合性が締まり、安全保障のピボットは持続
@@ -32,7 +31,7 @@ confidence: high
 
 ---
 
-## BLUF（結論）
+## 結論
 
 ティデー政権 2022–2026 は、構造的に変容したスウェーデン国家とともに幕を閉じる — 安全保障アーキテクチャの再構築、金融安定フレームワークの再起動、デジタル ID スタックの成文化、および北欧隣国に合わせた移民執行の調整。本日、**9 月選挙の 123 日前**、クリスターソン政権は新たな政治シグナルではなく委員会処理 (HD01CU30 EU EED 移転法、NU21 農村フレームワーク) を通じて、**EU 適合性の遅延をひっそりと解消**している。核となる安全保障改革 (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) が 2026 年選挙をどの連立政権が勝利するかに関わらず生き残る可能性は*非常に高い* (80–90% [horizon:cycle]) — 逆転コストが維持コストを超える*経路依存性の閾値*を超えた。 [A2]
 
@@ -87,7 +86,7 @@ confidence: high
 ## クロスリファレンス
 
 - [`synthesis-summary.md`](synthesis-summary.md) — リードストーリー決定の全文と DIW トップ 10
-- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 BLUF + 発見事項別 WEP
+- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 要旨 + 発見事項別 WEP
 - [`scenario-analysis.md`](scenario-analysis.md) — 12 葉のシナリオツリー + 5 つのワイルドカードシナリオ
 - [`cycle-trajectory.md`](cycle-trajectory.md) — 複数年 SCB + IMF + Riksdag スループットトレンド (第 24 成果物)
 - [`risk-assessment.md`](risk-assessment.md) — 軽減措置を含む上位リスク

@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 # Tidömandatet, T-118: EU:s energiefterlevnad stängs medan säkerhetspivoten håller
@@ -32,7 +31,7 @@ confidence: high
 
 ---
 
-## BLUF (Slutsats)
+## Slutsats
 
 2022–2026 års Tidömandat avslutas med en strukturellt omvandlad svensk stat — säkerhetsarkitekturen ombyggd, det finansiella stabilitetsramverket omstartat, det digitala identitetsskiktet kodifierat och migrationsarbetet anpassat till de nordiska grannarna. Idag, **123 dagar före septembervalet**, stänger Kristerssons regering sina **EU-efterlevnadsbrister** tyst via utskottsbehandling (HD01CU30 EU EED-transponering, NU21 landsbygdsram) snarare än ny politisk signalering. *Mycket sannolikt* (80–90 % [horizon:cycle]) att kärnsäkerhetsreformerna (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) överlever valet 2026 oavsett vilken koalition som vinner — de har passerat *vägberoendetröskel* där återkopplingskostnader överstiger underhållskostnader. [A2]
 
@@ -87,7 +86,7 @@ Denna briefing bedömer hela mandatperioden 2022–2026 som en enskild politisk 
 ## Korsreferenser
 
 - [`synthesis-summary.md`](synthesis-summary.md) — fullständigt ledarskapsbeslut och DIW Topp-10
-- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 BLUF + WEP per fynd
+- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 Kärnbedömning + WEP per fynd
 - [`scenario-analysis.md`](scenario-analysis.md) — 12-lövsscenarioträd + 5 vildkortsscenarier
 - [`cycle-trajectory.md`](cycle-trajectory.md) — flerårig SCB + IMF + Riksdag genomströmningstrend (24:e artefakten)
 - [`risk-assessment.md`](risk-assessment.md) — topp-risker med begränsningsåtgärder

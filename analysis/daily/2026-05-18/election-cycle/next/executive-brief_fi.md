@@ -10,7 +10,7 @@ horizon: cycle
 
 # Tiivistelmä — Mandaattiennuste vuoden 2026 jälkeen
 
-## BLUF (Ydinjohtopäätös)
+## Ydinjohtopäätös
 
 **Suunnilleen tasan** (45–55% [horizon:election]) mahdollisuus sille, että Riksdagsval 2026-09-13 tuottaa **ripuliparlamentin kaltaisen tuloksen, joka vaatii > 30 päivän koalitionmuodostuksen**. Ratkaiseva rakenteellinen muuttuja on **L:n selviytyminen neljän prosentin kynnyksestä** (tällä hetkellä *suunnilleen tasan* 50–65%; *epätodennäköistä* 30–45% että L ylittää 5%); toissijainen muuttuja on **C:n koalitio-preferenssi** (keskusta vs S-johtama punavihreä-keskusta).
 
@@ -58,4 +58,4 @@ Täydellinen jakauma `wildcards-blackswans.md`-tiedostossa.
 
 [A1] IMF WEO huhtikuu-2026 [horizon:cycle] T+0; [A2] Yhdistetty Sifo/Novus/Demoskop huhtikuu–toukokuu 2026.
 
-<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

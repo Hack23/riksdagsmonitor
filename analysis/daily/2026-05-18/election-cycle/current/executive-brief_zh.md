@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 # 蒂德政府，T-118：欧盟能源合规封闭，安全战略支轴持续
@@ -32,7 +31,7 @@ confidence: high
 
 ---
 
-## BLUF（结论）
+## 结论
 
 2022–2026 蒂德任期以结构性转型的瑞典国家告终 — 安全架构重建、金融稳定框架重启、数字身份体系成文、移民执法与北欧邻国对齐。今天，**距九月选举 123 天**，克里斯特松政府通过委员会处理 (EU EED 转化 HD01CU30、NU21 农村框架) 而非新政治信号，悄然清理其**欧盟合规积压**。无论哪个联合政府获胜，核心安全改革 (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) 在 2026 年选举后存续的可能性*极大* (80–90% [horizon:cycle]) — 它们已越过逆转成本超过维护成本的*路径依赖阈值*。[A2]
 
@@ -87,7 +86,7 @@ confidence: high
 ## 交叉参考
 
 - [`synthesis-summary.md`](synthesis-summary.md) — 完整主导故事决策及 DIW 前 10
-- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 BLUF + 每项发现的 WEP
+- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 核心结论 + 每项发现的 WEP
 - [`scenario-analysis.md`](scenario-analysis.md) — 12 叶情景树 + 5 通配符情景
 - [`cycle-trajectory.md`](cycle-trajectory.md) — 多年 SCB + IMF + Riksdag 吞吐量趋势 (第 24 个产物)
 - [`risk-assessment.md`](risk-assessment.md) — 含缓解措施的主要风险

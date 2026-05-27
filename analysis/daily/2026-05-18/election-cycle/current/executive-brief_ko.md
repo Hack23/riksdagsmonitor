@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 # 티데 정권, T-118: EU 에너지 규정 준수가 마무리되고 안보 피벗은 유지
@@ -32,7 +31,7 @@ confidence: high
 
 ---
 
-## BLUF (결론)
+## 결론
 
 2022–2026 티데 정권은 구조적으로 변모된 스웨덴 국가와 함께 막을 내린다 — 안보 아키텍처 재건, 금융 안정성 프레임워크 재부팅, 디지털 ID 스택 성문화, 북유럽 이웃과 보조를 맞춘 이민 집행. 오늘, **9월 선거 123일 전**, 크리스테르손 정부는 새로운 정치 신호 대신 위원회 처리 (EU EED 전환 HD01CU30, 농촌 프레임워크 NU21)를 통해 **EU 규정 준수 백로그를 조용히 마무리**하고 있다. 어느 연립이 승리하든 관계없이 핵심 안보 개혁 (HD01JuU32, HD03267, HD01JuU34, HD01JuU39)이 2026년 선거를 살아남을 가능성은 *매우 높음* (80–90% [horizon:cycle]) — 역전 비용이 유지 비용을 초과하는 *경로 의존성 임계값*을 넘었다. [A2]
 
@@ -87,7 +86,7 @@ confidence: high
 ## 교차 참조
 
 - [`synthesis-summary.md`](synthesis-summary.md) — 전체 주요 스토리 결정 및 DIW 상위 10
-- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 BLUF + 발견 사항별 WEP
+- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 핵심 결론 + 발견 사항별 WEP
 - [`scenario-analysis.md`](scenario-analysis.md) — 12잎 시나리오 트리 + 5 와일드카드 시나리오
 - [`cycle-trajectory.md`](cycle-trajectory.md) — 다년간 SCB + IMF + Riksdag 처리량 트렌드 (24번째 산출물)
 - [`risk-assessment.md`](risk-assessment.md) — 완화 조치를 포함한 주요 위험

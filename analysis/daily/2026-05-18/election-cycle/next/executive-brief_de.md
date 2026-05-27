@@ -10,7 +10,7 @@ horizon: cycle
 
 # Zusammenfassung — Mandatsprognose nach 2026
 
-## BLUF (Kernaussage)
+## Kernaussage
 
 **Ungefähr ausgeglichen** (45–55% [horizon:election]), dass die Reichstagswahl 2026-09-13 ein **hängendes Parlamentsergebnis mit > 30 Tagen Koalitionsbildung** ergibt. Die entscheidende strukturelle Variable ist **L's Überleben der Vier-Prozent-Hürde** (derzeit *ungefähr ausgeglichen* 50–65%; *unwahrscheinlich* 30–45%, dass L 5% überschreitet); die sekundäre Variable ist **C's Koalitionspräferenz** (Mitte vs S-geführte rot-grün-Mitte).
 
@@ -58,4 +58,4 @@ Vollständige Verteilung in `wildcards-blackswans.md`.
 
 [A1] IMF WEO Apr-2026 [horizon:cycle] T+0; [A2] Aggregierte Sifo/Novus/Demoskop Apr–Mai 2026.
 
-<!-- source-sha: 37f69ff9aa194a3c561fdd15f1b60d4f6b106472 -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

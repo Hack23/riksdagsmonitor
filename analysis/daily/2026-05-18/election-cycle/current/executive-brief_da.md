@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 # Tidø-mandatet, T-118: EU-energioverholdelsesgab lukkes, mens sikkerhedspivoten holder
@@ -32,7 +31,7 @@ confidence: high
 
 ---
 
-## BLUF (Bundlinjen)
+## Bundlinjen
 
 2022–2026 Tidø-mandatet slutter med en strukturelt transformeret svensk stat — sikkerhedsarkitekturen genopbygget, rammen for finansiel stabilitet genstartet, den digitale identitetsstak kodificeret og migrationsudøvelsen tilpasset de nordiske naboer. I dag, **123 dage før septembervalget**, lukker Kristersson-regeringen sine **EU-overholdelsesbeholdninger** stille via udvalgsbehandling (HD01CU30 EU EED-transponering, NU21 landdistriktsramme) snarere end nye politiske signaler. *Meget sandsynligt* (80–90 % [horizon:cycle]) at kernesikkerhedsreformerne (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) overlever valget i 2026 uanset hvilken koalition der vinder — de har krydset den *stiafhængighedstærskel*, hvor tilbagerullningsomkostninger overstiger vedligeholdelsesomkostninger. [A2]
 
@@ -87,7 +86,7 @@ Denne briefing vurderer hele mandatperioden 2022–2026 som én politisk cyklus,
 ## Krydsreferencer
 
 - [`synthesis-summary.md`](synthesis-summary.md) — fuldstændig ledelseshistorie-beslutning og DIW Top-10
-- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 BLUF + WEP pr. fund
+- [`intelligence-assessment.md`](intelligence-assessment.md) — ICD 203 Bundlinjen + WEP pr. fund
 - [`scenario-analysis.md`](scenario-analysis.md) — 12-bladsscenarietræ + 5 wildcard-scenarier
 - [`cycle-trajectory.md`](cycle-trajectory.md) — flerårig SCB + IMF + Riksdag-gennemstrømningstendenser (24. artefakt)
 - [`risk-assessment.md`](risk-assessment.md) — toprisici med begrænsningsforanstaltninger

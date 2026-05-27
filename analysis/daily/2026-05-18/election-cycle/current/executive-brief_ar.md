@@ -8,7 +8,6 @@ source_folder: analysis/daily/2026-05-18/election-cycle/current
 classification: PUBLIC
 workflow: news-election-cycle
 horizon: cycle
-confidence: high
 ---
 
 <!-- dir: rtl -->
@@ -34,7 +33,7 @@ confidence: high
 
 ---
 
-## BLUF (الخلاصة)
+## الخلاصة
 
 تنتهي ولاية تيدو 2022–2026 بدولة سويدية متحولة هيكليًا — إعادة بناء الهندسة الأمنية، وإعادة تشغيل إطار الاستقرار المالي، وتقنين بنية الهوية الرقمية، وتوافق تطبيق الهجرة مع الجيران الإسكندنافيين. اليوم، **123 يومًا قبل انتخابات سبتمبر**، تُغلق حكومة كريسترسون **متأخرات امتثالها الأوروبي** بصمت عبر معالجة اللجان (تحويل EU EED HD01CU30، إطار الريف NU21) بدلًا من الإشارات السياسية الجديدة. *شبه مؤكد* (80–90% [horizon:cycle]) أن الإصلاحات الأمنية الجوهرية (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) ستنجو من انتخابات 2026 بصرف النظر عن أي تحالف يفوز — فقد تجاوزت *عتبة اعتماد المسار* حيث تتجاوز تكاليف الانعكاس تكاليف الصيانة. [A2]
 
@@ -89,7 +88,7 @@ confidence: high
 ## المراجع المتقاطعة
 
 - [`synthesis-summary.md`](synthesis-summary.md) — قرار القصة الرئيسية الكاملة وأعلى 10 في DIW
-- [`intelligence-assessment.md`](intelligence-assessment.md) — BLUF وفق ICD 203 + WEP لكل نتيجة
+- [`intelligence-assessment.md`](intelligence-assessment.md) — خلاصة ICD 203 + WEP لكل نتيجة
 - [`scenario-analysis.md`](scenario-analysis.md) — شجرة سيناريوهات 12 ورقة + 5 سيناريوهات بطاقة برية
 - [`cycle-trajectory.md`](cycle-trajectory.md) — اتجاه إنتاجية SCB + IMF + Riksdag متعدد السنوات (القطعة الأثرية 24)
 - [`risk-assessment.md`](risk-assessment.md) — المخاطر الرئيسية مع تدابير التخفيف
