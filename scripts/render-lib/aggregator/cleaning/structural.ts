@@ -108,6 +108,13 @@ export { rewriteRelativeLinks } from './link-rewriting.js';
 export function cleanArtifactBody(raw: string): string {
   const parsed = matter(raw);
   let body = parsed.content;
+  // Strip Unicode bidi control marks (LRM/RLM/LRE/RLE/PDF/LRO/RLO/LRI/RLI/FSI/PDI)
+  // that appear at the start of lines in many Arabic/Hebrew translated briefs.
+  // These are invisible typesetting hints, but they break `^#{2,6}` / `^\*\s`
+  // regex matching downstream (the SEO extraction cascade and bullet detection).
+  // Removing them at line boundaries is safe — they carry no semantic content
+  // and any subsequent rendering re-applies bidi based on the actual text runs.
+  body = body.replace(/^[\u200E\u200F\u202A-\u202E\u2066-\u2069]+/gm, '');
   body = body.replace(/^\s*#\s+[^\n]*\n+/, '');
   body = body.replace(/^#+\s*Document control[\s\S]*$/im, '');
   body = body.replace(/^#+\s*Audit trail[\s\S]*$/im, '');

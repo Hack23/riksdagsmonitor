@@ -473,8 +473,21 @@ function isKeywordDebris(keyword: string): boolean {
   // "Lotta Edholm s" — never matches standalone "S" party code (single
   // word, length 1, already rejected by the length check above).
   if (/\s/.test(keyword) && /(?:^|\s)s(?:$|\s)/i.test(keyword)) return true;
+  // Admin-byline VALUE stopwords — never ship as keywords regardless
+  // of source language. The editorial byline + Hack23 AB org tag are
+  // pipeline-generated and must never appear as SERP keywords.
+  if (ADMIN_VALUE_KEYWORD_STOP_RE.test(keyword)) return true;
   return false;
 }
+
+/**
+ * Catch-all admin-byline VALUE filter for the keyword pipeline.
+ * Mirrors the description-side `ADMIN_VALUE_SCRUB_PATTERNS` in
+ * `article.ts` but at the per-token granularity used by
+ * `pushKeyword`. Anything matching this regex is dropped before
+ * being seeded into the keyword string.
+ */
+const ADMIN_VALUE_KEYWORD_STOP_RE = /(?:James\s+Pether\s+S(?:ö|o)rling|Hack23\s+AB|\bRun[-\s]?ID\b|\bAdmiralty\s+(?:Range|Baseline|Code|Grade|Scale)\b|\bGDPR\s+Art\b)/i;
 
 function pushKeyword(out: string[], seen: Set<string>, raw: string): void {
   const keyword = normaliseKeyword(raw);
@@ -695,7 +708,14 @@ export function buildArticleKeywords(input: ArticleSeoMetadataInput): string {
   const seen = new Set<string>();
   const isEnglish = input.lang === 'en';
 
-  // 1. Brief entities first — highest SERP signal, universal across
+  // 0. Brand anchor — must always survive even when brief entities
+  //    saturate the KEYWORD_MAX budget. Without this, EN briefs with
+  //    24+ mined entities (bill IDs + named actors) shipped without
+  //    "Riksdagsmonitor" in the keyword line at all — the page lost
+  //    its anchor in the cross-site brand keyword graph.
+  pushKeyword(out, seen, LANG_CORE_KEYWORDS[input.lang][0]);
+
+  // 1. Brief entities — highest SERP signal, universal across
   //    languages. These are normalised by the upstream extractor; we
   //    just push them in order so the cap preserves story priority.
   const briefEnts = input.briefEntities ?? [];

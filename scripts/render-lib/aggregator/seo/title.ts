@@ -26,10 +26,29 @@ import type { Language } from '../../../types/language.js';
 /**
  * Read the first top-level H1 from a markdown body. Returns the trimmed
  * heading text without the leading `# ` token, or `null` if none found.
+ *
+ * Supports both markdown `# heading` and HTML `<h1>content</h1>` forms
+ * (some executive briefs use `<h1 align="center">` for formatting).
  */
 export function readFirstHeading(markdown: string): string | null {
-  const match = markdown.match(/^\s*#\s+(.+?)\s*$/m);
-  return match ? match[1].trim() : null;
+  // Try markdown H1 first.
+  const mdMatch = markdown.match(/^\s*#\s+(.+?)\s*$/m);
+  if (mdMatch) return mdMatch[1].trim();
+  // Fallback: HTML <h1> tag (single-line or multiline with attributes).
+  const htmlMatch = markdown.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+  if (htmlMatch) {
+    // Strip nested HTML tags (e.g. <img>, <a>, <em>) and leading emoji.
+    // Loop to prevent incomplete sanitization when tags are nested/overlapping.
+    let text = htmlMatch[1];
+    let prev: string;
+    do {
+      prev = text;
+      text = text.replace(/<[^>]+>/g, '');
+    } while (text !== prev);
+    text = text.replace(/^\s*[\p{Emoji_Presentation}\p{Extended_Pictographic}]+\s*/u, '').trim();
+    return text.length > 0 ? text : null;
+  }
+  return null;
 }
 
 /**
@@ -75,8 +94,13 @@ export function cleanArticleTitle(
   lang?: Language,
 ): string | null {
   if (!raw) return null;
+  const minLength = lang && ['ja', 'ko', 'zh'].includes(lang) ? 10 : 20;
   let t = raw.trim();
-  t = t.replace(/^[\s\p{Emoji_Presentation}\p{Emoji}\p{Extended_Pictographic}\p{P}\p{S}]+/u, '').trim();
+  // NOTE: `\p{Emoji}` is intentionally excluded here — Unicode marks ASCII
+  // digits as emoji-capable because of keycap sequences (`1️⃣`, `2️⃣`, …).
+  // Including `\p{Emoji}` therefore strips legitimate year-led CJK titles
+  // like `2026年5月展望…`, silently degrading them to `年5月展望…`.
+  t = t.replace(/^[\s\p{Emoji_Presentation}\p{Extended_Pictographic}\p{P}\p{S}]+/u, '').trim();
   t = t.replace(/^(?:Executive\s+Brief|Intelligence\s+Brief|Intelligence\s+Assessment|Realtime\s+Monitor|Riksdag\s+Realtime\s+Monitor|Daily\s+Brief|BLUF|TL;DR|Top\s+Line|Bottom\s+Line)\s*[—–\-:]\s*/i, '');
   // Per-language Executive-Brief prefix strip — catches translated
   // boilerplate (`Exekutiv sammanfattning — `, `Zusammenfassung — `,
@@ -109,7 +133,7 @@ export function cleanArticleTitle(
   // the catch-all for dangling punctuation alone.
   t = t.replace(/[,;:]+\s*$/u, '').trim();
   t = t.replace(/\s+/g, ' ').trim();
-  if (t.length < 20) return null;
+  if (t.length < minLength) return null;
 
   if (subfolder) {
     const cleaned = normaliseTitleForCompare(t);
@@ -363,6 +387,65 @@ function trimTrailingConnectors(text: string): string {
  * - trailing connector punctuation / coordinating words are removed so
  *   the title doesn't end on a dangling fragment
  */
+/**
+ * Read the first paragraph from a `## Headline` (or equivalent) section in
+ * an executive brief. Many briefs include a dedicated headline section with
+ * a purpose-written summary sentence that outperforms the generic BLUF
+ * paragraph for SERP titles.
+ *
+ * Recognised section headings (case-insensitive):
+ *   - `## Headline` / `## Headlines`
+ *   - `## Intelligence Summary`
+ *   - `## BLUF` / `## 🎯 BLUF`
+ *
+ * Returns the first non-empty paragraph text (not bullets) from the matched
+ * section, or `null` if no such section exists or contains no paragraph.
+ */
+export function readHeadlineParagraph(briefMarkdown: string | undefined): string | null {
+  if (!briefMarkdown) return null;
+  const lines = briefMarkdown.split(/\r?\n/);
+  const HEADING_NAMES = [
+    'headline', 'headlines',
+    'intelligence summary',
+    'bluf', '🎯 bluf',
+  ];
+  let inSection = false;
+  let paragraphLines: string[] = [];
+
+  for (const line of lines) {
+    const isH2 = /^##\s/.test(line);
+    const isH1OrHigher = /^#\s/.test(line);
+
+    if (isH2) {
+      if (inSection) break; // next H2 ends the section
+      const headingText = line.replace(/^##\s+/, '').replace(/[*_`#]/g, '').trim().toLowerCase();
+      if (HEADING_NAMES.some((n) => headingText === n || headingText.startsWith(n + ' '))) {
+        inSection = true;
+      }
+      continue;
+    }
+    if (inSection && isH1OrHigher) break;
+    if (!inSection) continue;
+
+    // Skip thematic breaks, blank lines, bullets, metadata lines
+    if (/^[-*_]{3,}\s*$/.test(line)) continue;
+    if (/^[\s>]*[-*•·]\s+/u.test(line)) continue;
+    if (/^\*\*[^*]+\*\*:?\s/.test(line) && line.length < 80) continue; // metadata like **Date:** ...
+    if (/^</.test(line.trim())) continue; // HTML tags
+
+    const trimmed = line.trim();
+    if (trimmed.length === 0) {
+      // Blank line: if we already collected paragraph text, we're done.
+      if (paragraphLines.length > 0) break;
+      continue;
+    }
+    paragraphLines.push(trimmed);
+  }
+
+  if (paragraphLines.length === 0) return null;
+  return paragraphLines.join(' ').trim() || null;
+}
+
 export function titleFromBluf(bluf: string | null, maxLen: number = 70): string | null {
   if (!bluf) return null;
   const cleanRaw = markdownInlineToText(bluf);
@@ -371,7 +454,16 @@ export function titleFromBluf(bluf: string | null, maxLen: number = 70): string 
   const stripped = stripLeadingDatePrefix(labelStripped).trim();
   const meaningful = stripped.replace(/^[\s.!?…。।,;:—–-]+/u, '').trim();
   if (meaningful.length < 5) return null;
-  const clean = capitaliseFirst(meaningful);
+  // Strip embedded date-appositive clauses that bloat the title without
+  // adding editorial value. Pattern: "... of DD Month YYYY — <appositive> —"
+  // e.g. "Sweden's Riksdag session of 26 May 2026 — approximately 100 days
+  // before the election — delivered ..." → "Sweden's Riksdag session delivered ..."
+  const dateAppositive = meaningful.replace(
+    /\s+of\s+\d{1,2}\s+[A-Z][a-z]+\s+\d{4}\s*[—–-]\s*[^—–-]+[—–-]\s*/,
+    ' ',
+  );
+  const effective = dateAppositive.length >= 20 ? dateAppositive : meaningful;
+  const clean = capitaliseFirst(effective);
   SENTENCE_END_RE.lastIndex = 0;
   const m = SENTENCE_END_RE.exec(clean);
   const firstSentence = m ? clean.slice(0, m.index + m[0].length) : clean;

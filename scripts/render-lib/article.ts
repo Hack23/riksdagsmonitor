@@ -45,6 +45,8 @@ import { computeArticleHeadMetadata } from './article-head-metadata.js';
 import {
   readFirstHeading,
   cleanArticleTitle,
+  titleFromBluf,
+  readHeadlineParagraph,
 } from './aggregator/seo/title.js';
 import {
   composeRichDescription,
@@ -58,6 +60,7 @@ import {
   extractBriefEntities,
   flattenBriefEntities,
 } from './aggregator/seo/brief-extractor.js';
+import { titleWindowForLanguage } from './aggregator/seo/serp-budgets.js';
 /**
  * @deprecated Re-exported from `article-head-metadata.ts`. The function
  * body lives there now so the renderer, regenerator and QA tooling all
@@ -323,9 +326,35 @@ export function deriveBriefSeoOverrides(input: {
       const cleaned = cleanArticleTitle(rawH1, subfolder, 'en');
       if (cleaned && cleaned.length > 0) title = cleaned;
     }
+   // Step 2a — Headline-section paragraph. Many briefs have a dedicated
+   // `## Headline` or `## Intelligence Summary` section whose first
+   // paragraph is a purpose-written headline sentence — far better than
+   // the generic BLUF truncation for SERP titles.
+    if (title === null) {
+     const headlinePara = readHeadlineParagraph(input.englishBriefMarkdown!);
+     const synthesised = titleFromBluf(headlinePara);
+     if (synthesised && synthesised.length > 0) title = synthesised;
+   }
+   // Step 2b — BLUF-synthesised title when H1 is boilerplate/missing.
+   // The brief body (## Headline, ## Intelligence Summary, or BLUF para)
+   // often contains story-specific first sentences that serve better as
+   // SERP titles than the generic category-label fallback.
+   if (title === null) {
+     const bluf = readBlufParagraph(input.englishBriefMarkdown!)
+       ?? readFirstParagraph(input.englishBriefMarkdown!);
+     const synthesised = titleFromBluf(bluf);
+     if (synthesised && synthesised.length > 0) title = synthesised;
+   }
     if (description === null) {
       // Rich description (BLUF + headline-section bullets) — mirrors
-      // the aggregator's English path.
+      // the aggregator's English path. **Use `'en'` here** because we
+      // are extracting from the English brief markdown:
+      // `composeRichDescription` does language-specific section-heading
+      // lookup (`extractHeadlineSection(..., lang)`), and passing a
+      // non-EN lang would miss the English `## 60-Second Read` section
+      // and degrade rich descriptions for non-EN pages that fall back
+      // to EN content. The per-language SERP window is then enforced
+      // by the `capByWordBoundary` hardMax cap below for `input.lang`.
       const composed = composeRichDescription(input.englishBriefMarkdown!, 'en');
       if (composed && composed.length > 0) {
         description = composed;
@@ -344,11 +373,138 @@ export function deriveBriefSeoOverrides(input: {
     }
   }
 
+  // Final defence-in-depth admin-byline VALUE scrubber. The localized
+  // `executive-brief_<lang>.md` files use translated admin labels
+  // (`**Författare**`, `**المؤلف**`, `**Kirjoittaja**`, `**Forfatter**`,
+  // `**著者**`, `**Upphovsman**`, etc.) and not every translation is
+  // present in `ADMIN_FIELD_NAMES`. When a label is unrecognised the
+  // upstream extractors leak the VALUE (the editorial-byline name, the
+  // run-ID digits, the classification banner, the confidence grade)
+  // into the rendered SEO surface — a journalist searching for a
+  // specific date then sees `James Pether Sörling…` as the SERP
+  // snippet instead of the BLUF. This scrubber is label-agnostic: it
+  // matches the known VALUES that should never ship and removes them
+  // from the composed title / description.
+  if (title !== null) title = scrubAdminBylineValues(title);
+  if (description !== null) description = scrubAdminBylineValues(description);
+
+  // Final per-language ceiling enforcement. The localized-brief and
+  // EN-fallback paths each have their own truncation logic but the
+  // contract on this function is `length <= hardMax(lang)` for both
+  // title and description. Defense-in-depth: any future extractor
+  // upstream that forgets to truncate still ships within budget.
+  if (title !== null) {
+    const { hardMax: titleMax } = titleWindowForLanguage(input.lang);
+    if (title.length > titleMax) {
+      title = capByWordBoundary(title, titleMax);
+    }
+  }
+  if (description !== null) {
+    const { hardMax: descMax } = descriptionWindowForLanguage(input.lang);
+    if (description.length > descMax) {
+      description = capByWordBoundary(description, descMax);
+    }
+  }
+
   return {
     title: title ?? undefined,
     description: description ?? undefined,
-    entities,
+    entities: entities.filter((e) => !isAdminLeakEntity(e)),
   };
+}
+
+/**
+ * Detector for individual entity strings that encode admin-byline VALUES
+ * (editorial byline name, run-ID, classification banner, confidence
+ * grade, Admiralty grade, GDPR article). The entity miner picks up
+ * capitalized phrases like `Confidence HIGH` / `Classification PUBLIC`
+ * from the leading admin block when its label is not in
+ * `ADMIN_FIELD_NAMES`; filtering them at the boundary of
+ * `deriveBriefSeoOverrides` guarantees they never reach the keyword
+ * line or JSON-LD `keywords` array.
+ */
+const ADMIN_LEAK_ENTITY_PATTERNS: readonly RegExp[] = [
+  /James\s+Pether\s+S(?:ö|o)rling/i,
+  /\bHack23\s+AB\b/i,
+  /\b(?:Run[-\s]?ID|K[öo]rnings[-\s]?ID|Lauf[-\s]?ID|Ajo[-\s]?ID|实行ID|実行ID|운영\s*ID|实例ID)\b/i,
+  /(?:Confidence|Konfidens(?:nivå)?|Konfidenz|Luottamustaso|信頼度|信心度|Niveau de confiance|Nivel de confianza|Betrouwbaarheid)\s*[:：]?\s*(?:HIGH|HØJ|HØY|KORKEA|高い|高|HOCH|Élevé|Alto|Hoog|عالٍ?|גבוה)/i,
+  /\bClassification\b\s*[:：]?\s*PUBLIC/i,
+  /\bAdmiralty\s+(?:Range|Baseline|Code|Grade|Scale)\b/i,
+  /\bGDPR\s+Art\b/i,
+];
+
+function isAdminLeakEntity(entity: string): boolean {
+  for (const re of ADMIN_LEAK_ENTITY_PATTERNS) {
+    if (re.test(entity)) return true;
+  }
+  return false;
+}
+
+/**
+ * Admin-byline VALUE patterns that must never appear in a shipped
+ * SEO title or description regardless of source language. Each entry
+ * captures a value that is generated by the brief pipeline itself
+ * (editorial byline, classification banner, run-ID, OSINT Admiralty
+ * grade) so removing them never destroys article-content meaning.
+ *
+ * The scrubber excises the matched span plus any immediately
+ * surrounding admin-label fragment (`**Author**:`, `Författare:`,
+ * `Date:`, …) so we collapse `(Author: <byline>) ` style residue
+ * into clean whitespace.
+ */
+const ADMIN_VALUE_SCRUB_PATTERNS: readonly RegExp[] = [
+  /James\s+Pether\s+S(?:ö|o)rling[^\n]*?(?=(?:\s*[—•·|]\s*|\s*\.\s|$))/gi,
+  /\bHack23\s+AB\b[^\n]*?(?=(?:\s*[—•·|]\s*|\s*\.\s|$))/gi,
+  /\b(?:Run[-\s]?ID|K[öo]rnings[-\s]?ID|Lauf[-\s]?ID|Ajo[-\s]?ID|实行ID|実行ID|운영\s*ID|实例ID)\b\s*[:：]?\s*\d{6,}/gi,
+  /\b(?:Confidence|Konfidens(?:nivå)?|Konfidenz|Luottamustaso|信頼度|信心度|Niveau de confiance|Nivel de confianza|Betrouwbaarheid)\b\s*[:：]?\s*(?:HIGH|HØJ|HIGH\s*\[B\d\]|HØY|KORKEA|高い|高|HOCH|Élevé|Alto|Hoog|عالٍ?|גבוה)\b[^\n]*?(?=(?:\s*[—•·|]\s*|\s*\.\s|$))/gi,
+  /\bClassification\b\s*[:：]?\s*PUBLIC[^\n]*?(?=(?:\s*[—•·|]\s*|\s*\.\s|$))/gi,
+  /\bAdmiralty\s+(?:Range|Baseline|Code|Grade|Scale)\b[^\n]*?(?=(?:\s*[—•·|]\s*|\s*\.\s|$))/gi,
+  /\bGDPR\s+Art\.?\s*\d+(?:\(\d+\))?(?:\([a-z](?:[,;]\s*[a-z])*\))?[^\n]*?(?=(?:\s*[—•·|]\s*|\s*\.\s|$))/gi,
+];
+
+/**
+ * Strip admin-byline VALUES (editorial name, run-ID, classification
+ * banner, confidence grade) from the final SEO string. Pure
+ * label-agnostic — works on any source language.
+ */
+function scrubAdminBylineValues(text: string): string {
+  let cleaned = text;
+  for (const re of ADMIN_VALUE_SCRUB_PATTERNS) {
+    cleaned = cleaned.replace(re, ' ');
+  }
+  // Collapse any " — " / "•" / "·" / "|" residue left behind by the
+  // scrub plus tidy whitespace and dangling punctuation.
+  return cleaned
+    .replace(/\s*[—•·|]\s*(?=[—•·|])/g, ' ')
+    .replace(/\s*[—•·|]\s*$/u, '')
+    .replace(/^\s*[—•·|]\s*/u, '')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .trim();
+}
+
+/**
+ * Word-boundary truncation with `…` ellipsis. Used as a defence-in-depth
+ * cap on `deriveBriefSeoOverrides` output. The upstream extractors each
+ * apply their own language-aware truncation; this only fires when the
+ * result still exceeds the hard ceiling (e.g. an H1 that is itself
+ * longer than the per-language `hardMax`).
+ *
+ * The function tries to cut at a word boundary in the last 45% of the
+ * window; if no boundary exists it falls back to a hard slice. The
+ * resulting string is guaranteed to have `length <= maxLen`.
+ */
+function capByWordBoundary(text: string, maxLen: number): string {
+  if (text.length <= maxLen) return text;
+  if (maxLen <= 1) return '…'.slice(0, maxLen);
+  const sliced = text.slice(0, maxLen - 1);
+  const lastSpace = sliced.lastIndexOf(' ');
+  const cut = lastSpace > Math.floor(maxLen * 0.55) ? sliced.slice(0, lastSpace) : sliced;
+  // Strip dangling punctuation / connectors before adding ellipsis.
+  const stripped = cut
+    .replace(/[\s,;:\-—–]+$/u, '')
+    .trim();
+  return (stripped + '…').slice(0, maxLen);
 }
 
 export async function renderArticleHtml(input: RenderArticleInput): Promise<string> {

@@ -74,6 +74,8 @@ import {
 import {
   cleanArticleTitle,
   readFirstHeading,
+  readHeadlineParagraph,
+  titleFromBluf,
 } from './title.js';
 
 /**
@@ -221,6 +223,15 @@ export function extractLocalizedBriefSeo(
   if (rawH1 && !isBannedLocalizedBriefH1(rawH1)) {
     title = cleanArticleTitle(rawH1, subfolder, langKey);
   }
+  if (title === null) {
+    const headlineParagraph = readHeadlineParagraph(briefMarkdown);
+    title = titleFromBluf(headlineParagraph);
+  }
+  if (title === null) {
+    const blufParagraph = readBlufParagraph(briefMarkdown, langKey)
+      ?? readFirstParagraph(briefMarkdown);
+    title = titleFromBluf(blufParagraph);
+  }
 
   // Description — `composeRichDescription` combines the BLUF lede with
   // the localized headline-section bullets (`## 60-Second Read` → `##
@@ -235,7 +246,7 @@ export function extractLocalizedBriefSeo(
   } else {
     // Defensive fallback for legacy callers / unknown languages — keep
     // the pre-rich-composer behaviour so nothing regresses to empty.
-    const blufParagraph = readBlufParagraph(briefMarkdown);
+    const blufParagraph = readBlufParagraph(briefMarkdown, langKey);
     const fallbackParagraph = blufParagraph ? null : readFirstParagraph(briefMarkdown);
     const rawDescription = blufParagraph ?? fallbackParagraph;
     if (rawDescription && rawDescription.trim().length > 0) {

@@ -512,6 +512,223 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
     const input = '## 🎯 BLUF\n\nBLUF: Five interpellations filed today.';
     expect(readBlufParagraph(input)).toBe('Five interpellations filed today.');
   });
+
+  // ──────────────────────────────────────────────────────────────────
+  // 14-language localised BLUF heading matchers (2026-05-26 audit).
+  //
+  // Roughly half of translated executive briefs drop the literal
+  // `BLUF` token in favour of a native-language summary heading
+  // (`## Sammanfattning`, `## 핵심 요약`, `## 执行摘要`,
+  // `## الخلاصة التنفيذية`, …). Without per-language matching, those
+  // briefs silently fall back to `readFirstParagraph` and ship the
+  // admin byline as the meta-description. Each fixture below was
+  // observed in the live corpus.
+  // ──────────────────────────────────────────────────────────────────
+
+  it.each([
+    ['sv', '## 📌 Sammanfattning'],
+    ['sv', '## 🎯 Slutsats'],
+    ['da', '## 🎯 Konklusion'],
+    ['da', '## 📌 Sammenfatning'],
+    ['no', '## 🎯 Konklusjon'],
+    ['no', '## 📌 Sammendrag'],
+    ['fi', '## 🎯 Yhteenveto'],
+    ['fi', '## 📌 Tiivistelmä'],
+    ['de', '## 🎯 Zusammenfassung'],
+    ['de', '## 📌 Fazit'],
+    ['fr', '## 🎯 Conclusion'],
+    ['fr', '## 📌 Résumé'],
+    ['es', '## 🎯 Conclusión'],
+    ['es', '## 📌 Resumen ejecutivo'],
+    ['nl', '## 🎯 Conclusie'],
+    ['nl', '## 📌 Samenvatting'],
+    ['ar', '## 🎯 الملخص التنفيذي'],
+    ['ar', '## 📌 الخلاصة التنفيذية'],
+    ['he', '## 🎯 תמצית מנהלים'],
+    ['he', '## 📌 תקציר מנהלים'],
+    ['ja', '## 🎯 要約'],
+    ['ja', '## 📌 要旨'],
+    ['ko', '## 🎯 핵심 요약'],
+    ['ko', '## 📌 요약'],
+    ['zh', '## 🎯 执行摘要'],
+    ['zh', '## 📌 核心摘要'],
+    // ── New entries from the 80.5% → 100% coverage expansion ──
+    // BLUF-equivalent and template-anchor sections observed as the
+    // first H2 of translated briefs in the live corpus. Each fixture
+    // pins one previously-NONE pattern; removal here causes that
+    // brief to fall back to readFirstParagraph and leak admin bylines.
+    ['sv', '## Övergripande bedömning'],
+    ['sv', '## Underrättelsesummering'],
+    ['no', '## 60-sekunders lesing (8 punkter)'],
+    ['fi', '## ⚡ Huippotason tiedustelu'],
+    ['da', '## Beslutninger der kræves straks'],
+    ['de', '## Sofort erforderliche Entscheidungen'],
+    ['fr', '## Décisions immédiates requises'],
+    ['es', '## Decisiones inmediatas requeridas'],
+    ['nl', '## Onmiddellijk vereiste beslissingen'],
+    ['ar', '## 🎯 ملخص'],
+    ['he', '## כותרת ראשית'],
+    ['ja', '## エグゼクティブサマリー'],
+    ['ja', '## 5点エグゼクティブサマリー'],
+    ['ko', '## 종합 평가'],
+    ['ko', '## 즉각적인 결정 사항'],
+    ['zh', '## 即刻所需决策'],
+    ['zh', '## 60秒阅读'],
+  ] as const)('[%s] readBlufParagraph matches localised heading "%s"', (lang, heading) => {
+    const input = `# Title\n\n${heading}\n\nThe lede sentence.\n\n## Next\n\nMore.`;
+    expect(readBlufParagraph(input, lang)).toBe('The lede sentence.');
+  });
+
+  it('readBlufParagraph(md, "en") still matches the literal `BLUF` token for translated briefs that preserve the English acronym', () => {
+    // Half of non-EN briefs keep `BLUF` as a recognised intelligence
+    // term — those must continue to match via the universal default
+    // alternation, no matter what `lang` we pass.
+    const input = '# Title\n\n## 🎯 BLUF\n\nThe lede.\n\n## Next';
+    expect(readBlufParagraph(input, 'sv')).toBe('The lede.');
+    expect(readBlufParagraph(input, 'ar')).toBe('The lede.');
+    expect(readBlufParagraph(input, 'zh')).toBe('The lede.');
+  });
+
+  it('readBlufParagraph(md) without a lang preserves legacy English-only behaviour', () => {
+    // Backward-compat regression guard: the no-lang call signature is
+    // used by `article.ts` and `aggregate.ts` when extracting from the
+    // English brief markdown. Localised headings must NOT match here
+    // (e.g. a Spanish prose paragraph containing the word "Resumen"
+    // in body text must not be promoted to BLUF when no `lang` is
+    // supplied).
+    const input = '# Title\n\n## 🎯 Sammanfattning\n\nSwedish lede.';
+    expect(readBlufParagraph(input)).toBeNull();
+  });
+
+  it('readBlufParagraph accepts a blockquote-formatted BLUF body', () => {
+    // Some translated briefs render the BLUF paragraph as a Markdown
+    // blockquote (`> …`) rather than a plain paragraph. The cascade
+    // must strip the `> ` prefix from each line and return the
+    // collapsed prose. Removing the blockquote branch in
+    // `readBlufParagraph` causes those briefs to count as NONE in
+    // corpus coverage and silently ship the admin byline.
+    const input = '# Title\n\n## BLUF\n\n> The lede sentence spans\n> two quoted lines.\n\n## Next';
+    expect(readBlufParagraph(input)).toBe('The lede sentence spans two quoted lines.');
+  });
+
+  it('buildBlufHeadingRegex matches a parenthesised "(BLUF)" suffix variant', () => {
+    // Briefs sometimes write the heading as
+    //   `## Kärnbudskap (BLUF)` / `## 核心要点（BLUF）`
+    // — the keyword is in parens AFTER a localised label.
+    // `buildBlufHeadingRegex` must allow `(` and `（` as the
+    // pre-keyword separator character.
+    const sv = '# T\n\n## Kärnbudskap (BLUF)\n\nThe sv lede.\n\n## X';
+    expect(readBlufParagraph(sv, 'sv')).toBe('The sv lede.');
+    const zh = '# T\n\n## 核心要点（BLUF）\n\nThe zh lede.\n\n## X';
+    expect(readBlufParagraph(zh, 'zh')).toBe('The zh lede.');
+  });
+
+  it('buildBlufHeadingRegex matches a CJK-script prefix before the keyword', () => {
+    // Japanese briefs may write `## 結論優先の要約` — the dictionary
+    // entry is `結論優先の要約` (no separator before it), but in
+    // some files the heading reads `## 【BLUF】要約` with `]` /
+    // `】` between an emoji-bracket prefix and the keyword. The
+    // regex must allow CJK script characters (Han/Hiragana/Katakana/
+    // Hangul) as a valid pre-keyword character so the alternation
+    // can match without requiring a literal space.
+    const ja = '# T\n\n## 【要約】の要点\n\nJa lede.\n\n## X';
+    expect(readBlufParagraph(ja, 'ja')).toBe('Ja lede.');
+  });
+
+  it('cleanArtifactBody strips a leading Unicode bidi mark from RTL headings', () => {
+    // Arabic / Hebrew translated briefs sometimes carry a leading
+    // RLM (U+200F) or LRM (U+200E) on the H2 heading line. Without
+    // stripping these line-start bidi marks the `^#{2,6}` anchor
+    // never matches and the brief is counted as NONE in coverage.
+    // `cleanArtifactBody` must strip U+200E..U+202E and U+2066..U+2069
+    // at the start of each line. The integration is verified end-to-end
+    // here by feeding the cleaned body to `readBlufParagraph`.
+    const rawAr = '# Title\n\n\u200F## الملخص التنفيذي\n\nالنص العربي للملخص.\n\n## Next';
+    const cleanedAr = cleanArtifactBody(rawAr);
+    expect(readBlufParagraph(cleanedAr, 'ar')).toBe('النص العربي للملخص.');
+    const rawHe = '# Title\n\n\u200E## תמצית מנהלים\n\nתקציר בעברית.\n\n## Next';
+    const cleanedHe = cleanArtifactBody(rawHe);
+    expect(readBlufParagraph(cleanedHe, 'he')).toBe('תקציר בעברית.');
+  });
+
+  // ── Corpus-derived regression guards: specific heading forms found ──
+  // in 2026-05 production briefs that were previously unrecognised,
+  // causing `readBlufParagraph` to fall through to a later, generic
+  // section (e.g. `## Synthèse des risques` via bare `synthèse` in FR,
+  // or `## 风险摘要` via bare `摘要` in ZH) and leak risk-matrix bullets
+  // into the SERP description instead of the high-quality BLUF prose.
+
+  it('[fr] évaluation de situation synthétique is matched as BLUF (prevents fallthrough to Synthèse des risques)', () => {
+    const brief = [
+      '# Propositions test',
+      '',
+      '**Classification** : OSINT · **Confiance** : MOYEN-ÉLEVÉ',
+      '',
+      '## 🎯 Évaluation de situation synthétique',
+      '',
+      'Du 30 avril au 7 mai 2026, le gouvernement Kristersson a soumis 10 propositions.',
+      '',
+      '## Lecture en 60 secondes',
+      '',
+      '- HD03267: Expulsion accélérée',
+      '',
+      '## Synthèse des risques',
+      '',
+      '- **Niveau 1 (systémique)** : Mise en œuvre HD03262 → risque de capacité ÉLEVÉ.',
+      '',
+    ].join('\n');
+    const result = readBlufParagraph(brief, 'fr');
+    expect(result).not.toBeNull();
+    expect(result).toContain('gouvernement Kristersson');
+    // Must NOT leak the risk-matrix content
+    expect(result).not.toContain('Niveau 1');
+  });
+
+  it('[es] síntesis de situación is matched as BLUF', () => {
+    const brief = [
+      '# Mociones test',
+      '',
+      '**Clasificación**: OSINT · **Confianza**: MEDIO-ALTO',
+      '',
+      '## Síntesis de situación',
+      '',
+      'S exige el rechazo total de la prop 255 por motivos de RGPD.',
+      '',
+      '## Lectura en 60 segundos (8 puntos)',
+      '',
+      '1. **S contra MP**: análisis de la prop 255',
+      '',
+    ].join('\n');
+    const result = readBlufParagraph(brief, 'es');
+    expect(result).not.toBeNull();
+    expect(result).toContain('RGPD');
+  });
+
+  it('[zh] 态势简要评估 is matched as BLUF (prevents fallthrough to 风险摘要)', () => {
+    const brief = [
+      '# ZH propositions test',
+      '',
+      '**分类**：公开OSINT · **可信度**：中高',
+      '',
+      '## 🎯 态势简要评估',
+      '',
+      '2026年4月，克里斯特松政府提交了10项议会议案。',
+      '',
+      '## 60秒速读',
+      '',
+      '- **最重要**：HD03262——废除永久居留许可',
+      '',
+      '## 风险摘要',
+      '',
+      '- **第1级（系统性）**：HD03262实施 → 能力风险高。',
+      '',
+    ].join('\n');
+    const result = readBlufParagraph(brief, 'zh');
+    expect(result).not.toBeNull();
+    expect(result).toContain('克里斯特松政府');
+    // Must NOT leak the risk-matrix content
+    expect(result).not.toContain('第1级');
+  });
 });
 
 describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {

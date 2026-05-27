@@ -193,7 +193,7 @@ export function findTranslatedBriefs(dir: string): BriefFile[] {
         walk(fullPath);
       } else if (entry.isFile()) {
         const m = BRIEF_LANG_RE.exec(entry.name);
-        if (m) out.push({ filepath: fullPath, lang: m[1] });
+        if (m && m[1] !== 'en') out.push({ filepath: fullPath, lang: m[1] });
       }
     }
   }

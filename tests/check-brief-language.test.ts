@@ -150,6 +150,7 @@ describe('check-brief-language — findTranslatedBriefs + validateBriefLanguages
 
   it('finds executive-brief_<lang>.md files and skips the English source', () => {
     write('2026-05-20/propositions/executive-brief.md', '# EN source');
+    write('2026-05-20/propositions/executive-brief_en.md', '# EN suffix');
     write('2026-05-20/propositions/executive-brief_sv.md', '# SV brief');
     write('2026-05-20/propositions/executive-brief_de.md', '# DE brief');
     write('2026-05-20/propositions/article.md', '# article');

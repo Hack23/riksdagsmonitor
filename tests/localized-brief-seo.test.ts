@@ -32,6 +32,7 @@ import {
   isBannedLocalizedBriefH1,
   LOCALIZED_BRIEF_H1_BANNED_PATTERNS,
 } from '../scripts/render-lib/aggregator/seo/localized-brief.js';
+import type { Language } from '../scripts/types/language.js';
 
 // ---------------------------------------------------------------------------
 // Fixtures
@@ -159,32 +160,38 @@ describe('extractLocalizedBriefSeo', () => {
     expect(out.description!).toContain('12,4 miljarder');
   });
 
-  it('returns null title but a valid description when H1 is the REPLACE-THIS-H1 placeholder', () => {
+  it('falls back to BLUF-derived title when H1 is the REPLACE-THIS-H1 placeholder', () => {
     const out = extractLocalizedBriefSeo({
       briefMarkdown: placeholderBrief,
       subfolder: 'propositions',
     });
-    expect(out.title).toBeNull();
+    // BLUF fallback synthesizes title from BLUF text
+    expect(out.title).toBeTruthy();
+    expect(out.title!.length).toBeLessThanOrEqual(70);
     expect(out.description).toBeTruthy();
     expect(out.description!).toContain('kort sammanfattning');
   });
 
-  it('returns null title when H1 carries the AI_MUST_REPLACE marker', () => {
+  it('falls back to BLUF-derived title when H1 carries the AI_MUST_REPLACE marker', () => {
     const out = extractLocalizedBriefSeo({
       briefMarkdown: aiMustReplaceBrief,
       subfolder: 'motions',
     });
-    expect(out.title).toBeNull();
+    // BLUF fallback synthesizes title from BLUF text
+    expect(out.title).toBeTruthy();
+    expect(out.title!.length).toBeLessThanOrEqual(70);
     expect(out.description).toBeTruthy();
     expect(out.description!).toContain('Faktisk BLUF-mening');
   });
 
-  it('returns null title when H1 carries the banned phrase "AI-generated political intelligence"', () => {
+  it('falls back to BLUF-derived title when H1 carries the banned phrase "AI-generated political intelligence"', () => {
     const out = extractLocalizedBriefSeo({
       briefMarkdown: aiGeneratedPhraseBrief,
       subfolder: 'motions',
     });
-    expect(out.title).toBeNull();
+    // BLUF fallback synthesizes title from BLUF text
+    expect(out.title).toBeTruthy();
+    expect(out.title!.length).toBeLessThanOrEqual(70);
     expect(out.description).toBeTruthy();
     expect(out.description!).toContain('Sverigedemokraterna');
   });
@@ -194,9 +201,57 @@ describe('extractLocalizedBriefSeo', () => {
       briefMarkdown: bareBoilerplateBrief,
       subfolder: 'votes',
     });
-    expect(out.title).toBeNull();
+    expect(out.title).toBe('Justitieutskottet röstade 11–6 mot regeringens förslag om utökade');
     expect(out.description).toBeTruthy();
     expect(out.description!).toContain('Justitieutskottet');
+  });
+
+  it('falls back to a localized BLUF-derived title when the translated H1 is boilerplate', () => {
+    const out = extractLocalizedBriefSeo({
+      briefMarkdown: [
+        '# Executive Brief — Monthly Review 2026-04-26',
+        '',
+        '## 🎯 BLUF',
+        '',
+        'Das 30-Tages-Fenster 2026-03-27 → 2026-04-26 markiert die gesetzgeberische Abschlussphase des 2025/26-Portfolios der Tidö-Koalition.',
+      ].join('\n'),
+      subfolder: 'monthly-review',
+      lang: 'de',
+    });
+    expect(out.title).toContain('Das 30-Tages-Fenster');
+    expect(out.title).not.toContain('Executive Brief');
+    expect(out.description).toContain('gesetzgeberische Abschlussphase');
+  });
+
+  it('preserves year-led Japanese titles instead of stripping leading digits as emoji', () => {
+    const out = extractLocalizedBriefSeo({
+      briefMarkdown: [
+        '# 2026年5月先行予測：スウェーデンの選挙前立法クライマックス',
+        '',
+        '## 🎯 要点',
+        '',
+        'スウェーデンのリクスダーグは2026年5月を迎えるにあたり、クリステション政権の安全・秩序プログラムが立法のクライマックスに近づいている。',
+      ].join('\n'),
+      subfolder: 'month-ahead',
+      lang: 'ja',
+    });
+    expect(out.title).toBe('2026年5月先行予測：スウェーデンの選挙前立法クライマックス');
+  });
+
+  it('accepts concise but valid Chinese headlines that are shorter than the Latin minimum', () => {
+    const out = extractLocalizedBriefSeo({
+      briefMarkdown: [
+        '# 社会民主党挑战政府反腐过度立法',
+        '',
+        '## 🎯 核心结论',
+        '',
+        '社会民主党提交委员会动议 HD024099，挑战政府的反腐旗舰提案并将公务员刑事问责推向选前政治中心。',
+      ].join('\n'),
+      subfolder: 'motions',
+      lang: 'zh',
+    });
+    expect(out.title).toBe('社会民主党挑战政府反腐过度立法');
+    expect(out.description).toContain('HD024099');
   });
 
   it('falls back to first prose paragraph when no BLUF heading is present', () => {
@@ -250,10 +305,10 @@ describe('extractLocalizedBriefSeo', () => {
     expect(out.description!).toMatch(/[.!?。।…]\s*$|…$/);
   });
 
-  it('rejects an H1 that collapses to the subfolder fallback after cleaning', () => {
+  it('falls back to BLUF-derived title when H1 collapses to the subfolder label after cleaning', () => {
     // `cleanArticleTitle` checks the cleaned H1 against the prettified
-    // subfolder label; a bare `# Propositions` H1 must therefore yield
-    // `title: null`.
+    // subfolder label; a bare `# Propositions` H1 is banned, so BLUF fallback
+    // synthesizes a title from the BLUF text.
     const briefWithSlugTitle = [
       '# Propositions',
       '',
@@ -265,7 +320,59 @@ describe('extractLocalizedBriefSeo', () => {
       briefMarkdown: briefWithSlugTitle,
       subfolder: 'propositions',
     });
-    expect(out.title).toBeNull();
+    expect(out.title).toBeTruthy();
+    expect(out.title!.length).toBeLessThanOrEqual(70);
     expect(out.description).toBeTruthy();
+  });
+
+  it('strips new decision-analysis prefix forms from H1 titles', () => {
+    const prefixes = [
+      { lang: 'sv', prefix: 'Beslutsunderlag', topic: 'försvarsutgifter' },
+      { lang: 'de', prefix: 'Entscheidungsunterlage', topic: 'Verteidigungshaushalt' },
+      { lang: 'fr', prefix: "Note d'analyse décisionnelle", topic: 'budget de la défense' },
+      { lang: 'es', prefix: 'Nota de análisis decisional', topic: 'defensa' },
+      { lang: 'ja', prefix: '意思決定分析', topic: '防衛予算の増額' },
+      { lang: 'ko', prefix: '의사결정 분석', topic: '국방 예산 증액' },
+      { lang: 'zh', prefix: '决策分析简报', topic: '国防预算增加' },
+    ];
+    for (const { lang, prefix, topic } of prefixes) {
+      const brief = [
+        `# ${prefix} — ${topic}`,
+        '',
+        '## BLUF',
+        '',
+        `Detaljtext om ${topic}.`,
+      ].join('\n');
+      const out = extractLocalizedBriefSeo({
+        briefMarkdown: brief,
+        subfolder: 'propositions',
+        lang: lang as Language,
+      });
+      expect(out.title).toBeTruthy();
+      // The prefix should have been stripped
+      expect(out.title!).not.toContain(prefix);
+      expect(out.title).toContain(topic);
+    }
+  });
+
+  it('skips HTML block elements in readFirstParagraph fallback', () => {
+    const briefWithHtml = [
+      '# Verteidigungshaushalt steigt auf 132 Milliarden',
+      '',
+      '<p align="center"><img src="chart.png" /></p>',
+      '',
+      '<div class="metadata">Author: System</div>',
+      '',
+      'Tatsächlicher Absatz mit den wichtigsten Informationen zum Thema.',
+    ].join('\n');
+    const out = extractLocalizedBriefSeo({
+      briefMarkdown: briefWithHtml,
+      subfolder: 'propositions',
+      lang: 'de',
+    });
+    expect(out.description).toBeTruthy();
+    // Description should NOT contain HTML tags
+    expect(out.description!).not.toMatch(/<[a-zA-Z]/);
+    expect(out.description!).toContain('Tatsächlicher Absatz');
   });
 });
