@@ -28,6 +28,8 @@
 | PIR-RT-008 | Does Riksrevisionen schedule a parliamentary follow-up hearing on RiR 2025:32 (migration detention)? | Riksrevisionen website: hearing announcement by 2026-08-31 | 2026-08-31 | MEDIUM |
 | PIR-RT-009 | Does IVO (healthcare inspectorate) publish elderly care inspection data showing systemic deterioration? | IVO quarterly report (expected 2026-09-01) | 2026-09-01 | MEDIUM |
 | PIR-RT-010 | Does SAAB or another Swedish defence company announce NATO partner export deal under new UU18 rules? | Company press release/annual report within 6 months of UU18 entry into force | 2026-12-31 | LOW-MEDIUM |
+| PIR-RT-011 | Does C or L publish a statement criticising UbU29 data protection risk (school registry checks)? | Party press statement within 30 days | 2026-06-27 | HIGH — C joined opposition reservation |
+| PIR-RT-012 | Does consumer advocacy group (Konsumentverket) publish first impact assessment of FiU39 cash mandate? | Konsumentverket.se within 90 days of law entry into force | 2026-10-31 | MEDIUM |
 
 ---
 
@@ -39,7 +41,7 @@
 |-----------|--------------|-------------|
 | JuU38 media coverage | SVT, DN, Aftonbladet coverage of gang movement restrictions | Validates/undermines Tidö crime narrative |
 | RFSL/Civil society response to HD11841 | Press releases on LGBTQ+ school safety | S amplification indicator |
-| Government vote schedule | Riksdag voting calendar for committee report votes | Confirms all six Betänkanden pass as expected |
+| **CLOSED: Betänkanden passage confirmed** | All morning betänkanden passed as expected; UbU29 vote confirmed S+V+C+MP all voted against on p.2 | Intelligence gap on vote uncertainty now resolved |
 
 ### T+7d (2026-06-03)
 

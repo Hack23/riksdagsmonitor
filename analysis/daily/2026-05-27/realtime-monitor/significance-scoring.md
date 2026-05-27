@@ -27,12 +27,36 @@
 
 ## Aggregate Session Score
 
-- **Total documents**: 12
+- **Total documents**: 12 (morning session)
 - **Critical (L3)**: 3 (25%)
 - **High (L2)**: 6 (50%)
 - **Medium (L1)**: 2 (17%)
 - **Low (L0)**: 1 (8%)
 - **Session significance**: HIGH — three critical-level legislative advances simultaneous with major opposition interpellation cluster
+
+---
+
+## Afternoon Session Documents (re-run addition, 16:00–17:00 CET)
+
+Confirmed vote records and new betänkanden discovered in improvement-mode re-run:
+
+| dok_id | Title | Base DIW | EP Mult | Final Score | Level | Justification |
+|--------|-------|----------|---------|-------------|-------|---------------|
+| HD01UbU29 | Utökade registerkontroller i skolväsendet | 4.2 | 1.5 | 6.3 | L2 HIGH | Extended school staff background registry checks. S+V+C+MP all voted against (confirmed: S 0-106). Government coalition M+SD+KD+L carried. Significant civil liberties vs child safety tension in election year. |
+| HD01UbU27 | Bättre förutsättningar för yrkesutbildning | 3.5 | 1.5 | 5.25 | L2 HIGH | Vocational training reform strengthening school-business ties. S+MP voted against on employer curriculum-influence grounds. Economic competence dimension for Tidö. |
+| HD01FiU39 | Åtgärder för att stärka kontanternas funktionssätt | 3.8 | 1.5 | 5.7 | L2 HIGH | Mandatory cash acceptance at staffed grocery and pharmacy checkouts. S voted against overall but abstained on C's stricter-obligation reservation — nuanced opposition. Consumer rights dimension for pensioner electorate. |
+| HD01FiU42 | Förenklad leverantörskontroll vid upphandling | 3.0 | 1.0 | 3.0 | L1 MEDIUM | Simplified supplier vetting in public procurement. S voted against main provision; S abstained on V's stricter-oversight reservation. No clear electoral nexus; EP multiplier not applied. |
+| HD01UU3 | Fördjupad resultatredovisning av internationellt bistånd | 3.2 | 1.0 | 3.2 | L1 MEDIUM | Enhanced ODA results reporting. Cross-party majority. Sweden's aid policy monitoring. No sharp partisan split. |
+| HD01UU4 | Nordiskt samarbete inklusive Arktis | 3.5 | 1.5 | 5.25 | L2 HIGH | Nordic/Arctic cooperation framework. S voted for p.1 (cross-party) but against p.2. UU7y opinion (2026 Spring Budget) filed same day — geopolitical fiscal coherence risk flagged. NATO/Arctic strategic dimension. |
+| HD01CU26 | En ny konsumentkreditlag | 3.2 | 1.5 | 4.8 | L2 HIGH | New consumer credit law. Debt trap protection for lower-income households. S+others likely voted in favour (cross-party consumer protection consensus). Household debt election relevance. |
+| HD01UbU21 | Överlämnande av uppgifter mellan skolor i brottsförebyggande syfte | 3.0 | 1.5 | 4.5 | L2 HIGH | School-to-school crime prevention data sharing. Cross-party support (S voted yes). Only MP filed reservation on data protection grounds. Bridges security and education agendas. |
+
+**Updated session totals (full day)**:
+- Total documents: 20 (12 morning + 8 afternoon)
+- Critical (L3): 3 (15%)
+- High (L2): 13 (65%)
+- Medium (L1): 4 (20%)
+- Session significance: VERY HIGH — highest single-day legislative density in 2025/26 session to date
 
 ---
 

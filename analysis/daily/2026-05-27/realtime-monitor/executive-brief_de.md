@@ -66,6 +66,36 @@ SD-Interpellation zu vansinneskörningar (Hochgeschwindigkeits-Raserei). Fordert
 
 ---
 
+## NACHMITTAGSSITZUNG: BESTÄTIGTE ABSTIMMUNGSPROTOKOLLE (16:00–17:00 CET)
+
+*Neuerhobene Daten gesammelt am 2026-05-27T16:52Z — erster Durchlauf nahm Zustimmung für Morgenbetänkanden an. Folgende Nachmittagsabstimmungen sind nun vollständig bestätigt.*
+
+### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — UbU29: Erweiterte Registerprüfungen im Schulwesen
+**Erweiterte Registerprüfungen im Schulwesen** mit Regierungsmehrheit angenommen. Abstimmung zu p.2 (Oppositionsreservation S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Interpretation**: Alle Sozialdemokraten, Vänsterpartiet, Centerpartiet und Miljöpartiet stimmten gegen erweiterte Hintergrundüberprüfungen für Schulpersonal; die M+SD+KD+L-Koalition trug die Abstimmung. C schloss sich der S-geführten Opposition an — bemerkenswert angesichts C's üblicher Gesetz-und-Ordnung-Haltung; C's Bedenken betrifft Datenintegrität und Verhältnismäßigkeit. **Wahlnexus**: UbU29 wird in S/V/C/MP-Kampagnen als „Überwachungsschleichen in Schulen" figurieren.
+
+### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — UbU27: Berufsausbildungsreform
+**Bessere Voraussetzungen für Berufsausbildung** angenommen. Abstimmung zu p.3 (S+MP-Reservation): S 0-106, SD 70-0, M 66-0. Die Reform stärkt Schule-Wirtschaft-Kooperationsrahmen. Überparteiliche Unterstützung brach bei Berufsausbildungslehrplandetails zusammen.
+
+### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — FiU39: Schutz von Bargeldtransaktionen
+**Maßnahmen zur Stärkung der Bargeldfunktionalität** angenommen. Abstimmung zu p.3 (S+V-Reservation): S 0-106, SD 70-0, M 66-0. Abstimmung zu p.4 (C-Reservation): S 0-0-106 (enthielt sich), SD 70-0, M 66-0. **Interpretation**: S stimmte gegen das Bargeldschutzgesetz insgesamt, enthielt sich aber bei C's Reservationsdetail — signalisiert teilweise Übereinstimmung mit C's Position. Lebensmittelgeschäfte und Apotheken werden verpflichtet, Bargeld an besetzten Kassen anzunehmen.
+
+### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — FiU42: Vereinfachte Lieferantenkontrolle bei Beschaffung
+**Vereinfachte Lieferantenkontrolle bei öffentlicher Beschaffung** angenommen. Abstimmung zu p.2 (S+V+MP): S 0-106. Abstimmung zu p.3 (V-Reservation): S 0-0-106 (enthielt sich), SD 70-0, M 66-0. **Interpretation**: S stimmte gegen vereinfachte Lieferantenkontrolle in der Hauptabstimmung, enthielt sich aber bei V's strengeren Forderungen.
+
+### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — UbU21: Schuldatenaustausch zur Kriminalitätsprävention
+**Weitergabe von Daten zwischen Schulen zur Kriminalitätsprävention** — S schloss sich der Regierungsmehrheit bei p.1 an (überparteilich: S 106+), aber MP reichte eine Reservation zu p.2 ein (Datenschutzgründe). **Interpretation**: Überparteiliche Unterstützung für grundlegenden Schule-zu-Schule-Datenaustausch; nur MP widersetzte sich aus Datenschutzgründen.
+
+### NEUE BETÄNKANDEN ABGESTIMMT (Nachmittagssitzung)
+| Bezeichnung | Titel | Ausschuss | Angenommen |
+|-------------|-------|-----------|------------|
+| UU3 | Vertiefte Ergebnisberichterstattung internationaler Hilfe | UU | ✅ Überparteiliche Mehrheit |
+| UU4 | Nordische Zusammenarbeit einschließlich Arktis | UU | ✅ M+SD+KD+L (C+S=Reservation p.2) |
+| CU26 | Ein neues Verbraucherkreditgesetz | CU | ✅ Regierungsmehrheit |
+
+**UU7y** (Stellungnahme): UU reichte seine Stellungnahme zum Frühjahrshaushalt 2026 (prop. 2025/26:100) bei KU ein — datiert 2026-05-27. Schlüsselergebnis: UU unterstützt das vorgeschlagene ODA-Budgetniveau, flaggt aber „geopolitisches Kohärenzrisiko" wenn sowohl Militär- als auch Entwicklungsausgaben gleichzeitig wachsen.
+
+---
+
 ## WIRTSCHAFTLICHER KONTEXT
 
 **IMF WEO-2026-04 (April 2026 Ausgabe — aktuell)**:
@@ -88,4 +118,4 @@ SD-Interpellation zu vansinneskörningar (Hochgeschwindigkeits-Raserei). Fordert
 | PIR-RT-003 | Lagrådets Vorbehalt zu Prop. 2025/26:267 | ABGELAUFEN | 2026-05-25 | Horizont überschritten — weitergeführt als N2-Nachrichtenlücke |
 | PIR-RT-004 | Kindergewahrsam-Medienzyklus dauert 2–10 Tage | ÜBERWACHUNG | 2026-06-01 | Unzureichendes Signal in heutigen Daten |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->

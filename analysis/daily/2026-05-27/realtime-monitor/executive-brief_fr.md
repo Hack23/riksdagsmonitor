@@ -66,6 +66,36 @@ Interpellation SD sur les vansinneskörningar (courses à grande vitesse). Exige
 
 ---
 
+## SESSION DE L'APRÈS-MIDI : PROCÈS-VERBAUX DE VOTE CONFIRMÉS (16:00–17:00 CET)
+
+*Données de réexécution collectées le 2026-05-27T16:52Z — la première exécution avait supposé l'adoption pour les betänkanden du matin. Les votes suivants de l'après-midi sont désormais entièrement confirmés.*
+
+### PROCÈS-VERBAL DE VOTE CONFIRMÉ — UbU29 : Contrôles de registre étendus dans l'enseignement
+**Contrôles de registre étendus dans le système scolaire** adopté par la chambre avec la majorité gouvernementale. Vote sur p.2 (réservation de l'opposition S+V+C+MP) : S 0-106, SD 70-0, M 66-0. **Interprétation** : Tous les sociaux-démocrates, Vänsterpartiet, Centerpartiet et Miljöpartiet ont voté contre les vérifications d'antécédents élargies pour le personnel scolaire ; la coalition M+SD+KD+L a emporté le vote. C a rejoint l'opposition menée par S — notable étant donné la position habituelle de C sur la loi et l'ordre ; la préoccupation de C concerne l'intégrité des données et la proportionnalité. **Nexus électoral** : UbU29 figurera dans les campagnes S/V/C/MP comme « dérive de surveillance dans les écoles ».
+
+### PROCÈS-VERBAL DE VOTE CONFIRMÉ — UbU27 : Réforme de la formation professionnelle
+**Meilleures conditions pour la formation professionnelle** adopté. Vote sur p.3 (réservation S+MP) : S 0-106, SD 70-0, M 66-0. La réforme renforce les cadres de coopération école-entreprise. Le soutien transpartisan s'est effondré sur les détails du programme de formation professionnelle.
+
+### PROCÈS-VERBAL DE VOTE CONFIRMÉ — FiU39 : Protection des transactions en espèces
+**Mesures pour renforcer le fonctionnement des espèces** adopté. Vote sur p.3 (réservation S+V) : S 0-106, SD 70-0, M 66-0. Vote sur p.4 (réservation C) : S 0-0-106 (abstention), SD 70-0, M 66-0. **Interprétation** : S a voté contre la loi de protection des espèces dans l'ensemble, mais s'est abstenu sur le détail de la réservation de C — signalant un accord partiel avec la position de C. Les épiceries et pharmacies seront obligées d'accepter les espèces aux caisses dotées de personnel.
+
+### PROCÈS-VERBAL DE VOTE CONFIRMÉ — FiU42 : Contrôle simplifié des fournisseurs en matière de marchés publics
+**Contrôle simplifié des fournisseurs dans les marchés publics** adopté. Vote sur p.2 (S+V+MP) : S 0-106. Vote sur p.3 (réservation V) : S 0-0-106 (abstention), SD 70-0, M 66-0. **Interprétation** : S a voté contre le contrôle simplifié des fournisseurs dans le vote principal mais s'est abstenu plutôt que de voter contre les exigences plus strictes de V.
+
+### PROCÈS-VERBAL DE VOTE CONFIRMÉ — UbU21 : Partage de données scolaires pour la prévention de la criminalité
+**Transmission de données entre écoles à des fins de prévention de la criminalité** — S a rejoint la majorité gouvernementale sur p.1 (transpartisan : S 106+), mais MP a déposé une réservation sur p.2 (motifs de protection des données). **Interprétation** : Soutien transpartisan pour le partage de données de base école-à-école ; seul MP s'est opposé pour des raisons de vie privée.
+
+### NOUVEAUX BETÄNKANDEN VOTÉS (Session de l'après-midi)
+| Désignation | Titre | Commission | Adopté |
+|-------------|-------|------------|--------|
+| UU3 | Rapport approfondi des résultats de l'aide internationale | UU | ✅ Majorité transpartisane |
+| UU4 | Coopération nordique y compris l'Arctique | UU | ✅ M+SD+KD+L (C+S=réservation p.2) |
+| CU26 | Nouvelle loi sur le crédit à la consommation | CU | ✅ Majorité gouvernementale |
+
+**UU7y** (avis) : UU a déposé son avis sur le budget de printemps 2026 (prop. 2025/26:100) auprès de KU — daté du 2026-05-27. Conclusion clé : UU soutient le niveau de budget ODA proposé mais signale un « risque de cohérence géopolitique » si les dépenses militaires et de développement croissent simultanément.
+
+---
+
 ## CONTEXTE ÉCONOMIQUE
 
 **IMF WEO-2026-04 (édition avril 2026 — actuelle)** :
@@ -88,4 +118,4 @@ Interpellation SD sur les vansinneskörningar (courses à grande vitesse). Exige
 | PIR-RT-003 | Réserve du Lagrådet sur prop. 2025/26:267 | EXPIRÉ | 2026-05-25 | Horizon dépassé — poursuivi comme lacune N2 |
 | PIR-RT-004 | Cycle médiatique de la détention d'enfants dure 2–10 jours | SURVEILLANCE | 2026-06-01 | Signal insuffisant dans les données d'aujourd'hui |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
