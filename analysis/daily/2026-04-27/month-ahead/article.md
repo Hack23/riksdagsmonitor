@@ -3,7 +3,7 @@ date: 2026-04-27
 subfolder: month-ahead
 slug: 2026-04-27-month-ahead
 source_folder: analysis/daily/2026-04-27/month-ahead
-generated_at: 2026-05-27T09:17:54.446Z
+generated_at: 2026-05-27T13:23:44.440Z
 language: en
 layout: article
 ---

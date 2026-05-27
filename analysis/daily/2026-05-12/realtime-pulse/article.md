@@ -3,7 +3,7 @@ date: 2026-05-12
 subfolder: realtime-pulse
 slug: 2026-05-12-realtime-pulse
 source_folder: analysis/daily/2026-05-12/realtime-pulse
-generated_at: 2026-05-27T09:17:55.714Z
+generated_at: 2026-05-27T13:23:45.685Z
 language: en
 layout: article
 ---
@@ -99,6 +99,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1805,13 +1818,929 @@ New PIRs opened this cycle:
 
 **Data completeness**: CONFIRMED at 100% for available public sources. HD01CU30 remains metadata-only (full committee report text not accessible via MCP API) — limitation recorded in methodology-reflection.md.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_ar.md -->
+
+---
+title: "الملخص التنفيذي — نبض البرلمان السويدي في الوقت الفعلي 2026-05-12"
+
+language: ar
+subfolder: "realtime-pulse"
+
+---
+
+# الملخص التنفيذي — نبض البرلمان السويدي في الوقت الفعلي 12 مايو 2026
+
+**المؤلف**: James Pether Sörling | **التاريخ**: 2026-05-12 | **سير العمل**: news-realtime-monitor  
+**التصنيف**: 🟢 PUBLIC | **مستوى الثقة**: عالٍ [Admiralty B2]
+
+### الخلاصة — الخط الأساسي
+
+يتسم الثلاثاء 12 مايو 2026 بهجوم الاستجواب الثلاثي لحزب اليسار (V) على الحكومة في مجالات رعاية كبار السن والأجور المتساوية والرعاية الاجتماعية — كتلة إشارات منسقة قبل الانتخابات تستهدف سجل رعاية التحالف Tidö. في الوقت ذاته، تتوحد ثلاثة عمليات دستورية وسياسية اجتماعية من تقارير اللجان اليومية (KU34، CU30، CU31). في المجمل، يصوّر 12 مايو معارضة تتسارع نحو انتخابات 13 سبتمبر 2026.
+
+### نقاط الاستخبارات الحرجة
+
+**1. الهجوم الاستجوابي الثلاثي لـ V** [أهمية عالية]
+- HD10484 (Nadja Awad → Anna Tenje / M): مخالفات في رعاية المسنين الربحية — أربعة أسئلة وزارية حول الرقابة والعقوبات ومتطلبات الأرباح وتوفير الموظفين. البيانات الخلفية: تتوقع Socialstyrelsen الحاجة إلى 50,000 موظف جديد بحلول 2030؛ وثّقت SVT/SR فضائح متكررة.
+- HD10486 (Nadja Awad → Johan Britz / L): الأجور المتساوية في قطاع الرفاه — "رفع أجر المرأة" لحزب V (30 مليار كرونة سويدية على 10 سنوات) كتموضع حزبي؛ خمسة أسئلة وزارية حول التمييز في الأجور البنيوي.
+- WEP: لا يُتوقع صدور بيان وزاري قبل الموعد النهائي في 29 مايو يمنح V انتصاراً جوهرياً، لكن الأسئلة تخلق مادة دعائية قبل 13 سبتمبر.
+
+**2. قانون الموافقة: مسألة سيادة القانون (HD10483)** [أهمية متوسطة]
+- Katja Nyberg (مستقلة) → Gunnar Strömmer / M: ثلاثة أسئلة حول مشكلات الحماية القانونية في الاغتصاب بالإهمال التي حددها Brå.
+- الإشارة التحليلية: عضو مستقل يوجه انتقادات للحماية القانونية تعكس توصيات Brå ذاتها — صمت الحكومة يخلق رواية انتخابية محتملة حول عجز M عن التعامل مع إصلاحات قانونية معقدة.
+
+**3. المنطق الضريبي للدعارة (HD10485)** [أهمية منخفضة-متوسطة]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: يربط SOU 2025:119 وتصويت التحالف Tidö ضد مبادرة اللجنة وضريبة برامج الخروج.
+- الإشارة التحليلية: تبني S بُعداً محافظاً للحملة الانتخابية للناخبين الذين يجمعون بين موقف مناهض للاستغلال والمسؤولية الميزانية؛ تدعم Skatteverket في الواقع مراجعة اللوائح.
+
+**4. توجيه الطاقة EPBD (HD01CU30)** [أهمية متوسطة]
+- تقرير CU حول توجيه المباني الأوروبي المعدّل وهدف كفاءة الطاقة الجديد.
+- الإشارة السياسية: يتضمن تنفيذ EPBD متطلبات ترقية إلزامية للمباني الأقدم — صراع رئيسي مع CU31 (تحرير سوق الإيجار) وطريق مسدود المناخ. قطاع العقارات والمستأجرون في مرمى النار.
+
+### قراءة في 60 ثانية
+
+- تشن V هجوماً ثلاثياً على الرفاه ضد M وL؛ وزيرة الشؤون الاجتماعية Tenje ووزير العمل Britz تحت ضغط مع موعد الرد في 29 مايو.
+- يُعدّ استجواب الموافقة إشارة حماية قانونية للناخبين المستقلين في الشريحة الوسطى.
+- يربط تقرير EPBD نقاش سوق الإيجار (CU31) بالتحول في الطاقة — توتر محتمل في التحالف M/L مقابل SD حول التكاليف.
+- لا إشارات KU34 جديدة من SD اليوم؛ يبقى PIR-CONST-ABORT مفتوحاً.
+
+### أهم محفز استشرافي
+
+**29 مايو 2026** — آخر موعد للرد على HD10484 وHD10483 وHD10485 وHD10486. ستحدد الردود الوزارية ما إذا كانت رواية رعاية V ستحصل على رواية مضادة جوهرية أم ستبقى معززة كخطوط هجوم غير مُعترض عليها قبل الانتخابات.
+
+### رسم الخرائط السياسية اليومية 12 مايو 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-12 | **Arbejdsproces**: news-realtime-monitor  
+**Klassifikation**: 🟢 PUBLIC | **Konfidensgrad**: HØJ [Admiralty B2]
+
+### Konklusion — Bundlinje
+
+Tirsdag den 12. maj 2026 præges af Venstrefløjspartiets (V) tredobbelte interpellationsoffensiv mod regeringen om ældrepleje, ligeløn og velfærd — et koordineret præ-valg signalblok rettet mod Tidø-koalitionens velfærdsresultater. Samtidig konsolideres tre forfatnings- og socialpolitiske processer fra betænkningerne (KU34, CU30, CU31). Samlet illustrerer 12. maj en opposition i acceleration mod valget den 13. september 2026.
+
+### Kritiske efterretningspunkter
+
+**1. V:s tredobbelte interpellationsoffensiv** [HØJ RELEVANS]
+- HD10484 (Nadja Awad → Anna Tenje / M): Uregelmæssigheder i profitdrevet ældrepleje — fire ministerielle spørgsmål om tilsyn, sanktioner, krav til overskud og personaleforsyning. Baggrunddata: Socialstyrelsen forudser behov for 50.000 nyansatte frem til 2030; SVT/SR har dokumenteret gentagne skandaler.
+- HD10486 (Nadja Awad → Johan Britz / L): Ligeløn i velfærdssektoren — V:s "kvindelønshøjelse" (30 mia. SEK over 10 år) som partipositionering; fem ministerielle spørgsmål om strukturel løndiskriminering.
+- WEP: Ingen ministeriel erklæring forventes inden fristen den 29. maj, der giver V en væsentlig sejr, men spørgsmålene skaber kampagnemateriale frem til den 13. september.
+
+**2. Samtykkesloven: retsstatsspørgsmål (HD10483)** [MIDDEL RELEVANS]
+- Katja Nyberg (uafhængig) → Gunnar Strömmer / M: Tre spørgsmål om retssikkerhedsproblemer med uagtsom voldtægt identificeret af Brå.
+- Analytisk signal: Et uafhængigt parlamentsmedlem retter retssikkerhedskritik, der afspejler Brå:s egne anbefalinger — regeringens tavshed skaber et potentielt valgnarrativ om M:s manglende evne til at håndtere komplekse retsreformer.
+
+**3. Skattelogik for prostitution (HD10485)** [LAV-MIDDEL RELEVANS]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: Forbinder SOU 2025:119, Tidø-koalitionens nedstемning af udvalgsinitiativet og beskatning af exit-programmer.
+- Analytisk signal: S bygger en konservativ valgkampagnedimension rettet mod vælgere, der kombinerer en anti-udnyttelsesposition med budgetansvar; Skatteverket støtter faktisk en regeloversigt.
+
+**4. Energidirektivet EPBD (HD01CU30)** [MIDDEL RELEVANS]
+- CU:s betænkning om EU:s reviderede bygningsdirektiv og nyt mål for energieffektivitet.
+- Politisk signal: Implementering af EPBD indebærer obligatoriske opgraderingskrav til ældre ejendomme — en nøglekonflikt med CU31 (liberalisering af lejemarkedet) og klimadødvandet. Ejendomssektoren og lejere er i krydsilden.
+
+### 60-sekunders læsning
+
+- V driver en tredobbelt velfærdsoffensiv mod M og L; Socialminister Tenje og Arbejdsmarkedsminister Britz er under pres med svarsfrist den 29. maj.
+- Samtykke-interpellationen er et retssikkerhedssignal til uafhængige vælgere i midtersegmentet.
+- EPBD-betænkningen forbinder lejemarkedsdebatten (CU31) med energiomstillingen — potentiel koalitionsspænding M/L vs SD om omkostninger.
+- Ingen nye KU34-signaler fra SD i dag; PIR-CONST-ABORT forbliver åben.
+
+### Vigtigste fremadrettede udløser
+
+**29. maj 2026** — seneste svarsdato for HD10484, HD10483, HD10485, HD10486. Ministersvaren afgør, om V:s velfærdsnarrativ får et substantielt modnarrativ, eller om det efterlades styrket som uimodsagte angrebslinjer frem mod valget.
+
+### Dagspolitisk kortlægning 12. maj 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-05-12 | **Workflow**: news-realtime-monitor  
+**Klassifizierung**: 🟢 PUBLIC | **Konfidenzgrad**: HOCH [Admiralty B2]
+
+### Schlussfolgerung — Kernbotschaft
+
+Der Dienstag, der 12. Mai 2026, ist geprägt von der dreifachen Interpellationsoffensive der Linkspartei (V) gegen die Regierung in den Bereichen Altenpflege, gleiche Löhne und Sozialleistungen — ein koordinierter Vorwahlsignalblock, der auf die Sozialleistungsbilanz der Tidö-Koalition abzielt. Gleichzeitig werden drei verfassungsrechtliche und sozialpolitische Prozesse aus den tagesaktuellen Ausschussberichten (KU34, CU30, CU31) konsolidiert. Insgesamt illustriert der 12. Mai eine in Beschleunigung befindliche Opposition auf dem Weg zur Wahl am 13. September 2026.
+
+### Kritische Geheimdienstpunkte
+
+**1. Die dreifache Interpellationsoffensive der V** [HOHE RELEVANZ]
+- HD10484 (Nadja Awad → Anna Tenje / M): Missstände in der gewinnorientierten Altenpflege — vier Ministeriumsfragen zu Aufsicht, Sanktionen, Gewinnforderungen und Personalversorgung. Hintergrunddaten: Socialstyrelsen prognostiziert bis 2030 einen Bedarf von 50 000 Neuanstellungen; SVT/SR dokumentierten wiederholte Skandale.
+- HD10486 (Nadja Awad → Johan Britz / L): Gleicher Lohn im Sozialbereich — V:s „Frauenlohnerhöhung" (30 Mrd. SEK über 10 Jahre) als Parteipositio­nierung; fünf Ministeriumsfragen zur strukturellen Lohndiskriminierung.
+- WEP: Keine Ministeriumserklärung wird erwartet bis zur Frist 29. Mai, die der V einen wesentlichen Sieg verschaffen würde, aber die Fragen schaffen Kampagnenmaterial bis zum 13. September.
+
+**2. Zustimmungsgesetz: Rechtsstaatsfrage (HD10483)** [MITTLERE RELEVANZ]
+- Katja Nyberg (parteilos) → Gunnar Strömmer / M: Drei Fragen zu Rechtsschutzproblemen bei fahrlässiger Vergewaltigung, die von Brå identifiziert wurden.
+- Analytisches Signal: Ein unabhängiges Mitglied übt Rechtsschutz­kritik, die die eigenen Empfehlungen des Brå widerspiegelt — das Schweigen der Regierung schafft ein potenzielles Wahlnarrativ über die Unfähigkeit der M, komplexe Rechtsreformen zu handhaben.
+
+**3. Steuerlogik bei Prostitution (HD10485)** [NIEDRIG-MITTLERE RELEVANZ]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: Verknüpft SOU 2025:119, die Abstimmung der Tidö-Koalition gegen die Ausschussinitiative und die Besteuerung von Ausstiegsprogrammen.
+- Analytisches Signal: S baut eine konservative Wahlkampagnedimension für Wähler auf, die eine Anti-Ausbeutungsposition mit Haushaltsverpflichtung verbinden; Skatteverket unterstützt tatsächlich eine Regelüberprüfung.
+
+**4. Energierichtlinie EPBD (HD01CU30)** [MITTLERE RELEVANZ]
+- Gutachten des CU über die überarbeitete EU-Gebäuderichtlinie und das neue Energieeffizienzziel.
+- Politisches Signal: Die Umsetzung der EPBD beinhaltet obligatorische Aufrüstungsanforderungen für ältere Immobilien — ein Schlüsselkonflikt mit CU31 (Deregulierung des Mietmarktes) und der Klimasackgasse. Die Immobilienbranche und Mieter befinden sich im Kreuzfeuer.
+
+### 60-Sekunden-Lektüre
+
+- V treibt eine dreifache Sozialoffensive gegen M und L; Sozialministerin Tenje und Arbeitsmarktminister Britz stehen mit dem Antwortdatum 29. Mai unter Druck.
+- Die Zustimmungsinterpellation ist ein Rechtsschutz-Signal an unabhängige Wähler im mittleren Segment.
+- Das EPBD-Gutachten verbindet die Mietmarktdebatte (CU31) mit dem Energiewandel — potenzielle Koalitionsspannung M/L vs SD hinsichtlich der Kosten.
+- Keine neuen KU34-Signale von SD heute; PIR-CONST-ABORT bleibt offen.
+
+### Wichtigster vorausschauender Auslöser
+
+**29. Mai 2026** — letztes Antwortdatum für HD10484, HD10483, HD10485, HD10486. Die Ministerantworten entscheiden, ob V:s Sozialnarrativ eine wesentliche Gegenerzählung erhält oder als unangefochtene Angriffslinien bis zur Wahl gestärkt bleibt.
+
+### Tagespolitische Kartierung 12. Mai 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-05-12 | **Flujo de trabajo**: news-realtime-monitor  
+**Clasificación**: 🟢 PUBLIC | **Nivel de confianza**: ALTO [Admiralty B2]
+
+### Conclusión — Línea de fondo
+
+El martes 12 de mayo de 2026 está marcado por la triple ofensiva de interpelaciones del Partido de Izquierda (V) contra el gobierno en materia de atención a personas mayores, igualdad salarial y bienestar social — un bloque coordinado de señales preelectorales dirigido al historial de bienestar de la coalición Tidö. Simultáneamente se consolidan tres procesos constitucionales y de política social de los informes de comisión del día (KU34, CU30, CU31). En conjunto, el 12 de mayo ilustra una oposición en aceleración hacia las elecciones del 13 de septiembre de 2026.
+
+### Puntos de inteligencia críticos
+
+**1. La triple ofensiva de interpelaciones de V** [ALTA RELEVANCIA]
+- HD10484 (Nadja Awad → Anna Tenje / M): Irregularidades en los cuidados a personas mayores con fines de lucro — cuatro preguntas ministeriales sobre supervisión, sanciones, requisitos de beneficios y provisión de personal. Datos de fondo: Socialstyrelsen prevé la necesidad de 50 000 nuevas contrataciones para 2030; SVT/SR han documentado escándalos repetidos.
+- HD10486 (Nadja Awad → Johan Britz / L): Igualdad salarial en el sector social — el "aumento salarial para mujeres" de V (30.000 millones SEK durante 10 años) como posicionamiento partidario; cinco preguntas ministeriales sobre discriminación salarial estructural.
+- WEP: No se espera ninguna declaración ministerial antes del plazo del 29 de mayo que otorgue a V una victoria sustancial, pero las preguntas crean material de campaña antes del 13 de septiembre.
+
+**2. Ley de consentimiento: cuestión del Estado de derecho (HD10483)** [RELEVANCIA MEDIA]
+- Katja Nyberg (independiente) → Gunnar Strömmer / M: Tres preguntas sobre problemas de garantías judiciales con la violación por negligencia identificados por Brå.
+- Señal analítica: Un miembro independiente formula críticas sobre las garantías judiciales que reflejan las propias recomendaciones del Brå — el silencio del gobierno crea un potencial narrativo electoral sobre la incapacidad de M para manejar reformas legales complejas.
+
+**3. Lógica fiscal para la prostitución (HD10485)** [RELEVANCIA BAJA-MEDIA]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: Vincula SOU 2025:119, el voto de la coalición Tidö contra la iniciativa de comisión y la tributación de programas de salida.
+- Señal analítica: S construye una dimensión conservadora de campaña electoral para votantes que combinan una posición antiexplotación con responsabilidad presupuestaria; Skatteverket apoya efectivamente una revisión normativa.
+
+**4. Directiva energética EPBD (HD01CU30)** [RELEVANCIA MEDIA]
+- Informe del CU sobre la directiva europea revisada de edificios y el nuevo objetivo de eficiencia energética.
+- Señal política: La implementación de la EPBD implica requisitos obligatorios de actualización para propiedades antiguas — un conflicto clave con CU31 (desregulación del mercado de alquiler) y el bloqueo climático. El sector inmobiliario y los inquilinos se encuentran en el punto de mira.
+
+### Lectura en 60 segundos
+
+- V impulsa una triple ofensiva de bienestar contra M y L; la Ministra de Asuntos Sociales Tenje y el Ministro de Trabajo Britz están bajo presión con la fecha límite de respuesta del 29 de mayo.
+- La interpelación sobre el consentimiento es una señal de garantías judiciales dirigida a votantes independientes en el segmento central.
+- El informe EPBD conecta el debate sobre el mercado de alquiler (CU31) con la transición energética — potencial tensión de coalición M/L vs SD sobre los costos.
+- No hay nuevas señales KU34 de SD hoy; PIR-CONST-ABORT permanece abierto.
+
+### Desencadenante prospectivo principal
+
+**29 de mayo de 2026** — última fecha de respuesta para HD10484, HD10483, HD10485, HD10486. Las respuestas ministeriales determinarán si el narrativo de bienestar de V obtiene una contrarrespuesta sustancial o permanece reforzado como líneas de ataque sin respuesta antes de las elecciones.
+
+### Cartografía política del 12 de mayo de 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-05-12 | **Työnkulku**: news-realtime-monitor  
+**Luokitus**: 🟢 PUBLIC | **Luottamustaso**: KORKEA [Admiralty B2]
+
+### Johtopäätös — Ydinviesti
+
+Tiistaina 12. toukokuuta 2026 leimaa Vasemmistopuolueen (V) kolminkertainen interpellaatiohyökkäys hallitusta vastaan vanhustenhoidosta, tasa-arvoisesta palkkauksesta ja hyvinvoinnista — koordinoitu vaalienneistä signaaliblokki, joka on suunnattu Tidö-koalition hyvinvointirekisteriä vastaan. Samanaikaisesti vakiinnutetaan kolme perustuslaillista ja sosiopoliittista prosessia päivän mietinnöistä (KU34, CU30, CU31). Yhteensä 12. toukokuuta kuvaa oppositiota, joka kiihtyy kohti vaalia 13. syyskuuta 2026.
+
+### Kriittiset tiedustelupisteet
+
+**1. V:n kolminkertainen interpellaatiohyökkäys** [KORKEA MERKITYS]
+- HD10484 (Nadja Awad → Anna Tenje / M): Epäkohdat voittoa tavoittelevassa vanhustenhoidossa — neljä ministeriön kysymystä valvonnasta, seuraamuksista, voittovaatimuksista ja henkilöstön saatavuudesta. Taustatiedot: Socialstyrelsen ennakoi 50 000 uuden työntekijän tarvitsevan vuoteen 2030 mennessä; SVT/SR on dokumentoinut toistuvat skandaalit.
+- HD10486 (Nadja Awad → Johan Britz / L): Tasa-arvoinen palkka hyvinvointisektorilla — V:n "naisten palkankorotus" (30 miljardia SEK / 10 vuotta) puolueasemoitumisena; viisi ministeriön kysymystä rakenteellisesta palkkasyrjinnästä.
+- WEP: Mikään ministeriön ilmoitus ei odoteta 29. toukokuuta mennessä, joka antaisi V:lle merkittävän voiton, mutta kysymykset luovat kampanjamateriaalia ennen 13. syyskuuta.
+
+**2. Suostumukselaki: oikeusvaltiokysymys (HD10483)** [KOHTALAINEN MERKITYS]
+- Katja Nyberg (sitoutumaton) → Gunnar Strömmer / M: Kolme kysymystä tuottamukselliseen raiskaukseen liittyvistä oikeusturvahaasteista, jotka Brå tunnisti.
+- Analyyttinen signaali: Sitoutumaton jäsen esittää oikeusturvakritiikin, joka heijastaa Brå:n omia suosituksia — hallituksen hiljaisuus luo mahdollisen vaalikerronnan M:n kyvyttömyydestä käsitellä monimutkaisia oikeusreformeja.
+
+**3. Prostituution verologiikka (HD10485)** [MATALA-KOHTALAINEN MERKITYS]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: Yhdistää SOU 2025:119:n, Tidö-koalition äänestyksen valiokunta-aloitteen hylkäämiseksi ja exit-ohjelmien verotuksen.
+- Analyyttinen signaali: S rakentaa konservatiivista vaaliulottuvuutta äänestäjille, jotka yhdistävät hyväksikäyttöä vastustavan kannan budjettivastuu; Skatteverket tukee tosiasiassa sääntöjen tarkistamista.
+
+**4. Energiadirektiivi EPBD (HD01CU30)** [KOHTALAINEN MERKITYS]
+- CU:n mietintö EU:n uudistetuista rakennusdirektiivistä ja uudesta energiatehokkuustavoitteesta.
+- Poliittinen signaali: EPBD:n toteuttaminen merkitsee vanhojen kiinteistöjen pakollisia parannusvaatimuksia — avainristiriita CU31:n (vuokramarkkinoiden deregulaatio) ja ilmastopattitilanteen kanssa. Kiinteistöala ja vuokralaiset ovat ristitulen kohteena.
+
+### 60 sekunnin luenta
+
+- V ajaa kolminkertaista hyvinvointihyökkäystä M:tä ja L:ää vastaan; Sosiaaliministeri Tenje ja Työmarkkina­ministeri Britz ovat paineessa vastauspäivämäärällä 29. toukokuuta.
+- Suostumusinterpellaatio on oikeusturvasignaali riippumattomille äänestäjille keskilohkossa.
+- EPBD-mietintö yhdistää vuokramarkkinakeskustelun (CU31) energiamurrokseen — mahdollinen koalitionjännitys M/L vs SD kustannuksista.
+- Uusia KU34-signaaleja SD:ltä ei tänään; PIR-CONST-ABORT pysyy avoimena.
+
+### Tärkein tulevaisuuden laukaisin
+
+**29. toukokuuta 2026** — viimeinen vastauspäivä HD10484:lle, HD10483:lle, HD10485:lle ja HD10486:lle. Ministeri­vastaukset ratkaisevat, saako V:n hyvinvointikertomus merkittävän vastakerronnan vai jätetäänkö ne vahvistumaan vastustamattomina hyökkäyslinjoina ennen vaalia.
+
+### Päivänpoliittinen kartoitus 12. toukokuuta 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **Date** : 2026-05-12 | **Flux de travail** : news-realtime-monitor  
+
+### Conclusion — Ligne de fond
+
+Le mardi 12 mai 2026 est marqué par la triple offensive d'interpellations du Parti de gauche (V) contre le gouvernement sur les thèmes des soins aux personnes âgées, de l'égalité salariale et du bien-être social — un bloc de signaux préélectoraux coordonné visant le bilan social de la coalition Tidö. Simultanément, trois processus constitutionnels et de politique sociale issus des rapports de commission du jour (KU34, CU30, CU31) se consolident. Dans l'ensemble, le 12 mai illustre une opposition en accélération vers les élections du 13 septembre 2026.
+
+### Points de renseignement critiques
+
+**1. La triple offensive d'interpellations de V** [HAUTE PERTINENCE]
+- HD10484 (Nadja Awad → Anna Tenje / M) : Dysfonctionnements dans les soins aux personnes âgées à but lucratif — quatre questions ministérielles sur la surveillance, les sanctions, les exigences de profit et l'approvisionnement en personnel. Données de fond : Socialstyrelsen prévoit un besoin de 50 000 nouvelles embauches d'ici 2030 ; SVT/SR ont documenté des scandales répétés.
+- HD10486 (Nadja Awad → Johan Britz / L) : Égalité salariale dans le secteur social — la « revalorisation salariale des femmes » de V (30 milliards SEK sur 10 ans) comme positionnement partisan ; cinq questions ministérielles sur la discrimination salariale structurelle.
+- WEP : Aucune déclaration ministérielle n'est attendue avant l'échéance du 29 mai qui donnerait à V une victoire substantielle, mais les questions créent du matériel de campagne avant le 13 septembre.
+
+**2. Loi sur le consentement : question d'État de droit (HD10483)** [PERTINENCE MOYENNE]
+- Katja Nyberg (sans parti) → Gunnar Strömmer / M : Trois questions sur les problèmes de garanties judiciaires liés au viol par négligence identifiés par le Brå.
+- Signal analytique : Un membre indépendant formule des critiques sur les garanties judiciaires qui reflètent les propres recommandations du Brå — le silence du gouvernement crée un potentiel narratif électoral sur l'incapacité de M à gérer des réformes judiciaires complexes.
+
+**3. Logique fiscale pour la prostitution (HD10485)** [PERTINENCE FAIBLE-MOYENNE]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M : Relie SOU 2025:119, le vote de la coalition Tidö contre l'initiative de commission et la fiscalité des programmes de sortie.
+- Signal analytique : S construit une dimension de campagne électorale conservatrice pour les électeurs combinant une position anti-exploitation avec la responsabilité budgétaire ; Skatteverket soutient effectivement une révision réglementaire.
+
+**4. Directive énergie EPBD (HD01CU30)** [PERTINENCE MOYENNE]
+- Rapport du CU sur la directive européenne révisée sur les bâtiments et le nouvel objectif d'efficacité énergétique.
+- Signal politique : La mise en œuvre de l'EPBD implique des exigences obligatoires de mise à niveau pour les propriétés anciennes — un conflit clé avec CU31 (déréglementation du marché locatif) et le blocage climatique. L'industrie immobilière et les locataires se trouvent dans la ligne de mire.
+
+### Lecture en 60 secondes
+
+- V mène une triple offensive sociale contre M et L ; la Ministre des Affaires sociales Tenje et le Ministre du Travail Britz sont sous pression avec la date limite de réponse du 29 mai.
+- L'interpellation sur le consentement est un signal de garanties judiciaires adressé aux électeurs indépendants du segment central.
+- Le rapport EPBD relie le débat sur le marché locatif (CU31) à la transition énergétique — potentielle tension de coalition M/L vs SD sur les coûts.
+- Aucun nouveau signal KU34 de SD aujourd'hui ; PIR-CONST-ABORT reste ouvert.
+
+### Déclencheur prospectif principal
+
+**29 mai 2026** — dernière date de réponse pour HD10484, HD10483, HD10485, HD10486. Les réponses ministérielles détermineront si le narratif social de V obtient une contre-narration substantielle ou reste renforcé comme des lignes d'attaque incontestées avant les élections.
+
+### Cartographie politique du 12 mai 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_he.md -->
+
+---
+title: "תקציר מנהלים — דופק הריקסדאגן בזמן אמת 2026-05-12"
+
+language: he
+subfolder: "realtime-pulse"
+
+---
+
+# תקציר מנהלים — דופק הריקסדאגן בזמן אמת 12 במאי 2026
+
+**מחבר**: James Pether Sörling | **תאריך**: 2026-05-12 | **תהליך עבודה**: news-realtime-monitor  
+**סיווג**: 🟢 PUBLIC | **רמת ביטחון**: גבוה [Admiralty B2]
+
+### מסקנה — השורה התחתונה
+
+יום שלישי, 12 במאי 2026, מאופיין בהתקפת השאלות המשולשת של מפלגת השמאל (V) כלפי הממשלה בנושאי טיפול בקשישים, שוויון שכר ורווחה — בלוק אותות מתואם לפני הבחירות המכוון כנגד שיא הרווחה של קואליציית טידו. במקביל מתאחדות שלוש תהליכים חוקתיים ומדיניים-חברתיים מדוחות הוועדות של היום (KU34, CU30, CU31). בסך הכל, 12 במאי ממחיש אופוזיציה המאיצה לקראת הבחירות ב-13 בספטמבר 2026.
+
+### נקודות מודיעין קריטיות
+
+**1. התקפת השאלות המשולשת של V** [חשיבות גבוהה]
+- HD10484 (Nadja Awad → Anna Tenje / M): ליקויים בטיפול ברווחי קשישים — ארבע שאלות שרים על פיקוח, סנקציות, דרישות רווח ואספקת כוח אדם. נתוני רקע: Socialstyrelsen מנבאת צורך ב-50,000 עובדים חדשים עד 2030; SVT/SR תיעדו פרשיות חוזרות ונשנות.
+- HD10486 (Nadja Awad → Johan Britz / L): שכר שווה במגזר הרווחה — "העלאת שכר נשים" של V (30 מיליארד כתר שוודי ל-10 שנים) כמיצוב מפלגתי; חמש שאלות שרים על אפליית שכר מבנית.
+- WEP: אין צפי להצהרת שר לפני המועד האחרון של 29 במאי שתעניק ל-V ניצחון משמעותי, אך השאלות יוצרות חומרי קמפיין לפני 13 בספטמבר.
+
+**2. חוק ההסכמה: שאלת שלטון החוק (HD10483)** [חשיבות בינונית]
+- Katja Nyberg (עצמאית) → Gunnar Strömmer / M: שלוש שאלות על בעיות הגנה משפטית באונס ברשלנות שזוהו על ידי Brå.
+- אות אנליטי: חברה עצמאית מעלה ביקורת על הגנה משפטית המשקפת את המלצות Brå עצמה — שתיקת הממשלה יוצרת נרטיב בחירות פוטנציאלי על חוסר יכולת M לטפל ברפורמות משפטיות מורכבות.
+
+**3. לוגיקת מיסוי הזנות (HD10485)** [חשיבות נמוכה-בינונית]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: מקשר SOU 2025:119, הצבעת קואליציית טידו נגד יוזמת הוועדה ומיסוי תוכניות יציאה.
+- אות אנליטי: S בונה ממד קמפיין בחירות שמרני לבוחרים המשלבים עמדה נגד ניצול עם אחריות תקציבית; Skatteverket תומכת בפועל בסקירת תקנות.
+
+**4. הנחיית האנרגיה EPBD (HD01CU30)** [חשיבות בינונית]
+- דוח CU על הנחיית הבניינים האירופית המעודכנת ויעד יעילות האנרגיה החדש.
+- אות פוליטי: יישום EPBD כולל דרישות שדרוג חובה לנכסים ישנים — קונפליקט מפתח עם CU31 (ביטול רגולציה בשוק השכירות) ותקיעות האקלים. ענף הנדל"ן והשוכרים נמצאים באש צולבת.
+
+### קריאה ב-60 שניות
+
+- V מוביל התקפת רווחה משולשת נגד M ו-L; שרת הרווחה Tenje ושר העבודה Britz נמצאים תחת לחץ עם מועד התגובה ב-29 במאי.
+- שאלת ההסכמה היא אות הגנה משפטית לבוחרים עצמאיים בקטע האמצעי.
+- דוח EPBD מקשר את הדיון בשוק השכירות (CU31) עם מעבר האנרגיה — מתח קואליציוני פוטנציאלי M/L מול SD על עלויות.
+- אין אותות KU34 חדשים מ-SD היום; PIR-CONST-ABORT נשאר פתוח.
+
+### הגורם המניע החשוב ביותר לקדימה
+
+**29 במאי 2026** — המועד האחרון לתגובה עבור HD10484, HD10483, HD10485, HD10486. תגובות השרים יקבעו האם נרטיב הרווחה של V יקבל נרטיב-נגד מהותי או יישאר מחוזק כקווי תקיפה ללא מענה לפני הבחירות.
+
+### מיפוי פוליטי יומי 12 במאי 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling | **日付**: 2026-05-12 | **ワークフロー**: news-realtime-monitor  
+**分類**: 🟢 PUBLIC | **信頼度**: 高 [Admiralty B2]
+
+### 結論 — 要点
+
+2026年5月12日火曜日は、左翼党（V）の高齢者ケア、同一賃金、福祉に関する政府への三重の質問攻勢が特徴となっている — ティドー連立政権の福祉実績に向けた協調的な選挙前シグナルブロック。同時に、その日の委員会報告（KU34、CU30、CU31）からの三つの憲法的および社会政策的プロセスが統合されている。総じて、5月12日は2026年9月13日の選挙に向けて加速する野党を描いている。
+
+### 重要情報ポイント
+
+**1. Vの三重質問攻勢** [高重要度]
+- HD10484 (Nadja Awad → Anna Tenje / M): 営利目的の高齢者ケアにおける不正行為 — 監督、制裁、利益要件、人員確保に関する4つの閣僚質問。背景データ：Socialstyrelsenは2030年までに50,000人の新規採用が必要と予測；SVT/SRが繰り返されるスキャンダルを記録。
+- HD10486 (Nadja Awad → Johan Britz / L): 福祉部門における同一賃金 — Vの「女性賃金引上げ」（10年間で300億SEK）を党の立場として；構造的な賃金差別に関する5つの閣僚質問。
+- WEP: Vに実質的な勝利をもたらす閣僚声明は5月29日の期限までに期待されていないが、質問は9月13日に向けた選挙運動材料を作る。
+
+**2. 同意法：法の支配の問題 (HD10483)** [中程度重要度]
+- Katja Nyberg（無所属）→ Gunnar Strömmer / M: Bråが特定した過失による性的暴行に関する司法上の問題についての3つの質問。
+- 分析シグナル：独立した議員がBrå自身の勧告を反映した法的保護批判を行っている — 政府の沈黙は、Mが複雑な法改革を扱えないという潜在的な選挙ナラティブを生み出している。
+
+**3. 売春に対する税務論理 (HD10485)** [低〜中程度重要度]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: SOU 2025:119、委員会イニシアティブに対するティドー連立の投票、および離脱プログラムの課税を結びつける。
+- 分析シグナル：Sは反搾取の立場と財政責任を組み合わせる有権者向けの保守的な選挙運動の次元を構築している；Skatteverketは実際に規制見直しを支持している。
+
+**4. エネルギー指令EPBD (HD01CU30)** [中程度重要度]
+- EUの改訂建物指令と新しいエネルギー効率目標に関するCUの委員会報告。
+- 政治シグナル：EPBDの実施は古い物件に対する義務的なアップグレード要件を含む — CU31（賃貸市場規制緩和）および気候デッドロックとの主要な対立。不動産業界と賃借人は板挟みにある。
+
+### 60秒要旨
+
+- VはMとLに対して三重の福祉攻勢を展開；社会大臣テンジェと労働市場大臣ブリッツは5月29日の回答期限を前に圧力下にある。
+- 同意の質問は中間セグメントの独立した有権者への法的保護シグナルである。
+- EPBDの委員会報告は賃貸市場議論（CU31）とエネルギー転換を結びつける — コスト面でM/L対SDの連立緊張の可能性。
+- 今日SDからの新しいKU34シグナルなし；PIR-CONST-ABORTは未解決のまま。
+
+### 最重要前向きトリガー
+
+**2026年5月29日** — HD10484、HD10483、HD10485、HD10486の最終回答日。閣僚の回答は、Vの福祉ナラティブが実質的な反論を得るか、選挙前の反論されていない攻撃ラインとして強化されたままになるかを決定する。
+
+### 2026年5月12日 政治的マッピング
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **날짜**: 2026-05-12 | **워크플로**: news-realtime-monitor  
+**분류**: 🟢 PUBLIC | **신뢰도**: 높음 [Admiralty B2]
+
+### 결론 — 핵심 내용
+
+2026년 5월 12일 화요일은 좌파당(V)이 고령자 돌봄, 동등한 임금, 복지에 관해 정부에 제기한 세 건의 대정부 질문 공세가 특징이다 — 티도 연립 정부의 복지 실적을 겨냥한 조율된 선거 전 신호 블록. 동시에 당일의 위원회 보고서(KU34, CU30, CU31)에서 세 가지 헌법적 및 사회정책적 과정이 통합되고 있다. 전반적으로 5월 12일은 2026년 9월 13일 선거를 향해 가속화하는 야당을 보여준다.
+
+### 핵심 정보 사항
+
+**1. V의 세 건의 대정부 질문 공세** [높은 중요도]
+- HD10484 (Nadja Awad → Anna Tenje / M): 영리목적 고령자 돌봄에서의 부정 — 감독, 제재, 이익 요건 및 인력 공급에 관한 4가지 장관 질문. 배경 데이터: Socialstyrelsen은 2030년까지 50,000명의 신규 채용이 필요하다고 예측; SVT/SR이 반복된 스캔들을 기록.
+- HD10486 (Nadja Awad → Johan Britz / L): 복지 부문 동등 임금 — V의 "여성 임금 인상"(10년간 300억 SEK)을 당 입장으로; 구조적 임금 차별에 관한 5가지 장관 질문.
+- WEP: V에게 실질적인 승리를 가져다 줄 장관 선언은 5월 29일 기한까지 기대되지 않지만, 질문들은 9월 13일 이전에 선거 운동 자료를 만들어낸다.
+
+**2. 동의법: 법치국가 문제 (HD10483)** [중간 중요도]
+- Katja Nyberg (무소속) → Gunnar Strömmer / M: Brå가 식별한 과실에 의한 성범죄에 관한 사법적 보장 문제에 대한 3가지 질문.
+- 분석 신호: 독립 의원이 Brå 자체 권고사항을 반영하는 사법적 보장 비판을 제기하고 있다 — 정부의 침묵은 M이 복잡한 법률 개혁을 처리할 능력이 없다는 잠재적인 선거 서사를 만들어 낸다.
+
+**3. 성매매에 대한 세금 논리 (HD10485)** [낮음-중간 중요도]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: SOU 2025:119, 위원회 주도권에 반대하는 티도 연립의 투표, 그리고 탈출 프로그램 과세를 연결한다.
+- 분석 신호: S는 반착취 입장과 예산 책임을 결합하는 유권자를 위한 보수적인 선거 캠페인 차원을 구축하고 있다; Skatteverket은 실제로 규제 검토를 지지한다.
+
+**4. 에너지 지침 EPBD (HD01CU30)** [중간 중요도]
+- EU의 개정된 건물 지침 및 새로운 에너지 효율 목표에 관한 CU의 위원회 보고서.
+- 정치적 신호: EPBD 시행은 오래된 부동산에 대한 의무적인 업그레이드 요건을 포함한다 — CU31(임대 시장 규제 완화) 및 기후 교착 상태와의 핵심 갈등. 부동산 업계와 임차인들은 교차선에 놓여 있다.
+
+### 60초 요약
+
+- V는 M과 L에 대한 세 겹의 복지 공세를 펼치고 있다; 사회부 장관 텐예와 노동 장관 브리츠는 5월 29일 답변 기한을 앞두고 압박을 받고 있다.
+- 동의 질문은 중간 세그먼트의 독립적인 유권자들을 향한 사법적 보장 신호이다.
+- EPBD 위원회 보고서는 임대 시장 논쟁(CU31)을 에너지 전환과 연결한다 — 비용에 대한 M/L 대 SD의 잠재적 연립 긴장.
+- 오늘 SD로부터 새로운 KU34 신호 없음; PIR-CONST-ABORT는 미해결 상태.
+
+### 가장 중요한 미래 촉발 요인
+
+**2026년 5월 29일** — HD10484, HD10483, HD10485, HD10486의 최종 답변 날짜. 장관 답변은 V의 복지 서사가 실질적인 반박을 받을지 아니면 선거 전 반박되지 않은 공격 라인으로 강화된 채 남을지를 결정한다.
+
+### 2026년 5월 12일 정치 지형도
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-05-12 | **Werkproces**: news-realtime-monitor  
+**Classificatie**: 🟢 PUBLIC | **Betrouwbaarheidsniveau**: HOOG [Admiralty B2]
+
+### Conclusie — Kernboodschap
+
+Dinsdag 12 mei 2026 wordt gekenmerkt door de drievoudige interpellatie-offensief van de Linkse Partij (V) tegen de regering over ouderenzorg, gelijke beloning en welzijn — een gecoördineerd pre-verkiezingssignaalblok gericht op het welzijnsdossier van de Tidö-coalitie. Tegelijkertijd worden drie constitutionele en sociaalbeleidsprocesessen geconsolideerd uit de dagelijkse commissierapporten (KU34, CU30, CU31). Samen illustreert 12 mei een oppositie die versnelt richting de verkiezingen van 13 september 2026.
+
+### Kritieke inlichtingenpunten
+
+**1. De drievoudige interpellatieoffensief van V** [HOGE RELEVANTIE]
+- HD10484 (Nadja Awad → Anna Tenje / M): Wantoestanden in winstgerichte ouderenzorg — vier ministeriële vragen over toezicht, sancties, winstvereisten en personeelsvoorziening. Achtergrondgegevens: Socialstyrelsen voorspelt een behoefte van 50.000 nieuwe aanstellingen voor 2030; SVT/SR hebben herhaalde schandalen gedocumenteerd.
+- HD10486 (Nadja Awad → Johan Britz / L): Gelijke beloning in de welzijnssector — V:s "vrouwenloonverhoging" (30 miljard SEK over 10 jaar) als partijapositionering; vijf ministeriële vragen over structurele loondiscriminatie.
+- WEP: Er wordt geen ministeriële verklaring verwacht vóór de deadline van 29 mei die V een wezenlijke overwinning oplevert, maar de vragen creëren campagnemateriaal voor 13 september.
+
+**2. Toestemmingswet: rechtsstaatsvraag (HD10483)** [GEMIDDELDE RELEVANTIE]
+- Katja Nyberg (partijloos) → Gunnar Strömmer / M: Drie vragen over rechtsbeschermingsproblemen bij nalatige verkrachting geïdentificeerd door Brå.
+- Analytisch signaal: Een onafhankelijk lid stelt rechtsbeschermingskritiek aan de orde die de eigen aanbevelingen van Brå weerspiegelt — het zwijgen van de regering creëert een potentieel verkiezingsnarratief over de onmacht van M om complexe juridische hervormingen te hanteren.
+
+**3. Fiscale logica voor prostitutie (HD10485)** [LAAG-GEMIDDELDE RELEVANTIE]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: Verbindt SOU 2025:119, de stemming van de Tidö-coalitie tegen het commissie-initiatief en de belasting van exitprogramma's.
+- Analytisch signaal: S bouwt een conservatieve verkiezingsdimensie op voor kiezers die een anti-uitbuitingspositie combineren met budgettaire verantwoordelijkheid; Skatteverket steunt feitelijk een regelherziening.
+
+**4. Energierichtlijn EPBD (HD01CU30)** [GEMIDDELDE RELEVANTIE]
+- CU-rapport over de herziene EU-gebouwenrichtlijn en het nieuwe energieprestatie-doel.
+- Politiek signaal: Implementatie van EPBD houdt verplichte upgradevereisten in voor oudere eigendommen — een sleutelconflict met CU31 (deregulering huurmarkt) en de klimaatimpasse. De vastgoedsector en huurders bevinden zich in het kruisvuur.
+
+### Lezing in 60 seconden
+
+- V drijft een drievoudige welzijnsoffensief tegen M en L; Minister van Sociale Zaken Tenje en Minister van Arbeid Britz staan onder druk met de antwoorddatum van 29 mei.
+- De toestemmingsinterpellatie is een rechtsbeschermingssignaal aan onafhankelijke kiezers in het middensegment.
+- Het EPBD-rapport verbindt het huurmarktdebat (CU31) met de energietransitie — potentiële coalitiesspanning M/L vs SD over kosten.
+- Geen nieuwe KU34-signalen van SD vandaag; PIR-CONST-ABORT blijft open.
+
+### Belangrijkste toekomstgerichte trigger
+
+**29 mei 2026** — laatste antwoorddatum voor HD10484, HD10483, HD10485, HD10486. De ministeriële antwoorden bepalen of V:s welzijnsnarratief een wezenlijk tegennarratief krijgt of versterkt blijft als onbetwiste aanvalslinjes voor de verkiezingen.
+
+### Dagpolitieke cartografie 12 mei 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-12 | **Arbeidsflyt**: news-realtime-monitor  
+**Klassifisering**: 🟢 PUBLIC | **Konfidensnivå**: HØY [Admiralty B2]
+
+### Konklusjon — Bunnlinje
+
+Tirsdag 12. mai 2026 preges av Venstrepastiets (V) tredobbelte interpellasjonsoffensiv mot regjeringen om eldreomsorg, likelønn og velferd — et koordinert førvalgssignalblokk rettet mot Tidø-koalisjonens velferdsfasit. Simultant konsolideres tre konstitusjonelle og sosialpolitiske prosesser fra betenkningene (KU34, CU30, CU31). Samlet illustrerer 12. mai en opposisjon i akselerasjon mot valget 13. september 2026.
+
+### Kritiske etterretningspunkter
+
+**1. V:s tredobbelte interpellasjonsoffensiv** [HØY RELEVANS]
+- HD10484 (Nadja Awad → Anna Tenje / M): Misforhold i profittdrevet eldreomsorg — fire ministerspørsmål om tilsyn, sanksjoner, overskuddskrav og personellforsyning. Bakgrunnsdata: Socialstyrelsen anslår 50 000 nyansatte er nødvendig innen 2030; SVT/SR har dokumentert gjentatte skandaler.
+- HD10486 (Nadja Awad → Johan Britz / L): Likelønn i velferdssektoren — V:s "kvinnelønnsløft" (30 mrd. SEK over 10 år) som partiposisjonering; fem ministerspørsmål om strukturell lønndiskriminering.
+- WEP: Ingen ministererklæring forventes innen fristen 29. mai som gir V en substansiell seier, men spørsmålene skaper kampanjemateriale frem mot 13. september.
+
+**2. Samtykkesloven: rettsstatssspørsmål (HD10483)** [MIDDELS RELEVANS]
+- Katja Nyberg (uavhengig) → Gunnar Strömmer / M: Tre spørsmål om rettssikkerhetsproblemer med uaktsom voldtekt identifisert av Brå.
+- Analytisk signal: Et uavhengig stortingsmedlem retter rettssikkerhetskritikk som speiler Brå:s egne anbefalinger — regjeringens taushet skaper et potensielt valgnarrativ om M:s manglende evne til å håndtere komplekse rettsreformer.
+
+**3. Skattelogikk for prostitusjon (HD10485)** [LAV-MIDDELS RELEVANS]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: Kobler SOU 2025:119, Tidø-koalisjonens nedstemming av utvalgsinitiativet og exitprogrambeskaning.
+- Analytisk signal: S bygger en konservativ valgkampanjedimensjon rettet mot velgere som kombinerer anti-utnyttingsposisjon med budsjettansvar; Skatteverket støtter faktisk en regelgjennomgang.
+
+**4. Energidirektivet EPBD (HD01CU30)** [MIDDELS RELEVANS]
+- CU:s betenkning om EUs reviderte bygningsdirektiv og nytt energieffektivitetsmål.
+- Politisk signal: Implementering av EPBD innebærer obligatoriske oppgraderingskrav for eldre eiendommer — en nøkkelkonflikt med CU31 (liberalisering av leiemarkedet) og klimadødvannet. Eiendomsbransjen og leietakere befinner seg i kryssilden.
+
+### 60-sekunders lesing
+
+- V driver en tredobbelt velferdsoffensiv mot M og L; Sosialminister Tenje og Arbeidsmarkedsminister Britz er under press med svarsfrist 29. mai.
+- Samtykke-interpellasjonen er et rettssikkerhetssignal til uavhengige velgere i midtsegmentet.
+- EPBD-betenkingen binder leiemarkedsdebatten (CU31) sammen med energiomstillingen — potensiell koalitionsspanning M/L vs SD om kostnader.
+- Ingen nye KU34-signaler fra SD i dag; PIR-CONST-ABORT forblir åpen.
+
+### Viktigste fremtidige utløser
+
+**29. mai 2026** — siste svarsfrist for HD10484, HD10483, HD10485, HD10486. Ministersvarene avgjør om V:s velferdsnarrativ får et substansielt motnarrativ eller forblir uimotsagte angrepslinjer frem mot valget.
+
+### Dagspolitisk kartlegging 12. mai 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-05-12 | **Arbetsflöde**: news-realtime-monitor  
+**Klassificering**: 🟢 PUBLIC | **Konfidensgrad**: HÖG [Admiralty B2]
+
+### Slutsats — Viktigaste budskapet
+
+Tisdagen den 12 maj 2026 präglas av Vänsterpartiets tredubbla interpellationsoffensiv mot regeringen inom äldreomsorg, jämställda löner och välfärd — ett koordinerat pre-valsignalblock riktat mot Tidökoalitionens välfärdsrekord. Simultant konsolideras tre konstitutionella och socialpolitiska processer från dagskiftande betänkanden (KU34, CU30, CU31). Sammantaget illustrerar 12 maj en opposition i acceleration mot valet 13 september 2026.
+
+### Kritiska underrättelsepunkter
+
+**1. V:s tredubbla interpellationsoffensiv** [HÖG RELEVANS]
+- HD10484 (Nadja Awad → Anna Tenje / M): Missförhållanden i vinstdriven äldreomsorg — fyra ministerfrågor om tillsyn, sanktioner, vinstkrav, personalförsörjning. Bakgrundsdata: Socialstyrelsen prognostiserar 50 000 nyanställningar behövs till 2030; SVT/SR dokumenterat upprepade skandaler.
+- HD10486 (Nadja Awad → Johan Britz / L): Jämställda löner i välfärden — V:s "kvinnolönelyft" (30 mdr SEK/10 år) som partipositionering; fem ministerfrågor om strukturell lönediskriminering.
+- WEP: Inget ministerbesked förväntas inom deadlinen 29 maj som ger V substantiell seger, men frågorna skapar kampanjmaterial inför 13 september.
+
+**2. Samtyckeslagen: rättsstatsfråga (HD10483)** [MEDEL RELEVANS]
+- Katja Nyberg (partilös) → Gunnar Strömmer / M: Tre frågor om rättssäkerhetsproblem med oaktsam våldtäkt identifierade av Brå.
+- Analytisk signal: En oberoende ledamot riktar rättssäkerhetskritik som speglar BRÅ:s egna rekommendationer — regeringens tystnad skapar ett potentiellt valnarrativ om M:s oförmåga att hantera komplexa rättsordningsreformer.
+
+**3. Skattelogik för prostitution (HD10485)** [LÅG-MEDEL RELEVANS]
+- Ida Ekeroth Clausson (S) → Elisabeth Svantesson / M: Kopplar SOU 2025:119, Tidökoalitionens röstning ned utskottsinitiativ, och exitprograms-beskattning.
+- Analytisk signal: S bygger en konservativ valrörelse-dimension riktad mot väljare som kombinerar anti-exploateringsposition med budgetansvar; Skatteverket stöder faktiskt en regelöversyn.
+
+**4. Energidirektivet EPBD (HD01CU30)** [MEDEL RELEVANS]
+- CU:s betänkande om EU:s omarbetade byggnadersdirektiv och nytt energieffektivitetsmål.
+- Politisk signal: Implementeringen av EPBD innebär obligatoriska uppgraderingskrav på äldre fastigheter — en nyckelkonflikt med CU31 (hyresmarknadsderegulering) och klimatdedlocket. Fastighetsbranschen och hyresgäster befinner sig i korseld.
+
+### 60-sekundersläsning
+
+- V driver en tredubbla välfärdsoffensiv mot M och L; Socialminister Tenje och Arbetsmarknadsminister Britz är under press med svarsdatum 29 maj.
+- Samtyckes-interpellationen är en rättssäkerhetssignal till oberoende väljare i mittensegmentet.
+- EPBD-betänkandet binder ihop hyresdebatt (CU31) med energiomställning — potentiell koalitionsspänning M/L vs SD om kostnader.
+- Inga nya KU34-signaler från SD idag; PIR-CONST-ABORT förblir öppen.
+
+### Viktigaste framåtblickande trigger
+
+**29 maj 2026** — sista svarsdatum för HD10484, HD10483, HD10485, HD10486. Ministersvaren avgör om V:s välfärdsnarrativ får substantiell motberättelse eller lämnas stärka som oinfrågasatta attacklinjer inför valet.
+
+### Dagspolitisk kartläggning 12 maj 2026
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling | **日期**：2026-05-12 | **工作流**：news-realtime-monitor  
+**分类**：🟢 PUBLIC | **置信度**：高 [Admiralty B2]
+
+### 结论 — 核心要点
+
+2026年5月12日星期二的特点是左翼党（V）就老年人护理、同等工资和福利向政府发起三重质询攻势——这是一个协调一致的选前信号阻断，针对蒂德联合政府的福利记录。同时，来自当天委员会报告（KU34、CU30、CU31）的三个宪法和社会政策程序正在整合。总体而言，5月12日展示了一个正在加速迈向2026年9月13日选举的反对党。
+
+### 关键情报要点
+
+**1. V党的三重质询攻势** [高重要性]
+- HD10484（Nadja Awad → Anna Tenje / M）：以营利为目的的老年人护理中的违规行为——关于监督、制裁、利润要求和人员供应的四个部长问题。背景数据：Socialstyrelsen预测2030年前需要新增50,000名员工；SVT/SR记录了反复发生的丑闻。
+- HD10486（Nadja Awad → Johan Britz / L）：福利部门的同等工资——V党将"女性加薪"（10年内300亿瑞典克朗）作为党的定位；关于结构性工资歧视的五个部长问题。
+- WEP：预计在5月29日截止日期前不会有部长声明给予V实质性胜利，但这些问题为9月13日之前创造了竞选材料。
+
+**2. 同意法：法治国家问题 (HD10483)** [中等重要性]
+- Katja Nyberg（无党派）→ Gunnar Strömmer / M：关于Brå识别的过失性强奸司法保障问题的三个问题。
+- 分析信号：一名独立议员提出了反映Brå自身建议的司法保障批评——政府的沉默创造了一个关于M无法处理复杂法律改革的潜在选举叙事。
+
+**3. 卖淫税务逻辑 (HD10485)** [低至中等重要性]
+- Ida Ekeroth Clausson（S）→ Elisabeth Svantesson / M：将SOU 2025:119、蒂德联合政府对委员会倡议的投票以及退出项目征税联系起来。
+- 分析信号：S正在为将反剥削立场与财政责任相结合的选民构建保守的选举运动维度；Skatteverket实际上支持规则审查。
+
+**4. 能源指令EPBD (HD01CU30)** [中等重要性]
+- CU关于欧盟修订建筑指令和新能源效率目标的委员会报告。
+- 政治信号：EPBD的实施包含对旧建筑的强制升级要求——与CU31（租房市场放松管制）和气候僵局的关键冲突。房地产业和租户处于交叉火力中。
+
+### 60秒摘要
+
+- V对M和L发动三重福利攻势；社会大臣Tenje和劳动大臣Britz在5月29日回复截止日期前承受压力。
+- 同意质询是向中间选民群体中的独立选民发出的司法保障信号。
+- EPBD委员会报告将租房市场辩论（CU31）与能源转型联系起来——M/L对SD在成本上的潜在联盟紧张。
+- 今日SD没有新的KU34信号；PIR-CONST-ABORT保持开放。
+
+### 最重要的前瞻触发因素
+
+**2026年5月29日** — HD10484、HD10483、HD10485、HD10486的最终回复日期。部长回复将决定V的福利叙事是否得到实质性的反驳，还是在选举前作为未受反驳的攻击线得到强化。
+
+### 2026年5月12日政治格局
+
+```mermaid
+graph TD
+    A["Riksdagen 12 maj 2026"] --> B["V:s välfärdsoffensiv"]
+    A --> C["Rättsstatsfrågor"]
+    A --> D["Energiomställning"]
+    B --> B1["HD10484\nÄldreomsorg\nAwad → Tenje"]
+    B --> B2["HD10486\nJämst. löner\nAwad → Britz"]
+    B --> B3["HD024149/HD024150\nMigrationsmotion\nV vs prop.263/264"]
+    C --> C1["HD10483\nSamtyckeslag\nNyberg → Strömmer"]
+    C --> C2["HD10485\nProstitutionsskatt\nClausson → Svantesson"]
+    D --> D1["HD01CU30\nEPBD-direktivet\nCU:s betänkande"]
+    D --> D2["HD01CU31\nHyresmarknadsreform\n(sibling: committeeReports)"]
+    B1 --> E["Svarsdatum 29 maj"]
+    B2 --> E
+    C1 --> E
+    C2 --> E
+    E --> F["Election 13 sep 2026"]
+    style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
+    style B fill:#ff006e,color:#fff,stroke:#ff006e
+    style C fill:#ffbe0b,color:#000,stroke:#ffbe0b
+    style D fill:#4caf50,color:#fff,stroke:#4caf50
+    style E fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+    style F fill:#e65100,color:#fff,stroke:#bf360c
+```
+
+<!-- source-sha: e87ab6b1e9a73ae1948c4e29ccf2380d69a15d92 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1852,6 +2781,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

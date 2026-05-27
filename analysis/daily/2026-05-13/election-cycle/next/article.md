@@ -3,7 +3,7 @@ date: 2026-05-13
 subfolder: election-cycle/next
 slug: 2026-05-13-election-cycle/next
 source_folder: analysis/daily/2026-05-13/election-cycle/next
-generated_at: 2026-05-27T09:17:55.743Z
+generated_at: 2026-05-27T13:23:45.718Z
 language: en
 layout: article
 ---
@@ -92,6 +92,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Workflow Audit](#rm-workflow-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -1367,6 +1380,711 @@ This forecast operates on the corpus produced by the parent news-election-cycle 
 - [`workflow-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/workflow-audit.md)
 - [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/documents/) — per dok_id analyses (Family E)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+
+<div dir="rtl">
+
+# توقعات الولاية التالية
+
+### الخلاصة (السطر الرئيسي)
+
+**متعادل تقريباً** (45–55% [horizon:election]) أن ينتج Riksdagsvalet بتاريخ 2026-09-13 **برلمانًا معلقًا** يتطلب **أكثر من 30 يومًا لتشكيل الائتلاف**. المتغير الهيكلي الحاسم هو **نجاة حزب L عند عتبة 4%** (حالياً *متعادل تقريباً* 50–65%؛ *غير محتمل* 30–45% أن يتجاوز L نسبة 5%)؛ المتغير الثانوي هو **تفضيل C للائتلاف** (تعاون وسطي مقابل ائتلاف أخضر-أحمر-وسط بقيادة S).
+
+### ثلاثة نتائج محددة للدورة (استشرافية)
+
+1. **استمرارية Tidö** بدعم M+KD(+L)+SD هي النتيجة **النمطية لكنها الأقلية** (32% موزعة على أوراق A1/A2/A3). ضمن السيناريو A، يهيمن *على الأرجح* (60–70%) A2 (Tidö بدون L) إذا انخفض L تحت 4%.
+2. **حكومة أخضر-أحمر-وسط بقيادة S** (28% موزعة على C1/C2/C3) هي **المجموعة الثانية الأكثر احتمالاً**، مع C1 (أغلبية S-MP-V) كورقة C نمطية بنسبة 11.2%.
+3. **نتائج البرلمان المعلق** (22%) تحمل *متعادلاً تقريباً* (40–55%) **خطر حكومة تصريف الأعمال** لأكثر من 60 يوماً، و*غير محتمل* (15–25%) **تشغيل انتخابات استثنائية** قبل الربع الأول من 2027.
+
+### لماذا هذا مهم الآن (مايو 2026)
+
+- **تموضع نهاية الولاية** من المعارضة (HD10483 قانون الموافقة، HD10484 رعاية المسنين، HD10485 ضريبة الدعارة، HD10486 المساواة في الأجور، HD01NU21 إطار السياسة الريفية) يشير إلى بناء المنصات الانتخابية؛ *على الأرجح* (60–75% [horizon:cycle]) أن تظهر هذه كركائز ائتلافية حاكمة تحت أي سيناريو C.
+- **إقرار الامتثال للاتحاد الأوروبي** من الائتلاف المنتهي ولايته (HD01CU30 EPBD، HD01FiU38 clearing) — الحكومة القادمة ترث مخاطر انتهاك شبه صفرية لكن ملكية سياسية محدودة.
+- **صندوق النقد الدولي WEO أبريل 2026** [horizon:cycle] T+0: مسار السويد مستقر؛ GGXWDG_NGDP 32.4% (2026) → 34.6% (2030) خط الأساس؛ مخاطر الهبوط *غير محتملة* (20–35%) في سيناريو الصدمة المالية.
+
+### أبرز 3 مخاطر (بعد 2026)
+
+| # | المخاطرة | الاحتمالية [الأفق] | التأثير | رافعة التخفيف |
+|---|----------|--------------------|---------|---------------|
+| 1 | تشكيل الائتلاف > 60 يومًا؛ الانجراف المالي لحكومة تصريف الأعمال | *متعادل تقريباً* 40–55% [election] | عالٍ — تأخير ميزانية FY2027 | إجراء Talmansprocessen؛ تجميد statslåneräntan |
+| 2 | L ينخفض تحت 4%؛ SD يدخل الحكومة (ورقة A2) | *متعادل تقريباً* 35–50% [election] | عالٍ — مراجعة دستورية لتعديلات HD03267 | مراجعة مسبقة من Lagrådet |
+| 3 | مراجعة التشريعات المستمدة من الاتحاد الأوروبي في ظل سيناريو C | *على الأرجح* 60–70% [cycle] | متوسط — احتكاك الامتثال للاتحاد الأوروبي | أحكام انتقالية مُتفاوَض عليها مسبقاً |
+
+### أبرز 3 بدائل مفاجئة (سيناريوهات البجعة السوداء القصوى)
+
+- **W1** التصعيد الروسي يجبر على تشكيل ائتلاف طارئ: 8% [18mo]
+- **W3** KU-anmälan كبير مؤكد خلال حملة الانتخابات: 12% [6mo]
+- **W5** أزمة قيادة SD بين الإعلان و2027: 9% [18mo]
+
+التوزيع الكامل في `wildcards-blackswans.md`.
+
+### نقاط القرار للمعنيين
+
+- **فاعلو الجانب الميزاني** (Konjunkturinstitutet، ESV، finanspolitiska rådet): التخطيط لـ**سيناريو تأخير الميزانية 30–60 يومًا** باحتمالية *على الأرجح* (60–75% [election]) تحت أي ورقة غير A1.
+- **الشركاء المؤسسيون للاتحاد الأوروبي**: توقع *على الأرجح* (60–70% [cycle]) اقتراحات معارضة حول جداول زمنية لنقل HD01CU30 في ظل سيناريوهات C.
+- **شركاء الناتو**: أرضية الإنفاق الدفاعي *محتملة جداً* (75–90% [cycle]) متينة؛ التزامات الناتو غير مرتبطة بالائتلاف.
+
+### مسار القراءة
+
+1. `scenario-analysis.md` — شجرة 12 ورقة، تحليل الاحتمالات.
+2. `coalition-mathematics.md` — توزيع مقاعد Sainte-Laguë حسب نموذج استطلاعات الرأي.
+3. `wildcards-blackswans.md` — 5 بدائل مفاجئة + 3 سيناريوهات بجعة سوداء قصوى.
+4. `cycle-trajectory.md` — مقاييس نطاق الأفق متعدد السنوات (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — المحركات الهيكلية لكل سيناريو.
+
+[A1] صندوق النقد الدولي WEO أبريل 2026 [horizon:cycle] T+0؛ [A2] مجمّع Sifo/Novus/Demoskop أبريل–مايو 2026.
+
+</div>
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_da.md -->
+
+### Kort konklusion
+
+**Omtrent ligeligt** (45–55 % [horizon:election]) at Riksdagsvalet 2026-09-13 resulterer i et **ophængt-parlamentsscenarie** med behov for **> 30 dages koalitionsdannelse**. Den afgørende strukturelle variabel er **L's overlevelse ved 4-procenttærsklen** (i øjeblikket *omtrent ligeligt* 50–65 %; *usandsynligt* 30–45 % at L overstiger 5 %); den sekundære variabel er **C's koalitionspræference** (centre-samarbejde vs S-ledet rødgrøn-centrum).
+
+### Tre cyklusdefinerende fund (fremadskuende)
+
+1. **Tidö-fortsættelse** under M+KD(+L)+SD-opbakning er det **modale men minoritetsbaserede** resultat (32 % fordelt på A1/A2/A3-blade). Inden for Scenario A dominerer *sandsynligvis* (60–70 %) A2 (Tidö uden L), hvis L falder under 4 %.
+2. **S-ledet rødgrøn-centrumregering** (28 % fordelt på C1/C2/C3) er det **næstmest sandsynlige kluster**, med C1 (S-MP-V-flertal) som det modale C-blad med 11,2 %.
+3. **Ophængt-parlamentsudfald** (22 %) medfører *omtrent ligeligt* (40–55 %) **risiko for forretningsministerium** i over 60 dage og *usandsynligt* (15–25 %) **risiko for ekstraordinært valg** inden udgangen af Q1-2027.
+
+### Hvorfor dette er vigtigt nu (maj 2026)
+
+- **Sen-mandatpositionering** fra oppositionen (HD10483 samtykkekoven, HD10484 ældrepleje, HD10485 prostitutionsbeskatning, HD10486 ligeløn, HD01NU21 landdistriktspolitisk ramme) signalerer opbygning af valgplatforme; *sandsynligvis* (60–75 % [horizon:cycle]) at disse optræder som koalitionsplanker under ethvert C-scenarie.
+- **EU-overensstemmelsesgodkendelse** af afgående koalition (HD01CU30 EPBD, HD01FiU38 clearing) — den indtrædende regering arver næsten nul overtrædelsesrisiko, men begrænset politisk ejerskab.
+- **IMF WEO apr-2026** [horizon:cycle] T+0: Sveriges kurs stabil; GGXWDG_NGDP 32,4 % (2026) → 34,6 % (2030) baseline; nedsiderisiko *usandsynligt* (20–35 %) ved finansielt chokscenarie.
+
+### Top-3 risici (efter 2026)
+
+| # | Risiko | Sandsynlighed [horisont] | Påvirkning | Afbødningshåndtag |
+|---|--------|--------------------------|------------|-------------------|
+| 1 | Koalitionsdannelse > 60 dage; forretningsministeriums finansielle afvigelse | *Omtrent ligeligt* 40–55 % [election] | Høj — FY2027-budgetforsinkelse | Talmansprocessen; statslåneräntan frysning |
+| 2 | L falder under 4 %; SD indgår i kabinet (A2-blad) | *Omtrent ligeligt* 35–50 % [election] | Høj — konstitutionel gennemgang af HD03267-ændringer | Lagrådet forhåndsgranskning |
+| 3 | EU-afledt lovgivning genovervejes under C-scenarie | *Sandsynligvis* 60–70 % [cycle] | Middel — EU-overensstemmelsesfriktion | Forhandlede overgangsbestemmelser |
+
+### Top-3 jokere (sort-svane-yderpunkter)
+
+- **W1** Ruslandseskalering tvinger akut koalitionsdannelse: 8 % [18mo]
+- **W3** Større KU-anmälan bekræftet under valgkampen: 12 % [6mo]
+- **W5** SD-lederskabskrise mellem annoncering og 2027: 9 % [18mo]
+
+Fuld fordeling i `wildcards-blackswans.md`.
+
+### Beslutningshåndtag for interessenter
+
+- **Budgetsidensaktører** (Konjunkturinstitutet, ESV, finanspolitiska rådet): planlæg for **30–60 dages budgetforsinkelsesscenarie** med *sandsynligvis* (60–75 % [election]) sandsynlighed under ethvert ikke-A1-blad.
+- **EU-institutionelle partnere**: forvent *sandsynligvis* (60–70 % [cycle]) oppositionsmotioner om HD01CU30-transponeringstidslinjer under C-scenarier.
+- **NATO-partnere**: forsvarsudgiftsgulvet *meget sandsynligt* (75–90 % [cycle]) holdbart; NATO-forpligtelser ikke koalitionsafhængige.
+
+### Læsesti
+
+1. `scenario-analysis.md` — 12-bladstræ, sandsynlighedsdekomposition.
+2. `coalition-mathematics.md` — Sainte-Laguë mandatallokering pr. meningsmålingsvintage.
+3. `wildcards-blackswans.md` — 5 jokere + 3 sort-svane-yderpunkter.
+4. `cycle-trajectory.md` — flerårige horisontbåndsmål (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — strukturelle drivkræfter pr. scenarie.
+
+[A1] IMF WEO apr-2026 [horizon:cycle] T+0; [A2] Aggregeret Sifo/Novus/Demoskop apr–maj 2026.
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_de.md -->
+
+### Kernaussage
+
+**Ungefähr gleich** (45–55 % [horizon:election]) dass das Riksdagsvalet 2026-09-13 ein **hängendes Parlament** erzeugt, das **> 30 Tage Koalitionsbildung** erfordert. Die entscheidende strukturelle Variable ist **das Überleben der L-Partei an der 4-Prozent-Hürde** (derzeit *ungefähr gleich* 50–65 %; *unwahrscheinlich* 30–45 % dass L 5 % überschreitet); die sekundäre Variable ist **C's Koalitionspräferenz** (Zentrumskooperation vs. S-geführtes Rot-Grün-Zentrum).
+
+### Drei zyklusdefinierenden Erkenntnisse (vorausschauend)
+
+1. **Tidö-Fortsetzung** unter M+KD(+L)+SD-Unterstützung ist das **modale, aber minderheitsbasierte** Ergebnis (32 % verteilt auf A1/A2/A3-Blätter). Innerhalb von Szenario A dominiert *wahrscheinlich* (60–70 %) A2 (Tidö ohne L), wenn L unter 4 % fällt.
+2. **S-geführte Rot-Grün-Zentrumsregierung** (28 % verteilt auf C1/C2/C3) ist der **zweitwahrscheinlichste Cluster**, mit C1 (S-MP-V-Mehrheit) als modalem C-Blatt mit 11,2 %.
+3. **Hängendes Parlament-Ergebnisse** (22 %) tragen *ungefähr gleich* (40–55 %) das **Risiko einer geschäftsführenden Regierung** von über 60 Tagen und *unwahrscheinlich* (15–25 %) das **Risiko außerordentlicher Wahlen** bis Q1-2027.
+
+### Warum dies jetzt wichtig ist (Mai 2026)
+
+- **Späte Mandatspositionierung** der Opposition (HD10483 Einwilligungsgesetz, HD10484 Altenpflege, HD10485 Prostitutionsbesteuerung, HD10486 Lohngleichheit, HD01NU21 ländliches Politikrahmenwerk) signalisiert den Aufbau von Wahlplattformen; *wahrscheinlich* (60–75 % [horizon:cycle]) treten diese als Koalitionseckpunkte in jedem C-Szenario auf.
+- **EU-Konformitätsgenehmigung** der scheidenden Koalition (HD01CU30 EPBD, HD01FiU38 Clearing) — die antretende Regierung erbt fast null Vertragsverletzungsrisiko, aber begrenztes politisches Eigentum.
+- **IMF WEO Apr-2026** [horizon:cycle] T+0: Schwedens Entwicklungspfad stabil; GGXWDG_NGDP 32,4 % (2026) → 34,6 % (2030) Grundlinie; Abwärtsrisiko *unwahrscheinlich* (20–35 %) im Finanzschockszenario.
+
+### Top-3-Risiken (nach 2026)
+
+| # | Risiko | Wahrscheinlichkeit [Horizont] | Auswirkung | Minderungsansatzpunkt |
+|---|--------|-------------------------------|------------|------------------------|
+| 1 | Koalitionsbildung > 60 Tage; fiskale Drift einer geschäftsführenden Regierung | *Ungefähr gleich* 40–55 % [election] | Hoch — FY2027-Budgetverzögerung | Talmansprocessen; statslåneräntan Einfrierung |
+| 2 | L fällt unter 4 %; SD tritt in das Kabinett ein (A2-Blatt) | *Ungefähr gleich* 35–50 % [election] | Hoch — Verfassungsprüfung der HD03267-Änderungen | Lagrådet Vorprüfung |
+| 3 | EU-abgeleitete Gesetzgebung wird unter C-Szenario überprüft | *Wahrscheinlich* 60–70 % [cycle] | Mittel — EU-Konformitätsreibung | Vorverhandelte Übergangsbestimmungen |
+
+### Top-3-Joker (Schwarze Schwan-Extremszenarien)
+
+- **W1** Russland-Eskalation erzwingt Notkoalitionsbildung: 8 % [18mo]
+- **W3** Bedeutende KU-anmälan während des Wahlkampfs bestätigt: 12 % [6mo]
+- **W5** SD-Führungskrise zwischen Ankündigung und 2027: 9 % [18mo]
+
+Vollständige Verteilung in `wildcards-blackswans.md`.
+
+### Entscheidungsansatzpunkte für Stakeholder
+
+- **Haushaltsseitige Akteure** (Konjunkturinstitutet, ESV, finanspolitiska rådet): Planen Sie für das **30–60-Tage-Budgetverzögerungsszenario** mit *wahrscheinlich* (60–75 % [election]) Wahrscheinlichkeit unter jedem Nicht-A1-Blatt.
+- **EU-institutionelle Partner**: Erwarten Sie *wahrscheinlich* (60–70 % [cycle]) Oppositionsmotionen zu HD01CU30-Transpositionszeitplänen unter C-Szenarien.
+- **NATO-Partner**: Verteidigungsausgaben-Untergrenze *sehr wahrscheinlich* (75–90 % [cycle]) dauerhaft; NATO-Verpflichtungen nicht koalitionsabhängig.
+
+### Leseweg
+
+1. `scenario-analysis.md` — 12-Blatt-Baum, Wahrscheinlichkeitsdekomposition.
+2. `coalition-mathematics.md` — Sainte-Laguë-Sitzverteilung nach Umfragevintage.
+3. `wildcards-blackswans.md` — 5 Joker + 3 Schwarze Schwan-Extremszenarien.
+4. `cycle-trajectory.md` — Mehrjährige Horizont-Band-Metriken (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — Strukturelle Treiber je Szenario.
+
+[A1] IMF WEO Apr-2026 [horizon:cycle] T+0; [A2] Aggregiert Sifo/Novus/Demoskop Apr–Mai 2026.
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_es.md -->
+
+### Conclusión principal
+
+**Aproximadamente igual** (45–55 % [horizon:election]) que el Riksdagsvalet 2026-09-13 produzca un **parlamento colgante** que requiera **> 30 días de formación de coalición**. La variable estructural decisiva es **la supervivencia de L en el umbral del 4 %** (actualmente *aproximadamente igual* 50–65 %; *poco probable* 30–45 % que L supere el 5 %); la variable secundaria es **la preferencia de coalición de C** (cooperación centrista vs coalición verde-roja-centro liderada por S).
+
+### Tres hallazgos que definen el ciclo (prospectivos)
+
+1. **La continuidad Tidö** con M+KD(+L)+SD es el resultado **modal pero minoritario** (32 % en hojas A1/A2/A3). En Escenario A, *probable* (60–70 %) A2 (Tidö sin L) domina si L cae bajo el 4 %.
+2. **Gobierno verde-rojo-centro liderado por S** (28 % en C1/C2/C3) es el **segundo clúster más probable**, con C1 (mayoría S-MP-V) como hoja C modal al 11,2 %.
+3. **Parlamento colgante** (22 %) conlleva *aproximadamente igual* (40–55 %) **riesgo de gobierno en funciones** > 60 días, y *poco probable* (15–25 %) **elecciones extraordinarias** antes de Q1-2027.
+
+### Por qué esto importa ahora (mayo de 2026)
+
+- **Posicionamiento de final de mandato** de la oposición (HD10483 ley de consentimiento, HD10484 atención mayores, HD10485 tributación prostitución, HD10486 igualdad salarial, HD01NU21 política rural) señala plataformas electorales; *probable* (60–75 % [horizon:cycle]) que emerjan como pilares de coalición bajo cualquier escenario C.
+- **Aprobación de cumplimiento de la UE** por la coalición saliente (HD01CU30 EPBD, HD01FiU38 compensación) — el gobierno entrante hereda un riesgo de infracción casi nulo pero una titularidad política limitada.
+- **FMI WEO abr-2026** [horizon:cycle] T+0: trayectoria sueca estable; GGXWDG_NGDP 32,4 % (2026) → 34,6 % (2030) línea base; riesgo a la baja *poco probable* (20–35 %) en el escenario de choque financiero.
+
+### Top 3 riesgos (después de 2026)
+
+| # | Riesgo | Probabilidad [horizonte] | Impacto | Palanca de mitigación |
+|---|--------|--------------------------|---------|-----------------------|
+| 1 | Formación de coalición > 60 días; deriva fiscal del gobierno en funciones | *Aproximadamente igual* 40–55 % [election] | Alto — Retraso presupuestario FY2027 | Procedimiento Talmansprocessen; congelación statslåneräntan |
+| 2 | L cae por debajo del 4 %; SD entra en el gabinete (hoja A2) | *Aproximadamente igual* 35–50 % [election] | Alto — Revisión constitucional de las enmiendas HD03267 | Revisión previa del Lagrådet |
+| 3 | Legislación de origen UE revisada bajo escenario C | *Probable* 60–70 % [cycle] | Medio — Fricción de cumplimiento UE | Disposiciones transitorias prenegociadas |
+
+### Top 3 comodines (escenarios extremos de cisne negro)
+
+- **W1** La escalada rusa obliga a la formación de coalición de emergencia: 8 % [18mo]
+- **W3** KU-anmälan importante confirmado durante la campaña electoral: 12 % [6mo]
+- **W5** Crisis de liderazgo de SD entre el anuncio y 2027: 9 % [18mo]
+
+Distribución completa en `wildcards-blackswans.md`.
+
+### Palancas de decisión para las partes interesadas
+
+- **Actores del lado presupuestario** (Konjunkturinstitutet, ESV, finanspolitiska rådet): planificar para el **retraso presupuestario de 30–60 días** *probable* (60–75 % [election]) bajo cualquier hoja no-A1.
+- **Socios institucionales de la UE**: anticipar *probable* (60–70 % [cycle]) mociones sobre HD01CU30 bajo escenarios C.
+- **Socios OTAN**: gasto en defensa *muy probable* (75–90 % [cycle]) independiente de la coalición.
+
+### Ruta de lectura
+
+1. `scenario-analysis.md` — árbol de 12 hojas, descomposición probabilística.
+2. `coalition-mathematics.md` — asignación de escaños Sainte-Laguë por vintage de encuesta.
+3. `wildcards-blackswans.md` — 5 comodines + 3 escenarios extremos de cisne negro.
+4. `cycle-trajectory.md` — métricas de banda de horizonte plurianual (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — motores estructurales por escenario.
+
+[A1] FMI WEO abr-2026 [horizon:cycle] T+0; [A2] Agregado Sifo/Novus/Demoskop abr–mayo 2026.
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_fi.md -->
+
+### Lyhyt johtopäätös
+
+**Suunnilleen tasan** (45–55 % [horizon:election]) että Riksdagsvalet 2026-09-13 tuottaa **roikkuvan parlamentin tilanteen**, joka vaatii **> 30 päivän hallitusneuvottelut**. Ratkaiseva rakenteellinen muuttuja on **L:n selviytyminen 4 prosentin kynnyksestä** (tällä hetkellä *suunnilleen tasan* 50–65 %; *epätodennäköistä* 30–45 % että L ylittää 5 %); toissijainen muuttuja on **C:n koalitiopreferenssi** (keskustayhteistyö vs S-johtoinen punaisenvihreä-keskusta).
+
+### Kolme sykliä määrittelevää havaintoa (tulevaisuuteen katsoen)
+
+1. **Tidö-jatkuvuus** M+KD(+L)+SD-tuella on **modaalinen mutta vähemmistöpohjainen** tulos (32 % jaettuna A1/A2/A3-lehtiin). Skenaarion A sisällä *todennäköisesti* (60–70 %) A2 (Tidö ilman L:ää) hallitsee, jos L laskee alle 4 %.
+2. **S-johtoinen punaisenvihreä-keskustahallitus** (28 % jaettuna C1/C2/C3:een) on **toiseksi todennäköisin ryväs**, C1:n (S-MP-V-enemmistö) ollessa modaalinen C-lehti 11,2 prosentilla.
+3. **Roikkuvan parlamentin tulokset** (22 %) kantavat *suunnilleen tasan* (40–55 %) **hoitovaltionhallituksen riskin** yli 60 päiväksi ja *epätodennäköistä* (15–25 %) **ylimääräisten vaalien laukaiseminen** Q1-2027 mennessä.
+
+### Miksi tämä on tärkeää nyt (toukokuu 2026)
+
+- **Toimikauden loppuvaiheen asemointi** oppositiolta (HD10483 suostumuslaki, HD10484 vanhustenhoito, HD10485 prostituutioveroitus, HD10486 tasa-arvoinen palkka, HD01NU21 maaseutupolitiikan kehys) signaloi vaaliohjelmien rakentamista; *todennäköisesti* (60–75 % [horizon:cycle]) nämä nousevat hallituskoalitioiden pilareiksi kaikissa C-skenaarioissa.
+- **EU-säädöstenmukaisuuden hyväksyntä** lähtevältä koalitiolta (HD01CU30 EPBD, HD01FiU38 clearing) — tuleva hallitus perii lähes nollan rikkomusriskin mutta rajoitetun poliittisen omistajuuden.
+- **IMF WEO huhtikuu 2026** [horizon:cycle] T+0: Ruotsin kehitysura vakaa; GGXWDG_NGDP 32,4 % (2026) → 34,6 % (2030) perusura; laskuriski *epätodennäköistä* (20–35 %) talousshokkiskenaariossa.
+
+### Top-3 riskit (vuoden 2026 jälkeen)
+
+| # | Riski | Todennäköisyys [horisontti] | Vaikutus | Lieventämisohje |
+|---|-------|------------------------------|----------|-----------------|
+| 1 | Hallitusneuvottelut > 60 päivää; hoitovaltionhallituksen finanssidrifti | *Suunnilleen tasan* 40–55 % [election] | Korkea — FY2027-budjettiviiväs | Talmansprocessen; statslåneräntan jäädytys |
+| 2 | L laskee alle 4 %; SD astuu kabinettiin (A2-lehti) | *Suunnilleen tasan* 35–50 % [election] | Korkea — HD03267-muutosten perustuslakitarkastus | Lagrådet ennakkotarkastus |
+| 3 | EU-peräinen lainsäädäntö harkitaan uudelleen C-skenaarion alla | *Todennäköisesti* 60–70 % [cycle] | Keskitaso — EU-vaatimustenmukaisuusfriiktio | Ennakkoneuvotellut siirtymämääräykset |
+
+### Top-3 jokerit (musta joutsen -ääripäät)
+
+- **W1** Venäjän eskalointi pakottaa hätäkoalition muodostamisen: 8 % [18mo]
+- **W3** Suuri KU-anmälan vahvistettu vaalikamppailun aikana: 12 % [6mo]
+- **W5** SD-johtajuuskriisi ilmoituksen ja vuoden 2027 välillä: 9 % [18mo]
+
+Täydellinen jakauma tiedostossa `wildcards-blackswans.md`.
+
+### Päätöksenteon ohjeet sidosryhmille
+
+- **Budjetin puolen toimijat** (Konjunkturinstitutet, ESV, finanspolitiska rådet): suunnitelkaa **30–60 päivän budjettiviivästysskenaarion** *todennäköisyydellä* (60–75 % [election]) kaikissa ei-A1-lehdissä.
+- **EU-institutionaaliset kumppanit**: odottakaa *todennäköisesti* (60–70 % [cycle]) oppositiomotioneita HD01CU30:n transposointiaikataluista C-skenaarioissa.
+- **NATO-kumppanit**: puolustusmenojen lattia *erittäin todennäköisesti* (75–90 % [cycle]) kestävä; NATO-sitoumukset eivät ole koalitiosidonnaisia.
+
+### Lukupolku
+
+1. `scenario-analysis.md` — 12-lehtinen puu, todennäköisyyshajotelma.
+2. `coalition-mathematics.md` — Sainte-Laguë-paikkajakaumien allokointi mielipidemittausvintagettain.
+3. `wildcards-blackswans.md` — 5 jokeria + 3 mustan joutsenen ääripäätä.
+4. `cycle-trajectory.md` — monivuotiset horisonttikaistamittarit (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — rakenteelliset ajurit skenaarioittain.
+
+[A1] IMF WEO huhtikuu 2026 [horizon:cycle] T+0; [A2] Koottu Sifo/Novus/Demoskop huhtikuu–toukokuu 2026.
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_fr.md -->
+
+### Conclusion principale
+
+**Pratiquement égal** (45–55 % [horizon:election]) que le Riksdagsvalet 2026-09-13 produise un **parlement sans majorité** nécessitant **> 30 jours de formation de coalition**. La variable structurelle déterminante est **la survie de L au seuil des 4 %** (actuellement *pratiquement égal* 50–65 % ; *peu probable* 30–45 % que L dépasse 5 %) ; la variable secondaire est **la préférence de coalition de C** (coopération centriste vs coalition rouge-vert-centre menée par S).
+
+### Trois résultats définissant le cycle (prospectifs)
+
+1. **La continuité Tidö** avec le soutien M+KD(+L)+SD est l'issue **modale mais minoritaire** (32 % répartis sur les feuilles A1/A2/A3). Au sein du Scénario A, *probable* (60–70 %) A2 (Tidö sans L) domine si L passe sous 4 %.
+2. **Un gouvernement rouge-vert-centre mené par S** (28 % sur C1/C2/C3) est le **deuxième cluster le plus probable**, avec C1 (majorité S-MP-V) comme feuille C modale à 11,2 %.
+3. **Les résultats de parlement sans majorité** (22 %) portent *pratiquement égal* (40–55 %) le **risque d'un gouvernement expéditeur d'affaires** pendant plus de 60 jours, et *peu probable* (15–25 %) le **déclenchement d'élections extraordinaires** d'ici Q1-2027.
+
+### Pourquoi cela est important maintenant (mai 2026)
+
+- **Positionnement de fin de mandat** de l'opposition (HD10483 loi sur le consentement, HD10484 soins aux personnes âgées, HD10485 imposition de la prostitution, HD10486 égalité des salaires, HD01NU21 cadre de politique rurale) signale des plateformes électorales ; *probable* (60–75 % [horizon:cycle]) que ceux-ci deviennent piliers de coalition sous tout scénario C.
+- **Dédouanement de conformité UE** par la coalition sortante (HD01CU30 EPBD, HD01FiU38 compensation) — le gouvernement entrant hérite d'un risque d'infraction quasi nul mais d'une propriété politique limitée.
+- **FMI PEM avr-2026** [horizon:cycle] T+0 : trajectoire suédoise stable ; GGXWDG_NGDP 32,4 % (2026) → 34,6 % (2030) ligne de base ; risque baissier *peu probable* (20–35 %) dans un scénario de choc financier.
+
+### Top 3 des risques (après 2026)
+
+| # | Risque | Probabilité [horizon] | Impact | Levier d'atténuation |
+|---|--------|-----------------------|--------|----------------------|
+| 1 | Formation de coalition > 60 jours ; dérive fiscale du gouvernement expéditeur d'affaires | *Pratiquement égal* 40–55 % [election] | Élevé — Retard budgétaire FY2027 | Procédure Talmansprocessen ; gel statslåneräntan |
+| 2 | L passe sous 4 % ; SD entre au cabinet (feuille A2) | *Pratiquement égal* 35–50 % [election] | Élevé — Révision constitutionnelle des amendements HD03267 | Examen préalable du Lagrådet |
+| 3 | La législation d'origine UE réexaminée sous scénario C | *Probable* 60–70 % [cycle] | Moyen — Friction de conformité UE | Dispositions transitoires pré-négociées |
+
+### Top 3 des jokers (scénarios extrêmes type cygne noir)
+
+- **W1** L'escalade russe force une formation de coalition d'urgence : 8 % [18mo]
+- **W3** Important KU-anmälan confirmé pendant la campagne électorale : 12 % [6mo]
+- **W5** Crise de leadership SD entre l'annonce et 2027 : 9 % [18mo]
+
+Distribution complète dans `wildcards-blackswans.md`.
+
+### Leviers de décision pour les parties prenantes
+
+- **Acteurs du côté budgétaire** (Konjunkturinstitutet, ESV, finanspolitiska rådet) : planifier pour le **retard budgétaire de 30–60 jours** *probable* (60–75 % [election]) sous toute feuille non-A1.
+- **Partenaires institutionnels UE** : anticiper *probable* (60–70 % [cycle]) des motions sur les calendriers HD01CU30 sous les scénarios C.
+- **Partenaires OTAN** : plancher défense *très probable* (75–90 % [cycle]) indépendant de la coalition.
+
+### Chemin de lecture
+
+1. `scenario-analysis.md` — arbre à 12 feuilles, décomposition probabiliste.
+2. `coalition-mathematics.md` — allocation de sièges Sainte-Laguë par vintage de sondage.
+3. `wildcards-blackswans.md` — 5 jokers + 3 scénarios extrêmes type cygne noir.
+4. `cycle-trajectory.md` — métriques de bande d'horizon pluriannuelles (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — moteurs structurels par scénario.
+
+[A1] FMI PEM avr-2026 [horizon:cycle] T+0 ; [A2] Agrégé Sifo/Novus/Demoskop avr–mai 2026.
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+
+<div dir="rtl">
+
+# תקציר מנהלים — תחזית לכהונה הבאה
+
+### סיכום (השורה התחתונה)
+
+**כמעט שקול** (45–55% [horizon:election]) ש-Riksdagsvalet ב-2026-09-13 יפיק **פרלמנט תלוי** הדורש **מעל 30 יום לגיבוש קואליציה**. המשתנה המבני המכריע הוא **הישרדות L בסף ה-4%** (כיום *כמעט שקול* 50–65%; *לא סביר* 30–45% ש-L יעלה על 5%); המשתנה המשני הוא **העדפת הקואליציה של C** (שיתוף פעולה מרכזי מול קואליציה ירוקה-אדומה-מרכז בהנהגת S).
+
+### שלוש תמצאות מגדירות מחזור (צופות פני עתיד)
+
+1. **המשכיות Tidö** עם תמיכת M+KD(+L)+SD היא התוצאה **המודאלית אך המיעוטית** (32% מפוזרת על עלים A1/A2/A3). בתוך תרחיש A, *סביר* (60–70%) ש-A2 (Tidö ללא L) ישלוט אם L יירד מתחת ל-4%.
+2. **ממשלה ירוקה-אדומה-מרכז בהנהגת S** (28% מפוזרת על C1/C2/C3) היא **האשכול השני בסבירותו**, עם C1 (רוב S-MP-V) כעלה C המודאלי ב-11.2%.
+3. **תוצאות פרלמנט תלוי** (22%) נושאות *כמעט שקול* (40–55%) את **סיכון ממשלת מעבר** ליותר מ-60 יום, ו*לא סביר* (15–25%) **הפעלת בחירות חריגות** לפני Q1-2027.
+
+### מדוע זה חשוב כעת (מאי 2026)
+
+- **מיצוב סוף הכהונה** מהאופוזיציה (HD10483 חוק הסכמה, HD10484 טיפול בקשישים, HD10485 מס על זנות, HD10486 שכר שווה, HD01NU21 מסגרת מדיניות כפרית) מאותת על בניית פלטפורמות בחירות; *סביר* (60–75% [horizon:cycle]) שאלה יצוצו כעמודי תווך קואליציוניים תחת כל תרחיש C.
+- **אישור ציות ה-EU** מהקואליציה היוצאת (HD01CU30 EPBD, HD01FiU38 clearing) — הממשלה הנכנסת יורשת סיכון הפרה כמעט אפסי אך בעלות פוליטית מוגבלת.
+- **קרן המטבע הבינלאומית WEO אפריל-2026** [horizon:cycle] T+0: מסלול שוודיה יציב; GGXWDG_NGDP 32.4% (2026) → 34.6% (2030) קו בסיס; סיכון כלפי מטה *לא סביר* (20–35%) בתרחיש הלם פיננסי.
+
+### 3 סיכונים עיקריים (לאחר 2026)
+
+| # | סיכון | הסתברות [אופק] | השפעה | מנוף הפחתה |
+|---|-------|----------------|--------|-------------|
+| 1 | גיבוש קואליציה > 60 יום; סחף פיסקלי של ממשלת מעבר | *כמעט שקול* 40–55% [election] | גבוה — עיכוב תקציב FY2027 | נוהל Talmansprocessen; הקפאת statslåneräntan |
+| 2 | L יורד מתחת ל-4%; SD נכנס לקבינט (עלה A2) | *כמעט שקול* 35–50% [election] | גבוה — ביקורת חוקתית על תיקוני HD03267 | סקירה מוקדמת של Lagrådet |
+| 3 | חקיקה מקורה ב-EU נבחנת מחדש תחת תרחיש C | *סביר* 60–70% [cycle] | בינוני — חיכוך ציות EU | הוראות מעבר מוסכמות מראש |
+
+### 3 ג'וקרים עיקריים (תרחישי ברבור שחור קיצוניים)
+
+- **W1** הסלמה רוסית מאלצת גיבוש קואליציה חירום: 8% [18mo]
+- **W3** KU-anmälan גדול מאושר במהלך הקמפיין הבחירותי: 12% [6mo]
+- **W5** משבר מנהיגות SD בין ההכרזה ל-2027: 9% [18mo]
+
+חלוקה מלאה ב-`wildcards-blackswans.md`.
+
+### נקודות החלטה לבעלי עניין
+
+- **גורמים בצד התקציב** (Konjunkturinstitutet, ESV, finanspolitiska rådet): תכננו לתרחיש **עיכוב תקציב 30–60 יום** עם הסתברות *סביר* (60–75% [election]) תחת כל עלה שאינו A1.
+- **שותפים מוסדיים באיחוד האירופי**: צפו *סביר* (60–70% [cycle]) הצעות אופוזיציה בנושא לוחות זמנים להטמעת HD01CU30 תחת תרחישי C.
+- **שותפי נאט"ו**: רצפת הוצאות הגנה *סביר מאוד* (75–90% [cycle]) בת-קיימא; התחייבויות נאט"ו אינן תלויות קואליציה.
+
+### מסלול קריאה
+
+1. `scenario-analysis.md` — עץ 12 עלים, פירוק הסתברויות.
+2. `coalition-mathematics.md` — הקצאת מנדטים Sainte-Laguë לפי וינטאג' סקרים.
+3. `wildcards-blackswans.md` — 5 ג'וקרים + 3 תרחישי ברבור שחור קיצוניים.
+4. `cycle-trajectory.md` — מדדי רצועת אופק רב-שנתיים (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — מניעים מבניים לכל תרחיש.
+
+[A1] קרן המטבע הבינלאומית WEO אפריל-2026 [horizon:cycle] T+0; [A2] מצטבר Sifo/Novus/Demoskop אפריל–מאי 2026.
+
+</div>
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_ja.md -->
+
+### 要点（結論）
+
+2026-09-13のRiksdagsvalet（国会議員選挙）が**過半数割れの議会**をもたらし、**30日超の連立交渉**を要する可能性は**ほぼ五分五分**（45–55% [horizon:election]）。最も重要な構造変数は**L党の4%得票率閾値の突破**（現在*ほぼ五分五分* 50–65%；Lが5%を超えることは*ありそうもない* 30–45%）；二次変数は**Cの連立選好**（中道協力 vs S主導の赤緑中道連立）。
+
+### サイクルを定義する三つの知見（将来展望）
+
+1. M+KD(+L)+SD支持下での**Tidö継続**は**最頻値だが少数派の**結果（A1/A2/A3葉に32%分散）。シナリオA内では、LがR4%を下回れば*おそらく*（60–70%）A2（LなしTidö）が優勢。
+2. **S主導の赤緑中道政府**（C1/C2/C3に28%分散）は**第二位の可能性クラスター**で、C1（S-MP-V過半数）が11.2%のモードC葉。
+3. **過半数割れ議会の結果**（22%）は*ほぼ五分五分*（40–55%）で**60日超の事務管理内閣リスク**を抱え、*ありそうもない*（15–25%）Q1-2027以前の**臨時選挙トリガー**を持つ。
+
+### 今（2026年5月）重要な理由
+
+- 野党による**任期末ポジショニング**（HD10483 同意法、HD10484 高齢者ケア、HD10485 売春課税、HD10486 同一賃金、HD01NU21 農村政策枠組み）は選挙プラットフォーム構築を示す；任意のCシナリオ下で連立公約として浮上することは*おそらく*（60–75% [horizon:cycle]）。
+- 退陣連立による**EUコンプライアンス清算**（HD01CU30 EPBD、HD01FiU38 クリアリング）— 新政府は違反リスクほぼゼロを引き継ぐが政治的所有権は限られる。
+- **IMF WEO 2026年4月** [horizon:cycle] T+0：スウェーデントラジェクトリー安定；GGXWDG_NGDP 32.4%（2026）→ 34.6%（2030）ベースライン；財政ショックシナリオでの下振れリスクは*ありそうもない*（20–35%）。
+
+### 主要リスクTop-3（2026年以降）
+
+| # | リスク | 確率 [ホライズン] | 影響 | 緩和策 |
+|---|--------|------------------|------|--------|
+| 1 | 連立交渉>60日；事務管理内閣の財政漂流 | *ほぼ五分五分* 40–55% [election] | 高 — FY2027予算遅延 | Talmansprocessen手続き；statslåneräntan凍結 |
+| 2 | LがR4%割れ；SDが閣内入り（A2葉） | *ほぼ五分五分* 35–50% [election] | 高 — HD03267改正の憲法審査 | Lagrådet事前審査 |
+| 3 | Cシナリオ下でEU由来の法律が見直される | *おそらく* 60–70% [cycle] | 中 — EUコンプライアンス摩擦 | 事前交渉済み移行措置 |
+
+### ワイルドカードTop-3（ブラックスワン的極端シナリオ）
+
+- **W1** ロシアの緊張激化が緊急連立形成を強制：8% [18mo]
+- **W3** 選挙キャンペーン中に重大なKU-anmälanが確認：12% [6mo]
+- **W5** 発表から2027年の間にSDが指導部危機：9% [18mo]
+
+完全な分布は `wildcards-blackswans.md` を参照。
+
+### ステークホルダーへの意思決定フック
+
+- **予算側の関係者**（Konjunkturinstitutet、ESV、finanspolitiska rådet）：A1葉以外のすべての葉で*おそらく*（60–75% [election]）の**30–60日予算遅延シナリオ**を計画する。
+- **EU機関パートナー**：Cシナリオ下でHD01CU30移行スケジュールに関する野党動議を*おそらく*（60–70% [cycle]）予期する。
+- **NATOパートナー**：防衛費の水準は*非常に高い確率で*（75–90% [cycle]）持続的；NATOコミットメントは連立に依存しない。
+
+### 読み進め方
+
+1. `scenario-analysis.md` — 12葉ツリー、確率分解。
+2. `coalition-mathematics.md` — サンテ・ラギュー方式による世論調査ヴィンテージ別議席配分。
+3. `wildcards-blackswans.md` — 5つのワイルドカード＋3つのブラックスワン。
+4. `cycle-trajectory.md` — 多年間ホライズンバンド指標（T+1y / T+2y / T+5y）。
+5. `pestle-analysis.md` — シナリオ別構造的推進力。
+
+[A1] IMF WEO 2026年4月 [horizon:cycle] T+0；[A2] 集計Sifo/Novus/Demoskop 2026年4月–5月。
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_ko.md -->
+
+### 핵심 요약 (결론)
+
+2026-09-13 Riksdagsvalet이 **30일 이상의 연립 협상**이 필요한 **과반수 미달 의회**를 낳을 가능성은 **거의 동등** (45–55% [horizon:election]). 결정적 구조 변수는 **L당의 4% 득표율 문턱 생존** (현재 *거의 동등* 50–65%; L이 5%를 초과할 확률은 *낮음* 30–45%); 이차 변수는 **C의 연립 선호** (중도 협력 vs. S 주도 적록 중도 연립).
+
+### 사이클을 정의하는 세 가지 발견 (미래 전망)
+
+1. M+KD(+L)+SD 지지 하의 **Tidö 연속**은 **최빈값이지만 소수파** 결과 (A1/A2/A3 잎에 32% 분산). 시나리오 A 내에서 L이 4% 미만으로 떨어지면 *아마도* (60–70%) A2 (L 없는 Tidö) 지배.
+2. **S 주도 적록 중도 정부** (C1/C2/C3에 28% 분산)는 **두 번째로 가능성 높은 클러스터**로, C1 (S-MP-V 과반수)이 11.2%의 최빈값 C 잎.
+3. **과반수 미달 의회 결과** (22%)는 *거의 동등* (40–55%)로 **60일 이상의 과도 내각 위험**을 지니고, *낮음* (15–25%) Q1-2027 이전의 **임시 선거 촉발**.
+
+### 왜 지금 중요한가 (2026년 5월)
+
+- 야당의 **임기 말 포지셔닝** (HD10483 동의법, HD10484 노인 돌봄, HD10485 성매매 과세, HD10486 동등 임금, HD01NU21 농촌 정책 프레임워크)은 선거 플랫폼 구축을 시사; 어떤 C 시나리오에서든 연립 공약으로 부상할 가능성 *아마도* (60–75% [horizon:cycle]).
+- 퇴임 연립의 **EU 준수 청산** (HD01CU30 EPBD, HD01FiU38 clearing) — 취임 정부는 거의 제로의 위반 위험을 물려받지만 정치적 소유권은 제한적.
+- **IMF WEO 2026년 4월** [horizon:cycle] T+0: 스웨덴 궤도 안정; GGXWDG_NGDP 32.4% (2026) → 34.6% (2030) 기준선; 재정 충격 시나리오에서 하방 위험 *낮음* (20–35%).
+
+### 주요 리스크 Top-3 (2026년 이후)
+
+| # | 위험 | 확률 [지평선] | 영향 | 완화 레버 |
+|---|------|--------------|------|-----------|
+| 1 | 연립 구성 >60일; 과도 내각의 재정 표류 | *거의 동등* 40–55% [election] | 높음 — FY2027 예산 지연 | Talmansprocessen 절차; statslåneräntan 동결 |
+| 2 | L이 4% 미만으로 하락; SD가 내각 진입 (A2 잎) | *거의 동등* 35–50% [election] | 높음 — HD03267 개정 헌법 심사 | Lagrådet 사전 검토 |
+| 3 | C 시나리오에서 EU 파생 법안 재검토 | *아마도* 60–70% [cycle] | 중간 — EU 준수 마찰 | 사전 협상된 과도 조항 |
+
+### 와일드카드 Top-3 (블랙 스완 극단 시나리오)
+
+- **W1** 러시아 긴장 고조로 긴급 연립 구성 강제: 8% [18mo]
+- **W3** 선거 캠페인 중 중대한 KU-anmälan 확인: 12% [6mo]
+- **W5** 발표와 2027년 사이 SD 지도부 위기: 9% [18mo]
+
+전체 분포는 `wildcards-blackswans.md` 참조.
+
+### 이해관계자를 위한 결정 레버
+
+- **예산 측 행위자들** (Konjunkturinstitutet, ESV, finanspolitiska rådet): A1 잎이 아닌 모든 잎에서 *아마도* (60–75% [election]) **30–60일 예산 지연 시나리오** 계획.
+- **EU 기관 파트너**: C 시나리오에서 HD01CU30 이행 일정에 관한 야당 발의를 *아마도* (60–70% [cycle]) 예상.
+- **NATO 파트너**: 국방비 하한선 *매우 높은 확률로* (75–90% [cycle]) 지속 가능; NATO 공약은 연립 무관.
+
+### 읽기 경로
+
+1. `scenario-analysis.md` — 12개 잎 트리, 확률 분해.
+2. `coalition-mathematics.md` — Sainte-Laguë 방식 여론조사 빈티지별 의석 배분.
+3. `wildcards-blackswans.md` — 와일드카드 5개 + 블랙 스완 3개.
+4. `cycle-trajectory.md` — 다년간 지평선 밴드 지표 (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — 시나리오별 구조적 동인.
+
+[A1] IMF WEO 2026년 4월 [horizon:cycle] T+0; [A2] 집계 Sifo/Novus/Demoskop 2026년 4월–5월.
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_nl.md -->
+
+### Kernboodschap
+
+**Ongeveer gelijk** (45–55 % [horizon:election]) dat het Riksdagsvalet 2026-09-13 een **opgehangen parlement** oplevert dat **> 30 dagen coalitievorming** vereist. De bepalende structurele variabele is **het voortbestaan van L boven de 4%-drempel** (momenteel *ongeveer gelijk* 50–65 %; *onwaarschijnlijk* 30–45 % dat L 5 % overschrijdt); de secundaire variabele is **C's coalitievoorkeur** (centrumsamenwerking vs S-geleide roodgroen-centrum coalitie).
+
+### Drie cyclus-bepalende bevindingen (vooruitblikkend)
+
+1. **Tidö-continuïteit** onder M+KD(+L)+SD-steun is de **modale maar minderheidsgebaseerde** uitkomst (32 % verdeeld over A1/A2/A3-bladeren). Binnen Scenario A domineert *waarschijnlijk* (60–70 %) A2 (Tidö zonder L) als L onder 4 % zakt.
+2. **S-geleide roodgroen-centrumregering** (28 % verdeeld over C1/C2/C3) is het **op één na meest waarschijnlijke cluster**, met C1 (S-MP-V-meerderheid) als het modale C-blad met 11,2 %.
+3. **Opgehangen parlement-uitkomsten** (22 %) dragen *ongeveer gelijk* (40–55 %) het **risico van een demissionair kabinet** van meer dan 60 dagen, en *onwaarschijnlijk* (15–25 %) het **risico van buitengewone verkiezingen** vóór Q1-2027.
+
+### Waarom dit nu belangrijk is (mei 2026)
+
+- **Laat-mandaat positionering** door de oppositie (HD10483 toestemmingswet, HD10484 ouderenzorg, HD10485 prostitutiebelasting, HD10486 gelijke beloning, HD01NU21 plattelandsbeleidskader) signaleert het opbouwen van verkiezingsplatforms; *waarschijnlijk* (60–75 % [horizon:cycle]) dat deze naar voren komen als coalitie-planken onder elk C-scenario.
+- **EU-nalevingsgoedkeuring** door de vertrekkende coalitie (HD01CU30 EPBD, HD01FiU38 clearing) — de aantredende regering erft bijna nul inbreukrisico maar beperkt politiek eigenaarschap.
+- **IMF WEO apr-2026** [horizon:cycle] T+0: Zweedse koers stabiel; GGXWDG_NGDP 32,4 % (2026) → 34,6 % (2030) basislijn; neerwaarts risico *onwaarschijnlijk* (20–35 %) bij financieel schokscenario.
+
+### Top-3 risico's (na 2026)
+
+| # | Risico | Waarschijnlijkheid [horizon] | Impact | Mitigatiehendel |
+|---|--------|------------------------------|--------|-----------------|
+| 1 | Coalitievorming > 60 dagen; fiscale drift van demissionair kabinet | *Ongeveer gelijk* 40–55 % [election] | Hoog — FY2027-begrotingsvertraging | Talmansprocessen-procedure; bevriezing statslåneräntan |
+| 2 | L zakt onder 4 %; SD treedt toe tot kabinet (A2-blad) | *Ongeveer gelijk* 35–50 % [election] | Hoog — constitutionele toetsing van HD03267-wijzigingen | Lagrådet-vooronderzoek |
+| 3 | EU-afkomstige wetgeving herzien onder C-scenario | *Waarschijnlijk* 60–70 % [cycle] | Gemiddeld — EU-nalevingswrijving | Vooraf onderhandelde overgangsbepalingen |
+
+### Top-3 jokers (zwarte zwaan-extreme scenario's)
+
+- **W1** Rusland-escalatie dwingt noodcoalitievorming: 8 % [18mo]
+- **W3** Grote KU-anmälan bevestigd tijdens verkiezingscampagne: 12 % [6mo]
+- **W5** SD-leiderschapscrisis tussen aankondiging en 2027: 9 % [18mo]
+
+Volledige verdeling in `wildcards-blackswans.md`.
+
+### Beslissingshandvatten voor stakeholders
+
+- **Begrotingszijde-actoren** (Konjunkturinstitutet, ESV, finanspolitiska rådet): plan voor het **30–60 daagse begrotingsvertragingsscenario** met *waarschijnlijk* (60–75 % [election]) kans onder elk niet-A1-blad.
+- **EU-institutionele partners**: verwacht *waarschijnlijk* (60–70 % [cycle]) oppositiemoties over HD01CU30-transponeringstijdlijnen onder C-scenario's.
+- **NAVO-partners**: defensie-uitgaven-vloer *zeer waarschijnlijk* (75–90 % [cycle]) duurzaam; NAVO-verplichtingen niet coalitie-afhankelijk.
+
+### Leespad
+
+1. `scenario-analysis.md` — 12-bladeren boom, kansontleding.
+2. `coalition-mathematics.md` — Sainte-Laguë-zetelsverdeling per opiniepeilingsvintage.
+3. `wildcards-blackswans.md` — 5 jokers + 3 zwarte zwaan-extreme scenario's.
+4. `cycle-trajectory.md` — meerjarige horizont-band-metrics (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — structurele drijfveren per scenario.
+
+[A1] IMF WEO apr-2026 [horizon:cycle] T+0; [A2] Geaggregeerd Sifo/Novus/Demoskop apr–mei 2026.
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_no.md -->
+
+### Kort konklusjon
+
+**Omtrent jevnt** (45–55 % [horizon:election]) at Riksdagsvalet 2026-09-13 resulterer i et **hengende parlamentsscenario** som krever **> 30 dagers koalisjonsdannelse**. Den avgjørende strukturelle variabelen er **L's overlevelse ved 4-prosentterskelen** (for øyeblikket *omtrent jevnt* 50–65 %; *usannsynlig* 30–45 % at L overstiger 5 %); den sekundære variabelen er **C's koalisjonspreferanse** (sentersamarbeid vs S-ledet rødgrønn-sentrum).
+
+### Tre syklusdefinerende funn (fremoverskuende)
+
+1. **Tidö-fortsettelse** under M+KD(+L)+SD-støtte er det **modale men minoritetsbaserte** utfallet (32 % fordelt på A1/A2/A3-blader). Innenfor Scenario A dominerer *sannsynligvis* (60–70 %) A2 (Tidö uten L) hvis L faller under 4 %.
+2. **S-ledet rødgrønn-sentrumsregjering** (28 % fordelt på C1/C2/C3) er det **nest mest sannsynlige klusteret**, med C1 (S-MP-V-flertall) som det modale C-bladet med 11,2 %.
+3. **Hengende parlamentsutfall** (22 %) medfører *omtrent jevnt* (40–55 %) **risiko for statsministerregjering** i over 60 dager, og *usannsynlig* (15–25 %) **risiko for ekstraordinært valg** innen Q1-2027.
+
+### Hvorfor dette er viktig nå (mai 2026)
+
+- **Sen-mandatposisjonering** fra opposisjonen (HD10483 samtykkesloven, HD10484 eldreomsorg, HD10485 prostitutionsbeskatning, HD10486 likelønn, HD01NU21 distriktspolitisk rammeverk) signalerer oppbygging av valgplattformer; *sannsynligvis* (60–75 % [horizon:cycle]) at disse fremstår som koalisjonsplanker under ethvert C-scenario.
+- **EU-samsvarsgodkjenning** fra avgående koalisjon (HD01CU30 EPBD, HD01FiU38 clearing) — den påtroppende regjeringen arver nær null bruddrisiko men begrenset politisk eierskap.
+- **IMF WEO apr-2026** [horizon:cycle] T+0: Sveriges kurs stabil; GGXWDG_NGDP 32,4 % (2026) → 34,6 % (2030) grunnlinje; nedsiderisiko *usannsynlig* (20–35 %) ved finansielt sjokkscenario.
+
+### Topp-3 risikoer (etter 2026)
+
+| # | Risiko | Sannsynlighet [horisont] | Påvirkning | Avbøtingskrok |
+|---|--------|--------------------------|------------|---------------|
+| 1 | Koalisjonsdannelse > 60 dager; statsministerregjerings finansielle avdrift | *Omtrent jevnt* 40–55 % [election] | Høy — FY2027-budsjettforsinkelse | Talmansprocessen; statslåneräntan frysing |
+| 2 | L faller under 4 %; SD trer inn i kabinett (A2-blad) | *Omtrent jevnt* 35–50 % [election] | Høy — konstitusjonell gjennomgang av HD03267-endringer | Lagrådet forhåndsgranskning |
+| 3 | EU-avledet lovgivning revurderes under C-scenario | *Sannsynligvis* 60–70 % [cycle] | Middels — EU-samsvarsfriksjon | Forhåndsforhandlede overgangsbestemmelser |
+
+### Topp-3 jokere (sort svane-ytterpunkter)
+
+- **W1** Russlandseskalering tvinger akutt koalisjonsdannelse: 8 % [18mo]
+- **W3** Stor KU-anmälan bekreftet under valgkampen: 12 % [6mo]
+- **W5** SD-lederkapskrise mellom annonsering og 2027: 9 % [18mo]
+
+Fullstendig fordeling i `wildcards-blackswans.md`.
+
+### Beslutningskroker for interessenter
+
+- **Budsjettsidensaktører** (Konjunkturinstitutet, ESV, finanspolitiska rådet): planlegg for **30–60 dagers budsjettforsinkelsesscenario** med *sannsynligvis* (60–75 % [election]) sannsynlighet under ethvert ikke-A1-blad.
+- **EU-institusjonelle partnere**: forvent *sannsynligvis* (60–70 % [cycle]) opposisjonsmotioner om HD01CU30-transponeringstidslinjer under C-scenarier.
+- **NATO-partnere**: forsvarsutgiftsgulvet *svært sannsynlig* (75–90 % [cycle]) holdbart; NATO-forpliktelser ikke koalisjonsavhengige.
+
+### Lesesti
+
+1. `scenario-analysis.md` — 12-bladtre, sannsynlighetsdekomposisjon.
+2. `coalition-mathematics.md` — Sainte-Laguë mandatallokering per meningsmålingsvinyl.
+3. `wildcards-blackswans.md` — 5 jokere + 3 sorte svaner.
+4. `cycle-trajectory.md` — flerårige horisontbåndsmetrikker (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — strukturelle drivkrefter per scenario.
+
+[A1] IMF WEO apr-2026 [horizon:cycle] T+0; [A2] Aggregert Sifo/Novus/Demoskop apr–mai 2026.
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_sv.md -->
+
+### Slutsats i korthet
+
+**Ungefär jämnt** (45–55 % [horizon:election]) att Riksdagsvalet 2026-09-13 resulterar i ett **parlamentariskt hängläge** som kräver **> 30 dagars koalitionsbildning**. Den avgörande strukturella variabeln är **L:s 4-procentströskelöverlevnad** (för närvarande *ungefär jämnt* 50–65 %; *osannolikt* 30–45 % att L överstiger 5 %); den sekundära variabeln är **C:s koalitionspreferens** (centerledd vs S-ledd rödgrön-center).
+
+### Tre mandatcykeldefinerande slutsatser (framåtblickande)
+
+1. **Tidöfortsättning** under M+KD(+L)+SD-stöd är det **modala men minoritetsbetonade** utfallet (32 % fördelat på A1/A2/A3-löv). Inom Scenario A dominerar *sannolikt* (60–70 %) A2 (Tidö utan L) om L sjunker under 4 %.
+2. **S-ledd rödgrön-centerregering** (28 % fördelat på C1/C2/C3) är det **näst troligaste klustret**, med C1 (S-MP-V-majoritet) som det modala C-lövet med 11,2 %.
+3. **Hängparlaments-utfall** (22 %) medför *ungefär jämnt* (40–55 %) **risk för riksföreståndareregering** i över 60 dagar, och *osannolikt* (15–25 %) **risk för extraordinärt val** till kvartal 1-2027.
+
+### Varför detta är viktigt nu (maj 2026)
+
+- **Sen-mandatpositionering** av oppositionen (HD10483 samtyckeslagen, HD10484 äldreomsorg, HD10485 prostitutionsbeskattning, HD10486 likalön, HD01NU21 landsbygdspolitisk ram) signalerar konstruktion av valplattformar; *sannolikt* (60–75 % [horizon:cycle]) att dessa framträder som styrande koalitionsplankor under varje C-scenario.
+- **EU-efterlevnadsgodkännande** av avgående koalition (HD01CU30 EPBD, HD01FiU38 clearing) — den tillträdande regeringen ärver nästintill noll intrångsrisk men begränsat politiskt ägarskap.
+- **IMF WEO apr-2026** [horizon:cycle] T+0: Sveriges bana stabil; GGXWDG_NGDP 32,4 % (2026) → 34,6 % (2030) baslinje; nedsiderisk *osannolikt* (20–35 %) vid finansiellt chockscenario.
+
+### Topp-3 risker (efter 2026)
+
+| # | Risk | Sannolikhet [horisont] | Påverkan | Begränsningshake |
+|---|------|------------------------|----------|------------------|
+| 1 | Koalitionsbildning > 60 dagar; riksföreståndareregerings fiskalavdrift | *Ungefär jämnt* 40–55 % [election] | Hög — FY2027-budgetfördröjning | Talmansprocessen; statslåneräntan frysning |
+| 2 | L sjunker under 4 %; SD inträder i kabinett (A2-löv) | *Ungefär jämnt* 35–50 % [election] | Hög — konstitutionell granskning av HD03267-ändringar | Lagrådet förhandsgranskning |
+| 3 | EU-härledd lagstiftning omprövas under C-scenario | *Sannolikt* 60–70 % [cycle] | Medel — EU-efterlevnadsfriktion | Förhandsförhandlade övergångsbestämmelser |
+
+### Topp-3 jokrar (extrema svarta svanar)
+
+- **W1** Rysslandseskalering tvingar fram akut koalitionsbildning: 8 % [18mo]
+- **W3** Stor KU-anmälan bekräftad under valkampanjen: 12 % [6mo]
+- **W5** SD-ledarskapskris mellan annonsering och 2027: 9 % [18mo]
+
+Fullständig fördelning i `wildcards-blackswans.md`.
+
+### Beslutshake för intressenter
+
+- **Budgetsidans aktörer** (Konjunkturinstitutet, ESV, finanspolitiska rådet): planera för **30–60 dagars budgetfördröjningsscenario** med *sannolikt* (60–75 % [election]) sannolikhet under varje icke-A1-löv.
+- **EU-institutionella partners**: förutse *sannolikt* (60–70 % [cycle]) oppositionsmotioner om HD01CU30-transponeringstidslinjer under C-scenarier.
+- **NATO-partners**: försvarsutgiftsgolvet *mycket sannolikt* (75–90 % [cycle]) hållbart; NATO-åtaganden ej koalitionsberoende.
+
+### Läsväg
+
+1. `scenario-analysis.md` — 12-lövsträd, sannolikhetsdekomposition.
+2. `coalition-mathematics.md` — Sainte-Laguë mandelfördelning per opinionsmätningsvintage.
+3. `wildcards-blackswans.md` — 5 jokrar + 3 svarta svanar.
+4. `cycle-trajectory.md` — fleråriga horisontbandsmått (T+1y / T+2y / T+5y).
+5. `pestle-analysis.md` — strukturella drivkrafter per scenario.
+
+[A1] IMF WEO apr-2026 [horizon:cycle] T+0; [A2] Aggregerat Sifo/Novus/Demoskop apr–maj 2026.
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_zh.md -->
+
+### 要点（核心结论）
+
+2026-09-13 Riksdagsvalet产生需要**逾30天组建联合政府**的**悬挂议会**的可能性**大致相当**（45–55% [horizon:election]）。决定性结构变量是**L党在4%票数门槛的生存**（目前*大致相当* 50–65%；L超过5%*不太可能* 30–45%）；次要变量是**C党的联合政府偏好**（中间协作 vs S主导的红绿中间联合）。
+
+### 三个定义本周期的发现（前瞻性）
+
+1. M+KD(+L)+SD支持下的**Tidö延续**是**最频繁但属少数派**的结果（32%分布于A1/A2/A3叶节点）。在情景A内，若L跌破4%，*可能*（60–70%）A2（不含L的Tidö）占主导。
+2. **S主导的红绿中间政府**（28%分布于C1/C2/C3）是**第二大可能集群**，C1（S-MP-V多数）是最频繁C叶，占11.2%。
+3. **悬挂议会结果**（22%）伴随*大致相当*（40–55%）**60天以上看守内阁风险**，以及*不太可能*（15–25%）Q1-2027前**触发特别选举**。
+
+### 为何现在重要（2026年5月）
+
+- 反对党的**任期末定位**（HD10483 同意法、HD10484 老年护理、HD10485 卖淫税收、HD10486 同等薪酬、HD01NU21 农村政策框架）表明选举纲领构建正在进行；在任何C情景下这些*可能*（60–75% [horizon:cycle]）成为执政联合支柱。
+- 离任联合的**欧盟合规清账**（HD01CU30 EPBD、HD01FiU38 结算）— 新政府继承几乎零违规风险，但政治所有权有限。
+- **IMF WEO 2026年4月** [horizon:cycle] T+0：瑞典轨迹稳定；GGXWDG_NGDP 32.4%（2026）→ 34.6%（2030）基准；财政冲击情景下的下行风险*不太可能*（20–35%）。
+
+### 主要风险前三位（2026年后）
+
+| # | 风险 | 概率 [时间轴] | 影响 | 缓解杠杆 |
+|---|------|--------------|------|----------|
+| 1 | 联合政府组建>60天；看守内阁财政漂移 | *大致相当* 40–55% [election] | 高 — FY2027预算延迟 | Talmansprocessen程序；statslåneräntan冻结 |
+| 2 | L跌破4%；SD入阁（A2叶） | *大致相当* 35–50% [election] | 高 — HD03267修正案的宪法审查 | Lagrådet预先审查 |
+| 3 | C情景下重新审视欧盟衍生立法 | *可能* 60–70% [cycle] | 中等 — 欧盟合规摩擦 | 预先谈判的过渡条款 |
+
+### 主要通配符前三位（黑天鹅极端情景）
+
+- **W1** 俄罗斯升级迫使紧急联合政府组建：8% [18mo]
+- **W3** 竞选期间重大KU-anmälan得到确认：12% [6mo]
+- **W5** SD在宣布与2027年之间发生领导层危机：9% [18mo]
+
+完整分布见 `wildcards-blackswans.md`。
+
+### 利益相关者决策杠杆
+
+- **预算侧行为者**（Konjunkturinstitutet、ESV、finanspolitiska rådet）：在任何非A1叶下，以*可能*（60–75% [election]）的概率规划**30–60天预算延迟情景**。
+- **欧盟机构合作伙伴**：预计在C情景下关于HD01CU30转换时间表的*可能*（60–70% [cycle]）反对党动议。
+- **北约合作伙伴**：国防开支下限*非常可能*（75–90% [cycle]）持久；北约承诺不依赖联合政府构成。
+
+### 阅读路径
+
+1. `scenario-analysis.md` — 12叶决策树，概率分解。
+2. `coalition-mathematics.md` — 圣拉格方法按民调年份分配议席。
+3. `wildcards-blackswans.md` — 5个通配符 + 3个黑天鹅情景。
+4. `cycle-trajectory.md` — 多年期时间轴带指标（T+1y / T+2y / T+5y）。
+5. `pestle-analysis.md` — 各情景的结构性驱动因素。
+
+[A1] IMF WEO 2026年4月 [horizon:cycle] T+0；[A2] 综合Sifo/Novus/Demoskop 2026年4月–5月。
+
+<!-- source-sha: 5aa33c0bf14497e5692597267f6b411db762b346 -->
+
 ## Mcp Reliability Audit
 <!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/mcp-reliability-audit.md -->
 
@@ -1456,7 +2174,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 31 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 44 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1500,6 +2218,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/data-download-manifest.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/analysis-index.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/executive-brief_zh.md)
 - [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/reference-analysis-quality.md)
 - [`workflow-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/election-cycle/next/workflow-audit.md)

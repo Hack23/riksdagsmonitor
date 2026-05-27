@@ -3,7 +3,7 @@ date: 2026-05-18
 subfolder: election-cycle/current
 slug: 2026-05-18-election-cycle/current
 source_folder: analysis/daily/2026-05-18/election-cycle/current
-generated_at: 2026-05-27T09:17:56.035Z
+generated_at: 2026-05-27T13:23:46.004Z
 language: en
 layout: article
 ---
@@ -1972,7 +1972,7 @@ No new voteringar data filtered to 2026-05-18 specifically relevant to election-
 *المؤلف*: James Pether Sörling | *سير العمل*: news-election-cycle | *التشغيل*: 25769375837
 *المصادر*: [A1] IMF WEO إبريل 2026 + بيانات ريكسداجن المفتوحة data.riksdagen.se؛ [A2] مسح منظمة التعاون الاقتصادي والتنمية للسويد 2025؛ [B2] SOM-institutet، Novus، رسم خرائط Tidöavtalet.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_da.md -->
@@ -2062,7 +2062,7 @@ Denne briefing vurderer hele mandatperioden 2022–2026 som én politisk cyklus,
 *Forfatter*: James Pether Sörling | *Arbejdsgang*: news-election-cycle | *Kørsel*: 25769375837
 *Kilder*: [A1] IMF WEO apr-2026 + Riksdagens åbne data data.riksdagen.se; [A2] OECD Sverige-undersøgelse 2025; [B2] SOM-institutet, Novus, Tidøavtalet-kortlægning.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_de.md -->
@@ -2152,7 +2152,7 @@ Dieses Briefing bewertet die gesamte Amtszeit 2022–2026 als einen einzigen pol
 *Autor*: James Pether Sörling | *Workflow*: news-election-cycle | *Durchlauf*: 25769375837
 *Quellen*: [A1] IMF WEO Apr-2026 + Riksdagens offene Daten data.riksdagen.se; [A2] OECD Schweden-Erhebung 2025; [B2] SOM-institutet, Novus, Tidöavtalet-Kartierung.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_es.md -->
@@ -2242,7 +2242,7 @@ Este briefing evalúa todo el mandato 2022–2026 como un único ciclo político
 *Autor*: James Pether Sörling | *Flujo de trabajo*: news-election-cycle | *Ejecución*: 25769375837
 *Fuentes*: [A1] IMF WEO abr-2026 + datos abiertos de Riksdagen data.riksdagen.se; [A2] Encuesta OCDE Suecia 2025; [B2] SOM-institutet, Novus, cartografía del Tidöavtalet.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_fi.md -->
@@ -2332,7 +2332,7 @@ Tämä briefing arvioi koko mandaattikauden 2022–2026 yhtenä poliittisena syk
 *Kirjoittaja*: James Pether Sörling | *Työnkulku*: news-election-cycle | *Ajo*: 25769375837
 *Lähteet*: [A1] IMF WEO huhtikuu 2026 + Riksdagenin avoin data data.riksdagen.se; [A2] OECD Ruotsi-tutkimus 2025; [B2] SOM-institutet, Novus, Tidöavtalet-kartoitus.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_fr.md -->
@@ -2421,7 +2421,7 @@ Ce briefing évalue l'ensemble du mandat 2022–2026 comme un seul cycle politiq
 *Auteur* : James Pether Sörling | *Processus* : news-election-cycle | *Exécution* : 25769375837
 *Sources* : [A1] IMF WEO avr-2026 + données ouvertes Riksdagen data.riksdagen.se ; [A2] Enquête OCDE Suède 2025 ; [B2] SOM-institutet, Novus, cartographie Tidöavtalet.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_he.md -->
@@ -2515,7 +2515,7 @@ Ce briefing évalue l'ensemble du mandat 2022–2026 comme un seul cycle politiq
 *מחבר*: James Pether Sörling | *תהליך עבודה*: news-election-cycle | *ריצה*: 25769375837
 *מקורות*: [A1] IMF WEO אפריל 2026 + נתונים פתוחים של Riksdagen data.riksdagen.se; [A2] סקר OECD שוודיה 2025; [B2] SOM-institutet, Novus, מיפוי Tidöavtalet.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_ja.md -->
@@ -2605,7 +2605,7 @@ Ce briefing évalue l'ensemble du mandat 2022–2026 comme un seul cycle politiq
 *著者*: James Pether Sörling | *ワークフロー*: news-election-cycle | *実行*: 25769375837
 *ソース*: [A1] IMF WEO 2026年4月 + Riksdagen オープンデータ data.riksdagen.se；[A2] OECD スウェーデン調査 2025；[B2] SOM-institutet、Novus、Tidöavtalet マッピング。
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_ko.md -->
@@ -2695,7 +2695,7 @@ Ce briefing évalue l'ensemble du mandat 2022–2026 comme un seul cycle politiq
 *저자*: James Pether Sörling | *워크플로*: news-election-cycle | *실행*: 25769375837
 *출처*: [A1] IMF WEO 2026년 4월 + Riksdagen 공개 데이터 data.riksdagen.se; [A2] OECD 스웨덴 조사 2025; [B2] SOM-institutet, Novus, Tidöavtalet 매핑.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_nl.md -->
@@ -2785,7 +2785,7 @@ Dit briefing beoordeelt de gehele mandaatperiode 2022–2026 als één politieke
 *Auteur*: James Pether Sörling | *Workflow*: news-election-cycle | *Uitvoering*: 25769375837
 *Bronnen*: [A1] IMF WEO apr-2026 + Riksdagens open data data.riksdagen.se; [A2] OESO Zweden-enquête 2025; [B2] SOM-institutet, Novus, Tidöavtalet-mapping.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_no.md -->
@@ -2875,7 +2875,7 @@ Denne briefingen vurderer hele mandatperioden 2022–2026 som én politisk syklu
 *Forfatter*: James Pether Sörling | *Arbeidsflyt*: news-election-cycle | *Kjøring*: 25769375837
 *Kilder*: [A1] IMF WEO apr-2026 + Riksdagens åpne data data.riksdagen.se; [A2] OECD Sverige-undersøkelse 2025; [B2] SOM-institutet, Novus, Tidøavtalet-kartlegging.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_sv.md -->
@@ -2965,7 +2965,7 @@ Denna briefing bedömer hela mandatperioden 2022–2026 som en enskild politisk 
 *Författare*: James Pether Sörling | *Arbetsflöde*: news-election-cycle | *Körning*: 25769375837
 *Källor*: [A1] IMF WEO apr-2026 + Riksdagens öppna data data.riksdagen.se; [A2] OECD Sverige-undersökning 2025; [B2] SOM-institutet, Novus, Tidöavtalskartläggning.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/election-cycle/current/executive-brief_zh.md -->
@@ -3055,7 +3055,7 @@ Denna briefing bedömer hela mandatperioden 2022–2026 som en enskild politisk 
 *作者*: James Pether Sörling | *工作流*: news-election-cycle | *运行*: 25769375837
 *来源*: [A1] IMF WEO 2026年4月 + Riksdagen 开放数据 data.riksdagen.se；[A2] OECD 瑞典调查 2025；[B2] SOM-institutet、Novus、Tidöavtalet 映射。
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
 
 ## Analysis Artifact Coverage Report
 
