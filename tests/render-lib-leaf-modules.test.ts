@@ -552,6 +552,28 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
     ['ko', '## 📌 요약'],
     ['zh', '## 🎯 执行摘要'],
     ['zh', '## 📌 核心摘要'],
+    // ── New entries from the 80.5% → 100% coverage expansion ──
+    // BLUF-equivalent and template-anchor sections observed as the
+    // first H2 of translated briefs in the live corpus. Each fixture
+    // pins one previously-NONE pattern; removal here causes that
+    // brief to fall back to readFirstParagraph and leak admin bylines.
+    ['sv', '## Övergripande bedömning'],
+    ['sv', '## Underrättelsesummering'],
+    ['no', '## 60-sekunders lesing (8 punkter)'],
+    ['fi', '## ⚡ Huippotason tiedustelu'],
+    ['da', '## Beslutninger der kræves straks'],
+    ['de', '## Sofort erforderliche Entscheidungen'],
+    ['fr', '## Décisions immédiates requises'],
+    ['es', '## Decisiones inmediatas requeridas'],
+    ['nl', '## Onmiddellijk vereiste beslissingen'],
+    ['ar', '## 🎯 ملخص'],
+    ['he', '## כותרת ראשית'],
+    ['ja', '## エグゼクティブサマリー'],
+    ['ja', '## 5点エグゼクティブサマリー'],
+    ['ko', '## 종합 평가'],
+    ['ko', '## 즉각적인 결정 사항'],
+    ['zh', '## 即刻所需决策'],
+    ['zh', '## 60秒阅读'],
   ] as const)('[%s] readBlufParagraph matches localised heading "%s"', (lang, heading) => {
     const input = `# Title\n\n${heading}\n\nThe lede sentence.\n\n## Next\n\nMore.`;
     expect(readBlufParagraph(input, lang)).toBe('The lede sentence.');
@@ -576,6 +598,57 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
     // supplied).
     const input = '# Title\n\n## 🎯 Sammanfattning\n\nSwedish lede.';
     expect(readBlufParagraph(input)).toBeNull();
+  });
+
+  it('readBlufParagraph accepts a blockquote-formatted BLUF body', () => {
+    // Some translated briefs render the BLUF paragraph as a Markdown
+    // blockquote (`> …`) rather than a plain paragraph. The cascade
+    // must strip the `> ` prefix from each line and return the
+    // collapsed prose. Removing the blockquote branch in
+    // `readBlufParagraph` causes those briefs to count as NONE in
+    // corpus coverage and silently ship the admin byline.
+    const input = '# Title\n\n## BLUF\n\n> The lede sentence spans\n> two quoted lines.\n\n## Next';
+    expect(readBlufParagraph(input)).toBe('The lede sentence spans two quoted lines.');
+  });
+
+  it('buildBlufHeadingRegex matches a parenthesised "(BLUF)" suffix variant', () => {
+    // Briefs sometimes write the heading as
+    //   `## Kärnbudskap (BLUF)` / `## 核心要点（BLUF）`
+    // — the keyword is in parens AFTER a localised label.
+    // `buildBlufHeadingRegex` must allow `(` and `（` as the
+    // pre-keyword separator character.
+    const sv = '# T\n\n## Kärnbudskap (BLUF)\n\nThe sv lede.\n\n## X';
+    expect(readBlufParagraph(sv, 'sv')).toBe('The sv lede.');
+    const zh = '# T\n\n## 核心要点（BLUF）\n\nThe zh lede.\n\n## X';
+    expect(readBlufParagraph(zh, 'zh')).toBe('The zh lede.');
+  });
+
+  it('buildBlufHeadingRegex matches a CJK-script prefix before the keyword', () => {
+    // Japanese briefs may write `## 結論優先の要約` — the dictionary
+    // entry is `結論優先の要約` (no separator before it), but in
+    // some files the heading reads `## 【BLUF】要約` with `]` /
+    // `】` between an emoji-bracket prefix and the keyword. The
+    // regex must allow CJK script characters (Han/Hiragana/Katakana/
+    // Hangul) as a valid pre-keyword character so the alternation
+    // can match without requiring a literal space.
+    const ja = '# T\n\n## 【要約】の要点\n\nJa lede.\n\n## X';
+    expect(readBlufParagraph(ja, 'ja')).toBe('Ja lede.');
+  });
+
+  it('cleanArtifactBody strips a leading Unicode bidi mark from RTL headings', () => {
+    // Arabic / Hebrew translated briefs sometimes carry a leading
+    // RLM (U+200F) or LRM (U+200E) on the H2 heading line. Without
+    // stripping these line-start bidi marks the `^#{2,6}` anchor
+    // never matches and the brief is counted as NONE in coverage.
+    // `cleanArtifactBody` must strip U+200E..U+202E and U+2066..U+2069
+    // at the start of each line. The integration is verified end-to-end
+    // here by feeding the cleaned body to `readBlufParagraph`.
+    const rawAr = '# Title\n\n\u200F## الملخص التنفيذي\n\nالنص العربي للملخص.\n\n## Next';
+    const cleanedAr = cleanArtifactBody(rawAr);
+    expect(readBlufParagraph(cleanedAr, 'ar')).toBe('النص العربي للملخص.');
+    const rawHe = '# Title\n\n\u200E## תמצית מנהלים\n\nתקציר בעברית.\n\n## Next';
+    const cleanedHe = cleanArtifactBody(rawHe);
+    expect(readBlufParagraph(cleanedHe, 'he')).toBe('תקציר בעברית.');
   });
 });
 
