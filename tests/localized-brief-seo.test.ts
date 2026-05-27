@@ -32,6 +32,7 @@ import {
   isBannedLocalizedBriefH1,
   LOCALIZED_BRIEF_H1_BANNED_PATTERNS,
 } from '../scripts/render-lib/aggregator/seo/localized-brief.js';
+import type { Language } from '../scripts/types/language.js';
 
 // ---------------------------------------------------------------------------
 // Fixtures
@@ -345,7 +346,7 @@ describe('extractLocalizedBriefSeo', () => {
       const out = extractLocalizedBriefSeo({
         briefMarkdown: brief,
         subfolder: 'propositions',
-        lang: lang as any,
+        lang: lang as Language,
       });
       expect(out.title).toBeTruthy();
       // The prefix should have been stripped

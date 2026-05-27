@@ -38,7 +38,14 @@ export function readFirstHeading(markdown: string): string | null {
   const htmlMatch = markdown.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
   if (htmlMatch) {
     // Strip nested HTML tags (e.g. <img>, <a>, <em>) and leading emoji.
-    const text = htmlMatch[1].replace(/<[^>]+>/g, '').replace(/^\s*[\p{Emoji_Presentation}\p{Extended_Pictographic}]+\s*/u, '').trim();
+    // Loop to prevent incomplete sanitization when tags are nested/overlapping.
+    let text = htmlMatch[1];
+    let prev: string;
+    do {
+      prev = text;
+      text = text.replace(/<[^>]+>/g, '');
+    } while (text !== prev);
+    text = text.replace(/^\s*[\p{Emoji_Presentation}\p{Extended_Pictographic}]+\s*/u, '').trim();
     return text.length > 0 ? text : null;
   }
   return null;
