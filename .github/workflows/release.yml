@@ -228,7 +228,8 @@ jobs:
           NODE_OPTIONS: "--max-old-space-size=4096"
         run: |
           mkdir -p builds/test-results builds/coverage
-          npx vitest run --coverage
+          set -o pipefail
+          npx vitest run --coverage 2>&1 | tee builds/test-results/vitest-console.log
 
           # Defense-in-depth: fail attribution stays on Unit Tests rather
           # than the downstream deploy-docs job ("Artifact not found").
