@@ -1,0 +1,50 @@
+{
+  "date": "2026-05-27",
+  "subfolder": "interpellations",
+  "imf_context": {
+    "status": "ok",
+    "vintage": "WEO-2026-04",
+    "vintage_age_months": 1,
+    "retrieved_at": "2026-05-27T07:57:09Z"
+  },
+  "sweden_indicators": {
+    "gdp_growth_2026_est": 1.5,
+    "unemployment_lur_2026_est": 8.5,
+    "fiscal_balance_pct_gdp": -0.5,
+    "debt_pct_gdp": 37,
+    "sources": ["IMF WEO Apr-2026"]
+  },
+  "nordic_comparison": {
+    "denmark_gdp_growth": 2.1,
+    "norway_gdp_growth": 2.4,
+    "finland_gdp_growth": 1.3,
+    "germany_gdp_growth": 1.1
+  },
+  "provenance": [
+    {
+      "provider": "imf",
+      "dataflow": "WEO",
+      "indicator": "NGDP_RPCH",
+      "country": "SWE",
+      "vintage": "WEO Apr-2026",
+      "retrieved_at": "2026-05-27"
+    },
+    {
+      "provider": "imf",
+      "dataflow": "WEO",
+      "indicator": "LUR",
+      "country": "SWE",
+      "vintage": "WEO Apr-2026",
+      "retrieved_at": "2026-05-27"
+    },
+    {
+      "provider": "imf",
+      "dataflow": "WEO",
+      "indicator": "GGXWDG_NGDP",
+      "country": "SWE",
+      "vintage": "WEO Apr-2026",
+      "retrieved_at": "2026-05-27"
+    }
+  ],
+  "notes": "IMF CLI pre-warm failed in this run; data from imf-context.json cache (status=ok). All figures are WEO Apr-2026 model estimates; annotate if vintage > 6 months."
+}
