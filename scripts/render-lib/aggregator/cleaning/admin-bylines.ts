@@ -330,6 +330,7 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'Revisado\\s*por',          // Reviewed by
   'Publicado',                // Published
   'ID\\s*de\\s*ejecuci(?:ó|o)n', // Run ID (es)
+  'SUBCARPETA',               // Subfolder label emitted by news-translate
   // ── Dutch (nl) ─────────────────────────────────────────────────────
   'Auteur',                   // Author
   'Bron',                     // Source

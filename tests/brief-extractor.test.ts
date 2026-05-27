@@ -220,4 +220,50 @@ describe('extractHeadlineSection — 14-language headline dictionary (live corpu
     expect(result.heading).not.toBeNull();
     expect(result.bullets.length).toBe(1);
   });
+
+  it('[es] numbered list bullets (1. 2. …) are collected from Lectura en 60 segundos', () => {
+    const brief = [
+      '# Spain test',
+      '',
+      '## 🎯 Síntesis de situación',
+      '',
+      'The BLUF paragraph.',
+      '',
+      '## ⚡ Lectura en 60 segundos (8 puntos)',
+      '',
+      '1. **HD03267 (JuU)**: SÄPO-triggered deportation — 136.5 DIW',
+      '2. **HD03262 (SfU)**: Permanent residence abolished — 132 DIW',
+      '3. **HD03258 (KU)**: Party financing disclosure — 74 DIW',
+      '',
+      '## 🔮 Next section',
+      '',
+    ].join('\n');
+    const result = extractHeadlineSection(brief, 'es');
+    expect(result.heading).not.toBeNull();
+    expect(result.bullets.length).toBe(3);
+    expect(result.bullets[0]).toContain('HD03267');
+    expect(result.bullets[1]).toContain('HD03262');
+  });
+
+  it('[zh] numbered list bullets (1. 2. …) are collected from 60秒速读', () => {
+    const brief = [
+      '# ZH test',
+      '',
+      '## 🎯 态势简要评估',
+      '',
+      'The ZH BLUF paragraph.',
+      '',
+      '## ⚡ 60秒速读',
+      '',
+      '1. **最重要**：HD03262——废除永久居留许可标准路径',
+      '2. **HD03267**：安全威胁驱逐程序',
+      '',
+      '## 下一节',
+      '',
+    ].join('\n');
+    const result = extractHeadlineSection(brief, 'zh');
+    expect(result.heading).not.toBeNull();
+    expect(result.bullets.length).toBe(2);
+    expect(result.bullets[0]).toContain('HD03262');
+  });
 });

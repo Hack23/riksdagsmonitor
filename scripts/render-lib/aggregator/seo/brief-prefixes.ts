@@ -95,6 +95,14 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Sammanfattning',
     'Beslutsunderlag',
     'Beslutsstöd',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'Underrättelsebriefing',
+    'Verkställande sammanfattning',
+    'Verksamhetsbriefing',
+    'Verkställande resumé',
+    'Underrättelserapport',
+    'Kortanalys',
+    'Verksamhetsöversikt',
   ],
   da: [
     'Resumé',
@@ -107,6 +115,18 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Politisk efterretning',
     'Beslutningsunderlag',
     'Beslutningsgrundlag',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'Efterretningsbriefing',
+    'Eksekutiv sammenfatning',
+    'Eksekutiv resumé',
+    'Efterretningsoversigt',
+    'Eksekutiv briefing',
+    'Kortanalyse',
+    'Ledende resumé',
+    'Kortfattet resumé',
+    'Kortfattet orientering',
+    'Eksekutiv orientering',
+    'Efterretningsrapport',
   ],
   no: [
     'Sammendrag',
@@ -119,6 +139,18 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Politisk etterretning',
     'Beslutningsunderlag',
     'Beslutningsgrunnlag',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'Etterretningsbriefing',
+    'Utøvende sammendrag',
+    'Eksekutiv sammendrag',
+    'Ledersammendrag',
+    'Kortfattet sammendrag',
+    'Etterretningsoversikt',
+    'Beslutningsnotat',
+    'Kortanalyse',
+    'Kortrapport',
+    'Etterretningsrapport',
+    'Eksekutivsammendrag',
   ],
   fi: [
     'Tiivistelmä',
@@ -129,6 +161,12 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Poliittinen tiedustelu',
     'Päätösanalyysi',
     'Päätöstuki',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'Toimeenpaneva tiivistelmä',
+    'Johdon tiivistelmä',
+    'Johtava yhteenveto',
+    'Tiedusteluyhteenveto',
+    'Johtoryhmän tiivistelmä',
   ],
   de: [
     'Executive Summary',
@@ -147,6 +185,16 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Entscheidungsunterlage',
     'Entscheidungsgrundlage',
     'Entscheidungsanalyse',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'Nachrichtenbriefing',
+    'Exekutivbriefing',
+    'Exekutivzusammenfassung',
+    'Exekutivbericht',
+    'Kurzinformation',
+    'Kurzanalyse',
+    'Exekutiv-Briefing',
+    'Kurzübersicht',
+    'Kurzbericht',
   ],
   fr: [
     'Résumé exécutif',
@@ -164,6 +212,11 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     "Note d'analyse décisionnelle",
     'Note décisionnelle',
     'Analyse décisionnelle',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'Synthèse de renseignement',
+    'Briefing de direction',
+    'Note de synthèse exécutive',
+    'Synthèse',
   ],
   es: [
     'Resumen ejecutivo',
@@ -177,6 +230,10 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Nota de análisis decisional',
     'Análisis decisional',
     'Nota decisional',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'Nota ejecutiva',
+    'Nota de inteligencia',
+    'Resumen ejecutivo de inteligencia',
   ],
   nl: [
     'Samenvatting',
@@ -189,6 +246,15 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Politieke inlichtingen',
     'Beslissingsanalyse',
     'Beslissingsondersteunend document',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'Uitvoerende samenvatting',
+    'Uitvoerend briefing',
+    'Uitvoerend overzicht',
+    'Uitvoerende briefing',
+    'Managementsamenvatting',
+    'Inlichtingenbrief',
+    'Inlichtingenrapport',
+    'Beknopte briefing',
   ],
   ar: [
     'ملخص تنفيذي',
@@ -202,6 +268,10 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'موجز تنفيذي',
     'تحليل القرار',
     'مذكرة تحليلية',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'الملخص التنفيذي',
+    'ملخص الاستخبارات',
+    'إحاطة استخباراتية',
   ],
   he: [
     'תקציר מנהלים',
@@ -214,6 +284,14 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'הערכת מצב תמציתית',
     'הערכת מצב',
     'ניתוח החלטות',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    'סיכום מנהלים',
+    'תדריך מנהלים',
+    'תדריך מודיעין',
+    'תקציר מודיעיני',
+    'תמצית מנהלים',
+    'סיכום מקבלי החלטות',
+    'סיכום מודיעיני',
   ],
   ja: [
     'エグゼクティブブリーフ',
@@ -229,6 +307,13 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     '意思決定分析',
     '決定分析',
     '意思決定支援',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    '情報ブリーフィング',
+    'インテリジェンス・ブリーフィング',
+    'インテリジェンスブリーフィング',
+    'エグゼクティブ・ブリーフィング',
+    '意思決定者向けエグゼクティブブリーフ',
+    'インテリジェンス概要',
   ],
   ko: [
     '경영진 브리프',
@@ -240,6 +325,15 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     '정치 정보',
     '의사결정 분석',
     '결정 분석',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    '집행 브리핑',
+    '정보 브리핑',
+    '임원 브리핑',
+    '행정 브리핑',
+    '집행 요약',
+    '인텔리전스 브리핑',
+    '임원 요약',
+    '요약 보고서',
   ],
   zh: [
     '执行摘要',
@@ -252,6 +346,12 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     '决策分析简报',
     '决策分析',
     '决策支持',
+    // Corpus-observed additions (≥2 occurrences in analysis/daily)
+    '执行简报',
+    '行政简报',
+    '情报概要',
+    '情报摘要',
+    '决策者执行简报',
   ],
 };
 

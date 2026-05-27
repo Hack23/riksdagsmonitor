@@ -133,3 +133,54 @@ describe('brief-prefixes — stripBriefPrefix', () => {
       .toBe('Plenary Vote Passes Bill');
   });
 });
+
+// ── Corpus-observed new prefix forms (≥2 occurrences in analysis/daily) ──────
+// These forms were found in production briefs but were missing from the
+// dictionary, causing titles to ship with the boilerplate prefix verbatim.
+describe('brief-prefixes — corpus-observed additions (2026-05)', () => {
+  const newPrefixSamples: Array<{ lang: Language; h1: string; expected: string }> = [
+    // SV
+    { lang: 'sv', h1: 'Underrättelsebriefing — Sverige Antar Migrationsreform', expected: 'Sverige Antar Migrationsreform' },
+    { lang: 'sv', h1: 'Verkställande sammanfattning — Riksdagen Röstar', expected: 'Riksdagen Röstar' },
+    { lang: 'sv', h1: 'Kortanalys — Budgetproposition 2026', expected: 'Budgetproposition 2026' },
+    // DA
+    { lang: 'da', h1: 'Efterretningsbriefing — Parlamentsvalg 2026', expected: 'Parlamentsvalg 2026' },
+    { lang: 'da', h1: 'Eksekutiv resumé — Parlamentet Vedtager Lov', expected: 'Parlamentet Vedtager Lov' },
+    // NO
+    { lang: 'no', h1: 'Etterretningsbriefing — Stortingets Vedtak', expected: 'Stortingets Vedtak' },
+    { lang: 'no', h1: 'Ledersammendrag — Ny Migrasjonslov Vedtatt', expected: 'Ny Migrasjonslov Vedtatt' },
+    // FI
+    { lang: 'fi', h1: 'Johtoryhmän tiivistelmä — Eduskunta Hyväksyy Lakiehdotuksen', expected: 'Eduskunta Hyväksyy Lakiehdotuksen' },
+    { lang: 'fi', h1: 'Johdon tiivistelmä — Budjettiesitys 2026', expected: 'Budjettiesitys 2026' },
+    // DE
+    { lang: 'de', h1: 'Exekutivzusammenfassung — Bundestag Verabschiedet Gesetz', expected: 'Bundestag Verabschiedet Gesetz' },
+    { lang: 'de', h1: 'Kurzanalyse — Migrationspolitik 2026', expected: 'Migrationspolitik 2026' },
+    // FR
+    { lang: 'fr', h1: 'Synthèse — Le Parlement Suédois Vote Sur La Réforme', expected: 'Le Parlement Suédois Vote Sur La Réforme' },
+    { lang: 'fr', h1: 'Note de synthèse exécutive — Réforme Migratoire', expected: 'Réforme Migratoire' },
+    // ES
+    { lang: 'es', h1: 'Nota ejecutiva — El Parlamento Sueco Debate La Reforma', expected: 'El Parlamento Sueco Debate La Reforma' },
+    // NL
+    { lang: 'nl', h1: 'Uitvoerende samenvatting — Het Zweeds Parlement Neemt Wet Aan', expected: 'Het Zweeds Parlement Neemt Wet Aan' },
+    { lang: 'nl', h1: 'Managementsamenvatting — Migratiehervormingen 2026', expected: 'Migratiehervormingen 2026' },
+    // AR
+    { lang: 'ar', h1: 'الملخص التنفيذي — البرلمان السويدي يصوت على إصلاح الهجرة', expected: 'البرلمان السويدي يصوت على إصلاح الهجرة' },
+    { lang: 'ar', h1: 'إحاطة استخباراتية — تصويت مهم في البرلمان', expected: 'تصويت مهم في البرلمان' },
+    // HE
+    { lang: 'he', h1: 'סיכום מנהלים — הפרלמנט השוודי מצביע על רפורמת ההגירה', expected: 'הפרלמנט השוודי מצביע על רפורמת ההגירה' },
+    { lang: 'he', h1: 'תדריך מנהלים — חקיקה חדשה בשוודיה', expected: 'חקיקה חדשה בשוודיה' },
+    // JA
+    { lang: 'ja', h1: '情報ブリーフィング — スウェーデン議会が移民改革を可決', expected: 'スウェーデン議会が移民改革を可決' },
+    { lang: 'ja', h1: 'インテリジェンスブリーフィング — 重要な立法決定', expected: '重要な立法決定' },
+    // KO
+    { lang: 'ko', h1: '집행 브리핑 — 스웨덴 의회가 이민법을 통과', expected: '스웨덴 의회가 이민법을 통과' },
+    { lang: 'ko', h1: '임원 브리핑 — 중요한 입법 결정', expected: '중요한 입법 결정' },
+    // ZH
+    { lang: 'zh', h1: '执行简报 — 瑞典议会通过移民改革法案', expected: '瑞典议会通过移民改革法案' },
+    { lang: 'zh', h1: '行政简报 — 重要立法决定', expected: '重要立法决定' },
+  ];
+
+  it.each(newPrefixSamples)('[$lang] strips corpus-observed prefix: $h1', ({ lang, h1, expected }) => {
+    expect(stripBriefPrefix(h1, lang)).toBe(expected);
+  });
+});

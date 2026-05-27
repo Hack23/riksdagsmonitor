@@ -401,6 +401,10 @@ export const LANG_BLUF_SECTION_NAMES: Readonly<Record<Language, readonly string[
     "phrase d'accroche", 'points essentiels en 60 secondes',
     'rapport de situation', 'cinq jugements à 365 jours',
     'renseignement de premier rang',
+    // Corpus-observed heading variants (keep longer-first in the list so
+    // they are matched before the shorter `synthèse` / `évaluation` stems)
+    'évaluation de situation synthétique',
+    'évaluation de situation',
   ],
   es: [
     'bluf', 'conclusión', 'resumen', 'resumen ejecutivo',
@@ -415,6 +419,9 @@ export const LANG_BLUF_SECTION_NAMES: Readonly<Record<Language, readonly string[
     'evaluación única', 'evaluación en una frase',
     'encabezado en una frase', 'informe de situación',
     'cinco valoraciones a 365 días', 'inteligencia de primera línea',
+    // Corpus-observed heading variants
+    'síntesis de situación',
+    'síntesis ejecutiva',
   ],
   nl: [
     'bluf', 'conclusie', 'samenvatting', 'kernboodschap',
@@ -504,6 +511,10 @@ export const LANG_BLUF_SECTION_NAMES: Readonly<Record<Language, readonly string[
     '核心情报判断', '一句话导语', '今日五大关键进展',
     '即刻所需决策', '60秒阅读', '形势报告',
     '365天的五项判断', '顶级情报',
+    // Corpus-observed heading variants (more specific than bare `摘要` so
+    // the regex engine finds these before the shorter substring match)
+    '态势简要评估',
+    '态势评估',
   ],
 };
 
@@ -725,7 +736,8 @@ export function extractHeadlineSection(
     if (inSection && /^#\s/.test(line)) break;
 
     if (inSection) {
-      const isBullet = /^[\s>]*[-*•·]\s+/u.test(line);
+      const isBullet = /^[\s>]*[-*•·]\s+/u.test(line)
+        || /^[\s>]*\d+\.\s+/u.test(line);
       if (isBullet) {
         const cleaned = cleanBulletLine(line);
         if (cleaned.length > 0) bullets.push(cleaned);

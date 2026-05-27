@@ -650,6 +650,85 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
     const cleanedHe = cleanArtifactBody(rawHe);
     expect(readBlufParagraph(cleanedHe, 'he')).toBe('תקציר בעברית.');
   });
+
+  // ── Corpus-derived regression guards: specific heading forms found ──
+  // in 2026-05 production briefs that were previously unrecognised,
+  // causing `readBlufParagraph` to fall through to a later, generic
+  // section (e.g. `## Synthèse des risques` via bare `synthèse` in FR,
+  // or `## 风险摘要` via bare `摘要` in ZH) and leak risk-matrix bullets
+  // into the SERP description instead of the high-quality BLUF prose.
+
+  it('[fr] évaluation de situation synthétique is matched as BLUF (prevents fallthrough to Synthèse des risques)', () => {
+    const brief = [
+      '# Propositions test',
+      '',
+      '**Classification** : OSINT · **Confiance** : MOYEN-ÉLEVÉ',
+      '',
+      '## 🎯 Évaluation de situation synthétique',
+      '',
+      'Du 30 avril au 7 mai 2026, le gouvernement Kristersson a soumis 10 propositions.',
+      '',
+      '## Lecture en 60 secondes',
+      '',
+      '- HD03267: Expulsion accélérée',
+      '',
+      '## Synthèse des risques',
+      '',
+      '- **Niveau 1 (systémique)** : Mise en œuvre HD03262 → risque de capacité ÉLEVÉ.',
+      '',
+    ].join('\n');
+    const result = readBlufParagraph(brief, 'fr');
+    expect(result).not.toBeNull();
+    expect(result).toContain('gouvernement Kristersson');
+    // Must NOT leak the risk-matrix content
+    expect(result).not.toContain('Niveau 1');
+  });
+
+  it('[es] síntesis de situación is matched as BLUF', () => {
+    const brief = [
+      '# Mociones test',
+      '',
+      '**Clasificación**: OSINT · **Confianza**: MEDIO-ALTO',
+      '',
+      '## Síntesis de situación',
+      '',
+      'S exige el rechazo total de la prop 255 por motivos de RGPD.',
+      '',
+      '## Lectura en 60 segundos (8 puntos)',
+      '',
+      '1. **S contra MP**: análisis de la prop 255',
+      '',
+    ].join('\n');
+    const result = readBlufParagraph(brief, 'es');
+    expect(result).not.toBeNull();
+    expect(result).toContain('RGPD');
+  });
+
+  it('[zh] 态势简要评估 is matched as BLUF (prevents fallthrough to 风险摘要)', () => {
+    const brief = [
+      '# ZH propositions test',
+      '',
+      '**分类**：公开OSINT · **可信度**：中高',
+      '',
+      '## 🎯 态势简要评估',
+      '',
+      '2026年4月，克里斯特松政府提交了10项议会议案。',
+      '',
+      '## 60秒速读',
+      '',
+      '- **最重要**：HD03262——废除永久居留许可',
+      '',
+      '## 风险摘要',
+      '',
+      '- **第1级（系统性）**：HD03262实施 → 能力风险高。',
+      '',
+    ].join('\n');
+    const result = readBlufParagraph(brief, 'zh');
+    expect(result).not.toBeNull();
+    expect(result).toContain('克里斯特松政府');
+    // Must NOT leak the risk-matrix content
+    expect(result).not.toContain('第1级');
+  });
 });
 
 describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
