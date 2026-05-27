@@ -379,7 +379,7 @@ export const LANG_BLUF_SECTION_NAMES: Readonly<Record<Language, readonly string[
     'strategisches bild', 'kerturteile',
     'fünf-punkte-zusammenfassung', 'regierungsbildung-vorschau',
     'vorschau auf die regierungsbildung', 'fünfpunktzusammenfassung',
-    'kurzbewertung', 'lage',
+    'kurzbewertung', 'lage', 'lagebewertung', 'kurze lagebeurteilung',
     'führendes geheimdiensturteil',
     'sofort erforderliche entscheidungen', 'wichtigste geheimdiensterkenntnisse',
     'kernmeldung', 'einzelbewertung', 'bewertung in einem satz',
@@ -466,6 +466,7 @@ export const LANG_BLUF_SECTION_NAMES: Readonly<Record<Language, readonly string[
     'הערכה יחידה', 'הערכות מפתח', 'כותרת בשורה אחת',
     'החלטות נדרשות מיידית', 'נקודות מפתח ב-60 שניות',
     'דו"ח מצב', 'חמישה פסקי דין ב-365 ימים', 'מודיעין בכיר',
+    'הערכת מצב תמציתית', 'הערכת מצב',
   ],
   ja: [
     'bluf', '要約', '要旨', '結論', '主要判断', '要点', 'まとめ',

@@ -254,6 +254,7 @@ export function readBlufParagraph(markdown: string, lang?: Language): string | n
   for (const p of paragraphs) {
     if (/^#+\s/.test(p)) break;
     if (/^<!--/.test(p)) continue;
+    if (/^<[a-zA-Z]/.test(p)) continue;
     if (/^\|/.test(p)) continue;
     if (/^```/.test(p)) continue;
     // Bulleted lede (`* …`) is structural, not a paragraph — skip it.
@@ -403,6 +404,7 @@ export function readFirstParagraph(markdown: string): string | null {
   for (const p of lines) {
     if (/^#+\s/.test(p)) continue;
     if (/^<!--/.test(p)) continue;
+    if (/^<[a-zA-Z]/.test(p)) continue;
     if (/^\|/.test(p)) continue;
     if (/^```/.test(p)) continue;
     if (/^[>*]\s/.test(p)) continue;

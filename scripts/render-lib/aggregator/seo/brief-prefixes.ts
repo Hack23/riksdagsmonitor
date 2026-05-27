@@ -93,6 +93,8 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Politisk underrättelse',
     'Politisk underrättelseanalys',
     'Sammanfattning',
+    'Beslutsunderlag',
+    'Beslutsstöd',
   ],
   da: [
     'Resumé',
@@ -103,6 +105,8 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Realtidsmonitor',
     'Daglig brief',
     'Politisk efterretning',
+    'Beslutningsunderlag',
+    'Beslutningsgrundlag',
   ],
   no: [
     'Sammendrag',
@@ -113,6 +117,8 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Sanntidsmonitor',
     'Daglig brief',
     'Politisk etterretning',
+    'Beslutningsunderlag',
+    'Beslutningsgrunnlag',
   ],
   fi: [
     'Tiivistelmä',
@@ -121,6 +127,8 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Reaaliaikainen monitori',
     'Päivittäinen tiivistelmä',
     'Poliittinen tiedustelu',
+    'Päätösanalyysi',
+    'Päätöstuki',
   ],
   de: [
     'Executive Summary',
@@ -136,6 +144,9 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Tages-Briefing',
     'Politische Aufklärung',
     'Politisches Lagebild',
+    'Entscheidungsunterlage',
+    'Entscheidungsgrundlage',
+    'Entscheidungsanalyse',
   ],
   fr: [
     'Résumé exécutif',
@@ -150,6 +161,9 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Briefing quotidien',
     'Renseignement politique',
     'Note de renseignement',
+    "Note d'analyse décisionnelle",
+    'Note décisionnelle',
+    'Analyse décisionnelle',
   ],
   es: [
     'Resumen ejecutivo',
@@ -160,6 +174,9 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Monitor en tiempo real',
     'Informe diario',
     'Inteligencia política',
+    'Nota de análisis decisional',
+    'Análisis decisional',
+    'Nota decisional',
   ],
   nl: [
     'Samenvatting',
@@ -170,6 +187,8 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'Realtime monitor',
     'Dagelijkse briefing',
     'Politieke inlichtingen',
+    'Beslissingsanalyse',
+    'Beslissingsondersteunend document',
   ],
   ar: [
     'ملخص تنفيذي',
@@ -180,6 +199,9 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'مرصد في الوقت الحقيقي',
     'الموجز اليومي',
     'الاستخبارات السياسية',
+    'موجز تنفيذي',
+    'تحليل القرار',
+    'مذكرة تحليلية',
   ],
   he: [
     'תקציר מנהלים',
@@ -189,6 +211,9 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'מסכם יומי',
     'מוניטור בזמן אמת',
     'מודיעין פוליטי',
+    'הערכת מצב תמציתית',
+    'הערכת מצב',
+    'ניתוח החלטות',
   ],
   ja: [
     'エグゼクティブブリーフ',
@@ -201,6 +226,9 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     'リアルタイムモニター',
     '日次ブリーフ',
     '政治インテリジェンス',
+    '意思決定分析',
+    '決定分析',
+    '意思決定支援',
   ],
   ko: [
     '경영진 브리프',
@@ -210,6 +238,8 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     '실시간 모니터',
     '일일 브리프',
     '정치 정보',
+    '의사결정 분석',
+    '결정 분석',
   ],
   zh: [
     '执行摘要',
@@ -219,6 +249,9 @@ export const BRIEF_TITLE_PREFIXES: Readonly<Record<Language, readonly string[]>>
     '实时监测',
     '每日简报',
     '政治情报',
+    '决策分析简报',
+    '决策分析',
+    '决策支持',
   ],
 };
 
