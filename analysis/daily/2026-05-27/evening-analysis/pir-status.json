@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "cycle": "evening-analysis",
+  "date": "2026-05-27",
+  "subfolder": "evening-analysis",
+  "generated_at": "2026-05-27T18:55:00Z",
+  "inherited_from": null,
+  "pirs": [
+    {
+      "pir_id": "PIR-01",
+      "statement": "Will the Riksdag pass HD01FöU15 (NCC cybersecurity legislation) and what will the NCC's operational budget be in BP27?",
+      "trigger": "Vote tally published at riksdagen.se; Ministry of Defence BP27 framework communication June 2026",
+      "status": "open",
+      "confidence": "HIGH",
+      "evidence_refs": ["HD01FöU15"],
+      "horizon": "2026-06-30",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-02",
+      "statement": "Will Socialdemokraterna (S) file a reservation or separate vote request on juvenile provisions in HD01JuU38 recidivism legislation?",
+      "trigger": "S press release post-vote; Riksdag reservation publications 28-29 May 2026",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": ["HD01JuU38"],
+      "horizon": "2026-05-30",
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-03",
+      "statement": "What specific remediation measures did SfU accept from the Riksrevisionen's full recommendation set for migration detention (HD01SfU34)?",
+      "trigger": "SfU34 betänkande approved text + committee minority reservations published",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": ["HD01SfU34"],
+      "horizon": "2026-05-30",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-04",
+      "statement": "What criteria define 'trusted partner' status in HD01UU18 modernised arms export law, and which non-NATO states are included?",
+      "trigger": "UU18 approved statutory text + Exportkontrollrådet press release",
+      "status": "open",
+      "confidence": "LOW",
+      "evidence_refs": ["HD01UU18"],
+      "horizon": "2026-06-15",
+      "admiralty_grade": "C3"
+    },
+    {
+      "pir_id": "PIR-05",
+      "statement": "Are there pending ECHR cases against Sweden on migration detention conditions that could produce admissibility decisions in H2 2026?",
+      "trigger": "ECHR case registry update; Swedish Ministry of Justice ECHR unit communication",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": ["HD01SfU34"],
+      "horizon": "2026-12-31",
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-06",
+      "statement": "Will the Swedish government announce the 2026 election date before the NATO summit, and what is the expected election date?",
+      "trigger": "Riksdagsförvaltningen formal election date announcement; media reports",
+      "status": "open",
+      "confidence": "HIGH",
+      "evidence_refs": [],
+      "horizon": "2026-07-31",
+      "admiralty_grade": "A2"
+    },
+    {
+      "pir_id": "PIR-07",
+      "statement": "Will Sweden's NCC be cited as an operational capability by NATO partners at the June/July 2026 NATO summit?",
+      "trigger": "NATO summit communiqué or allied press statements citing Sweden NCC",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": ["HD01FöU15"],
+      "horizon": "2026-08-01",
+      "admiralty_grade": "B3"
+    },
+    {
+      "pir_id": "PIR-08",
+      "statement": "What is Kriminalvårdens published capacity expansion plan in response to increased demand from HD01JuU38 sentencing provisions?",
+      "trigger": "Kriminalvården press release or budget request for new prison capacity",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": ["HD01JuU38"],
+      "horizon": "2026-09-01",
+      "admiralty_grade": "B3"
+    }
+  ]
+}
