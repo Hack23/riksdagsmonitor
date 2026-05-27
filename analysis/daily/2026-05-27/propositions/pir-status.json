@@ -1,0 +1,63 @@
+{
+  "runId": "propositions-run01",
+  "runDate": "2026-05-27",
+  "subfolder": "propositions",
+  "generatedAt": "2026-05-27T07:11:00Z",
+  "pirs": {
+    "PIR-1": {
+      "question": "What is the legislative timeline for HD03271?",
+      "status": "PARTIAL",
+      "confidence": "B2",
+      "nextUpdate": "T+14d",
+      "notes": "SoU referral pending; committee hearings expected June 2026"
+    },
+    "PIR-2": {
+      "question": "Will SD support or oppose HD03271?",
+      "status": "OPEN",
+      "confidence": "C1",
+      "nextUpdate": "T+7-21d",
+      "notes": "No public SD statement; cross-party majority available if SD opposes"
+    },
+    "PIR-3": {
+      "question": "What amendments does SoU propose?",
+      "status": "OPEN",
+      "confidence": "C1",
+      "nextUpdate": "T+60d",
+      "notes": "Committee process not started"
+    },
+    "PIR-4": {
+      "question": "How does HD03271 affect 2026 election dynamics?",
+      "status": "PARTIALLY_ASSESSED",
+      "confidence": "B2",
+      "nextUpdate": "T+90d",
+      "notes": "KD+4, L+6, SD-2 estimated net electoral effects; values politics activation risk identified"
+    },
+    "PIR-5": {
+      "question": "Is HD03270 on track for EU deadline compliance?",
+      "status": "ASSESSED_ADEQUATE",
+      "confidence": "A2",
+      "nextUpdate": "T+45d",
+      "notes": "Low controversy, standard MJU committee passage expected; EU deadline 2027-01-02"
+    }
+  },
+  "documents": [
+    {
+      "dok_id": "HD03271",
+      "title": "En förändrad abortlag",
+      "significance": 9,
+      "coverage": "full_text",
+      "retrievedAt": "2026-05-27T06:59:42Z"
+    },
+    {
+      "dok_id": "HD03270",
+      "title": "Kompletterande bestämmelser till EU-förordningar om kemikalier och avfall",
+      "significance": 5,
+      "coverage": "full_text",
+      "retrievedAt": "2026-05-27T06:59:42Z"
+    }
+  ],
+  "economicProvenance": {
+    "provider": "imf",
+    "note": "No direct economic data was required for this propositions run; IMF context available via data/imf-context.json (WEO-2026-04 vintage, not stale)"
+  }
+}
