@@ -3,7 +3,7 @@ date: 2026-05-27
 subfolder: propositions
 slug: 2026-05-27-propositions
 source_folder: analysis/daily/2026-05-27/propositions
-generated_at: 2026-05-27T16:32:34.350Z
+generated_at: 2026-05-27T21:19:14.557Z
 language: en
 layout: article
 ---
@@ -98,6 +98,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Lagradet Tracking](#rm-lagradet-tracking) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-political-classification) | classification, cross-reference, methodology and manifest evidence for reviewers |
@@ -2328,6 +2341,932 @@ For article generation:
 | PIR-4: Electoral dynamics | ASSESSED |
 | PIR-5: EU compliance | ASSESSED ADEQUATE |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_ar.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- dir: rtl -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="شعار Hack23" width="96" height="96">
+</p>
+
+# حكومة السويد بقيادة حزب KD تُحدِّث قانون الإجهاض — الإجهاض المنزلي واستقلالية القابلات من 2027
+
+**موجز تنفيذي — 2026-05-27 | مقترحات تشريعية | Riksdagsmonitor**
+
+---
+
+### ⚡ الخلاصة
+
+**قدّمت حكومة تيدو السويدية ذات التوجه اليميني الوسطي، بقيادة وزير الصحة من حزب KD يعقوب فورسميد، الاقتراح prop. 2025/26:271 بتاريخ 26 مايو 2026 لتحديث قانون الإجهاض الذي يبلغ عمره 52 عامًا (1974:595). يُتيح الإصلاح الإجهاض المنزلي، والطب عن بُعد، وصرف الأدوية بمرونة، وبشكل حاسم يمنح القابلات (barnmorskor) الحق في إجراء عمليات الإجهاض الدوائي باستقلالية دون الحاجة إلى طبيب. يبقى الحد الزمني البالغ 18 أسبوعًا دون تغيير. سريان المفعول: 1 يناير 2027. مقترح ثانٍ (2025/26:270) يُنفِّذ لوائح الاتحاد الأوروبي بشأن المواد الكيميائية والنفايات مع عقوبات جنائية جديدة. يهيمن إصلاح الإجهاض على المشهد؛ أما قانون المواد الكيميائية فهو تكيُّف روتيني مع متطلبات الاتحاد الأوروبي.**
+
+---
+
+### 🎯 ثلاثة قرارات يدعمها هذا الموجز
+
+1. **المحررون**: الافتتاح بإصلاح قانون الإجهاض — أعلى أهمية (9/10) في هذه الدورة؛ القصة الثانية هي الامتثال لوائح الكيمياء الأوروبية (5/10)
+2. **المتابعة الاستشرافية**: رصد إحالة لجنة SoU وأول تصريح علني لحزب SD بشأن إصلاح الإجهاض كمؤشرات على استقرار الائتلاف
+3. **مسؤولو المخاطر**: رصد احتمالية الاستياء الداخلي داخل KD — إذ يُشكّل فورسميد (KD) بوصفه صاحب مبادرة توسيع إمكانية الإجهاض توترًا قيميًا قبيل انتخابات 2026
+
+---
+
+### 📋 قراءة في 60 ثانية
+
+| # | النتيجة | الثقة | المصدر |
+|---|---------|-------|--------|
+| 1 | يُتيح prop. 2025/26:271 الإجهاض المنزلي بإزالة اشتراط المستشفى/المنشأة | A2 HIGH | HD03271 §6.1 |
+| 2 | يحق للقابلات (barnmorskor) إجراء الإجهاض الدوائي باستقلالية — لا يُشترط الطبيب بعد الآن | A2 HIGH | HD03271 §7 |
+| 3 | الطب عن بُعد وصرف الأدوية المرن مُمكَّن صراحةً | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | الحد الزمني لـ 18 أسبوعًا محتفظ به — التركيز على إمكانية الوصول لا على التوسيع | A2 HIGH | HD03271 §1 النص المقترح |
+| 5 | فورسميد (KD) راعٍ للإصلاح — مفارقة مع التقليد الاجتماعي المحافظ للحزب | MEDIUM B2 | HD03271 الموقّعون + تاريخ حزب KD |
+| 6 | تحتفظ IVO (Inspektionen för vård och omsorg) بصلاحية اعتماد المنشآت | A2 HIGH | HD03271 §5.3 |
+| 7 | يُدخل prop. 2025/26:270 عقوبات جنائية على مخالفات لائحة CLP للمواد الكيميائية وصلاحيات مصادرة النفايات | A2 HIGH | HD03270 §5-6 |
+| 8 | المقترحان مقدَّمان في 26 مايو 2026؛ يسريان في 1 و2 يناير 2027 على التوالي | A2 HIGH | HD03271, HD03270 البيانات الوصفية |
+
+---
+
+### 🔭 أهم مؤشر استشرافي
+
+**مراقبة**: أول تصريح في اللجنة لحزب SD (Sverigedemokraterna) بشأن prop. 2025/26:271 — إن عارض SD الإصلاح لأسباب قيمية، خسرت الحكومة 62 صوتًا واحتاجت إلى دعم متعدد الكتل. احتمال المعارضة: منخفض (15%)، لكن العاقبة: مرتفعة (فشل الإصلاح أو تعديل جوهري).
+
+**المعلم التالي**: إحالة لجنة SoU (Socialutskottet) — متوقعة خلال 2–3 أسابيع من تقديم المقترح. أول جلسة استماع برلمانية على الأرجح في يونيو 2026.
+
+---
+
+### 📊 تصنيف أهمية الوثائق
+
+| الترتيب | dok_id | العنوان | الدرجة |
+|---------|--------|---------|--------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+---
+
+### 🔄 مراجعة المرحلة الثانية
+
+- ✅ تتضمن الخلاصة التطور الرئيسي والوزير والتشريع
+- ✅ القرارات الثلاثة مصاغة بوضوح
+- ✅ قراءة من 8 نقاط مع مراسي أدلة
+- ✅ أهم مؤشر استشرافي مع الأفق الزمني والاحتمالية
+- ✅ لا توجد عبارات محظورة
+- ✅ هدف 400-600 كلمة: ~520 كلمة ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_da.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23-logo" width="96" height="96">
+</p>
+
+# Sveriges KD-ledede regering moderniserer abortloven — hjemmeaborter og jordemoderkompetence fra 2027
+
+**Udøvende resumé — 2026-05-27 | Forslag | Riksdagsmonitor**
+
+---
+
+### ⚡ Konklusion
+
+**Sveriges centerborgerlige Tidö-regering, med KD's sundhedsminister Jakob Forssmed, fremsatte prop. 2025/26:271 den 26. maj 2026 for at modernisere den 52 år gamle abortlov (1974:595). Reformen muliggør hjemmeaborter, telemedicin, fleksibel medicinudlevering og — afgørende — giver jordemødre ret til selvstændigt at håndtere medicinske aborter uden læge. 18-ugersgrænsen bevares. Ikrafttrædelse: 1. januar 2027. Et andet forslag (2025/26:270) gennemfører EU's kemikalie- og affaldsregler med nye strafferetlige sanktioner. Abortreformen dominerer; kemikaliereglerne er rutinemæssig EU-tilpasning.**
+
+---
+
+### 🎯 Tre beslutninger dette resumé støtter
+
+1. **Redaktører**: Led med abortlovsreformen — højeste betydning (9/10) i denne periode; andenshistorie er EU-kemikalieoverholdelse (5/10)
+2. **Fremadskuende**: Følg SoU's udvalgshenvisning og SD's første offentlige udtalelse om abortreformen for koalitionsstabilitetssignaler
+3. **Risikoansvarlige**: Overvåg KD's interne utilfredsheds sandsynlighed — Forssmed (KD) som initiativtager til udvidet abortadgang skaber værdipolitisk spænding forud for valget 2026
+
+---
+
+### 📋 60-sekunders læsning
+
+| # | Observation | Konfidensgrad | Kilde |
+|---|-------------|---------------|-------|
+| 1 | Prop. 2025/26:271 muliggør hjemmeaborter ved at fjerne krav om hospital/institution | A2 HIGH | HD03271 §6.1 |
+| 2 | Jordemødre skal selvstændigt kunne håndtere medicinske aborter — læge ikke længere påkrævet | A2 HIGH | HD03271 §7 |
+| 3 | Telemedicin og fleksibel medicinudlevering udtrykkeligt muliggjort | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | 18-ugersgrænse bevaret — fokus er adgang, ikke udvidelse | A2 HIGH | HD03271 §1 foreslået tekst |
+| 5 | KD's Forssmed bag reformen — paradoks med partiets socialkonservative tradition | MEDIUM B2 | HD03271 underskrivere + KD's partihistorie |
+| 6 | IVO (Inspektionen för vård och omsorg) bevarer tilladelsesmyndighed | A2 HIGH | HD03271 §5.3 |
+| 7 | Prop. 2025/26:270 indfører strafferetlige sanktioner for brud på CLP-kemikalieforordningen og beføjelser til at beslaglægge affald | A2 HIGH | HD03270 §5-6 |
+| 8 | Begge forslag fremsat 26. maj 2026; i kraft hhv. 1. og 2. jan. 2027 | A2 HIGH | HD03271, HD03270 metadata |
+
+---
+
+### 🔭 Vigtigste fremadindikator
+
+**Overvåg**: SD's (Sverigedemokraternas) første udvalgsudtalelse om prop. 2025/26:271 — hvis SD modsætter sig af værdimæssige grunde, mister regeringen 62 stemmer og behøver støtte fra andre blokke. Sandsynlighed for modstand: LAV (15 %), men konsekvens: HØJ (reformsvigt eller væsentlig ændring).
+
+**Næste milepæl**: SoU's (Socialutskottets) udvalgshenvisning — forventet inden 2–3 uger efter fremsættelse. Første parlamentariske høring sandsynligvis juni 2026.
+
+---
+
+### 📊 Dokumentbetydningsrangering
+
+| Rang | dok_id | Titel | Point |
+|------|--------|-------|-------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+### 🔄 Anden omgangs selvevaluering
+
+- ✅ Slutningen nævner ledende udvikling, minister og lovgivning
+- ✅ Tre beslutninger tydeligt angivet
+- ✅ 8-punkts 60-sekunders læsning med bevisankre
+- ✅ Vigtigste fremadrettede trigger med tidshorisont og sandsynlighed
+- ✅ Ingen forbudte udtryk
+- ✅ 400–600 ords mål: ~510 ord ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_de.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23-Logo" width="96" height="96">
+</p>
+
+# Schwedens KD-geführte Regierung modernisiert das Abtreibungsgesetz — Hausabtreibungen und Hebammen-Autonomie ab 2027
+
+**Kurzanalyse — 2026-05-27 | Regierungsvorlagen | Riksdagsmonitor**
+
+---
+
+### ⚡ Kernaussage
+
+**Schwedens bürgerliche Tidö-Regierung unter KD-Gesundheitsminister Jakob Forssmed hat am 26. Mai 2026 Prop. 2025/26:271 eingebracht, um das 52 Jahre alte Abtreibungsgesetz (1974:595) zu modernisieren. Die Reform ermöglicht Hausabtreibungen, Telemedizin, flexible Medikamentenabgabe und — entscheidend — erlaubt Hebammen, medizinische Abtreibungen eigenständig ohne Arzt durchzuführen. Die 18-Wochen-Frist bleibt unverändert. Inkrafttreten: 1. Januar 2027. Eine zweite Vorlage (2025/26:270) setzt EU-Chemikalien- und Abfallvorschriften mit neuen Strafmaßnahmen um. Die Abtreibungsreform dominiert; das Chemikaliengesetz ist routinemäßige EU-Umsetzung.**
+
+---
+
+### 🎯 Drei Entscheidungen, die diese Analyse unterstützt
+
+1. **Redakteure**: Führen Sie mit der Abtreibungsrechtsreform — höchste Bedeutung (9/10) in dieser Legislaturperiode; zweite Geschichte ist EU-Chemikalienkonformität (5/10)
+2. **Vorausschau**: Verfolgen Sie die SoU-Ausschussüberweisung und SDs erste öffentliche Stellungnahme zur Abtreibungsreform als Koalitionsstabilitätssignal
+3. **Risikobeauftragte**: Überwachen Sie die Wahrscheinlichkeit interner KD-Unzufriedenheit — Forssmed (KD) als Initiator der Ausweitung des Abtreibungszugangs erzeugt wertepolitische Spannung vor den Wahlen 2026
+
+---
+
+### 📋 60-Sekunden-Lektüre
+
+| # | Befund | Konfidenz | Quelle |
+|---|--------|-----------|--------|
+| 1 | Prop. 2025/26:271 ermöglicht Hausabtreibungen durch Abschaffung der Krankenhaus-/Einrichtungspflicht | A2 HIGH | HD03271 §6.1 |
+| 2 | Hebammen (barnmorskor) können medizinische Abtreibungen eigenständig durchführen — kein Arzt mehr erforderlich | A2 HIGH | HD03271 §7 |
+| 3 | Telemedizin und flexible Medikamentenabgabe ausdrücklich ermöglicht | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | 18-Wochen-Frist beibehalten — Schwerpunkt ist Zugang, nicht Ausweitung | A2 HIGH | HD03271 §1 Entwurfstext |
+| 5 | KDs Forssmed hinter der Reform — Paradox mit sozialkonservativer Parteitradition | MEDIUM B2 | HD03271 Unterzeichner + KD-Parteigeschichte |
+| 6 | IVO (Inspektionen för vård och omsorg) behält Zulassungsbehörde | A2 HIGH | HD03271 §5.3 |
+| 7 | Prop. 2025/26:270 führt Strafmaßnahmen für CLP-Verstöße und Beschlagnahmebefugnisse für Abfall ein | A2 HIGH | HD03270 §5-6 |
+| 8 | Beide Vorlagen am 26. Mai 2026 eingereicht; in Kraft am 1. bzw. 2. Jan. 2027 | A2 HIGH | HD03271, HD03270 Metadaten |
+
+---
+
+### 🔭 Wichtigster Vorwärtsindikator
+
+**Beobachten**: SDs (Sverigedemokraternas) erste Ausschussstellungnahme zu Prop. 2025/26:271 — wenn SD aus Wertegründen ablehnt, verliert die Regierung 62 Stimmen und benötigt blockübergreifende Unterstützung. Widerstandswahrscheinlichkeit: NIEDRIG (15 %), aber Konsequenz: HOCH (Reformscheitern oder wesentliche Änderung).
+
+**Nächster Meilenstein**: SoU-Ausschussüberweisung (Sozialausschuss) — erwartet innerhalb von 2–3 Wochen nach Einreichung. Erste parlamentarische Anhörung voraussichtlich Juni 2026.
+
+---
+
+### 📊 Dokumentbedeutungsranking
+
+| Rang | dok_id | Titel | Punkte |
+|------|--------|-------|--------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+### 🔄 Zweite-Runde-Selbstprüfung
+
+- ✅ Fazit benennt führende Entwicklung, Minister und Gesetzgebung
+- ✅ Drei Entscheidungen klar formuliert
+- ✅ 8-Punkte-60-Sekunden-Lektüre mit Beweisankern
+- ✅ Wichtigster Vorausindikator mit Zeithorizont und Wahrscheinlichkeit
+- ✅ Keine verbotenen Ausdrücke
+- ✅ 400–600 Wörter Ziel: ~510 Wörter ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_es.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Logo Hack23" width="96" height="96">
+</p>
+
+# El gobierno sueco liderado por el KD moderniza la ley del aborto — abortos en el hogar e independencia de las comadronas desde 2027
+
+**Resumen ejecutivo — 2026-05-27 | Proposiciones | Riksdagsmonitor**
+
+---
+
+### ⚡ Conclusión
+
+**El gobierno Tidö, encabezado por el ministro del KD Jakob Forssmed, presentó la prop. 2025/26:271 el 26 de mayo de 2026 para modernizar la ley del aborto de 1974 (1974:595). La reforma permite los abortos en el hogar, la telemedicina y autoriza a las comadronas (barnmorskor) a gestionar de forma independiente los abortos médicos sin médico. El límite de 18 semanas no cambia. Entrada en vigor: 1 de enero de 2027. Una segunda proposición (2025/26:270) implementa la normativa europea sobre productos químicos y residuos con nuevas sanciones penales.**
+
+---
+
+### 🎯 Tres decisiones que apoya este resumen
+
+1. **Editores**: Liderar con la reforma de la ley del aborto — máxima significación (9/10) en esta legislatura; segunda historia es el cumplimiento de la normativa química de la UE (5/10)
+2. **Seguimiento prospectivo**: Seguir la remisión del comité SoU y el primer comunicado público del SD sobre la reforma del aborto para detectar señales de estabilidad de la coalición
+3. **Responsables de riesgos**: Monitorear la probabilidad de descontento interno en el KD — Forssmed (KD) como promotor de la ampliación del acceso al aborto crea tensión de valores ante las elecciones de 2026
+
+---
+
+### 📋 Lectura de 60 segundos
+
+| # | Hallazgo | Confianza | Fuente |
+|---|----------|-----------|--------|
+| 1 | La prop. 2025/26:271 permite los abortos en el hogar eliminando el requisito de hospital/instalación | A2 HIGH | HD03271 §6.1 |
+| 2 | Las comadronas (barnmorskor) podrán gestionar abortos médicos de forma independiente — ya no se requiere médico | A2 HIGH | HD03271 §7 |
+| 3 | Telemedicina y dispensación flexible de medicamentos explícitamente habilitadas | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | Límite de 18 semanas mantenido — el enfoque es el acceso, no la ampliación | A2 HIGH | HD03271 §1 texto propuesto |
+| 5 | Forssmed (KD) impulsa la reforma — paradoja con la tradición socialconservadora del partido | MEDIUM B2 | HD03271 firmantes + historia del KD |
+| 6 | IVO (Inspektionen för vård och omsorg) conserva la autoridad de aprobación de instalaciones | A2 HIGH | HD03271 §5.3 |
+| 7 | La prop. 2025/26:270 introduce sanciones penales por incumplimiento del reglamento CLP y poderes de incautación de residuos | A2 HIGH | HD03270 §5-6 |
+| 8 | Ambas proposiciones presentadas el 26 de mayo de 2026; en vigor el 1 y 2 de enero de 2027 respectivamente | A2 HIGH | HD03271, HD03270 metadatos |
+
+---
+
+### 🔭 Principal indicador prospectivo
+
+**Vigilar**: La primera declaración en comisión del SD (Sverigedemokraterna) sobre la prop. 2025/26:271 — si el SD se opone por razones de valores, el gobierno pierde 62 votos y necesita apoyo transversal. Probabilidad de oposición: BAJA (15 %), pero consecuencia: ALTA (fracaso de la reforma o enmienda sustancial).
+
+**Próximo hito**: Remisión del comité SoU (Socialutskottet) — esperada en 2–3 semanas tras la presentación. Primera audiencia parlamentaria probablemente en junio de 2026.
+
+---
+
+### 📊 Clasificación de significancia de documentos
+
+| Rango | dok_id | Título | Puntuación |
+|-------|--------|--------|------------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+---
+
+### 🔄 Auditoría de la segunda pasada
+
+- ✅ La conclusión principal nombra el desarrollo principal, el ministro y la legislación
+- ✅ Las tres decisiones están claramente enunciadas
+- ✅ Lectura de 8 puntos con anclas de evidencia
+- ✅ Indicador de avance más importante con horizonte temporal y probabilidad
+- ✅ Sin frases prohibidas
+- ✅ Objetivo de 400-600 palabras: ~520 palabras ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_fi.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23-logo" width="96" height="96">
+</p>
+
+# Ruotsin KD-johtoinen hallitus uudistaa aborttilakia — kotiabortit ja kätilöiden autonomia vuodesta 2027
+
+**Johdon tiivistelmä — 2026-05-27 | Esitykset | Riksdagsmonitor**
+
+---
+
+### ⚡ Lyhyt johtopäätös
+
+**Ruotsin keskustaoikeistolainen Tidö-hallitus, jota johtaa KD:n terveysministeri Jakob Forssmed, jätti 26. toukokuuta 2026 prop. 2025/26:271 uudistaakseen 52 vuotta vanhan aborttilain (1974:595). Uudistus mahdollistaa kotiabortit, etälääkäripalvelut, joustavan lääkkeenjakelun ja — ratkaisevasti — antaa kätilöille oikeuden itsenäisesti hoitaa lääkkeellisiä abortteja ilman lääkäriä. 18 viikon aikaraja säilyy ennallaan. Voimaantulo: 1. tammikuuta 2027. Toinen esitys (2025/26:270) toteuttaa EU:n kemikaali- ja jätesäädökset uusine rikosoikeudellisine sanktioineen. Aborttiuudistus hallitsee; kemikaalidirektiivi on tavanomainen EU-sopeutus.**
+
+---
+
+### 🎯 Kolme päätöstä, joita tämä tiivistelmä tukee
+
+1. **Toimittajat**: Johda aborttilainsäädännön uudistuksella — korkein merkittävyys (9/10) tällä vaalikaudella; toinen uutinen on EU:n kemikaalisäädösten noudattaminen (5/10)
+2. **Ennakoiva seuranta**: Seuraa SoU:n valiokuntaviittausta ja SD:n ensimmäistä julkista lausuntoa aborttiuudistuksesta koalitiostabiliteetin merkkejä varten
+3. **Riskivastaavat**: Seuraa KD:n sisäistä tyytymättömyyden todennäköisyyttä — Forssmed (KD) aborttioikeuden laajentamisen aloitteentekijänä luo arvopoliittista jännitettä ennen vuoden 2026 vaaleja
+
+---
+
+### 📋 60 sekunnin luku
+
+| # | Havainto | Luotettavuus | Lähde |
+|---|----------|--------------|-------|
+| 1 | Prop. 2025/26:271 mahdollistaa kotiabortit poistamalla sairaala/laitos-vaatimuksen | A2 HIGH | HD03271 §6.1 |
+| 2 | Kätilöt voivat hoitaa lääkkeellisiä abortteja itsenäisesti — lääkäriä ei enää tarvita | A2 HIGH | HD03271 §7 |
+| 3 | Etälääkäripalvelut ja joustava lääkejakeluun nimenomaisesti mahdollistettu | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | 18 viikon aikaraja säilyy — painopiste on saatavuudessa, ei laajentamisessa | A2 HIGH | HD03271 §1 ehdotettu teksti |
+| 5 | KD:n Forssmed uudistuksen takana — paradoksi puolueen sosiaalikonservatiivisen perinteen kanssa | MEDIUM B2 | HD03271 allekirjoittajat + KD:n puoluehistoria |
+| 6 | IVO (Inspektionen för vård och omsorg) säilyttää toimilupamääräysvallan | A2 HIGH | HD03271 §5.3 |
+| 7 | Prop. 2025/26:270 tuo rikosoikeudelliset sanktiot CLP-kemikaaliasetus rikkomuksille ja valtuudet takavarikoida jätettä | A2 HIGH | HD03270 §5-6 |
+| 8 | Molemmat esitykset jätetty 26. toukokuuta 2026; voimaan 1. ja 2. tammikuuta 2027 | A2 HIGH | HD03271, HD03270 metadata |
+
+---
+
+### 🔭 Tärkein ennakoiva signaali
+
+**Seuraa**: SD:n (Sverigedemokraternas) ensimmäistä valiokuntalausuntoa prop. 2025/26:271:stä — jos SD vastustaa arvopohjaisesti, hallitus menettää 62 ääntä ja tarvitsee tuen muista lohkoista. Vastustuksen todennäköisyys: MATALA (15 %), mutta seuraus: KORKEA (uudistuksen epäonnistuminen tai merkittävä muutos).
+
+**Seuraava virstanpylväs**: SoU:n (Socialutskottet) valiokuntaviittaus — odotetaan 2–3 viikon kuluessa jättämisestä. Ensimmäinen parlamentaarinen kuuleminen todennäköisesti kesäkuussa 2026.
+
+---
+
+### 📊 Asiakirjojen merkittävyysluokitus
+
+| Sija | dok_id | Otsikko | Pisteet |
+|------|--------|---------|---------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+### 🔄 Toisen kierroksen itsearviointi
+
+- ✅ Tiivistelmä nimeää johtavan kehityksen, ministerin ja lainsäädännön
+- ✅ Kolme päätöstä selkeästi esitetty
+- ✅ 8-kohtainen 60 sekunnin luku todisteankkureilla
+- ✅ Tärkein eteenpäin katsova laukaisin aikahorisontteineen ja todennäköisyyksineen
+- ✅ Ei kiellettyjä ilmaisuja
+- ✅ 400–600 sanan tavoite: ~510 sanaa ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_fr.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Logo Hack23" width="96" height="96">
+</p>
+
+# Le gouvernement suédois dirigé par le KD modernise la loi sur l'avortement — avortements à domicile et autonomie des sages-femmes dès 2027
+
+**Note de synthèse — 2026-05-27 | Propositions | Riksdagsmonitor**
+
+---
+
+### ⚡ Conclusion
+
+**Le gouvernement suédois Tidö, dirigé par le ministre du KD Jakob Forssmed, a déposé la prop. 2025/26:271 le 26 mai 2026 pour moderniser la loi sur l'avortement de 1974 (1974:595). La réforme permet les avortements à domicile, la télémédecine et autorise les sages-femmes (barnmorskor) à pratiquer seules les avortements médicamenteux sans médecin. Le délai de 18 semaines est maintenu. Entrée en vigueur : 1er janvier 2027. Une seconde proposition (2025/26:270) transpose les règlements européens sur les produits chimiques et les déchets avec de nouvelles sanctions pénales.**
+
+---
+
+### 🎯 Trois décisions soutenues par cette note
+
+1. **Rédacteurs** : Ouvrir sur la réforme de la loi sur l'avortement — signification maximale (9/10) lors de cette session ; second sujet : conformité UE sur les produits chimiques (5/10)
+2. **Veille prospective** : Suivre le renvoi en commission SoU et le premier communiqué public du SD sur la réforme de l'avortement pour détecter des signaux de stabilité de la coalition
+3. **Responsables des risques** : Surveiller la probabilité de mécontentement interne au KD — Forssmed (KD) portant une réforme d'accès à l'avortement crée une tension sur les valeurs à l'approche des élections 2026
+
+---
+
+### 📋 Lecture en 60 secondes
+
+| # | Constat | Confiance | Source |
+|---|---------|-----------|--------|
+| 1 | La prop. 2025/26:271 permet les avortements à domicile en supprimant l'obligation d'établissement de santé | A2 HIGH | HD03271 §6.1 |
+| 2 | Les sages-femmes (barnmorskor) peuvent désormais pratiquer seules les avortements médicamenteux — plus besoin de médecin | A2 HIGH | HD03271 §7 |
+| 3 | Télémédecine et délivrance flexible de médicaments expressément autorisées | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | Délai de 18 semaines maintenu — l'objectif est l'accessibilité, non l'extension | A2 HIGH | HD03271 §1 texte proposé |
+| 5 | Forssmed (KD) porte la réforme — paradoxe avec la tradition socio-conservatrice du parti | MEDIUM B2 | HD03271 signataires + histoire du KD |
+| 6 | L'IVO (Inspektionen för vård och omsorg) conserve son autorité d'agrément | A2 HIGH | HD03271 §5.3 |
+| 7 | La prop. 2025/26:270 introduit des sanctions pénales pour les infractions au règlement CLP et des pouvoirs de saisie des déchets | A2 HIGH | HD03270 §5-6 |
+| 8 | Les deux propositions déposées le 26 mai 2026 ; en vigueur le 1er et le 2 janvier 2027 respectivement | A2 HIGH | HD03271, HD03270 métadonnées |
+
+---
+
+### 🔭 Principal indicateur prospectif
+
+**Surveiller** : La première prise de position du SD (Sverigedemokraterna) en commission sur la prop. 2025/26:271 — si le SD s'y oppose pour des raisons de valeurs, le gouvernement perd 62 voix et devra chercher un soutien inter-blocs. Probabilité d'opposition : FAIBLE (15 %), mais conséquence : ÉLEVÉE (échec de la réforme ou amendement substantiel).
+
+**Prochaine étape** : Renvoi en commission SoU (Socialutskottet) — attendu dans les 2 à 3 semaines suivant le dépôt. Première audition parlementaire probablement en juin 2026.
+
+---
+
+### 📊 Classement de signification des documents
+
+| Rang | dok_id | Titre | Score |
+|------|--------|-------|-------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+### 🔄 Auto-évaluation du deuxième passage
+
+- ✅ Le résumé identifie le développement principal, le ministre et la législation
+- ✅ Trois décisions clairement formulées
+- ✅ Lecture de 60 secondes en 8 points avec ancres de preuves
+- ✅ Déclencheur prospectif principal avec horizon temporel et probabilité
+- ✅ Aucune phrase interdite
+- ✅ Objectif 400–600 mots : ~510 mots ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_he.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- dir: rtl -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="לוגו Hack23" width="96" height="96">
+</p>
+
+# ממשלת שוודיה בהנהגת KD מחדשת את חוק ההפלות — הפלות ביתיות ועצמאות מיילדות מ-2027
+
+**תמצית מנהלים — 2026-05-27 | הצעות חוק | Riksdagsmonitor**
+
+---
+
+### ⚡ מסקנה עיקרית
+
+**ממשלת טידו השוודית מימין-המרכז, בהנהגת שר הבריאות מ-KD יעקוב פורסמד, הגישה את הצעה 2025/26:271 ב-26 במאי 2026 לצורך חידוש חוק ההפלות בן 52 השנה (1974:595). הרפורמה מאפשרת הפלות ביתיות, טלרפואה, חלוקת תרופות גמישה ו — באופן מכריע — מאפשרת למיילדות (barnmorskor) לטפל באופן עצמאי בהפלות תרופתיות ללא רופא. הגבול של 18 שבועות נשמר ללא שינוי. כניסה לתוקף: 1 בינואר 2027. הצעה שנייה (2025/26:270) מיישמת את תקנות הכימיקלים והפסולת של האיחוד האירופי עם סנקציות פליליות חדשות. רפורמת ההפלות דומיננטית; חוק הכימיקלים הוא התאמה רגילה לדירקטיבות האיחוד.**
+
+---
+
+### 🎯 שלושה החלטות שהתמצית הזו תומכת בהן
+
+1. **עורכים**: פתיחה ברפורמת חוק ההפלות — חשיבות מרבית (9/10) בכנסת זו; הסיפור השני הוא ציות לתקנות כימיקלים אירופאיות (5/10)
+2. **מעקב קדימה**: מעקב אחר הפניית ועדת SoU והצהרה ציבורית ראשונה של SD בנוגע לרפורמת ההפלות כאותות יציבות קואליציונית
+3. **מנהלי סיכונים**: ניטור הסתברות אי-שביעות רצון פנימית ב-KD — פורסמד (KD) כיוזם הרחבת הגישה להפלות יוצר מתח ערכי לקראת בחירות 2026
+
+---
+
+### 📋 קריאה ב-60 שניות
+
+| # | ממצא | מהימנות | מקור |
+|---|------|---------|------|
+| 1 | הצעה 2025/26:271 מאפשרת הפלות ביתיות על ידי הסרת דרישת בית-חולים/מוסד | A2 HIGH | HD03271 §6.1 |
+| 2 | מיילדות (barnmorskor) רשאיות לטפל באופן עצמאי בהפלות תרופתיות — אין עוד צורך ברופא | A2 HIGH | HD03271 §7 |
+| 3 | טלרפואה וחלוקת תרופות גמישה מאפשרות במפורש | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | גבול 18 שבועות נשמר — ההתמקדות בנגישות, לא בהרחבה | A2 HIGH | HD03271 §1 טקסט מוצע |
+| 5 | פורסמד (KD) מחזיק ברפורמה — פרדוקס עם המסורת הסוציו-שמרנית של המפלגה | MEDIUM B2 | HD03271 חותמים + היסטוריית מפלגת KD |
+| 6 | IVO (Inspektionen för vård och omsorg) שומרת על סמכות אישור מתקנים | A2 HIGH | HD03271 §5.3 |
+| 7 | הצעה 2025/26:270 מחילה סנקציות פליליות על הפרות תקנת CLP לכימיקלים וסמכויות תפיסת פסולת | A2 HIGH | HD03270 §5-6 |
+| 8 | שתי ההצעות הוגשו ב-26 במאי 2026; נכנסות לתוקף ב-1 וב-2 בינואר 2027 בהתאמה | A2 HIGH | HD03271, HD03270 מטא-נתונים |
+
+---
+
+### 🔭 מחוון הקדימה החשוב ביותר
+
+**מעקב**: הצהרת ועדה ראשונה של SD (Sverigedemokraterna) בנוגע להצעה 2025/26:271 — אם SD יתנגד מטעמי ערכים, תאבד הממשלה 62 קולות ותזדקק לתמיכה מגושים אחרים. הסתברות להתנגדות: נמוכה (15%), אך השלכה: גבוהה (כישלון הרפורמה או תיקון מהותי).
+
+**אבן הדרך הבאה**: הפניית ועדת SoU (Socialutskottet) — צפויה תוך 2–3 שבועות מהגשה. שימוע פרלמנטרי ראשון ככל הנראה ביוני 2026.
+
+---
+
+### 📊 דירוג חשיבות מסמכים
+
+| דירוג | dok_id | כותרת | ציון |
+|-------|--------|-------|------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+---
+
+### 🔄 ביקורת עצמית של מעבר שני
+
+- ✅ הסיכום כולל את ההתפתחות המרכזית, השר והחקיקה
+- ✅ שלוש ההחלטות מנוסחות בבירור
+- ✅ קריאה של 8 נקודות עם עוגני ראיות
+- ✅ מחוון הקדימה החשוב ביותר עם אופק זמן והסתברות
+- ✅ אין ביטויים אסורים
+- ✅ יעד 400-600 מילים: ~520 מילים ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_ja.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23ロゴ" width="96" height="96">
+</p>
+
+# スウェーデンのKD主導政権が中絶法を近代化 — 2027年から在宅中絶と助産師の独立
+
+**エグゼクティブサマリー — 2026-05-27 | 政府提案 | Riksdagsmonitor**
+
+---
+
+### ⚡ 要約
+
+**スウェーデンの中道右派ティドー政権は、KDの保健大臣ヤコブ・フォルスメドのもと、52年前の中絶法（1974:595）を近代化するため、2026年5月26日にProp. 2025/26:271を提出しました。この改革により、在宅中絶、遠隔医療、柔軟な投薬、そして決定的なことに助産師（barnmorskor）が医師なしで薬物中絶を独立して処理できるようになります。18週間の上限は変わりません。施行日：2027年1月1日。第二の提案（2025/26:270）は、新たな刑事罰を伴うEUの化学物質・廃棄物規制を実施します。中絶改革が主要課題であり、化学物質法案は日常的なEU対応です。**
+
+---
+
+### 🎯 この概要が支援する3つの意思決定
+
+1. **編集者**: 中絶法改革を第一に — この国会会期で最も高い重要度（10点中9点）；第二の話題はEU化学物質コンプライアンス（5点）
+2. **先読み監視**: SoU委員会付託とSD（スウェーデン民主党）の中絶改革への最初の公式発言を注視し、連立安定性の兆候を確認
+3. **リスク担当者**: KD内部の不満の可能性を監視 — フォルスメド（KD）が中絶アクセス拡大の推進者であることで、2026年選挙に向けた価値観上の緊張が生じている
+
+---
+
+### 📋 60秒リード
+
+| # | 所見 | 確信度 | 出典 |
+|---|------|--------|------|
+| 1 | Prop. 2025/26:271は病院/施設要件を撤廃して在宅中絶を可能にする | A2 HIGH | HD03271 §6.1 |
+| 2 | 助産師（barnmorskor）が医師なしで薬物中絶を独立処理可能に | A2 HIGH | HD03271 §7 |
+| 3 | 遠隔医療と柔軟な投薬が明示的に可能に | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | 18週の上限を維持 — 焦点はアクセス、拡大ではない | A2 HIGH | HD03271 §1 提案テキスト |
+| 5 | KDのフォルスメドが改革を推進 — 党の社会保守的伝統とのパラドックス | MEDIUM B2 | HD03271 署名者 + KD政党史 |
+| 6 | IVO（Inspektionen för vård och omsorg）が施設承認権限を保持 | A2 HIGH | HD03271 §5.3 |
+| 7 | Prop. 2025/26:270はCLP化学物質規制違反に刑事罰と廃棄物差し押さえ権限を導入 | A2 HIGH | HD03270 §5-6 |
+| 8 | 両提案は2026年5月26日提出；それぞれ2027年1月1日・2日施行 | A2 HIGH | HD03271, HD03270 メタデータ |
+
+---
+
+### 🔭 最重要先行指標
+
+**監視**: SD（スウェーデン民主党）によるProp. 2025/26:271への委員会での最初の声明 — SDが価値観上の理由で反対すれば、政府は62票を失い、ブロック横断的支持が必要となる。反対の可能性：低（15%）、しかし結果：高（改革失敗または重大修正）。
+
+**次の節目**: SoU（Socialutskottet）委員会付託 — 提出から2〜3週間以内に予定。最初の議会公聴会はおそらく2026年6月。
+
+---
+
+### 📊 文書重要度ランキング
+
+| 順位 | dok_id | タイトル | スコア |
+|------|--------|---------|--------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+---
+
+### 🔄 第2パス自己監査
+
+- ✅ 要約は主要な進展、大臣、法律を明示
+- ✅ 3つの意思決定事項が明確に記述
+- ✅ 8項目の60秒リードに証拠アンカーを含む
+- ✅ 時間軸と確率を含む最上位前方指標
+- ✅ 禁止フレーズなし
+- ✅ 400〜600語目標: ~520語 ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_ko.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 로고" width="96" height="96">
+</p>
+
+# 스웨덴 KD 주도 정부, 낙태법 현대화 — 2027년부터 가정 낙태 및 조산사 독립
+
+**경영 요약 — 2026-05-27 | 법안 | Riksdagsmonitor**
+
+---
+
+### ⚡ 핵심 결론
+
+**스웨덴의 중도우파 티되 정부는 KD 보건부 장관 야코프 포르스메드 주도 하에 52년 된 낙태법(1974:595)을 현대화하기 위해 2026년 5월 26일 Prop. 2025/26:271을 제출했습니다. 이 개혁은 가정 낙태, 원격의료, 유연한 의약품 조제를 가능하게 하며 — 결정적으로 — 조산사(barnmorskor)가 의사 없이 독립적으로 약물 낙태를 처리할 수 있도록 합니다. 18주 시한은 변경되지 않습니다. 발효일: 2027년 1월 1일. 두 번째 법안(2025/26:270)은 새로운 형사 제재를 포함한 EU 화학물질 및 폐기물 규정을 이행합니다. 낙태 개혁이 주도적이며; 화학물질 법안은 일상적인 EU 적응입니다.**
+
+---
+
+### 🎯 이 요약이 지원하는 세 가지 결정
+
+1. **편집자**: 낙태법 개혁으로 주도 — 이번 의회 회기에서 가장 높은 중요도(9/10); 두 번째 주제는 EU 화학물질 준수(5/10)
+2. **미래 모니터링**: SoU 위원회 회부 및 SD의 낙태 개혁에 관한 첫 공식 성명을 주시하여 연립 안정성 신호 확인
+3. **리스크 담당자**: KD 내부 불만 가능성 모니터링 — 포르스메드(KD)가 낙태 접근 확대 발의자로서 2026년 선거를 앞두고 가치 갈등 유발
+
+---
+
+### 📋 60초 독해
+
+| # | 결과 | 신뢰도 | 출처 |
+|---|------|--------|------|
+| 1 | Prop. 2025/26:271은 병원/시설 요건을 폐지하여 가정 낙태를 가능하게 함 | A2 HIGH | HD03271 §6.1 |
+| 2 | 조산사(barnmorskor)가 의사 없이 약물 낙태를 독립적으로 처리 가능 | A2 HIGH | HD03271 §7 |
+| 3 | 원격의료 및 유연한 의약품 조제 명시적으로 허용 | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | 18주 시한 유지 — 초점은 접근성이지 확대가 아님 | A2 HIGH | HD03271 §1 제안된 텍스트 |
+| 5 | KD의 포르스메드가 개혁 주도 — 당의 사회보수적 전통과의 역설 | MEDIUM B2 | HD03271 서명자 + KD 정당 역사 |
+| 6 | IVO(Inspektionen för vård och omsorg)가 시설 승인 권한 유지 | A2 HIGH | HD03271 §5.3 |
+| 7 | Prop. 2025/26:270은 CLP 화학물질 규정 위반에 대한 형사 제재 및 폐기물 압수 권한 도입 | A2 HIGH | HD03270 §5-6 |
+| 8 | 두 법안 모두 2026년 5월 26일 제출; 각각 2027년 1월 1일, 2일 발효 | A2 HIGH | HD03271, HD03270 메타데이터 |
+
+---
+
+### 🔭 가장 중요한 선행 지표
+
+**모니터링**: SD(Sverigedemokraterna)의 Prop. 2025/26:271에 관한 위원회 첫 성명 — SD가 가치관상의 이유로 반대하면 정부는 62표를 잃고 블록 간 지지가 필요해짐. 반대 가능성: 낮음(15%), 그러나 결과: 높음(개혁 실패 또는 중대한 수정). 이 지표는 HD03271이 현 회기에 발효될 수 있는지를 결정짓는 핵심 변수이다.
+
+**다음 이정표**: SoU(Socialutskottet) 위원회 회부 — 제출 후 2–3주 이내 예상. 첫 의회 청문회는 아마도 2026년 6월. 시민사회 단체(RFSU, Barnmorskeförbundet)의 증언은 공론을 형성하고 추가 미디어 보도를 이끌어낼 것으로 예상된다.
+
+**부차적 모니터링**: KD 내부 반발 — 당내 보수적 구성원들이 낙태 자유화에 반대할 경우 개혁의 상징적 중요성에 영향을 미칠 수 있음. 확률: 낮음(10%).
+
+---
+
+### 📊 문서 중요도 순위
+
+| 순위 | dok_id | 제목 | 점수 |
+|------|--------|------|------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_nl.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23-logo" width="96" height="96">
+</p>
+
+# Zwedens KD-geleide regering moderniseert de abortuswet — thuisabortussen en autonomie van verloskundigen vanaf 2027
+
+**Beknopte analyse — 2026-05-27 | Voorstellen | Riksdagsmonitor**
+
+---
+
+### ⚡ Conclusie
+
+**Zwedens centrum-rechtse Tidö-regering, onder KD-minister van Volksgezondheid Jakob Forssmed, heeft op 26 mei 2026 prop. 2025/26:271 ingediend om de 52 jaar oude abortuswet (1974:595) te moderniseren. De hervorming maakt thuisabortussen, telemedicine, flexibele geneesmiddelenverstrekking en — cruciaal — zelfstandige uitvoering van medische abortussen door verloskundigen (barnmorskor) zonder arts mogelijk. De grens van 18 weken blijft ongewijzigd. Inwerkingtreding: 1 januari 2027. Een tweede voorstel (2025/26:270) implementeert EU-chemicaliën- en afvalregelgeving met nieuwe strafrechtelijke sancties. De abortushervorming domineert; de chemicaliewetgeving is routinematige EU-implementatie.**
+
+---
+
+### 🎯 Drie besluiten die deze analyse ondersteunt
+
+1. **Redacteuren**: Openen met de abortusrechthervorming — hoogste belang (9/10) in deze zittingsperiode; tweede onderwerp is EU-chemicaliënconformiteit (5/10)
+2. **Vooruitkijken**: Volg de SoU-commissieverwijzing en de eerste publieke verklaring van SD over de abortushervorming als signaal voor coalitienabiliteit
+3. **Risicobeheerders**: Monitor de kans op intern KD-ongenoegen — Forssmed (KD) als initiatiefnemer van uitbreiding van abortustoegang creëert waardenspanning voor de verkiezingen van 2026
+
+---
+
+### 📋 60-secondenlezing
+
+| # | Bevinding | Betrouwbaarheid | Bron |
+|---|-----------|-----------------|------|
+| 1 | Prop. 2025/26:271 maakt thuisabortussen mogelijk door afschaffing van de ziekenhuis-/instellingseis | A2 HIGH | HD03271 §6.1 |
+| 2 | Verloskundigen (barnmorskor) mogen medische abortussen zelfstandig uitvoeren — arts niet langer vereist | A2 HIGH | HD03271 §7 |
+| 3 | Telemedicine en flexibele geneesmiddelenverstrekking uitdrukkelijk mogelijk gemaakt | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | 18-wekengrens gehandhaafd — focus is toegang, geen uitbreiding | A2 HIGH | HD03271 §1 voorgestelde tekst |
+| 5 | KD's Forssmed achter de hervorming — paradox met sociaalconservatieve partijtraditie | MEDIUM B2 | HD03271 ondertekenaars + KD-partijgeschiedenis |
+| 6 | IVO (Inspektionen för vård och omsorg) behoudt goedkeuringsautoriteit | A2 HIGH | HD03271 §5.3 |
+| 7 | Prop. 2025/26:270 voert strafrechtelijke sancties in voor CLP-overtredingen en bevoegdheden tot inbeslagname van afval | A2 HIGH | HD03270 §5-6 |
+| 8 | Beide voorstellen ingediend op 26 mei 2026; in werking op resp. 1 en 2 jan. 2027 | A2 HIGH | HD03271, HD03270 metadata |
+
+---
+
+### 🔭 Belangrijkste toekomstige indicator
+
+**Monitoren**: SDs (Sverigedemokraternas) eerste commissieverklaring over prop. 2025/26:271 — als SD zich om waardenredenen verzet, verliest de regering 62 stemmen en heeft zij steun nodig van andere blokken. Kans op verzet: LAAG (15 %), maar gevolg: HOOG (mislukking hervorming of wezenlijke wijziging).
+
+**Volgende mijlpaal**: SoU-commissieverwijzing (Socialutskottet) — verwacht binnen 2–3 weken na indiening. Eerste parlementaire hoorzitting vermoedelijk juni 2026.
+
+---
+
+### 📊 Rangschikking documentbelang
+
+| Rang | dok_id | Titel | Score |
+|------|--------|-------|-------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+---
+
+### 🔄 Tweede-ronde zelfevaluatie
+
+- ✅ De kernbevinding noemt de belangrijkste ontwikkeling, de minister en de wetgeving
+- ✅ Drie beslissingen helder geformuleerd
+- ✅ 8-punt lezing van 60 seconden met bewijsankers
+- ✅ Belangrijkste vooruitkijkende indicator met tijdshorizon en kans
+- ✅ Geen verboden zinsneden
+- ✅ Doel van 400-600 woorden: ~520 woorden ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_no.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23-logo" width="96" height="96">
+</p>
+
+# Sveriges KD-ledede regjering moderniserer abortloven — hjemmeaborter og jordmorautonomi fra 2027
+
+**Utøvende sammendrag — 2026-05-27 | Proposisjoner | Riksdagsmonitor**
+
+---
+
+### ⚡ Konklusjon
+
+**Sveriges sentrum-høyre Tidö-regjering, med KDs helseminister Jakob Forssmed, la frem prop. 2025/26:271 den 26. mai 2026 for å modernisere den 52 år gamle abortloven (1974:595). Reformen muliggjør hjemmeaborter, telemedisin, fleksibel legemiddelutlevering og — avgjørende — gir jordmødre rett til selvstendig å håndtere medisinske aborter uten lege. 18-ukersgrensen beholdes. Ikrafttredelse: 1. januar 2027. Et annet forslag (2025/26:270) gjennomfører EUs kjemikalie- og avfallsregler med nye strafferettslige sanksjoner. Abortreformen dominerer; kjemikaliereglene er rutinemessig EU-tilpasning.**
+
+---
+
+### 🎯 Tre beslutninger dette sammendraget støtter
+
+1. **Redaktører**: Led med abortlovsreformen — høyest signifikans (9/10) i denne perioden; andrehistorien er EU-kjemikalieoverholdelse (5/10)
+2. **Fremtidsovervåking**: Følg SoUs utvalgshenvisning og SDs første offentlige uttalelse om abortreformen for koalisjonssstabilitetssignaler
+3. **Risikoansvarlige**: Overvåk KDs interne misnøyes sannsynlighet — Forssmed (KD) som initiativtaker til utvidet aborttilgang skaper verdipolitisk spenning foran valget 2026
+
+---
+
+### 📋 60-sekunders lesning
+
+| # | Observasjon | Konfidens | Kilde |
+|---|-------------|-----------|-------|
+| 1 | Prop. 2025/26:271 muliggjør hjemmeaborter ved å fjerne krav om sykehus/institusjon | A2 HIGH | HD03271 §6.1 |
+| 2 | Jordmødre skal selvstendig kunne håndtere medisinske aborter — lege ikke lenger påkrevet | A2 HIGH | HD03271 §7 |
+| 3 | Telemedisin og fleksibel legemiddelutlevering uttrykkelig muliggjort | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | 18-ukersgrense beholdt — fokus er tilgang, ikke utvidelse | A2 HIGH | HD03271 §1 foreslått tekst |
+| 5 | KDs Forssmed bak reformen — paradoks med partiets sosialkonservative tradisjon | MEDIUM B2 | HD03271 underskrivere + KDs partihistorikk |
+| 6 | IVO (Inspektionen för vård och omsorg) beholder tillatelsesmyndighet | A2 HIGH | HD03271 §5.3 |
+| 7 | Prop. 2025/26:270 innfører strafferettslige sanksjoner for brudd på CLP-kjemikalieforordningen og fullmakter til å beslaglegge avfall | A2 HIGH | HD03270 §5-6 |
+| 8 | Begge proposisjoner fremlagt 26. mai 2026; i kraft hhv. 1. og 2. jan. 2027 | A2 HIGH | HD03271, HD03270 metadata |
+
+---
+
+### 🔭 Viktigste fremtidsindikator
+
+**Overvåk**: SDs (Sverigedemokraternas) første uttalelse i utvalg om prop. 2025/26:271 — hvis SD motsetter seg av verdimessige grunner, mister regjeringen 62 stemmer og trenger støtte fra andre blokker. Sannsynlighet for motstand: LAV (15 %), men konsekvens: HØY (reformsvikt eller vesentlig endring).
+
+**Neste milepæl**: SoUs (Socialutskottets) utvalgshenvisning — forventet innen 2–3 uker etter fremleggelse. Første parlamentariske høring sannsynligvis juni 2026.
+
+---
+
+### 📊 Dokumentsignifikansrangering
+
+| Rang | dok_id | Tittel | Poeng |
+|------|--------|--------|-------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+### 🔄 Andre runde selvvurdering
+
+- ✅ Konklusjonen nevner ledende utvikling, statsråd og lovgivning
+- ✅ Tre beslutninger tydelig angitt
+- ✅ 8-punkts 60-sekunders lesning med bevisankre
+- ✅ Viktigste fremtidsindikator med tidshorisont og sannsynlighet
+- ✅ Ingen forbudte uttrykk
+- ✅ 400–600 ords mål: ~510 ord ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_sv.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23-logotyp" width="96" height="96">
+</p>
+
+# Sveriges KD-ledda regering moderniserar abortlagen — hemaborter och barnmorskeautonomi från 2027
+
+**Exekutiv sammanfattning — 2026-05-27 | Propositioner | Riksdagsmonitor**
+
+---
+
+### ⚡ Slutsats i korthet
+
+**Sveriges centerrättsliga Tidö-regering, med KD:s hälsominister Jakob Forssmed, lade fram prop. 2025/26:271 den 26 maj 2026 för att modernisera den 52 år gamla abortlagen (1974:595). Reformen möjliggör hemaborter, telemedicin, flexibel läkemedelsutlämning och — avgörande — ger barnmorskor rätt att självständigt handlägga medicinska aborter utan läkare. Gränsen på 18 veckor ändras inte. Ikraftträdande: 1 januari 2027. En andra proposition (2025/26:270) genomför EU:s kemikalie- och avfallsregler med nya straffrättsliga sanktioner. Abortreformen dominerar; kemikalieförordningen är rutinmässig EU-anpassning.**
+
+---
+
+### 🎯 Tre beslut som denna sammanfattning stöder
+
+1. **Redaktörer**: Led med abortlagsreformen — högst signifikans (9/10) i detta riksmöte; andrahistorien är EU:s kemikalieefterlevnad (5/10)
+2. **Framåtbevakning**: Följ SoU:s utskottsremiss och SD:s första offentliga uttalande om abortreformen för koalitionsstabilitetsignaler
+3. **Riskansvariga**: Övervaka KD:s interna missnöjesprobabilitet — Forssmed (KD) som initiativtagare till utökad aborttillgång skapar värdespolitisk spänning inför valet 2026
+
+---
+
+### 📋 60-sekunders läsning
+
+| # | Iakttagelse | Konfidens | Källa |
+|---|-------------|-----------|-------|
+| 1 | Prop. 2025/26:271 möjliggör hemaborter genom att ta bort krav på sjukhus/inrättning | A2 HIGH | HD03271 §6.1 |
+| 2 | Barnmorskor ska självständigt kunna handlägga medicinska aborter — läkare krävs inte längre | A2 HIGH | HD03271 §7 |
+| 3 | Telemedicin och flexibel läkemedelsutlämning uttryckligen möjliggjord | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | 18-veckors tidsgräns bibehålls — fokus är tillgång, inte utökning | A2 HIGH | HD03271 §1 föreslagen text |
+| 5 | KD:s Forssmed bakom reformen — paradox med partiets socialkonservativa tradition | MEDIUM B2 | HD03271 undertecknare + KD:s partihistorik |
+| 6 | IVO (Inspektionen för vård och omsorg) behåller tillståndsmyndighet | A2 HIGH | HD03271 §5.3 |
+| 7 | Prop. 2025/26:270 inför straffrättsliga sanktioner för brott mot CLP-kemikalieförordningen och befogenheter att beslagta avfall | A2 HIGH | HD03270 §5-6 |
+| 8 | Båda propositionerna inlämnade 26 maj 2026; ikraft 1 resp. 2 jan 2027 | A2 HIGH | HD03271, HD03270 metadata |
+
+---
+
+### 🔭 Viktigaste framåtindikator
+
+**Bevaka**: SD:s (Sverigedemokraternas) första utskottsuttalande om prop. 2025/26:271 — om SD opponerar sig av värdeskäl förlorar regeringen 62 röster och behöver stöd från annat bloc. Sannolikhet för opposition: LÅG (15 %), men konsekvens: HÖG (reformmisslyckande eller väsentlig ändring).
+
+**Nästa milstolpe**: SoU:s (Socialutskottets) remiss — förväntad inom 2–3 veckor efter inlämning. Första parlamentariska utfrågning sannolikt juni 2026.
+
+---
+
+### 📊 Dokumentsignifikansranking
+
+| Rang | dok_id | Titel | Poäng |
+|------|--------|-------|-------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+### 🔄 Andra omgångens självgranskning
+
+- ✅ Slutsatsen namnger ledande utveckling, minister och lagstiftning
+- ✅ Tre beslut tydligt angivna
+- ✅ 8-punkters 60-sekunders läsning med bevisankare
+- ✅ Viktigaste framåtindikator med tidshorisont och sannolikhet
+- ✅ Inga förbjudna fraser
+- ✅ 400–600 ords mål: ~510 ord ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_zh.md -->
+
+<!-- SPDX-FileCopyrightText: 2024-2026 Hack23 AB -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23标志" width="96" height="96">
+</p>
+
+# 瑞典KD领导的政府现代化堕胎法 — 2027年起居家堕胎与助产士独立
+
+**执行摘要 — 2026-05-27 | 政府法案 | Riksdagsmonitor**
+
+---
+
+### ⚡ 核心结论
+
+**瑞典中间偏右的蒂德政府在KD卫生部长雅各布·福斯梅德领导下，于2026年5月26日提交了Prop. 2025/26:271，旨在现代化已有52年历史的堕胎法（1974:595）。该改革允许居家堕胎、远程医疗、灵活的药物配发，并——最为关键地——授权助产士（barnmorskor）无需医生即可独立处理药物堕胎。18周时限保持不变。生效日期：2027年1月1日。第二项法案（2025/26:270）以新的刑事处罚落实欧盟化学品和废物法规。堕胎改革占主导地位；化学品法案是例行的欧盟合规措施。**
+
+---
+
+### 🎯 本摘要支持的三项决策
+
+1. **编辑**: 以堕胎法改革为主题 — 本届议会会期最高重要度（9/10）；第二议题是欧盟化学品合规（5/10）
+2. **前瞻监测**: 关注SoU委员会移交及SD就堕胎改革发表的首份公开声明，作为联合政府稳定性的信号
+3. **风险官员**: 监测KD内部不满的可能性 — 福斯梅德（KD）作为扩大堕胎获取的推动者，在2026年选举前造成价值观方面的紧张
+
+---
+
+### 📋 60秒速读
+
+| # | 发现 | 可信度 | 来源 |
+|---|------|--------|------|
+| 1 | Prop. 2025/26:271通过取消医院/机构要求来允许居家堕胎 | A2 HIGH | HD03271 §6.1 |
+| 2 | 助产士（barnmorskor）可独立处理药物堕胎，不再需要医生 | A2 HIGH | HD03271 §7 |
+| 3 | 远程医疗和灵活药物配发被明确允许 | A2 HIGH | HD03271 §6.2-6.3 |
+| 4 | 保留18周时限 — 重点是获取，而非扩大 | A2 HIGH | HD03271 §1 拟议文本 |
+| 5 | KD的福斯梅德推动改革 — 与党的社会保守主义传统形成悖论 | MEDIUM B2 | HD03271 签署人 + KD党史 |
+| 6 | IVO（Inspektionen för vård och omsorg）保留机构审批权 | A2 HIGH | HD03271 §5.3 |
+| 7 | Prop. 2025/26:270对违反CLP化学品法规的行为引入刑事处罚，并赋予废物扣押权力 | A2 HIGH | HD03270 §5-6 |
+| 8 | 两项法案均于2026年5月26日提交；分别于2027年1月1日和2日生效 | A2 HIGH | HD03271, HD03270 元数据 |
+
+---
+
+### 🔭 最重要的前瞻指标
+
+**监测**: SD（瑞典民主党）就Prop. 2025/26:271在委员会的首次声明 — 若SD以价值观为由反对，政府将失去62票并需要跨党派支持。反对概率：低（15%），但后果：高（改革失败或重大修订）。
+
+**下一个里程碑**: SoU（Socialutskottet）委员会移交 — 预计在提交后2–3周内。首次议会听证会可能在2026年6月。
+
+---
+
+### 📊 文件重要度排名
+
+| 排名 | dok_id | 标题 | 分数 |
+|------|--------|------|------|
+| 1 | HD03271 | En förändrad abortlag | 9/10 |
+| 2 | HD03270 | Kompletterande bestämmelser EU kemikalier/avfall | 5/10 |
+
+### 🔄 第二轮自我审查
+
+- ✅ 核心结论（底线结论）明确了主要进展、部长及立法
+- ✅ 三项决策陈述清晰
+- ✅ 8条60秒阅读含证据锚点
+- ✅ 最重要前瞻指标含时间范围和概率
+- ✅ 无禁用语
+- ✅ 400-600词目标：约520词 ✅
+
+<!-- source-sha: 9ba2b98b4ca0f3d979db5c662bb9836aa575c47f -->
+
 ## Lagradet Tracking
 <!-- source: lagradet-tracking.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/lagradet-tracking.md -->
 
@@ -2420,7 +3359,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 24 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 37 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
 
@@ -2459,6 +3398,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/cross-reference-map.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/data-download-manifest.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/analysis-index.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/executive-brief_zh.md)
 - [`lagradet-tracking.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/propositions/lagradet-tracking.md)
 
 ### Supporting Data Artifacts

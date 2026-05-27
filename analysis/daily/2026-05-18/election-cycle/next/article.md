@@ -3,7 +3,7 @@ date: 2026-05-18
 subfolder: election-cycle/next
 slug: 2026-05-18-election-cycle/next
 source_folder: analysis/daily/2026-05-18/election-cycle/next
-generated_at: 2026-05-27T16:32:33.937Z
+generated_at: 2026-05-27T21:19:14.139Z
 language: en
 layout: article
 ---

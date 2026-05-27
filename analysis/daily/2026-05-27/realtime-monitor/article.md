@@ -3,7 +3,7 @@ date: 2026-05-27
 subfolder: realtime-monitor
 slug: 2026-05-27-realtime-monitor
 source_folder: analysis/daily/2026-05-27/realtime-monitor
-generated_at: 2026-05-27T16:57:58.004Z
+generated_at: 2026-05-27T21:19:14.573Z
 language: en
 layout: article
 ---
@@ -2207,6 +2207,36 @@ MISCELLANEOUS
 
 ---
 
+### جلسة بعد الظهر: محاضر التصويت المؤكدة (16:00–17:00 بتوقيت وسط أوروبا)
+
+*بيانات إعادة التشغيل المجمعة في 2026-05-27T16:52Z — افترض التشغيل الأول الموافقة على تقارير اللجان الصباحية. التصويتات التالية بعد الظهر مؤكدة الآن بالكامل.*
+
+#### محضر تصويت مؤكد — UbU29: فحوصات السجل الموسعة في النظام المدرسي
+**فحوصات السجل الموسعة في النظام المدرسي** أُقر من قبل المجلس بأغلبية حكومية. التصويت على ن.2 (تحفظ المعارضة S+V+C+MP): S 0-106، SD 70-0، M 66-0. **التفسير**: جميع الاشتراكيين الديمقراطيين وحزب اليسار وحزب الوسط وحزب البيئة صوتوا ضد فحوصات الخلفية الموسعة لموظفي المدارس؛ تحالف M+SD+KD+L حمل التصويت. انضم حزب الوسط للمعارضة بقيادة S — جدير بالملاحظة بالنظر إلى موقف C المعتاد بشأن القانون والنظام؛ قلق C يتعلق بسلامة البيانات والتناسب. **صلة الانتخابات**: سيظهر UbU29 في حملات S/V/C/MP كـ"زحف المراقبة في المدارس."
+
+#### محضر تصويت مؤكد — UbU27: إصلاح التعليم المهني
+**شروط أفضل للتعليم المهني** أُقر. التصويت على ن.3 (تحفظ S+MP): S 0-106، SD 70-0، M 66-0. يعزز الإصلاح أطر التعاون بين المدرسة وقطاع الأعمال. انهار الدعم عبر الأحزاب بشأن تفاصيل المناهج المهنية.
+
+#### محضر تصويت مؤكد — FiU39: حماية المعاملات النقدية
+**تدابير لتعزيز وظائف النقد** أُقر. التصويت على ن.3 (تحفظ S+V): S 0-106، SD 70-0، M 66-0. التصويت على ن.4 (تحفظ C): S 0-0-106 (امتنع)، SD 70-0، M 66-0. **التفسير**: صوت S ضد قانون حماية النقد إجمالاً، لكن امتنع عند تفصيل تحفظ C — مما يشير إلى اتفاق جزئي مع موقف C. ستُلزم متاجر المواد الغذائية والصيدليات بقبول النقد عند الصناديق المأهولة.
+
+#### محضر تصويت مؤكد — FiU42: رقابة الموردين المبسطة في المشتريات العامة
+**رقابة الموردين المبسطة في المشتريات العامة** أُقر. التصويت على ن.2 (S+V+MP): S 0-106. التصويت على ن.3 (تحفظ V): S 0-0-106 (امتنع)، SD 70-0، M 66-0. **التفسير**: صوت S ضد الرقابة المبسطة للموردين في التصويت الرئيسي لكن امتنع بدلاً من التصويت ضد مطالب V الأكثر صرامة.
+
+#### محضر تصويت مؤكد — UbU21: مشاركة البيانات المدرسية لمنع الجريمة
+**نقل البيانات بين المدارس لأغراض منع الجريمة** — انضم S للأغلبية الحكومية في ن.1 (عبر الأحزاب: S 106+)، لكن MP قدم تحفظاً على ن.2 (أسباب حماية البيانات). **التفسير**: دعم عبر الأحزاب لمشاركة البيانات الأساسية بين المدارس؛ فقط MP عارض على أسس الخصوصية.
+
+#### تقارير لجان جديدة تم التصويت عليها (جلسة بعد الظهر)
+| التصنيف | العنوان | اللجنة | مُقر |
+|---------|---------|--------|------|
+| UU3 | تقرير نتائج معمق للمساعدات الدولية | UU | ✅ أغلبية عبر الأحزاب |
+| UU4 | التعاون الشمالي بما في ذلك القطب الشمالي | UU | ✅ M+SD+KD+L (C+S=تحفظ ن.2) |
+| CU26 | قانون ائتمان استهلاكي جديد | CU | ✅ أغلبية حكومية |
+
+**UU7y** (رأي): قدم UU رأيه بشأن ميزانية الربيع 2026 (prop. 2025/26:100) إلى KU — بتاريخ 2026-05-27. النتيجة الرئيسية: يدعم UU مستوى ميزانية المساعدات التنموية المقترح لكنه يشير إلى "خطر التماسك الجيوسياسي" إذا نما الإنفاق العسكري والتنموي في وقت واحد.
+
+---
+
 ### السياق الاقتصادي
 
 **IMF WEO-2026-04 (إصدار أبريل 2026 — حالي)**:
@@ -2227,7 +2257,7 @@ MISCELLANEOUS
 | PIR-RT-003 | تحفظ Lagrådet على prop. 2025/26:267 | منتهي | 2026-05-25 | تجاوز الأفق — يستمر كفجوة استخباراتية N2 |
 | PIR-RT-004 | دورة إعلام احتجاز الأطفال تستمر 2–10 أيام | مراقبة | 2026-06-01 | إشارة غير كافية في بيانات اليوم |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_da.md -->
@@ -2298,6 +2328,36 @@ SD's interpellation HD11842 om vansinneskörningar tager udgangspunkt i grov hen
 
 ---
 
+### EFTERMIDDAGSSESSION: BEKRÆFTEDE AFSTEMNINGSPROTOKOLLER (16:00–17:00 CET)
+
+*Genindsamlede data indsamlet 2026-05-27T16:52Z — første kørsel antog vedtagelse for morgenbetænkninger. Følgende eftermiddagsafstemninger er nu fuldt bekræftede.*
+
+#### BEKRÆFTET AFSTEMNINGSPROTOKOL — UbU29: Udvidede registertjek i skolevæsenet
+**Udvidede registertjek i skolevæsenet** vedtaget af kammeret med regeringsflertal. Afstemning om p.2 (oppositionsreservation S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Fortolkning**: Alle socialdemokrater, Vänsterpartiet, Centerpartiet og Miljöpartiet stemte imod udvidede baggrundskontroller for skolepersonale; M+SD+KD+L-koalitionen bar afstemningen. C tilsluttede sig S-ledet opposition — bemærkelsesværdigt givet C's sædvanlige lov-og-orden-holdning; C's bekymring er dataintegritet og proportionalitet. **Valnexus**: UbU29 vil figurere i S/V/C/MP's kampagner som "overvågningskrybning i skoler."
+
+#### BEKRÆFTET AFSTEMNINGSPROTOKOL — UbU27: Erhvervsuddannelsesreform
+**Bedre forudsætninger for erhvervsuddannelse** vedtaget. Afstemning om p.3 (S+MP-reservation): S 0-106, SD 70-0, M 66-0. Reformen styrker samarbejdsrammer mellem skole og erhvervsliv. Tværpolitisk støtte kollapsede på erhvervslæreplansdetaljer.
+
+#### BEKRÆFTET AFSTEMNINGSPROTOKOL — FiU39: Beskyttelse af kontanttransaktioner
+**Foranstaltninger til at styrke kontanters funktion** vedtaget. Afstemning om p.3 (S+V-reservation): S 0-106, SD 70-0, M 66-0. Afstemning om p.4 (C-reservation): S 0-0-106 (undlod), SD 70-0, M 66-0. **Fortolkning**: S stemte imod kontantbeskyttelsesloven samlet, men undlod på C's reservationsdetalj — signalerer delvis enighed med C's position. Fødevarebutikker og apoteker forpligtes til at acceptere kontanter ved bemandede kasser.
+
+#### BEKRÆFTET AFSTEMNINGSPROTOKOL — FiU42: Forenklet leverandørkontrol ved offentlige indkøb
+**Forenklet leverandørkontrol ved offentlige indkøb** vedtaget. Afstemning om p.2 (S+V+MP): S 0-106. Afstemning om p.3 (V-reservation): S 0-0-106 (undlod), SD 70-0, M 66-0. **Fortolkning**: S stemte imod forenklet leverandørkontrol i hovedafstemningen men undlod snarere end stemte imod V's strengere krav.
+
+#### BEKRÆFTET AFSTEMNINGSPROTOKOL — UbU21: Skoledatadeling til kriminalitetsforebyggelse
+**Videregivelse af oplysninger mellem skoler i kriminalitetsforebyggende formål** — S sluttede sig til regeringsflertallet på p.1 (tværpolitisk: S 106+), men MP indgav reservation på p.2 (databeskyttelsesgrunde). **Fortolkning**: Tværpolitisk støtte til grundlæggende skole-til-skole datadeling; kun MP modsatte sig på privatlivsgrunde.
+
+#### NYE BETÆNKNINGER STEMT (Eftermiddagssession)
+| Betegnelse | Titel | Udvalg | Vedtaget |
+|------------|-------|--------|----------|
+| UU3 | Fordybet resultatredovisning af internationalt bistand | UU | ✅ Tværpolitisk flertal |
+| UU4 | Nordisk samarbejde inklusive Arktis | UU | ✅ M+SD+KD+L (C+S=reservation p.2) |
+| CU26 | En ny forbrugerkreditlov | CU | ✅ Regeringsflertal |
+
+**UU7y** (yttrande): UU indgav sin udtalelse om 2026-vårbudgettet (prop. 2025/26:100) til KU — dateret 2026-05-27. Nøglefund: UU støtter det foreslåede ODA-budgetniveau men flager "geopolitisk kohærensrisiko" hvis både militær- og bistandsudgifter vokser samtidigt.
+
+---
+
 ### ØKONOMISK KONTEKST
 
 **IMF WEO-2026-04 (April 2026 vintage — current)**:
@@ -2320,7 +2380,7 @@ SD's interpellation HD11842 om vansinneskörningar tager udgangspunkt i grov hen
 | PIR-RT-003 | Lagrådet-reservation om prop. 2025/26:267 | UDLØBET | 2026-05-25 | Horisonten er passeret — videreføres som L2-efterretningshul |
 | PIR-RT-004 | Mediecyklus om børneforvar holder i 2–10 dage | OVERVÅGNING | 2026-06-01 | Utilstrækkeligt signal i dagens materiale |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_de.md -->
@@ -2391,6 +2451,36 @@ SD-Interpellation zu vansinneskörningar (Hochgeschwindigkeits-Raserei). Fordert
 
 ---
 
+### NACHMITTAGSSITZUNG: BESTÄTIGTE ABSTIMMUNGSPROTOKOLLE (16:00–17:00 CET)
+
+*Neuerhobene Daten gesammelt am 2026-05-27T16:52Z — erster Durchlauf nahm Zustimmung für Morgenbetänkanden an. Folgende Nachmittagsabstimmungen sind nun vollständig bestätigt.*
+
+#### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — UbU29: Erweiterte Registerprüfungen im Schulwesen
+**Erweiterte Registerprüfungen im Schulwesen** mit Regierungsmehrheit angenommen. Abstimmung zu p.2 (Oppositionsreservation S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Interpretation**: Alle Sozialdemokraten, Vänsterpartiet, Centerpartiet und Miljöpartiet stimmten gegen erweiterte Hintergrundüberprüfungen für Schulpersonal; die M+SD+KD+L-Koalition trug die Abstimmung. C schloss sich der S-geführten Opposition an — bemerkenswert angesichts C's üblicher Gesetz-und-Ordnung-Haltung; C's Bedenken betrifft Datenintegrität und Verhältnismäßigkeit. **Wahlnexus**: UbU29 wird in S/V/C/MP-Kampagnen als „Überwachungsschleichen in Schulen" figurieren.
+
+#### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — UbU27: Berufsausbildungsreform
+**Bessere Voraussetzungen für Berufsausbildung** angenommen. Abstimmung zu p.3 (S+MP-Reservation): S 0-106, SD 70-0, M 66-0. Die Reform stärkt Schule-Wirtschaft-Kooperationsrahmen. Überparteiliche Unterstützung brach bei Berufsausbildungslehrplandetails zusammen.
+
+#### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — FiU39: Schutz von Bargeldtransaktionen
+**Maßnahmen zur Stärkung der Bargeldfunktionalität** angenommen. Abstimmung zu p.3 (S+V-Reservation): S 0-106, SD 70-0, M 66-0. Abstimmung zu p.4 (C-Reservation): S 0-0-106 (enthielt sich), SD 70-0, M 66-0. **Interpretation**: S stimmte gegen das Bargeldschutzgesetz insgesamt, enthielt sich aber bei C's Reservationsdetail — signalisiert teilweise Übereinstimmung mit C's Position. Lebensmittelgeschäfte und Apotheken werden verpflichtet, Bargeld an besetzten Kassen anzunehmen.
+
+#### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — FiU42: Vereinfachte Lieferantenkontrolle bei Beschaffung
+**Vereinfachte Lieferantenkontrolle bei öffentlicher Beschaffung** angenommen. Abstimmung zu p.2 (S+V+MP): S 0-106. Abstimmung zu p.3 (V-Reservation): S 0-0-106 (enthielt sich), SD 70-0, M 66-0. **Interpretation**: S stimmte gegen vereinfachte Lieferantenkontrolle in der Hauptabstimmung, enthielt sich aber bei V's strengeren Forderungen.
+
+#### BESTÄTIGTES ABSTIMMUNGSPROTOKOLL — UbU21: Schuldatenaustausch zur Kriminalitätsprävention
+**Weitergabe von Daten zwischen Schulen zur Kriminalitätsprävention** — S schloss sich der Regierungsmehrheit bei p.1 an (überparteilich: S 106+), aber MP reichte eine Reservation zu p.2 ein (Datenschutzgründe). **Interpretation**: Überparteiliche Unterstützung für grundlegenden Schule-zu-Schule-Datenaustausch; nur MP widersetzte sich aus Datenschutzgründen.
+
+#### NEUE BETÄNKANDEN ABGESTIMMT (Nachmittagssitzung)
+| Bezeichnung | Titel | Ausschuss | Angenommen |
+|-------------|-------|-----------|------------|
+| UU3 | Vertiefte Ergebnisberichterstattung internationaler Hilfe | UU | ✅ Überparteiliche Mehrheit |
+| UU4 | Nordische Zusammenarbeit einschließlich Arktis | UU | ✅ M+SD+KD+L (C+S=Reservation p.2) |
+| CU26 | Ein neues Verbraucherkreditgesetz | CU | ✅ Regierungsmehrheit |
+
+**UU7y** (Stellungnahme): UU reichte seine Stellungnahme zum Frühjahrshaushalt 2026 (prop. 2025/26:100) bei KU ein — datiert 2026-05-27. Schlüsselergebnis: UU unterstützt das vorgeschlagene ODA-Budgetniveau, flaggt aber „geopolitisches Kohärenzrisiko" wenn sowohl Militär- als auch Entwicklungsausgaben gleichzeitig wachsen.
+
+---
+
 ### WIRTSCHAFTLICHER KONTEXT
 
 **IMF WEO-2026-04 (April 2026 Ausgabe — aktuell)**:
@@ -2413,7 +2503,7 @@ SD-Interpellation zu vansinneskörningar (Hochgeschwindigkeits-Raserei). Fordert
 | PIR-RT-003 | Lagrådets Vorbehalt zu Prop. 2025/26:267 | ABGELAUFEN | 2026-05-25 | Horizont überschritten — weitergeführt als N2-Nachrichtenlücke |
 | PIR-RT-004 | Kindergewahrsam-Medienzyklus dauert 2–10 Tage | ÜBERWACHUNG | 2026-06-01 | Unzureichendes Signal in heutigen Daten |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_es.md -->
@@ -2484,6 +2574,36 @@ Interpelación SD sobre vansinneskörningar (conducción a alta velocidad). Exig
 
 ---
 
+### SESIÓN DE LA TARDE: ACTAS DE VOTACIÓN CONFIRMADAS (16:00–17:00 CET)
+
+*Datos de reejecución recopilados el 2026-05-27T16:52Z — la primera ejecución asumió la aprobación de los betänkanden matutinos. Las siguientes votaciones vespertinas están ahora completamente confirmadas.*
+
+#### ACTA DE VOTACIÓN CONFIRMADA — UbU29: Controles de registro ampliados en el sistema escolar
+**Controles de registro ampliados en el sistema escolar** aprobado por la cámara con mayoría gubernamental. Votación sobre p.2 (reserva de oposición S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Interpretación**: Todos los socialdemócratas, Vänsterpartiet, Centerpartiet y Miljöpartiet votaron en contra de las verificaciones de antecedentes ampliadas para el personal escolar; la coalición M+SD+KD+L llevó la votación. C se unió a la oposición liderada por S — notable dada la postura habitual de C sobre ley y orden; la preocupación de C es la integridad de datos y la proporcionalidad. **Nexo electoral**: UbU29 figurará en las campañas de S/V/C/MP como "vigilancia progresiva en escuelas."
+
+#### ACTA DE VOTACIÓN CONFIRMADA — UbU27: Reforma de la formación profesional
+**Mejores condiciones para la formación profesional** aprobado. Votación sobre p.3 (reserva S+MP): S 0-106, SD 70-0, M 66-0. La reforma fortalece los marcos de cooperación escuela-empresa. El apoyo transpartidista colapsó en los detalles del currículo de formación profesional.
+
+#### ACTA DE VOTACIÓN CONFIRMADA — FiU39: Protección de transacciones en efectivo
+**Medidas para fortalecer la funcionalidad del efectivo** aprobado. Votación sobre p.3 (reserva S+V): S 0-106, SD 70-0, M 66-0. Votación sobre p.4 (reserva C): S 0-0-106 (abstención), SD 70-0, M 66-0. **Interpretación**: S votó contra la ley de protección del efectivo en general, pero se abstuvo en el detalle de la reserva de C — señalando acuerdo parcial con la posición de C. Las tiendas de alimentación y farmacias estarán obligadas a aceptar efectivo en cajas atendidas.
+
+#### ACTA DE VOTACIÓN CONFIRMADA — FiU42: Control simplificado de proveedores en contratación pública
+**Control simplificado de proveedores en contratación pública** aprobado. Votación sobre p.2 (S+V+MP): S 0-106. Votación sobre p.3 (reserva V): S 0-0-106 (abstención), SD 70-0, M 66-0. **Interpretación**: S votó contra el control simplificado de proveedores en la votación principal pero se abstuvo en lugar de votar contra las demandas más estrictas de V.
+
+#### ACTA DE VOTACIÓN CONFIRMADA — UbU21: Intercambio de datos escolares para prevención del crimen
+**Transmisión de datos entre escuelas con fines de prevención del delito** — S se unió a la mayoría gubernamental en p.1 (transpartidista: S 106+), pero MP presentó reserva en p.2 (motivos de protección de datos). **Interpretación**: Apoyo transpartidista para el intercambio básico de datos entre escuelas; solo MP se opuso por motivos de privacidad.
+
+#### NUEVOS BETÄNKANDEN VOTADOS (Sesión de la tarde)
+| Designación | Título | Comisión | Aprobado |
+|-------------|--------|----------|----------|
+| UU3 | Informe profundizado de resultados de ayuda internacional | UU | ✅ Mayoría transpartidista |
+| UU4 | Cooperación nórdica incluyendo el Ártico | UU | ✅ M+SD+KD+L (C+S=reserva p.2) |
+| CU26 | Nueva ley de crédito al consumidor | CU | ✅ Mayoría gubernamental |
+
+**UU7y** (opinión): UU presentó su opinión sobre el presupuesto de primavera 2026 (prop. 2025/26:100) ante KU — fechado 2026-05-27. Hallazgo clave: UU apoya el nivel presupuestario ODA propuesto pero señala "riesgo de coherencia geopolítica" si tanto el gasto militar como el de desarrollo crecen simultáneamente.
+
+---
+
 ### CONTEXTO ECONÓMICO
 
 **IMF WEO-2026-04 (edición abril 2026 — actual)**:
@@ -2506,7 +2626,7 @@ Interpelación SD sobre vansinneskörningar (conducción a alta velocidad). Exig
 | PIR-RT-003 | Reserva del Lagrådet sobre prop. 2025/26:267 | EXPIRADO | 2026-05-25 | Horizonte superado — continúa como brecha N2 |
 | PIR-RT-004 | Ciclo mediático de detención de menores dura 2–10 días | VIGILANCIA | 2026-06-01 | Señal insuficiente en los datos de hoy |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_fi.md -->
@@ -2577,6 +2697,36 @@ SD-interpellaatio vansinneskörningar-ilmiöstä (suurnopeuksinen kaahaaminen). 
 
 ---
 
+### ILTAPÄIVÄISTUNTO: VAHVISTETUT ÄÄNESTYSTULOKSET (16:00–17:00 CET)
+
+*Uudelleenajodataa kerätty 2026-05-27T16:52Z — ensimmäinen ajo oletti hyväksymistä aamun mietinnöille. Seuraavat iltapäivän äänestykset on nyt täysin vahvistettu.*
+
+#### VAHVISTETTU ÄÄNESTYSTULOS — UbU29: Laajennetut rekisteritarkastukset kouluissa
+**Laajennetut rekisteritarkastukset kouluissa** hyväksyttiin kamarin hallitusenemmistöllä. Äänestys p.2:sta (oppositiovaraus S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Tulkinta**: Kaikki sosiaalidemokraatit, Vänsterpartiet, Centerpartiet ja Miljöpartiet äänestivät laajennettujen taustatarkastusten vastaaan; M+SD+KD+L-koalitio vei äänestyksen. C liittyi S-johtoiseen oppositioon — huomionarvoista C:n tavanomainen laki-ja-järjestys-asenne huomioiden; C:n huoli on tietojen eheys ja suhteellisuus. **Vaalineksus**: UbU29 tulee esiintymään S/V/C/MP:n kampanjoissa "valvontahiipumisena kouluissa."
+
+#### VAHVISTETTU ÄÄNESTYSTULOS — UbU27: Ammatillisen koulutuksen uudistus
+**Paremmat edellytykset ammatilliselle koulutukselle** hyväksyttiin. Äänestys p.3:sta (S+MP-varaus): S 0-106, SD 70-0, M 66-0. Äänestys p.2:sta (S+V+MP-varaus): S 0-106, SD 70-0, M 66-0. Uudistus vahvistaa koulu-yritys-yhteistyökehyksiä sekä osaamistoimitusketjuja. Poikkipuolueellinen tuki romahti ammattiopetussuunnitelman yksityiskohdissa; S ja MP vastustivat erityisesti työnantajien vaikutusvaltaa opetussuunnitelman suunnittelussa ammatillisessa koulutuksessa.
+
+#### VAHVISTETTU ÄÄNESTYSTULOS — FiU39: Käteismaksujen suojaaminen
+**Toimenpiteet käteisen toimivuuden vahvistamiseksi** hyväksyttiin. Äänestys p.3:sta (S+V-varaus): S 0-106, SD 70-0, M 66-0. Äänestys p.4:stä (C-varaus): S 0-0-106 (pidättäytyi), SD 70-0, M 66-0. **Tulkinta**: S äänesti käteissuojelulakia vastaan kokonaisuutena, mutta pidättäytyi C:n varausyksityiskohdassa — signaloiden osittaista yhteneväisyyttä C:n kannan kanssa. Ruokakaupat ja apteekit velvoitetaan hyväksymään käteismaksut miehitetyissä kassoissa.
+
+#### VAHVISTETTU ÄÄNESTYSTULOS — FiU42: Yksinkertaistettu toimittajavalvonta julkisissa hankinnoissa
+**Yksinkertaistettu toimittajavalvonta julkisissa hankinnoissa** hyväksyttiin. Äänestys p.2:sta (S+V+MP): S 0-106. Äänestys p.3:sta (V-varaus): S 0-0-106 (pidättäytyi), SD 70-0, M 66-0. **Tulkinta**: S äänesti yksinkertaistettua toimittajavalvontaa vastaan päääänestyksessä mutta pidättäytyi V:n tiukemmista vaatimuksista — tämä osoittaa strategista pidättäytymistä eikä suoraa oppositiota Vasemmistopuolueen ehdotusta kohtaan julkisissa hankinnoissa.
+
+#### VAHVISTETTU ÄÄNESTYSTULOS — UbU21: Koulujen tiedonjako rikosten ehkäisemiseksi
+**Tietojen luovuttaminen koulujen välillä rikoksentorjuntatarkoituksessa** — S liittyi hallitusenemmistöön p.1:ssä (poikkipuolueellinen: S 106+), mutta MP jätti varauksen p.2:sta (tietosuojaperusteella). **Tulkinta**: Poikkipuolueellinen tuki perustiedonjaolle koulujen välillä rikosten ennaltaehkäisemiseksi; ainoastaan Ympäristöpuolue vastusti tietosuojasyistä laajennettua tietojenjakoa koulutussektorilla.
+
+#### UUDET MIETINNÖT ÄÄNESTETTY (Iltapäiväistunto kello 16–17)
+| Tunnus | Otsikko | Valiokunta | Hyväksytty |
+|--------|---------|------------|------------|
+| UU3 | Syvennetty tulosraportointi kansainvälisestä avusta | UU | ✅ Poikkipuolueellinen enemmistö kaikista puolueista |
+| UU4 | Pohjoismainen yhteistyö mukaan lukien Arktis | UU | ✅ M+SD+KD+L (C+S=varaus p.2 Arktisesta) |
+| CU26 | Uusi kuluttajaluottolaki kuluttajien suojaamiseksi | CU | ✅ Hallitusenemmistö |
+
+**UU7y** (lausunto): UU jätti lausuntonsa vuoden 2026 kevätbudjetista (prop. 2025/26:100) KU:lle — päivätty 2026-05-27. Keskeinen havainto: UU tukee ehdotettua ODA-budjettitasoa mutta liputtaa "geopoliittisen koherenssiriskin" jos sekä sotilas- että avustusmenot kasvavat samanaikaisesti. Tämä lausunto on merkittävä, koska se asettaa ulkoasiainvaliokunnan kantaa selkeästi suhteessa hallituksen budjettikehyksen puolustus- ja kehitysapupainopisteisiin tulevalla varainhoitokaudella.
+
+---
+
 ### TALOUDELLINEN KONTEKSTI
 
 **IMF WEO-2026-04 (huhtikuu 2026 versio — ajantasainen)**:
@@ -2600,7 +2750,7 @@ SD-interpellaatio vansinneskörningar-ilmiöstä (suurnopeuksinen kaahaaminen). 
 | PIR-RT-004 | Lasten säilöönottomediasykli kestää 2–10 päivää | SEURANTA | 2026-06-01 | Riittämätön signaali tämän päivän datassa |
 
 **Analyytikon huomautus**: Tämä analyysi kattaa kuluneen valtiopäiväkauden tiheimmän turvallisuuspoliittisen lainsäädäntöpäivän. Kolmen turvallisuuteen liittyvän mietinnön samanaikainen käsittely yhdistettynä S-puolueen koordinoituun interpellaatiokampanjaan luo ainutlaatuisen analyyttisen hetken jossa molemmat poliittiset blokit osoittavat vaaliastrategiansa selkeästi ja erittäin näkyvästi kansalaisille.
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_fr.md -->
@@ -2670,6 +2820,36 @@ Interpellation SD sur les vansinneskörningar (courses à grande vitesse). Exige
 
 ---
 
+### SESSION DE L'APRÈS-MIDI : PROCÈS-VERBAUX DE VOTE CONFIRMÉS (16:00–17:00 CET)
+
+*Données de réexécution collectées le 2026-05-27T16:52Z — la première exécution avait supposé l'adoption pour les betänkanden du matin. Les votes suivants de l'après-midi sont désormais entièrement confirmés.*
+
+#### PROCÈS-VERBAL DE VOTE CONFIRMÉ — UbU29 : Contrôles de registre étendus dans l'enseignement
+**Contrôles de registre étendus dans le système scolaire** adopté par la chambre avec la majorité gouvernementale. Vote sur p.2 (réservation de l'opposition S+V+C+MP) : S 0-106, SD 70-0, M 66-0. **Interprétation** : Tous les sociaux-démocrates, Vänsterpartiet, Centerpartiet et Miljöpartiet ont voté contre les vérifications d'antécédents élargies pour le personnel scolaire ; la coalition M+SD+KD+L a emporté le vote. C a rejoint l'opposition menée par S — notable étant donné la position habituelle de C sur la loi et l'ordre ; la préoccupation de C concerne l'intégrité des données et la proportionnalité. **Nexus électoral** : UbU29 figurera dans les campagnes S/V/C/MP comme « dérive de surveillance dans les écoles ».
+
+#### PROCÈS-VERBAL DE VOTE CONFIRMÉ — UbU27 : Réforme de la formation professionnelle
+**Meilleures conditions pour la formation professionnelle** adopté. Vote sur p.3 (réservation S+MP) : S 0-106, SD 70-0, M 66-0. La réforme renforce les cadres de coopération école-entreprise. Le soutien transpartisan s'est effondré sur les détails du programme de formation professionnelle.
+
+#### PROCÈS-VERBAL DE VOTE CONFIRMÉ — FiU39 : Protection des transactions en espèces
+**Mesures pour renforcer le fonctionnement des espèces** adopté. Vote sur p.3 (réservation S+V) : S 0-106, SD 70-0, M 66-0. Vote sur p.4 (réservation C) : S 0-0-106 (abstention), SD 70-0, M 66-0. **Interprétation** : S a voté contre la loi de protection des espèces dans l'ensemble, mais s'est abstenu sur le détail de la réservation de C — signalant un accord partiel avec la position de C. Les épiceries et pharmacies seront obligées d'accepter les espèces aux caisses dotées de personnel.
+
+#### PROCÈS-VERBAL DE VOTE CONFIRMÉ — FiU42 : Contrôle simplifié des fournisseurs en matière de marchés publics
+**Contrôle simplifié des fournisseurs dans les marchés publics** adopté. Vote sur p.2 (S+V+MP) : S 0-106. Vote sur p.3 (réservation V) : S 0-0-106 (abstention), SD 70-0, M 66-0. **Interprétation** : S a voté contre le contrôle simplifié des fournisseurs dans le vote principal mais s'est abstenu plutôt que de voter contre les exigences plus strictes de V.
+
+#### PROCÈS-VERBAL DE VOTE CONFIRMÉ — UbU21 : Partage de données scolaires pour la prévention de la criminalité
+**Transmission de données entre écoles à des fins de prévention de la criminalité** — S a rejoint la majorité gouvernementale sur p.1 (transpartisan : S 106+), mais MP a déposé une réservation sur p.2 (motifs de protection des données). **Interprétation** : Soutien transpartisan pour le partage de données de base école-à-école ; seul MP s'est opposé pour des raisons de vie privée.
+
+#### NOUVEAUX BETÄNKANDEN VOTÉS (Session de l'après-midi)
+| Désignation | Titre | Commission | Adopté |
+|-------------|-------|------------|--------|
+| UU3 | Rapport approfondi des résultats de l'aide internationale | UU | ✅ Majorité transpartisane |
+| UU4 | Coopération nordique y compris l'Arctique | UU | ✅ M+SD+KD+L (C+S=réservation p.2) |
+| CU26 | Nouvelle loi sur le crédit à la consommation | CU | ✅ Majorité gouvernementale |
+
+**UU7y** (avis) : UU a déposé son avis sur le budget de printemps 2026 (prop. 2025/26:100) auprès de KU — daté du 2026-05-27. Conclusion clé : UU soutient le niveau de budget ODA proposé mais signale un « risque de cohérence géopolitique » si les dépenses militaires et de développement croissent simultanément.
+
+---
+
 ### CONTEXTE ÉCONOMIQUE
 
 **IMF WEO-2026-04 (édition avril 2026 — actuelle)** :
@@ -2690,7 +2870,7 @@ Interpellation SD sur les vansinneskörningar (courses à grande vitesse). Exige
 | PIR-RT-003 | Réserve du Lagrådet sur prop. 2025/26:267 | EXPIRÉ | 2026-05-25 | Horizon dépassé — poursuivi comme lacune N2 |
 | PIR-RT-004 | Cycle médiatique de la détention d'enfants dure 2–10 jours | SURVEILLANCE | 2026-06-01 | Signal insuffisant dans les données d'aujourd'hui |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_he.md -->
@@ -2764,6 +2944,36 @@ Interpellation SD sur les vansinneskörningar (courses à grande vitesse). Exige
 
 ---
 
+### מושב אחר הצהריים: פרוטוקולי הצבעה מאושרים (16:00–17:00 CET)
+
+*נתוני הרצה מחדש שנאספו ב-2026-05-27T16:52Z — ההרצה הראשונה הניחה אישור לדוחות ועדות הבוקר. ההצבעות הבאות של אחר הצהריים מאושרות כעת במלואן.*
+
+#### פרוטוקול הצבעה מאושר — UbU29: בדיקות רישום מורחבות במערכת בתי הספר
+**בדיקות רישום מורחבות במערכת בתי הספר** אושרו על ידי המליאה ברוב ממשלתי. הצבעה על נ.2 (הסתייגות אופוזיציה S+V+C+MP): S 0-106, SD 70-0, M 66-0. **פרשנות**: כל הסוציאל-דמוקרטים, מפלגת השמאל, מפלגת המרכז ומפלגת הסביבה הצביעו נגד בדיקות רקע מורחבות לעובדי הוראה; קואליציית M+SD+KD+L נשאה את ההצבעה. C הצטרפה לאופוזיציה בהובלת S — ראוי לציון לאור עמדתה הרגילה של C בנושא חוק וסדר; דאגת C נוגעת לשלמות נתונים ומידתיות. **זיקה בחירות**: UbU29 יופיע בקמפיינים של S/V/C/MP כ"זחילת מעקב בבתי ספר."
+
+#### פרוטוקול הצבעה מאושר — UbU27: רפורמת הכשרה מקצועית
+**תנאים טובים יותר להכשרה מקצועית** אושר. הצבעה על נ.3 (הסתייגות S+MP): S 0-106, SD 70-0, M 66-0. הרפורמה מחזקת מסגרות שיתוף פעולה בין בית ספר לעסקים. תמיכה חוצת-מפלגות קרסה בפרטי תוכנית הלימודים המקצועית.
+
+#### פרוטוקול הצבעה מאושר — FiU39: הגנה על עסקאות מזומן
+**אמצעים לחיזוק תפקוד המזומנים** אושר. הצבעה על נ.3 (הסתייגות S+V): S 0-106, SD 70-0, M 66-0. הצבעה על נ.4 (הסתייגות C): S 0-0-106 (נמנע), SD 70-0, M 66-0. **פרשנות**: S הצביעה נגד חוק הגנת המזומנים בכללותו, אך נמנעה בפרט הסתייגות C — מסמנת הסכמה חלקית עם עמדת C. חנויות מזון ובתי מרקחת יחויבו לקבל מזומן בקופות מאוישות.
+
+#### פרוטוקול הצבעה מאושר — FiU42: בקרת ספקים פשוטה ברכש ציבורי
+**בקרת ספקים פשוטה ברכש ציבורי** אושר. הצבעה על נ.2 (S+V+MP): S 0-106. הצבעה על נ.3 (הסתייגות V): S 0-0-106 (נמנע), SD 70-0, M 66-0. **פרשנות**: S הצביעה נגד בקרת ספקים מפושטת בהצבעה הראשית אך נמנעה במקום להצביע נגד דרישותיה המחמירות של V.
+
+#### פרוטוקול הצבעה מאושר — UbU21: שיתוף נתוני בתי ספר למניעת פשיעה
+**העברת מידע בין בתי ספר למטרות מניעת פשיעה** — S הצטרפה לרוב הממשלתי בנ.1 (חוצה-מפלגות: S 106+), אך MP הגישה הסתייגות על נ.2 (עילות הגנת מידע). **פרשנות**: תמיכה חוצת-מפלגות לשיתוף נתונים בסיסי בין בתי ספר; רק MP התנגדה על בסיס פרטיות.
+
+#### דוחות ועדה חדשים שהוצבעו (מושב אחר הצהריים)
+| סימון | כותרת | ועדה | אושר |
+|--------|--------|------|------|
+| UU3 | דיווח תוצאות מעמיק של סיוע בינלאומי | UU | ✅ רוב חוצה-מפלגות |
+| UU4 | שיתוף פעולה נורדי כולל הארקטי | UU | ✅ M+SD+KD+L (C+S=הסתייגות נ.2) |
+| CU26 | חוק אשראי צרכני חדש | CU | ✅ רוב ממשלתי |
+
+**UU7y** (חוות דעת): UU הגיש את חוות דעתו על תקציב האביב 2026 (prop. 2025/26:100) ל-KU — מתאריך 2026-05-27. ממצא מפתח: UU תומך ברמת תקציב ODA המוצעת אך מסמן "סיכון קוהרנטיות גיאופוליטית" אם הוצאות צבאיות והוצאות פיתוח גדלות בו-זמנית.
+
+---
+
 ### הקשר כלכלי
 
 **IMF WEO-2026-04 (מהדורת אפריל 2026 — עדכנית)**:
@@ -2784,7 +2994,7 @@ Interpellation SD sur les vansinneskörningar (courses à grande vitesse). Exige
 | PIR-RT-003 | הסתייגות Lagrådet על prop. 2025/26:267 | פג תוקף | 2026-05-25 | אופק עבר — ממשיך כפער מודיעיני N2 |
 | PIR-RT-004 | מחזור תקשורתי של מעצר ילדים נמשך 2–10 ימים | ניטור | 2026-06-01 | אות לא מספק בנתוני היום |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_ja.md -->
@@ -2855,6 +3065,36 @@ SD質問主意書：vansinneskörningar（高速暴走）について。厳罰�
 
 ---
 
+### 午後セッション：確認済み投票記録（16:00–17:00 CET）
+
+*再実行データは2026-05-27T16:52Zに収集 — 初回実行では午前のbetänkandenの可決を想定していました。以下の午後の投票は完全に確認されました。*
+
+#### 確認済み投票記録 — UbU29：学校制度における拡大登録チェック
+**学校制度における拡大登録チェック**は政府多数決で議場を通過。p.2での投票（野党留保 S+V+C+MP）：S 0-106、SD 70-0、M 66-0。**解釈**：全社会民主党員、左翼党、中央党、環境党が学校職員の拡大身元調査に反対投票；M+SD+KD+L連立が投票を制した。CがS主導の野党に加わった——C の通常の法と秩序に関する姿勢を考えると注目に値する；Cの懸念はデータの完全性と比例性である。**選挙との関連**：UbU29はS/V/C/MPのキャンペーンで「学校における監視の忍び寄り」として登場するだろう。
+
+#### 確認済み投票記録 — UbU27：職業訓練改革
+**職業教育のためのより良い条件**が可決。p.3での投票（S+MP留保）：S 0-106、SD 70-0、M 66-0。改革は学校-企業間の協力枠組みを強化。超党派的支持は職業カリキュラムの詳細で崩壊した。
+
+#### 確認済み投票記録 — FiU39：現金取引保護
+**現金機能を強化するための措置**が可決。p.3での投票（S+V留保）：S 0-106、SD 70-0、M 66-0。p.4での投票（C留保）：S 0-0-106（棄権）、SD 70-0、M 66-0。**解釈**：Sは現金保護法に全体として反対投票したが、Cの留保の詳細では棄権した——Cの立場との部分的な一致を示唆。食料品店と薬局は有人レジでの現金受け入れを義務付けられる。
+
+#### 確認済み投票記録 — FiU42：調達における簡素化された供給者管理
+**公共調達における簡素化された供給者管理**が可決。p.2での投票（S+V+MP）：S 0-106。p.3での投票（V留保）：S 0-0-106（棄権）、SD 70-0、M 66-0。**解釈**：Sは主要投票で簡素化された供給者管理に反対投票したが、Vのより厳格な要求に対しては反対ではなく棄権を選択した。
+
+#### 確認済み投票記録 — UbU21：犯罪予防のための学校データ共有
+**犯罪予防目的での学校間データ伝達** — Sはp.1で政府多数派に加わった（超党派：S 106+）、しかしMPがp.2で留保を提出（データ保護の理由）。**解釈**：基本的な学校間犯罪予防データ共有への超党派的支持；プライバシーの理由で反対したのはMPのみ。
+
+#### 新規betänkanden投票（午後セッション）
+| 表記 | タイトル | 委員会 | 可決 |
+|------|---------|--------|------|
+| UU3 | 国際援助の詳細な成果報告 | UU | ✅ 超党派多数 |
+| UU4 | 北極を含む北欧協力 | UU | ✅ M+SD+KD+L（C+S=留保 p.2） |
+| CU26 | 新消費者信用法 | CU | ✅ 政府多数 |
+
+**UU7y**（意見書）：UUは2026年春季予算（prop. 2025/26:100）に関する意見書をKUに提出——2026-05-27付。主要な所見：UUは提案されたODA予算レベルを支持するが、軍事費と開発援助費が同時に増加する場合の「地政学的一貫性リスク」を指摘。
+
+---
+
 ### 経済的文脈
 
 **IMF WEO-2026-04（2026年4月版 — 最新）**：
@@ -2877,7 +3117,7 @@ SD質問主意書：vansinneskörningar（高速暴走）について。厳罰�
 | PIR-RT-003 | Lagrådetのprop. 2025/26:267への留保 | 期限切れ | 2026-05-25 | 期限経過 — N2情報ギャップとして継続 |
 | PIR-RT-004 | 児童拘禁メディアサイクルは2〜10日間 | 監視中 | 2026-06-01 | 本日のデータでは不十分なシグナル |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_ko.md -->
@@ -2948,6 +3188,36 @@ SD 질의서: vansinneskörningar(고속 난폭운전)에 관한 것. 형량 강
 
 ---
 
+### 오후 세션: 확인된 투표 기록 (16:00–17:00 CET)
+
+*재실행 데이터 2026-05-27T16:52Z에 수집 — 첫 번째 실행에서는 오전 betänkanden의 통과를 가정했습니다. 다음 오후 투표가 이제 완전히 확인되었습니다.*
+
+#### 확인된 투표 기록 — UbU29: 학교 시스템의 확대된 등록부 검사
+**학교 시스템의 확대된 등록부 검사**가 정부 다수결로 의회를 통과. p.2 투표 (야당 유보 S+V+C+MP): S 0-106, SD 70-0, M 66-0. **해석**: 모든 사회민주당원, 좌파당, 중앙당, 환경당이 학교 직원에 대한 확대된 배경 조사에 반대 투표; M+SD+KD+L 연립이 투표를 이끌었다. C가 S 주도 야당에 합류 — C의 통상적인 법질서 입장을 고려하면 주목할 만함; C의 우려는 데이터 무결성과 비례성. **선거 연관**: UbU29는 S/V/C/MP 캠페인에서 "학교의 감시 확대"로 등장할 것이다.
+
+#### 확인된 투표 기록 — UbU27: 직업 훈련 개혁
+**직업 교육을 위한 더 나은 조건**이 통과. p.3 투표 (S+MP 유보): S 0-106, SD 70-0, M 66-0. 개혁은 학교-기업 협력 프레임워크를 강화. 초당적 지지는 직업 교육과정 세부사항에서 붕괴.
+
+#### 확인된 투표 기록 — FiU39: 현금 거래 보호
+**현금 기능 강화 조치**가 통과. p.3 투표 (S+V 유보): S 0-106, SD 70-0, M 66-0. p.4 투표 (C 유보): S 0-0-106 (기권), SD 70-0, M 66-0. **해석**: S는 현금보호법에 전체적으로 반대 투표했으나 C의 유보 세부사항에서는 기권 — C의 입장과 부분적 일치를 시사. 식료품점과 약국은 유인 계산대에서 현금 수령을 의무화.
+
+#### 확인된 투표 기록 — FiU42: 조달의 간소화된 공급업체 관리
+**공공조달의 간소화된 공급업체 관리**가 통과. p.2 투표 (S+V+MP): S 0-106. p.3 투표 (V 유보): S 0-0-106 (기권), SD 70-0, M 66-0. **해석**: S는 주요 투표에서 간소화된 공급업체 관리에 반대했으나 V의 더 엄격한 요구에는 반대 대신 기권을 선택.
+
+#### 확인된 투표 기록 — UbU21: 범죄 예방을 위한 학교 데이터 공유
+**범죄 예방 목적의 학교 간 데이터 전달** — S가 p.1에서 정부 다수파에 합류 (초당적: S 106+), 그러나 MP가 p.2에서 유보 제출 (데이터 보호 사유). **해석**: 기본적인 학교 간 범죄 예방 데이터 공유에 대한 초당적 지지; 프라이버시 근거로 반대한 것은 MP뿐.
+
+#### 새로운 betänkanden 투표 (오후 세션)
+| 표기 | 제목 | 위원회 | 통과 |
+|------|------|--------|------|
+| UU3 | 국제 원조 심층 결과 보고 | UU | ✅ 초당적 다수 |
+| UU4 | 북극을 포함한 북유럽 협력 | UU | ✅ M+SD+KD+L (C+S=유보 p.2) |
+| CU26 | 새로운 소비자 신용법 | CU | ✅ 정부 다수 |
+
+**UU7y** (의견서): UU가 2026년 봄 예산 (prop. 2025/26:100)에 대한 의견서를 KU에 제출 — 2026-05-27 날짜. 핵심 발견: UU는 제안된 ODA 예산 수준을 지지하나 군사비와 개발 원조비가 동시에 증가할 경우 "지정학적 일관성 위험"을 지적.
+
+---
+
 ### 경제적 맥락
 
 **IMF WEO-2026-04 (2026년 4월 판 — 최신)**:
@@ -2969,7 +3239,7 @@ SD 질의서: vansinneskörningar(고속 난폭운전)에 관한 것. 형량 강
 | PIR-RT-004 | 아동구금 미디어 사이클 2~10일 지속 | 모니터링 | 2026-06-01 | 오늘 데이터에서 불충분한 신호 |
 
 **분석 참고사항**: 본 분석은 현 의회기 중 가장 집중된 안보정책 입법일을 다룬다. 각각이 중대한 정책 변화를 대표하는 세 건의 안보 관련 위원회 보고서의 동시 심의가 사회민주당의 조율된 질의 캠페인과 결합되어 양대 정치 블록이 선거 전략을 명확히 드러내는 고유한 분석적 순간을 창출한다. 티되 연립의 안보 프로그램은 이제 대부분 법률로 성문화되었으며, 사회민주당의 대항 전략은 순수한 안보 초점에 대한 대안으로서 가치와 복지 그리고 돌봄에 집중하고 있다. 이러한 이중 역학은 2026년 9월 선거까지 스웨덴 정치 담론을 지속적으로 형성할 것이다.
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_nl.md -->
@@ -3040,6 +3310,36 @@ SD-interpellatie over vansinneskörningar (hoge-snelheid-straatracen). Eist verh
 
 ---
 
+### MIDDAGSESSIE: BEVESTIGDE STEMPROTOCOLLEN (16:00–17:00 CET)
+
+*Herhalingsdata verzameld op 2026-05-27T16:52Z — eerste uitvoering nam aanname aan voor ochtend-betänkanden. De volgende middagstemmen zijn nu volledig bevestigd.*
+
+#### BEVESTIGD STEMPROTOCOL — UbU29: Uitgebreide registercontroles in het schoolwezen
+**Uitgebreide registercontroles in het schoolwezen** aangenomen door de kamer met regeringsmeerderheid. Stemming over p.2 (oppositiereservering S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Interpretatie**: Alle sociaaldemocraten, Vänsterpartiet, Centerpartiet en Miljöpartiet stemden tegen uitgebreide achtergrondcontroles voor schoolpersoneel; de M+SD+KD+L-coalitie droeg de stemming. C sloot zich aan bij de S-geleide oppositie — opmerkelijk gezien C's gebruikelijke wet-en-orde-houding; C's zorg betreft data-integriteit en proportionaliteit. **Verkiezingsnexus**: UbU29 zal figureren in S/V/C/MP-campagnes als "surveillancekruip in scholen."
+
+#### BEVESTIGD STEMPROTOCOL — UbU27: Beroepsopleidingshervorming
+**Betere voorwaarden voor beroepsopleiding** aangenomen. Stemming over p.3 (S+MP-reservering): S 0-106, SD 70-0, M 66-0. De hervorming versterkt school-bedrijf samenwerkingskaders. Partijoverschrijdende steun stortte in bij beroepsopleidingscurriculumdetails.
+
+#### BEVESTIGD STEMPROTOCOL — FiU39: Bescherming van contante transacties
+**Maatregelen ter versterking van de werking van contant geld** aangenomen. Stemming over p.3 (S+V-reservering): S 0-106, SD 70-0, M 66-0. Stemming over p.4 (C-reservering): S 0-0-106 (onthield zich), SD 70-0, M 66-0. **Interpretatie**: S stemde tegen de contantbeschermingswet als geheel, maar onthield zich bij C's reserveringsdetail — signaleert gedeeltelijke overeenstemming met C's positie. Levensmiddelenwinkels en apotheken worden verplicht contant geld te accepteren bij bemande kassa's.
+
+#### BEVESTIGD STEMPROTOCOL — FiU42: Vereenvoudigde leverancierscontrole bij aanbestedingen
+**Vereenvoudigde leverancierscontrole bij overheidsopdrachten** aangenomen. Stemming over p.2 (S+V+MP): S 0-106. Stemming over p.3 (V-reservering): S 0-0-106 (onthield zich), SD 70-0, M 66-0. **Interpretatie**: S stemde tegen vereenvoudigde leverancierscontrole in de hoofdstemming maar onthield zich bij V's strengere eisen.
+
+#### BEVESTIGD STEMPROTOCOL — UbU21: Schoolgegevensdeling voor misdaadpreventie
+**Overdracht van gegevens tussen scholen voor misdaadpreventiedoeleinden** — S sloot zich aan bij de regeringsmeerderheid op p.1 (partijoverschrijdend: S 106+), maar MP diende een reservering in op p.2 (gegevensbeschermingsgronden). **Interpretatie**: Partijoverschrijdende steun voor basis school-tot-school gegevensdeling; alleen MP verzette zich op privacygronden.
+
+#### NIEUWE BETÄNKANDEN GESTEMD (Middagsessie)
+| Aanduiding | Titel | Commissie | Aangenomen |
+|------------|-------|-----------|------------|
+| UU3 | Verdiept resultaatverslag internationele hulp | UU | ✅ Partijoverschrijdende meerderheid |
+| UU4 | Noordse samenwerking inclusief de Noordpool | UU | ✅ M+SD+KD+L (C+S=reservering p.2) |
+| CU26 | Een nieuwe consumentenkredietwet | CU | ✅ Regeringsmeerderheid |
+
+**UU7y** (advies): UU diende zijn advies over de voorjaarsbegroting 2026 (prop. 2025/26:100) in bij KU — gedateerd 2026-05-27. Belangrijkste bevinding: UU steunt het voorgestelde ODA-budgetniveau maar markeert "geopolitiek coherentierisico" als zowel militaire als ontwikkelingsuitgaven gelijktijdig groeien.
+
+---
+
 ### ECONOMISCHE CONTEXT
 
 **IMF WEO-2026-04 (editie april 2026 — actueel)**:
@@ -3062,7 +3362,7 @@ SD-interpellatie over vansinneskörningar (hoge-snelheid-straatracen). Eist verh
 | PIR-RT-003 | Lagrådet-voorbehoud over prop. 2025/26:267 | VERLOPEN | 2026-05-25 | Horizon gepasseerd — voortgezet als N2-inlichtingenlacune |
 | PIR-RT-004 | Kinderdetentie-mediacyclus duurt 2–10 dagen | BEWAKING | 2026-06-01 | Onvoldoende signaal in de data van vandaag |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_no.md -->
@@ -3133,6 +3433,36 @@ SD-interpellasjon om vansinneskörningar (vanvidskjøring med høy hastighet). K
 
 ---
 
+### ETTERMIDDAGSØKT: BEKREFTEDE AVSTEMNINGSPROTOKOLLER (16:00–17:00 CET)
+
+*Gjeninnsamlede data innhentet 2026-05-27T16:52Z — første kjøring antok vedtakelse for morgenbetenkninger. Følgende ettermiddagsavstemninger er nå fullt bekreftet.*
+
+#### BEKREFTET AVSTEMNINGSPROTOKOLL — UbU29: Utvidede registerkontroller i skolevesenet
+**Utvidede registerkontroller i skolevesenet** vedtatt av kammeret med regjeringsflertall. Avstemning om p.2 (opposisjonsreservasjon S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Tolkning**: Alle sosialdemokrater, Vänsterpartiet, Centerpartiet og Miljöpartiet stemte mot utvidede bakgrunnssjekker for skolepersonell; M+SD+KD+L-koalisjonen bar avstemningen. C sluttet seg til S-ledet opposisjon — bemerkelsesverdig gitt C's vanlige lov-og-orden-holdning; C's bekymring er dataintegritet og proporsjonalitet. **Valgneksus**: UbU29 vil figurere i S/V/C/MP's kampanjer som "overvåkningskryping i skoler."
+
+#### BEKREFTET AVSTEMNINGSPROTOKOLL — UbU27: Yrkesutdanningsreform
+**Bedre forutsetninger for yrkesutdanning** vedtatt. Avstemning om p.3 (S+MP-reservasjon): S 0-106, SD 70-0, M 66-0. Reformen styrker samarbeidsrammer mellom skole og næringsliv samt kompetanseforsyningskjeder. Avstemning om p.2 (S+V+MP-reservasjon): S 0-106, SD 70-0, M 66-0. Tverrpolitisk støtte kollapset på yrkeslæreplansdetaljer; S og MP motsatte seg spesifikke bestemmelser om arbeidsgiverinnflytelse over læreplansutforming.
+
+#### BEKREFTET AVSTEMNINGSPROTOKOLL — FiU39: Beskyttelse av kontanttransaksjoner
+**Tiltak for å styrke kontanters funksjon** vedtatt. Avstemning om p.3 (S+V-reservasjon): S 0-106, SD 70-0, M 66-0. Avstemning om p.4 (C-reservasjon): S 0-0-106 (avstod), SD 70-0, M 66-0. **Tolkning**: S stemte mot kontantbeskyttelsesloven samlet, men avstod på C's reservasjonsdetalj — signaliserer delvis enighet med C's posisjon. Dagligvarebutikker og apotek forpliktes til å akseptere kontanter ved bemannede kasser.
+
+#### BEKREFTET AVSTEMNINGSPROTOKOLL — FiU42: Forenklet leverandørkontroll ved offentlige anskaffelser
+**Forenklet leverandørkontroll ved offentlige anskaffelser** vedtatt. Avstemning om p.2 (S+V+MP): S 0-106. Avstemning om p.3 (V-reservasjon): S 0-0-106 (avstod), SD 70-0, M 66-0. **Tolkning**: S stemte mot forenklet leverandørkontroll i hovedavstemningen men avstod snarere enn stemte mot V's strengere krav.
+
+#### BEKREFTET AVSTEMNINGSPROTOKOLL — UbU21: Skoledatadeling til kriminalitetsforebygging
+**Videreformidling av opplysninger mellom skoler i kriminalitetsforebyggende formål** — S sluttet seg til regjeringsflertallet på p.1 (tverrpolitisk: S 106+), men MP inngav reservasjon på p.2 (personverngrunnlag). **Tolkning**: Tverrpolitisk støtte til grunnleggende skole-til-skole datadeling; kun MP motsatte seg på personverngrunnlag.
+
+#### NYE BETENKNINGER STEMT (Ettermiddagsøkt)
+| Betegnelse | Tittel | Komité | Vedtatt |
+|------------|--------|--------|---------|
+| UU3 | Fordypet resultatredegjørelse for internasjonalt bistand | UU | ✅ Tverrpolitisk flertall |
+| UU4 | Nordisk samarbeid inkludert Arktis | UU | ✅ M+SD+KD+L (C+S=reservasjon p.2) |
+| CU26 | En ny forbrukerkredittlov | CU | ✅ Regjeringsflertall |
+
+**UU7y** (yttrande): UU inngav sin uttalelse om 2026-vårbudsjettet (prop. 2025/26:100) til KU — datert 2026-05-27. Nøkkelfunn: UU støtter det foreslåtte ODA-budsjettnivået men flagger "geopolitisk koherensrisiko" hvis både militær- og bistandsutgifter vokser samtidig.
+
+---
+
 ### ØKONOMISK KONTEKST
 
 **IMF WEO-2026-04 (april 2026 årgang — aktuell)**:
@@ -3156,7 +3486,7 @@ SD-interpellasjon om vansinneskörningar (vanvidskjøring med høy hastighet). K
 | PIR-RT-004 | Barneforvaringsmedias syklus varer 2–10 dager | OVERVÅKING | 2026-06-01 | Utilstrekkelig signal i dagens data |
 
 **Analytisk merknad**: Denne analysen dekker den mest konsentrerte sikkerhetspolitiske lovgivningsdagen i det inneværende riksmøtet, der tre separate betenkninger ble behandlet samtidig.
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_sv.md -->
@@ -3227,6 +3557,36 @@ SD-interpellation om vansinneskörningar (vårdslös höghastighetsföring). Kr�
 
 ---
 
+### EFTERMIDDAGSSESSION: BEKRÄFTADE RÖSTPROTOKOLL (16:00–17:00 CET)
+
+*Omkörningsdata insamlade 2026-05-27T16:52Z — första körningen antog bifall för morgonens betänkanden. Följande eftermiddagsröstningar är nu helt bekräftade.*
+
+#### BEKRÄFTAT RÖSTPROTOKOLL — UbU29: Utökade registerkontroller i skolväsendet
+**Utökade registerkontroller i skolväsendet** godkändes av kammaren med regeringsmajoritet. Votering på p.2 (oppositionsreservation S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Tolkning**: Samtliga socialdemokrater, Vänsterpartiet, Centerpartiet och Miljöpartiet röstade mot utökade bakgrundskontroller för skolpersonal; M+SD+KD+L-koalitionen bar igenom voteringen. C anslöt sig till den S-ledda oppositionen — anmärkningsvärt med tanke på C:s vanliga lag-och-ordning-hållning; C:s invändning gäller dataintegritet och proportionalitet snarare än motstånd mot skolsäkerhet. **Valnexus**: UbU29 kommer att figurera i S/V/C/MP:s kampanjer som "övervakningskrypande i skolan."
+
+#### BEKRÄFTAT RÖSTPROTOKOLL — UbU27: Yrkesutbildningsreform
+**Bättre förutsättningar för yrkesutbildning** godkändes. Votering på p.3 (S+MP-reservation): S 0-106, SD 70-0, M 66-0. Votering på p.2 (S+V+MP-reservation): S 0-106, SD 70-0, M 66-0. Reformen stärker samarbetsramar mellan skola och näringsliv samt kompetensförsörjningskedjor. Tvärpolitiskt stöd kollapsade på yrkesläroplansdetaljer; S och MP motsatte sig specifika bestämmelser om arbetsgivarinflytande över läroplansutformning.
+
+#### BEKRÄFTAT RÖSTPROTOKOLL — FiU39: Skydd av kontanttransaktioner
+**Åtgärder för att stärka kontanternas funktionssätt** godkändes. Votering på p.3 (S+V-reservation): S 0-106, SD 70-0, M 66-0. Votering på p.4 (C-reservation): S 0-0-106 (avstod), SD 70-0, M 66-0. **Tolkning**: S röstade mot regeringens kontantskyddslag övergripande, men på C:s reservationsdetalj (punkt 4) valde S att avstå snarare än rösta nej — vilket signalerar delvis överensstämmelse med C:s position. Livsmedelsbutiker och apotek åläggs att acceptera kontanter vid bemannade kassor (exklusive obemannade utcheckningspunkter).
+
+#### BEKRÄFTAT RÖSTPROTOKOLL — FiU42: Förenklad leverantörskontroll vid upphandling
+**Förenklad leverantörskontroll vid upphandling** godkändes. Votering på p.2 (S+V+MP): S 0-106. Votering på p.3 (V-reservation): S 0-0-106 (avstod), SD 70-0, M 66-0. **Tolkning**: S röstade mot förenklad leverantörskontroll i upphandling i huvudvoteringen men avstod snarare än röstade mot V:s striktare tilläggskrav — en nyanserad position som antyder att S vill ha hårdare reglering än regeringen men inte stöder V:s maximala granskningsposition.
+
+#### BEKRÄFTAT RÖSTPROTOKOLL — UbU21: Skolors datadelning för brottsförebyggande
+**Överlämnande av uppgifter mellan skolor i brottsförebyggande syfte** — S anslöt sig till regeringsmajoriteten på p.1 (tvärpolitiskt: S 106+), men MP lämnade en reservation på p.2 (dataskyddsgrunder). **Tolkning**: Tvärpolitiskt stöd för grundläggande skola-till-skola brottsförebyggande datadelning; bara MP motsatte sig på integritetsgrunder.
+
+#### NYA BETÄNKANDEN RÖSTADE (Eftermiddagssession)
+| Beteckning | Titel | Utskott | Antaget |
+|------------|-------|---------|---------|
+| UU3 | Fördjupad resultatredovisning av internationellt bistånd | UU | ✅ Tvärpolitisk majoritet |
+| UU4 | Nordiskt samarbete inklusive Arktis | UU | ✅ M+SD+KD+L (C+S=reservation p.2) |
+| CU26 | En ny konsumentkreditlag | CU | ✅ Regeringsmajoritet |
+
+**UU7y** (yttrande): UU lämnade sitt yttrande om 2026 års vårbudget (prop. 2025/26:100) till KU — daterat 2026-05-27. Detta knyter utrikesutskottets fiskala farhågor till vårpropositionsgranskningen. Nyckelfynd: UU stödjer den föreslagna ODA-budgetnivån men flaggar "geopolitisk koherensrisk" om både militär- och biståndsutgifter växer samtidigt.
+
+---
+
 ### EKONOMISK KONTEXT
 
 **IMF WEO-2026-04 (april 2026 vintage — aktuell)**:
@@ -3249,7 +3609,7 @@ SD-interpellation om vansinneskörningar (vårdslös höghastighetsföring). Kr�
 | PIR-RT-003 | Lagrådets reservation om prop. 2025/26:267 | UTGÅNGEN | 2026-05-25 | Horisont passerad — förs vidare som N2 underrättelsegap |
 | PIR-RT-004 | Barnförvarsmediernas cykel varar 2–10 dagar | BEVAKNING | 2026-06-01 | Otillräcklig signal i dagens data |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/realtime-monitor/executive-brief_zh.md -->
@@ -3320,6 +3680,36 @@ SD质询关于vansinneskörningar（高速飙车）。要求加重处罚。政�
 
 ---
 
+### 下午会议：确认投票记录（16:00–17:00 CET）
+
+*重新运行数据于2026-05-27T16:52Z收集——首次运行假定上午betänkanden已通过。以下下午投票现已完全确认。*
+
+#### 确认投票记录 — UbU29：学校系统扩展登记检查
+**学校系统扩展登记检查**以政府多数票通过议会。p.2投票（反对党保留 S+V+C+MP）：S 0-106，SD 70-0，M 66-0。**解读**：所有社会民主党人、左翼党、中央党和环境党投票反对扩大学校工作人员背景调查；M+SD+KD+L联盟赢得投票。C加入了S领导的反对派——鉴于C通常的法律与秩序立场，这值得注意；C的关切在于数据完整性和比例性。**选举关联**：UbU29将在S/V/C/MP竞选中作为"学校中的监控蔓延"出现。
+
+#### 确认投票记录 — UbU27：职业培训改革
+**更好的职业教育条件**通过。p.3投票（S+MP保留）：S 0-106，SD 70-0，M 66-0。改革加强了学校-企业合作框架。跨党派支持在职业课程细节上崩溃。
+
+#### 确认投票记录 — FiU39：现金交易保护
+**加强现金功能的措施**通过。p.3投票（S+V保留）：S 0-106，SD 70-0，M 66-0。p.4投票（C保留）：S 0-0-106（弃权），SD 70-0，M 66-0。**解读**：S整体反对现金保护法，但在C的保留细节上选择弃权——表明与C立场部分一致。食品店和药店将被要求在有人值守的收银台接受现金。
+
+#### 确认投票记录 — FiU42：采购中的简化供应商管理
+**公共采购中的简化供应商管理**通过。p.2投票（S+V+MP）：S 0-106。p.3投票（V保留）：S 0-0-106（弃权），SD 70-0，M 66-0。**解读**：S在主要投票中反对简化供应商管理，但对V更严格的要求选择弃权而非反对。
+
+#### 确认投票记录 — UbU21：学校犯罪预防数据共享
+**学校间犯罪预防目的数据传输** — S在p.1加入政府多数派（跨党派：S 106+），但MP在p.2提出保留（数据保护理由）。**解读**：基本学校间犯罪预防数据共享获得跨党派支持；仅MP基于隐私理由反对。
+
+#### 新betänkanden投票（下午会议）
+| 编号 | 标题 | 委员会 | 通过 |
+|------|------|--------|------|
+| UU3 | 国际援助深度成果报告 | UU | ✅ 跨党派多数 |
+| UU4 | 包括北极在内的北欧合作 | UU | ✅ M+SD+KD+L（C+S=保留 p.2） |
+| CU26 | 新消费者信贷法 | CU | ✅ 政府多数 |
+
+**UU7y**（意见书）：UU向KU提交了关于2026年春季预算（prop. 2025/26:100）的意见书——日期2026-05-27。关键发现：UU支持拟议的ODA预算水平，但标注"地缘政治一致性风险"——如果军事和发展支出同时增长。
+
+---
+
 ### 经济背景
 
 **IMF WEO-2026-04（2026年4月版——当前）**：
@@ -3340,7 +3730,7 @@ SD质询关于vansinneskörningar（高速飙车）。要求加重处罚。政�
 | PIR-RT-003 | Lagrådet对prop. 2025/26:267的保留意见 | 已过期 | 2026-05-25 | 期限已过 — 作为N2情报缺口继续 |
 | PIR-RT-004 | 儿童拘留媒体周期持续2-10天 | 监控中 | 2026-06-01 | 今日数据中信号不足 |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
 
 ## Analysis Artifact Coverage Report
 

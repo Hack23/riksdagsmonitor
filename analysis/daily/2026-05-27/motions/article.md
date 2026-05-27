@@ -3,7 +3,7 @@ date: 2026-05-27
 subfolder: motions
 slug: 2026-05-27-motions
 source_folder: analysis/daily/2026-05-27/motions
-generated_at: 2026-05-27T16:32:34.340Z
+generated_at: 2026-05-27T21:19:14.545Z
 language: en
 layout: article
 ---
@@ -95,6 +95,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1964,13 +1977,923 @@ Data sourced from 2026-05-22 via lookback fallback — check freshness indicator
 |----------:|---------:|---------:|--------:|---------:|
 | 0 | 0 | 0 | 0 | 0 |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الملخص التنفيذي — اقتراحات المعارضة، 2026-05-27
+
+**التصنيف**: عام  
+**التاريخ**: 2026-05-27  
+**المؤلف**: James Pether Sörling  
+**الدورة البرلمانية**: 2025/26  
+**رمز الأدميرالية**: B2 (مصدر موثوق، محتمل الصحة)
+
+---
+
+### الخلاصة
+
+يُشكّل اقتراحان من اقتراحات المعارضة لحزب Miljöpartiet (MP) المُقدَّمان في 22/05/2026 تحدياً مبدئياً قائماً على الحقوق ضد اثنين من مقترحات الحكومة الكبرى التي تتقدم في العملية البرلمانية. يطعن الاقتراح HD024191 في الصلاحيات الرقابية الموسّعة لـ Skatteverket على سجل السكان ويحذر من الأضرار التي تلحق بالأشخاص المشردين والمعرضين للخطر اجتماعياً. ويطالب الاقتراح HD024192 بالرفض الكامل لأحكام الاحتجاز السابق للمحاكمة للأطفال في قانون الأجانب الأمني ويطلب تقييماً مستقلاً قبل دخول قيود جديدة حيز التنفيذ. ومن المرجح أن يُرفض كلا الاقتراحين من قِبَل الكتلة الحكومية (M+KD+L+SD)، غير أنهما يُرسّخان حدوداً مهمة لحقوق الإنسان قبيل انتخابات 2026.
+
+---
+
+### التقييمات الرئيسية
+
+**ت.ر-1** (محتمل — B2): سيُرفض HD024191 وHD024192 في SkU وJuU على التوالي؛ إذ تمتلك الائتلاف الحكومي أغلبية برلمانية وأظهر انضباطاً متسقاً في مسائل سجل السكان وتشريعات أمن الهجرة في 2025/26.
+
+**ت.ر-2** (شبه مؤكد — A1): يخدم كلا الاقتراحين غرضاً مزدوجاً: ضغط تشريعي تأخيري على المقترحات الراهنة وتحديد المواقع الانتخابية لخريف 2026 موجّهاً للناخبين التقدميين المحبطين من توجه الحكومة نحو الأمن.
+
+**ت.ر-3** (محتمل — B2): الاعتراض على احتجاز الأطفال في HD024192 له صدى غير معتاد عبر الكتل البرلمانية؛ إذ قد يُعرب C (Centerpartiet) وربما أعضاء فرديون من L عن مخاوف حتى وإن صوّتوا في نهاية المطاف مع الحكومة.
+
+**ت.ر-4** (ممكن — C3): قد يستقطب توسيع Skatteverket لرقابة سجل السكان (prop. 2025/26:261) مراجعة متابعة من Statskontoret في غضون 12–18 شهراً.
+
+---
+
+### ملخص الاقتراحات
+
+#### HD024191 — سجل سكان Skatteverket (SkU)
+- **الحزب**: Miljöpartiet (MP)
+- **المؤلفون**: Annika Hirvonen وآخرون
+- **الاقتراح الأم**: 2025/26:261
+- **المطالب**: (1) أن تعود الحكومة بمقترحات بشأن حقوق التسجيل للمشردين؛ (2) تحليل أعمق للخصوصية والمعاملة المتساوية للصلاحيات الرقابية الموسّعة
+- **الحجة الأساسية**: توسيع الرقابة مشروع لكنه لا ينبغي أن يحرم الفئات الضعيفة من حقوقهم المجتمعية
+
+#### HD024192 — التهديدات الأمنية / الأجانب الأمنيون المؤهلون (JuU)
+- **الحزب**: Miljöpartiet (MP)
+- **المؤلفون**: Ulrika Westerlund وآخرون
+- **الاقتراح الأم**: 2025/26:267
+- **المطالب**: (1) رفض أحكام احتجاز الأطفال (§§ 9, 10, 19 في تعديلات LSU المقترحة)؛ (2) العودة بمقترحات تحترم سيادة القانون؛ (3) تفويض بتقييم مدته 5 سنوات
+- **الحجة الأساسية**: خفض عبء الإثبات + الاحتجاز غير المحدود للبالغين + احتجاز الأطفال = غير متناسب؛ أشارت هيئات الاستشارة إلى مشاكل خطيرة لعدم التوافق مع الاتفاقية الأوروبية لحقوق الإنسان/UNCRC
+
+---
+
+### الأهمية الانتخابية (T+72h إلى T+365d)
+
+- **فوري (T+72h)**: أثر برلماني منخفض. ظهور إعلامي مرتفع حول روايات احتجاز الأطفال.
+- **قصير المدى (T+30d)**: متوقع نظر لجنة SkU وJuU في يونيو 2026. تعدّ التصريحات العلنية لأعضاء L حول مشاكل احتجاز الأطفال مؤشرات المستوى الأول.
+- **متوسط المدى (T+90d)**: سيُعتمَد كلا الاقتراحين على الأرجح في خريف 2026. سيستخدم MP الاقتراحات المرفوضة كمواد حملة انتخابية.
+- **طويل المدى (T+365d/انتخابات سبتمبر 2026)**: الحقوق في مواجهة الأمن هو محور انتخابي محوري لعام 2026. تُقدَّر نسبة MP بـ ~5.5–6.5%.
+- **ما بعد الانتخابات (T+1460d)**: تنطوي أحكام احتجاز الأطفال على احتمالية عالية للشكاوى أمام المفوض البرلماني خلال 6 أشهر من أول تطبيق.
+
+---
+
+### تقييم الموثوقية
+
+| الادعاء | مستوى WEP | الأدميرالية |
+|---------|-----------|-------------|
+| سيُرفض كلا الاقتراحين | محتمل | B2 |
+| غرض التحديد الانتخابي | شبه مؤكد | A1 |
+| القلق عبر الكتل من احتجاز الأطفال | ممكن | B3 |
+| مراجعة Statskontoret على المدى الطويل | ممكن | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_da.md -->
+
+**Klassificering**: OFFENTLIG  
+**Dato**: 2026-05-27  
+**Forfatter**: James Pether Sörling  
+**Riksmøde**: 2025/26  
+**Admiralitetskode**: B2 (pålidelig kilde, sandsynligvis sand)
+
+---
+
+### Konklusion
+
+To Miljøpartiet (MP) oppositionsforslag indgivet 2026-05-22 udgør en principiel rettighedsbaseret udfordring mod to store regeringspropositioner, der bevæger sig fremad i den parlamentariske proces. Forslag HD024191 bestrider Skatteverkets udvidede kontrolbeføjelser over folkeregistret og advarer mod skade på hjemløse og socialt sårbare personer. Forslag HD024192 kræver fuldstændig afvisning af varetægtsfængselsbestemmelserne for børn i sikkerhedsudlændingeloven og kalder på en uafhængig evaluering, inden nye restriktioner træder i kraft. Begge forslag vil med stor sandsynlighed blive forkastet af regeringsblokken (M+KD+L+SD), men de fastlægger centrale menneskerettighedsgrænsedragninger forud for valget 2026.
+
+---
+
+### Nøglevurderinger
+
+**NV-1** (SANDSYNLIGT — B2): HD024191 og HD024192 vil blive forkastet i henholdsvis SkU og JuU; regeringskoalitionen har parlamentarisk flertal og har vist konsekvent disciplin i spørgsmål om folkeregister og migrationssikkerhedslovgivning i 2025/26.
+
+**NV-2** (NÆSTEN SIKKERT — A1): Begge forslag tjener et dobbelt formål: lovgivningsmæssigt forsinkelsespres på aktuelle propositioner og valgpositionering frem mod efteråret 2026 rettet mod progressive vælgere, der er skuffede over regeringens sikkerhedsfokuserede retning.
+
+**NV-3** (SANDSYNLIGT — B2): Barnefængslingsindsigelsen i HD024192 har usædvanlig tværbloksresonans; C (Centerpartiet) og muligvis individuelle L-medlemmer kan signalere bekymring, selv om de til sidst stemmer med regeringen. Lagrådskritik er allerede noteret i motionsteksten.
+
+**NV-4** (MULIGT — C3): Skatteverkets udvidelse af folkebogholderikontrol (prop. 2025/26:261) kan tiltrække Statskontorets opfølgningsgranskning inden for 12–18 måneder.
+
+---
+
+### Forslagssammendrag
+
+#### HD024191 — Skatteverkets folkeregister (SkU)
+- **Parti**: Miljøpartiet (MP)
+- **Forfattere**: Annika Hirvonen m.fl.
+- **Moderproposition**: 2025/26:261
+- **Krav**: (1) At regeringen vender tilbage med forslag om folkeregistreringsrettigheder for hjemløse; (2) Dybere analyse af privatlivs- og ligebehandlingsdimensionerne ved udvidede kontrolbeføjelser
+- **Kerneargument**: Kontroludvidelse er legitim men må ikke fratage udsatte grupper samfundsrettigheder
+
+#### HD024192 — Sikkerhedstrusler / Kvalificerede sikkerhedsudlændinge (JuU)
+- **Parti**: Miljøpartiet (MP)
+- **Forfattere**: Ulrika Westerlund m.fl.
+- **Moderproposition**: 2025/26:267
+- **Krav**: (1) Forkast barnefængselsbestemmelserne (§§ 9, 10, 19 i foreslåede LSU-ændringer); (2) Vend tilbage med retsstatlige forslag; (3) Mandat for 5-årig evaluering
+- **Kerneargument**: Lavere bevisbyrde + ubegrænset voksenfængsling + barnefængsling = uforholdsmæssigt; remissinstanser pegede på alvorlige EMRK/UNCRC-uforenelighedsproblemer
+
+---
+
+### Valgmæssig betydning (T+72h til T+365d)
+
+- **Øjeblikkelig (T+72h)**: Lav parlamentarisk indvirkning. Høj mediesynlighed om barnefængselsfortællingen.
+- **Kort (T+30d)**: SkU og JuU behandling forventet juni 2026. Offentlige udtalelser fra L-medlemmer om barnefængslingsproblemer udgør Tier-1-indikator.
+- **Mellemlang (T+90d)**: Begge propositioner vedtages sandsynligvis efterår 2026. MP bruger forkastede forslag som kampagnemateriale.
+- **Lang (T+365d/valg september 2026)**: Rettigheder over for sikkerhed er en definerende 2026 valgakse. MP måles til ~5,5–6,5%.
+- **Efter valg (T+1460d)**: Barnefængselsbestemmelserne rummer høj sandsynlighed for Ombudsmandsklage inden for 6 måneder fra første anvendelse. Langvarige retssager ved nationale eller internationale domstole er ligeledes mulige.
+
+Begge forslag udgør en del af MPs bredere strategi om at positionere sig som forsvarer af grundlæggende rettigheder forud for valget 2026. Ved at angribe specifikke lovbestemmelser frem for at fremføre generelle indvendinger skaber de præcedens for retssager og parlamentariske evalueringer, såfremt forslagene vedtages. Lagrådets bekymringer, som er nævnt i motionsteksterne, udgør en stærk juridisk legitimering af oppositionsstillingen.
+
+---
+
+### Konfidensbeømmelse
+
+| Påstand | WEP-niveau | Admiralitet |
+|---------|------------|-------------|
+| Begge forslag forkastes | SANDSYNLIGT | B2 |
+| Valgpositioneringsformål | NÆSTEN SIKKERT | A1 |
+| Tværbloksopmærksomhed om barnefængsling | MULIGT | B3 |
+| Langsigtet Statskontoret-granskning | MULIGT | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_de.md -->
+
+**Klassifizierung**: ÖFFENTLICH  
+**Datum**: 2026-05-27  
+**Autor**: James Pether Sörling  
+**Reichstag**: 2025/26  
+**Admiralitätscode**: B2 (zuverlässige Quelle, wahrscheinlich wahr)
+
+---
+
+### Schlussfolgerung
+
+Zwei am 22.05.2026 eingereichte Oppositionsanträge von Miljöpartiet (MP) stellen eine grundsätzliche rechtebasierte Herausforderung gegen zwei im parlamentarischen Prozess voranschreitende große Regierungsvorlagen dar. Antrag HD024191 bestreitet die erweiterten Kontrollbefugnisse von Skatteverket über das Einwohnermelderegister und warnt vor Schäden für obdachlose und sozial vulnerable Personen. Antrag HD024192 fordert die vollständige Ablehnung der Untersuchungshaftbestimmungen für Kinder im Sicherheitsausländergesetz und verlangt eine unabhängige Evaluierung, bevor neue Beschränkungen in Kraft treten. Beide Anträge werden wahrscheinlich vom Regierungsblock (M+KD+L+SD) abgelehnt, legen aber wichtige Menschenrechtsgrenzen vor der Wahl 2026 fest.
+
+---
+
+### Hauptbeurteilungen
+
+**HB-1** (WAHRSCHEINLICH — B2): HD024191 und HD024192 werden im SkU bzw. JuU abgelehnt; die Regierungskoalition verfügt über eine parlamentarische Mehrheit und hat bei Einwohnermelderegister- und Migrationssicherheitsgesetzgebung in 2025/26 konsequente Disziplin gezeigt.
+
+**HB-2** (FAST SICHER — A1): Beide Anträge erfüllen einen doppelten Zweck: gesetzgeberischen Verzögerungsdruck auf aktuelle Vorlagen und Wahlpositionierung für Herbst 2026, gerichtet an progressive Wähler, die von der sicherheitsorientierten Richtung der Regierung enttäuscht sind.
+
+**HB-3** (WAHRSCHEINLICH — B2): Der Einwand gegen Kinderinhaftierung in HD024192 hat ungewöhnliche blockübergreifende Resonanz; C (Zentrumspartei) und möglicherweise einzelne L-Mitglieder könnten Bedenken signalisieren, obwohl sie am Ende mit der Regierung stimmen.
+
+**HB-4** (MÖGLICH — C3): Die Erweiterung der Einwohnermeldekontrolle durch Skatteverket (prop. 2025/26:261) könnte innerhalb von 12–18 Monaten eine Nachfolgeprüfung des Statskontoret anziehen.
+
+---
+
+### Antragsübersicht
+
+#### HD024191 — Skatteverkets Einwohnermelderegister (SkU)
+- **Partei**: Miljöpartiet (MP)
+- **Autoren**: Annika Hirvonen u.a.
+- **Mutterproposition**: 2025/26:261
+- **Forderungen**: (1) Regierung kehrt mit Vorschlägen zu Einmelderechten für Obdachlose zurück; (2) Tiefere Datenschutz- und Gleichbehandlungsanalyse der erweiterten Kontrollbefugnisse
+- **Kernargument**: Kontrollerweiterung ist legitim, darf aber vulnerablen Gruppen keine Gesellschaftsrechte entziehen
+
+#### HD024192 — Sicherheitsbedrohungen / Qualifizierte Sicherheitsausländer (JuU)
+- **Partei**: Miljöpartiet (MP)
+- **Autoren**: Ulrika Westerlund u.a.
+- **Mutterproposition**: 2025/26:267
+- **Forderungen**: (1) Ablehnung der Kinderinhaftierungsbestimmungen (§§ 9, 10, 19 in vorgeschlagenen LSU-Änderungen); (2) Rückkehr mit rechtsstaatlichen Vorschlägen; (3) Mandat für 5-Jahres-Evaluierung
+- **Kernargument**: Niedrigere Beweislast + unbegrenzte Erwachseneninhaftierung + Kinderinhaftierung = unverhältnismäßig; Remissinstanzen wiesen auf ernsthafte EMRK/UNCRC-Unvereinbarkeitsprobleme hin
+
+---
+
+### Wahlrelevanz (T+72h bis T+365d)
+
+- **Sofort (T+72h)**: Geringe parlamentarische Auswirkung. Hohe mediale Sichtbarkeit bei der Kinderinhaftierungserzählung.
+- **Kurzfristig (T+30d)**: SkU- und JuU-Ausschussbehandlung erwartet Juni 2026. Öffentliche Aussagen von L-Mitgliedern zu Kinderinhaftierungsproblemen sind Tier-1-Indikatoren.
+- **Mittelfristig (T+90d)**: Beide Vorlagen werden voraussichtlich Herbst 2026 verabschiedet. MP nutzt abgelehnte Anträge als Wahlkampfmaterial.
+- **Langfristig (T+365d/Wahl September 2026)**: Rechte versus Sicherheit ist eine definierende 2026 Wahlachse. MP wird auf ~5,5–6,5% geschätzt.
+- **Nach der Wahl (T+1460d)**: Kinderinhaftierungsbestimmungen haben hohe Wahrscheinlichkeit für Ombudsmann-Klagen innerhalb von 6 Monaten nach erster Anwendung. Langwierige Verfahren vor nationalen oder internationalen Gerichten sind ebenfalls möglich.
+
+Beide Anträge sind Teil der umfassenderen MP-Strategie, sich vor den Wahlen 2026 als Verteidigerin der Grundrechte zu positionieren. Durch die gezielte Anfechtung spezifischer Gesetzesbestimmungen statt allgemeiner Einwände schaffen sie Präzedenzfälle für Rechtsstreitigkeiten und parlamentarische Evaluierungen nach einer etwaigen Verabschiedung. Die bereits im Antragstext erwähnten Bedenken des Lagråds bieten eine starke juristische Grundlage für die Oppositionshaltung.
+
+---
+
+### Konfidenzbeurteilung
+
+| Aussage | WEP-Niveau | Admiralität |
+|---------|------------|-------------|
+| Beide Anträge werden abgelehnt | WAHRSCHEINLICH | B2 |
+| Wahlpositionierungszweck | FAST SICHER | A1 |
+| Blockübergreifende Besorgnis über Kinderinhaftierung | MÖGLICH | B3 |
+| Langfristige Statskontoret-Prüfung | MÖGLICH | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICO  
+**Fecha**: 2026-05-27  
+**Autor**: James Pether Sörling  
+**Sesión parlamentaria**: 2025/26  
+**Código Almirantazgo**: B2 (fuente fiable, probablemente cierto)
+
+---
+
+### Conclusión
+
+Dos mociones de oposición de Miljöpartiet (MP) presentadas el 22/05/2026 constituyen un desafío de principio basado en derechos contra dos grandes proposiciones gubernamentales que avanzan en el proceso parlamentario. La moción HD024191 impugna las competencias de control ampliadas de Skatteverket sobre el registro de habitantes y advierte sobre perjuicios para personas sin hogar y socialmente vulnerables. La moción HD024192 exige el rechazo total de las disposiciones de prisión preventiva para niños en la ley de extranjeros de seguridad y solicita una evaluación independiente antes de que entren en vigor nuevas restricciones. Ambas mociones serán probablemente rechazadas por el bloque gubernamental (M+KD+L+SD), pero establecen importantes límites de derechos humanos antes de las elecciones 2026.
+
+---
+
+### Valoraciones principales
+
+**VP-1** (PROBABLE — B2): HD024191 y HD024192 serán rechazadas en SkU y JuU respectivamente; la coalición gobernante tiene mayoría parlamentaria y ha mostrado disciplina constante en cuestiones de registro de habitantes y legislación migratoria de seguridad en 2025/26.
+
+**VP-2** (CASI SEGURO — A1): Ambas mociones cumplen un doble propósito: presión de retraso legislativo sobre las proposiciones actuales y posicionamiento electoral de cara al otoño 2026 dirigido a votantes progresistas decepcionados con la dirección orientada a la seguridad del gobierno.
+
+**VP-3** (PROBABLE — B2): La objeción a la detención de niños en HD024192 tiene una resonancia inusualmente transpartidista; C (Centerpartiet) y posiblemente miembros individuales de L podrían señalar preocupaciones aunque en última instancia voten con el gobierno.
+
+**VP-4** (POSIBLE — C3): La ampliación del control del registro de habitantes de Skatteverket (prop. 2025/26:261) podría atraer una revisión de seguimiento del Statskontoret en los próximos 12–18 meses.
+
+---
+
+### Resumen de mociones
+
+#### HD024191 — Registro de habitantes de Skatteverket (SkU)
+- **Partido**: Miljöpartiet (MP)
+- **Autores**: Annika Hirvonen y otros
+- **Proposición madre**: 2025/26:261
+- **Demandas**: (1) Que el gobierno regrese con propuestas sobre derechos de registro para personas sin hogar; (2) Análisis más profundo de privacidad e igualdad de trato de los poderes de control ampliados
+- **Argumento central**: La ampliación del control es legítima pero no debe privar a los grupos vulnerables de sus derechos sociales
+
+#### HD024192 — Amenazas de seguridad / Extranjeros de seguridad cualificados (JuU)
+- **Partido**: Miljöpartiet (MP)
+- **Autores**: Ulrika Westerlund y otros
+- **Proposición madre**: 2025/26:267
+- **Demandas**: (1) Rechazar las disposiciones de detención preventiva de niños (§§ 9, 10, 19 en modificaciones LSU propuestas); (2) Regresar con propuestas respetuosas del Estado de derecho; (3) Mandato para una evaluación de 5 años
+- **Argumento central**: Carga de la prueba reducida + detención adulta ilimitada + detención de niños = desproporcionado; las instancias de remiss señalaron graves problemas de incompatibilidad con el CEDH/UNCRC
+
+---
+
+### Relevancia electoral (T+72h a T+365d)
+
+- **Inmediato (T+72h)**: Bajo impacto parlamentario. Alta visibilidad mediática en la narrativa de detención de niños.
+- **Corto plazo (T+30d)**: Tratamiento en comité SkU y JuU esperado en junio 2026. Las declaraciones públicas de miembros de L sobre problemas de detención de niños son indicadores de nivel 1.
+- **Medio plazo (T+90d)**: Ambas proposiciones serán probablemente adoptadas en otoño 2026. MP usará las mociones rechazadas como material de campaña.
+- **Largo plazo (T+365d/elecciones septiembre 2026)**: Derechos versus seguridad es un eje definitorio de las elecciones 2026. MP se estima en ~5,5–6,5%.
+- **Después de las elecciones (T+1460d)**: Las disposiciones de detención de niños presentan alta probabilidad de quejas ante el Defensor del Pueblo en los 6 meses tras la primera aplicación.
+
+---
+
+### Evaluación de confianza
+
+| Afirmación | Nivel WEP | Almirantazgo |
+|------------|-----------|--------------|
+| Ambas mociones serán rechazadas | PROBABLE | B2 |
+| Propósito de posicionamiento electoral | CASI SEGURO | A1 |
+| Preocupación transpartidista sobre detención de niños | POSIBLE | B3 |
+| Revisión a largo plazo del Statskontoret | POSIBLE | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_fi.md -->
+
+**Luokitus**: JULKINEN  
+**Päivämäärä**: 2026-05-27  
+**Tekijä**: James Pether Sörling  
+**Valtiopäivät**: 2025/26  
+**Admiraaliasteikko**: B2 (luotettava lähde, todennäköisesti totta)
+
+---
+
+### Lyhyt johtopäätös
+
+Kaksi Miljöpartietin (MP) 22.5.2026 jättämää oppositiomotiota muodostaa periaatteellisen ihmisoikeusperustaisen haasteen kahdelle parlamentaarisessa prosessissa etenevän suuren hallitusesityksen vastapaineeksi. Motio HD024191 kiistää Skatteverketin laajentuneet väestörekisterin valvontavaltuudet ja varoittaa haitoista kodittomuudesta ja sosiaalisesta haavoittuvuudesta kärsiville henkilöille. Motio HD024192 vaatii täydellistä hylkäämistä lain turvallisuusulkomaalaisten lasten tutkintavankeutta koskeviin säännöksiin ja pyytää riippumatonta arviointia ennen uusien rajoitusten voimaantuloa. Molemmat motiot hylätään todennäköisesti hallitusblokin (M+KD+L+SD) toimesta, mutta ne hahmottavat keskeisiä ihmisoikeusrajoja vuoden 2026 vaaleja varten.
+
+---
+
+### Keskeisarviot
+
+**KA-1** (TODENNÄKÖINEN — B2): HD024191 ja HD024192 hylätään SkU:ssa ja JuU:ssa vastaavasti; hallituskoalitio pitää parlamentaarisen enemmistön ja on osoittanut johdonmukaista kurinalaisuutta väestörekisteri- ja maahanmuuttoturvallisuuslainsäädännössä 2025/26.
+
+**KA-2** (LÄHES VARMA — A1): Molemmat motiot palvelevat kaksoistehtävää: lainsäädännöllistä viivästymispainetta nykyisiin esityksiin ja vaaliasemoitumista syksyn 2026 puolesta, kohdistuen progressiivisiin äänestäjiin, jotka ovat pettyneet hallituksen turvallisuuspainotteiseen suuntaan.
+
+**KA-3** (TODENNÄKÖINEN — B2): Lasten tutkintavankeuteen kohdistuva vastalause HD024192:ssa on epätavallisesti yli puoluerajojen resonoiva; C (Keskustapuolue) ja mahdollisesti yksittäiset L-jäsenet voivat signaloida huolta vaikka lopulta äänestäisivätkin hallituksen mukaisesti.
+
+**KA-4** (MAHDOLLINEN — C3): Skatteverketin väestörekisterivalvonnan laajentaminen (prop. 2025/26:261) voi herättää Statskontorin seurantakatsauksen 12–18 kuukauden sisällä.
+
+---
+
+### Motioiden yhteenveto
+
+#### HD024191 — Skatteverketin väestörekisteri (SkU)
+- **Puolue**: Miljöpartiet (MP)
+- **Tekijät**: Annika Hirvonen ym.
+- **Pääesitys**: 2025/26:261
+- **Vaatimukset**: (1) Hallituksen palata ehdotuksilla kodittomien väestörekisteröintioikeuksista; (2) Syvempi yksityisyyden ja tasa-arvoisen kohtelun analyysi laajennetuista valvontavaltuuksista
+- **Perusargumentti**: Valvonnan laajentaminen on hyväksyttävää mutta ei saa viedä haavoittuvilta ryhmiltä yhteiskunnallisia oikeuksia
+
+#### HD024192 — Turvallisuusuhkat / Turvallisuusulkomaalaiset (JuU)
+- **Puolue**: Miljöpartiet (MP)
+- **Tekijät**: Ulrika Westerlund ym.
+- **Pääesitys**: 2025/26:267
+- **Vaatimukset**: (1) Hylätä lasten tutkintavankeutta koskevat säännökset (§§ 9, 10, 19 ehdotetuissa LSU-muutoksissa); (2) Palata oikeusvaltioperiaatteen mukaisiin ehdotuksiin; (3) Mandaatti 5-vuotiselle arviolle
+- **Perusargumentti**: Alennettu todistustaakka + rajoittamaton aikuisten tutkintavankeus + lasten tutkintavankeus = suhteeton; lausunnonantajat (Civil rights defenders, Advokatsamfund, Rädda barnen, IMR, ICJ-Sverige) esittivät vakavia EIS/UNCRC-yhteensopimattomuushuolia
+
+---
+
+### Vaalimerkitys (T+72h–T+365d)
+
+- **Välitön (T+72h)**: Matala parlamentaarinen vaikutus. Korkea medianäkyvyys lasten tutkintavankeustarinoiden osalta.
+- **Lyhyt (T+30d)**: SkU:n ja JuU:n valiokuntakäsittely odotetaan kesäkuussa 2026. L-jäsenten julkiset lausunnot lasten tutkintavankeudesta ovat taso 1 -indikaattoreita.
+- **Keskipitkä (T+90d)**: Molemmat esitykset hyväksytään todennäköisesti syksyllä 2026. MP käyttää hylättyjä motioita kampanjamateriaalina.
+- **Pitkä (T+365d/valit syyskuu 2026)**: Oikeudet vs. turvallisuus on keskeinen vuoden 2026 vaaliakseli. MP mitataan ~5,5–6,5%.
+- **Vaalien jälkeen (T+1460d)**: Lasten tutkintavankeussäännöksillä on korkea todennäköisyys EOA-kanteluille 6 kuukauden sisällä ensimmäisestä käytöstä. Myös kansallisten tai kansainvälisten tuomioistuinten käsittely on mahdollinen.
+
+Molemmat motiot ovat osa MP:n laajempaa strategiaa asemoitua perusoikeuksien puolustajana ennen vuoden 2026 vaaleja. Kohdistamalla kritiikin tiettyihin lainkohtiin yleisen vastustuksen sijaan ne luovat ennakkon oikeudenkäyntejä ja parlamentaarisia arviointeja varten, jos lait hyväksytään. Lakineuvosto (Lagrådet) on jo esittänyt huolensa, mikä tukee opposition juridista kantaa. HD024191:n osalta kyse on väestörekisterin uudistuspaketista, joka koskee tehokasta hallintoa, kun taas HD024192 kuuluu laajempaan muuttoliikkeen turvallisuusagendaan. Nämä kontekstit yhdistyvät MP:n oikeusperusteiseen viitekehykseen, joka selkeästi erottaa puolueen muista oppositiopuolueista.
+
+---
+
+### Luottavuusarvio
+
+| Väite | WEP-taso | Admiraaliasteikko |
+|-------|----------|-------------------|
+| Molemmat motiot hylätään | TODENNÄKÖINEN | B2 |
+| Vaaliasemoitumistarkoitus | LÄHES VARMA | A1 |
+| Ristipuolueinen huoli lasten tutkintavankeudesta | MAHDOLLINEN | B3 |
+| Pitkäaikainen Statskontorin tarkastelu | MAHDOLLINEN | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling  
+**Session parlementaire**: 2025/26  
+**Code Amirauté**: B2 (source fiable, probablement vrai)
+
+---
+
+### Conclusion
+
+Deux motions d'opposition de Miljöpartiet (MP) soumises le 22/05/2026 constituent un défi de principe fondé sur les droits contre deux grandes propositions gouvernementales avançant dans le processus parlementaire. La motion HD024191 conteste les pouvoirs de contrôle élargis de Skatteverket sur le registre des habitants et met en garde contre les préjudices pour les personnes sans abri et socialement vulnérables. La motion HD024192 demande le rejet total des dispositions relatives à la détention préventive des enfants dans la loi sur les étrangers sécuritaires et exige une évaluation indépendante avant l'entrée en vigueur de nouvelles restrictions. Les deux motions seront probablement rejetées par le bloc gouvernemental (M+KD+L+SD), mais elles définissent d'importantes frontières en matière de droits humains avant les élections 2026.
+
+---
+
+### Appréciations principales
+
+**AP-1** (PROBABLE — B2): HD024191 et HD024192 seront rejetées respectivement au SkU et au JuU; la coalition gouvernementale dispose d'une majorité parlementaire et a démontré une discipline constante dans les questions de registre des habitants et de législation migratoire sécuritaire en 2025/26.
+
+**AP-2** (QUASI CERTAIN — A1): Les deux motions servent un double objectif: pression de retard législatif sur les propositions actuelles et positionnement électoral pour l'automne 2026, ciblant les électeurs progressistes déçus de la direction sécuritaire du gouvernement.
+
+**AP-3** (PROBABLE — B2): L'objection relative à la détention des enfants dans HD024192 a une résonance inhabituellement transpartisane; C (Centerpartiet) et peut-être des membres individuels de L pourraient exprimer des préoccupations même en votant finalement avec le gouvernement.
+
+**AP-4** (POSSIBLE — C3): L'extension du contrôle du registre des habitants de Skatteverket (prop. 2025/26:261) pourrait attirer un examen de suivi du Statskontoret dans les 12–18 mois.
+
+---
+
+### Résumé des motions
+
+#### HD024191 — Registre des habitants de Skatteverket (SkU)
+- **Parti**: Miljöpartiet (MP)
+- **Auteurs**: Annika Hirvonen et al.
+- **Proposition mère**: 2025/26:261
+- **Demandes**: (1) Que le gouvernement revienne avec des propositions sur les droits d'enregistrement pour les sans-abri; (2) Analyse plus approfondie de la vie privée et de l'égalité de traitement pour les pouvoirs de contrôle élargis
+- **Argument central**: L'extension du contrôle est légitime mais ne doit pas priver les groupes vulnérables de leurs droits sociaux
+
+#### HD024192 — Menaces sécuritaires / Étrangers sécuritaires qualifiés (JuU)
+- **Parti**: Miljöpartiet (MP)
+- **Auteurs**: Ulrika Westerlund et al.
+- **Proposition mère**: 2025/26:267
+- **Demandes**: (1) Rejeter les dispositions de détention préventive des enfants (§§ 9, 10, 19 des modifications LSU proposées); (2) Revenir avec des propositions respectueuses de l'état de droit; (3) Mandat pour une évaluation sur 5 ans
+- **Argument central**: Charge de la preuve réduite + détention adulte illimitée + détention d'enfants = disproportionné; les instances de remiss ont signalé de graves problèmes d'incompatibilité avec la CEDH/UNCRC
+
+---
+
+### Signification électorale (T+72h à T+365d)
+
+- **Immédiat (T+72h)**: Faible impact parlementaire. Haute visibilité médiatique sur le récit de la détention des enfants.
+- **Court terme (T+30d)**: Traitement en commission SkU et JuU attendu en juin 2026. Les déclarations publiques des membres L sur les problèmes de détention des enfants sont des indicateurs de niveau 1.
+- **Moyen terme (T+90d)**: Les deux propositions seront probablement adoptées à l'automne 2026. MP utilisera les motions rejetées comme matériau de campagne.
+- **Long terme (T+365d/élections septembre 2026)**: Droits contre sécurité est un axe définissant les élections 2026. MP est estimé à ~5,5–6,5%.
+- **Après les élections (T+1460d)**: Les dispositions de détention des enfants présentent une haute probabilité de plaintes auprès de l'Ombudsman dans les 6 mois suivant la première application.
+
+---
+
+### Évaluation de la confiance
+
+| Affirmation | Niveau WEP | Amirauté |
+|-------------|-----------|----------|
+| Les deux motions seront rejetées | PROBABLE | B2 |
+| But de positionnement électoral | QUASI CERTAIN | A1 |
+| Préoccupation transpartisane sur la détention des enfants | POSSIBLE | B3 |
+| Examen à long terme du Statskontoret | POSSIBLE | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — הצעות אופוזיציה, 2026-05-27
+
+**סיווג**: ציבורי  
+**תאריך**: 2026-05-27  
+**מחבר**: James Pether Sörling  
+**מושב פרלמנטרי**: 2025/26  
+**קוד האדמירליות**: B2 (מקור אמין, כנראה נכון)
+
+---
+
+### מסקנה
+
+שתי הצעות אופוזיציה של Miljöpartiet (MP) שהוגשו ב-22/05/2026 מהוות אתגר עקרוני מבוסס זכויות כנגד שתי הצעות חוק ממשלתיות גדולות המתקדמות בתהליך הפרלמנטרי. הצעה HD024191 קוראת תיגר על סמכויות הפיקוח המורחבות של Skatteverket על מרשם האוכלוסין ומזהירה מפני פגיעה בחסרי בית ובאנשים פגיעים חברתית. הצעה HD024192 דורשת דחייה מלאה של הוראות המעצר הזמני לילדים בחוק הזרים הביטחוניים ומבקשת הערכה עצמאית לפני שיכנסו הגבלות חדשות לתוקף. שתי ההצעות צפויות להידחות על ידי גוש הממשלה (M+KD+L+SD), אך הן מתוות גבולות חשובים בזכויות אדם לפני הבחירות 2026.
+
+---
+
+### הערכות מרכזיות
+
+**ה.מ-1** (סביר — B2): HD024191 ו-HD024192 יידחו בהתאמה ב-SkU וב-JuU; לקואליציה הממשלתית יש רוב פרלמנטרי והיא הראתה משמעת עקבית בנושאי מרשם האוכלוסין וחקיקת אבטחת ההגירה ב-2025/26.
+
+**ה.מ-2** (כמעט ודאי — A1): שתי ההצעות משרתות מטרה כפולה: לחץ עיכוב חקיקתי על הצעות החוק הנוכחיות ומיצוב בחירתי לקראת סתיו 2026 המכוון לבוחרים פרוגרסיביים שאוכזבו מהכיוון הממוקד-אבטחה של הממשלה.
+
+**ה.מ-3** (סביר — B2): ההתנגדות למעצר ילדים ב-HD024192 מהדהדת בצורה חריגה מעבר לגבולות הסיעות; C (Centerpartiet) ואולי חברים בודדים מ-L עשויים לאותת על חששות גם אם יצביעו בסופו של דבר עם הממשלה.
+
+**ה.מ-4** (אפשרי — C3): הרחבת פיקוח מרשם האוכלוסין של Skatteverket (prop. 2025/26:261) עלולה למשוך ביקורת מעקב של Statskontoret תוך 12–18 חודשים.
+
+---
+
+### סיכום ההצעות
+
+#### HD024191 — מרשם האוכלוסין של Skatteverket (SkU)
+- **מפלגה**: Miljöpartiet (MP)
+- **מחברים**: Annika Hirvonen ואחרים
+- **הצעת החוק האם**: 2025/26:261
+- **דרישות**: (1) שהממשלה תשוב עם הצעות לזכויות רישום לחסרי בית; (2) ניתוח עומק של פרטיות ושוויון יחס עבור סמכויות הפיקוח המורחבות
+- **הטיעון המרכזי**: הרחבת הפיקוח לגיטימית אך לא צריכה לשלול מקבוצות פגיעות את זכויותיהן החברתיות
+
+#### HD024192 — איומים ביטחוניים / זרים ביטחוניים מוסמכים (JuU)
+- **מפלגה**: Miljöpartiet (MP)
+- **מחברים**: Ulrika Westerlund ואחרים
+- **הצעת החוק האם**: 2025/26:267
+- **דרישות**: (1) לדחות את הוראות המעצר הזמני לילדים (§§ 9, 10, 19 בתיקוני LSU המוצעים); (2) לחזור עם הצעות בהתאם לשלטון החוק; (3) מנדט להערכה של 5 שנים
+- **הטיעון המרכזי**: נטל הוכחה מופחת + מעצר מבוגרים בלתי מוגבל + מעצר ילדים = לא מידתי; גופי הייעוץ הצביעו על בעיות חמורות של אי-תאימות עם ECHR/UNCRC
+
+---
+
+### משמעות בחירתית (T+72h עד T+365d)
+
+- **מיידי (T+72h)**: השפעה פרלמנטרית נמוכה. נראות תקשורתית גבוהה סביב נרטיב מעצר הילדים.
+- **קצר טווח (T+30d)**: דיון ועדות SkU ו-JuU צפוי ביוני 2026. הצהרות פומביות של חברי L על בעיות מעצר ילדים הן מדדי רמה 1.
+- **טווח בינוני (T+90d)**: שתי ההצעות צפויות להיות מאומצות בסתיו 2026. MP ישתמש בהצעות הנדחות כחומר קמפיין.
+- **ארוך טווח (T+365d/בחירות ספטמבר 2026)**: זכויות נגד ביטחון הוא ציר בחירתי מגדיר של 2026. MP מוערך ב-~5.5–6.5%.
+- **לאחר הבחירות (T+1460d)**: הוראות מעצר הילדים נושאות הסתברות גבוהה לתלונות אצל המבקר הפרלמנטרי תוך 6 חודשים מהיישום הראשון.
+
+---
+
+שתי ההצעות קשורות לתוכנית הממשלתית הרחבה של מושב 2025/26. Prop. 2025/26:261 היא חלק מחבילת רפורמות חקיקה של Skatteverket הנוגעת לרישום האוכלוסין, שמטרתה ניהול אוכלוסין יעיל. Prop. 2025/26:267 היא חלק מסדר היום הרחב יותר של אבטחת ההגירה, שמטרתו הקמת כלים חזקים יותר כנגד אנשים הנתפסים כאיום על הביטחון הלאומי השוודי.
+
+ההצעות של MP בולטות בכך שהן מתמקדות בביקורת חברתית על מדיניות הממשלה, לא רק בביקורת נהלית. זהו מסגור המבדיל את MP ממפלגות אופוזיציה אחרות, שמתמקדות בטיעונים פרוצדורליים. Lagrådets גוף המייעץ לחוקיות ההצעות, הביע חששות — דבר המחזק את הביקורת של MP.
+
+---
+
+### הערכת מהימנות
+
+| טענה | רמת WEP | אדמירליות |
+|------|---------|-----------|
+| שתי ההצעות יידחו | סביר | B2 |
+| מטרת מיצוב בחירתי | כמעט ודאי | A1 |
+| חשש בין-סיעתי ממעצר ילדים | אפשרי | B3 |
+| ביקורת Statskontoret לטווח ארוך | אפשרי | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_ja.md -->
+
+**分類**: 公開  
+**日付**: 2026-05-27  
+**著者**: James Pether Sörling  
+**議会会期**: 2025/26  
+**アドミラルティコード**: B2（信頼できる情報源、おそらく真実）
+
+---
+
+### 結論
+
+2026年5月22日に提出されたMiljöpartiet（MP）の2件の野党動議は、議会プロセスで進行中の2つの主要な政府提案に対する原則的な権利ベースの挑戦を構成する。動議HD024191はSkatteverketの人口登録簿に対する拡大された監視権限を争い、ホームレスや社会的に脆弱な人々への被害を警告する。動議HD024192は安全外国人法における子どもの勾留前置要件の全面的な否決を求め、新たな制限が施行される前に独立した評価を要求する。両動議は政府ブロック（M+KD+L+SD）によって否決される可能性が高いが、2026年選挙前の重要な人権の境界線を設定する。
+
+---
+
+### 主要評価
+
+**KE-1**（可能性高い — B2）: HD024191とHD024192はそれぞれSkUとJuUで否決される。連立政権は議会の過半数を持ち、2025/26年の人口登録簿と移民安全保障立法において一貫した規律を示してきた。
+
+**KE-2**（ほぼ確実 — A1）: 両動議は二重の目的を果たす：現在の提案に対する立法遅延圧力と、政府の安全保障重視の方向性に失望したリベラル有権者を対象とした2026年秋の選挙配置。
+
+**KE-3**（可能性高い — B2）: HD024192における子どもの拘禁への異議は異例の超党派的共鳴を持つ。C（Centerpartiet）および個々のL党員が最終的に政府と同じ票を投じるとしても懸念を示す可能性がある。
+
+**KE-4**（可能性あり — C3）: Skatteverketの人口登録監視の拡大（prop. 2025/26:261）は12〜18ヶ月以内にStatskontoretのフォローアップ審査を引き起こす可能性がある。
+
+---
+
+### 動議要約
+
+#### HD024191 — Skatteverketの人口登録簿（SkU）
+- **党**: Miljöpartiet（MP）
+- **著者**: Annika Hirvonen他
+- **親提案**: 2025/26:261
+- **要求**: (1) 政府がホームレスの登録権に関する提案を持ち帰ること；(2) 拡大された監視権限のプライバシーと平等待遇への深い分析
+- **中心論拠**: 監視の拡大は正当だが、脆弱なグループから社会的権利を奪ってはならない
+
+#### HD024192 — セキュリティ上の脅威 / 資格ある安全外国人（JuU）
+- **党**: Miljöpartiet（MP）
+- **著者**: Ulrika Westerlund他
+- **親提案**: 2025/26:267
+- **要求**: (1) 子どもの拘禁条項を否決（提案されたLSU改正§§ 9, 10, 19）；(2) 法の支配に沿った提案で戻ること；(3) 5年間評価のための権限
+- **中心論拠**: 証明責任の引き下げ + 成人の無期限拘禁 + 子どもの拘禁 = 不均衡；意見聴取機関はECHR/UNCRCとの深刻な非適合問題を指摘
+
+---
+
+### 選挙的重要性（T+72h〜T+365d）
+
+- **即時（T+72h）**: 議会への影響は低い。子どもの拘禁物語に関するメディアの注目は高い。
+- **短期（T+30d）**: SkUとJuU委員会の審議は2026年6月予定。子どもの拘禁問題についてのL党員の公的発言はTier-1指標。
+- **中期（T+90d）**: 両提案は2026年秋に可決される見通し。MPは否決された動議を選挙キャンペーン素材として使用する。
+- **長期（T+365d/2026年9月選挙）**: 権利対安全は2026年選挙の定義的な軸。MPは〜5.5〜6.5%と予測。
+- **選挙後（T+1460d）**: 子どもの拘禁条項は最初の適用から6ヶ月以内に議会オンブズマンへの申し立ての高い可能性を持つ。
+
+---
+
+### 信頼性評価
+
+| 主張 | WEPレベル | アドミラルティ |
+|------|----------|--------------|
+| 両動議が否決される | 可能性高い | B2 |
+| 選挙配置目的 | ほぼ確実 | A1 |
+| 子どもの拘禁への超党派的懸念 | 可能性あり | B3 |
+| Statskontoretの長期審査 | 可能性あり | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_ko.md -->
+
+**분류**: 공개  
+**날짜**: 2026-05-27  
+**저자**: James Pether Sörling  
+**의회 회기**: 2025/26  
+**해군 코드**: B2 (신뢰할 수 있는 출처, 아마도 사실)
+
+---
+
+### 결론
+
+2026년 5월 22일에 제출된 Miljöpartiet(MP)의 두 야당 발의안은 의회 절차에서 진행 중인 두 주요 정부 제안에 대한 원칙적인 권리 기반 도전을 구성한다. 발의안 HD024191은 Skatteverket의 주민 등록에 대한 확대된 통제 권한에 이의를 제기하고 노숙자 및 사회적으로 취약한 사람들에 대한 피해를 경고한다. 발의안 HD024192는 안보 외국인법에서 아동에 대한 구금 전치 조항의 완전한 거부를 요구하고 새로운 제한이 발효되기 전에 독립적인 평가를 요청한다. 두 발의안 모두 정부 블록(M+KD+L+SD)에 의해 거부될 가능성이 높지만 2026년 선거 전 중요한 인권 경계선을 설정한다.
+
+---
+
+### 주요 평가
+
+**KP-1** (가능성 높음 — B2): HD024191과 HD024192는 각각 SkU와 JuU에서 거부될 것이다. 연립정부는 의회 과반수를 보유하고 있으며 2025/26년 주민 등록 및 이민 안보 입법에서 일관된 규율을 보여왔다.
+
+**KP-2** (거의 확실 — A1): 두 발의안은 이중 목적을 수행한다: 현재 제안에 대한 입법 지연 압력과 정부의 안보 중심적 방향에 실망한 진보적 유권자를 겨냥한 2026년 가을 선거 포지셔닝.
+
+**KP-3** (가능성 높음 — B2): HD024192의 아동 구금에 대한 이의는 이례적인 초당적 공명을 가진다. C(Centerpartiet)와 개별 L당원들이 최종적으로 정부와 같은 표를 던지더라도 우려를 표명할 수 있다.
+
+**KP-4** (가능성 있음 — C3): Skatteverket의 주민 등록 통제 확대(prop. 2025/26:261)는 12~18개월 이내에 Statskontoret의 후속 검토를 불러올 수 있다.
+
+---
+
+### 발의안 요약
+
+#### HD024191 — Skatteverket 주민 등록 (SkU)
+- **정당**: Miljöpartiet (MP)
+- **저자**: Annika Hirvonen 외
+- **모법안**: 2025/26:261
+- **요구사항**: (1) 정부가 노숙자 등록 권리에 관한 제안을 갖고 돌아올 것; (2) 확대된 통제 권한에 대한 더 깊은 개인정보 및 평등 대우 분석
+- **핵심 논거**: 통제 확대는 정당하지만 취약 집단으로부터 사회적 권리를 박탈해서는 안 됨
+
+#### HD024192 — 보안 위협 / 적격 보안 외국인 (JuU)
+- **정당**: Miljöpartiet (MP)
+- **저자**: Ulrika Westerlund 외
+- **모법안**: 2025/26:267
+- **요구사항**: (1) 아동 구금 조항 거부 (제안된 LSU 개정 §§ 9, 10, 19); (2) 법치주의에 부합하는 제안으로 돌아올 것; (3) 5년 평가 권한
+- **핵심 논거**: 낮아진 증명 책임 + 무기한 성인 구금 + 아동 구금 = 불균형; 자문 기관들은 ECHR/UNCRC와의 심각한 비적합 문제를 지적
+
+---
+
+### 선거적 중요성 (T+72h ~ T+365d)
+
+- **즉각 (T+72h)**: 의회에 대한 영향 낮음. 아동 구금 서사에 대한 미디어 관심 높음.
+- **단기 (T+30d)**: SkU와 JuU 위원회 심의는 2026년 6월 예정. 아동 구금 문제에 대한 L당원들의 공개 성명은 Tier-1 지표.
+- **중기 (T+90d)**: 두 제안 모두 2026년 가을에 채택될 전망. MP는 거부된 발의안을 선거 캠페인 자료로 활용할 것.
+- **장기 (T+365d/2026년 9월 선거)**: 권리 대 안보는 2026년 선거의 정의적 축. MP는 ~5.5~6.5%로 예측.
+- **선거 후 (T+1460d)**: 아동 구금 조항은 최초 적용 후 6개월 이내에 의회 옴부즈맨에 대한 민원의 높은 가능성을 가짐.
+
+---
+
+두 발의안 모두 2025/26 회기의 광범위한 정부 프로그램과 관련이 있다. Prop. 2025/26:261은 효율적인 인구 관리를 목표로 하는 Skatteverket의 인구 등록 관련 법률 개혁 패키지의 일부이다. Prop. 2025/26:267은 스웨덴 안보에 위협이 되는 것으로 간주되는 개인에 대한 강화된 도구를 설치하려는 더 광범위한 이민 안보 에이전다의 일부이다.
+
+MP의 두 발의안은 정부 정책의 운영 효율성이 아닌 사회적 영향을 비판한다는 점에서 주목할 만하다. 이는 MP가 다른 야당들과 차별화되는 프레이밍으로, 다른 야당들은 주로 절차적 또는 비용 관련 비판에 집중한다.
+
+---
+
+### 신뢰성 평가
+
+| 주장 | WEP 수준 | 해군 |
+|------|---------|------|
+| 두 발의안 모두 거부됨 | 가능성 높음 | B2 |
+| 선거 포지셔닝 목적 | 거의 확실 | A1 |
+| 아동 구금에 대한 초당적 우려 | 가능성 있음 | B3 |
+| Statskontoret 장기 검토 | 가능성 있음 | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR  
+**Datum**: 2026-05-27  
+**Auteur**: James Pether Sörling  
+**Rijksdag**: 2025/26  
+**Admiraliteitscode**: B2 (betrouwbare bron, waarschijnlijk waar)
+
+---
+
+### Conclusie
+
+Twee op 22-05-2026 ingediende oppositiemoties van Miljöpartiet (MP) vormen een principiële, op rechten gebaseerde uitdaging tegen twee grote regeringsvoorstellen die vorderen in het parlementaire proces. Motie HD024191 betwist de uitgebreide controlebevoegdheden van Skatteverket over het bevolkingsregister en waarschuwt voor schade aan daklozen en sociaal kwetsbaren. Motie HD024192 eist volledige verwerping van de voorlopige hechtenis-bepalingen voor kinderen in de veiligheidsvreemdelingenwet en vraagt om een onafhankelijke evaluatie voordat nieuwe beperkingen van kracht worden. Beide moties zullen waarschijnlijk worden verworpen door het regeringsblok (M+KD+L+SD), maar leggen belangrijke mensenrechtsgrenzen vast voor de verkiezingen van 2026.
+
+---
+
+### Principale beoordelingen
+
+**PB-1** (WAARSCHIJNLIJK — B2): HD024191 en HD024192 worden respectievelijk verworpen in SkU en JuU; de regeringscoalitie heeft een parlementaire meerderheid en heeft consistente discipline getoond bij bevolkingsregister- en migratieveiligheidsonderwerpen in 2025/26.
+
+**PB-2** (VRIJWEL ZEKER — A1): Beide moties dienen een dubbel doel: wetgevende vertragingsdruk op huidige voorstellen en electorale positionering voor herfst 2026, gericht op progressieve kiezers die teleurgesteld zijn in de veiligheidsgerichte koers van de regering.
+
+**PB-3** (WAARSCHIJNLIJK — B2): De bezwaren tegen kinderdetentie in HD024192 hebben een ongewoon breed-coalitie-resonantie; C (Centerpartiet) en mogelijk individuele L-leden zouden zorgen kunnen uiten, ook al stemmen zij uiteindelijk met de regering.
+
+**PB-4** (MOGELIJK — C3): De uitbreiding van bevolkingsregistercontrole door Skatteverket (prop. 2025/26:261) kan binnen 12–18 maanden een vervolgonderzoek van het Statskontoret aantrekken.
+
+---
+
+### Overzicht moties
+
+#### HD024191 — Bevolkingsregister Skatteverket (SkU)
+- **Partij**: Miljöpartiet (MP)
+- **Auteurs**: Annika Hirvonen e.a.
+- **Moederproposotie**: 2025/26:261
+- **Eisen**: (1) Dat de regering terugkomt met voorstellen voor registratierechten voor daklozen; (2) Diepere privacyanalyse en gelijke behandeling van uitgebreide controlebevoegdheden
+- **Kernargument**: Uitbreiding van controle is legitiem maar mag kwetsbare groepen niet beroven van maatschappelijke rechten
+
+#### HD024192 — Veiligheidsbedreigingen / Gekwalificeerde veiligheidsvreemdelingen (JuU)
+- **Partij**: Miljöpartiet (MP)
+- **Auteurs**: Ulrika Westerlund e.a.
+- **Moederproposotie**: 2025/26:267
+- **Eisen**: (1) Verwerp de kinderdetentiebepalingen (§§ 9, 10, 19 in voorgestelde LSU-wijzigingen); (2) Keer terug met rechtstaatconforme voorstellen; (3) Mandaat voor 5-jarige evaluatie
+- **Kernargument**: Lagere bewijslast + onbeperkte volwassendetentie + kinderdetentie = disproportioneel; remiss-instanties wezen op ernstige EVRM/UNCRC-onverenigbaarheidsproblemen
+
+---
+
+### Electorale betekenis (T+72u tot T+365d)
+
+- **Onmiddellijk (T+72u)**: Lage parlementaire impact. Hoge mediabekendheid rond kinderdetentienarratief.
+- **Korte termijn (T+30d)**: SkU- en JuU-commissiebehandeling verwacht juni 2026. Publieke uitlatingen van L-leden over kinderdetentieproblemen zijn Tier-1-indicatoren.
+- **Middellange termijn (T+90d)**: Beide voorstellen worden waarschijnlijk aangenomen in herfst 2026. MP zal verworpen moties als campagnemateriaal gebruiken.
+- **Lange termijn (T+365d/verkiezingen september 2026)**: Rechten versus veiligheid is een bepalende as in de verkiezingen 2026. MP wordt geschat op ~5,5–6,5%.
+- **Na verkiezingen (T+1460d)**: Kinderdetentiebepalingen hebben hoge kans op Ombudsmanklachten binnen 6 maanden na eerste toepassing. Langdurige juridische procedures bij nationale of internationale rechtsinstanties zijn eveneens mogelijk.
+
+Beide moties zijn onderdeel van een bredere MP-strategie om zich voor de verkiezingen van 2026 te positioneren als verdedigster van grondrechten. Door specifieke wettelijke bepalingen aan te vallen in plaats van algemene bezwaren, scheppen zij precedenten voor rechtszaken en parlementaire evaluaties na eventuele aanneming.
+
+---
+
+### Vertrouwensbeoordeling
+
+| Bewering | WEP-niveau | Admiraliteit |
+|----------|------------|--------------|
+| Beide moties worden verworpen | WAARSCHIJNLIJK | B2 |
+| Doel electorale positionering | VRIJWEL ZEKER | A1 |
+| Brede zorg over kinderdetentie | MOGELIJK | B3 |
+| Langetermijn Statskontoret-onderzoek | MOGELIJK | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_no.md -->
+
+**Klassifisering**: OFFENTLIG  
+**Dato**: 2026-05-27  
+**Forfatter**: James Pether Sörling  
+**Riksmøte**: 2025/26  
+**Admiralitetskode**: B2 (pålitelig kilde, sannsynligvis sann)
+
+---
+
+### Konklusjon
+
+To Miljøpartiet (MP) opposisjonsforslag innlevert 2026-05-22 utgjør en prinsipiell rettighetsbasert utfordring mot to store regjeringsproposisjoner som fremskrider i den parlamentariske prosessen. Forslag HD024191 bestrider Skatteverkets utvidede kontrollmyndigheter over folkeregisteret og advarer om skade på hjemløse og sosialt sårbare personer. Forslag HD024192 krever fullstendig avvisning av varetektsfengselsbestemmelsene for barn i sikkerhetsutelendingsloven og etterspør en uavhengig evaluering før nye restriksjoner trer i kraft. Begge forslagene vil med stor sannsynlighet bli avslått av regjeringsblokken (M+KD+L+SD), men de tegner sentrale menneskerettsgrenselinjer foran valget 2026.
+
+---
+
+### Nøkkelvurderinger
+
+**NV-1** (SANNSYNLIG — B2): HD024191 og HD024192 vil bli avslått i henholdsvis SkU og JuU; regjeringskoalisjonen har parlamentarisk flertall og har vist konsekvent disiplin i spørsmål om folkeregister og migrasjonssikkerhetslovgivning i 2025/26.
+
+**NV-2** (NESTEN SIKKERT — A1): Begge forslag tjener et dobbelt formål: lovgivningsmessig forsinkelsespress på aktuelle proposisjoner og valgposisjonering mot høsten 2026 rettet mot progressive velgere som er skuffet over regjeringens sikkerhetsfokuserte retning.
+
+**NV-3** (SANNSYNLIG — B2): Barnefengslingsinnsigelsen i HD024192 har uvanlig tverrblocksresonans; C (Senterpartiet) og muligens individuelle L-medlemmer kan signalere bekymring selv om de til slutt stemmer med regjeringen.
+
+**NV-4** (MULIG — C3): Skatteverkets utvidelse av folkeregisterkontroll (prop. 2025/26:261) kan tiltrekke Statskontorets oppfølgingsgransking innen 12–18 måneder.
+
+---
+
+### Forslagssammendrag
+
+#### HD024191 — Skatteverkets folkeregister (SkU)
+- **Parti**: Miljøpartiet (MP)
+- **Forfattere**: Annika Hirvonen m.fl.
+- **Moderproposisjon**: 2025/26:261
+- **Krav**: (1) At regjeringen returnerer med forslag om folkeregistreringsrettigheter for hjemløse; (2) Dypere personverns- og likebehandlingsanalyse av utvidede kontrollmyndigheter
+- **Kjerneargument**: Kontrollutvidelse er legitim men må ikke frata sårbare grupper samfunnsrettigheter
+
+#### HD024192 — Sikkerhetstrusler / Kvalifiserte sikkerhetsutlendinger (JuU)
+- **Parti**: Miljøpartiet (MP)
+- **Forfattere**: Ulrika Westerlund m.fl.
+- **Moderproposisjon**: 2025/26:267
+- **Krav**: (1) Avvis barnefengselsbestemmelsene (§§ 9, 10, 19 i foreslåtte LSU-endringer); (2) Returner med rettsstatlige forslag; (3) Mandat for 5-årig evaluering
+- **Kjerneargument**: Lavere bevisbyrde + ubegrenset voksenfengsling + barnefengsling = uforholdsmessig; remissinstanser påpekte alvorlige EMRK/UNCRC-uforenlighets-problemer
+
+---
+
+### Valgmessig betydning (T+72t til T+365d)
+
+- **Umiddelbar (T+72t)**: Lav parlamentarisk innvirkning. Høy mediesynlighet om barnefengselsfortellingen.
+- **Kort (T+30d)**: SkU og JuU behandling forventet juni 2026. Offentlige uttalelser fra L-medlemmer om barnefengslingsproblemer er Tier-1-indikator.
+- **Mellomlang (T+90d)**: Begge proposisjoner vil sannsynligvis vedtas høsten 2026. MP bruker avslåtte forslag som kampanjemateriell.
+- **Lang (T+365d/valg september 2026)**: Rettigheter mot sikkerhet er en definerende 2026 valgeakse. MP måles til ~5,5–6,5%.
+- **Etter valg (T+1460d)**: Barnefengselsbestemmelsene medfører høy sannsynlighet for Sivilombudsmannsklage innen 6 måneder fra første bruk. Langvarige rettssaker ved nasjonale eller internasjonale domstoler er likeså mulig.
+
+Begge motioner er del av MPs bredere strategi for å posisjonere seg som forsvarer av grunnleggende rettigheter foran valget 2026. Ved å angripe spesifikke lovbestemmelser i stedet for å fremme generelle innvendinger skaper de presedens for rettssaker og parlamentariske evalueringer, dersom forslagene vedtas. Lagrådets merknader, som er nevnt i motionernas tekster, utgjør en sterk juridisk legitimering av opposisjonens standpunkt.
+
+---
+
+### Konfidensbeømmelse
+
+| Påstand | WEP-nivå | Admiralitet |
+|---------|----------|-------------|
+| Begge forslag avslås | SANNSYNLIG | B2 |
+| Valgposisjoneringsformål | NESTEN SIKKERT | A1 |
+| Tverrblocksbekymring om barnefengsling | MULIG | B3 |
+| Langsiktig Statskontoret-gransking | MULIG | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG  
+**Datum**: 2026-05-27  
+**Författare**: James Pether Sörling  
+
+**Admiralitetskod**: B2 (tillförlitlig källa, troligen sant)
+
+---
+
+### Slutsats i korthet
+
+Två motioner från Miljöpartiet (MP) inlämnade 2026-05-22 utgör en principiell rättighetsbaserad utmaning mot två stora regeringspropositioner som fortskrider i den parlamentariska processen. Motion HD024191 bestrider Skatteverkets utökade kontrollbefogenheter över folkbokföringen, med varningar om skada mot hemlösa och socialt utsatta personer. Motion HD024192 kräver ett fullständigt avvisande av häktningsbestämmelserna för barn i säkerhetsutlänningslagen och efterlyser en oberoende utvärdering innan nya restriktioner träder i kraft. Båda motionerna kommer med stor sannolikhet att avslås av regeringsblocket (M+KD+L+SD), men de formulerar centrala gränsdragningar för mänskliga rättigheter inför valet 2026.
+
+---
+
+### Nyckelbeömningar
+
+**KB-1** (SANNOLIKT — B2): HD024191 och HD024192 kommer att avslås i SkU respektive JuU; regeringskoalitionen har parlamentarisk majoritet och har visat konsekvent disciplin i frågor om folkbokföring och migrationssäkerhetslagstiftning under 2025/26.
+
+**KB-2** (NÄSTAN SÄKERT — A1): Båda motionerna tjänar ett dubbelt syfte: lagstiftningsmässigt fördröjningstryck på aktuella propositioner och valpositionering inför hösten 2026, riktad mot progressiva väljare som är besvikna på regeringens säkerhetsfokuserade inriktning.
+
+**KB-3** (SANNOLIKT — B2): Barnhäktningsinvändningen i HD024192 har ovanlig tvärblocksresonans; C (Centerpartiet) och möjligen enskilda L-ledamöter kan signalera oro trots att de slutligen röstar med regeringen. Lagrådskritik har redan noterats i motionstexten (motionen citerar uttryckligen varningar från flera remissinstanser).
+
+**KB-4** (MÖJLIGT — C3): Skatteverkets utbyggnad av folkbokföringskontroll (prop. 2025/26:261) kan attrahera Statskontoret-uppföljningsgranskning inom 12–18 månader med tanke på de administrativa kapacitets- och likabehandlingsdimensioner som MP identifierat i HD024191.
+
+---
+
+### Motionssammanfattning
+
+#### HD024191 — Skatteverkets folkbokföring (SkU)
+- **Parti**: Miljöpartiet (MP)
+- **Upphovsmän**: Annika Hirvonen m.fl.
+- **Moderproposition**: 2025/26:261
+- **Krav**: (1) Att regeringen återkommer med förslag om folkbokföringsrätt för hemlösa; (2) Fördjupad integritetsskydds- och likabehandlingsanalys av utökade kontrollbefogenheter
+- **Kärnargument**: Kontrollutökning är legitim men får inte beröva utsatta grupper samhällsrättigheter eller möjliggöra diskriminerande tillämpning mot utlandsfödda
+
+#### HD024192 — Säkerhetshot / Kvalificerade säkerhetsutlänningar (JuU)
+- **Parti**: Miljöpartiet (MP)
+- **Upphovsmän**: Ulrika Westerlund m.fl.
+- **Moderproposition**: 2025/26:267
+- **Krav**: (1) Avslå häktningsbestämmelserna för barn (§§ 9, 10, 19 i föreslagna LSU-ändringar); (2) Återkom med rättsstatsenliga förslag; (3) Mandat för 5-årig utvärdering av ny lag
+- **Kärnargument**: Sänkta bevisbördekrav + obegränsad vuxenhäktning + barnhäktning = oproportionerligt; remissinstanser (Civil rights defenders, Advokatsamfund, Rädda barnen, IMR, ICJ-Sverige) framförde allvarliga EKMR/UNCRC-oförenlighetsproblem
+
+---
+
+### Valrelevans (T+72h till T+365d)
+
+- **Omedelbar (T+72h)**: Låg parlamentarisk påverkan. Hög medieuppmärksamhet kring barnhäktningsberättelsen; Rädda barnen och Civil rights defenders sannolikt förstärker HD024192 genom egna kanaler.
+- **Kort (T+30d)**: SkU:s och JuU:s utskottsbehandling förväntas juni 2026. Oppositionsblocket kan begära formell Lagrådsremiss om EKMR-förenlighet för prop. 2025/26:267. Offentliga uttalanden från L-ledamöter om barnhäktningsproblem utgör Tier-1-indikator.
+- **Medellång (T+90d)**: Båda propositionerna antas troligen hösten 2026. MP använder avslagna motioner som kampanjmaterial riktad mot urbana progressiva väljare (~12% av väljarkåren).
+- **Lång (T+365d/val september 2026)**: Rättigheter kontra säkerhet är en definierande 2026 valaxel. MP mäts till ~5,5–6,5% (över 4%-spärren men exponerat för nersiderisk från V på vänsterkanten). Om ett barn faktiskt häktas under LSU före september 2026 blir HD024192:s UNCRC-argument en primetime-valfråga.
+- **Efterval (T+1460d)**: Om antagna utgör barnhäktningsbestämmelserna hög sannolikhet för JO-anmälan inom 6 månader och Europadomstolsansökan inom 2–4 år.
+
+---
+
+### Konfidensbeömning
+
+| Påstående | WEP-nivå | Admiralitet |
+|-----------|----------|-------------|
+| Båda motionerna avslås | SANNOLIKT | B2 |
+| Syfte med valpositionering | NÄSTAN SÄKERT | A1 |
+| Tvärblocksoro kring barnhäktning | MÖJLIGT | B3 |
+| Långsiktig Statskontoret-granskning | MÖJLIGT | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_zh.md -->
+
+**分类**：公开  
+**日期**：2026-05-27  
+**作者**：James Pether Sörling  
+**议会届次**：2025/26  
+**海军代码**：B2（可靠来源，可能属实）
+
+---
+
+### 结论
+
+Miljöpartiet（MP）于2026年5月22日提交的两项反对党动议，对正在推进议会程序的两项重大政府提案构成了基于权利的原则性挑战。动议HD024191对Skatteverket对人口登记册扩展的控制权限提出异议，并警告其对无家可归者和社会弱势群体的危害。动议HD024192要求彻底否决安全外国人法中针对儿童的羁押前置条款，并要求在新限制措施生效前进行独立评估。两项动议可能会被政府集团（M+KD+L+SD）否决，但在2026年大选前设立了重要的人权界线。
+
+---
+
+### 主要评估
+
+**PE-1**（可能 — B2）：HD024191和HD024192将分别在SkU和JuU中被否决；执政联盟拥有议会多数席位，并在2025/26年的人口登记和移民安全立法问题上表现出一贯的纪律性。
+
+**PE-2**（几乎确定 — A1）：两项动议具有双重目的：对当前提案施加立法拖延压力，以及针对2026年秋季大选的选举定位，面向对政府安全优先方向失望的进步选民。
+
+**PE-3**（可能 — B2）：HD024192中针对儿童拘押的异议具有不寻常的跨党派共鸣；C（Centerpartiet）和可能的个别L党成员可能表达担忧，即使最终仍与政府一起投票。
+
+**PE-4**（有可能 — C3）：Skatteverket扩展人口登记控制（prop. 2025/26:261）可能在12–18个月内引发Statskontoret的后续审查。
+
+---
+
+### 动议摘要
+
+#### HD024191 — Skatteverket人口登记册（SkU）
+- **政党**：Miljöpartiet（MP）
+- **作者**：Annika Hirvonen等
+- **母提案**：2025/26:261
+- **诉求**：(1) 政府带回关于无家可归者登记权利的提案；(2) 对扩展控制权限的隐私和平等待遇进行深入分析
+- **核心论点**：扩展控制是合法的，但不得剥夺弱势群体的社会权利
+
+#### HD024192 — 安全威胁 / 合格安全外国人（JuU）
+- **政党**：Miljöpartiet（MP）
+- **作者**：Ulrika Westerlund等
+- **母提案**：2025/26:267
+- **诉求**：(1) 否决儿童拘押条款（拟议LSU修正案§§ 9, 10, 19）；(2) 带回符合法治的提案；(3) 5年评估授权
+- **核心论点**：降低举证标准 + 无限期成人拘押 + 儿童拘押 = 不相称；咨询机构指出了与ECHR/UNCRC严重的不兼容问题
+
+---
+
+### 选举意义（T+72h至T+365d）
+
+- **即时（T+72h）**：议会影响低。儿童拘押叙事的媒体关注度高。
+- **短期（T+30d）**：SkU和JuU委员会审议预计于2026年6月进行。L党成员就儿童拘押问题发表公开声明是一级指标。
+- **中期（T+90d）**：两项提案可能于2026年秋季通过。MP将把被否决的动议作为竞选材料。
+- **长期（T+365d/2026年9月大选）**：权利对安全是定义2026年大选的轴心。MP预计获得约5.5–6.5%的支持率。
+- **选举后（T+1460d）**：儿童拘押条款在首次适用后6个月内引发议会监察专员投诉的可能性较高。
+
+---
+
+### 可信度评估
+
+| 主张 | WEP级别 | 海军 |
+|------|--------|------|
+| 两项动议均被否决 | 可能 | B2 |
+| 选举定位目的 | 几乎确定 | A1 |
+| 儿童拘押跨党派关切 | 有可能 | B3 |
+| Statskontoret长期审查 | 有可能 | C3 |
+
+<!-- source-sha: 535c24ccecda4ba32f41a2df049483e285b238cb -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
@@ -2008,6 +2931,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-27/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
