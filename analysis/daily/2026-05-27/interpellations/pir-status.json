@@ -1,0 +1,46 @@
+{
+  "date": "2026-05-27",
+  "subfolder": "interpellations",
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "question": "Will the Tidö government table a climate proposition before the September 2026 election?",
+      "status": "OPEN",
+      "collection_trigger": "Johan Britz answer to HD10514/HD10515, due 2026-06-09",
+      "escalation_threshold": "If Britz confirms no climate proposition timeline → escalate to L2+ electoral issue",
+      "probability_positive": 0.20,
+      "evidence_confidence": "B2"
+    },
+    {
+      "id": "PIR-002",
+      "question": "Will women's shelter licensing reform be announced in the June 5 answer?",
+      "status": "OPEN",
+      "collection_trigger": "Waltersson Grönvall answer to HD10512, due 2026-06-05",
+      "escalation_threshold": "If no licensing change announced → escalate welfare accountability narrative",
+      "probability_positive": 0.35,
+      "evidence_confidence": "B2"
+    },
+    {
+      "id": "PIR-003",
+      "question": "Does S formally campaign on climate accountability and welfare restoration as electoral themes?",
+      "status": "OPEN",
+      "collection_trigger": "S party press releases and election messaging, June-August 2026",
+      "escalation_threshold": "If yes → confirms interpellation strategy formally incorporated in election campaign",
+      "probability_positive": 0.80,
+      "evidence_confidence": "B2"
+    },
+    {
+      "id": "PIR-004",
+      "question": "What is the published aggregate trend for sjukersättning denials in FK's 2025 annual report?",
+      "status": "OPEN",
+      "collection_trigger": "Försäkringskassan annual report 2025, expected June 2026",
+      "escalation_threshold": "If denial rate > 30% of assessed-permanent-incapacity cases → Tier 1 welfare issue",
+      "probability_positive": 0.60,
+      "evidence_confidence": "C4"
+    }
+  ],
+  "carry_forward_from_previous": [],
+  "next_review_date": "2026-06-09",
+  "generated_at": "2026-05-27T07:57:09Z",
+  "run_id": "26498218278"
+}
