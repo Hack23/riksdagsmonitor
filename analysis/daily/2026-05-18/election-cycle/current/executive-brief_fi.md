@@ -98,4 +98,4 @@ Tämä briefing arvioi koko mandaattikauden 2022–2026 yhtenä poliittisena syk
 *Kirjoittaja*: James Pether Sörling | *Työnkulku*: news-election-cycle | *Ajo*: 25769375837
 *Lähteet*: [A1] IMF WEO huhtikuu 2026 + Riksdagenin avoin data data.riksdagen.se; [A2] OECD Ruotsi-tutkimus 2025; [B2] SOM-institutet, Novus, Tidöavtalet-kartoitus.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

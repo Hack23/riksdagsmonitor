@@ -100,4 +100,4 @@ confidence: high
 *מחבר*: James Pether Sörling | *תהליך עבודה*: news-election-cycle | *ריצה*: 25769375837
 *מקורות*: [A1] IMF WEO אפריל 2026 + נתונים פתוחים של Riksdagen data.riksdagen.se; [A2] סקר OECD שוודיה 2025; [B2] SOM-institutet, Novus, מיפוי Tidöavtalet.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

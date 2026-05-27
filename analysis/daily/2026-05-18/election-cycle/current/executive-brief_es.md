@@ -98,4 +98,4 @@ Este briefing evalúa todo el mandato 2022–2026 como un único ciclo político
 *Autor*: James Pether Sörling | *Flujo de trabajo*: news-election-cycle | *Ejecución*: 25769375837
 *Fuentes*: [A1] IMF WEO abr-2026 + datos abiertos de Riksdagen data.riksdagen.se; [A2] Encuesta OCDE Suecia 2025; [B2] SOM-institutet, Novus, cartografía del Tidöavtalet.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

@@ -98,4 +98,4 @@ confidence: high
 *作者*: James Pether Sörling | *工作流*: news-election-cycle | *运行*: 25769375837
 *来源*: [A1] IMF WEO 2026年4月 + Riksdagen 开放数据 data.riksdagen.se；[A2] OECD 瑞典调查 2025；[B2] SOM-institutet、Novus、Tidöavtalet 映射。
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

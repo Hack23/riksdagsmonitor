@@ -100,4 +100,4 @@ confidence: high
 *المؤلف*: James Pether Sörling | *سير العمل*: news-election-cycle | *التشغيل*: 25769375837
 *المصادر*: [A1] IMF WEO إبريل 2026 + بيانات ريكسداجن المفتوحة data.riksdagen.se؛ [A2] مسح منظمة التعاون الاقتصادي والتنمية للسويد 2025؛ [B2] SOM-institutet، Novus، رسم خرائط Tidöavtalet.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

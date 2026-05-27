@@ -98,4 +98,4 @@ Dieses Briefing bewertet die gesamte Amtszeit 2022–2026 als einen einzigen pol
 *Autor*: James Pether Sörling | *Workflow*: news-election-cycle | *Durchlauf*: 25769375837
 *Quellen*: [A1] IMF WEO Apr-2026 + Riksdagens offene Daten data.riksdagen.se; [A2] OECD Schweden-Erhebung 2025; [B2] SOM-institutet, Novus, Tidöavtalet-Kartierung.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
