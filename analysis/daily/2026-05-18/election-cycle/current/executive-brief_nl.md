@@ -98,4 +98,4 @@ Dit briefing beoordeelt de gehele mandaatperiode 2022–2026 als één politieke
 *Auteur*: James Pether Sörling | *Workflow*: news-election-cycle | *Uitvoering*: 25769375837
 *Bronnen*: [A1] IMF WEO apr-2026 + Riksdagens open data data.riksdagen.se; [A2] OESO Zweden-enquête 2025; [B2] SOM-institutet, Novus, Tidöavtalet-mapping.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

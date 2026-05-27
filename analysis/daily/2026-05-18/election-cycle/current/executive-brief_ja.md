@@ -98,4 +98,4 @@ confidence: high
 *著者*: James Pether Sörling | *ワークフロー*: news-election-cycle | *実行*: 25769375837
 *ソース*: [A1] IMF WEO 2026年4月 + Riksdagen オープンデータ data.riksdagen.se；[A2] OECD スウェーデン調査 2025；[B2] SOM-institutet、Novus、Tidöavtalet マッピング。
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->

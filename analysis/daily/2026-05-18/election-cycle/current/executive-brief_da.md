@@ -98,4 +98,4 @@ Denne briefing vurderer hele mandatperioden 2022–2026 som én politisk cyklus,
 *Forfatter*: James Pether Sörling | *Arbejdsgang*: news-election-cycle | *Kørsel*: 25769375837
 *Kilder*: [A1] IMF WEO apr-2026 + Riksdagens åbne data data.riksdagen.se; [A2] OECD Sverige-undersøgelse 2025; [B2] SOM-institutet, Novus, Tidøavtalet-kortlægning.
 
-<!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
+<!-- source-sha: 1a204880ac4363eedfc53a5ff62edb94be61d782 -->
