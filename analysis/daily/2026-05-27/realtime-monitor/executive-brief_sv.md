@@ -66,6 +66,36 @@ SD-interpellation om vansinneskörningar (vårdslös höghastighetsföring). Kr�
 
 ---
 
+## EFTERMIDDAGSSESSION: BEKRÄFTADE RÖSTPROTOKOLL (16:00–17:00 CET)
+
+*Omkörningsdata insamlade 2026-05-27T16:52Z — första körningen antog bifall för morgonens betänkanden. Följande eftermiddagsröstningar är nu helt bekräftade.*
+
+### BEKRÄFTAT RÖSTPROTOKOLL — UbU29: Utökade registerkontroller i skolväsendet
+**Utökade registerkontroller i skolväsendet** godkändes av kammaren med regeringsmajoritet. Votering på p.2 (oppositionsreservation S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Tolkning**: Samtliga socialdemokrater, Vänsterpartiet, Centerpartiet och Miljöpartiet röstade mot utökade bakgrundskontroller för skolpersonal; M+SD+KD+L-koalitionen bar igenom voteringen. C anslöt sig till den S-ledda oppositionen — anmärkningsvärt med tanke på C:s vanliga lag-och-ordning-hållning; C:s invändning gäller dataintegritet och proportionalitet snarare än motstånd mot skolsäkerhet. **Valnexus**: UbU29 kommer att figurera i S/V/C/MP:s kampanjer som "övervakningskrypande i skolan."
+
+### BEKRÄFTAT RÖSTPROTOKOLL — UbU27: Yrkesutbildningsreform
+**Bättre förutsättningar för yrkesutbildning** godkändes. Votering på p.3 (S+MP-reservation): S 0-106, SD 70-0, M 66-0. Votering på p.2 (S+V+MP-reservation): S 0-106, SD 70-0, M 66-0. Reformen stärker samarbetsramar mellan skola och näringsliv samt kompetensförsörjningskedjor. Tvärpolitiskt stöd kollapsade på yrkesläroplansdetaljer; S och MP motsatte sig specifika bestämmelser om arbetsgivarinflytande över läroplansutformning.
+
+### BEKRÄFTAT RÖSTPROTOKOLL — FiU39: Skydd av kontanttransaktioner
+**Åtgärder för att stärka kontanternas funktionssätt** godkändes. Votering på p.3 (S+V-reservation): S 0-106, SD 70-0, M 66-0. Votering på p.4 (C-reservation): S 0-0-106 (avstod), SD 70-0, M 66-0. **Tolkning**: S röstade mot regeringens kontantskyddslag övergripande, men på C:s reservationsdetalj (punkt 4) valde S att avstå snarare än rösta nej — vilket signalerar delvis överensstämmelse med C:s position. Livsmedelsbutiker och apotek åläggs att acceptera kontanter vid bemannade kassor (exklusive obemannade utcheckningspunkter).
+
+### BEKRÄFTAT RÖSTPROTOKOLL — FiU42: Förenklad leverantörskontroll vid upphandling
+**Förenklad leverantörskontroll vid upphandling** godkändes. Votering på p.2 (S+V+MP): S 0-106. Votering på p.3 (V-reservation): S 0-0-106 (avstod), SD 70-0, M 66-0. **Tolkning**: S röstade mot förenklad leverantörskontroll i upphandling i huvudvoteringen men avstod snarare än röstade mot V:s striktare tilläggskrav — en nyanserad position som antyder att S vill ha hårdare reglering än regeringen men inte stöder V:s maximala granskningsposition.
+
+### BEKRÄFTAT RÖSTPROTOKOLL — UbU21: Skolors datadelning för brottsförebyggande
+**Överlämnande av uppgifter mellan skolor i brottsförebyggande syfte** — S anslöt sig till regeringsmajoriteten på p.1 (tvärpolitiskt: S 106+), men MP lämnade en reservation på p.2 (dataskyddsgrunder). **Tolkning**: Tvärpolitiskt stöd för grundläggande skola-till-skola brottsförebyggande datadelning; bara MP motsatte sig på integritetsgrunder.
+
+### NYA BETÄNKANDEN RÖSTADE (Eftermiddagssession)
+| Beteckning | Titel | Utskott | Antaget |
+|------------|-------|---------|---------|
+| UU3 | Fördjupad resultatredovisning av internationellt bistånd | UU | ✅ Tvärpolitisk majoritet |
+| UU4 | Nordiskt samarbete inklusive Arktis | UU | ✅ M+SD+KD+L (C+S=reservation p.2) |
+| CU26 | En ny konsumentkreditlag | CU | ✅ Regeringsmajoritet |
+
+**UU7y** (yttrande): UU lämnade sitt yttrande om 2026 års vårbudget (prop. 2025/26:100) till KU — daterat 2026-05-27. Detta knyter utrikesutskottets fiskala farhågor till vårpropositionsgranskningen. Nyckelfynd: UU stödjer den föreslagna ODA-budgetnivån men flaggar "geopolitisk koherensrisk" om både militär- och biståndsutgifter växer samtidigt.
+
+---
+
 ## EKONOMISK KONTEXT
 
 **IMF WEO-2026-04 (april 2026 vintage — aktuell)**:
@@ -88,4 +118,4 @@ SD-interpellation om vansinneskörningar (vårdslös höghastighetsföring). Kr�
 | PIR-RT-003 | Lagrådets reservation om prop. 2025/26:267 | UTGÅNGEN | 2026-05-25 | Horisont passerad — förs vidare som N2 underrättelsegap |
 | PIR-RT-004 | Barnförvarsmediernas cykel varar 2–10 dagar | BEVAKNING | 2026-06-01 | Otillräcklig signal i dagens data |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->

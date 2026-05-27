@@ -66,6 +66,36 @@ SD-interpellatie over vansinneskörningar (hoge-snelheid-straatracen). Eist verh
 
 ---
 
+## MIDDAGSESSIE: BEVESTIGDE STEMPROTOCOLLEN (16:00–17:00 CET)
+
+*Herhalingsdata verzameld op 2026-05-27T16:52Z — eerste uitvoering nam aanname aan voor ochtend-betänkanden. De volgende middagstemmen zijn nu volledig bevestigd.*
+
+### BEVESTIGD STEMPROTOCOL — UbU29: Uitgebreide registercontroles in het schoolwezen
+**Uitgebreide registercontroles in het schoolwezen** aangenomen door de kamer met regeringsmeerderheid. Stemming over p.2 (oppositiereservering S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Interpretatie**: Alle sociaaldemocraten, Vänsterpartiet, Centerpartiet en Miljöpartiet stemden tegen uitgebreide achtergrondcontroles voor schoolpersoneel; de M+SD+KD+L-coalitie droeg de stemming. C sloot zich aan bij de S-geleide oppositie — opmerkelijk gezien C's gebruikelijke wet-en-orde-houding; C's zorg betreft data-integriteit en proportionaliteit. **Verkiezingsnexus**: UbU29 zal figureren in S/V/C/MP-campagnes als "surveillancekruip in scholen."
+
+### BEVESTIGD STEMPROTOCOL — UbU27: Beroepsopleidingshervorming
+**Betere voorwaarden voor beroepsopleiding** aangenomen. Stemming over p.3 (S+MP-reservering): S 0-106, SD 70-0, M 66-0. De hervorming versterkt school-bedrijf samenwerkingskaders. Partijoverschrijdende steun stortte in bij beroepsopleidingscurriculumdetails.
+
+### BEVESTIGD STEMPROTOCOL — FiU39: Bescherming van contante transacties
+**Maatregelen ter versterking van de werking van contant geld** aangenomen. Stemming over p.3 (S+V-reservering): S 0-106, SD 70-0, M 66-0. Stemming over p.4 (C-reservering): S 0-0-106 (onthield zich), SD 70-0, M 66-0. **Interpretatie**: S stemde tegen de contantbeschermingswet als geheel, maar onthield zich bij C's reserveringsdetail — signaleert gedeeltelijke overeenstemming met C's positie. Levensmiddelenwinkels en apotheken worden verplicht contant geld te accepteren bij bemande kassa's.
+
+### BEVESTIGD STEMPROTOCOL — FiU42: Vereenvoudigde leverancierscontrole bij aanbestedingen
+**Vereenvoudigde leverancierscontrole bij overheidsopdrachten** aangenomen. Stemming over p.2 (S+V+MP): S 0-106. Stemming over p.3 (V-reservering): S 0-0-106 (onthield zich), SD 70-0, M 66-0. **Interpretatie**: S stemde tegen vereenvoudigde leverancierscontrole in de hoofdstemming maar onthield zich bij V's strengere eisen.
+
+### BEVESTIGD STEMPROTOCOL — UbU21: Schoolgegevensdeling voor misdaadpreventie
+**Overdracht van gegevens tussen scholen voor misdaadpreventiedoeleinden** — S sloot zich aan bij de regeringsmeerderheid op p.1 (partijoverschrijdend: S 106+), maar MP diende een reservering in op p.2 (gegevensbeschermingsgronden). **Interpretatie**: Partijoverschrijdende steun voor basis school-tot-school gegevensdeling; alleen MP verzette zich op privacygronden.
+
+### NIEUWE BETÄNKANDEN GESTEMD (Middagsessie)
+| Aanduiding | Titel | Commissie | Aangenomen |
+|------------|-------|-----------|------------|
+| UU3 | Verdiept resultaatverslag internationele hulp | UU | ✅ Partijoverschrijdende meerderheid |
+| UU4 | Noordse samenwerking inclusief de Noordpool | UU | ✅ M+SD+KD+L (C+S=reservering p.2) |
+| CU26 | Een nieuwe consumentenkredietwet | CU | ✅ Regeringsmeerderheid |
+
+**UU7y** (advies): UU diende zijn advies over de voorjaarsbegroting 2026 (prop. 2025/26:100) in bij KU — gedateerd 2026-05-27. Belangrijkste bevinding: UU steunt het voorgestelde ODA-budgetniveau maar markeert "geopolitiek coherentierisico" als zowel militaire als ontwikkelingsuitgaven gelijktijdig groeien.
+
+---
+
 ## ECONOMISCHE CONTEXT
 
 **IMF WEO-2026-04 (editie april 2026 — actueel)**:
@@ -88,4 +118,4 @@ SD-interpellatie over vansinneskörningar (hoge-snelheid-straatracen). Eist verh
 | PIR-RT-003 | Lagrådet-voorbehoud over prop. 2025/26:267 | VERLOPEN | 2026-05-25 | Horizon gepasseerd — voortgezet als N2-inlichtingenlacune |
 | PIR-RT-004 | Kinderdetentie-mediacyclus duurt 2–10 dagen | BEWAKING | 2026-06-01 | Onvoldoende signaal in de data van vandaag |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->

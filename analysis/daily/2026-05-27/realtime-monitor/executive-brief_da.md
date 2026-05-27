@@ -66,6 +66,36 @@ SD's interpellation HD11842 om vansinneskörningar tager udgangspunkt i grov hen
 
 ---
 
+## EFTERMIDDAGSSESSION: BEKRÆFTEDE AFSTEMNINGSPROTOKOLLER (16:00–17:00 CET)
+
+*Genindsamlede data indsamlet 2026-05-27T16:52Z — første kørsel antog vedtagelse for morgenbetænkninger. Følgende eftermiddagsafstemninger er nu fuldt bekræftede.*
+
+### BEKRÆFTET AFSTEMNINGSPROTOKOL — UbU29: Udvidede registertjek i skolevæsenet
+**Udvidede registertjek i skolevæsenet** vedtaget af kammeret med regeringsflertal. Afstemning om p.2 (oppositionsreservation S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Fortolkning**: Alle socialdemokrater, Vänsterpartiet, Centerpartiet og Miljöpartiet stemte imod udvidede baggrundskontroller for skolepersonale; M+SD+KD+L-koalitionen bar afstemningen. C tilsluttede sig S-ledet opposition — bemærkelsesværdigt givet C's sædvanlige lov-og-orden-holdning; C's bekymring er dataintegritet og proportionalitet. **Valnexus**: UbU29 vil figurere i S/V/C/MP's kampagner som "overvågningskrybning i skoler."
+
+### BEKRÆFTET AFSTEMNINGSPROTOKOL — UbU27: Erhvervsuddannelsesreform
+**Bedre forudsætninger for erhvervsuddannelse** vedtaget. Afstemning om p.3 (S+MP-reservation): S 0-106, SD 70-0, M 66-0. Reformen styrker samarbejdsrammer mellem skole og erhvervsliv. Tværpolitisk støtte kollapsede på erhvervslæreplansdetaljer.
+
+### BEKRÆFTET AFSTEMNINGSPROTOKOL — FiU39: Beskyttelse af kontanttransaktioner
+**Foranstaltninger til at styrke kontanters funktion** vedtaget. Afstemning om p.3 (S+V-reservation): S 0-106, SD 70-0, M 66-0. Afstemning om p.4 (C-reservation): S 0-0-106 (undlod), SD 70-0, M 66-0. **Fortolkning**: S stemte imod kontantbeskyttelsesloven samlet, men undlod på C's reservationsdetalj — signalerer delvis enighed med C's position. Fødevarebutikker og apoteker forpligtes til at acceptere kontanter ved bemandede kasser.
+
+### BEKRÆFTET AFSTEMNINGSPROTOKOL — FiU42: Forenklet leverandørkontrol ved offentlige indkøb
+**Forenklet leverandørkontrol ved offentlige indkøb** vedtaget. Afstemning om p.2 (S+V+MP): S 0-106. Afstemning om p.3 (V-reservation): S 0-0-106 (undlod), SD 70-0, M 66-0. **Fortolkning**: S stemte imod forenklet leverandørkontrol i hovedafstemningen men undlod snarere end stemte imod V's strengere krav.
+
+### BEKRÆFTET AFSTEMNINGSPROTOKOL — UbU21: Skoledatadeling til kriminalitetsforebyggelse
+**Videregivelse af oplysninger mellem skoler i kriminalitetsforebyggende formål** — S sluttede sig til regeringsflertallet på p.1 (tværpolitisk: S 106+), men MP indgav reservation på p.2 (databeskyttelsesgrunde). **Fortolkning**: Tværpolitisk støtte til grundlæggende skole-til-skole datadeling; kun MP modsatte sig på privatlivsgrunde.
+
+### NYE BETÆNKNINGER STEMT (Eftermiddagssession)
+| Betegnelse | Titel | Udvalg | Vedtaget |
+|------------|-------|--------|----------|
+| UU3 | Fordybet resultatredovisning af internationalt bistand | UU | ✅ Tværpolitisk flertal |
+| UU4 | Nordisk samarbejde inklusive Arktis | UU | ✅ M+SD+KD+L (C+S=reservation p.2) |
+| CU26 | En ny forbrugerkreditlov | CU | ✅ Regeringsflertal |
+
+**UU7y** (yttrande): UU indgav sin udtalelse om 2026-vårbudgettet (prop. 2025/26:100) til KU — dateret 2026-05-27. Nøglefund: UU støtter det foreslåede ODA-budgetniveau men flager "geopolitisk kohærensrisiko" hvis både militær- og bistandsudgifter vokser samtidigt.
+
+---
+
 ## ØKONOMISK KONTEKST
 
 **IMF WEO-2026-04 (April 2026 vintage — current)**:
@@ -88,4 +118,4 @@ SD's interpellation HD11842 om vansinneskörningar tager udgangspunkt i grov hen
 | PIR-RT-003 | Lagrådet-reservation om prop. 2025/26:267 | UDLØBET | 2026-05-25 | Horisonten er passeret — videreføres som L2-efterretningshul |
 | PIR-RT-004 | Mediecyklus om børneforvar holder i 2–10 dage | OVERVÅGNING | 2026-06-01 | Utilstrækkeligt signal i dagens materiale |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->

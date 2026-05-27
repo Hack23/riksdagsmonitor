@@ -66,6 +66,36 @@ Interpelación SD sobre vansinneskörningar (conducción a alta velocidad). Exig
 
 ---
 
+## SESIÓN DE LA TARDE: ACTAS DE VOTACIÓN CONFIRMADAS (16:00–17:00 CET)
+
+*Datos de reejecución recopilados el 2026-05-27T16:52Z — la primera ejecución asumió la aprobación de los betänkanden matutinos. Las siguientes votaciones vespertinas están ahora completamente confirmadas.*
+
+### ACTA DE VOTACIÓN CONFIRMADA — UbU29: Controles de registro ampliados en el sistema escolar
+**Controles de registro ampliados en el sistema escolar** aprobado por la cámara con mayoría gubernamental. Votación sobre p.2 (reserva de oposición S+V+C+MP): S 0-106, SD 70-0, M 66-0. **Interpretación**: Todos los socialdemócratas, Vänsterpartiet, Centerpartiet y Miljöpartiet votaron en contra de las verificaciones de antecedentes ampliadas para el personal escolar; la coalición M+SD+KD+L llevó la votación. C se unió a la oposición liderada por S — notable dada la postura habitual de C sobre ley y orden; la preocupación de C es la integridad de datos y la proporcionalidad. **Nexo electoral**: UbU29 figurará en las campañas de S/V/C/MP como "vigilancia progresiva en escuelas."
+
+### ACTA DE VOTACIÓN CONFIRMADA — UbU27: Reforma de la formación profesional
+**Mejores condiciones para la formación profesional** aprobado. Votación sobre p.3 (reserva S+MP): S 0-106, SD 70-0, M 66-0. La reforma fortalece los marcos de cooperación escuela-empresa. El apoyo transpartidista colapsó en los detalles del currículo de formación profesional.
+
+### ACTA DE VOTACIÓN CONFIRMADA — FiU39: Protección de transacciones en efectivo
+**Medidas para fortalecer la funcionalidad del efectivo** aprobado. Votación sobre p.3 (reserva S+V): S 0-106, SD 70-0, M 66-0. Votación sobre p.4 (reserva C): S 0-0-106 (abstención), SD 70-0, M 66-0. **Interpretación**: S votó contra la ley de protección del efectivo en general, pero se abstuvo en el detalle de la reserva de C — señalando acuerdo parcial con la posición de C. Las tiendas de alimentación y farmacias estarán obligadas a aceptar efectivo en cajas atendidas.
+
+### ACTA DE VOTACIÓN CONFIRMADA — FiU42: Control simplificado de proveedores en contratación pública
+**Control simplificado de proveedores en contratación pública** aprobado. Votación sobre p.2 (S+V+MP): S 0-106. Votación sobre p.3 (reserva V): S 0-0-106 (abstención), SD 70-0, M 66-0. **Interpretación**: S votó contra el control simplificado de proveedores en la votación principal pero se abstuvo en lugar de votar contra las demandas más estrictas de V.
+
+### ACTA DE VOTACIÓN CONFIRMADA — UbU21: Intercambio de datos escolares para prevención del crimen
+**Transmisión de datos entre escuelas con fines de prevención del delito** — S se unió a la mayoría gubernamental en p.1 (transpartidista: S 106+), pero MP presentó reserva en p.2 (motivos de protección de datos). **Interpretación**: Apoyo transpartidista para el intercambio básico de datos entre escuelas; solo MP se opuso por motivos de privacidad.
+
+### NUEVOS BETÄNKANDEN VOTADOS (Sesión de la tarde)
+| Designación | Título | Comisión | Aprobado |
+|-------------|--------|----------|----------|
+| UU3 | Informe profundizado de resultados de ayuda internacional | UU | ✅ Mayoría transpartidista |
+| UU4 | Cooperación nórdica incluyendo el Ártico | UU | ✅ M+SD+KD+L (C+S=reserva p.2) |
+| CU26 | Nueva ley de crédito al consumidor | CU | ✅ Mayoría gubernamental |
+
+**UU7y** (opinión): UU presentó su opinión sobre el presupuesto de primavera 2026 (prop. 2025/26:100) ante KU — fechado 2026-05-27. Hallazgo clave: UU apoya el nivel presupuestario ODA propuesto pero señala "riesgo de coherencia geopolítica" si tanto el gasto militar como el de desarrollo crecen simultáneamente.
+
+---
+
 ## CONTEXTO ECONÓMICO
 
 **IMF WEO-2026-04 (edición abril 2026 — actual)**:
@@ -88,4 +118,4 @@ Interpelación SD sobre vansinneskörningar (conducción a alta velocidad). Exig
 | PIR-RT-003 | Reserva del Lagrådet sobre prop. 2025/26:267 | EXPIRADO | 2026-05-25 | Horizonte superado — continúa como brecha N2 |
 | PIR-RT-004 | Ciclo mediático de detención de menores dura 2–10 días | VIGILANCIA | 2026-06-01 | Señal insuficiente en los datos de hoy |
 
-<!-- source-sha: 023060be21ec8121c10080a8f2181b8677e277c0 -->
+<!-- source-sha: 88904a01177c7ae077566225f336a867be7d7397 -->
