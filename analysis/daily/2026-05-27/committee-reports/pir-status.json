@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-27T05:11:41Z",
+  "article_date": "2026-05-27",
+  "subfolder": "committee-reports",
+  "pir_items": [
+    {
+      "id": "PIR-1",
+      "title": "UFöU3 Finland deployment composition and timeline",
+      "status": "open",
+      "priority": "critical",
+      "horizon": "T+7d",
+      "trigger": "Försvarsmakten press conference or deployment announcement",
+      "next_review": "2026-06-03"
+    },
+    {
+      "id": "PIR-2",
+      "title": "V strategic response to defence isolation",
+      "status": "open",
+      "priority": "high",
+      "horizon": "T+72h",
+      "trigger": "Nooshi Dadgostar press statement on UFöU3/FöU17",
+      "next_review": "2026-05-30"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Opposition brottsofferlag campaign commitment",
+      "status": "open",
+      "priority": "high",
+      "horizon": "T+30d",
+      "trigger": "Party manifesto or leader debate reference",
+      "next_review": "2026-06-27"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Skolverket mobile-free schools guidance publication",
+      "status": "open",
+      "priority": "high",
+      "horizon": "T+14d",
+      "trigger": "Skolverket.se guidance document published",
+      "next_review": "2026-06-10"
+    },
+    {
+      "id": "PIR-5",
+      "title": "December 2026 Finland mandate renewal clarification",
+      "status": "open",
+      "priority": "medium",
+      "horizon": "T+90d",
+      "trigger": "Speaker or government statement on caretaker authority",
+      "next_review": "2026-08-27"
+    },
+    {
+      "id": "PIR-6",
+      "title": "Ukraine package 22 preparation signals",
+      "status": "open",
+      "priority": "medium",
+      "horizon": "T+30d",
+      "trigger": "UD or government communication on next package",
+      "next_review": "2026-06-27"
+    },
+    {
+      "id": "PIR-7",
+      "title": "Brottsoffermyndigheten capacity for CU38 caseload",
+      "status": "open",
+      "priority": "medium",
+      "horizon": "T+45d",
+      "trigger": "Budget submission or JuU hearing",
+      "next_review": "2026-07-12"
+    },
+    {
+      "id": "PIR-8",
+      "title": "Pre-publication documents becoming accessible",
+      "status": "open",
+      "priority": "low",
+      "horizon": "T+14d",
+      "trigger": "Document status change from planerat to publicerat",
+      "next_review": "2026-06-10",
+      "documents": ["HD01JuU47", "HD01FiU47", "HD01SfU37", "HD01JuU48", "HD01UU24", "HD01NU23"]
+    }
+  ],
+  "overall_status": "active",
+  "escalation_triggered": false,
+  "last_updated": "2026-05-27T05:11:41Z"
+}
