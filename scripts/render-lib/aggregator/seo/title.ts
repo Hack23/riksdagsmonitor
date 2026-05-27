@@ -87,8 +87,13 @@ export function cleanArticleTitle(
   lang?: Language,
 ): string | null {
   if (!raw) return null;
+  const minLength = lang && ['ja', 'ko', 'zh'].includes(lang) ? 10 : 20;
   let t = raw.trim();
-  t = t.replace(/^[\s\p{Emoji_Presentation}\p{Emoji}\p{Extended_Pictographic}\p{P}\p{S}]+/u, '').trim();
+  // NOTE: `\p{Emoji}` is intentionally excluded here — Unicode marks ASCII
+  // digits as emoji-capable because of keycap sequences (`1️⃣`, `2️⃣`, …).
+  // Including `\p{Emoji}` therefore strips legitimate year-led CJK titles
+  // like `2026年5月展望…`, silently degrading them to `年5月展望…`.
+  t = t.replace(/^[\s\p{Emoji_Presentation}\p{Extended_Pictographic}\p{P}\p{S}]+/u, '').trim();
   t = t.replace(/^(?:Executive\s+Brief|Intelligence\s+Brief|Intelligence\s+Assessment|Realtime\s+Monitor|Riksdag\s+Realtime\s+Monitor|Daily\s+Brief|BLUF|TL;DR|Top\s+Line|Bottom\s+Line)\s*[—–\-:]\s*/i, '');
   // Per-language Executive-Brief prefix strip — catches translated
   // boilerplate (`Exekutiv sammanfattning — `, `Zusammenfassung — `,
@@ -121,7 +126,7 @@ export function cleanArticleTitle(
   // the catch-all for dangling punctuation alone.
   t = t.replace(/[,;:]+\s*$/u, '').trim();
   t = t.replace(/\s+/g, ' ').trim();
-  if (t.length < 20) return null;
+  if (t.length < minLength) return null;
 
   if (subfolder) {
     const cleaned = normaliseTitleForCompare(t);

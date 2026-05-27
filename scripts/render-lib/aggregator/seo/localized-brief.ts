@@ -74,6 +74,8 @@ import {
 import {
   cleanArticleTitle,
   readFirstHeading,
+  readHeadlineParagraph,
+  titleFromBluf,
 } from './title.js';
 
 /**
@@ -220,6 +222,15 @@ export function extractLocalizedBriefSeo(
   const rawH1 = readFirstHeading(briefMarkdown);
   if (rawH1 && !isBannedLocalizedBriefH1(rawH1)) {
     title = cleanArticleTitle(rawH1, subfolder, langKey);
+  }
+  if (title === null) {
+    const headlineParagraph = readHeadlineParagraph(briefMarkdown);
+    title = titleFromBluf(headlineParagraph);
+  }
+  if (title === null) {
+    const blufParagraph = readBlufParagraph(briefMarkdown, langKey)
+      ?? readFirstParagraph(briefMarkdown);
+    title = titleFromBluf(blufParagraph);
   }
 
   // Description — `composeRichDescription` combines the BLUF lede with

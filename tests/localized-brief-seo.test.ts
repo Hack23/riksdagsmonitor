@@ -194,9 +194,57 @@ describe('extractLocalizedBriefSeo', () => {
       briefMarkdown: bareBoilerplateBrief,
       subfolder: 'votes',
     });
-    expect(out.title).toBeNull();
+    expect(out.title).toBe('Justitieutskottet röstade 11–6 mot regeringens förslag om');
     expect(out.description).toBeTruthy();
     expect(out.description!).toContain('Justitieutskottet');
+  });
+
+  it('falls back to a localized BLUF-derived title when the translated H1 is boilerplate', () => {
+    const out = extractLocalizedBriefSeo({
+      briefMarkdown: [
+        '# Executive Brief — Monthly Review 2026-04-26',
+        '',
+        '## 🎯 BLUF',
+        '',
+        'Das 30-Tages-Fenster 2026-03-27 → 2026-04-26 markiert die gesetzgeberische Abschlussphase des 2025/26-Portfolios der Tidö-Koalition.',
+      ].join('\n'),
+      subfolder: 'monthly-review',
+      lang: 'de',
+    });
+    expect(out.title).toContain('Das 30-Tages-Fenster');
+    expect(out.title).not.toContain('Executive Brief');
+    expect(out.description).toContain('gesetzgeberische Abschlussphase');
+  });
+
+  it('preserves year-led Japanese titles instead of stripping leading digits as emoji', () => {
+    const out = extractLocalizedBriefSeo({
+      briefMarkdown: [
+        '# 2026年5月先行予測：スウェーデンの選挙前立法クライマックス',
+        '',
+        '## 🎯 要点',
+        '',
+        'スウェーデンのリクスダーグは2026年5月を迎えるにあたり、クリステション政権の安全・秩序プログラムが立法のクライマックスに近づいている。',
+      ].join('\n'),
+      subfolder: 'month-ahead',
+      lang: 'ja',
+    });
+    expect(out.title).toBe('2026年5月先行予測：スウェーデンの選挙前立法クライマックス');
+  });
+
+  it('accepts concise but valid Chinese headlines that are shorter than the Latin minimum', () => {
+    const out = extractLocalizedBriefSeo({
+      briefMarkdown: [
+        '# 社会民主党挑战政府反腐过度立法',
+        '',
+        '## 🎯 核心结论',
+        '',
+        '社会民主党提交委员会动议 HD024099，挑战政府的反腐旗舰提案并将公务员刑事问责推向选前政治中心。',
+      ].join('\n'),
+      subfolder: 'motions',
+      lang: 'zh',
+    });
+    expect(out.title).toBe('社会民主党挑战政府反腐过度立法');
+    expect(out.description).toContain('HD024099');
   });
 
   it('falls back to first prose paragraph when no BLUF heading is present', () => {
