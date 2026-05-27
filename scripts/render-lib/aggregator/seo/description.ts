@@ -256,10 +256,26 @@ export function readBlufParagraph(markdown: string, lang?: Language): string | n
     if (/^<!--/.test(p)) continue;
     if (/^\|/.test(p)) continue;
     if (/^```/.test(p)) continue;
-    if (/^[>*]\s/.test(p)) continue;
+    // Bulleted lede (`* …`) is structural, not a paragraph — skip it.
+    if (/^\*\s/.test(p)) continue;
     if (/^[-*_]{3,}\s*$/.test(p)) continue;
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
+    // Blockquote-formatted BLUF callout (`> **prose** …`). Many translated
+    // briefs typeset the BLUF as a `> …` blockquote for visual emphasis;
+    // strip the leading `> ` from each line, collapse to a single paragraph,
+    // and treat it as the lede. Without this branch, ~30 briefs across
+    // the corpus silently fell back to `readFirstParagraph` (which leaks
+    // the admin byline into the meta description).
+    if (/^>\s/.test(p)) {
+      const dequoted = p
+        .split(/\r?\n/)
+        .map((l) => l.replace(/^>\s?/, '').trim())
+        .filter(Boolean)
+        .join(' ');
+      if (dequoted.length === 0) continue;
+      return stripBlufLabel(markdownInlineToText(dequoted));
+    }
     return stripBlufLabel(markdownInlineToText(p));
   }
   return null;
@@ -302,13 +318,22 @@ export function buildBlufHeadingRegex(lang?: Language): RegExp {
   if (!seen.has('bluf')) alternatives.push('bluf');
   const alt = alternatives.join('|');
   // Heading line: `## …(optional emoji + spaces)…(NAME)…[end of line]`.
-  // The `(?:[^\n]*?\s)?` allows an emoji + space prefix before the name
-  // (`## 🎯 BLUF`, `## 📌 Sammanfattning`); the trailing `[^\n]*\n+`
-  // consumes any trailing parenthetical / punctuation up to the line
-  // terminator so the paragraph walker starts on the next blank line.
+  // The `(?:[^\n]*?[\s(（「『\[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}\p{Script=Hangul}])?`
+  // allows an emoji + space prefix before the name (`## 🎯 BLUF`,
+  // `## 📌 Sammanfattning`), tolerates the keyword sitting inside an opening
+  // bracket (`## 🧭 מסקנה ראשונה (BLUF)`, `## 核心摘要（BLUF）`,
+  // `## 結論から（BLUF）`), and — because CJK scripts do not use spaces —
+  // accepts a CJK character (Hiragana / Katakana / Han / Hangul) as a logical
+  // separator (`## 結論優先の要約` → keyword `要約` preceded by `の`,
+  // `## 5点エグゼクティブサマリー` → keyword `エグゼクティブサマリー`
+  // preceded by `点`). The trailing lookahead accepts `(` and the CJK
+  // fullwidth `（` / `「` / `『` as separators after the name
+  // (`## まとめ（結論を先に）`, `## 結論（BLUF）`). The trailing
+  // `[^\n]*\n+` consumes any trailing parenthetical / punctuation up to
+  // the line terminator so the paragraph walker starts on the next blank line.
   return new RegExp(
-    `^#{2,6}\\s+(?:[^\\n]*?\\s)?(?:${alt})(?=\\b|[\\s:—–\\-(),。、？！?!.…\\n])[^\\n]*\\n+`,
-    'im',
+    `^#{2,6}\\s+(?:[^\\n]*?[\\s(（「『\\[\\p{Script=Hiragana}\\p{Script=Katakana}\\p{Script=Han}\\p{Script=Hangul}])?(?:${alt})(?=\\b|[\\s:—–\\-(（[「『),。、？！?!.…）」』\\]\\n])[^\\n]*\\n+`,
+    'imu',
   );
 }
 
