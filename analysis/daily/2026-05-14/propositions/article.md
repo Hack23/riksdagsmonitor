@@ -3,7 +3,7 @@ date: 2026-05-14
 subfolder: propositions
 slug: 2026-05-14-propositions
 source_folder: analysis/daily/2026-05-14/propositions
-generated_at: 2026-05-27T07:35:33.767Z
+generated_at: 2026-05-27T09:17:55.871Z
 language: en
 layout: article
 ---
