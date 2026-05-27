@@ -3,7 +3,7 @@ date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-05-25T15:59:52.732Z
+generated_at: 2026-05-27T07:35:32.325Z
 language: en
 layout: article
 ---
@@ -2151,8 +2151,6 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_ja.md -->
 
-**著者**：James Pether Sörling | **日付**：2026-04-26
-
 ---
 
 ### 要旨（BLUF）
@@ -2416,8 +2414,6 @@ graph LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/executive-brief_zh.md -->
-
-**作者**：James Pether Sörling | **日期**：2026-04-26
 
 ---
 

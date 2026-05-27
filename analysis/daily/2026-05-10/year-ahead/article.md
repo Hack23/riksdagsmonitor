@@ -3,7 +3,7 @@ date: 2026-05-10
 subfolder: year-ahead
 slug: 2026-05-10-year-ahead
 source_folder: analysis/daily/2026-05-10/year-ahead
-generated_at: 2026-05-25T15:59:53.796Z
+generated_at: 2026-05-27T07:35:33.451Z
 language: en
 layout: article
 ---
@@ -107,6 +107,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -2822,13 +2835,974 @@ Read 5 most recent `pir-status.json` from `*/year-ahead/*` within 14 days. Open 
 
 > **Vintage note**: WEO Apr-2026 is the active vintage; next refresh expected at WEO Oct-2026. All `[T+1]`, `[T+2]`, `[T+5]` projection-year stamps in long-horizon Family-C/D artifacts derive from this vintage.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_ar.md -->
+
+# 2026-05-10 · أفق 365 يوماً · القرب الانتخابي نشط
+
+**التصنيف**: عام | **سير العمل**: news-year-ahead | **الانتخابات**: 2026-09-13 (ت+129)
+**خمر صندوق النقد الدولي**: آفاق اقتصادية عالمية أبريل-2026 | **دورة الريكسداغ**: 2025/26 (مرحلة الإغلاق)
+
+---
+
+### ملخص الاستخبارات
+
+تمر السويد بأكثر دوراتها السياسية التشريعية كثافةً منذ الانضمام إلى الاتحاد الأوروبي. مع اقتراب انتخابات الريكسداغ بـ129 يوماً (13 سبتمبر 2026)، تنفذ ائتلاف تيدو بقيادة رئيس الوزراء أولف كريسترسون سباق تشريعياً نهائياً سيحدد ملامح المشهد السياسي ما بعد الانتخابات بصرف النظر عن أي ائتلاف يفوز بالسلطة. تمثل تقارير اللجان الخمسة المنشورة في 10 مايو 2026 وثلاثة مقترحات حكومية ذروة هذا التسارع التشريعي — إذ تمس البنية التحتية المالية وقانون الأمن القومي والبنية التحتية الرقمية وإنفاذ القانون عبر الحدود في يوم واحد.
+
+يشمل الأفق السنوي (2026-05-10 → 2027-05-07) الانتخابات السويدية وتشكيل الائتلاف والأشهر الأولى من حكومة جديدة. يقدّر التحليل أن **عدم اليقين السياسي في أعلى مستوياته خلال 12 عاماً**، مع أربع تشكيلات ائتلافية محتملة دون نتيجة مهيمنة في استطلاعات الرأي.
+
+---
+
+### النتائج الرئيسية
+
+#### 1. تعزيز الدولة الأمنية شبه مكتمل
+أدخلت حكومة تيدو أشمل حزمة إصلاحات أمنية في السويد منذ جيل كامل. تمثل HD01JuU32 (أمن الفعاليات) وHD03267 (التهديدات الأمنية المؤهلة — الرعايا الأجانب) وHD01JuU34 (إنفاذ القانون الجنائي الاسكندنافي) وHD01JuU39 (العنف النفسي) وHD03263 (إنفاذ الإعادة) معاً تحولاً هيكلياً في البنية الأمنية السويدية. ستكون هذه القوانين صعبة العكس لأي حكومة خلفاء. **احتمال المستقبل**: 85% أن تبقى هذه القوانين سارية حتى 2027-05-07 بصرف النظر عن نتيجة الانتخابات.
+
+#### 2. السيادة الرقمية مقنّنة قانوناً الآن
+تُنشئ HD03250 (بطاقة هوية إلكترونية حكومية) بنية تحتية جديدة لهوية الدولة تديرها سلطة مخصصة. جنباً إلى جنب مع HD03261 (صلاحيات موسعة لتسجيل السكان لمصلحة الضرائب)، تبني السويد مكدساً للهوية الرقمية بقيادة الدولة. سيُعيد هذا تشكيل التواصل بين الجهات الحكومية والمواطنين والتحقق من سجلات الناخبين ونزاهة الإعانات الاجتماعية. **مخاطر التنفيذ**: مرتفعة (جدول زمني ت+12–24 شهراً للنشر الكامل؛ إحالة لاغروود بتاريخ 2026-05-10 قيد النظر).
+
+#### 3. البنية المالية معاد هيكلتها لمخاطر جديدة
+تُنشئ HD01FiU37 وظيفة جديدة لإدارة الأزمات التشغيلية في القطاع المالي السويدي — آلية متاخمة لـBRRD تتيح استجابة منسقة للهجمات السيبرانية أو انقطاع البنية التحتية أو أحداث الضغط الجهازي. تمدد HD01FiU38 التزام مقاصة الاتحاد الأوروبي إلى الأسواق السويدية. معاً يعالجان الثغرة في الاستقرار المالي التي كشفتها الأزمة المصرفية الأوروبية الصغيرة 2023 والحوادث السيبرانية البلطيقية 2024. **الأفق ذو الصلة**: حرج عند ت+12 (يجب على الحكومة الجديدة تشكيلها وتشغيلها).
+
+#### 4. نتيجة الانتخابات ترسم مسارات متباينة بعد 2026
+أربعة تشكيلات ائتلافية ممكنة فعلياً (راجع coalition-mathematics.md). في السيناريو أ (استمرار تيدو) يتسارع تعزيز الأمن وتظل عملية تطبيق الهوية الإلكترونية في موعدها. في السيناريو ب (فوز الكتلة بقيادة S) تُحافظ على قوانين الأمن لكن يخفف توجه الهجرة. في السيناريو ج (قوس قزح S+C+L) قد تتأخر إصلاحات الحوكمة الرقمية. في السيناريو د (تعليق الريكسداغ/ائتلاف أقلية) تنخفض جدوى تنفيذ التشريعات المعقدة حاداً. **توزيع الاحتمالات**: أ=32%، ب=38%، ج=18%، د=12% بتاريخ 2026-05-10.
+
+---
+
+### متطلبات الاستخبارات ذات الأولوية (PIR)
+
+| المعرف | السؤال | نطاق الأفق | الحالة |
+|-------|---------|------------|--------|
+| PIR-YA-2026-001 | هل سيحافظ ائتلاف تيدو على أغلبية صالحة للعمل بعد 13 سبتمبر؟ | ت+129 | مفتوح |
+| PIR-YA-2026-002 | كيف تُشغَّل قوانين الأمن HD03267 وJuU32 بعد الانتخابات؟ | ت+180 | مفتوح |
+| PIR-YA-2026-003 | ما الجدول الزمني الناشئ لنشر الهوية الإلكترونية الحكومية؟ | ت+90–ت+365 | مفتوح |
+| PIR-YA-2026-004 | هل ستُوظَّف وظيفة إدارة الأزمات المالية الجديدة بكفاءة؟ | ت+180 | مفتوح |
+| PIR-YA-2026-005 | كيف ستتفاعل الموقف المالي للحكومة الجديدة مع دورة تيسير ريكسبنك؟ | ت+270 | مفتوح |
+
+---
+
+### تحذير حرج
+
+تركّز التشريعات الهامة في تاريخ واحد (2026-05-10) — خمسة تقارير لجان وثلاثة مقترحات حكومية تشمل الأمن والمالية والحوكمة الرقمية — يشير إلى **توقيت تشريعي استراتيجي قبل 129 يوماً من الانتخابات**. هذا سمة لتعزيز نهاية الولاية مصمم لتقديم حزمة إصلاحية مكتملة للناخبين بدلاً من الوعود. كل من المحتوى التشريعي والإشارات السياسية ذو أهمية تحليلية للتوقع السنوي.
+
+---
+
+### مؤشرات حساسة للوقت
+
+- **ت+14**: متوقع أن يردّ لاغروود على HD03267 (ترحيل أمني) — تابع الطعون الدستورية
+- **ت+30**: تعديل ميزانية الربيع (Vårändringsbudget) — آخر إشارة ميزانية لتيدو
+- **ت+60**: تبدأ حملة الانتخابات الرسمية — تتضح حسابات الائتلاف
+- **ت+90**: آخر استطلاعات قبل صمت الحملة — أحدث توزيع مستقر للمقاعد
+- **ت+129**: يوم الانتخابات 2026-09-13
+- **ت+160**: مفاوضات الائتلاف على الأرجح محسومة أو منهارة
+
+---
+
+### السياق الاقتصادي (صندوق النقد الدولي، آفاق اقتصادية عالمية أبريل-2026)
+
+- نمو الناتج المحلي الإجمالي 2026: %1.8+ (تعافٍ معتدل من تباطؤ 2024–25)
+- التضخم: %1.7+ (يقترب من هدف ريكسبنك 2%)
+- الدين الحكومي: ~%38.2 من الناتج المحلي الإجمالي (وضع مالي سليم)
+- سعر فائدة ريكسبنك: %2.25 (دورة التيسير قرب أدنى نقطة)
+
+⚠️ *نقطة نهاية صندوق النقد الدولي SDMX متدهورة بتاريخ 2026-05-10T11:08:00Z. تم استخدام Datamapper لآفاق اقتصادية عالمية/FM. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_da.md -->
+
+# 2026-05-10 · 365-dages Horisont · Valnærhed AKTIV
+
+**Klassificering**: OFFENTLIG | **Workflow**: news-year-ahead | **Valg**: 2026-09-13 (T+129)
+**IMF-vintage**: WEO apr-2026 | **Riksmøte**: 2025/26 (afslutningsfase)
+
+---
+
+### Efterretningssammenfatning
+
+Sverige er i sin mest komprimerede politisk-lovgivningsmæssige cyklus siden EU-tiltrædelsen. Med Riksdagsvalget 129 dage væk (13. september 2026) gennemfører Tidø-koalitionen under statsminister Ulf Kristersson en afsluttende lovgivningssprint, der vil definere det post-valgsscenarie uanset hvilken koalition der vinder magten. De fem udvalgsbetænkninger og tre regeringsforslag offentliggjort den 10. maj 2026 repræsenterer apex af denne lovgivningsacceleration — de berører det finansielle systems arkitektur, national sikkerhedslovgivning, digital infrastruktur og grænseoverskridende retshåndhævelse på en enkelt dag.
+
+Ettårshorisonten (2026-05-10 → 2027-05-07) omfatter Sveriges valg, koalitionsdannelse og de første måneder af en ny regering. Analysens vurdering er, at **politisk usikkerhed er på det højeste niveau i 12 år**, med fire plausible koalitionskonfigurationer og intet meningsmålingsdominerende udfald.
+
+---
+
+### Vigtigste Resultater
+
+#### 1. Sikkerhedsstatens Konsolidering Er Næsten Fuldstændig
+Tidø-regeringen har gennemført Sveriges mest omfattende sikkerhedsreformpakke på en generation. HD01JuU32 (begivenhedssikkerhed), HD03267 (kvalificerede sikkerhedstrusler — udenlandske statsborgere), HD01JuU34 (nordisk kriminel retshåndhævelse), HD01JuU39 (psykologisk vold) og HD03263 (tilbagesendelseshåndhævelse) repræsenterer tilsammen et strukturelt skift i Sveriges sikkerhedsarkitektur. Disse love vil være vanskelige for enhver efterfølgende regering at omvende. **Fremadrettet sandsynlighed**: 85% at disse love forbliver intakte til 2027-05-07 uanset valgresultat.
+
+#### 2. Digital Suverænitet Er Nu Lovfæstet
+HD03250 (En statlig e-legitimation) skaber en ny statslig e-ID-infrastruktur forvaltet af en udpeget myndighed. Kombineret med HD03261 (udvidede befolkningsregistreringsbeføjelser for Skatteverket) bygger Sverige en statscentreret digital identitetsstak. Dette vil omforme myndighedsborgerkommunikationen, vælgerregistreringsverifikationen og integriteten i velfærdsudbetalinger. **Implementeringsrisiko**: Høj (tidslinje T+12–24 måneder for fuld udrulning; Lagrådets høring afventes per 2026-05-10).
+
+#### 3. Finansiel Arkitektur Genopbygget for Nye Risici
+HD01FiU37 opretter en ny operationel krisestyringsfunktion i den svenske finanssektor — en BRRD-tilgrænsende mekanisme der muliggør koordineret respons på cyberangreb, infrastrukturfejl eller systemiske stresshændelser. HD01FiU38 udvider EU's clearingforpligtelse til svenske markeder. Samlet adresserer de det finansielle stabilitetsgab afsløret af den europæiske bankmini-krise 2023 og de baltiske cyberhændelser 2024. **Relevanshorisont**: Kritisk ved T+12 (den nye regering skal bemande og operationalisere).
+
+#### 4. Valgresultat Driver Divergerende Forløb efter 2026
+Fire koalitionskonfigurationer er genuint mulige (se coalition-mathematics.md). Under Scenario A (Tidø-fortsættelse) accelereres sikkerhedskonsolideringen og e-ID-implementeringen holder kurs. Under Scenario B (S-ledet blokoverdragelse) opretholdes sikkerhedslove men indvandringsretshåndhævelse blødgøres. Under Scenario C (S+C+L regnbue) kan digital styringsreform blive forsinket. Under Scenario D (hængt Riksdag/mindretalskoalition) falder implementeringsfeasibilitet for kompleks lovgivning markant. **Sandsynlighedsfordeling**: A=32%, B=38%, C=18%, D=12% per 2026-05-10.
+
+---
+
+### Prioriterede Efterretningskrav (PIR)
+
+| ID | Spørgsmål | Horisontband | Status |
+|----|----------|-------------|--------|
+| PIR-YA-2026-001 | Vil Tidø-koalitionen bevare et fungerende flertal efter 13. sep.? | T+129 | ÅBEN |
+| PIR-YA-2026-002 | Hvordan vil HD03267 og JuU32 sikkerhedslove operationaliseres post-valg? | T+180 | ÅBEN |
+| PIR-YA-2026-003 | Hvilken tidslinje opstår for statslig e-ID driftsætning? | T+90–T+365 | ÅBEN |
+| PIR-YA-2026-004 | Vil den nye finanskrisestyringsfunktion blive tilstrækkeligt bemandet? | T+180 | ÅBEN |
+| PIR-YA-2026-005 | Hvordan vil den nye regerings finanspolitiske stance interagere med Riksbankens lempelsescyklus? | T+270 | ÅBEN |
+
+---
+
+### Kritisk Advarsel
+
+Koncentrationen af større lovgivning på en enkelt dato (2026-05-10) — fem udvalgsbetænkninger og tre regeringsforslag der dækker sikkerhed, finans og digital styring — indikerer **strategisk lovgivningstiming 129 dage før valget**. Dette er karakteristisk for slutfasekonsolidering designet til at præsentere vælgere med en færdig reformpakke frem for løfter. Både lovgivningsindholdet og den politiske signalgivning er analytisk signifikant for ettårsudsigten.
+
+---
+
+### Tidsfølsomme Indikatorer
+
+- **T+14**: Lagrådet forventes at svare om HD03267 (sikkerhedsudvisning) — overvåg forfatningsudfordringer
+- **T+30**: Budget Forårsproposition (Vårändringsbudget) — sidste Tidø-finanspolitiske signal
+- **T+60**: Formel valgkamp starter — koalitionsaritmetikken skærpes
+- **T+90**: Endelige meningsmålinger inden kampagnetavshed — seneste stabile mandatvurdering
+- **T+129**: Valgdag 2026-09-13
+- **T+160**: Koalitionsforhandlinger sandsynligvis afsluttet eller kollapset
+
+---
+
+### Økonomisk Kontekst (IMF WEO apr-2026)
+
+- BNP-vækst 2026: +1,8% (moderat genopretning fra afmatningen 2024–25)
+- Inflation: +1,7% (nærmer sig Riksbankens 2%-mål)
+- Statsgæld: ~38,2% BNP (stærk finanspolitisk stilling)
+- Riksbankens rente: 2,25% (lempelsescyklus nær bunden)
+
+⚠️ *IMF SDMX-endepunkt nedgraderet per 2026-05-10T11:08:00Z. WEO/FM Datamapper anvendt. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_de.md -->
+
+# 2026-05-10 · 365-Tage-Horizont · Wahlnähe AKTIV
+
+**Klassifizierung**: ÖFFENTLICH | **Workflow**: news-year-ahead | **Wahl**: 2026-09-13 (T+129)
+**IMF-Vintage**: WEO Apr-2026 | **Riksmöte**: 2025/26 (Abschlussphase)
+
+---
+
+### Nachrichtendienstliche Zusammenfassung
+
+Schweden befindet sich in seinem komprimiertesten politisch-gesetzgeberischen Zyklus seit dem EU-Beitritt. Mit den Reichstagswahlen 129 Tage entfernt (13. September 2026) führt die Tidö-Koalition unter Ministerpräsident Ulf Kristersson einen abschließenden Gesetzgebungssprint durch, der die Nachwahllandschaft unabhängig davon definieren wird, welche Koalition die Macht gewinnt. Die fünf am 10. Mai 2026 veröffentlichten Ausschussberichte und drei Regierungsvorlagen repräsentieren den Höhepunkt dieser Gesetzgebungsbeschleunigung — sie betreffen Finanzarchitektur, nationales Sicherheitsrecht, digitale Infrastruktur und grenzüberschreitende Strafverfolgung an einem einzigen Tag.
+
+Der Jahreshorizont (2026-05-10 → 2027-05-07) umfasst Schwedens Wahl, Koalitionsbildung und die ersten Monate einer neuen Regierung. Die Analyse bewertet, dass **politische Unsicherheit auf dem höchsten Niveau seit 12 Jahren** liegt, mit vier plausiblen Koalitionskonfigurationen und keinem meinungsumfragedominanten Ergebnis.
+
+---
+
+### Wichtigste Ergebnisse
+
+#### 1. Konsolidierung des Sicherheitsstaates ist fast abgeschlossen
+Die Tidö-Regierung hat Schwedens umfassendstes Sicherheitsreformpaket einer Generation umgesetzt. HD01JuU32 (Veranstaltungssicherheit), HD03267 (qualifizierte Sicherheitsbedrohungen — Ausländer), HD01JuU34 (nordische Strafverfolgung), HD01JuU39 (psychologische Gewalt) und HD03263 (Rückführungsvollstreckung) stellen gemeinsam eine strukturelle Verschiebung in Schwedens Sicherheitsarchitektur dar. Diese Gesetze werden für jede Nachfolgeregierung schwer rückgängig zu machen sein. **Vorwärtsprobabilität**: 85%, dass diese Gesetze bis 2027-05-07 unabhängig vom Wahlergebnis intakt bleiben.
+
+#### 2. Digitale Souveränität ist jetzt gesetzlich verankert
+HD03250 (En statlig e-legitimation) schafft eine neue staatliche eID-Infrastruktur, die von einer benannten Behörde verwaltet wird. Kombiniert mit HD03261 (erweiterte Einwohnerregistrierungsbefugnisse für Skatteverket) baut Schweden einen staatszentrierten digitalen Identitätsstapel auf. Dies wird die Behörden-Bürger-Kommunikation, die Wählerregistrierungsverifizierung und die Integrität von Sozialleistungszahlungen umgestalten. **Implementierungsrisiko**: Hoch (Zeitplan T+12–24 Monate für vollständigen Rollout; Lagrådet-Anhörung per 2026-05-10 ausstehend).
+
+#### 3. Finanzarchitektur für neue Risiken neu aufgebaut
+HD01FiU37 schafft eine neue operative Krisenmanagementfunktion im schwedischen Finanzsektor — ein BRRD-angrenzendes Mechanismus, das eine koordinierte Reaktion auf Cyberangriffe, Infrastrukturausfälle oder systemische Stressereignisse ermöglicht. HD01FiU38 erstreckt die EU-Clearingverpflichtung auf schwedische Märkte. Gemeinsam adressieren sie die finanzielle Stabilitätslücke, die durch die europäische Bankenmini-Krise 2023 und die baltischen Cybervorfälle 2024 aufgedeckt wurde. **Relevanzhorizont**: Kritisch bei T+12 (neue Regierung muss besetzen und operationalisieren).
+
+#### 4. Wahlergebnis treibt divergierende Pfade nach 2026
+Vier Koalitionskonfigurationen sind genuinly möglich (siehe coalition-mathematics.md). In Szenario A (Tidö-Fortsetzung) beschleunigt sich die Sicherheitskonsolidierung und die eID-Implementierung bleibt auf Kurs. In Szenario B (S-geführter Blocksieg) werden Sicherheitsgesetze aufrechterhalten, aber die Einwandrungsvollstreckung wird abgemildert. In Szenario C (S+C+L Regenbogen) kann die digitale Governance-Reform verzögert werden. In Szenario D (Hänge-Riksdag/Minderheitskoalition) sinkt die Durchführbarkeitsfeasibilität für komplexe Gesetzgebung stark. **Wahrscheinlichkeitsverteilung**: A=32%, B=38%, C=18%, D=12% per 2026-05-10.
+
+---
+
+### Prioritäre Nachrichtendienstanforderungen (PIR)
+
+| ID | Frage | Horizont-Band | Status |
+|----|----------|-------------|--------|
+| PIR-YA-2026-001 | Wird die Tidö-Koalition nach dem 13. Sep. eine funktionierende Mehrheit behalten? | T+129 | OFFEN |
+| PIR-YA-2026-002 | Wie werden HD03267 und JuU32 Sicherheitsgesetze nach der Wahl operationalisiert? | T+180 | OFFEN |
+| PIR-YA-2026-003 | Welcher Zeitplan entsteht für den staatlichen eID-Betrieb? | T+90–T+365 | OFFEN |
+| PIR-YA-2026-004 | Wird die neue Finanzkrisenmanagementfunktion ausreichend besetzt? | T+180 | OFFEN |
+| PIR-YA-2026-005 | Wie wird die Haushaltspolitik der neuen Regierung mit Riksbankens Lockerungszyklus interagieren? | T+270 | OFFEN |
+
+---
+
+### Kritische Warnung
+
+Die Konzentration wichtiger Gesetzgebung an einem einzigen Datum (2026-05-10) — fünf Ausschussberichte und drei Regierungsvorlagen zu Sicherheit, Finanzen und digitaler Governance — deutet auf **strategisches Gesetzgebungs-Timing 129 Tage vor der Wahl** hin. Dies ist charakteristisch für eine Abschlussphase-Konsolidierung, die darauf ausgelegt ist, Wählern ein fertiges Reformpaket anstatt Versprechen zu präsentieren. Sowohl der Gesetzgebungsinhalt als auch die politische Signalgebung sind analytisch bedeutsam für den Jahresausblick.
+
+---
+
+### Zeitsensible Indikatoren
+
+- **T+14**: Lagrådet soll zu HD03267 antworten (Sicherheitsausweisung) — beobachten Sie verfassungsrechtliche Herausforderungen
+- **T+30**: Budget Frühjahrs-Ergänzungshaushalt (Vårändringsbudget) — letztes Tidö-Haushaltssignal
+- **T+60**: Formeller Wahlkampf beginnt — Koalitionsarithmetik schärft sich
+- **T+90**: Letzte Meinungsumfragen vor Wahlkampfstille — letzte stabile Mandatseinschätzung
+- **T+129**: Wahltag 2026-09-13
+- **T+160**: Koalitionsverhandlungen wahrscheinlich gelöst oder gescheitert
+
+---
+
+### Wirtschaftlicher Kontext (IMF WEO Apr-2026)
+
+- BIP-Wachstum 2026: +1,8% (moderate Erholung von der Verlangsamung 2024–25)
+- Inflation: +1,7% (nähert sich Riksbankens 2%-Ziel)
+- Staatsschulden: ~38,2% BIP (starke Haushaltslage)
+- Riksbank-Zinssatz: 2,25% (Lockerungszyklus nahe Talsohle)
+
+⚠️ *IMF SDMX-Endpunkt per 2026-05-10T11:08:00Z beeinträchtigt. WEO/FM Datamapper verwendet. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_es.md -->
+
+# 2026-05-10 · Horizonte de 365 Días · Proximidad Electoral ACTIVA
+
+**Clasificación**: PÚBLICO | **Flujo de trabajo**: news-year-ahead | **Elección**: 2026-09-13 (T+129)
+**Vintage del FMI**: WEO abr-2026 | **Riksmöte**: 2025/26 (fase de cierre)
+
+---
+
+### Resumen de Inteligencia
+
+Suecia se encuentra en su ciclo político-legislativo más comprimido desde la adhesión a la UE. Con las elecciones legislativas a 129 días (13 de septiembre de 2026), la coalición Tidö bajo el primer ministro Ulf Kristersson ejecuta un sprint legislativo final que definirá el paisaje post-electoral independientemente de qué coalición gane el poder. Los cinco informes de comisión y las tres propuestas gubernamentales publicadas el 10 de mayo de 2026 representan el punto culminante de esta aceleración legislativa — tocando la arquitectura del sistema financiero, la ley de seguridad nacional, la infraestructura digital y el cumplimiento transfronterizo en un solo día.
+
+El horizonte anual (2026-05-10 → 2027-05-07) abarca las elecciones de Suecia, la formación de coalición y los primeros meses de un nuevo gobierno. La evaluación del análisis es que **la incertidumbre política está en su nivel más alto en 12 años**, con cuatro configuraciones de coalición plausibles y ningún resultado dominante en las encuestas.
+
+---
+
+### Principales Hallazgos
+
+#### 1. La Consolidación del Estado de Seguridad está Casi Completa
+El gobierno Tidö ha promulgado el paquete de reforma de seguridad más completo de Suecia en una generación. HD01JuU32 (seguridad de eventos), HD03267 (amenazas de seguridad calificadas — nacionales extranjeros), HD01JuU34 (aplicación penal nórdica), HD01JuU39 (violencia psicológica) y HD03263 (aplicación de retorno) representan colectivamente un cambio estructural en la arquitectura de seguridad de Suecia. Estas leyes serán difíciles de revertir para cualquier gobierno sucesor. **Probabilidad prospectiva**: 85% de que estas leyes permanezcan intactas hasta el 2027-05-07 independientemente del resultado electoral.
+
+#### 2. La Soberanía Digital Ahora es Estatutaria
+HD03250 (En statlig e-legitimation) crea una nueva infraestructura de eID estatal gestionada por una autoridad designada. Combinado con HD03261 (poderes ampliados de registro de población para Skatteverket), Suecia está construyendo una pila de identidad digital centrada en el Estado. Esto remodelará la comunicación autoridad-ciudadano, la verificación del registro electoral y la integridad de los pagos de bienestar social. **Riesgo de implementación**: Alto (cronograma T+12–24 meses para implementación completa; remisión al Lagrådet pendiente a 2026-05-10).
+
+#### 3. Arquitectura Financiera Reconstruida para Nuevos Riesgos
+HD01FiU37 crea una nueva función de gestión de crisis operativas en el sector financiero sueco — un mecanismo adyacente a la BRRD que permite una respuesta coordinada a ciberataques, fallos de infraestructura o eventos de estrés sistémico. HD01FiU38 extiende la obligación de compensación de la UE a los mercados suecos. Juntos abordan la brecha de estabilidad financiera expuesta por la mini-crisis bancaria europea de 2023 y los ciberincidentes bálticos de 2024. **Horizonte de relevancia**: Crítico en T+12 (el nuevo gobierno debe dotar de personal y operacionalizar).
+
+#### 4. El Resultado Electoral Impulsa Trayectorias Divergentes después de 2026
+Cuatro configuraciones de coalición son genuinamente posibles (ver coalition-mathematics.md). Bajo Escenario A (continuación Tidö), la consolidación de seguridad se acelera y la implementación de eID se mantiene en curso. Bajo Escenario B (victoria del bloque liderado por S), las leyes de seguridad se mantienen pero la aplicación de inmigración se suaviza. Bajo Escenario C (arcoíris S+C+L), la reforma de gobernanza digital puede retrasarse. Bajo Escenario D (Riksdag bloqueado/coalición minoritaria), la viabilidad de implementación para legislación compleja cae marcadamente. **Distribución de probabilidad**: A=32%, B=38%, C=18%, D=12% al 2026-05-10.
+
+---
+
+### Requisitos de Inteligencia Prioritarios (PIR)
+
+| ID | Pregunta | Banda de Horizonte | Estado |
+|----|----------|-------------|--------|
+| PIR-YA-2026-001 | ¿Mantendrá la coalición Tidö una mayoría funcional después del 13 sep.? | T+129 | ABIERTO |
+| PIR-YA-2026-002 | ¿Cómo se operacionalizarán las leyes de seguridad HD03267 y JuU32 post-elección? | T+180 | ABIERTO |
+| PIR-YA-2026-003 | ¿Qué cronograma surge para el despliegue operacional del eID estatal? | T+90–T+365 | ABIERTO |
+| PIR-YA-2026-004 | ¿Se dotará de suficiente personal la nueva función de gestión de crisis financieras? | T+180 | ABIERTO |
+| PIR-YA-2026-005 | ¿Cómo interactuará la postura fiscal del nuevo gobierno con el ciclo de relajación del Riksbank? | T+270 | ABIERTO |
+
+---
+
+### Advertencia Crítica
+
+La concentración de legislación importante en una sola fecha (2026-05-10) — cinco informes de comisión y tres propuestas gubernamentales que abarcan seguridad, finanzas y gobernanza digital — indica un **calendario legislativo estratégico a 129 días de las elecciones**. Esto es característico de la consolidación de final de mandato diseñada para presentar a los votantes un paquete de reformas completado en lugar de promesas. Tanto el contenido legislativo como las señales políticas son analíticamente significativos para la perspectiva anual.
+
+---
+
+### Indicadores Sensibles al Tiempo
+
+- **T+14**: Se espera que el Lagrådet responda sobre HD03267 (expulsión de seguridad) — vigilar los desafíos constitucionales
+- **T+30**: Presupuesto Enmienda de Primavera (Vårändringsbudget) — última señal fiscal Tidö
+- **T+60**: La campaña electoral formal comienza — la aritmética de coalición se agudiza
+- **T+90**: Últimas encuestas antes del silencio electoral — última evaluación estable de escaños
+- **T+129**: Día de Elecciones 2026-09-13
+- **T+160**: Negociaciones de coalición probablemente resueltas o colapsadas
+
+---
+
+### Contexto Económico (FMI WEO abr-2026)
+
+- Crecimiento del PIB 2026: +1,8% (recuperación moderada de la desaceleración 2024–25)
+- Inflación: +1,7% (acercándose al objetivo del 2% del Riksbank)
+- Deuda pública: ~38,2% del PIB (sólida posición fiscal)
+- Tasa del Riksbank: 2,25% (ciclo de relajación cerca del mínimo)
+
+⚠️ *Punto de acceso SDMX del FMI degradado al 2026-05-10T11:08:00Z. Se usó WEO/FM Datamapper. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_fi.md -->
+
+# 2026-05-10 · 365 päivän horisontti · Vaalinläheisyys AKTIIVINEN
+
+**Luokittelu**: JULKINEN | **Työnkulku**: news-year-ahead | **Vaalit**: 2026-09-13 (T+129)
+**IMF-vintage**: WEO huht-2026 | **Riksmöte**: 2025/26 (päätösvaihe)
+
+---
+
+### Tiedusteluyhteenveto
+
+Ruotsi on tiiveimmässä poliittis-lainsäädännöllisessä syklissään sitten EU-jäsenyyden. Riksdagenin vaalien ollessa 129 päivän päässä (13. syyskuuta 2026) Tidö-koalitio pääministeri Ulf Kristersssonin johdolla toteuttaa viimeistä lainsäädäntösprinttiä, joka määrittelee vaalien jälkeisen maiseman riippumatta siitä, mikä koalitio voittaa vallan. 10. toukokuuta 2026 julkaistut viisi valiokunnan mietintöä ja kolme hallituksen esitystä edustavat tämän lainsäädäntökiihdytyksen huippua — ne koskevat rahoitusjärjestelmän arkkitehtuuria, kansallista turvallisuuslainsäädäntöä, digitaalista infrastruktuuria ja rajat ylittävää lainvalvontaa yhdessä päivässä.
+
+Vuoden eteenpäin horisontti (2026-05-10 → 2027-05-07) kattaa Ruotsin vaalit, koalition muodostamisen ja uuden hallituksen ensimmäiset kuukaudet. Analyysin arvio on, että **poliittinen epävarmuus on 12 vuoden korkeimmalla tasolla**, neljällä uskottavalla koalitiorakenteella eikä mielipidemittauksia hallitsevaa tulosta ole.
+
+---
+
+### Tärkeimmät Tulokset
+
+#### 1. Turvallisuusvaltion Konsolidointi On Lähes Valmis
+Tidö-hallitus on toteuttanut Ruotsin kattavimman turvallisuusuudistuspaketin sukupolveen. HD01JuU32 (tapahtumaturvallisuus), HD03267 (kvalifioituneet turvallisuusuhat — ulkomaalaiset kansalaiset), HD01JuU34 (pohjoismainen rikollinen lainvalvonta), HD01JuU39 (psykologinen väkivalta) ja HD03263 (palautustoimeenpano) edustavat yhdessä rakenteellista muutosta Ruotsin turvallisuusarkkitehtuurissa. Nämä lait tulevat olemaan vaikea peruuttaa mille tahansa seuraavalle hallitukselle. **Eteenpäin­todennäköisyys**: 85% näiden lakien pysymiselle muuttumattomina 2027-05-07:ään saakka vaalituloksesta riippumatta.
+
+#### 2. Digitaalinen Suvereniteetti on Nyt Lainmukainen
+HD03250 (En statlig e-legitimation) luo uuden valtion sähköisen henkilöllisyystodistusinfrastruktuurin nimetyn viranomaisen hallinnoimana. Yhdistettynä HD03261:een (Skatteverketin laajennetut väestörekisteriä koskevat toimivaltuudet) Ruotsi rakentaa valtiokeskeistä digitaalista identiteettipinoa. Tämä tulee muuttamaan viranomaisten ja kansalaisten välistä vuorovaikutusta, äänestäjärekisteröinnin varmentamista ja sosiaaliturvan maksujen eheyttä. **Toteutusriski**: Korkea (aikataulu T+12–24 kuukautta täydelle käyttöönotolle; Lagrådets lausunto odottaa 2026-05-10 tilannetta).
+
+#### 3. Rahoitusarkkitehtuuri Rakennettu Uusille Riskeille
+HD01FiU37 luo uuden operatiivisen kriisinhallintafunktion Ruotsin rahoitussektoriin — BRRD-läheinen mekanismi, joka mahdollistaa koordinoidun reagoinnin kyberhyökkäyksiin, infrastruktuurivikoihin tai systeemisiin stressitilanteisiin. HD01FiU38 laajentaa EU:n selvitysvelvoitteen Ruotsin markkinoille. Yhdessä ne käsittelevät rahoitusvakauden aukkoa, joka paljastui Euroopan pankkien minikriisissä 2023 ja Baltian kyberincidenteissä 2024. **Relevanssi­horisontti**: Kriittinen T+12:ssa (uuden hallituksen on palkattava henkilöstö ja operationalisoitava).
+
+#### 4. Vaalitulos Ohjaa Eriäviä Kehityspolkuja 2026:n Jälkeen
+Neljä koalitiorakennetta on aidosti mahdollisia (ks. coalition-mathematics.md). Skenaariossa A (Tidö jatkuu) turvallisuuskonsolidointi kiihtyy ja e-henkilöllisyystodistuksen käyttöönotto pysyy kurssilla. Skenaariossa B (S:n johtama blokkivoitto) turvallisuuslait säilytetään mutta maahanmuuttolainvalvonta pehmenee. Skenaariossa C (S+C+L sateenkaari) digitaalinen hallintouudistus voi viivästyä. Skenaariossa D (ripustettu Riksdag/vähemmistöhallitus) monimutkaisen lainsäädännön toteutettavuus laskee jyrkästi. **Todennäköisyysjakauma**: A=32%, B=38%, C=18%, D=12% per 2026-05-10.
+
+---
+
+### Prioriteettiset Tiedusteluvaatimukset (PIR)
+
+| ID | Kysymys | Horisonttikaista | Tila |
+|----|----------|-------------|--------|
+| PIR-YA-2026-001 | Säilyttääkö Tidö-koalitio toimivan enemmistön 13. syysk. jälkeen? | T+129 | AVOIN |
+| PIR-YA-2026-002 | Miten HD03267 ja JuU32 turvallisuuslait operationalisoidaan vaalien jälkeen? | T+180 | AVOIN |
+| PIR-YA-2026-003 | Mikä aikataulu syntyy valtion e-henkilöllisyystodistuksen käyttöönotolle? | T+90–T+365 | AVOIN |
+| PIR-YA-2026-004 | Tuleeko uusi rahoituskriisinhallintafunktio riittävästi miehitetyksi? | T+180 | AVOIN |
+| PIR-YA-2026-005 | Miten uuden hallituksen finanssipolitiikan suunta vuorovaikuttaa Riksbankenin kevennyssyklin kanssa? | T+270 | AVOIN |
+
+---
+
+### Kriittinen Varoitus
+
+Suuren lainsäädännön keskittyminen yhdelle päivämäärälle (2026-05-10) — viisi valiokunnan mietintöä ja kolme hallituksen esitystä kattaen turvallisuuden, rahoituksen ja digitaalisen hallinnon — osoittaa **strategista lainsäädäntöajoitusta 129 päivää ennen vaaleja**. Tämä on tyypillistä loppuvaiheen konsolidoinnille, joka on suunniteltu esittelemään äänestäjille valmis uudistuspaketti lupausten sijaan. Sekä lainsäädännön sisältö että poliittinen signaali ovat analyyttisesti merkittäviä vuoden eteenpäin näkymässä.
+
+---
+
+### Aikaherkät Indikaattorit
+
+- **T+14**: Lagrådet:n odotetaan vastaavan HD03267:ään (turvall­suusmaahansulku) — seuraa perustuslaillisia haasteita
+- **T+30**: Budjetti Vaarilisä­talousarvio (Vårändringsbudget) — viimeinen Tidö-finanssipolitiikan signaali
+- **T+60**: Virallinen vaalikampanja alkaa — koalitioaritmetiikka terävöityy
+- **T+90**: Viimeiset mielipidetutkimukset ennen kampanjahiljaisuutta — viimeisin vakaa mandaattiarvio
+- **T+129**: Vaalipäivä 2026-09-13
+- **T+160**: Koalitioforhandlukset todennäköisesti ratkaistu tai romahtanut
+
+---
+
+### Taloudellinen Konteksti (IMF WEO huht-2026)
+
+- BKT-kasvu 2026: +1,8% (kohtalainen elpyminen 2024–25 hidastumisesta)
+- Inflaatio: +1,7% (lähestyy Riksbankenin 2%:n tavoitetta)
+- Valtion velka: ~38,2% BKT:sta (vahva finanssipoliittinen asema)
+- Riksbankenin korko: 2,25% (kevennyssykli lähellä pohjaa)
+
+⚠️ *IMF SDMX -päätepiste heikentyi 2026-05-10T11:08:00Z:ssa. WEO/FM Datamapper käytetty. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_fr.md -->
+
+# 2026-05-10 · Horizon 365 Jours · Proximité Électorale ACTIVE
+
+**Millésime FMI** : WEO avr-2026 | **Riksmöte** : 2025/26 (phase finale)
+
+---
+
+### Résumé Renseignement
+
+La Suède se trouve dans son cycle politico-législatif le plus compressé depuis l'adhésion à l'UE. Avec les élections législatives à 129 jours (13 septembre 2026), la coalition Tidö sous le Premier ministre Ulf Kristersson exécute un sprint législatif final qui définira le paysage post-électoral indépendamment de la coalition qui remportera le pouvoir. Les cinq rapports de commission et les trois propositions gouvernementales publiés le 10 mai 2026 représentent l'apogée de cette accélération législative — touchant l'architecture du système financier, la loi sur la sécurité nationale, l'infrastructure numérique et l'application transfrontalière en une seule journée.
+
+L'horizon annuel (2026-05-10 → 2027-05-07) couvre les élections suédoises, la formation de la coalition et les premiers mois d'un nouveau gouvernement. L'analyse évalue que **l'incertitude politique est au plus haut depuis 12 ans**, avec quatre configurations de coalition plausibles et aucun résultat de sondage dominant.
+
+---
+
+### Résultats Principaux
+
+#### 1. La Consolidation de l'État Sécuritaire est Quasi Achevée
+Le gouvernement Tidö a mis en œuvre le paquet de réformes de sécurité le plus complet en Suède depuis une génération. HD01JuU32 (sécurité des événements), HD03267 (menaces de sécurité qualifiées — ressortissants étrangers), HD01JuU34 (application criminelle nordique), HD01JuU39 (violence psychologique) et HD03263 (application du retour) représentent ensemble un changement structurel dans l'architecture de sécurité de la Suède. Ces lois seront difficiles à inverser pour tout gouvernement successeur. **Probabilité prospective** : 85% que ces lois restent intactes jusqu'au 2027-05-07 quel que soit le résultat électoral.
+
+#### 2. La Souveraineté Numérique est Désormais Légalement Établie
+HD03250 (En statlig e-legitimation) crée une nouvelle infrastructure eID d'État gérée par une autorité désignée. Combiné à HD03261 (pouvoirs élargis d'enregistrement de la population pour Skatteverket), la Suède construit une pile d'identité numérique centrée sur l'État. Cela remodèlera la communication entre les autorités et les citoyens, la vérification de l'inscription des électeurs et l'intégrité des paiements sociaux. **Risque de mise en œuvre** : Élevé (calendrier T+12–24 mois pour le déploiement complet ; renvoi au Lagrådet en attente au 2026-05-10).
+
+#### 3. Architecture Financière Reconstruite pour de Nouveaux Risques
+HD01FiU37 crée une nouvelle fonction de gestion des crises opérationnelles dans le secteur financier suédois — un mécanisme adjacent à la BRRD permettant une réponse coordonnée aux cyberattaques, aux défaillances d'infrastructure ou aux événements de stress systémique. HD01FiU38 étend l'obligation de compensation de l'UE aux marchés suédois. Ensemble, ils abordent l'écart de stabilité financière révélé par la mini-crise bancaire européenne de 2023 et les cyberincidents baltes de 2024. **Horizon de pertinence** : Critique à T+12 (le nouveau gouvernement doit pourvoir les postes et opérationnaliser).
+
+#### 4. Le Résultat Electoral Conduit à des Trajectoires Divergentes après 2026
+Quatre configurations de coalition sont genuinement possibles (voir coalition-mathematics.md). Sous Scénario A (continuation Tidö), la consolidation sécuritaire s'accélère et la mise en œuvre de l'eID reste sur la bonne voie. Sous Scénario B (victoire du bloc dirigé par S), les lois de sécurité sont maintenues mais l'application de l'immigration est assouplie. Sous Scénario C (arc-en-ciel S+C+L), la réforme de gouvernance numérique peut être retardée. Sous Scénario D (Riksdag suspendu/coalition minoritaire), la faisabilité de mise en œuvre pour la législation complexe diminue fortement. **Distribution de probabilité** : A=32%, B=38%, C=18%, D=12% au 2026-05-10.
+
+---
+
+### Exigences de Renseignement Prioritaires (PIR)
+
+| ID | Question | Bande d'Horizon | Statut |
+|----|----------|-------------|--------|
+| PIR-YA-2026-001 | La coalition Tidö conservera-t-elle une majorité opérationnelle après le 13 sep. ? | T+129 | OUVERT |
+| PIR-YA-2026-002 | Comment les lois de sécurité HD03267 et JuU32 seront-elles opérationnalisées après l'élection ? | T+180 | OUVERT |
+| PIR-YA-2026-003 | Quel calendrier émerge pour le déploiement opérationnel de l'eID d'État ? | T+90–T+365 | OUVERT |
+| PIR-YA-2026-004 | La nouvelle fonction de gestion des crises financières sera-t-elle suffisamment dotée en personnel ? | T+180 | OUVERT |
+| PIR-YA-2026-005 | Comment la posture budgétaire du nouveau gouvernement interagira-t-elle avec le cycle d'assouplissement de la Riksbank ? | T+270 | OUVERT |
+
+---
+
+### Avertissement Critique
+
+La concentration de législation majeure à une date unique (2026-05-10) — cinq rapports de commission et trois propositions gouvernementales couvrant la sécurité, la finance et la gouvernance numérique — indique un **calendrage législatif stratégique à 129 jours des élections**. Ceci est caractéristique d'une consolidation de fin de mandat conçue pour présenter aux électeurs un paquet de réformes achevé plutôt que des promesses. Tant le contenu législatif que les signaux politiques sont analytiquement significatifs pour la perspective annuelle.
+
+---
+
+### Indicateurs Sensibles au Temps
+
+- **T+14** : Le Lagrådet devrait répondre sur HD03267 (expulsion sécuritaire) — surveiller les défis constitutionnels
+- **T+30** : Budget Amendement Printanier (Vårändringsbudget) — dernier signal budgétaire Tidö
+- **T+60** : La campagne électorale formelle commence — l'arithmétique de coalition se précise
+- **T+90** : Derniers sondages avant le silence électoral — dernière évaluation stable des sièges
+- **T+129** : Jour de l'élection 2026-09-13
+- **T+160** : Négociations de coalition probablement résolues ou effondrées
+
+---
+
+### Contexte Économique (FMI WEO avr-2026)
+
+- Croissance du PIB 2026 : +1,8% (reprise modérée après le ralentissement 2024–25)
+- Inflation : +1,7% (s'approchant de l'objectif 2% de la Riksbank)
+- Dette publique : ~38,2% du PIB (position budgétaire solide)
+- Taux de la Riksbank : 2,25% (cycle d'assouplissement proche du creux)
+
+⚠️ *Point de terminaison SDMX FMI dégradé au 2026-05-10T11:08:00Z. WEO/FM Datamapper utilisé. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_he.md -->
+
+# 2026-05-10 · אופק 365 יום · קרבת בחירות פעילה
+
+**סיווג**: ציבורי | **תהליך עבודה**: news-year-ahead | **בחירות**: 2026-09-13 (ת+129)
+**וינטאז' קרן המטבע**: WEO אפריל-2026 | **מושב ריקסדאג**: 2025/26 (שלב סגירה)
+
+---
+
+### סיכום מודיעיני
+
+שוודיה עוברת את המחזור הפוליטי-חקיקתי הדחוס ביותר מאז הצטרפותה לאיחוד האירופי. עם 129 ימים עד לבחירות הריקסדאג (13 ספטמבר 2026), מנהל קואליציית טידו תחת ראש הממשלה אולף קריסטרסון ספרינט חקיקתי סופי שיעצב את הנוף שלאחר הבחירות ללא קשר לאיזו קואליציה תזכה לשלטון. חמשת דוחות הוועדה ושלושה הצעות ממשלתיות שפורסמו ב-10 במאי 2026 מייצגים שיא ההאצה החקיקתית הזו — הם נוגעים בארכיטקטורה פיננסית, בחוק ביטחון לאומי, בתשתית דיגיטלית ובאכיפת חוק חוצת גבולות ביום אחד.
+
+האופק השנתי (2026-05-10 → 2027-05-07) כולל את הבחירות בשוודיה, היווצרות קואליציה וחודשיה הראשונים של ממשלה חדשה. הניתוח מעריך ש**אי-הוודאות הפוליטית נמצאת ברמה הגבוהה ביותר ב-12 שנים**, עם ארבע תצורות קואליציוניות אפשריות ואין תוצאה דומיננטית בסקרים.
+
+---
+
+### ממצאים מרכזיים
+
+#### 1. גיבוש מדינת הביטחון כמעט הושלם
+ממשלת טידו הנהיגה את חבילת הרפורמות הביטחונית המקיפה ביותר של שוודיה דור שלם. HD01JuU32 (ביטחון אירועים), HD03267 (איומי ביטחון מוסמכים — אזרחים זרים), HD01JuU34 (אכיפת פלילים סקנדינבית), HD01JuU39 (אלימות פסיכולוגית) ו-HD03263 (אכיפת החזרה) מייצגים ביחד שינוי מבני בארכיטקטורת הביטחון השוודית. חוקים אלה יהיו קשים להיפוך עבור כל ממשלה יורשת. **הסתברות קדימה**: 85% שחוקים אלה יישארו בתוקף עד 2027-05-07 ללא קשר לתוצאת הבחירות.
+
+#### 2. ריבונות דיגיטלית מקודדת כעת בחוק
+HD03250 (זהות אלקטרונית ממשלתית) יוצרת תשתית זהות מדינה חדשה המנוהלת על ידי רשות ייעודית. בשילוב עם HD03261 (סמכויות רישום אוכלוסין מורחבות לסקאטוורקט), שוודיה בונה מחסנית זהות דיגיטלית בהובלת המדינה. זה ישנה את התקשורת בין רשויות לאזרחים, אימות רישום בוחרים ושלמות הקצבות סוציאליות. **סיכון יישום**: גבוה (לוח זמנים ת+12–24 חודשים לפריסה מלאה; הפניה ללאגרוד מ-2026-05-10 ממתינה לדיון).
+
+#### 3. ארכיטקטורה פיננסית נבנתה מחדש לסיכונים חדשים
+HD01FiU37 יוצרת פונקציה חדשה לניהול משבר תפעולי במגזר הפיננסי השוודי — מנגנון גובל ב-BRRD המאפשר תגובה מתואמת להתקפות סייבר, תקלות תשתית או אירועי לחץ סיסטמיים. HD01FiU38 מרחיבה את חובת הסליקה של האיחוד האירופי לשווקים שוודיים. ביחד הם מתמודדים עם פגיעות יציבות פיננסית שנחשפה במשבר הבנקאות האירופי הקטן 2023 ובאירועי הסייבר הבלטיים 2024. **אופק רלוונטי**: קריטי בת+12 (הממשלה החדשה חייבת לאייש ולהפעיל).
+
+#### 4. תוצאת הבחירות מתווה מסלולים מתבדלים לאחר 2026
+ארבע תצורות קואליציוניות אפשריות באמת (ראה coalition-mathematics.md). תחת תרחיש א' (המשך טידו) גיבוש הביטחון מואץ ויישום הזהות האלקטרונית נשאר על מסלול. תחת תרחיש ב' (ניצחון בלוק בהובלת S) חוקי הביטחון מיושמים אך עמדת ההגירה מרוככת. תחת תרחיש ג' (קשת S+C+L) רפורמות ממשל דיגיטלי עשויות להתעכב. תחת תרחיש ד' (תלוי ריקסדאג/קואליציית מיעוט) הכדאיות ביישום חקיקה מורכבת יורדת חדות. **התפלגות הסתברויות**: א=32%, ב=38%, ג=18%, ד=12% ב-2026-05-10.
+
+---
+
+### דרישות מודיעין עדיפות (PIR)
+
+| מזהה | שאלה | רצועת אופק | מצב |
+|------|-------|------------|-----|
+| PIR-YA-2026-001 | האם קואליציית טידו תשמור על רוב עובד לאחר 13 ספט'? | ת+129 | פתוח |
+| PIR-YA-2026-002 | כיצד חוקי הביטחון HD03267 ו-JuU32 מופעלים לאחר הבחירות? | ת+180 | פתוח |
+| PIR-YA-2026-003 | מהו לוח הזמנים המתהווה לפריסת הזהות האלקטרונית הממשלתית? | ת+90–ת+365 | פתוח |
+| PIR-YA-2026-004 | האם פונקציית ניהול המשבר הפיננסי החדשה תאוישת כראוי? | ת+180 | פתוח |
+| PIR-YA-2026-005 | כיצד עמדת התקציב של הממשלה החדשה תתקשר עם מחזור הקלת ריקסבנק? | ת+270 | פתוח |
+
+---
+
+### אזהרה קריטית
+
+ריכוז חקיקה חשובה בתאריך אחד (2026-05-10) — חמישה דוחות ועדה ושלוש הצעות ממשלתיות הכוסות ביטחון, פיננסים וממשל דיגיטלי — מצביע על **תזמון חקיקתי אסטרטגי 129 ימים לפני הבחירות**. זהו מאפיין של גיבוש סוף קדנציה שנועד להציג בפני הבוחרים חבילת רפורמות גמורה ולא הבטחות. הן תוכן החקיקה והן האיתות הפוליטי מהותיים אנליטית לתחזית השנתית.
+
+---
+
+### מדדים רגישים לזמן
+
+- **ת+14**: לאגרוד צפוי להגיב על HD03267 (גירוש ביטחוני) — עקוב אחרי ערעורים חוקתיים
+- **ת+30**: תיקון תקציב האביב (Vårändringsbudget) — האיתות התקציבי האחרון של טידו
+- **ת+60**: קמפיין הבחירות הרשמי מתחיל — חשבון הקואליציה מתחדד
+- **ת+90**: סקרים אחרונים לפני שתיקת הקמפיין — חלוקת המושבים היציבה העדכנית ביותר
+- **ת+129**: יום הבחירות 2026-09-13
+- **ת+160**: משא ומתן קואליציוני ככל הנראה נפתר או קרס
+
+---
+
+### הקשר כלכלי (קרן המטבע הבינלאומית WEO אפריל-2026)
+
+- צמיחת תוצר 2026: %1.8+ (התאוששות מתונה מההאטה 2024–25)
+- אינפלציה: %1.7+ (מתקרבת ליעד ריקסבנק 2%)
+- חוב ממשלתי: ~%38.2 מהתוצר (עמדה פיסקלית יציבה)
+- ריבית ריקסבנק: %2.25 (מחזור הקלה קרוב לשפל)
+
+⚠️ *נקודת קצה SDMX של קרן המטבע הבינלאומית נמצאת ב-2026-05-10T11:08:00Z בהשפלה. Datamapper WEO/FM נמצא בשימוש. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_ja.md -->
+
+# 2026-05-10 · 365日ホライズン · 選挙近接アクティブ
+
+**分類**: 公開 | **ワークフロー**: news-year-ahead | **選挙**: 2026-09-13 (T+129)
+**IMFヴィンテージ**: WEO 2026年4月 | **リクスダーグ会期**: 2025/26 (閉会段階)
+
+---
+
+### 情報サマリー
+
+スウェーデンはEU加盟以来最も圧縮された政治立法サイクルを経験している。リクスダーグ選挙まで129日（2026年9月13日）という状況で、ウルフ・クリステルション首相率いるティドー連立政権は、どの連立政権が政権を握るかにかかわらず選挙後の政治地図を決定する最終立法スプリントを実施している。2026年5月10日に発表された5件の委員会報告書と3件の政府提案は、この立法加速の頂点を象徴し、金融システム設計、国家安全保障法、デジタルインフラ、国境を越えた法執行に一日で触れている。
+
+年次ホライズン（2026-05-10 → 2027-05-07）はスウェーデン選挙、連立形成、新政府の最初の数ヶ月を包含する。分析は**政治的不確実性が12年間で最高水準**にあり、4つの連立構成が現実的に可能で、世論調査に支配的な結果がないと評価する。
+
+---
+
+### 主要知見
+
+#### 1. 安全保障国家の強化がほぼ完了
+ティドー政府は一世代で最も包括的なスウェーデンの安全保障改革パッケージを導入した。HD01JuU32（イベントセキュリティ）、HD03267（資格を有する安全保障脅威 — 外国人）、HD01JuU34（スカンジナビア刑事法執行）、HD01JuU39（心理的暴力）、HD03263（帰還執行）は合わせてスウェーデンの安全保障アーキテクチャの構造的変化を表している。これらの法律は後継政府にとって覆すことが困難である。**前向き確率**: これらの法律が選挙結果にかかわらず2027-05-07まで有効であり続ける確率85%。
+
+#### 2. デジタル主権が法律で確立
+HD03250（国家電子ID）は指定機関が管理する新たな国家ID基盤を創設する。HD03261（スカッテヴェルケットの拡張された人口登録権限）と合わせて、スウェーデンは国家主導のデジタルID スタックを構築している。これは当局と市民の通信、有権者登録の検証、社会給付の完全性を変革する。**実装リスク**: 高（完全展開まで T+12〜24ヶ月のタイムライン；2026-05-10 時点のラグロード付託審議中）。
+
+#### 3. 金融アーキテクチャを新たなリスクに向けて再構築
+HD01FiU37 はスウェーデン金融セクターに新たな運用危機管理機能を創設する — サイバー攻撃、インフラ停止、または系統的ストレスイベントへの協調対応を可能にするBRRD隣接メカニズム。HD01FiU38 はEUのクリアリング義務をスウェーデン市場に拡大する。両者は2023年の欧州銀行小危機と2024年のバルト諸国サイバーインシデントで露呈した金融安定性の脆弱性に対処する。**関連ホライズン**: T+12で重要（新政府は人員配置と運用化が必要）。
+
+#### 4. 選挙結果が2026年以降の分岐した軌跡を形成
+4つの連立構成が現実的に可能（coalition-mathematics.md参照）。シナリオA（ティドー継続）では安全保障強化が加速しeID実施が軌道に乗る。シナリオB（S主導ブロック勝利）では安全保障法が維持されるが移民の姿勢が和らぐ。シナリオC（S+C+L連立）ではデジタルガバナンス改革が遅れる可能性。シナリオD（宙吊りリクスダーグ/少数派連立）では複雑な立法の実施可能性が急激に低下。**確率分布**: A=32%、B=38%、C=18%、D=12%（2026-05-10時点）。
+
+---
+
+### 優先情報要件 (PIR)
+
+| ID | 質問 | ホライズン帯域 | 状態 |
+|----|------|-------------|------|
+| PIR-YA-2026-001 | ティドー連立政権は9月13日以降も機能する多数派を維持するか？ | T+129 | 未解決 |
+| PIR-YA-2026-002 | 安全保障法 HD03267 と JuU32 は選挙後にどのように運用されるか？ | T+180 | 未解決 |
+| PIR-YA-2026-003 | 国家eIDの展開に向けてどのようなタイムラインが出現するか？ | T+90–T+365 | 未解決 |
+| PIR-YA-2026-004 | 新たな金融危機管理機能は適切に人員配置されるか？ | T+180 | 未解決 |
+| PIR-YA-2026-005 | 新政府の財政スタンスはリクスバンクの緩和サイクルとどのように相互作用するか？ | T+270 | 未解決 |
+
+---
+
+### 重大警告
+
+重要な立法が一日（2026-05-10）に集中 — 安全保障、財政、デジタルガバナンスを網羅する5件の委員会報告書と3件の政府提案 — は**選挙129日前の戦略的立法タイミング**を示す。これは公約ではなく完成した改革パッケージを有権者に提示するよう設計された任期末強化の特徴である。立法内容と政治的シグナリングの両方が年次展望において分析的に重要である。
+
+---
+
+### 時間感応的指標
+
+- **T+14**: ラグロードが HD03267（安全保障退去）に応答予定 — 憲法上の異議を追跡
+- **T+30**: 春の予算改正（Vårändringsbudget） — ティドーの最後の予算シグナル
+- **T+60**: 正式な選挙運動開始 — 連立の計算が明確化
+- **T+90**: 選挙運動の静粛前の最後の世論調査 — 最新の安定した議席分布
+- **T+129**: 選挙日 2026-09-13
+- **T+160**: 連立交渉おそらく解決または崩壊
+
+---
+
+### 経済的文脈 (IMF WEO 2026年4月)
+
+- 2026年GDP成長率: +1.8%（2024〜25年の減速からの緩やかな回復）
+- インフレ: +1.7%（リクスバンクの2%目標に近づく）
+- 政府債務: GDP比約38.2%（堅固な財政状況）
+- リクスバンク金利: 2.25%（緩和サイクルが底値近く）
+
+⚠️ *2026-05-10T11:08:00Z 時点でIMF SDMXエンドポイントが劣化。WEO/FM Datamapper使用。economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_ko.md -->
+
+# 2026-05-10 · 365일 지평 · 선거 근접 활성
+
+**분류**: 공개 | **워크플로우**: news-year-ahead | **선거**: 2026-09-13 (T+129)
+**IMF 빈티지**: WEO 2026년 4월 | **릭스다그 회기**: 2025/26 (폐회 단계)
+
+---
+
+### 인텔리전스 요약
+
+스웨덴은 EU 가입 이후 가장 압축된 정치·입법 사이클을 경험하고 있다. 릭스다그 선거까지 129일(2026년 9월 13일)을 앞두고, 울프 크리스테르손 총리가 이끄는 티도 연립정권은 어느 연립이 집권하더라도 선거 후 정치 지형을 결정할 최종 입법 스프린트를 실시하고 있다. 2026년 5월 10일에 발표된 5개 위원회 보고서와 3개 정부 제안은 이 입법 가속의 정점을 나타내며, 하루에 금융 시스템 아키텍처, 국가 안보법, 디지털 인프라, 국경을 초월한 법 집행을 다루고 있다.
+
+연간 지평(2026-05-10 → 2027-05-07)은 스웨덴 선거, 연립 구성, 새 정부의 초기 몇 달을 포함한다. 분석은 **정치적 불확실성이 12년 만에 최고 수준**이며, 4개의 연립 구성이 현실적으로 가능하고 여론조사에서 지배적인 결과가 없다고 평가한다.
+
+---
+
+### 주요 발견
+
+#### 1. 안보 국가 강화가 거의 완료됨
+티도 정부는 한 세대에 걸쳐 가장 포괄적인 스웨덴 안보 개혁 패키지를 도입했다. HD01JuU32(행사 보안), HD03267(적격 안보 위협 — 외국인), HD01JuU34(스칸디나비아 형사 법 집행), HD01JuU39(심리적 폭력), HD03263(귀환 집행)은 합쳐서 스웨덴 안보 아키텍처의 구조적 변화를 나타낸다. 이 법률들은 후계 정부가 뒤집기 어려울 것이다. **전향적 확률**: 선거 결과와 관계없이 이 법률들이 2027-05-07까지 유효하게 남을 확률 85%.
+
+#### 2. 디지털 주권이 법으로 확립됨
+HD03250(국가 전자 신분증)는 지정 기관이 관리하는 새로운 국가 ID 인프라를 창설한다. HD03261(스카테베르켓의 확장된 인구 등록 권한)과 함께 스웨덴은 국가 주도의 디지털 ID 스택을 구축하고 있다. 이는 당국과 시민 간의 통신, 유권자 등록 검증, 사회 급여 무결성을 변화시킬 것이다. **구현 위험**: 높음(완전 배포까지 T+12~24개월 타임라인; 2026-05-10 기준 라그로드 회부 심의 중).
+
+#### 3. 새로운 위험을 위한 금융 아키텍처 재구성
+HD01FiU37은 스웨덴 금융 부문에 새로운 운영 위기 관리 기능을 창설한다 — 사이버 공격, 인프라 장애 또는 시스템 스트레스 이벤트에 대한 조정된 대응을 가능하게 하는 BRRD 인접 메커니즘. HD01FiU38은 EU 청산 의무를 스웨덴 시장으로 확대한다. 두 법안은 2023년 유럽 은행 소위기와 2024년 발트 사이버 사건에서 드러난 금융 안정성 취약점을 다룬다. **관련 지평**: T+12에서 중요(새 정부는 인력 배치 및 운영화 필요).
+
+#### 4. 선거 결과가 2026년 이후 분기하는 경로를 형성
+4개의 연립 구성이 진정으로 가능(coalition-mathematics.md 참조). 시나리오 A(티도 연속)에서 안보 강화가 가속되고 eID 구현이 궤도에 유지된다. 시나리오 B(S 주도 블록 승리)에서 안보법은 유지되지만 이민 입장이 완화된다. 시나리오 C(S+C+L 무지개)에서 디지털 거버넌스 개혁이 지연될 수 있다. 시나리오 D(교착 릭스다그/소수 연립)에서 복잡한 입법의 구현 타당성이 급격히 감소한다. **확률 분포**: A=32%, B=38%, C=18%, D=12%(2026-05-10 기준).
+
+---
+
+### 우선 인텔리전스 요건 (PIR)
+
+| ID | 질문 | 지평 밴드 | 상태 |
+|----|------|--------|------|
+| PIR-YA-2026-001 | 티도 연립은 9월 13일 이후에도 작동 가능한 다수를 유지할 것인가? | T+129 | 미결 |
+| PIR-YA-2026-002 | 안보법 HD03267과 JuU32는 선거 후 어떻게 운영되는가? | T+180 | 미결 |
+| PIR-YA-2026-003 | 국가 eID 배포를 위한 타임라인이 어떻게 나타나는가? | T+90–T+365 | 미결 |
+| PIR-YA-2026-004 | 새로운 금융 위기 관리 기능이 적절히 인력 배치될 것인가? | T+180 | 미결 |
+| PIR-YA-2026-005 | 새 정부의 재정 입장이 릭스방크 완화 사이클과 어떻게 상호작용할 것인가? | T+270 | 미결 |
+
+---
+
+### 중요 경고
+
+중요한 입법이 하루(2026-05-10)에 집중 — 안보, 금융, 디지털 거버넌스를 다루는 5개 위원회 보고서와 3개 정부 제안 — 은 **선거 129일 전의 전략적 입법 타이밍**을 나타낸다. 이는 공약보다는 완성된 개혁 패키지를 유권자에게 제시하도록 설계된 임기 말 강화의 특징이다. 입법 내용과 정치적 시그널링 모두 연간 전망에서 분석적으로 중요하다.
+
+---
+
+### 시간 민감 지표
+
+- **T+14**: 라그로드가 HD03267(안보 추방)에 응답 예정 — 헌법상 이의 추적
+- **T+30**: 봄 예산 수정안(Vårändringsbudget) — 티도의 마지막 예산 신호
+- **T+60**: 공식 선거 캠페인 시작 — 연립 계산 선명화
+- **T+90**: 캠페인 정적 전 마지막 여론조사 — 최신 안정적 의석 분포
+- **T+129**: 선거일 2026-09-13
+- **T+160**: 연립 협상 결론 또는 붕괴 가능성
+
+---
+
+### 경제적 맥락 (IMF WEO 2026년 4월)
+
+- 2026년 GDP 성장률: +1.8%(2024~25년 침체에서 완만한 회복)
+- 인플레이션: +1.7%(릭스방크 2% 목표에 근접)
+- 정부 부채: GDP 대비 약 38.2%(건전한 재정 상태)
+- 릭스방크 금리: 2.25%(완화 사이클 저점 근접)
+
+⚠️ *2026-05-10T11:08:00Z 기준 IMF SDMX 엔드포인트 성능 저하. WEO/FM Datamapper 사용. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_nl.md -->
+
+# 2026-05-10 · 365-Daags Horizon · Verkiezingsproximiteit ACTIEF
+
+**Classificatie**: OPENBAAR | **Workflow**: news-year-ahead | **Verkiezingen**: 2026-09-13 (T+129)
+**IMF-vintage**: WEO apr-2026 | **Riksmöte**: 2025/26 (afsluitingsfase)
+
+---
+
+### Inlichtingensamenvatting
+
+Zweden bevindt zich in zijn meest gecomprimeerde politiek-wetgevende cyclus sinds de EU-toetreding. Met de Rijksdagverkiezingen 129 dagen weg (13 september 2026) voert de Tidö-coalitie onder premier Ulf Kristersson een afsluitende wetgevingssprint uit die het post-verkiezingslandschap zal bepalen ongeacht welke coalitie de macht wint. De vijf op 10 mei 2026 gepubliceerde commissierapporten en drie regeringsvoorstellen vertegenwoordigen het hoogtepunt van deze wetgevingsversnelling — ze raken financieel systeemarchitectuur, nationale veiligheidswet, digitale infrastructuur en grensoverschrijdende rechtshandhaving op één enkele dag.
+
+De jaarhorizon (2026-05-10 → 2027-05-07) omvat Zweedse verkiezingen, coalitievorming en de eerste maanden van een nieuwe regering. De analyse beoordeelt dat **politieke onzekerheid op het hoogste niveau in 12 jaar** staat, met vier plausibele coalitieconfiguraties en geen peilingsdominant resultaat.
+
+---
+
+### Belangrijkste Bevindingen
+
+#### 1. Consolidatie van de Veiligheidsstaat is Bijna Volledig
+De Tidö-regering heeft het meest uitgebreide veiligheidshervormingspakket van Zweden in een generatie ingevoerd. HD01JuU32 (evenementenveiligheid), HD03267 (gekwalificeerde veiligheidsdreigingen — buitenlandse onderdanen), HD01JuU34 (Scandinavische strafrechthandhaving), HD01JuU39 (psychologisch geweld) en HD03263 (terugkeerhandhaving) vertegenwoordigen gezamenlijk een structurele verschuiving in Zweden's veiligheidsarchitectuur. Deze wetten zullen voor elke opvolgende regering moeilijk te keren zijn. **Voorwaartse kans**: 85% dat deze wetten intact blijven tot 2027-05-07 ongeacht de verkiezingsuitslag.
+
+#### 2. Digitale Soevereiniteit is Nu Wettelijk Verankerd
+HD03250 (En statlig e-legitimation) creëert een nieuwe staatseID-infrastructuur beheerd door een aangewezen autoriteit. Gecombineerd met HD03261 (uitgebreide bevolkingsregistratiebevoegdheden voor Skatteverket) bouwt Zweden een staatsgerichte digitale identiteitsstapel. Dit zal de communicatie tussen autoriteiten en burgers, verificatie van kiesregistratie en integriteit van sociale uitkeringen hervormen. **Implementatierisico**: Hoog (tijdlijn T+12–24 maanden voor volledige uitrol; Lagrådet-verwijzing per 2026-05-10 in behandeling).
+
+#### 3. Financiële Architectuur Herbouwd voor Nieuwe Risico's
+HD01FiU37 creëert een nieuwe operationele crisisbeheersfunctie in de Zweedse financiële sector — een BRRD-grenzend mechanisme dat gecoördineerde reactie op cyberaanvallen, infrastructuuruitval of systemische stressgebeurtenissen mogelijk maakt. HD01FiU38 strekt de EU-clearingsverplichting uit naar Zweedse markten. Samen adresseren ze het financiële stabiliteitstekort blootgelegd door de Europese bankenmini-crisis van 2023 en de Baltische cyberincidenten van 2024. **Relevantehorizon**: Kritisch bij T+12 (nieuwe regering moet bemannen en operationaliseren).
+
+#### 4. Verkiezingsuitslag Stuurt Divergerende Paden na 2026
+Vier coalitieconfiguraties zijn genuinement mogelijk (zie coalition-mathematics.md). Onder Scenario A (Tidö-continuatie) versnelt veiligheidsconsolidatie en blijft eID-implementatie op koers. Onder Scenario B (S-geleid blokoverwinning) worden veiligheidswetten gehandhaafd maar migratieveroordeling wordt verzacht. Onder Scenario C (S+C+L regenboog) kan digitale bestuurshervormingen worden vertraagd. Onder Scenario D (hangen Riksdag/minderheidscoalitie) daalt implementatiehaalbaarheidsfeasibiliteit voor complexe wetgeving scherp. **Kansenverdeling**: A=32%, B=38%, C=18%, D=12% per 2026-05-10.
+
+---
+
+### Prioritaire Inlichtingenvereisten (PIR)
+
+| ID | Vraag | Horizont-Band | Status |
+|----|----------|-------------|--------|
+| PIR-YA-2026-001 | Zal de Tidö-coalitie een werkbare meerderheid behouden na 13 sep.? | T+129 | OPEN |
+| PIR-YA-2026-002 | Hoe worden veiligheidswetten HD03267 en JuU32 geoperationaliseerd na de verkiezingen? | T+180 | OPEN |
+| PIR-YA-2026-003 | Welk tijdschema ontstaat voor operationeel eID-staatsinzet? | T+90–T+365 | OPEN |
+| PIR-YA-2026-004 | Wordt de nieuwe financiële crisisbeheersfunctie adequaat bemand? | T+180 | OPEN |
+| PIR-YA-2026-005 | Hoe zal de begrotingshouding van de nieuwe regering interageren met de versoepelingsycylus van Riksbank? | T+270 | OPEN |
+
+---
+
+### Kritische Waarschuwing
+
+De concentratie van belangrijke wetgeving op één datum (2026-05-10) — vijf commissierapporten en drie regeringsvoorstellen die veiligheid, financiën en digitaal bestuur omvatten — duidt op **strategische wetgevingstiming 129 dagen voor de verkiezingen**. Dit is kenmerkend voor eindeterminconsolidatie ontworpen om kiezers een voltooid hervormingspakket te presenteren in plaats van beloften. Zowel de wetgevingsinhoud als de politieke signalering zijn analytisch significant voor het jaarlijkse vooruitzicht.
+
+---
+
+### Tijdgevoelige Indicatoren
+
+- **T+14**: Lagrådet wordt verwacht te reageren op HD03267 (veiligheidsuitwijzing) — volg constitutionele uitdagingen
+- **T+30**: Begrotingsvoorjaarsamendement (Vårändringsbudget) — laatste Tidö-begrotingssignaal
+- **T+60**: Formele verkiezingscampagne begint — coalitierekenkunde scherpt
+- **T+90**: Laatste peilingen voor campagnestilte — meest recente stabiele zetelverdeling
+- **T+129**: Verkiezingsdag 2026-09-13
+- **T+160**: Coalitieonderhandelingen waarschijnlijk opgelost of ingestort
+
+---
+
+### Economische Context (IMF WEO apr-2026)
+
+- BBP-groei 2026: +1,8% (matig herstel van de vertraging 2024–25)
+- Inflatie: +1,7% (nadert Riksbankens 2%-doel)
+- Staatsschuld: ~38,2% BBP (solide begrotingspositie)
+- Riksbank-rente: 2,25% (versoepelingsycylus nabij dieptepunt)
+
+⚠️ *IMF SDMX-eindpunt per 2026-05-10T11:08:00Z degradeerd. WEO/FM Datamapper gebruikt. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_no.md -->
+
+# 2026-05-10 · 365-dagers Horisont · Valnærhet AKTIV
+
+**Klassifisering**: OFFENTLIG | **Arbeidsflyt**: news-year-ahead | **Valg**: 2026-09-13 (T+129)
+**IMF-vintage**: WEO apr-2026 | **Riksmøte**: 2025/26 (avslutningsfase)
+
+---
+
+### Etterretningssammendrag
+
+Sverige er i sin mest komprimerte politisk-lovgivningsmessige syklus siden EU-tilslutningen. Med riksdagsvalget 129 dager unna (13. september 2026) gjennomfører Tidö-koalisjonen under statsminister Ulf Kristersson en avsluttende lovgivningssprint som vil definere det post-valgslandskapet uavhengig av hvilken koalisjon som vinner makten. De fem utvalgsrapportene og tre regjeringsproposisjonene publisert 10. mai 2026 representerer toppen av denne lovgivningsakselerasjonen — de berører finanssystemets arkitektur, nasjonal sikkerhetslovgivning, digital infrastruktur og grenseoverskridende rettshåndhevelse på én enkelt dag.
+
+Ettårshorisonten (2026-05-10 → 2027-05-07) omfatter Sveriges valg, koalisjonsbygging og de første månedene av en ny regjering. Analysen vurderer at **politisk usikkerhet er på sitt høyeste nivå på 12 år**, med fire plausible koalisjonskonstellasjoner og intet meningsmålingsdom­inerende utfall.
+
+---
+
+### Viktigste Funn
+
+#### 1. Sikkerhetsstatens Konsolidering Er Nesten Fullstendig
+Tidö-regjeringen har gjennomført Sveriges mest omfattende sikkerhetsreformspakke på en generasjon. HD01JuU32 (arrangementssikkerhet), HD03267 (kvalifiserte sikkerhetstrusler — utenlandske statsborgere), HD01JuU34 (nordisk kriminell rettshåndhevelse), HD01JuU39 (psykologisk vold) og HD03263 (returhåndhevelse) representerer samlet et strukturelt skifte i Sveriges sikkerhetsarkitektur. Disse lovene vil være vanskelige for enhver etterfølgende regjering å reversere. **Fremadrettet sannsynlighet**: 85% at disse lovene forblir intakte til 2027-05-07 uavhengig av valgresultat.
+
+#### 2. Digital Suverenitet Er Nå Lovfestet
+HD03250 (En statlig e-legitimation) oppretter en ny statlig e-ID-infrastruktur forvaltet av en utpekt myndighet. Kombinert med HD03261 (utvidede folkeregisteringsbeføyelser for Skatteverket) bygger Sverige en statssentrert digital identitetsstakk. Dette vil omforme myndighetsborger­kommunikasjonen, velgerregistreringsverifikasjonen og integriteten i velferdsutbetalinger. **Implementeringsrisiko**: Høy (tidslinje T+12–24 måneder for fullstendig utrulling; Lagrådets høring avventes per 2026-05-10).
+
+#### 3. Finansiell Arkitektur Gjenoppbygd for Nye Risikoer
+HD01FiU37 oppretter en ny operasjonell krisehåndteringsfunksjon i den svenske finanssektoren — en BRRD-tilgrensende mekanisme som muliggjør koordinert respons på cyberangrep, infrastruktursvikt eller systemiske stresshendelser. HD01FiU38 utvider EUs clearingforpliktelse til svenske markeder. Samlet adresserer de det finansielle stabilitetsgapet avdekket av den europeiske bankeminikrisen 2023 og de baltiske cyberhendelsene 2024. **Relevanshorisont**: Kritisk ved T+12 (den nye regjeringen må bemanne og operasjonalisere).
+
+#### 4. Valgresultat Driver Divergerende Forløp etter 2026
+Fire koalisjonskonstellasjoner er genuint mulige (se coalition-mathematics.md). Under Scenario A (Tidö-fortsettelse) akselereres sikkerhetskonsolideringen og e-ID-implementeringen holder kurs. Under Scenario B (S-ledet blokkovergang) opprettholdes sikkerhetslover men innvandringsrettshåndhevelsen mykes opp. Under Scenario C (S+C+L regnbue) kan digital styringsreform bli forsinket. Under Scenario D (hengt Riksdag/mindretallskoalisjon) faller implementeringsfeasibilitet for kompleks lovgivning markant. **Sannsynlighetsfordeling**: A=32%, B=38%, C=18%, D=12% per 2026-05-10.
+
+---
+
+### Prioriterte Etterretningskrav (PIR)
+
+| ID | Spørsmål | Horisontband | Status |
+|----|----------|-------------|--------|
+| PIR-YA-2026-001 | Vil Tidö-koalisjonen beholde et fungerende flertall etter 13. sep.? | T+129 | ÅPEN |
+| PIR-YA-2026-002 | Hvordan vil HD03267 og JuU32 sikkerhetslover operasjonaliseres post-valg? | T+180 | ÅPEN |
+| PIR-YA-2026-003 | Hvilken tidslinje oppstår for statlig e-ID driftsetting? | T+90–T+365 | ÅPEN |
+| PIR-YA-2026-004 | Vil den nye finanskrisehåndteringsfunksjonen bli tilstrekkelig bemannet? | T+180 | ÅPEN |
+| PIR-YA-2026-005 | Hvordan vil den nye regjeringens finanspolitiske holdning interagere med Riksbankens lettelsessyklus? | T+270 | ÅPEN |
+
+---
+
+### Kritisk Advarsel
+
+Konsentrasjonen av stor lovgivning på én enkelt dato (2026-05-10) — fem utvalgsrapporter og tre regjeringsproposisjoner som dekker sikkerhet, finans og digital styring — indikerer **strategisk lovgivningstiming 129 dager før valget**. Dette er karakteristisk for sluttfasekonsolidering utformet for å presentere velgere med en ferdig reformpakke heller enn løfter. Både lovgivningssubstansen og den politiske signalgivningen er analytisk signifikant for ettårsutsikten.
+
+---
+
+### Tidssensitive Indikatorer
+
+- **T+14**: Lagrådet forventes å svare om HD03267 (sikkerhetsutvisning) — overvåk konstitusjonelle utfordringer
+- **T+30**: Budsjett Vårproposisjon (Vårändringsbudget) — siste Tidö-finanspolitiske signal
+- **T+60**: Formell valgkamp starter — koalisjonsaritmetikken skjerpes
+- **T+90**: Siste meningsmålinger før kampanjetaushet — siste stabile mandatvurdering
+- **T+129**: Valgdag 2026-09-13
+- **T+160**: Koalisjonsforhandlinger sannsynligvis løst eller kollapset
+
+---
+
+### Økonomisk Kontekst (IMF WEO apr-2026)
+
+- BNP-vekst 2026: +1,8% (moderat bedring fra avmatningen 2024–25)
+- Inflasjon: +1,7% (nærmer seg Riksbankens 2%-mål)
+- Statsgjeld: ~38,2% BNP (sterk finanspolitisk posisjon)
+- Riksbankens rente: 2,25% (lettelsessyklus nær bunn)
+
+⚠️ *IMF SDMX-endepunkt degradert per 2026-05-10T11:08:00Z. WEO/FM Datamapper brukt. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_sv.md -->
+
+# 2026-05-10 · 365-dagars Horisont · Valnärhet AKTIV
+
+**Klassificering**: OFFENTLIG | **Arbetsflöde**: news-year-ahead | **Val**: 2026-09-13 (T+129)
+**IMF-vintage**: WEO apr-2026 | **Riksmöte**: 2025/26 (avslutningsfas)
+
+---
+
+### Underrättelsesammanfattning
+
+Sverige befinner sig i den mest komprimerade politisk-legislativa cykeln sedan EU-inträdet. Med riksdagsvalet 129 dagar bort (13 september 2026) genomför Tidö-koalitionen under statsminister Ulf Kristersson en avslutande lagstiftningssprint som kommer att definiera det post-valsscenariot oavsett vilken koalition som vinner makten. De fem utskottsbetänkandena och tre regeringspropositionerna som publicerades den 10 maj 2026 representerar apex av denna lagstiftningsacceleration — de berör finanssystemets arkitektur, nationell säkerhetslag, digital infrastruktur och gränsöverskridande brottsbekämpning på en enda dag.
+
+Ettårshorisonten (2026-05-10 → 2027-05-07) omfattar Sveriges val, koalitionsbildning och de första månaderna av en ny regering. Analysen bedömer att **politisk osäkerhet är på sin högsta nivå på 12 år**, med fyra troliga koalitionskonfigurationer och inget opinionsdominerande utfall.
+
+---
+
+### Viktigaste Resultat
+
+#### 1. Säkerhetsstatskonsolideringen Är Nästan Slutförd
+Tidö-regeringen har genomfört Sveriges mest omfattande säkerhetsreformpaket på en generation. HD01JuU32 (evenemangsäkerhet), HD03267 (kvalificerade säkerhetshot — utländska medborgare), HD01JuU34 (nordisk kriminell brottsbekämpning), HD01JuU39 (psykologiskt våld) och HD03263 (återvändandeverkställighet) representerar sammantaget en strukturell förändring av Sveriges säkerhetsarkitektur. Dessa lagar kommer att vara svåra för vilken efterföljande regering som helst att ändra. **Framåtprobabilitet**: 85% att dessa lagar kvarstår intakta till 2027-05-07 oavsett valutfall.
+
+#### 2. Digital Suveränitet är Nu Lagstadgad
+HD03250 (En statlig e-legitimation) skapar en ny statlig e-ID-infrastruktur förvaltad av en utsedd myndighet. Kombinerat med HD03261 (utökade folkbokföringsbefogenheter för Skatteverket) bygger Sverige en statscentrisk digital identitetsstack. Detta kommer att omforma myndighetsborgarkommunikationen, valregistreringsverifieringen och integriteten i välfärdsutbetalningar. **Implementeringsrisk**: Hög (tidslinje T+12–24 månader för fullständig utrullning; Lagrådets remiss avvaktas per 2026-05-10).
+
+#### 3. Finansiell Arkitektur Ombyggd för Nya Risker
+HD01FiU37 skapar en ny operativ krishanteringsfunktion i den svenska finanssektorn — en BRRD-angränsande mekanism som möjliggör samordnad respons på cyberattacker, infrastrukturfel eller systemiska stresshändelser. HD01FiU38 utvidgar EU:s clearingkrav till svenska marknader. Tillsammans adresserar de det finansiella stabilitetsgap som avslöjades av Europeiska bankingminikrisen 2023 och Baltiska cyberincidenterna 2024. **Relevanshorisont**: Kritisk vid T+12 (den nya regeringen måste bemanna och operationalisera).
+
+#### 4. Valresultat Driver Divergerande Spår efter 2026
+Fyra koalitionskonfigurationer är genuint möjliga (se coalition-mathematics.md). Under Scenario A (Tidö-fortsättning) accelererar säkerhetskonsolideringen och e-ID-implementationen håller kurs. Under Scenario B (S-ledd blockseger) upprätthålls säkerhetslagar men invandringsverkställigheten mjukas upp. Under Scenario C (S+C+L regnbåge) kan digital styrningsreform försenas. Under Scenario D (hängt Riksdag/minoritetskoalition) sjunker implementeringsfeasibiliteten för komplex lagstiftning kraftigt. **Sannolikhetsfördelning**: A=32%, B=38%, C=18%, D=12% per 2026-05-10.
+
+---
+
+### Prioriterade Underrättelsekrav (PIR)
+
+| ID | Fråga | Horisontband | Status |
+|----|----------|-------------|--------|
+| PIR-YA-2026-001 | Kommer Tidö-koalitionen att bibehålla en fungerande majoritet efter 13 sep? | T+129 | ÖPPEN |
+| PIR-YA-2026-002 | Hur kommer HD03267 och JuU32 säkerhetslagar att operationaliseras post-val? | T+180 | ÖPPEN |
+| PIR-YA-2026-003 | Vilken tidslinje uppstår för statlig e-ID-driftsättning? | T+90–T+365 | ÖPPEN |
+| PIR-YA-2026-004 | Kommer den nya finanskrishanterings­funktionen att bemannas tillräckligt? | T+180 | ÖPPEN |
+| PIR-YA-2026-005 | Hur interagerar den nya regeringens finansiella hållning med Riksbankens lättnadscykel? | T+270 | ÖPPEN |
+
+---
+
+### Kritisk Varning
+
+Koncentrationen av stor lagstiftning på ett enda datum (2026-05-10) — fem utskottsbetänkanden och tre regeringspropositioner som täcker säkerhet, finans och digital styrning — indikerar **strategisk lagstiftningstidpunkt 129 dagar före valet**. Detta är karaktäristiskt för slutfasens konsolidering utformad för att presentera väljare med ett färdigt reformpaket snarare än löften. Både det lagstiftningssubstantiella och den politiska signalgivningen är analytiskt signifikanta för ettårsutsikten.
+
+---
+
+### Tidskänsliga Indikatorer
+
+- **T+14**: Lagrådet förväntas svara om HD03267 (säkerhetsutvisning) — bevaka konstitutionella utmaningar
+- **T+30**: Budget Vårproposition (Vårändringsbudget) — sista Tidö-finanspolitiska signal
+- **T+60**: Formell valrörelse startar — koalitionsaritmetiken skärps
+- **T+90**: Slutliga opinionsundersökningar innan kampanjstillhet — senaste stabila bedömning av mandatfördelning
+- **T+129**: Valdag 2026-09-13
+- **T+160**: Koalitionsförhandlingar troligen lösta eller kollapsat
+
+---
+
+### Ekonomisk Kontext (IMF WEO apr-2026)
+
+- BNP-tillväxt 2026: +1,8% (måttlig återhämtning från avmattningen 2024–25)
+- Inflation: +1,7% (nærmer sig Riksbankens 2%-mål)
+- Statsskuld: ~38,2% BNP (stark finanspolitisk ställning)
+- Riksbankens ränta: 2,25% (lättnadscykel nær bottenläge)
+
+⚠️ *IMF SDMX-ändpunkten degraderad per 2026-05-10T11:08:00Z. WEO/FM Datamapper användes. economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_zh.md -->
+
+# 2026-05-10 · 365天视野 · 选举临近激活
+
+**分类**: 公开 | **工作流程**: news-year-ahead | **选举**: 2026-09-13 (T+129)
+**IMF数据期**: WEO 2026年4月 | **议会届次**: 2025/26 (收尾阶段)
+
+---
+
+### 情报摘要
+
+瑞典正处于自加入欧盟以来最为密集的政治立法周期。距离议会选举仅剩129天（2026年9月13日），乌尔夫·克里斯特松总理领导的蒂多联合政府正在执行最终立法冲刺，无论哪个联合政府赢得政权，这一冲刺都将决定选后政治格局。2026年5月10日发布的五份委员会报告和三份政府提案代表了这一立法加速的顶点——在同一天触及金融系统架构、国家安全法、数字基础设施和跨境执法。
+
+年度视野（2026-05-10 → 2027-05-07）涵盖瑞典选举、联合政府组建以及新政府的头几个月。分析评估认为**政治不确定性处于12年来最高水平**，有四种可行的联合构型，且民调中没有占主导地位的结果。
+
+---
+
+### 主要发现
+
+#### 1. 安全国家强化几近完成
+蒂多政府推出了一代人以来最全面的瑞典安全改革方案。HD01JuU32（活动安全）、HD03267（合格安全威胁——外国公民）、HD01JuU34（斯堪的纳维亚刑事执法）、HD01JuU39（心理暴力）和HD03263（遣返执法）共同代表了瑞典安全架构的结构性转变。这些法律对任何继任政府来说都将难以撤销。**前瞻概率**：无论选举结果如何，这些法律在2027-05-07之前保持有效的概率为85%。
+
+#### 2. 数字主权现已法律化
+HD03250（国家电子身份证）建立了由指定机构管理的新国家身份基础设施。结合HD03261（税务局扩大的人口登记权力），瑞典正在构建国家主导的数字身份堆栈。这将改变当局与公民的通信、选民登记核实和社会福利完整性。**实施风险**：高（全面部署时间线为T+12—24个月；截至2026-05-10拉格洛德转介审查中）。
+
+#### 3. 金融架构针对新风险重建
+HD01FiU37在瑞典金融部门建立新的运营危机管理职能——一种BRRD相邻机制，可实现对网络攻击、基础设施故障或系统性压力事件的协调响应。HD01FiU38将欧盟清算义务扩展至瑞典市场。两者共同应对2023年欧洲银行小危机和2024年波罗的海网络事件所暴露的金融稳定漏洞。**相关视野**：在T+12时至关重要（新政府必须配置人员并使其运作）。
+
+#### 4. 选举结果将绘制2026年后的分岔路径
+四种联合构型都是真正可行的（参见coalition-mathematics.md）。情景A（蒂多延续）下安全强化加速，eID实施保持正轨。情景B（S主导的集团胜利）下安全法律得以维持，但移民立场有所软化。情景C（S+C+L彩虹）下数字治理改革可能推迟。情景D（悬挂议会/少数联合政府）下复杂立法的实施可行性急剧下降。**概率分布**：截至2026-05-10，A=32%，B=38%，C=18%，D=12%。
+
+---
+
+### 优先情报需求 (PIR)
+
+| ID | 问题 | 视野区间 | 状态 |
+|----|------|--------|------|
+| PIR-YA-2026-001 | 蒂多联合政府能否在9月13日后维持可运作的多数席位？ | T+129 | 未解决 |
+| PIR-YA-2026-002 | 安全法HD03267和JuU32如何在选举后实施？ | T+180 | 未解决 |
+| PIR-YA-2026-003 | 国家eID部署的时间线如何出现？ | T+90–T+365 | 未解决 |
+| PIR-YA-2026-004 | 新金融危机管理职能是否会获得充足的人员配置？ | T+180 | 未解决 |
+| PIR-YA-2026-005 | 新政府的财政立场将如何与瑞典央行宽松周期互动？ | T+270 | 未解决 |
+
+---
+
+### 关键警告
+
+重要立法集中于同一日期（2026-05-10）——涵盖安全、金融和数字治理的五份委员会报告和三份政府提案——表明**距选举129天的战略立法时机**。这是任期末强化的特征，旨在向选民呈现完成的改革方案而非承诺。立法内容和政治信号传递对年度展望都具有重要分析意义。
+
+---
+
+### 时间敏感指标
+
+- **T+14**: 拉格洛德预计将回应HD03267（安全驱逐）——追踪宪法挑战
+- **T+30**: 春季预算修正案（Vårändringsbudget）——蒂多最后的预算信号
+- **T+60**: 正式选举活动开始——联合计算清晰化
+- **T+90**: 选举静默期前最后一次民调——最新稳定席位分布
+- **T+129**: 选举日2026-09-13
+- **T+160**: 联合谈判可能已解决或崩溃
+
+---
+
+### 经济背景（IMF WEO 2026年4月）
+
+- 2026年GDP增长：+1.8%（从2024—25年放缓中温和复苏）
+- 通货膨胀：+1.7%（接近瑞典央行2%目标）
+- 政府债务：GDP约38.2%（稳健的财政状况）
+- 瑞典央行利率：2.25%（宽松周期接近低点）
+
+⚠️ *2026-05-10T11:08:00Z时IMF SDMX端点降级。WEO/FM Datamapper已使用。economicProvenance: provider=imf, dataflow=WEO, vintage=2026-04, retrieved_at=2026-05-10T11:08:00Z*
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 25 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 38 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2867,6 +3841,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

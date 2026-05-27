@@ -3,7 +3,7 @@ date: 2026-05-15
 subfolder: committeeReports
 slug: 2026-05-15-committeeReports
 source_folder: analysis/daily/2026-05-15/committeeReports
-generated_at: 2026-05-25T15:59:54.087Z
+generated_at: 2026-05-27T07:35:33.805Z
 language: en
 layout: article
 ---
@@ -1543,9 +1543,6 @@ flowchart LR
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling | **Datum**: 2026-05-15 | **Klassifizierung**: PUBLIC  
-**Konfidenz**: HIGH [B2] | **Lauf-ID**: news-committee-reports-2026-05-15
-
 ### BLUF
 
 Schwedens Verfassungsausschuss (KU) hat zwei miteinander verbundene Verfassungsänderungen vorgelegt, die eine 2/3-Supermehrheit erfordern: eine, die das Abtreibungsrecht in RF Kap. 2 verankert und reproduktive Rechte formal nur mit derselben erhöhten Schwelle umkehrbar macht; und eine, die die staatliche Macht zur Einschränkung der Vereinigungsfreiheit und zum Entzug der Staatsbürgerschaft für terror- und organisierter Kriminalität verbundene Personen ausdehnt. Gleichzeitig treibt der Zivilausschuss (CU) eine umstrittene Mietmarktderegulierung (HD01CU31) voran, die 800.000 mietpreisgebundene Mieter Marktpreisen aussetzen würde, und der Justizausschuss (JuU) kriminalisiert psychische Gewalt (HD01JuU39). Zusammen signalisieren diese einen aktiven parlamentarischen Endspurt der Sitzungsperiode mit verfassungs- und sozialpolitischen Konsequenzen, die sich in den Wahlzyklus 2026 erstrecken.
@@ -1602,9 +1599,6 @@ flowchart LR
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_es.md -->
-
-**Autor**: James Pether Sörling | **Fecha**: 2026-05-15 | **Clasificación**: PUBLIC  
-**Confianza**: HIGH [B2] | **ID de ejecución**: news-committee-reports-2026-05-15
 
 ### BLUF
 
@@ -1846,9 +1840,6 @@ flowchart LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_ja.md -->
 
-**著者**: ジェームズ・ペサー・ソーリング | **日付**: 2026-05-15 | **分類**: 公開  
-**信頼度**: HIGH [B2] | **実行ID**: news-committee-reports-2026-05-15
-
 ### BLUF
 
 スウェーデン憲法委員会（KU）は、3分の2の超多数決を要する2つの相互に関連した憲法改正案を提出した。1つは中絶権を統治法（RF）第2章に明記し、生殖の権利を同じ高い閾値でのみ正式に覆せるものとするもの、もう1つはテロや組織犯罪に関与した者の結社の自由を制限し市民権を剥奪する国家権力を拡大するものである。同時に、市民問題委員会（CU）は論争的な賃貸市場規制緩和（HD01CU31）を推進しており、これにより家賃規制下の80万人以上の入居者が市場価格にさらされることになる。司法委員会（JuU）は心理的暴力を犯罪化する（HD01JuU39）。これらを合わせると、2026年選挙サイクルにまで及ぶ憲法的・社会政策的影響を持つ活発な議会セッション終盤の追い込みを示している。
@@ -1905,9 +1896,6 @@ flowchart LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_ko.md -->
-
-**저자**: 제임스 페서 솔링 | **날짜**: 2026-05-15 | **분류**: 공개  
-**신뢰도**: HIGH [B2] | **실행 ID**: news-committee-reports-2026-05-15
 
 ### BLUF
 

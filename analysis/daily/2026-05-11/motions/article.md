@@ -3,7 +3,7 @@ date: 2026-05-11
 subfolder: motions
 slug: 2026-05-11-motions
 source_folder: analysis/daily/2026-05-11/motions
-generated_at: 2026-05-25T15:59:53.842Z
+generated_at: 2026-05-27T07:35:33.528Z
 language: en
 layout: article
 ---
@@ -91,6 +91,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2106,13 +2119,773 @@ All significance scores in this analysis reflect DIW-adjusted values. Raw scores
 | PIR-04 | C coalition signal post-election | Party statements | CRITICAL |
 | PIR-05 | New voteringar for MJU/JuU | riksdag open data | HIGH |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص تنفيذي — مقترحات المعارضة — 2026-05-11
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **الثقة**: عالية  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### الملخص (Bottom Line Up Front)
+
+ثمانية مقترحات معارضة مُقدَّمة ضد اقتراحين حكوميين تكشف انقسامات عميقة بين الأحزاب حول إلغاء القيود على قطاع الغابات وجرائم الأحداث مع 125 يومًا حتى الانتخابات. في الغابات (Prop. 2025/26:242)، تُظهر معارضة من خمسة أحزاب — V وS وC وMP لأسباب أيديولوجية مختلفة، وSD يسعى إلى تعديلات محددة — أن شريك الائتلاف نفسه SD يجعل دعمه مشروطًا. في جرائم الأحداث (Prop. 2025/26:246)، تُجمع تحالف عابر للكتل من V وC وMP على رفض خفض سن المسؤولية الجنائية إلى 13 عامًا، مستشهدين بأبحاث رعاية الطفل والنموذج السويدي لإعادة تأهيل الشباب. كلا الملفين يُنشّط الشقوق الانتخابية المحورية: البيئة مقابل الإنتاج الاقتصادي، والعدالة الجنائية العقابية مقابل التأهيلية.
+
+---
+
+### ثلاثة قرارات يدعمها هذا المستند
+
+1. **قرار النشر**: كلا مجموعتا المقترحات تستحقان معالجة تحريرية بارزة — نطاق المعارضة الواسع، والامتداد عبر اللجان (MJU + JuU)، والتأطير في العام الانتخابي ترفع الأهمية إلى **8/10** (معدَّل DIW: مضاعف 1.5× مُطبَّق).
+2. **تأطير التغطية**: البدء بالوحدة العابرة للكتل حول سن المسؤولية الجنائية (V+C+MP مقابل الحكومة) كإشارة الأكثر غرابة؛ ثانويًا حول تشتت الغابات.
+3. **المراقبة الاستشرافية**: مراقبة مداولات لجنتي MJU وJuU (على الأرجح يونيو–سبتمبر 2026)؛ الدعم المشروط لـSD في الغابات هو مشكلة حكومية محتملة إذا لم تُمنح الاستثناءات.
+
+---
+
+### القراءة في 60 ثانية (8 نقاط)
+
+- 📋 **8 مقترحات، اقتراحان، 5 أحزاب** — أكبر مجموعة مقترحات ليوم واحد في MJU/JuU في هذه الدورة التشريعية.
+- 🌲 **الغابات (242)**: V وMP يريدان رفضًا كاملًا؛ S يريد توقفًا لتحليل الأثر؛ C يريد حزمة إنتاج أوسع؛ SD يدعم بشكل عام لكنه يسعى إلى إعفاءات استخدام الأراضي. الأغلبية الاسمية لـMJU الحكومية تحت ضغط.
+- ⚖️ **جرائم الأحداث (246)**: V وC وMP يرفضون جميعًا خفض سن المسؤولية الجنائية إلى 13 عامًا — مستشهدين باتفاقية حقوق الطفل، والتقليد البحثي السويدي، وفعالية التأهيل. المعارضة الوسطية غير معتادة.
+- 🗳️ **القرب الانتخابي**: مع انتخابات سبتمبر 2026، تعمل هذه المقترحات بوصفها تموضعًا حملاتيًا بقدر ما هي استراتيجية تشريعية؛ انفصال حزب الوسط (C) عن الحكومة في السياسة الجنائية يُشير إلى التنافس على الناخبين المعتدلين.
+- 📊 **السياق الاقتصادي** (IMF WEO-2026-04): توقع نمو الناتج المحلي الإجمالي السويدي 1.8٪ لعام 2026؛ قطاع الغابات ~90,000 وظيفة، 1.0٪ من الناتج المحلي الإجمالي — الحكومة تُؤطر إلغاء القيود كرافعة نمو؛ المعارضة كخطر على التنوع البيولوجي.
+- 🌍 **مخاطر الامتثال للاتحاد الأوروبي**: مقترحات V وS وMP تستشهد صراحةً بقانون استعادة الطبيعة الأوروبي وتوجيه الموائل — في حال تبنيها، تُخاطر الحكومة بإجراءات انتهاك.
+- 🔄 **لا voteringar سابقة** لهذه المجموعات اللجنية المحددة في الـriksmöte الحالي؛ الفراغ الجديد يُقيّد التحليل الكمي للسوابق.
+- ⏰ **ضغط الوقت**: تقارير اللجان متوقعة في سبتمبر 2026 — في قلب نافذة حملة الانتخابات.
+
+---
+
+### أبرز المحفزات الاستشرافية
+
+> **تصويت لجنة MJU على Prop. 2025/26:242** — متوقع سبتمبر 2026. إذا سحب SD دعمه المشروط بسبب طلب إعفاء أراضٍ غير مُلبَّى، تُخاطر الحكومة بهزيمة في تحرير الغابات الرئيسي. مراقبة تصريحات Martin Kinnunen من SD وجلسات الاستماع اللجنية اعتبارًا من يونيو 2026.
+
+---
+
+### مراسي الأدلة
+
+| الادعاء | الدليل | تاريخ الاسترداد | الثقة |
+|---------|--------|----------------|-------|
+| V يرفض مقترح الغابات إلا الاستئنافات | HD024141 (dok_id)، الفقرة 1 | 2026-05-11 | HIGH |
+| MP يرفض مقترح الغابات كليًا | HD024147 (dok_id)، قسم الاقتراح | 2026-05-11 | HIGH |
+| S يطلب تحليل الأثر قبل التبني | HD024144 (dok_id)، قسم الاقتراح | 2026-05-11 | HIGH |
+| C يطلب حزمة الإنتاج | HD024145 (dok_id)، التبرير | 2026-05-11 | HIGH |
+| SD يدعم لكنه يريد إعفاءات الأراضي | HD024143 (dok_id)، الاقتراح 1 | 2026-05-11 | HIGH |
+| V يرفض سن المسؤولية الجنائية 13 عامًا | HD024142 (dok_id)، الاقتراح | 2026-05-11 | HIGH |
+| C يرفض سن المسؤولية الجنائية 13 عامًا | HD024146 (dok_id)، الاقتراح | 2026-05-11 | HIGH |
+| MP يرفض 13 عامًا وتعديلات المادة 29 | HD024148 (dok_id)، الاقتراح | 2026-05-11 | HIGH |
+| نمو الناتج المحلي الإجمالي السويدي 1.8٪ 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| قطاع الغابات 90,000 وظيفة | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_da.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **Sikkerhed**: HØJ  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### Konklusion (Bottom Line Up Front)
+
+Otte oppositionsforslag indgivet mod to regeringsforslag afslører dybe tværpartipolitiske brud om skovlig deregulering og ungdomskriminalitet med 125 dage til valget. Om skovbrug (Prop. 2025/26:242) udgør en fempartis opposition — V, S, C, MP hver med forskellige ideologiske begrundelser, SD søger målrettede ændringer — at selv koalitionspartneren SD betinger sin støtte. Om ungdomslovovertrædere (Prop. 2025/26:246) afviser en tværpolitisk alliance bestående af V, C og MP enstemmigt at sænke den strafferetlige minimumsalder til 13 år, med henvisning til børnerettighedsforskning og den svenske model for ungdomsrehabilitering. Begge sager aktiverer centrale valgårskløfter: miljø kontra økonomisk produktion, og straffende kontra rehabiliterende kriminalpolitik.
+
+---
+
+### Tre beslutninger dette brev støtter
+
+1. **Publiceringsbeslutning**: Begge forslagsklustre fortjener lederartikelbehandling — betydelig oppositionsbredde, tværudvalgs rækkevidde (MJU + JuU) og valgårsramme løfter signifikansen til **8/10** (DIW-justeret: 1,5× multiplikator anvendt).
+2. **Dækningsramme**: Indled med den tværpolitiske enhed om kriminalitetsalder (V+C+MP versus regering) som det mere kontraintuitive signal; sekundær om skovfragmenteringen.
+3. **Fremtidig overvågning**: Overvåg MJU- og JuU-udvalgsovervejelser (sandsynligvis juni–september 2026); SD's betingede skovstøtte er et potentielt regeringsproblem, hvis undtagelserne ikke indrømmes.
+
+---
+
+### 60-sekunders læsning (8 punkter)
+
+- 📋 **8 forslag, 2 propositioner, 5 partier** — bredeste enkeltdagsforslag i MJU/JuU denne valgperiode.
+- 🌲 **Skov (242)**: V og MP vil have total afvisning; S vil have pause til konsekvensanalyse; C vil have en bredere produktionspakke; SD støtter overvejende men søger arealanvendelsesfritagelser. Regeringens nominelle MJU-flertal er under pres.
+- ⚖️ **Ungdomskriminalitet (246)**: V, C og MP afviser alle sænkning af strafferetlig alder til 13 år — med henvisning til UNCRC, svensk forskningstradition og rehabiliteringseffektivitet. Centristisk opposition er usædvanlig.
+- 🗳️ **Valnærhed**: Med september 2026-valget fungerer disse forslag som kampagnepositioning ligeså meget som lovgivningsstrategi; Centerns adskillelse fra regeringen i kriminalpolitik signalerer konkurrence om moderate vælgere.
+- 📊 **Økonomisk kontekst** (IMF WEO-2026-04): Svensk BNP-vækstprognose 1,8 % for 2026; skovsektor ~90 000 job, 1,0 % BNP — regering rammer deregulering ind som vækstlift; opposition som biodiversitetsrisiko.
+- 🌍 **EU-overholdelsesrisiko**: V, S og MP-forslag citerer udtrykkeligt EU's naturgenopretningslov og habitatdirektivet — hvis vedtaget, risikerer regeringen overtrædelsesprocedure.
+- 🔄 **Ingen tidligere afstemninger** for disse specifikke udvalgsklynger i nuværende riksmöte; nyt riksmöte-gap begrænser kvantitativ præcedens-analyse.
+- ⏰ **Tidspres**: Udvalgsrapporter forventet september 2026 — midt i valgkampens vindue.
+
+---
+
+### Vigtigste fremtidige udløser
+
+> **MJU-udvalgets afstemning om Prop. 2025/26:242** — forventet september 2026. Hvis SD trækker betinget støtte på grund af uopfyldt krav om arealsundtagelse, risikerer regeringen nederlag på sin flagskibs skovliberalisering. Overvåg SD's Martin Kinnunens offentlige udtalelser og udvalgs-høringer fra juni 2026.
+
+---
+
+### Evidensankre
+
+| Påstand | Bevis | Hentet | Sikkerhed |
+|---------|-------|--------|------------|
+| V afviser skovproposition undtagen klager | HD024141 (dok_id), afsnit 1 | 2026-05-11 | HIGH |
+| MP afviser skovproposition helt | HD024147 (dok_id), forslagssektion | 2026-05-11 | HIGH |
+| S kræver konsekvensanalyse før vedtagelse | HD024144 (dok_id), forslagssektion | 2026-05-11 | HIGH |
+| C kræver produktionspakke | HD024145 (dok_id), begrundelse | 2026-05-11 | HIGH |
+| SD støtter men vil have arealsundtagelser | HD024143 (dok_id), forslag 1 | 2026-05-11 | HIGH |
+| V afviser 13-årig strafferetlig alder | HD024142 (dok_id), forslag | 2026-05-11 | HIGH |
+| C afviser 13-årig strafferetlig alder | HD024146 (dok_id), forslag | 2026-05-11 | HIGH |
+| MP afviser 13-årig og Art.29-ændringer | HD024148 (dok_id), forslag | 2026-05-11 | HIGH |
+| Sveriges BNP-vækst 1,8 % 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| Skovsektor 90 000 job | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_de.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **Konfidenz**: HOCH  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### Schlussfolgerung (Bottom Line Up Front)
+
+Acht Oppositionsanträge, die gegen zwei Regierungsvorschläge eingereicht wurden, offenbaren tiefe Spaltungen zwischen den Parteien in Bezug auf Waldderegulierung und jugendliche Straftäter mit 125 Tagen bis zur Wahl. Bei der Forstwirtschaft (Prop. 2025/26:242) bildet eine Fünf-Parteien-Opposition — V, S, C, MP aus verschiedenen ideologischen Gründen, SD sucht gezielte Änderungen — dass selbst der Koalitionspartner SD seine Unterstützung konditioniert. Bei jugendlichen Straftätern (Prop. 2025/26:246) lehnt eine blockübergreifende Allianz aus V, C und MP einstimmig die Senkung des Strafmündigkeitsalters auf 13 Jahre ab, mit Verweis auf Kindeswohlforschung und das schwedische Modell der Jugendrehabilitation. Beide Akten aktivieren zentrale Wahljahrsgräben: Umwelt versus wirtschaftliche Produktion und bestrafende versus rehabilitative Kriminalpolitik.
+
+---
+
+### Drei Entscheidungen, die dieser Bericht unterstützt
+
+1. **Veröffentlichungsentscheidung**: Beide Antragshäufungen verdienen Leitartikelbehandlung — erhebliche Oppositionsbreite, Reichweite über mehrere Ausschüsse (MJU + JuU) und Wahljahrseinfassung heben die Bedeutung auf **8/10** (DIW-bereinigt: 1,5× Multiplikator angewendet).
+2. **Berichtsrahmen**: Beginnen Sie mit der blockinternen Einheit zum Strafmündigkeitsalter (V+C+MP versus Regierung) als das kontraintuitivere Signal; sekundär zur Waldfragmentierung.
+3. **Vorausschauende Beobachtung**: Verfolgen Sie die MJU- und JuU-Ausschussberatungen (voraussichtlich Juni–September 2026); SDs bedingte Waldunterstützung ist ein potenzielles Regierungsproblem, wenn Ausnahmen nicht gewährt werden.
+
+---
+
+### 60-Sekunden-Lektüre (8 Punkte)
+
+- 📋 **8 Anträge, 2 Propositionen, 5 Parteien** — breiteste Einzeltages-Antragshäufung in MJU/JuU dieser Legislaturperiode.
+- 🌲 **Forstwirtschaft (242)**: V und MP wollen vollständige Ablehnung; S will eine Pause für die Folgenabschätzung; C will ein breiteres Produktionspaket; SD unterstützt größtenteils, sucht aber Flächennutzungsausnahmen. Die nominelle MJU-Mehrheit der Regierung steht unter Druck.
+- ⚖️ **Jugendkriminalität (246)**: V, C und MP lehnen alle die Absenkung des Strafmündigkeitsalters auf 13 Jahre ab — unter Berufung auf UNCRC, schwedische Forschungstradition und Rehabilitationswirksamkeit. Zentristische Opposition ist ungewöhnlich.
+- 🗳️ **Wahlnähe**: Angesichts der Wahl im September 2026 fungieren diese Anträge ebenso als Wahlkampfpositionierung wie als Gesetzgebungsstrategie; die Abkehr der Zentrumspartei (C) von der Regierung in der Kriminalpolitik signalisiert Wettbewerb um moderate Wähler.
+- 📊 **Wirtschaftlicher Kontext** (IMF WEO-2026-04): Schwedische BIP-Wachstumsprognose 1,8 % für 2026; Forstsektor ~90 000 Arbeitsplätze, 1,0 % BIP — Regierung rahmt Deregulierung als Wachstumshebel; Opposition als Biodiversitätsrisiko.
+- 🌍 **EU-Konformitätsrisiko**: V, S und MP-Anträge zitieren ausdrücklich das EU-Naturwiederherstellungsgesetz und die Habitatrichtlinie — wenn angenommen, riskiert die Regierung ein Vertragsverletzungsverfahren.
+- 🔄 **Keine früheren Voteringar** für diese spezifischen Ausschussgruppen im aktuellen riksmöte; neue riksmöte-Lücke begrenzt quantitative Präzedenzfallanalyse.
+- ⏰ **Zeitdruck**: Ausschussberichte für September 2026 erwartet — mitten im Wahlkampffenster.
+
+---
+
+### Wichtigster künftiger Auslöser
+
+> **MJU-Ausschussabstimmung über Prop. 2025/26:242** — erwartet September 2026. Wenn SD die bedingte Unterstützung wegen nicht erfüllter Flächenausnahmeforderungen zurückzieht, riskiert die Regierung eine Niederlage bei ihrer Vorzeige-Waldliberalisierung. Verfolgen Sie die öffentlichen Aussagen von SDs Martin Kinnunen und Ausschussanhörungen ab Juni 2026.
+
+---
+
+### Belegnachweise
+
+| Behauptung | Nachweis | Abgerufen | Konfidenz |
+|------------|---------|-----------|------------|
+| V lehnt Waldproposition außer Beschwerden ab | HD024141 (dok_id), Absatz 1 | 2026-05-11 | HIGH |
+| MP lehnt Waldproposition vollständig ab | HD024147 (dok_id), Vorschlagssektion | 2026-05-11 | HIGH |
+| S fordert Folgenabschätzung vor Annahme | HD024144 (dok_id), Vorschlagssektion | 2026-05-11 | HIGH |
+| C fordert Produktionspaket | HD024145 (dok_id), Begründung | 2026-05-11 | HIGH |
+| SD unterstützt, will aber Flächenausnahmen | HD024143 (dok_id), Vorschlag 1 | 2026-05-11 | HIGH |
+| V lehnt 13-jähriges Strafmündigkeitsalter ab | HD024142 (dok_id), Vorschlag | 2026-05-11 | HIGH |
+| C lehnt 13-jähriges Strafmündigkeitsalter ab | HD024146 (dok_id), Vorschlag | 2026-05-11 | HIGH |
+| MP lehnt 13-jähriges und Art.29-Änderungen ab | HD024148 (dok_id), Vorschlag | 2026-05-11 | HIGH |
+| Schwedisches BIP-Wachstum 1,8 % 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| Forstsektor 90 000 Arbeitsplätze | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_es.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **Confianza**: ALTA  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### Síntesis (Bottom Line Up Front)
+
+Ocho mociones de oposición presentadas contra dos propuestas gubernamentales revelan profundas fracturas interpartidistas sobre la desregulación forestal y la delincuencia juvenil con 125 días para las elecciones. En silvicultura (Prop. 2025/26:242), una oposición de cinco partidos — V, S, C, MP cada uno por razones ideológicas diferentes, SD buscando modificaciones específicas — demuestra que incluso el socio de coalición SD condiciona su apoyo. En delincuentes juveniles (Prop. 2025/26:246), una alianza inter-bloques de V, C y MP rechaza unánimemente rebajar la edad de responsabilidad penal a 13 años, citando investigaciones sobre bienestar infantil y el modelo sueco de rehabilitación juvenil. Ambos expedientes activan las fisuras electorales centrales: medio ambiente contra producción económica, y justicia penal punitiva contra rehabilitadora.
+
+---
+
+### Tres decisiones que apoya este documento
+
+1. **Decisión de publicación**: Ambos clusters de mociones merecen tratamiento editorial de primer plano — amplitud de oposición significativa, alcance inter-comisiones (MJU + JuU) y encuadre en año electoral elevan la significación a **8/10** (ajustado DIW: multiplicador 1,5× aplicado).
+2. **Encuadre de cobertura**: Comenzar con la unidad inter-bloques sobre la edad penal (V+C+MP versus gobierno) como la señal más contraintuitiva; secundariamente sobre la fragmentación forestal.
+3. **Vigilancia prospectiva**: Monitorizar las deliberaciones de las comisiones MJU y JuU (probablemente junio–septiembre 2026); el apoyo condicional del SD al bosque es un problema gubernamental potencial si no se conceden las exenciones.
+
+---
+
+### Lectura en 60 segundos (8 puntos)
+
+- 📋 **8 mociones, 2 proposiciones, 5 partidos** — el cluster de mociones de un solo día más amplio en MJU/JuU de esta legislatura.
+- 🌲 **Bosques (242)**: V y MP quieren rechazo total; S quiere una pausa para análisis de impacto; C quiere un paquete de producción más amplio; SD apoya en gran medida pero busca exenciones de uso del suelo. La mayoría nominal MJU del gobierno está bajo presión.
+- ⚖️ **Delincuencia juvenil (246)**: V, C y MP rechazan todos la reducción de la edad de responsabilidad penal a 13 años — citando la CDN, la tradición investigadora sueca y la eficacia de la rehabilitación. La oposición centrista es inusual.
+- 🗳️ **Proximidad electoral**: Con las elecciones de septiembre 2026, estas mociones funcionan como posicionamiento de campaña tanto como estrategia legislativa; la separación del Partido del Centro (C) del gobierno en política criminal señala competencia por votantes moderados.
+- 📊 **Contexto económico** (IMF WEO-2026-04): Previsión de crecimiento del PIB sueco 1,8 % para 2026; sector forestal ~90 000 empleos, 1,0 % del PIB — el gobierno enmarca la desregulación como palanca de crecimiento; la oposición como riesgo para la biodiversidad.
+- 🌍 **Riesgo de cumplimiento UE**: Las mociones de V, S y MP citan expresamente la Ley Europea de Restauración de la Naturaleza y la Directiva Hábitats — si se adoptan, el gobierno arriesga un procedimiento de infracción.
+- 🔄 **Sin voteringar previas** para estos clusters de comisiones específicos en el riksmöte actual; el vacío del nuevo riksmöte limita el análisis cuantitativo de precedentes.
+- ⏰ **Presión temporal**: Informes de comisión esperados en septiembre 2026 — exactamente en la ventana de campaña electoral.
+
+---
+
+### Desencadenante prospectivo más importante
+
+> **Votación en comisión MJU sobre Prop. 2025/26:242** — esperada septiembre 2026. Si SD retira el apoyo condicional por una demanda de exención de terrenos no satisfecha, el gobierno enfrenta una derrota en su desregulación forestal insignia. Monitorizar las declaraciones públicas de Martin Kinnunen del SD y las audiencias de comisión desde junio 2026.
+
+---
+
+### Anclajes de evidencia
+
+| Afirmación | Evidencia | Recuperado | Confianza |
+|------------|-----------|-----------|------------|
+| V rechaza la proposición forestal excepto apelaciones | HD024141 (dok_id), párrafo 1 | 2026-05-11 | HIGH |
+| MP rechaza la proposición forestal íntegramente | HD024147 (dok_id), sección de propuesta | 2026-05-11 | HIGH |
+| S exige análisis de impacto antes de la adopción | HD024144 (dok_id), sección de propuesta | 2026-05-11 | HIGH |
+| C exige paquete de producción | HD024145 (dok_id), motivación | 2026-05-11 | HIGH |
+| SD apoya pero quiere exenciones de suelo | HD024143 (dok_id), propuesta 1 | 2026-05-11 | HIGH |
+| V rechaza la edad penal de 13 años | HD024142 (dok_id), propuesta | 2026-05-11 | HIGH |
+| C rechaza la edad penal de 13 años | HD024146 (dok_id), propuesta | 2026-05-11 | HIGH |
+| MP rechaza 13 años y modificaciones Art.29 | HD024148 (dok_id), propuesta | 2026-05-11 | HIGH |
+| Crecimiento del PIB sueco 1,8 % 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| Sector forestal 90 000 empleos | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_fi.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **Luotettavuus**: KORKEA  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### Johtopäätös (Bottom Line Up Front)
+
+Kahdeksan oppositioaloitetta kahtaa hallituksen esitystä vastaan paljastaa syvät puoluerajat ylittävät halkeamat metsän deregulaatiossa ja nuorisorikollisuudessa 125 päivää ennen vaaleja. Metsätaloudesta (Prop. 2025/26:242) viiden puolueen oppositio — V, S, C, MP kukin eri ideologisin perustein, SD hakee kohdennettuja muutoksia — osoittaa, että jopa hallituskumppani SD asettaa tukensa ehdoksi. Nuorisorikollisista (Prop. 2025/26:246) blokittain muodostunut liitto V, C ja MP hylkää yksimielisesti rikosoikeudellisen vastuuiän alentamisen 13 vuoteen vedoten lastensuojelututkimukseen ja ruotsalaiseen nuorisokuntoutusmalliin. Molemmat asiat aktivoivat keskeiset vaalivuoden jakolinjat: ympäristö vastaan taloudellinen tuotanto, ja rankaiseva vastaan kuntouttava kriminaalipolitiikka.
+
+---
+
+### Kolme päätöstä, joita tämä tiedonanto tukee
+
+1. **Julkaisupäätös**: Molemmat aloituskeskittymät ansaitsevat pääkirjoituskäsittelyn — merkittävä oppositioleveys, täärskomiteoiden ulottuvuus (MJU + JuU) ja vaalivuoden kehys nostavat merkittävyyden **8/10**:ään (DIW-korjattu: 1,5× kerroin käytetty).
+2. **Peittämiskehys**: Aloita blokkien välisellä yhtenäisyydellä rikollisuusiässä (V+C+MP vs. hallitus) vastakontraintuiivisimpana signaalina; toissijainen metsän pirstoutumisesta.
+3. **Eteenpäin katsova seuranta**: Seuraa MJU:n ja JuU:n valiokuntaharkintoja (todennäköisesti kesä–syyskuu 2026); SD:n ehdollinen metsätuki on potentiaalinen hallitusongelma, jos poikkeuksia ei myönnetä.
+
+---
+
+### 60 sekunnin lukeminen (8 kohtaa)
+
+- 📋 **8 aloitetta, 2 esitystä, 5 puoluetta** — laajin yksipäiväinen aloiteryhmä MJU:ssa/JuU:ssa tällä vaalikaudella.
+- 🌲 **Metsä (242)**: V ja MP haluavat kokonaisresoluution; S haluaa tauon vaikutusanalyysia varten; C haluaa laajemman tuotantopaketin; SD tukee pääosin mutta hakee maankäyttöpoikkeuksia. Hallituksen nimellinen MJU-enemmistö on paineessa.
+- ⚖️ **Nuorisorikollisuus (246)**: V, C ja MP kaikki hylkäävät rikosoikeudellisen vastuuiän alentamisen 13 vuoteen — vedoten UNCRC:hen, ruotsalaiseen tutkimusperinteeseen ja kuntoutuksen tehokkuuteen. Sentristinen oppositio on harvinaista.
+- 🗳️ **Vaalien läheisyys**: Syyskuun 2026 vaalit huomioon ottaen nämä aloitteet toimivat kampanjapositioinnissa yhtä paljon kuin lainsäädäntöstrategiassa; Keskustan irtautuminen hallituksesta kriminaalipolitiikassa signaloi kilpailua maltillisista äänestäjistä.
+- 📊 **Taloudellinen konteksti** (IMF WEO-2026-04): Ruotsin BKT-kasvuennuste 1,8 % vuodelle 2026; metsäsektori ~90 000 työpaikkaa, 1,0 % BKT — hallitus kehystää deregulaation kasvuvipuna; oppositio biodiversiteettiriskiksi.
+- 🌍 **EU-noudattamisriski**: V, S ja MP-aloitteet siteeraavat nimenomaisesti EU:n luonnon ennallistamislakia ja luontotyyppidirektiiviä — jos hyväksytään, hallitus riskeers rikkomusmenettelyä.
+- 🔄 **Ei aiempia äänestyksiä** näille erityisille valiokuntaryhmille nykyisellä riksmötessä; uuden riksmöten aukko rajoittaa kvantitatiivista ennakkotapausanalyysia.
+- ⏰ **Aikapaine**: Valiokuntakertomukset odotetaan syyskuussa 2026 — täsmälleen vaalikampanja-ikkunassa.
+
+---
+
+### Tärkein tulevaisuuden laukaisin
+
+> **MJU-valiokunnan äänestys Prop. 2025/26:242:sta** — odotettu syyskuu 2026. Jos SD vetää pois ehdollisen tukensa täyttämättömien maankäyttöpoikkeus-vaatimusten vuoksi, hallitus kohtaa tappion lippulaivaansa metsäliberalisaatiossaan. Seuraa SD:n Martin Kinnusenin julkisia lausuntoja ja valiokuntakuulemisia kesäkuusta 2026 alkaen.
+
+---
+
+### Todistusankkurit
+
+| Väite | Todiste | Haettu | Luotettavuus |
+|-------|---------|--------|------------|
+| V hylkää metsäesityksen paitsi valitukset | HD024141 (dok_id), kappale 1 | 2026-05-11 | HIGH |
+| MP hylkää metsäesityksen kokonaan | HD024147 (dok_id), ehdotusosio | 2026-05-11 | HIGH |
+| S vaatii vaikutusanalyysia ennen hyväksymistä | HD024144 (dok_id), ehdotusosio | 2026-05-11 | HIGH |
+| C vaatii tuotantopakettia | HD024145 (dok_id), perustelu | 2026-05-11 | HIGH |
+| SD tukee mutta haluaa maankäyttöpoikkeuksia | HD024143 (dok_id), ehdotus 1 | 2026-05-11 | HIGH |
+| V hylkää 13-vuotiaan rikosoikeudellisen iän | HD024142 (dok_id), ehdotus | 2026-05-11 | HIGH |
+| C hylkää 13-vuotiaan rikosoikeudellisen iän | HD024146 (dok_id), ehdotus | 2026-05-11 | HIGH |
+| MP hylkää 13-vuotiaan ja Art.29-muutokset | HD024148 (dok_id), ehdotus | 2026-05-11 | HIGH |
+| Ruotsin BKT-kasvu 1,8 % 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| Metsäsektori 90 000 työpaikkaa | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_fr.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **Confiance**: HAUTE  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### Synthèse (Bottom Line Up Front)
+
+Huit propositions d'opposition déposées contre deux propositions gouvernementales révèlent de profondes fractures inter-partis sur la déréglementation forestière et la délinquance juvénile à 125 jours des élections. Sur la sylviculture (Prop. 2025/26:242), une opposition de cinq partis — V, S, C, MP chacun pour des raisons idéologiques différentes, SD cherchant des modifications ciblées — démontre que même le partenaire de coalition SD conditionne son soutien. Sur les délinquants juvéniles (Prop. 2025/26:246), une alliance inter-blocs de V, C et MP rejette unanimement l'abaissement de l'âge de responsabilité pénale à 13 ans, en citant la recherche sur le bien-être de l'enfant et le modèle suédois de réhabilitation des jeunes. Les deux dossiers activent des clivages électoraux centraux : environnement contre production économique, et justice pénale punitive contre réhabilitative.
+
+---
+
+### Trois décisions que ce document soutient
+
+1. **Décision de publication** : Les deux clusters de propositions méritent un traitement éditorial de premier plan — ampleur significative de l'opposition, portée inter-commissions (MJU + JuU) et cadrage en année électorale élèvent la signification à **8/10** (ajusté DIW : multiplicateur 1,5× appliqué).
+2. **Cadrage de la couverture** : Commencer par l'unité inter-blocs sur l'âge de responsabilité pénale (V+C+MP contre le gouvernement) comme le signal le plus contre-intuitif ; secondairement sur la fragmentation forestière.
+3. **Veille prospective** : Surveiller les délibérations des commissions MJU et JuU (probablement juin–septembre 2026) ; le soutien conditionnel du SD à la forêt est un problème gouvernemental potentiel si les exemptions ne sont pas accordées.
+
+---
+
+### Lecture en 60 secondes (8 points)
+
+- 📋 **8 propositions, 2 projets de loi, 5 partis** — le cluster de propositions monojour le plus large en MJU/JuU de cette législature.
+- 🌲 **Forêt (242)** : V et MP veulent un rejet intégral ; S veut une pause pour analyse d'impact ; C veut un package de production plus large ; SD soutient globalement mais cherche des exemptions d'utilisation des terres. La majorité nominale MJU du gouvernement est sous tension.
+- ⚖️ **Délinquance juvénile (246)** : V, C et MP rejettent tous l'abaissement de l'âge de responsabilité pénale à 13 ans — en citant la CIDE, la tradition de recherche suédoise et l'efficacité de la réhabilitation. Une opposition centriste est inhabituelle.
+- 🗳️ **Proximité électorale** : Avec les élections de septembre 2026, ces propositions font autant office de positionnement de campagne que de stratégie législative ; la séparation du Parti du Centre (C) du gouvernement sur la politique pénale signale une compétition pour les électeurs modérés.
+- 📊 **Contexte économique** (IMF WEO-2026-04) : Prévision de croissance du PIB suédois 1,8 % pour 2026 ; secteur forestier ~90 000 emplois, 1,0 % du PIB — le gouvernement cadre la déréglementation comme levier de croissance ; l'opposition comme risque pour la biodiversité.
+- 🌍 **Risque de conformité UE** : Les propositions V, S et MP citent expressément la loi européenne sur la restauration de la nature et la directive Habitats — si adoptées, le gouvernement risque une procédure d'infraction.
+- 🔄 **Pas de voteringar antérieures** pour ces clusters de commissions spécifiques dans le riksmöte actuel ; le vide du nouveau riksmöte limite l'analyse quantitative des précédents.
+- ⏰ **Pression temporelle** : Rapports de commission attendus en septembre 2026 — en plein cœur de la fenêtre de campagne électorale.
+
+---
+
+### Déclencheur prospectif le plus important
+
+> **Vote en commission MJU sur Prop. 2025/26:242** — attendu septembre 2026. Si SD retire son soutien conditionnel en raison d'une demande d'exemption foncière non satisfaite, le gouvernement risque une défaite sur sa libéralisation forestière phare. Surveiller les déclarations publiques de Martin Kinnunen du SD et les auditions en commission à partir de juin 2026.
+
+---
+
+### Ancres probatoires
+
+| Affirmation | Preuve | Récupéré | Confiance |
+|-------------|--------|---------|------------|
+| V rejette la proposition forestière sauf recours | HD024141 (dok_id), paragraphe 1 | 2026-05-11 | HIGH |
+| MP rejette entièrement la proposition forestière | HD024147 (dok_id), section de proposition | 2026-05-11 | HIGH |
+| S exige une analyse d'impact avant adoption | HD024144 (dok_id), section de proposition | 2026-05-11 | HIGH |
+| C exige un package de production | HD024145 (dok_id), justification | 2026-05-11 | HIGH |
+| SD soutient mais veut des exemptions foncières | HD024143 (dok_id), proposition 1 | 2026-05-11 | HIGH |
+| V rejette l'âge 13 pour la responsabilité pénale | HD024142 (dok_id), proposition | 2026-05-11 | HIGH |
+| C rejette l'âge 13 pour la responsabilité pénale | HD024146 (dok_id), proposition | 2026-05-11 | HIGH |
+| MP rejette l'âge 13 et les modifications Art.29 | HD024148 (dok_id), proposition | 2026-05-11 | HIGH |
+| Croissance du PIB suédois 1,8 % 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| Secteur forestier 90 000 emplois | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מנהלים — הצעות אופוזיציה
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **ביטחון**: גבוה  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### תקציר (Bottom Line Up Front)
+
+שמונה הצעות אופוזיציה שהוגשו נגד שני הצעות חוק ממשלתיות חושפות פיצולים עמוקים בין-מפלגתיים על רגולציית יערות ועבריינות נוער עם 125 ימים לבחירות. ביער (Prop. 2025/26:242), אופוזיציה של חמישה מפלגות — V, S, C, MP כל אחד מסיבות אידיאולוגיות שונות, SD מבקש שינויים ממוקדים — מוכיחה שאפילו שותף הקואליציה SD מתנה את תמיכתו. בעברייני נוער (Prop. 2025/26:246), ברית חוצת-בלוקים של V, C ו-MP דוחה פה אחד הורדת גיל האחריות הפלילית ל-13, תוך ציון מחקרי רווחת ילדים ומודל השיקום הנוערי השוודי. שני התיקים מפעילים שסעים בחירתיים מרכזיים: סביבה לעומת ייצור כלכלי, וצדק פלילי עונשי לעומת שיקומי.
+
+---
+
+### שלושה החלטות שמסמך זה תומך בהן
+
+1. **החלטת פרסום**: שני אשכולות ההצעות ראויים לטיפול עיתונאי בחזית — רוחב האופוזיציה המשמעותי, הטווח הבין-ועדתי (MJU + JuU) ומיסגור שנת הבחירות מעלים את המשמעות ל-**8/10** (מותאם DIW: מכפיל 1.5× מיושם).
+2. **מיסגור הסיקור**: פתוח עם האחדות הבין-בלוקים על גיל האחריות הפלילית (V+C+MP נגד הממשלה) כאות הנגדי-אינטואיטיבי ביותר; משנית על פיצול היערות.
+3. **ניטור צופה**: עקוב אחר דיוני ועדות MJU ו-JuU (כנראה יוני–ספטמבר 2026); תמיכתו המותנית של SD ביערות היא בעיה ממשלתית פוטנציאלית אם פטורים לא יוענקו.
+
+---
+
+### קריאה ב-60 שניות (8 נקודות)
+
+- 📋 **8 הצעות, 2 הצעות חוק, 5 מפלגות** — אשכול הצעות גדול ביום אחד ב-MJU/JuU של מחזור מחוקק זה.
+- 🌲 **יערות (242)**: V ו-MP רוצים דחייה מלאה; S רוצה הפסקה לניתוח השפעה; C רוצה חבילת ייצור רחבה יותר; SD תומך בעיקר אך מבקש פטורי שימוש קרקע. הרוב הנומינלי MJU של הממשלה בלחץ.
+- ⚖️ **עבריינות נוער (246)**: V, C ו-MP כולם דוחים הורדת גיל האחריות הפלילית ל-13 — תוך ציון אמנת זכויות הילד של האו"ם, המסורת המחקרית השוודית ויעילות השיקום. אופוזיציה מרכזנית אינה שגרתית.
+- 🗳️ **קרבת הבחירות**: עם בחירות ספטמבר 2026, הצעות אלו פועלות כמיצוב קמפיין כמו גם אסטרטגיה חקיקתית; הפרידה של מפלגת המרכז (C) מהממשלה במדיניות פלילית מאותתת על תחרות על בוחרים מתונים.
+- 📊 **הקשר כלכלי** (IMF WEO-2026-04): תחזית צמיחת תוצר שוודי 1.8% ל-2026; מגזר יערות ~90,000 משרות, 1.0% מהתוצר — הממשלה ממסגרת הרגולציה כמנוף צמיחה; אופוזיציה כסיכון למגוון ביולוגי.
+- 🌍 **סיכון עמידה ב-EU**: הצעות V, S ו-MP מציינות במפורש את חוק שיקום הטבע האירופי ואת הנחיית בתי הגידול — אם יאומצו, הממשלה מסתכנת בהליכי הפרה.
+- 🔄 **אין voteringar קודמים** לאשכולות ועדות ספציפיים אלה ב-riksmöte הנוכחי; הריק של riksmöte החדש מגביל את הניתוח הכמותי של תקדימים.
+- ⏰ **לחץ זמן**: דוחות ועדה צפויים בספטמבר 2026 — בדיוק בחלון הבחירות.
+
+---
+
+### ה-Trigger הצופה החשוב ביותר
+
+> **הצבעה בוועדת MJU על Prop. 2025/26:242** — צפויה ספטמבר 2026. אם SD יחזיר את תמיכתו המותנית בגלל בקשת פטור קרקע שלא מולאה, הממשלה מסתכנת בהפסד על ליברליזציית היערות הדגלית שלה. עקוב אחר הצהרות הפומביות של Martin Kinnunen מ-SD ודיוני הוועדה מיוני 2026.
+
+---
+
+### עוגני ראיות
+
+| טענה | ראיה | נאסף | ביטחון |
+|------|------|------|--------|
+| V דוחה הצעת יערות פרט לערעורים | HD024141 (dok_id), פסקה 1 | 2026-05-11 | HIGH |
+| MP דוחה הצעת יערות לחלוטין | HD024147 (dok_id), קטע הצעה | 2026-05-11 | HIGH |
+| S דורש ניתוח השפעה לפני אימוץ | HD024144 (dok_id), קטע הצעה | 2026-05-11 | HIGH |
+| C דורש חבילת ייצור | HD024145 (dok_id), נימוק | 2026-05-11 | HIGH |
+| SD תומך אך רוצה פטורי קרקע | HD024143 (dok_id), הצעה 1 | 2026-05-11 | HIGH |
+| V דוחה גיל אחריות פלילית 13 | HD024142 (dok_id), הצעה | 2026-05-11 | HIGH |
+| C דוחה גיל אחריות פלילית 13 | HD024146 (dok_id), הצעה | 2026-05-11 | HIGH |
+| MP דוחה 13 ותיקוני סעיף 29 | HD024148 (dok_id), הצעה | 2026-05-11 | HIGH |
+| צמיחת תוצר שוודי 1.8% 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| מגזר יערות 90,000 משרות | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_ja.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **確信度**: 高  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### 要約（Bottom Line Up Front）
+
+選挙まで125日の時点で、2つの政府提案に対して提出された8件の野党動議は、森林規制緩和と少年犯罪をめぐる深刻な党間対立を浮き彫りにしている。林業（Prop. 2025/26:242）では、5党の反対——V、S、C、MPはそれぞれ異なるイデオロギー的理由から、SDは的を絞った修正を求める——が、連立パートナーであるSDでさえ支持を条件付きにしていることを示す。少年犯罪者（Prop. 2025/26:246）では、V、C、MPによるブロック横断同盟が、刑事責任年齢を13歳に引き下げることに満場一致で反対し、子どもの福祉に関する研究とスウェーデンの少年更生モデルを根拠として挙げる。両案件は、環境対経済生産、応報的刑事司法対更生的刑事司法という選挙の中心的断層線を活性化させる。
+
+---
+
+### 本文書が支持する3つの決定
+
+1. **公表決定**: 両動議クラスターは一面的な編集扱いに値する——顕著な反対幅、委員会横断的な射程（MJU + JuU）、選挙年のフレーミングが重要度を**8/10**に引き上げる（DIW調整：乗数1.5×適用）。
+2. **報道フレーミング**: 最も直感に反するシグナルとして、刑事責任年齢に関するブロック横断的統一（V+C+MP対政府）から始める；副次的に森林分裂について。
+3. **先見的監視**: MJUおよびJuU委員会の審議（おそらく2026年6月〜9月）を追跡する；森林に対するSDの条件付き支持は、免除が認められない場合の潜在的政府問題である。
+
+---
+
+### 60秒で読む（8ポイント）
+
+- 📋 **8動議、2提案、5党** — 今議会期のMJU/JuUにおける最大の1日動議クラスター。
+- 🌲 **森林（242）**: VとMPは完全拒否；Sは影響分析のための一時停止を要求；Cはより広範な生産パッケージを要求；SDは概ね支持するが土地利用免除を求める。政府のMJU名目多数派は圧力下にある。
+- ⚖️ **少年犯罪（246）**: V、C、MPはいずれも刑事責任年齢を13歳に引き下げることに反対——国連子どもの権利条約、スウェーデンの研究の伝統、更生の有効性を根拠として。中道派の反対は異例。
+- 🗳️ **選挙の近さ**: 2026年9月の選挙を前に、これらの動議は立法戦略と同様に選挙キャンペーンのポジショニングとして機能する；刑事政策における中央党（C）の政府からの乖離は穏健な有権者をめぐる競争を示す。
+- 📊 **経済的背景**（IMF WEO-2026-04）: スウェーデンのGDP成長率予測2026年1.8%；林業セクター約90,000雇用、GDP比1.0% — 政府は規制緩和を成長てことしてフレーミング；野党を生物多様性リスクとして。
+- 🌍 **EU準拠リスク**: V、S、MPの動議は欧州自然再生法と生息地指令を明示的に引用——採用されると政府は違反手続きのリスクを負う。
+- 🔄 **過去のvoterinarなし** 現行riksmöteのこれらの特定委員会クラスターについて；新riksmöteの空白は先例の定量分析を制限する。
+- ⏰ **時間的圧力**: 委員会報告書は2026年9月に予定——選挙キャンペーンウィンドウのただ中。
+
+---
+
+### 最も重要な先見的トリガー
+
+> **Prop. 2025/26:242についてのMJU委員会投票** — 2026年9月予定。SDが土地免除要求が満たされないことを理由に条件付き支持を撤回した場合、政府は旗艦の森林自由化で敗北するリスクがある。SDのMartin Kinnunenの公的声明と2026年6月以降の委員会審議を追跡する。
+
+---
+
+### 証拠アンカー
+
+| 主張 | 証拠 | 取得日 | 確信度 |
+|------|------|--------|--------|
+| Vは控訴を除いて森林提案を拒否 | HD024141 (dok_id)、第1段落 | 2026-05-11 | HIGH |
+| MPは森林提案を全面拒否 | HD024147 (dok_id)、提案セクション | 2026-05-11 | HIGH |
+| Sは採択前に影響分析を要求 | HD024144 (dok_id)、提案セクション | 2026-05-11 | HIGH |
+| Cは生産パッケージを要求 | HD024145 (dok_id)、動機 | 2026-05-11 | HIGH |
+| SDは支持するが土地免除を希望 | HD024143 (dok_id)、提案1 | 2026-05-11 | HIGH |
+| Vは13歳刑事責任年齢を拒否 | HD024142 (dok_id)、提案 | 2026-05-11 | HIGH |
+| Cは13歳刑事責任年齢を拒否 | HD024146 (dok_id)、提案 | 2026-05-11 | HIGH |
+| MPは13歳と第29条修正を拒否 | HD024148 (dok_id)、提案 | 2026-05-11 | HIGH |
+| スウェーデンGDP成長率1.8% 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| 林業セクター90,000雇用 | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_ko.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **신뢰도**: 높음  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### 요약 (Bottom Line Up Front)
+
+선거까지 125일을 앞두고 두 정부 제안에 반대하여 제출된 8건의 야당 동의안은 산림 규제 완화와 청소년 범죄를 둘러싼 심각한 정당 간 균열을 드러낸다. 임업(Prop. 2025/26:242)에서는 5개 정당의 반대 — V, S, C, MP는 각각 다른 이념적 이유로, SD는 표적 수정을 추구 — 가 연립 파트너인 SD조차 지지를 조건부로 하고 있음을 보여준다. 청소년 범죄자(Prop. 2025/26:246)에서는 V, C, MP의 블록 횡단 동맹이 형사 책임 연령을 13세로 낮추는 것에 만장일치로 반대하며, 아동 복지 연구와 스웨덴의 청소년 재활 모델을 근거로 제시한다. 두 사안 모두 환경 대 경제 생산, 그리고 응보적 형사 정의 대 재활적 형사 정의라는 핵심 선거 균열을 활성화시킨다.
+
+---
+
+### 이 문서가 지지하는 세 가지 결정
+
+1. **게재 결정**: 두 동의안 클러스터 모두 1면 편집 처리를 받을 자격이 있다 — 상당한 반대 폭, 위원회 간 범위(MJU + JuU), 선거 연도 프레이밍이 중요도를 **8/10**으로 높인다 (DIW 조정: 1.5× 승수 적용).
+2. **보도 프레이밍**: 가장 반직관적인 신호로서 형사 책임 연령에 관한 블록 횡단 단결(V+C+MP 대 정부)로 시작; 부차적으로 산림 분열에 대해.
+3. **선견적 모니터링**: MJU 및 JuU 위원회 심의(아마도 2026년 6월~9월)를 추적; 산림에 대한 SD의 조건부 지지는 면제가 허용되지 않을 경우 잠재적 정부 문제이다.
+
+---
+
+### 60초 읽기 (8포인트)
+
+- 📋 **8건 동의안, 2건 제안, 5개 정당** — 이번 의회 기간 MJU/JuU의 최대 단일일 동의안 클러스터.
+- 🌲 **산림(242)**: V와 MP는 완전 거부 원함; S는 영향 분석을 위한 일시 중단 원함; C는 더 광범위한 생산 패키지 원함; SD는 대체로 지지하지만 토지 이용 면제 구함. 정부의 MJU 명목 다수가 압박받고 있다.
+- ⚖️ **청소년 범죄(246)**: V, C, MP 모두 형사 책임 연령을 13세로 낮추는 것에 반대 — 유엔 아동권리협약, 스웨덴 연구 전통, 재활 효과성을 인용. 중도파 반대는 이례적이다.
+- 🗳️ **선거 근접성**: 2026년 9월 선거를 앞두고, 이 동의안들은 입법 전략만큼이나 선거 캠페인 포지셔닝으로 기능한다; 형사 정책에서 중앙당(C)이 정부에서 이탈한 것은 온건 유권자를 둘러싼 경쟁을 시사한다.
+- 📊 **경제적 맥락** (IMF WEO-2026-04): 스웨덴 GDP 성장률 예측 2026년 1.8%; 임업 부문 약 90,000개 일자리, GDP의 1.0% — 정부는 규제 완화를 성장 레버로 프레이밍; 야당은 생물다양성 리스크로.
+- 🌍 **EU 준수 리스크**: V, S, MP의 동의안은 유럽 자연 복원법과 서식지 지침을 명시적으로 인용 — 채택되면 정부는 위반 절차 리스크를 진다.
+- 🔄 **이전 voteringar 없음** 현재 riksmöte의 이 특정 위원회 클러스터에 대해; 새 riksmöte의 공백은 선례의 정량 분석을 제한한다.
+- ⏰ **시간 압박**: 위원회 보고서는 2026년 9월 예정 — 선거 캠페인 창의 한가운데.
+
+---
+
+### 가장 중요한 선견적 트리거
+
+> **Prop. 2025/26:242에 대한 MJU 위원회 투표** — 2026년 9월 예정. SD가 충족되지 않은 토지 면제 요구를 이유로 조건부 지지를 철회하면, 정부는 주력 산림 자유화에서 패배할 리스크가 있다. SD의 Martin Kinnunen의 공개 성명과 2026년 6월부터의 위원회 청문회를 추적한다.
+
+---
+
+### 증거 앵커
+
+| 주장 | 증거 | 수집일 | 신뢰도 |
+|------|------|--------|--------|
+| V는 항소 제외 산림 제안 거부 | HD024141 (dok_id), 1단락 | 2026-05-11 | HIGH |
+| MP는 산림 제안 전면 거부 | HD024147 (dok_id), 제안 섹션 | 2026-05-11 | HIGH |
+| S는 채택 전 영향 분석 요구 | HD024144 (dok_id), 제안 섹션 | 2026-05-11 | HIGH |
+| C는 생산 패키지 요구 | HD024145 (dok_id), 동기 | 2026-05-11 | HIGH |
+| SD는 지지하지만 토지 면제 원함 | HD024143 (dok_id), 제안 1 | 2026-05-11 | HIGH |
+| V는 형사 책임 연령 13세 거부 | HD024142 (dok_id), 제안 | 2026-05-11 | HIGH |
+| C는 형사 책임 연령 13세 거부 | HD024146 (dok_id), 제안 | 2026-05-11 | HIGH |
+| MP는 13세 및 제29조 수정 거부 | HD024148 (dok_id), 제안 | 2026-05-11 | HIGH |
+| 스웨덴 GDP 성장률 1.8% 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| 임업 부문 90,000개 일자리 | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_nl.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **Betrouwbaarheid**: HOOG  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### Samenvatting (Bottom Line Up Front)
+
+Acht oppositiemotie ingediend tegen twee regeringsvoorstellen onthullen diepe partijoverstijgende breuken over bosbouwderegulering en jeugdcriminaliteit met 125 dagen tot de verkiezingen. Bij bosbouw (Prop. 2025/26:242) toont een vijfpartijen-oppositie — V, S, C, MP elk om verschillende ideologische redenen, SD zoekt gerichte wijzigingen — dat zelfs de coalitiepartner SD zijn steun voorwaardelijk maakt. Bij jeugddelinquenten (Prop. 2025/26:246) wijst een blokoverstijgende alliantie van V, C en MP unaniem het verlagen van de strafrechtelijke aansprakelijkheidsleeftijd naar 13 jaar af, daarbij verwijzend naar onderzoek naar kinderwelzijn en het Zweedse model voor jeugdrehabilitatie. Beide dossiers activeren centrale electorale breuken: milieu versus economische productie, en vergeldende versus rehabilitatieve strafjustitie.
+
+---
+
+### Drie besluiten die dit document ondersteunt
+
+1. **Publicatiebesluit**: Beide motiesclusters verdienen een redactionele behandeling op de voorpagina — significante oppositiebreedte, overcommissioneel bereik (MJU + JuU) en verkiezingsjaarframing verhogen de betekenis tot **8/10** (DIW-gecorrigeerd: 1,5× multiplier toegepast).
+2. **Berichtgeving-framing**: Begin met de blokoverstijgende eenheid over strafrechtleeftijd (V+C+MP versus regering) als het meest contraintuitieve signaal; secundair over bosbouwfragmentatie.
+3. **Vooruitblik bewaking**: Volg de beraadslagingen van MJU- en JuU-commissies (waarschijnlijk juni–september 2026); de voorwaardelijke steun van SD voor bos is een potentieel regeringsprobleem als vrijstellingen niet worden verleend.
+
+---
+
+### Lezing in 60 seconden (8 punten)
+
+- 📋 **8 moties, 2 proposities, 5 partijen** — het grootste ééndag-motiescluster in MJU/JuU van deze legislatuur.
+- 🌲 **Bos (242)**: V en MP willen volledig verwerping; S wil een pauze voor impactanalyse; C wil een breder productiepakket; SD steunt grotendeels maar zoekt grondgebruiksvrijstellingen. De nominale MJU-meerderheid van de regering staat onder druk.
+- ⚖️ **Jeugdcriminaliteit (246)**: V, C en MP wijzen allen verlaging van de strafrechtelijke aansprakelijkheidsleeftijd naar 13 jaar af — daarbij verwijzend naar het VN-Kinderrechtenverdrag, de Zweedse onderzoekstraditie en rehabilitatie-effectiviteit. Centristisch verzet is ongebruikelijk.
+- 🗳️ **Electorale nabijheid**: Met verkiezingen in september 2026 fungeren deze moties evenzeer als campagnepositionering als wetgevende strategie; de scheiding van het Centrum Partij (C) van de regering op strafrechtbeleid signaleert concurrentie om gematigde kiezers.
+- 📊 **Economische context** (IMF WEO-2026-04): Prognose Zweedse BBP-groei 1,8% voor 2026; bosbouwsector ~90.000 banen, 1,0% van BBP — de regering kadert deregulering als groeifactor; oppositie als biodiversiteitsrisico.
+- 🌍 **EU-nalevingsrisico**: Moties van V, S en MP vermelden uitdrukkelijk de Europese Natuurherstelwet en de Habitatrichtlijn — indien aangenomen riskeert de regering een inbreukprocedure.
+- 🔄 **Geen voorgaande voteringar** voor deze specifieke commissieclusters in het huidige riksmöte; het vacuüm van het nieuwe riksmöte beperkt kwantitatieve analyse van precedenten.
+- ⏰ **Tijdsdruk**: Commissierapporten verwacht in september 2026 — midden in de verkiezingscampagneperiode.
+
+---
+
+### Belangrijkste vooruitblikkende trigger
+
+> **MJU-commissiestemming over Prop. 2025/26:242** — verwacht september 2026. Als SD de voorwaardelijke steun intrekt vanwege een onvervulde grondvrijstellingseis, riskeert de regering een nederlaag over haar boegbeeldzijnde bosderegulering. Volg de publieke verklaringen van Martin Kinnunen van SD en commissiehooringen vanaf juni 2026.
+
+---
+
+### Bewijsankers
+
+| Bewering | Bewijs | Opgehaald | Betrouwbaarheid |
+|----------|--------|-----------|------------|
+| V verwerpt bosvoorstel behalve beroepen | HD024141 (dok_id), alinea 1 | 2026-05-11 | HIGH |
+| MP verwerpt bosvoorstel volledig | HD024147 (dok_id), voorstelsectie | 2026-05-11 | HIGH |
+| S eist impactanalyse vóór aanname | HD024144 (dok_id), voorstelsectie | 2026-05-11 | HIGH |
+| C eist productiepakket | HD024145 (dok_id), motivering | 2026-05-11 | HIGH |
+| SD steunt maar wil grondvrijstellingen | HD024143 (dok_id), voorstel 1 | 2026-05-11 | HIGH |
+| V verwerpt strafrechtleeftijd 13 jaar | HD024142 (dok_id), voorstel | 2026-05-11 | HIGH |
+| C verwerpt strafrechtleeftijd 13 jaar | HD024146 (dok_id), voorstel | 2026-05-11 | HIGH |
+| MP verwerpt 13 jaar en Art.29 wijzigingen | HD024148 (dok_id), voorstel | 2026-05-11 | HIGH |
+| Zweedse BBP-groei 1,8% 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| Bosbouwsector 90.000 banen | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_no.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **Sikkerhet**: HØY  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### Konklusjon (Bottom Line Up Front)
+
+Åtte opposisjonsforslag innlevert mot to regjeringsproposisjoner avslører dype tverrpolitiske brudd om skoglig deregulering og ungdomskriminalitet med 125 dager til valget. Om skogbruk (Prop. 2025/26:242) utgjør en fempartis opposisjon — V, S, C, MP av ulike ideologiske grunner, SD søker målrettede endringer — at til og med koalisjonspartneren SD betinger sin støtte. Om ungdomslovbrytere (Prop. 2025/26:246) avviser en tverrpolitisk allianse bestående av V, C og MP enstemmig å senke strafferettslig minimumsalder til 13 år, med henvisning til barnerettsforskning og den svenske modellens ungdomsrehabilitering. Begge sakene aktiverer sentrale valgårssprekker: miljø kontra økonomisk produksjon, og straffende kontra rehabiliterende kriminalpolitikk.
+
+---
+
+### Tre vedtak dette brevet støtter
+
+1. **Publiseringsbeslutning**: Begge forslags-klyngene fortjener lederartikkelbehandling — betydelig opposisjonsbredde, tverutvalgs rekkevidde (MJU + JuU) og valgårsrammer løfter signifikansen til **8/10** (DIW-justert: 1,5× multiplikator brukt).
+2. **Dekningsramme**: Innled med den tverrpolitiske enheten om kriminalitetsalder (V+C+MP versus regjering) som det mer kontraintuitive signalet; sekundær om skogens fragmentering.
+3. **Fremtidig overvåking**: Overvåk MJU- og JuU-utvalgsoverveielser (sannsynligvis juni–september 2026); SDs betingede skogsstøtte er et potensielt regjeringsproblem hvis unntakene ikke innvilges.
+
+---
+
+### 60-sekunders lesning (8 punkter)
+
+- 📋 **8 forslag, 2 proposisjoner, 5 partier** — bredeste enkeltdagsforslag i MJU/JuU denne stortingsperioden.
+- 🌲 **Skog (242)**: V og MP vil ha total avvisning; S vil ha pause for konsekvensanalyse; C vil ha en bredere produksjonspakke; SD støtter stort sett, men søker arealbruksunntak. Regjeringens nominelle MJU-flertall er under press.
+- ⚖️ **Ungdomskriminalitet (246)**: V, C og MP avviser alle senkning av strafferettslig alder til 13 år — med henvisning til UNCRC, svensk forskningstradisjon og rehabiliteringseffektivitet. Sentristisk opposisjon er uvanlig.
+- 🗳️ **Valnærhet**: Med september 2026-valget fungerer disse forslagene som kampanjeposisjonering like mye som lovgivningsstrategi; Senterpartiets (C) separering fra regjeringen i kriminalpolitikk signaliserer konkurranse om moderate velgere.
+- 📊 **Økonomisk kontekst** (IMF WEO-2026-04): Svensk BNP-vekstprognose 1,8 % for 2026; skogsektor ~90 000 jobber, 1,0 % BNP — regjering rammer inn deregulering som veksthev; opposisjon som biodiversitetsrisiko.
+- 🌍 **EU-etterlevelsesrisiko**: V, S og MP-forslag siterer uttrykkelig EUs naturrestaureringslov og habitatdirektivet — hvis vedtatt, risikerer regjeringen bruddprosedyre.
+- 🔄 **Ingen tidligere voteringar** for disse spesifikke utvalgsklyngene i nåværende riksmöte; nytt riksmöte-gap begrenser kvantitativ presedens-analyse.
+- ⏰ **Tidspress**: Utvalgsrapporter forventet september 2026 — midt i valgkampens vindu.
+
+---
+
+### Viktigste fremtidige utløser
+
+> **MJUs utvalgsavstemning om Prop. 2025/26:242** — forventet september 2026. Hvis SD trekker betinget støtte på grunn av uoppfylt krav om arealunntak, risikerer regjeringen nederlag på sin flaggskips skogliberalisering. Overvåk SDs Martin Kinnunens offentlige uttalelser og utvalgshøringer fra juni 2026.
+
+---
+
+### Evidensankere
+
+| Påstand | Bevis | Hentet | Sikkerhet |
+|---------|-------|--------|------------|
+| V avviser skogproposisjon unntatt klager | HD024141 (dok_id), avsnitt 1 | 2026-05-11 | HIGH |
+| MP avviser skogproposisjon helt | HD024147 (dok_id), forslagseksjon | 2026-05-11 | HIGH |
+| S krever konsekvensanalyse før vedtakelse | HD024144 (dok_id), forslagseksjon | 2026-05-11 | HIGH |
+| C krever produksjonspakke | HD024145 (dok_id), begrunnelse | 2026-05-11 | HIGH |
+| SD støtter men vil ha arealunntak | HD024143 (dok_id), forslag 1 | 2026-05-11 | HIGH |
+| V avviser 13-årig strafferettslig alder | HD024142 (dok_id), forslag | 2026-05-11 | HIGH |
+| C avviser 13-årig strafferettslig alder | HD024146 (dok_id), forslag | 2026-05-11 | HIGH |
+| MP avviser 13-årig og Art.29-endringer | HD024148 (dok_id), forslag | 2026-05-11 | HIGH |
+| Sveriges BNP-vekst 1,8 % 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| Skogssektor 90 000 jobber | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_sv.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **Konfidens**: HÖG  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### Slutsats (Bottom Line Up Front)
+
+Åtta oppositionsmotioner inlämnade mot två regeringspropositioner blottlägger djupa partiöverskridande sprickor om skoglig avreglering och ungdomsbrottslighet med 125 dagar kvar till valet. Om skogen (Prop. 2025/26:242) utgör en fempartiig opposition — V, S, C, MP av olika ideologiska skäl, SD söker riktade ändringar — att till och med koalitionspartiet SD villkorar sitt stöd. Om ungdomsbrott (Prop. 2025/26:246) avvisar en blocköveröverskridande allians bestående av V, C och MP enhälligt att sänka den straffrättsliga åldersgränsen till 13 år, med hänvisning till barnomsorgsforskning och den svenska modellens ungdomsrehabilitering. Båda filerna aktiverar centrala valårssprickor: miljö kontra ekonomisk produktion och straffande kontra rehabiliterande kriminalpolitik.
+
+---
+
+### Tre beslut detta brev stödjer
+
+1. **Publiceringsbeslut**: Båda motionsklusterna förtjänar ledarartikelbehandling — betydande oppositionsbredd, räckvidd för tvärutskott (MJU + JuU) och valärsramar höjer signifikansen till **8/10** (DIW-justerat: 1,5× multiplikator tillämpas).
+2. **Täckningsram**: Inled med den blocköverskridande enheten om brottsåldern (V+C+MP mot regeringen) som den mer kontraintuitiva signalen; sekundär om skogens fragmentering.
+3. **Framtida bevakning**: Bevaka MJU:s och JuU:s utskottsöverväganden (sannolikt juni–september 2026); SD:s villkorliga skogsmarksstöd är ett potentiellt bekymmer för regeringen om undantagen inte medges.
+
+---
+
+### 60-sekundersläsning (8 punkter)
+
+- 📋 **8 motioner, 2 propositioner, 5 partier** — bredaste enkeldagsmotion i MJU/JuU denna mandatperiod.
+- 🌲 **Skog (242)**: V och MP vill ha en totalavvisning; S vill ha en paus för konsekvensanalys; C vill ha ett bredare produktionspaket; SD stödjer mestadels men söker markanvändningsundantag. Regeringens nominella MJU-majoritet är under påfrestning.
+- ⚖️ **Ungdomsbrott (246)**: V, C och MP avvisar alla sänkning av straffrättslig ålder till 13 år — med hänvisning till UNCRC, svensk forskningstradition och rehabiliteringseffektivitet. Centristisk opposition är ovanlig.
+- 🗳️ **Valnärhet**: Med september 2026-valet fungerar dessa motioner som kampanjpositionering lika mycket som lagstiftningsstrategi; Centerpartiets separering från regeringen i kriminalpolitiken signalerar konkurrens om moderata väljare.
+- 📊 **Ekonomisk kontext** (IMF WEO-2026-04): Svensk BNP-tillväxtprognos 1,8 % för 2026; skogssektorn ~90 000 jobb, 1,0 % BNP — regeringen ramar in avreglering som tillväxthäv; opposition som biodiversitetsrisk.
+- 🌍 **EU-efterlevnadsrisk**: V, S och MP-motioner citerar uttryckligen EU:s naturrestaurationslagstiftning och Habitatdirektivet — om antagen, riskerar regeringen överträdelseprocedur.
+- 🔄 **Inga tidigare voteringar** för dessa specifika utskottskomplex i nuvarande riksmöte; nytt riksmötegap begränsar kvantitativ prejudikatanalys.
+- ⏰ **Tidstryck**: Utskottsbetänkanden förväntas september 2026 — mitt i valrörelsen.
+
+---
+
+### Viktigaste framtida trigger
+
+> **MJU-utskottets omröstning om Prop. 2025/26:242** — förväntat september 2026. Om SD drar tillbaka villkorligt stöd på grund av ej uppfyllda krav på markundantag, riskerar regeringen nederlag på sin flaggskepps skogsavreglering. Bevaka SD:s Martin Kinnunens offentliga uttalanden och utskottshöranden från juni 2026.
+
+---
+
+### Evidensankare
+
+| Påstående | Bevis | Hämtad | Konfidens |
+|-----------|-------|--------|------------|
+| V avvisar skogspropp utom överklaganden | HD024141 (dok_id), stycke 1 | 2026-05-11 | HIGH |
+| MP avvisar skogspropp helt och hållet | HD024147 (dok_id), förslagssektion | 2026-05-11 | HIGH |
+| S kräver konsekvensanalys före antagande | HD024144 (dok_id), förslagssektion | 2026-05-11 | HIGH |
+| C kräver produktionspaket | HD024145 (dok_id), motivering | 2026-05-11 | HIGH |
+| SD stödjer men vill ha markundantag | HD024143 (dok_id), förslag 1 | 2026-05-11 | HIGH |
+| V avvisar 13-årsåldern för straffansvar | HD024142 (dok_id), förslag | 2026-05-11 | HIGH |
+| C avvisar 13-årsåldern för straffansvar | HD024146 (dok_id), förslag | 2026-05-11 | HIGH |
+| MP avvisar 13-årsåldern och Art.29-ändringar | HD024148 (dok_id), förslag | 2026-05-11 | HIGH |
+| Sveriges BNP-tillväxt 1,8 % 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| Skogssektorn 90 000 jobb | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_zh.md -->
+
+**ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions | **Family**: A | **可信度**: 高  
+**IMF Vintage**: WEO-2026-04 | **Election**: T-125 days | **DIW Multiplier**: 1.5×
+
+---
+
+### 摘要（Bottom Line Up Front）
+
+在距选举125天之际，针对两项政府提案提交的8项反对党议案揭示了森林监管放松和青少年犯罪方面深刻的跨党裂痕。在林业（Prop. 2025/26:242）方面，五党反对——V、S、C、MP各有不同的意识形态原因，SD寻求针对性修改——表明即使联合执政伙伴SD也将支持设为有条件。在青少年罪犯（Prop. 2025/26:246）方面，V、C和MP组成的跨阵营联盟一致反对将刑事责任年龄降至13岁，援引儿童福利研究和瑞典青少年康复模式。两项议题都激活了核心选举断层线：环境对经济生产，以及惩罚性对康复性刑事司法。
+
+---
+
+### 本文件支持的三项决定
+
+1. **发布决定**：两个议案群组均值得头版编辑处理——反对广度显著、跨委员会覆盖范围（MJU + JuU）及选举年框架将重要性提升至**8/10**（DIW调整：乘数1.5×已应用）。
+2. **报道框架**：以刑事责任年龄上的跨阵营统一（V+C+MP对政府）作为最反直觉的信号开篇；其次是森林分裂。
+3. **前瞻监测**：追踪MJU和JuU委员会审议（可能在2026年6月至9月）；SD在森林问题上的有条件支持是若不给予豁免的潜在政府问题。
+
+---
+
+### 60秒阅读（8点）
+
+- 📋 **8项议案、2项提案、5个政党** — 本届立法期MJU/JuU中最大的单日议案群组。
+- 🌲 **森林（242）**：V和MP希望完全拒绝；S希望暂停以进行影响分析；C希望更广泛的生产方案；SD大体支持但寻求土地使用豁免。政府的MJU名义多数面临压力。
+- ⚖️ **青少年犯罪（246）**：V、C和MP均反对将刑事责任年龄降至13岁——援引联合国儿童权利公约、瑞典研究传统和康复效果。中间派反对并不寻常。
+- 🗳️ **选举临近性**：随着2026年9月选举临近，这些议案既是立法策略，也是竞选定位；中央党（C）在刑事政策上与政府的分离预示着对温和选民的竞争。
+- 📊 **经济背景**（IMF WEO-2026-04）：瑞典GDP增长预测2026年1.8%；林业部门约90,000个就业岗位，占GDP的1.0% — 政府将放松监管定位为增长杠杆；反对派视之为生物多样性风险。
+- 🌍 **欧盟合规风险**：V、S和MP的议案明确引用欧洲自然恢复法和栖息地指令——若通过，政府面临违规程序风险。
+- 🔄 **无过往voteringar** 针对当前riksmöte的这些特定委员会群组；新riksmöte的空白限制了对先例的定量分析。
+- ⏰ **时间压力**：委员会报告预计于2026年9月 — 恰好在选举竞选窗口中。
+
+---
+
+### 最重要的前瞻触发因素
+
+> **MJU委员会就Prop. 2025/26:242进行投票** — 预计2026年9月。若SD因土地豁免要求未获满足而撤回有条件支持，政府面临在其旗舰森林自由化上遭受失败的风险。从2026年6月起追踪SD的Martin Kinnunen的公开声明和委员会听证。
+
+---
+
+### 证据锚点
+
+| 主张 | 证据 | 获取日期 | 可信度 |
+|------|------|---------|--------|
+| V拒绝森林提案（除上诉外） | HD024141 (dok_id)，第1段 | 2026-05-11 | HIGH |
+| MP完全拒绝森林提案 | HD024147 (dok_id)，提案部分 | 2026-05-11 | HIGH |
+| S要求采纳前进行影响分析 | HD024144 (dok_id)，提案部分 | 2026-05-11 | HIGH |
+| C要求生产方案 | HD024145 (dok_id)，理由 | 2026-05-11 | HIGH |
+| SD支持但希望土地豁免 | HD024143 (dok_id)，提案1 | 2026-05-11 | HIGH |
+| V拒绝13岁刑事责任年龄 | HD024142 (dok_id)，提案 | 2026-05-11 | HIGH |
+| C拒绝13岁刑事责任年龄 | HD024146 (dok_id)，提案 | 2026-05-11 | HIGH |
+| MP拒绝13岁及第29条修正 | HD024148 (dok_id)，提案 | 2026-05-11 | HIGH |
+| 瑞典GDP增长1.8% 2026 | IMF WEO-2026-04, NGDP_RPCH SWE | 2026-05-11 | MEDIUM |
+| 林业部门90,000个就业岗位 | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+
+<!-- source-sha: 49252b0525d583ffaf6a9c70f3d88e318e99f79a -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 16 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 10 | Linked in Article Sources, not expanded inline |
 
@@ -2164,6 +2937,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -3,7 +3,7 @@ date: 2026-05-06
 subfolder: interpellations
 slug: 2026-05-06-interpellations
 source_folder: analysis/daily/2026-05-06/interpellations
-generated_at: 2026-05-25T15:59:53.472Z
+generated_at: 2026-05-27T07:35:33.095Z
 language: en
 layout: article
 ---
@@ -1931,8 +1931,6 @@ graph TD
 
 **監視対象**：Global Sumudフロティラで拘束されているスウェーデン国民への政府の対応（48時間以内に予想）。エスカレーションリスク：イスラエルが拘束者を釈放しない場合、スウェーデンはEU外相理事会および国連安全保障理事会で行動するよう圧力を受ける。
 
-**信頼度**：B2 — 2026-05-06に提出された公式riksdag質問主意書テキストHD10470からの直接ソース；riksdag-regering MCPで検証済み。
-
 ```mermaid
 graph TD
     A[Global Sumud Attack] --> B{Swedish Citizens Detained}
@@ -2218,8 +2216,6 @@ graph TD
 ### 最重要的未来触发因素
 
 **监测**：政府对Global Sumud船队上被扣押瑞典公民的回应（预计48小时内）。升级风险：若以色列不释放被扣押人员，瑞典将面临在欧盟外交事务委员会和联合国安理会采取行动的压力。
-
-**可信度**：B2 — 来自2026-05-06提交的官方riksdag质询文本HD10470的直接信源；已通过riksdag-regering MCP验证。
 
 ```mermaid
 graph TD

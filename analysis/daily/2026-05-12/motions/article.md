@@ -3,7 +3,7 @@ date: 2026-05-12
 subfolder: motions
 slug: 2026-05-12-motions
 source_folder: analysis/daily/2026-05-12/motions
-generated_at: 2026-05-25T15:59:53.894Z
+generated_at: 2026-05-27T07:35:33.602Z
 language: en
 layout: article
 ---
@@ -80,6 +80,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1549,13 +1562,661 @@ No prior pir-status.json found in analysis/daily for motions subfolder. Initiati
 - SCB: not queried (motions are policy/legislative, not requiring SCB statistical baseline for this run)
 - World Bank: not queried (governance WGI not primary for this article)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص الاستخبارات — 2026-05-12
+
+**التصنيف**: 🟢 عام
+
+**الأولوية**: عالية — نقاش الهجرة في عام الانتخابات، أبعاد الحقوق الأساسية
+**نوع المقال**: motioner
+
+### الخلاصة
+
+قدّم Vänsterpartiet اقتراحَي لجنة في 2026-05-11 معارضةً لنظام الهجرة المشدَّد لتحالف تيدو. يطالب الاقتراح HD024149 بالرفض الكامل لـ*البروبوزيشن 2025/26:264* المتعلقة باشتراطات السلوك الأكثر صرامة لتصاريح الإقامة، مستنداً إلى المادة 8 من الاتفاقية الأوروبية لحقوق الإنسان بشأن الحق في الحياة الأسرية وغياب اليقين القانوني. يعارض الاقتراح HD024150 جزئياً *البروبوزيشن 2025/26:263* المتعلقة بتنفيذ قرارات الترحيل — إذ يقبل بعض تدابير التنفيذ لكنه يرفض التبادل الإلزامي للبيانات بين وكالات الرعاية الاجتماعية والشرطة. مع اقتراب انتخابات سبتمبر 2026 بأربعة أشهر، تعمل هذه الاقتراحات في آنٍ واحد كتحديات قانونية وأدوات تموضع سياسي لقاعدة ناخبي V.
+
+### النتائج الرئيسية
+
+1. **V يُموضع نفسه باعتباره الناقد الوحيد للكتلة في مجال الهجرة**: كلا الاقتراحين من V حصراً — لا دعم موثَّق عبر الكتل. يُعزز هذا هوية V بوصفها أكثر المنتقدين البرلمانيين اتساقاً لأجندة الهجرة في تحالف تيدو.
+
+2. **تقييم السلوك أداةً تنفيذية جديدة**: ستتيح البروبوزيشن 2025/26:264 رفض/إلغاء تصاريح الإقامة استناداً إلى السلوك (vandel) بصرف النظر عن الأحكام الجنائية. تحتج V بأن هذا يُفضي إلى سلطة تقديرية غير متوقعة تتعارض مع مبادئ سيادة القانون والتناسب بموجب المادة 8 من الاتفاقية الأوروبية.
+
+3. **بُعد مراقبة البيانات**: تُلزم البروبوزيشن 2025/26:263 بتبادل المعلومات من Arbetsförmedlingen وFörsäkringskassan وKriminalvården وSkatteverket إلى Polismyndigheten لدعم تنفيذ قرارات الترحيل. تصف V هذا بأنه إنشاء مسار من الرعاية الاجتماعية إلى المراقبة يستهدف فئات المهاجرين الهشّة.
+
+4. **تضخيم الإشارة قُرب الانتخابات**: مع اقتراب انتخابات 2026 (<6 أشهر)، تحمل هذه الاقتراحات معامل بروز سياسي مضاعفاً بـ1.5×. ترى قاعدة ناخبي V (الحضريون التقدميون، الموجَّهون نحو حقوق الإنسان) في تشديد سياسة الهجرة تمييزاً محورياً عن أحزاب الحكومة.
+
+5. **الاستراتيجية الإجرائية**: إيداع الاقتراحات بوصفها *كوميتيموتيونر* (اقتراحات لجان مرتبطة بمقترحات قانون محددة) بدلاً من اقتراحات مستقلة يُشير إلى استراتيجية برلمانية مضادة منضبطة تُعظّم وقت النقاش في SfU والظهور الإعلامي.
+
+### التقييم الإجمالي
+
+يمتلك تحالف تيدو أغلبية برلمانية لإقرار كلا المقترحين؛ ستُهزَم اقتراحات V في التصويت بالـSfU. بيد أن أهميتها انتخابية ودستورية: تُرسي بروتوكول معارضة رسمياً ضد تدابير السلوك ومشاركة البيانات، وتُوفر حججاً قانونية يمكن لمنظمات حقوق الإنسان والمحاكم الاستشهاد بها بعد دخولها حيز التنفيذ، وتُحرّك قاعدة ناخبي V قبيل انتخابات سبتمبر 2026. التقييم الاستخباراتي: تمثّل هذه الاقتراحات **مقاومة برلمانية منسَّقة** ذات **تأثير متوسط إلى عالٍ على نقاش السياسة الهجرية في مرحلة ما بعد الانتخابات**، لا سيما إذا تجسَّدت دعاوى الامتثال للاتفاقية الأوروبية.
+
+### التداعيات السياسية الفورية
+
+- تصويت لجنة SfU: يُتوقع فشل كلا الاقتراحين (أغلبية SD+M+KD+L)
+- توقيت التقرير: متوقع مايو-يونيو 2026
+- مسار الطعن القانوني: يمكن للمنظمات غير الحكومية والمحامين استخدام حجج الاقتراحات في دعاوى الاتفاقية الأوروبية المستقبلية بموجب المادة 8
+- الاستعداد المؤسسي: يجب على Migrationsverket وPolismyndigheten وAF وFK وKriminalvården جميعاً تفعيل بروتوكولات مشاركة البيانات الجديدة إذا أُقرَّت المقترحات
+
+### الأفق الزمني
+
+| النطاق | التقييم |
+|--------|---------|
+| T+72h | يتداول نص الاقتراحات في المجتمع المدني السويدي ووسائل الإعلام القانونية والمتعلقة بالهجرة |
+| T+7d | تبدأ مداولات SfU؛ قد تُصدر الحكومة رداً كتابياً على حجج الاقتراحات |
+| T+30d | يُتوقع صدور تقرير اللجنة؛ تصويت اللجنة (يُتوقع فشل الاقتراحات) |
+| T+90d | إقرار القوانين إذا مرَّ التقرير؛ تبدأ الوكالات التنفيذ |
+| T+365d (الانتخابات) | ستُخوض V الحملة الانتخابية بهذه الحجج بالضبط؛ مخاطر دعاوى الاتفاقية الأوروبية واضحة |
+
+---
+*ملاحظة تحسين المرحلة الثانية: أرست سوابق الاتفاقية الأوروبية بموجب المادة 8 حول الحياة الأسرية في قضية Üner ضد هولندا (2006) GC + Boultif ضد سويسرا (2001) اختباراً للتناسب مؤلفاً من 11 معياراً يُطبَّق مباشرةً على البروبوزيشن 264. المراجع القانونية: Utlänningslagen (2005:716) الفصل 5 §17 (شروط التصاريح)؛ RF (1974:152) الفصل 2 §21 (التناسب). يستند اقتراح V إلى كليهما. ينبغي أن يستشهد المقال بأرقام فقرات محددة لتعزيز المصداقية.*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_da.md -->
+
+**Klassifikation**: 🟢 OFFENTLIG
+
+**Prioritet**: HØJ — immigrationsdebatten i valgår, dimensioner af grundlæggende rettigheder
+**Artikeltype**: motioner
+
+### KONKLUSION
+
+Vänsterpartiet indgav to udvalgsforslag den 2026-05-11 imod Tidö-koalitionens skærpede immigrationsregime. Motion HD024149 kræver fuldstændig afvisning af *prop. 2025/26:264* om strengere vandelskrav til opholdstilladelse med henvisning til EMRK artikel 8 om familieliv og mangel på retssikkerhed. Motion HD024150 modsætter sig delvist *prop. 2025/26:263* om håndhævelse af udvisning — accepterer visse håndhævelsesforanstaltninger men afviser obligatorisk datadeling mellem velfærdsmyndigheder og politiet. Med valget i september 2026 fire måneder væk fungerer disse motioner samtidig som juridiske udfordringer og politiske positioneringsinstrumenter for V's vælgerbase.
+
+### Nøglefund
+
+1. **V positionerer sig som eneste blokkritiker af immigrationspolitikken**: Begge forslag er udelukkende V-forslag — ingen dokumenteret tværbloks-støtte. Dette styrker V's identitet som den mest konsekvente parlamentariske kritiker af Tidö-koalitionens immigrationsdagsorden.
+
+2. **Vandelsvurdering som nyt håndhævelsesværktøj**: Prop. 2025/26:264 ville muliggøre afvisning/tilbagekaldelse af opholdstilladelse baseret på vandel (adfærd) uafhængig af straffedom. V hævder, at dette skaber uforudsigelig diskretionær magt uforenelig med retssikkerhedsprincipper og proportionalitet i henhold til EMRK art. 8.
+
+3. **Dataovervågningsdimension**: Prop. 2025/26:263 kræver informationsudveksling fra Arbetsförmedlingen, Försäkringskassan, Kriminalvården og Skatteverket til Polismyndigheten for at støtte håndhævelse af udvisning. V beskriver dette som at skabe en velfærd-til-overvågnings-pipeline rettet mod sårbare migrantgrupper.
+
+4. **Signalforstærkning nær valget**: Med valget i 2026 (<6 måneder) bærer disse forslag en 1,5× politisk salienssmultiplikator. V's vælgerbase (progressiv urban, menneskerettighedsorienteret) ser stramning af immigrationspolitikken som en central differentiering fra regeringspartierne.
+
+5. **Procedurestrategi**: Indsendelse som *kommittémotioner* (udvalgsforslag knyttet til specifikke lovforslag) snarere end fristående forslag signalerer disciplineret parlamentarisk modstrategi der maksimerer debattid i SfU og mediesynlighed.
+
+### Samlet vurdering
+
+Tidö-koalitionen har et parlamentarisk flertal til at vedtage begge lovforslag; disse V-forslag vil blive stemt ned i SfU. Deres betydning er dog valgbaseret og konstitutionel: de etablerer en formel oppositionsprotokol mod vandel- og datadelingsforanstaltningerne, giver juridiske argumenter som menneskerettighedsorganisationer og domstole kan påberåbe sig efter vedtagelsen, og mobiliserer V's vælgerbase forud for valget i september 2026. Efterretningsvurdering: disse forslag repræsenterer **koordineret parlamentarisk modstand** med **middel-til-høj indvirkning på migrationsdebatten efter valget**, særligt hvis EMRK-efterlevelsessager materialiserer sig.
+
+### Umiddelbare politiske konsekvenser
+
+- SfU-udvalgsafstemning: begge forslag forventes at mislykkes (SD+M+KD+L-flertal)
+- Betænkningstiming: forventet maj-juni 2026
+- Juridisk klagesti: NGO'er og juridiske fortalere kan bruge motionsargumenter i fremtidige EMRK art. 8-sager
+- Myndighhedsberedskab: Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården skal alle operationalisere nye datadelingsprotokoller hvis lovforslagene vedtages
+
+### Tidshorisont
+
+| Band | Vurdering |
+|------|-----------|
+| T+72h | Motionsteksten cirkulerer i det svenske civilsamfund, juridiske og immigrationsmedier |
+| T+7d | SfU-drøftelser begynder; regeringen kan udstede skriftligt svar på motionsargumenterne |
+| T+30d | Betænkning forventes; udvalgsafstemning (forslag forventes at mislykkes) |
+| T+90d | Lovforslag vedtaget hvis betænkning passerer; myndigheder begynder implementering |
+| T+365d (valg) | V vil føre valgkamp på præcis disse motionsargumenter; EMRK-sagsrisiko synlig |
+
+---
+*Pass 2-forbedringsnotat: EMRK art. 8 familieliv Üner mod Nederlandene (2006) GC + Boultif mod Schweiz (2001) etablerede en 11-kriteriers proportionalitetstest direkte anvendelig på prop. 264. Lovreferencer: Utlänningslagen (2005:716) kap. 5 §17 (tilladelsesvilkår); RF (1974:152) kap. 2 §21 (proportionalitet). V's motion refererer til begge. Artiklen bør citere specifikke paragrafnumre for troværdighed.*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_de.md -->
+
+**Einstufung**: 🟢 ÖFFENTLICH
+
+**Priorität**: HOCH — Einwanderungsdebatte im Wahljahr, Dimensionen der Grundrechte
+**Artikeltyp**: motioner
+
+### KERNAUSSAGE
+
+Vänsterpartiet reichte am 2026-05-11 zwei Ausschussmotionen gegen das verschärfte Einwanderungsregime der Tidö-Koalition ein. Motion HD024149 fordert die vollständige Ablehnung von *Prop. 2025/26:264* über strengere Charakteranforderungen für Aufenthaltserlaubnisse unter Berufung auf EMRK Artikel 8 (Recht auf Familienleben) und mangelnde Rechtssicherheit. Motion HD024150 widerspricht teilweise *Prop. 2025/26:263* über die Durchsetzung von Abschiebungen — akzeptiert bestimmte Vollstreckungsmaßnahmen, lehnt jedoch die obligatorische Datenweitergabe zwischen Sozialbehörden und Polizei ab. Da die Wahl im September 2026 nur vier Monate entfernt ist, fungieren diese Motionen gleichzeitig als rechtliche Herausforderungen und politische Positionierungsinstrumente für die Wählerschaft von V.
+
+### Wesentliche Erkenntnisse
+
+1. **V positioniert sich als alleiniger Blockkritiker der Einwanderungspolitik**: Beide Motionen sind ausschließlich V-Vorschläge — keine blockübergreifende Unterstützung dokumentiert. Dies festigt die Identität von V als konsequentester parlamentarischer Kritiker der Einwanderungsagenda der Tidö-Koalition.
+
+2. **Charakterbewertung als neues Vollstreckungsinstrument**: Prop. 2025/26:264 würde die Ablehnung/den Widerruf von Aufenthaltserlaubnissen auf Grundlage des Charakters (Vandel) unabhängig von Strafurteilen ermöglichen. V argumentiert, dass dies ein unberechenbares Ermessen schafft, das mit Rechtsstaatlichkeitsprinzipien und dem Verhältnismäßigkeitsgrundsatz gemäß EMRK Art. 8 unvereinbar ist.
+
+3. **Datenüberwachungsdimension**: Prop. 2025/26:263 schreibt den Informationsaustausch von Arbetsförmedlingen, Försäkringskassan, Kriminalvården und Skatteverket an Polismyndigheten zur Unterstützung der Abschiebungsdurchsetzung vor. V beschreibt dies als Schaffung einer Wohlfahrt-zu-Überwachungs-Pipeline, die auf vulnerable Migrantengruppen abzielt.
+
+4. **Signalverstärkung in Wahlorähe**: Bei den Wahlen 2026 (<6 Monate) tragen diese Motionen einen 1,5-fachen politischen Salienz-Multiplikator. Die Wählerschaft von V (progressiv-urban, menschenrechtsorientiert) betrachtet die Verhärtung der Einwanderungspolitik als zentrales Differenzierungsmerkmal von den Regierungsparteien.
+
+5. **Verfahrensstrategie**: Die Einreichung als *Kommittémotioner* (Ausschussmotionen zu spezifischen Gesetzesvorlagen) statt als eigenständige Motionen signalisiert eine disziplinierte parlamentarische Gegenstrategie, die Debattenzeit in SfU und Medienpräsenz maximiert.
+
+### Gesamteinschätzung
+
+Die Tidö-Koalition verfügt über eine parlamentarische Mehrheit, um beide Gesetzesvorlagen zu verabschieden; diese V-Motionen werden im SfU abgestimmt. Ihre Bedeutung ist jedoch wahlpolitisch und konstitutionell: Sie etablieren ein formelles Oppositionsprotokoll gegen die Charakter- und Datenweitergabemaßnahmen, liefern rechtliche Argumente, die Menschenrechtsorganisationen und Gerichte nach dem Inkrafttreten zitieren können, und mobilisieren die Wählerschaft von V vor der Wahl im September 2026. Nachrichtendienstliche Einschätzung: Diese Motionen stellen **koordinierten parlamentarischen Widerstand** mit **mittlerer bis hoher Wirkung auf die Migrationspolitikdebatte nach der Wahl** dar, insbesondere wenn EMRK-Konformitätsklagen entstehen.
+
+### Unmittelbare politische Konsequenzen
+
+- SfU-Ausschussabstimmung: beide Motionen werden voraussichtlich scheitern (SD+M+KD+L-Mehrheit)
+- Ausschussberichtszeitplan: erwartet Mai-Juni 2026
+- Rechtlicher Klageweg: NGOs und Rechtsanwälte können Motionsargumente in künftigen EMRK Art. 8-Klagen verwenden
+- Behördliche Vorbereitung: Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården müssen alle neue Datenweitergabeprotokolle operationalisieren, wenn die Gesetzesvorlagen verabschiedet werden
+
+### Zeithorizont
+
+| Zeitband | Einschätzung |
+|----------|--------------|
+| T+72h | Motionstext zirkuliert in der schwedischen Zivilgesellschaft sowie Rechts- und Einwanderungsmedien |
+| T+7d | SfU-Beratungen beginnen; Regierung kann schriftliche Antwort auf Motionsargumente herausgeben |
+| T+30d | Ausschussbericht erwartet; Ausschussabstimmung (Motionen voraussichtlich gescheitert) |
+| T+90d | Gesetze erlassen wenn Bericht verabschiedet; Behörden beginnen Umsetzung |
+| T+365d (Wahl) | V wird im Wahlkampf genau diese Motionsargumente verwenden; EMRK-Klagerisiko sichtbar |
+
+---
+*Pass-2-Verbesserungshinweis: EMRK Art. 8 Familienleben Üner ./. Niederlande (2006) GC + Boultif ./. Schweiz (2001) etablierten einen 11-Kriterien-Verhältnismäßigkeitstest, der direkt auf Prop. 264 anwendbar ist. Rechtsquellen: Utlänningslagen (2005:716) Kap. 5 §17 (Erlaubnisvoraussetzungen); RF (1974:152) Kap. 2 §21 (Verhältnismäßigkeit). Die Motion von V bezieht sich auf beide. Der Artikel sollte spezifische Paragrafnummern für Glaubwürdigkeit zitieren.*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_es.md -->
+
+**Clasificación**: 🟢 PÚBLICO
+
+**Prioridad**: ALTA — debate sobre inmigración en año electoral, dimensiones de derechos fundamentales
+**Tipo de artículo**: motioner
+
+### RESUMEN EJECUTIVO
+
+Vänsterpartiet presentó dos mociones de comité el 2026-05-11 oponiéndose al régimen migratorio endurecido de la coalición Tidö. La moción HD024149 exige el rechazo total de la *prop. 2025/26:264* sobre requisitos de conducta más estrictos para los permisos de residencia, citando el artículo 8 del CEDH sobre el derecho a la vida familiar y la falta de seguridad jurídica. La moción HD024150 se opone parcialmente a la *prop. 2025/26:263* sobre la aplicación de expulsiones — aceptando ciertas medidas de ejecución pero rechazando el intercambio obligatorio de datos entre agencias de bienestar social y la policía. Con las elecciones de septiembre de 2026 a cuatro meses, estas mociones funcionan simultáneamente como desafíos legales e instrumentos de posicionamiento político para la base electoral de V.
+
+### Hallazgos clave
+
+1. **V se posiciona como único crítico de bloque en inmigración**: Ambas mociones son exclusivamente propuestas de V — ningún apoyo inter-bloques documentado. Esto refuerza la identidad de V como el crítico parlamentario más consistente de la agenda migratoria de la coalición Tidö.
+
+2. **La evaluación de conducta como nueva herramienta de aplicación**: La prop. 2025/26:264 permitiría la denegación/revocación de permisos de residencia basada en la conducta (vandel) independientemente de condenas penales. V argumenta que esto crea un poder discrecional impredecible incompatible con los principios del Estado de derecho y la proporcionalidad según el art. 8 del CEDH.
+
+3. **Dimensión de vigilancia de datos**: La prop. 2025/26:263 exige el intercambio de información de Arbetsförmedlingen, Försäkringskassan, Kriminalvården y Skatteverket a Polismyndigheten para apoyar la aplicación de expulsiones. V describe esto como la creación de un canal de bienestar-hacia-vigilancia dirigido a grupos de migrantes vulnerables.
+
+4. **Amplificación de señal cerca de las elecciones**: Con las elecciones de 2026 (<6 meses), estas mociones llevan un multiplicador de relevancia política de 1,5×. La base electoral de V (progresista urbana, orientada a los derechos humanos) considera el endurecimiento de la política migratoria como diferenciación central respecto a los partidos gubernamentales.
+
+5. **Estrategia procedimental**: La presentación como *kommittémotioner* (mociones de comité vinculadas a propuestas específicas) en lugar de mociones independientes señala una contra-estrategia parlamentaria disciplinada que maximiza el tiempo de debate en SfU y la visibilidad mediática.
+
+### Evaluación general
+
+La coalición Tidö tiene mayoría parlamentaria para aprobar ambas propuestas; estas mociones de V serán rechazadas en SfU. Sin embargo, su importancia es electoral y constitucional: establecen un protocolo de oposición formal contra las medidas de conducta y compartición de datos, proporcionan argumentos legales que organizaciones de derechos humanos y tribunales podrán citar tras su entrada en vigor, y movilizan la base electoral de V antes de las elecciones de septiembre de 2026. Evaluación de inteligencia: estas mociones representan **resistencia parlamentaria coordinada** con **impacto medio-alto en el debate de política migratoria post-electoral**, especialmente si emergen litigios de conformidad con el CEDH.
+
+### Implicaciones políticas inmediatas
+
+- Votación en comité SfU: se espera que ambas mociones fracasen (mayoría SD+M+KD+L)
+- Calendario del informe: previsto mayo-junio 2026
+- Vía de recurso legal: ONG y defensores jurídicos pueden usar los argumentos de las mociones en futuros litigios del art. 8 del CEDH
+- Preparación de agencias: Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården deben todos operacionalizar nuevos protocolos de intercambio de datos si se aprueban las propuestas
+
+### Horizonte temporal
+
+| Banda | Evaluación |
+|-------|------------|
+| T+72h | El texto de las mociones circula en la sociedad civil sueca y en los medios jurídicos y de inmigración |
+| T+7d | Comienzan las deliberaciones del SfU; el gobierno puede emitir respuesta escrita a los argumentos de las mociones |
+| T+30d | Se espera el informe del comité; votación en comité (mociones previstas que fracasen) |
+| T+90d | Leyes promulgadas si se aprueba el informe; las agencias comienzan implementación |
+| T+365d (elección) | V hará campaña con exactamente estos argumentos de moción; riesgo de litigio CEDH visible |
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_fi.md -->
+
+**Luokitus**: 🟢 JULKINEN
+
+**Prioriteetti**: KORKEA — siirtolaiskeskustelu vaaliaikana, perusoikeuksien ulottuvuudet
+**Artikkelityyppi**: motioner
+
+### TIIVISTELMÄ
+
+Vänsterpartiet jätti kaksi valiokuntaesitystä 2026-05-11 vastustaen Tidö-koalition tiukentuneita maahanmuuttorajoituksia. Esitys HD024149 vaatii *prop. 2025/26:264*:n täydellistä hylkäämistä tiukemmista luonteenpiirrevaatimuksista oleskeluluvissa viitaten EIS 8 artiklan perheoikeuteen ja oikeusturvan puutteeseen. Esitys HD024150 vastustaa osittain *prop. 2025/26:263*:a karkottamisten täytäntöönpanosta — hyväksyy joitakin täytäntöönpanotoimenpiteitä mutta hylkää pakollisen tietojenvaihdon sosiaaliviranomaisten ja poliisin välillä. Syyskuun 2026 vaalien ollessa neljä kuukautta päässä nämä esitykset toimivat samanaikaisesti oikeudellisina haasteina ja V:n äänestäjäkunnalle suunnattuina poliittisina asemointivälineinä.
+
+### Keskeisiä havaintoja
+
+1. **V asemoituu ainoaksi blokkikriitikoksi maahanmuuttopolitiikassa**: Molemmat esitykset ovat pelkästään V:n esityksiä — ristiblokkitukea ei ole dokumentoitu. Tämä vahvistaa V:n identiteettiä Tidö-koalition maahanmuuttoagendan johdonmukaisimpana parlamentaarisena arvostelijana.
+
+2. **Luonteenpiirrearviointi uutena täytäntöönpanovälineenä**: Prop. 2025/26:264 mahdollistaisi oleskelulupien epäämisen/peruuttamisen luonteen (käyttäytymisen) perusteella rikostuomiosta riippumatta. V väittää, että tämä luo arvaamatonta harkintavaltaa, joka on ristiriidassa oikeusturvaperiaatteiden ja EIS 8 artiklan suhteellisuuden kanssa.
+
+3. **Tietojen valvontaulottuvuus**: Prop. 2025/26:263 velvoittaa tietojenvaihtoon Arbetsförmedlingenilta, Försäkringskassanilta, Kriminalvårdenilta ja Skatteverketilta Polismyndighetenille karkottamisten täytäntöönpanon tukemiseksi. V kuvaa tätä hyvinvoinnista valvontaan johtavan putkilinjan luomisena, joka kohdistuu haavoittuviin siirtolaisryhmiin.
+
+4. **Signaalin vahvistuminen vaalien lähestyessä**: Vuoden 2026 vaalien ollessa lähellä (<6 kuukautta) näillä esityksillä on 1,5× poliittinen merkittävyyskerroin. V:n äänestäjäkunta (progressiivinen kaupunkilainen, ihmisoikeussuuntautunut) näkee maahanmuuttopolitiikan tiukentumisen keskeisenä erottautumisena hallituspuolueista.
+
+5. **Menettelystrategia**: Jättäminen *kommittémotionereina* (valiokunnan esitykset jotka liittyvät tiettyihin lakiesityksiin) eikä itsenäisinä esityksinä merkitsee kurinaläistä parlamentaarista vastastrategiaa, joka maksimoi keskusteluajan SfU:ssa ja näkyvyyden mediassa.
+
+### Kokonaisarvio
+
+Tidö-koalitiolla on parlamentaarinen enemmistö molempien lakiesitysten hyväksymiseen; nämä V:n esitykset äänestetään alas SfU:ssa. Niiden merkitys on kuitenkin vaalipoliittinen ja perustuslaillinen: ne luovat virallisen oppositioprotokollan luonne- ja tietojenjako-toimenpiteitä vastaan, tarjoavat oikeudellisia argumentteja, joihin ihmisoikeusjärjestöt ja tuomioistuimet voivat vedota voimaantulon jälkeen, ja mobilisoivat V:n äänestäjäkuntaa syyskuun 2026 vaaleja varten. Tiedusteluarvio: nämä esitykset edustavat **koordinoitua parlamentaarista vastarintaa**, jolla on **keskisuuri-suuri vaikutus vaalien jälkeiseen maahanmuuttopoliittiseen keskusteluun**, erityisesti jos EIS-noudattamiskanteet materialisoituvat.
+
+### Välittömät poliittiset vaikutukset
+
+- SfU-valiokunnan äänestys: molempien esitysten odotetaan epäonnistuvan (SD+M+KD+L-enemmistö)
+- Mietintöaikataulu: odotettavissa touko-kesäkuu 2026
+- Oikeudellinen valituspolku: kansalaisjärjestöt ja oikeudelliset asianajajat voivat käyttää esitysten argumentteja tulevissa EIS 8 artiklan kanteissa
+- Virastovalmius: Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården kaikkien on otettava käyttöön uudet tietojenjako-protokollat, jos lakiesitykset hyväksytään
+
+### Aikajänne
+
+| Kaistale | Arvio |
+|----------|-------|
+| T+72h | Esitysteksti leviää ruotsalaisessa kansalaisyhteiskunnassa, oikeudellisissa ja maahanmuuttomedioissa |
+| T+7d | SfU-neuvottelut alkavat; hallitus voi antaa kirjallisen vastauksen esitysten argumentteihin |
+| T+30d | Mietintö odotettavissa; valiokunnan äänestys (esitysten odotetaan epäonnistuvan) |
+| T+90d | Lakiesitykset hyväksytty jos mietintö hyväksytään; virastot aloittavat toimeenpanon |
+| T+365d (vaalit) | V kampanjoi juuri näillä esitysten argumenteilla; EIS-kanneriskit näkyvissä |
+
+---
+*Pass 2 parannushuomio: EIS art. 8 perheoikeus Üner v. Alankomaat (2006) GC + Boultif v. Sveitsi (2001) vahvisti 11-kriteerisen suhteellisuustestin joka soveltuu suoraan prop. 264:ään. Lakiviittaukset: Utlänningslagen (2005:716) luku 5 §17 (lupaedellytykset); RF (1974:152) luku 2 §21 (suhteellisuus). V:n esitys viittaa molempiin. Artikkelin tulisi mainita tarkat pykälänumerot uskottavuuden vuoksi.*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_fr.md -->
+
+**Priorité** : HAUTE — débat sur l'immigration en année électorale, dimensions des droits fondamentaux
+**Type d'article** : motioner
+
+### SYNTHÈSE
+
+Vänsterpartiet a déposé deux motions de commission le 2026-05-11 s'opposant au régime migratoire renforcé de la coalition Tidö. La motion HD024149 exige le rejet total de la *prop. 2025/26:264* sur des critères de moralité plus stricts pour les permis de résidence, invoquant l'article 8 de la CEDH sur la vie familiale et l'absence de sécurité juridique. La motion HD024150 s'oppose partiellement à la *prop. 2025/26:263* sur l'application des expulsions — acceptant certaines mesures d'exécution mais refusant le partage obligatoire des données entre les agences sociales et la police. L'élection de septembre 2026 étant à quatre mois, ces motions servent simultanément de défis juridiques et d'instruments de positionnement politique pour la base électorale de V.
+
+### Constats clés
+
+1. **V se positionne comme seul critique de bloc sur l'immigration** : Les deux motions sont exclusivement des propositions de V — aucun soutien inter-blocs documenté. Cela renforce l'identité de V comme le critique parlementaire le plus constant de l'agenda migratoire de la coalition Tidö.
+
+2. **L'évaluation de la moralité comme nouvel outil d'application** : La prop. 2025/26:264 permettrait le refus/la révocation des permis de résidence sur la base du comportement (vandel) indépendamment des condamnations pénales. V soutient que cela crée un pouvoir discrétionnaire imprévisible incompatible avec les principes de l'État de droit et la proportionnalité en vertu de l'art. 8 de la CEDH.
+
+3. **Dimension de surveillance des données** : La prop. 2025/26:263 impose l'échange d'informations d'Arbetsförmedlingen, Försäkringskassan, Kriminalvården et Skatteverket vers Polismyndigheten pour soutenir l'application des expulsions. V décrit ceci comme la création d'un pipeline bien-être-vers-surveillance ciblant les groupes de migrants vulnérables.
+
+4. **Amplification du signal à l'approche des élections** : Avec les élections 2026 (<6 mois), ces motions portent un multiplicateur de saillance politique de 1,5×. La base électorale de V (progressiste urbaine, axée sur les droits humains) considère le durcissement de la politique migratoire comme une différenciation centrale vis-à-vis des partis gouvernementaux.
+
+5. **Stratégie procédurale** : Le dépôt en tant que *kommittémotioner* (motions de commission liées à des propositions spécifiques) plutôt que comme motions autonomes signale une contre-stratégie parlementaire disciplinée maximisant le temps de débat en SfU et la visibilité médiatique.
+
+### Évaluation globale
+
+La coalition Tidö dispose d'une majorité parlementaire pour adopter les deux propositions ; ces motions de V seront rejetées au SfU. Leur importance est néanmoins électorale et constitutionnelle : elles établissent un protocole d'opposition formel contre les mesures de moralité et de partage de données, fournissent des arguments juridiques que les organisations de droits humains et les tribunaux pourront citer après l'entrée en vigueur, et mobilisent la base électorale de V avant l'élection de septembre 2026. Évaluation renseignement : ces motions représentent **une résistance parlementaire coordonnée** avec **un impact moyen à élevé sur le débat politique migratoire post-électoral**, en particulier si des contentieux de conformité CEDH se matérialisent.
+
+### Implications politiques immédiates
+
+- Vote en commission SfU : les deux motions devraient échouer (majorité SD+M+KD+L)
+- Calendrier du rapport : prévu mai-juin 2026
+- Voie de recours juridique : les ONG et défenseurs juridiques peuvent utiliser les arguments des motions dans de futures actions CEDH art. 8
+- Préparation des agences : Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården doivent tous opérationnaliser de nouveaux protocoles de partage de données si les propositions sont adoptées
+
+### Horizon temporel
+
+| Horizon | Évaluation |
+|---------|------------|
+| T+72h | Le texte des motions circule dans la société civile suédoise et dans les médias juridiques et migratoires |
+| T+7d | Délibérations du SfU commencent ; le gouvernement peut émettre une réponse écrite aux arguments des motions |
+| T+30d | Rapport de commission attendu ; vote en commission (motions vraisemblablement rejetées) |
+| T+90d | Lois promulguées si le rapport est adopté ; les agences commencent la mise en œuvre |
+| T+365d (élection) | V fera campagne sur ces arguments de motions exacts ; risque de contentieux CEDH visible |
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מודיעיני — 2026-05-12
+
+**סיווג**: 🟢 ציבורי
+
+**עדיפות**: גבוהה — ויכוח ההגירה בשנת בחירות, ממדים של זכויות יסוד
+**סוג מאמר**: motioner
+
+### תמצית
+
+Vänsterpartiet הגיש שני הצעות ועדה ב-2026-05-11 נגד משטר ההגירה המחמיר של קואליציית טידו. הצעה HD024149 דורשת דחייה מלאה של *prop. 2025/26:264* בנוגע לדרישות אופי מחמירות יותר לרישיונות שהייה, תוך ציטוט סעיף 8 לאמנה האירופית לזכויות אדם על זכות לחיי משפחה וחוסר ביטחון משפטי. הצעה HD024150 מתנגדת חלקית ל-*prop. 2025/26:263* בנוגע לאכיפת גירושין — מקבלת אמצעי אכיפה מסוימים אך דוחה שיתוף נתונים חובה בין סוכנויות הרווחה והמשטרה. עם בחירות ספטמבר 2026 בעוד ארבעה חודשים, הצעות אלה משמשות בו-זמנית כאתגרים משפטיים וכאמצעי מיצוב פוליטי לבסיס הבוחרים של V.
+
+### ממצאים מרכזיים
+
+1. **V ממצב את עצמו כמבקר הגוש היחיד בתחום ההגירה**: שתי ההצעות הן הצעות V בלבד — לא תועד תמיכה בין-גושית. הדבר מחזק את זהות V כמבקר הפרלמנטרי העקבי ביותר של סדר יום ההגירה של קואליציית טידו.
+
+2. **הערכת אופי ככלי אכיפה חדש**: Prop. 2025/26:264 תאפשר דחיית/ביטול רישיונות שהייה על בסיס אופי (vandel) ללא תלות בהרשעות פליליות. V טוענת שהדבר יוצר שיקול דעת שאינו ניתן לחיזוי בלתי עקבי עם עקרונות שלטון החוק ומידתיות לפי סעיף 8 לאמנה האירופית.
+
+3. **ממד מעקב נתונים**: Prop. 2025/26:263 מחייבת חילופי מידע מ-Arbetsförmedlingen, Försäkringskassan, Kriminalvården ו-Skatteverket אל Polismyndigheten לתמיכה באכיפת גירושין. V מתארת זאת כיצירת צינור מרווחה לפיקוח המכוון לקבוצות מהגרים פגיעות.
+
+4. **הגברת האות לקראת הבחירות**: עם בחירות 2026 (<6 חודשים), הצעות אלה נושאות מכפיל בולטות פוליטית של 1.5×. בסיס הבוחרים של V (פרוגרסיבים עירוניים, מוכוונים לזכויות אדם) מתייחס להתקשחות מדיניות ההגירה כדיפרנציאציה מרכזית ממפלגות הממשלה.
+
+5. **אסטרטגיה פרוצדורלית**: הגשה כ-*kommittémotioner* (הצעות ועדה הקשורות להצעות חוק ספציפיות) ולא כהצעות עצמאיות מאותתת על אסטרטגיית נגד פרלמנטרית ממושמעת המקסמת זמן דיון ב-SfU ונראות תקשורתית.
+
+### הערכה כוללת
+
+לקואליציית טידו יש רוב פרלמנטרי לאשר את שתי הצעות החוק; הצעות V אלה תוצבענה נגדן ב-SfU. אולם משמעותן היא בחירותית וחוקתית: הן מקימות פרוטוקול התנגדות רשמי נגד אמצעי האופי ושיתוף הנתונים, מספקות טיעונים משפטיים שארגוני זכויות אדם ובתי משפט יוכלו לצטט לאחר כניסתן לתוקף, ומגייסות את בסיס הבוחרים של V לקראת בחירות ספטמבר 2026. הערכה מודיעינית: הצעות אלה מייצגות **התנגדות פרלמנטרית מתואמת** בעלת **השפעה בינונית עד גבוהה על הוויכוח המדיניותי בנושא הגירה לאחר הבחירות**, במיוחד אם תתגשמנה תביעות עמידה באמנה האירופית.
+
+### השלכות מדיניות מיידיות
+
+- הצבעת ועדת SfU: שתי ההצעות צפויות להיכשל (רוב SD+M+KD+L)
+- לוח זמנים לדו"ח: צפוי מאי-יוני 2026
+- מסלול ערר משפטי: ארגוני NGO ועורכי דין יכולים להשתמש בטיעוני ההצעות בתביעות עתידיות של סעיף 8 לאמנה
+- מוכנות סוכנויות: Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården חייבים כולם להפעיל פרוטוקולי שיתוף נתונים חדשים אם יאושרו הצעות החוק
+
+### אופק זמן
+
+| פס | הערכה |
+|----|-------|
+| T+72h | טקסט ההצעות יופץ בחברה האזרחית השוודית ובתקשורת המשפטית ועניני ההגירה |
+| T+7d | מתחילות דיוני SfU; הממשלה עשויה להנפיק תגובה כתובה לטיעוני ההצעות |
+| T+30d | צפוי דו"ח ועדה; הצבעת ועדה (ההצעות צפויות להיכשל) |
+| T+90d | חוקים מאושרים אם הדו"ח עובר; סוכנויות מתחילות יישום |
+| T+365d (בחירות) | V תנהל קמפיין בדיוק על טיעונים אלה; סיכון תביעות האמנה האירופית גלוי |
+
+---
+*הערת שיפור שלב 2: פסיקת האמנה האירופית לסעיף 8 בענין חיי משפחה Üner נ' הולנד (2006) GC + Boultif נ' שוויץ (2001) קבעה מבחן מידתיות של 11 קריטריונים ישים ישירות על prop. 264. הפניות חקיקתיות: Utlänningslagen (2005:716) פרק 5 §17 (תנאי היתר); RF (1974:152) פרק 2 §21 (מידתיות). הצעת V מתייחסת לשניהם. המאמר צריך לצטט מספרי סעיפים ספציפיים לצורך אמינות.*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_ja.md -->
+
+**分類**: 🟢 公開
+
+**優先度**: 高 — 選挙年の移民論争、基本的権利の側面
+**記事タイプ**: motioner
+
+### 要点
+
+Vänsterpartietは2026-05-11に、Tidö連立政権の強化された移民体制に反対する2件の委員会動議を提出した。動議HD024149は、ECHR第8条（家族生活の権利）および法的確実性の欠如を根拠として、居住許可に関するより厳しい品性要件を定めた*prop. 2025/26:264*の完全否決を求めている。動議HD024150は、追放執行に関する*prop. 2025/26:263*に部分的に反対するもので、一部の執行措置は受け入れるが、福祉機関と警察間のデータ共有義務化は拒否している。2026年9月の選挙まで4ヶ月を切った今、これらの動議はV党の支持者基盤に向けた法的異議申し立てと政治的ポジショニングの手段として同時に機能している。
+
+### 主要な調査結果
+
+1. **Vは移民政策に関するブロック唯一の批判者として位置づけ**: 両動議はV単独の提案であり、ブロック横断的な支持は記録されていない。これによりVは、Tidö連立政権の移民アジェンダに対する最も一貫した議会批判者としての立場を強化している。
+
+2. **品性評価という新たな執行ツール**: Prop. 2025/26:264は、刑事有罪判決とは無関係に品性（vandel）に基づく居住許可の拒否・取り消しを可能にする。Vは、これが法の支配の原則およびECHR第8条に基づく比例性に相容れない予測不可能な裁量権をもたらすと主張している。
+
+3. **データ監視の側面**: Prop. 2025/26:263は、追放執行を支援するためにArbetsförmedlingen、Försäkringskassan、Kriminalvården、SkatteverketからPolismyndighetenへの情報共有を義務付ける。Vは、これを脆弱な移民グループを標的とした福祉から監視へのパイプライン創設と位置づけている。
+
+4. **選挙接近によるシグナル増幅**: 2026年選挙まで6ヶ月未満の中、これらの動議は1.5倍の政治的顕著性乗数をもつ。V党の支持者層（進歩的都市部、人権志向）は、移民政策の硬化を与党政党との主要な差別化と捉えている。
+
+5. **手続き的戦略**: 独立動議ではなく*kommittémotioner*（特定の法案に紐づいた委員会動議）として提出したことは、SfUにおける討議時間とメディア露出を最大化する規律ある議会対抗戦略を示している。
+
+### 総合評価
+
+Tidö連立政権は両法案を可決するための議会過半数を保有しており、これらのV動議はSfUで否決される見通しである。しかしその重要性は選挙的・憲法的なものである：品性規定とデータ共有措置に対する公式の反対議事録を確立し、施行後に人権組織や裁判所が援用できる法的根拠を提供し、2026年9月選挙に向けてV党の支持者層を結集させる。情報評価：これらの動議は、**ECHRコンプライアンス訴訟が具体化する場合に特に、選挙後の移民政策論争に中程度から高い影響を持つ**、**組織的な議会抵抗**を代表するものである。
+
+### 政策への直接的な影響
+
+- SfU委員会投票：両動議は否決される見通し（SD+M+KD+L過半数）
+- 報告書の時期：2026年5〜6月予定
+- 法的上訴経路：NGOおよび法的弁護士は将来のECHR第8条訴訟で動議の論拠を使用可能
+- 機関の準備：法案が可決された場合、Migrationsverket、Polismyndigheten、AF、FK、Kriminalvårdenはすべて新しいデータ共有プロトコルを実施する必要がある
+
+### 時間的展望
+
+| バンド | 評価 |
+|--------|------|
+| T+72h | 動議文書がスウェーデン市民社会および法的・移民関連メディアで流通 |
+| T+7d | SfU審議開始；政府は動議論拠への書面による回答を発表する可能性 |
+| T+30d | 委員会報告書予定；委員会投票（動議は否決見通し） |
+| T+90d | 報告書可決後、法律施行；機関が実施開始 |
+| T+365d（選挙） | Vはこの動議論拠を選挙運動で使用；ECHR訴訟リスクが顕在化 |
+
+---
+*パス2改善メモ：ECHR第8条家族生活の先例Üner対オランダ（2006年）GC + Boultif対スイス（2001年）は、Prop. 264に直接適用可能な11基準の比例性テストを確立した。法律参照：Utlänningslagen (2005:716) 第5章§17（許可条件）；RF (1974:152) 第2章§21（比例性）。V党の動議は両方に言及している。信頼性のために記事は具体的な条項番号を引用すべきである。*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_ko.md -->
+
+**분류**: 🟢 공개
+
+**우선순위**: 높음 — 선거 해의 이민 논쟁, 기본권 차원
+**기사 유형**: motioner
+
+### 요약
+
+Vänsterpartiet는 2026-05-11 Tidö 연립정부의 강화된 이민 체제에 반대하는 두 건의 위원회 동의를 제출했습니다. 동의 HD024149는 ECHR 제8조(가족생활 권리)와 법적 확실성 결여를 근거로 거주 허가의 더 엄격한 품성 요건을 담은 *prop. 2025/26:264*의 완전 거부를 요구합니다. 동의 HD024150은 추방 집행에 관한 *prop. 2025/26:263*에 부분적으로 반대하며, 일부 집행 조치는 수용하지만 복지 기관과 경찰 간의 의무적 데이터 공유는 거부합니다. 2026년 9월 선거가 4개월 앞으로 다가온 상황에서, 이 동의들은 법적 이의 제기와 V당 지지층을 위한 정치적 포지셔닝 도구로 동시에 기능합니다.
+
+### 주요 발견
+
+1. **V는 이민 문제에서 유일한 블록 비판자로 자리매김**: 두 동의는 모두 V 단독 제안으로, 블록 간 지지가 기록되지 않았습니다. 이는 V를 Tidö 연립정부 이민 의제의 가장 일관된 의회 비판자로 강화합니다.
+
+2. **품성 평가를 새로운 집행 도구로 활용**: Prop. 2025/26:264는 형사 유죄 판결과 무관하게 품성(vandel)을 근거로 거주 허가를 거부/취소할 수 있도록 합니다. V는 이것이 법치주의 원칙 및 ECHR 제8조에 따른 비례성과 상충하는 예측 불가능한 재량권을 만든다고 주장합니다.
+
+3. **데이터 감시 차원**: Prop. 2025/26:263은 추방 집행을 지원하기 위해 Arbetsförmedlingen, Försäkringskassan, Kriminalvården, Skatteverket에서 Polismyndigheten으로 정보 공유를 의무화합니다. V는 이를 취약한 이민자 집단을 겨냥한 복지에서 감시로의 파이프라인 생성으로 설명합니다.
+
+4. **선거 접근에 따른 신호 증폭**: 2026년 선거가 6개월 미만 남은 상황에서, 이 동의들은 1.5배의 정치적 현저성 승수를 지닙니다. V의 지지층(진보적 도시민, 인권 지향)은 이민 정책 강화를 집권 정당들과의 핵심 차별화 지점으로 봅니다.
+
+5. **절차적 전략**: 독립 동의가 아닌 *kommittémotioner*(특정 법안과 연결된 위원회 동의)로 제출한 것은 SfU에서의 토론 시간과 미디어 노출을 극대화하는 규율된 의회 대응 전략을 나타냅니다.
+
+### 종합 평가
+
+Tidö 연립정부는 두 법안을 통과시킬 의회 과반수를 보유하므로, 이 V 동의들은 SfU에서 부결될 것입니다. 그러나 그 의미는 선거적이고 헌법적입니다: 품성 및 데이터 공유 조치에 대한 공식 반대 기록을 수립하고, 시행 후 인권 단체와 법원이 인용할 수 있는 법적 논거를 제공하며, 2026년 9월 선거를 앞두고 V의 지지층을 동원합니다. 정보 평가: 이 동의들은 **조율된 의회 저항**을 대표하며, 특히 ECHR 준수 소송이 구체화될 경우 **선거 후 이민 정책 논쟁에 중간에서 높은 영향력**을 미칩니다.
+
+### 즉각적인 정책 시사점
+
+- SfU 위원회 투표: 두 동의 모두 부결 예상 (SD+M+KD+L 과반수)
+- 보고서 일정: 2026년 5~6월 예상
+- 법적 항소 경로: NGO 및 법률 옹호자들은 향후 ECHR 제8조 소송에서 동의 논거 활용 가능
+- 기관 준비: 법안이 통과될 경우 Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården 모두 새로운 데이터 공유 프로토콜을 운용해야 함
+
+### 시간적 전망
+
+| 구간 | 평가 |
+|------|------|
+| T+72h | 동의 텍스트가 스웨덴 시민사회 및 법률·이민 미디어에서 유통 |
+| T+7d | SfU 심의 시작; 정부가 동의 논거에 대한 서면 답변 발표 가능 |
+| T+30d | 위원회 보고서 예상; 위원회 투표 (동의 부결 예상) |
+| T+90d | 보고서 통과 시 법률 발효; 기관들이 시행 시작 |
+| T+365d (선거) | V는 정확히 이 동의 논거로 선거 운동 전개; ECHR 소송 위험 가시화 |
+
+---
+*패스 2 개선 메모: ECHR 제8조 가족생활 판례 Üner 대 네덜란드 (2006) GC + Boultif 대 스위스 (2001)는 Prop. 264에 직접 적용 가능한 11개 기준 비례성 테스트를 확립했습니다. 법률 참고: Utlänningslagen (2005:716) 제5장 §17 (허가 조건); RF (1974:152) 제2장 §21 (비례성). V의 동의는 양자를 모두 언급합니다. 신뢰성을 위해 기사는 구체적인 조항 번호를 인용해야 합니다.*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_nl.md -->
+
+**Classificatie**: 🟢 OPENBAAR
+
+**Prioriteit**: HOOG — immigratiedebat in verkiezingsjaar, dimensies van grondrechten
+**Artikeltype**: motioner
+
+### SAMENVATTING
+
+Vänsterpartiet diende op 2026-05-11 twee commissiemotions in tegen het aangescherpte immigratieregime van de Tidö-coalitie. Motie HD024149 eist volledige verwerping van *prop. 2025/26:264* over strengere gedragseisen voor verblijfsvergunningen, met verwijzing naar EVRM artikel 8 inzake familieleven en gebrek aan rechtszekerheid. Motie HD024150 verwerpt gedeeltelijk *prop. 2025/26:263* over de tenuitvoerlegging van uitzettingen — accepteert bepaalde handhavingsmaatregelen maar verwerpt verplichte gegevensuitwisseling tussen sociale diensten en politie. Met de verkiezingen van september 2026 vier maanden weg fungeren deze motions tegelijkertijd als juridische uitdagingen en politieke positioneringsinstrumenten voor de kiezersbase van V.
+
+### Bevindingen
+
+1. **V positioneert zich als enige blokkriticus op immigratie**: Beide motions zijn uitsluitend V-voorstellen — geen inter-blok-steun gedocumenteerd. Dit versterkt de identiteit van V als de meest consequente parlementaire criticus van de immigratieagenda van de Tidö-coalitie.
+
+2. **Gedragsbeoordeling als nieuw handhavingsinstrument**: Prop. 2025/26:264 zou weigering/intrekking van verblijfsvergunningen op basis van gedrag (vandel) onafhankelijk van strafvonnissen mogelijk maken. V betoogt dat dit een onvoorspelbare discretionaire bevoegdheid creëert die onverenigbaar is met rechtsstaatvereisten en proportionaliteit op grond van EVRM art. 8.
+
+3. **Gegevenstoezichtsdimensie**: Prop. 2025/26:263 verplicht informatie-uitwisseling van Arbetsförmedlingen, Försäkringskassan, Kriminalvården en Skatteverket naar Polismyndigheten ter ondersteuning van de uitzettingshandhaving. V beschrijft dit als het creëren van een welzijn-naar-surveillance-pijplijn gericht op kwetsbare migrantengroepen.
+
+4. **Signalamplificatie nabij verkiezingen**: Met de verkiezingen van 2026 (<6 maanden) dragen deze motions een 1,5× politieke saliëntiemultiplicator. De kiezersbase van V (progressief-stedelijk, mensenrechtsgericht) beschouwt verharding van immigratiebeleid als centrale differentiatie ten opzichte van de regeringspartijen.
+
+5. **Procedurestrategie**: Indiening als *kommittémotioner* (commissiemotions gekoppeld aan specifieke wetsvoorstellen) in plaats van zelfstandige motions signaleert een gedisciplineerde parlementaire tegenstrategie die debattijd in SfU en mediavisibiliteit maximaliseert.
+
+### Eindoordeel
+
+De Tidö-coalitie beschikt over een parlementaire meerderheid om beide wetsvoorstellen aan te nemen; deze V-motions worden afgestemd in SfU. Hun betekenis is echter electoraal en constitutioneel: ze vestigen een formeel oppositioneel protocol tegen de gedrags- en gegevensdelingsmaatregelen, bieden juridische argumenten die mensenrechtenorganisaties en rechtbanken na inwerkingtreding kunnen citeren, en mobiliseren de kiezersbase van V voor de verkiezingen van september 2026. Inlichtingenbeoordeling: deze motions vertegenwoordigen **gecoördineerde parlementaire weerstand** met **gemiddeld tot hoge impact op het migratiebeleidsdebat na de verkiezingen**, met name als EVRM-nalevingsprocedures materialiseren.
+
+### Directe beleidsimplicaties
+
+- SfU-commissiestemming: beide motions verwacht te mislukken (SD+M+KD+L-meerderheid)
+- Rapporttiminig: verwacht mei-juni 2026
+- Juridische beroepsweg: NGO's en juridische advocaten kunnen motionsargumenten gebruiken in toekomstige EVRM art. 8-procedures
+- Agentschapsbereiding: Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården moeten allemaal nieuwe gegevensdelingsprotocollen operationaliseren als de wetsvoorstellen worden aangenomen
+
+### Tijdshorizon
+
+| Band | Beoordeling |
+|------|-------------|
+| T+72h | Motionstekst circuleert in Zweeds maatschappelijk middenveld en juridische en immigratiemedia |
+| T+7d | SfU-beraadslagingen beginnen; regering kan schriftelijke reactie op motionsargumenten uitbrengen |
+| T+30d | Commissierapport verwacht; commissiestemming (motions verwacht te mislukken) |
+| T+90d | Wetten uitgevaardigd als rapport aangenomen; agentschappen beginnen implementatie |
+| T+365d (verkiezingen) | V zal campagne voeren op precies deze motionsargumenten; EVRM-procesrisico zichtbaar |
+
+---
+*Pass 2-verbeteringsnoot: EVRM art. 8 familieleven Üner v. Nederland (2006) GC + Boultif v. Zwitserland (2001) stelde een 11-criteria proportionaliteitstoets vast die direct van toepassing is op prop. 264. Wetsreferenties: Utlänningslagen (2005:716) hfst. 5 §17 (vergunningsvoorwaarden); RF (1974:152) hfst. 2 §21 (proportionaliteit). De motie van V verwijst naar beide. Het artikel moet specifieke paragraafnummers vermelden voor geloofwaardigheid.*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_no.md -->
+
+**Klassifisering**: 🟢 OFFENTLIG
+
+**Prioritet**: HØY — innvandringsdebatten i valgår, dimensjoner av grunnleggende rettigheter
+**Artikkeltype**: motioner
+
+### KONKLUSJON
+
+Vänsterpartiet leverte inn to utvalgsforslag 2026-05-11 mot Tidö-koalisjonens innstrammede innvandringsregime. Forslag HD024149 krever fullstendig avvisning av *prop. 2025/26:264* om strengere vandelskrav for oppholdstillatelse, med henvisning til EMK artikkel 8 om familieliv og mangel på rettssikkerhet. Forslag HD024150 motarbeider delvis *prop. 2025/26:263* om håndhevelse av utvisning — aksepterer visse håndhevelsestiltak men avviser obligatorisk datadeling mellom velferdsorganer og politiet. Med valget i september 2026 fire måneder unna fungerer disse forslagene samtidig som juridiske utfordringer og politiske posisjoneringsinstrumenter for V's velgerbase.
+
+### Nøkkelfunn
+
+1. **V posisjonerer seg som eneste blokkritiker av innvandringspolitikken**: Begge forslagene er utelukkende V-forslag — ingen dokumentert tverrblokkstøtte. Dette styrker V's identitet som den mest konsekvente parlamentariske kritikeren av Tidö-koalisjonens innvandringsagenda.
+
+2. **Vandelsvurdering som nytt håndhevelsesverktøy**: Prop. 2025/26:264 ville muliggjøre avvisning/tilbakekalling av oppholdstillatelse basert på vandel (oppførsel) uavhengig av straffedommer. V hevder at dette skaper uforutsigbar diskresjonær makt uforenelig med rettssikkerhetsprinsipper og proporsjonalitet i henhold til EMK art. 8.
+
+3. **Dataovervåkingsdimensjon**: Prop. 2025/26:263 krever informasjonsdeling fra Arbetsförmedlingen, Försäkringskassan, Kriminalvården og Skatteverket til Polismyndigheten for å støtte håndhevelse av utvisning. V beskriver dette som å skape en velferds-til-overvåkings-pipeline rettet mot sårbare migrantgrupper.
+
+4. **Signalamplifikasjon nær valget**: Med valget i 2026 (<6 måneder) bærer disse forslagene en 1,5× politisk salienssmultiplikator. V's velgerbase (progressiv urban, menneskerettighetsorientert) ser innstramming av innvandringspolitikken som sentral differensiering fra regjeringspartiene.
+
+5. **Prosedyrestrategi**: Innsendelse som *kommittémotioner* (utvalgsforslag knyttet til spesifikke lovforslag) snarere enn frittstående forslag signaliserer disiplinert parlamentarisk motstrategi som maksimerer debattid i SfU og mediesynlighet.
+
+### Samlet vurdering
+
+Tidö-koalisjonen har et parlamentarisk flertall til å vedta begge lovforslagene; disse V-forslagene vil bli stemt ned i SfU. Deres betydning er imidlertid valgbasert og konstitusjonell: de etablerer en formell opposisjonsprotokoll mot vandel- og datadelingstiltakene, gir juridiske argumenter som menneskerettighetsorganisasjoner og domstoler kan påberope seg etter ikrafttredelse, og mobiliserer V's velgerbase foran valget i september 2026. Etterretningsvurdering: disse forslagene representerer **koordinert parlamentarisk motstand** med **middels-til-høy påvirkning på migrasjonsdebatten etter valget**, særlig hvis EMK-samsvarssøksmål materialiseres.
+
+### Umiddelbare politiske konsekvenser
+
+- SfU-utvalgsavstemning: begge forslag forventes å mislykkes (SD+M+KD+L-flertall)
+- Betenkingstiming: forventet mai-juni 2026
+- Juridisk klagesti: NGO-er og juridiske forkjempere kan bruke forslags-argumenter i fremtidige EMK art. 8-søksmål
+- Myndighetsberedskap: Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården må alle operasjonalisere nye datadelingsprotokoller hvis lovforslagene vedtas
+
+### Tidshorisont
+
+| Band | Vurdering |
+|------|-----------|
+| T+72h | Forslagsteksten sirkulerer i det svenske sivilsamfunnet, juridiske og innvandringsmedier |
+| T+7d | SfU-rådslagninger begynner; regjeringen kan utstede skriftlig svar på forslags-argumentene |
+| T+30d | Betenkning forventet; utvalgsavstemning (forslag forventes å mislykkes) |
+| T+90d | Lovforslag vedtatt hvis betenkning passerer; myndigheter begynner implementering |
+| T+365d (valg) | V vil drive valgkamp på nøyaktig disse forslags-argumentene; EMK-søksmålsrisiko synlig |
+
+---
+*Pass 2-forbedringnotat: EMK art. 8 familieliv Üner mot Nederland (2006) GC + Boultif mot Sveits (2001) etablerte en 11-kriteriers proporsjonalitetstest direkte anvendelig på prop. 264. Lovreferanser: Utlänningslagen (2005:716) kap. 5 §17 (tillatelsesvilkår); RF (1974:152) kap. 2 §21 (proporsjonalitet). V's forslag refererer til begge. Artikkelen bør sitere spesifikke paragrafnummer for troverdighet.*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_sv.md -->
+
+**Klassificering**: 🟢 OFFENTLIG
+
+**Prioritet**: HÖG — invandringsdebatten under valår, dimensioner av grundläggande rättigheter
+**Artikeltyp**: motioner
+
+### SAMMANFATTNING
+
+Vänsterpartiet lämnade in två utskottsmotioner 2026-05-11 mot Tidökoalitionens skärpta invandringspolitik. Motion HD024149 kräver fullständigt avslag på *prop. 2025/26:264* om striktare vandelskrav för uppehållstillstånd, med hänvisning till EKMR artikel 8 om rätten till familjeliv och bristande rättssäkerhet. Motion HD024150 motsätter sig delvis *prop. 2025/26:263* om verkställighet av avvisningsbeslut — accepterar vissa verkställighetsåtgärder men avvisar obligatoriskt informationsutbyte mellan välfärdsmyndigheter och polisen. Med valet i september 2026 fyra månader bort fungerar dessa motioner samtidigt som rättsliga utmaningar och politiska positioneringsinstrument för V:s väljarunderlag.
+
+### Nyckelfynd
+
+1. **V positionerar sig som enda blockkritiker av invandringspolitiken**: Båda motionerna är enbart V-förslag — inget korsblockstöd dokumenterat. Detta förstärker V:s identitet som den mest konsekventa parlamentariska kritikern av Tidökoalitionens invandringspolitik.
+
+2. **Vandelsbedömning som nytt verktyg**: Prop. 2025/26:264 skulle möjliggöra avslag/återkallelse av uppehållstillstånd baserat på vandel (beteende) oberoende av straffdomar. V hävdar att detta skapar oförutsägbar diskretionär makt som är oförenlig med rättssäkerhetsprinciper och proportionalitet enligt EKMR art. 8.
+
+3. **Dataspridningsdimension**: Prop. 2025/26:263 kräver informationsdelning från Arbetsförmedlingen, Försäkringskassan, Kriminalvården och Skatteverket till Polismyndigheten för att stödja verkställighet av avvisningsbeslut. V beskriver detta som att skapa en pipeline från välfärd till övervakning riktad mot utsatta migrantgrupper.
+
+4. **Signalförstärkning inför valet**: Med valet 2026 (<6 månader), bär dessa motioner 1,5× politisk salienssmultiplikator. V:s väljarunderlag (progressivt urbant, människorättsorienterat) ser hårdnande invandringspolitik som central differentiering från regeringspartierna.
+
+5. **Procedurstrategi**: Att lämna in som *kommittémotioner* (utskottsmotioner knutna till specifika propositioner) snarare än fristående motioner signalerar disciplinerad parlamentarisk motstrategi som maximerar debatttid i SfU och mediesynlighet.
+
+### Sammantagen bedömning
+
+Tidökoalitionen har en parlamentarisk majoritet för att anta båda propositionerna; dessa V-motioner kommer att röstas ner i SfU. Deras betydelse är dock valbaserad och konstitutionell: de upprättar ett formellt oppositionsprotokoll mot vandels- och datadelningsåtgärderna, ger rättsliga argument som människorättsorganisationer och domstolar kan åberopa efter ikraftträdandet, och engagerar V:s väljarunderlag inför valet i september 2026. Underrättelsebedömning: dessa motioner representerar **samordnat parlamentariskt motstånd** med **medel-till-högt inflytande på migrationsdebatten efter valet**, särskilt om EKMR-kompatibilitetsstämningar materialiseras.
+
+### Omedelbara politiska konsekvenser
+
+- SfU-utskottsomröstning: båda motionerna förväntas misslyckas (SD+M+KD+L-majoritet)
+- Betänkandetiming: förväntas maj-juni 2026
+- Rättslig överklagandeväg: NGO:er och juridiska förespråkare kan använda motionsargument i framtida EKMR art. 8-stämningar
+- Myndighetsberedskap: Migrationsverket, Polismyndigheten, AF, FK, Kriminalvården måste alla operationalisera nya datadelningsprotokoll om propositionerna antas
+
+### Tidshorisont
+
+| Band | Bedömning |
+|------|-----------|
+| T+72h | Motionstexten sprids i det svenska civilsamhället samt juridiska och invandringspolitiska medier |
+| T+7d | SfU-rådsläggningar börjar; regeringen kan utfärda skriftligt svar på motionsargumenten |
+| T+30d | Betänkande förväntas; utskottsomröstning (motioner förväntas misslyckas) |
+| T+90d | Propositioner antagna om betänkande passerar; myndigheter börjar implementering |
+| T+365d (val) | V kommer att kampanja på dessa exakta motionsargument; EKMR-stämningsrisk synlig |
+
+---
+*Not om förbättring i pass 2: EKMR art. 8 familjelivspraxis Üner mot Nederländerna (2006) GC + Boultif mot Schweiz (2001) fastställde ett 11-kriteriums proportionalitetstest direkt tillämpligt på prop. 264. Lagreferenser: Utlänningslagen (2005:716) kap. 5 §17 (tillståndsvillkor); RF (1974:152) kap. 2 §21 (proportionalitet). V:s motion refererar till båda. Artikeln bör citera specifika paragrafnummer för trovärdighet.*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_zh.md -->
+
+**分类**：🟢 公开
+**Admiralty**：B2（经确认的议会来源，可能属实）
+**优先级**：高 — 选举年的移民辩论，基本权利维度
+**文章类型**：motioner
+
+### 核心要点
+
+Vänsterpartiet于2026-05-11提交了两份委员会动议，反对Tidö联合政府加强的移民制度。动议HD024149援引《欧洲人权公约》第8条关于家庭生活权利及缺乏法律确定性的理由，要求完全否决关于更严格居留许可品性要求的*prop. 2025/26:264*。动议HD024150部分反对关于驱逐执行的*prop. 2025/26:263*——接受某些执法措施，但拒绝福利机构与警察之间的强制数据共享。距2026年9月大选仅剩四个月，这些动议同时发挥着法律挑战和V党选民政治定位工具的作用。
+
+### 主要发现
+
+1. **V将自身定位为移民问题上的唯一集团批评者**：两份动议均为V党独立提案——无跨集团支持记录。这强化了V作为Tidö联合政府移民议程最一贯的议会批评者的身份。
+
+2. **品性评估作为新的执法工具**：Prop. 2025/26:264将允许以品性（vandel）为由拒绝/撤销居留许可，独立于刑事定罪。V认为这创造了与法治原则及《欧洲人权公约》第8条比例原则不符的不可预测的自由裁量权。
+
+3. **数据监控维度**：Prop. 2025/26:263要求Arbetsförmedlingen、Försäkringskassan、Kriminalvården和Skatteverket向Polismyndigheten提供信息共享以支持驱逐执行。V将此描述为针对脆弱移民群体建立从福利到监控的流水线。
+
+4. **临近选举的信号放大**：距2026年选举不足6个月，这些动议具有1.5倍政治显著性倍增器。V的选民基础（进步城市派、人权导向）将移民政策硬化视为与执政党的核心区分点。
+
+5. **程序策略**：以*kommittémotioner*（与特定法案挂钩的委员会动议）而非独立动议提交，表明这是一种规范化的议会反制策略，可最大化SfU的辩论时间和媒体曝光度。
+
+### 综合评估
+
+Tidö联合政府拥有通过两项法案所需的议会多数；这些V党动议将在SfU被否决。然而其意义是选举性和宪法性的：它们建立了对抗品性和数据共享措施的正式反对记录，为人权组织和法院在生效后引用提供法律论据，并为2026年9月选举动员V的选民基础。情报评估：这些动议代表着**协调的议会抵制**，对选后移民政策辩论具有**中至高度影响**，尤其是若《欧洲人权公约》合规诉讼得以成形。
+
+### 直接政策影响
+
+- SfU委员会投票：两项动议预计失败（SD+M+KD+L多数席位）
+- 报告时间表：预计2026年5月至6月
+- 法律上诉途径：非政府组织和法律倡导者可在未来《欧洲人权公约》第8条诉讼中使用动议论据
+- 机构准备：若法案通过，Migrationsverket、Polismyndigheten、AF、FK、Kriminalvården均须实施新的数据共享协议
+
+### 时间展望
+
+| 时段 | 评估 |
+|------|------|
+| T+72h | 动议文本在瑞典公民社会及法律和移民媒体中传播 |
+| T+7d | SfU审议开始；政府可能发布对动议论据的书面回应 |
+| T+30d | 预计委员会报告；委员会投票（动议预计失败） |
+| T+90d | 若报告获批则法律颁布；各机构开始实施 |
+| T+365d（选举） | V将以这些动议论据开展竞选；《欧洲人权公约》诉讼风险显现 |
+
+---
+*第二轮改进说明：《欧洲人权公约》第8条家庭生活判例Üner诉荷兰（2006）大法庭 + Boultif诉瑞士（2001）确立了直接适用于prop. 264的11项比例性测试。法律参考：Utlänningslagen (2005:716) 第5章§17（许可条件）；RF (1974:152) 第2章§21（比例原则）。V党动议均援引了上述两项。文章应引用具体条款编号以增强可信度。*
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
 
@@ -1593,6 +2254,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -3,7 +3,7 @@ date: 2026-05-21
 subfolder: propositions
 slug: 2026-05-21-propositions
 source_folder: analysis/daily/2026-05-21/propositions
-generated_at: 2026-05-25T15:59:54.371Z
+generated_at: 2026-05-27T07:35:34.110Z
 language: en
 layout: article
 ---
@@ -2595,8 +2595,6 @@ flowchart LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/propositions/executive-brief_zh.md -->
-
-**分类**：公开OSINT · **可信度**：中高 · **作者**：Riksdagsmonitor情报分析流水线
 
 ### 🎯 态势简要评估
 

@@ -3,7 +3,7 @@ date: 2026-05-07
 subfolder: motions
 slug: 2026-05-07-motions
 source_folder: analysis/daily/2026-05-07/motions
-generated_at: 2026-05-25T15:59:53.557Z
+generated_at: 2026-05-27T07:35:33.185Z
 language: en
 layout: article
 ---
@@ -1774,12 +1774,6 @@ graph LR
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_de.md -->
 
-**Klassifizierung**: NICHT KLASSIFIZIERT // ÖFFENTLICHE QUELLE // DSGVO Art. 9(2)(e,g)
-**Datum**: 2026-05-07
-**Autor**: James Pether Sörling
-**Konfidenz**: B3 — Zuverlässige Quelle, möglicherweise wahr (Admiralitätsskala)
-**Lauf-ID**: 25482566277
-
 ### BLUF
 
 Acht Oppositionsausschussanträge, eingereicht am 2026-05-04, organisieren koordinierten Widerstand gegen zwei Regierungsvorlagen: Vier Oppositionsparteien (V, SD, S, C, MP) fordern via MJU prop. 2025/26:242 zur Deregulierung der Forstwirtschaft heraus, während V, C und MP via JuU die Ablehnung der Senkung des Strafmündigkeitsalters auf 13 Jahre in prop. 2025/26:246 fordern. Mit der Wahl im September 2026 ca. 125 Tage entfernt tragen beide Gesetzgebungskämpfe maximale Wahlrelevanz. Die 165-Sitze-Mehrheit der Regierung steht vor ihrer verfassungsrechtlich folgenreichsten Konfrontation des parlamentarischen Frühjahrs.
@@ -1830,12 +1824,6 @@ graph LR
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_es.md -->
-
-**Clasificación**: SIN CLASIFICAR // FUENTE PÚBLICA // RGPD Art. 9(2)(e,g)
-**Fecha**: 2026-05-07
-**Autor**: James Pether Sörling
-**Confianza**: B3 — Fuente fiable, posiblemente cierta (Escala Almirantazgo)
-**ID de ejecución**: 25482566277
 
 ### BLUF
 
@@ -1945,10 +1933,6 @@ graph LR
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_fr.md -->
 
-**Auteur**: James Pether Sörling
-**Confiance**: B3 — Source fiable, peut-être vraie (Échelle Amirauté)
-**ID d'exécution**: 25482566277
-
 ### BLUF
 
 Huit motions des commissions d'opposition déposées le 2026-05-04 organisent une résistance coordonnée contre deux propositions gouvernementales : quatre partis d'opposition (V, SD, S, C, MP) contestent via MJU la prop. 2025/26:242 sur la déréglementation forestière, tandis que V, C et MP exigent via JuU le rejet de l'abaissement de l'âge de responsabilité pénale à 13 ans dans la prop. 2025/26:246. Avec les élections de septembre 2026 à environ 125 jours, les deux batailles législatives revêtent une importance électorale maximale. La majorité de 165 sièges du gouvernement fait face à sa confrontation constitutionnellement la plus conséquente du printemps parlementaire.
@@ -2057,12 +2041,6 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_ja.md -->
 
-**分類**: 未分類 // 公開情報源 // GDPR Art. 9(2)(e,g)
-**日付**: 2026-05-07
-**著者**: James Pether Sörling
-**信頼度**: B3 — 信頼できる情報源、おそらく真実（海軍省尺度）
-**実行ID**: 25482566277
-
 ### BLUF
 
 2026-05-04に提出された8つの野党委員会動議が、二つの政府提案に対する協調抵抗を組織した。四野党（V、SD、S、C、MP）はMJUを通じてprop. 2025/26:242の林業規制緩和に反対し、V、C、MPはJuUを通じてprop. 2025/26:246における刑事責任年齢の13歳への引き下げの否決を求める。2026年9月の選挙まで約125日となり、両立法闘争は最大の選挙的重要性を帯びる。政府の165議席多数は、議会春季の最も憲法的に重要な対立に直面している。
@@ -2113,12 +2091,6 @@ graph LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_ko.md -->
-
-**분류**: 비밀 해제 // 공개 출처 // GDPR Art. 9(2)(e,g)
-**날짜**: 2026-05-07
-**저자**: James Pether Sörling
-**신뢰도**: B3 — 신뢰할 수 있는 출처, 사실일 가능성 있음 (해군부 척도)
-**실행 ID**: 25482566277
 
 ### BLUF
 
@@ -2285,12 +2257,6 @@ graph LR
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_sv.md -->
 
-**Klassificering**: HEMLIGHETSSTÄMPLAT EJ // OFFENTLIG KÄLLA // GDPR Art. 9(2)(e,g)
-**Datum**: 2026-05-07
-**Författare**: James Pether Sörling
-**Konfidens**: B3 — Tillförlitlig källa, möjligen sant (Admiralitetsskalan)
-**Körnings-ID**: 25482566277
-
 ### BLUF
 
 Åtta oppositionsutskottsmotioner inlämnade 2026-05-04 monterar koordinerat motstånd mot två regeringspropositioner: fyra oppositionspartier (V, SD, S, C, MP) utmanar prop. 2025/26:242 om skogsbruksavreglering via MJU, medan V, C och MP kräver avslag på sänkning av straffansvarsåldern till 13 år i prop. 2025/26:246 via JuU. Med riksdagsvalet i september 2026 ungefär 125 dagar bort, bär båda lagstiftningssllagen maximal elektoral relevans. Regeringens 165-mandasjövikt möter sin mest konstitutionellt avgörande konfrontation under den parlamentariska våren.
@@ -2341,12 +2307,6 @@ graph LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/motions/executive-brief_zh.md -->
-
-**分类**: 非保密 // 公开来源 // GDPR Art. 9(2)(e,g)
-**日期**: 2026-05-07
-**作者**: James Pether Sörling
-**可信度**: B3 — 可靠来源，可能属实（海军部量表）
-**运行ID**: 25482566277
 
 ### BLUF
 

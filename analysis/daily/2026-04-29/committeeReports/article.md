@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: committeeReports
 slug: 2026-04-29-committeeReports
 source_folder: analysis/daily/2026-04-29/committeeReports
-generated_at: 2026-05-25T15:59:52.939Z
+generated_at: 2026-05-27T07:35:32.541Z
 language: en
 layout: article
 ---
@@ -1767,12 +1767,6 @@ graph TD
 
 # تقارير لجان البرلمان السويدي — نشرة استخباراتية 28 أبريل 2026
 
-**المؤلف**: James Pether Sörling  
-**التاريخ**: 2026-04-29  
-**التصنيف**: عام — المادة 9(2)(ه)(و) من اللائحة الأوروبية لحماية البيانات  
-**الثقة**: عالية [B2]  
-**معرف التشغيل**: 25091345504
-
 ---
 
 ### 🎯 الملخص التنفيذي
@@ -1989,18 +1983,10 @@ flowchart LR
 
 **Beobachten**: Abstimmung im Plenum über HD01SfU28 (Staatsbürgerschaft) geplant. Erste Novus/Ipsos-Umfragen nach der Abstimmung werden innerhalb von 7 Tagen erwartet. Eine ≥3-Punkte-Verschiebung in SD↔M oder S Mandatprojektionen würde den Wahlmobilisierungseffekt der Staatsbürgerschaftsreform bestätigen.
 
-**Konfidenz**: HOCH [B2]
-
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/executive-brief_es.md -->
-
-**Autor**: James Pether Sörling  
-**Fecha**: 2026-04-29  
-**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e)(g)  
-**Confianza**: ALTA [B2]  
-**ID de ejecución**: 25091345504
 
 ---
 
@@ -2305,12 +2291,6 @@ flowchart LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**日付**: 2026-04-29  
-**分類**: 公開 — GDPR第9条(2)(e)(g)  
-**信頼度**: 高 [B2]  
-**実行ID**: 25091345504
-
 ---
 
 ### 🎯 要約
@@ -2379,12 +2359,6 @@ flowchart LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**날짜**: 2026-04-29  
-**분류**: 공개 — GDPR 제9조(2)(e)(g)  
-**신뢰도**: 높음 [B2]  
-**실행 ID**: 25091345504
 
 ---
 
@@ -2455,12 +2429,6 @@ flowchart LR
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/executive-brief_nl.md -->
 
-**Auteur**: James Pether Sörling  
-**Datum**: 2026-04-29  
-**Classificatie**: OPENBAAR — AVG Art. 9(2)(e)(g)  
-**Betrouwbaarheid**: HOOG [B2]  
-**Run-ID**: 25091345504
-
 ---
 
 ### 🎯 Samenvatting
@@ -2524,8 +2492,6 @@ flowchart LR
 ### 🔔 Belangrijkste vooruitkijkend signaal
 
 **Volg op**: Plenaire stemming over HD01SfU28 (staatsburgerschap) gepland. Eerste Novus/Ipsos-peilingen na de stemming worden binnen 7 dagen verwacht. Een verandering van ≥3 punten in SD↔M of S zetelprojekties zou het electorale mobilisatie-effect van de staatsburgerschapshervorming bevestigen.
-
-**Betrouwbaarheid**: HOOG [B2]
 
 <!-- source-sha: aec9c4c63be21515d55b3a22362bc344c0b4a20e -->
 
@@ -2606,12 +2572,6 @@ flowchart LR
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/executive-brief_sv.md -->
-
-**Författare**: James Pether Sörling  
-**Datum**: 2026-04-29  
-**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
-**Konfidens**: HÖG [B2]  
-**Körnings-ID**: 25091345504
 
 ---
 

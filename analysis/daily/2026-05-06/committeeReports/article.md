@@ -3,7 +3,7 @@ date: 2026-05-06
 subfolder: committeeReports
 slug: 2026-05-06-committeeReports
 source_folder: analysis/daily/2026-05-06/committeeReports
-generated_at: 2026-05-25T15:59:53.439Z
+generated_at: 2026-05-27T07:35:33.060Z
 language: en
 layout: article
 ---
@@ -1439,9 +1439,6 @@ IMF-status: forringet (SDMX-endpoint utilgængeligt). Baseret på cachede WEO-da
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_de.md -->
 
-**Klassifizierung**: 🟢 ÖFFENTLICH | **Konfidenz**: B2 (Bestätigte Quellen, mehrfache Korroboration)
-**Datum**: 2026-05-06 | **Riksmöte**: 2025/26
-
 ### Fazit (BLUF)
 
 Fünf parlamentarische Ausschussentscheidungen wurden am 6. Mai 2026 in vier Politikbereichen verabschiedet. Die folgenschwerste ist **SfU21** — die eine Qualifizierungsperiode für wohnsitzbasierte Sozialversicherungsleistungen (barnbidrag, föräldrapenning, bostadsbidrag, äldreförsörjningsstöd) einführt. Dies stellt die schärfste Einschränkung der Universalität des schwedischen Wohlfahrtsstaats seit einer Generation dar und wurde trotz Widerstand von S, V und MP verabschiedet. Zusammen mit **FöU18** (Modernisierung der Signalaufklärung), **CU25** (PBL-Ausnahmen für Gefängniskapazität) und zwei technischen Änderungen (FöU16, SfU24) spiegeln die Entscheidungen die weitere Priorisierung der Tidö-Koalition von Migrations-, Kriminalitäts- und Verteidigungsreformen gegenüber sozialdemokratischer Wohlfahrtsarchitektur wider.
@@ -1793,9 +1790,6 @@ IMF 상태: 저하됨 (SDMX 엔드포인트 이용 불가). 캐시된 WEO 데이
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/committeeReports/executive-brief_nl.md -->
-
-**Classificatie**: 🟢 OPENBAAR | **Betrouwbaarheid**: B2 (Bevestigde bronnen, meervoudige corroboratie)
-**Datum**: 2026-05-06 | **Riksmöte**: 2025/26
 
 ### Conclusie (BLUF)
 

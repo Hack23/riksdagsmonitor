@@ -3,7 +3,7 @@ date: 2026-04-28
 subfolder: propositions
 slug: 2026-04-28-propositions
 source_folder: analysis/daily/2026-04-28/propositions
-generated_at: 2026-05-25T15:59:52.920Z
+generated_at: 2026-05-27T07:35:32.521Z
 language: en
 layout: article
 ---
@@ -2300,11 +2300,6 @@ flowchart LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**日付**: 2026-04-28  
-**分類**: 公開 | 信頼度: 高 [B2]  
-**実行ID**: 25037283767  
-
 ---
 
 ### 🎯 要約
@@ -2350,11 +2345,6 @@ flowchart LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/propositions/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**날짜**: 2026-04-28  
-**분류**: 공개 | 신뢰도: 높음 [B2]  
-**실행 ID**: 25037283767  
 
 ---
 

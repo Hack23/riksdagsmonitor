@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: propositions
 slug: 2026-04-29-propositions
 source_folder: analysis/daily/2026-04-29/propositions
-generated_at: 2026-05-25T15:59:53.003Z
+generated_at: 2026-05-27T07:35:32.611Z
 language: en
 layout: article
 ---
@@ -2056,8 +2056,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_ja.md -->
 
-**著者**：James Pether Sörling · **日付**：2026-04-29 · **分類**：PUBLIC · **信頼度**：MEDIUM-HIGH
-
 ### 🎯 BLUF
 
 クリステション政権は2026年4月28日、それぞれ異なる政治的重みを持つ3つの法案を提出しました。国家交通インフラ計画2026–2037（Skr. 2025/26:259, HD03259）は道路・鉄道・海運への投資として8,750億スウェーデンクローナを充当しており、スウェーデン近代史上最大規模のインフラ予算のひとつです。同時に、市販薬の購入時における薬学的助言の義務（Prop. 2025/26:247, HD03247）および自治体測量機関のITシステム（Prop. 2025/26:257, HD03257）も規制されます。全体として、今日の議事日程は統治・管理のパターンを示しています。自治体ITインフラの標準化と医薬品安全の強化が、持続可能なモビリティのための戦略的枠組みと組み合わされています。
@@ -2324,8 +2322,6 @@ style HD03257 fill:#00d9ff,color:#0a0e27
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/executive-brief_zh.md -->
-
-**作者**：James Pether Sörling · **日期**：2026-04-29 · **分类**：PUBLIC · **置信度**：MEDIUM-HIGH
 
 ### 🎯 BLUF
 

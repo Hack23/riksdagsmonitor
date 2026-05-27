@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: month-ahead
 slug: 2026-04-29-month-ahead
 source_folder: analysis/daily/2026-04-29/month-ahead
-generated_at: 2026-05-25T15:59:52.968Z
+generated_at: 2026-05-27T07:35:32.572Z
 language: en
 layout: article
 ---
@@ -2444,8 +2444,6 @@ graph TD
     style C fill:#e63946,stroke:#e63946,color:#fff
     style D fill:#ffbe0b,stroke:#ffbe0b,color:#000
 ```
-
-**可信度**：高 [B2] — 3条独立证据线：riksdagen.se一手资料、前一周期分析、IMF宏观经济数据。
 
 <!-- source-sha: 710341b307c7929bdbc2496e5627bc3766ba9d38 -->
 

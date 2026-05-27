@@ -3,7 +3,7 @@ date: 2026-05-18
 subfolder: realtime-pulse
 slug: 2026-05-18-realtime-pulse
 source_folder: analysis/daily/2026-05-18/realtime-pulse
-generated_at: 2026-05-25T15:59:54.249Z
+generated_at: 2026-05-27T07:35:33.984Z
 language: en
 layout: article
 ---
@@ -3136,8 +3136,6 @@ Källor: Riksdagens öppna data-API (data.riksdagen.se), riksdag-regering MCP-se
 ---
 
 ### 来源可信度
-
-来源：议会开放数据API（data.riksdagen.se）、riksdag-regering MCP服务器（实时）、议会betänkanden和propositioner经官方来源核实。政府更迭（埃巴·布什任总理）系从已签署提案推断——需通过政府官网正式记录确认。
 
 <!-- source-sha: a302709ca29121760e105a999ab5fec055b0b16e -->
 

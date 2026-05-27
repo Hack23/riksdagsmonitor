@@ -3,7 +3,7 @@ date: 2026-04-23
 subfolder: month-ahead
 slug: 2026-04-23-month-ahead
 source_folder: analysis/daily/2026-04-23/month-ahead
-generated_at: 2026-05-25T15:59:52.538Z
+generated_at: 2026-05-27T07:35:32.123Z
 language: en
 layout: article
 ---
@@ -2664,8 +2664,6 @@ quadrantChart
 ### 🎯 Conclusie
 
 Zweden gaat de laatste vijf weken van de parlementaire sessie 2025/26 in met drie onderling verbonden pakketten die de wetgevingsagenda domineren: het Lente Fiscaal Pakket 2026 (HD03100 vårproposition + HD0399 aanvullend budget), een Wet en Orde Pakket dat de strafrechtelijke agenda van het Tidöavtalet consolideert, en een Energietransitiepakket dat de elektriciteitsmarkt herstructureert. Alle drie pakketten krijgen hun definitieve stemmen voor het zomerreces, waarbij de vårproposition Zweden's fiscale koers bepaalt door een pre-electorale periode van matige economische herstel en verhoogde defensie-uitgaven.
-
-**Betrouwbaarheid**: HOOG [B2 — officiële overheidsdocumenten, riksdagen.se-bronnen]
 
 ---
 

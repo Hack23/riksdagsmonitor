@@ -3,7 +3,7 @@ date: 2026-05-08
 subfolder: motions
 slug: 2026-05-08-motions
 source_folder: analysis/daily/2026-05-08/motions
-generated_at: 2026-05-25T15:59:53.662Z
+generated_at: 2026-05-27T07:35:33.287Z
 language: en
 layout: article
 ---
@@ -1513,8 +1513,6 @@ No withdrawn or återtagna documents in this batch.
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_ar.md -->
 
-‏# اقتراحات المعارضة تتحدى إصلاحات الغابات وقضاء الأحداث
-
 **المؤلف**: جيمس بيتر سورلينج | **التاريخ**: 2026-05-08 | **الثقة**: عالية [B2]
 **التصنيف**: عام | **اللائحة العامة لحماية البيانات**: المادة 9(2)(ه،ز) — المواقف السياسية التي أُعلنت للعموم
 
@@ -1807,8 +1805,6 @@ timeline
 
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/executive-brief_he.md -->
-
-‏# הצעות האופוזיציה מאתגרות רפורמות ביערנות ובשפיטת קטינים
 
 **מחבר**: ג'יימס פתר סורלינג | **תאריך**: 2026-05-08 | **ביטחון**: גבוה [B2]
 **סיווג**: ציבורי | **GDPR**: סעיף 9(2)(ה,ז) — עמדות פוליטיות שפורסמו לציבור

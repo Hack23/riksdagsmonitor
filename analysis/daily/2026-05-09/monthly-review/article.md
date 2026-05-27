@@ -3,7 +3,7 @@ date: 2026-05-09
 subfolder: monthly-review
 slug: 2026-05-09-monthly-review
 source_folder: analysis/daily/2026-05-09/monthly-review
-generated_at: 2026-05-25T15:59:53.720Z
+generated_at: 2026-05-27T07:35:33.349Z
 language: en
 layout: article
 ---
@@ -2555,11 +2555,6 @@ Fem interpellationer om Gaza på 72 timer (2026-05-06/07/08) er den højeste enk
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling  
-**Datum**: 2026-05-09  
-**Klassifizierung**: ÖFFENTLICH  
-**Konfidenz**: HOCH (A1/A2-Quellen)  
-
 ---
 
 ### 🎯 BLUF
@@ -2963,11 +2958,6 @@ HD01SoU36은 민간 국가 인력의 국제 임무 파견을 위한 법적 기�
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling  
-**Datum**: 2026-05-09  
-**Classificatie**: OPENBAAR  
-**Betrouwbaarheid**: HOOG (A1/A2-bronnen)  
 
 ---
 

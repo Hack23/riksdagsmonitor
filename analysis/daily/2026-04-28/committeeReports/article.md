@@ -3,7 +3,7 @@ date: 2026-04-28
 subfolder: committeeReports
 slug: 2026-04-28-committeeReports
 source_folder: analysis/daily/2026-04-28/committeeReports
-generated_at: 2026-05-25T15:59:52.869Z
+generated_at: 2026-05-27T07:35:32.466Z
 language: en
 layout: article
 ---
@@ -1926,11 +1926,6 @@ graph TD
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/executive-brief_fi.md -->
 
-**Tekijä**: James Pether Sörling
-**Päivämäärä**: 2026-04-28
-**Luokitus**: JULKINEN — GDPR Art. 9(2)(e)(g)
-**Luottamus**: KORKEA [B2]
-
 ---
 
 ### 🎯 Ydinviesti
@@ -1952,8 +1947,6 @@ Finansvaliokunta on hyväksynyt Tidö-hallituksen kevättalousarvion talouspolit
 - **HC01SkU18** (SkU): Uudet esteet ja peruuttamisperusteet F-verotuksen hyväksynnälle otettu käyttöön väärinkäytösten torjumiseksi. [B1]
 
 ### 🔺 Tärkein Tuleva Laukaisija
-
-**Päivämäärä: 2025-06-17** — Riksdagenin täysistuntoäänestys FiU20-suuntaviivoista. Oppositioreservat S:ltä, V:ltä, C:ltä, MP:ltä luovat poliittisen kipukohdan: signaloivatko vasemmistokeskusta ja liberaali blokki uskottavan vaihtoehtoisen talouspolitiikan ohjelman?
 
 ### 📊 Luottamus
 
@@ -2133,8 +2126,6 @@ graph TD
 **日付：2025年6月17日** — RiksdagのFiU20指針に関する本会議投票。S、V、C、MPの野党留保が政治的摩擦点を生み出す：中道左派・リベラルブロックは信頼性ある代替経済プログラムを示すか？
 
 ### 📊 信頼度
-
-**信頼度：高** — 主要評価はdata.riksdagen.seの一次文書に全文で依拠。FiU20公式文書からのGDPおよび失業率数値はSCB/IMFコンテキストで確認済み。不確実性：KU20監査結果の時期と政治的影響はまだ完全には明確でない。
 
 ---
 

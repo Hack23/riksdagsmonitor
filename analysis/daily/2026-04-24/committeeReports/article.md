@@ -3,7 +3,7 @@ date: 2026-04-24
 subfolder: committeeReports
 slug: 2026-04-24-committeeReports
 source_folder: analysis/daily/2026-04-24/committeeReports
-generated_at: 2026-05-25T15:59:52.588Z
+generated_at: 2026-05-27T07:35:32.174Z
 language: en
 layout: article
 ---
@@ -2143,8 +2143,6 @@ flowchart LR
 <!-- lang: de -->
 # Exekutivbriefing — Ausschussberichte 2026-04-24
 
-**Autor**: James Pether Sörling   **Lauf-ID**: 24866836753   **Klassifizierung**: ÖFFENTLICH   **Konfidenz**: HOCH (B2)
-
 ### 🎯 Schlussfolgerung
 
 Fünf Ausschussberichte, die am 2026-04-23 vorgelegt wurden, gruppieren sich entlang der drei Wahlkampf-Signaturpfeiler der Tidö-Koalition — **Kapazität der Strafvollzugsbehörde** (`HD01CU25`), **Migrationsdurchsetzung mit Ausnahme für Forscher-Mobilität** (`HD01SfU23`) und **institutionelle Geldpolitik** (`HD01FiU23`) — ergänzt durch zwei Breitkonsens-Dossiers zu **ILO-Ratifizierung von Arbeitnehmerrechten** (`HD01AU15`) und **E-Auto-Heimladen** (`HD01CU29`). Das Cluster ist eine bewusste Signalzusammensetzung ~5 Monate vor der Riksdag-Wahl im September 2026. Das reale Implementierungsrisiko konzentriert sich auf `HD01CU25` und `HD01SfU23`; das Reputationsrisiko auf `HD01FiU23`.
@@ -2209,8 +2207,6 @@ flowchart LR
 
 <!-- lang: es -->
 # Resumen ejecutivo — Informes de comisión 2026-04-24
-
-**Autor**: James Pether Sörling   **ID de ejecución**: 24866836753   **Clasificación**: PÚBLICO   **Confianza**: ALTA (B2)
 
 ### 🎯 Conclusión
 
@@ -2479,8 +2475,6 @@ flowchart LR
 <!-- lang: ja -->
 # エグゼクティブブリーフ — 委員会報告書 2026-04-24
 
-**著者**: James Pether Sörling   **実行ID**: 24866836753   **分類**: 公開   **信頼度**: 高 (B2)
-
 ### 🎯 結論
 
 2026-04-23に提出された5件の委員会報告書は、Tidö連立政権の3つの選挙看板政策を軸に集まっている — **刑務所収容能力** (`HD01CU25`)、**研究者移動の例外を設けた移民法執行** (`HD01SfU23`)、**金融機関の統治** (`HD01FiU23`) — さらに**ILO労働権批准** (`HD01AU15`) および**電気自動車の自宅充電** (`HD01CU29`) に関する2件の広範な合意案件が加わる。このクラスターは2026年9月のリクスダーグ選挙約5ヶ月前の意図的なシグナル構成である。実際の実施リスクは `HD01CU25` と `HD01SfU23` に集中し、評判リスクは `HD01FiU23` に集中している。
@@ -2545,8 +2539,6 @@ flowchart LR
 
 <!-- lang: ko -->
 # 집행 브리핑 — 위원회 보고서 2026-04-24
-
-**저자**: James Pether Sörling   **실행 ID**: 24866836753   **분류**: 공개   **신뢰도**: 높음 (B2)
 
 ### 🎯 결론
 

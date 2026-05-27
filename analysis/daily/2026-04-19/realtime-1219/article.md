@@ -3,7 +3,7 @@ date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-05-25T15:59:52.347Z
+generated_at: 2026-05-27T07:35:31.944Z
 language: en
 layout: article
 ---
@@ -3632,8 +3632,6 @@ Per dokument: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/bl
 各文件：[HD01KU33（主要，L3）](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md) · [HD03231 + HD03232（L2+）](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md) · [HD01KU32（L2+）](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md)
 
 ---
-
-**分类**：公开 · **下次审查**：2026-04-26 · **方法论**：`ai-driven-analysis-guide.md` v5.1 + DIW v1.0
 
 <!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
 

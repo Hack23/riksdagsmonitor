@@ -3,7 +3,7 @@ date: 2026-04-26
 subfolder: propositions
 slug: 2026-04-26-propositions
 source_folder: analysis/daily/2026-04-26/propositions
-generated_at: 2026-05-25T15:59:52.742Z
+generated_at: 2026-05-27T07:35:32.336Z
 language: en
 layout: article
 ---
@@ -2465,12 +2465,6 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**日付**: 2026-04-26  
-**実行ID**: 24963297569  
-**分類**: UNCLASSIFIED // PUBLIC SOURCE  
-**信頼度**: 高 [B2] — 4件の政府公式法案/スクリヴェルセ、riksdag-regering MCP、Riksdagen API
-
 ---
 
 ### BLUF
@@ -2528,12 +2522,6 @@ graph LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**날짜**: 2026-04-26  
-**실행 ID**: 24963297569  
-**분류**: UNCLASSIFIED // PUBLIC SOURCE  
-**신뢰도**: 높음 [B2] — 4건의 공식 정부 법안/스크리벨세, riksdag-regering MCP, Riksdagen API
 
 ---
 

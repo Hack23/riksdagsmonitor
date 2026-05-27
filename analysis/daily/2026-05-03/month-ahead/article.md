@@ -3,7 +3,7 @@ date: 2026-05-03
 subfolder: month-ahead
 slug: 2026-05-03-month-ahead
 source_folder: analysis/daily/2026-05-03/month-ahead
-generated_at: 2026-05-25T15:59:53.214Z
+generated_at: 2026-05-27T07:35:32.826Z
 language: en
 layout: article
 ---
@@ -2458,8 +2458,6 @@ pie title Distribución de prioridades legislativas (ajustada DIW)
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_fi.md -->
 
-**Luokitus**: JULKINEN | **Päivämäärä**: 2026-05-03 | **Tekijä**: James Pether Sörling
-
 ---
 
 ### 🎯 BLUF
@@ -2590,8 +2588,6 @@ pie title התפלגות עדיפויות תחיקתיות (מותאם DIW)
 
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_ja.md -->
-
-**分類**：公開 | **日付**：2026-05-03 | **著者**：James Pether Sörling
 
 ---
 
@@ -2809,8 +2805,6 @@ pie title Lagstiftningsprioritetsfördelning (DIW-justerad)
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/executive-brief_zh.md -->
-
-**分类**：公开 | **日期**：2026-05-03 | **作者**：James Pether Sörling
 
 ---
 

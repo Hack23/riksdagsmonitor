@@ -3,7 +3,7 @@ date: 2026-04-24
 subfolder: propositions
 slug: 2026-04-24-propositions
 source_folder: analysis/daily/2026-04-24/propositions
-generated_at: 2026-05-25T15:59:52.636Z
+generated_at: 2026-05-27T07:35:32.224Z
 language: en
 layout: article
 ---
@@ -1989,8 +1989,6 @@ flowchart LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/executive-brief_ja.md -->
 
-**分類**：公開 OSINT · **信頼度**：MEDIUM · **著者**：James Pether Sörling
-
 ### 🎯 要旨
 
 2026年4月23日、クリステション政権（Tidö 連立政権 — M、KD、L に加え SD が閣外協力）は **4件の議会文書** を提出しました。内容は2つの戦略的優先事項を軸としています：(1) **EU主導の金融規制** としての Prop. 2025/26:253（EU 銀行パッケージ、CRR3/CRD6 転換 — Admiralty B2）、および (2) **Tidö 刑事政策の具体化** としての Prop. 2025/26:252（勾留中の者に対する給付制限）。国債管理評価スクリベルセ（Skr. 2025/26:104）とタコグラフ執行に関する法案（Prop. 2025/26:256）がバッチを完成させます。最重要案件は Prop. 2025/26:253（DIW **3.8**）— スウェーデンの4大システム上重要銀行の自己資本要件を再設計する構造的課題であり、Riksbank の次回金利決定を前にした動向です。
@@ -2314,8 +2312,6 @@ flowchart LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/executive-brief_zh.md -->
-
-**分类**：公开 OSINT · **置信度**：MEDIUM · **作者**：James Pether Sörling
 
 ### 🎯 核心结论
 

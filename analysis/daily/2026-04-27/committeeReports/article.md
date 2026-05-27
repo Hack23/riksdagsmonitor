@@ -3,7 +3,7 @@ date: 2026-04-27
 subfolder: committeeReports
 slug: 2026-04-27-committeeReports
 source_folder: analysis/daily/2026-04-27/committeeReports
-generated_at: 2026-05-25T15:59:52.790Z
+generated_at: 2026-05-27T07:35:32.384Z
 language: en
 layout: article
 ---
@@ -2177,8 +2177,6 @@ graph LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/committeeReports/executive-brief_zh.md -->
-
-**作者**：James Pether Sörling | **分类**：PUBLIC | **可信度**：HIGH | **日期**：2026-04-27
 
 ### 🎯 BLUF
 

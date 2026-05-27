@@ -3,7 +3,7 @@ date: 2026-05-11
 subfolder: propositions
 slug: 2026-05-11-propositions
 source_folder: analysis/daily/2026-05-11/propositions
-generated_at: 2026-05-25T15:59:53.849Z
+generated_at: 2026-05-27T07:35:33.539Z
 language: en
 layout: article
 ---
@@ -91,6 +91,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2023,13 +2036,916 @@ Samtliga 23 obligatoriska artefakter skapades i Pass 1 i sekventiell ordning. Ti
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-05-07 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_ar.md -->
+
+&#x200F;# الملخص التنفيذي — الأمن والهوية والسيطرة الحكومية: ثلاثة مشاريع قوانين في 7 مايو 2026
+
+**المؤلف:** James Pether Sörling | **معرّف التشغيل:** 25654727630 | **التاريخ:** 2026-05-11
+**التصنيف:** عام | **مستوى الثقة:** HIGH [B2] | **سير العمل:** news-propositions
+
+---
+
+### 🔄 السياق الاستخباراتي
+
+| العنصر | القيمة |
+|--------|--------|
+| **مرحلة F3EAD** | النشر — منتج استخباراتي مكتمل |
+| **PIRs المُخدَّمة** | PIR-1 (استقرار الائتلاف), PIR-3 (سيادة القانون), PIR-5 (انتخابات 2026) |
+| **حد Admiralty** | [B2] — تأكيد عبر dok_id الأساسي |
+| **WEP + ODNI** | الأحكام الرئيسية تستخدم مقياس WEP؛ ثقة HIGH للادعاءات متعددة dok_id |
+| **SAT المُطبَّقة** | التحقق من الافتراضات الرئيسية، العصف الذهني، الحجج المنظمة |
+| **معايير ICD 203** | 5 (صلة بالعميل), 6 (استدلال منطقي), 9 (معلومات مرئية) |
+
+---
+
+### BLUF — الخلاصة مباشرةً
+
+في 7 مايو 2026، قدّمت حكومة Tidö ثلاثة مشاريع قوانين بموضوع مشترك: **توسيع السيطرة الحكومية على الهوية وسجلات السكان والاحتجاز بسبب التهديدات الأمنية**. أثقلها وزناً — Prop. 2025/26:267 — يُلغي الحد الزمني لاحتجاز الأجانب البالغين الذين يُعدّون تهديدات أمنية مؤهلة، ويُخفض معيار الإثبات من *مرجَّح* إلى *يُمكن افتراضه*. هذه التغييرات حساسة دستورياً وتعني **على الأرجح [B2]** أن Vänsterpartiet وSocialdemokraterna وMiljöpartiet ستطعن في مشروع القانون أثناء معالجته في Riksdag — مع احتمال تداعيات على الأغلبية البرلمانية.
+
+**ثلاثة قرارات يدعمها هذا الملخص:**
+1. **الأولوية التحريرية:** ينبغي أن يتصدر HD03267 التغطية — مسألة الاحتجاز غير المحدود زمنياً هي أهم تغيير دستوري منفرد في الحزمة.
+2. **مهمة المراقبة:** تفسير Lagrådet للاتفاقية الأوروبية لحقوق الإنسان (المادتان 5 و8) واتفاقية حقوق الطفل مؤشر خطر حاسم — نُشر في 7 مايو (الملحق 5).
+3. **الرصد الاستشرافي:** معالجة Riksdag 2026–2027؛ ينبغي قياس تاريخ دخول القانون حيز التنفيذ في 1 مارس 2027 مقابل نتيجة انتخابات سبتمبر 2026.
+
+---
+
+### القراءة في 60 ثانية
+
+| # | الاكتشاف | الدليل | مستوى الثقة |
+|---|----------|--------|-------------|
+| 1 | Prop. 2025/26:267 يُلغي الحد الزمني لاحتجاز الأجانب البالغين الذين يشكّلون تهديدات أمنية (الفصل 3 المادة 8 مُلغاة) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | يُخفَض معيار الإثبات للاحتجاز: *مرجَّح* يُستعاض عنه بـ *يُمكن افتراضه* | HD03267, الفصل 3 المادة 1 الصياغة الجديدة | HIGH |
+| 3 | يمكن للأطفال المحتجزين وضعهم في أقسام أمنية — أمر مثير للجدل في مقابل المادة 37 من اتفاقية حقوق الطفل | HD03267, § 6.3 | HIGH |
+| 4 | يُوضَّح أساس الترحيل: "مطلوب بشكل خاص لاعتبارات أمن السويد" (الفصل 2 المادة 1) | HD03267, الفصل 2 المادة 1 الصياغة الجديدة | HIGH |
+| 5 | Prop. 2025/26:250 تُرسي هوية رقمية حكومية — تتحدى هيمنة BankID | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 تمنح Skatteverket صلاحيات موسّعة في سجل السكان — تعالج الاحتيال في الهوية | dok_id HD03261 | HIGH |
+| 7 | مرّت المشاريع الثلاثة عبر Lagrådsremiss؛ رأي Lagrådet منشور (HD03267، الملحق 5) | HD03267 ص. 66 | HIGH |
+| 8 | دخول النفاذ: 1 مارس 2027 (HD03267) — بعد انتخابات Riksdag في سبتمبر 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### المحفّز الاستشرافي الأهم
+
+> **المحفّز T+14d:** توزيع HD03267 من قِبل لجان Riksdag على لجنة الشؤون القانونية (JuU). يحدد تشكيل أغلبية اللجنة (M+SD+KD+L = 10 من 17 مقعداً) ما إذا كان الرأي يدعم مشروع قانون الترحيل أم يُضعفه. ترقب: رأي خبراء القانون الدستوري في JuU حول التوافق مع الاتفاقية الأوروبية لحقوق الإنسان.
+
+---
+
+### ملاحظة منهجية
+
+يعتمد التحليل على النص الكامل لـ dok_id HD03267 والبيانات الوصفية لـ HD03250 وHD03261 (Prop. 2025/26:250, 261, 267). استُخدم IMF WEO أبريل-2026 vintage للسياق الاقتصادي (أعاد الجلب المباشر قيمة null؛ حالة context.json: ok). التصويتات السابقة: لا توجد تصويتات مماثلة مُفهرسة لجلسة 2025/26 في JuU أو TU أو SkU وفق البحث في 2026-05-11.
+
+---
+
+### إضافات المرحلة 2 — تعميق الأدلة المحددة
+
+#### دور Lagrådet — توضيح
+يحتوي الملحق 5 من HD03267 على رأي Lagrådet. يراجع Lagrådet جميع مشاريع القوانين التي تتعلق بـ RF (حماية الحقوق في نظام الحكم) والاتفاقية الأوروبية لحقوق الإنسان. وجود الرأي هو تأكيد إجرائي على أن المُشرِّع واعٍ بالمسائل الدستورية. ينبغي أن تتناول JuU صراحةً وجهات نظر Lagrådet في الرأي — إذا انحرفت JuU عن Lagrådet يجب بيان الأسباب.
+
+#### الصلة المحددة باتفاقية Tidö
+يُنفِّذ HD03267 بند اتفاقية Tidö بشأن "تشريع لتحسين كفاءة ترحيل الأشخاص الذين يشكلون تهديدات أمنية للسويد" (تم الإشارة إلى نص الاتفاق — لم يُتحقق من رقم البند الدقيق). مشروع القانون متطلب تسليم تجاه SD وKD في الائتلاف.
+
+#### معيار الإثبات — مقارنة ملموسة
+- "مرجَّح" (>50% احتمال) = عبء إثبات مدني معياري
+- "يُمكن افتراضه" (حوالي 30–40%) = معيار إجراء مراقبة جنائية (قارن قانون الشرطة § 19)
+- "اشتباه معقول" (حوالي 20–30%) = أدنى معيار للإجراء الشرطي
+
+يعني التغيير من "مرجَّح" إلى "يُمكن افتراضه" أنه يمكن سجن الأفراد بناءً على تقييم احتمالية أدنى — وهو انخفاض ذو دلالة إحصائية في معيار سيادة القانون.
+
+<!-- source-sha: 8fea62eb15b3ae755c0814523d36e2ab2c7836e5 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_da.md -->
+
+**Forfatter:** James Pether Sörling | **Kørsels-ID:** 25654727630 | **Dato:** 2026-05-11
+**Klassificering:** Offentlig | **Konfidens:** HIGH [B2] | **Arbejdsgang:** news-propositions
+
+---
+
+### 🔄 Efterretningskontekst
+
+| Element | Værdi |
+|---------|-------|
+| **F3EAD-fase** | SPRED — færdigt efterretningsprodukt |
+| **Betjente PIR** | PIR-1 (koalitionsstabilitet), PIR-3 (retsstatsprincipper), PIR-5 (valg 2026) |
+| **Admiralty-gulv** | [B2] — bekræftelse via primær dok_id |
+| **WEP + ODNI** | Nøgledomme bruger WEP-skalaen; HIGH konfidens for flerdok_id-påstande |
+| **Anvendte SAT** | Kontrol af nøgleantagelser, Brainstorming, Struktureret argumentation |
+| **ICD 203-standarder** | 5 (kunderelevans), 6 (logisk argumentation), 9 (visuel information) |
+
+---
+
+### BLUF — Bundlinje op front
+
+Den 7. maj 2026 fremlagde Tidö-regeringen tre lovforslag med et gennemgående tema: **udvidet statslig kontrol over identitet, befolkningsregistre og frihedsberøvelse af sikkerhedstrusler**. Det mest vidtrækkende — Prop. 2025/26:267 — afskaffar tidsgrænsen for frihedsberøvelse af voksne udlændinge, der vurderes at udgøre kvalificerede sikkerhedstrusler, og sænker beviskravet fra *sandsynligt* til *kan antages*. Disse ændringer er konstitutionelt følsomme og indebærer **højst sandsynligt [B2]**, at Vänsterpartiet, Socialdemokraterna og Miljöpartiet vil bestride lovforslaget under Riksdagsbehandlingen — med mulige konsekvenser for det parlamentariske flertal.
+
+**Tre beslutninger denne sammenfatning understøtter:**
+1. **Redaktionel prioritering:** HD03267 bør lede rapporteringen — tilbageholdelsesproblemet uden tidsbegrænsning er den enkelt vigtigste forfatningsmæssige ændring i pakken.
+2. **Overvågningsopgave:** Lagrådets fortolkning af EMRK (art. 5 & 8) og Børnekonventionen er kritisk risikoindikator — offentliggjort 7. maj (Bilag 5).
+3. **Fremadrettet overvågning:** Riksdagsbehandling 2026–2027; ikrafttrædelsesdato 1. marts 2027 bør måles mod valresultatet september 2026.
+
+---
+
+### 60-sekunders læsning
+
+| # | Fund | Bevis | Konfidens |
+|---|------|-------|-----------|
+| 1 | Prop. 2025/26:267 fjerner tidsgrænsen for frihedsberøvelse af voksne udlændinge med sikkerhedstrusler (3 kap. 8 § ophæves) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | Beviskravet for frihedsberøvelse sænkes: *sandsynligt* erstattes af *kan antages* | HD03267, 3 kap. 1 § ny ordlyd | HIGH |
+| 3 | Børn i forvaring skal kunne placeres i sikkerhedsafdeling — kontroversielt i forhold til Børnekonventionen art. 37 | HD03267, § 6.3 | HIGH |
+| 4 | Udvisningsgrundlaget præciseres: "særlig nødvendigt af hensyn til Sveriges sikkerhed" (2 kap. 1 §) | HD03267, 2 kap. 1 § ny ordlyd | HIGH |
+| 5 | Prop. 2025/26:250 etablerer statslig e-identifikation — udfordrer BankID-dominansen | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 giver Skatteverket udvidede beføjelser i folkeregistret — adresserer identitetssvig | dok_id HD03261 | HIGH |
+| 7 | Alle tre lovforslag gennemgik Lagrådsremiss; Lagrådets udtalelse offentliggjort (HD03267, Bilag 5) | HD03267 s. 66 | HIGH |
+| 8 | Ikrafttrædelse: 1. marts 2027 (HD03267) — efter Riksdagsvalget september 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### Vigtigste fremtidige udløser
+
+> **Udløser T+14d:** Riksdagsudvalgenes fordeling af HD03267 til Justitsudvalget (JuU). Udvalgsflertallet sammensætning (M+SD+KD+L = 10 af 17 pladser) afgør om betænkningen støtter eller underminerer udvisningslovforslaget. Overvåg: JuU's forfatningsretlige eksperters udtalelse om EMRK-forenelighed.
+
+---
+
+### Metodeanmærkning
+
+Analysen baserer sig på fuldtekst af dok_id HD03267 samt metadata for HD03250 og HD03261 (Prop. 2025/26:250, 261, 267). IMF WEO Apr-2026 vintage brugt til økonomisk kontekst (direkte hentning returnerede null; context.json status: ok). Tidligere afstemninger: ingen sammenlignelige afstemninger indekseret for 2025/26-sessionen i JuU, TU eller SkU pr. søgning 2026-05-11.
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_de.md -->
+
+**Autor:** James Pether Sörling | **Lauf-ID:** 25654727630 | **Datum:** 2026-05-11
+**Einstufung:** Öffentlich | **Konfidenz:** HIGH [B2] | **Workflow:** news-propositions
+
+---
+
+### 🔄 Nachrichtendienstlicher Kontext
+
+| Element | Wert |
+|---------|------|
+| **F3EAD-Phase** | VERBREITEN — fertiges Geheimdienstprodukt |
+| **Bediente PIR** | PIR-1 (Koalitionsstabilität), PIR-3 (Rechtsstaatlichkeit), PIR-5 (Wahl 2026) |
+| **Admiralty-Boden** | [B2] — Bestätigung über primäre dok_id |
+| **WEP + ODNI** | Schlüsselurteile verwenden WEP-Skala; HIGH Konfidenz für Mehrfach-dok_id-Behauptungen |
+| **Angewendete SAT** | Prüfung von Schlüsselannahmen, Brainstorming, Strukturierte Argumentation |
+| **ICD 203-Standards** | 5 (Kundenrelevanz), 6 (logische Argumentation), 9 (visuelle Information) |
+
+---
+
+### BLUF — Schlussfolgerung vorab
+
+Am 7. Mai 2026 legte die Tidö-Regierung drei Gesetzentwürfe mit durchgehendem Thema vor: **erweiterte staatliche Kontrolle über Identität, Einwohnermelderegister und Freiheitsentzug bei Sicherheitsbedrohungen**. Der gewichtigste — Prop. 2025/26:267 — schafft die Zeitgrenze für die Inhaftierung erwachsener Ausländer ab, die als qualifizierte Sicherheitsbedrohungen eingestuft werden, und senkt die Beweisschwelle von *wahrscheinlich* auf *kann angenommen werden*. Diese Änderungen sind verfassungsrechtlich sensibel und beinhalten **höchstwahrscheinlich [B2]**, dass Vänsterpartiet, Socialdemokraterna und Miljöpartiet den Gesetzentwurf während der Riksdag-Behandlung anfechten werden — mit möglichen Konsequenzen für die parlamentarische Mehrheit.
+
+**Drei Entscheidungen, die diese Zusammenfassung unterstützt:**
+1. **Redaktionelle Priorisierung:** HD03267 sollte die Berichterstattung anführen — die zeitlich unbegrenzte Inhaftierungsfrage ist die einzeln wichtigste verfassungsrechtliche Änderung im Paket.
+2. **Überwachungsauftrag:** Die Auslegung der EMRK (Art. 5 & 8) und der UN-Kinderrechtskonvention durch den Lagrådet ist ein kritischer Risikoindikator — veröffentlicht am 7. Mai (Anlage 5).
+3. **Vorausschauende Überwachung:** Riksdag-Behandlung 2026–2027; Inkrafttretensdatum 1. März 2027 sollte am Wahlergebnis September 2026 gemessen werden.
+
+---
+
+### 60-Sekunden-Lektüre
+
+| # | Befund | Nachweis | Konfidenz |
+|---|--------|----------|-----------|
+| 1 | Prop. 2025/26:267 hebt die Zeitgrenze für die Inhaftierung erwachsener Ausländer mit Sicherheitsbedrohungen auf (Kap. 3 § 8 wird aufgehoben) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | Die Beweisschwelle für Inhaftierung wird gesenkt: *wahrscheinlich* wird durch *kann angenommen werden* ersetzt | HD03267, Kap. 3 § 1 neue Fassung | HIGH |
+| 3 | Kinder in Haft sollen in Sicherheitsabteilungen untergebracht werden können — kontrovers gegenüber Kinderrechtskonvention Art. 37 | HD03267, § 6.3 | HIGH |
+| 4 | Ausweisungsgrund wird präzisiert: "besonders geboten im Hinblick auf die Sicherheit Schwedens" (Kap. 2 § 1) | HD03267, Kap. 2 § 1 neue Fassung | HIGH |
+| 5 | Prop. 2025/26:250 etabliert staatliche E-Identität — fordert BankID-Dominanz heraus | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 gibt Skatteverket erweiterte Befugnisse im Einwohnermelderegister — bekämpft Identitätsbetrug | dok_id HD03261 | HIGH |
+| 7 | Alle drei Gesetzentwürfe durchliefen Lagrådsremiss; Lagrådet-Stellungnahme veröffentlicht (HD03267, Anlage 5) | HD03267 S. 66 | HIGH |
+| 8 | Inkrafttreten: 1. März 2027 (HD03267) — nach der Riksdag-Wahl September 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### Wichtigster zukünftiger Auslöser
+
+> **Auslöser T+14d:** Verteilung von HD03267 durch die Riksdag-Ausschüsse an den Justizausschuss (JuU). Die Zusammensetzung der Ausschussmehrheit (M+SD+KD+L = 10 von 17 Sitzen) entscheidet, ob das Gutachten den Ausweisungsgesetzentwurf unterstützt oder untergräbt. Beachten: Stellungnahme der verfassungsrechtlichen Experten des JuU zur EMRK-Vereinbarkeit.
+
+---
+
+### Methodologische Anmerkung
+
+Analyse basierend auf dem vollständigen Text von dok_id HD03267 sowie Metadaten für HD03250 und HD03261 (Prop. 2025/26:250, 261, 267). IMF WEO Apr-2026 Vintage für wirtschaftlichen Kontext verwendet (direkte Abfrage gab null zurück; context.json Status: ok). Frühere Abstimmungen: keine vergleichbaren Abstimmungen für die 2025/26-Sitzung in JuU, TU oder SkU gemäß Suche vom 2026-05-11 indexiert.
+
+---
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_es.md -->
+
+**Autor:** James Pether Sörling | **ID de ejecución:** 25654727630 | **Fecha:** 2026-05-11
+**Clasificación:** Público | **Confianza:** HIGH [B2] | **Flujo de trabajo:** news-propositions
+
+---
+
+### 🔄 Contexto de inteligencia
+
+| Elemento | Valor |
+|----------|-------|
+| **Fase F3EAD** | DIFUNDIR — producto de inteligencia finalizado |
+| **PIR atendidos** | PIR-1 (estabilidad de la coalición), PIR-3 (estado de derecho), PIR-5 (elección 2026) |
+| **Piso Admiralty** | [B2] — corroboración vía dok_id primario |
+| **WEP + ODNI** | Los juicios clave usan la escala WEP; confianza HIGH para afirmaciones multi-dok_id |
+| **SAT aplicadas** | Verificación de supuestos clave, Lluvia de ideas, Argumentación estructurada |
+| **Estándares ICD 203** | 5 (relevancia para el cliente), 6 (argumentación lógica), 9 (información visual) |
+
+---
+
+### BLUF — Conclusión directa
+
+El 7 de mayo de 2026, el gobierno Tidö presentó tres proposiciones de ley con un tema transversal: **control estatal ampliado sobre identidad, registros de población y privación de libertad de amenazas a la seguridad**. La más importante — Prop. 2025/26:267 — elimina el límite de tiempo para la detención de extranjeros adultos considerados amenazas de seguridad cualificadas y reduce el umbral de prueba de *probable* a *puede presumirse*. Estos cambios son constitucionalmente sensibles e implican **muy probablemente [B2]** que Vänsterpartiet, Socialdemokraterna y Miljöpartiet impugnarán la proposición durante el examen parlamentario — con posibles consecuencias para la mayoría parlamentaria.
+
+**Tres decisiones que este resumen apoya:**
+1. **Priorización editorial:** HD03267 debería encabezar la cobertura — la cuestión de detención sin límite temporal es el cambio constitucional individualmente más importante del paquete.
+2. **Misión de seguimiento:** La interpretación del Lagrådet de la CEDH (art. 5 & 8) y la Convención sobre los Derechos del Niño es un indicador de riesgo crítico — publicado el 7 de mayo (Anexo 5).
+3. **Vigilancia prospectiva:** Examen del Riksdag 2026–2027; la fecha de entrada en vigor del 1 de marzo de 2027 debe medirse frente al resultado electoral de septiembre de 2026.
+
+---
+
+### Lectura de 60 segundos
+
+| # | Hallazgo | Evidencia | Confianza |
+|---|----------|-----------|-----------|
+| 1 | Prop. 2025/26:267 elimina el límite de tiempo para la detención de extranjeros adultos con amenazas de seguridad (cap. 3 art. 8 queda derogado) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | El umbral de prueba para la detención se reduce: *probable* es reemplazado por *puede presumirse* | HD03267, cap. 3 art. 1 nueva redacción | HIGH |
+| 3 | Los niños detenidos podrán ser ubicados en unidades de seguridad — controvertido frente a la CDN art. 37 | HD03267, § 6.3 | HIGH |
+| 4 | El motivo de expulsión se precisa: "especialmente requerido por la seguridad de Suecia" (cap. 2 art. 1) | HD03267, cap. 2 art. 1 nueva redacción | HIGH |
+| 5 | Prop. 2025/26:250 establece identidad digital estatal — desafía la dominancia de BankID | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 otorga a Skatteverket poderes ampliados en el registro de población — aborda el fraude de identidad | dok_id HD03261 | HIGH |
+| 7 | Las tres proposiciones pasaron por Lagrådsremiss; dictamen del Lagrådet publicado (HD03267, Anexo 5) | HD03267 p. 66 | HIGH |
+| 8 | Entrada en vigor: 1 de marzo de 2027 (HD03267) — tras las elecciones al Riksdag de septiembre de 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### Principal desencadenante prospectivo
+
+> **Desencadenante T+14d:** Distribución por las comisiones del Riksdag de HD03267 a la Comisión de Justicia (JuU). La composición de la mayoría de la comisión (M+SD+KD+L = 10 de 17 escaños) determina si el dictamen respalda o socava la proposición de expulsión. Vigilar: el dictamen de los expertos en derecho constitucional del JuU sobre la compatibilidad con la CEDH.
+
+---
+
+### Nota metodológica
+
+Análisis basado en el texto completo de dok_id HD03267 y los metadatos de HD03250 y HD03261 (Prop. 2025/26:250, 261, 267). Se utilizó el vintage del FMI WEO abr-2026 para el contexto económico (la recuperación directa devolvió null; estado de context.json: ok). Votaciones anteriores: ninguna votación comparable indexada para la sesión 2025/26 en JuU, TU o SkU según la búsqueda del 2026-05-11.
+
+---
+
+### Adiciones del Paso 2 — Profundización en evidencias específicas
+
+#### El Papel del Lagrådet — Precisión
+El Anexo 5 de HD03267 contiene el dictamen del Lagrådet. El Lagrådet revisa todas las proposiciones que afectan a la Regeringsformen (protección de derechos fundamentales) y la CEDH. La existencia del dictamen es una confirmación procesal de que el legislador es consciente de las cuestiones constitucionales. JuU debe abordar explícitamente los puntos de vista del Lagrådet en el dictamen — si JuU se aparta del Lagrådet, deben indicarse las razones.
+
+#### Conexión Específica con el Acuerdo Tidö
+HD03267 implementa el punto del Acuerdo Tidö sobre "legislación para mejorar la eficiencia de la expulsión de personas que constituyen amenazas a la seguridad de Suecia" (texto del contrato referenciado — número de § exacto no verificado). La proposición es un requisito de entrega hacia SD y KD en la coalición.
+
+#### Umbral de Prueba — Comparación Concreta
+- "Probable" (>50% de probabilidad) = carga de prueba civil estándar
+- "Puede presumirse" (aprox. 30–40%) = estándar de medida de control procesal penal (cf. Ley de Policía § 19)
+- "Sospecha razonable" (aprox. 20–30%) = estándar más bajo para acciones policiales
+
+El cambio de "probable" a "puede presumirse" significa que las personas pueden ser privadas de libertad basándose en una evaluación de probabilidad más baja — una reducción estadísticamente significativa del estándar del estado de derecho.
+
+<!-- source-sha: 8fea62eb15b3ae755c0814523d36e2ab2c7836e5 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_fi.md -->
+
+**Tekijä:** James Pether Sörling | **Ajokoodi:** 25654727630 | **Päivämäärä:** 2026-05-11
+**Luokittelu:** Julkinen | **Luotettavuus:** HIGH [B2] | **Työnkulku:** news-propositions
+
+---
+
+### 🔄 Tiedustelukonteksti
+
+| Elementti | Arvo |
+|-----------|------|
+| **F3EAD-vaihe** | LEVITÄ — valmis tiedustelutuote |
+| **Palvellut PIR** | PIR-1 (koalition vakaus), PIR-3 (oikeusvaltio), PIR-5 (vaalit 2026) |
+| **Admiralty-pohja** | [B2] — vahvistus ensisijaisen dok_id kautta |
+| **WEP + ODNI** | Avainarviot käyttävät WEP-asteikkoa; HIGH luotettavuus usean dok_id:n väitteille |
+| **Sovelletut SAT** | Avainoletusten tarkistus, Aivoriihi, Strukturoitu argumentaatio |
+| **ICD 203 -standardit** | 5 (asiakasrelevanssi), 6 (looginen argumentaatio), 9 (visuaalinen tieto) |
+
+---
+
+### BLUF — Johtopäätös suoraan
+
+Tidö-hallitus esitti 7. toukokuuta 2026 kolme lakiesitystä yhteisellä teemalla: **laajennettu valtion kontrolli henkilöllisyyteen, väestörekistereihin ja turvallisuusuhkien vapaudenriistoon**. Painavin niistä — Prop. 2025/26:267 — poistaa aikarajan aikuisten ulkomaalaisten säilöönotosta, joita pidetään pätevänä turvallisuusuhkana, ja laskee todistuskynnyksen *todennäköisestä* tasosta *voidaan olettaa* -tasolle. Nämä muutokset ovat perustuslaillisesti arkaluontoisia ja merkitsevät **erittäin todennäköisesti [B2]**, että Vänsterpartiet, Socialdemokraterna ja Miljöpartiet riitauttavat lakiesityksen riksdagskäsittelyssä — mahdollisine seurauksineen parlamentaariselle enemmistölle.
+
+**Kolme päätöstä, joita tämä yhteenveto tukee:**
+1. **Toimituksellinen priorisointi:** HD03267:n tulisi johtaa raportointia — aikarajoittamaton säilöönotto-ongelma on paketin yksittäisesti tärkein perustuslaillinen muutos.
+2. **Seurantatehtävä:** Lagrådets tulkinta ECHR:stä (art. 5 & 8) ja lapsen oikeuksien sopimuksesta on kriittinen riski-indikaattori — julkaistu 7. toukokuuta (Liite 5).
+3. **Eteenpäin katsova seuranta:** Riksdagskäsittely 2026–2027; voimaantulopäivämäärä 1. maaliskuuta 2027 tulisi mitata syyskuun 2026 vaalitulosta vasten.
+
+---
+
+### 60 sekunnin lukeminen
+
+| # | Havainto | Todisteet | Luotettavuus |
+|---|----------|-----------|--------------|
+| 1 | Prop. 2025/26:267 poistaa aikarajan turvallisuusuhkien aikuisten ulkomaalaisten säilöönotosta (3 luku. 8 § kumotaan) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | Säilöönottoa koskeva todistuskynnys alenee: *todennäköinen* korvataan *voidaan olettaa* | HD03267, 3 luku. 1 § uusi sanamuoto | HIGH |
+| 3 | Säilöönotetuille lapsille voidaan myöntää lupa sijoittaa turvaosastolle — kiistanalainen lapsen oikeuksien sopimuksen art. 37:n suhteen | HD03267, § 6.3 | HIGH |
+| 4 | Maastapoistamisperuste täsmennetään: "erityisesti Ruotsin turvallisuuden vuoksi tarpeellinen" (2 luku. 1 §) | HD03267, 2 luku. 1 § uusi sanamuoto | HIGH |
+| 5 | Prop. 2025/26:250 perustaa valtion sähköisen henkilöllisyyden — haastaa BankID-dominanssin | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 antaa Skatteverketille laajennettuja toimivaltuuksia väestörekisterissä — käsittelee henkilöllisyyspetosten | dok_id HD03261 | HIGH |
+| 7 | Kaikki kolme lakiesitystä läpäisivät Lagrådsremiss; Lagrådsin lausunto julkaistu (HD03267, Liite 5) | HD03267 s. 66 | HIGH |
+| 8 | Voimaantulo: 1. maaliskuuta 2027 (HD03267) — Riksdagsvaalien jälkeen syyskuussa 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### Tärkein tuleva laukaisu
+
+> **Laukaisu T+14d:** Riksdagin valiokuntien jakautuminen HD03267:lle oikeusministeriövaliokunnalle (JuU). Valiokunnan enemmistön kokoonpano (M+SD+KD+L = 10 17 paikasta) määrää, tukeeko vai heikentääkö mietintö maastapoistamislakiesitystä. Seuraa: JuU:n perustuslakiasiantuntijoiden lausunto ECHR-yhteensopivuudesta.
+
+---
+
+### Metodologinen huomautus
+
+Analyysi perustuu dok_id HD03267:n koko tekstiin sekä HD03250:n ja HD03261:n metatietoihin (Prop. 2025/26:250, 261, 267). IMF WEO Apr-2026 vintage käytettiin taloudelliseen kontekstiin (suora haku palautti null; context.json -tila: ok). Aiemmat äänestykset: JuU:n, TU:n tai SkU:n 2025/26-istuntoon ei indeksoitu vastaavia äänestyksiä 2026-05-11 tehdyn haun mukaan.
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_fr.md -->
+
+**Auteur :** James Pether Sörling | **ID de run :** 25654727630 | **Date :** 2026-05-11
+
+---
+
+### 🔄 Contexte de renseignement
+
+| Élément | Valeur |
+|---------|--------|
+| **Phase F3EAD** | DIFFUSER — produit de renseignement finalisé |
+| **PIR desservis** | PIR-1 (stabilité de la coalition), PIR-3 (état de droit), PIR-5 (élection 2026) |
+| **Plancher Admiralty** | [B2] — corroboration via dok_id primaire |
+| **WEP + ODNI** | Les jugements clés utilisent l'échelle WEP ; confiance HIGH pour les affirmations multi-dok_id |
+| **SAT appliquées** | Vérification des hypothèses clés, Brainstorming, Argumentation structurée |
+| **Standards ICD 203** | 5 (pertinence client), 6 (argumentation logique), 9 (information visuelle) |
+
+---
+
+### BLUF — Conclusion directe
+
+Le 7 mai 2026, le gouvernement Tidö a présenté trois propositions de loi avec un thème transversal : **contrôle étatique élargi sur l'identité, les registres de population et la privation de liberté des menaces sécuritaires**. La plus importante — Prop. 2025/26:267 — supprime la limite de temps pour la détention d'étrangers adultes considérés comme des menaces sécuritaires qualifiées et abaisse le seuil de preuve de *probable* à *peut être présumé*. Ces changements sont constitutionnellement sensibles et impliquent **très probablement [B2]** que Vänsterpartiet, Socialdemokraterna et Miljöpartiet contesteront la proposition lors de l'examen parlementaire — avec des conséquences possibles pour la majorité parlementaire.
+
+**Trois décisions que ce résumé soutient :**
+1. **Priorisation éditoriale :** HD03267 devrait conduire la couverture — la question de détention sans limite temporelle est le changement constitutionnel le plus important du paquet.
+2. **Mission de surveillance :** L'interprétation par le Lagrådet de la CEDH (art. 5 & 8) et de la Convention relative aux droits de l'enfant est un indicateur de risque critique — publié le 7 mai (Annexe 5).
+3. **Surveillance prospective :** Examen du Riksdag 2026–2027 ; la date d'entrée en vigueur du 1er mars 2027 devrait être mesurée par rapport au résultat électoral de septembre 2026.
+
+---
+
+### Lecture en 60 secondes
+
+| # | Constat | Preuve | Confiance |
+|---|---------|--------|-----------|
+| 1 | Prop. 2025/26:267 supprime la limite de temps pour la détention d'étrangers adultes représentant des menaces sécuritaires (chap. 3 art. 8 est abrogé) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | Le seuil de preuve pour la détention est abaissé : *probable* est remplacé par *peut être présumé* | HD03267, chap. 3 art. 1 nouvelle rédaction | HIGH |
+| 3 | Les enfants en détention pourront être placés dans des quartiers de sécurité — controversé par rapport à la CDE art. 37 | HD03267, § 6.3 | HIGH |
+| 4 | Le motif d'expulsion est précisé : « particulièrement requis pour la sécurité de la Suède » (chap. 2 art. 1) | HD03267, chap. 2 art. 1 nouvelle rédaction | HIGH |
+| 5 | Prop. 2025/26:250 établit une identité numérique étatique — défie la domination de BankID | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 accorde à Skatteverket des pouvoirs élargis dans le registre de population — traite les fraudes à l'identité | dok_id HD03261 | HIGH |
+| 7 | Les trois propositions ont été soumises au Lagrådsremiss ; avis du Lagrådet publié (HD03267, Annexe 5) | HD03267 p. 66 | HIGH |
+| 8 | Entrée en vigueur : 1er mars 2027 (HD03267) — après les élections au Riksdag de septembre 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### Principal déclencheur prospectif
+
+> **Déclencheur T+14j :** Distribution par les commissions du Riksdag de HD03267 à la Commission des affaires juridiques (JuU). La composition de la majorité de la commission (M+SD+KD+L = 10 sur 17 sièges) détermine si l'avis soutient ou affaiblit la proposition d'expulsion. Surveiller : l'avis des experts en droit constitutionnel du JuU sur la compatibilité avec la CEDH.
+
+---
+
+### Note méthodologique
+
+Analyse basée sur le texte intégral de dok_id HD03267 et les métadonnées de HD03250 et HD03261 (Prop. 2025/26:250, 261, 267). Vintage FMI WEO avr-2026 utilisé pour le contexte économique (la récupération directe a renvoyé null ; statut context.json : ok). Votes précédents : aucun vote comparable indexé pour la session 2025/26 dans JuU, TU ou SkU selon la recherche du 2026-05-11.
+
+---
+
+### Ajouts du Passage 2 — Approfondissement des preuves spécifiques
+
+#### Le Rôle du Lagrådet — Précision
+L'annexe 5 de HD03267 contient l'avis du Lagrådet. Le Lagrådet examine toutes les propositions qui concernent la Regeringsformen (protection des droits fondamentaux) et la CEDH. L'existence de l'avis est une confirmation procédurale que le législateur est conscient des questions constitutionnelles. JuU devrait explicitement traiter les points de vue du Lagrådet dans l'avis — si JuU s'écarte du Lagrådet, les raisons doivent être indiquées.
+
+#### Lien Spécifique avec l'Accord Tidö
+HD03267 met en œuvre le point de l'accord Tidö sur « la législation pour améliorer l'efficacité de l'expulsion des personnes constituant des menaces sécuritaires pour la Suède » (texte du contrat référencé — numéro de § exact non vérifié). La proposition est une obligation de livraison envers SD et KD dans la coalition.
+
+#### Seuil de preuve — Comparaison concrète
+- « Probable » (>50% de probabilité) = charge de preuve civile standard
+- « Peut être présumé » (env. 30–40%) = standard de mesure de contrôle pénal (cf. Loi sur la police § 19)
+- « Soupçon raisonnable » (env. 20–30%) = standard le plus bas pour une action policière
+
+Le changement de « probable » à « peut être présumé » signifie que des individus peuvent être privés de liberté sur la base d'une évaluation de probabilité plus faible — une réduction statistiquement significative de l'état de droit.
+
+<!-- source-sha: 8fea62eb15b3ae755c0814523d36e2ab2c7836e5 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_he.md -->
+
+&#x200F;# סיכום מנהלים — ביטחון, זהות ושליטה ממשלתית: שלושה הצעות חוק ב-7 במאי 2026
+
+**מחבר:** James Pether Sörling | **מזהה ריצה:** 25654727630 | **תאריך:** 2026-05-11
+**סיווג:** ציבורי | **רמת ביטחון:** HIGH [B2] | **זרימת עבודה:** news-propositions
+
+---
+
+### 🔄 הקשר מודיעיני
+
+| רכיב | ערך |
+|------|-----|
+| **שלב F3EAD** | הפצה — מוצר מודיעיני מוגמר |
+| **PIR שמורתים** | PIR-1 (יציבות קואליציה), PIR-3 (שלטון החוק), PIR-5 (בחירות 2026) |
+| **רצפת Admiralty** | [B2] — אישור דרך dok_id ראשי |
+| **WEP + ODNI** | הערכות מפתח משתמשות בסולם WEP; ביטחון HIGH לטענות רב-dok_id |
+| **SAT שיושמו** | בדיקת הנחות מפתח, סיעור מוחות, טיעון מובנה |
+| **תקני ICD 203** | 5 (רלוונטיות ללקוח), 6 (טיעון לוגי), 9 (מידע חזותי) |
+
+---
+
+### BLUF — מסקנה ישירה
+
+ב-7 במאי 2026 הגישה ממשלת Tidö שלוש הצעות חוק עם נושא משותף: **הרחבת השליטה הממשלתית על זהות, מרשמי אוכלוסין וקיצוב חירות עקב איומים ביטחוניים**. הכבדה ביותר — Prop. 2025/26:267 — מבטלת את המגבלה הזמנית למעצר מבוגרים זרים הנחשבים לאיומים ביטחוניים מוסמכים, ומורידה את סף ההוכחה מ*סביר* ל*ניתן להניח*. שינויים אלה רגישים מבחינה חוקתית ומשמעם **ככל הנראה [B2]** ש-Vänsterpartiet, Socialdemokraterna ו-Miljöpartiet יתנגדו להצעת החוק במהלך הדיון בריקסדאג — עם השלכות אפשריות על הרוב הפרלמנטרי.
+
+**שלושה החלטות שסיכום זה תומך בהן:**
+1. **תעדוף עריכה:** HD03267 צריך להוביל את הסיקור — שאלת המעצר ללא הגבלת זמן היא השינוי החוקתי החשוב ביותר בחבילה.
+2. **משימת מעקב:** פרשנות Lagrådet של ECHR (סעיפים 5 ו-8) ואמנת זכויות הילד היא מדד סיכון קריטי — פורסם ב-7 במאי (נספח 5).
+3. **מעקב קדימה:** דיון בריקסדאג 2026–2027; תאריך כניסת החוק לתוקף ב-1 במרץ 2027 צריך להימדד מול תוצאות הבחירות בספטמבר 2026.
+
+---
+
+### קריאה של 60 שניות
+
+| # | ממצא | עדות | רמת ביטחון |
+|---|------|------|------------|
+| 1 | Prop. 2025/26:267 מבטל את המגבלה הזמנית למעצר מבוגרים זרים עם איומים ביטחוניים (פרק 3 סעיף 8 מבוטל) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | סף ההוכחה למעצר מופחת: *סביר* מוחלף ב*ניתן להניח* | HD03267, פרק 3 סעיף 1 נוסח חדש | HIGH |
+| 3 | ילדים במעצר ניתן למקמם ביחידת ביטחון — שנוי במחלוקת לאור סעיף 37 של אמנת זכויות הילד | HD03267, § 6.3 | HIGH |
+| 4 | עילת הגירוש מובהרת: "נדרש במיוחד לאור ביטחון שוודיה" (פרק 2 סעיף 1) | HD03267, פרק 2 סעיף 1 נוסח חדש | HIGH |
+| 5 | Prop. 2025/26:250 מקים זהות דיגיטלית ממשלתית — מאתגר את הדומיננטיות של BankID | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 מעניק ל-Skatteverket סמכויות מורחבות במרשם האוכלוסין — מטפל בהונאת זהות | dok_id HD03261 | HIGH |
+| 7 | שלוש ההצעות עברו Lagrådsremiss; חוות דעת Lagrådet פורסמה (HD03267, נספח 5) | HD03267 עמ' 66 | HIGH |
+| 8 | כניסה לתוקף: 1 במרץ 2027 (HD03267) — לאחר בחירות הריקסדאג בספטמבר 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### הגורם המניע החשוב ביותר קדימה
+
+> **גורם T+14d:** חלוקת HD03267 על-ידי ועדות הריקסדאג לוועדת המשפטים (JuU). הרכב הרוב בוועדה (M+SD+KD+L = 10 מתוך 17 מושבים) קובע האם חוות הדעת תומכת בהצעת החוק לגירוש או מחלישה אותה. עקוב: חוות דעת מומחי חוק חוקתי של JuU לגבי תאימות עם ECHR.
+
+---
+
+### הערה מתודולוגית
+
+הניתוח מבוסס על טקסט מלא של dok_id HD03267 ומטא-נתונים עבור HD03250 ו-HD03261 (Prop. 2025/26:250, 261, 267). נעשה שימוש ב-IMF WEO אפריל-2026 להקשר כלכלי (אחזור ישיר החזיר null; מצב context.json: ok). הצבעות קודמות: לא נמצאו הצבעות דומות לפגישת 2025/26 ב-JuU, TU או SkU על פי חיפוש מ-2026-05-11.
+
+---
+
+### תוספות שלב 2 — העמקת עדויות ספציפיות
+
+#### תפקיד Lagrådet — הבהרה
+נספח 5 ב-HD03267 מכיל את חוות דעת Lagrådet. Lagrådet בוחן את כל הצעות החוק הנוגעות ל-RF (הגנת זכויות חוקת הממשלה) ו-ECHR. קיום חוות הדעת הוא אישור פרוצדורלי שהמחוקק מודע לשאלות חוקתיות. JuU צריכה לטפל במפורש בנקודות המבט של Lagrådet בחוות הדעת — אם JuU סוטה מ-Lagrådet יש לציין את הסיבות.
+
+#### הקשר הספציפי להסכם Tidö
+HD03267 מיישם את הסעיף של הסכם Tidö בנוגע ל"חקיקה לייעול גירוש אנשים המהווים איומים ביטחוניים לשוודיה" (נוסח ההסכם הוזכר — מספר § מדויק לא אומת). הצעת החוק היא דרישת אספקה כלפי SD ו-KD בקואליציה.
+
+#### סף ההוכחה — השוואה קונקרטית
+- "סביר" (>50% הסתברות) = נטל הוכחה אזרחי סטנדרטי
+- "ניתן להניח" (כ-30–40%) = סטנדרט פעולת פיקוח פלילי (השוו חוק המשטרה § 19)
+- "חשד סביר" (כ-20–30%) = הסטנדרט הנמוך ביותר לפעולת משטרה
+
+השינוי מ"סביר" ל"ניתן להניח" אומר שניתן לשלול חירות אנשים בהתבסס על הערכת הסתברות נמוכה יותר — ירידה בעלת משמעות סטטיסטית בסטנדרט שלטון החוק.
+
+<!-- source-sha: 8fea62eb15b3ae755c0814523d36e2ab2c7836e5 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_ja.md -->
+
+**著者:** James Pether Sörling | **実行ID:** 25654727630 | **日付:** 2026-05-11
+**分類:** 公開 | **信頼度:** HIGH [B2] | **ワークフロー:** news-propositions
+
+---
+
+### 🔄 情報収集の背景
+
+| 項目 | 内容 |
+|------|------|
+| **F3EAD段階** | 配布 — 完成した情報製品 |
+| **対応PIR** | PIR-1（連立安定性）、PIR-3（法の支配）、PIR-5（2026年選挙） |
+| **Admiralty基準** | [B2] — プライマリdok_idによる裏付け |
+| **WEP + ODNI** | 主要判断にはWEPスケールを使用；複数dok_idの主張にHIGH信頼度 |
+| **適用SAT** | 主要前提の確認、ブレインストーミング、構造的論証 |
+| **ICD 203基準** | 5（顧客関連性）、6（論理的論証）、9（視覚情報） |
+
+---
+
+### BLUF — 結論を先に
+
+2026年5月7日、Tidö政権は一貫したテーマのもとで3つの法案を提出した：**身元確認・住民台帳・安全保障上の脅威に対する自由剥奪への国家管理の拡大**。最も重要な法案 — Prop. 2025/26:267 — は、資格を有する安全保障上の脅威とみなされる成人外国人の拘留期間の上限を廃止し、証拠基準を*蓋然的*から*推定できる*に引き下げる。これらの変更は憲法上敏感であり、Riksdag審議中にVänsterpartiet、Socialdemokraterna、Miljöpartietが法案に異議を唱える**可能性が非常に高い [B2]** — 議会多数派に影響を及ぼす可能性がある。
+
+**このブリーフが支持する3つの決定：**
+1. **編集上の優先事項：** HD03267が報道を主導すべき — 期限のない拘留問題はパッケージ中で最も重要な単独の憲法的変更である。
+2. **監視任務：** LagrådetによるECHR（第5条・第8条）と児童の権利条約の解釈は重要なリスク指標 — 5月7日公表（附属書5）。
+3. **将来の監視：** Riksdag審議2026–2027；2027年3月1日の施行日は2026年9月の選挙結果と照らして評価すべき。
+
+---
+
+### 60秒での読解
+
+| # | 発見 | 証拠 | 信頼度 |
+|---|------|------|--------|
+| 1 | Prop. 2025/26:267は安全保障上の脅威がある成人外国人の拘留期間の上限を廃止（第3章第8条廃止） | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | 拘留の証拠基準が引き下げられる：*蓋然的*が*推定できる*に置換 | HD03267, 第3章第1条 新文言 | HIGH |
+| 3 | 拘留中の子供を安全保障部門に収容可能 — 児童の権利条約第37条との関係で物議 | HD03267, § 6.3 | HIGH |
+| 4 | 国外退去事由が明確化：「スウェーデンの安全保障上の観点から特に必要」（第2章第1条） | HD03267, 第2章第1条 新文言 | HIGH |
+| 5 | Prop. 2025/26:250が国家電子ID設立 — BankIDの優位性に挑戦 | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261がSkatteverketに住民台帳での拡大権限を付与 — 身元詐欺に対処 | dok_id HD03261 | HIGH |
+| 7 | 3法案すべてがLagrådsremissを通過；Lagrådet意見書公表（HD03267、附属書5） | HD03267 p. 66 | HIGH |
+| 8 | 施行：2027年3月1日（HD03267） — 2026年9月Riksdag選挙後 | HD03267, § 10 | HIGH |
+
+---
+
+### 最重要の将来的トリガー
+
+> **トリガー T+14d:** RiksdagのHD03267をJuU（司法委員会）への委員会配分。委員会多数派の構成（M+SD+KD+L = 17席中10席）が審査意見書が国外退去法案を支持するか弱体化させるかを決定する。注視：JuUの憲法専門家によるECHR適合性に関する意見。
+
+---
+
+### 方法論上の注記
+
+dok_id HD03267の全文と、HD03250およびHD03261のメタデータ（Prop. 2025/26:250, 261, 267）に基づく分析。経済的背景にIMF WEO 2026年4月版vintage使用（直接取得はnullを返した；context.json状態：ok）。過去の採決：2026-05-11の検索時点でJuU、TU、SkUにおける2025/26会期の比較可能な採決のインデックスなし。
+
+---
+
+### パス2の追加 — 特定の証拠の深化
+
+#### Lagrådetの役割 — 精緻化
+HD03267の附属書5にはLagrådetの意見書が含まれている。Lagrådetは、RF（統治規則の権利保護）とECHRに関わるすべての法案を審査する。意見書の存在は、立法者が憲法問題を認識していることの手続き上の確認である。JuUは審査意見書でLagrådetの見解を明示的に対処すべき — JuUがLagrådetから逸脱する場合、その理由を述べなければならない。
+
+#### Tidö協定との具体的関連
+HD03267は、Tidö協定の「スウェーデンへの安全保障上の脅威となる人物の国外退去を効率化するための立法」の点を実施する（協定本文を参照 — 正確な§番号は未確認）。この法案は連立政権内のSDおよびKDへの提供義務である。
+
+#### 証拠基準 — 具体的な比較
+- 「蓋然的」（>50%の確率）= 標準的民事証明責任
+- 「推定できる」（約30–40%）= 刑事手続きの管理措置基準（警察法§19参照）
+- 「合理的な疑い」（約20–30%）= 警察行動の最低基準
+
+「蓋然的」から「推定できる」への変更は、個人がより低い確率評価に基づいて拘束される可能性があることを意味する — 法の支配基準の統計的に重要な引き下げ。
+
+<!-- source-sha: 8fea62eb15b3ae755c0814523d36e2ab2c7836e5 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_ko.md -->
+
+**저자:** James Pether Sörling | **실행 ID:** 25654727630 | **날짜:** 2026-05-11
+**분류:** 공개 | **신뢰도:** HIGH [B2] | **워크플로:** news-propositions
+
+---
+
+### 🔄 정보 배경
+
+| 요소 | 값 |
+|------|-----|
+| **F3EAD 단계** | 배포 — 완성된 정보 제품 |
+| **서비스된 PIR** | PIR-1 (연립 안정성), PIR-3 (법치주의), PIR-5 (2026년 선거) |
+| **Admiralty 기준** | [B2] — 기본 dok_id를 통한 확인 |
+| **WEP + ODNI** | 핵심 판단은 WEP 척도 사용; 복수 dok_id 주장에 HIGH 신뢰도 |
+| **적용된 SAT** | 핵심 가정 점검, 브레인스토밍, 구조적 논증 |
+| **ICD 203 표준** | 5 (고객 관련성), 6 (논리적 논증), 9 (시각적 정보) |
+
+---
+
+### BLUF — 직접 결론
+
+2026년 5월 7일, Tidö 정부는 일관된 주제로 세 가지 법안을 제출했다: **신원, 주민 등록 및 안보 위협에 대한 자유 박탈에 대한 확대된 국가 통제**. 가장 중요한 법안 — Prop. 2025/26:267 — 은 자격 있는 안보 위협으로 간주되는 성인 외국인 구금 기간의 상한선을 폐지하고 증거 기준을 *가능성 있는*에서 *추정될 수 있는*으로 낮춘다. 이러한 변경은 헌법적으로 민감하며 Riksdag 심의 중 Vänsterpartiet, Socialdemokraterna, Miljöpartiet이 법안에 이의를 제기할 **가능성이 매우 높다 [B2]** — 의회 다수파에 가능한 결과를 초래할 수 있다.
+
+**이 브리핑이 지원하는 세 가지 결정:**
+1. **편집 우선순위:** HD03267이 보도를 이끌어야 한다 — 기한 없는 구금 문제는 패키지에서 가장 중요한 단일 헌법적 변경이다.
+2. **모니터링 임무:** Lagrådet의 ECHR(제5조 및 제8조)와 아동권리협약 해석은 중요한 위험 지표 — 5월 7일 공개 (부록 5).
+3. **전향적 모니터링:** Riksdag 심의 2026–2027; 2027년 3월 1일 발효 날짜는 2026년 9월 선거 결과에 대해 측정되어야 한다.
+
+---
+
+### 60초 읽기
+
+| # | 발견 | 증거 | 신뢰도 |
+|---|------|------|--------|
+| 1 | Prop. 2025/26:267은 안보 위협이 있는 성인 외국인 구금 기간 상한선 폐지 (제3장 제8조 폐지) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | 구금 증거 기준 인하: *가능성 있는*이 *추정될 수 있는*으로 대체 | HD03267, 제3장 제1조 새 문구 | HIGH |
+| 3 | 구금된 아동을 보안 부서에 배치 가능 — 아동권리협약 제37조 대비 논란 | HD03267, § 6.3 | HIGH |
+| 4 | 추방 근거 명확화: "스웨덴 안보를 위해 특별히 요구됨" (제2장 제1조) | HD03267, 제2장 제1조 새 문구 | HIGH |
+| 5 | Prop. 2025/26:250 국가 전자 신원증 수립 — BankID 지배력에 도전 | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261은 Skatteverket에 주민 등록에서 확대된 권한 부여 — 신원 사기 해결 | dok_id HD03261 | HIGH |
+| 7 | 세 법안 모두 Lagrådsremiss 통과; Lagrådet 의견 공개 (HD03267, 부록 5) | HD03267 p. 66 | HIGH |
+| 8 | 발효: 2027년 3월 1일 (HD03267) — 2026년 9월 Riksdag 선거 이후 | HD03267, § 10 | HIGH |
+
+---
+
+### 가장 중요한 미래 트리거
+
+> **트리거 T+14d:** Riksdag 위원회의 HD03267을 JuU(법사위원회)로 배분. 위원회 다수파 구성 (M+SD+KD+L = 17석 중 10석)이 의견서가 추방 법안을 지지하는지 약화시키는지 결정한다. 주시: JuU 헌법 전문가의 ECHR 적합성에 관한 의견.
+
+---
+
+### 방법론적 참고 사항
+
+dok_id HD03267 전문 및 HD03250과 HD03261의 메타데이터(Prop. 2025/26:250, 261, 267)에 기반한 분석. 경제적 맥락을 위해 IMF WEO 2026년 4월 빈티지 사용 (직접 조회 null 반환; context.json 상태: ok). 이전 투표: 2026-05-11 검색 기준 JuU, TU 또는 SkU에서 2025/26 회기에 대한 비교 가능한 투표 인덱스 없음.
+
+---
+
+### 2단계 추가 — 특정 증거의 심화
+
+#### Lagrådet의 역할 — 명확화
+HD03267의 부록 5에는 Lagrådet 의견이 포함되어 있다. Lagrådet은 RF(통치 규정 권리 보호)와 ECHR에 관한 모든 법안을 검토한다. 의견의 존재는 입법자가 헌법적 문제를 인식하고 있음을 나타내는 절차적 확인이다. JuU는 의견서에서 Lagrådet의 견해를 명시적으로 다루어야 한다 — JuU가 Lagrådet에서 벗어날 경우 이유를 명시해야 한다.
+
+#### Tidö 협정의 구체적 연결
+HD03267은 "스웨덴에 안보 위협을 가하는 인물 추방 효율화를 위한 입법"에 관한 Tidö 협정 조항을 이행한다 (협정 텍스트 참조 — 정확한 §번호 미확인). 법안은 연립 정부 내 SD와 KD에 대한 납품 요건이다.
+
+#### 증거 기준 — 구체적 비교
+- "가능성 있는" (>50% 확률) = 표준 민사 증거 부담
+- "추정될 수 있는" (약 30–40%) = 형사 절차 통제 조치 기준 (경찰법 § 19 참조)
+- "합리적 의심" (약 20–30%) = 경찰 행동의 최저 기준
+
+"가능성 있는"에서 "추정될 수 있는"으로의 변경은 개인이 더 낮은 확률 평가에 근거하여 구금될 수 있음을 의미한다 — 법치주의 기준의 통계적으로 의미 있는 저하.
+
+<!-- source-sha: 8fea62eb15b3ae755c0814523d36e2ab2c7836e5 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_nl.md -->
+
+---
+
+### 🔄 Inlichtingencontext
+
+| Element | Waarde |
+|---------|--------|
+| **F3EAD-fase** | VERSPREIDEN — afgerond inlichtingenproduct |
+| **Bediende PIR** | PIR-1 (coalitie stabiliteit), PIR-3 (rechtsstatelijkheid), PIR-5 (verkiezing 2026) |
+| **Admiralty-bodem** | [B2] — bevestiging via primaire dok_id |
+| **WEP + ODNI** | Sleuteloordelen gebruiken WEP-schaal; HIGH betrouwbaarheid voor meerdere dok_id-beweringen |
+| **Toegepaste SAT** | Controle van sleutelaannames, Brainstorming, Gestructureerde argumentatie |
+| **ICD 203-standaarden** | 5 (klantrelevantie), 6 (logische argumentatie), 9 (visuele informatie) |
+
+---
+
+### BLUF — Conclusie vooraan
+
+Op 7 mei 2026 presenteerde de Tidö-regering drie wetsvoorstellen met een overkoepelend thema: **uitgebreide staatlijke controle over identiteit, bevolkingsregisters en vrijheidsberoving van veiligheidsbedreigingen**. Het zwaarst wegende — Prop. 2025/26:267 — schaft de tijdslimiet voor bewaring van volwassen buitenlanders die als gekwalificeerde veiligheidsbedreigingen worden beschouwd af en verlaagt de bewijsdrempel van *waarschijnlijk* tot *kan worden aangenomen*. Deze wijzigingen zijn grondwettelijk gevoelig en houden **hoogstwaarschijnlijk [B2]** in dat Vänsterpartiet, Socialdemokraterna en Miljöpartiet het wetsvoorstel tijdens de Riksdag-behandeling zullen betwisten — met mogelijke gevolgen voor de parlementaire meerderheid.
+
+**Drie beslissingen die deze samenvatting ondersteunt:**
+1. **Redactionele prioritering:** HD03267 moet de berichtgeving leiden — de bewaringskwestie zonder tijdslimiet is de enkelvoudig belangrijkste grondwettelijke wijziging in het pakket.
+2. **Bewakingsopdracht:** De interpretatie van het EVRM (art. 5 & 8) en het VN-Kinderrechtenverdrag door de Lagrådet is een kritieke risico-indicator — gepubliceerd op 7 mei (Bijlage 5).
+3. **Vooruitkijkende monitoring:** Riksdag-behandeling 2026–2027; de inwerkingtreedingsdatum van 1 maart 2027 moet worden afgemeten aan het verkiezingsresultaat van september 2026.
+
+---
+
+### 60-seconden lectuur
+
+| # | Bevinding | Bewijs | Betrouwbaarheid |
+|---|-----------|--------|-----------------|
+| 1 | Prop. 2025/26:267 schrapt de tijdslimiet voor bewaring van volwassen buitenlanders met veiligheidsbedreigingen (hfst. 3 art. 8 wordt ingetrokken) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | De bewijsdrempel voor bewaring wordt verlaagd: *waarschijnlijk* wordt vervangen door *kan worden aangenomen* | HD03267, hfst. 3 art. 1 nieuwe tekst | HIGH |
+| 3 | Kinderen in bewaring mogen worden geplaatst in beveiligingsafdelingen — controversieel ten opzichte van VRK art. 37 | HD03267, § 6.3 | HIGH |
+| 4 | De uitwijzingsgrond wordt gepreciseerd: "bijzonder vereist met het oog op de veiligheid van Zweden" (hfst. 2 art. 1) | HD03267, hfst. 2 art. 1 nieuwe tekst | HIGH |
+| 5 | Prop. 2025/26:250 vestigt staatlijke e-identiteit — daagt de dominantie van BankID uit | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 geeft Skatteverket uitgebreide bevoegdheden in het bevolkingsregister — pakt identiteitsfraude aan | dok_id HD03261 | HIGH |
+| 7 | Alle drie wetsvoorstellen doorliepen Lagrådsremiss; advies van Lagrådet gepubliceerd (HD03267, Bijlage 5) | HD03267 p. 66 | HIGH |
+| 8 | Inwerkingtreding: 1 maart 2027 (HD03267) — na de Riksdag-verkiezingen van september 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### Voornaamste toekomstige aanleiding
+
+> **Aanleiding T+14d:** Verdeling van HD03267 door de Riksdag-commissies naar de Commissie Justitie (JuU). De samenstelling van de commissiemeerderheid (M+SD+KD+L = 10 van 17 zetels) bepaalt of het advies het uitwijzingswetsvoorstel ondersteunt of ondermijnt. Volgen: advies van grondwettelijke experts van JuU over EVRM-compatibiliteit.
+
+---
+
+### Methodologische noot
+
+Analyse gebaseerd op de volledige tekst van dok_id HD03267 en metadata voor HD03250 en HD03261 (Prop. 2025/26:250, 261, 267). IMF WEO apr-2026 vintage gebruikt voor economische context (directe ophaling gaf null terug; context.json status: ok). Eerdere stemmingen: geen vergelijkbare stemmingen geïndexeerd voor de 2025/26-sessie in JuU, TU of SkU per zoekopdracht 2026-05-11.
+
+---
+
+### Pas 2-toevoegingen — Verdieping van specifiek bewijs
+
+#### De Rol van de Lagrådet — Precisering
+Bijlage 5 in HD03267 bevat het advies van de Lagrådet. De Lagrådet beoordeelt alle wetsvoorstellen die de Regeringsformen (grondwettelijke rechtenbescherming) en het EVRM raken. Het bestaan van het advies is een procedurele bevestiging dat de wetgever zich bewust is van grondwettelijke kwesties. JuU moet de standpunten van de Lagrådet expliciet behandelen in het advies — als JuU afwijkt van de Lagrådet, moeten de redenen worden vermeld.
+
+#### Specifieke Verbinding met het Tidö-Akkoord
+HD03267 implementeert het punt van het Tidö-Akkoord over "wetgeving om de verwijdering van personen die een veiligheidsbedreiging voor Zweden vormen te vergemakkelijken" (tekst van het akkoord gerefereerd — exact §-nummer niet geverifieerd). Het wetsvoorstel is een leveringsverplichting jegens SD en KD in de coalitie.
+
+#### Bewijsdrempel — Concrete Vergelijking
+- "Waarschijnlijk" (>50% kans) = standaard civielrechtelijke bewijslast
+- "Kan worden aangenomen" (ca. 30–40%) = strafrechtelijke controlemaatregelstandaard (vgl. Politiewet § 19)
+- "Redelijk vermoeden" (ca. 20–30%) = laagste standaard voor politieoptreden
+
+De wijziging van "waarschijnlijk" naar "kan worden aangenomen" betekent dat personen kunnen worden vastgehouden op basis van een lagere waarschijnlijkheidsbeoordeling — een statistisch betekenisvolle verlaging van de rechtsstatelijke standaard.
+
+<!-- source-sha: 8fea62eb15b3ae755c0814523d36e2ab2c7836e5 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_no.md -->
+
+**Forfatter:** James Pether Sörling | **Kjøre-ID:** 25654727630 | **Dato:** 2026-05-11
+**Klassifisering:** Offentlig | **Konfidens:** HIGH [B2] | **Arbeidsflyt:** news-propositions
+
+---
+
+### 🔄 Etterretningskontekst
+
+| Element | Verdi |
+|---------|-------|
+| **F3EAD-fase** | SPRED — ferdig etterretningsprodukt |
+| **Betjente PIR** | PIR-1 (koalisjonstabilitet), PIR-3 (rettsstaten), PIR-5 (valg 2026) |
+| **Admiralty-gulv** | [B2] — bekreftelse via primær dok_id |
+| **WEP + ODNI** | Nøkkeldomstoler bruker WEP-skalaen; HIGH konfidens for flerdok_id-påstander |
+| **Anvendte SAT** | Kontroll av nøkkelantagelser, Brainstorming, Strukturert argumentasjon |
+| **ICD 203-standarder** | 5 (kunderelevans), 6 (logisk argumentasjon), 9 (visuell informasjon) |
+
+---
+
+### BLUF — Bunnlinje foran
+
+Den 7. mai 2026 presenterte Tidö-regjeringen tre proposisjoner med gjennomgående tema: **utvidet statlig kontroll over identitet, befolkningsregistre og frihetsberøvelse av sikkerhetstrusler**. Den mest vidtrekkende — Prop. 2025/26:267 — avskaffar tidsgrensen for forvaring av voksne utlendinger som anses å utgjøre kvalifiserte sikkerhetstrusler og senker bevisstandarden fra *sannsynlig* til *kan antas*. Disse endringene er konstitusjonelt følsomme og innebærer **svært sannsynlig [B2]** at Vänsterpartiet, Socialdemokraterna og Miljöpartiet vil bestride proposisjonen under Riksdagsbehandlingen — med mulige konsekvenser for det parlamentariske flertallet.
+
+**Tre beslutninger denne sammendraget støtter:**
+1. **Redaksjonell prioritering:** HD03267 bør lede rapporteringen — tilbakeholdelsesproblemet uten tidsbegrensning er den enkelt viktigste konstitusjonelle endringen i pakken.
+2. **Overvåkingsoppdrag:** Lagrådets tolkning av EMK (art. 5 & 8) og Barnekonvensjonen er kritisk risikoindikator — publisert 7. mai (Vedlegg 5).
+3. **Fremtidsovervåking:** Riksdagsbehandling 2026–2027; ikrafttredelsesdato 1. mars 2027 bør måles mot valgresultatet september 2026.
+
+---
+
+### 60-sekunders lesning
+
+| # | Funn | Bevis | Konfidens |
+|---|------|-------|-----------|
+| 1 | Prop. 2025/26:267 fjerner tidsgrensen for forvaring av voksne utlendinger med sikkerhetstrusler (3 kap. 8 § oppheves) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | Beviskravet for forvaring senkes: *sannsynlig* erstattes av *kan antas* | HD03267, 3 kap. 1 § ny ordlyd | HIGH |
+| 3 | Barn i forvaring skal kunne plasseres i sikkerhetsavdeling — kontroversielt mot Barnekonvensjonen art. 37 | HD03267, § 6.3 | HIGH |
+| 4 | Utvisningsgrunnlaget presiseres: "særlig nødvendig av hensyn til Sveriges sikkerhet" (2 kap. 1 §) | HD03267, 2 kap. 1 § ny ordlyd | HIGH |
+| 5 | Prop. 2025/26:250 etablerer statlig e-identifikasjon — utfordrer BankID-dominansen | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 gir Skatteverket utvidede fullmakter i folkeregisteret — adresserer identitetsbedrageri | dok_id HD03261 | HIGH |
+| 7 | Alle tre proposisjoner gjennomgikk Lagrådsremiss; Lagrådets uttalelse publisert (HD03267, Vedlegg 5) | HD03267 s. 66 | HIGH |
+| 8 | Ikrafttredelse: 1. mars 2027 (HD03267) — etter Riksdagsvalget september 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### Viktigste fremtidige utløser
+
+> **Utløser T+14d:** Riksdagsutvalgenes fordeling av HD03267 til Justisutvalget (JuU). Utvalgsflertallet sammensetting (M+SD+KD+L = 10 av 17 plasser) avgjør om betenkingen støtter eller underminerer utvisningsproposisjonen. Overvåk: JuUs forfatningsrettslige eksperters uttalelse om EMK-forenlighet.
+
+---
+
+### Metodenotat
+
+Analysen baserer seg på fulltekst av dok_id HD03267 samt metadata for HD03250 og HD03261 (Prop. 2025/26:250, 261, 267). IMF WEO Apr-2026 vintage brukt til økonomisk kontekst (direkte henting returnerte null; context.json status: ok). Tidligere voteringer: ingen sammenlignbare voteringer indeksert for 2025/26-sesjonen i JuU, TU eller SkU per søking 2026-05-11.
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_sv.md -->
+
+**Författare:** James Pether Sörling | **Körnings-ID:** 25654727630 | **Datum:** 2026-05-11
+**Klassificering:** Offentlig | **Konfidensgrad:** HIGH [B2] | **Arbetsflöde:** news-propositions
+
+---
+
+### 🔄 Underrättelsekontext
+
+| Element | Värde |
+|---------|-------|
+| **F3EAD-fas** | SPRID — färdig underrättelseprodukt |
+| **Betjänade PIR** | PIR-1 (koalitionsstabilitet), PIR-3 (rättsstatsprincipen), PIR-5 (val 2026) |
+| **Admiralty-golv** | [B2] — bekräftelse via primär dok_id |
+| **WEP + ODNI** | Nyckeldomslut använder WEP-skalan; HIGH konfidensgrad för flerdok_id-påståenden |
+| **Tillämpade SAT** | Nyckelantagandekontroll, Brainstorming, Strukturerad argumentation |
+| **ICD 203-standarder** | 5 (kundrelevans), 6 (logisk argumentation), 9 (visuell information) |
+
+---
+
+### BLUF — Slutsats direkt
+
+Den 7 maj 2026 presenterade Tidöregeringen tre propositioner med genomgående tema: **utvidgad statlig kontroll över identitet, befolkningsregister och frihetsberövande av säkerhetshot**. Den tyngst vägande — Prop. 2025/26:267 — avskaffar tidsgränsen för förvar av vuxna utlänningar som bedöms utgöra kvalificerade säkerhetshot och sänker beviskravet från *sannolikt* till *kan antas*. Dessa förändringar är konstitutionellt känsliga och innebär **mycket sannolikt [B2]** att Vänsterpartiet, Socialdemokraterna och Miljöpartiet kommer bestrida propositionen under riksdagsbehandlingen — med möjliga konsekvenser för den parlamentariska majoriteten.
+
+**Tre beslut denna sammanfattning stödjer:**
+1. **Redaktionell prioritering:** HD03267 bör leda rapporteringen — detentionsfrågan utan tidsgräns är den enskilt viktigaste konstitutionella förändringen i paketet.
+2. **Bevakningsuppdrag:** Lagrådsyttrandets tolkning av EKMR (art. 5 & 8) och Barnkonventionen är kritisk riskindikator — publicerat 7 maj (Bilaga 5).
+3. **Framåtbevakning:** Riksdagsbehandling 2026–2027; ikraftträdandedatum 1 mars 2027 bör mätas mot valresultatet september 2026.
+
+---
+
+### 60-sekunderläsning
+
+| # | Fynd | Bevis | Konfidensgrad |
+|---|------|-------|---------------|
+| 1 | Prop. 2025/26:267 tar bort tidsgränsen för förvar av vuxna utlänningar med säkerhetshot (3 kap. 8 § upphävs) | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | Beviskravet för förvar sänks: *sannolikt* ersätts av *kan antas* | HD03267, 3 kap. 1 § ny lydelse | HIGH |
+| 3 | Barn i förvar ska kunna placeras i säkerhetsavdelning — kontroversiellt mot Barnkonventionen art. 37 | HD03267, § 6.3 | HIGH |
+| 4 | Utvisningsgrunden förtydligas: "särskilt påkallat med hänsyn till Sveriges säkerhet" (2 kap. 1 §) | HD03267, 2 kap. 1 § ny lydelse | HIGH |
+| 5 | Prop. 2025/26:250 etablerar statlig e-legitimation — utmanar BankID-dominansen | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261 ger Skatteverket utökade befogenheter i folkbokföringen — adresserar identitetsfusk | dok_id HD03261 | HIGH |
+| 7 | Alla tre propositioner genomgick Lagrådsremiss; Lagrådsyttrande publicerat (HD03267, Bilaga 5) | HD03267 s. 66 | HIGH |
+| 8 | Ikraftträdande: 1 mars 2027 (HD03267) — efter riksdagsvalet september 2026 | HD03267, § 10 | HIGH |
+
+---
+
+### Viktigaste framåtutlösare
+
+> **Utlösare T+14d:** Riksdagsutskottens remissfördelning för HD03267 till Justitieutskottet (JuU). Utskottsmajoritetens sammansättning (M+SD+KD+L = 10 av 17 platser) avgör om betänkandet stödjer eller urholkar utvisningspropositionen. Bevaka: JuU:s konstitutionsrättsliga sakkunnigas yttrande om EKMR-förenlighet.
+
+---
+
+### Metodnotering
+
+Analysen baseras på fulltext av dok_id HD03267 samt metadata för HD03250 och HD03261 (Prop. 2025/26:250, 261, 267). IMF WEO Apr-2026 vintage användes för ekonomisk kontext (direkt hämtning returnerade null; context.json status: ok). Tidigare voteringar: inga jämförbara voteringar indexerade för 2025/26-sessionen i JuU, TU eller SkU per sökning 2026-05-11.
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_zh.md -->
+
+**作者：** James Pether Sörling | **运行ID：** 25654727630 | **日期：** 2026-05-11
+**分类：** 公开 | **置信度：** HIGH [B2] | **工作流：** news-propositions
+
+---
+
+### 🔄 情报背景
+
+| 要素 | 值 |
+|------|-----|
+| **F3EAD阶段** | 传播 — 已完成的情报产品 |
+| **服务PIR** | PIR-1（联合稳定性）、PIR-3（法治）、PIR-5（2026年选举） |
+| **Admiralty底线** | [B2] — 通过主要dok_id的证实 |
+| **WEP + ODNI** | 关键判断使用WEP量表；多dok_id声明采用HIGH置信度 |
+| **应用SAT** | 关键假设检查、头脑风暴、结构化论证 |
+| **ICD 203标准** | 5（客户相关性）、6（逻辑论证）、9（视觉信息） |
+
+---
+
+### BLUF — 直接结论
+
+2026年5月7日，Tidö政府提交了三项法案，主题一致：**扩大对身份、人口登记及安全威胁自由剥夺的国家管控**。最重要的 — Prop. 2025/26:267 — 取消对被认定为合格安全威胁的成年外国人拘留的时间上限，并将证明标准从*可能*降低至*可以推定*。这些变化在宪法上较为敏感，**极有可能 [B2]** 导致Vänsterpartiet、Socialdemokraterna和Miljöpartiet在Riksdag审议期间对该法案提出异议 — 可能对议会多数派产生影响。
+
+**本简报支持的三项决定：**
+1. **编辑优先级：** HD03267应领导报道 — 无时限拘留问题是一揽子方案中单一最重要的宪法变更。
+2. **监测任务：** Lagrådet对ECHR（第5条和第8条）与《儿童权利公约》的解释是关键风险指标 — 于5月7日公布（附件5）。
+3. **前瞻性监测：** Riksdag审议2026–2027；2027年3月1日生效日期应以2026年9月选举结果为参照进行衡量。
+
+---
+
+### 60秒阅读
+
+| # | 发现 | 证据 | 置信度 |
+|---|------|------|--------|
+| 1 | Prop. 2025/26:267取消对安全威胁成年外国人拘留的时间上限（第3章第8条废止） | dok_id HD03267, § 6.2.1 | HIGH |
+| 2 | 拘留证明标准降低：*可能*被*可以推定*取代 | HD03267, 第3章第1条新文本 | HIGH |
+| 3 | 被拘留儿童可被安置在安全部门 — 与《儿童权利公约》第37条相悖颇具争议 | HD03267, § 6.3 | HIGH |
+| 4 | 驱逐事由明确："基于瑞典安全的特别需要"（第2章第1条） | HD03267, 第2章第1条新文本 | HIGH |
+| 5 | Prop. 2025/26:250建立国家电子身份 — 挑战BankID的主导地位 | dok_id HD03250 | HIGH |
+| 6 | Prop. 2025/26:261赋予Skatteverket人口登记中的扩展权力 — 应对身份欺诈 | dok_id HD03261 | HIGH |
+| 7 | 三项法案均通过Lagrådsremiss；Lagrådet意见已公布（HD03267，附件5） | HD03267 第66页 | HIGH |
+| 8 | 生效：2027年3月1日（HD03267） — 2026年9月Riksdag选举之后 | HD03267, § 10 | HIGH |
+
+---
+
+### 最重要的未来触发因素
+
+> **触发因素 T+14d：** Riksdag委员会将HD03267分配至司法委员会（JuU）。委员会多数派构成（M+SD+KD+L = 17席中10席）决定意见书是否支持还是削弱驱逐法案。关注：JuU宪法专家关于ECHR适应性的意见。
+
+---
+
+### 方法论说明
+
+分析基于dok_id HD03267的全文以及HD03250和HD03261的元数据（Prop. 2025/26:250, 261, 267）。经济背景使用IMF WEO 2026年4月版本（直接获取返回null；context.json状态：ok）。先前投票：根据2026-05-11的搜索，JuU、TU或SkU中没有为2025/26会议期间的可比投票建立索引。
+
+---
+
+### 第2阶段补充 — 深化特定证据
+
+#### Lagrådet的作用 — 精确说明
+HD03267附件5包含Lagrådet的意见。Lagrådet审查涉及RF（宪法权利保护）和ECHR的所有法案。意见的存在是立法者意识到宪法问题的程序性确认。JuU应在意见书中明确处理Lagrådet的观点 — 若JuU偏离Lagrådet，必须说明理由。
+
+#### 与Tidö协议的具体联系
+HD03267实施了Tidö协议中关于"为提高驱逐对瑞典构成安全威胁人员效率而制定的立法"的条款（协议文本已引用 — 确切§号未核实）。该法案是对联合政府内SD和KD的交付要求。
+
+#### 证明标准 — 具体比较
+- "可能"（>50%概率）= 标准民事证明责任
+- "可以推定"（约30–40%）= 刑事程序控制措施标准（参见警察法§19）
+- "合理怀疑"（约20–30%）= 警察行动的最低标准
+
+从"可能"到"可以推定"的变化意味着可以基于较低概率评估拘留个人 — 法治标准的统计意义显著下降。
+
+<!-- source-sha: 8fea62eb15b3ae755c0814523d36e2ab2c7836e5 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
 
@@ -2068,6 +2984,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

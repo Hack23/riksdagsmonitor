@@ -3,7 +3,7 @@ date: 2026-05-06
 subfolder: election-cycle/next
 slug: 2026-05-06-election-cycle/next
 source_folder: analysis/daily/2026-05-06/election-cycle/next
-generated_at: 2026-05-25T15:59:53.453Z
+generated_at: 2026-05-27T07:35:33.075Z
 language: en
 layout: article
 ---
@@ -1031,8 +1031,6 @@ Valcykeln efter 2026 (2026–2030) kommer att styras av en av två fundamentalt 
 | 财政收支 | -0.8% | -0.5% | -0.2% | IMF FM 2026年4月 |
 
 > economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-06"}
-
-**WEP**：提多主导的延续政府 可能 [horizon:cycle]。无论哪届政府执政，经济轨迹：复苏 可能 [horizon:cycle]。
 
 <!-- source-sha: 9bbb682e5d017dce2180b0b042d394cf055b9afc -->
 

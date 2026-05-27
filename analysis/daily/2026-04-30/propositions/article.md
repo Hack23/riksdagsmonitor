@@ -3,7 +3,7 @@ date: 2026-04-30
 subfolder: propositions
 slug: 2026-04-30-propositions
 source_folder: analysis/daily/2026-04-30/propositions
-generated_at: 2026-05-25T15:59:53.084Z
+generated_at: 2026-05-27T07:35:32.699Z
 language: en
 layout: article
 ---
@@ -1701,11 +1701,6 @@ graph LR
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_da.md -->
 
-**Forfatter**: James Pether Sörling  
-**Klassifikation**: PUBLIC — GDPR Art. 9(2)(e,g)  
-**Konfidens**: HØJ [B2]  
-**Kørselsnummer**: 25150587415
-
 ---
 
 ### 🎯 BLUF
@@ -1753,11 +1748,6 @@ graph LR
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling  
-**Klassifizierung**: PUBLIC — DSGVO Art. 9(2)(e,g)  
-**Konfidenz**: HOCH [B2]  
-**Lauf-ID**: 25150587415
-
 ---
 
 ### 🎯 BLUF
@@ -1804,11 +1794,6 @@ graph LR
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_es.md -->
-
-**Autor**: James Pether Sörling  
-**Clasificación**: PUBLIC — RGPD Art. 9(2)(e,g)  
-**Confianza**: ALTA [B2]  
-**ID de ejecución**: 25150587415
 
 ---
 
@@ -1908,11 +1893,6 @@ graph LR
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_fr.md -->
-
-**Auteur** : James Pether Sörling  
-
-**Confiance** : HAUTE [B2]  
-**ID d'exécution** : 25150587415
 
 ---
 
@@ -2016,11 +1996,6 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**分類**: PUBLIC — GDPR第9条(2)(e,g)  
-**信頼度**: 高 [B2]  
-**実行ID**: 25150587415
-
 ---
 
 ### 🎯 BLUF
@@ -2067,11 +2042,6 @@ graph LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/propositions/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**분류**: PUBLIC — GDPR 제9조(2)(e,g)  
-**신뢰도**: 높음 [B2]  
-**실행 ID**: 25150587415
 
 ---
 

@@ -3,7 +3,7 @@ date: 2026-05-07
 subfolder: realtime-pulse
 slug: 2026-05-07-realtime-pulse
 source_folder: analysis/daily/2026-05-07/realtime-pulse
-generated_at: 2026-05-25T15:59:53.586Z
+generated_at: 2026-05-27T07:35:33.209Z
 language: en
 layout: article
 ---
@@ -3274,8 +3274,6 @@ HD03267에 관한 섹션은 안전 부문에서의 아동 구금이 Rädda Barne
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/executive-brief_nl.md -->
-
-**Classificatie**: OPENBAAR | **Betrouwbaarheid**: HOOG | **Horizon**: T+72h / T+30d / T+128d (verkiezingen)
 
 ---
 

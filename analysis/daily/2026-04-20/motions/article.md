@@ -3,7 +3,7 @@ date: 2026-04-20
 subfolder: motions
 slug: 2026-04-20-motions
 source_folder: analysis/daily/2026-04-20/motions
-generated_at: 2026-05-25T15:59:52.412Z
+generated_at: 2026-05-27T07:35:32.002Z
 language: en
 layout: article
 ---
@@ -4982,8 +4982,6 @@ Mellan 2026-04-13 och 2026-04-17 lämnade Sveriges fyra stora oppositionspartier
 - [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — 完整档案文件索引
 
 ---
-
-**分类**：公开 · **下次审阅**：2026-04-27
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 

@@ -3,7 +3,7 @@ date: 2026-05-10
 subfolder: monthly-review
 slug: 2026-05-10-monthly-review
 source_folder: analysis/daily/2026-05-10/monthly-review
-generated_at: 2026-05-25T15:59:53.773Z
+generated_at: 2026-05-27T07:35:33.419Z
 language: en
 layout: article
 ---
@@ -89,6 +89,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1622,13 +1635,780 @@ Sibling folders read for monthly synthesis (last 30 days, 2026-04-10 to 2026-05-
 
 **Note**: Full cross-type data read from sibling `synthesis-summary.md` and `intelligence-assessment.md` files as required by Tier-C protocol.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+---
+title: "Sweden's Pre-Election Legislative Sprint: Housing Reform, School Credentials, and Foreign Policy Flashpoints — May 2026"
+
+subfolder: "monthly-review"
+language: "en"
+
+coverage_window: "2026-04-10 → 2026-05-10"
+days_to_election: 126
+---
+
+# الملخص التنفيذي — المراجعة الشهرية 2026-05-10
+
+**المؤلف**: James Pether Sörling | **التاريخ**: 2026-05-10 | **مستوى الثقة**: HIGH [A1–B2]  
+**فترة التغطية**: 2026-04-10 → 2026-05-10 (الدورة البرلمانية 2025/26، نافذة 30 يوماً)  
+**الأيام حتى الانتخابات**: 126 (2026-09-13)
+
+---
+
+### الخلاصة الفورية
+
+يكشف نافذة مايو 2026 عن تحالف Tidö الذي يتسابق لتسليم إصلاحات تشريعية هيكلية في السباق البرلماني الأخير قبل انتخابات سبتمبر. **تحرير سوق الإيجار** (HD01CU31، نافذ من 2026-07-01) هو الإصلاح الأعلى تأثيراً في الشهر — قانون إيجار خاص جديد ونموذج إيجار كتلي معدّل سيُعيدان تشكيل سوق الإسكان السويدي ويُحدّان الانقسام الانتخابي بين اليسار واليمين. في الوقت ذاته، يُعزز **إصلاح مؤهلات المعلمين** (HD01UbU28) و**قواعد الشفافية المدرسية** (HD01UbU20) تطبيق المدرسة الابتدائية ذات العشر سنوات. يكشف الشهر أيضاً عن ثلاث نقاط توهج للمساءلة: **اعتراض الأسطول الإسرائيلي** (HD11803) الذي يستهدف المواطنين السويديين، واختبار SD لحدود التحالف (HD11802 بشأن حظر النقاب الكامل الذي يطالب بتوافق L)، و**تخلي المناطق الريفية عن البنية التحتية** (HD11801 — Trafikverket يُزيل 25,000 عمود إنارة). PIR-D (تباين الطاقة بين SD وKD) و PIR-C (مؤتمر SD) هما أولويات جمع المعلومات الاستخباراتية الأساسية لهذه الدورة.
+
+### القرارات المدعومة بهذا الملخص
+
+1. **إطار سوق الإسكان**: هل يُمثل HD01CU31 إنجازاً حاسماً لتحالف Tidö في سوق الإسكان أم أنه مسؤولية انتخابية في ظل معارضة S+V+MP وأزمة الإسكان؟
+2. **حدود التحالف**: هل يضغط HD11802 من SD (مطالبة بحظر النقاب) على الملف الاجتماعي الليبرالي لحزب L في آخر 126 يوماً قبل الانتخابات — وهل يخلق ذلك تصعيداً في مخاطر العتبة لـ L؟
+3. **التعرض للسياسة الخارجية**: هل يخلق اعتراض إسرائيل لقافلة Global Sumud (HD11803، مواطنون سويديون على متنها) ضغطاً مستداماً في لجنة الشؤون الخارجية على الوزيرة Malmer Stenergard؟
+
+### القراءة في 60 ثانية
+
+- 🏠 **سوق الإيجار** (HD01CU31): قانون إيجار خاص جديد + نموذج إيجار كتلي محرَّر مُعتمد من CU. قدّمت S+V+MP 5 تحفظات. نافذ من 2026-07-01. هذا هو الإصلاح الرائد لحكومة Tidö في سوق الإسكان. [A1]
+- 🏫 **المدارس** (HD01UbU28 + HD01UbU20): قواعد مؤهلات المعلمين للمدرسة الابتدائية ذات العشر سنوات، بالإضافة إلى تخفيف مبدأ الوصول العام للمدارس الخاصة الصغيرة. كلاهما يُعزز أجندة إصلاح التعليم HC01UbU17. [A1]
+- 🌍 **القافلة** (HD11803): سؤال S لوزيرة الخارجية بشأن اعتراض إسرائيل لقافلة Global Sumud التي تحمل مواطنين سويديين. مطلوب رد وزاري. ضغط المساءلة في السياسة الخارجية. [A1]
+- 🧕 **حظر النقاب** (HD11802): يضغط SD رسمياً على وزيرة الإدماج في حزب L، Mohamsson، بشأن تطبيق حظر النقاب الكامل — يختبر الانضباط الائتلافي في السياسات الهوياتية. [A1]
+- 💡 **إنارة الأرياف** (HD11801): سؤال V بشأن إزالة Trafikverket لـ 25,000 عمود إنارة في المناطق الريفية. وزير البنية التحتية في حزب KD في مواجهة المساءلة. [A1]
+- 💼 **الإقامة الضريبية** (HD10480): استجواب S بشأن التأخر في تعريف "stadigvarande vistelse" منذ أكتوبر 2025. وزير المالية Svantesson يواجه المساءلة عن قواعد تنقل الشركات. [A1]
+- ⚖️ **التنفيذ المدني** (HD01CU34): إصلاح قانون التنفيذ المدني — إجراءات الحجز عن بُعد مُحدَّثة. [A1]
+- 🌐 **IPU** (HD01UU13): اعتماد أنشطة الاتحاد البرلماني الدولي. [A1]
+
+### أهم المؤشرات المستقبلية
+
+**FI-01 (PIR-C/D)**: نتيجة اعتماد منصة الطاقة في مؤتمر SD وتموضع التحالف بعد المؤتمر — المؤشر المستقبلي الأكثر تأثيراً على استقرار التحالف وسيناريوهات انتخابات سبتمبر 2026. **متابعة حتى**: 2026-05-25.
+
+### مستوى الثقة
+
+الثقة الإجمالية: **HIGH [A1–B2]** — نص Betänkanden مُسترجع مباشرة (A1)؛ ملخصات الاستجوابات/الأسئلة مُسترجعة (A1)؛ نتيجة مؤتمر SD مُستنتجة من سياق PIR السابق (B2 — مُجمَّعة لكن غير مؤكدة حتى 2026-05-10).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-10 | **Konfidens**: HIGH [A1–B2]  
+**Dækningsvindue**: 2026-04-10 → 2026-05-10 (riksmøde 2025/26, 30-dages vindue)  
+**Dage til valg**: 126 (2026-09-13)
+
+---
+
+### Kortfattet konklusion
+
+Maj 2026-vinduet afslører en Tidö-koalition, der kapløber med at levere strukturelle lovgivningsreformer i den endelige parlamentariske sprint inden septembervalget. **Liberaliseringen af lejemarkedet** (HD01CU31, ikrafttrædelse 2026-07-01) er månedens reform med størst indvirkning — en ny privat lejelov og revideret blokkørermodel, der vil omforme Sveriges boligmarked og skærpe den venstre-højre-valgsskel. Samtidig fremmer **læreruddannelsesreformen** (HD01UbU28) og **skolernes transparensregler** (HD01UbU20) implementeringen af den 10-årige folkeskole. Måneden afslører også tre ansvarsflashpoints: **Israels flotilleinterception** (HD11803) rettet mod svenske statsborgere, SDs koalitionsgrænsetest (HD11802 om fuld tilsløring der kræver L-justering), og **landdistrikternes infrastrukturafandonment** (HD11801 — Trafikverket fjerner 25.000 gadelamper). PIR-D (SD–KD-energidivergensen) og PIR-C (SD-kongressen) er de primære efterretningsindsamlingsprioriteter for denne cyklus.
+
+### Beslutninger understøttet af dette resumé
+
+1. **Boligmarkedets inramning**: Er HD01CU31 en afgørende Tidö-leverance på boligmarkedet eller en valgansvar med S+V+MP-opposition plus boligmangel?
+2. **Koalitionsgrænse**: Presser SDs HD11802 (krav om slørforbud) L's socialliberale profil i de sidste 126 dage inden valget — og skaber dette en tærskelrisikoeskalation for L?
+3. **Udenrigspolitisk eksponering**: Skaber Israels interception af Global Sumud-flotillen (HD11803, svenske statsborgere om bord) vedvarende pres i udenrigsudvalget mod udenrigsminister Malmer Stenergard?
+
+### 60-sekunders læsning
+
+- 🏠 **Lejemarkedet** (HD01CU31): Ny privat lejelov + liberaliseret blokkørsel godkendt af CU. S+V+MP indgav 5 forbehold. Ikrafttrædelse 2026-07-01. Dette er Tidö-regeringens flagskib på boligmarkedet. [A1]
+- 🏫 **Skoler** (HD01UbU28 + HD01UbU20): Regler for lærerkvalifikationer til 10-årig folkeskole, plus offentlighedsprincip-lettelse for små friskoler. Begge fremmer HC01UbU17 skolereformdagsordenen. [A1]
+- 🌍 **Flotillen** (HD11803): S-spørgsmål til udenrigsministeren om Israels interception af den svenske-borgerbærende Global Sumud-flotille. Ministersvar påkrævet. Udenrigspolitisk ansvarspress. [A1]
+- 🧕 **Slørforbud** (HD11802): SD presser formelt L's integrationsminister Mohamsson om implementering af forbud mod fuld tilsløring — tester koalitionsdisciplin i identitetspolitik. [A1]
+- 💡 **Landdistriktsbelysning** (HD11801): V-spørgsmål om Trafikverkets fjernelse af 25.000 gadelamper i landdistrikter. KD's infrastrukturminister i den varme stol. [A1]
+- 💼 **Skattemæssigt hjemsted** (HD10480): S-interpellation om forsinkelsen af definitionen af "stadigvarande vistelse" siden oktober 2025. Finansminister Svantesson holdes ansvarlig for reglerne om virksomhedsmobilitet. [A1]
+- ⚖️ **Tvangsfuldbyrdelse** (HD01CU34): Reform af civilretlig tvangsfuldbyrdelseslov — fjerneksekutionsprocesser moderniseret. [A1]
+- 🌐 **IPU** (HD01UU13): Den Interparlamentariske Unions aktiviteter godkendt. [A1]
+
+### Vigtigste fremadrettede udløser
+
+**FI-01 (PIR-C/D)**: SDs kongres' vedtagelse af energiplatform og positionering efter kongressen — den enkelt mest konsekvensrige fremadrettede indikator for koalitionsstabilitet og valgscenarier for september 2026. **Overvåges til**: 2026-05-25.
+
+### Konfidensniveau
+
+Samlet konfidens: **HIGH [A1–B2]** — Betänkanden-tekst direkte hentet (A1); interpellations-/spørgsmålsresuméer hentet (A1); SDs kongresresultat udledt fra forudgående PIR-kontekst (B2 — indsamlet men ubekræftet per 2026-05-10).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-05-10 | **Konfidenz**: HIGH [A1–B2]  
+**Abdeckungszeitraum**: 2026-04-10 → 2026-05-10 (Riksmöte 2025/26, 30-Tage-Fenster)  
+**Tage bis zur Wahl**: 126 (2026-09-13)
+
+---
+
+### Fazit auf einen Blick
+
+Das Mai-2026-Fenster offenbart eine Tidö-Koalition, die im letzten parlamentarischen Sprint vor der Septemberwahl darum wetteifert, strukturelle Gesetzgebungsreformen zu liefern. Die **Liberalisierung des Mietmarktes** (HD01CU31, Inkrafttreten 2026-07-01) ist die wirkungsstärkste Reform des Monats — ein neues Privatmietgesetz und ein überarbeitetes Blockmietmodell werden Schwedens Wohnungsmarkt umgestalten und die links-rechts-Wahltrennlinie schärfen. Gleichzeitig treiben die **Lehrerqualifikationsreform** (HD01UbU28) und die **Schultransparenzregeln** (HD01UbU20) die Umsetzung der 10-jährigen Grundschule voran. Der Monat legt auch drei Rechenschaftspflicht-Brennpunkte offen: die **israelische Flotilleninterzeption** (HD11803) gegen schwedische Staatsbürger, SDs Koalitionsgrenztest (HD11802 zum Ganzkörperschleierverbot, das L-Ausrichtung fordert), und die **Infrastrukturaufgabe im ländlichen Raum** (HD11801 — Trafikverket entfernt 25.000 Straßenlaternen). PIR-D (SD–KD-Energiedivergenz) und PIR-C (SD-Parteitag) sind die primären Geheimdiensterhebungsprioritäten für diesen Zyklus.
+
+### Von diesem Briefing unterstützte Entscheidungen
+
+1. **Wohnungsmarkteinrahmung**: Ist HD01CU31 eine entscheidende Tidö-Lieferung auf dem Wohnungsmarkt oder eine Wahlhaftung mit S+V+MP-Opposition plus Wohnungsknappheit?
+2. **Koalitionsgrenze**: Setzt SDs HD11802 (Forderung nach Schleiverbot) das sozialliberale Profil von L in den letzten 126 Tagen vor der Wahl unter Druck — und erzeugt dies eine Schwellenrisikoeskalation für L?
+3. **Außenpolitische Exposition**: Erzeugt Israels Interzeption der Global Sumud-Flotille (HD11803, schwedische Staatsbürger an Bord) anhaltenden Druck im Außenausschuss auf Außenministerin Malmer Stenergard?
+
+### 60-Sekunden-Lektüre
+
+- 🏠 **Mietmarkt** (HD01CU31): Neues Privatmietgesetz + liberalisiertes Blockmietmodell vom CU genehmigt. S+V+MP reichte 5 Vorbehalte ein. Inkrafttreten 2026-07-01. Dies ist das Flaggschiff der Tidö-Regierung auf dem Wohnungsmarkt. [A1]
+- 🏫 **Schulen** (HD01UbU28 + HD01UbU20): Lehrerqualifikationsregeln für die 10-jährige Grundschule sowie Erleichterung des Öffentlichkeitsprinzips für kleine Privatschulen. Beide fördern die HC01UbU17-Schulreformagenda. [A1]
+- 🌍 **Flotille** (HD11803): S-Anfrage an die Außenministerin zu Israels Interzeption der schwedische-Bürger-führenden Global Sumud-Flotille. Ministerantwort erforderlich. Außenpolitischer Rechenschaftsdruck. [A1]
+- 🧕 **Schleierverbot** (HD11802): SD drängt formal L-Integrationsministerin Mohamsson zur Umsetzung des Verbots des Ganzkörperschleiers — testet die Koalitionsdisziplin in der Identitätspolitik. [A1]
+- 💡 **Ländliche Beleuchtung** (HD11801): V-Anfrage zu Trafikverkets Entfernung von 25.000 Straßenlaternen in ländlichen Gebieten. KD-Infrastrukturminister im heißen Stuhl. [A1]
+- 💼 **Steuerlicher Wohnsitz** (HD10480): S-Interpellation zur Verzögerung der Definition von "stadigvarande vistelse" seit Oktober 2025. Finanzminister Svantesson sieht sich für die Regeln zur Unternehmensmobilität verantwortlich. [A1]
+- ⚖️ **Vollstreckung** (HD01CU34): Reform des Zivilprozessrechts zur Zwangsvollstreckung — Fernpfändungsverfahren modernisiert. [A1]
+- 🌐 **IPU** (HD01UU13): Aktivitäten der Interparlamentarischen Union gebilligt. [A1]
+
+### Wichtigster Vorwärts-Auslöser
+
+**FI-01 (PIR-C/D)**: SD-Parteitage Ergebnis der Energieplattformadoption und Koalitionspositionierung nach dem Parteitag — der bei weitem folgenreichste Vorwärtsindikator für Koalitionsstabilität und Wahlszenarien für September 2026. **Beobachten bis**: 2026-05-25.
+
+### Konfidenzbeurteilung
+
+Gesamtkonfidenz: **HIGH [A1–B2]** — Betänkanden-Text direkt abgerufen (A1); Interpellations-/Anfragezusammenfassungen abgerufen (A1); SD-Parteitage Ergebnis aus vorherigem PIR-Kontext abgeleitet (B2 — gesammelt, aber per 2026-05-10 unbestätigt).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-05-10 | **Confianza**: HIGH [A1–B2]  
+**Período cubierto**: 2026-04-10 → 2026-05-10 (riksmöte 2025/26, ventana de 30 días)  
+**Días hasta las elecciones**: 126 (2026-09-13)
+
+---
+
+### Conclusión inmediata
+
+La ventana de mayo de 2026 revela una coalición Tidö que compite por entregar reformas legislativas estructurales en el último sprint parlamentario antes de las elecciones de septiembre. La **liberalización del mercado de alquileres** (HD01CU31, en vigor desde el 2026-07-01) es la reforma de mayor impacto del mes — una nueva ley de alquiler privado y un modelo de alquiler por bloques revisado que reformará el mercado inmobiliario sueco y agudizará la división electoral izquierda-derecha. Simultáneamente, la **reforma de credenciales docentes** (HD01UbU28) y las **reglas de transparencia escolar** (HD01UbU20) hacen avanzar la implementación de la escuela primaria de 10 años. El mes también expone tres puntos de confrontación de responsabilidad: la **interceptación israelí de la flotilla** (HD11803) dirigida a ciudadanos suecos, el test de límites de coalición del SD (HD11802 sobre la prohibición del velo completo exigiendo alineación del L), y el **abandono de infraestructuras rurales** (HD11801 — Trafikverket eliminando 25.000 farolas). PIR-D (divergencia energética SD–KD) y PIR-C (congreso del SD) son las prioridades primarias de recopilación de inteligencia para este ciclo.
+
+### Decisiones respaldadas por este resumen
+
+1. **Encuadre del mercado de la vivienda**: ¿Es HD01CU31 un hito decisivo de la coalición Tidö en el mercado de la vivienda o una responsabilidad electoral con la oposición S+V+MP más la escasez de vivienda?
+2. **Límite de coalición**: ¿El HD11802 del SD (demanda de prohibición del velo) presiona el perfil socialliberal del L en los últimos 126 días antes de las elecciones — y crea esto una escalada de riesgo umbral para el L?
+3. **Exposición en política exterior**: ¿La interceptación por Israel de la flotilla Global Sumud (HD11803, ciudadanos suecos a bordo) crea una presión sostenida en la comisión de asuntos exteriores sobre la ministra Malmer Stenergard?
+
+### Lectura en 60 segundos
+
+- 🏠 **Mercado de alquiler** (HD01CU31): Nueva ley de alquiler privado + modelo de alquiler por bloques liberalizado aprobado por la CU. S+V+MP presentó 5 reservas. En vigor desde el 2026-07-01. Es la reforma insignia de la coalición Tidö en el mercado de la vivienda. [A1]
+- 🏫 **Escuelas** (HD01UbU28 + HD01UbU20): Reglas de credenciales docentes para la escuela primaria de 10 años, más alivio del principio de acceso público para pequeñas escuelas privadas. Ambas hacen avanzar la agenda de reforma escolar HC01UbU17. [A1]
+- 🌍 **Flotilla** (HD11803): Pregunta del S a la ministra de Asuntos Exteriores sobre la interceptación por Israel de la flotilla Global Sumud que transportaba ciudadanos suecos. Se requiere respuesta ministerial. Presión de responsabilidad en política exterior. [A1]
+- 🧕 **Prohibición del velo** (HD11802): El SD presiona formalmente a la ministra de Integración del L, Mohamsson, sobre la implementación de la prohibición del velo facial completo — poniendo a prueba la disciplina de coalición en política de identidad. [A1]
+- 💡 **Alumbrado rural** (HD11801): Pregunta del V sobre la retirada por Trafikverket de 25.000 farolas en zonas rurales. El ministro de Infraestructuras del KD en el punto de mira. [A1]
+- 💼 **Residencia fiscal** (HD10480): Interpelación del S sobre el retraso en la definición de "stadigvarande vistelse" desde octubre de 2025. El ministro de Finanzas Svantesson rinde cuentas sobre las normas de movilidad empresarial. [A1]
+- ⚖️ **Ejecución civil** (HD01CU34): Reforma de la ley civil de ejecución — procedimientos de embargo a distancia modernizados. [A1]
+- 🌐 **UIP** (HD01UU13): Actividades de la Unión Interparlamentaria aprobadas. [A1]
+
+### Principal indicador prospectivo
+
+**FI-01 (PIR-C/D)**: Resultado de la adopción de la plataforma energética en el congreso del SD y posicionamiento post-congreso de la coalición — el indicador prospectivo más determinante para la estabilidad de la coalición y los escenarios electorales de septiembre de 2026. **Vigilar hasta**: 2026-05-25.
+
+### Nivel de confianza
+
+Confianza global: **HIGH [A1–B2]** — Texto de los Betänkanden recuperado directamente (A1); resúmenes de interpelaciones/preguntas recuperados (A1); resultado del congreso del SD deducido del contexto PIR anterior (B2 — recopilado pero no confirmado a 2026-05-10).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-05-10 | **Luotettavuus**: HIGH [A1–B2]  
+**Kattavuusjakso**: 2026-04-10 → 2026-05-10 (riksmöte 2025/26, 30 päivän ikkuna)  
+**Päiviä vaaleihin**: 126 (2026-09-13)
+
+---
+
+### Lyhyt yhteenveto
+
+Toukokuun 2026 ikkuna paljastaa Tidö-koalition, joka kilpailee toimittaakseen rakenteellisia lainsäädäntöuudistuksia viimeisessä parlamentaarisessa sprintissä ennen syyskuun vaaleja. **Vuokramarkkinoiden vapauttaminen** (HD01CU31, voimaantulo 2026-07-01) on kuukauden suurivaikutteisin uudistus — uusi yksityinen vuokralaki ja tarkistettu lohkovuokrausmalli, jotka muotoilevat uudelleen Ruotsin asuntomarkkinat ja terävöittävät vasemmisto-oikeisto-vaalijakoa. Samanaikaisesti **opettajan pätevyysreformi** (HD01UbU28) ja **koulujen läpinäkyvyyssäännöt** (HD01UbU20) edistävät 10-vuotisen peruskoulun käyttöönottoa. Kuukausi paljastaa myös kolme vastuullisuuden tulipistettä: **Israelin flotillan pysäyttäminen** (HD11803) kohdistui ruotsalaisiin kansalaisiin, SD:n koalitiorajatesti (HD11802 täyspeittoisesta huntukiellosta, joka vaatii L:n linjautumista), ja **maaseudun infrastruktuurin hylkääminen** (HD11801 — Trafikverket poistaa 25 000 katuvalaistusta). PIR-D (SD–KD-energiadivergenssi) ja PIR-C (SD:n puoluekokous) ovat tämän syklin ensisijaiset tiedustelukeräysprioriteetit.
+
+### Tätä tiivistelmää tukevat päätökset
+
+1. **Asuntomarkkinoiden kehystys**: Onko HD01CU31 ratkaiseva Tidön asuntomarkkinatoimitus vai vaalivastuuvapaus S+V+MP-oppositiolla ja asuntopulalla?
+2. **Koalitioraja**: Paineistako SD:n HD11802 (huntukieltovaatimus) L:n sosiaaliliberaalia profiilia viimeisten 126 päivän aikana ennen vaaleja — ja luoko tämä L:lle kynnyskriittisen riskin eskalaation?
+3. **Ulkopoliittinen altistuminen**: Luoko Israelin Global Sumud -flotillan pysäyttäminen (HD11803, ruotsalaiset kansalaiset aluksella) jatkuvaa ulkoasiainvaliokunnan painetta ulkoministeri Malmer Stenergardille?
+
+### 60 sekunnin lukeminen
+
+- 🏠 **Vuokramarkkinat** (HD01CU31): Uusi yksityinen vuokralaki + vapautettu lohkovuokrausmalli hyväksytty CU:ssa. S+V+MP jätti 5 varaumaa. Voimaantulo 2026-07-01. Tämä on Tidö-hallituksen lippulaiva asuntomarkkinoilla. [A1]
+- 🏫 **Koulut** (HD01UbU28 + HD01UbU20): Opettajan pätevyyssäännöt 10-vuotiseen peruskouluun sekä julkisuusperiaatteen helpotus pienille yksityiskouluille. Molemmat edistävät HC01UbU17-koulureformin agendaa. [A1]
+- 🌍 **Flotilla** (HD11803): S:n kysymys ulkoministerille Israelin pysäyttämisestä ruotsalaisia kansalaisia kuljettaneelle Global Sumud -flotillalle. Ministerin vastaus vaaditaan. Ulkopoliittinen vastuupaine. [A1]
+- 🧕 **Huntukielto** (HD11802): SD painostaa virallisesti L:n integrointiministeri Mohamssonin täyspeittoisesta huntukiellosta — testaa koalition kurin identiteettipolitiikassa. [A1]
+- 💡 **Maaseutuvalaistus** (HD11801): V:n kysymys Trafikverketin 25 000 katuvalaistuksen poistosta maaseutualueilla. KD:n infrastruktuuriministeri kuumassa tuolissa. [A1]
+- 💼 **Verotuksellinen kotipaikka** (HD10480): S:n interpellaatio "stadigvarande vistelse" -määritelmän viivästymisestä lokakuusta 2025 alkaen. Valtiovarainministeri Svantesson kohtaa vastuun yritysliikkuvuuden säännöistä. [A1]
+- ⚖️ **Täytäntöönpano** (HD01CU34): Siviilioikeudellisen täytäntöönpanolain uudistus — etäulosmittausmenettelyt modernisoitu. [A1]
+- 🌐 **IPU** (HD01UU13): Parlamenttien välisen liiton toiminta hyväksytty. [A1]
+
+### Tärkein eteenpäin katsova käynnistin
+
+**FI-01 (PIR-C/D)**: SD:n puoluekokouksen energiaplatformin hyväksymistulos ja koalitioasemointi puoluekokouksen jälkeen — yksittäin merkittävin eteenpäin katsova indikaattori koalition vakaudelle ja syyskuun 2026 valioiskenaarioille. **Seurantaan asti**: 2026-05-25.
+
+### Luotettavuustaso
+
+Kokonaisluotettavuus: **HIGH [A1–B2]** — Betänkanden-teksti suoraan haettu (A1); interpellaatio-/kysymysyhteenvedot haettu (A1); SD:n puoluekokouksen tulos johdettu aiemmasta PIR-kontekstista (B2 — kerätty mutta vahvistamaton 2026-05-10 mennessä).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **Date** : 2026-05-10 | **Niveau de confiance** : HIGH [A1–B2]  
+**Période couverte** : 2026-04-10 → 2026-05-10 (riksmöte 2025/26, fenêtre de 30 jours)  
+**Jours jusqu'aux élections** : 126 (2026-09-13)
+
+---
+
+### Conclusion immédiate
+
+La fenêtre de mai 2026 révèle une coalition Tidö qui s'efforce de livrer des réformes législatives structurelles dans le dernier sprint parlementaire avant les élections de septembre. La **libéralisation du marché locatif** (HD01CU31, entrée en vigueur le 2026-07-01) est la réforme la plus impactante du mois — une nouvelle loi sur la location privée et un modèle de location groupée révisé qui remodèleront le marché immobilier suédois et affûteront le clivage électoral gauche-droite. Simultanément, la **réforme des titres d'enseignants** (HD01UbU28) et les **règles de transparence scolaire** (HD01UbU20) font avancer la mise en œuvre de l'école primaire de 10 ans. Le mois expose également trois points chauds de responsabilité : l'**interception israélienne de la flottille** (HD11803) visant des citoyens suédois, le test des limites de la coalition par le SD (HD11802 sur l'interdiction du voile intégral exigeant l'alignement du L), et l'**abandon des infrastructures rurales** (HD11801 — Trafikverket supprimant 25 000 lampadaires). PIR-D (divergence énergétique SD–KD) et PIR-C (congrès du SD) sont les priorités primaires de collecte de renseignements pour ce cycle.
+
+### Décisions soutenues par cette note
+
+1. **Cadrage du marché du logement** : HD01CU31 est-il un livrable décisif de la coalition Tidö sur le marché du logement ou une responsabilité électorale avec l'opposition S+V+MP et la pénurie de logements ?
+2. **Limite de coalition** : Le HD11802 du SD (demande d'interdiction du voile) met-il sous pression le profil sociallibéral du L dans les 126 derniers jours avant les élections — et cela crée-t-il une escalade du risque de seuil pour le L ?
+3. **Exposition en politique étrangère** : L'interception par Israël de la flottille Global Sumud (HD11803, citoyens suédois à bord) crée-t-elle une pression soutenue en commission des affaires étrangères sur la ministre Malmer Stenergard ?
+
+### Lecture en 60 secondes
+
+- 🏠 **Marché locatif** (HD01CU31) : Nouvelle loi sur la location privée + modèle de location groupée libéralisé approuvé par la CU. S+V+MP a déposé 5 réserves. Entrée en vigueur le 2026-07-01. C'est la réforme phare de la coalition Tidö sur le marché du logement. [A1]
+- 🏫 **Écoles** (HD01UbU28 + HD01UbU20) : Règles sur les qualifications des enseignants pour l'école primaire de 10 ans, plus allègement du principe d'accès public pour les petites écoles privées. Les deux font avancer l'agenda de réforme scolaire HC01UbU17. [A1]
+- 🌍 **Flottille** (HD11803) : Question du S à la ministre des Affaires étrangères sur l'interception par Israël de la flottille Global Sumud transportant des citoyens suédois. Réponse ministérielle requise. Pression de responsabilité en politique étrangère. [A1]
+- 🧕 **Interdiction du voile** (HD11802) : Le SD presse formellement la ministre de l'Intégration du L, Mohamsson, sur la mise en œuvre de l'interdiction du voile intégral — testant la discipline de la coalition sur les questions identitaires. [A1]
+- 💡 **Éclairage rural** (HD11801) : Question du V sur la suppression par Trafikverket de 25 000 lampadaires dans les zones rurales. Le ministre de l'Infrastructure du KD sous pression. [A1]
+- 💼 **Résidence fiscale** (HD10480) : Interpellation du S sur le retard de définition de "stadigvarande vistelse" depuis octobre 2025. Le ministre des Finances Svantesson est tenu responsable des règles de mobilité des entreprises. [A1]
+- ⚖️ **Exécution civile** (HD01CU34) : Réforme de la loi civile sur l'exécution forcée — procédures de saisie à distance modernisées. [A1]
+- 🌐 **UIP** (HD01UU13) : Activités de l'Union interparlementaire approuvées. [A1]
+
+### Principal indicateur avancé
+
+**FI-01 (PIR-C/D)** : Résultat de l'adoption de la plateforme énergétique au congrès du SD et positionnement post-congrès de la coalition — l'indicateur avancé le plus déterminant pour la stabilité de la coalition et les scénarios électoraux de septembre 2026. **À surveiller jusqu'au** : 2026-05-25.
+
+### Niveau de confiance
+
+Confiance globale : **HIGH [A1–B2]** — Texte des Betänkanden récupéré directement (A1) ; résumés d'interpellations/questions récupérés (A1) ; résultat du congrès du SD déduit du contexte PIR antérieur (B2 — collecté mais non confirmé au 2026-05-10).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+---
+title: "Sweden's Pre-Election Legislative Sprint: Housing Reform, School Credentials, and Foreign Policy Flashpoints — May 2026"
+
+subfolder: "monthly-review"
+language: "en"
+
+coverage_window: "2026-04-10 → 2026-05-10"
+days_to_election: 126
+---
+
+# תקציר מנהלים — סקירה חודשית 2026-05-10
+
+**מחבר**: James Pether Sörling | **תאריך**: 2026-05-10 | **רמת ביטחון**: HIGH [A1–B2]  
+**תקופת הכיסוי**: 2026-04-10 → 2026-05-10 (ריקסמוטה 2025/26, חלון של 30 יום)  
+**ימים לבחירות**: 126 (2026-09-13)
+
+---
+
+### מסקנה מיידית
+
+חלון מאי 2026 חושף ממשלת Tidö שרצה למסור רפורמות חקיקתיות מבניות בספרינט הפרלמנטרי האחרון לפני בחירות ספטמבר. **שחרור שוק השכירות** (HD01CU31, כניסה לתוקף 2026-07-01) היא הרפורמה בעלת ההשפעה הגבוהה ביותר בחודש — חוק שכירות פרטית חדש ומודל שכירות בלוקים מעודכן שיעצבו מחדש את שוק הדיור השבדי ויחדדו את הפירוד הבחירותי בין שמאל לימין. בו-זמנית, **רפורמת אישורי ההוראה** (HD01UbU28) ו**כללי שקיפות בתי הספר** (HD01UbU20) מקדמים את יישום בית הספר היסודי בן 10 השנים. החודש גם חושף שלוש נקודות אחריות בוערות: **יירוט הצי הישראלי** (HD11803) המכוון לאזרחים שבדיים, מבחן גבולות הקואליציה של SD (HD11802 על איסור רעלה מלאה הדורש יישור עם L), ו**נטישת תשתיות כפריות** (HD11801 — Trafikverket מסיר 25,000 פנסי רחוב). PIR-D (סטייה אנרגטית SD–KD) ו-PIR-C (ועידת SD) הן עדיפויות איסוף המודיעין הראשיות עבור מחזור זה.
+
+### החלטות הנתמכות על ידי תקציר זה
+
+1. **מסגור שוק הדיור**: האם HD01CU31 הוא הישג מכריע של קואליציית Tidö בשוק הדיור, או חבות בחירותית עם האופוזיציה S+V+MP ומחסור בדיור?
+2. **גבול הקואליציה**: האם HD11802 של SD (דרישה לאיסור רעלה) לוחץ על הפרופיל הסוציאל-ליברלי של L ב-126 הימים האחרונים לפני הבחירות — והאם הדבר יוצר סיכון סף עולה עבור L?
+3. **חשיפה במדיניות חוץ**: האם יירוט ישראל את שייטת Global Sumud (HD11803, אזרחים שבדיים על הסיפון) יוצר לחץ מתמשך בוועדת ענייני חוץ על השרה Malmer Stenergard?
+
+### קריאה של 60 שניות
+
+- 🏠 **שוק השכירות** (HD01CU31): חוק שכירות פרטית חדש + מודל שכירות בלוקים מפוחת אושר על ידי CU. S+V+MP הגישו 5 הסתייגויות. כניסה לתוקף 2026-07-01. זוהי רפורמת הדגל של ממשלת Tidö בשוק הדיור. [A1]
+- 🏫 **בתי ספר** (HD01UbU28 + HD01UbU20): כללי כישורי הוראה לבית ספר יסודי בן 10 שנים, בתוספת הקלה על עיקרון הנגישות הציבורית לבתי ספר פרטיים קטנים. שניהם מקדמים את אג'נדת רפורמת החינוך HC01UbU17. [A1]
+- 🌍 **השייטת** (HD11803): שאלת S לשרת החוץ על יירוט ישראל את שייטת Global Sumud שנשאה אזרחים שבדיים. נדרשת תגובה שרותית. לחץ אחריות במדיניות חוץ. [A1]
+- 🧕 **איסור רעלה** (HD11802): SD לוחצת רשמית על שרת הקליטה של L, Mohamsson, על יישום איסור הרעלה המלאה — בוחנת את משמעת הקואליציה בפוליטיקת הזהות. [A1]
+- 💡 **תאורת כפר** (HD11801): שאלת V על הסרת Trafikverket של 25,000 פנסי רחוב באזורים כפריים. שר התשתיות של KD בכיסא הלוהט. [A1]
+- 💼 **תושבות מס** (HD10480): שאילתת S על עיכוב הגדרת "stadigvarande vistelse" מאז אוקטובר 2025. שר האוצר Svantesson מתמודד עם אחריות על כללי ניידות עסקית. [A1]
+- ⚖️ **אכיפה אזרחית** (HD01CU34): רפורמה בחוק האכיפה האזרחית — נהלי עיקול מרחוק עודכנו. [A1]
+- 🌐 **IPU** (HD01UU13): פעילויות האיחוד הבין-פרלמנטרי אושרו. [A1]
+
+### מחולל המבט קדימה החשוב ביותר
+
+**FI-01 (PIR-C/D)**: תוצאת אימוץ פלטפורמת האנרגיה בוועידת SD ומיצוב הקואליציה לאחר הוועידה — המדד המבט קדימה הבעל השלכות הגדולות ביותר על יציבות הקואליציה ותרחישי בחירות ספטמבר 2026. **מעקב עד**: 2026-05-25.
+
+### רמת ביטחון
+
+ביטחון כולל: **HIGH [A1–B2]** — טקסט Betänkanden אוחזר ישירות (A1); תקצירי שאילתות/שאלות אוחזרו (A1); תוצאת ועידת SD הוסקה מהקשר PIR קודם (B2 — נאסף אך לא אושר נכון ל-2026-05-10).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling | **日付**: 2026-05-10 | **信頼度**: HIGH [A1–B2]  
+**カバー期間**: 2026-04-10 → 2026-05-10 (国会期 2025/26、30日間ウィンドウ)  
+**選挙まで**: 126日 (2026-09-13)
+
+---
+
+### 即時結論
+
+2026年5月の分析ウィンドウは、9月の選挙前の最後の議会スプリントで構造的な立法改革を届けようと競走するTidö連立政権を明らかにします。**賃貸市場の自由化**（HD01CU31、2026-07-01施行）は今月最も影響力の大きい改革です — 新しい民間賃貸法と改定されたブロック賃貸モデルはスウェーデンの住宅市場を再形成し、左右の選挙的分断を鋭化させるでしょう。同時に、**教員資格改革**（HD01UbU28）と**学校透明性規則**（HD01UbU20）が10年制初等学校の実施を推進しています。今月はまた3つの説明責任の焦点を露わにします：スウェーデン市民を標的とした**イスラエルによる船団阻止**（HD11803）、SD連立境界テスト（HD11802、完全な顔を覆うベール禁止でL党の同意を要求）、そして**農村部インフラの放棄**（HD11801 — Trafikverketが25,000本の街灯を撤去）。PIR-D（SD–KDエネルギー分岐）とPIR-C（SD党大会）が今サイクルの主要な情報収集優先事項です。
+
+### この概要が支持する決定
+
+1. **住宅市場のフレーミング**: HD01CU31はTidö連立政権にとって住宅市場における決定的な成果か、それともS+V+MP反対派と住宅不足による選挙リスクか？
+2. **連立の境界線**: SD党のHD11802（ベール禁止要求）は選挙前の残り126日間でL党の社会自由主義的プロファイルに圧力をかけるか — そしてL党の閾値リスク上昇を生み出すか？
+3. **外交政策の露出**: イスラエルによるGlobal Sumud船団阻止（HD11803、スウェーデン市民が乗船）はMalmer Stenergard外務大臣に対する外交委員会の継続的な圧力をもたらすか？
+
+### 60秒で読む
+
+- 🏠 **賃貸市場**（HD01CU31）: 新民間賃貸法 + 自由化されたブロック賃貸モデルがCUで承認。S+V+MPが5件の留保を提出。施行2026-07-01。Tidö政権の住宅市場における旗艦改革。[A1]
+- 🏫 **学校**（HD01UbU28 + HD01UbU20）: 10年制初等学校向け教員資格規則、および小規模私立学校への公開原則緩和。両者ともHC01UbU17学校改革アジェンダを推進。[A1]
+- 🌍 **船団**（HD11803）: スウェーデン市民を乗せたGlobal Sumud船団に対するイスラエルの阻止についてSがSが外務大臣に質問。閣僚回答が必要。外交政策説明責任への圧力。[A1]
+- 🧕 **ベール禁止**（HD11802）: SDがL党の統合担当大臣Mohamssonに対して完全な顔を覆うベール禁止の実施を正式に要求 — アイデンティティ政治における連立規律をテスト。[A1]
+- 💡 **農村部照明**（HD11801）: Trafikverketが農村地域で25,000本の街灯を撤去することについてVが質問。KD党のインフラ担当大臣が厳しい立場に。[A1]
+- 💼 **税務居住地**（HD10480）: 2025年10月以来の"stadigvarande vistelse"定義遅延についてSが質問。Svantesson財務大臣が企業モビリティ規則について説明責任を問われる。[A1]
+- ⚖️ **強制執行**（HD01CU34）: 民事強制執行法改革 — 遠隔差押手続きが近代化。[A1]
+- 🌐 **IPU**（HD01UU13）: 列国議会同盟の活動が承認。[A1]
+
+### 最重要前向き指標
+
+**FI-01 (PIR-C/D)**: SD党大会のエネルギープラットフォーム採択結果と党大会後の連立位置づけ — 連立安定性と2026年9月の選挙シナリオに対して最も決定的な前向き指標。**監視期限**: 2026-05-25。
+
+### 信頼度評価
+
+全体的な信頼度: **HIGH [A1–B2]** — Betänkanden文書を直接取得（A1）；質問/内閣質問要約を取得（A1）；SD党大会結果を前回PIRコンテキストから推定（B2 — 収集済みだが2026-05-10時点で未確認）。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **날짜**: 2026-05-10 | **신뢰도**: HIGH [A1–B2]  
+**분석 기간**: 2026-04-10 → 2026-05-10 (국회기 2025/26, 30일 창)  
+**선거까지 남은 일수**: 126일 (2026-09-13)
+
+---
+
+### 즉각적 결론
+
+2026년 5월 분석 창은 9월 선거 전 마지막 의회 스프린트에서 구조적 입법 개혁을 이행하기 위해 경쟁하는 Tidö 연립 정부를 드러냅니다. **임대 시장 자유화**(HD01CU31, 2026-07-01 발효)는 이번 달 가장 영향력 있는 개혁입니다 — 새로운 민간 임대법과 개정된 블록 임대 모델은 스웨덴 주택 시장을 재편하고 좌우 선거 분열을 심화시킬 것입니다. 동시에, **교원 자격 개혁**(HD01UbU28)과 **학교 투명성 규정**(HD01UbU20)이 10년제 초등학교 시행을 추진하고 있습니다. 이달은 세 가지 책임 추궁 핵심 사안도 드러냅니다: 스웨덴 시민을 겨냥한 **이스라엘의 선단 차단**(HD11803), SD의 연립 경계 테스트(HD11802, L당 동조를 요구하는 완전 베일 금지), 그리고 **농촌 인프라 방기**(HD11801 — Trafikverket가 25,000개 가로등 제거). PIR-D(SD–KD 에너지 분기)와 PIR-C(SD 전당대회)가 이번 주기의 주요 정보 수집 우선순위입니다.
+
+### 이 브리핑이 지원하는 결정
+
+1. **주택 시장 프레이밍**: HD01CU31은 Tidö 연립의 주택 시장에서의 결정적 성과인가, 아니면 S+V+MP 반대와 주택 부족을 고려한 선거적 부담인가?
+2. **연립 경계선**: SD의 HD11802(베일 금지 요구)가 선거 전 마지막 126일 동안 L당의 사회자유주의 프로필을 압박하는가 — 그리고 이것이 L에 대한 문턱 위험 상승을 초래하는가?
+3. **외교 정책 노출**: 이스라엘의 Global Sumud 선단 차단(HD11803, 스웨덴 시민 탑승)이 외교위원회에서 Malmer Stenergard 외무장관에 대한 지속적인 압력을 만드는가?
+
+### 60초 읽기
+
+- 🏠 **임대 시장** (HD01CU31): 새 민간 임대법 + 자유화된 블록 임대 모델이 CU에서 승인. S+V+MP가 5건의 유보 제출. 발효 2026-07-01. Tidö 정부의 주택 시장 기함 개혁. [A1]
+- 🏫 **학교** (HD01UbU28 + HD01UbU20): 10년제 초등학교용 교원 자격 규정 및 소규모 사립학교 공개 원칙 완화. 두 정책 모두 HC01UbU17 학교 개혁 의제를 추진. [A1]
+- 🌍 **선단** (HD11803): S가 이스라엘의 스웨덴 시민 탑승 Global Sumud 선단 차단에 대해 외무장관에게 질의. 장관 답변 필요. 외교 정책 책임 압력. [A1]
+- 🧕 **베일 금지** (HD11802): SD가 L당 통합부 장관 Mohamsson에게 완전한 얼굴 베일 금지 시행을 공식 촉구 — 정체성 정치에서 연립 기강 테스트. [A1]
+- 💡 **농촌 조명** (HD11801): Trafikverket의 농촌 지역 25,000개 가로등 제거에 대해 V가 질의. KD 인프라 장관 곤경. [A1]
+- 💼 **세금 거주지** (HD10480): 2025년 10월 이후 "stadigvarande vistelse" 정의 지연에 대해 S가 질의. Svantesson 재무장관이 기업 이동성 규정에 대한 책임 직면. [A1]
+- ⚖️ **집행** (HD01CU34): 민사 집행법 개혁 — 원격 압류 절차 현대화. [A1]
+- 🌐 **IPU** (HD01UU13): 국제의회연맹 활동 승인. [A1]
+
+### 가장 중요한 선행 촉발 요인
+
+**FI-01 (PIR-C/D)**: SD 전당대회의 에너지 플랫폼 채택 결과와 전당대회 후 연립 위치 설정 — 연립 안정성과 2026년 9월 선거 시나리오에 대한 단일 가장 중요한 선행 지표. **모니터링 기한**: 2026-05-25.
+
+### 신뢰도 수준
+
+전체 신뢰도: **HIGH [A1–B2]** — Betänkanden 텍스트 직접 검색(A1); 질의/대정부질문 요약 검색(A1); SD 전당대회 결과는 이전 PIR 맥락에서 추론(B2 — 수집되었으나 2026-05-10 기준 미확인).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-05-10 | **Betrouwbaarheid**: HIGH [A1–B2]  
+**Dekkingsperiode**: 2026-04-10 → 2026-05-10 (riksmöte 2025/26, 30-dagensvenster)  
+**Dagen tot verkiezingen**: 126 (2026-09-13)
+
+---
+
+### Directe conclusie
+
+Het mei 2026-venster onthult een Tidö-coalitie die wedijvert om structurele wetgevingshervormingen te leveren in de laatste parlementaire sprint voor de verkiezingen in september. De **liberalisering van de huurmarkt** (HD01CU31, inwerkingtreding 2026-07-01) is de meest impactvolle hervorming van de maand — een nieuwe private huurwet en een herzien blokverhuringmodel dat de Zweedse woningmarkt zal hervormen en de links-rechts electorale scheidslijn zal verscherpen. Tegelijkertijd bevorderen de **hervorming van lerarencertificaten** (HD01UbU28) en de **transparantieregels voor scholen** (HD01UbU20) de implementatie van de 10-jarige basisschool. De maand legt ook drie verantwoordingspunten bloot: de **Israëlische flottilje-interceptie** (HD11803) gericht op Zweedse burgers, de coalitiegrenzentest van de SD (HD11802 over een volledig sluierverbod dat L-afstemming vereist), en het **verlaten van plattelandsinfrastructuur** (HD11801 — Trafikverket verwijdert 25.000 straatlantaarns). PIR-D (SD–KD-energiedivergentie) en PIR-C (SD-partijcongres) zijn de primaire inlichtingenverzamelingsprioriteiten voor deze cyclus.
+
+### Door dit memorandum ondersteunde beslissingen
+
+1. **Woningmarkt inkadering**: Is HD01CU31 een beslissende Tidö-prestatie op de woningmarkt of een electorale aansprakelijkheid met S+V+MP-oppositie plus woningtekort?
+2. **Coalitiegeens**: Zet SDs HD11802 (eis tot sluierverbod) het sociaal-liberale profiel van L onder druk in de laatste 126 dagen voor de verkiezingen — en creëert dit een drempelrisicoescalatie voor L?
+3. **Buitenlands beleid blootstelling**: Creëert Israëls interceptie van de Global Sumud-flottilje (HD11803, Zweedse burgers aan boord) aanhoudende druk in de commissie buitenlandse zaken op minister Malmer Stenergard?
+
+### 60-seconden lezing
+
+- 🏠 **Huurmarkt** (HD01CU31): Nieuwe private huurwet + geliberaliseerd blokverhuringmodel goedgekeurd door CU. S+V+MP diende 5 voorbehouden in. Inwerkingtreding 2026-07-01. Dit is het vlaggenschip van de Tidö-regering op de woningmarkt. [A1]
+- 🏫 **Scholen** (HD01UbU28 + HD01UbU20): Lerarenkwalificatieregels voor de 10-jarige basisschool, plus verlichting van het openbaarheidsbeginsel voor kleine particuliere scholen. Beide bevorderen de HC01UbU17-schoolhervormingsagenda. [A1]
+- 🌍 **Flottilje** (HD11803): S-vraag aan de minister van Buitenlandse Zaken over Israëls interceptie van de Global Sumud-flottilje met Zweedse burgers aan boord. Ministerieel antwoord vereist. Buitenlands beleid verantwoordingsdruk. [A1]
+- 🧕 **Sluierverbod** (HD11802): SD dringt formeel aan bij L-integratieminister Mohamsson op de uitvoering van het verbod op de gezichtsbedekkende sluier — test de coalitiediscipline in identiteitspolitiek. [A1]
+- 💡 **Plattelandsverlichting** (HD11801): V-vraag over Trafikverkets verwijdering van 25.000 straatlantaarns in plattelandsgebieden. KD-infrastructuurminister in de hete stoel. [A1]
+- 💼 **Belastingdomicilie** (HD10480): S-interpellatie over de vertraging in de definitie van "stadigvarande vistelse" sinds oktober 2025. Minister van Financiën Svantesson legt verantwoording af over de regels voor bedrijfsmobiliteit. [A1]
+- ⚖️ **Handhaving** (HD01CU34): Hervorming van het burgerlijk executierecht — procedures voor beslaglegging op afstand gemoderniseerd. [A1]
+- 🌐 **IPU** (HD01UU13): Activiteiten van de Interparlementaire Unie goedgekeurd. [A1]
+
+### Belangrijkste vooruitblikkende trigger
+
+**FI-01 (PIR-C/D)**: Uitkomst van de goedkeuring van het energieplatform op het SD-congres en positionering van de coalitie na het congres — de afstand de meest consequente vooruitblikkende indicator voor coalitie stabiliteit en verkiezingsscenario's voor september 2026. **Bewaken tot**: 2026-05-25.
+
+### Betrouwbaarheidsniveau
+
+Algehele betrouwbaarheid: **HIGH [A1–B2]** — Betänkanden-tekst direct opgehaald (A1); interpellatie-/vraagsamenvattingen opgehaald (A1); SD-congresuitkomst afgeleid uit voorafgaande PIR-context (B2 — verzameld maar niet bevestigd per 2026-05-10).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-10 | **Konfidens**: HIGH [A1–B2]  
+**Dekningsvindu**: 2026-04-10 → 2026-05-10 (riksmøte 2025/26, 30-dagers vindu)  
+**Dager til valg**: 126 (2026-09-13)
+
+---
+
+### Kortfattet konklusjon
+
+Mai 2026-vinduet avslører en Tidö-koalisjon som kappløper med å levere strukturelle lovgivningsreformer i den siste parlamentariske sprinten før septembervalget. **Liberaliseringen av leiemarkedet** (HD01CU31, ikrafttreden 2026-07-01) er månedens reform med størst virkning — en ny privat leielov og revidert blokkutleiemodell som vil omforme Sveriges boligmarked og skjerpe den venstre-høyre valgskillen. Samtidig fremmer **lærerlegitimationsreformen** (HD01UbU28) og **skolenes transparensregler** (HD01UbU20) gjennomføringen av den 10-årige grunnskolen. Måneden avslører også tre ansvarlighetsbrennpunkter: **Israels flotilleinterksjon** (HD11803) rettet mot svenske statsborgere, SDs koalisjonsgrensetest (HD11802 om heldekket slørforbud som krever L-justering), og **landsbygdens infrastrukturabondonering** (HD11801 — Trafikverket fjerner 25 000 gatelykter). PIR-D (SD–KD-energidivergensen) og PIR-C (SD-kongressen) er de primære etterretningsinnsamlingsprioriteringene for denne syklusen.
+
+### Beslutninger støttet av dette sammendraget
+
+1. **Boligmarkedets innramning**: Er HD01CU31 en avgjørende Tidö-leveranse på boligmarkedet eller en valgansvar med S+V+MP-opposisjon pluss boligmangel?
+2. **Koalisjonsgrense**: Presser SDs HD11802 (krav om slørforbud) Ls sosialliberale profil i de siste 126 dagene før valget — og skaper dette en terskelrisikoeskalasjon for L?
+3. **Utenrikspolitisk eksponering**: Skaper Israels interksjon av Global Sumud-flotillen (HD11803, svenske statsborgere om bord) vedvarende press i utenrikskomiteen mot utenriksminister Malmer Stenergard?
+
+### 60-sekunders lesning
+
+- 🏠 **Leiemarkedet** (HD01CU31): Ny privat leielov + liberalisert blokkutleiemodell godkjent av CU. S+V+MP leverte 5 forbehold. Ikrafttreden 2026-07-01. Dette er Tidö-regjeringens flaggskip på boligmarkedet. [A1]
+- 🏫 **Skoler** (HD01UbU28 + HD01UbU20): Regler for lærerkvalifikasjoner til 10-årig grunnskole, pluss offentlighetsprinsipp-lettelse for små frittstående skoler. Begge fremmer HC01UbU17 skolereformagendaen. [A1]
+- 🌍 **Flotillen** (HD11803): S-spørsmål til utenriksministeren om Israels interksjon av den svenske-borgerbærende Global Sumud-flotillen. Ministerrespons påkrevd. Utenrikspolitisk ansvarspress. [A1]
+- 🧕 **Slørforbud** (HD11802): SD presser formelt Ls integrasjonsminister Mohamsson om implementering av forbud mot heldekket slør — tester koalisjonsdisiplin i identitetspolitikk. [A1]
+- 💡 **Landsbygdsbelysning** (HD11801): V-spørsmål om Trafikverkets fjerning av 25 000 gatelykter i landsbygdsområder. KDs infrastrukturminister i den varme stolen. [A1]
+- 💼 **Skattemessig bosted** (HD10480): S-interpellasjon om forsinkelsen av definisjonen av "stadigvarande vistelse" siden oktober 2025. Finansminister Svantesson holdes ansvarlig for reglene om selskapsmobilitet. [A1]
+- ⚖️ **Tvangsfullbyrdelse** (HD01CU34): Reform av sivilrettslig tvangsfullbyrdelseslov — fjernfogdningsforfarender modernisert. [A1]
+- 🌐 **IPU** (HD01UU13): Den Interparlamentariske Unionens aktiviteter godkjent. [A1]
+
+### Viktigste fremadrettede utløser
+
+**FI-01 (PIR-C/D)**: SDs kongress' vedtakelse av energiplattform og posisjonering etter kongressen — den enkelt mest konsekvensrike fremadrettede indikatoren for koalisjonsstabilitet og valgscenarier for september 2026. **Overvåkes til**: 2026-05-25.
+
+### Konfidensnivå
+
+Samlet konfidens: **HIGH [A1–B2]** — Betänkanden-tekst direkte hentet (A1); interpellasjons-/spørsmålssammendrag hentet (A1); SDs kongressresultat utledet fra foregående PIR-kontekst (B2 — innsamlet men ubekreftet per 2026-05-10).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-05-10 | **Konfidens**: HIGH [A1–B2]  
+**Täckningsperiod**: 2026-04-10 → 2026-05-10 (riksmöte 2025/26, 30-dagars fönster)  
+**Dagar till val**: 126 (2026-09-13)
+
+---
+
+### Kortfattad sammanfattning
+
+Maj 2026-fönstret avslöjar en Tidö-koalition i kapplöpning för att leverera strukturella lagstiftningsreformer i det sista parlamentariska spurten inför septembervalet. **Hyresmarknadsavregleringen** (HD01CU31, ikraftträdande 2026-07-01) är månadens mest högnivåreform — en ny privat hyreslag och reviderad blockuthyrningsmodell som kommer att omforma Sveriges bostadsmarknad och skärpa den vänster-höger-politiska skiljelinjen. Samtidigt befäster **lärarlegitimationsreformen** (HD01UbU28) och **transparensreglerna för skolor** (HD01UbU20) implementeringen av den 10-åriga grundskolan. Månaden exponerar även tre ansvarsutkrävande-flashpoints: **Israels flotiljainterception** (HD11803) riktad mot svenska medborgare, SD:s koalitionsgräns-test (HD11802 om heltäckande slöja som kräver L-anpassning), och **landsbygdens infrastrukturövergivande** (HD11801 — Trafikverket tar bort 25 000 gatubelysningar). PIR-D (SD–KD-energidivergensen) och PIR-C (SD-kongressen) är de primära underrättelseinsamlingsprioriteterna för denna cykel.
+
+### Beslut som stöds av denna sammanfattning
+
+1. **Bostadsmarknadens inramning**: Är HD01CU31 en avgörande Tidö-leverans för bostadsmarknaden eller en valansvarighet med S+V+MP-opposition plus bostadsbristen?
+2. **Koalitionsgräns**: Pressar SD:s HD11802 (krav om slöjförbud) L:s socialliberala profil under de sista 126 dagarna innan valet — och skapar detta en tröskelriskeskalation för L?
+3. **Utrikespolitisk exponering**: Skapar Israels interception av Global Sumud-flotiljan (HD11803, svenska medborgare ombord) ett uthålligt tryck i utrikesutskottet mot utrikesminister Malmer Stenergard?
+
+### 60-sekunders läsning
+
+- 🏠 **Hyresmarknaden** (HD01CU31): Ny privat hyreslag + avreglerad blockuthyrningsmodell godkänd av CU. S+V+MP lämnade 5 reservationer. Ikraftträdande 2026-07-01. Detta är Tidö-regeringens flaggskepp på bostadsmarknaden. [A1]
+- 🏫 **Skolor** (HD01UbU28 + HD01UbU20): Regler för lärarlegitimation för 10-årig grundskola, plus offentlighetsprincip-lättnad för små fristående skolor. Båda befäster HC01UbU17 skolreformagendan. [A1]
+- 🌍 **Flotiljan** (HD11803): S-fråga till utrikesministern om Israels interception av den svenska-medborgarbärande Global Sumud-flotiljan. Ministersvar krävs. Ansvarsutkrävandestryck i utrikespolitiken. [A1]
+- 🧕 **Slöjförbud** (HD11802): SD pressar formellt L:s integrationsminister Mohamsson om implementeringen av heltäckande slöjförbud — testar koalitionsdisciplinen i identitetspolitiken. [A1]
+- 💡 **Landsbygdsbelysning** (HD11801): V-fråga om Trafikverkets borttagning av 25 000 gatubelysningar i landsbygdsområden. KD:s infrastrukturminister i det varma sätet. [A1]
+- 💼 **Skattemässig hemvist** (HD10480): S-interpellation om fördröjningen av definitionen av "stadigvarande vistelse" sedan oktober 2025. Finansminister Svantesson ställs till svars för bolagsrörlighetens regler. [A1]
+- ⚖️ **Verkställighet** (HD01CU34): Reform av civilrättslig verkställighetslag — fjärrfogdningsförfaranden moderniserade. [A1]
+- 🌐 **IPU** (HD01UU13): Interparlamentariska unionens verksamheter godkända. [A1]
+
+### Viktigaste framåtindikatorn
+
+**FI-01 (PIR-C/D)**: SD-kongressens utfall av energiplattformadoptionen och positionering efter kongressen — den enskilt mest konsekvensrika framåtindikatorn för koalitionsstabilitet och valscenarier för september 2026. **Bevakas till**: 2026-05-25.
+
+### Konfidensnivå
+
+Samlad konfidens: **HIGH [A1–B2]** — Betänkanden-text direkt hämtad (A1); interpellations-/frågsammanfattningar hämtade (A1); SD-kongressens utfall infererat från tidigare PIR-kontext (B2 — insamlat men obekräftat per 2026-05-10).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling | **日期**: 2026-05-10 | **置信度**: HIGH [A1–B2]  
+**覆盖期间**: 2026-04-10 → 2026-05-10 (议会期 2025/26，30天窗口)  
+**距选举天数**: 126天 (2026-09-13)
+
+---
+
+### 即时结论
+
+2026年5月窗口揭示了Tidö联合政府正在争分夺秒，在9月选举前的最后议会冲刺阶段推进结构性立法改革。**租赁市场自由化**（HD01CU31，2026-07-01生效）是本月影响最大的改革——新的私人租赁法和经修订的整栋租赁模式将重塑瑞典住房市场，并加剧左右翼选举分歧。与此同时，**教师资质改革**（HD01UbU28）和**学校透明度规则**（HD01UbU20）推进了10年制小学的实施。本月还暴露出三个问责热点：**以色列拦截船队**（HD11803）针对瑞典公民、SD联合边界测试（HD11802关于要求L党配合的全脸面纱禁令），以及**农村基础设施弃置**（HD11801——Trafikverket撤除25,000盏路灯）。PIR-D（SD–KD能源分歧）和PIR-C（SD党代会）是本周期首要情报收集优先事项。
+
+### 本简报支持的决策
+
+1. **住房市场框架**：HD01CU31是Tidö联合政府在住房市场的决定性成果，还是面对S+V+MP反对及住房短缺的选举负担？
+2. **联合边界**：SD的HD11802（面纱禁令要求）是否在选举前最后126天向L党的社会自由主义立场施压——这是否为L党造成门槛风险升级？
+3. **外交政策风险**：以色列拦截Global Sumud船队（HD11803，瑞典公民在船上）是否在外交事务委员会中对Malmer Stenergard外交部长造成持续压力？
+
+### 60秒速读
+
+- 🏠 **租赁市场**（HD01CU31）: 新私人租赁法 + 自由化整栋租赁模式经CU批准。S+V+MP提交5项保留意见。2026-07-01生效。这是Tidö政府住房市场的旗舰改革。[A1]
+- 🏫 **学校**（HD01UbU28 + HD01UbU20）: 10年制小学教师资质规定，以及对小型私立学校公开原则的豁免。两项均推进HC01UbU17学校改革议程。[A1]
+- 🌍 **船队**（HD11803）: S就以色列拦截载有瑞典公民的Global Sumud船队一事向外交部长提问。需要部长答复。外交政策问责压力。[A1]
+- 🧕 **面纱禁令**（HD11802）: SD正式向L党融合部长Mohamsson施压要求实施全脸面纱禁令——测试联合在身份政治上的纪律。[A1]
+- 💡 **农村照明**（HD11801）: V就Trafikverket在农村地区撤除25,000盏路灯提问。KD基础设施部长处于压力焦点。[A1]
+- 💼 **税务居住地**（HD10480）: S就2025年10月以来"stadigvarande vistelse"定义延迟提出质询。财政部长Svantesson面对企业流动性规则的问责。[A1]
+- ⚖️ **民事执行**（HD01CU34）: 民事强制执行法改革——远程扣押程序现代化。[A1]
+- 🌐 **IPU**（HD01UU13）: 各国议会联盟活动获批。[A1]
+
+### 最重要的前瞻触发因素
+
+**FI-01 (PIR-C/D)**: SD党代会能源平台采纳结果及党代会后联合定位——联合稳定性和2026年9月选举情景的最具决定性前瞻指标。**监测截止**: 2026-05-25。
+
+### 置信度等级
+
+总体置信度: **HIGH [A1–B2]** — Betänkanden文本直接获取(A1)；质询/提问摘要已获取(A1)；SD党代会结果从此前PIR背景推断(B2——已收集但截至2026-05-10尚未确认)。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d"}}}%%
+graph LR
+    A["HD01CU31<br/>Rental Reform"] -->|"Electoral divide<br/>S+V+MP oppose"| B["Housing Market<br/>Liberalisation"]
+    C["HD01UbU28<br/>Teacher Credentials"] -->|"Implements"| D["10-Year School<br/>Reform"]
+    E["HD11802<br/>Veil Ban (SD)"] -->|"Tests L<br/>coalition boundary"| F["Coalition Fault<br/>Line PIR-C"]
+    G["HD11803<br/>Flotilla (S)"]--> |"Foreign policy<br/>accountability"| H["Ministerial<br/>Accountability"]
+    style A fill:#00d9ff,color:#0a0e27
+    style C fill:#00d9ff,color:#0a0e27
+    style E fill:#ff006e,color:#0a0e27
+    style G fill:#ffbe0b,color:#0a0e27
+    style F fill:#ff006e,color:#e0e0e0
+    style B fill:#1a1e3d,color:#00d9ff
+    style D fill:#1a1e3d,color:#00d9ff
+    style H fill:#1a1e3d,color:#ffbe0b
+```
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 11 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1675,6 +2455,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -3,7 +3,7 @@ date: 2026-05-11
 subfolder: committeeReports
 slug: 2026-05-11-committeeReports
 source_folder: analysis/daily/2026-05-11/committeeReports
-generated_at: 2026-05-25T15:59:53.804Z
+generated_at: 2026-05-27T07:35:33.463Z
 language: en
 layout: article
 ---
@@ -68,6 +68,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1559,13 +1572,549 @@ PIR-2026-ENFORCEMENT: status=answered — HD01CU34 analysis complete; no further
 - Adjacent betänkande cross-check: HD01CU25 (CU, 2026-05-06) "Riksdagen sa ja" — confirms Tidö 200-seat majority functional; incorporated into coalition-mathematics.md.
 - No new betänkanden indexed for the 2026-05-08 batch since prior analysis. Voteringar for CU31 still empty (not yet voted).
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_ar.md -->
+
+&#x200F;# تقارير لجان البرلمان السويدي 8 مايو 2026: إصلاح الإسكان وقواعد التنفيذ وشفافية المدارس تواجه مقاومة المعارضة
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-11  
+**التصنيف**: PUBLIC  
+**الثقة**: عالية [B2]  
+**رمز الأدميرالية**: B2  
+
+---
+
+### BLUF
+
+ستة تقارير للجان البرلمان السويدي (Riksdag) بتاريخ 8 مايو 2026 تحمل تشريعات مهمة إلى تصويت الغرفة. أكثرها إثارة للجدل هي إصلاح سوق الإسكان للجنة الشؤون المدنية (CU) (HD01CU31) وقانون شفافية المدارس للجنة التعليم (UbU) (HD01UbU20)، وكلاهما يجتذب معارضة بخمسة تحفظات من S وV وMP. تمتلك تحالف Tidö الحكومي (M, SD, KD, C, L) أغلبية برلمانية وستمرر جميع betänkanden الستة، لكن مقاومة المعارضة تشير إلى توترات لم تحل بعد في مجال المساواة والشفافية في الطريق إلى دورة انتخابات 2026.
+
+### النتائج الاستخباراتية الرئيسية
+
+**KJ-1**: يُقدم إصلاح الإسكان (HD01CU31, prop 2025/26:187) قانون إيجار خاص جديد، وحقوق تأجير فرعي موسعة لـ bostadsrättshavare، ونموذج إيجار بالكتلة جديد — كلها معارضة من S وV وMP لأسباب تتعلق بالإنصاف. بدء السريان: 1 يوليو 2026. يضمن أغلبية الائتلاف المرور رغم خمسة تحفظات رسمية. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: يمتد قانون شفافية المدارس (HD01UbU20, prop 2025/26:191) لمبادئ حق الوصول إلى المعلومات مع قواعد تخفيف لمديري المدارس الخاصة الأصغر، مع تطبيق تدريجي 2027–2029. خمسة تحفظات (S, V, MP) تطعن في كل من قواعد التخفيف ونطاق تطبيق OSL على أرشيفات المدارس. توجد أبعاد دستورية مهمة نظرًا لتداعيات Tryckfrihetsförordningen (TF). [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: أربعة من ستة betänkanden تعكس أجندة الحكومة للتحديث الإداري والتحسين القانوني التقني — قواعد التنفيذ (HD01CU34)، وظروف موظفي الدولة في الخارج (HD01SoU36)، وبيانات اعتماد المعلمين (HD01UbU28)، وتقرير الاتحاد البرلماني الدولي (HD01UU13) — كلها بمعارضة ضئيلة أو معدومة، مما يؤكد الإجماع بين الأحزاب على جودة التشريع التقني. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### القرارات التي يُسهم هذا التقرير في اتخاذها
+
+1. **تحريري**: قيادة التغطية الإخبارية لإصلاح سوق الإسكان HD01CU31 باعتباره أهم ساحة معركة سياسية.
+2. **المراقبة**: تتبع نتائج التصويت في الجلسة العامة (kammardebatten) لـ HD01CU31 وHD01UbU20 كمؤشرات على تماسك الائتلاف تحت ضغط المعارضة.
+3. **التوقعات المستقبلية**: مراقبة ما إذا كانت تحفظات S حول الإسكان وشفافية المدارس تتحول إلى منصات حملات انتخابية لعام 2026.
+
+### الأهمية
+
+| الأولوية | التقييم |
+|----------|---------|
+| الأهمية السياسية | عالية — الإسكان وشفافية المدارس من أبرز مخاوف الناخبين [horizon:week] |
+| مخاطر الائتلاف | منخفضة — الأغلبية مستقرة؛ خمسة تحفظات لا تهدد المرور |
+| إشارة طويلة المدى | متوسطة — توافق S/V/MP على كلا الموضوعين يشير إلى استراتيجية معارضة منسقة قبل الانتخابات [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-11  
+**Klassifikation**: PUBLIC  
+**Konfidens**: HØJ [B2]  
+**Admiralty-kode**: B2  
+
+---
+
+### BLUF
+
+Seks Riksdag-udvalgsberetninger dateret 8. maj 2026 sender vigtig lovgivning til afstemning i kammeret. De mest kontroversielle er Civiludvalgets (CU) boligmarkedsreform (HD01CU31) og Uddannelsesudvalgets (UbU) skoletransparenslov (HD01UbU20), der begge tiltrækker fem-reservationsmotstand fra S, V og MP. Regeringens Tidö-koalition (M, SD, KD, C, L) har parlamentarisk flertal og vil vedtage alle seks betänkanden, men oppositionens modstand signalerer uløste retfærdigheds- og transparensspændinger op til valgcyklussen 2026.
+
+### Vigtige efterretningsfund
+
+**KJ-1**: Boligreformen (HD01CU31, prop 2025/26:187) introducerer en ny privat lejelov, udvidede fremlejningsrettigheder for bostadsrättshavare og en ny bloklejemodel — alt modsat af S, V og MP på lighedsmæssige grunde. Ikrafttrædelse: 1. juli 2026. Koalitionens flertal sikrer vedtagelse trods fem formelle reservationer. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: Skoletransparensloven (HD01UbU20, prop 2025/26:191) udvider offentlighedsprincippets anvendelse med lempelsesregler for mindre private skoleledere, med trinvis implementering 2027–2029. Fem reservationer (S, V, MP) udfordrer både lempelsesreglerne og omfanget af OSL's anvendelse på skolearkiver. En væsentlig forfatningsmæssig dimension eksisterer med hensyn til Tryckfrihetsförordningen (TF). [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: Fire af seks betänkanden afspejler regeringens dagsorden for administrativ modernisering og juridisk-teknisk forbedring — håndhævelsesregler (HD01CU34), vilkår for statsansatte i udlandet (HD01SoU36), lærerkvalifikationer (HD01UbU28) og IPU-rapport (HD01UU13) — alle med minimal eller ingen modstand, hvilket bekræfter tværpolitisk konsensus om teknisk lovgivningskvalitet. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### Beslutninger denne rapport informerer
+
+1. **Redaktionelt**: Led dækning af HD01CU31 boligmarkedsreform som det politisk vigtigste slagfelt.
+2. **Overvågning**: Følg afstemningsresultater i plenarsalen (kammardebatten) for HD01CU31 og HD01UbU20 som indikatorer for koalitionssammenhæng under oppositionspres.
+3. **Fremadskuende**: Overvåg om S's reservationer om bolig og skoletransparens konsolideres til valgkampplatforme i 2026.
+
+### Betydning
+
+| Prioritet | Vurdering |
+|-----------|-----------|
+| Politisk relevans | HØJ — bolig og skoletransparens er vælgernes vigtigste bekymringer [horizon:week] |
+| Koalitionsrisiko | LAV — flertallet er stabilt; fem reservationer truer ikke vedtagelsen |
+| Langsigtet signal | MIDDEL — S/V/MP-sammenfald om begge emner antyder koordineret oppositionsstrategi op til valget [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-11  
+**Klassifizierung**: PUBLIC  
+**Konfidenz**: HOCH [B2]  
+**Admiralty-Code**: B2  
+
+---
+
+### BLUF
+
+Sechs Ausschussberichte des Riksdag vom 8. Mai 2026 bringen bedeutende Gesetzgebung zur Abstimmung im Plenum. Die umstrittensten sind die Wohnungsmarktreform des Zivilausschusses (CU) (HD01CU31) und das Schultransparenzgesetz des Bildungsausschusses (UbU) (HD01UbU20), die beide fünffachen Widerstand von S, V und MP verzeichnen. Die Tidö-Koalition der Regierung (M, SD, KD, C, L) verfügt über eine parlamentarische Mehrheit und wird alle sechs betänkanden verabschieden, jedoch signalisiert der Oppositionswiderstand ungelöste Gerechtigkeits- und Transparenzspannungen vor dem Wahlzyklus 2026.
+
+### Wichtige Geheimdiensterkenntnisse
+
+**KJ-1**: Die Wohnungsreform (HD01CU31, prop 2025/26:187) führt ein neues Privatmietrecht, erweiterte Untervermietungsrechte für bostadsrättshavare und ein neues Blockmietmodell ein — alles von S, V und MP aus Gerechtigkeitsgründen abgelehnt. Inkrafttreten: 1. Juli 2026. Die Koalitionsmehrheit sichert die Verabschiedung trotz fünf formeller Vorbehalte. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: Das Schultransparenzgesetz (HD01UbU20, prop 2025/26:191) erweitert die Anwendung des Öffentlichkeitsprinzips mit Erleichterungsregeln für kleinere private Schulleiter, mit stufenweiser Umsetzung 2027–2029. Fünf Vorbehalte (S, V, MP) stellen sowohl die Erleichterungsregeln als auch den Anwendungsbereich von OSL auf Schularchive in Frage. Eine bedeutende verfassungsrechtliche Dimension besteht angesichts der Implikationen der Tryckfrihetsförordningen (TF). [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: Vier der sechs betänkanden spiegeln die Agenda der Regierung für administrative Modernisierung und rechtliche Qualitätsverbesserung wider — Vollstreckungsregeln (HD01CU34), Arbeitsbedingungen für Staatspersonal im Ausland (HD01SoU36), Lehrerzulassung (HD01UbU28) und IPU-Bericht (HD01UU13) — alle mit minimalem oder keinem Widerstand, was den überparteilichen Konsens über technische Gesetzgebungsqualität bestätigt. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### Entscheidungen, die dieser Bericht informiert
+
+1. **Redaktionell**: Federführende Berichterstattung über die HD01CU31-Wohnungsmarktreform als wichtigstes politisches Schlachtfeld.
+2. **Monitoring**: Verfolgen Sie Abstimmungsergebnisse im Plenum (kammardebatten) für HD01CU31 und HD01UbU20 als Indikatoren für den Zusammenhalt der Koalition unter Oppositionsdruck.
+3. **Ausblick**: Beobachten, ob die Vorbehalte von S zu Wohnen und Schultransparenz zu Wahlkampfplattformen 2026 werden.
+
+### Bedeutung
+
+| Priorität | Einschätzung |
+|-----------|-------------|
+| Politische Relevanz | HOCH — Wohnen und Schultransparenz sind die wichtigsten Wähleranliegen [horizon:week] |
+| Koalitionsrisiko | NIEDRIG — Die Mehrheit ist stabil; fünf Vorbehalte gefährden die Verabschiedung nicht |
+| Langzeitsignal | MITTEL — Übereinstimmung von S/V/MP bei beiden Themen deutet auf eine koordinierte Oppositionsstrategie vor der Wahl hin [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-11  
+**Clasificación**: PUBLIC  
+**Confianza**: ALTA [B2]  
+**Código Almirantazgo**: B2  
+
+---
+
+### BLUF
+
+Seis informes de comités del Riksdag del 8 de mayo de 2026 llevan legislación significativa a votación en la cámara. Los más controvertidos son la reforma del mercado de vivienda del Comité de Asuntos Civiles (CU) (HD01CU31) y el proyecto de ley de transparencia escolar del Comité de Educación (UbU) (HD01UbU20), ambos generando oposición de cinco reservas de S, V y MP. La coalición Tidö del gobierno (M, SD, KD, C, L) tiene mayoría parlamentaria y aprobará los seis betänkanden, pero la resistencia de la oposición señala tensiones no resueltas de equidad y transparencia de cara al ciclo electoral de 2026.
+
+### Principales hallazgos de inteligencia
+
+**KJ-1**: La reforma de vivienda (HD01CU31, prop 2025/26:187) introduce una nueva ley de arrendamiento privado, derechos ampliados de subarrendamiento para bostadsrättshavare y un nuevo modelo de arrendamiento en bloque — todo ello rechazado por S, V y MP por razones de equidad. Entrada en vigor: 1 de julio de 2026. La mayoría de la coalición garantiza la aprobación a pesar de cinco reservas formales. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: El proyecto de ley de transparencia escolar (HD01UbU20, prop 2025/26:191) extiende los principios de acceso a la información con reglas de alivio para los directores de escuelas privadas más pequeñas, con implementación gradual 2027–2029. Cinco reservas (S, V, MP) cuestionan tanto las reglas de alivio como el alcance de la aplicación de OSL a los archivos escolares. Existe una importante dimensión constitucional dadas las implicaciones de Tryckfrihetsförordningen (TF). [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: Cuatro de los seis betänkanden reflejan la agenda gubernamental de modernización administrativa y mejora jurídico-técnica — reglas de ejecución (HD01CU34), condiciones del personal estatal en el extranjero (HD01SoU36), credenciales docentes (HD01UbU28) e informe de la UIP (HD01UU13) — todos con mínima o nula oposición, confirmando el consenso multipartidista sobre la calidad legislativa técnica. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### Decisiones que informa este informe
+
+1. **Editorial**: Liderar la cobertura de la reforma del mercado de vivienda HD01CU31 como el campo de batalla político más importante.
+2. **Monitoreo**: Rastrear los resultados de las votaciones en el pleno (kammardebatten) para HD01CU31 y HD01UbU20 como indicadores de la cohesión de la coalición bajo presión de la oposición.
+3. **Perspectiva futura**: Monitorear si las reservas de S sobre vivienda y transparencia escolar se consolidan en plataformas de campaña electoral para 2026.
+
+### Importancia
+
+| Prioridad | Evaluación |
+|-----------|-----------|
+| Relevancia política | ALTA — la vivienda y la transparencia escolar son las principales preocupaciones de los votantes [horizon:week] |
+| Riesgo de coalición | BAJO — la mayoría es estable; cinco reservas no amenazan la aprobación |
+| Señal a largo plazo | MEDIO — la alineación S/V/MP en ambos temas sugiere una estrategia de oposición coordinada antes de las elecciones [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-11  
+**Luokitus**: PUBLIC  
+**Luotettavuus**: KORKEA [B2]  
+**Admiralty-koodi**: B2  
+
+---
+
+### BLUF
+
+Kuusi Riksdagin valiokuntaraporttia 8. toukokuuta 2026 vie merkittävää lainsäädäntöä kamarin äänestykseen. Kiistanalaisimmat ovat siviiliasioiden valiokunnan (CU) asuntomarkkinauudistus (HD01CU31) ja koulutusvaliokunnan (UbU) koulun avoimuuslaki (HD01UbU20), jotka molemmat saavat viiden varauksen opposition S:ltä, V:ltä ja MP:ltä. Hallituksen Tidö-koalitio (M, SD, KD, C, L) omaa parlamentaarisen enemmistön ja hyväksyy kaikki kuusi betänkandea, mutta opposition vastustus kertoo ratkaisemattomista tasa-arvo- ja avoimuusjännitteistä ennen vuoden 2026 vaalikierrosta.
+
+### Tärkeimmät tiedustelutiedot
+
+**KJ-1**: Asuntouudistus (HD01CU31, prop 2025/26:187) esittelee uuden yksityisen vuokralain, laajennetut alivuokrausoikeudet bostadsrättshavareille ja uuden lohkovuokramallin — kaikkia vastustavat S, V ja MP tasa-arvoperusteilla. Voimaantulo: 1. heinäkuuta 2026. Koalitioenemmistö takaa hyväksynnän huolimatta viidestä virallisesta varauksesta. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: Koulun avoimuuslaki (HD01UbU20, prop 2025/26:191) laajentaa julkisuusperiaatteen soveltamista helpotussäännöillä pienemmille yksityisille koulujohtajille, asteittaisella toteutuksella 2027–2029. Viisi varausta (S, V, MP) kyseenalaistaa sekä helpotussäännöt että OSL:n soveltamisalan kouluarkistoihin. Merkittävä perustuslaillinen ulottuvuus on olemassa Tryckfrihetsförordningenin (TF) vaikutusten osalta. [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: Neljä kuudesta betänkandesta heijastaa hallituksen hallinnollisen modernisaation ja oikeudellisen teknisen parantamisen agendaa — täytäntöönpanosäännöt (HD01CU34), ulkomailla työskentelevän valtiohenkilöstön olosuhteet (HD01SoU36), opettajan pätevyys (HD01UbU28) ja IPU-raportti (HD01UU13) — kaikki minimaalisella tai nollalla vastustuksella, vahvistaen puoluerajat ylittävän yksimielisyyden teknisestä lainsäädäntölaadusta. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### Päätökset, joita tämä raportti tukee
+
+1. **Toimituksellinen**: Johda HD01CU31 asuntomarkkinauudistuksen uutisointia tärkeimpänä poliittisena taistelutantereena.
+2. **Seuranta**: Seuraa äänestysten tuloksia täysistunnossa (kammardebatten) HD01CU31:n ja HD01UbU20:n osalta koalition yhtenäisyyden indikaattoreina opposition painostuksen alla.
+3. **Tulevaisuuden näkymät**: Seuraa, tiivistyvätkö S:n varaukset asumisesta ja koulun avoimuudesta vuoden 2026 vaalikampanja-alustoiksi.
+
+### Merkitys
+
+| Prioriteetti | Arvio |
+|--------------|-------|
+| Poliittinen merkityksellisyys | KORKEA — asuminen ja koulun avoimuus ovat äänestäjien tärkeimmät huolenaiheet [horizon:week] |
+| Koalitioriski | MATALA — enemmistö on vakaa; viisi varausta ei uhkaa hyväksymistä |
+| Pitkän aikavälin signaali | KESKITASO — S/V/MP:n yhteneväisyys molemmissa asioissa viittaa koordinoituun oppositiostrategiaan ennen vaaleja [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : ÉLEVÉE [B2]  
+**Code Amirauté** : B2  
+
+---
+
+### BLUF
+
+Six rapports de commissions du Riksdag datés du 8 mai 2026 font avancer une législation importante vers le vote en chambre. Les plus contestés sont la réforme du marché du logement de la Commission des affaires civiles (CU) (HD01CU31) et le projet de loi sur la transparence scolaire de la Commission de l'éducation (UbU) (HD01UbU20), tous deux suscitant une opposition à cinq réserves de S, V et MP. La coalition Tidö du gouvernement (M, SD, KD, C, L) détient une majorité parlementaire et adoptera les six betänkanden, mais la résistance de l'opposition signale des tensions non résolues en matière d'équité et de transparence à l'approche du cycle électoral 2026.
+
+### Principales conclusions du renseignement
+
+**KJ-1** : La réforme du logement (HD01CU31, prop 2025/26:187) introduit une nouvelle loi sur la location privée, des droits élargis de sous-location pour les bostadsrättshavare et un nouveau modèle de loyer en bloc — tous opposés par S, V et MP pour des raisons d'équité. Entrée en vigueur : 1er juillet 2026. La majorité de la coalition assure l'adoption malgré cinq réserves formelles. [Source : HD01CU31, riksdagen.se]
+
+**KJ-2** : Le projet de loi sur la transparence scolaire (HD01UbU20, prop 2025/26:191) étend les principes d'accès à l'information avec des règles d'allègement pour les directeurs de petites écoles privées, avec une mise en œuvre progressive 2027–2029. Cinq réserves (S, V, MP) contestent à la fois les règles d'allègement et la portée de l'application de l'OSL aux archives scolaires. Une importante dimension constitutionnelle existe compte tenu des implications de la Tryckfrihetsförordningen (TF). [Source : HD01UbU20, riksdagen.se]
+
+**KJ-3** : Quatre des six betänkanden reflètent l'agenda gouvernemental de modernisation administrative et d'amélioration juridico-technique — règles d'exécution (HD01CU34), conditions du personnel d'État à l'étranger (HD01SoU36), qualifications des enseignants (HD01UbU28) et rapport de l'UIP (HD01UU13) — tous avec une opposition minimale ou nulle, confirmant le consensus inter-partis sur la qualité législative technique. [Sources : HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### Décisions éclairées par ce rapport
+
+1. **Éditorial** : Diriger la couverture de la réforme du marché du logement HD01CU31 comme le champ de bataille politique le plus important.
+2. **Surveillance** : Suivre les résultats des votes en plénière (kammardebatten) pour HD01CU31 et HD01UbU20 comme indicateurs de la cohésion de la coalition sous la pression de l'opposition.
+3. **Perspective** : Surveiller si les réserves de S sur le logement et la transparence scolaire se cristallisent en plateformes de campagne électorale 2026.
+
+### Importance
+
+| Priorité | Évaluation |
+|----------|-----------|
+| Saillance politique | ÉLEVÉE — le logement et la transparence scolaire sont les principales préoccupations des électeurs [horizon:week] |
+| Risque pour la coalition | FAIBLE — la majorité est stable ; cinq réserves ne menacent pas l'adoption |
+| Signal à long terme | MOYEN — l'alignement S/V/MP sur les deux sujets suggère une stratégie d'opposition coordonnée avant les élections [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_he.md -->
+
+&#x200F;# דוחות ועדות הפרלמנט השוודי 8 במאי 2026: רפורמת הדיור, כללי האכיפה ושקיפות בתי הספר עומדים בפני התנגדות האופוזיציה
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-11  
+**סיווג**: PUBLIC  
+**ביטחון**: גבוה [B2]  
+**קוד האדמירליות**: B2  
+
+---
+
+### BLUF
+
+שישה דוחות ועדות של Riksdag מתאריך 8 במאי 2026 מקדמים חקיקה משמעותית להצבעה בבית. השנויים ביותר במחלוקת הם רפורמת שוק הדיור של ועדת העניינים האזרחיים (CU) (HD01CU31) וחוק שקיפות בתי הספר של ועדת החינוך (UbU) (HD01UbU20), שניהם מושכים התנגדות עם חמש הסתייגויות מ-S, V ו-MP. קואליציית Tidö הממשלתית (M, SD, KD, C, L) מחזיקה ברוב פרלמנטרי ותאשר את כל ששת betänkandena, אך ההתנגדות מסמנת מתחים בלתי פתורים של שוויון ושקיפות לקראת מחזור הבחירות של 2026.
+
+### ממצאי מודיעין מרכזיים
+
+**KJ-1**: רפורמת הדיור (HD01CU31, prop 2025/26:187) מציגה חוק שכירות פרטי חדש, זכויות שכירות משנה מורחבות עבור bostadsrättshavare ומודל שכירות בלוק חדש — הכל מתנגד על ידי S, V ו-MP מטעמי שוויון. כניסה לתוקף: 1 ביולי 2026. רוב הקואליציה מבטיח מעבר למרות חמש הסתייגויות רשמיות. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: חוק שקיפות בתי הספר (HD01UbU20, prop 2025/26:191) מרחיב את עקרונות חופש המידע עם כללי הקלה למנהלי בתי ספר פרטיים קטנים יותר, עם יישום מדורג 2027–2029. חמש הסתייגויות (S, V, MP) מאתגרות הן את כללי ההקלה והן את היקף יישום OSL על ארכיוני בתי ספר. קיים ממד חוקתי משמעותי לאור השלכות Tryckfrihetsförordningen (TF). [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: ארבעה מתוך שישה betänkanden משקפים את אג'נדת הממשלה לקידום מודרניזציה מינהלית ושיפור משפטי-טכני — כללי אכיפה (HD01CU34), תנאי כוח האדם הממלכתי בחו"ל (HD01SoU36), כישורי מורים (HD01UbU28) ודוח IPU (HD01UU13) — כולם עם התנגדות מינימלית או ללא התנגדות, המאשרת קונצנזוס בין-מפלגתי על איכות חקיקה טכנית. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### החלטות שדוח זה מסייע לקבל
+
+1. **מערכתי**: להוביל כיסוי HD01CU31 רפורמת שוק הדיור כשדה הקרב הפוליטי החשוב ביותר.
+2. **ניטור**: לעקוב אחר תוצאות ההצבעות במליאה (kammardebatten) עבור HD01CU31 ו-HD01UbU20 כאינדיקטורים לאחדות הקואליציה תחת לחץ האופוזיציה.
+3. **תחזית**: לנטר האם ההסתייגויות של S בנושא דיור ושקיפות בתי ספר מתגבשות לפלטפורמות קמפיין בחירות 2026.
+
+### חשיבות
+
+| עדיפות | הערכה |
+|--------|-------|
+| בולטות פוליטית | גבוהה — דיור ושקיפות בתי ספר הם דאגות עיקריות של בוחרים [horizon:week] |
+| סיכון קואליציה | נמוך — הרוב יציב; חמש הסתייגויות אינן מאיימות על מעבר |
+| אות ארוך טווח | בינוני — יישור קו S/V/MP על שני הנושאים מרמז על אסטרטגיית אופוזיציה מתואמת לפני הבחירות [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-05-11  
+**機密分類**: PUBLIC  
+**信頼度**: 高 [B2]  
+**アドミラルティコード**: B2  
+
+---
+
+### BLUF
+
+2026年5月8日付のリクスダーグ（Riksdag）委員会報告6件が重要な法案を本会議採決に送る。最も論争的なのは、民事委員会（CU）の住宅市場改革（HD01CU31）と教育委員会（UbU）の学校透明性法案（HD01UbU20）であり、いずれもS、V、MPから5件の留保による反対を受けている。政府のティドー連立（M, SD, KD, C, L）は議会過半数を持ち、6つのbetänkandenaすべてを可決するが、野党の抵抗は2026年選挙サイクルに向けた未解決の公平性と透明性をめぐる緊張を示している。
+
+### 主要インテリジェンス所見
+
+**KJ-1**: 住宅改革（HD01CU31, prop 2025/26:187）は新たな民間賃貸法、bostadsrättshavareの転貸権拡大、新たなブロック賃貸モデルを導入するが、S、V、MPは公平性を理由にいずれにも反対している。施行日：2026年7月1日。連立過半数により5件の正式留保にもかかわらず可決が確保される。[Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: 学校透明性法案（HD01UbU20, prop 2025/26:191）は小規模私立学校長への軽減規則を伴う情報公開原則の適用を拡大し、2027～2029年に段階的に実施される。5件の留保（S, V, MP）は軽減規則と学校文書館へのOSL適用範囲の両方に異議を唱えている。Tryckfrihetsförordningen（TF）の含意を踏まえた重要な憲法的側面が存在する。[Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: 6件のbetänkandenaのうち4件は、行政近代化と法的・技術的改善という政府の課題を反映している——執行規則（HD01CU34）、海外国家職員の条件（HD01SoU36）、教員資格（HD01UbU28）、IPU報告書（HD01UU13）——すべて反対なしまたは最小限で、技術的立法品質に関する超党派合意を確認している。[Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### この報告が支援する意思決定
+
+1. **編集方針**: HD01CU31住宅市場改革を最重要政治的争点として報道の先頭に立てる。
+2. **監視**: HD01CU31とHD01UbU20の本会議（kammardebatten）採決結果を、野党圧力下における連立結束の指標として追跡する。
+3. **今後の見通し**: 住宅・学校透明性に関するSの留保が2026年選挙公約に結晶するかを監視する。
+
+### 重要性
+
+| 優先度 | 評価 |
+|--------|------|
+| 政治的顕著性 | 高 — 住宅と学校透明性は有権者の最重要関心事 [horizon:week] |
+| 連立リスク | 低 — 過半数は安定；5件の留保は可決を脅かさない |
+| 長期的シグナル | 中 — 両テーマにおけるS/V/MPの一致は選挙前の協調的野党戦略を示唆 [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-11  
+**분류**: PUBLIC  
+**신뢰도**: 높음 [B2]  
+**해군 코드**: B2  
+
+---
+
+### BLUF
+
+2026년 5월 8일자 릭스다그(Riksdag) 위원회 보고서 6건이 중요한 법안을 본회의 표결에 올린다. 가장 논쟁적인 것은 민사위원회(CU)의 주택시장 개혁(HD01CU31)과 교육위원회(UbU)의 학교 투명성 법안(HD01UbU20)으로, 두 법안 모두 S, V, MP로부터 5건의 유보 반대를 받고 있다. 정부의 티드외 연립(M, SD, KD, C, L)은 의회 과반수를 보유하여 6개의 betänkandena 모두를 통과시킬 것이지만, 야당의 저항은 2026년 선거 주기를 앞두고 해결되지 않은 형평성 및 투명성 긴장을 시사한다.
+
+### 주요 정보 분석 결과
+
+**KJ-1**: 주택 개혁(HD01CU31, prop 2025/26:187)은 새로운 민간 임대법, bostadsrättshavare를 위한 확대된 전대 권리, 새로운 블록 임대 모델을 도입하는데, 이 모두가 S, V, MP로부터 형평성을 이유로 반대받고 있다. 시행일: 2026년 7월 1일. 연립 과반수는 5건의 공식 유보에도 불구하고 통과를 보장한다. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: 학교 투명성 법안(HD01UbU20, prop 2025/26:191)은 소규모 사립학교 교장을 위한 경감 규칙을 포함하여 정보 공개 원칙 적용을 확대하며, 2027–2029년 단계적 시행이 예정되어 있다. 5건의 유보(S, V, MP)는 경감 규칙과 학교 기록물에 대한 OSL 적용 범위 모두에 이의를 제기하고 있다. Tryckfrihetsförordningen(TF) 함의를 고려할 때 중요한 헌법적 차원이 존재한다. [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: 6개의 betänkanden 중 4개는 행정 현대화 및 법률·기술적 개선이라는 정부 의제를 반영한다——집행 규칙(HD01CU34), 해외 국가 인력 조건(HD01SoU36), 교원 자격(HD01UbU28), IPU 보고서(HD01UU13)——모두 최소한의 또는 반대 없이, 기술적 입법 품질에 관한 초당파적 합의를 확인한다. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### 이 보고서가 지원하는 결정
+
+1. **편집 방향**: HD01CU31 주택시장 개혁을 최고 중요도 정치적 쟁점으로서 보도의 선두에 세운다.
+2. **모니터링**: HD01CU31과 HD01UbU20의 본회의(kammardebatten) 표결 결과를 야당 압력 하에서 연립 결속의 지표로 추적한다.
+3. **향후 전망**: 주택과 학교 투명성에 대한 S의 유보가 2026년 선거 캠페인 공약으로 굳어지는지 모니터링한다.
+
+### 중요성
+
+| 우선순위 | 평가 |
+|----------|------|
+| 정치적 현저성 | 높음 — 주택과 학교 투명성은 유권자의 최우선 관심사 [horizon:week] |
+| 연립 리스크 | 낮음 — 과반수가 안정적; 5건의 유보는 통과를 위협하지 않음 |
+| 장기적 신호 | 중간 — 두 사안에 대한 S/V/MP의 일치는 선거 전 협조된 야당 전략을 시사 [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-11  
+**Classificatie**: PUBLIC  
+**Betrouwbaarheid**: HOOG [B2]  
+**Admiralty-code**: B2  
+
+---
+
+### BLUF
+
+Zes commissierapporten van de Riksdag van 8 mei 2026 bevorderen significante wetgeving naar een kamerstemming. De meest controversiële zijn de woningmarkthervorming van de Commissie Burgerlijke Zaken (CU) (HD01CU31) en de schooltransparantiewet van de Onderwijscommissie (UbU) (HD01UbU20), die beide een vijf-voorbehoud-oppositie van S, V en MP trekken. De Tidö-coalitie van de regering (M, SD, KD, C, L) beschikt over een parlementaire meerderheid en zal alle zes betänkanden goedkeuren, maar de oppositieweerstand signaleert onopgeloste gelijkheids- en transparantiespanningen richting de verkiezingscyclus van 2026.
+
+### Belangrijkste inlichtingenbevindingen
+
+**KJ-1**: De woninghervorming (HD01CU31, prop 2025/26:187) introduceert een nieuwe wet op particuliere verhuur, uitgebreide onderverhuurrechten voor bostadsrättshavare en een nieuw blokhuursmodel — alles bestreden door S, V en MP op gronden van gelijkheid. Inwerkingtreding: 1 juli 2026. De coalitiemeerderheid garandeert goedkeuring ondanks vijf formele voorbehouden. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: De schooltransparantiewet (HD01UbU20, prop 2025/26:191) breidt de beginselen van openbaarheid van bestuur uit met verlichtingsregels voor kleinere particuliere schoolleiders, met gefaseerde implementatie 2027–2029. Vijf voorbehouden (S, V, MP) betwisten zowel de verlichtingsregels als de reikwijdte van de toepassing van OSL op schoolarchieven. Er bestaat een belangrijke grondwettelijke dimensie gezien de implicaties van de Tryckfrihetsförordningen (TF). [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: Vier van de zes betänkanden weerspiegelen de regeringsagenda voor administratieve modernisering en juridisch-technische verbetering — handhavingsregels (HD01CU34), arbeidsomstandigheden voor staatspersoneel in het buitenland (HD01SoU36), lerarengeloofsbrieven (HD01UbU28) en IPU-rapport (HD01UU13) — allemaal met minimale of geen oppositie, wat het cross-party consensus over technische wetgevingskwaliteit bevestigt. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### Beslissingen die dit rapport informeert
+
+1. **Redactioneel**: Voer de berichtgeving over de HD01CU31-woningmarkthervorming als het politiek belangrijkste strijdtoneel.
+2. **Monitoring**: Volg stemresultaten in de plenaire vergadering (kammardebatten) voor HD01CU31 en HD01UbU20 als indicatoren van coalitiecohesie onder oppositiedruk.
+3. **Toekomstperspectief**: Bewaak of de voorbehouden van S over wonen en schooltransparantie worden omgezet in verkiezingscampagneplatforms voor 2026.
+
+### Belang
+
+| Prioriteit | Beoordeling |
+|-----------|-------------|
+| Politieke relevantie | HOOG — wonen en schooltransparantie zijn de grootste zorgen van kiezers [horizon:week] |
+| Coalitierisico | LAAG — de meerderheid is stabiel; vijf voorbehouden bedreigen de goedkeuring niet |
+| Langetermijnsignaal | MIDDEL — S/V/MP-afstemming op beide onderwerpen duidt op een gecoördineerde oppositiestrategie voor de verkiezingen [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-11  
+**Klassifisering**: PUBLIC  
+**Konfidens**: HØY [B2]  
+**Admiralty-kode**: B2  
+
+---
+
+### BLUF
+
+Seks Riksdag-komitérapporter datert 8. mai 2026 sender viktig lovgivning til kammeravstemning. De mest kontroversielle er Sivilutvalgts (CU) boligmarkedsreform (HD01CU31) og Utdanningsutvalgets (UbU) skoletransparenslov (HD01UbU20), som begge tiltrekker fem-reservasjonsopposisjon fra S, V og MP. Regjeringens Tidö-koalisjon (M, SD, KD, C, L) har parlamentarisk flertall og vil vedta alle seks betänkanden, men opposisjonens motstand signaliserer uløste rettferdighets- og transparensspenninger i forkant av valgperioden 2026.
+
+### Viktige etterretningsfunn
+
+**KJ-1**: Boligreformen (HD01CU31, prop 2025/26:187) introduserer en ny privat utleielov, utvidede fremleieretter for bostadsrättshavare og en ny blokkleiemodell — alt motsatt av S, V og MP på rettferdsgrunnlag. Ikrafttreden: 1. juli 2026. Koalisjonsflertallet sikrer vedtakelse til tross for fem formelle reservasjoner. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: Skoletransparensloven (HD01UbU20, prop 2025/26:191) utvider offentlighetsprinsippets anvendelse med lettelsesregler for mindre private skoleledere, med trinnvis implementering 2027–2029. Fem reservasjoner (S, V, MP) utfordrer både lettelsesreglene og omfanget av OSL-anvendelse på skolearkiver. En vesentlig konstitusjonell dimensjon finnes gitt Tryckfrihetsförordningen (TF). [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: Fire av seks betänkanden gjenspeiler regjeringens agenda for administrativ modernisering og juridisk-teknisk forbedring — håndhevingsregler (HD01CU34), vilkår for statsansatte i utlandet (HD01SoU36), lærerkvalifikasjoner (HD01UbU28) og IPU-rapport (HD01UU13) — alle med minimal eller ingen motstand, noe som bekrefter tverrpolitisk konsensus om teknisk lovgivningskvalitet. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### Beslutninger denne rapporten informerer
+
+1. **Redaksjonelt**: Led dekning av HD01CU31 boligmarkedsreform som det politisk viktigste slagfeltet.
+2. **Overvåking**: Følg avstemningsresultater i plenum (kammardebatten) for HD01CU31 og HD01UbU20 som indikatorer på koalisjonssammenheng under opposisjonspress.
+3. **Fremtidsutsikt**: Overvåk om S sine reservasjoner om bolig og skoletransparens konsolideres til valgkampplattformer i 2026.
+
+### Betydning
+
+| Prioritet | Vurdering |
+|-----------|-----------|
+| Politisk relevans | HØY — bolig og skoletransparens er velgernes viktigste bekymringer [horizon:week] |
+| Koalisjonsrisiko | LAV — flertallet er stabilt; fem reservasjoner truer ikke vedtakelse |
+| Langsiktig signal | MIDDELS — S/V/MP-samstemmighet om begge temaer antyder koordinert opposisjonsstrategi før valget [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-11  
+**Klassificering**: PUBLIC  
+**Konfidens**: HÖG [B2]  
+**Admiralty-kod**: B2  
+
+---
+
+### BLUF
+
+Sex riksdagsbetänkanden daterade 8 maj 2026 för viktig lagstiftning till kammaromröstning. De mest kontroversiella är civilutskottets (CU) bostadsmarknadsreform (HD01CU31) och utbildningsutskottets (UbU) skoltransparenslag (HD01UbU20), som båda drar fem reservationer från S, V och MP. Regeringens Tidö-koalition (M, SD, KD, C, L) har parlamentarisk majoritet och kommer att anta alla sex betänkanden, men oppositionens motstånd signalerar olösta jämlikhets- och transparensspänningar inför 2026 års valcykel.
+
+### Viktiga underrättelsefynd
+
+**KJ-1**: Bostadsreformen (HD01CU31, prop 2025/26:187) introducerar en ny privatuthyrningslag, utökade andrahandsrättigheter för bostadsrättshavare och en ny hyresblockmodell — allt motarbetat av S, V och MP på jämlikhetsgrunder. Ikraftträdande: 1 juli 2026. Koalitionsmajoriteten säkerställer passage trots fem formella reservationer. [Source: HD01CU31, riksdagen.se]
+
+**KJ-2**: Skoltransparenspropositionen (HD01UbU20, prop 2025/26:191) utvidgar offentlighetsprincipens tillämpning med lättnadsregler för mindre friskoleenheter, med stegvis genomförande 2027–2029. Fem reservationer (S, V, MP) ifrågasätter både lättnadsreglerna och OSL:s tillämpningsomfång på skolarkiv. En viktig konstitutionell dimension finns med hänsyn till Tryckfrihetsförordningen (TF). [Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**: Fyra av sex betänkanden återspeglar regeringens agenda för administrativ modernisering och rättslig-teknisk förbättring — verkställighetsregler (HD01CU34), utlandsanställda statspersoners villkor (HD01SoU36), lärarlegitimation (HD01UbU28) och IPU-rapport (HD01UU13) — alla med minimalt eller inget motstånd, vilket bekräftar tvärpartikonsensus om teknisk lagstiftningskvalitet. [Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### Beslut som denna rapport informerar
+
+1. **Redaktionellt**: Led bevakning av HD01CU31 bostadsmarknadsreform som det politiskt viktigaste slagfältet.
+2. **Bevakning**: Följ röstningsutfall i kammaren (kammardebatten) för HD01CU31 och HD01UbU20 som indikatorer på koalitionssammanhållning under oppositionstryck.
+3. **Framåtblick**: Bevaka om S:s reservationer om boende och skoltransparens konsolideras till valplattformar 2026.
+
+### Signifikans
+
+| Prioritet | Bedömning |
+|-----------|-----------|
+| Politisk saliency | HÖG — boende och skoltransparens är väljarnas viktigaste frågor [horizon:week] |
+| Koalitionsrisk | LÅG — majoriteten är stabil; fem reservationer hotar inte passage |
+| Långsiktig signal | MEDEL — S/V/MP-samstämmighet om båda frågorna tyder på samordnad oppositionsstrategi inför valet [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-05-11  
+**分类**：PUBLIC  
+**可信度**：高 [B2]  
+**海军情报代码**：B2  
+
+---
+
+### BLUF
+
+2026年5月8日的6份瑞典议会（Riksdag）委员会报告将重要立法推进至全体会议表决。最具争议的是民事委员会（CU）的住房市场改革（HD01CU31）和教育委员会（UbU）的学校透明度法案（HD01UbU20），两者均遭到S、V和MP五项保留意见的反对。政府的Tidö联合政府（M, SD, KD, C, L）拥有议会多数，将通过全部六项betänkanden，但反对党的抵制显示出在2026年选举周期前尚未解决的公平性和透明度紧张关系。
+
+### 主要情报发现
+
+**KJ-1**：住房改革（HD01CU31, prop 2025/26:187）引入新的私人租赁法、扩大bostadsrättshavare的转租权利，以及新的整体租赁模式——所有内容均遭到S、V和MP以公平性为由的反对。生效日期：2026年7月1日。联合政府多数票确保通过，尽管有五项正式保留意见。[Source: HD01CU31, riksdagen.se]
+
+**KJ-2**：学校透明度法案（HD01UbU20, prop 2025/26:191）扩展了信息公开原则的应用范围，为规模较小的私立学校校长提供减免规则，2027–2029年分阶段实施。五项保留意见（S, V, MP）对减免规则和OSL适用于学校档案的范围均提出质疑。鉴于Tryckfrihetsförordningen（TF）的影响，存在重要的宪法层面问题。[Source: HD01UbU20, riksdagen.se]
+
+**KJ-3**：六项betänkanden中的四项反映了政府行政现代化和法律技术改进的议程——执法规则（HD01CU34）、海外国家人员条件（HD01SoU36）、教师资格（HD01UbU28）和各国议会联盟报告（HD01UU13）——均获得最少或零反对，证实了各党派在技术立法质量上的共识。[Sources: HD01CU34, HD01SoU36, HD01UbU28, HD01UU13]
+
+### 本报告支持的决策
+
+1. **编辑方向**：以HD01CU31住房市场改革作为最高重要度政治战场的主要报道方向。
+2. **监测**：跟踪HD01CU31和HD01UbU20在全体会议（kammardebatten）的表决结果，作为反对压力下联合政府凝聚力的指标。
+3. **前瞻展望**：监测S对住房和学校透明度的保留意见是否演变为2026年选举竞选纲领。
+
+### 重要性
+
+| 优先级 | 评估 |
+|--------|------|
+| 政治显著性 | 高 — 住房和学校透明度是选民最关心的问题 [horizon:week] |
+| 联合政府风险 | 低 — 多数票稳定；五项保留意见不威胁通过 |
+| 长期信号 | 中 — S/V/MP在两个议题上的一致立场暗示选前协调的反对党策略 [horizon:month] |
+
+---
+
+<!-- source-sha: 1d35965d1f170e547ab7a270f520b94bc081f80b -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 6 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 7 | Linked in Article Sources, not expanded inline |
 
@@ -1607,6 +2156,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

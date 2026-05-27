@@ -3,7 +3,7 @@ date: 2026-05-15
 subfolder: realtime-pulse
 slug: 2026-05-15-realtime-pulse
 source_folder: analysis/daily/2026-05-15/realtime-pulse
-generated_at: 2026-05-25T15:59:54.134Z
+generated_at: 2026-05-27T07:35:33.857Z
 language: en
 layout: article
 ---
@@ -1632,8 +1632,6 @@ Statskontoret relevance: no direct agency referenced in today's documents; bist�
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_ar.md -->
 
-‏# رصد البرلمان السويدي — النبض الفوري 15 مايو 2026: القدرة الدفاعية وديون المساعدات الإنمائية
-
 **المؤلف**: جيمس بيتر سورلينغ  
 **التاريخ**: 2026-05-15  
 **التصنيف**: 🟢 عام  
@@ -1975,8 +1973,6 @@ graph LR
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_he.md -->
 
-‏# ריקסדאגסמוניטור — פולס בזמן אמת 15 במאי 2026: יכולת הגנה וחוב הסיוע
-
 **מחבר**: James Pether Sörling  
 **תאריך**: 2026-05-15  
 **סיווג**: 🟢 ציבורי  
@@ -2147,12 +2143,6 @@ graph LR
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling  
-**Datum**: 2026-05-15  
-**Classificatie**: 🟢 OPENBAAR  
-**Betrouwbaarheid**: HOOG [B2]  
-**Horizon**: [horizon:72h] [horizon:week]
 
 ---
 

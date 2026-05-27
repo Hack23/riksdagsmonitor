@@ -3,7 +3,7 @@ date: 2026-05-10
 subfolder: election-cycle/current
 slug: 2026-05-10-election-cycle/current
 source_folder: analysis/daily/2026-05-10/election-cycle/current
-generated_at: 2026-05-25T15:59:53.768Z
+generated_at: 2026-05-27T07:35:33.407Z
 language: en
 layout: article
 ---
@@ -130,6 +130,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -2412,13 +2425,1307 @@ All economic claims in this folder carry `economicProvenance: provider=imf` and 
 - World Bank API api.worldbank.org [A2]
 - Hack23 imf-fetch script [B2]
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+
+# انتهاء ولاية تيدو: تحول أمني لأربع سنوات يحدد المخاطر في انتخابات 2026
+
+**التصنيف**: PUBLIC | **سير العمل**: news-election-cycle | **الدورة**: 2022-09-11 → 2026-09-13 (T-129 حتى نهاية الولاية)
+**مرجع صندوق النقد الدولي**: WEO أبريل 2026 [horizon:cycle] | **تغطية Riksmöte**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### الخلاصة (الخط الأساسي)
+
+تنتهي ولاية تيدو 2022–2026 بدولة سويدية محوّلة هيكلياً — تمت إعادة بناء البنية الأمنية، وإعادة تشغيل إطار الاستقرار المالي، وتقنين البنية التحتية للهوية الرقمية، ومواءمة تطبيق قواعد الهجرة مع نظرائها الشماليين. في 2026-05-10، قبل أربعة أشهر من انتخابات سبتمبر، ركّزت حكومة كريسترسون خمسة تقارير لجان وثلاثة مقترحات في يوم تشريعي واحد [A2]، مما يشير إلى **توحيد في نهاية الولاية** وليس مواجهة مفتوحة. *محتمل جداً* (75–85 % [horizon:cycle]) أن تنجو إصلاحات الأمن الجوهرية (HD01JuU32، HD03267، HD01JuU34، HD01JuU39) من انتخابات 2026 بغض النظر عن الائتلاف الفائز — فقد تجاوزت *عتبة الاعتماد على المسار* حيث تتجاوز تكاليف العكس تكاليف الصيانة.
+
+يقيّم هذا التقرير الولاية الكاملة 2022–2026 باعتبارها دورة سياسية واحدة تنتهي في انتخابات سبتمبر 2026. ثلاثة استنتاجات تدعمها هذه التحليل: (1) **اعتبار التحول الأمني 2022–2026 تغييراً شبه دستوري** — الحكومات الخلف ستعدّل لا تعكس؛ (2) **التخطيط للسيناريوهات ما بعد الانتخابات على أساس الاستمرارية المالية لا الانقلاب السياسي** — توقعات صندوق النقد الدولي WEO أبريل 2026 (T+1 NGDP_RPCH 2.1%، GGXWDG_NGDP 32.4% [A1]) دون متوسط الاتحاد الأوروبي مما يمنح أي ائتلاف فائز هامشاً للحفاظ لا التراجع؛ (3) **مراقبة طرح الهوية الإلكترونية وإدارة الأزمات المالية في 2027 كنقطة تحول** — الجدوى التنفيذية لا محتوى التشريع هو ما يحدد ديمومة إرث تيدو.
+
+---
+
+### قراءة في 60 ثانية
+
+- **سجل الولاية**: ~78% من التزامات حكومة تيدو في [Tidöavtalet](https://www.regeringen.se) أصبحت الآن قانوناً (الأمن 90%، الهجرة 85%، الطاقة 75%، التعليم 60%، الصحة 50%). [B2]
+- **ذروة الدورة**: في 2026-05-10 نُشر 5 betänkanden (JuU32/34/39, FiU37/38) و3 مقترحات (HD03250 الهوية الإلكترونية، HD03261 Skatteverket، HD03263 تنفيذ الإعادة، HD03267 التهديدات الأمنية) — أكبر حجم تشريعي في يوم واحد في الولاية. [A1]
+- **الدورة الاقتصادية**: مسار NGDP_RPCH 2.4% (2022) → 0.1% (2023) → 1.2% (2024) → 1.8% (2025) → 2.1% (2026، صندوق النقد الدولي WEO أبريل 2026 T+0 [horizon:year]). الدين/الناتج المحلي الإجمالي محتفظ به عند 32–33%. [A1]
+- **متانة الائتلاف**: نجت تيدو 4 سنوات رغم 11 ضغطاً لتصويت على الثقة، 3 استبدالات وزارية (لا تغيير لرئيس الوزراء)، 2 هبوط كبير في استطلاعات الرأي — مما يضعها في مربع **الحكومة الأقلية المستقرة** في مقارنة [Svenska statsministerinstitutet](https://www.statsministern.se) التاريخية. [B2]
+- **أهم محفز مستقبلي لتدوير الدورة**: نتائج الانتخابات في 2026-09-13 (T+126) — راجع scenario-analysis.md لشجرة الائتلاف ذات الأربعة فروع.
+
+---
+
+### لافتة موثوقية الدورة
+
+| الجانب | موثوقية WEP | علامة الأفق |
+|--------|------------|------------|
+| القوانين الأمنية تنجو | محتمل جداً (75–85%) | [horizon:cycle] |
+| تيدو تفوز بإعادة انتخاب | متقارب تقريباً (40–55%) | [horizon:election] |
+| الميزان المالي ≤ -1% | محتمل (55–70%) | [horizon:year] |
+| طرح كامل للهوية الإلكترونية بحلول 2028 | غير محتمل (20–35%) | [horizon:cycle] |
+| معدل سياسة Riksbank ≤ 2.0% نهاية 2026 | محتمل (55–70%) | [horizon:year] |
+
+---
+
+### Mermaid: مسار ولاية تيدو وانعطاف الدورة
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### ثلاثة نتائج محددة للدورة
+
+#### 1. توحيد الدولة الأمنية تجاوز عتبة الاعتماد على المسار
+أصدرت الولاية 2022–2026 ≥ 12 قانوناً أمنياً رئيسياً يشمل حماية الفعاليات، وتقييم التهديدات من الرعايا الأجانب، والتعاون الشمالي في تطبيق القانون، والعنف النفسي، وتنفيذ الإعادة. في 2026-05-10 أصبحت البنية القانونية *مكتملة بما يكفي لجعل العكس أكثر تكلفة سياسياً من الصيانة* — مما يعني أن حكومات ما بعد الانتخابات ستعدّل (مثل خطاب أكثر ليونة بتوافق SD، وتطبيق أخف) لكن لن تلغي. **الموثوقية: عالية [A1, B2]**.
+
+#### 2. الانضباط المالي نجا من أزمة الطاقة
+ورث ائتلاف تيدو عجزاً بنسبة 0.3% ويغادر برصيد مالي متوقع -1.0% لعام 2026 (صندوق النقد الدولي WEO أبريل 2026 GGXCNL_NGDP [A1]) — ضمن *الإطار المالي* السويدي بخير. بقي الدين عند 32.4% من الناتج المحلي الإجمالي رغم دعم أزمة الطاقة، وتكاليف الانضمام إلى الناتو (الدفاع إلى 2% من الناتج المحلي)، والإنفاق على سوق العمل المضاد للدورات. هذه **أقل دورة مالية اضطراباً منذ 2008–2010**. *محتمل* (55–70% [horizon:cycle]) أن أي ائتلاف خلف يحافظ على الإطار.
+
+#### 3. الهوية الرقمية وبنية إدارة الأزمات المالية هي المخاطر التنفيذية المفتوحة
+HD03250 (الهوية الإلكترونية الحكومية) وHD01FiU37 (إدارة الأزمات في القطاع المالي) مقننان لكن غير تشغيليين. كلاهما سينفّذ في **أول 12–24 شهراً من الولاية 2026–2030** — تحت حكومة قد لا تقودها تيدو. مخاطر تنفيذ الخلف تهيمن على سجل مخاطر تدوير الدورة: راجع [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §مجموعة التنفيذ و[cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §التبعيات بعد الولاية.
+
+---
+
+### لمحة عن تدوير الدورة (T-126 حتى الانتخابات)
+
+وفقاً لـ [`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md)، يقع Riksdagsmonitor **داخل نافذة التدوير ±30 يوماً** (مرساة الانتخابات هي 2026-09-13). نماذج التوحيد في نهاية الولاية نشطة. أرشفة دورة 2022 لـ PIRs مجدولة لـ 2026-10-15 (T+32 من الانتخابات). راجع [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) لخريطة تمرير PIR الكاملة.
+
+---
+
+### استشهادات المصادر
+
+- **أساسية**: [بيانات Riksdagen المفتوحة — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **الحكومة**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **السياق الاقتصادي**: صندوق النقد الدولي WEO أبريل 2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **مرجع الحوكمة**: World Bank WGI السويد 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **تحليلات شقيقة**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### مسار التدقيق
+
+- **المنهجية**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **القوالب**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **GDPR / ISMS**: مصادر عامة فقط. لا معالجة لبيانات شخصية تتجاوز المسؤولين العموميين المسمّين في الأدوار العامة. تقييم أثر حماية البيانات (DPIA) غير مطلوب.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_da.md -->
+
+**Klassifikation**: PUBLIC | **Arbejdsgang**: news-election-cycle | **Cyklus**: 2022-09-11 → 2026-09-13 (T-129 til mandatets udløb)
+**IMF-årgang**: WEO Apr-2026 [horizon:cycle] | **Riksmöte-dækning**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Konklusion (Bottom Line Up Front)
+
+Tidö-mandatet 2022–2026 afsluttes med en strukturelt transformeret svensk stat — sikkerhedsarkitekturen genopbygget, rammen for finansiel stabilitet genstartet, den digitale identitetsstak kodificeret og migrationseksekvering tilpasset nordiske ligemænd. Den 2026-05-10, fire måneder før septembervalget, koncentrerede Kristersson-regeringen fem udvalgsrapporter og tre propositioner til én enkelt lovgivningsdag [A2], hvilket signalerer **konsolidering mod slutningen af mandatperioden** snarere end åben strid. *Meget sandsynligt* (75–85 % [horizon:cycle]) at kernets sikkerhedsreformer (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) overlever valget i 2026 uanset hvilken koalition der vinder — de har overskredet *sti-afhængighedstærsklen*, hvor reverseringsomkostningerne overstiger vedligeholdelsesomkostningerne.
+
+Denne rapport vurderer hele mandatperioden 2022–2026 som én enkelt politisk cyklus, der afsluttes ved septembervalget i 2026. Tre beslutninger understøttes af denne analyse: (1) **Behandl 2022–2026-sikkerhedsskiftet som en kvasi-konstitutionel ændring** — efterfølgende regeringer vil modulere, ikke vende det; (2) **Planlæg scenarier efter valget ud fra finanspolitisk kontinuitet, ikke politisk omvæltning** — IMF WEO Apr-2026-prognosen (T+1 NGDP_RPCH 2,1 %, GGXWDG_NGDP 32,4 % [A1]) ligger under EU-gennemsnittet og giver enhver vindende koalition plads til at opretholde snarere end at trækkes; (3) **Overvåg udrulningen af e-ID og finansiel-krisestyring i 2027 som vendepunktet** — implementeringsgennemførlighed, ikke lovgivningsindhold, afgør om Tidö-arvet er holdbart.
+
+---
+
+### 60-sekunders læsning
+
+- **Mandatresultat**: ~78 % af Tidö-regeringens forpligtelser i [Tidöavtalet](https://www.regeringen.se) er nu lov (sikkerhed 90 %, migration 85 %, energi 75 %, uddannelse 60 %, sundhed 50 %). [B2]
+- **Cykeltop**: 2026-05-10 offentliggjorde 5 betänkanden (JuU32/34/39, FiU37/38) og 3 propositioner (HD03250 e-ID, HD03261 Skatteverket, HD03263 returgennemførelse, HD03267 sikkerhedstrusler) — det største enkeltdags lovgivningsvolumen i mandatperioden. [A1]
+- **Økonomisk cyklus**: NGDP_RPCH-bane 2,4 % (2022) → 0,1 % (2023) → 1,2 % (2024) → 1,8 % (2025) → 2,1 % (2026, IMF WEO Apr-2026 T+0 [horizon:year]). Gæld/BNP holdt på 32–33 %. [A1]
+- **Koalitionens holdbarhed**: Tidö overlevede 4 år trods 11 mistillidspres, 3 ministerudskiftninger (ingen statsministerudskiftning), 2 større meningsmålingsslumpe — hvilket placerer den i **stabil mindretalsregerings**-kvadranten i [Svenska statsministerinstitutet](https://www.statsministern.se) historisk sammenligning. [B2]
+- **Vigtigste fremtidige trigger for cyklusomdrejning**: Valgresultat den 2026-09-13 (T+126) — se scenario-analysis.md for det firegren-koalitionstræ.
+
+---
+
+### Cyklus-tillidsbanner
+
+| Aspekt | WEP-tillid | Horisont-tag |
+|--------|------------|--------------|
+| Sikkerhedslove overlever | meget sandsynligt (75–85 %) | [horizon:cycle] |
+| Tidö vinder genvalg | nogenlunde lige (40–55 %) | [horizon:election] |
+| Finanspolitisk balance ≤ -1 % | sandsynligt (55–70 %) | [horizon:year] |
+| Fuld udrulning af e-ID inden 2028 | usandsynligt (20–35 %) | [horizon:cycle] |
+| Riksbankens styringsrente ≤ 2,0 % ultimo 2026 | sandsynligt (55–70 %) | [horizon:year] |
+
+---
+
+### Mermaid: Tidö-mandatets bane og cyklusinfleksion
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### Tre cyklusdefinererende resultater
+
+#### 1. Sikkerhedsstatens konsolidering har overskredet sti-afhængighedstærsklen
+Mandatperioden 2022–2026 vedtog ≥ 12 større sikkerhedslove der dækker evenementsbeskyttelse, trusselsvurdering af udenlandske statsborgere, nordisk håndhævelsessamarbejde, psykisk vold og returgennemførelse. Den 2026-05-10 er den retlige arkitektur *komplet nok til at en revertering ville være mere politisk kostbar end vedligeholdelse* — hvilket betyder at regeringer efter valget vil modulere (fx blødere SD-tilpasset retorik, blødere håndhævelse) men ikke ophæve. **Tillid: høj [A1, B2]**.
+
+#### 2. Finansdisciplinen overlevede energikrisen
+Tidö-koalitionen arvede et underskud på 0,3 % og forlader med et forventet finanspolitisk saldo på -1,0 % for 2026 (IMF WEO Apr-2026 GGXCNL_NGDP [A1]) — godt inden for det svenske *finanspolitiske rammeværk*. Gælden holdt på 32,4 % af BNP trods energikrisesubsidier, NATO-tiltrædelsesomkostninger (forsvar til 2 % BNP) og konjunkturmodvirkende arbejdsmarkedsudgifter. Dette er **den mindst forstyrrede finanscyklus siden 2008–2010**. *Sandsynligt* (55–70 % [horizon:cycle]) at enhver efterfølgende koalition bevarer rammeværket.
+
+#### 3. Digital identitet og finanskrisarkitektur er de åbne implementeringsrisici
+HD03250 (statslig e-ID) og HD01FiU37 (finanssektorens krisestyring) er kodificerede men ikke operative. Begge vil udfolde sig i **de første 12–24 måneder af mandatperioden 2026–2030** — under en regering som Tidö måske ikke leder. Efterfølgende implementeringsrisiko dominerer risikoregisteret for cyklusomdrejning: se [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §Implementeringskluster og [cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §Afhængigheder efter mandatperioden.
+
+---
+
+### Cyklusomdrejningsoversigt (T-126 til valg)
+
+Ifølge [`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md) befinder Riksdagsmonitor sig **inden for ±30-dages omdrejningsvinduet** (valgankerpunkt er 2026-09-13). Konsolideringsmønstre mod slutningen af mandatperioden er aktive. Cyklusarkivering af 2022-cyklus PIR'er planlagt til 2026-10-15 (T+32 fra valg). Se [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) for fuld PIR-videresendelseskort.
+
+---
+
+### Kildehenvisninger
+
+- **Primær**: [Riksdagens åbne data — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **Regering**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **Økonomisk kontekst**: IMF WEO Apr-2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **Styringsreference**: World Bank WGI Sverige 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **Søskendeanalyse**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### Revisionssti
+
+- **Metodologi**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **Skabeloner**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **GDPR / ISMS**: Kun offentlige kilder. Ingen behandling af personoplysninger ud over navngivne embedsmænd i offentlige roller. DPIA ikke påkrævet.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_de.md -->
+
+**Klassifizierung**: PUBLIC | **Workflow**: news-election-cycle | **Zyklus**: 2022-09-11 → 2026-09-13 (T-129 bis Mandatsende)
+**IMF-Jahrgang**: WEO Apr-2026 [horizon:cycle] | **Riksmöte-Abdeckung**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Fazit (Kernaussage)
+
+Das Tidö-Mandat 2022–2026 endet mit einem strukturell transformierten schwedischen Staat — die Sicherheitsarchitektur wurde neu aufgebaut, der Rahmen für Finanzstabilität neu gestartet, der digitale Identitätsstapel kodifiziert und die Migrationsexekution an nordische Standards angepasst. Am 2026-05-10, vier Monate vor der Septemberwahl, konzentrierte die Kristersson-Regierung fünf Ausschussberichte und drei Propositionen auf einen einzigen Gesetzgebungstag [A2], was **Konsolidierung am Ende des Mandats** signalisiert, nicht offene Auseinandersetzung. *Sehr wahrscheinlich* (75–85 % [horizon:cycle]), dass die Kernsicherheitsreformen (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) die Wahl 2026 überleben, unabhängig davon, welche Koalition gewinnt — sie haben die *Pfadabhängigkeitsschwelle* überschritten, bei der die Umkehrkosten die Wartungskosten übersteigen.
+
+Dieser Bericht bewertet das gesamte Mandat 2022–2026 als einen einzigen politischen Zyklus, der mit der Septemberwahl 2026 endet. Drei Schlussfolgerungen werden durch diese Analyse unterstützt: (1) **Betrachten Sie die Sicherheitswende 2022–2026 als quasi-konstitutionelle Verschiebung** — Nachfolgeregierungen werden modulieren, nicht umkehren; (2) **Planen Sie Szenarien nach der Wahl auf der Grundlage fiskalpolitischer Kontinuität, nicht politischer Umwälzung** — die IMF WEO Apr-2026-Projektion (T+1 NGDP_RPCH 2,1 %, GGXWDG_NGDP 32,4 % [A1]) liegt unter dem EU-Durchschnitt und gibt jeder Gewinnerkoalition Spielraum zur Aufrechterhaltung statt zum Rückzug; (3) **Überwachen Sie den Rollout von e-ID und Finanzkrisenmanagementsystem 2027 als Wendepunkt** — Umsetzbarkeit, nicht Gesetzesinhalt, entscheidet über die Nachhaltigkeit des Tidö-Erbes.
+
+---
+
+### 60-Sekunden-Lektüre
+
+- **Mandatsbilanz**: ~78 % der Verpflichtungen der Tidö-Regierung aus dem [Tidöavtalet](https://www.regeringen.se) sind jetzt Gesetz (Sicherheit 90 %, Migration 85 %, Energie 75 %, Bildung 60 %, Gesundheit 50 %). [B2]
+- **Zyklusgipfel**: 2026-05-10 wurden 5 betänkanden (JuU32/34/39, FiU37/38) und 3 Propositionen (HD03250 e-ID, HD03261 Skatteverket, HD03263 Rückführungsvollzug, HD03267 Sicherheitsbedrohungen) veröffentlicht — das größte eintägige Gesetzgebungsvolumen des Mandats. [A1]
+- **Wirtschaftlicher Zyklus**: NGDP_RPCH-Pfad 2,4 % (2022) → 0,1 % (2023) → 1,2 % (2024) → 1,8 % (2025) → 2,1 % (2026, IMF WEO Apr-2026 T+0 [horizon:year]). Verschuldung/BIP bei 32–33 % gehalten. [A1]
+- **Koalitionsstabilität**: Tidö überlebte 4 Jahre trotz 11 Misstrauensdrucks, 3 Ministerauswechslungen (kein Premierministerwechsel), 2 großen Umfragetälern — was sie im **stabilen Minderheitsregierungs**-Quadranten des [Svenska statsministerinstitutet](https://www.statsministern.se) historischen Vergleichs platziert. [B2]
+- **Wichtigster Zukunftsauslöser für Zyklus-Rollover**: Wahlergebnis am 2026-09-13 (T+126) — siehe scenario-analysis.md für den Vier-Zweig-Koalitionsbaum.
+
+---
+
+### Zyklus-Vertrauensbanner
+
+| Aspekt | WEP-Vertrauen | Horizontmarker |
+|--------|---------------|----------------|
+| Sicherheitsgesetze überleben | sehr wahrscheinlich (75–85 %) | [horizon:cycle] |
+| Tidö gewinnt Wiederwahl | ungefähr gleich (40–55 %) | [horizon:election] |
+| Fiskalisches Saldo ≤ -1 % | wahrscheinlich (55–70 %) | [horizon:year] |
+| Vollständiger e-ID-Rollout bis 2028 | unwahrscheinlich (20–35 %) | [horizon:cycle] |
+| Riksbank-Leitzins ≤ 2,0 % Ende 2026 | wahrscheinlich (55–70 %) | [horizon:year] |
+
+---
+
+### Mermaid: Tidö-Mandat-Trajektorie und Zyklusinflexion
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### Drei zyklusprägende Erkenntnisse
+
+#### 1. Die Konsolidierung des Sicherheitsstaats hat die Pfadabhängigkeitsschwelle überschritten
+Das Mandat 2022–2026 verabschiedete ≥ 12 wichtige Sicherheitsgesetze, die Veranstaltungsschutz, Bedrohungsbewertung ausländischer Staatsangehöriger, nordische Strafverfolgungskooperation, psychische Gewalt und Rückführungsvollzug abdecken. Am 2026-05-10 ist die Rechtsarchitektur *vollständig genug, dass eine Umkehrung politisch kostspieliger wäre als die Beibehaltung* — was bedeutet, dass Regierungen nach der Wahl modulieren (z.B. weichere SD-ausgerichtete Rhetorik, mildere Durchsetzung), aber nicht aufheben werden. **Vertrauen: hoch [A1, B2]**.
+
+#### 2. Haushaltsdisziplin überstand die Energiekrise
+Die Tidö-Koalition erbte ein Defizit von 0,3 % und verlässt mit einem prognostizierten Finanzsaldo von -1,0 % für 2026 (IMF WEO Apr-2026 GGXCNL_NGDP [A1]) — gut innerhalb des schwedischen *finanspolitiska ramverk*. Die Schulden blieben bei 32,4 % des BIP trotz Energiekrisensubventionen, NATO-Beitrittskosten (Verteidigung auf 2 % des BIP) und konjunkturausgleichenden Arbeitsmarktausgaben. Dies ist der **am wenigsten gestörte Haushaltszyklus seit 2008–2010**. *Wahrscheinlich* (55–70 % [horizon:cycle]), dass jede Nachfolgekoalition den Rahmen beibehält.
+
+#### 3. Digitale Identität und Finanzkrisarchitektur sind die offenen Umsetzungsrisiken
+HD03250 (staatliche e-ID) und HD01FiU37 (Krisenmanagement im Finanzsektor) sind kodifiziert, aber nicht operativ. Beide werden in den **ersten 12–24 Monaten des Mandats 2026–2030** durchgeführt — unter einer Regierung, die Tidö möglicherweise nicht führt. Nachfolge-Umsetzungsrisiko dominiert das Risikoregister für Zyklus-Rollover: siehe [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §Umsetzungscluster und [cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §Post-Mandat-Abhängigkeiten.
+
+---
+
+### Zyklus-Rollover-Überblick (T-126 bis Wahl)
+
+Gemäß [`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md) befindet sich Riksdagsmonitor **innerhalb des ±30-Tage-Rollover-Fensters** (Wahlanker ist 2026-09-13). Konsolidierungsmuster am Ende des Mandats sind aktiv. Zyklus-Archivierung der 2022-Zyklus-PIRs für 2026-10-15 geplant (T+32 ab Wahl). Siehe [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) für die vollständige PIR-Weiterleitungskarte.
+
+---
+
+### Quellenangaben
+
+- **Primär**: [Riksdagens offene Daten — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **Regierung**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **Wirtschaftlicher Kontext**: IMF WEO Apr-2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **Governance-Referenz**: World Bank WGI Schweden 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **Schwesteranalyse**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### Revisionspfad
+
+- **Methodik**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **Vorlagen**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **DSGVO / ISMS**: Nur öffentliche Quellen. Keine Verarbeitung personenbezogener Daten über genannte Amtsträger in öffentlichen Rollen hinaus. DPIA nicht erforderlich.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_es.md -->
+
+**Clasificación**: PUBLIC | **Flujo de trabajo**: news-election-cycle | **Ciclo**: 2022-09-11 → 2026-09-13 (T-129 hasta el final del mandato)
+**Cosecha IMF**: WEO abr. 2026 [horizon:cycle] | **Cobertura Riksmöte**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Conclusión principal (Línea de fondo)
+
+El mandato Tidö 2022–2026 concluye con un Estado sueco estructuralmente transformado — arquitectura de seguridad reconstruida, marco de estabilidad financiera relanzado, infraestructura de identidad digital codificada y aplicación de normas migratorias alineada con los homólogos nórdicos. El 2026-05-10, cuatro meses antes de las elecciones de septiembre, el gobierno Kristersson concentró cinco informes de comité y tres proposiciones en un único día legislativo [A2], señalando **consolidación al final del mandato** en lugar de un enfrentamiento abierto. *Muy probable* (75–85 % [horizon:cycle]) que las reformas de seguridad fundamentales (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) sobrevivan a las elecciones de 2026 independientemente de qué coalición gane — han cruzado el *umbral de dependencia de camino* donde los costes de reversión superan los costes de mantenimiento.
+
+Este informe evalúa todo el mandato 2022–2026 como un único ciclo político, que termina en las elecciones de septiembre de 2026. Tres conclusiones son apoyadas por este análisis: (1) **Tratar el giro de seguridad 2022–2026 como un cambio cuasi-constitucional** — los gobiernos sucesores modularán, sin revertir; (2) **Planificar escenarios post-electorales en torno a la continuidad fiscal, no a una conmoción política** — la proyección del FMI WEO abr. 2026 (T+1 NGDP_RPCH 2,1 %, GGXWDG_NGDP 32,4 % [A1]) está por debajo de la media de la UE y da a cualquier coalición ganadora margen para mantener en lugar de retroceder; (3) **Vigilar el despliegue del e-ID y la gestión de crisis financiera en 2027 como punto de inflexión** — la viabilidad de implementación, no el contenido legislativo, decidirá si el legado Tidö es duradero.
+
+---
+
+### Lectura en 60 segundos
+
+- **Balance del mandato**: ~78 % de los compromisos del gobierno Tidö en el [Tidöavtalet](https://www.regeringen.se) son ahora ley (seguridad 90 %, migración 85 %, energía 75 %, educación 60 %, sanidad 50 %). [B2]
+- **Cúspide del ciclo**: El 2026-05-10 se publicaron 5 betänkanden (JuU32/34/39, FiU37/38) y 3 proposiciones (HD03250 e-ID, HD03261 Skatteverket, HD03263 ejecución de retornos, HD03267 amenazas de seguridad) — el mayor volumen legislativo en un solo día del mandato. [A1]
+- **Ciclo económico**: Trayectoria NGDP_RPCH 2,4 % (2022) → 0,1 % (2023) → 1,2 % (2024) → 1,8 % (2025) → 2,1 % (2026, FMI WEO abr. 2026 T+0 [horizon:year]). Deuda/PIB mantenida en 32–33 %. [A1]
+- **Durabilidad de la coalición**: Tidö sobrevivió 4 años a pesar de 11 presiones de voto de confianza, 3 sustituciones ministeriales (sin cambio de primer ministro), 2 grandes caídas en las encuestas — situándola en el cuadrante del **gobierno minoritario estable** de la comparación histórica del [Svenska statsministerinstitutet](https://www.statsministern.se). [B2]
+- **Detonante futuro más importante para la renovación del ciclo**: Resultado electoral el 2026-09-13 (T+126) — ver scenario-analysis.md para el árbol de coalición de cuatro ramas.
+
+---
+
+### Banner de confianza del ciclo
+
+| Aspecto | Confianza WEP | Etiqueta de horizonte |
+|---------|---------------|-----------------------|
+| Las leyes de seguridad sobreviven | muy probable (75–85 %) | [horizon:cycle] |
+| Tidö gana la reelección | aproximadamente igual (40–55 %) | [horizon:election] |
+| Saldo fiscal ≤ -1 % | probable (55–70 %) | [horizon:year] |
+| Despliegue completo de e-ID para 2028 | poco probable (20–35 %) | [horizon:cycle] |
+| Tipo de política Riksbank ≤ 2,0 % a finales de 2026 | probable (55–70 %) | [horizon:year] |
+
+---
+
+### Mermaid: Trayectoria del mandato Tidö e inflexión del ciclo
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### Tres hallazgos que definen el ciclo
+
+#### 1. La consolidación del Estado de seguridad ha cruzado el umbral de dependencia de camino
+El mandato 2022–2026 promulgó ≥ 12 leyes de seguridad importantes que cubren protección de eventos, evaluación de amenazas de ciudadanos extranjeros, cooperación nórdica en aplicación de la ley, violencia psicológica y ejecución de retornos. Para el 2026-05-10, la arquitectura legal es *lo suficientemente completa como para que la reversión sea más costosa políticamente que el mantenimiento* — lo que significa que los gobiernos post-electorales modularán (p.ej. retórica más suave alineada con SD, aplicación más moderada) pero no derogarán. **Confianza: alta [A1, B2]**.
+
+#### 2. La disciplina fiscal sobrevivió a la crisis energética
+La coalición Tidö heredó un déficit del 0,3 % y parte con un saldo fiscal proyectado del -1,0 % para 2026 (FMI WEO abr. 2026 GGXCNL_NGDP [A1]) — bien dentro del *finanspolitiska ramverk* sueco. La deuda se mantuvo en el 32,4 % del PIB a pesar de los subsidios por la crisis energética, los costes de adhesión a la OTAN (defensa al 2 % del PIB) y el gasto anticíclico en el mercado laboral. Este es el **ciclo fiscal menos perturbado desde 2008–2010**. *Probable* (55–70 % [horizon:cycle]) que cualquier coalición sucesora preserve el marco.
+
+#### 3. La identidad digital y la arquitectura de gestión de crisis financiera son los riesgos de implementación abiertos
+HD03250 (e-ID estatal) y HD01FiU37 (gestión de crisis en el sector financiero) están codificados pero no son operativos. Ambos se ejecutarán en los **primeros 12–24 meses del mandato 2026–2030** — bajo un gobierno que Tidö puede que no dirija. El riesgo de implementación del sucesor domina el registro de riesgos para la renovación del ciclo: ver [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §Clúster de implementación y [cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §Dependencias post-mandato.
+
+---
+
+### Resumen de renovación del ciclo (T-126 hasta las elecciones)
+
+Según [`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md), Riksdagsmonitor está **dentro de la ventana de renovación de ±30 días** (ancla electoral: 2026-09-13). Los patrones de consolidación de fin de mandato están activos. Archivado del ciclo 2022 para los PIR programado para el 2026-10-15 (T+32 desde las elecciones). Ver [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) para el mapa completo de transferencia de PIR.
+
+---
+
+### Citas de fuentes
+
+- **Primaria**: [Datos abiertos del Riksdag — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **Gobierno**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **Contexto económico**: FMI WEO abr. 2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **Referencia de gobernanza**: World Bank WGI Suecia 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **Análisis hermanos**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### Pista de auditoría
+
+- **Metodología**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **Plantillas**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **RGPD / ISMS**: Solo fuentes públicas. Sin procesamiento de datos personales más allá de funcionarios públicos nombrados en roles públicos. EIPD no requerida.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_fi.md -->
+
+**Luokitus**: PUBLIC | **Työnkulku**: news-election-cycle | **Sykli**: 2022-09-11 → 2026-09-13 (T-129 toimikauden loppuun)
+**IMF-vuosikerta**: WEO Apr-2026 [horizon:cycle] | **Riksmöte-kattavuus**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Johtopäätös (Bottom Line Up Front)
+
+Tidö-toimikausi 2022–2026 päättyy rakenteellisesti muuttuneeseen Ruotsiin — turvallisuusarkkitehtuuri on uusittu, rahoitusvakausrakenne käynnistetty uudelleen, digitaalinen henkilöllisyyspino kodifioitu ja maahanmuuton täytäntöönpano yhdenmukainen Pohjoismaisten vertaisten kanssa. Kristersson-hallitus tiivisti 2026-05-10, neljä kuukautta ennen syyskuun vaaleja, viisi valiokuntamietintöä ja kolme esitystä yhteen lainsäädäntöpäivään [A2], mikä viestii **toimikauden loppukonsolidaatiosta** eikä avoimesta kilpailusta. *Hyvin todennäköistä* (75–85 % [horizon:cycle]), että ydinturvallisuusuudistukset (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) selviävät vuoden 2026 vaaleista riippumatta siitä, mikä koalitio voittaa — ne ovat ylittäneet *polkuriippuvuuden kynnysarvon*, jossa kumoamiskustannukset ylittävät ylläpitokustannukset.
+
+Tässä raportissa arvioidaan koko toimikausi 2022–2026 yhtenä poliittisena syklinä, joka päättyy syyskuun 2026 vaaleissa. Kolme päätöstä tukee tätä analyysia: (1) **Pidä 2022–2026 turvallisuuskäännettä kvasikonstitutionaalisena muutoksena** — seuraavat hallitukset moduloivat, eivät palauta sitä; (2) **Suunnittele vaalien jälkeiset skenaariot finanssipoliittisen jatkuvuuden, ei politiikan mullistuksen pohjalta** — IMF WEO Apr-2026 ennuste (T+1 NGDP_RPCH 2,1 %, GGXWDG_NGDP 32,4 % [A1]) on alle EU:n keskiarvon ja antaa voittavalle koalitiolle tilaa ylläpitää pikemminkin kuin vetäytyä; (3) **Seuraa sähköisen tunnistautumisen ja finanssikriisinhallintajärjestelmän käyttöönottoa vuonna 2027 käännekohtana** — toteutettavuus, ei lainsäädännön sisältö, ratkaisee Tidö-perinnön kestävyyden.
+
+---
+
+### 60 sekunnin lukeminen
+
+- **Toimikauden tulos**: ~78 % Tidö-hallituksen sitoumuksista [Tidöavtalet](https://www.regeringen.se) on nyt laissa (turvallisuus 90 %, maahanmuutto 85 %, energia 75 %, koulutus 60 %, terveydenhuolto 50 %). [B2]
+- **Syklihuippu**: 2026-05-10 julkaistiin 5 betänkandea (JuU32/34/39, FiU37/38) ja 3 esitystä (HD03250 sähköinen tunnistautuminen, HD03261 Skatteverket, HD03263 palautuksen täytäntöönpano, HD03267 turvallisuusuhkat) — toimikauden suurin yksipäiväinen lainsäädäntövolyymi. [A1]
+- **Taloudellinen sykli**: NGDP_RPCH-polku 2,4 % (2022) → 0,1 % (2023) → 1,2 % (2024) → 1,8 % (2025) → 2,1 % (2026, IMF WEO Apr-2026 T+0 [horizon:year]). Velka/BKT pysyi 32–33 %. [A1]
+- **Koalition kestävyys**: Tidö selvisi 4 vuotta huolimatta 11 epäluottamuspaineesta, 3 ministerivaihdosta (ei pääministerin vaihtoa), 2 suuresta mielipidemittauslaaksosta — sijoittaen sen **vakaan vähemmistöhallituksen** kvadranttiin [Svenska statsministerinstitutet](https://www.statsministern.se) historiallisessa vertailussa. [B2]
+- **Tärkein tulevaisuuden käynnistin syklikierrolle**: Vaalitulos 2026-09-13 (T+126) — katso scenario-analysis.md nelihaaraisen koalitiopuun osalta.
+
+---
+
+### Sykliluotettavuusbanneri
+
+| Näkökohta | WEP-luotettavuus | Horisonttitunniste |
+|-----------|------------------|--------------------|
+| Turvallisuuslait selviävät | hyvin todennäköistä (75–85 %) | [horizon:cycle] |
+| Tidö voittaa uusintavaalit | suunnilleen tasainen (40–55 %) | [horizon:election] |
+| Finanssipoliittinen tasapaino ≤ -1 % | todennäköistä (55–70 %) | [horizon:year] |
+| Sähköisen tunnistautumisen täysi käyttöönotto vuoteen 2028 mennessä | epätodennäköistä (20–35 %) | [horizon:cycle] |
+| Riksbankenin ohjauskorko ≤ 2,0 % vuoden 2026 lopussa | todennäköistä (55–70 %) | [horizon:year] |
+
+---
+
+### Mermaid: Tidö-toimikauden polku ja sykli-inflektiokohta
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### Kolme sykliä määrittelevää löydöstä
+
+#### 1. Turvallisuusvaltion konsolidaatio on ylittänyt polkuriippuvuuden kynnysarvon
+Toimikausi 2022–2026 sääti ≥ 12 merkittävää turvallisuuslakia, jotka kattavat tapahtumaturvallisuuden, ulkomaalaisten uhka-arvioinnin, pohjoismaisen täytäntöönpanoyhteistyön, psykologisen väkivallan ja palautusten täytäntöönpanon. Vuoteen 2026-05-10 mennessä oikeudellinen arkkitehtuuri on *riittävän valmis siten, että peruuttaminen olisi poliittisesti kalliimpaa kuin ylläpito* — mikä tarkoittaa, että vaalienjälkeiset hallitukset moduloivat (esim. pehmeämpi SD-suuntautunut retoriikka, lempeämpi täytäntöönpano) mutta eivät kumoa. **Luotettavuus: korkea [A1, B2]**.
+
+#### 2. Finanssikuri selvisi energiakriisistä
+Tidö-koalitio peri 0,3 %:n alijäämän ja poistuu ennustetulla 2026 -1,0 %:n finanssipoliittisella saldolla (IMF WEO Apr-2026 GGXCNL_NGDP [A1]) — hyvin Ruotsin *finanssipoliittisen kehyksen* sisällä. Velka pysyi 32,4 %:ssa BKT:sta huolimatta energiakiriistukista, NATO-liittymiskustannuksista (puolustus 2 %:iin BKT:sta) ja suhdannetta tasaavista työmarkkinamenoista. Tämä on **vähiten häiriintynyt finanssisykli vuosien 2008–2010 jälkeen**. *Todennäköistä* (55–70 % [horizon:cycle]), että seuraava koalitio säilyttää kehyksen.
+
+#### 3. Digitaalinen identiteetti ja finanssikriisiarkkitehtuuri ovat avoimet toteutusriskit
+HD03250 (valtion sähköinen tunnistautuminen) ja HD01FiU37 (finanssialan kriisinhallinta) on kodifioitu mutta ei operatiivinen. Molemmat toteutetaan **toimikauden 2026–2030 ensimmäisten 12–24 kuukauden aikana** — hallituksen johdolla, jota Tidö ei ehkä johda. Seuraajan toteutusriski hallitsee syklikierron riskikirjaa: katso [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §Toteutusklusteri ja [cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §Toimikauden jälkeiset riippuvuudet.
+
+---
+
+### Syklikiertoyhteenveto (T-126 vaaleihin)
+
+[`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md) mukaan Riksdagsmonitor on **±30 päivän kiertoikkunan sisällä** (vaaliankkuri on 2026-09-13). Toimikauden lopun konsolidaatiomallit ovat aktiiviset. 2022-syklin PIR-arkistointi aikataulutettu 2026-10-15:lle (T+32 vaaleista). Katso [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) täydellisestä PIR-siirtokartasta.
+
+---
+
+### Lähdeviittaukset
+
+- **Ensisijainen**: [Riksdagenin avoin data — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **Hallitus**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **Taloudellinen konteksti**: IMF WEO Apr-2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **Hallintareferenssi**: World Bank WGI Ruotsi 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **Sisaranalyysi**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### Tarkastusketju
+
+- **Metodologia**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **Mallit**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **GDPR / ISMS**: Vain julkiset lähteet. Ei henkilötietojen käsittelyä lukuun ottamatta nimettyjä julkisia virkamiehiä julkisissa rooleissa. DPIA ei tarvita.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_fr.md -->
+
+**Millésime FMI** : WEO avr. 2026 [horizon:cycle] | **Couverture Riksmöte** : 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Synthèse (Ligne de fond)
+
+Le mandat Tidö 2022–2026 s'achève sur un État suédois structurellement transformé — architecture sécuritaire reconstruite, cadre de stabilité financière relancé, infrastructure d'identité numérique codifiée, et application des règles migratoires alignée sur les pairs nordiques. Le 2026-05-10, quatre mois avant les élections de septembre, le gouvernement Kristersson a concentré cinq rapports de commissions et trois propositions en une seule journée législative [A2], signalant une **consolidation en fin de mandat** plutôt qu'un affrontement ouvert. *Très probable* (75–85 % [horizon:cycle]) que les réformes sécuritaires fondamentales (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) survivent aux élections de 2026, quelle que soit la coalition victorieuse — elles ont franchi le *seuil de dépendance au sentier* où les coûts d'inversion dépassent les coûts de maintien.
+
+Ce rapport évalue l'intégralité du mandat 2022–2026 comme un cycle politique unique, se terminant aux élections de septembre 2026. Trois conclusions sont soutenues par cette analyse : (1) **Considérer le virage sécuritaire 2022–2026 comme un changement quasi-constitutionnel** — les gouvernements successeurs moduleront, sans annuler ; (2) **Planifier les scénarios post-électoraux autour de la continuité fiscale, non d'un bouleversement politique** — la projection IMF WEO avr. 2026 (T+1 NGDP_RPCH 2,1 %, GGXWDG_NGDP 32,4 % [A1]) est inférieure à la moyenne européenne et donne à toute coalition victorieuse une marge de maintien plutôt que de recul ; (3) **Surveiller le déploiement de l'e-ID et de la gestion de crise financière en 2027 comme point d'inflexion** — la faisabilité de mise en œuvre, non le contenu législatif, déterminera la durabilité de l'héritage Tidö.
+
+---
+
+### Lecture en 60 secondes
+
+- **Bilan du mandat** : ~78 % des engagements du gouvernement Tidö dans le [Tidöavtalet](https://www.regeringen.se) sont désormais inscrits dans la loi (sécurité 90 %, migration 85 %, énergie 75 %, éducation 60 %, santé 50 %). [B2]
+- **Apogée du cycle** : Le 2026-05-10, publication de 5 betänkanden (JuU32/34/39, FiU37/38) et 3 propositions (HD03250 e-ID, HD03261 Skatteverket, HD03263 exécution des retours, HD03267 menaces sécuritaires) — le plus grand volume législatif en une seule journée du mandat. [A1]
+- **Cycle économique** : Trajectoire NGDP_RPCH 2,4 % (2022) → 0,1 % (2023) → 1,2 % (2024) → 1,8 % (2025) → 2,1 % (2026, IMF WEO avr. 2026 T+0 [horizon:year]). Dette/PIB maintenue à 32–33 %. [A1]
+- **Durabilité de la coalition** : Tidö a survécu 4 ans malgré 11 pressions de vote de défiance, 3 remplacements ministériels (aucun changement de Premier ministre), 2 importantes baisses dans les sondages — la plaçant dans le quadrant du **gouvernement minoritaire stable** de la comparaison historique du [Svenska statsministerinstitutet](https://www.statsministern.se). [B2]
+- **Principal déclencheur futur pour le renouvellement du cycle** : Résultat électoral le 2026-09-13 (T+126) — voir scenario-analysis.md pour l'arbre de coalition à quatre branches.
+
+---
+
+### Bannière de fiabilité du cycle
+
+| Aspect | Fiabilité WEP | Balise horizon |
+|--------|---------------|----------------|
+| Les lois sécuritaires survivent | très probable (75–85 %) | [horizon:cycle] |
+| Tidö remporte la réélection | à peu près égal (40–55 %) | [horizon:election] |
+| Solde budgétaire ≤ -1 % | probable (55–70 %) | [horizon:year] |
+| Déploiement complet de l'e-ID d'ici 2028 | peu probable (20–35 %) | [horizon:cycle] |
+| Taux directeur Riksbank ≤ 2,0 % fin 2026 | probable (55–70 %) | [horizon:year] |
+
+---
+
+### Mermaid : Trajectoire du mandat Tidö et inflexion du cycle
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### Trois résultats définissant le cycle
+
+#### 1. La consolidation de l'État sécuritaire a franchi le seuil de dépendance au sentier
+Le mandat 2022–2026 a promulgué ≥ 12 lois sécuritaires majeures couvrant la protection des événements, l'évaluation des menaces des ressortissants étrangers, la coopération nordique en matière d'application de la loi, les violences psychologiques et l'exécution des retours. Au 2026-05-10, l'architecture juridique est *suffisamment complète pour qu'une inversion soit plus coûteuse politiquement que le maintien* — ce qui signifie que les gouvernements post-électoraux moduleront (par exemple, une rhétorique plus douce alignée SD, une application plus clémente) mais n'abrogeront pas. **Fiabilité : haute [A1, B2]**.
+
+#### 2. La discipline budgétaire a survécu à la crise énergétique
+La coalition Tidö a hérité d'un déficit de 0,3 % et repart avec un solde budgétaire projeté de -1,0 % pour 2026 (IMF WEO avr. 2026 GGXCNL_NGDP [A1]) — bien dans le cadre du *finanspolitiska ramverk* suédois. La dette s'est maintenue à 32,4 % du PIB malgré les subventions liées à la crise énergétique, les coûts d'adhésion à l'OTAN (défense à 2 % du PIB) et les dépenses anticycliques sur le marché du travail. C'est le **cycle budgétaire le moins perturbé depuis 2008–2010**. *Probable* (55–70 % [horizon:cycle]) que toute coalition successeur préserve le cadre.
+
+#### 3. L'identité numérique et l'architecture de gestion de crise financière sont les risques de mise en œuvre ouverts
+HD03250 (e-ID étatique) et HD01FiU37 (gestion de crise dans le secteur financier) sont codifiés mais non opérationnels. Tous deux seront mis en œuvre au cours des **12–24 premiers mois du mandat 2026–2030** — sous un gouvernement que Tidö ne dirigera peut-être pas. Le risque de mise en œuvre par le successeur domine le registre des risques pour le renouvellement du cycle : voir [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §Cluster de mise en œuvre et [cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §Dépendances post-mandat.
+
+---
+
+### Aperçu du renouvellement du cycle (T-126 jusqu'aux élections)
+
+Conformément à [`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md), Riksdagsmonitor se trouve **dans la fenêtre de renouvellement de ±30 jours** (ancre électorale : 2026-09-13). Les patterns de consolidation de fin de mandat sont actifs. Archivage du cycle 2022 pour les PIR prévu le 2026-10-15 (T+32 après les élections). Voir [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) pour la carte complète de transfert des PIR.
+
+---
+
+### Citations des sources
+
+- **Primaire** : [Données ouvertes du Riksdag — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **Gouvernement** : [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **Contexte économique** : IMF WEO avr. 2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **Référence de gouvernance** : World Bank WGI Suède 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **Analyses connexes** : [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### Piste d'audit
+
+- **Méthodologie** : [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **Modèles** : [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **RGPD / ISMS** : Sources publiques uniquement. Aucun traitement de données personnelles au-delà des fonctionnaires publics nommés dans des rôles publics. AIPD non requise.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+
+# המנדט של טידו מסתיים: ציר ביטחוני של ארבע שנים מגדיר את ההימורים בבחירות 2026
+
+**סיווג**: PUBLIC | **זרימת עבודה**: news-election-cycle | **מחזור**: 2022-09-11 → 2026-09-13 (T-129 עד סוף המנדט)
+**ווינטאג' קרן המטבע**: WEO אפריל 2026 [horizon:cycle] | **כיסוי Riksmöte**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### סיכום (השורה התחתונה)
+
+מנדט טידו 2022–2026 מסתיים עם מדינה שוודית שעברה מהפך מבני — ארכיטקטורת הביטחון נבנתה מחדש, מסגרת היציבות הפיננסית הופעלה מחדש, תשתית הזהות הדיגיטלית קודפה, ואכיפת כללי ההגירה הוסדרה בהתאם לעמיתים הסקנדינביים. ב-2026-05-10, ארבעה חודשים לפני בחירות ספטמבר, ריכזה ממשלת קריסטרסון חמישה דוחות ועדה ושלושה הצעות ביום חקיקה אחד [A2], ומסמן **איחוד בסוף המנדט** ולא עימות פתוח. *סביר מאוד* (75–85% [horizon:cycle]) שרפורמות הביטחון הליבה (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) ישרדו את בחירות 2026 ללא קשר לאיזה קואליציה תנצח — הן חצו את *סף תלות הנתיב* שבו עלויות ההיפוך עולות על עלויות התחזוקה.
+
+דוח זה מעריך את המנדט השלם 2022–2026 כמחזור פוליטי אחד, המסתיים בבחירות ספטמבר 2026. שלושה מסקנות נתמכות על ידי ניתוח זה: (1) **לראות בציר הביטחוני 2022–2026 שינוי מעין-חוקתי** — ממשלות יורשות ינסחו מחדש, לא יהפכו; (2) **לתכנן תרחישים לאחר הבחירות סביב רציפות פיסקלית, לא הפיכה מדינית** — תחזיות קרן המטבע WEO אפריל 2026 (T+1 NGDP_RPCH 2.1%, GGXWDG_NGDP 32.4% [A1]) נמוכות ממוצע האיחוד האירופי ומאפשרות לכל קואליציה מנצחת לשמר ולא לסגת; (3) **לעקוב אחר השקת ה-e-ID וניהול משברים פיננסיים ב-2027 כנקודת מפנה** — היתכנות היישום, לא תוכן החקיקה, תקבע האם מורשת טידו בת-קיימא.
+
+---
+
+### קריאה של 60 שניות
+
+- **כרטיס ניקוד המנדט**: ~78% מהתחייבויות ממשלת טידו ב-[Tidöavtalet](https://www.regeringen.se) הן כעת חוק (ביטחון 90%, הגירה 85%, אנרגיה 75%, חינוך 60%, בריאות 50%). [B2]
+- **פסגת המחזור**: ב-2026-05-10 פורסמו 5 betänkanden (JuU32/34/39, FiU37/38) ו-3 הצעות (HD03250 e-ID, HD03261 Skatteverket, HD03263 אכיפת החזרה, HD03267 איומי ביטחון) — הנפח החקיקתי הגדול ביותר ביום אחד של המנדט. [A1]
+- **מחזור כלכלי**: מסלול NGDP_RPCH 2.4% (2022) → 0.1% (2023) → 1.2% (2024) → 1.8% (2025) → 2.1% (2026, קרן המטבע WEO אפריל 2026 T+0 [horizon:year]). חוב/תמ"ג נשמר ב-32–33%. [A1]
+- **עמידות הקואליציה**: טידו שרדה 4 שנים למרות 11 לחצי הצבעת אי-אמון, 3 החלפות שרים (ללא החלפת ראש ממשלה), 2 ירידות גדולות בסקרים — ממקמת אותה בריבוע **ממשלת מיעוט יציבה** בהשוואה ההיסטורית של [Svenska statsministerinstitutet](https://www.statsministern.se). [B2]
+- **ה-trigger העתידי החשוב ביותר לגלגול המחזור**: תוצאת הבחירות ב-2026-09-13 (T+126) — ראה scenario-analysis.md לעץ קואליציה בן ארבעה ענפים.
+
+---
+
+### באנר אמינות המחזור
+
+| היבט | אמינות WEP | תגית אופק |
+|------|------------|-----------|
+| חוקי הביטחון שורדים | סביר מאוד (75–85%) | [horizon:cycle] |
+| טידו זוכה בבחירות חוזרות | שווה בערך (40–55%) | [horizon:election] |
+| מאזן פיסקלי ≤ -1% | סביר (55–70%) | [horizon:year] |
+| השקת e-ID מלאה עד 2028 | לא סביר (20–35%) | [horizon:cycle] |
+| ריבית Riksbank ≤ 2.0% סוף 2026 | סביר (55–70%) | [horizon:year] |
+
+---
+
+### Mermaid: מסלול מנדט טידו ונקודת מפנה במחזור
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### שלושה ממצאים המגדירים את המחזור
+
+#### 1. איחוד מדינת הביטחון חצה את סף תלות הנתיב
+המנדט 2022–2026 חוקק ≥ 12 חוקי ביטחון מרכזיים המכסים הגנה על אירועים, הערכת איומים של אזרחים זרים, שיתוף פעולה נורדי לאכיפת חוק, אלימות פסיכולוגית ואכיפת החזרה. ב-2026-05-10 הארכיטקטורה המשפטית *מושלמת דיה שהיפוך יהיה יקר יותר מבחינה פוליטית מאשר תחזוקה* — כלומר ממשלות לאחר הבחירות ינסחו מחדש (כגון רטוריקה רכה יותר מיושרת SD, אכיפה קלה יותר) אך לא יבטלו. **אמינות: גבוהה [A1, B2]**.
+
+#### 2. משמעת פיסקלית שרדה את משבר האנרגיה
+קואליציית טידו ירשה גירעון של 0.3% ועוזבת עם מאזן פיסקלי חזוי של -1.0% לשנת 2026 (קרן המטבע WEO אפריל 2026 GGXCNL_NGDP [A1]) — בתוך המסגרת הפיסקלית השוודית. החוב נשמר ב-32.4% מהתמ"ג למרות סובסידיות משבר האנרגיה, עלויות הצטרפות לנאט"ו (הגנה ל-2% מהתמ"ג) והוצאות שוק עבודה אנטי-מחזוריות. זהו **המחזור הפיסקלי הפחות מופרע מאז 2008–2010**. *סביר* (55–70% [horizon:cycle]) שכל קואליציה יורשת תשמר את המסגרת.
+
+#### 3. זהות דיגיטלית וארכיטקטורת ניהול משברים פיננסיים הם סיכוני היישום הפתוחים
+HD03250 (e-ID ממלכתי) וHD01FiU37 (ניהול משברים במגזר הפיננסי) מקודפים אך לא תפעוליים. שניהם יבוצעו ב**12–24 החודשים הראשונים של המנדט 2026–2030** — תחת ממשלה שטידו אולי לא תוביל. סיכון יישום היורש שולט בפנקס הסיכונים לגלגול המחזור: ראה [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §אשכול יישום ו-[cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §תלויות לאחר המנדט.
+
+---
+
+### תמצית גלגול המחזור (T-126 עד בחירות)
+
+לפי [`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md), Riksdagsmonitor נמצא **בתוך חלון הגלגול ±30 יום** (עוגן הבחירות הוא 2026-09-13). דפוסי איחוד בסוף המנדט פעילים. ארכיוב מחזור 2022 ל-PIRs מתוכנן ל-2026-10-15 (T+32 מהבחירות). ראה [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) למפת העברת PIR המלאה.
+
+---
+
+### ציטוטי מקורות
+
+- **ראשי**: [נתוני Riksdagen הפתוחים — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **ממשלה**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **הקשר כלכלי**: קרן המטבע WEO אפריל 2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **מקור ממשל**: World Bank WGI שוודיה 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **ניתוחים קשורים**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### מסלול ביקורת
+
+- **מתודולוגיה**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **תבניות**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **GDPR / ISMS**: מקורות ציבוריים בלבד. אין עיבוד נתונים אישיים מעבר לפקידים ציבוריים בעלי שם בתפקידים ציבוריים. DPIA אינו נדרש.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_ja.md -->
+
+**分類**: PUBLIC | **ワークフロー**: news-election-cycle | **サイクル**: 2022-09-11 → 2026-09-13 (T-129 任期終了まで)
+**IMFヴィンテージ**: WEO 2026年4月 [horizon:cycle] | **リクスメーテ対象期間**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### 要旨（結論先行型）
+
+ティードー任期2022–2026は、構造的に変容したスウェーデン国家で幕を閉じる——安全保障アーキテクチャが再建され、金融安定の枠組みが再起動し、デジタルアイデンティティスタックが法制化され、移民執行が北欧諸国の水準に合わせられた。2026-05-10、9月の選挙の4ヶ月前に、クリステション政権は5つの委員会報告と3つの法案提案を1日の立法日に集中させ[A2]、**任期末の統合**を示した（開かれた対立ではなく）。コア安全保障改革（HD01JuU32、HD03267、HD01JuU34、HD01JuU39）が、どの連立政権が勝利しようとも2026年選挙を生き延びる可能性は*非常に高い*（75–85% [horizon:cycle]）——それらは撤廃コストが維持コストを上回る*経路依存の閾値*を越えた。
+
+本報告は2022–2026年の任期全体を一つの政治サイクルとして評価し、2026年9月の選挙で締め括られる。この分析が支持する3つの判断：(1) **2022–2026安全保障転換を準憲法的変化として扱う**——後継政権は修正するが、覆さない；(2) **選挙後のシナリオを政策の激変ではなく財政の継続性を軸に計画する**——IMF WEO 2026年4月の予測（T+1 NGDP_RPCH 2.1%、GGXWDG_NGDP 32.4% [A1]）はEU平均を下回り、勝利した連立政権が撤退ではなく維持の余地を与えている；(3) **2027年のe-IDと金融危機管理の展開を転換点として監視する**——実施可能性こそが、法律の内容ではなく、ティードーの遺産の耐久性を決める。
+
+---
+
+### 60秒の概要
+
+- **任期スコアカード**: ティードー政権の[Tidöavtalet](https://www.regeringen.se)上のコミットメントの約78%が現在法律となっている（安全保障90%、移民85%、エネルギー75%、教育60%、医療50%）。[B2]
+- **サイクルの頂点**: 2026-05-10に5つのbetänkanden（JuU32/34/39、FiU37/38）と3つの提案（HD03250 e-ID、HD03261 Skatteverket、HD03263 送還執行、HD03267 安全保障の脅威）が公表された——任期中最大の1日あたり立法量。[A1]
+- **経済サイクル**: NGDP_RPCH軌跡 2.4%（2022）→ 0.1%（2023）→ 1.2%（2024）→ 1.8%（2025）→ 2.1%（2026、IMF WEO 2026年4月 T+0 [horizon:year]）。債務/GDP比32–33%に維持。[A1]
+- **連立の耐久性**: ティードーは11回の不信任投票圧力、3回の閣僚交代（首相交代なし）、2回の大きな支持率低下にもかかわらず4年間生き残り——[Svenska statsministerinstitutet](https://www.statsministern.se)の歴史的比較において**安定した少数政権**の象限に位置する。[B2]
+- **サイクルロールオーバーの最重要トリガー**: 2026-09-13の選挙結果（T+126）——4つの枝を持つ連立ツリーはscenario-analysis.mdを参照。
+
+---
+
+### サイクル信頼性バナー
+
+| 側面 | WEP信頼性 | 地平線タグ |
+|------|-----------|-----------|
+| 安全保障法が存続 | 非常に高い（75–85%） | [horizon:cycle] |
+| ティードーが再選 | ほぼ互角（40–55%） | [horizon:election] |
+| 財政収支 ≤ -1% | 高い（55–70%） | [horizon:year] |
+| 2028年までのe-ID完全展開 | 低い（20–35%） | [horizon:cycle] |
+| リクスバンク政策金利 ≤ 2.0% 2026年末 | 高い（55–70%） | [horizon:year] |
+
+---
+
+### Mermaid: ティードー任期の軌跡とサイクルの転換点
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### サイクルを定義する3つの発見
+
+#### 1. 安全保障国家の統合が経路依存の閾値を越えた
+2022–2026年の任期は、イベント保護、外国人に対する脅威評価、北欧執行協力、心理的暴力、送還執行をカバーする12以上の主要な安全保障法を制定した。2026-05-10の時点で、法的アーキテクチャは*撤廃が維持よりも政治的にコストがかかるほど完成している*——つまり選挙後の政権は修正する（たとえばよりソフトなSD調整のレトリック、より緩やかな執行）が、廃止はしない。**信頼度：高 [A1, B2]**。
+
+#### 2. 財政規律がエネルギー危機を乗り越えた
+ティードー連立は0.3%の赤字を引き継ぎ、2026年の財政収支予測 -1.0%（IMF WEO 2026年4月 GGXCNL_NGDP [A1]）で退く——スウェーデンの*finanspolitiska ramverk*の範囲内で十分。エネルギー危機補助金、NATO加盟コスト（防衛費GDP比2%へ）、反景気循環的な労働市場支出にもかかわらず、債務はGDP比32.4%に維持された。これは**2008–2010年以来最も乱れのない財政サイクル**である。後継連立がフレームワークを維持する*確率は高い*（55–70% [horizon:cycle]）。
+
+#### 3. デジタルアイデンティティと金融危機アーキテクチャが未解決の実装リスク
+HD03250（国家e-ID）とHD01FiU37（金融セクターの危機管理）は法制化されているが稼働していない。両者は**2026–2030年の任期の最初の12–24ヶ月**に展開される——ティードーが率いないかもしれない政権の下で。後継者の実装リスクがサイクルロールオーバーのリスクレジスターを支配する：[risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §実装クラスターと[cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §任期後の依存関係を参照。
+
+---
+
+### サイクルロールオーバー概要（T-126 選挙まで）
+
+[`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md)によると、Riksdagsmonitorは**±30日のロールオーバーウィンドウ内**にある（選挙アンカーは2026-09-13）。任期末の統合パターンが活性化している。2022サイクルのPIRのサイクルアーカイブは2026-10-15（選挙後T+32）に予定。PIR引き継ぎマップの全体は[`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md)を参照。
+
+---
+
+### 出典引用
+
+- **一次資料**: [リクスダーゲン公開データ — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **政府**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **経済的背景**: IMF WEO 2026年4月（NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH）[A1]
+- **ガバナンス参照**: World Bank WGI スウェーデン 2022–2024（source=75, CC.EST, RL.EST, GE.EST）[A2]
+- **関連分析**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### 監査証跡
+
+- **方法論**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **テンプレート**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **GDPR / ISMS**: 公開情報のみ。公的役職の名前の挙がった公務員以外の個人データは処理しない。DPIAは不要。
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_ko.md -->
+
+**분류**: PUBLIC | **워크플로우**: news-election-cycle | **사이클**: 2022-09-11 → 2026-09-13 (T-129 임기 종료까지)
+**IMF 빈티지**: WEO 2026년 4월 [horizon:cycle] | **릭스메테 적용 기간**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### 핵심 결론 (결론 우선)
+
+티도 임기 2022–2026은 구조적으로 변모한 스웨덴 국가와 함께 막을 내린다 — 안보 아키텍처가 재건되고, 금융 안정 체계가 재가동되고, 디지털 신원 스택이 법제화되고, 이민 집행이 북유럽 기준에 맞추어졌다. 2026-05-10, 9월 선거 4개월 전에 크리스테르손 정부는 다섯 개의 위원회 보고서와 세 개의 법안을 단 하루의 입법일에 집중시켜[A2], **임기 말 통합**을 보여주었다(개방적 대결이 아닌). 어느 연립이 승리하더라도 핵심 안보 개혁(HD01JuU32, HD03267, HD01JuU34, HD01JuU39)이 2026년 선거를 생존할 가능성은 *매우 높다*(75–85% [horizon:cycle]) — 이들은 철회 비용이 유지 비용을 초과하는 *경로 의존 임계치*를 넘었다.
+
+이 보고서는 2022–2026년 전체 임기를 2026년 9월 선거로 마감되는 단일 정치 사이클로 평가한다. 이 분석이 지지하는 세 가지 판단: (1) **2022–2026 안보 전환을 준헌법적 변화로 취급하라** — 후계 정부는 수정하되, 뒤집지는 않는다; (2) **선거 후 시나리오를 정책 격변이 아닌 재정 연속성을 기반으로 계획하라** — IMF WEO 2026년 4월 예측(T+1 NGDP_RPCH 2.1%, GGXWDG_NGDP 32.4% [A1])은 EU 평균 이하로, 어느 승리 연립에게도 철수가 아닌 유지의 여지를 준다; (3) **2027년 e-ID와 금융 위기 관리 배포를 전환점으로 모니터링하라** — 입법 내용이 아닌 실현 가능성이 티도 유산의 지속성을 결정한다.
+
+---
+
+### 60초 요약
+
+- **임기 성과**: 티도 정부의 [Tidöavtalet](https://www.regeringen.se) 공약 중 약 78%가 현재 법률이 됐다(안보 90%, 이민 85%, 에너지 75%, 교육 60%, 의료 50%). [B2]
+- **사이클 정점**: 2026-05-10에 5개의 betänkanden(JuU32/34/39, FiU37/38)과 3개의 법안(HD03250 e-ID, HD03261 Skatteverket, HD03263 송환 집행, HD03267 안보 위협)이 발표됐다 — 임기 중 최대 단일 입법일 분량. [A1]
+- **경제 사이클**: NGDP_RPCH 궤적 2.4%(2022) → 0.1%(2023) → 1.2%(2024) → 1.8%(2025) → 2.1%(2026, IMF WEO 2026년 4월 T+0 [horizon:year]). 부채/GDP 32–33% 유지. [A1]
+- **연립 내구성**: 티도는 11번의 불신임 압박, 3번의 장관 교체(총리 교체 없음), 2번의 큰 지지율 하락에도 4년간 생존 — [Svenska statsministerinstitutet](https://www.statsministern.se) 역사적 비교에서 **안정적 소수정부** 사분면에 위치. [B2]
+- **사이클 롤오버의 가장 중요한 미래 촉발 요인**: 2026-09-13 선거 결과(T+126) — 네 개의 가지를 가진 연립 트리는 scenario-analysis.md 참조.
+
+---
+
+### 사이클 신뢰도 배너
+
+| 측면 | WEP 신뢰도 | 지평선 태그 |
+|------|-----------|-----------|
+| 안보법 생존 | 매우 높음 (75–85%) | [horizon:cycle] |
+| 티도 재선 | 거의 동등 (40–55%) | [horizon:election] |
+| 재정 수지 ≤ -1% | 높음 (55–70%) | [horizon:year] |
+| 2028년까지 e-ID 완전 배포 | 낮음 (20–35%) | [horizon:cycle] |
+| 릭스방크 정책 금리 ≤ 2.0% 2026년 말 | 높음 (55–70%) | [horizon:year] |
+
+---
+
+### Mermaid: 티도 임기 궤적과 사이클 전환점
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### 사이클을 정의하는 세 가지 발견
+
+#### 1. 안보 국가 통합이 경로 의존 임계치를 넘었다
+2022–2026 임기는 행사 보호, 외국인에 대한 위협 평가, 북유럽 법 집행 협력, 심리적 폭력, 송환 집행을 포괄하는 12개 이상의 주요 안보법을 제정했다. 2026-05-10 현재 법적 아키텍처는 *철회가 유지보다 정치적으로 더 비용이 드는 수준으로 완성됐다* — 즉 선거 후 정부는 수정할 것이지만(예: 더 부드러운 SD 조율 레토릭, 더 온화한 집행) 폐지하지는 않을 것이다. **신뢰도: 높음 [A1, B2]**.
+
+#### 2. 재정 규율이 에너지 위기를 견뎌냈다
+티도 연립은 0.3% 적자를 물려받고 2026년 재정 수지 예측 -1.0%(IMF WEO 2026년 4월 GGXCNL_NGDP [A1])로 퇴임한다 — 스웨덴의 *finanspolitiska ramverk* 내에서 충분히 유지됐다. 에너지 위기 보조금, NATO 가입 비용(방위비 GDP 2%), 경기 대응적 노동시장 지출에도 불구하고 부채는 GDP 대비 32.4%에 유지됐다. 이는 **2008–2010년 이후 가장 안정적인 재정 사이클**이다. 후계 연립이 프레임워크를 유지할 가능성은 *높다*(55–70% [horizon:cycle]).
+
+#### 3. 디지털 신원과 금융 위기 아키텍처가 미해결 실현 리스크다
+HD03250(국가 e-ID)과 HD01FiU37(금융 부문 위기 관리)은 법제화됐지만 운용 중이 아니다. 양자 모두 **2026–2030 임기의 첫 12–24개월** 내에 집행될 것이다 — 티도가 이끌지 않을 수도 있는 정부 하에서. 후계자 실현 리스크가 사이클 롤오버 리스크 레지스터를 지배한다: [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §실현 클러스터와 [cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §임기 후 의존성 참조.
+
+---
+
+### 사이클 롤오버 개요 (T-126 선거까지)
+
+[`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md)에 따르면 Riksdagsmonitor는 **±30일 롤오버 창 내**에 있다(선거 앵커는 2026-09-13). 임기 말 통합 패턴이 활성화됐다. 2022 사이클 PIR의 사이클 아카이브는 2026-10-15(선거 후 T+32)에 예정. PIR 이관 맵 전체는 [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) 참조.
+
+---
+
+### 출처 인용
+
+- **1차 자료**: [릭스다겐 공개 데이터 — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **정부**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **경제적 맥락**: IMF WEO 2026년 4월(NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **거버넌스 참조**: World Bank WGI 스웨덴 2022–2024(source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **연관 분석**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### 감사 추적
+
+- **방법론**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **템플릿**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **GDPR / ISMS**: 공개 자료만 사용. 공개 역할의 명명된 공무원 이외의 개인 데이터는 처리하지 않음. DPIA 불필요.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_nl.md -->
+
+**Classificatie**: PUBLIC | **Workflow**: news-election-cycle | **Cyclus**: 2022-09-11 → 2026-09-13 (T-129 tot einde mandaat)
+**IMF-jaargang**: WEO apr. 2026 [horizon:cycle] | **Riksmöte-dekking**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Samenvatting (Kernboodschap)
+
+Het Tidö-mandaat 2022–2026 eindigt met een structureel getransformeerde Zweedse staat — veiligheidsarchitectuur herbouwd, kader voor financiële stabiliteit opnieuw gestart, digitale identiteitsinfrastructuur gecodificeerd en migratiehandhaving afgestemd op Scandinavische normen. Op 2026-05-10, vier maanden voor de verkiezingen van september, concentreerde de Kristersson-regering vijf commissierapporten en drie voorstellen in één enkele wetgevingsdag [A2], wat **consolidatie aan het einde van het mandaat** signaleert in plaats van openlijke confrontatie. *Zeer waarschijnlijk* (75–85 % [horizon:cycle]) dat de kernsecurityhervormingen (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) de verkiezingen van 2026 overleven, ongeacht welke coalitie wint — ze hebben de *padafhankelijkheidsdrempel* overschreden waar de kosten van terugdraaien hoger zijn dan de onderhoudskosten.
+
+Dit rapport beoordeelt het volledige mandaat 2022–2026 als één enkele politieke cyclus, die eindigt bij de verkiezingen van september 2026. Drie conclusies worden onderbouwd door deze analyse: (1) **Beschouw de veiligheidspivot van 2022–2026 als een quasi-constitutionele verschuiving** — opvolgende regeringen zullen moduleren, niet terugdraaien; (2) **Plan post-verkiezingsscenario's rond fiscale continuïteit, niet beleidsomwenteling** — de IMF WEO apr. 2026-projectie (T+1 NGDP_RPCH 2,1 %, GGXWDG_NGDP 32,4 % [A1]) ligt onder het EU-gemiddelde en geeft elke winnende coalitie ruimte om te handhaven in plaats van terug te trekken; (3) **Bewaak de uitrol van e-ID en financieel crisismanagement in 2027 als kantelpunt** — uitvoerbaarheid, niet wettelijke inhoud, bepaalt of het Tidö-erfgoed duurzaam is.
+
+---
+
+### 60-seconden-lezing
+
+- **Mandaatscorekaart**: ~78 % van de verplichtingen van de Tidö-regering in het [Tidöavtalet](https://www.regeringen.se) zijn nu wet (veiligheid 90 %, migratie 85 %, energie 75 %, onderwijs 60 %, gezondheidszorg 50 %). [B2]
+- **Cyclustop**: Op 2026-05-10 werden 5 betänkanden (JuU32/34/39, FiU37/38) en 3 voorstellen (HD03250 e-ID, HD03261 Skatteverket, HD03263 terugkeerhandhaving, HD03267 veiligheidsdreigementen) gepubliceerd — het grootste wetsvolume op één dag van het mandaat. [A1]
+- **Economische cyclus**: NGDP_RPCH-trajectorie 2,4 % (2022) → 0,1 % (2023) → 1,2 % (2024) → 1,8 % (2025) → 2,1 % (2026, IMF WEO apr. 2026 T+0 [horizon:year]). Schuld/BBP gehouden op 32–33 %. [A1]
+- **Coalitieduurzaamheid**: Tidö overleefde 4 jaar ondanks 11 drukpunten van moties van wantrouwen, 3 ministerwissel (geen premier-wissel), 2 grote dalingen in peilingen — waarmee het in het **stabiele minderheidskabinet**-kwadrant van de historische vergelijking van [Svenska statsministerinstitutet](https://www.statsministern.se) valt. [B2]
+- **Belangrijkste toekomstige trigger voor cyclus-rollover**: Verkiezingsuitslag op 2026-09-13 (T+126) — zie scenario-analysis.md voor de viertak-coalitiestructuur.
+
+---
+
+### Cyclus-vertrouwensbanner
+
+| Aspect | WEP-vertrouwen | Horizonlabel |
+|--------|----------------|--------------|
+| Veiligheidswetten overleven | zeer waarschijnlijk (75–85 %) | [horizon:cycle] |
+| Tidö wint herverkiezing | ongeveer gelijk (40–55 %) | [horizon:election] |
+| Begrotingssaldo ≤ -1 % | waarschijnlijk (55–70 %) | [horizon:year] |
+| Volledige uitrol e-ID voor 2028 | onwaarschijnlijk (20–35 %) | [horizon:cycle] |
+| Riksbank-beleidsrente ≤ 2,0 % eind 2026 | waarschijnlijk (55–70 %) | [horizon:year] |
+
+---
+
+### Mermaid: Trajectorie van het Tidö-mandaat en cyclus-inflectie
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### Drie cyclusbepalende bevindingen
+
+#### 1. De consolidatie van de veiligheidsstaat heeft de padafhankelijkheidsdrempel overschreden
+Het mandaat 2022–2026 heeft ≥ 12 belangrijke veiligheidswetten aangenomen die evenementenbescherming, dreigingsbeoordeling van buitenlandse staatsburgers, Scandinavische handhavingssamenwerking, psychologisch geweld en terugkeerhandhaving omvatten. Per 2026-05-10 is de juridische architectuur *compleet genoeg dat terugdraaien politiek kostbaarder zou zijn dan handhaving* — wat betekent dat post-verkiezingsregeringen zullen moduleren (bijv. zachtere SD-gerichte retoriek, soepelere handhaving) maar niet zullen afschaffen. **Vertrouwen: hoog [A1, B2]**.
+
+#### 2. Begrotingsdiscipline overleefde de energiecrisis
+De Tidö-coalitie erfde een tekort van 0,3 % en vertrekt met een geprojecteerd begrotingssaldo van -1,0 % voor 2026 (IMF WEO apr. 2026 GGXCNL_NGDP [A1]) — ruim binnen het Zweedse *finanspolitiska ramverk*. De schuld bleef op 32,4 % van het BBP ondanks energiehulpsubsidies, NAVO-toetredingskosten (defensie naar 2 % BBP) en anticyclische arbeidsmarktuitgaven. Dit is de **minst verstoorde begrotingscyclus sinds 2008–2010**. *Waarschijnlijk* (55–70 % [horizon:cycle]) dat elke opvolgende coalitie het kader behoudt.
+
+#### 3. Digitale identiteit en financieel crisisarchitectuur zijn de open uitvoeringsrisico's
+HD03250 (staatse e-ID) en HD01FiU37 (crisismanagement in de financiële sector) zijn gecodificeerd maar niet operationeel. Beide worden uitgevoerd in de **eerste 12–24 maanden van het mandaat 2026–2030** — onder een regering die Tidö misschien niet leidt. Het uitvoeringsrisico van de opvolger domineert het risicoregister voor cyclus-rollover: zie [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §Uitvoeringscluster en [cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §Post-mandaatafhankelijkheden.
+
+---
+
+### Overzicht cyclus-rollover (T-126 tot verkiezingen)
+
+Volgens [`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md) bevindt Riksdagsmonitor zich **binnen het ±30-daagse rollover-venster** (verkiezingsanker is 2026-09-13). Consolidatiepatronen aan het einde van het mandaat zijn actief. Cyclus-archivering van 2022-cyclus PIR's gepland voor 2026-10-15 (T+32 na verkiezingen). Zie [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) voor de volledige PIR-doorstuurroutekaart.
+
+---
+
+### Bronvermeldingen
+
+- **Primair**: [Riksdagen open data — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **Regering**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **Economische context**: IMF WEO apr. 2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **Governance-referentie**: World Bank WGI Zweden 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **Verwante analyses**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### Auditspoor
+
+- **Methodologie**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **Sjablonen**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **AVG / ISMS**: Alleen openbare bronnen. Geen verwerking van persoonsgegevens buiten genoemde ambtenaren in openbare functies. DPIA niet vereist.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_no.md -->
+
+**Klassifisering**: PUBLIC | **Arbeidsflyt**: news-election-cycle | **Syklus**: 2022-09-11 → 2026-09-13 (T-129 til mandatets slutt)
+**IMF-årgangen**: WEO Apr-2026 [horizon:cycle] | **Riksmöte-dekning**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Konklusjon (Bottom Line Up Front)
+
+Tidö-mandatet 2022–2026 avsluttes med en strukturelt transformert svensk stat — sikkerhetsarkitekturen gjenoppbygd, rammeverket for finansiell stabilitet restartet, den digitale identitetsstakken kodifisert og migrasjonsgjennomføringen tilpasset nordiske jevnaldrende. Den 2026-05-10, fire måneder før septembervalget, konsentrerte Kristersson-regjeringen fem utvalgsrapporter og tre proposisjoner til én enkelt lovgivningsdag [A2], noe som signaliserer **konsolidering mot slutten av mandatperioden** snarere enn åpen strid. *Meget sannsynlig* (75–85 % [horizon:cycle]) at kjernens sikkerhetsreformer (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) overlever valget i 2026 uavhengig av hvilken koalisjon som vinner — de har overskredet *sti-avhengighets-terskelen* der reverseringskostnadene overstiger vedlikeholdskostnadene.
+
+Denne rapporten vurderer hele mandatperioden 2022–2026 som én enkelt politisk syklus, som avsluttes ved septembervalget i 2026. Tre beslutninger støttes av denne analysen: (1) **Betrakt 2022–2026-sikkerhetspivoten som en kvasi-konstitusjonell endring** — etterfølgende regjeringer vil modulere, ikke reversere den; (2) **Planlegg scenarier etter valget basert på finanspolitisk kontinuitet, ikke politisk omveltning** — IMF WEO Apr-2026-prognosen (T+1 NGDP_RPCH 2,1 %, GGXWDG_NGDP 32,4 % [A1]) ligger under EU-gjennomsnittet og gir enhver vinnende koalisjon rom til å opprettholde snarere enn å trekke seg; (3) **Overvåk utrullingen av e-ID og finansiell krisehåndtering i 2027 som vendepunktet** — implementeringsgjennomførbarhet, ikke lovgivningsinnhold, avgjør om Tidö-arven er holdbar.
+
+---
+
+### 60-sekunders lesning
+
+- **Mandatresultat**: ~78 % av Tidö-regjeringens forpliktelser i [Tidöavtalet](https://www.regeringen.se) er nå lov (sikkerhet 90 %, migrasjon 85 %, energi 75 %, utdanning 60 %, helsevesen 50 %). [B2]
+- **Sykkeltopp**: 2026-05-10 publiserte 5 betänkanden (JuU32/34/39, FiU37/38) og 3 proposisjoner (HD03250 e-ID, HD03261 Skatteverket, HD03263 returgjennomføring, HD03267 sikkerhetstrusler) — det største enkeltdags lovgivningsvolumet i mandatperioden. [A1]
+- **Økonomisk syklus**: NGDP_RPCH-bane 2,4 % (2022) → 0,1 % (2023) → 1,2 % (2024) → 1,8 % (2025) → 2,1 % (2026, IMF WEO Apr-2026 T+0 [horizon:year]). Gjeld/BNP holdt på 32–33 %. [A1]
+- **Koalisjonens holdbarhet**: Tidö overlevde 4 år til tross for 11 mistillitspress, 3 ministerutskiftninger (ingen statsministerutskiftning), 2 større meningsmålingsslumper — noe som plasserer den i **stabil mindretalsregjerings**-kvadranten i [Svenska statsministerinstitutet](https://www.statsministern.se) historisk sammenligning. [B2]
+- **Viktigste fremtidige trigger for sykkeltilbakestilling**: Valgresultat den 2026-09-13 (T+126) — se scenario-analysis.md for det firgrenede koalisjonstre.
+
+---
+
+### Sykkel-tillitsbanner
+
+| Aspekt | WEP-tillit | Horisontstikkord |
+|--------|------------|-----------------|
+| Sikkerhetslover overlever | meget sannsynlig (75–85 %) | [horizon:cycle] |
+| Tidö vinner omvalg | omtrent jevnt (40–55 %) | [horizon:election] |
+| Finanspolitisk balanse ≤ -1 % | sannsynlig (55–70 %) | [horizon:year] |
+| Full utrulling av e-ID innen 2028 | usannsynlig (20–35 %) | [horizon:cycle] |
+| Riksbankens styringsrente ≤ 2,0 % slutten av 2026 | sannsynlig (55–70 %) | [horizon:year] |
+
+---
+
+### Mermaid: Tidö-mandatets bane og sykkelinflesjon
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### Tre sykkeldefinererende funn
+
+#### 1. Sikkerhetsstatens konsolidering har overskredet sti-avhengighetsterskelen
+Mandatperioden 2022–2026 vedtok ≥ 12 større sikkerhetslover som dekker arrangementsikkerhet, trusselsvurdering av utenlandske statsborgere, nordisk håndhevingssamarbeid, psykisk vold og returgjennomføring. Den 2026-05-10 er den rettslige arkitekturen *komplett nok til at en reversering ville vært mer politisk kostbar enn vedlikehold* — noe som betyr at regjeringer etter valget vil modulere (f.eks. mykere SD-tilpasset retorikk, mildere håndhevelse) men ikke oppheve. **Tillid: høy [A1, B2]**.
+
+#### 2. Finansdisiplinen overlevde energikrisen
+Tidö-koalisjonen arvet et underskudd på 0,3 % og forlater med et forventet finanspolitisk saldo på -1,0 % for 2026 (IMF WEO Apr-2026 GGXCNL_NGDP [A1]) — godt innenfor det svenske *finanspolitiske rammeverket*. Gjelden holdt seg på 32,4 % av BNP til tross for energikrisesubsidier, NATO-tilslutningskostnader (forsvar til 2 % av BNP) og konjunkturmodvirkende arbeidsmarkedsutgifter. Dette er **den minst forstyrrede finanssyklusen siden 2008–2010**. *Sannsynlig* (55–70 % [horizon:cycle]) at enhver etterfølgende koalisjon bevarer rammeverket.
+
+#### 3. Digital identitet og finanskrisarkitektur er de åpne implementeringsrisikoene
+HD03250 (statlig e-ID) og HD01FiU37 (finanssektorens krisehåndtering) er kodifisert men ikke operative. Begge vil utspille seg i **de første 12–24 månedene av mandatperioden 2026–2030** — under en regjering som Tidö kanskje ikke leder. Etterfølgende implementeringsrisiko dominerer risikoregisteret for sykkeltilbakestilling: se [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §Implementeringskluster og [cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §Avhengigheter etter mandatperioden.
+
+---
+
+### Sykkeltilbakestillingsoppsummering (T-126 til valg)
+
+I henhold til [`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md) befinner Riksdagsmonitor seg **innenfor ±30-dagers tilbakestillingsvinduet** (valgankerpunkt er 2026-09-13). Konsolideringsmønstre mot slutten av mandatperioden er aktive. Sykkelarkivering av 2022-syklus PIR-er planlagt til 2026-10-15 (T+32 fra valg). Se [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) for fullstendig PIR-overføringskart.
+
+---
+
+### Kildehenvisninger
+
+- **Primær**: [Riksdagens åpne data — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **Regjering**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **Økonomisk kontekst**: IMF WEO Apr-2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **Styringsreferanse**: World Bank WGI Sverige 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **Søskenanalyse**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### Revisjonssti
+
+- **Metodologi**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **Maler**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **GDPR / ISMS**: Kun offentlige kilder. Ingen behandling av personopplysninger utover navngitte offentlige tjenestemenn i offentlige roller. DPIA ikke påkrevd.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_sv.md -->
+
+**Klassificering**: PUBLIC | **Arbetsflöde**: news-election-cycle | **Cykel**: 2022-09-11 → 2026-09-13 (T-129 till mandatets slut)
+**IMF-årgång**: WEO Apr-2026 [horizon:cycle] | **Riksmötestäckning**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Slutsats (Bottom Line Up Front)
+
+Tidö-mandatet 2022–2026 avslutas med ett strukturellt omvandlat svenskt samhälle — säkerhetsarkitekturen återuppbyggd, ramverket för finansiell stabilitet omstartat, den digitala identitetsstacken kodifierad och migrationstillämpningen anpassad till nordiska jämförbara länder. Den 2026-05-10, fyra månader före septembervalet, koncentrerade Kristersson-regeringen fem utskottsbetänkanden och tre propositioner till en enda lagstiftningsdag [A2], vilket signalerar **konsolidering i slutet av mandattiden** snarare än öppen kamp. *Mycket troligt* (75–85 % [horizon:cycle]) att kärnreformerna på säkerhetsområdet (HD01JuU32, HD03267, HD01JuU34, HD01JuU39) överlever valet 2026 oavsett vilken koalition som vinner — de har passerat *tröskelgränsen för stigberoende* där kostnaden för att backa överstiger kostnaden för att fortsätta.
+
+Denna rapport utvärderar hela mandatperioden 2022–2026 som en enda politisk cykel, som avslutas i september 2026. Tre slutsatser stöds av denna analys: (1) **Betrakta 2022–2026 säkerhetsskiftet som en kvasikonstitutionell förändring** — efterföljande regeringar kommer att nyansera, inte vända det; (2) **Planera scenarier efter valet utifrån finanspolitisk kontinuitet, inte omvälvning** — IMF WEO Apr-2026-prognosen (T+1 NGDP_RPCH 2,1 %, GGXWDG_NGDP 32,4 % [A1]) ligger under EU-genomsnittet och ger vilken vinnande koalition som helst utrymme att upprätthålla snarare än dra tillbaka; (3) **Bevaka utrullningen av e-legitimation och krishantering inom finanssektorn 2027 som en vändpunkt** — genomförandeförmågan, inte lagstiftningsinnehållet, avgör om Tidö-arvet är hållbart.
+
+---
+
+### 60-sekundersläsning
+
+- **Mandatresultat**: ~78 % av Tidö-regeringens åtaganden i [Tidöavtalet](https://www.regeringen.se) har nu blivit lag (säkerhet 90 %, migration 85 %, energi 75 %, utbildning 60 %, sjukvård 50 %). [B2]
+- **Cykeltopp**: 2026-05-10 publicerades 5 betänkanden (JuU32/34/39, FiU37/38) och 3 propositioner (HD03250 e-legitimation, HD03261 Skatteverket, HD03263 återvändandeverkställighet, HD03267 säkerhetshot) — den största lagstiftningsvolymen på en enda dag under hela mandattiden. [A1]
+- **Ekonomisk cykel**: NGDP_RPCH-bana 2,4 % (2022) → 0,1 % (2023) → 1,2 % (2024) → 1,8 % (2025) → 2,1 % (2026, IMF WEO Apr-2026 T+0 [horizon:year]). Skuld-BNP hölls vid 32–33 %. [A1]
+- **Koalitionens hållbarhet**: Tidö överlevde 4 år trots 11 misstroendetryck, 3 ministerbyten (ingen statsministerbyte), 2 stora opinionssvackor — vilket placerar den i **kvadranten för stabil minoritetsregering** i [Svenska statsministerinstitutet](https://www.statsministern.se) historisk jämförelse. [B2]
+- **Viktigaste framåtblickande trigger för cykelomrullning**: Valresultat den 2026-09-13 (T+126) — se scenario-analysis.md för det fyrgrenade koalitionsträdet.
+
+---
+
+### Cykeltillförlitlighetsbanner
+
+| Aspekt | WEP-tillförlitlighet | Horisontstagg |
+|--------|----------------------|---------------|
+| Säkerhetslagar överlever | mycket troligt (75–85 %) | [horizon:cycle] |
+| Tidö vinner omval | ungefär lika (40–55 %) | [horizon:election] |
+| Finansiellt saldo ≤ -1 % | troligt (55–70 %) | [horizon:year] |
+| Fullständig utrullning av e-legitimation till 2028 | osannolikt (20–35 %) | [horizon:cycle] |
+| Riksbankens styrränta ≤ 2,0 % i slutet av 2026 | troligt (55–70 %) | [horizon:year] |
+
+---
+
+### Mermaid: Tidö-mandatets bana & cykelinflektion
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### Tre cykeldefinierande slutsatser
+
+#### 1. Säkerhetsstatens konsolidering har passerat tröskelgränsen för stigberoende
+Mandattiden 2022–2026 antog ≥ 12 större säkerhetslagar som täcker evenemangsskydd, hotbedömning av utländska medborgare, nordiskt samarbete om brottsbekämpning, psykiskt våld och återvändandeverkställighet. Den 2026-05-10 är den rättsliga arkitekturen *tillräckligt komplett för att en återgång skulle vara mer politiskt kostsam än att behålla den* — vilket innebär att regeringar efter valet kommer att nyansera (t.ex. mjukare SD-anpassad retorik, mer skonsam tillämpning) men inte upphäva. **Tillförlitlighet: hög [A1, B2]**.
+
+#### 2. Finansdisciplinen överlevde energikrisen
+Tidö-koalitionen ärvde ett underskott på 0,3 % och avslutar med ett prognostiserat finansiellt saldo på -1,0 % för 2026 (IMF WEO Apr-2026 GGXCNL_NGDP [A1]) — väl inom det svenska *finanspolitiska ramverket*. Skulden hölls vid 32,4 % av BNP trots energikrisstöd, NATO-anslutningskostnader (försvaret till 2 % av BNP) och konjunkturstabiliserande arbetsmarknadssatsningar. Detta är **den minst störda finanscykeln sedan 2008–2010**. *Troligt* (55–70 % [horizon:cycle]) att vilken efterföljande koalition som helst bevarar ramverket.
+
+#### 3. Digital identitet och finanskrisarkitektur är de öppna implementeringsriskerna
+HD03250 (statlig e-legitimation) och HD01FiU37 (krishantering inom finanssektorn) är kodifierade men inte operativa. Båda kommer att genomföras under **de första 12–24 månaderna av mandatperioden 2026–2030** — under en regering som Tidö kanske inte leder. Efterträdandes implementeringsrisk dominerar riskregistret för cykelomrullning: se [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §Implementeringskluster och [cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §Beroenden efter mandattiden.
+
+---
+
+### Cykelomrullningsöversikt (T-126 till val)
+
+Enligt [`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md) befinner sig Riksdagsmonitor **innanför ±30-dagars omrullningsfönster** (valankar är 2026-09-13). Konsolideringsmönster i slutet av mandatperioden är aktiva. Cykelarkivering av 2022-cykelns PIR:er schemalagd till 2026-10-15 (T+32 från valet). Se [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) för fullständig PIR-vidareföringskarta.
+
+---
+
+### Källhänvisningar
+
+- **Primär**: [Riksdagens öppna data — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **Regering**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **Ekonomisk kontext**: IMF WEO Apr-2026 (NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH) [A1]
+- **Styrningsreferens**: World Bank WGI Sverige 2022–2024 (source=75, CC.EST, RL.EST, GE.EST) [A2]
+- **Syskonanalys**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### Revisionskedja
+
+- **Metodologi**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **Mallar**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **GDPR / ISMS**: Enbart offentligt tillgängliga data. Ingen behandling av personuppgifter utöver namngivna offentliga tjänstemän i offentliga roller. DPIA krävs inte.
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_zh.md -->
+
+**分类**: PUBLIC | **工作流程**: news-election-cycle | **周期**: 2022-09-11 → 2026-09-13 (T-129 至任期结束)
+**IMF年份**: WEO 2026年4月 [horizon:cycle] | **里克斯会议覆盖**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### 结论（开门见山）
+
+蒂多任期2022–2026以结构性变革的瑞典国家落幕——安全架构重建完成，金融稳定框架重启，数字身份基础设施法制化，移民执法与北欧同行标准对齐。2026-05-10，距9月大选还有4个月，克里斯特松政府将五份委员会报告和三项法案集中在同一立法日[A2]，彰显的是**任期末整合**而非公开对抗。无论哪个联合政府获胜，核心安全改革（HD01JuU32、HD03267、HD01JuU34、HD01JuU39）在2026年选举后继续存在的可能性*极高*（75–85% [horizon:cycle]）——它们已越过*路径依赖阈值*，即逆转成本超过维护成本的临界点。
+
+本报告将整个2022–2026年任期作为单一政治周期进行评估，以2026年9月大选为终点。三项判断由本分析支持：(1) **将2022–2026安全转型视为准宪法性转变**——后继政府将调整，而不是推翻；(2) **以财政延续性而非政策剧变为基础规划选后情景**——IMF WEO 2026年4月预测（T+1 NGDP_RPCH 2.1%、GGXWDG_NGDP 32.4% [A1]）低于欧盟平均水平，为任何获胜联合政府提供了维持而非撤退的空间；(3) **将2027年电子身份证和金融危机管理的推出作为转折点加以监控**——实施可行性而非立法内容决定蒂多遗产的持久性。
+
+---
+
+### 60秒速览
+
+- **任期成绩单**: 蒂多政府在[Tidöavtalet](https://www.regeringen.se)中的承诺约78%已成为法律（安全90%、移民85%、能源75%、教育60%、医疗50%）。[B2]
+- **周期顶峰**: 2026-05-10发布了5份betänkanden（JuU32/34/39、FiU37/38）和3项提案（HD03250电子身份证、HD03261 Skatteverket、HD03263遣返执行、HD03267安全威胁）——任期内单日最大立法量。[A1]
+- **经济周期**: NGDP_RPCH轨迹 2.4%（2022）→ 0.1%（2023）→ 1.2%（2024）→ 1.8%（2025）→ 2.1%（2026，IMF WEO 2026年4月 T+0 [horizon:year]）。债务/GDP维持在32–33%。[A1]
+- **联合政府耐久性**: 蒂多经历11次不信任投票压力、3次部长更替（无总理更换）、2次大幅民调下滑，历时4年存续——在[Svenska statsministerinstitutet](https://www.statsministern.se)历史比较中位于**稳定少数政府**象限。[B2]
+- **周期滚转最重要的未来触发因素**: 2026-09-13选举结果（T+126）——四支联合树参见scenario-analysis.md。
+
+---
+
+### 周期可信度横幅
+
+| 方面 | WEP可信度 | 地平线标签 |
+|------|----------|-----------|
+| 安全法律存续 | 极高（75–85%） | [horizon:cycle] |
+| 蒂多赢得连任 | 大致相当（40–55%） | [horizon:election] |
+| 财政余额 ≤ -1% | 较高（55–70%） | [horizon:year] |
+| 2028年前完成电子身份证全面推出 | 较低（20–35%） | [horizon:cycle] |
+| 瑞典央行政策利率 ≤ 2.0% 2026年底 | 较高（55–70%） | [horizon:year] |
+
+---
+
+### Mermaid: 蒂多任期轨迹与周期拐点
+
+```mermaid
+flowchart LR
+  A[2022-09-11<br/>Election] -->|Tidö coalition forms| B[2022-2023<br/>Energy crisis<br/>NATO push]
+  B --> C[2023-2024<br/>Migration laws<br/>Security pivot begins]
+  C --> D[2024-2025<br/>NATO accession<br/>Defence ramp 2% GDP]
+  D --> E[2025-2026<br/>End-of-mandate<br/>consolidation sprint]
+  E -->|"2026-05-10<br/>cycle apex"| F[5 betänkanden<br/>3 propositions<br/>1 day]
+  F --> G[2026-09-13<br/>Election T+126]
+  G -.->|"4 coalition branches"| H1[Tidö 32%]
+  G -.-> H2[S-bloc 38%]
+  G -.-> H3[Rainbow 18%]
+  G -.-> H4[Minority 12%]
+  classDef cycle fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  classDef apex fill:#330033,stroke:#ff006e,color:#e0e0e0,stroke-width:2px
+  classDef election fill:#003333,stroke:#ffbe0b,color:#e0e0e0
+  class A,B,C,D,E cycle
+  class F apex
+  class G,H1,H2,H3,H4 election
+```
+
+---
+
+### 三项定义周期的发现
+
+#### 1. 安全国家整合已越过路径依赖阈值
+2022–2026任期颁布了12项以上涵盖活动安保、外籍人员威胁评估、北欧执法合作、心理暴力和遣返执行的重要安全法律。截至2026-05-10，法律架构*完整程度已使逆转在政治上比维护更为代价高昂*——这意味着选后政府将调整（如更温和的SD调和修辞、更宽松执法），但不会废除。**可信度：高 [A1, B2]**。
+
+#### 2. 财政纪律熬过了能源危机
+蒂多联合政府继承0.3%赤字，以2026年预测财政余额-1.0%（IMF WEO 2026年4月 GGXCNL_NGDP [A1]）退场——完全在瑞典*finanspolitiska ramverk*范围内。尽管有能源危机补贴、北约加入费用（国防支出达GDP 2%）和反周期劳动力市场支出，债务仍维持在GDP的32.4%。这是**2008–2010年以来最少扰动的财政周期**。后继联合政府保留该框架的可能性*较高*（55–70% [horizon:cycle]）。
+
+#### 3. 数字身份和金融危机架构是未解决的实施风险
+HD03250（国家电子身份证）和HD01FiU37（金融部门危机管理）已法制化但尚未运作。两者都将在**2026–2030任期的最初12–24个月内**执行——在蒂多可能不领导的政府下。后继实施风险主导周期滚转风险登记册：参见[risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/risk-assessment.md) §实施集群和[cycle-trajectory.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md) §任期后依赖。
+
+---
+
+### 周期滚转概览（T-126至选举）
+
+根据[`ext/cycle-rollover.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/.github/prompts/ext/cycle-rollover.md)，Riksdagsmonitor处于**±30天滚转窗口内**（选举锚点为2026-09-13）。任期末整合模式活跃。2022周期PIR的周期归档计划于2026-10-15（选举后T+32）。PIR交接图的完整内容参见[`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cycle-trajectory.md)。
+
+---
+
+### 来源引用
+
+- **主要**: [里克斯达根公开数据 — betänkanden 2022/23–2025/26](https://data.riksdagen.se) [A1]
+- **政府**: [Tidöavtalet 2022, regeringsförklaring 2022–2025](https://www.regeringen.se) [B2]
+- **经济背景**: IMF WEO 2026年4月（NGDP_RPCH, NGDPD, GGXWDG_NGDP, GGXCNL_NGDP, LUR, PCPIPCH）[A1]
+- **治理参考**: World Bank WGI 瑞典 2022–2024（source=75, CC.EST, RL.EST, GE.EST）[A2]
+- **关联分析**: [`analysis/daily/2026-05-10/year-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/year-ahead/), [`analysis/daily/2026-05-10/monthly-review/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/monthly-review/), [`analysis/daily/2026-05-10/week-ahead/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/)
+
+---
+
+### 审计追踪
+
+- **方法论**: [`analysis/methodologies/ai-driven-analysis-guide.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/ai-driven-analysis-guide.md), [`osint-tradecraft-standards.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/osint-tradecraft-standards.md), [`long-horizon-forecasting.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/methodologies/long-horizon-forecasting.md)
+- **模板**: [`analysis/templates/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/analysis/templates/)
+- **GDPR / ISMS**: 仅使用公开来源。除公开角色中的具名公务员外，不处理任何个人数据。无需DPIA。
+
+<!-- source-sha: 9b3391d5a90750c4cce5d07e561708cafd82829e -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 27 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 40 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2459,3 +3766,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/election-cycle/current/executive-brief_zh.md)

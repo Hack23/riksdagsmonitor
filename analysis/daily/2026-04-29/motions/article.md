@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: motions
 slug: 2026-04-29-motions
 source_folder: analysis/daily/2026-04-29/motions
-generated_at: 2026-05-25T15:59:52.993Z
+generated_at: 2026-05-27T07:35:32.599Z
 language: en
 layout: article
 ---
@@ -1772,12 +1772,6 @@ graph LR
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_es.md -->
 
-**Autor**: James Pether Sörling
-**Fecha**: 2026-04-29
-**ID de ejecución**: 25096387000
-**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e,g)
-**Confianza**: ALTA [B2]
-
 ---
 
 ### 🎯 Resumen (BLUF)
@@ -1855,12 +1849,6 @@ El cluster de justicia penal comprende **8 mociones**, pero la oposición se div
 
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_fi.md -->
-
-**Tekijä**: James Pether Sörling
-**Päivämäärä**: 2026-04-29
-**Ajo-ID**: 25096387000
-**Luokitus**: JULKINEN — GDPR Art. 9(2)(e,g)
-**Luottamus**: KORKEA [B2]
 
 ---
 
@@ -2071,12 +2059,6 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling
-**日付**: 2026-04-29
-**実行ID**: 25096387000
-**分類**: 公開 — GDPR Art. 9(2)(e,g)
-**信頼度**: 高 [B2]
-
 ---
 
 ### 🎯 要点（BLUF）
@@ -2154,12 +2136,6 @@ graph LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling
-**날짜**: 2026-04-29
-**실행 ID**: 25096387000
-**분류**: 공개 — GDPR Art. 9(2)(e,g)
-**신뢰도**: 높음 [B2]
 
 ---
 
@@ -2297,12 +2273,6 @@ graph LR
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_no.md -->
 
-**Forfatter**: James Pether Sörling
-**Dato**: 2026-04-29
-**Kjøre-ID**: 25096387000
-**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
-**Konfidens**: HØY [B2]
-
 ---
 
 ### 🎯 Sammendrag (BLUF)
@@ -2424,12 +2394,6 @@ graph LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/executive-brief_zh.md -->
-
-**作者**: James Pether Sörling
-**日期**: 2026-04-29
-**运行ID**: 25096387000
-**分类**: 公开 — GDPR Art. 9(2)(e,g)
-**可信度**: 高 [B2]
 
 ---
 

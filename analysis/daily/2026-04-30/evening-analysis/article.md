@@ -3,7 +3,7 @@ date: 2026-04-30
 subfolder: evening-analysis
 slug: 2026-04-30-evening-analysis
 source_folder: analysis/daily/2026-04-30/evening-analysis
-generated_at: 2026-05-25T15:59:53.033Z
+generated_at: 2026-05-27T07:35:32.644Z
 language: en
 layout: article
 ---
@@ -2040,11 +2040,6 @@ graph TD
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling  
-**Datum**: 2026-04-30  
-**Konfidenz**: HOCH [B2]  
-**Klassifizierung**: OSINT — Nur öffentliche Quellen  
-
 ---
 
 ### Zusammenfassung
@@ -2456,11 +2451,6 @@ graph TD
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling  
-**Datum**: 2026-04-30  
-**Betrouwbaarheid**: HOOG [B2]  
-**Classificatie**: OSINT — Alleen publieke bronnen  
 
 ---
 

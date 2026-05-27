@@ -3,7 +3,7 @@ date: 2026-05-05
 subfolder: committeeReports
 slug: 2026-05-05-committeeReports
 source_folder: analysis/daily/2026-05-05/committeeReports
-generated_at: 2026-05-25T15:59:53.354Z
+generated_at: 2026-05-27T07:35:32.974Z
 language: en
 layout: article
 ---
@@ -2043,11 +2043,6 @@ graph LR
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/committeeReports/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling  
-**Datum**: 2026-05-05  
-**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e)(g)  
-**Konfidenz**: HOCH [B2]
-
 ---
 
 ### 🎯 BLUF
@@ -2476,11 +2471,6 @@ FiU49(재정 안정성 확인) + KU39(민주적 아키텍처 개혁)의 조합�
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/committeeReports/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling  
-**Datum**: 2026-05-05  
-**Classificatie**: OPENBAAR — AVG Art. 9(2)(e)(g)  
-**Betrouwbaarheid**: HOOG [B2]
 
 ---
 

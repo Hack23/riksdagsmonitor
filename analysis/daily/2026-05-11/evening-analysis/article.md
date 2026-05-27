@@ -3,7 +3,7 @@ date: 2026-05-11
 subfolder: evening-analysis
 slug: 2026-05-11-evening-analysis
 source_folder: analysis/daily/2026-05-11/evening-analysis
-generated_at: 2026-05-25T15:59:53.821Z
+generated_at: 2026-05-27T07:35:33.499Z
 language: en
 layout: article
 ---
@@ -72,6 +72,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1335,13 +1348,542 @@ Interpellation cluster (HD10481–HD11810) ────────────�
 - `analysis/daily/2026-05-11/committee-reports/`: HD01KU34, HD01MJU23, HD01SOU31
 - `analysis/daily/2026-05-11/interpellations/`: HD10481–HD11810
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_ar.md -->
+
+---
+artifact: executive-brief
+
+subfolder: evening-analysis
+workflow: news-evening-analysis
+tier: C
+pass: 2
+---
+
+# تحليل المساء — 2026-05-11
+
+### المقدمة في جملة واحدة
+يصوّت البرلمان السويدي (ريكسداغ) لصالح الحماية الدستورية لحق الإجهاض ولتوسيع القيود المفروضة على حرية تجمّع المنظمات الإرهابية — تعديل دستوري مزدوج تاريخي قبل أربعة أشهر من انتخابات عام 2026.
+
+### التطورات الخمسة الرئيسية لهذا اليوم
+
+#### 1. إقرار التعديل الدستوري — حقوق الإجهاض وقيود الإرهاب (أعلى الأولويات)
+أوصت لجنة الدستور في ريكسداغ (KU) بقبول اقتراح الحكومة رقم 2025/26:78 بوصفه تعديلاً معلّقاً. وفقاً للإجراء السويدي لتعديل الدستور (RF الفصل 8، §§14–16)، يستلزم أي تعديل دستوري تصويتات متطابقة في دورتَي ريكسداغ المتتاليتين مع إجراء انتخابات بينهما. وبعد إقراره مرةً واحدة (2022/23)، يُرسّخ هذا التصويت التعديل. تتضمن الحزمة الثلاثية: (أ) حق دستوري للوصول إلى الإجهاض في RF 2:18a؛ (ب) صلاحية موسّعة لتقييد حرية التجمع للمنظمات التي تستخدم العنف أو التهديدات أو الإكراه لتحقيق أهدافها (مراجعة RF 2:24)؛ (ج) تمكين سحب الجنسية من حاملي الجنسية المزدوجة المدانين بجرائم ذات صلة بالإرهاب. درجة DIW: 97/100 (مستوى L3 للاستخبارات).
+
+#### 2. معارضة حزب V لمقترحات "الوانديل" المتعلقة بالهجرة (عالٍ)
+تهاجم موشنتان من لجنة حزب V (HD024149، HD024150) عناصر محورية في تشديد سياسة الهجرة الحكومية — تحديداً الاقتراح 2025/26:264 (اشتراطات سلوك أكثر صرامة) والاقتراح 2025/26:263 (تعزيز أنشطة الترحيل). يرى حزب V أن مقترحات "الوانديل" مبهمة قانونياً وغير متناسبة وتعرضت لانتقاد من مجلس التشريع (Lagrådet). يُطبَّق مضاعف القرب الانتخابي (1.5×) — الهجرة قضية انتخابية من الدرجة الأولى. درجة DIW: 72/100 (L2+).
+
+#### 3. وظيفة وطنية للتحقيق في الوقاية من الانتحار (متوسط)
+يُنشئ SoU31 وظيفةً وطنية دائمة للتحقيق في حالات الانتحار وإصدار توصيات وقائية، مستلهَمةً من آليات التحقيق القائمة في حوادث السير ووفيات الأمومة. يُتوقع إجماع واسع بين الأحزاب. DIW: 55/100.
+
+#### 4. تبسيطات قانون الصيد (متوسط-منخفض)
+يقترح MJU23 تبسيط تشريعات الصيد: تعديل التراخيص، ورقمنة التصاريح، وتحديث قواعد إدارة الأنواع. صدى انتخابي ريفي. DIW: 42/100.
+
+#### 5. استجوابات المعارضة متمحورة حول مواضيع انتخابية (متوسط)
+قُدِّمت تسعة استجوابات (HD10481–HD11810) تتناول أهداف المناخ (S)، والعمل غير الرسمي (S)، ودور إيواء النساء (S، C)، والقدرة التنافسية للصادرات (C)، وروابط تركيا-حماس (SD)، والأمن الغذائي (S)، والسيادة التكنولوجية الأوروبية (SD)، وقمة EPG (SD). النمط: تُؤطّر S و C مخاوف دولة الرفاه؛ تُؤطّر SD جدول الأعمال الأمني والسياسة الخارجية. نطاق DIW: 35–58/100.
+
+### مؤشرات الأهمية
+- **دستوري**: مرتفع جداً — الإقرار النهائي للإصلاح الدستوري الثلاثي (الإجهاض/حرية الجمعية/الجنسية)
+- **الهجرة**: مرتفع — هجوم منسّق من المعارضة على مقترحات "الوانديل" بدعم من Lagrådet
+- **الرعاية الاجتماعية**: متوسط — بناء مؤسسي للوقاية من الانتحار
+- **التموضع الانتخابي**: مرتفع جداً — تتجه جميع الوثائق نحو التموضع لانتخابات عام 2026
+
+### السياق الاقتصادي
+توقعات صندوق النقد الدولي WEO أبريل 2026 (إصدار منذ شهر واحد، غير منتهٍ): نمو الناتج المحلي الإجمالي السويدي المقدَّر 2.0–2.4% لعام 2026؛ الدين العام ~31% من الناتج المحلي الإجمالي (الأدنى بين نظراء الشمال)؛ فائض مالي ~0.5% من الناتج المحلي الإجمالي. لا أزمة مالية وشيكة؛ خطاب التقشف أداة تموضع لـ SD/KD وليس أساساً لتوقعات صندوق النقد الدولي. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### أولويات العمل (للمستهلكين الاستخباراتيين)
+1. رصد التصويت في الجلسة العامة على KU34 — التاريخ الدقيق TBC لكن وشيك نظراً لوضع الإجراء المعلّق
+2. متابعة موقف لجنة SfU من الاقتراح 264/263 بعد تسجيل موشنات V
+3. ترقّب بيان الحكومة الصحفي بشأن استكمال التعديل الدستوري
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_da.md -->
+
+### ÉNLINJET INDLEDNING
+Riksdagen stemmer for grundlovsmæssig beskyttelse af retten til abort og for udvidelse af restriktioner på terrororganisationers foreningsfrihed — en historisk dobbelt grundlovsændring fire måneder før valget i 2026.
+
+### DAGENS FEM VIGTIGSTE BEGIVENHEDER
+
+#### 1. Grundlovsændring vedtages — Abortrettigheder og terroristbegrænsninger (HØJESTE PRIORITET)
+Riksdagens Forfatningsudvalg (KU) anbefaler vedtagelse af regeringens proposition 2025/26:78 som en hvilende ændring. I henhold til Sveriges grundlovsændringsprocedure (RF kapitel 8, §§14–16) kræver en grundlovsændring identiske afstemninger i to successive Riksdage med et valg imellem. Efter at være vedtaget én gang (2022/23) bekræfter denne afstemning ændringen. Trippelpakken tilføjer: (a) en grundlovsbeskyttet ret til abort i RF 2:18a; (b) udvidede muligheder for at begrænse foreningsfriheden for organisationer, der bruger vold, trusler eller tvang til at forfølge deres mål (RF 2:24 revision); (c) mulighed for fratagelse af statsborgerskab for dobbelte statsborgere dømt for terrorismrelaterede forbrydelser. DIW-score: 97/100 (L3 Efterretningsniveau).
+
+#### 2. V-oppositionen anfægter migrationsvandelsforslag (HØJ)
+To V-udvalgsforslag (HD024149, HD024150) angriber kerneelementer i regeringens stramning af migrationspolitikken — specifikt prop. 2025/26:264 (strengere adfærdskrav) og prop. 2025/26:263 (styrkede tilbagevendelsesaktiviteter). V argumenterer for, at vandelsforlagene er juridisk vage, uforholdsmæssige og kritiseret af Lagrådet. Valgproksimitetsmultiplikator (1,5×) gælder — migration er et tier-1 valgspørgsmål. DIW-score: 72/100 (L2+).
+
+#### 3. National undersøgelsesfunktion for selvmordsforebyggelse (MIDDEL)
+SoU31 opretter en permanent national funktion til at undersøge selvmordstilfælde og udarbejde forebyggelsesanbefalinger, modelleret efter eksisterende mekanismer for trafikulykkes- og mødredødeligheds­undersøgelser. Bred partikonsensus forventes. DIW: 55/100.
+
+#### 4. Forenklinger i jagtlovgivningen (MIDDEL-LAV)
+MJU23 foreslår forenklet jagtlovgivning: ændrede licenser, digitaliserede tilladelser, opdaterede regler for artsforvaltning. Landdistriktselektoralt gennemslag. DIW: 42/100.
+
+#### 5. Oppositionsinterpellationer klynget om valtemaer (MIDDEL)
+Ni interpellationer indgivet (HD10481–HD11810) vedrørende klimamål (S), sort arbejde (S), kvindekrisecenter (S, C), eksportkonkurrenceevne (C), Tyrkiet-Hamas-forbindelser (SD), fødevaresikkerhed (S), europæisk teknologisuverænitet (SD) og EPG-topmøde (SD). Mønster: S og C indrammet velfærdsstatspørgsmål; SD indrammet sikkerheds- og udenrigspolitisk dagsorden. DIW-interval: 35–58/100.
+
+### SIGNIFIKANSVEKTORER
+- **Forfatningsmæssigt**: MEGET HØJ — endelig vedtagelse af tredobbelt grundlovsreform (abort/foreningsfrihed/statsborgerskab)
+- **Migration**: HØJ — koordineret oppositionsangreb på vandelsforslag med Lagrådets opbakning
+- **Social velfærd**: MIDDEL — institutionsopbygning for selvmordsforebyggelse
+- **Valgpositionering**: MEGET HØJ — alle dokumenter aggregerer mod positionering til valget 2026
+
+### ØKONOMISK KONTEKST
+IMF WEO april 2026 (vintage 1 måned, ikke forældet): Sveriges BNP-vækst anslået til 2,0–2,4% for 2026; statsgæld ~31% af BNP (lavest blandt nordiske jævnaldrende); finansielt overskud ~0,5% af BNP. Ingen nært forestående finanskrise; nedskæringsnarrativet er et SD/KD-positioneringsværktøj, ikke IMF-grundlag. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### HANDLINGSPRIORITETER (for efterretningskonsumenter)
+1. Overvåg kammerafstemning om KU34 — præcis dato TBC, men nært forestående givet hvilende-procedurepositionen
+2. Følg SfU-udvalgets position om prop. 264/263 efter registrering af V-forslag
+3. Se efter regeringens pressemeddelelse om grundlovsændringens afslutning
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_de.md -->
+
+### EINZEILER-SCHLAGZEILE
+Der Riksdag stimmt für den verfassungsrechtlichen Schutz des Rechts auf Schwangerschaftsabbruch und für die Ausweitung der Beschränkungen der Vereinigungsfreiheit von Terrororganisationen — eine historische doppelte Verfassungsänderung vier Monate vor den Wahlen 2026.
+
+### DIE FÜNF WICHTIGSTEN ENTWICKLUNGEN HEUTE
+
+#### 1. Verfassungsänderung beschlossen — Abtreibungsrechte und Terroristenbeschränkungen (HÖCHSTE PRIORITÄT)
+Der Verfassungsausschuss des Riksdag (KU) empfiehlt die Annahme der Regierungsproposition 2025/26:78 als ruhende Änderung. Gemäß dem schwedischen Verfassungsänderungsverfahren (RF Kapitel 8, §§14–16) erfordert eine Verfassungsänderung identische Abstimmungen in zwei aufeinanderfolgenden Riksdagen mit einer Wahl dazwischen. Nachdem sie einmal verabschiedet wurde (2022/23) bestätigt diese Abstimmung die Änderung. Das Dreifachpaket fügt hinzu: (a) ein verfassungsrechtliches Recht auf Zugang zu Abtreibung in RF 2:18a; (b) erweiterte Möglichkeit, die Vereinigungsfreiheit von Organisationen einzuschränken, die Gewalt, Drohungen oder Zwang einsetzen, um ihre Ziele zu verfolgen (RF 2:24 Überarbeitung); (c) Ermöglichung der Staatsbürgerschaftsentziehung für Doppelstaatsbürger, die wegen terrorismusbezogener Straftaten verurteilt wurden. DIW-Wert: 97/100 (L3 Nachrichtendienstebene).
+
+#### 2. V-Opposition bestreitet Migrationsvandelvorschläge (HOCH)
+Zwei V-Ausschussanträge (HD024149, HD024150) greifen Kernelemente der Migrationshärtung der Regierung an — insbesondere prop. 2025/26:264 (strengere Führungsanforderungen) und prop. 2025/26:263 (verstärkte Rückführungsaktivitäten). V argumentiert, die Vandelvorschläge seien juristisch vage, unverhältnismäßig und vom Lagrådet kritisiert. Wahlnähe-Multiplikator (1,5×) wird angewendet — Migration ist ein Tier-1-Wahlthema. DIW-Wert: 72/100 (L2+).
+
+#### 3. Nationale Untersuchungsfunktion für Suizidprävention (MITTEL)
+SoU31 richtet eine permanente nationale Funktion zur Untersuchung von Suizidtodesfällen und Erarbeitung präventiver Empfehlungen ein, modelliert nach bestehenden Mechanismen für Verkehrsunfall- und Müttersterblichkeitsuntersuchungen. Breiter Parteikonsens wird erwartet. DIW: 55/100.
+
+#### 4. Vereinfachungen im Jagdrecht (MITTEL-NIEDRIG)
+MJU23 schlägt vereinfachte Jagdgesetzgebung vor: geänderte Lizenzen, digitalisierte Genehmigungen, aktualisierte Artenmanagementregeln. Ländliche Wahlresonanz. DIW: 42/100.
+
+#### 5. Oppositionsinterpellationen um Wahlthemen geclustert (MITTEL)
+Neun Interpellationen eingereicht (HD10481–HD11810) zu Klimazielen (S), Schwarzarbeit (S), Frauenhäusern (S, C), Exportwettbewerbsfähigkeit (C), Türkei-Hamas-Verbindungen (SD), Ernährungssicherheit (S), europäischer Technologiesouveränität (SD) und EPG-Gipfel (SD). Muster: S und C rahmen Sozialstaatsbedenken; SD rahmt Sicherheits- und außenpolitische Agenda. DIW-Bereich: 35–58/100.
+
+### BEDEUTUNGSVEKTOREN
+- **Verfassungsrechtlich**: SEHR HOCH — endgültige Verabschiedung der dreifachen Verfassungsreform (Abtreibung/Vereinigungsfreiheit/Staatsbürgerschaft)
+- **Migration**: HOCH — koordinierter Oppositionsangriff auf Vandelvorschläge mit Unterstützung des Lagrådet
+- **Soziale Wohlfahrt**: MITTEL — institutioneller Aufbau für Suizidprävention
+- **Wahlpositionierung**: SEHR HOCH — alle Dokumente aggregieren auf Positionierung zur Wahl 2026
+
+### WIRTSCHAFTLICHER KONTEXT
+IWF WEO April 2026 (Jahrgang 1 Monat, nicht veraltet): Schwedisches BIP-Wachstum auf 2,0–2,4% für 2026 prognostiziert; Staatsverschuldung ~31% des BIP (niedrigster unter den nordischen Vergleichsländern); Haushaltsüberschuss ~0,5% des BIP. Keine unmittelbar drohende Finanzkrise; das Sparnarrativ ist ein SD/KD-Positionierungswerkzeug, keine IWF-Grundlage. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### HANDLUNGSPRIORITÄTEN (für Nachrichtendienstkunden)
+1. Kammerabstimmung über KU34 beobachten — genaues Datum TBC, aber unmittelbar bevorstehend angesichts der ruhenden Verfahrensposition
+2. Position des SfU-Ausschusses zu prop. 264/263 nach Registrierung der V-Anträge verfolgen
+3. Regierungspressekonferenz zur Verfassungsänderung abwarten
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_es.md -->
+
+### ENCABEZADO EN UNA FRASE
+El Riksdag vota para proteger constitucionalmente el derecho al aborto y para ampliar las restricciones a la libertad de asociación de las organizaciones terroristas — una histórica doble enmienda constitucional cuatro meses antes de las elecciones de 2026.
+
+### LOS CINCO DESARROLLOS CLAVE DE HOY
+
+#### 1. Enmienda constitucional aprobada — Derechos al aborto y restricciones terroristas (MÁXIMA PRIORIDAD)
+El Comité Constitucional del Riksdag (KU) recomienda adoptar la proposición gubernamental 2025/26:78 como enmienda en suspenso. De acuerdo con el procedimiento sueco de enmienda constitucional (RF capítulo 8, §§14–16), un cambio constitucional requiere votos idénticos en dos Riksdags sucesivos con unas elecciones en medio. Habiendo sido aprobada una vez (2022/23), esta votación finaliza la enmienda. El paquete triple añade: (a) un derecho constitucional de acceso al aborto en RF 2:18a; (b) capacidad ampliada para restringir la libertad de asociación de las organizaciones que usan violencia, amenazas o coerción para perseguir sus fines (revisión RF 2:24); (c) habilitación de la revocación de la ciudadanía para nacionales de doble ciudadanía condenados por delitos relacionados con el terrorismo. Puntuación DIW: 97/100 (L3 nivel de inteligencia).
+
+#### 2. La oposición V impugna propuestas de vandel migratorio (ALTA)
+Dos mociones de comisión V (HD024149, HD024150) atacan elementos centrales del endurecimiento migratorio del gobierno — específicamente prop. 2025/26:264 (requisitos de conducta más estrictos) y prop. 2025/26:263 (actividades de retorno reforzadas). V argumenta que las propuestas de vandel son jurídicamente vagas, desproporcionadas y criticadas por el Lagrådet. Se aplica el multiplicador de proximidad electoral (1,5×) — la migración es una cuestión electoral de nivel 1. Puntuación DIW: 72/100 (L2+).
+
+#### 3. Función nacional de investigación para la prevención del suicidio (MEDIA)
+SoU31 establece una función nacional permanente para investigar casos de suicidio y elaborar recomendaciones preventivas, modelada en los mecanismos existentes de investigación de accidentes de tráfico y mortalidad materna. Se espera un amplio consenso entre partidos. DIW: 55/100.
+
+#### 4. Simplificaciones de la legislación sobre caza (MEDIA-BAJA)
+MJU23 propone legislación de caza simplificada: licencias modificadas, permisos digitalizados, reglas actualizadas de gestión de especies. Resonancia electoral rural. DIW: 42/100.
+
+#### 5. Interpelaciones de la oposición agrupadas en temas electorales (MEDIA)
+Nueve interpelaciones presentadas (HD10481–HD11810) sobre objetivos climáticos (S), trabajo no declarado (S), refugios para mujeres (S, C), competitividad exportadora (C), vínculos Turquía-Hamás (SD), seguridad alimentaria (S), soberanía tecnológica europea (SD) y cumbre EPG (SD). Patrón: S y C enmarcan preocupaciones del Estado del bienestar; SD enmarca la agenda de seguridad y política exterior. Rango DIW: 35–58/100.
+
+### VECTORES DE SIGNIFICADO
+- **Constitucional**: MUY ALTA — adopción final de la triple reforma constitucional (aborto/libertad de asociación/ciudadanía)
+- **Migración**: ALTA — ataque coordinado de la oposición a las propuestas de vandel con el respaldo del Lagrådet
+- **Bienestar social**: MEDIA — construcción institucional para la prevención del suicidio
+- **Posicionamiento electoral**: MUY ALTA — todos los documentos convergen hacia el posicionamiento para las elecciones de 2026
+
+### CONTEXTO ECONÓMICO
+FMI WEO abril 2026 (cosecha 1 mes, no obsoleta): crecimiento del PIB sueco proyectado en 2,0–2,4% para 2026; deuda pública ~31% del PIB (la más baja entre los pares nórdicos); superávit presupuestario ~0,5% del PIB. Sin crisis financiera inminente; el narrativo de austeridad es una herramienta de posicionamiento SD/KD, no un fundamento del FMI. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### PRIORIDADES DE ACCIÓN (para consumidores de inteligencia)
+1. Monitorear la votación en cámara sobre KU34 — fecha exacta TBC pero inminente dada la posición procedimental en suspenso
+2. Seguir la posición del comité SfU sobre prop. 264/263 tras el registro de mociones V
+3. Aguardar el comunicado gubernamental sobre la finalización de la enmienda constitucional
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_fi.md -->
+
+### YKSIRIVISOTSIKKO
+Ruotsin Riksdag äänestää aborttioikeuden perustuslaillisesta suojaamisesta ja terroristijärjestöjen yhdistymisvapauden rajoitusten laajentamisesta — historiallinen kaksoisperustuslakimuutos neljä kuukautta ennen vuoden 2026 vaaleja.
+
+### PÄIVÄN VIISI TÄRKEINTÄ TAPAHTUMAA
+
+#### 1. Perustuslakimuutos hyväksytään — Aborttioikeus ja terroristirajoitukset (KORKEIN PRIORITEETTI)
+Riksdagin Perustuslakivaliokunta (KU) suosittaa hallituksen esityksen 2025/26:78 hyväksymistä lepäävänä muutoksena. Ruotsin perustuslainmuutosprosessin mukaisesti (RF luku 8, §§14–16) perustuslakimuutos edellyttää identisiä äänestyksiä kahdessa peräkkäisessä Riksdagissa vaalien välillä. Tultuaan hyväksytyksi kerran (2022/23) tämä äänestys vahvistaa muutoksen. Kolmoispaketissa lisätään: (a) perustuslaillinen oikeus aborttiin RF 2:18a:ssa; (b) laajennettu mahdollisuus rajoittaa yhdistymisvapautta järjestöiltä, jotka käyttävät väkivaltaa, uhkailua tai pakottamista tavoitteidensa edistämiseen (RF 2:24 tarkistus); (c) kansalaisuuden peruuttamisen mahdollistaminen terrorismirikosten vuoksi tuomituille kaksoiskansalaisille. DIW-pisteet: 97/100 (L3 Tiedustelutaso).
+
+#### 2. V-oppositio vastustaa maahanmuuton vandeliehdotuksia (KORKEA)
+Kaksi V-valiokunnan aloitetta (HD024149, HD024150) hyökkää hallituksen maahanmuuttopolitiikan kiristämisen ydintekijöihin — erityisesti prop. 2025/26:264 (tiukemmat käytösvaatimukset) ja prop. 2025/26:263 (tehostetut palautustoimet). V väittää, että vandeliehdotukset ovat oikeudellisesti epäselviä, suhteettomia ja Lagrådetin kritisoimia. Vaaliläheisyyskerroin (1,5×) sovellettavissa — maahanmuutto on tier-1-vaalikysymys. DIW-pisteet: 72/100 (L2+).
+
+#### 3. Itsemurhien ehkäisyn kansallinen tutkintaelin (KESKITASO)
+SoU31 perustaa pysyvän kansallisen elimen itsemurhatapauksien tutkimiseksi ja ehkäisysuositusten laadintaa varten, mallintaen olemassa olevia liikenneturma- ja äitiyskuolleisuustutkintamekanismeja. Laajan puoluekonsensuksen odotetaan toteutuvan. DIW: 55/100.
+
+#### 4. Metsästyslainsäädännön yksinkertaistamisia (KESKITASO-MATALA)
+MJU23 ehdottaa yksinkertaistettua metsästyslainsäädäntöä: muutettuja lupia, digitalisoituja lupia, päivitettyjä lajienhallintasääntöjä. Maaseutuvaalillinen vaikutus. DIW: 42/100.
+
+#### 5. Opposition välikysymykset koottu vaaliteemojen ympärille (KESKITASO)
+Yhdeksän välikysymystä jätetty (HD10481–HD11810) koskien ilmastotavoitteita (S), pimeää työtä (S), naisten turvakoteja (S, C), vientikilpailukykyä (C), Turkki-Hamas-yhteyksiä (SD), elintarviketurvallisuutta (S), eurooppalaista teknologiasuvereniteettia (SD) ja EPG-huippukokousta (SD). Kaava: S ja C kehystävät hyvinvointivaltiollisia huolia; SD kehystää turvallisuus- ja ulkopoliittista agendaa. DIW-vaihteluväli: 35–58/100.
+
+### MERKITTÄVYYSVEKTORIT
+- **Perustuslaillinen**: ERITTÄIN KORKEA — kolmoisperustuslakiuudistuksen (abort/yhdistymisvapaus/kansalaisuus) lopullinen hyväksyminen
+- **Maahanmuutto**: KORKEA — koordinoitu oppositiohyökkäys vandeliehdotuksia vastaan Lagrådetin tuella
+- **Sosiaaliturva**: KESKITASO — itsemurhien ehkäisyn institutionaalistuminen
+- **Vaalikampanjointi**: ERITTÄIN KORKEA — kaikki asiakirjat kohdistuvat vuoden 2026 vaalikampanjointiin
+
+### TALOUDELLINEN KONTEKSTI
+IMF WEO huhtikuu 2026 (vintage 1 kuukausi, ei vanhentunutta): Ruotsin BKT-kasvuksi arvioitu 2,0–2,4% vuodelle 2026; valtion velka ~31% BKT:sta (alhaisin pohjoismaisten vertaismaiden joukossa); julkinen ylijäämä ~0,5% BKT:sta. Ei välitöntä finanssikriisiä; säästönarratiivia käytetään SD/KD:n asemointivälineenä, ei IMF-perusteena. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### TOIMINTAPRIORITEETIT (tiedustelutiedon kuluttajille)
+1. Seuraa täysistuntoäänestystä KU34:stä — tarkka päivämäärä TBC, mutta välittömästi edessä lepäävä-menettelyaseman vuoksi
+2. Seuraa SfU-valiokunnan kantaa prop. 264/263:een V-aloitteiden rekisteröinnin jälkeen
+3. Odota hallituksen tiedotetta perustuslakimuutoksen saattamisesta päätökseen
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_fr.md -->
+
+### PHRASE D'ACCROCHE
+Le Riksdag vote pour la protection constitutionnelle du droit à l'avortement et pour l'extension des restrictions à la liberté d'association des organisations terroristes — un double amendement constitutionnel historique quatre mois avant les élections de 2026.
+
+### LES CINQ DÉVELOPPEMENTS CLÉS DU JOUR
+
+#### 1. Amendement constitutionnel adopté — Droits à l'avortement et restrictions terroristes (PRIORITÉ MAXIMALE)
+Le Comité constitutionnel du Riksdag (KU) recommande l'adoption de la proposition gouvernementale 2025/26:78 en tant qu'amendement en attente. Selon la procédure suédoise de révision constitutionnelle (RF chapitre 8, §§14–16), un amendement constitutionnel requiert des votes identiques dans deux Riksdags successifs avec une élection entre les deux. Ayant été adopté une fois (2022/23), ce vote finalise l'amendement. Le triple paquet ajoute : (a) un droit constitutionnel d'accès à l'avortement dans RF 2:18a ; (b) une capacité élargie à restreindre la liberté d'association des organisations qui recourent à la violence, aux menaces ou à la contrainte pour poursuivre leurs objectifs (révision RF 2:24) ; (c) la possibilité de révocation de la citoyenneté pour les doubles nationaux condamnés pour des infractions liées au terrorisme. Score DIW : 97/100 (L3 niveau renseignement).
+
+#### 2. L'opposition V conteste les propositions de vandel migratoire (ÉLEVÉ)
+Deux motions de commission V (HD024149, HD024150) attaquent des éléments centraux du durcissement migratoire du gouvernement — spécifiquement la prop. 2025/26:264 (exigences de conduite plus strictes) et la prop. 2025/26:263 (renforcement des activités de retour). V soutient que les propositions de vandel sont juridiquement vagues, disproportionnées et critiquées par le Lagrådet. Le multiplicateur de proximité électorale (1,5×) s'applique — la migration est une question électorale de niveau 1. Score DIW : 72/100 (L2+).
+
+#### 3. Fonction nationale d'investigation pour la prévention du suicide (MOYEN)
+SoU31 crée une fonction nationale permanente pour enquêter sur les cas de suicide et formuler des recommandations préventives, inspirée des mécanismes existants d'enquêtes sur les accidents de la route et la mortalité maternelle. Un large consensus partisan est attendu. DIW : 55/100.
+
+#### 4. Simplifications de la législation sur la chasse (MOYEN-BAS)
+MJU23 propose une législation simplifiée sur la chasse : licences modifiées, permis numérisés, règles de gestion des espèces actualisées. Résonance électorale rurale. DIW : 42/100.
+
+#### 5. Interpellations de l'opposition regroupées autour de thèmes électoraux (MOYEN)
+Neuf interpellations déposées (HD10481–HD11810) portant sur les objectifs climatiques (S), le travail non déclaré (S), les refuges pour femmes (S, C), la compétitivité à l'exportation (C), les liens Turquie-Hamas (SD), la sécurité alimentaire (S), la souveraineté technologique européenne (SD) et le sommet EPG (SD). Tendance : S et C encadrent les préoccupations de l'État-providence ; SD encadre l'agenda sécuritaire et de politique étrangère. Plage DIW : 35–58/100.
+
+### VECTEURS DE SIGNIFICATION
+- **Constitutionnel** : TRÈS ÉLEVÉ — adoption finale de la triple réforme constitutionnelle (avortement/liberté d'association/citoyenneté)
+- **Migration** : ÉLEVÉ — attaque coordonnée de l'opposition sur les propositions de vandel avec le soutien du Lagrådet
+- **Protection sociale** : MOYEN — construction institutionnelle pour la prévention du suicide
+- **Positionnement électoral** : TRÈS ÉLEVÉ — tous les documents convergent vers le positionnement pour les élections 2026
+
+### CONTEXTE ÉCONOMIQUE
+FMI WEO avril 2026 (millésime 1 mois, non périmé) : croissance du PIB suédois estimée à 2,0–2,4 % pour 2026 ; dette publique ~31 % du PIB (la plus faible parmi les pairs nordiques) ; excédent budgétaire ~0,5 % du PIB. Aucune crise financière imminente ; le narratif d'austérité est un outil de positionnement SD/KD, pas une base FMI. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### PRIORITÉS D'ACTION (pour les consommateurs de renseignement)
+1. Surveiller le vote en chambre sur KU34 — date exacte TBC mais imminente compte tenu de la position procédurale en attente
+2. Suivre la position de la commission SfU sur prop. 264/263 après enregistrement des motions V
+3. Guetter le communiqué gouvernemental sur la finalisation de l'amendement constitutionnel
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_he.md -->
+
+---
+artifact: executive-brief
+
+subfolder: evening-analysis
+workflow: news-evening-analysis
+tier: C
+pass: 2
+---
+
+# ניתוח ערב — 2026-05-11
+
+### כותרת בשורה אחת
+הריקסדאג מצביע להגנה חוקתית על זכות ההפלה ולהרחבת ההגבלות על חופש ההתאגדות של ארגוני טרור — תיקון חוקתי כפול היסטורי ארבעה חודשים לפני בחירות 2026.
+
+### חמשת ההתפתחויות המרכזיות היום
+
+#### 1. אישור תיקון חוקתי — זכויות הפלה והגבלות טרוריסטים (עדיפות עליונה)
+ועדת החוקה של הריקסדאג (KU) ממליצה לאמץ את הצעת הממשלה 2025/26:78 כתיקון תלוי. בהתאם לנוהל תיקון החוקה השוודי (RF פרק 8, §§14–16), תיקון חוקתי מחייב הצבעות זהות בשני ריקסדאגים עוקבים עם בחירות ביניהם. לאחר שהתקבל פעם אחת (2022/23), הצבעה זו מסיימת את התיקון. החבילה המשולשת מוסיפה: (א) זכות חוקתית לגישה להפלה ב-RF 2:18a; (ב) יכולת מורחבת להגביל את חופש ההתאגדות עבור ארגונים המשתמשים בכוח, איומים או כפייה למימוש מטרותיהם (עדכון RF 2:24); (ג) הפעלת שלילת אזרחות לאזרחים כפולים שהורשעו בעבירות הקשורות לטרור. ציון DIW: 97/100 (רמת L3 מודיעין).
+
+#### 2. אופוזיציית V מתנגדת להצעות "וונדל" הגירה (גבוה)
+שני מוושנות ועדת V (HD024149, HD024150) תוקפות רכיבי ליבה בהחמרת מדיניות ההגירה של הממשלה — ספציפית prop. 2025/26:264 (דרישות התנהגות מחמירות יותר) ו-prop. 2025/26:263 (פעולות החזרה מחוזקות). V טוענת שהצעות הוונדל מעורפלות משפטית, לא מידתיות ומבוקרות על ידי ה-Lagrådet. מכפיל קרבה לבחירות (1.5×) חל — הגירה היא נושא בחירות ברמה 1. ציון DIW: 72/100 (L2+).
+
+#### 3. תפקיד חקירה לאומי למניעת התאבדות (בינוני)
+SoU31 מקים תפקיד לאומי קבוע לחקירת מקרי התאבדות וגיבוש המלצות מניעה, המדגם מנגנוני חקירה קיימים לתאונות דרכים ותמותת אמהות. צפוי קונצנזוס רחב בין סיעות. DIW: 55/100.
+
+#### 4. פישוטים בחקיקת הציד (בינוני-נמוך)
+MJU23 מציע חקיקת ציד מפושטת: רישיונות מותאמים, היתרים דיגיטליים, כללי ניהול מינים מעודכנים. הד אלקטורלי כפרי. DIW: 42/100.
+
+#### 5. שאילתות אופוזיציה מקובצות סביב נושאי בחירות (בינוני)
+הוגשו תשע שאילתות (HD10481–HD11810) הנוגעות ליעדי אקלים (S), עבודה לא מדווחת (S), מקלטי נשים (S, C), תחרותיות יצוא (C), קשרי טורקיה-חמאס (SD), ביטחון תזונתי (S), ריבונות טכנולוגית אירופאית (SD) ופסגת EPG (SD). דפוס: S ו-C מסגרות דאגות מדינת הרווחה; SD מסגרת סדר יום ביטחוני וחוץ-מדיני. טווח DIW: 35–58/100.
+
+### מדדי משמעות
+- **חוקתי**: גבוה מאוד — אישור סופי לרפורמה החוקתית המשולשת (הפלה/חופש התאגדות/אזרחות)
+- **הגירה**: גבוה — התקפה מתואמת של האופוזיציה על הצעות הוונדל עם תמיכת Lagrådet
+- **רווחה חברתית**: בינוני — בניית מוסדות למניעת התאבדות
+- **מיצוב בחירות**: גבוה מאוד — כל המסמכים מצטברים לעבר מיצוב לבחירות 2026
+
+### הקשר כלכלי
+קרן המטבע הבינלאומית WEO אפריל 2026 (וינטאג' 1 חודש, לא מיושן): צמיחת תל"ג שוודי מוערכת ב-2.0–2.4% לשנת 2026; חוב ציבורי ~31% מהתל"ג (הנמוך ביותר בקרב עמיתי הנורדים); עודף תקציבי ~0.5% מהתל"ג. אין משבר פיננסי קרוב; נרטיב הצנע הוא כלי מיצוב של SD/KD, לא בסיס קרן המטבע. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### עדיפויות לפעולה (לצרכני מודיעין)
+1. לעקוב אחר הצבעת המליאה על KU34 — תאריך מדויק TBC אך קרוב נוכח מיקום ההליך התלוי
+2. לעקוב אחר עמדת ועדת SfU בנוגע ל-prop. 264/263 לאחר רישום מוושנות V
+3. לצפות להצהרה ממשלתית על השלמת תיקון החוקה
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_ja.md -->
+
+### 一行見出し
+スウェーデン国会（リクスダーグ）が中絶権の憲法的保護とテロ組織の結社の自由に対する制限の拡大を可決 — 2026年選挙の4か月前における歴史的な二重憲法改正。
+
+### 本日の五大重要動向
+
+#### 1. 憲法改正決定 — 中絶権とテロリスト制限（最高優先度）
+リクスダーグ憲法委員会（KU）が政府提案2025/26:78を休眠中改正として採択するよう勧告。スウェーデンの憲法改正手続き（RF第8章§§14–16）に基づき、憲法改正には2回の連続するリクスダーグで同一の投票が必要であり、その間に総選挙が行われる必要がある。1度採択された（2022/23）後、今回の投票で改正が確定する。三重パッケージには以下が追加される：(a) RF 2:18aに中絶へのアクセスに関する憲法上の権利；(b) 暴力、脅迫、強制を用いて目的を追求する組織の結社の自由を制限する権限の拡大（RF 2:24改訂）；(c) テロ関連犯罪で有罪判決を受けた二重国籍者の国籍剥奪の実現。DIWスコア：97/100（L3 情報機関レベル）。
+
+#### 2. V党反対派が移民ヴァンデル提案に異議申し立て（高）
+2件のV党委員会動議（HD024149、HD024150）が政府の移民強硬策の核心的要素を攻撃 — 具体的には prop. 2025/26:264（より厳しい行動要件）とprop. 2025/26:263（強化された帰還活動）。V党はヴァンデル提案が法的に曖昧で、不均衡であり、ラーグローデットから批判を受けていると主張する。選挙近接乗数（1.5倍）適用 — 移民は第1層選挙争点。DIWスコア：72/100（L2+）。
+
+#### 3. 自殺予防のための全国調査機能（中程度）
+SoU31が自殺事案を調査し予防勧告を策定するための恒久的な全国機能を設立。既存の交通事故および産科的死亡調査メカニズムをモデルとする。広範な党間合意が期待される。DIW：55/100。
+
+#### 4. 狩猟法の簡素化（中低程度）
+MJU23が簡素化された狩猟法制を提案：ライセンスの変更、許可証のデジタル化、種管理規則の更新。農村部の選挙共鳴。DIW：42/100。
+
+#### 5. 野党の質問主意書が選挙テーマで集中（中程度）
+9件の質問主意書提出（HD10481–HD11810）：気候目標（S）、地下経済（S）、女性シェルター（S、C）、輸出競争力（C）、トルコ・ハマス関係（SD）、食料安全保障（S）、欧州技術主権（SD）、EPGサミット（SD）。傾向：SとCが福祉国家的懸念を枠組み；SDが安全保障・外交政策アジェンダを枠組み。DIW範囲：35–58/100。
+
+### 重要度ベクトル
+- **憲法的**：非常に高い — 三重憲法改革（中絶/結社の自由/国籍）の最終採択
+- **移民**：高い — Lagrådetの支持を背景としたヴァンデル提案への野党による協調攻撃
+- **社会福祉**：中程度 — 自殺予防のための制度構築
+- **選挙戦略**：非常に高い — すべての文書が2026年選挙に向けたポジショニングに収束
+
+### 経済的背景
+IMF WEO 2026年4月版（ヴィンテージ1か月、陳腐化なし）：スウェーデンGDP成長率2026年予測2.0–2.4%；公的債務~GDP比31%（北欧諸国中最低）；財政黒字~GDP比0.5%。差し迫った財政危機なし；緊縮ナラティブはSD/KD のポジショニングツールであり、IMFの根拠ではない。*economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### 行動優先事項（情報機関消費者向け）
+1. KU34に関する本会議投票を監視 — 正確な日程TBCだが休眠手続き上の立場から差し迫っている
+2. V動議登録後のSfU委員会のprop. 264/263に関する立場を追跡
+3. 憲法改正完了に関する政府プレスリリースを待機
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_ko.md -->
+
+### 한 줄 요약
+스웨덴 의회(릭스다그)가 낙태권에 대한 헌법적 보호 및 테러 조직의 결사의 자유에 대한 제한 확대를 의결 — 2026년 선거 4개월 전 역사적 이중 헌법 개정.
+
+### 오늘의 다섯 가지 주요 동향
+
+#### 1. 헌법 개정 결정 — 낙태권과 테러 제한 (최고 우선순위)
+릭스다그 헌법위원회(KU)가 정부 의안 2025/26:78을 유보 개정안으로 채택 권고. 스웨덴 헌법 개정 절차(RF 제8장 §§14–16)에 따라, 헌법 개정은 두 번의 연속 의회에서 동일한 표결이 필요하며 중간에 총선이 있어야 한다. 한 번 통과된(2022/23) 후 이번 표결로 개정이 확정된다. 삼중 패키지 내용: (a) RF 2:18a에 낙태 접근에 대한 헌법적 권리; (b) 목적 달성을 위해 폭력, 위협, 강제를 사용하는 단체의 결사의 자유를 제한하는 능력 확대(RF 2:24 개정); (c) 테러 관련 범죄로 유죄 판결을 받은 이중 국적자의 국적 박탈 가능화. DIW 점수: 97/100 (L3 정보기관 수준).
+
+#### 2. V당 반대파, 이민 반델 제안에 이의 제기 (높음)
+두 건의 V당 위원회 동의(HD024149, HD024150)가 정부의 이민 강화 핵심 요소를 공격 — 구체적으로 prop. 2025/26:264(더 엄격한 품행 요건) 및 prop. 2025/26:263(강화된 귀환 활동). V당은 반델 제안이 법적으로 모호하고 비례에 맞지 않으며 라그로데트(Lagrådet)의 비판을 받았다고 주장한다. 선거 근접 승수(1.5×) 적용 — 이민은 1급 선거 이슈. DIW 점수: 72/100 (L2+).
+
+#### 3. 자살 예방을 위한 국가 조사 기능 설립 (중간)
+SoU31이 자살 사례 조사 및 예방 권고 도출을 위한 영구적 국가 기능을 설립. 기존 교통사고 및 산모 사망 조사 메커니즘을 모델로 함. 광범위한 정당 합의 예상. DIW: 55/100.
+
+#### 4. 수렵법 간소화 (중저)
+MJU23이 간소화된 수렵 법령 제안: 허가 변경, 디지털화 허가, 종 관리 규정 업데이트. 농촌 선거 공명. DIW: 42/100.
+
+#### 5. 야당 질문서가 선거 주제 중심으로 집중 (중간)
+9건의 질문서 제출(HD10481–HD11810): 기후 목표(S), 불법 노동(S), 여성 쉼터(S, C), 수출 경쟁력(C), 터키-하마스 연계(SD), 식량 안보(S), 유럽 기술 주권(SD), EPG 정상회의(SD). 패턴: S와 C가 복지국가 우려를 프레이밍; SD가 안보 및 외교 정책 의제를 프레이밍. DIW 범위: 35–58/100.
+
+### 중요도 벡터
+- **헌법적**: 매우 높음 — 삼중 헌법 개혁(낙태/결사의 자유/국적) 최종 채택
+- **이민**: 높음 — Lagrådet 지원을 배경으로 한 야당의 반델 제안 협조 공세
+- **사회 복지**: 중간 — 자살 예방 제도적 구축
+- **선거 전략**: 매우 높음 — 모든 문서가 2026년 선거를 향한 포지셔닝으로 수렴
+
+### 경제적 맥락
+IMF WEO 2026년 4월판(빈티지 1개월, 미진부): 스웨덴 GDP 성장률 2026년 전망 2.0–2.4%; 공공부채 ~GDP 대비 31%(북유럽 동급국 중 최저); 재정흑자 ~GDP 대비 0.5%. 임박한 재정위기 없음; 긴축 서사는 SD/KD의 포지셔닝 도구이며 IMF 근거가 아님. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### 조치 우선순위 (정보기관 소비자용)
+1. KU34에 대한 본회의 투표 모니터링 — 정확한 날짜 TBC이나 유보 절차적 위치로 볼 때 임박
+2. V 동의 등록 후 SfU 위원회의 prop. 264/263에 대한 입장 추적
+3. 헌법 개정 완료에 관한 정부 보도자료 대기
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_nl.md -->
+
+### KOPREGEL IN ÉÉN ZIN
+De Riksdag stemt voor grondwettelijke bescherming van het recht op abortus en voor uitbreiding van de beperkingen op de vrijheid van vereniging van terroristische organisaties — een historische dubbele grondwetswijziging vier maanden voor de verkiezingen van 2026.
+
+### DE VIJF BELANGRIJKSTE ONTWIKKELINGEN VAN VANDAAG
+
+#### 1. Grondwetswijziging aangenomen — Abortusrechten en terroristenbeperkingen (HOOGSTE PRIORITEIT)
+De Grondwetscommissie van de Riksdag (KU) beveelt de aanneming van regeringsproposition 2025/26:78 als slapende wijziging aan. Overeenkomstig de Zweedse procedure voor grondwetswijziging (RF hoofdstuk 8, §§14–16) vereist een grondwetswijziging identieke stemmen in twee opeenvolgende Riksdagen met een verkiezing ertussen. Na eenmaal te zijn aangenomen (2022/23) bevestigt deze stemming de wijziging. Het drievoudige pakket voegt toe: (a) een grondwettelijk recht op toegang tot abortus in RF 2:18a; (b) uitgebreide mogelijkheid om de vrijheid van vereniging te beperken voor organisaties die geweld, bedreigingen of dwang gebruiken om hun doelen na te streven (RF 2:24 herziening); (c) mogelijkheid van intrekking van het staatsburgerschap voor dubbele staatsburgers die zijn veroordeeld voor terrorismegerelateerde misdaden. DIW-score: 97/100 (L3 Inlichtingenniveau).
+
+#### 2. V-oppositie betwist migratievandelvoorstellen (HOOG)
+Twee V-commissiemotions (HD024149, HD024150) vallen kernelementen van de migratieverharding van de regering aan — met name prop. 2025/26:264 (strengere gedragseisen) en prop. 2025/26:263 (versterkte terugkeeractiviteiten). V stelt dat de vandelvoorstellen juridisch vaag, onevenredig en door de Lagrådet bekritiseerd zijn. Verkiezingsnabijeids-multiplier (1,5×) van toepassing — migratie is een tier-1 verkiezingskwestie. DIW-score: 72/100 (L2+).
+
+#### 3. Nationale onderzoeksfunctie voor suïcidepreventie (MIDDEL)
+SoU31 richt een permanente nationale functie op voor het onderzoeken van suïcidegevallen en het formuleren van preventieve aanbevelingen, gemodelleerd naar bestaande mechanismen voor onderzoek naar verkeersongelukken en moedersterfte. Brede partijconsensus wordt verwacht. DIW: 55/100.
+
+#### 4. Vereenvoudigingen in de jachtwetgeving (MIDDEL-LAAG)
+MJU23 stelt vereenvoudigde jachtwetgeving voor: gewijzigde vergunningen, gedigitaliseerde toestemmingen, bijgewerkte soortenbeheerregels. Plattelandselectorale resonantie. DIW: 42/100.
+
+#### 5. Oppositie-interpellaties geclusterd rond verkiezingsthema's (MIDDEL)
+Negen interpellaties ingediend (HD10481–HD11810) over klimaatdoelen (S), zwart werk (S), vrouwenopvang (S, C), exportconcurrentievermogen (C), Turkije-Hamas-verbanden (SD), voedselzekerheid (S), Europese technologiesoevereiniteit (SD) en EPG-top (SD). Patroon: S en C kaderen zorgen over de verzorgingsstaat; SD kader seiligheids- en buitenlandse-politiek agenda. DIW-bereik: 35–58/100.
+
+### BETEKENISVECTOREN
+- **Grondwettelijk**: ZEER HOOG — definitieve aanneming van de drievoudige grondwetshervorming (abortus/vrijheid van vereniging/staatsburgerschap)
+- **Migratie**: HOOG — gecoördineerde oppositieaanval op vandelvoorstellen met steun van de Lagrådet
+- **Sociale welzijn**: MIDDEL — institutionele opbouw voor suïcidepreventie
+- **Verkiezingspositionering**: ZEER HOOG — alle documenten aggregeren naar positionering voor de verkiezingen van 2026
+
+### ECONOMISCHE CONTEXT
+IMF WEO april 2026 (vintage 1 maand, niet verouderd): Zweedse bbp-groei geraamd op 2,0–2,4% voor 2026; staatsschuld ~31% van het bbp (laagste onder de Noordse vergelijkbaren); begrotingsoverschot ~0,5% van het bbp. Geen naderende financiële crisis; het bezuinigingsnarratief is een SD/KD-positioneringstool, geen IMF-grondslag. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### ACTIEPRIORITEITEN (voor inlichtingenconsumenten)
+1. Kamerstemstemming over KU34 volgen — exacte datum TBC maar nakend gezien de slapende procedurepositie
+2. Positie van de SfU-commissie over prop. 264/263 volgen na registratie van V-motions
+3. Wachten op het persberichten van de regering over de voltooiing van de grondwetswijziging
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_no.md -->
+
+### ÉNLINJES INGRESS
+Riksdagen stemmer for grunnlovsfesting av retten til abort og for å utvide restriksjonene på terrororganisasjoners foreningsfrihet — en historisk dobbel grunnlovsendring fire måneder før valget i 2026.
+
+### DAGENS FEM VIKTIGSTE HENDELSER
+
+#### 1. Grunnlovsendring vedtas — Abortrettigheter og terroristbegrensninger (HØYESTE PRIORITET)
+Riksdagens Konstitusjonskomité (KU) anbefaler vedtakelse av regjeringens proposisjon 2025/26:78 som en hvilende endring. I henhold til Sveriges grunnlovsendringsprosedyre (RF kapittel 8, §§14–16) krever en grunnlovsendring identiske voteringer i to påfølgende Riksdager med valg imellom. Etter å ha blitt vedtatt én gang (2022/23) bekrefter denne voteringen endringen. Trippelpakken legger til: (a) en grunnlovsfestet rett til abort i RF 2:18a; (b) utvidet mulighet til å begrense foreningsfriheten for organisasjoner som bruker vold, trusler eller tvang for å forfølge sine mål (RF 2:24 revisjon); (c) mulighet for tilbakekalling av statsborgerskap for doble statsborgere dømt for terrorismrelaterte forbrytelser. DIW-score: 97/100 (L3 Etterretningsnivå).
+
+#### 2. V-opposisjonen bestrider migrasjonsvandelsforslag (HØY)
+To V-komitémotioner (HD024149, HD024150) angriper kjernelementer i regjeringens innstramming av migrasjonspolitikken — spesifikt prop. 2025/26:264 (strengere vandelsvilkår) og prop. 2025/26:263 (styrkede returaktiviteter). V hevder at vandelsforslaget er juridisk vagt, uforholdsmessig og kritisert av Lagrådet. Valgproksmitetsmultiplikator (1,5×) gjelder — migrasjon er et tier-1 valgspørsmål. DIW-score: 72/100 (L2+).
+
+#### 3. Nasjonal undersøkelsesfunksjon for selvmordsforebygging (MIDDELS)
+SoU31 oppretter en permanent nasjonal funksjon for å undersøke selvmordstilfeller og utarbeide forebyggende anbefalinger, modellert etter eksisterende mekanismer for trafikkulykkes- og mødredødelighets­undersøkelser. Bred partikonsensus forventes. DIW: 55/100.
+
+#### 4. Forenklinger i jaktlovgivningen (MIDDELS-LAV)
+MJU23 foreslår forenklet jaktlovgivning: endrede lisenser, digitaliserte tillatelser, oppdaterte regler for artsforvaltning. Distriktselectoralt gjennomslag. DIW: 42/100.
+
+#### 5. Opposisjonsinterpellasjoner klynget rundt valtemaer (MIDDELS)
+Ni interpellasjoner innlevert (HD10481–HD11810) vedrørende klimamål (S), svart arbeid (S), krisesentre for kvinner (S, C), eksportkonkurranseevne (C), Tyrkia-Hamas-koblinger (SD), matsikkerhet (S), europeisk teknologisuverenitet (SD) og EPG-toppmøte (SD). Mønster: S og C rammer inn velferdsstatsbekymringer; SD rammer inn sikkerhets- og utenrikspolitisk agenda. DIW-intervall: 35–58/100.
+
+### SIGNIFIKANSVEKTORER
+- **Konstitusjonelt**: SVÆRT HØY — endelig vedtakelse av trippel grunnlovsreform (abort/foreningsfrihet/statsborgerskap)
+- **Migrasjon**: HØY — koordinert opposisjonsangrep på vandelsforslag med Lagrådets støtte
+- **Sosial velferd**: MIDDELS — institusjonsbygging for selvmordsforebygging
+- **Valgposisjonering**: SVÆRT HØY — alle dokumenter aggregerer mot posisjonering til valget 2026
+
+### ØKONOMISK KONTEKST
+IMF WEO april 2026 (vintage 1 måned, ikke foreldet): Sveriges BNP-vekst anslått til 2,0–2,4% for 2026; statsgjeld ~31% av BNP (lavest blant nordiske jevnaldrende); finansielt overskudd ~0,5% av BNP. Ingen nær forestående finanskrise; innstramningsnarrativet er et SD/KD-posisjoneringsverktøy, ikke IMF-grunnlag. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### HANDLINGSPRIORITETER (for etterretningskonsumenter)
+1. Overvåk kammervotering om KU34 — nøyaktig dato TBC, men nært forestående gitt hvilende-prosedyreposisjonen
+2. Følg SfU-komiteens posisjon om prop. 264/263 etter registrering av V-motioner
+3. Se etter regjeringens pressmelding om grunnlovsendringens avslutning
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_sv.md -->
+
+### ETTRADS-INTRO
+Riksdagen röstar för att grundlagsskydda rätten till abort och för att utvidga begränsningarna av terroristorganisationers föreningsfrihet — en historisk dubbel grundlagsändring fyra månader före riksdagsvalet 2026.
+
+### DAGENS FEM VIKTIGASTE HÄNDELSER
+
+#### 1. Grundlagsändring beslutas — Aborträtt och terroristbegränsningar (HÖGSTA PRIORITET)
+Riksdagens konstitutionsutskott (KU) föreslår att regeringens proposition 2025/26:78 antas som vilande ändring. Enligt Sveriges grundlagsändringsprocess (RF kapitel 8, §§14–16) kräver en grundlagsändring identiska beslut i två på varandra följande riksdagar med riksdagsval emellan. Sedan den passerat en gång (2022/23) fastställer detta omröstning ändringen. Trippelpaketet tillför: (a) en grundlagsskyddad rätt till abort i RF 2:18a; (b) utvidgad möjlighet att begränsa föreningsfriheten för organisationer som använder våld, hot eller tvång för att uppnå sina mål (RF 2:24 revidering); (c) möjliggörande av medborgarskapsåterkallelse för dubbla medborgare dömda för terrorismrelaterade brott. DIW-poäng: 97/100 (L3 Underrättelsenivå).
+
+#### 2. V Oppositionen invänder mot migrationsvandelsförslag (HÖG)
+Två V-utskottsmotioner (HD024149, HD024150) angriper kärnelement i regeringens migrationshårdning — specifikt prop. 2025/26:264 (strängare vandelskrav) och prop. 2025/26:263 (förstärkta återvändandeaktiviteter). V menar att vandelförslagen är juridiskt otydliga, oproportionerliga och Lagrådet-kritiserade. Valnärhetsmultiplikator (1,5×) tillämpas — migration är en tier-1 valfråga. DIW-poäng: 72/100 (L2+).
+
+#### 3. Nationell funktion för suicidpreventionsutredning (MEDEL)
+SoU31 inrättar en permanent nationell funktion för att utreda suicidfall och ta fram förebyggande rekommendationer, modellerad efter befintliga mekanismer för trafikolycks- och mödradödlighetsutredningar. Bred partikonsensus förväntas. DIW: 55/100.
+
+#### 4. Förenklingar i jaktlagstiftningen (MEDEL-LÅGT)
+MJU23 föreslår förenklad jaktlagstiftning: ändrade licenser, digitaliserade tillstånd, uppdaterade regler för artsförvaltning. Landsbygdselektoralt genomslag. DIW: 42/100.
+
+#### 5. Oppositionsinterpellationer klustrade kring valteman (MEDEL)
+Nio interpellationer inlämnade (HD10481–HD11810) rörande klimatmål (S), svartarbete (S), kvinnojourer (S, C), exportkonkurrenskraft (C), Turkiet-Hamas-kopplingar (SD), livsmedelssäkerhet (S), europeisk tekniksuveränitet (SD) och EPG-toppmöte (SD). Mönster: S och C ramar in välfärdsstatliga frågor; SD ramar in säkerhets- och utrikespolitisk agenda. DIW-intervall: 35–58/100.
+
+### SIGNIFIKANSVEKTORER
+- **Konstitutionellt**: MYCKET HÖG — slutgiltigt antagande av trippel grundlagsreform (abort/föreningsfrihet/medborgarskap)
+- **Migration**: HÖG — koordinerat oppositionsangrepp mot vandelförslag med Lagrådets stöd
+- **Socialt välfärd**: MEDEL — institutionsbyggande för suicidprevention
+- **Valpositionering**: MYCKET HÖG — alla dokument aggregerar mot positionering inför valet 2026
+
+### EKONOMISKT SAMMANHANG
+IMF WEO april 2026 (vintage 1 månad, ej inaktuell): Sveriges BNP-tillväxt beräknas till 2,0–2,4% för 2026; statsskuld ~31% av BNP (lägst bland nordiska jämförelseländer); finansiellt överskott ~0,5% av BNP. Ingen nära förestående finanskris; åtstramningsnarrativet är ett SD/KD-positioneringsverktyg, inte IMF-underlag. *economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### ÅTGÄRDSPRIORITERINGAR (för underrättelsekonsumenter)
+1. Bevaka kammarvoteringen om KU34 — exakt datum TBC men nära förestående givet vilande-processläget
+2. Följ SfU-utskottets position om prop. 264/263 efter registrering av V-motioner
+3. Bevaka regeringens pressmeddelande om grundlagsändringens slutförande
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_zh.md -->
+
+### 一句话导语
+瑞典议会（里克斯达格）投票通过堕胎权的宪法保护，并扩大对恐怖组织结社自由的限制——距2026年大选四个月前的历史性双重宪法修正。
+
+### 今日五大关键进展
+
+#### 1. 宪法修正案通过——堕胎权与恐怖主义限制（最高优先级）
+里克斯达格宪法委员会（KU）建议将政府提案2025/26:78作为待定修正案予以采纳。根据瑞典宪法修正程序（RF第8章§§14–16），宪法修正需要在两届连续议会中以相同方式投票，两届之间须举行大选。在首次通过（2022/23）后，此次投票确认该修正案。三重方案新增：(a) 在RF 2:18a中设立获得堕胎的宪法权利；(b) 扩大限制以暴力、威胁或强制手段追求目标的组织的结社自由的权力（RF 2:24修订）；(c) 允许对因恐怖主义相关犯罪被定罪的双重国籍者撤销国籍。DIW得分：97/100（L3情报级别）。
+
+#### 2. V党反对派质疑移民行为规范提案（高）
+两项V党委员会动议（HD024149、HD024150）攻击政府移民强硬路线的核心要素——具体是prop. 2025/26:264（更严格的行为要求）和prop. 2025/26:263（强化遣返活动）。V党认为行为规范提案在法律上含糊不清、不成比例，且遭到立法委员会（Lagrådet）批评。选举邻近乘数（1.5×）适用——移民是第一级选举议题。DIW得分：72/100（L2+）。
+
+#### 3. 全国自杀预防调查职能（中等）
+SoU31设立永久性全国职能，负责调查自杀案例并提出预防建议，以现有道路交通事故和孕产妇死亡调查机制为模板。预计获得广泛跨党派共识。DIW：55/100。
+
+#### 4. 狩猎立法简化（中低）
+MJU23提议简化狩猎法规：修订许可证、数字化审批、更新物种管理规则。农村选举共鸣。DIW：42/100。
+
+#### 5. 反对党质询聚焦选举议题（中等）
+提交九项质询（HD10481–HD11810），涉及气候目标（S）、非正规就业（S）、妇女庇护所（S、C）、出口竞争力（C）、土耳其-哈马斯关联（SD）、粮食安全（S）、欧洲技术主权（SD）和EPG峰会（SD）。规律：S和C框架福利国家关切；SD框架安全与外交政策议程。DIW区间：35–58/100。
+
+### 重要性向量
+- **宪法层面**：非常高——三重宪法改革（堕胎/结社自由/国籍）最终通过
+- **移民**：高——在Lagrådet支持下反对党对行为规范提案的协调攻势
+- **社会福利**：中等——自杀预防的制度化建设
+- **选举战略**：非常高——所有文件汇聚于2026年选举定位
+
+### 经济背景
+IMF世界经济展望2026年4月版（时效1个月，未过时）：瑞典GDP增长预测2026年2.0–2.4%；公共债务~GDP的31%（北欧同类国家中最低）；财政盈余~GDP的0.5%。无迫在眉睫的财政危机；紧缩叙事是SD/KD的定位工具，非IMF依据。*economicProvenance: {provider: imf, dataflow: WEO, vintage: WEO-2026-04, retrieved_at: 2026-05-11T17:22Z}*
+
+### 行动优先事项（情报消费者适用）
+1. 监测关于KU34的全体会议投票——确切日期TBC，但鉴于待定程序位置即将到来
+2. 跟踪V动议登记后SfU委员会对prop. 264/263的立场
+3. 等候政府关于宪法修正完成的新闻声明
+
+<!-- source-sha: 0dd43a1036e70426f9e907a27ac0e074979cf09c -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 6 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1383,6 +1925,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -3,7 +3,7 @@ date: 2026-05-18
 subfolder: interpellations
 slug: 2026-05-18-interpellations
 source_folder: analysis/daily/2026-05-18/interpellations
-generated_at: 2026-05-25T15:59:54.212Z
+generated_at: 2026-05-27T07:35:33.945Z
 language: en
 layout: article
 ---
@@ -1407,11 +1407,6 @@ L'interpellation HD10494 de Markus Wiechel (SD) à la ministre des Affaires étr
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-18/interpellations/executive-brief_nl.md -->
-
-**Classificatie**: PUBLIC — GDPR Art. 9(2)(e,g) politieke gegevens — openbare actoren, openbaar domein  
-**Auteur**: James Pether Sörling  
-**Betrouwbaarheid**: HIGH [B1]  
-**Horizon**: T+11 dagen (antwoorddeadline 2026-05-29); T+30 dagen (politiek signaal gedurende het verkiezingsseizoen)
 
 ### BLUF
 

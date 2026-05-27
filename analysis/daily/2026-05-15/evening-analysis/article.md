@@ -3,7 +3,7 @@ date: 2026-05-15
 subfolder: evening-analysis
 slug: 2026-05-15-evening-analysis
 source_folder: analysis/daily/2026-05-15/evening-analysis
-generated_at: 2026-05-25T15:59:54.097Z
+generated_at: 2026-05-27T07:35:33.816Z
 language: en
 layout: article
 ---
@@ -2179,7 +2179,7 @@ gitGraph
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/executive-brief_ar.md -->
 
-‏---
+---
 artifact: executive-brief
 analysis_date: "2026-05-15"
 subfolder: "evening-analysis"
@@ -2626,7 +2626,7 @@ La Russie a adopté une législation autorisant explicitement l'agression milita
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/executive-brief_he.md -->
 
-‏---
+---
 artifact: executive-brief
 analysis_date: "2026-05-15"
 subfolder: "evening-analysis"
@@ -3075,9 +3075,6 @@ Ryssland har antagit lagstiftning som explicit möjliggör unilateralt militärt
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/executive-brief_zh.md -->
-
-**作者**：James Pether Sörling | **发布**：决策者、公民、记者
-**分类**：🟢 公开 | **日期**：2026-05-15
 
 ---
 

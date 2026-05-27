@@ -3,7 +3,7 @@ date: 2026-05-12
 subfolder: interpellations
 slug: 2026-05-12-interpellations
 source_folder: analysis/daily/2026-05-12/interpellations
-generated_at: 2026-05-25T15:59:53.887Z
+generated_at: 2026-05-27T07:35:33.592Z
 language: en
 layout: article
 ---
@@ -58,6 +58,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1923,13 +1936,369 @@ New cycle PIRs will be established in pir-status.json for this run's topics.
 - IMF SDMX: ✅ ok per prewarm probe  
 - World Bank: not queried (non-economic residue not triggered by these interpellations)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# المعارضة تضغط على الحكومة بشأن تأخير المناخ والاقتصاد الخفي قبل انتخابات 2026
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-12  
+**التصنيف**: PUBLIC  
+**مستوى الثقة**: مرتفع [B2]  
+
+### 🎯 الخلاصة التنفيذية
+
+كشفت استجوابان اشتراكيان-ديمقراطيان في 11 مايو 2026 — HD10481 و HD10482 — عن فجوة في المساءلة لدى تحالف Tidö قبيل الانتخابات فيما يتعلق بتشريعات المناخ وإنفاذ مكافحة العمل غير المُعلن (svartarbete). أُسحب أحدهما — تحدي Åsa Westlund بشأن أهداف المناخ (HD10481) — **في اليوم نفسه الذي نُقل فيه إلى الوزير**، مما يشير إلى مفاوضات غير رسمية أو مناورات استراتيجية قبل الانتخابات. يُحمّل الاستجواب النشط من Marie Olsson (HD10482) وزير المالية Svantesson المسؤولية عن تأخير عامين في تقديم مقترحات لمكافحة العمل غير المُعلن، مدعومًا بأبحاث ESO التي تُظهر خسائر سنوية بقيمة 189 مليار كرونة سويدية في الاقتصاد الخفي.
+
+### 🧭 3 قرارات
+
+1. **توقيت اقتراح المناخ**: هل ستقدم حكومة Tidö اقتراحًا للمناخ قبل انتخابات سبتمبر 2026، أم ستؤجله للبرلمان الجديد؟ تشير المعلومات الاستخباراتية إلى احتمالية منخفضة جدًا قبل يوم الانتخابات [الأفق: شهر].
+2. **مقترحات svartarbete**: هل سيقدم وزير المالية Svantesson مقترحات مراقبة العمل غير المُعلن قبل عطلة الصيف لـ Riksdag (المقدرة في أواخر يونيو)؟ تجعل بيانات ESO 2026:1 التأخير مكلفًا سياسيًا للحكومة والمعارضة. الاحتمالية: متساوية تقريبًا (40–60 %) [الأفق: شهر].
+3. **الاستراتيجية الانتخابية لـ S**: ماذا يكشف سحب Westlund عن التكتيك البرلماني لـ S؟ يُزيل السحبُ نقاشًا قد تدافع فيه الحكومة عن تقاعسها — تفضل S إبقاء القضية حية في خطاب الحملة بدلاً من إعطاء Britz منصة.
+
+### التقييمات الرئيسية
+
+- **KJ-1** (مرتفع): سحب HD10481 تحرك تكتيكي متعمد من S، وليس خطأ إداريًا. سحب الاستجواب قبل النقاش المجدول يحرم الوزير من منصة رسمية للدفاع عن سياسة الحكومة. هذا تكتيك لإدارة المعلومات قبيل الانتخابات. [B2]
+- **KJ-2** (مرتفع): يحمل HD10482 (svartarbete) أعلى ثقل للمساءلة الديمقراطية في هذه الدورة. توفر بيانات ESO 2026:1 (189 مليار كرونة سويدية/سنة في العمل غير المُعلن) لـ S قاعدة أدلة قوية بشكل غير عادي لإحراج الحكومة بشأن التأخير التنظيمي. [B2]
+- **KJ-3** (متوسط): التأخير لعامين في مقترحات svartarbete يتسق تحليليًا مع احتكاك التحالف — عارض SD تاريخيًا توسع التنظيم الذي يمس قطاع البناء غير الرسمي، وهو شريحة انتخابية رئيسية. ومع ذلك، لا تتوفر أدلة سببية مباشرة من SD في هذه الوثائق. [C3 — استنتاج]
+
+### السياق
+
+يُعدّ Riksmöte 2025/26 الجلسة البرلمانية الكاملة الأخيرة للسويد قبل انتخابات سبتمبر 2026. يستهدف كلا الاستجوابين الفجوة بين إعلانات السياسة الحكومية والتسليم التشريعي الفعلي — وهو خطاب متكرر لمعارضة S. يُعدّ سحب HD10481 رسالة مسبقة للانتخابات ذات أهمية خاصة: تُوحّد S محفظتها من التحديات التشريعية لتعظيم فعالية الحملة بدلاً من استنزاف ذخيرتها في نقاشات Riksdag حول قضية واحدة.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_da.md -->
+
+### 🎯 BLUF
+
+To socialdemokratiske interpellationer den 11. maj 2026 — HD10481 og HD10482 — afslører Tidö-koalitionens ansvarsgab forud for valget vedrørende klimalovgivning og bekæmpelse af sort arbejde (svartarbete). Den ene — Åsa Westlunds udfordring om klimamål (HD10481) — blev **trukket tilbage samme dag, den blev overdraget til ministeren**, hvilket signalerer enten uformelle forhandlinger eller strategisk valgmanøvrering. Den aktive interpellation fra Marie Olsson (HD10482) holder finansminister Svantesson ansvarlig for to års forsinkelse med at fremlægge forslag om bekæmpelse af sort arbejde, støttet af ESO-forskning, der viser tab på SEK 189 milliarder om året i den grå økonomi.
+
+### 🧭 3 Beslutninger
+
+1. **Klimapropositionens timing**: Vil Tidö-regeringen fremlægge en klimaproposition inden valget i september 2026, eller udskyde det til det nye parlament? Efterretningerne tyder på meget lav sandsynlighed inden valgdagen [horisont: måned].
+2. **Svartarbete-forslag**: Vil finansminister Svantesson præsentere forslagene om kontrol med sort arbejde inden Riksdags sommerrecess (estimeret til slutningen af juni)? ESO 2026:1-dokumentationen gør forsinkelse politisk kostbar for både regering og opposition. Sandsynlighed: nogenlunde jævnt (40–60 %) [horisont: måned].
+3. **S's valgstrategi**: Hvad afslører Westlunds tilbagetrækning om S's parlamentariske taktik? Tilbagetrækningen fjerner en debat, hvor regeringen kunne forsvare passivitet — S foretrækker at holde spørgsmålet levende i kampagneretorikken frem for at give Britz en platform.
+
+### Nøglevurderinger
+
+- **KJ-1** (HØJ): Tilbagetrækningen af HD10481 er et bevidst taktisk træk fra S, ikke en administrativ fejl. At trække en interpellation tilbage inden den planlagte debat fratager ministeren en formel platform til at forsvare regeringens politik. Dette er en informationsstyringstaktik forud for valget. [B2]
+- **KJ-2** (HØJ): HD10482 (svartarbete) bærer den højeste demokratiske ansvarsbelastning i denne valgperiode. ESO 2026:1-data (SEK 189 milliarder/år i sort arbejde) giver S et usædvanlig stærkt bevismæssigt grundlag for at sætte regeringen i forlegenhed over regulatoriske forsinkelser. [B2]
+- **KJ-3** (MIDDEL): Den to-årige forsinkelse i svartarbete-forslagene er analytisk konsistent med koalitionsfriktion — SD har historisk modsat sig regulatorisk udvidelse, der berører den uformelle byggesektor, en vigtig vælgerdemografi. Direkte kausalt SD-bevis er dog ikke tilgængeligt fra disse dokumenter. [C3 — slutledning]
+
+### Kontekst
+
+Riksmötet 2025/26 er Sveriges sidste fuldstændige parlamentariske session inden valget i september 2026. Begge interpellationer er rettet mod kløften mellem regeringens politikmeddelelser og faktisk lovgivningsmæssig levering — en tilbagevendende S-oppositionsfortælling. Tilbagetrækningen af HD10481 er særligt betydningsfuld som et forvalssignal: S konsoliderer sin lovgivningsmæssige udfordringsportefølje for at maksimere kampagneeffektiviteten frem for at udtømme krudt i enkeltspørgsmål i Riksdag-debatter.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_de.md -->
+
+### 🎯 BLUF
+
+Zwei sozialdemokratische Interpellationen am 11. Mai 2026 — HD10481 und HD10482 — decken die Rechenschaftslücke der Tidö-Koalition vor der Wahl in Bezug auf die Klimagesetzgebung und die Bekämpfung von Schwarzarbeit (svartarbete) auf. Eine davon — Åsa Westlunds Herausforderung zu Klimazielen (HD10481) — wurde **am selben Tag zurückgezogen, an dem sie dem Minister übermittelt wurde**, was entweder auf informelle Verhandlungen oder strategisches Wahlmanövrieren hinweist. Die aktive Interpellation von Marie Olsson (HD10482) hält Finanzminister Svantesson für eine zweijährige Verzögerung bei der Vorlage von Vorschlägen zur Bekämpfung von Schwarzarbeit verantwortlich, gestützt auf ESO-Forschung, die jährliche Verluste von 189 Milliarden SEK in der Schattenwirtschaft belegt.
+
+### 🧭 3 Entscheidungen
+
+1. **Zeitplan der Klimaproposition**: Wird die Tidö-Regierung vor der Wahl im September 2026 eine Klimaproposition vorlegen oder dies auf das neue Parlament verschieben? Erkenntnisse deuten auf eine sehr geringe Wahrscheinlichkeit vor dem Wahltag hin [Horizont: Monat].
+2. **Svartarbete-Vorschläge**: Wird Finanzminister Svantesson die Kontrollvorschläge zur Schwarzarbeit vor der Sommerpause des Riksdag (geschätzt Ende Juni) vorlegen? Das ESO 2026:1-Datenmaterial macht eine Verzögerung politisch kostspielig für Regierung und Opposition. Wahrscheinlichkeit: ungefähr ausgeglichen (40–60 %) [Horizont: Monat].
+3. **S-Wahlstrategie**: Was verrät Westlunds Rückzug über die parlamentarische Taktik der S? Der Rückzug verhindert eine Debatte, in der die Regierung ihre Untätigkeit verteidigen könnte — S zieht es vor, das Thema in der Wahlkampfrhetorik lebendig zu halten, anstatt Britz eine Plattform zu geben.
+
+### Schlüsselurteile
+
+- **KJ-1** (HOCH): Der Rückzug von HD10481 ist ein bewusstes taktisches Manöver der S, kein Verwaltungsfehler. Eine Interpellation vor der geplanten Debatte zurückzuziehen, entzieht dem Minister eine formelle Plattform zur Verteidigung der Regierungspolitik. Dies ist eine Informationssteuerungstaktik im Wahlkampf. [B2]
+- **KJ-2** (HOCH): HD10482 (svartarbete) trägt das höchste demokratische Rechenschaftsgewicht dieses Zyklus. Die ESO 2026:1-Daten (189 Milliarden SEK/Jahr in Schwarzarbeit) geben S eine ungewöhnlich starke Beweisgrundlage, um die Regierung wegen regulatorischer Verzögerungen in Verlegenheit zu bringen. [B2]
+- **KJ-3** (MITTEL): Die zweijährige Verzögerung bei den Svartarbete-Vorschlägen ist analytisch konsistent mit Koalitionsreibungen — SD hat sich historisch gegen regulatorische Ausweitung gestellt, die den informellen Bausektor betrifft, eine wichtige Wählerdemographie. Direkte kausale SD-Beweise sind jedoch aus diesen Dokumenten nicht verfügbar. [C3 — Schlussfolgerung]
+
+### Kontext
+
+Das Riksmöte 2025/26 ist Schwedens letzte vollständige Parlamentssession vor der Wahl im September 2026. Beide Interpellationen zielen auf die Lücke zwischen den Politikankündigungen der Regierung und der tatsächlichen gesetzgeberischen Lieferung — eine wiederkehrende S-Oppositionsnarrative. Der Rückzug von HD10481 ist als Vorwahlsignal besonders bedeutsam: S konsolidiert sein gesetzgeberisches Herausforderungsportfolio, um die Kampagneneffektivität zu maximieren, anstatt Munition in Einzelthema-Riksdag-Debatten zu verbrauchen.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_es.md -->
+
+### 🎯 BLUF
+
+Dos interpelaciones socialdemócratas del 11 de mayo de 2026 — HD10481 y HD10482 — exponen el déficit de responsabilidad de la coalición Tidö antes de las elecciones en materia de legislación climática y aplicación de la lucha contra el trabajo no declarado (svartarbete). Una de ellas — el desafío de Åsa Westlund sobre objetivos climáticos (HD10481) — fue **retirada el mismo día que se transfirió al ministro**, lo que señala negociaciones informales o una maniobra estratégica preelectoral. La interpelación activa de Marie Olsson (HD10482) responsabiliza al ministro de Finanzas Svantesson por un retraso de dos años en la presentación de propuestas para combatir el trabajo no declarado, respaldada por investigaciones ESO que muestran pérdidas anuales de 189 000 millones de SEK en la economía sumergida.
+
+### 🧭 3 Decisiones
+
+1. **Cronología de la proposición climática**: ¿Presentará el gobierno Tidö una proposición climática antes de las elecciones de septiembre de 2026, o lo diferirá al nuevo parlamento? Los análisis de inteligencia indican una probabilidad muy baja antes del día de las elecciones [horizonte: mes].
+2. **Propuestas sobre svartarbete**: ¿Presentará el ministro de Finanzas Svantesson las propuestas de control del trabajo no declarado antes del receso veraniego del Riksdag (estimado a finales de junio)? Los datos de ESO 2026:1 hacen que el retraso sea políticamente costoso tanto para el gobierno como para la oposición. Probabilidad: aproximadamente equilibrada (40–60 %) [horizonte: mes].
+3. **Estrategia electoral de S**: ¿Qué revela la retirada de Westlund sobre la táctica parlamentaria de S? La retirada elimina un debate donde el gobierno podría defender su inacción — S prefiere mantener el tema vivo en la retórica de campaña en lugar de darle a Britz una plataforma.
+
+### Valoraciones clave
+
+- **KJ-1** (ALTO): La retirada de HD10481 es un movimiento táctico deliberado de S, no un error administrativo. Retirar una interpelación antes del debate programado priva al ministro de una plataforma formal para defender la política del gobierno. Esta es una táctica de gestión de información preelectoral. [B2]
+- **KJ-2** (ALTO): HD10482 (svartarbete) conlleva el mayor peso de responsabilidad democrática de este ciclo. Los datos de ESO 2026:1 (189 000 millones de SEK/año en trabajo no declarado) proporcionan a S una base de evidencias inusualmente sólida para señalar al gobierno por los retrasos regulatorios. [B2]
+- **KJ-3** (MEDIO): El retraso de dos años en las propuestas sobre svartarbete es analíticamente coherente con la fricción de coalición — SD se ha opuesto históricamente a la expansión regulatoria que afecta al sector de la construcción informal, un perfil demográfico electoral clave. Sin embargo, la evidencia causal directa de SD no está disponible en estos documentos. [C3 — inferencia]
+
+### Contexto
+
+El Riksmöte 2025/26 es la última sesión parlamentaria completa de Suecia antes de las elecciones de septiembre de 2026. Ambas interpelaciones apuntan a la brecha entre los anuncios de políticas del gobierno y la entrega legislativa efectiva — una narrativa recurrente de la oposición S. La retirada de HD10481 es particularmente significativa como señal preelectoral: S consolida su cartera de desafíos legislativos para maximizar la eficacia de la campaña en lugar de gastar munición en debates parlamentarios de un solo tema.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-12  
+**Luokitus**: PUBLIC  
+**Luotettavuus**: HIGH [B2]  
+
+### 🎯 BLUF
+
+Kaksi sosiaalidemokraattista välikysymystä 11. toukokuuta 2026 — HD10481 ja HD10482 — paljastavat Tidö-koalition vastuuvajeen ennen vaaleja ilmastolakien ja pimeän työn (svartarbete) torjunnan osalta. Toinen niistä — Åsa Westlundin haaste ilmastotavoitteista (HD10481) — **peruttiin samana päivänä kuin se siirrettiin ministerille**, mikä viittaa joko epävirallisiin neuvotteluihin tai strategiseen vaalimanööverin. Marie Olssonin aktiivinen välikysymys (HD10482) pitää valtiovarainministeri Svantessonin vastuussa kahden vuoden viivästymisestä pimeän työn torjuntaehdotusten taulukoinnissa; taustana ESO-tutkimus, joka osoittaa 189 miljardin SEK vuotuiset harmaan talouden menetykset.
+
+### 🧭 3 Päätöstä
+
+1. **Ilmastolakiehdotuksen ajoitus**: Tuleeko Tidö-hallitus esittämään ilmastolakiehdotuksen ennen syyskuun 2026 vaaleja vai siirtääkö se sen uudelle parlamentille? Tiedustelutiedot viittaavat erittäin alhaiseen todennäköisyyteen ennen vaalipäivää [horisontti: kuukausi].
+2. **Svartarbete-ehdotukset**: Esittääkö valtiovarainministeri Svantesson pimeän työn valvontaehdotukset ennen Riksdagin kesätaukoa (arvioitu kesäkuun lopulle)? ESO 2026:1 -näyttö tekee viivästymisestä poliittisesti kallista sekä hallitukselle että oppositiolle. Todennäköisyys: suunnilleen tasan (40–60 %) [horisontti: kuukausi].
+3. **S:n vaalistrategia**: Mitä Westlundin peruutus paljastaa S:n parlamentaarisesta taktiikasta? Peruutus poistaa väittelyn, jossa hallitus voisi puolustaa toimettomuuttaan — S haluaa pitää asian elossa kampanjaretoriikassa sen sijaan että antaisi Britzille alustan.
+
+### Keskeisiä arvioita
+
+- **KJ-1** (KORKEA): HD10481:n peruutus on S:n tahallinen taktinen liike, ei hallinnollinen virhe. Välikysymyksen peruuttaminen ennen suunniteltua väittelyä riistää ministeriltä virallisen alustan hallituksen politiikan puolustamiseen. Tämä on vaaliaikainen tiedonhallintakeinoilu. [B2]
+- **KJ-2** (KORKEA): HD10482 (svartarbete) kantaa tämän kauden suurinta demokraattista vastuupainoa. ESO 2026:1 -data (189 miljardia SEK/vuosi pimeässä työssä) antaa S:lle epätavallisen vahvan näyttöpohjan kiusata hallitusta sääntelyn viivästymisestä. [B2]
+- **KJ-3** (KESKITASO): Kahden vuoden viivästyminen svartarbete-ehdotuksissa on analyyttisesti yhdenmukainen koalition kitkaisuuden kanssa — SD on historiallisesti vastustanut sääntelylaajennusta, joka koskee epävirallista rakennussektoria, keskeistä äänestäjäryhmää. Suoraa kausaalista SD-näyttöä ei kuitenkaan ole saatavilla näistä asiakirjoista. [C3 — päättely]
+
+### Taustatietoa
+
+Riksmöte 2025/26 on Ruotsin viimeinen täysimittainen parlamentti-istunto ennen syyskuun 2026 vaaleja. Molemmat välikysymykset kohdistuvat kuiluun hallituksen politiikkailmoitusten ja todellisen lainsäädäntötoimitusten välillä — toistuva S-opposition kertomus. HD10481:n peruutus on erityisen merkittävä vaalisignaali: S konsolidoi lainsäädäntöhaasteportfolionsa kampanjatehokkuuden maksimoimiseksi sen sijaan että kuluttaisi ampumavälineitä yksittäisten Riksdag-väittelyjen yhteydessä.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_fr.md -->
+
+### 🎯 BLUF
+
+Deux interpellations social-démocrates du 11 mai 2026 — HD10481 et HD10482 — révèlent le déficit de responsabilité de la coalition Tidö avant les élections en matière de législation climatique et de lutte contre le travail non déclaré (svartarbete). L'une d'elles — le défi d'Åsa Westlund sur les objectifs climatiques (HD10481) — a été **retirée le jour même de son transfert au ministre**, signalant soit des négociations informelles, soit une manœuvre stratégique pré-électorale. L'interpellation active de Marie Olsson (HD10482) tient le ministre des Finances Svantesson responsable d'un retard de deux ans dans la présentation de propositions visant à lutter contre le travail non déclaré, étayée par des recherches ESO montrant 189 milliards de SEK de pertes annuelles dans l'économie souterraine.
+
+### 🧭 3 Décisions
+
+1. **Calendrier de la proposition climatique**: Le gouvernement Tidö présentera-t-il une proposition climatique avant les élections de septembre 2026, ou la renverra-t-il au nouveau parlement? Les renseignements indiquent une très faible probabilité avant le jour du vote [horizon: mois].
+2. **Propositions sur le svartarbete**: Le ministre des Finances Svantesson présentera-t-il les propositions de contrôle du travail non déclaré avant la suspension estivale du Riksdag (estimée fin juin)? Les données ESO 2026:1 rendent un retard politiquement coûteux pour le gouvernement et l'opposition. Probabilité: environ égale (40–60 %) [horizon: mois].
+3. **Stratégie électorale du S**: Que révèle le retrait de Westlund sur la tactique parlementaire du S? Le retrait élimine un débat où le gouvernement pourrait défendre son inaction — S préfère maintenir la question vivante dans la rhétorique de campagne plutôt que d'offrir une tribune à Britz.
+
+### Jugements clés
+
+- **KJ-1** (ÉLEVÉ): Le retrait de HD10481 est un mouvement tactique délibéré de S, non une erreur administrative. Retirer une interpellation avant le débat programmé prive le ministre d'une tribune formelle pour défendre la politique gouvernementale. Il s'agit d'une tactique de gestion de l'information avant les élections. [B2]
+- **KJ-2** (ÉLEVÉ): HD10482 (svartarbete) porte le poids de responsabilité démocratique le plus élevé de ce cycle. Les données ESO 2026:1 (189 milliards SEK/an en travail non déclaré) donnent à S une base de preuves exceptionnellement solide pour embarrasser le gouvernement sur les retards réglementaires. [B2]
+- **KJ-3** (MOYEN): Le retard de deux ans dans les propositions sur le svartarbete est analytiquement cohérent avec les frictions de coalition — SD s'est historiquement opposé à l'expansion réglementaire touchant le secteur de la construction informelle, un électorat clé. Toutefois, des preuves causales directes de SD ne sont pas disponibles dans ces documents. [C3 — inférence]
+
+### Contexte
+
+Le Riksmöte 2025/26 est la dernière session parlementaire complète de la Suède avant les élections de septembre 2026. Les deux interpellations ciblent le fossé entre les annonces politiques du gouvernement et la mise en œuvre législative effective — un récit récurrent de l'opposition S. Le retrait de HD10481 est particulièrement significatif comme signal pré-électoral: S consolide son portefeuille de défis législatifs pour maximiser l'efficacité de la campagne plutôt que de gaspiller des munitions dans des débats parlementaires sur des questions uniques.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# האופוזיציה לוחצת על הממשלה בנושא עיכוב האקלים וכלכלת הצל לקראת בחירות 2026
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-12  
+**סיווג**: PUBLIC  
+**רמת ביטחון**: גבוהה [B2]  
+
+### 🎯 תמצית מנהלים
+
+שני שאילתות בין-מפלגתיות סוציאל-דמוקרטיות ב-11 במאי 2026 — HD10481 ו-HD10482 — חושפות את פער האחריות של קואליציית Tidö לפני הבחירות בנוגע לחקיקת אקלים ואכיפת מאבק בעבודה לא מוצהרת (svartarbete). אחת מהן — אתגרה של Åsa Westlund בנוגע ליעדי האקלים (HD10481) — **נשללה באותו היום שהועברה לשר**, מה שמצביע על מו"מ בלתי רשמי או תמרון אסטרטגי לפני הבחירות. השאילתה הפעילה של Marie Olsson (HD10482) מטילה אחריות על שר האוצר Svantesson על עיכוב של שנתיים בהגשת הצעות למאבק בעבודה לא מוצהרת, מגובה במחקר ESO המציג הפסדים שנתיים של 189 מיליארד קרונה שוודית בכלכלת הצל.
+
+### 🧭 3 החלטות
+
+1. **עיתוי הצעת האקלים**: האם ממשלת Tidö תגיש הצעת חוק אקלים לפני בחירות ספטמבר 2026, או תדחה זאת לפרלמנט החדש? המודיעין מצביע על סבירות נמוכה מאוד לפני יום הבחירות [אופק: חודש].
+2. **הצעות svartarbete**: האם שר האוצר Svantesson יציג הצעות לפיקוח על עבודה לא מוצהרת לפני הפגרה הקיצית של Riksdag (מוערכת לסוף יוני)? נתוני ESO 2026:1 הופכים את העיכוב לעתיר מחיר פוליטי הן לממשלה והן לאופוזיציה. סבירות: שווה בערך (40–60 %) [אופק: חודש].
+3. **אסטרטגיה בחירות של S**: מה מגלה הנסיגה של Westlund על הטקטיקה הפרלמנטרית של S? הנסיגה מבטלת דיון שבו הממשלה יכלה להגן על חוסר פעולתה — S מעדיפה לשמור על הנושא חי ברטוריקת הקמפיין במקום לתת ל-Britz פלטפורמה.
+
+### שיפוטים מרכזיים
+
+- **KJ-1** (גבוה): הנסיגה מ-HD10481 היא צעד טקטי מכוון של S, לא שגיאה אדמיניסטרטיבית. נסיגה משאילתה לפני הדיון המתוכנן שוללת מהשר פלטפורמה רשמית להגנה על מדיניות הממשלה. זוהי טקטיקה של ניהול מידע לפני הבחירות. [B2]
+- **KJ-2** (גבוה): HD10482 (svartarbete) נושא את המשקל הגבוה ביותר של אחריות דמוקרטית במחזור זה. נתוני ESO 2026:1 (189 מיליארד קרונה/שנה בעבודה לא מוצהרת) מעניקים ל-S בסיס ראיות חריגות חזק לבייש את הממשלה על עיכובים רגולטוריים. [B2]
+- **KJ-3** (בינוני): העיכוב של שנתיים בהצעות svartarbete עולה בקנה אחד אנליטי עם חיכוך קואליציוני — SD התנגד היסטורית להרחבה רגולטורית הנוגעת למגזר הבנייה הלא-פורמלי, קבוצת בוחרים מרכזית. עם זאת, ראיות סיבתיות ישירות מ-SD אינן זמינות מהמסמכים הללו. [C3 — הסקה]
+
+### הקשר
+
+Riksmöte 2025/26 הוא המושב הפרלמנטרי המלא האחרון של שבדיה לפני בחירות ספטמבר 2026. שתי השאילתות מכוונות לפער בין הכרזות מדיניות הממשלה לבין אספקת חקיקה בפועל — נרטיב חוזר של אופוזיציית S. הנסיגה מ-HD10481 משמעותית במיוחד כאות טרום-בחירות: S מאחדת את תיק האתגרים החקיקתיים שלה למיקסום יעילות הקמפיין במקום לבזבז תחמושת בדיוני Riksdag על נושא יחיד.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_ja.md -->
+
+### 🎯 エグゼクティブサマリー
+
+2026年5月11日に提出された2件の社会民主党による質問書 — HD10481 と HD10482 — は、気候立法と未申告労働（svartarbete）対策の執行をめぐり、2026年選挙前においてTidö連立政権の説明責任に重大な欠陥があることを明らかにした。そのうち — 気候目標に関するÅsa Westlundの追及（HD10481）— は、**担当大臣に移送された当日に取り下げられ**、非公式な交渉または選挙前の戦略的駆け引きがあったことを示唆している。Marie Olssonによる現存の質問書（HD10482）は、未申告労働の撲滅に向けた提案の提出を2年間遅延させていることについて財務大臣Svantessonの責任を問うものであり、地下経済の年間損失1,890億SEKを示すESO研究によって裏付けられている。
+
+### 🧭 3つの重要決定事項
+
+1. **気候提案の時期**: Tidö政府は2026年9月選挙前に気候提案を提出するか、それとも新議会に先送りするか？情報分析によると、選挙日以前の提出可能性は極めて低い [地平線: 月単位]。
+2. **svartarbete提案**: 財務大臣SvantessonはRiksdag夏季休会（6月下旬と見込まれる）前に未申告労働に関する管理提案を提示するか？ESO 2026:1の証拠は、遅延を政府・野党双方にとって政治的コストの高いものにしている。確率: ほぼ均等（40～60%）[地平線: 月単位]。
+3. **Sの選挙戦略**: Westlundの取り下げはSの議会戦術について何を示しているか？取り下げにより、政府が不作為を弁明できる討論を封じた — SはBritzに舞台を与えるよりも、選挙運動の言説の中でこの問題を生き続けさせることを好んでいる。
+
+### 主要判断
+
+- **KJ-1**（高）: HD10481の取り下げはSによる意図的な戦術的行動であり、事務的ミスではない。予定された討論前に質問書を取り下げることで、大臣が政府政策を擁護する公式な場を奪う。これは選挙前の情報管理戦術である。[B2]
+- **KJ-2**（高）: HD10482（svartarbete）は今サイクル最大の民主的説明責任の重みを持つ。ESO 2026:1データ（未申告労働1,890億SEK/年）は、規制遅延をめぐって政府を窮地に追い込む異例に強固な証拠基盤をSに与えている。[B2]
+- **KJ-3**（中）: svartarbete提案の2年間の遅延は、連立内部の摩擦と分析的に一致している — SDは非公式建設部門（主要な有権者層）に関わる規制拡大に歴史的に反対してきた。ただし、これらの文書からはSDによる直接的な因果関係の証拠は得られない。[C3 — 推論]
+
+### 文脈
+
+Riksmöte 2025/26は、2026年9月選挙前のスウェーデン最後の正規会期である。両質問書は、政府の政策声明と実際の立法実施との間のギャップを標的にしている — これはS野党の繰り返されるナラティブである。HD10481の取り下げは選挙前シグナルとして特に重要である：Sは単一議題のRiksdagでの討論に火力を使い果たすのではなく、選挙運動効率を最大化するために立法的挑戦ポートフォリオを統合している。
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_ko.md -->
+
+### 🎯 핵심 요약
+
+2026년 5월 11일 제출된 두 건의 사회민주당 대정부질문 — HD10481과 HD10482 — 은 기후 입법 및 미신고 노동(svartarbete) 단속 집행과 관련하여 선거 전 Tidö 연립정부의 책임 공백을 드러냈다. 그 중 하나 — 기후 목표에 관한 Åsa Westlund의 도전(HD10481) — 는 **담당 장관에게 이송된 당일 철회**되었으며, 이는 비공식적 협상 또는 선거 전략적 기동을 시사한다. Marie Olsson의 현존 질문서(HD10482)는 미신고 노동 근절 방안 제출을 2년간 지연시켜 온 것에 대해 재무장관 Svantesson의 책임을 묻고 있으며, 연간 지하경제 손실 1,890억 SEK를 보여주는 ESO 연구로 뒷받침된다.
+
+### 🧭 3가지 핵심 결정
+
+1. **기후 제안 시기**: Tidö 정부는 2026년 9월 선거 전에 기후 제안을 제출할 것인가, 아니면 신의회로 미룰 것인가? 정보 분석에 따르면 선거일 이전 가능성은 매우 낮다 [지평선: 월 단위].
+2. **svartarbete 제안**: 재무장관 Svantesson은 Riksdag 여름 휴회(6월 말 예상) 전에 미신고 노동 통제 방안을 제시할 것인가? ESO 2026:1 증거는 지연을 정부와 야당 모두에게 정치적으로 대가 큰 것으로 만든다. 확률: 거의 균등(40~60%) [지평선: 월 단위].
+3. **S의 선거 전략**: Westlund의 철회는 S의 의회 전술에 대해 무엇을 드러내는가? 철회는 정부가 무위를 방어할 수 있는 토론을 없애버린다 — S는 Britz에게 무대를 주기보다는 선거 운동 수사에서 이 문제를 살아있게 유지하는 것을 선호한다.
+
+### 핵심 판단
+
+- **KJ-1** (고): HD10481 철회는 행정적 실수가 아닌 S의 의도적인 전술적 행동이다. 예정된 토론 전에 대정부질문을 철회함으로써 장관이 정부 정책을 방어할 공식 무대를 박탈한다. 이는 선거 전 정보 관리 전술이다. [B2]
+- **KJ-2** (고): HD10482(svartarbete)는 이번 주기 최고의 민주적 책임 무게를 지닌다. ESO 2026:1 데이터(미신고 노동 1,890억 SEK/년)는 규제 지연으로 정부를 난처하게 만들 이례적으로 강력한 증거 기반을 S에게 제공한다. [B2]
+- **KJ-3** (중): svartarbete 제안의 2년 지연은 연립 내부 마찰과 분석적으로 일치한다 — SD는 역사적으로 비공식 건설 부문(핵심 유권자층)에 영향을 미치는 규제 확대에 반대해 왔다. 그러나 이 문서들에서 직접적인 SD 인과관계 증거는 얻을 수 없다. [C3 — 추론]
+
+### 맥락
+
+Riksmöte 2025/26은 2026년 9월 선거 전 스웨덴 마지막 정기 의회 회기다. 두 질문서 모두 정부의 정책 발표와 실질적인 입법 이행 사이의 격차를 표적으로 삼는다 — 이는 S 야당의 반복적인 서사다. HD10481 철회는 선거 전 신호로서 특히 의미있다: S는 단일 의제 Riksdag 토론에 화력을 소모하기보다 선거 운동 효율을 극대화하기 위해 입법적 도전 포트폴리오를 통합하고 있다.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_nl.md -->
+
+### 🎯 BLUF
+
+Twee sociaaldemocratische interpellaties op 11 mei 2026 — HD10481 en HD10482 — leggen de verantwoordingskloof van de Tidö-coalitie bloot vóór de verkiezingen over klimaatwetgeving en de handhaving van de bestrijding van zwartwerk (svartarbete). De ene — Åsa Westlunds uitdaging over klimaatdoelen (HD10481) — werd **op dezelfde dag ingetrokken als het naar de minister werd overgedragen**, wat duidt op informele onderhandelingen of strategisch verkiezingsmanoeuvre. De actieve interpellatie van Marie Olsson (HD10482) houdt minister van Financiën Svantesson verantwoordelijk voor een vertraging van twee jaar bij het presenteren van voorstellen om zwartwerk te bestrijden, ondersteund door ESO-onderzoek waaruit blijkt dat er jaarlijks 189 miljard SEK verloren gaat in de schaduweconomie.
+
+### 🧭 3 Besluiten
+
+1. **Timing klimaatproposities**: Zal de Tidö-regering een klimaatpropositie presenteren vóór de verkiezingen van september 2026, of dit uitstellen tot het nieuwe parlement? Inlichtingen suggereren een zeer lage waarschijnlijkheid vóór verkiezingsdag [horizon: maand].
+2. **Svartarbete-voorstellen**: Zal minister van Financiën Svantesson de handhavingsvoorstellen voor zwartwerk presenteren vóór het zomerreces van de Riksdag (geschat eind juni)? De ESO 2026:1-gegevens maken vertraging politiek kostbaar voor zowel de regering als de oppositie. Waarschijnlijkheid: ongeveer gelijk (40–60 %) [horizon: maand].
+3. **S verkiezingsstrategie**: Wat onthult de intrekking van Westlund over de parlementaire tactiek van S? De intrekking elimineert een debat waarbij de regering haar inactiviteit zou kunnen verdedigen — S geeft er de voorkeur aan het onderwerp levend te houden in campagnerhetorica in plaats van Britz een podium te geven.
+
+### Sleuteloordelen
+
+- **KJ-1** (HOOG): De intrekking van HD10481 is een bewuste tactische zet van S, geen administratieve fout. Het intrekken van een interpellatie vóór het geplande debat ontneemt de minister een formeel platform om regeringsbeleid te verdedigen. Dit is een informatiebeherstactiek vóór de verkiezingen. [B2]
+- **KJ-2** (HOOG): HD10482 (svartarbete) draagt het hoogste democratische verantwoordingsgewicht van deze cyclus. De ESO 2026:1-gegevens (189 miljard SEK/jaar aan zwartwerk) geven S een ongewoon sterk bewijsbasis om de regering in verlegenheid te brengen over regelgevingsvertragingen. [B2]
+- **KJ-3** (MEDIUM): De vertraging van twee jaar bij de svartarbete-voorstellen is analytisch consistent met coalitiewrijving — SD heeft historisch gezien de uitbreiding van regelgeving die de informele bouwsector raakt, een belangrijke kiezersdemocratie, tegengewerkt. Directe causale SD-bewijzen zijn echter niet beschikbaar uit deze documenten. [C3 — gevolgtrekking]
+
+### Context
+
+Het Riksmöte 2025/26 is Zweden's laatste volledige parlementaire sessie vóór de verkiezingen van september 2026. Beide interpellaties richten zich op de kloof tussen de beleidsaankondigingen van de regering en de daadwerkelijke wetgevende levering — een terugkerend S-oppositieverhaal. De intrekking van HD10481 is bijzonder betekenisvol als voorverkeizingssignaal: S consolideert zijn wetgevingsuitdagingsportfolio om de campagneeffectiviteit te maximaliseren in plaats van munitie te verspillen in enkelvoudige Riksdag-debatten.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-12  
+**Klassifisering**: PUBLIC  
+**Konfidensgrad**: HIGH [B2]  
+
+### 🎯 BLUF
+
+To sosialdemokratiske interpellasjoner 11. mai 2026 — HD10481 og HD10482 — avdekker Tidø-koalisjonens ansvarsunderskudd før valget når det gjelder klimalovgivning og bekjempelse av svart arbeid (svartarbete). Den ene — Åsa Westlunds utfordring om klimamål (HD10481) — ble **trukket tilbake samme dag den ble overdratt til statsråden**, noe som signaliserer enten uformelle forhandlinger eller strategisk valgmanøvrering. Den aktive interpellasjonen fra Marie Olsson (HD10482) holder finansminister Svantesson ansvarlig for to års forsinkelse med å fremlegge forslag om bekjempelse av svart arbeid, støttet av ESO-forskning som viser tap på SEK 189 milliarder per år i skyggeøkonomien.
+
+### 🧭 3 Beslutninger
+
+1. **Klimaproposisjonens timing**: Vil Tidø-regjeringen fremlegge en klimaproposisjon før valget i september 2026, eller utsette det til det nye parlamentet? Etterretning tyder på svært lav sannsynlighet før valgdagen [horisont: måned].
+2. **Svartarbete-forslag**: Vil finansminister Svantesson presentere kontrollforslag om svart arbeid før Riksdags sommerpause (anslått til slutten av juni)? ESO 2026:1-dokumentasjonen gjør forsinkelse politisk kostbar for både regjering og opposisjon. Sannsynlighet: omtrent jevnt (40–60 %) [horisont: måned].
+3. **S valgstrategi**: Hva avslører Westlunds tilbaketrekning om S' parlamentariske taktikk? Tilbaketrekningen fjerner en debatt der regjeringen kunne forsvare passivitet — S foretrekker å holde spørsmålet levende i kampanjeretorikken fremfor å gi Britz en plattform.
+
+### Nøkkelvurderinger
+
+- **KJ-1** (HØY): Tilbaketrekning av HD10481 er et bevisst taktisk trekk fra S, ikke en administrativ feil. Å trekke tilbake en interpellasjon før den planlagte debatten fratar statsråden en formell plattform for å forsvare regjeringens politikk. Dette er en informasjonshåndteringstaktikk i valgkampen. [B2]
+- **KJ-2** (HØY): HD10482 (svartarbete) har den høyeste demokratiske ansvarsvekten i denne perioden. ESO 2026:1-data (SEK 189 milliarder/år i svart arbeid) gir S et uvanlig sterkt bevisgrunnlag for å sette regjeringen i forlegenhet over regulatoriske forsinkelser. [B2]
+- **KJ-3** (MIDDELS): Den toårige forsinkelsen i svartarbete-forslagene er analytisk konsistent med koalisjonsfriksjon — SD har historisk sett motstandere av regulatorisk utvidelse som berører den uformelle byggesektoren, en viktig velgerdemografi. Direkte kausalt SD-bevis er imidlertid ikke tilgjengelig fra disse dokumentene. [C3 — slutning]
+
+### Kontekst
+
+Riksmötet 2025/26 er Sveriges siste fullstendige parlamentariske sesjon før valget i september 2026. Begge interpellasjoner retter seg mot gapet mellom regjeringens politikkunngjøringer og faktisk lovgivningsmessig levering — en gjentakende S-opposisjonsfortelling. Tilbaketrekningen av HD10481 er særlig betydningsfull som et forvalssignal: S konsoliderer sin lovgivningsmessige utfordringsportefølje for å maksimere kampanjeeffektiviteten fremfor å bruke opp krutt i enkeltsak-Riksdag-debatter.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-12  
+**Klassificering**: PUBLIC  
+**Konfidensgrad**: HIGH [B2]  
+
+### 🎯 BLUF
+
+Två socialdemokratiska interpellationer den 11 maj 2026 — HD10481 och HD10482 — blottlägger Tidökoalitionens bristande ansvarsskyldighet inför valet när det gäller klimatlagstiftning och bekämpning av arbetslivskriminalitet. Den ena — Åsa Westlunds utmaning om klimatmål (HD10481) — **drogs tillbaka samma dag den överlämnades till ministern**, vilket signalerar antingen informella förhandlingar eller strategiskt valförberedande manövrerande. Den aktiva interpellationen av Marie Olsson (HD10482) håller finansminister Svantesson ansvarig för en tvåårig försening med att lägga fram förslag om att bekämpa svartarbete, stödd av ESO-forskning som visar på förluster på 189 miljarder SEK per år i skuggekonomin.
+
+### 🧭 3 Beslut
+
+1. **Klimatpropositionen**: Kommer Tidöregeringen att lägga fram en klimatproposition före valet i september 2026, eller skjuta det till det nya parlamentet? Underrättelserna tyder på mycket låg sannolikhet före valdagen [horisont: månad].
+2. **Svartarbetsförslag**: Kommer finansminister Svantesson att presentera kontrollförslagen om svartarbete före riksdagens sommaruppehåll (beräknat till slutet av juni)? ESO 2026:1-underlaget gör att en försening är politiskt kostsam för både regering och opposition. Sannolikhet: ungefär jämnt (40–60 %) [horisont: månad].
+3. **S valstrategi**: Vad avslöjar Westlunds återkallelse om S:s riksdagstaktik? Återkallelsen undanröjer en debatt där regeringen kunde försvara sin passivitet — S föredrar att hålla frågan levande i kampanjretoriken snarare än att ge Britz en plattform.
+
+### Nyckeldomslut
+
+- **KJ-1** (HÖG): Återkallelsen av HD10481 är ett medvetet taktiskt drag av S, inte ett administrativt misstag. Att dra tillbaka en interpellation före den planerade debatten fråntar ministern en formell plattform för att försvara regeringens politik. Detta är en informationshanteringstaktik inför valet. [B2]
+- **KJ-2** (HÖG): HD10482 (svartarbete) har den starkaste demokratiska ansvarsvikten under denna valperiod. ESO 2026:1-data (189 miljarder SEK/år i svartarbete) ger S ett ovanligt starkt bevisunderlag för att sätta regeringen i besvärande situation över regleringsförseningar. [B2]
+- **KJ-3** (MEDEL): Den tvååriga förseningen med svartarbetsförslagen är analytiskt förenlig med koalitionsfriktion — SD har historiskt sett motsatt sig regleringsutvidgning som berör den informella byggsektorn, en viktig väljargrupp. Direkt kausalt bevis från SD saknas dock i dessa dokument. [C3 — slutledning]
+
+### Sammanhang
+
+Riksmötet 2025/26 är Sveriges sista fullständiga parlamentssession före valet i september 2026. Båda interpellationerna riktar in sig på klyftan mellan regeringens policymeddelanden och faktisk lagstiftningsleverans — en återkommande S-oppositionsberättelse. Återkallelsen av HD10481 är särskilt betydelsefull som ett förvalssignal: S konsoliderar sin lagstiftningsutmaningsportfölj för att maximera kampanjeffektiviteten snarare än att förbruka krut i enskilda riksdagsdebatter.
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_zh.md -->
+
+### 🎯 核心结论
+
+2026年5月11日提出的两项社会民主党质询 — HD10481 和 HD10482 — 揭露了Tidö联合政府在选举前气候立法和未申报劳动（svartarbete）执法领域的问责缺口。其中一项 — Åsa Westlund关于气候目标的挑战（HD10481）— **在移交给部长的当天被撤回**，这表明存在非正式谈判或选举前的战略性博弈。Marie Olsson的现存质询（HD10482）要求财政部长Svantesson就两年来未能提出打击未申报劳动方案的延迟承担责任，并以ESO研究为佐证，该研究显示地下经济每年造成1,890亿瑞典克朗的损失。
+
+### 🧭 3项关键决定
+
+1. **气候提案时间表**: Tidö政府是否会在2026年9月大选前提出气候提案，还是将其推迟到新一届议会？情报分析表明选举日前的可能性极低 [地平线：月度]。
+2. **svartarbete提案**: 财政部长Svantesson是否会在里克斯达格（Riksdag）暑假休会（预计6月下旬）前提出未申报劳动管控方案？ESO 2026:1的证据使得延迟对政府和反对派来说在政治上代价高昂。概率：大致相当（40–60%）[地平线：月度]。
+3. **S的选举战略**: Westlund的撤回揭示了S的议会战术什么信息？撤回消除了一场政府可以为其不作为辩护的辩论 — S宁愿让这一问题在竞选言辞中保持热度，而不是给Britz提供辩护平台。
+
+### 关键判断
+
+- **KJ-1**（高）: HD10481的撤回是S的蓄意战术行动，而非行政失误。在预定辩论前撤回质询，剥夺了部长为政府政策辩护的正式平台。这是一种选举前的信息管理战术。[B2]
+- **KJ-2**（高）: HD10482（svartarbete）承载着本届政治周期最高的民主问责权重。ESO 2026:1数据（每年1,890亿克朗的未申报劳动损失）为S提供了异常有力的证据基础，足以使政府在监管延迟问题上陷入被动。[B2]
+- **KJ-3**（中）: svartarbete提案两年延迟在分析上与联合政府内部摩擦相符 — SD历来反对触及非正式建筑业（关键选民群体）的监管扩大。然而，这些文件中没有SD直接因果关系的证据。[C3 — 推断]
+
+### 背景
+
+Riksmöte 2025/26是瑞典2026年9月大选前的最后一个完整议会会期。两项质询均针对政府政策声明与实际立法交付之间的落差 — 这是S反对党反复强调的叙事主线。HD10481的撤回作为选举前信号尤为重要：S正在整合其立法挑战组合，以最大化竞选效率，而不是在单一议题的里克斯达格（Riksdag）辩论中消耗火力。
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
 
@@ -1967,6 +2336,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

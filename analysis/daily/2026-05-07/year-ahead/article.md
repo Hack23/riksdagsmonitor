@@ -3,7 +3,7 @@ date: 2026-05-07
 subfolder: year-ahead
 slug: 2026-05-07-year-ahead
 source_folder: analysis/daily/2026-05-07/year-ahead
-generated_at: 2026-05-25T15:59:53.597Z
+generated_at: 2026-05-27T07:35:33.221Z
 language: en
 layout: article
 ---
@@ -2810,7 +2810,6 @@ IMF WEO Apr-2026 vintage (pre-warm confirmed):
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/year-ahead/executive-brief_ar.md -->
 
-‏# ملخص تنفيذي — الاستخبارات السياسية للسويد على مدى عام
 # 2026-05-07 · أفق 365 يوماً · اقتراب الانتخابات نشط
 
 **التصنيف**: عام | **سير العمل**: news-year-ahead | **الانتخابات**: 2026-09-13 (T+129)
@@ -3254,7 +3253,6 @@ La concentration de législation majeure sur une date unique (2026-05-07) — ci
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/year-ahead/executive-brief_he.md -->
 
-‏# סיכום מנהלים — מודיעין פוליטי לשוודיה לשנה קדימה
 # 2026-05-07 · אופק 365 ימים · קירבה לבחירות פעיל
 
 **סיווג**: ציבורי | **זרימת עבודה**: news-year-ahead | **בחירות**: 2026-09-13 (T+129)

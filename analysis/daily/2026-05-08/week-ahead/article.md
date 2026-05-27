@@ -3,7 +3,7 @@ date: 2026-05-08
 subfolder: week-ahead
 slug: 2026-05-08-week-ahead
 source_folder: analysis/daily/2026-05-08/week-ahead
-generated_at: 2026-05-25T15:59:53.695Z
+generated_at: 2026-05-27T07:35:33.322Z
 language: en
 layout: article
 ---
@@ -2265,8 +2265,6 @@ mindmap
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_ja.md -->
 
-**著者**：James Pether Sörling ｜ **実行ID**：25544675528 ｜ **分類**：PUBLIC ｜ **信頼度**：HIGH [B2]
-
 ### BLUF
 
 スウェーデンのリクスダーグ（Riksdag）は、第20週（2026年5月11〜17日）において、防衛情報法制の近代化、教育改革、司法立法、EU準拠の金融規制にまたがる過密な立法カレンダーとともに臨みます。これらすべてが採決に向けて進む中、政府は同時に政治的に高度に重要な三つの提案（国家電子身分証、Skatteverketの監視権限拡大、安全保障上の脅威への国外退去規則強化）を提出しています。この組み合わせは、スウェーデンが2026年9月選挙に近づくにつれ立法ペースが加速していることを示しています。政治的に最も重要な単一案件は**HD01FöU18**（シグナル情報法改正）であり、市民的自由と安全保障上のトレードオフについて連立政権の結束を試すものです。**今週のワイルドカードは、スウェーデン人市民を乗せたガザ連帯船Global Sumud Flotillaへのイスラエルの乗船**（HD11803）であり、外務大臣Maria Malmer Stenergard（M）が選挙直前の重大局面でガザ紛争について公式な立場表明を迫られます。
@@ -2349,8 +2347,6 @@ mindmap
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/week-ahead/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling | **실행 ID**: 25544675528 | **분류**: PUBLIC | **신뢰도**: HIGH [B2]
 
 ### BLUF
 

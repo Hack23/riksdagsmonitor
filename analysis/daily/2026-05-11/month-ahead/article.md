@@ -3,7 +3,7 @@ date: 2026-05-11
 subfolder: month-ahead
 slug: 2026-05-11-month-ahead
 source_folder: analysis/daily/2026-05-11/month-ahead
-generated_at: 2026-05-25T15:59:53.833Z
+generated_at: 2026-05-27T07:35:33.517Z
 language: en
 layout: article
 ---
@@ -64,6 +64,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Committee Dynamics](#rm-committee-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Document Registry](#rm-document-registry) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Electoral Implications](#rm-electoral-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Key Actors](#rm-key-actors) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Media Framing](#rm-media-framing) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Policy Positions](#rm-policy-positions) | supporting analytical lens with primary-source evidence and audit-traceable citations |
@@ -728,6 +741,528 @@ From 2026-05-03/month-ahead PIR set:
 - Youth crime incident coverage (media monitoring)
 - UNHCR/Amnesty pre-filing announcements
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الشهر القادم: يونيو–يوليو 2026
+
+**التاريخ**: 2026-05-11 | **التصنيف**: عام | **الأفق الزمني**: الشهر القادم (T+30/T+60)
+
+### الخلاصة التنفيذية (Bottom Line Up Front)
+
+يُنفّذ ائتلاف تيدو السويدي (M-SD-KD-L, 176/349 مقعداً) سباق تشريعياً قبيل الانتخابات، مع سياسة الهجرة بوصفها محوراً انتخابياً رئيسياً. تُشكّل خمسة مقترحات هجرة مقدمة في الفترة 2026-04-30 إلى 2026-05-07 أوسع تقييد لحقوق الهجرة منذ اتفاقية تيدو عام 2022. الانتخابات البرلمانية السويدية في 13 سبتمبر على بُعد 125 يوماً. الحسابات الائتلافية مستقرة، غير أن الإرث الليبرالي لحزب L يُولّد توتراً داخلياً حول إلغاء الإقامة الدائمة (HD03262). مخاطر انهيار الائتلاف قبل الانتخابات منخفضة [WEP: مستبعد، 15 %]؛ في حين أن مخاطر الطعون القانونية أمام المحكمة الأوروبية لحقوق الإنسان ECHR عقب التصويت مرتفعة [WEP: محتمل، 75 %].
+
+### ثلاثة متطلبات استخباراتية أولوية (PIR)
+
+| PIR | السؤال | المؤشر | الموعد النهائي |
+|-----|--------|--------|----------------|
+| PIR-1 | هل سيصوت نواب حزب L بنعم على HD03262؟ | تصريح قيادة L؛ حضور جلسات استماع JuU | قبل تصويت JuU |
+| PIR-2 | هل سيُقرّ الحزمة الهجرة قبل إجازة 1 يوليو؟ | الجدول الزمني لـ JuU؛ تكتيكات المعارضة التأخيرية | 1 يوليو |
+| PIR-3 | ما عمق هجوم حزب S المضاد على البطالة؟ | مؤتمرات صحفية S، الاستجوابات المقدمة | متواصل |
+
+### الاستنتاجات الاستراتيجية
+
+1. **الهجرة هي الانتخابات**: كل اقتراح حكومي مقدم منذ 30 أبريل يستخدم تأطير الهجرة كأداة خطابية. هذه استراتيجية انتخابية متعمدة، لا مصادفة.
+
+2. **حزب L هو حجر الزاوية في الائتلاف**: وقّع L (حزب الوزيرة إدهولم، ~16 مقعداً) على HD03262 رغم مواقفه الهجرية الليبرالية التاريخية. إذا ظهر خلاف داخلي في L، يصبح القصة الكبرى للانتخابات.
+
+3. **الاقتصاد هو أفضل سلاح للمعارضة**: بطالة 8,7 % (من الأعلى في الاتحاد الأوروبي)، نصف مليون عاطل (سياق الاستجواب HC10746). S على حق في متابعة هذا المسار لكنها تواجه صعوبة في اختراق هيمنة الملف الهجري.
+
+4. **الدفاع فوق الخلافات الحزبية**: سيُقرّ HD03254 للتعاون العسكري بدعم S. يُخرج ذلك الإنفاق الدفاعي من ساحة الصراع الانتخابي.
+
+5. **تحديات ECHR عقب الانتخابات**: إلغاء الإقامة الدائمة (HD03262) وتشديد الاحتجاز (HD03265) موضوعان محتملان للطعون أمام المحكمة الأوروبية لحقوق الإنسان خلال 18 شهراً من التصويت.
+
+### السياق الاقتصادي
+
+- نمو الناتج المحلي الإجمالي 2025: +1,0 % (IMF WEO-2026-04، دون المستوى الطبيعي)
+- البطالة 2025: 8,7 % (سياق مراجعة Riksbank 2024: FiU betänkande HC01FiU20)
+- مسار أسعار الفائدة لـ Riksbank: اتجاه تنازلي عبر 2025 (تقييم HC01FiU24)
+- السياسة المالية: محافظة؛ جاهزية الدواء APL 700 MSEK ميزانية إضافية (HC01FiU33)
+
+*مصدر IMF: WEO-2026-04، إصدار أبريل 2026 (شهر واحد)، المزوّد: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_da.md -->
+
+**Dato**: 2026-05-11 | **Klassificering**: Offentlig | **Horisont**: måned-frem (T+30/T+60)
+
+### Konklusion (Bottom Line Up Front)
+
+Sveriges Tidö-koalition (M-SD-KD-L, 176/349 mandater) gennemfører en lovgivningssprint inden valget med migrationspolitik som valgkampens centrale element. Fem migrationsforslag indgivet 2026-04-30 til 2026-05-07 udgør den mest vidtgående begrænsning af indvandringsrettigheder siden Tidø-aftalen 2022. Det svenske parlamentsvalg den 13. september er 125 dage væk. Koalitionsmatte er stabil, men L's liberale arv skaber intern spænding om afskaffelsen af permanent opholdstilladelse (HD03262). Risikoen for en præ-valgs koalitionsbrud er lav [WEP: usandsynligt, 15 %]; risikoen for ECHR-retslige udfordringer efter vedtagelse er høj [WEP: sandsynligt, 75 %].
+
+### Tre prioriterede efterretningskrav (PIR)
+
+| PIR | Spørgsmål | Indikator | Frist |
+|-----|-----------|-----------|-------|
+| PIR-1 | Vil L's parlamentsmedlemmer stemme JA til HD03262? | L-ledelsens udmelding; JuU-høringsdeltage | Inden JuU-afstemning |
+| PIR-2 | Vil migrationspakken vedtages inden 1. juli-pausen? | JuU:s tidslinje; oppositionens forsinkelsestaktik | 1. juli |
+| PIR-3 | Hvor dyb er S's arbejdsløsheds-modangreb? | S's pressekonferencer, indgivne interpellationer | Løbende |
+
+### Strategiske konklusioner
+
+1. **Migration er valget**: Enhver vigtig regeringsproposition indgivet siden 30. april har migrationsbaseret sikkerhedsramme som sit virkemiddel. Det er en bevidst valgstrategi, ikke en tilfældighed.
+
+2. **L er koalitionens hjørnesten**: L (PM Edholms parti, ~16 mandater) underskrev HD03262 på trods af historiske liberale migrationspositioner. Hvis intern L-splittelse opstår, bliver det valgkampens største historie.
+
+3. **Økonomien er oppositionens bedste våben**: 8,7 % arbejdsløshed (blandt EU's højeste), en halv million arbejdsløse (interpellation HC10746-kontekst). S har ret til at forfølge denne linje, men har svært ved at bryde igennem migrationsdominansen.
+
+4. **Forsvar er bipartistisk**: HD03254 militært samarbejde vil vedtages med S's støtte. Dette fjerner forsvarsudgifter fra den valgstrategiske kampzone.
+
+5. **ECHR-udfordringer efter valget**: Afskaffelse af permanent opholdstilladelse (HD03262) og stramning af tilbageholdelse (HD03265) er sandsynlige emner for udfordringer ved Den Europæiske Menneskerettighedsdomstol inden for 18 måneder efter vedtagelse.
+
+### Økonomisk kontekst
+
+- BNP-vækst 2025: +1,0 % (IMF WEO-2026-04, under potentiale)
+- Arbejdsløshed 2025: 8,7 % (Riksbankens gennemgangs-kontekst 2024: FiU betänkande HC01FiU20)
+- Riksbankens rentebane: Nedadgående tendens i 2025 (HC01FiU24-evaluering)
+- Finanspolitik: Konservativ; APL lægemiddelberedskab 700 MSEK ekstrabudget (HC01FiU33)
+
+*IMF-kilde: WEO-2026-04, vintage april 2026 (1 måned), leverandør: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_de.md -->
+
+**Datum**: 2026-05-11 | **Einstufung**: Öffentlich | **Horizont**: Monat-voraus (T+30/T+60)
+
+### Schlussfolgerung (Bottom Line Up Front)
+
+Schwedens Tidö-Koalition (M-SD-KD-L, 176/349 Sitze) führt einen Gesetzgebungssprint vor der Wahl durch, wobei die Migrationspolitik das zentrale Wahlkampfthema ist. Fünf Migrationspropositioner eingereicht 2026-04-30 bis 2026-05-07 stellen die umfangreichste Einschränkung von Einwanderungsrechten seit dem Tidö-Abkommen 2022 dar. Die schwedischen Parlamentswahlen am 13. September sind 125 Tage entfernt. Die Koalitionsarithmetik ist stabil, aber das liberale Erbe der L schafft interne Spannungen hinsichtlich der Abschaffung der dauerhaften Aufenthaltserlaubnis (HD03262). Das Risiko eines Koalitionsbruchs vor der Wahl ist gering [WEP: unwahrscheinlich, 15 %]; das Risiko von ECHR-rechtlichen Anfechtungen nach der Verabschiedung ist hoch [WEP: wahrscheinlich, 75 %].
+
+### Drei Prioritäre Nachrichtenanforderungen (PIR)
+
+| PIR | Frage | Indikator | Frist |
+|-----|-------|-----------|-------|
+| PIR-1 | Werden L-Abgeordnete JA zu HD03262 stimmen? | L-Führungsaussage; JuU-Anhörungsteilnahme | Vor JuU-Abstimmung |
+| PIR-2 | Wird das Migrationspaket vor der 1.-Juli-Pause verabschiedet? | JuU:s Zeitplan; Verzögerungstaktiken der Opposition | 1. Juli |
+| PIR-3 | Wie tief ist S's Gegenangriff zur Arbeitslosigkeit? | S-Pressekonferenzen, eingereichte Interpellationen | Fortlaufend |
+
+### Strategische Schlussfolgerungen
+
+1. **Migration ist die Wahl**: Jede wichtige Regierungsproposition seit dem 30. April nutzt Migrationssicherheitisierung als Rahmungswerkzeug. Das ist eine bewusste Wahlstrategie, kein Zufall.
+
+2. **L ist der Schlüssel der Koalition**: L (Ministerin Edholms Partei, ~16 Sitze) unterzeichnete HD03262 trotz historischer liberaler Migrationspositionen. Wenn interne L-Meinungsverschiedenheiten auftreten, wird das die größte Geschichte dieser Wahl.
+
+3. **Die Wirtschaft ist die beste Waffe der Opposition**: 8,7 % Arbeitslosigkeit (eine der höchsten in der EU), eine halbe Million Arbeitslose (Interpellation HC10746-Kontext). S hat recht, diese Linie zu verfolgen, aber hat Schwierigkeiten, durch die Migrationsdominanz durchzudringen.
+
+4. **Verteidigung ist überparteilich**: HD03254 Militärkooperation wird mit S-Unterstützung verabschiedet. Damit werden Verteidigungsausgaben aus dem wahlstrategischen Kampfgebiet herausgenommen.
+
+5. **ECHR-Herausforderungen nach der Wahl**: Die Abschaffung dauerhafter Aufenthaltserlaubnisse (HD03262) und die Verschärfung der Inhaftierung (HD03265) sind wahrscheinliche Gegenstände von Klagen beim Europäischen Gerichtshof für Menschenrechte innerhalb von 18 Monaten nach der Verabschiedung.
+
+### Wirtschaftlicher Kontext
+
+- BIP-Wachstum 2025: +1,0 % (IMF WEO-2026-04, unter Potenzial)
+- Arbeitslosigkeit 2025: 8,7 % (Riksbank-Überprüfungskontext 2024: FiU betänkande HC01FiU20)
+- Riksbank-Zinspfad: Abwärtstrend durch 2025 (HC01FiU24-Bewertung)
+- Fiskalpolitik: Konservativ; APL Arzneimittelvorbereitung 700 MSEK Nachtragshaushalt (HC01FiU33)
+
+*IMF-Quelle: WEO-2026-04, Vintage April 2026 (1 Monat), Anbieter: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_es.md -->
+
+**Fecha**: 2026-05-11 | **Clasificación**: Pública | **Horizonte**: mes-próximo (T+30/T+60)
+
+### Síntesis (Bottom Line Up Front)
+
+La coalición Tidö (M-SD-KD-L, 176/349 escaños) ejecuta un sprint legislativo preelectoral centrado en migración. Cinco proposiciones presentadas del 2026-04-30 al 2026-05-07 constituyen la restricción más sustancial desde el Acuerdo Tidö de 2022. Las elecciones del 13 de septiembre están a 125 días. La aritmética de coalición es estable, pero L genera tensión interna sobre la abolición de la residencia permanente (HD03262). Ruptura preelectoral: baja [WEP: improbable, 15 %]; impugnaciones CEDH tras la aprobación: alta [WEP: probable, 75 %].
+
+### Tres Requisitos de Inteligencia Prioritarios (PIR)
+
+| PIR | Pregunta | Indicador | Plazo |
+|-----|----------|-----------|-------|
+| PIR-1 | ¿Votarán SÍ los diputados de L a HD03262? | Declaración de la dirección de L; asistencia a las audiencias JuU | Antes del voto JuU |
+| PIR-2 | ¿Se aprobará el paquete migratorio antes del receso del 1 de julio? | Calendario JuU; tácticas dilatorias de la oposición | 1 de julio |
+| PIR-3 | ¿Cuán profundo es el contraataque de S sobre el desempleo? | Ruedas de prensa de S, interpelaciones presentadas | Continuo |
+
+### Conclusiones Estratégicas
+
+1. **La migración es la elección**: Cada proposición gubernamental importante presentada desde el 30 de abril utiliza la securitización de la migración como herramienta de encuadre. Esta es una estrategia electoral deliberada, no una coincidencia.
+
+2. **L es la clave de la coalición**: L (el partido de la ministra Edholm, ~16 escaños) firmó HD03262 a pesar de sus históricas posiciones migratorias liberales. Si surge disidencia interna en L, se convierte en la historia más importante de estas elecciones.
+
+3. **La economía es la mejor arma de la oposición**: 8,7 % de desempleo (entre los más altos de la UE), medio millón de desempleados (contexto interpelación HC10746). S tiene razón en perseguir este ángulo, pero enfrenta dificultades para abrirse paso ante la dominación migratoria.
+
+4. **La defensa es bipartidista**: HD03254 cooperación militar se aprobará con el apoyo de S. Esto saca los gastos de defensa de la zona de combate electoral.
+
+5. **Impugnaciones CEDH tras las elecciones**: La abolición de la residencia permanente (HD03262) y el endurecimiento de la detención (HD03265) son probables sujetos de impugnaciones ante el Tribunal Europeo de Derechos Humanos en los 18 meses posteriores a su aprobación.
+
+### Contexto Económico
+
+- Crecimiento del PIB 2025: +1,0 % (IMF WEO-2026-04, por debajo del potencial)
+- Desempleo 2025: 8,7 % (contexto de revisión del Riksbank 2024: FiU betänkande HC01FiU20)
+- Trayectoria de tipos del Riksbank: Tendencia a la baja durante 2025 (evaluación HC01FiU24)
+- Política fiscal: Conservadora; preparación farmacéutica APL 700 MSEK presupuesto adicional (HC01FiU33)
+
+*Fuente IMF: WEO-2026-04, vintage abril 2026 (1 mes), proveedor: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_fi.md -->
+
+**Päivämäärä**: 2026-05-11 | **Luokitus**: Julkinen | **Horisontti**: kuukausi-eteenpäin (T+30/T+60)
+
+### Johtopäätös (Bottom Line Up Front)
+
+Ruotsin Tidö-koalitio (M-SD-KD-L, 176/349 paikkaa) toteuttaa lainsäädäntösprintin ennen vaaleja maahanmuuttopolitiikka keskeisimpänä vaaliaiheenaan. Viisi maahanmuuttoesitystä jätetty 2026-04-30–2026-05-07 muodostaa laajimman maahanmuuttooikeuksien rajoituksen sitten Tidö-sopimuksen vuonna 2022. Ruotsin eduskuntavaalit 13. syyskuuta on 125 päivän päässä. Koalitiomatemaatikka on vakaa, mutta L:n liberaali perintö aiheuttaa sisäistä jännitettä pysyvän oleskeluluvan lakkauttamisen suhteen (HD03262). Riski koalition hajoamiselle ennen vaaleja on matala [WEP: epätodennäköinen, 15 %]; riski ECHR-oikeudellisille haasteille hyväksymisen jälkeen on korkea [WEP: todennäköinen, 75 %].
+
+### Kolme ensisijaista tiedusteluvaatimusta (PIR)
+
+| PIR | Kysymys | Indikaattori | Määräaika |
+|-----|---------|-------------|-----------|
+| PIR-1 | Äänestävätkö L:n kansanedustajat KYLLÄ HD03262:lle? | L-johtajiston lausunto; JuU-kuulemisosallistuminen | Ennen JuU-äänestystä |
+| PIR-2 | Hyväksytäänkö maahanmuuttopaketti ennen 1. heinäkuun taukoa? | JuU:n aikataulu; opposition viivästysstrategiat | 1. heinäkuuta |
+| PIR-3 | Kuinka syvä on S:n vastaiskun syvyys työttömyydessä? | S:n lehdistötilaisuudet, jätetyt interpellations | Jatkuva |
+
+### Strategiset johtopäätökset
+
+1. **Maahanmuutto on vaali**: Jokainen hallituksen tärkeä esitys 30. huhtikuuta lähtien käyttää maahanmuuton turvallistamista kehystysvälineenä. Tämä on tarkoituksellinen vaalistrategia, ei sattuma.
+
+2. **L on koalition avaintoimija**: L (ministeri Edholmin puolue, ~16 paikkaa) allekirjoitti HD03262:n historiallisista liberaaleista maahanmuuttopositioistaan huolimatta. Jos sisäinen L-eripura puhkeaa, siitä tulee vaalien suurin uutinen.
+
+3. **Talous on opposition paras ase**: 8,7 % työttömyys (EU:n korkeimmista), puoli miljoonaa työtöntä (interpellaatio HC10746-konteksti). S:llä on oikeus ajaa tätä linjaa, mutta se kohtaa vaikeuksia murtaa maahanmuuttodominoinnin.
+
+4. **Puolustus on puolueiden välinen**: HD03254 sotilaallinen yhteistyö hyväksytään S:n tuella. Tämä poistaa puolustusmenot vaalistrategiselta taistelualueelta.
+
+5. **ECHR-haasteet vaalien jälkeen**: Pysyvän oleskeluluvan lakkauttaminen (HD03262) ja säilöönottamisen tiukentaminen (HD03265) ovat todennäköisiä aiheita Euroopan ihmisoikeustuomioistuimen haasteille 18 kuukauden kuluessa hyväksymisestä.
+
+### Taloudellinen konteksti
+
+- BKT-kasvu 2025: +1,0 % (IMF WEO-2026-04, potentiaalin alapuolella)
+- Työttömyys 2025: 8,7 % (Riksbankenin arviointikonteksti 2024: FiU betänkande HC01FiU20)
+- Riksbankenin korkoura: Laskeva trendi läpi 2025 (HC01FiU24-arviointi)
+- Finanssipolitiikka: Konservatiivinen; APL lääkehuoltovalmius 700 MSEK lisäbudjetti (HC01FiU33)
+
+*IMF-lähde: WEO-2026-04, vintage huhtikuu 2026 (1 kuukausi), toimittaja: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_fr.md -->
+
+### Synthèse (Bottom Line Up Front)
+
+La coalition Tidö (M-SD-KD-L, 176/349 sièges) effectue un sprint législatif préélectoral centré sur la migration. Cinq propositions migratoires déposées du 2026-04-30 au 2026-05-07 constituent la restriction la plus substantielle depuis l'accord Tidö de 2022. Les élections du 13 septembre sont dans 125 jours. L'arithmétique de coalition est stable, mais L crée des tensions internes sur la suppression du séjour permanent (HD03262). Rupture de coalition : faible [WEP : peu probable, 15 %] ; contestations CEDH post-adoption : élevé [WEP : probable, 75 %].
+
+### Trois exigences de renseignement prioritaires (PIR)
+
+| PIR | Question | Indicateur | Échéance |
+|-----|----------|-----------|---------|
+| PIR-1 | Les députés L voteront-ils OUI sur HD03262 ? | Déclaration de la direction L ; présence aux auditions JuU | Avant le vote JuU |
+| PIR-2 | Le paquet migratoire sera-t-il adopté avant la pause du 1er juillet ? | Calendrier JuU ; tactiques dilatoires de l'opposition | 1er juillet |
+| PIR-3 | Quelle est la profondeur de la contre-attaque de S sur le chômage ? | Conférences de presse S, interpellations déposées | En continu |
+
+### Conclusions stratégiques
+
+1. **La migration, c'est l'élection** : Chaque proposition gouvernementale majeure déposée depuis le 30 avril utilise la sécuritisation de la migration comme outil de cadrage. C'est une stratégie électorale délibérée, pas une coïncidence.
+
+2. **L est la clef de voûte de la coalition** : L (le parti de la ministre Edholm, ~16 sièges) a signé HD03262 malgré des positions migratoires historiquement libérales. Si une dissidence interne au L émerge, cela devient la principale histoire de cette élection.
+
+3. **L'économie est la meilleure arme de l'opposition** : 8,7 % de chômage (parmi les plus élevés de l'UE), un demi-million de sans-emploi (contexte interpellation HC10746). S a raison de poursuivre cet angle mais peine à percer la domination de la thématique migratoire.
+
+4. **La défense est bipartisane** : HD03254 coopération militaire sera adoptée avec le soutien de S. Cela retire les dépenses de défense de la zone de combat électorale.
+
+5. **Contestations CEDH après les élections** : La suppression de la résidence permanente (HD03262) et le durcissement de la détention (HD03265) seront vraisemblablement contestés devant la Cour européenne des droits de l'homme dans les 18 mois suivant l'adoption.
+
+### Contexte économique
+
+- Croissance du PIB 2025 : +1,0 % (IMF WEO-2026-04, en dessous du potentiel)
+- Chômage 2025 : 8,7 % (contexte de l'examen de la Riksbank 2024 : FiU betänkande HC01FiU20)
+- Trajectoire des taux de la Riksbank : Tendance à la baisse en 2025 (évaluation HC01FiU24)
+- Politique budgétaire : Conservatrice ; préparation pharmaceutique APL 700 MSEK budget supplémentaire (HC01FiU33)
+
+*Source IMF : WEO-2026-04, millésime avril 2026 (1 mois), fournisseur : imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מנהלים — החודש הקרוב: יוני–יולי 2026
+
+**תאריך**: 2026-05-11 | **סיווג**: ציבורי | **אופק**: חודש-קדימה (T+30/T+60)
+
+### סיכום (Bottom Line Up Front)
+
+קואליציית טידו השבדית (M-SD-KD-L, 176/349 מנדטים) מבצעת ספרינט חקיקתי לפני הבחירות, כאשר מדיניות ההגירה היא אבן הפינה האלקטורלית שלה. חמישה הצעות הגירה שהוגשו בין 2026-04-30 ל-2026-05-07 מהוות את ההגבלה המשמעותית ביותר של זכויות ההגירה מאז הסכם טידו ב-2022. הבחירות הפרלמנטריות השבדיות ב-13 בספטמבר נמצאות 125 ימים קדימה. האריתמטיקה הקואליציונית יציבה, אולם המורשת הליברלית של L יוצרת מתח פנימי סביב ביטול מעמד הקבע (HD03262). הסיכון לשבר קואליציוני לפני הבחירות נמוך [WEP: לא סביר, 15 %]; הסיכון לאתגרים משפטיים ב-ECHR לאחר האישור גבוה [WEP: סביר, 75 %].
+
+### שלושה דרישות מודיעין עדיפות (PIR)
+
+| PIR | שאלה | אינדיקטור | מועד אחרון |
+|-----|------|----------|------------|
+| PIR-1 | האם חברי הכנסת של L יצביעו כן על HD03262? | הצהרת הנהגת L; השתתפות בדיוני JuU | לפני הצבעת JuU |
+| PIR-2 | האם חבילת ההגירה תאושר לפני הפגרה של 1 ביולי? | לוח הזמנים של JuU; טקטיקות עיכוב האופוזיציה | 1 ביולי |
+| PIR-3 | מה עומק מתקפת הנגד של S בנושא האבטלה? | כנסים עיתונאיים של S, בקשות חקירה שהוגשו | מתמשך |
+
+### מסקנות אסטרטגיות
+
+1. **ההגירה היא הבחירות**: כל הצעת חוק ממשלתית חשובה שהוגשה מאז 30 באפריל משתמשת בהמסגרה ביטחונית של ההגירה. זוהי אסטרטגיה בחירות מכוונת, לא מקרה.
+
+2. **L הוא אבן יסוד הקואליציה**: L (מפלגת השרה אדהולם, ~16 מנדטים) חתמה על HD03262 על אף עמדות הגירה ליברליות היסטוריות. אם תיווצר מחלוקת פנימית ב-L, זו תהיה הסיפור הגדול של הבחירות.
+
+3. **הכלכלה היא הנשק הטוב ביותר של האופוזיציה**: 8.7% אבטלה (מהגבוהות באיחוד האירופי), חצי מיליון מובטלים (הקשר בקשת חקירה HC10746). S צודקת בלהמשיך את הקו הזה אך מתקשה לחדור דרך ההגמוניה של ההגירה.
+
+4. **הביטחון הוא דו-מפלגתי**: HD03254 שיתוף פעולה צבאי יאושר עם תמיכת S. זה מוציא את הוצאות הביטחון מאזור הקרב האלקטורלי.
+
+5. **אתגרי ECHR לאחר הבחירות**: ביטול מעמד הקבע (HD03262) והחמרת המעצר (HD03265) הם נושאים סבירים לאתגרים בבית הדין האירופי לזכויות האדם תוך 18 חודשים מהאישור.
+
+### הקשר כלכלי
+
+- צמיחת התמ"ג 2025: +1.0% (IMF WEO-2026-04, מתחת לפוטנציאל)
+- אבטלה 2025: 8.7% (הקשר בחינת Riksbank 2024: FiU betänkande HC01FiU20)
+- נתיב הריבית של Riksbank: מגמת ירידה לאורך 2025 (הערכת HC01FiU24)
+- מדיניות פיסקלית: שמרנית; מוכנות תרופות APL 700 MSEK תקציב נוסף (HC01FiU33)
+
+*מקור IMF: WEO-2026-04, וינטאג' אפריל 2026 (חודש אחד), ספק: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_ja.md -->
+
+**日付**: 2026-05-11 | **分類**: 公開 | **時間軸**: 来月（T+30/T+60）
+
+### 結論（Bottom Line Up Front）
+
+スウェーデンのティドー連立政権（M-SD-KD-L、176/349議席）は選挙前の立法スプリントを実施しており、移民政策を選挙の核心テーマとしている。2026-04-30から2026-05-07にかけて提出された5件の移民法案は、2022年のティドー合意以来最も大規模な移民権利の制限を構成する。9月13日の総選挙まで125日。連立の算術は安定しているが、永住権廃止（HD03262）をめぐってLの自由主義的伝統が内部緊張を生み出している。選挙前の連立崩壊リスクは低い [WEP: ありそうにない、15%]；可決後のECHR法的異議申し立てリスクは高い [WEP: ありそう、75%]。
+
+### 3つの優先情報要求（PIR）
+
+| PIR | 質問 | 指標 | 期限 |
+|-----|------|------|------|
+| PIR-1 | L所属議員はHD03262に賛成票を投じるか？ | L指導部声明；JuU公聴会出席 | JuU採決前 |
+| PIR-2 | 移民パッケージは7月1日休会前に可決されるか？ | JuUのスケジュール；野党の遅延戦術 | 7月1日 |
+| PIR-3 | Sの失業問題への反撃はどの程度深いか？ | S記者会見、提出された質問状 | 継続 |
+
+### 戦略的結論
+
+1. **移民問題が選挙を左右する**：4月30日以降に提出された主要な政府法案はすべて、移民の安全保障化を枠組みツールとして使用している。これは偶然ではなく、意図的な選挙戦略だ。
+
+2. **Lは連立の要**：L（エドホルム大臣の党、約16議席）は歴史的に自由主義的な移民立場にもかかわらずHD03262に署名した。L内部の反乱が表面化すれば、選挙最大のニュースとなる。
+
+3. **経済は野党の最良の武器**：8.7%の失業率（EUで最高水準の一つ）、50万人の失業者（質問状HC10746の文脈）。Sがこの角度を追求するのは正しいが、移民問題の支配を突破するのに苦労している。
+
+4. **防衛は超党派**：HD03254 軍事協力はSの支援で可決される。これにより、防衛支出が選挙戦略上の争点から外れる。
+
+5. **選挙後のECHR挑戦**：永住権廃止（HD03262）と拘留強化（HD03265）は、可決から18ヶ月以内にヨーロッパ人権裁判所への申し立ての対象となる可能性が高い。
+
+### 経済的文脈
+
+- GDP成長率2025年：+1.0%（IMF WEO-2026-04、潜在成長率を下回る）
+- 失業率2025年：8.7%（リクスバンク2024年評価文脈：FiU betänkande HC01FiU20）
+- リクスバンクの金利経路：2025年を通じた低下傾向（HC01FiU24評価）
+- 財政政策：保守的；APL医薬品備蓄 700 MSEK 補正予算（HC01FiU33）
+
+*IMFデータ提供元：WEO-2026-04、ビンテージ2026年4月（1ヶ月）、プロバイダー：imf。*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_ko.md -->
+
+**날짜**: 2026-05-11 | **분류**: 공개 | **전망 기간**: 다음 달 (T+30/T+60)
+
+### 핵심 결론 (Bottom Line Up Front)
+
+스웨덴의 티되(Tidö) 연립정부(M-SD-KD-L, 176/349 의석)는 이민 정책을 선거 핵심 의제로 삼아 선거 전 입법 스프린트를 진행 중이다. 2026-04-30부터 2026-05-07 사이에 제출된 5개의 이민 법안은 2022년 티되 협약 이래 가장 광범위한 이민권 제한을 구성한다. 9월 13일 총선까지 125일 남았다. 연립 산술은 안정적이나, 영주권 폐지(HD03262)를 둘러싼 L당의 자유주의적 전통이 내부 긴장을 야기하고 있다. 선거 전 연립 붕괴 위험은 낮다 [WEP: 가능성 낮음, 15%]; 의결 후 ECHR 법적 이의 제기 위험은 높다 [WEP: 가능성 높음, 75%].
+
+### 세 가지 우선 정보 요구 사항 (PIR)
+
+| PIR | 질문 | 지표 | 기한 |
+|-----|------|------|------|
+| PIR-1 | L 의원들이 HD03262에 찬성 투표를 할 것인가? | L 지도부 성명; JuU 청문회 참석 | JuU 표결 전 |
+| PIR-2 | 이민 패키지가 7월 1일 휴회 전에 가결될 것인가? | JuU 일정; 야당의 지연 전술 | 7월 1일 |
+| PIR-3 | S당의 실업 문제 반격 깊이는? | S 기자회견, 제출된 대정부 질문 | 지속 |
+
+### 전략적 결론
+
+1. **이민이 곧 선거다**: 4월 30일 이후 제출된 모든 주요 정부 법안은 이민 안보화를 프레이밍 도구로 사용한다. 이는 우연이 아닌 의도적인 선거 전략이다.
+
+2. **L이 연립의 요충석이다**: L당(에드홀름 장관의 정당, 약 16의석)은 역사적 자유주의적 이민 입장에도 불구하고 HD03262에 서명했다. L 내부 반발이 표면화되면, 이는 선거 최대 이슈가 된다.
+
+3. **경제는 야당의 최고 무기다**: 8.7%의 실업률(EU 최고 수준 중 하나), 실업자 50만 명(대정부질문 HC10746 맥락). S가 이 각도를 추구하는 것은 옳지만, 이민 지배를 뚫는 데 어려움을 겪고 있다.
+
+4. **국방은 초당적이다**: HD03254 군사 협력은 S 지지로 가결된다. 이로써 국방 지출이 선거 전략 전쟁에서 제외된다.
+
+5. **선거 후 ECHR 이의 제기**: 영주권 폐지(HD03262)와 구금 강화(HD03265)는 의결 후 18개월 이내에 유럽인권재판소에서 이의 제기 대상이 될 가능성이 높다.
+
+### 경제적 맥락
+
+- GDP 성장률 2025: +1.0% (IMF WEO-2026-04, 잠재 성장률 이하)
+- 실업률 2025: 8.7% (Riksbank 2024년 검토 맥락: FiU betänkande HC01FiU20)
+- Riksbank 금리 경로: 2025년 전반에 걸친 하락 추세 (HC01FiU24 평가)
+- 재정정책: 보수적; APL 의약품 준비 700 MSEK 추가 예산 (HC01FiU33)
+
+*IMF 출처: WEO-2026-04, 빈티지 2026년 4월 (1개월), 공급자: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_nl.md -->
+
+### Samenvatting (Bottom Line Up Front)
+
+De Zweedse Tidö-coalitie (M-SD-KD-L, 176/349 zetels) voert een wetgevingssprint uit voor de verkiezingen met migratiebeleid als het centrale verkiezingsthema. Vijf migratieproposities ingediend van 2026-04-30 tot 2026-05-07 vormen de meest substantiële beperking van immigratierechten sinds het Tidö-akkoord van 2022. De Zweedse parlementsverkiezingen op 13 september zijn 125 dagen weg. De coalitie-arithmetiek is stabiel, maar het liberale erfgoed van L zorgt voor interne spanning over de afschaffing van permanente verblijfsvergunning (HD03262). Het risico op een pre-verkiezings coalitiebreuk is laag [WEP: onwaarschijnlijk, 15 %]; het risico op ECHR-juridische aanvechting na aanname is hoog [WEP: waarschijnlijk, 75 %].
+
+### Drie Prioritaire Inlichtingenvereisten (PIR)
+
+| PIR | Vraag | Indicator | Deadline |
+|-----|-------|-----------|----------|
+| PIR-1 | Zullen L-parlementariërs JA stemmen op HD03262? | L-leiderschapsverklaring; JuU-hoorzittingdeelname | Voor JuU-stemming |
+| PIR-2 | Wordt het migratiepakket goedgekeurd voor het 1 juli-reces? | JuU-tijdlijn; vertragingstactieken van de oppositie | 1 juli |
+| PIR-3 | Hoe diep is S's werklosheidstegenaanval? | S-persconferenties, ingediende interpellaties | Doorlopend |
+
+### Strategische Conclusies
+
+1. **Migratie is de verkiezing**: Elke belangrijke regeringsproposittie ingediend sinds 30 april gebruikt migratiesecuritisering als framing-instrument. Dit is een bewuste verkiezingsstrategie, geen toeval.
+
+2. **L is de hoeksteen van de coalitie**: L (minister Edholms partij, ~16 zetels) tekende HD03262 ondanks historisch liberale migratie-standpunten. Als interne L-onenigheid ontstaat, wordt het het grootste nieuws van deze verkiezingen.
+
+3. **De economie is het beste wapen van de oppositie**: 8,7 % werkloosheid (een van de hoogste in de EU), een half miljoen werklozen (interpellatiecontext HC10746). S heeft gelijk dit angle te volgen maar heeft moeite door de migratie-dominantie heen te breken.
+
+4. **Defensie is bipartijdig**: HD03254 militaire samenwerking wordt aangenomen met S-steun. Dit haalt defensie-uitgaven uit de verkiezingsstrategische strijdzone.
+
+5. **ECHR-uitdagingen na de verkiezingen**: Afschaffing van permanente verblijfsvergunning (HD03262) en aanscherping van detentie (HD03265) zijn waarschijnlijke onderwerpen van uitdagingen bij het Europees Hof voor de Rechten van de Mens binnen 18 maanden na aanname.
+
+### Economische Context
+
+- BBP-groei 2025: +1,0 % (IMF WEO-2026-04, onder potentieel)
+- Werkloosheid 2025: 8,7 % (Riksbank-beoordelingscontext 2024: FiU betänkande HC01FiU20)
+- Riksbank-rentepad: Neerwaartse trend door 2025 (HC01FiU24-evaluatie)
+- Begrotingsbeleid: Conservatief; APL farmaceutische voorbereiding 700 MSEK aanvullend budget (HC01FiU33)
+
+*IMF-bron: WEO-2026-04, vintage april 2026 (1 maand), provider: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_no.md -->
+
+**Dato**: 2026-05-11 | **Klassifisering**: Offentlig | **Horisont**: måned-fremover (T+30/T+60)
+
+### Konklusjon (Bottom Line Up Front)
+
+Sveriges Tidö-koalisjon (M-SD-KD-L, 176/349 mandater) gjennomfører en lovgivningssprint frem mot valget med migrasjonspolitikk som valgkampens sentrale element. Fem migrasjonsproposisjoner innlevert 2026-04-30 til 2026-05-07 utgjør den mest omfattende innskrenkningen av innvandringsrettigheter siden Tidø-avtalen 2022. Det svenske stortingsvalget 13. september er 125 dager unna. Koalisjonsarithmetikken er stabil, men L's liberale arv skaper intern spenning rundt avskaffelsen av permanent oppholdstillatelse (HD03262). Risikoen for koalisjonsbrudd før valget er lav [WEP: usannsynlig, 15 %]; risikoen for ECHR-rettslige utfordringer etter vedtakelse er høy [WEP: sannsynlig, 75 %].
+
+### Tre prioriterte etterretningskrav (PIR)
+
+| PIR | Spørsmål | Indikator | Frist |
+|-----|----------|-----------|-------|
+| PIR-1 | Vil L's stortingsrepresentanter stemme JA på HD03262? | L-ledelsens uttalelse; JuU-høringsdeltakelse | Før JuU-avstemning |
+| PIR-2 | Vil migrasjonspakken vedtas før 1. juli-pausen? | JuU:s tidslinje; opposisjonens forsinkelsesstrategi | 1. juli |
+| PIR-3 | Hvor dyp er S's arbeidsledighetsmotangrep? | S's pressekonferanser, innleverte interpellasjoner | Kontinuerlig |
+
+### Strategiske konklusjoner
+
+1. **Migrasjon er valget**: Enhver viktig regjeringsproposisjon innlevert siden 30. april har migrasjonsikkerhetisering som innrammingsverktøy. Dette er en bevisst valgstrategi, ikke tilfeldighet.
+
+2. **L er koalisjonens bærebjelke**: L (statsminister Edholms parti, ~16 mandater) undertegnet HD03262 til tross for historiske liberale migrasjonsposisjoner. Dersom intern L-uenighet oppstår, blir det valgkampens største nyhet.
+
+3. **Økonomien er opposisjonens beste våpen**: 8,7 % arbeidsledighet (blant EUs høyeste), en halv million arbeidsløse (interpellasjons HC10746-kontekst). S har rett i å forfølge denne linjen, men møter vanskeligheter med å trenge gjennom migrasjonsdominansen.
+
+4. **Forsvar er bipartistisk**: HD03254 militært samarbeid vil vedtas med S's støtte. Dette fjerner forsvarsutgifter fra den valgstrategiske kampsonen.
+
+5. **ECHR-utfordringer etter valget**: Avskaffelse av permanent oppholdstillatelse (HD03262) og innstramming av frihetsberøvelse (HD03265) er sannsynlige emner for utfordringer ved Den europeiske menneskerettsdomstolen innen 18 måneder etter vedtakelse.
+
+### Økonomisk kontekst
+
+- BNP-vekst 2025: +1,0 % (IMF WEO-2026-04, under potensial)
+- Arbeidsledighet 2025: 8,7 % (Riksbankens gjennomgangskontekst 2024: FiU betänkande HC01FiU20)
+- Riksbankens rentebane: Nedadgående trend gjennom 2025 (HC01FiU24-evaluering)
+- Finanspolitikk: Konservativ; APL legemiddelberedskap 700 MSEK ekstrabudsjett (HC01FiU33)
+
+*IMF-kilde: WEO-2026-04, vintage april 2026 (1 måned), leverandør: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_sv.md -->
+
+**Datum**: 2026-05-11 | **Klassificering**: Publik | **Horisont**: månad-framåt (T+30/T+60)
+
+### Slutsats (Bottom Line Up Front)
+
+Sveriges Tidö-koalition (M-SD-KD-L, 176/349 mandat) genomför en lagstiftningssprint inför valet med migrationspolitiken som valets central punkt. Fem migrationspropositioner inlämnade 2026-04-30 till 2026-05-07 utgör den mest omfattande inskränkningen av invandringsrättigheterna sedan Tidöavtalet 2022. Riksdagsvalet den 13 september är 125 dagar borta. Koalitionsarithmetiken är stabil men L:s liberala arv skapar intern spänning kring avskaffandet av permanent uppehållstillstånd (HD03262). Risken för en koalitionskollaps inför valet är låg [WEP: osannolikt, 15 %]; risken för ECHR-rättsliga utmaningar efter passage är hög [WEP: sannolikt, 75 %].
+
+### Tre prioriterade underrättelsekrav (PIR)
+
+| PIR | Fråga | Indikator | Tidsgräns |
+|-----|-------|-----------|-----------|
+| PIR-1 | Kommer L:s riksdagsledamöter att rösta JA på HD03262? | L-ledarskapets uttalande; JuU-hörandedeltagande | Före JuU-omröstning |
+| PIR-2 | Kommer migrationspaket att antas före 1 juli-uppehållet? | JuU:s tidslinje; oppositionens fördröjningstaktik | 1 juli |
+| PIR-3 | Hur djupt är S:s motattack på arbetslösheten? | S:s presskonferenser, inlämnade interpellationer | Kontinuerlig |
+
+### Strategiska slutsatser
+
+1. **Migration är valet**: Varje viktig regeringsproposition inlämnad sedan 30 april har migrationssäkerhetisering som inramningsverktyg. Det är en medveten valstrategi, inte en tillfällighet.
+
+2. **L är koalitionens nyckeln**: L (statsrådets Edholms parti, ~16 mandat) undertecknade HD03262 trots historiska liberala migrationspositioner. Om intern L-oenighet uppstår, blir det valets viktigaste historia.
+
+3. **Ekonomin är oppositionens bästa vapen**: 8,7 % arbetslöshet (bland EU:s högsta), en halv miljon arbetslösa (interpellation HC10746-kontext). S har rätt att driva denna linje men möter svårigheter att tränga igenom migrationsdominansen.
+
+4. **Försvaret är bipartisant**: HD03254 militärt samarbete kommer att passera med S:s stöd. Detta tar bort försvarsutgifter från det valstrategiska stridsområdet.
+
+5. **ECHR-utmaningar efter valet**: Avskaffandet av permanent uppehållstillstånd (HD03262) och åtstramningen av häktning (HD03265) är sannolika föremål för utmaningar vid Europeiska domstolen för de mänskliga rättigheterna inom 18 månader efter passage.
+
+### Ekonomisk kontext
+
+- BNP-tillväxt 2025: +1,0 % (IMF WEO-2026-04, under potential)
+- Arbetslöshet 2025: 8,7 % (Riksbankens granskningskontext 2024: FiU betänkande HC01FiU20)
+- Riksbankens räntebana: Nedåtgående trend under 2025 (HC01FiU24-utvärdering)
+- Finanspolitik: Konservativ; APL läkemedelsberedskap 700 MSEK extrabudget (HC01FiU33)
+
+*IMF-källa: WEO-2026-04, årgång april 2026 (1 månad), leverantör: imf.*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_zh.md -->
+
+**日期**: 2026-05-11 | **分类**: 公开 | **时间视野**: 未来一个月 (T+30/T+60)
+
+### 核心结论 (Bottom Line Up Front)
+
+瑞典蒂岱（Tidö）联合政府（M-SD-KD-L，176/349议席）正在大选前展开立法冲刺，以移民政策为其选战核心议题。2026-04-30至2026-05-07期间提交的五项移民法案构成2022年蒂岱协议以来最重大的移民权利限制。9月13日总选举距今125天。联合政府的议席算术稳定，但L党的自由主义传统在取消永久居留权问题上（HD03262）形成内部张力。选前联合政府崩溃风险低 [WEP: 不太可能，15%]；通过后遭ECHR法律挑战的风险高 [WEP: 可能，75%]。
+
+### 三项优先情报需求 (PIR)
+
+| PIR | 问题 | 指标 | 截止时间 |
+|-----|------|------|---------|
+| PIR-1 | L党议员是否会在HD03262上投赞成票？ | L党领导层声明；JuU听证会出席情况 | JuU表决前 |
+| PIR-2 | 移民方案能否在7月1日休会前通过？ | JuU时间表；反对派拖延策略 | 7月1日 |
+| PIR-3 | S党反击失业议题的深度如何？ | S党新闻发布会，已提交质询 | 持续跟进 |
+
+### 战略结论
+
+1. **移民即选举**：4月30日以来提交的每项重要政府法案均以移民安全化为叙事框架。这是刻意为之的选举策略，并非巧合。
+
+2. **L是联合政府的关键**：L党（埃德霍尔姆部长的政党，约16席）尽管历史上持自由主义移民立场，仍签署了HD03262。若L党内部分裂浮现，将成为本次选举的最大新闻。
+
+3. **经济是反对派的最佳武器**：8.7%的失业率（欧盟最高之列），五十万名失业者（质询HC10746背景）。S党追求这一角度是正确的，但面临突破移民议题主导的困难。
+
+4. **国防超越党派**：HD03254军事合作将获S党支持而通过。这使国防开支脱离选举战略争斗区域。
+
+5. **选后ECHR挑战**：取消永久居留（HD03262）和加强拘留（HD03265）很可能在通过后18个月内成为欧洲人权法院挑战的对象。
+
+### 经济背景
+
+- GDP增长率2025年：+1.0%（IMF WEO-2026-04，低于潜在增长率）
+- 失业率2025年：8.7%（Riksbank 2024年评估背景：FiU betänkande HC01FiU20）
+- Riksbank利率路径：2025年持续下行趋势（HC01FiU24评估）
+- 财政政策：保守；APL医药准备700 MSEK追加预算（HC01FiU33）
+
+*IMF数据来源：WEO-2026-04，2026年4月版（1个月），提供者：imf。*
+
+<!-- source-sha: 094c23e8a46c1bb43b41aed6c3301cba4aba5a9d -->
+
 ## Key Actors
 <!-- source: key-actors.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/key-actors.md -->
 
@@ -1102,7 +1637,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 24 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 37 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1134,6 +1669,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`committee-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/committee-dynamics.md)
 - [`document-registry.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/document-registry.md)
 - [`electoral-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/electoral-implications.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/executive-brief_zh.md)
 - [`key-actors.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/key-actors.md)
 - [`media-framing.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/media-framing.md)
 - [`policy-positions.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/policy-positions.md)

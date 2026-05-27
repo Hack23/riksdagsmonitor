@@ -3,7 +3,7 @@ date: 2026-05-12
 subfolder: propositions
 slug: 2026-05-12-propositions
 source_folder: analysis/daily/2026-05-12/propositions
-generated_at: 2026-05-25T15:59:53.900Z
+generated_at: 2026-05-27T07:35:33.610Z
 language: en
 layout: article
 ---
@@ -73,6 +73,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 📝 | [Horizon PIR Roll-Forward](#rm-horizon-pir-roll-forward) | Priority Intelligence Requirements rolled forward across long horizons (T+72h → T+1460d) |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-political-classification) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1300,13 +1313,511 @@ This analysis establishes baseline positions for:
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-05-07 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص الاستخبارات — مقترحات الحكومة
+<!-- analysis-type: executive-brief -->
+
+### التصنيف: عام | الحساسية: مفتوحة
+
+### الخلاصة
+ثلاثة مقترحات حكومية مُقدَّمة في 7 مايو 2026 تُعزِّز أجندة قدرات الدولة لائتلاف تيدو في المرحلة البرلمانية الأخيرة قبل انتخابات سبتمبر 2026. يتسم مقترح الأمن (HD03267) بأعلى أهمية وتعقيد قانوني؛ وتوسيع صلاحيات Skatteverket (HD03261) بأعلى حساسية اجتماعية لاعتبارات الخصوصية؛ أما الهوية الإلكترونية (HD03250) فتحظى بأوسع اهتمام عام.
+
+### نقاط الاستخبارات الحيوية
+
+**1. HD03267 — التهديدات الأمنية** [أهمية عالية]
+- يُوسِّع أسس الترحيل/حظر الدخول للأجانب المصنَّفين "تهديدات أمنية مؤهَّلة"
+- يُوسِّع الدور الاستشاري لـ SÄPO في قرارات الهجرة
+- نظراً للتأثير على الحقوق الأساسية (الفصل 2 RF؛ ECHR المادتان 3 و8)، من المرجح جداً إحالته إلى Lagrådet
+- حزب C (Centerpartiet) هو الصوت الحاسم: يدعم الائتلاف في الأمن لكنه قلق بشأن سيادة القانون
+- WEP: 85% تمرير بأغلبية الائتلاف؛ 15% تأخير لتعديلات اللجان
+
+**2. HD03261 — صلاحيات Skatteverket** [أهمية متوسطة-عالية]
+- يمنح Skatteverket حقوق تدقيق موسَّعة وصلاحيات تبادل البيانات المتعلقة بالاحتيال في folkbokföring
+- تقديرات بأكثر من 50,000 تسجيل خاطئ في السويد؛ Statskontoret تُقدِّر تكاليف مالية بـ 2 مليار كرونة/سنة
+- حزب S منقسم: الجناح المحافظ مالياً يدعم إجراءات مكافحة الاحتيال؛ جناح الحريات المدنية قلق
+- WEP: 70% تمرير نظيف؛ 30% تمرير مع تعديلات توضيحية من اللجان
+
+**3. HD03250 — الهوية الإلكترونية الحكومية** [أهمية متوسطة]
+- يُنشئ الإطار القانوني للهوية الإلكترونية الصادرة عن الدولة (statlig e-legitimation)
+- يُعالج الإقصاء الرقمي لـ ~10% من السكان غير الحاصلين على BankID
+- القطاع (BankID وFreja eID) سيُمارس ضغطاً على اللجان لتحقيق شروط تنافسية متكافئة
+- WEP: 90% تمرير؛ توافق حزبي متعدد على البنية التحتية
+
+### استخبارات قابلة للتطبيق
+- مراقبة معالجة لجنة JuU لـ HD03267 لتأكيد الإحالة إلى Lagrådet
+- متابعة تعديلات SkU بشأن ضمانات حماية البيانات في HD03261
+- جدول الاستماعات في TU لـ HD03250 — تمرير محتمل في صيف 2026
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_da.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### Klassifikation: OFFENTLIG | Følsomhed: ÅBEN
+
+### KONKLUSION
+Tre regeringsforslag indsendt 7. maj 2026 driver Tidö-koalitionens statskapacitetsdagsorden i det sidste parlamentariske stræk inden valget i september 2026. Sikkerhedsforslaget (HD03267) har den højeste relevans og juridiske kompleksitet; Skatteverkets udvidgelse (HD03261) den højeste samfundsmæssige følsomhed på privatlivsgrunde; e-ID (HD03250) den bredeste offentlige interesse.
+
+### Kritiske efterretningspunkter
+
+**1. HD03267 — Sikkerhedstrusler** [HØJ RELEVANS]
+- Udvider grundlag for udvisning/indrejsenægtelse for udlændinge anset for "kvalificerede sikkerhedstrusler"
+- Udvider SÄPO's rådgivende rolle i migrationsbeslutninger
+- Næsten sikkert henvist til Lagrådet i betragtning af indvirkning på grundlæggende rettigheder (Kapitel 2 RF; EMRK art. 3, 8)
+- C (Centerpartiet) er den afgørende stemme: støtter koalitionen på sikkerhed men har retsstatsbetænkeligheder
+- WEP: 85% vedtagelse med koalitionsflertal; 15% forsinkelse for udvalgsændringer
+
+**2. HD03261 — Skatteverkets beføjelser** [MIDDEL-HØJ RELEVANS]
+- Giver Skatteverket udvidede inspektionsrettigheder og datadelingsmyndighed for folkbokföringsbedrageri
+- Anslået 50.000+ falske registreringer i Sverige; Statskontoret estimerede 2 mia. SEK/år i fiskale omkostninger
+- S splittet: fiskalt-konservativ fløj støtter anti-bedrageriforanstaltninger; borgerrettighedsfløj bekymret
+- WEP: 70% ren vedtagelse; 30% vedtaget med præciserende udvalgsændringer
+
+**3. HD03250 — Statslig e-ID** [MIDDEL RELEVANS]
+- Skaber lovmæssig ramme for statsudstedt e-ID (statlig e-legitimation)
+- Adresserer digital eksklusion for ~10% af befolkningen uden BankID
+- Industrien (BankID, Freja eID) vil lobbye udvalget for lige konkurrencevilkår
+- WEP: 90% vedtagelse; tværpolitisk infrastrukturkonsensus
+
+### Handlingseftretning
+- Overvåg JuU-udvalgets behandling af HD03267 for bekræftelse af Lagrådets høring
+- Følg SkU-ændringer om HD03261 databeskyttelsesgarantier
+- TU-høringsplan for HD03250 — sandsynlig vedtagelse sommer 2026
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_de.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### Einstufung: ÖFFENTLICH | Sensibilität: OFFEN
+
+### KERNAUSSAGE
+Drei am 7. Mai 2026 vorgelegte Regierungspropositionnen treiben die Staatskapazitätsagenda der Tidö-Koalition in der letzten parlamentarischen Strecke vor der Wahl im September 2026 voran. Die Sicherheitsproposition (HD03267) hat die höchste Relevanz und rechtliche Komplexität; die Erweiterung des Skatteverket (HD03261) die höchste gesellschaftliche Sensibilität aus Datenschutzgründen; die e-ID (HD03250) das breiteste öffentliche Interesse.
+
+### Kritische nachrichtendienstliche Punkte
+
+**1. HD03267 — Sicherheitsbedrohungen** [HOHE RELEVANZ]
+- Erweitert die Grundlagen für Ausweisung/Einreiseverweigerung für Ausländer, die als „qualifizierte Sicherheitsbedrohungen" eingestuft werden
+- Erweitert die Beratungsrolle der SÄPO bei Migrationsenbescheidungen
+- Angesichts der Auswirkungen auf Grundrechte (Kap. 2 RF; EMRK Art. 3, 8) fast sicher an den Lagrådet weitergeleitet
+- C (Centerpartiet) ist die entscheidende Stimme: unterstützt die Koalition in Sicherheitsfragen, hat jedoch Rechtsstaatsbedenken
+- WEP: 85% Verabschiedung mit Koalitionsmehrheit; 15% Verzögerung für Ausschussänderungen
+
+**2. HD03261 — Befugnisse des Skatteverket** [MITTELHOCH RELEVANZ]
+- Gibt dem Skatteverket erweiterte Kontrollrechte und Datenweitergabebefugnis bei Folkbokföring-Betrug
+- Geschätzte 50.000+ Falschregistrierungen in Schweden; Statskontoret schätzte 2 Mrd. SEK/Jahr an fiskalischen Kosten
+- S gespalten: fiskalisch-konservativer Flügel unterstützt Anti-Betrugsmaßnahmen; Bürgerrechtsflügel besorgt
+- WEP: 70% saubere Verabschiedung; 30% mit klarstellenden Ausschussänderungen verabschiedet
+
+**3. HD03250 — Staatliche e-ID** [MITTLERE RELEVANZ]
+- Schafft rechtlichen Rahmen für staatlich ausgestellte e-ID (statlig e-legitimation)
+- Adressiert digitale Ausgrenzung von ~10% der Bevölkerung ohne BankID
+- Die Industrie (BankID, Freja eID) wird beim Ausschuss für gleiche Wettbewerbsbedingungen lobbyieren
+- WEP: 90% Verabschiedung; überparteilicher Infrastrukturkonsens
+
+### Handlungsempfehlungen
+- Beobachten der JuU-Ausschussbehandlung von HD03267 zur Bestätigung der Lagrådet-Überweisung
+- Verfolgen der SkU-Änderungen zu HD03261-Datenschutzsicherungen
+- Anhörungsplan des TU für HD03250 — wahrscheinliche Verabschiedung Sommer 2026
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_es.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### Clasificación: PÚBLICO | Sensibilidad: ABIERTA
+
+### RESUMEN EJECUTIVO
+Tres proposiciones gubernamentales presentadas el 7 de mayo de 2026 impulsan la agenda de capacidad estatal de la coalición Tidö antes de las elecciones de septiembre de 2026. La proposición de seguridad (HD03267) presenta la mayor relevancia y complejidad jurídica; la ampliación del Skatteverket (HD03261) la mayor sensibilidad social por razones de privacidad; la e-ID (HD03250) el mayor interés público.
+
+### Puntos críticos de inteligencia
+
+**1. HD03267 — Amenazas a la seguridad** [RELEVANCIA ALTA]
+- Amplía las bases de expulsión/prohibición de entrada para extranjeros considerados "amenazas de seguridad cualificadas"
+- Amplía el papel consultivo de la SÄPO en las decisiones migratorias
+- Impacto sobre derechos fundamentales (cap. 2 RF; CEDH arts. 3, 8); remisión al Lagrådet casi segura
+- C (Centerpartiet) voto decisivo: apoya seguridad en coalición pero preocupado por Estado de derecho
+- WEP: 85% de aprobación con mayoría de coalición; 15% de retraso para enmiendas en comisión
+
+**2. HD03261 — Competencias del Skatteverket** [RELEVANCIA MEDIA-ALTA]
+- Otorga al Skatteverket derechos de auditoría ampliados y poderes de intercambio de datos para el fraude en el folkbokföring
+- Estimación de más de 50.000 registros incorrectos en Suecia; Statskontoret estimó 2.000 millones SEK/año en costes fiscales
+- S dividido: ala conservadora apoya medidas antifrauade; ala libertades civiles está preocupada
+- WEP: 70% de aprobación limpia; 30% aprobada con enmiendas aclaratorias en comisión
+
+**3. HD03250 — e-ID estatal** [RELEVANCIA MEDIA]
+- Crea el marco legal para una identificación electrónica emitida por el Estado (statlig e-legitimation)
+- Aborda la exclusión digital del ~10% de la población sin BankID
+- El sector (BankID, Freja eID) hará lobby en comisión por condiciones de competencia equitativas
+- WEP: 90% de aprobación; consenso bipartidista en infraestructuras
+
+### Inteligencia accionable
+- Monitorear el tratamiento en comisión JuU de HD03267 para confirmar la remisión al Lagrådet
+- Seguir las enmiendas SkU sobre garantías de protección de datos de HD03261
+- Calendario del TU para HD03250 — aprobación probable verano 2026
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_fi.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### Luokitus: JULKINEN | Herkkyys: AVOIN
+
+### TIIVISTELMÄ
+Kolme 7. toukokuuta 2026 esitettyä hallituksen esitystä edistävät Tidö-koalition valtiollisen kapasiteetin agendaa parlamentaarisen kauden viimeisessä vaiheessa ennen syyskuun 2026 vaaleja. Turvallisuusesitys (HD03267) on korkein salienssin ja oikeudellisen monimutkaisuuden suhteen; Skatteverketin laajentaminen (HD03261) korkein yhteiskunnallisen herkkyyden suhteen yksityisyyssyistä; e-ID (HD03250) laajimman yleisen mielenkiinnon kohteena.
+
+### Kriittiset tiedustelupisteet
+
+**1. HD03267 — Turvallisuusuhat** [KORKEA SAALIENSSI]
+- Laajentaa "päteviksi turvallisuusuhiksi" katsottujen ulkomaalaisten maastakarkotus/maahantulokiellon perusteita
+- Laajentaa SÄPOn neuvoa-antavaa roolia maahanmuuttopäätöksissä
+- Perusoikeuksiin (RF 2 luku; EIOYS 3 ja 8 art.) kohdistuvan vaikutuksen vuoksi lähes varmasti siirretty Lainopilliselle neuvostolle
+- C (Centerpartiet) on ratkaiseva ääni: tukee koalitiota turvallisuudessa mutta on huolestunut oikeusvaltioperiaatteesta
+- WEP: 85% hyväksytty koalitioenemmistöllä; 15% viivästys valiokuntamuutoksille
+
+**2. HD03261 — Skatteverketin toimivaltuudet** [KESKITASOA KORKEA SAALIENSSI]
+- Antaa Skatteverketille laajennetut tarkastusoikeudet ja tietojenvaihtovaltuudet folkbokföring-petosten osalta
+- Arviolta yli 50 000 väärää rekisteröintiä Ruotsissa; Statskontoret arvioi 2 miljardia SEK/vuosi fiskaalisia kustannuksia
+- S jakautunut: finanssikonservatiivinen siipi tukee petostentorjuntatoimia; kansalaisvapaussiivel huolestunut
+- WEP: 70% puhdas hyväksyntä; 30% hyväksytty selventävillä valiokuntamuutoksilla
+
+**3. HD03250 — Valtion e-ID** [KESKITASOA SAALIENSSI]
+- Luo lakisääteisen kehyksen valtion myöntämälle sähköiselle henkilöllisyystodistukselle (statlig e-legitimation)
+- Ratkaisee noin 10 prosentin väestöosuuden digitaalisen syrjäytymisen BankID:n puuttuessa
+- Toimiala (BankID, Freja eID) lobbaa valiokunnassa tasapuolisten kilpailuedellytysten puolesta
+- WEP: 90% hyväksyntä; puoluepoliittinen infrastruktuurikonsensus
+
+### Toimintatiedustelu
+- Seuraa JuU-valiokunnan käsittelyä HD03267:n osalta Lainopillisen neuvoston lausuntopyynnön vahvistamiseksi
+- Seuraa SkU-muutoksia HD03261:n tietosuojatakuista
+- TU:n kuulemisaikataulu HD03250:lle — todennäköisesti kesän 2026 hyväksyntä
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_fr.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### Classification : PUBLIC | Sensibilité : OUVERTE
+
+### SYNTHÈSE
+Trois propositions gouvernementales déposées le 7 mai 2026 font progresser l'agenda de capacité étatique de la coalition Tidö avant les élections de septembre 2026. La proposition sécurité (HD03267) présente la plus haute saillance et complexité juridique ; l'extension du Skatteverket (HD03261) la plus haute sensibilité sociale pour des raisons de vie privée ; l'e-ID (HD03250) le plus large intérêt public.
+
+### Points d'intelligence critiques
+
+**1. HD03267 — Menaces à la sécurité** [SAILLANCE HAUTE]
+- Élargit les bases d'expulsion/interdiction d'entrée pour les étrangers considérés comme des « menaces de sécurité qualifiées »
+- Étend le rôle consultatif de la SÄPO dans les décisions migratoires
+- Impacts sur les droits fondamentaux (chap. 2 RF ; CEDH art. 3, 8) ; renvoi au Lagrådet presque certain
+- C (Centerpartiet) vote décisif : soutient la coalition sur la sécurité, mais préoccupé par l'État de droit
+- WEP : 85% d'adoption avec majorité de coalition ; 15% de retard pour amendements en commission
+
+**2. HD03261 — Pouvoirs du Skatteverket** [SAILLANCE MOYENNEMENT HAUTE]
+- Octroie au Skatteverket des droits d'audit étendus et des pouvoirs de partage de données pour la fraude au folkbokföring
+- Estimation de plus de 50 000 inscriptions incorrectes en Suède ; Statskontoret estimait 2 milliards SEK/an de coût fiscal
+- S divisé : l'aile fiscalement conservatrice soutient les mesures anti-fraude ; l'aile libertés civiles est préoccupée
+- WEP : 70% d'adoption propre ; 30% d'adoption avec amendements clarificateurs en commission
+
+**3. HD03250 — e-ID d'État** [SAILLANCE MOYENNE]
+- Crée le cadre légal pour une pièce d'identité électronique délivrée par l'État (statlig e-legitimation)
+- Répond à l'exclusion numérique de ~10% de la population sans BankID
+- L'industrie (BankID, Freja eID) lobbiera pour des conditions de concurrence équitables
+- WEP : 90% d'adoption ; consensus bipartisan sur les infrastructures
+
+### Renseignements actionnables
+- Surveiller le traitement en commission JuU de HD03267 pour confirmer la saisine du Lagrådet
+- Suivre les amendements SkU sur les garanties de protection des données de HD03261
+- Calendrier des auditions TU pour HD03250 — adoption probable été 2026
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מודיעיני — הצעות חוק ממשלתיות
+<!-- analysis-type: executive-brief -->
+
+### סיווג: ציבורי | רגישות: פתוחה
+
+### תמצית
+שלוש הצעות חוק ממשלתיות שהוגשו ב-7 במאי 2026 מקדמות את אג'נדת יכולות המדינה של קואליציית טידו בשלב הפרלמנטרי האחרון לפני בחירות ספטמבר 2026. הצעת החוק לביטחון (HD03267) היא בעלת הרלוונטיות הגבוהה ביותר והמורכבות המשפטית; הרחבת Skatteverket (HD03261) בעלת הרגישות החברתית הגבוהה ביותר מטעמי פרטיות; ה-e-ID (HD03250) בעלת העניין הציבורי הרחב ביותר.
+
+### נקודות מודיעין קריטיות
+
+**1. HD03267 — איומי ביטחון** [רלוונטיות גבוהה]
+- מרחיב את בסיסי הגירוש/איסור הכניסה לזרים הנחשבים "איומי ביטחון מוסמכים"
+- מרחיב את התפקיד הייעוצי של SÄPO בהחלטות הגירה
+- לאור ההשפעה על זכויות יסוד (פרק 2 RF; ECHR סעיפים 3 ו-8), כמעט בוודאות הועבר ל-Lagrådet
+- C (Centerpartiet) הוא הקול המכריע: תומך בקואליציה בענייני ביטחון אך חושש מסיכונים לשלטון החוק
+- WEP: 85% אישור ברוב קואליציוני; 15% עיכוב לתיקוני ועדה
+
+**2. HD03261 — סמכויות Skatteverket** [רלוונטיות בינונית-גבוהה]
+- מעניק ל-Skatteverket זכויות ביקורת מורחבות וסמכויות שיתוף מידע להונאות folkbokföring
+- הערכה של למעלה מ-50,000 רישומים שגויים בשוודיה; Statskontoret הוא מעריך עלויות פיסקאליות של 2 מיליארד SEK/שנה
+- S מפוצל: האגף המרוסן פיסקלית תומך בצעדי מניעת הונאה; אגף חירויות האזרח חושש
+- WEP: 70% אישור נקי; 30% אישור עם תיקוני ועדה מבהירים
+
+**3. HD03250 — e-ID ממשלתי** [רלוונטיות בינונית]
+- יוצר מסגרת חוקית לתעודת זהות אלקטרונית שהמדינה מנפיקה (statlig e-legitimation)
+- מטפל בהדרה דיגיטלית של ~10% מהאוכלוסייה ללא BankID
+- התעשייה (BankID, Freja eID) תלחץ על הוועדה לתנאי תחרות שווים
+- WEP: 90% אישור; קונסנסוס חוצה-מפלגות על תשתיות
+
+### מודיעין ניתן לפעולה
+- לעקוב אחר טיפול ועדת JuU ב-HD03267 לאישור ההפניה ל-Lagrådet
+- לעקוב אחר תיקוני SkU על בטחונות הגנת מידע של HD03261
+- לוח זמנים לשימועי TU של HD03250 — אישור צפוי בקיץ 2026
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_ja.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### 分類：公開 | 機密度：オープン
+
+### 要点
+2026年5月7日に提出された3件の政府提出法案は、2026年9月選挙前の最後の議会期においてTidö連立政権の国家能力アジェンダを推進する。安全保障法案（HD03267）は最も高い重要性と法的複雑性を持ち；Skatteverket拡張（HD03261）はプライバシー上の理由から最も高い社会的感度を持ち；e-ID（HD03250）は最も広い公共的関心を集めている。
+
+### 重要インテリジェンスポイント
+
+**1. HD03267 — 安全保障上の脅威** [高い重要性]
+- 「適格な安全保障上の脅威」とみなされる外国人の強制退去/入国禁止の根拠を拡大
+- 移民決定におけるSÄPOの諮問的役割を拡大
+- 基本的権利（RF第2章；ECHR第3条・第8条）への影響を踏まえ、Lagrådetへの付議がほぼ確実
+- C（Centerpartiet）が決定票：安全保障問題では連立を支持するが法の支配に懸念
+- WEP: 連立多数による可決85%；委員会修正のための遅延15%
+
+**2. HD03261 — Skatteverketの権限** [中高度の重要性]
+- Skatteverketにfolkbokföring詐欺に対する拡大された監査権とデータ共有権限を付与
+- スウェーデン全土で5万件超の誤登録が推定される；Statskontoretは年間20億SEKの財政コストと試算
+- Sは分裂：財政保守派は不正対策を支持；市民自由派は懸念
+- WEP: 70%のクリーンな可決；30%が委員会の明確化修正とともに可決
+
+**3. HD03250 — 政府発行e-ID** [中程度の重要性]
+- 国が発行する電子身分証明書（statlig e-legitimation）の法的枠組みを創設
+- BankIDを持たない人口の約10%のデジタル排除に対応
+- 業界（BankID・Freja eID）は公平な競争条件を求めて委員会にロビー活動
+- WEP: 90%の可決；インフラに関する超党派コンセンサス
+
+### 実行可能なインテリジェンス
+- JuU委員会のHD03267審議を監視し、Lagrådet付議を確認
+- HD03261のデータ保護保証に関するSkU修正を追跡
+- HD03250のTU公聴会スケジュール — 2026年夏の可決が見込まれる
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_ko.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### 분류: 공개 | 민감도: 오픈
+
+### 요약
+2026년 5월 7일에 제출된 세 건의 정부 법안은 2026년 9월 선거 전 마지막 의회 회기에서 Tidö 연립 정부의 국가 역량 의제를 추진한다. 안보 법안(HD03267)은 가장 높은 중요도와 법적 복잡성을 지니며; Skatteverket 확장(HD03261)은 프라이버시 이유로 가장 높은 사회적 민감성을 지니며; e-ID(HD03250)는 가장 넓은 공공 관심을 받는다.
+
+### 핵심 정보 포인트
+
+**1. HD03267 — 안보 위협** [높은 중요도]
+- "자격 있는 안보 위협"으로 간주되는 외국인에 대한 추방/입국 금지 근거를 확대
+- 이민 결정에서 SÄPO의 자문 역할을 확대
+- 기본권(RF 제2장; ECHR 제3조·제8조)에 대한 영향을 고려할 때 Lagrådet 회부 거의 확실
+- C(Centerpartiet)가 결정적 투표: 안보 문제에서 연립을 지지하지만 법치주의에 우려
+- WEP: 연립 다수로 가결 85%; 위원회 수정을 위한 지연 15%
+
+**2. HD03261 — Skatteverket 권한** [중고도 중요도]
+- Skatteverket에 folkbokföring 사기에 대한 확대된 감사 권한 및 데이터 공유 권한 부여
+- 스웨덴 전역에서 5만 건 이상의 오등록 추정; Statskontoret는 연간 20억 SEK의 재정 비용 추산
+- S 분열: 재정 보수파 날개는 사기 방지 조치 지지; 시민 자유 날개는 우려
+- WEP: 70% 깔끔한 가결; 30% 위원회 명확화 수정과 함께 가결
+
+**3. HD03250 — 정부 e-ID** [중간 중요도]
+- 국가 발급 전자 신분증(statlig e-legitimation)을 위한 법적 프레임워크 생성
+- BankID 없는 인구 약 10%의 디지털 소외 해소
+- 업계(BankID, Freja eID)는 공정한 경쟁 조건을 위해 위원회 로비
+- WEP: 90% 가결; 인프라에 관한 초당적 합의
+
+### 실행 가능한 정보
+- JuU 위원회의 HD03267 처리를 모니터링하여 Lagrådet 회부 확인
+- HD03261의 데이터 보호 보증에 관한 SkU 수정 추적
+- HD03250에 대한 TU 청문 일정 — 2026년 여름 가결 예상
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_nl.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### Classificatie: OPENBAAR | Gevoeligheid: OPEN
+
+### SAMENVATTING
+Drie regeringsvoorstellen ingediend op 7 mei 2026 bevorderen de agenda van staatscapaciteit van de Tidö-coalitie in de laatste parlementaire fase voor de verkiezingen van september 2026. Het veiligheidsvoorstel (HD03267) heeft de hoogste relevantie en juridische complexiteit; de uitbreiding van de Skatteverket (HD03261) de hoogste maatschappelijke gevoeligheid om privacyredenen; de e-ID (HD03250) het breedste publieke belang.
+
+### Kritieke inlichtingenpunten
+
+**1. HD03267 — Veiligheidsdreigingen** [HOGE RELEVANTIE]
+- Breidt de gronden voor uitzetting/inreisverbod uit voor vreemdelingen die worden beschouwd als "gekwalificeerde veiligheidsdreigingen"
+- Breidt de adviserende rol van de SÄPO uit bij migratiebeslissingen
+- Gezien de impact op grondrechten (hfdst. 2 RF; EVRM art. 3, 8) bijna zeker doorverwezen naar de Lagrådet
+- C (Centerpartiet) is de beslissende stem: steunt de coalitie op veiligheidsgebied maar heeft zorgen over de rechtsstaat
+- WEP: 85% aanneming met coalitiecijfers; 15% vertraging voor commissieamendementen
+
+**2. HD03261 — Bevoegdheden van de Skatteverket** [MIDDELHOGE RELEVANTIE]
+- Geeft de Skatteverket uitgebreide controlerechtenom en bevoegdheden voor gegevensdeling bij folkbokföring-fraude
+- Schatting van meer dan 50.000 onjuiste registraties in Zweden; Statskontoret schatte 2 miljard SEK/jaar aan fiscale kosten
+- S verdeeld: fiscaal-conservatieve vleugel steunt antifraudemaatregelen; burgerrechtenvleugel bezorgd
+- WEP: 70% schone aanneming; 30% aangenomen met verduidelijkende commissieamendementen
+
+**3. HD03250 — Staatse e-ID** [GEMIDDELDE RELEVANTIE]
+- Creëert het juridische kader voor een door de staat uitgegeven elektronisch identiteitsbewijs (statlig e-legitimation)
+- Pakt digitale uitsluiting aan van ~10% van de bevolking zonder BankID
+- De sector (BankID, Freja eID) zal bij de commissie lobbyen voor gelijke concurrentievoorwaarden
+- WEP: 90% aanneming; partijoverschrijdend infrastructuurconsensus
+
+### Bruikbare inlichtingen
+- Bewaak de JuU-commissiebehandeling van HD03267 om de Lagrådet-verwijzing te bevestigen
+- Volg SkU-amendementen over gegevensbeschermingswaarborgen van HD03261
+- Hoorzittingsschema van de TU voor HD03250 — waarschijnlijke aanneming zomer 2026
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_no.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### Klassifisering: OFFENTLIG | Sensitivitet: ÅPEN
+
+### KONKLUSJON
+Tre regjeringsforslag fremlagt 7. mai 2026 fremmer Tidö-koalisjonens statskapasitetsagenda i den siste parlamentariske etappen før valget i september 2026. Sikkerhetsforslaget (HD03267) har høyest relevans og juridisk kompleksitet; Skatteverkets utvidelse (HD03261) høyest samfunnsmessig sensitivitet på personverngrunnlag; e-ID (HD03250) den bredeste offentlige interessen.
+
+### Kritiske etterretningspunkter
+
+**1. HD03267 — Sikkerhetstrusler** [HØY RELEVANS]
+- Utvider grunnlag for utvisning/nektelse av innreise for utlendinger ansett som "kvalifiserte sikkerhetstrusler"
+- Utvider SÄPOs rådgivende rolle i migrasjonsbeslutninger
+- Nesten sikkert henvist til Lagrådet gitt innvirkning på grunnleggende rettigheter (Kapittel 2 RF; EMK art. 3, 8)
+- C (Centerpartiet) er den avgjørende stemmen: støtter koalisjonen på sikkerhet men har rettsstatsbekymringer
+- WEP: 85% vedtatt med koalisjonsflertall; 15% forsinkelse for utvalgsendringer
+
+**2. HD03261 — Skatteverkets fullmakter** [MIDDELS-HØY RELEVANS]
+- Gir Skatteverket utvidede inspeksjonsrettigheter og datadelingsmyndighet for folkbokföringsbedrageri
+- Anslått 50 000+ falske registreringer i Sverige; Statskontoret estimerte 2 mrd. SEK/år i fiskale kostnader
+- S delt: fiskal-konservativ fløy støtter anti-bedrageri tiltak; borgerrettighets-fløy bekymret
+- WEP: 70% ren vedtakelse; 30% vedtatt med klargjørende utvalgsendringer
+
+**3. HD03250 — Statlig e-ID** [MIDDELS RELEVANS]
+- Oppretter lovmessig rammeverk for statlig utstedt e-ID (statlig e-legitimation)
+- Adresserer digital utenforskap for ~10% av befolkningen uten BankID
+- Bransjen (BankID, Freja eID) vil lobbye utvalget for like konkurransevilkår
+- WEP: 90% vedtatt; tverrpolitisk infrastrukturkonsensus
+
+### Handlingsetterretning
+- Overvåk JuUs behandling av HD03267 for bekreftelse av Lagrådets høring
+- Følg SkUs endringer om HD03261 personverngarantier
+- TUs høringsprogram for HD03250 — trolig sommeren 2026-vedtakelse
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_sv.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### Klassificering: OFFENTLIG | Känslighet: ÖPPEN
+
+### SAMMANFATTNING
+Tre regeringspropositioner som lämnades in 7 maj 2026 driver Tidökoalitionens statskapacitetsagenda i den sista parlamentariska sträckan inför valet i september 2026. Säkerhetsproposition (HD03267) har den högsta saliensen och juridiska komplexiteten; Skatteverkets utvidgning (HD03261) den högsta samhälleliga känsligheten avseende integritetsskäl; e-legitimation (HD03250) det bredaste allmänna intresset.
+
+### Kritiska underrättelsepunkter
+
+**1. HD03267 — Säkerhetshot** [HÖG SALIENS]
+- Utvidgar grunderna för utvisning/nekande av inresa för utlänningar som anses utgöra "kvalificerade säkerhetshot"
+- Utökar SÄPO:s rådgivande roll i migrationsbeslut
+- Nästan säkert remitterad till Lagrådet med tanke på påverkan på grundläggande rättigheter (2 kap. RF; EKMR art. 3, 8)
+- C (Centerpartiet) är den avgörande rösten: stödjer koalitionen på säkerhet men har rättssäkerhetsbekymmer
+- WEP: 85% passage med koalitionsmajoritet; 15% fördröjning för utskottsändringar
+
+**2. HD03261 — Skatteverkets befogenheter** [MEDEL-HÖG SALIENS]
+- Ger Skatteverket utvidgade inspektionsrättigheter och datadelningsmyndighet för folkbokföringsbedrägeri
+- Uppskattningsvis 50 000+ felaktiga registreringar i Sverige; Statskontoret uppskattade 2 mdr SEK/år i fiskala kostnader
+- S delat: fiskal-konservativ flygel stödjer anti-bedrägerimekanismer; medborgarrättsflygeln orolig
+- WEP: 70% ren passage; 30% antagen med klargörande utskottsändringar
+
+**3. HD03250 — Statlig e-legitimation** [MEDEL SALIENS]
+- Skapar ett lagstadgat ramverk för statligt utfärdad e-legitimation (statlig e-legitimation)
+- Åtgärdar digital utestängning för ~10% av befolkningen utan BankID
+- Branschen (BankID, Freja eID) kommer att lobba utskottet för lika spelplanvillkor
+- WEP: 90% passage; tvärpolitisk infrastrukturkonsensus
+
+### Handlingsunderrättelse
+- Övervaka JuU-utskottets hantering av HD03267 för bekräftelse av Lagrådets remiss
+- Följ SkU-ändringar om HD03261 dataskyddsgarantier
+- TU-höringsschema för HD03250 — troligen sommaren 2026-antagande
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_zh.md -->
+
+<!-- analysis-type: executive-brief -->
+
+### 分类：公开 | 敏感度：开放
+
+### 核心要点
+2026年5月7日提交的三项政府提案在2026年9月选举前的最后议会阶段推进Tidö联合政府的国家能力议程。安全提案（HD03267）具有最高的显著性和法律复杂性；Skatteverket扩权（HD03261）出于隐私原因具有最高社会敏感性；电子身份证（HD03250）引发最广泛的公众关注。
+
+### 关键情报点
+
+**1. HD03267 — 安全威胁** [高显著性]
+- 扩大被认定为"合格安全威胁"的外国人的驱逐出境/禁止入境依据
+- 扩大SÄPO在移民决定中的咨询角色
+- 鉴于对基本权利的影响（RF第2章；ECHR第3条、第8条），几乎可以确定已提交Lagrådet审查
+- C（Centerpartiet）是关键票：在安全问题上支持联合政府，但对法治有顾虑
+- WEP: 联合多数通过85%；委员会修正延迟15%
+
+**2. HD03261 — Skatteverket权限** [中高显著性]
+- 授予Skatteverket针对folkbokföring欺诈的扩大审计权和数据共享权限
+- 估计瑞典全国超过50,000例错误登记；Statskontoret估算每年财政成本20亿瑞典克朗
+- S分裂：财政保守派翼支持反欺诈措施；公民自由派翼表示担忧
+- WEP: 70%顺利通过；30%附委员会澄清修正案通过
+
+**3. HD03250 — 国家电子身份证** [中等显著性]
+- 为国家发行的电子身份证（statlig e-legitimation）建立法律框架
+- 解决约10%无BankID人口的数字排斥问题
+- 行业（BankID、Freja eID）将向委员会游说公平竞争条件
+- WEP: 90%通过；基础设施领域跨党派共识
+
+### 可操作情报
+- 监控JuU委员会对HD03267的审议，确认Lagrådet提交情况
+- 跟踪SkU对HD03261数据保护保障的修正案
+- TU对HD03250的听证会时间表——预计2026年夏季通过
+
+<!-- source-sha: e2e165a45fe74ccd510bdf7463d788026be688a4 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 24 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 37 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 4 | Linked in Article Sources, not expanded inline |
 
@@ -1347,6 +1858,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/cross-reference-map.md)
 - [`horizon-pir-rollforward.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/horizon-pir-rollforward.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

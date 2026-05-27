@@ -3,14 +3,12 @@ date: 2026-05-26
 subfolder: realtime-monitor
 slug: 2026-05-26-realtime-monitor
 source_folder: analysis/daily/2026-05-26/realtime-monitor
-generated_at: 2026-05-26T17:09:28.929Z
+generated_at: 2026-05-27T07:35:34.309Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/realtime-monitor/executive-brief.md -->
-
-**📋 Classification:** Public | **Analyst:** James Pether Sörling | **Date:** 2026-05-26
 
 ---
 

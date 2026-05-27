@@ -3,7 +3,7 @@ date: 2026-05-12
 subfolder: committeeReports
 slug: 2026-05-12-committeeReports
 source_folder: analysis/daily/2026-05-12/committeeReports
-generated_at: 2026-05-25T15:59:53.873Z
+generated_at: 2026-05-27T07:35:33.572Z
 language: en
 layout: article
 ---
@@ -85,6 +85,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1863,13 +1876,746 @@ All röstintentionsanalys är märkt [unconfirmed] eller D4-D5. Analysen bör up
 **HD01KU34** (constitutional amendment): Lagrådet referral expected for RF changes. Constitutional amendments to Chapter 2 RF (basic freedoms) require Lagrådet scrutiny. Tag: `referral status: requires verification at lagradet.se`.  
 **HD01CU31** (rental market): Major property law reform — Lagrådet review likely. Tag: `referral status: requires verification`.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# تقارير لجان البرلمان السويدي: الإصلاح الدستوري، الوقاية من الانتحار وسوق الإيجار — 2026-05-12
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-12  
+**التصنيف**: عام — اللائحة العامة لحماية البيانات المادة 9(2)(ه)(ز)  
+**مستوى الثقة**: HIGH [B2]  
+**دورة التحليل**: committeeReports · 2026-05-12  
+
+---
+
+### الملخص التنفيذي
+
+تقدّم لجنة الدستور (KU) تقريراً مزدوجاً تاريخياً (HD01KU34) يسعى إلى حماية حق الإجهاض دستورياً مع توسيع صلاحيات تقييد حرية تكوين الجمعيات والجنسية — تسوية سياسية تمتد على ثلاثة دورات برلمانية لمراجعة الدستور السويدي. تقترح لجنة الشؤون الاجتماعية (SoU) وظيفة تحقيق وطنية للوقاية من الانتحار (HD01SoU31) تُنشئ قدرات حكومية جديدة. تطرح لجنة الشؤون المدنية (CU) إصلاحات سوق الإيجار (HD01CU31) مع تحرير واسع للسوق قبيل انتخابات البرلمان السويدية لعام 2026. في مجملها، تُشكّل هذه التقارير أثقل جلسة حزمة دستورية منذ مراجعة الدستور السويدي عام 2010.
+
+### القرارات التي يدعمها هذا المستند
+
+1. **الأولوية التحريرية**: HD01KU34 هو التقرير الأثقل سياسياً — تعديلات الدستور تمسّ جميع الـ 349 عضواً وتستلزم قراراً ثنائي الغرفة (أو قرارين متتاليين من البرلمان مع انتخابات بينهما).
+2. **جرد المخاطر**: إصلاح سوق الإيجار HD01CU31 يخاطر بتراجعات في المسارات الأوروبية (ECHR Art. 1 البروتوكول 1) وقد يُفعّل صوت الانحراف لحزبSD قبيل الحملة الانتخابية.
+3. **متابعة PIR**: رصد كيفية التعامل مع الطبيعة المزدوجة للـKU34 (حماية الإجهاض + تقييد حرية التجمع) في البرامج الانتخابية للأحزاب عام 2026.
+
+### نقاط الاستخبارات في 60 ثانية
+
+- 🔴 **KU34** — حق الإجهاض محمي دستورياً + تقييد حرية تكوين الجمعيات: مراجعة دستورية تاريخية تستلزم قرارين مع انتخابات بينهما. القوة التفجيرية السياسية عالية؛ يُتوقع أن يُبدي حزبا SD وKD تحفظات.
+- 🟡 **SoU31** — وظيفة التحقيق الوطني في حالات الانتحار: وحدة حكومية جديدة ذات معالجة معقدة لبيانات أسباب الوفاة وفق اللائحة العامة لحماية البيانات. مخاطر التنفيذ متوسطة إلى عالية (تعتمد على الميزانية، طاقة مديرية الصحة).
+- 🟡 **CU31** — سوق إيجار مرن: تحرير نظام الإيجارات مع إيجارات مُفهرَسة. معارضة واسعة من حزبي S وV؛ تصويت محتمل بالأغلبية البسيطة.
+- 🟠 **FiU37** — إدارة الأزمات التشغيلية للقطاع المالي: يُنشئ آلية تسوية جديدة متوافقة مع DORA. تقنية، لكنها بالغة الأهمية للنظام.
+- 🟢 **JuU39** — نص عقوبة العنف النفسي: تجريم العنف النفسي المنهجي في العلاقات الحميمة، توافق مع اتفاقية إسطنبول على مستوى الاتحاد الأوروبي.
+
+### أهم محفز مستقبلي
+
+**القراءة الثانية لـKU34** (الدورة البرلمانية القادمة): إذا حسم البرلمان هذا التقرير بشكل إيجابي قبل انتخابات 2026، يبدأ العد التنازلي لتصويت الحجر الإلزامي — مما يضع موعداً نهائياً صارماً للقرار الافتتاحي للبرلمان القادم ويؤثر مباشرة على المنصات الانتخابية.
+
+### الرسم البياني الرئيسي: مشهد المخاطر التشريعية
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-12  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
+**Konfidens**: HIGH [B2]  
+**Analysecyklus**: committeeReports · 2026-05-12  
+
+---
+
+### BLUF
+
+Forfatningsudvalget (KU) fremlægger en historisk dobbeltbetænkning (HD01KU34), der søger at grundlovsfæste abortrettigheder og samtidig udvide mulighederne for at begrænse foreningsfrihed og statsborgerskab — et politisk kompromis, der spænder over tre riksmöten med RF-revision. Socialudvalget (SoU) foreslår en national undersøgelsesfunktion for selvmordsforebyggelse (HD01SoU31), der skaber ny statslig kapacitet. Civiludvalget (CU) fremlægger lejemarkedsreformer (HD01CU31) med bred markedsderegulering op til det kommende valg til riksdagen i 2026. Samlet set udgør disse betænkninger den mest forfatningstunge pakkesession siden RF-revisionen i 2010.
+
+### Beslutninger dette underlag understøtter
+
+1. **Redaktionel prioritering**: HD01KU34 er den politisk tungestvejende betænkning — grundlovsændringer berører alle 349 medlemmer og kræver to-kammer-beslutning (eller to successive riksdag-beslutninger med mellemliggende valg).
+2. **Risikokortlægning**: HD01CU31's lejemarkedsreform risikerer tilbageslag i EU-processerne (ECHR Art. 1 Protokol 1) og kan aktivere SD's afvigestemme op til valgkampen.
+3. **PIR-opfølgning**: Følge hvordan KU34's dobbeltnatur (abortbeskyttelse + begrænset foreningsfrihed) navigeres i partiernes valgprogrammer 2026.
+
+### 60-sekunders efterretningspunkter
+
+- 🔴 **KU34** — Grundlovssikret abortret + begrænset foreningsfrihed: historisk RF-revision der kræver 2 beslutninger med valg imellem. Politisk sprængkraft høj; SD og KD forventes at tage forbehold.
+- 🟡 **SoU31** — National selvmordsundersøgelsesfunktion: ny statslig enhed med GDPR-kompleks håndtering af dødsfalddata. Implementeringsrisiko mellemhøj (budgetafhængig, Socialstyrelsen kapacitet).
+- 🟡 **CU31** — Fleksibelt lejemarked: deregulering af lejeboligsystemet med indekserede lejer. Bred opposition fra S og V; mulig afstemning med simpelt flertal.
+- 🟠 **FiU37** — Operativ krisehåndtering finansiel sektor: skaber ny DORA-kompatibel resolutionsmekanisme. Teknisk, men systemvigtig.
+- 🟢 **JuU39** — Psykisk vold straffebestemmelse: kriminaliserer systematisk psykologisk vold i nære relationer, EU-harmonisering med Istanbulkonventionen.
+
+### Vigtigste fremadrettede udløser
+
+**KU34 anden behandling** (næste riksmöte): Hvis riksdagen løser denne betænkning i positiv retning inden valget 2026 begynder nedtællingen for den obligatoriske karantæneafstemning — hvilket sætter en hård deadline for næste riksdags indledende beslutning og påvirker valgprogrammerne direkte.
+
+### Nøglediagram: Lovgivningsmæssigt risikolandskab
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-12  
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e)(g)  
+**Konfidenzniveau**: HIGH [B2]  
+**Analysezykus**: committeeReports · 2026-05-12  
+
+---
+
+### BLUF
+
+Der Verfassungsausschuss (KU) legt ein historisches Doppelgutachten (HD01KU34) vor, das sowohl das Abtreibungsrecht verfassungsrechtlich schützen als auch die Möglichkeiten zur Einschränkung der Vereinigungsfreiheit und Staatsbürgerschaft ausweiten soll — ein politischer Kompromiss, der drei Riksmöten der RF-Revision umfasst. Der Sozialausschuss (SoU) schlägt eine nationale Untersuchungsfunktion zur Suizidprävention (HD01SoU31) vor, die neue staatliche Kapazitäten schafft. Der Zivilausschuss (CU) legt Wohnungsmarktreformen (HD01CU31) mit weitreichender Marktderegulierung vor den bevorstehenden Reichstagswahlen 2026 vor. Insgesamt bilden diese Gutachten die verfassungsrechtlich schwergewichtigste Paketsitzung seit der RF-Revision 2010.
+
+### Von diesem Unterlagen unterstützte Entscheidungen
+
+1. **Redaktionelle Priorisierung**: HD01KU34 ist das politisch gewichtigste Gutachten — Verfassungsänderungen betreffen alle 349 Abgeordneten und erfordern Zweikammerbeschlüsse (oder zwei aufeinanderfolgende Riksdagsbeschlüsse mit zwischenzeitlicher Wahl).
+2. **Risikoinventar**: Die Wohnungsmarktreform HD01CU31 riskiert Rückschläge in EU-Verfahren (ECHR Art. 1 Protokoll 1) und könnte die Abweichungsstimme der SD im Vorwahlkampf aktivieren.
+3. **PIR-Nachverfolgung**: Verfolgen, wie die Doppelnatur von KU34 (Abtreibungsschutz + eingeschränkte Vereinigungsfreiheit) in den Wahlprogrammen der Parteien 2026 navigiert wird.
+
+### 60-Sekunden-Geheimdienstpunkte
+
+- 🔴 **KU34** — Verfassungsrechtlich geschütztes Abtreibungsrecht + eingeschränkte Vereinigungsfreiheit: historische RF-Revision, die 2 Beschlüsse mit dazwischenliegender Wahl erfordert. Politische Sprengkraft hoch; SD und KD werden voraussichtlich Vorbehalte einlegen.
+- 🟡 **SoU31** — Nationale Suiziduntersuchungsfunktion: neue staatliche Einheit mit DSGVO-komplexer Handhabung von Todesursachendaten. Umsetzungsrisiko mittelhoch (budgetabhängig, Kapazität der Socialstyrelsen).
+- 🟡 **CU31** — Flexibler Wohnungsmarkt: Deregulierung des Mietsystems mit indexierten Mieten. Breite Opposition von S und V; mögliche Abstimmung mit einfacher Mehrheit.
+- 🟠 **FiU37** — Operatives Krisenmanagement im Finanzsektor: schafft neuen DORA-kompatiblen Abwicklungsmechanismus. Technisch, aber systemrelevant.
+- 🟢 **JuU39** — Strafvorschrift für psychische Gewalt: kriminalisiert systematische psychologische Gewalt in engen Beziehungen, EU-Harmonisierung mit der Istanbul-Konvention.
+
+### Wichtigster vorausweisender Auslöser
+
+**KU34 zweite Lesung** (nächstes Riksmöte): Wenn der Riksdag dieses Gutachten vor der Wahl 2026 in positiver Richtung auflöst, beginnt der Countdown für die obligatorische Quarantäneabstimmung — was eine harte Deadline für den Eröffnungsbeschluss des nächsten Riksdags setzt und die Wahlplattformen direkt beeinflusst.
+
+### Schlüsseldiagramm: Legislatives Risikolandschaft
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-12  
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e)(g)  
+**Nivel de confianza**: HIGH [B2]  
+**Ciclo de análisis**: committeeReports · 2026-05-12  
+
+---
+
+### BLUF
+
+El Comité Constitucional (KU) presenta un informe doble histórico (HD01KU34) que busca proteger constitucionalmente el derecho al aborto y al mismo tiempo ampliar las posibilidades de restringir la libertad de asociación y la ciudadanía — un compromiso político que abarca tres riksmöten de revisión de la RF. El Comité Social (SoU) propone una función nacional de investigación para la prevención del suicidio (HD01SoU31) que crea nueva capacidad estatal. El Comité Civil (CU) presenta reformas del mercado de alquiler (HD01CU31) con amplia desregulación del mercado antes de las próximas elecciones parlamentarias suecas de 2026. En conjunto, estos informes constituyen la sesión de paquete constitucionalmente más pesada desde la revisión de la RF en 2010.
+
+### Decisiones apoyadas por este documento
+
+1. **Priorización editorial**: HD01KU34 es el informe políticamente más importante — los cambios constitucionales afectan a los 349 miembros y requieren una decisión bicameral (o dos decisiones sucesivas del Riksdag con elección intermedia).
+2. **Inventario de riesgos**: La reforma del mercado de alquiler HD01CU31 corre el riesgo de reveses en los procesos de la UE (ECHR Art. 1 Protocolo 1) y podría activar el voto disidente del SD ante la campaña electoral.
+3. **Seguimiento PIR**: Seguir cómo la doble naturaleza del KU34 (protección del aborto + libertad de asociación restringida) se navega en los manifiestos electorales de los partidos en 2026.
+
+### Puntos de inteligencia en 60 segundos
+
+- 🔴 **KU34** — Derecho al aborto protegido constitucionalmente + libertad de asociación restringida: revisión histórica de la RF que requiere 2 decisiones con elección intermedia. Fuerza explosiva política alta; se espera que SD y KD presenten reservas.
+- 🟡 **SoU31** — Función nacional de investigación de suicidios: nueva entidad estatal con manejo RGPD complejo de datos de causas de muerte. Riesgo de implementación medio-alto (dependiente del presupuesto, capacidad de la Socialstyrelsen).
+- 🟡 **CU31** — Mercado de alquiler flexible: desregulación del sistema de arrendamiento con alquileres indexados. Amplia oposición de S y V; posible votación por mayoría simple.
+- 🟠 **FiU37** — Gestión de crisis operativa del sector financiero: crea nuevo mecanismo de resolución compatible con DORA. Técnico, pero sistémicamente importante.
+- 🟢 **JuU39** — Disposición penal sobre violencia psicológica: criminaliza la violencia psicológica sistemática en relaciones íntimas, armonización UE con el Convenio de Estambul.
+
+### Desencadenante prospectivo más importante
+
+**Segunda lectura del KU34** (próximo riksmöte): Si el Riksdag resuelve este informe en dirección positiva antes de las elecciones 2026, comenzará la cuenta regresiva para la votación de cuarentena obligatoria — lo que establece una fecha límite estricta para la decisión inicial del próximo Riksdag y afecta directamente las plataformas electorales.
+
+### Diagrama clave: Panorama de riesgos legislativos
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päiväys**: 2026-05-12  
+**Luokittelu**: JULKINEN — GDPR Art. 9(2)(e)(g)  
+**Luottamustaso**: HIGH [B2]  
+**Analyysisykli**: committeeReports · 2026-05-12  
+
+---
+
+### BLUF
+
+Perustuslakivaliokunta (KU) esittää historiallisen kaksoistuomion (HD01KU34), joka pyrkii perustuslaillisesti suojaamaan aborttioikeuden ja samalla laajentamaan mahdollisuuksia rajoittaa yhdistymisvapautta ja kansalaisuutta — poliittinen kompromissi, joka kattaa kolme riksmöteniä RF-revision osalta. Sosialivaliokunta (SoU) ehdottaa kansallista tutkimustoimintoa itsemurhien ehkäisyyn (HD01SoU31), joka luo uutta valtion kapasiteettia. Siviilivaliokunnan (CU) asuntomarkkina-uudistukset (HD01CU31) sisältävät laajan markkinasääntelystä vapautumisen ennen vuoden 2026 eduskuntavaaleja. Kokonaisuudessaan nämä mietinnöt muodostavat perustuslaillisesti raskaimman pakettisession vuoden 2010 RF-revision jälkeen.
+
+### Päätökset joita tämä analyysi tukee
+
+1. **Toimituksellinen priorisointi**: HD01KU34 on poliittisesti painavin mietintö — perustuslakimuutokset koskevat kaikkia 349 edustajaa ja vaativat kaksikammarioihin päätöstä (tai kahta peräkkäistä riksdag-päätöstä välivaaleilla).
+2. **Riskikartoitus**: HD01CU31:n vuokramarkkina-uudistus voi törmätä EU-prosesseissa vastarintaan (ECHR Art. 1 Protokolla 1) ja voi aktivoida SD:n poikkeavat äänestykset vaalikauden lähestyessä.
+3. **PIR-seuranta**: Seurata kuinka KU34:n kaksoisluonne (aborttioikeuden suojaus + rajoitettu yhdistymisvapaus) navigoidaan puolueiden vaalimanifestoissa 2026.
+
+### 60 sekunnin tiedustelupisteet
+
+- 🔴 **KU34** — Perustuslaillisesti suojattu aborttioikeus + rajoitettu yhdistymisvapaus: historiallinen RF-revisio, joka vaatii 2 päätöstä välillä olevan vaalin kanssa. Poliittinen räjähdysvoima korkea; SD:n ja KD:n odotetaan esittävän varaumia.
+- 🟡 **SoU31** — Kansallinen itsemurhien tutkimistoiminto: uusi valtion yksikkö, jolla on GDPR-monimutkainen kuolinsyyaineiston käsittely. Toteutusriski kohtalaisesti korkea (budjettiriippuvuus, Socialstyrelsenin kapasiteetti).
+- 🟡 **CU31** — Joustava vuokramarkkina: vuokra-asuntojärjestelmän deregulointi indeksoiduilla vuokrilla. Laaja oppositio S:ltä ja V:ltä; mahdollinen äänestys yksinkertaisella enemmistöllä.
+- 🟠 **FiU37** — Rahoitussektorin operatiivinen kriisinhallinta: luo uuden DORA-yhteensopivan kriisinratkaisumekanismin. Tekninen, mutta järjestelmällisesti tärkeä.
+- 🟢 **JuU39** — Psyykkisen väkivallan rikossäännös: kriminalisoi järjestelmällisen psykologisen väkivallan läheisissä suhteissa, EU-harmonisointi Istanbulin sopimuksen kanssa.
+
+### Tärkein eteenpäin osoittava laukaisin
+
+**KU34 toinen käsittely** (seuraava riksmöte): Jos riksdag ratkaisee tämän mietinnön myönteiseen suuntaan ennen vuoden 2026 vaaleja, alkaa pakollisen karanteeniäänestyksen laskenta — mikä asettaa tiukan määräajan seuraavan riksdagin aloituspäätökselle ja vaikuttaa suoraan vaaliplatformeihin.
+
+### Keskeinen kaavio: Lainsäädännöllinen riskimaisema
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Niveau de confiance** : HIGH [B2]  
+**Cycle d'analyse** : committeeReports · 2026-05-12  
+
+---
+
+### BLUF
+
+Le Comité constitutionnel (KU) présente un double rapport historique (HD01KU34) cherchant à protéger constitutionnellement le droit à l'avortement tout en élargissant les possibilités de restriction de la liberté d'association et de la citoyenneté — un compromis politique couvrant trois riksmöten de révision de la RF. Le Comité social (SoU) propose une fonction nationale d'enquête sur la prévention du suicide (HD01SoU31) créant de nouvelles capacités étatiques. Le Comité civil (CU) présente des réformes du marché locatif (HD01CU31) avec une large déréglementation du marché en amont des prochaines élections législatives suédoises de 2026. Dans l'ensemble, ces rapports constituent la session de paquet la plus constitutionnellement lourde depuis la révision de la RF en 2010.
+
+### Décisions soutenues par ce document
+
+1. **Priorisation rédactionnelle** : HD01KU34 est le rapport politiquement le plus important — les modifications constitutionnelles concernent les 349 membres et requièrent une décision bicamérale (ou deux décisions successives du Riksdag avec une élection intermédiaire).
+2. **Inventaire des risques** : La réforme du marché locatif HD01CU31 risque des recours dans les procédures de l'UE (ECHR Art. 1 Protocole 1) et pourrait activer le vote déviant du SD avant la campagne électorale.
+3. **Suivi PIR** : Suivre comment la double nature de KU34 (protection de l'avortement + liberté d'association restreinte) est navigée dans les programmes électoraux des partis en 2026.
+
+### Points de renseignement en 60 secondes
+
+- 🔴 **KU34** — Droit à l'avortement protégé constitutionnellement + liberté d'association restreinte : révision historique de la RF nécessitant 2 décisions avec une élection intermédiaire. Force explosive politique élevée ; SD et KD devraient formuler des réserves.
+- 🟡 **SoU31** — Fonction nationale d'enquête sur les suicides : nouvelle entité d'État avec gestion RGPD complexe des données sur les causes de décès. Risque de mise en œuvre moyen-élevé (dépendant du budget, capacité de la Socialstyrelsen).
+- 🟡 **CU31** — Marché locatif flexible : déréglementation du système de location avec loyers indexés. Large opposition de S et V ; vote possible à la majorité simple.
+- 🟠 **FiU37** — Gestion de crise opérationnelle du secteur financier : crée un nouveau mécanisme de résolution compatible DORA. Technique, mais d'importance systémique.
+- 🟢 **JuU39** — Disposition pénale sur la violence psychologique : criminalise la violence psychologique systématique dans les relations proches, harmonisation EU avec la Convention d'Istanbul.
+
+### Déclencheur prospectif le plus important
+
+**Deuxième lecture de KU34** (prochain riksmöte) : Si le Riksdag résout ce rapport dans une direction positive avant les élections 2026, le compte à rebours pour le vote de quarantaine obligatoire commencera — ce qui fixe une échéance ferme pour la décision d'ouverture du prochain Riksdag et affecte directement les plateformes électorales.
+
+### Schéma clé : Paysage des risques législatifs
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# דוחות ועדות הרייכסדאג השבדי: רפורמה חוקתית, מניעת התאבדות ושוק השכירות — 2026-05-12
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-12  
+**סיווג**: ציבורי — GDPR סעיף 9(2)(ה)(ז)  
+**רמת ביטחון**: HIGH [B2]  
+**מחזור ניתוח**: committeeReports · 2026-05-12  
+
+---
+
+### סיכום מנהלים
+
+ועדת החוקה (KU) מציגה דוח כפול היסטורי (HD01KU34) המבקש להגן חוקתית על זכות ההפלה ובו בזמן להרחיב את האפשרויות להגביל את חופש ההתאגדות והאזרחות — פשרה פוליטית המשתרעת על שלושה מושבי פרלמנט של מרים RF. ועדת הרווחה (SoU) מציעה פונקציית חקירה לאומית למניעת התאבדות (HD01SoU31) היוצרת יכולת ממלכתית חדשה. ועדת הנושאים האזרחיים (CU) מציגה רפורמות בשוק השכירות (HD01CU31) עם ביטול רגולציה נרחב של השוק לקראת הבחירות הפרלמנטריות השבדיות הקרובות לשנת 2026. בסך הכל, מהווים דוחות אלה את ההפגנה החוקתית הכבדה ביותר מאז מרים RF בשנת 2010.
+
+### החלטות שמסמך זה תומך בהן
+
+1. **עדיפות עריכה**: HD01KU34 הוא הדוח הכבד ביותר מבחינה פוליטית — שינויים חוקתיים משפיעים על כל 349 החברים ומחייבים החלטת שתי לשכות (או שתי החלטות פרלמנטריות עוקבות עם בחירות ביניהן).
+2. **מלאי סיכונים**: רפורמת שוק השכירות HD01CU31 מסתכנת בנסיגות בהליכים האירופיים (ECHR סעיף 1 פרוטוקול 1) ועלולה להפעיל את הצבעת החריגה של SD לפני מסע הבחירות.
+3. **מעקב PIR**: לעקוב כיצד הטבע הכפול של KU34 (הגנה על הפלה + חופש התאגדות מוגבל) מנוהל במצעי הבחירות של המפלגות בשנת 2026.
+
+### נקודות מודיעין בתוך 60 שניות
+
+- 🔴 **KU34** — זכות הפלה מוגנת חוקתית + חופש התאגדות מוגבל: מרים RF היסטורית הדורשת 2 החלטות עם בחירות ביניהן. כוח פיצוץ פוליטי גבוה; צפוי ש-SD ו-KD יטילו הסתייגויות.
+- 🟡 **SoU31** — פונקציית חקירה לאומית לאירועי התאבדות: יחידה ממלכתית חדשה עם טיפול מורכב ב-GDPR בנתוני סיבות מוות. סיכון יישום גבוה-בינוני (תלוי תקציב, יכולת Socialstyrelsen).
+- 🟡 **CU31** — שוק שכירות גמיש: ביטול רגולציה של מערכת השכירות עם שכר דירה צמוד מדד. אופוזיציה רחבה מ-S ו-V; הצבעה אפשרית ברוב פשוט.
+- 🟠 **FiU37** — ניהול משבר תפעולי במגזר הפיננסי: יוצר מנגנון ניתוח חדש תואם DORA. טכני, אך בעל חשיבות מערכתית.
+- 🟢 **JuU39** — הוראת עונש אלימות נפשית: מפלילה אלימות פסיכולוגית שיטתית ביחסים אינטימיים, הרמוניזציה אירופאית עם אמנת איסטנבול.
+
+### הפעולה המניעה החשובה ביותר לקדימה
+
+**קריאה שנייה של KU34** (מושב פרלמנט הבא): אם הרייכסדאג יפתור דוח זה לכיוון חיובי לפני בחירות 2026, יחל מנייה לאחור עבור הצבעת הסגר החובה — מה שקובע מועד אחרון נוקשה להחלטת הפתיחה של הרייכסדאג הבא ומשפיע ישירות על פלטפורמות הבחירות.
+
+### דיאגרמה מרכזית: נוף הסיכון החקיקתי
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-05-12  
+**分類**: 🟢 公開 — GDPR Art. 9(2)(e)(g)  
+**信頼水準**: HIGH [B2]  
+**分析サイクル**: committeeReports · 2026-05-12  
+
+---
+
+### 結論（BLUF）
+
+憲法委員会（KU）は歴史的な二重報告書（HD01KU34）を提出し、中絶権の憲法的保護を求めつつ、結社の自由と市民権を制限する国家権限も拡大しようとしています — RF改正を3つの議会期にわたって包括する政治的妥協です。社会委員会（SoU）は自殺防止のための全国調査機能（HD01SoU31）を提案し、新たな国家能力を創出します。民事委員会（CU）は2026年スウェーデン総選挙を前に市場全面規制緩和を伴う賃貸市場改革（HD01CU31）を提示します。総じてこれらの報告書は、2010年RF改正以来最も憲法的に重厚なパッケージセッションを形成します。
+
+### 本文書が支持する決定
+
+1. **編集優先度**: HD01KU34は政治的に最も重要な報告書です — 憲法改正は349人全員の議員に影響を与え、二院制決定（または中間選挙を挟んだ2回の連続議会決定）が必要です。
+2. **リスク棚卸し**: HD01CU31の賃貸市場改革はEU手続き（ECHR第1議定書）での後退リスクがあり、選挙運動前にSDの離反票を活性化させる可能性があります。
+3. **PIR追跡**: KU34の二重性（中絶保護+結社の自由制限）が2026年の各党選挙公約でどのように扱われるかを追跡します。
+
+### 60秒インテリジェンスポイント
+
+- 🔴 **KU34** — 憲法的に保護された中絶権+結社の自由制限：中間選挙を挟んだ2決議を必要とする歴史的RF改正。政治的破壊力は高く、SDとKDが留保を表明すると予想されます。
+- 🟡 **SoU31** — 全国自殺調査機能：死因データのGDPR複雑処理を伴う新国家機関。実施リスク中高（予算依存、Socialstyrelsenの能力）。
+- 🟡 **CU31** — 柔軟な賃貸市場：インデックス連動賃料による賃貸システムの規制緩和。SとVからの広範な反対；単純多数による採決の可能性あり。
+- 🟠 **FiU37** — 金融部門の運用危機管理：新しいDORA準拠の破綻処理メカニズムを創設。技術的ですがシステム上重要。
+- 🟢 **JuU39** — 精神的暴力刑事規定：親密な関係における体系的な精神的暴力を犯罪化、イスタンブール条約とのEU調和。
+
+### 最重要前向き引き金
+
+**KU34第二読会**（次の議会期）：2026年選挙前に議会がこの報告書を肯定方向に解決すれば、義務的な検疫投票のカウントダウンが始まります — これにより次期議会の開会決定に厳格な期限が設定され、選挙プラットフォームに直接影響します。
+
+### 主要図表：立法リスク景観
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-12  
+**분류**: 🟢 공개 — GDPR Art. 9(2)(e)(g)  
+**신뢰 수준**: HIGH [B2]  
+**분석 주기**: committeeReports · 2026-05-12  
+
+---
+
+### 결론(BLUF)
+
+헌법위원회(KU)는 역사적인 이중 보고서(HD01KU34)를 제출하며, 낙태권을 헌법적으로 보호하는 동시에 결사의 자유와 시민권을 제한하는 국가 권한을 확대하려 합니다 — RF 개정안을 세 번의 의회 회기에 걸쳐 포괄하는 정치적 타협입니다. 사회위원회(SoU)는 자살 예방을 위한 전국 조사 기능(HD01SoU31)을 제안하여 새로운 국가 역량을 창출합니다. 민사위원회(CU)는 2026년 스웨덴 의회 선거를 앞두고 광범위한 시장 규제 완화를 담은 임대 시장 개혁(HD01CU31)을 제시합니다. 종합적으로 이 보고서들은 2010년 RF 개정 이후 가장 헌법적으로 무거운 패키지 세션을 구성합니다.
+
+### 이 문서가 지원하는 결정
+
+1. **편집 우선순위**: HD01KU34는 정치적으로 가장 비중 있는 보고서입니다 — 헌법 개정은 349명 전원에게 영향을 미치며, 양원 결정(또는 중간 선거를 포함한 두 번의 연속 의회 결정)이 필요합니다.
+2. **위험 목록**: HD01CU31의 임대 시장 개혁은 EU 절차(ECHR 제1의정서)에서 후퇴 위험이 있으며, 선거 운동 전 SD의 이탈 투표를 촉발할 수 있습니다.
+3. **PIR 추적**: KU34의 이중성(낙태 보호+결사의 자유 제한)이 2026년 각 당의 선거 공약에서 어떻게 다뤄지는지 추적합니다.
+
+### 60초 정보 요점
+
+- 🔴 **KU34** — 헌법적으로 보호된 낙태권+결사의 자유 제한: 중간 선거를 포함한 2번의 결의가 필요한 역사적 RF 개정. 정치적 폭발력 높음; SD와 KD가 유보 입장을 표명할 것으로 예상됩니다.
+- 🟡 **SoU31** — 전국 자살 조사 기능: 사망 원인 데이터에 대한 GDPR 복잡 처리를 수반하는 새 국가 기관. 이행 위험 중상(예산 의존, Socialstyrelsen 역량).
+- 🟡 **CU31** — 유연한 임대 시장: 인덱스 연동 임대료를 통한 임대 시스템 규제 완화. S와 V의 광범위한 반대; 단순 다수결 투표 가능성.
+- 🟠 **FiU37** — 금융 부문 운영 위기 관리: 새로운 DORA 호환 정리 메커니즘 생성. 기술적이지만 시스템적으로 중요합니다.
+- 🟢 **JuU39** — 심리적 폭력 형사 조항: 친밀한 관계에서의 체계적 심리적 폭력 범죄화, 이스탄불 협약과의 EU 조화.
+
+### 가장 중요한 선행 촉발 요인
+
+**KU34 2차 독회**(다음 의회 회기): 2026년 선거 전에 의회가 이 보고서를 긍정적 방향으로 해결하면, 의무적 격리 투표의 카운트다운이 시작됩니다 — 이는 다음 의회의 개회 결정에 엄격한 기한을 설정하고 선거 플랫폼에 직접 영향을 미칩니다.
+
+### 주요 도표: 입법 위험 지형
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-12  
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e)(g)  
+**Betrouwbaarheidsniveau**: HIGH [B2]  
+**Analysecyclus**: committeeReports · 2026-05-12  
+
+---
+
+### BLUF
+
+De Grondwetscommissie (KU) presenteert een historisch dubbel adviesrapport (HD01KU34) dat beoogt het abortusrecht grondwettelijk te beschermen en tegelijkertijd de mogelijkheden tot beperking van de vrijheid van vereniging en staatsburgerschap uit te breiden — een politisch compromis dat drie riksmöten van RF-herziening omspant. De Sociale Commissie (SoU) stelt een nationale onderzoeksfunctie voor suïcidepreventie voor (HD01SoU31) die nieuwe staatscapaciteit creëert. De Civiele Commissie (CU) presenteert huurmarkthervormen (HD01CU31) met brede marktderegulering voor de aankomende Zweedse verkiezingen van 2026. Tezamen vormen deze rapporten de constitutioneel zwaarste pakketsessie sinds de RF-herziening in 2010.
+
+### Beslissingen die dit document ondersteunt
+
+1. **Redactionele prioritering**: HD01KU34 is het politiek zwaarwegenste rapport — grondwetswijzigingen betreffen alle 349 leden en vereisen een tweekamerbesluit (of twee opeenvolgende Riksdag-beslissingen met tussenliggende verkiezingen).
+2. **Risico-inventarisatie**: De huurmarkthervorming HD01CU31 loopt het risico op terugval in EU-procedures (ECHR Art. 1 Protocol 1) en kan de afwijkende stem van SD activeren voor de verkiezingscampagne.
+3. **PIR-opvolging**: Volgen hoe de dubbele aard van KU34 (abortusprotectie + beperkte vrijheid van vereniging) wordt genavigeerd in de verkiezingsmanifesten van de partijen in 2026.
+
+### 60-secondeninformatiepunten
+
+- 🔴 **KU34** — Grondwettelijk beschermd abortusrecht + beperkte vrijheid van vereniging: historische RF-herziening die 2 beslissingen vereist met tussenliggende verkiezingen. Politieke explosiekracht hoog; SD en KD worden verwacht voorbehouden te maken.
+- 🟡 **SoU31** — Nationale suïcideonderzoeksfunctie: nieuwe staatseenheid met AVG-complexe behandeling van overlijdensgegevens. Implementatierisico middel-hoog (budgetafhankelijk, capaciteit Socialstyrelsen).
+- 🟡 **CU31** — Flexibele huurmarkt: deregulering van het huurstelsel met geïndexeerde huren. Brede oppositie van S en V; mogelijke stemming met gewone meerderheid.
+- 🟠 **FiU37** — Operationeel crisisbeheer financiële sector: creëert nieuw DORA-compatibel afwikkelingsmechanisme. Technisch, maar systeemrelevant.
+- 🟢 **JuU39** — Strafbepaling psychisch geweld: criminaliseert systematisch psychologisch geweld in intieme relaties, EU-harmonisering met het Verdrag van Istanbul.
+
+### Belangrijkste vooruitblikkende trigger
+
+**KU34 tweede lezing** (volgend riksmöte): Als de Riksdag dit rapport in positieve richting oplost voor de verkiezingen van 2026, begint de aftelling voor de verplichte quarantainestemming — wat een harde deadline stelt voor het openingsbesluit van de volgende Riksdag en de verkiezingsplatforms direct beïnvloedt.
+
+### Sleuteldiagram: Wetgevend risicolandschap
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-12  
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
+**Konfidens**: HIGH [B2]  
+**Analysesyklus**: committeeReports · 2026-05-12  
+
+---
+
+### BLUF
+
+Konstitusjonskomiteen (KU) fremlegger en historisk dobbeltbetenkelse (HD01KU34) som søker å grunnlovsfeste abortrettigheter og samtidig utvide mulighetene til å begrense foreningsfriheten og statsborgerskap — et politisk kompromiss som strekker seg over tre riksmöten med RF-revisjon. Sosialkomiteen (SoU) foreslår en nasjonal utredningsfunksjon for selvmordsforebygging (HD01SoU31) som skaper ny statlig kapasitet. Siviltutvalget (CU) legger frem leiemarkedsreformer (HD01CU31) med bred markedsderegulering foran det kommende riksdagsvalget i 2026. Samlet utgjør disse betenkningene den mest konstitusjonelt tunge pakkesesjonen siden RF-revisjonen i 2010.
+
+### Beslutninger dette underlaget støtter
+
+1. **Redaksjonell prioritering**: HD01KU34 er den politisk tyngst veiende betenkelsen — grunnlovsendringer berører alle 349 representanter og krever tokammerbeslutning (eller to successive riksdagsbeslutninger med mellomliggende valg).
+2. **Risikokartlegging**: HD01CU31's leiemarkedsreform risikerer tilbakeslag i EU-prosessene (ECHR Art. 1 Protokoll 1) og kan aktivere SD's avviksstemme foran valgkampen.
+3. **PIR-oppfølging**: Følge hvordan KU34's dobbeltnatur (abortbeskyttelse + begrenset foreningsfrihet) navigeres i partienes valgprogrammer 2026.
+
+### 60-sekunders etterretningspunkter
+
+- 🔴 **KU34** — Grunnlovssikret abortrett + begrenset foreningsfrihet: historisk RF-revisjon som krever 2 beslutninger med valg imellom. Politisk sprengkraft høy; SD og KD forventes å ta forbehold.
+- 🟡 **SoU31** — Nasjonal selvmordsutredningsfunksjon: ny statlig enhet med GDPR-kompleks håndtering av dødsfalldata. Implementeringsrisiko middels høy (budgetavhengig, Socialstyrelsen kapasitet).
+- 🟡 **CU31** — Fleksibelt leiemarked: deregulering av leieboligsystemet med indekserte leier. Bred opposisjon fra S og V; mulig avstemning med simpelt flertall.
+- 🟠 **FiU37** — Operativ krisehåndtering finansiell sektor: skaper ny DORA-kompatibel resolusjonmekanisme. Teknisk, men systemviktig.
+- 🟢 **JuU39** — Psykisk vold straffebestemmelse: kriminaliserer systematisk psykologisk vold i nære relasjoner, EU-harmonisering med Istanbul-konvensjonen.
+
+### Viktigste fremoverpekende utløser
+
+**KU34 andre behandling** (neste riksmöte): Hvis riksdagen løser denne betenkelsen i positiv retning før valget 2026 begynner nedtellingen for den obligatoriske karantenestemningen — noe som setter en hard deadline for neste riksdags innledende beslutning og påvirker valgprogrammene direkte.
+
+### Nøkkeldiagram: Lovgivningsmessig risikolandskap
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-12  
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e)(g)  
+**Konfidens**: HIGH [B2]  
+**Analyskurs**: committeeReports · 2026-05-12  
+
+---
+
+### BLUF
+
+Konstitutionsutskottet (KU) presenterar ett historiskt dubbelbetänkande (HD01KU34) som söker grundlagsskydda aborträtten och samtidigt utöka möjligheterna att begränsa föreningsfriheten och medborgarskapet — en politisk kompromiss som spänner tre riksmöten av RF-revision. Socialutskottet (SoU) föreslår en nationell utredningsfunktion för suicidprevention (HD01SoU31) som skapar ny statlig kapacitet. Civilutskottet (CU) lägger fram hyresmarknadsreformer (HD01CU31) med bred marknadsavreglering inför det stundande riksdagsvalet 2026. Sammantaget utgör dessa betänkanden den mest konstitutionellt tunga paketsessionen sedan RF-revisionen 2010.
+
+### Beslut som detta underlag stöder
+
+1. **Redaktionell prioritering**: HD01KU34 är det politiskt tyngst vägande betänkandet — grundlagsändringar berör alla 349 ledamöter och kräver tvåkammarbeslut (eller två successiva riksdagsbeslut med mellanliggande val).
+2. **Riskinventering**: HD01CU31:s hyresmarknadsreform riskerar återstall i EU-processerna (ECHR Art. 1 Protocol 1) och kan aktivera SD:s avvikelseröst inför valrörelsen.
+3. **PIR-uppföljning**: Följa hur KU34:s dubbelnatur (abortskydd + begränsad föreningsfrihet) navigeras i partiernas valmanifest 2026.
+
+### 60-sekunders underrättelsepunkter
+
+- 🔴 **KU34** — Grundlagsskyddad aborträtt + begränsad föreningsfrihet: historisk RF-revision som kräver 2 beslut med val emellan. Politisk sprängkraft hög; SD och KD förväntas reservera sig.
+- 🟡 **SoU31** — Nationell suicidutredningsfunktion: ny statlig enhet med GDPR-komplex hantering av dödsorsaksdata. Implementeringsrisk medelhög (budgetberoende, Socialstyrelsen kapacitet).
+- 🟡 **CU31** — Flexibel hyresmarknad: deregulering av hyresrättssystemet med indexerade hyror. Bred opposition från S och V; möjlig röstning med simple majority.
+- 🟠 **FiU37** — Operativ krishantering finansiella sektorn: skapar ny DORA-kompatibel resolutionsmekanism. Teknisk, men systemviktig.
+- 🟢 **JuU39** — Psykiskt våld straffbestämmelse: kriminaliserar systematiskt psykologiskt våld i nära relationer, EU-harmonisering med Istanbulkonventionen.
+
+### Viktigaste framåtblickande utlösare
+
+**KU34 andra behandling** (nästa riksmöte): Om riksdagen löser detta betänkande i positiv riktning inför valet 2026 börjar klockryckan för den obligatoriska karantänomröstningen — vilket sätter en hård deadline för nästa riksdags ingångsbeslut och påverkar valplattformarna direkt.
+
+### Nyckelfigur: Lagstiftningsrisklandskap
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**日期**: 2026-05-12  
+**分类**: 🟢 公开 — GDPR Art. 9(2)(e)(g)  
+**置信度**: HIGH [B2]  
+**分析周期**: committeeReports · 2026-05-12  
+
+---
+
+### 摘要
+
+宪法委员会（KU）提交了一份历史性的双重报告（HD01KU34），既寻求宪法保护堕胎权，又扩大限制结社自由和公民权的国家权力——这是一项跨越三届议会会期RF修订的政治妥协。社会委员会（SoU）提议设立全国自杀预防调查功能（HD01SoU31），创建新的国家能力。民事委员会（CU）在2026年瑞典议会选举前提出租房市场改革（HD01CU31），涵盖广泛的市场解除管制。总体而言，这些报告构成了自2010年RF修订以来宪法上最为沉重的一揽子会议。
+
+### 本文件支持的决策
+
+1. **编辑优先级**：HD01KU34是政治上最具分量的报告——宪法修正案影响全部349名成员，需要两院决议（或含中间选举的两次连续议会决议）。
+2. **风险清单**：HD01CU31的租房市场改革在EU程序（ECHR第1附加议定书）中存在受阻风险，并可能在选举前激活SD的异议票。
+3. **PIR跟踪**：追踪KU34的双重性质（堕胎保护+结社自由受限）如何在各党2026年选举纲领中加以处理。
+
+### 60秒情报要点
+
+- 🔴 **KU34** — 宪法保护的堕胎权+结社自由受限：历史性RF修订，需要含中间选举的2次决议。政治爆炸性高；预计SD和KD将提出保留意见。
+- 🟡 **SoU31** — 全国自杀调查功能：处理死亡原因数据的GDPR复杂性新国家机构。实施风险中高（依赖预算、Socialstyrelsen的能力）。
+- 🟡 **CU31** — 灵活租房市场：以指数化租金解除租赁系统管制。S和V的广泛反对；可能以简单多数表决。
+- 🟠 **FiU37** — 金融部门运营危机管理：创建新的DORA兼容处置机制。技术性强，但具有系统性重要性。
+- 🟢 **JuU39** — 心理暴力刑事条款：将亲密关系中的系统性心理暴力入罪，与伊斯坦布尔公约的EU协调。
+
+### 最重要的前瞻性触发因素
+
+**KU34第二次审议**（下届议会期）：如果议会在2026年选举前以积极方向解决本报告，强制隔离投票的倒计时将开始——这为下届议会的开幕决议设定了严格截止日期，并直接影响各党选举平台。
+
+### 关键图表：立法风险图景
+
+```mermaid
+quadrantChart
+    title "Betänkande 2026-05-12 — Politisk vikt vs Implementeringsrisk"
+ x-axis Låg implementeringsrisk --> Hög implementeringsrisk
+ y-axis Låg politisk vikt --> Hög politisk vikt
+    quadrant-1 Hög vikt / Hög risk
+    quadrant-2 Hög vikt / Låg risk
+    quadrant-3 Låg vikt / Låg risk
+    quadrant-4 Låg vikt / Hög risk
+    "HD01KU34 (Grundlag abortskydd+föreningsfrihet)": [0.75, 0.95]
+    "HD01CU31 (Hyresmarknad flexibel)": [0.65, 0.70]
+    "HD01FiU37 (Finansiell krishantering)": [0.55, 0.68]
+    "HD01SoU31 (Suicidutredningsfunktion)": [0.60, 0.55]
+    "HD01JuU39 (Psykiskt våld)": [0.30, 0.50]
+    "HD01JuU34 (Nordisk brottmål)": [0.25, 0.35]
+    "HD01JuU32 (Allmänna sammankomster)": [0.40, 0.40]
+    "HD01FiU43 (Välfärdsutbetalningar)": [0.35, 0.38]
+```
+
+<!-- source-sha: 9cdd9bfe0bc226548b5ddf453782f5076880156a -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
@@ -1910,6 +2656,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -3,7 +3,7 @@ date: 2026-05-15
 subfolder: motions
 slug: 2026-05-15-motions
 source_folder: analysis/daily/2026-05-15/motions
-generated_at: 2026-05-25T15:59:54.116Z
+generated_at: 2026-05-27T07:35:33.837Z
 language: en
 layout: article
 ---
@@ -1603,7 +1603,7 @@ Data sourced from 2026-05-13 via lookback fallback — check freshness indicator
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_ar.md -->
 
-‏---
+---
 artifact: executive-brief
 analysis_date: "2026-05-15"
 subfolder: "motions"
@@ -1802,7 +1802,7 @@ Le 13 mai 2026 — quatre mois avant les élections suédoises — les quatre pa
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_he.md -->
 
-‏---
+---
 artifact: executive-brief
 analysis_date: "2026-05-15"
 subfolder: "motions"
@@ -1899,8 +1899,6 @@ subfolder: "motions"
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling | **Datum**: 2026-05-15 | **Classificatie**: OPENBAAR | **Betrouwbaarheid**: HOOG [B2]
 
 ### 🎯 BLUF
 

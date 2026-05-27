@@ -3,7 +3,7 @@ date: 2026-04-29
 subfolder: evening-analysis
 slug: 2026-04-29-evening-analysis
 source_folder: analysis/daily/2026-04-29/evening-analysis
-generated_at: 2026-05-25T15:59:52.947Z
+generated_at: 2026-05-27T07:35:32.549Z
 language: en
 layout: article
 ---
@@ -2243,11 +2243,6 @@ flowchart TD
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_ja.md -->
 
-**著者**：James Pether Sörling  
-**日付**：2026-04-29  
-**分類**：公開 — GDPR第9条(2)(e,g)  
-**信頼度**：高 [B2]
-
 ---
 
 ### 🎯 エグゼクティブサマリー
@@ -2447,12 +2442,6 @@ flowchart TD
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/executive-brief_sv.md -->
-
-**Författare**: James Pether Sörling  
-**Datum**: 2026-04-29  
-**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)  
-**Konfidens**: HÖG [B2]  
-**Körnings-ID**: 25121285494
 
 ---
 

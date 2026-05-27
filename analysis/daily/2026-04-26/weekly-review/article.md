@@ -3,7 +3,7 @@ date: 2026-04-26
 subfolder: weekly-review
 slug: 2026-04-26-weekly-review
 source_folder: analysis/daily/2026-04-26/weekly-review
-generated_at: 2026-05-25T15:59:52.780Z
+generated_at: 2026-05-27T07:35:32.373Z
 language: en
 layout: article
 ---
@@ -2246,12 +2246,6 @@ style HC03203 fill:#ffbe0b,stroke:#0a0e27
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling
-**Lauf-ID**: 24961123457
-**Datum**: 2026-04-26
-**Klassifikation**: PUBLIC — DSGVO Art 9(2)(e)(g)
-**Vertrauen**: HIGH [B2] — Behörden-API; offizielle Propositionsdokumente
-
 ---
 
 ### BLUF
@@ -2336,12 +2330,6 @@ style HC03203 fill:#ffbe0b,stroke:#0a0e27
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_es.md -->
-
-**Autor**: James Pether Sörling
-**ID de ejecución**: 24961123457
-**Fecha**: 2026-04-26
-**Clasificación**: PUBLIC — RGPD Art 9(2)(e)(g)
-**Confianza**: HIGH [B2] — API de autoridad; documentos de proposición oficiales
 
 ---
 
@@ -2708,12 +2696,6 @@ style HC03203 fill:#ffbe0b,stroke:#0a0e27
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling
-**実行ID**: 24961123457
-**日付**: 2026-04-26
-**分類**: PUBLIC — GDPR 第9条(2)(e)(g)
-**信頼度**: HIGH [B2] — 行政機関API；公式提案文書
-
 ---
 
 ### 概要
@@ -2798,12 +2780,6 @@ style HC03203 fill:#ffbe0b,stroke:#0a0e27
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling
-**실행 ID**: 24961123457
-**날짜**: 2026-04-26
-**분류**: PUBLIC — GDPR 제9조(2)(e)(g)
-**신뢰도**: HIGH [B2] — 행정기관 API; 공식 제안 문서
 
 ---
 

@@ -3,7 +3,7 @@ date: 2026-05-10
 subfolder: week-ahead
 slug: 2026-05-10-week-ahead
 source_folder: analysis/daily/2026-05-10/week-ahead
-generated_at: 2026-05-25T15:59:53.786Z
+generated_at: 2026-05-27T07:35:33.438Z
 language: en
 layout: article
 ---
@@ -67,6 +67,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1472,13 +1485,514 @@ Answered PIRs from prior cycle: PIR-JUSTSEC-001, PIR-JUSTSEC-002, PIR-EDUC-001, 
 
 **economicProvenance**: provider: imf, dataflow: WEO, indicator: NGDP_RPCH, vintage: WEO-2026-04, retrieved_at: 2026-05-10
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_ar.md -->
+
+&#x202B;# الريكسداج — ما ينتظرنا هذا الأسبوع: إصلاح الإسكان وسياسة التعليم والتوتر الدبلوماسي — 10–16 مايو 2026
+
+**المؤلف**: James Pether Sörling  
+**التصنيف**: عام  
+**مستوى الثقة**: مرتفع [B2]  
+**رقم التشغيل**: 25622855919  
+
+### 🎯 الخلاصة التنفيذية
+
+في الأسبوع الممتد من 10 إلى 16 مايو 2026، تدفع لجنة الشؤون المدنية (CU) في الريكسداج نحو تحرير تاريخي لسوق الإيجار من خلال قانون الإيجار الخاص الجديد (privatuthyrningslag، HD01CU31) وتحديث التنفيذ (HD01CU34)، فيما تُنهي لجنة التعليم (UbU) إصلاحات الشفافية المدرسية ومؤهلات المعلمين استعداداً لمرحلة انتقال التعليم الابتدائي العشرية لعام 2028. وتبرز توترات داخل التحالف عندما يضغط الديمقراطيون السويديون على وزير التعليم الليبرالي بشأن حظر شامل للحجاب (HD11802)، ويستخدم الاشتراكيون الديمقراطيون الاستجوابات لتحدي وزير المالية بشأن غموض الإقامة الضريبية (HD10480). ويرفع حادث الأسطول في المياه اليونانية التي تضم مواطنين سويديين من حدة التوتر الدبلوماسي بين السويد وإسرائيل قبل أسبوع من اجتماع مجلس الشؤون الأوروبية (HD11803).
+
+### 🧭 ثلاثة قرارات يدعمها هذا التقرير
+
+1. **متابعة جدول أعمال الريكسداج**: إعطاء الأولوية لرصد التصويت العام على CU31 (متوقع منتصف الأسبوع) — تحرير سوق الإيجار هو التشريع الأكثر إثارةً للجدل السياسي في هذه الدورة البرلمانية.
+2. **تتبع إشارات تماسك التحالف**: يُمثل الاحتكاك بين SD–L حول حظر الحجاب (HD11802) وانشقاق SD في مسألة الأسطول الإسرائيلي (HD11803) إشارات مبكرة لتحديد المواقع في حملة انتخابات خريف 2026.
+3. **مراقبة التصعيد الدبلوماسي**: يستوجب حادث أسطول Sumud العالمي متابعة يومية؛ وسيحدد رد وزير الخارجية Stenergard على HD11803 النبرة الدبلوماسية السويدية قبيل اجتماع مجلس الشؤون الأوروبية.
+
+### السياق: العد التنازلي للانتخابات
+
+**تُجرى الانتخابات البرلمانية السويدية في 13 سبتمبر 2026 — بعد 127 يوماً من الآن**. ويحمل كل تقرير لجنة مثير للجدل وكل استجواب **معامل أهمية DIW بمقدار 1.5×** في هذا التحليل. ويدير التحالف الحكومي (M–KD–L بدعم SD للثقة والإمداد) ثلاثة ملفات خلافية في آنٍ واحد: السياسة السكنية (حيث يعارض S وV التحرير)، والسياسة التعليمية (حيث يصمد تماسك التحالف لكن يظهر الاحتكاك بين SD–L)، والسياسة الخارجية (حيث يواجه SD والحكومة ضغطاً من المعارضة في ملف غزة/إسرائيل).
+
+### أحكام الاستخبارات الرئيسية
+
+- **KJ-1 [ثقة مرتفعة — B2]**: سيُقرّ قانون CU31 للإيجار الخاص بأصوات M–KD–L–SD؛ وسيصوت S وV ضده واصفَين إياه بأنه هدية لأصحاب العقارات قبيل الانتخابات. ومن المرجح [أفق:أسبوع] أن يولّد تغطيةً إعلامية واسعة حتى يوم الخميس.
+- **KJ-2 [ثقة متوسطة — C2]**: تظل التوترات بين SD–L حول HD11802 (حظر شامل للحجاب) عند مستوى الضغط اللفظي ولن تُفكك تماسك التحالف قبل الانتخابات؛ إذ سيستخدم SD هذه المسألة لتحديد المواقع الانتخابية فحسب.
+- **KJ-3 [ثقة متوسطة — C3]**: سيسفر حادث الأسطول الإسرائيلي (HD11803) عن رد مكتوب حذر من وزير الخارجية Stenergard دون تسمية إجراءات دبلوماسية محددة؛ ومن غير المرجح [أفق:أسبوع] أن تُغير مطالب المعارضة بإدانة أشد حزماً موقفَ الحكومة.
+
+### ما يستحق المتابعة
+
+| المحفّز | العتبة | الأفق الزمني |
+|---------|-----------|---------|
+| نتيجة التصويت العام على CU31 | أي صوت معارض من التحالف | هذا الأسبوع [أفق:أسبوع] |
+| ردّ وزيرة الخارجية Stenergard على HD11803 | لغة دبلوماسية قوية / عقوبات | 2–5 أيام [أفق:72 ساعة] |
+| تصريحات SD–L العلنية حول حظر الحجاب | التزام أو كسر التحالف | هذا الأسبوع [أفق:أسبوع] |
+| مراجعة نمو الناتج المحلي الإجمالي للسويد من صندوق النقد الدولي | تحديث من بيانات WEO أبريل 2026 | شهرياً [أفق:شهر] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Klassificering**: OFFENTLIG  
+**Konfidensniveau**: HØJ [B2]  
+**Kørsels-ID**: 25622855919  
+
+### 🎯 BLUF
+
+Ugen 10.–16. maj 2026 ser Riksdagens Civiludvalg (CU) fremme en historisk liberalisering af lejemarkedet gennem den nye privatuthyrningslag (HD01CU31) og modernisering af håndhævelsen (HD01CU34), mens Uddannelsesudvalget (UbU) færdiggør reformer om skolegennemsigtighed og lærerkvalifikationer forud for tiårsovergangen til grundskolen i 2028. Koalitionsintern spænding opstår, da Sverigedemokraterne presser den liberale undervisningsminister om et fuldt slørforbud (HD11802), og Socialdemokraterne bruger interpellationer til at udfordre finansministeren om uklarhed om skattemæssigt hjemsted (HD10480). Flotilleincidenten i græske farvande med svenske statsborgere hæver den svenske–israelske diplomatiske temperatur en uge før Rådet for Europæiske Anliggender (HD11803).
+
+### 🧭 3 Beslutninger, Denne Brief Understøtter
+
+1. **Følg Riksdagens tidsplan**: Prioriter overvågning af CU31's plenumsstemme (forventet midt på ugen) — liberaliseringen af lejemarkedet er den mest politisk omstridte lovgivning i denne parlamentariske samling.
+2. **Spor koalitionens sammenhængssignaler**: SD–L-friktionen om slørforbuddet (HD11802) og SD's afvigelse i Israel-flotillesagen (HD11803) er tidlige signaler om positioneringen forud for valget i efteråret 2026.
+3. **Overvåg diplomatisk eskalering**: Den Globale Sumud-flotilleincident kræver daglig opfølgning; udenrigsminister Stenergards svar på HD11803 vil sætte den svenske diplomatiske tone forud for Rådet for Europæiske Anliggender.
+
+### Kontekst: Nedtælling til Valget
+
+Sveriges **riksdagsvalg afholdes den 13. september 2026 — 127 dage fra nu**. Enhver omstridt udvalgsbetænkning og interpellation bærer en **1,5× DIW-signifikansmultiplikator** i denne analyse. Regeringskoalitionen (M–KD–L med SD's støtte til tillid og levering) håndterer tre samtidigt omstridte sager: boligpolitik (hvor S og V modsætter sig liberalisering), skolepolitik (hvor koalitionsenheden holder, men SD–L-friktionen er synlig) og udenrigspolitik (hvor SD og regeringen er under oppositionspres i Gaza/Israel-sagen).
+
+### Centrale Efterretningsvurderinger
+
+- **KJ-1 [HØJ konfidens — B2]**: CU31-privatuthyrningslagen vil blive vedtaget med M–KD–L–SD-stemmer; S og V vil stemme imod og fremstille loven som en gave til udlejere forud for valget. Sandsynligt [horisont:uge] at generere substantiel mediedækning frem til torsdag.
+- **KJ-2 [MIDDEL konfidens — C2]**: SD–L-spændingen om HD11802 (fuldt slørforbud) forbliver på verbalt-pres-niveau og vil ikke bryde koalitionsenheden inden valget; SD vil kun bruge dette spørgsmål til kampagnepositionering.
+- **KJ-3 [MIDDEL konfidens — C3]**: Israel-flotilleincidenten (HD11803) vil resultere i et forsigtigt skriftligt svar fra udenrigsminister Stenergard uden at nævne specifikke diplomatiske foranstaltninger; oppositionens krav om skarpere fordømmelse er usandsynligt [horisont:uge] at ændre regeringens holdning.
+
+### Hvad Man Bør Overvåge
+
+| Udløser | Tærskel | Horisont |
+|---------|-----------|---------|
+| CU31's plenumsstemmeudfald | Enhver afvigende koalitionsstemme | Denne uge [horisont:uge] |
+| Udenrigsminister Stenergard svarer på HD11803 | Stærkt diplomatisk sprog / sanktioner | 2–5 dage [horisont:72h] |
+| SD–L's offentlige udtalelser om slørforbud | Koalitionsforpligtelse eller brud | Denne uge [horisont:uge] |
+| IMF's svenske BNP-revision | Opdatering fra WEO-vintage april 2026 | Månedlig [horisont:måned] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Klassifizierung**: ÖFFENTLICH  
+**Vertrauensstufe**: HOCH [B2]  
+**Lauf-ID**: 25622855919  
+
+### 🎯 BLUF
+
+In der Woche vom 10.–16. Mai 2026 treibt der Zivilausschuss (CU) des Riksdag eine wegweisende Liberalisierung des Mietmarktes durch das neue Privatvermietungsgesetz (privatuthyrningslag, HD01CU31) und die Modernisierung der Vollstreckung (HD01CU34) voran, während der Bildungsausschuss (UbU) Reformen zur Schultransparenz und zu Lehrerzulassungen vor dem zehnjährigen Grundschulübergang 2028 abschließt. Koalitionsinterne Spannungen entstehen, als die Schwedendemokraten den liberalen Bildungsminister zu einem vollständigen Schleiertrageverbot unter Druck setzen (HD11802) und die Sozialdemokraten Interpellationen nutzen, um den Finanzminister zu Unklarheiten beim Steuerwohnsitz herauszufordern (HD10480). Der Flottenvorfall in griechischen Gewässern mit schwedischen Staatsbürgern erhöht die diplomatische Temperatur zwischen Schweden und Israel eine Woche vor dem Rat für Europäische Angelegenheiten (HD11803).
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Verfolgen Sie den Riksdag-Zeitplan**: Priorisieren Sie die Beobachtung der CU31-Plenumssabstimmung (Mitte der Woche erwartet) — die Liberalisierung des Mietmarktes ist die politisch umstrittenste Gesetzgebung dieser Parlamentssitzung.
+2. **Koalitionszusammenhalt verfolgen**: Die SD–L-Reibung beim Schleiertrageverbot (HD11802) und SDs Abweichung in der Israel-Flotillenfrage (HD11803) sind frühe Signale für die Positionierung im Wahlkampf Herbst 2026.
+3. **Diplomatische Eskalation überwachen**: Der Globale Sumud-Flotillenvorfall erfordert tägliche Verfolgung; die Antwort von Außenministerin Stenergard auf HD11803 wird den schwedischen diplomatischen Ton vor dem Rat für Europäische Angelegenheiten setzen.
+
+### Kontext: Countdown zur Wahl
+
+Schwedens **Reichstagswahl findet am 13. September 2026 — 127 Tage von jetzt** statt. Jeder umstrittene Ausschussbericht und jede Interpellation trägt in dieser Analyse einen **1,5× DIW-Bedeutungsmultiplikator**. Die Regierungskoalition (M–KD–L mit SDs Vertrauens- und Lieferungsunterstützung) verwaltet drei gleichzeitig umstrittene Dossiers: Wohnungspolitik (wo S und V der Liberalisierung widersprechen), Schulpolitik (wo der Koalitionszusammenhalt hält, aber SD–L-Reibung sichtbar ist) und Außenpolitik (wo SD und die Regierung in der Gaza/Israel-Sache unter Oppositionsdruck stehen).
+
+### Zentrale Geheimdienstbewertungen
+
+- **KJ-1 [HOHE Konfidenz — B2]**: Das CU31-Privatvermietungsgesetz wird mit M–KD–L–SD-Stimmen verabschiedet; S und V werden dagegen stimmen und das Gesetz als Geschenk an Vermieter vor der Wahl darstellen. Wahrscheinlich [Horizont:Woche] bis Donnerstag erhebliche Medienberichterstattung zu erzeugen.
+- **KJ-2 [MITTLERE Konfidenz — C2]**: Die SD–L-Spannung um HD11802 (vollständiges Schleiertrageverbot) bleibt auf verbaler Druckebene und wird die Koalitionseinheit vor der Wahl nicht brechen; SD wird dieses Thema nur für Wahlkampf-Positionierung nutzen.
+- **KJ-3 [MITTLERE Konfidenz — C3]**: Der Israel-Flotillenvorfall (HD11803) wird eine vorsichtige schriftliche Antwort von Außenministerin Stenergard ohne Benennung spezifischer diplomatischer Maßnahmen ergeben; die Oppositionsforderungen nach schärferer Verurteilung werden [Horizont:Woche] die Regierungshaltung wahrscheinlich nicht ändern.
+
+### Was zu beobachten ist
+
+| Auslöser | Schwellenwert | Horizont |
+|---------|-----------|---------|
+| CU31-Plenumssabstimmungsergebnis | Jede abweichende Koalitionsstimme | Diese Woche [Horizont:Woche] |
+| Außenministerin Stenergard antwortet auf HD11803 | Starke diplomatische Sprache / Sanktionen | 2–5 Tage [Horizont:72h] |
+| SD–L öffentliche Aussagen zum Schleiertrageverbot | Koalitionsverpflichtung oder Bruch | Diese Woche [Horizont:Woche] |
+| IMF-Schweden-BNP-Revision | Aktualisierung von WEO-Vintage April 2026 | Monatlich [Horizont:Monat] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Clasificación**: PÚBLICO  
+**Nivel de confianza**: ALTO [B2]  
+**ID de ejecución**: 25622855919  
+
+### 🎯 BLUF
+
+La semana del 10–16 de mayo de 2026 ve a la Comisión de Asuntos Civiles (CU) del Riksdag impulsar una histórica liberalización del mercado de alquiler a través de la nueva ley de alquiler privado (privatuthyrningslag, HD01CU31) y la modernización de la aplicación (HD01CU34), mientras que la Comisión de Educación (UbU) finaliza reformas sobre transparencia escolar y cualificaciones docentes de cara a la transición decenal a la escuela primaria de 2028. Emergen tensiones internas en la coalición cuando los Demócratas Suecos presionan al ministro liberal de educación sobre una prohibición total del velo (HD11802) y los Socialdemócratas utilizan interpelaciones para desafiar al ministro de Finanzas sobre la ambigüedad en la residencia fiscal (HD10480). El incidente de la flotilla en aguas griegas con ciudadanos suecos eleva la temperatura diplomática Suecia-Israel una semana antes del Consejo de Asuntos Europeos (HD11803).
+
+### 🧭 3 Decisiones que Apoya este Informe
+
+1. **Seguir el calendario del Riksdag**: Priorizar el seguimiento de la votación plenaria CU31 (esperada a mediados de semana) — la liberalización del mercado de alquiler es la legislación más políticamente controvertida de este período parlamentario.
+2. **Rastrear señales de cohesión de la coalición**: La fricción SD–L sobre la prohibición del velo (HD11802) y la divergencia de SD en la cuestión de la flotilla israelí (HD11803) son señales tempranas para el posicionamiento de la campaña electoral en otoño de 2026.
+3. **Monitorear la escalada diplomática**: El incidente de la flotilla Global Sumud requiere seguimiento diario; la respuesta del ministro de Asuntos Exteriores Stenergard a HD11803 establecerá el tono diplomático sueco antes del Consejo de Asuntos Europeos.
+
+### Contexto: Cuenta Regresiva a las Elecciones
+
+Las **elecciones legislativas suecas tienen lugar el 13 de septiembre de 2026 — a 127 días de ahora**. Cada informe de comisión controvertido e interpelación lleva un **multiplicador de significación DIW de 1,5×** en este análisis. La coalición gobernante (M–KD–L con el apoyo de confianza y suministro del SD) gestiona tres expedientes simultáneamente controvertidos: política de vivienda (donde S y V se oponen a la liberalización), política educativa (donde la unidad de la coalición se mantiene pero la fricción SD–L es visible) y política exterior (donde SD y el gobierno están bajo presión de la oposición en el expediente Gaza/Israel).
+
+### Evaluaciones Clave de Inteligencia
+
+- **KJ-1 [ALTA confianza — B2]**: La ley CU31 de alquiler privado será aprobada con votos M–KD–L–SD; S y V votarán en contra, enmarcando la ley como un regalo a los arrendadores antes de las elecciones. Probable [horizonte:semana] generar cobertura mediática sustancial hasta el jueves.
+- **KJ-2 [MEDIA confianza — C2]**: La tensión SD–L sobre HD11802 (prohibición total del velo) permanece en el nivel de presión verbal y no romperá la unidad de la coalición antes de las elecciones; SD solo utilizará este tema para el posicionamiento electoral.
+- **KJ-3 [MEDIA confianza — C3]**: El incidente de la flotilla israelí (HD11803) dará lugar a una respuesta escrita cautelosa del ministro de Exteriores Stenergard sin nombrar acciones diplomáticas específicas; es improbable que las demandas de la oposición de condena más firme [horizonte:semana] alteren la postura del gobierno.
+
+### Qué Vigilar
+
+| Desencadenante | Umbral | Horizonte |
+|---------|-----------|---------|
+| Resultado de la votación plenaria CU31 | Cualquier voto disidente de la coalición | Esta semana [horizonte:semana] |
+| La ministra Stenergard responde a HD11803 | Lenguaje diplomático fuerte / sanciones | 2–5 días [horizonte:72h] |
+| Declaraciones públicas SD–L sobre prohibición del velo | Compromiso de coalición o ruptura | Esta semana [horizonte:semana] |
+| Revisión del PIB sueco del FMI | Actualización del vintage WEO abril 2026 | Mensual [horizonte:mes] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Luokittelu**: JULKINEN  
+**Luottamustaso**: KORKEA [B2]  
+**Ajon tunnus**: 25622855919  
+
+### 🎯 BLUF
+
+Viikolla 10.–16. toukokuuta 2026 Riksdagenin siviiliasioiden valiokunta (CU) vie eteenpäin merkittävää vuokramarkkinaliberalisointia uuden yksityisvuokrauslain (HD01CU31) ja täytäntöönpanon uudistuksen (HD01CU34) kautta, kun taas koulutusvaliokunnan (UbU) viimeistelee koulun läpinäkyvyyttä ja opettajapätevyyttä koskevat uudistukset ennen vuoden 2028 kymmenvuotista alakoulusiirtymää. Koalitioinsisäinen jännite nousee pintaan, kun Ruotsidemokraatit painostavat liberaalista opetusministeriä täydellisestä hunnukiellosta (HD11802) ja Sosialidemokraatit käyttävät interpellaatioita haastamaan valtiovarainministerin verotuksellisesta kotipaikkaan liittyvästä epäselvyydestä (HD10480). Kreikkalaisissa vesillä tapahtunut flotillatapahtuma ruotsalaisten kansalaisten kanssa kohottaa Ruotsin–Israelin diplomaattista lämpömittaria viikkoa ennen Eurooppa-asioiden neuvostoa (HD11803).
+
+### 🧭 3 Päätöstä, Joita Tämä Tiedote Tukee
+
+1. **Seuraa Riksdagenin aikataulua**: Priorisoi CU31:n täysistuntoäänestyksen seuranta (odotetaan viikon puolivälissä) — vuokramarkkinaliberalisointi on tämän parlamentaarisen istunnon poliittisesti kiistanalaisin lainsäädäntö.
+2. **Seuraa koalition yhtenäisyyssignaaleja**: SD–L-kitka hunnukiellon ympärillä (HD11802) ja SD:n poikkeama Israel-flotilla-kysymyksessä (HD11803) ovat varhaisia signaaleja syksyn 2026 vaaliasemoinnista.
+3. **Seuraa diplomatista eskalaatiota**: Globaali Sumud-flotillatapahtuma vaatii päivittäistä seurantaa; ulkoministeri Stenergadin vastaus HD11803-kysymykseen asettaa Ruotsin diplomaattisen sävyn Eurooppa-asioiden neuvostoa varten.
+
+### Konteksti: Laskenta Vaaleihin
+
+Ruotsin **valtiopäivävaalit ovat 13. syyskuuta 2026 — 127 päivää tästä hetkestä**. Jokaisella kiistanalaisen valiokunnan raportilla ja interpellaatiolla on **1,5× DIW-merkittävyyskerroin** tässä analyysissä. Hallituskoalitio (M–KD–L SD:n luottamus- ja toimitustuen kanssa) hallinnoi kolmea samanaikaisesti kiistanalaista tiedostoa: asuntopolitiikka (jossa S ja V vastustavat liberalisointia), koulupolitiikka (jossa koalitioyhtenäisyys pitää mutta SD–L-kitka on näkyvissä) ja ulkopolitiikka (jossa SD ja hallitus ovat opposition paineen alla Gaza/Israel-asiassa).
+
+### Keskeisiä Tiedusteluarvioita
+
+- **KJ-1 [KORKEA luottamus — B2]**: CU31-yksityisvuokrauslaki hyväksytään M–KD–L–SD-äänillä; S ja V äänestävät vastaan kehystäen lain vuokranantajille annettuna lahjana ennen vaaleja. Todennäköistä [horisontti:viikko] tuottaa merkittävää mediapeittoa torstaihin asti.
+- **KJ-2 [KESKITASO luottamus — C2]**: SD–L-jännite HD11802:sta (täydellinen hunnukielto) pysyy verbaalisella painostustasolla eikä riko koalitioyhtenäisyyttä ennen vaaleja; SD käyttää tätä asiaa ainoastaan kampanja-asemointiin.
+- **KJ-3 [KESKITASO luottamus — C3]**: Israel-flotillatapahtuma (HD11803) tuottaa varovaisen kirjallisen vastauksen ulkoministeri Stenergardilta ilman erityisten diplomaattisten toimien nimeämistä; opposition vaatimukset voimakkaammasta tuomitsemisesta eivät todennäköisesti [horisontti:viikko] muuta hallituksen kantaa.
+
+### Mitä Kannattaa Seurata
+
+| Laukaisija | Kynnys | Horisontti |
+|---------|-----------|---------|
+| CU31:n täysistuntoäänestyksen tulos | Mikä tahansa poikkeava koalitioääni | Tällä viikolla [horisontti:viikko] |
+| Ulkoministeri Stenergard vastaa HD11803:een | Vahvaa diplomatista kieltä / sanktioita | 2–5 päivää [horisontti:72h] |
+| SD–L:n julkiset lausunnot hunnukiellosta | Koalitiosopimus tai ero | Tällä viikolla [horisontti:viikko] |
+| IMF Ruotsin BNP-revisio | Päivitys WEO-vintagesta huhti-2026 | Kuukausittain [horisontti:kuukausi] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Niveau de confiance** : ÉLEVÉ [B2]  
+**ID d'exécution** : 25622855919  
+
+### 🎯 BLUF
+
+La semaine du 10–16 mai 2026 voit la Commission des affaires civiles (CU) du Riksdag faire avancer une libéralisation historique du marché locatif à travers la nouvelle loi sur la location privée (privatuthyrningslag, HD01CU31) et la modernisation de l'application (HD01CU34), tandis que la Commission de l'éducation (UbU) finalise des réformes sur la transparence scolaire et les qualifications enseignantes en vue de la transition décennale vers l'école primaire de 2028. Des tensions internes à la coalition émergent alors que les Démocrates suédois pressent le ministre libéral de l'éducation sur une interdiction totale du voile (HD11802) et que les Sociaux-démocrates utilisent des interpellations pour défier le ministre des Finances sur l'ambiguïté de la résidence fiscale (HD10480). L'incident de la flottille dans les eaux grecques impliquant des citoyens suédois fait monter la température diplomatique suédo-israélienne une semaine avant le Conseil des affaires européennes (HD11803).
+
+### 🧭 3 Décisions que ce Briefing Soutient
+
+1. **Suivre le calendrier du Riksdag** : Prioriser la surveillance du vote en plénière CU31 (attendu en milieu de semaine) — la libéralisation du marché locatif est la législation la plus politiquement contestée de cette session parlementaire.
+2. **Suivre les signaux de cohésion de la coalition** : La friction SD–L sur l'interdiction du voile (HD11802) et la divergence de SD dans la question de la flottille israélienne (HD11803) sont des signaux précoces pour le positionnement de la campagne électorale à l'automne 2026.
+3. **Surveiller l'escalade diplomatique** : L'incident de la flottille Sumud Mondial nécessite un suivi quotidien ; la réponse du ministre des Affaires étrangères Stenergard à HD11803 fixera le ton diplomatique suédois avant le Conseil des affaires européennes.
+
+### Contexte : Compte à Rebours jusqu'aux Élections
+
+Les **élections législatives suédoises ont lieu le 13 septembre 2026 — dans 127 jours**. Chaque rapport de commission contesté et interpellation porte un **multiplicateur de signification DIW de 1,5×** dans cette analyse. La coalition gouvernementale (M–KD–L avec le soutien de confiance et de prestation du SD) gère trois dossiers simultanément contestés : politique du logement (où S et V s'opposent à la libéralisation), politique scolaire (où l'unité de la coalition tient mais la friction SD–L est visible) et politique étrangère (où SD et le gouvernement sont sous pression de l'opposition sur le dossier Gaza/Israël).
+
+### Jugements de Renseignement Clés
+
+- **KJ-1 [HAUTE confiance — B2]** : La loi CU31 sur la location privée sera adoptée avec les votes M–KD–L–SD ; S et V voteront contre, présentant la loi comme un cadeau aux propriétaires avant les élections. Probable [horizon:semaine] de générer une couverture médiatique substantielle jusqu'à jeudi.
+- **KJ-2 [MOYENNE confiance — C2]** : La tension SD–L autour de HD11802 (interdiction totale du voile) reste au niveau de la pression verbale et ne rompra pas l'unité de la coalition avant les élections ; SD n'utilisera ce sujet qu'à des fins de positionnement électoral.
+- **KJ-3 [MOYENNE confiance — C3]** : L'incident de la flottille israélienne (HD11803) donnera lieu à une réponse écrite prudente du ministre des Affaires étrangères Stenergard sans nommer d'actions diplomatiques spécifiques ; les demandes de l'opposition pour une condamnation plus ferme ne modifieront probablement pas [horizon:semaine] la position du gouvernement.
+
+### Ce qu'il Faut Surveiller
+
+| Déclencheur | Seuil | Horizon |
+|---------|-----------|---------|
+| Résultat du vote plénier CU31 | Tout vote de coalition dissident | Cette semaine [horizon:semaine] |
+| La ministre Stenergard répond à HD11803 | Langage diplomatique fort / sanctions | 2–5 jours [horizon:72h] |
+| Déclarations publiques SD–L sur l'interdiction du voile | Engagement de coalition ou rupture | Cette semaine [horizon:semaine] |
+| Révision du PIB suédois par le FMI | Mise à jour du millésime WEO avril 2026 | Mensuel [horizon:mois] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_he.md -->
+
+&#x200F;# ריקסדאג — השבוע הקרוב: רפורמת דיור, מדיניות חינוך ומתח דיפלומטי — 10–16 במאי 2026
+
+**מחבר**: James Pether Sörling  
+**סיווג**: ציבורי  
+**רמת ביטחון**: גבוהה [B2]  
+**מזהה הרצה**: 25622855919  
+
+### 🎯 סיכום מנהלים
+
+השבוע שבין 10–16 במאי 2026 רואה את ועדת הענינים האזרחיים (CU) של הריקסדאג מקדמת ליברליזציה היסטורית של שוק השכירות באמצעות חוק השכירות הפרטית החדש (privatuthyrningslag, HD01CU31) ומודרניזציה של האכיפה (HD01CU34), בעוד ועדת החינוך (UbU) מסיימת רפורמות לשקיפות בית-ספרית וכישורי מורים לקראת מעבר בית-ספר יסודי לעשר שנים ב-2028. מתחים פנים-קואליציוניים עולים כאשר הדמוקרטים השוודים לוחצים על שר החינוך הליברלי בנוגע לאיסור רעלה מלא (HD11802), והסוציאל-דמוקרטים משתמשים בשאילתות להשגת אתגר לשר האוצר בנוגע לעמימות מקום מגורים לצורכי מס (HD10480). אירוע הציים במים היווניים הכולל אזרחים שוודים מעלה את הטמפרטורה הדיפלומטית בין שוודיה לישראל שבוע לפני מועצת הענינים האירופיים (HD11803).
+
+### 🧭 3 החלטות שדוח זה תומך בהן
+
+1. **עקוב אחר לוח הזמנים של הריקסדאג**: תעדף מעקב אחר הצבעת מליאת CU31 (צפויה באמצע השבוע) — ליברליזציית שוק השכירות היא החקיקה שנויה במחלוקת ביותר מבחינה פוליטית במושב פרלמנטרי זה.
+2. **עקוב אחר אותות לכידות הקואליציה**: החיכוך בין SD–L בנושא איסור הרעלה (HD11802) וסטיית SD בשאלת ציי ישראל (HD11803) הם אותות מוקדמים לפוזיציונינג מסע בחירות סתיו 2026.
+3. **נטר הסלמה דיפלומטית**: אירוע ציי Sumud העולמי מחייב מעקב יומי; תגובת שר החוץ Stenergard ל-HD11803 תקבע את הנימה הדיפלומטית השוודית לפני מועצת הענינים האירופיים.
+
+### הקשר: ספירה לאחור לבחירות
+
+**הבחירות הפרלמנטריות בשוודיה נפלות ב-13 בספטמבר 2026 — 127 ימים מכאן**. כל דוח ועדה שנוי במחלוקת ושאילתה נושאים **מכפיל חשיבות DIW של 1.5×** בניתוח זה. הקואליציה השלטת (M–KD–L עם תמיכת SD לאמון ואספקה) מנהלת שלושה תיקים שנויים במחלוקת בו-זמנית: מדיניות דיור (שם S ו-V מתנגדים לליברליזציה), מדיניות חינוך (שם אחדות הקואליציה מחזיקה אך חיכוך SD–L גלוי) ומדיניות חוץ (שם SD והממשלה נמצאים תחת לחץ אופוזיציה בתיק עזה/ישראל).
+
+### שיפוטי מודיעין מרכזיים
+
+- **KJ-1 [ביטחון גבוה — B2]**: חוק CU31 לשכירות פרטית יאושר בקולות M–KD–L–SD; S ו-V יצביעו נגד ויציגו את החוק כמתנה לבעלי נכסים לפני הבחירות. סביר [אופק:שבוע] לייצר סיקור תקשורתי מהותי עד יום חמישי.
+- **KJ-2 [ביטחון בינוני — C2]**: המתח בין SD–L בנוגע ל-HD11802 (איסור רעלה מלא) נשאר ברמת לחץ מילולי ולא יפרוץ את אחדות הקואליציה לפני הבחירות; SD ישתמש בנושא זה אך ורק לפוזיציונינג בקמפיין.
+- **KJ-3 [ביטחון בינוני — C3]**: אירוע ציי ישראל (HD11803) יביא לתשובה כתובה זהירה משר החוץ Stenergard ללא ציון פעולות דיפלומטיות ספציפיות; קריאות האופוזיציה לגינוי חריף יותר אינן צפויות [אופק:שבוע] לשנות את עמדת הממשלה.
+
+### מה לעקוב אחריו
+
+| גורם מפעיל | סף | אופק |
+|---------|-----------|---------|
+| תוצאת הצבעת מליאת CU31 | כל קול קואליציוני חריג | השבוע [אופק:שבוע] |
+| שר החוץ Stenergard עונה ל-HD11803 | שפה דיפלומטית חזקה / סנקציות | 2–5 ימים [אופק:72 שעות] |
+| הצהרות פומביות של SD–L על איסור רעלה | מחויבות קואליציה או פרישה | השבוע [אופק:שבוע] |
+| עדכון תחזית תמ"ג שוודיה של קרן המטבע הבינ"ל | עדכון מ-WEO vintage אפריל 2026 | חודשי [אופק:חודש] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_ja.md -->
+
+### 🎯 要点
+
+2026年5月10日〜16日の週は、スウェーデン国会（リクスダーゲン）の民事委員会（CU）が新しい個人賃貸借法（privatuthyrningslag、HD01CU31）と執行近代化（HD01CU34）を通じて画期的な賃貸市場自由化を推進しつつ、教育委員会（UbU）が2028年の10年制義務教育移行に向けた学校透明性と教員資格の改革を最終化する週である。スウェーデン民主党が自由党の教育大臣に対して完全なベール禁止（HD11802）を求めて圧力をかけ、社会民主党が税務上の居住に関する不明確さについて財務大臣に対する質問主意書を活用したことで、連立内部の緊張が表面化した。スウェーデン市民を含むギリシャ沖での船団事件は、欧州問題理事会（HD11803）の1週間前にスウェーデン・イスラエル間の外交的緊張を高めた。
+
+### 🧭 このブリーフィングが支援する3つの決定
+
+1. **国会の日程を追う**：CU31本会議投票（週半ば予定）の監視を優先する — 賃貸市場の自由化は、この議会会期において最も政治的に争われている立法である。
+2. **連立結束シグナルを追跡**：ベール禁止（HD11802）に関するSD–L摩擦とイスラエル船団問題（HD11803）におけるSDの乖離は、2026年秋の選挙キャンペーン戦略の初期シグナルである。
+3. **外交的エスカレーションを監視**：グローバル・スムード船団事件は毎日の追跡が必要；Stenergard外務大臣のHD11803への回答が欧州問題理事会前のスウェーデンの外交方針を定める。
+
+### 文脈：選挙へのカウントダウン
+
+スウェーデンの**総選挙は2026年9月13日 — 今から127日後**。この分析では、争われているすべての委員会報告書と質問主意書は**DIW重要度の1.5倍**の乗数が適用される。連立政権（SDの信任・供給支援を受けたM–KD–L）は同時に争われている3つのファイルを管理している：住宅政策（SとVが自由化に反対）、教育政策（連立結束は維持されているがSD–L摩擦は見える）、外交政策（SDと政権がガザ・イスラエルファイルで野党の圧力下にある）。
+
+### 主要情報判断
+
+- **KJ-1 [高信頼度 — B2]**：CU31個人賃貸借法はM–KD–L–SDの投票で可決される；SとVは反対票を投じ、選挙前に法律を家主への贈り物として組み立てる。木曜日まで実質的なメディア報道を生成する可能性が高い [地平線:週]。
+- **KJ-2 [中信頼度 — C2]**：HD11802（完全なベール禁止）に関するSD–L緊張は口頭圧力レベルにとどまり、選挙前に連立結束を壊すことはない；SDはこの問題をキャンペーン戦略のためにのみ使用する。
+- **KJ-3 [中信頼度 — C3]**：イスラエル船団事件（HD11803）は、外務大臣Stenergardからの特定の外交行動を言及しない慎重な書面回答をもたらす；より強い非難を求める野党の要求が政府の立場を変えることは [地平線:週] ありそうにない。
+
+### 注視すべき事項
+
+| トリガー | 閾値 | 地平線 |
+|---------|-----------|---------|
+| CU31本会議投票結果 | 連立からの離脱票 | 今週 [地平線:週] |
+| Stenergard外務大臣がHD11803に回答 | 強い外交的言語/制裁 | 2〜5日 [地平線:72時間] |
+| SD–Lのベール禁止に関する公式声明 | 連立コミットメントまたは離脱 | 今週 [地平線:週] |
+| IMFスウェーデンGDP修正 | WEO 2026年4月ビンテージからの更新 | 毎月 [地平線:月] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_ko.md -->
+
+### 🎯 핵심 요약
+
+2026년 5월 10일~16일 주에는 스웨덴 국회(릭스다겐)의 민사위원회(CU)가 새로운 사적 임대 법(privatuthyrningslag, HD01CU31)과 집행 현대화(HD01CU34)를 통해 역사적인 임대 시장 자유화를 추진하는 한편, 교육위원회(UbU)는 2028년 10년제 초등교육 전환을 앞두고 학교 투명성과 교사 자격 개혁을 마무리 짓는다. 스웨덴민주당이 자유당 교육부 장관에게 완전한 베일 금지(HD11802)를 요구하는 압박을 가하고, 사회민주당이 세무 거주지 모호성에 대해 재무장관에게 질문권을 사용하면서 연정 내부 긴장이 표면화되었다. 스웨덴 시민이 포함된 그리스 해역 선단 사건은 유럽 문제 이사회(HD11803) 일주일 전 스웨덴-이스라엘 외교적 긴장을 고조시켰다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **국회 일정 추적**: CU31 본회의 투표(주 중반 예정) 모니터링 우선시 — 임대 시장 자유화는 이번 의회 회기에서 정치적으로 가장 논쟁적인 입법이다.
+2. **연정 결속 신호 추적**: 베일 금지(HD11802)에 관한 SD–L 마찰과 이스라엘 선단 문제(HD11803)에서의 SD 이탈은 2026년 가을 선거 캠페인 전략의 조기 신호이다.
+3. **외교적 에스컬레이션 모니터링**: 글로벌 수무드 선단 사건은 매일 추적이 필요하다; Stenergard 외무장관의 HD11803 대응이 유럽 문제 이사회 전 스웨덴의 외교적 기조를 결정한다.
+
+### 맥락: 선거 카운트다운
+
+스웨덴 **총선은 2026년 9월 13일 — 지금부터 127일 후**다. 이 분석에서 모든 논쟁적 위원회 보고서와 질문권은 **DIW 중요도 1.5배 승수**를 적용받는다. 연립 정부(SD의 신임·공급 지원을 받는 M–KD–L)는 동시에 세 가지 논쟁적 파일을 관리하고 있다: 주거 정책(S와 V가 자유화에 반대), 교육 정책(연정 결속은 유지되지만 SD–L 마찰이 보임), 외교 정책(SD와 정부가 가자/이스라엘 파일에서 야당 압박 하에 있음).
+
+### 핵심 정보 판단
+
+- **KJ-1 [높은 신뢰도 — B2]**: CU31 사적 임대 법은 M–KD–L–SD 투표로 가결될 것이다; S와 V는 반대표를 던지며 이 법을 선거 전 집주인에게 주는 선물로 프레이밍할 것이다. 목요일까지 상당한 언론 보도를 생성할 가능성이 높다 [지평선:주].
+- **KJ-2 [중간 신뢰도 — C2]**: HD11802(완전한 베일 금지)에 관한 SD–L 긴장은 구두 압박 수준에 머물며 선거 전 연정 결속을 깨지 않을 것이다; SD는 이 문제를 선거 캠페인 전략으로만 사용할 것이다.
+- **KJ-3 [중간 신뢰도 — C3]**: 이스라엘 선단 사건(HD11803)은 외무장관 Stenergard로부터 구체적인 외교 조치를 언급하지 않는 신중한 서면 답변을 이끌어낼 것이다; 더 강한 비난을 요구하는 야당의 요구가 정부 입장을 [지평선:주] 바꿀 것 같지 않다.
+
+### 주시해야 할 사항
+
+| 트리거 | 임계값 | 지평선 |
+|---------|-----------|---------|
+| CU31 본회의 투표 결과 | 연정 이탈표 발생 | 이번 주 [지평선:주] |
+| Stenergard 외무장관의 HD11803 답변 | 강한 외교 언어 / 제재 | 2~5일 [지평선:72시간] |
+| 베일 금지에 관한 SD–L 공식 성명 | 연정 공약 또는 이탈 | 이번 주 [지평선:주] |
+| IMF 스웨덴 GDP 수정 | WEO 2026년 4월 빈티지 업데이트 | 월별 [지평선:월] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Classificatie**: OPENBAAR  
+**Vertrouwensniveau**: HOOG [B2]  
+**Run-ID**: 25622855919  
+
+### 🎯 BLUF
+
+De week van 10–16 mei 2026 ziet de Commissie Burgerlijke Zaken (CU) van de Riksdag een baanbrekende liberalisering van de huurmarkt doorvoeren via de nieuwe wet op particuliere verhuur (privatuthyrningslag, HD01CU31) en modernisering van de handhaving (HD01CU34), terwijl de Onderwijscommissie (UbU) hervormingen op het gebied van schooltransparantie en leraarskwalificaties afrondt voor de tienjarige basisschoolovergang van 2028. Coalitie-interne spanningen ontstaan wanneer de Zweedsdemocratische Partij de liberale onderwijsminister onder druk zet over een volledig gezichtsbedekkingsverbod (HD11802) en de Sociaaldemocraten interpellaties gebruiken om de minister van Financiën uit te dagen over belastingresidentie-ambiguïteit (HD10480). Het flottelleincident in Griekse wateren waarbij Zweedse burgers betrokken zijn, verhoogt de Zweeds-Israëlische diplomatieke temperatuur een week voor de Raad Europese Zaken (HD11803).
+
+### 🧭 3 Beslissingen die dit Briefing Ondersteunt
+
+1. **Volg het Riksdag-schema**: Prioriteer de monitoring van de CU31-plenumsstemming (verwacht midden in de week) — de liberalisering van de huurmarkt is de meest politiek omstreden wetgeving van deze parlementaire zitting.
+2. **Volg coalitiecohesiesignalen**: De SD–L-wrijving over het gezichtsbedekkingsverbod (HD11802) en SD's afwijking in de Israël-flottellesaak (HD11803) zijn vroege signalen voor de campagnepositionering in de herfst van 2026.
+3. **Bewaak diplomatieke escalatie**: Het Globale Sumud-flottelleincident vereist dagelijkse follow-up; de reactie van minister van Buitenlandse Zaken Stenergard op HD11803 zal de Zweedse diplomatieke toon zetten voor de Raad Europese Zaken.
+
+### Context: Aftellen naar de Verkiezingen
+
+Zweden's **Rijksdagverkiezingen vinden plaats op 13 september 2026 — 127 dagen vanaf nu**. Elk omstreden commissierapport en elke interpellatie draagt een **1,5× DIW-significantiemultiplier** in deze analyse. De regeringscoalitie (M–KD–L met SD's vertrouwens- en leveringssteun) beheert drie gelijktijdig omstreden dossiers: woningbeleid (waar S en V liberalisering tegenwerken), schoolbeleid (waar de coalitie-eenheid standhoudt maar SD–L-wrijving zichtbaar is) en buitenlands beleid (waar SD en de regering onder oppositiedruk staan in de Gaza/Israël-kwestie).
+
+### Kernbevindingen Inlichtingen
+
+- **KJ-1 [HOGE betrouwbaarheid — B2]**: De CU31-wet op particuliere verhuur zal worden aangenomen met M–KD–L–SD-stemmen; S en V zullen tegenstemmen en de wet framen als een cadeau aan verhuurders voor de verkiezingen. Waarschijnlijk [horizon:week] substantiële mediaberichtgeving te genereren tot donderdag.
+- **KJ-2 [GEMIDDELDE betrouwbaarheid — C2]**: De SD–L-spanning over HD11802 (volledig gezichtsbedekkingsverbod) blijft op het niveau van verbale druk en zal de coalitie-eenheid voor de verkiezingen niet breken; SD zal dit onderwerp alleen gebruiken voor campagnepositionering.
+- **KJ-3 [GEMIDDELDE betrouwbaarheid — C3]**: Het Israël-flottelleincident (HD11803) zal leiden tot een voorzichtig schriftelijk antwoord van minister Stenergard zonder specifieke diplomatieke acties te noemen; de oppositievragen om scherpere veroordeling zullen [horizon:week] de regeringshouding waarschijnlijk niet veranderen.
+
+### Wat te Monitoren
+
+| Trigger | Drempel | Horizon |
+|---------|-----------|---------|
+| CU31-plenumsstemmingsuitslag | Elke dissidente coalitiestem | Deze week [horizon:week] |
+| Minister Stenergard antwoordt op HD11803 | Sterk diplomatiek taalgebruik / sancties | 2–5 dagen [horizon:72h] |
+| SD–L openbare verklaringen over gezichtsbedekkingsverbod | Coalitieverbintenis of breuk | Deze week [horizon:week] |
+| IMF Zweedse bbp-revisie | Update van WEO-vintage april 2026 | Maandelijks [horizon:maand] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Klassifisering**: OFFENTLIG  
+**Konfidensgrad**: HØY [B2]  
+**Kjørings-ID**: 25622855919  
+
+### 🎯 BLUF
+
+Uken 10.–16. mai 2026 ser Riksdagens Sivil­utvalg (CU) fremme en historisk liberalisering av leiemarkedet gjennom den nye privatuthyrningslagen (HD01CU31) og modernisering av håndhevingen (HD01CU34), mens Utdannings­utvalget (UbU) ferdigstiller reformer om skole­transparens og lærer­kvalifikasjoner foran tiårs­overgangen til grunnskolen i 2028. Koalisjons­intern spenning oppstår når Sverige­demokratene presser den liberale utdannings­ministeren om et fullstendig slørforbud (HD11802), og Sosial­demokratene bruker interpellasjoner til å utfordre finans­ministeren om uklarhet om skatte­bosted (HD10480). Flotille­hendelsen i greske farvann med svenske statsborgere hever den svenske–israelske diplomatiske temperaturen en uke før Rådet for europeiske saker (HD11803).
+
+### 🧭 3 Beslutninger Dette Briefet Støtter
+
+1. **Følg Riksdagens tidsplan**: Prioriter overvåking av CU31s plenums­avstemning (forventet midt i uken) — liberaliseringen av leiemarkedet er den mest politisk omstridte lovgivningen i denne parlaments­sesjonen.
+2. **Spor koalisjonens samholdsignaler**: SD–L-friksjonen om slørforbudet (HD11802) og SDs avvik i Israel-flotille­saken (HD11803) er tidlige signaler om posisjonering foran valget høsten 2026.
+3. **Overvåk diplomatisk eskalering**: Den Globale Sumud-flotille­hendelsen krever daglig oppfølging; utenriksminister Stenergards svar på HD11803 vil sette den svenske diplomatiske tonen foran Rådet for europeiske saker.
+
+### Kontekst: Nedtelling til Valget
+
+Sveriges **riksdagsvalg finner sted 13. september 2026 — 127 dager fra nå**. Hver omstridt utvalgs­rapport og interpellasjon bærer en **1,5× DIW-signifikans­multiplikator** i denne analysen. Regjeringskoalisjonen (M–KD–L med SDs støtte til tillit og levering) håndterer tre samtidige omstridte saker: boligpolitikk (der S og V motsetter seg liberalisering), skolepolitikk (der koalisjonsenheten holder men SD–L-friksjonen er synlig) og utenrikspolitikk (der SD og regjeringen er under opposisjonspress i Gaza/Israel-saken).
+
+### Sentrale Etterretningsvurderinger
+
+- **KJ-1 [HØY konfidens — B2]**: CU31-privatuthyrningslagen vil bli vedtatt med M–KD–L–SD-stemmer; S og V vil stemme imot og fremstille loven som en gave til utleiere foran valget. Sannsynlig [horisont:uke] å generere substansiell mediedekning frem til torsdag.
+- **KJ-2 [MIDDELS konfidens — C2]**: SD–L-spenningen om HD11802 (fullstendig slørforbud) forblir på verbalt-press-nivå og vil ikke bryte koalisjonsenheten før valget; SD vil kun bruke dette spørsmålet til kampanje­posisjonering.
+- **KJ-3 [MIDDELS konfidens — C3]**: Israel-flotille­hendelsen (HD11803) vil gi et forsiktig skriftlig svar fra utenriksminister Stenergard uten å nevne spesifikke diplomatiske tiltak; opposisjonens krav om sterkere fordømmelse er usannsynlig [horisont:uke] å endre regjeringens holdning.
+
+### Hva Man Bør Overvåke
+
+| Utløser | Terskel | Horisont |
+|---------|-----------|---------|
+| CU31s plenumsavstemningsutfall | Enhver avvikende koalisjonsstemme | Denne uken [horisont:uke] |
+| Utenriksminister Stenergard svarer på HD11803 | Sterkt diplomatisk språk / sanksjoner | 2–5 dager [horisont:72h] |
+| SD–L offentlige uttalelser om slørforbud | Koalisjonsforpliktelse eller brudd | Denne uken [horisont:uke] |
+| IMF Sveriges BNP-revisjon | Oppdatering fra WEO-vintage april 2026 | Månedlig [horisont:måned] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Klassificering**: OFFENTLIG  
+**Konfidensgrad**: HÖG [B2]  
+**Körnings-ID**: 25622855919  
+
+### 🎯 BLUF
+
+Veckan 10–16 maj 2026 ser Riksdagens civilutskott (CU) driva igenom en historisk liberalisering av hyresmarknaden genom den nya privatuthyrningslagen (HD01CU31) och modernisering av tillsynen (HD01CU34), medan utbildningsutskottet (UbU) slutför reformer om skoltransparens och lärarkvalifikationer inför den tiåriga grundskoleövergången 2028. Koalitionsintern spänning uppstår när Sverigedemokraterna pressar den liberale utbildningsministern om ett fullständigt slöjförbud (HD11802) och Socialdemokraterna använder interpellationer för att utmana finansministern om skatteresidensambiguitet (HD10480). Flotillincidenten i grekiskt vatten med svenska medborgare höjer Sveriges–Israels diplomatiska temperatur en vecka före rådet för europeiska frågor (HD11803).
+
+### 🧭 3 Beslut Det Här Briefet Stödjer
+
+1. **Följ Riksdagens schema**: Prioritera bevakning av CU31:s plenumröstning (förväntad mitt i veckan) — liberaliseringen av hyresmarknaden är den mest politiskt omtvistade lagstiftningen under denna parlamentariska session.
+2. **Spåra koalitionens sammanhållningssignaler**: SD–L-friktionen kring slöjförbudet (HD11802) och SD:s avvikelse i Israelflotillafrågan (HD11803) är tidiga signaler för positioneringen inför valrörelsen hösten 2026.
+3. **Övervaka diplomatisk eskalering**: Den Globala Sumud-flotillaincidenten kräver daglig uppföljning; utrikesminister Stenergards svar på HD11803 sätter den svenska diplomatiska tonen inför rådet för europeiska frågor.
+
+### Kontext: Nedräkning till Valet
+
+Sveriges **riksdagsval infaller den 13 september 2026 — 127 dagar härifrån**. Varje omtvistad utskottsrapport och interpellation bär en **1,5× DIW signifikansmultiplikator** i denna analys. Regeringskoalitionen (M–KD–L med SD:s stöd för tillförsikt och leverans) hanterar tre simultaneously omtvistade filer: bostadspolitik (där S och V motsätter sig liberalisering), skolpolitik (där koalitionens enighet håller men SD–L-friktionen är synlig) och utrikespolitik (där SD och regeringen är under oppositionstryck gällande Gaza/Israelärendet).
+
+### Centrala Underrättelsebedömningar
+
+- **KJ-1 [HÖG konfidensgrad — B2]**: CU31-privatuthyrningslagen kommer att antas med M–KD–L–SD-röster; S och V kommer att rösta emot och framställa lagen som en gåva till hyresvärdar inför valet. Troligt [horisont:vecka] att ge substantiell mediebevakning fram till torsdag.
+- **KJ-2 [MEDEL konfidensgrad — C2]**: SD–L-spänningen kring HD11802 (fullständigt slöjförbud) förblir på verbalt-tryck-nivå och kommer inte att bryta koalitionens enighet före valet; SD kommer att använda denna fråga enbart för kampanjpositionering.
+- **KJ-3 [MEDEL konfidensgrad — C3]**: Israelflotillaincidenten (HD11803) kommer att ge ett försiktigt skriftligt svar från utrikesminister Stenergard utan att namnge specifika diplomatiska åtgärder; oppositionens krav på starkare fördömanden är osannolikt [horisont:vecka] att förändra regeringens hållning.
+
+### Vad Man Bör Bevaka
+
+| Utlösare | Tröskel | Horisont |
+|---------|-----------|---------|
+| Utfall av CU31:s plenumröstning | Alla avvikande koalitionsröster | Denna vecka [horisont:vecka] |
+| Utrikesminister Stenergard svarar på HD11803 | Starkt diplomatiskt språk / sanktioner | 2–5 dagar [horisont:72h] |
+| SD–L:s offentliga uttalanden om slöjförbud | Koalitionsåtagande eller brott | Denna vecka [horisont:vecka] |
+| IMF:s reviderade BNP-prognos för Sverige | Uppdatering från WEO-vintage april 2026 | Månadsvis [horisont:månad] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**分类**: 公开  
+**可信度**: 高 [B2]  
+**运行编号**: 25622855919  
+
+### 🎯 执行摘要
+
+2026年5月10日至16日这周，瑞典国会（Riksdag）民事委员会（CU）推动通过新的私人租赁法（privatuthyrningslag，HD01CU31）和执法现代化（HD01CU34）实现历史性的租赁市场自由化，同时教育委员会（UbU）正在完成学校透明度和教师资质改革，为2028年十年制义务教育过渡做准备。当瑞典民主党向自由党教育部长施压要求全面禁戴面纱（HD11802），社会民主党通过质询挑战财政部长有关税务居住地的不明确性（HD10480），执政联盟内部紧张局势浮出水面。一艘载有瑞典公民的船只在希腊海域发生事件，使瑞典—以色列外交关系在欧洲事务理事会（HD11803）前一周升温。
+
+### 🧭 本简报支持的三项决策
+
+1. **跟踪国会议程**：优先监控CU31全体会议投票（预计在本周中期举行）——租赁市场自由化是本届议会中政治争议最大的立法。
+2. **追踪联合政府内聚力信号**：关于禁止面纱（HD11802）的SD–L摩擦及SD在以色列船队问题（HD11803）上的偏离，是2026年秋季选举定位的早期信号。
+3. **监测外交升级态势**：全球苏木德船队事件需要每日跟踪；Stenergard外交部长对HD11803的回应将在欧洲事务理事会前确定瑞典的外交基调。
+
+### 背景：大选倒计时
+
+瑞典**议会选举将于2026年9月13日举行——距今127天**。在此分析中，每份有争议的委员会报告和质询均适用**1.5倍DIW重要性乘数**。执政联盟（获SD信任供给支持的M–KD–L）正同时处理三个争议文件：住房政策（S和V反对自由化）、教育政策（联盟团结维持但SD–L摩擦可见）和外交政策（SD和政府在加沙/以色列议题上承受反对党压力）。
+
+### 主要情报研判
+
+- **KJ-1 [高置信度 — B2]**：CU31私人租赁法将以M–KD–L–SD票通过；S和V将投反对票，将该法定性为选举前给房东的礼物。预计在周四前产生大量媒体报道 [时间跨度:本周]。
+- **KJ-2 [中等置信度 — C2]**：HD11802（全面禁止面纱）引发的SD–L紧张局势仍停留在口头施压层面，不会在选举前破坏联盟团结；SD将仅把此议题用于选举定位。
+- **KJ-3 [中等置信度 — C3]**：以色列船队事件（HD11803）将促使外交部长Stenergard发表措辞谨慎的书面回应，不会点名具体外交行动；反对党要求更强烈谴责的诉求 [时间跨度:本周] 不太可能改变政府立场。
+
+### 需要关注的要点
+
+| 触发因素 | 阈值 | 时间跨度 |
+|---------|-----------|---------|
+| CU31全体会议投票结果 | 任何联盟内异议票 | 本周 [时间跨度:本周] |
+| Stenergard外交部长回应HD11803 | 措辞强硬的外交语言/制裁 | 2–5天 [时间跨度:72小时] |
+| SD–L就禁止面纱发表公开声明 | 联盟承诺或破裂 | 本周 [时间跨度:本周] |
+| 国际货币基金组织修订瑞典GDP预测 | 来自2026年4月WEO数据的更新 | 每月 [时间跨度:月] |
+
+<!-- source-sha: 51438b6c25b12a0ba522bb96af398a859cb38610 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 11 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 12 | Linked in Article Sources, not expanded inline |
 
@@ -1525,6 +2039,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/week-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

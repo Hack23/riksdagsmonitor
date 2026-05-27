@@ -3,7 +3,7 @@ date: 2026-05-05
 subfolder: election-cycle/next
 slug: 2026-05-05-election-cycle/next
 source_folder: analysis/daily/2026-05-05/election-cycle/next
-generated_at: 2026-05-25T15:59:53.369Z
+generated_at: 2026-05-27T07:35:32.989Z
 language: en
 layout: article
 ---
@@ -1175,8 +1175,6 @@ Le prochain gouvernement suédois sera formé dans les 3 à 6 semaines suivant l
 | 2027 | 2.3% | -0.5% GDP | 7.9% |
 | 2028 | 2.1% | -0.3% GDP | 7.5% |
 
-*出典：IMF WEO Apr-2026。予測値であり、確定予想ではありません。(WEO Apr-2026, NGDP_RPCH SWE)*
-
 **初期経済状況**：良好 — 新政権は回復軌道を引き継ぎます。リスク：GDP比2.4%の国防費（NATO目標2028年）は短期的な財政負担を生みますが、長期的な安全保障配当をもたらします。
 
 <!-- source-sha: bfc9fe3cb457cd89115821be092ec26c2928fa98 -->
@@ -1321,8 +1319,6 @@ Nästa svenska regering bildas under 3-6 veckor efter 2026-09-13. Den avgörande
 | 2026 | 1.8% | -0.8% GDP | 8.3% |
 | 2027 | 2.3% | -0.5% GDP | 7.9% |
 | 2028 | 2.1% | -0.3% GDP | 7.5% |
-
-*来源：IMF WEO Apr-2026。系预测，非确定性预报。(WEO Apr-2026, NGDP_RPCH SWE)*
 
 **初始经济条件**：有利——新政府继承复苏轨道。风险：占GDP 2.4%的国防支出（北约2028年目标）造成短期财政压力，但带来长期安全红利。
 

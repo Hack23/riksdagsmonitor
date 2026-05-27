@@ -3,7 +3,7 @@ date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-05-25T15:59:52.572Z
+generated_at: 2026-05-27T07:35:32.161Z
 language: en
 layout: article
 ---
@@ -1959,11 +1959,6 @@ quadrantChart
 <!-- lang: de -->
 # Exekutivbriefing — Oppositionsanträge 2026-04-23
 
-**Klassifizierung**: ÖFFENTLICHER BEREICH — Parlamentarische Aufzeichnungen  
-**Autor**: James Pether Sörling  
-**Datum**: 2026-04-23  
-**Konfidenz**: HOCH [B2]
-
 ---
 
 ### 🎯 BLUF
@@ -2015,8 +2010,6 @@ quadrantChart
     HD024089 C-Reception: [0.72, 0.70]
     HD024098 MP-Budget: [0.70, 0.78]
 ```
-
-*Konfidenz: HOCH gesamt [B2]; individuelle Dokumentpunktzahlen spiegeln Manifestdaten + Volltext wider, wo verfügbar.*
 
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 
@@ -2085,11 +2078,6 @@ quadrantChart
 
 <!-- lang: fi -->
 # Tiivistelmä — Oppositioaloitteet 2026-04-23
-
-**Luokitus**: JULKINEN ALUE — Parlamentaariset asiakirjat  
-**Tekijä**: James Pether Sörling  
-**Päivämäärä**: 2026-04-23  
-**Luottamus**: KORKEA [B2]
 
 ---
 
@@ -2331,8 +2319,6 @@ quadrantChart
     HD024098 MP-Budget: [0.70, 0.78]
 ```
 
-*信頼度：全体的に高 [B2]；個別の文書スコアは、入手可能な場合、マニフェストデータ＋全文を反映。*
-
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 
 ## Executive Brief Ko
@@ -2401,11 +2387,6 @@ quadrantChart
 <!-- lang: nl -->
 # Uitvoerende briefing — Oppositiemoties 2026-04-23
 
-**Classificatie**: OPENBAAR DOMEIN — Parlementaire documenten  
-**Auteur**: James Pether Sörling  
-**Datum**: 2026-04-23  
-**Betrouwbaarheid**: HOOG [B2]
-
 ---
 
 ### 🎯 BLUF
@@ -2457,8 +2438,6 @@ quadrantChart
     HD024089 C-Reception: [0.72, 0.70]
     HD024098 MP-Budget: [0.70, 0.78]
 ```
-
-*Betrouwbaarheid: HOOG algemeen [B2]; individuele documentscores weerspiegelen manifestgegevens + volledige tekst waar beschikbaar.*
 
 <!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
 

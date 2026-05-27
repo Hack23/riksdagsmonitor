@@ -3,7 +3,7 @@ date: 2026-04-19
 subfolder: deep-inspection
 slug: 2026-04-19-deep-inspection
 source_folder: analysis/daily/2026-04-19/deep-inspection
-generated_at: 2026-05-25T15:59:52.283Z
+generated_at: 2026-05-27T07:35:31.885Z
 language: en
 layout: article
 ---
@@ -3661,8 +3661,6 @@ Stored in [`economic-data.json`](https://github.com/Hack23/riksdagsmonitor/blob/
 [README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/README.md) · [综合](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/synthesis-summary.md) · [重要性](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/swot-analysis.md) · [风险](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/risk-assessment.md) · [威胁](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/threat-analysis.md) · [利益相关方](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/stakeholder-perspectives.md) · [情景](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/scenario-analysis.md) · [比较国际](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/comparative-international.md) · [交叉参考](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/cross-reference-map.md) · [分类](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/classification-results.md) · [方法论反思](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/methodology-reflection.md) · [数据清单](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/data-download-manifest.md) · [HD03231 L3分析](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/deep-inspection/documents/HD03231-analysis.md)
 
 ---
-
-**分类**：公开 · **下次审查**：2026-05-03或事件驱动（Lagrådet的yttrande、SÄPO公告、波罗的海电缆事件）
 
 <!-- source-sha: 3c77b6678851d6512c1461c61d7cdddb22501d36 -->
 

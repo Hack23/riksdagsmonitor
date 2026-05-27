@@ -3,7 +3,7 @@ date: 2026-05-01
 subfolder: motions
 slug: 2026-05-01-motions
 source_folder: analysis/daily/2026-05-01/motions
-generated_at: 2026-05-25T15:59:53.144Z
+generated_at: 2026-05-27T07:35:32.765Z
 language: en
 layout: article
 ---
@@ -2069,8 +2069,6 @@ No prior PIR files found for motions subfolder within 14-day window. First-gener
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_ar.md -->
 
-‏# المعارضة السويدية تشن تحدياً منسقاً ضد أجندة الحكومة في مجال الطاقة والبيئة
-
 **المؤلف**: James Pether Sörling  
 **التاريخ**: 2026-05-01 | **معرّف التشغيل**: 25206597626 | **التصنيف**: عام  
 **مستوى الثقة**: متوسط (مواقف الأحزاب موثقة؛ yrkanden محددة بانتظار مراجعة النص الكامل)
@@ -2485,8 +2483,6 @@ graph LR
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_he.md -->
 
-‏# האופוזיציה השוודית מציבה אתגר מתואם כנגד סדר היום האנרגטי והסביבתי של הממשלה
-
 **מחבר**: James Pether Sörling  
 **תאריך**: 2026-05-01 | **מזהה ריצה**: 25206597626 | **סיווג**: ציבורי  
 **רמת ביטחון**: בינונית (עמדות מפלגה מאומתות; yrkanden ספציפיים ממתינים לבדיקת טקסט מלאה)
@@ -2566,10 +2562,6 @@ graph LR
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**日付**: 2026-05-01 | **実行ID**: 25206597626 | **分類**: 公開  
-**信頼度**: 中程度（政党の立場は確認済み；特定のyrkanden は全文審査待ち）
-
 ### BLUF
 
 社会民主党の野党は2026-04-29に16件の委員会動議を提出した。これは夏季休会前の最後の提出日であり、エネルギーシステム改革、環境許可、風力発電、港湾法、少年司法をカバーする5つの政府提案にわたる。これらの動議は一貫した野党戦略を明らかにする：SはエネルギーおよびEnvironmental政策における政府立法の構造的方向性を受け入れつつ、より強い気候目標、より明確なコミュニティ自治権、少年犯罪者に対する厳しい社会的保護を求めて圧力をかけている。1件の動議（HD024127）は提出前に撤回された — 内部調整の失敗を示す可能性のある手続き上の異常。
@@ -2644,10 +2636,6 @@ graph LR
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**날짜**: 2026-05-01 | **실행 ID**: 25206597626 | **분류**: 공개  
-**신뢰도**: 중간 (정당 입장 확인됨; 특정 yrkanden 전문 검토 대기 중)
 
 ### BLUF
 
@@ -2915,10 +2903,6 @@ graph LR
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/motions/executive-brief_zh.md -->
-
-**作者**：James Pether Sörling  
-**日期**：2026-05-01 | **运行ID**：25206597626 | **分类**：公开  
-**可信度**：中等（政党立场已核实；特定yrkanden待全文审查）
 
 ### BLUF
 

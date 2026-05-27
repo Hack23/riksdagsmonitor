@@ -3,7 +3,7 @@ date: 2026-05-10
 subfolder: realtime-pulse
 slug: 2026-05-10-realtime-pulse
 source_folder: analysis/daily/2026-05-10/realtime-pulse
-generated_at: 2026-05-25T15:59:53.781Z
+generated_at: 2026-05-27T07:35:33.430Z
 language: en
 layout: article
 ---
@@ -76,6 +76,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1533,13 +1546,582 @@ None detected.
 
 riksdag-regering: live. IMF: degraded (WEO/FM ok, IFS SDMX 404). World Bank: not queried (non-economic residue only). SCB: not queried.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص تنفيذي — النبض الآني 2026-05-10
+
+### الملخص (≤150 كلمة)
+
+في 7 مايو 2026، قدّمت حكومة تيدو ثلاثة مقترحات قانونية ذات أهمية عالية: (1) صلاحيات ترحيل موسّعة مرتبطة بـ SÄPO للأجانب الذين يمثّلون تهديداً للأمن (JuU)، (2) توسيع صلاحيات التحقيق لدى Skatteverket بشأن احتيال سجلات السكان (SkU)، و(3) بنية تحتية جديدة للهوية الإلكترونية الحكومية (TU). وتُشير هذه المقترحات مجتمعةً إلى هجوم منسق قبيل الانتخابات حول قدرة الدولة والأمن الداخلي — مواضيع تتوافق جيداً مع أولويات حزبي M-SD. وقدّم تحالف عابر للكتل (S، V، C، MP) اعتراضات رسمية على مقترح الحكومة بخفض سن المسؤولية الجنائية إلى 13 عاماً، مما يخلق نقطة توتر في JuU قد تضر بالائتلاف إذا ثبتت أرقام المعارضة حتى التصويت في اللجنة. وعاد التوتر حول السياسة الطاقية بين KD وSD إلى الظهور في النقاش البرلماني حول الاستثمار في الشبكات وطاقة الرياح. تبعد السويد 126 يوماً عن الانتخابات؛ ويرفع مضاعف DIW بمقدار 1.5× كل تشريع خلافي إلى مستوى المراقبة ذات الأولوية العالية.
+
+### حالة PIR الحالية
+
+| PIR | الحالة | قوة الإشارة |
+|---|---|---|
+| PIR-1 استقرار الائتلاف | OPEN — توتر الطاقة بين KD/SD مرتفع | Medium |
+| PIR-3 قدرة المعارضة | OPEN — تحرك رباعي الأحزاب في JuU نشط | High |
+| PIR-5 تسارع قرب الانتخابات | OPEN — 3 مقترحات في يوم واحد تؤكد السباق الأخير | High |
+
+### الإجراءات المطلوبة
+
+- مراقبة معالجة اللجنة لـ HD03267 و prop 2025/26:246 في JuU
+- متابعة نتيجة مراجعة Lagrådet لـ HD03267 (البُعد المتعلق بالاتفاقية الأوروبية لحقوق الإنسان)
+- رصد جدول الاستماع لدى SkU بشأن HD03261 (صلاحيات Skatteverket)
+
+---
+*إضافة المرحلة الثانية — 2026-05-10T13:30Z*
+
+### تقديرات الاحتمالية المُحسَّنة
+
+تطبيق استنتاجات محامي الشيطان من مراجعة المرحلة الأولى:
+
+| الحدث | تقدير المرحلة الأولى | المرحلة الثانية المُحسَّنة |
+|---|---|---|
+| Lagrådet يصدر رأياً نقدياً بشأن HD03267 | HIGH (0.75) | MEDIUM-HIGH (0.60) — خُفِّض لأن Justitiedepartementet أجاز على الأرجح الضمانات الإجرائية مسبقاً |
+| انفصال L عن prop 2025/26:246 | MEDIUM (0.40) | MEDIUM (0.35) — الاستراتيجية المثلى لـ L هي "الدعم مع تحفظ رسمي"؛ الانفصال الكامل أقل من التقدير الأولي |
+| تفكك تحالف المعارضة (C ينفصل عن تحالف S بشأن سن المسؤولية الجنائية) | لم يُقدَّر | MEDIUM (0.40) — يمكن استيعاب توجه C نحو المناطق الريفية عبر تعديل |
+| إقرار HD03250 النهائي | HIGH (0.90) | HIGH (0.92) — التزام الامتثال لـ eIDAS 2.0 شبه ملزم |
+
+### أولوية الاستخبارات الرئيسية للـ 72 ساعة القادمة
+
+الحصول على أي تصريح من حزب L بشأن prop 2025/26:246. هذه هي الثغرة الاستخباراتية الفردية الأكثر قيمة في دورة المراقبة هذه.
+
+*مصدر اقتصادي: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_da.md -->
+
+### Resumé (≤150 ord)
+
+Den 7. maj 2026 fremlagde Tidö-regeringen tre propositioner af høj betydning: (1) udvidede SÄPO-tilknyttede udvisningsbeføjelser for sikkerhedstruende udlændinge (JuU), (2) udvidet Skatteverkets undersøgelseskompetence vedrørende folkeregistersvig (SkU), og (3) ny statslig e-legitimationsinfrastruktur (TU). Samlet signalerer de en koordineret forvalgspolitisk offensiv om statskapacitet og intern sikkerhed, der stemmer godt overens med M-SDs styrende prioriteter. En separat tværbloksmotion (S, V, C, MP) indgav formelle indsigelser mod regeringens forslag om at sænke den strafferetlige ansvarsalder til 13 år, hvilket skaber et JuU-brændpunkt, der kan skade koalitionen, hvis oppositionstallene holder frem til udvalgsafstemningen. Energipolitiske spændinger mellem KD og SD dukkede op igen i kammerdebatten om netinvesteringer og vindkraft. Sveriges valg er 126 dage væk; 1,5×-DIW-multiplikatoren hæver al omstridt lovgivning til høj prioritetsovervågning.
+
+### Aktuel PIR-status
+
+| PIR | Status | Signalstyrke |
+|---|---|---|
+| PIR-1 Koalitionsstabilitet | OPEN — KD/SD-energispænding forhøjet | Medium |
+| PIR-3 Oppositionskapacitet | OPEN — 4-partimotion på JuU aktiv | High |
+| PIR-5 Valnærhedsacceleration | OPEN — 3 propositioner på én dag bekræfter spurten | High |
+
+### Påkrævet handling
+
+- Overvåg JuU's udvalgsbehandling af HD03267 og prop 2025/26:246
+- Følg Lagrådets remissresultat for HD03267 (EMRK-dimension)
+- Iagttag SkU's høringsskema for HD03261 (Skatteverkets beføjelser)
+
+---
+*Pass 2-tilføjelse — 2026-05-10T13:30Z*
+
+### Raffinerede sandsynlighedsestimater
+
+Anvendelse af djævelens advokat-konklusioner fra pass-1-gennemgang:
+
+| Begivenhed | Pass 1-estimat | Pass 2 raffineret |
+|---|---|---|
+| Lagrådet kritisk yttrande om HD03267 | HIGH (0.75) | MEDIUM-HIGH (0.60) — reduceret fordi Justitiedepartementet sandsynligvis forhåndsgodkendte proceduremæssige sikkerhedsforanstaltninger |
+| L-afhopp på prop 2025/26:246 | MEDIUM (0.40) | MEDIUM (0.35) — L's optimale strategi er "støtte med formelt forbehold"; fuldt afhopp lavere end indledende vurdering |
+| Oppositionskoalition fragmenterer (C bryder med S-koalitionen om den strafferetlige ansvarsalder) | Ikke estimeret | MEDIUM (0.40) — C's landdistriktsinramning kan imødekommes med en ændring |
+| HD03250 endelig vedtagelse | HIGH (0.90) | HIGH (0.92) — eIDAS 2.0-efterlevelsesforpligtelse er næsten bindende |
+
+### Vigtigste efterretningsprioritet i de kommende 72 timer
+
+Indhent evt. L-partiudtalelse om prop 2025/26:246. Dette er den enkelt mest værdifulde efterretningslakune i denne overvågningscyklus.
+
+*Økonomisk oprindelse: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_de.md -->
+
+### Zusammenfassung (≤150 Wörter)
+
+Am 7. Mai 2026 legte die Tidö-Regierung drei Gesetzentwürfe von hoher Bedeutung vor: (1) erweiterte SÄPO-verknüpfte Ausweisungsbefugnisse für sicherheitsbedrohliche Ausländer (JuU), (2) erweiterte Ermittlungsbefugnis des Skatteverket bei Melderegisterbetrug (SkU), und (3) eine neue staatliche E-Identitätsinfrastruktur (TU). Zusammen signalisieren sie eine koordinierte Vorwahloffensive zu staatlicher Kapazität und innerer Sicherheit — Themen, die gut mit den Regierungsprioritäten von M-SD übereinstimmen. Ein separater fraktionsübergreifender Antrag (S, V, C, MP) erhob formelle Einwände gegen den Regierungsvorschlag, das Strafmündigkeitsalter auf 13 Jahre zu senken, was einen JuU-Brennpunkt schafft, der die Koalition schädigen kann, wenn die Oppositionszahlen bis zur Ausschussabstimmung standhalten. Energiepolitische Spannungen zwischen KD und SD tauchten erneut in der Plenardebatte über Netzinvestitionen und Windkraft auf. Schweden ist 126 Tage vor der Wahl; der 1,5×-DIW-Multiplikator hebt alle umstrittene Gesetzgebung auf Hochpriorität-Überwachung.
+
+### Aktueller PIR-Status
+
+| PIR | Status | Signalstärke |
+|---|---|---|
+| PIR-1 Koalitionsstabilität | OPEN — KD/SD-Energiespannung erhöht | Medium |
+| PIR-3 Oppositionskapazität | OPEN — 4-Parteimotion bei JuU aktiv | High |
+| PIR-5 Wahlnähe-Beschleunigung | OPEN — 3 Gesetzentwürfe an einem Tag bestätigen Endspurt | High |
+
+### Erforderliche Maßnahmen
+
+- Ausschussbehandlung von HD03267 und Prop 2025/26:246 bei JuU beobachten
+- Remiss-Ergebnis des Lagrådet für HD03267 verfolgen (EMRK-Dimension)
+- Anhörungsplan des SkU für HD03261 (Befugnisse des Skatteverket) beobachten
+
+---
+*Pass 2-Ergänzung — 2026-05-10T13:30Z*
+
+### Verfeinerte Wahrscheinlichkeitsschätzungen
+
+Anwendung der Advocatus-Diaboli-Schlussfolgerungen aus der Pass-1-Überprüfung:
+
+| Ereignis | Pass 1-Schätzung | Pass 2 verfeinert |
+|---|---|---|
+| Lagrådet kritisches Yttrande zu HD03267 | HIGH (0.75) | MEDIUM-HIGH (0.60) — reduziert, da Justitiedepartementet verfahrensmäßige Schutzmaßnahmen wahrscheinlich vorab genehmigt hat |
+| L-Koalitionsbruch bei Prop 2025/26:246 | MEDIUM (0.40) | MEDIUM (0.35) — L's optimale Strategie ist „Unterstützung mit formellem Vorbehalt"; vollständiger Bruch niedriger als Ersteinschätzung |
+| Oppositionskoalition fragmentiert (C bricht mit S-Koalition zum Strafmündigkeitsalter) | Nicht geschätzt | MEDIUM (0.40) — C's Landgebiets-Rahmung kann durch Änderung berücksichtigt werden |
+| HD03250 endgültige Verabschiedung | HIGH (0.90) | HIGH (0.92) — eIDAS 2.0-Compliance-Verpflichtung ist nahezu bindend |
+
+### Wichtigste Nachrichtenpriorität für die nächsten 72 Stunden
+
+Etwaiges L-Parteierklärung zu Prop 2025/26:246 einholen. Dies ist die einzeln wertvollste Nachrichtenlücke in diesem Überwachungszyklus.
+
+*Wirtschaftliche Herkunft: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_es.md -->
+
+### Resumen (≤150 palabras)
+
+El 7 de mayo de 2026, el gobierno Tidö presentó tres proposiciones de ley de alta importancia: (1) poderes de expulsión ampliados vinculados a la SÄPO para extranjeros que representen amenazas a la seguridad (JuU), (2) competencias de investigación ampliadas del Skatteverket en materia de fraude al padrón municipal (SkU), y (3) una nueva infraestructura estatal de identidad electrónica (TU). En conjunto, señalan una ofensiva preelectoral coordinada en torno a la capacidad estatal y la seguridad interior, temas bien alineados con las prioridades de gobierno de M-SD. Una moción transpartidaria separada (S, V, C, MP) presentó objeciones formales a la propuesta gubernamental de bajar la edad de responsabilidad penal a 13 años, creando un punto crítico en el JuU que puede dañar a la coalición si los números de la oposición se mantienen hasta la votación en comisión. Las tensiones energéticas entre KD y SD volvieron a surgir en el debate en pleno sobre inversiones en redes y energía eólica. Suecia está a 126 días de las elecciones; el multiplicador DIW 1,5× eleva toda legislación controvertida a vigilancia de alta prioridad.
+
+### Estado actual de los PIR
+
+| PIR | Estado | Intensidad de señal |
+|---|---|---|
+| PIR-1 Estabilidad de la coalición | OPEN — tensión energética KD/SD elevada | Medium |
+| PIR-3 Capacidad de la oposición | OPEN — moción de 4 partidos en JuU activa | High |
+| PIR-5 Aceleración de la proximidad electoral | OPEN — 3 proposiciones en un día confirman el sprint final | High |
+
+### Acciones requeridas
+
+- Monitorear el tratamiento en comisión de HD03267 y prop 2025/26:246 en JuU
+- Seguir el resultado del remiss del Lagrådet para HD03267 (dimensión CEDH)
+- Observar el calendario de audiencias del SkU para HD03261 (facultades del Skatteverket)
+
+---
+*Adición Pass 2 — 2026-05-10T13:30Z*
+
+### Estimaciones de probabilidad refinadas
+
+Aplicación de las conclusiones del abogado del diablo de la revisión del Pass 1:
+
+| Evento | Estimación Pass 1 | Pass 2 refinado |
+|---|---|---|
+| Yttrande crítico del Lagrådet sobre HD03267 | HIGH (0.75) | MEDIUM-HIGH (0.60) — reducido porque el Justitiedepartementet probablemente preaprobó salvaguardias procesales |
+| Defección de L en prop 2025/26:246 | MEDIUM (0.40) | MEDIUM (0.35) — la estrategia óptima de L es "apoyo con reserva formal"; defección completa más baja que la estimación inicial |
+| Coalición de oposición fragmentada (C rompe con la coalición S sobre la edad de responsabilidad penal) | No estimado | MEDIUM (0.40) — el encuadre rural de C puede satisfacerse con una enmienda |
+| Aprobación final de HD03250 | HIGH (0.90) | HIGH (0.92) — la obligación de cumplimiento de eIDAS 2.0 es casi vinculante |
+
+### Prioridad de inteligencia principal para las próximas 72 horas
+
+Obtener cualquier declaración del partido L sobre prop 2025/26:246. Esta es la brecha de inteligencia individualmente más valiosa en este ciclo de monitoreo.
+
+*Procedencia económica: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_fi.md -->
+
+**Luokittelu**: PUBLIC | **Luotettavuus**: MEDIUM-HIGH
+
+### Yhteenveto (≤150 sanaa)
+
+7. toukokuuta 2026 Tidö-hallitus esitti kolme merkittävää hallituksen esitystä: (1) laajennetut SÄPO-linkitetyt karkottamisvaltuudet turvallisuusuhkina pidetyille ulkomaalaisille (JuU), (2) Skatteverketin laajennettu tutkintavaltuus väestörekisteripetosten osalta (SkU), ja (3) uusi valtion sähköinen henkilöllisyysinfrastruktuuri (TU). Yhdessä ne signaloivat koordinoitua ennakkovaliofeensiivia valtion kapasiteetin ja sisäisen turvallisuuden teemoista, jotka vastaavat hyvin M-SD:n hallitusprioriteetteja. Erillinen poikkipuolueellinen liikekumppani (S, V, C, MP) jätti viralliset vastalauseet hallituksen esityksestä alentaa rikosoikeudellista vastuuikärajaa 13 vuoteen, luoden JuU:n kriisipiste, joka voi nolostuttaa koalition, jos opposition luvut säilyvät valiokunnan äänestykseen asti. Energiapolitiikan jännitteet KD:n ja SD:n välillä nousivat jälleen esiin kammarikeskustelussa verkkoinvestoinneista ja tuulivoimasta. Ruotsin vaalit ovat 126 päivän päässä; 1,5×-DIW-kerroin nostaa kaiken kiistanalaisen lainsäädännön korkean prioriteetin valvontaan.
+
+### Nykyinen PIR-tila
+
+| PIR | Tila | Signaalivoimakkuus |
+|---|---|---|
+| PIR-1 Koalition vakaus | OPEN — KD/SD-energijännitys kohonnut | Medium |
+| PIR-3 Opposition kapasiteetti | OPEN — 4 puolueen liike JuU:ssa aktiivinen | High |
+| PIR-5 Vaalilähestymisen kiihtyminen | OPEN — 3 esitystä yhdessä päivässä vahvistaa spurtin | High |
+
+### Vaaditut toimenpiteet
+
+- Seuraa JuU:n valiokuntatoimintaa HD03267 ja prop 2025/26:246 osalta
+- Seuraa Lagrådetin lausunnon tulosta HD03267:lle (Euroopan ihmisoikeussopimuksen ulottuvuus)
+- Tarkkaile SkU:n kuulemisaikataulua HD03261:lle (Skatteverketin valtuudet)
+
+---
+*Pass 2 -lisäys — 2026-05-10T13:30Z*
+
+### Tarkennetut todennäköisyysarviot
+
+Paholaisen asianajaja -johtopäätösten soveltaminen pass-1-tarkastelusta:
+
+| Tapahtuma | Pass 1 -arvio | Pass 2 tarkennettu |
+|---|---|---|
+| Lagrådet kriittinen yttrande HD03267:lle | HIGH (0.75) | MEDIUM-HIGH (0.60) — alennettu, koska Justitiedepartementet todennäköisesti ennakkohyväksyi menettelylliset suojatoimenpiteet |
+| L-irtautuminen prop 2025/26:246:sta | MEDIUM (0.40) | MEDIUM (0.35) — L:n optimaalinen strategia on "tuki virallisella varauksella"; täysimittainen irtautuminen alhaisempi kuin alkuperäinen arvio |
+| Oppositiokoalitio hajoaa (C irtoaa S-koalitiosta rikosoikeudellisesta vastuuikärajasta) | Ei arvioitu | MEDIUM (0.40) — C:n maaseutukehystys voidaan tyydyttää muutoksella |
+| HD03250 lopullinen hyväksyminen | HIGH (0.90) | HIGH (0.92) — eIDAS 2.0 -vaatimustenmukaisuusvelvoite on lähes pakottava |
+
+### Tärkein tiedusteluprioriteetti seuraavan 72 tunnin aikana
+
+Hanki mahdollinen L-puolueen lausunto prop 2025/26:246:sta. Tämä on yksittäin arvokkain tiedusteluvaje tässä valvontasyklissä.
+
+*Taloudellinen alkuperä: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_fr.md -->
+
+### Résumé (≤150 mots)
+
+Le 7 mai 2026, le gouvernement Tidö a présenté trois propositions de loi d'importance élevée : (1) des pouvoirs d'expulsion élargis liés à la SÄPO pour les étrangers représentant une menace sécuritaire (JuU), (2) des compétences d'enquête étendues du Skatteverket en matière de fraude au registre de la population (SkU), et (3) une nouvelle infrastructure nationale d'identité électronique (TU). Ensemble, ils signalent une offensive préélectorale coordonnée sur la capacité étatique et la sécurité intérieure, thèmes bien alignés avec les priorités gouvernementales de M-SD. Une motion transpartisane distincte (S, V, C, MP) a déposé des objections formelles contre la proposition gouvernementale d'abaisser l'âge de la responsabilité pénale à 13 ans, créant un point de cristallisation au JuU susceptible de nuire à la coalition si les chiffres de l'opposition résistent jusqu'au vote en commission. Des tensions énergétiques entre KD et SD ont de nouveau émergé lors du débat en chambre sur les investissements de réseau et l'énergie éolienne. La Suède est à 126 jours des élections ; le multiplicateur DIW 1,5× élève toute législation contestée à une surveillance haute priorité.
+
+### État actuel des PIR
+
+| PIR | Statut | Force du signal |
+|---|---|---|
+| PIR-1 Stabilité de la coalition | OPEN — tension énergétique KD/SD élevée | Medium |
+| PIR-3 Capacité de l'opposition | OPEN — motion à 4 partis au JuU active | High |
+| PIR-5 Accélération de la proximité électorale | OPEN — 3 propositions en un jour confirment le sprint final | High |
+
+### Actions requises
+
+- Surveiller le traitement en commission de HD03267 et prop 2025/26:246 au JuU
+- Suivre le résultat du remiss du Lagrådet pour HD03267 (dimension CEDH)
+- Observer le calendrier d'audition du SkU pour HD03261 (pouvoirs du Skatteverket)
+
+---
+*Ajout Pass 2 — 2026-05-10T13:30Z*
+
+### Estimations de probabilité affinées
+
+Application des conclusions de l'avocat du diable de la revue Pass 1 :
+
+| Événement | Estimation Pass 1 | Pass 2 affiné |
+|---|---|---|
+| Yttrande critique du Lagrådet sur HD03267 | HIGH (0.75) | MEDIUM-HIGH (0.60) — réduit car le Justitiedepartementet a probablement préapprouvé les garanties procédurales |
+| Défection de L sur prop 2025/26:246 | MEDIUM (0.40) | MEDIUM (0.35) — la stratégie optimale de L est « soutien avec réserve formelle » ; défection complète plus faible qu'estimé initialement |
+| Coalition d'opposition fragmentée (C rompt avec la coalition S sur l'âge de responsabilité pénale) | Non estimé | MEDIUM (0.40) — le cadrage rural de C peut être satisfait par un amendement |
+| Adoption finale de HD03250 | HIGH (0.90) | HIGH (0.92) — l'obligation de conformité eIDAS 2.0 est quasi contraignante |
+
+### Priorité de renseignement principale pour les 72 prochaines heures
+
+Obtenir toute déclaration du parti L sur prop 2025/26:246. Il s'agit de la lacune de renseignement la plus précieuse de ce cycle de surveillance.
+
+*Provenance économique : provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — דופק בזמן אמת 2026-05-10
+
+**סיווג**: PUBLIC | **ביטחון**: MEDIUM-HIGH
+
+### סיכום (≤150 מילים)
+
+ב-7 במאי 2026 הגישה ממשלת Tidö שלוש הצעות חוק בעלות חשיבות גבוהה: (1) סמכויות גירוש מורחבות המחוברות לـ SÄPO עבור זרים המהווים איום ביטחוני (JuU), (2) הרחבת סמכויות חקירת Skatteverket בנושא הונאות ברישום האוכלוסין (SkU), ו-(3) תשתית חדשה לזהות דיגיטלית ממשלתית (TU). יחד, הן מאותתות על מתקפה מתואמת לפני הבחירות בנושאי יכולת ממשלתית וביטחון פנים — נושאים המתיישבים היטב עם סדרי עדיפויות הממשל של M-SD. הצעת חוק חוצה-סיעות נפרדת (S, V, C, MP) הגישה התנגדויות רשמיות להצעת הממשלה להורדת גיל האחריות הפלילית ל-13, ויוצרת נקודת גיבוש ב-JuU העלולה לפגוע בקואליציה אם מספרי האופוזיציה ישמרו עד להצבעה בוועדה. מתחים בנושא מדיניות אנרגיה בין KD ל-SD עלו שוב בדיון המליאה על השקעות רשת ואנרגיית רוח. שוודיה נמצאת 126 ימים לפני הבחירות; מכפיל DIW ×1.5 מעלה כל חקיקה שנויה במחלוקת לרמת מעקב בעדיפות גבוהה.
+
+### מצב PIR נוכחי
+
+| PIR | סטטוס | עוצמת אות |
+|---|---|---|
+| PIR-1 יציבות הקואליציה | OPEN — מתח אנרגיה KD/SD מוגבר | Medium |
+| PIR-3 כושר האופוזיציה | OPEN — הצעה של 4 מפלגות ב-JuU פעילה | High |
+| PIR-5 האצת קרבת הבחירות | OPEN — 3 הצעות ביום אחד מאשרות את הספרינט הסופי | High |
+
+### פעולות נדרשות
+
+- לעקוב אחר טיפול הוועדה ב-HD03267 ו-prop 2025/26:246 ב-JuU
+- לעקוב אחר תוצאת חוות-דעת Lagrådet עבור HD03267 (הממד של האמנה האירופית לזכויות אדם)
+- לצפות בלוח זמני הדיונים של SkU עבור HD03261 (סמכויות Skatteverket)
+
+---
+*תוספת שלב 2 — 2026-05-10T13:30Z*
+
+### הערכות הסתברות מעודנות
+
+יישום מסקנות עורך-דין-השטן מסקירת שלב 1:
+
+| אירוע | הערכת שלב 1 | שלב 2 מעודן |
+|---|---|---|
+| חוות דעת ביקורתית של Lagrådet על HD03267 | HIGH (0.75) | MEDIUM-HIGH (0.60) — הופחת כיוון ש-Justitiedepartementet ככל הנראה אישר מראש ערובות דיוניות |
+| עזיבת L את prop 2025/26:246 | MEDIUM (0.40) | MEDIUM (0.35) — האסטרטגיה האופטימלית של L היא "תמיכה עם סייג רשמי"; עזיבה מלאה נמוכה מההערכה הראשונית |
+| פיצול קואליציית האופוזיציה (C פורשת מקואליציית S בנושא גיל האחריות הפלילית) | לא הוערך | MEDIUM (0.40) — מיסגור הפריפריה של C ניתן לסיפוק באמצעות תיקון |
+| אישור סופי של HD03250 | HIGH (0.90) | HIGH (0.92) — חובת עמידה ב-eIDAS 2.0 כמעט מחייבת |
+
+### עדיפות המודיעין המרכזית ל-72 השעות הבאות
+
+לקבל כל הצהרת מפלגת L בנושא prop 2025/26:246. זוהי פרצת המודיעין בעלת הערך הגבוה ביותר במחזור הניטור הזה.
+
+*מקור כלכלי: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_ja.md -->
+
+### 要約（150語以内）
+
+2026年5月7日、Tidö政権は重要度の高い3本の法案を提出した。(1) 安全保障上の脅威とみなされる外国人に対するSÄPO連動の退去強制権限の拡大（JuU）、(2) 住民登録詐欺に関するSkatteverketの捜査権限拡大（SkU）、(3) 新たな国家電子ID基盤の整備（TU）。これらはまとめて、国家能力と国内安全保障という、M-SDの統治優先事項と合致するテーマについて、協調した選挙前攻勢を示している。別途、野党横断動議（S、V、C、MP）が刑事責任年齢を13歳に引き下げる政府提案への正式な異議申し立てを提出し、もし委員会採決まで野党の数が維持されれば連立に打撃を与えかねないJuUの焦点を作り出した。KDとSD間のエネルギー政策をめぐる緊張が、電力網投資および風力発電に関する本会議討論で再び浮上した。スウェーデンは選挙まで126日。DIW×1.5倍乗数により、すべての係争中の法案が高優先度の監視対象に格上げされる。
+
+### 現在のPIRステータス
+
+| PIR | ステータス | シグナル強度 |
+|---|---|---|
+| PIR-1 連立安定性 | OPEN — KD/SDエネルギー緊張が上昇 | Medium |
+| PIR-3 野党の能力 | OPEN — JuUでの4党動議が活発 | High |
+| PIR-5 選挙近接加速 | OPEN — 1日で法案3本、最終スパート確認 | High |
+
+### 必要なアクション
+
+- JuUにおけるHD03267およびprop 2025/26:246の委員会審議を監視する
+- HD03267に対するLagrådets意見の結果を追跡する（欧州人権条約の側面）
+- HD03261（Skatteverketの権限）についてSkUの聴聞スケジュールを観察する
+
+---
+*パス2補足 — 2026-05-10T13:30Z*
+
+### 精緻化された確率推計
+
+パス1レビューの悪魔の代弁者結論を適用：
+
+| 事象 | パス1推計 | パス2精緻化 |
+|---|---|---|
+| LagrådetsによるHD03267への批判的Yttrande | HIGH (0.75) | MEDIUM-HIGH (0.60) — Justitiedepartementetが手続き的保護措置を事前承認した可能性が高いため引き下げ |
+| prop 2025/26:246でのL離脱 | MEDIUM (0.40) | MEDIUM (0.35) — Lの最適戦略は「正式留保付き支持」；完全離脱は初期推計より低い |
+| 野党連合が分裂（Cが刑事責任年齢でS連合から離脱） | 未推計 | MEDIUM (0.40) — Cの農村部框付けは修正案で対応可能 |
+| HD03250の最終採択 | HIGH (0.90) | HIGH (0.92) — eIDAS 2.0適合義務がほぼ拘束的 |
+
+### 今後72時間の最重要情報優先事項
+
+prop 2025/26:246に関するL党声明を入手する。これは今回の監視サイクルで最も価値のある情報ギャップである。
+
+*経済的出所: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_ko.md -->
+
+### 요약 (150단어 이내)
+
+2026년 5월 7일, Tidö 정부는 높은 중요도의 세 가지 법안을 제출했다: (1) 안보 위협 외국인에 대한 SÄPO 연계 강제추방 권한 확대(JuU), (2) 인구등록 사기 관련 Skatteverket 수사 권한 확대(SkU), (3) 새로운 국가 전자신원 인프라(TU). 이들은 함께 국가 역량과 내부 안보라는 주제 — M-SD의 국정 우선순위와 잘 일치하는 — 에 관한 선거 전 협조된 공세를 나타낸다. 별도의 초당적 동의(S, V, C, MP)는 형사 책임 연령을 13세로 낮추는 정부 제안에 공식 이의를 제기했으며, 위원회 표결까지 야당 수치가 유지된다면 연립에 피해를 줄 수 있는 JuU 쟁점을 만들었다. KD와 SD 간의 에너지 정책 갈등이 망 투자 및 풍력 발전에 관한 본회의 토론에서 다시 부상했다. 스웨덴은 선거까지 126일 남았으며, DIW×1.5배 승수는 모든 쟁점 입법을 고우선순위 감시 대상으로 격상한다.
+
+### 현재 PIR 상태
+
+| PIR | 상태 | 신호 강도 |
+|---|---|---|
+| PIR-1 연립 안정성 | OPEN — KD/SD 에너지 긴장 고조 | Medium |
+| PIR-3 야당 역량 | OPEN — JuU에서 4당 동의 활발 | High |
+| PIR-5 선거 근접 가속화 | OPEN — 하루 3건 법안으로 최종 스퍼트 확인 | High |
+
+### 필요한 조치
+
+- JuU에서 HD03267 및 prop 2025/26:246의 위원회 심사 모니터링
+- HD03267에 대한 Lagrådets 검토 결과 추적 (유럽인권협약 차원)
+- HD03261(Skatteverket 권한)에 대한 SkU 청문 일정 관찰
+
+---
+*패스 2 보완 — 2026-05-10T13:30Z*
+
+### 정교화된 확률 추정
+
+패스 1 검토의 악마의 변호인 결론 적용:
+
+| 사건 | 패스 1 추정 | 패스 2 정교화 |
+|---|---|---|
+| Lagrådet의 HD03267에 대한 비판적 Yttrande | HIGH (0.75) | MEDIUM-HIGH (0.60) — Justitiedepartementet이 절차적 보호조치를 사전 승인했을 가능성이 높아 하향 조정 |
+| prop 2025/26:246에서 L 이탈 | MEDIUM (0.40) | MEDIUM (0.35) — L의 최적 전략은 "공식 유보 있는 지지"; 완전 이탈은 초기 추정보다 낮음 |
+| 야당 연합 분열 (C가 형사 책임 연령에 관해 S 연합에서 이탈) | 추정 없음 | MEDIUM (0.40) — C의 농촌 지역 틀은 수정안으로 충족 가능 |
+| HD03250 최종 통과 | HIGH (0.90) | HIGH (0.92) — eIDAS 2.0 준수 의무가 거의 구속적 |
+
+### 향후 72시간 최우선 정보 과제
+
+prop 2025/26:246에 관한 L당 성명 확보. 이것이 이번 감시 사이클에서 단일적으로 가장 가치 있는 정보 격차다.
+
+*경제적 출처: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_nl.md -->
+
+### Samenvatting (≤150 woorden)
+
+Op 7 mei 2026 presenteerde de Tidö-regering drie wetsvoorstellen van hoog belang: (1) uitgebreide SÄPO-gerelateerde uitzettingsbevoegdheden voor veiligheidsbedreigende buitenlanders (JuU), (2) uitgebreide onderzoeksbevoegdheid van Skatteverket inzake bevolkingsregisterfraude (SkU), en (3) een nieuwe nationale digitale identiteitsinfrastructuur (TU). Samen signaleren ze een gecoördineerde pre-verkiezingsoffensief over staatscapaciteit en binnenlandse veiligheid — thema's die goed aansluiten bij de besturingsprioriteiten van M-SD. Een aparte transpartijse motie (S, V, C, MP) diende formele bezwaren in tegen het regeringsvoorstel om de strafbare leeftijd te verlagen naar 13 jaar, wat een JuU-kristallisatiepunt creëert dat de coalitie kan schaden als de oppositiecijfers standhoudt tot de commissiestemming. Energiepolitieke spanningen tussen KD en SD doken opnieuw op in het kamerdebat over netinvesteringen en windenergie. Zweden is 126 dagen verwijderd van de verkiezingen; de 1,5×-DIW-multiplier verheft alle omstreden wetgeving naar hoge prioriteit surveillance.
+
+### Actuele PIR-status
+
+| PIR | Status | Signaalsterkte |
+|---|---|---|
+| PIR-1 Coalitie stabiliteit | OPEN — KD/SD-energiespanning verhoogd | Medium |
+| PIR-3 Oppositiecapaciteit | OPEN — 4-partijmotie bij JuU actief | High |
+| PIR-5 Verkiezingsnabijheids acceleratie | OPEN — 3 wetsvoorstellen op één dag bevestigen eindsprint | High |
+
+### Vereiste acties
+
+- Commissiebehandeling van HD03267 en prop 2025/26:246 bij JuU monitoren
+- Remiss-resultaat van Lagrådet voor HD03267 volgen (EVRM-dimensie)
+- Hoorzittingsschema van SkU voor HD03261 (bevoegdheden Skatteverket) observeren
+
+---
+*Pass 2-aanvulling — 2026-05-10T13:30Z*
+
+### Verfijnde kansschattingen
+
+Toepassing van duivelsadvocaat-conclusies uit de Pass 1-review:
+
+| Gebeurtenis | Pass 1-schatting | Pass 2 verfijnd |
+|---|---|---|
+| Lagrådet kritisch Yttrande over HD03267 | HIGH (0.75) | MEDIUM-HIGH (0.60) — verlaagd omdat het Justitiedepartementet procedurele waarborgen waarschijnlijk vooraf heeft goedgekeurd |
+| L-fractiebreuk bij prop 2025/26:246 | MEDIUM (0.40) | MEDIUM (0.35) — L's optimale strategie is "steun met formeel voorbehoud"; volledige breuk lager dan initiële schatting |
+| Oppositiecoalitie fragmenteert (C breekt met S-coalitie over strafbare leeftijd) | Niet geschat | MEDIUM (0.40) — C's plattelandsframing kan worden tegemoetgekomen via amendement |
+| HD03250 definitieve aanneming | HIGH (0.90) | HIGH (0.92) — eIDAS 2.0-nalevingsverplichting is bijna bindend |
+
+### Belangrijkste inlichtingenprioriteit voor de komende 72 uur
+
+Eventuele L-partijenverklaring over prop 2025/26:246 verkrijgen. Dit is de enkelvoudig meest waardevolle inlichtingenlacune in deze bewakingscyclus.
+
+*Economische herkomst: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_no.md -->
+
+### Sammendrag (≤150 ord)
+
+7. mai 2026 fremla Tidö-regjeringen tre proposisjoner av høy betydning: (1) utvidede SÄPO-tilknyttede utvisningsfullmakter for sikkerhets-truende utlendinger (JuU), (2) utvidet Skatteverkets etterforskningskompetanse for folkeregistersvindel (SkU), og (3) ny statlig e-legitimasjonsinfrastruktur (TU). Samlet signaliserer de en koordinert forvalgspolitisk offensiv om statskapasitet og intern sikkerhet — temaer som samsvarer godt med M-SDs styrende prioriteringer. En separat tverrblokksmosjon (S, V, C, MP) leverte formelle innvendinger mot regjeringens forslag om å senke den strafferettslige ansvarsalderen til 13 år, noe som skaper et JuU-brennpunkt som kan skade koalisjonen hvis opposisjonstallene holder frem til komitéavstemmingen. Energipolitiske spenninger mellom KD og SD dukket opp igjen i kammerdebatten om nettinvesteringer og vindkraft. Sverige er 126 dager fra valget; 1,5×-DIW-multiplikatoren hever all omstridt lovgivning til høyprioritetsovervåking.
+
+### Gjeldende PIR-status
+
+| PIR | Status | Signalstyrke |
+|---|---|---|
+| PIR-1 Koalisjonstabilitet | OPEN — KD/SD-energispenning forhøyet | Medium |
+| PIR-3 Opposisjonskapasitet | OPEN — 4-partimotion på JuU aktiv | High |
+| PIR-5 Valnærhetakselerasjon | OPEN — 3 proposisjoner på én dag bekrefter spurten | High |
+
+### Påkrevd handling
+
+- Overvåk JuUs komitébehandling av HD03267 og prop 2025/26:246
+- Følg Lagrådets remissresultat for HD03267 (EMK-dimensjon)
+- Iaktta SkUs høringsskjema for HD03261 (Skatteverkets fullmakter)
+
+---
+*Pass 2-tillegg — 2026-05-10T13:30Z*
+
+### Raffinerte sannsynlighetsestimater
+
+Anvendelse av djevelens advokat-konklusjoner fra pass-1-gjennomgang:
+
+| Hendelse | Pass 1-estimat | Pass 2 raffinert |
+|---|---|---|
+| Lagrådet kritisk yttrande om HD03267 | HIGH (0.75) | MEDIUM-HIGH (0.60) — redusert fordi Justitiedepartementet trolig forhåndsgodkjente prosessuelle sikkerhetstiltak |
+| L-frafall på prop 2025/26:246 | MEDIUM (0.40) | MEDIUM (0.35) — L's optimale strategi er "støtte med formelt forbehold"; fullt frafall lavere enn innledende vurdering |
+| Opposisjonskoalisjonen fragmenterer (C bryter med S-koalisjonen om strafferettslig ansvarsalder) | Ikke estimert | MEDIUM (0.40) — C's distriktsinramming kan imøtekommes med endring |
+| HD03250 endelig vedtakelse | HIGH (0.90) | HIGH (0.92) — eIDAS 2.0-etterlevelsesforpliktelse er nær bindende |
+
+### Viktigste etterretningsprioritet for neste 72 timer
+
+Innhent evt. L-partiuttalelse om prop 2025/26:246. Dette er den enkelt mest verdifulle etterretningslacunen i denne overvåkingssyklusen.
+
+*Økonomisk opprinnelse: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_sv.md -->
+
+### Sammanfattning (≤150 ord)
+
+Den 7 maj 2026 lade Tidö-regeringen fram tre propositioner av hög dignitet: (1) utökade SÄPO-kopplade utvisningsbefogenheter för säkerhetshot-utlänningar (JuU), (2) utvidgad Skatteverket-utredningskapacitet avseende folkbokföringsbedrägeri (SkU), och (3) ny statlig e-legitimationsinfrastruktur (TU). Sammantaget signalerar de en samordnad förvalsoffensiv i statlig kapacitet och inre säkerhet — teman som väl sammanfaller med M-SD:s styrningsprioriteringar. En separat tvärblocksmotion (S, V, C, MP) lämnade formella invändningar mot regeringens förslag om sänkning av straffansvarsgränsen till 13 år, vilket skapar ett JuU-kristalliseringspunkt som kan skada koalitionen om oppositionssiffrorna håller inför utskottsomröstningen. Energipolitiska spänningar mellan KD och SD framträdde åter i kammardebatten om nätnvesteringar och vindkraft. Sverige är 126 dagar från valet; 1,5×-DIW-multiplikatorn höjer all omtvistad lagstiftning till högnivåövervakning.
+
+### Aktuell PIR-status
+
+| PIR | Status | Signalstyrka |
+|---|---|---|
+| PIR-1 Koalitionsstabilitet | OPEN — KD/SD-energispänning förhöjd | Medium |
+| PIR-3 Oppositionskapacitet | OPEN — 4-partimotion på JuU aktiv | High |
+| PIR-5 Valperspektivsacceleration | OPEN — 3 propositioner på en dag bekräftar spurten | High |
+
+### Åtgärder krävs
+
+- Bevaka JuU:s utskottsbehandling av HD03267 och prop 2025/26:246
+- Följ Lagrådets remissresultat för HD03267 (EKMR-dimension)
+- Iaktta SkU:s utfrågningsschema för HD03261 (Skatteverkets befogenheter)
+
+---
+*Pass 2-tillägg — 2026-05-10T13:30Z*
+
+### Förfinade sannolikhetsbedömningar
+
+Tillämpning av djävulens advokat-slutsatser från pass-1-granskning:
+
+| Händelse | Pass 1-bedömning | Pass 2 förfinad |
+|---|---|---|
+| Lagrådet kritiskt yttrande om HD03267 | HIGH (0.75) | MEDIUM-HIGH (0.60) — reducerat eftersom Justitiedepartementet troligen förhandsgodkänt processuella skyddsåtgärder |
+| L-avhopp på prop 2025/26:246 | MEDIUM (0.40) | MEDIUM (0.35) — L:s optimala strategi är "stöd med formellt förbehåll"; fullständigt avhopp lägre än initialt bedömning |
+| Oppositionskoalition fragmenterar (C bryter med S-koalitionen om straffansvarsgränsen) | Inte bedömt | MEDIUM (0.40) — C:s landsbygdsinramning kan tillgodoses genom ändring |
+| HD03250 slutlig passage | HIGH (0.90) | HIGH (0.92) — eIDAS 2.0-efterlevnadsskyldighet är nästan bindande |
+
+### Viktigaste underrättelseprioritering de kommande 72 timmarna
+
+Inhämta eventuellt L-partiuttalande om prop 2025/26:246. Detta är den enskilt mest värdefulla underrättelseluckan i denna övervakningscykel.
+
+*Ekonomisk härkomst: provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_zh.md -->
+
+### 摘要（≤150字）
+
+2026年5月7日，Tidö政府提交三项重要法案：(1) 扩大针对安全威胁外国人的SÄPO关联驱逐权限（JuU），(2) 扩大Skatteverket对人口登记欺诈的调查权限（SkU），(3) 建立新的国家电子身份基础设施（TU）。合并来看，这些法案标志着在国家能力和国内安全领域——契合M-SD执政优先议程——开展了协调一致的选前攻势。一项独立的跨党团动议（S、V、C、MP）就政府将刑事责任年龄降至13岁的提案提出正式异议，若反对党数字在委员会表决前保持稳定，将形成可能损害联合政府的JuU焦点。KD与SD之间的能源政策紧张关系再次出现于关于电网投资和风能的议会辩论中。距选举还有126天；DIW×1.5倍乘数将所有争议立法提升至高优先级监控。
+
+### 当前PIR状态
+
+| PIR | 状态 | 信号强度 |
+|---|---|---|
+| PIR-1 联合政府稳定性 | OPEN — KD/SD能源紧张加剧 | Medium |
+| PIR-3 反对党能力 | OPEN — JuU的四党动议活跃 | High |
+| PIR-5 选举临近加速 | OPEN — 同日提交3项法案确认最终冲刺 | High |
+
+### 所需行动
+
+- 监测JuU对HD03267和prop 2025/26:246的委员会审议
+- 追踪Lagrådet对HD03267的审查意见（欧洲人权公约维度）
+- 观察SkU关于HD03261（Skatteverket权限）的听证日程
+
+---
+*第二轮补充 — 2026-05-10T13:30Z*
+
+### 精细化概率估算
+
+应用第一轮审查的魔鬼代言人结论：
+
+| 事件 | 第一轮估算 | 第二轮精细化 |
+|---|---|---|
+| Lagrådet对HD03267发出批评性意见 | HIGH (0.75) | MEDIUM-HIGH (0.60) — 下调，因为Justitiedepartementet可能已预先批准程序性保障措施 |
+| L党在prop 2025/26:246上脱离联合 | MEDIUM (0.40) | MEDIUM (0.35) — L党最优策略为"附正式保留的支持"；完全脱离低于初始估算 |
+| 反对党联合分裂（C就刑事责任年龄与S联合决裂） | 未估算 | MEDIUM (0.40) — C党的农村框架可通过修正案满足 |
+| HD03250最终通过 | HIGH (0.90) | HIGH (0.92) — eIDAS 2.0合规义务几近约束性 |
+
+### 未来72小时最重要情报优先事项
+
+获取L党就prop 2025/26:246发表的任何声明。这是本监测周期中单项最有价值的情报缺口。
+
+*经济来源：provider=imf, dataflow=WEO, vintage=Apr-2026, retrieved_at=2026-05-10T12:40Z, status=degraded*
+
+<!-- source-sha: 5d2996db1a079ddefd717d8d87fb80ddc1db619a -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1580,3 +2162,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-10/realtime-pulse/executive-brief_zh.md)

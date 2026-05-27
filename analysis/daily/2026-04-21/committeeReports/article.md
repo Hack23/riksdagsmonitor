@@ -3,7 +3,7 @@ date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-05-25T15:59:52.441Z
+generated_at: 2026-05-27T07:35:32.024Z
 language: en
 layout: article
 ---
@@ -3873,8 +3873,6 @@ Le 21 avril 2026, les commissions du Riksdag ont adopté un **paquet de 14 rappo
 
 ---
 
-**分類**：公開 · **次回レビュー**：2026-04-28
-
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 
 ## Executive Brief Ko
@@ -4147,8 +4145,6 @@ Den 21 april 2026 antog riksdagens utskott ett **14-betänkandespaket** som oper
 | "宪法修正案预先约束下届议会" | KU32/KU33 + RF 8:14 | 🟩 高 |
 
 ---
-
-**分类**：公开 · **下次审查**：2026-04-28
 
 <!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
 

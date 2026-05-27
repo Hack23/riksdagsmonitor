@@ -3,7 +3,7 @@ date: 2026-05-08
 subfolder: interpellations
 slug: 2026-05-08-interpellations
 source_folder: analysis/daily/2026-05-08/interpellations
-generated_at: 2026-05-25T15:59:53.650Z
+generated_at: 2026-05-27T07:35:33.276Z
 language: en
 layout: article
 ---
@@ -2343,8 +2343,6 @@ PIR-5 (Gaza aid commitments) — OPEN
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_ar.md -->
 
-‏# ملخص تنفيذي — مناقشات الاستجواب 2026-05-08
-
 **التصنيف**: عام | **Admiralty**: B2  
 **الخلاصة**: خمسة استجوابات قُدِّمت في 2026-05-07 خلال دورة ريكسموتيت 2025/26 تكشف مجتمعةً عن استراتيجية معارضة متماسكة: يتعرض حكومة تيدو للضغط بشأن الالتزامات الدولية (غزة/منظمة العمل الدولية)، وإخفاقات المساواة الداخلية (إغلاق بوستنورد لنقاط الخدمة في المناطق الريفية)، وخفض ميزانيات حقوق الأقليات — كل ذلك في غضون ≤ 6 أشهر قبل انتخابات سبتمبر 2026.
 
@@ -2751,8 +2749,6 @@ Déficit public : dans la plage du Pacte de stabilité et de croissance de l'UE.
 
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/executive-brief_he.md -->
-
-‏# תקציר מנהלים — דיוני שאילתות 2026-05-08
 
 **סיווג**: ציבורי | **Admiralty**: B2  
 **סיכום**: חמש שאילתות שהוגשו ב-2026-05-07 במהלך הרישמוטה 2025/26 חושפות ביחד אסטרטגיית אופוזיציה עקבית: ממשלת טידו מוצאת לחץ בנוגע להתחייבויות בינלאומיות (עזה/ILO), כישלונות שוויון מקומיים (סגירות Postnord באזורים כפריים) וקיצוצי תקציב בזכויות מיעוטים — כל זאת ≤ 6 חודשים לפני בחירות ספטמבר 2026.

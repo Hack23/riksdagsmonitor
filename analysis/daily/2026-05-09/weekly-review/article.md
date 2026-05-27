@@ -3,7 +3,7 @@ date: 2026-05-09
 subfolder: weekly-review
 slug: 2026-05-09-weekly-review
 source_folder: analysis/daily/2026-05-09/weekly-review
-generated_at: 2026-05-25T15:59:53.744Z
+generated_at: 2026-05-27T07:35:33.375Z
 language: en
 layout: article
 ---
@@ -3488,8 +3488,6 @@ flowchart LR
 
 ---
 
-*出典：riksdag-regering MCP | IMF WEO-2026-04 | Riksdagsmonitor 週次レビュー 2026-05-09*
-
 <!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
 
 ## Executive Brief Ko
@@ -3884,8 +3882,6 @@ flowchart LR
 **核心不确定性**：本周文件处于辩论阶段 — 最终全体投票尚未记录。结果置信度取决于联合政府纪律和潜在的偏离动议。
 
 ---
-
-*来源：riksdag-regering MCP | IMF WEO-2026-04 | Riksdagsmonitor 每周审查 2026-05-09*
 
 <!-- source-sha: 3b789b190efe65d2af879b1da666d37f948938a3 -->
 

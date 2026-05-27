@@ -3,7 +3,7 @@ date: 2026-04-28
 subfolder: interpellations
 slug: 2026-04-28-interpellations
 source_folder: analysis/daily/2026-04-28/interpellations
-generated_at: 2026-05-25T15:59:52.887Z
+generated_at: 2026-05-27T07:35:32.486Z
 language: en
 layout: article
 ---
@@ -1955,11 +1955,6 @@ flowchart LR
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_de.md -->
 
-**Datum**: 2026-04-28  
-**Autor**: James Pether Sörling  
-**Klassifizierung**: ÖFFENTLICH — DSGVO Art 9(2)(e,g)  
-**Konfidenz**: MITTEL–HOCH [B2]
-
 ### 🎯 Kernaussage
 
 Drei sozialdemokratische Riksdag-Abgeordnete reichten am 2026-04-27 Anfragen (HD10449, HD10450, HD10451) ein und fordern die Tidö-Koalitionsregierung in drei politisch aufgeladenen Bereichen heraus: Investitionsdefizite bei der Eisenbahninfrastruktur, Risiken der Krankenversicherungsreform und die Wirksamkeit von Maßnahmen gegen Unternehmenskriminalität. Alle drei richten sich an Tidö-Koalitionsminister (KD, M, M) und signalisieren die Vorwahl-Rechenschaftspflicht-Strategie von S in Bereichen mit hoher Wählerrelevanz.
@@ -2405,11 +2400,6 @@ flowchart LR
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/executive-brief_nl.md -->
-
-**Datum**: 2026-04-28  
-**Auteur**: James Pether Sörling  
-**Classificatie**: OPENBAAR — AVG Art 9(2)(e,g)  
-**Betrouwbaarheid**: GEMIDDELD–HOOG [B2]
 
 ### 🎯 Kernbeoordeling
 

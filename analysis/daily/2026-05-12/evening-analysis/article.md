@@ -3,7 +3,7 @@ date: 2026-05-12
 subfolder: evening-analysis
 slug: 2026-05-12-evening-analysis
 source_folder: analysis/daily/2026-05-12/evening-analysis
-generated_at: 2026-05-25T15:59:53.879Z
+generated_at: 2026-05-27T07:35:33.582Z
 language: en
 layout: article
 ---
@@ -111,6 +111,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -1904,13 +1917,1110 @@ BankID/Freja eID competitive concerns ──────────────
 - Server pre-warmed ✅
 - All tool calls available ✅
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص تنفيذي — تحليل المساء 12 مايو 2026
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-12  
+**التصنيف**: 🟢 PUBLIC | **الثقة**: HIGH [Admiralty B2]  
+**سير العمل**: news-evening-analysis (Tier-C aggregation)  
+**القرب الانتخابي**: ≤6 أشهر → مُضاعِف قياسي 1,0× (مراجعة يومية)
+
+---
+
+### BLUF — الخلاصة باختصار
+
+يُعدّ الثلاثاء 12 مايو 2026 أحد أكثر الأيام كثافةً برلمانياً في دورة الريكسموته الجارية قُبيل انتخابات الريكسداغ في 13 سبتمبر 2026. تُعزّز ثلاث مقترحات حكومية (HD03250، HD03261، HD03267) جدول أعمال الكفاءة الحكومية لتحالف تيدو؛ ويهيمن تقرير تاريخي للجنة الدستورية (HD01KU34) بشأن حق الإجهاض وحرية التجمع على النقاش الدستوري؛ ويقود Vänsterpartiet هجوماً برلمانياً ثلاثياً منسقاً ضد سياسة الرعاية الاجتماعية والهجرة للحكومة؛ وتُجسّد تكتيكات الاستجواب لدى Socialdemokraterna — استجواب مناخي سُحب استراتيجياً، واستجواب عمل غير مُعلَن مُحتفَظ به بدليل ESO — إدارةً متطورة للمعلومات قُبيل الحملة الانتخابية. بشكل عام، يُمثّل 12 مايو تقاطعاً لأربعة خطوط سياسية: الإصلاح الدستوري، والأمن الوطني والرقمنة، والعدالة الاجتماعية/الهجرة، وتحرير الأسواق المالية.
+
+---
+
+### نقاط الاستخبارات الحرجة
+
+**1. HD01KU34 — مراجعة تاريخية للدستور** [حرجة — L3 فئة استخباراتية]
+- تقترح لجنة الدستور حق الإجهاض المحمي دستورياً (RF 2 kap.) مقروناً بصلاحيات موسّعة لتقييد حرية التجمع والجنسية — صفقة سياسية ثنائية الحزمة
+- تستلزم **قراريْن من الريكسداغ مع انتخابات ريكسداغ بينهما** (2026 + الدورة التالية)
+- من المتوقع أن يُبدي SD وKD تحفظات على بعض الأجزاء؛ وتدفع V وMP بقسم حق الإجهاض
+- قوة دستورية تفجيرية: أقوى مقترح إصلاح RF منذ مراجعة RF عام 2010
+- WEP: 87% تمرير (القرار الأول)؛ يعتمد التمرير الفعلي للقرار الثاني على نتيجة الانتخابات
+
+**2. HD03267 — التهديدات الأمنية والترحيل** [عالية — L2+ أولوية]
+- يوسّع المقترح الدور الاستشاري لـ SÄPO وأسباب ترحيل "التهديدات الأمنية المؤهَّلة"
+- ECHR Art. 3، Art. 8، RF kap. 2 — من المرجح أن يُطلب رأي Lagrådet
+- C (Centerpartiet) هو الصوت المحوري: يدعم التحالف في الأمن، لكن يُتوقع إرسال إشارة دولة قانون
+- WEP: 85% تمرير
+
+**3. الهجوم الثلاثي لـ V على الرعاية الاجتماعية** [عالية — استراتيجية انتخابية منسقة]
+- HD10484 (Awad → Tenje/M): رعاية المسنين — أربعة أسئلة وزارية حول القطاع الربحي
+- HD10486 (Awad → Britz/L): تكافؤ الأجور في الرعاية — "حزمة أجور المرأة" لدى V (30 مليار SEK/10 سنوات)
+- HD024149+HD024150 (V ضد prop. 263+264): معارضة هجرة بحجج ECHR
+- **إشارة تحليلية**: كتلة تمركز انتخابي منسق؛ لا دعم عابر للكتل، لكن روايات حملة قوية
+
+**4. التكتيك المزدوج لاستجواب S** [عالية — إشارة استراتيجية]
+- سُحب HD10481 (Westlund: أهداف المناخ) — تتجنب S منح وزير L منصةً للنقاش
+- HD10482 (Olsson: العمل غير المُعلَن) نشط بدليل ESO 2026:1 (SEK 189 مليار/سنة في خسائر الاقتصاد الظل)
+- الموعد النهائي للرد 29 مايو — Svantesson تحت ضغط لتقديم مقترحات قبل عطلة الريكسداغ الصيفية
+- WEP: 40–60% أن وزير المالية سيقدم مقترحاً ملموساً قبل العطلة الصيفية
+
+**5. HD01CU31 — إصلاح سوق الإيجار** [متوسطة-عالية — قضية انتخابية]
+- إيجار مرن بأسعار سوق وعقود مؤشَّرة
+- معارضة واسعة من S + V؛ SD منقسم محتمل (قطاع البناء مقابل قاعدة ناخبي المستأجرين)
+- إمكانية احتكاك داخل التحالف M/L مقابل SD حول وتيرة الإصلاح
+- WEP: 72% تمرير بأغلبية التحالف
+
+---
+
+### الصورة الاستخباراتية المتكاملة
+
+تعكس الأنشطة البرلمانية يوم الثلاثاء معارضةً في تسارع (V + S) وحكومةً تخضع لرقابة ما قبل انتخابي متصاعد. تُبيّن المسارات الخمس المتوازية — الإصلاح الدستوري، والتشريع الأمني، والعدالة الاجتماعية، وتحرير السوق، وتكتيكات الاستجواب المعارضة — أن الريكسموته الجارية تمر بأكثر مراحل التشريع كثافةً منذ تشكيل حكومة الأغلبية عام 2022.
+
+**الأنماط السائدة**:
+1. **مناخ تسليم التحالف**: تُسلّم Tidö ثلاثة مقترحات وتحصل على دعم KU للإصلاح الدستوري — إشارات قوية ما قبل انتخابية على الكفاءة التشريعية
+2. **تمركز المعارضة**: تختار V الاتساع (الهجرة + الرعاية + الأجر) بينما تختار S العمق (استجواب عمل غير مُعلَن قائم على دليل ESO) — استراتيجيتان متكاملتان لكنهما غير منسقتين
+3. **التحول الدستوري**: KU34 فريد في البرلمانية السويدية الحديثة — ضمانة حق الإجهاض مقرونة بصلاحية تقييد حكومية موسّعة تخلق حزمة سياسية يمكن لكلا الكتلتين المطالبة بمكسب سياسي منها
+
+---
+
+### 3 قرارات فورية
+
+1. **الأولوية التحريرية**: يتصدر KU34 تحليل المساء — منظور مراجعة الدستور التاريخية يتفوق على جميع التقارير الأخرى
+2. **متابعة PIR**: رصد ما إذا كان Lagrådet مطلوباً لإبداء رأيه في HD03267 (على الأرجح خلال أسبوعين)؛ إذا حدث ذلك يتعزز سرد دولة القانون بشكل ملحوظ
+3. **إشارات استراتيجية انتخابية**: رصد ما إذا كان الهجوم الثلاثي لـ V يولّد تغطية إعلامية واسعة، وما إذا كانت S تختار HD10482 للتواصل الحملاتي
+
+---
+
+### محفزات الأفق
+
+| التاريخ | الحدث | PIR |
+|--------|------|-----|
+| 2026-05-29 | الموعد النهائي لرد HD10482 (Svantesson: العمل غير المُعلَن) | PIR-ECON |
+| 2026-05-29 | الموعد النهائي لرد HD10484، HD10486 (V استجواب الرعاية) | PIR-WEL |
+| يونيو 2026 | تقارير SfU (prop.263+264) — يُتوقع سقوط اقتراحات V | PIR-MIG |
+| صيف 2026 | معالجة TU لـ HD03250 (e-ID) | PIR-TECH |
+| الريكسموته القادمة | المعالجة الثانية لـ KU34 (تستلزم انتخابات بينهما) | PIR-CONST |
+| 2026-09-13 | انتخابات الريكسداغ — تحويل جميع ما سبق إلى تواصل انتخابي | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-12  
+**Klassificering**: 🟢 PUBLIC | **Konfidens**: HIGH [Admiralty B2]  
+**Arbejdsgang**: news-evening-analysis (Tier-C aggregation)  
+**Valgproximitet**: ≤6 måneder → 1,0× standardmultiplikator (daglig gennemgang)
+
+---
+
+### BLUF — Konklusion kort fortalt
+
+Tirsdag den 12. maj 2026 er en af den igangværende riksmødes parlamentarisk tættest belagte dage forud for riksdagsvalget den 13. september 2026. Tre regeringspropositioner (HD03250, HD03261, HD03267) fremmer Tidö-koalitionens statskompetensdagsorden; et historisk grundlovsudvalgets betænkning (HD01KU34) om abortret og foreningsfrihed dominerer den konstitutionelle debat; Vänsterpartiet fører en koordineret tredobbelt parlamentarisk offensiv mod regeringens velfærds- og migrationspolitik; og Socialdemokraternas interpellationstaktik — én klimatinterpellation strategisk trukket tilbage, én svartarbets-interpellation bevaret med ESO-evidens — demonstrerer sofistikeret information-management forud for valgkampen. Samlet set udgør 12. maj et kryds af fire politiske linjer: forfatningsreform, statssikkerhed og digitalisering, social retfærdighed/migration og finansiel markedsliberalisering.
+
+---
+
+### Kritiske efterretningspunkter
+
+**1. HD01KU34 — Historisk grundlovsrevision** [KRITISK — L3 Efterretningsklasse]
+- Konstitutionsudvalget foreslår grundlovssikret abortret (RF 2 kap.) kombineret med udvidede begrænsningsbeføjelser for foreningsfrihed og statsborgerskab — en politisk pakkeaftale
+- Kræver **to riksdagsbeslutninger med riksdagsvalg imellem** (2026 + næste riksmøde)
+- SD og KD forventes at tage forbehold over for dele; V og MP driver afsnittet om abortret
+- Forfatningssprængkraft: det stærkeste RF-reformforslag siden RF-revisionen i 2010
+- WEP: 87% vedtagelse (første beslutning); effektiv vedtagelse af den anden beslutning afhænger af valgresultatet
+
+**2. HD03267 — Sikkerhedstrusler og udvisning** [HØJ — L2+ Prioritet]
+- Proposition udvider SÄPO's rådgivende rolle og udvisningsgrundlagene for "kvalificerede sikkerhedstrusler"
+- ECHR Art. 3, Art. 8, RF kap. 2 — Lagrådets udtalelse er sandsynligvis påkrævet
+- C (Centerpartiet) er nøglestemme: støtter koalitionen om sikkerhed, men retsstatssignal forventes
+- WEP: 85% vedtagelse
+
+**3. V's tredobbelte velfærdsoffensiv** [HØJ — Koordineret valgstrategi]
+- HD10484 (Awad → Tenje/M): Ældrepleje — fire ministerspørgsmål om profitdrevet sektor
+- HD10486 (Awad → Britz/L): Ligeløn i velfærden — V's "kvindeløftpakke" (30 mia. SEK/10 år)
+- HD024149+HD024150 (V mod prop. 263+264): Migrationsopposition med ECHR-argumentation
+- **Analytisk signal**: Koordineret valgpositioneringsblok; ingen cross-bloc-støtte, men stærke kampagnenarrativ
+
+**4. S's dobbelte interpellationstaktik** [HØJ — Strategisk signal]
+- HD10481 (Westlund: klimatmål) trukket tilbage — S undgår at give L-ministeren en debatplatform
+- HD10482 (Olsson: svart arbejde) aktivt med ESO 2026:1-evidens (SEK 189 mia./år i tab til sort økonomi)
+- Svarsfrist 29. maj — Svantesson under pres for at fremlægge forslag inden Riksdagens sommerferie
+- WEP: 40–60% at finansministeren fremlægger konkret forslag inden sommerferien
+
+**5. HD01CU31 — Lejemarkedsreform** [MIDDEL-HØJ — Valgspørgsmål]
+- Fleksibel lejelov med markedsleje og indekserede aftaler
+- Bred opposition S + V; SD potentielt splittet (byggeindustri vs. lejervælgerbasis)
+- Potentiale for koalitionsfriktion M/L vs. SD om reformtempo
+- WEP: 72% vedtagelse med koalitionsflertal
+
+---
+
+### Integreret efterretningsbillede
+
+Tirsdagens parlamentariske aktivitet afspejler en opposition i acceleration (V + S) og en regering under stigende pre-valgranskning. De fem parallelle spor — forfatningsreform, sikkerhedslovgivning, social retfærdighed, markedsliberalisering og oppositionel interpellationstaktik — viser, at det igangværende riksmøde befinder sig i den mest intensive lovgivningsfase siden flertalsregeringen blev dannet i 2022.
+
+**Dominerende mønstre**:
+1. **Koalitionens leveringsklima**: Tidö leverer tre propositioner og opnår KU-støtte til forfatningsreform — stærke pre-valsignaler om lovgivningsmæssig kompetence
+2. **Oppositionens positionering**: V vælger bredde (migration + velfærd + løn), mens S vælger dybde (ESO-evidensbaseret svartarbets-interp) — komplementære men ikke-koordinerede strategier
+3. **Forfatningsmæssig transformation**: KU34 er unik i moderne svensk parlamentarisme — abortretgaranti kombineret med udvidet statslig begrænsningsbeføjelse skaber en politisk pakke, som begge blokke kan hævde politisk gevinst af
+
+---
+
+### 3 Umiddelbare beslutninger
+
+1. **Redaktionel prioritering**: KU34 leder aftenanalysen — det historiske grundlovsrevisionsperspektiv trumfer alle øvrige betænkninger
+2. **PIR-opfølgning**: Overvåg om Lagrådet anmodes om at udtale sig om HD03267 (sandsynligvis inden 2 uger); hvis det sker, styrkes retsstatnarrativet betydeligt
+3. **Valgstrategi-signaler**: Overvåg om V's tredobbelte offensiv genererer substantiel mediedækning, og om S vælger at bruge HD10482 i kampagnekommunikation
+
+---
+
+### Horisontale udløsere
+
+| Dato | Begivenhed | PIR |
+|------|-----------|-----|
+| 2026-05-29 | Svarsfrist HD10482 (Svantesson: svart arbejde) | PIR-ECON |
+| 2026-05-29 | Svarsfrist HD10484, HD10486 (V velfærdsinterp) | PIR-WEL |
+| Juni 2026 | Betænkninger SfU (prop.263+264) — V-motioner forventes at falde | PIR-MIG |
+| Sommer 2026 | TU-behandling HD03250 (e-ID) | PIR-TECH |
+| Næste riksmøde | KU34 anden behandling (kræver valg imellem) | PIR-CONST |
+| 2026-09-13 | Riksdagsvalget — alle ovenstående konverteres til valgkommunikation | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-12  
+**Klassifizierung**: 🟢 PUBLIC | **Konfidens**: HIGH [Admiralty B2]  
+**Workflow**: news-evening-analysis (Tier-C aggregation)  
+**Wahlnähe**: ≤6 Monate → 1,0× Standardmultiplikator (Tagesrückblick)
+
+---
+
+### BLUF — Schlussfolgerung kurz gefasst
+
+Der Dienstag, der 12. Mai 2026, ist einer der parlamentarisch dichtesten Tage des laufenden Riksmöte vor der Riksdagswahl am 13. September 2026. Drei Regierungspropositioner (HD03250, HD03261, HD03267) fördern die Staatskompetenzagenda der Tidö-Koalition; ein historisches Grundgesetzausschuss-Gutachten (HD01KU34) über Abtreibungsrecht und Vereinigungsfreiheit dominiert die Verfassungsdebatte; die Vänsterpartiet führt eine koordinierte dreifache parlamentarische Offensive gegen die Wohlfahrts- und Migrationspolitik der Regierung; und die Interpellationstaktik der Socialdemokraterna — eine Klimatinterpellation strategisch zurückgezogen, eine Svartarbets-Interpellation mit ESO-Evidenz beibehalten — demonstriert ein ausgefeiltes Informationsmanagement vor dem Wahlkampf. Insgesamt bildet der 12. Mai eine Kreuzung von vier politischen Linien: Verfassungsreform, Staatssicherheit und Digitalisierung, soziale Gerechtigkeit/Migration und finanzielle Marktliberalisierung.
+
+---
+
+### Kritische Geheimdienstpunkte
+
+**1. HD01KU34 — Historische Grundgesetzrevision** [KRITISCH — L3 Geheimdienstklasse]
+- Der Verfassungsausschuss schlägt ein verfassungsrechtlich geschütztes Abtreibungsrecht (RF 2 Kap.) vor, kombiniert mit erweiterten Einschränkungsbefugnissen für Vereinigungsfreiheit und Staatsbürgerschaft — ein politisches Zwei-Pakete-Abkommen
+- Erfordert **zwei Riksdagsbeschlüsse mit Riksdagswahl dazwischen** (2026 + nächstes Riksmöte)
+- SD und KD werden voraussichtlich Vorbehalte gegen Teile einlegen; V und MP treiben den Abtreibungsrechtsabschnitt voran
+- Verfassungsrechtliche Sprengkraft: der stärkste RF-Reformvorschlag seit der RF-Revision von 2010
+- WEP: 87% Annahme (erster Beschluss); wirksame Annahme des zweiten Beschlusses hängt vom Wahlergebnis ab
+
+**2. HD03267 — Sicherheitsbedrohungen und Ausweisung** [HOCH — L2+ Priorität]
+- Proposition erweitert die beratende Rolle der SÄPO und die Ausweisungsgründe für "qualifizierte Sicherheitsbedrohungen"
+- ECHR Art. 3, Art. 8, RF Kap. 2 — Lagrådets Stellungnahme ist wahrscheinlich erforderlich
+- C (Centerpartiet) ist die Schlüsselstimme: unterstützt die Koalition in Sicherheitsfragen, aber ein Rechtsstaatssignal wird erwartet
+- WEP: 85% Annahme
+
+**3. V's dreifache Wohlfahrtsoffensive** [HOCH — Koordinierte Wahlstrategie]
+- HD10484 (Awad → Tenje/M): Altenpflege — vier Ministerfragen zum gewinnorientierten Sektor
+- HD10486 (Awad → Britz/L): Gleiche Löhne in der Wohlfahrt — V's "Frauenlohnpaket" (30 Mrd. SEK/10 Jahre)
+- HD024149+HD024150 (V gegen Prop. 263+264): Migrationsopposition mit ECHR-Argumentation
+- **Analytisches Signal**: Koordinierter Wahlpositionierungsblock; keine Cross-bloc-Unterstützung, aber starke Kampagnennarrative
+
+**4. S's doppelte Interpellationstaktik** [HOCH — Strategisches Signal]
+- HD10481 (Westlund: Klimaziele) zurückgezogen — S vermeidet es, dem L-Minister eine Debattplattform zu geben
+- HD10482 (Olsson: Schwarzarbeit) aktiv mit ESO 2026:1-Evidenz (SEK 189 Mrd./Jahr Verluste durch Schwarzwirtschaft)
+- Antwortfrist 29. Mai — Svantesson steht unter Druck, vor der Sommerpause des Riksdagen Vorschläge vorzulegen
+- WEP: 40–60%, dass der Finanzminister vor der Sommerpause einen konkreten Vorschlag vorlegt
+
+**5. HD01CU31 — Mietmarktreform** [MITTEL-HOCH — Wahlthema]
+- Flexibles Mietrecht mit Marktmieten und indexierten Verträgen
+- Breite Opposition S + V; SD möglicherweise gespalten (Baubranche vs. Mieterschaftswählerbasis)
+- Potenzial für Koalitionsreibungen M/L vs. SD beim Reformtempo
+- WEP: 72% Annahme mit Koalitionsmehrheit
+
+---
+
+### Integriertes Geheimdienstbild
+
+Die parlamentarischen Aktivitäten des Dienstags spiegeln eine sich beschleunigende Opposition (V + S) und eine Regierung unter zunehmendem Pre-Wahlkampf-Druck wider. Die fünf parallelen Stränge — Verfassungsreform, Sicherheitsgesetzgebung, soziale Gerechtigkeit, Marktliberalisierung und oppositionelle Interpellationstaktik — zeigen, dass das laufende Riksmöte sich in der intensivsten Gesetzgebungsphase seit der Bildung der Mehrheitsregierung 2022 befindet.
+
+**Dominante Muster**:
+1. **Lieferklima der Koalition**: Tidö liefert drei Propositioner und erhält KU-Unterstützung für Verfassungsreform — starke Pre-Wahlsignale legislativer Kompetenz
+2. **Positionierung der Opposition**: V wählt Breite (Migration + Wohlfahrt + Lohn), während S Tiefe wählt (ESO-evidenzbasierter Svartarbets-Interp) — komplementäre, aber nicht koordinierte Strategien
+3. **Verfassungstransformation**: KU34 ist einzigartig im modernen schwedischen Parlamentarismus — Abtreibungsrechtsgarantie kombiniert mit erweiterter staatlicher Einschränkungsbefugnis schafft ein politisches Paket, aus dem beide Blöcke politischen Gewinn beanspruchen können
+
+---
+
+### 3 Unmittelbare Entscheidungen
+
+1. **Redaktionelle Priorisierung**: KU34 führt die Abendanalyse an — die historische Grundgesetzrevisionsperspektive übertrifft alle anderen Gutachten
+2. **PIR-Nachverfolgung**: Überwachen, ob Lagrådet um eine Stellungnahme zu HD03267 gebeten wird (wahrscheinlich innerhalb von 2 Wochen); wenn dies der Fall ist, wird das Rechtsstaatsnarrativ erheblich gestärkt
+3. **Wahlstrategiesignale**: Überwachen, ob V's dreifache Offensive substantielle Medienberichterstattung erzeugt und ob S HD10482 für die Kampagnenkommunikation nutzt
+
+---
+
+### Horizontale Auslöser
+
+| Datum | Ereignis | PIR |
+|-------|---------|-----|
+| 2026-05-29 | Antwortfrist HD10482 (Svantesson: Schwarzarbeit) | PIR-ECON |
+| 2026-05-29 | Antwortfrist HD10484, HD10486 (V Wohlfahrtsinterp) | PIR-WEL |
+| Juni 2026 | Gutachten SfU (Prop.263+264) — V-Motionen werden voraussichtlich abgelehnt | PIR-MIG |
+| Sommer 2026 | TU-Behandlung HD03250 (e-ID) | PIR-TECH |
+| Nächstes Riksmöte | KU34 zweite Behandlung (erfordert Wahl dazwischen) | PIR-CONST |
+| 2026-09-13 | Riksdagswahl — alle oben genannten werden in Wahlkommunikation umgewandelt | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-12  
+**Clasificación**: 🟢 PUBLIC | **Confianza**: HIGH [Admiralty B2]  
+**Flujo de trabajo**: news-evening-analysis (Tier-C aggregation)  
+**Proximidad electoral**: ≤6 meses → multiplicador estándar de 1,0× (revisión diaria)
+
+---
+
+### BLUF — Conclusión en resumen
+
+El martes 12 de mayo de 2026 es uno de los días parlamentariamente más densos del riksmöte en curso antes de las elecciones riksdagsval del 13 de septiembre de 2026. Tres proposiciones gubernamentales (HD03250, HD03261, HD03267) hacen avanzar la agenda de competencia estatal de la coalición Tidö; un histórico dictamen del comité constitucional (HD01KU34) sobre el derecho al aborto y la libertad de asociación domina el debate constitucional; el Vänsterpartiet lidera una triple ofensiva parlamentaria coordinada contra la política social y migratoria del gobierno; y la táctica de interpelación de la Socialdemokraterna — una interpelación climática retirada estratégicamente, una interpelación sobre el trabajo no declarado conservada con evidencia ESO — demuestra una gestión de información sofisticada antes de la campaña electoral. En conjunto, el 12 de mayo constituye un cruce de cuatro líneas políticas: reforma constitucional, seguridad nacional y digitalización, justicia social/migración y liberalización de mercados financieros.
+
+---
+
+### Puntos de inteligencia críticos
+
+**1. HD01KU34 — Revisión constitucional histórica** [CRÍTICO — L3 Clase de inteligencia]
+- El comité constitucional propone un derecho al aborto protegido constitucionalmente (RF 2 kap.) combinado con poderes ampliados para restringir la libertad de asociación y la ciudadanía — un acuerdo político de dos paquetes
+- Requiere **dos decisiones del Riksdag con elecciones entre ellas** (2026 + próximo Riksmöte)
+- SD y KD esperan formular reservas sobre algunas partes; V y MP impulsan la sección sobre el derecho al aborto
+- Potencial constitucional explosivo: la propuesta de reforma RF más fuerte desde la revisión RF de 2010
+- WEP: 87% de aprobación (primera decisión); la aprobación efectiva de la segunda decisión depende del resultado electoral
+
+**2. HD03267 — Amenazas a la seguridad y expulsión** [ALTA — L2+ Prioridad]
+- La proposición amplía el papel consultivo de la SÄPO y los motivos de expulsión para las "amenazas a la seguridad cualificadas"
+- ECHR Art. 3, Art. 8, RF kap. 2 — es probable que se requiera el dictamen del Lagrådet
+- C (Centerpartiet) es el voto clave: apoya a la coalición en seguridad, pero se espera una señal del Estado de derecho
+- WEP: 85% de aprobación
+
+**3. Triple ofensiva de bienestar de V** [ALTA — Estrategia electoral coordinada]
+- HD10484 (Awad → Tenje/M): Atención a personas mayores — cuatro preguntas ministeriales sobre el sector con fines de lucro
+- HD10486 (Awad → Britz/L): Igualdad salarial en bienestar — el "paquete salarial de mujeres" de V (30 mil millones SEK/10 años)
+- HD024149+HD024150 (V contra prop. 263+264): Oposición a la migración con argumentación ECHR
+- **Señal analítica**: Bloque de posicionamiento electoral coordinado; sin apoyo cross-bloc, pero fuertes narrativas de campaña
+
+**4. Doble táctica de interpelación de S** [ALTA — Señal estratégica]
+- HD10481 (Westlund: objetivos climáticos) retirado — S evita dar al ministro L una plataforma de debate
+- HD10482 (Olsson: trabajo no declarado) activo con evidencia ESO 2026:1 (SEK 189 mil millones/año en pérdidas por economía sumergida)
+- Fecha límite de respuesta 29 de mayo — Svantesson bajo presión para presentar propuestas antes del receso estival del Riksdag
+- WEP: 40–60% de que el ministro de Finanzas presentará una propuesta concreta antes del receso estival
+
+**5. HD01CU31 — Reforma del mercado de alquiler** [MEDIA-ALTA — Cuestión electoral]
+- Arrendamiento flexible con alquileres de mercado y contratos indexados
+- Amplia oposición S + V; SD potencialmente dividido (sector de la construcción vs base de votantes arrendatarios)
+- Potencial de fricciones en la coalición M/L vs SD sobre el ritmo de la reforma
+- WEP: 72% de aprobación con mayoría de la coalición
+
+---
+
+### Imagen de inteligencia integrada
+
+La actividad parlamentaria del martes refleja una oposición en aceleración (V + S) y un gobierno bajo creciente escrutinio pre-electoral. Los cinco hilos paralelos — reforma constitucional, legislación de seguridad, justicia social, liberalización del mercado y táctica de interpelación de la oposición — muestran que el riksmöte en curso se encuentra en la fase legislativa más intensa desde la formación del gobierno de mayoría en 2022.
+
+**Patrones dominantes**:
+1. **Clima de entrega de la coalición**: Tidö entrega tres proposiciones y obtiene el apoyo del KU para la reforma constitucional — fuertes señales pre-electorales de competencia legislativa
+2. **Posicionamiento de la oposición**: V elige amplitud (migración + bienestar + salario) mientras que S elige profundidad (interpelación sobre trabajo no declarado basada en evidencia ESO) — estrategias complementarias pero no coordinadas
+3. **Transformación constitucional**: KU34 es único en el parlamentarismo sueco moderno — la garantía del derecho al aborto combinada con un poder de restricción estatal ampliado crea un paquete político del que ambos bloques pueden reclamar beneficios políticos
+
+---
+
+### 3 Decisiones inmediatas
+
+1. **Priorización editorial**: KU34 lidera el análisis vespertino — la perspectiva histórica de revisión constitucional supera a todos los demás informes
+2. **Seguimiento PIR**: Monitorear si el Lagrådet es solicitado para un dictamen sobre HD03267 (probablemente en 2 semanas); si eso ocurre, el narrativo del Estado de derecho se fortalecerá significativamente
+3. **Señales de estrategia electoral**: Monitorear si la triple ofensiva de V genera cobertura mediática sustancial y si S elige HD10482 para la comunicación de campaña
+
+---
+
+### Desencadenantes de horizonte
+
+| Fecha | Evento | PIR |
+|-------|--------|-----|
+| 2026-05-29 | Fecha límite de respuesta HD10482 (Svantesson: trabajo no declarado) | PIR-ECON |
+| 2026-05-29 | Fecha límite de respuesta HD10484, HD10486 (V interpelación bienestar) | PIR-WEL |
+| Junio 2026 | Informes SfU (prop.263+264) — mociones V previstas para rechazarse | PIR-MIG |
+| Verano 2026 | Tratamiento TU de HD03250 (e-ID) | PIR-TECH |
+| Próximo Riksmöte | KU34 segundo tratamiento (requiere elecciones entre los dos) | PIR-CONST |
+| 2026-09-13 | Elecciones riksdagsval — todos los anteriores convertidos en comunicación electoral | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-12  
+**Luokitus**: 🟢 PUBLIC | **Luotettavuus**: HIGH [Admiralty B2]  
+**Työnkulku**: news-evening-analysis (Tier-C aggregation)  
+**Vaaliläheisyys**: ≤6 kuukautta → 1,0× vakiokertoiminen (päivittäinen katsaus)
+
+---
+
+### BLUF — Johtopäätös lyhyesti
+
+Tiistai 12. toukokuuta 2026 on istuvassa riksmötetissä parlamentaarisesti tiheimpiä päiviä ennen riksdagsvalet-vaaleja 13. syyskuuta 2026. Kolme hallituksen esitystä (HD03250, HD03261, HD03267) edistää Tidö-koalition valtiokompetenssiagendaa; historiallinen perustuslakivaliokunnan mietintö (HD01KU34) aborttioikeudesta ja yhdistymisvapaudesta hallitsee perustuslaillista keskustelua; Vänsterpartiet johtaa koordinoitua kolmoishyökkäystä hallituksen sosiaali- ja maahanmuuttopolitiikkaa vastaan; ja Socialdemokraternan interpellaatiotaktiikka — yksi ilmastointerpellaatio strategisesti peruttu, yksi svartarbets-interpellaatio säilytetty ESO-evidenssin kera — osoittaa kehittynyttä informaationhallintaa ennen vaalikampanjaa. Kaiken kaikkiaan 12. toukokuuta muodostaa neljän poliittisen linjan risteyksen: perustuslakiuudistus, valtion turvallisuus ja digitalisaatio, sosiaalinen oikeudenmukaisuus/maahanmuutto ja rahoitusmarkkinoiden liberalisointi.
+
+---
+
+### Kriittiset tiedustelupisteet
+
+**1. HD01KU34 — Historiallinen perustuslakiuudistus** [KRIITTINEN — L3 Tiedusteluluokka]
+- Perustuslakivaliokunta ehdottaa perustuslaillisesti suojattua aborttioikeutta (RF 2 kap.) yhdistettynä laajennettuihin yhdistymisvapauden ja kansalaisuuden rajoittamisvaltuuksiin — poliittinen kahden paketin kauppa
+- Vaatii **kaksi riksdag-päätöstä riksdagsvalet-vaalien välissä** (2026 + seuraava riksmöte)
+- SD ja KD odottavat tekevän varauksia osiin; V ja MP ajavat aborttioikeuspykälää
+- Perustuslaillinen räjähtävyys: vahvin RF-uudistusehdotus vuoden 2010 RF-uudistuksen jälkeen
+- WEP: 87% hyväksytty (ensimmäinen päätös); toisen päätöksen todellinen hyväksyminen riippuu vaalituloksesta
+
+**2. HD03267 — Turvallisuusuhat ja karkottaminen** [KORKEA — L2+ Prioriteetti]
+- Esitys laajentaa SÄPOn neuvoa-antavaa roolia ja "kvalifioitujen turvallisuusuhkien" karkottamisperusteita
+- ECHR Art. 3, Art. 8, RF kap. 2 — Lagrådets lausunto todennäköisesti vaaditaan
+- C (Centerpartiet) on avainääni: tukee koalitiota turvallisuudessa, mutta oikeusvaltion signaali odotettavissa
+- WEP: 85% hyväksytty
+
+**3. V:n kolminkertainen sosiaaliturvaoffensiivi** [KORKEA — Koordinoitu vaalistrategia]
+- HD10484 (Awad → Tenje/M): Vanhushoito — neljä ministerikysymystä voittoa tavoittelevasta sektorista
+- HD10486 (Awad → Britz/L): Tasa-arvoinen palkka sosiaalipalveluissa — V:n "naispalkkakampanja" (30 mrd. SEK/10 vuotta)
+- HD024149+HD024150 (V vastaan prop. 263+264): Maahanmuuttovastapoliisi ECHR-argumentaatiolla
+- **Analyyttinen signaali**: Koordinoitu vaaliasemointilohko; ei cross-bloc-tukea, mutta vahvat kampanjanarratiivit
+
+**4. S:n kaksoisinterpellaatiotaktiikka** [KORKEA — Strateginen signaali]
+- HD10481 (Westlund: ilmastotavoitteet) peruttu — S välttää L-ministerin saamasta debattilavaa
+- HD10482 (Olsson: harmaa talous) aktiivinen ESO 2026:1-evidenssillä (SEK 189 mrd./vuosi harmaan talouden tappioissa)
+- Vastauksen määräaika 29. toukokuuta — Svantesson paineessa esittää ehdotuksia ennen riksdagenin kesätaukoa
+- WEP: 40–60% valtiovarainministerin esittää konkreettisen ehdotuksen ennen kesätaukoa
+
+**5. HD01CU31 — Vuokramarkkinauudistus** [KESKIKORKEA — Vaaliasia]
+- Joustava vuokralaki markkinavuokrilla ja indeksoiduilla sopimuksilla
+- Laaja oppositio S + V; SD mahdollisesti jakautunut (rakennusala vs. vuokralaisten äänestäjäpohja)
+- Koalitiokitkaa M/L vs. SD uudistuksen nopeudesta
+- WEP: 72% hyväksytty koalitioenemmistöllä
+
+---
+
+### Integroitu tiedustelukuva
+
+Tiistain parlamentaarinen toiminta heijastaa kiihtyvää oppositiota (V + S) ja hallitusta, joka on kasvavan pre-vaalivalvonnan alla. Viisi rinnakkaista linjaa — perustuslakiuudistus, turvallisuuslainsäädäntö, sosiaalinen oikeudenmukaisuus, markkinoiden liberalisointi ja oppositiolloinen interpellaatiotaktiikka — osoittavat, että kuluva riksmöte on intensiivisimmässä lainsäädäntövaiheessaan sitten enemmistöhallituksen muodostamisen vuonna 2022.
+
+**Hallitsevat mallit**:
+1. **Koalition toimituskyky**: Tidö toimittaa kolme esitystä ja saa KU-tuen perustuslakiuudistukselle — vahvat pre-vaalisignaalit lainsäädäntökompetenssista
+2. **Opposition asemoituminen**: V valitsee laajuuden (maahanmuutto + sosiaaliturva + palkka), kun taas S valitsee syvyyden (ESO-evidenssipohjainen svartarbets-interp) — täydentävät mutta ei-koordinoidut strategiat
+3. **Perustuslaillinen muutos**: KU34 on ainutlaatuinen modernissa ruotsalaisessa parlamentarismissa — aborttioikeustakuu yhdistettynä laajennettuun valtion rajoittamisvaltaan luo poliittisen paketin, josta molemmat blokit voivat vaatia poliittista voittoa
+
+---
+
+### 3 Välittömät päätökset
+
+1. **Toimituksellinen priorisointi**: KU34 johtaa iltaanalyysiä — historiallinen perustuslakiuudistusperspektiivi trumpffaa kaikki muut mietinnöt
+2. **PIR-seuranta**: Valvo pyytääkö Lagrådet lausuntoa HD03267:stä (todennäköisesti 2 viikon sisällä); jos niin tapahtuu, oikeusvaltion narratiivi vahvistuu merkittävästi
+3. **Vaalistrategia-signaalit**: Seuraa generoiko V:n kolmoisoffensiivi merkittävää mediahuomiota ja valitseeko S HD10482:n kampanjaviestintään
+
+---
+
+### Horisontaaliset laukaisijat
+
+| Päivämäärä | Tapahtuma | PIR |
+|-----------|----------|-----|
+| 2026-05-29 | Vastauksen määräaika HD10482 (Svantesson: harmaa talous) | PIR-ECON |
+| 2026-05-29 | Vastauksen määräaika HD10484, HD10486 (V sosiaaliturvainterp) | PIR-WEL |
+| Kesäkuu 2026 | Mietinnöt SfU (prop.263+264) — V-aloitteet odottavat kaatumista | PIR-MIG |
+| Kesä 2026 | TU-käsittely HD03250 (e-ID) | PIR-TECH |
+| Seuraava riksmöte | KU34 toinen käsittely (vaatii vaalien välissä) | PIR-CONST |
+| 2026-09-13 | Riksdagsvalet — kaikki yllä olevat muunnetaan vaaliviestinnäksi | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Flux de travail** : news-evening-analysis (Tier-C aggregation)  
+**Proximité électorale** : ≤6 mois → multiplicateur standard de 1,0× (bilan quotidien)
+
+---
+
+### BLUF — Conclusion en bref
+
+Le mardi 12 mai 2026 est l'une des journées parlementairement les plus chargées de la session riksmöte en cours, à l'approche des élections riksdagsval du 13 septembre 2026. Trois propositions gouvernementales (HD03250, HD03261, HD03267) font avancer l'agenda de compétence étatique de la coalition Tidö ; un rapport historique du comité constitutionnel (HD01KU34) sur le droit à l'avortement et la liberté d'association domine le débat constitutionnel ; le Vänsterpartiet mène une triple offensive parlementaire coordonnée contre la politique sociale et migratoire du gouvernement ; et la tactique d'interpellation de la Socialdemokraterna — une interpellation climatique retirée stratégiquement, une interpellation sur le travail non déclaré conservée avec des preuves ESO — démontre une gestion de l'information sophistiquée avant la campagne électorale. Dans l'ensemble, le 12 mai constitue un croisement de quatre lignes politiques : réforme constitutionnelle, sécurité nationale et numérisation, justice sociale/migration et libéralisation des marchés financiers.
+
+---
+
+### Points de renseignement critiques
+
+**1. HD01KU34 — Révision historique de la constitution** [CRITIQUE — L3 Classe de renseignement]
+- Le comité constitutionnel propose un droit à l'avortement protégé par la constitution (RF 2 kap.) combiné à des pouvoirs élargis pour restreindre la liberté d'association et la citoyenneté — un accord politique en deux volets
+- Nécessite **deux décisions du Riksdag avec des élections entre elles** (2026 + prochain Riksmöte)
+- SD et KD devraient formuler des réserves sur certaines parties ; V et MP poussent la section sur le droit à l'avortement
+- Potentiel constitutionnel explosif : la proposition de réforme RF la plus forte depuis la révision RF de 2010
+- WEP : 87% d'adoption (première décision) ; l'adoption effective de la deuxième décision dépend du résultat électoral
+
+**2. HD03267 — Menaces à la sécurité et expulsion** [HAUTE — L2+ Priorité]
+- La proposition élargit le rôle consultatif de la SÄPO et les motifs d'expulsion pour les "menaces à la sécurité qualifiées"
+- ECHR Art. 3, Art. 8, RF kap. 2 — l'avis du Lagrådet est probablement requis
+- C (Centerpartiet) est la voix clé : soutient la coalition sur la sécurité, mais un signal de l'état de droit est attendu
+- WEP : 85% d'adoption
+
+**3. Triple offensive de bien-être de V** [HAUTE — Stratégie électorale coordonnée]
+- HD10484 (Awad → Tenje/M) : Soins aux personnes âgées — quatre questions ministérielles sur le secteur à but lucratif
+- HD10486 (Awad → Britz/L) : Salaires égaux dans le secteur social — le "paquet salarial des femmes" de V (30 milliards SEK/10 ans)
+- HD024149+HD024150 (V contre prop. 263+264) : Opposition à la migration avec argumentation ECHR
+- **Signal analytique** : Bloc de positionnement électoral coordonné ; aucun soutien inter-blocs, mais de forts récits de campagne
+
+**4. Double tactique d'interpellation de S** [HAUTE — Signal stratégique]
+- HD10481 (Westlund : objectifs climatiques) retiré — S évite de donner au ministre L une plateforme de débat
+- HD10482 (Olsson : travail non déclaré) actif avec les preuves ESO 2026:1 (SEK 189 milliards/an en pertes liées à l'économie souterraine)
+- Date limite de réponse 29 mai — Svantesson sous pression pour présenter des propositions avant la pause estivale du Riksdag
+- WEP : 40–60% que le ministre des Finances présentera une proposition concrète avant la pause estivale
+
+**5. HD01CU31 — Réforme du marché locatif** [MOYENNE-HAUTE — Question électorale]
+- Droit à la location flexible avec loyers de marché et contrats indexés
+- Large opposition S + V ; SD potentiellement divisé (secteur de la construction vs base électorale des locataires)
+- Potentiel de friction au sein de la coalition M/L vs SD sur le rythme de la réforme
+- WEP : 72% d'adoption avec la majorité de la coalition
+
+---
+
+### Image de renseignement intégrée
+
+L'activité parlementaire du mardi reflète une opposition en accélération (V + S) et un gouvernement sous une surveillance pre-électorale croissante. Les cinq lignes parallèles — réforme constitutionnelle, législation sécuritaire, justice sociale, libéralisation des marchés et tactique d'interpellation de l'opposition — montrent que le Riksmöte actuel se trouve dans la phase législative la plus intensive depuis la formation du gouvernement majoritaire en 2022.
+
+**Tendances dominantes** :
+1. **Climat de livraison de la coalition** : Tidö livre trois propositions et obtient le soutien du KU pour la réforme constitutionnelle — forts signaux pre-électoraux de compétence législative
+2. **Positionnement de l'opposition** : V choisit la largeur (migration + bien-être + salaire) tandis que S choisit la profondeur (interpellation sur le travail non déclaré basée sur les preuves ESO) — stratégies complémentaires mais non coordonnées
+3. **Transformation constitutionnelle** : KU34 est unique dans le parlementarisme suédois moderne — la garantie du droit à l'avortement combinée à un pouvoir de restriction étatique élargi crée un ensemble politique dont les deux blocs peuvent revendiquer un bénéfice politique
+
+---
+
+### 3 Décisions immédiates
+
+1. **Priorisation éditoriale** : KU34 mène l'analyse du soir — la perspective historique de révision constitutionnelle l'emporte sur tous les autres rapports
+2. **Suivi PIR** : Surveiller si le Lagrådet est sollicité pour un avis sur HD03267 (probablement dans 2 semaines) ; si c'est le cas, le récit de l'état de droit sera considérablement renforcé
+3. **Signaux de stratégie électorale** : Surveiller si la triple offensive de V génère une couverture médiatique substantielle et si S choisit HD10482 pour la communication de campagne
+
+---
+
+### Déclencheurs à l'horizon
+
+| Date | Événement | PIR |
+|------|----------|-----|
+| 2026-05-29 | Date limite de réponse HD10482 (Svantesson : travail non déclaré) | PIR-ECON |
+| 2026-05-29 | Date limite de réponse HD10484, HD10486 (V interpell. bien-être) | PIR-WEL |
+| Juin 2026 | Rapports SfU (prop.263+264) — motions V prévues pour être rejetées | PIR-MIG |
+| Été 2026 | Traitement TU de HD03250 (e-ID) | PIR-TECH |
+| Prochain Riksmöte | KU34 deuxième traitement (nécessite des élections entre les deux) | PIR-CONST |
+| 2026-09-13 | Elections riksdagsval — tous les points ci-dessus convertis en communication électorale | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מנהלים — ניתוח ערב 12 במאי 2026
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-12  
+**סיווג**: 🟢 PUBLIC | **אמינות**: HIGH [Admiralty B2]  
+**זרימת עבודה**: news-evening-analysis (Tier-C aggregation)  
+**קרבה לבחירות**: ≤6 חודשים → מכפיל סטנדרטי 1.0× (סקירה יומית)
+
+---
+
+### BLUF — סיכום תחתית השורה
+
+יום שלישי, 12 במאי 2026, הוא אחד הימים הפרלמנטרים הצפופים ביותר במושב הריקסמוטה הנוכחי לפני בחירות הריקסדאג ב-13 בספטמבר 2026. שלוש הצעות ממשלתיות (HD03250, HD03261, HD03267) מקדמות את אג'נדת יכולות המדינה של קואליציית Tidö; תקנון היסטורי של ועדת החוקה (HD01KU34) בנושא זכות ההפלה וחופש ההתאגדות שולט בדיון החוקתי; Vänsterpartiet מוביל התקפה פרלמנטרית משולשת מתואמת נגד מדיניות הרווחה וההגירה של הממשלה; ואסטרטגיית הביניים של Socialdemokraterna — ביניים אקלים שנמשך אסטרטגית, ביניים עבודה בשחור שנשמר עם ראיות ESO — מדגימה ניהול מידע מתוחכם לפני הקמפיין הבחירותי. בסך הכל, 12 במאי מהווה צומת של ארבעה קווים פוליטיים: רפורמה חוקתית, ביטחון לאומי ודיגיטליזציה, צדק חברתי/הגירה ולִיבֵּרָלִיזַציה של שוקי ההון.
+
+---
+
+### נקודות מודיעין קריטיות
+
+**1. HD01KU34 — מרוויזיה חוקתית היסטורית** [קריטי — L3 דרגת מודיעין]
+- ועדת החוקה מציעה זכות הפלה מוגנת חוקתית (RF 2 kap.) בשילוב סמכויות מורחבות להגבלת חופש ההתאגדות והאזרחות — עסקה פוליטית דו-חבילתית
+- דורשת **שני החלטות ריקסדאג עם בחירות ביניהן** (2026 + מושב הבא)
+- SD ו-KD צפויים להביע הסתייגויות על חלקים; V ו-MP מניעים את סעיף זכות ההפלה
+- כוח חוקתי פוצץ: הצעת הרפורמה RF החזקה ביותר מאז מרוויזיית RF של 2010
+- WEP: 87% אישור (החלטה ראשונה); האישור האפקטיבי של ההחלטה השנייה תלוי בתוצאת הבחירות
+
+**2. HD03267 — איומי ביטחון וגירוש** [גבוה — L2+ עדיפות]
+- ההצעה מרחיבה את תפקידה הייעוצי של SÄPO ואת עילות הגירוש של "איומי ביטחון מוסמכים"
+- ECHR Art. 3, Art. 8, RF kap. 2 — חוות דעת של Lagrådet כנראה נדרשת
+- C (Centerpartiet) הוא הקול המרכזי: תומך בקואליציה בביטחון, אך צפויה אות שלטון חוק
+- WEP: 85% אישור
+
+**3. המתקפה המשולשת של V על הרווחה** [גבוה — אסטרטגיה בחירותית מתואמת]
+- HD10484 (Awad → Tenje/M): טיפול בקשישים — ארבע שאלות שרים על הסקטור הרווחי
+- HD10486 (Awad → Britz/L): שכר שווה בשירותי הרווחה — "חבילת השכר לנשים" של V (30 מיליארד SEK/10 שנים)
+- HD024149+HD024150 (V נגד prop. 263+264): אופוזיציה להגירה עם טיעוני ECHR
+- **אות אנליטי**: בלוק מיצוב בחירתי מתואם; אין תמיכה חוצת-בלוקים, אבל נרטיבי קמפיין חזקים
+
+**4. טקטיקת הביניים הכפולה של S** [גבוה — אות אסטרטגי]
+- HD10481 (Westlund: יעדי אקלים) נמשך — S נמנעת ממתן פלטפורמת דיון לשר L
+- HD10482 (Olsson: עבודה בשחור) פעיל עם ראיות ESO 2026:1 (SEK 189 מיליארד/שנה הפסדים מכלכלת הצל)
+- מועד תגובה אחרון 29 במאי — Svantesson תחת לחץ להגיש הצעות לפני חופשת הקיץ של הריקסדאג
+- WEP: 40–60% שמשר האוצר יגיש הצעה קונקרטית לפני חופשת הקיץ
+
+**5. HD01CU31 — רפורמת שוק השכירות** [בינוני-גבוה — סוגיה בחירותית]
+- שכירות גמישה עם שכר דירה שוקי וחוזים צמודים
+- אופוזיציה רחבה S + V; SD עלול להיות מפולג (ענף הבנייה לעומת בסיס מצביעי שוכרים)
+- פוטנציאל לחיכוך בקואליציה M/L מול SD על קצב הרפורמה
+- WEP: 72% אישור עם רוב קואליציוני
+
+---
+
+### תמונת מודיעין משולבת
+
+הפעילות הפרלמנטרית ביום שלישי משקפת אופוזיציה במואץ (V + S) וממשלה תחת בחינה גוברת לפני הבחירות. חמשת הנתיבים המקבילים — רפורמה חוקתית, חקיקת ביטחון, צדק חברתי, לִיבֵּרָלִיזַציה של שוק וטקטיקת ביניים אופוזיציונית — מראים שהריקסמוטה הנוכחית נמצאת בשלב החקיקה האינטנסיבי ביותר מאז הקמת ממשלת הרוב ב-2022.
+
+**דפוסים שולטים**:
+1. **אקלים האספקה של הקואליציה**: Tidö מספקת שלוש הצעות ומקבלת תמיכת KU לרפורמה חוקתית — אותות חזקות לפני בחירות על יכולת חקיקתית
+2. **מיצוב האופוזיציה**: V בוחרת ברוחב (הגירה + רווחה + שכר) בעוד S בוחרת בעומק (ביניים עבודה בשחור מבוסס ראיות ESO) — אסטרטגיות משלימות אך לא מתואמות
+3. **טרנספורמציה חוקתית**: KU34 ייחודי בפרלמנטריזם השוודי המודרני — ערבות זכות הפלה בשילוב סמכות הגבלה ממשלתית מורחבת יוצרת חבילה פוליטית שממנה שני הבלוקים יכולים לתבוע רווח פוליטי
+
+---
+
+### 3 החלטות מיידיות
+
+1. **עדיפות עריכה**: KU34 מוביל את ניתוח הערב — פרספקטיבת מרוויזיית החוקה ההיסטורית גוברת על כל שאר הדוחות
+2. **מעקב PIR**: לעקוב אם Lagrådet מתבקש לחוות דעתו בנוגע ל-HD03267 (כנראה תוך שבועיים); אם כן, נרטיב שלטון החוק יתחזק משמעותית
+3. **אותות אסטרטגיה בחירותית**: לעקוב אם המתקפה המשולשת של V מייצרת סיקור תקשורתי משמעותי ואם S בוחרת ב-HD10482 לתקשורת קמפיין
+
+---
+
+### טריגרי אופק
+
+| תאריך | אירוע | PIR |
+|-------|-------|-----|
+| 2026-05-29 | מועד תגובה אחרון HD10482 (Svantesson: עבודה בשחור) | PIR-ECON |
+| 2026-05-29 | מועד תגובה אחרון HD10484, HD10486 (V ביניים רווחה) | PIR-WEL |
+| יוני 2026 | דוחות SfU (prop.263+264) — הצעות V צפויות ליפול | PIR-MIG |
+| קיץ 2026 | טיפול TU ב-HD03250 (e-ID) | PIR-TECH |
+| ריקסמוטה הבאה | טיפול שני ב-KU34 (דורש בחירות ביניים) | PIR-CONST |
+| 2026-09-13 | בחירות הריקסדאג — כל האמור לעיל מומר לתקשורת בחירותית | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-05-12  
+**分類**: 🟢 PUBLIC | **信頼度**: HIGH [Admiralty B2]  
+**ワークフロー**: news-evening-analysis (Tier-C aggregation)  
+**選挙への近接度**: ≤6ヶ月 → 標準乗数1.0×（日次レビュー）
+
+---
+
+### BLUF — 要点まとめ
+
+2026年5月12日火曜日は、2026年9月13日のリクスダーグ（Riksdag）選挙を前に、現在進行中のリクスメーテ（Riksmöte）において議会活動が最も集中した日の一つです。三つの政府提案（HD03250、HD03261、HD03267）がティドー（Tidö）連立政権の国家能力アジェンダを推進し、中絶権と結社の自由に関する歴史的な憲法委員会報告書（HD01KU34）が憲法論争を支配し、ヴェンステルパーティエット（Vänsterpartiet）が政府の福祉・移民政策に対して三方面からの調整された議会攻勢を展開し、ソシアルデモクラテルナ（Socialdemokraterna）の質問（interpellation）戦術 — 気候質問は戦略的に撤回、ESO証拠を持つ闇労働質問は維持 — が選挙キャンペーン前の洗練された情報管理を示しています。総じて5月12日は四つの政治的ラインの交差点を形成しています：憲法改革、国家安全保障とデジタル化、社会的公正/移民、金融市場自由化。
+
+---
+
+### 重要インテリジェンスポイント
+
+**1. HD01KU34 — 歴史的憲法改正** [クリティカル — L3 インテリジェンスグレード]
+- 憲法委員会は憲法的に保護された中絶権（RF 2 kap.）を、結社の自由と市民権の制限拡大権限と組み合わせて提案 — 政治的二段階パッケージ合意
+- **リクスダーグ選挙を挟んだ二つのリクスダーグ決定**が必要（2026年＋次のリクスメーテ）
+- SDとKDが一部に留保を表明する見込み；VとMPが中絶権のセクションを推進
+- 憲法的爆発力：2010年RF改正以来最も強力なRF改革提案
+- WEP: 87%可決（最初の決定）；第二決定の実質的な可決は選挙結果に依存
+
+**2. HD03267 — 安全保障上の脅威と国外追放** [高 — L2+ 優先度]
+- 提案はSÄPOの諮問的役割と「適格安全保障上の脅威」の国外追放根拠を拡大
+- ECHR Art. 3、Art. 8、RF kap. 2 — ラグローデット（Lagrådet）の意見が必要な可能性が高い
+- C（Centerpartiet）が鍵となる票：安全保障では連立を支持するが法の支配シグナルが予想される
+- WEP: 85%可決
+
+**3. Vの三重福祉攻勢** [高 — 調整された選挙戦略]
+- HD10484 (Awad → Tenje/M)：高齢者介護 — 利益追求型セクターに関する四つの大臣質問
+- HD10486 (Awad → Britz/L)：福祉における同一賃金 — Vの「女性賃金向上パッケージ」（300億SEK/10年）
+- HD024149+HD024150 (V対prop. 263+264)：ECHRの論拠を持つ移民反対
+- **分析的シグナル**：調整された選挙ポジショニングブロック；クロスブロック支持はないが強力なキャンペーン・ナラティブ
+
+**4. Sの二重質問戦術** [高 — 戦略的シグナル]
+- HD10481 (Westlund: 気候目標) 撤回 — SはL大臣に討論プラットフォームを与えることを回避
+- HD10482 (Olsson: 闇労働) ESO 2026:1証拠（年間1890億SEKの闇経済損失）で有効
+- 回答期限5月29日 — スバンテッソン（Svantesson）がリクスダーグ夏季休暇前に提案を提出するよう圧力
+- WEP: 財務大臣が夏季休暇前に具体的な提案を提出する確率40〜60%
+
+**5. HD01CU31 — 賃貸市場改革** [中高 — 選挙課題]
+- 市場家賃と指数連動契約による柔軟な賃貸
+- S＋Vの幅広い反対；SDは建設業界対賃貸有権者基盤で分裂の可能性
+- M/L対SDの改革ペースをめぐる連立摩擦の可能性
+- WEP: 72%可決（連立多数決）
+
+---
+
+### 統合インテリジェンス像
+
+火曜日の議会活動は加速する野党（V＋S）と増大する選挙前監視の下にある政府を反映しています。五つの並行するテーマ — 憲法改革、安全保障立法、社会的公正、市場自由化、野党の質問戦術 — は、現在のリクスメーテが2022年の多数党政府形成以来最も集中した立法段階にあることを示しています。
+
+**支配的パターン**：
+1. **連立の実行環境**：Tidöは三つの提案を実現し憲法改革のKU支持を得る — 立法能力の強力な選挙前シグナル
+2. **野党のポジショニング**：Vは幅（移民＋福祉＋賃金）を選び、SはESO証拠ベースの闇労働質問で深みを選ぶ — 補完的だが非調整的な戦略
+3. **憲法的変革**：KU34は近代スウェーデン議会政治において独自 — 中絶権保証と拡大された国家制限権限の組み合わせが、両ブロックが政治的利益を主張できる政治パッケージを生み出す
+
+---
+
+### 3つの即時決定
+
+1. **編集上の優先順位付け**：KU34が夜間分析をリード — 歴史的憲法改正の視点が他のすべての報告書を上回る
+2. **PIRフォローアップ**：ラグローデットがHD03267に関して意見を求められるか監視（おそらく2週間以内）；その場合、法の支配ナラティブが大幅に強化される
+3. **選挙戦略シグナル**：Vの三重攻勢が実質的なメディア報道を生み出すかどうか、またSがキャンペーンコミュニケーションにHD10482を選ぶかどうかを監視
+
+---
+
+### ホライゾン・トリガー
+
+| 日付 | 出来事 | PIR |
+|------|--------|-----|
+| 2026-05-29 | HD10482回答期限（Svantesson: 闇労働） | PIR-ECON |
+| 2026-05-29 | HD10484、HD10486回答期限（V福祉interpellation） | PIR-WEL |
+| 2026年6月 | SfU報告書（prop.263+264）— V動議が否決される見込み | PIR-MIG |
+| 2026年夏 | HD03250（e-ID）のTU審議 | PIR-TECH |
+| 次のリクスメーテ | KU34第二審議（間に選挙が必要） | PIR-CONST |
+| 2026-09-13 | リクスダーグ選挙 — 上記すべてが選挙コミュニケーションに変換 | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-12  
+**분류**: 🟢 PUBLIC | **신뢰도**: HIGH [Admiralty B2]  
+**워크플로**: news-evening-analysis (Tier-C aggregation)  
+**선거 근접성**: ≤6개월 → 표준 배수 1.0×（일일 검토）
+
+---
+
+### BLUF — 핵심 결론
+
+2026년 5월 12일 화요일은 2026년 9월 13일 릭스다그(Riksdag) 선거를 앞두고 현재 진행 중인 릭스뫼테(Riksmöte)에서 의회 활동이 가장 밀집된 날 중 하나입니다. 세 개의 정부 법안(HD03250, HD03261, HD03267)이 티되(Tidö) 연립의 국가 역량 의제를 추진하고 있으며, 낙태권과 결사의 자유에 관한 역사적인 헌법위원회 보고서(HD01KU34)가 헌법 논쟁을 지배하고 있습니다. 뵌스테르파르티에트(Vänsterpartiet)는 정부의 복지 및 이민 정책에 대한 조율된 세 방향 의회 공세를 이끌고 있으며, 소시알데모크라테르나(Socialdemokraterna)의 질문(interpellation) 전술 — 기후 질문은 전략적으로 철회, ESO 증거가 있는 불법 노동 질문은 유지 — 은 선거 캠페인을 앞둔 정교한 정보 관리를 보여줍니다. 전체적으로 5월 12일은 네 가지 정치 라인의 교차점을 형성합니다: 헌법 개혁, 국가 안보와 디지털화, 사회 정의/이민, 금융 시장 자유화.
+
+---
+
+### 핵심 정보 포인트
+
+**1. HD01KU34 — 역사적 헌법 개정** [긴급 — L3 정보 등급]
+- 헌법위원회는 결사의 자유와 시민권 제한 권한 확대와 결합된 헌법적으로 보호된 낙태권(RF 2 kap.)을 제안 — 정치적 이중 패키지 합의
+- **릭스다그 선거를 사이에 둔 두 번의 릭스다그 결정** 필요(2026년 + 다음 릭스뫼테)
+- SD와 KD가 일부 조항에 이의를 제기할 것으로 예상; V와 MP가 낙태권 섹션 추진
+- 헌법적 폭발력: 2010년 RF 개정 이후 가장 강력한 RF 개혁 제안
+- WEP: 87% 통과(첫 번째 결정); 두 번째 결정의 실질적 통과는 선거 결과에 따라 달라짐
+
+**2. HD03267 — 보안 위협 및 추방** [높음 — L2+ 우선순위]
+- 법안은 SÄPO의 자문 역할과 "자격을 갖춘 보안 위협"의 추방 근거 확대
+- ECHR Art. 3, Art. 8, RF kap. 2 — 라그로데트(Lagrådet) 의견이 필요할 가능성 높음
+- C(Centerpartiet)가 핵심 표: 보안 문제에서 연립 지지, 하지만 법치 신호 예상
+- WEP: 85% 통과
+
+**3. V의 삼중 복지 공세** [높음 — 조율된 선거 전략]
+- HD10484 (Awad → Tenje/M): 노인 돌봄 — 영리 부문에 관한 네 가지 장관 질문
+- HD10486 (Awad → Britz/L): 복지 분야 동일 임금 — V의 "여성 임금 향상 패키지" (300억 SEK/10년)
+- HD024149+HD024150 (V 대 prop. 263+264): ECHR 논거를 활용한 이민 반대
+- **분석적 신호**: 조율된 선거 포지셔닝 블록; 교차 블록 지지는 없지만 강력한 캠페인 내러티브
+
+**4. S의 이중 질문 전술** [높음 — 전략적 신호]
+- HD10481 (Westlund: 기후 목표) 철회 — S는 L 장관에게 토론 플랫폼 제공을 회피
+- HD10482 (Olsson: 불법 노동) ESO 2026:1 증거(연간 1,890억 SEK 지하경제 손실)로 활성화
+- 답변 마감일 5월 29일 — 스반테손(Svantesson)이 릭스다그 여름 휴회 전 제안 제출 압박
+- WEP: 재무장관이 여름 휴회 전 구체적 제안을 제출할 확률 40~60%
+
+**5. HD01CU31 — 임대 시장 개혁** [중간-높음 — 선거 이슈]
+- 시장 임대료와 인덱스 연동 계약을 갖춘 유연한 임대 제도
+- S + V의 폭넓은 반대; SD는 건설 업계 대 임차인 유권자 기반으로 분열 가능성
+- M/L 대 SD의 개혁 속도를 둘러싼 연립 마찰 가능성
+- WEP: 72% 통과(연립 과반수)
+
+---
+
+### 통합 정보 그림
+
+화요일의 의회 활동은 가속화되는 야당(V + S)과 증가하는 선거 전 감시를 받는 정부를 반영합니다. 다섯 가지 병렬 트랙 — 헌법 개혁, 안보 법제화, 사회 정의, 시장 자유화, 야당의 질문 전술 — 은 현재 릭스뫼테가 2022년 과반수 정부 구성 이후 가장 집중적인 입법 단계에 있음을 보여줍니다.
+
+**지배적 패턴**:
+1. **연립의 실행 환경**: Tidö는 세 개의 법안을 실현하고 헌법 개혁에 대한 KU 지지를 확보 — 입법 역량에 대한 강력한 선거 전 신호
+2. **야당 포지셔닝**: V는 폭(이민 + 복지 + 임금)을 선택하고, S는 ESO 증거 기반 불법 노동 질문으로 깊이를 선택 — 보완적이지만 비조율적인 전략
+3. **헌법적 변혁**: KU34는 근대 스웨덴 의회 정치에서 독특함 — 낙태권 보장과 확대된 국가 제한 권한의 결합이 양 블록 모두 정치적 이익을 주장할 수 있는 정치 패키지 창출
+
+---
+
+### 3가지 즉각적 결정
+
+1. **편집 우선순위 설정**: KU34가 저녁 분석을 선도 — 역사적 헌법 개정 관점이 다른 모든 보고서를 능가
+2. **PIR 후속 조치**: 라그로데트가 HD03267에 관한 의견을 요청받는지 모니터링(아마도 2주 내); 그렇게 되면 법치 내러티브가 크게 강화됨
+3. **선거 전략 신호**: V의 삼중 공세가 실질적인 언론 보도를 생성하는지, S가 캠페인 커뮤니케이션에 HD10482를 선택하는지 모니터링
+
+---
+
+### 수평선 트리거
+
+| 날짜 | 사건 | PIR |
+|------|------|-----|
+| 2026-05-29 | HD10482 답변 마감일(Svantesson: 불법 노동) | PIR-ECON |
+| 2026-05-29 | HD10484, HD10486 답변 마감일(V 복지 질문) | PIR-WEL |
+| 2026년 6월 | SfU 보고서(prop.263+264) — V 동의안 부결 예상 | PIR-MIG |
+| 2026년 여름 | HD03250(e-ID) TU 심의 | PIR-TECH |
+| 다음 릭스뫼테 | KU34 두 번째 심의(중간 선거 필요) | PIR-CONST |
+| 2026-09-13 | 릭스다그 선거 — 위의 모든 사항이 선거 커뮤니케이션으로 전환 | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-12  
+**Classificatie**: 🟢 PUBLIC | **Betrouwbaarheid**: HIGH [Admiralty B2]  
+**Workflow**: news-evening-analysis (Tier-C aggregation)  
+**Verkiezingsproximiteit**: ≤6 maanden → 1,0× standaardmultiplikator (dagelijkse terugblik)
+
+---
+
+### BLUF — Conclusie in het kort
+
+Dinsdag 12 mei 2026 is een van de parlementair drukste dagen van het lopende riksmöte vóór de riksdagsval-verkiezingen van 13 september 2026. Drie regeringsproposities (HD03250, HD03261, HD03267) bevorderen de staatscompetentieagenda van de Tidö-coalitie; een historisch advies van de constitutionele commissie (HD01KU34) over het recht op abortus en de vrijheid van vereniging domineert het constitutionele debat; de Vänsterpartiet leidt een gecoördineerde drievoudige parlementaire aanval op het welzijns- en migratiebeleid van de regering; en de interpellatiestrategie van de Socialdemokraterna — een klimaatinterpellatie strategisch ingetrokken, een svartarbets-interpellatie gehandhaafd met ESO-bewijs — demonstreert een geavanceerd informatiebeheer voor de verkiezingscampagne. Alles bij elkaar vormt 12 mei een kruispunt van vier politieke lijnen: constitutionele hervorming, staatsveiligheid en digitalisering, sociale rechtvaardigheid/migratie en financiële marktliberalisering.
+
+---
+
+### Kritieke inlichtingenpunten
+
+**1. HD01KU34 — Historische grondwetsherziening** [KRITIEK — L3 Inlichtingenklasse]
+- De grondwetscommissie stelt een grondwettelijk beschermd abortusrecht voor (RF 2 kap.) gecombineerd met uitgebreide bevoegdheden om de vrijheid van vereniging en het staatsburgerschap te beperken — een politiek tweepakketenakkoord
+- Vereist **twee Riksdag-besluiten met Riksdag-verkiezingen ertussen** (2026 + volgende Riksmöte)
+- SD en KD zullen naar verwachting voorbehouden formuleren op onderdelen; V en MP drijven het abortusrechtgedeelte aan
+- Grondwettelijke explosiviteit: het sterkste RF-hervormingsvoorstel sinds de RF-herziening van 2010
+- WEP: 87% aanvaarding (eerste besluit); effectieve aanvaarding van het tweede besluit hangt af van de verkiezingsuitslag
+
+**2. HD03267 — Veiligheidsbedreigingen en uitzetting** [HOOG — L2+ Prioriteit]
+- Propositie breidt de adviserende rol van SÄPO en de gronden voor uitzetting van "gekwalificeerde veiligheidsbedreigingen" uit
+- ECHR Art. 3, Art. 8, RF kap. 2 — het advies van Lagrådet is waarschijnlijk vereist
+- C (Centerpartiet) is de sleutelstem: steunt de coalitie op veiligheid, maar een rechtsstaaatsignaal wordt verwacht
+- WEP: 85% aanvaarding
+
+**3. V's drievoudige welzijnsaanval** [HOOG — Gecoördineerde verkiezingsstrategie]
+- HD10484 (Awad → Tenje/M): Ouderenzorg — vier ministervragen over de winstgedreven sector
+- HD10486 (Awad → Britz/L): Gelijk loon in de welzijnssector — V's "vrouwensalarispakket" (30 mrd. SEK/10 jaar)
+- HD024149+HD024150 (V tegen prop. 263+264): Migratieopposie met ECHR-argumentatie
+- **Analytisch signaal**: Gecoördineerd verkiezingspositioneringsblok; geen cross-bloc-steun, maar sterke campagneverhalen
+
+**4. S's dubbele interpellatiestrategie** [HOOG — Strategisch signaal]
+- HD10481 (Westlund: klimaatdoelstellingen) ingetrokken — S vermijdt de L-minister een debatplatform te geven
+- HD10482 (Olsson: zwart werk) actief met ESO 2026:1-bewijs (SEK 189 mrd./jaar aan verliezen door zwarte economie)
+- Antwoorddeadline 29 mei — Svantesson staat onder druk om voorstellen in te dienen vóór het zomerreces van het Riksdag
+- WEP: 40–60% dat de minister van Financiën een concreet voorstel indient vóór het zomerreces
+
+**5. HD01CU31 — Huurmarkthervorming** [MIDDEN-HOOG — Verkiezingskwestie]
+- Flexibele huurovereenkomst met marktconforme huurprijzen en geïndexeerde contracten
+- Brede oppositie S + V; SD potentieel verdeeld (bouwsector vs. huurderskiezersbasis)
+- Potentieel voor coalitiewrijving M/L vs. SD over het hervormingstempo
+- WEP: 72% aanvaarding met coalitieameerderheid
+
+---
+
+### Geïntegreerd inlichtingenbeeld
+
+De parlementaire activiteit van dinsdag weerspiegelt een versnellende oppositie (V + S) en een regering onder toenemend pre-verkiezingstoezicht. De vijf parallelle lijnen — constitutionele hervorming, veiligheidswetgeving, sociale rechtvaardigheid, marktliberalisering en oppositionele interpellatiestrategie — tonen aan dat het huidige Riksmöte zich in de meest intensieve wetgevingsfase bevindt sinds de vorming van de meerderheidsregering in 2022.
+
+**Dominante patronen**:
+1. **Leveringsklimaat van de coalitie**: Tidö levert drie proposities en krijgt KU-steun voor constitutionele hervorming — sterke pre-verkiezingssignalen van wetgevende bekwaamheid
+2. **Positionering van de oppositie**: V kiest voor breedte (migratie + welzijn + loon), terwijl S kiest voor diepte (svartarbets-interp gebaseerd op ESO-bewijs) — complementaire maar niet-gecoördineerde strategieën
+3. **Constitutionele transformatie**: KU34 is uniek in het moderne Zweedse parlementarisme — abortusrechtgarantie gecombineerd met uitgebreide staatsbeperkingsbevoegdheid creëert een politiek pakket waarvan beide blokken politieke winst kunnen claimen
+
+---
+
+### 3 Onmiddellijke beslissingen
+
+1. **Redactionele prioritering**: KU34 leidt de avondanalyse — het historische grondwetsherzieningsperspectief overtreft alle andere rapporten
+2. **PIR-follow-up**: Monitoren of Lagrådet om een advies over HD03267 wordt gevraagd (waarschijnlijk binnen 2 weken); als dat het geval is, wordt het rechtsstaaatsnarratief aanzienlijk versterkt
+3. **Verkiezingsstrategiesignalen**: Monitoren of V's drievoudige aanval substantiële mediaberichtgeving genereert en of S HD10482 kiest voor campagnecommunicatie
+
+---
+
+### Horizontale triggers
+
+| Datum | Gebeurtenis | PIR |
+|-------|------------|-----|
+| 2026-05-29 | Antwoorddeadline HD10482 (Svantesson: zwart werk) | PIR-ECON |
+| 2026-05-29 | Antwoorddeadline HD10484, HD10486 (V welzijnsinterp) | PIR-WEL |
+| Juni 2026 | Adviezen SfU (prop.263+264) — V-moties verwacht te vallen | PIR-MIG |
+| Zomer 2026 | TU-behandeling HD03250 (e-ID) | PIR-TECH |
+| Volgende Riksmöte | KU34 tweede behandeling (vereist verkiezingen ertussen) | PIR-CONST |
+| 2026-09-13 | Riksdagsval-verkiezingen — alle bovenstaande omgezet in verkiezingscommunicatie | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-12  
+**Klassifisering**: 🟢 PUBLIC | **Konfidens**: HIGH [Admiralty B2]  
+**Arbeidsflyt**: news-evening-analysis (Tier-C aggregation)  
+**Valgproximitet**: ≤6 måneder → 1,0× standardmultiplikator (daglig gjennomgang)
+
+---
+
+### BLUF — Konklusjon kort fortalt
+
+Tirsdag 12. mai 2026 er en av de parlamentarisk tettest belastede dagene i inneværende riksmøte foran riksdagsvalget 13. september 2026. Tre regjeringsproposisjoner (HD03250, HD03261, HD03267) fremmer Tidö-koalisjonens statskompetanseagenda; en historisk grunnlovskomitébetenkning (HD01KU34) om aborttrettigheter og foreningsfrihet dominerer konstitusjonell debatt; Vänsterpartiet fører en koordinert tredobbel parlamentarisk offensiv mot regjeringens velferds- og migrasjonspolitikk; og Socialdemokraternas interpellasjonsstrategi — én klimatinterpellasjon strategisk trukket tilbake, én svartarbets-interpellasjon bevart med ESO-evidens — demonstrerer sofistikert informasjonshåndtering foran valgkampen. Samlet sett utgjør 12. mai et kryss av fire politiske linjer: forfatningsreform, statssikkerhet og digitalisering, sosial rettferdighet/migrasjon og finansiell markedsliberalisering.
+
+---
+
+### Kritiske etterretningspunkter
+
+**1. HD01KU34 — Historisk grunnlovsrevisjon** [KRITISK — L3 Etterretningsklasse]
+- Konstitusjonskomiteen foreslår grunnlovsvernet aborttrettighet (RF 2 kap.) kombinert med utvidede begrensningsfullmakter for foreningsfrihet og statsborgerskap — en politisk pakkeløsning
+- Krever **to riksdagsbeslutninger med riksdagsvalg imellom** (2026 + neste riksmøte)
+- SD og KD forventes å ta forbehold mot deler; V og MP driver avsnittet om aborttrettigheter
+- Konstitusjonell sprengkraft: det sterkeste RF-reformforslaget siden RF-revisjonen i 2010
+- WEP: 87% vedtakelse (første beslutning); effektiv vedtakelse av den andre beslutningen avhenger av valgresultatet
+
+**2. HD03267 — Sikkerhetstrusler og utvisning** [HØY — L2+ Prioritet]
+- Proposisjon utvider SÄPOs rådgivende rolle og utvisningsgrunnlagene for "kvalifiserte sikkerhetstrusler"
+- ECHR Art. 3, Art. 8, RF kap. 2 — Lagrådets uttalelse er sannsynligvis påkrevet
+- C (Centerpartiet) er nøkkelstemme: støtter koalisjonen om sikkerhet, men rettsstatssignal forventes
+- WEP: 85% vedtakelse
+
+**3. V's tredoble velferdsoffensiv** [HØY — Koordinert valgstrategi]
+- HD10484 (Awad → Tenje/M): Eldreomsorgen — fire ministerspørsmål om profittdrevet sektor
+- HD10486 (Awad → Britz/L): Likelønn i velferd — V's "kvinneløftpakke" (30 mrd. SEK/10 år)
+- HD024149+HD024150 (V mot prop. 263+264): Migrasjonsopposisjon med ECHR-argumentasjon
+- **Analytisk signal**: Koordinert valgposisjoneringsblokk; ingen cross-bloc-støtte, men sterke kampanjenarrativer
+
+**4. S's doble interpellasjonsstrategi** [HØY — Strategisk signal]
+- HD10481 (Westlund: klimatmål) trukket tilbake — S unngår å gi L-ministeren en debattplattform
+- HD10482 (Olsson: svart arbeid) aktivt med ESO 2026:1-evidens (SEK 189 mrd./år i tap til svart økonomi)
+- Svarsfrist 29. mai — Svantesson under press for å legge frem forslag før Riksdagens sommerferie
+- WEP: 40–60% at finansministeren legger frem konkret forslag før sommerferien
+
+**5. HD01CU31 — Leiemarkedsreform** [MIDDELS-HØY — Valgspørsmål]
+- Fleksibel leielov med markedsleie og indekserte avtaler
+- Bred opposisjon S + V; SD potensielt splittet (byggebransjen vs. leieboervälgerbase)
+- Potensiale for koalisjonsfraksjon M/L vs. SD om reformtempo
+- WEP: 72% vedtakelse med koalisjonsflertall
+
+---
+
+### Integrert etterretningsbilde
+
+Tirsdagens parlamentariske aktivitet gjenspeiler en opposisjon i akselerasjon (V + S) og en regjering under økende pre-valgranskning. De fem parallelle sporene — forfatningsreform, sikkerhetslovgivning, sosial rettferdighet, markedsliberalisering og opposisjonell interpellasjonsstrategi — viser at inneværende riksmøte befinner seg i den mest intensive lovgivningsfasen siden flertallsregjeringen ble dannet i 2022.
+
+**Dominerende mønstre**:
+1. **Koalisjonens leveringsklima**: Tidö leverer tre proposisjoner og oppnår KU-støtte til forfatningsreform — sterke pre-valsignaler om lovgivningskompetanse
+2. **Opposisjonens posisjonering**: V velger bredde (migrasjon + velferd + lønn), mens S velger dybde (ESO-evidensbasert svartarbets-interp) — komplementære men ikke-koordinerte strategier
+3. **Konstitusjonell transformasjon**: KU34 er unik i moderne svensk parlamentarisme — aborttrettighetsgaranti kombinert med utvidet statlig begrensningsfullmakt skaper en politisk pakke som begge blokker kan hevde politisk gevinst av
+
+---
+
+### 3 Umiddelbare beslutninger
+
+1. **Redaksjonell prioritering**: KU34 leder kveldsanalysen — det historiske grunnlovsrevisjonsperspektivet trumfer alle øvrige betenkninger
+2. **PIR-oppfølging**: Overvåk om Lagrådet anmodes om å uttale seg om HD03267 (sannsynligvis innen 2 uker); hvis det skjer, styrkes rettsstatsnarrativet betydelig
+3. **Valgstrategi-signaler**: Overvåk om V's tredoble offensiv genererer substansiel mediedekning, og om S velger å bruke HD10482 i kampanjekommunikasjon
+
+---
+
+### Horisontale utløsere
+
+| Dato | Hendelse | PIR |
+|------|---------|-----|
+| 2026-05-29 | Svarsfrist HD10482 (Svantesson: svart arbeid) | PIR-ECON |
+| 2026-05-29 | Svarsfrist HD10484, HD10486 (V velferdsinterp) | PIR-WEL |
+| Juni 2026 | Betenkninger SfU (prop.263+264) — V-motioner forventes å falle | PIR-MIG |
+| Sommer 2026 | TU-behandling HD03250 (e-ID) | PIR-TECH |
+| Neste riksmøte | KU34 andre behandling (krever valg imellom) | PIR-CONST |
+| 2026-09-13 | Riksdagsvalget — alle ovenstående konverteres til valgkommunikasjon | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-12  
+**Klassificering**: 🟢 PUBLIC | **Konfidens**: HÖG [Admiralty B2]  
+**Arbetsflöde**: news-evening-analysis (Tier-C aggregation)  
+**Valproximitet**: ≤6 månader → 1,0× standardmultiplikator (dagens genomgång)
+
+---
+
+### BLUF — Slutsats i korthet
+
+Tisdagen den 12 maj 2026 är en av den innevarande riksmötets parlamentariskt tätaste dagar inför riksdagsvalet den 13 september 2026. Tre regeringspropositioner (HD03250, HD03261, HD03267) avancerar Tidökoalitionens statskompetensagenda; ett historiskt grundlagsbetänkande (HD01KU34) om aborträtt och föreningsfrihet dominerar konstitutionell debatt; Vänsterpartiet driver en koordinerad trefaldig parlamentarisk offensiv mot regeringens välfärds- och migrationspolitik; och Socialdemokraternas interpellationstaktik — ett klimatinterp tillbakadraget strategiskt, ett svartarbets-interp bevarat med ESO-evidens — demonstrerar ett sofistikerat pre-valkampanj-informationsmanagement. Sammantaget utgör 12 maj ett korsande av fyra politiska linjer: konstitutionell reform, statlig säkerhet och digitalisering, social rättvisa/migration, och finansiell marknadsliberalisering.
+
+---
+
+### Kritiska underrättelsepunkter
+
+**1. HD01KU34 — Historisk grundlagsrevision** [KRITISK — L3 Underrättelseklass]
+- Konstitutionsutskottet föreslår grundlagsskyddad aborträtt (RF 2 kap.) kombinerat med utökade begränsningsmöjligheter av föreningsfrihet och medborgarskap — ett politiskt tvåpacketsavtal
+- Kräver **två riksdagsbeslut med riksdagsval emellan** (2026 + nästa riksmöte)
+- SD och KD förväntas reservera sig på delar; V och MP driver aborträttsavsnittet
+- Konstitutionell sprängkraft: det starkaste RF-reformförslaget sedan 2010 års RF-revision
+- WEP: 87% passage (första beslutet); effektivt passage av andra beslutet beror på valutfall
+
+**2. HD03267 — Säkerhetshot och utvisning** [HÖG — L2+ Prioritet]
+- Proposition breddar SÄPO:s rådgivande roll och utvisningsgrunderna för "kvalificerade säkerhetshot"
+- ECHR Art. 3, Art. 8, RF kap. 2 — sannolikt Lagrådets yttrande krävs
+- C (Centerpartiet) är nyckelröst: stöder koalitionen på säkerhet men rättsstatssignal förväntas
+- WEP: 85% passage
+
+**3. V:s tredubbla välfärdsoffensiv** [HÖG — Koordinerad valstrategi]
+- HD10484 (Awad → Tenje/M): Äldreomsorgsfrågorna — fyra ministerfrågor om vinstdriven sektor
+- HD10486 (Awad → Britz/L): Jämställda löner i välfärden — V:s "kvinnolönelyft" (30 mdr SEK/10 år)
+- HD024149+HD024150 (V mot prop. 263+264): Migrationsopposition med ECHR-argumentation
+- **Analytisk signal**: Koordinerat valpositioneringsblock; ingen cross-bloc-support men starka kampanjnarrativ
+
+**4. S:s dubbla interpellationstaktik** [HÖG — Strategisk signal]
+- HD10481 (Westlund: klimatmål) tillbakadraget — S undviker att ge L-minister en debattplattform
+- HD10482 (Olsson: svartarbete) aktivt med ESO 2026:1-evidens (SEK 189 mdr/år i svartarbetsförluster)
+- Sista svarsdatum 29 maj — Svantesson under press att presentera förslag före riksdagens sommaruppehåll
+- WEP: 40–60% att finansministern presenterar konkret förslag före sommaruppehållet
+
+**5. HD01CU31 — Hyresmarknadsreform** [MEDEL-HÖG — Valfråga]
+- Flexibel hyresrätt med marknadshyror och indexerade avtal
+- Bred opposition S + V; SD potentiellt splittrad (byggbranschen vs hyresgästväljarbasen)
+- Potential för koalitionsfriktioner M/L vs SD om reformhastigheten
+- WEP: 72% passage med koalitionsmajoritet
+
+---
+
+### Integrerad underrättelsebild
+
+Tisdagens parlamentariska aktivitet avspeglar en opposition i acceleration (V + S) och en regering under ökande pre-valgranskning. De fem parallella spåren — grundlagsreform, säkerhetslagstiftning, social rättvisa, marknadsliberalisering, och oppositionell interpellationstaktik — visar att innevarande riksmöte befinner sig i den intensivaste lagstiftningsfasen sedan majoritetsregeringen bildades 2022.
+
+**Dominanta mönster**:
+1. **Koalitionens leveransklimat**: Tidö levererar tre propositioner och erhåller KU-stöd för grundlagsreform — starka pre-valsignaler om legislativ kompetens
+2. **Oppositionens positionering**: V väljer bredd (migration + välfärd + lön) medan S väljer djup (ESO-evidensbaserat svartarbete-interp) — komplementära men icke-koordinerade strategier
+3. **Konstitutionell transformation**: KU34 är unikt i modern svensk parlamentarism — aborträttsgaranti kombinerat med utökad statlig begränsningsmakt skapar ett politiskt paket som båda block kan kräva politisk vinst av
+
+---
+
+### 3 Omedelbara beslut
+
+1. **Redaktionell prioritering**: KU34 leder kvällsanalysen — det historiska grundlagsrevisionsperspektivet övertrumpar samtliga övriga betänkanden
+2. **PIR-uppföljning**: Bevaka om Lagrådet begärs yttra sig om HD03267 (sannolikt inom 2 veckor); om så sker förstärks rättsstatsnarrativet signifikant
+3. **Valstrategi-signaler**: Monitorera om V:s tredubbla offensiv genererar substantiell medietäckning och om S väljer att ta HD10482 till kampanjkommunikation
+
+---
+
+### Horisontalutlösare
+
+| Datum | Händelse | PIR |
+|-------|---------|-----|
+| 2026-05-29 | Sista svarsdatum HD10482 (Svantesson: svartarbete) | PIR-ECON |
+| 2026-05-29 | Sista svarsdatum HD10484, HD10486 (V välfärdsinterp) | PIR-WEL |
+| Juni 2026 | Betänkanden SfU (prop.263+264) — V-motioner förväntas falla | PIR-MIG |
+| Sommar 2026 | TU-behandling HD03250 (e-ID) | PIR-TECH |
+| Nästa riksmöte | KU34 andra behandling (kräver val emellan) | PIR-CONST |
+| 2026-09-13 | Riksdagsvalet — samtliga ovan konverteras till valkommunikation | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-05-12  
+**分类**：🟢 PUBLIC | **可信度**：HIGH [Admiralty B2]  
+**工作流程**：news-evening-analysis (Tier-C aggregation)  
+**选举接近度**：≤6个月 → 标准系数1.0×（每日回顾）
+
+---
+
+### BLUF — 核心结论
+
+2026年5月12日星期二是当前里克斯穆特（Riksmöte）会期中议会活动最密集的日子之一，此时距2026年9月13日里克斯达格（Riksdag）选举不足六个月。三项政府提案（HD03250、HD03261、HD03267）推进了蒂德（Tidö）联合政府的国家能力议程；历史性的宪法委员会报告（HD01KU34）关于堕胎权和结社自由主导了宪法辩论；左翼党（Vänsterpartiet）针对政府福利和移民政策发动协调一致的三方向议会攻势；社会民主党（Socialdemokraterna）的质询战术——一项气候质询战略性撤回、一项以ESO证据为基础的非申报劳动质询保留——展示了选举前精密的信息管理。总体而言，5月12日构成四条政治线的交汇点：宪法改革、国家安全与数字化、社会正义/移民、金融市场自由化。
+
+---
+
+### 关键情报要点
+
+**1. HD01KU34 — 历史性宪法修订** [关键 — L3情报级别]
+- 宪法委员会提议将宪法层面的堕胎权（RF 2 kap.）与扩大的结社自由和公民权利限制权力相结合——政治双包裹协议
+- 需要**两次里克斯达格决议且中间须举行里克斯达格选举**（2026年＋下一届Riksmöte）
+- SD和KD预计对部分内容提出保留意见；V和MP推动堕胎权条款
+- 宪法爆炸力：自2010年RF修订以来最强的RF改革提案
+- WEP：87%通过（第一次决议）；第二次决议的实质通过取决于选举结果
+
+**2. HD03267 — 安全威胁与驱逐** [高 — L2+优先级]
+- 提案扩大SÄPO的咨询作用和"合格安全威胁"的驱逐依据
+- ECHR Art. 3、Art. 8、RF kap. 2——可能需要拉格罗德（Lagrådet）的意见
+- C（Centerpartiet）是关键票：在安全问题上支持联合政府，但预计会发出法治信号
+- WEP：85%通过
+
+**3. V的三重福利攻势** [高 — 协调的选举战略]
+- HD10484 (Awad → Tenje/M)：老年护理——四个关于营利性部门的部长问题
+- HD10486 (Awad → Britz/L)：福利领域同工同酬——V的"女性薪资提升方案"（300亿SEK/10年）
+- HD024149+HD024150 (V对prop. 263+264)：以ECHR论证反对移民政策
+- **分析信号**：协调的选举定位板块；无跨联盟支持，但有强烈的竞选叙事
+
+**4. S的双重质询战术** [高 — 战略信号]
+- HD10481（Westlund：气候目标）撤回——S避免给L部长提供辩论平台
+- HD10482（Olsson：非申报劳动）以ESO 2026:1证据积极推进（每年损失1890亿SEK于地下经济）
+- 答复截止日期5月29日——斯万特森（Svantesson）面临压力，须在里克斯达格暑假前提出方案
+- WEP：财政部长在暑假前提出具体方案的概率为40–60%
+
+**5. HD01CU31 — 租赁市场改革** [中高 — 选举议题]
+- 以市场租金和指数挂钩合同为特征的灵活租赁制度
+- S+V的广泛反对；SD在建筑行业与租户选民基础之间可能出现分裂
+- M/L与SD在改革步伐问题上联盟内部摩擦的可能性
+- WEP：72%通过（联合政府多数票）
+
+---
+
+### 综合情报图
+
+周二的议会活动反映了不断加速的反对派（V+S）和日益受到选前审视的政府。五条并行主线——宪法改革、安全立法、社会正义、市场自由化和反对党的质询战术——表明当前里克斯穆特正处于自2022年多数派政府成立以来最密集的立法阶段。
+
+**主导模式**：
+1. **联合政府的执行环境**：Tidö提出三项提案并获得KU对宪法改革的支持——选举前显示立法能力的有力信号
+2. **反对派的定位**：V选择广度（移民＋福利＋薪资），而S选择深度（基于ESO证据的非申报劳动质询）——互补但非协调的战略
+3. **宪法变革**：KU34在现代瑞典议会政治中独一无二——堕胎权保障与扩大的国家限制权力相结合，创造了两个政治阵营都可以声索政治利益的政策包
+
+---
+
+### 3项即时决策
+
+1. **编辑优先排序**：KU34引领晚间分析——历史性宪法修订的视角超越所有其他报告
+2. **PIR跟进**：监测是否要求拉格罗德对HD03267提出意见（可能在2周内）；若如此，法治叙事将得到显著强化
+3. **选举战略信号**：监测V的三重攻势是否产生实质性媒体报道，以及S是否选择HD10482用于竞选传播
+
+---
+
+### 地平线触发点
+
+| 日期 | 事件 | PIR |
+|------|------|-----|
+| 2026-05-29 | HD10482答复截止日（Svantesson：非申报劳动） | PIR-ECON |
+| 2026-05-29 | HD10484、HD10486答复截止日（V福利质询） | PIR-WEL |
+| 2026年6月 | SfU报告（prop.263+264）——V动议预计被否决 | PIR-MIG |
+| 2026年夏 | HD03250（e-ID）的TU审议 | PIR-TECH |
+| 下届Riksmöte | KU34第二次审议（需要中间举行选举） | PIR-CONST |
+| 2026-09-13 | 里克斯达格选举——以上所有内容转化为选举传播 | PIR-ELECT |
+
+<!-- source-sha: 9e2f62211aba75abcf906b8870a97f0a75912bb9 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1946,3 +3056,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/evening-analysis/executive-brief_zh.md)

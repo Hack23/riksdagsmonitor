@@ -3,7 +3,7 @@ date: 2026-05-15
 subfolder: interpellations
 slug: 2026-05-15-interpellations
 source_folder: analysis/daily/2026-05-15/interpellations
-generated_at: 2026-05-25T15:59:54.106Z
+generated_at: 2026-05-27T07:35:33.826Z
 language: en
 layout: article
 ---
@@ -1471,7 +1471,7 @@ Data sourced from 2026-05-14 via lookback fallback — check freshness indicator
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/interpellations/executive-brief_ar.md -->
 
-‏---
+---
 artifact: executive-brief
 analysis_date: "2026-05-15"
 subfolder: "interpellations"
@@ -1898,7 +1898,7 @@ IMF WEO-2026-04 projette une croissance du RNB de 1,8% pour la Suède en 2026. I
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/interpellations/executive-brief_he.md -->
 
-‏---
+---
 artifact: executive-brief
 analysis_date: "2026-05-15"
 subfolder: "interpellations"

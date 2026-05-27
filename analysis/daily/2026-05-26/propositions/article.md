@@ -3,7 +3,7 @@ date: 2026-05-26
 subfolder: propositions
 slug: 2026-05-26-propositions
 source_folder: analysis/daily/2026-05-26/propositions
-generated_at: 2026-05-26T07:12:14.483Z
+generated_at: 2026-05-27T07:35:34.301Z
 language: en
 layout: article
 ---
@@ -85,7 +85,7 @@ xychart-beta
 - [x] All major claims have evidence anchor rows
 - [x] No banned phrases used
 - [x] Named ministers with party affiliations
-- [x] No template placeholders remaining
+- [x] No AI_MUST_REPLACE placeholders
 - [x] Parties covered: M (Kristersson, Forssell, Jonson, Wykman), KD (Slottner, Forssmed), SD (coalition pressure), V/MP (opposition), S (hedged)
 - [x] WEP language calibrated: "proposes", "enables", "gives", "complements"
 - [x] Publication recommendation: **PUBLISH**
@@ -248,7 +248,7 @@ The Kyrgyzstan and Uzbekistan partnership agreement ratifications are standard E
 - [x] 6 KIJs with WEP language and confidence levels
 - [x] Source reliability matrix (Admiralty ratings)
 - [x] Intelligence gaps identified
-- [x] No unattributed source citations
+- [x] No "sources say" or "it is widely believed"
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-26/propositions/significance-scoring.md -->
@@ -1778,7 +1778,7 @@ The mainstream analytical consensus frames the 2026 spring proposition batch as 
 ### 🔄 Pass-2 Self-Audit
 - [x] 4 counter-arguments with assessment of validity
 - [x] Evidence provided for and against each counter-argument
-- [x] No unattributed source citations
+- [x] No "it is widely believed" or "sources say"
 - [x] Named specific laws and data
 
 ## Classification Results

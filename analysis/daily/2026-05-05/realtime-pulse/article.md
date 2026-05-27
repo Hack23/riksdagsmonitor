@@ -3,7 +3,7 @@ date: 2026-05-05
 subfolder: realtime-pulse
 slug: 2026-05-05-realtime-pulse
 source_folder: analysis/daily/2026-05-05/realtime-pulse
-generated_at: 2026-05-25T15:59:53.428Z
+generated_at: 2026-05-27T07:35:33.050Z
 language: en
 layout: article
 ---
@@ -3351,12 +3351,6 @@ quadrantChart
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling  
-**Datum**: 2026-05-05  
-**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e)(g)  
-**Konfidenz**: HOCH [A2]  
-**Workflow**: news-realtime-monitor (Tier-C aggregation)  
-
 ---
 
 ### BLUF
@@ -4185,12 +4179,6 @@ quadrantChart
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling  
-**Datum**: 2026-05-05  
-**Classificatie**: OPENBAAR — AVG Art. 9(2)(e)(g)  
-**Betrouwbaarheid**: HOOG [A2]  
-**Workflow**: news-realtime-monitor (Tier-C aggregation)  
 
 ---
 

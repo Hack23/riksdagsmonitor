@@ -3,7 +3,7 @@ date: 2026-05-04
 subfolder: motions
 slug: 2026-05-04-motions
 source_folder: analysis/daily/2026-05-04/motions
-generated_at: 2026-05-25T15:59:53.301Z
+generated_at: 2026-05-27T07:35:32.920Z
 language: en
 layout: article
 ---
@@ -1747,8 +1747,6 @@ graph LR
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/executive-brief_nl.md -->
-
-**Auteur**: James Pether Sörling | **Datum**: 2026-05-04 | **Classificatie**: OPENBAAR | **Betrouwbaarheid**: HOOG [B2]
 
 ### BLUF
 

@@ -3,7 +3,7 @@ date: 2026-05-11
 subfolder: interpellations
 slug: 2026-05-11-interpellations
 source_folder: analysis/daily/2026-05-11/interpellations
-generated_at: 2026-05-25T15:59:53.827Z
+generated_at: 2026-05-27T07:35:33.509Z
 language: en
 layout: article
 ---
@@ -77,6 +77,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1157,13 +1170,601 @@ Prior voteringar: inga direkt jämförbara klimatmål-voteringar funna i last 4 
 
 **Resultat**: 1/1 (100%) fulltext-hämtning lyckades. Uppfyller gate-krav.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_ar.md -->
+
+---
+title: "Klimatmålen inför valet: Interpellation om proposition 2030"
+
+subfolder: "interpellations"
+---
+
+# أهداف المناخ قبل الانتخابات: استجواب حول اقتراح 2030
+
+**ملخص**: وجّهت عضو الريكسداغ أوسا ويستلوند (S) الاستجواب 2025/26:481 (HD10481) إلى وزير العمل والوزير بالإنابة للمناخ والبيئة يوهان بريتس (L)، سائلةً إذا كانت الحكومة تعتزم تقديم اقتراح بشأن الأهداف المناخية قبل انتخابات 2026. يظل تقرير Miljömålsberedningen المتضمّن اقتراح هدف مرحلي محدَّث لعام 2030 — والذي يحظى بدعم حزبي واسع — منذ أكتوبر 2025 رهنَ دراسة Regeringskansliet دون أي إعلان عن جدول زمني. بغياب اقتراح، تخاطر السويد بإضاعة الفرصة البرلمانية لترسيخ أهداف 2030 خلال الدورة التشريعية الحالية، مما قد يُضعف تطبيق Klimatlagen والتزامات المناخ الأوروبية.
+
+### النقاط الرئيسية في 60 ثانية
+
+- **الاستجواب HD10481** من أوسا ويستلوند (S) إلى يوهان بريتس (L، وزير مناخ بالإنابة): يطالب بإجابة حول اقتراح أهداف مناخية قبل انتخابات سبتمبر 2026
+- **تقرير Miljömålsberedningen** (سُلِّم في 2025-10-30) باقتراح هدف مرحلي محدَّث لعام 2030: توافق برلماني واسع خلف المقترحات، لكن الحكومة لم تقدم اقتراحاً
+- **يوهان بريتس يعمل وزيراً بالإنابة للمناخ والبيئة** بالتوازي مع دوره وزيراً للعمل (L)، مما يُشير إلى أولويات الحقيبة داخل Tidökoalitionen
+- **ضغط الوقت**: يُغلق الريكسداغ قبل الصيف في منتصف يونيو 2026؛ الانتخابات في 11 سبتمبر 2026 (مؤقتاً)؛ يجب تقديم الاقتراح في مايو/يونيو على أبعد تقدير للتصويت في الريكسداغ
+- **هدف الاتحاد الأوروبي 55% لعام 2030** (Fit for 55) يُحدد موعداً خارجياً يُعزز الحاجة إلى اقتراح وطني
+- **صندوق النقد الدولي WEO أبريل 2026**: نمو الناتج المحلي الإجمالي السويدي 2026 مقدَّر بحوالي 2.0% – اقتصاد في تعافٍ مما يوسّع هامش الاستثمارات المناخية ويُقلّص منطق العرقلة المالية الحادة ضد الاقتراح
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### دعم اتخاذ القرار
+
+1. **استراتيجية المساءلة للمعارضة**: تستخدم S الاستجواب كحملة انتخابية مسبقة للإشارة إلى طموحات المناخ غير الكافية لـ Tidökoalitionen — ذو صلة بالحملة الانتخابية القادمة
+2. **تحليل الجدول الزمني**: إذا لم تقدم الحكومة الاقتراح في مايو/يونيو 2026 على أبعد تقدير، لن تتمكن الدورة الحالية للريكسداغ من البت في الأهداف المناخية → يستلزم دورة جديدة
+3. **تقييم المخاطر للسويد**: بدون هدف وسيط مرتبط قانونياً لعام 2030، تخاطر السويد بتدابير تدقيق من المفوضية الأوروبية وفقدان نقاط المصداقية في المفاوضات المناخية الدولية
+
+### المحفزات الرئيسية
+
+- **فوري [A1]**: أُغلق عملياً نافذة تقديم الاقتراح في الدورة البرلمانية — كان آخر موعد معقول في 2026-05-15 (منذ 4 أيام). اقتراح أهداف المناخ في الدورة *الحالية* أصبح الآن **مستحيلاً تقنياً**.
+- **72 ساعة**: إعلان الاستجواب في القاعة مقرر في 2026-05-18؛ نقاش الريكسداغ في حوالي 2026-05-26–29 (آخر موعد للرد)
+- **7 أيام**: هل يستطيع الوزير الرد بتعهد واضح بشأن اقتراح في *دورة جديدة* (خريف 2026)؟
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_da.md -->
+
+**Resumé**: Riksdagsmedlem Åsa Westlund (S) har rettet forespørgsel 2025/26:481 (HD10481) til arbejdsmarkedsminister og fungerende klima- og miljøminister Johan Britz (L) med spørgsmålet om, hvorvidt regeringen agter at fremlægge en klimamålsproposition inden valget i 2026. Miljömålsberedningens betænkning med forslag til opdateret delmål for 2030 – med bred partiopbakning – har siden oktober 2025 været under behandling i Regeringskansliet uden besked om tidsplan. Uden en proposition risikerer Sverige at miste den parlamentariske mulighed for at befæste 2030-målene i indeværende valgperiode, hvilket kan svække gennemførelsen af Klimatlagen og EU's klimaforpligtelser.
+
+### 60-sekunders nøglepunkter
+
+- **Forespørgsel HD10481** af Åsa Westlund (S) til Johan Britz (L, fungerende klimaminister): kræver besked om klimamålsproposition inden valget september 2026
+- **Miljömålsberedningens betænkning** (overleveret 2025-10-30) med opdateret 2030-delmål: bred parlamentarisk enighed bag forslagene, men regeringen har ikke fremlagt en proposition
+- **Johan Britz fungerer som fungerende klima- og miljøminister** sideløbende med sin rolle som arbejdsmarkedsminister (L), hvilket signalerer porteføljeprioritering inden for Tidökoalitionen
+- **Tidspres**: Riksdagen lukker inden sommeren midt i juni 2026; valg 11. september 2026 (foreløbigt); proposition skal indgives senest maj/juni for afstemning i riksdagen
+- **EU's 55%-mål til 2030** (Fit for 55) giver ekstern deadline, der forstærker behovet for en national proposition
+- **IMF WEO apr-2026**: Svensk BNP-vækst 2026 anslås til ca. 2,0 % – økonomi i bedring, der øger råderummet for klimainvesteringer men mindsker den akutte statsfinansielle hindelseslogik mod proposition
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### Beslutningsstøtte
+
+1. **Oppositionens ansvarsstrategii**: S bruger forespørgslen som pre-valgkampagne til at påpege Tidökoalitionens utilstrækkelige klimaambitioner – relevant for den kommende valgkamp
+2. **Tidsplananalyse**: Hvis regeringen ikke fremlægger proposition senest maj/juni 2026, kan klimamålene ikke vedtages af det nuværende riksdag → ny valgperiode er nødvendig
+3. **Risikovurdering for Sverige**: Uden lovfæstet delmål 2030 risikerer Sverige EU-Kommissionens undersøgelsesforanstaltninger og tabte troværdighedspoint i internationale klimaforhandlinger
+
+### Topudløsere
+
+- **Umiddelbart [A1]**: Propositionsvinduet for riksmødet er i praksis lukket — seneste rimelige dato var 2026-05-15 (for 4 dage siden). Klimamålsproposition i *indeværende* riksmøde er nu **teknisk umulig**.
+- **72 t**: Anmeldelse af forespørgsel i kammeret planlagt til 2026-05-18; riksdagsdebat around 2026-05-26–29 (sidste svarsdato)
+- **7 dage**: Kan ministeren svare med klar besked om proposition i *ny riksdag* (efterår 2026)?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_de.md -->
+
+**Zusammenfassung**: Die Riksdagsabgeordnete Åsa Westlund (S) hat die Anfrage 2025/26:481 (HD10481) an den Arbeitsmarktminister und amtierenden Klima- und Umweltminister Johan Britz (L) gerichtet und gefragt, ob die Regierung vor der Wahl 2026 eine Klimazielproposition vorlegen will. Der Bericht der Miljömålsberedningen mit dem Vorschlag für ein aktualisiertes Etappenziel für 2030 – mit breiter Parteiunterstützung – wird seit Oktober 2025 im Regeringskansliet bearbeitet, ohne dass ein Zeitplan bekannt gegeben wurde. Ohne Proposition riskiert Schweden, die parlamentarische Möglichkeit zu verpassen, die 2030-Ziele in der laufenden Legislaturperiode festzuschreiben, was die Umsetzung des Klimatlagen und der EU-Klimaverpflichtungen schwächen könnte.
+
+### 60-Sekunden-Kernpunkte
+
+- **Anfrage HD10481** von Åsa Westlund (S) an Johan Britz (L, amtierender Klimaminister): fordert Auskunft über eine Klimazielproposition vor der Wahl September 2026
+- **Bericht der Miljömålsberedningen** (übergeben am 2025-10-30) mit aktualisierten Etappenziel für 2030: breite parlamentarische Einigkeit hinter den Vorschlägen, aber die Regierung hat keine Proposition vorgelegt
+- **Johan Britz fungiert als amtierender Klima- und Umweltminister** parallel zu seiner Rolle als Arbeitsmarktminister (L), was eine Portfolioprioritierung innerhalb der Tidökoalition signalisiert
+- **Zeitdruck**: Der Riksdag schließt vor dem Sommer Mitte Juni 2026; Wahl 11. September 2026 (vorläufig); Proposition muss spätestens im Mai/Juni eingereicht werden für eine Abstimmung im Riksdag
+- **EU-Klimaziel 55 % bis 2030** (Fit for 55) setzt eine externe Frist, die den Bedarf einer nationalen Proposition verstärkt
+- **IWF WEO Apr-2026**: Schwedisches BIP-Wachstum 2026 auf ca. 2,0 % geschätzt – Wirtschaft in Erholung, was den Spielraum für Klimainvestitionen erweitert, aber die akute staatsfinanzielle Hinderungslogik gegen die Proposition verringert
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### Entscheidungsunterstützung
+
+1. **Rechenschaftsstrategie der Opposition**: S nutzt die Anfrage als Vorwahlkampagne, um auf die unzureichenden Klimaambitionen der Tidökoalition hinzuweisen – relevant für den kommenden Wahlkampf
+2. **Zeitplananalyse**: Wenn die Regierung keine Proposition bis spätestens Mai/Juni 2026 einreicht, können die Klimaziele nicht vom derzeitigen Riksdag beschlossen werden → neue Legislaturperiode notwendig
+3. **Risikoabschätzung für Schweden**: Ohne gesetzlich verankerte Etappenziel 2030 riskiert Schweden Prüfmaßnahmen der EU-Kommission und verliert Glaubwürdigkeitspunkte bei internationalen Klimaverhandlungen
+
+### Wichtigste Auslöser
+
+- **Sofort [A1]**: Das Propositionsfenster für den Riksmöte ist praktisch geschlossen — der letzte vernünftige Termin war 2026-05-15 (vor 4 Tagen). Eine Klimazielproposition im *laufenden* Riksmöte ist nun **technisch unmöglich**.
+- **72 Stunden**: Anmeldung der Anfrage im Kammer geplant für 2026-05-18; Riksdagsdebatte rund um 2026-05-26–29 (letzter Antworttag)
+- **7 Tage**: Kann der Minister mit einer klaren Aussage über eine Proposition im *neuen Riksmöte* (Herbst 2026) antworten?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_es.md -->
+
+**Resumen**: La diputada Åsa Westlund (S) ha dirigido la interpelación 2025/26:481 (HD10481) al ministro de Trabajo y ministro en funciones de Clima y Medio Ambiente Johan Britz (L), preguntando si el gobierno tiene intención de presentar una proposición sobre objetivos climáticos antes de las elecciones de 2026. El informe de la Miljömålsberedningen con la propuesta de un objetivo intermedio actualizado para 2030 — con amplio apoyo partidario — lleva desde octubre de 2025 bajo examen en el Regeringskansliet sin información sobre el calendario. Sin una proposición, Suecia corre el riesgo de perder la oportunidad parlamentaria de consolidar los objetivos de 2030 durante la legislatura actual, lo que podría debilitar la implementación del Klimatlagen y los compromisos climáticos de la UE.
+
+### Puntos clave en 60 segundos
+
+- **Interpelación HD10481** de Åsa Westlund (S) a Johan Britz (L, ministro de clima en funciones): exige respuesta sobre una proposición de objetivos climáticos antes de las elecciones de septiembre de 2026
+- **Informe de la Miljömålsberedningen** (entregado el 2025-10-30) con objetivo intermedio actualizado para 2030: amplio consenso parlamentario respaldando las propuestas, pero el gobierno no ha presentado proposición
+- **Johan Britz actúa como ministro en funciones de Clima y Medio Ambiente** en paralelo a su papel como ministro de Trabajo (L), lo que señala prioridades de cartera dentro de la Tidökoalitionen
+- **Presión de tiempo**: El Riksdag cierra antes del verano a mediados de junio de 2026; elecciones el 11 de septiembre de 2026 (provisional); la proposición debe presentarse a más tardar en mayo/junio para una votación en el Riksdag
+- **Objetivo del 55% de la UE para 2030** (Fit for 55) establece un plazo externo que refuerza la necesidad de una proposición nacional
+- **FMI WEO abr-2026**: Crecimiento del PIB sueco en 2026 estimado en aprox. 2,0% – economía en recuperación, lo que amplía el margen para inversiones climáticas pero reduce la lógica de obstaculización fiscal aguda contra la proposición
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### Apoyo a la toma de decisiones
+
+1. **Estrategia de rendición de cuentas de la oposición**: S usa la interpelación como campaña preelectoral para señalar las insuficientes ambiciones climáticas de la Tidökoalitionen – relevante para la próxima campaña electoral
+2. **Análisis del calendario**: Si el gobierno no presenta la proposición a más tardar en mayo/junio de 2026, el Riksdag actual no podrá decidir sobre los objetivos climáticos → se requiere una nueva legislatura
+3. **Evaluación de riesgos para Suecia**: Sin objetivo intermedio 2030 con respaldo legal, Suecia corre el riesgo de medidas de escrutinio de la Comisión Europea y pérdida de puntos de credibilidad en las negociaciones climáticas internacionales
+
+### Principales desencadenantes
+
+- **Inmediatamente [A1]**: La ventana para presentar la proposición en la sesión del Riksdag ha cerrado en la práctica — la última fecha razonable fue el 2026-05-15 (hace 4 días). Una proposición de objetivos climáticos en la *sesión actual* es ahora **técnicamente imposible**.
+- **72 h**: Anuncio de la interpelación en el hemiciclo previsto para el 2026-05-18; debate en el Riksdag en torno al 2026-05-26–29 (último plazo de respuesta)
+- **7 días**: ¿Puede el ministro responder con un compromiso claro sobre una proposición en *la próxima sesión* (otoño 2026)?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_fi.md -->
+
+**Tiivistelmä**: Kansanedustaja Åsa Westlund (S) on esittänyt välikysymyksen 2025/26:481 (HD10481) työmarkkinaministeri ja vt. ilmasto- ja ympäristöministeri Johan Britzille (L) siitä, aikooko hallitus esittää ilmastotavoiteproposition ennen vuoden 2026 vaaleja. Miljömålsberedningenin mietintö, jossa ehdotetaan päivitettyä vuoden 2030 välivaihetavoitetta – laajan poliittisen tuen kera – on ollut Regeringskansliets käsittelyssä lokakuusta 2025 lähtien ilman tietoa aikataulusta. Ilman propositiota Ruotsi saattaa menettää parlamentaarisen mahdollisuuden vahvistaa 2030-tavoitteet nykyisellä vaalikaudella, mikä voi heikentää Klimatlagenin ja EU:n ilmastovelvoitteiden täytäntöönpanoa.
+
+### 60 sekunnin pääkohdat
+
+- **Välikysymys HD10481** Åsa Westlundilta (S) Johan Britzille (L, vt. ilmastoministeri): vaatii tietoa ilmastotavoiteproposition esittämisestä ennen syyskuun 2026 vaaleja
+- **Miljömålsberedningenin mietintö** (luovutettu 2025-10-30) päivitetyllä 2030-välivaihetavoitteella: laaja parlamentaarinen yksimielisyys ehdotusten takana, mutta hallitus ei ole esittänyt propositiota
+- **Johan Britz toimii vt. ilmasto- ja ympäristöministerinä** rinnakkain roolinsa kanssa työmarkkinaministerinä (L), mikä viestii salkkuprioritoinneista Tidökoalitiossa
+- **Aikapaine**: Riksdag sulkeutuu ennen kesää kesäkuun puolivälissä 2026; vaalit 11. syyskuuta 2026 (alustava); propositio on jätettävä viimeistään toukokuussa/kesäkuussa äänestämistä varten riksdagissa
+- **EU:n 55 prosentin tavoite vuodelle 2030** (Fit for 55) asettaa ulkoisen määräajan, joka korostaa kansallisen proposition tarvetta
+- **IMF WEO huhtikuu 2026**: Ruotsin BKT-kasvu 2026 arvioidaan noin 2,0 prosentiksi – palautumisvaiheessa oleva talous lisää tilaa ilmastoinvestoinneille, mutta vähentää akuuttia valtiontaloudellista estologiikkaa propositiota vastaan
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### Päätöksentukitiedot
+
+1. **Opposition vastuuttamisstrategia**: S käyttää välikysymystä ennakoivana vaalikampanjana osoittaakseen Tidökoalition riittämättömät ilmastokunnianhimot – relevanttia tulevassa vaaliväittelyssä
+2. **Aikatauluanalyysi**: Jos hallitus ei esitä propositiota viimeistään toukokuussa/kesäkuussa 2026, nykyinen riksdag ei voi päättää ilmastotavoitteista → tarvitaan uusi vaalikausi
+3. **Ruotsin riskiarvio**: Ilman lakisääteistä 2030-välivaihetavoitetta Ruotsi saattaa altistua EU-komission tutkimustoimenpiteille ja menettää uskottavuuspisteitä kansainvälisissä ilmastoneuvotteluissa
+
+### Tärkeimmät laukaisijat
+
+- **Välittömästi [A1]**: Propositioniäänestysikkuna tälle riksmötelle on käytännössä sulkeutunut — viimeisin kohtuullinen päivämäärä oli 2026-05-15 (4 päivää sitten). Ilmastotavoiteproposition esittäminen *nykyiselle* riksmötelle on nyt **teknisesti mahdotonta**.
+- **72 tuntia**: Välikysymyksen ilmoittaminen kammarissa suunniteltu 2026-05-18:lle; riksdagskeskustelu noin 2026-05-26–29 (viimeinen vastauspäivä)
+- **7 päivää**: Voiko ministeri vastata selkeästi propositiosta *uudessa riksmötessä* (syksy 2026)?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_fr.md -->
+
+**Résumé** : La députée Åsa Westlund (S) a adressé l'interpellation 2025/26:481 (HD10481) au ministre du Travail et ministre par intérim du Climat et de l'Environnement Johan Britz (L), lui demandant si le gouvernement envisage de soumettre une proposition sur les objectifs climatiques avant les élections de 2026. Le rapport de la Miljömålsberedningen proposant un objectif intermédiaire actualisé pour 2030 — avec un large soutien politique — est en cours d'examen au Regeringskansliet depuis octobre 2025, sans annonce d'un calendrier. Sans proposition, la Suède risque de manquer l'occasion parlementaire de consolider les objectifs 2030 durant la législature en cours, ce qui pourrait affaiblir la mise en œuvre du Klimatlagen et des engagements climatiques de l'UE.
+
+### Points essentiels en 60 secondes
+
+- **Interpellation HD10481** d'Åsa Westlund (S) à Johan Britz (L, ministre du climat par intérim) : exige une réponse sur une proposition d'objectifs climatiques avant les élections de septembre 2026
+- **Rapport de la Miljömålsberedningen** (remis le 2025-10-30) avec un objectif intermédiaire 2030 actualisé : large consensus parlementaire derrière les propositions, mais le gouvernement n'a pas présenté de proposition
+- **Johan Britz assume le rôle de ministre par intérim du Climat et de l'Environnement** parallèlement à son rôle de ministre du Travail (L), ce qui signale des priorités de portefeuille au sein de la Tidökoalitionen
+- **Pression temporelle** : Le Riksdag ferme avant l'été à la mi-juin 2026 ; élections le 11 septembre 2026 (provisoire) ; la proposition doit être déposée au plus tard en mai/juin pour un vote au Riksdag
+- **Objectif de 55 % de l'UE d'ici 2030** (Fit for 55) fixe une échéance externe qui renforce la nécessité d'une proposition nationale
+- **FMI WEO avr-2026** : Croissance du PIB suédois en 2026 estimée à environ 2,0 % – économie en reprise, ce qui élargit la marge pour les investissements climatiques mais réduit la logique de blocage budgétaire aiguë contre la proposition
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### Aide à la décision
+
+1. **Stratégie de responsabilisation de l'opposition** : S utilise l'interpellation comme campagne pré-électorale pour souligner les ambitions climatiques insuffisantes de la Tidökoalitionen – pertinent pour la prochaine campagne électorale
+2. **Analyse du calendrier** : Si le gouvernement ne dépose pas de proposition au plus tard en mai/juin 2026, les objectifs climatiques ne pourront pas être décidés par le Riksdag actuel → nouvelle législature nécessaire
+3. **Évaluation des risques pour la Suède** : Sans objectif intermédiaire 2030 inscrit dans la loi, la Suède risque des mesures d'examen de la Commission européenne et la perte de crédibilité dans les négociations climatiques internationales
+
+### Principaux déclencheurs
+
+- **Immédiatement [A1]** : La fenêtre de dépôt de la proposition pour la session du Riksdag est en pratique close — la dernière date raisonnable était le 2026-05-15 (il y a 4 jours). Une proposition sur les objectifs climatiques lors de la *session en cours* est désormais **techniquement impossible**.
+- **72 h** : Annonce de l'interpellation en chambre prévue le 2026-05-18 ; débat au Riksdag autour du 2026-05-26–29 (dernier délai de réponse)
+- **7 jours** : Le ministre peut-il répondre avec un engagement clair sur une proposition lors de *la prochaine session* (automne 2026) ?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_he.md -->
+
+---
+title: "Klimatmålen inför valet: Interpellation om proposition 2030"
+
+subfolder: "interpellations"
+---
+
+# יעדי האקלים לפני הבחירות: שאילתה על הצעת חוק 2030
+
+**תקציר**: חברת הפרלמנט (ריקסדאג) אוסה ווסטלונד (S) הגישה שאילתה 2025/26:481 (HD10481) לשר העבודה וממלא מקום שר האקלים והסביבה יוהאן בריץ (L), שאלה האם הממשלה מתכוונת להגיש הצעת חוק לגבי יעדי אקלים לפני בחירות 2026. דוח Miljömålsberedningen המציע יעד ביניים מעודכן לשנת 2030 — עם תמיכה רחבה מצד הסיעות — נמצא מאז אוקטובר 2025 בבחינת Regeringskansliet ללא הודעות על לוח הזמנים. ללא הצעת חוק, שוודיה מסתכנת בהחמצת ההזדמנות הפרלמנטארית לבסס את יעדי 2030 בתקופת הכנסת הנוכחית, מה שעלול להחליש את יישום Klimatlagen ואת התחייבויות האקלים של האיחוד האירופי.
+
+### נקודות מפתח ב-60 שניות
+
+- **שאילתה HD10481** מאת אוסה ווסטלונד (S) ליוהאן בריץ (L, ממלא מקום שר האקלים): דורשת תשובה לגבי הצעת חוק יעדי אקלים לפני בחירות ספטמבר 2026
+- **דוח Miljömålsberedningen** (הוגש ב-2025-10-30) עם יעד ביניים מעודכן לשנת 2030: קונצנזוס פרלמנטארי רחב מאחורי ההצעות, אך הממשלה לא הגישה הצעת חוק
+- **יוהאן בריץ משמש ממלא מקום שר האקלים והסביבה** במקביל לתפקידו כשר העבודה (L), מה שמאותת על עדיפויות תיק בתוך Tidökoalitionen
+- **לחץ זמן**: הריקסדאג נסגר לפני הקיץ באמצע יוני 2026; בחירות ב-11 בספטמבר 2026 (זמני); הצעת החוק חייבת להיות מוגשת לכל המאוחר במאי/יוני להצבעה בריקסדאג
+- **יעד האיחוד האירופי 55% לשנת 2030** (Fit for 55) קובע מועד אחרון חיצוני המחזק את הצורך בהצעת חוק לאומית
+- **קרן המטבע הבינלאומית WEO אפריל 2026**: צמיחת התמ"ג של שוודיה לשנת 2026 מוערכת בכ-2.0% – כלכלה בהתאוששות, המרחיבה את שולי ההשקעות באקלים אך מצמצמת את ההיגיון לחסימה פיסקלית חריפה נגד הצעת החוק
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### תמיכה בקבלת החלטות
+
+1. **אסטרטגיית אחריות האופוזיציה**: S משתמשת בשאילתה כקמפיין טרום-בחירות להצביע על שאיפות האקלים הבלתי מספקות של Tidökoalitionen — רלוונטי לקמפיין הבחירות הקרוב
+2. **ניתוח לוח הזמנים**: אם הממשלה לא תגיש הצעת חוק לכל המאוחר במאי/יוני 2026, הריקסדאג הנוכחי לא יוכל להחליט על יעדי האקלים → נדרשת מושב חדש
+3. **הערכת סיכונים לשוודיה**: ללא יעד ביניים לשנת 2030 מעוגן בחוק, שוודיה מסתכנת בצעדי בדיקה של הנציבות האירופית ואובדן נקודות אמינות במשא ומתן בינלאומי על האקלים
+
+### טריגרים עיקריים
+
+- **מיידי [A1]**: חלון הגשת הצעת החוק במושב הריקסדאג נסגר הלכה למעשה — המועד האחרון הסביר היה 2026-05-15 (לפני 4 ימים). הצעת חוק יעדי אקלים במושב *הנוכחי* כעת **בלתי אפשרית מבחינה טכנית**.
+- **72 שעות**: הכרזת השאילתה במליאה מתוכננת ל-2026-05-18; דיון בריקסדאג סביב 2026-05-26–29 (מועד תגובה אחרון)
+- **7 ימים**: האם השר יוכל להשיב עם התחייבות ברורה לגבי הצעת חוק ב*מושב חדש* (סתיו 2026)?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_ja.md -->
+
+**要約**：国会議員オーサ・ウェストルンド（S）は、労働大臣兼気候環境代理大臣ヨーハン・ブリッツ（L）に対して質問主意書2025/26:481（HD10481）を提出し、2026年選挙前に気候目標に関する提案を提出する意向があるかを問いました。幅広い政党支持を得た2030年暫定目標の更新案を盛り込んだMiljömålsberedningenの報告書は、2025年10月からRegeringskanslietで審査されているものの、スケジュールに関する発表はありません。提案がなければ、スウェーデンは現会期中に2030年目標を確立する議会の機会を逃す可能性があり、Klimatlagenの実施とEUの気候公約が弱体化するリスクがあります。
+
+### 60秒でわかるポイント
+
+- **質問主意書HD10481**（オーサ・ウェストルンド（S）からヨーハン・ブリッツ（L、気候代理大臣）へ）：2026年9月選挙前の気候目標提案について回答を求める
+- **Miljömålsberedningenの報告書**（2025-10-30提出）で2030年の更新された暫定目標を提案：各党の幅広い合意があるものの、政府は提案を提出していない
+- **ヨーハン・ブリッツは労働大臣（L）と気候環境代理大臣を兼務**しており、ティデー連立内での省庁優先順位を示している
+- **時間的プレッシャー**：国会は2026年6月中旬の夏前に閉会予定；選挙は2026年9月11日（暫定）；国会での採決には遅くとも5月/6月までに提案を提出する必要がある
+- **EUの2030年55%目標**（Fit for 55）は国内提案の必要性を強化する外部期限を設定している
+- **IMF WEO 2026年4月**：スウェーデンのGDP成長率2026年は約2.0%と推定 – 回復中の経済が気候投資の余地を広げる一方、提案に対する財政的障害の論理を弱める
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### 意思決定支援
+
+1. **野党の説明責任戦略**：SはTideé連立の不十分な気候目標を指摘する選挙前キャンペーンとして質問主意書を活用 – 来る選挙戦に関連
+2. **スケジュール分析**：政府が2026年5月/6月までに提案を提出しなければ、現国会は気候目標を決定できない → 新会期が必要
+3. **スウェーデンへのリスク評価**：法的拘束力のある2030年暫定目標がなければ、スウェーデンは欧州委員会の精査措置を受けるリスクと国際気候交渉での信頼性ポイントの喪失リスクを抱える
+
+### 主要なトリガー
+
+- **即時[A1]**：国会会期への提案提出ウィンドウは実質的に閉まった — 最後の合理的な期限は2026-05-15（4日前）。*現会期*での気候目標提案は現在**技術的に不可能**。
+- **72時間**：本会議での質問主意書発表は2026-05-18予定；国会討議は2026-05-26–29頃（最終回答期限）
+- **7日間**：大臣は*新会期*（2026年秋）における提案について明確なコミットメントで回答できるか？
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_ko.md -->
+
+**요약**: 국회의원 오사 베스틀룬드(S)는 노동부 장관 겸 기후환경부 장관 대리인 요한 브리츠(L)에게 질문서 2025/26:481(HD10481)을 제출하여, 정부가 2026년 선거 전에 기후 목표에 관한 제안서를 제출할 의향이 있는지 물었습니다. 폭넓은 정당 지지를 받은 2030년 잠정 목표 갱신안을 담은 Miljömålsberedningen 보고서가 2025년 10월부터 Regeringskansliet에서 검토되고 있으나 일정에 관한 발표가 없습니다. 제안서가 없으면 스웨덴은 현 회기 중에 2030년 목표를 확립할 의회 기회를 놓칠 위험이 있으며, 이는 Klimatlagen 이행과 EU 기후 공약을 약화시킬 수 있습니다.
+
+### 60초 핵심 포인트
+
+- **질문서 HD10481**(오사 베스틀룬드(S)→요한 브리츠(L, 기후부 장관 대리)): 2026년 9월 선거 전 기후 목표 제안서에 대한 답변 요구
+- **Miljömålsberedningen 보고서**(2025-10-30 제출)에서 2030년 갱신된 잠정 목표 제안: 광범위한 의회 합의가 제안 뒤를 받치고 있으나, 정부는 제안서를 제출하지 않음
+- **요한 브리츠는 노동부 장관(L)과 기후환경부 장관 대리 겸임** — 티데연정 내 부처 우선순위를 시사
+- **시간적 압박**: 의회는 2026년 6월 중순 여름 방학 전 폐회; 선거는 2026년 9월 11일(잠정); 제안서는 늦어도 5월/6월에 제출해야 의회 표결 가능
+- **EU 2030년 55% 목표**(Fit for 55)는 국내 제안서의 필요성을 강화하는 외부 기한을 설정함
+- **IMF WEO 2026년 4월**: 스웨덴 GDP 성장률 2026년 약 2.0% 추정 – 회복 중인 경제가 기후 투자 여지를 넓히나 제안서에 대한 급격한 재정 장애 논리를 약화시킴
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### 의사결정 지원
+
+1. **야당의 책임 전략**: S는 질문서를 티데연정의 불충분한 기후 목표를 지적하는 선거 전 캠페인으로 활용 – 다가오는 선거 운동과 관련
+2. **일정 분석**: 정부가 2026년 5월/6월까지 제안서를 제출하지 않으면, 현 의회는 기후 목표를 결정할 수 없음 → 새 회기 필요
+3. **스웨덴 위험 평가**: 법적 구속력 있는 2030년 잠정 목표 없이는 스웨덴은 유럽 집행위원회의 심사 조치와 국제 기후 협상에서의 신뢰도 손실 위험에 처함
+
+### 주요 트리거
+
+- **즉시 [A1]**: 현 의회 회기에서 제안서 제출 창은 사실상 닫혔음 — 마지막 합리적 기한은 2026-05-15(4일 전). *현 회기*의 기후 목표 제안서는 이제 **기술적으로 불가능**.
+- **72시간**: 2026-05-18 본회의 질문 발표 예정; 2026-05-26–29 경 국회 토론(최종 답변 기한)
+- **7일**: 장관은 *새 회기*(2026년 가을)에서의 제안서에 대해 명확한 약속으로 답변할 수 있는가?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_nl.md -->
+
+**Samenvatting**: Rijksdaglid Åsa Westlund (S) heeft de interpellatie 2025/26:481 (HD10481) gericht aan minister van Arbeid en waarnemend minister van Klimaat en Milieu Johan Britz (L), met de vraag of de regering van plan is een klimaatdoelproposie in te dienen vóór de verkiezingen van 2026. Het rapport van de Miljömålsberedningen met een voorstel voor een bijgewerkt tussentijds doel voor 2030 — met brede partijsteun — wordt al sinds oktober 2025 door het Regeringskansliet behandeld zonder mededelingen over een tijdplan. Zonder een propositie riskeert Zweden de parlementaire kans te missen om de 2030-doelen tijdens de huidige zittingsperiode te consolideren, wat de uitvoering van de Klimatlagen en de EU-klimaatverplichtingen kan verzwakken.
+
+### Kernpunten in 60 seconden
+
+- **Interpellatie HD10481** van Åsa Westlund (S) aan Johan Britz (L, waarnemend klimaatminister): eist een antwoord over een klimaatdoelproposie vóór de verkiezingen van september 2026
+- **Rapport van de Miljömålsberedningen** (overhandigd op 2025-10-30) met bijgewerkt tussentijds doel voor 2030: brede parlementaire overeenstemming achter de voorstellen, maar de regering heeft geen propositie ingediend
+- **Johan Britz fungeert als waarnemend minister van Klimaat en Milieu** naast zijn rol als minister van Arbeid (L), wat portefeuilleprioriteitenen binnen de Tidökoalitionen signaleert
+- **Tijdsdruk**: De Riksdag sluit vóór de zomer medio juni 2026; verkiezingen op 11 september 2026 (voorlopig); propositie moet uiterlijk in mei/juni worden ingediend voor een stemming in de Riksdag
+- **EU-klimaatdoel 55% voor 2030** (Fit for 55) stelt een externe deadline die de behoefte aan een nationale propositie versterkt
+- **IMF WEO apr-2026**: Zweedse bbp-groei 2026 geschat op ca. 2,0% – economie in herstel, waardoor de ruimte voor klimaatinvesteringen wordt vergroot maar de acute budgettaire belemmerende logica tegen de propositie afneemt
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### Beslissingsondersteuning
+
+1. **Verantwoordingsstrategie van de oppositie**: S gebruikt de interpellatie als pre-verkiezingscampagne om op de ontoereikende klimaatambities van de Tidökoalitionen te wijzen – relevant voor de aankomende verkiezingscampagne
+2. **Tijdplananalyse**: Als de regering uiterlijk in mei/juni 2026 geen propositie indient, kunnen de klimaatdoelen niet worden besloten door de huidige Riksdag → nieuwe zittingsperiode vereist
+3. **Risicobeoordeling voor Zweden**: Zonder wettelijk verankerd tussentijds doel 2030 riskeert Zweden onderzoeksmaatregelen van de Europese Commissie en verlies van geloofwaardigheidspunten in internationale klimaatonderhandelingen
+
+### Belangrijkste triggers
+
+- **Onmiddellijk [A1]**: Het propositiedienstvenster voor de Riksdag-zitting is in praktijk gesloten — de laatste redelijke datum was 2026-05-15 (4 dagen geleden). Een klimaatdoelproposie tijdens de *huidige* zitting is nu **technisch onmogelijk**.
+- **72 uur**: Aankondiging van de interpellatie in de kamer gepland op 2026-05-18; Riksdagdebat rond 2026-05-26–29 (laatste antwoorddatum)
+- **7 dagen**: Kan de minister antwoorden met een duidelijke toezegging over een propositie in een *nieuwe zitting* (najaar 2026)?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_no.md -->
+
+**Sammendrag**: Stortingsrepresentant Åsa Westlund (S) har rettet interpellasjon 2025/26:481 (HD10481) til arbeidsminister og fungerende klima- og miljøminister Johan Britz (L) med spørsmål om regjeringen har til hensikt å fremme en klimamålsproposisjon før valget i 2026. Miljömålsberedningens betenkning med forslag til oppdatert etappmål for 2030 – med bred politisk støtte – har siden oktober 2025 vært til behandling i Regeringskansliet uten informasjon om tidsplan. Uten en proposisjon risikerer Sverige å gå glipp av den parlamentariske muligheten til å befeste 2030-målene i inneværende valgperiode, noe som kan svekke gjennomføringen av Klimatlagen og EUs klimaforpliktelser.
+
+### 60-sekunders nøkkelpunkter
+
+- **Interpellasjon HD10481** av Åsa Westlund (S) til Johan Britz (L, fungerende klimaminister): krever svar om klimamålsproposisjon før valget september 2026
+- **Miljömålsberedningens betenkning** (overlevert 2025-10-30) med oppdatert etappmål for 2030: bred parlamentarisk enighet bak forslagene, men regjeringen har ikke fremmet proposisjon
+- **Johan Britz fungerer som fungerende klima- og miljøminister** parallelt med sin rolle som arbeidsminister (L), noe som signaliserer porteføljeprioriteringer innen Tidökoalisjonen
+- **Tidspress**: Riksdagen stenger før sommeren midt i juni 2026; valg 11. september 2026 (foreløpig); proposisjon må leveres senest mai/juni for votering i riksdagen
+- **EUs 55%-mål til 2030** (Fit for 55) gir en ekstern frist som forsterker behovet for en nasjonal proposisjon
+- **IMF WEO apr-2026**: Svensk BNP-vekst 2026 anslås til ca. 2,0 % – økonomi i bedring, noe som øker rommet for klimainvesteringer men reduserer den akutte statsfinansielle hinderlogikken mot proposisjon
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### Beslutningsstøtte
+
+1. **Opposisjonens ansvarsstrategii**: S bruker interpellasjonen som pre-valgkampanje for å peke på Tidökoalisjonens utilstrekkelige klimaambisjoner – relevant for den kommende valgkamp
+2. **Tidsplananalyse**: Hvis regjeringen ikke legger fram proposisjon senest mai/juni 2026, kan ikke klimamålene vedtas av nåværende riksdag → ny valgperiode er nødvendig
+3. **Risikovurdering for Sverige**: Uten lovfestet etappmål for 2030 risikerer Sverige EU-kommisjonens granskningstiltak og tapte troverdighetspoeng i internasjonale klimaforhandlinger
+
+### Topputløsere
+
+- **Umiddelbart [A1]**: Proposisjonssvinduet for riksmøtet er i praksis lukket — siste rimelige dato var 2026-05-15 (for 4 dager siden). Klimamålsproposisjon i *inneværende* riksmøte er nå **teknisk umulig**.
+- **72 t**: Kunngjøring av interpellasjon i kammeret planlagt til 2026-05-18; riksdagsdebatt rundt 2026-05-26–29 (siste svarsdato)
+- **7 dager**: Kan statsråden svare med klart svar om proposisjon i *ny riksdag* (høst 2026)?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_sv.md -->
+
+**Sammanfattning**: Riksdagsledamoten Åsa Westlund (S) har riktat interpellation 2025/26:481 (HD10481) till arbetsmarknadsminister och vikarierande klimat- och miljöminister Johan Britz (L) med frågan om regeringen avser att lägga fram en klimatmålsproposition innan valet 2026. Miljömålsberedningens betänkande med förslag till uppdaterat etappmål för 2030 – med brett partistöd – har sedan oktober 2025 behandlats av Regeringskansliet utan besked om tidplan. Utan en proposition riskerar Sverige att missa den parlamentariska möjligheten att befästa 2030-målen under innevarande mandatperiod, vilket kan försvaga implementeringen av Klimatlagen och EU:s klimatåtaganden.
+
+### 60-sekundersbullets
+
+- **Interpellation HD10481** av Åsa Westlund (S) till Johan Britz (L, vikarierande klimatminister): kräver besked om klimatmålsproposition innan valet september 2026
+- **Miljömålsberedningens betänkande** (överlämnat 2025-10-30) med uppdaterat 2030-etappmål: bred parlamentarisk enighet bakom förslagen men regering har inte presenterat proposition
+- **Johan Britz fungerar som vikarierande klimat- och miljöminister** parallellt med sin roll som arbetsmarknadsminister (L), vilket signalerar portföljprioritering inom Tidökoalitionen
+- **Tidspress**: Riksdagen stänger inför sommaren mitten av juni 2026; val 11 september 2026 (preliminärt); proposition måste in senast maj/juni för votering i riksdagen
+- **EU:s 55%-mål till 2030** (Fit for 55) ger extern deadline som förstärker behovet av nationell proposition
+- **IMF WEO Apr-2026**: Svensk BNP-tillväxt 2026 beräknas till ca 2,0 % – ekonomi i återhämtning, vilket ökar utrymmet för klimatinvesteringar men minskar den akuta statsfinansiella hinderslogiken mot proposition
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### Beslutsstöd
+
+1. **Oppositionens accountability-strategi**: S använder interpellationen som pre-valskampanj för att peka på Tidökoalitionens otillräckliga klimatambitioner – relevant för kommande valrörelse
+2. **Tidplaneanalys**: Om regeringen inte lämnar proposition senast maj/juni 2026, kan klimatmålen inte beslutas av nuvarande riksdag → ny mandatperiod krävs
+3. **Riskbedömning för Sverige**: Utan lagstadgat etappmål 2030 riskerar Sverige EU-kommissionens granskningsåtgärder och förlorade trovärdighetspoäng i internationella klimatförhandlingar
+
+### Topptriggrar
+
+- **Omedelbart [A1]**: Propositionsfönstret för riksmötet har i praktiken stängt — senaste rimliga datum var 2026-05-15 (4 dagar sedan). Klimatmålsproposition under *innevarande* riksmöte är nu **tekniskt omöjlig**.
+- **72 h**: Anmälning av interpellation i kammaren planerat till 2026-05-18; riksdagsdebatt kring 2026-05-26–29 (sista svarsdatum)
+- **7 dagar**: Kan ministern svara med tydligt besked om proposition i *nytt riksmöte* (höst 2026)?
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_zh.md -->
+
+**摘要**：国会议员奥莎·韦斯特隆德（S）向劳工部长兼气候与环境部代理部长约翰·布里茨（L）提交了质询2025/26:481（HD10481），询问政府是否打算在2026年选举前提交一份气候目标提案。Miljömålsberedningen提出了获得广泛政党支持的更新2030年阶段性目标方案的报告自2025年10月起由Regeringskansliet审查，但未公布任何时间表。若无提案，瑞典将面临在本届会期内错过巩固2030年目标的议会机会，这可能削弱Klimatlagen的执行以及瑞典对欧盟气候承诺的履行。
+
+### 60秒要点
+
+- **质询HD10481**（奥莎·韦斯特隆德（S）→约翰·布里茨（L，代理气候部长））：要求在2026年9月选举前就气候目标提案作出回应
+- **Miljömålsberedningen报告**（2025-10-30提交），提出更新2030年阶段性目标：各党广泛共识支持该提案，但政府尚未提交提案
+- **约翰·布里茨兼任气候与环境代理部长**与劳工部长（L）——表明Tidökoalitionen内的部委优先级
+- **时间压力**：议会将于2026年6月中旬夏休前关闭；选举定于2026年9月11日（暂定）；提案最迟需在5月/6月提交方可由议会表决
+- **欧盟2030年55%目标**（Fit for 55）设定了强化国内提案必要性的外部截止日期
+- **IMF WEO 2026年4月**：瑞典2026年GDP增长率估计约2.0%——经济复苏扩大了气候投资空间，同时削弱了反对该提案的财政障碍逻辑
+
+```mermaid
+flowchart LR
+    A[Miljömålsberedningen\nokt 2025] -->|Betänkande överlämnat| B[Remissbehandling\nnov 2025 – apr 2026]
+    B -->|Bereder| C[Regeringskansliet\nClimate dept]
+    C -->|Interpellation HD10481| D{Proposition\nbefore val?}
+    D -->|Ja| E[Riksdagsbeslut\nJun 2026]
+    D -->|Nej| F[Ny mandatperiod\npost-val 2026]
+    E --> G[Klimatmål befästa\nbefore election]
+    F --> H[Risk: försenad implementering\n2027+]
+    style D fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style H fill:#ff006e,color:#fff
+```
+
+### 决策支持
+
+1. **反对派问责策略**：S将质询作为选前竞选活动，指出Tidökoalitionen气候抱负不足——与即将到来的选举运动密切相关
+2. **时间表分析**：如果政府最迟在2026年5月/6月前不提交提案，现届议会将无法就气候目标作出决定→需要新会期
+3. **瑞典风险评估**：若缺乏具有法律约束力的2030年阶段性目标，瑞典将面临欧盟委员会审查措施的风险，并在国际气候谈判中损失公信力
+
+### 主要触发因素
+
+- **即时[A1]**：本届议会会期的提案提交窗口实际上已关闭——最后合理截止日期为2026-05-15（4天前）。*本届*会期的气候目标提案现在**技术上已不可能**。
+- **72小时**：质询将于2026-05-18在全体会议上公布；议会辩论约在2026-05-26–29（最终答复截止日）
+- **7天**：部长是否能就*新会期*（2026年秋）的提案作出明确承诺？
+
+**Confidence label**: [B2] — Reliable source (riksdagen.se official data), confirmed via primary source HD10481 + MJU-protokoll HDA1MJU44p
+
+<!-- source-sha: bee8728bc92af41b21edc2b20989739604e92262 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 1 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1200,6 +1801,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -3,7 +3,7 @@ date: 2026-05-01
 subfolder: propositions
 slug: 2026-05-01-propositions
 source_folder: analysis/daily/2026-05-01/propositions
-generated_at: 2026-05-25T15:59:53.157Z
+generated_at: 2026-05-27T07:35:32.777Z
 language: en
 layout: article
 ---
@@ -1956,8 +1956,6 @@ PIR-1 (Vårpropositionen agency capacity) carried forward from 2026-04-30 cycle.
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_ar.md -->
 
-‏# أكثر إصلاح جذري للهجرة في السويد منذ عقود: تيدوألليانسن يقدم حزمة تشريعية من أربعة قوانين للجوء
-
 ### الملخص التنفيذي
 
 قدّمت حكومة تيدوألليانسن أربعة مقترحات متزامنة في 30 أبريل 2026 تشكّل معاً أشمل تقييد لحقوق اللجوء والهجرة في السويد منذ قانون الأجانب المؤقت لعام 2016: الإلغاء الكامل لتصاريح الإقامة الدائمة (HD03262)، وتوسيع صلاحيات الترحيل القسري (HD03263)، واشتراطات سلوكية أكثر صرامة لجميع حاملي التصاريح (HD03264)، وتشديد الاحتجاز الإداري والمراقبة (HD03265). أُودعت الحزمة قبل ستة أشهر من انتخابات سبتمبر 2026، وتُشير إلى تصعيد انتخابي مقصود في ملف الهجرة، راهناً على عزل معارضة حزب S وحزب MP بينما يتوطد حزب SD وكتلة الائتلاف. كما قدّمت الحكومة مقترحات حول التعاون العسكري العملياتي (HD03254)، والرعاية المتكاملة لإدمان المخدرات (HD03251)، والشفافية السياسية (HD03258)، وأخلاقيات البحث العلمي (HD03260).
@@ -2263,8 +2261,6 @@ graph TD
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_he.md -->
 
-‏# הרפורמה הרדיקלית ביותר להגירה בשוודיה בעשורים: טידואלליאנסן מגישה חבילת חקיקה בת ארבעה חוקים בנושא מקלט
-
 **מחבר**: James Pether Sörling  
 **תאריך**: 2026-05-01  
 **סיווג**: ציבורי  
@@ -2319,11 +2315,6 @@ graph TD
 
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_ja.md -->
-
-**著者**：James Pether Sörling  
-**日付**：2026-05-01  
-**分類**：公開  
-**信頼度**：高 [B2] — 複数の一次情報源（8件の政府提案、riksdag-regering MCP）
 
 ### BLUF
 
@@ -2574,11 +2565,6 @@ graph TD
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/propositions/executive-brief_zh.md -->
-
-**作者**：James Pether Sörling  
-**日期**：2026-05-01  
-**分类**：公开  
-**可信度**：高 [B2] — 多个一次信息来源（8项政府提案，riksdag-regering MCP）
 
 ### BLUF
 

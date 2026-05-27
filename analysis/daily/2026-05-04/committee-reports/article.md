@@ -3,7 +3,7 @@ date: 2026-05-04
 subfolder: committee-reports
 slug: 2026-05-04-committee-reports
 source_folder: analysis/daily/2026-05-04/committee-reports
-generated_at: 2026-05-25T15:59:53.238Z
+generated_at: 2026-05-27T07:35:32.855Z
 language: en
 layout: article
 ---
@@ -3005,8 +3005,6 @@ Riksdag 委员会阶段（riksmötet 2025/26）在2026年4月最后一周提交�
 **监测**：如果 NU19 核许可法在2026年7月前引发宪法诉讼或行政法院转介，整个核扩张计划面临延期风险。
 
 ### 可信度评估
-
-**可信度：高** ——已发布的三份 betänkanden 均包含完整文本和清晰的委员会立场。
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%

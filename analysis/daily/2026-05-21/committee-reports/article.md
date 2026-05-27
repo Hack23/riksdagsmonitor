@@ -3,7 +3,7 @@ date: 2026-05-21
 subfolder: committee-reports
 slug: 2026-05-21-committee-reports
 source_folder: analysis/daily/2026-05-21/committee-reports
-generated_at: 2026-05-25T15:59:54.327Z
+generated_at: 2026-05-27T07:35:34.065Z
 language: en
 layout: article
 ---
@@ -1857,11 +1857,6 @@ Mittleres Vertrauen (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (nur Met
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_es.md -->
 
-**Autor**: Riksdagsmonitor Intelligence  
-**Clasificación**: PUBLIC — GDPR Art. 9(2)(e,g)  
-**Confianza**: HIGH [A1] protección infantil / MEDIUM [B2] reforma del bienestar  
-**ID de ejecución**: 26206467231
-
 ---
 
 ### 🎯 Resumen
@@ -2016,11 +2011,6 @@ Keskitason luottamus (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (vain m
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_fr.md -->
-
-**Auteur** : Riksdagsmonitor Intelligence  
-
-**Confiance** : HIGH [A1] protection de l'enfance / MEDIUM [B2] réforme sociale  
-**ID d'exécution** : 26206467231
 
 ---
 
@@ -2180,11 +2170,6 @@ UU3 (דיווח מעמיק יותר על סיוע), UU4 (מנדט צפוני-א�
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_ja.md -->
 
-**著者**：Riksdagsmonitor Intelligence  
-**分類**：PUBLIC — GDPR Art. 9(2)(e,g)  
-**信頼度**：HIGH [A1] 児童保護 / MEDIUM [B2] 福祉改革  
-**実行ID**：26206467231
-
 ---
 
 ### 🎯 結論
@@ -2260,11 +2245,6 @@ UU3（より深い援助報告）、UU4（ポストNATO文脈での北欧・北�
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_ko.md -->
-
-**저자**：Riksdagsmonitor Intelligence  
-**분류**：PUBLIC — GDPR Art. 9(2)(e,g)  
-**신뢰도**：HIGH [A1] 아동보호 / MEDIUM [B2] 복지개혁  
-**실행 ID**：26206467231
 
 ---
 
@@ -2422,11 +2402,6 @@ Gemiddeld vertrouwen (B2): JuU43, MJU22, UbU21, UbU30, UU3, SoU40, SoU41 (alleen
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-21/committee-reports/executive-brief_no.md -->
-
-**Forfatter**: Riksdagsmonitor Intelligence  
-**Klassifisering**: PUBLIC — GDPR Art. 9(2)(e,g)  
-**Tillit**: HIGH [A1] barnebeskyttelse / MEDIUM [B2] velferdsreform  
-**Kjøre-ID**: 26206467231
 
 ---
 

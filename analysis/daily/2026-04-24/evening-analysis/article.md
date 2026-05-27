@@ -3,7 +3,7 @@ date: 2026-04-24
 subfolder: evening-analysis
 slug: 2026-04-24-evening-analysis
 source_folder: analysis/daily/2026-04-24/evening-analysis
-generated_at: 2026-05-25T15:59:52.599Z
+generated_at: 2026-05-27T07:35:32.185Z
 language: en
 layout: article
 ---
@@ -2887,8 +2887,6 @@ Den 24 april 2026 lade Kristersson-regeringen fram ett **fyra-lagars förvalspak
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_zh.md -->
-
-**作者**：James Pether Sörling · **分类**：公开 OSINT · **置信度**：高 (B2) · **运行模式**：C 级聚合
 
 ### 🎯 BLUF
 

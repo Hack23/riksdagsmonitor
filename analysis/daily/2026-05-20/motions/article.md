@@ -3,7 +3,7 @@ date: 2026-05-20
 subfolder: motions
 slug: 2026-05-20-motions
 source_folder: analysis/daily/2026-05-20/motions
-generated_at: 2026-05-25T15:59:54.286Z
+generated_at: 2026-05-27T07:35:34.021Z
 language: en
 layout: article
 ---
@@ -20,8 +20,6 @@ layout: article
   <strong>📊 Decision-Grade BLUF · KU Motion HD024184 · 2026-05-20</strong><br>
   <em>Freedom of association · Lagrådet rebuke · Election-year transparency reform</em>
 </p>
-
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20 | **🔖 dok_id:** HD024184
 
 ---
 
@@ -123,8 +121,6 @@ Use this guide to read the article as a political-intelligence product rather th
 </p>
 
 # 🔍 Synthesis Summary — Opposition Motions · 2026-05-20
-
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20 | **Cycle:** motions
 
 ---
 
@@ -291,8 +287,6 @@ Centerpartiet's stance exposes an ideological fault line within the Swedish cent
 </p>
 
 # 📈 Political Significance Scoring — Opposition Motions · 2026-05-20
-
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
 
 ---
 
@@ -497,8 +491,6 @@ Source directly retrieved via riksdag-regering MCP with full text. Information c
 
 # 👥 Stakeholder Perspectives — Opposition Motions · 2026-05-20
 
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
-
 ---
 
 ### Primary stakeholders
@@ -595,8 +587,6 @@ graph LR
 
 # 🧮 Coalition Mathematics — Opposition Motions · 2026-05-20
 
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
-
 ---
 
 ### Parliamentary arithmetic — Riksdag 2022-26
@@ -691,8 +681,6 @@ graph LR
 
 # 👥 Voter Segmentation — Opposition Motions · 2026-05-20
 
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
-
 ---
 
 ### Voter segments affected by Prop. 2025/26:258 / HD024184
@@ -751,8 +739,6 @@ The motion attempts to attract two voter segments simultaneously:
 </p>
 
 # 📡 Forward Indicators — Opposition Motions · 2026-05-20
-
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
 
 ---
 
@@ -1002,8 +988,6 @@ gantt
 
 # ⚠️ Risk Assessment — Opposition Motions · 2026-05-20
 
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
-
 ---
 
 ### Risk register
@@ -1070,8 +1054,6 @@ The most consequential risk is that the law on labor organizations' contribution
 </p>
 
 # ⚖️ SWOT Analysis — Opposition Motions · 2026-05-20
-
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
 
 ---
 
@@ -1159,8 +1141,6 @@ quadrantChart
 
 # 🛡️ Threat Analysis — Opposition Motions · 2026-05-20
 
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
-
 ---
 
 ### STRIDE-mapped threat analysis (political-STRIDE)
@@ -1229,8 +1209,6 @@ graph TD
 
 # 🏛️ Historical Parallels — Opposition Motions · 2026-05-20
 
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
-
 ---
 
 ### Swedish historical parallels
@@ -1278,8 +1256,6 @@ As analyzed in comparative-international.md, the UK's Thatcher-era Trade Union A
 </p>
 
 # 🌍 Comparative International Analysis — Opposition Motions · 2026-05-20
-
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
 
 ---
 
@@ -1352,8 +1328,6 @@ Sweden is **late** by international standards but the design — registration at
 </p>
 
 # ⚙️ Implementation Feasibility — Opposition Motions · 2026-05-20
-
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
 
 ---
 
@@ -1440,8 +1414,6 @@ quadrantChart
 
 # 📰 Media Framing Analysis — Opposition Motions · 2026-05-20
 
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
-
 ---
 
 ### Competing media frames
@@ -1519,8 +1491,6 @@ flowchart LR
 
 # 👿 Devil's Advocate Analysis — Opposition Motions · 2026-05-20
 
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
-
 ---
 
 ### Devil's advocate: The case FOR the labor org contributions law
@@ -1591,8 +1561,6 @@ After steelmanning the government's position, **C's core objection remains compe
 </p>
 
 # 🏷️ Classification Results — Opposition Motions · 2026-05-20
-
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
 
 ---
 
@@ -1677,8 +1645,6 @@ graph LR
 
 # 🗺️ Cross-Reference Map — Opposition Motions · 2026-05-20
 
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
-
 ---
 
 ### Document relationships
@@ -1758,8 +1724,6 @@ graph TD
 </p>
 
 # 🔬 Methodology Reflection — Opposition Motions · 2026-05-20
-
-**📋 Classification:** Public | **📅 Analysis date:** 2026-05-20
 
 ---
 

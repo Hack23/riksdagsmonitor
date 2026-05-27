@@ -3,7 +3,7 @@ date: 2026-05-13
 subfolder: motions
 slug: 2026-05-13-motions
 source_folder: analysis/daily/2026-05-13/motions
-generated_at: 2026-05-25T15:59:53.966Z
+generated_at: 2026-05-27T07:35:33.676Z
 language: en
 layout: article
 ---
@@ -1905,12 +1905,6 @@ graph TD
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling  
-**Klassifizierung**: 🟢 PUBLIC  
-**Konfidenz**: HIGH (Admiralty B2)  
-**Lauf-ID**: 25785419647  
-**Datum**: 2026-05-13  
-
 ---
 
 ### BLUF — Schlussfolgerung in Kürze
@@ -1961,12 +1955,6 @@ graph TD
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_es.md -->
-
-**Autor**: James Pether Sörling  
-**Clasificación**: 🟢 PUBLIC  
-**Confianza**: HIGH (Admiralty B2)  
-**ID de ejecución**: 25785419647  
-**Fecha**: 2026-05-13  
 
 ---
 
@@ -2076,11 +2064,6 @@ graph TD
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_fr.md -->
 
-**Auteur** : James Pether Sörling  
-
-**Confiance** : HIGH (Admiralty B2)  
-**ID d'exécution** : 25785419647  
-
 ---
 
 ### BLUF — Conclusion en bref
@@ -2177,12 +2160,6 @@ graph TD
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling  
-**分類**: 🟢 PUBLIC  
-**信頼度**: 高 (Admiralty B2)  
-**実行ID**: 25785419647  
-**日付**: 2026-05-13  
-
 ---
 
 ### BLUF — 結論の要約
@@ -2233,12 +2210,6 @@ graph TD
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/motions/executive-brief_ko.md -->
-
-**저자**: James Pether Sörling  
-**분류**: 🟢 공개  
-**신뢰도**: 높음 (Admiralty B2)  
-**실행 ID**: 25785419647  
-**날짜**: 2026-05-13  
 
 ---
 
