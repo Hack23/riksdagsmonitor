@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "cycle": "daily",
+  "date": "2026-05-28",
+  "subfolder": "propositions",
+  "run_id": "26559452586",
+  "generated_at": "2026-05-28T07:10:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "statement": "What is the legislative timeline for Prop. 2025/26:271 (HD03271 'En förändrad abortlag') through committee and plenary vote?",
+      "status": "PARTIALLY_RESOLVED",
+      "confidence": "MEDIUM",
+      "evidence": "Proposition submitted 2026-05-26 to SoU (Socialutskottet). Parliamentary process: committee phase expected riksmöte 2026/27; plenary vote expected Spring 2027; in force 2027-01-01 if adopted on schedule.",
+      "carry_forward": true,
+      "carry_forward_reason": "SoU committee schedule not yet published; exact vote date unknown",
+      "next_action": "Monitor riksdag.se kalender for SoU scheduled hearings on HD03271",
+      "updated_date": "2026-05-28"
+    },
+    {
+      "pir_id": "PIR-2",
+      "statement": "What is SD's formal parliamentary position on HD03271 and which specific amendments will SD table in SoU?",
+      "status": "OPEN",
+      "confidence": "LOW",
+      "evidence": "SD's general position is known (social conservative, opposes abortion access expansion). Specific committee motions not yet filed. SD has historically demanded conscience clause legislation.",
+      "carry_forward": true,
+      "carry_forward_reason": "SoU committee phase not yet begun; SD formal motions not yet filed",
+      "next_action": "Monitor SoU committee news; SD press releases after summer recess",
+      "updated_date": "2026-05-28"
+    },
+    {
+      "pir_id": "PIR-3",
+      "statement": "What amendments will the SoU committee introduce, and will any substantively alter the proposition's scope?",
+      "status": "OPEN",
+      "confidence": "LOW",
+      "evidence": "Committee deliberations not yet begun. Government parties (M, KD, L) are expected to resist substantive amendments; SD amendments expected to fail. KD grassroots pressure may result in minor technical modifications.",
+      "carry_forward": true,
+      "carry_forward_reason": "Committee process not yet begun",
+      "next_action": "Monitor SoU betänkande when published (expected Spring 2027)",
+      "updated_date": "2026-05-28"
+    },
+    {
+      "pir_id": "PIR-4",
+      "statement": "What is the electoral impact of HD03271 on party polling, particularly for KD (threshold risk), SD (mobilisation), and progressive bloc?",
+      "status": "OPEN",
+      "confidence": "LOW",
+      "evidence": "Structural analysis suggests: KD faces threshold risk (-0.5 to -1.5pp), SD benefits from base mobilisation, progressive bloc gains marginally. No polling data yet available. First indicators expected in June 2026 barometer.",
+      "carry_forward": true,
+      "carry_forward_reason": "No post-announcement polling data yet available",
+      "next_action": "Monitor June 2026 SCB/Novus/SIFO opinion polls for party movement",
+      "updated_date": "2026-05-28"
+    },
+    {
+      "pir_id": "PIR-5",
+      "statement": "Is HD03270 (Prop. 2025/26:270) on track to meet the EU compliance deadline (in force 2027-01-02)?",
+      "status": "ASSESSED_ADEQUATE",
+      "confidence": "HIGH",
+      "evidence": "Proposition submitted 2026-05-26. MJU committee assignment expected. No controversy; passage likely Autumn 2026. Implementation deadline 2027-01-02 is achievable.",
+      "carry_forward": false,
+      "carry_forward_reason": "Assessed adequate; routine monitoring only",
+      "next_action": "None until MJU committee timeline available",
+      "updated_date": "2026-05-28"
+    },
+    {
+      "pir_id": "PIR-6",
+      "statement": "Will KD parliamentary caucus maintain unity on HD03271, or will multiple members abstain or vote Nej?",
+      "status": "OPEN",
+      "confidence": "LOW",
+      "evidence": "KD officially committed to Ja. Grassroots pressure from Christian democratic base is significant. Individual KD MP statements not yet tracked. Risk of 1-4 abstentions.",
+      "carry_forward": true,
+      "carry_forward_reason": "KD internal dynamics not yet observable at committee phase",
+      "next_action": "Monitor KD MP individual statements and party communications",
+      "updated_date": "2026-05-28"
+    },
+    {
+      "pir_id": "PIR-7",
+      "statement": "Are Swedish regions and healthcare authorities prepared to implement midwife-led medical abortion by 2027-01-01?",
+      "status": "OPEN",
+      "confidence": "LOW",
+      "evidence": "Training pipeline unknown. SKR has not yet issued formal position. Swedish Midwives Association supportive but implementation readiness not confirmed at regional level.",
+      "carry_forward": true,
+      "carry_forward_reason": "Requires regional healthcare system data not available in this session",
+      "next_action": "Monitor SKR statements; regional healthcare authority press releases",
+      "updated_date": "2026-05-28"
+    }
+  ]
+}
