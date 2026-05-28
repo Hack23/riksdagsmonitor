@@ -33,6 +33,8 @@ import { buildGithubBlobUrl } from '../url-helpers.js';
 import { buildArticleKeywords } from '../article-seo.js';
 import {
   cleanArtifactBody,
+  createNarrativeNormalizationState,
+  normalizeNarrativeTerminology,
   rewriteRelativeLinks,
 } from './cleaning/structural.js';
 import { buildFrontMatter } from './frontmatter.js';
@@ -133,6 +135,13 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   // their stated semantics.
   const aliasSuppressedAtSelection = new Set<string>();
 
+  // First-use narrative annotations (confidence-code gloss, Riksdag
+  // document-id contextualization) must fire once per *article*, not once per
+  // artifact body. Own the state here and thread it through every
+  // normalizeNarrativeTerminology call so the annotation is not re-emitted in
+  // every artifact that contains a match.
+  const narrativeState = createNarrativeNormalizationState();
+
   const readSection = (fileName: string, skipIfMissing: boolean): void => {
     const abs = path.join(subfolderAbsPath, fileName);
     if (!fs.existsSync(abs)) {
@@ -142,7 +151,10 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
       return;
     }
     const raw = fs.readFileSync(abs, 'utf8');
-    const clean = rewriteRelativeLinks(cleanArtifactBody(raw), subfolderRepoRelPath);
+    const clean = normalizeNarrativeTerminology(
+      rewriteRelativeLinks(cleanArtifactBody(raw), subfolderRepoRelPath),
+      narrativeState,
+    );
     if (!clean) {
       cleanedToEmpty.add(fileName);
       return;
