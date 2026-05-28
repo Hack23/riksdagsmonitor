@@ -1630,7 +1630,7 @@ stateDiagram-v2
 
 | Period | AI Model | Data Architecture Impact | New Data Entities |
 |--------|----------|------------------------|-------------------|
-| 2026-2027 | Opus 4.7-5.x | Enhanced embeddings, improved entity extraction | AI audit logs, model version tracking |
+| 2026-2027 | Opus 4.8-5.x | Enhanced embeddings, improved entity extraction | AI audit logs, model version tracking |
 | 2028-2029 | Opus 6.x-7.x | Multi-modal data storage, video/audio political content | Media assets, content provenance records |
 | 2030-2032 | Opus 8.x-10.x | Near-expert analysis data, global parliament schemas | Cross-parliament entities, policy impact models |
 | 2033-2035 | Pre-AGI systems | Autonomous schema evolution, self-organizing knowledge graphs | Emergent relationship types, dynamic taxonomies |

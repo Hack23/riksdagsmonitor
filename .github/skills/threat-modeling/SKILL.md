@@ -656,7 +656,7 @@ Per ISMS Threat_Modeling.md § 7, all Hack23 projects maintain comprehensive thr
 - Chart.js/D3.js dashboard vulnerabilities
 - CSV data integrity threats (CIA platform data)
 - AWS CloudFront and S3 infrastructure threats
-- Agentic workflow threats (Claude Opus 4.7 news generation)
+- Agentic workflow threats (Claude Opus 4.8 news generation)
 
 **Use Riksdagsmonitor as reference for:**
 - Static website threat modeling

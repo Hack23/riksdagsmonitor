@@ -352,12 +352,12 @@ stateDiagram-v2
 
 | # | State Model | Timeline | Key Technology | Status |
 |---|-------------|----------|----------------|--------|
-| 1 | AI Content Generation | 2026-2028 | Opus 4.7-6.x, Stability AI, ElevenLabs | 🟡 Planned |
+| 1 | AI Content Generation | 2026-2028 | Opus 4.8-6.x, Stability AI, ElevenLabs | 🟡 Planned |
 | 2 | Predictive Model Lifecycle | 2027-2028 | TensorFlow.js, XGBoost | 🔴 Research |
 | 3 | Real-Time Streaming | 2028+ | Kafka, Flink, WebSocket | 🔴 Research |
 | 4 | Election Forecast | 2026-2028 | Monte Carlo, Statistical Models | 🟡 Planned |
 | 5 | Multi-Parliament | 2028+ | Multi-API Integration | 🔴 Research |
-| 6 | AI/LLM Model Evolution | 2026-2037 | Opus 4.7→AGI, Multi-Model Strategy | 🟡 Planned |
+| 6 | AI/LLM Model Evolution | 2026-2037 | Opus 4.8→AGI, Multi-Model Strategy | 🟡 Planned |
 
 ---
 
@@ -889,12 +889,12 @@ stateDiagram-v2
 
 | # | State Model | Timeline | Key Technology | Status |
 |---|-------------|----------|----------------|--------|
-| 1 | AI Content Generation | 2026-2028 | Opus 4.7-6.x, Stability AI, ElevenLabs | Planned |
+| 1 | AI Content Generation | 2026-2028 | Opus 4.8-6.x, Stability AI, ElevenLabs | Planned |
 | 2 | Predictive Model Lifecycle | 2027-2028 | TensorFlow.js, XGBoost | Research |
 | 3 | Real-Time Streaming | 2028+ | Kafka, Flink, WebSocket | Research |
 | 4 | Election Forecast | 2026-2028 | Monte Carlo, Statistical Models | Planned |
 | 5 | Multi-Parliament | 2028+ | Multi-API Integration | Research |
-| 6 | AI/LLM Model Evolution | 2026-2037 | Opus 4.7 to AGI, Multi-Model Strategy | Planned |
+| 6 | AI/LLM Model Evolution | 2026-2037 | Opus 4.8 to AGI, Multi-Model Strategy | Planned |
 | 7 | Content Lifecycle | 2026 | Git, SHA-256, HTMLHint | Active |
 | 8 | MCP Pipeline Orchestration | 2026 | riksdag-regering-mcp, Amazon Bedrock | Active |
 | 9 | Data Freshness | 2026 | Cache layer, staleness detection | Active |

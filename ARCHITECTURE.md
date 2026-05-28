@@ -16,10 +16,13 @@
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.5 | **📅 Last Updated:** 2026-05-06 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 2.6 | **📅 Last Updated:** 2026-05-28 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v2.5 → v2.6, 2026-05-28):**
+> - 🤖 **Agentic engine model:** the 13 analysis/article-generating news workflows now run on **`claude-opus-4.8`** (the successor to `claude-opus-4.7`); the high-volume **`news-translate`** workflow stays on **`claude-sonnet-4.6`**. Updated the Multi-Language Content Architecture diagram's source-generation label accordingly.
+>
 > **🆕 What changed since last review (v2.4 → v2.5, 2026-05-06):**
 > - 📦 Aligned to **package v0.8.76**: TypeScript 6.0.3, **Vite 8.0.10**, **Vitest 4.1.5**, Node.js ≥26 baseline, `"type": "module"`. Subpath exports (`./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`) and explicit `sideEffects` (browser CIA entry + register-globals) documented in the Tech Stack and Container views.
 > - 🧠 Surfaced two new **bounded contexts** in Container/Component views: `scripts/political-intelligence/` (catalog + daily-streams + i18n + render leaves) and `scripts/agentic/` (analysis-gate checks 1–9b, typed `ArtifactDefinition` inventory of **23 artifacts** across Families A–E, with vitest coverage split across `tests/agentic/gate-checks/`, `tests/agentic/gate-shared/`, and `tests/agentic/analysis-gate-integration.test.ts`).
@@ -1075,7 +1078,7 @@ graph LR
 ```mermaid
 graph TB
     subgraph "Language Generation"
-        Source[Agent Generation<br/>Claude Sonnet 4.6<br/>English source]
+        Source[Agent Generation<br/>Claude Opus 4.8<br/>English source]
         
         Nordic[Nordic Languages<br/>en, sv, da, no, fi<br/>Germanic language family]
         EU[EU Core Languages<br/>de, fr, es, nl<br/>Western European]

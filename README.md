@@ -20,7 +20,7 @@
     <td>
       <p><strong>🕵️ Political intelligence · 🔍 Democratic transparency · 🤖 AI-generated news · 📊 50+ years of evidence</strong></p>
       <p>Riksdagsmonitor monitors Sweden's Riksdag (Parliament), the Government (Regeringskansliet) and public agencies (Myndigheter) with structured intelligence techniques — ACH, SWOT, PESTLE, STRIDE, political-risk scoring and OSINT/INTOP tradecraft — applied to <strong>349 current MPs</strong>, <strong>2,494 historical politicians (1971–2024)</strong>, <strong>3.5M+ votes</strong> and <strong>109,000+ parliamentary documents</strong>.</p>
-      <p>An autonomous AI newsroom — 14 agentic workflows, Claude Sonnet, zero human editors — turns this evidence into <strong>publication-ready intelligence articles in 14 languages, every day</strong>.</p>
+      <p>An autonomous AI newsroom — 14 agentic workflows, Claude Opus 4.8 (Claude Sonnet 4.6 for translation), zero human editors — turns this evidence into <strong>publication-ready intelligence articles in 14 languages, every day</strong>.</p>
       <div>
         <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor">
           <img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard">
@@ -130,7 +130,7 @@ Plus the full daily artifact catalogue (Family A baseline · Family B · Family 
 <td align="center">📰</td>
 <td><a href="https://riksdagsmonitor.com/news/index.html"><strong>AI-Generated News &amp; Analysis</strong></a></td>
 <td>
-The world's first fully AI-driven political-intelligence newsroom for parliamentary monitoring. <strong>11 specialised agentic workflows</strong> (10 scheduled + 1 on-demand, powered by Claude Opus via GitHub Copilot Coding Agent) autonomously produce daily intelligence articles:
+The world's first fully AI-driven political-intelligence newsroom for parliamentary monitoring. <strong>14 specialised agentic workflows</strong> (scheduled daily, also manually dispatchable, powered by Claude Opus 4.8 — Claude Sonnet 4.6 for the translation workflow — via GitHub Copilot Coding Agent) autonomously produce daily intelligence articles:
 <ul>
 <li>🌅 Committee reports · 🏛️ propositions · ✊ motions · ❓ interpellations</li>
 <li>🔮 Week-ahead · 📅 month-ahead · 🔍 real-time monitor</li>
@@ -507,7 +507,7 @@ timeline
 
 | Year | Automation assets | AI model | Key capability |
 |:----:|:----------------:|:---------|:---------------|
-| **2026** | 44 → 50 | Opus 4.7–4.9 | 🤖 Agentic news generation (current) |
+| **2026** | 44 → 50 | Opus 4.8–4.9 | 🤖 Agentic news generation (current) |
 | **2027** | 50–55 | Opus 5.x | 🔮 Predictive analytics & Nordic expansion |
 | **2028** | 55–65 | Opus 6.x | 🎙️ Multi-modal content |
 | **2029** | 65–75 | Opus 7.x | 🚀 Fully autonomous pipeline |

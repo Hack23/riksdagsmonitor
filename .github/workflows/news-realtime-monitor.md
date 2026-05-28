@@ -295,7 +295,7 @@ steps:
       focus: ${{ inputs.focus }}
 engine:
   id: copilot
-  model: claude-sonnet-4.6
+  model: claude-opus-4.8
 ---
 
 # 🚨 Realtime Monitor
