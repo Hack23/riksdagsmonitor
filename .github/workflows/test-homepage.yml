@@ -31,9 +31,12 @@ jobs:
   build:
     name: Build for Homepage Tests
     runs-on: ubuntu-latest
-    # Bumped from 10 → 15 after observing ~9m45s build times getting
-    # cancelled at the 10-min cap on busier runners (see run #26052744369).
-    timeout-minutes: 15
+    # Bumped 10 → 15 → 25. Same `npm run build` as test-news.yml: it now
+    # renders ~5 400 pages (391 subfolders × 14 languages) in ~14m42s
+    # (run #26603785540 "Build Test (Vite)" step), so the full job runs
+    # ~17min. The 15-min cap cancelled this identical build mid-render;
+    # 25 gives durable headroom as the news corpus keeps growing.
+    timeout-minutes: 25
     
     steps:
       - name: Harden Runner
