@@ -76,6 +76,7 @@ import {
   renderPoliticalContext,
 } from './article-aside.js';
 import { enrichArticleMarkdownWithPoliticalContext } from './political-context.js';
+import { applyScannabilityTransforms, transformProgressiveDisclosure } from './article-scannability.js';
 
 /**
  * CSS selectors identifying the voice-assistant TTS-readable regions of
@@ -552,7 +553,14 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     input.subfolderRepoRelPath,
   );
 
-  const { lead: leadHtml, rest: restHtml } = splitBodyAtSecondH2(bodyHtml);
+  // Apply visual scannability transforms (confidence chips, admiralty
+  // badges, timeline indicators). Progressive disclosure is applied after
+  // splitting so that wrapping <h2> sections in <details> doesn't interfere
+  // with the split logic.
+  const { transformedBody, tocHtml, methodologyFooterHtml } = applyScannabilityTransforms(bodyHtml, input.lang);
+
+  const { lead: leadHtml, rest: rawRestHtml } = splitBodyAtSecondH2(transformedBody);
+  const restHtml = transformProgressiveDisclosure(rawRestHtml);
 
   const articleUrl = `${BASE_URL}/${input.canonicalPath}`;
   const langMeta = LANGUAGE_META[input.lang];
@@ -644,6 +652,7 @@ ${chrome.headerHtml}
             <li><span class="rm-icon" aria-hidden="true">🔗</span> ${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustTraceable)}</li>
           </ul>
         </header>
+${tocHtml}
         <div class="rm-article-body">
 ${leadHtml}
         </div>
@@ -651,7 +660,10 @@ ${readerNavigationHtml}${politicalContextHtml}${restHtml ? `
         <div class="rm-article-body rm-article-body-rest">
 ${restHtml}
         </div>` : ''}
-${analysisArtifactsHtml}${methodsReferenceHtml}
-      </article>
+${analysisArtifactsHtml}${methodsReferenceHtml}${methodologyFooterHtml}
+      </article>${tocHtml ? `
+      <script>
+        (function(){var t=document.querySelector('.rm-article-toc');if(!t)return;var links=t.querySelectorAll('a[href^="#"]');var ids=[];links.forEach(function(a){ids.push(a.getAttribute('href').slice(1));});if(!ids.length||!('IntersectionObserver' in window))return;var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('rm-toc-active',a.getAttribute('href')==='#'+e.target.id);});};});},{rootMargin:'-80px 0px -60% 0px',threshold:0});ids.forEach(function(id){var el=document.getElementById(id);if(el)obs.observe(el);});})();
+      </script>` : ''}
 ${chrome.footerHtml}`;
 }

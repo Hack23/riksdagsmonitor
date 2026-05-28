@@ -1,0 +1,280 @@
+/* ==================================================
+   Article Scannability Components
+   Confidence chips, Admiralty badges, Timeline indicators,
+   Sticky TOC, and Progressive Disclosure styling.
+   ================================================== */
+
+/* ─── Confidence Chips ─────────────────────────────────────────────── */
+.rm-confidence {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--border-radius-sm, 4px);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.rm-confidence--high {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+  border: 1px solid #a3d9b1;
+}
+
+.rm-confidence--medium {
+  background-color: #fff3e0;
+  color: #b35a00;
+  border: 1px solid #ffcc80;
+}
+
+.rm-confidence--low {
+  background-color: #fce4ec;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+/* ─── Admiralty Code Badges ────────────────────────────────────────── */
+.rm-admiralty {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.0625rem 0.375rem;
+  border-radius: var(--border-radius-sm, 4px);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+  background-color: var(--badge-bg, #f8f9fa);
+  color: var(--text-color, #1a1a1a);
+  border: 1px solid var(--border-color, rgba(0, 102, 51, 0.15));
+  cursor: help;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  vertical-align: baseline;
+}
+
+/* ─── Timeline Indicators ──────────────────────────────────────────── */
+.rm-timeline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--border-radius-sm, 4px);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.rm-timeline--urgent {
+  background-color: #fce4ec;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.rm-timeline--near {
+  background-color: #fff3e0;
+  color: #b35a00;
+  border: 1px solid #ffcc80;
+}
+
+.rm-timeline--horizon {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #90caf9;
+}
+
+/* ─── Sticky Article TOC ───────────────────────────────────────────── */
+.rm-article-toc {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  padding: var(--spacing-md, 1rem);
+  margin-bottom: var(--spacing-lg, 1.5rem);
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--card-border, #dee2e6);
+  border-radius: var(--border-radius, 8px);
+  font-size: var(--font-size-sm, 0.875rem);
+}
+
+.rm-article-toc-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--text-secondary, #4a4a4a);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rm-article-toc ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rm-article-toc li {
+  margin-bottom: 0.25rem;
+}
+
+.rm-article-toc a {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius-sm, 4px);
+  color: var(--text-color, #1a1a1a);
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+  border-inline-start: 2px solid transparent;
+}
+
+.rm-article-toc a:hover {
+  background-color: var(--badge-bg, #f8f9fa);
+}
+
+.rm-article-toc a.rm-toc-active {
+  background-color: var(--badge-bg, #f8f9fa);
+  border-inline-start-color: var(--primary-color, #006633);
+  font-weight: 600;
+}
+
+/* Mobile: disable sticky positioning and height constraints */
+@media (max-width: 767px) {
+  .rm-article-toc {
+    position: static;
+    max-height: none;
+  }
+}
+
+/* ─── Progressive Disclosure ───────────────────────────────────────── */
+.rm-article-body details.rm-disclosure {
+  margin-block: var(--spacing-md, 1rem);
+  border: 1px solid var(--card-border, #dee2e6);
+  border-radius: var(--border-radius, 8px);
+  overflow: hidden;
+}
+
+.rm-article-body details.rm-disclosure > summary {
+  padding: 0.75rem 1rem;
+  background: var(--badge-bg, #f8f9fa);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: var(--font-size-base, 1rem);
+  list-style: revert;
+}
+
+.rm-article-body details.rm-disclosure > summary:hover {
+  background: var(--section-border, #e9ecef);
+}
+
+.rm-article-body details.rm-disclosure > .rm-disclosure-content {
+  padding: 1rem;
+}
+
+/* ─── Methodology Footer ───────────────────────────────────────────── */
+.rm-methodology-footer {
+  margin-top: var(--spacing-xl, 2rem);
+  padding: var(--spacing-lg, 1.5rem);
+  border: 1px solid var(--card-border, #dee2e6);
+  border-radius: var(--border-radius, 8px);
+  background: var(--badge-bg, #f8f9fa);
+  font-size: var(--font-size-sm, 0.875rem);
+}
+
+.rm-methodology-footer h3 {
+  margin-top: 0;
+  font-size: var(--font-size-base, 1rem);
+}
+
+.rm-methodology-footer dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.rm-methodology-footer dt {
+  font-weight: 600;
+  color: var(--text-secondary, #4a4a4a);
+}
+
+.rm-methodology-footer dd {
+  margin: 0;
+}
+
+/* ─── Dark Mode ────────────────────────────────────────────────────── */
+/* Scoped to html:not([data-theme="light"]) so a forced light theme always
+   cancels these OS-dark overrides, matching the theme-toggle behaviour used
+   elsewhere in the stylesheet. */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .rm-confidence--high {
+    background-color: rgba(30, 126, 52, 0.2);
+    color: #6fcf97;
+    border-color: rgba(111, 207, 151, 0.4);
+  }
+
+  html:not([data-theme="light"]) .rm-confidence--medium {
+    background-color: rgba(179, 90, 0, 0.2);
+    color: #ffb74d;
+    border-color: rgba(255, 183, 77, 0.4);
+  }
+
+  html:not([data-theme="light"]) .rm-confidence--low {
+    background-color: rgba(198, 40, 40, 0.2);
+    color: #ef5350;
+    border-color: rgba(239, 83, 80, 0.4);
+  }
+
+  html:not([data-theme="light"]) .rm-admiralty {
+    background-color: var(--badge-bg, #333);
+    color: var(--text-color, #f0f0f0);
+    border-color: var(--border-color, rgba(0, 204, 102, 0.3));
+  }
+
+  html:not([data-theme="light"]) .rm-timeline--urgent {
+    background-color: rgba(198, 40, 40, 0.2);
+    color: #ef5350;
+    border-color: rgba(239, 83, 80, 0.4);
+  }
+
+  html:not([data-theme="light"]) .rm-timeline--near {
+    background-color: rgba(179, 90, 0, 0.2);
+    color: #ffb74d;
+    border-color: rgba(255, 183, 77, 0.4);
+  }
+
+  html:not([data-theme="light"]) .rm-timeline--horizon {
+    background-color: rgba(21, 101, 192, 0.2);
+    color: #64b5f6;
+    border-color: rgba(100, 181, 246, 0.4);
+  }
+
+  html:not([data-theme="light"]) .rm-article-toc a.rm-toc-active {
+    background-color: var(--badge-bg, #333);
+    border-inline-start-color: var(--primary-color, #00cc66);
+  }
+
+  html:not([data-theme="light"]) .rm-article-body details.rm-disclosure > summary {
+    background: var(--badge-bg, #333);
+  }
+
+  html:not([data-theme="light"]) .rm-article-body details.rm-disclosure > summary:hover {
+    background: var(--section-border, #444);
+  }
+
+  html:not([data-theme="light"]) .rm-methodology-footer {
+    background: var(--badge-bg, #333);
+    border-color: var(--card-border, rgba(0, 204, 102, 0.3));
+  }
+}
+
+/* ─── RTL Support ──────────────────────────────────────────────────── */
+[dir="rtl"] .rm-article-toc a {
+  border-inline-start: 2px solid transparent;
+}
+
+[dir="rtl"] .rm-article-toc a.rm-toc-active {
+  border-inline-start-color: var(--primary-color, #006633);
+}
