@@ -30,7 +30,7 @@ export const CHROME: ReaderGuideChrome = {
 
 export const ENTRIES: Record<string, ReaderGuideEntryI18n> = {
   'executive-brief.md': {
-    label: 'BLUFおよび編集方針',
+    label: 'リード段落と編集方針',
     readerValue: '何が起きたか、なぜ重要か、誰が責任を負うか、次の日付付きトリガーへの迅速な回答',
   },
   'intelligence-assessment.md': {

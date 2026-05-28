@@ -40,8 +40,10 @@ import {
 import {
   cleanArtifactBody,
   collapseRepeatedFooterBlocks,
+  createNarrativeNormalizationState,
   dedupeAdjacentDuplicateLines,
   demoteHeadings,
+  normalizeNarrativeTerminology,
   rewriteRelativeLinks,
   stripInlineReaderGuide,
   stripSourcePreamble,
@@ -110,7 +112,7 @@ describe('aggregator/order — canonical narrative order', () => {
 
   it('titleForArtifact maps known files to curated titles', () => {
     expect(titleForArtifact('intelligence-assessment.md')).toBe(
-      'Intelligence Assessment — Key Judgments',
+      'Key Findings',
     );
     expect(titleForArtifact('devils-advocate.md')).toBe("Devil's Advocate");
   });
@@ -1107,7 +1109,7 @@ describe('aggregator/reader-guide — anchor slug parity', () => {
     // Localised labels appear (not raw filenames — the source-artifact
     // column was removed in favour of audit-grade traceability via the
     // Analysis Sources card grid at the article foot).
-    expect(guide).toContain('BLUF and editorial decisions');
+    expect(guide).toContain('Lede and editorial decisions');
     expect(guide).toContain('Risk assessment');
     expect(guide).not.toContain('Key Judgments'); // intelligence-assessment.md not present
     // Audit-appendix pointer is always emitted.
@@ -1127,10 +1129,10 @@ describe('aggregator/reader-guide — anchor slug parity', () => {
       new Set(['executive-brief.md', 'political-classification.md']),
       false,
     );
-    expect(guide).toContain('[Audit appendix](#rm-political-classification)');
-    expect(guide).not.toContain('[Audit appendix](#rm-classification-results)');
+    expect(guide).toContain('[Audit appendix](#rm-deep-dive-political-classification)');
+    expect(guide).not.toContain('[Audit appendix](#rm-deep-dive-classification-results)');
     expect(guide).toContain('ISMS data classification');
-    expect(auditAnchorForArtifacts(['political-classification.md'])).toBe('rm-political-classification');
+    expect(auditAnchorForArtifacts(['political-classification.md'])).toBe('rm-deep-dive-political-classification');
   });
 });
 
@@ -1584,6 +1586,54 @@ describe('aggregator/cleaning/structural — stripInlineReaderGuide', () => {
 });
 
 describe('aggregator/cleaning/structural — dedupeAdjacentDuplicateLines', () => {
+  it('normalizeNarrativeTerminology rewrites BLUF heading and annotates first confidence/doc-id mention', () => {
+    const body = [
+      '## 🎯 BLUF',
+      '',
+      'Lead sentence.',
+      '',
+      '### Decisions This Brief Supports',
+      '',
+      '- HIGH (B2) for HD03271 timeline confidence.',
+      '- MEDIUM (C2) for secondary claims.',
+      '- HD03275 follow-up remains pending.',
+    ].join('\n');
+    const out = normalizeNarrativeTerminology(body);
+    expect(out).toContain('## Lede');
+    expect(out).toContain('### Decisions and confidence context');
+    expect(out).toContain('HIGH (B2, high confidence, corroborated by multiple sources)');
+    expect(out).toContain('Riksdag document #03271 (HD03271)');
+    expect(out).toContain('MEDIUM (C2)');
+    expect(out).not.toContain('BLUF');
+  });
+
+  it('normalizeNarrativeTerminology threads first-use state across artifact bodies (once per article)', () => {
+    const state = createNarrativeNormalizationState();
+    const first = normalizeNarrativeTerminology('- HIGH (B2) for HD03271.', state);
+    const second = normalizeNarrativeTerminology('- HIGH (B3) for HD03275.', state);
+    // First artifact gets the gloss + document contextualization.
+    expect(first).toContain('HIGH (B2, high confidence, corroborated by multiple sources)');
+    expect(first).toContain('Riksdag document #03271 (HD03271)');
+    // Second artifact must NOT re-emit the first-use annotations.
+    expect(second).toContain('HIGH (B3)');
+    expect(second).not.toContain('corroborated by multiple sources');
+    expect(second).toContain('HD03275');
+    expect(second).not.toContain('Riksdag document #03275');
+  });
+
+  it('normalizeNarrativeTerminology leaves non-English bodies untouched', () => {
+    const body = [
+      '## 🎯 BLUF',
+      '',
+      '- HIGH (B2) för HD03271.',
+    ].join('\n');
+    const out = normalizeNarrativeTerminology(body, createNarrativeNormalizationState(), 'sv');
+    expect(out).toBe(body);
+    expect(out).not.toContain('Lede');
+    expect(out).not.toContain('corroborated by multiple sources');
+    expect(out).not.toContain('Riksdag document');
+  });
+
   it('collapses two identical adjacent classification rows', () => {
     const body = [
       '| Dimension | Classification | Rationale |',
