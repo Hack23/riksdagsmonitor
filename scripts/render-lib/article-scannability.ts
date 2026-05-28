@@ -20,18 +20,41 @@ import { escapeHtml, decodeHtmlEntities } from '../html-utils.js';
 
 // ─── Heading Text Extraction ──────────────────────────────────────────────────
 
+/** Matches a single complete HTML tag. */
+const HTML_TAG_RE = /<[^>]*>/g;
+
+/**
+ * Remove HTML tags from a string, applying the substitution repeatedly until
+ * the result stabilises.
+ *
+ * A single pass of {@link HTML_TAG_RE} can leave behind markup when tags
+ * overlap (e.g. `"<scr<a>ipt>"` collapses to `"<script>"` after one pass).
+ * Iterating until no further tags are removed prevents such reconstitution,
+ * addressing the incomplete-multi-character-sanitization class of issues.
+ */
+function stripHtmlTags(value: string): string {
+  let current = value;
+  let previous: string;
+  do {
+    previous = current;
+    current = current.replace(HTML_TAG_RE, '');
+  } while (current !== previous);
+  return current;
+}
+
 /**
  * Extract human-readable plain text from a heading's inner HTML.
  *
- * Tags are stripped, then HTML entities are decoded so callers receive the
- * literal heading text (e.g. for pattern matching). Re-insertion into HTML
- * contexts (TOC links, disclosure summaries) MUST go through {@link escapeHtml}
- * so that any residual markup — including incomplete tags such as a trailing
- * `<script` left behind by the tag-stripping regex — is neutralised without
- * double-encoding pre-existing entities.
+ * HTML entities are decoded **first** so that any encoded markup (e.g.
+ * `&lt;script&gt;`) is normalised, then tags are stripped repeatedly until the
+ * result is stable. Performing the strip as the final step ensures decoding
+ * cannot reintroduce un-stripped markup. Re-insertion into HTML contexts (TOC
+ * links, disclosure summaries) MUST still go through {@link escapeHtml} so that
+ * any residual angle bracket left by an incomplete tag (e.g. a trailing
+ * `<script` with no closing `>`) is neutralised.
  */
 function headingPlainText(innerHtml: string): string {
-  return decodeHtmlEntities(innerHtml.replace(/<[^>]*>/g, '')).trim();
+  return stripHtmlTags(decodeHtmlEntities(innerHtml)).trim();
 }
 
 // ─── Admiralty Code Lookup ────────────────────────────────────────────────────
@@ -165,34 +188,45 @@ const PROGRESSIVE_DISCLOSURE_HEADINGS: readonly RegExp[] = [
  * Each section runs from its H2 heading to (but not including) the next H2.
  */
 export function transformProgressiveDisclosure(html: string): string {
-  // Find H2 headings that match disclosure patterns
+  // Collect every H2 heading with its position in the ORIGINAL html in a single
+  // pass. Boundaries are resolved against this immutable snapshot — the previous
+  // implementation mutated the output while reusing original-html indices and
+  // re-scanned the mutated string, which duplicated content and produced
+  // malformed nesting (and a large output-size blow-up) when several
+  // consecutive headings matched.
   const h2Regex = /<h2([^>]*)>([\s\S]*?)<\/h2>/gi;
-  let result = html;
-  const disclosureMatches: Array<{ fullH2: string; title: string; startIndex: number }> = [];
+  const headings: Array<{ fullH2: string; title: string; start: number; end: number }> = [];
 
   let m: RegExpExecArray | null;
   while ((m = h2Regex.exec(html)) !== null) {
-    const title = headingPlainText(m[2]);
-    const shouldDisclose = PROGRESSIVE_DISCLOSURE_HEADINGS.some((re) => re.test(title));
-    if (shouldDisclose) {
-      disclosureMatches.push({ fullH2: m[0], title, startIndex: m.index });
-    }
+    headings.push({
+      fullH2: m[0],
+      title: headingPlainText(m[2]),
+      start: m.index,
+      end: m.index + m[0].length,
+    });
   }
 
-  // Process matches in reverse order so indices remain valid
-  for (let i = disclosureMatches.length - 1; i >= 0; i--) {
-    const match = disclosureMatches[i];
-    const afterH2 = match.startIndex + match.fullH2.length;
-    // Find the next H2 or end of string
-    const nextH2Regex = /<h2[\s>]/gi;
-    nextH2Regex.lastIndex = afterH2;
-    const nextH2Match = nextH2Regex.exec(result);
-    const endIndex = nextH2Match ? nextH2Match.index : result.length;
+  if (headings.length === 0) return html;
 
-    const sectionContent = result.slice(afterH2, endIndex);
-    const wrappedSection = `<details class="rm-disclosure"><summary>${escapeHtml(match.title)}</summary><div class="rm-disclosure-content">${match.fullH2}${sectionContent}</div></details>`;
-    result = result.slice(0, match.startIndex) + wrappedSection + result.slice(endIndex);
+  // Assemble the result once, advancing a cursor monotonically through the
+  // original html. A disclosing section spans from its H2 to the next H2's
+  // start (or end of document); since headings are ordered and the cursor only
+  // ever jumps forward to a later heading start, sections never overlap.
+  let result = '';
+  let cursor = 0;
+  for (let i = 0; i < headings.length; i++) {
+    const heading = headings[i];
+    const shouldDisclose = PROGRESSIVE_DISCLOSURE_HEADINGS.some((re) => re.test(heading.title));
+    if (!shouldDisclose) continue;
+
+    const sectionEnd = i + 1 < headings.length ? headings[i + 1].start : html.length;
+    result += html.slice(cursor, heading.start);
+    const sectionContent = html.slice(heading.end, sectionEnd);
+    result += `<details class="rm-disclosure"><summary>${escapeHtml(heading.title)}</summary><div class="rm-disclosure-content">${heading.fullH2}${sectionContent}</div></details>`;
+    cursor = sectionEnd;
   }
+  result += html.slice(cursor);
 
   return result;
 }

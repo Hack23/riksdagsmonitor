@@ -128,6 +128,19 @@ describe('Article Scannability Transforms', () => {
       expect(result).not.toContain('<summary>Document Analysis <script');
     });
 
+    it('strips overlapping tags without reconstituting markup in the summary', () => {
+      // A single tag-stripping pass on "<scr<a>ipt>" can reconstitute "<script>".
+      const html = '<h2 id="rm-doc">Document Analysis <scr<a>ipt>alert(1)</h2><p>x</p>';
+      const result = transformProgressiveDisclosure(html);
+      const summary = result.slice(
+        result.indexOf('<summary>') + '<summary>'.length,
+        result.indexOf('</summary>'),
+      );
+      // No reconstituted opening tag should survive inside the summary text.
+      expect(summary).not.toContain('<script');
+      expect(summary).not.toContain('<a>');
+    });
+
     it('handles Swedish headings', () => {
       const html = '<h2 id="rm-dok">Dokumentanalys</h2><p>Innehåll</p>';
       const result = transformProgressiveDisclosure(html);
