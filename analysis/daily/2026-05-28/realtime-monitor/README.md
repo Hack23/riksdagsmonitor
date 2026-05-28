@@ -3,10 +3,10 @@
 **Analysis Folder**: `analysis/daily/2026-05-28/realtime-monitor/`
 **Generated**: 2026-05-28
 **Workflow**: news-realtime-monitor
-**Run**: 26571219628
+**Run**: 26571219628 (improvement run: 26588891376)
 **Analysis Depth**: deep
 **Riksmöte**: 2025/26
-**Documents Analysed**: 21
+**Documents Analysed**: 23 (21 from morning run + HD01TU17 + HD01TU18 discovered 14:21Z/14:34Z)
 
 ## Folder Contents
 
@@ -34,7 +34,7 @@
 | [media-framing-analysis.md](media-framing-analysis.md) | D | Frame packages + outlet audit |
 | [implementation-feasibility.md](implementation-feasibility.md) | D | Delivery risk view |
 | [forward-indicators.md](forward-indicators.md) | D | ≥10 dated indicators |
-| [documents/](documents/) | E | Per-document analyses |
+| [documents/](documents/) | E | Per-document analyses (9 files, 23 documents: HD03275–HD03277, HD01CU44, HD01JuU35, HD01MJU27, HD01NU20, HD01TU17★, HD01TU18★, HD10520–HD10521, HD11846–HD11857; ★=new in improvement run) |
 
 ## Lead Story
 
